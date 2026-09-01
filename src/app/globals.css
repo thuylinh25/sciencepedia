@@ -1,0 +1,390 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@plugin "@tailwindcss/typography";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ------------------------------------------------------------------ */
+/*  Bảng màu                                                           */
+/*  National Geographic (viền vàng, ảnh tràn khung)                     */
+/*  + NASA (xanh #0B3D91 / đỏ #FC3D21, nền vũ trụ sâu)                 */
+/*  + Apple (khoảng trắng rộng, chữ lớn, kính mờ, bo góc mềm)          */
+/* ------------------------------------------------------------------ */
+
+:root {
+  --radius: 0.875rem;
+
+  --background: oklch(0.995 0.002 250);
+  --foreground: oklch(0.16 0.02 260);
+
+  --card: oklch(1 0 0);
+  --card-foreground: var(--foreground);
+  --popover: oklch(1 0 0);
+  --popover-foreground: var(--foreground);
+
+  /* NASA blue */
+  --primary: oklch(0.42 0.19 264);
+  --primary-foreground: oklch(0.985 0.005 250);
+
+  --secondary: oklch(0.96 0.008 255);
+  --secondary-foreground: oklch(0.24 0.03 262);
+
+  --muted: oklch(0.965 0.006 255);
+  --muted-foreground: oklch(0.52 0.02 258);
+
+  /* NatGeo yellow */
+  --accent: oklch(0.86 0.17 92);
+  --accent-foreground: oklch(0.2 0.04 80);
+
+  /* NASA red */
+  --destructive: oklch(0.62 0.23 32);
+  --destructive-foreground: oklch(0.985 0.005 250);
+
+  --border: oklch(0.91 0.008 258);
+  --input: oklch(0.91 0.008 258);
+  --ring: oklch(0.55 0.16 264);
+
+  /* Màu biểu đồ / danh mục */
+  --chart-1: oklch(0.62 0.19 264);
+  --chart-2: oklch(0.7 0.15 195);
+  --chart-3: oklch(0.72 0.18 60);
+  --chart-4: oklch(0.65 0.2 330);
+  --chart-5: oklch(0.68 0.17 145);
+
+  --sidebar: oklch(0.985 0.004 255);
+  --sidebar-foreground: var(--foreground);
+  --sidebar-primary: var(--primary);
+  --sidebar-primary-foreground: var(--primary-foreground);
+  --sidebar-accent: oklch(0.955 0.008 255);
+  --sidebar-accent-foreground: var(--secondary-foreground);
+  --sidebar-border: var(--border);
+  --sidebar-ring: var(--ring);
+
+  /* Nền “không gian sâu” dùng cho hero và trang 3D */
+  --space-900: oklch(0.13 0.035 265);
+  --space-800: oklch(0.18 0.045 265);
+  --space-700: oklch(0.24 0.05 265);
+  --star: oklch(0.98 0.01 250);
+}
+
+.dark {
+  --background: oklch(0.145 0.025 265);
+  --foreground: oklch(0.96 0.008 250);
+
+  --card: oklch(0.185 0.028 265);
+  --card-foreground: var(--foreground);
+  --popover: oklch(0.185 0.028 265);
+  --popover-foreground: var(--foreground);
+
+  --primary: oklch(0.72 0.16 258);
+  --primary-foreground: oklch(0.15 0.03 265);
+
+  --secondary: oklch(0.24 0.03 265);
+  --secondary-foreground: oklch(0.95 0.008 250);
+
+  --muted: oklch(0.24 0.028 265);
+  --muted-foreground: oklch(0.68 0.02 258);
+
+  --accent: oklch(0.84 0.17 92);
+  --accent-foreground: oklch(0.18 0.04 80);
+
+  --destructive: oklch(0.66 0.21 30);
+  --destructive-foreground: oklch(0.98 0.005 250);
+
+  --border: oklch(1 0 0 / 12%);
+  --input: oklch(1 0 0 / 16%);
+  --ring: oklch(0.6 0.14 260);
+
+  --chart-1: oklch(0.68 0.19 264);
+  --chart-2: oklch(0.75 0.15 195);
+  --chart-3: oklch(0.78 0.18 62);
+  --chart-4: oklch(0.7 0.2 330);
+  --chart-5: oklch(0.72 0.17 145);
+
+  --sidebar: oklch(0.175 0.028 265);
+  --sidebar-foreground: var(--foreground);
+  --sidebar-primary: var(--primary);
+  --sidebar-primary-foreground: var(--primary-foreground);
+  --sidebar-accent: oklch(0.24 0.03 265);
+  --sidebar-accent-foreground: var(--foreground);
+  --sidebar-border: oklch(1 0 0 / 12%);
+  --sidebar-ring: var(--ring);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  --color-space-900: var(--space-900);
+  --color-space-800: var(--space-800);
+  --color-space-700: var(--space-700);
+  --color-star: var(--star);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 12px);
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", sans-serif;
+  --font-display: var(--font-display), ui-serif, Georgia, serif;
+  --font-mono: ui-monospace, "SF Mono", "Cascadia Code", monospace;
+
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-twinkle: twinkle 4s ease-in-out infinite;
+  --animate-orbit: orbit 24s linear infinite;
+  --animate-shimmer: shimmer 2.4s linear infinite;
+  --animate-aurora: aurora 18s ease-in-out infinite alternate;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes orbit {
+  from {
+    transform: rotate(0deg) translateX(var(--orbit-radius, 80px)) rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg) translateX(var(--orbit-radius, 80px))
+      rotate(-360deg);
+  }
+}
+
+@keyframes shimmer {
+  from {
+    background-position: -200% 0;
+  }
+  to {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes aurora {
+  0% {
+    transform: translate3d(-6%, -3%, 0) scale(1);
+  }
+  100% {
+    transform: translate3d(6%, 4%, 0) scale(1.15);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    /* chừa chỗ cho header dính khi nhảy tới anchor mục lục */
+    scroll-padding-top: 6rem;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    @apply bg-accent text-accent-foreground;
+  }
+
+  /* Thanh cuộn mảnh, hợp với thẩm mỹ Apple */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply rounded-full bg-border;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-muted-foreground/50;
+  }
+
+  /* Tôn trọng người dùng bật giảm chuyển động */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  /* Nền vũ trụ có chiều sâu — dùng cho hero, trang 3D, khối CTA */
+  .bg-cosmos {
+    background:
+      radial-gradient(
+        ellipse 80% 60% at 50% -10%,
+        color-mix(in oklab, var(--primary) 35%, transparent),
+        transparent 60%
+      ),
+      radial-gradient(
+        ellipse 60% 50% at 85% 20%,
+        color-mix(in oklab, var(--chart-4) 22%, transparent),
+        transparent 55%
+      ),
+      linear-gradient(180deg, var(--space-900), var(--space-800));
+  }
+
+  /* Trường sao tĩnh, rẻ hơn nhiều so với canvas */
+  .starfield::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      radial-gradient(1.5px 1.5px at 20% 30%, var(--star), transparent),
+      radial-gradient(1px 1px at 60% 15%, var(--star), transparent),
+      radial-gradient(1.5px 1.5px at 80% 55%, var(--star), transparent),
+      radial-gradient(1px 1px at 35% 75%, var(--star), transparent),
+      radial-gradient(1.5px 1.5px at 12% 88%, var(--star), transparent),
+      radial-gradient(1px 1px at 92% 82%, var(--star), transparent),
+      radial-gradient(1px 1px at 48% 45%, var(--star), transparent);
+    opacity: 0.55;
+    animation: twinkle 5s ease-in-out infinite;
+    pointer-events: none;
+  }
+
+  /* Kính mờ kiểu Apple cho header và thẻ nổi */
+  .glass {
+    @apply border border-white/10 bg-white/70 backdrop-blur-xl dark:bg-white/5;
+  }
+
+  /* Viền vàng đặc trưng National Geographic */
+  .natgeo-frame {
+    @apply relative;
+    box-shadow: inset 0 0 0 3px var(--accent);
+  }
+
+  /* Gạch dưới chạy khi hover — dùng cho link điều hướng */
+  .link-underline {
+    @apply relative;
+  }
+  .link-underline::after {
+    content: "";
+    @apply absolute -bottom-1 left-0 h-0.5 w-0 rounded-full bg-accent transition-[width] duration-300;
+  }
+  .link-underline:hover::after,
+  .link-underline[data-active="true"]::after {
+    @apply w-full;
+  }
+
+  /* Khung chứa chuẩn — rộng rãi kiểu Apple */
+  .container-page {
+    @apply mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-12;
+  }
+
+  .container-prose {
+    @apply mx-auto w-full max-w-3xl px-5 sm:px-8;
+  }
+
+  /* Vệt sáng chạy trên skeleton khi tải */
+  .shimmer {
+    background: linear-gradient(
+      90deg,
+      transparent,
+      color-mix(in oklab, var(--muted-foreground) 12%, transparent),
+      transparent
+    );
+    background-size: 200% 100%;
+    animation: var(--animate-shimmer);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .text-pretty {
+    text-wrap: pretty;
+  }
+
+  /* Chữ tiêu đề gradient kiểu NASA */
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(
+      100deg,
+      var(--foreground) 10%,
+      color-mix(in oklab, var(--primary) 70%, var(--foreground)) 50%,
+      var(--accent) 95%
+    );
+  }
+
+  .mask-fade-b {
+    mask-image: linear-gradient(to bottom, black 70%, transparent);
+  }
+
+  /* Kết quả tìm kiếm được Meilisearch bọc trong <mark> */
+  .search-highlight mark {
+    @apply rounded bg-accent/40 px-0.5 text-inherit;
+  }
+}
+
+/* Kiểu chữ cho nội dung bài viết (prose) */
+.article-prose {
+  @apply prose prose-lg dark:prose-invert max-w-none;
+  @apply prose-headings:font-display prose-headings:tracking-tight;
+  @apply prose-h2:mt-14 prose-h2:scroll-mt-28 prose-h2:border-b prose-h2:pb-3;
+  @apply prose-h3:mt-10 prose-h3:scroll-mt-28;
+  @apply prose-a:text-primary prose-a:decoration-primary/40 prose-a:underline-offset-4;
+  @apply prose-img:rounded-2xl prose-img:shadow-lg;
+  @apply prose-blockquote:border-l-accent prose-blockquote:not-italic;
+  @apply prose-code:rounded prose-code:bg-muted prose-code:px-1.5 prose-code:py-0.5 prose-code:before:content-none prose-code:after:content-none;
+  @apply prose-table:text-base;
+}

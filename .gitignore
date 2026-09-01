@@ -1,0 +1,22 @@
+# Dependencies & build output
+node_modules
+.next
+out
+build
+next-env.d.ts
+tsconfig.tsbuildinfo
+
+# Bí mật — KHÔNG BAO GIỜ commit
+.env
+.env*.local
+!.env.example
+*.pem
+
+# Log (build.log, server.log sinh ra khi chạy local)
+*.log
+
+# Hạ tầng / công cụ
+.vercel
+.DS_Store
+/prisma/*.db
+/meili_data
