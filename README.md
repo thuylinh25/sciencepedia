@@ -7,28 +7,34 @@ Bách khoa toàn thư khoa học hiện đại — song ngữ Việt/Anh, có m�
 ## Kiến trúc
 
 ```
-                    ┌──────────────────────────┐
+                     ┌──────────────────────────┐
    Trình duyệt ────▶ │       Next.js 15         │
-                    │  App Router · RSC · SSR  │
-                    └───┬──────────┬───────┬───┘
-                        │          │       │
-                 Prisma │          │       │ HTTP
-                        ▼          │       ▼
-        ┌───────────────────────┐  │  ┌──────────────┐
-        │  Supabase PostgreSQL  │  │  │ Meilisearch  │
-        │  (Supavisor pooler)   │  │  │  toàn văn    │
-        └───────────────────────┘  │  └──────────────┘
-                                   │ service role key
-                                   ▼
-                        ┌────────────────────┐
-                        │  Supabase Storage  │
-                        │   bucket ảnh       │
-                        └────────────────────┘
+                     │  App Router · RSC · SSR  │
+                     └───┬──────────┬───────┬───┘
+                         │          │       │
+                  Prisma │          │       │ HTTP
+                         ▼          │       ▼
+         ┌───────────────────────┐  │  ┌──────────────┐
+         │  Supabase PostgreSQL  │  │  │ Meilisearch  │  ← tuỳ chọn
+         │  (Supavisor pooler)   │  │  │  toàn văn    │
+         │  + tsvector FTS ◀─────┼──┼──┴──────────────┘
+         └───────────────────────┘  │     tự hạ xuống Postgres
+                                    │     nếu không có/không tới được
+                                    │ service role key
+                                    ▼
+                         ┌────────────────────┐
+                         │  Supabase Storage  │
+                         │   bucket ảnh       │
+                         └────────────────────┘
 ```
 
 Dữ liệu quan hệ đi qua Prisma tới Supabase PostgreSQL; ảnh nằm trong Supabase Storage và
-được ghi **chỉ từ server** bằng service role key; chỉ mục tìm kiếm nằm ở Meilisearch và được
-đồng bộ lại sau mỗi lần bài viết thay đổi.
+được ghi **chỉ từ server** bằng service role key.
+
+Tìm kiếm có **hai backend**, `src/lib/search.ts` tự chọn: Meilisearch nếu đặt
+`MEILISEARCH_HOST`, còn không thì full-text search của Postgres (cột `tsvector` + GIN index).
+Nhờ vậy deploy lên Vercel không cần host thêm dịch vụ nào — xem
+[docs/DEPLOY-VERCEL.md](docs/DEPLOY-VERCEL.md).
 
 ---
 
@@ -109,7 +115,7 @@ src/
 | CRUD bài viết | `src/server/actions/articles.ts`, form ở `components/admin/article-form.tsx` |
 | Quản lý danh mục (lồng nhau) | `src/server/actions/taxonomy.ts`, `/admin/categories` |
 | Hệ thống tag | `/admin/tags`, trang công khai `/tags` và `/tags/[slug]` |
-| Tìm kiếm toàn văn | Meilisearch — `src/lib/meili.ts`, `/api/search`, ⌘K và trang `/search` |
+| Tìm kiếm toàn văn | `src/lib/search.ts` chọn Meilisearch (`meili.ts`) hoặc Postgres FTS (`search-postgres.ts`); `/api/search`, ⌘K, trang `/search` |
 | Tải ảnh lên | Supabase Storage — `src/lib/storage.ts`, `/api/upload`, kéo–thả ở `components/admin/image-upload.tsx` |
 | Phân quyền | `Role` = USER / EDITOR / ADMIN — `src/lib/roles.ts`, chặn tại `app/[locale]/admin/layout.tsx` |
 | SEO | `src/lib/seo.ts` (metadata + JSON-LD), `sitemap.ts`, `robots.ts`, hreflang vi/en |
@@ -313,6 +319,18 @@ gỡ đoạn đó đi.
 
 ## 8. Triển khai
 
+**Vercel (khuyến nghị)** — không cần VPS, không cần host Meilisearch:
+[docs/DEPLOY-VERCEL.md](docs/DEPLOY-VERCEL.md) có đủ danh sách biến môi trường và các bẫy.
+
+**VPS tự quản** — `Dockerfile` + `docker-compose.prod.yml` + `Caddyfile` đã sẵn sàng
+(Caddy → Next → Meilisearch, HTTPS tự động, Meilisearch không mở port ra internet):
+
+```bash
+docker compose -f docker-compose.prod.yml --env-file .env.prod up -d --build
+```
+
+**Chạy tay:**
+
 ```bash
 npm run build     # đã bao gồm prisma generate
 npm run start
@@ -322,7 +340,7 @@ Checklist trước khi lên production:
 
 - [ ] `AUTH_SECRET` mới, không dùng lại giá trị dev
 - [ ] `NEXT_PUBLIC_SITE_URL` trỏ đúng domain thật (ảnh hưởng canonical, sitemap, OG)
-- [ ] `DATABASE_URL` dùng pooler 6543 + `pgbouncer=true`; serverless thêm `connection_limit=1`
+- [ ] `DATABASE_URL` dùng pooler 6543 + `pgbouncer=true` + `connection_limit=5`
 - [ ] `DIRECT_URL` chỉ đặt ở nơi chạy migration, không cần trong runtime của app
 - [ ] `SUPABASE_SERVICE_ROLE_KEY` là biến server (không có tiền tố `NEXT_PUBLIC_`)
 - [ ] Đã chạy `supabase/storage-setup.sql`; kiểm tra bucket không có policy ghi cho `anon`
