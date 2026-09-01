@@ -109,6 +109,11 @@ export default async function LocaleLayout({
       className={`${inter.variable} ${playfair.variable}`}
     >
       <body className="min-h-dvh font-sans">
+        {/* Hiệu ứng hiện dần dựng sẵn opacity:0 vào HTML rồi mới gỡ ra bằng JS.
+            Không có JS thì nội dung sẽ vô hình vĩnh viễn — trả lại ngay. */}
+        <noscript>
+          <style>{`[style*="opacity:0"]{opacity:1!important;transform:none!important}`}</style>
+        </noscript>
         <NextIntlClientProvider>
           <Providers>
             <JsonLd data={websiteJsonLd(locale as Locale)} />

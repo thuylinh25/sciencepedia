@@ -1,6 +1,6 @@
 "use client";
 
-import type { ReactNode } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 import { motion, useReducedMotion, type Variants } from "framer-motion";
 import { cn } from "@/lib/utils";
 
@@ -13,6 +13,30 @@ const OFFSET: Record<Direction, { x: number; y: number }> = {
   right: { x: -28, y: 0 },
   none: { x: 0, y: 0 },
 };
+
+/**
+ * Lưới bài viết đi kèm hiệu ứng hiện dần, nhưng nội dung không được phụ thuộc
+ * vào hiệu ứng đó.
+ *
+ * HTML dựng sẵn ở máy chủ đã mang `opacity: 0` trên từng phần tử, và chỉ
+ * IntersectionObserver phía client mới gỡ nó ra. Có những môi trường observer
+ * không bao giờ chạy — WebView trong ứng dụng (trình duyệt của Facebook), hoặc
+ * phần tử mount lúc tài liệu đang ẩn khi điều hướng phía client. Khi đó cả lưới
+ * bài viết vô hình vĩnh viễn mà vẫn chiếm đủ chiều cao, đẩy phân trang khỏi màn
+ * hình: người đọc thấy một trang trắng.
+ *
+ * Hẹn giờ này là lưới an toàn — quá thời gian chờ thì hiện ra bất kể observer.
+ */
+function useRevealFallback(delay = 600): boolean {
+  const [expired, setExpired] = useState(false);
+
+  useEffect(() => {
+    const timer = window.setTimeout(() => setExpired(true), delay);
+    return () => window.clearTimeout(timer);
+  }, [delay]);
+
+  return expired;
+}
 
 /**
  * Hiện dần khi cuộn tới. Tự tắt chuyển động nếu người dùng bật
@@ -38,11 +62,13 @@ export function Reveal({
   const reduced = useReducedMotion();
   const offset = reduced ? OFFSET.none : OFFSET[direction];
   const Component = motion[as];
+  const fallback = useRevealFallback();
 
   return (
     <Component
       className={cn(className)}
       initial={{ opacity: 0, ...offset }}
+      animate={fallback ? { opacity: 1, x: 0, y: 0 } : undefined}
       whileInView={{ opacity: 1, x: 0, y: 0 }}
       viewport={{ once, margin: "-80px" }}
       transition={{
@@ -79,12 +105,14 @@ export function StaggerGroup({
   className?: string;
 }) {
   const reduced = useReducedMotion();
+  const fallback = useRevealFallback();
 
   return (
     <motion.div
       className={cn(className)}
       variants={containerVariants}
       initial={reduced ? false : "hidden"}
+      animate={fallback ? "show" : undefined}
       whileInView="show"
       viewport={{ once: true, margin: "-60px" }}
     >
