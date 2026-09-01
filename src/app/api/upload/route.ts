@@ -2,7 +2,7 @@ import type { NextRequest } from "next/server";
 
 import { prisma } from "@/lib/prisma";
 import { authErrorResponse, requireRole } from "@/lib/rbac";
-import { rateLimit } from "@/lib/rate-limit";
+import { rateLimitShared } from "@/lib/rate-limit";
 import {
   ALLOWED_MIME,
   MAX_UPLOAD_BYTES,
@@ -27,8 +27,21 @@ export async function POST(request: NextRequest) {
       return Response.json({ error: "STORAGE_NOT_CONFIGURED" }, { status: 503 });
     }
 
-    if (!rateLimit(`upload:${user.id}`, { limit: 40, windowMs: 60_000 }).ok) {
-      return Response.json({ error: "RATE_LIMITED" }, { status: 429 });
+    // Bộ đếm dùng chung: chặn được cả khi request rơi vào nhiều instance khác nhau
+    const limit = await rateLimitShared(`upload:${user.id}`, {
+      limit: 40,
+      windowMs: 60_000,
+    });
+    if (!limit.ok) {
+      return Response.json(
+        { error: "RATE_LIMITED" },
+        {
+          status: 429,
+          headers: {
+            "Retry-After": String(Math.ceil(limit.retryAfterMs / 1000)),
+          },
+        },
+      );
     }
 
     const form = await request.formData();

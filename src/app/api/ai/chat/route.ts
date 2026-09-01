@@ -3,7 +3,7 @@ import { NextRequest } from "next/server";
 import { chatSchema } from "@/lib/validations";
 import { searchSlugsForRag } from "@/lib/search";
 import { prisma } from "@/lib/prisma";
-import { rateLimit } from "@/lib/rate-limit";
+import { rateLimitShared } from "@/lib/rate-limit";
 import { auth } from "@/auth";
 import { AiError, isConfigured, streamAnswer } from "@/lib/ai";
 
@@ -105,7 +105,10 @@ export async function POST(request: NextRequest) {
   const session = await auth();
   const ip =
     request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ?? "unknown";
-  const limit = rateLimit(session?.user?.id ?? `ip:${ip}`, {
+  // rateLimitShared: bộ đếm nằm trong Postgres nên đúng cả khi chạy nhiều
+  // instance serverless. Endpoint này tốn quota Gemini nên không được để hạn
+  // mức bị nhân lên theo số lambda đang sống.
+  const limit = await rateLimitShared(session?.user?.id ?? `ip:${ip}`, {
     limit: session?.user ? 30 : 10,
     windowMs: 60_000,
   });

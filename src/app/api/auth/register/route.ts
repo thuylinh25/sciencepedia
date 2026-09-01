@@ -4,16 +4,28 @@ import type { NextRequest } from "next/server";
 
 import { prisma } from "@/lib/prisma";
 import { registerSchema } from "@/lib/validations";
-import { rateLimit } from "@/lib/rate-limit";
+import { rateLimitShared } from "@/lib/rate-limit";
 
 export const runtime = "nodejs";
 
 export async function POST(request: NextRequest) {
   const ip =
     request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ?? "unknown";
-  const limit = rateLimit(`register:${ip}`, { limit: 5, windowMs: 600_000 });
+  // Bộ đếm dùng chung: chống spam tạo tài khoản kể cả khi có nhiều instance
+  const limit = await rateLimitShared(`register:${ip}`, {
+    limit: 5,
+    windowMs: 600_000,
+  });
   if (!limit.ok) {
-    return Response.json({ error: "RATE_LIMITED" }, { status: 429 });
+    return Response.json(
+      { error: "RATE_LIMITED" },
+      {
+        status: 429,
+        headers: {
+          "Retry-After": String(Math.ceil(limit.retryAfterMs / 1000)),
+        },
+      },
+    );
   }
 
   const parsed = registerSchema.safeParse(await request.json().catch(() => null));
