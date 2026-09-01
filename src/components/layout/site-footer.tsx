@@ -1,22 +1,35 @@
-import { getTranslations } from "next-intl/server";
+import { getLocale, getTranslations } from "next-intl/server";
 import { Github, Mail, Rss } from "lucide-react";
 
 import { Link } from "@/i18n/navigation";
+import type { Locale } from "@/i18n/routing";
+import { getRootCategories } from "@/server/queries";
 import { Logo } from "@/components/layout/logo";
 import { Separator } from "@/components/ui/separator";
 
 export async function SiteFooter() {
   const t = await getTranslations("footer");
   const tNav = await getTranslations("nav");
+  const locale = (await getLocale()) as Locale;
   const year = new Date().getFullYear();
+
+  // Cùng lý do như thanh điều hướng: danh sách ghim cứng bỏ sót lĩnh vực mới
+  let categories: { slug: string; name: string; nameEn: string }[] = [];
+  try {
+    categories = await getRootCategories();
+  } catch (error) {
+    console.warn("[footer] không nạp được danh mục:", (error as Error).message);
+  }
 
   const explore = [
     { href: "/categories", label: tNav("categories") },
-    { href: "/categories/vu-tru", label: tNav("cosmos") },
-    { href: "/categories/suc-khoe", label: tNav("health") },
+    ...categories.map((category) => ({
+      href: `/categories/${category.slug}`,
+      label: locale === "en" ? category.nameEn : category.name,
+    })),
     { href: "/solar-system", label: tNav("solarSystem") },
     { href: "/assistant", label: tNav("assistant") },
-  ] as const;
+  ];
 
   const legal = [
     { href: "/privacy", label: t("privacy") },

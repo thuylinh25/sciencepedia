@@ -1,10 +1,11 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useTranslations } from "next-intl";
-import { Menu, Orbit, Search, Sparkles } from "lucide-react";
+import { useLocale, useTranslations } from "next-intl";
+import { ChevronDown, Menu, Orbit, Search, Sparkles } from "lucide-react";
 
 import { Link, usePathname } from "@/i18n/navigation";
+import type { Locale } from "@/i18n/routing";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import {
@@ -14,27 +15,45 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import { Separator } from "@/components/ui/separator";
+import { CategoryIcon } from "@/components/category-icon";
 import { ThemeToggle } from "@/components/layout/theme-toggle";
 import { LocaleSwitcher } from "@/components/layout/locale-switcher";
 import { UserMenu } from "@/components/layout/user-menu";
 import { SearchCommand } from "@/components/search/search-command";
 import { Logo } from "@/components/layout/logo";
 
+/** Lĩnh vực gốc — do layout truyền vào từ CSDL, xem `NavCategory`. */
+export type NavCategory = {
+  slug: string;
+  name: string;
+  nameEn: string;
+  icon: string | null;
+};
+
 const NAV = [
-  { href: "/categories", key: "explore" as const },
-  { href: "/categories/vu-tru", key: "cosmos" as const },
-  { href: "/categories/suc-khoe", key: "health" as const },
   { href: "/solar-system", key: "solarSystem" as const, icon: Orbit },
   { href: "/assistant", key: "assistant" as const, icon: Sparkles },
 ];
 
-export function SiteHeader() {
+export function SiteHeader({ categories }: { categories: NavCategory[] }) {
   const t = useTranslations("nav");
+  const locale = useLocale() as Locale;
   const pathname = usePathname();
+
   const [scrolled, setScrolled] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+
+  const categoryName = (category: NavCategory) =>
+    locale === "en" ? category.nameEn : category.name;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -82,6 +101,48 @@ export function SiteHeader() {
           </Link>
 
           <nav className="ml-6 hidden items-center gap-7 lg:flex">
+            {/* Xếp ngang cả 5 lĩnh vực sẽ đẩy thanh nav quá bề ngang khả dụng
+                (riêng "Trái Đất và Khí hậu" đã ~150px), nên gom vào menu xổ. */}
+            {categories.length > 0 ? (
+              <DropdownMenu>
+                <DropdownMenuTrigger
+                  data-active={isActive("/categories")}
+                  className={cn(
+                    "link-underline flex items-center gap-1 text-sm font-medium text-muted-foreground transition-colors outline-none hover:text-foreground focus-visible:text-foreground",
+                    isActive("/categories") && "text-foreground",
+                  )}
+                >
+                  {t("explore")}
+                  <ChevronDown className="size-4" />
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="start" className="w-60">
+                  {categories.map((category) => (
+                    <DropdownMenuItem key={category.slug} asChild>
+                      <Link href={`/categories/${category.slug}`}>
+                        <CategoryIcon name={category.icon} className="size-4" />
+                        {categoryName(category)}
+                      </Link>
+                    </DropdownMenuItem>
+                  ))}
+                  <DropdownMenuSeparator />
+                  <DropdownMenuItem asChild>
+                    <Link href="/categories">{t("categories")}</Link>
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+            ) : (
+              <Link
+                href="/categories"
+                data-active={isActive("/categories")}
+                className={cn(
+                  "link-underline text-sm font-medium text-muted-foreground transition-colors hover:text-foreground",
+                  isActive("/categories") && "text-foreground",
+                )}
+              >
+                {t("explore")}
+              </Link>
+            )}
+
             {NAV.map((item) => (
               <Link
                 key={item.href}
@@ -148,7 +209,36 @@ export function SiteHeader() {
                   </SheetTitle>
                 </SheetHeader>
                 <Separator />
-                <nav className="flex flex-col gap-1 px-4">
+                {/* Drawer phải cuộn được: danh sách lĩnh vực dài ra theo dữ
+                    liệu, màn hình thấp sẽ không đủ chỗ cho cả khối cài đặt. */}
+                <nav className="flex flex-col gap-1 overflow-y-auto px-4">
+                  <Link
+                    href="/categories"
+                    onClick={() => setMobileOpen(false)}
+                    className={cn(
+                      "flex items-center gap-3 rounded-xl px-3 py-3 text-base font-medium transition-colors hover:bg-muted",
+                      isActive("/categories") && "bg-muted text-primary",
+                    )}
+                  >
+                    {t("explore")}
+                  </Link>
+
+                  {categories.map((category) => (
+                    <Link
+                      key={category.slug}
+                      href={`/categories/${category.slug}`}
+                      onClick={() => setMobileOpen(false)}
+                      className={cn(
+                        "ml-3 flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground",
+                        isActive(`/categories/${category.slug}`) &&
+                          "bg-muted text-primary",
+                      )}
+                    >
+                      <CategoryIcon name={category.icon} className="size-4" />
+                      {categoryName(category)}
+                    </Link>
+                  ))}
+
                   {NAV.map((item) => (
                     <Link
                       key={item.href}

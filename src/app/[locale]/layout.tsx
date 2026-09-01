@@ -6,8 +6,9 @@ import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 
 import { routing, type Locale } from "@/i18n/routing";
+import { getRootCategories } from "@/server/queries";
 import { Providers } from "@/components/providers";
-import { SiteHeader } from "@/components/layout/site-header";
+import { SiteHeader, type NavCategory } from "@/components/layout/site-header";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { AssistantLauncher } from "@/components/ai/assistant-launcher";
 import { Toaster } from "@/components/ui/sonner";
@@ -64,6 +65,28 @@ export async function generateMetadata({
   };
 }
 
+/**
+ * Lĩnh vực trên thanh điều hướng lấy thẳng từ CSDL — trước đây danh sách bị
+ * ghim cứng nên thêm lĩnh vực mới là menu không có.
+ *
+ * `getRootCategories` đã được cache nên layout vẫn render tĩnh được; bọc
+ * try/catch để `next build` không gãy khi không kết nối được CSDL.
+ */
+async function navCategories(): Promise<NavCategory[]> {
+  try {
+    const categories = await getRootCategories();
+    return categories.map(({ slug, name, nameEn, icon }) => ({
+      slug,
+      name,
+      nameEn,
+      icon,
+    }));
+  } catch (error) {
+    console.warn("[layout] không nạp được danh mục:", (error as Error).message);
+    return [];
+  }
+}
+
 export default async function LocaleLayout({
   children,
   params,
@@ -76,6 +99,8 @@ export default async function LocaleLayout({
 
   // Bật static rendering cho toàn bộ cây bên dưới
   setRequestLocale(locale);
+
+  const categories = await navCategories();
 
   return (
     <html
@@ -94,7 +119,7 @@ export default async function LocaleLayout({
               Bỏ qua tới nội dung chính
             </a>
             <div className="flex min-h-dvh flex-col">
-              <SiteHeader />
+              <SiteHeader categories={categories} />
               <main id="main" className="flex-1">
                 {children}
               </main>
