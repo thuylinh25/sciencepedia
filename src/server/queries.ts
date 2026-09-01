@@ -109,24 +109,30 @@ export async function listArticles({
         ? { title: "asc" }
         : { publishedAt: "desc" };
 
-  const [items, total] = await Promise.all([
+  const findPage = (target: number) =>
     prisma.article.findMany({
       where,
       select: articleCardSelect,
       orderBy,
-      skip: (page - 1) * perPage,
+      skip: (target - 1) * perPage,
       take: perPage,
-    }),
+    });
+
+  const requested = Math.max(1, Math.trunc(page) || 1);
+  const [optimistic, total] = await Promise.all([
+    findPage(requested),
     prisma.article.count({ where }),
   ]);
 
-  return {
-    items,
-    total,
-    page,
-    perPage,
-    totalPages: Math.max(1, Math.ceil(total / perPage)),
-  };
+  const totalPages = Math.max(1, Math.ceil(total / perPage));
+
+  // Trang vượt quá số trang thật (link cũ, URL gõ tay, bài bị gỡ sau khi trang
+  // được cache) phải rơi về trang cuối thay vì trả lưới rỗng — và `page` trả ra
+  // là trang thật sự đang hiển thị, để thanh phân trang không trỏ đi đâu khác.
+  const current = Math.min(requested, totalPages);
+  const items = current === requested ? optimistic : await findPage(current);
+
+  return { items, total, page: current, perPage, totalPages };
 }
 
 /** `cache` của React gộp các lần gọi trùng trong cùng một request. */
@@ -222,35 +228,98 @@ export const getPublishedSlugs = unstable_cache(
 
 // ---------------------------------------------------------------- Danh mục
 
-export const getRootCategories = unstable_cache(
-  async () =>
-    prisma.category.findMany({
-      where: { parentId: null },
-      orderBy: { order: "asc" },
-      include: {
-        children: {
-          orderBy: { order: "asc" },
-          include: { _count: { select: { articles: true } } },
-        },
-        _count: { select: { articles: true } },
-      },
+/**
+ * Số bài PUBLISHED của từng danh mục, đã cộng dồn cả nhánh con.
+ *
+ * `_count.articles` của Prisma chỉ đếm bài gán trực tiếp và không lọc trạng
+ * thái. Bài viết luôn nằm ở danh mục lá (ví dụ "Hệ Mặt Trời"), nên danh mục gốc
+ * như "Vũ trụ" hiển thị 0 bài dù `listArticles` vẫn trả về bài của cả nhánh.
+ */
+const publishedCountByCategory = cache(async () => {
+  const [groups, tree] = await Promise.all([
+    prisma.article.groupBy({
+      by: ["categoryId"],
+      where: PUBLISHED,
+      _count: { _all: true },
     }),
+    prisma.category.findMany({ select: { id: true, parentId: true } }),
+  ]);
+
+  const parentOf = new Map(tree.map(({ id, parentId }) => [id, parentId]));
+  const totals = new Map<string, number>(tree.map(({ id }) => [id, 0]));
+
+  for (const group of groups) {
+    // Cộng cho chính danh mục và mọi tổ tiên của nó. `seen` chặn vòng lặp vô
+    // hạn nếu cây danh mục bị hỏng (hai danh mục trỏ vòng về nhau).
+    const seen = new Set<string>();
+    let cursor: string | null | undefined = group.categoryId;
+
+    while (cursor && !seen.has(cursor)) {
+      seen.add(cursor);
+      totals.set(cursor, (totals.get(cursor) ?? 0) + group._count._all);
+      cursor = parentOf.get(cursor);
+    }
+  }
+
+  return totals;
+});
+
+/** Thay `_count.articles` bằng con số đã cộng dồn ở trên. */
+function withRolledUpCount<
+  T extends { id: string; _count: { articles: number } },
+>(category: T, totals: Map<string, number>): T {
+  return {
+    ...category,
+    _count: { ...category._count, articles: totals.get(category.id) ?? 0 },
+  };
+}
+
+export const getRootCategories = unstable_cache(
+  async () => {
+    const [categories, totals] = await Promise.all([
+      prisma.category.findMany({
+        where: { parentId: null },
+        orderBy: { order: "asc" },
+        include: {
+          children: {
+            orderBy: { order: "asc" },
+            include: { _count: { select: { articles: true } } },
+          },
+          _count: { select: { articles: true } },
+        },
+      }),
+      publishedCountByCategory(),
+    ]);
+
+    return categories.map((category) => ({
+      ...withRolledUpCount(category, totals),
+      children: category.children.map((child) =>
+        withRolledUpCount(child, totals),
+      ),
+    }));
+  },
   ["root-categories"],
-  { revalidate: 600, tags: ["categories"] },
+  { revalidate: 600, tags: ["categories", "articles"] },
 );
 
 export const getAllCategories = unstable_cache(
-  async () =>
-    prisma.category.findMany({
-      orderBy: [{ order: "asc" }, { name: "asc" }],
-      include: { _count: { select: { articles: true } } },
-    }),
+  async () => {
+    const [categories, totals] = await Promise.all([
+      prisma.category.findMany({
+        orderBy: [{ order: "asc" }, { name: "asc" }],
+        include: { _count: { select: { articles: true } } },
+      }),
+      publishedCountByCategory(),
+    ]);
+
+    return categories.map((category) => withRolledUpCount(category, totals));
+  },
   ["all-categories"],
-  { revalidate: 600, tags: ["categories"] },
+  { revalidate: 600, tags: ["categories", "articles"] },
 );
 
-export const getCategoryBySlug = cache(async (slug: string) =>
-  prisma.category.findUnique({
+export const getCategoryBySlug = cache(async (slug: string) => {
+  const category = await prisma.category.findUnique({
     where: { slug },
     include: {
       parent: { select: { slug: true, name: true, nameEn: true } },
@@ -260,8 +329,18 @@ export const getCategoryBySlug = cache(async (slug: string) =>
       },
       _count: { select: { articles: true } },
     },
-  }),
-);
+  });
+  if (!category) return null;
+
+  const totals = await publishedCountByCategory();
+
+  return {
+    ...withRolledUpCount(category, totals),
+    children: category.children.map((child) =>
+      withRolledUpCount(child, totals),
+    ),
+  };
+});
 
 // ---------------------------------------------------------------- Thẻ
 

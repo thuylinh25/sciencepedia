@@ -63,7 +63,6 @@ export default async function CategoryPage({
   setRequestLocale(locale);
 
   const { page: rawPage } = await searchParams;
-  const page = Math.max(1, Number(rawPage) || 1);
 
   const category = await getCategoryBySlug(slug);
   if (!category) notFound();
@@ -77,8 +76,9 @@ export default async function CategoryPage({
       ? (category.descriptionEn ?? category.description)
       : category.description;
 
-  const { items, totalPages } = await listArticles({
-    page,
+  // `page` trả về đã được kẹp vào khoảng trang thật sự có bài
+  const { items, page, totalPages } = await listArticles({
+    page: Math.max(1, Number(rawPage) || 1),
     perPage: 12,
     categorySlug: category.slug,
   });

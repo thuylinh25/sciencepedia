@@ -38,13 +38,13 @@ export default async function ArticlesPage({
   setRequestLocale(locale);
 
   const { page: rawPage, sort } = await searchParams;
-  const page = Math.max(1, Number(rawPage) || 1);
 
   const t = await getTranslations("nav");
   const tHome = await getTranslations("home");
 
-  const { items, totalPages } = await listArticles({
-    page,
+  // `page` trả về đã được kẹp vào khoảng trang thật sự có bài
+  const { items, page, totalPages } = await listArticles({
+    page: Math.max(1, Number(rawPage) || 1),
     perPage: PER_PAGE,
     sort: sort === "popular" ? "popular" : "newest",
   });
@@ -57,6 +57,7 @@ export default async function ArticlesPage({
         page={page}
         totalPages={totalPages}
         basePath="/articles"
+        extraQuery={{ sort }}
         className="mt-14"
       />
     </div>

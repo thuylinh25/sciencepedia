@@ -20,14 +20,14 @@ export default async function AdminArticlesPage({
   setRequestLocale(locale);
 
   const { page: rawPage, q } = await searchParams;
-  const page = Math.max(1, Number(rawPage) || 1);
+  const requestedPage = Math.max(1, Number(rawPage) || 1);
   const t = await getTranslations("admin");
 
   const where = q
     ? { title: { contains: q, mode: "insensitive" as const } }
     : {};
 
-  const [articles, total] = await Promise.all([
+  const findPage = (target: number) =>
     prisma.article.findMany({
       where,
       select: {
@@ -41,11 +41,19 @@ export default async function AdminArticlesPage({
         category: { select: { name: true, nameEn: true, color: true } },
       },
       orderBy: { updatedAt: "desc" },
-      skip: (page - 1) * PER_PAGE,
+      skip: (target - 1) * PER_PAGE,
       take: PER_PAGE,
-    }),
+    });
+
+  const [optimistic, total] = await Promise.all([
+    findPage(requestedPage),
     prisma.article.count({ where }),
   ]);
+
+  const totalPages = Math.max(1, Math.ceil(total / PER_PAGE));
+  // Xoá bài ở trang cuối làm hụt một trang; đừng để lại bảng rỗng.
+  const page = Math.min(requestedPage, totalPages);
+  const articles = page === requestedPage ? optimistic : await findPage(page);
 
   return (
     <div className="space-y-6">
@@ -65,7 +73,7 @@ export default async function AdminArticlesPage({
 
       <Pagination
         page={page}
-        totalPages={Math.max(1, Math.ceil(total / PER_PAGE))}
+        totalPages={totalPages}
         basePath="/admin/articles"
         extraQuery={{ q }}
       />

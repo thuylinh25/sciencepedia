@@ -52,7 +52,7 @@ export default async function SearchPage({
 
   const sp = await searchParams;
   const query = (sp.q ?? "").trim();
-  const page = Math.max(1, Number(sp.page) || 1);
+  const requestedPage = Math.max(1, Number(sp.page) || 1);
   const sort =
     sp.sort === "newest" || sp.sort === "popular" ? sp.sort : "relevance";
 
@@ -62,22 +62,32 @@ export default async function SearchPage({
 
   // `search()` tự chọn Meilisearch hoặc Postgres và không ném lỗi —
   // backend === "none" nghĩa là cả hai đều không dùng được.
-  const result =
+  const runSearch = (target: number) =>
+    search({
+      query,
+      categorySlug: sp.category,
+      limit: PER_PAGE,
+      offset: (target - 1) * PER_PAGE,
+      sort,
+    });
+
+  let result =
     query.length >= 2
-      ? await search({
-          query,
-          categorySlug: sp.category,
-          limit: PER_PAGE,
-          offset: (page - 1) * PER_PAGE,
-          sort,
-        })
+      ? await runSearch(requestedPage)
       : { hits: [], total: 0, backend: "postgres" as const };
+
+  const totalPages = Math.max(1, Math.ceil(result.total / PER_PAGE));
+
+  // Số kết quả thay đổi giữa hai lần tìm (bài mới đăng, bộ lọc đổi) có thể để
+  // lại link trỏ tới trang không còn tồn tại — rơi về trang cuối thay vì rỗng.
+  const page = Math.min(requestedPage, totalPages);
+  if (page !== requestedPage && result.total > 0) {
+    result = await runSearch(page);
+  }
 
   const hits = result.hits;
   const total = result.total;
   const failed = result.backend === "none";
-
-  const totalPages = Math.max(1, Math.ceil(total / PER_PAGE));
 
   return (
     <div className="container-page py-14">

@@ -56,7 +56,6 @@ export default async function TagPage({
   setRequestLocale(locale);
 
   const { page: rawPage } = await searchParams;
-  const page = Math.max(1, Number(rawPage) || 1);
 
   const tag = await getTagBySlug(slug);
   if (!tag) notFound();
@@ -66,8 +65,9 @@ export default async function TagPage({
   const tCategory = await getTranslations("category");
 
   const name = loc === "en" ? tag.nameEn : tag.name;
-  const { items, totalPages } = await listArticles({
-    page,
+  // `page` trả về đã được kẹp vào khoảng trang thật sự có bài
+  const { items, page, totalPages } = await listArticles({
+    page: Math.max(1, Number(rawPage) || 1),
     perPage: 12,
     tagSlug: tag.slug,
   });
