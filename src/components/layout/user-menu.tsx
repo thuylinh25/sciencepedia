@@ -38,7 +38,7 @@ export function UserMenu() {
 
   if (!session?.user) {
     return (
-      <Button asChild size="sm" className="ml-1">
+      <Button asChild size="sm" className="ml-1 shrink-0">
         <Link href="/login">{t("login")}</Link>
       </Button>
     );

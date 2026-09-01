@@ -97,5 +97,9 @@
     "@parcel/watcher": true,
     "@google/genai": true,
     "@swc/core": true
+  },
+  "overrides": {
+    "postcss": "^8.5.26",
+    "deepmerge-ts": "^8.0.2"
   }
 }

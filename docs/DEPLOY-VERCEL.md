@@ -75,6 +75,30 @@ build đổ ngay hoặc đăng nhập không hoạt động. Đây là danh sác
 **Không cần** `AUTH_URL` trên Vercel — `AUTH_TRUST_HOST` đã bật và Auth.js tự
 suy ra host từ request.
 
+Ba biến trong `.env` local trỏ `localhost`, **đừng dán nguyên sang Vercel**:
+`AUTH_URL` (bỏ trống), `MEILISEARCH_HOST` (bỏ trống → dùng Postgres FTS),
+`NEXT_PUBLIC_SITE_URL` (đổi thành domain thật, nếu sai thì canonical, sitemap
+và OG image đều sai theo).
+
+### Type `Config` hay `Secret`
+
+Vercel phân biệt hai loại. `Secret` mã hoá, **không đọc lại được** — kể cả
+`vercel env pull` cũng chỉ trả `[SENSITIVE]`, nên khi nghi giá trị sai thì
+không xác minh được, chỉ ghi đè được.
+
+Mọi biến `NEXT_PUBLIC_*` **bắt buộc** là `Config`, Vercel chặn nếu để `Secret`:
+
+> `NEXT_PUBLIC_` exposes this value to anyone visiting your site, so
+> `NEXT_PUBLIC_SITE_URL` cannot be a Secret.
+
+Hợp lý — Next.js nhúng thẳng các biến này vào JS gửi xuống trình duyệt, gọi
+chúng là bí mật chỉ tạo cảm giác an toàn giả. Lưu ý biến tạo trước khi Vercel
+áp luật này vẫn đang ở trạng thái `Secret`; đặt lại bằng:
+
+```bash
+vercel env add NEXT_PUBLIC_SITE_URL production,preview --force --type config --yes
+```
+
 ### Cảnh báo về `connection_limit`
 
 ```
@@ -113,6 +137,68 @@ Rồi vào `https://<project>.vercel.app/api/health` để kiểm tra:
 
 ---
 
+## Ba cạm bẫy đã làm đổ lần deploy đầu
+
+Ghi lại để lần sau không mất thêm một buổi. Cả ba đều không có cảnh báo nào ở
+giao diện Vercel — chỉ lộ ra khi đọc build log.
+
+### Vercel nhận biến môi trường rỗng mà không báo gì
+
+Triệu chứng: build chết ngay ở lệnh đầu của `buildCommand`.
+
+```
+Error code: P1012
+Error validating datasource `db`: You must provide a nonempty direct URL.
+The environment variable `DIRECT_URL` resolved to an empty string.
+```
+
+Đọc kỹ: **"resolved to an empty string"**, không phải `"not found"`. Nghĩa là
+biến **có tồn tại** nhưng giá trị trống — dán thiếu, hoặc bấm Save khi ô còn
+rỗng. Vercel chấp nhận value rỗng không một lời cảnh báo (kiểm chứng được:
+`vercel env add X production --value ""` chạy trót lọt).
+
+Hệ quả nguy hiểm hơn: biến rỗng **không** làm đổ build thì nó lặng lẽ làm hỏng
+tính năng lúc chạy. `GEMINI_API_KEY` và `OPENROUTER_API_KEY` cùng rỗng khiến
+trợ lý AI trả `503 NOT_CONFIGURED`, còn phần còn lại của web vẫn bình thường.
+
+Cách kiểm nhanh không cần mở dashboard — biến type Secret không đọc lại được
+giá trị, nên probe qua API thay vì đọc env:
+
+```bash
+# 400 INVALID_INPUT = key co that. 503 NOT_CONFIGURED = key rong.
+curl -s -X POST -H "Content-Type: application/json" -d '{}' \
+  https://<project>.vercel.app/api/ai/chat
+```
+
+### Deployment cũ giữ nguyên biến môi trường vĩnh viễn
+
+Vercel gắn cứng env vào từng deployment **lúc deploy**. Sửa biến trong Settings
+**không** áp ngược vào các deployment đã tạo — kể cả bản Preview mở hôm qua.
+Sau khi sửa env bắt buộc phải **Redeploy**, và phải kiểm tra trên URL của
+deployment mới, không phải URL cũ còn mở trong tab.
+
+### npm 12 chặn install script, Prisma không tải được query engine
+
+Trong build log, đoạn này trông như warning vô hại nhưng là lỗi thật sắp xảy ra:
+
+```
+npm warn allow-scripts 10 packages have install scripts not yet covered by allowScripts:
+  @prisma/engines@6.19.3 (postinstall: node scripts/postinstall.js)
+  sharp@0.34.5 (install: node install/check.js || npm run build)
+```
+
+npm 12 mặc định không chạy install script. `@prisma/engines` cần postinstall để
+tải query engine binary. Máy local không lộ lỗi vì `node_modules` đã cài từ
+trước bằng npm cũ; Vercel install sạch từ đầu nên mới thấy.
+
+Đã khai báo sẵn trong `package.json` bằng `npm approve-scripts`. **Không pin
+version** (`npm approve-scripts --no-allow-scripts-pin`): `package-lock.json`
+đã khoá version rồi, pin thêm ở đây không tăng bảo mật mà mỗi lần bump dep là
+build đổ lại. Đã dính đúng cái bẫy này khi `sharp` lên 0.35.4 trong lúc
+`allowScripts` còn ghim `sharp@0.34.5`.
+
+---
+
 ## Những điểm cần biết khi chạy trên Vercel
 
 ### Tìm kiếm chậm và kém hơn Meilisearch
@@ -123,14 +209,19 @@ quả) và không có facet. Meilisearch xử lý được cả hai. Đã đo b�
 nhưng khi kho lớn lên vài nghìn bài thì nên cân nhắc Meilisearch Cloud và đặt
 lại `MEILISEARCH_HOST`. Code tự chuyển, không phải sửa gì.
 
-### Rate limit không đáng tin trên serverless
+### Rate limit — đã dùng chung qua Postgres
 
-`src/lib/rate-limit.ts` đếm trong bộ nhớ tiến trình. Vercel chạy nhiều lambda
-độc lập, mỗi cái có bộ đếm riêng, nên hạn mức thực tế bị nhân lên theo số
-instance đang sống. Với endpoint AI (tốn quota Gemini) đây là rủi ro thật.
+`src/lib/rate-limit.ts` có hai hàm, đừng nhầm:
 
-Nếu mở public cho nhiều người dùng, thay bằng Upstash Redis:
-`@upstash/ratelimit` + `@upstash/redis`, sửa đúng một file.
+- `rateLimitShared()` — đếm trong Postgres, **đúng cả khi chạy nhiều lambda**.
+  Đây là hàm mà `/api/ai/chat`, `/api/upload` và `/api/auth/register` dùng, vì
+  chúng tốn quota Gemini hoặc tạo dữ liệu.
+- `rateLimit()` — đếm bằng `Map` trong bộ nhớ tiến trình. Mỗi lambda có bộ đếm
+  riêng nên hạn mức thực tế bị nhân lên theo số instance đang sống. Chỉ dùng
+  được cho những chỗ không quan trọng.
+
+Nếu lượng truy cập lớn tới mức mỗi request thêm một round-trip Postgres là
+đáng kể, cân nhắc Upstash Redis (`@upstash/ratelimit` + `@upstash/redis`).
 
 ### Ảnh phải có hostname trong allowlist
 

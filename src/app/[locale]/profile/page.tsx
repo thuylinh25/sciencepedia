@@ -71,7 +71,7 @@ export default async function ProfilePage({
           </p>
         </div>
 
-        <dl className="grid grid-cols-3 gap-6 text-center">
+        <dl className="grid grid-cols-3 gap-4 text-center sm:gap-6">
           {[
             { label: tAdmin("articles"), value: user._count.articles },
             { label: t("myBookmarks"), value: user._count.bookmarks },

@@ -27,11 +27,14 @@ export function Logo({ className }: { className?: string }) {
           <circle cx="20.2" cy="8.6" r="1.5" fill="currentColor" />
         </svg>
       </span>
-      <span className="flex flex-col leading-none">
-        <span className="font-display text-lg font-bold tracking-tight">
+      {/* data-wordmark: header ẩn khối chữ này ở máy hẹp để còn chỗ cho nút
+          "Đăng nhập" dạng chữ. Drawer và trang đăng nhập có đủ chỗ nên vẫn hiện
+          đầy đủ — vì vậy việc ẩn nằm ở nơi dùng, không nằm ở đây. */}
+      <span data-wordmark className="flex min-w-0 flex-col leading-none">
+        <span className="truncate font-display text-base font-bold tracking-tight sm:text-lg">
           Sciencepedia
         </span>
-        <span className="text-[10px] font-medium tracking-[0.18em] text-muted-foreground uppercase">
+        <span className="hidden text-[10px] font-medium tracking-[0.18em] text-muted-foreground uppercase sm:block">
           Khoa học mở
         </span>
       </span>

@@ -68,8 +68,16 @@ export function SiteHeader() {
             : "border-b border-transparent bg-background/0",
         )}
       >
-        <div className="container-page flex h-16 items-center gap-4 lg:h-20">
-          <Link href="/" className="shrink-0" aria-label="Sciencepedia">
+        <div className="container-page flex h-16 min-w-0 items-center gap-3 sm:gap-4 lg:h-20">
+          {/* Ngân sách bề ngang trên điện thoại chỉ đủ cho một trong hai: chữ
+              "Sciencepedia" (103px) hoặc nút "Đăng nhập" dạng chữ (90px). Giữ
+              nút, vì đó là hành động; logo vẫn còn icon để nhận diện. Từ 400px
+              trở lên đủ chỗ cho cả hai. */}
+          <Link
+            href="/"
+            className="shrink-0 [&_[data-wordmark]]:hidden min-[400px]:[&_[data-wordmark]]:flex"
+            aria-label="Sciencepedia"
+          >
             <Logo />
           </Link>
 
@@ -113,8 +121,13 @@ export function SiteHeader() {
               <Search className="size-5" />
             </Button>
 
-            <LocaleSwitcher />
-            <ThemeToggle />
+            {/* Ngôn ngữ + theme chỉ là cài đặt: trên mobile chúng chiếm ~112px
+                khiến hàng header không co nổi dưới 482px và đẩy nút đăng nhập
+                ra ngoài viewport. Dưới lg, hai nút này nằm trong drawer. */}
+            <div className="hidden items-center gap-1.5 lg:flex">
+              <LocaleSwitcher />
+              <ThemeToggle />
+            </div>
             <UserMenu />
 
             <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
@@ -128,7 +141,7 @@ export function SiteHeader() {
                   <Menu className="size-5" />
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="w-[300px]">
+              <SheetContent side="right" className="w-[85vw] max-w-[320px]">
                 <SheetHeader>
                   <SheetTitle>
                     <Logo />
@@ -151,6 +164,13 @@ export function SiteHeader() {
                     </Link>
                   ))}
                 </nav>
+
+                {/* Ngôn ngữ + theme bị ẩn khỏi thanh header dưới lg, đưa vào đây */}
+                <Separator className="mt-2" />
+                <div className="flex items-center gap-2 px-4 lg:hidden">
+                  <LocaleSwitcher />
+                  <ThemeToggle />
+                </div>
               </SheetContent>
             </Sheet>
           </div>
