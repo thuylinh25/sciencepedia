@@ -199,17 +199,17 @@ async function main() {
       authorId: admin.id,
     };
 
-    // `views` và `publishedAt` chỉ đặt lúc tạo: chạy lại seed để cập nhật nội
-    // dung không được xáo lại lượt xem hay đẩy bài lên đầu "mới nhất".
+    // `publishedAt` chỉ đặt lúc tạo: chạy lại seed để cập nhật nội dung không
+    // được đẩy bài cũ lên đầu mục "mới nhất".
+    //
+    // `views` không đặt ở đây. Trước kia seed gán mỗi bài một con số ngẫu
+    // nhiên 120–4.119, và thanh thống kê ở trang chủ cộng chúng lại rồi trưng
+    // ra như lượt đọc thật — khoảng 45.000 lượt hoàn toàn bịa. Cột này giờ để
+    // mặc định 0 và chỉ tăng khi có người thật mở bài (xem getArticleBySlug).
     const record = await prisma.article.upsert({
       where: { slug: article.slug },
       update: data,
-      create: {
-        slug: article.slug,
-        ...data,
-        views: Math.floor(Math.random() * 4000) + 120,
-        publishedAt,
-      },
+      create: { slug: article.slug, ...data, publishedAt },
     });
 
     // Gán lại thẻ và nguồn từ đầu để seed chạy lại nhiều lần vẫn cho kết quả giống nhau
