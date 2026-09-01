@@ -18,18 +18,33 @@ function readingTime(markdown: string): number {
   return Math.max(1, Math.round(words / 200));
 }
 
-/** Ảnh bìa lấy từ Unsplash theo từ khoá — ổn định vì đã ghim photo id. */
+/**
+ * Ảnh bìa.
+ *
+ * Các bài thiên thể dùng ảnh chụp thật của NASA/ESA lấy từ Wikimedia Commons
+ * (public domain): ảnh stock Unsplash chỉ là bầu trời sao chung chung, không
+ * minh hoạ đúng đối tượng bài viết. URL ghim theo bản thumbnail 1280px —
+ * Wikimedia chỉ chấp nhận một số bề rộng cố định, đổi số sẽ trả về 400.
+ * Các chủ đề còn lại vẫn dùng Unsplash, ổn định vì đã ghim photo id.
+ */
+const WIKIMEDIA = "https://upload.wikimedia.org/wikipedia/commons/thumb";
+const nasaCover = (dir: string, file: string) =>
+  `${WIKIMEDIA}/${dir}/${file}/1280px-${file}`;
+
 const COVERS: Record<string, string> = {
-  "mat-troi":
-    "https://images.unsplash.com/photo-1532798442725-41036acc7489?w=1600&q=80",
-  "trai-dat":
-    "https://images.unsplash.com/photo-1614730321146-b6fa6a46bcb4?w=1600&q=80",
-  "sao-hoa":
-    "https://images.unsplash.com/photo-1614728263952-84ea256f9679?w=1600&q=80",
-  "sao-moc":
-    "https://images.unsplash.com/photo-1630694093867-4b947d812bf0?w=1600&q=80",
-  "sao-tho":
-    "https://images.unsplash.com/photo-1614732414444-096e5f1122d5?w=1600&q=80",
+  // Hệ Mặt Trời — ảnh thật theo đúng thiên thể của từng bài
+  "mat-troi": nasaCover(
+    "b/b4",
+    "The_Sun_by_the_Atmospheric_Imaging_Assembly_of_NASA%27s_Solar_Dynamics_Observatory_-_20100819.jpg",
+  ),
+  "sao-thuy": nasaCover("4/4a", "Mercury_in_true_color.jpg"),
+  "sao-kim": nasaCover("e/e5", "Venus-real_color.jpg"),
+  "trai-dat": nasaCover("9/97", "The_Earth_seen_from_Apollo_17.jpg"),
+  "sao-hoa": nasaCover("0/02", "OSIRIS_Mars_true_color.jpg"),
+  "sao-moc": nasaCover("2/2b", "Jupiter_and_its_shrunken_Great_Red_Spot.jpg"),
+  "sao-tho": nasaCover("c/c7", "Saturn_during_Equinox.jpg"),
+  "sao-thien-vuong": nasaCover("3/3d", "Uranus2.jpg"),
+  "sao-hai-vuong": nasaCover("5/56", "Neptune_Full.jpg"),
   "ho-den":
     "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=1600&q=80",
   "kinh-james-webb":
@@ -159,17 +174,22 @@ async function main() {
       status: "PUBLISHED" as const,
       featured: article.featured ?? false,
       readingTime: readingTime(article.content),
-      views: Math.floor(Math.random() * 4000) + 120,
       seoKeywords: article.seoKeywords ?? null,
-      publishedAt,
       categoryId,
       authorId: admin.id,
     };
 
+    // `views` và `publishedAt` chỉ đặt lúc tạo: chạy lại seed để cập nhật nội
+    // dung không được xáo lại lượt xem hay đẩy bài lên đầu "mới nhất".
     const record = await prisma.article.upsert({
       where: { slug: article.slug },
       update: data,
-      create: { slug: article.slug, ...data },
+      create: {
+        slug: article.slug,
+        ...data,
+        views: Math.floor(Math.random() * 4000) + 120,
+        publishedAt,
+      },
     });
 
     // Gán lại thẻ và nguồn từ đầu để seed chạy lại nhiều lần vẫn cho kết quả giống nhau
