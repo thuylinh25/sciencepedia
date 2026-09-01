@@ -16,6 +16,8 @@ import { Badge } from "@/components/ui/badge";
 
 export const revalidate = 300;
 
+const PER_PAGE = 12;
+
 export async function generateStaticParams() {
   try {
     const categories = await getAllCategories();
@@ -79,7 +81,7 @@ export default async function CategoryPage({
   // `page` trả về đã được kẹp vào khoảng trang thật sự có bài
   const { items, page, totalPages } = await listArticles({
     page: Math.max(1, Number(rawPage) || 1),
-    perPage: 12,
+    perPage: PER_PAGE,
     categorySlug: category.slug,
   });
 
@@ -169,6 +171,8 @@ export default async function CategoryPage({
         <Pagination
           page={page}
           totalPages={totalPages}
+          perPage={PER_PAGE}
+          itemsOnPage={items.length}
           basePath={`/categories/${category.slug}`}
           className="mt-14"
         />

@@ -56,6 +56,8 @@ export default async function ArticlesPage({
       <Pagination
         page={page}
         totalPages={totalPages}
+        perPage={PER_PAGE}
+        itemsOnPage={items.length}
         basePath="/articles"
         extraQuery={{ sort }}
         className="mt-14"

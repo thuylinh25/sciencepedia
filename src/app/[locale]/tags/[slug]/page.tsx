@@ -11,6 +11,8 @@ import { Pagination } from "@/components/pagination";
 
 export const revalidate = 300;
 
+const PER_PAGE = 12;
+
 export async function generateStaticParams() {
   try {
     const tags = await getAllTags();
@@ -68,7 +70,7 @@ export default async function TagPage({
   // `page` trả về đã được kẹp vào khoảng trang thật sự có bài
   const { items, page, totalPages } = await listArticles({
     page: Math.max(1, Number(rawPage) || 1),
-    perPage: 12,
+    perPage: PER_PAGE,
     tagSlug: tag.slug,
   });
 
@@ -82,6 +84,8 @@ export default async function TagPage({
       <Pagination
         page={page}
         totalPages={totalPages}
+        perPage={PER_PAGE}
+        itemsOnPage={items.length}
         basePath={`/tags/${tag.slug}`}
         className="mt-14"
       />

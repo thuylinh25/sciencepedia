@@ -176,6 +176,8 @@ export default async function SearchPage({
             <Pagination
               page={page}
               totalPages={totalPages}
+              perPage={PER_PAGE}
+              itemsOnPage={hits.length}
               basePath="/search"
               extraQuery={{ q: query, category: sp.category, sort }}
               className="mt-12"

@@ -24,18 +24,33 @@ function pageRange(page: number, total: number): (number | "gap")[] {
 export async function Pagination({
   page,
   totalPages,
+  perPage,
+  itemsOnPage,
   basePath,
   extraQuery,
   className,
 }: {
   page: number;
   totalPages: number;
+  /** Số mục mỗi trang và số mục thật sự trả về — xem `lastPage` bên dưới. */
+  perPage?: number;
+  itemsOnPage?: number;
   basePath: string;
   extraQuery?: Record<string, string | undefined>;
   className?: string;
 }) {
   const t = await getTranslations("common");
-  if (totalPages <= 1) return null;
+
+  // `totalPages` suy ra từ một truy vấn count riêng, còn danh sách đến từ truy
+  // vấn khác. Nếu hai bên lệch nhau (count lấy từ cache cũ, backend tìm kiếm
+  // trả total không khớp số hit) thì sẽ dựng link sang một trang rỗng. Trang
+  // hiện tại trả về ít hơn `perPage` mục là bằng chứng chắc chắn rằng đã hết
+  // dữ liệu — tin vào bằng chứng đó thay vì tin phép đếm.
+  const short =
+    perPage !== undefined && itemsOnPage !== undefined && itemsOnPage < perPage;
+  const lastPage = short ? page : totalPages;
+
+  if (lastPage <= 1) return null;
 
   const href = (target: number) => {
     const query = new URLSearchParams();
@@ -69,7 +84,7 @@ export async function Pagination({
         </span>
       )}
 
-      {pageRange(page, totalPages).map((item, index) =>
+      {pageRange(page, lastPage).map((item, index) =>
         item === "gap" ? (
           <span
             key={`gap-${index}`}
@@ -93,7 +108,7 @@ export async function Pagination({
         ),
       )}
 
-      {page < totalPages ? (
+      {page < lastPage ? (
         <Link href={href(page + 1)} className={linkClass} aria-label={t("next")}>
           <ChevronRight className="size-4" />
         </Link>

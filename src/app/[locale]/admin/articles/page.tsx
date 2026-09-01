@@ -74,6 +74,8 @@ export default async function AdminArticlesPage({
       <Pagination
         page={page}
         totalPages={totalPages}
+        perPage={PER_PAGE}
+        itemsOnPage={articles.length}
         basePath="/admin/articles"
         extraQuery={{ q }}
       />
