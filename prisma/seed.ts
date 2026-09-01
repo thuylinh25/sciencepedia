@@ -146,11 +146,29 @@ async function main() {
 
   // ---------------------------------------------------------------- Bài viết
   // Vũ trụ và Sức khoẻ đứng trước — đây là hai nhánh được ưu tiên.
-  const articles: SeedArticle[] = [
+  const all: SeedArticle[] = [
     ...cosmosArticles,
     ...healthArticles,
     ...otherArticles,
   ];
+
+  // Truyền slug để chỉ ghi vài bài: `npm run db:seed -- mat-troi sao-thuy`.
+  // Dùng khi thêm bài mới vào một CSDL đang chạy, tránh ghi đè nội dung của
+  // những bài đã được biên tập lại qua trang quản trị.
+  const only = new Set(process.argv.slice(2));
+  const articles = only.size
+    ? all.filter((article) => only.has(article.slug))
+    : all;
+
+  if (only.size) {
+    const missing = [...only].filter(
+      (slug) => !all.some((article) => article.slug === slug),
+    );
+    if (missing.length) {
+      throw new Error(`Không có bài nào mang slug: ${missing.join(", ")}`);
+    }
+    console.log(`  → Chỉ ghi ${articles.length} bài được chỉ định`);
+  }
 
   let index = 0;
   for (const article of articles) {

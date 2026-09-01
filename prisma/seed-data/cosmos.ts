@@ -1,4 +1,5 @@
 import type { SeedArticle, SeedCategory, SeedTag } from "./types";
+import { spinArticles } from "./cosmos-spin";
 
 /**
  * Nhánh VŨ TRỤ — được dựng trước theo yêu cầu.
@@ -525,4 +526,5 @@ export const cosmosArticles: SeedArticle[] = [
   ...Object.keys(planetBodies).map(planetArticle),
   blackHole,
   jwst,
+  ...spinArticles,
 ];
