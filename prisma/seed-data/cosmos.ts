@@ -59,6 +59,45 @@ export const cosmosCategories: SeedCategory[] = [
     order: 3,
     parentSlug: "vu-tru",
   },
+  {
+    slug: "vu-tru-hoc",
+    name: "Vũ trụ học",
+    nameEn: "Cosmology",
+    description:
+      "Vũ trụ như một tổng thể: Big Bang, giãn nở, vật chất tối và năng lượng tối, các lực cơ bản và những hạt dựng nên mọi thứ.",
+    descriptionEn:
+      "The universe as a whole: the Big Bang, expansion, dark matter and dark energy, the fundamental forces and the particles behind everything.",
+    icon: "Atom",
+    color: "#6366f1",
+    order: 4,
+    parentSlug: "vu-tru",
+  },
+  {
+    slug: "quan-sat-bau-troi",
+    name: "Quan sát bầu trời",
+    nameEn: "Observing the Sky",
+    description:
+      "Thiên cầu, các chòm sao, chuyển động biểu kiến của Mặt Trời và hành tinh, cùng dụng cụ để tự quan sát chúng.",
+    descriptionEn:
+      "The celestial sphere, the constellations, the apparent motion of the Sun and planets, and the instruments for watching them yourself.",
+    icon: "Telescope",
+    color: "#14b8a6",
+    order: 5,
+    parentSlug: "vu-tru",
+  },
+  {
+    slug: "lich-su-thien-van",
+    name: "Lịch sử thiên văn",
+    nameEn: "History of Astronomy",
+    description:
+      "Từ lịch pháp cổ đại và thiên văn phương Đông tới những bước ngoặt đã dựng nên thiên văn học hiện đại.",
+    descriptionEn:
+      "From ancient calendars and Eastern astronomy to the turning points that built the modern science.",
+    icon: "ScrollText",
+    color: "#a16207",
+    order: 6,
+    parentSlug: "vu-tru",
+  },
 ];
 
 export const cosmosTags: SeedTag[] = [
@@ -68,6 +107,10 @@ export const cosmosTags: SeedTag[] = [
   { slug: "thien-van", name: "Thiên văn học", nameEn: "Astronomy", color: "#8b5cf6" },
   { slug: "nasa", name: "NASA", nameEn: "NASA", color: "#0b3d91" },
   { slug: "vat-ly", name: "Vật lý", nameEn: "Physics", color: "#0ea5e9" },
+  { slug: "ngoi-sao", name: "Ngôi sao", nameEn: "Stars", color: "#eab308" },
+  { slug: "chom-sao", name: "Chòm sao", nameEn: "Constellations", color: "#14b8a6" },
+  { slug: "quan-sat", name: "Quan sát", nameEn: "Observing", color: "#22c55e" },
+  { slug: "vu-tru-hoc", name: "Vũ trụ học", nameEn: "Cosmology", color: "#6366f1" },
 ];
 
 // ------------------------------------------------------------------ Bài viết

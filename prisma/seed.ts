@@ -4,6 +4,7 @@ import bcrypt from "bcryptjs";
 import { cosmosArticles, cosmosCategories, cosmosTags } from "./seed-data/cosmos";
 import { healthArticles, healthCategories, healthTags } from "./seed-data/health";
 import { otherArticles, otherCategories, otherTags } from "./seed-data/other";
+import { vacaArticles } from "./seed-data/vaca";
 import type { SeedArticle } from "./seed-data/types";
 
 const prisma = new PrismaClient();
@@ -150,6 +151,7 @@ async function main() {
     ...cosmosArticles,
     ...healthArticles,
     ...otherArticles,
+    ...vacaArticles,
   ];
 
   // Truyền slug để chỉ ghi vài bài: `npm run db:seed -- mat-troi sao-thuy`.
