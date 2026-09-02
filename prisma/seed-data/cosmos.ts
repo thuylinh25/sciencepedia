@@ -202,6 +202,30 @@ In about five billion years the core will run out of hydrogen. The Sun will swel
       publisher: "NASA",
       year: 2024,
     },
+    {
+      title: "Solar Dynamics Observatory",
+      url: "https://science.nasa.gov/mission/sdo/",
+      publisher: "NASA",
+      year: 2024,
+    },
+    {
+      title: "Solar Orbiter",
+      url: "https://www.esa.int/Science_Exploration/Space_Science/Solar_Orbiter",
+      publisher: "ESA",
+      year: 2024,
+    },
+    {
+      title: "Geomagnetic Storms",
+      url: "https://www.swpc.noaa.gov/phenomena/geomagnetic-storms",
+      publisher: "NOAA Space Weather Prediction Center",
+      year: 2024,
+    },
+    {
+      title: "The Sun",
+      url: "https://science.nasa.gov/sun/",
+      publisher: "NASA Science",
+      year: 2024,
+    },
   ],
 };
 
