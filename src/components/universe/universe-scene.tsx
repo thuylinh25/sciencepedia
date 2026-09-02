@@ -443,6 +443,16 @@ export function UniverseScene({
 }) {
   return (
     <Canvas
+      /**
+       * Đo khung bằng offsetWidth/offsetHeight thay vì getBoundingClientRect().
+       *
+       * Hành trình thu phóng đặt `transform: scale` lên đúng div bọc canvas để
+       * hoà mờ giữa hai cấp. getBoundingClientRect() tính cả transform, nên lúc
+       * mount canvas đo được kích thước đã bị thu nhỏ rồi giữ nguyên cỡ đó —
+       * kết quả là cảnh 3D nằm gọn ở góc trên trái, chừa hai dải đen. offsetSize
+       * đọc kích thước bố cục thật, không bị transform làm sai.
+       */
+      resize={{ offsetSize: true }}
       camera={{ position: [0, 8, 26], fov: 45, near: 0.1, far: 400 }}
       dpr={[1, 2]}
       gl={{

@@ -338,6 +338,6 @@
     "zoomOut": "Zoom out",
     "openFull": "Open the full model",
     "nextIsSmaller": "The next level is about {factor}× smaller",
-    "note": "The four levels are four separate 3D scenes, not one continuously zoomable scene. The range of scale spans about 19 orders of magnitude, far beyond the precision of the 32-bit floats WebGL uses, so geometry would fall apart in a single scene. The seamless feel comes from zooming and cross-fading between adjacent levels."
+    "note": "Seven levels, seven separate scenes — not one continuously zoomable view. The four astronomical levels are 3D models; the continent level reuses the same Earth globe seen from close range, while the biology and human levels are illustrated with photographs because the project has no 3D assets for them. The span from the observable universe down to a human being is about 26 orders of magnitude, far beyond the precision of the 32-bit floats WebGL uses, so a single scene would fall apart. The seamless feel comes from zooming and cross-fading between adjacent levels."
   }
 }

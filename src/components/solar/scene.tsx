@@ -147,7 +147,8 @@ function PlanetBody({
   const startAngle = useMemo(() => {
     if (realLongitude !== undefined) return realLongitude;
     return (
-      ([...planet.id].reduce((sum, char) => sum + char.charCodeAt(0), 0) % 360) *
+      ([...planet.id].reduce((sum, char) => sum + char.charCodeAt(0), 0) %
+        360) *
       (Math.PI / 180)
     );
   }, [planet.id, realLongitude]);
@@ -199,7 +200,11 @@ function PlanetBody({
             ]}
           >
             <ringGeometry
-              args={[radius * planet.ring.inner, radius * planet.ring.outer, 96]}
+              args={[
+                radius * planet.ring.inner,
+                radius * planet.ring.outer,
+                96,
+              ]}
             />
             <meshBasicMaterial
               color={planet.ring.color}
@@ -256,6 +261,16 @@ export function SolarScene({
 
   return (
     <Canvas
+      /**
+       * Đo khung bằng offsetWidth/offsetHeight thay vì getBoundingClientRect().
+       *
+       * Hành trình thu phóng đặt `transform: scale` lên đúng div bọc canvas để
+       * hoà mờ giữa hai cấp. getBoundingClientRect() tính cả transform, nên lúc
+       * mount canvas đo được kích thước đã bị thu nhỏ rồi giữ nguyên cỡ đó —
+       * kết quả là cảnh 3D nằm gọn ở góc trên trái, chừa hai dải đen. offsetSize
+       * đọc kích thước bố cục thật, không bị transform làm sai.
+       */
+      resize={{ offsetSize: true }}
       camera={{ position: [0, 26, 52], fov: 45, near: 0.1, far: 2000 }}
       dpr={[1, 2]}
       gl={{ antialias: true, powerPreference: "high-performance" }}

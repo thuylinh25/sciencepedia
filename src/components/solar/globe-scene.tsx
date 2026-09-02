@@ -91,7 +91,20 @@ export function GlobeScene({
   distance?: number;
 }) {
   return (
-    <Canvas camera={{ position: [0, 0.5, distance], fov: 42 }} dpr={[1, 2]}>
+    <Canvas
+      camera={{ position: [0, 0.5, distance], fov: 42 }}
+      dpr={[1, 2]}
+      /**
+       * Đo khung bằng offsetWidth/offsetHeight thay vì getBoundingClientRect().
+       *
+       * Hành trình thu phóng đặt `transform: scale` lên đúng div bọc canvas để
+       * hoà mờ giữa hai cấp. getBoundingClientRect() tính cả transform, nên lúc
+       * mount canvas đo được kích thước đã bị thu nhỏ rồi giữ nguyên cỡ đó —
+       * kết quả là cảnh 3D nằm gọn ở góc trên trái, chừa hai dải đen. offsetSize
+       * đọc kích thước bố cục thật, không bị transform làm sai.
+       */
+      resize={{ offsetSize: true }}
+    >
       <color attach="background" args={["#05070f"]} />
 
       {/* Mặt Trời tự sáng nên không cần đèn; các thiên thể khác lấy sáng từ

@@ -73,7 +73,14 @@ function useStarSprite(): THREE.Texture {
     const ctx = canvas.getContext("2d");
     if (ctx) {
       const half = size / 2;
-      const gradient = ctx.createRadialGradient(half, half, 0, half, half, half);
+      const gradient = ctx.createRadialGradient(
+        half,
+        half,
+        0,
+        half,
+        half,
+        half,
+      );
       gradient.addColorStop(0, "rgba(255,255,255,1)");
       gradient.addColorStop(0.2, "rgba(255,255,255,0.75)");
       gradient.addColorStop(0.45, "rgba(255,255,255,0.22)");
@@ -99,7 +106,14 @@ function useHazeTexture(): THREE.Texture {
     const ctx = canvas.getContext("2d");
     if (ctx) {
       const half = size / 2;
-      const gradient = ctx.createRadialGradient(half, half, 0, half, half, half);
+      const gradient = ctx.createRadialGradient(
+        half,
+        half,
+        0,
+        half,
+        half,
+        half,
+      );
       gradient.addColorStop(0, "rgba(255,226,178,0.55)");
       gradient.addColorStop(0.12, "rgba(255,206,150,0.30)");
       gradient.addColorStop(0.35, "rgba(176,190,255,0.13)");
@@ -199,7 +213,8 @@ function useHaloGeometry(count: number) {
   return useMemo(() => {
     const positions = new Float32Array(count * 3);
     for (let i = 0; i < count; i += 1) {
-      const r = BULGE_RADIUS + Math.pow(Math.random(), 0.4) * DISK_RADIUS * 1.15;
+      const r =
+        BULGE_RADIUS + Math.pow(Math.random(), 0.4) * DISK_RADIUS * 1.15;
       const theta = Math.random() * Math.PI * 2;
       const phi = Math.acos(2 * Math.random() - 1);
       positions[i * 3] = r * Math.sin(phi) * Math.cos(theta);
@@ -343,7 +358,8 @@ function Galaxy({
       {settings.showLabels &&
         GALAXY_FEATURES.map((feature) => {
           const isSun = feature.id === "sun";
-          const height = feature.id === "core" ? 0.9 : isSun ? LABEL_HEIGHT : 0.35;
+          const height =
+            feature.id === "core" ? 0.9 : isSun ? LABEL_HEIGHT : 0.35;
           return (
             <Html
               key={feature.id}
@@ -528,7 +544,10 @@ function CameraRig({
 
     const target = VIEW_POSITIONS[view];
     camera.position.lerp(target, Math.min(1, delta * 2.4));
-    controls.current?.target.lerp(new THREE.Vector3(0, 0, 0), Math.min(1, delta * 2.4));
+    controls.current?.target.lerp(
+      new THREE.Vector3(0, 0, 0),
+      Math.min(1, delta * 2.4),
+    );
     controls.current?.update();
 
     if (camera.position.distanceTo(target) < 0.15) {
@@ -589,7 +608,10 @@ function TourRig({
     const outward = target.clone();
     if (outward.lengthSq() < 1e-6) outward.set(1, 0, 0);
     outward.setY(0).normalize().multiplyScalar(stop.distance);
-    desired.copy(target).add(outward).setY(target.y + stop.height);
+    desired
+      .copy(target)
+      .add(outward)
+      .setY(target.y + stop.height);
 
     camera.position.lerp(desired, Math.min(1, delta * 0.9));
     controls.current?.target.lerp(target, Math.min(1, delta * 1.4));
@@ -630,6 +652,16 @@ export function GalaxyScene({
 
   return (
     <Canvas
+      /**
+       * Đo khung bằng offsetWidth/offsetHeight thay vì getBoundingClientRect().
+       *
+       * Hành trình thu phóng đặt `transform: scale` lên đúng div bọc canvas để
+       * hoà mờ giữa hai cấp. getBoundingClientRect() tính cả transform, nên lúc
+       * mount canvas đo được kích thước đã bị thu nhỏ rồi giữ nguyên cỡ đó —
+       * kết quả là cảnh 3D nằm gọn ở góc trên trái, chừa hai dải đen. offsetSize
+       * đọc kích thước bố cục thật, không bị transform làm sai.
+       */
+      resize={{ offsetSize: true }}
       camera={{ position: [0, 13, 16], fov: 45 }}
       dpr={[1, 2]}
       gl={{
