@@ -17,7 +17,9 @@
     "admin": "Admin",
     "menu": "Menu",
     "close": "Close",
-    "milkyWay": "3D Milky Way"
+    "milkyWay": "3D Milky Way",
+    "universe": "3D Universe",
+    "models": "3D models"
   },
   "auth": {
     "login": "Sign in",
@@ -279,5 +281,15 @@
     "factsTitle": "The Milky Way in numbers",
     "close": "Close",
     "disclaimer": "This model illustrates shape and scale; it is not a dynamical simulation. Stars are scattered along logarithmic spirals with random noise, and the true positions of the spiral arms are still being remeasured — the map of the galaxy has been redrawn several times in the past two decades. The figures in the table come from observation."
+  },
+  "universe": {
+    "title": "The Universe",
+    "subtitle": "Drag to rotate · Scroll to zoom · The cosmic web at hundreds of millions of light-years",
+    "showFilaments": "Show filaments",
+    "showScales": "Scale shells",
+    "scalesTitle": "From the Milky Way to the cosmic horizon",
+    "scalesIntro": "Each step below is tens to hundreds of times larger than the one before. The shell radii in the model are compressed to fit the view — drawn to true scale, the Milky Way would be smaller than a pixel.",
+    "factsTitle": "The universe in numbers",
+    "disclaimer": "This model reproduces the morphology of the cosmic web — filaments, nodes and voids — rather than simulating it: no gravity between dark matter halos is computed. Node positions are random and correspond to no real galaxy cluster. The figures in the table come from observation."
   }
 }

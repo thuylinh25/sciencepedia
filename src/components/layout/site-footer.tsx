@@ -29,6 +29,7 @@ export async function SiteFooter() {
     })),
     { href: "/solar-system", label: tNav("solarSystem") },
     { href: "/milky-way", label: tNav("milkyWay") },
+    { href: "/universe", label: tNav("universe") },
     { href: "/assistant", label: tNav("assistant") },
   ];
 

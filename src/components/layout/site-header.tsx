@@ -2,7 +2,15 @@
 
 import { useEffect, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
-import { ChevronDown, Disc3, Menu, Orbit, Search, Sparkles } from "lucide-react";
+import {
+  Aperture,
+  ChevronDown,
+  Disc3,
+  Menu,
+  Orbit,
+  Search,
+  Sparkles,
+} from "lucide-react";
 
 import { Link, usePathname } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
@@ -38,11 +46,18 @@ export type NavCategory = {
   icon: string | null;
 };
 
-const NAV = [
+/**
+ * Ba mô hình 3D gom vào một menu xổ. Xếp ngang cả ba cùng "Khám phá" và
+ * "Trợ lý AI" thì thanh nav vượt bề ngang khả dụng ở breakpoint lg, và danh
+ * sách này còn dài ra khi thêm mô hình mới.
+ */
+const MODELS = [
   { href: "/solar-system", key: "solarSystem" as const, icon: Orbit },
   { href: "/milky-way", key: "milkyWay" as const, icon: Disc3 },
-  { href: "/assistant", key: "assistant" as const, icon: Sparkles },
+  { href: "/universe", key: "universe" as const, icon: Aperture },
 ];
+
+const NAV = [{ href: "/assistant", key: "assistant" as const, icon: Sparkles }];
 
 export function SiteHeader({ categories }: { categories: NavCategory[] }) {
   const t = useTranslations("nav");
@@ -144,6 +159,28 @@ export function SiteHeader({ categories }: { categories: NavCategory[] }) {
               </Link>
             )}
 
+            <DropdownMenu>
+              <DropdownMenuTrigger
+                className={cn(
+                  "link-underline flex items-center gap-1 text-sm font-medium text-muted-foreground transition-colors outline-none hover:text-foreground focus-visible:text-foreground",
+                  MODELS.some((item) => isActive(item.href)) && "text-foreground",
+                )}
+              >
+                {t("models")}
+                <ChevronDown className="size-4" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="start" className="w-56">
+                {MODELS.map((item) => (
+                  <DropdownMenuItem key={item.href} asChild>
+                    <Link href={item.href}>
+                      <item.icon className="size-4" />
+                      {t(item.key)}
+                    </Link>
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
+
             {NAV.map((item) => (
               <Link
                 key={item.href}
@@ -240,13 +277,31 @@ export function SiteHeader({ categories }: { categories: NavCategory[] }) {
                     </Link>
                   ))}
 
+                  <p className="mt-3 px-3 text-xs font-semibold tracking-widest text-muted-foreground uppercase">
+                    {t("models")}
+                  </p>
+                  {MODELS.map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      onClick={() => setMobileOpen(false)}
+                      className={cn(
+                        "ml-3 flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground",
+                        isActive(item.href) && "bg-muted text-primary",
+                      )}
+                    >
+                      <item.icon className="size-4" />
+                      {t(item.key)}
+                    </Link>
+                  ))}
+
                   {NAV.map((item) => (
                     <Link
                       key={item.href}
                       href={item.href}
                       onClick={() => setMobileOpen(false)}
                       className={cn(
-                        "flex items-center gap-3 rounded-xl px-3 py-3 text-base font-medium transition-colors hover:bg-muted",
+                        "mt-1 flex items-center gap-3 rounded-xl px-3 py-3 text-base font-medium transition-colors hover:bg-muted",
                         isActive(item.href) && "bg-muted text-primary",
                       )}
                     >

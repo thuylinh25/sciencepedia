@@ -17,7 +17,9 @@
     "admin": "Quản trị",
     "menu": "Menu",
     "close": "Đóng",
-    "milkyWay": "Ngân Hà 3D"
+    "milkyWay": "Ngân Hà 3D",
+    "universe": "Vũ trụ 3D",
+    "models": "Mô hình 3D"
   },
   "auth": {
     "login": "Đăng nhập",
@@ -279,5 +281,15 @@
     "factsTitle": "Ngân Hà bằng số liệu",
     "close": "Đóng",
     "disclaimer": "Mô hình này minh hoạ hình dạng và tỉ lệ, không phải mô phỏng động lực học. Các đám sao được rải theo đường xoắn ốc loga có nhiễu ngẫu nhiên; vị trí chính xác của các nhánh xoắn ốc vẫn đang được đo lại và bản đồ Ngân Hà đã được vẽ lại nhiều lần trong hai thập niên qua. Số liệu trong bảng lấy từ quan sát thiên văn."
+  },
+  "universe": {
+    "title": "Vũ trụ",
+    "subtitle": "Kéo để xoay · Cuộn để phóng to · Mạng vũ trụ ở quy mô hàng trăm triệu năm ánh sáng",
+    "showFilaments": "Hiện sợi nối",
+    "showScales": "Bậc thang kích thước",
+    "scalesTitle": "Từ Ngân Hà tới chân trời vũ trụ",
+    "scalesIntro": "Mỗi bậc dưới đây lớn hơn bậc trước hàng chục tới hàng trăm lần. Bán kính các lớp cầu trong mô hình đã được nén lại cho vừa khung nhìn — vẽ đúng tỉ lệ thì Ngân Hà nhỏ hơn một điểm ảnh.",
+    "factsTitle": "Vũ trụ bằng số liệu",
+    "disclaimer": "Mô hình này tái tạo hình thái của mạng vũ trụ — sợi, nút và khoảng rỗng — chứ không phải mô phỏng N-body: nó không tính lực hấp dẫn giữa các khối vật chất tối. Vị trí các nút là ngẫu nhiên, không tương ứng với đám thiên hà có thật nào. Số liệu trong bảng lấy từ quan sát."
   }
 }
