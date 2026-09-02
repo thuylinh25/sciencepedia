@@ -310,7 +310,15 @@
     "scalesTitle": "Từ Ngân Hà tới chân trời vũ trụ",
     "scalesIntro": "Mỗi bậc dưới đây lớn hơn bậc trước hàng chục tới hàng trăm lần. Bán kính các lớp cầu trong mô hình đã được nén lại cho vừa khung nhìn — vẽ đúng tỉ lệ thì Ngân Hà nhỏ hơn một điểm ảnh.",
     "factsTitle": "Vũ trụ bằng số liệu",
-    "disclaimer": "Mô hình này tái tạo hình thái của mạng vũ trụ — sợi, nút và khoảng rỗng — chứ không phải mô phỏng N-body: nó không tính lực hấp dẫn giữa các khối vật chất tối. Vị trí các nút là ngẫu nhiên, không tương ứng với đám thiên hà có thật nào. Số liệu trong bảng lấy từ quan sát."
+    "disclaimer": "Mô hình này tái tạo hình thái của mạng vũ trụ — sợi, nút và khoảng rỗng — chứ không phải mô phỏng N-body: nó không tính lực hấp dẫn giữa các khối vật chất tối. Vị trí các nút là ngẫu nhiên, không tương ứng với đám thiên hà có thật nào. Số liệu trong bảng lấy từ quan sát.",
+    "modelName": "Mạng vũ trụ (Cosmic Web)",
+    "fieldRadius": "Bán kính mô phỏng",
+    "fieldKind": "Loại mô hình",
+    "kindSimulated": "Dữ liệu giả lập",
+    "mly": "triệu năm ánh sáng",
+    "scaleSlider": "Tầm nhìn",
+    "fitsInView": "Ở tầm này vừa khung là:",
+    "tourHint": "Muốn bay từ Trái Đất ra tới mạng vũ trụ, xem Hành trình thu phóng."
   },
   "models": {
     "title": "Mô hình 3D",

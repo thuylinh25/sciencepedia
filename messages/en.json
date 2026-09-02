@@ -310,7 +310,15 @@
     "scalesTitle": "From the Milky Way to the cosmic horizon",
     "scalesIntro": "Each step below is tens to hundreds of times larger than the one before. The shell radii in the model are compressed to fit the view — drawn to true scale, the Milky Way would be smaller than a pixel.",
     "factsTitle": "The universe in numbers",
-    "disclaimer": "This model reproduces the morphology of the cosmic web — filaments, nodes and voids — rather than simulating it: no gravity between dark matter halos is computed. Node positions are random and correspond to no real galaxy cluster. The figures in the table come from observation."
+    "disclaimer": "This model reproduces the morphology of the cosmic web — filaments, nodes and voids — rather than simulating it: no gravity between dark matter halos is computed. Node positions are random and correspond to no real galaxy cluster. The figures in the table come from observation.",
+    "modelName": "The cosmic web",
+    "fieldRadius": "Simulated radius",
+    "fieldKind": "Model type",
+    "kindSimulated": "Synthetic data",
+    "mly": "million light-years",
+    "scaleSlider": "Field of view",
+    "fitsInView": "At this scale you are seeing:",
+    "tourHint": "To fly from Earth out to the cosmic web, see the Zoom journey."
   },
   "models": {
     "title": "3D models",

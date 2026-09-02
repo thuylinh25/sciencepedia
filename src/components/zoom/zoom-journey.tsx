@@ -57,6 +57,7 @@ function LevelScene({ id, locale }: { id: string; locale: string }) {
             showFilaments: true,
             showScales: false,
             showLabels: false,
+            distance: 26,
           }}
           locale={locale}
         />

@@ -108,6 +108,133 @@ export const UNIVERSE_SCALES: UniverseScale[] = [
   },
 ];
 
+/**
+ * Ba hạng nút trong mạng vũ trụ, phân biệt bằng màu.
+ *
+ * Không có màu thì mọi chấm sáng như nhau và người xem không đọc được đâu là
+ * siêu cụm, đâu là một thiên hà lẻ — đó là lý do mô hình trước trông như một
+ * mớ dây điện.
+ */
+export const NODE_TIERS = {
+  supercluster: { color: "#fbbf24", label: "Siêu cụm thiên hà", labelEn: "Supercluster" },
+  cluster: { color: "#60a5fa", label: "Cụm thiên hà", labelEn: "Galaxy cluster" },
+  galaxy: { color: "#e2e8f0", label: "Thiên hà đơn lẻ", labelEn: "Single galaxy" },
+} as const;
+
+export type CosmicLandmark = {
+  id: string;
+  name: string;
+  nameEn: string;
+  /** Khoảng cách tới chúng ta, triệu năm ánh sáng */
+  distanceMly: number;
+  /** Hướng trong mô hình — chỉ để tách các mốc ra cho dễ nhìn, không phải hướng thật trên bầu trời */
+  azimuth: number;
+  elevation: number;
+  tier: keyof typeof NODE_TIERS | "home";
+  note: string;
+  noteEn: string;
+};
+
+/**
+ * Các cấu trúc có thật, đặt quanh vị trí của chúng ta ở gốc toạ độ.
+ *
+ * KHOẢNG CÁCH là số đo thật. HƯỚNG thì không: một mô hình trừu tượng như thế
+ * này không có hệ toạ độ bầu trời, nên các mốc được tách ra cho dễ đọc. Điều
+ * này được nói rõ trong phần chú thích của trang.
+ */
+export const COSMIC_LANDMARKS: CosmicLandmark[] = [
+  {
+    id: "milky-way",
+    name: "Ngân Hà — bạn đang ở đây",
+    nameEn: "The Milky Way — you are here",
+    distanceMly: 0,
+    azimuth: 0,
+    elevation: 0,
+    tier: "home",
+    note: "Thiên hà của chúng ta. Ở tỉ lệ này, cả Ngân Hà nhỏ hơn một điểm ảnh — chấm sáng bạn thấy chỉ là dấu vị trí.",
+    noteEn: "Our galaxy. At this scale the whole Milky Way is smaller than a pixel; the marker is only a position flag.",
+  },
+  {
+    id: "andromeda",
+    name: "Thiên hà Andromeda (M31)",
+    nameEn: "The Andromeda Galaxy (M31)",
+    distanceMly: 2.5,
+    azimuth: 0.6,
+    elevation: 0.18,
+    tier: "galaxy",
+    note: "Thiên hà lớn gần nhất, đang lao về phía chúng ta với tốc độ 110 km/s và sẽ sáp nhập sau khoảng 4,5 tỉ năm.",
+    noteEn: "The nearest large galaxy, approaching us at 110 km/s and due to merge in about 4.5 billion years.",
+  },
+  {
+    id: "local-group",
+    name: "Cụm địa phương",
+    nameEn: "The Local Group",
+    distanceMly: 5,
+    azimuth: 2.1,
+    elevation: -0.12,
+    tier: "cluster",
+    note: "Khoảng 80 thiên hà liên kết hấp dẫn, trong đó Ngân Hà và Andromeda là hai thành viên áp đảo.",
+    noteEn: "Some 80 gravitationally bound galaxies, dominated by the Milky Way and Andromeda.",
+  },
+  {
+    id: "virgo",
+    name: "Đám Virgo",
+    nameEn: "The Virgo Cluster",
+    distanceMly: 54,
+    azimuth: 4.0,
+    elevation: 0.35,
+    tier: "cluster",
+    note: "Đám thiên hà gần nhất, khoảng 1.300 thiên hà. Nó là khối lượng chi phối siêu đám mang tên nó.",
+    noteEn: "The nearest galaxy cluster, some 1,300 galaxies, and the dominant mass of the supercluster named after it.",
+  },
+  {
+    id: "coma",
+    name: "Đám Coma",
+    nameEn: "The Coma Cluster",
+    distanceMly: 320,
+    azimuth: 1.2,
+    elevation: 0.7,
+    tier: "cluster",
+    note: "Nơi Fritz Zwicky năm 1933 nhận ra các thiên hà chuyển động quá nhanh so với khối lượng nhìn thấy — bằng chứng đầu tiên về vật chất tối.",
+    noteEn: "Where Fritz Zwicky noticed in 1933 that galaxies moved too fast for their visible mass — the first evidence for dark matter.",
+  },
+  {
+    id: "great-attractor",
+    name: "Đại Thu Hút (tâm Laniakea)",
+    nameEn: "The Great Attractor (Laniakea's focus)",
+    distanceMly: 250,
+    azimuth: 5.3,
+    elevation: -0.45,
+    tier: "supercluster",
+    note: "Điểm hút mà toàn bộ siêu đám Laniakea, gồm cả chúng ta, đang rơi về phía đó với tốc độ khoảng 600 km/s.",
+    noteEn: "The gravitational focus that all of Laniakea, us included, is falling toward at around 600 km/s.",
+  },
+];
+
+/** Quy khoảng cách và hướng của một mốc về toạ độ cảnh. */
+export function landmarkPosition(
+  landmark: CosmicLandmark,
+): [number, number, number] {
+  const r = landmark.distanceMly / MLY_PER_UNIT;
+  return [
+    r * Math.cos(landmark.elevation) * Math.cos(landmark.azimuth),
+    r * Math.sin(landmark.elevation),
+    r * Math.cos(landmark.elevation) * Math.sin(landmark.azimuth),
+  ];
+}
+
+/**
+ * Các nấc của thanh tỉ lệ. Kéo thanh là đổi khoảng cách camera, và tên cấu
+ * trúc tương ứng cho biết ở tầm nhìn đó thì thứ gì vừa khung.
+ */
+export const SCALE_STEPS = [
+  { mly: 1, structure: "Hệ Mặt Trời và các sao lân cận", structureEn: "The Solar System and nearby stars", distance: 5 },
+  { mly: 10, structure: "Cụm địa phương", structureEn: "The Local Group", distance: 10 },
+  { mly: 100, structure: "Siêu đám Virgo", structureEn: "The Virgo Supercluster", distance: 20 },
+  { mly: 500, structure: "Siêu đám Laniakea", structureEn: "The Laniakea Supercluster", distance: 36 },
+  { mly: 1_000, structure: "Mạng vũ trụ", structureEn: "The cosmic web", distance: 55 },
+] as const;
+
 export const UNIVERSE_FACTS = [
   { labelVi: "Tuổi vũ trụ", labelEn: "Age of the universe", value: "13,8 tỉ năm", valueEn: "13.8 billion years" },
   { labelVi: "Bán kính vùng quan sát được", labelEn: "Observable radius", value: "46,5 tỉ năm ánh sáng", valueEn: "46.5 billion light-years" },

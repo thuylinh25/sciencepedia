@@ -5,7 +5,14 @@ import dynamic from "next/dynamic";
 import { useLocale, useTranslations } from "next-intl";
 import { Loader2, Pause, Play, RotateCcw } from "lucide-react";
 
-import { UNIVERSE_FACTS, UNIVERSE_SCALES } from "@/lib/universe-data";
+import {
+  COSMIC_LANDMARKS,
+  NODE_TIERS,
+  SCALE_STEPS,
+  UNIVERSE_FACTS,
+  UNIVERSE_SCALES,
+} from "@/lib/universe-data";
+import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
 import { Label } from "@/components/ui/label";
@@ -34,7 +41,7 @@ function supportsWebGL(): boolean {
     const canvas = document.createElement("canvas");
     return Boolean(
       window.WebGLRenderingContext &&
-        (canvas.getContext("webgl") || canvas.getContext("experimental-webgl")),
+      (canvas.getContext("webgl") || canvas.getContext("experimental-webgl")),
     );
   } catch {
     return false;
@@ -53,7 +60,13 @@ export function Universe() {
     showFilaments: true,
     showScales: false,
     showLabels: true,
+    distance: SCALE_STEPS[4].distance,
   });
+  const [scaleIndex, setScaleIndex] = useState(4);
+  const [selectedId, setSelectedId] = useState<string | null>(null);
+
+  const selected =
+    COSMIC_LANDMARKS.find((item) => item.id === selectedId) ?? null;
   const [sceneKey, setSceneKey] = useState(0);
 
   useEffect(() => setWebgl(supportsWebGL()), []);
@@ -79,89 +92,218 @@ export function Universe() {
             <Loader2 className="size-5 animate-spin" />
           </div>
         ) : (
-          <UniverseScene key={sceneKey} settings={settings} locale={locale} />
+          <UniverseScene
+            key={sceneKey}
+            settings={settings}
+            locale={locale}
+            onSelect={setSelectedId}
+          />
         )}
 
-        <div className="absolute inset-x-4 bottom-4 flex flex-wrap items-center gap-x-5 gap-y-3 rounded-2xl border border-white/10 bg-black/45 px-5 py-3.5 backdrop-blur-xl sm:inset-x-auto sm:left-4">
-          <Button
-            size="icon-sm"
-            variant="glass"
-            onClick={() => update("playing", !settings.playing)}
-            aria-label={settings.playing ? tSolar("pause") : tSolar("play")}
-            className="border-white/20 bg-white/10 text-white hover:bg-white/20"
-          >
-            {settings.playing ? (
-              <Pause className="size-4" />
-            ) : (
-              <Play className="size-4" />
-            )}
-          </Button>
+        {/* --------------------------------------------- Đây là mô hình gì
+            Câu hỏi đầu tiên người xem đặt ra là "đang nhìn cái gì đây". Không
+            trả lời thì mọi thứ còn lại đều vô nghĩa. Ẩn trên màn hình hẹp. */}
+        <div className="pointer-events-none absolute top-4 left-4 hidden max-w-[15rem] rounded-2xl border border-white/10 bg-black/55 p-4 backdrop-blur-xl md:block">
+          <h2 className="font-display text-sm font-bold text-white">
+            {t("modelName")}
+          </h2>
+          <dl className="mt-2 space-y-1 text-[11px]">
+            <div className="flex justify-between gap-3">
+              <dt className="text-white/50">{t("fieldRadius")}</dt>
+              <dd className="font-mono text-white/85">480 Mly</dd>
+            </div>
+            <div className="flex justify-between gap-3">
+              <dt className="text-white/50">{t("fieldKind")}</dt>
+              <dd className="text-right text-white/85">{t("kindSimulated")}</dd>
+            </div>
+          </dl>
 
-          <div className="flex items-center gap-2.5">
-            <Label
-              htmlFor="universe-speed"
-              className="text-xs whitespace-nowrap text-white/70"
-            >
-              {tSolar("speed")}
-            </Label>
-            <input
-              id="universe-speed"
-              type="range"
-              min={0.1}
-              max={5}
-              step={0.1}
-              value={settings.speed}
-              onChange={(event) => update("speed", Number(event.target.value))}
-              className="h-1 w-24 cursor-pointer appearance-none rounded-full bg-white/25 accent-[var(--color-accent)]"
-            />
-            <span className="w-9 font-mono text-xs text-white/70">
-              {settings.speed.toFixed(1)}×
-            </span>
-          </div>
-
-          <div className="flex items-center gap-2">
-            <Switch
-              id="universe-filaments"
-              checked={settings.showFilaments}
-              onCheckedChange={(value) => update("showFilaments", value)}
-            />
-            <Label htmlFor="universe-filaments" className="text-xs text-white/70">
-              {t("showFilaments")}
-            </Label>
-          </div>
-
-          <div className="flex items-center gap-2">
-            <Switch
-              id="universe-scales"
-              checked={settings.showScales}
-              onCheckedChange={(value) => update("showScales", value)}
-            />
-            <Label htmlFor="universe-scales" className="text-xs text-white/70">
-              {t("showScales")}
-            </Label>
-          </div>
-
-          <div className="flex items-center gap-2">
-            <Switch
-              id="universe-labels"
-              checked={settings.showLabels}
-              onCheckedChange={(value) => update("showLabels", value)}
-            />
-            <Label htmlFor="universe-labels" className="text-xs text-white/70">
-              {tSolar("showLabels")}
-            </Label>
-          </div>
-
-          <Button
-            size="icon-sm"
-            variant="glass"
-            onClick={() => setSceneKey((key) => key + 1)}
-            aria-label={tSolar("reset")}
-            className="border-white/20 bg-white/10 text-white hover:bg-white/20"
-          >
-            <RotateCcw className="size-4" />
-          </Button>
+          <ul className="mt-3 space-y-1 border-t border-white/10 pt-2 text-[11px]">
+            {(["supercluster", "cluster", "galaxy"] as const).map((tier) => (
+              <li key={tier} className="flex items-center gap-2">
+                <span
+                  className="size-2 shrink-0 rounded-full"
+                  style={{ backgroundColor: NODE_TIERS[tier].color }}
+                />
+                <span className="text-white/75">
+                  {locale === "en"
+                    ? NODE_TIERS[tier].labelEn
+                    : NODE_TIERS[tier].label}
+                </span>
+              </li>
+            ))}
+          </ul>
         </div>
+
+        {/* --------------------------------------------- Mốc đang chọn */}
+        {selected && (
+          <div className="absolute inset-x-4 bottom-4 rounded-2xl border border-white/10 bg-black/65 p-4 backdrop-blur-xl sm:inset-x-auto sm:right-4 sm:max-w-sm">
+            <div className="flex items-start justify-between gap-3">
+              <h3 className="font-display text-base font-bold text-white">
+                {locale === "en" ? selected.nameEn : selected.name}
+              </h3>
+              <button
+                type="button"
+                onClick={() => setSelectedId(null)}
+                aria-label={tSolar("reset")}
+                className="shrink-0 rounded-full p-1 text-white/60 hover:bg-white/10 hover:text-white"
+              >
+                ✕
+              </button>
+            </div>
+            {selected.distanceMly > 0 && (
+              <p className="mt-1 font-mono text-xs text-white/60">
+                {selected.distanceMly.toLocaleString(locale)} {t("mly")}
+              </p>
+            )}
+            <p className="mt-2 text-sm leading-relaxed text-white/75">
+              {locale === "en" ? selected.noteEn : selected.note}
+            </p>
+          </div>
+        )}
+      </div>
+
+      {/* Thanh điều khiển nằm dưới khung cảnh chứ không đè lên nó */}
+      <div className="mt-3 flex flex-wrap items-center gap-x-5 gap-y-3 rounded-2xl border bg-card px-5 py-3.5">
+        <Button
+          size="icon-sm"
+          variant="outline"
+          onClick={() => update("playing", !settings.playing)}
+          aria-label={settings.playing ? tSolar("pause") : tSolar("play")}
+        >
+          {settings.playing ? (
+            <Pause className="size-4" />
+          ) : (
+            <Play className="size-4" />
+          )}
+        </Button>
+
+        <div className="flex items-center gap-2.5">
+          <Label
+            htmlFor="universe-speed"
+            className="text-xs whitespace-nowrap text-muted-foreground"
+          >
+            {tSolar("speed")}
+          </Label>
+          <input
+            id="universe-speed"
+            type="range"
+            min={0.1}
+            max={5}
+            step={0.1}
+            value={settings.speed}
+            onChange={(event) => update("speed", Number(event.target.value))}
+            className="h-1 w-24 cursor-pointer appearance-none rounded-full bg-muted accent-[var(--color-accent)]"
+          />
+          <span className="w-9 font-mono text-xs text-muted-foreground">
+            {settings.speed.toFixed(1)}×
+          </span>
+        </div>
+
+        <div className="flex items-center gap-2">
+          <Switch
+            id="universe-filaments"
+            checked={settings.showFilaments}
+            onCheckedChange={(value) => update("showFilaments", value)}
+          />
+          <Label
+            htmlFor="universe-filaments"
+            className="text-xs text-muted-foreground"
+          >
+            {t("showFilaments")}
+          </Label>
+        </div>
+
+        <div className="flex items-center gap-2">
+          <Switch
+            id="universe-scales"
+            checked={settings.showScales}
+            onCheckedChange={(value) => update("showScales", value)}
+          />
+          <Label
+            htmlFor="universe-scales"
+            className="text-xs text-muted-foreground"
+          >
+            {t("showScales")}
+          </Label>
+        </div>
+
+        <div className="flex items-center gap-2">
+          <Switch
+            id="universe-labels"
+            checked={settings.showLabels}
+            onCheckedChange={(value) => update("showLabels", value)}
+          />
+          <Label
+            htmlFor="universe-labels"
+            className="text-xs text-muted-foreground"
+          >
+            {tSolar("showLabels")}
+          </Label>
+        </div>
+
+        <Button
+          size="icon-sm"
+          variant="outline"
+          onClick={() => setSceneKey((key) => key + 1)}
+          aria-label={tSolar("reset")}
+        >
+          <RotateCcw className="size-4" />
+        </Button>
+      </div>
+
+      {/* --------------------------------------------- Thanh tỉ lệ
+          Nút "bậc thang kích thước" một mình không nói lên điều gì; thanh này
+          cho biết ở mỗi tầm nhìn thì cấu trúc nào vừa khung. */}
+      <div className="mt-3 rounded-2xl border bg-card px-5 py-4">
+        <div className="flex items-baseline justify-between gap-4">
+          <label
+            htmlFor="universe-scale"
+            className="text-xs text-muted-foreground"
+          >
+            {t("scaleSlider")}
+          </label>
+          <span className="font-mono text-sm font-medium">
+            {SCALE_STEPS[scaleIndex].mly.toLocaleString(locale)} {t("mly")}
+          </span>
+        </div>
+
+        <input
+          id="universe-scale"
+          type="range"
+          min={0}
+          max={SCALE_STEPS.length - 1}
+          step={1}
+          value={scaleIndex}
+          onChange={(event) => {
+            const next = Number(event.target.value);
+            setScaleIndex(next);
+            update("distance", SCALE_STEPS[next].distance);
+          }}
+          className="mt-3 h-1 w-full cursor-pointer appearance-none rounded-full bg-muted accent-[var(--color-accent)]"
+        />
+
+        <div className="mt-2 flex justify-between text-[10px] text-muted-foreground">
+          {SCALE_STEPS.map((step, i) => (
+            <span
+              key={step.mly}
+              className={cn(
+                i === scaleIndex && "font-semibold text-foreground",
+              )}
+            >
+              {step.mly >= 1000 ? "1 Gly" : `${step.mly}`}
+            </span>
+          ))}
+        </div>
+
+        <p className="mt-3 text-sm">
+          <span className="text-muted-foreground">{t("fitsInView")} </span>
+          <span className="font-medium">
+            {locale === "en"
+              ? SCALE_STEPS[scaleIndex].structureEn
+              : SCALE_STEPS[scaleIndex].structure}
+          </span>
+        </p>
       </div>
 
       {/* ------------------------------------------------ Bậc thang kích thước */}

@@ -7,9 +7,12 @@ import * as THREE from "three";
 
 import {
   BOX_HALF,
+  COSMIC_LANDMARKS,
   FILAMENT_MAX_DISTANCE,
   NODE_COUNT,
+  NODE_TIERS,
   UNIVERSE_SCALES,
+  landmarkPosition,
 } from "@/lib/universe-data";
 
 export type UniverseSettings = {
@@ -18,6 +21,8 @@ export type UniverseSettings = {
   showFilaments: boolean;
   showScales: boolean;
   showLabels: boolean;
+  /** Khoảng cách camera, do thanh tỉ lệ điều khiển */
+  distance: number;
 };
 
 function gaussian(): number {
@@ -35,7 +40,14 @@ function useStarSprite(): THREE.Texture {
     const ctx = canvas.getContext("2d");
     if (ctx) {
       const half = size / 2;
-      const gradient = ctx.createRadialGradient(half, half, 0, half, half, half);
+      const gradient = ctx.createRadialGradient(
+        half,
+        half,
+        0,
+        half,
+        half,
+        half,
+      );
       gradient.addColorStop(0, "rgba(255,255,255,1)");
       gradient.addColorStop(0.22, "rgba(255,255,255,0.7)");
       gradient.addColorStop(0.5, "rgba(255,255,255,0.18)");
@@ -101,14 +113,21 @@ function useCosmicWeb() {
     const positions: number[] = [];
     const colors: number[] = [];
     const scratch = new THREE.Color();
-    const hot = new THREE.Color("#ffd9a8");
-    const warm = new THREE.Color("#c9d4ff");
-    const cool = new THREE.Color("#6f8dff");
+    const supercluster = new THREE.Color(NODE_TIERS.supercluster.color);
+    const cluster = new THREE.Color(NODE_TIERS.cluster.color);
+    const galaxy = new THREE.Color(NODE_TIERS.galaxy.color);
 
+    /**
+     * `density` quyết định hạng: thiên hà lẻ nằm dọc sợi và trong void, cụm ở
+     * quanh nút vừa, siêu cụm ở những nút nặng nhất. Ba màu tách bạch để mắt
+     * đọc được cấu trúc thay vì thấy một mớ chấm giống nhau.
+     */
     const push = (point: THREE.Vector3, density: number) => {
       positions.push(point.x, point.y, point.z);
-      scratch.copy(cool).lerp(warm, Math.min(1, density)).lerp(hot, Math.max(0, density - 0.6) * 2.2);
-      const dim = 0.55 + Math.random() * 0.45;
+      if (density > 0.85) scratch.copy(supercluster);
+      else if (density > 0.55) scratch.copy(cluster);
+      else scratch.copy(galaxy);
+      const dim = 0.45 + Math.random() * 0.5;
       colors.push(scratch.r * dim, scratch.g * dim, scratch.b * dim);
     };
 
@@ -183,7 +202,110 @@ function useCosmicWeb() {
   }, []);
 }
 
-function ScaleShells({ showLabels, locale }: { showLabels: boolean; locale: string }) {
+/**
+ * Các cấu trúc có thật, kèm dấu "bạn đang ở đây" ở gốc toạ độ.
+ *
+ * Mô hình trước mọi chấm sáng như nhau nên mắt không biết nhìn vào đâu. Ở đây
+ * vị trí của chúng ta được đánh dấu bằng một vòng sáng đập nhịp ngay giữa, và
+ * các mốc quen thuộc được gắn tên — đó là những điểm neo để đọc phần còn lại.
+ */
+function Landmarks({
+  sprite,
+  showLabels,
+  locale,
+  onSelect,
+}: {
+  sprite: THREE.Texture;
+  showLabels: boolean;
+  locale: string;
+  onSelect: (id: string) => void;
+}) {
+  const pulse = useRef<THREE.Mesh>(null);
+
+  useFrame(({ clock }) => {
+    if (!pulse.current) return;
+    const phase = (clock.elapsedTime % 2.4) / 2.4;
+    pulse.current.scale.setScalar(1 + phase * 3);
+    (pulse.current.material as THREE.Material).opacity = 0.5 * (1 - phase);
+  });
+
+  return (
+    <group>
+      {COSMIC_LANDMARKS.map((landmark) => {
+        const position = landmarkPosition(landmark);
+        const home = landmark.tier === "home";
+        const color =
+          landmark.tier === "home"
+            ? "#fde047"
+            : NODE_TIERS[landmark.tier].color;
+
+        return (
+          <group key={landmark.id} position={position}>
+            {home && (
+              <mesh ref={pulse}>
+                <sphereGeometry args={[0.28, 20, 20]} />
+                <meshBasicMaterial
+                  color="#fde047"
+                  transparent
+                  opacity={0.5}
+                  depthWrite={false}
+                  side={THREE.BackSide}
+                />
+              </mesh>
+            )}
+
+            <sprite
+              scale={home ? [1.5, 1.5, 1.5] : [0.85, 0.85, 0.85]}
+              onClick={() => onSelect(landmark.id)}
+              onPointerOver={() => (document.body.style.cursor = "pointer")}
+              onPointerOut={() => (document.body.style.cursor = "auto")}
+            >
+              <spriteMaterial
+                map={sprite}
+                color={color}
+                transparent
+                opacity={home ? 1 : 0.9}
+                depthWrite={false}
+                blending={THREE.AdditiveBlending}
+              />
+            </sprite>
+
+            {showLabels && (
+              <Html
+                position={[0, home ? 0.75 : 0.45, 0]}
+                center
+                distanceFactor={22}
+                zIndexRange={[20, 0]}
+              >
+                <button
+                  type="button"
+                  onClick={() => onSelect(landmark.id)}
+                  className={
+                    home
+                      ? "rounded-full border border-yellow-300/70 bg-yellow-300/15 px-2.5 py-1 text-[11px] font-semibold whitespace-nowrap backdrop-blur"
+                      : "rounded-full border border-white/20 bg-black/60 px-2 py-0.5 text-[10px] font-medium whitespace-nowrap backdrop-blur transition-colors hover:border-white/60"
+                  }
+                  style={{ color }}
+                >
+                  {home ? "⭐ " : ""}
+                  {locale === "en" ? landmark.nameEn : landmark.name}
+                </button>
+              </Html>
+            )}
+          </group>
+        );
+      })}
+    </group>
+  );
+}
+
+function ScaleShells({
+  showLabels,
+  locale,
+}: {
+  showLabels: boolean;
+  locale: string;
+}) {
   return (
     <group>
       {UNIVERSE_SCALES.filter((scale) => scale.radius !== null).map((scale) => (
@@ -200,7 +322,11 @@ function ScaleShells({ showLabels, locale }: { showLabels: boolean; locale: stri
           </mesh>
           {showLabels && (
             <Html
-              position={[0, (scale.radius as number) * 0.72, (scale.radius as number) * 0.72]}
+              position={[
+                0,
+                (scale.radius as number) * 0.72,
+                (scale.radius as number) * 0.72,
+              ]}
               center
               distanceFactor={18}
               zIndexRange={[20, 0]}
@@ -222,9 +348,11 @@ function ScaleShells({ showLabels, locale }: { showLabels: boolean; locale: stri
 function Web({
   settings,
   locale,
+  onSelect,
 }: {
   settings: UniverseSettings;
   locale: string;
+  onSelect: (id: string) => void;
 }) {
   const group = useRef<THREE.Group>(null);
   const sprite = useStarSprite();
@@ -268,7 +396,7 @@ function Web({
           <lineBasicMaterial
             color="#5b7cff"
             transparent
-            opacity={0.14}
+            opacity={0.07}
             depthWrite={false}
             blending={THREE.AdditiveBlending}
           />
@@ -278,16 +406,40 @@ function Web({
       {settings.showScales && (
         <ScaleShells showLabels={settings.showLabels} locale={locale} />
       )}
+
+      <Landmarks
+        sprite={sprite}
+        showLabels={settings.showLabels}
+        locale={locale}
+        onSelect={onSelect}
+      />
     </group>
   );
+}
+
+/** Đưa camera về khoảng cách mà thanh tỉ lệ đang chọn. */
+function ScaleRig({ distance }: { distance: number }) {
+  useFrame(({ camera }, delta) => {
+    const current = camera.position.length();
+    if (Math.abs(current - distance) < 0.05) return;
+    const next = THREE.MathUtils.lerp(
+      current,
+      distance,
+      Math.min(1, delta * 2),
+    );
+    camera.position.setLength(next);
+  });
+  return null;
 }
 
 export function UniverseScene({
   settings,
   locale,
+  onSelect,
 }: {
   settings: UniverseSettings;
   locale: string;
+  onSelect?: (id: string) => void;
 }) {
   return (
     <Canvas
@@ -301,8 +453,17 @@ export function UniverseScene({
       }}
     >
       <color attach="background" args={["#02030a"]} />
+      {/* Sương làm điểm ở xa chìm dần vào nền: không có nó thì mọi chấm sáng
+          như nhau và cấu trúc trông phẳng như một mạng lưới hai chiều. */}
+      <fog attach="fog" args={["#02030a", 14, 52]} />
 
-      <Web settings={settings} locale={locale} />
+      <Web
+        settings={settings}
+        locale={locale}
+        onSelect={onSelect ?? (() => {})}
+      />
+
+      <ScaleRig distance={settings.distance} />
 
       <OrbitControls
         enablePan={false}
