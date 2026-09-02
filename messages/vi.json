@@ -140,7 +140,11 @@
     "webglError": "Trình duyệt của bạn không hỗ trợ WebGL nên không hiển thị được mô hình 3D.",
     "dragToRotate": "Kéo để xoay · Cuộn để phóng to",
     "openFullModel": "Mở mô hình đầy đủ",
-    "globeCaption": "Mô hình 3D của {name}. Bản đồ bề mặt:"
+    "globeCaption": "Mô hình 3D của {name}. Bản đồ bề mặt:",
+    "positionsReal": "Vị trí hành tinh đúng theo ngày {date}, dữ liệu từ",
+    "positionsSchematic": "Vị trí hành tinh chỉ mang tính minh hoạ — chưa lấy được dữ liệu quỹ đạo thật.",
+    "texturesFrom": "Bản đồ bề mặt:",
+    "nasaEyes": "Xem trên NASA Eyes"
   },
   "ai": {
     "title": "Trợ lý khoa học",
@@ -287,8 +291,15 @@
     },
     "scaleSunLabel": "Mặt Trời cách tâm",
     "scaleDiameterLabel": "Đường kính thiên hà",
-    "scaleGridLabel": "1 đơn vị mô hình",
-    "lightYears": "năm ánh sáng"
+    "lightYears": "năm ánh sáng",
+    "showObjects": "Tinh vân & cụm sao",
+    "tourStart": "Du hành qua Ngân Hà",
+    "tourStop": "Dừng chuyến bay",
+    "tourProgress": "Chặng {step}/{total}",
+    "dashStars": "Ngôi sao",
+    "dashPlanets": "Hành tinh",
+    "billion": "tỉ",
+    "trillion": "nghìn tỉ"
   },
   "universe": {
     "title": "Vũ trụ",

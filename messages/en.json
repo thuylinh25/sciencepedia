@@ -140,7 +140,11 @@
     "webglError": "Your browser does not support WebGL, so the 3D model cannot be shown.",
     "dragToRotate": "Drag to rotate · Scroll to zoom",
     "openFullModel": "Open the full model",
-    "globeCaption": "3D model of {name}. Surface map:"
+    "globeCaption": "3D model of {name}. Surface map:",
+    "positionsReal": "Planet positions are those of {date}, from",
+    "positionsSchematic": "Planet positions are schematic — live orbital data could not be fetched.",
+    "texturesFrom": "Surface maps:",
+    "nasaEyes": "View on NASA Eyes"
   },
   "ai": {
     "title": "Science assistant",
@@ -287,8 +291,15 @@
     },
     "scaleSunLabel": "Sun from centre",
     "scaleDiameterLabel": "Galaxy diameter",
-    "scaleGridLabel": "1 model unit",
-    "lightYears": "light-years"
+    "lightYears": "light-years",
+    "showObjects": "Nebulae & clusters",
+    "tourStart": "Tour the Milky Way",
+    "tourStop": "Stop the tour",
+    "tourProgress": "Stop {step} of {total}",
+    "dashStars": "Stars",
+    "dashPlanets": "Planets",
+    "billion": "billion",
+    "trillion": "trillion"
   },
   "universe": {
     "title": "The Universe",

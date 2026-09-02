@@ -95,18 +95,17 @@ export const getPlanetPositions = unstable_cache(
     const start = isoDay(0);
     const stop = isoDay(1);
 
-    const results = await Promise.allSettled(
-      Object.entries(BODY_IDS).map(async ([planet, id]) => {
-        const longitude = await fetchLongitude(id, start, stop);
-        return [planet, longitude] as const;
-      }),
-    );
-
+    // Gọi tuần tự chứ không song song: tám request cùng lúc bị JPL từ chối bớt
+    // (đo được — song song chỉ về 3-4 hành tinh, tuần tự về đủ 8). Hàm này chỉ
+    // chạy sáu giờ một lần nên vài giây chờ thêm là không đáng kể.
     const longitudes: Record<string, number> = {};
-    for (const result of results) {
-      if (result.status !== "fulfilled") continue;
-      const [planet, longitude] = result.value;
-      if (longitude !== null) longitudes[planet] = longitude;
+    for (const [planet, id] of Object.entries(BODY_IDS)) {
+      try {
+        const longitude = await fetchLongitude(id, start, stop);
+        if (longitude !== null) longitudes[planet] = longitude;
+      } catch {
+        // bỏ qua hành tinh này; điều kiện đủ ở dưới sẽ quyết định
+      }
     }
 
     // Thiếu quá nửa thì coi như hỏng — hiển thị nửa thật nửa tượng trưng còn

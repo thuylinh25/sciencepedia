@@ -3,13 +3,14 @@
 import { useEffect, useMemo, useState } from "react";
 import dynamic from "next/dynamic";
 import { useLocale, useTranslations } from "next-intl";
-import { Loader2, Pause, Play, RotateCcw, X } from "lucide-react";
+import { Loader2, Pause, Play, Rocket, RotateCcw, X } from "lucide-react";
 
 import {
   GALAXY_FACTS,
   GALAXY_FEATURES,
-  LY_PER_UNIT,
+  GALAXY_OBJECTS,
   SUN_LY_FROM_CENTRE,
+  TOUR_STOPS,
 } from "@/lib/galaxy-data";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -64,18 +65,39 @@ export function MilkyWay() {
     speed: 1,
     showLabels: true,
     showSun: true,
+    showObjects: true,
     view: "free",
+    tour: false,
   });
+  const [tourStep, setTourStep] = useState(0);
   // Đổi key để dựng lại Canvas — vừa để đặt lại góc nhìn, vừa để đổi vị trí
   // camera khi bật/tắt chế độ nhìn ngang đĩa.
   const [sceneKey, setSceneKey] = useState(0);
 
   useEffect(() => setWebgl(supportsWebGL()), []);
 
-  const selected = useMemo(
-    () => GALAXY_FEATURES.find((feature) => feature.id === selectedId) ?? null,
-    [selectedId],
-  );
+  /** Nhãn bấm được gồm cả mốc thiên hà lẫn tinh vân/cụm sao, nên tra cả hai */
+  const selected = useMemo(() => {
+    const feature = GALAXY_FEATURES.find((item) => item.id === selectedId);
+    if (feature) {
+      return {
+        name: feature.name,
+        nameEn: feature.nameEn,
+        color: feature.color,
+        text: feature.description,
+        textEn: feature.descriptionEn,
+      };
+    }
+    const object = GALAXY_OBJECTS.find((item) => item.id === selectedId);
+    if (!object) return null;
+    return {
+      name: object.name,
+      nameEn: object.nameEn,
+      color: object.color,
+      text: `${object.note} Cách Mặt Trời khoảng ${object.distanceLy.toLocaleString("vi")} năm ánh sáng.`,
+      textEn: `${object.noteEn} About ${object.distanceLy.toLocaleString("en")} light-years from the Sun.`,
+    };
+  }, [selectedId]);
 
   const update = <K extends keyof GalaxySettings>(
     key: K,
@@ -103,6 +125,8 @@ export function MilkyWay() {
             settings={settings}
             onSelect={setSelectedId}
             locale={locale}
+            onTourStep={setTourStep}
+            onTourEnd={() => update("tour", false)}
           />
         )}
 
@@ -184,6 +208,35 @@ export function MilkyWay() {
             ))}
           </div>
 
+          <div className="flex items-center gap-2">
+            <Switch
+              id="galaxy-objects"
+              checked={settings.showObjects}
+              onCheckedChange={(value) => update("showObjects", value)}
+            />
+            <Label htmlFor="galaxy-objects" className="text-xs text-white/70">
+              {t("showObjects")}
+            </Label>
+          </div>
+
+          <Button
+            size="sm"
+            variant="glass"
+            onClick={() => {
+              setSelectedId(null);
+              // Tour bám theo mốc cố định nên phải dừng thiên hà lại
+              setSettings((previous) => ({
+                ...previous,
+                tour: !previous.tour,
+                playing: previous.tour,
+              }));
+            }}
+            className="gap-2 border-white/20 bg-white/10 text-white hover:bg-white/20"
+          >
+            <Rocket className="size-4" />
+            {settings.tour ? t("tourStop") : t("tourStart")}
+          </Button>
+
           <Button
             size="icon-sm"
             variant="glass"
@@ -198,31 +251,48 @@ export function MilkyWay() {
           </Button>
         </div>
 
-        {/* ------------------------------------------------ Thang đo
-            Không có nó thì người xem không biết một vòng xoắn là bao xa, và
-            con số "26.670 năm ánh sáng" chỉ nằm trong bảng dưới cuối trang. */}
-        <div className="pointer-events-none absolute top-4 left-4 rounded-2xl border border-white/10 bg-black/50 px-4 py-3 text-xs backdrop-blur-xl">
-          <dl className="space-y-1.5">
-            <div>
+        {/* ------------------------------------------------ Bảng số liệu
+            Ẩn trên màn hình hẹp: ở đó nó che mất chính mô hình. */}
+        {!selected && (
+          <dl className="pointer-events-none absolute top-4 right-4 hidden rounded-2xl border border-white/10 bg-black/45 px-4 py-3 text-xs backdrop-blur-xl sm:block">
+            <div className="flex items-baseline justify-between gap-6">
+              <dt className="text-white/55">{t("dashStars")}</dt>
+              <dd className="font-mono text-white/90">100–400 {t("billion")}</dd>
+            </div>
+            <div className="mt-1.5 flex items-baseline justify-between gap-6">
+              <dt className="text-white/55">{t("dashPlanets")}</dt>
+              <dd className="font-mono text-white/90">~1 {t("trillion")}</dd>
+            </div>
+            <div className="mt-1.5 flex items-baseline justify-between gap-6">
               <dt className="text-white/55">{t("scaleSunLabel")}</dt>
-              <dd className="font-mono text-sm text-yellow-300">
-                {SUN_LY_FROM_CENTRE.toLocaleString(locale)} {t("lightYears")}
-              </dd>
-            </div>
-            <div>
-              <dt className="text-white/55">{t("scaleDiameterLabel")}</dt>
-              <dd className="font-mono text-sm text-white/85">
-                ~105.000 {t("lightYears")}
-              </dd>
-            </div>
-            <div className="border-t border-white/10 pt-1.5">
-              <dt className="text-white/55">{t("scaleGridLabel")}</dt>
-              <dd className="font-mono text-sm text-white/85">
-                {LY_PER_UNIT.toLocaleString(locale)} {t("lightYears")}
+              <dd className="font-mono text-yellow-300">
+                {SUN_LY_FROM_CENTRE.toLocaleString(locale)} ly
               </dd>
             </div>
           </dl>
-        </div>
+        )}
+
+        {/* ------------------------------------------------ Lời dẫn chuyến bay */}
+        {settings.tour && TOUR_STOPS[tourStep] && (
+          <div className="absolute inset-x-4 top-4 rounded-2xl border border-white/10 bg-black/60 p-4 backdrop-blur-xl sm:inset-x-auto sm:left-1/2 sm:w-[26rem] sm:-translate-x-1/2">
+            <p className="text-[11px] tracking-widest text-white/50 uppercase">
+              {t("tourProgress", {
+                step: tourStep + 1,
+                total: TOUR_STOPS.length,
+              })}
+            </p>
+            <h2 className="mt-1 font-display text-lg font-bold text-white">
+              {locale === "en"
+                ? TOUR_STOPS[tourStep].nameEn
+                : TOUR_STOPS[tourStep].name}
+            </h2>
+            <p className="mt-1.5 text-sm leading-relaxed text-white/75">
+              {locale === "en"
+                ? TOUR_STOPS[tourStep].captionEn
+                : TOUR_STOPS[tourStep].caption}
+            </p>
+          </div>
+        )}
 
         {/* ------------------------------------------------ Bảng thông tin */}
         {selected && (
@@ -244,11 +314,29 @@ export function MilkyWay() {
               </button>
             </div>
             <p className="mt-2.5 text-sm leading-relaxed text-white/75">
-              {locale === "en" ? selected.descriptionEn : selected.description}
+              {locale === "en" ? selected.textEn : selected.text}
             </p>
           </div>
         )}
       </div>
+
+      {/* ------------------------------------------------ Thang đo
+          Nằm ngay dưới khung cảnh chứ không nổi lên trên nó: đặt chồng lên
+          cảnh thì che mất chính thứ nó đang mô tả. */}
+      <dl className="mt-3 flex flex-wrap items-baseline gap-x-8 gap-y-2 text-xs text-muted-foreground">
+        <div className="flex items-baseline gap-2">
+          <dt>{t("scaleSunLabel")}</dt>
+          <dd className="font-mono font-medium text-foreground">
+            {SUN_LY_FROM_CENTRE.toLocaleString(locale)} {t("lightYears")}
+          </dd>
+        </div>
+        <div className="flex items-baseline gap-2">
+          <dt>{t("scaleDiameterLabel")}</dt>
+          <dd className="font-mono font-medium text-foreground">
+            ~105.000 {t("lightYears")}
+          </dd>
+        </div>
+      </dl>
 
       {/* ------------------------------------------------ Số liệu */}
       <section className="mt-8">

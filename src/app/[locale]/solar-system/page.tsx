@@ -4,7 +4,15 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import type { Locale } from "@/i18n/routing";
 import { buildMetadata } from "@/lib/seo";
 import { ScaleLadder } from "@/components/models/scale-ladder";
+import { tryGetPlanetPositions } from "@/lib/horizons";
 import { SolarSystem } from "@/components/solar/solar-system";
+
+/**
+ * Vị trí hành tinh lấy từ JPL Horizons được cache 6 giờ, nên trang cũng phải
+ * được dựng lại theo nhịp đó — nếu không, bản tĩnh sinh lúc build sẽ giữ mãi
+ * cấu hình của ngày build.
+ */
+export const revalidate = 21600;
 
 export async function generateMetadata({
   params,
@@ -31,6 +39,8 @@ export default async function SolarSystemPage({
   setRequestLocale(locale);
 
   const t = await getTranslations("solar");
+  // Hỏng thì trả null và cảnh dùng góc tượng trưng — trang không được vỡ vì API ngoài
+  const positions = await tryGetPlanetPositions();
 
   return (
     <div className="container-page py-8">
@@ -41,7 +51,7 @@ export default async function SolarSystemPage({
         <p className="mt-2 text-muted-foreground">{t("subtitle")}</p>
       </header>
 
-      <SolarSystem />
+      <SolarSystem positions={positions} />
 
       <ScaleLadder current="solar-system" />
     </div>

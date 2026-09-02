@@ -113,12 +113,15 @@ function PlanetBody({
   selected,
   onSelect,
   locale,
+  realLongitude,
 }: {
   planet: Planet;
   settings: SceneSettings;
   selected: boolean;
   onSelect: (id: string) => void;
   locale: string;
+  /** Kinh độ hoàng đạo thật lấy từ JPL Horizons, radian; undefined thì dùng góc tượng trưng */
+  realLongitude?: number;
 }) {
   const orbitRef = useRef<THREE.Group>(null);
   const spinRef = useRef<THREE.Mesh>(null);
@@ -133,13 +136,21 @@ function PlanetBody({
     ? realScaleRadius(planet)
     : planet.displayRadius;
 
-  // Góc ban đầu cố định theo id để mỗi lần tải hành tinh không chồng lên nhau
-  const startAngle = useMemo(
-    () =>
+  /**
+   * Góc xuất phát trên quỹ đạo.
+   *
+   * Có dữ liệu Horizons thì dùng kinh độ hoàng đạo thật, nên cấu hình các hành
+   * tinh trong cảnh khớp với bầu trời hôm nay. Không có thì quay lại góc suy ra
+   * từ id — cố định để các hành tinh không chồng lên nhau, nhưng không mang ý
+   * nghĩa vật lý nào.
+   */
+  const startAngle = useMemo(() => {
+    if (realLongitude !== undefined) return realLongitude;
+    return (
       ([...planet.id].reduce((sum, char) => sum + char.charCodeAt(0), 0) % 360) *
-      (Math.PI / 180),
-    [planet.id],
-  );
+      (Math.PI / 180)
+    );
+  }, [planet.id, realLongitude]);
 
   useFrame((_, delta) => {
     if (!settings.playing) return;
@@ -232,11 +243,14 @@ export function SolarScene({
   selectedId,
   onSelect,
   locale,
+  longitudes,
 }: {
   settings: SceneSettings;
   selectedId: string | null;
   onSelect: (id: string | null) => void;
   locale: string;
+  /** Kinh độ hoàng đạo thật theo id hành tinh, nếu lấy được từ JPL Horizons */
+  longitudes?: Record<string, number>;
 }) {
   const sunRadius = settings.realScale ? 2.2 : SUN.displayRadius;
 
@@ -260,28 +274,27 @@ export function SolarScene({
         speed={0.4}
       />
 
-        <Sun radius={sunRadius} />
+      <Sun radius={sunRadius} />
 
-        {PLANETS.map((planet) => (
-          <group key={planet.id}>
-            {settings.showOrbits && (
-              <OrbitRing
-                radius={
-                  settings.realScale
-                    ? realScaleOrbit(planet)
-                    : planet.orbitRadius
-                }
-              />
-            )}
-            <PlanetBody
-              planet={planet}
-              settings={settings}
-              selected={selectedId === planet.id}
-              onSelect={onSelect}
-              locale={locale}
+      {PLANETS.map((planet) => (
+        <group key={planet.id}>
+          {settings.showOrbits && (
+            <OrbitRing
+              radius={
+                settings.realScale ? realScaleOrbit(planet) : planet.orbitRadius
+              }
             />
-          </group>
-        ))}
+          )}
+          <PlanetBody
+            planet={planet}
+            settings={settings}
+            selected={selectedId === planet.id}
+            onSelect={onSelect}
+            locale={locale}
+            realLongitude={longitudes?.[planet.id]}
+          />
+        </group>
+      ))}
 
       <OrbitControls
         enablePan={false}

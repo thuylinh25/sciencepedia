@@ -14,7 +14,10 @@ import {
   DISK_RADIUS,
   DISK_THICKNESS,
   GALAXY_FEATURES,
+  GALAXY_OBJECTS,
   SUN_RADIUS_UNITS,
+  TOUR_STOPS,
+  galacticToScene,
 } from "@/lib/galaxy-data";
 
 export type CameraView = "top" | "side" | "free";
@@ -24,7 +27,10 @@ export type GalaxySettings = {
   speed: number;
   showLabels: boolean;
   showSun: boolean;
+  showObjects: boolean;
   view: CameraView;
+  /** Chuyến bay tự động qua các chặng trong TOUR_STOPS */
+  tour: boolean;
 };
 
 /**
@@ -326,6 +332,15 @@ function Galaxy({
         </mesh>
       ))}
 
+      {settings.showObjects && (
+        <GalaxyObjects
+          sprite={sprite}
+          showLabels={settings.showLabels}
+          locale={locale}
+          onSelect={onSelect}
+        />
+      )}
+
       {settings.showSun && sun && (
         <SunMarker sprite={sprite} onSelect={onSelect} />
       )}
@@ -363,6 +378,70 @@ function Galaxy({
             </Html>
           );
         })}
+    </group>
+  );
+}
+
+/**
+ * Tinh vân và cụm sao cầu có thật, đặt đúng vị trí thiên hà.
+ *
+ * Không phải trang trí: mỗi thiên thể được quy từ khoảng cách thật tới Mặt
+ * Trời và toạ độ thiên hà, nên tinh vân Lạp Hộ dính sát Mặt Trời còn M13 nằm
+ * hẳn trên mặt phẳng đĩa — đúng như trên bầu trời. Chúng cũng phá vỡ sự đều
+ * đặn của các nhánh, thứ khiến mô hình trước đây trông phẳng.
+ */
+function GalaxyObjects({
+  sprite,
+  showLabels,
+  locale,
+  onSelect,
+}: {
+  sprite: THREE.Texture;
+  showLabels: boolean;
+  locale: string;
+  onSelect: (id: string) => void;
+}) {
+  return (
+    <group>
+      {GALAXY_OBJECTS.map((object) => {
+        const position = galacticToScene(object.distanceLy, object.l, object.b);
+        const isNebula = object.kind === "nebula";
+        return (
+          <group key={object.id} position={position}>
+            <sprite
+              scale={isNebula ? [0.85, 0.85, 0.85] : [0.5, 0.5, 0.5]}
+              onClick={() => onSelect(object.id)}
+            >
+              <spriteMaterial
+                map={sprite}
+                color={object.color}
+                transparent
+                opacity={isNebula ? 0.75 : 0.9}
+                depthWrite={false}
+                blending={THREE.AdditiveBlending}
+              />
+            </sprite>
+
+            {showLabels && (
+              <Html
+                position={[0, isNebula ? 0.42 : 0.3, 0]}
+                center
+                distanceFactor={16}
+                zIndexRange={[18, 0]}
+              >
+                <button
+                  type="button"
+                  onClick={() => onSelect(object.id)}
+                  className="rounded-full border border-white/15 bg-black/55 px-2 py-0.5 text-[10px] font-medium whitespace-nowrap backdrop-blur transition-colors hover:border-white/50"
+                  style={{ color: object.color }}
+                >
+                  {locale === "en" ? object.nameEn : object.name}
+                </button>
+              </Html>
+            )}
+          </group>
+        );
+      })}
     </group>
   );
 }
@@ -486,14 +565,91 @@ function CameraRig({
   return null;
 }
 
+/**
+ * Chuyến bay tự động qua các chặng trong TOUR_STOPS.
+ *
+ * Camera bay tới từng chặng rồi dừng lại vài giây trước khi đi tiếp. Trong
+ * lúc bay, thiên hà được yêu cầu ngừng quay: bám theo một mục tiêu đang tự
+ * chuyển động vừa khó nhìn vừa không cần thiết.
+ */
+function TourRig({
+  active,
+  controls,
+  onStep,
+  onEnd,
+}: {
+  active: boolean;
+  controls: React.RefObject<OrbitControlsImpl | null>;
+  onStep: (index: number) => void;
+  onEnd: () => void;
+}) {
+  const index = useRef(0);
+  const dwell = useRef(0);
+  const running = useRef(false);
+  const target = useMemo(() => new THREE.Vector3(), []);
+  const desired = useMemo(() => new THREE.Vector3(), []);
+
+  useFrame(({ camera }, delta) => {
+    if (!active) {
+      if (running.current) {
+        running.current = false;
+        index.current = 0;
+        dwell.current = 0;
+      }
+      return;
+    }
+
+    if (!running.current) {
+      running.current = true;
+      index.current = 0;
+      dwell.current = 0;
+      onStep(0);
+    }
+
+    const stop = TOUR_STOPS[index.current];
+    if (!stop) return;
+
+    target.set(...stop.target);
+    // Đứng lùi khỏi điểm ngắm theo hướng ra ngoài đĩa, nâng lên một chút
+    const outward = target.clone();
+    if (outward.lengthSq() < 1e-6) outward.set(1, 0, 0);
+    outward.setY(0).normalize().multiplyScalar(stop.distance);
+    desired.copy(target).add(outward).setY(target.y + stop.height);
+
+    camera.position.lerp(desired, Math.min(1, delta * 0.9));
+    controls.current?.target.lerp(target, Math.min(1, delta * 1.4));
+    controls.current?.update();
+
+    if (camera.position.distanceTo(desired) < 0.35) {
+      dwell.current += delta;
+      if (dwell.current > 3.2) {
+        dwell.current = 0;
+        index.current += 1;
+        if (index.current >= TOUR_STOPS.length) {
+          running.current = false;
+          onEnd();
+        } else {
+          onStep(index.current);
+        }
+      }
+    }
+  });
+
+  return null;
+}
+
 export function GalaxyScene({
   settings,
   onSelect,
   locale,
+  onTourStep,
+  onTourEnd,
 }: {
   settings: GalaxySettings;
   onSelect: (id: string | null) => void;
   locale: string;
+  onTourStep: (index: number) => void;
+  onTourEnd: () => void;
 }) {
   const controls = useRef<OrbitControlsImpl>(null);
 
@@ -524,7 +680,17 @@ export function GalaxyScene({
 
       <Galaxy settings={settings} onSelect={onSelect} locale={locale} />
 
-      <CameraRig view={settings.view} controls={controls} />
+      {/* Tour giành quyền điều khiển camera; CameraRig nhường lại khi tour bật */}
+      {settings.tour ? (
+        <TourRig
+          active
+          controls={controls}
+          onStep={onTourStep}
+          onEnd={onTourEnd}
+        />
+      ) : (
+        <CameraRig view={settings.view} controls={controls} />
+      )}
 
       {/* Rê được bằng chuột phải hoặc hai ngón: không có nó thì thiên hà luôn
           nằm giữa khung và người xem không bao giờ bay vào trong đĩa được. */}
