@@ -198,11 +198,20 @@ export async function getRelatedArticles(
   return [...byTag, ...byCategory];
 }
 
-/** Tăng lượt xem — không chặn render, lỗi ở đây không nên làm hỏng trang. */
+/**
+ * Tăng lượt đọc thêm một.
+ *
+ * Được gọi từ `/api/articles/[id]/view`, tức từ trình duyệt của người đọc, chứ
+ * không phải từ server component của trang bài viết. Lý do: trang đặt
+ * `revalidate = 300` và được prerender, nên phần lớn lượt truy cập đến từ bản
+ * cache và server component không chạy lại — đếm ở đó thì bỏ sót gần hết. Đã
+ * đo: sáu lượt truy cập liên tiếp mà con số không nhúc nhích.
+ *
+ * Lỗi ở đây được nuốt: một lượt đọc không đáng để làm hỏng gì.
+ */
 export async function incrementViews(id: string) {
-  // Prerender lúc `next build` cũng chạy `after()`. Nếu không chặn ở đây thì
-  // mỗi lần deploy lại cộng khống một lượt cho từng bài được dựng sẵn, đồng
-  // thời ném thêm hàng chục lệnh ghi vào build.
+  // Chốt phòng xa: nếu sau này lại có chỗ nào gọi hàm này trong lúc prerender,
+  // mỗi lần deploy sẽ cộng khống một lượt cho từng bài được dựng sẵn.
   if (process.env.NEXT_PHASE === "phase-production-build") return;
 
   try {

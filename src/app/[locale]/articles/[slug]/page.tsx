@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { after } from "next/server";
 import { BookOpen, Clock, Eye, Tag as TagIcon } from "lucide-react";
 
 import { Link } from "@/i18n/navigation";
@@ -11,7 +10,6 @@ import {
   getArticleBySlug,
   getPublishedSlugs,
   getRelatedArticles,
-  incrementViews,
 } from "@/server/queries";
 import { articleJsonLd, breadcrumbJsonLd, buildMetadata } from "@/lib/seo";
 import { absoluteUrl, extractHeadings, formatDate, formatNumber } from "@/lib/utils";
@@ -19,6 +17,7 @@ import { isFallback, pick, pickName } from "@/lib/i18n-content";
 
 import { JsonLd } from "@/components/json-ld";
 import { ArticleContent } from "@/components/article/article-content";
+import { ViewCounter } from "@/components/article/view-counter";
 import { TableOfContents } from "@/components/article/table-of-contents";
 import { PlanetGlobe } from "@/components/solar/planet-globe";
 import { ReadingProgress } from "@/components/article/reading-progress";
@@ -112,12 +111,10 @@ export default async function ArticlePage({
     article.tags.map((t) => t.tagId),
   );
 
-  // Đếm lượt xem sau khi response đã gửi đi — không làm chậm trang
-  after(() => incrementViews(article.id));
-
   return (
     <>
       <ReadingProgress />
+      <ViewCounter articleId={article.id} />
 
       <JsonLd
         data={articleJsonLd({
