@@ -291,5 +291,15 @@
     "scalesIntro": "Each step below is tens to hundreds of times larger than the one before. The shell radii in the model are compressed to fit the view — drawn to true scale, the Milky Way would be smaller than a pixel.",
     "factsTitle": "The universe in numbers",
     "disclaimer": "This model reproduces the morphology of the cosmic web — filaments, nodes and voids — rather than simulating it: no gravity between dark matter halos is computed. Node positions are random and correspond to no real galaxy cluster. The figures in the table come from observation."
+  },
+  "models": {
+    "title": "3D models",
+    "subtitle": "Three rungs of scale, each hundreds of thousands of times larger than the last",
+    "open": "Open the model",
+    "ladderTitle": "Scale ladder",
+    "zoomIn": "One rung in",
+    "zoomOut": "One rung out",
+    "allModels": "See all three models",
+    "note": "The three models are kept separate rather than merged into one continuously zoomable scene. The range of scale involved spans about 19 orders of magnitude, far beyond the precision of the 32-bit floats WebGL uses, so geometry would jitter if forced into a single scene. Each model is therefore tuned for its own scale, and they are linked by the scale ladder at the foot of each page."
   }
 }

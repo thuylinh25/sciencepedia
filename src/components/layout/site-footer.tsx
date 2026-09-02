@@ -27,6 +27,7 @@ export async function SiteFooter() {
       href: `/categories/${category.slug}`,
       label: locale === "en" ? category.nameEn : category.name,
     })),
+    { href: "/models", label: tNav("models") },
     { href: "/solar-system", label: tNav("solarSystem") },
     { href: "/milky-way", label: tNav("milkyWay") },
     { href: "/universe", label: tNav("universe") },

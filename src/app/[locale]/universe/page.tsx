@@ -3,6 +3,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 
 import type { Locale } from "@/i18n/routing";
 import { buildMetadata } from "@/lib/seo";
+import { ScaleLadder } from "@/components/models/scale-ladder";
 import { Universe } from "@/components/universe/universe";
 
 export async function generateMetadata({
@@ -41,6 +42,8 @@ export default async function UniversePage({
       </header>
 
       <Universe />
+
+      <ScaleLadder current="universe" />
     </div>
   );
 }

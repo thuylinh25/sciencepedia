@@ -3,6 +3,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 
 import type { Locale } from "@/i18n/routing";
 import { buildMetadata } from "@/lib/seo";
+import { ScaleLadder } from "@/components/models/scale-ladder";
 import { MilkyWay } from "@/components/galaxy/milky-way";
 
 export async function generateMetadata({
@@ -41,6 +42,8 @@ export default async function MilkyWayPage({
       </header>
 
       <MilkyWay />
+
+      <ScaleLadder current="milky-way" />
     </div>
   );
 }

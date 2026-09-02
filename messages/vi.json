@@ -291,5 +291,15 @@
     "scalesIntro": "Mỗi bậc dưới đây lớn hơn bậc trước hàng chục tới hàng trăm lần. Bán kính các lớp cầu trong mô hình đã được nén lại cho vừa khung nhìn — vẽ đúng tỉ lệ thì Ngân Hà nhỏ hơn một điểm ảnh.",
     "factsTitle": "Vũ trụ bằng số liệu",
     "disclaimer": "Mô hình này tái tạo hình thái của mạng vũ trụ — sợi, nút và khoảng rỗng — chứ không phải mô phỏng N-body: nó không tính lực hấp dẫn giữa các khối vật chất tối. Vị trí các nút là ngẫu nhiên, không tương ứng với đám thiên hà có thật nào. Số liệu trong bảng lấy từ quan sát."
+  },
+  "models": {
+    "title": "Mô hình 3D",
+    "subtitle": "Ba bậc thang kích thước, mỗi bậc lớn hơn bậc trước hàng trăm nghìn lần",
+    "open": "Mở mô hình",
+    "ladderTitle": "Bậc thang kích thước",
+    "zoomIn": "Thu vào một bậc",
+    "zoomOut": "Lùi ra một bậc",
+    "allModels": "Xem cả ba mô hình",
+    "note": "Ba mô hình được giữ tách rời chứ không gộp thành một cảnh phóng to liền mạch. Dải tỉ lệ cần bao là khoảng 19 bậc độ lớn, vượt xa độ chính xác của số thực 32-bit mà WebGL dùng, nên hình học sẽ giật và rung nếu ép vào cùng một cảnh. Mỗi mô hình vì thế được chỉnh riêng cho đúng tỉ lệ của nó, và nối với nhau bằng liên kết bậc thang ở cuối trang."
   }
 }

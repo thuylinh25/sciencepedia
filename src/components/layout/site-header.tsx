@@ -178,6 +178,10 @@ export function SiteHeader({ categories }: { categories: NavCategory[] }) {
                     </Link>
                   </DropdownMenuItem>
                 ))}
+                <DropdownMenuSeparator />
+                <DropdownMenuItem asChild>
+                  <Link href="/models">{t("models")}</Link>
+                </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
 
@@ -277,9 +281,16 @@ export function SiteHeader({ categories }: { categories: NavCategory[] }) {
                     </Link>
                   ))}
 
-                  <p className="mt-3 px-3 text-xs font-semibold tracking-widest text-muted-foreground uppercase">
+                  <Link
+                    href="/models"
+                    onClick={() => setMobileOpen(false)}
+                    className={cn(
+                      "mt-2 flex items-center gap-3 rounded-xl px-3 py-3 text-base font-medium transition-colors hover:bg-muted",
+                      isActive("/models") && "bg-muted text-primary",
+                    )}
+                  >
                     {t("models")}
-                  </p>
+                  </Link>
                   {MODELS.map((item) => (
                     <Link
                       key={item.href}
