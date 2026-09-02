@@ -119,11 +119,12 @@ export function GlobeScene({
       <Body body={body} spinning={spinning} />
 
       <OrbitControls
-        enablePan={false}
+        enablePan
         minDistance={Math.min(1.15, distance * 0.9)}
         maxDistance={7}
         zoomSpeed={0.6}
         rotateSpeed={0.5}
+        touches={{ ONE: THREE.TOUCH.ROTATE, TWO: THREE.TOUCH.DOLLY_PAN }}
       />
     </Canvas>
   );

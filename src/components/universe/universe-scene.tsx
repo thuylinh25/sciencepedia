@@ -419,9 +419,24 @@ function Web({
 
 /** Đưa camera về khoảng cách mà thanh tỉ lệ đang chọn. */
 function ScaleRig({ distance }: { distance: number }) {
+  const previous = useRef(distance);
+  // Chỉ ép camera khi thanh tỉ lệ vừa đổi; xong thì trả quyền lại cho người xem
+  const animating = useRef(false);
+
+  if (previous.current !== distance) {
+    previous.current = distance;
+    animating.current = true;
+  }
+
   useFrame(({ camera }, delta) => {
+    if (!animating.current) return;
+
     const current = camera.position.length();
-    if (Math.abs(current - distance) < 0.05) return;
+    if (Math.abs(current - distance) < 0.05) {
+      animating.current = false;
+      return;
+    }
+
     const next = THREE.MathUtils.lerp(
       current,
       distance,
@@ -429,6 +444,7 @@ function ScaleRig({ distance }: { distance: number }) {
     );
     camera.position.setLength(next);
   });
+
   return null;
 }
 
@@ -475,14 +491,21 @@ export function UniverseScene({
 
       <ScaleRig distance={settings.distance} />
 
+      {/* Khai báo thẳng thao tác chạm thay vì dựa vào mặc định: một ngón xoay,
+          hai ngón vừa chụm để phóng to thu nhỏ vừa rê. Pan phải bật, nếu không
+          thì cử chỉ hai ngón mặc định (DOLLY_PAN) bị vô hiệu một nửa. */}
       <OrbitControls
-        enablePan={false}
+        makeDefault
+        enablePan
+        enableZoom
         enableDamping
         dampingFactor={0.06}
-        minDistance={4}
-        maxDistance={60}
-        zoomSpeed={0.7}
+        minDistance={2}
+        maxDistance={70}
+        zoomSpeed={0.8}
         rotateSpeed={0.5}
+        panSpeed={0.7}
+        touches={{ ONE: THREE.TOUCH.ROTATE, TWO: THREE.TOUCH.DOLLY_PAN }}
       />
     </Canvas>
   );

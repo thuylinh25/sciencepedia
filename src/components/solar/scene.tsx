@@ -312,12 +312,13 @@ export function SolarScene({
       ))}
 
       <OrbitControls
-        enablePan={false}
+        enablePan
         enableDamping
         dampingFactor={0.06}
         minDistance={8}
         maxDistance={220}
         maxPolarAngle={Math.PI * 0.85}
+        touches={{ ONE: THREE.TOUCH.ROTATE, TWO: THREE.TOUCH.DOLLY_PAN }}
       />
     </Canvas>
   );

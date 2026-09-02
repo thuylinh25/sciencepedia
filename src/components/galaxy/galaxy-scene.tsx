@@ -712,6 +712,7 @@ export function GalaxyScene({
         zoomSpeed={0.8}
         rotateSpeed={0.55}
         panSpeed={0.7}
+        touches={{ ONE: THREE.TOUCH.ROTATE, TWO: THREE.TOUCH.DOLLY_PAN }}
       />
     </Canvas>
   );
