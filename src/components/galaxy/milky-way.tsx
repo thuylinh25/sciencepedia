@@ -5,11 +5,20 @@ import dynamic from "next/dynamic";
 import { useLocale, useTranslations } from "next-intl";
 import { Loader2, Pause, Play, RotateCcw, X } from "lucide-react";
 
-import { GALAXY_FACTS, GALAXY_FEATURES } from "@/lib/galaxy-data";
+import {
+  GALAXY_FACTS,
+  GALAXY_FEATURES,
+  LY_PER_UNIT,
+  SUN_LY_FROM_CENTRE,
+} from "@/lib/galaxy-data";
+import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
 import { Label } from "@/components/ui/label";
-import type { GalaxySettings } from "@/components/galaxy/galaxy-scene";
+import type {
+  CameraView,
+  GalaxySettings,
+} from "@/components/galaxy/galaxy-scene";
 
 /**
  * Giống trang Hệ Mặt Trời: cảnh 3D chỉ chạy được ở trình duyệt nên phải nạp
@@ -55,7 +64,7 @@ export function MilkyWay() {
     speed: 1,
     showLabels: true,
     showSun: true,
-    edgeOn: false,
+    view: "free",
   });
   // Đổi key để dựng lại Canvas — vừa để đặt lại góc nhìn, vừa để đổi vị trí
   // camera khi bật/tắt chế độ nhìn ngang đĩa.
@@ -157,18 +166,22 @@ export function MilkyWay() {
             </Label>
           </div>
 
-          <div className="flex items-center gap-2">
-            <Switch
-              id="galaxy-edge"
-              checked={settings.edgeOn}
-              onCheckedChange={(value) => {
-                update("edgeOn", value);
-                setSceneKey((key) => key + 1);
-              }}
-            />
-            <Label htmlFor="galaxy-edge" className="text-xs text-white/70">
-              {t("edgeOn")}
-            </Label>
+          <div className="flex items-center gap-1 rounded-full border border-white/15 bg-white/5 p-0.5">
+            {(["top", "side", "free"] as const).map((view) => (
+              <button
+                key={view}
+                type="button"
+                onClick={() => update("view", view as CameraView)}
+                className={cn(
+                  "rounded-full px-2.5 py-1 text-xs font-medium transition-colors",
+                  settings.view === view
+                    ? "bg-white/20 text-white"
+                    : "text-white/60 hover:text-white",
+                )}
+              >
+                {t(`view.${view}`)}
+              </button>
+            ))}
           </div>
 
           <Button
@@ -183,6 +196,32 @@ export function MilkyWay() {
           >
             <RotateCcw className="size-4" />
           </Button>
+        </div>
+
+        {/* ------------------------------------------------ Thang đo
+            Không có nó thì người xem không biết một vòng xoắn là bao xa, và
+            con số "26.670 năm ánh sáng" chỉ nằm trong bảng dưới cuối trang. */}
+        <div className="pointer-events-none absolute top-4 left-4 rounded-2xl border border-white/10 bg-black/50 px-4 py-3 text-xs backdrop-blur-xl">
+          <dl className="space-y-1.5">
+            <div>
+              <dt className="text-white/55">{t("scaleSunLabel")}</dt>
+              <dd className="font-mono text-sm text-yellow-300">
+                {SUN_LY_FROM_CENTRE.toLocaleString(locale)} {t("lightYears")}
+              </dd>
+            </div>
+            <div>
+              <dt className="text-white/55">{t("scaleDiameterLabel")}</dt>
+              <dd className="font-mono text-sm text-white/85">
+                ~105.000 {t("lightYears")}
+              </dd>
+            </div>
+            <div className="border-t border-white/10 pt-1.5">
+              <dt className="text-white/55">{t("scaleGridLabel")}</dt>
+              <dd className="font-mono text-sm text-white/85">
+                {LY_PER_UNIT.toLocaleString(locale)} {t("lightYears")}
+              </dd>
+            </div>
+          </dl>
         </div>
 
         {/* ------------------------------------------------ Bảng thông tin */}

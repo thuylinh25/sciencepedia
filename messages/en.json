@@ -275,12 +275,20 @@
   },
   "galaxy": {
     "title": "The Milky Way",
-    "subtitle": "Drag to rotate · Scroll to zoom · Click a label for details",
+    "subtitle": "Left-drag to rotate · Scroll to zoom · Right-drag (or two fingers) to pan",
     "showSun": "Sun position",
-    "edgeOn": "Edge-on view",
     "factsTitle": "The Milky Way in numbers",
     "close": "Close",
-    "disclaimer": "This model illustrates shape and scale; it is not a dynamical simulation. Stars are scattered along logarithmic spirals with random noise, and the true positions of the spiral arms are still being remeasured — the map of the galaxy has been redrawn several times in the past two decades. The figures in the table come from observation."
+    "disclaimer": "This model illustrates shape and scale; it is not a dynamical simulation. Stars are scattered along logarithmic spirals with random noise, and the true positions of the spiral arms are still being remeasured — the map of the galaxy has been redrawn several times in the past two decades. The figures in the table come from observation.",
+    "view": {
+      "top": "Top",
+      "side": "Side",
+      "free": "Free"
+    },
+    "scaleSunLabel": "Sun from centre",
+    "scaleDiameterLabel": "Galaxy diameter",
+    "scaleGridLabel": "1 model unit",
+    "lightYears": "light-years"
   },
   "universe": {
     "title": "The Universe",

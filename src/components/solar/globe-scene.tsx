@@ -1,12 +1,16 @@
 "use client";
 
 import { useRef } from "react";
-import { Canvas, useFrame, useLoader } from "@react-three/fiber";
+import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import * as THREE from "three";
 
+import { useProgressiveTexture } from "@/components/solar/use-progressive-texture";
+
 export type GlobeBody = {
   texture: string;
+  /** Màu dùng khi bản đồ bề mặt chưa tải xong hoặc tải hỏng */
+  fallbackColor: string;
   /** Độ nghiêng trục quay, tính bằng độ */
   axialTilt: number;
   /** Thiên thể tự phát sáng (Mặt Trời) thì không cần được chiếu sáng */
@@ -16,11 +20,9 @@ export type GlobeBody = {
 
 function Body({ body, spinning }: { body: GlobeBody; spinning: boolean }) {
   const ref = useRef<THREE.Group>(null);
-  const map = useLoader(THREE.TextureLoader, body.texture);
-
-  // Ảnh equirectangular cần không gian màu sRGB, nếu không sẽ bị nhợt màu
-  map.colorSpace = THREE.SRGBColorSpace;
-  map.anisotropy = 8;
+  // Ảnh về tới đâu thay tới đó; chưa có thì quả cầu vẫn vẽ bằng màu phẳng,
+  // nên trên mạng chậm người xem không bao giờ gặp một khung đen trống.
+  const map = useProgressiveTexture(body.texture);
 
   useFrame((_, delta) => {
     if (ref.current && spinning) ref.current.rotation.y += delta * 0.18;
@@ -33,9 +35,20 @@ function Body({ body, spinning }: { body: GlobeBody; spinning: boolean }) {
         <mesh>
           <sphereGeometry args={[1, 96, 96]} />
           {body.emissive ? (
-            <meshBasicMaterial map={map} toneMapped={false} />
+            <meshBasicMaterial
+              key={map ? "textured" : "flat"}
+              map={map}
+              color={map ? "#ffffff" : body.fallbackColor}
+              toneMapped={false}
+            />
           ) : (
-            <meshStandardMaterial map={map} roughness={0.92} metalness={0} />
+            <meshStandardMaterial
+              key={map ? "textured" : "flat"}
+              map={map}
+              color={map ? "#ffffff" : body.fallbackColor}
+              roughness={0.92}
+              metalness={0}
+            />
           )}
         </mesh>
 

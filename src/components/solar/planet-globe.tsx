@@ -63,9 +63,15 @@ export function PlanetGlobe({ slug }: { slug: string }) {
       : planet!.name;
 
   const body: GlobeBody = isSun
-    ? { texture: SUN.texture, axialTilt: 7.25, emissive: true }
+    ? {
+        texture: SUN.texture,
+        fallbackColor: SUN.color,
+        axialTilt: 7.25,
+        emissive: true,
+      }
     : {
         texture: planet!.texture,
+        fallbackColor: planet!.color,
         axialTilt: planet!.axialTilt,
         ring: planet!.ring,
       };

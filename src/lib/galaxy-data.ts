@@ -11,8 +11,8 @@
 
 export const LY_PER_UNIT = 5_000;
 
-/** Bán kính đĩa sao nhìn thấy được: ~50.000 năm ánh sáng. */
-export const DISK_RADIUS = 10;
+/** Bán kính đĩa sao nhìn thấy được: ~52.500 năm ánh sáng (đường kính ~105.000). */
+export const DISK_RADIUS = 10.5;
 
 /** Bán kính phần phình trung tâm. */
 export const BULGE_RADIUS = 2.2;
@@ -24,12 +24,14 @@ export const ARM_COUNT = 4;
 export const ARM_SPIN = 0.42;
 
 /**
- * Vị trí Mặt Trời: cách tâm khoảng 26.000 năm ánh sáng, nằm ở rìa trong của
- * nhánh Orion — một nhánh phụ nằm giữa hai nhánh chính Perseus và Sagittarius.
+ * Vị trí Mặt Trời: cách tâm 26.670 năm ánh sáng (8,178 kpc theo phép đo của
+ * nhóm GRAVITY năm 2019, sai số dưới 0,5%), nằm ở rìa trong của nhánh Orion —
+ * một nhánh phụ giữa hai nhánh chính Perseus và Sagittarius.
  */
-export const SUN_RADIUS_UNITS = 26_000 / LY_PER_UNIT;
+export const SUN_LY_FROM_CENTRE = 26_670;
+export const SUN_RADIUS_UNITS = SUN_LY_FROM_CENTRE / LY_PER_UNIT;
 
-/** Đĩa mỏng đến mức nào: 1.000 năm ánh sáng bề dày trên 100.000 đường kính. */
+/** Đĩa mỏng đến mức nào: 1.000 năm ánh sáng bề dày trên 105.000 đường kính. */
 export const DISK_THICKNESS = 1_000 / LY_PER_UNIT;
 
 export type GalaxyFeature = {
@@ -70,9 +72,9 @@ export const GALAXY_FEATURES: GalaxyFeature[] = [
     radius: SUN_RADIUS_UNITS,
     angle: Math.PI * 0.32,
     description:
-      "Hệ Mặt Trời nằm cách tâm khoảng 26.000 năm ánh sáng, ở rìa trong nhánh Orion. Nó mất khoảng 230 triệu năm để đi hết một vòng quanh tâm thiên hà.",
+      "Hệ Mặt Trời nằm cách tâm 26.670 năm ánh sáng, ở rìa trong nhánh Orion. Nó mất khoảng 230 triệu năm để đi hết một vòng quanh tâm thiên hà.",
     descriptionEn:
-      "The Solar System sits about 26,000 light-years from the centre, on the inner edge of the Orion Arm. One lap around the galaxy takes some 230 million years.",
+      "The Solar System sits 26,670 light-years from the centre, on the inner edge of the Orion Arm. One lap around the galaxy takes some 230 million years.",
     color: "#fde047",
   },
   {
@@ -102,11 +104,11 @@ export const GALAXY_FEATURES: GalaxyFeature[] = [
 ];
 
 export const GALAXY_FACTS = [
-  { labelVi: "Đường kính đĩa sao", labelEn: "Disk diameter", value: "~100.000 năm ánh sáng", valueEn: "~100,000 light-years" },
+  { labelVi: "Đường kính đĩa sao", labelEn: "Disk diameter", value: "~105.000 năm ánh sáng", valueEn: "~105,000 light-years" },
   { labelVi: "Bề dày đĩa mỏng", labelEn: "Thin disk thickness", value: "~1.000 năm ánh sáng", valueEn: "~1,000 light-years" },
   { labelVi: "Số sao ước tính", labelEn: "Estimated stars", value: "100–400 tỉ", valueEn: "100–400 billion" },
   { labelVi: "Khối lượng (gồm quầng tối)", labelEn: "Mass (with dark halo)", value: "~1,5 nghìn tỉ khối lượng Mặt Trời", valueEn: "~1.5 trillion solar masses" },
-  { labelVi: "Mặt Trời cách tâm", labelEn: "Sun's distance from centre", value: "~26.000 năm ánh sáng", valueEn: "~26,000 light-years" },
+  { labelVi: "Mặt Trời cách tâm", labelEn: "Sun's distance from centre", value: "26.670 năm ánh sáng", valueEn: "26,670 light-years" },
   { labelVi: "Một vòng của Mặt Trời", labelEn: "Sun's orbital period", value: "~230 triệu năm", valueEn: "~230 million years" },
   { labelVi: "Tuổi", labelEn: "Age", value: "~13,6 tỉ năm", valueEn: "~13.6 billion years" },
   { labelVi: "Phân loại", labelEn: "Classification", value: "Xoắn ốc có thanh (SBbc)", valueEn: "Barred spiral (SBbc)" },

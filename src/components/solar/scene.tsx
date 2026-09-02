@@ -1,10 +1,11 @@
 "use client";
 
-import { Suspense, useEffect, useMemo, useRef } from "react";
-import { Canvas, useFrame, useLoader } from "@react-three/fiber";
+import { useEffect, useMemo, useRef } from "react";
+import { Canvas, useFrame } from "@react-three/fiber";
 import { Html, OrbitControls, Stars } from "@react-three/drei";
 import * as THREE from "three";
 
+import { useProgressiveTexture } from "@/components/solar/use-progressive-texture";
 import {
   PLANETS,
   SUN,
@@ -25,8 +26,7 @@ export type SceneSettings = {
 
 function Sun({ radius }: { radius: number }) {
   const ref = useRef<THREE.Mesh>(null);
-  const map = useLoader(THREE.TextureLoader, SUN.texture);
-  map.colorSpace = THREE.SRGBColorSpace;
+  const map = useProgressiveTexture(SUN.texture);
 
   useFrame((_, delta) => {
     if (ref.current) ref.current.rotation.y += delta * 0.05;
@@ -36,7 +36,12 @@ function Sun({ radius }: { radius: number }) {
     <group>
       <mesh ref={ref}>
         <sphereGeometry args={[radius, 64, 64]} />
-        <meshBasicMaterial map={map} toneMapped={false} />
+        <meshBasicMaterial
+          key={map ? "textured" : "flat"}
+          map={map}
+          color={map ? "#ffffff" : SUN.color}
+          toneMapped={false}
+        />
       </mesh>
 
       {/* Quầng sáng: hai lớp cầu trong suốt, rẻ hơn nhiều so với bloom pass */}
@@ -118,11 +123,8 @@ function PlanetBody({
   const orbitRef = useRef<THREE.Group>(null);
   const spinRef = useRef<THREE.Mesh>(null);
 
-  // Bản đồ bề mặt thật thay cho cầu màu trơn. `useLoader` treo component cho
-  // tới khi ảnh tải xong, nên toàn bộ cảnh nằm trong <Suspense> ở dưới.
-  const map = useLoader(THREE.TextureLoader, planet.texture);
-  map.colorSpace = THREE.SRGBColorSpace;
-  map.anisotropy = 8;
+  // Bản đồ bề mặt về tới đâu thay tới đó; trước khi có thì dùng màu phẳng.
+  const map = useProgressiveTexture(planet.texture);
 
   const orbitRadius = settings.realScale
     ? realScaleOrbit(planet)
@@ -166,7 +168,9 @@ function PlanetBody({
         >
           <sphereGeometry args={[radius, 48, 48]} />
           <meshStandardMaterial
+            key={map ? "textured" : "flat"}
             map={map}
+            color={map ? "#ffffff" : planet.color}
             emissive={planet.emissive ?? "#000000"}
             emissiveIntensity={planet.emissive ? 0.22 : 0}
             roughness={0.82}
@@ -256,10 +260,6 @@ export function SolarScene({
         speed={0.4}
       />
 
-      {/* `useLoader` treo component cho tới khi bản đồ bề mặt tải xong. Nếu
-          không có Suspense ở đây, R3F sẽ ném lỗi thay vì chờ — nền sao vẽ
-          trước nên trong lúc chờ vẫn có gì đó để nhìn. */}
-      <Suspense fallback={null}>
         <Sun radius={sunRadius} />
 
         {PLANETS.map((planet) => (
@@ -282,7 +282,6 @@ export function SolarScene({
             />
           </group>
         ))}
-      </Suspense>
 
       <OrbitControls
         enablePan={false}

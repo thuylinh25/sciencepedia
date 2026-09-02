@@ -3,8 +3,10 @@
 import { useMemo, useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Html, OrbitControls, Stars } from "@react-three/drei";
+import type { OrbitControls as OrbitControlsImpl } from "three-stdlib";
 import * as THREE from "three";
 
+import { cn } from "@/lib/utils";
 import {
   ARM_COUNT,
   ARM_SPIN,
@@ -15,12 +17,27 @@ import {
   SUN_RADIUS_UNITS,
 } from "@/lib/galaxy-data";
 
+export type CameraView = "top" | "side" | "free";
+
 export type GalaxySettings = {
   playing: boolean;
   speed: number;
   showLabels: boolean;
   showSun: boolean;
-  edgeOn: boolean;
+  view: CameraView;
+};
+
+/**
+ * Ba góc máy đặt sẵn. "free" không ép vị trí — người xem tự xoay, phóng to và
+ * rê (giữ chuột phải hoặc hai ngón) tuỳ ý.
+ *
+ * Vị trí camera cho "top" và "side" được lerp tới chứ không đặt đột ngột: nhảy
+ * cắt làm mất hoàn toàn cảm giác không gian, còn chuyển động mượt cho người
+ * xem thấy đĩa xoay từ mặt phẳng ngang sang nhìn thẳng xuống.
+ */
+const VIEW_POSITIONS: Record<Exclude<CameraView, "free">, THREE.Vector3> = {
+  top: new THREE.Vector3(0, 21, 0.01),
+  side: new THREE.Vector3(0, 0.4, 23),
 };
 
 /** Xấp xỉ phân phối chuẩn bằng tổng ba số ngẫu nhiên đều — đủ tốt và rất rẻ. */
@@ -309,57 +326,164 @@ function Galaxy({
         </mesh>
       ))}
 
-      {/* Vị trí Mặt Trời */}
       {settings.showSun && sun && (
-        <group
-          position={[
-            Math.cos(sun.angle) * SUN_RADIUS_UNITS,
-            0,
-            Math.sin(sun.angle) * SUN_RADIUS_UNITS,
-          ]}
-        >
-          <mesh onClick={() => onSelect("sun")}>
-            <sphereGeometry args={[0.09, 20, 20]} />
-            <meshBasicMaterial color="#fff3b0" toneMapped={false} />
-          </mesh>
-          <sprite scale={[0.9, 0.9, 0.9]}>
-            <spriteMaterial
-              map={sprite}
-              color="#ffe066"
-              transparent
-              opacity={0.8}
-              depthWrite={false}
-              blending={THREE.AdditiveBlending}
-            />
-          </sprite>
-        </group>
+        <SunMarker sprite={sprite} onSelect={onSelect} />
       )}
 
       {settings.showLabels &&
-        GALAXY_FEATURES.map((feature) => (
-          <Html
-            key={feature.id}
-            position={[
-              Math.cos(feature.angle) * feature.radius,
-              feature.id === "core" ? 0.75 : 0.35,
-              Math.sin(feature.angle) * feature.radius,
-            ]}
-            center
-            distanceFactor={14}
-            zIndexRange={[20, 0]}
-          >
-            <button
-              type="button"
-              onClick={() => onSelect(feature.id)}
-              className="rounded-full border border-white/25 bg-black/60 px-2.5 py-1 text-[11px] font-medium whitespace-nowrap backdrop-blur transition-colors hover:border-white/70"
-              style={{ color: feature.color }}
+        GALAXY_FEATURES.map((feature) => {
+          const isSun = feature.id === "sun";
+          const height = feature.id === "core" ? 0.9 : isSun ? LABEL_HEIGHT : 0.35;
+          return (
+            <Html
+              key={feature.id}
+              position={[
+                Math.cos(feature.angle) * feature.radius,
+                height,
+                Math.sin(feature.angle) * feature.radius,
+              ]}
+              center
+              distanceFactor={14}
+              zIndexRange={[20, 0]}
             >
-              {locale === "en" ? feature.nameEn : feature.name}
-            </button>
-          </Html>
-        ))}
+              <button
+                type="button"
+                onClick={() => onSelect(feature.id)}
+                className={cn(
+                  "rounded-full border px-2.5 py-1 text-[11px] font-medium whitespace-nowrap backdrop-blur transition-colors",
+                  isSun
+                    ? "border-yellow-300/70 bg-yellow-300/15 hover:border-yellow-200"
+                    : "border-white/25 bg-black/60 hover:border-white/70",
+                )}
+                style={{ color: feature.color }}
+              >
+                {isSun ? "☀ " : ""}
+                {locale === "en" ? feature.nameEn : feature.name}
+              </button>
+            </Html>
+          );
+        })}
     </group>
   );
+}
+
+/** Chiều cao của nhãn Mặt Trời so với mặt phẳng đĩa. */
+const LABEL_HEIGHT = 1.6;
+
+/**
+ * Đánh dấu vị trí Mặt Trời.
+ *
+ * Chỉ một chấm sáng thì lẫn hẳn vào hàng chục nghìn chấm sáng khác, còn nhãn
+ * treo lơ lửng phía trên lại khiến người xem tưởng Mặt Trời nằm ở chỗ cái nhãn.
+ * Nên ở đây có ba thứ cùng lúc: một đường dẫn nối nhãn xuống đúng vị trí, một
+ * vòng sáng đập nhịp, và quầng vàng quanh chấm.
+ */
+function SunMarker({
+  sprite,
+  onSelect,
+}: {
+  sprite: THREE.Texture;
+  onSelect: (id: string) => void;
+}) {
+  const ring = useRef<THREE.Mesh>(null);
+  const sun = GALAXY_FEATURES.find((feature) => feature.id === "sun");
+
+  useFrame(({ clock }) => {
+    if (!ring.current) return;
+    // Nhịp đập 2 giây: to dần rồi mờ đi, lặp lại
+    const phase = (clock.elapsedTime % 2) / 2;
+    const scale = 1 + phase * 2.6;
+    ring.current.scale.setScalar(scale);
+    const material = ring.current.material as THREE.Material;
+    material.opacity = 0.55 * (1 - phase);
+  });
+
+  if (!sun) return null;
+
+  const x = Math.cos(sun.angle) * SUN_RADIUS_UNITS;
+  const z = Math.sin(sun.angle) * SUN_RADIUS_UNITS;
+
+  return (
+    <group position={[x, 0, z]}>
+      {/* Đường dẫn từ nhãn xuống đúng vị trí trong đĩa */}
+      <mesh position={[0, LABEL_HEIGHT / 2, 0]}>
+        <cylinderGeometry args={[0.012, 0.012, LABEL_HEIGHT, 6]} />
+        <meshBasicMaterial color="#fde047" transparent opacity={0.45} />
+      </mesh>
+
+      {/* Vòng sáng đập nhịp */}
+      <mesh ref={ring} rotation={[-Math.PI / 2, 0, 0]}>
+        <ringGeometry args={[0.2, 0.26, 48]} />
+        <meshBasicMaterial
+          color="#fde047"
+          transparent
+          opacity={0.5}
+          side={THREE.DoubleSide}
+          depthWrite={false}
+        />
+      </mesh>
+
+      <mesh
+        onClick={() => onSelect("sun")}
+        onPointerOver={() => (document.body.style.cursor = "pointer")}
+        onPointerOut={() => (document.body.style.cursor = "auto")}
+      >
+        <sphereGeometry args={[0.1, 20, 20]} />
+        <meshBasicMaterial color="#fff8c4" toneMapped={false} />
+      </mesh>
+
+      <sprite scale={[1.1, 1.1, 1.1]}>
+        <spriteMaterial
+          map={sprite}
+          color="#ffe066"
+          transparent
+          opacity={0.85}
+          depthWrite={false}
+          blending={THREE.AdditiveBlending}
+        />
+      </sprite>
+    </group>
+  );
+}
+
+/**
+ * Đưa camera về góc đặt sẵn khi người xem đổi chế độ.
+ *
+ * Chuyển động được nội suy dần thay vì nhảy cắt: nhìn thấy đĩa nghiêng dần từ
+ * mặt phẳng ngang lên thẳng đứng chính là thứ cho biết đây là vật thể ba chiều
+ * chứ không phải một tấm ảnh. Khi tới đủ gần đích thì ngừng ép, trả quyền điều
+ * khiển lại cho người xem.
+ */
+function CameraRig({
+  view,
+  controls,
+}: {
+  view: CameraView;
+  controls: React.RefObject<OrbitControlsImpl | null>;
+}) {
+  const settled = useRef(true);
+  const previous = useRef<CameraView>(view);
+
+  if (previous.current !== view) {
+    previous.current = view;
+    settled.current = view === "free";
+  }
+
+  useFrame(({ camera }, delta) => {
+    if (settled.current || view === "free") return;
+
+    const target = VIEW_POSITIONS[view];
+    camera.position.lerp(target, Math.min(1, delta * 2.4));
+    controls.current?.target.lerp(new THREE.Vector3(0, 0, 0), Math.min(1, delta * 2.4));
+    controls.current?.update();
+
+    if (camera.position.distanceTo(target) < 0.15) {
+      camera.position.copy(target);
+      settled.current = true;
+    }
+  });
+
+  return null;
 }
 
 export function GalaxyScene({
@@ -371,13 +495,11 @@ export function GalaxyScene({
   onSelect: (id: string | null) => void;
   locale: string;
 }) {
+  const controls = useRef<OrbitControlsImpl>(null);
+
   return (
     <Canvas
-      camera={{
-        // Nhìn nghiêng khi mặc định, gần như ngang đĩa khi bật "nhìn cạnh"
-        position: settings.edgeOn ? [0, 0.5, 23] : [0, 13, 16],
-        fov: 45,
-      }}
+      camera={{ position: [0, 13, 16], fov: 45 }}
       dpr={[1, 2]}
       gl={{
         antialias: true,
@@ -402,14 +524,21 @@ export function GalaxyScene({
 
       <Galaxy settings={settings} onSelect={onSelect} locale={locale} />
 
+      <CameraRig view={settings.view} controls={controls} />
+
+      {/* Rê được bằng chuột phải hoặc hai ngón: không có nó thì thiên hà luôn
+          nằm giữa khung và người xem không bao giờ bay vào trong đĩa được. */}
       <OrbitControls
-        enablePan={false}
+        ref={controls}
+        makeDefault
+        enablePan
         enableDamping
         dampingFactor={0.06}
-        minDistance={3}
-        maxDistance={45}
-        zoomSpeed={0.7}
+        minDistance={1.5}
+        maxDistance={60}
+        zoomSpeed={0.8}
         rotateSpeed={0.55}
+        panSpeed={0.7}
       />
     </Canvas>
   );

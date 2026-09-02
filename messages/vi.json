@@ -275,12 +275,20 @@
   },
   "galaxy": {
     "title": "Ngân Hà",
-    "subtitle": "Kéo để xoay · Cuộn để phóng to · Nhấp vào nhãn để xem thông tin",
+    "subtitle": "Kéo trái để xoay · Cuộn để phóng to · Giữ chuột phải (hoặc hai ngón) để rê",
     "showSun": "Vị trí Mặt Trời",
-    "edgeOn": "Nhìn ngang đĩa",
     "factsTitle": "Ngân Hà bằng số liệu",
     "close": "Đóng",
-    "disclaimer": "Mô hình này minh hoạ hình dạng và tỉ lệ, không phải mô phỏng động lực học. Các đám sao được rải theo đường xoắn ốc loga có nhiễu ngẫu nhiên; vị trí chính xác của các nhánh xoắn ốc vẫn đang được đo lại và bản đồ Ngân Hà đã được vẽ lại nhiều lần trong hai thập niên qua. Số liệu trong bảng lấy từ quan sát thiên văn."
+    "disclaimer": "Mô hình này minh hoạ hình dạng và tỉ lệ, không phải mô phỏng động lực học. Các đám sao được rải theo đường xoắn ốc loga có nhiễu ngẫu nhiên; vị trí chính xác của các nhánh xoắn ốc vẫn đang được đo lại và bản đồ Ngân Hà đã được vẽ lại nhiều lần trong hai thập niên qua. Số liệu trong bảng lấy từ quan sát thiên văn.",
+    "view": {
+      "top": "Nhìn từ trên",
+      "side": "Nhìn ngang",
+      "free": "Tự do"
+    },
+    "scaleSunLabel": "Mặt Trời cách tâm",
+    "scaleDiameterLabel": "Đường kính thiên hà",
+    "scaleGridLabel": "1 đơn vị mô hình",
+    "lightYears": "năm ánh sáng"
   },
   "universe": {
     "title": "Vũ trụ",
