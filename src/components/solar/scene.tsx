@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect, useMemo, useRef } from "react";
-import { Canvas, useFrame } from "@react-three/fiber";
+import { Suspense, useEffect, useMemo, useRef } from "react";
+import { Canvas, useFrame, useLoader } from "@react-three/fiber";
 import { Html, OrbitControls, Stars } from "@react-three/drei";
 import * as THREE from "three";
 
@@ -25,6 +25,8 @@ export type SceneSettings = {
 
 function Sun({ radius }: { radius: number }) {
   const ref = useRef<THREE.Mesh>(null);
+  const map = useLoader(THREE.TextureLoader, SUN.texture);
+  map.colorSpace = THREE.SRGBColorSpace;
 
   useFrame((_, delta) => {
     if (ref.current) ref.current.rotation.y += delta * 0.05;
@@ -34,7 +36,7 @@ function Sun({ radius }: { radius: number }) {
     <group>
       <mesh ref={ref}>
         <sphereGeometry args={[radius, 64, 64]} />
-        <meshBasicMaterial color={SUN.color} toneMapped={false} />
+        <meshBasicMaterial map={map} toneMapped={false} />
       </mesh>
 
       {/* Quầng sáng: hai lớp cầu trong suốt, rẻ hơn nhiều so với bloom pass */}
@@ -116,6 +118,12 @@ function PlanetBody({
   const orbitRef = useRef<THREE.Group>(null);
   const spinRef = useRef<THREE.Mesh>(null);
 
+  // Bản đồ bề mặt thật thay cho cầu màu trơn. `useLoader` treo component cho
+  // tới khi ảnh tải xong, nên toàn bộ cảnh nằm trong <Suspense> ở dưới.
+  const map = useLoader(THREE.TextureLoader, planet.texture);
+  map.colorSpace = THREE.SRGBColorSpace;
+  map.anisotropy = 8;
+
   const orbitRadius = settings.realScale
     ? realScaleOrbit(planet)
     : planet.orbitRadius;
@@ -158,7 +166,7 @@ function PlanetBody({
         >
           <sphereGeometry args={[radius, 48, 48]} />
           <meshStandardMaterial
-            color={planet.color}
+            map={map}
             emissive={planet.emissive ?? "#000000"}
             emissiveIntensity={planet.emissive ? 0.22 : 0}
             roughness={0.82}
@@ -248,26 +256,33 @@ export function SolarScene({
         speed={0.4}
       />
 
-      <Sun radius={sunRadius} />
+      {/* `useLoader` treo component cho tới khi bản đồ bề mặt tải xong. Nếu
+          không có Suspense ở đây, R3F sẽ ném lỗi thay vì chờ — nền sao vẽ
+          trước nên trong lúc chờ vẫn có gì đó để nhìn. */}
+      <Suspense fallback={null}>
+        <Sun radius={sunRadius} />
 
-      {PLANETS.map((planet) => (
-        <group key={planet.id}>
-          {settings.showOrbits && (
-            <OrbitRing
-              radius={
-                settings.realScale ? realScaleOrbit(planet) : planet.orbitRadius
-              }
+        {PLANETS.map((planet) => (
+          <group key={planet.id}>
+            {settings.showOrbits && (
+              <OrbitRing
+                radius={
+                  settings.realScale
+                    ? realScaleOrbit(planet)
+                    : planet.orbitRadius
+                }
+              />
+            )}
+            <PlanetBody
+              planet={planet}
+              settings={settings}
+              selected={selectedId === planet.id}
+              onSelect={onSelect}
+              locale={locale}
             />
-          )}
-          <PlanetBody
-            planet={planet}
-            settings={settings}
-            selected={selectedId === planet.id}
-            onSelect={onSelect}
-            locale={locale}
-          />
-        </group>
-      ))}
+          </group>
+        ))}
+      </Suspense>
 
       <OrbitControls
         enablePan={false}

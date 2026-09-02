@@ -23,6 +23,8 @@ export type Planet = {
   spinSpeed: number;
   /** Độ nghiêng trục quay (độ) */
   axialTilt: number;
+  /** Bản đồ bề mặt dạng equirectangular — xem chú thích TEXTURES bên dưới */
+  texture: string;
   ring?: { inner: number; outer: number; color: string; opacity: number };
 
   realRadiusKm: number;
@@ -40,12 +42,29 @@ export type Planet = {
   descriptionEn: string;
 };
 
+/**
+ * Bản đồ bề mặt hành tinh, bộ 2k của Solar System Scope (giấy phép CC BY 4.0),
+ * lấy qua Wikimedia Commons vì máy chủ đó trả về `access-control-allow-origin: *`
+ * — WebGL không nạp được texture từ nguồn không cho phép CORS.
+ *
+ * Ảnh dạng equirectangular: chiều ngang là kinh độ 0–360°, chiều dọc là vĩ độ
+ * −90 tới 90°, đúng định dạng mà THREE.SphereGeometry mong đợi.
+ */
+const TEXTURE_BASE = "https://upload.wikimedia.org/wikipedia/commons";
+
+export const TEXTURE_CREDIT = {
+  name: "Solar System Scope",
+  url: "https://www.solarsystemscope.com/textures/",
+  license: "CC BY 4.0",
+};
+
 export const SUN = {
   id: "sun",
   name: "Mặt Trời",
   nameEn: "The Sun",
   articleSlug: "mat-troi",
   color: "#ffb703",
+  texture: `${TEXTURE_BASE}/c/cb/Solarsystemscope_texture_2k_sun.jpg`,
   displayRadius: 3.2,
   realRadiusKm: 696_340,
   temperatureC: 5500,
@@ -68,6 +87,7 @@ export const PLANETS: Planet[] = [
     orbitSpeed: 1.607,
     spinSpeed: 0.017,
     axialTilt: 0.03,
+    texture: `${TEXTURE_BASE}/9/92/Solarsystemscope_texture_2k_mercury.jpg`,
     realRadiusKm: 2439.7,
     realDistanceKm: 57_900_000,
     orbitalPeriodDays: 88,
@@ -91,6 +111,7 @@ export const PLANETS: Planet[] = [
     orbitSpeed: 1.174,
     spinSpeed: -0.004,
     axialTilt: 177.4,
+    texture: `${TEXTURE_BASE}/6/63/Solarsystemscope_texture_2k_venus_atmosphere.jpg`,
     realRadiusKm: 6051.8,
     realDistanceKm: 108_200_000,
     orbitalPeriodDays: 224.7,
@@ -115,6 +136,7 @@ export const PLANETS: Planet[] = [
     orbitSpeed: 1,
     spinSpeed: 1,
     axialTilt: 23.4,
+    texture: `${TEXTURE_BASE}/c/c3/Solarsystemscope_texture_2k_earth_daymap.jpg`,
     realRadiusKm: 6371,
     realDistanceKm: 149_600_000,
     orbitalPeriodDays: 365.2,
@@ -138,6 +160,7 @@ export const PLANETS: Planet[] = [
     orbitSpeed: 0.531,
     spinSpeed: 0.97,
     axialTilt: 25.2,
+    texture: `${TEXTURE_BASE}/4/46/Solarsystemscope_texture_2k_mars.jpg`,
     realRadiusKm: 3389.5,
     realDistanceKm: 228_000_000,
     orbitalPeriodDays: 687,
@@ -161,6 +184,7 @@ export const PLANETS: Planet[] = [
     orbitSpeed: 0.084,
     spinSpeed: 2.42,
     axialTilt: 3.1,
+    texture: `${TEXTURE_BASE}/b/be/Solarsystemscope_texture_2k_jupiter.jpg`,
     realRadiusKm: 69_911,
     realDistanceKm: 778_500_000,
     orbitalPeriodDays: 4331,
@@ -184,6 +208,7 @@ export const PLANETS: Planet[] = [
     orbitSpeed: 0.034,
     spinSpeed: 2.24,
     axialTilt: 26.7,
+    texture: `${TEXTURE_BASE}/e/ea/Solarsystemscope_texture_2k_saturn.jpg`,
     ring: { inner: 2.1, outer: 3.4, color: "#d8c9a3", opacity: 0.75 },
     realRadiusKm: 58_232,
     realDistanceKm: 1_432_000_000,
@@ -208,6 +233,7 @@ export const PLANETS: Planet[] = [
     orbitSpeed: 0.012,
     spinSpeed: -1.39,
     axialTilt: 97.8,
+    texture: `${TEXTURE_BASE}/9/95/Solarsystemscope_texture_2k_uranus.jpg`,
     ring: { inner: 1.4, outer: 1.7, color: "#8fbfd0", opacity: 0.35 },
     realRadiusKm: 25_362,
     realDistanceKm: 2_867_000_000,
@@ -232,6 +258,7 @@ export const PLANETS: Planet[] = [
     orbitSpeed: 0.006,
     spinSpeed: 1.49,
     axialTilt: 28.3,
+    texture: `${TEXTURE_BASE}/1/1e/Solarsystemscope_texture_2k_neptune.jpg`,
     realRadiusKm: 24_622,
     realDistanceKm: 4_515_000_000,
     orbitalPeriodDays: 59_800,

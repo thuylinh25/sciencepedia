@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
-import { ChevronDown, Menu, Orbit, Search, Sparkles } from "lucide-react";
+import { ChevronDown, Disc3, Menu, Orbit, Search, Sparkles } from "lucide-react";
 
 import { Link, usePathname } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
@@ -40,6 +40,7 @@ export type NavCategory = {
 
 const NAV = [
   { href: "/solar-system", key: "solarSystem" as const, icon: Orbit },
+  { href: "/milky-way", key: "milkyWay" as const, icon: Disc3 },
   { href: "/assistant", key: "assistant" as const, icon: Sparkles },
 ];
 

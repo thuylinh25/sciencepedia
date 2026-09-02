@@ -20,6 +20,7 @@ import { isFallback, pick, pickName } from "@/lib/i18n-content";
 import { JsonLd } from "@/components/json-ld";
 import { ArticleContent } from "@/components/article/article-content";
 import { TableOfContents } from "@/components/article/table-of-contents";
+import { PlanetGlobe } from "@/components/solar/planet-globe";
 import { ReadingProgress } from "@/components/article/reading-progress";
 import { ShareBar } from "@/components/article/share-bar";
 import { BookmarkButton } from "@/components/article/bookmark-button";
@@ -237,6 +238,10 @@ export default async function ArticlePage({
       {/* ------------------------------------------------------- Nội dung */}
       <div className="container-page mt-10 grid gap-12 lg:grid-cols-[minmax(0,1fr)_16rem] lg:items-start">
         <article className="mx-auto w-full max-w-3xl">
+          {/* Quả cầu 3D — tự ẩn nếu bài không phải về một thiên thể trong
+              Hệ Mặt Trời, nên gọi vô điều kiện ở đây là an toàn. */}
+          <PlanetGlobe slug={article.slug} />
+
           <ArticleContent markdown={content} />
 
           {/* Thẻ */}

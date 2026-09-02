@@ -16,7 +16,8 @@
     "search": "Search",
     "admin": "Admin",
     "menu": "Menu",
-    "close": "Close"
+    "close": "Close",
+    "milkyWay": "3D Milky Way"
   },
   "auth": {
     "login": "Sign in",
@@ -134,7 +135,10 @@
     "gravity": "Gravity",
     "readMore": "Read the full article",
     "loading": "Loading the 3D model…",
-    "webglError": "Your browser does not support WebGL, so the 3D model cannot be shown."
+    "webglError": "Your browser does not support WebGL, so the 3D model cannot be shown.",
+    "dragToRotate": "Drag to rotate · Scroll to zoom",
+    "openFullModel": "Open the full model",
+    "globeCaption": "3D model of {name}. Surface map:"
   },
   "ai": {
     "title": "Science assistant",
@@ -266,5 +270,14 @@
     "contact": "Contact",
     "rights": "Content released under CC BY-SA 4.0.",
     "builtWith": "Built with Next.js, Prisma and Meilisearch."
+  },
+  "galaxy": {
+    "title": "The Milky Way",
+    "subtitle": "Drag to rotate · Scroll to zoom · Click a label for details",
+    "showSun": "Sun position",
+    "edgeOn": "Edge-on view",
+    "factsTitle": "The Milky Way in numbers",
+    "close": "Close",
+    "disclaimer": "This model illustrates shape and scale; it is not a dynamical simulation. Stars are scattered along logarithmic spirals with random noise, and the true positions of the spiral arms are still being remeasured — the map of the galaxy has been redrawn several times in the past two decades. The figures in the table come from observation."
   }
 }
