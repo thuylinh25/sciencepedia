@@ -3,21 +3,31 @@ import "server-only";
 import { prisma } from "@/lib/prisma";
 import { slugify } from "@/lib/utils";
 import { KNOWLEDGE_FEEDS, type KnowledgeFeed } from "@/lib/knowledge-feeds";
+import {
+  isRewriteConfigured,
+  rewriteArticle,
+  type RewriteOutput,
+} from "@/lib/rewrite";
 
 /**
- * Theo dõi feed của các nguồn khoa học chính thống và tạo bản nháp cho bài mới.
+ * Theo dõi feed của các nguồn khoa học chính thống, nhờ Claude biên tập lại
+ * thành bài tiếng Việt rồi đăng thẳng.
  *
- * Hai quy tắc định hình toàn bộ module này:
+ * Ba quy tắc định hình module này:
  *
- * 1. **Chỉ lấy tóm tắt, không lấy toàn văn.** Nature, Science, Physics World,
- *    Smithsonian giữ bản quyền chặt; sao chép nguyên bài về là vi phạm. Nên bản
- *    nháp chỉ gồm đoạn tóm tắt mà chính feed công bố, kèm liên kết bài gốc — đủ
- *    để người biên tập biết có tin gì đáng viết, không thay thế bài gốc.
+ * 1. **Viết lại, không sao chép.** Science, Physics World, Smithsonian giữ bản
+ *    quyền chặt. Bài gốc chỉ dùng làm tư liệu cho Claude viết một bài tiếng
+ *    Việt mới; câu chữ đăng lên là của Sciencepedia, và luôn dẫn nguồn về
+ *    trang gốc.
  *
- * 2. **Luôn là DRAFT.** Đây là tin tức tiếng Anh chưa qua kiểm chứng, chưa dịch,
- *    chưa viết theo định dạng Sciencepedia. Trong 15 bài đã biên tập tay từ VACA,
- *    bài nào cũng có ít nhất một chỗ sai hoặc lỗi thời; đăng thẳng nội dung chưa
- *    đọc lại là đưa những chỗ như thế lên site dưới danh nghĩa bách khoa.
+ * 2. **Claude hỏng thì rơi về DRAFT, không đăng bừa.** Hết quota, mô hình trả
+ *    bài rỗng, không lấy được trang gốc — mọi trường hợp đều cho ra bản nháp
+ *    kèm cảnh báo thay vì một bài dở trên site. Chưa đặt ANTHROPIC_API_KEY thì
+ *    toàn bộ rơi về nhánh nháp, tính năng vẫn chạy chứ không chết.
+ *
+ * 3. **Có hạn thời gian.** Mỗi bài tốn một lượt gọi mô hình, mà hàm serverless
+ *    thì có trần thời gian chạy. Vòng lặp dừng khi hết ngân sách thay vì để
+ *    Vercel cắt ngang giữa chừng.
  */
 
 const USER_AGENT =
@@ -25,7 +35,13 @@ const USER_AGENT =
 
 export type FeedSyncResult = {
   checked: number;
-  imported: { slug: string; title: string; url: string; source: string }[];
+  imported: {
+    slug: string;
+    title: string;
+    url: string;
+    source: string;
+    status: "PUBLISHED" | "DRAFT";
+  }[];
   skipped: number;
   errors: string[];
 };
@@ -152,11 +168,45 @@ async function fetchFeed(url: string): Promise<string> {
   return response.text();
 }
 
-function draftBody(item: FeedItem, feed: KnowledgeFeed): string {
-  const credit = item.author
-    ? `${item.author} — ${feed.publisher}`
-    : feed.publisher;
+function credit(item: FeedItem, feed: KnowledgeFeed): string {
+  return item.author ? `${item.author} — ${feed.publisher}` : feed.publisher;
+}
 
+/** Khối dẫn nguồn gắn cuối mọi bài, dù do Claude viết hay để nguyên nháp. */
+function attribution(item: FeedItem, feed: KnowledgeFeed): string {
+  return [
+    "---",
+    "",
+    `Nguồn: **[${item.title}](${item.link})** — ${credit(item, feed)}.`,
+    `Trang chủ: ${feed.homepage}. Bản quyền nội dung gốc thuộc về ${feed.publisher}.`,
+  ].join("\n");
+}
+
+/**
+ * Lấy toàn văn bài gốc làm tư liệu cho Claude.
+ *
+ * Tóm tắt trong feed thường chỉ 200 ký tự — viết một bài bách khoa từ chừng đó
+ * thì mô hình buộc phải bịa. Trang gốc lấy được thì bài chắc chắn hơn hẳn;
+ * không lấy được thì đành dùng tóm tắt và bài sẽ ngắn.
+ */
+async function fetchSourceText(url: string): Promise<string> {
+  const response = await fetch(url, {
+    headers: { "User-Agent": USER_AGENT },
+    signal: AbortSignal.timeout(15_000),
+    cache: "no-store",
+  });
+  if (!response.ok) throw new Error(`HTTP ${response.status}`);
+
+  const html = await response.text();
+  const body =
+    /<article[\s>][\s\S]*?<\/article>/i.exec(html)?.[0] ??
+    /<main[\s>][\s\S]*?<\/main>/i.exec(html)?.[0] ??
+    html;
+
+  return textOf(body.replace(/<(nav|header|footer|aside)[\s\S]*?<\/\1>/gi, " "));
+}
+
+function draftBody(item: FeedItem, feed: KnowledgeFeed): string {
   return [
     "> **Bản nháp nhập tự động — chưa biên tập, chưa dịch.**",
     "> Dưới đây chỉ là tóm tắt do chính nguồn công bố kèm liên kết bài gốc.",
@@ -167,10 +217,7 @@ function draftBody(item: FeedItem, feed: KnowledgeFeed): string {
     "",
     item.summary || "_Nguồn không kèm tóm tắt._",
     "",
-    "---",
-    "",
-    `Nguồn: **[${item.title}](${item.link})** — ${credit}.`,
-    `Trang chủ: ${feed.homepage}. Bản quyền nội dung gốc thuộc về ${feed.publisher}.`,
+    attribution(item, feed),
   ].join("\n");
 }
 
@@ -191,16 +238,53 @@ async function freeSlug(base: string, feedId: string): Promise<string> {
   return `${base}-${feedId}-${Date.now().toString(36)}`;
 }
 
+/**
+ * Nhờ Claude biên tập lại thành bài tiếng Việt.
+ *
+ * Trả `null` thay vì ném lỗi: một bài viết hỏng không phải lý do để dừng cả
+ * lần chạy, và bên gọi vẫn còn đường lui là giữ bản nháp.
+ */
+async function tryRewrite(
+  item: FeedItem,
+  feed: KnowledgeFeed,
+  categoryName: string,
+  result: FeedSyncResult,
+): Promise<RewriteOutput | null> {
+  if (!isRewriteConfigured()) return null;
+
+  try {
+    // Trang gốc cho tư liệu dày hơn feed nhiều; lấy không được thì dùng tóm tắt
+    const sourceText = await fetchSourceText(item.link).catch(() => item.summary);
+
+    if (sourceText.length < 400) {
+      result.errors.push(`${item.link}: tư liệu quá mỏng để viết bài`);
+      return null;
+    }
+
+    return await rewriteArticle({
+      title: item.title,
+      url: item.link,
+      publisher: feed.publisher,
+      sourceText,
+      categoryName,
+    });
+  } catch (error) {
+    result.errors.push(`${item.link}: Claude — ${(error as Error).message}`);
+    return null;
+  }
+}
+
 async function importFeed(
   feed: KnowledgeFeed,
   authorId: string,
   seenUrls: Set<string>,
   budget: number,
+  deadline: number,
   result: FeedSyncResult,
 ): Promise<number> {
   const category = await prisma.category.findUnique({
     where: { slug: feed.categorySlug },
-    select: { id: true },
+    select: { id: true, name: true },
   });
   if (!category) {
     result.errors.push(`${feed.id}: không có danh mục ${feed.categorySlug}`);
@@ -213,7 +297,7 @@ async function importFeed(
   let imported = 0;
 
   for (const item of items) {
-    if (imported >= budget) break;
+    if (imported >= budget || Date.now() > deadline) break;
 
     if (seenUrls.has(item.link)) {
       result.skipped += 1;
@@ -226,22 +310,29 @@ async function importFeed(
       continue;
     }
 
-    const slug = await freeSlug(
-      slugify(item.title).slice(0, 80) || feed.id,
-      feed.id,
-    );
+    const article = await tryRewrite(item, feed, category.name, result);
 
-    const summary =
-      (item.summary || item.title).slice(0, 280).replace(/\s+\S*$/, "") + "…";
+    // Claude viết được thì đăng luôn; hỏng thì giữ nháp để người biên tập xử lý
+    const published = article !== null;
+    const title = article?.title ?? item.title;
+
+    const slug = await freeSlug(slugify(title).slice(0, 80) || feed.id, feed.id);
 
     await prisma.article.create({
       data: {
         slug,
-        title: item.title,
-        summary,
-        content: draftBody(item, feed),
-        // Giữ nháp: xem chú thích đầu file
-        status: "DRAFT",
+        title,
+        titleEn: published ? item.title : null,
+        summary:
+          article?.summary ??
+          (item.summary || item.title).slice(0, 280).replace(/\s+\S*$/, "") + "…",
+        content: article
+          ? `${article.content}\n\n${attribution(item, feed)}`
+          : draftBody(item, feed),
+        seoKeywords: article?.seoKeywords || null,
+        readingTime: article?.readingTime ?? 1,
+        status: published ? "PUBLISHED" : "DRAFT",
+        publishedAt: published ? (item.published ?? new Date()) : null,
         categoryId: category.id,
         authorId,
         sources: {
@@ -258,9 +349,10 @@ async function importFeed(
     seenUrls.add(item.link);
     result.imported.push({
       slug,
-      title: item.title,
+      title,
       url: item.link,
       source: feed.publisher,
+      status: published ? "PUBLISHED" : "DRAFT",
     });
     imported += 1;
   }
@@ -272,14 +364,20 @@ async function importFeed(
  * Quét mọi feed trong danh sách và nhập bài chưa có.
  *
  * `perFeed` chặn một nguồn xả cả trăm mục cũ trong lần chạy đầu (arXiv trả 180
- * mục mỗi ngày). `total` giữ toàn bộ lần chạy trong giới hạn thời gian của
- * serverless.
+ * mục mỗi ngày) và giữ cho một ngày không toàn tin của cùng một nơi.
+ *
+ * `budgetMs` mới là thứ thật sự quyết định số bài mỗi lần chạy: viết một bài
+ * mất chừng 15–30 giây, mà hàm trên Vercel bị cắt ở 60 giây (gói Hobby). Dừng
+ * chủ động trước hạn thì những bài đã viết được lưu trọn vẹn; để Vercel cắt
+ * ngang thì mất cả lần chạy. Cron chạy hằng ngày nên bài còn lại đợi hôm sau.
  */
 export async function syncKnowledgeFeeds({
-  perFeed = 3,
+  perFeed = 2,
   total = 20,
+  budgetMs = 45_000,
   feeds = KNOWLEDGE_FEEDS,
 } = {}): Promise<FeedSyncResult> {
+  const deadline = Date.now() + budgetMs;
   const result: FeedSyncResult = {
     checked: 0,
     imported: [],
@@ -305,7 +403,7 @@ export async function syncKnowledgeFeeds({
   );
 
   for (const feed of feeds) {
-    if (result.imported.length >= total) break;
+    if (result.imported.length >= total || Date.now() > deadline) break;
 
     try {
       await importFeed(
@@ -313,6 +411,7 @@ export async function syncKnowledgeFeeds({
         author.id,
         seenUrls,
         Math.min(perFeed, total - result.imported.length),
+        deadline,
         result,
       );
     } catch (error) {

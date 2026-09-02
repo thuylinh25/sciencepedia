@@ -24,6 +24,7 @@
     "seed": "tsx --env-file-if-exists=.env prisma/seed.ts"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.123.0",
     "@auth/prisma-adapter": "^2.10.0",
     "@google/genai": "^2.20.0",
     "@hookform/resolvers": "^5.2.2",

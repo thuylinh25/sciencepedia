@@ -2,15 +2,19 @@ import "server-only";
 
 import { prisma } from "@/lib/prisma";
 import { slugify } from "@/lib/utils";
+import { isRewriteConfigured, rewriteArticle } from "@/lib/rewrite";
 
 /**
  * Đồng bộ bài mới từ thienvanvietnam.org (VACA).
  *
- * Bài được nhập về dưới dạng BẢN NHÁP, không xuất bản thẳng. Lý do không phải
- * sự thận trọng chung chung: trong 15 bài đã biên tập tay từ nguồn này, bài nào
- * cũng có ít nhất một chỗ sai hoặc đã lỗi thời — WIMP, hố Chicxulub, phân loại
- * Cartwheel, ngưỡng khối lượng thành sao, số phận vũ trụ. Đăng thẳng là đưa
- * những chỗ đó lên site dưới danh nghĩa bách khoa.
+ * Claude biên tập lại rồi đăng thẳng; hỏng thì bài rơi về bản nháp.
+ *
+ * Cảnh báo về nguồn này: trong 15 bài đã biên tập tay từ VACA, bài nào cũng có
+ * ít nhất một chỗ sai hoặc đã lỗi thời — WIMP, hố Chicxulub, phân loại
+ * Cartwheel, ngưỡng khối lượng thành sao, số phận vũ trụ. Claude chỉ đọc đúng
+ * một tài liệu là chính bài đó, nên không có cách nào biết một khẳng định năm
+ * 2015 nay đã bị bác. Những chỗ như thế sẽ theo bài lên site. Muốn chắc thì
+ * bỏ nhánh này khỏi cron và giữ VACA ở chế độ biên tập tay.
  *
  * Thông báo bản quyền của VACA cho phép tái sử dụng kèm ghi rõ tên tác giả và
  * nguồn, nên mỗi bản nháp đều mang sẵn khối dẫn nguồn và một mục Source trỏ về
@@ -51,7 +55,12 @@ const FALLBACK_CATEGORY = "vu-tru-hoc";
 
 export type SyncResult = {
   checked: number;
-  imported: { slug: string; title: string; url: string }[];
+  imported: {
+    slug: string;
+    title: string;
+    url: string;
+    status: "PUBLISHED" | "DRAFT";
+  }[];
   skipped: number;
   errors: string[];
 };
@@ -144,7 +153,11 @@ export function extractArticle(html: string) {
  * `limit` giữ mỗi lần chạy trong giới hạn thời gian của serverless. Chạy hàng
  * ngày thì 5 bài là dư — VACA không đăng tới 5 bài kiến thức mỗi ngày.
  */
-export async function syncNewArticles({ limit = 5 } = {}): Promise<SyncResult> {
+export async function syncNewArticles({
+  limit = 3,
+  budgetMs = 20_000,
+} = {}): Promise<SyncResult> {
+  const deadline = Date.now() + budgetMs;
   const result: SyncResult = {
     checked: 0,
     imported: [],
@@ -176,7 +189,7 @@ export async function syncNewArticles({ limit = 5 } = {}): Promise<SyncResult> {
   }
 
   for (const candidate of candidates) {
-    if (result.imported.length >= limit) break;
+    if (result.imported.length >= limit || Date.now() > deadline) break;
     if (importedIds.has(candidate.id)) {
       result.skipped += 1;
       continue;
@@ -215,25 +228,53 @@ export async function syncNewArticles({ limit = 5 } = {}): Promise<SyncResult> {
         ? `${article.author}, Thiên văn Việt Nam (VACA)`
         : "Thiên văn Việt Nam (VACA)";
 
+      const credit = [
+        "---",
+        "",
+        `Nguồn: **[${article.title}](${candidate.url})** — ${attribution}. Bản quyền nội dung gốc thuộc về VACA.`,
+      ].join("\n");
+
+      const rewritten = isRewriteConfigured()
+        ? await rewriteArticle({
+            title: article.title,
+            url: candidate.url,
+            publisher: "Thiên văn Việt Nam (VACA)",
+            sourceText: article.text,
+            categoryName: categorySlug,
+          }).catch((error: Error) => {
+            result.errors.push(`${candidate.url}: Claude — ${error.message}`);
+            return null;
+          })
+        : null;
+
+      const published = rewritten !== null;
+
       await prisma.article.create({
         data: {
           slug,
-          title: article.title,
-          summary: article.text.slice(0, 280).replace(/\s+\S*$/, "") + "…",
-          content: [
-            "> **Bản nháp nhập tự động — chưa biên tập.**",
-            "> Nội dung dưới đây là văn bản gốc lấy về nguyên trạng. Cần đối",
-            "> chiếu số liệu, cập nhật những chỗ đã lỗi thời và viết lại theo",
-            "> định dạng Sciencepedia trước khi xuất bản.",
-            "",
-            article.text,
-            "",
-            "---",
-            "",
-            `Nguồn: **[${article.title}](${candidate.url})** — ${attribution}. Bản quyền nội dung gốc thuộc về VACA.`,
-          ].join("\n"),
-          // Giữ nháp: xem chú thích đầu file
-          status: "DRAFT",
+          title: rewritten?.title ?? article.title,
+          summary:
+            rewritten?.summary ??
+            article.text.slice(0, 280).replace(/\s+\S*$/, "") + "…",
+          content: rewritten
+            ? `${rewritten.content}\n\n${credit}`
+            : [
+                "> **Bản nháp nhập tự động — chưa biên tập.**",
+                "> Nội dung dưới đây là văn bản gốc lấy về nguyên trạng. Cần đối",
+                "> chiếu số liệu, cập nhật những chỗ đã lỗi thời và viết lại theo",
+                "> định dạng Sciencepedia trước khi xuất bản.",
+                "",
+                article.text,
+                "",
+                credit,
+              ].join("\n"),
+          seoKeywords: rewritten?.seoKeywords || null,
+          readingTime: rewritten?.readingTime ?? 1,
+          // Claude viết được thì đăng; hỏng thì giữ nháp — xem chú thích đầu file
+          status: published ? "PUBLISHED" : "DRAFT",
+          publishedAt: published
+            ? (article.created ? new Date(article.created) : new Date())
+            : null,
           categoryId: category.id,
           authorId: author.id,
           sources: {
@@ -249,7 +290,12 @@ export async function syncNewArticles({ limit = 5 } = {}): Promise<SyncResult> {
         },
       });
 
-      result.imported.push({ slug, title: article.title, url: candidate.url });
+      result.imported.push({
+        slug,
+        title: rewritten?.title ?? article.title,
+        url: candidate.url,
+        status: published ? "PUBLISHED" : "DRAFT",
+      });
     } catch (error) {
       result.errors.push(`${candidate.url}: ${(error as Error).message}`);
     }

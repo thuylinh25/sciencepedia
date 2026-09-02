@@ -6,20 +6,28 @@ import { syncNewArticles } from "@/lib/vaca-sync";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
-/** Phải tải hơn chục feed bên ngoài nên cần dài hơn mặc định 10 giây. */
+/** Tải hơn chục feed rồi gọi mô hình cho từng bài — dài hơn mặc định 10 giây. */
 export const maxDuration = 60;
 
+/** Chừa lại ít giây cuối để ghi CSDL và trả kết quả trước khi Vercel cắt. */
+const SAFETY_MS = 8_000;
+/** VACA đăng ít hơn nhiều so với tổng 12 nguồn quốc tế, nên chia phần nhỏ hơn. */
+const VACA_SHARE = 0.3;
+
 /**
- * Quét các nguồn khoa học đang dùng, nhập bài mới về dưới dạng bản nháp.
+ * Quét các nguồn khoa học đang dùng, nhờ Claude biên tập lại rồi đăng.
  *
  * Hai nhánh: `feed-sync` đọc RSS/Atom của NASA, ESA, WHO, IPCC… (xem
  * `knowledge-feeds.ts`), còn `vaca-sync` cào trực tiếp thienvanvietnam.org vì
  * trang đó không có feed dùng được.
  *
+ * Chạy tuần tự chứ không song song: cả hai nhánh chia nhau cùng một quỹ thời
+ * gian, chạy song song thì cả hai cùng đâm vào trần 60 giây và cùng mất bài.
+ *
  * Chạy hằng ngày qua Vercel Cron (lịch trong vercel.json). Vercel gửi kèm
  * header `Authorization: Bearer $CRON_SECRET`, và route từ chối mọi lời gọi
  * không mang đúng bí mật đó — nếu không thì đây là một endpoint công khai ai
- * cũng gọi được để bắt máy chủ đi cào hộ.
+ * cũng gọi được để bắt máy chủ đi cào và đốt quota mô hình.
  *
  * Chưa đặt CRON_SECRET thì route tự khoá lại thay vì mở toang: thà tính năng
  * không chạy còn hơn chạy mà ai gọi cũng được.
@@ -38,18 +46,29 @@ export async function GET(request: NextRequest) {
     return Response.json({ error: "Không được phép" }, { status: 401 });
   }
 
-  const [feeds, vaca] = await Promise.all([
-    syncKnowledgeFeeds(),
-    syncNewArticles({ limit: 5 }),
-  ]);
+  const started = Date.now();
+  const budget = maxDuration * 1000 - SAFETY_MS;
 
-  const imported = feeds.imported.length + vaca.imported.length;
-  // Bản nháp không hiện ra ngoài, nhưng trang quản trị đọc qua cache chung
-  if (imported > 0) revalidateTag("articles");
+  const feeds = await syncKnowledgeFeeds({
+    budgetMs: Math.round(budget * (1 - VACA_SHARE)),
+  });
+
+  // Phần còn lại của quỹ, kể cả phần nhánh trên dùng chưa hết
+  const vaca = await syncNewArticles({
+    budgetMs: Math.max(0, budget - (Date.now() - started)),
+  });
+
+  const imported = [...feeds.imported, ...vaca.imported];
+  const published = imported.filter((row) => row.status === "PUBLISHED").length;
+
+  if (imported.length > 0) revalidateTag("articles");
 
   return Response.json({
     ranAt: new Date().toISOString(),
-    imported,
+    elapsedMs: Date.now() - started,
+    imported: imported.length,
+    published,
+    drafted: imported.length - published,
     feeds,
     vaca,
   });
