@@ -77,12 +77,21 @@ function Body({ body, spinning }: { body: GlobeBody; spinning: boolean }) {
 export function GlobeScene({
   body,
   spinning,
+  distance = 3.2,
 }: {
   body: GlobeBody;
   spinning: boolean;
+  /**
+   * Khoảng cách camera tới tâm quả cầu, đơn vị bán kính.
+   *
+   * Mặc định 3,2 cho vừa cả quả cầu vào khung. Hành trình thu phóng hạ xuống
+   * ~1,25 để dựng cấp "châu lục": cùng một quả cầu, chỉ khác chỗ đứng — bề mặt
+   * lúc đó lấp đầy khung nhìn đúng như khi bay thấp trên hành tinh.
+   */
+  distance?: number;
 }) {
   return (
-    <Canvas camera={{ position: [0, 0.5, 3.2], fov: 42 }} dpr={[1, 2]}>
+    <Canvas camera={{ position: [0, 0.5, distance], fov: 42 }} dpr={[1, 2]}>
       <color attach="background" args={["#05070f"]} />
 
       {/* Mặt Trời tự sáng nên không cần đèn; các thiên thể khác lấy sáng từ
@@ -98,7 +107,7 @@ export function GlobeScene({
 
       <OrbitControls
         enablePan={false}
-        minDistance={1.6}
+        minDistance={Math.min(1.15, distance * 0.9)}
         maxDistance={7}
         zoomSpeed={0.6}
         rotateSpeed={0.5}

@@ -22,7 +22,19 @@ export type ZoomLevel = {
   /** Trang chi tiết tương ứng, nếu có */
   href?: string;
   color: string;
+  /**
+   * Cấp không có mô hình 3D thì minh hoạ bằng ảnh, và nói rõ đó là ảnh.
+   *
+   * Ba cấp sinh học không có mô hình vì Sciencepedia không có sẵn tài nguyên
+   * 3D cho chúng, và dựng một hình người thô sơ bằng vài khối cầu sẽ trông tệ
+   * hơn hẳn bốn cấp thiên văn phía trên — làm hỏng luôn độ tin cậy của cả
+   * trang. Một bức ảnh thật thì trung thực hơn.
+   */
+  image?: { src: string; creditVi: string; creditEn: string };
 };
+
+const thumb = (dir: string, file: string) =>
+  `https://upload.wikimedia.org/wikipedia/commons/thumb/${dir}/${file}/1280px-${file}`;
 
 export const ZOOM_LEVELS: ZoomLevel[] = [
   {
@@ -79,6 +91,55 @@ export const ZOOM_LEVELS: ZoomLevel[] = [
     blurbEn:
       "The third planet, and so far the only place known to hold life. All of human history has happened on the thin skin of this ball.",
     color: "#38bdf8",
+  },
+  {
+    id: "continent",
+    name: "Châu lục",
+    nameEn: "A continent",
+    size: "~5.000 km",
+    sizeEn: "~5,000 km",
+    metres: 5e6,
+    blurb:
+      "Lớp vỏ rắn mà toàn bộ sự sống trên cạn bám vào. Ở tỉ lệ này, dãy Himalaya cao 8,8 km chỉ là một nếp gấp mỏng hơn lớp vỏ quả táo.",
+    blurbEn:
+      "The solid crust that all land life clings to. At this scale the Himalaya, 8.8 km high, is a wrinkle thinner than an apple's skin.",
+    color: "#22c55e",
+  },
+  {
+    id: "biosphere",
+    name: "Sinh vật",
+    nameEn: "Living things",
+    size: "1 mm – 100 m",
+    sizeEn: "1 mm – 100 m",
+    metres: 30,
+    blurb:
+      "Từ vi khuẩn tới cây tùng bách cao trăm mét. Toàn bộ sinh quyển nằm trong một lớp mỏng chưa tới 20 km tính từ đáy biển sâu lên tới tầng bình lưu.",
+    blurbEn:
+      "From bacteria to hundred-metre conifers. The entire biosphere fits in a shell under 20 km thick, from the deep sea floor up into the stratosphere.",
+    color: "#84cc16",
+    image: {
+      src: thumb("f/f6", "Amazon_rainforest.jpg"),
+      creditVi: "Ảnh chụp rừng Amazon, Wikimedia Commons",
+      creditEn: "Photograph of the Amazon rainforest, Wikimedia Commons",
+    },
+  },
+  {
+    id: "human",
+    name: "Con người",
+    nameEn: "A human being",
+    size: "~1,7 m",
+    sizeEn: "~1.7 m",
+    metres: 1.7,
+    blurb:
+      "Điểm cuối của hành trình, và cũng là điểm xuất phát: mọi con số ở các cấp trên đều do sinh vật cao 1,7 mét này đo được, từ bề mặt một hành tinh mà nó chưa từng rời xa quá 400.000 km.",
+    blurbEn:
+      "The end of the journey, and also its beginning: every figure at every level above was measured by this 1.7-metre creature, from the surface of a planet it has never left by more than 400,000 km.",
+    color: "#f472b6",
+    image: {
+      src: thumb("2/22", "Da_Vinci_Vitruve_Luc_Viatour.jpg"),
+      creditVi: "Người Vitruvius của Leonardo da Vinci — một nghiên cứu về tỉ lệ cơ thể người",
+      creditEn: "Leonardo da Vinci's Vitruvian Man — a study of human proportion",
+    },
   },
 ];
 

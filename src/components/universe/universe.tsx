@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
 import { useLocale, useTranslations } from "next-intl";
-import { Loader2, Pause, Play, RotateCcw } from "lucide-react";
+import { ArrowRight, Loader2, Pause, Play, RotateCcw } from "lucide-react";
 
 import {
   COSMIC_LANDMARKS,
@@ -13,6 +13,7 @@ import {
   UNIVERSE_SCALES,
 } from "@/lib/universe-data";
 import { cn } from "@/lib/utils";
+import { Link } from "@/i18n/navigation";
 import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
 import { Label } from "@/components/ui/label";
@@ -51,6 +52,7 @@ function supportsWebGL(): boolean {
 export function Universe() {
   const t = useTranslations("universe");
   const tSolar = useTranslations("solar");
+  const tZoom = useTranslations("zoom");
   const locale = useLocale();
 
   const [webgl, setWebgl] = useState<boolean | null>(null);
@@ -303,6 +305,20 @@ export function Universe() {
               ? SCALE_STEPS[scaleIndex].structureEn
               : SCALE_STEPS[scaleIndex].structure}
           </span>
+        </p>
+
+        {/* Chế độ du hành không dựng lại ở đây: /zoom đã có sẵn hành trình bốn
+            cấp từ Trái Đất ra tới mạng vũ trụ, làm thêm một cái thứ hai là hai
+            thứ cùng làm một việc và phải bảo trì song song. */}
+        <p className="mt-4 border-t pt-4 text-sm text-muted-foreground">
+          {t("tourHint")}{" "}
+          <Link
+            href="/zoom"
+            className="inline-flex items-center gap-1.5 font-medium text-primary hover:underline"
+          >
+            {tZoom("title")}
+            <ArrowRight className="size-4" />
+          </Link>
         </p>
       </div>
 

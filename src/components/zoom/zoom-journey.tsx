@@ -3,11 +3,12 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import dynamic from "next/dynamic";
 import { useLocale, useTranslations } from "next-intl";
+import Image from "next/image";
 import { ChevronDown, ChevronUp, ExternalLink, Loader2 } from "lucide-react";
 
 import { Link } from "@/i18n/navigation";
 import { PLANETS } from "@/lib/solar-data";
-import { ZOOM_LEVELS, stepRatio } from "@/lib/zoom-levels";
+import { ZOOM_LEVELS, stepRatio, type ZoomLevel } from "@/lib/zoom-levels";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 
@@ -44,10 +45,34 @@ function supportsWebGL(): boolean {
   }
 }
 
-function LevelScene({ id, locale }: { id: string; locale: string }) {
+function LevelScene({
+  level,
+  locale,
+}: {
+  level: ZoomLevel;
+  locale: string;
+}) {
   const earth = PLANETS.find((planet) => planet.id === "earth");
 
-  switch (id) {
+  // Cấp không có mô hình 3D thì minh hoạ bằng ảnh, kèm ghi chú đó là ảnh
+  if (level.image) {
+    return (
+      <div className="relative h-full w-full">
+        <Image
+          src={level.image.src}
+          alt=""
+          fill
+          sizes="100vw"
+          className="object-cover"
+        />
+        <span className="absolute right-3 bottom-3 rounded-full bg-black/60 px-2.5 py-1 text-[10px] text-white/70 backdrop-blur">
+          {locale === "en" ? level.image.creditEn : level.image.creditVi}
+        </span>
+      </div>
+    );
+  }
+
+  switch (level.id) {
     case "universe":
       return (
         <UniverseScene
@@ -96,6 +121,8 @@ function LevelScene({ id, locale }: { id: string; locale: string }) {
         />
       );
     case "earth":
+    case "continent":
+      // Cùng quả cầu, khác khoảng cách camera: cấp châu lục là Trái Đất nhìn gần
       return earth ? (
         <GlobeScene
           body={{
@@ -104,6 +131,7 @@ function LevelScene({ id, locale }: { id: string; locale: string }) {
             axialTilt: earth.axialTilt,
           }}
           spinning
+          distance={level.id === "continent" ? 1.25 : 3.2}
         />
       ) : null;
     default:
@@ -153,6 +181,9 @@ export function ZoomJourney() {
 
   const level = ZOOM_LEVELS[index];
   const ratio = stepRatio(index);
+  const outgoingLevel = outgoing
+    ? (ZOOM_LEVELS.find((item) => item.id === outgoing.id) ?? level)
+    : level;
 
   if (webgl === false) {
     return (
@@ -181,7 +212,7 @@ export function ZoomJourney() {
                     outgoing.direction === "in" ? "1.6" : "0.6",
                 }}
               >
-                <LevelScene id={outgoing.id} locale={locale} />
+                <LevelScene level={outgoingLevel} locale={locale} />
               </div>
             )}
 
@@ -193,7 +224,7 @@ export function ZoomJourney() {
                   outgoing?.direction === "out" ? "1.6" : "0.6",
               }}
             >
-              <LevelScene id={level.id} locale={locale} />
+              <LevelScene level={level} locale={locale} />
             </div>
           </>
         )}
