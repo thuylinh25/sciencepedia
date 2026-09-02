@@ -109,10 +109,16 @@ export async function ArticleCard({
         {/* Dải vàng NatGeo chạy khi hover */}
         <span className="absolute inset-x-0 bottom-0 h-1 origin-left scale-x-0 bg-accent transition-transform duration-500 group-hover:scale-x-100" />
 
-        <Badge
-          className="absolute top-3 left-3 border-none shadow-sm backdrop-blur"
-          style={{ backgroundColor: article.category.color, color: "#fff" }}
-        >
+        {/* `category.color` do biên tập viên nhập vào CSDL, không ai bảo đảm
+            được cặp (màu nền, chữ trắng) đạt 4.5:1 — vàng nhạt trên trắng là
+            hợp lệ với ô chọn màu và không đọc được trên thẻ. Nền tối cố định
+            giữ tương phản ở mọi màu; màu lĩnh vực chuyển thành chấm nhận diện. */}
+        <Badge className="absolute top-3 left-3 gap-1.5 border-none bg-space-900/75 text-star shadow-sm backdrop-blur-sm">
+          <span
+            aria-hidden
+            className="size-2 shrink-0 rounded-full"
+            style={{ backgroundColor: article.category.color }}
+          />
           {category}
         </Badge>
       </div>

@@ -2,7 +2,8 @@
   "site": {
     "name": "Sciencepedia",
     "tagline": "Bách khoa toàn thư khoa học",
-    "description": "Khám phá vũ trụ, sự sống và sức khoẻ con người qua những bài viết khoa học được kiểm chứng, hình ảnh sống động và mô hình 3D tương tác."
+    "description": "Khám phá vũ trụ, sự sống và sức khoẻ con người qua những bài viết khoa học được kiểm chứng, hình ảnh sống động và mô hình 3D tương tác.",
+    "wordmark": "Khoa học mở"
   },
   "nav": {
     "home": "Trang chủ",
@@ -16,6 +17,7 @@
     "search": "Tìm kiếm",
     "admin": "Quản trị",
     "menu": "Menu",
+    "skipToContent": "Bỏ qua tới nội dung chính",
     "close": "Đóng",
     "milkyWay": "Ngân Hà 3D",
     "universe": "Vũ trụ 3D",
@@ -41,7 +43,9 @@
     "registerSuccess": "Tạo tài khoản thành công. Mời bạn đăng nhập.",
     "emailTaken": "Email này đã được sử dụng.",
     "profile": "Hồ sơ",
-    "myBookmarks": "Đã lưu"
+    "myBookmarks": "Đã lưu",
+    "bookmarksEmpty": "Bạn chưa lưu bài nào",
+    "bookmarksEmptyHint": "Bấm “Lưu bài” ở đầu mỗi bài viết để đọc lại sau."
   },
   "home": {
     "heroEyebrow": "Bách khoa toàn thư khoa học mở",
@@ -86,7 +90,20 @@
     "notFoundHint": "Bài viết có thể đã bị gỡ hoặc đổi đường dẫn.",
     "backToArticles": "Về danh sách bài viết",
     "noTranslation": "Bài này chưa có bản tiếng Anh — đang hiển thị bản tiếng Việt.",
-    "empty": "Chưa có bài viết nào ở đây."
+    "empty": "Chưa có bài viết nào ở đây.",
+    "emptyHint": "Hãy thử duyệt một lĩnh vực khác hoặc xem toàn bộ bài viết.",
+    "browseAll": "Xem tất cả bài viết",
+    "tocOpen": "Mục lục bài viết",
+    "review": {
+      "label": "Trạng thái thẩm định",
+      "retracted": "Bài này trích dẫn một nguồn đã bị rút. Nội dung đang chờ biên tập viên khoa học rà soát lại.",
+      "unreviewed": "Bài này chưa qua thẩm định của biên tập viên khoa học.",
+      "reviewedBy": "Đã thẩm định khoa học bởi {name}",
+      "basedOn": "Dựa trên {count} nguồn tham khảo.",
+      "basedOnStrong": "Dựa trên {count} nguồn tham khảo, trong đó {strong} nguồn bình duyệt hoặc cơ quan thẩm quyền.",
+      "lastVerified": "Đối chiếu nguồn lần cuối: <t>{date}</t>",
+      "stale": "Đối chiếu nguồn lần cuối: <t>{date}</t> — đang chờ rà soát định kỳ."
+    }
   },
   "search": {
     "title": "Tìm kiếm",
@@ -96,6 +113,10 @@
     "resultCount": "{count} kết quả",
     "noResults": "Không tìm thấy kết quả nào",
     "noResultsHint": "Thử từ khoá ngắn hơn hoặc bỏ bớt bộ lọc.",
+    "noResultsBrowse": "Hoặc duyệt theo lĩnh vực:",
+    "noResultsAll": "Xem tất cả bài viết",
+    "searchUnavailable": "Bộ tìm kiếm đang tạm gián đoạn",
+    "searchUnavailableHint": "Chưa tìm được lúc này. Bạn có thể duyệt theo lĩnh vực bên dưới.",
     "filters": "Bộ lọc",
     "allCategories": "Tất cả lĩnh vực",
     "clearFilters": "Xoá bộ lọc",
@@ -105,7 +126,8 @@
     "sortPopular": "Xem nhiều nhất",
     "startTyping": "Nhập từ khoá để bắt đầu tìm kiếm",
     "quickSearch": "Tìm nhanh",
-    "loadMore": "Xem thêm"
+    "loadMore": "Xem thêm",
+    "startTypingHint": "Gõ ít nhất hai ký tự. Hoặc duyệt theo lĩnh vực bên dưới."
   },
   "category": {
     "title": "Lĩnh vực khoa học",
@@ -265,7 +287,10 @@
     "english": "English",
     "notFound": "Không tìm thấy trang",
     "notFoundHint": "Đường dẫn bạn truy cập không tồn tại.",
-    "goHome": "Về trang chủ"
+    "goHome": "Về trang chủ",
+    "lastUpdated": "Cập nhật lần cuối: {date}",
+    "home": "Trang chủ",
+    "breadcrumb": "Đường dẫn"
   },
   "footer": {
     "about": "Về Sciencepedia",

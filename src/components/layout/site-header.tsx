@@ -126,7 +126,7 @@ export function SiteHeader({ categories }: { categories: NavCategory[] }) {
                 <DropdownMenuTrigger
                   data-active={isActive("/categories")}
                   className={cn(
-                    "link-underline flex items-center gap-1 text-sm font-medium text-muted-foreground transition-colors outline-none hover:text-foreground focus-visible:text-foreground",
+                    "link-underline flex items-center gap-1 rounded-sm text-sm font-medium text-muted-foreground transition-colors outline-none hover:text-foreground focus-visible:text-foreground focus-visible:ring-[3px] focus-visible:ring-ring/40",
                     isActive("/categories") && "text-foreground",
                   )}
                 >
@@ -164,7 +164,7 @@ export function SiteHeader({ categories }: { categories: NavCategory[] }) {
             <DropdownMenu>
               <DropdownMenuTrigger
                 className={cn(
-                  "link-underline flex items-center gap-1 text-sm font-medium text-muted-foreground transition-colors outline-none hover:text-foreground focus-visible:text-foreground",
+                  "link-underline flex items-center gap-1 rounded-sm text-sm font-medium text-muted-foreground transition-colors outline-none hover:text-foreground focus-visible:text-foreground focus-visible:ring-[3px] focus-visible:ring-ring/40",
                   MODELS.some((item) => isActive(item.href)) && "text-foreground",
                 )}
               >

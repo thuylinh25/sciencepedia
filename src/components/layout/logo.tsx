@@ -1,3 +1,5 @@
+import { useTranslations } from "next-intl";
+
 import { cn } from "@/lib/utils";
 
 /**
@@ -5,6 +7,10 @@ import { cn } from "@/lib/utils";
  * bên trong là một quỹ đạo hành tinh tối giản.
  */
 export function Logo({ className }: { className?: string }) {
+  // useTranslations chạy được ở cả Server lẫn Client Component (next-intl v4);
+  // Logo được dùng ở cả hai phía — chân trang (server) và header (client).
+  const t = useTranslations("site");
+
   return (
     <span className={cn("flex items-center gap-2.5", className)}>
       <span className="relative grid size-9 place-items-center rounded-lg bg-accent">
@@ -35,7 +41,7 @@ export function Logo({ className }: { className?: string }) {
           Sciencepedia
         </span>
         <span className="hidden text-[10px] font-medium tracking-[0.18em] text-muted-foreground uppercase sm:block">
-          Khoa học mở
+          {t("wordmark")}
         </span>
       </span>
     </span>

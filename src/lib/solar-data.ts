@@ -284,3 +284,17 @@ export function realScaleRadius(planet: Planet): number {
   const earthRadii = planet.realRadiusKm / 6371;
   return 0.28 * Math.pow(earthRadii, 0.62);
 }
+
+/**
+ * Slug của các bài viết có quả cầu 3D.
+ *
+ * Dùng ở Server Component để quyết định CÓ tải `PlanetGlobe` hay không.
+ * Trước đây trang bài gọi `<PlanetGlobe>` vô điều kiện và để component tự trả
+ * `null` — nhưng lúc đó JS đã tải xong rồi: cả ~180 bài đều gánh bundle 3D
+ * trong khi chỉ 9 bài dùng tới. Kiểm ở phía máy chủ thì bài không phải thiên
+ * thể không tải gì cả.
+ */
+export const SOLAR_BODY_SLUGS: ReadonlySet<string> = new Set([
+  SUN.articleSlug,
+  ...PLANETS.map((planet) => planet.articleSlug),
+]);

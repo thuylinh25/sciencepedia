@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
 import { AnimatePresence, motion } from "framer-motion";
 import { MessageCircle, X } from "lucide-react";
@@ -13,6 +13,17 @@ export function AssistantLauncher() {
   const t = useTranslations("ai");
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+
+  // Bảng này là một hộp thoại: Esc phải đóng được nó. Trước đây người dùng bàn
+  // phím mở ra rồi chỉ còn cách tab ngược lại nút để đóng.
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setOpen(false);
+    };
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [open]);
 
   if (pathname.startsWith("/assistant") || pathname.startsWith("/admin")) {
     return null;
@@ -40,8 +51,11 @@ export function AssistantLauncher() {
         type="button"
         onClick={() => setOpen((value) => !value)}
         aria-expanded={open}
+        aria-haspopup="dialog"
         aria-label={t("title")}
-        className="fixed right-4 bottom-4 z-50 grid size-14 place-items-center rounded-full bg-primary text-primary-foreground shadow-lg transition-transform hover:scale-105 active:scale-95"
+        // env(safe-area-inset-bottom): trên iPhone có thanh chỉ báo trang chủ,
+        // bottom-4 thuần đặt nút đè lên vùng vuốt của hệ điều hành.
+        className="fixed right-4 bottom-[max(1rem,env(safe-area-inset-bottom))] z-50 grid size-14 place-items-center rounded-full bg-primary text-primary-foreground shadow-lg transition-transform hover:scale-105 active:scale-95"
       >
         {open ? (
           <X className="size-6" />

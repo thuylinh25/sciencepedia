@@ -54,7 +54,10 @@ function SheetContent({
         {...props}
       >
         {children}
-        <SheetPrimitive.Close className="absolute top-4 right-4 rounded-full p-1.5 opacity-70 transition-opacity hover:bg-muted hover:opacity-100 focus-visible:outline-none">
+        {/* `focus-visible:outline-none` mà không có ring thay thế nghĩa là nút
+            đóng của drawer di động hoàn toàn không có dấu hiệu focus — người
+            dùng bàn phím tab tới đây thì mất dấu con trỏ. */}
+        <SheetPrimitive.Close className="absolute top-4 right-4 rounded-full p-1.5 opacity-70 transition-opacity hover:bg-muted hover:opacity-100 focus-visible:ring-[3px] focus-visible:ring-ring/40 focus-visible:outline-none">
           <XIcon className="size-5" />
           <span className="sr-only">Đóng</span>
         </SheetPrimitive.Close>

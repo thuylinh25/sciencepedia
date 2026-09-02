@@ -81,7 +81,12 @@ export function extractHeadings(markdown: string) {
 
     const match = /^(#{2,3})\s+(.*)$/.exec(line);
     if (!match) continue;
-    const text = match[2].replace(/[*_`]/g, "").trim();
+    const text = match[2]
+      // Tiêu đề có link: giữ nhãn, bỏ URL. Nếu không bỏ, id tính ở đây sẽ khác
+      // id mà ArticleContent gắn vào thẻ <h2>, và link mục lục trỏ vào hư không.
+      .replace(/\[([^\]]*)\]\([^)]*\)/g, "$1")
+      .replace(/[*_`]/g, "")
+      .trim();
     headings.push({
       id: slugify(text),
       text,

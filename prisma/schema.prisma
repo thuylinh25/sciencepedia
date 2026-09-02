@@ -38,13 +38,14 @@ model User {
   createdAt     DateTime  @default(now())
   updatedAt     DateTime  @updatedAt
 
-  accounts  Account[]
-  sessions  Session[]
-  articles  Article[]  @relation("ArticleAuthor")
-  comments  Comment[]
-  bookmarks Bookmark[]
-  chats     ChatSession[]
-  media     Media[]
+  accounts         Account[]
+  sessions         Session[]
+  articles         Article[]     @relation("ArticleAuthor")
+  reviewedArticles Article[]     @relation("ArticleReviewer")
+  comments         Comment[]
+  bookmarks        Bookmark[]
+  chats            ChatSession[]
+  media            Media[]
 
   @@index([role])
 }
@@ -89,6 +90,14 @@ model VerificationToken {
 
 // ---------------------------------------------------------------- Nội dung
 
+/// Trạng thái thẩm định của bài viết trong pipeline 11 bước.
+enum FactCheckState {
+  PENDING // chưa chạy fact-check
+  PASSED // nguồn và claim đã đối chiếu xong
+  REVISE // có phát hiện S2/S3, cần sửa
+  FAILED // có phát hiện S1 (bịa nguồn / gán sai) — không được publish
+}
+
 enum ArticleStatus {
   DRAFT
   REVIEW
@@ -98,18 +107,18 @@ enum ArticleStatus {
 
 /// Danh mục khoa học — hỗ trợ lồng nhau (Vũ trụ > Hệ Mặt Trời > Sao Hoả)
 model Category {
-  id          String  @id @default(cuid())
-  slug        String  @unique
-  name        String // tiếng Việt
-  nameEn      String
-  description String? @db.Text
+  id            String  @id @default(cuid())
+  slug          String  @unique
+  name          String // tiếng Việt
+  nameEn        String
+  description   String? @db.Text
   descriptionEn String? @db.Text
   /// Tên icon lucide-react, ví dụ "Telescope"
-  icon        String?
+  icon          String?
   /// Màu chủ đạo dạng hex, dùng cho gradient card
-  color       String  @default("#3b82f6")
-  coverImage  String?
-  order       Int     @default(0)
+  color         String  @default("#3b82f6")
+  coverImage    String?
+  order         Int     @default(0)
 
   parentId String?
   parent   Category?  @relation("CategoryTree", fields: [parentId], references: [id], onDelete: SetNull)
@@ -136,16 +145,16 @@ model Tag {
 }
 
 model Article {
-  id      String @id @default(cuid())
-  slug    String @unique
+  id   String @id @default(cuid())
+  slug String @unique
 
   // Song ngữ — trường *En là bản tiếng Anh
-  title      String
-  titleEn    String?
-  summary    String  @db.Text
-  summaryEn  String? @db.Text
-  content    String  @db.Text // Markdown
-  contentEn  String? @db.Text
+  title     String
+  titleEn   String?
+  summary   String  @db.Text
+  summaryEn String? @db.Text
+  content   String  @db.Text // Markdown
+  contentEn String? @db.Text
 
   coverImage String?
   /// Ảnh dùng riêng cho og:image nếu khác cover
@@ -157,8 +166,8 @@ model Article {
   views       Int           @default(0)
 
   /// Từ khoá SEO, phân tách bằng dấu phẩy
-  seoKeywords String?
-  seoTitle    String?
+  seoKeywords    String?
+  seoTitle       String?
   seoDescription String? @db.Text
 
   /// Cột tsvector do Postgres tự sinh (GENERATED ALWAYS ... STORED), phục vụ
@@ -167,6 +176,23 @@ model Article {
   /// Client và chỉ được truy vấn bằng raw SQL ở src/lib/search-postgres.ts.
   /// Biểu thức sinh cột nằm trong migration 20260901120000_article_search_vector.
   searchVector Unsupported("tsvector")?
+
+  // -------- Truy xuất nguồn gốc biên tập (science-editor gate)
+  // Mọi bài đã publish phải hiển thị được: ai duyệt, duyệt khi nào, và lần
+  // cuối đối chiếu lại với nguồn là bao giờ. Không có ba thứ này thì không
+  // chứng minh được độ tin cậy — đây là tín hiệu E-E-A-T bắt buộc.
+
+  /// Kết quả bước fact-check (bước 2 và bước 4 của pipeline)
+  factCheck      FactCheckState @default(PENDING)
+  /// Biên tập viên khoa học đã duyệt — hiển thị byline trên trang
+  reviewedById   String?
+  reviewedBy     User?          @relation("ArticleReviewer", fields: [reviewedById], references: [id], onDelete: SetNull)
+  reviewedAt     DateTime?
+  /// Lần gần nhất đối chiếu lại claim với nguồn. Nội dung khoa học hết hạn:
+  /// số liệu được đo lại, bài báo bị rút, đồng thuận thay đổi.
+  lastVerifiedAt DateTime?
+  /// Hạn đối chiếu lại tiếp theo, do science-editor đặt theo mức độ biến động
+  reverifyDueAt  DateTime?
 
   publishedAt DateTime?
   createdAt   DateTime  @default(now())
@@ -182,6 +208,11 @@ model Article {
   bookmarks Bookmark[]
   revisions Revision[]
   sources   Source[]
+
+  /// Khái niệm mà bài này trình bày. Nguồn của related concepts, prerequisite
+  /// và internal link — thay cho cách suy ra từ tag/category.
+  entityId String?
+  entity   Entity? @relation(fields: [entityId], references: [id], onDelete: SetNull)
 
   @@index([searchVector], type: Gin)
   @@index([status, publishedAt])
@@ -202,13 +233,22 @@ model ArticleTag {
 
 /// Nguồn tham khảo — bách khoa toàn thư phải trích dẫn được
 model Source {
-  id        String  @id @default(cuid())
-  articleId String
-  title     String
-  url       String?
-  publisher String?
-  year      Int?
-  article   Article @relation(fields: [articleId], references: [id], onDelete: Cascade)
+  id          String    @id @default(cuid())
+  articleId   String
+  title       String
+  url         String?
+  publisher   String?
+  year        Int?
+  /// Bậc nguồn theo phân cấp của science-editor (1 = mạnh nhất).
+  /// 1 bình duyệt · 2 cơ quan thẩm quyền · 3 giáo dục · 4 báo chí khoa học.
+  /// Bài viết cần tối thiểu 3 nguồn độc lập bậc 1–2.
+  tier        Int       @default(2)
+  doi         String?
+  /// Ngày truy cập URL — nguồn web thay đổi, cần biết đã đọc bản nào
+  accessedAt  DateTime?
+  /// Khác null nghĩa là bài báo đã bị rút: mọi claim dựa vào nó không còn giá trị
+  retractedAt DateTime?
+  article     Article   @relation(fields: [articleId], references: [id], onDelete: Cascade)
 
   @@index([articleId])
 }
@@ -319,4 +359,91 @@ model ChatMessage {
   session ChatSession @relation(fields: [sessionId], references: [id], onDelete: Cascade)
 
   @@index([sessionId, createdAt])
+}
+
+// ---------------------------------------------------- Knowledge graph
+// Xem .claude/agents/knowledge-architect.md và
+// .claude/skills/knowledge-graph-manager/SKILL.md.
+//
+// Category/Tag trả lời "bài này nằm ở đâu". Entity/Relationship trả lời
+// "khái niệm này LÀ gì và liên hệ thế nào với khái niệm khác" — đó mới là
+// thứ sinh ra internal link có nghĩa, related concepts, và learning path.
+// Trước đây related article suy ra từ tag + category, nên chỉ ra được bài
+// "cùng chủ đề", không ra được bài "cần đọc trước".
+
+enum EntityType {
+  CONCEPT
+  PHENOMENON
+  ORGANISM
+  SUBSTANCE
+  OBJECT
+  PROCESS
+  THEORY
+  LAW
+  METHOD
+  PERSON
+  EVENT
+  MISSION
+  DATASET
+  QUANTITY
+}
+
+/// Quan hệ có kiểu và có hướng. Cấm quan hệ "related" chung chung:
+/// link chỉ có nghĩa khi biết nó nghĩa là gì.
+enum RelationType {
+  IS_A
+  PART_OF
+  PREREQUISITE_OF
+  CAUSES
+  MEASURED_BY
+  DISCOVERED_BY
+  APPLIES_TO
+  CONTRASTS_WITH
+  EXAMPLE_OF
+}
+
+/// Một khái niệm khoa học — độc lập với ngôn ngữ và độc lập với bài viết.
+/// Một entity có tối đa một bài viết mỗi locale; bài viết là cách trình bày
+/// entity, không phải bản thân entity.
+model Entity {
+  id              String     @id @default(cuid())
+  slug            String     @unique
+  canonicalName   String // tiếng Việt
+  canonicalNameEn String
+  entityType      EntityType
+  /// Tên gọi khác + cách viết sai phổ biến, dùng cho tìm kiếm và khử trùng lặp
+  aliases         String[]   @default([])
+  /// Định danh Wikidata, ví dụ "Q11982" — để đối chiếu với nguồn thẩm quyền
+  wikidataQid     String?
+  description     String?    @db.Text
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  articles      Article[]
+  outgoingEdges Relationship[] @relation("EdgeFrom")
+  incomingEdges Relationship[] @relation("EdgeTo")
+
+  @@index([entityType])
+  @@index([wikidataQid])
+}
+
+model Relationship {
+  id           String       @id @default(cuid())
+  fromEntityId String
+  toEntityId   String
+  relType      RelationType
+  /// Độ mạnh 0–1, dùng để xếp thứ tự related concepts
+  weight       Float        @default(1)
+  note         String?
+
+  createdAt DateTime @default(now())
+
+  fromEntity Entity @relation("EdgeFrom", fields: [fromEntityId], references: [id], onDelete: Cascade)
+  toEntity   Entity @relation("EdgeTo", fields: [toEntityId], references: [id], onDelete: Cascade)
+
+  /// Một cặp entity chỉ có một cạnh cho mỗi kiểu quan hệ
+  @@unique([fromEntityId, toEntityId, relType])
+  @@index([toEntityId, relType])
+  @@index([relType])
 }

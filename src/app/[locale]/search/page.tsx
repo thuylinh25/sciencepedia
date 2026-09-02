@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { SearchX } from "lucide-react";
 
 import { Link } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
@@ -12,6 +11,7 @@ import { escapeHtml } from "@/lib/highlight";
 
 import { SearchBar } from "@/components/search/search-bar";
 import { SearchFilters } from "@/components/search/search-filters";
+import { SearchDeadEnd } from "@/components/search/search-dead-end";
 import { Pagination } from "@/components/pagination";
 import { Badge } from "@/components/ui/badge";
 
@@ -58,6 +58,7 @@ export default async function SearchPage({
 
   const loc = locale as Locale;
   const t = await getTranslations("search");
+  const tArticle = await getTranslations("article");
   const categories = await getAllCategories();
 
   // `search()` tự chọn Meilisearch hoặc Postgres và không ném lỗi —
@@ -90,7 +91,7 @@ export default async function SearchPage({
   const failed = result.backend === "none";
 
   return (
-    <div className="container-page py-14">
+    <div className="container-page page-pad">
       <h1 className="font-display text-4xl font-bold tracking-tight">
         {t("title")}
       </h1>
@@ -110,19 +111,36 @@ export default async function SearchPage({
 
       <div className="mt-8">
         {query.length < 2 ? (
-          <p className="py-20 text-center text-muted-foreground">
-            {t("startTyping")}
-          </p>
+          // Màn hình chưa nhập gì cũng là một trạng thái rỗng, không phải một
+          // dòng chữ trần: nó phải mời đi tiếp, giống hệt khi không có kết quả.
+          <SearchDeadEnd
+            title={t("startTyping")}
+            hint={t("startTypingHint")}
+            browseLabel={t("noResultsBrowse")}
+            allLabel={t("noResultsAll")}
+            categories={categories}
+            locale={loc}
+          />
         ) : failed ? (
-          <p className="py-20 text-center text-muted-foreground">
-            {t("noResultsHint")}
-          </p>
+          // Meilisearch chết khác hẳn "không có kết quả": nói đúng chuyện gì
+          // đang xảy ra, đừng để người đọc tưởng kho rỗng.
+          <SearchDeadEnd
+            title={t("searchUnavailable")}
+            hint={t("searchUnavailableHint")}
+            browseLabel={t("noResultsBrowse")}
+            allLabel={t("noResultsAll")}
+            categories={categories}
+            locale={loc}
+          />
         ) : hits.length === 0 ? (
-          <div className="flex flex-col items-center gap-3 py-20 text-center">
-            <SearchX className="size-10 text-muted-foreground/60" />
-            <p className="font-medium">{t("noResults")}</p>
-            <p className="text-sm text-muted-foreground">{t("noResultsHint")}</p>
-          </div>
+          <SearchDeadEnd
+            title={t("noResults")}
+            hint={t("noResultsHint")}
+            browseLabel={t("noResultsBrowse")}
+            allLabel={t("noResultsAll")}
+            categories={categories}
+            locale={loc}
+          />
         ) : (
           <>
             <p className="mb-6 text-sm text-muted-foreground">
@@ -153,8 +171,14 @@ export default async function SearchPage({
                     >
                       <span className="flex flex-wrap items-center gap-2">
                         <Badge variant="soft">{category}</Badge>
+                        {/* `readingTime` là một con số phút. In trần ra thì
+                            dòng meta đọc thành "7 · 1,2 N" — vô nghĩa. */}
                         <span className="text-xs text-muted-foreground">
-                          {hit.readingTime} · {formatNumber(hit.views, locale)}
+                          {tArticle("readingTime", { minutes: hit.readingTime })}{" "}
+                          ·{" "}
+                          {tArticle("views", {
+                            count: formatNumber(hit.views, locale),
+                          })}
                         </span>
                       </span>
 

@@ -62,8 +62,10 @@ export async function Pagination({
     return qs ? `${basePath}?${qs}` : basePath;
   };
 
+  // size-11 = 44px: ngưỡng vùng chạm trên di động. size-10 (40px) cũ nằm dưới
+  // ngưỡng, mà phân trang là thứ luôn được bấm bằng ngón cái.
   const linkClass =
-    "grid size-10 place-items-center rounded-full border text-sm font-medium transition-colors hover:bg-muted";
+    "grid size-11 place-items-center rounded-full border text-sm font-medium transition-colors hover:bg-muted";
 
   return (
     <nav
@@ -79,7 +81,10 @@ export async function Pagination({
           <ChevronLeft className="size-4" />
         </Link>
       ) : (
-        <span className={cn(linkClass, "pointer-events-none opacity-40")}>
+        <span
+          aria-hidden
+          className={cn(linkClass, "pointer-events-none opacity-40")}
+        >
           <ChevronLeft className="size-4" />
         </span>
       )}
@@ -113,7 +118,10 @@ export async function Pagination({
           <ChevronRight className="size-4" />
         </Link>
       ) : (
-        <span className={cn(linkClass, "pointer-events-none opacity-40")}>
+        <span
+          aria-hidden
+          className={cn(linkClass, "pointer-events-none opacity-40")}
+        >
           <ChevronRight className="size-4" />
         </span>
       )}

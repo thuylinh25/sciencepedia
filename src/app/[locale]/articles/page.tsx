@@ -50,7 +50,7 @@ export default async function ArticlesPage({
   });
 
   return (
-    <div className="container-page py-16">
+    <div className="container-page page-pad">
       <SectionHeading title={t("articles")} subtitle={tHome("latestSubtitle")} />
       <ArticleGrid articles={items} locale={locale as Locale} />
       <Pagination

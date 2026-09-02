@@ -2,7 +2,8 @@
   "site": {
     "name": "Sciencepedia",
     "tagline": "The science encyclopedia",
-    "description": "Explore the cosmos, life and human health through verified science articles, vivid imagery and interactive 3D models."
+    "description": "Explore the cosmos, life and human health through verified science articles, vivid imagery and interactive 3D models.",
+    "wordmark": "Open science"
   },
   "nav": {
     "home": "Home",
@@ -16,6 +17,7 @@
     "search": "Search",
     "admin": "Admin",
     "menu": "Menu",
+    "skipToContent": "Skip to main content",
     "close": "Close",
     "milkyWay": "3D Milky Way",
     "universe": "3D Universe",
@@ -41,7 +43,9 @@
     "registerSuccess": "Account created. Please sign in.",
     "emailTaken": "That email is already in use.",
     "profile": "Profile",
-    "myBookmarks": "Saved"
+    "myBookmarks": "Saved",
+    "bookmarksEmpty": "You have not saved any articles yet",
+    "bookmarksEmptyHint": "Tap “Bookmark” at the top of any article to read it later."
   },
   "home": {
     "heroEyebrow": "An open science encyclopedia",
@@ -86,7 +90,20 @@
     "notFoundHint": "It may have been removed or moved to a new address.",
     "backToArticles": "Back to articles",
     "noTranslation": "No English version yet — showing the Vietnamese original.",
-    "empty": "No articles here yet."
+    "empty": "No articles here yet.",
+    "emptyHint": "Try another field, or browse the full article list.",
+    "browseAll": "Browse all articles",
+    "tocOpen": "Table of contents",
+    "review": {
+      "label": "Review status",
+      "retracted": "This article cites a retracted source. It is awaiting re-review by a science editor.",
+      "unreviewed": "This article has not yet been reviewed by a science editor.",
+      "reviewedBy": "Scientifically reviewed by {name}",
+      "basedOn": "Based on {count} sources.",
+      "basedOnStrong": "Based on {count} sources, {strong} of them peer-reviewed or from an authoritative body.",
+      "lastVerified": "Sources last verified: <t>{date}</t>",
+      "stale": "Sources last verified: <t>{date}</t> — due for periodic re-review."
+    }
   },
   "search": {
     "title": "Search",
@@ -96,6 +113,10 @@
     "resultCount": "{count} results",
     "noResults": "No results found",
     "noResultsHint": "Try a shorter query or remove some filters.",
+    "noResultsBrowse": "Or browse by field:",
+    "noResultsAll": "See all articles",
+    "searchUnavailable": "Search is temporarily unavailable",
+    "searchUnavailableHint": "We could not search right now. You can browse by field below.",
     "filters": "Filters",
     "allCategories": "All fields",
     "clearFilters": "Clear filters",
@@ -105,7 +126,8 @@
     "sortPopular": "Most read",
     "startTyping": "Type something to start searching",
     "quickSearch": "Quick search",
-    "loadMore": "Load more"
+    "loadMore": "Load more",
+    "startTypingHint": "Type at least two characters, or browse by field below."
   },
   "category": {
     "title": "Fields of science",
@@ -265,7 +287,10 @@
     "english": "English",
     "notFound": "Page not found",
     "notFoundHint": "The address you visited does not exist.",
-    "goHome": "Go home"
+    "goHome": "Go home",
+    "lastUpdated": "Last updated: {date}",
+    "home": "Home",
+    "breadcrumb": "Breadcrumb"
   },
   "footer": {
     "about": "About Sciencepedia",

@@ -39,6 +39,17 @@
   /* NASA red */
   --destructive: oklch(0.62 0.23 32);
   --destructive-foreground: oklch(0.985 0.005 250);
+  /* Chữ đỏ đặt TRÊN nền sáng (destructive/5, destructive/10). Dùng
+     `--destructive` làm màu chữ trên nền trắng chỉ đạt ~3.9:1, chưa đủ AA. */
+  --destructive-strong: oklch(0.47 0.2 30);
+
+  /* Hai trạng thái ngữ nghĩa còn thiếu: trước đây component phải tự gọi
+     emerald-600 / amber-700 của Tailwind, nằm ngoài hệ token nên dark mode và
+     độ tương phản không ai kiểm được. */
+  --success: oklch(0.55 0.14 155);
+  --success-foreground: oklch(0.985 0.005 250);
+  --warning: oklch(0.55 0.13 75);
+  --warning-foreground: oklch(0.99 0.01 90);
 
   --border: oklch(0.91 0.008 258);
   --input: oklch(0.91 0.008 258);
@@ -65,6 +76,20 @@
   --space-800: oklch(0.18 0.045 265);
   --space-700: oklch(0.24 0.05 265);
   --star: oklch(0.98 0.01 250);
+
+  /* ---------------------------------------------------------------- */
+  /*  Nhịp và bề rộng đọc                                              */
+  /*  Trước đây mỗi trang tự chọn mt-24 / mt-28 / py-14 / py-16, không  */
+  /*  trang nào giống trang nào. Ba token dưới đây là nhịp chung.       */
+  /* ---------------------------------------------------------------- */
+
+  /* Khoảng cách giữa hai khối lớn trên một trang */
+  --space-section: 5rem;
+  /* Khoảng đệm trên/dưới của một trang danh sách */
+  --space-page: 3.5rem;
+  /* Bề ngang dòng chữ thân bài: ~72 ký tự ở cỡ 18px — ngưỡng đọc lâu.
+     max-w-3xl (48rem) cho ra ~85 ký tự, dài hơn mức dễ theo dòng. */
+  --measure-prose: 42rem;
 }
 
 .dark {
@@ -90,6 +115,13 @@
 
   --destructive: oklch(0.66 0.21 30);
   --destructive-foreground: oklch(0.98 0.005 250);
+  /* Trên nền tối, chữ cảnh báo phải sáng lên chứ không tối đi */
+  --destructive-strong: oklch(0.78 0.15 30);
+
+  --success: oklch(0.75 0.15 155);
+  --success-foreground: oklch(0.16 0.03 160);
+  --warning: oklch(0.82 0.14 80);
+  --warning-foreground: oklch(0.18 0.04 80);
 
   --border: oklch(1 0 0 / 12%);
   --input: oklch(1 0 0 / 16%);
@@ -128,6 +160,11 @@
   --color-accent-foreground: var(--accent-foreground);
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
+  --color-destructive-strong: var(--destructive-strong);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
@@ -238,6 +275,25 @@
     @apply bg-accent text-accent-foreground;
   }
 
+  /* `* { outline-ring/50 }` ở trên chỉ đặt MÀU viền, không đặt kiểu và độ dày —
+     nghĩa là link trong thân bài, breadcrumb, mục lục, link chân trang đều phụ
+     thuộc vào viền mặc định của trình duyệt, và biến mất hoàn toàn ở bất cứ chỗ
+     nào có `outline-none`. Quy tắc dưới đây bảo đảm mọi thứ đi tới được bằng
+     bàn phím đều có dấu hiệu thấy được, ở cả hai theme.
+     Các component đã tự vẽ vòng focus bằng ring (Button, Input, ...) được loại
+     trừ để không bị vẽ chồng hai lớp. */
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
+  }
+  [data-slot="button"]:focus-visible,
+  [data-slot="input"]:focus-visible,
+  [data-slot="textarea"]:focus-visible,
+  [data-slot="select-trigger"]:focus-visible {
+    outline: none;
+  }
+
   /* Thanh cuộn mảnh, hợp với thẩm mỹ Apple */
   ::-webkit-scrollbar {
     width: 10px;
@@ -334,6 +390,14 @@
     @apply mx-auto w-full max-w-3xl px-5 sm:px-8;
   }
 
+  /* Nhịp dọc dùng chung — thay cho mt-24 / mt-28 rải rác mỗi trang một kiểu */
+  .section-gap {
+    margin-top: var(--space-section);
+  }
+  .page-pad {
+    padding-block: var(--space-page);
+  }
+
   /* Vệt sáng chạy trên skeleton khi tải */
   .shimmer {
     background: linear-gradient(
@@ -378,7 +442,12 @@
 
 /* Kiểu chữ cho nội dung bài viết (prose) */
 .article-prose {
-  @apply prose prose-lg dark:prose-invert max-w-none;
+  @apply prose prose-lg dark:prose-invert;
+  /* Bề ngang dòng chữ là quyết định đọc, không phải quyết định bố cục: khoá nó
+     vào token thay vì để thân bài giãn theo bề ngang cột. Ảnh, bảng và khối mã
+     bảng rộng vẫn cuộn ngang được trong khung riêng của nó. */
+  max-width: var(--measure-prose);
+  margin-inline: auto;
   @apply prose-headings:font-display prose-headings:tracking-tight;
   @apply prose-h2:mt-14 prose-h2:scroll-mt-28 prose-h2:border-b prose-h2:pb-3;
   @apply prose-h3:mt-10 prose-h3:scroll-mt-28;

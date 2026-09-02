@@ -151,8 +151,22 @@ export const getArticleBySlug = cache(async (slug: string) =>
         },
       },
       tags: { include: { tag: true } },
+      // Byline biên tập viên khoa học — hiển thị ai đã duyệt bài này
+      reviewedBy: { select: { id: true, name: true, image: true, bio: true } },
+      // Khái niệm mà bài trình bày, dùng cho related concepts và prerequisite
+      entity: {
+        select: {
+          id: true,
+          slug: true,
+          entityType: true,
+          canonicalName: true,
+          canonicalNameEn: true,
+          wikidataQid: true,
+        },
+      },
       author: { select: { id: true, name: true, image: true, bio: true } },
-      sources: { orderBy: { year: "desc" } },
+      // Nguồn mạnh nhất lên trước; nguồn đã bị rút vẫn lấy về để cảnh báo
+      sources: { orderBy: [{ tier: "asc" }, { year: "desc" }] },
       _count: { select: { comments: true } },
     },
   }),
@@ -442,4 +456,126 @@ export async function getAdminStats() {
     recent,
     byCategory,
   };
+}
+
+// ------------------------------------------------------- Knowledge graph
+
+/**
+ * Bài cần đọc trước — đi ngược cạnh PREREQUISITE_OF.
+ *
+ * Cạnh có hướng `A PREREQUISITE_OF B` nghĩa là "phải hiểu A trước khi hiểu B",
+ * nên tiền đề của bài hiện tại là các cạnh ĐI VÀO entity của nó.
+ *
+ * Chỉ lấy một bậc. Chuỗi tiền đề đầy đủ là việc của learning path, không phải
+ * của trang bài viết: đổ cả cây lên trang chỉ làm người đọc bối rối.
+ */
+export const getPrerequisites = cache(async (entityId: string, take = 4) => {
+  const edges = await prisma.relationship.findMany({
+    where: { toEntityId: entityId, relType: "PREREQUISITE_OF" },
+    orderBy: { weight: "desc" },
+    take,
+    select: {
+      fromEntity: {
+        select: {
+          slug: true,
+          canonicalName: true,
+          canonicalNameEn: true,
+          articles: {
+            where: PUBLISHED,
+            select: articleCardSelect,
+            take: 1,
+          },
+        },
+      },
+    },
+  });
+
+  // Tiền đề chưa có bài viết thì bỏ qua: link tới trang trống còn tệ hơn
+  // không link. content-curator nhặt các khoảng trống này qua báo cáo riêng.
+  return edges
+    .map((edge) => edge.fromEntity.articles[0])
+    .filter((article): article is ArticleCard => Boolean(article));
+});
+
+/**
+ * Khái niệm liên quan theo graph — hai chiều, bỏ quan hệ phân cấp.
+ *
+ * IS_A và PART_OF đã được thể hiện bằng breadcrumb và danh mục rồi, lặp lại ở
+ * đây chỉ tốn chỗ. PREREQUISITE_OF có khối riêng. Còn lại là các quan hệ ngang
+ * thực sự mở rộng hiểu biết: nguyên nhân, ứng dụng, khái niệm hay bị nhầm lẫn.
+ */
+const LATERAL_RELATIONS = [
+  "CAUSES",
+  "APPLIES_TO",
+  "CONTRASTS_WITH",
+  "EXAMPLE_OF",
+  "MEASURED_BY",
+  "DISCOVERED_BY",
+] as const;
+
+export const getRelatedByGraph = cache(async (entityId: string, take = 3) => {
+  const edges = await prisma.relationship.findMany({
+    where: {
+      relType: { in: [...LATERAL_RELATIONS] },
+      OR: [{ fromEntityId: entityId }, { toEntityId: entityId }],
+    },
+    orderBy: { weight: "desc" },
+    // Lấy dư rồi lọc: một cạnh có thể trỏ tới entity chưa có bài viết
+    take: take * 3,
+    select: {
+      fromEntityId: true,
+      fromEntity: {
+        select: { articles: { where: PUBLISHED, select: articleCardSelect, take: 1 } },
+      },
+      toEntity: {
+        select: { articles: { where: PUBLISHED, select: articleCardSelect, take: 1 } },
+      },
+    },
+  });
+
+  const seen = new Set<string>();
+  const related: ArticleCard[] = [];
+
+  for (const edge of edges) {
+    // Lấy đầu kia của cạnh, bất kể hướng
+    const other =
+      edge.fromEntityId === entityId ? edge.toEntity : edge.fromEntity;
+    const article = other.articles[0];
+    if (!article || seen.has(article.id)) continue;
+    seen.add(article.id);
+    related.push(article);
+    if (related.length >= take) break;
+  }
+
+  return related;
+});
+
+/**
+ * Bài liên quan dùng cho trang bài viết: ưu tiên graph, thiếu thì bù bằng
+ * tag/category như trước.
+ *
+ * Graph cho ra quan hệ có chủ đích do biên tập viên khẳng định; tag/category
+ * chỉ cho ra "cùng chủ đề". Bài chưa gắn entity vẫn chạy được như cũ, nên
+ * không cần backfill toàn bộ dữ liệu trước khi triển khai.
+ */
+export async function getRelatedForArticle(
+  article: { id: string; categoryId: string; entityId: string | null },
+  tagIds: string[],
+  take = 3,
+) {
+  const fromGraph = article.entityId
+    ? await getRelatedByGraph(article.entityId, take)
+    : [];
+
+  if (fromGraph.length >= take) return fromGraph;
+
+  const fallback = await getRelatedArticles(
+    article.id,
+    article.categoryId,
+    tagIds,
+    take - fromGraph.length,
+  );
+
+  const seen = new Set(fromGraph.map((a) => a.id));
+  return [...fromGraph, ...fallback.filter((a) => !seen.has(a.id))];
 }

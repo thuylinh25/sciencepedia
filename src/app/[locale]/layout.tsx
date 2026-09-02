@@ -101,6 +101,7 @@ export default async function LocaleLayout({
   setRequestLocale(locale);
 
   const categories = await navCategories();
+  const tNav = await getTranslations({ locale, namespace: "nav" });
 
   return (
     <html
@@ -121,7 +122,7 @@ export default async function LocaleLayout({
               href="#main"
               className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:rounded-full focus:bg-primary focus:px-5 focus:py-2 focus:text-primary-foreground"
             >
-              Bỏ qua tới nội dung chính
+              {tNav("skipToContent")}
             </a>
             <div className="flex min-h-dvh flex-col">
               <SiteHeader categories={categories} />

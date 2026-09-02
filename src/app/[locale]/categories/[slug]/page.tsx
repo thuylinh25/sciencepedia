@@ -166,7 +166,7 @@ export default async function CategoryPage({
         </div>
       </header>
 
-      <div className="container-page py-14">
+      <div className="container-page page-pad">
         <ArticleGrid articles={items} locale={loc} />
         <Pagination
           page={page}

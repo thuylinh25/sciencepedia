@@ -63,7 +63,7 @@ export default async function HomePage({
 
       {/* ---------------------------------------------------- Nổi bật */}
       {heroArticle && (
-        <section className="container-page mt-24">
+        <section className="container-page section-gap">
           <SectionHeading
             title={t("featured")}
             subtitle={t("featuredSubtitle")}
@@ -97,7 +97,7 @@ export default async function HomePage({
       )}
 
       {/* ---------------------------------------------------- Lĩnh vực */}
-      <section className="container-page mt-28">
+      <section className="container-page section-gap">
         <SectionHeading
           title={t("browseCategories")}
           subtitle={t("browseCategoriesSubtitle")}
@@ -116,7 +116,7 @@ export default async function HomePage({
       </section>
 
       {/* ---------------------------------------------------- Hệ Mặt Trời */}
-      <section className="mt-28">
+      <section className="section-gap">
         <Reveal>
           <div className="bg-cosmos starfield relative isolate overflow-hidden py-24">
             <div className="container-page grid items-center gap-12 lg:grid-cols-2">
@@ -175,7 +175,7 @@ export default async function HomePage({
       </section>
 
       {/* ---------------------------------------------------- Trợ lý AI */}
-      <section className="container-page mt-28">
+      <section className="container-page section-gap">
         <Reveal>
           <div className="relative overflow-hidden rounded-3xl border bg-card p-10 sm:p-14">
             <span
@@ -210,7 +210,7 @@ export default async function HomePage({
       </section>
 
       {/* ---------------------------------------------------- Mới nhất */}
-      <section className="container-page mt-28 mb-8">
+      <section className="container-page section-gap mb-8">
         <SectionHeading
           title={t("latest")}
           subtitle={t("latestSubtitle")}

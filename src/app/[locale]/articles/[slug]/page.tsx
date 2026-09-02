@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import dynamic from "next/dynamic";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import { getTranslations, setRequestLocale } from "next-intl/server";
@@ -9,7 +10,7 @@ import type { Locale } from "@/i18n/routing";
 import {
   getArticleBySlug,
   getPublishedSlugs,
-  getRelatedArticles,
+  getRelatedForArticle,
 } from "@/server/queries";
 import { articleJsonLd, breadcrumbJsonLd, buildMetadata } from "@/lib/seo";
 import { absoluteUrl, extractHeadings, formatDate, formatNumber } from "@/lib/utils";
@@ -17,9 +18,19 @@ import { isFallback, pick, pickName } from "@/lib/i18n-content";
 
 import { JsonLd } from "@/components/json-ld";
 import { ArticleContent } from "@/components/article/article-content";
+import { ReviewStatus } from "@/components/article/review-status";
 import { ViewCounter } from "@/components/article/view-counter";
-import { TableOfContents } from "@/components/article/table-of-contents";
-import { PlanetGlobe } from "@/components/solar/planet-globe";
+import {
+  MobileTableOfContents,
+  TableOfContents,
+} from "@/components/article/table-of-contents";
+import { Breadcrumb } from "@/components/breadcrumb";
+import { SOLAR_BODY_SLUGS } from "@/lib/solar-data";
+
+// Tách thành chunk riêng: chỉ bài về thiên thể mới tải
+const PlanetGlobe = dynamic(() =>
+  import("@/components/solar/planet-globe").then((mod) => mod.PlanetGlobe),
+);
 import { ReadingProgress } from "@/components/article/reading-progress";
 import { ShareBar } from "@/components/article/share-bar";
 import { BookmarkButton } from "@/components/article/bookmark-button";
@@ -95,6 +106,7 @@ export default async function ArticlePage({
 
   const loc = locale as Locale;
   const t = await getTranslations("article");
+  const tCommon = await getTranslations("common");
 
   const title = pick(loc, article.title, article.titleEn);
   const summary = pick(loc, article.summary, article.summaryEn);
@@ -104,12 +116,15 @@ export default async function ArticlePage({
 
   const headings = extractHeadings(content);
   const url = absoluteUrl(`/${locale}/articles/${article.slug}`);
-
-  const related = await getRelatedArticles(
-    article.id,
-    article.categoryId,
+  // Ưu tiên quan hệ trong knowledge graph, thiếu thì bù bằng tag/category
+  const related = await getRelatedForArticle(
+    article,
     article.tags.map((t) => t.tagId),
   );
+
+  // Thống kê nguồn cho khối tín hiệu tin cậy
+  const strongSourceCount = article.sources.filter((s) => s.tier <= 2).length;
+  const hasRetractedSource = article.sources.some((s) => s.retractedAt !== null);
 
   return (
     <>
@@ -128,6 +143,23 @@ export default async function ArticlePage({
           section: categoryName,
           keywords: article.tags.map((t) => t.tag.name),
           locale: loc,
+          reviewer: article.reviewedBy?.name,
+          reviewedAt: article.reviewedAt,
+          // Chỉ khai báo nguồn thật sự hiển thị ở mục tham khảo cuối bài
+          citations: article.sources.map((source) => ({
+            title: source.title,
+            url: source.url,
+            doi: source.doi,
+          })),
+          entity: article.entity
+            ? {
+                name: pickName(loc, {
+                  name: article.entity.canonicalName,
+                  nameEn: article.entity.canonicalNameEn,
+                }),
+                wikidataQid: article.entity.wikidataQid,
+              }
+            : null,
         })}
       />
       <JsonLd
@@ -160,22 +192,22 @@ export default async function ArticlePage({
         )}
 
         <div className="container-prose relative -mt-40 pb-4">
-          <nav
-            aria-label="Breadcrumb"
-            className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground"
-          >
-            <Link href="/articles" className="hover:text-foreground">
-              {t("backToArticles")}
-            </Link>
-            <span aria-hidden>/</span>
-            <Link
-              href={`/categories/${article.category.slug}`}
-              className="font-medium"
-              style={{ color: article.category.color }}
-            >
-              {categoryName}
-            </Link>
-          </nav>
+          {/* Người đọc từ Google rơi thẳng vào đây, không có lịch sử điều hướng
+              nào phía sau — đường dẫn phải nói rõ trang này nằm ở đâu trong cây
+              tri thức, và phải khớp với BreadcrumbList đã khai bên trên.
+              Màu lĩnh vực chuyển thành chấm màu: `color` lấy thẳng từ CSDL nên
+              không ai bảo đảm được nó đủ tương phản với nền để làm màu chữ. */}
+          <Breadcrumb
+            items={[
+              { label: tCommon("home"), href: "/" },
+              {
+                label: categoryName,
+                href: `/categories/${article.category.slug}`,
+                dotColor: article.category.color,
+              },
+              { label: title },
+            ]}
+          />
 
           <h1 className="mt-4 font-display text-4xl leading-[1.1] font-bold tracking-tight text-balance sm:text-5xl">
             {title}
@@ -237,7 +269,13 @@ export default async function ArticlePage({
         <article className="mx-auto w-full max-w-3xl">
           {/* Quả cầu 3D — tự ẩn nếu bài không phải về một thiên thể trong
               Hệ Mặt Trời, nên gọi vô điều kiện ở đây là an toàn. */}
-          <PlanetGlobe slug={article.slug} />
+          {SOLAR_BODY_SLUGS.has(article.slug) && (
+            <PlanetGlobe slug={article.slug} />
+          )}
+
+          {/* Cột mục lục bên phải là `hidden lg:block`; đây là bản cho điện
+              thoại, bố cục chính của dự án. */}
+          <MobileTableOfContents headings={headings} />
 
           <ArticleContent markdown={content} />
 
@@ -258,11 +296,26 @@ export default async function ArticlePage({
             </div>
           )}
 
+          {/* Trạng thái thẩm định — đặt ngay trước mục nguồn để người đọc gặp
+              chứng cứ tin cậy cùng lúc với danh sách nguồn */}
+          <ReviewStatus
+            className="mt-14"
+            locale={loc}
+            reviewerName={article.reviewedBy?.name}
+            reviewedAt={article.reviewedAt}
+            lastVerifiedAt={article.lastVerifiedAt}
+            sourceCount={article.sources.length}
+            strongSourceCount={strongSourceCount}
+            hasRetractedSource={hasRetractedSource}
+          />
+
           {/* Nguồn tham khảo */}
           {article.sources.length > 0 && (
             <section className="mt-14">
-              <h2 className="flex items-center gap-2 font-display text-xl font-bold">
-                <BookOpen className="size-5 text-accent" />
+              {/* Cùng cỡ với h2 trong thân bài: mục nguồn là một mục ngang hàng
+                  của bài, không phải chú thích cuối trang. */}
+              <h2 className="flex items-center gap-2 border-b pb-3 font-display text-2xl font-bold tracking-tight">
+                <BookOpen className="size-5 shrink-0 text-accent" aria-hidden />
                 {t("sources")}
               </h2>
               <ol className="mt-4 space-y-3 text-sm">
@@ -318,7 +371,7 @@ export default async function ArticlePage({
 
       {/* ------------------------------------------------------- Liên quan */}
       {related.length > 0 && (
-        <section className="container-page mt-24">
+        <section className="container-page section-gap">
           <SectionHeading title={t("related")} />
           <ArticleGrid articles={related} locale={loc} />
         </section>
