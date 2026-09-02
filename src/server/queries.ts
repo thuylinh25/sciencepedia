@@ -215,15 +215,24 @@ export async function incrementViews(id: string) {
   }
 }
 
-export const getPublishedSlugs = unstable_cache(
-  async () =>
-    prisma.article.findMany({
-      where: PUBLISHED,
-      select: { slug: true, updatedAt: true, publishedAt: true },
-      orderBy: { publishedAt: "desc" },
-    }),
-  ["published-slugs"],
-  { revalidate: 3600, tags: ["articles"] },
+/**
+ * Danh sách slug đã xuất bản — dùng cho `generateStaticParams` và sitemap.
+ *
+ * KHÔNG bọc `unstable_cache` ở đây. Next lưu kết quả của nó xuống `.next/cache`
+ * và khôi phục thư mục đó giữa các lần build (Vercel cũng vậy), nên một bản
+ * build có thể đọc lại danh sách cũ và lặng lẽ bỏ sót những bài mới đăng.
+ * Đúng chuyện đã xảy ra: bài mới có mặt trong sitemap nhưng không được
+ * prerender, phải chờ render theo yêu cầu ở lần truy cập đầu tiên.
+ *
+ * Hàm này chỉ chạy lúc build và lúc revalidate, mỗi lần một truy vấn — không
+ * đáng để đánh đổi lấy nguy cơ build ra thiếu trang.
+ */
+export const getPublishedSlugs = cache(async () =>
+  prisma.article.findMany({
+    where: PUBLISHED,
+    select: { slug: true, updatedAt: true, publishedAt: true },
+    orderBy: { publishedAt: "desc" },
+  }),
 );
 
 // ---------------------------------------------------------------- Danh mục
