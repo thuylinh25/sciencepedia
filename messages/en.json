@@ -19,7 +19,8 @@
     "close": "Close",
     "milkyWay": "3D Milky Way",
     "universe": "3D Universe",
-    "models": "3D models"
+    "models": "3D models",
+    "zoom": "Zoom journey"
   },
   "auth": {
     "login": "Sign in",
@@ -320,5 +321,15 @@
     "zoomOut": "One rung out",
     "allModels": "See all three models",
     "note": "The three models are kept separate rather than merged into one continuously zoomable scene. The range of scale involved spans about 19 orders of magnitude, far beyond the precision of the 32-bit floats WebGL uses, so geometry would jitter if forced into a single scene. Each model is therefore tuned for its own scale, and they are linked by the scale ladder at the foot of each page."
+  },
+  "zoom": {
+    "title": "The zoom journey",
+    "subtitle": "Four levels, from the observable universe down to Earth",
+    "levelOf": "Level {step} of {total}",
+    "zoomIn": "Zoom in",
+    "zoomOut": "Zoom out",
+    "openFull": "Open the full model",
+    "nextIsSmaller": "The next level is about {factor}× smaller",
+    "note": "The four levels are four separate 3D scenes, not one continuously zoomable scene. The range of scale spans about 19 orders of magnitude, far beyond the precision of the 32-bit floats WebGL uses, so geometry would fall apart in a single scene. The seamless feel comes from zooming and cross-fading between adjacent levels."
   }
 }

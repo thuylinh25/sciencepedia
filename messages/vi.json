@@ -19,7 +19,8 @@
     "close": "Đóng",
     "milkyWay": "Ngân Hà 3D",
     "universe": "Vũ trụ 3D",
-    "models": "Mô hình 3D"
+    "models": "Mô hình 3D",
+    "zoom": "Hành trình thu phóng"
   },
   "auth": {
     "login": "Đăng nhập",
@@ -320,5 +321,15 @@
     "zoomOut": "Lùi ra một bậc",
     "allModels": "Xem cả ba mô hình",
     "note": "Ba mô hình được giữ tách rời chứ không gộp thành một cảnh phóng to liền mạch. Dải tỉ lệ cần bao là khoảng 19 bậc độ lớn, vượt xa độ chính xác của số thực 32-bit mà WebGL dùng, nên hình học sẽ giật và rung nếu ép vào cùng một cảnh. Mỗi mô hình vì thế được chỉnh riêng cho đúng tỉ lệ của nó, và nối với nhau bằng liên kết bậc thang ở cuối trang."
+  },
+  "zoom": {
+    "title": "Hành trình thu phóng",
+    "subtitle": "Bốn cấp, từ vũ trụ quan sát được xuống tới Trái Đất",
+    "levelOf": "Cấp {step}/{total}",
+    "zoomIn": "Thu vào",
+    "zoomOut": "Lùi ra",
+    "openFull": "Mở mô hình đầy đủ",
+    "nextIsSmaller": "Cấp sau nhỏ hơn khoảng {factor} lần",
+    "note": "Bốn cấp là bốn cảnh 3D riêng, không phải một cảnh phóng to liên tục. Dải tỉ lệ ở đây khoảng 19 bậc độ lớn, vượt xa độ chính xác của số thực 32-bit mà WebGL dùng, nên ép vào cùng một cảnh thì hình học sẽ rã. Cảm giác liền mạch được tạo bằng thu phóng và hoà mờ giữa hai cấp liền kề."
   }
 }

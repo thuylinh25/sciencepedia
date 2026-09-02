@@ -393,3 +393,37 @@
      chỉ ảnh hưởng đúng những chuỗi dài quá khổ, văn bản thường không đổi. */
   overflow-wrap: anywhere;
 }
+
+/* --------------------------------------------------------------------------
+   Hành trình thu phóng: hoà mờ giữa hai cấp.
+   Chuyển động nằm ở lớp bọc chứ không ở camera của từng cảnh — nhờ vậy ba
+   cảnh 3D đã có không phải sửa gì, và mỗi cảnh vẫn giữ tỉ lệ riêng.
+   -------------------------------------------------------------------------- */
+@keyframes zoom-out {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(var(--zoom-to, 1.6));
+  }
+}
+
+@keyframes zoom-in {
+  from {
+    opacity: 0;
+    transform: scale(var(--zoom-from, 0.6));
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-\[zoom-out_900ms_ease-in_forwards\],
+  .animate-\[zoom-in_900ms_ease-out_forwards\] {
+    animation-duration: 1ms;
+  }
+}

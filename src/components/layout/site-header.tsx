@@ -8,6 +8,7 @@ import {
   Disc3,
   Menu,
   Orbit,
+  Scaling,
   Search,
   Sparkles,
 } from "lucide-react";
@@ -55,6 +56,7 @@ const MODELS = [
   { href: "/solar-system", key: "solarSystem" as const, icon: Orbit },
   { href: "/milky-way", key: "milkyWay" as const, icon: Disc3 },
   { href: "/universe", key: "universe" as const, icon: Aperture },
+  { href: "/zoom", key: "zoom" as const, icon: Scaling },
 ];
 
 const NAV = [{ href: "/assistant", key: "assistant" as const, icon: Sparkles }];
