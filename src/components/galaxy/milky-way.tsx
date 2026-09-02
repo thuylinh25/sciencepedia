@@ -27,7 +27,8 @@ import type {
  * Client Component — đó là lý do lớp bọc này tồn tại.
  */
 const GalaxyScene = dynamic(
-  () => import("@/components/galaxy/galaxy-scene").then((mod) => mod.GalaxyScene),
+  () =>
+    import("@/components/galaxy/galaxy-scene").then((mod) => mod.GalaxyScene),
   {
     ssr: false,
     loading: () => (
@@ -46,7 +47,7 @@ function supportsWebGL(): boolean {
     const canvas = document.createElement("canvas");
     return Boolean(
       window.WebGLRenderingContext &&
-        (canvas.getContext("webgl") || canvas.getContext("experimental-webgl")),
+      (canvas.getContext("webgl") || canvas.getContext("experimental-webgl")),
     );
   } catch {
     return false;
@@ -130,134 +131,15 @@ export function MilkyWay() {
           />
         )}
 
-        {/* ------------------------------------------------ Bảng điều khiển */}
-        <div className="absolute inset-x-4 bottom-4 flex flex-wrap items-center gap-x-5 gap-y-3 rounded-2xl border border-white/10 bg-black/45 px-5 py-3.5 backdrop-blur-xl sm:inset-x-auto sm:left-4">
-          <Button
-            size="icon-sm"
-            variant="glass"
-            onClick={() => update("playing", !settings.playing)}
-            aria-label={settings.playing ? tSolar("pause") : tSolar("play")}
-            className="border-white/20 bg-white/10 text-white hover:bg-white/20"
-          >
-            {settings.playing ? (
-              <Pause className="size-4" />
-            ) : (
-              <Play className="size-4" />
-            )}
-          </Button>
-
-          <div className="flex items-center gap-2.5">
-            <Label
-              htmlFor="galaxy-speed"
-              className="text-xs whitespace-nowrap text-white/70"
-            >
-              {tSolar("speed")}
-            </Label>
-            <input
-              id="galaxy-speed"
-              type="range"
-              min={0.1}
-              max={5}
-              step={0.1}
-              value={settings.speed}
-              onChange={(event) => update("speed", Number(event.target.value))}
-              className="h-1 w-24 cursor-pointer appearance-none rounded-full bg-white/25 accent-[var(--color-accent)]"
-            />
-            <span className="w-9 font-mono text-xs text-white/70">
-              {settings.speed.toFixed(1)}×
-            </span>
-          </div>
-
-          <div className="flex items-center gap-2">
-            <Switch
-              id="galaxy-labels"
-              checked={settings.showLabels}
-              onCheckedChange={(value) => update("showLabels", value)}
-            />
-            <Label htmlFor="galaxy-labels" className="text-xs text-white/70">
-              {tSolar("showLabels")}
-            </Label>
-          </div>
-
-          <div className="flex items-center gap-2">
-            <Switch
-              id="galaxy-sun"
-              checked={settings.showSun}
-              onCheckedChange={(value) => update("showSun", value)}
-            />
-            <Label htmlFor="galaxy-sun" className="text-xs text-white/70">
-              {t("showSun")}
-            </Label>
-          </div>
-
-          <div className="flex items-center gap-1 rounded-full border border-white/15 bg-white/5 p-0.5">
-            {(["top", "side", "free"] as const).map((view) => (
-              <button
-                key={view}
-                type="button"
-                onClick={() => update("view", view as CameraView)}
-                className={cn(
-                  "rounded-full px-2.5 py-1 text-xs font-medium transition-colors",
-                  settings.view === view
-                    ? "bg-white/20 text-white"
-                    : "text-white/60 hover:text-white",
-                )}
-              >
-                {t(`view.${view}`)}
-              </button>
-            ))}
-          </div>
-
-          <div className="flex items-center gap-2">
-            <Switch
-              id="galaxy-objects"
-              checked={settings.showObjects}
-              onCheckedChange={(value) => update("showObjects", value)}
-            />
-            <Label htmlFor="galaxy-objects" className="text-xs text-white/70">
-              {t("showObjects")}
-            </Label>
-          </div>
-
-          <Button
-            size="sm"
-            variant="glass"
-            onClick={() => {
-              setSelectedId(null);
-              // Tour bám theo mốc cố định nên phải dừng thiên hà lại
-              setSettings((previous) => ({
-                ...previous,
-                tour: !previous.tour,
-                playing: previous.tour,
-              }));
-            }}
-            className="gap-2 border-white/20 bg-white/10 text-white hover:bg-white/20"
-          >
-            <Rocket className="size-4" />
-            {settings.tour ? t("tourStop") : t("tourStart")}
-          </Button>
-
-          <Button
-            size="icon-sm"
-            variant="glass"
-            onClick={() => {
-              setSelectedId(null);
-              setSceneKey((key) => key + 1);
-            }}
-            aria-label={tSolar("reset")}
-            className="border-white/20 bg-white/10 text-white hover:bg-white/20"
-          >
-            <RotateCcw className="size-4" />
-          </Button>
-        </div>
-
         {/* ------------------------------------------------ Bảng số liệu
             Ẩn trên màn hình hẹp: ở đó nó che mất chính mô hình. */}
         {!selected && (
           <dl className="pointer-events-none absolute top-4 right-4 hidden rounded-2xl border border-white/10 bg-black/45 px-4 py-3 text-xs backdrop-blur-xl sm:block">
             <div className="flex items-baseline justify-between gap-6">
               <dt className="text-white/55">{t("dashStars")}</dt>
-              <dd className="font-mono text-white/90">100–400 {t("billion")}</dd>
+              <dd className="font-mono text-white/90">
+                100–400 {t("billion")}
+              </dd>
             </div>
             <div className="mt-1.5 flex items-baseline justify-between gap-6">
               <dt className="text-white/55">{t("dashPlanets")}</dt>
@@ -318,6 +200,126 @@ export function MilkyWay() {
             </p>
           </div>
         )}
+      </div>
+
+      {/* Thanh điều khiển nằm dưới khung cảnh chứ không đè lên: trên màn hình
+          hẹp nó xuống ba hàng và che mất phần lớn thiên hà. */}
+      {/* ------------------------------------------------ Bảng điều khiển */}
+      <div className="mt-3 flex flex-wrap items-center gap-x-5 gap-y-3 rounded-2xl border bg-card px-5 py-3.5">
+        <Button
+          size="icon-sm"
+          variant="outline"
+          onClick={() => update("playing", !settings.playing)}
+          aria-label={settings.playing ? tSolar("pause") : tSolar("play")}
+        >
+          {settings.playing ? (
+            <Pause className="size-4" />
+          ) : (
+            <Play className="size-4" />
+          )}
+        </Button>
+        <div className="flex items-center gap-2.5">
+          <Label
+            htmlFor="galaxy-speed"
+            className="text-xs whitespace-nowrap text-muted-foreground"
+          >
+            {tSolar("speed")}
+          </Label>
+          <input
+            id="galaxy-speed"
+            type="range"
+            min={0.1}
+            max={5}
+            step={0.1}
+            value={settings.speed}
+            onChange={(event) => update("speed", Number(event.target.value))}
+            className="h-1 w-24 cursor-pointer appearance-none rounded-full bg-muted accent-[var(--color-accent)]"
+          />
+          <span className="w-9 font-mono text-xs text-muted-foreground">
+            {settings.speed.toFixed(1)}×
+          </span>
+        </div>
+        <div className="flex items-center gap-2">
+          <Switch
+            id="galaxy-labels"
+            checked={settings.showLabels}
+            onCheckedChange={(value) => update("showLabels", value)}
+          />
+          <Label
+            htmlFor="galaxy-labels"
+            className="text-xs text-muted-foreground"
+          >
+            {tSolar("showLabels")}
+          </Label>
+        </div>
+        <div className="flex items-center gap-2">
+          <Switch
+            id="galaxy-sun"
+            checked={settings.showSun}
+            onCheckedChange={(value) => update("showSun", value)}
+          />
+          <Label htmlFor="galaxy-sun" className="text-xs text-muted-foreground">
+            {t("showSun")}
+          </Label>
+        </div>
+        <div className="flex items-center gap-1 rounded-full border bg-muted/40 p-0.5">
+          {(["top", "side", "free"] as const).map((view) => (
+            <button
+              key={view}
+              type="button"
+              onClick={() => update("view", view as CameraView)}
+              className={cn(
+                "rounded-full px-2.5 py-1 text-xs font-medium transition-colors",
+                settings.view === view
+                  ? "bg-background text-foreground shadow-sm"
+                  : "text-muted-foreground hover:text-foreground",
+              )}
+            >
+              {t(`view.${view}`)}
+            </button>
+          ))}
+        </div>
+        <div className="flex items-center gap-2">
+          <Switch
+            id="galaxy-objects"
+            checked={settings.showObjects}
+            onCheckedChange={(value) => update("showObjects", value)}
+          />
+          <Label
+            htmlFor="galaxy-objects"
+            className="text-xs text-muted-foreground"
+          >
+            {t("showObjects")}
+          </Label>
+        </div>
+        <Button
+          size="sm"
+          variant="outline"
+          onClick={() => {
+            setSelectedId(null);
+            // Tour bám theo mốc cố định nên phải dừng thiên hà lại
+            setSettings((previous) => ({
+              ...previous,
+              tour: !previous.tour,
+              playing: previous.tour,
+            }));
+          }}
+          className="gap-2"
+        >
+          <Rocket className="size-4" />
+          {settings.tour ? t("tourStop") : t("tourStart")}
+        </Button>
+        <Button
+          size="icon-sm"
+          variant="outline"
+          onClick={() => {
+            setSelectedId(null);
+            setSceneKey((key) => key + 1);
+          }}
+          aria-label={tSolar("reset")}
+        >
+          <RotateCcw className="size-4" />
+        </Button>
       </div>
 
       {/* ------------------------------------------------ Thang đo

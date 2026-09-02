@@ -333,12 +333,7 @@ function Galaxy({
       ))}
 
       {settings.showObjects && (
-        <GalaxyObjects
-          sprite={sprite}
-          showLabels={settings.showLabels}
-          locale={locale}
-          onSelect={onSelect}
-        />
+        <GalaxyObjects sprite={sprite} onSelect={onSelect} />
       )}
 
       {settings.showSun && sun && (
@@ -392,13 +387,9 @@ function Galaxy({
  */
 function GalaxyObjects({
   sprite,
-  showLabels,
-  locale,
   onSelect,
 }: {
   sprite: THREE.Texture;
-  showLabels: boolean;
-  locale: string;
   onSelect: (id: string) => void;
 }) {
   return (
@@ -407,39 +398,23 @@ function GalaxyObjects({
         const position = galacticToScene(object.distanceLy, object.l, object.b);
         const isNebula = object.kind === "nebula";
         return (
-          <group key={object.id} position={position}>
-            <sprite
-              scale={isNebula ? [0.85, 0.85, 0.85] : [0.5, 0.5, 0.5]}
-              onClick={() => onSelect(object.id)}
-            >
-              <spriteMaterial
-                map={sprite}
-                color={object.color}
-                transparent
-                opacity={isNebula ? 0.75 : 0.9}
-                depthWrite={false}
-                blending={THREE.AdditiveBlending}
-              />
-            </sprite>
-
-            {showLabels && (
-              <Html
-                position={[0, isNebula ? 0.42 : 0.3, 0]}
-                center
-                distanceFactor={16}
-                zIndexRange={[18, 0]}
-              >
-                <button
-                  type="button"
-                  onClick={() => onSelect(object.id)}
-                  className="rounded-full border border-white/15 bg-black/55 px-2 py-0.5 text-[10px] font-medium whitespace-nowrap backdrop-blur transition-colors hover:border-white/50"
-                  style={{ color: object.color }}
-                >
-                  {locale === "en" ? object.nameEn : object.name}
-                </button>
-              </Html>
-            )}
-          </group>
+          <sprite
+            key={object.id}
+            position={position}
+            scale={isNebula ? [0.85, 0.85, 0.85] : [0.5, 0.5, 0.5]}
+            onClick={() => onSelect(object.id)}
+            onPointerOver={() => (document.body.style.cursor = "pointer")}
+            onPointerOut={() => (document.body.style.cursor = "auto")}
+          >
+            <spriteMaterial
+              map={sprite}
+              color={object.color}
+              transparent
+              opacity={isNebula ? 0.75 : 0.9}
+              depthWrite={false}
+              blending={THREE.AdditiveBlending}
+            />
+          </sprite>
         );
       })}
     </group>
