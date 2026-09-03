@@ -77,10 +77,19 @@ export async function SiteFooter() {
             <Logo />
             {/* Câu định vị, đặt ngay dưới logo và in đậm hơn đoạn mô tả.
 
-                "miễn phí, có dẫn nguồn, viết bằng tiếng Việt" — ba điều kiểm
-                chứng được, không phải khẩu hiệu. Cố ý KHÔNG hứa nhịp độ ("cập
-                nhật mỗi tuần") như đề xuất ban đầu: không ai bảo đảm được, và
-                một lời hứa sai ở footer thì nằm trên mọi trang. */}
+                Cố ý KHÔNG hứa nhịp độ ("cập nhật mỗi tuần"): không ai bảo đảm
+                được, và một lời hứa sai ở footer thì nằm trên mọi trang.
+
+                ⚠️ "viết bằng tiếng Việt và tiếng Anh" — chủ sản phẩm chọn câu
+                này, và tính đến 2026-09-04 nó CHƯA khớp dữ liệu: tiêu đề và
+                tóm tắt song ngữ đủ 35/35, nhưng thân bài tiếng Anh chỉ có
+                1/35. Mở /en/articles/... thì gần như mọi bài vẫn hiện thân bài
+                tiếng Việt.
+
+                Câu này thành đúng khi `contentEn` được điền cho phần lớn kho —
+                skill `translation` lo việc đó. Cho tới lúc ấy đây là một lời
+                hứa đi trước sản phẩm. Nếu quyết lùi lại, đổi `footer.tagline`
+                về "viết bằng tiếng Việt". */}
             <p className="mt-4 max-w-sm text-sm leading-relaxed font-medium text-foreground">
               {t("tagline")}
             </p>
