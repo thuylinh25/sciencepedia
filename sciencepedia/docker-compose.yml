@@ -1,0 +1,29 @@
+# PostgreSQL và Storage do Supabase cung cấp (dịch vụ ngoài), nên compose này
+# chỉ chạy Meilisearch — thành phần duy nhất cần tự vận hành khi phát triển.
+#
+# Muốn chạy toàn bộ Supabase ở máy local thì dùng Supabase CLI thay vì file này:
+#   npx supabase init && npx supabase start
+
+services:
+  meilisearch:
+    image: getmeili/meilisearch:v1.11
+    container_name: sciencepedia-search
+    restart: unless-stopped
+    environment:
+      # Đọc từ .env cùng thư mục — không ghim khoá vào file được commit
+      MEILI_MASTER_KEY: ${MEILISEARCH_MASTER_KEY:?chua dat MEILISEARCH_MASTER_KEY trong .env}
+      MEILI_ENV: development
+      MEILI_NO_ANALYTICS: "true"
+    ports: ["7700:7700"]
+    volumes: [meilidata:/meili_data]
+    healthcheck:
+      # Phải là 127.0.0.1, không phải localhost: trong container localhost
+      # resolve sang ::1 còn Meilisearch chỉ listen IPv4 -> healthcheck luôn
+      # "Connection refused" dù dịch vụ chạy bình thường.
+      test: ["CMD", "wget", "--spider", "-q", "http://127.0.0.1:7700/health"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+volumes:
+  meilidata:

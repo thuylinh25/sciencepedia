@@ -1,0 +1,579 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@plugin "@tailwindcss/typography";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ------------------------------------------------------------------ */
+/*  Bảng màu                                                           */
+/*  National Geographic (viền vàng, ảnh tràn khung)                     */
+/*  + NASA (xanh #0B3D91 / đỏ #FC3D21, nền vũ trụ sâu)                 */
+/*  + Apple (khoảng trắng rộng, chữ lớn, kính mờ, bo góc mềm)          */
+/* ------------------------------------------------------------------ */
+
+:root {
+  --radius: 0.875rem;
+
+  --background: oklch(0.995 0.002 250);
+  --foreground: oklch(0.16 0.02 260);
+
+  --card: oklch(1 0 0);
+  --card-foreground: var(--foreground);
+  --popover: oklch(1 0 0);
+  --popover-foreground: var(--foreground);
+
+  /* Vàng thương hiệu — vai trò NỀN. L≈0.86 nên chữ đặt trên nó phải tối. */
+  --primary: oklch(0.86 0.173 92);
+  --primary-foreground: oklch(0.2 0.03 82);
+  /* Vai trò MỰC. Vàng làm màu chữ trên nền sáng chỉ đạt 1.51:1 — không dùng
+     được. Token này là biến thể sậm cùng họ, 6.00:1 trên nền trắng. Cùng tiền
+     lệ với --destructive-strong. */
+  --primary-strong: oklch(0.5 0.1 78);
+
+  --secondary: oklch(0.96 0.008 255);
+  --secondary-foreground: oklch(0.24 0.03 262);
+
+  --muted: oklch(0.965 0.006 255);
+  --muted-foreground: oklch(0.52 0.02 258);
+
+  /* Xanh — họ #60A5FA, sậm lại để đạt AA khi đặt trên nền sáng */
+  --accent: oklch(0.5 0.16 256);
+  --accent-foreground: oklch(0.985 0.005 250);
+
+  /* NASA red — hạ độ sáng: bản cũ với chữ trắng chỉ đạt 3.89:1, trượt AA */
+  --destructive: oklch(0.57 0.2 28);
+  --destructive-foreground: oklch(0.985 0.005 250);
+  /* Chữ đỏ đặt TRÊN nền sáng (destructive/5, destructive/10). Dùng
+     `--destructive` làm màu chữ trên nền trắng chỉ đạt ~3.9:1, chưa đủ AA. */
+  --destructive-strong: oklch(0.47 0.17 30);
+
+  /* Hai trạng thái ngữ nghĩa còn thiếu: trước đây component phải tự gọi
+     emerald-600 / amber-700 của Tailwind, nằm ngoài hệ token nên dark mode và
+     độ tương phản không ai kiểm được. */
+  --success: oklch(0.52 0.12 155);
+  --success-foreground: oklch(0.985 0.005 250);
+  /* Hue đẩy xa vàng thương hiệu (92): nếu trùng hue thì "cảnh báo" và
+     "thương hiệu" không phân biệt được bằng mắt. */
+  --warning: oklch(0.52 0.12 62);
+  --warning-foreground: oklch(0.99 0.01 90);
+
+  --border: oklch(0.91 0.008 258);
+  --input: oklch(0.91 0.008 258);
+  --ring: oklch(0.55 0.14 256);
+
+  /* Màu biểu đồ / danh mục */
+  --chart-1: oklch(0.62 0.19 264);
+  --chart-2: oklch(0.7 0.15 195);
+  --chart-3: oklch(0.6 0.13 78);
+  --chart-4: oklch(0.6 0.13 290);
+  --chart-5: oklch(0.68 0.17 145);
+
+  --sidebar: oklch(0.985 0.004 255);
+  --sidebar-foreground: var(--foreground);
+  --sidebar-primary: var(--primary);
+  --sidebar-primary-foreground: var(--primary-foreground);
+  --sidebar-accent: oklch(0.955 0.008 255);
+  --sidebar-accent-foreground: var(--secondary-foreground);
+  --sidebar-border: var(--border);
+  --sidebar-ring: var(--ring);
+
+  /* Nền “không gian sâu” dùng cho hero và trang 3D */
+  --space-900: oklch(0.135 0.04 262);
+  --space-800: oklch(0.21 0.05 262);
+  --space-700: oklch(0.27 0.05 262);
+  --star: oklch(0.98 0.01 250);
+
+  /* ---------------------------------------------------------------- */
+  /*  Nhịp và bề rộng đọc                                              */
+  /*  Trước đây mỗi trang tự chọn mt-24 / mt-28 / py-14 / py-16, không  */
+  /*  trang nào giống trang nào. Ba token dưới đây là nhịp chung.       */
+  /* ---------------------------------------------------------------- */
+
+  /* Khoảng cách giữa hai khối lớn trên một trang */
+  --space-section: 5rem;
+  /* Khoảng đệm trên/dưới của một trang danh sách */
+  --space-page: 3.5rem;
+  /* Bề ngang dòng chữ thân bài: ~72 ký tự ở cỡ 18px — ngưỡng đọc lâu.
+     max-w-3xl (48rem) cho ra ~85 ký tự, dài hơn mức dễ theo dòng. */
+  --measure-prose: 42rem;
+}
+
+.dark {
+  --background: oklch(0.165 0.032 262);
+  --foreground: oklch(0.96 0.008 250);
+
+  --card: oklch(0.225 0.033 262);
+  --card-foreground: var(--foreground);
+  --popover: oklch(0.225 0.033 262);
+  --popover-foreground: var(--foreground);
+
+  --primary: oklch(0.86 0.173 92);
+  --primary-foreground: oklch(0.2 0.03 82);
+  /* Nền tối thì mực vàng phải SÁNG lên, không tối đi */
+  --primary-strong: oklch(0.87 0.15 90);
+
+  --secondary: oklch(0.24 0.03 265);
+  --secondary-foreground: oklch(0.95 0.008 250);
+
+  --muted: oklch(0.24 0.028 265);
+  --muted-foreground: oklch(0.68 0.02 258);
+
+  --accent: oklch(0.71 0.14 255);
+  --accent-foreground: oklch(0.17 0.04 262);
+
+  --destructive: oklch(0.66 0.21 30);
+  --destructive-foreground: oklch(0.98 0.005 250);
+  /* Trên nền tối, chữ cảnh báo phải sáng lên chứ không tối đi */
+  --destructive-strong: oklch(0.78 0.12 30);
+
+  --success: oklch(0.75 0.15 155);
+  --success-foreground: oklch(0.16 0.03 160);
+  --warning: oklch(0.8 0.13 62);
+  --warning-foreground: oklch(0.18 0.04 80);
+
+  --border: oklch(1 0 0 / 12%);
+  --input: oklch(1 0 0 / 16%);
+  --ring: oklch(0.68 0.14 256);
+
+  --chart-1: oklch(0.68 0.19 264);
+  --chart-2: oklch(0.75 0.15 195);
+  --chart-3: oklch(0.78 0.13 78);
+  --chart-4: oklch(0.7 0.13 290);
+  --chart-5: oklch(0.72 0.17 145);
+
+  --sidebar: oklch(0.175 0.028 265);
+  --sidebar-foreground: var(--foreground);
+  --sidebar-primary: var(--primary);
+  --sidebar-primary-foreground: var(--primary-foreground);
+  --sidebar-accent: oklch(0.24 0.03 265);
+  --sidebar-accent-foreground: var(--foreground);
+  --sidebar-border: oklch(1 0 0 / 12%);
+  --sidebar-ring: var(--ring);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-strong: var(--primary-strong);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-destructive-strong: var(--destructive-strong);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  --color-space-900: var(--space-900);
+  --color-space-800: var(--space-800);
+  --color-space-700: var(--space-700);
+  --color-star: var(--star);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 12px);
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", sans-serif;
+  --font-display: var(--font-display), ui-serif, Georgia, serif;
+  --font-mono: ui-monospace, "SF Mono", "Cascadia Code", monospace;
+
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-twinkle: twinkle 4s ease-in-out infinite;
+  --animate-orbit: orbit 24s linear infinite;
+  --animate-shimmer: shimmer 2.4s linear infinite;
+  --animate-aurora: aurora 18s ease-in-out infinite alternate;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes orbit {
+  from {
+    transform: rotate(0deg) translateX(var(--orbit-radius, 80px)) rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg) translateX(var(--orbit-radius, 80px))
+      rotate(-360deg);
+  }
+}
+
+@keyframes shimmer {
+  from {
+    background-position: -200% 0;
+  }
+  to {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes aurora {
+  0% {
+    transform: translate3d(-6%, -3%, 0) scale(1);
+  }
+  100% {
+    transform: translate3d(6%, 4%, 0) scale(1.15);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    /* chừa chỗ cho header dính khi nhảy tới anchor mục lục */
+    scroll-padding-top: 6rem;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    @apply bg-accent text-accent-foreground;
+  }
+
+  /* `* { outline-ring/50 }` ở trên chỉ đặt MÀU viền, không đặt kiểu và độ dày —
+     nghĩa là link trong thân bài, breadcrumb, mục lục, link chân trang đều phụ
+     thuộc vào viền mặc định của trình duyệt, và biến mất hoàn toàn ở bất cứ chỗ
+     nào có `outline-none`. Quy tắc dưới đây bảo đảm mọi thứ đi tới được bằng
+     bàn phím đều có dấu hiệu thấy được, ở cả hai theme.
+     Các component đã tự vẽ vòng focus bằng ring (Button, Input, ...) được loại
+     trừ để không bị vẽ chồng hai lớp. */
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
+  }
+  [data-slot="button"]:focus-visible,
+  [data-slot="input"]:focus-visible,
+  [data-slot="textarea"]:focus-visible,
+  [data-slot="select-trigger"]:focus-visible {
+    outline: none;
+  }
+
+  /* Thanh cuộn mảnh, hợp với thẩm mỹ Apple */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply rounded-full bg-border;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-muted-foreground/50;
+  }
+
+  /* Tôn trọng người dùng bật giảm chuyển động */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+
+    /*
+     * Hai ngoại lệ có chủ ý, theo quyết định của chủ sản phẩm.
+     *
+     * Quy tắc chặn ở trên là quy tắc chặn TẤT CẢ, nên nó cũng giết luôn hai
+     * chuyển động nền của chủ đề vũ trụ: sao nhấp nháy và quầng sáng trôi.
+     * Hệ quả là trên máy bật giảm chuyển động, cả trang đứng chết — và một
+     * trang vũ trụ đứng chết trông như trang bị lỗi chứ không như trang tĩnh.
+     *
+     * Hai hiệu ứng này không phải loại gây chóng mặt: không dịch chuyển lớn,
+     * không nháy nhanh, không đi kèm cuộn. Chúng được cho chạy tiếp nhưng
+     * **chậm hơn nhiều** — nhịp cỡ nửa phút thay vì vài giây.
+     *
+     * Mọi thứ khác vẫn bị chặn như cũ. Muốn quay lại chuẩn nghiêm ngặt thì
+     * xoá nguyên khối này.
+     */
+    .starfield::before {
+      animation-duration: 14s !important;
+      animation-iteration-count: infinite !important;
+    }
+
+    .animate-aurora {
+      animation-duration: 36s !important;
+      animation-iteration-count: infinite !important;
+    }
+  }
+}
+
+@layer components {
+  /* Nền vũ trụ có chiều sâu — dùng cho hero, trang 3D, khối CTA */
+  .bg-cosmos {
+    background:
+      radial-gradient(
+        ellipse 80% 60% at 50% -10%,
+        color-mix(in oklab, var(--accent) 35%, transparent),
+        transparent 60%
+      ),
+      /* Trước đây là --chart-4 (magenta) ở 22% — chính nó tạo vệt hồng lệch
+         tông trên hero. Nay là vàng thương hiệu ở 12%: ánh sao xa, không phải
+         mảng màu. */
+      radial-gradient(
+        ellipse 60% 50% at 85% 20%,
+        color-mix(in oklab, var(--primary) 12%, transparent),
+        transparent 55%
+      ),
+      linear-gradient(180deg, var(--space-900), var(--space-800));
+  }
+
+  /* Trường sao tĩnh, rẻ hơn nhiều so với canvas */
+  .starfield::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      radial-gradient(1.5px 1.5px at 20% 30%, var(--star), transparent),
+      radial-gradient(1px 1px at 60% 15%, var(--star), transparent),
+      radial-gradient(1.5px 1.5px at 80% 55%, var(--star), transparent),
+      radial-gradient(1px 1px at 35% 75%, var(--star), transparent),
+      radial-gradient(1.5px 1.5px at 12% 88%, var(--star), transparent),
+      radial-gradient(1px 1px at 92% 82%, var(--star), transparent),
+      radial-gradient(1px 1px at 48% 45%, var(--star), transparent);
+    opacity: 0.55;
+    animation: twinkle 5s ease-in-out infinite;
+    pointer-events: none;
+  }
+
+  /* Kính mờ kiểu Apple cho header và thẻ nổi */
+  .glass {
+    @apply border border-white/10 bg-white/70 backdrop-blur-xl dark:bg-white/5;
+  }
+
+  /* Thanh header dính. KHÔNG dùng chung với `.glass` — `.glass` là nền của
+     `Button variant="glass"` trên các trang 3D và có ràng buộc khác hẳn.
+
+     Hai trục quyết định của header là *nền phía sau* (tối/sáng) × *đã cuộn hay
+     chưa*, KHÔNG phải theme. Lớp này chỉ lo trạng thái "đã cuộn / trang
+     thường"; trạng thái nằm trên hero tối do `bg-transparent` lo. */
+  /*
+   * Thanh header khi đã cuộn.
+   *
+   * Độ đục 94–96% chứ không 82–88%. Ở mức cũ, tiêu đề hero cỡ 60px màu trắng
+   * **đọc xuyên qua header** và chồng lên chữ "Sciencepedia" — thấy rõ trong
+   * ảnh chụp màn hình. Chữ lớn tương phản cao xuyên qua lớp kính mờ dễ hơn
+   * nhiều so với ảnh hay nền phẳng, mà hero của trang chủ đúng là chữ lớn
+   * tương phản cao.
+   *
+   * `@supports` bên dưới: trình duyệt không có `backdrop-filter` thì lớp kính
+   * mất tác dụng làm nhoè, và chỉ còn lại phần trong suốt — tức nền phía sau
+   * hiện rõ hơn nữa. Ở đó chuyển sang đục hoàn toàn.
+   */
+  .glass-bar {
+    background: color-mix(in oklab, var(--background) 94%, transparent);
+    backdrop-filter: blur(16px) saturate(150%);
+    -webkit-backdrop-filter: blur(16px) saturate(150%);
+    border-bottom: 1px solid var(--border);
+  }
+  .dark .glass-bar {
+    background: color-mix(in oklab, var(--card) 96%, transparent);
+    border-bottom-color: color-mix(in oklab, white 12%, transparent);
+  }
+
+  @supports not (backdrop-filter: blur(1px)) {
+    .glass-bar {
+      background: var(--background);
+    }
+    .dark .glass-bar {
+      background: var(--card);
+    }
+  }
+
+  /* Viền vàng đặc trưng National Geographic */
+  .natgeo-frame {
+    @apply relative;
+    box-shadow: inset 0 0 0 3px var(--primary);
+  }
+
+  /* Gạch dưới chạy khi hover — dùng cho link điều hướng */
+  .link-underline {
+    @apply relative;
+  }
+  .link-underline::after {
+    content: "";
+    /* `currentColor` chứ không phải `bg-accent`: gạch chân phải đọc được ở cả
+       bốn tổ hợp (header mực trắng trên hero, header mực tối trên nền sáng, và
+       hai theme). Màu cố định thì hoặc chìm trên nền sáng, hoặc biến mất khi
+       header chuyển sang mực trắng. */
+    @apply absolute -bottom-1 left-0 h-0.5 w-0 rounded-full transition-[width] duration-300;
+    background: currentColor;
+  }
+  .link-underline:hover::after,
+  .link-underline[data-active="true"]::after {
+    @apply w-full;
+  }
+
+  /* Khung chứa chuẩn — rộng rãi kiểu Apple */
+  .container-page {
+    @apply mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-12;
+  }
+
+  .container-prose {
+    @apply mx-auto w-full max-w-3xl px-5 sm:px-8;
+  }
+
+  /* Nhịp dọc dùng chung — thay cho mt-24 / mt-28 rải rác mỗi trang một kiểu */
+  .section-gap {
+    margin-top: var(--space-section);
+  }
+  .page-pad {
+    padding-block: var(--space-page);
+  }
+
+  /* Vệt sáng chạy trên skeleton khi tải */
+  .shimmer {
+    background: linear-gradient(
+      90deg,
+      transparent,
+      color-mix(in oklab, var(--muted-foreground) 12%, transparent),
+      transparent
+    );
+    background-size: 200% 100%;
+    animation: var(--animate-shimmer);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .text-pretty {
+    text-wrap: pretty;
+  }
+
+  /* Chữ tiêu đề gradient kiểu NASA */
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(
+      100deg,
+      var(--foreground) 10%,
+      color-mix(in oklab, var(--primary) 70%, var(--foreground)) 50%,
+      var(--accent) 95%
+    );
+  }
+
+  .mask-fade-b {
+    mask-image: linear-gradient(to bottom, black 70%, transparent);
+  }
+
+  /* Kết quả tìm kiếm được Meilisearch bọc trong <mark> */
+  .search-highlight mark {
+    @apply rounded bg-accent/40 px-0.5 text-inherit;
+  }
+}
+
+/* Kiểu chữ cho nội dung bài viết (prose) */
+.article-prose {
+  @apply prose prose-lg dark:prose-invert;
+  /* Bề ngang dòng chữ là quyết định đọc, không phải quyết định bố cục: khoá nó
+     vào token thay vì để thân bài giãn theo bề ngang cột. Ảnh, bảng và khối mã
+     bảng rộng vẫn cuộn ngang được trong khung riêng của nó. */
+  max-width: var(--measure-prose);
+  margin-inline: auto;
+  @apply prose-headings:font-display prose-headings:tracking-tight;
+  @apply prose-h2:mt-14 prose-h2:scroll-mt-28 prose-h2:border-b prose-h2:pb-3;
+  @apply prose-h3:mt-10 prose-h3:scroll-mt-28;
+  @apply prose-a:text-primary-strong prose-a:decoration-primary-strong/40 prose-a:underline-offset-4;
+  @apply prose-img:rounded-2xl prose-img:shadow-lg;
+  @apply prose-blockquote:border-l-accent prose-blockquote:not-italic;
+  @apply prose-code:rounded prose-code:bg-muted prose-code:px-1.5 prose-code:py-0.5 prose-code:before:content-none prose-code:after:content-none;
+  @apply prose-table:text-base;
+
+  /* Email và URL dài là một "từ" không có chỗ ngắt: trên máy hẹp (320px) chúng
+     đẩy cả trang tràn ngang. Cho phép ngắt giữa từ khi không còn cách khác —
+     chỉ ảnh hưởng đúng những chuỗi dài quá khổ, văn bản thường không đổi. */
+  overflow-wrap: anywhere;
+}
+
+/* --------------------------------------------------------------------------
+   Hành trình thu phóng: hoà mờ giữa hai cấp.
+   Chuyển động nằm ở lớp bọc chứ không ở camera của từng cảnh — nhờ vậy ba
+   cảnh 3D đã có không phải sửa gì, và mỗi cảnh vẫn giữ tỉ lệ riêng.
+   -------------------------------------------------------------------------- */
+@keyframes zoom-out {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(var(--zoom-to, 1.6));
+  }
+}
+
+@keyframes zoom-in {
+  from {
+    opacity: 0;
+    transform: scale(var(--zoom-from, 0.6));
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-\[zoom-out_900ms_ease-in_forwards\],
+  .animate-\[zoom-in_900ms_ease-out_forwards\] {
+    animation-duration: 1ms;
+  }
+}

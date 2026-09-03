@@ -1,6 +1,3 @@
-# Ứng dụng có repo git riêng (sciencepedia/.git) — không lồng vào repo này.
-# Repo gốc chỉ giữ hệ agent/skill và tài liệu quyết định.
-sciencepedia/
 
 # Ghi đè cá nhân, không chia sẻ
 .claude/settings.local.json
