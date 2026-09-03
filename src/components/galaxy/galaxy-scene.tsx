@@ -326,7 +326,11 @@ function Galaxy({
       </points>
 
       {/* Lõi rực sáng quanh Sagittarius A* — ba lớp quầng lồng nhau */}
-      <mesh onClick={() => onSelect("core")}>
+      <mesh
+        onClick={() => onSelect("core")}
+        onPointerOver={() => (document.body.style.cursor = "pointer")}
+        onPointerOut={() => (document.body.style.cursor = "auto")}
+      >
         <sphereGeometry args={[0.3, 32, 32]} />
         <meshBasicMaterial color="#fff6df" toneMapped={false} />
       </mesh>
@@ -375,6 +379,8 @@ function Galaxy({
               <button
                 type="button"
                 onClick={() => onSelect(feature.id)}
+                onPointerOver={() => (document.body.style.cursor = "pointer")}
+                onPointerOut={() => (document.body.style.cursor = "auto")}
                 className={cn(
                   "rounded-full border px-2.5 py-1 text-[11px] font-medium whitespace-nowrap backdrop-blur transition-colors",
                   isSun
@@ -414,23 +420,39 @@ function GalaxyObjects({
         const position = galacticToScene(object.distanceLy, object.l, object.b);
         const isNebula = object.kind === "nebula";
         return (
-          <sprite
-            key={object.id}
-            position={position}
-            scale={isNebula ? [0.85, 0.85, 0.85] : [0.5, 0.5, 0.5]}
-            onClick={() => onSelect(object.id)}
-            onPointerOver={() => (document.body.style.cursor = "pointer")}
-            onPointerOut={() => (document.body.style.cursor = "auto")}
-          >
-            <spriteMaterial
-              map={sprite}
-              color={object.color}
-              transparent
-              opacity={isNebula ? 0.75 : 0.9}
-              depthWrite={false}
-              blending={THREE.AdditiveBlending}
-            />
-          </sprite>
+          <group key={object.id} position={position}>
+            {/*
+             * Vùng chạm VÔ HÌNH, lớn hơn hẳn chấm sáng.
+             *
+             * Sprite chỉ 0,5–0,85 đơn vị cảnh, tức vài pixel trên màn hình ở
+             * mức thu nhỏ mặc định. Đặt sự kiện lên chính sprite thì gần như
+             * không bao giờ trúng — người xem rê chuột không thấy đổi con trỏ,
+             * bấm không ra thông tin, và kết luận là tính năng hỏng.
+             *
+             * `opacity={0}` chứ không `visible={false}`: raycaster bỏ qua vật
+             * thể ẩn, nên ẩn đi là mất luôn vùng chạm. Trong suốt thì vẫn bắt
+             * được tia. `depthWrite={false}` để nó không che thứ phía sau.
+             */}
+            <mesh
+              onClick={() => onSelect(object.id)}
+              onPointerOver={() => (document.body.style.cursor = "pointer")}
+              onPointerOut={() => (document.body.style.cursor = "auto")}
+            >
+              <sphereGeometry args={[isNebula ? 1.4 : 1.1, 12, 12]} />
+              <meshBasicMaterial transparent opacity={0} depthWrite={false} />
+            </mesh>
+
+            <sprite scale={isNebula ? [0.85, 0.85, 0.85] : [0.5, 0.5, 0.5]}>
+              <spriteMaterial
+                map={sprite}
+                color={object.color}
+                transparent
+                opacity={isNebula ? 0.75 : 0.9}
+                depthWrite={false}
+                blending={THREE.AdditiveBlending}
+              />
+            </sprite>
+          </group>
         );
       })}
     </group>

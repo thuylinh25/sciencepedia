@@ -58,7 +58,17 @@ export async function StatsBand({
                 đã có bài" phải xuống dòng, nên thang phải bắt đầu thấp hơn
                 nhiều rồi mới lên — 48px ngay từ mobile sẽ đẩy band cao gấp đôi
                 và dìm phần nội dung xuống dưới màn hình đầu. */}
-            <dd className="order-2 font-display text-4xl leading-none font-bold tracking-tight tabular-nums sm:text-5xl lg:text-[48px]">
+            {/* KHÔNG dùng `leading-none` ở đây.
+
+                Với chữ số, `leading-none` cho hộp dòng cao đúng bằng cỡ chữ,
+                nhưng chữ số không có nét thò xuống — nên phần khoảng trống
+                chân chữ nằm trong hộp mà không có nét nào. Flexbox căn giữa
+                theo HỘP, vậy nên nét chữ nhìn thấy được bị đẩy lên trên tâm
+                thật vài pixel. Ba ô cạnh nhau cùng lệch một hướng thì cả dải
+                trông như bị dồn lên đầu — đúng thứ đã bị báo hai lần.
+
+                `leading-tight` cho hộp cân hơn và mắt đọc ra là giữa. */}
+            <dd className="order-2 font-display text-4xl leading-tight font-bold tracking-tight tabular-nums sm:text-5xl lg:text-[48px]">
               <Counter value={value} />
             </dd>
           </div>
