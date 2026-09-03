@@ -138,7 +138,7 @@ export function LoginForm({
 
       <p className="text-center text-sm text-muted-foreground">
         {t("noAccount")}{" "}
-        <Link href="/register" className="font-medium text-primary">
+        <Link href="/register" className="font-medium text-primary-strong">
           {t("register")}
         </Link>
       </p>

@@ -255,7 +255,7 @@ export function SolarSystem({
           href="https://eyes.nasa.gov/apps/solar-system/"
           target="_blank"
           rel="noreferrer noopener"
-          className="inline-flex items-center gap-1.5 font-medium text-primary hover:underline"
+          className="inline-flex items-center gap-1.5 font-medium text-primary-strong hover:underline"
         >
           {t("nasaEyes")}
           <ExternalLink className="size-3.5" />

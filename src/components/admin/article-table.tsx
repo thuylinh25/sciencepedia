@@ -104,7 +104,7 @@ export function AdminArticleTable({
                   )}
                   <Link
                     href={`/admin/articles/${row.id}/edit`}
-                    className="hover:text-primary"
+                    className="hover:text-primary-strong"
                   >
                     {row.title}
                   </Link>

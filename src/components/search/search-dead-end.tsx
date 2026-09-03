@@ -60,7 +60,7 @@ export function SearchDeadEnd({
 
       <Link
         href="/articles"
-        className="mt-2 text-sm font-medium text-primary underline-offset-4 hover:underline"
+        className="mt-2 text-sm font-medium text-primary-strong underline-offset-4 hover:underline"
       >
         {allLabel}
       </Link>

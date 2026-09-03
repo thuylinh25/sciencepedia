@@ -37,7 +37,7 @@ export async function ArticleGrid({
       >
         <Link
           href="/articles"
-          className="text-sm font-medium text-primary underline-offset-4 hover:underline"
+          className="text-sm font-medium text-primary-strong underline-offset-4 hover:underline"
         >
           {t("browseAll")}
         </Link>

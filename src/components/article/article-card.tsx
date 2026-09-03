@@ -55,7 +55,7 @@ export async function ArticleCard({
           <p className="text-xs font-medium text-muted-foreground">
             {category}
           </p>
-          <h3 className="mt-0.5 line-clamp-2 text-sm leading-snug font-semibold group-hover:text-primary">
+          <h3 className="mt-0.5 line-clamp-2 text-sm leading-snug font-semibold group-hover:text-primary-strong">
             {title}
           </h3>
           <p className="mt-1 flex items-center gap-1 text-xs text-muted-foreground">
@@ -131,7 +131,7 @@ export async function ArticleCard({
       >
         <h3
           className={cn(
-            "font-display leading-tight font-bold tracking-tight text-balance transition-colors group-hover:text-primary",
+            "font-display leading-tight font-bold tracking-tight text-balance transition-colors group-hover:text-primary-strong",
             isHero ? "text-2xl md:text-3xl" : "line-clamp-2 text-lg",
           )}
         >

@@ -132,7 +132,7 @@ export default async function AdminDashboard({
                 <TableCell className="font-medium">
                   <Link
                     href={`/admin/articles/${article.id}/edit`}
-                    className="hover:text-primary"
+                    className="hover:text-primary-strong"
                   >
                     {article.title}
                   </Link>

@@ -163,7 +163,7 @@ export function AssistantChat({ compact = false }: { compact?: boolean }) {
       <div className="flex-1 space-y-6 overflow-y-auto pr-1">
         {messages.length === 0 ? (
           <div className="flex h-full flex-col items-center justify-center gap-6 py-10 text-center">
-            <span className="grid size-14 place-items-center rounded-2xl bg-primary/10 text-primary">
+            <span className="grid size-14 place-items-center rounded-2xl bg-primary/10 text-primary-strong">
               <Sparkles className="size-7" />
             </span>
             <div>
@@ -196,7 +196,7 @@ export function AssistantChat({ compact = false }: { compact?: boolean }) {
               )}
             >
               {message.role === "assistant" && (
-                <span className="mt-1 grid size-8 shrink-0 place-items-center rounded-full bg-primary/10 text-primary">
+                <span className="mt-1 grid size-8 shrink-0 place-items-center rounded-full bg-primary/10 text-primary-strong">
                   <Sparkles className="size-4" />
                 </span>
               )}

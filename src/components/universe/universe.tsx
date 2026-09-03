@@ -314,7 +314,7 @@ export function Universe() {
           {t("tourHint")}{" "}
           <Link
             href="/zoom"
-            className="inline-flex items-center gap-1.5 font-medium text-primary hover:underline"
+            className="inline-flex items-center gap-1.5 font-medium text-primary-strong hover:underline"
           >
             {tZoom("title")}
             <ArrowRight className="size-4" />

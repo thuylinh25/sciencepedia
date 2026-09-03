@@ -49,7 +49,7 @@ export default async function BookmarksPage({
           >
             <Link
               href="/articles"
-              className="text-sm font-medium text-primary underline-offset-4 hover:underline"
+              className="text-sm font-medium text-primary-strong underline-offset-4 hover:underline"
             >
               {tArticle("browseAll")}
             </Link>

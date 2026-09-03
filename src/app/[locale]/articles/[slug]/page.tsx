@@ -330,7 +330,7 @@ export default async function ArticlePage({
                           href={source.url}
                           target="_blank"
                           rel="noreferrer noopener"
-                          className="text-primary underline underline-offset-4"
+                          className="text-primary-strong underline underline-offset-4"
                         >
                           {source.title}
                         </a>

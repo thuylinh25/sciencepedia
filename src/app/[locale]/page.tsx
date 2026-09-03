@@ -6,20 +6,34 @@ import { Link } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
 import { buildMetadata } from "@/lib/seo";
 import {
+  getAllCategories,
+  getDailyPick,
   getFeaturedArticles,
   getLatestArticles,
+  getPopularArticles,
   getRootCategories,
   getSiteStats,
+  getTagsWithArticles,
 } from "@/server/queries";
 
 import { Hero } from "@/components/home/hero";
 import { StatsBand } from "@/components/home/stats-band";
+import { DiscoverToday } from "@/components/home/discover-today";
+import { SearchHeroForm } from "@/components/search/search-hero-form";
 import { SectionHeading } from "@/components/section-heading";
 import { ArticleCard } from "@/components/article/article-card";
 import { ArticleGrid } from "@/components/article/article-grid";
 import { CategoryCard } from "@/components/category/category-card";
 import { Reveal, StaggerGroup, StaggerItem } from "@/components/motion/reveal";
 import { Button } from "@/components/ui/button";
+
+/**
+ * "Bài của hôm nay" đổi theo ngày ở tầng query, nhưng trang chủ được prerender
+ * nên bản HTML tĩnh sẽ giữ nguyên bài của NGÀY BUILD cho tới lần deploy sau nếu
+ * không có `revalidate` hữu hạn. Một giờ là trần thời gian trễ sau nửa đêm.
+ * Vẫn là ISR — không SSR, không fetch phía client.
+ */
+export const revalidate = 3600;
 
 export async function generateMetadata({
   params,
@@ -46,18 +60,36 @@ export default async function HomePage({
   setRequestLocale(locale);
 
   const t = await getTranslations("home");
-  const [featured, latest, categories, stats] = await Promise.all([
+  const [
+    featured,
+    latest,
+    categories,
+    stats,
+    dailyPick,
+    popularRaw,
+    chipTags,
+    allCategories,
+  ] = await Promise.all([
     getFeaturedArticles(5),
     getLatestArticles(6),
     getRootCategories(),
     getSiteStats(),
+    getDailyPick(),
+    // Lấy dư một bài để còn chỗ loại bài của hôm nay ra: cùng một bài xuất hiện
+    // hai lần trong cùng một khối là lỗi thấy được.
+    getPopularArticles(4),
+    getTagsWithArticles(64),
+    getAllCategories(),
   ]);
 
   const [heroArticle, ...restFeatured] = featured;
+  const popular = popularRaw
+    .filter((item) => item.id !== dailyPick.article?.id)
+    .slice(0, 3);
 
   return (
     <>
-      <Hero />
+      <Hero search={<SearchHeroForm locale={locale as Locale} />} />
 
       <StatsBand stats={stats} />
 
@@ -95,6 +127,16 @@ export default async function HomePage({
           )}
         </section>
       )}
+
+      {/* ------------------------------------------- Khám phá hôm nay */}
+      <DiscoverToday
+        article={dailyPick.article}
+        popular={popular}
+        tags={chipTags}
+        categories={allCategories}
+        total={stats.articles}
+        locale={locale as Locale}
+      />
 
       {/* ---------------------------------------------------- Lĩnh vực */}
       <section className="container-page section-gap">
@@ -144,7 +186,9 @@ export default async function HomePage({
                 className="relative mx-auto aspect-square w-full max-w-md"
               >
                 <div className="absolute inset-0 grid place-items-center">
-                  <div className="size-16 rounded-full bg-accent shadow-[0_0_80px_25px_var(--color-accent)]" />
+                  {/* Mặt Trời phải ấm. Vàng thương hiệu nay nằm ở --primary;
+                      để nguyên bg-accent thì minh hoạ có một mặt trời xanh. */}
+                  <div className="size-16 rounded-full bg-primary shadow-[0_0_80px_25px_var(--color-primary)]" />
                 </div>
                 {[
                   { size: "45%", duration: "8s", dot: "0.5rem" },
@@ -174,8 +218,18 @@ export default async function HomePage({
         </Reveal>
       </section>
 
-      {/* ---------------------------------------------------- Trợ lý AI */}
+      {/* --------------------------------------------------- Mới xuất bản */}
       <section className="container-page section-gap">
+        <SectionHeading
+          title={t("latest")}
+          subtitle={t("latestSubtitle")}
+          href="/articles"
+          linkLabel={t("featured")}
+        />
+        <ArticleGrid articles={latest} locale={locale as Locale} />
+      </section>
+      {/* ---------------------------------------------------- Trợ lý AI */}
+      <section className="container-page section-gap mb-8">
         <Reveal>
           <div className="relative overflow-hidden rounded-3xl border bg-card p-10 sm:p-14">
             <span
@@ -183,7 +237,7 @@ export default async function HomePage({
               className="pointer-events-none absolute -top-24 -right-24 size-72 rounded-full bg-primary/20 blur-3xl"
             />
             <div className="relative max-w-2xl">
-              <span className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-3.5 py-1 text-xs font-medium tracking-widest text-primary uppercase">
+              <span className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-3.5 py-1 text-xs font-medium tracking-widest text-primary-strong uppercase">
                 <Sparkles className="size-3.5" /> AI
               </span>
               <h2 className="mt-4 font-display text-4xl font-bold tracking-tight text-balance sm:text-5xl">
@@ -209,16 +263,6 @@ export default async function HomePage({
         </Reveal>
       </section>
 
-      {/* ---------------------------------------------------- Mới nhất */}
-      <section className="container-page section-gap mb-8">
-        <SectionHeading
-          title={t("latest")}
-          subtitle={t("latestSubtitle")}
-          href="/articles"
-          linkLabel={t("featured")}
-        />
-        <ArticleGrid articles={latest} locale={locale as Locale} />
-      </section>
     </>
   );
 }

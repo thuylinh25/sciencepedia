@@ -112,7 +112,7 @@ export function RegisterForm() {
 
       <p className="text-center text-sm text-muted-foreground">
         {t("hasAccount")}{" "}
-        <Link href="/login" className="font-medium text-primary">
+        <Link href="/login" className="font-medium text-primary-strong">
           {t("login")}
         </Link>
       </p>

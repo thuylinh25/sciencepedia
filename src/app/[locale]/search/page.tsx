@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 
-import { Link } from "@/i18n/navigation";
+import { getPathname, Link } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
 import { buildMetadata } from "@/lib/seo";
 import { search } from "@/lib/search";
@@ -97,7 +97,12 @@ export default async function SearchPage({
       </h1>
 
       <div className="mt-6 max-w-2xl">
-        <SearchBar defaultValue={query} />
+        {/* localePrefix = "always": <form action> không được next-intl thêm
+            tiền tố ngôn ngữ, phải sinh tường minh. */}
+        <SearchBar
+          action={getPathname({ href: "/search", locale: loc })}
+          defaultValue={query}
+        />
       </div>
 
       <SearchFilters
@@ -184,7 +189,7 @@ export default async function SearchPage({
 
                       {/* Chuỗi đã được thoát HTML, chỉ giữ lại thẻ <mark> */}
                       <h2
-                        className="font-display text-xl font-semibold group-hover:text-primary"
+                        className="font-display text-xl font-semibold group-hover:text-primary-strong"
                         dangerouslySetInnerHTML={{ __html: titleHtml }}
                       />
                       <p

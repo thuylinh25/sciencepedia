@@ -50,7 +50,7 @@ export function SectionHeading({
       {href && linkLabel && (
         <Link
           href={href}
-          className="group flex items-center gap-1.5 text-sm font-medium text-primary"
+          className="group flex items-center gap-1.5 text-sm font-medium text-primary-strong"
         >
           {linkLabel}
           <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />

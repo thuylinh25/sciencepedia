@@ -6,7 +6,18 @@ import { cn } from "@/lib/utils";
  * Dấu hiệu nhận diện: khung chữ nhật vàng kiểu National Geographic,
  * bên trong là một quỹ đạo hành tinh tối giản.
  */
-export function Logo({ className }: { className?: string }) {
+export function Logo({
+  className,
+  tone = "auto",
+}: {
+  className?: string;
+  /**
+   * `onDark` dùng khi logo nằm trên nền vũ trụ — hero tràn dưới header. Nền đó
+   * tối ở CẢ HAI theme, nên đây không phải là trục light/dark mà là trục "nền
+   * phía sau tối hay sáng". Ô vuông thương hiệu không đổi ở cả hai tone.
+   */
+  tone?: "auto" | "onDark";
+}) {
   // useTranslations chạy được ở cả Server lẫn Client Component (next-intl v4);
   // Logo được dùng ở cả hai phía — chân trang (server) và header (client).
   const t = useTranslations("site");
@@ -37,10 +48,20 @@ export function Logo({ className }: { className?: string }) {
           "Đăng nhập" dạng chữ. Drawer và trang đăng nhập có đủ chỗ nên vẫn hiện
           đầy đủ — vì vậy việc ẩn nằm ở nơi dùng, không nằm ở đây. */}
       <span data-wordmark className="flex min-w-0 flex-col leading-none">
-        <span className="truncate font-display text-base font-bold tracking-tight sm:text-lg">
+        <span
+          className={cn(
+            "truncate font-display text-base font-bold tracking-tight sm:text-lg",
+            tone === "onDark" && "text-white",
+          )}
+        >
           Sciencepedia
         </span>
-        <span className="hidden text-[10px] font-medium tracking-[0.18em] text-muted-foreground uppercase sm:block">
+        <span
+          className={cn(
+            "hidden text-[10px] font-medium tracking-[0.18em] uppercase sm:block",
+            tone === "onDark" ? "text-white/70" : "text-muted-foreground",
+          )}
+        >
           {t("wordmark")}
         </span>
       </span>

@@ -67,13 +67,13 @@ export default async function ModelsPage({
               </div>
 
               <div className="flex flex-1 flex-col p-5">
-                <h2 className="font-display text-xl font-bold group-hover:text-primary">
+                <h2 className="font-display text-xl font-bold group-hover:text-primary-strong">
                   {tNav(step.navKey)}
                 </h2>
                 <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
                   {loc === "en" ? step.blurbEn : step.blurb}
                 </p>
-                <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-primary">
+                <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-primary-strong">
                   {t("open")}
                   <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
                 </span>

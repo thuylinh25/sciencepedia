@@ -36,7 +36,7 @@ export function GET(request: NextRequest) {
             left: 0,
             width: "100%",
             height: "10px",
-            background: "#FFCC00",
+            background: "#FACC15",
           }}
         />
 
@@ -46,7 +46,7 @@ export function GET(request: NextRequest) {
               width: "44px",
               height: "44px",
               borderRadius: "12px",
-              background: "#FFCC00",
+              background: "#FACC15",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",

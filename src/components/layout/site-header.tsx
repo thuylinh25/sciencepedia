@@ -61,6 +61,16 @@ const MODELS = [
 
 const NAV = [{ href: "/assistant", key: "assistant" as const, icon: Sparkles }];
 
+/**
+ * Route có hero nền tối tràn xuống dưới header. Thêm route mới vào đây khi
+ * dựng thêm một hero tối nữa.
+ *
+ * Đây mới là trục quyết định thật của header: *nền phía sau tối hay sáng*,
+ * KHÔNG phải theme. Hero vũ trụ tối ở cả light lẫn dark theme, nên hai tổ hợp
+ * (light + hero) và (dark + hero) cho ra đúng MỘT bộ style.
+ */
+const DARK_HERO_ROUTES = ["/"];
+
 export function SiteHeader({ categories }: { categories: NavCategory[] }) {
   const t = useTranslations("nav");
   const locale = useLocale() as Locale;
@@ -95,14 +105,29 @@ export function SiteHeader({ categories }: { categories: NavCategory[] }) {
   const isActive = (href: string) =>
     href === "/" ? pathname === "/" : pathname.startsWith(href);
 
+  const overHero = DARK_HERO_ROUTES.includes(pathname);
+  const onDark = overHero && !scrolled;
+
+  /* Lỗi ở trạng thái chưa cuộn không nằm ở cái nền trong suốt mà ở MÀU MỰC:
+     nav dùng text-muted-foreground / text-foreground của light theme, tức chữ
+     gần đen trên nền vũ trụ gần đen (nền vs chữ trắng là 17,8–20,0:1, hoàn
+     toàn ổn). Đổ một nền đục lên là chữa nhầm bệnh và giết luôn hiệu ứng hero
+     tràn dưới header. */
+  const navIdle = onDark
+    ? "text-white/75 hover:text-white"
+    : "text-muted-foreground hover:text-foreground";
+  const navActive = onDark ? "text-white" : "text-foreground";
+
   return (
     <>
+      {/* Liệt kê thuộc tính tường minh chứ không transition-all:
+          transition-all cũng animate backdrop-filter, gây giật trên Safari. */}
       <header
         className={cn(
-          "sticky top-0 z-50 w-full transition-all duration-300",
-          scrolled
-            ? "glass border-b shadow-sm"
-            : "border-b border-transparent bg-background/0",
+          "sticky top-0 z-50 w-full transition-[background-color,border-color,box-shadow,color] duration-300",
+          onDark
+            ? "border-b border-transparent bg-transparent text-white"
+            : "glass-bar shadow-sm",
         )}
       >
         <div className="container-page flex h-16 min-w-0 items-center gap-3 sm:gap-4 lg:h-20">
@@ -115,7 +140,7 @@ export function SiteHeader({ categories }: { categories: NavCategory[] }) {
             className="shrink-0 [&_[data-wordmark]]:hidden min-[400px]:[&_[data-wordmark]]:flex"
             aria-label="Sciencepedia"
           >
-            <Logo />
+            <Logo tone={onDark ? "onDark" : "auto"} />
           </Link>
 
           <nav className="ml-6 hidden items-center gap-7 lg:flex">
@@ -126,8 +151,9 @@ export function SiteHeader({ categories }: { categories: NavCategory[] }) {
                 <DropdownMenuTrigger
                   data-active={isActive("/categories")}
                   className={cn(
-                    "link-underline flex items-center gap-1 rounded-sm text-sm font-medium text-muted-foreground transition-colors outline-none hover:text-foreground focus-visible:text-foreground focus-visible:ring-[3px] focus-visible:ring-ring/40",
-                    isActive("/categories") && "text-foreground",
+                    "link-underline flex items-center gap-1 rounded-sm text-sm font-medium transition-colors outline-none focus-visible:ring-[3px] focus-visible:ring-ring/40",
+                    navIdle,
+                    isActive("/categories") && navActive,
                   )}
                 >
                   {t("explore")}
@@ -153,8 +179,9 @@ export function SiteHeader({ categories }: { categories: NavCategory[] }) {
                 href="/categories"
                 data-active={isActive("/categories")}
                 className={cn(
-                  "link-underline text-sm font-medium text-muted-foreground transition-colors hover:text-foreground",
-                  isActive("/categories") && "text-foreground",
+                  "link-underline text-sm font-medium transition-colors",
+                  navIdle,
+                  isActive("/categories") && navActive,
                 )}
               >
                 {t("explore")}
@@ -164,8 +191,9 @@ export function SiteHeader({ categories }: { categories: NavCategory[] }) {
             <DropdownMenu>
               <DropdownMenuTrigger
                 className={cn(
-                  "link-underline flex items-center gap-1 rounded-sm text-sm font-medium text-muted-foreground transition-colors outline-none hover:text-foreground focus-visible:text-foreground focus-visible:ring-[3px] focus-visible:ring-ring/40",
-                  MODELS.some((item) => isActive(item.href)) && "text-foreground",
+                  "link-underline flex items-center gap-1 rounded-sm text-sm font-medium transition-colors outline-none focus-visible:ring-[3px] focus-visible:ring-ring/40",
+                  navIdle,
+                  MODELS.some((item) => isActive(item.href)) && navActive,
                 )}
               >
                 {t("models")}
@@ -193,8 +221,9 @@ export function SiteHeader({ categories }: { categories: NavCategory[] }) {
                 href={item.href}
                 data-active={isActive(item.href)}
                 className={cn(
-                  "link-underline flex items-center gap-1.5 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground",
-                  isActive(item.href) && "text-foreground",
+                  "link-underline flex items-center gap-1.5 text-sm font-medium transition-colors",
+                  navIdle,
+                  isActive(item.href) && navActive,
                 )}
               >
                 {item.icon && <item.icon className="size-4" />}
@@ -203,28 +232,45 @@ export function SiteHeader({ categories }: { categories: NavCategory[] }) {
             ))}
           </nav>
 
-          <div className="ml-auto flex items-center gap-1.5">
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={() => setSearchOpen(true)}
-              className="hidden gap-2 rounded-full pr-2 pl-3 text-muted-foreground sm:flex"
-            >
-              <Search className="size-4" />
-              <span>{t("search")}</span>
-              <kbd className="ml-1 hidden rounded border bg-muted px-1.5 py-0.5 font-mono text-[10px] md:inline">
-                ⌘K
-              </kbd>
-            </Button>
-            <Button
-              variant="ghost"
-              size="icon"
-              className="sm:hidden"
-              onClick={() => setSearchOpen(true)}
-              aria-label={t("search")}
-            >
-              <Search className="size-5" />
-            </Button>
+          {/* variant="ghost" mang theo hover:bg-muted hover:text-foreground —
+              hỏng hoàn toàn trên nền tối. Vá một chỗ ở container thay vì sửa
+              từng nút, để nút thêm sau này tự đúng. */}
+          <div
+            className={cn(
+              "ml-auto flex items-center gap-1.5",
+              onDark &&
+                "[&_[data-slot=button]]:text-white/80 [&_[data-slot=button]:hover]:bg-white/12 [&_[data-slot=button]:hover]:text-white",
+            )}
+          >
+            {/* Chống trùng ô tìm kiếm: ẩn hai nút này đúng lúc ô tìm kiếm trên
+                hero còn nằm trong khung nhìn. Cuộn xuống là chúng hiện ra cùng
+                lớp glass. Phím tắt ⌘K vẫn bắt vô điều kiện — người dùng bàn
+                phím không mất gì. */}
+            {!onDark && (
+              <>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={() => setSearchOpen(true)}
+                  className="hidden gap-2 rounded-full pe-2 ps-3 text-muted-foreground sm:flex"
+                >
+                  <Search className="size-4" />
+                  <span>{t("search")}</span>
+                  <kbd className="ms-1 hidden rounded border bg-muted px-1.5 py-0.5 font-mono text-[10px] md:inline">
+                    ⌘K
+                  </kbd>
+                </Button>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="sm:hidden"
+                  onClick={() => setSearchOpen(true)}
+                  aria-label={t("search")}
+                >
+                  <Search className="size-5" />
+                </Button>
+              </>
+            )}
 
             {/* Ngôn ngữ + theme chỉ là cài đặt: trên mobile chúng chiếm ~112px
                 khiến hàng header không co nổi dưới 482px và đẩy nút đăng nhập
@@ -261,7 +307,7 @@ export function SiteHeader({ categories }: { categories: NavCategory[] }) {
                     onClick={() => setMobileOpen(false)}
                     className={cn(
                       "flex items-center gap-3 rounded-xl px-3 py-3 text-base font-medium transition-colors hover:bg-muted",
-                      isActive("/categories") && "bg-muted text-primary",
+                      isActive("/categories") && "bg-muted text-primary-strong",
                     )}
                   >
                     {t("explore")}
@@ -275,7 +321,7 @@ export function SiteHeader({ categories }: { categories: NavCategory[] }) {
                       className={cn(
                         "ml-3 flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground",
                         isActive(`/categories/${category.slug}`) &&
-                          "bg-muted text-primary",
+                          "bg-muted text-primary-strong",
                       )}
                     >
                       <CategoryIcon name={category.icon} className="size-4" />
@@ -288,7 +334,7 @@ export function SiteHeader({ categories }: { categories: NavCategory[] }) {
                     onClick={() => setMobileOpen(false)}
                     className={cn(
                       "mt-2 flex items-center gap-3 rounded-xl px-3 py-3 text-base font-medium transition-colors hover:bg-muted",
-                      isActive("/models") && "bg-muted text-primary",
+                      isActive("/models") && "bg-muted text-primary-strong",
                     )}
                   >
                     {t("models")}
@@ -300,7 +346,7 @@ export function SiteHeader({ categories }: { categories: NavCategory[] }) {
                       onClick={() => setMobileOpen(false)}
                       className={cn(
                         "ml-3 flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground",
-                        isActive(item.href) && "bg-muted text-primary",
+                        isActive(item.href) && "bg-muted text-primary-strong",
                       )}
                     >
                       <item.icon className="size-4" />
@@ -315,7 +361,7 @@ export function SiteHeader({ categories }: { categories: NavCategory[] }) {
                       onClick={() => setMobileOpen(false)}
                       className={cn(
                         "mt-1 flex items-center gap-3 rounded-xl px-3 py-3 text-base font-medium transition-colors hover:bg-muted",
-                        isActive(item.href) && "bg-muted text-primary",
+                        isActive(item.href) && "bg-muted text-primary-strong",
                       )}
                     >
                       {item.icon && <item.icon className="size-5" />}

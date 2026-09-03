@@ -1,13 +1,20 @@
 "use client";
 
+import type { ReactNode } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import { useTranslations } from "next-intl";
-import { ArrowRight, Orbit } from "lucide-react";
+import { Orbit } from "lucide-react";
 
 import { Link } from "@/i18n/navigation";
 import { Button } from "@/components/ui/button";
 
-export function Hero() {
+/**
+ * `search` là một slot: ô tìm kiếm phải là Server Component (chạy khi tắt JS,
+ * không hook nào) nhưng Hero buộc phải là client vì framer-motion. Server
+ * Component không import được vào client, nên trang chủ render nó rồi truyền
+ * xuống đây qua prop.
+ */
+export function Hero({ search }: { search?: ReactNode }) {
   const t = useTranslations("home");
   const reduced = useReducedMotion();
 
@@ -33,7 +40,19 @@ export function Hero() {
         }}
       />
 
-      <div className="container-page relative flex min-h-[min(88vh,46rem)] flex-col justify-center py-24 text-star">
+      {/* Chuyển mềm sang nền trang.
+          Phải đứng TRƯỚC khối nội dung trong DOM: là sibling không có z-index,
+          thứ tự nguồn quyết định thứ tự chồng. Ở bản cũ nó đứng sau và không có
+          `pointer-events-none`, nên khi hero thấp lại nó trùm lên hàng nút và
+          nuốt cú nhấp. */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-x-0 bottom-0 h-20 bg-gradient-to-b from-transparent to-background"
+      />
+
+      {/* Padding bất đối xứng có chủ đích: StatsBand đè lên đáy hero bằng
+          `-mt-10`, nên khoảng trống dưới phải dư ra chừng đó. */}
+      <div className="container-page relative z-10 flex min-h-[min(70svh,36rem)] flex-col justify-center pt-14 pb-20 text-star lg:pt-20 lg:pb-24">
         <motion.p
           {...rise(0)}
           className="mb-5 inline-flex w-fit items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-medium tracking-widest text-white/90 uppercase backdrop-blur"
@@ -42,30 +61,34 @@ export function Hero() {
           {t("heroEyebrow")}
         </motion.p>
 
+        {/* leading 1.08 chứ không 1.05: dấu thanh tiếng Việt (ẫ, ỗ, ằ) chạm
+            dòng trên ở 1.05. */}
         <motion.h1
           {...rise(0.08)}
-          className="max-w-4xl font-display text-5xl leading-[1.05] font-bold tracking-tight text-balance text-white sm:text-6xl lg:text-7xl"
+          className="max-w-4xl font-display text-4xl leading-[1.08] font-bold tracking-tight text-balance text-white sm:text-5xl lg:text-6xl"
         >
           {t("heroTitle")}
         </motion.h1>
 
         <motion.p
           {...rise(0.16)}
-          className="mt-6 max-w-2xl text-lg leading-relaxed text-pretty text-white/75 sm:text-xl"
+          className="mt-5 max-w-2xl text-lg leading-[1.55] text-pretty text-white/75"
         >
           {t("heroSubtitle")}
         </motion.p>
 
-        <motion.div {...rise(0.24)} className="mt-10 flex flex-wrap gap-3">
-          <Button asChild size="xl" variant="accent">
-            <Link href="/categories">
-              {t("heroCta")}
-              <ArrowRight className="size-4" />
-            </Link>
-          </Button>
+        {search && (
+          <motion.div {...rise(0.2)} className="mt-6">
+            {search}
+          </motion.div>
+        )}
+
+        {/* Một nút, không hai. "Bắt đầu khám phá" trùng đúng mục "Khám phá" trên
+            navbar và cạnh tranh trực tiếp với ô tìm kiếm ngay phía trên. */}
+        <motion.div {...rise(0.24)} className="mt-6 flex flex-wrap gap-3">
           <Button
             asChild
-            size="xl"
+            size="lg"
             variant="glass"
             className="border-white/25 bg-white/10 text-white hover:bg-white/20"
           >
@@ -76,9 +99,6 @@ export function Hero() {
           </Button>
         </motion.div>
       </div>
-
-      {/* Chuyển mềm sang nền trang */}
-      <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-b from-transparent to-background" />
     </section>
   );
 }
