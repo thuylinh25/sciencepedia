@@ -2,7 +2,7 @@
 
 import { useTransition } from "react";
 import { useLocale, useTranslations } from "next-intl";
-import { Check, Languages } from "lucide-react";
+import { Check, Globe } from "lucide-react";
 
 import { usePathname, useRouter } from "@/i18n/navigation";
 import { routing, type Locale } from "@/i18n/routing";
@@ -43,7 +43,11 @@ export function LocaleSwitcher() {
           className="gap-1.5 px-2.5"
           aria-label={t("language")}
         >
-          <Languages className="size-4" />
+          {/* Globe chứ không Languages: icon Languages của lucide vẽ chữ 文
+              ghép với A, và trên một site chỉ có tiếng Việt với tiếng Anh thì
+              một ký tự Hán ở nút đổi ngôn ngữ khiến người dùng tưởng site có
+              thêm ngôn ngữ khác. */}
+          <Globe className="size-4" />
           <span className="text-xs font-semibold">{SHORT[locale]}</span>
         </Button>
       </DropdownMenuTrigger>

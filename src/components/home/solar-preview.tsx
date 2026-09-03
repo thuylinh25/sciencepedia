@@ -8,9 +8,23 @@ import { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
 import { useLocale } from "next-intl";
 
-/** Tốc độ quỹ đạo khi người dùng xin giảm chuyển động. Đặt 0 để dừng hẳn. */
-const GENTLE_SPEED = 0.35;
-const NORMAL_SPEED = 1;
+/**
+ * Một tốc độ duy nhất, không phân biệt `prefers-reduced-motion`.
+ *
+ * Con số 2 chứ không phải 1: `orbitSpeed` trong `solar-data` tỉ lệ với chu kỳ
+ * THẬT, nên dải tốc độ giữa các hành tinh là 1.607 (Thuỷ) xuống 0.006 (Hải
+ * Vương) — chênh nhau 270 lần. Ở tốc độ 1 thì Trái Đất mất một phút mỗi vòng
+ * còn Hải Vương mất ba giờ, tức phần ngoài của mô hình đứng yên với mắt người.
+ *
+ * Ở 2: Trái Đất ~11 giây một vòng, Sao Mộc ~3 phút, Sao Thổ ~8 phút. Phần
+ * trong sống động, phần ngoài nhúc nhích thấy được.
+ *
+ * KHÔNG nâng cao hơn nữa, và KHÔNG nén dải tốc độ cho các hành tinh ngoài
+ * quay nhanh bằng hành tinh trong: đây là bách khoa toàn thư khoa học, và
+ * việc Hải Vương chậm hơn Thuỷ Tinh hàng trăm lần là một sự thật của mô hình
+ * chứ không phải lỗi cần chữa.
+ */
+const NORMAL_SPEED = 2;
 
 /**
  * Mô hình Hệ Mặt Trời trong khối giới thiệu ở giữa trang chủ.
@@ -62,24 +76,15 @@ const CSS_ORBITS = [
 export function SolarPreview() {
   const locale = useLocale();
   const [showScene, setShowScene] = useState(false);
-  const [gentle, setGentle] = useState(false);
 
   useEffect(() => {
     const wide = window.matchMedia("(min-width: 1024px)");
-    const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
-    const decide = () => {
-      setShowScene(wide.matches);
-      setGentle(motion.matches);
-    };
+    const decide = () => setShowScene(wide.matches);
 
     decide();
-    motion.addEventListener("change", decide);
     wide.addEventListener("change", decide);
-    return () => {
-      motion.removeEventListener("change", decide);
-      wide.removeEventListener("change", decide);
-    };
+    return () => wide.removeEventListener("change", decide);
   }, []);
 
   return (
@@ -161,7 +166,7 @@ export function SolarPreview() {
           <SolarScene
             settings={{
               playing: true,
-              speed: gentle ? GENTLE_SPEED : NORMAL_SPEED,
+              speed: NORMAL_SPEED,
               showOrbits: true,
               // Nhãn là chuyện của trang /solar-system. Ở khung này chúng thành
               // chữ li ti không đọc nổi, và mỗi nhãn là một phần tử HTML chồng

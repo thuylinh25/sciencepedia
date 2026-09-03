@@ -7,8 +7,17 @@
 import { useEffect, useRef, useState } from "react";
 import dynamic from "next/dynamic";
 
-/** Tốc độ quay khi người dùng xin giảm chuyển động. Đặt 0 để dừng hẳn. */
-const GENTLE_SPEED = 0.5;
+/**
+ * Một tốc độ duy nhất, không phân biệt `prefers-reduced-motion`.
+ *
+ * Bản trước để nhánh chậm 0.5 = 1 độ/giây, tức một vòng mất 6 phút — trên máy
+ * bật giảm chuyển động thì mắt đọc ra là "đứng yên", và khối lại bị báo hỏng
+ * lần nữa. Nửa vời ở đây tệ hơn cả hai đầu: không đủ chậm để gọi là tôn trọng
+ * thiết lập, không đủ nhanh để thấy.
+ *
+ * Đây là chỗ duy nhất cần sửa nếu muốn khôi phục chế độ dịu: đặt
+ * `GENTLE_SPEED` thấp hơn và nối lại vào `gentle`.
+ */
 const NORMAL_SPEED = 1.6;
 
 /**
@@ -159,7 +168,7 @@ export function HeroGalaxy({ locale }: { locale: string }) {
               // khoảng hai phút: thấy rõ là đang sống, vẫn đủ chậm để không
               // kéo mắt khỏi ô tìm kiếm ngay bên cạnh. Từng đặt 0.3 và một
               // vòng mất mười phút — mắt không nhận ra, khối trông như ảnh dán.
-              speed: gentle ? GENTLE_SPEED : NORMAL_SPEED,
+              speed: NORMAL_SPEED,
               // Nhãn và các thiên thể là chuyện của trang /milky-way. Ở hero
               // chúng chỉ thành chữ nhỏ li ti không đọc nổi, và mỗi nhãn là
               // một phần tử HTML chồng lên canvas.
