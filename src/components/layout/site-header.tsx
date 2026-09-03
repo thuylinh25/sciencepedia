@@ -86,10 +86,34 @@ const NAV = [
  */
 const DARK_HERO_ROUTES = ["/"];
 
+/**
+ * Nhãn phím tắt theo hệ điều hành.
+ *
+ * "⌘K" là ký hiệu phím Command, chỉ có trên bàn phím Mac. Người dùng Windows
+ * và Linux nhìn vào đó không hiểu là phím gì — nó đã bị hỏi thẳng "đây là cái
+ * gì?".
+ *
+ * Mặc định trả "Ctrl" chứ không "⌘": HTML dựng sẵn ở máy chủ không biết hệ
+ * điều hành của người xem, và Windows chiếm phần lớn. Mac đổi lại sau khi
+ * hydrate — một lần đổi nhãn rất ngắn, đổi lại là không ai thấy ký hiệu sai
+ * cho hệ máy của mình.
+ */
+function useShortcutKey(): string {
+  const [key, setKey] = useState("Ctrl");
+
+  useEffect(() => {
+    const ua = navigator.userAgent;
+    if (/Mac|iPhone|iPad|iPod/.test(ua)) setKey("⌘");
+  }, []);
+
+  return key;
+}
+
 export function SiteHeader({ categories }: { categories: NavCategory[] }) {
   const t = useTranslations("nav");
   const locale = useLocale() as Locale;
   const pathname = usePathname();
+  const shortcutKey = useShortcutKey();
 
   const [scrolled, setScrolled] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
@@ -259,7 +283,7 @@ export function SiteHeader({ categories }: { categories: NavCategory[] }) {
           >
             {/* Chống trùng ô tìm kiếm: ẩn hai nút này đúng lúc ô tìm kiếm trên
                 hero còn nằm trong khung nhìn. Cuộn xuống là chúng hiện ra cùng
-                lớp glass. Phím tắt ⌘K vẫn bắt vô điều kiện — người dùng bàn
+                lớp glass. Phím tắt Ctrl/Cmd + K vẫn bắt vô điều kiện — người dùng bàn
                 phím không mất gì. */}
             {!onDark && (
               <>
@@ -272,7 +296,7 @@ export function SiteHeader({ categories }: { categories: NavCategory[] }) {
                   <Search className="size-4" />
                   <span>{t("search")}</span>
                   <kbd className="ms-1 hidden rounded border bg-muted px-1.5 py-0.5 font-mono text-[10px] md:inline">
-                    ⌘K
+                    {shortcutKey}K
                   </kbd>
                 </Button>
                 <Button
