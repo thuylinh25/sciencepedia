@@ -251,6 +251,7 @@ export function SolarScene({
   longitudes,
   interactive = true,
   transparent = false,
+  cameraDistance,
 }: {
   settings: SceneSettings;
   selectedId: string | null;
@@ -269,6 +270,15 @@ export function SolarScene({
    * hình chữ nhật đen đè lên sẽ lộ mép.
    */
   transparent?: boolean;
+  /**
+   * Đẩy camera ra xa để cả đĩa lọt khung. Mặc định (không truyền) giữ nguyên
+   * góc máy của trang /solar-system.
+   *
+   * Cần cho khối xem trước ở trang chủ: khung ở đó hẹp hơn nhiều, và ở khoảng
+   * cách mặc định thì quỹ đạo ngoài chạy ra khỏi mép canvas — hành tinh đi qua
+   * đó bị **cắt cụt theo một đường thẳng đứng**, trông như lỗi render.
+   */
+  cameraDistance?: number;
   /** Kinh độ hoàng đạo thật theo id hành tinh, nếu lấy được từ JPL Horizons */
   longitudes?: Record<string, number>;
 }) {
@@ -286,7 +296,14 @@ export function SolarScene({
        * đọc kích thước bố cục thật, không bị transform làm sai.
        */
       resize={{ offsetSize: true }}
-      camera={{ position: [0, 26, 52], fov: 45, near: 0.1, far: 2000 }}
+      camera={{
+        position: cameraDistance
+          ? [0, cameraDistance * 0.5, cameraDistance]
+          : [0, 26, 52],
+        fov: 45,
+        near: 0.1,
+        far: 2000,
+      }}
       dpr={[1, 2]}
       gl={{ antialias: true, powerPreference: "high-performance", alpha: transparent }}
       onPointerMissed={() => onSelect(null)}

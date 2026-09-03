@@ -83,14 +83,28 @@ export function SolarPreview() {
   }, []);
 
   return (
-    <div aria-hidden className="relative mx-auto aspect-square w-full max-w-md">
+    /* Khung rộng hơn cao, KHÔNG vuông.
+
+       Đĩa Hệ Mặt Trời nhìn nghiêng là một hình elip rộng gấp rưỡi chiều cao.
+       Nhét nó vào khung vuông thì hai bên bị cắt — hành tinh đi qua mép canvas
+       bị chặt theo một đường thẳng đứng, trông như lỗi render. Đó là lỗi thật
+       đã thấy trong ảnh chụp màn hình, và mặt nạ toả tròn chỉ làm mờ nó đi chứ
+       không chữa được gốc.
+
+       max-w-xl thay max-w-md: to hơn khoảng 25%, đủ để mô hình cân với tiêu đề
+       thay vì thành hình phụ bên cạnh. */
+    <div aria-hidden className="relative mx-auto aspect-[7/5] w-full max-w-xl">
       {/* Chỗ đứng: minh hoạ quỹ đạo bằng CSS, có mặt trong HTML đầu tiên.
 
           PHẢI ẩn đi khi cảnh 3D lên. Canvas bật `alpha` nên nếu để lại, các
           vòng tròn và chấm trắng của minh hoạ hiện xuyên qua và chồng lên quỹ
           đạo thật thành hình đôi — trông như cảnh bị lỗi. Quầng sáng mềm thì
           chồng được, còn đường kẻ cứng thì không. */}
-      <div className={showScene ? "hidden" : "absolute inset-0"}>
+      <div
+        className={
+          showScene ? "hidden" : "absolute inset-0 grid place-items-center"
+        }
+      >
         <div className="absolute inset-0 grid place-items-center">
           {/* Mặt Trời phải ấm. Vàng thương hiệu nằm ở --primary; để nguyên
               bg-accent thì minh hoạ có một mặt trời xanh. */}
@@ -134,9 +148,9 @@ export function SolarPreview() {
           className="absolute inset-0"
           style={{
             maskImage:
-              "radial-gradient(circle at 50% 50%, #000 45%, transparent 85%)",
+              "radial-gradient(ellipse 78% 82% at 50% 50%, #000 55%, transparent 100%)",
             WebkitMaskImage:
-              "radial-gradient(circle at 50% 50%, #000 45%, transparent 85%)",
+              "radial-gradient(ellipse 78% 82% at 50% 50%, #000 55%, transparent 100%)",
           }}
         >
           <SolarScene
@@ -157,6 +171,9 @@ export function SolarPreview() {
             // Bật lên thì OrbitControls nuốt sự kiện wheel và người đọc đưa
             // chuột qua khối này rồi cuộn sẽ thấy trang đứng im. Muốn nghịch
             // thật thì bấm nút ngay bên cạnh để sang /solar-system.
+            // 66 thay vì 52 mặc định: đủ lùi để quỹ đạo ngoài cùng nằm trọn
+            // trong khung, tức không hành tinh nào bị mép canvas chặt ngang.
+            cameraDistance={66}
             interactive={false}
             transparent
           />
