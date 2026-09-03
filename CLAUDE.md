@@ -86,6 +86,7 @@ Gate accuracy **không có ngoại lệ**.
 | `docs/architecture.md` | Quyết định kiến trúc — rendering, truy cập dữ liệu, đếm lượt đọc, knowledge graph, triển khai |
 | `docs/design-system.md` | Token, quy tắc component, a11y, các đánh đổi đã chốt |
 | `docs/content-rules.md` | Phán quyết biên tập — số liệu, trích dẫn, nhãn, provenance |
+| `docs/process/diagnosis.md` | Quy tắc chẩn đoán — rút từ những lần sửa nhầm chỗ |
 | `docs/process/` | agent-index · collaboration-workflow (có pipeline) · development-lifecycle · agent-dependency-graph |
 
 Ba file đầu giữ **lý do**, không giữ mô tả code. Cấu trúc code thì đọc code; tài liệu chỉ ghi những gì đọc code không suy ra được.

@@ -97,10 +97,10 @@ dùng bàn phím không xem được phần ngoài khung (WCAG 2.1.1).
 
 ## Chưa làm — cần quyết
 
-**`prefers-reduced-motion` cho ba cảnh WebGL.** `galaxy-scene`, `universe-scene`,
-`solar/scene`, `globe-scene` chạy `useFrame` tự xoay và không đọc thiết lập này.
-Quy tắc CSS toàn cục chỉ tắt animation CSS, **không** chạm được vòng lặp rAF của
-WebGL. Cần luồn `useReducedMotion()` vào từng `useFrame`.
+**`prefers-reduced-motion` cho các cảnh WebGL ở trang trong.** Hai khối ở trang
+chủ (`hero-galaxy`, `solar-preview`) đã xử lý — xem mục riêng bên dưới. Nhưng
+`universe-scene` và `globe-scene` ở các trang `/universe`, `/zoom`,
+`/solar-system` vẫn chạy `useFrame` mà không đọc thiết lập này.
 
 **Bố cục hero trang bài viết.** `-mt-40` kéo khối tiêu đề đè lên ảnh bìa `52vh`.
 Gradient che được phần dưới, nhưng contrast ở phần trên vùng chồng không bảo đảm
@@ -112,3 +112,109 @@ trần. Đây là lỗ hổng mô hình dữ liệu, không sửa được bằn
 **Ảnh trong Markdown vẫn dùng `<img>`** thay `next/image` vì không biết trước kích
 thước (có `eslint-disable` giải thích). Muốn theo đúng chuẩn thì phải lưu
 width/height khi nhập ảnh.
+
+---
+
+## Trạng thái dự phòng không được trông giống trạng thái hỏng
+
+Quy tắc rút từ một lỗi đã tốn ba vòng qua lại: khối 3D ở hero có ảnh chờ là một
+quả cầu vẽ bằng gradient CSS. Khi điều kiện mount không thoả, người xem thấy quả
+cầu phẳng lì đó — **y hệt một cảnh WebGL bị lỗi**. Không ai, kể cả người viết
+code, phân biệt được "chưa dựng" với "dựng hỏng".
+
+Hệ quả: mỗi khi thêm một fallback, hỏi *nếu thứ thật hỏng thì màn hình trông thế
+nào?* Nếu câu trả lời trùng với fallback thì fallback đó sai. Cho nó một dấu hiệu
+riêng, hoặc bỏ hẳn điều kiện chặn.
+
+Trường hợp khối Hệ Mặt Trời còn thêm một biến thể: ảnh chờ CSS **không được tắt**
+khi cảnh 3D lên, và vì canvas bật `alpha` nên các vòng tròn cùng chấm trắng của
+nó hiện xuyên qua, chồng lên quỹ đạo thật thành hình đôi. **Quầng sáng mềm thì
+chồng lên nhau được, đường kẻ cứng thì không.**
+
+---
+
+## Chuyển động: đo bằng độ trên giây, đừng cảm nhận
+
+`galaxy-scene` quay ở `delta * 0.035 * settings.speed` rad/s. Đặt `speed: 0.3`
+nghe như "chậm nhẹ"; thực tế là **0,6 độ/giây — một vòng mười phút**, tức mắt
+người đọc ra là đứng yên.
+
+Trước khi chốt một tốc độ, quy nó ra độ/giây và ra thời gian một vòng. Con số đó
+mới là thứ người xem cảm nhận.
+
+Cùng bài học ở `solar/scene`: `orbitSpeed` tỉ lệ với chu kỳ THẬT, dải từ 1.607
+(Thuỷ) xuống 0.006 (Hải Vương) — chênh 270 lần. Một `speed` chung không thể vừa
+cho Thuỷ Tinh chậm dễ nhìn vừa cho Hải Vương nhúc nhích. **Không nén dải đó lại:**
+đây là bách khoa toàn thư khoa học, và việc hành tinh ngoài chậm hơn hàng trăm
+lần là một sự thật của mô hình chứ không phải lỗi cần chữa.
+
+---
+
+## Khung phải theo hình dạng của thứ đang vẽ
+
+Đĩa Hệ Mặt Trời nhìn nghiêng ~27° trải theo chiều ngang gấp đôi chiều dọc. Đặt nó
+trong khung vuông thì hai bên tràn ra ngoài canvas và hành tinh ngoài bị **chặt
+theo một đường thẳng đứng**.
+
+Khoảng cách camera thì **tính từ dữ liệu, đừng đoán rồi thử**. Với camera ở
+`[0, d/2, d]` nhìn về gốc và fov 45°, nửa bề ngang nhìn thấy ở mặt phẳng gốc xấp
+xỉ `0,46 · d · (tỉ lệ khung)`. Quỹ đạo xa nhất là Sao Hải Vương ở 43 đơn vị, cộng
+bán kính hành tinh và vành đai Sao Thổ thì cần chừng 47. Khung 16/9 với `d = 72`
+cho ~59 — dư khoảng 25%.
+
+---
+
+## Ba cái bẫy CSS đã cắn thật
+
+**1. Phần tử có `position` vẽ trên phần tử tĩnh, bất kể thứ tự DOM.**
+Thanh thống kê thụt lên 40px để chờm vào đáy hero. Hero là `relative`, thanh số
+tĩnh — nên dải gradient ở đáy hero phủ lên và **cắt cụt phần đầu các icon**. Triệu
+chứng trông y như lỗi căn giữa, và đã bị chữa nhầm hai lần (`justify-center`, rồi
+`leading-none` → `leading-tight`) trước khi tìm ra. Bất kỳ khối nào dùng margin âm
+để chồng lên khối khác đều phải có `relative z-*`.
+
+**2. Selector kiểu `[&_[data-slot=button]]` thắng utility class thường.**
+`site-header` vá màu chữ cho mọi nút khi nằm trên nền tối. Nút "Đăng nhập" nền
+vàng bị ép chữ trắng — khoảng 1,6:1. Một quy tắc quét `*` hay quét theo thuộc tính
+sẽ trúng cả những thứ không định trúng; khi thêm loại nút mới, kiểm lại các quy
+tắc quét đang có.
+
+**3. `visible={false}` làm raycaster bỏ qua vật thể.**
+Muốn một vùng chạm vô hình trong cảnh 3D thì dùng `opacity={0}` với
+`depthWrite={false}`, không dùng `visible={false}` — ẩn đi là mất luôn vùng chạm.
+
+Đi kèm: sprite cỡ 0,5 đơn vị cảnh chỉ là vài pixel trên màn hình, nên đặt sự kiện
+lên chính sprite thì tia bấm gần như không trúng. Vật thể nhỏ trong cảnh 3D cần
+hình bắt sự kiện lớn hơn phần nhìn thấy.
+
+---
+
+## `prefers-reduced-motion` và WebGL
+
+Quy tắc CSS toàn cục **không chạm được** vòng lặp `useFrame`. Nó chỉ đặt
+`animation-duration` cho animation CSS. Chuyển động trong cảnh 3D buộc phải điều
+khiển bằng JS.
+
+Và một bài học về mức độ: **nửa vời tệ hơn cả hai đầu.** Cho thiên hà quay
+1 độ/giây khi người dùng xin giảm chuyển động thì không đủ chậm để gọi là tôn
+trọng thiết lập, cũng không đủ nhanh để thấy — kết quả là khối bị báo hỏng thêm
+một lần nữa. Hoặc dừng hẳn, hoặc chạy thật.
+
+Trạng thái hiện tại: chủ sản phẩm chọn **chạy thật cho mọi người**. Hằng số
+`NORMAL_SPEED` trong `hero-galaxy.tsx` và `solar-preview.tsx` là chỗ duy nhất cần
+sửa nếu muốn khôi phục chế độ dịu. Ngoại lệ cho hai animation nền
+(`.starfield::before`, `.animate-aurora`) nằm ngay dưới quy tắc chặn trong
+`globals.css`.
+
+---
+
+## Icon mang theo tuyên bố
+
+Chọn icon là một phát biểu, không phải trang trí:
+
+- 🔥 hay 📈 cho bảng xếp hạng ngụ ý **"đang tăng nhanh"** — một tuyên bố về xu
+  hướng. Dữ liệu chỉ là lượt đọc cộng dồn. Dùng số thứ hạng.
+- `Languages` của lucide vẽ chữ **文** ghép với A. Trên site chỉ có tiếng Việt và
+  tiếng Anh, nó khiến người dùng tưởng có ngôn ngữ khác. Dùng `Globe`.
+- `⌘` là phím Command, chỉ có trên Mac. Nhãn phím tắt phải theo hệ điều hành —
+  mặc định `Ctrl` ở HTML dựng sẵn, đổi sang `⌘` sau khi hydrate nếu là Mac.
