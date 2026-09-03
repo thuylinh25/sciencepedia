@@ -38,7 +38,14 @@ export async function StatsBand({
         {items.map(({ value, label, Icon }) => (
           <div
             key={label}
-            className="flex flex-col items-center gap-1 bg-card px-4 py-6 sm:py-8"
+            /* `justify-center` là bắt buộc, không phải trang trí.
+
+               Các ô trong lưới bị kéo cao bằng ô cao nhất, mà nhãn dài nhất
+               ("Bài viết đã xuất bản") xuống hai dòng ở một số bề rộng. Không
+               có `justify-center` thì `flex-col` dồn nội dung lên đầu ô, và cả
+               dải trông như bị lệch lên — thấy rõ trong ảnh chụp màn hình:
+               khoảng trống dưới gấp rưỡi khoảng trống trên. */
+            className="flex flex-col items-center justify-center gap-1 bg-card px-4 py-6 sm:py-8"
           >
             <Icon
               aria-hidden
