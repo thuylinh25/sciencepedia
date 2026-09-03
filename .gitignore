@@ -1,3 +1,6 @@
 
 # Ghi đè cá nhân, không chia sẻ
 .claude/settings.local.json
+
+# Bản lưu .git của repo ứng dụng trước khi gộp — đường lùi, xoá khi đã chắc
+sciencepedia/.git.bak/
