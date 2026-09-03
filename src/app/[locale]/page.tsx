@@ -18,6 +18,7 @@ import {
 
 import { Hero } from "@/components/home/hero";
 import { StatsBand } from "@/components/home/stats-band";
+import { HeroFields } from "@/components/home/hero-fields";
 import { DiscoverToday } from "@/components/home/discover-today";
 import { SearchHeroForm } from "@/components/search/search-hero-form";
 import { SectionHeading } from "@/components/section-heading";
@@ -89,7 +90,12 @@ export default async function HomePage({
 
   return (
     <>
-      <Hero search={<SearchHeroForm locale={locale as Locale} />} />
+      <Hero
+        search={<SearchHeroForm locale={locale as Locale} />}
+        fields={
+          <HeroFields fields={categories} locale={locale as Locale} />
+        }
+      />
 
       <StatsBand stats={stats} />
 

@@ -81,7 +81,9 @@
     "aiTitle": "Ask anything about science",
     "aiSubtitle": "An AI assistant that answers from Sciencepedia's own library and always cites its sources.",
     "aiCta": "Start chatting",
-    "aiPlaceholder": "Why is the sky blue?"
+    "aiPlaceholder": "Why is the sky blue?",
+    "heroSearchCta": "Explore",
+    "heroCategoriesLabel": "Start with a field"
   },
   "article": {
     "readingTime": "{minutes} min read",

@@ -58,16 +58,27 @@ export async function SearchHeroForm({ locale }: { locale: Locale }) {
         autoComplete="off"
         enterKeyHint="search"
         placeholder={t("heroSearchPlaceholder")}
-        className="h-14 w-full rounded-full border border-transparent bg-star ps-13 pe-16 text-base text-space-900 shadow-[0_10px_34px_-8px_rgb(0_0_0/0.5)] outline-none placeholder:text-space-700/70 focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 sm:h-16 sm:ps-14 sm:pe-32 sm:text-lg"
+        className="h-14 w-full rounded-full border border-transparent bg-star ps-13 pe-16 text-base text-space-900 shadow-[0_10px_34px_-8px_rgb(0_0_0/0.5)] outline-none placeholder:text-space-700/70 focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 sm:h-16 sm:ps-14 sm:pe-44 sm:text-lg"
       />
+      {/* Nút chính, không phải phần phụ gắn thêm vào ô.
+          Dùng `primary` (vàng) chứ không `accent` (xanh): nền hero tối ở cả hai
+          theme, và xanh accent chìm vào đó — vàng là màu duy nhất trong hệ
+          token bật hẳn lên khỏi nền vũ trụ. Chữ tối là bắt buộc chứ không phải
+          lựa chọn: `--primary` sáng L≈0.86, đặt chữ trắng lên chỉ đạt ~1.6:1.
+          `--primary-foreground` đã là màu tối nên biến thể mặc định của Button
+          xử lý đúng — đừng ghi đè màu chữ ở đây.
+
+          Chữ riêng "Khám phá" chứ không mượn `search.submit` ("Tìm"): nút này
+          mở đầu một hành trình đọc, không phải thao tác lọc lại danh sách như
+          nút cùng tên trên trang /search. */}
       <Button
         type="submit"
-        variant="accent"
-        aria-label={ts("submit")}
-        className="absolute end-2 top-1/2 size-11 -translate-y-1/2 rounded-full p-0 sm:h-12 sm:w-auto sm:px-6"
+        size="lg"
+        aria-label={t("heroSearchCta")}
+        className="absolute end-2 top-1/2 size-11 -translate-y-1/2 gap-2 rounded-full p-0 text-base font-semibold sm:h-12 sm:w-auto sm:px-6"
       >
-        <Search className="size-5 sm:hidden" aria-hidden />
-        <span className="hidden sm:inline">{ts("submit")}</span>
+        <Search className="size-5" aria-hidden />
+        <span className="hidden sm:inline">{t("heroSearchCta")}</span>
       </Button>
     </form>
   );

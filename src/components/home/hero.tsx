@@ -14,7 +14,13 @@ import { Button } from "@/components/ui/button";
  * Component không import được vào client, nên trang chủ render nó rồi truyền
  * xuống đây qua prop.
  */
-export function Hero({ search }: { search?: ReactNode }) {
+export function Hero({
+  search,
+  fields,
+}: {
+  search?: ReactNode;
+  fields?: ReactNode;
+}) {
   const t = useTranslations("home");
   const reduced = useReducedMotion();
 
@@ -80,6 +86,12 @@ export function Hero({ search }: { search?: ReactNode }) {
         {search && (
           <motion.div {...rise(0.2)} className="mt-6">
             {search}
+          </motion.div>
+        )}
+
+        {fields && (
+          <motion.div {...rise(0.26)} className="mt-5">
+            {fields}
           </motion.div>
         )}
 

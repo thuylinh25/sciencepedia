@@ -11,6 +11,7 @@ import {
   Scaling,
   Search,
   Sparkles,
+  Newspaper,
 } from "lucide-react";
 
 import { Link, usePathname } from "@/i18n/navigation";
@@ -59,7 +60,21 @@ const MODELS = [
   { href: "/zoom", key: "zoom" as const, icon: Scaling },
 ];
 
-const NAV = [{ href: "/assistant", key: "assistant" as const, icon: Sparkles }];
+/**
+ * Mục phẳng, đứng sau hai menu xổ.
+ *
+ * "Bài viết" là lỗ hổng điều hướng có thật chứ không phải thêm cho đầy thanh:
+ * `/articles` là danh sách bài chính của cả site, mà trước đây chỉ tới được
+ * qua link "xem tất cả" ở trang chủ. Ai vào thẳng một bài rồi muốn xem còn gì
+ * nữa thì không có đường.
+ *
+ * Không đặt nó trong menu "Khám phá": menu đó liệt kê các lĩnh vực, còn đây là
+ * toàn bộ kho không phân loại — gộp vào sẽ khiến nó trông như một lĩnh vực nữa.
+ */
+const NAV = [
+  { href: "/articles", key: "articles" as const, icon: Newspaper },
+  { href: "/assistant", key: "assistant" as const, icon: Sparkles },
+];
 
 /**
  * Route có hero nền tối tràn xuống dưới header. Thêm route mới vào đây khi

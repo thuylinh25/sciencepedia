@@ -81,7 +81,9 @@
     "aiTitle": "Hỏi bất cứ điều gì về khoa học",
     "aiSubtitle": "Trợ lý AI trả lời dựa trên chính kho bài viết của Sciencepedia và luôn dẫn nguồn.",
     "aiCta": "Trò chuyện ngay",
-    "aiPlaceholder": "Vì sao bầu trời có màu xanh?"
+    "aiPlaceholder": "Vì sao bầu trời có màu xanh?",
+    "heroSearchCta": "Khám phá",
+    "heroCategoriesLabel": "Bắt đầu từ một lĩnh vực"
   },
   "article": {
     "readingTime": "{minutes} phút đọc",
