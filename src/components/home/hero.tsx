@@ -64,7 +64,7 @@ export function Hero({
           giãn thì ở 1024px thiên hà chiếm gần nửa bề ngang và bóp cột chữ xuống
           mức tiêu đề phải xuống bốn dòng. 28rem là mức cân được với cột chữ đã
           thu hẹp còn max-w-3xl. */}
-      <div className="container-page relative z-10 grid min-h-[min(70svh,36rem)] items-center gap-10 pt-14 pb-20 text-star lg:grid-cols-[minmax(0,1fr)_28rem] lg:gap-14 lg:pt-20 lg:pb-24">
+      <div className="container-page relative z-10 grid min-h-[min(64svh,34rem)] items-center gap-10 pt-12 pb-14 text-star lg:grid-cols-[minmax(0,1fr)_28rem] lg:gap-14 lg:pt-16 lg:pb-16">
         <div className="flex flex-col justify-center">
           <motion.p
             {...rise(0)}

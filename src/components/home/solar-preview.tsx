@@ -73,8 +73,13 @@ export function SolarPreview() {
 
   return (
     <div aria-hidden className="relative mx-auto aspect-square w-full max-w-md">
-      {/* Chỗ đứng: minh hoạ quỹ đạo bằng CSS, luôn có mặt trong HTML đầu tiên */}
-      <div className="absolute inset-0">
+      {/* Chỗ đứng: minh hoạ quỹ đạo bằng CSS, có mặt trong HTML đầu tiên.
+
+          PHẢI ẩn đi khi cảnh 3D lên. Canvas bật `alpha` nên nếu để lại, các
+          vòng tròn và chấm trắng của minh hoạ hiện xuyên qua và chồng lên quỹ
+          đạo thật thành hình đôi — trông như cảnh bị lỗi. Quầng sáng mềm thì
+          chồng được, còn đường kẻ cứng thì không. */}
+      <div className={showScene ? "hidden" : "absolute inset-0"}>
         <div className="absolute inset-0 grid place-items-center">
           {/* Mặt Trời phải ấm. Vàng thương hiệu nằm ở --primary; để nguyên
               bg-accent thì minh hoạ có một mặt trời xanh. */}

@@ -137,18 +137,20 @@ export function HeroGalaxy({ locale }: { locale: string }) {
           className="absolute inset-0"
           style={{
             maskImage:
-              "radial-gradient(circle at 50% 50%, #000 52%, transparent 82%)",
+              "radial-gradient(circle at 50% 50%, #000 38%, transparent 72%)",
             WebkitMaskImage:
-              "radial-gradient(circle at 50% 50%, #000 52%, transparent 82%)",
+              "radial-gradient(circle at 50% 50%, #000 38%, transparent 72%)",
           }}
         >
           <GalaxyScene
             settings={{
               playing: spinning,
-              // Chậm hẳn so với trang /milky-way (speed 1). Ở đó người xem chủ
-              // động ngắm; ở đây thiên hà nằm cạnh ô tìm kiếm, xoay nhanh sẽ
-              // kéo mắt khỏi thứ người ta đang định làm.
-              speed: 0.3,
+              // Cảnh quay ở tốc độ `delta * 0.035 * speed` rad/s. Đặt 0.3 cho
+              // ra 0,6 độ/giây — một vòng mất mười phút, tức mắt người đọc
+              // không nhận ra là nó đang quay và khối này trông như ảnh dán.
+              // 1.6 cho một vòng khoảng hai phút: thấy rõ là đang sống, vẫn đủ
+              // chậm để không kéo mắt khỏi ô tìm kiếm ngay bên cạnh.
+              speed: 1.6,
               // Nhãn và các thiên thể là chuyện của trang /milky-way. Ở hero
               // chúng chỉ thành chữ nhỏ li ti không đọc nổi, và mỗi nhãn là
               // một phần tử HTML chồng lên canvas.
