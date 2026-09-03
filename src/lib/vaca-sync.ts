@@ -65,14 +65,33 @@ export type SyncResult = {
   errors: string[];
 };
 
+/**
+ * Giải mã thực thể HTML, lặp cho tới khi chuỗi không đổi nữa.
+ *
+ * Vì sao phải lặp: sitemap của VACA escape ampersand **hai lần** —
+ * `&amp;amp;view=article`. Một lượt thay chỉ đưa về `&amp;`, và khi đó
+ * `vacaArticleId` (khớp `[?&]id=`) trượt vì ký tự ngay trước `id=` là dấu
+ * chấm phẩy. Toàn bộ 1493 URL trong sitemap bị loại, hàm liệt kê trả mảng
+ * rỗng, và đồng bộ VACA chết âm thầm — không lỗi, không log, chỉ là không
+ * có bài nào mới. Mất khá lâu mới lần ra.
+ *
+ * Chặn ở 5 vòng: chuỗi hợp lệ không bao giờ cần quá hai, và một chuỗi cố
+ * tình lồng nhiều lớp không được phép làm treo vòng lặp.
+ */
 function decode(html: string): string {
-  return html
-    .replace(/&nbsp;/g, " ")
-    .replace(/&amp;/g, "&")
-    .replace(/&quot;/g, '"')
-    .replace(/&#39;/g, "'")
-    .replace(/&lt;/g, "<")
-    .replace(/&gt;/g, ">");
+  let out = html;
+  for (let i = 0; i < 5; i++) {
+    const next = out
+      .replace(/&nbsp;/g, " ")
+      .replace(/&amp;/g, "&")
+      .replace(/&quot;/g, '"')
+      .replace(/&#39;/g, "'")
+      .replace(/&lt;/g, "<")
+      .replace(/&gt;/g, ">");
+    if (next === out) break;
+    out = next;
+  }
+  return out;
 }
 
 function stripTags(html: string): string {
