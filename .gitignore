@@ -20,3 +20,6 @@ tsconfig.tsbuildinfo
 .DS_Store
 /prisma/*.db
 /meili_data
+
+# Script dùng một lần khi khảo sát/nhập liệu — không thuộc về repo
+scripts/tmp-*

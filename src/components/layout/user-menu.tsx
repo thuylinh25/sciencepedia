@@ -38,7 +38,17 @@ export function UserMenu() {
 
   if (!session?.user) {
     return (
-      <Button asChild size="sm" className="ml-1 shrink-0">
+      /* `!` là bắt buộc chứ không phải cẩu thả: `site-header` vá màu chữ cho
+         mọi nút khi header nằm trên nền tối bằng
+         `[&_[data-slot=button]]:text-white/80`. Selector đó có độ ưu tiên cao
+         hơn một utility class thường, nên nút này — nền vàng `--primary` — bị
+         ép chữ trắng và tụt xuống ~1.6:1. Đây là nút hành động chính của
+         header, không được phép mờ. */
+      <Button
+        asChild
+        size="sm"
+        className="ml-1 shrink-0 text-primary-foreground!"
+      >
         <Link href="/login">{t("login")}</Link>
       </Button>
     );

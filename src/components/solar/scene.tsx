@@ -249,11 +249,26 @@ export function SolarScene({
   onSelect,
   locale,
   longitudes,
+  interactive = true,
+  transparent = false,
 }: {
   settings: SceneSettings;
   selectedId: string | null;
   onSelect: (id: string | null) => void;
   locale: string;
+  /**
+   * Cho phép xoay/thu phóng bằng chuột. Tắt ở những chỗ cảnh chỉ là hình minh
+   * hoạ — OrbitControls bắt sự kiện wheel trên canvas, nên để bật trong một
+   * khối trang trí giữa trang sẽ khiến người đọc đưa con trỏ qua đó rồi cuộn
+   * mà trang đứng im. Lỗi đó rất khó đoán ra nguyên nhân.
+   */
+  interactive?: boolean;
+  /**
+   * Bỏ nền đen của cảnh để canvas hoà vào nền phía sau. Trang Hệ Mặt Trời cần
+   * nền đen riêng; khối giới thiệu ở trang chủ đã có nền vũ trụ của nó và một
+   * hình chữ nhật đen đè lên sẽ lộ mép.
+   */
+  transparent?: boolean;
   /** Kinh độ hoàng đạo thật theo id hành tinh, nếu lấy được từ JPL Horizons */
   longitudes?: Record<string, number>;
 }) {
@@ -273,10 +288,10 @@ export function SolarScene({
       resize={{ offsetSize: true }}
       camera={{ position: [0, 26, 52], fov: 45, near: 0.1, far: 2000 }}
       dpr={[1, 2]}
-      gl={{ antialias: true, powerPreference: "high-performance" }}
+      gl={{ antialias: true, powerPreference: "high-performance", alpha: transparent }}
       onPointerMissed={() => onSelect(null)}
     >
-      <color attach="background" args={["#05070f"]} />
+      {!transparent && <color attach="background" args={["#05070f"]} />}
       <ambientLight intensity={0.28} />
 
       <Stars
@@ -311,15 +326,17 @@ export function SolarScene({
         </group>
       ))}
 
-      <OrbitControls
-        enablePan
-        enableDamping
-        dampingFactor={0.06}
-        minDistance={8}
-        maxDistance={220}
-        maxPolarAngle={Math.PI * 0.85}
-        touches={{ ONE: THREE.TOUCH.ROTATE, TWO: THREE.TOUCH.DOLLY_PAN }}
-      />
+      {interactive && (
+        <OrbitControls
+          enablePan
+          enableDamping
+          dampingFactor={0.06}
+          minDistance={8}
+          maxDistance={220}
+          maxPolarAngle={Math.PI * 0.85}
+          touches={{ ONE: THREE.TOUCH.ROTATE, TWO: THREE.TOUCH.DOLLY_PAN }}
+        />
+      )}
     </Canvas>
   );
 }

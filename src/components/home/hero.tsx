@@ -3,7 +3,7 @@
 import type { ReactNode } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import { useLocale, useTranslations } from "next-intl";
-import { Orbit } from "lucide-react";
+import { Rocket } from "lucide-react";
 
 import { Link } from "@/i18n/navigation";
 import { Button } from "@/components/ui/button";
@@ -62,8 +62,9 @@ export function Hero({
           `-mt-10`, nên khoảng trống dưới phải dư ra chừng đó. */}
       {/* Hai cột từ lg trở lên. Cột phải cố định 24rem thay vì `1fr`: để nó co
           giãn thì ở 1024px thiên hà chiếm gần nửa bề ngang và bóp cột chữ xuống
-          mức tiêu đề phải xuống bốn dòng. */}
-      <div className="container-page relative z-10 grid min-h-[min(70svh,36rem)] items-center gap-10 pt-14 pb-20 text-star lg:grid-cols-[minmax(0,1fr)_24rem] lg:gap-14 lg:pt-20 lg:pb-24">
+          mức tiêu đề phải xuống bốn dòng. 28rem là mức cân được với cột chữ đã
+          thu hẹp còn max-w-3xl. */}
+      <div className="container-page relative z-10 grid min-h-[min(70svh,36rem)] items-center gap-10 pt-14 pb-20 text-star lg:grid-cols-[minmax(0,1fr)_28rem] lg:gap-14 lg:pt-20 lg:pb-24">
         <div className="flex flex-col justify-center">
           <motion.p
             {...rise(0)}
@@ -77,7 +78,7 @@ export function Hero({
             dòng trên ở 1.05. */}
           <motion.h1
             {...rise(0.08)}
-            className="max-w-4xl font-display text-4xl leading-[1.08] font-bold tracking-tight text-balance text-white sm:text-5xl lg:text-6xl"
+            className="max-w-3xl font-display text-4xl leading-[1.08] font-bold tracking-tight text-balance text-white sm:text-5xl lg:text-6xl"
           >
             {t("heroTitle")}
           </motion.h1>
@@ -102,16 +103,25 @@ export function Hero({
           )}
 
           {/* Một nút, không hai. "Bắt đầu khám phá" trùng đúng mục "Khám phá" trên
-            navbar và cạnh tranh trực tiếp với ô tìm kiếm ngay phía trên. */}
+            navbar và cạnh tranh trực tiếp với ô tìm kiếm ngay phía trên.
+
+            Dùng `accent` (xanh) chứ KHÔNG dùng `primary` (vàng): vàng đã thuộc
+            về nút tìm kiếm ngay phía trên. Hai nút vàng cạnh nhau thì không
+            nút nào còn là nút chính, và mắt phải tự chọn — đúng thứ thứ bậc
+            thị giác sinh ra để tránh. Xanh accent tách bạch, đủ nổi trên nền
+            vũ trụ, và vẫn xếp sau vàng.
+
+            Quầng sáng dùng `--color-accent` chứ không phải một mã màu viết
+            cứng, để nó tự theo nếu bảng màu đổi lần nữa. */}
           <motion.div {...rise(0.32)} className="mt-6 flex flex-wrap gap-3">
             <Button
               asChild
-              size="lg"
-              variant="glass"
-              className="border-white/25 bg-white/10 text-white hover:bg-white/20"
+              size="xl"
+              variant="accent"
+              className="shadow-[0_0_36px_-6px_var(--color-accent)] transition-shadow hover:shadow-[0_0_52px_-4px_var(--color-accent)]"
             >
               <Link href="/solar-system">
-                <Orbit className="size-4" />
+                <Rocket className="size-4" />
                 {t("heroCtaSecondary")}
               </Link>
             </Button>

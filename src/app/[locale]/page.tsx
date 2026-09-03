@@ -19,6 +19,7 @@ import {
 import { Hero } from "@/components/home/hero";
 import { StatsBand } from "@/components/home/stats-band";
 import { HeroFields } from "@/components/home/hero-fields";
+import { SolarPreview } from "@/components/home/solar-preview";
 import { DiscoverToday } from "@/components/home/discover-today";
 import { SearchHeroForm } from "@/components/search/search-hero-form";
 import { SectionHeading } from "@/components/section-heading";
@@ -92,9 +93,7 @@ export default async function HomePage({
     <>
       <Hero
         search={<SearchHeroForm locale={locale as Locale} />}
-        fields={
-          <HeroFields fields={categories} locale={locale as Locale} />
-        }
+        fields={<HeroFields fields={categories} locale={locale as Locale} />}
       />
 
       <StatsBand stats={stats} />
@@ -186,39 +185,7 @@ export default async function HomePage({
                 </Button>
               </div>
 
-              {/* Minh hoạ quỹ đạo bằng CSS — nhẹ hơn nhiều so với nhúng canvas ở trang chủ */}
-              <div
-                aria-hidden
-                className="relative mx-auto aspect-square w-full max-w-md"
-              >
-                <div className="absolute inset-0 grid place-items-center">
-                  {/* Mặt Trời phải ấm. Vàng thương hiệu nay nằm ở --primary;
-                      để nguyên bg-accent thì minh hoạ có một mặt trời xanh. */}
-                  <div className="size-16 rounded-full bg-primary shadow-[0_0_80px_25px_var(--color-primary)]" />
-                </div>
-                {[
-                  { size: "45%", duration: "8s", dot: "0.5rem" },
-                  { size: "62%", duration: "13s", dot: "0.75rem" },
-                  { size: "80%", duration: "21s", dot: "0.6rem" },
-                  { size: "98%", duration: "34s", dot: "0.9rem" },
-                ].map((orbit) => (
-                  <div
-                    key={orbit.size}
-                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/15"
-                    style={{ width: orbit.size, height: orbit.size }}
-                  >
-                    <div
-                      className="absolute inset-0 motion-safe:animate-[spin_var(--d)_linear_infinite]"
-                      style={{ ["--d" as string]: orbit.duration }}
-                    >
-                      <span
-                        className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/90"
-                        style={{ width: orbit.dot, height: orbit.dot }}
-                      />
-                    </div>
-                  </div>
-                ))}
-              </div>
+              <SolarPreview />
             </div>
           </div>
         </Reveal>
@@ -268,7 +235,6 @@ export default async function HomePage({
           </div>
         </Reveal>
       </section>
-
     </>
   );
 }

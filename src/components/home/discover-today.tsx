@@ -113,7 +113,12 @@ export async function DiscoverToday({
             </aside>
           )}
 
-          <div className="lg:col-span-12">
+          {/* `gap-6` của lưới không đủ tách dải chip khỏi thẻ bài phía trên:
+              thẻ dùng `h-full` nên cao bằng cột bên cạnh, và nhãn "Lối rẽ
+              nhanh" nằm sát mép dưới của thẻ đến mức trông như đè lên. Thêm
+              đường kẻ và khoảng đệm riêng để đây thành một dải tách bạch chứ
+              không phải phần đuôi của khối trên. */}
+          <div className="mt-2 border-t pt-8 lg:col-span-12">
             <TopicChips
               tags={tags}
               categories={categories}

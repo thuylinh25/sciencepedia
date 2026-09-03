@@ -4,7 +4,7 @@
 // quyết định đó phụ thuộc bề rộng màn hình và thiết lập giảm chuyển động của
 // người dùng, hai thứ chỉ biết được ở trình duyệt.
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import dynamic from "next/dynamic";
 
 /**
@@ -50,6 +50,42 @@ const GalaxyScene = dynamic(
 export function HeroGalaxy({ locale }: { locale: string }) {
   const [showScene, setShowScene] = useState(false);
   const [spinning, setSpinning] = useState(true);
+  const wrap = useRef<HTMLDivElement>(null);
+
+  /**
+   * Parallax theo con trỏ.
+   *
+   * Làm bằng `transform` trên khung bọc chứ không đổi camera của cảnh. Ba lý
+   * do: không phải sửa `GalaxyScene` (đang dùng chung với trang /milky-way),
+   * transform chạy trên compositor nên không tốn một khung dựng WebGL nào, và
+   * `GalaxyScene` đã đặt `resize={{ offsetSize: true }}` nên transform không
+   * làm canvas đo sai kích thước.
+   *
+   * Biên độ 14px là cố ý nhỏ. Parallax mạnh trên một khối trang trí gây cảm
+   * giác giật khi người đọc chỉ đang đưa chuột qua để bấm ô tìm kiếm.
+   */
+  useEffect(() => {
+    if (!spinning) return; // giảm chuyển động thì không parallax
+    const el = wrap.current;
+    if (!el) return;
+
+    let frame = 0;
+    const onMove = (event: PointerEvent) => {
+      if (frame) return; // gộp về một lần mỗi khung hình
+      frame = requestAnimationFrame(() => {
+        frame = 0;
+        const x = event.clientX / window.innerWidth - 0.5;
+        const y = event.clientY / window.innerHeight - 0.5;
+        el.style.transform = `translate3d(${-x * 28}px, ${-y * 18}px, 0)`;
+      });
+    };
+
+    window.addEventListener("pointermove", onMove, { passive: true });
+    return () => {
+      window.removeEventListener("pointermove", onMove);
+      if (frame) cancelAnimationFrame(frame);
+    };
+  }, [spinning]);
 
   useEffect(() => {
     // `lg` của Tailwind. Dưới ngưỡng này hero xếp một cột, và một canvas WebGL
@@ -75,25 +111,44 @@ export function HeroGalaxy({ locale }: { locale: string }) {
   return (
     <div
       aria-hidden
-      className="relative isolate mx-auto aspect-square w-full max-w-[26rem]"
+      ref={wrap}
+      className="relative isolate mx-auto aspect-square w-full max-w-[30rem] transition-transform duration-300 ease-out will-change-transform"
     >
-      {/* Chỗ đứng: quầng sáng vẽ bằng gradient, không tải thêm byte nào. Nằm
-          dưới canvas trong suốt nên khi cảnh lên nó thành ánh nền của đĩa
-          thiên hà chứ không phải một lớp thừa phải gỡ đi. */}
+      {/* Quầng sáng nền. Nằm dưới canvas trong suốt nên khi cảnh lên nó thành
+          ánh nền của đĩa thiên hà chứ không phải một lớp thừa phải gỡ đi. */}
       <div
-        className="absolute inset-[6%] rounded-full blur-2xl"
+        className="absolute inset-[4%] rounded-full blur-3xl"
         style={{
           background:
-            "radial-gradient(circle at 50% 50%, rgb(255 224 173 / 0.45) 0%, rgb(127 168 255 / 0.28) 34%, transparent 68%)",
+            "radial-gradient(circle at 50% 50%, rgb(255 224 173 / 0.5) 0%, rgb(127 168 255 / 0.3) 34%, transparent 68%)",
         }}
       />
 
       {showScene && (
-        <div className="absolute inset-0">
+        /**
+         * Mặt nạ toả tròn để mép canvas biến mất.
+         *
+         * Canvas là hình vuông, và dù `alpha` đã bật thì lớp sao nền của cảnh
+         * vẫn phủ kín ô vuông đó — kết quả là một mảng sẫm có cạnh thẳng nổi rõ
+         * trên nền hero. Mặt nạ làm bốn cạnh mờ dần về trong suốt nên thiên hà
+         * trông như đang lơ lửng trong nền chứ không như một tấm ảnh dán lên.
+         */
+        <div
+          className="absolute inset-0"
+          style={{
+            maskImage:
+              "radial-gradient(circle at 50% 50%, #000 52%, transparent 82%)",
+            WebkitMaskImage:
+              "radial-gradient(circle at 50% 50%, #000 52%, transparent 82%)",
+          }}
+        >
           <GalaxyScene
             settings={{
               playing: spinning,
-              speed: 1,
+              // Chậm hẳn so với trang /milky-way (speed 1). Ở đó người xem chủ
+              // động ngắm; ở đây thiên hà nằm cạnh ô tìm kiếm, xoay nhanh sẽ
+              // kéo mắt khỏi thứ người ta đang định làm.
+              speed: 0.3,
               // Nhãn và các thiên thể là chuyện của trang /milky-way. Ở hero
               // chúng chỉ thành chữ nhỏ li ti không đọc nổi, và mỗi nhãn là
               // một phần tử HTML chồng lên canvas.
