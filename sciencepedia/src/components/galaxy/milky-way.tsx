@@ -1,5 +1,7 @@
 "use client";
 
+import { useReducedMotion } from "framer-motion";
+
 import { useEffect, useMemo, useState } from "react";
 import dynamic from "next/dynamic";
 import { useLocale, useTranslations } from "next-intl";
@@ -61,8 +63,22 @@ export function MilkyWay() {
 
   const [webgl, setWebgl] = useState<boolean | null>(null);
   const [selectedId, setSelectedId] = useState<string | null>(null);
+  /**
+   * Giảm chuyển động thì trang mở ra ở trạng thái ĐANG DỪNG, không phải tắt
+   * hẳn chuyển động.
+   *
+   * Khác với hai khối trang trí ở trang chủ: trang này có nút tạm dừng, và
+   * người xem chủ động vào đây để nhìn một mô hình động. Nên thiết lập hệ điều
+   * hành quyết định trạng thái BAN ĐẦU, còn quyền bật lại vẫn nằm ở người xem.
+   * Chặn vĩnh viễn sẽ lấy mất một tính năng mà họ cố ý tìm đến.
+   *
+   * Phải kiểm bằng JS: quy tắc CSS `prefers-reduced-motion` toàn cục không
+   * chạm được vòng lặp `useFrame` của WebGL.
+   */
+  const reducedMotion = useReducedMotion();
+
   const [settings, setSettings] = useState<GalaxySettings>({
-    playing: true,
+    playing: !reducedMotion,
     speed: 1,
     showLabels: true,
     showSun: true,
