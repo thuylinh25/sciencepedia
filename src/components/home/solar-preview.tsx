@@ -105,7 +105,29 @@ export function SolarPreview() {
       </div>
 
       {showScene && (
-        <div className="absolute inset-0">
+        /**
+         * Mặt nạ toả tròn — sửa hai lỗi cùng lúc, cả hai thấy được trong ảnh
+         * chụp màn hình:
+         *
+         * 1. Canvas là hình vuông và lớp sao nền của cảnh phủ kín ô vuông đó,
+         *    nên dù `alpha` đã bật vẫn có một mảng sáng khác nền, cạnh thẳng,
+         *    nổi rõ trên nền vũ trụ của khối.
+         * 2. Hành tinh ngoài đi qua rìa khung bị **cắt cụt** ngay tại mép
+         *    canvas — một nửa hành tinh biến mất theo đường thẳng đứng. Mặt nạ
+         *    làm nó mờ dần thay vì bị chặt.
+         *
+         * Dải mờ rộng hơn của thiên hà (45%→85% thay vì 38%→72%) vì quỹ đạo
+         * ngoài cùng nằm sát mép khung, cần chỗ để tan.
+         */
+        <div
+          className="absolute inset-0"
+          style={{
+            maskImage:
+              "radial-gradient(circle at 50% 50%, #000 45%, transparent 85%)",
+            WebkitMaskImage:
+              "radial-gradient(circle at 50% 50%, #000 45%, transparent 85%)",
+          }}
+        >
           <SolarScene
             settings={{
               playing,
