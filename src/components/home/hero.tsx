@@ -74,11 +74,20 @@ export function Hero({
             {t("heroEyebrow")}
           </motion.p>
 
-          {/* leading 1.08 chứ không 1.05: dấu thanh tiếng Việt (ẫ, ỗ, ằ) chạm
-            dòng trên ở 1.05. */}
+          {/* Bề ngang 44rem (704px) chứ không 48rem: ở 48rem tiêu đề chiếm gần
+            hết cột trái và đẩy mắt chạy ngang quá xa trước khi xuống dòng.
+
+            leading 1.08 chứ KHÔNG 1.05, dù 1.05 nhìn chặt hơn. Tiếng Việt xếp
+            hai tầng dấu — "ẫ", "ỗ", "ằ" có mũ chồng dấu thanh — nên phần nhô
+            lên cao hơn hẳn chữ Latin không dấu. Ở 1.05 với cỡ chữ 60px, dấu
+            của dòng dưới chạm chân dòng trên. Chính tiêu đề này ("Vũ trụ trong
+            tầm tay bạn") có ũ, ầ, ạ, và nay bề ngang hẹp lại nên nó xuống hai
+            dòng ở nhiều bề rộng màn hình — tức rủi ro đó chuyển từ lý thuyết
+            thành thường trực. Đây là chỗ chữ Latin cho phép chặt hơn chữ Việt,
+            và bản tiếng Việt là bản chính. */}
           <motion.h1
             {...rise(0.08)}
-            className="max-w-3xl font-display text-4xl leading-[1.08] font-bold tracking-tight text-balance text-white sm:text-5xl lg:text-6xl"
+            className="max-w-[44rem] font-display text-4xl leading-[1.08] font-bold tracking-tight text-balance text-white sm:text-5xl lg:text-6xl"
           >
             {t("heroTitle")}
           </motion.h1>
