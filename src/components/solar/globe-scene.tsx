@@ -78,9 +78,24 @@ export function GlobeScene({
   body,
   spinning,
   distance = 3.2,
+  interactive = true,
+  transparent = false,
 }: {
   body: GlobeBody;
   spinning: boolean;
+  /**
+   * Cho phép xoay/thu phóng bằng chuột. Tắt ở những chỗ quả cầu chỉ là hình
+   * minh hoạ — `OrbitControls` bắt sự kiện `wheel` trên canvas, nên để bật
+   * trong một khối trang trí giữa trang sẽ khiến người đọc đưa con trỏ qua đó
+   * rồi cuộn mà trang đứng im. Đó là lỗi rất khó đoán ra nguyên nhân.
+   */
+  interactive?: boolean;
+  /**
+   * Bỏ nền đen của cảnh để canvas hoà vào nền phía sau. Trang mô hình cần nền
+   * đen riêng; hero thì đã có nền vũ trụ của nó và một hình chữ nhật đen đè
+   * lên sẽ lộ mép.
+   */
+  transparent?: boolean;
   /**
    * Khoảng cách camera tới tâm quả cầu, đơn vị bán kính.
    *
@@ -104,8 +119,9 @@ export function GlobeScene({
        * đọc kích thước bố cục thật, không bị transform làm sai.
        */
       resize={{ offsetSize: true }}
+      gl={{ alpha: transparent }}
     >
-      <color attach="background" args={["#05070f"]} />
+      {!transparent && <color attach="background" args={["#05070f"]} />}
 
       {/* Mặt Trời tự sáng nên không cần đèn; các thiên thể khác lấy sáng từ
           một nguồn lệch bên để thấy được đường phân giới ngày–đêm. */}
@@ -118,14 +134,16 @@ export function GlobeScene({
 
       <Body body={body} spinning={spinning} />
 
-      <OrbitControls
-        enablePan
-        minDistance={Math.min(1.15, distance * 0.9)}
-        maxDistance={7}
-        zoomSpeed={0.6}
-        rotateSpeed={0.5}
-        touches={{ ONE: THREE.TOUCH.ROTATE, TWO: THREE.TOUCH.DOLLY_PAN }}
-      />
+      {interactive && (
+        <OrbitControls
+          enablePan
+          minDistance={Math.min(1.15, distance * 0.9)}
+          maxDistance={7}
+          zoomSpeed={0.6}
+          rotateSpeed={0.5}
+          touches={{ ONE: THREE.TOUCH.ROTATE, TWO: THREE.TOUCH.DOLLY_PAN }}
+        />
+      )}
     </Canvas>
   );
 }
