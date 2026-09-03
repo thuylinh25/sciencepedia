@@ -641,12 +641,27 @@ export function GalaxyScene({
   locale,
   onTourStep,
   onTourEnd,
+  interactive = true,
+  transparent = false,
 }: {
   settings: GalaxySettings;
   onSelect: (id: string | null) => void;
   locale: string;
   onTourStep: (index: number) => void;
   onTourEnd: () => void;
+  /**
+   * Cho phép xoay/thu phóng bằng chuột. Tắt ở những chỗ thiên hà chỉ là hình
+   * minh hoạ — `OrbitControls` bắt sự kiện `wheel` trên canvas, nên để bật
+   * trong một khối trang trí sẽ khiến người đọc đưa con trỏ qua đó rồi cuộn mà
+   * trang đứng im. Lỗi đó rất khó đoán ra nguyên nhân.
+   */
+  interactive?: boolean;
+  /**
+   * Bỏ nền đen của cảnh để canvas hoà vào nền phía sau. Trang Ngân Hà cần nền
+   * đen riêng; hero thì đã có nền vũ trụ của nó và một hình chữ nhật đen đè lên
+   * sẽ lộ mép.
+   */
+  transparent?: boolean;
 }) {
   const controls = useRef<OrbitControlsImpl>(null);
 
@@ -666,13 +681,13 @@ export function GalaxyScene({
       dpr={[1, 2]}
       gl={{
         antialias: true,
-        alpha: false,
+        alpha: transparent,
         powerPreference: "high-performance",
         toneMapping: THREE.ACESFilmicToneMapping,
       }}
       onPointerMissed={() => onSelect(null)}
     >
-      <color attach="background" args={["#03050c"]} />
+      {!transparent && <color attach="background" args={["#03050c"]} />}
 
       {/* Nền sao xa, cho cảm giác chiều sâu — giống trang Hệ Mặt Trời */}
       <Stars
@@ -701,19 +716,21 @@ export function GalaxyScene({
 
       {/* Rê được bằng chuột phải hoặc hai ngón: không có nó thì thiên hà luôn
           nằm giữa khung và người xem không bao giờ bay vào trong đĩa được. */}
-      <OrbitControls
-        ref={controls}
-        makeDefault
-        enablePan
-        enableDamping
-        dampingFactor={0.06}
-        minDistance={1.5}
-        maxDistance={60}
-        zoomSpeed={0.8}
-        rotateSpeed={0.55}
-        panSpeed={0.7}
-        touches={{ ONE: THREE.TOUCH.ROTATE, TWO: THREE.TOUCH.DOLLY_PAN }}
-      />
+      {interactive && (
+        <OrbitControls
+          ref={controls}
+          makeDefault
+          enablePan
+          enableDamping
+          dampingFactor={0.06}
+          minDistance={1.5}
+          maxDistance={60}
+          zoomSpeed={0.8}
+          rotateSpeed={0.55}
+          panSpeed={0.7}
+          touches={{ ONE: THREE.TOUCH.ROTATE, TWO: THREE.TOUCH.DOLLY_PAN }}
+        />
+      )}
     </Canvas>
   );
 }

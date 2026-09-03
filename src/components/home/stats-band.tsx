@@ -57,12 +57,6 @@ export async function StatsBand({
           </div>
         ))}
       </dl>
-
-      {/* Một con số trần không nói được nó từ đâu ra. Dòng này là lời hứa đo
-          được: đếm thật, không ước lượng. */}
-      <p className="mt-4 text-center text-sm text-muted-foreground">
-        {t("statsCaption")}
-      </p>
     </Reveal>
   );
 }

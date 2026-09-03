@@ -2,12 +2,12 @@
 
 import type { ReactNode } from "react";
 import { motion, useReducedMotion } from "framer-motion";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { Orbit } from "lucide-react";
 
 import { Link } from "@/i18n/navigation";
 import { Button } from "@/components/ui/button";
-import { HeroGlobe } from "@/components/home/hero-globe";
+import { HeroGalaxy } from "@/components/home/hero-galaxy";
 
 /**
  * `search` là một slot: ô tìm kiếm phải là Server Component (chạy khi tắt JS,
@@ -23,6 +23,7 @@ export function Hero({
   fields?: ReactNode;
 }) {
   const t = useTranslations("home");
+  const locale = useLocale();
   const reduced = useReducedMotion();
 
   const rise = (delay: number) => ({
@@ -60,7 +61,7 @@ export function Hero({
       {/* Padding bất đối xứng có chủ đích: StatsBand đè lên đáy hero bằng
           `-mt-10`, nên khoảng trống dưới phải dư ra chừng đó. */}
       {/* Hai cột từ lg trở lên. Cột phải cố định 24rem thay vì `1fr`: để nó co
-          giãn thì ở 1024px quả cầu chiếm gần nửa bề ngang và bóp cột chữ xuống
+          giãn thì ở 1024px thiên hà chiếm gần nửa bề ngang và bóp cột chữ xuống
           mức tiêu đề phải xuống bốn dòng. */}
       <div className="container-page relative z-10 grid min-h-[min(70svh,36rem)] items-center gap-10 pt-14 pb-20 text-star lg:grid-cols-[minmax(0,1fr)_24rem] lg:gap-14 lg:pt-20 lg:pb-24">
         <div className="flex flex-col justify-center">
@@ -121,7 +122,7 @@ export function Hero({
             xuống 70vh cho vừa màn hình đầu, thêm một ô vuông nữa vào cột dọc
             là trả lại đúng chỗ vừa lấy được. */}
         <div className="hidden lg:block">
-          <HeroGlobe />
+          <HeroGalaxy locale={locale} />
         </div>
       </div>
     </section>
