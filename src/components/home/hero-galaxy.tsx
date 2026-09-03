@@ -7,6 +7,10 @@
 import { useEffect, useRef, useState } from "react";
 import dynamic from "next/dynamic";
 
+/** Tốc độ quay khi người dùng xin giảm chuyển động. Đặt 0 để dừng hẳn. */
+const GENTLE_SPEED = 0.5;
+const NORMAL_SPEED = 1.6;
+
 /**
  * Ngân Hà xoay ở cột phải của hero.
  *
@@ -31,16 +35,22 @@ import dynamic from "next/dynamic";
  * 3. **Chỗ đứng cùng kích thước.** Quầng sáng CSS chiếm đúng ô vuông mà canvas
  *    sẽ chiếm, nên lúc canvas xuất hiện không đẩy gì cả — CLS bằng 0.
  *
- * ## Giảm chuyển động
+ * ## Giảm chuyển động — chuyển động chậm lại, KHÔNG dừng hẳn
  *
- * Vẫn dựng thiên hà, chỉ **không cho xoay** (`playing: false`). Bản đầu chặn
- * mount hẳn và hoá ra sai theo hai hướng: người bật thiết lập đó xin ít chuyển
- * động chứ không xin ít nội dung, mà bên nhìn vào thì ảnh chờ phẳng lì trông y
- * như một cảnh 3D hỏng.
+ * Quyết định của chủ sản phẩm, ghi lại kèm lý do vì nó đi ngược mặc định của
+ * web: cảnh vẫn chạy kể cả khi người dùng bật `prefers-reduced-motion`, chỉ
+ * chạy chậm hơn.
+ *
+ * Bản trước dừng hẳn, và hai lần liên tiếp bị báo là "mô hình 3D bị hỏng" —
+ * một cảnh 3D đóng băng trông y hệt một cảnh 3D lỗi, không ai phân biệt được.
+ * Đó là lý do không quay lại phương án dừng hẳn.
+ *
+ * Nếu sau này cần siết lại theo chuẩn trợ năng, chỗ phải sửa là hằng số
+ * `GENTLE_SPEED` — đặt về 0 là quay lại hành vi dừng hẳn.
  *
  * Lưu ý quy tắc CSS `prefers-reduced-motion` toàn cục KHÔNG chạm được vòng lặp
- * `useFrame` của WebGL; nó chỉ tắt animation CSS. Nên chuyển động của thiên hà
- * buộc phải tắt bằng JS như ở đây.
+ * `useFrame` của WebGL; nó chỉ tắt animation CSS. Nên tốc độ ở đây buộc phải
+ * điều khiển bằng JS.
  */
 const GalaxyScene = dynamic(
   () => import("@/components/galaxy/galaxy-scene").then((m) => m.GalaxyScene),
@@ -49,7 +59,7 @@ const GalaxyScene = dynamic(
 
 export function HeroGalaxy({ locale }: { locale: string }) {
   const [showScene, setShowScene] = useState(false);
-  const [spinning, setSpinning] = useState(true);
+  const [gentle, setGentle] = useState(false);
   const wrap = useRef<HTMLDivElement>(null);
 
   /**
@@ -65,7 +75,7 @@ export function HeroGalaxy({ locale }: { locale: string }) {
    * giác giật khi người đọc chỉ đang đưa chuột qua để bấm ô tìm kiếm.
    */
   useEffect(() => {
-    if (!spinning) return; // giảm chuyển động thì không parallax
+    if (gentle) return; // xin giảm chuyển động thì bỏ hẳn parallax theo chuột
     const el = wrap.current;
     if (!el) return;
 
@@ -85,7 +95,7 @@ export function HeroGalaxy({ locale }: { locale: string }) {
       window.removeEventListener("pointermove", onMove);
       if (frame) cancelAnimationFrame(frame);
     };
-  }, [spinning]);
+  }, [gentle]);
 
   useEffect(() => {
     // `lg` của Tailwind. Dưới ngưỡng này hero xếp một cột, và một canvas WebGL
@@ -96,7 +106,7 @@ export function HeroGalaxy({ locale }: { locale: string }) {
 
     const decide = () => {
       setShowScene(wide.matches);
-      setSpinning(!motion.matches);
+      setGentle(motion.matches);
     };
 
     decide();
@@ -144,13 +154,12 @@ export function HeroGalaxy({ locale }: { locale: string }) {
         >
           <GalaxyScene
             settings={{
-              playing: spinning,
-              // Cảnh quay ở tốc độ `delta * 0.035 * speed` rad/s. Đặt 0.3 cho
-              // ra 0,6 độ/giây — một vòng mất mười phút, tức mắt người đọc
-              // không nhận ra là nó đang quay và khối này trông như ảnh dán.
-              // 1.6 cho một vòng khoảng hai phút: thấy rõ là đang sống, vẫn đủ
-              // chậm để không kéo mắt khỏi ô tìm kiếm ngay bên cạnh.
-              speed: 1.6,
+              playing: true,
+              // Cảnh quay ở `delta * 0.035 * speed` rad/s. 1.6 cho một vòng
+              // khoảng hai phút: thấy rõ là đang sống, vẫn đủ chậm để không
+              // kéo mắt khỏi ô tìm kiếm ngay bên cạnh. Từng đặt 0.3 và một
+              // vòng mất mười phút — mắt không nhận ra, khối trông như ảnh dán.
+              speed: gentle ? GENTLE_SPEED : NORMAL_SPEED,
               // Nhãn và các thiên thể là chuyện của trang /milky-way. Ở hero
               // chúng chỉ thành chữ nhỏ li ti không đọc nổi, và mỗi nhãn là
               // một phần tử HTML chồng lên canvas.

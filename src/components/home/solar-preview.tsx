@@ -8,6 +8,10 @@ import { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
 import { useLocale } from "next-intl";
 
+/** Tốc độ quỹ đạo khi người dùng xin giảm chuyển động. Đặt 0 để dừng hẳn. */
+const GENTLE_SPEED = 0.35;
+const NORMAL_SPEED = 1;
+
 /**
  * Mô hình Hệ Mặt Trời trong khối giới thiệu ở giữa trang chủ.
  *
@@ -29,12 +33,19 @@ import { useLocale } from "next-intl";
  *    tinh có texture riêng cộng 5000 sao nền — nên trên điện thoại thì bốn
  *    vòng tròn CSS là lựa chọn đúng, không phải lựa chọn kém.
  *
- * ## Giảm chuyển động
+ * ## Giảm chuyển động — chậm lại, KHÔNG dừng hẳn
  *
- * Vẫn dựng cảnh, chỉ dừng quỹ đạo (`playing: false`). Quy tắc CSS
- * `prefers-reduced-motion` toàn cục KHÔNG chạm được vòng lặp `useFrame` của
- * WebGL — nó chỉ tắt animation CSS, nên chuyển động ở đây buộc phải tắt bằng
- * JS. (Minh hoạ CSS bên dưới đã tự lo phần của nó bằng `motion-safe:`.)
+ * Quyết định của chủ sản phẩm, ghi lại kèm lý do vì nó đi ngược mặc định của
+ * web: quỹ đạo vẫn chạy kể cả khi người dùng bật `prefers-reduced-motion`,
+ * chỉ chậm hơn. Bản trước dừng hẳn và bị báo là "mô hình 3D bị hỏng" — một
+ * cảnh 3D đóng băng trông y hệt một cảnh 3D lỗi.
+ *
+ * Muốn siết lại theo chuẩn trợ năng thì sửa `GENTLE_SPEED`; đặt 0 là quay lại
+ * hành vi dừng hẳn.
+ *
+ * Quy tắc CSS `prefers-reduced-motion` toàn cục KHÔNG chạm được vòng lặp
+ * `useFrame` của WebGL — nó chỉ tắt animation CSS, nên tốc độ ở đây buộc phải
+ * điều khiển bằng JS.
  */
 const SolarScene = dynamic(
   () => import("@/components/solar/scene").then((m) => m.SolarScene),
@@ -51,7 +62,7 @@ const CSS_ORBITS = [
 export function SolarPreview() {
   const locale = useLocale();
   const [showScene, setShowScene] = useState(false);
-  const [playing, setPlaying] = useState(true);
+  const [gentle, setGentle] = useState(false);
 
   useEffect(() => {
     const wide = window.matchMedia("(min-width: 1024px)");
@@ -59,7 +70,7 @@ export function SolarPreview() {
 
     const decide = () => {
       setShowScene(wide.matches);
-      setPlaying(!motion.matches);
+      setGentle(motion.matches);
     };
 
     decide();
@@ -92,7 +103,7 @@ export function SolarPreview() {
             style={{ width: orbit.size, height: orbit.size }}
           >
             <div
-              className="absolute inset-0 motion-safe:animate-[spin_var(--d)_linear_infinite]"
+              className="absolute inset-0 animate-[spin_var(--d)_linear_infinite]"
               style={{ ["--d" as string]: orbit.duration }}
             >
               <span
@@ -130,8 +141,8 @@ export function SolarPreview() {
         >
           <SolarScene
             settings={{
-              playing,
-              speed: 1,
+              playing: true,
+              speed: gentle ? GENTLE_SPEED : NORMAL_SPEED,
               showOrbits: true,
               // Nhãn là chuyện của trang /solar-system. Ở khung này chúng thành
               // chữ li ti không đọc nổi, và mỗi nhãn là một phần tử HTML chồng

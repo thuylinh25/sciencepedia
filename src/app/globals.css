@@ -328,6 +328,31 @@
       transition-duration: 0.01ms !important;
       scroll-behavior: auto !important;
     }
+
+    /*
+     * Hai ngoại lệ có chủ ý, theo quyết định của chủ sản phẩm.
+     *
+     * Quy tắc chặn ở trên là quy tắc chặn TẤT CẢ, nên nó cũng giết luôn hai
+     * chuyển động nền của chủ đề vũ trụ: sao nhấp nháy và quầng sáng trôi.
+     * Hệ quả là trên máy bật giảm chuyển động, cả trang đứng chết — và một
+     * trang vũ trụ đứng chết trông như trang bị lỗi chứ không như trang tĩnh.
+     *
+     * Hai hiệu ứng này không phải loại gây chóng mặt: không dịch chuyển lớn,
+     * không nháy nhanh, không đi kèm cuộn. Chúng được cho chạy tiếp nhưng
+     * **chậm hơn nhiều** — nhịp cỡ nửa phút thay vì vài giây.
+     *
+     * Mọi thứ khác vẫn bị chặn như cũ. Muốn quay lại chuẩn nghiêm ngặt thì
+     * xoá nguyên khối này.
+     */
+    .starfield::before {
+      animation-duration: 14s !important;
+      animation-iteration-count: infinite !important;
+    }
+
+    .animate-aurora {
+      animation-duration: 36s !important;
+      animation-iteration-count: infinite !important;
+    }
   }
 }
 

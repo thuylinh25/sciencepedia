@@ -166,7 +166,7 @@ export function SiteHeader({ categories }: { categories: NavCategory[] }) {
                 <DropdownMenuTrigger
                   data-active={isActive("/categories")}
                   className={cn(
-                    "link-underline flex items-center gap-1 rounded-sm text-sm font-medium transition-colors outline-none focus-visible:ring-[3px] focus-visible:ring-ring/40",
+                    "link-underline flex items-center gap-1 rounded-sm text-sm font-semibold transition-colors outline-none focus-visible:ring-[3px] focus-visible:ring-ring/40",
                     navIdle,
                     isActive("/categories") && navActive,
                   )}
@@ -194,7 +194,7 @@ export function SiteHeader({ categories }: { categories: NavCategory[] }) {
                 href="/categories"
                 data-active={isActive("/categories")}
                 className={cn(
-                  "link-underline text-sm font-medium transition-colors",
+                  "link-underline text-sm font-semibold transition-colors",
                   navIdle,
                   isActive("/categories") && navActive,
                 )}
@@ -206,7 +206,7 @@ export function SiteHeader({ categories }: { categories: NavCategory[] }) {
             <DropdownMenu>
               <DropdownMenuTrigger
                 className={cn(
-                  "link-underline flex items-center gap-1 rounded-sm text-sm font-medium transition-colors outline-none focus-visible:ring-[3px] focus-visible:ring-ring/40",
+                  "link-underline flex items-center gap-1 rounded-sm text-sm font-semibold transition-colors outline-none focus-visible:ring-[3px] focus-visible:ring-ring/40",
                   navIdle,
                   MODELS.some((item) => isActive(item.href)) && navActive,
                 )}
@@ -236,7 +236,7 @@ export function SiteHeader({ categories }: { categories: NavCategory[] }) {
                 href={item.href}
                 data-active={isActive(item.href)}
                 className={cn(
-                  "link-underline flex items-center gap-1.5 text-sm font-medium transition-colors",
+                  "link-underline flex items-center gap-1.5 text-sm font-semibold transition-colors",
                   navIdle,
                   isActive(item.href) && navActive,
                 )}
