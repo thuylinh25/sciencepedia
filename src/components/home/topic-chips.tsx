@@ -49,9 +49,7 @@ export async function TopicChips({
   const ceiling = Math.floor(total * 0.6);
 
   const tagChips = tags
-    .filter(
-      (tag) => tag._count.articles >= 3 && tag._count.articles <= ceiling,
-    )
+    .filter((tag) => tag._count.articles >= 3 && tag._count.articles <= ceiling)
     .slice(0, 5);
 
   const catChips = categories
@@ -83,13 +81,25 @@ export async function TopicChips({
       <h3 className="text-xs font-medium tracking-widest text-muted-foreground uppercase">
         {t("chipsTitle")}
       </h3>
-      <ul className="mt-3 flex flex-wrap gap-2">
+      <ul className="mt-4 flex flex-wrap gap-2.5">
         {chips.map((chip) => (
           <li key={chip.key}>
             <Link
               href={chip.href}
-              className="inline-flex h-11 items-center gap-2 rounded-full border px-4 text-sm font-medium whitespace-nowrap transition-colors hover:border-accent hover:bg-accent/10"
+              /* h-9 chứ không h-11: đây là lối rẽ phụ, không phải hành động
+                 chính. Ở cỡ 44px chúng nặng ngang nút "Khám phá" và tranh chú ý
+                 với chính khối bài viết ngay trên. Ngoại lệ vùng chạm 44px là
+                 có chủ ý và giới hạn ở đây — chip xếp thành lưới thưa, không
+                 phải hàng nút sát nhau nên bấm nhầm khó xảy ra.
+
+                 Dấu # thay vì 🔥: đây là danh sách theo số bài, không phải theo
+                 mức tăng. Icon lửa hứa "đang nóng" — một tuyên bố về xu hướng
+                 mà không có dữ liệu nào chống lưng. */
+              className="inline-flex h-9 items-center gap-1.5 rounded-full border px-3.5 text-[13px] font-medium whitespace-nowrap transition-colors hover:border-accent hover:bg-accent/10"
             >
+              <span aria-hidden className="text-accent">
+                #
+              </span>
               <span>{chip.label}</span>
               <span className="text-xs text-muted-foreground">
                 {formatNumber(chip.count, locale)}

@@ -108,7 +108,7 @@ export default async function HomePage({
             title={t("featured")}
             subtitle={t("featuredSubtitle")}
             href="/articles"
-            linkLabel={t("latest")}
+            linkLabel={t("seeAllArticles")}
           />
 
           <Reveal>

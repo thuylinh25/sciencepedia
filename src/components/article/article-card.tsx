@@ -73,7 +73,9 @@ export async function ArticleCard({
     <Link
       href={`/articles/${article.slug}`}
       className={cn(
-        "group relative flex flex-col overflow-hidden rounded-2xl border bg-card shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl",
+        // Viền sáng lên khi rê chuột. Chỉ nâng lên và đổ bóng thì trên nền tối
+        // gần như không thấy gì — bóng đen trên nền đen là bóng vô hình.
+        "group relative flex flex-col overflow-hidden rounded-2xl border bg-card shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-accent/60 hover:shadow-xl",
         isHero && "md:flex-row",
         className,
       )}
@@ -95,7 +97,7 @@ export async function ArticleCard({
                 ? "(max-width: 768px) 100vw, 50vw"
                 : "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
             }
-            className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+            className="object-cover transition-transform duration-500 group-hover:scale-[1.05]"
           />
         ) : (
           <div

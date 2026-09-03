@@ -75,9 +75,9 @@ export async function DiscoverToday({
       </SectionHeading>
 
       <Reveal>
-        <div className="grid gap-6 lg:grid-cols-12">
+        <div className="grid gap-8 lg:grid-cols-12 lg:gap-10">
           <div className={hasAside ? "lg:col-span-7" : "lg:col-span-12"}>
-            <h3 className="mb-3 text-xs font-medium tracking-widest text-muted-foreground uppercase">
+            <h3 className="mb-4 text-xs font-medium tracking-widest text-muted-foreground uppercase">
               {t("todayPick")}
             </h3>
             <ArticleCard
@@ -89,25 +89,39 @@ export async function DiscoverToday({
           </div>
 
           {hasAside && (
-            <aside className="flex flex-col gap-6 lg:col-span-5">
+            <aside className="flex flex-col gap-8 lg:col-span-5">
               {excerpt}
 
               {popular.length > 0 && (
                 <div>
-                  <h3 className="mb-2 text-xs font-medium tracking-widest text-muted-foreground uppercase">
+                  <h3 className="mb-4 text-xs font-medium tracking-widest text-muted-foreground uppercase">
                     {t("popularTitle")}
                   </h3>
-                  <ul className="flex flex-col gap-1">
-                    {popular.map((item) => (
-                      <li key={item.id}>
+                  {/* Số thứ hạng, không phải icon lửa hay biểu tượng xu hướng.
+                      Con số nói đúng thứ nó là — vị trí trong một bảng xếp
+                      hạng — còn 🔥 hay 📈 ngụ ý "đang tăng nhanh", một tuyên bố
+                      về xu hướng mà không có dữ liệu nào chống lưng: thứ tự này
+                      chỉ là lượt đọc cộng dồn.
+
+                      `tabular-nums` để 1, 2, 3 thẳng cột. */}
+                  <ol className="flex flex-col gap-1">
+                    {popular.map((item, index) => (
+                      <li key={item.id} className="flex items-start gap-1">
+                        <span
+                          aria-hidden
+                          className="mt-3 w-6 shrink-0 text-center font-display text-lg font-bold tabular-nums text-primary-strong"
+                        >
+                          {index + 1}
+                        </span>
                         <ArticleCard
                           article={item}
                           locale={locale}
                           variant="compact"
+                          className="min-w-0 flex-1"
                         />
                       </li>
                     ))}
-                  </ul>
+                  </ol>
                 </div>
               )}
             </aside>

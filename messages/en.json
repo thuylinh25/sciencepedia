@@ -82,7 +82,8 @@
     "aiCta": "Start chatting",
     "aiPlaceholder": "Why is the sky blue?",
     "heroSearchCta": "Explore",
-    "heroCategoriesLabel": "Start with a field"
+    "heroCategoriesLabel": "Start with a field",
+    "seeAllArticles": "See all articles"
   },
   "article": {
     "readingTime": "{minutes} min read",

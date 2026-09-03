@@ -68,7 +68,10 @@ export async function CategoryFeatureCard({
     <Link
       href={`/categories/${category.slug}`}
       className={cn(
-        "group relative flex min-h-[15rem] flex-col justify-end overflow-hidden rounded-2xl border transition-all duration-300 hover:-translate-y-1 hover:shadow-xl focus-visible:ring-[3px] focus-visible:ring-ring/50 focus-visible:outline-none",
+        // Hover phải nói rõ "bấm được": đây là lối điều hướng chính vào từng
+        // lĩnh vực. Nâng 6px, viền sáng lên, bóng dày hơn — ba tín hiệu cùng
+        // lúc vì trên nền tối thì riêng bóng gần như vô hình.
+        "group relative flex min-h-[15rem] flex-col justify-end overflow-hidden rounded-2xl border transition-all duration-300 hover:-translate-y-1.5 hover:border-accent/70 hover:shadow-2xl focus-visible:ring-[3px] focus-visible:ring-ring/50 focus-visible:outline-none",
         className,
       )}
     >
@@ -118,11 +121,16 @@ export async function CategoryFeatureCard({
           {name}
         </h3>
 
-        {description && (
-          <p className="mt-1.5 line-clamp-2 text-sm leading-relaxed text-white/75">
-            {description}
-          </p>
-        )}
+        {/* Khối mô tả cao cố định hai dòng, kể cả khi mô tả chỉ có một dòng
+            hoặc không có.
+
+            Chỉ đặt `line-clamp` là chưa đủ để card cân nhau: clamp chặn phần
+            thừa nhưng không lấp phần thiếu, nên lĩnh vực có mô tả ngắn vẫn cho
+            ra card có trọng tâm cao hơn hẳn card bên cạnh. `min-h` mới là thứ
+            giữ cho hàng nút và số bài của mọi card nằm cùng một đường. */}
+        <p className="mt-1.5 line-clamp-2 min-h-[2.75rem] text-sm leading-relaxed text-white/75">
+          {description}
+        </p>
 
         <span className="mt-4 flex items-center justify-between text-xs font-medium text-white/70">
           {category._count && (

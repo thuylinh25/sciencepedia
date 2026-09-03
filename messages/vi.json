@@ -82,7 +82,8 @@
     "aiCta": "Trò chuyện ngay",
     "aiPlaceholder": "Vì sao bầu trời có màu xanh?",
     "heroSearchCta": "Khám phá",
-    "heroCategoriesLabel": "Bắt đầu từ một lĩnh vực"
+    "heroCategoriesLabel": "Bắt đầu từ một lĩnh vực",
+    "seeAllArticles": "Xem tất cả bài viết"
   },
   "article": {
     "readingTime": "{minutes} phút đọc",

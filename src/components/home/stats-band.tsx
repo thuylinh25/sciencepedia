@@ -38,7 +38,7 @@ export async function StatsBand({
         {items.map(({ value, label, Icon }) => (
           <div
             key={label}
-            className="flex flex-col items-center gap-1.5 bg-card px-4 py-8 sm:py-10"
+            className="flex flex-col items-center gap-1 bg-card px-4 py-6 sm:py-8"
           >
             <Icon
               aria-hidden
