@@ -350,6 +350,51 @@ function withRolledUpCount<
   };
 }
 
+/**
+ * Ảnh đại diện cho mỗi lĩnh vực gốc, khoá theo slug.
+ *
+ * Lấy ảnh bìa của bài **mới nhất** thuộc lĩnh vực đó hoặc thuộc một chuyên mục
+ * con của nó.
+ *
+ * **Vì sao không dùng `Category.coverImage`.** Trường đó có sẵn trong schema
+ * nhưng cả 14 danh mục đều đang để trống, và gán ảnh cho một lĩnh vực là việc
+ * biên tập có kiểm bản quyền chứ không suy ra được từ dữ liệu. Mượn ảnh của
+ * bài mới nhất là cách dùng thứ đã có: 35/35 bài đã xuất bản đều có ảnh bìa,
+ * và những ảnh đó đã qua khâu kiểm giấy phép khi nhập bài.
+ *
+ * **Đánh đổi đã chấp nhận.** Ảnh không đại diện cho cả lĩnh vực, và nó sẽ đổi
+ * khi có bài mới. Đây là giải pháp tạm cho tới khi `Category.coverImage` được
+ * gán thật — khi đó trường ấy phải được ưu tiên hơn hàm này.
+ *
+ * Một truy vấn cho cả cây thay vì một truy vấn mỗi lĩnh vực: kho chỉ vài chục
+ * bài, lọc trong bộ nhớ rẻ hơn năm vòng đi lại cơ sở dữ liệu.
+ */
+export const getCategoryCovers = unstable_cache(
+  async (): Promise<Record<string, string>> => {
+    const [roots, articles] = await Promise.all([
+      prisma.category.findMany({
+        where: { parentId: null },
+        select: { slug: true, id: true, children: { select: { id: true } } },
+      }),
+      prisma.article.findMany({
+        where: { ...PUBLISHED, coverImage: { not: null } },
+        select: { categoryId: true, coverImage: true },
+        orderBy: { publishedAt: "desc" },
+      }),
+    ]);
+
+    const covers: Record<string, string> = {};
+    for (const root of roots) {
+      const ids = new Set([root.id, ...root.children.map((c) => c.id)]);
+      const newest = articles.find((a) => ids.has(a.categoryId));
+      if (newest?.coverImage) covers[root.slug] = newest.coverImage;
+    }
+    return covers;
+  },
+  ["category-covers"],
+  { revalidate: 600, tags: ["categories", "articles"] },
+);
+
 export const getRootCategories = unstable_cache(
   async () => {
     const [categories, totals] = await Promise.all([

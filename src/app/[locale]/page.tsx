@@ -11,6 +11,7 @@ import {
   getFeaturedArticles,
   getLatestArticles,
   getPopularArticles,
+  getCategoryCovers,
   getRootCategories,
   getSiteStats,
   getTagsWithArticles,
@@ -25,7 +26,7 @@ import { SearchHeroForm } from "@/components/search/search-hero-form";
 import { SectionHeading } from "@/components/section-heading";
 import { ArticleCard } from "@/components/article/article-card";
 import { ArticleGrid } from "@/components/article/article-grid";
-import { CategoryCard } from "@/components/category/category-card";
+import { CategoryFeatureCard } from "@/components/category/category-feature-card";
 import { Reveal, StaggerGroup, StaggerItem } from "@/components/motion/reveal";
 import { Button } from "@/components/ui/button";
 
@@ -71,6 +72,7 @@ export default async function HomePage({
     popularRaw,
     chipTags,
     allCategories,
+    categoryCovers,
   ] = await Promise.all([
     getFeaturedArticles(5),
     getLatestArticles(6),
@@ -82,6 +84,7 @@ export default async function HomePage({
     getPopularArticles(4),
     getTagsWithArticles(64),
     getAllCategories(),
+    getCategoryCovers(),
   ]);
 
   const [heroArticle, ...restFeatured] = featured;
@@ -150,11 +153,13 @@ export default async function HomePage({
           subtitle={t("browseCategoriesSubtitle")}
         />
         <StaggerGroup className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {categories.map((category) => (
+          {categories.map((category, index) => (
             <StaggerItem key={category.id} className="h-full">
-              <CategoryCard
+              <CategoryFeatureCard
                 category={category}
+                coverImage={categoryCovers[category.slug]}
                 locale={locale as Locale}
+                priority={index === 0}
                 className="h-full"
               />
             </StaggerItem>
