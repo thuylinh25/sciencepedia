@@ -315,7 +315,12 @@
     "privacy": "Privacy policy",
     "terms": "Terms of use",
     "contact": "Contact",
-    "rights": "Content released under CC BY-SA 4.0."
+    "rights": "Content released under CC BY-SA 4.0.",
+    "tools": "Tools",
+    "tagline": "Free science knowledge, sourced, written in Vietnamese.",
+    "statArticles": "articles",
+    "statFields": "fields",
+    "statTopics": "topics"
   },
   "galaxy": {
     "title": "The Milky Way",
