@@ -120,7 +120,6 @@ export async function SiteFooter() {
           <p>
             © {year} Sciencepedia. {t("rights")}
           </p>
-          <p>{t("builtWith")}</p>
         </div>
       </div>
     </footer>

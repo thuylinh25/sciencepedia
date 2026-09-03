@@ -91,9 +91,14 @@ export function SolarPreview() {
        đã thấy trong ảnh chụp màn hình, và mặt nạ toả tròn chỉ làm mờ nó đi chứ
        không chữa được gốc.
 
-       max-w-xl thay max-w-md: to hơn khoảng 25%, đủ để mô hình cân với tiêu đề
-       thay vì thành hình phụ bên cạnh. */
-    <div aria-hidden className="relative mx-auto aspect-[7/5] w-full max-w-xl">
+       Tỉ lệ 16/9 chứ không 7/5: quỹ đạo ngoài cùng (Sao Hải Vương, bán kính
+       43 đơn vị cảnh) trải theo chiều NGANG gấp đôi chiều dọc, vì đĩa được
+       nhìn nghiêng khoảng 27 độ. Khung càng vuông thì càng phải lùi camera để
+       chứa hết bề ngang, mà lùi camera lại làm hành tinh nhỏ đi. Khung rộng
+       cho cả hai: chứa đủ và giữ hành tinh to.
+
+       max-w-2xl: to hơn khoảng 40% so với bản gốc max-w-md. */
+    <div aria-hidden className="relative mx-auto aspect-[16/9] w-full max-w-2xl">
       {/* Chỗ đứng: minh hoạ quỹ đạo bằng CSS, có mặt trong HTML đầu tiên.
 
           PHẢI ẩn đi khi cảnh 3D lên. Canvas bật `alpha` nên nếu để lại, các
@@ -148,9 +153,9 @@ export function SolarPreview() {
           className="absolute inset-0"
           style={{
             maskImage:
-              "radial-gradient(ellipse 78% 82% at 50% 50%, #000 55%, transparent 100%)",
+              "radial-gradient(ellipse 82% 88% at 50% 50%, #000 68%, transparent 100%)",
             WebkitMaskImage:
-              "radial-gradient(ellipse 78% 82% at 50% 50%, #000 55%, transparent 100%)",
+              "radial-gradient(ellipse 82% 88% at 50% 50%, #000 68%, transparent 100%)",
           }}
         >
           <SolarScene
@@ -171,9 +176,14 @@ export function SolarPreview() {
             // Bật lên thì OrbitControls nuốt sự kiện wheel và người đọc đưa
             // chuột qua khối này rồi cuộn sẽ thấy trang đứng im. Muốn nghịch
             // thật thì bấm nút ngay bên cạnh để sang /solar-system.
-            // 66 thay vì 52 mặc định: đủ lùi để quỹ đạo ngoài cùng nằm trọn
-            // trong khung, tức không hành tinh nào bị mép canvas chặt ngang.
-            cameraDistance={66}
+            /* Tính chứ không đoán. Camera ở [0, d/2, d] nhìn về gốc, fov 45
+               độ, nên nửa bề ngang nhìn thấy ở mặt phẳng gốc xấp xỉ
+               0,46·d·(tỉ lệ khung) = 0,46·72·1,78 ≈ 59 đơn vị cảnh. Quỹ đạo xa
+               nhất là Sao Hải Vương ở 43, cộng bán kính hành tinh và vành đai
+               Sao Thổ thì cần chừng 47 — còn dư khoảng 25% để không có gì chạm
+               mép. Bản trước đặt 66 với khung 7/5 chỉ cho ra ~43, tức vừa đúng
+               mép, và Sao Thổ bị chặt đôi. */
+            cameraDistance={72}
             interactive={false}
             transparent
           />

@@ -315,8 +315,7 @@
     "privacy": "Privacy policy",
     "terms": "Terms of use",
     "contact": "Contact",
-    "rights": "Content released under CC BY-SA 4.0.",
-    "builtWith": "Built with Next.js, Prisma and Meilisearch."
+    "rights": "Content released under CC BY-SA 4.0."
   },
   "galaxy": {
     "title": "The Milky Way",
