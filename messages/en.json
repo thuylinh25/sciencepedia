@@ -58,7 +58,7 @@
     "heroCtaSecondary": "View the 3D Solar System",
     "featured": "Featured",
     "featuredSubtitle": "Our most carefully edited pieces this week",
-    "latest": "Recently published",
+    "latest": "New in the library",
     "latestSubtitle": "Freshly added to the library",
     "browseCategories": "Browse by field",
     "browseCategoriesSubtitle": "Pick a field and go deep",
@@ -80,10 +80,10 @@
     "aiTitle": "Ask anything about science",
     "aiSubtitle": "An AI assistant that answers from Sciencepedia's own library and always cites its sources.",
     "aiCta": "Start chatting",
-    "aiPlaceholder": "Why is the sky blue?",
     "heroSearchCta": "Explore",
     "heroCategoriesLabel": "Start with a field",
-    "seeAllArticles": "See all articles"
+    "seeAllArticles": "See all articles",
+    "aiTryAsking": "Try asking"
   },
   "article": {
     "readingTime": "{minutes} min read",

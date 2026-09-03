@@ -58,7 +58,7 @@
     "heroCtaSecondary": "Xem Hệ Mặt Trời 3D",
     "featured": "Bài viết nổi bật",
     "featuredSubtitle": "Những chủ đề được biên tập kỹ lưỡng nhất tuần này",
-    "latest": "Mới xuất bản",
+    "latest": "Mới trong kho tri thức",
     "latestSubtitle": "Kiến thức vừa được bổ sung vào kho",
     "browseCategories": "Duyệt theo lĩnh vực",
     "browseCategoriesSubtitle": "Chọn một lĩnh vực để đi sâu",
@@ -80,10 +80,10 @@
     "aiTitle": "Hỏi bất cứ điều gì về khoa học",
     "aiSubtitle": "Trợ lý AI trả lời dựa trên chính kho bài viết của Sciencepedia và luôn dẫn nguồn.",
     "aiCta": "Trò chuyện ngay",
-    "aiPlaceholder": "Vì sao bầu trời có màu xanh?",
     "heroSearchCta": "Khám phá",
     "heroCategoriesLabel": "Bắt đầu từ một lĩnh vực",
-    "seeAllArticles": "Xem tất cả bài viết"
+    "seeAllArticles": "Xem tất cả bài viết",
+    "aiTryAsking": "Thử hỏi"
   },
   "article": {
     "readingTime": "{minutes} phút đọc",

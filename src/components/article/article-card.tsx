@@ -143,7 +143,9 @@ export async function ArticleCard({
         <p
           className={cn(
             "mt-2.5 text-sm leading-relaxed text-muted-foreground",
-            isHero ? "line-clamp-4 md:text-base" : "line-clamp-2",
+            // 3 dòng chứ không 2: ở 2 dòng phần lớn tóm tắt bị cắt giữa mệnh
+            // đề, người đọc nhận được một câu cụt thay vì một lý do để bấm vào.
+            isHero ? "line-clamp-4 md:text-base" : "line-clamp-3",
           )}
         >
           {summary}

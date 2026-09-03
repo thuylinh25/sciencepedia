@@ -21,6 +21,7 @@ import { Hero } from "@/components/home/hero";
 import { StatsBand } from "@/components/home/stats-band";
 import { HeroFields } from "@/components/home/hero-fields";
 import { SolarPreview } from "@/components/home/solar-preview";
+import { AiQuestions } from "@/components/home/ai-questions";
 import { DiscoverToday } from "@/components/home/discover-today";
 import { SearchHeroForm } from "@/components/search/search-hero-form";
 import { SectionHeading } from "@/components/section-heading";
@@ -214,28 +215,32 @@ export default async function HomePage({
               aria-hidden
               className="pointer-events-none absolute -top-24 -right-24 size-72 rounded-full bg-primary/20 blur-3xl"
             />
-            <div className="relative max-w-2xl">
-              <span className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-3.5 py-1 text-xs font-medium tracking-widest text-primary-strong uppercase">
-                <Sparkles className="size-3.5" /> AI
-              </span>
-              <h2 className="mt-4 font-display text-4xl font-bold tracking-tight text-balance sm:text-5xl">
-                {t("aiTitle")}
-              </h2>
-              <p className="mt-4 text-lg leading-relaxed text-pretty text-muted-foreground">
-                {t("aiSubtitle")}
-              </p>
-
-              <div className="mt-8 flex flex-wrap items-center gap-3">
-                <Button asChild size="xl">
-                  <Link href="/assistant">
-                    {t("aiCta")}
-                    <ArrowRight className="size-4" />
-                  </Link>
-                </Button>
-                <span className="rounded-full border border-dashed px-4 py-2 text-sm text-muted-foreground">
-                  “{t("aiPlaceholder")}”
+            {/* Hai cột: chữ trái, câu hỏi bấm được phải. Bản cũ để cả cột
+                phải trống 60% và câu hỏi ví dụ nằm trong khung nét đứt — trông
+                như nút nhưng không bấm được. */}
+            <div className="relative grid gap-10 lg:grid-cols-[minmax(0,1fr)_22rem] lg:items-center lg:gap-14">
+              <div>
+                <span className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-3.5 py-1 text-xs font-medium tracking-widest text-primary-strong uppercase">
+                  <Sparkles className="size-3.5" /> AI
                 </span>
+                <h2 className="mt-4 font-display text-4xl font-bold tracking-tight text-balance sm:text-5xl">
+                  {t("aiTitle")}
+                </h2>
+                <p className="mt-4 text-lg leading-relaxed text-pretty text-muted-foreground">
+                  {t("aiSubtitle")}
+                </p>
+
+                <div className="mt-8">
+                  <Button asChild size="xl">
+                    <Link href="/assistant">
+                      {t("aiCta")}
+                      <ArrowRight className="size-4" />
+                    </Link>
+                  </Button>
+                </div>
               </div>
+
+              <AiQuestions />
             </div>
           </div>
         </Reveal>

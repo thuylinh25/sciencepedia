@@ -40,6 +40,23 @@ export function AssistantChat({ compact = false }: { compact?: boolean }) {
     bottomRef.current?.scrollIntoView({ behavior: "smooth", block: "end" });
   }, [messages, streaming]);
 
+  /**
+   * Nhận câu hỏi từ `?q=` — dùng cho các câu hỏi bấm được ở trang chủ.
+   *
+   * Đọc phía client bằng `window.location.search` chứ KHÔNG dùng `searchParams`
+   * của trang: dùng searchParams sẽ đẩy /assistant sang render động, mà trang
+   * đó đang tĩnh và không có lý do gì để đổi chỉ vì một tham số tuỳ chọn.
+   *
+   * Chỉ điền vào ô nhập, KHÔNG tự gửi. Một cú bấm nhầm không nên tiêu một lượt
+   * gọi mô hình, và người đọc còn có thể muốn sửa câu hỏi trước khi hỏi.
+   */
+  useEffect(() => {
+    const q = new URLSearchParams(window.location.search).get("q");
+    if (!q) return;
+    setInput(q.slice(0, 500));
+    textareaRef.current?.focus();
+  }, []);
+
   const suggestions = [
     t("suggestions.one"),
     t("suggestions.two"),
