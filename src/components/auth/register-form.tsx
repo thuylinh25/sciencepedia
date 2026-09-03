@@ -12,6 +12,7 @@ import { Link, useRouter } from "@/i18n/navigation";
 import { registerSchema, type RegisterInput } from "@/lib/validations";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { PasswordInput } from "@/components/ui/password-input";
 import { Label } from "@/components/ui/label";
 
 export function RegisterForm() {
@@ -83,13 +84,22 @@ export function RegisterForm() {
         {fields.map((field) => (
           <div key={field.name} className="space-y-2">
             <Label htmlFor={field.name}>{field.label}</Label>
-            <Input
-              id={field.name}
-              type={field.type}
-              autoComplete={field.autoComplete}
-              aria-invalid={Boolean(errors[field.name])}
-              {...register(field.name)}
-            />
+            {field.type === "password" ? (
+              <PasswordInput
+                id={field.name}
+                autoComplete={field.autoComplete}
+                aria-invalid={Boolean(errors[field.name])}
+                {...register(field.name)}
+              />
+            ) : (
+              <Input
+                id={field.name}
+                type={field.type}
+                autoComplete={field.autoComplete}
+                aria-invalid={Boolean(errors[field.name])}
+                {...register(field.name)}
+              />
+            )}
             {errors[field.name] && (
               <p className="text-xs text-destructive">
                 {errors[field.name]?.message}

@@ -2,6 +2,7 @@ import type { NextRequest } from "next/server";
 import { revalidateTag } from "next/cache";
 
 import { syncKnowledgeFeeds } from "@/lib/feed-sync";
+import { isRewriteConfigured } from "@/lib/rewrite";
 import { syncNewArticles } from "@/lib/vaca-sync";
 
 export const runtime = "nodejs";
@@ -33,6 +34,17 @@ const VACA_SHARE = 0.3;
  * không chạy còn hơn chạy mà ai gọi cũng được.
  */
 export async function GET(request: NextRequest) {
+  // Không có khoá biên tập thì mọi bài lấy về đều rơi về DRAFT với nguyên văn
+  // nguồn — đúng 20 bản nháp thô đã đổ vào kho ngày 2026-09-02, tiêu đề còn
+  // nguyên tiếng Anh. Đồng bộ khi không biên tập được chỉ tạo rác phải dọn
+  // tay, nên chặn ngay ở cửa thay vì đi cào rồi mới bỏ.
+  if (!isRewriteConfigured()) {
+    return Response.json(
+      { error: "Chưa đặt ANTHROPIC_API_KEY nên không đồng bộ — xem docs/architecture.md" },
+      { status: 503 },
+    );
+  }
+
   const secret = process.env.CRON_SECRET;
 
   if (!secret) {

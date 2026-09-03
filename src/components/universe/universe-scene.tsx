@@ -1,7 +1,7 @@
 "use client";
 
-import { useMemo, useRef } from "react";
-import { Canvas, useFrame } from "@react-three/fiber";
+import { useMemo, useRef, useState } from "react";
+import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { Html, OrbitControls } from "@react-three/drei";
 import * as THREE from "three";
 
@@ -221,12 +221,82 @@ function Landmarks({
   onSelect: (id: string) => void;
 }) {
   const pulse = useRef<THREE.Mesh>(null);
+  const { camera, size } = useThree();
+
+  /**
+   * Giãn nhãn theo không gian màn hình.
+   *
+   * Khoảng cách các mốc trải từ 0 tới 320 Mly trong bán kính mô phỏng 480, nên
+   * ở mức thu nhỏ mặc định bốn mốc gần nhất (Ngân Hà 0, Andromeda 2,5, Cụm địa
+   * phương 5, Virgo 54) rơi vào gần như cùng một điểm — năm nhãn đè lên nhau
+   * thành một khối không đọc được.
+   *
+   * Không sửa bằng cách bóp méo khoảng cách: khoảng cách ở đây là số đo thật,
+   * chỉ hướng mới là bịa ra cho dễ nhìn. Thay vào đó chiếu từng mốc xuống toạ
+   * độ pixel mỗi khung hình và bỏ nhãn nào đè lên một nhãn đã giữ. Nhãn bị ẩn
+   * hiện lại khi người xem phóng to — đúng hành vi người ta chờ đợi.
+   *
+   * Thứ tự ưu tiên: "bạn đang ở đây" luôn thắng, sau đó tới mốc xa nhất, vì
+   * mốc xa nằm ở rìa và ít tranh chỗ; giữ chúng thì phần trung tâm còn lại
+   * chỉ mất những nhãn mà zoom vào là thấy.
+   */
+  const projectable = useMemo(
+    () =>
+      COSMIC_LANDMARKS.map((landmark) => ({
+        id: landmark.id,
+        home: landmark.tier === "home",
+        distanceMly: landmark.distanceMly,
+        vec: new THREE.Vector3(...landmarkPosition(landmark)),
+      })).sort(
+        (a, b) => Number(b.home) - Number(a.home) || b.distanceMly - a.distanceMly,
+      ),
+    [],
+  );
+
+  // Xấp xỉ khung một nhãn. Rộng rãi hơn thực tế một chút để hai nhãn không
+  // dính sát cạnh nhau — sát nhau vẫn khó đọc dù về mặt hình học là không đè.
+  const LABEL_W = 150;
+  const LABEL_H = 30;
+
+  const [hiddenLabels, setHiddenLabels] = useState<Set<string>>(
+    () => new Set(),
+  );
+  const lastKey = useRef("");
 
   useFrame(({ clock }) => {
-    if (!pulse.current) return;
-    const phase = (clock.elapsedTime % 2.4) / 2.4;
-    pulse.current.scale.setScalar(1 + phase * 3);
-    (pulse.current.material as THREE.Material).opacity = 0.5 * (1 - phase);
+    if (pulse.current) {
+      const phase = (clock.elapsedTime % 2.4) / 2.4;
+      pulse.current.scale.setScalar(1 + phase * 3);
+      (pulse.current.material as THREE.Material).opacity = 0.5 * (1 - phase);
+    }
+
+    const kept: { x: number; y: number }[] = [];
+    const hidden = new Set<string>();
+
+    for (const item of projectable) {
+      const p = item.vec.clone().project(camera);
+      // z > 1 nghĩa là nằm sau camera; chiếu ra một điểm vô nghĩa
+      if (p.z > 1) {
+        hidden.add(item.id);
+        continue;
+      }
+      const x = (p.x * 0.5 + 0.5) * size.width;
+      const y = (-p.y * 0.5 + 0.5) * size.height;
+
+      const clash = kept.some(
+        (k) => Math.abs(k.x - x) < LABEL_W && Math.abs(k.y - y) < LABEL_H,
+      );
+      if (clash) hidden.add(item.id);
+      else kept.push({ x, y });
+    }
+
+    // Chỉ setState khi tập hợp thật sự đổi — setState mỗi khung hình sẽ khiến
+    // React dựng lại cây này 60 lần một giây.
+    const key = [...hidden].sort().join(",");
+    if (key !== lastKey.current) {
+      lastKey.current = key;
+      setHiddenLabels(hidden);
+    }
   });
 
   return (
@@ -270,7 +340,7 @@ function Landmarks({
               />
             </sprite>
 
-            {showLabels && (
+            {showLabels && !hiddenLabels.has(landmark.id) && (
               <Html
                 position={[0, home ? 0.75 : 0.45, 0]}
                 center

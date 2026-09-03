@@ -12,6 +12,7 @@ import { Link, useRouter } from "@/i18n/navigation";
 import { loginSchema, type LoginInput } from "@/lib/validations";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { PasswordInput } from "@/components/ui/password-input";
 import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
 
@@ -72,9 +73,8 @@ export function LoginForm({
 
         <div className="space-y-2">
           <Label htmlFor="password">{t("password")}</Label>
-          <Input
+          <PasswordInput
             id="password"
-            type="password"
             autoComplete="current-password"
             aria-invalid={Boolean(errors.password)}
             {...register("password")}

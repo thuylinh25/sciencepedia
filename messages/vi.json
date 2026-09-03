@@ -45,7 +45,9 @@
     "profile": "Hồ sơ",
     "myBookmarks": "Đã lưu",
     "bookmarksEmpty": "Bạn chưa lưu bài nào",
-    "bookmarksEmptyHint": "Bấm “Lưu bài” ở đầu mỗi bài viết để đọc lại sau."
+    "bookmarksEmptyHint": "Bấm “Lưu bài” ở đầu mỗi bài viết để đọc lại sau.",
+    "showPassword": "Hiện mật khẩu",
+    "hidePassword": "Ẩn mật khẩu"
   },
   "home": {
     "heroEyebrow": "Bách khoa toàn thư khoa học mở",

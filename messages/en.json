@@ -45,7 +45,9 @@
     "profile": "Profile",
     "myBookmarks": "Saved",
     "bookmarksEmpty": "You have not saved any articles yet",
-    "bookmarksEmptyHint": "Tap “Bookmark” at the top of any article to read it later."
+    "bookmarksEmptyHint": "Tap “Bookmark” at the top of any article to read it later.",
+    "showPassword": "Show password",
+    "hidePassword": "Hide password"
   },
   "home": {
     "heroEyebrow": "An open science encyclopedia",

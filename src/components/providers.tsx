@@ -9,7 +9,11 @@ export function Providers({ children }: { children: ReactNode }) {
     <SessionProvider>
       <ThemeProvider
         attribute="class"
-        defaultTheme="system"
+        // Mặc định tối, không theo hệ điều hành: nội dung chủ đạo là ảnh thiên
+        // văn và ba cảnh WebGL nền vũ trụ — nền sáng làm chúng trôi nổi trên
+        // một khung trắng. `enableSystem` giữ nguyên để người đọc vẫn chọn
+        // được "Theo hệ thống" trong nút đổi theme.
+        defaultTheme="dark"
         enableSystem
         disableTransitionOnChange
       >
