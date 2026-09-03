@@ -24,11 +24,24 @@ export function Logo({
 
   return (
     <span className={cn("flex items-center gap-2.5", className)}>
-      <span className="relative grid size-9 place-items-center rounded-lg bg-accent">
+      {/* Nền vàng, nét đen — khớp với icon ứng dụng đã cài.
+
+          Trước đây là nền xanh `bg-accent` với nét trắng, tức người dùng thấy
+          hai dấu hiệu nhận diện khác nhau cho cùng một sản phẩm: một cái trên
+          màn hình chính điện thoại, một cái trên web.
+
+          `bg-primary` + `text-primary-foreground` chứ không phải mã màu viết
+          cứng: vàng thương hiệu nằm ở token, và `--primary-foreground` đã là
+          màu tối (bắt buộc, vì vàng L≈0,86 không đi được với chữ trắng). Đổi
+          bảng màu lần sau thì logo tự theo.
+
+          `rounded-[30%]` thay `rounded-lg`: icon ứng dụng dùng dạng squircle
+          bo sâu, `rounded-lg` cho ra một ô vuông bo nhẹ trông khác hẳn. */}
+      <span className="relative grid size-9 place-items-center rounded-[30%] bg-primary">
         <svg
           viewBox="0 0 24 24"
           fill="none"
-          className="size-5 text-accent-foreground"
+          className="size-5 text-primary-foreground"
           aria-hidden="true"
         >
           <circle cx="12" cy="12" r="3.2" fill="currentColor" />

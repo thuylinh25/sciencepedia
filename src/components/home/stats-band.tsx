@@ -33,7 +33,17 @@ export async function StatsBand({
   ];
 
   return (
-    <Reveal as="section" className="container-page -mt-10">
+    /* `relative z-10` là bắt buộc, không phải thừa.
+
+       Thanh này thụt lên 40px (`-mt-10`) để chờm vào đáy hero. Hero là
+       `position: relative`, còn khối này nếu để tĩnh thì bị vẽ ở lớp DƯỚI —
+       phần tử có position luôn vẽ trên phần tử tĩnh, bất kể thứ tự DOM. Hệ quả
+       là dải gradient `h-20` ở đáy hero phủ lên 40px trên cùng của thanh số và
+       **cắt cụt phần đầu các icon**, khiến cả dải trông như bị dồn xuống.
+
+       Đó là lời giải thật cho hai lần báo "nội dung bị lệch" — không phải lỗi
+       căn giữa. */
+    <Reveal as="section" className="container-page relative z-10 -mt-10">
       <dl className="grid grid-cols-2 gap-px overflow-hidden rounded-2xl border bg-border shadow-sm md:grid-cols-4">
         {items.map(({ value, label, Icon }) => (
           <div
