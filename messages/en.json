@@ -366,8 +366,7 @@
     "ladderTitle": "Scale ladder",
     "zoomIn": "One rung in",
     "zoomOut": "One rung out",
-    "allModels": "See all three models",
-    "note": "The three models are kept separate rather than merged into one continuously zoomable scene. The range of scale involved spans about 19 orders of magnitude, far beyond the precision of the 32-bit floats WebGL uses, so geometry would jitter if forced into a single scene. Each model is therefore tuned for its own scale, and they are linked by the scale ladder at the foot of each page."
+    "allModels": "See all three models"
   },
   "zoom": {
     "title": "The zoom journey",

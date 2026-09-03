@@ -366,8 +366,7 @@
     "ladderTitle": "Bậc thang kích thước",
     "zoomIn": "Thu vào một bậc",
     "zoomOut": "Lùi ra một bậc",
-    "allModels": "Xem cả ba mô hình",
-    "note": "Ba mô hình được giữ tách rời chứ không gộp thành một cảnh phóng to liền mạch. Dải tỉ lệ cần bao là khoảng 19 bậc độ lớn, vượt xa độ chính xác của số thực 32-bit mà WebGL dùng, nên hình học sẽ giật và rung nếu ép vào cùng một cảnh. Mỗi mô hình vì thế được chỉnh riêng cho đúng tỉ lệ của nó, và nối với nhau bằng liên kết bậc thang ở cuối trang."
+    "allModels": "Xem cả ba mô hình"
   },
   "zoom": {
     "title": "Hành trình thu phóng",

@@ -281,35 +281,52 @@ export function SiteHeader({ categories }: { categories: NavCategory[] }) {
                 "[&_[data-slot=button]]:text-white/80 [&_[data-slot=button]:hover]:bg-white/12 [&_[data-slot=button]:hover]:text-white",
             )}
           >
-            {/* Chống trùng ô tìm kiếm: ẩn hai nút này đúng lúc ô tìm kiếm trên
-                hero còn nằm trong khung nhìn. Cuộn xuống là chúng hiện ra cùng
-                lớp glass. Phím tắt Ctrl/Cmd + K vẫn bắt vô điều kiện — người dùng bàn
-                phím không mất gì. */}
-            {!onDark && (
-              <>
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  onClick={() => setSearchOpen(true)}
-                  className="hidden gap-2 rounded-full pe-2 ps-3 text-muted-foreground sm:flex"
-                >
-                  <Search className="size-4" />
-                  <span>{t("search")}</span>
-                  <kbd className="ms-1 hidden rounded border bg-muted px-1.5 py-0.5 font-mono text-[10px] md:inline">
-                    {shortcutKey}K
-                  </kbd>
-                </Button>
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  className="sm:hidden"
-                  onClick={() => setSearchOpen(true)}
-                  aria-label={t("search")}
-                >
-                  <Search className="size-5" />
-                </Button>
-              </>
-            )}
+            {/* Nút tìm kiếm hiện ở MỌI trạng thái, kể cả khi ô tìm kiếm lớn
+                trên hero còn trong tầm mắt.
+
+                Bản trước ẩn nó khi đang ở đầu trang chủ, để tránh hai ô tìm
+                kiếm cùng lúc. Lý do nghe hợp lý nhưng sai trong thực tế: header
+                lúc mới vào trang bị khuyết một mục so với lúc đã cuộn, và người
+                dùng nhận ra ngay — câu hỏi nguyên văn là "tại sao ô tìm kiếm
+                khi cuộn xuống mới hiển thị".
+
+                Hai thứ này khác vai trò: ô trên hero là lời mời bắt đầu một
+                hành trình đọc, còn nút ở header là lối tắt luôn ở đúng chỗ trên
+                mọi trang. Thanh điều hướng mà đổi thành phần theo vị trí cuộn
+                thì người dùng phải học hai phiên bản của cùng một thanh. */}
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={() => setSearchOpen(true)}
+              className={cn(
+                "hidden gap-2 rounded-full pe-2 ps-3 sm:flex",
+                onDark ? "text-white/80" : "text-muted-foreground",
+              )}
+            >
+              <Search className="size-4" />
+              <span>{t("search")}</span>
+              {/* Khung phím tắt phải đổi theo nền: `bg-muted` + `border` là
+                  token của nền sáng, đặt trên hero tối thì gần như tàng hình. */}
+              <kbd
+                className={cn(
+                  "ms-1 hidden rounded px-1.5 py-0.5 font-mono text-[10px] md:inline",
+                  onDark
+                    ? "border border-white/25 bg-white/10"
+                    : "border bg-muted",
+                )}
+              >
+                {shortcutKey}K
+              </kbd>
+            </Button>
+            <Button
+              variant="ghost"
+              size="icon"
+              className="sm:hidden"
+              onClick={() => setSearchOpen(true)}
+              aria-label={t("search")}
+            >
+              <Search className="size-5" />
+            </Button>
 
             {/* Ngôn ngữ + theme chỉ là cài đặt: trên mobile chúng chiếm ~112px
                 khiến hàng header không co nổi dưới 482px và đẩy nút đăng nhập

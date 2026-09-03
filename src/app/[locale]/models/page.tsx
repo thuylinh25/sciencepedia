@@ -83,9 +83,6 @@ export default async function ModelsPage({
         ))}
       </ol>
 
-      <p className="mt-10 max-w-3xl text-sm leading-relaxed text-muted-foreground">
-        {t("note")}
-      </p>
     </div>
   );
 }
