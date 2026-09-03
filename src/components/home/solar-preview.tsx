@@ -151,16 +151,19 @@ export function SolarPreview() {
          *    canvas — một nửa hành tinh biến mất theo đường thẳng đứng. Mặt nạ
          *    làm nó mờ dần thay vì bị chặt.
          *
-         * Dải mờ rộng hơn của thiên hà (45%→85% thay vì 38%→72%) vì quỹ đạo
-         * ngoài cùng nằm sát mép khung, cần chỗ để tan.
+         * Chỉ tan ở 20% ngoài cùng. Tính ra: quỹ đạo xa nhất trải theo chiều
+         * dọc tới khoảng 58% nửa khung (43 · sin 27° = 19,3 trên nửa chiều cao
+         * nhìn thấy 33,3). Mặt nạ bắt đầu từ 68% như bản trước thì ăn vào rìa
+         * dưới của quỹ đạo ngoài và cắt mất một khúc — đã bị báo là "mô hình
+         * bên dưới bị khuyết". 80% nằm ngoài hẳn vùng có nét.
          */
         <div
           className="absolute inset-0"
           style={{
             maskImage:
-              "radial-gradient(ellipse 82% 88% at 50% 50%, #000 68%, transparent 100%)",
+              "radial-gradient(ellipse 96% 96% at 50% 50%, #000 80%, transparent 100%)",
             WebkitMaskImage:
-              "radial-gradient(ellipse 82% 88% at 50% 50%, #000 68%, transparent 100%)",
+              "radial-gradient(ellipse 96% 96% at 50% 50%, #000 80%, transparent 100%)",
           }}
         >
           <SolarScene
