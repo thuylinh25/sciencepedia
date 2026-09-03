@@ -55,32 +55,29 @@ export async function StatsBand({
                có `justify-center` thì `flex-col` dồn nội dung lên đầu ô, và cả
                dải trông như bị lệch lên — thấy rõ trong ảnh chụp màn hình:
                khoảng trống dưới gấp rưỡi khoảng trống trên. */
-            className="flex flex-col items-center justify-center gap-1 bg-card px-4 py-6 sm:py-8"
+            className="flex flex-col items-center justify-center gap-0.5 bg-card px-4 py-5 sm:py-6"
           >
-            <Icon
-              aria-hidden
-              className="order-1 size-5 text-primary-strong sm:size-6"
-            />
-            <dt className="order-3 text-center text-xs font-medium tracking-widest text-muted-foreground uppercase">
-              {label}
-            </dt>
-            {/* 48px là cỡ cho desktop. Ở 390px bốn ô nằm 2×2 và nhãn "Chủ đề
-                đã có bài" phải xuống dòng, nên thang phải bắt đầu thấp hơn
-                nhiều rồi mới lên — 48px ngay từ mobile sẽ đẩy band cao gấp đôi
-                và dìm phần nội dung xuống dưới màn hình đầu. */}
-            {/* KHÔNG dùng `leading-none` ở đây.
+            {/* Icon nằm CÙNG DÒNG với con số, không xếp chồng bên trên.
 
-                Với chữ số, `leading-none` cho hộp dòng cao đúng bằng cỡ chữ,
-                nhưng chữ số không có nét thò xuống — nên phần khoảng trống
-                chân chữ nằm trong hộp mà không có nét nào. Flexbox căn giữa
-                theo HỘP, vậy nên nét chữ nhìn thấy được bị đẩy lên trên tâm
-                thật vài pixel. Ba ô cạnh nhau cùng lệch một hướng thì cả dải
-                trông như bị dồn lên đầu — đúng thứ đã bị báo hai lần.
+                Xếp chồng thì mỗi ô mất thêm một hàng (icon ~24px) cộng một
+                khoảng cách, tức cả dải cao thêm chừng 30px mà không thêm thông
+                tin nào. Đặt ngang: cùng lượng thông tin, thấp hơn hẳn, và icon
+                đứng cạnh con số cũng nói rõ hơn nó chú thích cho cái gì.
 
-                `leading-tight` cho hộp cân hơn và mắt đọc ra là giữa. */}
-            <dd className="order-2 font-display text-4xl leading-tight font-bold tracking-tight tabular-nums sm:text-5xl lg:text-[48px]">
+                KHÔNG dùng `leading-none` cho con số. Chữ số không có nét thò
+                xuống, nên `leading-none` để lại khoảng trống chân chữ rỗng
+                trong hộp; flexbox căn giữa theo HỘP nên nét nhìn thấy được bị
+                đẩy lên trên tâm thật. */}
+            <dd className="flex items-center gap-2.5 font-display text-4xl leading-tight font-bold tracking-tight tabular-nums sm:text-[42px]">
+              <Icon
+                aria-hidden
+                className="size-5 shrink-0 text-primary-strong sm:size-6"
+              />
               <Counter value={value} />
             </dd>
+            <dt className="text-center text-xs font-medium tracking-widest text-muted-foreground uppercase">
+              {label}
+            </dt>
           </div>
         ))}
       </dl>
