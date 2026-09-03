@@ -1,5 +1,5 @@
 import { getLocale, getTranslations } from "next-intl/server";
-import { Github, Mail, Rss } from "lucide-react";
+import { Mail } from "lucide-react";
 
 import { Link } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
@@ -50,23 +50,15 @@ export async function SiteFooter() {
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted-foreground">
               {t("aboutText")}
             </p>
+            {/* Đã gỡ icon GitHub và RSS.
+
+                GitHub trỏ "https://github.com" — trang chủ GitHub, không phải
+                repo nào cả. RSS trỏ "/rss.xml", mà route đó KHÔNG tồn tại trong
+                src/app: một link 404 đã sống trên production vì không ai bấm.
+
+                Thêm lại khi có địa chỉ thật: repo công khai cho GitHub, và một
+                route feed thật cho RSS. */}
             <div className="mt-5 flex items-center gap-3">
-              <a
-                href="https://github.com"
-                target="_blank"
-                rel="noreferrer noopener"
-                aria-label="GitHub"
-                className="rounded-full border p-2 text-muted-foreground transition-colors hover:border-accent hover:text-foreground"
-              >
-                <Github className="size-4" />
-              </a>
-              <a
-                href="/rss.xml"
-                aria-label="RSS"
-                className="rounded-full border p-2 text-muted-foreground transition-colors hover:border-accent hover:text-foreground"
-              >
-                <Rss className="size-4" />
-              </a>
               <a
                 href="mailto:hello@sciencepedia.dev"
                 aria-label="Email"
