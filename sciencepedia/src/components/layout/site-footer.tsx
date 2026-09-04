@@ -3,7 +3,7 @@ import { Mail } from "lucide-react";
 
 import { Link } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
-import { getRootCategories, getSiteStats } from "@/server/queries";
+import { getRootCategories } from "@/server/queries";
 import { Logo } from "@/components/layout/logo";
 import { Separator } from "@/components/ui/separator";
 
@@ -19,17 +19,6 @@ export async function SiteFooter() {
     categories = await getRootCategories();
   } catch (error) {
     console.warn("[footer] không nạp được danh mục:", (error as Error).message);
-  }
-
-  // Chịu lỗi giống danh mục: footer nằm trên MỌI trang, một truy vấn hỏng
-  // không được phép làm sập cả site. Không có số thì khối số biến mất, phần
-  // còn lại vẫn dựng.
-  let stats: { articles: number; categories: number; tags: number } | null =
-    null;
-  try {
-    stats = await getSiteStats();
-  } catch (error) {
-    console.warn("[footer] không nạp được số liệu:", (error as Error).message);
   }
 
   /**
@@ -75,57 +64,9 @@ export async function SiteFooter() {
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-5">
           <div className="md:col-span-2">
             <Logo />
-            {/* Câu định vị, đặt ngay dưới logo và in đậm hơn đoạn mô tả.
-
-                Cố ý KHÔNG hứa nhịp độ ("cập nhật mỗi tuần"): không ai bảo đảm
-                được, và một lời hứa sai ở footer thì nằm trên mọi trang.
-
-                ⚠️ "viết bằng tiếng Việt và tiếng Anh" — chủ sản phẩm chọn câu
-                này, và tính đến 2026-09-04 nó CHƯA khớp dữ liệu: tiêu đề và
-                tóm tắt song ngữ đủ 35/35, nhưng thân bài tiếng Anh chỉ có
-                1/35. Mở /en/articles/... thì gần như mọi bài vẫn hiện thân bài
-                tiếng Việt.
-
-                Câu này thành đúng khi `contentEn` được điền cho phần lớn kho —
-                skill `translation` lo việc đó. Cho tới lúc ấy đây là một lời
-                hứa đi trước sản phẩm. Nếu quyết lùi lại, đổi `footer.tagline`
-                về "viết bằng tiếng Việt". */}
-            <p className="mt-4 max-w-sm text-sm leading-relaxed font-medium text-foreground">
-              {t("tagline")}
-            </p>
-            <p className="mt-2 max-w-sm text-sm leading-relaxed text-muted-foreground">
+            <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted-foreground">
               {t("aboutText")}
             </p>
-
-            {/* Số thật, không có dấu "+".
-
-                Đề xuất ban đầu là "35+ bài viết · 17+ chủ đề". Xem
-                docs/content-rules.md: với một bách khoa toàn thư, làm tròn lên
-                con số của chính mình là chỗ rẻ tiền nhất để mất uy tín — và
-                footer nằm trên mọi trang.
-
-                Nhãn ở đây gọn hơn thanh thống kê ở trang chủ ("lĩnh vực" thay
-                "lĩnh vực khoa học") vì cột hẹp, nhưng vẫn là cùng truy vấn:
-                lĩnh vực = category gốc, chủ đề = tag có bài đã xuất bản. */}
-            {stats && (
-              <dl className="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-sm">
-                {[
-                  { value: stats.articles, label: t("statArticles") },
-                  { value: stats.categories, label: t("statFields") },
-                  { value: stats.tags, label: t("statTopics") },
-                ].map((item) => (
-                  <div key={item.label} className="flex items-baseline gap-1.5">
-                    <dt className="sr-only">{item.label}</dt>
-                    <dd className="font-display font-bold tabular-nums text-primary-strong">
-                      {item.value}
-                    </dd>
-                    <span aria-hidden className="text-muted-foreground">
-                      {item.label}
-                    </span>
-                  </div>
-                ))}
-              </dl>
-            )}
             {/* Đã gỡ icon GitHub và RSS.
 
                 GitHub trỏ "https://github.com" — trang chủ GitHub, không phải
