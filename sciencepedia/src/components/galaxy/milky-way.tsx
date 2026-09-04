@@ -1,6 +1,5 @@
 "use client";
 
-import { useReducedMotion } from "framer-motion";
 
 import { useEffect, useMemo, useState } from "react";
 import dynamic from "next/dynamic";
@@ -64,21 +63,21 @@ export function MilkyWay() {
   const [webgl, setWebgl] = useState<boolean | null>(null);
   const [selectedId, setSelectedId] = useState<string | null>(null);
   /**
-   * Giảm chuyển động thì trang mở ra ở trạng thái ĐANG DỪNG, không phải tắt
-   * hẳn chuyển động.
+   * Mô hình LUÔN mở ra ở trạng thái đang chạy, kể cả khi người dùng bật
+   * `prefers-reduced-motion`. Quyết định của chủ sản phẩm, ghi lại vì nó đi
+   * ngược mặc định của web.
    *
-   * Khác với hai khối trang trí ở trang chủ: trang này có nút tạm dừng, và
-   * người xem chủ động vào đây để nhìn một mô hình động. Nên thiết lập hệ điều
-   * hành quyết định trạng thái BAN ĐẦU, còn quyền bật lại vẫn nằm ở người xem.
-   * Chặn vĩnh viễn sẽ lấy mất một tính năng mà họ cố ý tìm đến.
+   * Lập luận: trang này có nút tạm dừng ngay trên thanh điều khiển, nên người
+   * cần dừng vẫn dừng được bằng một cú bấm. Bản trước mở ra ở trạng thái dừng
+   * để tôn trọng thiết lập, nhưng như thế người chủ động vào xem một mô hình
+   * động lại gặp một mô hình đứng yên, và không có gì nói cho họ biết vì sao.
    *
-   * Phải kiểm bằng JS: quy tắc CSS `prefers-reduced-motion` toàn cục không
-   * chạm được vòng lặp `useFrame` của WebGL.
+   * Đánh đổi đã chấp nhận: người bật giảm chuyển động phải tự bấm dừng. Muốn
+   * lùi lại thì đặt `playing` thành `!useReducedMotion()`.
    */
-  const reducedMotion = useReducedMotion();
 
   const [settings, setSettings] = useState<GalaxySettings>({
-    playing: !reducedMotion,
+    playing: true,
     speed: 1,
     showLabels: true,
     showSun: true,
