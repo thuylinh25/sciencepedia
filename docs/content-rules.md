@@ -134,3 +134,37 @@ Bài học: **kiểm chứng tiền đề trước khi thi hành một phủ quy
 
 Chủ sản phẩm đã quyết giữ cả hai. Riêng phần tie-break thì vẫn phải sửa — đó là
 điểm duy nhất trong phủ quyết đứng vững độc lập với chuyện có lưu lượng hay không.
+
+---
+
+## Độ dài bài: 3–5 phút đọc
+
+Chốt 2026-09-04. Áp cho **mọi bài mới** và cho bài cũ khi có dịp chạm vào.
+
+Khoảng 3.000–5.000 ký tự Markdown. `readingTime` phải khớp nội dung thật, không
+đặt tay.
+
+**Vì sao con số này.** Đo toàn kho 41 bài ngày 2026-09-04: trung vị **4 phút**,
+35/41 bài ≤8 phút. Sáu bài dài (12–20 phút) đều sinh cùng một đợt, và chúng dài
+gấp 2–5 lần phần còn lại — đứng cạnh nhau trong lưới thì lệch hẳn, và một kho có
+hai lớp độ dài đọc ra như hai sản phẩm khác nhau. 3–5 phút là mức trung vị mà kho
+tự nhiên hội tụ về.
+
+**Rút gọn thì cắt gì.** Đoạn khai triển, ví dụ phụ, lịch sử phát triển dài dòng,
+câu chuyển ý, đoạn nhắc lại điều đã nói, bảng chỉ minh hoạ thêm cho điều thân bài
+đã nói rõ. Giữ mạch lập luận, cắt phần trang trí.
+
+**Rút gọn KHÔNG được đụng vào:**
+
+- **Nguồn tham khảo.** 7–21 nguồn mỗi bài là tài sản, không phải phần thừa. Bài
+  ngắn đi thì mật độ nguồn dày lên — đó là điều tốt.
+- **Con số đã đối chiếu** và mốc thời gian đi kèm.
+- **Mức độ dè dặt.** Rút gọn mà biến "có thể" thành "là", hoặc bỏ mệnh đề điều
+  kiện ở cuối câu, là lỗi cấp từ chối. Đây là cách hỏng phổ biến nhất khi cắt
+  ngắn: câu ngắn hơn nghe chắc chắn hơn, và sự chắc chắn đó không có thật.
+- **Dòng dẫn nguồn và ghi công ảnh** ở cuối bài.
+- **Tối thiểu 3 link nội bộ** resolve được.
+
+**Ngắn nhưng không cụt.** Sau khi rút, bài vẫn phải trả lời trọn vẹn câu hỏi ở
+tiêu đề. Nếu 5 phút không đủ để trả lời tử tế thì chủ đề đó quá rộng cho một bài
+— tách thành hai bài, đừng viết một bài dài.
