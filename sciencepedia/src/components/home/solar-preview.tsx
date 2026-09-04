@@ -98,16 +98,19 @@ export function SolarPreview() {
 
   return (
     /*
-     * Khung rộng hơn cao, KHÔNG vuông.
+     * Tỉ lệ 4/3 — cao hơn 16/9, và đó chính là chỗ lấy lại kích thước.
      *
-     * Đĩa Hệ Mặt Trời nhìn nghiêng ~27° trải theo chiều ngang gấp đôi chiều
-     * dọc. Khung càng vuông thì càng phải lùi camera để chứa hết bề ngang, mà
-     * lùi camera lại làm hành tinh nhỏ đi. Khung rộng cho cả hai.
+     * Chiều dọc cảnh nhìn thấy được là hằng số, do fov và khoảng cách camera
+     * quyết định, KHÔNG do tỉ lệ khung. Nên khung cao hơn tính bằng pixel thì
+     * cùng một khoảng cảnh đó trải trên nhiều pixel hơn — mô hình to lên mà
+     * không cần đưa camera lại gần, tức không phải trả lại chỗ vừa giành được
+     * để quỹ đạo ngoài lọt khung.
+     *
+     * Với bề ngang 768px: 16/9 cho khung cao 432px, 4/3 cho 576px — to hơn
+     * 33%. Kiểm cả hai chiều ở d=88, R=45: dọc 20,1 trong nửa khung 24,1; ngang
+     * 45 trong nửa khung 54,3. Khung 1/1 thì vỡ chiều ngang (45 so với 40,8).
      */
-    <div
-      aria-hidden
-      className="relative mx-auto aspect-[16/9] w-full max-w-3xl"
-    >
+    <div aria-hidden className="relative mx-auto aspect-[4/3] w-full max-w-3xl">
       {/*
        * Chỗ đứng: minh hoạ quỹ đạo bằng CSS, có mặt trong HTML đầu tiên.
        *
