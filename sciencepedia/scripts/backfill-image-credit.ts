@@ -48,12 +48,47 @@ function commonsFile(url: string): string | null {
   }
 }
 
-/** HTML của Commons → Markdown gọn, giữ link. */
+/** Giải mã thực thể HTML, lặp cho tới khi chuỗi không đổi. */
+function decodeEntities(input: string): string {
+  let out = input;
+  for (let i = 0; i < 4; i++) {
+    const next = out
+      .replace(/&amp;/g, "&")
+      .replace(/&quot;/g, '"')
+      .replace(/&#0?39;/g, "'")
+      .replace(/&nbsp;/g, " ")
+      .replace(/&lt;/g, "<")
+      .replace(/&gt;/g, ">");
+    if (next === out) break;
+    out = next;
+  }
+  return out;
+}
+
+/**
+ * HTML của Commons → Markdown gọn, giữ link.
+ *
+ * Ba thứ phải xử lý, cả ba đều đã thấy trong dữ liệu thật:
+ *
+ * 1. **Thực thể HTML.** Trường `Artist` trả "ESA &amp;amp; MPS", và URL trang
+ *    người dùng chứa "&amp;amp;action=edit". Không giải mã thì ghi công hiện ra
+ *    với "&amp;amp;" nằm giữa câu.
+ * 2. **Neo chú thích nội bộ.** Có mục ghi `[[1]](#cite_note-author-1)` — neo
+ *    trỏ vào chính trang Commons; đặt trên site này thì trỏ vào hư không. Giữ
+ *    chữ, bỏ link.
+ * 3. **Link đỏ.** Trang người dùng chưa tồn tại trả URL chứa `redlink=1`. Dẫn
+ *    người đọc tới một trang tạo bài là vô nghĩa — giữ tên, bỏ link.
+ */
 function toMarkdown(html: string): string {
-  return html
+  return decodeEntities(html)
     .replace(/<a[^>]*href="([^"]+)"[^>]*>(.*?)<\/a>/gi, (_m, href, text) => {
-      const url = String(href).startsWith("//") ? `https:${href}` : href;
-      return `[${String(text).replace(/<[^>]+>/g, "")}](${url})`;
+      const label = String(text)
+        .replace(/<[^>]+>/g, "")
+        .trim();
+      const raw = String(href);
+      if (raw.startsWith("#") || raw.includes("redlink=1")) return label;
+      const url = raw.startsWith("//") ? `https:${raw}` : raw;
+      return `[${label}](${url})`;
     })
     .replace(/<[^>]+>/g, "")
     .replace(/\s+/g, " ")
@@ -62,16 +97,43 @@ function toMarkdown(html: string): string {
 
 type Credit = { vi: string; en: string };
 
+/**
+ * Thử lại khi Commons trả rỗng.
+ *
+ * API công cộng của Commons chặn theo tốc độ, và khi bị chặn nó **không** trả
+ * lỗi HTTP — nó trả 200 với `extmetadata` rỗng. Chạy một lượt rồi chạy lại
+ * ngay sẽ thấy đúng những file vừa lấy được lại báo "không có metadata", tức
+ * kết quả không ổn định. Nếu tin lần trả đầu tiên thì script sẽ bỏ sót ngẫu
+ * nhiên, và ghi công thiếu là vi phạm giấy phép.
+ *
+ * Ba lần thử, giãn dần 1s → 3s → 9s.
+ */
 async function fetchCredit(file: string): Promise<Credit | null> {
+  for (let attempt = 0; attempt < 3; attempt++) {
+    if (attempt > 0) {
+      await new Promise((r) => setTimeout(r, 1000 * 3 ** (attempt - 1)));
+    }
+    const got = await fetchCreditOnce(file);
+    if (got) return got;
+  }
+  return null;
+}
+
+async function fetchCreditOnce(file: string): Promise<Credit | null> {
   const url = `${API}?action=query&titles=${encodeURIComponent(`File:${file}`)}&prop=imageinfo&iiprop=extmetadata&format=json&origin=*`;
   const res = await fetch(url, {
     headers: { "User-Agent": "SciencepediaBot/1.0 (image credit backfill)" },
     signal: AbortSignal.timeout(20_000),
-  });
-  if (!res.ok) return null;
+  }).catch(() => null);
+  if (!res?.ok) return null;
 
   const data = (await res.json()) as {
-    query?: { pages?: Record<string, { imageinfo?: { extmetadata?: Record<string, { value?: string }> }[] }> };
+    query?: {
+      pages?: Record<
+        string,
+        { imageinfo?: { extmetadata?: Record<string, { value?: string }> }[] }
+      >;
+    };
   };
   const page = Object.values(data.query?.pages ?? {})[0];
   const meta = page?.imageinfo?.[0]?.extmetadata;
@@ -143,8 +205,13 @@ async function main() {
         await p.category.update({ where: { id: row.id }, data });
       }
     }
-    // Lịch sự với API công cộng của Commons
-    await new Promise((r) => setTimeout(r, 250));
+    // Lịch sự với API công cộng của Commons.
+    //
+    // 1 giây chứ không 250ms: ở 250ms Commons chặn tốc độ và trả 200 với
+    // metadata RỖNG — 16/46 ảnh bị bỏ sót một cách ngẫu nhiên. Script bỏ qua
+    // hàng đã có ghi công nên chạy lại nhiều lần vẫn hội tụ, nhưng chậm một
+    // chút ngay từ đầu thì đỡ phải chạy lại.
+    await new Promise((r) => setTimeout(r, 1000));
   }
 
   console.log(`\nĐiền được: ${filled} · Bỏ qua: ${skipped}`);
