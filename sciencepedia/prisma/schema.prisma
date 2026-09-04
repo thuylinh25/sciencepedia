@@ -118,6 +118,12 @@ model Category {
   /// Màu chủ đạo dạng hex, dùng cho gradient card
   color         String  @default("#3b82f6")
   coverImage    String?
+  /// Ghi công ảnh bìa: tác giả, nguồn, giấy phép. BẮT BUỘC khi ảnh dùng giấy
+  /// phép đòi ghi công (CC BY, CC BY-SA). Markdown, để nhét được link tới
+  /// trang gốc trên Wikimedia. Ảnh thuộc phạm vi công cộng thì không bắt buộc
+  /// nhưng vẫn nên ghi.
+  coverImageCredit   String? @db.Text
+  coverImageCreditEn String? @db.Text
   order         Int     @default(0)
 
   parentId String?
@@ -157,6 +163,12 @@ model Article {
   contentEn String? @db.Text
 
   coverImage String?
+  /// Ghi công ảnh bìa: tác giả, nguồn, giấy phép. BẮT BUỘC khi ảnh dùng giấy
+  /// phép đòi ghi công (CC BY, CC BY-SA). Markdown, để nhét được link tới
+  /// trang gốc trên Wikimedia. Ảnh thuộc phạm vi công cộng thì không bắt buộc
+  /// nhưng vẫn nên ghi.
+  coverImageCredit   String? @db.Text
+  coverImageCreditEn String? @db.Text
   /// Ảnh dùng riêng cho og:image nếu khác cover
   ogImage    String?
 

@@ -14,6 +14,7 @@
     "db:migrate": "prisma migrate dev",
     "db:deploy": "prisma migrate deploy",
     "db:studio": "prisma studio",
+    "images:credit": "tsx --env-file-if-exists=.env scripts/backfill-image-credit.ts",
     "graph:check": "tsx --env-file-if-exists=.env scripts/check-graph.ts",
     "db:seed": "tsx --env-file-if-exists=.env prisma/seed.ts",
     "search:reindex": "tsx --env-file-if-exists=.env scripts/reindex.ts",

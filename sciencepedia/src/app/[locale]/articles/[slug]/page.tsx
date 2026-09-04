@@ -23,6 +23,7 @@ import { isFallback, pick, pickName } from "@/lib/i18n-content";
 
 import { JsonLd } from "@/components/json-ld";
 import { ArticleContent } from "@/components/article/article-content";
+import { ImageCredit } from "@/components/article/image-credit";
 import { ViewCounter } from "@/components/article/view-counter";
 import {
   MobileTableOfContents,
@@ -191,6 +192,18 @@ export default async function ArticlePage({
               className="object-cover opacity-70"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-transparent" />
+
+            {/* Ghi công đặt TRÊN ảnh, góc dưới phải: nếu đặt dưới ảnh thì nó
+                rơi vào vùng khối tiêu đề đang đè lên (-mt-40) và bị che. Nền
+                mờ riêng vì ảnh bìa sáng tối không đoán trước được. */}
+            <ImageCredit
+              credit={
+                loc === "en"
+                  ? (article.coverImageCreditEn ?? article.coverImageCredit)
+                  : article.coverImageCredit
+              }
+              className="absolute end-3 bottom-3 max-w-[min(90%,32rem)] rounded-md bg-space-900/70 px-2.5 py-1 text-end text-white/70 backdrop-blur-sm [&_a:hover]:text-white"
+            />
           </div>
         ) : (
           <div className="bg-cosmos starfield h-56 w-full" />
