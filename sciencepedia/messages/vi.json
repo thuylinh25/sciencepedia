@@ -107,17 +107,7 @@
     "empty": "Chưa có bài viết nào ở đây.",
     "emptyHint": "Hãy thử duyệt một lĩnh vực khác hoặc xem toàn bộ bài viết.",
     "browseAll": "Xem tất cả bài viết",
-    "tocOpen": "Mục lục bài viết",
-    "review": {
-      "label": "Trạng thái thẩm định",
-      "retracted": "Bài này trích dẫn một nguồn đã bị rút. Nội dung đang chờ biên tập viên khoa học rà soát lại.",
-      "unreviewed": "Bài này chưa qua thẩm định của biên tập viên khoa học.",
-      "reviewedBy": "Đã thẩm định khoa học bởi {name}",
-      "basedOn": "Dựa trên {count} nguồn tham khảo.",
-      "basedOnStrong": "Dựa trên {count} nguồn tham khảo, trong đó {strong} nguồn bình duyệt hoặc cơ quan thẩm quyền.",
-      "lastVerified": "Đối chiếu nguồn lần cuối: <t>{date}</t>",
-      "stale": "Đối chiếu nguồn lần cuối: <t>{date}</t> — đang chờ rà soát định kỳ."
-    }
+    "tocOpen": "Mục lục bài viết"
   },
   "search": {
     "title": "Tìm kiếm",

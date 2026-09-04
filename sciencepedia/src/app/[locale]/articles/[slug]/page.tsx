@@ -13,12 +13,16 @@ import {
   getRelatedForArticle,
 } from "@/server/queries";
 import { articleJsonLd, breadcrumbJsonLd, buildMetadata } from "@/lib/seo";
-import { absoluteUrl, extractHeadings, formatDate, formatNumber } from "@/lib/utils";
+import {
+  absoluteUrl,
+  extractHeadings,
+  formatDate,
+  formatNumber,
+} from "@/lib/utils";
 import { isFallback, pick, pickName } from "@/lib/i18n-content";
 
 import { JsonLd } from "@/components/json-ld";
 import { ArticleContent } from "@/components/article/article-content";
-import { ReviewStatus } from "@/components/article/review-status";
 import { ViewCounter } from "@/components/article/view-counter";
 import {
   MobileTableOfContents,
@@ -52,7 +56,10 @@ export async function generateStaticParams() {
     const slugs = await getPublishedSlugs();
     return slugs.slice(0, 50).map(({ slug }) => ({ slug }));
   } catch (error) {
-    console.warn("[build] bỏ qua prerender bài viết:", (error as Error).message);
+    console.warn(
+      "[build] bỏ qua prerender bài viết:",
+      (error as Error).message,
+    );
     return [];
   }
 }
@@ -123,8 +130,6 @@ export default async function ArticlePage({
   );
 
   // Thống kê nguồn cho khối tín hiệu tin cậy
-  const strongSourceCount = article.sources.filter((s) => s.tier <= 2).length;
-  const hasRetractedSource = article.sources.some((s) => s.retractedAt !== null);
 
   return (
     <>
@@ -295,19 +300,6 @@ export default async function ArticlePage({
               ))}
             </div>
           )}
-
-          {/* Trạng thái thẩm định — đặt ngay trước mục nguồn để người đọc gặp
-              chứng cứ tin cậy cùng lúc với danh sách nguồn */}
-          <ReviewStatus
-            className="mt-14"
-            locale={loc}
-            reviewerName={article.reviewedBy?.name}
-            reviewedAt={article.reviewedAt}
-            lastVerifiedAt={article.lastVerifiedAt}
-            sourceCount={article.sources.length}
-            strongSourceCount={strongSourceCount}
-            hasRetractedSource={hasRetractedSource}
-          />
 
           {/* Nguồn tham khảo */}
           {article.sources.length > 0 && (

@@ -107,17 +107,7 @@
     "empty": "No articles here yet.",
     "emptyHint": "Try another field, or browse the full article list.",
     "browseAll": "Browse all articles",
-    "tocOpen": "Table of contents",
-    "review": {
-      "label": "Review status",
-      "retracted": "This article cites a retracted source. It is awaiting re-review by a science editor.",
-      "unreviewed": "This article has not yet been reviewed by a science editor.",
-      "reviewedBy": "Scientifically reviewed by {name}",
-      "basedOn": "Based on {count} sources.",
-      "basedOnStrong": "Based on {count} sources, {strong} of them peer-reviewed or from an authoritative body.",
-      "lastVerified": "Sources last verified: <t>{date}</t>",
-      "stale": "Sources last verified: <t>{date}</t> — due for periodic re-review."
-    }
+    "tocOpen": "Table of contents"
   },
   "search": {
     "title": "Search",
