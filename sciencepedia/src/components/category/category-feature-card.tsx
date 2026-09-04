@@ -29,10 +29,12 @@ type CategoryLike = {
  *
  * ## Ảnh ở đâu ra
  *
- * `getCategoryCovers()` mượn ảnh bìa của bài mới nhất trong lĩnh vực. Xem chú
- * thích ở đó cho lý do và đánh đổi. Không có ảnh thì card vẫn dựng được, chỉ
- * là nền chuyển sang dải màu riêng của lĩnh vực — đó là trạng thái bình thường
- * chứ không phải hỏng, nên không có khung xám hay chữ "thiếu ảnh".
+ * `getCategoryCovers()` trả về `Category.coverImage` — ảnh do biên tập chọn
+ * riêng cho lĩnh vực và đã kiểm giấy phép — và chỉ mượn ảnh bìa của bài mới
+ * nhất khi trường đó rỗng. Xem chú thích ở đó cho lý do và đánh đổi. Không có
+ * ảnh thì card vẫn dựng được, chỉ là nền chuyển sang dải màu riêng của lĩnh
+ * vực — đó là trạng thái bình thường chứ không phải hỏng, nên không có khung
+ * xám hay chữ "thiếu ảnh".
  *
  * ## Vì sao chữ đọc được trên mọi ảnh
  *

@@ -353,18 +353,19 @@ function withRolledUpCount<
 /**
  * Ảnh đại diện cho mỗi lĩnh vực gốc, khoá theo slug.
  *
- * Lấy ảnh bìa của bài **mới nhất** thuộc lĩnh vực đó hoặc thuộc một chuyên mục
- * con của nó.
+ * **Ưu tiên `Category.coverImage`,** chỉ mượn ảnh bìa của bài **mới nhất**
+ * trong lĩnh vực khi trường đó còn rỗng.
  *
- * **Vì sao không dùng `Category.coverImage`.** Trường đó có sẵn trong schema
- * nhưng cả 14 danh mục đều đang để trống, và gán ảnh cho một lĩnh vực là việc
- * biên tập có kiểm bản quyền chứ không suy ra được từ dữ liệu. Mượn ảnh của
- * bài mới nhất là cách dùng thứ đã có: 35/35 bài đã xuất bản đều có ảnh bìa,
- * và những ảnh đó đã qua khâu kiểm giấy phép khi nhập bài.
+ * **Vì sao ưu tiên trường của danh mục.** Ảnh của một lĩnh vực phải đại diện
+ * cho cả lĩnh vực và phải ổn định — người đọc nhận ra "Vũ trụ" qua ảnh của nó.
+ * Ảnh mượn từ bài mới nhất không có cả hai tính chất đó: nó nói về một bài chứ
+ * không về lĩnh vực, và nó đổi mỗi lần xuất bản bài mới. Cả 5 lĩnh vực gốc nay
+ * đã được gán ảnh có kiểm giấy phép, nên đường mượn chỉ còn là lưới an toàn
+ * cho lĩnh vực mới lập mà biên tập chưa kịp chọn ảnh.
  *
- * **Đánh đổi đã chấp nhận.** Ảnh không đại diện cho cả lĩnh vực, và nó sẽ đổi
- * khi có bài mới. Đây là giải pháp tạm cho tới khi `Category.coverImage` được
- * gán thật — khi đó trường ấy phải được ưu tiên hơn hàm này.
+ * **Vì sao vẫn giữ đường mượn.** Bỏ hẳn thì một lĩnh vực mới sẽ ra card trơn
+ * cho tới khi có người gán ảnh thủ công. Giữ lại thì trạng thái xấu nhất là
+ * ảnh không thật khớp — rẻ hơn nhiều so với card trống.
  *
  * Một truy vấn cho cả cây thay vì một truy vấn mỗi lĩnh vực: kho chỉ vài chục
  * bài, lọc trong bộ nhớ rẻ hơn năm vòng đi lại cơ sở dữ liệu.
@@ -374,7 +375,12 @@ export const getCategoryCovers = unstable_cache(
     const [roots, articles] = await Promise.all([
       prisma.category.findMany({
         where: { parentId: null },
-        select: { slug: true, id: true, children: { select: { id: true } } },
+        select: {
+          slug: true,
+          id: true,
+          coverImage: true,
+          children: { select: { id: true } },
+        },
       }),
       prisma.article.findMany({
         where: { ...PUBLISHED, coverImage: { not: null } },
@@ -385,6 +391,10 @@ export const getCategoryCovers = unstable_cache(
 
     const covers: Record<string, string> = {};
     for (const root of roots) {
+      if (root.coverImage) {
+        covers[root.slug] = root.coverImage;
+        continue;
+      }
       const ids = new Set([root.id, ...root.children.map((c) => c.id)]);
       const newest = articles.find((a) => ids.has(a.categoryId));
       if (newest?.coverImage) covers[root.slug] = newest.coverImage;
