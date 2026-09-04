@@ -24,17 +24,32 @@ import { useLocale } from "next-intl";
 const NORMAL_SPEED = 2;
 
 /**
- * Camera lùi bao xa. Tính chứ không đoán.
+ * Camera lùi bao xa.
  *
- * Camera ở `[0, d/2, d]` nhìn về gốc với fov 45°, nên nửa bề ngang nhìn thấy ở
- * mặt phẳng gốc xấp xỉ `0,46 · d · (tỉ lệ khung)` = 0,46 · 72 · 1,78 ≈ 59 đơn
- * vị cảnh. Quỹ đạo xa nhất là Sao Hải Vương ở 43, cộng bán kính hành tinh và
- * vành đai Sao Thổ thì cần chừng 47 — dư khoảng 25%.
+ * ## Ràng buộc thật là CHIỀU DỌC, không phải chiều ngang
  *
- * Bản trước đặt 66 với khung 7/5 chỉ cho ra ~43, tức vừa đúng mép, và Sao Thổ
- * bị chặt đôi theo một đường thẳng đứng.
+ * Hai lần trước tôi tính nửa bề ngang khung nhìn **tại mặt phẳng gốc** rồi kết
+ * luận 66 rồi 72 là đủ. Cả hai lần đều bị báo "mô hình bị khuyết bên dưới", vì
+ * phép tính sai chỗ: mép quỹ đạo **gần camera nhất** nằm ở độ sâu nhỏ hơn
+ * nhiều so với gốc, mà khung nhìn ở độ sâu nhỏ thì hẹp hơn.
+ *
+ * Tính đúng, với camera ở `[0, d/2, d]` nhìn về gốc và fov dọc 45°, cho điểm
+ * gần nhất `(0, 0, R)` của quỹ đạo bán kính R:
+ *
+ *   lệch xuống  = 0,447 · R          ← KHÔNG phụ thuộc d
+ *   độ sâu      = 1,1176·d − 0,894·R
+ *   nửa khung   = 0,4142 · độ sâu
+ *
+ * Lọt khung khi `0,4142·(1,1176d − 0,894R) > 0,447R`, rút gọn thành
+ * **`d > 1,766·R`**.
+ *
+ * Sao Hải Vương ở 43, cộng bán kính hành tinh thì R ≈ 45 → cần d > 79,5. Kiểm
+ * bằng số: d=72 cho lệch xuống 20,1 với nửa khung 16,7 (cắt); d=88 cho 20,1 so
+ * với 24,1 (dư 20%).
+ *
+ * Lùi ra thì mô hình nhỏ đi, nên khung bù lại bằng `max-w-3xl`.
  */
-const CAMERA_DISTANCE = 72;
+const CAMERA_DISTANCE = 88;
 
 const SolarScene = dynamic(
   () => import("@/components/solar/scene").then((m) => m.SolarScene),
@@ -91,7 +106,7 @@ export function SolarPreview() {
      */
     <div
       aria-hidden
-      className="relative mx-auto aspect-[16/9] w-full max-w-2xl"
+      className="relative mx-auto aspect-[16/9] w-full max-w-3xl"
     >
       {/*
        * Chỗ đứng: minh hoạ quỹ đạo bằng CSS, có mặt trong HTML đầu tiên.
