@@ -140,6 +140,9 @@ jobs:
           MEILISEARCH_HOST: ${{ secrets.MEILISEARCH_HOST }}
           MEILISEARCH_MASTER_KEY: ${{ secrets.MEILISEARCH_MASTER_KEY }}
         run: |
+          # Mốc này quyết định "bài mới" nghĩa là gì. Lấy trước khi chạy, vì
+          # publishedAt do publish.ts ghi trong lúc chạy.
+          echo "STARTED=$(date -u +%Y-%m-%dT%H:%M:%SZ)" >> "$GITHUB_ENV"
           set +e
           npm run pipeline -- \
             --count "${{ inputs.count || 0 }}" \
@@ -173,6 +176,22 @@ jobs:
         # có cờ này thì bước rà chỉ nhìn bài đã PUBLISHED, tức là mù đúng chỗ
         # cần thấy nhất.
         run: npm run publish:check -- --draft || true
+
+      # Trang tóm tắt của lượt chạy — thứ mở ra là thấy ngay, không phải lội log.
+      # Đọc thẳng CSDL chứ không đọc lời agent tự khai: lượt bị cắt giữa chừng
+      # không kịp khai gì, nhưng publishedAt thì đã ghi rồi.
+      - name: Tóm tắt bài mới
+        if: always()
+        working-directory: sciencepedia
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          NEXT_PUBLIC_SITE_URL: ${{ secrets.NEXT_PUBLIC_SITE_URL }}
+        run: |
+          {
+            echo "## Bài mới trong lượt này"
+            echo ""
+            npm run --silent report:published -- --since "$STARTED" || echo "Không đọc được danh sách bài."
+          } >> "$GITHUB_STEP_SUMMARY"
 
       - name: Lưu báo cáo
         if: always()

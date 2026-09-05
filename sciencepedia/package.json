@@ -17,6 +17,7 @@
     "images:credit": "tsx --env-file-if-exists=.env scripts/backfill-image-credit.ts",
     "graph:check": "tsx --env-file-if-exists=.env scripts/check-graph.ts",
     "publish:check": "tsx --env-file-if-exists=.env scripts/check-publish.ts",
+    "report:published": "tsx --env-file-if-exists=.env scripts/published-since.ts",
     "db:seed": "tsx --env-file-if-exists=.env prisma/seed.ts",
     "search:reindex": "tsx --env-file-if-exists=.env scripts/reindex.ts",
     "storage:setup": "tsx --env-file-if-exists=.env scripts/setup-storage.ts",
