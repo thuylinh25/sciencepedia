@@ -317,3 +317,131 @@ Quy tắc: trước khi gỡ một khối khỏi giao diện, `grep` tên trư�
 `lib/seo.ts` và mọi chỗ sinh metadata. Dữ liệu bị gỡ khỏi mắt người đọc mà còn
 nguyên trong lời khai với máy là một dạng nói dối có hệ thống, và nó im lặng —
 không lỗi, không cảnh báo, chỉ có chế tài về sau.
+
+---
+
+## Lệnh sửa chạy xong mà không đổi gì là bằng chứng, không phải thất bại
+
+`npm ci` trên CI báo `package.json` và `package-lock.json` lệch nhau, kèm đúng
+một lời khuyên: chạy `npm install`. Chủ dự án chạy, rồi báo vẫn hỏng.
+
+Dữ kiện quyết định nằm ở chỗ không ai để ý: `git status` **sạch**. `npm install`
+đã chạy và không sửa một byte nào của lock file. Nghĩa là ở máy đó, hai file
+*đang* khớp — nên mọi cách sửa dữ liệu đều vô nghĩa, kể cả sinh lại lock.
+
+Chỗ lệch là công cụ, không phải dữ liệu: npm 12 ở máy không còn ghi `overrides`
+vào entry gốc của lock, còn npm 10 mà `setup-node` kèm theo Node 22 vẫn đòi
+trường đó. Lock không sai — `postcss@8.5.26` và `deepmerge-ts@8.0.2` đều đã được
+áp đúng.
+
+Quy tắc: khi lệnh-được-khuyên-dùng chạy xong mà không tạo ra thay đổi nào, đừng
+chạy lại và đừng đổi cách sửa dữ liệu. Đó là câu trả lời "dữ liệu ở đây vốn đã
+đúng", và câu hỏi tiếp theo phải là **hai bên có đang dùng cùng phiên bản công
+cụ không**. Sửa ở phía CI, vì lock còn được viết lại bằng npm ở máy — chỗ đứng
+yên nằm ở nơi ít thay đổi hơn.
+
+---
+
+## Giới hạn mà tác nhân nhìn thấy được sẽ định hình công việc, không canh gác nó
+
+Trần chi phí đặt cho một lượt chạy pipeline. Bốn lượt liên tiếp:
+
+| Trần | Chi phí | Kết cục |
+|---|---|---|
+| $3 | $0.88 | hàng đợi đang bị chặn |
+| $4 | $3.66 | **"ngân sách phiên gần cạn nên dừng ở đây"** |
+| $5 | $4.32 | xong |
+| $5 | $5.04 | chạm trần, cắt giữa chừng |
+
+Chi phí luôn dừng sát ngay dưới trần, dù trần là bao nhiêu. Agent **đọc được**
+ngân sách còn lại rồi tự cắt việc — lượt thứ hai nói thẳng ra điều đó. Nâng $5
+lên $6 chỉ dời chỗ nó dừng lên $5.9.
+
+Quy tắc: một giới hạn mà tác nhân quan sát được sẽ trở thành mục tiêu nó nhắm
+tới, không phải rào chắn nó vô tình chạm. Muốn nó là rào chắn thì đặt xa tới mức
+công việc bình thường không bao giờ nhìn thấy — hoặc bỏ hẳn và canh bằng đại
+lượng nó không đọc được, ở đây là `timeout-minutes` của runner.
+
+Hệ quả riêng cho gói đăng ký: con số USD không phải tiền, chỉ là ước tính quy
+đổi. Đặt "trần chi phí" sát chi phí thật là dựng một cái đích chứ không dựng
+một cái phanh.
+
+---
+
+## Cảnh báo trong code mô tả bối cảnh của nó, không mô tả hệ thống của bạn
+
+`publish.ts` có một chú thích dài cảnh báo rằng bỏ qua reindex là "hỏng im lặng:
+bài đã lên site nhưng tìm không ra". Lượt chạy trên Actions rơi đúng vào nhánh
+nuốt lỗi đó. Tôi đọc chú thích, kết luận đây là cái bẫy nó cảnh báo, và commit
+một bản sửa truyền secret Meilisearch vào workflow.
+
+`docs/DEPLOY-VERCEL.md` nói ngược lại ở ba chỗ: *"tìm kiếm chạy bằng full-text
+search của Postgres nên không cần host Meilisearch"*, `MEILISEARCH_HOST` —
+*"Bỏ trống trên Vercel"*. Nhánh nuốt lỗi **chính là đường chạy đúng** của
+production. Commit bị gỡ.
+
+Quy tắc: chú thích cảnh báo được viết trong một bối cảnh cụ thể và thường không
+nói ra bối cảnh ấy. Trước khi hành động theo một cảnh báo trong code, kiểm tài
+liệu triển khai xem bối cảnh đó có tồn tại trên hệ thống thật không. Một câu
+"hỏng im lặng" viết cho môi trường A là mô tả hành vi đúng ở môi trường B.
+
+---
+
+## Câu hỏi không kèm cách kiểm chứng sẽ nhận về một phỏng đoán
+
+Tôi hỏi "production có đặt `MEILISEARCH_HOST` không?" và đưa hai lựa chọn. Nhận
+được "có đặt". Tôi dựng bản sửa trên câu trả lời đó.
+
+Câu trả lời sai — và sai một cách dự đoán được, vì tôi hỏi một điều nằm trong
+bảng cấu hình Vercel mà không kèm cách mở bảng đó ra xem. Người trả lời không
+nói dối; họ ước lượng, đúng như bất kỳ ai bị hỏi một câu không tra cứu được
+ngay. Dấu hiệu lộ ra một lượt sau: họ hỏi "hai biến đó lấy ở đâu" — người đã
+đặt biến thì không hỏi câu ấy.
+
+Quy tắc: trước khi hỏi, tự trả lời bằng repo nếu trả lời được — ở đây
+`DEPLOY-VERCEL.md` đã có sẵn đáp án và tôi chưa đọc. Nếu buộc phải hỏi, đính kèm
+cách kiểm: một lệnh, một đường dẫn tới đúng trang cấu hình, hoặc một lựa chọn
+"chưa biết, kiểm giúp". Nó nối với mục *"Đưa người báo lỗi một phép kiểm cho ra
+true/false"* ở trên: quy tắc đó cho chẩn đoán lỗi, quy tắc này cho **mọi câu hỏi
+về trạng thái hệ thống**.
+
+---
+
+## So mốc thời gian với lúc BẮT ĐẦU, không lúc kết thúc
+
+Bước gửi Telegram đã lên `main` lúc 21:34. Bài mới được publish lúc 21:58. Không
+có thông báo nào. Nhìn hai con số thì bước gửi đã có mặt trước 24 phút, nên
+nghi ngờ đổ sang secret sai.
+
+Workflow được đọc **lúc lượt chạy khởi động**, không lúc nó kết thúc. API công
+khai của GitHub cho con số dứt điểm: lượt đó bắt đầu 14:26:53Z — tức 21:26 giờ
+Việt Nam, sớm hơn commit 8 phút — và danh sách bước của nó chỉ có 9 mục, không
+có bước loan báo nào. Secret không sai; workflow lúc ấy chưa có chỗ nào để gửi.
+
+Quy tắc: với mọi tiến trình chạy dài — lượt CI, job nền, agent — mốc để so là
+thời điểm **bắt đầu**, vì đó là lúc nó chụp lại cấu hình và sống với bản chụp ấy
+tới hết đời. Push giữa chừng không cứu được lượt đang chạy. Và với repo public,
+`api.github.com/repos/<owner>/<repo>/actions/runs` trả lời được điều này mà
+không cần đăng nhập — đọc nó trước khi suy luận về thời gian.
+
+---
+
+## Hàng đợi phải phân biệt "đã có" với "đã xong"
+
+Prompt của pipeline dặn: lấy chủ đề tiếp theo trong `topic-queue.md`, **bỏ qua
+dòng nào đã có bài**. Một lượt chạy bị trần chi phí cắt giữa chừng để lại
+`ba-dinh-luat-newton` ở trạng thái DRAFT — đã qua fact-check, đã được editor
+duyệt, đủ nguồn, đủ link, chỉ thiếu đúng bước 11.
+
+Với hàng đợi thì chủ đề đó "đã có bài". Không lượt nào sau đó nhặt lại. Nếu tôi
+không truy vấn tay thì nó nằm đó vĩnh viễn, và $5 công đã bỏ ra mất trắng.
+
+Bước rà cuối cũng không cứu được: `publish:check` không kèm `--draft` chỉ nhìn
+bài đã PUBLISHED — mù đúng với thứ mà một lượt bị cắt tạo ra.
+
+Quy tắc: trong mọi quy trình có thể bị cắt giữa chừng, "đã tồn tại" không được
+phép đồng nghĩa với "đã hoàn thành". Hàng đợi phải đọc **trạng thái**, không đọc
+sự tồn tại; và bước kiểm tra sau sự cố phải nhìn được **trạng thái trung gian**,
+vì đó chính là dấu vết mà sự cố để lại. Hệ quả thứ ba: việc dở phải được nhặt
+lại *trước* khi nhận việc mới, nếu không mỗi lần bị cắt lại thêm một món nợ
+không ai đòi.
