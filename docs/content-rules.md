@@ -6,7 +6,7 @@ Phán quyết biên tập đã chốt. Chủ sở hữu: `science-editor` (quy�
 Đây là những quyết định mà **đọc code không suy ra được** — nếu không ghi lại, lần
 sau sẽ có người "sửa cho hay hơn" đúng chỗ vừa được cân nhắc.
 
-Cập nhật: 2026-09-03
+Cập nhật: 2026-09-05
 
 ---
 
@@ -189,3 +189,47 @@ không mang được. Nếu sau này cần mô tả ảnh, thêm cột chứ đ�
 
 Đổi ảnh bìa thì đặt `coverImageCredit` và `coverImageCreditEn` về `null` rồi
 chạy lại `images:credit -- --write`, đừng sửa tay.
+
+## Byline người duyệt: một tài khoản tổ chức, không bịa tên người
+
+Chốt 2026-09-05, khi duyệt `sao-moc-quay-nhanh-nhat`.
+
+Mọi bài qua gate accuracy ghi `reviewedById` = tài khoản ADMIN **"Ban biên tập
+Sciencepedia"**. Chuẩn của `science-editor` đòi "named reviewer", nhưng hiện không
+có người thật đọc từng bài — gán một tên riêng vào ô đó là **quy công sai người**,
+cùng loại lỗi với ghi công ảnh sai. Byline tổ chức nói đúng sự thật: có một quy
+trình duyệt, không có một cá nhân bảo chứng.
+
+**Phải nhất quán.** Lúc tổ chức lúc tên riêng thì người đọc suy ra rằng bài có tên
+người được soi kỹ hơn — một hàm ý mà ta không có gì bảo đảm.
+
+**Điều kiện đổi sang tên người**: khi có biên tập viên thật ký từng bài. Lúc đó, và
+chỉ lúc đó.
+
+## Trích dẫn resolve đúng bài KHÔNG có nghĩa là bài đó nói điều đang viết
+
+Chốt 2026-09-05. Lỗi đã lọt tới `PUBLISHED` một lần.
+
+`sao-moc-quay-nhanh-nhat` trích Pollack et al. 1996 — DOI đúng, Crossref xác nhận,
+link 200. Nhưng cơ chế đặt cạnh trích dẫn ("dòng khí đập vào hành tinh theo hướng
+lệch tâm, bơm thêm mô-men động lượng") **không có trong bài báo đó**: Pollack là mô
+hình bồi tụ 1D chuẩn tĩnh, không hề bàn tới spin. Câu văn tự tin cộng citation hợp
+lệ tạo ra thứ khó phát hiện nhất — một claim bịa mang dấu kiểm định.
+
+**Kiểm link không bắt được loại lỗi này.** Chỉ đọc nguồn mới bắt được. Vì vậy gate
+accuracy phải fetch nguồn gốc, không đối chiếu bản thảo với chính bản thảo.
+
+**Lặp lần thứ hai trong một batch → dừng batch, sửa prompt `article-generator`.**
+
+### Ba lỗi cùng đợt, ghi lại để nhận mặt
+
+- **Tỉ số chưa từng được tính.** "gần 28 lần Trái Đất" — không nói 28 lần *cái gì*,
+  và số thật là 27,0. Cụm tỉ số không nêu rõ tử/mẫu là dấu hiệu nó được đoán.
+- **Làm tròn lên con số của chính mình.** Độ dẹt 0,06487 viết thành "gần 7%". Cùng
+  họ với "35+" khi số thật là 35.
+- **Lấy cơ chế hiện tại giải thích sự kiện lúc hình thành.** Dynamo hydro kim loại
+  của Sao Mộc hôm nay bị gán làm cái phanh của 4,5 tỉ năm trước. Lệch mốc thời gian
+  đọc rất trôi chảy nên khó thấy.
+
+**Đoạn cảnh báo ở cuối bài không che được vật lý sai ở thân bài.** Nó hạ mức độ
+chắc chắn, không biến phát biểu sai thành đúng.
