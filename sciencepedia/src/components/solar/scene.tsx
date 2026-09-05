@@ -315,22 +315,23 @@ export function SolarScene({
       {!transparent && <color attach="background" args={["#05070f"]} />}
       <ambientLight intensity={0.28} />
 
-      {/* Khung trong suốt thì KHÔNG vẽ lớp sao riêng: nền phía sau đã có
-          starfield của chính khối đó, và lớp sao của cảnh phủ kín ô vuông
-          canvas nên tạo một mảng sáng có cạnh thẳng — chính là thứ trước đây
-          phải lấy mặt nạ đi che, mà mặt nạ thì lại cắt mất rìa quỹ đạo. Bỏ
-          nguồn gây lỗi rẻ hơn che nó. */}
-      {!transparent && (
-        <Stars
-          radius={220}
-          depth={70}
-          count={5000}
-          factor={4}
-          saturation={0}
-          fade
-          speed={0.4}
-        />
-      )}
+      {/* Lớp sao chạy ở MỌI trường hợp, kể cả khung trong suốt.
+
+          Từng bị tắt khi `transparent` để trị một mảng sáng cạnh thẳng ở mép
+          canvas. Chẩn đoán đó sai: mảng sáng đến từ nền đục và mặt nạ toả
+          tròn, cả hai đã gỡ. Tắt lớp sao chỉ làm khối mất hết chiều sâu — đã
+          bị báo "mất hết hiệu ứng ngôi sao xung quanh".
+
+          `fade` bật sẵn nên sao ở xa mờ dần, không tạo cạnh cứng. */}
+      <Stars
+        radius={220}
+        depth={70}
+        count={5000}
+        factor={4}
+        saturation={0}
+        fade
+        speed={0.4}
+      />
 
       <Sun radius={sunRadius} />
 
