@@ -17,13 +17,13 @@ on:
   workflow_dispatch:
     inputs:
       count:
-        description: "Số chủ đề chạy trong lượt này"
+        description: "Số chủ đề (0 = chạy liên tục tới khi hết hạn mức)"
         required: false
-        default: "1"
+        default: "0"
       budget:
-        description: "Hàng rào chống lặp (USD ước tính) — không phải hạn mức tiền"
+        description: "Trần chi phí USD (0 = không đặt trần, chạy tới hết hạn mức)"
         required: false
-        default: "20"
+        default: "0"
       model:
         description: "Model của luồng chính (science-editor luôn là opus)"
         required: false
@@ -47,9 +47,11 @@ concurrency:
 jobs:
   run:
     runs-on: ubuntu-latest
-    # Một bài qua 11 bước, có nghiên cứu nguồn, chạy hàng chục phút. Trần 6 giờ
-    # của Actions là quá dư; 90 phút đủ rộng mà vẫn chặn được vòng lặp kẹt.
-    timeout-minutes: 90
+    # Trước đây 90 phút là đủ vì mỗi lượt chỉ làm 1 bài. Giờ lượt chạy kéo dài
+    # tới khi hết hạn mức tài khoản, nên timeout không còn là hàng rào theo bài
+    # nữa — nó là hàng rào chống lặp DUY NHẤT sau khi bỏ trần chi phí. Đặt sát
+    # trần 6 giờ của Actions: đủ cho một ngày quota, vẫn chặn được vòng lặp kẹt.
+    timeout-minutes: 350
 
     steps:
       - uses: actions/checkout@v4
@@ -134,8 +136,8 @@ jobs:
         run: |
           set +e
           npm run pipeline -- \
-            --count "${{ inputs.count || 1 }}" \
-            --budget "${{ inputs.budget || 20 }}" \
+            --count "${{ inputs.count || 0 }}" \
+            --budget "${{ inputs.budget || 0 }}" \
             --model "${{ inputs.model || 'sonnet' }}" \
             ${{ inputs.dry_run && '--dry-run' || '' }}
           code=$?

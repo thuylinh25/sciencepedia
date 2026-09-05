@@ -10,9 +10,10 @@ import {
 /**
  * Chạy pipeline nội dung 11 bước không cần người ngồi cạnh.
  *
- *   npm run pipeline -- --count 1            # mặc định, chạy thật
+ *   npm run pipeline                         # chạy liên tục tới khi hết hạn mức
+ *   npm run pipeline -- --count 1            # dừng sau 1 bài
  *   npm run pipeline -- --count 1 --dry-run  # agent không được ghi CSDL
- *   npm run pipeline -- --budget 30          # nới hàng rào chống lặp cho cả lượt
+ *   npm run pipeline -- --budget 30          # đặt lại trần (mặc định: KHÔNG có trần)
  *   npm run pipeline -- --model opus         # ghi đè model của luồng chính
  *
  * ## Vì sao luồng chính chạy Sonnet còn science-editor chạy Opus
@@ -49,7 +50,12 @@ import {
  *
  * - Hạn mức phiên dùng CHUNG với phiên làm việc tương tác của người. Chạy
  *   nhiều bài một lượt sẽ cướp quota của chính người đang dùng Claude Code.
- * - Nên `--count 1` là mặc định đúng, không phải mặc định tạm.
+ * - **Chốt 2026-09-05, ĐẢO quyết định cũ: chạy liên tục tới khi hết hạn mức.**
+ *   Mặc định cũ là `--count 1`, cố ý chừa quota cho phiên tương tác của người.
+ *   Chủ dự án chọn đánh đổi ngược lại: ưu tiên sản lượng bài, chấp nhận lượt
+ *   chạy tự động ăn hết quota của ngày. Đã cân nhắc — đừng "sửa lại cho an toàn".
+ * - Kéo theo: GIỜ chạy quan trọng hơn hẳn trước. Lượt chạy giờ không nhường
+ *   quota nữa, nên nó phải rơi vào lúc không ai làm việc.
  * - Nên lịch cron đặt lúc 22:00 UTC (05:00 giờ Việt Nam): quota hồi lại qua
  *   đêm và lượt chạy không đụng giờ làm việc.
  * - `maxBudgetUsd` KHÔNG cứu được chuyện này — nó là trần cho một lượt chạy,
@@ -63,9 +69,11 @@ import {
  * trần, và lượt 06:01 nói thẳng ra lý do: "ngân sách phiên gần cạn nên dừng
  * ở đây". Đó là trần đang tạo hình công việc chứ không phải canh gác nó.
  *
- * Một bài trọn 11 bước tốn khoảng $4–5. Trần đặt $20: đủ xa để không bao giờ
- * cắt ngang một bài bình thường, đủ gần để một vòng lặp hỏng bị chặn trước
- * khi kịp ăn hết hạn mức của tài khoản.
+ * Chốt 2026-09-05: BỎ trần mặc định. Khi mục tiêu là chạy tới lúc hết hạn mức
+ * thì MỌI con số trần đều cắt ngang việc sớm hơn hạn mức — đúng cái không muốn.
+ * Hàng rào chống lặp chuyển sang `timeout-minutes` của workflow: nó chặn theo
+ * thời gian thật, không đoán qua tiền. Vẫn đặt lại được bằng `--budget <số>`
+ * khi cần một lượt chạy thử có kiểm soát.
  *
  * ## Vì sao settingSources chỉ có "project"
  *
@@ -148,7 +156,23 @@ function flagValue(argv: string[], name: string): string | undefined {
 
 function buildPrompt(count: number, dryRun: boolean): string {
   return [
-    `Dùng agent \`content-curator\` để đưa ${count} chủ đề tiếp theo qua trọn vẹn chuỗi 11 bước trong CLAUDE.md.`,
+    count > 0
+      ? "Dùng agent `content-curator` để đưa " + count + " chủ đề tiếp theo qua trọn vẹn chuỗi 11 bước trong CLAUDE.md."
+      : "Dùng agent `content-curator` để đưa chủ đề qua trọn vẹn chuỗi 11 bước trong CLAUDE.md, " +
+        "LIÊN TỤC hết bài này sang bài khác. Không tự dừng khi xong một bài — chỉ dừng khi hết hạn mức.",
+    "",
+    "## Việc ĐẦU TIÊN: nhặt lại việc dở của lượt trước",
+    "",
+    "Chạy `npm run publish:check -- --draft` trước khi làm bất cứ gì khác.",
+    "Bài nào đang ở DRAFT là việc dở của một lượt chạy bị cắt giữa chừng.",
+    "Làm nốt những bài đó TRƯỚC khi lấy chủ đề mới khỏi hàng đợi.",
+    "",
+    "Vì sao ưu tiên tuyệt đối: hàng đợi bỏ qua dòng nào ĐÃ có bài, nên một bản",
+    "nháp bị bỏ quên sẽ không lượt chạy nào nhặt lại — nó thành bài mồ côi vĩnh",
+    "viễn. Chuyện này đã xảy ra thật ngày 2026-09-05.",
+    "",
+    "Bù đúng phần còn thiếu mà `publish:check` liệt kê. ĐỪNG viết lại từ đầu:",
+    "phần đã qua fact-check và đã được editor duyệt thì giữ nguyên.",
     "",
     "## Lấy chủ đề ở đâu",
     "",
@@ -195,6 +219,15 @@ function buildPrompt(count: number, dryRun: boolean): string {
     "Chỉ báo cáo những gì bạn đã tận mắt thấy kết quả. Gặp chỗ mơ hồ thì chọn",
     "phương án dè dặt hơn, ghi lại lựa chọn, rồi đi tiếp.",
     "",
+    "## Hết hạn mức giữa chừng — để lại hiện trường sạch",
+    "",
+    "Lượt chạy này cố ý không có trần chi phí: nó chạy tới khi hết hạn mức tài",
+    "khoản. Nghĩa là bạn SẼ bị cắt giữa chừng, và không báo trước.",
+    "",
+    "Nên đừng ôm nhiều bài dở cùng lúc. Làm xong hẳn một bài rồi mới sang bài",
+    "kế: một bài PUBLISHED cộng một bài chưa bắt đầu thì lượt sau chạy tiếp",
+    "được, còn năm bài dở dang mỗi bài một bước thì không ai gỡ nổi.",
+    "",
     "## Kết thúc bằng báo cáo",
     "",
     "Mỗi chủ đề một dòng: slug, trạng thái cuối (PUBLISHED / DRAFT), và nếu là DRAFT thì lý do bị chặn.",
@@ -203,8 +236,10 @@ function buildPrompt(count: number, dryRun: boolean): string {
 
 async function main() {
   const argv = process.argv.slice(2);
-  const count = Number(flagValue(argv, "count") ?? 1);
-  const budget = Number(flagValue(argv, "budget") ?? 20);
+  // 0 = không giới hạn: chạy hết bài này sang bài khác tới khi hết hạn mức.
+  const count = Number(flagValue(argv, "count") ?? 0);
+  // 0 = không đặt trần. Xem "Trần chi phí" ở đầu file.
+  const budget = Number(flagValue(argv, "budget") ?? 0);
   const model = flagValue(argv, "model") ?? "sonnet";
   const dryRun = argv.includes("--dry-run");
 
@@ -240,8 +275,8 @@ async function main() {
   };
 
   console.log(`Repo:      ${REPO_ROOT}`);
-  console.log(`Chủ đề:    ${count}`);
-  console.log(`Trần chi:  $${budget}`);
+  console.log(`Chủ đề:    ${count > 0 ? count : "không giới hạn (tới khi hết hạn mức)"}`);
+  console.log(`Trần chi:  ${budget > 0 ? "$" + budget : "không đặt"}`);
   console.log(`Model:     ${model} (science-editor: opus)`);
   console.log(`Chế độ:    ${dryRun ? "CHẠY THỬ (không ghi CSDL)" : "chạy thật"}\n`);
 
@@ -292,7 +327,8 @@ async function main() {
           CLAUDE_CODE_MAX_SUBAGENT_SPAWN_DEPTH: "1",
           CLAUDE_CODE_MAX_CONCURRENT_SUBAGENTS: "3",
         },
-        maxBudgetUsd: budget,
+        // Không đặt trần khi budget = 0 — SDK chạy tới khi hết hạn mức.
+        ...(budget > 0 ? { maxBudgetUsd: budget } : {}),
       },
     })) {
       if (message.type === "assistant") {
@@ -341,9 +377,9 @@ async function main() {
     ...(quotaHit
       ? ["- Hết hạn mức là kết cục BÌNH THƯỜNG với gói đăng ký. Đợi reset, chạy lại; không sửa gì."]
       : []),
-    `- Chi phí ước tính: $${cost.toFixed(2)} (trần $${budget})`,
+    `- Chi phí ước tính: $${cost.toFixed(2)}${budget > 0 ? ` (trần $${budget})` : " (không đặt trần)"}`,
     `- Thời gian: ${Math.round((Date.now() - started) / 1000)}s`,
-    `- Chủ đề yêu cầu: ${count}${dryRun ? " (chạy thử)" : ""}`,
+    `- Chủ đề yêu cầu: ${count > 0 ? count : "không giới hạn"}${dryRun ? " (chạy thử)" : ""}`,
     `- Lệnh bị hook từ chối: ${denied.length}`,
     ...denied.map((c) => `  - \`${c}\``),
     "",
