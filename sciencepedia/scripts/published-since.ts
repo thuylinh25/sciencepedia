@@ -1,3 +1,5 @@
+import { pathToFileURL } from "node:url";
+
 import { PrismaClient } from "@prisma/client";
 
 /**
@@ -28,6 +30,25 @@ function flagValue(argv: string[], name: string): string | undefined {
   return argv.find((a) => a.startsWith(`--${name}=`))?.split("=").slice(1).join("=");
 }
 
+/**
+ * Bài đã publish kể từ `since`. Export để bước thông báo dùng CHUNG một định
+ * nghĩa "bài mới" với bước tóm tắt — hai chỗ đếm khác nhau thì sớm muộn sẽ
+ * báo hai con số khác nhau và không ai biết tin cái nào.
+ */
+export async function publishedSince(since: Date) {
+  return prisma.article.findMany({
+    where: { status: "PUBLISHED", publishedAt: { gte: since } },
+    select: {
+      slug: true,
+      title: true,
+      summary: true,
+      publishedAt: true,
+      category: { select: { slug: true, name: true } },
+    },
+    orderBy: { publishedAt: "asc" },
+  });
+}
+
 async function main() {
   const argv = process.argv.slice(2);
   const asJson = argv.includes("--json");
@@ -41,17 +62,7 @@ async function main() {
     return;
   }
 
-  const rows = await prisma.article.findMany({
-    where: { status: "PUBLISHED", publishedAt: { gte: since } },
-    select: {
-      slug: true,
-      title: true,
-      summary: true,
-      publishedAt: true,
-      category: { select: { slug: true, name: true } },
-    },
-    orderBy: { publishedAt: "asc" },
-  });
+  const rows = await publishedSince(since);
 
   const base = process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ?? "";
 
@@ -91,9 +102,18 @@ async function main() {
   }
 }
 
-main()
-  .catch((error) => {
-    console.error(error);
-    process.exitCode = 1;
-  })
-  .finally(() => prisma.$disconnect());
+/* Cùng khuôn với check-publish.ts: file này vừa là lệnh chạy tay vừa là module
+   được import. Không có chốt này thì mỗi lần import kéo theo một lượt in danh
+   sách vào giữa output của người gọi. */
+const invokedDirectly =
+  process.argv[1] !== undefined &&
+  import.meta.url === pathToFileURL(process.argv[1]).href;
+
+if (invokedDirectly) {
+  main()
+    .catch((error) => {
+      console.error(error);
+      process.exitCode = 1;
+    })
+    .finally(() => prisma.$disconnect());
+}
