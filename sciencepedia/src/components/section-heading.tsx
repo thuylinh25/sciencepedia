@@ -56,7 +56,23 @@ export function SectionHeading({
             align === "center" && "mx-auto",
           )}
         />
-        <h2 className="font-display text-3xl font-bold tracking-tight text-balance sm:text-4xl">
+        {/* `text-2xl` dưới `sm`, không phải `text-3xl`.
+
+            Trả lại toàn bộ bề ngang cho tiêu đề (bỏ hàng ngang với link) là
+            điều kiện CẦN nhưng chưa đủ. Ở 360px khung nội dung rộng 320px, mà
+            tiêu đề dài nhất — "Mới trong kho tri thức", 22 ký tự — ở 30px đậm
+            cần chừng 330px. Vẫn tràn, chỉ là tràn ít hơn trước.
+
+            24px thì 22 ký tự còn chừng 264px, dư chỗ cho cả bản tiếng Anh
+            ("New in the library") lẫn các tiêu đề động như tên thẻ.
+
+            KHÔNG dùng `whitespace-nowrap` để ép một dòng: vài chỗ truyền tiêu
+            đề động (tên thẻ, tên danh mục) không có trần độ dài, và ở đó
+            nowrap đổi một dòng gãy lấy một dòng tràn ra ngoài màn hình.
+
+            Bậc giữa `sm:text-3xl` giữ nhịp: 640px không cần tới 36px, và nhảy
+            thẳng 24 → 36 làm chữ giật một nấc thấy rõ ở đúng ngưỡng đó. */}
+        <h2 className="font-display text-2xl font-bold tracking-tight text-balance sm:text-3xl lg:text-4xl">
           {title}
         </h2>
         {subtitle && (

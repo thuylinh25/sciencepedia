@@ -177,7 +177,7 @@ export default async function HomePage({
                 <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3.5 py-1 text-xs font-medium tracking-widest text-white/85 uppercase">
                   <Orbit className="size-3.5" /> 3D · WebGL
                 </span>
-                <h2 className="font-display text-4xl font-bold tracking-tight text-balance text-white sm:text-5xl">
+                <h2 className="font-display text-3xl font-bold tracking-tight text-balance text-white sm:text-4xl lg:text-5xl">
                   {t("solarTitle")}
                 </h2>
                 <p className="mt-4 max-w-lg text-lg leading-relaxed text-pretty text-white/70">
@@ -223,7 +223,7 @@ export default async function HomePage({
                 <span className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-3.5 py-1 text-xs font-medium tracking-widest text-primary-strong uppercase">
                   <Sparkles className="size-3.5" /> AI
                 </span>
-                <h2 className="mt-4 font-display text-4xl font-bold tracking-tight text-balance sm:text-5xl">
+                <h2 className="mt-4 font-display text-3xl font-bold tracking-tight text-balance sm:text-4xl lg:text-5xl">
                   {t("aiTitle")}
                 </h2>
                 <p className="mt-4 text-lg leading-relaxed text-pretty text-muted-foreground">
