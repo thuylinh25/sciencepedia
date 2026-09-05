@@ -235,3 +235,85 @@ Quy tắc: khi hành vi hỏng do một **mặc định của công cụ**, đ�
 mong muốn ("chạy tới hết") — nêu tên tham số và giá trị phải đặt. Mô tả ý định
 chỉ sửa được lỗi do agent chọn sai; nó không sửa được lỗi do agent không biết
 có một lựa chọn ở đó.
+
+---
+
+## Đếm chưa đủ — phải phân loại theo chức năng
+
+Trang bài hiện hai chỗ ghi nguồn. Quy tắc "đếm trước khi xoá" ở mục trên đã có
+sẵn, và lần này tôi làm đúng nó:
+
+```
+cả hai chỗ     : 22        chỉ trong thân bài : 0
+chỉ trong CSDL : 20        không có gì        : 0
+```
+
+Không bài nào phụ thuộc duy nhất vào khối trong thân bài, nên phép đếm nói
+"xoá an toàn". **Phép đếm sai.** Phân tiếp theo *chức năng* thì bức tranh đổi
+hẳn: 21 khối là ghi công tác phẩm phái sinh ("viết lại từ… Bản quyền thuộc
+về…"), chỉ 1 khối là danh sách trích dẫn trùng CSDL. Bảng `Source` không mang
+được điều kiện giấy phép, nên xoá theo phép đếm là vi phạm giấy phép 21 bài.
+
+Đếm trả lời "có bao nhiêu". Nó không trả lời **"chúng có cùng loại không"**.
+Trước khi xoá hàng loạt theo một con số, hỏi thêm: những thứ tôi sắp gộp làm
+một có cùng lý do tồn tại không?
+
+---
+
+## Một phép đo đúng trên dữ liệu sai vẫn cho kết luận sai
+
+Ba lần trong một ngày, cùng một hình dạng:
+
+| Phép kiểm | Trả lời đúng câu | Câu thật sự cần hỏi |
+|---|---|---|
+| "≥3 nguồn bậc 1–2" | đếm đúng cột `tier` | VACA bị gán tier 2, thực chất là tier 4 |
+| "link nội bộ resolve được" | slug có trong CSDL | URL có mở ra trang — vẫn 404 vì thiếu tiền tố locale |
+| `--links` trả 200 | máy chủ còn sống | tài liệu có nói điều đang trích — Pollack 1996 trả 200 và không hề bàn tới spin |
+
+Cả ba phép kiểm đều chạy đúng như thiết kế. Khoảng cách nằm giữa **câu chúng
+trả lời** và **câu ta tưởng chúng trả lời**, và khoảng cách đó đủ rộng để lọt
+lỗi tới production.
+
+Quy tắc: khi thêm một phép kiểm, viết ra **bằng lời** câu nó thật sự trả lời,
+rồi đặt cạnh câu mình muốn hỏi. Chỗ hai câu lệch nhau là chỗ sẽ lọt lỗi — ghi
+nó vào comment ngay, đừng chờ phát hiện lại.
+
+Hệ quả cho gate: `check-publish` là hàng rào cho những gì máy đo được. Nó
+không thay được khâu đọc nguồn, và comment trong nó phải nói rõ điều đó để
+lần sau không ai tin nhầm.
+
+---
+
+## Chặn hay cảnh báo: hỏi "sửa sau đắt hơn bao nhiêu", không hỏi "giá trị bây giờ"
+
+`entityId` có một nửa giá trị chưa hiện thực hoá — chưa có route learning path,
+`getPrerequisites` viết xong mà không component nào gọi. Xét theo giá trị hiện
+tại thì nên hạ xuống mức cảnh báo, nhất là khi nó đang chặn 41/41 bài.
+
+Vẫn để CHẶN, vì lý do nằm ở chiều thời gian: gắn entity **sau** đắt hơn hẳn
+gắn lúc viết — lúc đó phải đọc lại bài để biết nó trình bày khái niệm nào,
+còn lúc viết thì người viết đã biết.
+
+Ngược lại, ảnh bìa thiếu ghi công chỉ là CẢNH: chạy `images:credit` sau rẻ y
+như chạy bây giờ.
+
+Ranh giới là **"nợ đo được"** với **"nợ phải đào lại"**, không phải mức độ
+quan trọng của trường dữ liệu.
+
+---
+
+## Gỡ một khối hiển thị thì tìm xem có gì đang khai báo về nó
+
+Một commit gỡ khối trạng thái thẩm định khỏi trang bài viết vì nó cồng kềnh.
+Một commit khác phát `reviewedBy` + `dateReviewed` trong JSON-LD làm tín hiệu
+E-E-A-T. **Cả hai đúng riêng lẻ.** Ghép lại thì site khai dữ liệu không hiển
+thị — vi phạm đúng cái luật viết ngay đầu `lib/seo.ts`: *"chỉ khai báo những
+gì thật sự hiện trên trang"*.
+
+Không ai sai. Quyết định thứ hai không biết quyết định thứ nhất phụ thuộc vào
+nó, và không có gì trong quy trình bắt nó phải biết.
+
+Quy tắc: trước khi gỡ một khối khỏi giao diện, `grep` tên trường của nó trong
+`lib/seo.ts` và mọi chỗ sinh metadata. Dữ liệu bị gỡ khỏi mắt người đọc mà còn
+nguyên trong lời khai với máy là một dạng nói dối có hệ thống, và nó im lặng —
+không lỗi, không cảnh báo, chỉ có chế tài về sau.
