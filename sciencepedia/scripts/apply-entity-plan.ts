@@ -64,14 +64,13 @@ async function main() {
   const write = argv.includes("--write");
   const only = flagValue(argv, "only");
 
-  const path = resolve(
-    import.meta.dirname,
-    "..",
-    "..",
-    "docs",
-    "content",
-    "entity-plan.json",
-  );
+  // --file để áp một kế hoạch khác cùng định dạng (ví dụ một đợt link riêng)
+  // mà không phải ghi đè entity-plan.json.
+  const named = flagValue(argv, "file");
+  const path = named
+    ? resolve(process.cwd(), named)
+    : resolve(import.meta.dirname, "..", "..", "docs", "content", "entity-plan.json");
+  console.log(`Kế hoạch: ${path}`);
 
   let plan: Plan;
   try {

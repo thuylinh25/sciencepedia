@@ -1,0 +1,34 @@
+{
+  "backlinks": [
+    { "from": "vi-sao-hanh-tinh-tu-quay", "to": "su-ra-doi-cua-he-mat-troi",
+      "find": "lịch sử của chúng: đĩa tiền hành tinh",
+      "replace": "lịch sử của chúng: [đĩa tiền hành tinh](/articles/su-ra-doi-cua-he-mat-troi)",
+      "why": "Câu này chỉ thẳng vào giai đoạn hình thành — đúng chủ đề bài đích." },
+    { "from": "vi-sao-hanh-tinh-tu-quay", "to": "sao-thien-vuong",
+      "find": "Sao Thiên Vương bị lật nhào",
+      "replace": "[Sao Thiên Vương](/articles/sao-thien-vuong) bị lật nhào",
+      "why": "Bài đang lấy Sao Thiên Vương làm ngoại lệ chính; người đọc sẽ muốn xem hành tinh đó." },
+    { "from": "vi-sao-hanh-tinh-tu-quay", "to": "mat-troi",
+      "find": "cùng một chiều quanh Mặt Trời",
+      "replace": "cùng một chiều quanh [Mặt Trời](/articles/mat-troi)",
+      "why": "Nhắc Mặt Trời ở nghĩa thiên thể trung tâm, không phải cách nói bóng." },
+
+    { "from": "sao-moc-quay-nhanh-nhat", "to": "sao-moc",
+      "find": "Sao Mộc rộng gấp hơn 11 lần Trái Đất",
+      "replace": "[Sao Mộc](/articles/sao-moc) rộng gấp hơn 11 lần [Trái Đất](/articles/trai-dat)",
+      "why": "Câu mở bài so sánh trực tiếp hai thiên thể, cả hai đều có bài riêng." },
+    { "from": "sao-moc-quay-nhanh-nhat", "to": "su-ra-doi-cua-he-mat-troi",
+      "find": "khí bụi còn lại trong đĩa Mặt Trời",
+      "replace": "khí bụi còn lại trong [đĩa Mặt Trời](/articles/su-ra-doi-cua-he-mat-troi)",
+      "why": "Đĩa tiền hành tinh là chủ đề bài đích." },
+
+    { "from": "dinh-luat-kepler", "to": "trai-dat",
+      "find": "Nhìn từ Trái Đất, Mặt Trời mọc ở đông",
+      "replace": "Nhìn từ [Trái Đất](/articles/trai-dat), [Mặt Trời](/articles/mat-troi) mọc ở đông",
+      "why": "Câu mở bài, cả hai thiên thể ở nghĩa đen." },
+    { "from": "dinh-luat-kepler", "to": "sao-hoa",
+      "find": "phần dữ liệu về Sao Hoả",
+      "replace": "phần dữ liệu về [Sao Hoả](/articles/sao-hoa)",
+      "why": "Kepler rút ra định luật từ chính dữ liệu Sao Hoả — mắt xích trung tâm của bài." }
+  ]
+}
