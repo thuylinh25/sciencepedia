@@ -21,9 +21,9 @@ on:
         required: false
         default: "1"
       budget:
-        description: "Trần chi phí USD cho cả lượt"
+        description: "Hàng rào chống lặp (USD ước tính) — không phải hạn mức tiền"
         required: false
-        default: "5"
+        default: "20"
       model:
         description: "Model của luồng chính (science-editor luôn là opus)"
         required: false
@@ -128,7 +128,7 @@ jobs:
         run: |
           npm run pipeline -- \
             --count "${{ inputs.count || 1 }}" \
-            --budget "${{ inputs.budget || 5 }}" \
+            --budget "${{ inputs.budget || 20 }}" \
             --model "${{ inputs.model || 'sonnet' }}" \
             ${{ inputs.dry_run && '--dry-run' || '' }}
 

@@ -12,7 +12,7 @@ import {
  *
  *   npm run pipeline -- --count 1            # mặc định, chạy thật
  *   npm run pipeline -- --count 1 --dry-run  # agent không được ghi CSDL
- *   npm run pipeline -- --budget 3           # trần chi phí USD cho cả lần chạy
+ *   npm run pipeline -- --budget 30          # nới hàng rào chống lặp cho cả lượt
  *   npm run pipeline -- --model opus         # ghi đè model của luồng chính
  *
  * ## Vì sao luồng chính chạy Sonnet còn science-editor chạy Opus
@@ -54,6 +54,18 @@ import {
  *   đêm và lượt chạy không đụng giờ làm việc.
  * - `maxBudgetUsd` KHÔNG cứu được chuyện này — nó là trần cho một lượt chạy,
  *   còn hạn mức là của cả tài khoản. Hết hạn mức thì lượt chạy chết ở $0.00.
+ *
+ * ## Trần chi phí là hàng rào chống lặp, KHÔNG phải hạn mức tiền
+ *
+ * Dùng gói đăng ký thì con số USD này không phải tiền thật — nó là ước tính
+ * quy đổi. Đặt nó sát chi phí thật là đặt sai, vì agent đọc được ngân sách
+ * còn lại và tự cắt việc khi thấy gần cạn. Ba lượt đầu đều dừng ngay dưới
+ * trần, và lượt 06:01 nói thẳng ra lý do: "ngân sách phiên gần cạn nên dừng
+ * ở đây". Đó là trần đang tạo hình công việc chứ không phải canh gác nó.
+ *
+ * Một bài trọn 11 bước tốn khoảng $4–5. Trần đặt $20: đủ xa để không bao giờ
+ * cắt ngang một bài bình thường, đủ gần để một vòng lặp hỏng bị chặn trước
+ * khi kịp ăn hết hạn mức của tài khoản.
  *
  * ## Vì sao settingSources chỉ có "project"
  *
@@ -192,7 +204,7 @@ function buildPrompt(count: number, dryRun: boolean): string {
 async function main() {
   const argv = process.argv.slice(2);
   const count = Number(flagValue(argv, "count") ?? 1);
-  const budget = Number(flagValue(argv, "budget") ?? 5);
+  const budget = Number(flagValue(argv, "budget") ?? 20);
   const model = flagValue(argv, "model") ?? "sonnet";
   const dryRun = argv.includes("--dry-run");
 
