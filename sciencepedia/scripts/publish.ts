@@ -7,6 +7,7 @@ import { PrismaClient } from "@prisma/client";
  *
  *   npm run publish -- --slug <slug>
  *   npm run publish -- --slug <slug> --note "lý do"
+ *   npm run publish -- --slug <slug> --no-reindex   # không đánh chỉ mục
  *
  * ## Vì sao gate nằm trong đây chứ không chỉ nằm trong hook
  *
@@ -143,7 +144,37 @@ async function main() {
   ]);
 
   console.log(`✓ "${slug}" → PUBLISHED (đã ghi revision)`);
-  console.log("Nhớ chạy `npm run search:reindex` nếu Meilisearch đang bật.");
+
+  /* Đánh chỉ mục ngay, không nhắc người làm.
+     Bỏ qua bằng `--no-reindex`.
+
+     Một dòng "nhớ chạy reindex" là việc giao cho người, và việc giao cho người
+     trong một quy trình tự động thì không ai làm — lượt chạy pipeline đầu tiên
+     publish xong đúng là bỏ quên bước này. Bài đã lên site nhưng tìm không ra
+     là hỏng theo kiểu im lặng: không lỗi, không cảnh báo, chỉ là người đọc gõ
+     đúng tên bài mà không thấy gì.
+
+     KHÔNG để lỗi reindex làm hỏng cả lệnh. Bài đã publish xong rồi; chỉ mục
+     lệch là chuyện chạy lại được, còn báo lỗi ở đây sẽ khiến người gọi tưởng
+     việc xuất bản thất bại và đi làm lại một việc đã xong. `reindex.ts` ném
+     lỗi khi chưa đặt MEILISEARCH_HOST — với môi trường chỉ dùng Postgres FTS
+     thì đó là trạng thái bình thường, không phải sự cố. */
+  if (argv.includes("--no-reindex")) {
+    console.log("Bỏ qua reindex theo --no-reindex.");
+    return;
+  }
+
+  try {
+    execFileSync("npx", ["tsx", "--env-file-if-exists=.env", "scripts/reindex.ts"], {
+      stdio: "inherit",
+      shell: process.platform === "win32",
+    });
+  } catch {
+    console.warn(
+      "Reindex không chạy được (thường là chưa đặt MEILISEARCH_HOST).\n" +
+        "Bài VẪN đã publish. Chạy lại `npm run search:reindex` khi search sẵn sàng.",
+    );
+  }
 }
 
 main()

@@ -171,9 +171,33 @@ async function loadArticles(where: object) {
   });
 }
 
+/**
+ * Ai trỏ vào bài này.
+ *
+ * Chỉ tính bài ĐÃ PUBLISHED: một link từ bản nháp chưa cứu được bài khỏi cảnh
+ * mồ côi, vì người đọc và bộ máy tìm kiếm không thấy bản nháp.
+ */
+function inboundOf(
+  slug: string,
+  corpus: { slug: string; content: string }[],
+): string[] {
+  const sources: string[] = [];
+  for (const other of corpus) {
+    if (other.slug === slug) continue;
+    for (const match of other.content.matchAll(INTERNAL_LINK)) {
+      if (match[1] === slug) {
+        sources.push(other.slug);
+        break;
+      }
+    }
+  }
+  return sources;
+}
+
 async function audit(
   article: ArticleRow,
   publishedSlugs: Set<string>,
+  corpus: { slug: string; content: string }[],
   checkLinks: boolean,
 ): Promise<Finding[]> {
   const findings: Finding[] = [];
@@ -220,6 +244,31 @@ async function audit(
   }
   for (const slug of dangling) {
     warn(`link nội bộ không tới đâu: /articles/${slug}`);
+  }
+
+  /* Chiều VÀO, không chỉ chiều ra.
+     `.claude/skills/seo-optimizer/SKILL.md`: "≥3 contextual out, ≥1 in".
+
+     Vì sao đếm cả hai chiều: một kho mà mọi bài đều đủ 3 link ra nhưng không
+     bài nào được trỏ vào vẫn là tập điểm rời rạc — đúng tình trạng của 41 bài
+     đầu tiên, tất cả đều 0 link. Bài mới trỏ ra 5 chỗ vẫn không ai tới được
+     nó ngoài trang danh sách, và trong knowledge graph nó là một nút treo.
+
+     Trách nhiệm này thuộc về LƯỢT xuất bản, không thuộc về bài: publish bài N
+     thì phải thêm một link từ một bài đã có. Nên đây là CHẶN, không phải CẢNH
+     — `content-curator` rule 5 nói thẳng "no orphan publishes".
+
+     Miễn trừ duy nhất: kho chưa có bài nào khác để trỏ vào. Không có nó thì
+     bài đầu tiên của một kho trống vĩnh viễn không publish được. */
+  const otherPublished = [...publishedSlugs].filter((s) => s !== article.slug);
+  if (otherPublished.length > 0) {
+    const inbound = inboundOf(article.slug, corpus);
+    if (inbound.length === 0) {
+      block(
+        "không bài nào trỏ vào (0 link vào) — thêm link từ một bài đã publish " +
+          "trước khi xuất bản bài này",
+      );
+    }
   }
 
   if (!article.entityId) {
@@ -281,11 +330,15 @@ async function main() {
 
   // Tập slug đã publish — dùng để biết một link nội bộ có tới đâu không.
   // Luôn lấy toàn bộ, kể cả khi chỉ kiểm một bài.
-  const published = await prisma.article.findMany({
+  // Toàn văn mọi bài đã publish — cần cho cả hai chiều link. Tải một lần rồi
+  // dùng lại: kiểm một bài vẫn phải biết cả kho ai trỏ vào nó.
+  // Kho vài nghìn bài thì đổi sang truy vấn ngược bằng SQL; ở quy mô hiện tại
+  // một lượt đọc rẻ hơn nhiều lần truy vấn.
+  const corpus = await prisma.article.findMany({
     where: { status: "PUBLISHED" },
-    select: { slug: true },
+    select: { slug: true, content: true },
   });
-  const publishedSlugs = new Set(published.map((a) => a.slug));
+  const publishedSlugs = new Set(corpus.map((a) => a.slug));
 
   const where = id
     ? { id }
@@ -310,7 +363,7 @@ async function main() {
 
   const results = [];
   for (const article of articles) {
-    const findings = await audit(article, publishedSlugs, checkLinks);
+    const findings = await audit(article, publishedSlugs, corpus, checkLinks);
     results.push({ article, findings });
   }
 
