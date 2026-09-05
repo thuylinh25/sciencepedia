@@ -1,3 +1,5 @@
+import { pathToFileURL } from "node:url";
+
 import { PrismaClient } from "@prisma/client";
 
 /**
@@ -317,6 +319,30 @@ async function audit(
     block("ghi công ảnh chép tay trong thân bài — phải nằm ở coverImageCredit");
   }
 
+  /* Danh sách nguồn chép tay vào thân bài, trong khi CSDL đã có Source.
+
+     Trang bài render mục "Nguồn tham khảo" từ bảng `Source` — có đánh số, có
+     nhà xuất bản, có năm, và cùng dữ liệu đó nuôi `citation` trong JSON-LD.
+     Một đoạn "Nguồn: A, B, C" viết thêm trong Markdown là bản sao thứ hai của
+     cùng thông tin, và bản sao sẽ trôi: đổi nguồn trong CSDL thì đoạn văn ở
+     lại, thành danh sách nguồn của một phiên bản bài không còn tồn tại.
+
+     Cùng lý do docs/content-rules.md bắt ghi công ảnh chỉ nằm ở CSDL.
+
+     KHÔNG chặn khối ghi công tác phẩm phái sinh ("viết lại từ… Bản quyền
+     thuộc về…"). Đó không phải danh sách trích dẫn mà là điều kiện giấy phép,
+     và bảng `Source` không mang được nó. Đo thật ngày 2026-09-05: 21 bài có
+     khối giấy phép, đúng 1 bài có khối trích dẫn trùng. Gộp hai loại làm một
+     rồi xoá hàng loạt là vi phạm giấy phép trên 21 bài. */
+  const tail = article.content.slice(prose(article.content).length);
+  const isLicence = /Bản quyền|viết lại từ/i.test(tail);
+  if (tail.length > 0 && !isLicence && article.sources.length > 0) {
+    block(
+      "danh sách nguồn chép tay ở cuối bài trùng với mục Nguồn tham khảo " +
+        "dựng từ CSDL — gỡ khỏi Markdown, giữ bản trong CSDL",
+    );
+  }
+
   // --- Ảnh ---
   if (!article.coverImage) {
     block("chưa có ảnh bìa");
@@ -453,9 +479,21 @@ async function main() {
   process.exitCode = failed.length === 0 ? 0 : 1;
 }
 
-main()
-  .catch((error) => {
-    console.error(error);
-    process.exitCode = 1;
-  })
-  .finally(() => prisma.$disconnect());
+/* Chỉ chạy khi được gọi trực tiếp, không chạy khi bị import.
+
+   `prose()` là hàm dùng chung — script khác import nó để đo cùng một cách.
+   Không có chốt này thì mỗi lần import kéo theo cả một lượt rà 42 bài, in
+   nguyên bảng kiểm vào giữa output của người gọi. Đã xảy ra thật khi đo thống
+   kê khối dẫn nguồn. */
+const invokedDirectly =
+  process.argv[1] !== undefined &&
+  import.meta.url === pathToFileURL(process.argv[1]).href;
+
+if (invokedDirectly) {
+  main()
+    .catch((error) => {
+      console.error(error);
+      process.exitCode = 1;
+    })
+    .finally(() => prisma.$disconnect());
+}
