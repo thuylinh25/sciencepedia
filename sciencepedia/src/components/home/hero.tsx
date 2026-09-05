@@ -65,7 +65,13 @@ export function Hero({
           mức tiêu đề phải xuống bốn dòng. 28rem là mức cân được với cột chữ đã
           thu hẹp còn max-w-3xl. */}
       <div className="container-page relative z-10 grid min-h-[min(64svh,34rem)] items-center gap-10 pt-12 pb-14 text-star lg:grid-cols-[minmax(0,1fr)_28rem] lg:gap-14 lg:pt-16 lg:pb-16">
-        <div className="flex flex-col justify-center">
+        {/* `relative z-10` là bắt buộc, không phải trang trí.
+
+            Dưới `lg` thiên hà là một lớp `absolute`, và trong CSS phần tử đã
+            định vị luôn vẽ SAU phần tử tĩnh bất kể thứ tự trong DOM. Bỏ z-10 ở
+            đây thì thiên hà nằm đè lên tiêu đề và ô tìm kiếm. Đúng cái bẫy đã
+            ghi trong docs/design-system.md, mục "Ba cái bẫy CSS đã cắn thật". */}
+        <div className="relative z-10 flex flex-col justify-center">
           <motion.p
             {...rise(0)}
             className="mb-5 inline-flex w-fit items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-medium tracking-widest text-white/90 uppercase backdrop-blur"
@@ -137,10 +143,23 @@ export function Hero({
           </motion.div>
         </div>
 
-        {/* Ẩn hẳn dưới lg thay vì để xuống dưới: hero vừa được hạ từ 88vh
-            xuống 70vh cho vừa màn hình đầu, thêm một ô vuông nữa vào cột dọc
-            là trả lại đúng chỗ vừa lấy được. */}
-        <div className="hidden lg:block">
+        {/* Một thể hiện duy nhất, hai cách đặt.
+
+            Từ `lg`: ô vuông ở cột phải của lưới, như cũ.
+
+            Dưới `lg`: `absolute` ở góc dưới phải, tràn ra ngoài mép, mờ đi và
+            nằm dưới cột chữ. Cách này chọn sau khi cân hai ràng buộc ngược
+            nhau — thiên hà phải thấy được trên điện thoại, nhưng hero vừa được
+            hạ từ 88vh xuống 70vh và thêm một ô vuông vào cột dọc là trả lại
+            đúng chỗ vừa lấy được. Ra khỏi luồng thì nó cao 0px, CLS vẫn bằng 0.
+
+            KHÔNG dựng hai thẻ rồi ẩn bớt một bằng `hidden`: mỗi thẻ là một
+            canvas WebGL riêng, dựng hai cái rồi giấu một là trả tiền hai lần.
+
+            Góc dưới phải chứ không phải sau chữ: ở đó chỉ có nút CTA nằm bên
+            trái, nên không có chữ trắng nào phải đọc trên nền có lõi thiên hà
+            sáng. Đây là ràng buộc tương phản, không phải sở thích bố cục. */}
+        <div className="pointer-events-none absolute -right-[22%] -bottom-[6%] z-0 w-[17rem] max-w-[62%] opacity-60 lg:pointer-events-auto lg:static lg:w-auto lg:max-w-none lg:opacity-100">
           <HeroGalaxy locale={locale} />
         </div>
       </div>

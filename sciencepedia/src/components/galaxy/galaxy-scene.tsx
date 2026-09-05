@@ -258,21 +258,34 @@ function Galaxy({
   settings,
   onSelect,
   locale,
+  lowPower,
 }: {
   settings: GalaxySettings;
   onSelect: (id: string | null) => void;
   locale: string;
+  lowPower: boolean;
 }) {
   const group = useRef<THREE.Group>(null);
   const sprite = useStarSprite();
   const haze = useHazeTexture();
 
-  // Ba lớp: nhiều sao mờ nhỏ, ít sao vừa, rất ít sao sáng to
-  const faint = useDiskGeometry(34_000, 1);
-  const medium = useDiskGeometry(11_000, 0.85);
-  const bright = useDiskGeometry(2_200, 0.7);
-  const bulge = useBulgeGeometry(9_000);
-  const halo = useHaloGeometry(600);
+  /**
+   * Ba lớp: nhiều sao mờ nhỏ, ít sao vừa, rất ít sao sáng to.
+   *
+   * `lowPower` chia thưa mật độ chứ không bỏ lớp nào. Đây là phân bố ngẫu
+   * nhiên nên thưa đi thì đĩa nhạt hơn mà **hình xoắn vẫn đúng** — bỏ hẳn một
+   * lớp thì mất dải sáng của lớp đó và thiên hà đổi dáng, tức người xem trên
+   * điện thoại nhìn thấy một vật khác.
+   *
+   * Hạt sprite cộng dồn tính tiền theo số điểm ảnh bị tô, không theo số đỉnh,
+   * nên 47.200 hạt phủ chồng lên nhau là chỗ đắt nhất của cảnh này trên GPU di
+   * động — đắt hơn nhiều so với `dpr`.
+   */
+  const faint = useDiskGeometry(lowPower ? 12_000 : 34_000, 1);
+  const medium = useDiskGeometry(lowPower ? 4_000 : 11_000, 0.85);
+  const bright = useDiskGeometry(lowPower ? 1_000 : 2_200, 0.7);
+  const bulge = useBulgeGeometry(lowPower ? 3_200 : 9_000);
+  const halo = useHaloGeometry(lowPower ? 260 : 600);
 
   useFrame((_, delta) => {
     if (!group.current || !settings.playing) return;
@@ -665,6 +678,7 @@ export function GalaxyScene({
   onTourEnd,
   interactive = true,
   transparent = false,
+  lowPower = false,
 }: {
   settings: GalaxySettings;
   onSelect: (id: string | null) => void;
@@ -684,6 +698,11 @@ export function GalaxyScene({
    * sẽ lộ mép.
    */
   transparent?: boolean;
+  /**
+   * Hạ chi phí dựng hình cho màn hình nhỏ: thưa hạt, bớt sao nền, ghim `dpr`.
+   * Không đổi bố cục cảnh — xem chú thích ở `Galaxy`.
+   */
+  lowPower?: boolean;
 }) {
   const controls = useRef<OrbitControlsImpl>(null);
 
@@ -700,7 +719,7 @@ export function GalaxyScene({
        */
       resize={{ offsetSize: true }}
       camera={{ position: [0, 13, 16], fov: 45 }}
-      dpr={[1, 2]}
+      dpr={lowPower ? [1, 1.25] : [1, 2]}
       gl={{
         antialias: true,
         alpha: transparent,
@@ -715,14 +734,19 @@ export function GalaxyScene({
       <Stars
         radius={90}
         depth={60}
-        count={2600}
+        count={lowPower ? 1200 : 2600}
         factor={3}
         saturation={0}
         fade
         speed={0.2}
       />
 
-      <Galaxy settings={settings} onSelect={onSelect} locale={locale} />
+      <Galaxy
+        settings={settings}
+        onSelect={onSelect}
+        locale={locale}
+        lowPower={lowPower}
+      />
 
       {/* Tour giành quyền điều khiển camera; CameraRig nhường lại khi tour bật */}
       {settings.tour ? (

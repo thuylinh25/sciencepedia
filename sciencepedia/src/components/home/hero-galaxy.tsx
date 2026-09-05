@@ -44,6 +44,20 @@ const NORMAL_SPEED = 1.6;
  * 3. **Chỗ đứng cùng kích thước.** Quầng sáng CSS chiếm đúng ô vuông mà canvas
  *    sẽ chiếm, nên lúc canvas xuất hiện không đẩy gì cả — CLS bằng 0.
  *
+ * 4. **`lowPower` trên màn hình nhỏ.** Thưa hạt đĩa từ 47.200 xuống 17.000,
+ *    bớt sao nền, ghim `dpr` ở 1.25.
+ *
+ * ## Vì sao điện thoại cũng mount cảnh thật
+ *
+ * Trước đây chặn ở `lg`: dưới ngưỡng đó hero chỉ còn quầng sáng CSS. Bỏ chặn
+ * vì cùng lý do đã bỏ ở `SolarPreview` — người dùng so sánh giữa hai thiết bị
+ * của chính họ, và khi máy tính có thiên hà còn điện thoại không có thì kết
+ * luận tự nhiên là bản điện thoại hỏng.
+ *
+ * Đây vẫn là vùng LCP, nên ba lớp phòng vệ ở trên KHÔNG được nới: cảnh chỉ tải
+ * sau hydrate, không nằm trong bundle trang chủ, và không đẩy bố cục. Cái được
+ * nới chỉ là ngưỡng bề rộng, và cái bù lại là `lowPower`.
+ *
  * ## Giảm chuyển động — chuyển động chậm lại, KHÔNG dừng hẳn
  *
  * Quyết định của chủ sản phẩm, ghi lại kèm lý do vì nó đi ngược mặc định của
@@ -69,6 +83,7 @@ const GalaxyScene = dynamic(
 export function HeroGalaxy({ locale }: { locale: string }) {
   const [showScene, setShowScene] = useState(false);
   const [gentle, setGentle] = useState(false);
+  const [lowPower, setLowPower] = useState(false);
   const wrap = useRef<HTMLDivElement>(null);
 
   /**
@@ -107,23 +122,23 @@ export function HeroGalaxy({ locale }: { locale: string }) {
   }, [gentle]);
 
   useEffect(() => {
-    // `lg` của Tailwind. Dưới ngưỡng này hero xếp một cột, và một canvas WebGL
-    // trên điện thoại vừa tốn pin vừa kéo dài hero — đúng thứ vừa được sửa khi
-    // hạ hero từ 88vh xuống 70vh.
-    const wide = window.matchMedia("(min-width: 1024px)");
+    // Bề rộng không còn quyết định CÓ mount hay không, chỉ quyết định mount ở
+    // mức chi tiết nào.
+    const small = window.matchMedia("(max-width: 1023px)");
     const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
     const decide = () => {
-      setShowScene(wide.matches);
+      setLowPower(small.matches);
       setGentle(motion.matches);
     };
 
     decide();
+    setShowScene(true);
     motion.addEventListener("change", decide);
-    wide.addEventListener("change", decide);
+    small.addEventListener("change", decide);
     return () => {
       motion.removeEventListener("change", decide);
-      wide.removeEventListener("change", decide);
+      small.removeEventListener("change", decide);
     };
   }, []);
 
@@ -188,6 +203,7 @@ export function HeroGalaxy({ locale }: { locale: string }) {
             // Muốn nghịch thật thì có trang /milky-way.
             interactive={false}
             transparent
+            lowPower={lowPower}
           />
         </div>
       )}

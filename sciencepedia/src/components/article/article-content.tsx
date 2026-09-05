@@ -81,15 +81,32 @@ const components: Components = {
     // rộng gần hết màn hình.
     //
     // Typography dùng `:where()` nên độ ưu tiên bằng 0, utility ở đây thắng.
+    // Bốn biến thể first/last là để chắc ăn, không thừa: luật của typography
+    // cho ô đầu/cuối có độ ưu tiên (0,1,0), `[&_td]:px-4` có (0,1,1) nên đã
+    // thắng — nhưng thắng nhờ chênh đúng một bậc và cùng nằm trong một layer,
+    // tức chỉ cần đổi thứ tự `@apply` trong globals.css là lật. Nhắm thẳng
+    // `td:first-child` cho (0,2,1), hơn hẳn, không phụ thuộc thứ tự nữa.
     <div
-      className="my-8 overflow-x-auto rounded-2xl border [&_td]:px-4 [&_th]:px-4"
+      className="my-8 overflow-x-auto rounded-2xl border [&_td]:px-4 [&_th]:px-4 [&_td:first-child]:pl-4 [&_td:last-child]:pr-4 [&_th:first-child]:pl-4 [&_th:last-child]:pr-4"
       tabIndex={0}
     >
       <table className="my-0 w-full">{children}</table>
     </div>
   ),
+  /**
+   * Blockquote có NỀN, nên phải tự lo cả bốn phía.
+   *
+   * Typography chỉ đặt `padding-inline-start` cho blockquote — hợp lý với kiểu
+   * mặc định của nó, vốn chỉ có một vạch kẻ bên trái và không tô nền, nên mép
+   * phải của chữ chính là mép cột chữ. Ở đây khối được tô `bg-accent/5`, tức
+   * nó thành một cái khung nhìn thấy được, và chữ chạy thẳng ra sát mép phải
+   * của khung đó. Cùng loại lỗi với ô bảng dính viền, chỉ khác chỗ.
+   *
+   * `py-1` cũng quá mỏng vì lý do tương tự: 4px trên dưới không thành lề khi
+   * đã có nền.
+   */
   blockquote: ({ children }) => (
-    <blockquote className="rounded-r-xl border-l-4 border-accent bg-accent/5 py-1 pl-6">
+    <blockquote className="rounded-r-xl border-l-4 border-accent bg-accent/5 py-3 pr-5 pl-6">
       {children}
     </blockquote>
   ),
