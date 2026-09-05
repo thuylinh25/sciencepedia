@@ -59,9 +59,11 @@ export async function StatsBand({
                160px, và với `px-4` thì chữ chỉ còn 127px — đủ hẹp để cả hai
                nhãn dài nhất xuống hai dòng. `px-3` trả lại 8px mỗi bên.
 
-               `py-4` thay `py-5`: cả dải cao 2 hàng, nên mỗi 8px cắt ở đây
-               tiết kiệm 16px trên một màn hình chỉ cao chừng 780px. */
-            className="flex flex-col items-center justify-center gap-0.5 bg-card px-3 py-4 sm:px-4 sm:py-6"
+               `py-3` thay `py-5`: cả dải cao 2 hàng, nên mỗi 8px cắt ở đây
+               tiết kiệm 16px trên một màn hình chỉ cao chừng 780px. Đây là
+               mức sàn — dưới 12px thì con số dính vào đường kẻ ô và cả dải
+               đọc ra như một bảng dữ liệu chứ không phải một khối tóm tắt. */
+            className="flex flex-col items-center justify-center gap-0.5 bg-card px-3 py-3 sm:px-4 sm:py-6"
           >
             {/* Icon nằm CÙNG DÒNG với con số, không xếp chồng bên trên.
 
@@ -78,14 +80,23 @@ export async function StatsBand({
                 trong kho có hai chữ số; 36px chỉ để chiếm chỗ chứ không giúp
                 đọc nhanh hơn 30px, mà mỗi hàng cao thêm 7px thì cả dải cao
                 thêm 14px. Từ `sm` giữ nguyên 42px như cũ. */}
-            <dd className="flex items-center gap-2.5 font-display text-3xl leading-tight font-bold tracking-tight tabular-nums sm:text-[42px]">
+            <dd className="flex items-center gap-2 font-display text-3xl leading-tight font-bold tracking-tight tabular-nums sm:text-[42px]">
               <Icon
                 aria-hidden
                 className="size-5 shrink-0 text-primary-strong sm:size-6"
               />
               <Counter value={value} />
             </dd>
-            <dt className="text-center text-xs font-medium tracking-widest text-muted-foreground uppercase">
+            {/* `text-balance` để nhãn hai dòng gãy cho cân.
+
+                Không có nó, trình duyệt nhồi tối đa vào dòng đầu rồi đẩy phần
+                thừa xuống: "BÀI VIẾT ĐÃ XUẤT / BẢN" — một từ mồ côi dưới một
+                dòng chật cứng. `text-balance` chia đều thành "BÀI VIẾT ĐÃ /
+                XUẤT BẢN", tức hai dòng cùng nhịp và không còn từ đứng lẻ.
+
+                Dùng được ở đây vì nhãn rất ngắn; `text-balance` chỉ cân tối đa
+                vài dòng nên không hợp cho đoạn văn dài. */}
+            <dt className="text-center text-xs font-medium tracking-widest text-balance text-muted-foreground uppercase">
               {label}
             </dt>
           </div>
