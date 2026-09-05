@@ -24,6 +24,10 @@ on:
         description: "Trần chi phí USD cho cả lượt"
         required: false
         default: "5"
+      model:
+        description: "Model của luồng chính (science-editor luôn là opus)"
+        required: false
+        default: "sonnet"
       dry_run:
         description: "Chạy thử, không ghi CSDL"
         type: boolean
@@ -74,6 +78,7 @@ jobs:
           npm run pipeline -- \
             --count "${{ inputs.count || 1 }}" \
             --budget "${{ inputs.budget || 5 }}" \
+            --model "${{ inputs.model || 'sonnet' }}" \
             ${{ inputs.dry_run && '--dry-run' || '' }}
 
       - name: Rà lại toàn kho sau lượt chạy

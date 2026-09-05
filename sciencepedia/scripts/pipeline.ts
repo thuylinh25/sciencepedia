@@ -13,6 +13,21 @@ import {
  *   npm run pipeline -- --count 1            # mặc định, chạy thật
  *   npm run pipeline -- --count 1 --dry-run  # agent không được ghi CSDL
  *   npm run pipeline -- --budget 3           # trần chi phí USD cho cả lần chạy
+ *   npm run pipeline -- --model opus         # ghi đè model của luồng chính
+ *
+ * ## Vì sao luồng chính chạy Sonnet còn science-editor chạy Opus
+ *
+ * Chín trong mười một bước là việc thi hành: đọc hàng đợi, gọi skill, gom
+ * nguồn, điền metadata, chạy script. Đó là việc Sonnet làm tốt, và nó chiếm
+ * gần hết lượng token của một lần chạy.
+ *
+ * Bước 4 thì khác hẳn: `science-editor` cầm quyền phủ quyết, và cái nó bỏ sót
+ * sẽ lên thẳng production. Đây là chỗ duy nhất trong chuỗi mà một phán đoán
+ * sai không được bước nào phía sau bắt lại — nên nó là chỗ duy nhất đáng trả
+ * giá Opus.
+ *
+ * Đặt cả chuỗi ở Opus là trả giá cao cho chín bước không cần nó; đặt cả chuỗi
+ * ở Sonnet là tiết kiệm đúng chỗ không nên tiết kiệm.
  *
  * ## Vì sao là Agent SDK chứ không phải một chuỗi lời gọi API
  *
@@ -139,6 +154,7 @@ async function main() {
   const argv = process.argv.slice(2);
   const count = Number(flagValue(argv, "count") ?? 1);
   const budget = Number(flagValue(argv, "budget") ?? 5);
+  const model = flagValue(argv, "model") ?? "sonnet";
   const dryRun = argv.includes("--dry-run");
 
   if (!process.env.CLAUDE_CODE_OAUTH_TOKEN && !process.env.ANTHROPIC_API_KEY) {
@@ -175,6 +191,7 @@ async function main() {
   console.log(`Repo:      ${REPO_ROOT}`);
   console.log(`Chủ đề:    ${count}`);
   console.log(`Trần chi:  $${budget}`);
+  console.log(`Model:     ${model} (science-editor: opus)`);
   console.log(`Chế độ:    ${dryRun ? "CHẠY THỬ (không ghi CSDL)" : "chạy thật"}\n`);
 
   const started = Date.now();
@@ -187,6 +204,8 @@ async function main() {
       prompt: buildPrompt(count, dryRun),
       options: {
         cwd: REPO_ROOT,
+        // Luồng chính lo phần thi hành — xem chú thích đầu file.
+        model,
         // Xem chú thích đầu file: cố ý bỏ "user" và "local".
         settingSources: ["project"],
         skills: "all",
@@ -198,6 +217,9 @@ async function main() {
           // Người viết và người duyệt phải khác model. Cùng một model chấm bài
           // của chính nó thì cái nó bỏ sót lúc viết nó cũng bỏ sót lúc chấm —
           // sai sót tương quan, và "đã duyệt" trở thành một con dấu rỗng.
+          //
+          // Ghi đè này giữ nguyên giá trị kể cả khi `--model opus`: lúc đó hai
+          // bên trùng model, nên phải đọc kết quả duyệt dè dặt hơn hẳn.
           "science-editor": {
             description:
               "Thẩm định độ chính xác khoa học, có quyền phủ quyết tuyệt đối. Đọc thẳng nguồn, không tin bản nháp.",
@@ -205,6 +227,9 @@ async function main() {
               "Bạn là science-editor của SciencePedia. Đọc `.claude/agents/science-editor.md` và làm đúng theo đó. " +
               "Mọi claim phải đối chiếu với nguồn gốc, không đối chiếu với bản nháp. Giữ nguyên mức độ dè dặt của nguồn.",
             model: "opus",
+            // Bước duy nhất trong chuỗi mà một phán đoán sai không được bước
+            // nào phía sau bắt lại. Đây là chỗ mua thêm suy nghĩ đáng tiền.
+            effort: "high",
           },
         },
         hooks: { PreToolUse: [{ matcher: "Bash", hooks: [guardBash] }] },
