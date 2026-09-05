@@ -191,7 +191,16 @@ jobs:
           NEXT_PUBLIC_SITE_URL: ${{ secrets.NEXT_PUBLIC_SITE_URL }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-        run: npm run --silent announce -- --since "$STARTED"
+        run: |
+          # `if: always()` nghĩa là bước này chạy cả khi lượt hỏng TRƯỚC lúc
+          # pipeline khởi động (token sai, npm ci hỏng). Lúc đó STARTED chưa
+          # được đặt, và announce sẽ lùi về mặc định 6 giờ — tức là báo lại
+          # những bài đã báo rồi. Không có mốc thì không loan báo.
+          if [ -z "$STARTED" ]; then
+            echo "Lượt chạy hỏng trước khi pipeline khởi động — không có mốc thời gian, bỏ qua loan báo."
+            exit 0
+          fi
+          npm run --silent announce -- --since "$STARTED"
 
       - name: Lưu báo cáo
         if: always()
