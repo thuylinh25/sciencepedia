@@ -272,8 +272,25 @@ async function audit(
   }
 
   if (!article.entityId) {
-    // Không có entity thì bài đứng ngoài knowledge graph: không có related
-    // concepts, không có learning path, không được cluster hub trỏ vào.
+    /* CHẶN, chốt lại 2026-09-05 sau khi cân nhắc hạ xuống CẢNH.
+
+       Nói cho đúng thực trạng, vì con số này chặn 41/41 bài cũ:
+
+       - ĐANG chạy thật: JSON-LD mất node `about` và mất `sameAs` trỏ Wikidata
+         (`src/lib/seo.ts`), nên bài không nối được vào một định danh chung.
+       - ĐANG chạy nhưng có fallback: "Bài liên quan" tụt từ quan hệ do biên
+         tập khẳng định xuống "cùng danh mục" (`getRelatedForArticle`). Kém
+         hơn, không phải mất.
+       - CHƯA có giao diện: `getPrerequisites` đã viết xong nhưng không
+         component nào gọi; chưa có route learning path nào.
+
+       Nên một nửa giá trị vẫn là tiềm năng, và chặn cả kho vì nó là nặng tay.
+       Vẫn giữ CHẶN vì hạ xuống CẢNH có một hệ quả không lùi được: bài mới sẽ
+       publish mà không vào graph, và mỗi bài như vậy là một khoản nợ phải đi
+       gắn lại sau — lúc đó phải đọc lại bài để biết nó nói về khái niệm nào,
+       đắt hơn nhiều so với gắn ngay lúc viết.
+
+       Đây là chỗ ranh giới nằm giữa "nợ đo được" và "nợ phải đào lại". */
     block("chưa gắn entity (entityId rỗng) — bài nằm ngoài knowledge graph");
   }
 

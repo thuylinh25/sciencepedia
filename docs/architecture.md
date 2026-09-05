@@ -191,3 +191,25 @@ lại** — nó đã là một cái gate sẵn có, không cần dựng thêm c�
 
 Cấm commit không thêm an toàn nào: agent vẫn sửa được file, chỉ là để lại thay
 đổi lơ lửng trong working tree, khó đọc hơn một commit có lời giải thích.
+
+### Vì sao `entityId` là điều kiện CHẶN khi xuất bản
+
+Chốt 2026-09-05, sau khi cân nhắc hạ xuống mức cảnh báo.
+
+Trạng thái thật của knowledge graph, nói cho đúng:
+
+| Thứ phụ thuộc entity | Tình trạng |
+|---|---|
+| JSON-LD `about` + `sameAs` → Wikidata | Đang chạy. Không entity thì mất hẳn |
+| "Bài liên quan" | Đang chạy, **có fallback** về tag/category — kém hơn, không mất |
+| `getPrerequisites` | Hàm đã viết, **không component nào gọi** |
+| Learning path | **Chưa có route nào** |
+
+Một nửa giá trị vẫn là tiềm năng, nên chặn cả kho vì nó là nặng tay. Vẫn chặn,
+vì lý do nằm ở chiều thời gian chứ không ở giá trị hiện tại: hạ xuống cảnh báo
+thì bài mới publish mà không vào graph, và gắn entity **sau** đắt hơn hẳn gắn
+lúc viết — lúc đó phải đọc lại bài để biết nó trình bày khái niệm nào, trong
+khi lúc viết thì người viết đã biết.
+
+Đây là ranh giới giữa "nợ đo được" và "nợ phải đào lại". 41 bài cũ đã ở phía
+sau ranh giới đó rồi; việc cần làm là đừng đẩy thêm bài nào sang.
