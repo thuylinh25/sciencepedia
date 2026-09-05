@@ -1,0 +1,1575 @@
+{
+  "meta": {
+    "generatedAt": "2026-09-05",
+    "scope": "42 bài PUBLISHED. CHỈ ĐỌC cơ sở dữ liệu — file này là kế hoạch, không phải bản ghi.",
+    "existingEntities": [
+      "nang-luong",
+      "joule"
+    ],
+    "note": "Hai entity trên ĐÃ có trong DB (nang-luong gắn với bài nang-luong-la-gi). Chúng không nằm trong mảng `entities` để tránh trùng, nhưng ĐƯỢC tham chiếu trong `relationships`. Đường ghi phải upsert theo `slug`.",
+    "unreconciled": [
+      {
+        "slug": "tu-quay-hanh-tinh",
+        "why": "Wikidata không có mục cho 'sự tự quay của hành tinh' như một quá trình. Q185981 là 'rotation period' — một đại lượng, không phải quá trình; gắn nó vào entity kiểu PROCESS sẽ tạo sameAs sai. Để null cho tới khi có mục đúng."
+      }
+    ],
+    "counts": {
+      "entitiesNew": 54,
+      "entitiesWithQid": 53,
+      "relationships": 93,
+      "backlinks": 15,
+      "unmatchedOrphans": 3,
+      "orphanEntities": 0
+    }
+  },
+  "entities": [
+    {
+      "slug": "he-mat-troi",
+      "canonicalName": "Hệ Mặt Trời",
+      "canonicalNameEn": "Solar System",
+      "entityType": "OBJECT",
+      "aliases": [
+        "hệ mặt trời",
+        "thái dương hệ",
+        "solar system"
+      ],
+      "wikidataQid": "Q544",
+      "description": "Hệ hành tinh gồm Mặt Trời và mọi thiên thể bị nó giữ lại bằng hấp dẫn: tám hành tinh, các vệ tinh, hành tinh lùn, tiểu hành tinh và sao chổi.",
+      "articleSlug": "tam-hanh-tinh-he-mat-troi"
+    },
+    {
+      "slug": "hanh-tinh",
+      "canonicalName": "Hành tinh",
+      "canonicalNameEn": "Planet",
+      "entityType": "CONCEPT",
+      "aliases": [
+        "hành tinh",
+        "planet",
+        "tinh cầu"
+      ],
+      "wikidataQid": "Q634",
+      "description": "Thiên thể quay quanh một ngôi sao, đủ khối lượng để tự tròn dưới hấp dẫn và đã dọn sạch vùng quỹ đạo của mình (định nghĩa IAU 2006).",
+      "articleSlug": null
+    },
+    {
+      "slug": "mat-troi",
+      "canonicalName": "Mặt Trời",
+      "canonicalNameEn": "Sun",
+      "entityType": "OBJECT",
+      "aliases": [
+        "mặt trời",
+        "thái dương",
+        "Sol",
+        "sun"
+      ],
+      "wikidataQid": "Q525",
+      "description": "Ngôi sao lùn vàng loại G ở tâm Hệ Mặt Trời, tuổi khoảng 4,6 tỉ năm, cấp năng lượng cho toàn hệ bằng hợp hạch hydro ở lõi.",
+      "articleSlug": "mat-troi"
+    },
+    {
+      "slug": "trai-dat",
+      "canonicalName": "Trái Đất",
+      "canonicalNameEn": "Earth",
+      "entityType": "OBJECT",
+      "aliases": [
+        "trái đất",
+        "địa cầu",
+        "quả đất",
+        "earth"
+      ],
+      "wikidataQid": "Q2",
+      "description": "Hành tinh thứ ba tính từ Mặt Trời và là thiên thể duy nhất được biết có sự sống.",
+      "articleSlug": "trai-dat"
+    },
+    {
+      "slug": "sao-thuy",
+      "canonicalName": "Sao Thuỷ",
+      "canonicalNameEn": "Mercury",
+      "entityType": "OBJECT",
+      "aliases": [
+        "sao thuỷ",
+        "sao thủy",
+        "Mercury",
+        "Thuỷ tinh"
+      ],
+      "wikidataQid": "Q308",
+      "description": "Hành tinh nhỏ nhất và gần Mặt Trời nhất, có cộng hưởng quỹ đạo–tự quay 3:2 khiến một ngày dài hơn một năm của nó.",
+      "articleSlug": "sao-thuy"
+    },
+    {
+      "slug": "sao-kim",
+      "canonicalName": "Sao Kim",
+      "canonicalNameEn": "Venus",
+      "entityType": "OBJECT",
+      "aliases": [
+        "sao kim",
+        "Venus",
+        "Kim tinh",
+        "sao Hôm",
+        "sao Mai"
+      ],
+      "wikidataQid": "Q313",
+      "description": "Hành tinh thứ hai tính từ Mặt Trời, có khí quyển CO₂ dày gây hiệu ứng nhà kính mất kiểm soát và tự quay ngược chiều.",
+      "articleSlug": "sao-kim"
+    },
+    {
+      "slug": "sao-hoa",
+      "canonicalName": "Sao Hoả",
+      "canonicalNameEn": "Mars",
+      "entityType": "OBJECT",
+      "aliases": [
+        "sao hoả",
+        "sao hỏa",
+        "Mars",
+        "Hoả tinh",
+        "hành tinh đỏ"
+      ],
+      "wikidataQid": "Q111",
+      "description": "Hành tinh thứ tư tính từ Mặt Trời, bề mặt giàu oxit sắt, giữ nhiều dấu vết của nước lỏng trong quá khứ.",
+      "articleSlug": "sao-hoa"
+    },
+    {
+      "slug": "sao-moc",
+      "canonicalName": "Sao Mộc",
+      "canonicalNameEn": "Jupiter",
+      "entityType": "OBJECT",
+      "aliases": [
+        "sao mộc",
+        "Jupiter",
+        "Mộc tinh"
+      ],
+      "wikidataQid": "Q319",
+      "description": "Hành tinh lớn nhất Hệ Mặt Trời, khối khí khổng lồ có từ trường mạnh nhất trong các hành tinh và ảnh hưởng lớn tới quỹ đạo các thiên thể nhỏ.",
+      "articleSlug": "sao-moc"
+    },
+    {
+      "slug": "sao-tho",
+      "canonicalName": "Sao Thổ",
+      "canonicalNameEn": "Saturn",
+      "entityType": "OBJECT",
+      "aliases": [
+        "sao thổ",
+        "Saturn",
+        "Thổ tinh"
+      ],
+      "wikidataQid": "Q193",
+      "description": "Hành tinh thứ sáu, nổi bật với hệ vành đai băng mỏng và vệ tinh Enceladus có đại dương ngầm.",
+      "articleSlug": "sao-tho"
+    },
+    {
+      "slug": "sao-thien-vuong",
+      "canonicalName": "Sao Thiên Vương",
+      "canonicalNameEn": "Uranus",
+      "entityType": "OBJECT",
+      "aliases": [
+        "sao thiên vương",
+        "Uranus",
+        "Thiên Vương tinh"
+      ],
+      "wikidataQid": "Q324",
+      "description": "Hành tinh thứ bảy, trục quay nghiêng khoảng 98° khiến nó gần như lăn nghiêng trên quỹ đạo.",
+      "articleSlug": "sao-thien-vuong"
+    },
+    {
+      "slug": "sao-hai-vuong",
+      "canonicalName": "Sao Hải Vương",
+      "canonicalNameEn": "Neptune",
+      "entityType": "OBJECT",
+      "aliases": [
+        "sao hải vương",
+        "Neptune",
+        "Hải Vương tinh"
+      ],
+      "wikidataQid": "Q332",
+      "description": "Hành tinh thứ tám và xa nhất, được tìm ra năm 1846 nhờ tính toán nhiễu loạn quỹ đạo trước khi được quan sát.",
+      "articleSlug": "sao-hai-vuong"
+    },
+    {
+      "slug": "pluto",
+      "canonicalName": "Sao Diêm Vương",
+      "canonicalNameEn": "Pluto",
+      "entityType": "OBJECT",
+      "aliases": [
+        "Pluto",
+        "sao Diêm Vương",
+        "Diêm Vương tinh"
+      ],
+      "wikidataQid": "Q339",
+      "description": "Hành tinh lùn trong vành đai Kuiper, bị loại khỏi danh sách hành tinh theo định nghĩa IAU năm 2006.",
+      "articleSlug": "tai-sao-pluto-khong-con-la-hanh-tinh"
+    },
+    {
+      "slug": "hanh-tinh-lun",
+      "canonicalName": "Hành tinh lùn",
+      "canonicalNameEn": "Dwarf planet",
+      "entityType": "CONCEPT",
+      "aliases": [
+        "hành tinh lùn",
+        "dwarf planet"
+      ],
+      "wikidataQid": "Q2199",
+      "description": "Thiên thể đủ khối lượng để tự tròn dưới hấp dẫn nhưng chưa dọn sạch vùng quỹ đạo, và không phải vệ tinh.",
+      "articleSlug": null
+    },
+    {
+      "slug": "sao-choi",
+      "canonicalName": "Sao chổi",
+      "canonicalNameEn": "Comet",
+      "entityType": "OBJECT",
+      "aliases": [
+        "sao chổi",
+        "comet",
+        "chổi tinh"
+      ],
+      "wikidataQid": "Q3559",
+      "description": "Thiên thể nhỏ giàu băng còn sót lại từ thuở Hệ Mặt Trời hình thành; khi tới gần Mặt Trời, băng thăng hoa tạo ra đầu và hai chiếc đuôi.",
+      "articleSlug": "sao-choi"
+    },
+    {
+      "slug": "hinh-thanh-he-mat-troi",
+      "canonicalName": "Sự hình thành Hệ Mặt Trời",
+      "canonicalNameEn": "Formation and evolution of the Solar System",
+      "entityType": "PROCESS",
+      "aliases": [
+        "sự ra đời của Hệ Mặt Trời",
+        "hình thành Hệ Mặt Trời",
+        "tinh vân Mặt Trời"
+      ],
+      "wikidataQid": "Q3535",
+      "description": "Quá trình một đám mây phân tử sụp đổ thành đĩa tiền hành tinh cách đây khoảng 4,6 tỉ năm, rồi kết tụ thành Mặt Trời và các hành tinh.",
+      "articleSlug": "su-ra-doi-cua-he-mat-troi"
+    },
+    {
+      "slug": "tu-quay-hanh-tinh",
+      "canonicalName": "Tự quay của hành tinh",
+      "canonicalNameEn": "Planetary rotation",
+      "entityType": "PROCESS",
+      "aliases": [
+        "tự quay",
+        "quay quanh trục",
+        "chu kỳ tự quay",
+        "quay ngược"
+      ],
+      "wikidataQid": null,
+      "description": "Chuyển động tự quay quanh trục của hành tinh, thừa hưởng mô-men động lượng từ đĩa tiền hành tinh và bị va chạm cùng lực thuỷ triều làm biến đổi về sau.",
+      "articleSlug": "vi-sao-hanh-tinh-tu-quay"
+    },
+    {
+      "slug": "phanh-tu-tinh",
+      "canonicalName": "Phanh từ tính",
+      "canonicalNameEn": "Magnetic braking",
+      "entityType": "PROCESS",
+      "aliases": [
+        "phanh từ",
+        "magnetic braking",
+        "hãm từ"
+      ],
+      "wikidataQid": "Q6731515",
+      "description": "Cơ chế truyền mô-men động lượng từ một thiên thể đang quay ra đĩa plasma bao quanh qua đường sức từ, làm nó quay chậm lại.",
+      "articleSlug": "sao-moc-quay-nhanh-nhat"
+    },
+    {
+      "slug": "mua",
+      "canonicalName": "Mùa",
+      "canonicalNameEn": "Season",
+      "entityType": "PHENOMENON",
+      "aliases": [
+        "mùa",
+        "bốn mùa",
+        "season",
+        "chí tuyến"
+      ],
+      "wikidataQid": "Q24384",
+      "description": "Chu kỳ biến đổi khí hậu trong năm do độ nghiêng trục quay quyết định, không phải do khoảng cách tới Mặt Trời.",
+      "articleSlug": "nguyen-nhan-cua-mua"
+    },
+    {
+      "slug": "nhat-thuc",
+      "canonicalName": "Nhật thực",
+      "canonicalNameEn": "Solar eclipse",
+      "entityType": "PHENOMENON",
+      "aliases": [
+        "nhật thực",
+        "solar eclipse",
+        "nhật thực toàn phần",
+        "nhật thực hình khuyên"
+      ],
+      "wikidataQid": "Q3887",
+      "description": "Hiện tượng Mặt Trăng che khuất đĩa Mặt Trời khi nhìn từ Trái Đất, chỉ quan sát được trên một dải hẹp.",
+      "articleSlug": "nhat-thuc-va-nguyet-thuc"
+    },
+    {
+      "slug": "nguyet-thuc",
+      "canonicalName": "Nguyệt thực",
+      "canonicalNameEn": "Lunar eclipse",
+      "entityType": "PHENOMENON",
+      "aliases": [
+        "nguyệt thực",
+        "lunar eclipse",
+        "trăng máu"
+      ],
+      "wikidataQid": "Q44235",
+      "description": "Hiện tượng Mặt Trăng đi vào vùng bóng của Trái Đất, nhìn được từ toàn bộ nửa Trái Đất đang là đêm.",
+      "articleSlug": null
+    },
+    {
+      "slug": "dinh-luat-kepler",
+      "canonicalName": "Định luật Kepler",
+      "canonicalNameEn": "Kepler laws of planetary motion",
+      "entityType": "LAW",
+      "aliases": [
+        "ba định luật Kepler",
+        "định luật Kepler",
+        "quỹ đạo elip",
+        "định luật diện tích"
+      ],
+      "wikidataQid": "Q83219",
+      "description": "Ba định luật mô tả chuyển động hành tinh: quỹ đạo elip, tốc độ diện tích không đổi, và bình phương chu kỳ tỉ lệ với lập phương bán trục lớn.",
+      "articleSlug": "dinh-luat-kepler"
+    },
+    {
+      "slug": "cuc-quang",
+      "canonicalName": "Cực quang",
+      "canonicalNameEn": "Aurora",
+      "entityType": "PHENOMENON",
+      "aliases": [
+        "cực quang",
+        "aurora",
+        "bắc cực quang",
+        "nam cực quang"
+      ],
+      "wikidataQid": "Q40609",
+      "description": "Ánh sáng do khí quyển hành tinh phát ra khi hạt tích điện được gia tốc dọc đường sức từ va vào nguyên tử, phân tử ở tầng cao.",
+      "articleSlug": "cuc-quang"
+    },
+    {
+      "slug": "tu-truong",
+      "canonicalName": "Từ trường",
+      "canonicalNameEn": "Magnetic field",
+      "entityType": "CONCEPT",
+      "aliases": [
+        "từ trường",
+        "magnetic field",
+        "từ quyển"
+      ],
+      "wikidataQid": "Q11408",
+      "description": "Trường vector sinh ra quanh điện tích chuyển động và vật liệu từ, tác dụng lực lên hạt mang điện đang chuyển động.",
+      "articleSlug": "tu-truong-va-luc-hap-dan"
+    },
+    {
+      "slug": "luc-hap-dan",
+      "canonicalName": "Lực hấp dẫn",
+      "canonicalNameEn": "Gravity",
+      "entityType": "CONCEPT",
+      "aliases": [
+        "hấp dẫn",
+        "trọng lực",
+        "gravity",
+        "tương tác hấp dẫn"
+      ],
+      "wikidataQid": "Q11412",
+      "description": "Tương tác cơ bản giữa mọi khối lượng và năng lượng; trong thuyết tương đối rộng là biểu hiện của độ cong không–thời gian.",
+      "articleSlug": null
+    },
+    {
+      "slug": "ngoi-sao",
+      "canonicalName": "Ngôi sao",
+      "canonicalNameEn": "Star",
+      "entityType": "OBJECT",
+      "aliases": [
+        "sao",
+        "ngôi sao",
+        "star",
+        "tinh tú"
+      ],
+      "wikidataQid": "Q523",
+      "description": "Quả cầu plasma tự giữ bằng hấp dẫn và tự phát sáng nhờ hợp hạch hydro ở lõi, ngưỡng khối lượng tối thiểu khoảng 0,08 lần Mặt Trời.",
+      "articleSlug": "sao-cau-tao-va-tien-hoa"
+    },
+    {
+      "slug": "sao-sang-nhat-bau-troi-dem",
+      "canonicalName": "Danh sách sao sáng nhất bầu trời đêm",
+      "canonicalNameEn": "List of brightest stars",
+      "entityType": "DATASET",
+      "aliases": [
+        "20 ngôi sao sáng nhất",
+        "sao sáng nhất",
+        "list of brightest stars"
+      ],
+      "wikidataQid": "Q184221",
+      "description": "Danh sách các ngôi sao xếp theo cấp sao biểu kiến nhìn từ Trái Đất, dẫn đầu là Sirius.",
+      "articleSlug": "20-ngoi-sao-sang-nhat-bau-troi-dem"
+    },
+    {
+      "slug": "cap-sao-bieu-kien",
+      "canonicalName": "Cấp sao biểu kiến",
+      "canonicalNameEn": "Apparent magnitude",
+      "entityType": "QUANTITY",
+      "aliases": [
+        "cấp sao",
+        "độ sáng biểu kiến",
+        "apparent magnitude"
+      ],
+      "wikidataQid": "Q124313",
+      "description": "Thang đo độ sáng của thiên thể nhìn từ Trái Đất; số càng nhỏ càng sáng, mỗi 5 cấp ứng với tỉ số sáng 100 lần.",
+      "articleSlug": null
+    },
+    {
+      "slug": "ho-den",
+      "canonicalName": "Hố đen",
+      "canonicalNameEn": "Black hole",
+      "entityType": "OBJECT",
+      "aliases": [
+        "hố đen",
+        "lỗ đen",
+        "black hole"
+      ],
+      "wikidataQid": "Q589",
+      "description": "Vùng không–thời gian có độ cong lớn tới mức mọi đường đi của ánh sáng từ bên trong chân trời sự kiện đều dẫn vào trong.",
+      "articleSlug": "ho-den"
+    },
+    {
+      "slug": "lo-trang",
+      "canonicalName": "Lỗ trắng",
+      "canonicalNameEn": "White hole",
+      "entityType": "CONCEPT",
+      "aliases": [
+        "lỗ trắng",
+        "white hole",
+        "hố trắng"
+      ],
+      "wikidataQid": "Q131468",
+      "description": "Nghiệm đảo dấu thời gian của nghiệm Schwarzschild: một vùng không–thời gian chỉ cho vật chất đi ra, chưa từng được quan sát.",
+      "articleSlug": "lo-trang-va-lo-sau"
+    },
+    {
+      "slug": "lo-sau",
+      "canonicalName": "Lỗ sâu",
+      "canonicalNameEn": "Wormhole",
+      "entityType": "CONCEPT",
+      "aliases": [
+        "lỗ sâu",
+        "wormhole",
+        "cầu Einstein–Rosen",
+        "hố sâu"
+      ],
+      "wikidataQid": "Q7544",
+      "description": "Cấu trúc hình học nối hai vùng không–thời gian trong nghiệm Schwarzschild đầy đủ; dạng cơ bản không đi qua được.",
+      "articleSlug": null
+    },
+    {
+      "slug": "thien-ha",
+      "canonicalName": "Thiên hà",
+      "canonicalNameEn": "Galaxy",
+      "entityType": "OBJECT",
+      "aliases": [
+        "thiên hà",
+        "galaxy",
+        "ngân hà"
+      ],
+      "wikidataQid": "Q318",
+      "description": "Hệ thống lớn gồm sao, khí, bụi và vật chất tối liên kết với nhau bằng hấp dẫn, phân loại chính theo hình thái Hubble.",
+      "articleSlug": "thien-ha-dinh-nghia-va-phan-loai"
+    },
+    {
+      "slug": "big-bang",
+      "canonicalName": "Big Bang",
+      "canonicalNameEn": "Big Bang",
+      "entityType": "THEORY",
+      "aliases": [
+        "Vụ Nổ Lớn",
+        "big bang",
+        "mô hình vũ trụ chuẩn"
+      ],
+      "wikidataQid": "Q323",
+      "description": "Mô hình mô tả vũ trụ giãn nở từ một trạng thái nóng đặc cách đây 13,8 tỉ năm, tựa trên giãn nở, bức xạ nền vi sóng và tỉ lệ nguyên tố nhẹ.",
+      "articleSlug": "big-bang"
+    },
+    {
+      "slug": "da-vu-tru",
+      "canonicalName": "Đa vũ trụ",
+      "canonicalNameEn": "Multiverse",
+      "entityType": "CONCEPT",
+      "aliases": [
+        "đa vũ trụ",
+        "multiverse",
+        "vũ trụ song song"
+      ],
+      "wikidataQid": "Q3327819",
+      "description": "Giả thuyết về sự tồn tại của nhiều vũ trụ, phân theo bốn cấp của Tegmark; hiện chưa có bằng chứng quan sát nào được chấp nhận.",
+      "articleSlug": "da-vu-tru"
+    },
+    {
+      "slug": "vat-chat-toi",
+      "canonicalName": "Vật chất tối",
+      "canonicalNameEn": "Dark matter",
+      "entityType": "CONCEPT",
+      "aliases": [
+        "vật chất tối",
+        "dark matter"
+      ],
+      "wikidataQid": "Q79925",
+      "description": "Dạng vật chất không phát sáng nhưng có hấp dẫn, chiếm khoảng 27% vũ trụ, suy ra từ đường cong quay thiên hà và thấu kính hấp dẫn.",
+      "articleSlug": "vat-chat-toi-va-nang-luong-toi"
+    },
+    {
+      "slug": "nang-luong-toi",
+      "canonicalName": "Năng lượng tối",
+      "canonicalNameEn": "Dark energy",
+      "entityType": "CONCEPT",
+      "aliases": [
+        "năng lượng tối",
+        "dark energy",
+        "hằng số vũ trụ học"
+      ],
+      "wikidataQid": "Q18343",
+      "description": "Thành phần chiếm khoảng 68% vũ trụ, phân bố đều và đẩy không gian giãn nở gia tốc; bản chất chưa được biết.",
+      "articleSlug": null
+    },
+    {
+      "slug": "thang-khoang-cach-vu-tru",
+      "canonicalName": "Thang khoảng cách vũ trụ",
+      "canonicalNameEn": "Cosmic distance ladder",
+      "entityType": "METHOD",
+      "aliases": [
+        "thang khoảng cách",
+        "cosmic distance ladder",
+        "nến chuẩn",
+        "thị sai"
+      ],
+      "wikidataQid": "Q618164",
+      "description": "Chuỗi phương pháp nối tiếp nhau để đo khoảng cách thiên văn: thị sai, sao Cepheid, siêu tân tinh loại Ia, rồi dịch chuyển đỏ.",
+      "articleSlug": "thang-khoang-cach-vu-tru"
+    },
+    {
+      "slug": "thuyet-tuong-doi-hep",
+      "canonicalName": "Thuyết tương đối hẹp",
+      "canonicalNameEn": "Special relativity",
+      "entityType": "THEORY",
+      "aliases": [
+        "tương đối hẹp",
+        "special relativity",
+        "thuyết tương đối đặc biệt"
+      ],
+      "wikidataQid": "Q11455",
+      "description": "Lý thuyết Einstein 1905 dựng lại cơ học từ hai giả định: các định luật vật lý như nhau trong mọi hệ quy chiếu quán tính, và tốc độ ánh sáng không đổi.",
+      "articleSlug": "thuyet-tuong-doi-hep"
+    },
+    {
+      "slug": "song-hap-dan",
+      "canonicalName": "Sóng hấp dẫn",
+      "canonicalNameEn": "Gravitational wave",
+      "entityType": "PHENOMENON",
+      "aliases": [
+        "sóng hấp dẫn",
+        "gravitational wave",
+        "GW"
+      ],
+      "wikidataQid": "Q190035",
+      "description": "Gợn sóng của chính không–thời gian lan truyền với tốc độ ánh sáng, quan sát trực tiếp lần đầu năm 2015 bằng LIGO.",
+      "articleSlug": "song-hap-dan-va-song-trong-luc"
+    },
+    {
+      "slug": "song-trong-luc",
+      "canonicalName": "Sóng trọng lực",
+      "canonicalNameEn": "Gravity wave",
+      "entityType": "PHENOMENON",
+      "aliases": [
+        "sóng trọng lực",
+        "gravity wave",
+        "sóng trong chất lưu"
+      ],
+      "wikidataQid": "Q599451",
+      "description": "Sóng trong chất lưu có trọng lực làm lực hồi phục — sóng biển, sóng trong khí quyển — không liên quan tới sóng hấp dẫn.",
+      "articleSlug": null
+    },
+    {
+      "slug": "kinh-james-webb",
+      "canonicalName": "Kính viễn vọng không gian James Webb",
+      "canonicalNameEn": "James Webb Space Telescope",
+      "entityType": "MISSION",
+      "aliases": [
+        "JWST",
+        "James Webb",
+        "kính James Webb"
+      ],
+      "wikidataQid": "Q186447",
+      "description": "Kính thiên văn hồng ngoại của NASA/ESA/CSA phóng năm 2021, đặt ở điểm L2, gương chính 6,5 m.",
+      "articleSlug": "kinh-james-webb"
+    },
+    {
+      "slug": "chom-sao-hoang-dao",
+      "canonicalName": "Chòm sao Hoàng Đạo",
+      "canonicalNameEn": "Zodiacal constellation",
+      "entityType": "CONCEPT",
+      "aliases": [
+        "chòm sao hoàng đạo",
+        "cung hoàng đạo",
+        "zodiac",
+        "hoàng đới"
+      ],
+      "wikidataQid": "Q4193029",
+      "description": "Các chòm sao nằm trên hoàng đạo — đường đi biểu kiến của Mặt Trời trên thiên cầu; ranh giới IAU 1930 cho 13 chòm, không phải 12.",
+      "articleSlug": "chom-sao-hoang-dao"
+    },
+    {
+      "slug": "chiem-tinh-hoc",
+      "canonicalName": "Chiêm tinh học",
+      "canonicalNameEn": "Astrology",
+      "entityType": "CONCEPT",
+      "aliases": [
+        "chiêm tinh",
+        "astrology",
+        "tử vi phương Tây",
+        "lá số"
+      ],
+      "wikidataQid": "Q34362",
+      "description": "Hệ thống niềm tin cho rằng vị trí thiên thể ảnh hưởng tới tính cách và số phận con người; đã bị bác bỏ bằng thử nghiệm mù đôi.",
+      "articleSlug": "chiem-tinh-hoc-khong-phai-khoa-hoc"
+    },
+    {
+      "slug": "lich-su-su-song-trai-dat",
+      "canonicalName": "Lịch sử sự sống trên Trái Đất",
+      "canonicalNameEn": "History of life",
+      "entityType": "PROCESS",
+      "aliases": [
+        "tiến hoá sự sống",
+        "lịch sử sự sống",
+        "history of life"
+      ],
+      "wikidataQid": "Q1098275",
+      "description": "Chuỗi hơn 4 tỉ năm từ những tế bào đầu tiên tới nay, đi qua sự kiện oxy hoá lớn, các đợt tuyệt chủng hàng loạt và bùng nổ Cambri.",
+      "articleSlug": "hinh-thanh-va-tien-hoa-su-song"
+    },
+    {
+      "slug": "dai-tuyet-chung-permi",
+      "canonicalName": "Đại tuyệt chủng Permi–Trias",
+      "canonicalNameEn": "Permian-Triassic extinction event",
+      "entityType": "EVENT",
+      "aliases": [
+        "tuyệt chủng Permi",
+        "Đại Tuyệt Chủng",
+        "the Great Dying"
+      ],
+      "wikidataQid": "Q141118",
+      "description": "Sự kiện tuyệt chủng lớn nhất từng biết, khoảng 252 triệu năm trước, xoá sổ phần lớn loài sinh vật biển.",
+      "articleSlug": "dai-tuyet-chung-permi"
+    },
+    {
+      "slug": "crispr",
+      "canonicalName": "CRISPR-Cas9",
+      "canonicalNameEn": "CRISPR-Cas method",
+      "entityType": "METHOD",
+      "aliases": [
+        "CRISPR",
+        "Cas9",
+        "chỉnh sửa gene",
+        "cây kéo phân tử"
+      ],
+      "wikidataQid": "Q17310682",
+      "description": "Kỹ thuật cắt DNA tại vị trí định trước bằng RNA dẫn đường và enzyme Cas9, phát triển từ hệ phòng vệ của vi khuẩn.",
+      "articleSlug": "crispr-la-gi"
+    },
+    {
+      "slug": "he-mien-dich",
+      "canonicalName": "Hệ miễn dịch",
+      "canonicalNameEn": "Immune system",
+      "entityType": "CONCEPT",
+      "aliases": [
+        "miễn dịch",
+        "immune system",
+        "kháng thể"
+      ],
+      "wikidataQid": "Q1059",
+      "description": "Hệ thống bảo vệ cơ thể gồm hai tuyến bổ sung: miễn dịch bẩm sinh phản ứng nhanh theo khuôn mẫu, và miễn dịch thích ứng đặc hiệu, có trí nhớ.",
+      "articleSlug": "he-mien-dich-nhan-dien-virus"
+    },
+    {
+      "slug": "he-vi-sinh-duong-ruot",
+      "canonicalName": "Hệ vi sinh đường ruột",
+      "canonicalNameEn": "Human gut microbiota",
+      "entityType": "CONCEPT",
+      "aliases": [
+        "hệ vi sinh vật đường ruột",
+        "microbiome",
+        "vi khuẩn ruột",
+        "gut microbiota"
+      ],
+      "wikidataQid": "Q739734",
+      "description": "Quần thể khoảng 10¹⁴ vi sinh vật sống trong ruột người, lên men chất xơ thành axit béo chuỗi ngắn và huấn luyện hệ miễn dịch.",
+      "articleSlug": "he-vi-sinh-duong-ruot"
+    },
+    {
+      "slug": "cung-co-tri-nho",
+      "canonicalName": "Củng cố trí nhớ",
+      "canonicalNameEn": "Memory consolidation",
+      "entityType": "PROCESS",
+      "aliases": [
+        "củng cố trí nhớ",
+        "memory consolidation",
+        "củng cố hệ thống hoá"
+      ],
+      "wikidataQid": "Q2892593",
+      "description": "Quá trình ổn định dấu vết trí nhớ sau khi ghi nhận, phần lớn diễn ra trong giấc ngủ sóng chậm qua việc hải mã phát lại chuỗi hoạt động thần kinh.",
+      "articleSlug": "giac-ngu-sau-va-tri-nho"
+    },
+    {
+      "slug": "giac-ngu-song-cham",
+      "canonicalName": "Giấc ngủ sóng chậm",
+      "canonicalNameEn": "Slow-wave sleep",
+      "entityType": "PROCESS",
+      "aliases": [
+        "ngủ sâu",
+        "giai đoạn N3",
+        "slow-wave sleep"
+      ],
+      "wikidataQid": "Q3964845",
+      "description": "Giai đoạn ngủ sâu nhất (N3), chiếm khoảng 15-25% một đêm và tập trung ở nửa đầu đêm.",
+      "articleSlug": null
+    },
+    {
+      "slug": "van-dong-the-chat",
+      "canonicalName": "Vận động thể chất",
+      "canonicalNameEn": "Physical exercise",
+      "entityType": "PROCESS",
+      "aliases": [
+        "vận động",
+        "tập luyện",
+        "thể dục",
+        "physical exercise"
+      ],
+      "wikidataQid": "Q219067",
+      "description": "Hoạt động thể chất lặp lại có chủ đích nhằm duy trì hoặc cải thiện thể lực; tác động đo được rõ nhất lên tim, mạch máu và VO₂max.",
+      "articleSlug": "van-dong-va-tim-mach"
+    },
+    {
+      "slug": "johannes-kepler",
+      "canonicalName": "Johannes Kepler",
+      "canonicalNameEn": "Johannes Kepler",
+      "entityType": "PERSON",
+      "aliases": [
+        "Kepler"
+      ],
+      "wikidataQid": "Q8963",
+      "description": "Nhà thiên văn và toán học người Đức (1571-1630), rút ra ba định luật chuyển động hành tinh từ dữ liệu quan sát của Tycho Brahe.",
+      "articleSlug": null
+    },
+    {
+      "slug": "albert-einstein",
+      "canonicalName": "Albert Einstein",
+      "canonicalNameEn": "Albert Einstein",
+      "entityType": "PERSON",
+      "aliases": [
+        "Einstein"
+      ],
+      "wikidataQid": "Q937",
+      "description": "Nhà vật lý lý thuyết (1879-1955), tác giả thuyết tương đối hẹp (1905) và thuyết tương đối rộng (1915).",
+      "articleSlug": null
+    },
+    {
+      "slug": "he-tuan-hoan",
+      "canonicalName": "Hệ tuần hoàn",
+      "canonicalNameEn": "Circulatory system",
+      "entityType": "CONCEPT",
+      "aliases": [
+        "tim mạch",
+        "hệ tim mạch",
+        "circulatory system"
+      ],
+      "wikidataQid": "Q11068",
+      "description": "Hệ gồm tim, động mạch, tĩnh mạch và mao mạch, vận chuyển máu, oxy và chất dinh dưỡng đi khắp cơ thể.",
+      "articleSlug": null
+    },
+    {
+      "slug": "vo2max",
+      "canonicalName": "VO₂max",
+      "canonicalNameEn": "VO2 max",
+      "entityType": "QUANTITY",
+      "aliases": [
+        "VO2max",
+        "VO2 tối đa",
+        "lượng oxy tối đa"
+      ],
+      "wikidataQid": "Q60354",
+      "description": "Lượng oxy tối đa cơ thể sử dụng được mỗi phút, đo trong bài gắng sức tăng dần; một trong những chỉ số dự báo tử vong do mọi nguyên nhân mạnh nhất.",
+      "articleSlug": null
+    }
+  ],
+  "relationships": [
+    {
+      "from": "sao-thuy",
+      "to": "hanh-tinh",
+      "relType": "IS_A",
+      "weight": 1,
+      "why": "Sao Thuỷ thoả cả ba tiêu chí hành tinh của IAU 2006."
+    },
+    {
+      "from": "sao-kim",
+      "to": "hanh-tinh",
+      "relType": "IS_A",
+      "weight": 1,
+      "why": "Sao Kim thoả cả ba tiêu chí hành tinh của IAU 2006."
+    },
+    {
+      "from": "trai-dat",
+      "to": "hanh-tinh",
+      "relType": "IS_A",
+      "weight": 1,
+      "why": "Trái Đất thoả cả ba tiêu chí hành tinh của IAU 2006."
+    },
+    {
+      "from": "sao-hoa",
+      "to": "hanh-tinh",
+      "relType": "IS_A",
+      "weight": 1,
+      "why": "Sao Hoả thoả cả ba tiêu chí hành tinh của IAU 2006."
+    },
+    {
+      "from": "sao-moc",
+      "to": "hanh-tinh",
+      "relType": "IS_A",
+      "weight": 1,
+      "why": "Sao Mộc thoả cả ba tiêu chí hành tinh của IAU 2006."
+    },
+    {
+      "from": "sao-tho",
+      "to": "hanh-tinh",
+      "relType": "IS_A",
+      "weight": 1,
+      "why": "Sao Thổ thoả cả ba tiêu chí hành tinh của IAU 2006."
+    },
+    {
+      "from": "sao-thien-vuong",
+      "to": "hanh-tinh",
+      "relType": "IS_A",
+      "weight": 1,
+      "why": "Sao Thiên Vương thoả cả ba tiêu chí hành tinh của IAU 2006."
+    },
+    {
+      "from": "sao-hai-vuong",
+      "to": "hanh-tinh",
+      "relType": "IS_A",
+      "weight": 1,
+      "why": "Sao Hải Vương thoả cả ba tiêu chí hành tinh của IAU 2006."
+    },
+    {
+      "from": "pluto",
+      "to": "hanh-tinh-lun",
+      "relType": "IS_A",
+      "weight": 1,
+      "why": "Pluto tròn dưới hấp dẫn nhưng chưa dọn sạch vùng quỹ đạo, nên từ 2006 được xếp là hành tinh lùn."
+    },
+    {
+      "from": "mat-troi",
+      "to": "ngoi-sao",
+      "relType": "IS_A",
+      "weight": 1,
+      "why": "Mặt Trời là một ngôi sao dãy chính loại G, không phải một hạng thiên thể riêng."
+    },
+    {
+      "from": "giac-ngu-song-cham",
+      "to": "cung-co-tri-nho",
+      "relType": "PREREQUISITE_OF",
+      "weight": 0.9,
+      "why": "Phần lớn củng cố trí nhớ khai báo diễn ra trong giai đoạn N3, nên phải hiểu giấc ngủ sóng chậm trước."
+    },
+    {
+      "from": "mat-troi",
+      "to": "he-mat-troi",
+      "relType": "PART_OF",
+      "weight": 1,
+      "why": "Mặt Trời chiếm hơn 99,8% khối lượng và là tâm hấp dẫn của hệ."
+    },
+    {
+      "from": "sao-thuy",
+      "to": "he-mat-troi",
+      "relType": "PART_OF",
+      "weight": 1,
+      "why": "Sao Thuỷ quay quanh Mặt Trời trong hệ."
+    },
+    {
+      "from": "sao-kim",
+      "to": "he-mat-troi",
+      "relType": "PART_OF",
+      "weight": 1,
+      "why": "Sao Kim quay quanh Mặt Trời trong hệ."
+    },
+    {
+      "from": "trai-dat",
+      "to": "he-mat-troi",
+      "relType": "PART_OF",
+      "weight": 1,
+      "why": "Trái Đất quay quanh Mặt Trời trong hệ."
+    },
+    {
+      "from": "sao-hoa",
+      "to": "he-mat-troi",
+      "relType": "PART_OF",
+      "weight": 1,
+      "why": "Sao Hoả quay quanh Mặt Trời trong hệ."
+    },
+    {
+      "from": "sao-moc",
+      "to": "he-mat-troi",
+      "relType": "PART_OF",
+      "weight": 1,
+      "why": "Sao Mộc quay quanh Mặt Trời trong hệ."
+    },
+    {
+      "from": "sao-tho",
+      "to": "he-mat-troi",
+      "relType": "PART_OF",
+      "weight": 1,
+      "why": "Sao Thổ quay quanh Mặt Trời trong hệ."
+    },
+    {
+      "from": "sao-thien-vuong",
+      "to": "he-mat-troi",
+      "relType": "PART_OF",
+      "weight": 1,
+      "why": "Sao Thiên Vương quay quanh Mặt Trời trong hệ."
+    },
+    {
+      "from": "sao-hai-vuong",
+      "to": "he-mat-troi",
+      "relType": "PART_OF",
+      "weight": 1,
+      "why": "Sao Hải Vương quay quanh Mặt Trời trong hệ."
+    },
+    {
+      "from": "pluto",
+      "to": "he-mat-troi",
+      "relType": "PART_OF",
+      "weight": 0.9,
+      "why": "Pluto vẫn là thành viên của Hệ Mặt Trời dù không còn là hành tinh."
+    },
+    {
+      "from": "sao-choi",
+      "to": "he-mat-troi",
+      "relType": "PART_OF",
+      "weight": 0.9,
+      "why": "Sao chổi là thiên thể của Hệ Mặt Trời, đến từ vành đai Kuiper hoặc đám mây Oort."
+    },
+    {
+      "from": "luc-hap-dan",
+      "to": "dinh-luat-kepler",
+      "relType": "PREREQUISITE_OF",
+      "weight": 1,
+      "why": "Ba định luật Kepler là hệ quả của lực hấp dẫn nghịch đảo bình phương; không hiểu hấp dẫn thì chúng chỉ là quy luật kinh nghiệm."
+    },
+    {
+      "from": "luc-hap-dan",
+      "to": "ho-den",
+      "relType": "PREREQUISITE_OF",
+      "weight": 1,
+      "why": "Hố đen là trạng thái tới hạn của hấp dẫn."
+    },
+    {
+      "from": "luc-hap-dan",
+      "to": "song-hap-dan",
+      "relType": "PREREQUISITE_OF",
+      "weight": 1,
+      "why": "Sóng hấp dẫn là nhiễu loạn lan truyền của chính trường hấp dẫn."
+    },
+    {
+      "from": "luc-hap-dan",
+      "to": "hinh-thanh-he-mat-troi",
+      "relType": "PREREQUISITE_OF",
+      "weight": 0.9,
+      "why": "Đám mây phân tử sụp đổ và vật chất kết tụ đều do hấp dẫn điều khiển."
+    },
+    {
+      "from": "luc-hap-dan",
+      "to": "ngoi-sao",
+      "relType": "PREREQUISITE_OF",
+      "weight": 1,
+      "why": "Ngôi sao là thế cân bằng giữa hấp dẫn nén vào và áp suất hợp hạch đẩy ra."
+    },
+    {
+      "from": "nang-luong",
+      "to": "ngoi-sao",
+      "relType": "PREREQUISITE_OF",
+      "weight": 0.9,
+      "why": "Cơ chế phát sáng của sao là chuyển khối lượng thành năng lượng theo E = mc²."
+    },
+    {
+      "from": "nang-luong",
+      "to": "mat-troi",
+      "relType": "PREREQUISITE_OF",
+      "weight": 0.8,
+      "why": "Bài Mặt Trời dựa vào khái niệm năng lượng để giải thích chuỗi proton–proton."
+    },
+    {
+      "from": "nang-luong",
+      "to": "cuc-quang",
+      "relType": "PREREQUISITE_OF",
+      "weight": 0.7,
+      "why": "Cực quang là quá trình hạt được gia tốc rồi nhả năng lượng thừa dưới dạng photon."
+    },
+    {
+      "from": "dinh-luat-kepler",
+      "to": "nhat-thuc",
+      "relType": "PREREQUISITE_OF",
+      "weight": 0.7,
+      "why": "Nhật thực hình khuyên chỉ giải thích được khi biết quỹ đạo Mặt Trăng là elip."
+    },
+    {
+      "from": "dinh-luat-kepler",
+      "to": "pluto",
+      "relType": "PREREQUISITE_OF",
+      "weight": 0.6,
+      "why": "Tiêu chí dọn sạch vùng quỹ đạo chỉ có nghĩa khi đã hiểu chuyển động quỹ đạo."
+    },
+    {
+      "from": "thuyet-tuong-doi-hep",
+      "to": "ho-den",
+      "relType": "PREREQUISITE_OF",
+      "weight": 0.9,
+      "why": "Hố đen là nghiệm của thuyết tương đối rộng, mà tương đối hẹp là bậc thang bắt buộc trước đó."
+    },
+    {
+      "from": "thuyet-tuong-doi-hep",
+      "to": "song-hap-dan",
+      "relType": "PREREQUISITE_OF",
+      "weight": 0.9,
+      "why": "Sóng hấp dẫn là tiên đoán của thuyết tương đối rộng, dựng trên nền tương đối hẹp."
+    },
+    {
+      "from": "thuyet-tuong-doi-hep",
+      "to": "lo-trang",
+      "relType": "PREREQUISITE_OF",
+      "weight": 0.8,
+      "why": "Lỗ trắng đến từ tính đối xứng theo thời gian của phương trình Einstein."
+    },
+    {
+      "from": "ho-den",
+      "to": "lo-trang",
+      "relType": "PREREQUISITE_OF",
+      "weight": 1,
+      "why": "Chính bài lỗ trắng nói rõ phải đọc cơ chế hố đen trước; lỗ trắng là nghiệm đảo dấu thời gian của nó."
+    },
+    {
+      "from": "ngoi-sao",
+      "to": "ho-den",
+      "relType": "PREREQUISITE_OF",
+      "weight": 0.9,
+      "why": "Hố đen khối lượng sao hình thành khi lõi một ngôi sao nặng sụp đổ."
+    },
+    {
+      "from": "ngoi-sao",
+      "to": "thien-ha",
+      "relType": "PREREQUISITE_OF",
+      "weight": 0.8,
+      "why": "Thiên hà được định nghĩa và phân loại qua tập hợp sao của nó."
+    },
+    {
+      "from": "tu-truong",
+      "to": "cuc-quang",
+      "relType": "PREREQUISITE_OF",
+      "weight": 1,
+      "why": "Từ trường là thứ hướng hạt tích điện xuống vùng cực."
+    },
+    {
+      "from": "tu-truong",
+      "to": "phanh-tu-tinh",
+      "relType": "PREREQUISITE_OF",
+      "weight": 1,
+      "why": "Phanh từ tính hoạt động qua đường sức từ bám vào plasma dẫn điện."
+    },
+    {
+      "from": "hanh-tinh",
+      "to": "he-mat-troi",
+      "relType": "PREREQUISITE_OF",
+      "weight": 0.8,
+      "why": "Danh sách tám hành tinh chỉ có nghĩa sau khi biết định nghĩa hành tinh."
+    },
+    {
+      "from": "hanh-tinh",
+      "to": "hanh-tinh-lun",
+      "relType": "PREREQUISITE_OF",
+      "weight": 1,
+      "why": "Hành tinh lùn được định nghĩa bằng cách bỏ đi một tiêu chí của hành tinh."
+    },
+    {
+      "from": "hanh-tinh-lun",
+      "to": "pluto",
+      "relType": "PREREQUISITE_OF",
+      "weight": 1,
+      "why": "Hiểu vì sao Pluto bị loại đòi hỏi biết hạng hành tinh lùn được lập ra năm 2006."
+    },
+    {
+      "from": "hanh-tinh",
+      "to": "tu-quay-hanh-tinh",
+      "relType": "PREREQUISITE_OF",
+      "weight": 0.8,
+      "why": "Câu hỏi vì sao hành tinh tự quay giả định đã biết hành tinh là gì."
+    },
+    {
+      "from": "tu-quay-hanh-tinh",
+      "to": "phanh-tu-tinh",
+      "relType": "PREREQUISITE_OF",
+      "weight": 0.9,
+      "why": "Phanh từ tính là cơ chế ghìm bớt tốc độ tự quay, nên phải biết nguồn gốc tự quay trước."
+    },
+    {
+      "from": "tu-quay-hanh-tinh",
+      "to": "mua",
+      "relType": "PREREQUISITE_OF",
+      "weight": 0.7,
+      "why": "Mùa do độ nghiêng trục tự quay quyết định."
+    },
+    {
+      "from": "trai-dat",
+      "to": "mua",
+      "relType": "PREREQUISITE_OF",
+      "weight": 0.8,
+      "why": "Bốn mùa là hiện tượng của Trái Đất, giải thích bằng trục nghiêng 23,4° của nó."
+    },
+    {
+      "from": "mat-troi",
+      "to": "nhat-thuc",
+      "relType": "PREREQUISITE_OF",
+      "weight": 0.7,
+      "why": "Nhật thực là hiện tượng đĩa Mặt Trời bị che, và pha toàn phần để lộ nhật hoa."
+    },
+    {
+      "from": "trai-dat",
+      "to": "nhat-thuc",
+      "relType": "PREREQUISITE_OF",
+      "weight": 0.7,
+      "why": "Hình học thực dựa trên vị trí và bóng của Trái Đất."
+    },
+    {
+      "from": "cap-sao-bieu-kien",
+      "to": "sao-sang-nhat-bau-troi-dem",
+      "relType": "PREREQUISITE_OF",
+      "weight": 1,
+      "why": "Danh sách được xếp theo cấp sao biểu kiến; không hiểu thang này thì bảng vô nghĩa."
+    },
+    {
+      "from": "cap-sao-bieu-kien",
+      "to": "thang-khoang-cach-vu-tru",
+      "relType": "PREREQUISITE_OF",
+      "weight": 0.7,
+      "why": "Nến chuẩn hoạt động bằng cách so độ sáng biểu kiến với độ sáng thật."
+    },
+    {
+      "from": "thang-khoang-cach-vu-tru",
+      "to": "vat-chat-toi",
+      "relType": "PREREQUISITE_OF",
+      "weight": 0.8,
+      "why": "Năng lượng tối được phát hiện nhờ đo khoảng cách tới siêu tân tinh loại Ia — một bậc của thang."
+    },
+    {
+      "from": "big-bang",
+      "to": "da-vu-tru",
+      "relType": "PREREQUISITE_OF",
+      "weight": 0.9,
+      "why": "Cả bốn cấp đa vũ trụ đều được phát biểu trên nền mô hình Big Bang và lạm phát."
+    },
+    {
+      "from": "big-bang",
+      "to": "vat-chat-toi",
+      "relType": "PREREQUISITE_OF",
+      "weight": 0.8,
+      "why": "Tỉ lệ 68/27/5 và bằng chứng bức xạ nền đến từ mô hình vũ trụ chuẩn."
+    },
+    {
+      "from": "thien-ha",
+      "to": "big-bang",
+      "relType": "PREREQUISITE_OF",
+      "weight": 0.8,
+      "why": "Bằng chứng gốc của Big Bang là dịch chuyển đỏ của các thiên hà."
+    },
+    {
+      "from": "he-mat-troi",
+      "to": "hinh-thanh-he-mat-troi",
+      "relType": "PREREQUISITE_OF",
+      "weight": 0.8,
+      "why": "Phải biết hệ gồm những gì trước khi hỏi nó ra đời thế nào."
+    },
+    {
+      "from": "hinh-thanh-he-mat-troi",
+      "to": "sao-choi",
+      "relType": "PREREQUISITE_OF",
+      "weight": 0.8,
+      "why": "Sao chổi là vật liệu gốc còn sót lại từ đĩa tiền hành tinh."
+    },
+    {
+      "from": "hinh-thanh-he-mat-troi",
+      "to": "tu-quay-hanh-tinh",
+      "relType": "PREREQUISITE_OF",
+      "weight": 0.9,
+      "why": "Chiều và tốc độ tự quay thừa hưởng mô-men động lượng của đĩa tiền hành tinh."
+    },
+    {
+      "from": "he-mien-dich",
+      "to": "crispr",
+      "relType": "PREREQUISITE_OF",
+      "weight": 0.7,
+      "why": "CRISPR được mô tả chính xác nhất là hệ miễn dịch thích ứng của vi khuẩn."
+    },
+    {
+      "from": "he-mien-dich",
+      "to": "he-vi-sinh-duong-ruot",
+      "relType": "PREREQUISITE_OF",
+      "weight": 0.7,
+      "why": "Vai trò lớn nhất của hệ vi sinh là huấn luyện miễn dịch, cần khái niệm miễn dịch trước."
+    },
+    {
+      "from": "trai-dat",
+      "to": "lich-su-su-song-trai-dat",
+      "relType": "PREREQUISITE_OF",
+      "weight": 0.8,
+      "why": "Dòng thời gian sự sống gắn với bốn hệ thống giữ Trái Đất sống được."
+    },
+    {
+      "from": "lich-su-su-song-trai-dat",
+      "to": "dai-tuyet-chung-permi",
+      "relType": "PREREQUISITE_OF",
+      "weight": 0.9,
+      "why": "Tuyệt chủng Permi là một mốc trong dòng thời gian sự sống, đọc rời sẽ mất bối cảnh."
+    },
+    {
+      "from": "mat-troi",
+      "to": "cuc-quang",
+      "relType": "CAUSES",
+      "weight": 1,
+      "why": "Gió Mặt Trời và các vụ phóng khối lượng vành nhật hoa cấp hạt gây ra cực quang."
+    },
+    {
+      "from": "ho-den",
+      "to": "song-hap-dan",
+      "relType": "CAUSES",
+      "weight": 0.8,
+      "why": "Vụ sáp nhập hai hố đen là nguồn sóng hấp dẫn đã được LIGO ghi nhận."
+    },
+    {
+      "from": "ngoi-sao",
+      "to": "cap-sao-bieu-kien",
+      "relType": "MEASURED_BY",
+      "weight": 0.9,
+      "why": "Độ sáng của sao nhìn từ Trái Đất được lượng hoá bằng cấp sao biểu kiến."
+    },
+    {
+      "from": "sao-sang-nhat-bau-troi-dem",
+      "to": "cap-sao-bieu-kien",
+      "relType": "MEASURED_BY",
+      "weight": 1,
+      "why": "Thứ tự của danh sách chính là thứ tự cấp sao biểu kiến."
+    },
+    {
+      "from": "thien-ha",
+      "to": "thang-khoang-cach-vu-tru",
+      "relType": "MEASURED_BY",
+      "weight": 0.9,
+      "why": "Khoảng cách tới thiên hà chỉ xác định được qua các bậc của thang khoảng cách."
+    },
+    {
+      "from": "dinh-luat-kepler",
+      "to": "johannes-kepler",
+      "relType": "DISCOVERED_BY",
+      "weight": 1,
+      "why": "Kepler công bố hai định luật đầu năm 1609 và định luật thứ ba năm 1619."
+    },
+    {
+      "from": "thuyet-tuong-doi-hep",
+      "to": "albert-einstein",
+      "relType": "DISCOVERED_BY",
+      "weight": 1,
+      "why": "Einstein công bố thuyết tương đối hẹp năm 1905."
+    },
+    {
+      "from": "dinh-luat-kepler",
+      "to": "hanh-tinh",
+      "relType": "APPLIES_TO",
+      "weight": 1,
+      "why": "Ba định luật mô tả chuyển động của hành tinh quanh Mặt Trời."
+    },
+    {
+      "from": "dinh-luat-kepler",
+      "to": "sao-choi",
+      "relType": "APPLIES_TO",
+      "weight": 0.8,
+      "why": "Quỹ đạo sao chổi có độ lệch tâm rất lớn nhưng vẫn tuân theo cùng ba định luật."
+    },
+    {
+      "from": "phanh-tu-tinh",
+      "to": "sao-moc",
+      "relType": "APPLIES_TO",
+      "weight": 0.9,
+      "why": "Phanh từ tính là cơ chế được cho là đã ghìm tốc độ quay của Sao Mộc thời bồi tụ."
+    },
+    {
+      "from": "phanh-tu-tinh",
+      "to": "ngoi-sao",
+      "relType": "APPLIES_TO",
+      "weight": 0.9,
+      "why": "Cùng cơ chế được dùng để giải thích vì sao các sao trẻ không quay nhanh vô hạn."
+    },
+    {
+      "from": "kinh-james-webb",
+      "to": "thien-ha",
+      "relType": "APPLIES_TO",
+      "weight": 0.8,
+      "why": "JWST được thiết kế để quan sát các thiên hà sơ khai trong hồng ngoại."
+    },
+    {
+      "from": "cuc-quang",
+      "to": "trai-dat",
+      "relType": "APPLIES_TO",
+      "weight": 0.9,
+      "why": "Cực quang Trái Đất là trường hợp quen thuộc nhất của hiện tượng này."
+    },
+    {
+      "from": "cuc-quang",
+      "to": "sao-moc",
+      "relType": "APPLIES_TO",
+      "weight": 0.7,
+      "why": "Sao Mộc có cực quang mạnh nhất Hệ Mặt Trời, cấp năng lượng bằng cơ chế khác Trái Đất."
+    },
+    {
+      "from": "vat-chat-toi",
+      "to": "nang-luong-toi",
+      "relType": "CONTRASTS_WITH",
+      "weight": 1,
+      "why": "Hai thứ chỉ chung chữ tối: một bên hút và tụ lại, một bên đẩy và rải đều."
+    },
+    {
+      "from": "nang-luong",
+      "to": "nang-luong-toi",
+      "relType": "CONTRASTS_WITH",
+      "weight": 1,
+      "why": "Trùng chữ nhưng khác hẳn khái niệm — nhầm hai thứ này là lỗi nội dung đã gặp thật khi chọn link."
+    },
+    {
+      "from": "song-hap-dan",
+      "to": "song-trong-luc",
+      "relType": "CONTRASTS_WITH",
+      "weight": 1,
+      "why": "Một chữ khác nhau, hai hiện tượng không liên quan: gợn không–thời gian so với sóng trong chất lưu."
+    },
+    {
+      "from": "nhat-thuc",
+      "to": "nguyet-thuc",
+      "relType": "CONTRASTS_WITH",
+      "weight": 1,
+      "why": "Hai hiện tượng che khuất không đối xứng về vùng nhìn thấy, thời lượng và mức an toàn cho mắt."
+    },
+    {
+      "from": "lo-trang",
+      "to": "ho-den",
+      "relType": "CONTRASTS_WITH",
+      "weight": 1,
+      "why": "Lỗ trắng chỉ cho vật chất đi ra; hố đen chỉ cho đi vào."
+    },
+    {
+      "from": "lo-sau",
+      "to": "ho-den",
+      "relType": "CONTRASTS_WITH",
+      "weight": 0.9,
+      "why": "Lỗ sâu là cấu trúc nối hai vùng không–thời gian, không phải một thiên thể đã quan sát được."
+    },
+    {
+      "from": "tu-truong",
+      "to": "luc-hap-dan",
+      "relType": "CONTRASTS_WITH",
+      "weight": 1,
+      "why": "Hai lực vô hình nhưng khác cơ chế: một tác dụng lên điện tích chuyển động, một lên mọi khối lượng."
+    },
+    {
+      "from": "chiem-tinh-hoc",
+      "to": "chom-sao-hoang-dao",
+      "relType": "CONTRASTS_WITH",
+      "weight": 1,
+      "why": "Cung chiêm tinh là 12 phần đều 30°, không trùng với ranh giới 13 chòm sao thật của IAU."
+    },
+    {
+      "from": "hanh-tinh",
+      "to": "hanh-tinh-lun",
+      "relType": "CONTRASTS_WITH",
+      "weight": 0.9,
+      "why": "Khác nhau đúng một tiêu chí: đã dọn sạch vùng quỹ đạo hay chưa."
+    },
+    {
+      "from": "lo-trang",
+      "to": "lo-sau",
+      "relType": "CONTRASTS_WITH",
+      "weight": 0.7,
+      "why": "Cùng đến từ nghiệm Schwarzschild nhưng là hai đối tượng khác nhau, hay bị gộp làm một."
+    },
+    {
+      "from": "mat-troi",
+      "to": "ngoi-sao",
+      "relType": "EXAMPLE_OF",
+      "weight": 1,
+      "why": "Mặt Trời là ví dụ gần nhất và được đo kỹ nhất của một ngôi sao dãy chính."
+    },
+    {
+      "from": "dai-tuyet-chung-permi",
+      "to": "lich-su-su-song-trai-dat",
+      "relType": "EXAMPLE_OF",
+      "weight": 0.8,
+      "why": "Đây là một trong những mốc đổi ngôi lớn nhất của dòng thời gian sự sống."
+    },
+    {
+      "from": "cuc-quang",
+      "to": "tu-truong",
+      "relType": "EXAMPLE_OF",
+      "weight": 0.7,
+      "why": "Cực quang là biểu hiện nhìn thấy được của tương tác giữa hạt tích điện và từ trường hành tinh."
+    },
+    {
+      "from": "van-dong-the-chat",
+      "to": "he-tuan-hoan",
+      "relType": "APPLIES_TO",
+      "weight": 1,
+      "why": "Bài đo tác động của vận động lên đúng hệ này: thể tích tống máu, nhịp tim nghỉ, chức năng nội mô."
+    },
+    {
+      "from": "van-dong-the-chat",
+      "to": "vo2max",
+      "relType": "MEASURED_BY",
+      "weight": 0.9,
+      "why": "VO₂max là thước đo chuẩn cho mức thể lực mà vận động tạo ra."
+    },
+    {
+      "from": "he-tuan-hoan",
+      "to": "vo2max",
+      "relType": "MEASURED_BY",
+      "weight": 0.7,
+      "why": "VO₂max phản ánh khả năng vận chuyển và sử dụng oxy của hệ tuần hoàn."
+    },
+    {
+      "from": "he-tuan-hoan",
+      "to": "van-dong-the-chat",
+      "relType": "PREREQUISITE_OF",
+      "weight": 0.8,
+      "why": "Phải biết tim và mạch máu hoạt động thế nào trước khi nói vận động thay đổi chúng ra sao."
+    }
+  ],
+  "backlinks": [
+    {
+      "from": "sao-moc",
+      "to": "sao-choi",
+      "find": "ảnh hưởng tới quỹ đạo sao chổi",
+      "replace": "ảnh hưởng tới quỹ đạo [sao chổi](/articles/sao-choi)",
+      "why": "Sao Mộc điều khiển quỹ đạo sao chổi — câu đang nói đúng về vai trò hấp dẫn của nó với nhóm thiên thể này, không phải nhắc tên cho có."
+    },
+    {
+      "from": "su-ra-doi-cua-he-mat-troi",
+      "to": "tam-hanh-tinh-he-mat-troi",
+      "find": "Mặt Trời, tám hành tinh, các vệ tinh",
+      "replace": "Mặt Trời, [tám hành tinh](/articles/tam-hanh-tinh-he-mat-troi), các vệ tinh",
+      "why": "Câu liệt kê thành phần Hệ Mặt Trời; 'tám hành tinh' ở đây đúng là đối tượng bài đích trình bày đầy đủ."
+    },
+    {
+      "from": "chom-sao-hoang-dao",
+      "to": "chiem-tinh-hoc-khong-phai-khoa-hoc",
+      "find": "không làm thay đổi gì trong chiêm tinh học",
+      "replace": "không làm thay đổi gì trong [chiêm tinh học](/articles/chiem-tinh-hoc-khong-phai-khoa-hoc)",
+      "why": "Bài đang phân biệt chòm sao thiên văn với cung chiêm tinh — đúng chỗ người đọc muốn biết vì sao chiêm tinh không phải khoa học."
+    },
+    {
+      "from": "chiem-tinh-hoc-khong-phai-khoa-hoc",
+      "to": "chom-sao-hoang-dao",
+      "find": "mỗi phần mang tên một chòm sao nằm trên đó",
+      "replace": "mỗi phần mang tên một [chòm sao](/articles/chom-sao-hoang-dao) nằm trên đó",
+      "why": "Câu mô tả 12 cung mang tên 12 chòm sao nằm trên hoàng đới — chính là danh sách bài đích liệt kê."
+    },
+    {
+      "from": "sao-cau-tao-va-tien-hoa",
+      "to": "20-ngoi-sao-sang-nhat-bau-troi-dem",
+      "find": "nên bầu trời đêm cho ta ấn tượng sai lệch",
+      "replace": "nên [bầu trời đêm](/articles/20-ngoi-sao-sang-nhat-bau-troi-dem) cho ta ấn tượng sai lệch",
+      "why": "Luận điểm là bầu trời đêm chỉ cho ta thấy các sao sáng, không đại diện thành phần thật; bài đích chính là danh sách những sao ta thấy đó."
+    },
+    {
+      "from": "vat-chat-toi-va-nang-luong-toi",
+      "to": "thang-khoang-cach-vu-tru",
+      "find": "nên dùng làm thước đo khoảng cách được",
+      "replace": "nên dùng làm [thước đo khoảng cách](/articles/thang-khoang-cach-vu-tru) được",
+      "why": "Siêu tân tinh Ia làm thước đo khoảng cách là một bậc của thang khoảng cách vũ trụ — bài đích giải thích chính bậc thang này."
+    },
+    {
+      "from": "big-bang",
+      "to": "da-vu-tru",
+      "find": "không gian **phẳng**, không phải mở, không phải đóng",
+      "replace": "[không gian **phẳng**](/articles/da-vu-tru), không phải mở, không phải đóng",
+      "why": "Kết quả đo Ω ≈ 1 (không gian phẳng) là tiền đề bài đích dùng để bàn vũ trụ có thể vô hạn và câu hỏi đa vũ trụ cấp 1. Cùng một đối tượng, bài đích nói tiếp hệ quả."
+    },
+    {
+      "from": "ho-den",
+      "to": "lo-trang-va-lo-sau",
+      "find": "bán kính Schwarzschild",
+      "replace": "[bán kính Schwarzschild](/articles/lo-trang-va-lo-sau)",
+      "why": "Bán kính Schwarzschild đến từ nghiệm Schwarzschild; bài đích trình bày phần còn lại của chính nghiệm đó — lỗ trắng (đảo dấu thời gian) và cầu Einstein–Rosen."
+    },
+    {
+      "from": "ho-den",
+      "to": "song-hap-dan-va-song-trong-luc",
+      "find": "**Sóng hấp dẫn.** LIGO ghi nhận",
+      "replace": "**[Sóng hấp dẫn](/articles/song-hap-dan-va-song-trong-luc).** LIGO ghi nhận",
+      "why": "Mục này nói về sóng hấp dẫn LIGO như một cách quan sát hố đen; bài đích giải thích sóng hấp dẫn là gì và phân biệt với sóng trọng lực."
+    },
+    {
+      "from": "mat-troi",
+      "to": "nhat-thuc-va-nguyet-thuc",
+      "find": "nhật hoa nóng gấp vài trăm lần bề mặt ngay bên dưới nó",
+      "replace": "[nhật hoa](/articles/nhat-thuc-va-nguyet-thuc) nóng gấp vài trăm lần bề mặt ngay bên dưới nó",
+      "why": "Nhật hoa chỉ nhìn thấy được bằng mắt trong pha toàn phần của nhật thực, và bài đích nói đúng điều đó ('Mặt Trăng che vừa khít đĩa sáng, để lộ vành nhật hoa'). Đây là liên kết yếu nhất trong lô: neo hứa 'nhật hoa' còn đích là bài về thực — chấp nhận vì kho chưa có bài riêng về Mặt Trăng."
+    },
+    {
+      "from": "trai-dat",
+      "to": "nguyen-nhan-cua-mua",
+      "find": "Trục nghiêng 23,4° tạo ra bốn mùa",
+      "replace": "Trục nghiêng 23,4° tạo ra [bốn mùa](/articles/nguyen-nhan-cua-mua)",
+      "why": "Dòng này khẳng định trục nghiêng tạo ra bốn mùa; bài đích là lời giải thích đầy đủ của đúng khẳng định đó."
+    },
+    {
+      "from": "trai-dat",
+      "to": "hinh-thanh-va-tien-hoa-su-song",
+      "find": "Sự sống xuất hiện sớm: bằng chứng hoá thạch",
+      "replace": "[Sự sống xuất hiện sớm](/articles/hinh-thanh-va-tien-hoa-su-song): bằng chứng hoá thạch",
+      "why": "Dòng nói sự sống xuất hiện sớm với bằng chứng hoá thạch 3,5 tỉ năm — mốc mở đầu của dòng thời gian trong bài đích."
+    },
+    {
+      "from": "sao-kim",
+      "to": "vi-sao-hanh-tinh-tu-quay",
+      "find": "Sao Kim tự quay theo chiều ngược lại so với hầu hết hành tinh khác",
+      "replace": "Sao Kim [tự quay theo chiều ngược lại](/articles/vi-sao-hanh-tinh-tu-quay) so với hầu hết hành tinh khác",
+      "why": "Sao Kim quay ngược là ngoại lệ mà bài đích giải thích nguyên nhân; neo đúng nghĩa chứ không chỉ trùng chữ 'tự quay'."
+    },
+    {
+      "from": "he-vi-sinh-duong-ruot",
+      "to": "he-mien-dich-nhan-dien-virus",
+      "find": "**Huấn luyện hệ miễn dịch.**",
+      "replace": "**Huấn luyện [hệ miễn dịch](/articles/he-mien-dich-nhan-dien-virus).**",
+      "why": "Mục 'Huấn luyện hệ miễn dịch' nói về hệ miễn dịch người — đúng đối tượng bài đích, không phải miễn dịch vi khuẩn."
+    },
+    {
+      "from": "hinh-thanh-va-tien-hoa-su-song",
+      "to": "dai-tuyet-chung-permi",
+      "find": "đại tuyệt chủng Permi xoá sổ khoảng 80%",
+      "replace": "[đại tuyệt chủng Permi](/articles/dai-tuyet-chung-permi) xoá sổ khoảng 80%",
+      "why": "Câu nêu đại tuyệt chủng Permi 252 triệu năm trước; bài đích là bài chuyên sâu về đúng sự kiện đó."
+    }
+  ],
+  "unmatched": [
+    {
+      "slug": "crispr-la-gi",
+      "why": "Không bài nào trong 42 bài nhắc tới chỉnh sửa gene, Cas9 hay di truyền học. Chỗ duy nhất trùng chữ là 'vi khuẩn' trong `he-vi-sinh-duong-ruot` — nhưng đó là vi khuẩn cộng sinh đường ruột, không phải vi khuẩn bị thực khuẩn thể tấn công. Ép link vào đó là lặp đúng lỗi năng lượng/năng lượng tối.",
+      "fix": "Cần một bài cầu nối trong nhánh di-truyen (ví dụ 'Gene và DNA' hoặc 'Đột biến') rồi link xuống CRISPR."
+    },
+    {
+      "slug": "giac-ngu-sau-va-tri-nho",
+      "why": "Không bài nào nhắc tới giấc ngủ, nhịp sinh học, melatonin hay hải mã. `van-dong-va-tim-mach` — bài sức khoẻ duy nhất có link vào — nói về tim mạch, VO₂max và khuyến nghị WHO, không đả động tới giấc ngủ.",
+      "fix": "Cần bài 'Nhịp sinh học' hoặc bổ sung mục giấc ngủ vào khuyến nghị lối sống trong `van-dong-va-tim-mach`."
+    },
+    {
+      "slug": "he-vi-sinh-duong-ruot",
+      "why": "Chiều ngược lại đã có (`he-vi-sinh` → `he-mien-dich`), nhưng không bài nào nói tới hệ vi sinh, chất xơ hay butyrate. `he-mien-dich-nhan-dien-virus` không hề nhắc ruột hay vi khuẩn cộng sinh.",
+      "fix": "Cần bài dinh dưỡng (chất xơ, thực phẩm lên men) hoặc thêm một câu về dung nạp miễn dịch ở niêm mạc ruột trong `he-mien-dich-nhan-dien-virus` — nhưng đó là sửa nội dung, phải qua science-editor."
+    }
+  ]
+}
