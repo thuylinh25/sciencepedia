@@ -4,3 +4,6 @@
 
 # Bản lưu .git của repo ứng dụng trước khi gộp — đường lùi, xoá khi đã chắc
 sciencepedia/.git.bak/
+
+# Báo cáo mỗi lần chạy pipeline — hiện vật của lần chạy, không phải nguồn
+docs/content/pipeline-run-*.md

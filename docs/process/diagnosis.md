@@ -186,3 +186,52 @@ Rút ra:
 - Agent báo "xong" mà thực ra dừng chờ một tín hiệu không bao giờ đến là chuyện có
   thật. Trong kiến trúc này không có vòng lặp nào đánh thức agent ở giữa pipeline
   — brief phải nói rõ "chạy tới hết, không dừng chờ".
+
+---
+
+## Đo kích thước không phải là đo nội dung
+
+Token OAuth bị máy chủ trả 401. Tôi đo và thấy 109 ký tự, thấy tiền tố
+`sk-ant-oat01-` đúng dạng, rồi kết luận: **bị cắt cụt lúc copy**. Đề nghị người
+dùng copy lại. Họ copy lại và khẳng định đã lấy trọn.
+
+Họ đúng. Token không thiếu ký tự nào — nó **thừa** một: một dấu cách (U+0020) ở
+vị trí 99, do PowerShell chèn vào điểm ngắt dòng khi hiển thị.
+
+Phép đo đúng mất một dòng:
+
+```ts
+/\s/.test(token)   // base64url không bao giờ chứa khoảng trắng
+```
+
+Sai lầm không phải đo sai. Là **đo một chiều rồi kết luận về chiều khác** — lấy
+độ dài để suy ra tính toàn vẹn. Với chuỗi có bảng chữ cái xác định (token, hash,
+slug, mã màu), câu hỏi đầu tiên không phải "dài bao nhiêu" mà **"có ký tự nào
+không thuộc bảng chữ cái của nó không"**. Câu đó chỉ ra ngay chỗ hỏng, còn độ
+dài thì chỉ nói được là "trông hơi ngắn".
+
+Hệ quả thứ hai: đừng đẩy người báo lỗi đi làm lại một việc họ đã làm đúng. Khi
+họ nói "tôi đã làm rồi", mặc định là họ làm rồi.
+
+---
+
+## Brief phải nói vào tham số, không nói vào ý định
+
+Lần chạy pipeline tự động đầu tiên: agent giao việc cho `content-curator` rồi
+kết thúc lượt, kèm câu "sẽ báo lại khi agent hoàn tất — tôi sẽ được thông báo
+tự động". Không có thông báo nào tới. Tiến trình thoát, subagent bị giết theo,
+báo cáo mô tả một kết quả không tồn tại.
+
+Brief đã có sẵn dòng **"chạy tới hết, không dừng chờ"** — chính dòng rút ra từ
+mục "Agent chết thì chỉ file sống sót" phía trên. Nó không cứu được, vì agent
+không cho là mình đang chờ: subagent trong Agent SDK **mặc định chạy nền**, nên
+dưới góc nhìn của nó, việc đã được giao xong và lượt đã trọn vẹn.
+
+Câu có tác dụng là câu nói vào đúng tham số:
+
+> Mọi lần gọi công cụ Agent PHẢI đặt `run_in_background: false`.
+
+Quy tắc: khi hành vi hỏng do một **mặc định của công cụ**, đừng mô tả kết quả
+mong muốn ("chạy tới hết") — nêu tên tham số và giá trị phải đặt. Mô tả ý định
+chỉ sửa được lỗi do agent chọn sai; nó không sửa được lỗi do agent không biết
+có một lựa chọn ở đó.
