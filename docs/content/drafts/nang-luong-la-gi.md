@@ -10,13 +10,13 @@ Lấy một khối khí đã cân bằng nhiệt với môi trường: nó vẫn
 
 Định nghĩa vững hơn thì khiêm tốn hơn: năng lượng là một đại lượng vô hướng gán cho một hệ vật lý, tính được từ trạng thái của hệ và đo bằng joule, mang một tính chất khiến nó đáng có tên riêng — trong một hệ kín, con số ấy không đổi dù bên trong xảy ra chuyện gì.
 
-Cần nói thẳng: vật lý không trả lời câu hỏi "năng lượng làm bằng gì". Nó không phải một chất, cũng không phải dòng chảy vô hình — nó là một con số ta biết cách tính, và điều ta biết chắc là con số đó không tự sinh ra cũng không tự mất đi.
+Cần nói thẳng: vật lý không trả lời câu hỏi "năng lượng làm bằng gì". Nó không phải một chất, cũng không phải dòng chảy vô hình — nó là một con số ta biết cách tính.
 
 ## Joule: thước đo
 
 Đơn vị SI của năng lượng là **joule** (ký hiệu J). NIST xếp joule là đơn vị dẫn xuất cho cả ba đại lượng "năng lượng, công và nhiệt lượng" — ba tên gọi, một đơn vị, vì đó là cùng một thứ nhìn từ ba phía.
 
-Joule dựng từ các đơn vị cơ bản: 1 J = 1 N·m = 1 kg·m²·s⁻². Nói cụ thể, một joule là năng lượng cần để đẩy một vật đi một mét bằng lực một newton. Nâng quả táo 100 gam lên cao một mét tốn khoảng 0,98 J.
+Joule dựng từ các đơn vị cơ bản: 1 J = 1 N·m = 1 kg·m²·s⁻². Một joule là năng lượng cần để đẩy một vật đi một mét bằng lực một newton. Nâng quả táo 100 gam lên cao một mét tốn khoảng 0,98 J.
 
 Ở hai đầu thang đo người ta dùng đơn vị khác cho tiện, nhưng tất cả đều quy về joule:
 
@@ -29,17 +29,17 @@ Năng lượng được gọi tên theo cách nó đang được giữ hoặc đ
 
 **Dạng dự trữ.** *Thế năng hấp dẫn* là năng lượng "lưu trong độ cao của vật" — càng cao và càng nặng thì càng nhiều. *Hoá năng* là năng lượng lưu trong liên kết giữa các nguyên tử và phân tử: thức ăn, pin, xăng dầu đều là kho hoá năng. *Năng lượng hạt nhân* là năng lượng lưu trong hạt nhân nguyên tử — chính thứ giữ hạt nhân lại với nhau — và được giải phóng khi các hạt nhân hợp lại hoặc bị tách ra.
 
-**Dạng chuyển động.** *Động năng* là năng lượng của vật đang chuyển động; NASA cho công thức quen thuộc K = ½mv². Chú ý số mũ — gấp đôi vận tốc thì động năng gấp bốn, và đó là lý do va chạm ở 60 km/h khắc nghiệt hơn nhiều so với ở 30 km/h. *Nhiệt năng* là năng lượng "đến từ chuyển động của các nguyên tử và phân tử trong một chất".
+**Dạng chuyển động.** *Động năng* là năng lượng của vật đang chuyển động; NASA cho công thức quen thuộc K = ½mv². Chú ý số mũ: gấp đôi vận tốc thì động năng gấp bốn. *Nhiệt năng* là năng lượng "đến từ chuyển động của các nguyên tử và phân tử trong một chất".
 
-**Dạng truyền đi.** *Điện năng* được các hạt mang điện tí hon chở đi, thường là electron chạy trong dây dẫn. *Bức xạ* là năng lượng điện từ truyền theo sóng ngang — ánh sáng Mặt Trời tới Trái Đất bằng đường này, và cũng là dòng năng lượng thắp sáng bầu trời khi có [cực quang](/articles/cuc-quang).
+**Dạng truyền đi.** *Điện năng* được các hạt mang điện tí hon chở đi, thường là electron chạy trong dây dẫn. *Bức xạ* là năng lượng điện từ truyền theo sóng ngang — ánh sáng Mặt Trời tới Trái Đất bằng đường này, và cũng là dòng năng lượng thắp sáng [cực quang](/articles/cuc-quang).
 
-Ranh giới giữa các tên gọi không cứng: nhiệt năng, xét đến tận cùng, chính là động năng của từng hạt trong chất.
+Ranh giới giữa các tên gọi không cứng: nhiệt năng, xét đến tận cùng, phần lớn là động năng của từng hạt trong chất.
 
 ## Chuyển hoá, và điều không đổi
 
-Điều làm khái niệm này hữu dụng là năng lượng chuyển được từ dạng này sang dạng khác, còn tổng thì không. NASA phát biểu gọn: trong một miền khảo sát, lượng năng lượng giữ nguyên — không được tạo ra, cũng không bị huỷ đi.
+Năng lượng chuyển được từ dạng này sang dạng khác, còn tổng thì không. NASA phát biểu gọn: trong một miền khảo sát, lượng năng lượng giữ nguyên — không được tạo ra, cũng không bị huỷ đi.
 
-Một chuỗi chuyển hoá quen thuộc: năng lượng hạt nhân trong lõi Mặt Trời thành bức xạ, bức xạ được cây xanh giữ lại dưới dạng hoá năng, hoá năng đi vào thức ăn, rồi thành động năng của cơ bắp và nhiệt toả ra da. Mỗi bước đổi tên, không bước nào đổi tổng.
+Một chuỗi quen thuộc: năng lượng hạt nhân trong lõi Mặt Trời thành bức xạ, bức xạ được cây xanh giữ lại dưới dạng hoá năng, hoá năng đi vào thức ăn, rồi thành động năng của cơ bắp và nhiệt toả ra da. Mỗi bước đổi tên, không bước nào đổi tổng.
 
 Định luật bảo toàn năng lượng — phát biểu chính xác, phạm vi áp dụng và những chỗ nó hay bị hiểu sai — cần một bài riêng.
 
@@ -47,11 +47,11 @@ Một chuỗi chuyển hoá quen thuộc: năng lượng hạt nhân trong lõi 
 
 Mở rộng lớn nhất của khái niệm đến từ [thuyết tương đối hẹp](/articles/thuyet-tuong-doi-hep). Uỷ ban Điều tiết Hạt nhân Hoa Kỳ phát biểu phương trình E = mc² thế này: khi năng lượng của một vật thay đổi một lượng E — bất kể năng lượng ở dạng nào — thì khối lượng của vật thay đổi một lượng bằng E/c².
 
-Vì c² là một số khổng lồ, một lượng khối lượng rất nhỏ ứng với lượng năng lượng rất lớn; đó là lý do phản ứng hạt nhân giải phóng nhiều năng lượng đến vậy. Nhưng đây là phần mở rộng, không phải trọng tâm: ở các hiện tượng đời thường, khối lượng và năng lượng vẫn được tính riêng mà không gây sai lệch đáng kể.
+Vì c² là một số khổng lồ, một lượng khối lượng rất nhỏ ứng với lượng năng lượng rất lớn; đó là lý do phản ứng hạt nhân giải phóng nhiều năng lượng đến vậy. Nhưng đây là phần mở rộng: ở các hiện tượng đời thường, khối lượng và năng lượng vẫn được tính riêng mà không gây sai lệch đáng kể.
 
 ## Một chú thích về tên gọi
 
-"Năng lượng tối" trong vũ trụ học **không** phải một dạng năng lượng trong danh sách trên. Đó là tên đặt cho nguyên nhân chưa biết của sự giãn nở gia tốc của vũ trụ — một chỗ trống trong hiểu biết được gọi tên, chứ không phải kho năng lượng đã đo được như hoá năng hay nhiệt năng. Xem [vật chất tối và năng lượng tối](/articles/vat-chat-toi-va-nang-luong-toi).
+"Năng lượng tối" trong vũ trụ học **không** phải một dạng năng lượng trong danh sách trên. Đó là tên đặt cho nguyên nhân chưa biết của sự giãn nở gia tốc của vũ trụ — một chỗ trống trong hiểu biết được gọi tên, không phải một kho năng lượng đã đo được. Xem [vật chất tối và năng lượng tối](/articles/vat-chat-toi-va-nang-luong-toi).
 
 ---
 
