@@ -177,29 +177,13 @@ jobs:
         # cần thấy nhất.
         run: npm run publish:check -- --draft || true
 
-      # Trang tóm tắt của lượt chạy — thứ mở ra là thấy ngay, không phải lội log.
-      # Đọc thẳng CSDL chứ không đọc lời agent tự khai: lượt bị cắt giữa chừng
-      # không kịp khai gì, nhưng publishedAt thì đã ghi rồi.
-      - name: Tóm tắt bài mới
-        if: always()
-        working-directory: sciencepedia
-        env:
-          DATABASE_URL: ${{ secrets.DATABASE_URL }}
-          NEXT_PUBLIC_SITE_URL: ${{ secrets.NEXT_PUBLIC_SITE_URL }}
-        run: |
-          {
-            echo "## Bài mới trong lượt này"
-            echo ""
-            npm run --silent report:published -- --since "$STARTED" || echo "Không đọc được danh sách bài."
-          } >> "$GITHUB_STEP_SUMMARY"
-
-      # Chỉ gửi khi THẬT SỰ có bài mới — script tự im lặng nếu không có. Cron
-      # chạy mỗi 2 giờ, gửi "không có gì mới" 12 lần/ngày là cách nhanh nhất
-      # để thông báo bị tắt tiếng, và lúc đó tin đáng đọc cũng chìm theo.
+      # Một bước, một lần truy vấn. Bản đầu tách làm hai (tóm tắt / Telegram)
+      # nên hỏi CSDL hai lần cùng một câu hỏi, hai chỗ có thể hỏng, và không gì
+      # bảo đảm hai bên thấy cùng tập bài nếu có bài lên xen giữa.
       #
-      # Thiếu secret thì script bỏ qua êm chứ không hỏng: bài đã publish rồi,
-      # đừng để khâu báo làm người ta tưởng việc xuất bản thất bại.
-      - name: Báo Telegram
+      # Không có bài mới thì script tự im lặng với Telegram nhưng vẫn ghi tóm
+      # tắt. Thiếu secret thì bỏ qua êm, không làm đỏ lượt chạy.
+      - name: Loan báo bài mới
         if: always()
         working-directory: sciencepedia
         env:
@@ -207,7 +191,7 @@ jobs:
           NEXT_PUBLIC_SITE_URL: ${{ secrets.NEXT_PUBLIC_SITE_URL }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-        run: npm run --silent notify -- --since "$STARTED"
+        run: npm run --silent announce -- --since "$STARTED"
 
       - name: Lưu báo cáo
         if: always()

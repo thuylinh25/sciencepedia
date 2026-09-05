@@ -49,6 +49,28 @@ export async function publishedSince(since: Date) {
   });
 }
 
+/** Kiểu hàng `publishedSince()` trả về — khai một lần, dùng ở cả hai nơi. */
+export type PublishedRow = Awaited<ReturnType<typeof publishedSince>>[number];
+
+/**
+ * Dựng đoạn markdown mô tả các bài mới. Export vì bước tóm tắt trên Actions và
+ * bước báo Telegram phải nói CÙNG một nội dung — hai nơi tự định dạng thì sớm
+ * muộn chúng mô tả khác nhau và không ai biết bản nào đúng.
+ */
+export function toMarkdown(rows: PublishedRow[], since: Date, base: string): string {
+  if (rows.length === 0) return `Không có bài nào xuất bản kể từ ${since.toISOString()}.`;
+
+  const out = [`${rows.length} bài mới kể từ ${since.toISOString()}:`, ""];
+  for (const r of rows) {
+    const url = base ? `${base}/vi/articles/${r.slug}` : `/vi/articles/${r.slug}`;
+    out.push(`- **${r.title}** — ${r.category?.name ?? "chưa xếp danh mục"}`);
+    out.push(`  ${url}`);
+    if (r.summary) out.push(`  ${r.summary.slice(0, 160)}${r.summary.length > 160 ? "…" : ""}`);
+    out.push("");
+  }
+  return out.join("\n");
+}
+
 async function main() {
   const argv = process.argv.slice(2);
   const asJson = argv.includes("--json");
@@ -87,19 +109,7 @@ async function main() {
     return;
   }
 
-  if (rows.length === 0) {
-    console.log(`Không có bài nào xuất bản kể từ ${since.toISOString()}.`);
-    return;
-  }
-
-  console.log(`${rows.length} bài mới kể từ ${since.toISOString()}:\n`);
-  for (const r of rows) {
-    const url = base ? `${base}/vi/articles/${r.slug}` : `/vi/articles/${r.slug}`;
-    console.log(`- **${r.title}** — ${r.category?.name ?? "chưa xếp danh mục"}`);
-    console.log(`  ${url}`);
-    if (r.summary) console.log(`  ${r.summary.slice(0, 160)}${r.summary.length > 160 ? "…" : ""}`);
-    console.log("");
-  }
+  console.log(toMarkdown(rows, since, base));
 }
 
 /* Cùng khuôn với check-publish.ts: file này vừa là lệnh chạy tay vừa là module
