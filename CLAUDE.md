@@ -20,7 +20,8 @@ npm run search:reindex
 
 npm run publish:check # rà điều kiện xuất bản toàn kho (chỉ đọc)
 npm run publish       # đổi state sang PUBLISHED — đường ghi DUY NHẤT, có gate
-npm run pipeline      # chạy pipeline 11 bước tự động (cần CLAUDE_CODE_OAUTH_TOKEN)
+npm run pipeline      # chạy liên tục tới khi hết hạn mức (cần CLAUDE_CODE_OAUTH_TOKEN)
+npm run pipeline -- --count 1   # chỉ làm 1 bài rồi dừng
 ```
 
 > Xuất bản tự động: gate nằm trong `scripts/publish.ts`, không nằm trong prompt.

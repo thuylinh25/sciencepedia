@@ -163,6 +163,40 @@ vào đó:
 Hàng rào **không kín** — agent viết được một file rồi chạy file đó. Nó tồn tại
 để chặn lối đi thẳng và nâng chi phí đường vòng; thứ thật sự giữ là lớp khoá.
 
+### Nhịp chạy: liên tục tới khi hết hạn mức
+
+Sửa 2026-09-05, đảo quyết định của chính ngày hôm đó.
+
+Bản đầu đặt `--count 1` và trần chi phí $5, cố ý chừa hạn mức cho phiên làm
+việc tương tác của người. Thực tế chạy cho thấy trần chi phí không canh gác mà
+**tạo hình** công việc: agent đọc được ngân sách còn lại rồi tự cắt việc khi
+thấy gần cạn — ba lượt liên tiếp đều dừng ngay dưới trần, một lượt nói thẳng
+"ngân sách phiên gần cạn nên dừng ở đây". Nâng trần chỉ dời chỗ nó dừng.
+
+Nên bỏ hẳn trần. Hạn mức tài khoản là giới hạn thật và duy nhất; hàng rào chống
+vòng lặp chuyển sang `timeout-minutes` của workflow, thứ đo thời gian thật thay
+vì đoán qua tiền. Đánh đổi đi kèm, đã chấp nhận: lượt chạy tự động không nhường
+quota nữa và sẽ giành hạn mức với phiên tương tác của người.
+
+Kéo theo hai thứ bắt buộc phải có, nếu không thì cách chạy này tự phá:
+
+**Nhặt lại việc dở.** Chạy tới khi hết hạn mức nghĩa là *chắc chắn* sẽ bị cắt
+giữa chừng. Lượt bị cắt để lại một bài DRAFT, mà hàng đợi thì bỏ qua dòng nào
+đã có bài — nên bản nháp đó sẽ không lượt nào nhặt lại và thành bài mồ côi vĩnh
+viễn. Đã xảy ra thật với `ba-dinh-luat-newton`. Vì vậy prompt có bước 0: chạy
+`publish:check --draft` và làm nốt bài DRAFT trước khi lấy chủ đề mới. Trạng
+thái nằm trong CSDL chứ không trong tiến trình, nên nó sống sót qua mọi lần
+runner chết.
+
+**Hết hạn mức không phải lỗi.** `pipeline.ts` thoát mã 75 (`EX_TEMPFAIL`) cho
+trường hợp này, tách khỏi mã 1; workflow đọc 75 thành `::notice::` và báo xanh.
+Gộp hai thứ làm một thì mỗi lần hết quota đều đỏ như một sự cố, và báo đỏ
+thường xuyên thì đúng lúc hỏng thật sẽ không ai nhận ra.
+
+Cron mỗi 2 giờ không nhằm chạy 12 lượt một ngày, mà để bắt được lúc hạn mức vừa
+hồi. Lượt gặp quota còn cạn chết trong vài giây; repo public nên phút Actions
+không tính tiền.
+
 `scripts/check-publish.ts` là chỗ duy nhất định nghĩa điều kiện xuất bản, và nó
 **chỉ đọc** — một cái gate tự sửa dữ liệu để làm chính mình xanh là gate vô
 dụng. Hai mức CHẶN / CẢNH tách nhau vì gộp lại thì hoặc quá chặt (chặn bài hợp

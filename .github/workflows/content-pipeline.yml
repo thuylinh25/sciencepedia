@@ -1,6 +1,6 @@
 name: Content pipeline
 
-# Chạy pipeline nội dung 11 bước mỗi ngày.
+# Chạy pipeline nội dung 11 bước, liên tục tới khi hết hạn mức tài khoản.
 #
 # Vì sao ở GitHub Actions chứ không phải Vercel cron:
 #   - Hàm Vercel cắt ở 60 giây (gói Hobby). Một bài qua 11 bước mất hàng chục
@@ -9,9 +9,7 @@ name: Content pipeline
 #     Claude Code / Agent SDK đọc. `@anthropic-ai/sdk` KHÔNG đọc nó, nên đường
 #     cũ qua `src/lib/rewrite.ts` trên Vercel vẫn cần API key riêng.
 #
-# Bật lịch: bỏ chú thích khối `schedule` bên dưới. Cố ý để tắt khi mới thêm —
-# nhịp độ phải do người quyết sau khi đọc vài lần chạy tay, không phải mặc định
-# bật rồi mới xem.
+# Lịch đã BẬT (2026-09-05). Nhịp độ và lý do nằm ở khối `schedule` bên dưới.
 
 on:
   workflow_dispatch:
@@ -34,9 +32,17 @@ on:
         required: false
         default: false
 
-  # schedule:
-  #   # 22:00 UTC = 05:00 giờ Việt Nam. Bài xong trước giờ người đọc thức dậy.
-  #   - cron: "0 22 * * *"
+  # Chạy mỗi 2 giờ. Không phải để làm 12 lượt một ngày — mà để bắt được lúc
+  # hạn mức vừa hồi. Lượt nào gặp quota còn cạn thì chết trong vài giây ở mã
+  # 75 và báo xanh; lượt nào có quota thì nhặt bài DRAFT lên làm tiếp. Repo
+  # public nên phút Actions miễn phí, một lượt chạy không thì gần như không tốn gì.
+  #
+  # ĐÁNH ĐỔI phải biết: lượt chạy nay không nhường quota nữa, nên ban ngày nó
+  # sẽ giành hạn mức với chính phiên Claude Code tương tác của bạn. Thấy vướng
+  # thì thu hẹp về ban đêm giờ Việt Nam bằng cách đổi dòng dưới thành:
+  #   - cron: "0 16-23 * * *"     # 23:00–06:00 giờ Việt Nam
+  schedule:
+    - cron: "0 */2 * * *"
 
 # Hai lượt chạy chồng nhau sẽ cùng lấy một chủ đề ở đầu hàng đợi và sinh hai
 # bài trùng. Hàng đợi nằm trong file, không có khoá — nên khoá ở đây.
