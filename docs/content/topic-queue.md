@@ -29,7 +29,22 @@ Vũ trụ chỉ nhận 8 vì cái nó thiếu không nằm trong Vũ trụ: 31 b
 
 Sức khoẻ chỉ nhận 8 vì nó nằm cuối chuỗi tiên quyết: viết về nơron trước khi có bài về tế bào, hay về vaccine trước khi có bài về dịch mã, là đúng cái nợ cấu trúc mà hàng đợi này sinh ra để tránh.
 
-## Chặn trước khi viết dòng #1
+## ~~Chặn trước khi viết dòng #1~~ — ĐÃ GỠ 2026-09-05
+
+> **Đã thực hiện.** `npm run taxonomy:tier2 -- --write` chạy lúc 11:55 ngày
+> 2026-09-05: tạo 12 danh mục con cho ba nhánh phẳng, cộng lĩnh vực gốc thứ sáu
+> `hoa-hoc`. Kho hiện có 27 danh mục — 6 gốc, 21 con. Hàng đợi KHÔNG còn bị chặn.
+>
+> Vật lý cuối cùng nhận **4** danh mục con chứ không phải 5: khi Hoá học tách
+> thành lĩnh vực gốc, hai chủ đề nuôi "Vật chất và Nguyên tử" đi theo và nhánh
+> đó còn đúng một bài — mức mỏng mà `category-manager` sinh ra để chặn.
+>
+> Đoạn cảnh báo cũ bên dưới từng khiến một lần chạy pipeline kết luận sai rằng
+> `nhiet-va-nang-luong` chưa tồn tại, dù nó đã có trong CSDL từ một giờ trước.
+> Tài liệu nói "đang chặn" trong khi thực tế đã gỡ thì tệ hơn không có tài liệu:
+> nó khiến người đọc tin thay vì đi kiểm.
+
+### Bối cảnh ban đầu (đã xử lý)
 
 `vat-ly`, `sinh-hoc`, `trai-dat-va-khi-hau` hiện là **danh mục gốc phẳng, không có danh mục con**. Đổ 44 bài vào ba nhánh phẳng rồi mới chia lại là việc đắt nhất có thể làm — URL phụ thuộc taxonomy, và taxonomy đổi thì phải version rồi migrate, không sửa tại chỗ. Cần chốt tầng 2 trước:
 
