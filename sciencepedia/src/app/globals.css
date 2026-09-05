@@ -202,8 +202,9 @@
   --radius-xl: calc(var(--radius) + 4px);
   --radius-2xl: calc(var(--radius) + 12px);
 
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system,
-    "Segoe UI", sans-serif;
+  --font-sans:
+    var(--font-inter), ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    sans-serif;
   --font-display: var(--font-display), ui-serif, Georgia, serif;
   --font-mono: ui-monospace, "SF Mono", "Cascadia Code", monospace;
 
@@ -368,11 +369,11 @@
       /* Trước đây là --chart-4 (magenta) ở 22% — chính nó tạo vệt hồng lệch
          tông trên hero. Nay là vàng thương hiệu ở 12%: ánh sao xa, không phải
          mảng màu. */
-      radial-gradient(
-        ellipse 60% 50% at 85% 20%,
-        color-mix(in oklab, var(--primary) 12%, transparent),
-        transparent 55%
-      ),
+        radial-gradient(
+          ellipse 60% 50% at 85% 20%,
+          color-mix(in oklab, var(--primary) 12%, transparent),
+          transparent 55%
+        ),
       linear-gradient(180deg, var(--space-900), var(--space-800));
   }
 
@@ -548,6 +549,39 @@
      đẩy cả trang tràn ngang. Cho phép ngắt giữa từ khi không còn cách khác —
      chỉ ảnh hưởng đúng những chuỗi dài quá khổ, văn bản thường không đổi. */
   overflow-wrap: anywhere;
+}
+
+/* --------------------------------------------------------------------------
+   Đệm trong thân bài — PHẢI viết ở đây, không viết bằng utility Tailwind.
+
+   `.article-prose` nằm NGOÀI mọi @layer, còn utility của Tailwind v4 nằm trong
+   `@layer utilities`. Trong CSS, lớp cascade đứng TRÊN độ ưu tiên: luật không
+   layer luôn thắng luật có layer, kể cả khi luật có layer đặc trưng hơn nhiều.
+
+   Nên mọi cách vá bằng class trên thẻ bọc đều thua, và đã thua hai lần thật:
+   `[&_td]:px-4` (0,1,1) rồi `[&_td:first-child]:pl-4` (0,2,1) đều không đổi
+   được `padding-inline-start: 0` mà typography đặt cho ô đầu và ô cuối. Ngồi
+   tính specificity ở đây là tính nhầm bài — phải so layer trước, specificity
+   sau.
+
+   Cách duy nhất còn lại mà không phải dùng !important: viết luật ở cùng chỗ
+   không-layer với `.article-prose`, và cho nó specificity cao hơn (0,1,0) của
+   typography. `.article-prose td` là (0,1,1) — đủ.
+   -------------------------------------------------------------------------- */
+
+/* Bảng nằm trong khung có viền, nên ô đầu và ô cuối không được dính sát viền.
+   Typography đặt `padding-inline-start/end: 0` cho hai ô đó để bảng trôi thẳng
+   hàng với cột chữ — đúng khi bảng không có khung, sai khi có. */
+.article-prose th,
+.article-prose td {
+  padding-inline: 1rem;
+}
+
+/* Blockquote ở đây được tô nền nên phải tự lo cả bốn phía; typography chỉ đặt
+   `padding-inline-start`, vốn hợp lý với kiểu mặc định chỉ có một vạch kẻ. */
+.article-prose blockquote {
+  padding-block: 0.75rem;
+  padding-inline: 1.5rem 1.25rem;
 }
 
 /* --------------------------------------------------------------------------

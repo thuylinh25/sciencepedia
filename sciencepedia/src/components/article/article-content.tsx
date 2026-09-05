@@ -72,41 +72,23 @@ const components: Components = {
   table: ({ children }) => (
     // Vùng cuộn ngang phải nhận được focus, nếu không người dùng bàn phím không
     // có cách nào xem phần bảng nằm ngoài khung (WCAG 2.1.1).
-    // `[&_th]:px-4 [&_td]:px-4` là bắt buộc, không phải trang trí.
     //
-    // Plugin typography đặt `padding-inline-start: 0` cho ô ĐẦU và
-    // `padding-inline-end: 0` cho ô CUỐI, để bảng trôi thẳng hàng với dòng
-    // chữ xung quanh. Nhưng ở đây bảng nằm trong một khung CÓ VIỀN, nên chữ ở
-    // cột đầu và cột cuối dính sát vào viền — thấy rõ trên di động, nơi bảng
-    // rộng gần hết màn hình.
-    //
-    // Typography dùng `:where()` nên độ ưu tiên bằng 0, utility ở đây thắng.
-    // Bốn biến thể first/last là để chắc ăn, không thừa: luật của typography
-    // cho ô đầu/cuối có độ ưu tiên (0,1,0), `[&_td]:px-4` có (0,1,1) nên đã
-    // thắng — nhưng thắng nhờ chênh đúng một bậc và cùng nằm trong một layer,
-    // tức chỉ cần đổi thứ tự `@apply` trong globals.css là lật. Nhắm thẳng
-    // `td:first-child` cho (0,2,1), hơn hẳn, không phụ thuộc thứ tự nữa.
-    <div
-      className="my-8 overflow-x-auto rounded-2xl border [&_td]:px-4 [&_th]:px-4 [&_td:first-child]:pl-4 [&_td:last-child]:pr-4 [&_th:first-child]:pl-4 [&_th:last-child]:pr-4"
-      tabIndex={0}
-    >
+    // ĐỪNG thêm `[&_td]:px-4` hay biến thể first/last vào đây để trị chuyện ô
+    // dính sát viền. Đã thử hai lần và cả hai đều không ăn: utility của Tailwind
+    // nằm trong `@layer utilities`, còn `.article-prose` không nằm trong layer
+    // nào, mà lớp cascade đứng trên độ ưu tiên. Luật đệm ô nằm ở globals.css,
+    // ngay dưới định nghĩa `.article-prose`.
+    <div className="my-8 overflow-x-auto rounded-2xl border" tabIndex={0}>
       <table className="my-0 w-full">{children}</table>
     </div>
   ),
   /**
-   * Blockquote có NỀN, nên phải tự lo cả bốn phía.
-   *
-   * Typography chỉ đặt `padding-inline-start` cho blockquote — hợp lý với kiểu
-   * mặc định của nó, vốn chỉ có một vạch kẻ bên trái và không tô nền, nên mép
-   * phải của chữ chính là mép cột chữ. Ở đây khối được tô `bg-accent/5`, tức
-   * nó thành một cái khung nhìn thấy được, và chữ chạy thẳng ra sát mép phải
-   * của khung đó. Cùng loại lỗi với ô bảng dính viền, chỉ khác chỗ.
-   *
-   * `py-1` cũng quá mỏng vì lý do tương tự: 4px trên dưới không thành lề khi
-   * đã có nền.
+   * Blockquote có NỀN, nên phải tự lo cả bốn phía — nhưng phần đệm nằm ở
+   * globals.css, cùng lý do layer như bảng ở trên. Ở đây chỉ còn màu và bo góc,
+   * hai thứ typography không đụng tới nên utility vẫn ăn.
    */
   blockquote: ({ children }) => (
-    <blockquote className="rounded-r-xl border-l-4 border-accent bg-accent/5 py-3 pr-5 pl-6">
+    <blockquote className="rounded-r-xl border-l-4 border-accent bg-accent/5">
       {children}
     </blockquote>
   ),

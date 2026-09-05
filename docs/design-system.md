@@ -164,7 +164,7 @@ cho ~59 — dư khoảng 25%.
 
 ---
 
-## Ba cái bẫy CSS đã cắn thật
+## Bốn cái bẫy CSS đã cắn thật
 
 **1. Phần tử có `position` vẽ trên phần tử tĩnh, bất kể thứ tự DOM.**
 Thanh thống kê thụt lên 40px để chờm vào đáy hero. Hero là `relative`, thanh số
@@ -186,6 +186,28 @@ Muốn một vùng chạm vô hình trong cảnh 3D thì dùng `opacity={0}` v�
 Đi kèm: sprite cỡ 0,5 đơn vị cảnh chỉ là vài pixel trên màn hình, nên đặt sự kiện
 lên chính sprite thì tia bấm gần như không trúng. Vật thể nhỏ trong cảnh 3D cần
 hình bắt sự kiện lớn hơn phần nhìn thấy.
+
+**4. Lớp cascade đứng TRÊN độ ưu tiên — utility Tailwind thua CSS không layer.**
+Ô đầu và ô cuối của bảng trong bài dính sát viền khung. Sửa hai lần bằng utility
+trên thẻ bọc — `[&_td]:px-4` rồi `[&_td:first-child]:pl-4` — cả hai đều không
+đổi được gì, dù bản sau có độ ưu tiên (0,2,1) so với (0,1,0) của typography.
+
+Lý do: utility của Tailwind v4 nằm trong `@layer utilities`, còn `.article-prose`
+trong `globals.css` **không nằm trong layer nào**. CSS so lớp cascade TRƯỚC, so
+specificity SAU, và luật không layer luôn thắng luật có layer — chênh bao nhiêu
+bậc specificity cũng vô nghĩa.
+
+Dấu hiệu nhận ra: thêm class mà DevTools không hề gạch ngang luật cũ, hoặc tăng
+specificity mấy lần vẫn không nhúc nhích. Lúc đó dừng tính specificity lại và đi
+xem luật kia nằm trong layer nào.
+
+Cách sửa: viết luật ở cùng chỗ không-layer với thứ đang cần đè, và cho nó
+specificity cao hơn — `.article-prose td` là (0,1,1), hơn (0,1,0) của
+`:where()`. Nói chung: **muốn đè kiểu của `prose` thì viết CSS trong
+`globals.css`, đừng dán utility lên thẻ.**
+
+Cách kiểm, không phải đoán: dựng xong thì tìm cả hai luật trong
+`.next/static/css/*.css` và xem luật nào nằm trong `@layer`.
 
 ---
 
