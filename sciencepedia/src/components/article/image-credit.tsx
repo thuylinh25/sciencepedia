@@ -23,8 +23,19 @@ import { cn } from "@/lib/utils";
  *
  * Ghi công là nghĩa vụ pháp lý, không phải nội dung. Nó phải **đọc được** —
  * `text-muted-foreground` vẫn đạt ngưỡng contrast — nhưng không được cạnh
- * tranh với tiêu đề bài. Đặt ngay dưới ảnh, không phải trong tooltip hay thẻ
- * mờ ở góc: cùng nguyên tắc provenance đã ghi trong `docs/content-rules.md`.
+ * tranh với tiêu đề bài.
+ *
+ * ## Vì sao ở cuối bài chứ không đè lên ảnh
+ *
+ * Bản trước dán dòng này lên chính ảnh bìa. Chỗ đó thua hai lần: nó va vào
+ * khối tiêu đề trên màn hình hẹp (đã phải dời từ đáy ảnh lên đỉnh một lần), và
+ * nó là chữ trên một tấm ảnh mà độ sáng không đoán trước được, nên phải kèm
+ * nền mờ riêng — tức một mảng chữ nhật xám nằm giữa tấm ảnh mở đầu bài.
+ *
+ * CC BY chỉ đòi ghi công "hợp lý theo phương tiện" (reasonable to the medium),
+ * không đòi phải nằm trên ảnh. Cuối bài, cạnh mục nguồn tham khảo, vừa đủ điều
+ * kiện giấy phép vừa đúng thứ tự ưu tiên: cùng nguyên tắc provenance đã ghi
+ * trong `docs/content-rules.md`.
  *
  * Không có ghi công thì không render gì. Ảnh thuộc phạm vi công cộng không bắt
  * buộc phải có dòng này.

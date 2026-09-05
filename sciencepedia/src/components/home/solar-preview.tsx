@@ -79,21 +79,40 @@ const CSS_ORBITS = [
  * 1. `ssr: false` + `next/dynamic` — three.js ở chunk riêng, HTML đầu tiên
  *    không chứa byte nào của nó.
  * 2. Chỉ mount trong `useEffect`, tức sau khi trang đã tương tác được.
- * 3. Chỉ mount từ `lg` trở lên. Cảnh này nặng hơn thiên hà ở hero — tám hành
- *    tinh có texture riêng — nên trên điện thoại bốn vòng tròn CSS là lựa chọn
- *    đúng, không phải lựa chọn kém.
+ * 3. Trên màn hình nhỏ thì hạ `dpr` và số sao (`lowPower`), không cắt bớt
+ *    hành tinh.
+ *
+ * ## Vì sao điện thoại cũng mount cảnh thật
+ *
+ * Trước đây cảnh chỉ mount từ `lg` trở lên, lấy lý do tiết kiệm pin. Kết quả
+ * bị báo là "trên điện thoại mô hình 3D hỏng, không giống máy tính" — và đó là
+ * phản hồi đúng: bốn vòng tròn CSS với bốn chấm trắng không đọc ra là "bản gọn
+ * nhẹ của Hệ Mặt Trời", nó đọc ra là cảnh 3D dựng lỗi. Cùng một sai lầm đã ghi
+ * trong `docs/design-system.md`: phương án dự phòng không được trông giống
+ * trạng thái hỏng.
+ *
+ * Chi phí thật ra vừa phải, vì `useProgressiveTexture` không treo cảnh chờ
+ * ảnh: cảnh vẽ ngay bằng màu phẳng, texture về tới đâu thay tới đó, ảnh nào
+ * hỏng thì hành tinh đó giữ màu phẳng. Trường hợp xấu nhất trên mạng yếu là
+ * tám quả cầu màu đang quay — vẫn là Hệ Mặt Trời, không phải khung đen.
+ *
+ * Minh hoạ CSS vẫn giữ, nhưng chỉ còn làm chỗ đứng trước lúc cảnh lên.
  */
 export function SolarPreview() {
   const locale = useLocale();
   const [showScene, setShowScene] = useState(false);
+  const [lowPower, setLowPower] = useState(false);
 
   useEffect(() => {
-    const wide = window.matchMedia("(min-width: 1024px)");
-    const decide = () => setShowScene(wide.matches);
+    // Bề rộng không còn quyết định CÓ mount hay không, chỉ quyết định mount ở
+    // mức chi tiết nào.
+    const small = window.matchMedia("(max-width: 1023px)");
+    const decide = () => setLowPower(small.matches);
 
     decide();
-    wide.addEventListener("change", decide);
-    return () => wide.removeEventListener("change", decide);
+    setShowScene(true);
+    small.addEventListener("change", decide);
+    return () => small.removeEventListener("change", decide);
   }, []);
 
   return (
@@ -181,6 +200,7 @@ export function SolarPreview() {
             onSelect={() => {}}
             locale={locale}
             cameraDistance={CAMERA_DISTANCE}
+            lowPower={lowPower}
             // Tắt điều khiển: đây là hình minh hoạ nằm giữa một trang cuộn dọc.
             // Bật lên thì OrbitControls nuốt sự kiện wheel và người đọc đưa
             // chuột qua khối này rồi cuộn sẽ thấy trang đứng im. Muốn nghịch

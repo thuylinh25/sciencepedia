@@ -168,3 +168,24 @@ câu chuyển ý, đoạn nhắc lại điều đã nói, bảng chỉ minh ho�
 **Ngắn nhưng không cụt.** Sau khi rút, bài vẫn phải trả lời trọn vẹn câu hỏi ở
 tiêu đề. Nếu 5 phút không đủ để trả lời tử tế thì chủ đề đó quá rộng cho một bài
 — tách thành hai bài, đừng viết một bài dài.
+
+## Ghi công ảnh: một chỗ duy nhất, ở cuối bài, lấy từ CSDL
+
+Ghi công nằm ở trường `Article.coverImageCredit` và render một lần ở cuối bài,
+cạnh mục nguồn tham khảo. **Không viết ghi công vào thân bài Markdown.**
+
+Vì sao ở cuối chứ không đè lên ảnh: CC BY đòi ghi công "hợp lý theo phương
+tiện", không đòi dán lên ảnh. Lớp phủ trên ảnh bìa thua hai lần — nó tranh chỗ
+với tiêu đề trên màn hình hẹp (đã phải dời từ đáy ảnh lên đỉnh một lần rồi), và
+nó là chữ đặt trên một tấm ảnh có độ sáng không đoán trước được nên buộc phải
+kèm nền mờ riêng, tức một mảng xám nằm giữa tấm ảnh mở đầu bài.
+
+Vì sao từ CSDL chứ không từ Markdown: `npm run images:credit` cập nhật trường
+này thẳng từ Wikimedia Commons, nên thay ảnh là ghi công đổi theo. Ghi công chép
+tay vào thân bài thì lần thay ảnh sau sẽ để lại ghi công của tấm cũ — **ghi công
+sai người còn tệ hơn không ghi**. Đây là lý do sáu bài VACA bị gỡ dòng "Ảnh bìa:
+…" viết tay, dù dòng đó có thêm phần mô tả nội dung ảnh mà trường trong CSDL
+không mang được. Nếu sau này cần mô tả ảnh, thêm cột chứ đừng chép vào bài.
+
+Đổi ảnh bìa thì đặt `coverImageCredit` và `coverImageCreditEn` về `null` rồi
+chạy lại `images:credit -- --write`, đừng sửa tay.

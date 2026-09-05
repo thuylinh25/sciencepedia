@@ -192,24 +192,6 @@ export default async function ArticlePage({
               className="object-cover opacity-70"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-transparent" />
-
-            {/* Ghi công đặt ở góc TRÊN bên phải của ảnh.
- 
-                Bản trước đặt ở góc dưới, và nó va vào khối tiêu đề — khối đó
-                thụt lên bằng -mt-40 nên cũng chiếm đúng dải đáy ảnh. Trên di
-                động tiêu đề dài hai dòng, chữ ghi công nằm chồng lên chữ tiêu
-                đề, đọc không ra cả hai.
- 
-                Đỉnh ảnh không có gì tranh chỗ. Nền mờ riêng vì ảnh bìa sáng
-                tối không đoán trước được. */}
-            <ImageCredit
-              credit={
-                loc === "en"
-                  ? (article.coverImageCreditEn ?? article.coverImageCredit)
-                  : article.coverImageCredit
-              }
-              className="absolute end-3 top-3 max-w-[min(90%,32rem)] rounded-md bg-space-900/70 px-2.5 py-1 text-end text-white/70 backdrop-blur-sm [&_a:hover]:text-white"
-            />
           </div>
         ) : (
           <div className="bg-cosmos starfield h-56 w-full" />
@@ -366,6 +348,30 @@ export default async function ArticlePage({
               </ol>
             </section>
           )}
+
+          {/* Ghi công ảnh bìa.
+
+              Từng nằm đè lên chính tấm ảnh. Bỏ chỗ đó vì hai lẽ: nó tranh chỗ
+              với tiêu đề trên màn hình hẹp — đã phải dời từ đáy ảnh lên đỉnh
+              một lần rồi — và nó lặp lại thứ mà đoạn dẫn nguồn cuối bài đã nói.
+
+              Cuối bài là đúng chỗ: ghi công là nghĩa vụ pháp lý, không phải nội
+              dung, nên nó đứng cạnh mục nguồn tham khảo chứ không tranh chấp
+              với phần người đọc tìm đến để đọc. CC BY đòi ghi công "hợp lý theo
+              phương tiện", không đòi dán lên ảnh.
+
+              Vẫn lấy từ CSDL chứ không viết vào thân bài: `images:credit` cập
+              nhật trường này thẳng từ Commons, nên thay ảnh là ghi công đổi
+              theo. Chép vào Markdown thì lần thay ảnh sau để lại ghi công của
+              tấm cũ — ghi công sai người, tệ hơn không ghi. */}
+          <ImageCredit
+            credit={
+              loc === "en"
+                ? (article.coverImageCreditEn ?? article.coverImageCredit)
+                : article.coverImageCredit
+            }
+            className="mt-10"
+          />
 
           <Separator className="my-12" />
 

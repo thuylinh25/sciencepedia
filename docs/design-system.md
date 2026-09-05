@@ -218,3 +218,27 @@ Chọn icon là một phát biểu, không phải trang trí:
   tiếng Anh, nó khiến người dùng tưởng có ngôn ngữ khác. Dùng `Globe`.
 - `⌘` là phím Command, chỉ có trên Mac. Nhãn phím tắt phải theo hệ điều hành —
   mặc định `Ctrl` ở HTML dựng sẵn, đổi sang `⌘` sau khi hydrate nếu là Mac.
+
+## Cùng một sản phẩm trên mọi màn hình — hạ độ mịn, đừng đổi thứ đang xem
+
+Mô hình 3D Hệ Mặt Trời ở trang chủ từng chỉ mount từ `lg` trở lên, lấy lý do
+tiết kiệm pin; dưới ngưỡng đó là bốn vòng tròn CSS. Phản hồi nhận được: "trên
+điện thoại mô hình 3D hỏng, không giống máy tính" — và đó là phản hồi đúng.
+
+Đây là lần thứ hai vấp cùng một nguyên tắc đã ghi ở mục *Trạng thái dự phòng
+không được trông giống trạng thái hỏng*, nhưng ở một dạng khác đáng tách riêng:
+lần trước là **dự phòng trông như lỗi**, lần này là **dự phòng trông như một
+thứ khác hẳn**. Người dùng so sánh giữa hai thiết bị của chính họ, và khi hai
+bên hiện ra hai vật khác nhau thì kết luận tự nhiên là bên yếu hơn bị hỏng.
+
+Quy tắc: chặn theo bề rộng màn hình thì chặn **mức chi tiết**, đừng chặn **có
+hay không**. Với cảnh WebGL, hai chỗ đắt nhất và đáng hạ là `dpr` (điện thoại có
+mật độ điểm ảnh cao nhất trên GPU yếu nhất — `dpr` 2 ở đó là dựng gấp bốn số
+điểm ảnh trên phần cứng kém gấp mấy lần) và số hạt nền. Đừng bớt hành tinh, đừng
+bỏ texture: hình dạng của thứ đang xem phải giữ nguyên.
+
+Điều kiện để làm được: tài nguyên nặng phải nạp **không chặn**. `useProgressiveTexture`
+vẽ cảnh ngay bằng màu phẳng rồi thay ảnh khi ảnh về, nên trường hợp xấu nhất
+trên mạng yếu là tám quả cầu màu đang quay — vẫn là Hệ Mặt Trời, không phải
+khung đen. Nếu tài nguyên còn nạp kiểu treo cả cảnh thì phải sửa chỗ đó trước,
+chưa mở cho màn hình nhỏ được.

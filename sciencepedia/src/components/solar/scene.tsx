@@ -252,6 +252,7 @@ export function SolarScene({
   interactive = true,
   transparent = false,
   cameraDistance,
+  lowPower = false,
 }: {
   settings: SceneSettings;
   selectedId: string | null;
@@ -279,6 +280,18 @@ export function SolarScene({
    * đó bị **cắt cụt theo một đường thẳng đứng**, trông như lỗi render.
    */
   cameraDistance?: number;
+  /**
+   * Hạ chi phí dựng hình cho màn hình nhỏ.
+   *
+   * Điện thoại có mật độ điểm ảnh cao nhất nhưng GPU yếu nhất, nên `dpr` 2 ở
+   * đó là dựng gấp bốn số điểm ảnh trên phần cứng kém gấp mấy lần — đúng tổ hợp
+   * làm cảnh tụt khung hình và máy nóng lên. Ghim `dpr` 1.25 và giảm số sao là
+   * hai chỗ đắt nhất, trong khi hình dạng cảnh không đổi.
+   *
+   * KHÔNG bớt hành tinh hay bỏ texture: người xem trên điện thoại phải thấy
+   * cùng một Hệ Mặt Trời với người xem trên máy tính, chỉ khác độ mịn.
+   */
+  lowPower?: boolean;
   /** Kinh độ hoàng đạo thật theo id hành tinh, nếu lấy được từ JPL Horizons */
   longitudes?: Record<string, number>;
 }) {
@@ -304,7 +317,7 @@ export function SolarScene({
         near: 0.1,
         far: 2000,
       }}
-      dpr={[1, 2]}
+      dpr={lowPower ? [1, 1.25] : [1, 2]}
       gl={{
         antialias: true,
         powerPreference: "high-performance",
@@ -326,7 +339,7 @@ export function SolarScene({
       <Stars
         radius={220}
         depth={70}
-        count={5000}
+        count={lowPower ? 1800 : 5000}
         factor={4}
         saturation={0}
         fade
