@@ -26,7 +26,8 @@
     "pipeline": "tsx --env-file-if-exists=.env scripts/pipeline.ts",
     "taxonomy:tier2": "tsx --env-file-if-exists=.env scripts/seed-taxonomy.ts",
     "category:image": "tsx --env-file-if-exists=.env scripts/set-category-image.ts",
-    "backlinks": "tsx --env-file-if-exists=.env scripts/add-backlinks.ts"
+    "backlinks": "tsx --env-file-if-exists=.env scripts/add-backlinks.ts",
+    "entity:apply": "tsx --env-file-if-exists=.env scripts/apply-entity-plan.ts"
   },
   "prisma": {
     "seed": "tsx --env-file-if-exists=.env prisma/seed.ts"

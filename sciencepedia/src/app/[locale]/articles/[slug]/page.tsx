@@ -283,7 +283,7 @@ export default async function ArticlePage({
               thoại, bố cục chính của dự án. */}
           <MobileTableOfContents headings={headings} />
 
-          <ArticleContent markdown={content} />
+          <ArticleContent markdown={content} locale={loc} />
 
           {/* Thẻ */}
           {article.tags.length > 0 && (
