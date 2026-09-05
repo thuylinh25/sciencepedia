@@ -95,5 +95,9 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: pipeline-run
-          path: docs/content/pipeline-run-*.md
+          # Kèm cả drafts/: khi chạy thử, agent soạn bài ra đó chứ không ghi
+          # CSDL — không tải về thì lần chạy thử không còn gì để đọc.
+          path: |
+            docs/content/pipeline-run-*.md
+            docs/content/drafts/
           if-no-files-found: warn
