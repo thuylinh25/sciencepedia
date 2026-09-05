@@ -132,11 +132,25 @@ jobs:
           MEILISEARCH_HOST: ${{ secrets.MEILISEARCH_HOST }}
           MEILISEARCH_MASTER_KEY: ${{ secrets.MEILISEARCH_MASTER_KEY }}
         run: |
+          set +e
           npm run pipeline -- \
             --count "${{ inputs.count || 1 }}" \
             --budget "${{ inputs.budget || 20 }}" \
             --model "${{ inputs.model || 'sonnet' }}" \
             ${{ inputs.dry_run && '--dry-run' || '' }}
+          code=$?
+          set -e
+
+          # 75 (EX_TEMPFAIL) = hết hạn mức tài khoản. pipeline.ts cố ý tách mã
+          # này khỏi mã 1 để chỗ này phân biệt được "chạy lại sau" với "có thứ
+          # hỏng cần người xem". Với gói đăng ký, hết hạn mức là kết cục BÌNH
+          # THƯỜNG và sẽ lặp lại; báo đỏ mỗi lần thì sau vài lần không ai đọc
+          # nữa, và đúng lúc hỏng thật sẽ không ai nhận ra.
+          if [ "$code" -eq 75 ]; then
+            echo "::notice::Hết hạn mức tài khoản — không phải lỗi cấu hình. Đợi quota reset rồi chạy lại, không cần sửa gì."
+            exit 0
+          fi
+          exit $code
 
       - name: Rà lại toàn kho sau lượt chạy
         # Chạy cả khi bước trên hỏng: một lượt bị cắt giữa chừng là đúng lúc
@@ -145,7 +159,12 @@ jobs:
         working-directory: sciencepedia
         # Gate trả exit 1 khi có bài bị chặn — ở đây đó là thông tin, không phải
         # sự cố của workflow, nên nuốt mã lỗi và giữ nguyên output.
-        run: npm run publish:check || true
+        #
+        # `--draft` là bắt buộc chứ không phải cho đầy đủ: một lượt chạy bị
+        # cắt giữa chừng để lại đúng một thứ — bài ở trạng thái DRAFT. Không
+        # có cờ này thì bước rà chỉ nhìn bài đã PUBLISHED, tức là mù đúng chỗ
+        # cần thấy nhất.
+        run: npm run publish:check -- --draft || true
 
       - name: Lưu báo cáo
         if: always()
