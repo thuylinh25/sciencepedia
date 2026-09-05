@@ -60,6 +60,14 @@ jobs:
           cache: npm
           cache-dependency-path: sciencepedia/package-lock.json
 
+      # Lock file do npm 12 ở máy phát triển viết ra. setup-node cho Node 22
+      # kèm npm 10, mà npm 10 đòi `overrides` phải nằm trong entry gốc của
+      # lock — npm 12 không ghi ở đó nữa, nên `npm ci` kết luận lệch và dừng.
+      # Ghim cùng một npm cho hai bên; nếu không, mỗi lần `npm install` ở máy
+      # lại làm hỏng CI mà lock thì chẳng có gì sai.
+      - name: Dùng npm cùng phiên bản với máy phát triển
+        run: npm i -g npm@12
+
       - name: Cài đặt
         working-directory: sciencepedia
         run: npm ci
