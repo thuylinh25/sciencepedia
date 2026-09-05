@@ -71,8 +71,15 @@ const REPO_ROOT = resolve(import.meta.dirname, "..", "..");
  * 2. **Ghi thẳng vào CSDL bằng lệnh một dòng.** Đường ghi hợp lệ duy nhất là
  *    `npm run publish`, vì gate nằm trong đó. Cấm `-e`/`--eval` chặn lối tắt
  *    phổ biến nhất đi vòng qua nó.
- * 3. **Đẩy code và chạm vào secret.** Lần chạy này sinh nội dung, không sinh
- *    commit; và không có việc gì cần đọc `.env` ra ngoài.
+ * 3. **Đẩy code và chạm vào secret.** Không có việc gì cần đọc `.env` ra ngoài.
+ *
+ *    `git commit` thì CỐ Ý không cấm — chốt 2026-09-05 sau khi lượt chạy đầu
+ *    tiên tự commit bài đã publish. Ranh giới đúng nằm ở `push`, không ở
+ *    `commit`: commit là cục bộ và lùi được bằng `git reset`, còn push là
+ *    hành động hướng ra ngoài. Trong quy trình của dự án này, người đẩy code
+ *    bằng GitHub Desktop — nên bước push CHÍNH LÀ bước người xem lại. Cấm
+ *    commit không thêm an toàn nào, chỉ khiến agent để lại thay đổi lơ lửng
+ *    trong working tree, khó đọc hơn một commit có lời giải thích.
  *
  * Danh sách này KHÔNG kín — agent viết được một file rồi chạy file đó. Nó là
  * hàng rào, không phải khoá. Khoá thật nằm trong `scripts/publish.ts`.
@@ -89,7 +96,12 @@ const FORBIDDEN: { pattern: RegExp; reason: string }[] = [
     reason:
       "Không chạy mã một dòng đụng CSDL. Muốn xuất bản thì dùng `npm run publish -- --slug <slug>`, nơi gate được thi hành.",
   },
-  { pattern: /\bgit\s+push\b/i, reason: "Lần chạy này không đẩy code." },
+  {
+    // Chỉ `push`, không phải `commit` — xem chú thích đầu file cho lý do.
+    pattern: /\bgit\s+push\b/i,
+    reason:
+      "Không đẩy code. Cứ commit bình thường kèm lời giải thích; người sẽ xem lại rồi tự push.",
+  },
   { pattern: /\brm\s+-rf?\b/i, reason: "Không xoá đệ quy trong lần chạy tự động." },
   { pattern: /(^|\s)(cat|less|head|tail|type)\s+[^|;]*\.env\b/i, reason: "Không đọc file secret." },
 ];

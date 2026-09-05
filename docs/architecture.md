@@ -179,3 +179,15 @@ hình tệ nhất.
 sót lúc viết nó cũng bỏ sót lúc chấm — sai sót tương quan, và "đã duyệt" thành
 một con dấu rỗng. Đây là gate yếu hơn người duyệt thật; đừng đọc nó như tương
 đương.
+
+### Agent được commit, không được push
+
+Chốt 2026-09-05, sau khi lượt chạy pipeline đầu tiên tự commit bài vừa publish.
+
+Ranh giới đúng nằm ở `push`, không ở `commit`. Commit là cục bộ và lùi được
+bằng `git reset`; push là hành động hướng ra ngoài. Trong quy trình của dự án
+này người đẩy code bằng GitHub Desktop, nên **bước push chính là bước người xem
+lại** — nó đã là một cái gate sẵn có, không cần dựng thêm cái thứ hai.
+
+Cấm commit không thêm an toàn nào: agent vẫn sửa được file, chỉ là để lại thay
+đổi lơ lửng trong working tree, khó đọc hơn một commit có lời giải thích.
