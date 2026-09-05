@@ -22,14 +22,33 @@ export function SectionHeading({
   children?: ReactNode;
 }) {
   return (
+    /* Dưới `sm` phải xếp DỌC, không phải `flex-wrap`.
+
+       `flex-wrap` nghe như đủ để link tự xuống dòng khi chật, nhưng không:
+       khối tiêu đề mang `flex-1`, tức `flex-basis: 0`, nên nó co lại nhường
+       chỗ cho link thay vì đẩy link sang hàng mới. Item có thể co thì hàng
+       không bao giờ tràn, và hàng không tràn thì không có gì để wrap.
+
+       Hệ quả trên điện thoại 360px: link "Xem tất cả bài viết" chiếm khoảng
+       một nửa bề ngang, tiêu đề còn chưa tới 150px và "Bài viết nổi bật" phải
+       xuống hai dòng — giữa một màn hình còn trống hẳn nửa bên phải.
+
+       Từ `sm` trở lên mới có đủ chỗ cho cả hai đứng cùng hàng. */
     <div
       className={cn(
-        "mb-8 flex flex-wrap items-end gap-4",
-        align === "center" ? "flex-col items-center text-center" : "",
+        /* `mb-6` dưới `sm`: 32px khoảng cách dưới tiêu đề là nhịp của màn hình
+           rộng, còn trên điện thoại nó đẩy nội dung thật xuống dưới nếp gấp.
+           12 chỗ dùng component này, nên đây là 12 lần tiết kiệm 8px. */
+        "mb-6 flex gap-4 sm:mb-8",
+        align === "center"
+          ? "flex-col items-center text-center"
+          : "flex-col items-start sm:flex-row sm:flex-wrap sm:items-end",
         className,
       )}
     >
-      <div className={cn(align === "left" && "flex-1")}>
+      {/* `flex-1` chỉ có nghĩa khi đã xếp ngang. Ở chế độ cột nó làm khối tiêu
+          đề giãn theo CHIỀU CAO, nên hoãn tới `sm` cùng lúc với `flex-row`. */}
+      <div className={cn(align === "left" && "w-full sm:w-auto sm:flex-1")}>
         {/* Gạch vàng nhỏ — nhịp thị giác lặp lại của National Geographic */}
         <span
           className={cn(

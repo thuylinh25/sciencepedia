@@ -55,7 +55,13 @@ export async function StatsBand({
                có `justify-center` thì `flex-col` dồn nội dung lên đầu ô, và cả
                dải trông như bị lệch lên — thấy rõ trong ảnh chụp màn hình:
                khoảng trống dưới gấp rưỡi khoảng trống trên. */
-            className="flex flex-col items-center justify-center gap-0.5 bg-card px-4 py-5 sm:py-6"
+            /* Đệm hẹp lại dưới `sm`. Ở 360px, lưới 2 cột cho mỗi ô khoảng
+               160px, và với `px-4` thì chữ chỉ còn 127px — đủ hẹp để cả hai
+               nhãn dài nhất xuống hai dòng. `px-3` trả lại 8px mỗi bên.
+
+               `py-4` thay `py-5`: cả dải cao 2 hàng, nên mỗi 8px cắt ở đây
+               tiết kiệm 16px trên một màn hình chỉ cao chừng 780px. */
+            className="flex flex-col items-center justify-center gap-0.5 bg-card px-3 py-4 sm:px-4 sm:py-6"
           >
             {/* Icon nằm CÙNG DÒNG với con số, không xếp chồng bên trên.
 
@@ -68,7 +74,11 @@ export async function StatsBand({
                 xuống, nên `leading-none` để lại khoảng trống chân chữ rỗng
                 trong hộp; flexbox căn giữa theo HỘP nên nét nhìn thấy được bị
                 đẩy lên trên tâm thật. */}
-            <dd className="flex items-center gap-2.5 font-display text-4xl leading-tight font-bold tracking-tight tabular-nums sm:text-[42px]">
+            {/* `text-3xl` dưới `sm`, không phải `text-4xl`. Con số cao nhất
+                trong kho có hai chữ số; 36px chỉ để chiếm chỗ chứ không giúp
+                đọc nhanh hơn 30px, mà mỗi hàng cao thêm 7px thì cả dải cao
+                thêm 14px. Từ `sm` giữ nguyên 42px như cũ. */}
+            <dd className="flex items-center gap-2.5 font-display text-3xl leading-tight font-bold tracking-tight tabular-nums sm:text-[42px]">
               <Icon
                 aria-hidden
                 className="size-5 shrink-0 text-primary-strong sm:size-6"
