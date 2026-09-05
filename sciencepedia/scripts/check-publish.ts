@@ -73,6 +73,40 @@ const INTERNAL_LINK = /\]\(\/(?:[a-z]{2}\/)?articles\/([a-z0-9-]+)\)/gi;
  */
 const INLINE_CREDIT = /^\s*(?:\*\*|_)?\s*(?:Ảnh bìa|Ảnh|Nguồn ảnh|Image credit)\s*:/im;
 
+/**
+ * Bỏ khối dẫn nguồn ở cuối bài trước khi đo.
+ *
+ * Chốt 2026-09-05. Trần 3.000–5.000 ký tự là ngân sách cho VĂN XUÔI, mà
+ * `content` thì gồm cả khối dẫn nguồn dán ở cuối — và docs/content-rules.md
+ * cấm cắt khối đó khi rút gọn. Đo cả hai bằng một con số là bắt tác giả trả
+ * giá cho phần họ không được phép động vào: bài càng dẫn nhiều nguồn càng bị
+ * phạt, đúng ngược điều ta muốn khuyến khích.
+ *
+ * Phát hiện ra vì cả sáu bài tốt nhất trong kho cùng vượt trần 1–3%
+ * (5.035–5.133 ký tự) theo cùng một kiểu. Sáu bài cùng lệch một hướng là dấu
+ * hiệu của phép đo sai, không phải của sáu tác giả cùng viết dài.
+ *
+ * Kho có HAI dạng khối dẫn nguồn, và luật phải nhận cả hai:
+ *
+ *   feed-sync:  ---\n\nNguồn: **[tiêu đề](url)** — nhà xuất bản.
+ *   bài VACA:   ---\n\nBài này viết lại từ **[tiêu đề](url)** của … Bản quyền…
+ *
+ * Nên không tìm chữ "Nguồn:" mà tìm bất kỳ dấu hiệu xuất xứ nào. Ba điều kiện
+ * cùng lúc, để không nuốt nhầm mục cuối của bài dùng `---` để phân đoạn:
+ * đuôi phải bắt đầu bằng đường kẻ ngang, ngắn (≤1.000 ký tự), và mang một từ
+ * khoá xuất xứ.
+ */
+const PROVENANCE = /\b(?:Nguồn|Source|Bản quyền|Trang chủ|viết lại từ)\b/i;
+
+export function prose(markdown: string): string {
+  const cut = markdown.lastIndexOf("\n---");
+  if (cut === -1) return markdown;
+  const tail = markdown.slice(cut);
+  if (!/^\n-{3,}[ \t]*\n/.test(tail)) return markdown;
+  if (tail.length > 1_000) return markdown;
+  return PROVENANCE.test(tail) ? markdown.slice(0, cut).trimEnd() : markdown;
+}
+
 function countWords(markdown: string): number {
   return markdown.trim().split(/\s+/).length;
 }
@@ -195,17 +229,20 @@ async function audit(
   }
 
   // --- Quy tắc nội dung (docs/content-rules.md) ---
-  const length = article.content.length;
+  // Đo văn xuôi, không đo khối dẫn nguồn — xem chú thích của `prose()`.
+  const body = prose(article.content);
+  const length = body.length;
   if (length < MIN_CHARS || length > MAX_CHARS) {
     block(
-      `độ dài ${length.toLocaleString("vi-VN")} ký tự, ngoài khoảng ` +
+      `độ dài ${length.toLocaleString("vi-VN")} ký tự văn xuôi, ngoài khoảng ` +
         `${MIN_CHARS.toLocaleString("vi-VN")}–${MAX_CHARS.toLocaleString("vi-VN")}`,
     );
   }
 
   // readingTime phải khớp nội dung thật, không đặt tay. Cho lệch 1 phút vì
   // cách đếm từ khác nhau ở chỗ dấu câu và Markdown, không vì cho phép áng chừng.
-  const expected = Math.max(1, Math.round(countWords(article.content) / WORDS_PER_MINUTE));
+  // Đếm trên văn xuôi vì người đọc không "đọc" danh sách nguồn.
+  const expected = Math.max(1, Math.round(countWords(body) / WORDS_PER_MINUTE));
   if (Math.abs(article.readingTime - expected) > 1) {
     block(`readingTime = ${article.readingTime} nhưng nội dung đọc ~${expected} phút`);
   }

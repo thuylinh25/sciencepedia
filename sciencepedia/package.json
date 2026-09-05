@@ -23,7 +23,8 @@
     "import:notion": "tsx --env-file-if-exists=.env scripts/import-notion.ts",
     "postinstall": "prisma generate",
     "publish": "tsx --env-file-if-exists=.env scripts/publish.ts",
-    "pipeline": "tsx --env-file-if-exists=.env scripts/pipeline.ts"
+    "pipeline": "tsx --env-file-if-exists=.env scripts/pipeline.ts",
+    "taxonomy:tier2": "tsx --env-file-if-exists=.env scripts/seed-taxonomy.ts"
   },
   "prisma": {
     "seed": "tsx --env-file-if-exists=.env prisma/seed.ts"

@@ -159,7 +159,22 @@ export function Hero({
             Góc dưới phải chứ không phải sau chữ: ở đó chỉ có nút CTA nằm bên
             trái, nên không có chữ trắng nào phải đọc trên nền có lõi thiên hà
             sáng. Đây là ràng buộc tương phản, không phải sở thích bố cục. */}
-        <div className="pointer-events-none absolute -right-[22%] -bottom-[6%] z-0 w-[17rem] max-w-[62%] opacity-60 lg:pointer-events-auto lg:static lg:w-auto lg:max-w-none lg:opacity-100">
+        {/* `bottom-14` chứ KHÔNG phải `-bottom-[6%]`.
+
+            Bản cũ để thiên hà thò xuống dưới đáy hero, và ở đó nó bị che hai
+            lần: `overflow-hidden` của hero cắt phần tràn ra, rồi StatsBand —
+            thụt lên 40px bằng `-mt-10` — phủ nốt 40px cuối. Mất chừng một
+            phần ba khối, đúng phần có lõi sáng.
+
+            Thu nhỏ thanh số KHÔNG chữa được: mép trên của nó nằm ở "đáy hero
+            trừ 40px", tính từ `-mt-10`, nên nó đứng nguyên chỗ đó dù thanh cao
+            hay thấp. Thứ phải đổi là vị trí thiên hà.
+
+            3.5rem = 56px, tức trên mép thanh số 16px. Đo theo px cố định chứ
+            không theo % vì thứ phải né là `-mt-10`, một giá trị px cố định —
+            dùng % thì khoảng hở đổi theo chiều cao hero và có bề rộng màn hình
+            sẽ chạm lại. */}
+        <div className="pointer-events-none absolute -right-[22%] bottom-14 z-0 w-[17rem] max-w-[62%] opacity-60 lg:pointer-events-auto lg:static lg:w-auto lg:max-w-none lg:opacity-100">
           <HeroGalaxy locale={locale} />
         </div>
       </div>
