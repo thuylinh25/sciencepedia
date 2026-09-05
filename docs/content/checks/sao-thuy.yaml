@@ -1,0 +1,33 @@
+# Fact-check — sao-thuy
+# Sinh bởi skill fact-check, chế độ audit: bài ĐÃ PUBLISHED nhưng factCheck=PENDING.
+slug: sao-thuy
+checked_at: 2026-09-05
+mode: audit
+article_status: PUBLISHED
+fact_check_state_before: PENDING
+strong_sources: 1   # nguồn bậc 1-2 còn hiệu lực; ngưỡng của dự án là 3
+claims:
+  - claim: "Tự quay 58,6 ngày; quỹ đạo 88 ngày; ngày mặt trời 176 ngày"
+    verdict: verified
+    evidence: "science.nasa.gov/mercury/facts — \"One Mercury solar day equals 176 Earth days\""
+  - claim: "Cộng hưởng quỹ đạo-tự quay 3:2 do lực thuỷ triều"
+    verdict: verified
+    evidence: "science.nasa.gov/mercury/facts"
+  - claim: "Ngoại quyển cực loãng; ngày 430°C, đêm -180°C"
+    verdict: verified
+    evidence: "science.nasa.gov/mercury/facts — 430°C / -180°C"
+  - claim: "Lõi kim loại chiếm ~85% bán kính"
+    verdict: verified
+    evidence: "science.nasa.gov/mercury/facts — \"about 85% of the planet radius\""
+  - claim: "Radar phát hiện băng nước trong hố vùng cực bị bóng che vĩnh viễn"
+    verdict: verified
+    evidence: "science.nasa.gov/mercury/facts"
+  - claim: "Va chạm khổng lồ thời sơ khai bóc đi phần lớn lớp phủ"
+    verdict: verified
+    evidence: "bài nói đúng mức \"giả thuyết được ủng hộ nhiều nhất\", không nói là kết luận"
+findings:
+  - severity: S3
+    detail: "URL nguồn nssdc.gsfc.nasa.gov/planetary/factsheet/ hiện trả 307 về nasa.gov/nssdc — bảng số liệu không truy cập được (đo 2026-09-05). Lưu ý check-publish --links coi URL này là \"còn sống\" vì nó theo redirect tới một trang trả 200."
+  - severity: note
+    detail: "Bài này phân biệt ĐÚNG \"ngày mặt trời\" với vòng tự quay. Đối lập trực tiếp với sao-kim và tam-hanh-tinh-he-mat-troi, nơi cùng khái niệm bị trộn."
+recommendation: revise

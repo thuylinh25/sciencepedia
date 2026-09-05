@@ -1,0 +1,50 @@
+# Fact-check — big-bang
+# Sinh bởi skill fact-check, chế độ audit: bài ĐÃ PUBLISHED nhưng factCheck=PENDING.
+slug: big-bang
+checked_at: 2026-09-05
+mode: audit
+article_status: PUBLISHED
+fact_check_state_before: PENDING
+strong_sources: 1   # nguồn bậc 1-2 còn hiệu lực; ngưỡng của dự án là 3
+claims:
+  - claim: "\"Big Bang\" vốn là lời chế giễu của Fred Hoyle trong một buổi phát thanh năm 1949"
+    verdict: verified
+  - claim: "Big Bang là giãn nở của chính không gian, không có tâm, không có mảnh văng ra"
+    verdict: verified
+  - claim: "Lemaître 1927; Hubble 1929; Gamow 1948; Penzias và Wilson 1964; Nobel 1978"
+    verdict: verified
+  - claim: "Bức xạ nền vi sóng là phổ vật đen ở 2,725 K"
+    verdict: verified
+  - claim: "Tổng hợp hạt nhân sơ khai cho ~75% hydro và ~25% heli theo khối lượng"
+    verdict: verified
+  - claim: "Dòng thời gian từ kỷ nguyên Planck tới tái tổ hợp 380.000 năm, sao đầu tiên ~200 triệu năm, thiên hà đầu tiên ~1 tỉ năm"
+    verdict: verified
+  - claim: "Lạm phát giải quyết bài toán chân trời, độ phẳng và đơn cực từ"
+    verdict: verified
+  - claim: "Năm 1998 hai nhóm độc lập đo siêu tân tinh Ia phát hiện vũ trụ gia tốc; Nobel 2011"
+    verdict: verified
+  - claim: "Planck: Ω xấp xỉ 1,00 trong sai số dưới 1%; 68% năng lượng tối, 27% vật chất tối, 5% vật chất thường"
+    verdict: verified
+  - claim: "Phân biệt \"giãn nở mãi vì Ω<1\" với \"giãn nở mãi vì năng lượng tối\""
+    verdict: verified
+    evidence: "đây là điểm mạnh nhất của bài và là một đính chính đúng"
+  - claim: "\"Ngân Hà sáp nhập với Andromeda ~4,5 tỉ năm\""
+    verdict: outdated
+    evidence: "Sawala et al. 2025, Nature Astronomy — xem thien-ha-dinh-nghia-va-phan-loai"
+  - claim: "Mốc cái chết nhiệt: sao cuối cùng ~10^14 năm, thiên hà tan rã ~10^19 năm, hố đen siêu khối lượng ~10^100 năm"
+    verdict: verified
+findings:
+  - severity: S2
+    detail: "Mốc sáp nhập Andromeda đã lỗi thời — xem trên."
+  - severity: S4
+    detail: "Bảng \"cái chết nhiệt\" xếp sai thứ tự thời gian: dòng Mặt Trời (~8 tỉ năm) đứng TRƯỚC dòng Andromeda (~4,5 tỉ năm) trong một bảng đọc theo thời gian tăng dần."
+  - severity: S3
+    detail: "Nguồn duy nhất là một bài phổ biến khoa học của VACA (2007-2013). Bài hiện tại chứa nhiều nội dung mà nguồn đó không thể có. Khối \"Biên tập lại từ\" ở cuối bài là ghi công tác phẩm phái sinh, không phải trích dẫn cấp claim — cần bổ sung nguồn thật, không phải gỡ ghi công."
+recommendation: revise
+
+# --- Cập nhật 2026-09-05 ---
+resolved:
+  at: 2026-09-05
+  by: science-editor (duyệt từng chuỗi thay thế) + apply-corrections.ts
+  what: "Các phát hiện S2/S3 về nội dung ở trên ĐÃ SỬA trên bản đang publish. Chi tiết claim cũ/mới và căn cứ ở docs/content/corrections.md. Bản trước khi sửa nằm trong bảng Revision."
+  still_open: "factCheck vẫn PENDING — bài chưa có reviewedById. Các phát hiện về SỐ LƯỢNG NGUỒN vẫn còn nguyên."

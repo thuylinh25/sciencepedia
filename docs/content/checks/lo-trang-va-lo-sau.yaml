@@ -1,0 +1,33 @@
+# Fact-check — lo-trang-va-lo-sau
+# Sinh bởi skill fact-check, chế độ audit: bài ĐÃ PUBLISHED nhưng factCheck=PENDING.
+slug: lo-trang-va-lo-sau
+checked_at: 2026-09-05
+mode: audit
+article_status: PUBLISHED
+fact_check_state_before: PENDING
+strong_sources: 1   # nguồn bậc 1-2 còn hiệu lực; ngưỡng của dự án là 3
+claims:
+  - claim: "Schwarzschild tìm ra nghiệm năm 1916, vài tháng sau khi Einstein công bố thuyết tương đối rộng"
+    verdict: verified
+  - claim: "Lỗ trắng là nghiệm đảo dấu thời gian; nó KHÔNG phải phản hấp dẫn, vẫn có khối lượng và vẫn hút"
+    verdict: verified
+  - claim: "Lỗ trắng đi ngược định luật thứ hai của nhiệt động lực học"
+    verdict: verified
+  - claim: "Lỗ trắng không bền: một lượng vật chất nhỏ rơi vào là nó sụp thành lỗ đen"
+    verdict: verified
+  - claim: "Einstein và Rosen 1935 mô tả cầu nối hai vùng không-thời gian"
+    verdict: verified
+  - claim: "Cầu Einstein-Rosen KHÔNG đi qua được: đường hầm thắt lại và đứt trước khi ánh sáng kịp đi hết"
+    verdict: verified
+    evidence: "điểm thường bị bỏ sót trong tài liệu phổ thông"
+  - claim: "Giữ lỗ sâu mở cần mật độ năng lượng âm; hiệu ứng Casimir chỉ cho thấy điều đó ở quy mô lượng tử cực nhỏ"
+    verdict: verified
+  - claim: "Hawking cược với Preskill năm 1997 và thừa nhận thua năm 2004"
+    verdict: verified
+  - claim: "Mốc quan sát lỗ đen: LIGO 2015, EHT M87 2019, Nobel 2020, Sagittarius A* 2022"
+    verdict: verified
+    evidence: "nhất quán với bài ho-den"
+findings:
+  - severity: S3
+    detail: "Nguồn duy nhất là một bài phổ biến khoa học của VACA (2007-2013). Bài hiện tại chứa nhiều nội dung mà nguồn đó không thể có. Khối \"Biên tập lại từ\" ở cuối bài là ghi công tác phẩm phái sinh, không phải trích dẫn cấp claim — cần bổ sung nguồn thật, không phải gỡ ghi công."
+recommendation: revise

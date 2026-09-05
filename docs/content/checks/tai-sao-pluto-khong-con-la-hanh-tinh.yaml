@@ -1,0 +1,43 @@
+# Fact-check — tai-sao-pluto-khong-con-la-hanh-tinh
+# Sinh bởi skill fact-check, chế độ audit: bài ĐÃ PUBLISHED nhưng factCheck=PENDING.
+slug: tai-sao-pluto-khong-con-la-hanh-tinh
+checked_at: 2026-09-05
+mode: audit
+article_status: PUBLISHED
+fact_check_state_before: PENDING
+strong_sources: 1   # nguồn bậc 1-2 còn hiệu lực; ngưỡng của dự án là 3
+claims:
+  - claim: "Pluto vẫn ở nguyên chỗ, quay quanh Mặt Trời trong 248 năm; thứ thay đổi là định nghĩa"
+    verdict: verified
+  - claim: "Tombaugh phát hiện năm 1930 tại đài Lowell, Arizona"
+    verdict: verified
+  - claim: "Cuộc tìm kiếm xuất phát từ tính toán SAI: nhiễu loạn Lowell tin là có thực ra đến từ giá trị khối lượng Sao Hải Vương không chính xác"
+    verdict: verified
+  - claim: "Tên do Venetia Burney, học sinh 11 tuổi ở Oxford, đề xuất"
+    verdict: verified
+  - claim: "Pluto nhỏ hơn Mặt Trăng của Trái Đất; quỹ đạo nghiêng 17 độ, dao động 30-49 AU"
+    verdict: verified
+  - claim: "Eris do nhóm Mike Brown tìm ra năm 2005, nặng hơn Pluto khoảng 27%"
+    verdict: verified
+    evidence: "đúng, và bài viết \"nặng hơn\" chứ không viết \"lớn hơn\" — Eris có đường kính nhỏ hơn Pluto một chút"
+  - claim: "IAU Praha tháng 8/2006 bỏ phiếu thông qua ba điều kiện"
+    verdict: verified
+  - claim: "Trái Đất nặng hơn tổng khối lượng mọi thiên thể khác cùng vùng quỹ đạo khoảng 1,7 triệu lần"
+    verdict: verified
+    evidence: "tham số μ của Soter cho Trái Đất là 1,7x10^6"
+  - claim: "Điều kiện thứ ba phụ thuộc vị trí; trưởng nhóm New Horizons vẫn phản đối cách phân loại"
+    verdict: verified
+  - claim: "New Horizons bay ngang ngày 14/7/2015"
+    verdict: verified
+  - claim: "Sputnik Planitia rộng ~1.000 km, ô đa giác do đối lưu, bề mặt có thể dưới 10 triệu năm tuổi"
+    verdict: verified
+  - claim: "Núi băng nước cao tới 3.500 m ở khoảng -230°C; khí quyển nitơ với hàng chục lớp mù quang hoá"
+    verdict: verified
+  - claim: "Năm vệ tinh; tâm khối chung của cặp Pluto-Charon nằm bên ngoài Pluto"
+    verdict: verified
+findings:
+  - severity: S3
+    detail: "Nguồn duy nhất là một bài phổ biến khoa học của VACA (2007-2013). Bài hiện tại chứa nhiều nội dung mà nguồn đó không thể có. Khối \"Biên tập lại từ\" ở cuối bài là ghi công tác phẩm phái sinh, không phải trích dẫn cấp claim — cần bổ sung nguồn thật, không phải gỡ ghi công."
+  - severity: note
+    detail: "Bài trình bày cả phía phản đối định nghĩa 2006 — giữ đúng tính tranh luận còn mở. Không có claim nào cần sửa."
+recommendation: revise

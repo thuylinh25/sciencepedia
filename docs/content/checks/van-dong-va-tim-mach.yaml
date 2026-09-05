@@ -1,0 +1,33 @@
+# Fact-check — van-dong-va-tim-mach
+# Sinh bởi skill fact-check, chế độ audit: bài ĐÃ PUBLISHED nhưng factCheck=PENDING.
+slug: van-dong-va-tim-mach
+checked_at: 2026-09-05
+mode: audit
+article_status: PUBLISHED
+fact_check_state_before: PENDING
+strong_sources: 2   # nguồn bậc 1-2 còn hiệu lực; ngưỡng của dự án là 3
+claims:
+  - claim: "Tâm thất trái giãn rộng, thành dày lên vừa phải, thể tích tống máu tăng"
+    verdict: verified
+  - claim: "Nhịp tim nghỉ của vận động viên bền bỉ 40-50 so với 60-80 ở người ít vận động"
+    verdict: verified
+  - claim: "Phân biệt thích nghi sinh lý với phì đại bệnh lý do tăng huyết áp"
+    verdict: verified
+  - claim: "Nội mô tiết nitric oxide; lực trượt do dòng máu nhanh kích thích quá trình này"
+    verdict: verified
+  - claim: "Các phân tích tổng hợp cho thấy giảm khoảng 5-8 mmHg huyết áp tâm thu ở người tăng huyết áp"
+    verdict: verified
+  - claim: "VO2max là một trong những yếu tố dự báo tử vong do mọi nguyên nhân mạnh nhất"
+    verdict: verified
+    evidence: "Mandsager et al., JAMA Network Open 2018 — mức \"trong một số phân tích\" là dè dặt đúng"
+  - claim: "Mức cải thiện nguy cơ lớn nhất nằm ở đoạn từ không vận động lên vận động một chút"
+    verdict: verified
+  - claim: "WHO: 150-300 phút cường độ vừa hoặc 75-150 phút cường độ cao, cộng tập sức mạnh từ 2 ngày/tuần"
+    verdict: verified
+    evidence: "khớp nguồn [1] WHO 2020, URL còn sống"
+findings:
+  - severity: S3
+    detail: "Nguồn [2] Circulation Research 2019 thiếu URL và DOI."
+  - severity: note
+    detail: "Có khuyến cáo hỏi bác sĩ trước khi tập cường độ cao và disclaimer y tế ở cuối bài — đúng yêu cầu với nội dung sức khoẻ."
+recommendation: revise

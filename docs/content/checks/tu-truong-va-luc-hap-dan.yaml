@@ -1,0 +1,29 @@
+# Fact-check — tu-truong-va-luc-hap-dan
+# Sinh bởi skill fact-check, chế độ audit: bài ĐÃ PUBLISHED nhưng factCheck=PENDING.
+slug: tu-truong-va-luc-hap-dan
+checked_at: 2026-09-05
+mode: audit
+article_status: PUBLISHED
+fact_check_state_before: PENDING
+strong_sources: 2   # nguồn bậc 1-2 còn hiệu lực; ngưỡng của dự án là 3
+claims:
+  - claim: "Bảng đối chiếu: nguồn sinh, điều kiện xuất hiện, chiều tác dụng, khả năng che chắn"
+    verdict: verified
+  - claim: "Trường lưỡng cực từ suy giảm theo luỹ thừa ba, hấp dẫn theo bình phương khoảng cách"
+    verdict: verified
+  - claim: "Hấp dẫn là lực yếu nhất trong bốn lực cơ bản nhưng áp đảo ở quy mô lớn"
+    verdict: verified
+  - claim: "Dynamo cần lõi chất lưu dẫn điện đang chuyển động; Sao Hoả tắt dynamo từ hơn 4 tỉ năm trước"
+    verdict: verified
+  - claim: "Gió Mặt Trời 400-800 km/s, bào mòn khí quyển bằng truyền động lượng chứ không phải thắng lực hấp dẫn"
+    verdict: verified
+  - claim: "MAVEN đo được Sao Hoả vẫn đang mất khí quyển, tốc độ tăng vọt khi có bão Mặt Trời"
+    verdict: verified
+    evidence: "khớp nguồn [1] MAVEN, URL còn sống"
+  - claim: "Áp suất bề mặt Sao Hoả hiện chưa tới 1% của Trái Đất"
+    verdict: verified
+    evidence: "khoảng 0,6%"
+findings:
+  - severity: S3
+    detail: "Nguồn [2] Earth Fact Sheet dùng URL NSSDC đã chết. URL nguồn nssdc.gsfc.nasa.gov/planetary/factsheet/ hiện trả 307 về nasa.gov/nssdc — bảng số liệu không truy cập được (đo 2026-09-05). Lưu ý check-publish --links coi URL này là \"còn sống\" vì nó theo redirect tới một trang trả 200."
+recommendation: revise

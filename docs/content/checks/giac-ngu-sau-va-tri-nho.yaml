@@ -1,0 +1,33 @@
+# Fact-check — giac-ngu-sau-va-tri-nho
+# Sinh bởi skill fact-check, chế độ audit: bài ĐÃ PUBLISHED nhưng factCheck=PENDING.
+slug: giac-ngu-sau-va-tri-nho
+checked_at: 2026-09-05
+mode: audit
+article_status: PUBLISHED
+fact_check_state_before: PENDING
+strong_sources: 2   # nguồn bậc 1-2 còn hiệu lực; ngưỡng của dự án là 3
+claims:
+  - claim: "Một đêm gồm 4-6 chu kỳ, mỗi chu kỳ 90-110 phút"
+    verdict: verified
+  - claim: "Tỉ lệ các giai đoạn: N1 ~5%, N2 45-55%, N3 15-25%, REM 20-25%"
+    verdict: verified
+  - claim: "N3 dồn về nửa đầu đêm, REM kéo dài dần về sáng — cắt hai tiếng cuối là cắt gần trọn REM"
+    verdict: verified
+  - claim: "Củng cố hệ thống hoá: hải mã phát lại chuỗi tế bào vị trí trong giấc ngủ sóng chậm"
+    verdict: verified
+    evidence: "khớp Rasch và Born, Physiological Reviews 2013 — nguồn [2]"
+  - claim: "Mật độ thoi ngủ N2 tương quan với mức cải thiện trí nhớ sau khi ngủ"
+    verdict: verified
+  - claim: "Nedergaard 2013: khoảng gian bào giãn khoảng 60% khi ngủ, cuốn đi beta-amyloid"
+    verdict: verified
+    evidence: "Xie et al., Science 2013 — nguồn [1] hỗ trợ đúng con số 60%"
+  - claim: "Khuyến nghị 7-9 giờ; ngủ bù cuối tuần không phục hồi hết suy giảm nhận thức"
+    verdict: verified
+  - claim: "Caffeine bán thải khoảng 5-6 giờ; phòng ngủ khoảng 18-20°C"
+    verdict: verified
+findings:
+  - severity: S3
+    detail: "Cả hai nguồn đều thiếu URL và DOI. Xie 2013: 10.1126/science.1241224. Rasch và Born 2013: 10.1152/physrev.00032.2012"
+  - severity: note
+    detail: "Mức dè dặt về quan hệ nhân quả hai chiều giữa thiếu ngủ và thoái hoá thần kinh được giữ đúng — không nâng tương quan thành nhân quả."
+recommendation: revise

@@ -1,0 +1,40 @@
+# Fact-check — sao-moc
+# Sinh bởi skill fact-check, chế độ audit: bài ĐÃ PUBLISHED nhưng factCheck=PENDING.
+slug: sao-moc
+checked_at: 2026-09-05
+mode: audit
+article_status: PUBLISHED
+fact_check_state_before: PENDING
+strong_sources: 1   # nguồn bậc 1-2 còn hiệu lực; ngưỡng của dự án là 3
+claims:
+  - claim: "Hydro kim loại lỏng dẫn điện; từ trường mạnh nhất trong các hành tinh, gấp ~20.000 lần Trái Đất"
+    verdict: verified
+  - claim: "Tàu thăm dò Galileo thả năm 1995, ngừng hoạt động sau 58 phút ở độ sâu ~150 km"
+    verdict: verified
+  - claim: "Vết Đỏ Lớn \"được quan sát liên tục từ thế kỷ 17\""
+    verdict: contradicted
+    evidence: "Sánchez-Lavega et al. 2024, Geophysical Research Letters, doi 10.1029/2024GL108993: Vết Đỏ Lớn hiện nay hình thành khoảng năm 1831. \"Vết Vĩnh cửu\" mà Cassini thấy năm 1665 và theo dõi tới 1713 là một cấu trúc KHÁC, đã tan biến trước đó. Không có chuỗi quan sát liên tục nối hai vết."
+  - claim: "Xoáy nghịch rộng hơn Trái Đất, gió ở rìa khoảng 430 km/h"
+    verdict: verified
+  - claim: "Đang co lại: từ ~40.000 km cuối thế kỷ 19 xuống ~14.000 km hiện nay"
+    verdict: verified
+  - claim: "Bốn vệ tinh Galilei được phát hiện năm 1610, bác bỏ mô hình địa tâm"
+    verdict: verified
+  - claim: "Io hoạt động núi lửa mạnh nhất hệ; Ganymede lớn hơn Sao Thuỷ và là vệ tinh duy nhất có từ trường riêng"
+    verdict: verified
+  - claim: "Vai trò \"tấm khiên\" phức tạp hơn: vừa chặn bớt vừa đẩy một số thiên thể vào trong"
+    verdict: verified
+    evidence: "mức dè dặt đúng với tình trạng tranh luận hiện nay"
+findings:
+  - severity: S2
+    detail: "Vết Đỏ Lớn \"quan sát liên tục từ thế kỷ 17\" bị bác bỏ bởi Sánchez-Lavega 2024. Sửa: quan sát liên tục từ khoảng 1831; vết Cassini quan sát 1665-1713 là cấu trúc khác đã biến mất. Đây là nội dung ĐANG LIVE trên trang."
+  - severity: S3
+    detail: "URL nguồn nssdc.gsfc.nasa.gov/planetary/factsheet/ hiện trả 307 về nasa.gov/nssdc — bảng số liệu không truy cập được (đo 2026-09-05). Lưu ý check-publish --links coi URL này là \"còn sống\" vì nó theo redirect tới một trang trả 200."
+recommendation: revise
+
+# --- Cập nhật 2026-09-05 ---
+resolved:
+  at: 2026-09-05
+  by: science-editor (duyệt từng chuỗi thay thế) + apply-corrections.ts
+  what: "Các phát hiện S2/S3 về nội dung ở trên ĐÃ SỬA trên bản đang publish. Chi tiết claim cũ/mới và căn cứ ở docs/content/corrections.md. Bản trước khi sửa nằm trong bảng Revision."
+  still_open: "factCheck vẫn PENDING — bài chưa có reviewedById. Các phát hiện về SỐ LƯỢNG NGUỒN vẫn còn nguyên."

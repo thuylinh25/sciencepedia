@@ -1,0 +1,46 @@
+# Fact-check — tam-hanh-tinh-he-mat-troi
+# Sinh bởi skill fact-check, chế độ audit: bài ĐÃ PUBLISHED nhưng factCheck=PENDING.
+slug: tam-hanh-tinh-he-mat-troi
+checked_at: 2026-09-05
+mode: audit
+article_status: PUBLISHED
+fact_check_state_before: PENDING
+strong_sources: 1   # nguồn bậc 1-2 còn hiệu lực; ngưỡng của dự án là 3
+claims:
+  - claim: "IAU tháng 8/2006 đưa ra định nghĩa hành tinh gồm ba điều kiện"
+    verdict: verified
+  - claim: "Năm hành tinh lùn được công nhận: Pluto, Ceres, Eris, Haumea, Makemake"
+    verdict: verified
+  - claim: "Bảng thông số tám hành tinh: khoảng cách AU, chu kỳ quỹ đạo, chu kỳ tự quay, đường kính"
+    verdict: verified
+    evidence: "đối chiếu từng dòng với giá trị NSSDC — tất cả đều khớp"
+  - claim: "Số vệ tinh tính tới 2024: Mộc 95, Thổ 146, Thiên Vương 28, Hải Vương 16"
+    verdict: verified
+    evidence: "đúng với mốc 2024 mà bài tự ghi. Tính tới 2026 Sao Thiên Vương đã có 29 (S/2025 U 1, công bố 8/2025)."
+  - claim: "\"Sao Kim mất 243 ngày để tự quay một vòng nhưng chỉ mất 225 ngày để đi hết quỹ đạo — một ngày ở đó dài hơn một năm\""
+    verdict: partially-supported
+    evidence: "Cùng một lỗi với bài sao-kim: 243 ngày là chu kỳ tự quay sao; ngày mặt trời trên Sao Kim là 117 ngày, ngắn hơn năm."
+  - claim: "Ranh giới nhóm trong và nhóm ngoài là vành đai tiểu hành tinh, do vị trí đường tuyết"
+    verdict: verified
+  - claim: "Sao Mai và Sao Hôm là cùng một Sao Kim"
+    verdict: verified
+  - claim: "Uranus được đặt tên theo thần thoại Hy Lạp chứ không phải La Mã"
+    verdict: verified
+  - claim: "Planet Nine: Caltech 2016, bằng chứng gián tiếp từ cụm quỹ đạo Kuiper, chưa quan sát trực tiếp"
+    verdict: verified
+    evidence: "Batygin và Brown 2016"
+findings:
+  - severity: S3
+    detail: "Câu \"một ngày ở đó dài hơn một năm\" — xem sao-kim. Đây là lần thứ hai trong kho, nên sửa cả hai cùng lúc."
+  - severity: S4
+    detail: "Số vệ tinh Sao Thiên Vương có as-of date 2024 nên không sai, nhưng đã cũ so với hiện tại."
+  - severity: S3
+    detail: "Nguồn duy nhất là một bài phổ biến khoa học của VACA (2007-2013). Bài hiện tại chứa nhiều nội dung mà nguồn đó không thể có. Khối \"Biên tập lại từ\" ở cuối bài là ghi công tác phẩm phái sinh, không phải trích dẫn cấp claim — cần bổ sung nguồn thật, không phải gỡ ghi công."
+recommendation: revise
+
+# --- Cập nhật 2026-09-05 ---
+resolved:
+  at: 2026-09-05
+  by: science-editor (duyệt từng chuỗi thay thế) + apply-corrections.ts
+  what: "Các phát hiện S2/S3 về nội dung ở trên ĐÃ SỬA trên bản đang publish. Chi tiết claim cũ/mới và căn cứ ở docs/content/corrections.md. Bản trước khi sửa nằm trong bảng Revision."
+  still_open: "factCheck vẫn PENDING — bài chưa có reviewedById. Các phát hiện về SỐ LƯỢNG NGUỒN vẫn còn nguyên."

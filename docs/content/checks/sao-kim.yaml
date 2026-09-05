@@ -1,0 +1,41 @@
+# Fact-check — sao-kim
+# Sinh bởi skill fact-check, chế độ audit: bài ĐÃ PUBLISHED nhưng factCheck=PENDING.
+slug: sao-kim
+checked_at: 2026-09-05
+mode: audit
+article_status: PUBLISHED
+fact_check_state_before: PENDING
+strong_sources: 1   # nguồn bậc 1-2 còn hiệu lực; ngưỡng của dự án là 3
+claims:
+  - claim: "Bán kính nhỏ hơn Trái Đất 5%, khối lượng bằng 82%"
+    verdict: verified
+  - claim: "Khí quyển 96% CO2; áp suất gấp 92 lần, tương đương lặn sâu ~900 m"
+    verdict: verified
+    evidence: "NSSDC ghi 92 bar; NASA science ghi ~93 lần và 930 m — con số của bài khớp nguồn được dẫn"
+  - claim: "Bề mặt 464°C, đồng đều từ xích đạo tới cực"
+    verdict: verified
+    evidence: "NSSDC nhiệt độ trung bình 464°C (trang NASA science ghi 467°C)"
+  - claim: "Mây axit sulfuric phản xạ 75% ánh sáng tới; sáng thứ ba sau Mặt Trời và Mặt Trăng"
+    verdict: verified
+  - claim: "Tự quay ngược chiều so với hầu hết hành tinh"
+    verdict: verified
+  - claim: "\"một ngày dài 243 ngày Trái Đất — dài hơn năm của nó (225 ngày)\""
+    verdict: partially-supported
+    evidence: "243 ngày là chu kỳ TỰ QUAY SAO. Ngày mặt trời trên Sao Kim là 117 ngày, NGẮN HƠN năm 225 ngày. NASA: \"sunrise to sunset would take 117 Earth days\"."
+  - claim: "Ở độ cao 50-60 km, nhiệt độ và áp suất gần điều kiện bề mặt Trái Đất"
+    verdict: verified
+findings:
+  - severity: S3
+    detail: "Câu \"một ngày dài hơn một năm\" trộn chu kỳ tự quay sao với ngày mặt trời. Sửa: nói rõ \"một vòng tự quay mất 243 ngày\", và nếu muốn giữ nghịch lý thì thêm rằng ngày mặt trời là 117 ngày. Lỗi này lặp lại ở tam-hanh-tinh-he-mat-troi."
+  - severity: S4
+    detail: "DAVINCI và VERITAS gọi là \"sắp tới\" mà không có mốc thời gian — cần as-of date, VERITAS đã bị lùi lịch."
+  - severity: S3
+    detail: "URL nguồn nssdc.gsfc.nasa.gov/planetary/factsheet/ hiện trả 307 về nasa.gov/nssdc — bảng số liệu không truy cập được (đo 2026-09-05). Lưu ý check-publish --links coi URL này là \"còn sống\" vì nó theo redirect tới một trang trả 200."
+recommendation: revise
+
+# --- Cập nhật 2026-09-05 ---
+resolved:
+  at: 2026-09-05
+  by: science-editor (duyệt từng chuỗi thay thế) + apply-corrections.ts
+  what: "Các phát hiện S2/S3 về nội dung ở trên ĐÃ SỬA trên bản đang publish. Chi tiết claim cũ/mới và căn cứ ở docs/content/corrections.md. Bản trước khi sửa nằm trong bảng Revision."
+  still_open: "factCheck vẫn PENDING — bài chưa có reviewedById. Các phát hiện về SỐ LƯỢNG NGUỒN vẫn còn nguyên."

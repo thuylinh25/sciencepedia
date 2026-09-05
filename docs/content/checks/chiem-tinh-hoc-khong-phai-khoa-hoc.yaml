@@ -1,0 +1,36 @@
+# Fact-check — chiem-tinh-hoc-khong-phai-khoa-hoc
+# Sinh bởi skill fact-check, chế độ audit: bài ĐÃ PUBLISHED nhưng factCheck=PENDING.
+slug: chiem-tinh-hoc-khong-phai-khoa-hoc
+checked_at: 2026-09-05
+mode: audit
+article_status: PUBLISHED
+fact_check_state_before: PENDING
+strong_sources: 1   # nguồn bậc 1-2 còn hiệu lực; ngưỡng của dự án là 3
+claims:
+  - claim: "Hoàng đới rộng 8 độ mỗi bên hoàng đạo, chia 12 phần 30 độ, xác lập cách đây 2.000-2.500 năm"
+    verdict: verified
+  - claim: "Tiến động chu kỳ khoảng 26.000 năm; sau 2.000 năm vị trí Mặt Trời lệch gần trọn một cung"
+    verdict: verified
+  - claim: "Bảng đối chiếu cung chiêm tinh với chòm sao Mặt Trời thật sự đi qua"
+    verdict: verified
+    evidence: "khớp ranh giới IAU 1930; Ophiuchus 30/11-17/12; Scorpius chỉ 7 ngày; Virgo hơn sáu tuần"
+  - claim: "Chiêm tinh phương Tây phổ biến dùng hoàng đạo NHIỆT ĐỚI nên tiến động không phá vỡ hệ; chiêm tinh Ấn Độ dùng hoàng đạo SAO"
+    verdict: verified
+    evidence: "điểm phân biệt quan trọng mà phần lớn bài phê phán bỏ qua — bài tự nhận lập luận \"cung đã dịch\" là chưa đủ mạnh"
+  - claim: "Lực hấp dẫn của người đỡ đẻ tác động lên trẻ sơ sinh lớn hơn của Sao Hoả nhiều bậc độ lớn"
+    verdict: verified
+  - claim: "Thử nghiệm mù đôi của Shawn Carlson công bố trên Nature năm 1985, dùng thang CPI, nhà chiêm tinh đồng ý trước với thiết kế; kết quả trùng xác suất ngẫu nhiên"
+    verdict: verified
+    evidence: "Nature 318, 419-425 (1985)"
+  - claim: "Nghiên cứu \"song sinh thời gian\" của Dean và Kelly: hơn 2.000 người sinh ở London năm 1958, hơn một trăm đặc điểm, không tương quan nào vượt mức ngẫu nhiên"
+    verdict: verified
+  - claim: "Silverman: gần 3.000 hồ sơ kết hôn và gần 500 hồ sơ ly hôn, cặp \"hợp\" ly hôn ngang cặp \"khắc\""
+    verdict: verified
+  - claim: "Hiệu ứng Forer 1948, điểm trung bình 4,26 trên 5"
+    verdict: verified
+findings:
+  - severity: S3
+    detail: "Nguồn duy nhất là một bài phổ biến khoa học của VACA (2007-2013). Bài hiện tại chứa nhiều nội dung mà nguồn đó không thể có. Khối \"Biên tập lại từ\" ở cuối bài là ghi công tác phẩm phái sinh, không phải trích dẫn cấp claim — cần bổ sung nguồn thật, không phải gỡ ghi công. Riêng bài này nêu đích danh bốn nghiên cứu (Carlson 1985, Dean và Kelly, Silverman, Forer 1948) mà không nghiên cứu nào có mặt trong bảng Source — người đọc không có cách nào tra ngược."
+  - severity: note
+    detail: "Bài tự bác lập luận yếu (\"cung của bạn đã dịch\") trước khi đưa lập luận mạnh. Đây là chuẩn biên tập nên nhân rộng."
+recommendation: revise

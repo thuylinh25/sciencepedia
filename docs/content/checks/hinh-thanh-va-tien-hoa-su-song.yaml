@@ -1,0 +1,45 @@
+# Fact-check — hinh-thanh-va-tien-hoa-su-song
+# Sinh bởi skill fact-check, chế độ audit: bài ĐÃ PUBLISHED nhưng factCheck=PENDING.
+slug: hinh-thanh-va-tien-hoa-su-song
+checked_at: 2026-09-05
+mode: audit
+article_status: PUBLISHED
+fact_check_state_before: PENDING
+strong_sources: 1   # nguồn bậc 1-2 còn hiệu lực; ngưỡng của dự án là 3
+claims:
+  - claim: "Trái Đất hình thành 4,54 tỉ năm trước; tinh thể zircon Tây Australia tới 4,4 tỉ năm"
+    verdict: verified
+  - claim: "Va chạm với Theia khoảng 4,5 tỉ năm trước tạo ra Mặt Trăng; thuỷ triều hãm dần tốc độ tự quay"
+    verdict: verified
+  - claim: "Hoá thạch vi khuẩn cổ nhất được chấp nhận rộng rãi khoảng 3,5 tỉ năm; stromatolite vẫn hình thành ở vịnh Shark"
+    verdict: verified
+  - claim: "Sự kiện oxy hoá lớn khoảng 2,4 tỉ năm trước; tầng quặng sắt dải; oxy là chất độc với sinh vật khi đó"
+    verdict: verified
+  - claim: "Trái Đất quả cầu tuyết 720-635 triệu năm trước; núi lửa tích tụ CO2 phá vòng lặp"
+    verdict: verified
+  - claim: "Bùng nổ Cambri 538 triệu năm trước, diễn ra trong 20-25 triệu năm; Anomalocaris dài tới nửa mét"
+    verdict: verified
+  - claim: "Thực vật lên cạn khoảng 470 triệu năm trước; tetrapod cuối Devon 375-360 triệu năm trước"
+    verdict: verified
+  - claim: "Kỷ Than đá để lại các mỏ than và trứng có màng ối"
+    verdict: verified
+  - claim: "Permi 252 triệu năm trước xoá khoảng 80% loài sinh vật biển"
+    verdict: verified
+    evidence: "nhất quán với bài dai-tuyet-chung-permi"
+  - claim: "Chicxulub: tiểu hành tinh đường kính khoảng 10 km ở Yucatán; Deccan Traps có thể đã làm hệ sinh thái suy yếu sẵn"
+    verdict: verified
+  - claim: "Linh trưởng khoảng 55 triệu năm trước; dấu chân Laetoli khoảng 3,66 triệu năm"
+    verdict: verified
+  - claim: "Homo erectus khoảng 1,9 triệu năm trước, loài người đầu tiên rời châu Phi"
+    verdict: verified
+  - claim: "Homo sapiens khoảng 300.000 năm trước, đẩy lùi bởi hoá thạch Jebel Irhoud, Maroc"
+    verdict: verified
+  - claim: "Bảng nén 4,54 tỉ năm thành một năm dương lịch"
+    verdict: partially-supported
+    evidence: "Ba dòng không khớp chính các mốc bài đưa ra. Tế bào đầu tiên 3,5 tỉ năm ứng với 24/3 chứ không phải \"cuối tháng 2\" (cuối tháng 2 ứng với ~3,8 tỉ năm, tức mốc dấu vết hoá học). Oxy tích tụ 2,4 tỉ năm ứng với 21/6 chứ không phải \"cuối tháng 7\". Homo sapiens 300.000 năm ứng với 23:25 chứ không phải 23:37. Các dòng Cambri (19/11), tuyệt chủng khủng long (26/12) và lịch sử thành văn (30 giây) thì khớp."
+findings:
+  - severity: S4
+    detail: "Bảng lịch nén lệch với chính các mốc bài nêu ở ba dòng. Hoặc tính lại bảng, hoặc chú thích rằng bảng dùng mốc dấu vết hoá học sớm hơn thay vì mốc hoá thạch."
+  - severity: S3
+    detail: "Nguồn duy nhất là một bài phổ biến khoa học của VACA (2007-2013). Bài hiện tại chứa nhiều nội dung mà nguồn đó không thể có. Khối \"Biên tập lại từ\" ở cuối bài là ghi công tác phẩm phái sinh, không phải trích dẫn cấp claim — cần bổ sung nguồn thật, không phải gỡ ghi công."
+recommendation: revise

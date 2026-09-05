@@ -1,0 +1,46 @@
+# Fact-check — sao-cau-tao-va-tien-hoa
+# Sinh bởi skill fact-check, chế độ audit: bài ĐÃ PUBLISHED nhưng factCheck=PENDING.
+slug: sao-cau-tao-va-tien-hoa
+checked_at: 2026-09-05
+mode: audit
+article_status: PUBLISHED
+fact_check_state_before: PENDING
+strong_sources: 1   # nguồn bậc 1-2 còn hiệu lực; ngưỡng của dự án là 3
+claims:
+  - claim: "Ngưỡng hợp hạch hydro khoảng 0,08 khối lượng Mặt Trời, xấp xỉ 80 lần khối lượng Sao Mộc"
+    verdict: verified
+  - claim: "Sao lùn nâu đốt deuteri một thời gian ngắn nhưng không châm được hydro thường"
+    verdict: verified
+  - claim: "Ở ~10 triệu độ hydro thành plasma, nhưng proton vẫn không đủ năng lượng thắng lực đẩy tĩnh điện"
+    verdict: verified
+  - claim: "Hiệu ứng đường hầm lượng tử giải thích vì sao Mặt Trời cháy được, và vì sao nó cháy chậm và ổn định"
+    verdict: verified
+  - claim: "Thành phần sao: khoảng 71% hydro và 27% heli theo khối lượng"
+    verdict: verified
+  - claim: "Bảng quang phổ O-M với nhiệt độ, màu và ví dụ"
+    verdict: verified
+    evidence: "các ví dụ đều đúng lớp: Rigel là B, Sirius và Vega là A, Procyon là F, Arcturus là K, Proxima và Betelgeuse là M"
+  - claim: "Phần lớn số sao trong Ngân Hà là loại M"
+    verdict: verified
+  - claim: "\"Không một sao loại M nào nhìn được bằng mắt thường\""
+    verdict: contradicted
+    evidence: "Betelgeuse (M1-2 Ia) và Antares (M1,5 Iab) đều là sao loại M nhìn rõ bằng mắt thường — chúng đứng thứ 10 và thứ 15 trong bài 20-ngoi-sao-sang-nhat-bau-troi-dem của chính kho này. Nghiêm trọng hơn: BẢNG NGAY PHÍA TRÊN câu đó liệt kê Betelgeuse làm ví dụ của lớp M. Ý đúng mà bài muốn nói là \"không sao lùn đỏ (M dãy chính) nào nhìn được bằng mắt thường\"."
+  - claim: "Thời gian dãy chính theo khối lượng: 0,1 M☉ hàng nghìn tỉ năm; 1 M☉ ~10 tỉ; 8 M☉ ~30 triệu; 25 M☉ ~5 triệu"
+    verdict: verified
+  - claim: "Sắt là điểm dừng của chuỗi hợp hạch; lõi sụp đổ trong chưa tới một giây"
+    verdict: verified
+  - claim: "Giới hạn Chandrasekhar 1,4 M☉; giới hạn TOV 2-3 M☉; sao neutron đường kính khoảng 20 km"
+    verdict: verified
+findings:
+  - severity: S2
+    detail: "Câu về sao loại M tự mâu thuẫn với BẢNG NGAY PHÍA TRÊN NÓ và với bài 20-ngoi-sao trong cùng kho. Sửa thành \"không sao lùn đỏ nào nhìn được bằng mắt thường\". Đây là nội dung ĐANG LIVE trên trang."
+  - severity: S3
+    detail: "Nguồn duy nhất là một bài phổ biến khoa học của VACA (2007-2013). Bài hiện tại chứa nhiều nội dung mà nguồn đó không thể có. Khối \"Biên tập lại từ\" ở cuối bài là ghi công tác phẩm phái sinh, không phải trích dẫn cấp claim — cần bổ sung nguồn thật, không phải gỡ ghi công."
+recommendation: revise
+
+# --- Cập nhật 2026-09-05 ---
+resolved:
+  at: 2026-09-05
+  by: science-editor (duyệt từng chuỗi thay thế) + apply-corrections.ts
+  what: "Các phát hiện S2/S3 về nội dung ở trên ĐÃ SỬA trên bản đang publish. Chi tiết claim cũ/mới và căn cứ ở docs/content/corrections.md. Bản trước khi sửa nằm trong bảng Revision."
+  still_open: "factCheck vẫn PENDING — bài chưa có reviewedById. Các phát hiện về SỐ LƯỢNG NGUỒN vẫn còn nguyên."

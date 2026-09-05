@@ -1,0 +1,36 @@
+# Fact-check — ho-den
+# Sinh bởi skill fact-check, chế độ audit: bài ĐÃ PUBLISHED nhưng factCheck=PENDING.
+slug: ho-den
+checked_at: 2026-09-05
+mode: audit
+article_status: PUBLISHED
+fact_check_state_before: PENDING
+strong_sources: 2   # nguồn bậc 1-2 còn hiệu lực; ngưỡng của dự án là 3
+claims:
+  - claim: "Thay Mặt Trời bằng hố đen cùng khối lượng thì quỹ đạo Trái Đất không đổi"
+    verdict: verified
+  - claim: "Bán kính Schwarzschild tỉ lệ thuận khối lượng: 1 khối lượng Mặt Trời ~3 km, khối lượng Trái Đất ~9 mm"
+    verdict: verified
+    evidence: "2,95 km và 8,87 mm"
+  - claim: "Sagittarius A* 4,3 triệu khối lượng Mặt Trời tương ứng ~12,7 triệu km"
+    verdict: verified
+    evidence: "2,95 km x 4,3e6 = 1,27e7 km — bảng tự nhất quán"
+  - claim: "Người rơi qua chân trời sự kiện không cảm nhận gì đặc biệt tại thời điểm vượt qua"
+    verdict: verified
+  - claim: "Ba loại: sao (5-100), siêu khối lượng (triệu tới tỉ), trung gian (100-100.000)"
+    verdict: verified
+  - claim: "Hố đen khối lượng trung gian đã có vài ứng viên xác nhận qua sóng hấp dẫn"
+    verdict: verified
+    evidence: "GW190521 cho hố đen tàn dư ~142 khối lượng Mặt Trời"
+  - claim: "Nobel Vật lý 2020 cho việc theo dõi quỹ đạo sao quanh tâm Ngân Hà"
+    verdict: verified
+  - claim: "LIGO ghi nhận sáp nhập hai hố đen năm 2015; Einstein tiên đoán sóng hấp dẫn từ 1916"
+    verdict: verified
+  - claim: "EHT công bố ảnh M87 năm 2019 và Sagittarius A* năm 2022"
+    verdict: verified
+  - claim: "Hawking 1974: bức xạ Hawking, hố đen khối lượng sao bốc hơi lâu hơn tuổi vũ trụ nhiều bậc"
+    verdict: verified
+findings:
+  - severity: S3
+    detail: "Nguồn \"Observation of Gravitational Waves from a Binary Black Hole Merger, PRL 2016\" không có URL lẫn DOI — người đọc không tra ngược được. DOI: 10.1103/PhysRevLett.116.061102"
+recommendation: revise

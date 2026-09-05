@@ -1,0 +1,44 @@
+# Fact-check — thien-ha-dinh-nghia-va-phan-loai
+# Sinh bởi skill fact-check, chế độ audit: bài ĐÃ PUBLISHED nhưng factCheck=PENDING.
+slug: thien-ha-dinh-nghia-va-phan-loai
+checked_at: 2026-09-05
+mode: audit
+article_status: PUBLISHED
+fact_check_state_before: PENDING
+strong_sources: 1   # nguồn bậc 1-2 còn hiệu lực; ngưỡng của dự án là 3
+claims:
+  - claim: "Dải sáng trên trời là mặt phẳng đĩa thiên hà nhìn từ bên trong"
+    verdict: verified
+  - claim: "Ngân Hà khoảng 105.000 năm ánh sáng, 100-400 tỉ sao"
+    verdict: verified
+  - claim: "IC 1101: con số \"100.000 tỉ sao\" đến từ ước lượng cũ và đang bị xét lại; kích thước còn tranh cãi"
+    verdict: verified
+    evidence: "mức dè dặt đúng"
+  - claim: "Hầu hết thiên hà lớn có lỗ đen siêu khối lượng từ hàng triệu tới hàng tỉ khối lượng Mặt Trời"
+    verdict: verified
+  - claim: "Phân loại Hubble 1926: S và SB (Sa/Sb/Sc), E0-E7, S0, Irr"
+    verdict: verified
+  - claim: "Khoảng hai phần ba thiên hà xoắn có thanh trung tâm; Ngân Hà được xếp là SBbc"
+    verdict: verified
+  - claim: "Andromeda M31 cách 2,5 triệu năm ánh sáng, nhìn được bằng mắt thường"
+    verdict: verified
+  - claim: "Cartwheel cách ~500 triệu năm ánh sáng, hình vành do va chạm xuyên tâm chứ không phải thiên hà thấu kính"
+    verdict: verified
+  - claim: "Trong số thiên hà sáng thì xoắn chiếm đa số, elip ~15%; nhưng tính cả thiên hà mờ thì thiên hà lùn áp đảo"
+    verdict: verified
+  - claim: "\"Ngân Hà và Andromeda sẽ sáp nhập sau khoảng 4,5 tỉ năm nữa\""
+    verdict: outdated
+    evidence: "Sawala et al. 2025, Nature Astronomy: chỉ khoảng 50% khả năng sáp nhập trong 10 tỉ năm tới; nếu xảy ra thì nhiều khả năng ở mốc 7-8 tỉ năm. Mốc 4,5 tỉ năm và cách nói chắc chắn đến từ nghiên cứu 2012 đã bị xét lại."
+findings:
+  - severity: S2
+    detail: "Sáp nhập Andromeda trình bày như điều chắc chắn ở mốc 4,5 tỉ năm. Sửa thành có điều kiện và cập nhật mốc. Lỗi này lặp lại ở big-bang — sửa cả hai cùng lúc. Đây là nội dung ĐANG LIVE trên trang."
+  - severity: S3
+    detail: "Nguồn duy nhất là một bài phổ biến khoa học của VACA (2007-2013). Bài hiện tại chứa nhiều nội dung mà nguồn đó không thể có. Khối \"Biên tập lại từ\" ở cuối bài là ghi công tác phẩm phái sinh, không phải trích dẫn cấp claim — cần bổ sung nguồn thật, không phải gỡ ghi công."
+recommendation: revise
+
+# --- Cập nhật 2026-09-05 ---
+resolved:
+  at: 2026-09-05
+  by: science-editor (duyệt từng chuỗi thay thế) + apply-corrections.ts
+  what: "Các phát hiện S2/S3 về nội dung ở trên ĐÃ SỬA trên bản đang publish. Chi tiết claim cũ/mới và căn cứ ở docs/content/corrections.md. Bản trước khi sửa nằm trong bảng Revision."
+  still_open: "factCheck vẫn PENDING — bài chưa có reviewedById. Các phát hiện về SỐ LƯỢNG NGUỒN vẫn còn nguyên."

@@ -1,0 +1,29 @@
+# Fact-check — da-vu-tru
+# Sinh bởi skill fact-check, chế độ audit: bài ĐÃ PUBLISHED nhưng factCheck=PENDING.
+slug: da-vu-tru
+checked_at: 2026-09-05
+mode: audit
+article_status: PUBLISHED
+fact_check_state_before: PENDING
+strong_sources: 1   # nguồn bậc 1-2 còn hiệu lực; ngưỡng của dự án là 3
+claims:
+  - claim: "Vũ trụ quan sát được có bán kính khoảng 46,5 tỉ năm ánh sáng, lớn hơn 13,8 vì không gian đã giãn"
+    verdict: verified
+  - claim: "Chân trời vũ trụ là giới hạn tầm nhìn, không phải một bức tường"
+    verdict: verified
+  - claim: "Không gian phẳng trong sai số đo được, và một vũ trụ phẳng có thể vô hạn"
+    verdict: verified
+  - claim: "Mốc 13,8 tỉ năm xác định từ bức xạ nền và tốc độ giãn nở"
+    verdict: verified
+  - claim: "Phân loại bốn cấp đa vũ trụ do Max Tegmark đề xuất năm 2003"
+    verdict: verified
+  - claim: "Cấp 3 dựa trên diễn giải nhiều thế giới của Hugh Everett, 1957"
+    verdict: verified
+  - claim: "CMB Cold Spot trong WMAP và Planck từng được nêu làm ứng viên va chạm bong bóng; phân tích kỹ hơn cho thấy nằm trong dao động ngẫu nhiên của mô hình chuẩn"
+    verdict: verified
+  - claim: "Tranh luận về tính khoa học của đa vũ trụ được trình bày cả hai phía"
+    verdict: verified
+findings:
+  - severity: S3
+    detail: "Nguồn duy nhất là một bài phổ biến khoa học của VACA (2007-2013). Bài hiện tại chứa nhiều nội dung mà nguồn đó không thể có. Khối \"Biên tập lại từ\" ở cuối bài là ghi công tác phẩm phái sinh, không phải trích dẫn cấp claim — cần bổ sung nguồn thật, không phải gỡ ghi công."
+recommendation: revise

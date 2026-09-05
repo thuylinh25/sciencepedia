@@ -1,0 +1,30 @@
+# Fact-check — trai-dat
+# Sinh bởi skill fact-check, chế độ audit: bài ĐÃ PUBLISHED nhưng factCheck=PENDING.
+slug: trai-dat
+checked_at: 2026-09-05
+mode: audit
+article_status: PUBLISHED
+fact_check_state_before: PENDING
+strong_sources: 1   # nguồn bậc 1-2 còn hiệu lực; ngưỡng của dự án là 3
+claims:
+  - claim: "Nằm trong vùng ở được; Sao Kim và Sao Hoả cũng từng có nước lỏng và đều đã mất"
+    verdict: verified
+  - claim: "Dynamo lõi sắt lỏng sinh từ quyển, bẻ hướng gió mặt trời"
+    verdict: verified
+  - claim: "Khí quyển 78% nitơ, 21% oxy; oxy tự do là sản phẩm quang hợp"
+    verdict: verified
+  - claim: "Sự kiện Oxy hoá Lớn khoảng 2,4 tỉ năm trước"
+    verdict: verified
+  - claim: "Kiến tạo mảng tái chế carbon — bộ điều nhiệt dài hạn"
+    verdict: verified
+  - claim: "Mặt Trăng ổn định độ nghiêng trục ở khoảng 23,4°"
+    verdict: verified
+  - claim: "Tuổi 4,54 tỉ năm; 71% bề mặt là nước; 2,5% lượng nước là nước ngọt"
+    verdict: verified
+  - claim: "Bằng chứng hoá thạch sự sống có từ ít nhất 3,5 tỉ năm trước"
+    verdict: verified
+    evidence: "nhất quán với hinh-thanh-va-tien-hoa-su-song"
+findings:
+  - severity: S3
+    detail: "URL nguồn nssdc.gsfc.nasa.gov/planetary/factsheet/ hiện trả 307 về nasa.gov/nssdc — bảng số liệu không truy cập được (đo 2026-09-05). Lưu ý check-publish --links coi URL này là \"còn sống\" vì nó theo redirect tới một trang trả 200."
+recommendation: revise

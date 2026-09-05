@@ -1,0 +1,25 @@
+# Fact-check — thuyet-tuong-doi-hep
+# Sinh bởi skill fact-check, chế độ audit: bài ĐÃ PUBLISHED nhưng factCheck=PENDING.
+slug: thuyet-tuong-doi-hep
+checked_at: 2026-09-05
+mode: audit
+article_status: PUBLISHED
+fact_check_state_before: PENDING
+strong_sources: 1   # nguồn bậc 1-2 còn hiệu lực; ngưỡng của dự án là 3
+claims:
+  - claim: "Hai tiên đề của bài báo 1905"
+    verdict: verified
+  - claim: "Giãn nở thời gian và co độ dài theo hệ số Lorentz"
+    verdict: verified
+  - claim: "Tính đồng thời là tương đối"
+    verdict: verified
+  - claim: "GPS: tương đối hẹp làm đồng hồ chậm ~7 μs/ngày, tương đối rộng làm nhanh ~45 μs/ngày, tổng ~38 μs/ngày"
+    verdict: verified
+  - claim: "Bỏ qua hiệu chỉnh thì sai số định vị tích luỹ ~10 km mỗi ngày"
+    verdict: verified
+  - claim: "Muon sinh ở tầng cao khí quyển tới được mặt đất nhờ giãn nở thời gian"
+    verdict: verified
+findings:
+  - severity: S3
+    detail: "Nguồn \"Zur Elektrodynamik bewegter Körper, Annalen der Physik 1905\" không có URL lẫn DOI. DOI: 10.1002/andp.19053221004"
+recommendation: revise

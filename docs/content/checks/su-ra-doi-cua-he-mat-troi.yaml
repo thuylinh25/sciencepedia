@@ -1,0 +1,47 @@
+# Fact-check — su-ra-doi-cua-he-mat-troi
+# Sinh bởi skill fact-check, chế độ audit: bài ĐÃ PUBLISHED nhưng factCheck=PENDING.
+slug: su-ra-doi-cua-he-mat-troi
+checked_at: 2026-09-05
+mode: audit
+article_status: PUBLISHED
+fact_check_state_before: PENDING
+strong_sources: 1   # nguồn bậc 1-2 còn hiệu lực; ngưỡng của dự án là 3
+claims:
+  - claim: "Hệ Mặt Trời hình thành khoảng 4,57 tỉ năm trước"
+    verdict: verified
+  - claim: "Mặt Trời chiếm 99,86% khối lượng nhưng chỉ giữ khoảng 1% động lượng góc"
+    verdict: verified
+  - claim: "Giả thuyết tinh vân Kant 1755 và Laplace 1796 giải thích được mặt phẳng và chiều quay nhưng không giải thích được động lượng góc"
+    verdict: verified
+  - claim: "Lý thuyết va chạm Chamberlin-Moulton và lý thuyết triều Jeans-Jeffreys 1918 đều thất bại"
+    verdict: verified
+  - claim: "Khí bị kéo ra khỏi một ngôi sao sẽ nóng tới mức tán ra chứ không cô lại thành hành tinh"
+    verdict: verified
+  - claim: "ALMA và James Webb đã chụp được đĩa tiền hành tinh có rãnh trống quanh sao trẻ"
+    verdict: verified
+  - claim: "Bồi tụ qua vi thể hành tinh cỡ kilômét, không phải tách vành như Laplace hình dung"
+    verdict: verified
+  - claim: "Đường tuyết giải thích phân bố hành tinh đá và khí; ngưỡng lõi khoảng 10 lần khối lượng Trái Đất"
+    verdict: verified
+  - claim: "Sao Mộc một mình giữ nhiều động lượng góc hơn Mặt Trời"
+    verdict: verified
+  - claim: "Ba cơ chế chuyển động lượng góc ra ngoài: phanh từ tính, gió Mặt Trời, di cư hành tinh"
+    verdict: verified
+  - claim: "Có mô hình cho rằng Sao Mộc từng vào sâu tới gần quỹ đạo Sao Hoả rồi mới lùi ra"
+    verdict: verified
+    evidence: "mô hình Grand Tack — bài nói đúng mức \"có mô hình cho rằng\""
+  - claim: "\"Tới nay đã có hơn 6.000 ngoại hành tinh được xác nhận\""
+    verdict: verified
+    evidence: "đúng ở thời điểm viết, nhưng KHÔNG có as-of date — con số này tăng liên tục"
+  - claim: "Siêu Trái Đất là loại kích thước phổ biến nhất trong thiên hà mà Hệ Mặt Trời lại không có"
+    verdict: verified
+findings:
+  - severity: S4
+    detail: "Số ngoại hành tinh cần as-of date theo quy tắc 5 của skill."
+  - severity: S4
+    detail: "Link nội bộ /articles/sao-moc-quay-nhanh-nhat không trỏ tới bài nào đã publish."
+  - severity: S4
+    detail: "Lỗi chính tả: \"Đây cùng là cơ chế\" nên là \"Đây cũng là cơ chế\"."
+  - severity: S3
+    detail: "Nguồn duy nhất là một bài phổ biến khoa học của VACA (2007-2013). Bài hiện tại chứa nhiều nội dung mà nguồn đó không thể có. Khối \"Biên tập lại từ\" ở cuối bài là ghi công tác phẩm phái sinh, không phải trích dẫn cấp claim — cần bổ sung nguồn thật, không phải gỡ ghi công."
+recommendation: revise

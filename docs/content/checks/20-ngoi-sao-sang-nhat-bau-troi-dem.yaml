@@ -1,0 +1,34 @@
+# Fact-check — 20-ngoi-sao-sang-nhat-bau-troi-dem
+# Sinh bởi skill fact-check, chế độ audit: bài ĐÃ PUBLISHED nhưng factCheck=PENDING.
+slug: 20-ngoi-sao-sang-nhat-bau-troi-dem
+checked_at: 2026-09-05
+mode: audit
+article_status: PUBLISHED
+fact_check_state_before: PENDING
+strong_sources: 1   # nguồn bậc 1-2 còn hiệu lực; ngưỡng của dự án là 3
+claims:
+  - claim: "Thang cấp sao: chênh 5 cấp là chênh 100 lần độ sáng, mỗi cấp hệ số ~2,512"
+    verdict: verified
+  - claim: "Cấp sao biểu kiến không cho biết độ sáng thật vì trộn công suất phát với khoảng cách"
+    verdict: verified
+  - claim: "Bảng 20 sao: tên, tên khoa học, chòm sao, cấp sao, khoảng cách"
+    verdict: verified
+    evidence: "đối chiếu từng dòng với giá trị chuẩn — khớp, kể cả việc đánh dấu Betelgeuse, Aldebaran, Antares là sao biến quang"
+  - claim: "Sirius cách 8,6 năm ánh sáng; Sirius A nặng ~2 lần Mặt Trời, Sirius B là lùn trắng"
+    verdict: verified
+  - claim: "Proxima Centauri là sao gần Mặt Trời nhất ở 4,24 năm ánh sáng, có hành tinh vùng sống được xác nhận 2016"
+    verdict: verified
+  - claim: "Betelgeuse bán kính gấp ~900 lần Mặt Trời; đợt mờ 2019-2020 do bụi chính nó phun ra"
+    verdict: verified
+  - claim: "Vega từng là sao Bắc Cực khoảng 12.000 TCN và sẽ trở lại khoảng năm 13.700; tiến động ~26.000 năm"
+    verdict: verified
+  - claim: "Deneb sáng gấp Sirius hàng nghìn lần; khoảng cách còn sai số lớn, từ ~1.400 tới hơn 2.600 năm ánh sáng"
+    verdict: verified
+  - claim: "Tam giác mùa hè (Vega, Altair, Deneb) và Lục giác mùa đông"
+    verdict: verified
+findings:
+  - severity: S4
+    detail: "Dòng Rigil Kentaurus ghi tên khoa học là \"Alpha Centauri\" và cấp sao -0,27 — đó là giá trị GỘP của cặp A+B, không phải của riêng một ngôi sao."
+  - severity: S3
+    detail: "Nguồn duy nhất là một bài phổ biến khoa học của VACA (2007-2013). Bài hiện tại chứa nhiều nội dung mà nguồn đó không thể có. Khối \"Biên tập lại từ\" ở cuối bài là ghi công tác phẩm phái sinh, không phải trích dẫn cấp claim — cần bổ sung nguồn thật, không phải gỡ ghi công."
+recommendation: revise

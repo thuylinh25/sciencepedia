@@ -1,0 +1,29 @@
+# Fact-check — sao-hai-vuong
+# Sinh bởi skill fact-check, chế độ audit: bài ĐÃ PUBLISHED nhưng factCheck=PENDING.
+slug: sao-hai-vuong
+checked_at: 2026-09-05
+mode: audit
+article_status: PUBLISHED
+fact_check_state_before: PENDING
+strong_sources: 1   # nguồn bậc 1-2 còn hiệu lực; ngưỡng của dự án là 3
+claims:
+  - claim: "Le Verrier và Adams tính độc lập; Galle tìm thấy năm 1846 trong vòng một giờ, lệch chưa tới 1 độ"
+    verdict: verified
+  - claim: "Gió đạt tới khoảng 2.100 km/h"
+    verdict: verified
+  - claim: "Nhận lượng ánh sáng bằng 1/900 Trái Đất"
+    verdict: verified
+  - claim: "Phát ra năng lượng gấp khoảng 2,6 lần lượng nhận từ Mặt Trời"
+    verdict: verified
+  - claim: "Vết Tối Lớn do Voyager 2 chụp năm 1989 đã biến mất khi Hubble quan sát lại"
+    verdict: verified
+  - claim: "Triton quay ngược chiều tự quay của hành tinh, là thiên thể vành đai Kuiper bị bắt giữ"
+    verdict: verified
+  - claim: "Triton phun trào nitơ và đang xoắn vào trong, sẽ bị xé thành vành đai"
+    verdict: verified
+findings:
+  - severity: S3
+    detail: "URL nguồn nssdc.gsfc.nasa.gov/planetary/factsheet/ hiện trả 307 về nasa.gov/nssdc — bảng số liệu không truy cập được (đo 2026-09-05). Lưu ý check-publish --links coi URL này là \"còn sống\" vì nó theo redirect tới một trang trả 200."
+  - severity: S4
+    detail: "\"Đầu thế kỷ 19\" cho việc phát hiện sai lệch quỹ đạo Sao Thiên Vương hơi rộng — các sai lệch được ghi nhận chủ yếu từ thập niên 1820-1840."
+recommendation: revise

@@ -1,0 +1,28 @@
+# Fact-check — sao-tho
+# Sinh bởi skill fact-check, chế độ audit: bài ĐÃ PUBLISHED nhưng factCheck=PENDING.
+slug: sao-tho
+checked_at: 2026-09-05
+mode: audit
+article_status: PUBLISHED
+fact_check_state_before: PENDING
+strong_sources: 1   # nguồn bậc 1-2 còn hiệu lực; ngưỡng của dự án là 3
+claims:
+  - claim: "Vành đai gồm băng nước và đá, trải rộng ~280.000 km nhưng nhiều vùng chỉ dày ~10 m"
+    verdict: verified
+  - claim: "Cassini cho thấy vành đai có thể chỉ 100-400 triệu năm tuổi và đang rơi vào hành tinh"
+    verdict: verified
+    evidence: "Kempf et al. 2023, Science Advances, doi 10.1126/sciadv.adf8537: thời gian phơi nhiễm suy ra là 100-400 triệu năm. Con số của bài khớp kết quả mới nhất, KHÔNG phải con số 10-100 triệu năm cũ hơn."
+  - claim: "Mật độ trung bình 0,687 g/cm3, thấp hơn nước"
+    verdict: verified
+  - claim: "Enceladus rộng ~500 km, phun cột hơi nước ở cực nam; Cassini phát hiện muối, silica, phân tử hữu cơ"
+    verdict: verified
+  - claim: "Titan là vệ tinh duy nhất có khí quyển dày, chủ yếu nitơ; sông hồ methane và ethane lỏng ở -179°C"
+    verdict: verified
+  - claim: "Dragonfly dự kiến tới Titan trong thập niên 2030"
+    verdict: verified
+  - claim: "Lục giác cực bắc rộng ~30.000 km, quan sát liên tục từ thời Voyager"
+    verdict: verified
+findings:
+  - severity: S3
+    detail: "URL nguồn nssdc.gsfc.nasa.gov/planetary/factsheet/ hiện trả 307 về nasa.gov/nssdc — bảng số liệu không truy cập được (đo 2026-09-05). Lưu ý check-publish --links coi URL này là \"còn sống\" vì nó theo redirect tới một trang trả 200."
+recommendation: revise

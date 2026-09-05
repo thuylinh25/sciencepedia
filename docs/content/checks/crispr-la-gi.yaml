@@ -1,0 +1,36 @@
+# Fact-check — crispr-la-gi
+# Sinh bởi skill fact-check, chế độ audit: bài ĐÃ PUBLISHED nhưng factCheck=PENDING.
+slug: crispr-la-gi
+checked_at: 2026-09-05
+mode: audit
+article_status: PUBLISHED
+fact_check_state_before: PENDING
+strong_sources: 1   # nguồn bậc 1-2 còn hiệu lực; ngưỡng của dự án là 3
+claims:
+  - claim: "CRISPR vốn là hệ miễn dịch thích ứng của vi khuẩn"
+    verdict: verified
+  - claim: "guide RNA khoảng 20 nucleotide; Cas9 cắt cả hai mạch DNA"
+    verdict: verified
+  - claim: "Doudna và Charpentier 2012 chứng minh có thể lập trình lại guide RNA; Nobel Hoá học 2020"
+    verdict: verified
+    evidence: "Jinek et al., Science 2012 — chính là nguồn đã dẫn, hỗ trợ đúng claim"
+  - claim: "NHEJ nhanh nhưng hay sai sót, dùng để tắt gene; HDR chính xác hơn, cho phép chèn trình tự mới"
+    verdict: verified
+  - claim: "\"Tháng 12/2023, các cơ quan quản lý Anh và Mỹ phê duyệt Casgevy cho hồng cầu hình liềm và beta-thalassemia\""
+    verdict: partially-supported
+    evidence: "Anh (MHRA) phê duyệt ngày 15/11/2023 — tháng 11, không phải tháng 12 — và cho cả hai chỉ định. Mỹ (FDA) phê duyệt ngày 08/12/2023 CHỈ cho hồng cầu hình liềm; chỉ định beta-thalassemia mãi 16/01/2024 mới được thêm. Câu của bài gộp hai cơ quan vào một mốc và gán cho mốc đó một chỉ định chưa tồn tại."
+  - claim: "He Jiankui 2018 chỉnh sửa phôi người, bị lên án rộng rãi và lãnh án tù"
+    verdict: verified
+  - claim: "Phân biệt chỉnh sửa tế bào soma với chỉnh sửa dòng mầm; dòng mầm bị cấm hoặc hạn chế nghiêm ngặt"
+    verdict: verified
+findings:
+  - severity: S2
+    detail: "Mốc phê duyệt Casgevy sai ở cả hai vế. Sửa: tách hai cơ quan và hai mốc — MHRA 11/2023 cho cả hai chỉ định, FDA 12/2023 cho hồng cầu hình liềm và 01/2024 cho beta-thalassemia. Đây là nội dung ĐANG LIVE trên trang."
+recommendation: revise
+
+# --- Cập nhật 2026-09-05 ---
+resolved:
+  at: 2026-09-05
+  by: science-editor (duyệt từng chuỗi thay thế) + apply-corrections.ts
+  what: "Các phát hiện S2/S3 về nội dung ở trên ĐÃ SỬA trên bản đang publish. Chi tiết claim cũ/mới và căn cứ ở docs/content/corrections.md. Bản trước khi sửa nằm trong bảng Revision."
+  still_open: "factCheck vẫn PENDING — bài chưa có reviewedById. Các phát hiện về SỐ LƯỢNG NGUỒN vẫn còn nguyên."

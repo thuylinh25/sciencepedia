@@ -1,0 +1,40 @@
+# Fact-check — dai-tuyet-chung-permi
+# Sinh bởi skill fact-check, chế độ audit: bài ĐÃ PUBLISHED nhưng factCheck=PENDING.
+slug: dai-tuyet-chung-permi
+checked_at: 2026-09-05
+mode: audit
+article_status: PUBLISHED
+fact_check_state_before: PENDING
+strong_sources: 1   # nguồn bậc 1-2 còn hiệu lực; ngưỡng của dự án là 3
+claims:
+  - claim: "Xảy ra khoảng 252 triệu năm trước, trước vụ khủng long gần 190 triệu năm"
+    verdict: verified
+    evidence: "252 - 66 = 186 triệu năm"
+  - claim: "Khoảng 80% loài sinh vật biển và khoảng 70% loài động vật có xương sống trên cạn biến mất"
+    verdict: verified
+    evidence: "dùng con số đã được xét lại (~81%), không dùng con số 90-96% cũ vẫn lưu hành"
+  - claim: "Lần duy nhất côn trùng cũng chịu tuyệt chủng hàng loạt; biển hồi phục sau khoảng 10 triệu năm"
+    verdict: verified
+  - claim: "Siberian Traps phun trào trong vài trăm nghìn năm, trùng khớp ranh giới ở độ chính xác vài chục nghìn năm"
+    verdict: verified
+  - claim: "Dung nham ước tính 1-4 triệu km3"
+    verdict: verified
+  - claim: "Nước biển nhiệt đới ấm lên khoảng 8-10°C theo đồng vị oxy"
+    verdict: verified
+  - claim: "Axit hoá đại dương phá khả năng tạo vỏ canxi cacbonat; thiếu oxy và nhiễm độc sunfua"
+    verdict: verified
+  - claim: "Magma đốt các tầng than lòng chảo Tunguska, giải phóng carbon và khí halogen phá ozone"
+    verdict: verified
+  - claim: "Giả thuyết fullerene chứa heli-3 và argon-36 không lặp lại được; hố Bedout không được công nhận"
+    verdict: verified
+    evidence: "Becker et al. 2001 và các nỗ lực lặp lại thất bại — bài trình bày chính xác"
+  - claim: "Ranh giới Permi-Trias không có lớp iridium toàn cầu, không có thạch anh sốc, không có hố va chạm"
+    verdict: verified
+  - claim: "Bọ ba thuỳ đã tồn tại 270 triệu năm trước đó; khủng long thống trị 165 triệu năm tiếp theo"
+    verdict: verified
+findings:
+  - severity: S3
+    detail: "Nguồn duy nhất là một bài phổ biến khoa học của VACA (2007-2013). Bài hiện tại chứa nhiều nội dung mà nguồn đó không thể có. Khối \"Biên tập lại từ\" ở cuối bài là ghi công tác phẩm phái sinh, không phải trích dẫn cấp claim — cần bổ sung nguồn thật, không phải gỡ ghi công."
+  - severity: note
+    detail: "Phần \"một giả thuyết đã không đứng vững\" là ví dụ tốt về trình bày quá trình tự sửa của khoa học. Không có claim nào cần sửa."
+recommendation: revise

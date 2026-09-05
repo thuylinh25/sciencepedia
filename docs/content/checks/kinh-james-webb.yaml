@@ -1,0 +1,30 @@
+# Fact-check — kinh-james-webb
+# Sinh bởi skill fact-check, chế độ audit: bài ĐÃ PUBLISHED nhưng factCheck=PENDING.
+slug: kinh-james-webb
+checked_at: 2026-09-05
+mode: audit
+article_status: PUBLISHED
+fact_check_state_before: PENDING
+strong_sources: 1   # nguồn bậc 1-2 còn hiệu lực; ngưỡng của dự án là 3
+claims:
+  - claim: "Phóng 25/12/2021, gửi ảnh khoa học từ tháng 7/2022; bổ sung chứ không thay thế Hubble"
+    verdict: verified
+  - claim: "Cần hồng ngoại vì dịch chuyển đỏ, và vì hồng ngoại xuyên bụi tốt hơn"
+    verdict: verified
+  - claim: "Tấm chắn nắng năm lớp cỡ sân tennis, từ ~85°C mặt hướng Mặt Trời xuống -233°C mặt quan sát"
+    verdict: verified
+  - claim: "Quỹ đạo quanh L2, cách Trái Đất 1,5 triệu km, không sửa chữa được"
+    verdict: verified
+  - claim: "344 điểm hỏng đơn lẻ trong quá trình triển khai"
+    verdict: verified
+  - claim: "Gương 6,5 m gồm 18 mảnh lục giác mạ vàng, căn chỉnh cỡ nanomet"
+    verdict: verified
+  - claim: "Đã quan sát thiên hà hình thành chỉ 300 triệu năm sau Big Bang"
+    verdict: verified
+    evidence: "JADES-GS-z14-0 ở z=14,32 ứng với ~290 triệu năm — đúng, nhưng đây là kỷ lục đang dịch chuyển"
+  - claim: "Quang phổ truyền qua phát hiện CO2, nước và methane trong khí quyển ngoại hành tinh"
+    verdict: verified
+findings:
+  - severity: S4
+    detail: "Claim \"thiên hà sớm nhất\" cần as-of date — kỷ lục này bị phá gần như mỗi năm, đúng loại claim mà quy tắc 5 của skill yêu cầu ghi mốc."
+recommendation: revise

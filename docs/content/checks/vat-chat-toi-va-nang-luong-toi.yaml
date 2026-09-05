@@ -1,0 +1,37 @@
+# Fact-check — vat-chat-toi-va-nang-luong-toi
+# Sinh bởi skill fact-check, chế độ audit: bài ĐÃ PUBLISHED nhưng factCheck=PENDING.
+slug: vat-chat-toi-va-nang-luong-toi
+checked_at: 2026-09-05
+mode: audit
+article_status: PUBLISHED
+fact_check_state_before: PENDING
+strong_sources: 1   # nguồn bậc 1-2 còn hiệu lực; ngưỡng của dự án là 3
+claims:
+  - claim: "Vật chất tối có hấp dẫn và tụ quanh thiên hà; năng lượng tối đẩy không gian giãn và phân bố đều"
+    verdict: verified
+  - claim: "Hai thứ được phát hiện cách nhau 65 năm"
+    verdict: verified
+    evidence: "Zwicky 1933 tới 1998 là 65 năm — tự nhất quán"
+  - claim: "Zwicky 1933 đo đám Coma và gọi phần khối lượng thiếu là \"vật chất tối\""
+    verdict: verified
+  - claim: "Vera Rubin thập niên 1970: đường cong quay thiên hà giữ phẳng ra tới rìa"
+    verdict: verified
+  - claim: "Thấu kính hấp dẫn cho tổng khối lượng lớn hơn nhiều phần phát sáng"
+    verdict: verified
+  - claim: "Cụm Đạn: khí nóng bị giữ lại ở giữa còn phần lớn khối lượng đi tiếp, tách khối lượng khỏi vật chất nhìn thấy"
+    verdict: verified
+  - claim: "WIMP không còn là câu trả lời mặc định: XENON, LUX, PandaX chạy hơn hai mươi năm không tìm thấy gì"
+    verdict: verified
+  - claim: "Các hướng hiện nay: axion, neutrino vô sinh, lỗ đen nguyên thuỷ; MOND gặp khó trước Cụm Đạn và bức xạ nền"
+    verdict: verified
+  - claim: "Năng lượng tối không phải tiên đoán của thuyết tương đối rộng; phương trình chỉ CHO PHÉP một hằng số vũ trụ học"
+    verdict: verified
+    evidence: "phân biệt chính xác"
+  - claim: "Mật độ năng lượng tối khoảng 7x10^-30 g/cm3"
+    verdict: verified
+  - claim: "Lý thuyết trường lượng tử tính hằng số vũ trụ học lệch khoảng 10^120 lần"
+    verdict: verified
+findings:
+  - severity: S3
+    detail: "Nguồn duy nhất là một bài phổ biến khoa học của VACA (2007-2013). Bài hiện tại chứa nhiều nội dung mà nguồn đó không thể có. Khối \"Biên tập lại từ\" ở cuối bài là ghi công tác phẩm phái sinh, không phải trích dẫn cấp claim — cần bổ sung nguồn thật, không phải gỡ ghi công. Riêng bài này, phần WIMP bị loại trừ và Nobel 2011 đều là nội dung sau năm 2010 — nguồn VACA 2010 chắc chắn không chứa."
+recommendation: revise

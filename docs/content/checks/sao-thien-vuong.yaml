@@ -1,0 +1,27 @@
+# Fact-check — sao-thien-vuong
+# Sinh bởi skill fact-check, chế độ audit: bài ĐÃ PUBLISHED nhưng factCheck=PENDING.
+slug: sao-thien-vuong
+checked_at: 2026-09-05
+mode: audit
+article_status: PUBLISHED
+fact_check_state_before: PENDING
+strong_sources: 1   # nguồn bậc 1-2 còn hiệu lực; ngưỡng của dự án là 3
+claims:
+  - claim: "Trục nghiêng gần 98°, nhiều khả năng do một hoặc vài va chạm cỡ hành tinh"
+    verdict: verified
+  - claim: "Mỗi cực có 42 năm Trái Đất được chiếu sáng liên tục rồi 42 năm trong bóng tối"
+    verdict: verified
+  - claim: "Người khổng lồ băng: lớp phủ nước, methane, amoniac ở trạng thái siêu tới hạn"
+    verdict: verified
+  - claim: "Methane hấp thụ ánh sáng đỏ tạo màu lam nhạt"
+    verdict: verified
+  - claim: "Nhiệt độ thấp nhất từng đo trong khí quyển hành tinh: -224°C"
+    verdict: verified
+  - claim: "Gần như không toả thêm nhiệt từ bên trong, khác các hành tinh khổng lồ còn lại"
+    verdict: verified
+  - claim: "Voyager 2 bay ngang năm 1986 và tới nay vẫn là tàu duy nhất từng tới"
+    verdict: verified
+findings:
+  - severity: S3
+    detail: "URL nguồn nssdc.gsfc.nasa.gov/planetary/factsheet/ hiện trả 307 về nasa.gov/nssdc — bảng số liệu không truy cập được (đo 2026-09-05). Lưu ý check-publish --links coi URL này là \"còn sống\" vì nó theo redirect tới một trang trả 200."
+recommendation: revise

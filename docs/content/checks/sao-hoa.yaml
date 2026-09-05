@@ -1,0 +1,41 @@
+# Fact-check — sao-hoa
+# Sinh bởi skill fact-check, chế độ audit: bài ĐÃ PUBLISHED nhưng factCheck=PENDING.
+slug: sao-hoa
+checked_at: 2026-09-05
+mode: audit
+article_status: PUBLISHED
+fact_check_state_before: PENDING
+strong_sources: 1   # nguồn bậc 1-2 còn hiệu lực; ngưỡng của dự án là 3
+claims:
+  - claim: "Bụi giàu oxit sắt tạo màu đỏ đặc trưng"
+    verdict: verified
+  - claim: "Thung lũng và châu thổ cổ, rõ nhất ở hố Jezero nơi Perseverance hoạt động"
+    verdict: verified
+    evidence: "science.nasa.gov/mars/facts"
+  - claim: "Khoáng vật chỉ hình thành khi có nước: đất sét và sulfat"
+    verdict: verified
+    evidence: "science.nasa.gov/mars/facts"
+  - claim: "Băng nước lộ thiên ở hai cực và băng ngầm ở vĩ độ trung bình"
+    verdict: verified
+  - claim: "Khoảng 3,5-4 tỉ năm trước Sao Hoả ấm và ẩm hơn"
+    verdict: verified
+    evidence: "NASA nêu các trận lũ lớn khoảng 3,5 tỉ năm trước"
+  - claim: "MAVEN đo được quá trình mất khí quyển vẫn đang tiếp diễn"
+    verdict: verified
+  - claim: "Olympus Mons cao 22 km, \"gần gấp ba đỉnh Everest\""
+    verdict: partially-supported
+    evidence: "MOLA đo 21,23-21,29 km trên areoid, nên 22 km là làm tròn chấp nhận được. Nhưng 22/8,85 = 2,4 lần, không phải \"gần gấp ba\". So sánh còn trộn hai mốc khác nhau: Olympus Mons đo trên mốc chuẩn, Everest đo trên mực nước biển."
+  - claim: "Valles Marineris dài 4.000 km, sâu tới 7 km"
+    verdict: verified
+    evidence: "7 km là con số chuẩn được dẫn rộng rãi. Lưu ý trang NASA Mars facts ghi 3.870 km và 9,3 km — cần chốt bài lấy theo nguồn nào."
+  - claim: "Phobos và Deimos nhiều khả năng là tiểu hành tinh bị bắt giữ"
+    verdict: verified
+    evidence: "NASA: \"may be captured asteroids\" — mức dè dặt của bài khớp nguồn"
+findings:
+  - severity: S3
+    detail: "So sánh Olympus Mons với Everest phóng đại khoảng 25%. Sửa thành \"gấp khoảng hai lần rưỡi\", hoặc nêu rõ đang so trên mốc nào."
+  - severity: S4
+    detail: "Độ sâu Valles Marineris (7 km) lệch với trang NASA hiện hành (9,3 km) — cần ghi rõ nguồn."
+  - severity: S3
+    detail: "URL nguồn nssdc.gsfc.nasa.gov/planetary/factsheet/ hiện trả 307 về nasa.gov/nssdc — bảng số liệu không truy cập được (đo 2026-09-05). Lưu ý check-publish --links coi URL này là \"còn sống\" vì nó theo redirect tới một trang trả 200."
+recommendation: revise

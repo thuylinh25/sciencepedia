@@ -1,0 +1,31 @@
+# Fact-check — mat-troi
+# Sinh bởi skill fact-check, chế độ audit: bài ĐÃ PUBLISHED nhưng factCheck=PENDING.
+slug: mat-troi
+checked_at: 2026-09-05
+mode: audit
+article_status: PUBLISHED
+fact_check_state_before: PENDING
+strong_sources: 3+   # nguồn bậc 1-2 còn hiệu lực; ngưỡng của dự án là 3
+claims:
+  - claim: "Đường kính 1,39 triệu km; chứa được 1,3 triệu Trái Đất"
+    verdict: verified
+  - claim: "Lõi ~15 triệu °C; chuỗi proton-proton chuyển ~4 triệu tấn vật chất thành năng lượng mỗi giây"
+    verdict: verified
+  - claim: "Photon mất hàng chục nghìn tới hàng trăm nghìn năm để thoát khỏi vùng bức xạ"
+    verdict: verified
+  - claim: "Bảng nhiệt độ các lớp, từ lõi tới nhật hoa"
+    verdict: verified
+  - claim: "Nhật hoa nóng gấp vài trăm lần quang quyển ngay bên dưới"
+    verdict: verified
+  - claim: "Chu kỳ 11 năm, từ trường đảo cực"
+    verdict: verified
+  - claim: "Québec 1989: 6 triệu người mất điện trong 9 giờ"
+    verdict: verified
+  - claim: "~5 tỉ năm nữa: khổng lồ đỏ, nuốt Sao Thuỷ và Sao Kim, rồi tinh vân hành tinh và lùn trắng"
+    verdict: verified
+findings:
+  - severity: S3
+    detail: "URL nguồn nssdc.gsfc.nasa.gov/planetary/factsheet/ hiện trả 307 về nasa.gov/nssdc — bảng số liệu không truy cập được (đo 2026-09-05). Lưu ý check-publish --links coi URL này là \"còn sống\" vì nó theo redirect tới một trang trả 200."
+  - severity: note
+    detail: "Bài duy nhất trong 32 bài đạt ngưỡng 3 nguồn bậc 1-2 (có 6 nguồn)."
+recommendation: pass

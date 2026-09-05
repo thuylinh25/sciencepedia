@@ -233,3 +233,58 @@ accuracy phải fetch nguồn gốc, không đối chiếu bản thảo với ch
 
 **Đoạn cảnh báo ở cuối bài không che được vật lý sai ở thân bài.** Nó hạ mức độ
 chắc chắn, không biến phát biểu sai thành đúng.
+
+## Ước lượng điểm không đặt vào tiêu đề
+
+Chốt 2026-09-05, sau khi `he-vi-sinh-duong-ruot` mang con số sai trong tiêu đề
+suốt thời gian đã publish: "100 nghìn tỉ cư dân", trong khi Sender/Fuchs/Milo 2016
+đã hạ ước lượng xuống ~3,8×10¹³.
+
+Đề xuất đầu tiên là thay bằng "40 nghìn tỉ". `science-editor` bác: đó là lặp lại
+đúng sai lầm vừa sửa với một con số mới hơn.
+
+**Tiêu đề không mang được mệnh đề dè dặt lẫn năm đo.** Mà chính việc một con số bị
+tách khỏi năm của nó là cách 10¹⁴ sống sót được 50 năm — nó ra đời từ một ước lượng
+1972, rồi được trích lại mãi mà không ai mang theo cái mốc ấy.
+
+Tiêu đề dùng bậc độ lớn ("hàng chục nghìn tỉ"), thân bài mới dùng con số kèm nguồn
+và năm. Bậc độ lớn đúng dù ước lượng tới có là 3,8×10¹³ hay 10¹⁴, nên nó không phải
+sửa lại lần nữa.
+
+Áp cho mọi trường tiêu đề: `title`, `titleEn`, `seoTitle`.
+
+## Sửa bài đã publish là đính chính, không phải biên tập
+
+Chốt 2026-09-05.
+
+Sửa bài chưa publish là biên tập — không ai cần biết. Sửa bài **đã** publish thì
+người đọc có thể đã mang con số cũ đi rồi, và một lần sửa im lặng khiến họ không
+bao giờ biết mình cần cập nhật.
+
+Mỗi lần sửa claim trên bài đã publish phải để lại ba thứ:
+
+1. Một dòng trong `docs/content/corrections.md`: claim cũ, claim mới, căn cứ.
+2. Một bản `Revision` chụp nội dung **trước** khi sửa, ghi trong **cùng transaction**
+   với lệnh sửa — để lịch sử không thể lệch khỏi nội dung.
+3. `lastVerifiedAt` cập nhật.
+
+**Đổi claim thì phải đổi cả bảng nguồn.** Thay một con số cũ không nguồn bằng một
+con số mới không nguồn không phải đính chính, chỉ là đổi phiên bản của cùng một vấn
+đề. Đây là điều kiện `science-editor` đặt ra khi duyệt lượt sửa đầu tiên.
+
+**Sửa chuỗi xong không có nghĩa là qua gate.** `factCheck` là việc của người duyệt,
+không phải hệ quả của một phép thay chuỗi.
+
+### Kho tự mâu thuẫn là máy dò lỗi rẻ nhất
+
+Hai trong năm lỗi S2 của lượt audit 2026-09-05 lộ ra không nhờ tra nguồn ngoài, mà
+nhờ đối chiếu kho với chính nó:
+
+- `sao-cau-tao-va-tien-hoa` viết "không một sao loại M nào nhìn được bằng mắt
+  thường" — trong khi **bảng ngay phía trên câu đó** liệt kê Betelgeuse làm ví dụ
+  lớp M, và `20-ngoi-sao-sang-nhat-bau-troi-dem` xếp Betelgeuse #10, Antares #15.
+- `sao-kim` và `tam-hanh-tinh-he-mat-troi` viết "một ngày dài hơn một năm", trong
+  khi `sao-thuy` đã phân biệt đúng "ngày mặt trời" với chu kỳ tự quay.
+
+Cả hai đều là một khái niệm được dùng hai nghĩa ở hai chỗ. Trước khi đi tra nguồn
+ngoài, hãy hỏi kho đã nói gì về cùng khái niệm đó ở bài khác.

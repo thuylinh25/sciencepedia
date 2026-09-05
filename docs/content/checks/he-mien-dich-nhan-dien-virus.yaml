@@ -1,0 +1,32 @@
+# Fact-check — he-mien-dich-nhan-dien-virus
+# Sinh bởi skill fact-check, chế độ audit: bài ĐÃ PUBLISHED nhưng factCheck=PENDING.
+slug: he-mien-dich-nhan-dien-virus
+checked_at: 2026-09-05
+mode: audit
+article_status: PUBLISHED
+fact_check_state_before: PENDING
+strong_sources: 2   # nguồn bậc 1-2 còn hiệu lực; ngưỡng của dự án là 3
+claims:
+  - claim: "Miễn dịch bẩm sinh phản ứng trong vài phút tới vài giờ qua PRR, nhận diện RNA sợi đôi"
+    verdict: verified
+  - claim: "PRR kích hoạt thì tế bào tiết interferon và cytokine, báo động tế bào lân cận"
+    verdict: verified
+  - claim: "Miễn dịch thích ứng mất 5-10 ngày lần đầu, 1-3 ngày lần sau"
+    verdict: verified
+  - claim: "Tế bào B sản xuất kháng thể gắn epitope; T hỗ trợ điều phối, T gây độc diệt tế bào nhiễm"
+    verdict: verified
+  - claim: "Tái tổ hợp V(D)J sinh ra \"khoảng 10^11 biến thể khác nhau\""
+    verdict: partially-supported
+    evidence: "Con số này là mức đa dạng TIỀM NĂNG của kho thụ thể, không phải số thụ thể thực có trong một cơ thể (ước tính ~10^8). Janeway 10th ed nêu tiềm năng của TCR còn cao hơn nữa. Bài không phân biệt hai đại lượng."
+  - claim: "Chọn lọc dòng: cơ thể chọn sẵn cái phù hợp rồi khuếch đại, không thiết kế theo yêu cầu"
+    verdict: verified
+  - claim: "Tế bào nhớ tồn tại hàng chục năm"
+    verdict: verified
+  - claim: "Kháng nguyên trôi dạt giải thích vì sao vaccine cúm cập nhật hằng năm còn vaccine sởi thì không"
+    verdict: verified
+findings:
+  - severity: S3
+    detail: "Làm rõ 10^11 là đa dạng tiềm năng chứ không phải số thụ thể thực có."
+  - severity: S3
+    detail: "Cả hai nguồn đều thiếu URL và DOI."
+recommendation: revise

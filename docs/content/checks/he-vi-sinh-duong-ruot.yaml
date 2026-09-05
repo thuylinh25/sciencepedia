@@ -1,0 +1,48 @@
+# Fact-check — he-vi-sinh-duong-ruot
+# Sinh bởi skill fact-check, chế độ audit: bài ĐÃ PUBLISHED nhưng factCheck=PENDING.
+slug: he-vi-sinh-duong-ruot
+checked_at: 2026-09-05
+mode: audit
+article_status: PUBLISHED
+fact_check_state_before: PENDING
+strong_sources: 2   # nguồn bậc 1-2 còn hiệu lực; ngưỡng của dự án là 3
+claims:
+  - claim: "\"Ruột người chứa khoảng 10^14 vi sinh vật\" và tiêu đề \"100 nghìn tỉ cư dân\""
+    verdict: outdated
+    evidence: "Sender, Fuchs và Milo 2016, PLOS Biology, doi 10.1371/journal.pbio.1002533 hạ ước lượng xuống ~3,8x10^13. Con số 10^14 truy về Luckey 1972 và đã bị thay thế."
+  - claim: "Tổng khối lượng chỉ khoảng 200 gram"
+    verdict: verified
+    evidence: "con số này đến từ CHÍNH bài Sender 2016 — bài lấy số mới cho khối lượng nhưng giữ số cũ cho số lượng, tự mâu thuẫn về nguồn"
+  - claim: "Số gene vi khuẩn gấp hàng trăm lần bộ gene người"
+    verdict: verified
+  - claim: "Vi khuẩn đại tràng lên men chất xơ tạo acetate, propionate, butyrate; butyrate nuôi tế bào biểu mô đại tràng"
+    verdict: verified
+  - claim: "Vi khuẩn ruột tổng hợp vitamin K và một số vitamin nhóm B"
+    verdict: verified
+  - claim: "\"Khoảng 70% mô lympho của cơ thể nằm quanh đường ruột\""
+    verdict: partially-supported
+    evidence: "Con số được lặp lại rất rộng rãi nhưng truy nguyên yếu — các tổng quan gần đây dẫn lại nó mà không dẫn được phép đo gốc."
+  - claim: "Hệ thần kinh ruột có khoảng 500 triệu neuron"
+    verdict: verified
+  - claim: "Thử nghiệm ngẫu nhiên ở Stanford năm 2021: thực phẩm lên men tăng đa dạng vi sinh, giảm dấu ấn viêm"
+    verdict: verified
+    evidence: "Wastyk et al., Cell 2021 — chính là nguồn [1], hỗ trợ đúng claim"
+  - claim: "Kháng sinh giảm mạnh đa dạng, thường hồi phục phần lớn nhưng không phải luôn hoàn toàn"
+    verdict: verified
+  - claim: "Hiệu quả probiotic có tính theo từng chủng và từng chỉ định, không phải lợi ích chung"
+    verdict: verified
+findings:
+  - severity: S3
+    detail: "Số lượng vi sinh vật đã lỗi thời và nằm ngay trong TIÊU ĐỀ bài. Sửa cả tiêu đề lẫn thân bài về ~3,8x10^13 (khoảng 40 nghìn tỉ), hoặc bỏ con số khỏi tiêu đề."
+  - severity: S3
+    detail: "Con số 70% mô lympho cần nguồn gốc hoặc nên bỏ."
+  - severity: note
+    detail: "Đoạn cảnh báo về trục ruột-não (\"phần lớn kết quả từ chuột vô trùng\", \"rất nhiều nghiên cứu chỉ cho thấy tương quan\") là mức dè dặt đúng và nên giữ nguyên khi sửa."
+recommendation: revise
+
+# --- Cập nhật 2026-09-05 ---
+resolved:
+  at: 2026-09-05
+  by: science-editor (duyệt từng chuỗi thay thế) + apply-corrections.ts
+  what: "Các phát hiện S2/S3 về nội dung ở trên ĐÃ SỬA trên bản đang publish. Chi tiết claim cũ/mới và căn cứ ở docs/content/corrections.md. Bản trước khi sửa nằm trong bảng Revision."
+  still_open: "factCheck vẫn PENDING — bài chưa có reviewedById. Các phát hiện về SỐ LƯỢNG NGUỒN vẫn còn nguyên."
