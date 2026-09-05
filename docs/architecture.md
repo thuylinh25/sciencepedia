@@ -130,3 +130,52 @@ và `messages/en.json`. Nội dung song ngữ trong DB dùng `pick()` / `pickNam
 `@/lib/i18n-content`, không hardcode.
 
 Cấm fallback hiển thị tiếng Việt trong trang tiếng Anh, cấm dịch máy tại runtime.
+
+## Xuất bản tự động — gate ở đâu và vì sao ở đó
+
+Thêm 2026-09-05.
+
+Pipeline 11 bước chạy được không cần người ngồi cạnh, qua `npm run pipeline`
+(`scripts/pipeline.ts`, dùng `@anthropic-ai/claude-agent-sdk`). Ba quyết định
+đáng ghi lại, vì lần sau đều dễ bị "sửa cho gọn".
+
+**Không viết lại hệ agent bằng TypeScript.** Agent SDK chính là Claude Code
+đóng gói thành thư viện, nên nó nạp thẳng `.claude/agents/` và `.claude/skills/`.
+Viết một bản triển khai thứ hai cho máy chủ là tạo ra hai bản sẽ trôi khỏi nhau,
+và lần lệch đầu tiên phát hiện được sẽ là qua một bài sai đã lên production.
+
+**Chạy trên GitHub Actions, không phải Vercel.** Hai lý do độc lập, mỗi lý do
+đủ để một mình quyết định: hàm Vercel cắt ở 60 giây trong khi một bài mất hàng
+chục phút; và `CLAUDE_CODE_OAUTH_TOKEN` (gói đăng ký, không cần API key) chỉ
+được Claude Code / Agent SDK đọc — `@anthropic-ai/sdk` không đọc nó, nên đường
+cũ qua `src/lib/rewrite.ts` vẫn cần API key riêng.
+
+**Gate nằm trong đường ghi, không nằm trong prompt.** Dặn agent "nhớ kiểm tra
+trước khi publish" là lời khuyên; nó hỏng đúng vào ngày không ai ngồi xem. Thay
+vào đó:
+
+| Lớp | Ở đâu | Chặn được gì |
+|---|---|---|
+| Khoá | `scripts/publish.ts` | Không qua `check-publish` thì không đổi state, kể cả người gọi là con người |
+| Hàng rào | hook `PreToolUse` trong `pipeline.ts` | Lệnh đổi lược đồ, ghi CSDL bằng lệnh một dòng, `git push` |
+| Hạ tầng | không đặt `DIRECT_URL` trong CI | `prisma migrate` không chạy được dù hai lớp trên thủng |
+
+Hàng rào **không kín** — agent viết được một file rồi chạy file đó. Nó tồn tại
+để chặn lối đi thẳng và nâng chi phí đường vòng; thứ thật sự giữ là lớp khoá.
+
+`scripts/check-publish.ts` là chỗ duy nhất định nghĩa điều kiện xuất bản, và nó
+**chỉ đọc** — một cái gate tự sửa dữ liệu để làm chính mình xanh là gate vô
+dụng. Hai mức CHẶN / CẢNH tách nhau vì gộp lại thì hoặc quá chặt (chặn bài hợp
+lệ, rồi người ta học cách bỏ qua nó) hoặc quá lỏng.
+
+**`settingSources: ["project"]`, cố ý bỏ "local" và "user".**
+`.claude/settings.local.json` nằm trong `.gitignore` nên **không có trong
+checkout của CI** — mọi lệnh cấm phải khai lại trong hook, không được trông vào
+file đó. Cấu hình chạy được trên máy dev mà biến mất trên máy chủ là dạng cấu
+hình tệ nhất.
+
+**Người viết và người duyệt khác model.** `pipeline.ts` ghi đè
+`science-editor` sang Opus. Cùng một model chấm bài của chính nó thì cái nó bỏ
+sót lúc viết nó cũng bỏ sót lúc chấm — sai sót tương quan, và "đã duyệt" thành
+một con dấu rỗng. Đây là gate yếu hơn người duyệt thật; đừng đọc nó như tương
+đương.

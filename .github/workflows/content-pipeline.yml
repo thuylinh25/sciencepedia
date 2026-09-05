@@ -1,0 +1,94 @@
+name: Content pipeline
+
+# Chạy pipeline nội dung 11 bước mỗi ngày.
+#
+# Vì sao ở GitHub Actions chứ không phải Vercel cron:
+#   - Hàm Vercel cắt ở 60 giây (gói Hobby). Một bài qua 11 bước mất hàng chục
+#     phút, nên đường đó không khả thi bất kể cấu hình thế nào.
+#   - `CLAUDE_CODE_OAUTH_TOKEN` xác thực bằng gói đăng ký Claude và chỉ được
+#     Claude Code / Agent SDK đọc. `@anthropic-ai/sdk` KHÔNG đọc nó, nên đường
+#     cũ qua `src/lib/rewrite.ts` trên Vercel vẫn cần API key riêng.
+#
+# Bật lịch: bỏ chú thích khối `schedule` bên dưới. Cố ý để tắt khi mới thêm —
+# nhịp độ phải do người quyết sau khi đọc vài lần chạy tay, không phải mặc định
+# bật rồi mới xem.
+
+on:
+  workflow_dispatch:
+    inputs:
+      count:
+        description: "Số chủ đề chạy trong lượt này"
+        required: false
+        default: "1"
+      budget:
+        description: "Trần chi phí USD cho cả lượt"
+        required: false
+        default: "5"
+      dry_run:
+        description: "Chạy thử, không ghi CSDL"
+        type: boolean
+        required: false
+        default: false
+
+  # schedule:
+  #   # 22:00 UTC = 05:00 giờ Việt Nam. Bài xong trước giờ người đọc thức dậy.
+  #   - cron: "0 22 * * *"
+
+# Hai lượt chạy chồng nhau sẽ cùng lấy một chủ đề ở đầu hàng đợi và sinh hai
+# bài trùng. Hàng đợi nằm trong file, không có khoá — nên khoá ở đây.
+concurrency:
+  group: content-pipeline
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    # Một bài qua 11 bước, có nghiên cứu nguồn, chạy hàng chục phút. Trần 6 giờ
+    # của Actions là quá dư; 90 phút đủ rộng mà vẫn chặn được vòng lặp kẹt.
+    timeout-minutes: 90
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: sciencepedia/package-lock.json
+
+      - name: Cài đặt
+        working-directory: sciencepedia
+        run: npm ci
+
+      - name: Chạy pipeline
+        working-directory: sciencepedia
+        env:
+          # Sinh bằng `claude setup-token`, hạn một năm, dùng gói đăng ký.
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          # Pooler cổng 6543. CỐ Ý KHÔNG đặt DIRECT_URL: thiếu nó thì
+          # `prisma migrate` không chạy được kể cả khi hook trong pipeline.ts
+          # bị đi vòng. Một lớp phòng vệ nữa, không phải quên.
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          NEXT_PUBLIC_SITE_URL: ${{ secrets.NEXT_PUBLIC_SITE_URL }}
+        run: |
+          npm run pipeline -- \
+            --count "${{ inputs.count || 1 }}" \
+            --budget "${{ inputs.budget || 5 }}" \
+            ${{ inputs.dry_run && '--dry-run' || '' }}
+
+      - name: Rà lại toàn kho sau lượt chạy
+        # Chạy cả khi bước trên hỏng: một lượt bị cắt giữa chừng là đúng lúc
+        # cần biết kho còn lại ở trạng thái nào.
+        if: always()
+        working-directory: sciencepedia
+        # Gate trả exit 1 khi có bài bị chặn — ở đây đó là thông tin, không phải
+        # sự cố của workflow, nên nuốt mã lỗi và giữ nguyên output.
+        run: npm run publish:check || true
+
+      - name: Lưu báo cáo
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pipeline-run
+          path: docs/content/pipeline-run-*.md
+          if-no-files-found: warn

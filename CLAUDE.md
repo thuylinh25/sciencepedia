@@ -17,7 +17,14 @@ npm run db:migrate   # tạo migration (cần DIRECT_URL)
 npm run db:deploy    # apply migration trên prod
 npm run db:seed
 npm run search:reindex
+
+npm run publish:check # rà điều kiện xuất bản toàn kho (chỉ đọc)
+npm run publish       # đổi state sang PUBLISHED — đường ghi DUY NHẤT, có gate
+npm run pipeline      # chạy pipeline 11 bước tự động (cần CLAUDE_CODE_OAUTH_TOKEN)
 ```
+
+> Xuất bản tự động: gate nằm trong `scripts/publish.ts`, không nằm trong prompt.
+> Lý do và ba lớp phòng vệ ở `docs/architecture.md`, mục "Xuất bản tự động".
 
 ## Hệ agent & skill
 

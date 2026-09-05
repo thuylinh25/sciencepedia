@@ -16,16 +16,20 @@
     "db:studio": "prisma studio",
     "images:credit": "tsx --env-file-if-exists=.env scripts/backfill-image-credit.ts",
     "graph:check": "tsx --env-file-if-exists=.env scripts/check-graph.ts",
+    "publish:check": "tsx --env-file-if-exists=.env scripts/check-publish.ts",
     "db:seed": "tsx --env-file-if-exists=.env prisma/seed.ts",
     "search:reindex": "tsx --env-file-if-exists=.env scripts/reindex.ts",
     "storage:setup": "tsx --env-file-if-exists=.env scripts/setup-storage.ts",
     "import:notion": "tsx --env-file-if-exists=.env scripts/import-notion.ts",
-    "postinstall": "prisma generate"
+    "postinstall": "prisma generate",
+    "publish": "tsx --env-file-if-exists=.env scripts/publish.ts",
+    "pipeline": "tsx --env-file-if-exists=.env scripts/pipeline.ts"
   },
   "prisma": {
     "seed": "tsx --env-file-if-exists=.env prisma/seed.ts"
   },
   "dependencies": {
+    "@anthropic-ai/claude-agent-sdk": "^0.3.261",
     "@anthropic-ai/sdk": "^0.123.0",
     "@auth/prisma-adapter": "^2.10.0",
     "@google/genai": "^2.20.0",
