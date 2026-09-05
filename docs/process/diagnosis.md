@@ -3,7 +3,7 @@
 Quy tắc rút từ những lần **sửa nhầm chỗ**. Đây không phải mẹo kỹ thuật — mẹo kỹ
 thuật nằm ở `docs/design-system.md`. Đây là cách quyết định *sửa cái gì*.
 
-Cập nhật: 2026-09-03
+Cập nhật: 2026-09-05
 
 ---
 
@@ -106,6 +106,68 @@ Rà qua footer tìm ra hai link hỏng đã sống trên production:
 
 Không ai báo, vì không ai bấm. Khi chạm vào một khối, kiểm luôn các link trong đó
 có resolve không.
+
+---
+
+## Thứ quyết định thường nằm cao hơn một tầng
+
+Ba lỗi riêng biệt trong dự án này có cùng một hình dạng: chỗ tôi đang sửa không
+phải chỗ quyết định kết quả.
+
+| Triệu chứng | Tôi sửa ở | Thứ thật sự quyết định |
+|---|---|---|
+| Icon thanh số bị cắt cụt | căn lề của chính thanh số | `position` của **hero bao ngoài** |
+| Ô bảng dính sát viền | selector trên thẻ bọc bảng | **cascade layer** của cả stylesheet |
+| Thiên hà không hiện trên điện thoại | điều kiện mount trong component | `hidden lg:block` ở **thẻ cha** |
+
+Lần thứ ba đặc biệt dễ mắc: tôi đã thêm `lowPower` vào `HeroGalaxy`, chạy
+typecheck xanh, và suýt báo xong — trong khi component đó dưới `lg` không hề
+được dựng, vì một class ở thẻ bao ngoài đã quyết định điều đó từ trước.
+
+Quy tắc: khi bản sửa **chắc chắn đã được áp dụng** mà không đổi gì, đừng sửa
+tiếp ở cùng tầng. Đi lên một tầng và hỏi ba câu:
+
+1. Thẻ cha có đang định vị, cắt, hoặc ẩn thứ này không?
+2. Luật CSS kia nằm trong `@layer` nào? (layer đứng trên specificity)
+3. Có điều kiện nào ở trên quyết định thứ này có tồn tại hay không?
+
+---
+
+## Phép đo mâu thuẫn với mắt người dùng thì phép đo thiếu, không phải người dùng sai
+
+Chủ sản phẩm báo bảng vẫn dính sát viền. Tôi mở CSS đã dựng, lấy ra hai con số
+độ ưu tiên — (0,1,0) của typography so với (0,1,1) của bản vá — rồi kết luận
+**"bản vá đáng lẽ thắng"**, và dùng kết luận đó để chuyển nghi ngờ sang một khối
+khác. Tôi còn nhờ chủ sản phẩm xác nhận giả thuyết mới đó.
+
+Ảnh chụp gửi về cho thấy đúng cái bảng. Bản vá không thắng, và lý do là thứ tôi
+chưa đo: cả hai luật nằm ở hai cascade layer khác nhau, mà layer đứng trên
+specificity.
+
+Sai lầm không phải đo sai. Là **đo thiếu rồi coi kết quả là đầy đủ** — và lấy
+một phép đo thiếu để lật lại một quan sát trực tiếp.
+
+Quy tắc: người báo lỗi đang nhìn trang thật; tôi chỉ đang nhìn một lát cắt của
+nó. Khi hai bên chỏi nhau, mặc định là lát cắt của tôi hụt một biến. Đi tìm biến
+đó trước, đừng viết lại chẩn đoán. Và nếu vẫn phải đoán tiếp thì xin ảnh chụp
+**trước**, đừng đề xuất thủ phạm mới rồi nhờ xác nhận — ảnh chụp tốn của người
+kia năm giây và chấm dứt thứ mà hai mươi phút suy luận không chấm dứt được.
+
+---
+
+## "Cái này thừa, bỏ đi" — đếm xem có bao nhiêu chỗ thật sự thừa
+
+Chủ sản phẩm chỉ vào một bài có ghi công ảnh hiện hai lần và bảo bỏ cái trên ảnh
+đi. Đúng với bài đó. Nhưng dòng ghi công trong thân bài chỉ có ở **6 trên 41
+bài** — 35 bài còn lại chỉ có duy nhất cái lớp phủ. Bỏ thẳng theo lời là xoá ghi
+công của 35 bài, tức vi phạm CC BY trên phần lớn thư viện.
+
+Người báo mô tả **trang họ đang mở**, không mô tả tập dữ liệu. Họ không có nghĩa
+vụ biết 35 bài kia trông thế nào — đó là việc của tôi.
+
+Quy tắc: trước khi xoá thứ gì vì "đã có ở chỗ khác", chạy một câu đếm xem "chỗ
+khác" đó phủ được bao nhiêu phần trăm. Nếu không phủ hết, việc phải làm không
+phải là xoá mà là **gộp về một chỗ** — rồi nói rõ đã gộp về đâu và mất gì.
 
 ---
 
