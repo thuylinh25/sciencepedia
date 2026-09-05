@@ -107,7 +107,8 @@
     "empty": "No articles here yet.",
     "emptyHint": "Try another field, or browse the full article list.",
     "browseAll": "Browse all articles",
-    "tocOpen": "Table of contents"
+    "tocOpen": "Table of contents",
+    "reviewedBy": "Reviewed by {name} · {date}"
   },
   "search": {
     "title": "Search",

@@ -3,7 +3,7 @@ import dynamic from "next/dynamic";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { BookOpen, Clock, Eye, Tag as TagIcon } from "lucide-react";
+import { BookOpen, Clock, Eye, ShieldCheck, Tag as TagIcon } from "lucide-react";
 
 import { Link } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
@@ -255,6 +255,33 @@ export default async function ArticlePage({
               <Eye className="size-4" />
               {formatNumber(article.views, locale)}
             </span>
+
+            {/* Byline người thẩm định — BẮT BUỘC có mặt khi JSON-LD phát `reviewedBy`.
+
+                `lib/seo.ts` phát `reviewedBy` + `dateReviewed` làm tín hiệu
+                E-E-A-T cho nội dung YMYL, và chính file đó ghi luật: "chỉ khai
+                báo những gì thật sự hiện trên trang". Commit 10836c1 gỡ khối
+                trạng thái thẩm định khỏi trang mà không gỡ phần JSON-LD, nên
+                từ đó site đánh dấu dữ liệu không hiển thị — đúng thứ nguyên
+                tắc structured data cấm.
+
+                Một dòng, không phải một khối. Khối cũ bị gỡ vì cồng kềnh,
+                không phải vì thông tin sai; nên trả lại thông tin ở dạng nhẹ
+                nhất đủ để lời khai là thật.
+
+                Điều kiện hiển thị phải KHỚP ĐÚNG điều kiện phát JSON-LD
+                (`reviewer` khác null). Lệch một bên là quay lại đúng lỗi này. */}
+            {article.reviewedBy?.name && article.reviewedAt && (
+              <span className="flex items-center gap-1.5">
+                <ShieldCheck className="size-4 text-primary-strong" />
+                <span>
+                  {t("reviewedBy", {
+                    name: article.reviewedBy.name,
+                    date: formatDate(article.reviewedAt, locale),
+                  })}
+                </span>
+              </span>
+            )}
           </div>
 
           <div className="mt-6 flex flex-wrap items-center justify-between gap-4">

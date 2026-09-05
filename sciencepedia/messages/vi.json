@@ -107,7 +107,8 @@
     "empty": "Chưa có bài viết nào ở đây.",
     "emptyHint": "Hãy thử duyệt một lĩnh vực khác hoặc xem toàn bộ bài viết.",
     "browseAll": "Xem tất cả bài viết",
-    "tocOpen": "Mục lục bài viết"
+    "tocOpen": "Mục lục bài viết",
+    "reviewedBy": "Thẩm định: {name} · {date}"
   },
   "search": {
     "title": "Tìm kiếm",
