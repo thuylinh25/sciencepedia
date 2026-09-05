@@ -4,7 +4,9 @@ Chữ "năng lượng" có mặt trong gần như mọi bài khoa học tự nhi
 
 ## Một định nghĩa dùng được, và chỗ nó hụt
 
-Cách nói quen thuộc nhất — "năng lượng là khả năng sinh công" — chính là định nghĩa mà Cơ quan Thông tin Năng lượng Hoa Kỳ dùng cho người đọc phổ thông. Nó tiện và đúng trong phần lớn tình huống đời thường, nhưng không chặt: một khối khí đã cân bằng nhiệt với môi trường vẫn mang năng lượng rất lớn mà không sinh được chút công nào.
+Cách nói quen thuộc nhất — "năng lượng là khả năng sinh công" — chính là định nghĩa mà Cơ quan Thông tin Năng lượng Hoa Kỳ dùng cho người đọc phổ thông. Nó tiện và đúng trong phần lớn tình huống đời thường, nhưng không chặt.
+
+Lấy một khối khí đã cân bằng nhiệt với môi trường: nó vẫn mang năng lượng rất lớn, nhưng không còn chênh lệch nhiệt độ nào để rút công ra. Theo định luật hai nhiệt động lực học — cách NASA phát biểu — nhiệt chỉ tự truyền từ vật nóng sang vật lạnh, vì chỉ chiều đó làm entropy tổng tăng. Năng lượng vẫn còn nguyên; cái đã hết là khả năng dùng nó.
 
 Định nghĩa vững hơn thì khiêm tốn hơn: năng lượng là một đại lượng vô hướng gán cho một hệ vật lý, tính được từ trạng thái của hệ và đo bằng joule, mang một tính chất khiến nó đáng có tên riêng — trong một hệ kín, con số ấy không đổi dù bên trong xảy ra chuyện gì.
 
@@ -53,4 +55,4 @@ Vì c² là một số khổng lồ, một lượng khối lượng rất nhỏ 
 
 ---
 
-Nguồn: **[Guide to the SI, ch. 4](https://www.nist.gov/pml/special-publication-811/nist-guide-si-chapter-4-two-classes-si-units-and-si-prefixes)** — NIST; **[The SI](https://www.bipm.org/en/measurement-units)** — BIPM; **[What is energy?](https://www.eia.gov/energyexplained/what-is-energy/)** và **[Forms of energy](https://www.eia.gov/kids/what-is-energy/forms-of-energy.php)** — U.S. EIA; **[Conservation of Energy](https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/conservation-of-energy/)** — NASA Glenn; **[Mass-energy equation](https://www.nrc.gov/reading-rm/basic-ref/glossary/mass-energy-equation)** — U.S. NRC; **[eV-joule relationship](https://physics.nist.gov/cgi-bin/cuu/Value?evj)** — NIST/CODATA 2022. Truy cập 2026-09-05.
+Nguồn: **[Guide to the SI, ch. 4](https://www.nist.gov/pml/special-publication-811/nist-guide-si-chapter-4-two-classes-si-units-and-si-prefixes)** và **[eV-joule relationship](https://physics.nist.gov/cgi-bin/cuu/Value?evj)** — NIST/CODATA 2022; **[The SI](https://www.bipm.org/en/measurement-units)** — BIPM; **[What is energy?](https://www.eia.gov/energyexplained/what-is-energy/)**, **[Forms of energy](https://www.eia.gov/kids/what-is-energy/forms-of-energy.php)** — U.S. EIA; **[Conservation of Energy](https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/conservation-of-energy/)**, **[Second Law and Entropy](https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/second-law-entropy/)** — NASA Glenn; **[Mass-energy equation](https://www.nrc.gov/reading-rm/basic-ref/glossary/mass-energy-equation.html)** — U.S. NRC. Truy cập 2026-09-05.
