@@ -193,16 +193,22 @@ export default async function ArticlePage({
             />
             <div className="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-transparent" />
 
-            {/* Ghi công đặt TRÊN ảnh, góc dưới phải: nếu đặt dưới ảnh thì nó
-                rơi vào vùng khối tiêu đề đang đè lên (-mt-40) và bị che. Nền
-                mờ riêng vì ảnh bìa sáng tối không đoán trước được. */}
+            {/* Ghi công đặt ở góc TRÊN bên phải của ảnh.
+ 
+                Bản trước đặt ở góc dưới, và nó va vào khối tiêu đề — khối đó
+                thụt lên bằng -mt-40 nên cũng chiếm đúng dải đáy ảnh. Trên di
+                động tiêu đề dài hai dòng, chữ ghi công nằm chồng lên chữ tiêu
+                đề, đọc không ra cả hai.
+ 
+                Đỉnh ảnh không có gì tranh chỗ. Nền mờ riêng vì ảnh bìa sáng
+                tối không đoán trước được. */}
             <ImageCredit
               credit={
                 loc === "en"
                   ? (article.coverImageCreditEn ?? article.coverImageCredit)
                   : article.coverImageCredit
               }
-              className="absolute end-3 bottom-3 max-w-[min(90%,32rem)] rounded-md bg-space-900/70 px-2.5 py-1 text-end text-white/70 backdrop-blur-sm [&_a:hover]:text-white"
+              className="absolute end-3 top-3 max-w-[min(90%,32rem)] rounded-md bg-space-900/70 px-2.5 py-1 text-end text-white/70 backdrop-blur-sm [&_a:hover]:text-white"
             />
           </div>
         ) : (
