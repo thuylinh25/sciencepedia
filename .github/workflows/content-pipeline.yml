@@ -54,6 +54,47 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # Secret dán tay dễ dính khoảng trắng hoặc một lần xuống dòng ở hai đầu,
+      # và GitHub không cắt hộ. Lúc đó lỗi trả về là 401 y hệt token sai, nên
+      # không phân biệt được bằng cách nhìn log. Cắt sạch, rồi nói ra token có
+      # bị thừa ký tự hay không — không bao giờ in token.
+      #
+      # Đặt trước `npm ci` để hỏng thì hỏng trong vài giây, không phải sau khi
+      # cài xong cả cây phụ thuộc.
+      - name: Kiểm token trước khi chạy
+        env:
+          RAW: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+        run: |
+          TOKEN="$(printf '%s' "$RAW" | tr -d '[:space:]')"
+          # Bản đã cắt là chuỗi KHÁC với secret đã đăng ký, nên bộ che của
+          # GitHub không tự nhận ra nó. Đăng ký thêm trước khi đưa đi đâu.
+          echo "::add-mask::$TOKEN"
+
+          if [ -z "$TOKEN" ]; then
+            echo "::error::Secret CLAUDE_CODE_OAUTH_TOKEN rỗng hoặc chưa đặt."
+            exit 1
+          fi
+
+          if [ "${#RAW}" -ne "${#TOKEN}" ]; then
+            echo "::warning::Token dính $(( ${#RAW} - ${#TOKEN} )) ký tự trắng thừa — đã cắt. Nên dán lại secret cho sạch."
+          else
+            echo "Token không có khoảng trắng thừa."
+          fi
+          echo "Độ dài sau khi cắt: ${#TOKEN}"
+
+          case "$TOKEN" in
+            sk-ant-oat*)
+              echo "Đúng dạng token OAuth của gói đăng ký." ;;
+            sk-ant-api*)
+              echo "::error::Đây là API key, không phải token OAuth. Dự án đã chốt dùng gói đăng ký — sinh token bằng \`claude setup-token\`."
+              exit 1 ;;
+            *)
+              echo "::error::Tiền tố không phải sk-ant-oat — token bị dán nhầm hoặc bị cắt cụt."
+              exit 1 ;;
+          esac
+
+          echo "CLAUDE_CODE_OAUTH_TOKEN=$TOKEN" >> "$GITHUB_ENV"
+
       - uses: actions/setup-node@v4
         with:
           node-version: 22
@@ -75,8 +116,10 @@ jobs:
       - name: Chạy pipeline
         working-directory: sciencepedia
         env:
-          # Sinh bằng `claude setup-token`, hạn một năm, dùng gói đăng ký.
-          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          # CLAUDE_CODE_OAUTH_TOKEN KHÔNG khai ở đây: bước "Kiểm token" đã đưa
+          # bản đã cắt trắng vào GITHUB_ENV. Khai lại ở đây sẽ đè bản sạch đó
+          # bằng bản thô, và lỗi khoảng trắng quay về y như cũ.
+
           # Pooler cổng 6543. CỐ Ý KHÔNG đặt DIRECT_URL: thiếu nó thì
           # `prisma migrate` không chạy được kể cả khi hook trong pipeline.ts
           # bị đi vòng. Một lớp phòng vệ nữa, không phải quên.
