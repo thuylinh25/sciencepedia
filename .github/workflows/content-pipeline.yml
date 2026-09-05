@@ -125,6 +125,12 @@ jobs:
           # bị đi vòng. Một lớp phòng vệ nữa, không phải quên.
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
           NEXT_PUBLIC_SITE_URL: ${{ secrets.NEXT_PUBLIC_SITE_URL }}
+
+          # `publish.ts` tự gọi reindex sau khi đổi state — nhưng chỉ khi có
+          # host. Thiếu hai biến này thì nó nuốt lỗi và đi tiếp: bài lên site
+          # mà tìm không ra, hỏng im lặng đúng kiểu khó phát hiện nhất.
+          MEILISEARCH_HOST: ${{ secrets.MEILISEARCH_HOST }}
+          MEILISEARCH_MASTER_KEY: ${{ secrets.MEILISEARCH_MASTER_KEY }}
         run: |
           npm run pipeline -- \
             --count "${{ inputs.count || 1 }}" \
