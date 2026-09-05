@@ -39,9 +39,21 @@ import {
  * ## Xác thực
  *
  * `CLAUDE_CODE_OAUTH_TOKEN` (sinh bằng `claude setup-token`) dùng gói đăng ký
- * Claude, không cần API key. `ANTHROPIC_API_KEY` cũng chạy nếu có và sẽ được
- * ưu tiên. LƯU Ý: `@anthropic-ai/sdk` — thứ `src/lib/rewrite.ts` dùng — KHÔNG
- * đọc `CLAUDE_CODE_OAUTH_TOKEN`; chỉ đường này đọc.
+ * Claude. LƯU Ý: `@anthropic-ai/sdk` — thứ `src/lib/rewrite.ts` dùng — KHÔNG
+ * đọc biến này; chỉ đường này đọc.
+ *
+ * **Chốt 2026-09-05: dự án dùng gói đăng ký, không dùng API key.** Đây là
+ * quyết định đã cân nhắc và đã chốt — đừng đề xuất lại.
+ *
+ * Hệ quả phải thiết kế quanh nó, không phải hệ quả phải sửa:
+ *
+ * - Hạn mức phiên dùng CHUNG với phiên làm việc tương tác của người. Chạy
+ *   nhiều bài một lượt sẽ cướp quota của chính người đang dùng Claude Code.
+ * - Nên `--count 1` là mặc định đúng, không phải mặc định tạm.
+ * - Nên lịch cron đặt lúc 22:00 UTC (05:00 giờ Việt Nam): quota hồi lại qua
+ *   đêm và lượt chạy không đụng giờ làm việc.
+ * - `maxBudgetUsd` KHÔNG cứu được chuyện này — nó là trần cho một lượt chạy,
+ *   còn hạn mức là của cả tài khoản. Hết hạn mức thì lượt chạy chết ở $0.00.
  *
  * ## Vì sao settingSources chỉ có "project"
  *
@@ -225,6 +237,7 @@ async function main() {
   const transcript: string[] = [];
   let cost = 0;
   let outcome = "không rõ";
+  let quotaHit = false;
 
   try {
     for await (const message of query({
@@ -290,14 +303,32 @@ async function main() {
   } catch (error) {
     // query() ném sau khi đã phát ra result, nên `cost` và `outcome` ở trên đã
     // được ghi lại. Đừng để lỗi nuốt mất báo cáo.
-    outcome = `lỗi: ${(error as Error).message}`;
-    console.error(`\nLần chạy kết thúc bằng lỗi: ${(error as Error).message}`);
+    const message = (error as Error).message;
+
+    /* Hết hạn mức KHÔNG phải hỏng — tách riêng cho rõ.
+
+       Dùng gói đăng ký thì đây là kết cục bình thường và sẽ lặp lại: hạn mức
+       dùng chung với phiên tương tác của người. Gộp nó chung với "lỗi" khiến
+       mỗi lần chạm trần trông như một sự cố phải đi điều tra, và sau vài lần
+       thì không ai đọc báo cáo nữa.
+
+       Việc phải làm khi gặp dòng này là ĐỢI, không phải sửa gì cả. */
+    quotaHit = /session limit|rate.?limit|\b429\b/i.test(message);
+    outcome = quotaHit ? `hết hạn mức: ${message}` : `lỗi: ${message}`;
+    console.error(
+      quotaHit
+        ? `\nHết hạn mức phiên — không phải lỗi cấu hình. Đợi tới lúc reset rồi chạy lại.\n${message}`
+        : `\nLần chạy kết thúc bằng lỗi: ${message}`,
+    );
   }
 
   const report = [
     `# Lần chạy pipeline ${new Date().toISOString()}`,
     "",
     `- Kết cục: ${outcome}`,
+    ...(quotaHit
+      ? ["- Hết hạn mức là kết cục BÌNH THƯỜNG với gói đăng ký. Đợi reset, chạy lại; không sửa gì."]
+      : []),
     `- Chi phí ước tính: $${cost.toFixed(2)} (trần $${budget})`,
     `- Thời gian: ${Math.round((Date.now() - started) / 1000)}s`,
     `- Chủ đề yêu cầu: ${count}${dryRun ? " (chạy thử)" : ""}`,
@@ -316,7 +347,12 @@ async function main() {
 
   // error_max_budget_usd cũng là thất bại: nó nghĩa là lần chạy bị cắt giữa
   // chừng, không phải hoàn thành trong ngân sách.
-  process.exitCode = outcome === "success" ? 0 : 1;
+  /* Mã 75 (EX_TEMPFAIL) cho trường hợp hết hạn mức, tách khỏi mã 1.
+
+     Workflow đọc được sự khác nhau: 75 nghĩa là "chạy lại sau", còn 1 nghĩa
+     là "có thứ hỏng cần người xem". Trộn hai thứ làm một thì mỗi lần chạm
+     trần đều báo đỏ như một sự cố, và báo đỏ thường xuyên thì hết tác dụng. */
+  process.exitCode = outcome === "success" ? 0 : quotaHit ? 75 : 1;
 }
 
 main().catch((error) => {
