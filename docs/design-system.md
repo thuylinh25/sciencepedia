@@ -102,7 +102,7 @@ chủ (`hero-galaxy`, `solar-preview`) đã xử lý — xem mục riêng bên d
 `universe-scene` và `globe-scene` ở các trang `/universe`, `/zoom`,
 `/solar-system` vẫn chạy `useFrame` mà không đọc thiết lập này.
 
-**Bố cục hero trang bài viết.** `-mt-40` kéo khối tiêu đề đè lên ảnh bìa `52vh`.
+**Bố cục hero trang bài viết.** `-mt-28` kéo khối tiêu đề đè lên ảnh bìa `58vh`.
 Gradient che được phần dưới, nhưng contrast ở phần trên vùng chồng không bảo đảm
 được về mặt toán học. Sửa đúng nghĩa là thiết kế lại hero.
 
@@ -321,7 +321,7 @@ Cùng một `coverImage` được dùng ở ít nhất ba chỗ với ba tỉ l�
 |---|---|---|
 | Thẻ bài | `aspect-[16/10]` | trọn ảnh |
 | Thẻ danh sách | ô vuông 64 px | vùng giữa, rất nhỏ |
-| Hero trang bài | ~4:1, rồi bị gradient và tiêu đề đè | **chỉ dải y 300–500** của ảnh 1600×1000 |
+| Hero trang bài | ~3,6:1, gradient và tiêu đề đè | **trọn ảnh** — xem mục dưới |
 
 Ảnh chụp sống sót mọi phép cắt vì chúng là kết cấu kín khung. Hình vẽ có chủ thể
 ở giữa nhiều khoảng trống thì không: ở hero nó thành một vệt mờ trong nền tối, và
@@ -330,6 +330,27 @@ người xem đọc ra là "ảnh hỏng".
 **Quy tắc: chủ thể phải nằm trong dải 30–50% chiều cao và trải theo chiều ngang.**
 Chi tiết phụ đặt ở đáy khung là chấp nhận được — nó là phần thưởng cho ai xem thẻ,
 không phải phần bắt buộc.
+
+**Đảo lại phần hero, cùng ngày.** Quy tắc "chủ thể nằm trong dải 30–50%" chỉ
+là cách sống chung với phép cắt, không phải cách chữa. Sau ba lượt sửa — nới
+khung 52vh→58vh, rồi nắn ba bản vẽ cho vừa dải lộ ra — lỗi vẫn được báo lần thứ
+tư, vì cover không cắt được: thang khoảng cách có bốn nấc trải 240→836 px, ép
+vào dải 260 px là bỏ mất nấc trên và cả trục hoành.
+
+Hero giờ dùng `object-contain`, không `object-cover`. Ảnh không phủ kín bề
+ngang nữa; chỗ hụt lấp bằng chính ảnh đó phóng to và làm mờ ở lớp dưới, nên
+không lộ mép và nền vẫn là nền vũ trụ của bản vẽ. Lớp ảnh thật dừng trên đáy
+khung đúng 7rem — bằng `-mt-28` mà khối tiêu đề đè lên — nên không nét nào
+nằm dưới chữ.
+
+Đánh đổi: trên cửa sổ thấp hình chỉ còn ~435 px ngang thay vì tràn khung. Chấp
+nhận, vì 12/12 ảnh bìa hiện nay là hình tự vẽ, mà hình vẽ mất nét là mất nghĩa
+— nhỏ mà đủ hơn to mà cụt. Nếu sau này có ảnh CHỤP làm cover, ảnh chụp vốn kín
+khung nên `object-cover` mới là lựa chọn đúng cho riêng nó; lúc đó rẽ nhánh
+theo loại ảnh, đừng đổi lại quy tắc chung.
+
+Quy tắc "dải 30–50%" vẫn còn hiệu lực cho **thẻ danh sách ô vuông 64 px** — chỗ
+đó vẫn cắt.
 
 **Không đặt chữ vào ảnh.** Site song ngữ dùng chung một `coverImage`, nên chữ chỉ
 đúng một thứ tiếng và không có đường nào dịch. Dùng hình học thay chữ: mũi tên hai

@@ -180,33 +180,51 @@ export default async function ArticlePage({
       />
 
       {/* ------------------------------------------------------- Ảnh bìa */}
-      {/* Cao 58vh chứ không phải 52vh, và phần chữ chỉ đè 7rem thay vì 10rem.
+      {/* Ảnh bìa hiện TRỌN VẸN: `object-contain`, không phải `object-cover`.
 
-              Vì sao: `object-cover` cắt ảnh cho vừa khung, nên khung càng dẹt
-              càng ăn mất nhiều chiều cao ảnh. Ở 52vh trên màn 1361 px, khung có
-              tỉ lệ 3,7 trong khi ảnh bìa là 1,6 — chỉ 43% chiều cao ảnh lọt vào
-              khung, rồi `-mt-40` và dải gradient lại phủ mất non nửa chỗ đó.
-              Phần thật sự nhìn thấy còn khoảng 214 px trên ảnh cao 1000 px.
+              Ba lần trước tôi sửa nhầm chỗ — nới khung, rồi nắn lại ba bản vẽ
+              cho vừa dải khung để lộ ra. Cả ba lần đều đi chữa triệu chứng.
+              Nguyên nhân là `object-cover`: nó cắt ảnh cho vừa khung, mà khung
+              thì dẹt (tỉ lệ ~3,6 trên cửa sổ thấp) còn ảnh bìa là 16:10. Khung
+              càng dẹt thì càng cắt sâu, và không có bản vẽ nào sống sót được
+              phép cắt đó nếu nội dung của nó cao hơn một dải hẹp ở giữa.
 
-              Ảnh CHỤP sống sót phép cắt ấy vì chúng là kết cấu kín khung. Hình
-              VẼ thì không: bài `song-buoc-song-tan-so-bien-do` bị cắt cụt cả
-              đỉnh lẫn đáy sóng và bị báo "hiển thị thiếu" hai lần.
+              Ảnh CHỤP không sao vì chúng là kết cấu kín khung — cắt chỗ nào
+              cũng còn là ảnh. Hình VẼ thì mỗi nét đều mang nghĩa: thang khoảng
+              cách mất nấc trên cùng và trục hoành là mất đúng cái nó định nói.
+              12/12 ảnh bìa hiện nay đều là hình tự vẽ, nên cân nhắc đã đổi
+              chiều: giữ trọn nội dung quan trọng hơn lấp đầy khung.
 
-              Hai con số này nới dải nhìn thấy từ ~214 px lên ~410 px. Muốn trả
-              lại giao diện cũ thì chỉ cần đổi ngược hai lớp, không có gì khác
-              phụ thuộc vào chúng. */}
+              `object-contain` không cắt, đổi lại ảnh không phủ kín bề ngang.
+              Chỗ hụt được lấp bằng chính ảnh đó phóng to và làm mờ, nên mép
+              không lộ và nền vẫn là nền vũ trụ của bản vẽ, không phải một mảng
+              đen chết. Lớp ảnh thật dừng trên đáy khung 7rem — đúng bằng
+              `-mt-28` mà khối tiêu đề đè lên — để không nét nào nằm dưới chữ.
+
+              Hệ quả đã chấp nhận: trên cửa sổ thấp hình nhỏ đi (~435 px ngang
+              thay vì tràn khung). Nhỏ mà đủ hơn là to mà cụt. */}
       <header className="relative">
         {article.coverImage ? (
           <div className="relative h-[58vh] min-h-[24rem] w-full overflow-hidden bg-space-900">
             <Image
               src={article.coverImage}
               alt=""
+              aria-hidden
               fill
-              priority
               sizes="100vw"
-              className="object-cover opacity-70"
+              className="scale-125 object-cover opacity-40 blur-2xl"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-transparent" />
+            <div className="absolute inset-x-0 top-0 bottom-28">
+              <Image
+                src={article.coverImage}
+                alt=""
+                fill
+                priority
+                sizes="100vw"
+                className="object-contain"
+              />
+            </div>
+            <div className="absolute inset-0 bg-gradient-to-t from-background via-background/45 to-transparent" />
           </div>
         ) : (
           <div className="bg-cosmos starfield h-56 w-full" />
