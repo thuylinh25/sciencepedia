@@ -180,9 +180,24 @@ export default async function ArticlePage({
       />
 
       {/* ------------------------------------------------------- Ảnh bìa */}
+      {/* Cao 58vh chứ không phải 52vh, và phần chữ chỉ đè 7rem thay vì 10rem.
+
+              Vì sao: `object-cover` cắt ảnh cho vừa khung, nên khung càng dẹt
+              càng ăn mất nhiều chiều cao ảnh. Ở 52vh trên màn 1361 px, khung có
+              tỉ lệ 3,7 trong khi ảnh bìa là 1,6 — chỉ 43% chiều cao ảnh lọt vào
+              khung, rồi `-mt-40` và dải gradient lại phủ mất non nửa chỗ đó.
+              Phần thật sự nhìn thấy còn khoảng 214 px trên ảnh cao 1000 px.
+
+              Ảnh CHỤP sống sót phép cắt ấy vì chúng là kết cấu kín khung. Hình
+              VẼ thì không: bài `song-buoc-song-tan-so-bien-do` bị cắt cụt cả
+              đỉnh lẫn đáy sóng và bị báo "hiển thị thiếu" hai lần.
+
+              Hai con số này nới dải nhìn thấy từ ~214 px lên ~410 px. Muốn trả
+              lại giao diện cũ thì chỉ cần đổi ngược hai lớp, không có gì khác
+              phụ thuộc vào chúng. */}
       <header className="relative">
         {article.coverImage ? (
-          <div className="relative h-[52vh] min-h-[22rem] w-full overflow-hidden bg-space-900">
+          <div className="relative h-[58vh] min-h-[24rem] w-full overflow-hidden bg-space-900">
             <Image
               src={article.coverImage}
               alt=""
@@ -197,7 +212,7 @@ export default async function ArticlePage({
           <div className="bg-cosmos starfield h-56 w-full" />
         )}
 
-        <div className="container-prose relative -mt-40 pb-4">
+        <div className="container-prose relative -mt-28 pb-4">
           {/* Người đọc từ Google rơi thẳng vào đây, không có lịch sử điều hướng
               nào phía sau — đường dẫn phải nói rõ trang này nằm ở đâu trong cây
               tri thức, và phải khớp với BreadcrumbList đã khai bên trên.
