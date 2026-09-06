@@ -7,8 +7,10 @@ import * as THREE from "three";
 
 import { useProgressiveTexture } from "@/components/solar/use-progressive-texture";
 import {
+  ASTEROID_BELT,
   PLANETS,
   SUN,
+  beltRadii,
   realScaleOrbit,
   realScaleRadius,
   type Planet,
@@ -103,6 +105,117 @@ function OrbitRing({ radius }: { radius: number }) {
   }, [line]);
 
   return <primitive object={line} />;
+}
+
+// ------------------------------------------------------------- Vành đai tiểu hành tinh
+
+/**
+ * Vành đai tiểu hành tinh, giữa Sao Hoả và Sao Mộc.
+ *
+ * Vẽ bằng điểm chứ không bằng một vòng đặc: vành đai thật là những vật thể
+ * rời rạc cách nhau hàng trăm nghìn kilômét, và một vòng liền mạch sẽ dạy sai
+ * đúng cái điều dễ hiểu sai nhất về nó — phim ảnh hay vẽ nó dày đặc tới mức
+ * phải lách qua.
+ *
+ * Ba chi tiết được giữ đúng:
+ *
+ * 1. **Khe Kirkwood.** Mật độ bị khoét ở những bán kính cộng hưởng với Sao
+ *    Mộc. Đây là thứ đáng nhớ nhất về vành đai, và nó miễn phí về mặt vẽ.
+ * 2. **Dày theo phương đứng.** Vành đai không phẳng như tờ giấy; quỹ đạo
+ *    nghiêng tới hơn 20°, nên các điểm được rắc lệch khỏi mặt phẳng hoàng đạo.
+ * 3. **Quay chậm hơn hành tinh trong.** Càng xa Mặt Trời càng chậm, nên vành
+ *    đai quay chậm hơn Sao Hoả và nhanh hơn Sao Mộc.
+ */
+function AsteroidBelt({
+  settings,
+  locale,
+  lowPower,
+}: {
+  settings: SceneSettings;
+  locale: string;
+  lowPower: boolean;
+}) {
+  const group = useRef<THREE.Group>(null);
+  const [inner, outer] = beltRadii(settings.realScale);
+  const count = lowPower ? 1100 : 2600;
+
+  const geometry = useMemo(() => {
+    const positions: number[] = [];
+    const colors: number[] = [];
+    const base = new THREE.Color(ASTEROID_BELT.color);
+    const span = ASTEROID_BELT.outerAu - ASTEROID_BELT.innerAu;
+
+    // Bác bỏ theo mật độ: gieo ngẫu nhiên rồi loại điểm rơi vào khe Kirkwood.
+    const keep = (au: number) => {
+      for (const gap of ASTEROID_BELT.kirkwoodGaps) {
+        const d = Math.abs(au - gap.au) / gap.width;
+        if (d < 1 && Math.random() > d * d * 0.55) return false;
+      }
+      return true;
+    };
+
+    let guard = 0;
+    while (positions.length < count * 3 && guard < count * 40) {
+      guard += 1;
+      const au = ASTEROID_BELT.innerAu + Math.random() * span;
+      if (!keep(au)) continue;
+
+      const t = (au - ASTEROID_BELT.innerAu) / span;
+      const radius = inner + t * (outer - inner);
+      const angle = Math.random() * Math.PI * 2;
+      // Dày theo phương đứng, tỉ lệ với bán kính — vành đai là cái đĩa dày.
+      const y = (Math.random() + Math.random() - 1) * (outer - inner) * 0.16;
+
+      positions.push(
+        Math.cos(angle) * radius,
+        y,
+        Math.sin(angle) * radius,
+      );
+      const dim = 0.55 + Math.random() * 0.65;
+      colors.push(base.r * dim, base.g * dim, base.b * dim);
+    }
+
+    const buffer = new THREE.BufferGeometry();
+    buffer.setAttribute("position", new THREE.Float32BufferAttribute(positions, 3));
+    buffer.setAttribute("color", new THREE.Float32BufferAttribute(colors, 3));
+    return buffer;
+  }, [inner, outer, count]);
+
+  useEffect(() => () => geometry.dispose(), [geometry]);
+
+  useFrame((_, delta) => {
+    if (!group.current || !settings.playing) return;
+    group.current.rotation.y += delta * 0.045 * settings.speed;
+  });
+
+  return (
+    <group ref={group}>
+      <points geometry={geometry}>
+        <pointsMaterial
+          size={settings.realScale ? 0.16 : 0.12}
+          vertexColors
+          sizeAttenuation
+          transparent
+          opacity={0.95}
+          depthWrite={false}
+        />
+      </points>
+
+      {settings.showLabels && (
+        <Html
+          position={[0, 0, outer + (outer - inner) * 0.42]}
+          center
+          distanceFactor={22}
+          occlude={false}
+          wrapperClass="pointer-events-none"
+        >
+          <span className="rounded-full bg-black/55 px-2 py-0.5 text-[11px] font-medium whitespace-nowrap text-white backdrop-blur-sm">
+            {locale === "en" ? ASTEROID_BELT.nameEn : ASTEROID_BELT.name}
+          </span>
+        </Html>
+      )}
+    </group>
+  );
 }
 
 // ------------------------------------------------------------------ Hành tinh
@@ -347,6 +460,8 @@ export function SolarScene({
       />
 
       <Sun radius={sunRadius} />
+
+      <AsteroidBelt settings={settings} locale={locale} lowPower={lowPower} />
 
       {PLANETS.map((planet) => (
         <group key={planet.id}>

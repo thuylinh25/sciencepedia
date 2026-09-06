@@ -273,10 +273,80 @@ export const PLANETS: Planet[] = [
   },
 ];
 
+export const AU_KM = 149_600_000;
+
+/** Nén log dùng chung cho mọi thứ đặt theo tỉ lệ thật — hành tinh lẫn vành đai. */
+function auToRealScale(au: number): number {
+  return 6 + Math.log10(au + 1) * 46;
+}
+
 /** Bán kính quỹ đạo theo tỉ lệ thật, nén log để vẫn nhìn được trên màn hình. */
 export function realScaleOrbit(planet: Planet): number {
-  const au = planet.realDistanceKm / 149_600_000;
-  return 6 + Math.log10(au + 1) * 46;
+  return auToRealScale(planet.realDistanceKm / AU_KM);
+}
+
+/**
+ * Vành đai tiểu hành tinh chính, giữa quỹ đạo Sao Hoả và Sao Mộc.
+ *
+ * Tên đúng là **vành đai tiểu hành tinh**. Cách gọi "vành đai thiên thạch"
+ * rất phổ biến nhưng sai: thiên thạch (meteorite) là mảnh đã rơi xuống mặt
+ * đất, còn thứ nằm ngoài kia là tiểu hành tinh (asteroid). Kho này đã chốt
+ * đính chính những nhầm lẫn cùng loại ở `chom-sao-hoang-dao` ("Thần Nông",
+ * "Nhân Mã"), nên nhãn dùng tên đúng.
+ *
+ * Ranh giới 2,1–3,3 AU là vành đai chính. Nó chiếm khoảng nửa trong của
+ * khoảng trống Sao Hoả–Sao Mộc chứ không lấp kín, và mô hình phải cho thấy
+ * đúng như vậy.
+ */
+export const ASTEROID_BELT = {
+  id: "asteroid-belt",
+  name: "Vành đai tiểu hành tinh",
+  nameEn: "Asteroid belt",
+  innerAu: 2.1,
+  outerAu: 3.3,
+  color: "#c2b291",
+  /**
+   * Khe Kirkwood: những bán kính mà chu kỳ quỹ đạo cộng hưởng với Sao Mộc,
+   * nên bị nó dọn gần sạch. Đơn vị AU, kèm bề rộng khe.
+   *
+   * Vẽ chúng vì một vành đai dày đều là hình sai: cái đáng nhớ nhất về vành
+   * đai này là nó CÓ cấu trúc, và cấu trúc đó do Sao Mộc tạo ra.
+   */
+  kirkwoodGaps: [
+    { au: 2.5, width: 0.045 }, // cộng hưởng 3:1
+    { au: 2.82, width: 0.035 }, // 5:2
+    { au: 2.96, width: 0.025 }, // 7:3
+    { au: 3.27, width: 0.04 }, // 2:1
+  ],
+} as const;
+
+/**
+ * Bán kính trong/ngoài của vành đai trong toạ độ cảnh.
+ *
+ * Chế độ tỉ lệ thật dùng chung công thức nén log với hành tinh. Chế độ hiển
+ * thị thì `orbitRadius` của hành tinh là số chỉnh tay chứ không theo công
+ * thức nào, nên vành đai được nội suy tuyến tính giữa Sao Hoả và Sao Mộc theo
+ * tỉ lệ AU — cách duy nhất giữ cho nó nằm đúng chỗ dù hai con số kia có được
+ * chỉnh lại.
+ */
+export function beltRadii(realScale: boolean): [number, number] {
+  if (realScale) {
+    return [
+      auToRealScale(ASTEROID_BELT.innerAu),
+      auToRealScale(ASTEROID_BELT.outerAu),
+    ];
+  }
+  const mars = PLANETS.find((planet) => planet.id === "mars");
+  const jupiter = PLANETS.find((planet) => planet.id === "jupiter");
+  if (!mars || !jupiter) return [16, 18.5];
+
+  const marsAu = mars.realDistanceKm / AU_KM;
+  const jupiterAu = jupiter.realDistanceKm / AU_KM;
+  const place = (au: number) => {
+    const t = (au - marsAu) / (jupiterAu - marsAu);
+    return mars.orbitRadius + t * (jupiter.orbitRadius - mars.orbitRadius);
+  };
+  return [place(ASTEROID_BELT.innerAu), place(ASTEROID_BELT.outerAu)];
 }
 
 /** Bán kính hành tinh theo tỉ lệ thật so với Trái Đất (nén nhẹ). */

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#111c33"/>
+      <stop offset="100%" stop-color="#020718"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#bg)"/><line x1="140" y1="250" x2="1460" y2="250" stroke="#19263f" stroke-width="2" opacity="0.9"/>
+         <circle cx="106" cy="250" r="9" fill="#00babb" opacity="0.9"/><line x1="140" y1="385" x2="1460" y2="385" stroke="#19263f" stroke-width="2" opacity="0.9"/>
+         <circle cx="106" cy="385" r="9" fill="#497ef7" opacity="0.9"/><line x1="140" y1="520" x2="1460" y2="520" stroke="#19263f" stroke-width="2" opacity="0.9"/>
+         <circle cx="106" cy="520" r="9" fill="#497ef7" opacity="0.9"/><line x1="140" y1="655" x2="1460" y2="655" stroke="#19263f" stroke-width="2" opacity="0.9"/>
+         <circle cx="106" cy="655" r="9" fill="#facc15" opacity="0.9"/><rect x="377.6" y="216" width="26.4" height="68" rx="12" fill="#00babb" opacity="0.32"/><rect x="615.2" y="216" width="52.8" height="68" rx="12" fill="#00babb" opacity="0.32"/><rect x="852.8" y="216" width="79.2" height="68" rx="12" fill="#00babb" opacity="0.32"/><rect x="1090.4" y="216" width="105.6" height="68" rx="12" fill="#00babb" opacity="0.32"/><rect x="1306.9" y="216" width="153.1" height="68" rx="12" fill="#00babb" opacity="0.32"/><path d="M140.0 385.0 L166.4 385.0 L166.4 520.0 L245.6 520.0 L245.6 655.0 L377.6 655.0 L377.6 250.0 L404.0 250.0 L404.0 385.0 L419.8 385.0 L419.8 520.0 L499.0 520.0 L499.0 655.0 L615.2 655.0 L615.2 250.0 L668.0 250.0 L668.0 520.0 L773.6 520.0 L773.6 655.0 L852.8 655.0 L852.8 250.0 L932.0 250.0 L932.0 520.0 L1058.7 520.0 L1058.7 655.0 L1090.4 655.0 L1090.4 250.0 L1196.0 250.0 L1196.0 520.0 L1306.9 520.0 L1306.9 250.0 L1460.0 250.0" fill="none" stroke="#f4f9ff" stroke-width="6" stroke-linejoin="round" opacity="0.95"/></svg>
