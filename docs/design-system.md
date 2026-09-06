@@ -264,3 +264,74 @@ vẽ cảnh ngay bằng màu phẳng rồi thay ảnh khi ảnh về, nên trư�
 trên mạng yếu là tám quả cầu màu đang quay — vẫn là Hệ Mặt Trời, không phải
 khung đen. Nếu tài nguyên còn nạp kiểu treo cả cảnh thì phải sửa chỗ đó trước,
 chưa mở cho màn hình nhỏ được.
+
+## Nhãn trong cảnh 3D: một lượt tránh đè cho tất cả
+
+Chốt 2026-09-06, sau khi nhãn ở trang Vũ trụ đè lên nhau ở mức thu nhỏ mặc định.
+
+Ba lỗi độc lập, và cả ba đều dễ lặp lại ở bất kỳ cảnh 3D nào có nhãn:
+
+**1. Mỗi nhóm nhãn tự lo lấy mình.** `Landmarks` có logic tránh đè, `ScaleShells`
+không có gì cả, và chúng render trong hai `<group>` tách biệt nên không nhóm nào
+biết nhóm kia chiếm chỗ nào. **Một cơ chế tránh đè chỉ nhìn thấy một nửa số nhãn
+thì không phải cơ chế tránh đè.** Gom mọi ứng viên vào một danh sách có thứ tự ưu
+tiên, chạy một lượt, phát tập kết quả xuống.
+
+**2. Chiếu tâm vật thể thay vì điểm neo của nhãn.** `<Html>` thường được đặt lệch
+lên trên vật thể, và độ lệch đó khác nhau giữa các loại mốc. Chiếu sai điểm thì
+phép kiểm đúng trên giấy mà sai trên màn hình — ở đây chênh 8 px là đủ lật ngược
+quyết định.
+
+**3. Ngưỡng pixel cứng, trong khi drei co giãn nhãn theo khoảng cách camera.**
+Cùng một cặp nhãn, lúc thu nhỏ cách nhau 30 px, lúc phóng to cách nhau 300 px.
+Phải chép đúng công thức của thư viện — `objectScale()` của drei là
+`distanceFactor / (2·tan(fov/2)·khoảng cách)` — rồi nhân với bề rộng ước lượng
+theo số ký tự thật của từng nhãn. Một hằng số chung cho mọi nhãn bỏ qua việc
+"Ngân Hà — bạn đang ở đây" rộng gấp đôi "Đám Virgo".
+
+Thứ tự ưu tiên nên theo *mất nhãn thì mất bao nhiêu*: mốc mất nhãn chỉ còn là một
+chấm vô danh, còn vỏ tỉ lệ mất nhãn thì vòng tròn vẫn nhìn thấy — nên mốc thắng.
+
+## Dấu vị trí phải khác HÌNH DẠNG, và phải tĩnh
+
+Chốt 2026-09-06.
+
+Mốc "bạn đang ở đây" từng là một sprite sáng hơn giữa hàng nghìn sprite sáng, cộng
+một quầng **đập nhịp**. Người dùng báo không tìm ra nó.
+
+Hai điều rút ra:
+
+- **Sáng hơn không phải là khác.** Trong một cảnh đầy chấm sáng, mắt không so độ
+  sáng được. Vòng tròn có bốn vạch chỉ vào tâm thì tìm ra ngay, vì nó là hình
+  dạng duy nhất thuộc loại đó trong khung.
+- **Cái gì nhấp nháy thì một nửa thời gian nó vắng mặt.** Quầng đập nhịp có pha
+  mờ gần hết, và ảnh chụp lỗi của người dùng bắt đúng pha đó. Chỉ báo *vị trí*
+  phải tĩnh; chuyển động chỉ để thu hút chú ý, không để mang thông tin.
+
+Dấu vị trí cũng nên vẽ với `depthTest` tắt: bị một vật thể phía trước che thì nó
+không còn đánh dấu gì.
+
+## Ảnh phải sống được ở MỌI khung nó bị cắt
+
+Chốt 2026-09-06, sau khi bộ ảnh bìa tự vẽ bị báo "zoom out, hiển thị thiếu".
+
+Cùng một `coverImage` được dùng ở ít nhất ba chỗ với ba tỉ lệ khác nhau:
+
+| Chỗ dùng | Khung | Thấy được gì |
+|---|---|---|
+| Thẻ bài | `aspect-[16/10]` | trọn ảnh |
+| Thẻ danh sách | ô vuông 64 px | vùng giữa, rất nhỏ |
+| Hero trang bài | ~4:1, rồi bị gradient và tiêu đề đè | **chỉ dải y 300–500** của ảnh 1600×1000 |
+
+Ảnh chụp sống sót mọi phép cắt vì chúng là kết cấu kín khung. Hình vẽ có chủ thể
+ở giữa nhiều khoảng trống thì không: ở hero nó thành một vệt mờ trong nền tối, và
+người xem đọc ra là "ảnh hỏng".
+
+**Quy tắc: chủ thể phải nằm trong dải 30–50% chiều cao và trải theo chiều ngang.**
+Chi tiết phụ đặt ở đáy khung là chấp nhận được — nó là phần thưởng cho ai xem thẻ,
+không phải phần bắt buộc.
+
+**Không đặt chữ vào ảnh.** Site song ngữ dùng chung một `coverImage`, nên chữ chỉ
+đúng một thứ tiếng và không có đường nào dịch. Dùng hình học thay chữ: mũi tên hai
+đầu đo biên độ, cung quét đo diện tích. Tiêu đề và tóm tắt nằm ngay dưới đã nói
+phần chữ rồi.

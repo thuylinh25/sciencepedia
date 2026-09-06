@@ -312,3 +312,39 @@ nhờ đối chiếu kho với chính nó:
 
 Cả hai đều là một khái niệm được dùng hai nghĩa ở hai chỗ. Trước khi đi tra nguồn
 ngoài, hãy hỏi kho đã nói gì về cùng khái niệm đó ở bài khác.
+
+## Hình mang mệnh đề định lượng thì phải TÍNH, không chọn bằng mắt
+
+Chốt 2026-09-06. Hai lỗi cùng đợt, cùng một gốc.
+
+**Kepler.** Bìa bài `dinh-luat-kepler` vẽ hai quạt mà bán kính vector quét được
+trong hai khoảng thời gian bằng nhau. Hai quạt ấy **phải bằng diện tích** — đó
+không phải chi tiết trang trí, đó là toàn bộ nội dung định luật 2. Bản đầu chọn
+góc bằng mắt: 0,28π ở cận nhật và 0,15π ở viễn nhật. Với `a = 560, b = 330` thì
+tỉ số bán kính viễn/cận là 9,4, nên để bằng diện tích thì góc viễn nhật phải nhỏ
+hơn **88 lần**, không phải 1,9 lần. Hình đang dạy ngược định luật nó minh hoạ.
+
+Bản sửa tính diện tích thật bằng công thức shoelace rồi dò nhị phân góc viễn nhật
+cho khớp. Hình bây giờ đúng theo nghĩa đo được, không theo nghĩa trông có vẻ đúng.
+
+**Sóng hấp dẫn.** Bản đầu vẽ gợn thành ellipse **phẳng nổi bên trên** mặt lưới bị
+võng. Kết quả đọc ra thành "hệ hành tinh có vành đai" — sai hẳn chủ đề. Gợn phải
+được cộng vào cùng một hàm độ cao với giếng, tức nằm TRÊN mặt, thì mới thấy sóng
+đang chạy ra.
+
+Quy tắc chung: **nếu hình minh hoạ mang một mệnh đề kiểm chứng được thì tham số
+của nó là dữ liệu, không phải lựa chọn thẩm mỹ.** Đặt cơ chế vào trong hình học,
+đừng dán nó lên trên.
+
+Và theo quy tắc 4 của skill `fact-check`: **sơ đồ sai là lỗi nội dung, không phải
+lỗi thẩm mỹ.** Nó đi đường `science-editor`, không đi đường thiết kế.
+
+### Tự nhìn sản phẩm trước khi giao
+
+Cả hai lỗi trên đều tự phát hiện bằng cách kết xuất ảnh ra rồi **mở lên xem**,
+không phải do người dùng báo. Bài sóng hấp dẫn phải vẽ lại ba lần: bản một đọc ra
+thành hệ hành tinh, bản hai cắt lưới hình chữ nhật nên cụt hai đầu như tấm thảm
+bay, bản ba mới đạt.
+
+Với thứ có hình hài, "typecheck xanh" không phải bằng chứng nó đúng. Kết xuất ra,
+xem ở **đúng kích thước sẽ dùng**, rồi mới giao.

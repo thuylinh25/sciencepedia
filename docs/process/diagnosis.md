@@ -3,7 +3,7 @@
 Quy tắc rút từ những lần **sửa nhầm chỗ**. Đây không phải mẹo kỹ thuật — mẹo kỹ
 thuật nằm ở `docs/design-system.md`. Đây là cách quyết định *sửa cái gì*.
 
-Cập nhật: 2026-09-05
+Cập nhật: 2026-09-06
 
 ---
 
@@ -445,3 +445,77 @@ sự tồn tại; và bước kiểm tra sau sự cố phải nhìn được **t
 vì đó chính là dấu vết mà sự cố để lại. Hệ quả thứ ba: việc dở phải được nhặt
 lại *trước* khi nhận việc mới, nếu không mỗi lần bị cắt lại thêm một món nợ
 không ai đòi.
+
+## Sửa xong lỗi thứ nhất mới thấy lỗi thứ hai
+
+Chốt 2026-09-06.
+
+Trang Vũ trụ bị báo "chữ đang bị đè lên nhau". Sửa: gộp hai nhóm nhãn vào một
+lượt tránh đè. Nhãn hết đè thật. Báo lỗi tiếp theo: *"nhìn vẫn không rõ vị trí
+Ngân Hà là ở đâu."*
+
+Lỗi thứ hai đã có sẵn từ đầu — mốc "bạn đang ở đây" chỉ là một chấm sáng hơn
+giữa hàng nghìn chấm sáng. Nó không lộ ra được vì đống chữ chồng lên nhau đang
+che mất câu hỏi. **Một lỗi hiển thị nặng làm người ta không kịp thấy lỗi nhẹ
+hơn nằm dưới nó.**
+
+Nên sau khi sửa một lỗi giao diện, đừng đóng vé. Hỏi tiếp: *cái làm người dùng
+khó chịu đã hết, nhưng việc họ định làm đã xong chưa?* Ở đây việc đó là "chỉ ra
+Ngân Hà", không phải "đọc được chữ".
+
+## Nguyên nhân nằm trong số học, không nằm trong ảnh chụp
+
+Chốt 2026-09-06. Ghi lại vì đã đốt bốn giả thuyết sai trước khi tìm ra.
+
+Ảnh chụp cho thấy ba nhãn đè nhau, mà code thì *có* cơ chế tránh đè. Bốn phỏng
+đoán lần lượt bị loại: hàm vị trí không tất định (sai — nó tất định), `frameloop`
+kiểu `demand` nên `useFrame` không chạy (sai — không đặt prop đó), có overlay
+thứ hai vẽ nhãn (sai — không có), ngưỡng quá rộng (sai — nó quá *hẹp*).
+
+Câu trả lời chỉ ra khi lấy hằng số thật rồi tính: `MLY_PER_UNIT = 40`, camera
+`[0, 8, 26]`, `fov 45`. Đám Virgo ở 54 Mly nằm cách tâm 1,35 đơn vị, chiếu ra
+~35 px. Ngưỡng là 30 px nên nó **được giữ**. Nhưng nhãn được vẽ lệch lên trên
+0,75 đơn vị với mốc home và 0,45 với mốc thường — chênh 0,30 đơn vị, tức ~8 px.
+Hai nhãn thật chỉ cách nhau 27 px trong khi mỗi nhãn cao 26 px.
+
+**Ảnh chụp cho biết triệu chứng ở đâu; chỉ số học mới cho biết vì sao.** Khi
+một cơ chế "đáng lẽ phải chạy" mà không chạy, dừng đoán và đi lấy các hằng số
+thật trong code, rồi tính ra con số mà cơ chế đó đang so sánh.
+
+## Đổi ngưỡng là hai quyết định, không phải một
+
+Chốt 2026-09-06, khi hạ trần độ dài bài từ 3–5 phút xuống 2–3 phút.
+
+Quyết định thứ nhất là con số mới. Quyết định thứ hai — dễ quên hơn và đắt hơn
+— là **số phận của dữ liệu đã có**. Đo lúc đổi: chỉ 6/46 bài lọt băng mới. Nếu
+áp thẳng, gate in 40 dòng CHẶN vì độ dài, và 40 dòng ấy nhấn chìm những phát
+hiện thật sự cần sửa.
+
+**Một gate kêu ở chỗ không ai định sửa là gate người ta học cách bỏ qua** — và
+lúc đó nó thôi chặn cả những chỗ cần chặn. Nợ cũ phải gom thành *một dòng tổng
+kết*, không phải một dòng cảnh báo mỗi bản ghi.
+
+Hai cái bẫy khi viết miễn trừ:
+
+- **Neo vào trường mà thao tác sửa KHÔNG chạm tới.** Miễn trừ theo `publishedAt`,
+  không theo `updatedAt`: neo vào `updatedAt` thì mỗi lần đính chính một câu
+  trên bài cũ lại kéo theo yêu cầu cắt nửa bài — phạt đúng việc ta muốn khuyến
+  khích.
+- **Mốc là lúc luật đổi, không phải nửa đêm hôm đó.** Đặt mốc 00:00 ngày chốt
+  thì `song-buoc-song-tan-so-bien-do` — lên lúc 01:49 sáng cùng ngày, trước khi
+  đổi luật vài giờ — bị phạt vì một quy tắc chưa tồn tại lúc nó được viết.
+
+## Nghi ngờ thì đi xác minh, đừng đi báo cáo
+
+Chốt 2026-09-06.
+
+Trong lượt fact-check, bài `sao-tho` ghi vành đai Sao Thổ "có lẽ chỉ 100–400
+triệu năm tuổi". Trí nhớ nói con số Cassini là 10–100 triệu năm, và suýt nữa nó
+thành một phát hiện S2 trong báo cáo.
+
+Tra ra: Kempf et al. 2023, *Science Advances* — thời gian phơi nhiễm suy ra là
+**đúng 100–400 triệu năm**. Bài dùng kết quả mới hơn thứ tôi nhớ.
+
+**Khoảng cách giữa "tôi nhớ khác" và "bài này sai" là một lượt tra cứu.** Với
+nội dung đã publish thì cái giá của việc bỏ qua lượt tra đó là một đính chính
+sai — tệ hơn hẳn so với không đính chính.
