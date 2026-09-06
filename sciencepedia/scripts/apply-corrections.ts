@@ -1,6 +1,6 @@
 import { PrismaClient } from "@prisma/client";
 
-import { prose } from "./check-publish";
+import { MAX_WORDS, prose } from "./check-publish";
 
 /**
  * Đính chính nội dung ĐÃ XUẤT BẢN sau lượt fact-check ngày 2026-09-05.
@@ -386,6 +386,7 @@ async function main() {
 
     const beforeProse = prose(article.content).length;
     const afterProse = prose(content).length;
+    const afterWords = countWords(prose(content));
     const readingTime = expectedReadingTime(content);
 
     console.log(`${correction.severity}  ${correction.slug}`);
@@ -395,8 +396,12 @@ async function main() {
     if (newTitle) console.log(`   • tiêu đề: "${article.title}"\n            → "${newTitle}"`);
     if (newTitleEn) console.log(`   • titleEn → "${newTitleEn}"`);
     console.log(
-      `   văn xuôi ${beforeProse.toLocaleString("vi-VN")} → ${afterProse.toLocaleString("vi-VN")} ký tự` +
-        (afterProse > 5_000 ? "  ⚠ trên trần 5.000" : ""),
+      `   văn xuôi ${beforeProse.toLocaleString("vi-VN")} → ${afterProse.toLocaleString("vi-VN")} ký tự ` +
+        `(${afterWords} từ)` +
+        /* Tám bài này publish trước 2026-09-07 nên được miễn trần 2–3 phút
+           (xem LENGTH_RULE_FROM trong check-publish.ts). Vẫn in cảnh báo để
+           người chạy biết mình đang làm bài dài thêm, chỉ là không chặn. */
+        (afterWords > MAX_WORDS ? `  ⚠ trên trần ${MAX_WORDS} từ — bài cũ, được miễn` : ""),
     );
     if (readingTime !== article.readingTime) {
       console.log(`   readingTime ${article.readingTime} → ${readingTime}`);

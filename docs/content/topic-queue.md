@@ -7,8 +7,8 @@ Chủ: `knowledge-architect`. Lập 2026-09-05. Đầu ra nuôi `content-curator
 1. Đọc toàn bộ 41 bài PUBLISHED qua `npm run publish:check -- --json` và một truy vấn Prisma chỉ-đọc (slug, danh mục, danh mục cha, độ dài `content`) — không suy từ knowledge graph vì graph đang rỗng (0 entity, 41/41 bài `entityId = null`).
 2. Đọc cây danh mục thật trong CSDL: 5 lĩnh vực gốc, 14 danh mục toàn cây — cả 9 danh mục con đều nằm dưới `vu-tru` (6) và `suc-khoe` (3); `vat-ly`, `sinh-hoc`, `trai-dat-va-khi-hau` là gốc phẳng, không có con.
 3. Đo phân bố: **Vũ trụ 31 · Sức khoẻ 4 · Trái Đất và Khí hậu 3 · Vật lý 2 · Sinh học 1**. Kho lệch 76% về thiên văn, và trong 31 bài đó có 13 bài là hồ sơ thiên thể lẻ (8 hành tinh, Mặt Trời, sao chổi…) — dấu vết của một feed tin tức, không phải của một mô hình tri thức.
-4. Đọc `docs/content-rules.md` — chốt độ dài 3.000–5.000 ký tự (3–5 phút) và câu quyết định: *"Nếu 5 phút không đủ để trả lời tử tế thì chủ đề đó quá rộng cho một bài."*
-5. **Bộ lọc loại chủ đề**, áp theo thứ tự: (a) trùng hoặc gần trùng một trong 41 slug đã có → loại; (b) không trả lời trọn trong 5.000 ký tự → tách hoặc loại; (c) không đạt ≥3 nguồn bậc 1–2 dễ tìm → loại; (d) là sự kiện/thời sự chứ không phải khái niệm nền → loại.
+4. Đọc `docs/content-rules.md` — chốt độ dài 400–600 từ văn xuôi (2–3 phút, hạ trần ngày 2026-09-06) và câu quyết định: *"Nếu 3 phút không đủ để trả lời tử tế thì chủ đề đó quá rộng cho một bài."*
+5. **Bộ lọc loại chủ đề**, áp theo thứ tự: (a) trùng hoặc gần trùng một trong 41 slug đã có → loại; (b) không trả lời trọn trong 600 từ → tách hoặc loại; (c) không đạt ≥3 nguồn bậc 1–2 dễ tìm → loại; (d) là sự kiện/thời sự chứ không phải khái niệm nền → loại.
 6. **Bộ lọc thứ tự**: mỗi chủ đề phải hoặc lấp một lỗ hổng đo được trong 41 bài, hoặc là điều kiện tiên quyết của một dòng đứng sau. Thứ tự bảng là thứ tự tô-pô của DAG tiên quyết — không dòng nào phụ thuộc vào dòng đứng sau nó.
 7. Ưu tiên nền tảng hơn thời sự, vì kho đã thừa thời sự và thiếu nền: 41 bài mà không có bài nào về **tế bào**, **DNA**, **nguyên tử**, **năng lượng**, **kiến tạo mảng** hay **chọn lọc tự nhiên**.
 
@@ -125,7 +125,9 @@ Hai tầng, còn xa mức trần 5 tầng. Cho tới khi việc này xong, hàng
 
 ## Cần viết lại (không đưa vào hàng đợi mới)
 
-18 bài đã xuất bản nằm dưới ngưỡng 3.000 ký tự. Chúng **không** được viết lại thành bài mới trong hàng đợi — chủ đề đã có entity, viết bài thứ hai là tạo trùng lặp. Xử lý bằng một đợt mở rộng riêng, sau khi bài nền tương ứng đã xong, vì khi đó mới có link nội bộ để dựa vào.
+> **Cập nhật 2026-09-06.** Mục này dựng theo trần cũ (3.000–5.000 ký tự). Trần mới là 400–600 từ (2–3 phút), và theo đó chỉ 11 bài ngắn hơn sàn chứ không phải 18. Quan trọng hơn: chủ sản phẩm đã quyết **không viết lại kho cũ** khi hạ trần, nên đợt mở rộng dưới đây đang tạm dừng chứ không phải đang chờ tới lượt. Xem `docs/content-rules.md`, mục "Độ dài bài: 2–3 phút đọc".
+
+18 bài đã xuất bản nằm dưới ngưỡng 3.000 ký tự của trần cũ. Chúng **không** được viết lại thành bài mới trong hàng đợi — chủ đề đã có entity, viết bài thứ hai là tạo trùng lặp. Xử lý bằng một đợt mở rộng riêng, sau khi bài nền tương ứng đã xong, vì khi đó mới có link nội bộ để dựa vào.
 
 | Slug | Ký tự | Mở rộng được sau dòng # |
 |---|---:|---:|
@@ -154,7 +156,7 @@ Hai tầng, còn xa mức trần 5 tầng. Cho tới khi việc này xong, hàng
 
 | Chủ đề | Lý do loại |
 |---|---|
-| "Tiến hoá" gộp thành một bài | Không trả lời trọn trong 5.000 ký tự → tách thành #48, #49, #50, #51, #52 |
+| "Tiến hoá" gộp thành một bài | Không trả lời trọn trong 600 từ → tách thành #48, #49, #50, #51, #52 |
 | "Vũ trụ giãn nở" | Gần trùng `big-bang` cộng #32; sẽ là một mục trong bài đó, không phải entity riêng |
 | "Hố đen", "Thiên hà" | Đã có bài (`ho-den`, `thien-ha-dinh-nghia-va-phan-loai`) — thuộc mục "Cần viết lại" |
 | "Nguyên nhân của mùa", "Nhật thực và nguyệt thực" | Đã có bài, độ dài đạt chuẩn |
