@@ -1,0 +1,393 @@
+# Thẩm định — cau-truc-ben-trong-trai-dat
+#
+# Bước 2 (pre-draft): thẩm định BẢNG NGUỒN trước khi viết.
+# Bước 4 (post-draft): phần `editor_pass` ở cuối, do science-editor ghi.
+#
+# Đầu vào: docs/content/research/cau-truc-ben-trong-trai-dat.yaml
+# Chạy: 2026-09-06
+
+slug: cau-truc-ben-trong-trai-dat
+mode: pre-draft
+checked_at: 2026-09-06
+recommendation: pass
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Nguồn: có tồn tại, có resolve, có nói đúng điều bảng nguồn gán cho nó không
+# ─────────────────────────────────────────────────────────────────────────────
+source_integrity:
+  - id: s1
+    url_status: 200
+    verdict: verified
+    how: >
+      Tải bằng curl (USGS trả 403 cho WebFetch) rồi bóc thẻ HTML. Cả 8 đoạn
+      trích trong bảng nguồn đều tìm thấy nguyên văn trong trang.
+  - id: s2
+    url_status: 200
+    verdict: verified
+    how: >
+      Cùng cách. Cả 12 đoạn trích đều nguyên văn, kể cả câu Kola 12 km và câu
+      "presumed to be liquid".
+  - id: s3
+    url_status: 200
+    verdict: verified
+    how: "Bốn keypoint đều nguyên văn trên trang, kể cả '~103°'."
+  - id: s4
+    url_status: 200
+    verdict: verified
+    how: "Bốn keypoint đều nguyên văn. Trang này KHÔNG nêu góc — xem F5."
+  - id: s5
+    url_status: 200
+    verdict: verified
+  - id: s6
+    url_status: 200
+    verdict: verified
+    how: "Toàn bộ đoạn bốn lớp + đoạn geodynamo lấy nguyên văn từ trang."
+  - id: s7
+    url_status: 403
+    verdict: verified
+    how: >
+      DOI đối chiếu Crossref: khớp tiêu đề, Science, tập 340, trang 464–466,
+      2013-04-26, tác giả đầu Anzellini. Abstract lấy từ Europe PMC REST API
+      truy vấn theo DOI. Câu "6230 ± 500 kelvin" nằm trong abstract của chính
+      tác giả, không phải trong bản tóm tắt của biên tập.
+      Đối chiếu độc lập thứ hai: bản tóm tắt biên tập trong metadata Crossref
+      ("Hot Enough to Melt Iron") nói cùng một điều — ranh giới lõi trong/ngoài
+      "largely controlled by the melting point of iron at ~330 GPa", và thí
+      nghiệm nén tới 200 GPa. Hai bản độc lập, cùng con số áp suất.
+      403 là Cloudflare của science.org chặn bot, không phải link chết.
+  - id: s8
+    url_status: 200
+    verdict: verified
+    how: >
+      DOI đối chiếu Crossref: khớp tác giả Dziewonski/Anderson, Physics of the
+      Earth and Planetary Interiors, tập 25, trang 297–356, 1981/06.
+    limit: >
+      Chỉ ở mức tiêu đề/năm/vai trò. KHÔNG có claim số nào trong bài quy về
+      nguồn này — đúng điều kiện đã ghi trong caveat của bảng nguồn.
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Từng con số kiểm riêng (quy tắc 4)
+# ─────────────────────────────────────────────────────────────────────────────
+numeric_checks:
+  - claim: "1.221 + 2.250 + 2.900 = 6.371 km"
+    computed: 6371
+    verdict: verified
+    note: >
+      Đúng bán kính trung bình Trái Đất. Bộ ba số của NASA tự khép kín, và đó
+      là bằng chứng chúng thuộc cùng một mô hình chứ không được lượm từ ba chỗ.
+  - claim: "Quy đổi dặm sang km trong nguồn NASA"
+    computed: "19 mi = 30,6 km · 3 mi = 4,8 km · 1.800 mi = 2.896,8 km · 1.400 mi = 2.253,1 km · 759 mi = 1.221,5 km"
+    verdict: verified
+    note: >
+      Cả năm cặp đều nhất quán với con số km NASA in kèm. Nguồn không tự làm
+      tròn sai chỗ nào — tăng độ tin cậy cho cả bộ số.
+  - claim: "Lỗ khoan Kola 12 km so với bán kính 6.371 km"
+    computed: "12 / 6.371 = 0,188%"
+    verdict: verified
+    note: >
+      Phép tính của bài, từ hai con số đã dẫn nguồn (s2 và s6). Bài phải nói
+      rõ đây là tỉ số tính ra, và nêu cả tử lẫn mẫu — theo đúng bài học
+      "cụm tỉ số không nêu rõ tử/mẫu là dấu hiệu nó được đoán"
+      (docs/content-rules.md).
+  - claim: "Newton: mật độ trung bình Trái Đất gấp đôi mật độ đá bề mặt"
+    computed: "5,513 / 2,7 = 2,04"
+    verdict: verified
+    note: "Phát biểu 'gấp đôi' của USGS đứng vững."
+  - claim: "Lõi đặc gần gấp đôi manti (s1)"
+    computed: "≈ 10,9 / 4,5 = 2,42"
+    verdict: verified
+    note: >
+      Con số thật LỚN hơn "gần gấp đôi". Giữ nguyên chữ của USGS chứ không
+      nâng lên "gấp 2,4 lần": nâng cấp độ chắc chắn của nguồn là lỗi cùng họ
+      với hạ nó.
+  - claim: "USGS: lõi 15% thể tích, manti 84%, vỏ 1%"
+    computed: >
+      Từ bán kính lõi 3.471 km (= 1.221 + 2.250, s6) thì lõi chiếm 16,17%
+      thể tích; lấy bán kính lõi 3.480 km thường dùng thì 16,30%. Vỏ, tính
+      theo độ dày trung bình có trọng số diện tích (~14,4 km), chiếm 0,68%.
+    verdict: partially-supported
+    severity: S3
+    ruling: CẮT — xem F2.
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Phát hiện
+# ─────────────────────────────────────────────────────────────────────────────
+findings:
+  - id: F1
+    severity: S3
+    verdict: unverifiable
+    claim: "wikidata_qid: Q3712 cho entity cấu trúc bên trong Trái Đất"
+    evidence: >
+      Special:EntityData/Q3712.json không trả về JSON hợp lệ — QID này không
+      resolve. Tra wbsearchentities "internal structure of Earth" trả đúng một
+      kết quả: Q1664027, nhãn en "internal structure of Earth", nhãn vi
+      "Cấu trúc Trái Đất", mô tả "inner structure of the planet Earth,
+      consisting of several concentric spherical layers".
+    ruling: >
+      SỬA bảng nguồn: Q3712 → Q1664027. Đây là một QID được ĐOÁN chứ không
+      được tra, và nó lọt tới bảng nguồn — đúng loại lỗi mà bước 2 tồn tại để
+      bắt. Q1664027 đã tra thật trong lượt này.
+    applied: true
+  - id: F2
+    severity: S3
+    verdict: partially-supported
+    claim: "Vỏ chiếm 1% thể tích Trái Đất, manti 84%, lõi 15% (s2)"
+    evidence: >
+      Bộ ba này không khớp với bán kính trong CÙNG bảng nguồn: bán kính lõi
+      3.471 km cho 16,2% thể tích, không phải 15%. Lệch 1,2 điểm phần trăm.
+      Riêng "1%" cho vỏ thì tính ra 0,68% — làm tròn chấp nhận được ở bậc đó,
+      nhưng nó đi kèm hai số kia trong cùng một câu của nguồn.
+    ruling: >
+      CẮT cả bộ ba khỏi bài. Không sửa thành 16% (đó là con số của bài, không
+      của nguồn), không giữ 15% (không tái lập được từ chính bảng nguồn).
+      Điểm "vỏ mỏng đến mức nào" chuyển sang dùng tỉ số Kola 12 km / 6.371 km
+      = 0,19%, vì tỉ số đó dựng từ hai con số đã dẫn nguồn và ai cũng tính lại
+      được.
+    applied: true
+  - id: F3
+    severity: S3
+    verdict: contradicted
+    claim: 'NASA: "The inner core, a roughly 759-mile-thick (1,221-kilometer-thick) solid sphere"'
+    evidence: >
+      Chính NASA gọi nó là "solid sphere". Một quả cầu không có "độ dày"; và
+      1.221 + 2.250 + 2.900 chỉ bằng 6.371 km nếu 1.221 là BÁN KÍNH. Chữ
+      "thick" trong nguồn là lỗi diễn đạt của nguồn.
+    ruling: >
+      Bài viết "bán kính khoảng 1.221 km", KHÔNG chép chữ "dày". Chép nguyên
+      chữ sai của nguồn không phải trung thực với nguồn — nó tạo ra một Trái
+      Đất có bán kính 7.592 km.
+    applied: true
+  - id: F4
+    severity: S4
+    verdict: verified
+    claim: "Bộ số của USGS (s1): 30 + 2.900 + 2.200 + 1.250"
+    evidence: "Tổng 6.380 km, so với 12.750/2 = 6.375 km mà chính s1 nêu."
+    ruling: >
+      Không hành động. Lệch 5 km là dấu vết làm tròn của một trang phổ thông,
+      không phải lỗi sự thật. Đây là lý do bài chọn bộ số NASA cho phần lõi
+      (khép kín đúng) và nói rõ nguồn của từng bộ.
+  - id: F5
+    severity: S3
+    verdict: unverifiable
+    claim: "Góc của vùng tối sóng P"
+    evidence: >
+      Ba giá trị khác nhau ở ba chỗ: 103–140, 104–140, 103–142. Trang IRIS
+      chuyên về sóng P không tự nêu góc nào.
+    ruling: >
+      CẮT. Chỉ dùng ~103° của sóng S — keypoint trên chính trang chuyên về
+      sóng S. Một con số có ba phiên bản thì chưa được kiểm, không phải "xấp
+      xỉ như nhau".
+    applied: true
+  - id: F6
+    severity: S3
+    verdict: unverifiable
+    claim: "Năm Inge Lehmann phát hiện lõi trong"
+    evidence: >
+      IRIS (s5) ghi 1937; bài báo "P'" của bà thường được dẫn là 1936.
+      aps.org trả 403, amnh.org trả CAPTCHA — không dựng được nguồn bậc 1–2
+      trong lượt này.
+    ruling: >
+      CẮT khỏi bài. Bài vẫn nêu được rằng lõi trong phải phát hiện riêng, dựa
+      vào hành vi sóng P và S (s2), mà không cần gán năm cho ai.
+    applied: true
+  - id: F7
+    severity: S3
+    verdict: verified
+    claim: "6230 ± 500 K ở ranh giới lõi trong"
+    evidence: >
+      Nguyên văn abstract: "The temperature at the inner core boundary is
+      EXPECTED to be close to the melting point of iron at 330 gigapascal";
+      "Despite intensive experimental and theoretical efforts, there is LITTLE
+      CONSENSUS on the melting behavior of iron at these extreme pressures";
+      "WHEN EXTRAPOLATING to higher pressures, we conclude that the melting
+      temperature of iron at the inner core boundary is 6230 ± 500 kelvin."
+      Thí nghiệm chỉ tới 200 GPa, ranh giới ở 330 GPa.
+    ruling: >
+      GIỮ, nhưng bài BẮT BUỘC mang theo ba mệnh đề dè dặt: (a) đây là điểm
+      nóng chảy của sắt, và nhiệt độ tại ranh giới chỉ được KỲ VỌNG gần bằng
+      nó; (b) con số là NGOẠI SUY từ 200 GPa lên 330 GPa; (c) sai số ± 500 K.
+      Viết "lõi trong nóng 6.230 K" là lỗi S2, và là đúng cái cách hỏng mà
+      docs/content-rules.md gọi là "câu ngắn hơn nghe chắc chắn hơn".
+    applied: true
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Đối chiếu kho với chính nó (quy tắc 6 — "máy dò lỗi rẻ nhất")
+# ─────────────────────────────────────────────────────────────────────────────
+internal_consistency:
+  - against: /articles/trai-dat
+    claim_there: "Lõi sắt lỏng chuyển động tạo ra hiệu ứng dynamo, sinh từ trường bao quanh hành tinh."
+    verdict: consistent
+    note: "Khớp NASA (s6): 'Nearly all of Earth's geomagnetic field originates in the fluid outer core.'"
+  - against: /articles/tu-truong-va-luc-hap-dan
+    claim_there: "lõi chất lưu dẫn điện của chúng vẫn đang chuyển động không ngừng, duy trì một máy phát tự nhiên gọi là dynamo"
+    verdict: consistent
+    note: >
+      Khớp s6 cả về cơ chế (điện tích chuyển động → dòng → từ trường). Bài mới
+      dùng đúng chữ "dynamo" của hai bài này, không đặt tên khác cho cùng cơ chế.
+  - against: /articles/trai-dat
+    claim_there: "Kiến tạo mảng. Lớp vỏ chia thành các mảng trượt trên lớp phủ."
+    verdict: partially-supported
+    severity: S3
+    note: >
+      Cách nói lỏng. USGS (s2): "The plates include the crust AND PART OF THE
+      UPPER MANTLE"; IRIS (s5) gọi thẳng đây là "a distinction confused by
+      many" và nói "The crust is only the upper part of the tectonic
+      (lithospheric) plate".
+    ruling: >
+      KHÔNG sửa `trai-dat` trong lượt này. Sửa claim trên bài đã publish là
+      ĐÍNH CHÍNH, đòi Revision + dòng trong corrections.md + lastVerifiedAt
+      (docs/content-rules.md), và nó không thuộc phạm vi lượt này. Ghi vào
+      refresh queue. Bài mới nêu phân biệt cho đúng, có nguồn — nên kho sẽ có
+      một chỗ nói đúng để dẫn về, thay vì hai chỗ nói lỏng.
+  - against: /articles/dai-tuyet-chung-permi
+    claim_there: "tỉnh magma khổng lồ … phun trào"
+    verdict: consistent
+    note: "Không có claim nào về cấu trúc lớp, không giao nhau."
+
+# Ràng buộc bắt buộc với bước 3. Bản nháp vi phạm bất kỳ dòng nào ở đây thì
+# quay lại bước 3, không đi tiếp.
+binding_on_draft_status: "cả 8 dòng đã kiểm lại trên bản nháp cuối — không dòng nào bị vi phạm"
+binding_on_draft:
+  - "KHÔNG dùng bộ ba thể tích 15/84/1 (F2)."
+  - "KHÔNG dùng góc vùng tối sóng P (F5)."
+  - "KHÔNG nêu Lehmann kèm năm (F6)."
+  - "Lõi trong: viết BÁN KÍNH ~1.221 km, không viết 'dày' (F3)."
+  - "6230 ± 500 K phải kèm: điểm nóng chảy của sắt · 'kỳ vọng gần' · ngoại suy · ít đồng thuận (F7)."
+  - "Giữ nguyên 'được cho là' ở mọi kết luận suy từ sóng địa chấn (s2 dùng presumed/considered)."
+  - "Nêu rõ bộ số nào của NASA, bộ nào của USGS. Không trộn, không lấy trung bình."
+  - "Tỉ số Kola phải nêu cả tử và mẫu."
+
+# ═════════════════════════════════════════════════════════════════════════════
+# BƯỚC 4 — science-editor
+# ═════════════════════════════════════════════════════════════════════════════
+editor_pass:
+  ran_at: 2026-09-06
+  verdict: approve
+  revision_rounds: 1        # trần là 2
+  method: >
+    Đối chiếu từng câu của bản nháp với VĂN BẢN NGUỒN đã tải về ở bước 1, không
+    đối chiếu bản nháp với chính nó. Cộng một lượt truy vấn Prisma chỉ-đọc rà
+    toàn bộ 47 bài đã publish tìm câu nói về cùng khái niệm.
+
+  # Ai đóng vai biên tập, nói cho đúng.
+  reviewer_note: >
+    Lượt này KHÔNG có tiến trình `science-editor` riêng để gọi: ListAgents
+    không thấy agent nào, và môi trường không cấp tool Task/Agent. Nên bước 4
+    do `content-curator` tự thi hành theo chuẩn của science-editor.
+    Ghi lại đúng như vậy vì docs/content-rules.md đã chốt rằng quy công duyệt
+    sai người là một lớp lỗi thật ("Byline người duyệt: một tài khoản tổ chức,
+    không bịa tên người"). `reviewedById` vẫn là tài khoản tổ chức "Ban biên
+    tập Sciencepedia", đúng quy tắc — điều này không tạo ra một người duyệt
+    không tồn tại, nhưng nó cũng KHÔNG tương đương một lượt duyệt độc lập.
+    Nếu về sau có tiến trình editor thật, bài này nên được rà lại.
+
+  findings:
+    - id: E1
+      severity: S2
+      verdict: contradicted
+      where: "câu mở đầu bản nháp đầu tiên"
+      claim: "'Trái Đất có bốn lớp … nhưng chưa ai từng nhìn thấy lớp nào trong số đó'"
+      evidence: >
+        Trái ngược trực tiếp với s2: "Because the crust is accessible to us,
+        its geology has been extensively studied, and therefore much more
+        information is known about its structure and composition than about
+        the structure and composition of the mantle and core." Vỏ thì
+        NHÌN THẤY ĐƯỢC — ta đang đứng trên nó. Câu "chưa ai nhìn thấy" của
+        USGS nói về MẶT MOHO, không về các lớp.
+      fix: >
+        Viết lại thành "Chỉ lớp vỏ là chạm tới được; mọi thứ bên dưới đều suy
+        ra từ sóng địa chấn…". Đây là lỗi do chính lượt viết sinh ra khi mở
+        rộng một câu hẹp của nguồn thành một phát biểu toàn cục — đúng dạng
+        "câu nghe hay hơn thì rộng hơn nguồn".
+      applied: true
+    - id: E2
+      severity: S3
+      verdict: partially-supported
+      claim: "'Trái Đất có bốn lớp', không dẫn nguồn"
+      evidence: >
+        "Bốn lớp" là cách chia của NASA (s6: "the four main layers of Earth's
+        'onion'"). Nhưng s1 và s5 đều nói BA lớp chính theo thành phần hoá học,
+        và s2 còn chia mịn hơn: "three main shells … the mantle and core are
+        each divided into two parts", tức năm vỏ con. Bản nháp chọn một cách
+        chia mà không nói là của ai.
+      fix: >
+        Nêu rõ tiêu chí: "Xét theo thành phần hoá học, Trái Đất có ba lớp —
+        vỏ, manti và lõi — nhưng lõi lại chia thành hai phần rất khác nhau".
+        Cách này đúng với cả ba nguồn cùng lúc và dạy luôn người đọc rằng số
+        lớp phụ thuộc tiêu chí phân chia.
+      applied: true
+    - id: E3
+      severity: S3
+      verdict: unsupported
+      claim: "'Lỗ khoan sâu nhất từng có'"
+      evidence: >
+        s2 chỉ nói "a Soviet hole on the Kola Peninsula has been drilled to a
+        depth of 12 kilometers". Không nguồn nào trong bảng gọi nó là sâu nhất.
+        Mệnh đề so sánh nhất là do lượt viết thêm vào.
+      fix: "Bỏ cụm so sánh nhất. Quy tắc 4 của fact-check: không dựng được thì cắt, không làm tròn cho hợp lý."
+      applied: true
+    - id: E4
+      severity: S3
+      verdict: partially-supported
+      claim: "Kết luận 'lõi trong được cho là đặc' bị gắn vào tiền đề 'vận tốc sóng P giảm mạnh'"
+      evidence: >
+        s2 nêu HAI căn cứ khác nhau: lõi ngoài lỏng "because it does not
+        transmit shear (S) waves and because the velocity of compressional (P)
+        waves … is sharply reduced"; lõi trong đặc "because of the behavior of
+        P and S waves passing through it". Bản nháp gộp hai câu thành một mệnh
+        đề nối, làm căn cứ của kết luận thứ hai bị đổi.
+      fix: "Tách thành hai vế, mỗi vế mang căn cứ của chính nó."
+      applied: true
+    - id: E5
+      severity: S4
+      verdict: verified
+      claim: "'sóng cắt không truyền được qua chất lỏng' đặt làm lý do của mốc 103°"
+      evidence: >
+        Cả hai nửa đều là keypoint của s3 ("S waves don't appear beyond an
+        angular distance of ~103°" và "S waves are stopped by the liquid outer
+        core"), nên không sai. Chỉ là thứ tự nhân quả đọc ra hơi ngược.
+      fix: "Đưa 'bị lõi ngoài lỏng chặn lại' lên trước, tính chất của sóng cắt xuống sau."
+      applied: true
+    - id: E6
+      severity: S4
+      verdict: verified
+      claim: "'nóng ngang bề mặt Mặt Trời' đứng cạnh con số 6.230 ± 500 K"
+      evidence: >
+        Phép ví là của NASA (s6: lõi trong "about as hot as the Sun's
+        surface"), không phải của bài. Đối chiếu kho: `mat-troi` ghi quang
+        quyển ~5.500 °C, còn 6.230 K = 5.957 °C — lệch chừng 8%, vẫn trong
+        nghĩa "ngang", nhưng bài không được tự đứng ra bảo đảm phép ví đó.
+      fix: "Ghi rõ 'mức mà NASA ví là nóng ngang bề mặt Mặt Trời'."
+      applied: true
+
+  cross_article_check:
+    - against: /articles/song-buoc-song-tan-so-bien-do
+      finding: >
+        Bài đó ĐÃ nói về vùng bóng địa chấn, và dẫn USGS cho "từ khoảng cách
+        góc 104 đến 140 độ" của sóng P. Bài mới cố tình KHÔNG nêu góc vùng
+        bóng sóng P (finding F5), nên hai bài không đưa ra hai con số khác
+        nhau cho cùng một đại lượng. Bài mới chỉ dùng ~103° của sóng S, và bài
+        kia không nêu con số nào cho sóng S. Không mâu thuẫn.
+      verdict: consistent
+      note: >
+        Trùng chủ đề nhưng khác ý định: bài kia dùng vùng bóng để minh hoạ
+        tính chất của SÓNG; bài này dùng nó làm BẰNG CHỨNG về cấu trúc. Không
+        phải trùng lặp cần khử — và đây là lý do link giữa hai bài có nghĩa
+        thật, không chỉ trùng chữ.
+    - against: /articles/trai-dat
+      verdict: consistent
+      note: "Cơ chế dynamo khớp. Chỗ 'lớp vỏ chia thành các mảng' vẫn để cho refresh queue, xem internal_consistency ở trên."
+    - against: /articles/tu-truong-va-luc-hap-dan
+      verdict: consistent
+    - against: /articles/mat-troi
+      verdict: consistent
+      note: "Xem E6 — phép ví nhiệt độ đã quy về NASA."
+
+  length_note: >
+    Bản nháp bước 3 dài 649 từ, trên trần 600. Rút bằng cách XOÁ câu, không
+    viết lại: bỏ cụm ví dụ Alps/Sierra Nevada (trùng với con số vỏ lục địa
+    NASA đã nêu), hai câu chuyển ý, một câu kết trang trí, và một câu phát
+    biểu nguyên tắc đã được câu sau nói cụ thể hơn. Sau khi sửa E1–E6 thì
+    còn 591 từ. Không câu nào mang con số hay mệnh đề dè dặt bị đụng tới.
+
+  final: "591 từ · 5 link nội bộ ra · 0 phát hiện S1 hoặc S2 còn mở"

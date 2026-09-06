@@ -1,0 +1,282 @@
+# Fact-check — dien-tich-va-dong-dien
+#
+# DỰNG LẠI ngày 2026-09-06 cùng lượt với bảng nguồn.
+#
+# Khác với lần chạy gốc: lần đó đây là fact-check TRƯỚC khi viết (pre-draft) và
+# verdict là `pass`. Lần này văn xuôi đã tồn tại, nên chạy ở chế độ HỖN HỢP —
+# vừa thẩm định bảng nguồn vừa đối chiếu từng câu của bản nháp với nguồn vừa
+# dựng. Làm vậy vì thứ tự bước không đảo được nhưng thực tế đã đảo: giả vờ chưa
+# có bản nháp rồi "thẩm định nguồn suông" sẽ bỏ lọt đúng loại lỗi mà
+# docs/content-rules.md mô tả — citation resolve đúng bài mà bài đó không nói
+# điều đang viết.
+
+slug: dien-tich-va-dong-dien
+mode: pre-draft + post-draft (bản nháp cứu được từ artifact)
+source_pack: docs/content/research/dien-tich-va-dong-dien.yaml
+prose_checked: docs/content/drafts/dien-tich-va-dong-dien.md
+checked_at: 2026-09-06
+
+# Mọi nguồn đều được MỞ TRỰC TIẾP trong lượt này, không đọc qua bản tóm tắt của
+# máy tìm kiếm. Hai URL phải sửa: swpc.noaa.gov → spaceweather.gov (301), và
+# đoạn "inward current" nằm ở NBK10879 chứ KHÔNG ở NBK11098 như kết quả tìm
+# kiếm gợi ý — đã kiểm cả hai trang trước khi ghi.
+
+claims:
+  - claim: "Dòng điện là điện tích đang chuyển động; chính chuyển động ấy sinh ra từ trường"
+    sources: [s1, "nội-bộ:tu-truong-va-luc-hap-dan"]
+    verdict: verified
+    severity: null
+
+  - claim: "e là lượng điện tích trong một electron; proton mang cùng độ lớn, dấu ngược"
+    sources: [s2]
+    verdict: verified
+    evidence: "\"the amount of electric charge in a single electron (negative) or proton (positive)\""
+
+  - claim: "e = 1,602176634 × 10⁻¹⁹ C từ 20/5/2019; sai số chuẩn '(exact)'"
+    sources: [s1, s2, s4]
+    verdict: verified
+    evidence: "Trang CODATA 2022 của NIST ghi cả 'Standard uncertainty' lẫn 'Relative standard uncertainty' là '(exact)'."
+
+  - claim: "Một coulomb gom khoảng 6,241 × 10¹⁸ điện tích nguyên tố"
+    sources: [s2]
+    verdict: verified
+    arithmetic: "1 / 1,602176634e-19 = 6,2415090744 × 10¹⁸ — khớp con số NIST và khớp cách bài diễn đạt ('nghịch đảo con số ấy')."
+
+  - claim: "Định nghĩa ampere trước 2019 — hai dây song song dài vô hạn, 2 × 10⁻⁷ N/m"
+    sources: [s2]
+    verdict: verified
+    evidence: "Bản nháp trích dịch, và dấu ba chấm trong bài đúng chỗ lược 'of negligible circular cross-section'. Không lược mất mệnh đề nào làm đổi nghĩa."
+
+  - claim: "Định nghĩa cũ hỏng hai đường: không hiện thực hoá được, và neo đơn vị điện vào chuẩn khối lượng"
+    sources: [s2]
+    verdict: verified
+    severity: null
+    note: >
+      Vế một trích thẳng ("could not be physically realized according to its own
+      definition"). Vế hai là diễn giải của "defining an electrical unit through
+      mechanical concepts proved unsatisfactory" — hợp lệ vì newton trên mét
+      quy về kilogram, và bài tự đóng vòng lập luận ấy ở mục cân Kibble bằng
+      nguồn s6. Không nâng mức chắc chắn quá nguồn.
+
+  - claim: "Định nghĩa BIPM hiện hành của ampere, trích nguyên văn"
+    sources: [s1]
+    verdict: verified
+    evidence: "Đối chiếu từng chữ với trang BIPM, kể cả 'tức A·s' và 'trong đó giây được định nghĩa qua ΔνCs'."
+
+  - claim: "Một ampere = một coulomb qua một điểm trong một giây"
+    sources: [s1, s2]
+    verdict: verified
+
+  - claim: "Chừng 6 × 10¹⁸ electron qua một điểm mỗi giây"
+    sources: [s3]
+    verdict: verified
+    evidence: "\"about 6 quintillion electrons ... per second\" — 'quintillion' thang ngắn = 10¹⁸; 'tỉ tỉ' tiếng Việt = 10¹⁸."
+
+  - claim: "Chiều quy ước từ điện thế cao sang thấp, ngược chiều electron; Franklin đoán sai"
+    sources: [s14]
+    verdict: verified
+    severity: S4
+    note: >
+      Nguồn bậc 3. Bài đã nêu tên nguồn ngay trong câu ("như Engineering
+      LibreTexts nói thẳng"), đúng cách xử lý nguồn bậc 3 — người đọc thấy được
+      trọng lượng của phát biểu. Không cần sửa.
+
+  - claim: "Tia sét điển hình ~300 triệu V, ~30.000 A; điện dân dụng chuẩn Mỹ 120 V, 15 A"
+    sources: [s7]
+    verdict: verified
+    severity: S4
+    finding: >
+      Con số đúng, cách nói sai nhẹ: bản nháp viết tia sét "MANG chừng 300 triệu
+      volt". Volt là hiệu điện thế, không phải thứ được mang theo. NWS viết
+      trung tính hơn: "A typical lightning flash IS about 300 million Volts and
+      about 30,000 Amps".
+    action: 'Đổi "mang chừng" → "vào khoảng", giữ nguyên hai con số và nhãn "chuẩn Mỹ".'
+
+  - claim: "Điện tích tách ra do chuyển động không khí và va chạm giữa các hạt giáng thuỷ; vùng âm giữa mây làm mặt đất nhiễm điện dương"
+    sources: [s8]
+    verdict: verified
+    evidence: >
+      Đây là claim suýt mất. Trang weather.gov/safety/lightning-science (s9) chỉ
+      có câu về không khí mất tính cách điện, KHÔNG có cơ chế tách điện tích —
+      phải sang trang science-overview (s8) mới có: "Air movements and collisions
+      between the various types of precipitation in the middle of the cloud cause
+      the precipitation particles to become charged."
+
+  - claim: "Sét là lúc khả năng cách điện của không khí sụp đổ"
+    sources: [s9]
+    verdict: verified
+
+  - claim: "SET: bất định vài phần trăm triệu ở hàng chục triệu electron mỗi giây, kỳ vọng còn cải thiện"
+    sources: [s5]
+    verdict: partially-supported
+    severity: S3
+    finding: >
+      Hai vế định lượng và vế "expected to improve" đều trích đúng nguyên văn.
+      NHƯNG bản nháp gắn thêm mốc "tính tới tháng 9/2026" vào phát biểu của
+      NIST, mà trang NIST không mang ngày tháng nào. Đó là một claim date-bound
+      với cái ngày do người viết cấp — đúng loại lỗi docs/content-rules.md mô tả
+      ở mục "Ước lượng điểm": con số bị tách khỏi năm của nó, hoặc gắn vào một
+      năm không phải của nó.
+    action: 'Bỏ cụm "tính tới tháng 9/2026". Ngày truy cập thuộc về bảng Source, không thuộc thân bài.'
+
+  - claim: "100 thiết bị SET đồng bộ ở 10⁹ chu kỳ/giây chỉ cho dòng cỡ nanoampere"
+    sources: [s5]
+    verdict: verified
+    arithmetic: "100 × 10⁹ × 1,602e-19 = 1,602 × 10⁻⁸ A = 16 nA — nằm trong 'range of nanoamps'."
+
+  - claim: "Câu picoampere ở 100 triệu chu kỳ/giây của NIST"
+    sources: [s5]
+    verdict: contradicted
+    severity: S2
+    finding: >
+      NGUỒN tự sai, không phải bài sai. 10⁸ × e = 1,6 × 10⁻¹¹ A = 16 pA, lệch 16
+      lần so với "khoảng một picoampere". Bảng nguồn cũ đã loại câu này; lượt
+      dựng lại tính độc lập và ra cùng kết luận.
+    action: "Tiếp tục KHÔNG dùng. Bản nháp đã không dùng — không phải sửa gì."
+
+  - claim: "Bão Mặt Trời gia tốc hạt tích điện vào không gian; hạt đổ xuống hai vùng cực tạo cực quang"
+    sources: [s11, "nội-bộ:cuc-quang"]
+    verdict: verified
+
+  - claim: "Biến thiên thông lượng từ sinh dòng trong lưới điện; bão hoà lõi máy biến áp; 13/3/1989 mất điện chín giờ ở Canada, mất một máy biến áp"
+    sources: [s10]
+    verdict: verified
+    evidence: >
+      Cả ba vế trích đúng nguyên văn SWPC, kể cả cách SWPC tự đặt ngoặc kép
+      quanh "exciting current". Mốc 13/3/1989 lấy từ chính SWPC ("a nine-hour
+      blackout in Canada and a transformer loss (13 March 1989)"), không lấy từ
+      các con số thiệt hại lưu hành trên báo — nên bài không mang theo con số
+      6 triệu người hay 13,2 triệu USD mà SWPC không nói.
+
+  - claim: "Dòng 'vào' tế bào = điện tích dương đi vào, tức cation vào hoặc anion ra; dòng vào nhanh rồi dòng ra chậm hơn, có trễ; Na⁺ khởi phát điện thế hoạt động"
+    sources: [s12]
+    verdict: verified
+    evidence: "Trích đúng nguyên văn NBK10879, kể cả phần trong ngoặc đơn của chính sách giáo trình."
+
+  - claim: "Hodgkin và Huxley mô tả định lượng dòng qua màng, 1952"
+    sources: [s13]
+    verdict: verified
+    note: "Chỉ dùng ở mức tiêu đề + năm, đúng ràng buộc cũ. DOI resolve: 10.1113/jphysiol.1952.sp004764."
+
+  - claim: "Cân Kibble: trọng lượng vật thử bù trừ bởi lực do dòng trong cuộn dây đặt trong từ trường; cuộn dây có dòng thành nam châm điện có cường độ tỉ lệ dòng"
+    sources: [s6]
+    verdict: verified
+
+# ---------------------------------------------------------------------------
+
+lost_claims: []
+# Không claim nào bị bỏ vì mất nguồn. Cả 16 nguồn cũ đều dựng lại được nguồn
+# bậc 1–2 tương đương (12 nguồn bậc 1–2 trên tổng 14), nên toàn bộ văn xuôi
+# đứng vững về mặt dẫn nguồn.
+
+still_excluded:
+  - "Điện tích phân số của quark — vẫn không có nguồn bậc 1–2. Giữ ngoài bài."
+  - "Định luật bảo toàn điện tích, tốc độ trôi electron — giữ nguyên quyết định cũ."
+
+findings_summary:
+  S1: 0
+  S2: 1   # nguồn tự mâu thuẫn, bài đã tránh — không phải lỗi của bài
+  S3: 1   # mốc "tháng 9/2026" gắn vào phát biểu không có ngày
+  S4: 2   # "mang ... volt"; nguồn bậc 3 cho chiều quy ước (đã nêu tên nguồn)
+
+# Không phải phát hiện fact-check, nhưng chặn xuất bản nên ghi ở đây để bước 4
+# không phải tự tìm ra:
+blocking_non_factual:
+  - >
+    ĐỘ DÀI. Văn xuôi hiện 1.016 từ. docs/content-rules.md chốt 400–600 từ
+    (2–3 phút) ngày 2026-09-06, và check-publish.ts KHÔNG miễn trần cho bản
+    nháp — miễn trừ chỉ neo vào `publishedAt` của bài đã publish. Bài phải rút
+    còn ≤600 từ trước khi qua gate. Rút gọn không được đụng: con số đã đối
+    chiếu, mức độ dè dặt, tối thiểu 3 link nội bộ, khối dẫn nguồn.
+
+recommendation: pass
+# `pass` chứ không `revise`: hai việc phải làm (bỏ mốc "tháng 9/2026", đổi
+# "mang" → "vào khoảng") là sửa câu chữ ở mức S3/S4, không có claim nào phải bỏ
+# và không có nguồn nào phải tìm lại. Bảng nguồn đủ điều kiện cho bước 3/4.
+
+# ===========================================================================
+# BƯỚC 4 — science-editor. Đọc thẳng nguồn, không đối chiếu bản thảo với chính
+# bản thảo (docs/content-rules.md: "gate accuracy phải fetch nguồn gốc").
+# ===========================================================================
+
+editor_pass:
+  reviewed_at: 2026-09-06
+  verdict: approve-with-fixes-applied
+  rounds_used: 1   # trần là 2
+
+  findings:
+    - id: E1
+      severity: S2
+      where: "mục Ampere, câu định nghĩa cũ"
+      finding: >
+        LỖI DO CHÍNH LƯỢT RÚT GỌN NÀY SINH RA, không có trong bản nháp gốc.
+        Khi nén câu định nghĩa cũ, bản rút gọn viết hai dây "HÚT NHAU bằng
+        2 × 10⁻⁷ newton trên mỗi mét". Nguồn NIST chỉ nói "would produce
+        between these conductors a force" — không nói chiều lực. Hai dây song
+        song hút nhau khi dòng cùng chiều và ĐẨY nhau khi ngược chiều, mà định
+        nghĩa cũ không quy định chiều dòng. "Hút nhau" vì thế là một claim vật
+        lý được thêm vào, sai trong một nửa trường hợp.
+      action: 'Sửa thành "sinh giữa chúng \"một lực bằng 2 × 10⁻⁷ newton trên mỗi mét chiều dài\"". ĐÃ SỬA.'
+      lesson: >
+        Đúng loại lỗi mà docs/content-rules.md cảnh báo ở mục "Rút gọn KHÔNG
+        được đụng vào": câu ngắn hơn nghe dứt khoát hơn, và sự dứt khoát đó
+        không có trong nguồn. Rút gọn phải đi qua gate accuracy lần nữa, không
+        được coi là thao tác biên tập thuần hình thức.
+
+    - id: E2
+      severity: S3
+      where: "mục Ampere, câu cân Kibble"
+      finding: >
+        Bài nói khối lượng suy ra từ "dòng và hiệu điện thế", nhưng đoạn nguồn
+        s6 ghi ở bước 1 chỉ nói tới dòng. Vế điện áp khi đó là dưới mức dẫn nguồn.
+      action: >
+        Mở lại trang NIST và lấy thêm hai đoạn: "The resulting induced voltage
+        is measured" và "solving for mass, m = IV/gν". Vế điện áp có nguồn.
+        Bảng nguồn đã cập nhật. Câu trong bài GIỮ NGUYÊN.
+
+    - id: E3
+      severity: null
+      where: "lede"
+      finding: >
+        Đối chiếu kho với chính nó theo docs/content-rules.md ("kho tự mâu
+        thuẫn là máy dò lỗi rẻ nhất"): bài `tu-truong-va-luc-hap-dan` đã
+        publish ghi trong bảng so sánh "Nguồn sinh ra: Điện tích **đang chuyển
+        động**" và "nếu các điện tích bên trong không chuyển động thành dòng,
+        sẽ không sinh ra từ trường nào cả". Khớp hoàn toàn với lede bài này.
+        Không có mâu thuẫn nội kho.
+
+  # Những gì bị CẮT ở lượt này, và vì sao. Ghi lại để lần refresh sau không
+  # tưởng đây là thiếu sót cần "bổ sung lại cho đủ".
+  cut_for_length_not_sourcing:
+    - claim: "Vận chuyển đơn electron (SET) — bất định vài phần trăm triệu, 100 thiết bị chỉ cho cỡ nanoampere"
+      source: s5
+      reason: >
+        Còn nguồn, còn đúng. Cắt vì trần 600 từ, và vì đây là hiện trạng R&D
+        đo lường — thuộc bài về ampere hoặc về chuẩn đo, không thuộc mục từ
+        định nghĩa điện tích. s5 vì thế KHÔNG nằm trong bảng Source của bài.
+    - claim: "Dòng cảm ứng địa từ trong lưới điện; 13/3/1989 mất điện chín giờ ở Canada"
+      source: s10
+      reason: >
+        Còn nguồn, còn đúng. Cắt vì trần độ dài; thuộc bài về thời tiết không
+        gian. s10 KHÔNG nằm trong bảng Source của bài.
+    - claim: "Cơ chế tách điện tích trong mây dông (chuyển động không khí, va chạm hạt giáng thuỷ)"
+      source: s8
+      reason: "Cắt vì trần độ dài. Thuộc bài về sét. s8 KHÔNG nằm trong bảng Source."
+    - claim: "Một ampere ≈ 6 × 10¹⁸ electron mỗi giây"
+      source: s3
+      reason: >
+        Trùng thông tin với con số 6,241 × 10¹⁸ điện tích mỗi coulomb đã nêu ở
+        mục trên — đúng loại "đoạn nhắc lại điều đã nói" mà content-rules bảo
+        cắt trước. s3 KHÔNG nằm trong bảng Source.
+
+  # Nguyên tắc: bảng Source của bài chỉ chứa nguồn mà văn xuôi CÒN dùng. Dẫn
+  # nguồn cho câu đã bị cắt là provenance sai — trang bài sẽ liệt kê nguồn cho
+  # những claim người đọc không tìm thấy ở đâu trong bài.
+  sources_cited_in_final_prose: [s1, s2, s4, s6, s7, s9, s11, s12, s13, s14]
+  strong_tier_in_final_prose: 8   # s1,s2,s4,s6,s7,s9,s11 (bậc 2) + s13 (bậc 1); ngưỡng 3
+
+  final_length:
+    words: 588
+    reading_time_min: 3
+    band: "400–600 từ — đạt"
+    internal_links_out: 5

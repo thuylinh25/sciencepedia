@@ -1,0 +1,302 @@
+# Bảng nguồn — cau-truc-ben-trong-trai-dat (bước 1: content-research)
+#
+# Chủ đề #7 của docs/content/topic-queue.md. Lập 2026-09-06.
+#
+# Mọi đoạn `passages` dưới đây được ĐỌC THẬT từ URL ghi kèm trong lượt này,
+# không nhớ lại. USGS và AMNH trả 403 cho WebFetch nên phải lấy bằng curl +
+# bóc thẻ HTML; hai bản curl đó là chỗ các đoạn trích này ra.
+#
+# Một URL là một nguồn. NASA và USGS cùng mô tả bốn lớp nhưng cho những con
+# số hơi khác nhau, nên đây là HAI nguồn độc lập đối chiếu được với nhau,
+# không phải một nguồn đếm hai lần.
+
+topic: Cấu trúc bên trong Trái Đất
+slug: cau-truc-ben-trong-trai-dat
+entity_type: OBJECT
+# SỬA ở bước 2 (finding F1): Q3712 KHÔNG resolve — đó là một QID đoán.
+# Tra wbsearchentities thật ngày 2026-09-06 ra Q1664027, nhãn en "internal
+# structure of Earth", nhãn vi "Cấu trúc Trái Đất".
+wikidata_qid: Q1664027
+accessed: 2026-09-06
+sufficient: true
+
+sources:
+  - id: s1
+    tier: 2
+    title: "Inside the Earth — This Dynamic Earth: The Story of Plate Tectonics"
+    publisher: U.S. Geological Survey (USGS)
+    url: https://pubs.usgs.gov/gip/dynamic/inside.html
+    accessed: 2026-09-06
+    passages:
+      - "The size of the Earth -- about 12,750 kilometers (km) in diameter-was known by the ancient Greeks, but it was not until the turn of the 20th century that scientists determined that our planet is made up of three main layers: crust, mantle, and core."
+      - "Beneath the oceans, the crust varies little in thickness, generally extending only to about 5 km. The thickness of the crust beneath continents is much more variable but averages about 30 km; under large mountain ranges, such as the Alps or the Sierra Nevada, however, the base of the crust can be as deep as 100 km."
+      - "Below the crust is the mantle, a dense, hot layer of semi-solid rock approximately 2,900 km thick."
+      - "At the center of the Earth lies the core, which is nearly twice as dense as the mantle because its composition is metallic (iron-nickel alloy) rather than stony."
+      - "the Earth's core is actually made up of two distinct parts: a 2,200 km-thick liquid outer core and a 1,250 km-thick solid inner core."
+      - "As the Earth rotates, the liquid outer core spins, creating the Earth's magnetic field."
+      - "The upper part of the mantle is cooler and more rigid than the deep mantle; in many ways, it behaves like the overlying crust. Together they form a rigid layer of rock called the lithosphere"
+      - "Averaging at least 80 km in thickness over much of the Earth, the lithosphere has been broken up into the moving plates that contain the world's continents and oceans."
+
+  - id: s2
+    tier: 2
+    title: "The Interior of the Earth (General Interest Publication)"
+    publisher: "U.S. Geological Survey (USGS) — Eugene C. Robertson"
+    url: https://pubs.usgs.gov/gip/interior/index.html
+    accessed: 2026-09-06
+    passages:
+      - "Our current information comes from studies of the paths and characteristics of earthquake waves travelling through the Earth, as well as from laboratory experiments on surface minerals and rocks at high pressure and temperature."
+      - "Although the core and mantle are about equal in thickness, the core actually forms only 15 percent of the Earth's volume, whereas the mantle occupies 84 percent. The crust makes up the remaining 1 percent."
+      - "The boundary between the crust and mantle is called the Mohorovicic discontinuity (or Moho); it is named in honor of the man who discovered it, the Croatian scientist Andrija Mohorovicic. No one has ever seen this boundary, but it can be detected by a sharp increase downward in the speed of earthquake waves there."
+      - "Drill holes to penetrate the Moho have been proposed, and a Soviet hole on the Kola Peninsula has been drilled to a depth of 12 kilometers, but drilling expense increases enormously with depth, and Moho penetration is not likely very soon."
+      - "The plates include the crust and part of the upper mantle, and they move over a hot, yielding upper mantle zone at very slow rates of a few centimeters per year, slower than the rate at which fingernails grow."
+      - "Between 100 and 200 kilometers below the Earth's surface, the temperature of the rock is near the melting point; molten rock erupted by some volcanoes originates in this region of the mantle."
+      - "Going from mantle to core, there is a marked decrease (about 30 percent) in earthquake wave velocity and a marked increase (about 30 percent) in density."
+      - "The core was the first internal structural element to be identified. It was discovered in 1906 by R.D. Oldham, from his study of earthquake records, and it helped to explain Newton's calculation of the Earth's density."
+      - "The outer core is presumed to be liquid because it does not transmit shear (S) waves and because the velocity of compressional (P) waves that pass through it is sharply reduced. The inner core is considered to be solid because of the behavior of P and S waves passing through it."
+      - "S waves do not travel through the core but may be converted to compressional waves (marked K) on entering the core (PKP, SKS)."
+      - "The core is presumed to be composed principally of iron, with about 10 percent alloy of oxygen or sulfur or nickel, or perhaps some combination of these three elements."
+      - "Three centuries ago, the English scientist Isaac Newton calculated, from his studies of planets and the force of gravity, that the average density of the Earth is twice that of surface rocks and therefore that the Earth's interior must be composed of much denser material."
+
+  - id: s3
+    tier: 2
+    title: "Seismic Shadow Zones: S wave shadow zone"
+    publisher: "IRIS / EarthScope Consortium (cơ sở hạ tầng địa chấn học do NSF tài trợ)"
+    url: https://www.iris.edu/hq/inclass/animation/seismic_shadow_zones_s_wave_shadow_zone
+    accessed: 2026-09-06
+    passages:
+      - "A seismic shadow zone is an area of the Earth's surface where seismographs cannot detect an earthquake after its seismic waves have passed through the Earth."
+      - "S waves don't appear beyond an angular distance of ~103°"
+      - "S waves are stopped by the liquid outer core"
+      - "S waves radiate spherically away from an earthquake in all directions"
+
+  - id: s4
+    tier: 2
+    title: "Seismic Shadow Zones: P wave"
+    publisher: IRIS / EarthScope Consortium
+    url: https://www.iris.edu/hq/inclass/animation/seismic_shadow_zones_p_wave
+    accessed: 2026-09-06
+    passages:
+      - "P waves are compressive body waves that travel through solids and fluids"
+      - "P waves are the fastest seismic waves"
+      - "P waves are refracted at the mantle-outer core boundary"
+      - "Phase changes yield information about the unseen interior of the Earth"
+    caveat: >
+      Trang này KHÔNG tự nêu góc của vùng tối P. Con số "104 đến 140 độ" chỉ
+      xuất hiện trong đoạn giới thiệu chéo ở trang s3, và một kết quả tìm kiếm
+      khác lại ghi 103–142. Ba con số khác nhau cho cùng một đại lượng, nên
+      góc của vùng tối P KHÔNG được dùng trong bài. Chỉ dùng ~103° của sóng S,
+      vì đó là keypoint trên chính trang nói về nó.
+
+  - id: s5
+    tier: 2
+    title: "Layers of the Earth"
+    publisher: IRIS / EarthScope Consortium
+    url: https://www.iris.edu/hq/inclass/animation/layers_of_the_earth
+    accessed: 2026-09-06
+    passages:
+      - "Earth's interior is broadly grouped into three main layers on the basis of chemical composition: crust, mantle, and core."
+      - "Layers are defined by composition"
+      - "Each layer has physical variations due to temperature and pressure"
+      - "The crust is only the upper part of the tectonic (lithospheric) plate."
+      - "Layers were deduced by Sir Isaac Newton (1700) to Inge Lehmann (1937)"
+    note: >
+      Câu cuối chỉ ghi lại để đối chiếu lịch sử, KHÔNG dùng trong bài: xem
+      open_questions về năm của Lehmann.
+
+  - id: s6
+    tier: 2
+    title: "Earth's Magnetosphere: Protecting Our Planet from Harmful Space Energy"
+    publisher: NASA Science
+    url: https://science.nasa.gov/science-research/earth-science/earths-magnetosphere-protecting-our-planet-from-harmful-space-energy/
+    accessed: 2026-09-06
+    passages:
+      - "The crust, where we live, which is about 19 miles (31 kilometers) deep on average on land and about 3 miles (5 kilometers) deep at the ocean bottom."
+      - "The mantle, a hot, viscous mix of molten rock about 1,800 miles (2,900 kilometers) thick."
+      - "The outer core, about 1,400 miles (2,250 kilometers) thick and composed of molten iron and nickel."
+      - "The inner core, a roughly 759-mile-thick (1,221-kilometer-thick) solid sphere of iron and nickel metals about as hot as the Sun's surface."
+      - "Nearly all of Earth's geomagnetic field originates in the fluid outer core."
+      - "Like boiling water on a stove, convective forces (which move heat from one place to another, usually through air or water) constantly churn the molten metals, which also swirl in whirlpools driven by Earth's rotation. As this roiling mass of metal moves around, it generates electrical currents hundreds of miles wide and flowing at thousands of miles per hour as Earth rotates. This mechanism, which is responsible for maintaining Earth's magnetic field, is known as the geodynamo."
+      - "convection currents of fluid metal in Earth's outer core, driven by heat flow from the inner core, organized into rolls by the Coriolis force, create circulating electric currents, which generate the magnetic field"
+    note: >
+      NASA gọi "1,221-kilometer-thick" cho lõi trong, nhưng lõi trong là một
+      QUẢ CẦU nên 1.221 km là BÁN KÍNH của nó, không phải "độ dày" của một
+      lớp vỏ. Bài phải viết "bán kính", không chép chữ "thick".
+
+  - id: s7
+    tier: 1
+    title: "Melting of Iron at Earth's Inner Core Boundary Based on Fast X-ray Diffraction"
+    publisher: "S. Anzellini, A. Dewaele, M. Mezouar, P. Loubeyre, G. Morard — Science 340(6131), 464–466"
+    year: 2013
+    doi: 10.1126/science.1233514
+    url: https://doi.org/10.1126/science.1233514
+    accessed: 2026-09-06
+    passages:
+      - "Earth's core is structured in a solid inner core, mainly composed of iron, and a liquid outer core."
+      - "The temperature at the inner core boundary is expected to be close to the melting point of iron at 330 gigapascal (GPa)."
+      - "Despite intensive experimental and theoretical efforts, there is little consensus on the melting behavior of iron at these extreme pressures and temperatures."
+      - "We present static laser-heated diamond anvil cell experiments up to 200 GPa using synchrotron-based fast x-ray diffraction as a primary melting diagnostic."
+      - "When extrapolating to higher pressures, we conclude that the melting temperature of iron at the inner core boundary is 6230 ± 500 kelvin."
+    note: >
+      Toàn văn abstract lấy từ Europe PMC (REST API, DOI khớp). DOI đối chiếu
+      Crossref: khớp tiêu đề, tạp chí, tập 340, trang 464-466, năm 2013.
+      https://doi.org/... trả 403 với bot (Cloudflare của science.org) — link
+      chết với máy, không chết với người.
+    caveat: >
+      Mức dè dặt PHẢI giữ nguyên. Con số 6230 ± 500 K là kết quả NGOẠI SUY từ
+      thí nghiệm tới 200 GPa lên 330 GPa, không phải đo trực tiếp ở 330 GPa,
+      và chính bài báo nói "there is little consensus". Bài phải nói cả hai
+      điều đó, không được rút thành "lõi trong nóng 6.230 K".
+
+  - id: s8
+    tier: 1
+    title: "Preliminary reference Earth model"
+    publisher: "A. M. Dziewonski và D. L. Anderson, Physics of the Earth and Planetary Interiors 25(4), 297–356"
+    year: 1981
+    doi: 10.1016/0031-9201(81)90046-7
+    url: https://doi.org/10.1016/0031-9201(81)90046-7
+    accessed: 2026-09-06
+    passages:
+      - "(dùng ở mức tiêu đề, năm và vai trò: mô hình quy chiếu một chiều cho cấu trúc Trái Đất theo độ sâu, dựng từ chu kỳ dao động riêng và thời gian truyền sóng)"
+    caveat: >
+      CHỈ dùng ở mức tiêu đề/năm/vai trò, đúng cách bảng nguồn
+      dien-tich-va-dong-dien ràng buộc Hodgkin & Huxley 1952. Bảng bán kính
+      từng lớp của PREM KHÔNG lấy được trong lượt này: bản PDF ở
+      lweb.cfa.harvard.edu tải được nhưng runner không có pdftotext hay pypdf,
+      và ds.iris.edu/files/products/emc/emc-files/PREM_1s.csv trả 504. Nên mọi
+      con số độ sâu trong bài quy về s1 và s6, KHÔNG quy về PREM.
+    doi_verified: "Crossref 2026-09-06 — khớp tác giả, tạp chí, tập 25, trang 297-356, 1981/06"
+
+# Đếm điều kiện gate: 8 nguồn, cả 8 đều bậc 1–2 (2 bậc 1: s7, s8). Ngưỡng là 3.
+strong_tier_count: 8
+
+key_facts:
+  - claim: "Trái Đất gồm ba lớp chính chia theo thành phần hoá học: vỏ, manti, lõi"
+    sources: [s1, s5]
+    confidence: high
+  - claim: "Cấu trúc ba lớp chỉ được xác lập vào khoảng đầu thế kỷ 20, dù đường kính Trái Đất (~12.750 km) đã biết từ thời Hy Lạp cổ"
+    sources: [s1]
+    confidence: high
+  - claim: "Vỏ đại dương dày khoảng 5 km; vỏ lục địa trung bình khoảng 30 km, dưới các dãy núi lớn có thể sâu tới 100 km"
+    sources: [s1]
+    confidence: high
+    cross_check: "NASA (s6) nói ~31 km trên đất liền, ~5 km ở đáy biển — khớp"
+  - claim: "Manti dày khoảng 2.900 km"
+    sources: [s1, s6]
+    confidence: high
+  - claim: "Lõi ngoài lỏng dày khoảng 2.250 km; lõi trong đặc có bán kính khoảng 1.221 km"
+    sources: [s6]
+    confidence: high
+    cross_check: >
+      1.221 + 2.250 + 2.900 = 6.371 km, đúng bán kính trung bình Trái Đất —
+      ba con số của NASA tự khép kín. USGS (s1) ghi 2.200 km và 1.250 km, tức
+      cùng tổng ở mức làm tròn thô hơn. Bài dùng bộ số NASA và nói rõ là của
+      NASA; xem conflicts.
+  - claim: "Vỏ chiếm 1% thể tích Trái Đất, manti 84%, lõi 15%"
+    sources: [s2]
+    confidence: high
+    cross_check: "1 + 84 + 15 = 100 — khớp"
+  - claim: "Hiểu biết về bên trong Trái Đất đến từ đường đi và đặc tính của sóng địa chấn, cộng thí nghiệm đá ở áp suất và nhiệt độ cao"
+    sources: [s2]
+    confidence: high
+  - claim: "Lỗ khoan Kola (Liên Xô) sâu 12 km và vẫn chưa xuyên qua Moho"
+    sources: [s2]
+    confidence: high
+    cross_check: "12 / 6.371 = 0,188% bán kính — con số tự tính, ghi rõ là phép tính của bài"
+  - claim: "Ranh giới vỏ–manti là mặt gián đoạn Mohorovičić (Moho), nhận ra nhờ tốc độ sóng địa chấn tăng vọt khi đi xuống; chưa ai từng nhìn thấy nó"
+    sources: [s2]
+    confidence: high
+  - claim: "Sóng P là sóng nén, truyền qua cả chất rắn và chất lưu, và là sóng địa chấn nhanh nhất"
+    sources: [s4]
+    confidence: high
+  - claim: "Sóng S không xuất hiện quá khoảng cách góc ~103°, vì bị lõi ngoài lỏng chặn lại"
+    sources: [s3]
+    confidence: high
+  - claim: "Lõi ngoài được cho là lỏng vì nó không truyền sóng S và vì tốc độ sóng P qua nó giảm mạnh; lõi trong được cho là đặc căn cứ vào hành vi của sóng P và S đi qua nó"
+    sources: [s2]
+    confidence: high
+    note: "Giữ đúng chữ 'được cho là' (presumed/considered) — đây là suy luận từ sóng, không phải quan sát trực tiếp."
+  - claim: "Đi từ manti sang lõi, tốc độ sóng địa chấn giảm khoảng 30% và mật độ tăng khoảng 30%"
+    sources: [s2]
+    confidence: high
+  - claim: "Lõi được phát hiện năm 1906 bởi R. D. Oldham từ nghiên cứu bản ghi địa chấn"
+    sources: [s2]
+    confidence: high
+  - claim: "Newton tính ra mật độ trung bình của Trái Đất gấp đôi mật độ đá bề mặt, nên bên trong phải là vật chất đặc hơn nhiều"
+    sources: [s2]
+    confidence: high
+  - claim: "Lõi có thành phần kim loại (hợp kim sắt–niken), đặc gần gấp đôi manti"
+    sources: [s1]
+    confidence: high
+  - claim: "Lõi được cho là chủ yếu là sắt, kèm khoảng 10% hợp kim của oxy, lưu huỳnh hoặc niken, hoặc kết hợp cả ba"
+    sources: [s2]
+    confidence: high
+  - claim: "Gần như toàn bộ từ trường Trái Đất sinh ra trong lõi ngoài chất lưu; đối lưu kim loại nóng chảy, được lực Coriolis tổ chức thành các cuộn, sinh dòng điện và duy trì từ trường — cơ chế gọi là geodynamo"
+    sources: [s6]
+    confidence: high
+    cross_check: >
+      Kho tự đối chiếu: `trai-dat` viết 'Lõi sắt lỏng chuyển động tạo ra hiệu
+      ứng dynamo' và `tu-truong-va-luc-hap-dan` viết 'lõi chất lưu dẫn điện
+      của chúng vẫn đang chuyển động không ngừng, duy trì một máy phát tự
+      nhiên gọi là dynamo'. Cả hai khớp NASA. Không có mâu thuẫn trong kho.
+  - claim: "Nhiệt độ ở ranh giới lõi trong được KỲ VỌNG gần điểm nóng chảy của sắt ở 330 GPa; ngoại suy từ thí nghiệm tới 200 GPa cho 6230 ± 500 K, và giới nghiên cứu 'có rất ít đồng thuận' về hành vi nóng chảy của sắt ở áp suất đó"
+    sources: [s7]
+    confidence: medium
+    note: "Confidence medium là do chính nguồn dè dặt, không do nguồn yếu. Đây là bậc 1."
+  - claim: "Vỏ chỉ là phần TRÊN của mảng kiến tạo; mảng gồm cả vỏ và một phần manti trên, và vỏ + manti trên cùng tạo thành thạch quyển"
+    sources: [s1, s2, s5]
+    confidence: high
+    note: >
+      IRIS gọi thẳng đây là 'a distinction confused by many'. Bài `trai-dat`
+      đã publish viết 'Lớp vỏ chia thành các mảng trượt trên lớp phủ' — cách
+      nói lỏng đúng cái chỗ này. Bài mới nêu phân biệt cho đúng; KHÔNG sửa
+      claim của bài cũ trong lượt này (đó là việc của refresh queue, và nó
+      cần đi đường đính chính).
+  - claim: "Thạch quyển dày trung bình ít nhất 80 km trên phần lớn Trái Đất và đã bị vỡ thành các mảng chuyển động"
+    sources: [s1]
+    confidence: high
+  - claim: "Mảng kiến tạo di chuyển vài centimet mỗi năm, chậm hơn tốc độ móng tay dài ra"
+    sources: [s2]
+    confidence: high
+
+conflicts:
+  - >
+    Độ dày lõi: USGS (s1) ghi lõi ngoài 2.200 km và lõi trong 1.250 km; NASA
+    (s6) ghi 2.250 km và 1.221 km. Xử lý: dùng bộ NASA vì nó khép kín đúng
+    6.371 km và khớp bán kính lõi trong quen dùng trong tài liệu địa chấn,
+    và NÊU RÕ đó là số của NASA. Không trộn hai bộ trong cùng một câu, không
+    lấy trung bình.
+  - >
+    Thành phần lõi: s1 nói "hợp kim sắt–niken"; s2 nói "chủ yếu là sắt, kèm
+    khoảng 10% hợp kim của oxy hoặc lưu huỳnh hoặc niken". Xử lý: bài dùng
+    phát biểu chi tiết hơn của s2 và giữ chữ "được cho là", vì s1 là bản
+    giản lược cho người đọc phổ thông của cùng cơ quan.
+  - >
+    Góc vùng tối sóng P: ba con số khác nhau (103–140, 104–140, 103–142) trong
+    ba chỗ. Xử lý: KHÔNG dùng góc vùng tối P trong bài. Chỉ dùng ~103° của
+    sóng S — keypoint trên chính trang chuyên về nó (s3).
+
+open_questions:
+  - >
+    Năm Inge Lehmann phát hiện lõi trong: bài báo "P'" của bà thường được ghi
+    là 1936, còn IRIS (s5) ghi "Inge Lehmann (1937)". Không lấy được nguồn
+    bậc 1–2 nào phát biểu dứt khoát trong lượt này (aps.org và amnh.org đều
+    trả 403/CAPTCHA). Xử lý: KHÔNG nêu Lehmann kèm năm trong bài. Ai muốn
+    thêm thì phải dựng nguồn trước.
+  - >
+    ĐÃ ĐÓNG ở bước 2 (F1). QID là Q1664027, đã tra Wikidata thật. Trái Đất là
+    Q2 và đã dùng cho entity `trai-dat`, nên không dùng lại — hai entity khác
+    nhau: một là hành tinh, một là cấu trúc bên trong nó.
+  - >
+    Bảng bán kính chi tiết của PREM (Moho, 2891 km, 5150 km): không lấy được
+    trong lượt này (xem caveat của s8). Bài không phát biểu con số nào quy về
+    PREM.
+  - >
+    Tốc độ sóng P và S theo đơn vị km/s ở từng lớp: không lấy được từ nguồn
+    bậc 1–2 trong lượt này. Bài chỉ nói tương đối ("nhanh nhất", "giảm
+    khoảng 30%"), không nêu con số tuyệt đối.
+  - >
+    Sự tự quay lệch (super-rotation) của lõi trong và tranh luận 2023 về việc
+    nó chậm lại: chủ đề còn tranh chấp, và 600 từ không đủ để trình bày tử tế.
+    Để dành cho một bài riêng.
+
+gaps: []

@@ -1,0 +1,167 @@
+# cau-truc-ben-trong-trai-dat — hồ sơ pipeline
+#
+# Chủ đề #7 của docs/content/topic-queue.md ("Cấu trúc bên trong Trái Đất",
+# lĩnh vực Trái Đất và Khí hậu, entity type Object, không phụ thuộc dòng nào).
+#
+#   bước 1  docs/content/research/cau-truc-ben-trong-trai-dat.yaml   8 nguồn, 8 bậc 1–2
+#   bước 2  docs/content/checks/cau-truc-ben-trong-trai-dat.yaml     verdict pass, 6 phát hiện S3
+#   bước 3  docs/content/drafts/cau-truc-ben-trong-trai-dat.md       649 → 591 từ
+#   bước 4  editor_pass trong file checks: approve, 1 vòng sửa, bắt 1 lỗi S2
+#   bước 5  entity `cau-truc-ben-trong-trai-dat` (OBJECT, Q1664027) + 5 cạnh có kiểu
+#   bước 6  metadata + JSON-LD + 5 link nội bộ ra
+#   bước 7  danh mục chính `dia-chat` (đã tồn tại, dưới `trai-dat-va-khi-hau`)
+#   bước 8  ảnh bìa Wikimedia Commons, giấy phép đã kiểm
+#   bước 9  bản en: docs/content/drafts/cau-truc-ben-trong-trai-dat.en.md
+#   bước 10 ghi CSDL qua Prisma, trạng thái DRAFT
+#   bước 11 publish:check → publish
+
+slug: cau-truc-ben-trong-trai-dat
+entity: cau-truc-ben-trong-trai-dat   # OBJECT, Wikidata Q1664027
+category: dia-chat
+prose_words: 591              # trần 400–600 từ, chốt 2026-09-06
+reading_time_min: 3
+strong_sources: 8             # ngưỡng là 3
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Claim map — mỗi câu mang sự kiện trỏ về id nguồn trong file research
+# ─────────────────────────────────────────────────────────────────────────────
+claim_map:
+  - sentence: "Theo thành phần hoá học, Trái Đất có ba lớp (vỏ, manti, lõi), và lõi chia thành lõi ngoài lỏng với lõi trong đặc"
+    sources: [s1, s2, s5]
+    note: >
+      Phát biểu theo TIÊU CHÍ, không theo số lớp. s1/s5 nói ba lớp theo thành
+      phần; s2 thêm rằng manti và lõi mỗi cái chia hai; s6 gọi là bốn lớp. Nêu
+      tiêu chí thì đúng với cả ba. Xem editor_pass.findings.E2.
+  - sentence: "Chỉ lớp vỏ là chạm tới được; mọi thứ bên dưới suy ra từ sóng địa chấn và thí nghiệm nén đá"
+    sources: [s2]
+    note: >
+      s2: "Because the crust is accessible to us…" và "Our current information
+      comes from studies of the paths and characteristics of earthquake waves
+      … as well as from laboratory experiments on surface minerals and rocks
+      at high pressure and temperature." Đây là câu THAY THẾ cho lỗi S2 E1.
+  - sentence: "Một lỗ khoan của Liên Xô ở bán đảo Kola đạt 12 km và vẫn chưa xuyên qua ranh giới vỏ–manti"
+    sources: [s2]
+  - sentence: "12 km là 0,19% đường từ mặt đất xuống tâm, so với đường kính chừng 12.750 km USGS nêu"
+    sources: [s1, s2]
+    cross_check: "12 / (12.750/2) = 0,188% → 0,19%. Tử và mẫu đều nêu trong câu."
+  - sentence: "Newton tính mật độ trung bình Trái Đất gấp đôi mật độ đá bề mặt, nên bên trong phải đặc hơn nhiều"
+    sources: [s2]
+    cross_check: "5,513 / 2,7 = 2,04 — 'gấp đôi' đứng vững"
+  - sentence: "Sóng P là sóng nén, truyền qua cả chất rắn lẫn chất lưu, và là sóng địa chấn nhanh nhất; sóng S là sóng cắt"
+    sources: [s4, s3]
+  - sentence: "Ranh giới vỏ–manti là mặt gián đoạn Mohorovičić; chưa ai từng nhìn thấy nó, nó chỉ được nhận ra nhờ tốc độ sóng tăng vọt khi đi xuống"
+    sources: [s2]
+    note: "Câu 'chưa ai nhìn thấy' của USGS thuộc về MẶT MOHO, và bài chỉ dùng nó ở đúng chỗ đó."
+  - sentence: "Sóng S không xuất hiện quá khoảng cách góc chừng 103° tính từ tâm chấn, vì bị lõi ngoài lỏng chặn lại"
+    sources: [s3]
+    note: "Cả hai nửa đều là keypoint của s3. Góc vùng bóng sóng P bị loại — xem F5."
+  - sentence: "Vận tốc sóng P qua lõi ngoài giảm mạnh; USGS viết lõi ngoài được cho là lỏng, lõi trong được cho là đặc căn cứ hành vi của cả sóng P và S đi qua nó"
+    sources: [s2]
+    note: >
+      Hai căn cứ tách riêng, đúng như s2 phát biểu — xem E4. Giữ nguyên
+      "được cho là" (presumed / considered).
+  - sentence: "NASA: vỏ ~31 km trên đất liền, ~5 km ở đáy biển; manti ~2.900 km; lõi ngoài lỏng ~2.250 km; lõi trong đặc bán kính ~1.221 km"
+    sources: [s6]
+    note: "Viết 'bán kính' cho lõi trong, không chép chữ 'thick' của nguồn — xem F3."
+  - sentence: "Ba con số cuối cộng lại đúng 6.371 km — bán kính trung bình của hành tinh"
+    sources: [s6]
+    cross_check: "2.900 + 2.250 + 1.221 = 6.371"
+    note: >
+      Xem uncertainty_report: 6.371 km là hằng số quy ước, không nguồn nào
+      trong bảng phát biểu nó thành câu. Phép cộng thì ai cũng kiểm lại được.
+  - sentence: "Lõi là kim loại, đặc gần gấp đôi manti"
+    sources: [s1]
+    cross_check: "≈ 10,9 / 4,5 = 2,42 — con số thật lớn hơn 'gần gấp đôi', nên giữ nguyên chữ của USGS"
+  - sentence: "USGS cho rằng lõi chủ yếu là sắt, kèm chừng 10% hợp kim của oxy, lưu huỳnh hoặc niken, hoặc kết hợp cả ba"
+    sources: [s2]
+    note: >
+      Dùng phát biểu chi tiết của s2 thay vì "hợp kim sắt–niken" giản lược của
+      s1, và giữ "cho rằng" cho chữ "presumed".
+  - sentence: "Nhiệt độ ở ranh giới lõi trong chỉ được kỳ vọng gần điểm nóng chảy của sắt ở 330 GPa"
+    sources: [s7]
+  - sentence: "Anzellini và cộng sự (2013) nén sắt tới 200 GPa rồi ngoại suy, kết luận điểm nóng chảy đó là 6.230 ± 500 K"
+    sources: [s7]
+    note: >
+      Ba mệnh đề dè dặt bắt buộc đều còn: đây là điểm nóng chảy của SẮT (không
+      phải nhiệt độ đo được của lõi), con số là NGOẠI SUY từ 200 lên 330 GPa,
+      và sai số ± 500 K. Xem F7.
+  - sentence: "NASA ví lõi trong nóng ngang bề mặt Mặt Trời"
+    sources: [s6]
+    note: "Phép ví quy về NASA, không để bài tự đứng ra bảo đảm — xem E6."
+  - sentence: "Anzellini và cộng sự ghi rằng hiện có rất ít đồng thuận về hành vi nóng chảy của sắt ở áp suất đó"
+    sources: [s7]
+  - sentence: "Mảng kiến tạo gồm cả vỏ và một phần manti trên; vỏ chỉ là phần trên cùng của mảng"
+    sources: [s2, s5]
+  - sentence: "Vỏ cộng manti trên hợp thành thạch quyển, dày trung bình ít nhất 80 km trên phần lớn hành tinh, và chính thạch quyển vỡ thành các mảng"
+    sources: [s1]
+  - sentence: "Gần như toàn bộ từ trường Trái Đất sinh ra trong lõi ngoài"
+    sources: [s6]
+  - sentence: "Kim loại nóng chảy đối lưu, bị lực Coriolis tổ chức thành cuộn xoáy, dòng điện chạy theo sinh ra từ trường — cơ chế NASA gọi là geodynamo"
+    sources: [s6, "nội-bộ:dien-tich-va-dong-dien", "nội-bộ:tu-truong-va-luc-hap-dan"]
+
+# Còn nguồn, còn đúng, nhưng đã CẮT vì trần 600 từ. KHÔNG phải thiếu sót cần
+# bổ sung lại.
+cut_for_length:
+  - "Vỏ lục địa trung bình 30 km, dưới Alps hay Sierra Nevada sâu tới 100 km (s1) — trùng thông tin với con số ~31 km của NASA đã nêu."
+  - "Mảng kiến tạo di chuyển vài cm mỗi năm, chậm hơn móng tay dài ra (s2) — thuộc bài #16 kiến tạo mảng."
+  - "Từ mantle sang lõi, vận tốc sóng giảm ~30% và mật độ tăng ~30% (s2) — thuộc bài về sóng địa chấn."
+  - "Vùng 100–200 km dưới mặt đất có nhiệt độ gần điểm nóng chảy, là nơi magma của một số núi lửa sinh ra (s2) — thuộc bài về núi lửa."
+  - "Lõi được phát hiện năm 1906 bởi R. D. Oldham (s2) — thuộc một bài về lịch sử địa chấn học."
+
+# Đã CẮT vì không kiểm được, không vì độ dài. Khác loại với trên.
+cut_for_sourcing:
+  - "Bộ ba thể tích 15% / 84% / 1% — không tái lập được từ chính bảng nguồn (F2)."
+  - "Góc vùng bóng sóng P — ba giá trị khác nhau trong ba nguồn (F5)."
+  - "Năm Inge Lehmann phát hiện lõi trong — 1936 hay 1937, không dựng được nguồn bậc 1–2 (F6)."
+  - "Cụm 'lỗ khoan sâu nhất từng có' — không nguồn nào trong bảng nói vậy (E3)."
+
+uncertainty_report:
+  - >
+    6.371 km được gọi là "bán kính trung bình của hành tinh" trong bài, nhưng
+    không nguồn nào trong bảng phát biểu con số đó thành câu — nó là hằng số
+    quy ước, và ở đây nó xuất hiện như TỔNG của ba con số NASA. Phép cộng thì
+    kiểm lại được; nếu ai muốn dẫn nguồn riêng cho bán kính thì thêm nguồn,
+    đừng đổi con số.
+  - >
+    Bộ số lớp của USGS và của NASA lệch nhau ở phần lõi (2.200/1.250 so với
+    2.250/1.221). Bài dùng bộ NASA và nói rõ là của NASA. Không trộn, không
+    lấy trung bình — xem conflicts trong file research.
+  - >
+    6.230 ± 500 K là điểm nóng chảy của SẮT NGUYÊN CHẤT, ngoại suy từ thí
+    nghiệm tới 200 GPa lên 330 GPa. Nhiệt độ thật ở ranh giới lõi trong chỉ
+    được "kỳ vọng gần" mức đó, và chính bài báo nói giới nghiên cứu có rất ít
+    đồng thuận. Rút câu này gọn hơn nữa sẽ làm nó thành một phát biểu sai.
+  - >
+    Mọi kết luận về trạng thái lỏng/đặc của lõi đều là SUY LUẬN từ sóng địa
+    chấn. USGS dùng "presumed" và "considered", bài dùng "được cho là". Bỏ cụm
+    đó là lỗi cấp từ chối.
+  - >
+    Bài KHÔNG bàn tới sự tự quay lệch của lõi trong (super-rotation) và tranh
+    luận 2023 về việc nó chậm lại — chủ đề còn tranh chấp, và 600 từ không đủ.
+  - >
+    `trai-dat` (đã publish) viết "Lớp vỏ chia thành các mảng trượt trên lớp
+    phủ" — cách nói lỏng đúng chỗ mà IRIS gọi là "a distinction confused by
+    many". Bài mới nói đúng và có nguồn, nhưng KHÔNG sửa bài cũ: sửa claim
+    trên bài đã publish là đính chính, cần Revision + corrections.md +
+    lastVerifiedAt. Đã ghi vào refresh queue.
+
+internal_links_out:
+  - /articles/song-buoc-song-tan-so-bien-do
+  - /articles/trai-dat
+  - /articles/mat-troi
+  - /articles/dien-tich-va-dong-dien
+  - /articles/tu-truong-va-luc-hap-dan
+
+# Điều kiện "không mồ côi" của check-publish.ts.
+internal_links_in:
+  - from: /articles/trai-dat
+    anchor: "Lõi sắt lỏng chuyển động"
+    why: >
+      Bài đó mở mục "Từ quyển" bằng đúng câu "Lõi sắt lỏng chuyển động tạo ra
+      hiệu ứng dynamo" — người đọc gặp cụm "lõi sắt lỏng" ở đó trước khi biết
+      lõi có mấy phần và vì sao ta tin phần ngoài là lỏng. Đây là chỗ khớp
+      NGHĨA, không phải chỗ trùng chữ: bài mới trả lời đúng câu hỏi mà câu đó
+      vừa mở ra.
+      Sửa bài đã publish nên có `Revision` chụp nguyên văn bản cũ, ghi trong
+      CÙNG transaction. Chỉ thêm một link, KHÔNG đổi claim nào — nên không
+      cập nhật `lastVerifiedAt` và không ghi vào corrections.md.

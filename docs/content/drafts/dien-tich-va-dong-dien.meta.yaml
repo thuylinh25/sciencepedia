@@ -1,90 +1,124 @@
-# ══ CỨU TỪ ARTIFACT LƯỢT CHẠY 34003910057, ngày 2026-09-06 ══
+# ══ HOÀN TẤT 2026-09-06 — bài đã PUBLISHED ══
 #
-# Lượt chạy hết hạn mức Claude giữa chừng khi đang làm bài này (chủ đề #6).
-# Runner bị huỷ, và workflow lúc đó không commit gì ngược lại repo — nên bản
-# nháp chỉ còn trong artifact. Tải về và đưa vào repo ngày 2026-09-06.
+# Lịch sử: lượt chạy 34003910057 hết hạn mức giữa chừng ở bước 3. Runner bị
+# huỷ, bản nháp chỉ còn trong artifact, và bảng nguồn s1–s16 mà claim_map cũ
+# trỏ tới KHÔNG nằm trong artifact — mất cùng đĩa runner.
 #
-# ĐÃ XONG: bước 1 (nghiên cứu), bước 2 (fact-check nguồn, verdict pass),
-#          bước 3 (soạn bài).
-# CHƯA LÀM: bước 4 science-editor trở đi. Bài CHƯA qua gate accuracy.
+# Lượt 2026-09-06 chạy lại bước 1 để DỰNG LẠI bảng nguồn, rồi đi hết chuỗi.
+# Cả 16 nguồn cũ đều tìm lại được nguồn bậc 1–2 tương đương. KHÔNG claim nào
+# bị bỏ vì mất nguồn.
 #
-# MẤT KHÔNG CỨU ĐƯỢC: bảng nguồn s1–s16 mà claim_map bên dưới trỏ tới.
-# Nó nằm ở docs/content/research/dien-tich-va-dong-dien.yaml trên đĩa runner,
-# không nằm trong artifact vì lúc đó glob chỉ gom drafts/. Muốn đi tiếp thì
-# phải chạy lại bước 1 để dựng lại bảng nguồn; phần văn xuôi thì giữ được.
-#
-# Claim map + uncertainty report — dien-tich-va-dong-dien (bước 3: article-generator)
+#   bước 1  docs/content/research/dien-tich-va-dong-dien.yaml   (dựng lại)
+#   bước 2  docs/content/checks/dien-tich-va-dong-dien.yaml     (verdict pass)
+#   bước 3  văn xuôi cứu từ artifact, RÚT GỌN, không viết lại
+#   bước 4  science-editor: approve, 1 vòng sửa (bắt 1 lỗi S2 do chính lượt
+#           rút gọn sinh ra — xem editor_pass.findings.E1 trong file checks)
+#   bước 5  entity `dien-tich` (QUANTITY, Q1111) + 3 cạnh có kiểu
+#   bước 6  metadata + 5 link nội bộ ra
+#   bước 7  danh mục chính `dien-tu-va-anh-sang` (mở nhánh: trước đó 0 bài)
+#   bước 8  ảnh bìa tự vẽ qua scripts/build-covers.ts (không vướng bản quyền)
+#   bước 9  bản en: docs/content/drafts/dien-tich-va-dong-dien.en.md
+#   bước 10 ghi CSDL qua Prisma, trạng thái DRAFT
+#   bước 11 publish:check sạch → npm run publish
+
 slug: dien-tich-va-dong-dien
-generated_at: 2026-09-06
-source_pack: docs/content/research/dien-tich-va-dong-dien.yaml
-predraft_check: docs/content/checks/dien-tich-va-dong-dien.yaml  # verdict: pass
-prose_chars: 4976
-reading_time_min: 5
+status: PUBLISHED
+published_at: 2026-09-06T13:41:34.906Z
+entity: dien-tich            # QUANTITY, Wikidata Q1111
+category: dien-tu-va-anh-sang
+prose_words: 588             # trần 400–600 từ, chốt 2026-09-06
+reading_time_min: 3
+sources_in_db: 10            # 8 nguồn bậc 1–2 còn hiệu lực; ngưỡng là 3
+
+# ─────────────────────────────────────────────────────────────────────────────
+# VĂN XUÔI ĐÃ RÚT TỪ 1.016 TỪ XUỐNG 588
+#
+# Bản cứu được viết dưới trần CŨ (3.000–5.000 ký tự ≈ 3,2–5,4 phút). Trần mới
+# 400–600 từ chốt ngày 2026-09-06, và check-publish.ts KHÔNG miễn trần cho bản
+# nháp — miễn trừ chỉ neo vào `publishedAt` của bài đã publish. Nên bài buộc
+# phải rút, không phải vì văn kém.
+#
+# Rút bằng cách XOÁ câu, không viết lại: câu nào còn thì còn nguyên chữ của
+# bước 3. Cắt theo đúng danh mục docs/content-rules.md cho phép cắt (đoạn khai
+# triển, ví dụ phụ, câu chuyển ý, đoạn nhắc lại) và không đụng vào con số đã
+# đối chiếu, mức độ dè dặt, hay số link nội bộ.
+#
+# BÀI HỌC: rút gọn KHÔNG phải thao tác hình thức. Nó tự sinh ra một lỗi S2 —
+# bản nén viết hai dây song song "HÚT NHAU", một mệnh đề về chiều lực mà nguồn
+# không nói và chỉ đúng khi dòng cùng chiều. Bước 4 bắt được. Mọi lượt rút gọn
+# phải đi qua gate accuracy lần nữa.
+# ─────────────────────────────────────────────────────────────────────────────
 
 claim_map:
   - sentence: "Dòng điện là điện tích đang chuyển động; chính chuyển động ấy sinh ra từ trường"
-    sources: [s1, nội-bộ:tu-truong-va-luc-hap-dan]
-    note: "Vế từ trường lấy từ bài đã publish trong kho, mục 'Nguồn sinh ra: điện tích đang chuyển động'"
-  - sentence: "e là 'độ lớn điện tích trong một electron'"
-    sources: [s8]
-  - sentence: "Proton và electron mang cùng độ lớn điện tích, khác dấu"
+    sources: [s1, "nội-bộ:tu-truong-va-luc-hap-dan"]
+  - sentence: "e là điện tích của electron; proton mang cùng độ lớn, dấu ngược"
     sources: [s2]
   - sentence: "e = 1,602176634 × 10⁻¹⁹ C từ 20/5/2019, sai số chuẩn '(exact)'"
-    sources: [s1, s2, s5, s6]
+    sources: [s1, s2, s4]
   - sentence: "Một coulomb gom khoảng 6,241 × 10¹⁸ điện tích nguyên tố"
     sources: [s2]
-    note: "kiểm chéo bằng số học: 1/e = 6,241509 × 10¹⁸"
+    cross_check: "1/e = 6,241509 × 10¹⁸"
   - sentence: "Định nghĩa ampere trước 2019 (hai dây song song, 2 × 10⁻⁷ N/m)"
     sources: [s2]
+    note: "Câu này là chỗ lỗi S2 đã bị bắt và sửa ở bước 4 — nay phát biểu trung tính 'sinh giữa chúng một lực', không nói chiều."
   - sentence: "Định nghĩa cũ hỏng: không hiện thực hoá được, và neo đơn vị điện vào chuẩn khối lượng"
-    sources: [s3]
+    sources: [s2]
   - sentence: "Định nghĩa BIPM hiện hành của ampere, trích nguyên văn"
     sources: [s1]
-  - sentence: "Một ampere = một coulomb qua một điểm trong một giây"
-    sources: [s3]
-  - sentence: "'khoảng 6 tỉ tỉ electron mỗi giây'"
-    sources: [s4]
-    note: "'6 quintillion' (Mỹ) = 6 × 10¹⁸; tiếng Việt 'tỉ tỉ' = 10¹⁸"
-  - sentence: "Chiều quy ước: từ điện thế cao sang thấp, ngược chiều electron; Franklin đoán sai"
-    sources: [s15]
-  - sentence: "'Vào' tế bào = điện tích dương đi vào, tức cation vào hoặc anion ra"
+  - sentence: "Một ampere = một coulomb qua một điểm trong một giây; thời gian neo vào ΔνCs"
+    sources: [s1, s2]
+  - sentence: "Cân Kibble bù trừ trọng lượng bằng lực từ dòng trong cuộn dây; khối lượng suy ra từ dòng và hiệu điện thế"
+    sources: [s6]
+    note: "Vế 'hiệu điện thế' phải lấy thêm đoạn nguồn ở bước 4 (m = IV/gν)."
+  - sentence: "Chiều quy ước từ điện thế cao sang thấp, ngược chiều electron; Franklin đoán sai"
     sources: [s14]
   - sentence: "Tia sét điển hình ~300 triệu V, ~30.000 A; điện dân dụng chuẩn Mỹ 120 V, 15 A"
+    sources: [s7]
+    note: "Đổi 'mang chừng' → 'vào khoảng' theo phát hiện S4 của bước 2: volt không phải thứ được mang theo."
+  - sentence: "Sét là lúc khả năng cách điện của không khí sụp đổ"
     sources: [s9]
-  - sentence: "Cơ chế phân tách điện tích trong mây dông và sự sụp đổ tính cách điện của không khí"
-    sources: [s10]
-  - sentence: "SET: sai số vài phần trăm triệu ở hàng chục triệu electron mỗi giây"
-    sources: [s7]
-  - sentence: "100 thiết bị SET đồng bộ ở 10⁹ chu kỳ/giây chỉ cho dòng cỡ nanoampere"
-    sources: [s7]
-    note: "kiểm chéo: 100 × 10⁹ × e = 1,6 × 10⁻⁸ A"
-  - sentence: "Bão Mặt Trời gia tốc hạt tích điện vào không gian"
+  - sentence: "Bão Mặt Trời gia tốc hạt tích điện; hạt đổ xuống hai vùng cực tạo cực quang"
+    sources: [s11, "nội-bộ:cuc-quang"]
+  - sentence: "Dòng 'vào' tế bào = điện tích dương đi vào, tức cation vào hoặc anion ra"
     sources: [s12]
-  - sentence: "Biến thiên thông lượng từ trong bão địa từ sinh dòng chạy trong lưới điện"
-    sources: [s11]
-  - sentence: "Bão hoà lõi máy biến áp; 13/3/1989 mất điện chín giờ ở Canada, mất một máy biến áp"
-    sources: [s11]
-  - sentence: "Hạt tích điện đổ xuống hai vùng cực tạo ra cực quang"
-    sources: [s12, nội-bộ:cuc-quang]
-  - sentence: "Tăng tính thấm Na⁺ khởi phát điện thế hoạt động; dòng vào nhanh rồi dòng ra chậm hơn, có trễ"
-    sources: [s14]
+  - sentence: "Tăng tính thấm Na⁺ khởi phát điện thế hoạt động"
+    sources: [s12]
   - sentence: "Hodgkin và Huxley mô tả định lượng dòng qua màng, 1952"
     sources: [s13]
-  - sentence: "Cân Kibble: trọng lượng vật thử bù trừ bởi lực do dòng điện trong cuộn dây đặt trong từ trường"
-    sources: [s16]
+
+# Còn nguồn, còn đúng, nhưng đã CẮT khỏi bài vì trần 600 từ. Đây KHÔNG phải
+# thiếu sót cần bổ sung lại — chi tiết ở checks/…yaml, mục
+# cut_for_length_not_sourcing. Mỗi mục thuộc về một bài khác trong hàng đợi.
+cut_for_length:
+  - "Vận chuyển đơn electron (SET), dòng cỡ nanoampere — thuộc bài về chuẩn đo lường."
+  - "Dòng cảm ứng địa từ trong lưới điện, mất điện Quebec 13/3/1989 — thuộc bài về thời tiết không gian."
+  - "Cơ chế tách điện tích trong mây dông — thuộc bài về sét."
+  - "'Một ampere ≈ 6 × 10¹⁸ electron mỗi giây' — trùng thông tin với số điện tích mỗi coulomb đã nêu."
 
 uncertainty_report:
-  - "Không phát biểu định luật bảo toàn điện tích — không có nguồn bậc 1–2 trong pack (theo yêu cầu của bước 2)."
-  - "Không nói tới tốc độ trôi của electron trong dây dẫn — không có nguồn bậc 1–2 (theo yêu cầu của bước 2)."
-  - "Không dùng câu 'picoampere ... 100 million times per second' của NIST vì tự nó không nhất quán về số (xem S4 ở bước 2)."
-  - "Con số 120 V / 15 A đã được gắn nhãn 'theo chuẩn Mỹ' trong bài; điện dân dụng Việt Nam là 220 V."
+  - "Không phát biểu định luật bảo toàn điện tích — không có nguồn bậc 1–2 trong pack."
+  - "Không nói tới tốc độ trôi của electron trong dây dẫn — không có nguồn bậc 1–2."
+  - "Điện tích phân số của quark (±2/3, ±1/3 e) vẫn BỊ BỎ: lượt dựng lại nguồn 2026-09-06 vẫn không lấy được trang PDG hay CERN nào phát biểu con số đó. Để dành cho bài về hạt cơ bản."
+  - "Không dùng câu 'picoampere ở ~100 triệu chu kỳ/giây' của NIST vì tự nó lệch 16 lần (10⁸ × e = 16 pA). Bảng nguồn cũ đã loại; lượt dựng lại tính độc lập và ra cùng kết luận."
+  - "Con số 120 V / 15 A giữ nhãn 'chuẩn Mỹ' trong bài; điện dân dụng Việt Nam là 220 V."
   - "Con số sét dùng bản NWS ('điển hình ~30.000 A'), không trộn với ví dụ '100.000 A trở lên' của NIST."
-  - "Hodgkin & Huxley 1952 chỉ được dùng ở mức tiêu đề (bản PMC là ảnh quét); chi tiết Na⁺/K⁺ quy về NCBI Bookshelf."
-  - "Điện tích của quark (bội phân số của e) bị BỎ khỏi bài: không lấy được trang PDG hay CERN nào phát biểu con số ±2/3, ±1/3 trong lượt nghiên cứu này. Để dành cho bài về hạt cơ bản."
+  - "Hodgkin & Huxley 1952 chỉ dùng ở mức tiêu đề và năm; chi tiết Na⁺/K⁺ quy về NCBI Bookshelf."
 
 internal_links_out:
   - /articles/tu-truong-va-luc-hap-dan
   - /articles/nguyen-tu-cau-tao-va-dong-vi
   - /articles/song-buoc-song-tan-so-bien-do
-  - /articles/cuc-quang
   - /articles/khoi-luong-quan-tinh-va-trong-luong
+  - /articles/cuc-quang
+
+# Điều kiện "không mồ côi" của check-publish.ts.
+internal_links_in:
+  - from: /articles/tu-truong-va-luc-hap-dan
+    anchor: "điện tích"
+    why: >
+      Bài đó khẳng định từ trường chỉ sinh ra khi điện tích chuyển động thành
+      dòng — đúng chỗ người đọc cần biết điện tích và dòng điện là gì. Sửa bài
+      đã publish nên có `Revision` chụp nguyên văn bản cũ, ghi trong cùng
+      transaction. Không đổi claim nào, nên không cập nhật `lastVerifiedAt` và
+      không ghi vào corrections.md.

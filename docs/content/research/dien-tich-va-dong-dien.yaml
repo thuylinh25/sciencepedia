@@ -1,0 +1,262 @@
+# Bảng nguồn — dien-tich-va-dong-dien (bước 1: content-research)
+#
+# DỰNG LẠI ngày 2026-09-06. Bảng nguồn gốc (s1–s16) của lượt chạy 34003910057
+# mất cùng runner; file này tái lập nó từ đặc tả trong claim_map của
+# docs/content/drafts/dien-tich-va-dong-dien.meta.yaml.
+#
+# ID KHÔNG khớp 1-1 với bảng cũ: bảng cũ tách NIST "Ampere: Introduction" thành
+# nhiều mục (s2, s3, s5, s6, s8) vì mỗi claim trỏ tới một đoạn khác nhau. Ở đây
+# một URL là một nguồn, và các đoạn được ghi trong `passages`. Gộp như vậy làm
+# số nguồn nhỏ hơn nhưng đúng hơn: đếm cùng một trang NIST bốn lần rồi bảo
+# "bốn nguồn độc lập" là tự làm giả điều kiện ≥3 nguồn bậc 1–2.
+
+topic: Điện tích và dòng điện
+slug: dien-tich-va-dong-dien
+entity_type: QUANTITY
+wikidata_qid: Q1930
+rebuilt_at: 2026-09-06
+sufficient: true
+
+sources:
+  - id: s1
+    tier: 2
+    title: "SI base unit: ampere (A)"
+    publisher: Bureau international des poids et mesures (BIPM)
+    url: https://www.bipm.org/en/si-base-units/ampere
+    accessed: 2026-09-06
+    passages:
+      - "The ampere, symbol A, is the SI unit of electric current. It is defined by taking the fixed numerical value of the elementary charge e to be 1.602 176 634 x 10-19 when expressed in the unit C, which is equal to A s, where the second is defined in terms of ΔνCs."
+      - "the electric current corresponding to the flow of 1/(1.602 176 634 x 10-19) elementary charges per second"
+
+  - id: s2
+    tier: 2
+    title: "Ampere: Introduction"
+    publisher: National Institute of Standards and Technology (NIST)
+    url: https://www.nist.gov/si-redefinition/ampere-introduction
+    accessed: 2026-09-06
+    passages:
+      - "The ampere is that constant current which, if maintained in two straight parallel conductors of infinite length, of negligible circular cross-section, and placed 1 meter apart in vacuum, would produce between these conductors a force equal to 2 x 10-7 newton per meter of length."
+      - "could not be physically realized according to its own definition, though it could, with considerable difficulty, be approximated in a laboratory"
+      - "defining an electrical unit through mechanical concepts proved unsatisfactory"
+      - "One coulomb is equal to about 6.241 x 10^18 electric charges (e)."
+      - "the amount of electric charge in a single electron (negative) or proton (positive)"
+      - "the redefined ampere took effect 20 May 2019"
+
+  - id: s3
+    tier: 2
+    title: "SI Units — Electric Current"
+    publisher: NIST Office of Weights and Measures
+    url: https://www.nist.gov/pml/owm/si-units-electric-current
+    accessed: 2026-09-06
+    passages:
+      - "An ampere is the measure of the flow of electrons past a point—about 6 quintillion electrons (that's a 6 followed by 18 zeros!) per second."
+
+  - id: s4
+    tier: 2
+    title: "CODATA Value: elementary charge (điều chỉnh CODATA 2022)"
+    publisher: NIST Reference on Constants, Units and Uncertainty
+    url: https://physics.nist.gov/cgi-bin/cuu/Value?e
+    accessed: 2026-09-06
+    passages:
+      - "Value: 1.602 176 634 x 10-19 C"
+      - "Standard uncertainty: (exact)"
+      - "Relative standard uncertainty: (exact)"
+
+  - id: s5
+    tier: 2
+    title: "Ampere: The Future"
+    publisher: National Institute of Standards and Technology (NIST)
+    url: https://www.nist.gov/si-redefinition/ampere/ampere-future
+    accessed: 2026-09-06
+    passages:
+      - "SET can now be performed with uncertainties as low as a few parts in a hundred million at a rate of tens of millions of electrons per second, and performance is expected to improve."
+      - "Even 100 SET devices operating at the same time with perfect synchronization at a billion cycles per second would only produce a current in the range of nanoamps (billionths of an ampere, 10-9 A). That's still 1,000 times less than a microamp."
+    caveat: >
+      Trang này CÒN một câu nữa — một thiết bị SET cho "khoảng một picoampere ở
+      chừng 100 triệu chu kỳ mỗi giây". Câu đó KHÔNG được dùng: 10^8 x e =
+      1,6 x 10^-11 A = 16 pA, tức lệch 16 lần so với "một picoampere". Bảng
+      nguồn cũ đã loại nó (uncertainty_report, mục 3) và lần dựng lại này xác
+      nhận cùng kết luận bằng cùng phép tính.
+
+  - id: s6
+    tier: 2
+    title: "Kilogram: The Kibble Balance"
+    publisher: National Institute of Standards and Technology (NIST)
+    url: https://www.nist.gov/si-redefinition/kilogram-kibble-balance
+    accessed: 2026-09-06
+    passages:
+      - "the weight of a test mass is exactly offset by a force produced when an electrical current is run through a coil of wire immersed in a surrounding magnetic field"
+      - "The moveable coil, once electrified, becomes an electromagnet with a field strength proportional to the amount of current it conducts."
+      - "The coil is then moved through the surrounding field at a carefully controlled constant velocity. The resulting induced voltage is measured."
+      - "solving for mass, m = IV/gν"
+    note: >
+      Hai đoạn cuối lấy thêm ở bước 4 (science-editor), khi biên tập viên hỏi
+      bằng chứng cho vế "hiệu điện thế" trong bài. Có: khối lượng suy ra từ
+      m = IV/gν, tức cần cả dòng I lẫn điện áp V. Không có đoạn này thì câu
+      trong bài là dưới mức dẫn nguồn (S3).
+
+  - id: s7
+    tier: 2
+    title: "How Powerful Is Lightning?"
+    publisher: NOAA National Weather Service
+    url: https://www.weather.gov/safety/lightning-power
+    accessed: 2026-09-06
+    passages:
+      - "A typical lightning flash is about 300 million Volts and about 30,000 Amps."
+      - "In comparison, household current is 120 Volts and 15 Amps."
+
+  - id: s8
+    tier: 2
+    title: "Understanding Lightning: Science Overview"
+    publisher: NOAA National Weather Service
+    url: https://www.weather.gov/safety/lightning-science-overview
+    accessed: 2026-09-06
+    passages:
+      - "Air movements and collisions between the various types of precipitation in the middle of the cloud cause the precipitation particles to become charged."
+      - "The negative charge in the middle of thunderstorm cloud causes the ground underneath to become positively charged"
+
+  - id: s9
+    tier: 2
+    title: "Lightning Science"
+    publisher: NOAA National Weather Service
+    url: https://www.weather.gov/safety/lightning-science
+    accessed: 2026-09-06
+    passages:
+      - "In the initial stages of development, air acts as an insulator between the positive and negative charges in the cloud and between the cloud and the ground; however, when the differences in charges becomes too great, this insulating capacity of the air breaks down and there is a rapid discharge of electricity that we know as lightning."
+
+  - id: s10
+    tier: 2
+    title: "Electric Power Transmission — Space Weather Impacts"
+    publisher: NOAA Space Weather Prediction Center
+    url: https://www.spaceweather.gov/impacts/electric-power-transmission
+    accessed: 2026-09-06
+    note: >
+      URL cũ swpc.noaa.gov/impacts/electric-power-transmission trả 301 sang
+      spaceweather.gov ngày 2026-09-06. Ghi URL đích, không ghi URL chuyển hướng.
+    passages:
+      - "rapid variations of this magnetic flux during geomagnetic storms causes a naturally produced current to flow through the system"
+      - "the 'exciting current' in power transformers to operate out of their designed range, resulting in saturation of the magnetic core material inside the transformer"
+      - "a nine-hour blackout in Canada and a transformer loss (13 March 1989)"
+
+  - id: s11
+    tier: 2
+    title: "Solar Storms and Flares"
+    publisher: NASA Science
+    url: https://science.nasa.gov/sun/solar-storms-and-flares/
+    accessed: 2026-09-06
+    passages:
+      - "accelerate charged particles — electrons and protons — into space at incredibly high speeds"
+      - "following Earth's magnetic field lines toward the north and south poles, where they enter our atmosphere"
+
+  - id: s12
+    tier: 3
+    title: "Ionic Currents Across Nerve Cell Membranes — trong Neuroscience, 2nd edition"
+    publisher: "Purves D. và cs. (biên tập), Sinauer Associates — qua NCBI Bookshelf"
+    url: https://www.ncbi.nlm.nih.gov/books/NBK10879/
+    year: 2001
+    accessed: 2026-09-06
+    passages:
+      - "the axon produces a rapidly rising inward ionic current (inward refers to a positive charge entering the cell—that is, cations in or anions out), which gives way to a more slowly rising, delayed outward current"
+      - "a transient increase in the permeability of the neuronal membrane to Na+ initiates the action potential"
+
+  - id: s13
+    tier: 1
+    title: "A quantitative description of membrane current and its application to conduction and excitation in nerve"
+    publisher: "A. L. Hodgkin và A. F. Huxley, The Journal of Physiology 117(4), 500–544"
+    year: 1952
+    doi: 10.1113/jphysiol.1952.sp004764
+    url: https://doi.org/10.1113/jphysiol.1952.sp004764
+    accessed: 2026-09-06
+    passages:
+      - "(dùng ở mức tiêu đề và năm: mô tả định lượng dòng qua màng, 1952)"
+    caveat: >
+      Chỉ dùng ở mức tiêu đề/năm, đúng như bảng nguồn cũ đã ràng buộc. Chi tiết
+      cơ chế Na+/K+ quy về s12, không quy về bài báo này.
+
+  - id: s14
+    tier: 3
+    title: "Conventional Current Flow and Electron Flow"
+    publisher: Engineering LibreTexts (DC Electrical Circuit Analysis, J. M. Fiore)
+    url: https://eng.libretexts.org/Bookshelves/Electrical_Engineering/Electronics/DC_Electrical_Circuit_Analysis_-_A_Practical_Approach_(Fiore)/03:_Series_Resistive_Circuits/3.02:_Conventional_Current_Flow_and_Electron_Flow
+    accessed: 2026-09-06
+    passages:
+      - "current flows from a more positive voltage to a less positive voltage"
+      - "Franklin guessed wrong."
+      - "The electron is the charge carrier in metals and the electrons travel in the reverse direction."
+
+# Đếm điều kiện gate: 11 nguồn bậc 1–2 (s1–s11) + 1 bậc 1 (s13). Ngưỡng là 3.
+strong_tier_count: 12
+
+key_facts:
+  - claim: "Điện tích nguyên tố e = 1,602176634 × 10⁻¹⁹ C, sai số chuẩn '(exact)'"
+    sources: [s1, s2, s4]
+    confidence: high
+  - claim: "e là lượng điện tích trong một electron (âm) hoặc một proton (dương)"
+    sources: [s2]
+    confidence: high
+  - claim: "Một coulomb ≈ 6,241 × 10¹⁸ điện tích nguyên tố"
+    sources: [s2]
+    confidence: high
+    cross_check: "1/1,602176634e-19 = 6,241509 × 10¹⁸ — khớp"
+  - claim: "Định nghĩa ampere trước 2019: hai dây song song dài vô hạn, 2 × 10⁻⁷ N/m"
+    sources: [s2]
+    confidence: high
+  - claim: "Định nghĩa cũ không hiện thực hoá được theo chính nó; mô tả đơn vị điện bằng khái niệm cơ học là bất tiện"
+    sources: [s2]
+    confidence: high
+  - claim: "Định nghĩa ampere hiện hành neo vào e và vào giây (ΔνCs)"
+    sources: [s1]
+    confidence: high
+  - claim: "Một ampere ≈ 6 tỉ tỉ electron qua một điểm mỗi giây"
+    sources: [s3]
+    confidence: high
+  - claim: "Chiều quy ước đi từ điện thế cao sang thấp; electron trong kim loại đi ngược lại; Franklin đoán sai"
+    sources: [s14]
+    confidence: high
+    note: "Bậc 3, nên bài nêu rõ tên nguồn trong câu."
+  - claim: "Tia sét điển hình ~300 triệu V và ~30.000 A; điện dân dụng Mỹ 120 V và 15 A"
+    sources: [s7]
+    confidence: high
+  - claim: "Điện tích tách ra do chuyển động không khí và va chạm giữa các hạt giáng thuỷ; vùng âm giữa mây làm mặt đất bên dưới nhiễm điện dương"
+    sources: [s8]
+    confidence: high
+  - claim: "Sét xảy ra khi khả năng cách điện của không khí sụp đổ"
+    sources: [s9]
+    confidence: high
+  - claim: "SET: bất định vài phần trăm triệu ở hàng chục triệu electron/giây, kỳ vọng còn cải thiện"
+    sources: [s5]
+    confidence: high
+  - claim: "100 thiết bị SET đồng bộ ở 10⁹ chu kỳ/giây chỉ cho dòng cỡ nanoampere"
+    sources: [s5]
+    confidence: high
+    cross_check: "100 × 10⁹ × e = 1,6 × 10⁻⁸ A = 16 nA — khớp 'range of nanoamps'"
+  - claim: "Bão Mặt Trời gia tốc electron và proton vào không gian; hạt theo đường sức về hai vùng cực"
+    sources: [s11]
+    confidence: high
+  - claim: "Biến thiên nhanh thông lượng từ trong bão địa từ sinh dòng chạy trong lưới điện; dòng này đẩy dòng kích từ máy biến áp ra ngoài dải thiết kế và bão hoà lõi từ"
+    sources: [s10]
+    confidence: high
+  - claim: "13/3/1989: mất điện chín giờ ở Canada và mất một máy biến áp"
+    sources: [s10]
+    confidence: high
+  - claim: "Dòng 'vào' tế bào = điện tích dương đi vào, tức cation vào hoặc anion ra; dòng vào tăng nhanh rồi nhường chỗ cho dòng ra chậm hơn, có trễ"
+    sources: [s12]
+    confidence: high
+  - claim: "Tăng đột ngột tính thấm màng nơron với Na⁺ khởi phát điện thế hoạt động"
+    sources: [s12]
+    confidence: high
+  - claim: "Hodgkin và Huxley mô tả định lượng dòng qua màng năm 1952"
+    sources: [s13]
+    confidence: high
+  - claim: "Cân Kibble: trọng lượng vật thử được bù trừ bởi lực sinh ra khi cho dòng chạy qua cuộn dây đặt trong từ trường; cuộn dây có dòng trở thành nam châm điện có cường độ trường tỉ lệ với dòng"
+    sources: [s6]
+    confidence: high
+
+conflicts:
+  - "s5 tự mâu thuẫn về số (xem caveat của s5). Xử lý: bỏ câu đó, giữ hai câu còn lại."
+
+open_questions:
+  - "Điện tích phân số của quark (±2/3, ±1/3 e): vẫn KHÔNG dựng lại được nguồn bậc 1–2 (PDG/CERN) trong lượt này, đúng như kết luận của bảng nguồn cũ. Tiếp tục để ngoài bài."
+  - "Định luật bảo toàn điện tích và tốc độ trôi của electron: không tìm nguồn bậc 1–2 trong lượt này; giữ nguyên quyết định cũ là không phát biểu."
+
+gaps: []
