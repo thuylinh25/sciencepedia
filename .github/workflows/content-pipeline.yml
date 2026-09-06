@@ -41,8 +41,8 @@ on:
   # sẽ giành hạn mức với chính phiên Claude Code tương tác của bạn. Thấy vướng
   # thì thu hẹp về ban đêm giờ Việt Nam bằng cách đổi dòng dưới thành:
   #   - cron: "0 16-23 * * *"     # 23:00–06:00 giờ Việt Nam
-  # schedule:
-  #   - cron: "0 */2 * * *"
+  schedule:
+    - cron: "0 */2 * * *"
 
 # Hai lượt chạy chồng nhau sẽ cùng lấy một chủ đề ở đầu hàng đợi và sinh hai
 # bài trùng. Hàng đợi nằm trong file, không có khoá — nên khoá ở đây.
