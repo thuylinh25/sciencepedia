@@ -202,6 +202,185 @@ function useCosmicWeb() {
   }, []);
 }
 
+/* ────────────────────────── Giãn nhãn, dùng chung ──────────────────────────
+
+   Chốt 2026-09-06 sau khi nhãn đè lên nhau ở mức thu nhỏ mặc định.
+
+   Trước đây mỗi nhóm nhãn tự lo lấy mình: `Landmarks` có logic tránh đè, còn
+   `ScaleShells` thì không có gì cả. Hai nhóm render trong hai <group> tách
+   biệt nên không nhóm nào biết nhóm kia đang chiếm chỗ nào — và một cơ chế
+   tránh đè chỉ nhìn thấy một nửa số nhãn thì không phải cơ chế tránh đè.
+
+   Phép đo cũ còn sai ở hai chỗ nữa, và cả hai đều làm khung va chạm lệch khỏi
+   thứ đang thật sự hiện trên màn hình:
+
+   1. Nó chiếu TÂM VẬT THỂ, trong khi <Html> được đặt lệch lên trên vài đơn vị
+      thế giới. Hai điểm đó không rơi vào cùng một chỗ trên màn hình.
+   2. Nó so hai tâm nhãn bằng một khung cứng 150×30 px, trong khi drei co giãn
+      nhãn theo khoảng cách camera. Cùng một cặp nhãn, lúc thu nhỏ cách nhau
+      30 px thật, lúc phóng to cách nhau 300 px — một ngưỡng cứng không thể
+      đúng ở cả hai đầu, và nó cũng bỏ qua việc "Ngân Hà — bạn đang ở đây"
+      rộng gấp đôi "Đám Virgo".
+
+   Bản này chiếu ĐÚNG điểm neo của nhãn, ước lượng bề rộng theo số ký tự thật
+   của từng nhãn, rồi nhân với đúng hệ số drei dùng. */
+
+/**
+ * Hệ số drei áp cho `<Html distanceFactor>`, chép từ `objectScale()` của nó:
+ * `scale = distanceFactor / (2·tan(fov/2)·khoảng cách tới camera)`.
+ *
+ * Phải khớp chính xác. Sai số ở đây là sai số của khung va chạm, và nó biểu
+ * hiện thành đúng cái lỗi ta đang sửa.
+ */
+function htmlScale(
+  camera: THREE.Camera,
+  anchor: THREE.Vector3,
+  distanceFactor: number,
+): number {
+  const { fov } = camera as THREE.PerspectiveCamera;
+  const vFOV = (fov * Math.PI) / 180;
+  const dist = camera.position.distanceTo(anchor);
+  return distanceFactor / (2 * Math.tan(vFOV / 2) * dist);
+}
+
+/* Bề rộng nhãn khi chưa co giãn, đo thô theo số ký tự.
+   Đo DOM thật sẽ chính xác hơn nhưng không khả thi: nhãn bị ẩn thì không có
+   DOM để mà đo, nên phép đo sẽ dao động qua lại giữa hai trạng thái. */
+const CHAR_PX = 6.4;
+const PAD_PX = 26;
+const LABEL_PX_H = 26;
+/** Khe hở tối thiểu: hai nhãn sát cạnh nhau vẫn khó đọc dù về hình học là không đè. */
+const GAP_PX = 8;
+
+/** Nhãn mốc nằm lệch lên trên chấm sáng; mốc "home" to hơn nên lệch nhiều hơn. */
+const landmarkLabelY = (home: boolean) => (home ? 0.75 : 0.45);
+const shellLabelPos = (radius: number): [number, number, number] => [
+  0,
+  radius * 0.72,
+  radius * 0.72,
+];
+const LANDMARK_FACTOR = 22;
+const SHELL_FACTOR = 18;
+
+type LabelSlot = {
+  id: string;
+  anchor: THREE.Vector3;
+  /** Bề rộng px khi scale = 1 */
+  width: number;
+  distanceFactor: number;
+};
+
+/**
+ * Bỏ nhãn nào đè lên một nhãn đã giữ, xét theo thứ tự ưu tiên của `slots`.
+ *
+ * Không sửa bằng cách bóp méo khoảng cách giữa các mốc: khoảng cách ở đây là
+ * số đo thật, chỉ hướng mới là bịa ra cho dễ nhìn. Nhãn bị ẩn hiện lại khi
+ * người xem phóng to — đúng hành vi người ta chờ đợi.
+ */
+function useLabelDeclutter(slots: LabelSlot[], enabled: boolean): Set<string> {
+  const { camera, size } = useThree();
+  const [hidden, setHidden] = useState<Set<string>>(() => new Set());
+  const lastKey = useRef("");
+
+  useFrame(() => {
+    if (!enabled) {
+      if (lastKey.current !== "") {
+        lastKey.current = "";
+        setHidden(new Set());
+      }
+      return;
+    }
+
+    const kept: { x: number; y: number; hw: number; hh: number }[] = [];
+    const next = new Set<string>();
+
+    for (const slot of slots) {
+      const ndc = slot.anchor.clone().project(camera);
+      // z > 1 nghĩa là nằm sau camera; chiếu ra một điểm vô nghĩa
+      if (ndc.z > 1) {
+        next.add(slot.id);
+        continue;
+      }
+      const x = (ndc.x * 0.5 + 0.5) * size.width;
+      const y = (-ndc.y * 0.5 + 0.5) * size.height;
+      const scale = htmlScale(camera, slot.anchor, slot.distanceFactor);
+      const hw = (slot.width * scale + GAP_PX) / 2;
+      const hh = (LABEL_PX_H * scale + GAP_PX) / 2;
+
+      const clash = kept.some(
+        (k) => Math.abs(k.x - x) < k.hw + hw && Math.abs(k.y - y) < k.hh + hh,
+      );
+      if (clash) next.add(slot.id);
+      else kept.push({ x, y, hw, hh });
+    }
+
+    // Chỉ setState khi tập hợp thật sự đổi — setState mỗi khung hình sẽ khiến
+    // React dựng lại cây này 60 lần một giây.
+    const key = [...next].sort().join(",");
+    if (key !== lastKey.current) {
+      lastKey.current = key;
+      setHidden(next);
+    }
+  });
+
+  return hidden;
+}
+
+/**
+ * Danh sách nhãn theo THỨ TỰ ƯU TIÊN — slot đứng trước thắng khi tranh chỗ.
+ *
+ * "Bạn đang ở đây" luôn thắng, sau đó tới mốc xa nhất: mốc xa nằm ở rìa và ít
+ * tranh chỗ, giữ chúng thì phần trung tâm chỉ mất những nhãn mà zoom vào là
+ * thấy lại.
+ *
+ * Vỏ tỉ lệ xếp sau toàn bộ mốc: vỏ mất nhãn thì vòng tròn vẫn còn đó để nhìn,
+ * còn một mốc mất nhãn thì chỉ còn là một chấm sáng vô danh.
+ */
+function useLabelSlots(
+  locale: string,
+  showScales: boolean,
+): LabelSlot[] {
+  return useMemo(() => {
+    const slots: LabelSlot[] = [];
+    const textWidth = (text: string) => text.length * CHAR_PX + PAD_PX;
+
+    const landmarks = [...COSMIC_LANDMARKS].sort(
+      (a, b) =>
+        Number(b.tier === "home") - Number(a.tier === "home") ||
+        b.distanceMly - a.distanceMly,
+    );
+    for (const landmark of landmarks) {
+      const home = landmark.tier === "home";
+      const [x, y, z] = landmarkPosition(landmark);
+      const text = locale === "en" ? landmark.nameEn : landmark.name;
+      slots.push({
+        id: landmark.id,
+        anchor: new THREE.Vector3(x, y + landmarkLabelY(home), z),
+        // Mốc home có thêm ngôi sao ở đầu nhãn
+        width: textWidth(text) + (home ? 14 : 0),
+        distanceFactor: LANDMARK_FACTOR,
+      });
+    }
+
+    // Vỏ tỉ lệ đang tắt thì không chiếm chỗ của ai cả.
+    if (showScales) {
+      const shells = UNIVERSE_SCALES.filter(
+        (scale) => scale.radius !== null,
+      ).sort((a, b) => (b.radius as number) - (a.radius as number));
+      for (const scale of shells) {
+        slots.push({
+          id: `shell-${scale.id}`,
+          anchor: new THREE.Vector3(...shellLabelPos(scale.radius as number)),
+          width: textWidth(locale === "en" ? scale.nameEn : scale.name),
+          distanceFactor: SHELL_FACTOR,
+        });
+      }
+    }
+
+    return slots;
+  }, [locale, showScales]);
+}
+
 /**
  * Các cấu trúc có thật, kèm dấu "bạn đang ở đây" ở gốc toạ độ.
  *
@@ -212,91 +391,26 @@ function useCosmicWeb() {
 function Landmarks({
   sprite,
   showLabels,
+  hiddenLabels,
   locale,
   onSelect,
 }: {
   sprite: THREE.Texture;
   showLabels: boolean;
+  /** Tính ở `Web` bằng `useLabelDeclutter`, chung với nhãn vỏ tỉ lệ. */
+  hiddenLabels: Set<string>;
   locale: string;
   onSelect: (id: string) => void;
 }) {
   const pulse = useRef<THREE.Mesh>(null);
-  const { camera, size } = useThree();
 
-  /**
-   * Giãn nhãn theo không gian màn hình.
-   *
-   * Khoảng cách các mốc trải từ 0 tới 320 Mly trong bán kính mô phỏng 480, nên
-   * ở mức thu nhỏ mặc định bốn mốc gần nhất (Ngân Hà 0, Andromeda 2,5, Cụm địa
-   * phương 5, Virgo 54) rơi vào gần như cùng một điểm — năm nhãn đè lên nhau
-   * thành một khối không đọc được.
-   *
-   * Không sửa bằng cách bóp méo khoảng cách: khoảng cách ở đây là số đo thật,
-   * chỉ hướng mới là bịa ra cho dễ nhìn. Thay vào đó chiếu từng mốc xuống toạ
-   * độ pixel mỗi khung hình và bỏ nhãn nào đè lên một nhãn đã giữ. Nhãn bị ẩn
-   * hiện lại khi người xem phóng to — đúng hành vi người ta chờ đợi.
-   *
-   * Thứ tự ưu tiên: "bạn đang ở đây" luôn thắng, sau đó tới mốc xa nhất, vì
-   * mốc xa nằm ở rìa và ít tranh chỗ; giữ chúng thì phần trung tâm còn lại
-   * chỉ mất những nhãn mà zoom vào là thấy.
-   */
-  const projectable = useMemo(
-    () =>
-      COSMIC_LANDMARKS.map((landmark) => ({
-        id: landmark.id,
-        home: landmark.tier === "home",
-        distanceMly: landmark.distanceMly,
-        vec: new THREE.Vector3(...landmarkPosition(landmark)),
-      })).sort(
-        (a, b) => Number(b.home) - Number(a.home) || b.distanceMly - a.distanceMly,
-      ),
-    [],
-  );
-
-  // Xấp xỉ khung một nhãn. Rộng rãi hơn thực tế một chút để hai nhãn không
-  // dính sát cạnh nhau — sát nhau vẫn khó đọc dù về mặt hình học là không đè.
-  const LABEL_W = 150;
-  const LABEL_H = 30;
-
-  const [hiddenLabels, setHiddenLabels] = useState<Set<string>>(
-    () => new Set(),
-  );
-  const lastKey = useRef("");
-
+  // Chỉ còn nhịp đập của dấu "bạn đang ở đây". Việc giãn nhãn đã chuyển lên
+  // `Web` để nó nhìn thấy cả nhãn vỏ tỉ lệ — xem `useLabelDeclutter`.
   useFrame(({ clock }) => {
-    if (pulse.current) {
-      const phase = (clock.elapsedTime % 2.4) / 2.4;
-      pulse.current.scale.setScalar(1 + phase * 3);
-      (pulse.current.material as THREE.Material).opacity = 0.5 * (1 - phase);
-    }
-
-    const kept: { x: number; y: number }[] = [];
-    const hidden = new Set<string>();
-
-    for (const item of projectable) {
-      const p = item.vec.clone().project(camera);
-      // z > 1 nghĩa là nằm sau camera; chiếu ra một điểm vô nghĩa
-      if (p.z > 1) {
-        hidden.add(item.id);
-        continue;
-      }
-      const x = (p.x * 0.5 + 0.5) * size.width;
-      const y = (-p.y * 0.5 + 0.5) * size.height;
-
-      const clash = kept.some(
-        (k) => Math.abs(k.x - x) < LABEL_W && Math.abs(k.y - y) < LABEL_H,
-      );
-      if (clash) hidden.add(item.id);
-      else kept.push({ x, y });
-    }
-
-    // Chỉ setState khi tập hợp thật sự đổi — setState mỗi khung hình sẽ khiến
-    // React dựng lại cây này 60 lần một giây.
-    const key = [...hidden].sort().join(",");
-    if (key !== lastKey.current) {
-      lastKey.current = key;
-      setHiddenLabels(hidden);
-    }
+    if (!pulse.current) return;
+    const phase = (clock.elapsedTime % 2.4) / 2.4;
+    pulse.current.scale.setScalar(1 + phase * 3);
+    (pulse.current.material as THREE.Material).opacity = 0.5 * (1 - phase);
   });
 
   return (
@@ -342,9 +456,9 @@ function Landmarks({
 
             {showLabels && !hiddenLabels.has(landmark.id) && (
               <Html
-                position={[0, home ? 0.75 : 0.45, 0]}
+                position={[0, landmarkLabelY(home), 0]}
                 center
-                distanceFactor={22}
+                distanceFactor={LANDMARK_FACTOR}
                 zIndexRange={[20, 0]}
               >
                 <button
@@ -371,9 +485,12 @@ function Landmarks({
 
 function ScaleShells({
   showLabels,
+  hiddenLabels,
   locale,
 }: {
   showLabels: boolean;
+  /** Cùng tập với nhãn mốc — vỏ tỉ lệ trước đây không tránh đè gì cả. */
+  hiddenLabels: Set<string>;
   locale: string;
 }) {
   return (
@@ -390,15 +507,11 @@ function ScaleShells({
               depthWrite={false}
             />
           </mesh>
-          {showLabels && (
+          {showLabels && !hiddenLabels.has(`shell-${scale.id}`) && (
             <Html
-              position={[
-                0,
-                (scale.radius as number) * 0.72,
-                (scale.radius as number) * 0.72,
-              ]}
+              position={shellLabelPos(scale.radius as number)}
               center
-              distanceFactor={18}
+              distanceFactor={SHELL_FACTOR}
               zIndexRange={[20, 0]}
             >
               <span
@@ -427,6 +540,12 @@ function Web({
   const group = useRef<THREE.Group>(null);
   const sprite = useStarSprite();
   const { geometry, lineGeometry, clusterGeometry } = useCosmicWeb();
+
+  // Một lượt giãn nhãn cho CẢ mốc lẫn vỏ tỉ lệ. Phải nằm ở đây chứ không nằm
+  // trong hai component con: hai lượt riêng thì không lượt nào biết lượt kia
+  // đã chiếm chỗ nào, và đó chính là lỗi nhãn đè lên nhau.
+  const labelSlots = useLabelSlots(locale, settings.showScales);
+  const hiddenLabels = useLabelDeclutter(labelSlots, settings.showLabels);
 
   useFrame((_, delta) => {
     if (!group.current || !settings.playing) return;
@@ -474,12 +593,17 @@ function Web({
       )}
 
       {settings.showScales && (
-        <ScaleShells showLabels={settings.showLabels} locale={locale} />
+        <ScaleShells
+          showLabels={settings.showLabels}
+          hiddenLabels={hiddenLabels}
+          locale={locale}
+        />
       )}
 
       <Landmarks
         sprite={sprite}
         showLabels={settings.showLabels}
+        hiddenLabels={hiddenLabels}
         locale={locale}
         onSelect={onSelect}
       />
