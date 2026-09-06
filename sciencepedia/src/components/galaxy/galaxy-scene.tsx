@@ -369,7 +369,10 @@ function Galaxy({
       )}
 
       {settings.showSun && sun && (
-        <SunMarker sprite={sprite} onSelect={onSelect} />
+        <>
+          <SunOrbit playing={settings.playing} speed={settings.speed} />
+          <SunMarker sprite={sprite} onSelect={onSelect} />
+        </>
       )}
 
       {settings.showLabels &&
@@ -468,6 +471,147 @@ function GalaxyObjects({
           </group>
         );
       })}
+    </group>
+  );
+}
+
+/** Màu quỹ đạo: hổ phách, tách hẳn khỏi dải xanh–trắng của đĩa sao. */
+const ORBIT_COLOR = "#ffb347";
+
+/** Bề rộng vành quỹ đạo trong không gian cảnh — 0,035 đơn vị ≈ 175 năm ánh sáng. */
+const ORBIT_WIDTH = 0.035;
+
+/** Cung sáng chạy dọc quỹ đạo dài bao nhiêu phần của vòng tròn. */
+const ORBIT_ARC = Math.PI * 0.36;
+
+/**
+ * Cung sáng đậm ở đầu, tắt dần về đuôi — một vệt sao chổi ôm theo quỹ đạo.
+ *
+ * Dựng tay thay vì cắt `ringGeometry` bằng `thetaLength`: cung cắt sẵn sáng
+ * đều rồi đứt cụt ở hai đầu, trông như lỗi vẽ chứ không ra chuyển động. Có
+ * đuôi mờ thì người xem đọc ra ngay Mặt Trời đang đi về phía nào.
+ *
+ * Đuôi tắt bằng cách hạ **màu đỉnh về đen** chứ không hạ alpha: vật liệu này
+ * cộng dồn (additive), mà cộng thêm màu đen thì bằng không cộng gì — nên đen
+ * chính là trong suốt, và không cần thuộc tính alpha theo đỉnh.
+ */
+function useOrbitArcGeometry(inner: number, outer: number) {
+  return useMemo(() => {
+    const segments = 120;
+    const position = new Float32Array((segments + 1) * 2 * 3);
+    const color = new Float32Array((segments + 1) * 2 * 3);
+    const index: number[] = [];
+    const head = new THREE.Color(ORBIT_COLOR);
+
+    for (let i = 0; i <= segments; i += 1) {
+      const t = i / segments; // 0 = đuôi, 1 = đầu
+      const angle = ORBIT_ARC * t;
+      const cos = Math.cos(angle);
+      const sin = Math.sin(angle);
+      const fade = Math.pow(t, 2.4);
+
+      for (let edge = 0; edge < 2; edge += 1) {
+        const radius = edge === 0 ? inner : outer;
+        const v = (i * 2 + edge) * 3;
+        position[v] = cos * radius;
+        position[v + 1] = sin * radius;
+        position[v + 2] = 0;
+        color[v] = head.r * fade;
+        color[v + 1] = head.g * fade;
+        color[v + 2] = head.b * fade;
+      }
+
+      if (i < segments) {
+        const a = i * 2;
+        index.push(a, a + 1, a + 2, a + 1, a + 3, a + 2);
+      }
+    }
+
+    const geometry = new THREE.BufferGeometry();
+    geometry.setAttribute("position", new THREE.BufferAttribute(position, 3));
+    geometry.setAttribute("color", new THREE.BufferAttribute(color, 3));
+    geometry.setIndex(index);
+    return geometry;
+  }, [inner, outer]);
+}
+
+/**
+ * Quỹ đạo Mặt Trời quanh tâm Ngân Hà — một vòng tròn nằm trong mặt phẳng đĩa,
+ * bán kính 26.670 năm ánh sáng, đi hết một vòng mất ~230 triệu năm.
+ *
+ * Vẽ bằng vành mỏng (`ringGeometry`) chứ không bằng `<line>`: WebGL ghim
+ * `linewidth` ở 1 pixel trên gần như mọi trình duyệt, nên đường kẻ vừa mảnh
+ * như sợi tóc vừa không dày lên khi phóng to — tới lúc bay vào trong đĩa thì
+ * nó biến mất. Vành có bề rộng thật trong không gian cảnh nên co giãn cùng
+ * thiên hà, và khi nhìn nghiêng thì tự hiện thành hình elip.
+ *
+ * Ba lớp chồng nhau: quầng rộng mờ cho đường kẻ một viền sáng thay vì mép răng
+ * cưa, vành chính giữ nét, cung sáng chạy vòng chỉ chiều chuyển động.
+ */
+function SunOrbit({ playing, speed }: { playing: boolean; speed: number }) {
+  const arc = useRef<THREE.Group>(null);
+
+  const inner = SUN_RADIUS_UNITS - ORBIT_WIDTH / 2;
+  const outer = SUN_RADIUS_UNITS + ORBIT_WIDTH / 2;
+  const arcGeometry = useOrbitArcGeometry(inner, outer);
+
+  useFrame((_, delta) => {
+    if (!arc.current || !playing) return;
+    /*
+     * Quay quanh trục z CỤC BỘ. Nhóm cha đã nghiêng -90° quanh x để nằm vào
+     * mặt phẳng đĩa, nên z cục bộ trỏ đúng theo +y của thế giới — cùng trục
+     * mà cả thiên hà đang quay quanh. Dấu trừ để cung đi cùng chiều với đĩa
+     * thay vì bơi ngược dòng sao.
+     */
+    arc.current.rotation.z -= delta * 0.3 * speed;
+  });
+
+  return (
+    <group rotation={[-Math.PI / 2, 0, 0]}>
+      <mesh>
+        <ringGeometry
+          args={[
+            SUN_RADIUS_UNITS - ORBIT_WIDTH * 4,
+            SUN_RADIUS_UNITS + ORBIT_WIDTH * 4,
+            240,
+          ]}
+        />
+        <meshBasicMaterial
+          color={ORBIT_COLOR}
+          transparent
+          opacity={0.09}
+          side={THREE.DoubleSide}
+          depthWrite={false}
+          blending={THREE.AdditiveBlending}
+        />
+      </mesh>
+
+      <mesh>
+        <ringGeometry args={[inner, outer, 240]} />
+        <meshBasicMaterial
+          color={ORBIT_COLOR}
+          transparent
+          opacity={0.7}
+          side={THREE.DoubleSide}
+          depthWrite={false}
+          blending={THREE.AdditiveBlending}
+          toneMapped={false}
+        />
+      </mesh>
+
+      <group ref={arc}>
+        <mesh geometry={arcGeometry}>
+          <meshBasicMaterial
+            vertexColors
+            transparent
+            opacity={0.95}
+            side={THREE.DoubleSide}
+            depthWrite={false}
+            blending={THREE.AdditiveBlending}
+            toneMapped={false}
+          />
+        </mesh>
+      </group>
     </group>
   );
 }
