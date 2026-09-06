@@ -283,8 +283,8 @@ function atom(): string {
    không gian ngay trên đường sóng, và đặt một sóng tần số gấp đôi phía dưới
    để tần số trở thành thứ SO SÁNH ĐƯỢC chứ không phải một chữ. */
 function wave(): string {
-  const axis = 408;
-  const amp = 148;
+  const axis = 430;
+  const amp = 95;
   const left = 150;
   const right = 1450;
   const lambda = (right - left) / 3;
@@ -318,17 +318,17 @@ function wave(): string {
   // Sóng chính: biên độ lớn, một bước sóng được đo tường minh.
   const main = `<path d="${path(amp, 1, axis)}" fill="none" stroke="${YELLOW}" stroke-width="9" stroke-linecap="round"/>`;
   // Sóng dưới: cùng biên độ nhỏ hơn, tần số gấp đôi — cho mắt so sánh.
-  const second = `<path d="${path(84, 2, 762)}" fill="none" stroke="${TEAL}" stroke-width="6" stroke-linecap="round" opacity="0.9"/>`;
+  const second = `<path d="${path(58, 2, 648)}" fill="none" stroke="${TEAL}" stroke-width="6" stroke-linecap="round" opacity="0.9"/>`;
 
   const axes = `
     <line x1="70" y1="${axis}" x2="${W - 70}" y2="${axis}" stroke="${STAR}" stroke-width="2.5" opacity="0.75"/>
-    <line x1="70" y1="762" x2="${W - 70}" y2="762" stroke="${STAR}" stroke-width="2" opacity="0.4"/>`;
+    <line x1="70" y1="648" x2="${W - 70}" y2="648" stroke="${STAR}" stroke-width="2" opacity="0.4"/>`;
 
   // Bước sóng: đo từ đỉnh này tới đỉnh kế tiếp.
   const lam = `
-    <line x1="${crest1}" y1="${axis - amp}" x2="${crest1}" y2="${axis - amp - 88}" stroke="${STAR}" stroke-width="2" opacity="0.6" stroke-dasharray="8 8"/>
-    <line x1="${crest2}" y1="${axis - amp}" x2="${crest2}" y2="${axis - amp - 88}" stroke="${STAR}" stroke-width="2" opacity="0.6" stroke-dasharray="8 8"/>
-    <line x1="${crest1}" y1="${axis - amp - 62}" x2="${crest2}" y2="${axis - amp - 62}" stroke="${STAR}" stroke-width="3.5" marker-start="url(#b)" marker-end="url(#a)"/>`;
+    <line x1="${crest1}" y1="${axis - amp}" x2="${crest1}" y2="${axis - amp - 46}" stroke="${STAR}" stroke-width="2" opacity="0.6" stroke-dasharray="8 8"/>
+    <line x1="${crest2}" y1="${axis - amp}" x2="${crest2}" y2="${axis - amp - 46}" stroke="${STAR}" stroke-width="2" opacity="0.6" stroke-dasharray="8 8"/>
+    <line x1="${crest1}" y1="${axis - amp - 32}" x2="${crest2}" y2="${axis - amp - 32}" stroke="${STAR}" stroke-width="3.5" marker-start="url(#b)" marker-end="url(#a)"/>`;
 
   // Biên độ: từ trục lên đỉnh.
   const ampMark = `
@@ -500,8 +500,8 @@ function keplerLaws(): string {
 
 /* ─── Tương đối hẹp: đồng hồ ánh sáng, đứng yên và đang chuyển động ─── */
 function specialRelativity(): string {
-  const topY = 262;
-  const botY = 640;
+  const topY = 330;
+  const botY = 538;
 
   /* Cùng một đồng hồ, nhìn từ hai hệ quy chiếu. Đứng yên thì ánh sáng đi
      thẳng lên xuống; chuyển động thì nó đi đường zigzag DÀI HƠN. Tốc độ ánh
@@ -525,7 +525,7 @@ function specialRelativity(): string {
     `<path d="M${movingStart} ${botY} L${movingStart + step} ${topY} L${movingStart + step * 2} ${botY}"
        fill="none" stroke="${TEAL}" stroke-width="6" stroke-dasharray="18 14"/>
      <circle cx="${movingStart + step}" cy="${topY}" r="14" fill="${TEAL}"/>
-     <line x1="${movingStart - 130}" y1="${botY + 92}" x2="${movingStart + step * 2 + 60}" y2="${botY + 92}"
+     <line x1="${movingStart - 130}" y1="${botY + 46}" x2="${movingStart + step * 2 + 60}" y2="${botY + 46}"
        stroke="${STAR}" stroke-width="5" marker-end="url(#av)" opacity="0.8"/>`;
 
   return svg(
@@ -535,7 +535,7 @@ function specialRelativity(): string {
 
 /* ─── Khối lượng quán tính và trọng lượng: cùng vật, hai đại lượng khác nhau ─── */
 function massVsWeight(): string {
-  const y = 430;
+  const y = 372;
   const left = 450;
   const right = 1150;
 
@@ -543,18 +543,18 @@ function massVsWeight(): string {
      hành tinh. Mũi tên NGANG là lực cần để tăng tốc nó — nó KHÔNG đổi, vì
      khối lượng quán tính không phụ thuộc bạn đang đứng ở đâu. */
   const body = (x: number, weightLen: number, arcR: number, arcColor: string) => `
-    <path d="M${x - 300} ${y + 300} A ${arcR} ${arcR} 0 0 1 ${x + 300} ${y + 300}"
+    <path d="M${x - 300} ${y + 232} A ${arcR} ${arcR} 0 0 1 ${x + 300} ${y + 232}"
       fill="none" stroke="${arcColor}" stroke-width="6" opacity="0.5"/>
-    <circle cx="${x}" cy="${y}" r="78" fill="${BLUE}" opacity="0.85"/>
-    <line x1="${x}" y1="${y + 94}" x2="${x}" y2="${y + 94 + weightLen}" stroke="${YELLOW}" stroke-width="9" marker-end="url(#aw)"/>
+    <circle cx="${x}" cy="${y}" r="70" fill="${BLUE}" opacity="0.85"/>
+    <line x1="${x}" y1="${y + 86}" x2="${x}" y2="${y + 86 + weightLen}" stroke="${YELLOW}" stroke-width="9" marker-end="url(#aw)"/>
     <line x1="${x - 94}" y1="${y}" x2="${x - 268}" y2="${y}" stroke="${TEAL}" stroke-width="9" marker-end="url(#at)"/>`;
 
   return svg(
     backdrop(13) +
       `<defs>${arrowHead("aw", YELLOW)}${arrowHead("at", TEAL)}</defs>` +
       `<line x1="800" y1="130" x2="800" y2="880" stroke="${SPACE_700}" stroke-width="2" opacity="0.8"/>` +
-      body(left, 232, 820, "#3a5f9e") +
-      body(right, 78, 1700, "#3a5f9e"),
+      body(left, 100, 820, "#3a5f9e") +
+      body(right, 34, 1700, "#3a5f9e"),
   );
 }
 

@@ -11,13 +11,13 @@
   </marker><marker id="at" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
     <path d="M0 0 L10 5 L0 10 z" fill="#00babb"/>
   </marker></defs><line x1="800" y1="130" x2="800" y2="880" stroke="#19263f" stroke-width="2" opacity="0.8"/>
-    <path d="M150 730 A 820 820 0 0 1 750 730"
+    <path d="M150 604 A 820 820 0 0 1 750 604"
       fill="none" stroke="#3a5f9e" stroke-width="6" opacity="0.5"/>
-    <circle cx="450" cy="430" r="78" fill="#497ef7" opacity="0.85"/>
-    <line x1="450" y1="524" x2="450" y2="756" stroke="#facc15" stroke-width="9" marker-end="url(#aw)"/>
-    <line x1="356" y1="430" x2="182" y2="430" stroke="#00babb" stroke-width="9" marker-end="url(#at)"/>
-    <path d="M850 730 A 1700 1700 0 0 1 1450 730"
+    <circle cx="450" cy="372" r="70" fill="#497ef7" opacity="0.85"/>
+    <line x1="450" y1="458" x2="450" y2="558" stroke="#facc15" stroke-width="9" marker-end="url(#aw)"/>
+    <line x1="356" y1="372" x2="182" y2="372" stroke="#00babb" stroke-width="9" marker-end="url(#at)"/>
+    <path d="M850 604 A 1700 1700 0 0 1 1450 604"
       fill="none" stroke="#3a5f9e" stroke-width="6" opacity="0.5"/>
-    <circle cx="1150" cy="430" r="78" fill="#497ef7" opacity="0.85"/>
-    <line x1="1150" y1="524" x2="1150" y2="602" stroke="#facc15" stroke-width="9" marker-end="url(#aw)"/>
-    <line x1="1056" y1="430" x2="882" y2="430" stroke="#00babb" stroke-width="9" marker-end="url(#at)"/></svg>
+    <circle cx="1150" cy="372" r="70" fill="#497ef7" opacity="0.85"/>
+    <line x1="1150" y1="458" x2="1150" y2="492" stroke="#facc15" stroke-width="9" marker-end="url(#aw)"/>
+    <line x1="1056" y1="372" x2="882" y2="372" stroke="#00babb" stroke-width="9" marker-end="url(#at)"/></svg>
