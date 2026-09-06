@@ -62,6 +62,56 @@ function useStarSprite(): THREE.Texture {
   }, []);
 }
 
+/**
+ * Vòng ngắm cho dấu "bạn đang ở đây".
+ *
+ * Chốt 2026-09-06. Sau khi sửa nhãn đè nhau thì lỗi còn lại lộ ra: nhãn đã
+ * đọc được nhưng người xem vẫn không chỉ ra được Ngân Hà nằm ở chấm nào. Mốc
+ * home trước đây chỉ là một sprite sáng hơn giữa hàng nghìn sprite sáng, cộng
+ * một quầng ĐẬP NHỊP — mà quầng đập nhịp thì có lúc mờ gần hết, và đúng lúc
+ * đó thì nó không đánh dấu gì cả.
+ *
+ * Vòng ngắm này tĩnh, không đập nhịp, và vẽ với `depthTest={false}` nên không
+ * bị các thiên hà phía trước che. Một hình dạng KHÁC HẲN (vòng tròn có bốn
+ * vạch chỉ vào tâm) đọc nhanh hơn nhiều so với "chấm sáng to hơn một chút".
+ */
+function useReticleSprite(): THREE.Texture {
+  return useMemo(() => {
+    const size = 256;
+    const canvas = document.createElement("canvas");
+    canvas.width = size;
+    canvas.height = size;
+
+    const ctx = canvas.getContext("2d");
+    if (ctx) {
+      const half = size / 2;
+      ctx.strokeStyle = "#fde047";
+      ctx.lineCap = "round";
+
+      ctx.lineWidth = 7;
+      ctx.beginPath();
+      ctx.arc(half, half, size * 0.3, 0, Math.PI * 2);
+      ctx.stroke();
+
+      // Bốn vạch chỉ vào tâm, chừa khe hở để không lấp mất chính cái chấm.
+      ctx.lineWidth = 9;
+      for (let i = 0; i < 4; i++) {
+        const angle = i * (Math.PI / 2);
+        const cos = Math.cos(angle);
+        const sin = Math.sin(angle);
+        ctx.beginPath();
+        ctx.moveTo(half + cos * size * 0.45, half + sin * size * 0.45);
+        ctx.lineTo(half + cos * size * 0.36, half + sin * size * 0.36);
+        ctx.stroke();
+      }
+    }
+
+    const texture = new THREE.CanvasTexture(canvas);
+    texture.colorSpace = THREE.SRGBColorSpace;
+    return texture;
+  }, []);
+}
+
 type Node = { position: THREE.Vector3; weight: number };
 
 /**
@@ -403,6 +453,7 @@ function Landmarks({
   onSelect: (id: string) => void;
 }) {
   const pulse = useRef<THREE.Mesh>(null);
+  const reticle = useReticleSprite();
 
   // Chỉ còn nhịp đập của dấu "bạn đang ở đây". Việc giãn nhãn đã chuyển lên
   // `Web` để nó nhìn thấy cả nhãn vỏ tỉ lệ — xem `useLabelDeclutter`.
@@ -426,16 +477,45 @@ function Landmarks({
         return (
           <group key={landmark.id} position={position}>
             {home && (
-              <mesh ref={pulse}>
-                <sphereGeometry args={[0.28, 20, 20]} />
-                <meshBasicMaterial
-                  color="#fde047"
-                  transparent
-                  opacity={0.5}
-                  depthWrite={false}
-                  side={THREE.BackSide}
-                />
-              </mesh>
+              <>
+                <mesh ref={pulse}>
+                  <sphereGeometry args={[0.28, 20, 20]} />
+                  <meshBasicMaterial
+                    color="#fde047"
+                    transparent
+                    opacity={0.5}
+                    depthWrite={false}
+                    side={THREE.BackSide}
+                  />
+                </mesh>
+
+                {/* Vòng ngắm tĩnh — thứ thật sự trả lời "Ngân Hà ở đâu".
+                    depthTest tắt để thiên hà phía trước không che mất nó. */}
+                <sprite scale={[2.6, 2.6, 2.6]} renderOrder={10}>
+                  <spriteMaterial
+                    map={reticle}
+                    transparent
+                    opacity={0.95}
+                    depthWrite={false}
+                    depthTest={false}
+                  />
+                </sprite>
+
+                {/* Cuống nối chấm với nhãn. Không có nó thì cái nhãn chỉ là
+                    một viên thuốc lơ lửng gần đó, không chỉ đích xác chấm nào. */}
+                <mesh position={[0, landmarkLabelY(true) / 2 + 0.14, 0]} renderOrder={10}>
+                  <cylinderGeometry
+                    args={[0.014, 0.014, landmarkLabelY(true) - 0.28, 6]}
+                  />
+                  <meshBasicMaterial
+                    color="#fde047"
+                    transparent
+                    opacity={0.7}
+                    depthWrite={false}
+                    depthTest={false}
+                  />
+                </mesh>
+              </>
             )}
 
             <sprite
