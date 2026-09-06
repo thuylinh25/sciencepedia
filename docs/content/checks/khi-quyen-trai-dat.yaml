@@ -1,0 +1,465 @@
+# Thẩm định — khi-quyen-trai-dat
+#
+# Bước 2 (pre-draft): thẩm định BẢNG NGUỒN trước khi viết.
+# Bước 4 (post-draft) do agent `science-editor` ghi vào file này sau, ở khối
+# `editor_pass`. Lượt này KHÔNG ghi khối đó và KHÔNG tự chấm thay editor.
+#
+# Đầu vào: docs/content/research/khi-quyen-trai-dat.yaml
+# Chạy: 2026-09-06
+
+slug: khi-quyen-trai-dat
+mode: pre-draft
+checked_at: 2026-09-06
+recommendation: pass
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Cách kiểm, nói rõ để lượt sau lặp lại được
+# ─────────────────────────────────────────────────────────────────────────────
+method: >
+  Tải lại từng URL bằng curl trong CHÍNH lượt này, bóc thẻ HTML thành văn bản,
+  rồi tìm NGUYÊN VĂN từng chuỗi trong `passages` bằng script — không đọc bảng
+  nguồn rồi tin nó. Chuẩn hoá duy nhất được phép: gộp khoảng trắng liên tiếp
+  và đổi dấu nháy cong thành nháy thẳng. KHÔNG chuẩn hoá chữ số dưới (CO 2 →
+  CO2), vì làm vậy là sửa nguồn cho khớp bản chép chứ không phải ngược lại —
+  xem F1.
+  Kết quả: 48/48 đoạn trích của s1–s7 tìm thấy nguyên văn. s8 kiểm bằng
+  Crossref (metadata) + abstract nguyên văn trên bản preprint arXiv.
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Nguồn: có tồn tại, có resolve, có nói đúng điều bảng nguồn gán cho nó không
+# ─────────────────────────────────────────────────────────────────────────────
+source_integrity:
+  - id: s1
+    url_status: 200
+    verdict: verified
+    passages_found: 11
+    how: >
+      curl với User-Agent trình duyệt. Cả 11 đoạn nguyên văn, kể cả bộ ranh
+      giới 12 / 50 / 80 / 700 / 10.000 km và câu đường Kármán. Ngày xuất bản
+      2019-10-02 và ngày sửa 2024-10-22 lấy từ JSON-LD của chính trang, không
+      từ chữ hiển thị.
+  - id: s2
+    url_status: 200
+    verdict: verified
+    passages_found: 3
+    how: >
+      Câu thành phần "78.08 percent nitrogen, 20.95 percent oxygen, and 0.93
+      percent argon" nguyên văn. datePublished 2019-10-09, dateModified
+      2024-10-22 từ JSON-LD.
+    limit: "Chỉ được cấp: bộ 78,08/20,95/0,93, cụm 0,04% khí vết, và mốc 280 ppm tiền công nghiệp. Xem F3."
+  - id: s3
+    url_status: 200
+    verdict: verified
+    passages_found: 7
+    how: >
+      Bốn ô số (Global Monthly Mean CO 2 · May 2026: 428.73 ppm · May 2025:
+      427.04 ppm · Last updated: Aug 05, 2026) nằm liền nhau trong cùng khối
+      của trang, ghi thành bốn chuỗi rời vì đó là bốn nút DOM rời — xem F1.
+      Câu định nghĩa "dry air mole fraction" và câu "still preliminary" cũng
+      nguyên văn.
+  - id: s4
+    url_status: 200
+    verdict: verified
+    passages_found: 7
+    how: >
+      Hai công thức T và p nguyên văn, kể cả lỗi thiếu dấu cách của trang
+      ("kilo-Pascals,and h") — giữ nguyên chứ không sửa cho đẹp.
+    limit: "Cấp CÔNG THỨC, không cấp con số. Mọi con số rút ra là phép tính của bài — xem numeric_checks."
+  - id: s5
+    url_status: 200
+    verdict: verified
+    passages_found: 8
+    how: >
+      EPA nhúng mục từ điển thẳng vào giữa câu thân bài, nên vài đoạn trích
+      phải cắt tại chỗ văn bản còn liền mạch. Đã ghi lại đúng dạng liền mạch
+      đó, không nối hai mảnh cách xa nhau thành một câu — xem F1.
+  - id: s6
+    url_status: 200
+    verdict: verified
+    passages_found: 5
+    tier_limit: >
+      BẬC 3. Không được đứng một mình cho bất kỳ con số nào trong bài. Vai trò
+      còn lại sau bước này: đúng MỘT claim (hơi nước tới 4% ở tầng đối lưu thấp
+      vùng nhiệt đới), và claim đó đứng được vì khớp với s1 bậc 2.
+  - id: s7
+    url_status: 200
+    verdict: verified
+    passages_found: 6
+    tier_limit: "BẬC 3. Chỉ dùng làm ĐỐI CHIẾU ĐỘC LẬP cho suất giảm nhiệt của s4 — xem N7."
+  - id: s8
+    url_status: 200
+    verdict: verified
+    how: >
+      doi.org/10.1016/j.actaastro.2018.07.003 trả 200. Crossref khớp: tác giả
+      McDowell, Acta Astronautica, tập 151, trang 668–677, 2018/10. Abstract
+      lấy nguyên văn từ arxiv.org/abs/1807.07894 (200), gồm cả chữ "propose 80
+      kilometers as a more appropriate boundary".
+    correction_applied: >
+      Bảng nguồn ban đầu ghi trang "668–676"; Crossref nói 668–677. Đã sửa
+      trong file research. Sai một chữ số ở số trang là dấu hiệu con số được
+      chép lại chứ không được tra — cùng loại lỗi với QID đoán ở bài trước.
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Từng con số kiểm riêng. Con số nào là PHÉP TÍNH CỦA BÀI thì nói rõ.
+# ─────────────────────────────────────────────────────────────────────────────
+numeric_checks:
+  - id: N1
+    claim: "78,08 + 20,95 + 0,93 + 0,04 = 100"
+    computed: "99,96 + 0,04 = 100,00"
+    verdict: verified
+    note: >
+      Bộ số của NASA tự khép kín. Đó là bằng chứng bốn con số thuộc cùng một
+      phép kiểm kê, không phải bốn con số lượm từ bốn chỗ.
+
+  - id: N2
+    claim: "428,73 ppm quy ra phần trăm"
+    computed: "428,73 / 10.000 = 0,0429%"
+    verdict: verified
+    severity: S4
+    ruling: >
+      Hệ quả phải biết: RIÊNG CO₂ tháng 5/2026 (0,0429%) đã LỚN HƠN con số
+      0,04% mà s2 gán cho TOÀN BỘ khí vết. Không phải mâu thuẫn — 0,04% là
+      cách làm tròn của một trang viết năm 2019 — nhưng bài KHÔNG được viết
+      kiểu "CO₂ chỉ chiếm một phần nhỏ trong 0,04% khí vết", vì phát biểu đó
+      sai về số học với dữ liệu hiện tại. Nêu 0,04% là "khí vết, theo cách
+      NASA làm tròn", rồi nêu CO₂ riêng kèm tháng và năm.
+
+  - id: N3
+    claim: "Mức tăng CO₂ so với tiền công nghiệp"
+    computed: "428,73 / 280 = 1,531 → +53,1%.  NASA (s2) viết +47%, ứng với 412/280 = 1,471."
+    verdict: contradicted
+    severity: S3
+    ruling: >
+      CẤM dùng lại con số "47%" của s2. Nó đúng với 412 ppm và sai với 428,73
+      ppm. Bài cũng KHÔNG tự công bố "+53%": đó là phép chia của bài giữa hai
+      nguồn khác nhau, và nêu nó thành một tỉ lệ tròn trịa là tạo ra một con
+      số chưa ai kiểm. Cách đã duyệt: nêu hai con số kèm mốc của chúng (280
+      ppm tiền công nghiệp theo NASA; 428,73 ppm tháng 5/2026 theo NOAA) và
+      để người đọc tự thấy. Đúng bài học "tỉ số không nêu rõ tử/mẫu là dấu
+      hiệu nó được đoán" trong docs/content-rules.md.
+
+  - id: N4
+    claim: "Chênh lệch CO₂ 12 tháng"
+    computed: "428,73 − 427,04 = 1,69 ppm"
+    verdict: verified
+    note: >
+      Dùng được, nhưng phải nói rõ đây là hiệu hai giá trị trung bình THÁNG 5
+      của hai năm liền nhau, không phải "tốc độ tăng hằng năm" (NOAA có trang
+      growth rate riêng mà lượt này không tra).
+
+  - id: N5
+    claim: "Áp suất còn một nửa ở độ cao chừng 5,5 km"
+    computed: >
+      Từ công thức của s4: p(0) = 101,401 kPa; p(5.500 m) = 50,600 kPa;
+      tỉ số 0,4990. Dò nhị phân cho mốc đúng 50,00%: 5.485 m.
+    verdict: verified
+    computed_by_article: true
+    ruling: >
+      GIỮ, với ba ràng buộc: (a) nói rõ đây là số tính từ MÔ HÌNH khí quyển
+      chuẩn của NASA Glenn, không phải số đo tại một chỗ cụ thể; (b) viết
+      "chừng 5,5 km" chứ không "5.485 m" — độ chính xác giả tạo trên một mô
+      hình trung bình là một dạng làm đẹp số liệu; (c) nêu cả tử lẫn mẫu
+      (50,6 kPa so với 101,4 kPa ở mực nước biển).
+      Suy ra "một nửa khối lượng khí quyển nằm dưới 5,5 km" thì ĐƯỢC, vì chính
+      s4 phát biểu "The pressure of the air can be related to the weight of
+      the air over a given location" — nhưng phải trình bày như một suy luận
+      từ câu đó, không như một số đo độc lập.
+
+  - id: N6
+    claim: "Áp suất ở độ cao đỉnh Everest"
+    computed: "p(8.800 m) = 31,75 kPa = 31,3% mức mực nước biển"
+    verdict: verified
+    severity: S4
+    note: >
+      EPA nêu Everest hai lần với hai độ chính xác: mục từ điển "8.8 km",
+      thân bài "about 5.6 miles (9 km)". Đây là cùng một giá trị ở hai mức làm
+      tròn, KHÔNG phải hai giá trị khác nhau — nên không rơi vào luật "một số
+      có ba phiên bản thì chưa được kiểm". Nếu dùng thì dùng 8,8 km.
+    ruling: >
+      Được phép nhưng KHÔNG bắt buộc. Mô hình của s4 chỉ được hiệu chuẩn cho
+      tầng đối lưu tới 11.000 m nên 8.800 m vẫn nằm trong miền của nó. Ưu tiên
+      cắt nếu chạm trần độ dài: N5 đã nói xong cùng một ý bằng ít chữ hơn.
+
+  - id: N7
+    claim: "Suất giảm nhiệt 6,49 °C mỗi km"
+    computed: "0,00649 °C/m × 1.000 = 6,49 °C/km. Kiểm chéo: 27 − 6,49 × 4 = 1,04 °C."
+    verdict: verified
+    note: >
+      UCAR (s7, bậc 3, dựng độc lập) nói 27 °C ở mực nước biển cho "khoảng
+      1 °C ở 4.000 m". Khớp tới 0,04 °C với công thức NASA. Đây là bằng chứng
+      công thức của s4 đang được dùng đúng, KHÔNG phải một claim mới của bài —
+      bài không nêu ví dụ 27 °C này.
+
+  - id: N8
+    claim: "Năm tầng của NASA có liền nhau không"
+    computed: "0–12 · 12–50 · 50–80 · 80–700 · 700–10.000 km"
+    verdict: verified
+    note: >
+      Không hở, không chồng. Một bộ ranh giới khép kín là điều kiện để bài
+      dùng đúng MỘT bộ số, và đó là lý do bài lấy bộ NASA thay vì trộn với bộ
+      của EPA (xem F4).
+
+  - id: N9
+    claim: "Đường Kármán 100 km nằm ở đâu trong chính hệ tầng của NASA"
+    computed: "100 km nằm trong khoảng 80–700 km, tức bên trong TẦNG NHIỆT."
+    verdict: verified
+    severity: S3
+    ruling: >
+      Đây là chỗ dễ hiểu sai nhất của cả bài, nên phải nói rõ: "mép không
+      gian" KHÔNG phải đỉnh khí quyển. Theo chính s1, trên mốc 100 km vẫn còn
+      tầng nhiệt và tầng ngoài. Bài phải gọi 100 km là MỐC QUY ƯỚC (s1 dùng
+      chữ "delineation … to denote the transition point"), không gọi là ranh
+      giới của khí quyển. Và 80 km mà McDowell đề xuất rơi đúng đáy tầng
+      nhiệt — trùng hợp đáng nói, nhưng bài KHÔNG được diễn giải nó thành một
+      cơ chế vật lý, vì s8 không nói vậy.
+
+  - id: N10
+    claim: "99,99997% khí quyển nằm dưới 100 km (s1)"
+    verdict: unverifiable-by-us
+    severity: S4
+    note: >
+      Không tái lập được: mô hình của s4 chỉ chạy tới 25 km, và lượt này không
+      dựng được nguồn khối lượng khí quyển nào (NASA Earth Fact Sheet đang bảo
+      trì — xem open_questions của bảng nguồn).
+    ruling: >
+      Được dùng, nhưng phải QUY VỀ NASA bằng tên ("NASA nêu…"), không để bài
+      tự đứng ra bảo đảm. Đây là con số duy nhất trong bài mà lượt kiểm này
+      không tự tính lại được.
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Phát hiện
+# ─────────────────────────────────────────────────────────────────────────────
+findings:
+  - id: F1
+    severity: S3
+    verdict: partially-supported
+    claim: "Chín đoạn trích trong bản đầu của bảng nguồn được ghi là nguyên văn"
+    evidence: >
+      Script dò nguyên văn báo 9/48 đoạn KHÔNG tìm thấy. Cả 9 đều là lỗi chép
+      lại, không phải bịa: (a) chữ số dưới bị nuốt — trang in "CO 2", "N 2",
+      "H 2 O", bản chép ghi "CO2", "N2", "H2O"; (b) EPA nhúng mục từ điển vào
+      GIỮA câu thân bài, nên "The lowest layer, the troposphere, extends from…"
+      chưa bao giờ tồn tại thành một câu liền trên trang; (c) ba ô số của NOAA
+      ("Global Monthly Mean CO 2", "May 2026: 428.73 ppm") là ba nút DOM rời,
+      bản chép nối chúng bằng dấu gạch ngang; (d) hai chỗ sai dấu cách và dấu
+      phẩy so với trang.
+    ruling: >
+      ĐÃ SỬA bảng nguồn: mọi đoạn trích ghi lại đúng dạng trang thật in ra, kể
+      cả chữ số dưới rời và lỗi thiếu dấu cách "kilo-Pascals,and h" của NASA
+      Glenn. Chạy lại: 48/48 khớp.
+      Vì sao đáng ghi thành một finding chứ không sửa lặng lẽ: không con số
+      hay mệnh đề nào bị đổi nghĩa trong 9 chỗ đó, nhưng "nguyên văn" là thứ
+      lượt sau sẽ TIN mà không kiểm lại. Một bảng nguồn nói dối về mức nguyên
+      văn của chính nó thì lần sau không ai biết chỗ nào đã được chỉnh tay.
+    applied: true
+
+  - id: F2
+    severity: S2
+    verdict: contradicted
+    claim: 'UCAR (s6): "Carbon dioxide naturally composes about 0.03% of the atmosphere"'
+    evidence: >
+      0,03% = 300 ppm. NOAA GML (s3) đo trung bình tháng toàn cầu 428,73 ppm
+      cho tháng 5/2026, tức 0,0429%. Con số của UCAR thấp hơn thực tế 43%.
+      Chính câu đó của UCAR còn nói tiếp "but the amount is increasing due to
+      the burning of fossil fuels" — nguồn tự biết con số của mình động, mà
+      vẫn in nó không kèm năm.
+    ruling: >
+      CẤM dùng. Và ghi lại làm ví dụ: đây đúng là cơ chế hỏng mà
+      docs/content-rules.md mô tả ở mục "Ước lượng điểm không đặt vào tiêu đề"
+      — một con số bị tách khỏi năm của nó rồi sống mãi. Chỉ s3 được cấp con
+      số CO₂, và luôn kèm tháng + năm + mệnh đề "sơ bộ" của chính NOAA.
+    applied: true
+
+  - id: F3
+    severity: S3
+    verdict: contradicted
+    claim: 'NASA (s2): "currently at nearly 412 parts per million" và "a 47 percent increase"'
+    evidence: >
+      Trang xuất bản 2019-10-09 (JSON-LD), chữ "currently" trong câu không đi
+      kèm năm nào. 412 ppm và 47% đều là số của khoảng 2019; xem N3.
+    ruling: >
+      CẮT cả hai khỏi bài. Từ s2 chỉ lấy: bộ thành phần khô, cụm 0,04% khí
+      vết, và mốc 280 ppm tiền công nghiệp (con số này không gắn ngày theo
+      cùng nghĩa — nó là mức của một thời kỳ đã kết thúc, không phải mức "hiện
+      nay"). Cùng một trang có thể vừa là nguồn tốt cho câu này vừa là nguồn
+      hỏng cho câu kia; phân biệt theo TỪNG CLAIM, không theo trang.
+    applied: true
+
+  - id: F4
+    severity: S3
+    verdict: partially-supported
+    claim: "Đỉnh tầng đối lưu ở 12 km (s1) hay 10 km (s5)"
+    evidence: >
+      s1: "on average, about 12 kilometers … with its height lower at Earth's
+      poles and higher at the equator". s5: "about 10 km in altitude, although
+      this height varies with latitude". Hai nguồn nêu hai trung bình khác
+      nhau, và CẢ HAI đều tự nói đại lượng này biến thiên theo vĩ độ.
+    ruling: >
+      KHÔNG lấy trung bình, KHÔNG giấu một trong hai. Bài dùng đúng MỘT bộ số
+      cho cả năm tầng — bộ của NASA (s1), vì nó khép kín và phủ hết năm tầng
+      (N8) — VÀ nói rõ các ranh giới là trung bình, thấp hơn ở cực và cao hơn
+      ở xích đạo. Chính sự lệch giữa hai cơ quan là bằng chứng cho mệnh đề
+      "ranh giới không cố định", nên nó thuộc về nội dung bài chứ không phải
+      một vết bẩn cần lau.
+    applied: true
+
+  - id: F5
+    severity: S3
+    verdict: unverifiable
+    claim: "Dải ozon nằm ở độ cao nào"
+    evidence: >
+      EPA tự đưa hai giá trị trên CÙNG một trang: thân bài "about 9 to 18
+      miles (15 to 30 km)", mục từ điển "approximately 15-40 kilometers
+      (10-25 miles)". s1 không nêu con số nào.
+    ruling: >
+      CẮT con số. Bài chỉ nói "phần lớn ozon khí quyển nằm trong tầng bình
+      lưu", điều mà cả s1 lẫn s5 đều nói. Theo tiền lệ F5 của
+      cau-truc-ben-trong-trai-dat: một đại lượng có hai phiên bản trong cùng
+      một nguồn thì chưa được kiểm, không phải "xấp xỉ như nhau".
+    applied: true
+
+  - id: F6
+    severity: S3
+    verdict: unsupported
+    claim: 'NASA (s1): nhiệt độ tầng nhiệt tăng "due to the very low density of molecules found here"'
+    evidence: >
+      Không nguồn nào khác trong bảng phát biểu cơ chế này, và nó không phải
+      cách giải thích thông thường (hấp thụ bức xạ tử ngoại xa / tia X). Mật
+      độ thấp giải thích được vì sao NHIỆT LƯỢNG ở đó nhỏ, chứ tự nó không
+      giải thích vì sao nhiệt độ TĂNG theo độ cao.
+    ruling: >
+      Bài nêu SỰ KIỆN (nhiệt độ tăng theo độ cao trong tầng nhiệt — s1 và s7
+      cùng nói) và KHÔNG chép mệnh đề nhân quả của s1. Đây đúng loại lỗi mà
+      docs/content-rules.md ghi ở mục "Trích dẫn resolve đúng bài KHÔNG có
+      nghĩa là bài đó nói điều đang viết": chép một cơ chế chỉ vì nó nằm cạnh
+      một sự kiện đã kiểm.
+    applied: true
+
+  - id: F7
+    severity: S3
+    verdict: verified
+    claim: "McDowell (2018) đề xuất 80 km thay cho đường Kármán 100 km"
+    evidence: >
+      Nguyên văn abstract: "I investigate the inner edge of outer space from
+      historical, physical and technological viewpoints and PROPOSE 80
+      kilometers as a more appropriate boundary than the currently popular
+      100 km Von Kármán line."
+    ruling: >
+      GIỮ, với mức dè dặt nguyên vẹn: chữ phải là "đề xuất", và 100 km phải
+      được gọi là mốc QUY ƯỚC đang phổ biến (s1: "most scientists use a
+      delineation known as the Karman line … to denote the transition point").
+      Viết "ranh giới không gian thật ra là 80 km" là lỗi cấp từ chối: nó biến
+      một đề xuất trong tài liệu bình duyệt thành một chuẩn đã đổi.
+    applied: true
+
+  - id: F8
+    severity: S4
+    verdict: verified
+    claim: "Bậc nguồn của hai trang UCAR SciEd"
+    evidence: >
+      UCAR Center for Science Education là bộ phận GIÁO DỤC của NCAR/UCAR,
+      không phải kênh công bố khoa học của cơ quan. Theo thang trong
+      prisma/schema.prisma (1 bình duyệt · 2 cơ quan thẩm quyền · 3 giáo dục),
+      đây là bậc 3.
+    ruling: >
+      Đã hạ s6 và s7 xuống tier 3 trong bảng nguồn. Hệ quả: phần thành phần
+      khí KHÔNG được dựa vào chúng, mà quy về s2 (NASA, bậc 2). Kiểm lại điều
+      kiện gate: còn 6 nguồn bậc 1–2 (s1 s2 s3 s4 s5 bậc 2, s8 bậc 1), ngưỡng
+      là 3 — vẫn qua.
+      Ghi ra vì cám dỗ có thật: s6 là trang tiện nhất trong bảng, nó nói đúng
+      cái bài cần bằng đúng cấu trúc bài cần, và nó cũng là trang chứa F2.
+    applied: true
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Đối chiếu kho với chính nó — "máy dò lỗi rẻ nhất" (docs/content-rules.md)
+# Truy vấn Prisma chỉ-đọc trên 48 bài PUBLISHED, ngày 2026-09-06.
+# ─────────────────────────────────────────────────────────────────────────────
+internal_consistency:
+  - against: /articles/trai-dat
+    claim_there: "**Khí quyển.** 78% nitơ, 21% oxy."
+    verdict: consistent
+    note: >
+      Khớp s2 (78,08 / 20,95) ở mức làm tròn. Bài mới nêu bộ số đầy đủ hơn và
+      thêm chữ "khô" — bổ sung, không mâu thuẫn. KHÔNG sửa `trai-dat`: bài đó
+      không sai, chỉ nói gọn hơn.
+
+  - against: /articles/cuc-quang
+    claim_there: >
+      "Cực quang là ánh sáng phát ra từ chính khí quyển Trái Đất, ở độ cao
+      khoảng 100–400 km" và "Ở độ cao khoảng 90–150 km, chúng va vào nguyên tử
+      oxy và phân tử nitơ".
+    verdict: consistent
+    note: >
+      Cả hai khoảng nằm trọn trong 80–700 km mà s1 gán cho tầng nhiệt. Bài mới
+      trả lời đúng câu hỏi mà bài kia bỏ ngỏ ("đó là tầng nào"), nên link giữa
+      hai bài có nghĩa thật chứ không chỉ trùng chữ.
+    ruling_for_draft: >
+      Bài mới KHÔNG được nêu lại khoảng 100–400 km (đó là claim của bài kia,
+      có nguồn riêng của nó). Chỉ nói cực quang xảy ra trong tầng nhiệt — điều
+      s1 phát biểu — rồi dẫn sang.
+
+  - against: /articles/nguyen-nhan-cua-mua
+    claim_there: >
+      "đỉnh nhiệt độ đến chậm một tới hai tháng, vì đất và nước biển cần thời
+      gian tích nhiệt"
+    verdict: consistent
+    note: >
+      Không giao nhau về claim. Nhưng nó khớp NGHĨA với s1 ("most of the heat
+      found in the troposphere is generated by the transfer of energy from
+      Earth's surface"): cả hai bài cùng nói khí quyển thấp được sưởi TỪ DƯỚI
+      LÊN. Đây là chỗ link có lý do, không phải chỗ nhồi từ khoá.
+
+  - against: /articles/sao-kim
+    claim_there: "Khí quyển Sao Kim gồm 96% CO₂"
+    verdict: consistent
+    note: >
+      Đối chiếu được: 96% so với 0,0429%. Nếu bài mới đặt hai con số cạnh nhau
+      thì phải nêu rõ mỗi con số là của hành tinh nào và đo theo đại lượng gì
+      (Sao Kim: nguồn của bài kia; Trái Đất: phần mol không khí KHÔ, s3).
+      KHÔNG được viết thành một tỉ số ("gấp hơn 2.000 lần") — đó là phép chia
+      giữa hai đại lượng lấy từ hai bảng nguồn khác nhau, chưa ai kiểm.
+
+  - against: /articles/song-buoc-song-tan-so-bien-do
+    verdict: consistent
+    note: "Không có claim nào về khí quyển. Không giao nhau."
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Ràng buộc bắt buộc với bước 3. Bản nháp vi phạm bất kỳ dòng nào ở đây thì
+# quay lại bước 3, không đi tiếp.
+# ─────────────────────────────────────────────────────────────────────────────
+binding_on_draft:
+  - "KHÔNG dùng '0,03%' CO₂ của UCAR (F2), KHÔNG dùng '412 ppm' hay '47%' của NASA (F3)."
+  - "Con số CO₂ duy nhất được phép: 428,73 ppm, KÈM 'trung bình tháng toàn cầu, tháng 5/2026' và mệnh đề sơ bộ của NOAA (N4, F2)."
+  - "280 ppm chỉ được gọi là mức tiền công nghiệp theo NASA; KHÔNG tự tính phần trăm tăng (N3)."
+  - "Dùng đúng MỘT bộ ranh giới tầng — bộ NASA 12/50/80/700/10.000 km — và nói rõ đó là trung bình biến thiên theo vĩ độ (F4)."
+  - "KHÔNG nêu con số độ cao cho dải ozon (F5)."
+  - "KHÔNG chép mệnh đề nhân quả 'vì mật độ phân tử rất thấp' cho tầng nhiệt (F6)."
+  - "100 km là MỐC QUY ƯỚC, nằm bên trong tầng nhiệt; 80 km của McDowell là ĐỀ XUẤT (F7, N9)."
+  - "Mọi con số rút từ công thức NASA Glenn phải được gọi là số tính từ mô hình, và nêu cả tử lẫn mẫu (N5, N6)."
+  - "Thành phần khí phải mang chữ 'khô' (dry air) — không phải chi tiết thừa (N2, s3)."
+  - "KHÔNG viết 'CO₂ chỉ là một phần nhỏ của 0,04%' (N2 — sai số học với dữ liệu 2026)."
+  - "Không nêu lại khoảng 100–400 km của `cuc-quang`; chỉ nói cực quang ở tầng nhiệt rồi dẫn sang."
+  - "Không tạo tỉ số giữa CO₂ Sao Kim và CO₂ Trái Đất."
+
+# Điều kiện gate đếm được, kiểm ở bước này:
+gate_counts:
+  strong_sources: 6      # ngưỡng 3 — s1..s5 bậc 2, s8 bậc 1
+  urls_alive: "9/9 trả 200 (gồm cả doi.org và arxiv)"
+  passages_verbatim: "48/48 của s1–s7; s8 kiểm bằng Crossref + abstract arXiv"
+
+# ═════════════════════════════════════════════════════════════════════════════
+# BƯỚC 4 — science-editor
+# ═════════════════════════════════════════════════════════════════════════════
+# CHƯA CHẠY. Khối `editor_pass` do agent `science-editor` ghi, không do
+# content-curator tự điền.
+#
+# Lý do ghi rõ ở đây thay vì để trống im lặng: hai lượt trước
+# (cau-truc-ben-trong-trai-dat) đã có `content-curator` tự chấm rồi ghi vào ô
+# này, và lượt `science-editor` THẬT sau đó bắt được 2 lỗi S2 mà cả hai lượt
+# tự chấm đều bỏ lọt. Một ô trống là thông tin; một ô tự điền là thông tin sai.
+editor_pass: null
+editor_pass_blocker: >
+  Tiến trình `content-curator` lượt này chạy ở spawn depth con và không được
+  cấp tool Task/Agent, nên không gọi được agent `science-editor`. Bài dừng ở
+  DRAFT sau bước 3, `reviewedById` và `reviewedAt` để null, chờ phiên `main`
+  (có Task tool) chạy bước 4 thật.

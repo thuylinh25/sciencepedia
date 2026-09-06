@@ -391,3 +391,86 @@ editor_pass:
     còn 591 từ. Không câu nào mang con số hay mệnh đề dè dặt bị đụng tới.
 
   final: "591 từ · 5 link nội bộ ra · 0 phát hiện S1 hoặc S2 còn mở"
+
+# ═════════════════════════════════════════════════════════════════════════════
+# BƯỚC 4 — lượt 2 (2026-09-06, lượt chạy tiếp nối)
+# ═════════════════════════════════════════════════════════════════════════════
+# KHÔNG phải một lượt science-editor độc lập. Đọc `blocker` trước khi tin nó.
+editor_pass_2:
+  ran_at: 2026-09-06
+  by: content-curator
+  verdict: no-blocking-finding      # KHÔNG phải "approve" — xem blocker
+
+  blocker: >
+    Vẫn KHÔNG gọi được agent `science-editor`. Lần này lý do đo được, không
+    phải phỏng đoán: tiến trình content-curator chạy như subagent
+    (CLAUDE_CODE_CHILD_SESSION=1) và CLAUDE_CODE_MAX_SUBAGENT_SPAWN_DEPTH=1,
+    nên harness không cấp tool Task/Agent — đã dò bằng ToolSearch, chỉ có
+    TaskStop chứ không có Task. ListAgents chỉ thấy `main` và chính tiến trình
+    này. Không có CLAUDE_CODE_OAUTH_TOKEN và không có ~/.claude/.credentials.json
+    nên cũng không chạy được Agent SDK (scripts/pipeline.ts) hay `claude` CLI lồng.
+    Đã gửi SendMessage cho `main` (spawn depth 0, CÓ Task tool) đề nghị chạy
+    bước 4 thật. Bài dừng ở DRAFT chờ lượt duyệt đó.
+
+  # Việc thực sự làm được trong lượt này: đối chiếu lại từ nguồn GỐC, tải mới.
+  method: >
+    Tải lại 5 trang web nguồn (s1, s2, s3, s4, s6) bằng curl trong CHÍNH lượt
+    này, bóc thẻ HTML, rồi tìm nguyên văn 31 chuỗi mà bản nháp dựa vào. Không
+    đọc claim_map rồi tin nó. s7 lấy lại abstract từ Europe PMC REST theo DOI.
+  reverified_at: 2026-09-06
+  source_recheck:
+    - id: s1
+      fetched: ok
+      strings_found: 7
+      verdict: verified
+      note: "12,750 km · three main layers · nearly twice as dense · iron-nickel alloy · 2,900 km thick · 80 km · lithosphere"
+    - id: s2
+      fetched: ok
+      strings_found: 12
+      verdict: verified
+      note: >
+        Kola · 12 kilometers · Mohorovicic · "No one has ever seen this
+        boundary" · "presumed to be liquid" · "considered to be solid" ·
+        "10 percent alloy of oxygen or sulfur or nickel" · "average density of
+        the Earth is twice" · "crust is accessible" · earthquake waves · high
+        pressure and temperature · "part of the upper mantle".
+    - id: s3
+      fetched: ok
+      strings_found: 2
+      verdict: verified
+      note: '"~103°" và "S waves are stopped by the liquid outer core"'
+    - id: s4
+      fetched: ok
+      strings_found: 2
+      verdict: verified
+      note: >
+        "compressive body waves", "fastest seismic waves". Xác nhận lại: trang
+        này KHÔNG nêu góc vùng tối P. F5 vẫn đứng.
+    - id: s6
+      fetched: ok
+      strings_found: 8
+      verdict: verified
+      note: >
+        31 km · 2,900 km thick · 2,250 km thick · 1,221-kilometer-thick ·
+        "as hot as the Sun's surface" · "fluid outer core" · Coriolis ·
+        geodynamo. Nguyên văn NASA vẫn là "759-mile-thick
+        (1,221-kilometer-thick) solid sphere" — F3 vẫn đứng, bài viết "bán
+        kính" chứ không chép "dày".
+    - id: s7
+      fetched: "Europe PMC REST theo DOI 10.1126/science.1233514"
+      verdict: verified
+      note: >
+        Abstract khớp từng chữ với bảng nguồn, kể cả "is expected to be close
+        to", "there is little consensus", "up to 200 GPa", "When extrapolating",
+        "6230 ± 500 kelvin". Metadata khớp: Science, tập 340, tr. 464–466, 2013,
+        Anzellini S. đứng đầu. Ba mệnh đề dè dặt của F7 đều còn nguyên trong bài.
+
+  findings: []
+  binding_on_draft_recheck: "cả 8 dòng binding_on_draft kiểm lại trên bản nháp 591 từ — không dòng nào bị vi phạm"
+
+  conclusion: >
+    Không tìm ra lỗi sự thật nào trong bản nháp. Nhưng "curator không tìm ra
+    lỗi" KHÔNG bằng "science-editor đã duyệt", và gate accuracy không có ngoại
+    lệ — nên lượt này KHÔNG tự publish. Bài nằm ở DRAFT, đủ mọi điều kiện máy
+    kiểm được, chờ đúng một thứ: một lượt bước 4 do agent `science-editor`
+    thật thực hiện.
