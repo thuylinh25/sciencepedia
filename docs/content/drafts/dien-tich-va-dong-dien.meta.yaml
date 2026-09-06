@@ -1,0 +1,90 @@
+# ══ CỨU TỪ ARTIFACT LƯỢT CHẠY 34003910057, ngày 2026-09-06 ══
+#
+# Lượt chạy hết hạn mức Claude giữa chừng khi đang làm bài này (chủ đề #6).
+# Runner bị huỷ, và workflow lúc đó không commit gì ngược lại repo — nên bản
+# nháp chỉ còn trong artifact. Tải về và đưa vào repo ngày 2026-09-06.
+#
+# ĐÃ XONG: bước 1 (nghiên cứu), bước 2 (fact-check nguồn, verdict pass),
+#          bước 3 (soạn bài).
+# CHƯA LÀM: bước 4 science-editor trở đi. Bài CHƯA qua gate accuracy.
+#
+# MẤT KHÔNG CỨU ĐƯỢC: bảng nguồn s1–s16 mà claim_map bên dưới trỏ tới.
+# Nó nằm ở docs/content/research/dien-tich-va-dong-dien.yaml trên đĩa runner,
+# không nằm trong artifact vì lúc đó glob chỉ gom drafts/. Muốn đi tiếp thì
+# phải chạy lại bước 1 để dựng lại bảng nguồn; phần văn xuôi thì giữ được.
+#
+# Claim map + uncertainty report — dien-tich-va-dong-dien (bước 3: article-generator)
+slug: dien-tich-va-dong-dien
+generated_at: 2026-09-06
+source_pack: docs/content/research/dien-tich-va-dong-dien.yaml
+predraft_check: docs/content/checks/dien-tich-va-dong-dien.yaml  # verdict: pass
+prose_chars: 4976
+reading_time_min: 5
+
+claim_map:
+  - sentence: "Dòng điện là điện tích đang chuyển động; chính chuyển động ấy sinh ra từ trường"
+    sources: [s1, nội-bộ:tu-truong-va-luc-hap-dan]
+    note: "Vế từ trường lấy từ bài đã publish trong kho, mục 'Nguồn sinh ra: điện tích đang chuyển động'"
+  - sentence: "e là 'độ lớn điện tích trong một electron'"
+    sources: [s8]
+  - sentence: "Proton và electron mang cùng độ lớn điện tích, khác dấu"
+    sources: [s2]
+  - sentence: "e = 1,602176634 × 10⁻¹⁹ C từ 20/5/2019, sai số chuẩn '(exact)'"
+    sources: [s1, s2, s5, s6]
+  - sentence: "Một coulomb gom khoảng 6,241 × 10¹⁸ điện tích nguyên tố"
+    sources: [s2]
+    note: "kiểm chéo bằng số học: 1/e = 6,241509 × 10¹⁸"
+  - sentence: "Định nghĩa ampere trước 2019 (hai dây song song, 2 × 10⁻⁷ N/m)"
+    sources: [s2]
+  - sentence: "Định nghĩa cũ hỏng: không hiện thực hoá được, và neo đơn vị điện vào chuẩn khối lượng"
+    sources: [s3]
+  - sentence: "Định nghĩa BIPM hiện hành của ampere, trích nguyên văn"
+    sources: [s1]
+  - sentence: "Một ampere = một coulomb qua một điểm trong một giây"
+    sources: [s3]
+  - sentence: "'khoảng 6 tỉ tỉ electron mỗi giây'"
+    sources: [s4]
+    note: "'6 quintillion' (Mỹ) = 6 × 10¹⁸; tiếng Việt 'tỉ tỉ' = 10¹⁸"
+  - sentence: "Chiều quy ước: từ điện thế cao sang thấp, ngược chiều electron; Franklin đoán sai"
+    sources: [s15]
+  - sentence: "'Vào' tế bào = điện tích dương đi vào, tức cation vào hoặc anion ra"
+    sources: [s14]
+  - sentence: "Tia sét điển hình ~300 triệu V, ~30.000 A; điện dân dụng chuẩn Mỹ 120 V, 15 A"
+    sources: [s9]
+  - sentence: "Cơ chế phân tách điện tích trong mây dông và sự sụp đổ tính cách điện của không khí"
+    sources: [s10]
+  - sentence: "SET: sai số vài phần trăm triệu ở hàng chục triệu electron mỗi giây"
+    sources: [s7]
+  - sentence: "100 thiết bị SET đồng bộ ở 10⁹ chu kỳ/giây chỉ cho dòng cỡ nanoampere"
+    sources: [s7]
+    note: "kiểm chéo: 100 × 10⁹ × e = 1,6 × 10⁻⁸ A"
+  - sentence: "Bão Mặt Trời gia tốc hạt tích điện vào không gian"
+    sources: [s12]
+  - sentence: "Biến thiên thông lượng từ trong bão địa từ sinh dòng chạy trong lưới điện"
+    sources: [s11]
+  - sentence: "Bão hoà lõi máy biến áp; 13/3/1989 mất điện chín giờ ở Canada, mất một máy biến áp"
+    sources: [s11]
+  - sentence: "Hạt tích điện đổ xuống hai vùng cực tạo ra cực quang"
+    sources: [s12, nội-bộ:cuc-quang]
+  - sentence: "Tăng tính thấm Na⁺ khởi phát điện thế hoạt động; dòng vào nhanh rồi dòng ra chậm hơn, có trễ"
+    sources: [s14]
+  - sentence: "Hodgkin và Huxley mô tả định lượng dòng qua màng, 1952"
+    sources: [s13]
+  - sentence: "Cân Kibble: trọng lượng vật thử bù trừ bởi lực do dòng điện trong cuộn dây đặt trong từ trường"
+    sources: [s16]
+
+uncertainty_report:
+  - "Không phát biểu định luật bảo toàn điện tích — không có nguồn bậc 1–2 trong pack (theo yêu cầu của bước 2)."
+  - "Không nói tới tốc độ trôi của electron trong dây dẫn — không có nguồn bậc 1–2 (theo yêu cầu của bước 2)."
+  - "Không dùng câu 'picoampere ... 100 million times per second' của NIST vì tự nó không nhất quán về số (xem S4 ở bước 2)."
+  - "Con số 120 V / 15 A đã được gắn nhãn 'theo chuẩn Mỹ' trong bài; điện dân dụng Việt Nam là 220 V."
+  - "Con số sét dùng bản NWS ('điển hình ~30.000 A'), không trộn với ví dụ '100.000 A trở lên' của NIST."
+  - "Hodgkin & Huxley 1952 chỉ được dùng ở mức tiêu đề (bản PMC là ảnh quét); chi tiết Na⁺/K⁺ quy về NCBI Bookshelf."
+  - "Điện tích của quark (bội phân số của e) bị BỎ khỏi bài: không lấy được trang PDG hay CERN nào phát biểu con số ±2/3, ±1/3 trong lượt nghiên cứu này. Để dành cho bài về hạt cơ bản."
+
+internal_links_out:
+  - /articles/tu-truong-va-luc-hap-dan
+  - /articles/nguyen-tu-cau-tao-va-dong-vi
+  - /articles/song-buoc-song-tan-so-bien-do
+  - /articles/cuc-quang
+  - /articles/khoi-luong-quan-tinh-va-trong-luong

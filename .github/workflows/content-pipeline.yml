@@ -44,6 +44,10 @@ on:
   schedule:
     - cron: "0 */2 * * *"
 
+permissions:
+  # Bước "Lưu việc dở vào repo" đẩy commit lên nhánh mặc định.
+  contents: write
+
 # Hai lượt chạy chồng nhau sẽ cùng lấy một chủ đề ở đầu hàng đợi và sinh hai
 # bài trùng. Hàng đợi nằm trong file, không có khoá — nên khoá ở đây.
 concurrency:
@@ -163,6 +167,37 @@ jobs:
           fi
           exit $code
 
+      # Việc dở phải sống sót khi runner bị huỷ.
+      #
+      # Chốt 2026-09-06, sau khi mất trắng một bản nháp. Lượt 34003910057 chạy
+      # 44 phút: publish xong chủ đề #5, sang #6 "Điện tích và dòng điện" thì
+      # hết hạn mức ở bước 3. Bản nháp 6,4 KB cùng claim map nằm trên đĩa
+      # runner, hàng CSDL thì chưa được tạo — vì pipeline chỉ ghi CSDL ở bước
+      # 10. Runner bị huỷ là mất sạch, và lượt sau tra CSDL thấy "không có
+      # việc dở" nên lấy chủ đề mới. $17 và 44 phút đổ đi.
+      #
+      # Artifact không cứu được: nó hết hạn, và phải có người tải về bằng tay
+      # — đúng việc đã phải làm thủ công một lần cho `nang-luong-la-gi`.
+      #
+      # Chỉ commit thư mục việc-đang-làm. KHÔNG commit `pipeline-run-*.md`:
+      # mỗi lượt một file, 12 lượt/ngày thì repo ngập báo cáo. Báo cáo cứ để
+      # ở artifact, nó chỉ cần sống đủ lâu để đọc.
+      - name: Lưu việc dở vào repo
+        if: always()
+        run: |
+          mkdir -p docs/content/drafts docs/content/research docs/content/checks
+          git add -A docs/content/drafts docs/content/research docs/content/checks
+          if git diff --cached --quiet; then
+            echo "Không có việc dở nào để lưu."
+            exit 0
+          fi
+          git -c user.name="sciencepedia-pipeline" \
+              -c user.email="pipeline@users.noreply.github.com" \
+              commit -m "chore(pipeline): lưu việc dở của lượt ${{ github.run_id }}"
+          # Nhánh có thể đã tiến lên trong lúc lượt này chạy 45 phút.
+          git pull --rebase --autostash origin "${{ github.ref_name }}"
+          git push origin "HEAD:${{ github.ref_name }}"
+
       - name: Rà lại toàn kho sau lượt chạy
         # Chạy cả khi bước trên hỏng: một lượt bị cắt giữa chừng là đúng lúc
         # cần biết kho còn lại ở trạng thái nào.
@@ -212,4 +247,6 @@ jobs:
           path: |
             docs/content/pipeline-run-*.md
             docs/content/drafts/
+            docs/content/research/
+            docs/content/checks/
           if-no-files-found: warn
