@@ -18,9 +18,9 @@ Mô hình khí quyển chuẩn của NASA Glenn cho 50,6 kPa ở độ cao 5.500
 
 [Bên trong Trái Đất](/articles/cau-truc-ben-trong-trai-dat) có một cách chia lớp theo thành phần hoá học — vỏ, manti, lõi. Khí quyển thì chia theo tiêu chí khác: chiều biến thiên của nhiệt độ theo độ cao. Theo NASA có năm tầng chính.
 
-**Tầng đối lưu**, từ mặt đất lên trung bình chừng 12 km, là tầng đặc nhất; nhiệt độ giảm dần khi lên cao, gần như toàn bộ [thời tiết](/articles/nguyen-nhan-cua-mua) diễn ra ở đây. **Tầng bình lưu**, chừng 12–50 km, đổi chiều: nhiệt độ tăng theo độ cao, vì ozon tập trung ở đó hấp thụ bức xạ cực tím. **Tầng trung lưu**, chừng 50–80 km, lạnh dần trở lại; đỉnh của nó lạnh nhất hệ Trái Đất, trung bình chừng −85 °C. **Tầng nhiệt**, chừng 80–700 km, nhiệt độ lại tăng theo độ cao; [cực quang](/articles/cuc-quang) và Trạm Vũ trụ Quốc tế đều nằm ở đây. **Tầng ngoài**, chừng 700–10.000 km, loãng đến mức không còn hành xử như một chất khí.
+**Tầng đối lưu**, từ mặt đất lên trung bình chừng 12 km, là tầng đặc nhất; nhiệt độ thường giảm dần khi lên cao, gần như toàn bộ [thời tiết](/articles/nguyen-nhan-cua-mua) diễn ra ở đây. **Tầng bình lưu**, chừng 12–50 km, đổi chiều: nhiệt độ tăng theo độ cao, vì ozon tập trung ở đó hấp thụ bức xạ cực tím. **Tầng trung lưu**, chừng 50–80 km, lạnh dần trở lại; đỉnh của nó lạnh nhất hệ Trái Đất, trung bình chừng −85 °C. **Tầng nhiệt**, chừng 80–700 km, nhiệt độ lại tăng theo độ cao; [cực quang](/articles/cuc-quang) và Trạm Vũ trụ Quốc tế đều nằm ở đây. **Tầng ngoài**, chừng 700–10.000 km, loãng đến mức không còn hành xử như một chất khí.
 
-Các mốc trên là trung bình. Đỉnh tầng đối lưu thấp hơn ở hai cực và cao hơn ở xích đạo — EPA cho chừng 10 km còn NASA cho chừng 12 km, và khoảng lệch giữa hai cơ quan là biên độ của một đại lượng không cố định.
+Các mốc trên là trung bình. Đỉnh tầng đối lưu thấp hơn ở hai cực và cao hơn ở xích đạo — EPA cho chừng 10 km còn NASA cho chừng 12 km, và khoảng lệch giữa hai cơ quan là dấu hiệu của một đại lượng không cố định.
 
 ## Mép trên không có mép
 

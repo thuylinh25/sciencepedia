@@ -323,7 +323,7 @@ key_facts:
     sources: [s4, s5]
     confidence: high
     computed_by_article: true
-    cross_check: "p(8.800 m) = 31,58 kPa; 31,58 / 101,40 = 31,1%. Tử và mẫu đều nêu."
+    cross_check: "p(8.800 m) = 31,75 kPa; 31,75 / 101,40 = 31,3%. Tử và mẫu đều nêu. (Sửa 2026-09-07: bản trước ghi 31,58 kPa/31,1%, sai; khớp lại với N6 trong checks.yaml.)"
   - claim: "Suất giảm nhiệt trong tầng đối lưu của mô hình là 6,49 °C mỗi km"
     sources: [s4]
     confidence: high
