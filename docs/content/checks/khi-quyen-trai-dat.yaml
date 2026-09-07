@@ -457,9 +457,130 @@ gate_counts:
 # (cau-truc-ben-trong-trai-dat) đã có `content-curator` tự chấm rồi ghi vào ô
 # này, và lượt `science-editor` THẬT sau đó bắt được 2 lỗi S2 mà cả hai lượt
 # tự chấm đều bỏ lọt. Một ô trống là thông tin; một ô tự điền là thông tin sai.
-editor_pass: null
-editor_pass_blocker: >
-  Tiến trình `content-curator` lượt này chạy ở spawn depth con và không được
-  cấp tool Task/Agent, nên không gọi được agent `science-editor`. Bài dừng ở
-  DRAFT sau bước 3, `reviewedById` và `reviewedAt` để null, chờ phiên `main`
-  (có Task tool) chạy bước 4 thật.
+editor_pass:
+  verdict: approve
+  reviewedById: cmti8v05z0000k5ccfg55mget   # "Ban biên tập Sciencepedia", ADMIN tổ chức — đã tra qua Prisma, không bịa
+  reviewedAt: 2026-09-07
+  rounds: 2
+  reviewed_word_count: 597
+  note: >
+    Chữ ký chỉ đúng văn bản 597 từ — KHÔNG phải bản 769 từ gốc của bước 3,
+    cũng KHÔNG phải bản 600 từ trung gian của vòng rút gọn đầu tiên.
+
+  # ─────────────────────────────────────────────────────────────────────────
+  # VÒNG 1 — REVISE. Bản 600 từ (rút từ 769) đạt đủ 12/12 binding_on_draft,
+  # nhưng thao tác rút gọn VIẾT LẠI câu thay vì XOÁ câu, và 3 chỗ viết lại đó
+  # sinh lỗi mới (cùng cơ chế lỗi S2 của dien-tich-va-dong-dien: rút gọn tạo
+  # ra một mệnh đề sai không nguồn nào phát biểu).
+  # ─────────────────────────────────────────────────────────────────────────
+  round_1:
+    verdict: revise
+    method: >
+      Không tin file checks. Tải lại trực tiếp NASA s1, NASA s2, NOAA s3
+      (file .txt gốc gml.noaa.gov), UCAR s6 trong chính lượt review; tính lại
+      toàn bộ numeric_checks độc lập với N1–N10 rồi mới so kết quả.
+    findings:
+      - id: S3-1
+        severity: S3
+        claim: "Bản rút gọn viết 'tới 4% ở vùng nhiệt đới thấp' cho hơi nước"
+        problem: >
+          UCAR (s6) giới hạn ở TẦNG ĐỐI LƯU THẤP thuộc vùng nhiệt đới, không
+          phải "vùng nhiệt đới thấp" (đọc thành vĩ độ thấp). Rút gọn xoá mất
+          định ngữ độ cao trong đúng một bài mà luận điểm trung tâm là "mọi
+          thứ đổi theo độ cao". Cũng đổi "chỉ còn dấu vết" (trace amounts)
+          thành "gần như không còn" — mạnh hơn nguồn.
+        fix_applied: "→ 'tới 4% ở tầng đối lưu thấp vùng nhiệt đới, chỉ còn dấu vết ở hai cực.'"
+      - id: S3-2
+        severity: S3
+        claim: "Bản rút gọn đóng danh sách khí vết bằng dấu hai chấm"
+        problem: >
+          NASA (s2) dùng "including" — danh sách MỞ các khí NHÀ KÍNH, không
+          phải danh sách ĐỦ các khí vết. Đóng danh sách lại là sai: neon
+          (~18 ppm) và heli (~5 ppm) đều lớn hơn mêtan/N₂O/ozon cộng lại,
+          và không có mặt trong câu.
+        fix_applied: "→ 'là khí vết, trong đó có CO₂, mêtan, nitơ oxit và ozon.'"
+      - id: S3-3
+        severity: S3
+        claim: >
+          "[Bên trong Trái Đất] các lớp được chia theo thành phần hoá học.
+          Khí quyển thì ngược lại: thành phần gần như đồng nhất, nên tiêu
+          chí chia tầng là chiều biến thiên của nhiệt độ."
+        problem: >
+          Có sẵn từ bước 3 (không do rút gọn). Ba lỗi: (1) không nguồn nào
+          phát biểu khí quyển đồng nhất về thành phần hay quan hệ nhân quả
+          "đồng nhất ⇒ chia theo nhiệt độ" — s7 chỉ nêu sự kiện, không nêu lý
+          do; (2) sai ở phần cao của khí quyển (thermosphere: phân tách
+          khuếch tán, s6 tự nói hơi nước "the thermosphere contains none at
+          all"); (3) lệch với chính bài được link tới —
+          cau-truc-ben-trong-trai-dat.md cố ý nói thạch quyển "chia theo cơ
+          tính chứ không theo hoá học", còn câu này lại khái quát ngược lại.
+          `internal_consistency` của file checks này chưa từng đối chiếu bài
+          đó — lỗ hổng kiểm tra, không phải lỗi cố ý.
+        fix_applied: >
+          → "có một cách chia lớp theo thành phần hoá học — vỏ, manti, lõi.
+          Khí quyển thì chia theo tiêu chí khác: chiều biến thiên của nhiệt
+          độ theo độ cao." Đồng thời xoá mệnh đề "thành phần của nó gần như
+          không đổi..." không nguồn ở câu 2 mở bài để bù ngân sách chữ.
+      - id: S4-1
+        severity: S4
+        problem: "Thiếu chữ 'riêng' trước CO₂ — không rõ 0,0429% là của một mình CO₂ hay của khí vết."
+        fix_applied: "→ 'NOAA đo riêng CO₂ trung bình tháng toàn cầu...'"
+      - id: S4-2
+        severity: S4
+        problem: >
+          "áp suất là trọng lượng cột khí phía trên một điểm" thiếu "trên một
+          đơn vị diện tích" — kPa là lực/diện tích, không phải lực. Suy luận
+          "một nửa khối lượng dưới 5,5 km" dựa vào đúng mệnh đề này.
+        fix_applied: "→ '...phía trên mỗi đơn vị diện tích, nên càng lên cao...'"
+    answers_for_next_turn:
+      Q1: >
+        (ràng buộc 10, từ meta.yaml curator_prescan) KHÔNG vi phạm. Bài không
+        phát biểu "CO₂ chỉ là một phần nhỏ của 0,04%" — nó nêu 0,04% quy cho
+        NASA rồi đính chính ngay bằng 0,0429% của riêng CO₂ (lớn hơn). Đính
+        chính có biển báo, không phải mâu thuẫn.
+      Q2: >
+        (N5) "đúng một nửa" ở bản 769 từ LÀ độ chính xác giả tạo ngược chiều —
+        tỉ số thật 49,90%, mốc đúng 50,00% là 5.485 m. Bản rút gọn đã tự sửa
+        đúng bằng "chừng một nửa". KHÔNG được khôi phục "đúng một nửa".
+
+  # ─────────────────────────────────────────────────────────────────────────
+  # VÒNG 2 — APPROVE. Kiểm bằng git diff --word-diff: đúng 6 vùng khác biệt so
+  # với vòng 1, khớp nguyên văn 6 đề xuất trên; phần đã duyệt ở vòng 1 (năm
+  # tầng, mốc trung bình, đường Kármán/McDowell, 50,6/101,4 kPa, "chừng một
+  # nửa") không đổi một chữ.
+  # ─────────────────────────────────────────────────────────────────────────
+  round_2:
+    verdict: approve
+    checked: "597 từ (trần 600); 4 link nội bộ (ngưỡng 3); đúng 6/6 chỗ sửa vòng 1, không có chỗ thứ 7."
+    binding_on_draft_result: "12/12 đạt"
+
+  # Không phải lý do chặn — ghi để lượt sau kiểm và nâng cấp, không phải để
+  # xoá âm thầm.
+  residual_risk:
+    - id: R1
+      about: "Con số '4% hơi nước ở tầng đối lưu thấp vùng nhiệt đới'"
+      problem: >
+        Chỉ có s6 (UCAR, BẬC 3) đỡ trực tiếp. Lập luận trong file checks rằng
+        nó "khớp với s1 bậc 2" không chặt: s1 ("99 percent of all water
+        vapor...") nói hơi nước Ở ĐÂU, không nói BAO NHIÊU phần trăm. Đây là
+        một con số bậc 3 đứng MỘT MÌNH cho phần lượng, đúng loại mà chính
+        `tier_limit` của s6 trong file này cấm.
+      why_not_blocking: >
+        Claim đã hedge ("tới 4%"), có định ngữ đủ sau sửa vòng 1 (S3-1), và
+        đỡ cho ràng buộc bắt buộc số 9 (giải thích vì sao chữ "khô" quan
+        trọng) — cắt nó thì hỏng một ràng buộc khác.
+      next_turn_action: >
+        Dựng nguồn bậc 1–2 cho con số 4% (thử NOAA/NWS JetStream — file
+        research ghi trang đó trả 403 trong môi trường lượt trước, thử lại
+        từ môi trường khác hoặc tìm nguồn bậc 1–2 thay thế), hoặc hạ câu
+        xuống mức định tính ("hơi nước tập trung ở tầng đối lưu thấp vùng
+        nhiệt đới, gần như vắng mặt ở hai cực") nếu không dựng được nguồn.
+
+  pipeline_note_for_shortening_prompts: >
+    Cả hai lỗi S3 do rút gọn ở vòng 1 sinh ra cùng một cơ chế: xoá một ĐỊNH
+    NGỮ HẠN ĐỊNH (độ cao, vĩ độ, thời điểm, phạm vi) để tiết kiệm 3–4 chữ,
+    biến câu có điều kiện thành câu khẳng định trần — biến thể của lỗi S2 ở
+    dien-tich-va-dong-dien. Quy tắc cho lượt sau: khi rút gọn để đủ trần, chỉ
+    được xoá TRỌN CÂU; nếu bắt buộc sửa trong câu thì các cụm "trong đó có",
+    "thường", "trung bình", "tới" và mọi định ngữ chỉ độ cao/vĩ độ/thời điểm/
+    phạm vi là bất khả xâm phạm.

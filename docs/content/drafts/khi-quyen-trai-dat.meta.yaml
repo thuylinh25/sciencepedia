@@ -1,0 +1,242 @@
+# ══ CHƯA HOÀN TẤT 2026-09-07 — bài vẫn KHÔNG có trong CSDL ══
+#
+# Chủ đề #8 của docs/content/topic-queue.md ("Khí quyển Trái Đất: thành phần
+# và các tầng", lĩnh vực Trái Đất và Khí hậu, entity type Object, không phụ
+# thuộc dòng nào trong hàng đợi).
+#
+# Lượt 2026-09-07 được giao chạy nốt bước 4→11. KHÔNG chạy được bước 4, vì
+# đúng cái lý do lượt 2026-09-06 đã ghi: tiến trình `content-curator` chạy ở
+# spawn depth con và KHÔNG được cấp tool Task/Agent, nên không gọi được agent
+# `science-editor` thật. Xem `blockers.B1` để biết cách tự kiểm lại điều này
+# trong 10 giây thay vì tin dòng chữ này.
+#
+# Lượt này KHÔNG đi tiếp bước 5–11. Lý do không phải sự cẩn thận thừa: CLAUDE.md
+# xếp thứ tự "editor trước graph/SEO/ảnh" với một lý do ghi thẳng ra là "đừng
+# đầu tư vào bài sắp bị loại". Ghi entity, metadata, ảnh, bản dịch và hàng
+# Article cho một văn bản chưa qua gate accuracy là tạo ra 6 thứ phải dọn nếu
+# editor trả bài — và tệ hơn, tạo ra một hàng Article trông như đã đi hết chuỗi.
+#
+# Lượt này ĐÓNG GÓP một thứ mà lượt trước chưa có: một blocker THỨ HAI, đo
+# được, độc lập với bước 4 — bản nháp dài 769 từ trên trần 600. Xem B2. Nó đổi
+# thứ tự việc của lượt sau, nên nó đáng giá hơn việc chạy trước vài bước dễ.
+#
+#   bước 1  ✔ docs/content/research/khi-quyen-trai-dat.yaml — 8 nguồn s1–s8
+#   bước 2  ✔ docs/content/checks/khi-quyen-trai-dat.yaml — verdict pass,
+#             10 phép kiểm số (N1–N10), 8 phát hiện (F1–F8), 12 ràng buộc
+#             `binding_on_draft`
+#   bước 3  ✔ docs/content/drafts/khi-quyen-trai-dat.md — 769 từ (QUÁ TRẦN)
+#   bước 4  ✘ CHẶN — không có tool Agent ở spawn depth này (B1)
+#   bước 5  ─ chưa chạy (cố tình: sau bước 4)
+#   bước 6  ─ chưa chạy
+#   bước 7  ─ chưa chạy
+#   bước 8  ─ chưa chạy
+#   bước 9  ─ chưa chạy
+#   bước 10 ─ chưa chạy — KHÔNG có hàng Article nào
+#   bước 11 ─ chưa chạy
+
+slug: khi-quyen-trai-dat
+status: NOT_IN_DB          # không phải DRAFT — chưa từng có hàng Article
+turn: 2026-09-07
+prose_words: 769           # trần 400–600; xem B2
+internal_links_out: 4      # ngưỡng 3 — đã đủ, xem verified.V5
+
+# ─────────────────────────────────────────────────────────────────────────────
+# ĐÃ TẬN MẮT KIỂM TRONG LƯỢT NÀY. Mỗi dòng kèm CÁCH KIỂM LẠI.
+# Không dòng nào ở đây là suy đoán từ file khác.
+# ─────────────────────────────────────────────────────────────────────────────
+verified:
+  - id: V1
+    fact: "Không có hàng Article nào cho slug `khi-quyen-trai-dat`."
+    how: >
+      Prisma read-only trong lượt này:
+      `p.article.findUnique({ where: { slug: 'khi-quyen-trai-dat' } })` → null.
+      Chạy từ thư mục `sciencepedia/` (script phải nằm trong cây dự án, không
+      phải /tmp — @prisma/client không resolve từ /tmp).
+    note: >
+      Vì vậy status ghi NOT_IN_DB chứ không ghi DRAFT. "DRAFT" hàm ý có một
+      hàng đang ở trạng thái nháp; ở đây không có hàng nào. Phân biệt này quan
+      trọng cho lượt sau: bước 10 là INSERT, không phải UPDATE.
+
+  - id: V2
+    fact: "Tài khoản ADMIN duy nhất: id `cmti8v05z0000k5ccfg55mget`, tên 'Ban biên tập Sciencepedia'."
+    how: "`p.user.findMany({ where: { role: 'ADMIN' } })` → đúng 1 hàng."
+    note: "Khớp với id mà hai bài trước đã dùng cho reviewedById. Đã tra, không chép."
+
+  - id: V3
+    fact: >
+      Danh mục đích có thật: slug `khi-quyen-va-thoi-tiet`, tên "Khí quyển và
+      Thời tiết", id `cmtnwtco4000lk5yk2g06as07`, cha là `trai-dat-va-khi-hau`.
+    how: "`p.category.findMany` liệt kê cả 27 danh mục; đọc thẳng hàng đó."
+    note: >
+      Cột tên trong schema là `name`/`nameEn`, KHÔNG phải `nameVi` — lượt này
+      viết `nameVi` và Prisma từ chối. Ghi ra để lượt sau khỏi mất một vòng.
+      Tương tự: Article dùng cột `status`, KHÔNG phải `state`.
+
+  - id: V4
+    fact: "`cuc-quang` và `nguyen-nhan-cua-mua` đều PUBLISHED và đều có thật."
+    how: >
+      `p.article.findUnique` cho từng slug.
+      cuc-quang → id `cmtmx4sdx000ik5jcci73kdit`, category `quan-sat-bau-troi`.
+      nguyen-nhan-cua-mua → id `cmtmx50ai002pk5jcg7v5or0g`, category
+      `khi-quyen-va-thoi-tiet` (tức CÙNG danh mục đích của bài mới).
+    note: >
+      Cả hai đều dùng được làm nguồn LINK VÀO ở bước trước publish. Dữ kiện
+      mới đáng cân nhắc: `nguyen-nhan-cua-mua` đã nằm sẵn trong
+      `khi-quyen-va-thoi-tiet`, nên link từ nó là link trong cùng cụm — về
+      SEO cluster thì đó là chỗ tự nhiên hơn `cuc-quang` (khác danh mục).
+      Lượt sau tự quyết, nhưng quyết theo NGHĨA của câu, không theo danh mục.
+
+  - id: V5
+    fact: "Bản nháp có 4 link nội bộ ra, đều trỏ tới bài PUBLISHED."
+    how: >
+      `grep -o '(/articles/[a-z0-9-]*)'` trên bản nháp → trai-dat,
+      cau-truc-ben-trong-trai-dat, cuc-quang, nguyen-nhan-cua-mua.
+      MIN_INTERNAL_LINKS = 3 trong scripts/check-publish.ts:47.
+    note: "Đây là mục HIẾM trong bài đã đạt sẵn. Đừng cắt link khi rút gọn ở B2."
+
+  - id: V6
+    fact: "48 bài PUBLISHED, 66 entity trong CSDL."
+    how: "`p.article.count({ where: { status: 'PUBLISHED' } })` và `p.entity.count()`."
+
+# ─────────────────────────────────────────────────────────────────────────────
+# HAI BLOCKER. B1 chặn bước 4. B2 chặn bước 11 — và B2 phải sửa TRƯỚC B1.
+# ─────────────────────────────────────────────────────────────────────────────
+blockers:
+  - id: B1
+    blocks: "bước 4 (science-editor)"
+    severity: hard
+    statement: >
+      Tiến trình `content-curator` lượt này không được cấp tool Task/Agent,
+      nên không gọi được agent `science-editor` thật.
+    how_to_reverify: >
+      Trong phiên nghi ngờ, chạy ToolSearch với "select:Task,Agent" — lượt này
+      trả "No matching deferred tools found" — và ToolSearch với từ khoá
+      "spawn subagent delegate task run agent", lượt này trả về TaskStop,
+      SendMessage, RemoteTrigger, EnterWorktree, CronCreate, Monitor,
+      PushNotification: KHÔNG có tool nào spawn được agent. `ListAgents` xác
+      nhận thêm: phiên chính là `sciencepedia-09`, còn tiến trình này chỉ là
+      một subagent đang chạy trong nó.
+    why_not_worked_around: >
+      Ba lối vòng đều bị loại, ghi ra để lượt sau khỏi thử lại:
+      (a) TỰ CHẤM THAY — bị cấm, và tiền lệ nói thẳng vì sao: trong
+          cau-truc-ben-trong-trai-dat, hai lượt `content-curator` tự chấm đều
+          ghi "đạt", rồi agent `science-editor` THẬT bắt được 2 lỗi S2 mà cả
+          hai đều bỏ lọt. Một ô tự điền không phải bằng chứng yếu — nó là
+          thông tin SAI, vì lượt sau sẽ tin nó mà không kiểm lại.
+      (b) SKILL THAY AGENT — không có skill `science-editor`; nó là AGENT
+          (quyền phủ quyết), không phải skill. Danh sách skill khả dụng lượt
+          này không chứa nó.
+      (c) NHỜ PHIÊN KHÁC — `ListAgents` không thấy phiên nào khác ngoài phiên
+          chính, và phiên chính đang chờ chính tool call này trả về, nên
+          SendMessage tới nó chỉ xếp hàng chứ không quay lại kịp lượt này.
+    resolution: "Chạy lại ở phiên `main` (có tool Task). Đã gửi handoff sang đó."
+
+  - id: B2
+    blocks: "bước 11 (publish:check) — nhưng phải sửa ở bước 3"
+    severity: hard
+    statement: "Bản nháp dài 769 từ văn xuôi; gate cho phép 400–600."
+    how_to_reverify: >
+      scripts/check-publish.ts: MIN_MINUTES=2 (dòng 45), MAX_MINUTES=3 (46),
+      WORDS_PER_MINUTE=200 (52) → MIN_WORDS=400, MAX_WORDS=600 (67–68).
+      countWords = `markdown.trim().split(/\s+/).length` (153–155).
+      prose() chỉ cắt phần đuôi xuất xứ sau một dòng `\n---`; bản nháp KHÔNG
+      có đuôi đó (kiểm: `md.lastIndexOf('\n---')` → -1), nên prose() trả về
+      NGUYÊN bản nháp và số đếm là 769. Thừa 169 từ.
+    not_exempt_because: >
+      `lengthExempt` (dòng 349–352) chỉ đúng khi status === 'PUBLISHED' VÀ
+      publishedAt < LENGTH_RULE_FROM. Bài chưa có hàng nào (V1), nên không
+      thể miễn. Chú thích trong chính script nói rõ: "Bản nháp không được
+      miễn: nó sắp publish, tức sắp thành bài mới."
+    why_it_must_be_fixed_BEFORE_step_4: >
+      Đây là điểm đáng giá nhất của lượt này. Cám dỗ tự nhiên là chạy bước 4
+      trước rồi rút gọn sau, vì rút gọn "chỉ là hình thức". Tiền lệ
+      dien-tich-va-dong-dien nói ngược lại: lượt rút bài từ 1.016 xuống 588 từ
+      TỰ SINH RA một lỗi S2 (bản nén viết hai dây song song "HÚT NHAU" — một
+      mệnh đề về chiều lực mà nguồn không nói), và bước 4 mới bắt được.
+      Kết luận đã ghi ở đó: "Mọi lượt rút gọn phải đi qua gate accuracy lần
+      nữa." Nếu chạy bước 4 trên bản 769 từ rồi rút xuống 600, chữ ký approve
+      của editor sẽ nằm trên một văn bản KHÔNG còn tồn tại.
+    resolution: >
+      Rút xuống ≤600 từ TRƯỚC, bằng cách XOÁ câu chứ không viết lại (giữ
+      nguyên chữ của bước 3 ở những câu còn lại), rồi mới gọi science-editor
+      MỘT lần trên bản cuối.
+
+# ─────────────────────────────────────────────────────────────────────────────
+# GỢI Ý CẮT — KHÔNG phải quyết định, và KHÔNG phải phán quyết biên tập.
+# Chỉ liệt kê chỗ mà checks.yaml đã tự đánh dấu là cắt được.
+# ─────────────────────────────────────────────────────────────────────────────
+cut_candidates:
+  - where: 'Mục "Áp suất là trọng lượng của cột khí bên trên"'
+    what: "Câu suất giảm nhiệt 6,49 °C/km."
+    why_safe: >
+      N7 nói rõ con số này vào bài với vai trò ĐỐI CHIẾU chéo giữa s4 và s7,
+      và "bài không nêu ví dụ 27 °C này". Nó không đỡ mệnh đề nào khác trong
+      bài. Cắt nó không đụng vào N5 (áp suất một nửa) vốn là ý chính của mục.
+  - where: 'Mục "Không khí gồm những gì"'
+    what: "Câu đối chiếu 427,04 ppm của tháng 5/2025."
+    why_safe: >
+      N4 cho phép dùng nhưng không bắt buộc, và cảnh báo phải kèm mệnh đề
+      "không phải tốc độ tăng hằng năm" — tức nó tốn thêm chữ để dùng cho
+      đúng. Cắt cả cặp thì rẻ hơn giữ.
+    caution: "Cắt xong PHẢI còn: 428,73 ppm + 'tháng 5/2026' + mệnh đề sơ bộ (ràng buộc 2)."
+  - where: "Toàn bài"
+    what: "Câu chuyển ý và đoạn nhắc lại."
+    why_safe: >
+      docs/content-rules.md cho phép cắt bốn loại: đoạn khai triển, ví dụ phụ,
+      câu chuyển ý, đoạn nhắc lại. Đây là loại rẻ nhất, cắt trước.
+  - id: DO_NOT_CUT
+    items:
+      - "4 link nội bộ (V5) — cắt là tụt xuống dưới ngưỡng 3."
+      - "Chữ 'khô' ở bộ thành phần (ràng buộc 9)."
+      - "Mệnh đề 'sơ bộ' của NOAA và mốc 'tháng 5/2026' (ràng buộc 2)."
+      - "Chữ 'đề xuất' của McDowell và chữ 'quy ước' của mốc 100 km (ràng buộc 7)."
+      - "Mệnh đề 'các mốc trên là trung bình, thấp hơn ở cực, cao hơn ở xích đạo' (ràng buộc 4)."
+      - "Mệnh đề 'số tính ra từ mô hình' kèm cả tử lẫn mẫu 50,6/101,4 kPa (ràng buộc 8)."
+
+# ─────────────────────────────────────────────────────────────────────────────
+# ĐỐI CHIẾU SƠ BỘ CỦA CURATOR VỚI 12 RÀNG BUỘC — KHÔNG PHẢI BƯỚC 4.
+#
+# Đọc kỹ: khối này KHÔNG được chép sang `editor_pass` trong file checks, và
+# KHÔNG được tính là bước 4 đã chạy. Nó chỉ nói "chưa thấy vi phạm hiển
+# nhiên", để bước 4 không tốn vòng vào lỗi máy dò được. Nó KHÔNG nói bài đúng.
+# Chính tiền lệ trong B1.why_not_worked_around là bằng chứng khối kiểu này bỏ
+# lọt được lỗi S2.
+# ─────────────────────────────────────────────────────────────────────────────
+curator_prescan:
+  is_step_4: false
+  counts_as_approval: false
+  method: "Đọc bản nháp, đối chiếu từng dòng `binding_on_draft` và grep nguyên văn trong file research."
+  result: "12/12 chưa thấy vi phạm hiển nhiên."
+  spot_checks:
+    - "Số −85 °C, '99% hơi nước và sol khí', 'thiên thạch bốc cháy', 'ISS', 'không hành xử như một chất khí': grep thấy NGUYÊN VĂN trong passages của s1 (research yaml dòng 49, 53–56). Không con số nào trong nhóm này là phép tính của bài."
+    - "Ràng buộc 6 (cấm chép nhân quả cho TẦNG NHIỆT): bản nháp chỉ viết 'nhiệt độ lại tăng theo độ cao', không chép 'due to the very low density of molecules' của s1. Đạt."
+    - "Nhân quả cho TẦNG BÌNH LƯU thì bản nháp CÓ chép ('vì ozon hấp thụ bức xạ cực tím') — và đó là chỗ khác: mệnh đề này có HAI nguồn (s1 dòng 52 và s5 dòng 149 'this warming is caused by ozone absorbing ultraviolet radiation'), nên nó không rơi vào F6."
+  open_for_editor:
+    - id: Q1
+      about: "Ràng buộc 10"
+      question: >
+        Bản nháp viết "Khoảng 0,04% còn lại là các khí vết, trong đó có CO₂…"
+        rồi ngay sau đó tự đính chính (0,04% là cách làm tròn năm 2019; riêng
+        CO₂ nay là 0,0429%). Ràng buộc 10 cấm viết "CO₂ chỉ là một phần nhỏ
+        của 0,04%". Câu này có rơi vào lệnh cấm đó không, hay phần đính chính
+        ngay sau đã gỡ? Curator KHÔNG tự trả lời — đây đúng loại phán quyết
+        thuộc về editor.
+    - id: Q2
+      about: "N5"
+      question: >
+        Bản nháp nói mô hình cho 50,6 kPa ở 5.500 m "— đúng một nửa". Tỉ số
+        thật ở 5.500 m là 0,4990 (N5), mốc đúng 50,00% là 5.485 m. Chữ "đúng
+        một nửa" cho một tỉ số 49,90% có phải độ chính xác giả tạo ngược
+        chiều không?
+
+# ─────────────────────────────────────────────────────────────────────────────
+# VIỆC CỦA LƯỢT SAU, theo thứ tự. Chỉ chạy được ở phiên có tool Task.
+# ─────────────────────────────────────────────────────────────────────────────
+next_turn:
+  - "0. Kiểm lại B1: nếu vẫn không có tool Agent thì DỪNG, đừng chạy tiếp bước nào."
+  - "1. Rút bản nháp xuống ≤600 từ (B2), xoá câu chứ không viết lại. Giữ nguyên danh sách DO_NOT_CUT."
+  - "2. Gọi agent `science-editor` THẬT trên bản ĐÃ RÚT, kèm 3 file: draft, research, checks. Yêu cầu đối chiếu đủ 12 `binding_on_draft` và trả lời Q1, Q2."
+  - "3. REVISE → sửa rồi gọi lại; tối đa 2 vòng; sau đó editor quyết publish-hoặc-bỏ."
+  - "4. APPROVE → bước 5–10. Bước 10 là INSERT (V1), reviewedById = cmti8v05z0000k5ccfg55mget (V2), category id cmtnwtco4000lk5yk2g06as07 (V3)."
+  - "5. Trước publish: thêm link VÀO từ `cuc-quang` hoặc `nguyen-nhan-cua-mua` (V4) — chọn MỘT, theo nghĩa của câu, và ghi Revision giữ văn bản CŨ trong CÙNG transaction."
+  - "6. `npm run publish:check -- --slug khi-quyen-trai-dat` từ thư mục `sciencepedia/`; sạch thì mới publish. Không nới gate, không sửa script."
