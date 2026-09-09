@@ -1,51 +1,32 @@
-// Sciencepedia — Prisma schema
-// Supabase PostgreSQL + NextAuth (Auth.js v5) + nội dung song ngữ vi/en
-
 generator client {
   provider = "prisma-client-js"
 }
 
 datasource db {
-  provider = "postgresql"
-
-  // Runtime đi qua Supavisor (connection pooler, cổng 6543).
-  // Serverless mở/đóng kết nối liên tục nên bắt buộc phải qua pooler,
-  // nếu nối thẳng cổng 5432 sẽ nhanh chóng cạn slot kết nối của Postgres.
-  url = env("DATABASE_URL")
-
-  // Migration cần kết nối trực tiếp (cổng 5432): pooler ở chế độ transaction
-  // không hỗ trợ prepared statement và câu lệnh DDL mà Prisma Migrate dùng.
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
   directUrl = env("DIRECT_URL")
 }
 
-// ---------------------------------------------------------------- Auth.js
-
-enum Role {
-  USER
-  EDITOR
-  ADMIN
-}
-
 model User {
-  id            String    @id @default(cuid())
-  name          String?
-  email         String    @unique
-  emailVerified DateTime?
-  image         String?
-  passwordHash  String?
-  bio           String?
-  role          Role      @default(USER)
-  createdAt     DateTime  @default(now())
-  updatedAt     DateTime  @updatedAt
-
+  id               String        @id @default(cuid())
+  name             String?
+  email            String        @unique
+  emailVerified    DateTime?
+  image            String?
+  passwordHash     String?
+  bio              String?
+  role             Role          @default(USER)
+  createdAt        DateTime      @default(now())
+  updatedAt        DateTime      @updatedAt
   accounts         Account[]
-  sessions         Session[]
   articles         Article[]     @relation("ArticleAuthor")
   reviewedArticles Article[]     @relation("ArticleReviewer")
-  comments         Comment[]
   bookmarks        Bookmark[]
   chats            ChatSession[]
+  comments         Comment[]
   media            Media[]
+  sessions         Session[]
 
   @@index([role])
 }
@@ -56,15 +37,14 @@ model Account {
   type              String
   provider          String
   providerAccountId String
-  refresh_token     String? @db.Text
-  access_token      String? @db.Text
+  refresh_token     String?
+  access_token      String?
   expires_at        Int?
   token_type        String?
   scope             String?
-  id_token          String? @db.Text
+  id_token          String?
   session_state     String?
-
-  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  user              User    @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@unique([provider, providerAccountId])
   @@index([userId])
@@ -88,149 +68,115 @@ model VerificationToken {
   @@unique([identifier, token])
 }
 
-// ---------------------------------------------------------------- Nội dung
-
-/// Trạng thái thẩm định của bài viết trong pipeline 11 bước.
-enum FactCheckState {
-  PENDING // chưa chạy fact-check
-  PASSED // nguồn và claim đã đối chiếu xong
-  REVISE // có phát hiện S2/S3, cần sửa
-  FAILED // có phát hiện S1 (bịa nguồn / gán sai) — không được publish
-}
-
-enum ArticleStatus {
-  DRAFT
-  REVIEW
-  PUBLISHED
-  ARCHIVED
-}
-
 /// Danh mục khoa học — hỗ trợ lồng nhau (Vũ trụ > Hệ Mặt Trời > Sao Hoả)
 model Category {
-  id            String  @id @default(cuid())
-  slug          String  @unique
-  name          String // tiếng Việt
-  nameEn        String
-  description   String? @db.Text
-  descriptionEn String? @db.Text
+  id                 String     @id @default(cuid())
+  slug               String     @unique
+  name               String
+  nameEn             String
+  description        String?
+  descriptionEn      String?
   /// Tên icon lucide-react, ví dụ "Telescope"
-  icon          String?
+  icon               String?
   /// Màu chủ đạo dạng hex, dùng cho gradient card
-  color         String  @default("#3b82f6")
-  coverImage    String?
+  color              String     @default("#3b82f6")
+  coverImage         String?
+  order              Int        @default(0)
+  parentId           String?
+  createdAt          DateTime   @default(now())
+  updatedAt          DateTime   @updatedAt
   /// Ghi công ảnh bìa: tác giả, nguồn, giấy phép. BẮT BUỘC khi ảnh dùng giấy
   /// phép đòi ghi công (CC BY, CC BY-SA). Markdown, để nhét được link tới
   /// trang gốc trên Wikimedia. Ảnh thuộc phạm vi công cộng thì không bắt buộc
   /// nhưng vẫn nên ghi.
-  coverImageCredit   String? @db.Text
-  coverImageCreditEn String? @db.Text
-  order         Int     @default(0)
-
-  parentId String?
-  parent   Category?  @relation("CategoryTree", fields: [parentId], references: [id], onDelete: SetNull)
-  children Category[] @relation("CategoryTree")
-
-  articles Article[]
-
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  coverImageCredit   String?
+  coverImageCreditEn String?
+  articles           Article[]
+  parent             Category?  @relation("CategoryTree", fields: [parentId], references: [id])
+  children           Category[] @relation("CategoryTree")
 
   @@index([parentId])
   @@index([order])
 }
 
 model Tag {
-  id        String   @id @default(cuid())
-  slug      String   @unique
+  id        String       @id @default(cuid())
+  slug      String       @unique
   name      String
   nameEn    String
-  color     String   @default("#64748b")
-  createdAt DateTime @default(now())
-
-  articles ArticleTag[]
+  color     String       @default("#64748b")
+  createdAt DateTime     @default(now())
+  articles  ArticleTag[]
 }
 
 model Article {
-  id   String @id @default(cuid())
-  slug String @unique
-
-  // Song ngữ — trường *En là bản tiếng Anh
-  title     String
-  titleEn   String?
-  summary   String  @db.Text
-  summaryEn String? @db.Text
-  content   String  @db.Text // Markdown
-  contentEn String? @db.Text
-
-  coverImage String?
-  /// Ghi công ảnh bìa: tác giả, nguồn, giấy phép. BẮT BUỘC khi ảnh dùng giấy
-  /// phép đòi ghi công (CC BY, CC BY-SA). Markdown, để nhét được link tới
-  /// trang gốc trên Wikimedia. Ảnh thuộc phạm vi công cộng thì không bắt buộc
-  /// nhưng vẫn nên ghi.
-  coverImageCredit   String? @db.Text
-  coverImageCreditEn String? @db.Text
+  id                 String                   @id @default(cuid())
+  slug               String                   @unique
+  title              String
+  titleEn            String?
+  summary            String
+  summaryEn          String?
+  content            String
+  contentEn          String?
+  coverImage         String?
   /// Ảnh dùng riêng cho og:image nếu khác cover
-  ogImage    String?
-
-  status      ArticleStatus @default(DRAFT)
-  featured    Boolean       @default(false)
-  readingTime Int           @default(1) // phút
-  views       Int           @default(0)
-
+  ogImage            String?
+  status             ArticleStatus            @default(DRAFT)
+  featured           Boolean                  @default(false)
+  readingTime        Int                      @default(1)
+  views              Int                      @default(0)
   /// Từ khoá SEO, phân tách bằng dấu phẩy
-  seoKeywords    String?
-  seoTitle       String?
-  seoDescription String? @db.Text
-
+  seoKeywords        String?
+  seoTitle           String?
+  seoDescription     String?
+  publishedAt        DateTime?
+  createdAt          DateTime                 @default(now())
+  updatedAt          DateTime                 @updatedAt
+  authorId           String
+  categoryId         String
   /// Cột tsvector do Postgres tự sinh (GENERATED ALWAYS ... STORED), phục vụ
   /// full-text search dự phòng khi không có Meilisearch. Prisma không hỗ trợ
   /// generated column nên khai báo Unsupported: nó không xuất hiện trong Prisma
   /// Client và chỉ được truy vấn bằng raw SQL ở src/lib/search-postgres.ts.
   /// Biểu thức sinh cột nằm trong migration 20260901120000_article_search_vector.
-  searchVector Unsupported("tsvector")?
-
-  // -------- Truy xuất nguồn gốc biên tập (science-editor gate)
-  // Mọi bài đã publish phải hiển thị được: ai duyệt, duyệt khi nào, và lần
-  // cuối đối chiếu lại với nguồn là bao giờ. Không có ba thứ này thì không
-  // chứng minh được độ tin cậy — đây là tín hiệu E-E-A-T bắt buộc.
-
+  searchVector       Unsupported("tsvector")? @default(dbgenerated("((((((setweight(to_tsvector('simple'::regconfig, sciencepedia_unaccent(COALESCE(title, ''::text))), 'A'::\"char\") || setweight(to_tsvector('simple'::regconfig, sciencepedia_unaccent(COALESCE(\"titleEn\", ''::text))), 'A'::\"char\")) || setweight(to_tsvector('simple'::regconfig, sciencepedia_unaccent(COALESCE(summary, ''::text))), 'B'::\"char\")) || setweight(to_tsvector('simple'::regconfig, sciencepedia_unaccent(COALESCE(\"summaryEn\", ''::text))), 'B'::\"char\")) || setweight(to_tsvector('simple'::regconfig, sciencepedia_unaccent(COALESCE(\"seoKeywords\", ''::text))), 'B'::\"char\")) || setweight(to_tsvector('simple'::regconfig, sciencepedia_unaccent(COALESCE(content, ''::text))), 'D'::\"char\")) || setweight(to_tsvector('simple'::regconfig, sciencepedia_unaccent(COALESCE(\"contentEn\", ''::text))), 'D'::\"char\"))"))
   /// Kết quả bước fact-check (bước 2 và bước 4 của pipeline)
-  factCheck      FactCheckState @default(PENDING)
+  factCheck          FactCheckState           @default(PENDING)
   /// Biên tập viên khoa học đã duyệt — hiển thị byline trên trang
-  reviewedById   String?
-  reviewedBy     User?          @relation("ArticleReviewer", fields: [reviewedById], references: [id], onDelete: SetNull)
-  reviewedAt     DateTime?
+  reviewedById       String?
+  reviewedAt         DateTime?
   /// Lần gần nhất đối chiếu lại claim với nguồn. Nội dung khoa học hết hạn:
   /// số liệu được đo lại, bài báo bị rút, đồng thuận thay đổi.
-  lastVerifiedAt DateTime?
+  lastVerifiedAt     DateTime?
   /// Hạn đối chiếu lại tiếp theo, do science-editor đặt theo mức độ biến động
-  reverifyDueAt  DateTime?
-
-  publishedAt DateTime?
-  createdAt   DateTime  @default(now())
-  updatedAt   DateTime  @updatedAt
-
-  authorId   String
-  author     User     @relation("ArticleAuthor", fields: [authorId], references: [id], onDelete: Cascade)
-  categoryId String
-  category   Category @relation(fields: [categoryId], references: [id], onDelete: Restrict)
-
-  tags      ArticleTag[]
-  comments  Comment[]
-  bookmarks Bookmark[]
-  revisions Revision[]
-  sources   Source[]
-
+  reverifyDueAt      DateTime?
   /// Khái niệm mà bài này trình bày. Nguồn của related concepts, prerequisite
   /// và internal link — thay cho cách suy ra từ tag/category.
-  entityId String?
-  entity   Entity? @relation(fields: [entityId], references: [id], onDelete: SetNull)
+  entityId           String?
+  /// Ghi công ảnh bìa: tác giả, nguồn, giấy phép. BẮT BUỘC khi ảnh dùng giấy
+  /// phép đòi ghi công (CC BY, CC BY-SA). Markdown, để nhét được link tới
+  /// trang gốc trên Wikimedia. Ảnh thuộc phạm vi công cộng thì không bắt buộc
+  /// nhưng vẫn nên ghi.
+  coverImageCredit   String?
+  coverImageCreditEn String?
+  author             User                     @relation("ArticleAuthor", fields: [authorId], references: [id], onDelete: Cascade)
+  category           Category                 @relation(fields: [categoryId], references: [id])
+  entity             Entity?                  @relation(fields: [entityId], references: [id])
+  reviewedBy         User?                    @relation("ArticleReviewer", fields: [reviewedById], references: [id])
+  tags               ArticleTag[]
+  bookmarks          Bookmark[]
+  comments           Comment[]
+  revisions          Revision[]
+  sources            Source[]
 
   @@index([searchVector], type: Gin)
   @@index([status, publishedAt])
   @@index([categoryId])
   @@index([authorId])
   @@index([featured])
+  @@index([entityId])
+  @@index([reverifyDueAt])
+  @@index([reviewedById])
 }
 
 model ArticleTag {
@@ -270,30 +216,27 @@ model Revision {
   id        String   @id @default(cuid())
   articleId String
   title     String
-  content   String   @db.Text
+  content   String
   note      String?
   editorId  String?
   createdAt DateTime @default(now())
-
-  article Article @relation(fields: [articleId], references: [id], onDelete: Cascade)
+  article   Article  @relation(fields: [articleId], references: [id], onDelete: Cascade)
 
   @@index([articleId, createdAt])
 }
 
 model Comment {
-  id        String   @id @default(cuid())
-  body      String   @db.Text
-  approved  Boolean  @default(true)
-  createdAt DateTime @default(now())
-
+  id        String    @id @default(cuid())
+  body      String
+  approved  Boolean   @default(true)
+  createdAt DateTime  @default(now())
   articleId String
   userId    String
   parentId  String?
-
-  article Article   @relation(fields: [articleId], references: [id], onDelete: Cascade)
-  user    User      @relation(fields: [userId], references: [id], onDelete: Cascade)
-  parent  Comment?  @relation("CommentThread", fields: [parentId], references: [id], onDelete: Cascade)
-  replies Comment[] @relation("CommentThread")
+  article   Article   @relation(fields: [articleId], references: [id], onDelete: Cascade)
+  parent    Comment?  @relation("CommentThread", fields: [parentId], references: [id], onDelete: Cascade)
+  replies   Comment[] @relation("CommentThread")
+  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@index([articleId])
   @@index([userId])
@@ -303,9 +246,8 @@ model Bookmark {
   userId    String
   articleId String
   createdAt DateTime @default(now())
-
-  user    User    @relation(fields: [userId], references: [id], onDelete: Cascade)
-  article Article @relation(fields: [articleId], references: [id], onDelete: Cascade)
+  article   Article  @relation(fields: [articleId], references: [id], onDelete: Cascade)
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@id([userId, articleId])
   @@index([articleId])
@@ -315,21 +257,20 @@ model Bookmark {
 /// Lưu lại `path` để còn xoá được file khi cần — chỉ có publicUrl thì không đủ,
 /// và để biết ảnh nào đang mồ côi (không bài viết nào dùng).
 model Media {
-  id        String   @id @default(cuid())
+  id           String   @id @default(cuid())
   /// Đường dẫn trong bucket, ví dụ "articles/2026/09/abc123.webp"
-  path      String   @unique
-  bucket    String
-  url       String
-  mimeType  String
+  path         String   @unique
+  bucket       String
+  url          String
+  mimeType     String
   /// Byte
-  size      Int
-  width     Int?
-  height    Int?
-  alt       String?
-  createdAt DateTime @default(now())
-
+  size         Int
+  width        Int?
+  height       Int?
+  alt          String?
+  createdAt    DateTime @default(now())
   uploadedById String?
-  uploadedBy   User?   @relation(fields: [uploadedById], references: [id], onDelete: SetNull)
+  uploadedBy   User?    @relation(fields: [uploadedById], references: [id])
 
   @@index([uploadedById, createdAt])
 }
@@ -344,44 +285,92 @@ model RateLimit {
   @@index([resetAt])
 }
 
-// ---------------------------------------------------------------- AI
-
 model ChatSession {
-  id        String   @id @default(cuid())
+  id        String        @id @default(cuid())
   userId    String?
-  title     String   @default("Cuộc trò chuyện mới")
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-
-  user     User?         @relation(fields: [userId], references: [id], onDelete: SetNull)
-  messages ChatMessage[]
+  title     String        @default("Cuộc trò chuyện mới")
+  createdAt DateTime      @default(now())
+  updatedAt DateTime      @updatedAt
+  messages  ChatMessage[]
+  user      User?         @relation(fields: [userId], references: [id])
 
   @@index([userId, updatedAt])
 }
 
 model ChatMessage {
-  id        String   @id @default(cuid())
+  id        String      @id @default(cuid())
   sessionId String
-  role      String // "user" | "assistant"
-  content   String   @db.Text
+  role      String
+  content   String
   /// JSON: danh sách slug bài viết được trích dẫn
-  citations String?  @db.Text
-  createdAt DateTime @default(now())
-
-  session ChatSession @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+  citations String?
+  createdAt DateTime    @default(now())
+  session   ChatSession @relation(fields: [sessionId], references: [id], onDelete: Cascade)
 
   @@index([sessionId, createdAt])
 }
 
-// ---------------------------------------------------- Knowledge graph
-// Xem .claude/agents/knowledge-architect.md và
-// .claude/skills/knowledge-graph-manager/SKILL.md.
-//
-// Category/Tag trả lời "bài này nằm ở đâu". Entity/Relationship trả lời
-// "khái niệm này LÀ gì và liên hệ thế nào với khái niệm khác" — đó mới là
-// thứ sinh ra internal link có nghĩa, related concepts, và learning path.
-// Trước đây related article suy ra từ tag + category, nên chỉ ra được bài
-// "cùng chủ đề", không ra được bài "cần đọc trước".
+/// Một khái niệm khoa học — độc lập với ngôn ngữ và độc lập với bài viết.
+/// Một entity có tối đa một bài viết mỗi locale; bài viết là cách trình bày
+/// entity, không phải bản thân entity.
+model Entity {
+  id              String         @id @default(cuid())
+  slug            String         @unique
+  canonicalName   String
+  canonicalNameEn String
+  entityType      EntityType
+  /// Tên gọi khác + cách viết sai phổ biến, dùng cho tìm kiếm và khử trùng lặp
+  aliases         String[]       @default([])
+  /// Định danh Wikidata, ví dụ "Q11982" — để đối chiếu với nguồn thẩm quyền
+  wikidataQid     String?
+  description     String?
+  createdAt       DateTime       @default(now())
+  updatedAt       DateTime       @updatedAt
+  articles        Article[]
+  outgoingEdges   Relationship[] @relation("EdgeFrom")
+  incomingEdges   Relationship[] @relation("EdgeTo")
+
+  @@index([entityType])
+  @@index([wikidataQid])
+}
+
+model Relationship {
+  id           String       @id @default(cuid())
+  fromEntityId String
+  toEntityId   String
+  relType      RelationType
+  /// Độ mạnh 0–1, dùng để xếp thứ tự related concepts
+  weight       Float        @default(1)
+  note         String?
+  createdAt    DateTime     @default(now())
+  fromEntity   Entity       @relation("EdgeFrom", fields: [fromEntityId], references: [id], onDelete: Cascade)
+  toEntity     Entity       @relation("EdgeTo", fields: [toEntityId], references: [id], onDelete: Cascade)
+
+  @@unique([fromEntityId, toEntityId, relType])
+  @@index([toEntityId, relType])
+  @@index([relType])
+}
+
+enum Role {
+  USER
+  EDITOR
+  ADMIN
+}
+
+/// Trạng thái thẩm định của bài viết trong pipeline 11 bước.
+enum FactCheckState {
+  PENDING
+  PASSED
+  REVISE
+  FAILED
+}
+
+enum ArticleStatus {
+  DRAFT
+  REVIEW
+  PUBLISHED
+  ARCHIVED
+}
 
 enum EntityType {
   CONCEPT
@@ -412,50 +401,4 @@ enum RelationType {
   APPLIES_TO
   CONTRASTS_WITH
   EXAMPLE_OF
-}
-
-/// Một khái niệm khoa học — độc lập với ngôn ngữ và độc lập với bài viết.
-/// Một entity có tối đa một bài viết mỗi locale; bài viết là cách trình bày
-/// entity, không phải bản thân entity.
-model Entity {
-  id              String     @id @default(cuid())
-  slug            String     @unique
-  canonicalName   String // tiếng Việt
-  canonicalNameEn String
-  entityType      EntityType
-  /// Tên gọi khác + cách viết sai phổ biến, dùng cho tìm kiếm và khử trùng lặp
-  aliases         String[]   @default([])
-  /// Định danh Wikidata, ví dụ "Q11982" — để đối chiếu với nguồn thẩm quyền
-  wikidataQid     String?
-  description     String?    @db.Text
-
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-
-  articles      Article[]
-  outgoingEdges Relationship[] @relation("EdgeFrom")
-  incomingEdges Relationship[] @relation("EdgeTo")
-
-  @@index([entityType])
-  @@index([wikidataQid])
-}
-
-model Relationship {
-  id           String       @id @default(cuid())
-  fromEntityId String
-  toEntityId   String
-  relType      RelationType
-  /// Độ mạnh 0–1, dùng để xếp thứ tự related concepts
-  weight       Float        @default(1)
-  note         String?
-
-  createdAt DateTime @default(now())
-
-  fromEntity Entity @relation("EdgeFrom", fields: [fromEntityId], references: [id], onDelete: Cascade)
-  toEntity   Entity @relation("EdgeTo", fields: [toEntityId], references: [id], onDelete: Cascade)
-
-  /// Một cặp entity chỉ có một cạnh cho mỗi kiểu quan hệ
-  @@unique([fromEntityId, toEntityId, relType])
-  @@index([toEntityId, relType])
-  @@index([relType])
 }
