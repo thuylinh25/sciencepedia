@@ -168,3 +168,131 @@ Hai tầng, còn xa mức trần 5 tầng. Cho tới khi việc này xong, hàng
 ## Nợ taxonomy đã ghi nhận
 
 Kho không có lĩnh vực gốc **Hoá học**. #4, #12 và #20 tạm đặt dưới Vật lý, nhánh con "Vật chất và Nguyên tử". Đây là quyết định có ý thức, không phải bỏ sót: mở một lĩnh vực gốc thứ sáu chỉ với 3 bài là tạo thêm một nhánh mỏng. Xem lại khi số bài hoá học vượt 8 — và khi đó phải version rồi migrate taxonomy, không sửa tại chỗ, vì URL phụ thuộc vào nó.
+
+## Lĩnh vực gốc thứ bảy — Công nghệ và Kỹ thuật (2026-09-10)
+
+Chủ: `knowledge-architect`. Đường ghi: `npm run taxonomy:tech -- --write`.
+
+Yêu cầu ban đầu là "Khoa học và Ứng dụng". **Tên đó bị bác.** Bảy nhánh gốc
+phải loại trừ lẫn nhau ở cùng một tầng, mà sáu nhánh đang có đều *là* khoa học
+— đặt tên nhánh thứ bảy bắt đầu bằng "Khoa học" là treo tập cha cạnh các tập
+con của chính nó, và breadcrumb `Trang chủ > Khoa học và Ứng dụng > Pin
+lithium-ion` ngầm nói sáu nhánh kia không phải khoa học. Nặng hơn: cái tên đó
+**không bác được đề xuất nào** — mọi bài trong kho đều "đúng" với nó, nên nhánh
+sẽ nuốt hết bài khó xếp.
+
+### Phép thử phân loại
+
+Sáu nhánh cũ trả lời *thế giới vận hành thế nào*; nhánh này trả lời *con người
+chế tạo được gì từ hiểu biết đó*. Một câu để quyết:
+
+> **Bỏ loài người đi, chủ đề này còn tồn tại không?**
+> Còn → khoa học tự nhiên. Không còn → nhánh 7.
+
+Quang điện là hiện tượng (Vật lý); tấm pin mặt trời là thiết bị (nhánh 7).
+
+**Quy tắc phá hoà:** chủ đề đứng được cả hai bên thì **ở lại nhánh tự nhiên**.
+Nhánh 7 chỉ nhận cái sáu nhánh kia từ chối. Thiếu quy tắc này, `kinh-james-webb`
+bị kéo khỏi `kham-pha-khong-gian` (nhánh chỉ có 1 bài) và `crispr-la-gi` bị kéo
+khỏi `di-truyen` — phá hai nhánh để mồi một nhánh.
+
+| Nhánh | Giữ | Nhánh 7 nhận |
+|---|---|---|
+| Vật lý | Định luật, hiện tượng | Máy chuyển hoá năng lượng |
+| Hoá học | Vì sao chất có tính chất đó | Chế tạo và dùng chất đó |
+| Sinh học | Cơ chế sống | Quy trình công nghiệp/lâm sàng |
+| Sức khoẻ | Chủ thể là **cơ thể** | Chủ thể là **thiết bị** |
+| Trái Đất | Hiện tượng địa quyển/khí quyển | Hạ tầng can thiệp |
+| Vũ trụ | Thiên thể, quan sát, sứ mệnh | **Không nhận gì** — `kham-pha-khong-gian` đã sở hữu tên lửa và kính |
+
+### Nhánh phẳng, tầng 2 chốt trước
+
+0 bài thì chia bốn con là tạo bốn nhánh rỗng — mức mỏng `category-manager` sinh
+ra để chặn. **Ngưỡng chia: 8 bài đã xuất bản**, cùng con số với `hoa-hoc`.
+
+Nhưng hình dạng chốt ngay bây giờ, vì bài học của `taxonomy:tier2` là *"làm bây
+giờ là gán lại 6 bài; làm sau là gán lại 50"* — cái đắt là mạng link nội bộ,
+suy ra từ vị trí trong cây. Chốt trước thì lúc chia chỉ còn là `UPDATE` theo
+bảng này:
+
+| slug | name | nameEn | icon | Ranh giới |
+|---|---|---|---|---|
+| `may-tinh-va-thong-tin` | Máy tính và Thông tin | Computing and Information | `Cpu` | Bit, thuật toán, mã hoá, mạng, AI |
+| `nang-luong-va-ha-tang` | Năng lượng và Hạ tầng | Energy and Infrastructure | `Battery` | Máy chuyển hoá năng lượng; Vật lý giữ *khái niệm* năng lượng |
+| `vat-lieu-va-che-tao` | Vật liệu và Chế tạo | Materials and Manufacturing | `Hammer` | Hoá học giữ *vì sao*; đây là *chế tạo và dùng* |
+| `cong-nghe-y-sinh` | Công nghệ y sinh | Biomedical Technology | `Stethoscope` | Chủ thể là **thiết bị** |
+
+`Cpu`, `Battery`, `Hammer` phải thêm vào whitelist `src/components/category-icon.tsx`
+khi tạo — tên thiếu rơi về `Sparkles` im lặng.
+
+Ứng viên thứ năm "Đo lường và Công cụ" **hoãn có chủ ý**: nó là nhánh duy nhất
+kéo `kinh-james-webb`, kính hiển vi và quang phổ kế ra khỏi Vũ trụ/Sinh học.
+
+### Không bài cũ nào gán lại
+
+Rà đủ 57 bài, đọc toàn văn 6 bài khả nghi. Kho hiện thuần khoa học tự nhiên —
+không tình cờ, mà vì hàng đợi 60 chủ đề đã cố ý loại "Máy tính lượng tử" và
+"Trí tuệ nhân tạo". `kinh-james-webb` là ứng viên mạnh nhất và vẫn ở lại, theo
+quy tắc phá hoà.
+
+### Đợt mở màn — 6 bài chạy được, 4 bài bị chặn
+
+Kỹ thuật là hệ quả của vật lý, nên phần lớn chủ đề có tiên quyết chưa tồn tại.
+Viết trước là dựng bài không có link nội bộ để trỏ — đúng cái gate `≥3 internal
+link` sẽ chặn.
+
+| Chủ đề | Danh mục con (khi chia) | Tiên quyết | Trạng thái |
+|---|---|---|---|
+| Máy tính biểu diễn thông tin: bit, byte, nhị phân | `may-tinh-va-thong-tin` | — | chạy được |
+| Chất bán dẫn và transistor | `vat-lieu-va-che-tao` | `nguyen-tu-cau-tao-va-dong-vi` ✓ | chạy được |
+| Thuật toán và độ phức tạp | `may-tinh-va-thong-tin` | bit/byte | chạy được |
+| Lò phản ứng hạt nhân: phân hạch có kiểm soát | `nang-luong-va-ha-tang` | `nguyen-tu-cau-tao-va-dong-vi` ✓ | chạy được |
+| Máy chụp cộng hưởng từ (MRI) nhìn thấy gì | `cong-nghe-y-sinh` | `tu-truong-va-luc-hap-dan` ✓ | chạy được |
+| Mã hoá khoá công khai | `may-tinh-va-thong-tin` | bit/byte, thuật toán | chạy được |
+| Động cơ nhiệt và giới hạn hiệu suất | `nang-luong-va-ha-tang` | hàng đợi #19 | **chặn** |
+| Pin lithium-ion | `nang-luong-va-ha-tang` | hàng đợi #20 | **chặn** |
+| Tấm pin mặt trời và hiệu ứng quang điện | `nang-luong-va-ha-tang` | hàng đợi #21, #28 | **chặn** |
+| GPS và hiệu chỉnh tương đối tính | `may-tinh-va-thong-tin` | hàng đợi #29 | **chặn** |
+
+Entity: enum `EntityType` **không thêm** `TECHNOLOGY`/`ARTIFACT`. Thiết bị xếp
+`OBJECT`, kỹ thuật/quy trình xếp `METHOD` hoặc `PROCESS` — thêm giá trị enum là
+migration Postgres cho một phân biệt chưa tính năng nào tiêu thụ.
+
+### Rủi ro thường trực
+
+Đây là nhánh dễ biến thành feed tin tức nhất trong kho. Chẩn đoán cũ — *31 bài
+thiên văn là "dấu vết của một feed tin tức, không phải của một mô hình tri
+thức"* — áp cho công nghệ thì tệ hơn, vì AI, pin, chip có nguồn tin dồi dào và
+hạn dùng ngắn. Giữ nguyên bộ lọc "khái niệm nền, không phải sự kiện": **không
+bài nào về một sản phẩm, mẫu máy hay công ty cụ thể.**
+
+### Còn treo, quyết riêng
+
+- **Toán học không có nhà.** Nhét vào nhánh 7 là sai loại — toán là khoa học
+  hình thức, không phải vật do người chế tạo. Nghiêng về lĩnh vực gốc thứ tám;
+  tới lúc đó nhánh 7 chỉ nhận bài toán *phục vụ tính toán*.
+- **Phương pháp khoa học không có nhà.** `chiem-tinh-hoc-khong-phai-khoa-hoc`
+  đang nằm nhờ ở `quan-sat-bau-troi`. Đúng thứ mà tên "Khoa học và Ứng dụng"
+  gợi ra nhưng nhánh 7 **không** nhận.
+- `dieu-gi-se-xay-ra-neu...bo-do-vu-tru` treo thẳng ở gốc `vu-tru`, nên xuống
+  `kham-pha-khong-gian`. 5 bài treo ở nhánh gốc và 7 bài `entityId = null` —
+  việc riêng.
+
+### Nợ kỹ thuật dọn kèm (2026-09-10)
+
+Ba lỗi có sẵn, dọn trong cùng đợt để nhánh mới không thừa hưởng:
+
+1. **Whitelist icon thiếu 5 tên đang nằm trong CSDL** — `Move`, `Flame`,
+   `CloudSun`, `GitBranch`, `ThermometerSun` do `taxonomy:tier2` ghi vào CSDL
+   mà không ai thêm vào `category-icon.tsx`; `co-hoc`, `nhiet-va-nang-luong`,
+   `khi-quyen-va-thoi-tiet`, `tien-hoa`, `khi-hau-va-bien-doi` render nhầm
+   `Sparkles` trên production từ 2026-09-05 tới 2026-09-10. Đã thêm cả 5, cộng
+   `Cog`.
+2. **Đụng độ `order = 5`** giữa `hoa-hoc` và `trai-dat-va-khi-hau` —
+   `seed-taxonomy.ts:123` đặt `order: rootCount` khi `vu-tru` bắt đầu từ 1. Đã
+   đánh số lại 1–7.
+3. **`getRootCategories()` thiếu tie-break** — `orderBy` đơn trên `order`, đúng
+   lỗi `docs/content-rules.md` đã ghi. Đã thêm `{ slug: "asc" }` cho cả bốn chỗ
+   sắp danh mục trong `src/server/queries.ts`.
+
+Đánh số lại chữa triệu chứng, tie-break chữa nguyên nhân — cần cả hai.

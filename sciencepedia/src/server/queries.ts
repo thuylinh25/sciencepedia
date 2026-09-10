@@ -410,10 +410,10 @@ export const getRootCategories = unstable_cache(
     const [categories, totals] = await Promise.all([
       prisma.category.findMany({
         where: { parentId: null },
-        orderBy: { order: "asc" },
+        orderBy: [{ order: "asc" }, { slug: "asc" }],
         include: {
           children: {
-            orderBy: { order: "asc" },
+            orderBy: [{ order: "asc" }, { slug: "asc" }],
             include: { _count: { select: { articles: true } } },
           },
           _count: { select: { articles: true } },
@@ -455,7 +455,7 @@ export const getCategoryBySlug = cache(async (slug: string) => {
     include: {
       parent: { select: { slug: true, name: true, nameEn: true } },
       children: {
-        orderBy: { order: "asc" },
+        orderBy: [{ order: "asc" }, { slug: "asc" }],
         include: { _count: { select: { articles: true } } },
       },
       _count: { select: { articles: true } },
@@ -777,7 +777,7 @@ export async function getAdminStats() {
           color: true,
           _count: { select: { articles: true } },
         },
-        orderBy: { order: "asc" },
+        orderBy: [{ order: "asc" }, { slug: "asc" }],
       }),
     ]);
 
