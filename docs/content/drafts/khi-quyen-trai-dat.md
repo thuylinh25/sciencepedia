@@ -6,7 +6,7 @@ Tính theo thể tích, không khí **khô** gồm chừng 78,08% nitơ, 20,95% 
 
 Hơi nước bị trừ ra vì lượng của nó thay đổi liên tục: tới 4% ở tầng đối lưu thấp vùng nhiệt đới, chỉ còn dấu vết ở hai cực.
 
-Con số 0,04% ấy là cách NASA làm tròn năm 2019, đã cũ hơn thực tế: NOAA đo riêng CO₂ trung bình tháng toàn cầu **428,73 ppm** cho tháng 5/2026 — tức 0,0429%, số liệu năm gần nhất còn sơ bộ. NASA đặt mức tiền công nghiệp ở gần 280 ppm — một mốc đã qua, không phải mức "hiện nay".
+Con số 0,04% ấy là cách NASA làm tròn năm 2019, đã cũ hơn thực tế: NOAA đo riêng CO₂ trung bình tháng toàn cầu **427,62 ppm** cho tháng 6/2026 — tức 0,0428%, số liệu năm gần nhất còn sơ bộ. NASA đặt mức tiền công nghiệp ở gần 280 ppm — một mốc đã qua, không phải mức "hiện nay".
 
 ## Áp suất là trọng lượng của cột khí bên trên
 

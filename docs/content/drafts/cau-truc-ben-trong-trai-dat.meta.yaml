@@ -1,3 +1,74 @@
+# ══ DỞ DANG 2026-09-10 — ĐĨA VÀ CSDL ĐANG LỆCH NHAU, CÓ CHỦ Ý ══
+#
+# Đọc khối này trước mọi dòng khác trong file. Bảng 11 bước bên dưới mô tả bản
+# xuất bản 2026-09-06 và KHÔNG còn mô tả thứ đang chạy.
+#
+# ── Chuyện đã xảy ra ──
+#
+# 2026-09-06  pipeline xuất bản, science-editor duyệt 2 vòng (ghi bên dưới).
+# 2026-09-08  hai lượt SỬA TAY qua giao diện admin, 06:57 và 07:26, revision
+#             KHÔNG ghi chú, KHÔNG qua gate. Lượt đó hoàn tác cả hai lỗi S2 mà
+#             vòng duyệt 09-06 đã bắt: con số nhiệt độ lõi không nguồn quay
+#             lại, 6.371 km quay lại, mọi mệnh đề dè dặt và mọi attribution bị
+#             gỡ. Nó cũng đổi title về "Hành trình vào tâm Trái Đất".
+#             Từ mốc này, file .md trên đĩa và cột `content` là hai văn bản
+#             khác nhau — nên phép kiểm "ls file .md" của bước 3 và bước 9
+#             trả kết quả XANH cho một nội dung không còn được phục vụ.
+# 2026-09-10  chủ sản phẩm quyết GIỮ bản sửa tay làm bản chuẩn (không lùi về
+#             bản pipeline). science-editor duyệt bản sửa tay: vòng 1 REVISE
+#             (2 lỗi S2, 7 lỗi S3), vòng 2 APPROVE sau khi áp đủ 11 câu sửa
+#             cộng 2 sửa cơ học. Slug đổi `hanh-trinh-vao-tam-trai-dat` →
+#             `cau-truc-ben-trong-trai-dat`, kèm 301 trong next.config.ts.
+#
+# ── Trạng thái từng thứ, tính đến lúc dừng ──
+#
+#   docs/content/drafts/cau-truc-ben-trong-trai-dat.md
+#     = bản VI đã APPROVE, 574 từ (countWords của gate), readingTime 3.
+#       Ghi vào đây để nó không chỉ tồn tại trong thư mục tạm của một phiên.
+#
+#   docs/content/corrections.md, mục 2026-09-10
+#     = 7 claim, mỗi claim ghi cũ/mới/căn cứ kèm DOI và URL. ĐÃ XONG.
+#
+#   sciencepedia/scripts/sync-cau-truc-trai-dat.ts  (npm run sync:cau-truc)
+#     = đường ghi, chạy khô mặc định. Đọc nội dung TỪ ĐĨA để buộc hai bên hội
+#       tụ. CHƯA CHẠY.
+#
+#   Cột `content` trong CSDL
+#     = VẪN LÀ BẢN SỬA TAY 2026-09-08, tức vẫn mang hai lỗi S2. Đây là thứ
+#       người đọc đang thấy.
+#
+#   Cột `contentEn`
+#     = vẫn là bản pipeline tiếng Anh — MỘT BÀI KHÁC với bản vi: khác cấu
+#       trúc, khác số (6,375 vs 6.371 km, 0.19% vs 0,2%), có nguyên một mục
+#       "The crust is not the tectonic plate" mà bản vi không có. Đây là lỗi
+#       S2-4 chưa đóng.
+#
+#   drafts/cau-truc-ben-trong-trai-dat.en.md
+#     = CHƯA dịch lại. Lượt dịch bị người dùng dừng trước khi chạy.
+#
+# ── Việc còn lại, theo đúng thứ tự ──
+#
+#   1. Dịch bản vi 574 từ sang en. Ràng buộc thuật ngữ do science-editor chốt
+#      nằm trong lịch sử hội thoại lượt 2026-09-10; điểm cứng nhất: "fluids"
+#      không phải "liquids"; *presumed* cho lõi ngoài và *considered* cho lõi
+#      trong (s2 dùng hai động từ khác nhau, KHÔNG gộp); "is only *expected* to
+#      be close to" nguyên văn s7; 6,230 ± 500 K bắt buộc dính "the melting
+#      temperature of iron" và mệnh đề "a figure for pure iron, not a measured
+#      core temperature". KHÔNG mang sang mục "The crust is not the tectonic
+#      plate", bộ ba 15/84/1, góc vùng tối sóng P, hay Lehmann kèm năm.
+#   2. Đưa bản dịch qua science-editor — đó là phần duy nhất của hàng còn chưa
+#      qua gate.
+#   3. `npm run sync:cau-truc -- --write`. Nó ghi Revision chụp bản cũ + nội
+#      dung mới + reviewedAt/lastVerifiedAt 2026-09-10 trong MỘT transaction.
+#      reviewedById giữ nguyên cmti8v05z0000k5ccfg55mget.
+#   4. `npm run publish:check -- --slug cau-truc-ben-trong-trai-dat`.
+#
+# CẢNH BÁO: đừng chạy bước 3 trước bước 1–2. Ghi content mà chưa có bản dịch
+# đã duyệt thì đóng dấu `reviewedAt` mới lên một hàng mà một nửa chưa qua gate
+# — đúng cái sai mà lượt này đi sửa.
+#
+# ── Hồ sơ lượt 2026-09-06 giữ nguyên bên dưới ──
+#
 # cau-truc-ben-trong-trai-dat — hồ sơ pipeline
 #
 # Chủ đề #7 của docs/content/topic-queue.md ("Cấu trúc bên trong Trái Đất",

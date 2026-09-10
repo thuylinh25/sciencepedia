@@ -88,17 +88,44 @@ sources:
     title: "Trends in Atmospheric Carbon Dioxide — Global"
     publisher: "NOAA Global Monitoring Laboratory (GML), Boulder"
     url: https://gml.noaa.gov/ccgg/trends/global.html
-    accessed: 2026-09-06
+    # URL dữ liệu thô, thêm 2026-09-10: trang html chỉ hiển thị THÁNG MỚI NHẤT,
+    # nên một tháng đã trích dẫn sẽ biến mất khỏi trang. File này giữ mọi tháng.
+    data_url: https://gml.noaa.gov/webdata/ccgg/trends/co2/co2_mm_gl.txt
+    accessed: 2026-09-10        # đọc lại lần 2; lần đầu 2026-09-06
     passages:
       # Ba ô liền nhau trong cùng khối "Global Monthly Mean CO 2" của trang.
       # Ghi thành ba chuỗi rời vì chúng là ba nút DOM rời, không phải một câu.
       - "Global Monthly Mean CO 2"
-      - "May 2026: 428.73 ppm"
-      - "May 2025: 427.04 ppm"
-      - "Last updated: Aug 05, 2026"
+      - "June 2026: 427.62 ppm"      # đọc lại 2026-09-10 — con số bài đang dùng
+      - "June 2025: 425.90 ppm"      # đọc lại 2026-09-10
+      - "Last updated: Sep 05, 2026" # đọc lại 2026-09-10
       - "The graphs show monthly mean carbon dioxide globally averaged over marine surface sites."
       - "Data are reported as a dry air mole fraction defined as the number of molecules of carbon dioxide divided by the number of all molecules in air, including CO 2 itself, after water vapor has been removed."
       - "The last year of data are still preliminary , pending recalibrations of reference gases and other quality control checks."
+    # ── ĐÃ THAY THẾ, GIỮ LẠI CÓ CHỦ Ý ─────────────────────────────────────────
+    # Không xoá. Đây là ví dụ tốt nhất trong kho về đúng cái lỗi mà BÀI NÀY nói
+    # tới: một con số tách khỏi mốc thời gian là một con số sắp sai.
+    superseded_passages:
+      - text: "May 2026: 428.73 ppm"
+        read_at: 2026-09-06
+        superseded_at: 2026-09-10
+        what_happened: >
+          NOAA hiệu chuẩn lại tháng 5/2026 từ 428.73 xuống 428.59 ppm — kiểm trong
+          co2_mm_gl.txt, dòng "2026 5 2026.375 428.59" — đúng như mệnh đề "still
+          preliminary" của chính trang đã cảnh báo. Đồng thời ô hiển thị của trang
+          html đã lăn sang tháng 6/2026, nên chuỗi "May 2026" KHÔNG còn tìm thấy
+          trên trang: trích dẫn cũ không resolve được cho người đọc mở link.
+          Tháng 5/2025 thì KHÔNG đổi (vẫn 427.04) — chỉ năm gần nhất bị hiệu chuẩn
+          lại. Bản nháp đã sửa sang 427,62 ppm / tháng 6/2026 theo phán quyết S2
+          của science-editor vòng 1 (2026-09-10).
+      - text: "May 2025: 427.04 ppm"
+        read_at: 2026-09-06
+        superseded_at: 2026-09-10
+        what_happened: "Giá trị không đổi, nhưng ô hiển thị đã lăn sang June 2025: 425.90 ppm."
+      - text: "Last updated: Aug 05, 2026"
+        read_at: 2026-09-06
+        superseded_at: 2026-09-10
+        what_happened: "Trang cập nhật lại ngày Sep 05, 2026."
     note: >
       Đây là bản ghi ĐO, không phải bài viết phổ thông — nên nó là chỗ duy
       nhất trong bảng được phép cấp con số CO₂ hiện tại. Nó cũng định nghĩa

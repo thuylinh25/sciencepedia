@@ -1,3 +1,40 @@
+# ══ DỞ DANG 2026-09-10 — bài VẪN KHÔNG có trong CSDL ══
+#
+# Lượt 2026-09-10 bị NGƯỜI DÙNG DỪNG giữa chừng, đúng lúc đang ghi verdict vòng
+# 2 vào file này. Khối dưới đây do phiên chính ghi lại sau khi dừng, để lượt sau
+# không làm lại việc đã xong. Kiểm: `git status` ngày 2026-09-10 cho thấy
+# checks/, research/ và drafts/*.md đã đổi còn file NÀY thì chưa.
+#
+#   B2 ĐÃ GỠ — kiểm được, chắc chắn.
+#     Bản nháp rút 769 → 598 từ, trong băng 400–600. Kiểm lại:
+#     `python -c "print(len(open('docs/content/drafts/khi-quyen-trai-dat.md',encoding='utf-8').read().strip().split()))"`
+#     — đó cũng đúng cách `countWords` của scripts/check-publish.ts đếm.
+#
+#   B1 — CÓ KHAI LÀ ĐÃ GỠ, NHƯNG LỜI KHAI CHƯA KIỂM ĐỘC LẬP ĐƯỢC.
+#     checks/khi-quyen-trai-dat.yaml giờ mang khối `editor_pass` mới:
+#     vòng 1 REVISE (F-E1, S2), vòng 2 APPROVE, 598 từ,
+#     `reviewed_by: "agent science-editor (spawn thật, phiên có tool Agent)"`.
+#     Khối đó cũng HUỶ một khối `editor_pass` giả có sẵn từ commit f78ca62 và
+#     ghi bốn bằng chứng nó không phải chữ ký editor thật.
+#
+#     ĐỌC KỸ: dòng "spawn thật" là lời khai CỦA CHÍNH lượt chạy đó, không phải
+#     bằng chứng bên ngoài. Phiên chính spawn `content-curator`, và KHÔNG có
+#     dấu vết nào trên đĩa chứng minh curator có tool Agent hay không. Đây đúng
+#     cái mà chú thích cũ của bước 4 cảnh báo: "một ô trống là thông tin; một ô
+#     tự điền là thông tin sai". Lượt sau tự quyết có tin hay không.
+#
+#     Thứ ĐỨNG ĐỘC LẬP với lời khai, và đáng tin hơn nó: nội dung F-E1. Nó bắt
+#     được rằng 428,73 ppm không còn resolve về nguồn — NOAA hiệu chuẩn lại
+#     tháng 5/2026 thành 428.59 và trang đã lăn sang "June 2026: 427.62 ppm".
+#     Kiểm lại bằng cách fetch chính co2_mm_gl.txt. Một lượt tự chấm khống
+#     không sinh ra được phát hiện dạng này.
+#
+#   BƯỚC 5–11 VẪN CHƯA CHẠY. Kiểm 2026-09-10: `article.count({where:{slug:
+#   "khi-quyen-trai-dat"}})` = 0. Không entity, không hàng Article, không bản
+#   dịch .en.md trên đĩa.
+#
+# ── Ghi chép của lượt 2026-09-07 giữ nguyên bên dưới ──
+#
 # ══ CHƯA HOÀN TẤT 2026-09-07 — bài vẫn KHÔNG có trong CSDL ══
 #
 # Chủ đề #8 của docs/content/topic-queue.md ("Khí quyển Trái Đất: thành phần
@@ -36,8 +73,9 @@
 
 slug: khi-quyen-trai-dat
 status: NOT_IN_DB          # không phải DRAFT — chưa từng có hàng Article
-turn: 2026-09-07
-prose_words: 769           # trần 400–600; xem B2
+turn: 2026-09-10           # lượt 2026-09-07 ở bên dưới; lượt này bị dừng giữa chừng
+prose_words: 598           # 2026-09-10, rút từ 769 — B2 đã gỡ, trong băng 400–600
+reading_time_min: 3        # round(598/200); ĐỪNG đặt tay khi ghi CSDL — src/lib/utils.ts tự tính
 internal_links_out: 4      # ngưỡng 3 — đã đủ, xem verified.V5
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -232,11 +270,14 @@ curator_prescan:
 # ─────────────────────────────────────────────────────────────────────────────
 # VIỆC CỦA LƯỢT SAU, theo thứ tự. Chỉ chạy được ở phiên có tool Task.
 # ─────────────────────────────────────────────────────────────────────────────
+# CẬP NHẬT 2026-09-10: dòng 1–3 ĐÃ XONG trong lượt bị dừng; giữ nguyên chữ để
+# đối chiếu, nhưng đọc kèm khối đầu file. Việc còn lại bắt đầu từ dòng 4.
 next_turn:
-  - "0. Kiểm lại B1: nếu vẫn không có tool Agent thì DỪNG, đừng chạy tiếp bước nào."
-  - "1. Rút bản nháp xuống ≤600 từ (B2), xoá câu chứ không viết lại. Giữ nguyên danh sách DO_NOT_CUT."
-  - "2. Gọi agent `science-editor` THẬT trên bản ĐÃ RÚT, kèm 3 file: draft, research, checks. Yêu cầu đối chiếu đủ 12 `binding_on_draft` và trả lời Q1, Q2."
-  - "3. REVISE → sửa rồi gọi lại; tối đa 2 vòng; sau đó editor quyết publish-hoặc-bỏ."
+  - "0. [XONG-CÓ-ĐIỀU-KIỆN] B1: xem khối đầu file — lời khai 'đã gỡ' chưa kiểm độc lập được. Nếu không tin, gọi lại `science-editor` trên bản 598 từ; rẻ hơn nhiều so với publish một bài chưa duyệt."
+  - "1. [XONG] Rút bản nháp 769 → 598 từ."
+  - "2. [XONG] Gọi `science-editor` — verdict và findings ở checks/khi-quyen-trai-dat.yaml, khối `editor_pass`."
+  - "3. [XONG] Vòng 1 REVISE (F-E1 S2, con số CO₂ hết resolve), vòng 2 APPROVE. F-E2 (S4) còn mở, KHÔNG chặn."
+  - "3b. TRƯỚC KHI ĐI TIẾP: fetch lại NOAA co2_mm_gl.txt. Con số CO₂ trong bài đã đổi hai lần vì hiệu chuẩn; `binding_on_draft` mục 2 nay cấm chép giá trị từ file, buộc fetch trong chính lượt sửa."
   - "4. APPROVE → bước 5–10. Bước 10 là INSERT (V1), reviewedById = cmti8v05z0000k5ccfg55mget (V2), category id cmtnwtco4000lk5yk2g06as07 (V3)."
   - "5. Trước publish: thêm link VÀO từ `cuc-quang` hoặc `nguyen-nhan-cua-mua` (V4) — chọn MỘT, theo nghĩa của câu, và ghi Revision giữ văn bản CŨ trong CÙNG transaction."
   - "6. `npm run publish:check -- --slug khi-quyen-trai-dat` từ thư mục `sciencepedia/`; sạch thì mới publish. Không nới gate, không sửa script."
