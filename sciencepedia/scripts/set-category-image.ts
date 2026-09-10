@@ -56,6 +56,26 @@ const PICTURES: Record<string, Picture> = {
     // với chính tấm ảnh ngọn lửa.
     color: "#d97706",
   },
+  "cong-nghe-va-ky-thuat": {
+    // Mặt một tấm wafer đã in xong: lưới die trải hết khung, dải cầu vồng
+    // chạy ngang là nhiễu xạ từ chính chu kỳ của lưới đó. Chọn tấm này vì
+    // nhánh này định nghĩa bằng "vật do con người chế tạo", nên tiêu chí
+    // "hiện tượng, không phải dụng cụ" của `hoa-hoc` phải đọc là "cấu trúc
+    // người dựng nhìn ra được, không phải sản phẩm trưng ra": thứ nhìn thấy
+    // ở đây là kỹ thuật in được cấu trúc nhỏ hơn bước sóng ánh sáng, không
+    // phải một món hàng. Không logo, không nhận ra model của hãng nào.
+    // Loại ứng viên Public domain (mảng vi điện cực võng mạc kẹp trên nhíp
+    // cạnh một con mắt, DOE) dù giấy phép sạch hơn: nó đúng là một dụng cụ
+    // được trưng ra. Loại tấm wafer đa tinh thể CC BY-SA 4.0 vì khung có đĩa
+    // petri và mặt bàn thí nghiệm — cùng lý do đã loại ống nghiệm nhiều màu.
+    // Nền đen, chủ thể lệch phải-trên: sống qua cả lớp phủ trái-sang-phải của
+    // trang danh mục lẫn lớp phủ đáy của `CategoryFeatureCard`.
+    url: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Silicon_Wafer_20190210.jpg/1280px-Silicon_Wafer_20190210.jpg",
+    page: "https://commons.wikimedia.org/wiki/File:Silicon_Wafer_20190210.jpg",
+    author: "Enrique Jiménez",
+    licence: "CC BY-SA 2.0",
+    licenceUrl: "https://creativecommons.org/licenses/by-sa/2.0",
+  },
 };
 
 /** Ghi công theo đúng định dạng năm danh mục gốc đang dùng. */

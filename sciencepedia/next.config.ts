@@ -41,6 +41,37 @@ const nextConfig: NextConfig = {
     optimizePackageImports: ["lucide-react", "framer-motion", "@react-three/drei"],
   },
   serverExternalPackages: ["@prisma/client", "bcryptjs"],
+  /**
+   * Đổi slug bài viết thì URL cũ phải còn sống.
+   *
+   * `hanh-trinh-vao-tam-trai-dat` → `cau-truc-ben-trong-trai-dat`
+   * (2026-09-10): hàng Article đó đã mang entity, seoTitle và bản tiếng Anh
+   * của bài "Cấu trúc bên trong Trái Đất", và bài `trai-dat` đã trỏ link vào
+   * slug mới — link đó là 404 chừng nào chưa đổi. Slug cũ vẫn là URL công
+   * khai từ 2026-09-06, nên nó chuyển hướng thay vì chết.
+   *
+   * 301 chứ không 307: đây là đổi tên vĩnh viễn, và 301 mới gộp được tín hiệu
+   * xếp hạng về URL mới. Đánh đổi phải biết trước: trình duyệt và CDN nhớ 301
+   * gần như vĩnh viễn, nên đảo lại quyết định này về sau là đắt.
+   *
+   * `localePrefix: "always"` (src/i18n/routing.ts) nên mọi URL thật đều có
+   * tiền tố locale; dòng không tiền tố là để bắt link nội bộ viết dạng
+   * `/articles/…` trong thân bài trước khi middleware chèn locale.
+   */
+  async redirects() {
+    return [
+      {
+        source: "/:locale(vi|en)/articles/hanh-trinh-vao-tam-trai-dat",
+        destination: "/:locale/articles/cau-truc-ben-trong-trai-dat",
+        permanent: true,
+      },
+      {
+        source: "/articles/hanh-trinh-vao-tam-trai-dat",
+        destination: "/vi/articles/cau-truc-ben-trong-trai-dat",
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {
