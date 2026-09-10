@@ -14,9 +14,24 @@ export type SkyView = {
   /** Bề rộng khung nhìn, độ */
   fovDeg: number;
   survey?: string;
+  /**
+   * Khung nhìn này là BỀ MẶT MỘT THIÊN THỂ, không phải thiên cầu.
+   *
+   * Aladin đọc khoá `hips_body` trong file properties của HiPS rồi tự chuyển
+   * sang hệ toạ độ gắn vào chính thiên thể đó. Ép `cooFrame: "ICRS"` lúc khởi
+   * tạo sẽ chặn mất bước chuyển ấy và khung nhìn rơi về thiên cầu, nên cờ này
+   * tồn tại để chỗ khởi tạo biết mà đừng ép.
+   *
+   * Khi bật, `ra`/`dec` được hiểu là kinh độ / vĩ độ trên thiên thể.
+   */
+  planetary?: boolean;
 };
 
 export type AladinStatus = "idle" | "loading" | "ready" | "error";
+
+/** Nền của khung bản đồ. Trùng `bg-[#04060e]` trong `aladin-viewer.tsx` và
+ *  `.aladin-fullscreen` trong `globals.css` — ba chỗ phải cùng một màu. */
+const ALADIN_BACKGROUND = "rgb(4, 6, 14)";
 
 /**
  * Nạp script Aladin từ CDN — đúng MỘT lần cho cả vòng đời trang.
@@ -97,6 +112,29 @@ export function supportsWebGL2(): boolean {
   }
 }
 
+/**
+ * Bề rộng khung nhìn cần đặt cho Aladin, tính theo tỉ lệ khung hiện tại.
+ *
+ * Aladin nhận `fov` là bề RỘNG. Với bản đồ bầu trời điều đó vô hại, nhưng quả
+ * cầu hành tinh là một đĩa tròn: khung càng bẹt thì chiều cao càng ít độ, và
+ * đĩa bị cắt mất hai cực. Thẻ trong lưới là hình vuông nên nhìn đúng, rồi bấm
+ * nút toàn màn hình là khung thành 2:1 và Mặt Trời cụt trên cụt dưới.
+ *
+ * Nên ở chế độ thiên thể, `fovDeg` được hiểu là bề CAO và bề rộng suy ra từ tỉ
+ * lệ khung. Quả cầu giữ nguyên kích thước biểu kiến, vuông hay bẹt cũng vậy.
+ */
+function fovForFrame(element: HTMLElement, view: SkyView): number {
+  if (!view.planetary) return view.fovDeg;
+
+  const { width, height } = element.getBoundingClientRect();
+  if (!width || !height) return view.fovDeg;
+
+  // Aladin chặn cứng ở 180° trong phép chiếu cầu, nên khung càng bẹt thì càng
+  // không cứu được bằng fov — đó là lý do khung toàn màn hình của bề mặt thiên
+  // thể bị CSS ép về vuông (`.aladin-body-view` trong `globals.css`).
+  return Math.min(180, view.fovDeg * Math.max(1, width / height));
+}
+
 type UseAladinOptions = {
   /** Chỉ tạo instance khi cờ này bật — đây là cái chốt của lazy loading */
   enabled: boolean;
@@ -115,8 +153,11 @@ type UseAladinOptions = {
 export function useAladin({ enabled, initialView }: UseAladinOptions) {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const instanceRef = useRef<AladinInstance | null>(null);
+  const resizeObserverRef = useRef<ResizeObserver | null>(null);
+  const classObserverRef = useRef<MutationObserver | null>(null);
 
   const [status, setStatus] = useState<AladinStatus>("idle");
+  const [isFullscreen, setIsFullscreen] = useState(false);
   const [attempt, setAttempt] = useState(0);
 
   // Khung nhìn ban đầu đọc qua ref: nó chỉ có ý nghĩa ở lần dựng đầu tiên, và
@@ -143,11 +184,20 @@ export function useAladin({ enabled, initialView }: UseAladinOptions) {
         if (cancelled || !containerRef.current) return;
 
         const view = initialViewRef.current;
-        const instance = factory.aladin(containerRef.current, {
+
+        const instance = factory.aladin(container, {
           survey: view.survey ?? DEFAULT_SURVEY,
-          fov: view.fovDeg,
-          cooFrame: "ICRS",
-          showReticle: true,
+          fov: fovForFrame(container, view),
+          // Xem chú thích `planetary` ở SkyView: bề mặt thiên thể phải để
+          // Aladin tự chọn hệ toạ độ theo `hips_body`.
+          ...(view.planetary ? {} : { cooFrame: "ICRS" as const }),
+          // Cùng màu với `bg-[#04060e]` của khung ngoài và với lớp phủ toàn
+          // màn hình. Không đặt thì canvas xoá bằng xám mặc định của Aladin và
+          // khung nổi lên thành một ô sáng giữa giao diện tối.
+          backgroundColor: ALADIN_BACKGROUND,
+          // Vòng ngắm chỉ có nghĩa khi đang nhắm vào một điểm trên trời. Đặt
+          // lên giữa quả cầu hành tinh thì nó chỉ là vệt bẩn giữa màn hình.
+          showReticle: !view.planetary,
           showZoomControl: true,
           showFullscreenControl: true,
           showLayersControl: false,
@@ -157,7 +207,10 @@ export function useAladin({ enabled, initialView }: UseAladinOptions) {
           showProjectionControl: false,
           showSettingsControl: false,
           showContextMenu: false,
-          showCooLocation: true,
+          // Trên bề mặt hành tinh, ô này vẫn in RA/Dec của thiên cầu — một
+          // con số không liên quan gì tới chỗ con trỏ đang chỉ trên quả cầu.
+          // Thà không hiện còn hơn hiện sai.
+          showCooLocation: !view.planetary,
           showFrame: false,
         });
 
@@ -165,6 +218,38 @@ export function useAladin({ enabled, initialView }: UseAladinOptions) {
 
         instanceRef.current = instance;
         setStatus("ready");
+
+        // Toàn màn hình đổi tỉ lệ khung mà không dựng lại instance, nên bề
+        // rộng phải tính lại. Aladin cũng quan sát chính div này để dựng lại
+        // canvas; hai observer không giẫm lên nhau vì `setFoV` chỉ đổi độ, và
+        // không đổi kích thước phần tử — không có vòng lặp bố cục.
+        if (view.planetary && typeof ResizeObserver !== "undefined") {
+          const observer = new ResizeObserver(() => {
+            instanceRef.current?.setFoV(fovForFrame(container, view));
+          });
+          observer.observe(container);
+          resizeObserverRef.current = observer;
+        }
+
+        /**
+         * Aladin bật/tắt toàn màn hình bằng cách gắn lớp `aladin-fullscreen`
+         * lên chính div này, không phát sự kiện nào ra ngoài. Theo dõi thuộc
+         * tính `class` là đường duy nhất để React biết — và React cần biết để
+         * đặt nút quay lại cho đúng chỗ: trong thẻ thì tuyệt đối, ở toàn màn
+         * hình thì cố định và nằm trên lớp phủ.
+         */
+        if (typeof MutationObserver !== "undefined") {
+          const sync = () =>
+            setIsFullscreen(container.classList.contains("aladin-fullscreen"));
+
+          const classObserver = new MutationObserver(sync);
+          classObserver.observe(container, {
+            attributes: true,
+            attributeFilter: ["class"],
+          });
+          classObserverRef.current = classObserver;
+          sync();
+        }
       })
       .catch(() => {
         if (!cancelled) setStatus("error");
@@ -172,6 +257,13 @@ export function useAladin({ enabled, initialView }: UseAladinOptions) {
 
     return () => {
       cancelled = true;
+
+      resizeObserverRef.current?.disconnect();
+      resizeObserverRef.current = null;
+
+      classObserverRef.current?.disconnect();
+      classObserverRef.current = null;
+      setIsFullscreen(false);
 
       instanceRef.current?.destroy?.();
       instanceRef.current = null;
@@ -188,7 +280,9 @@ export function useAladin({ enabled, initialView }: UseAladinOptions) {
     if (!instance) return;
 
     instance.gotoRaDec(view.ra, view.dec);
-    instance.setFoV(view.fovDeg);
+    if (containerRef.current) {
+      instance.setFoV(fovForFrame(containerRef.current, view));
+    }
     if (view.survey) setSurveyOn(instance, view.survey);
   }, []);
 
@@ -200,7 +294,14 @@ export function useAladin({ enabled, initialView }: UseAladinOptions) {
   /** Dựng lại từ đầu sau khi lỗi — dùng cho nút "thử lại". */
   const retry = useCallback(() => setAttempt((value) => value + 1), []);
 
-  return { containerRef, status, goTo, setSurvey, retry } as const;
+  return {
+    containerRef,
+    status,
+    isFullscreen,
+    goTo,
+    setSurvey,
+    retry,
+  } as const;
 }
 
 /**

@@ -348,3 +348,25 @@ bay, bản ba mới đạt.
 
 Với thứ có hình hài, "typecheck xanh" không phải bằng chứng nó đúng. Kết xuất ra,
 xem ở **đúng kích thước sẽ dùng**, rồi mới giao.
+
+## Tên thiên thể — từ loại tiếng Việt, tên riêng quốc tế
+
+Nhãn hiển thị của một thiên thể ghép từ hai phần: từ chỉ loại bằng tiếng Việt,
+rồi tên riêng giữ nguyên dạng quốc tế. "Thiên hà Andromeda", "Tinh vân Orion",
+"Cụm sao Pleiades", "Sao Betelgeuse", "Lỗ đen Sagittarius A*".
+
+Lý do là chuyện tra cứu chứ không phải thẩm mỹ. Tên Hán-Việt ("Tiên Nữ", "Lạp
+Hộ", "Tua Rua") không dẫn tới đâu cả: gõ vào SIMBAD, Stellarium hay bất kỳ ứng
+dụng bầu trời nào cũng không ra. Người đọc rời trang này để tìm tiếp thì phải
+mang theo được cái tên vừa đọc. Từ chỉ loại thì ngược lại — nó là nghĩa, không
+phải định danh, nên dịch.
+
+Tên chòm sao dùng dạng Latin ("Orion", "Taurus", "Virgo"), vì đó là tên chính
+thức của IAU và là thứ in trên mọi bản đồ sao.
+
+Tên Hán-Việt vẫn nằm trong `aliases` của `SKY_TARGETS`, nên tìm kiếm bằng "Tua
+Rua" hay "Lạp Hộ" vẫn ra. Bỏ khỏi nhãn không có nghĩa là bỏ khỏi dữ liệu.
+
+Nhãn phải nói rõ nó là nhãn của cái gì. Một dòng chỉ ghi "Orion" dưới tên thẻ
+là vô nghĩa — người đọc không biết đó là chòm sao hay một tên gọi khác của
+chính thiên thể ấy, nên nhãn đứng trước: "Chòm sao Orion".

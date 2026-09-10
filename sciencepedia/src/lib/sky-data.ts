@@ -125,14 +125,14 @@ export const SKY_TARGETS: SkyTarget[] = [
   {
     id: "m31",
     catalogId: "M31",
-    name: "Thiên hà Tiên Nữ",
+    name: "Thiên hà Andromeda",
     nameEn: "Andromeda Galaxy",
     aliases: ["M31", "Messier 31", "NGC 224", "Andromeda", "Tiên Nữ"],
     kind: "GALAXY",
     ra: "00 42 44.330",
     dec: "+41 16 07.50",
     fovDeg: 3,
-    constellation: "Tiên Nữ",
+    constellation: "Andromeda",
     constellationEn: "Andromeda",
     blurb:
       "Thiên hà xoắn ốc lớn gần Ngân Hà nhất, cách khoảng 2,5 triệu năm ánh sáng. Đường kính biểu kiến hơn 3 độ — rộng gấp sáu lần Mặt Trăng tròn.",
@@ -149,7 +149,7 @@ export const SKY_TARGETS: SkyTarget[] = [
     ra: "12 30 49.42",
     dec: "+12 23 28.0",
     fovDeg: 0.4,
-    constellation: "Xử Nữ",
+    constellation: "Virgo",
     constellationEn: "Virgo",
     blurb:
       "Thiên hà elip khổng lồ ở tâm cụm Xử Nữ. Lỗ đen siêu khối lượng của nó là vật thể đầu tiên được chụp ảnh trực tiếp, công bố năm 2019.",
@@ -159,24 +159,24 @@ export const SKY_TARGETS: SkyTarget[] = [
   {
     id: "m42",
     catalogId: "M42",
-    name: "Tinh vân Lạp Hộ",
+    name: "Tinh vân Orion",
     nameEn: "Orion Nebula",
     aliases: ["M42", "Messier 42", "NGC 1976", "Orion Nebula", "Lạp Hộ"],
     kind: "NEBULA",
     ra: "05 35 16.8",
     dec: "-05 23 15",
     fovDeg: 2,
-    constellation: "Lạp Hộ",
+    constellation: "Orion",
     constellationEn: "Orion",
     blurb:
-      "Vùng tạo sao khối lượng lớn gần Trái Đất nhất, cách khoảng 1.300 năm ánh sáng. Mắt thường nhìn thấy được như một vệt mờ trong thanh kiếm chòm Lạp Hộ.",
+      "Vùng tạo sao khối lượng lớn gần Trái Đất nhất, cách khoảng 1.300 năm ánh sáng. Mắt thường nhìn thấy được như một vệt mờ trong thanh kiếm chòm Orion.",
     blurbEn:
       "The closest region of massive star formation to Earth, about 1,300 light-years away. Visible to the naked eye as a smudge in the sword of Orion.",
   },
   {
     id: "betelgeuse",
     catalogId: "Betelgeuse",
-    name: "Betelgeuse",
+    name: "Sao Betelgeuse",
     nameEn: "Betelgeuse",
     aliases: [
       "Betelgeuse",
@@ -189,17 +189,17 @@ export const SKY_TARGETS: SkyTarget[] = [
     ra: "05 55 10.305",
     dec: "+07 24 25.43",
     fovDeg: 0.5,
-    constellation: "Lạp Hộ",
+    constellation: "Orion",
     constellationEn: "Orion",
     blurb:
-      "Sao siêu khổng lồ đỏ ở vai chòm Lạp Hộ, một trong những ngôi sao sáng nhất bầu trời. Độ sáng biến thiên rõ rệt và nó được xem là ứng viên siêu tân tinh.",
+      "Sao siêu khổng lồ đỏ ở vai chòm Orion, một trong những ngôi sao sáng nhất bầu trời. Độ sáng biến thiên rõ rệt và nó được xem là ứng viên siêu tân tinh.",
     blurbEn:
       "A red supergiant on the shoulder of Orion and one of the brightest stars in the sky. Its brightness varies markedly and it is considered a supernova candidate.",
   },
   {
     id: "sgr-a-star",
     catalogId: "Sgr A*",
-    name: "Sagittarius A*",
+    name: "Lỗ đen Sagittarius A*",
     nameEn: "Sagittarius A*",
     aliases: [
       "Sgr A*",
@@ -214,7 +214,7 @@ export const SKY_TARGETS: SkyTarget[] = [
     // Tâm Ngân Hà bị bụi che gần như hoàn toàn ở bước sóng khả kiến; ảnh DSS
     // chỉ cho một đám sao mờ. Hồng ngoại gần xuyên qua được lớp bụi đó.
     survey: "P/2MASS/color",
-    constellation: "Nhân Mã",
+    constellation: "Sagittarius",
     constellationEn: "Sagittarius",
     blurb:
       "Lỗ đen siêu khối lượng ở tâm Ngân Hà, khối lượng khoảng 4 triệu lần Mặt Trời. Ảnh chụp trực tiếp được công bố năm 2022.",
@@ -224,14 +224,14 @@ export const SKY_TARGETS: SkyTarget[] = [
   {
     id: "m45",
     catalogId: "M45",
-    name: "Cụm sao Tua Rua",
+    name: "Cụm sao Pleiades",
     nameEn: "Pleiades",
     aliases: ["M45", "Messier 45", "Pleiades", "Tua Rua", "Thất Nữ"],
     kind: "CLUSTER",
     ra: "03 46 24.2",
     dec: "+24 06 50",
     fovDeg: 3,
-    constellation: "Kim Ngưu",
+    constellation: "Taurus",
     constellationEn: "Taurus",
     blurb:
       "Cụm sao phân tán trẻ, cách khoảng 440 năm ánh sáng. Mắt thường thấy sáu tới bảy ngôi; ống nhòm cho thấy hàng trăm.",
@@ -241,14 +241,14 @@ export const SKY_TARGETS: SkyTarget[] = [
   {
     id: "m1",
     catalogId: "M1",
-    name: "Tinh vân Con Cua",
+    name: "Tinh vân Crab",
     nameEn: "Crab Nebula",
     aliases: ["M1", "Messier 1", "NGC 1952", "Crab Nebula", "Con Cua"],
     kind: "NEBULA",
     ra: "05 34 31.8",
     dec: "+22 01 03",
     fovDeg: 0.4,
-    constellation: "Kim Ngưu",
+    constellation: "Taurus",
     constellationEn: "Taurus",
     blurb:
       "Tàn dư của siêu tân tinh mà các nhà thiên văn Trung Hoa ghi lại năm 1054. Ở tâm là một sao neutron quay khoảng 30 vòng mỗi giây.",
@@ -258,14 +258,14 @@ export const SKY_TARGETS: SkyTarget[] = [
   {
     id: "m51",
     catalogId: "M51",
-    name: "Thiên hà Xoáy Nước",
+    name: "Thiên hà Whirlpool",
     nameEn: "Whirlpool Galaxy",
     aliases: ["M51", "Messier 51", "NGC 5194", "Whirlpool", "Xoáy Nước"],
     kind: "GALAXY",
     ra: "13 29 52.698",
     dec: "+47 11 42.93",
     fovDeg: 0.6,
-    constellation: "Lạp Khuyển",
+    constellation: "Canes Venatici",
     constellationEn: "Canes Venatici",
     blurb:
       "Thiên hà xoắn ốc nhìn thẳng mặt, đang tương tác với thiên hà nhỏ NGC 5195. Đây là thiên hà đầu tiên được nhận ra là có cấu trúc xoắn ốc, năm 1845.",
@@ -282,7 +282,7 @@ export const SKY_TARGETS: SkyTarget[] = [
     ra: "12 39 59.432",
     dec: "-11 37 23.00",
     fovDeg: 0.5,
-    constellation: "Xử Nữ",
+    constellation: "Virgo",
     constellationEn: "Virgo",
     blurb:
       "Thiên hà xoắn ốc nhìn gần như nghiêng cạnh, với dải bụi tối cắt ngang phần phình sáng — hình dáng đã đặt tên cho nó.",
@@ -292,14 +292,14 @@ export const SKY_TARGETS: SkyTarget[] = [
   {
     id: "m13",
     catalogId: "M13",
-    name: "Cụm sao cầu Vũ Tiên",
+    name: "Cụm sao cầu Hercules",
     nameEn: "Hercules Globular Cluster",
     aliases: ["M13", "Messier 13", "NGC 6205", "Hercules Cluster"],
     kind: "CLUSTER",
     ra: "16 41 41.634",
     dec: "+36 27 40.75",
     fovDeg: 0.8,
-    constellation: "Vũ Tiên",
+    constellation: "Hercules",
     constellationEn: "Hercules",
     blurb:
       "Cụm sao cầu sáng nhất bầu trời bắc: vài trăm nghìn ngôi sao già dồn trong một quả cầu rộng khoảng 145 năm ánh sáng.",

@@ -40,8 +40,19 @@ export type AladinViewerProps = {
    *             xem, nên không được tự tiêu 1 MB băng thông của họ.
    */
   activation?: "visible" | "click";
-  /** Nội dung hiện trước khi kích hoạt. Mặc định là tấm bìa có nút mở. */
+  /**
+   * Thay HẲN tấm bìa mặc định, kể cả nút mở — chỗ gọi tự lo cách kích hoạt.
+   * Muốn giữ nút thì dùng `posterBackground`.
+   */
   poster?: ReactNode;
+  /**
+   * Ảnh nằm SAU tấm bìa mặc định, nút mở vẫn nguyên.
+   *
+   * Đây là đường dùng cho thư viện ảnh hành tinh: tấm ảnh chụp thật vừa là
+   * nội dung có giá trị tự thân (server-render, index được, không cần WebGL),
+   * vừa là bìa của khung tương tác. Người không bấm vẫn xem được ảnh.
+   */
+  posterBackground?: ReactNode;
   /** Chú thích trên tấm bìa mặc định */
   posterCaption?: string;
   className?: string;
@@ -67,6 +78,7 @@ export function AladinViewer({
   label,
   activation = "visible",
   poster,
+  posterBackground,
   posterCaption,
   className,
 }: AladinViewerProps) {
@@ -93,16 +105,39 @@ export function AladinViewer({
     <div
       ref={ref}
       className={cn(
-        "relative isolate w-full overflow-hidden rounded-2xl border bg-[#04060e]",
+        // KHÔNG thêm `isolate` ở đây. Nút toàn màn hình của Aladin đặt khung
+        // thành `position: fixed`; một stacking context riêng sẽ nhốt nó lại
+        // trong thẻ này và các thẻ đứng sau trong lưới sẽ vẽ đè lên.
+        // Xem quy tắc `.aladin-fullscreen` trong `globals.css`.
+        "relative w-full overflow-hidden rounded-2xl border bg-[#04060e]",
+        // Đánh dấu để CSS ép khung toàn màn hình về vuông — đĩa hành tinh là
+        // hình tròn, khung bẹt thì cụt hai cực. Xem `.aladin-body-view`.
+        view.planetary && "aladin-body-view",
         className,
       )}
     >
       {active ? (
-        <AladinCanvas view={view} label={label} />
+        <AladinCanvas
+          view={view}
+          label={label}
+          // Chỉ cho đóng khi chính người đọc đã bấm để mở. Khung tự nạp theo
+          // tầm nhìn (trang bản đồ) thì đóng nó chỉ để nó mở lại ngay.
+          onClose={clicked ? () => setClicked(false) : undefined}
+        />
       ) : (
         <div className="absolute inset-0">
+          {posterBackground}
           {poster ?? (
-            <div className="grid size-full place-items-center bg-[radial-gradient(circle_at_50%_35%,#16224a,#04060e_70%)] px-6 text-center">
+            <div
+              className={cn(
+                "grid size-full place-items-center px-6 text-center",
+                // Có ảnh nền thì phủ một lớp tối để chữ trắng còn đọc được;
+                // không có thì vẽ nền sao mờ như cũ.
+                posterBackground
+                  ? "relative bg-gradient-to-t from-black/85 via-black/35 to-black/15"
+                  : "bg-[radial-gradient(circle_at_50%_35%,#16224a,#04060e_70%)]",
+              )}
+            >
               <div>
                 <Telescope
                   className="mx-auto size-7 text-white/50"

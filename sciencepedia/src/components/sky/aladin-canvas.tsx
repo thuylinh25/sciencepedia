@@ -2,9 +2,10 @@
 
 import { useEffect, useRef } from "react";
 import { useTranslations } from "next-intl";
-import { AlertTriangle, Loader2, RotateCcw } from "lucide-react";
+import { AlertTriangle, ArrowLeft, Loader2, RotateCcw } from "lucide-react";
 
 import { useAladin, type SkyView } from "@/hooks/use-aladin";
+import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 
 /**
@@ -18,13 +19,19 @@ import { Button } from "@/components/ui/button";
 export function AladinCanvas({
   view,
   label,
+  onClose,
 }: {
   view: SkyView;
   /** Nhãn cho trình đọc màn hình — canvas WebGL tự nó không mô tả được gì */
   label: string;
+  /**
+   * Đóng bản đồ và trả khung về tấm bìa. Chỉ truyền khi bản đồ được mở bằng
+   * một cú bấm — người đã tự mở thì phải tự đóng được.
+   */
+  onClose?: () => void;
 }) {
   const t = useTranslations("sky");
-  const { containerRef, status, goTo, retry } = useAladin({
+  const { containerRef, status, isFullscreen, goTo, retry } = useAladin({
     enabled: true,
     initialView: view,
   });
@@ -53,6 +60,27 @@ export function AladinCanvas({
         aria-label={label}
         className="size-full"
       />
+
+      {/*
+        Ở toàn màn hình, khung Aladin là một lớp `position: fixed` đè lên cả
+        trang (xem `.aladin-fullscreen` trong `globals.css`), nên nút này phải
+        cố định và nằm cao hơn lớp đó. Trong thẻ thì nó chỉ là một nút góc.
+      */}
+      {onClose && status !== "error" && (
+        <button
+          type="button"
+          onClick={onClose}
+          className={cn(
+            "inline-flex items-center gap-1.5 rounded-full bg-black/65 px-3 py-1.5 text-xs font-medium text-white backdrop-blur-sm transition-colors hover:bg-black/85",
+            isFullscreen
+              ? "fixed top-4 left-4 z-[70]"
+              : "absolute top-2 left-2 z-10",
+          )}
+        >
+          <ArrowLeft className="size-3.5" aria-hidden />
+          {t("backToList")}
+        </button>
+      )}
 
       {status === "loading" && (
         <div className="pointer-events-none absolute inset-0 grid place-items-center bg-[#04060e]">

@@ -199,7 +199,11 @@ export function SkyMap() {
                     {target.catalogId}
                   </span>
                 </div>
+                {/* Tên chòm sao đứng trơ một mình đọc ra vô nghĩa — người
+                    đọc không biết "Orion" ở đây là chòm sao hay là tên khác
+                    của chính thiên thể. Nhãn phía trước là bắt buộc. */}
                 <p className="mt-1 text-xs text-muted-foreground">
+                  {t("constellation")}{" "}
                   {locale === "en"
                     ? target.constellationEn
                     : target.constellation}

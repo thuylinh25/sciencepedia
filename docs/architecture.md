@@ -175,6 +175,79 @@ chặn origin hoặc đổi định dạng thì ô tìm kiếm rơi về danh m�
 
 ---
 
+### Hành tinh không lấy ảnh từ survey bầu trời
+
+Câu hỏi tự nhiên khi đã có Aladin: sao không lấy luôn ảnh hành tinh từ đó.
+Không được, vì survey trong `SKY_SURVEYS` (DSS, 2MASS, WISE) chụp thiên cầu
+theo RA/Dec cố định. Hành tinh chỉ đi ngang qua rồi bỏ đi, nên ảnh survey ở vị
+trí hôm nay của Sao Hoả là ảnh đám sao nền phía sau nó. Chỗ nào hành tinh có
+lọt vào khung thì nó cháy trắng — kính khảo sát phơi sáng cho vật thể mờ. Và
+đường kính biểu kiến vài chục giây cung ở độ phân giải DSS chỉ ra vài chục
+pixel.
+
+Cũng vì thế hành tinh không nằm trong `SKY_TARGETS`: ghi một cặp RA/Dec cứng
+cho Sao Hoả là ghi một điều sai ngay hôm sau. Vị trí thật đã có ở
+`/solar-system`, lấy từ API Horizons của JPL, cache sáu giờ.
+
+Thứ dùng được là HiPS **bề mặt** thiên thể của CDS (`alasky.cds.unistra.fr`,
+khác máy chủ phát script) — hệ toạ độ gắn vào chính thiên thể, ảnh ghép từ tàu
+thăm dò. Aladin Lite tự chuyển sang chế độ đó khi đọc thấy khoá `hips_body`
+trong file properties, nên chỗ khởi tạo phải **thôi** ép `cooFrame: "ICRS"`;
+đó là ý nghĩa của cờ `planetary` trên `SkyView`. CDS hiện có bề mặt cho Mặt
+Trời, Sao Thuỷ, Sao Kim, Trái Đất, Sao Hoả, Sao Mộc, Sao Hải Vương — chưa có
+Sao Thổ và Sao Thiên Vương, và hai thẻ đó chỉ có ảnh tĩnh.
+
+### Ảnh tĩnh là lớp thứ nhất, không phải chỗ giữ chỗ
+
+Thư viện ảnh Hệ Mặt Trời trên `/space-map` là Server Component thuần: ảnh chụp
+thật từ NASA/ESA qua `next/image`, nằm trong HTML đầu tiên, không cần WebGL,
+không cần JavaScript. Aladin chỉ chạy khi có người bấm — `activation="click"`
+chứ không `"visible"`, vì lưới có chín thẻ và để chúng tự nạp khi cuộn tới thì
+một lần cuộn hết trang là chín instance WebGL cùng sống.
+
+Ảnh nào không phải ánh sáng nhìn thấy thì chú thích phải nói ra. Ảnh Mặt Trời
+là cực tím, bề mặt Sao Kim là radar, bề mặt Sao Thuỷ là màu tăng cường — bày
+chúng như màu mắt thấy là sai về khoa học, và người đọc không có cách nào tự
+nhận ra. Đó là lý do `BodyPhoto`/`BodySurface` có trường `captionVi`/`captionEn`
+bắt buộc chứ không để tuỳ chọn.
+
+Ảnh bìa và bản đồ bề mặt của cùng một thiên thể phải là CÙNG bước sóng. Mặt
+Trời từng vi phạm: bìa là một dải, bản đồ là 304 Å, nên bấm mở là mất hết
+quầng sáng thấy trong ảnh và người xem tưởng bản đồ hỏng. Với Mặt Trời còn
+thêm một điều phải nói trong chú thích mà hành tinh không cần: nó đổi bộ mặt
+từng ngày, nên ảnh và bản đồ chụp khác ngày thì khác nhau là đúng.
+
+### Ba cái bẫy của nút toàn màn hình Aladin
+
+CSS của Aladin đặt `.aladin-fullscreen` thành `position: fixed` phủ kín cửa sổ
+nhưng **không đặt `z-index`**. Ba hệ quả, cả ba đều chỉ lộ ra khi khung bản đồ
+nhỏ hơn màn hình — tức là ở lưới thẻ hành tinh, không phải ở trang bản đồ:
+
+1. **Bị thẻ khác đè.** Không z-index thì lớp toàn màn hình xếp theo thứ tự DOM.
+   `overflow: hidden` cũng không cứu được vì nó không cắt phần tử `fixed`.
+   Khắc phục bằng một quy tắc `z-index` trong `globals.css` — và khung
+   `AladinViewer` **không được** có `isolate`, vì stacking context riêng sẽ
+   nhốt z-index đó lại bên trong thẻ.
+2. **Đĩa hành tinh cụt hai cực.** `fov` của Aladin là bề RỘNG và bị chặn ở
+   180° trong phép chiếu cầu. Khung 2:1 thì bề cao chỉ còn ~86°, trong khi đĩa
+   rộng ~90°. Không con số fov nào cứu được, nên CSS ép khung toàn màn hình
+   của bề mặt thiên thể về vuông (`.aladin-body-view`).
+3. **Không có đường ra.** Aladin chỉ có nút thoát toàn màn hình, không có nút
+   đóng bản đồ. Khung mở bằng một cú bấm thì phải đóng lại được bằng một cú
+   bấm, nếu không thẻ đó giữ một instance WebGL sống mãi. Trạng thái toàn màn
+   hình đọc bằng `MutationObserver` trên thuộc tính `class` của container —
+   Aladin không phát sự kiện nào ra ngoài.
+
+### Không có nền sao quanh quả cầu, và sẽ không có
+
+Câu hỏi lặp lại: sao không rắc sao lên nền đen cho đẹp. Vì bản đồ bề mặt dùng
+hệ toạ độ gắn vào chính thiên thể — kinh độ vĩ độ xoay theo quả cầu — còn sao
+đứng yên trong hệ thiên cầu. Vẽ chồng hai hệ đó lên nhau là dán đám sao vào bề
+mặt Trái Đất và bắt chúng quay cùng.
+
+Nền đen là thứ duy nhất không nói dối, và cũng là thứ NASA dùng cho ảnh hành
+tinh. Chốt 2026-09-10.
+
 ## Triển khai
 
 Vercel, project `sciencepedia`, region `icn1` (Seoul — gần Supabase `ap-northeast-2`;

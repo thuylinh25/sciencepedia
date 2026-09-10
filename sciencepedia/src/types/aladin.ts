@@ -33,6 +33,12 @@ export type AladinOptions = {
   /** Bề rộng khung nhìn, đơn vị độ */
   fov?: number;
   cooFrame?: AladinCooFrame;
+  /**
+   * Màu xoá của canvas WebGL. Mặc định của Aladin là `rgb(60, 60, 60)` — một
+   * mảng xám lộ rõ trên nền tối của site, và CSS không đè được vì canvas tự
+   * vẽ đè lên nền của thẻ.
+   */
+  backgroundColor?: string;
   showReticle?: boolean;
   showZoomControl?: boolean;
   showFullscreenControl?: boolean;

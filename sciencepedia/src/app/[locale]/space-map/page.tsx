@@ -5,8 +5,10 @@ import type { Locale } from "@/i18n/routing";
 import { buildMetadata } from "@/lib/seo";
 import { absoluteUrl } from "@/lib/utils";
 import { ALADIN_ORIGIN, SKY_TARGETS } from "@/lib/sky-data";
+import { SURFACE_HIPS_ORIGIN } from "@/lib/solar-data";
 import { JsonLd } from "@/components/json-ld";
 import { SkyMap } from "@/components/sky/sky-map";
+import { PlanetGallery } from "@/components/solar/planet-gallery";
 
 /**
  * Bản đồ bầu trời — `/vi/space-map` và `/en/space-map`.
@@ -61,6 +63,13 @@ export default async function SpaceMapPage({
       */}
       <link rel="preconnect" href={ALADIN_ORIGIN} crossOrigin="anonymous" />
       <link rel="dns-prefetch" href={ALADIN_ORIGIN} />
+      {/* Ô tile bề mặt hành tinh nằm ở máy chủ khác với máy chủ phát script. */}
+      <link
+        rel="preconnect"
+        href={SURFACE_HIPS_ORIGIN}
+        crossOrigin="anonymous"
+      />
+      <link rel="dns-prefetch" href={SURFACE_HIPS_ORIGIN} />
 
       <JsonLd
         data={{
@@ -90,6 +99,8 @@ export default async function SpaceMapPage({
       </header>
 
       <SkyMap />
+
+      <PlanetGallery />
 
       <p className="mt-10 text-xs leading-relaxed text-muted-foreground">
         {t("credit")}

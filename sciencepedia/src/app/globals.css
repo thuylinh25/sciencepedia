@@ -617,3 +617,42 @@
     animation-duration: 1ms;
   }
 }
+
+/**
+ * Aladin Lite đặt `.aladin-fullscreen` thành `position: fixed` phủ kín cửa sổ
+ * nhưng KHÔNG đặt `z-index`. Không có z-index thì lớp toàn màn hình chỉ xếp
+ * theo thứ tự DOM, nên mọi thẻ đứng sau nó trong lưới đều vẽ đè lên — bấm nút
+ * phóng to ở thẻ Mặt Trời thì Sao Thuỷ và Sao Kim che mất bản đồ.
+ *
+ * Header của site là `z-50`, nên lớp này phải cao hơn để toàn màn hình thật
+ * sự là toàn màn hình. Đi kèm: khung `AladinViewer` không được có `isolate`,
+ * vì stacking context riêng sẽ nhốt z-index này lại trong thẻ.
+ *
+ * Nền trắng mặc định của Aladin cũng bị đổi: ô tile về từ từ, và một khung
+ * trắng loá giữa giao diện tối là thứ đập vào mắt trước cả bản đồ.
+ */
+.aladin-fullscreen {
+  z-index: 60;
+  background: #04060e !important;
+}
+
+/**
+ * Toàn màn hình cho BỀ MẶT THIÊN THỂ phải là khung vuông.
+ *
+ * Aladin chặn `fov` ở 180° trong phép chiếu cầu, và `fov` là bề RỘNG. Trên
+ * khung 2:1 thì bề cao chỉ còn khoảng 86°, mà đĩa hành tinh rộng khoảng 90° —
+ * nhét hình tròn vào khung bẹt thì kiểu gì cũng cụt hai cực, không có con số
+ * fov nào cứu được.
+ *
+ * Nên khung được ép về vuông và căn giữa; `box-shadow` toả rộng lấp phần còn
+ * lại của cửa sổ, thay cho một lớp nền mà CSS không tự thêm phần tử được.
+ * Chỉ áp cho bề mặt thiên thể — bản đồ bầu trời không phải hình tròn, khung
+ * bẹt ở đó là đúng.
+ */
+.aladin-body-view .aladin-fullscreen {
+  width: min(100vw, 100vh) !important;
+  height: min(100vw, 100vh) !important;
+  left: calc(50vw - min(100vw, 100vh) / 2) !important;
+  top: calc(50vh - min(100vw, 100vh) / 2) !important;
+  box-shadow: 0 0 0 100vmax #04060e;
+}

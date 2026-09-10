@@ -174,7 +174,12 @@
     "positionsReal": "Vị trí hành tinh đúng theo ngày {date}, dữ liệu từ",
     "positionsSchematic": "Vị trí hành tinh chỉ mang tính minh hoạ — chưa lấy được dữ liệu quỹ đạo thật.",
     "texturesFrom": "Bản đồ bề mặt:",
-    "nasaEyes": "Xem trên NASA Eyes"
+    "nasaEyes": "Xem trên NASA Eyes",
+    "galleryTitle": "Hệ Mặt Trời qua ảnh chụp thật",
+    "galleryNote": "Hành tinh không nằm cố định trên bản đồ sao phía trên: chúng đi dọc hoàng đạo và đổi chỗ mỗi đêm, nên không có toạ độ nào ghi cứng được. Dưới đây là ảnh chụp từ tàu thăm dò và kính thiên văn. Thiên thể nào CDS có bản đồ bề mặt thì bấm vào ảnh để xoay và phóng to trực tiếp.",
+    "surfacePrompt": "{body} — bấm để mở bề mặt, xoay và phóng to",
+    "surfaceLabel": "Bản đồ bề mặt {body}",
+    "galleryCredit": "Ảnh chụp lấy từ Wikimedia Commons, giấy phép ghi ở từng tấm. Bản đồ bề mặt do CDS (Strasbourg) phát dưới dạng HiPS, dựng từ dữ liệu của NASA, ESA và USGS."
   },
   "ai": {
     "title": "Trợ lý khoa học",
@@ -395,6 +400,8 @@
     "objectName": "Thiên thể",
     "catalogId": "Mã catalog",
     "coordinates": "Toạ độ (J2000)",
-    "openFullMap": "Mở bản đồ bầu trời đầy đủ"
+    "openFullMap": "Mở bản đồ bầu trời đầy đủ",
+    "constellation": "Chòm sao",
+    "backToList": "Quay lại danh sách"
   }
 }
