@@ -141,13 +141,19 @@ async function main() {
   if (existing) {
     console.log("   đã tồn tại — bỏ qua");
   } else if (write) {
-    await prisma.category.create({
+    const created = await prisma.category.create({
       data: {
         ...NEW_ROOT,
         order: ROOT_ORDER.indexOf(NEW_ROOT.slug) + 1,
         parentId: null,
       },
+      select: { id: true, slug: true, name: true, order: true },
     });
+    // Đưa vào `bySlug` ngay: bản đồ được dựng TRƯỚC bước tạo, nên nếu không
+    // thêm thì bảng thứ tự bên dưới in "THIẾU" cho chính dòng vừa tạo đúng —
+    // một lượt chạy thành công mà báo cáo như hỏng, đủ để người đọc đi tìm
+    // một lỗi không tồn tại.
+    bySlug.set(created.slug, created);
     console.log(`   đã tạo — icon ${NEW_ROOT.icon}, màu ${NEW_ROOT.color}`);
   } else {
     console.log(`   sẽ tạo — icon ${NEW_ROOT.icon}, màu ${NEW_ROOT.color}`);
