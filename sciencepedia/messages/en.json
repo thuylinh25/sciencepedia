@@ -22,7 +22,8 @@
     "milkyWay": "3D Milky Way",
     "universe": "3D Universe",
     "models": "3D models",
-    "zoom": "Zoom journey"
+    "zoom": "Zoom journey",
+    "spaceMap": "Sky map"
   },
   "auth": {
     "login": "Sign in",
@@ -369,5 +370,31 @@
     "openFull": "Open the full model",
     "nextIsSmaller": "The next level is about {factor}× smaller",
     "note": "Seven levels, seven separate scenes — not one continuously zoomable view. The four astronomical levels are 3D models; the continent level reuses the same Earth globe seen from close range, while the biology and human levels are illustrated with photographs because the project has no 3D assets for them. The span from the observable universe down to a human being is about 26 orders of magnitude, far beyond the precision of the 32-bit floats WebGL uses, so a single scene would fall apart. The seamless feel comes from zooming and cross-fading between adjacent levels."
+  },
+  "sky": {
+    "title": "Sky map",
+    "subtitle": "Real sky imagery from astronomical surveys. Drag to pan, scroll to zoom, type an object name to fly there.",
+    "loading": "Loading the sky map…",
+    "error": "The sky map could not be loaded. The CDS servers may be busy, or your browser may not support WebGL2.",
+    "retry": "Try again",
+    "open": "Open the map",
+    "weight": "Downloads about 1 MB",
+    "searchPlaceholder": "M31, Orion Nebula, Sgr A*, or coordinates…",
+    "searchLabel": "Search for an object",
+    "go": "Go",
+    "resolving": "Looking it up…",
+    "notFound": "No matching object. Try a catalogue id, for example M31 or NGC 224.",
+    "suggestions": "Object suggestions",
+    "viewerLabel": "Interactive sky map, centred on {object}",
+    "posterCaption": "The sky around {object}",
+    "centeredOn": "Centred on",
+    "surveyLabel": "Choose a sky survey",
+    "catalogTitle": "Objects worth a look",
+    "credit": "Sky imagery by Aladin Lite and the HiPS surveys of CDS (Strasbourg Astronomical Data Centre). Coordinates from SIMBAD.",
+    "embedTitle": "View on the sky map",
+    "objectName": "Object",
+    "catalogId": "Catalogue id",
+    "coordinates": "Coordinates (J2000)",
+    "openFullMap": "Open the full sky map"
   }
 }

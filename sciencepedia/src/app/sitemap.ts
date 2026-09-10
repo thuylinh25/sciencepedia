@@ -36,6 +36,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...entry("/categories", { priority: 0.8 }),
     ...entry("/tags", { priority: 0.5 }),
     ...entry("/solar-system", { changeFrequency: "monthly", priority: 0.8 }),
+    ...entry("/space-map", { changeFrequency: "monthly", priority: 0.7 }),
     ...entry("/assistant", { changeFrequency: "monthly", priority: 0.7 }),
   ];
 

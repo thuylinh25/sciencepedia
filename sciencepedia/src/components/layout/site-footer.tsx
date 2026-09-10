@@ -49,6 +49,7 @@ export async function SiteFooter() {
     { href: "/milky-way", label: tNav("milkyWay") },
     { href: "/universe", label: tNav("universe") },
     { href: "/zoom", label: tNav("zoom") },
+    { href: "/space-map", label: tNav("spaceMap") },
     { href: "/assistant", label: tNav("assistant") },
   ];
 

@@ -12,6 +12,7 @@ import {
   Search,
   Sparkles,
   Newspaper,
+  Telescope,
 } from "lucide-react";
 
 import { Link, usePathname } from "@/i18n/navigation";
@@ -58,6 +59,9 @@ const MODELS = [
   { href: "/milky-way", key: "milkyWay" as const, icon: Disc3 },
   { href: "/universe", key: "universe" as const, icon: Aperture },
   { href: "/zoom", key: "zoom" as const, icon: Scaling },
+  // Bản đồ bầu trời không phải một bậc của thang kích thước như ba mô hình
+  // trên, nhưng nó đứng cùng nhóm "nhìn vũ trụ bằng mắt" nên vào cùng menu.
+  { href: "/space-map", key: "spaceMap" as const, icon: Telescope },
 ];
 
 /**

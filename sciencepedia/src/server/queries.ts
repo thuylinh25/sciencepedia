@@ -209,6 +209,10 @@ export const getArticleBySlug = cache(async (slug: string) =>
         },
       },
       author: { select: { id: true, name: true, image: true, bio: true } },
+      // Thiên thể của bài, cho khối "Xem trên bản đồ bầu trời". Chỉ vài chục
+      // byte và chỉ bài thiên văn mới có, nên lấy luôn ở đây rẻ hơn một lượt
+      // truy vấn thứ hai.
+      skyObject: true,
       // Nguồn mạnh nhất lên trước; nguồn đã bị rút vẫn lấy về để cảnh báo
       sources: { orderBy: [{ tier: "asc" }, { year: "desc" }] },
       _count: { select: { comments: true } },

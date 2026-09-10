@@ -22,7 +22,8 @@
     "milkyWay": "Ngân Hà 3D",
     "universe": "Vũ trụ 3D",
     "models": "Mô hình 3D",
-    "zoom": "Hành trình thu phóng"
+    "zoom": "Hành trình thu phóng",
+    "spaceMap": "Bản đồ bầu trời"
   },
   "auth": {
     "login": "Đăng nhập",
@@ -369,5 +370,31 @@
     "openFull": "Mở mô hình đầy đủ",
     "nextIsSmaller": "Cấp sau nhỏ hơn khoảng {factor} lần",
     "note": "Bảy cấp là bảy cảnh riêng, không phải một cảnh phóng to liên tục. Riêng bốn cấp thiên văn là mô hình 3D; cấp châu lục dùng lại chính quả cầu Trái Đất nhìn ở khoảng cách gần, còn hai cấp sinh vật và con người minh hoạ bằng ảnh vì dự án không có mô hình 3D cho chúng. Dải tỉ lệ từ vũ trụ quan sát được xuống tới con người là khoảng 26 bậc độ lớn, vượt xa độ chính xác của số thực 32-bit mà WebGL dùng, nên ép vào cùng một cảnh thì hình học sẽ rã. Cảm giác liền mạch đến từ thu phóng và hoà mờ giữa hai cấp liền kề."
+  },
+  "sky": {
+    "title": "Bản đồ bầu trời",
+    "subtitle": "Ảnh bầu trời thật từ các khảo sát thiên văn. Kéo để đi, cuộn để phóng to, gõ tên thiên thể để bay tới.",
+    "loading": "Đang tải bản đồ bầu trời…",
+    "error": "Không tải được bản đồ bầu trời. Có thể máy chủ của CDS đang bận, hoặc trình duyệt của bạn không hỗ trợ WebGL2.",
+    "retry": "Thử lại",
+    "open": "Mở bản đồ",
+    "weight": "Tải khoảng 1 MB dữ liệu",
+    "searchPlaceholder": "M31, Orion Nebula, Sgr A*, hoặc toạ độ…",
+    "searchLabel": "Tìm thiên thể",
+    "go": "Bay tới",
+    "resolving": "Đang tra cứu…",
+    "notFound": "Không tìm thấy thiên thể nào khớp. Thử mã catalog, ví dụ M31 hoặc NGC 224.",
+    "suggestions": "Gợi ý thiên thể",
+    "viewerLabel": "Bản đồ bầu trời tương tác, đang hướng vào {object}",
+    "posterCaption": "Bản đồ bầu trời quanh {object}",
+    "centeredOn": "Đang hướng vào",
+    "surveyLabel": "Chọn khảo sát bầu trời",
+    "catalogTitle": "Thiên thể đáng xem",
+    "credit": "Ảnh bầu trời do Aladin Lite và các khảo sát HiPS của CDS (Trung tâm Dữ liệu Thiên văn Strasbourg) cung cấp. Toạ độ lấy từ SIMBAD.",
+    "embedTitle": "Xem trên bản đồ bầu trời",
+    "objectName": "Thiên thể",
+    "catalogId": "Mã catalog",
+    "coordinates": "Toạ độ (J2000)",
+    "openFullMap": "Mở bản đồ bầu trời đầy đủ"
   }
 }

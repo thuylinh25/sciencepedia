@@ -159,10 +159,14 @@ model Article {
   /// nhưng vẫn nên ghi.
   coverImageCredit   String?
   coverImageCreditEn String?
+  /// Thiên thể mà bài này nói tới, nếu có. Nguồn của khối "Xem trên bản đồ
+  /// bầu trời" cuối bài. Nullable vì tuyệt đại đa số bài không phải thiên văn.
+  skyObjectId        String?
   author             User                     @relation("ArticleAuthor", fields: [authorId], references: [id], onDelete: Cascade)
   category           Category                 @relation(fields: [categoryId], references: [id])
   entity             Entity?                  @relation(fields: [entityId], references: [id])
   reviewedBy         User?                    @relation("ArticleReviewer", fields: [reviewedById], references: [id])
+  skyObject          SkyObject?               @relation(fields: [skyObjectId], references: [id])
   tags               ArticleTag[]
   bookmarks          Bookmark[]
   comments           Comment[]
@@ -177,6 +181,7 @@ model Article {
   @@index([entityId])
   @@index([reverifyDueAt])
   @@index([reviewedById])
+  @@index([skyObjectId])
 }
 
 model ArticleTag {
@@ -349,6 +354,53 @@ model Relationship {
   @@unique([fromEntityId, toEntityId, relType])
   @@index([toEntityId, relType])
   @@index([relType])
+}
+
+/// Một thiên thể có toạ độ trên bầu trời — chỗ neo giữa bài viết và bản đồ
+/// bầu trời (`/space-map`).
+///
+/// Vì sao là bảng riêng chứ không phải bốn cột trên Article: cùng một thiên
+/// thể xuất hiện trong nhiều bài (M87 nằm trong cả bài về lỗ đen lẫn bài về
+/// cụm Xử Nữ), và toạ độ thì chỉ có một bộ đúng. Nhân bản nó ra từng bài là
+/// tạo sẵn chỗ cho hai bài nói hai toạ độ khác nhau về cùng một vật.
+///
+/// Vì sao `ra`/`dec` là TEXT chứ không phải số: catalog công bố toạ độ dạng
+/// sexagesimal và người biên tập chép nguyên chuỗi đó từ SIMBAD sang, nên cái
+/// nằm trong CSDL đúng bằng cái đọc được ở nguồn. Quy đổi sang độ thập phân
+/// nằm ở `src/lib/sky-coords.ts`, một chỗ duy nhất.
+model SkyObject {
+  id              String        @id @default(cuid())
+  /// Mã catalog chuẩn (M31, NGC 224, Sgr A*) — thứ SIMBAD/Sesame hiểu
+  catalogId       String        @unique
+  objectName      String
+  objectNameEn    String?
+  /// J2000, sexagesimal. RA tính bằng giờ, Dec tính bằng độ.
+  ra              String
+  dec             String
+  /// Bề rộng khung nhìn mặc định, đơn vị độ. Một FOV dùng chung sẽ hoặc cắt
+  /// cụt M31 (rộng hơn 3°) hoặc biến Sgr A* thành một điểm không thấy gì.
+  fovDeg          Float         @default(1.5)
+  /// Định danh HiPS. Chỉ đặt khi survey mặc định KHÔNG cho thấy được thiên
+  /// thể này — ví dụ tâm Ngân Hà bị bụi che ở bước sóng khả kiến.
+  survey          String?
+  objectType      SkyObjectType @default(OTHER)
+  constellation   String?
+  constellationEn String?
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+  articles        Article[]
+
+  @@index([objectType])
+}
+
+enum SkyObjectType {
+  GALAXY
+  NEBULA
+  STAR
+  CLUSTER
+  BLACK_HOLE
+  PLANET
+  OTHER
 }
 
 enum Role {

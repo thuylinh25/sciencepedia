@@ -36,6 +36,16 @@ import { SOLAR_BODY_SLUGS } from "@/lib/solar-data";
 const PlanetGlobe = dynamic(() =>
   import("@/components/solar/planet-globe").then((mod) => mod.PlanetGlobe),
 );
+/**
+ * Khối bản đồ bầu trời cũng vào chunk riêng, và cũng chỉ tải khi bài có gắn
+ * `skyObject`. Bản thân khối này còn hoãn tiếp một lớp nữa: Aladin chỉ được
+ * kéo về khi người đọc bấm — xem `AladinArticleEmbed`.
+ */
+const AladinArticleEmbed = dynamic(() =>
+  import("@/components/sky/aladin-article-embed").then(
+    (mod) => mod.AladinArticleEmbed,
+  ),
+);
 import { ReadingProgress } from "@/components/article/reading-progress";
 import { ShareBar } from "@/components/article/share-bar";
 import { BookmarkButton } from "@/components/article/bookmark-button";
@@ -360,6 +370,26 @@ export default async function ArticlePage({
                 </Link>
               ))}
             </div>
+          )}
+
+          {/* Bản đồ bầu trời — chỉ bài có thiên thể gắn kèm mới có khối này.
+              Đặt TRƯỚC mục nguồn tham khảo: đây vẫn là nội dung bài, còn mục
+              nguồn là phần khép lại. */}
+          {article.skyObject && (
+            <AladinArticleEmbed
+              object={{
+                objectName: pick(
+                  loc,
+                  article.skyObject.objectName,
+                  article.skyObject.objectNameEn,
+                ),
+                catalogId: article.skyObject.catalogId,
+                ra: article.skyObject.ra,
+                dec: article.skyObject.dec,
+                fovDeg: article.skyObject.fovDeg,
+                survey: article.skyObject.survey,
+              }}
+            />
           )}
 
           {/* Nguồn tham khảo */}

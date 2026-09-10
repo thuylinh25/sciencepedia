@@ -97,6 +97,84 @@ Kiểm lại bất cứ lúc nào: `npm run graph:check` (chỉ đọc, không c
 
 ---
 
+## Bản đồ bầu trời — thư viện ngoài không được đè lên phần còn lại
+
+`/space-map` nhúng Aladin Lite v3 của CDS (Strasbourg). Ba quyết định ở đây
+đều xoay quanh một câu hỏi: làm sao một thư viện ~1 MB sống trong site mà
+không bắt các route khác trả giá.
+
+### Nạp từ CDN, không qua npm
+
+Gói npm kéo WebAssembly vào bundle của chúng ta — nặng cài đặt, nặng build,
+nặng tracing của Vercel, cho một tính năng nằm ở đúng một route. CDN thì byte
+chỉ đi qua dây khi có người mở route đó.
+
+Đổi lại: phụ thuộc máy chủ ngoài, và phải tự viết type (`src/types/aladin.ts`).
+CDS sập thì khung bản đồ hiện thông báo lỗi kèm nút thử lại, phần chữ của
+trang vẫn nguyên vì nó là HTML server-render.
+
+URL ghim được qua `NEXT_PUBLIC_ALADIN_SCRIPT_URL`. Mặc định là kênh `latest`,
+nên vài method của Aladin khai `?` trong type — CDS có đổi tên giữa các bản
+v3, và optional buộc chỗ gọi phải kiểm tra thay vì ném lỗi làm chết cả khung.
+
+### Hai lớp hoãn, không phải một
+
+`next/dynamic({ ssr: false })` mới chỉ tách chunk; nó vẫn tải chunk ngay khi
+component render. Lớp thứ hai nằm ở `AladinViewer`: chunk chỉ được yêu cầu khi
+khung cuộn tới gần tầm nhìn (`activation="visible"`, trang bản đồ) hoặc khi
+người đọc bấm (`activation="click"`, khối nhúng trong bài viết).
+
+Trong bài viết mặc định là bấm, không phải cuộn: ở đó bản đồ là phần phụ dưới
+thân bài, và tiêu 1 MB băng thông của người chỉ muốn đọc chữ là lấy của họ thứ
+họ không xin. Ai bật `saveData` thì luôn phải tự bấm, kể cả trên trang bản đồ.
+
+Chỉ có `aladin-canvas.tsx` chạm `window.A`. Import tĩnh file đó ở bất cứ đâu
+ngoài lệnh `dynamic()` trong `aladin-viewer.tsx` là phá đúng thứ nó sinh ra để
+bảo vệ.
+
+### Route tĩnh hoàn toàn — kể cả deep link
+
+`/space-map` không đọc `searchParams`. Đọc là mất bản tĩnh, trong khi trang
+này không có một truy vấn CSDL nào để mà cần dynamic. `?object=` được đọc
+trong effect sau khi mount: HTML server và lần render đầu ở client giống hệt
+nhau (không hydration mismatch), deep link vẫn tới đúng thiên thể, và kịp
+trước cả lúc Aladin nạp xong.
+
+`SkyMap` là Client Component nhưng vẫn SSR: tên, chòm sao, mô tả, toạ độ đều
+nằm trong HTML đầu tiên kèm JSON-LD `ItemList`. Thứ duy nhất bị hoãn là khung
+WebGL, mà khung đó không chứa chữ nào để index.
+
+### Toạ độ lưu dạng chuỗi
+
+`SkyObject.ra` / `.dec` là TEXT, không phải số. Catalog công bố toạ độ dạng
+sexagesimal và biên tập viên chép nguyên chuỗi từ SIMBAD sang, nên cái nằm
+trong CSDL đúng bằng cái đọc được ở nguồn — không có bước làm tròn chen vào
+giữa, và đối chiếu lại là so chuỗi với chuỗi. Quy đổi sang độ nằm ở
+`src/lib/sky-coords.ts`, một chỗ duy nhất.
+
+`SkyObject` là bảng riêng chứ không phải bốn cột trên `Article`: cùng một
+thiên thể xuất hiện trong nhiều bài, mà toạ độ thì chỉ có một bộ đúng. Nhân
+bản nó ra từng bài là tạo sẵn chỗ cho hai bài nói hai toạ độ khác nhau về cùng
+một vật.
+
+Danh mục nằm ở cả hai nơi và điều đó là chủ ý: `sky-data.ts` phục vụ route
+tĩnh, bảng `SkyObject` phục vụ khoá ngoại từ bài viết. `catalogId` là chỗ nối,
+UNIQUE ở cả hai bên. Đồng bộ một chiều code → CSDL bằng `npm run sky:seed`;
+không có chiều ngược lại, nên không có chuyện hai nguồn cùng tự nhận là đúng.
+
+### Giải tên thiên thể
+
+Ba đường, rẻ dần về sau: danh mục cứng (tức thì, biết tên tiếng Việt) → toạ độ
+gõ tay (không cần mạng) → Sesame của CDS (mọi thứ còn lại trong SIMBAD).
+
+Sesame gọi thẳng từ trình duyệt, không qua route của chúng ta: CDS trả
+`Access-Control-Allow-Origin: *`, và bọc thêm một route handler thì mỗi lượt
+tra cứu thành một lần chạy hàm serverless để chuyển tiếp 3 KB text. Nếu CDS
+chặn origin hoặc đổi định dạng thì ô tìm kiếm rơi về danh mục cứng — vẫn dùng
+được, không vỡ trang.
+
+---
+
 ## Triển khai
 
 Vercel, project `sciencepedia`, region `icn1` (Seoul — gần Supabase `ap-northeast-2`;

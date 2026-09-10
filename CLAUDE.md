@@ -17,6 +17,7 @@ npm run db:migrate   # tạo migration (cần DIRECT_URL)
 npm run db:deploy    # apply migration trên prod
 npm run db:seed
 npm run search:reindex
+npm run sky:seed     # đồng bộ danh mục thiên thể sang bảng SkyObject (chạy khô, cần --write)
 
 npm run publish:check # rà điều kiện xuất bản toàn kho (chỉ đọc)
 npm run publish       # đổi state sang PUBLISHED — đường ghi DUY NHẤT, có gate

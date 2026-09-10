@@ -32,7 +32,9 @@
     "backlinks": "tsx --env-file-if-exists=.env scripts/add-backlinks.ts",
     "entity:apply": "tsx --env-file-if-exists=.env scripts/apply-entity-plan.ts",
     "corrections": "tsx --env-file-if-exists=.env scripts/apply-corrections.ts",
-    "covers:build": "tsx scripts/build-covers.ts"
+    "sync:cau-truc": "tsx --env-file-if-exists=.env scripts/sync-cau-truc-trai-dat.ts",
+    "covers:build": "tsx scripts/build-covers.ts",
+    "sky:seed": "tsx --env-file-if-exists=.env scripts/seed-sky-objects.ts"
   },
   "prisma": {
     "seed": "tsx --env-file-if-exists=.env prisma/seed.ts"
