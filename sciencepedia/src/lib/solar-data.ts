@@ -131,6 +131,7 @@ export const BODY_SYMBOL: Record<string, string> = {
   mercury: "☿",
   venus: "♀",
   earth: "🌍",
+  moon: "☾",
   mars: "♂",
   jupiter: "♃",
   saturn: "♄",
@@ -185,6 +186,48 @@ export const SUN = {
     captionEn:
       "Whole-Sun spherical map at 304 Å, assembled by CDS in 2012 — the same image shown on the card, now free to rotate and zoom. Unlike a planet, the Sun changes from day to day, so this is one particular moment rather than a fixed face.",
     credit: "CDS / NASA SDO",
+  },
+};
+
+/**
+ * Mặt Trăng.
+ *
+ * Đứng riêng chứ không nằm trong `PLANETS`: kiểu `Planet` mang `orbitRadius`,
+ * `orbitSpeed` và `realDistanceKm` — toàn những đại lượng đo so với Mặt Trời.
+ * Nhét Mặt Trăng vào đó thì hoặc phải bịa số, hoặc phải cho những trường ấy
+ * thành tuỳ chọn cho cả tám hành tinh vốn luôn có chúng. Thư viện ảnh lấy nó
+ * vào danh sách riêng, ngay sau Trái Đất.
+ */
+export const MOON = {
+  id: "moon",
+  name: "Mặt Trăng",
+  nameEn: "The Moon",
+  articleSlug: "mat-trang",
+  color: "#cbd5e1",
+  texture: `${TEXTURE_BASE}/2/26/Solarsystemscope_texture_2k_moon.jpg/1280px-Solarsystemscope_texture_2k_moon.jpg`,
+  realRadiusKm: 1737.4,
+  temperatureC: -20,
+  gravity: 1.62,
+  descriptionVi:
+    "Vệ tinh duy nhất của Trái Đất, cách 384.400 km. Nó luôn quay cùng một mặt về phía chúng ta vì chu kỳ tự quay đã bị khoá bằng đúng chu kỳ quỹ đạo.",
+  descriptionEn:
+    "Earth's only natural satellite, 384,400 km away. It keeps one face turned toward us because its spin is locked to its orbital period.",
+  photo: {
+    url: "/images/moon-lroc-wac.jpg",
+    captionVi:
+      "Bản đồ hình thái toàn cầu của máy WAC trên tàu Lunar Reconnaissance Orbiter, 100 m mỗi điểm ảnh. Vùng sẫm quanh cực bắc là bóng thật do Mặt Trời ở đó luôn sà sát chân trời, không phải chỗ thiếu dữ liệu. Bấm vào để xoay chính bản đồ này.",
+    captionEn:
+      "Global morphologic map from the Wide Angle Camera on Lunar Reconnaissance Orbiter, 100 m per pixel. The dark region around the north pole is genuine shadow — the Sun never rises far above the horizon there — not missing data. Click to rotate this very map.",
+    credit: "NASA / GSFC / Arizona State University",
+    sourceUrl: "https://wms.lroc.asu.edu/lroc/view_rdr/WAC_GLOBAL",
+  },
+  surface: {
+    hipsUrl: `${SURFACE_BASE}/CDS_P_Moon_LROC-WAC-100m`,
+    captionVi:
+      "Bản đồ WAC của Lunar Reconnaissance Orbiter — chính là tấm ảnh trên thẻ, giờ xoay và phóng to được.",
+    captionEn:
+      "The Lunar Reconnaissance Orbiter WAC map — the same image shown on the card, now free to rotate and zoom.",
+    credit: "NASA / GSFC / Arizona State University",
   },
 };
 

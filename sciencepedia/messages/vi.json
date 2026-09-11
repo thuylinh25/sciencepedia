@@ -273,7 +273,12 @@
       "imageBadType": "Chỉ nhận JPG, PNG, WebP, AVIF hoặc GIF",
       "imageFailed": "Tải ảnh lên thất bại",
       "imageNotConfigured": "Chưa cấu hình Supabase Storage"
-    }
+    },
+    "articleCount": "{count, plural, other {# bài viết}}",
+    "searchResults": "{count, plural, =0 {Không có bài nào khớp “{query}”} other {# bài khớp “{query}”}}",
+    "searchPlaceholder": "Tìm theo tiêu đề…",
+    "search": "Tìm",
+    "clearSearch": "Xoá tìm kiếm"
   },
   "status": {
     "DRAFT": "Nháp",

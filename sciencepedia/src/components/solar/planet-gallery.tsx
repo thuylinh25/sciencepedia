@@ -5,6 +5,7 @@ import { ArrowUpRight } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
 import {
+  MOON,
   PLANETS,
   SUN,
   type BodyPhoto,
@@ -47,7 +48,18 @@ type GalleryBody = {
   moons?: number;
 };
 
-const BODIES: GalleryBody[] = [SUN, ...PLANETS];
+/*
+ * Mặt Trăng chen vào ngay sau Trái Đất chứ không xếp cuối. Thứ tự của lưới
+ * này là thứ tự khoảng cách tới Mặt Trời, và vệ tinh của một hành tinh thì
+ * đứng cạnh hành tinh đó mới đọc ra quan hệ.
+ */
+const EARTH_INDEX = PLANETS.findIndex((planet) => planet.id === "earth");
+const BODIES: GalleryBody[] = [
+  SUN,
+  ...PLANETS.slice(0, EARTH_INDEX + 1),
+  MOON,
+  ...PLANETS.slice(EARTH_INDEX + 1),
+];
 
 /** Cùng một chuỗi cho mọi thẻ: lưới tối đa ba cột trong `container-page`. */
 const IMAGE_SIZES =
