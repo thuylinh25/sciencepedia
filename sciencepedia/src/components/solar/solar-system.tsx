@@ -2,6 +2,7 @@
 
 
 import { useEffect, useMemo, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import dynamic from "next/dynamic";
 import { useLocale, useTranslations } from "next-intl";
 import { ExternalLink, Loader2, Pause, Play, RotateCcw } from "lucide-react";
@@ -55,7 +56,30 @@ export function SolarSystem({
   const locale = useLocale();
 
   const [webgl, setWebgl] = useState<boolean | null>(null);
-  const [selectedId, setSelectedId] = useState<string | null>(null);
+
+  /**
+   * Thiên thể được chọn sẵn qua `?body=<id>`.
+   *
+   * Đây là đích của nút "Xem trong Hệ Mặt Trời" trong bảng thông tin ở thư
+   * viện ảnh: bấm từ Sao Kim thì phải tới đây với Sao Kim đã mở sẵn bảng, chứ
+   * không phải tới một mô hình chưa chọn gì và bắt tìm lại hành tinh vừa xem.
+   *
+   * Đọc bằng `useSearchParams` chứ không nhận qua prop từ page: trang này là
+   * static, còn `searchParams` trong Server Component sẽ ép nó thành dynamic
+   * và mất cả phần prerender. Ở phía client thì query chỉ là một giá trị đọc
+   * được, không ảnh hưởng gì tới cách trang được dựng.
+   *
+   * Lọc qua `PLANETS` trước khi nhận: `?body=` là dữ liệu từ URL, ai cũng gõ
+   * được, và một id lạ phải cho ra "không chọn gì" chứ không phải một bảng
+   * trống.
+   */
+  const searchParams = useSearchParams();
+  const requestedBody = searchParams.get("body");
+  const [selectedId, setSelectedId] = useState<string | null>(() =>
+    requestedBody && PLANETS.some((planet) => planet.id === requestedBody)
+      ? requestedBody
+      : null,
+  );
   /**
    * Mô hình LUÔN mở ra ở trạng thái đang chạy, kể cả khi người dùng bật
    * `prefers-reduced-motion`. Quyết định của chủ sản phẩm, ghi lại vì nó đi
@@ -81,6 +105,17 @@ export function SolarSystem({
   const [sceneKey, setSceneKey] = useState(0);
 
   useEffect(() => setWebgl(supportsWebGL()), []);
+
+  /*
+   * Giá trị khởi tạo của useState chỉ chạy một lần. Đi từ /solar-system?body=mars
+   * sang ?body=venus bằng điều hướng phía client thì component không mount
+   * lại, nên nếu chỉ đặt ở khởi tạo thì lần chuyển thứ hai sẽ không đổi gì.
+   */
+  useEffect(() => {
+    if (requestedBody && PLANETS.some((planet) => planet.id === requestedBody)) {
+      setSelectedId(requestedBody);
+    }
+  }, [requestedBody]);
 
   const selected = useMemo(
     () => PLANETS.find((planet) => planet.id === selectedId) ?? null,

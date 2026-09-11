@@ -7,10 +7,12 @@ import {
   ArrowLeft,
   ChevronRight,
   Loader2,
+  Info,
   MousePointer2,
   Pause,
   Play,
   RotateCcw,
+  X,
 } from "lucide-react";
 
 import { useAladin, type SkyView } from "@/hooks/use-aladin";
@@ -78,6 +80,27 @@ export function AladinCanvas({
       fullscreen: openFullscreen,
     });
 
+  /**
+   * Bảng thông tin mở sẵn hay không.
+   *
+   * Trên màn hình rộng thì mở: bảng nằm ở lề trái, còn quả cầu nằm giữa, hai
+   * thứ không tranh chỗ nhau.
+   *
+   * Trên điện thoại thì đóng. Ở đó khung bề mặt thiên thể bị CSS ép về hình
+   * vuông rộng bằng cả màn hình (xem `.aladin-body-view`), nên bất cứ thứ gì
+   * rộng hơn một nút đều nằm đè lên chính quả cầu. Mở sẵn nghĩa là người mở
+   * bản đồ ra thì thấy một bảng chữ, không thấy bản đồ.
+   *
+   * Đọc bề rộng một lần lúc mount thay vì dùng media query trong CSS, vì đây
+   * là trạng thái BAN ĐẦU chứ không phải cách hiển thị: người dùng điện thoại
+   * mở bảng ra rồi xoay ngang máy thì bảng phải vẫn mở.
+   */
+  const [infoOpen, setInfoOpen] = useState(true);
+
+  useEffect(() => {
+    setInfoOpen(window.matchMedia("(min-width: 640px)").matches);
+  }, []);
+
   const [spinning, setSpinning] = useState(false);
   const [hintVisible, setHintVisible] = useState(false);
 
@@ -91,8 +114,13 @@ export function AladinCanvas({
    * chuột giữa lúc đang quay thì chuyển động phải tiếp tục từ chỗ họ vừa kéo
    * tới, không giật về quỹ tích của biến đếm.
    *
-   * 0,55 độ mỗi 60 ms là khoảng 9 độ mỗi giây — một vòng 40 giây. Chậm hơn
-   * thế thì trông như đứng yên, nhanh hơn thì thành cái vòng xoay.
+   * 0,18 độ mỗi 60 ms là 3 độ mỗi giây, một vòng hai phút.
+   *
+   * Bản đầu đặt 0,55 (9 độ mỗi giây, một vòng 40 giây) và nó quá nhanh để
+   * làm việc mà chuyển động này sinh ra: nhìn kỹ một vùng bề mặt khi nó đi
+   * qua. Ở 40 giây một vòng thì mỗi vùng chỉ ở giữa khung vài giây, và người
+   * xem phải đuổi theo thay vì quan sát. Hai phút thì đủ chậm để dừng lại
+   * bằng mắt mà vẫn thấy rõ là đang quay.
    */
   useEffect(() => {
     if (!spinning || status !== "ready") return;
@@ -100,7 +128,7 @@ export function AladinCanvas({
     const timer = window.setInterval(() => {
       const position = centre();
       if (!position) return;
-      panTo((position[0] + 0.55) % 360, position[1]);
+      panTo((position[0] + 0.18) % 360, position[1]);
     }, 60);
 
     return () => window.clearInterval(timer);
@@ -208,15 +236,40 @@ export function AladinCanvas({
       {/* Ghim vào mép trái cửa sổ, không vào khung: ở chế độ bề mặt thiên thể
           khung bị CSS ép về hình vuông giữa màn hình (xem `.aladin-body-view`),
           nên mép trái của nó không phải mép trái của cái người xem đang nhìn. */}
-      {fullscreenInfo && isFullscreen && status === "ready" && (
+      {fullscreenInfo && isFullscreen && status === "ready" && infoOpen && (
         /* Nền đặc hơn và viền sáng hơn bản đầu: bảng nằm trên ảnh bầu trời
            hoặc bề mặt hành tinh, và cả hai đều tối — ở bg-black/70 thì khối
            bảng gần như tan vào nền, chữ vẫn đọc được nhưng mắt không thấy đâu
            là mép bảng. slate-900 là xanh đen chứ không phải đen tuyệt đối,
            nên nó tách khỏi nền bằng sắc màu chứ không chỉ bằng độ sáng. */
         <div className="fixed top-16 left-4 z-[70] max-h-[calc(100dvh-6rem)] w-[min(22rem,calc(100vw-2rem))] overflow-y-auto rounded-2xl border border-white/[0.08] bg-slate-900/85 p-4 text-white shadow-2xl backdrop-blur-xl">
+          <button
+            type="button"
+            onClick={() => setInfoOpen(false)}
+            aria-label={t("close")}
+            title={t("close")}
+            className="absolute top-3 right-3 rounded-full p-1 text-white/50 transition-colors hover:bg-white/10 hover:text-white"
+          >
+            <X className="size-4" aria-hidden />
+          </button>
+
           {fullscreenInfo}
         </div>
+      )}
+
+      {/* Nút gọi bảng trở lại. Đặt cùng hàng với nút tự quay để mọi điều khiển
+          của chế độ toàn màn hình nằm trên một đường, thay vì rải bốn góc. */}
+      {fullscreenInfo && isFullscreen && status === "ready" && !infoOpen && (
+        <button
+          type="button"
+          onClick={() => setInfoOpen(true)}
+          aria-label={t("showInfo")}
+          title={t("showInfo")}
+          className="fixed top-4 right-28 z-[70] inline-flex items-center gap-1.5 rounded-full bg-black/65 px-3 py-1.5 text-xs font-medium text-white backdrop-blur-sm transition-colors hover:bg-black/85"
+        >
+          <Info className="size-3.5" aria-hidden />
+          <span className="hidden sm:inline">{t("showInfo")}</span>
+        </button>
       )}
 
       {status === "ready" && hintVisible && (

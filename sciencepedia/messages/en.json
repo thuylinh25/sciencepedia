@@ -186,8 +186,6 @@
     "tabPhysical": "Physical data",
     "tabRelated": "Related",
     "viewInSolarSystem": "See it in the Solar System",
-    "dragHint": "Drag to rotate · Scroll to zoom",
-    "autoRotate": "Auto-rotate",
     "factRadius": "Radius",
     "factDiameter": "Diameter",
     "factDistance": "From the Sun",
@@ -439,7 +437,11 @@
     "coordinates": "Coordinates (J2000)",
     "openFullMap": "Open the full sky map",
     "constellation": "Constellation",
-    "backToList": "Back to the list"
+    "backToList": "Back to the list",
+    "autoRotate": "Auto-rotate",
+    "dragHint": "Drag to rotate · Scroll to zoom",
+    "showInfo": "Info",
+    "close": "Close"
   },
   "explore": {
     "title": "Interactive exploration",

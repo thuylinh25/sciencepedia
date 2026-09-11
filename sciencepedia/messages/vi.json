@@ -186,8 +186,6 @@
     "tabPhysical": "Đặc điểm vật lý",
     "tabRelated": "Khám phá liên quan",
     "viewInSolarSystem": "Xem trong Hệ Mặt Trời",
-    "dragHint": "Kéo để xoay · Cuộn để phóng to",
-    "autoRotate": "Tự quay",
     "factRadius": "Bán kính",
     "factDiameter": "Đường kính",
     "factDistance": "Cách Mặt Trời",
@@ -439,7 +437,11 @@
     "coordinates": "Toạ độ (J2000)",
     "openFullMap": "Mở bản đồ bầu trời đầy đủ",
     "constellation": "Chòm sao",
-    "backToList": "Quay lại danh sách"
+    "backToList": "Quay lại danh sách",
+    "autoRotate": "Tự quay",
+    "dragHint": "Kéo để xoay · Cuộn để phóng to",
+    "showInfo": "Thông tin",
+    "close": "Đóng"
   },
   "explore": {
     "title": "Khám phá tương tác",

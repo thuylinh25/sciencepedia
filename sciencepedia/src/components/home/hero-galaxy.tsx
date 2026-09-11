@@ -6,7 +6,6 @@
 
 import { useEffect, useRef, useState } from "react";
 
-import { useRouter } from "@/i18n/navigation";
 import dynamic from "next/dynamic";
 
 /**
@@ -83,7 +82,6 @@ const GalaxyScene = dynamic(
 );
 
 export function HeroGalaxy({ locale }: { locale: string }) {
-  const router = useRouter();
   const [showScene, setShowScene] = useState(false);
   const [gentle, setGentle] = useState(false);
   const [lowPower, setLowPower] = useState(false);
@@ -188,36 +186,27 @@ export function HeroGalaxy({ locale }: { locale: string }) {
               // vòng mất mười phút — mắt không nhận ra, khối trông như ảnh dán.
               speed: NORMAL_SPEED,
               /*
-               * Bật đủ như trang /milky-way: nhãn, dấu Mặt Trời kèm quỹ đạo
-               * xoắn, và các thiên thể đáng xem.
+               * Hero là hiệu ứng nền, KHÔNG phải viewer 3D. Nhãn, dấu Mặt Trời
+               * và các thiên thể đều tắt.
                *
-               * Quyết định của chủ sản phẩm, và nó đảo lại lựa chọn trước đó
-               * nên ghi lại cả cái giá phải trả: nhãn là phần tử HTML nằm
-               * TRÊN canvas, nên lớp mask toả tròn làm mờ mép chỉ ăn vào phần
-               * 3D chứ không ăn vào nhãn. Nhãn rơi gần mép sẽ nổi rõ trên
-               * vùng đã mờ. Ở khung hero thì các mốc đều nằm quanh tâm nên
-               * phần lớn thời gian không thấy, nhưng lúc cảnh quay tới góc
-               * xấu thì sẽ thấy.
+               * Đã thử bật đủ như trang /milky-way và phải trả lại: nhãn là
+               * phần tử HTML nằm TRÊN canvas nên lớp mask toả tròn không ăn
+               * vào nó, và trên điện thoại — nơi khung hero nhỏ nhất còn nhãn
+               * giữ nguyên cỡ chữ — chúng phủ kín chính cái thiên hà chúng
+               * đang chỉ vào.
                *
-               * Đổi lại: người xem nhận ra ngay đây là cùng một mô hình với
-               * trang /milky-way, thay vì một hình xoáy trang trí.
+               * Chỗ để xem mô hình đầy đủ là /milky-way, và cả hero lẫn lưới
+               * "Khám phá tương tác" đều đã có đường dẫn tới đó.
                */
-              showLabels: true,
-              showSun: true,
-              showObjects: true,
+              showLabels: false,
+              showSun: false,
+              showObjects: false,
               view: "free",
               tour: false,
               scientific: false,
             }}
-            /*
-             * Bấm vào nhãn thì sang trang mô hình đầy đủ.
-             *
-             * Nhãn ở đây là thẻ <button> thật, nên nó có con trỏ bàn tay và
-             * trạng thái hover. Để hàm rỗng thì nó trông bấm được mà bấm
-             * không ra gì — tệ hơn là không cho bấm. Hero không có bảng thông
-             * tin để mở, nên đích đúng là chỗ có bảng đó.
-             */
-            onSelect={() => router.push("/milky-way")}
+            // Không có gì bấm được: nhãn và dấu Mặt Trời đều tắt.
+            onSelect={() => {}}
             locale={locale}
             onTourStep={() => {}}
             onTourEnd={() => {}}
