@@ -279,3 +279,37 @@ Bản đầu đặt ngưỡng 60 theo cảm giác và bỏ sót ba bài nằm �
 ### Vì sao chín bài cũ vẫn chưa chữa
 
 Trần độ dài 400 từ trong `check-publish.ts` đã chặn dạng cụt nặng nhất ở bài mới. Chín bài cũ thoát vì `lengthExempt` — chúng publish trước khi trần ấy được chốt. Chữa chúng là **viết nốt phần cuối**, tức đi lại bước 1–4 của pipeline cho từng bài, không phải thêm một câu khép. Chưa làm.
+
+## 2026-09-12 — rà toàn bộ DOI: một trích dẫn chết, một DOI sai trong seed
+
+Phát hiện tình cờ khi đi tìm nguồn cho bài Mặt Trăng: `prisma/seed-data/cosmos-spin.ts` ghi DOI `10.1038/35107009` cho nguồn "Long-term evolution of the spin of Venus". DOI ấy **resolve thật** — tới "Multisite phosphorylation of a CDK inhibitor sets a threshold for the onset of DNA replication", một bài sinh học tế bào trên Nature 2001.
+
+Quy tắc 2 của skill `article-generator` gọi đây là failure mode tệ nhất. Nhưng cho tới lượt này **không có phép kiểm nào thi hành nó**: `isAlive()` trong `check-publish.ts` chỉ hỏi URL có trả 200 không, mà một DOI sai vẫn trả 200 — nó dẫn tới một bài báo có thật, chỉ là bài khác. Link bấm được, trang mở ra, tiêu đề không ai đối chiếu.
+
+### `scripts/check-citations.ts`
+
+Resolve từng DOI qua content negotiation của doi.org rồi so tiêu đề Crossref với tiêu đề đang lưu. So sau khi chuẩn hoá — bỏ dấu câu, hạ chữ thường, bỏ từ chức năng — cộng một phép so tập hợp từ, vì bản ghi Crossref dùng dấu câu khác người nhập và bài có phụ đề thì hai bên cắt ở chỗ khác nhau.
+
+Script **không tự sửa**. Một DOI lệch có thể là DOI sai, mà cũng có thể là tiêu đề nhập tắt — hai chuyện khác nhau, và chọn giữa chúng là việc của người đọc cả hai.
+
+### Kết quả trên 242 nguồn (62 có DOI)
+
+| | |
+|---|---|
+| Khớp | 60 |
+| Lệch tiêu đề | 1 |
+| Không resolve | 1 |
+
+**DOI chết — đã sửa.** `sao-choi-nguon-goc-cau-tao-va-so-phan` mang `10.1038/35007005` cho Jones, Balogh & Horbury, *Nature* 404, 574–576 (2000). DOI ấy trả **404**. DOI đúng là `10.1038/35007011`, đã đối chiếu tiêu đề, tác giả, tập, trang và năm. `10.1038/35007015` — chỉ khác hai chữ số — là bài KHÁC trong cùng số báo, của Gloeckler & Geiss. Nên đây là lỗi gõ trong một dãy DOI gần nhau, không phải nguồn bịa.
+
+Sửa cả cột `doi` lẫn cột `url`: sửa một cột và bỏ cột kia là để lại đúng lỗi vừa sửa ở chỗ người đọc thật sự bấm vào. Script: `scripts/fix-dead-doi.ts`. **Không** ghi `Revision` — bảng ấy chụp `title` + `content`, mà lượt này không chạm thân bài; chụp một bản content không đổi là để lại một mục lịch sử rỗng nghĩa.
+
+**Lệch tiêu đề — xét là đúng, đã miễn trừ.** `10.1093/mnras/4.17.152` lưu là "On the parallax of 61 Cygni", bản ghi thật là "II. A letter from Professor Bessel to Sir J. Herschel, Bart., dated Konigsberg, Oct. 23, 1838". Bessel công bố thị sai bằng một lá thư và MNRAS lưu nó dưới tiêu đề của lá thư; giới thiên văn vẫn dẫn công trình này bằng nội dung. DOI đúng tác giả, đúng năm.
+
+Đưa vào danh sách miễn trừ **kèm lý do, khoá bằng DOI chứ không bằng slug** — đổi sang nguồn khác trên cùng bài thì miễn trừ không che cho nguồn mới. Lý do phải có: một phép kiểm lúc nào cũng kêu một mục đã biết thì người ta học cách bỏ qua cả phép kiểm.
+
+### Seed cũng sai, và đó mới là chỗ nguy
+
+Hàng trong CSDL vốn đã đúng (`10.1038/35081000`). Lỗi chỉ nằm trong seed file, tức nó **chưa bao giờ lên trang** nhưng **sẽ tiêm vào lần seed lại**. Đã sửa tại chỗ kèm ghi chú.
+
+**Bài học:** một phép kiểm chỉ đo "link còn sống" không phải phép kiểm trích dẫn. Nó bắt được DOI 404 và mù hoàn toàn trước DOI trỏ nhầm bài — mà loại thứ hai mới là loại người đọc không thể tự phát hiện.

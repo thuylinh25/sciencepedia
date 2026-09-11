@@ -302,7 +302,38 @@ export function useAladin({
         // không đổi kích thước phần tử — không có vòng lặp bố cục.
         if (view.planetary && typeof ResizeObserver !== "undefined") {
           const observer = new ResizeObserver(() => {
-            instanceRef.current?.setFoV(fovForFrame(container, view));
+            const live = instanceRef.current;
+            if (!live) return;
+
+            const { width, height } = container.getBoundingClientRect();
+            if (!width || !height) return;
+
+            /* Giữ NGUYÊN mức phóng người xem đang đặt, chỉ tính lại bề rộng
+               theo tỉ lệ khung mới.
+
+               Bản cũ gọi `fovForFrame(container, view)` — tức tính lại từ
+               `view.fovDeg`, giá trị BAN ĐẦU. Mọi lần khung đổi kích thước
+               đều ném mức phóng người xem vừa đặt và kéo về mặc định. Với bề
+               mặt thiên thể thì `fovDeg` là 180, nên phóng to bao nhiêu cũng
+               bị bật ngược về "nhìn trọn quả cầu".
+
+               Và khung đổi kích thước nhiều hơn ta tưởng: bấm nút tự quay làm
+               nhãn nút đổi chữ, hàng điều khiển xuống dòng, khung co lại một
+               nhịp — đủ để observer nổ. Trên điện thoại, thanh địa chỉ trượt
+               đi khi cuộn cũng đổi chiều cao khung. Đó là lỗi "phóng to rồi
+               thu nhỏ rồi bấm tự quay thì hỏng" đã bị báo.
+
+               `getFov()` trả [rộng, cao] tính bằng độ. Đại lượng cần giữ là
+               chiều NHỎ hơn: nó quyết định kích thước biểu kiến của quả cầu,
+               còn chiều lớn hơn chỉ là phần lề thừa của khung bẹt.
+
+               Phép này luỹ đẳng — khung không đổi tỉ lệ thì kết quả bằng đúng
+               giá trị đang có, nên không có vòng lặp observer. */
+            const [fovWidth, fovHeight] = live.getFov();
+            const held = Math.min(fovWidth, fovHeight);
+            if (!held || !Number.isFinite(held)) return;
+
+            live.setFoV(Math.min(180, held * Math.max(1, width / height)));
           });
           observer.observe(container);
           resizeObserverRef.current = observer;
