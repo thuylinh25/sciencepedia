@@ -41,8 +41,8 @@ on:
   # sẽ giành hạn mức với chính phiên Claude Code tương tác của bạn. Thấy vướng
   # thì thu hẹp về ban đêm giờ Việt Nam bằng cách đổi dòng dưới thành:
   #   - cron: "0 16-23 * * *"     # 23:00–06:00 giờ Việt Nam
-  # schedule:
-  #   - cron: "0 */2 * * *"
+  schedule:
+    - cron: "0 */2 * * *"
 
 permissions:
   # Bước "Lưu việc dở vào repo" đẩy commit lên nhánh mặc định.
