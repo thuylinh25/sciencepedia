@@ -360,8 +360,17 @@ export function SiteHeader({ categories }: { categories: NavCategory[] }) {
                 </SheetHeader>
                 <Separator />
                 {/* Drawer phải cuộn được: danh sách lĩnh vực dài ra theo dữ
-                    liệu, màn hình thấp sẽ không đủ chỗ cho cả khối cài đặt. */}
-                <nav className="flex flex-col gap-1 overflow-y-auto px-4">
+                    liệu, màn hình thấp sẽ không đủ chỗ cho cả khối cài đặt.
+
+                    `min-h-0 flex-1` là phần bắt buộc, không phải trang trí.
+                    SheetContent là flex column; trong flex column, một con
+                    mặc định KHÔNG co được xuống dưới chiều cao nội dung của
+                    nó (min-height: auto). Nên chỉ có overflow-y-auto thôi thì
+                    nav cao bằng đúng danh sách, tràn khỏi drawer thay vì cuộn
+                    — và mọi mục nằm dưới mép màn hình trở thành không với tới
+                    được. Trên điện thoại, đó là "Mô hình 3D" và tất cả những
+                    gì đứng sau danh sách lĩnh vực. */}
+                <nav className="flex min-h-0 flex-1 flex-col gap-1 overflow-y-auto px-4">
                   <Link
                     href="/categories"
                     onClick={() => setMobileOpen(false)}
