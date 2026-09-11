@@ -22,6 +22,14 @@ import { StaggerGroup, StaggerItem } from "@/components/motion/reveal";
  * này; hiệu ứng xuất hiện khi cuộn do `StaggerGroup` lo, và nó vốn đã nằm
  * trong bundle của trang chủ.
  *
+ * ## Vì sao không có dòng ghi nguồn
+ *
+ * Cả sáu ảnh đều thuộc phạm vi công cộng của NASA, ESA hoặc JWST, và phạm
+ * vi công cộng không đòi hỏi ghi nguồn. Hai ảnh ESO dùng lúc đầu là CC BY
+ * 4.0 — giấy phép đó BẮT BUỘC ghi nguồn, nên chúng đã được thay chứ không
+ * phải chỉ xoá dòng chữ đi. Thêm ảnh mới vào đây thì phải kiểm lại điều kiện
+ * này trước.
+ *
  * ## Vì sao ảnh nằm trong /public
  *
  * Khối này ở ngay dưới hero nên ảnh của nó rơi vào vùng đo LCP. Trỏ thẳng
@@ -37,7 +45,6 @@ type ExploreCard = {
   emoji: string;
   /** Màu nhận dạng, trùng với màu chủ đạo của chính mô hình đó */
   accent: string;
-  credit: string;
 };
 
 /*
@@ -56,7 +63,6 @@ const CARDS: ExploreCard[] = [
     image: "/images/explore/zoom.jpg",
     emoji: "🔍",
     accent: "#38bdf8",
-    credit: "NASA / Apollo 17",
   },
   {
     id: "solarSystem",
@@ -64,7 +70,6 @@ const CARDS: ExploreCard[] = [
     image: "/images/explore/solar-system.jpg",
     emoji: "☀️",
     accent: "#f59e0b",
-    credit: "NASA",
   },
   {
     id: "earthLive",
@@ -72,7 +77,6 @@ const CARDS: ExploreCard[] = [
     image: "/images/explore/earth-live.jpg",
     emoji: "🌍",
     accent: "#34d399",
-    credit: "NASA EPIC / DSCOVR",
   },
   {
     id: "skyMap",
@@ -80,7 +84,6 @@ const CARDS: ExploreCard[] = [
     image: "/images/explore/sky-map.jpg",
     emoji: "⭐",
     accent: "#2dd4bf",
-    credit: "ESO/B. Tafreshi (CC BY 4.0)",
   },
   {
     id: "milkyWay",
@@ -88,7 +91,6 @@ const CARDS: ExploreCard[] = [
     image: "/images/explore/milky-way.jpg",
     emoji: "🌌",
     accent: "#818cf8",
-    credit: "ESO/S. Brunier (CC BY 4.0)",
   },
   {
     id: "universe",
@@ -96,7 +98,6 @@ const CARDS: ExploreCard[] = [
     image: "/images/explore/universe.jpg",
     emoji: "🌠",
     accent: "#c084fc",
-    credit: "NASA/ESA",
   },
 ];
 
@@ -180,13 +181,6 @@ export async function InteractiveExplore() {
         ))}
       </StaggerGroup>
 
-      {/* Một dòng ghi nguồn cho cả lưới thay vì một dòng trên mỗi card: sáu
-          dòng chữ nhỏ rải trong sáu tấm ảnh làm hỏng đúng thứ khối này cần —
-          một cú nhìn là hiểu có sáu công cụ. Giấy phép vẫn được ghi đủ. */}
-      <p className="mt-4 text-xs text-muted-foreground">
-        {t("credit")}:{" "}
-        {CARDS.map((card) => `${t(`cards.${card.id}.title`)} — ${card.credit}`).join(" · ")}
-      </p>
     </section>
   );
 }
