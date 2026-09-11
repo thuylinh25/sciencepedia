@@ -138,6 +138,69 @@ export const BODY_SYMBOL: Record<string, string> = {
   neptune: "♆",
 };
 
+/**
+ * Nhãn phân loại của từng thiên thể.
+ *
+ * Đặt riêng thành bảng tra thay vì thêm trường vào mười đối tượng dữ liệu,
+ * cùng lý do với `BODY_SYMBOL`: đây là chuyện hiển thị của một khối giao
+ * diện, không phải thuộc tính vật lý.
+ *
+ * Mỗi nhãn phải là một mệnh đề kiểm được, không phải một tính từ. "Có nước
+ * lỏng" đúng với Trái Đất và sai với Sao Hoả — Sao Hoả có băng nước và có
+ * nước mặn chảy theo mùa ở vài chỗ, nhưng không có nước lỏng ổn định trên bề
+ * mặt, vì áp suất khí quyển ở đó nằm dưới điểm ba của nước. Nhãn của Sao Hoả
+ * vì vậy ghi "Có băng nước".
+ */
+export const BODY_BADGES: Record<
+  string,
+  Array<{ emoji: string; label: string; labelEn: string }>
+> = {
+  sun: [
+    { emoji: "⭐", label: "Sao lùn vàng loại G", labelEn: "G-type dwarf star" },
+    { emoji: "⚛️", label: "Hợp hạch hydro", labelEn: "Hydrogen fusion" },
+  ],
+  mercury: [
+    { emoji: "🪨", label: "Hành tinh đá", labelEn: "Rocky planet" },
+    { emoji: "🌡️", label: "Chênh nhiệt 600 °C", labelEn: "600 °C swing" },
+  ],
+  venus: [
+    { emoji: "🪨", label: "Hành tinh đá", labelEn: "Rocky planet" },
+    { emoji: "☁️", label: "Mây acid sulfuric", labelEn: "Sulfuric-acid cloud" },
+    { emoji: "🔥", label: "Hiệu ứng nhà kính cực đoan", labelEn: "Runaway greenhouse" },
+  ],
+  earth: [
+    { emoji: "🪨", label: "Hành tinh đá", labelEn: "Rocky planet" },
+    { emoji: "🌊", label: "Có nước lỏng", labelEn: "Liquid water" },
+    { emoji: "🧬", label: "Có sự sống", labelEn: "Hosts life" },
+  ],
+  moon: [
+    { emoji: "🛰️", label: "Vệ tinh tự nhiên", labelEn: "Natural satellite" },
+    { emoji: "🌑", label: "Khí quyển cực mỏng", labelEn: "Near-vacuum" },
+    { emoji: "🔒", label: "Khoá thuỷ triều", labelEn: "Tidally locked" },
+  ],
+  mars: [
+    { emoji: "🪨", label: "Hành tinh đá", labelEn: "Rocky planet" },
+    { emoji: "❄️", label: "Có băng nước", labelEn: "Water ice" },
+    { emoji: "🚀", label: "Mục tiêu thám hiểm", labelEn: "Exploration target" },
+  ],
+  jupiter: [
+    { emoji: "🌀", label: "Hành tinh khí khổng lồ", labelEn: "Gas giant" },
+    { emoji: "🔴", label: "Vết Đỏ Lớn", labelEn: "The Great Red Spot" },
+  ],
+  saturn: [
+    { emoji: "🌀", label: "Hành tinh khí khổng lồ", labelEn: "Gas giant" },
+    { emoji: "💍", label: "Hệ vành rõ nhất", labelEn: "The clearest ring system" },
+  ],
+  uranus: [
+    { emoji: "🧊", label: "Hành tinh băng khổng lồ", labelEn: "Ice giant" },
+    { emoji: "↩️", label: "Quay nằm nghiêng 98°", labelEn: "Tilted 98°" },
+  ],
+  neptune: [
+    { emoji: "🧊", label: "Hành tinh băng khổng lồ", labelEn: "Ice giant" },
+    { emoji: "💨", label: "Gió mạnh nhất hệ", labelEn: "Fastest winds" },
+  ],
+};
+
 /** Sự kiện yêu cầu mở bản đồ bề mặt của một thiên thể — xem `body-jump-list`. */
 export const OPEN_BODY_EVENT = "sciencepedia:open-body";
 

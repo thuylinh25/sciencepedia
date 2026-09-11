@@ -1,17 +1,18 @@
 import Image from "next/image";
 import { getLocale, getTranslations } from "next-intl/server";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Orbit, Scaling } from "lucide-react";
 
 import { Link } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
 import {
+  BODY_BADGES,
   MOON,
   PLANETS,
   SUN,
   type BodyPhoto,
   type BodySurface,
 } from "@/lib/solar-data";
-import { cn, formatNumber } from "@/lib/utils";
+import { formatNumber } from "@/lib/utils";
 import { filterPublishedSlugs } from "@/server/queries";
 import { PlanetSurface } from "@/components/solar/planet-surface";
 import { BodyPanel, type BodyPanelData } from "@/components/solar/body-panel";
@@ -196,95 +197,33 @@ export async function PlanetGallery() {
           const displayName = isEnglish ? body.nameEn : body.name;
           const secondaryName = isEnglish ? null : body.nameEn;
 
-          /*
-           * Dựng một lần, dùng hai chỗ: dưới ảnh trong thẻ, và trong lớp phủ
-           * khi người xem bấm toàn màn hình. Ở toàn màn hình nền luôn là đen
-           * nên chữ phải sáng, còn trong thẻ thì theo chủ đề của trang — đó
-           * là toàn bộ khác biệt giữa hai lần gọi.
-           */
-          const info = (dark: boolean) => (
-            <>
-              <div className="flex items-baseline justify-between gap-3">
-                <h3 className="font-display font-semibold">{displayName}</h3>
-                {secondaryName && (
-                  <span
-                    className={cn(
-                      "shrink-0 text-xs",
-                      dark ? "text-white/50" : "text-muted-foreground",
-                    )}
-                  >
-                    {secondaryName}
-                  </span>
-                )}
-              </div>
-
-              <dl
-                className={cn(
-                  "mt-2 flex flex-wrap gap-x-4 gap-y-1 font-mono text-xs",
-                  dark ? "text-white/60" : "text-muted-foreground",
-                )}
-              >
-                <div className="flex gap-1.5">
-                  <dt>{t("diameter")}</dt>
-                  <dd>{formatNumber(body.realRadiusKm * 2, locale)} km</dd>
-                </div>
-                {body.realDistanceKm !== undefined && (
-                  <div className="flex gap-1.5">
-                    <dt>{t("distance")}</dt>
-                    <dd>{formatNumber(body.realDistanceKm, locale)} km</dd>
-                  </div>
-                )}
-                {body.moons !== undefined && (
-                  <div className="flex gap-1.5">
-                    <dt>{t("moons")}</dt>
-                    <dd>{body.moons}</dd>
-                  </div>
-                )}
-              </dl>
-
-              <p
-                className={cn(
-                  "mt-3 text-sm leading-relaxed",
-                  dark ? "text-white/80" : "text-muted-foreground",
-                )}
-              >
-                {description}
-              </p>
-
-              {/* Chú thích ảnh là nội dung bắt buộc, không phải trang trí:
-                  ảnh Mặt Trời và bề mặt Sao Thuỷ, Sao Kim đều là màu quy
-                  ước, và người đọc không có cách nào tự nhận ra. */}
-              <p
-                className={cn(
-                  "mt-3 text-xs leading-relaxed",
-                  dark ? "text-white/55" : "text-muted-foreground/80",
-                )}
-              >
-                {caption}{" "}
-                <a
-                  href={body.photo.sourceUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="underline underline-offset-2"
-                >
-                  {body.photo.credit}
-                </a>
-              </p>
-            </>
-          );
-
           return (
             <li
               key={body.id}
               id={`body-${body.id}`}
-              className="flex flex-col overflow-hidden rounded-2xl border bg-card scroll-mt-24"
+              /*
+                KHÔNG dùng transform khi rê chuột — kể cả một translate 4px.
+
+                Một ancestor có transform trở thành containing block cho mọi
+                hậu duệ position: fixed. Khung Aladin ở chế độ toàn màn hình
+                chính là một phần tử như vậy, nên lúc đó nó bị neo vào thẻ này
+                thay vì vào cửa sổ, rồi bị overflow-hidden của thẻ cắt cụt —
+                triệu chứng là bấm mở bản đồ ra một ô loading nhỏ và một
+                breadcrumb lạc chỗ. Cùng họ với chú thích `isolate` trong
+                globals.css: mọi thứ tạo stacking context hoặc containing
+                block ở nhánh này đều nhốt lớp toàn màn hình lại.
+
+                Viền và bóng đổ không tạo containing block, nên hiệu ứng nổi
+                khối vẫn làm được bằng hai thứ đó.
+              */
+              className="group flex scroll-mt-24 flex-col overflow-hidden rounded-2xl border bg-card transition-[border-color,box-shadow] duration-300 hover:border-primary-strong/40 hover:shadow-xl"
             >
               {body.surface ? (
                 <PlanetSurface
                   name={displayName}
                   photo={body.photo}
                   surface={body.surface}
-                  caption={t("surfacePrompt", { body: displayName })}
+                  caption={displayName}
                   info={
                     <BodyPanel
                       body={
@@ -330,18 +269,130 @@ export async function PlanetGallery() {
               )}
 
               <div className="flex flex-1 flex-col p-4">
-                {info(false)}
+                <div className="flex items-baseline justify-between gap-3">
+                  <h3 className="font-display font-semibold">{displayName}</h3>
+                  {secondaryName && (
+                    <span className="shrink-0 text-xs text-muted-foreground">
+                      {secondaryName}
+                    </span>
+                  )}
+                </div>
 
-                {/* Bài chưa xuất bản thì không có link: xem `filterPublishedSlugs` */}
-                {published.has(body.articleSlug) && (
-                  <Link
-                    href={`/articles/${body.articleSlug}`}
-                    className="mt-4 inline-flex items-center gap-1 text-sm text-primary-strong underline underline-offset-4"
-                  >
-                    {t("readMore")}
-                    <ArrowUpRight className="size-3.5" aria-hidden />
-                  </Link>
+                {/* Nhãn phân loại. Mỗi nhãn là một mệnh đề kiểm được, không
+                    phải tính từ — xem `BODY_BADGES`. */}
+                {BODY_BADGES[body.id] && (
+                  <ul className="mt-2.5 flex flex-wrap gap-1.5">
+                    {BODY_BADGES[body.id].map((badge) => (
+                      <li
+                        key={badge.labelEn}
+                        className="inline-flex items-center gap-1.5 rounded-full border bg-muted/40 px-2 py-0.5 text-[11px] text-muted-foreground"
+                      >
+                        <span aria-hidden>{badge.emoji}</span>
+                        {isEnglish ? badge.labelEn : badge.label}
+                      </li>
+                    ))}
+                  </ul>
                 )}
+
+                {/* Ô thống kê thay cho một dòng chữ liền.
+                    Ba con số cùng cỡ, cùng vị trí trên mọi thẻ thì mắt so
+                    được theo cột; nhét chúng vào một câu thì phải đọc mới
+                    thấy, và đọc chín lần cho chín thẻ. */}
+                <dl className="mt-3 grid grid-cols-3 gap-2">
+                  {[
+                    {
+                      value: `${formatNumber(Math.round(body.realRadiusKm * 2), locale)}`,
+                      unit: "km",
+                      label: t("diameter"),
+                    },
+                    body.realDistanceKm !== undefined
+                      ? {
+                          value: formatNumber(
+                            Math.round(body.realDistanceKm / 1_000_000),
+                            locale,
+                          ),
+                          unit: t("millionKm"),
+                          label: t("distance"),
+                        }
+                      : null,
+                    body.moons !== undefined
+                      ? {
+                          value: String(body.moons),
+                          unit: "",
+                          label: t("moons"),
+                        }
+                      : null,
+                  ]
+                    .filter((stat) => stat !== null)
+                    .map((stat) => (
+                      <div
+                        key={stat.label}
+                        className="rounded-xl border bg-muted/30 px-2.5 py-2"
+                      >
+                        <dd className="font-mono text-sm font-semibold tabular-nums">
+                          {stat.value}
+                          {stat.unit && (
+                            <span className="ml-1 text-[11px] font-normal text-muted-foreground">
+                              {stat.unit}
+                            </span>
+                          )}
+                        </dd>
+                        <dt className="mt-0.5 text-[11px] text-muted-foreground">
+                          {stat.label}
+                        </dt>
+                      </div>
+                    ))}
+                </dl>
+
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                  {description}
+                </p>
+
+                {/* Chú thích ảnh là nội dung bắt buộc, không phải trang trí:
+                    ảnh Mặt Trời, bề mặt Sao Thuỷ và Sao Kim đều là màu quy
+                    ước, và người đọc không có cách nào tự nhận ra. Nó nhỏ và
+                    nằm cuối, nhưng không được bỏ. */}
+                <p className="mt-3 text-xs leading-relaxed text-muted-foreground/75">
+                  {caption}{" "}
+                  <a
+                    href={body.photo.sourceUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="underline underline-offset-2"
+                  >
+                    {body.photo.credit}
+                  </a>
+                </p>
+
+                {/* Liên kết ngữ cảnh, đẩy xuống đáy bằng mt-auto để mọi thẻ
+                    trong một hàng có cùng một đường chân. */}
+                <div className="mt-auto flex flex-wrap gap-x-4 gap-y-2 border-t pt-3 text-sm">
+                  {published.has(body.articleSlug) && (
+                    <Link
+                      href={`/articles/${body.articleSlug}`}
+                      className="inline-flex items-center gap-1.5 text-primary-strong hover:underline"
+                    >
+                      <ArrowUpRight className="size-3.5" aria-hidden />
+                      {t("readMore")}
+                    </Link>
+                  )}
+
+                  <Link
+                    href={`/solar-system?body=${body.id}`}
+                    className="inline-flex items-center gap-1.5 text-muted-foreground hover:text-foreground"
+                  >
+                    <Orbit className="size-3.5" aria-hidden />
+                    {t("viewInSolarSystem")}
+                  </Link>
+
+                  <Link
+                    href="/zoom"
+                    className="inline-flex items-center gap-1.5 text-muted-foreground hover:text-foreground"
+                  >
+                    <Scaling className="size-3.5" aria-hidden />
+                    {t("viewInZoom")}
+                  </Link>
+                </div>
               </div>
             </li>
           );

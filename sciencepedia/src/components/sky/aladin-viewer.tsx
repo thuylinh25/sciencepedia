@@ -195,25 +195,36 @@ export function AladinViewer({
               onClick={() => setClicked(true)}
               aria-label={posterCaption ?? label}
               className={cn(
-                "group grid size-full cursor-pointer place-items-center px-6 text-center",
+                "group flex size-full cursor-pointer flex-col justify-end p-4 text-left",
                 posterBackground
-                  ? "relative bg-gradient-to-t from-black/85 via-black/35 to-black/15"
+                  ? "relative bg-gradient-to-t from-black/80 via-black/20 to-transparent"
                   : "bg-[radial-gradient(circle_at_50%_35%,#16224a,#04060e_70%)]",
               )}
             >
-              <div>
-                <Telescope
-                  className="mx-auto size-7 text-white/50 transition-colors group-hover:text-white/80"
-                  aria-hidden
-                />
+              {/*
+                Chữ nằm ở ĐÁY ảnh, không phải giữa ảnh.
+
+                Bản trước đặt cả một câu "… — bấm để mở bề mặt, xoay và phóng
+                to" ngay giữa quả cầu. Câu đó giải thích đúng, nhưng nó đặt
+                lớp giải thích lên trên chính thứ đang cần được nhìn, và trong
+                một lưới chín thẻ thì chín câu giống hệt nhau ở chín chỗ giống
+                hệt nhau lại càng làm mọi thẻ trông như một.
+
+                Ở đáy thì ảnh được để yên, và dải tối sẵn có của gradient đủ
+                cho chữ trắng đọc được mà không cần phủ thêm lớp nào.
+              */}
+              <span className="flex items-center justify-between gap-3">
                 {posterCaption && (
-                  <p className="mt-3 text-sm text-white/65">{posterCaption}</p>
+                  <span className="min-w-0 truncate text-sm font-medium text-white/90">
+                    {posterCaption}
+                  </span>
                 )}
-                <span className="mt-4 inline-flex items-center gap-2 rounded-md bg-primary px-3 py-1.5 text-sm font-medium text-primary-foreground shadow-sm transition-colors group-hover:bg-primary/90">
-                  <Telescope className="size-4" aria-hidden />
+
+                <span className="inline-flex shrink-0 items-center gap-1.5 rounded-full bg-white/12 px-3 py-1.5 text-xs font-medium text-white backdrop-blur-md transition-colors group-hover:bg-white/25">
+                  <Telescope className="size-3.5" aria-hidden />
                   {t("open")}
                 </span>
-              </div>
+              </span>
             </button>
           )}
         </div>

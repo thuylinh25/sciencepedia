@@ -197,7 +197,9 @@
     "factTilt": "Axial tilt",
     "unitDays": "Earth days",
     "unitHours": "Earth hours",
-    "unitYears": "Earth years"
+    "unitYears": "Earth years",
+    "millionKm": "million km",
+    "viewInZoom": "Zoom journey"
   },
   "ai": {
     "title": "Science assistant",

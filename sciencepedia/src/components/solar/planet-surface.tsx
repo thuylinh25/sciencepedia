@@ -44,7 +44,12 @@ export function PlanetSurface({
   name: string;
   photo: BodyPhoto;
   surface: BodySurface;
-  /** Chú thích trên tấm bìa, ngay trên nút mở */
+  /**
+   * Nhãn trên tấm bìa — chỉ là TÊN thiên thể, không phải một câu hướng dẫn.
+   *
+   * Nút "Mở bản đồ" ngay cạnh đã nói việc cần làm; thêm một câu nữa giải
+   * thích cùng điều đó là nói hai lần, và lần thứ hai nằm đè lên ảnh.
+   */
   caption: string;
   /**
    * Khối thông tin để hiện khi người xem bấm toàn màn hình.

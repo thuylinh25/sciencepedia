@@ -197,7 +197,9 @@
     "factTilt": "Độ nghiêng trục",
     "unitDays": "ngày Trái Đất",
     "unitHours": "giờ Trái Đất",
-    "unitYears": "năm Trái Đất"
+    "unitYears": "năm Trái Đất",
+    "millionKm": "triệu km",
+    "viewInZoom": "Hành trình thu phóng"
   },
   "ai": {
     "title": "Trợ lý khoa học",
