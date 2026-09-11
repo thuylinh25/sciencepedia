@@ -83,11 +83,7 @@
     "heroSearchCta": "Explore",
     "heroCategoriesLabel": "Start with a field",
     "seeAllArticles": "See all articles",
-    "aiTryAsking": "Try asking",
-    "previewLatest": "Latest article",
-    "previewModel": "3D model",
-    "previewTopic": "Trending topic",
-    "previewTopicCount": "{count} articles"
+    "aiTryAsking": "Try asking"
   },
   "article": {
     "readingTime": "{minutes} min read",
@@ -506,6 +502,13 @@
         "cta": "Open the map",
         "metaA": "Real sky imagery",
         "metaB": "18 suggested targets"
+      },
+      "earthLive": {
+        "title": "Earth from satellites",
+        "body": "A NASA GIBS satellite imagery map: see the whole Earth, or zoom to a region to follow clouds and storms.",
+        "cta": "Open the map",
+        "metaA": "Refreshed every 10 minutes",
+        "metaB": "35 regions built in"
       }
     },
     "eyebrow": "Explore • Models • Simulations",

@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { ArrowRight } from "lucide-react";
@@ -56,6 +57,14 @@ type ExploreCard = {
    * `start` — chỗ nên vào trước. `highlight` — thứ đáng xem nhất.
    */
   badge?: "start" | "highlight";
+  /**
+   * Đích là một tệp tĩnh trong `/public`, không phải route của ứng dụng.
+   *
+   * Phải render bằng thẻ `<a>` thường chứ không bằng `Link` của next-intl:
+   * `Link` gắn tiền tố ngôn ngữ vào mọi đường dẫn, nên `/tools/x.html` sẽ
+   * thành `/vi/tools/x.html` và trả 404.
+   */
+  external?: boolean;
 };
 
 /*
@@ -87,6 +96,23 @@ const CARDS: ExploreCard[] = [
     badge: "highlight",
   },
   {
+    id: "earthLive",
+    /*
+     * Trỏ thẳng tệp tĩnh, không trỏ route.
+     *
+     * Trang `/earth-live` (ảnh EPIC/DSCOVR từ điểm L1) đã bị gỡ. Công cụ
+     * còn lại là bản đồ ảnh vệ tinh NASA GIBS — thứ KHÁC hẳn: ảnh từ vệ
+     * tinh địa tĩnh và vệ tinh quỹ đạo cực, mười phút một lần thay vì mỗi
+     * ngày một vòng. Nên chữ trên thẻ cũng đã viết lại theo đúng thứ nó
+     * dẫn tới; giữ nguyên chữ cũ là hứa một đằng đưa một nẻo.
+     */
+    href: "/tools/earth-live.html",
+    external: true,
+    image: "/images/explore/earth-live.jpg",
+    emoji: "🌍",
+    accent: "#34d399",
+  },
+  {
     id: "skyMap",
     href: "/space-map",
     image: "/images/explore/sky-map.jpg",
@@ -110,14 +136,44 @@ const CARDS: ExploreCard[] = [
 ];
 
 /*
- * Lưới 3 cột, năm card chia 3–2 trên màn hình lớn.
+ * Lưới 3 cột, sáu card chia ba–ba trên màn hình lớn.
  *
- * Hàng dưới còn một ô trống, và để nguyên như vậy là cố ý. Bản cũ từng dùng
- * lưới 6 cột với span riêng cho hai card hàng dưới để lấp ô đó, nhưng cái
- * giá là hai card cuối rộng hơn ba card trên — người xem đọc ra thành hai
- * hạng mục khác nhau, trong khi cả năm đều ngang hàng. Một ô trống thành
- * thật hơn một thứ bậc bịa ra.
+ * Số card đã dao động 6 → 5 → 6 trong cùng một ngày, nên đừng gắn bố cục vào
+ * một con số cụ thể. Quy tắc: chia đều `lg:grid-cols-3` và để hàng cuối thiếu
+ * ô nếu số card không chia hết. KHÔNG quay lại lưới 6 cột với span riêng cho
+ * hàng cuối — cách đó từng làm hai card cuối rộng hơn phần còn lại, và người
+ * xem đọc ra thành hai hạng mục khác nhau trong khi mọi card đều ngang hàng.
  */
+
+/**
+ * Một chỗ duy nhất quyết định dùng `Link` hay `<a>`.
+ *
+ * Tách ra thành component thay vì viết ba toán tử ba ngôi trong JSX: mọi
+ * thuộc tính hiển thị (className, children) chỉ khai báo MỘT lần, nên hai
+ * nhánh không thể trôi khỏi nhau khi ai đó sửa một bên mà quên bên kia.
+ */
+function CardLink({
+  card,
+  className,
+  children,
+}: {
+  card: ExploreCard;
+  className?: string;
+  children: ReactNode;
+}) {
+  if (card.external) {
+    return (
+      <a href={card.href} className={className}>
+        {children}
+      </a>
+    );
+  }
+  return (
+    <Link href={card.href} className={className}>
+      {children}
+    </Link>
+  );
+}
 
 export async function InteractiveExplore() {
   const t = await getTranslations("explore");
@@ -152,8 +208,8 @@ export async function InteractiveExplore() {
       <StaggerGroup className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {CARDS.map((card) => (
           <StaggerItem key={card.id}>
-            <Link
-              href={card.href}
+            <CardLink
+              card={card}
               /* Quầng sáng xanh khi rê chuột, thay cho `shadow-2xl` đen.
 
                  Bóng đen trên nền tối gần như không thấy, nên card cũ nâng lên
@@ -263,7 +319,7 @@ export async function InteractiveExplore() {
                   <ArrowRight className="size-4" />
                 </span>
               </div>
-            </Link>
+            </CardLink>
           </StaggerItem>
         ))}
       </StaggerGroup>

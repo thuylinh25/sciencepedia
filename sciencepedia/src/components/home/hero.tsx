@@ -15,12 +15,9 @@ import { HeroGalaxy } from "@/components/home/hero-galaxy";
 export function Hero({
   search,
   fields,
-  previews,
 }: {
   search?: ReactNode;
   fields?: ReactNode;
-  /** Ba thẻ nội dung động ở cuối hero — xem `HeroPreviewCards` */
-  previews?: ReactNode;
 }) {
   const t = useTranslations("home");
   const locale = useLocale();
@@ -141,22 +138,19 @@ export function Hero({
             </motion.div>
           )}
 
-          {/* Ba thẻ nội dung động, đứng CUỐI cột chữ.
+          {/* Cuối cột chữ KHÔNG còn khối nào.
 
-              Cuối chứ không phải trên: thứ tự của hero là tiêu đề → ô tìm kiếm
-              → lĩnh vực → nội dung cụ thể, tức đi từ "trang này là gì" xuống
-              dần tới "đây, đọc cái này". Đảo lên trên thì ba thẻ tranh chỗ
-              với chính ô tìm kiếm.
+              Đã bốn lượt thử lấp chỗ này: một nút lớn, ba chip, sáu card công
+              cụ cuộn ngang, rồi ba thẻ nội dung động (bài mới nhất / mô hình
+              3D / chủ đề đang quan tâm). Cả bốn đều bị gỡ.
 
-              Đây cũng là khối bị mép dưới màn hình cắt ngang trên laptop, và
-              đó là cố ý — một hàng thẻ bị cắt dở nói "còn nữa" rõ hơn khoảng
-              trắng. */}
-          {previews && (
-            <motion.div {...rise(0.38)} className="mt-6 max-w-2xl">
-              {previews}
-            </motion.div>
-          )}
+              Lượt thứ tư khác ba lượt trước ở chỗ nó KHÔNG trùng khối bên
+              dưới — nội dung của nó đổi theo kho. Vậy mà vẫn bị gỡ, nên lý do
+              không nằm ở chuyện trùng lặp: hero đơn giản là không chịu thêm
+              được một tầng lựa chọn nào sau ô tìm kiếm và các lĩnh vực.
 
+              Đó là kết luận đáng giữ. Lượt thứ năm nên bắt đầu bằng câu hỏi
+              "bỏ bớt gì", không phải "thêm gì". */}
           {/* Một nút, không hai. "Bắt đầu khám phá" trùng đúng mục "Khám phá" trên
             navbar và cạnh tranh trực tiếp với ô tìm kiếm ngay phía trên.
 

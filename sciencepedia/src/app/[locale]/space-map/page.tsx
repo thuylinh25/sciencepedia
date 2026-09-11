@@ -4,7 +4,11 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import type { Locale } from "@/i18n/routing";
 import { buildMetadata } from "@/lib/seo";
 import { absoluteUrl } from "@/lib/utils";
-import { ALADIN_ORIGIN, SKY_TARGETS } from "@/lib/sky-data";
+import {
+  ALADIN_ORIGIN,
+  ALADIN_SCRIPT_ORIGIN,
+  SKY_TARGETS,
+} from "@/lib/sky-data";
 import { SURFACE_HIPS_ORIGIN } from "@/lib/solar-data";
 import { JsonLd } from "@/components/json-ld";
 import { SkyMap } from "@/components/sky/sky-map";
@@ -61,6 +65,16 @@ export default async function SpaceMapPage({
         preconnect ở layout chung sẽ bắt mọi trang trả giá cho một máy chủ mà
         chúng chẳng bao giờ gọi tới.
       */}
+      {/* Hai máy chủ khác nhau: một phát script, một phát ô tile HiPS. Từ
+          2026-09-11 script chuyển sang jsDelivr nên chúng không còn trùng
+          nhau, và thiếu preconnect cho máy chủ script là trả thêm một lượt
+          DNS + TLS ngay trên đường tải nặng nhất của trang. */}
+      <link
+        rel="preconnect"
+        href={ALADIN_SCRIPT_ORIGIN}
+        crossOrigin="anonymous"
+      />
+      <link rel="dns-prefetch" href={ALADIN_SCRIPT_ORIGIN} />
       <link rel="preconnect" href={ALADIN_ORIGIN} crossOrigin="anonymous" />
       <link rel="dns-prefetch" href={ALADIN_ORIGIN} />
       {/* Ô tile bề mặt hành tinh nằm ở máy chủ khác với máy chủ phát script. */}

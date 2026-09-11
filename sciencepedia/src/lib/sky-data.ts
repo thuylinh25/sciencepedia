@@ -30,16 +30,53 @@ import { stripDiacritics } from "@/lib/utils";
 /**
  * Địa chỉ script Aladin Lite.
  *
- * Mặc định trỏ kênh `latest` của CDS: luôn có bản vá mới, đổi lại CDS có thể
- * đổi API dưới chân chúng ta (xem `src/types/aladin.ts`). Ghim một phiên bản
- * cụ thể bằng biến môi trường khi cần một build tái lập được.
+ * ## Vì sao không lấy thẳng từ máy chủ CDS nữa
+ *
+ * Đo ngày 2026-09-11, cùng lúc, cùng đường truyền:
+ *
+ *   aladin.cds.unistra.fr/.../v3/latest/aladin.js   1,8 MB —  83 giây
+ *   cdn.jsdelivr.net/npm/aladin-lite@3.8.2/...      2,4 MB — 4,5 giây
+ *
+ * Chậm gấp mười tám lần, và 83 giây thì không còn là "tải lâu" mà là hỏng:
+ * mọi khung bản đồ treo ở dòng "Đang tải bản đồ bầu trời…" cho tới khi người
+ * xem bỏ đi. Đây chính là lỗi đã bị báo.
+ *
+ * `aladin-lite` trên npm là gói CHÍNH CHỦ của CDS — kho `cds-astro/aladin-lite`,
+ * người phát hành là chính nhóm CDS. Không phải bản sao của bên thứ ba.
+ *
+ * ## Vì sao ghim 3.8.2 chứ không dùng `latest`
+ *
+ * `latest` trên npm đang là `3.9.0-beta`. Bản đồ bầu trời là tính năng nặng
+ * nhất site và API của Aladin có tiền lệ đổi giữa các bản (xem
+ * `src/types/aladin.ts`); nhận một bản beta tự động là mời một lượt hỏng mà
+ * không ai bấm nút nào. 3.8.2 là bản ổn định mới nhất.
+ *
+ * ## Đường lui
+ *
+ * Đặt `NEXT_PUBLIC_ALADIN_SCRIPT_URL` là quay lại được máy chủ CDS ngay, không
+ * cần sửa mã.
  */
 export const ALADIN_SCRIPT_URL =
   process.env.NEXT_PUBLIC_ALADIN_SCRIPT_URL ??
-  "https://aladin.cds.unistra.fr/AladinLite/api/v3/latest/aladin.js";
+  "https://cdn.jsdelivr.net/npm/aladin-lite@3.8.2/dist/aladin.js";
 
-/** Máy chủ phát cả script lẫn ô tile HiPS — đáng preconnect ở route dùng nó. */
+/**
+ * Máy chủ CDS — nơi Aladin xin ô tile HiPS và giải tên qua Sesame.
+ *
+ * Từ 2026-09-11 nó KHÔNG còn phát script nữa (xem `ALADIN_SCRIPT_URL`), nhưng
+ * vẫn đáng preconnect: mỗi khung bản đồ kéo hàng chục ô tile từ đây.
+ */
 export const ALADIN_ORIGIN = "https://aladin.cds.unistra.fr";
+
+/**
+ * Máy chủ phát chính tệp script, suy ra từ `ALADIN_SCRIPT_URL`.
+ *
+ * Tách khỏi `ALADIN_ORIGIN` vì từ 2026-09-11 hai thứ KHÔNG còn cùng một máy
+ * chủ: script lấy từ jsDelivr, còn ô tile HiPS vẫn từ CDS. Trang cần preconnect
+ * cả hai, và suy ra từ chính hằng số URL thì đổi nguồn script một chỗ là xong,
+ * không phải nhớ sửa thẻ preconnect ở chỗ khác.
+ */
+export const ALADIN_SCRIPT_ORIGIN = new URL(ALADIN_SCRIPT_URL).origin;
 
 export const DEFAULT_SURVEY = "P/DSS2/color";
 export const DEFAULT_FOV_DEG = 1.5;
@@ -87,12 +124,7 @@ export const SKY_SURVEYS: SkySurvey[] = [
 ];
 
 export type SkyObjectKind =
-  | "GALAXY"
-  | "NEBULA"
-  | "STAR"
-  | "CLUSTER"
-  | "BLACK_HOLE"
-  | "OTHER";
+  "GALAXY" | "NEBULA" | "STAR" | "CLUSTER" | "BLACK_HOLE" | "OTHER";
 
 /**
  * Cần gì để nhìn thấy thiên thể này.
@@ -105,7 +137,8 @@ export type SkyObjectKind =
  * thường ở nông thôn nhưng vô hình giữa Hà Nội, và khác biệt đó lớn tới mức
  * phải nói ra trong chú thích chứ không giấu vào một cái nhãn.
  */
-export type Visibility = "NAKED_EYE" | "BINOCULARS" | "SMALL_SCOPE" | "IMAGE_ONLY";
+export type Visibility =
+  "NAKED_EYE" | "BINOCULARS" | "SMALL_SCOPE" | "IMAGE_ONLY";
 
 export const VISIBILITY_LABELS: Record<
   Visibility,
@@ -299,12 +332,7 @@ export const SKY_TARGETS: SkyTarget[] = [
     catalogId: "Sgr A*",
     name: "Lỗ đen Sagittarius A*",
     nameEn: "Sagittarius A*",
-    aliases: [
-      "Sgr A*",
-      "Sagittarius A*",
-      "Sagittarius A star",
-      "Nhân Mã A*",
-    ],
+    aliases: ["Sgr A*", "Sagittarius A*", "Sagittarius A star", "Nhân Mã A*"],
     kind: "BLACK_HOLE",
     ra: "17 45 40.036",
     dec: "-29 00 28.17",

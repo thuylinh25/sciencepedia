@@ -18,7 +18,6 @@ import {
 } from "@/server/queries";
 
 import { Hero } from "@/components/home/hero";
-import { HeroPreviewCards } from "@/components/home/hero-preview-cards";
 import { InteractiveExplore } from "@/components/home/interactive-explore";
 import { HeroFields } from "@/components/home/hero-fields";
 import { AiQuestions } from "@/components/home/ai-questions";
@@ -98,13 +97,6 @@ export default async function HomePage({
       <Hero
         search={<SearchHeroForm locale={locale as Locale} />}
         fields={<HeroFields fields={categories} locale={locale as Locale} />}
-        previews={
-          <HeroPreviewCards
-            latest={latest[0] ?? null}
-            tag={chipTags[0] ?? null}
-            locale={locale as Locale}
-          />
-        }
       />
 
       {/* Ngay dưới hero, trên bài nổi bật: đây là câu trả lời cho "trang này

@@ -83,11 +83,7 @@
     "heroSearchCta": "Khám phá",
     "heroCategoriesLabel": "Bắt đầu từ một lĩnh vực",
     "seeAllArticles": "Xem tất cả bài viết",
-    "aiTryAsking": "Thử hỏi",
-    "previewLatest": "Bài mới nhất",
-    "previewModel": "Mô hình 3D",
-    "previewTopic": "Chủ đề đang quan tâm",
-    "previewTopicCount": "{count} bài"
+    "aiTryAsking": "Thử hỏi"
   },
   "article": {
     "readingTime": "{minutes} phút đọc",
@@ -506,6 +502,13 @@
         "cta": "Mở bản đồ",
         "metaA": "Ảnh bầu trời thật",
         "metaB": "18 điểm đến gợi ý"
+      },
+      "earthLive": {
+        "title": "Ảnh vệ tinh Trái Đất",
+        "body": "Bản đồ ảnh vệ tinh NASA GIBS: xem cả Trái Đất, hoặc phóng tới một khu vực để theo mây và bão.",
+        "cta": "Mở bản đồ",
+        "metaA": "Ảnh mỗi 10 phút",
+        "metaB": "35 khu vực tìm sẵn"
       }
     },
     "eyebrow": "Khám phá • Mô hình • Mô phỏng",

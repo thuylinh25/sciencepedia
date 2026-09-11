@@ -120,3 +120,35 @@ Bài cũng đổi slug trong cùng lượt: `hanh-trinh-vao-tam-trai-dat` → `c
 **`reviewedAt` phải đóng dấu lại, không được giữ.** Dấu 2026-09-06 chứng thực cho một văn bản đã bị thay từ 2026-09-08; giữ nguyên nó là để một byline nói sai. Byline vẫn là tài khoản tổ chức "Ban biên tập Sciencepedia", không bịa tên người.
 
 **Đĩa và CSDL đã lệch nhau hai ngày.** Bản sửa tay chỉ tồn tại trong CSDL; `docs/content/drafts/cau-truc-ben-trong-trai-dat.md` vẫn là bản pipeline 598 từ. Phép kiểm của `meta.yaml` cho bước 3 và bước 9 là `ls` file đó — nên phép kiểm trả kết quả xanh cho một nội dung không còn được phục vụ. Lượt này ghi cả ba chỗ: cột `content`, file draft, và một khối mới trong `meta.yaml`.
+
+## 2026-09-11 — hai lỗi S1 trong lô 9 bài không nguồn
+
+Lượt rà toàn kho ngày 2026-09-11 đo được **41/58 bài đã xuất bản ở `factCheck = PENDING`**, trong đó 9 bài không có một Source nào. `science-editor` thẩm định lô 9 bài đó: **9/9 REVISE**, tổng 36 phát hiện, trong đó **hai phát hiện mức S1 — cả hai nằm ở nội dung sức khoẻ**. Hai lỗi đó đã được đính chính ngay, tách khỏi 34 phát hiện S2/S3 còn lại.
+
+### S1 — `ruot-he-vi-sinh-vat-va-quyen-luc-cua-bo-nao-thu-hai`
+
+- Cũ: "Khoảng **95% serotonin** của cơ thể được sản xuất tại đường tiêu hóa, chỉ khoảng 5% được tạo ra trong não."
+- Mới: 90–95% serotonin nằm ở đường tiêu hoá, do tế bào ưa crôm ruột tiết ra, **không đi qua hàng rào máu–não**, không phải nguồn serotonin của não; trục ruột–não đi qua thần kinh phế vị, miễn dịch và nội tiết.
+- Căn cứ: Hwang YK và cộng sự, *Interaction of the Vagus Nerve and Serotonin in the Gut–Brain Axis*, Int J Mol Sci 2025;26(3):1160, [10.3390/ijms26031160](https://doi.org/10.3390/ijms26031160)
+- **Vì sao là S1 chứ không phải S2.** Bản thân con số không sai. Cái sai là mô hình nó dựng lên khi đứng cạnh mục "Kết nối chặt chẽ với cảm xúc" và mục hướng dẫn ăn sữa chua để "lập trình lại" hệ vi sinh: người đọc ghép ba thứ đó lại thành *serotonin của tâm trạng nằm ở ruột, nên ăn đúng thứ sẽ nâng nó lên*. Đó đúng là mô hình mà ngành thực phẩm chức năng đang bán, và nó có thể đổi hành vi.
+
+Kèm trong cùng lượt: số nơron hệ thần kinh ruột (400–600 triệu là ước lượng trích lại; phép đếm trực tiếp đầu tiên năm 2022 cho ~168 triệu — Michel K và cộng sự, Neurogastroenterol Motil 2022;34(12):e14440, [10.1111/nmo.14440](https://doi.org/10.1111/nmo.14440)); bỏ con số ngầm về tỉ lệ tín hiệu hướng tâm; thống nhất "hàng chục nghìn tỉ" vi sinh vật với hai bài còn lại trong kho.
+
+### S1 — `nhin-an-gian-doan-anh-huong-toi-he-vi-sinh-duong-ruot-nhu-the-nao`
+
+- Cũ: không có một dòng chống chỉ định nào.
+- Mới: thêm mục riêng **"Ai không nên nhịn ăn gián đoạn"** đặt trước phần Kết luận — mang thai và cho con bú, trẻ em, tiền sử rối loạn ăn uống, tiền sử hạ đường huyết nặng, người cao tuổi có nguy cơ thiểu cơ, và người đái tháo đường đang dùng thuốc hạ đường huyết.
+- **Vì sao là S1.** Bài không nói gì sai. Cái nó **im lặng** mới là thứ có thể gây hại: nó nằm ở chuyên mục dinh dưỡng, liệt kê bảy lợi ích, kết bằng mô tả hành vi ("ít ăn vặt hơn"), và có thể được đọc bởi đúng những người không nên làm theo.
+- Đặt thành **mục riêng có tiêu đề**, không nhét vào kết luận: chống chỉ định y tế phải gặp được khi lướt, mà một đoạn nằm lẫn trong kết luận thì người lướt không thấy.
+
+### Phán quyết kèm theo
+
+**Văn bản chèn vào là nguyên văn câu sửa của `science-editor`, không phải bản diễn đạt lại.** Gate accuracy thuộc về editor; một câu về chống chỉ định y tế do người khác viết lại thì không còn là câu đã qua gate.
+
+**`factCheck` vẫn để `PENDING` cho cả hai bài.** Lượt này chỉ đóng hai lỗi S1. Mỗi bài còn 3–4 phát hiện S2/S3 chưa áp, và cả hai vẫn chưa có Source nào gắn vào CSDL. Đặt `PASSED` lúc này là dán nhãn "đã thẩm định" lên một hàng còn dở — đúng thứ sai mà mục 2026-09-10 ở trên đã phán quyết.
+
+### Một mẫu lỗi cho cả kho, không riêng lô này
+
+Lỗi lặp nhiều nhất trong chín bài là **con số đúng gắn vào kết luận sai**: tốc độ kỷ lục của Parker Solar Probe quy thành thời gian bay tới Proxima (tàu ở quỹ đạo đóng, không bao giờ rời Hệ Mặt Trời); biên độ nhiệt vỏ trạm ISS gán cho thân người; "95% serotonin" ở trên. Cả ba đều qua được phép kiểm số học và phép kiểm link — **chỉ đọc nguồn mới bắt được**, đúng như mục Pollack 1996 đã ghi.
+
+Ba trong chín bài **không có phần kết** — một bài cụt hẳn giữa mục. Đó là dấu hiệu một lượt sinh bài bị cắt ngang chứ không phải lựa chọn biên tập, nên 32 bài PENDING còn lại đáng nghi mang cùng khuyết tật.
