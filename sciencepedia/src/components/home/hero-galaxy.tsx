@@ -192,6 +192,7 @@ export function HeroGalaxy({ locale }: { locale: string }) {
               showObjects: false,
               view: "free",
               tour: false,
+              scientific: false,
             }}
             onSelect={() => {}}
             locale={locale}

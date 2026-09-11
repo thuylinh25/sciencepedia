@@ -3,7 +3,6 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import dynamic from "next/dynamic";
 import { useLocale, useTranslations } from "next-intl";
-import Image from "next/image";
 import { ChevronDown, ChevronUp, ExternalLink, Loader2 } from "lucide-react";
 
 import { Link } from "@/i18n/navigation";
@@ -27,10 +26,6 @@ const SolarScene = dynamic(
 );
 const GlobeScene = dynamic(
   () => import("@/components/solar/globe-scene").then((m) => m.GlobeScene),
-  { ssr: false },
-);
-const HumanScene = dynamic(
-  () => import("@/components/human/human-scene").then((m) => m.HumanScene),
   { ssr: false },
 );
 
@@ -58,23 +53,6 @@ function LevelScene({
 }) {
   const earth = PLANETS.find((planet) => planet.id === "earth");
 
-  // Cấp không có mô hình 3D thì minh hoạ bằng ảnh, kèm ghi chú đó là ảnh
-  if (level.image) {
-    return (
-      <div className="relative h-full w-full">
-        <Image
-          src={level.image.src}
-          alt=""
-          fill
-          sizes="100vw"
-          className="object-cover"
-        />
-        <span className="absolute right-3 bottom-3 rounded-full bg-black/60 px-2.5 py-1 text-[10px] text-white/70 backdrop-blur">
-          {locale === "en" ? level.image.creditEn : level.image.creditVi}
-        </span>
-      </div>
-    );
-  }
 
   switch (level.id) {
     case "universe":
@@ -102,6 +80,7 @@ function LevelScene({
             showObjects: false,
             view: "free",
             tour: false,
+            scientific: false,
           }}
           onSelect={() => {}}
           locale={locale}
@@ -125,18 +104,6 @@ function LevelScene({
         />
       );
     case "earth":
-    case "continent":
-      /*
-       * Cùng quả cầu, khác chỗ đứng camera.
-       *
-       * 1,9 bán kính là con số suy từ chính tỉ lệ của cấp này: với fov 42°,
-       * khung nhìn cắt ngang bề mặt đúng khoảng 5.000 km — bằng bề ngang một
-       * châu lục. Khung rộng hơn cao nên đường chân trời cong vẫn lọt vào hai
-       * mép trái phải, nhờ đó vẫn thấy đây là một mảng vỏ trên quả cầu chứ
-       * không phải một tấm bản đồ phẳng. Đứng gần hơn (1,25 như trước) thì
-       * khung chỉ còn bao khoảng 1.200 km, mất hẳn độ cong và lệch tỉ lệ ghi
-       * trong thẻ.
-       */
       return earth ? (
         <GlobeScene
           body={{
@@ -145,11 +112,9 @@ function LevelScene({
             axialTilt: earth.axialTilt,
           }}
           spinning
-          distance={level.id === "continent" ? 1.9 : 3.2}
+          distance={3.2}
         />
       ) : null;
-    case "human":
-      return <HumanScene locale={locale} />;
     default:
       return null;
   }

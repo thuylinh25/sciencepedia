@@ -337,7 +337,17 @@
     "dashStars": "Stars",
     "dashPlanets": "Planets",
     "billion": "billion",
-    "trillion": "trillion"
+    "trillion": "trillion",
+    "scientificMode": "Scientific mode",
+    "orbitTitle": "The Solar System's orbit",
+    "orbitBody": "The Solar System does not travel on a fixed plane. As it circles the centre of the Milky Way, the gravity of the galactic disc pulls it back and forth through that disc, so its real path is a three-dimensional wave.",
+    "orbitRadius": "Orbital radius",
+    "orbitPeriod": "One lap of the galaxy",
+    "orbitAmplitude": "Oscillation amplitude",
+    "orbitVerticalPeriod": "Vertical period",
+    "orbitExaggeration": "Vertical axis exaggerated",
+    "orbitNotClosed": "The ratio between the two periods is not a whole number, so the real orbit never closes: each lap returns the Sun to the same radius but a different point in its oscillation. The path drawn here rounds that to four oscillations per lap so it can close.",
+    "millionYears": "million years"
   },
   "universe": {
     "title": "The Universe",
@@ -368,7 +378,7 @@
   },
   "zoom": {
     "title": "The zoom journey",
-    "subtitle": "Seven levels, from the observable universe down to a human being",
+    "subtitle": "Four levels, from the observable universe down to Earth",
     "levelOf": "Level {step} of {total}",
     "zoomIn": "Zoom in",
     "zoomOut": "Zoom out",

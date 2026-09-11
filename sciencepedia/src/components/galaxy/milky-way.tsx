@@ -12,6 +12,10 @@ import {
   GALAXY_OBJECTS,
   SUN_LY_FROM_CENTRE,
   TOUR_STOPS,
+  SUN_ORBIT_PERIOD_MYR,
+  SUN_VERTICAL_AMPLITUDE_LY,
+  VERTICAL_CYCLES_PER_LAP,
+  VERTICAL_EXAGGERATION,
 } from "@/lib/galaxy-data";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -84,6 +88,7 @@ export function MilkyWay() {
     showObjects: true,
     view: "free",
     tour: false,
+    scientific: false,
   });
   const [tourStep, setTourStep] = useState(0);
   // Đổi key để dựng lại Canvas — vừa để đặt lại góc nhìn, vừa để đổi vị trí
@@ -277,6 +282,19 @@ export function MilkyWay() {
             {t("showSun")}
           </Label>
         </div>
+        <div className="flex items-center gap-2">
+          <Switch
+            id="galaxy-scientific"
+            checked={settings.scientific}
+            onCheckedChange={(value) => update("scientific", value)}
+          />
+          <Label
+            htmlFor="galaxy-scientific"
+            className="text-xs text-muted-foreground"
+          >
+            {t("scientificMode")}
+          </Label>
+        </div>
         <div className="flex items-center gap-1 rounded-full border bg-muted/40 p-0.5">
           {(["top", "side", "free"] as const).map((view) => (
             <button
@@ -354,6 +372,58 @@ export function MilkyWay() {
           </dd>
         </div>
       </dl>
+
+      {/* ------------------------------------ Số liệu quỹ đạo, chế độ khoa học
+          Hệ số phóng đại nằm NGAY CẠNH biên độ chứ không nằm trong một chú
+          thích cuối trang. Một con số đã bị phóng đại mà người đọc phải đi tìm
+          mới biết là đã phóng đại thì tốt hơn hết là đừng hiện. */}
+      {settings.scientific && (
+        <section className="mt-4 rounded-2xl border bg-muted/30 p-4">
+          <h3 className="font-display text-sm font-semibold">
+            {t("orbitTitle")}
+          </h3>
+          <p className="mt-2 max-w-3xl text-xs leading-relaxed text-muted-foreground">
+            {t("orbitBody")}
+          </p>
+
+          <dl className="mt-3 grid gap-x-8 gap-y-2 text-xs sm:grid-cols-2 lg:grid-cols-4">
+            <div className="flex items-baseline justify-between gap-3 border-b py-1.5">
+              <dt className="text-muted-foreground">{t("orbitRadius")}</dt>
+              <dd className="font-mono font-medium">
+                {SUN_LY_FROM_CENTRE.toLocaleString(locale)} {t("lightYears")}
+              </dd>
+            </div>
+            <div className="flex items-baseline justify-between gap-3 border-b py-1.5">
+              <dt className="text-muted-foreground">{t("orbitPeriod")}</dt>
+              <dd className="font-mono font-medium">
+                ~{SUN_ORBIT_PERIOD_MYR} {t("millionYears")}
+              </dd>
+            </div>
+            <div className="flex items-baseline justify-between gap-3 border-b py-1.5">
+              <dt className="text-muted-foreground">{t("orbitAmplitude")}</dt>
+              <dd className="font-mono font-medium">
+                ±{SUN_VERTICAL_AMPLITUDE_LY} {t("lightYears")}
+              </dd>
+            </div>
+            <div className="flex items-baseline justify-between gap-3 border-b py-1.5">
+              <dt className="text-muted-foreground">
+                {t("orbitVerticalPeriod")}
+              </dt>
+              <dd className="font-mono font-medium">
+                ~{Math.round(SUN_ORBIT_PERIOD_MYR / VERTICAL_CYCLES_PER_LAP)}{" "}
+                {t("millionYears")}
+              </dd>
+            </div>
+          </dl>
+
+          <p className="mt-3 text-xs leading-relaxed text-amber-600 dark:text-amber-400">
+            {t("orbitExaggeration")}: ×{VERTICAL_EXAGGERATION}
+          </p>
+          <p className="mt-1.5 max-w-3xl text-xs leading-relaxed text-muted-foreground">
+            {t("orbitNotClosed")}
+          </p>
+        </section>
+      )}
 
       {/* ------------------------------------------------ Số liệu */}
       <section className="mt-8">

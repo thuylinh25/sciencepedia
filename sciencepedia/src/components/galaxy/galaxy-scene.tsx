@@ -16,6 +16,8 @@ import {
   GALAXY_FEATURES,
   GALAXY_OBJECTS,
   SUN_RADIUS_UNITS,
+  SUN_VERTICAL_UNITS,
+  sunOrbitHeight,
   TOUR_STOPS,
   galacticToScene,
 } from "@/lib/galaxy-data";
@@ -31,6 +33,11 @@ export type GalaxySettings = {
   view: CameraView;
   /** Chuyến bay tự động qua các chặng trong TOUR_STOPS */
   tour: boolean;
+  /**
+   * Chế độ khoa học: thêm mặt phẳng thiên hà, hai mặt biên độ dao động và
+   * các con số kèm hệ số phóng đại đang dùng.
+   */
+  scientific: boolean;
 };
 
 /**
@@ -370,7 +377,11 @@ function Galaxy({
 
       {settings.showSun && sun && (
         <>
-          <SunOrbit playing={settings.playing} speed={settings.speed} />
+          <SunOrbit
+            playing={settings.playing}
+            speed={settings.speed}
+            scientific={settings.scientific}
+          />
           <SunMarker sprite={sprite} onSelect={onSelect} />
         </>
       )}
@@ -481,137 +492,229 @@ const ORBIT_COLOR = "#ffb347";
 /** Bề rộng vành quỹ đạo trong không gian cảnh — 0,035 đơn vị ≈ 175 năm ánh sáng. */
 const ORBIT_WIDTH = 0.035;
 
-/** Cung sáng chạy dọc quỹ đạo dài bao nhiêu phần của vòng tròn. */
-const ORBIT_ARC = Math.PI * 0.36;
-
 /**
- * Cung sáng đậm ở đầu, tắt dần về đuôi — một vệt sao chổi ôm theo quỹ đạo.
+ * Quỹ đạo Mặt Trời quanh tâm Ngân Hà — một đường xoắn ba chiều, không phải
+ * một vòng tròn phẳng.
  *
- * Dựng tay thay vì cắt `ringGeometry` bằng `thetaLength`: cung cắt sẵn sáng
- * đều rồi đứt cụt ở hai đầu, trông như lỗi vẽ chứ không ra chuyển động. Có
- * đuôi mờ thì người xem đọc ra ngay Mặt Trời đang đi về phía nào.
+ * ## Vì sao không còn là vòng tròn
  *
- * Đuôi tắt bằng cách hạ **màu đỉnh về đen** chứ không hạ alpha: vật liệu này
- * cộng dồn (additive), mà cộng thêm màu đen thì bằng không cộng gì — nên đen
- * chính là trong suốt, và không cần thuộc tính alpha theo đỉnh.
+ * Đĩa thiên hà kéo Mặt Trời về mặt phẳng của nó mỗi khi Mặt Trời trôi lên hay
+ * xuống, nên chuyển động thật là vòng quanh tâm CỘNG dao động lên xuống xuyên
+ * qua đĩa. Vẽ thành vòng tròn phẳng là dạy sai một điều mà chính mô hình này
+ * sinh ra để dạy đúng.
+ *
+ * ## Vì sao là ống chứ không phải đường kẻ
+ *
+ * WebGL ghim `linewidth` ở 1 pixel trên gần như mọi trình duyệt, nên `<line>`
+ * vừa mảnh như sợi tóc vừa không dày lên khi phóng to — bay vào trong đĩa thì
+ * nó biến mất. `TubeGeometry` có bề dày thật trong không gian cảnh nên co giãn
+ * cùng thiên hà.
+ *
+ * ## Chiều sâu đọc bằng màu
+ *
+ * Màu đỉnh chạy theo độ cao: đoạn nằm trên mặt phẳng ngả vàng ấm, đoạn nằm
+ * dưới ngả lam lạnh, chỗ cắt qua mặt phẳng thì nhạt nhất. Nhờ vậy nhìn từ trên
+ * xuống — góc mà mọi độ cao chồng lên nhau — vẫn đọc được đoạn nào đang ở trên,
+ * đoạn nào đang ở dưới.
  */
-function useOrbitArcGeometry(inner: number, outer: number) {
-  return useMemo(() => {
-    const segments = 120;
-    const position = new Float32Array((segments + 1) * 2 * 3);
-    const color = new Float32Array((segments + 1) * 2 * 3);
-    const index: number[] = [];
-    const head = new THREE.Color(ORBIT_COLOR);
+function SunOrbit({
+  playing,
+  speed,
+  scientific,
+}: {
+  playing: boolean;
+  speed: number;
+  /** Hiện thêm mặt phẳng thiên hà và hai mặt biên độ */
+  scientific: boolean;
+}) {
+  const head = useRef<THREE.Group>(null);
+  const trail = useRef<THREE.Group>(null);
 
-    for (let i = 0; i <= segments; i += 1) {
-      const t = i / segments; // 0 = đuôi, 1 = đầu
-      const angle = ORBIT_ARC * t;
-      const cos = Math.cos(angle);
-      const sin = Math.sin(angle);
-      const fade = Math.pow(t, 2.4);
-
-      for (let edge = 0; edge < 2; edge += 1) {
-        const radius = edge === 0 ? inner : outer;
-        const v = (i * 2 + edge) * 3;
-        position[v] = cos * radius;
-        position[v + 1] = sin * radius;
-        position[v + 2] = 0;
-        color[v] = head.r * fade;
-        color[v + 1] = head.g * fade;
-        color[v + 2] = head.b * fade;
-      }
-
-      if (i < segments) {
-        const a = i * 2;
-        index.push(a, a + 1, a + 2, a + 1, a + 3, a + 2);
-      }
+  /** Đường xoắn: bán kính không đổi, độ cao theo hàm sin của góc. */
+  const curve = useMemo(() => {
+    const points: THREE.Vector3[] = [];
+    const steps = 480;
+    for (let i = 0; i < steps; i += 1) {
+      const angle = (i / steps) * Math.PI * 2;
+      points.push(
+        new THREE.Vector3(
+          Math.cos(angle) * SUN_RADIUS_UNITS,
+          sunOrbitHeight(angle),
+          Math.sin(angle) * SUN_RADIUS_UNITS,
+        ),
+      );
     }
+    return new THREE.CatmullRomCurve3(points, true, "centripetal");
+  }, []);
 
-    const geometry = new THREE.BufferGeometry();
-    geometry.setAttribute("position", new THREE.BufferAttribute(position, 3));
-    geometry.setAttribute("color", new THREE.BufferAttribute(color, 3));
-    geometry.setIndex(index);
-    return geometry;
-  }, [inner, outer]);
-}
+  const geometry = useMemo(() => {
+    const tube = new THREE.TubeGeometry(curve, 480, ORBIT_WIDTH / 2, 8, true);
 
-/**
- * Quỹ đạo Mặt Trời quanh tâm Ngân Hà — một vòng tròn nằm trong mặt phẳng đĩa,
- * bán kính 26.670 năm ánh sáng, đi hết một vòng mất ~230 triệu năm.
- *
- * Vẽ bằng vành mỏng (`ringGeometry`) chứ không bằng `<line>`: WebGL ghim
- * `linewidth` ở 1 pixel trên gần như mọi trình duyệt, nên đường kẻ vừa mảnh
- * như sợi tóc vừa không dày lên khi phóng to — tới lúc bay vào trong đĩa thì
- * nó biến mất. Vành có bề rộng thật trong không gian cảnh nên co giãn cùng
- * thiên hà, và khi nhìn nghiêng thì tự hiện thành hình elip.
- *
- * Ba lớp chồng nhau: quầng rộng mờ cho đường kẻ một viền sáng thay vì mép răng
- * cưa, vành chính giữ nét, cung sáng chạy vòng chỉ chiều chuyển động.
- */
-function SunOrbit({ playing, speed }: { playing: boolean; speed: number }) {
-  const arc = useRef<THREE.Group>(null);
+    /*
+     * Tô màu theo độ cao của từng đỉnh. Vật liệu cộng dồn nên "mờ đi" nghĩa là
+     * kéo màu về đen, không phải hạ alpha — xem chú thích ở `useOrbitArcGeometry`.
+     */
+    const position = tube.getAttribute("position");
+    const colors = new Float32Array(position.count * 3);
+    const above = new THREE.Color(ORBIT_COLOR);
+    const below = new THREE.Color("#5eb3ff");
+    const mid = new THREE.Color("#cfd8e3");
+    const scratch = new THREE.Color();
 
-  const inner = SUN_RADIUS_UNITS - ORBIT_WIDTH / 2;
-  const outer = SUN_RADIUS_UNITS + ORBIT_WIDTH / 2;
-  const arcGeometry = useOrbitArcGeometry(inner, outer);
+    for (let i = 0; i < position.count; i += 1) {
+      const t = THREE.MathUtils.clamp(
+        position.getY(i) / SUN_VERTICAL_UNITS,
+        -1,
+        1,
+      );
+      scratch.copy(mid).lerp(t >= 0 ? above : below, Math.abs(t));
+      colors[i * 3] = scratch.r;
+      colors[i * 3 + 1] = scratch.g;
+      colors[i * 3 + 2] = scratch.b;
+    }
+    tube.setAttribute("color", new THREE.BufferAttribute(colors, 3));
+    return tube;
+  }, [curve]);
+
+  const glowGeometry = useMemo(
+    () => new THREE.TubeGeometry(curve, 240, ORBIT_WIDTH * 2.2, 8, true),
+    [curve],
+  );
+
+  /*
+   * Vệt sáng chạy: một chấm đầu cộng một chuỗi chấm mờ dần phía sau.
+   *
+   * Bản cũ quay cả một cung cắt sẵn quanh trục y, làm được vì vòng tròn phẳng
+   * đối xứng quay hoàn toàn. Đường xoắn thì không: quay nó đi một góc bất kỳ
+   * là nó rời khỏi chính mình. Nên vệt sáng phải đi DỌC đường cong, và cách rẻ
+   * nhất là dời vị trí của vài chục chấm mỗi khung hình thay vì dựng lại hình
+   * học.
+   */
+  const progress = useRef(0);
+  const beads = useMemo(
+    () => Array.from({ length: TRAIL_BEADS }, (_, i) => i / TRAIL_BEADS),
+    [],
+  );
 
   useFrame((_, delta) => {
-    if (!arc.current || !playing) return;
-    /*
-     * Quay quanh trục z CỤC BỘ. Nhóm cha đã nghiêng -90° quanh x để nằm vào
-     * mặt phẳng đĩa, nên z cục bộ trỏ đúng theo +y của thế giới — cùng trục
-     * mà cả thiên hà đang quay quanh. Dấu trừ để cung đi cùng chiều với đĩa
-     * thay vì bơi ngược dòng sao.
-     */
-    arc.current.rotation.z -= delta * 0.3 * speed;
+    if (playing) {
+      // 0,048 vòng mỗi giây: một vòng khoảng 21 giây ở tốc độ 1×
+      progress.current = (progress.current + delta * 0.048 * speed) % 1;
+    }
+    const t = progress.current;
+
+    if (head.current) curve.getPointAt(t, head.current.position);
+
+    if (trail.current) {
+      trail.current.children.forEach((bead, i) => {
+        const offset = (t - beads[i] * TRAIL_SPAN + 1) % 1;
+        curve.getPointAt(offset, bead.position);
+      });
+    }
   });
 
   return (
-    <group rotation={[-Math.PI / 2, 0, 0]}>
-      <mesh>
-        <ringGeometry
-          args={[
-            SUN_RADIUS_UNITS - ORBIT_WIDTH * 4,
-            SUN_RADIUS_UNITS + ORBIT_WIDTH * 4,
-            240,
-          ]}
-        />
+    <group>
+      {/* Quầng rộng mờ: cho đường một viền sáng thay vì mép răng cưa */}
+      <mesh geometry={glowGeometry}>
         <meshBasicMaterial
           color={ORBIT_COLOR}
           transparent
-          opacity={0.09}
-          side={THREE.DoubleSide}
+          opacity={0.07}
           depthWrite={false}
           blending={THREE.AdditiveBlending}
         />
       </mesh>
 
-      <mesh>
-        <ringGeometry args={[inner, outer, 240]} />
+      <mesh geometry={geometry}>
         <meshBasicMaterial
-          color={ORBIT_COLOR}
+          vertexColors
           transparent
-          opacity={0.7}
-          side={THREE.DoubleSide}
+          opacity={0.8}
           depthWrite={false}
           blending={THREE.AdditiveBlending}
           toneMapped={false}
         />
       </mesh>
 
-      <group ref={arc}>
-        <mesh geometry={arcGeometry}>
-          <meshBasicMaterial
-            vertexColors
-            transparent
-            opacity={0.95}
-            side={THREE.DoubleSide}
-            depthWrite={false}
-            blending={THREE.AdditiveBlending}
-            toneMapped={false}
-          />
+      <group ref={trail}>
+        {beads.map((fraction, i) => (
+          <mesh key={fraction}>
+            <sphereGeometry args={[ORBIT_WIDTH * 0.9, 8, 8]} />
+            <meshBasicMaterial
+              color={ORBIT_COLOR}
+              transparent
+              opacity={0.5 * (1 - i / TRAIL_BEADS)}
+              depthWrite={false}
+              blending={THREE.AdditiveBlending}
+              toneMapped={false}
+            />
+          </mesh>
+        ))}
+      </group>
+
+      <group ref={head}>
+        <mesh>
+          <sphereGeometry args={[ORBIT_WIDTH * 1.6, 12, 12]} />
+          <meshBasicMaterial color="#fff2cc" toneMapped={false} />
         </mesh>
       </group>
+
+      {scientific && <GalacticPlane />}
+    </group>
+  );
+}
+
+/** Số chấm trong vệt sáng đuổi theo chấm đầu. */
+const TRAIL_BEADS = 26;
+
+/** Vệt sáng dài bao nhiêu phần của cả vòng. */
+const TRAIL_SPAN = 0.16;
+
+/**
+ * Mặt phẳng thiên hà và hai mặt biên độ — chỉ hiện ở chế độ khoa học.
+ *
+ * Không có một mặt phẳng để so, đường xoắn chỉ là một đường cong đẹp; người
+ * xem không có gì để biết nó đang dao động QUANH cái gì. Ba vòng tròn mảnh
+ * đồng tâm ở ba độ cao làm đúng việc đó, rẻ hơn nhiều so với một mặt phẳng
+ * trong suốt phủ kín đĩa.
+ */
+function GalacticPlane() {
+  const radii = useMemo(
+    () => [0.45, 0.7, 1, 1.25].map((k) => SUN_RADIUS_UNITS * k),
+    [],
+  );
+
+  return (
+    <group>
+      {radii.map((radius) => (
+        <mesh key={radius} rotation={[-Math.PI / 2, 0, 0]}>
+          <ringGeometry args={[radius - 0.006, radius + 0.006, 160]} />
+          <meshBasicMaterial
+            color="#7dd3fc"
+            transparent
+            opacity={radius === SUN_RADIUS_UNITS ? 0.35 : 0.12}
+            side={THREE.DoubleSide}
+            depthWrite={false}
+          />
+        </mesh>
+      ))}
+
+      {/* Hai mặt biên độ: đỉnh trên và đáy dưới của dao động */}
+      {[SUN_VERTICAL_UNITS, -SUN_VERTICAL_UNITS].map((y) => (
+        <mesh key={y} position={[0, y, 0]} rotation={[-Math.PI / 2, 0, 0]}>
+          <ringGeometry
+            args={[SUN_RADIUS_UNITS - 0.004, SUN_RADIUS_UNITS + 0.004, 160]}
+          />
+          <meshBasicMaterial
+            color="#f9a8d4"
+            transparent
+            opacity={0.3}
+            side={THREE.DoubleSide}
+            depthWrite={false}
+          />
+        </mesh>
+      ))}
     </group>
   );
 }
@@ -651,9 +754,11 @@ function SunMarker({
 
   const x = Math.cos(sun.angle) * SUN_RADIUS_UNITS;
   const z = Math.sin(sun.angle) * SUN_RADIUS_UNITS;
+  // Cùng một hàm với đường quỹ đạo, nếu không chấm sáng sẽ nằm lệch khỏi đường
+  const y = sunOrbitHeight(sun.angle);
 
   return (
-    <group position={[x, 0, z]}>
+    <group position={[x, y, z]}>
       {/* Đường dẫn từ nhãn xuống đúng vị trí trong đĩa */}
       <mesh position={[0, LABEL_HEIGHT / 2, 0]}>
         <cylinderGeometry args={[0.012, 0.012, LABEL_HEIGHT, 6]} />

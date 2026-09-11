@@ -34,6 +34,70 @@ export const SUN_RADIUS_UNITS = SUN_LY_FROM_CENTRE / LY_PER_UNIT;
 /** Góc đặt Mặt Trời trên đĩa trong cảnh, radian. */
 export const SUN_ANGLE = Math.PI * 0.32;
 
+// ------------------------------------------- Quỹ đạo Mặt Trời quanh tâm Ngân Hà
+
+/** Một vòng quanh tâm thiên hà, triệu năm. */
+export const SUN_ORBIT_PERIOD_MYR = 230;
+
+/**
+ * Biên độ dao động vuông góc với mặt phẳng đĩa, tính bằng năm ánh sáng.
+ *
+ * Các phép đo cho khoảng 70–100 parsec, tức 230–330 năm ánh sáng; lấy 280 là
+ * giữa dải đó. Đơn vị ở đây là chỗ rất dễ sai: 70–100 là PARSEC, không phải
+ * năm ánh sáng, và nhầm hai đơn vị này là nhầm hơn ba lần.
+ *
+ * Hiện Mặt Trời ở khoảng 20 parsec phía bắc mặt phẳng và đang đi lên.
+ */
+export const SUN_VERTICAL_AMPLITUDE_LY = 280;
+
+/**
+ * Số lần lên xuống trong một vòng quanh tâm.
+ *
+ * Chu kỳ dao động đứng đo được vào khoảng 60–70 triệu năm, chia cho 230 triệu
+ * năm một vòng thì ra chừng 3,3–3,8 lần. Vẽ thì lấy 4 — số nguyên, để đường
+ * cong khép lại đúng chỗ nó bắt đầu.
+ *
+ * Cái giá của việc làm tròn phải nói ra: tỉ số thật KHÔNG nguyên, nên quỹ đạo
+ * thật không khép kín. Sau mỗi vòng, Mặt Trời trở lại cùng bán kính nhưng ở
+ * một pha dao động khác, và đường đi thật là một hoa thị chứ không phải một
+ * vòng lặp. Nhãn trong chế độ khoa học nói đúng điều này.
+ */
+export const VERTICAL_CYCLES_PER_LAP = 4;
+
+/**
+ * Hệ số phóng đại trục đứng khi vẽ.
+ *
+ * Biên độ thật 280 năm ánh sáng so với bán kính quỹ đạo 26.670 năm ánh sáng
+ * là 1%. Vẽ đúng tỉ lệ thì sóng cao chừng vài pixel trên màn hình — người xem
+ * chỉ thấy một vòng tròn, tức là đúng cái hiểu sai mà mô hình này sinh ra để
+ * sửa. Nên phải phóng đại, và phải ghi rõ đã phóng đại bao nhiêu.
+ *
+ * Trần của hệ số là chỗ Mặt Trời bắt đầu trông như nhô ra khỏi đĩa — đổi một
+ * hiểu sai lấy một hiểu sai tệ hơn. Trần đó đo được từ chính cách rải sao:
+ * `DISK_THICKNESS` không phải bề dày mà là hệ số nhân cho `gaussian()`, hàm
+ * trả giá trị trong [-1, 1] với độ lệch chuẩn 1/3. Tại bán kính Mặt Trời, đám
+ * sao có σ khoảng 400 năm ánh sáng và chạm trần ở khoảng 1.200.
+ *
+ * Nhân 3 cho biên độ 840 năm ánh sáng, tức 2,1σ — vẫn nằm trong đĩa, tuy đã ở
+ * phần thưa phía ngoài. Nhân 4 là vượt trần và Mặt Trời sẽ bay ra ngoài đám
+ * sao ở mỗi đỉnh sóng.
+ */
+export const VERTICAL_EXAGGERATION = 3;
+
+/** Biên độ đã phóng đại, quy ra đơn vị cảnh. */
+export const SUN_VERTICAL_UNITS =
+  (SUN_VERTICAL_AMPLITUDE_LY * VERTICAL_EXAGGERATION) / LY_PER_UNIT;
+
+/**
+ * Độ cao của Mặt Trời trên quỹ đạo tại một góc cho trước, đơn vị cảnh.
+ *
+ * Dùng chung cho cả đường quỹ đạo lẫn chấm đánh dấu Mặt Trời — hai thứ đó mà
+ * tính riêng thì chỉ cần lệch một dấu là chấm sáng rời khỏi đường của nó.
+ */
+export function sunOrbitHeight(angle: number): number {
+  return Math.sin(angle * VERTICAL_CYCLES_PER_LAP) * SUN_VERTICAL_UNITS;
+}
+
 
 /** Đĩa mỏng đến mức nào: 1.000 năm ánh sáng bề dày trên 105.000 đường kính. */
 export const DISK_THICKNESS = 1_000 / LY_PER_UNIT;

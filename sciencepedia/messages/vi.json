@@ -337,7 +337,17 @@
     "dashStars": "Ngôi sao",
     "dashPlanets": "Hành tinh",
     "billion": "tỉ",
-    "trillion": "nghìn tỉ"
+    "trillion": "nghìn tỉ",
+    "scientificMode": "Chế độ khoa học",
+    "orbitTitle": "Quỹ đạo của Hệ Mặt Trời",
+    "orbitBody": "Hệ Mặt Trời không di chuyển trên một mặt phẳng cố định. Trong quá trình quay quanh tâm Dải Ngân Hà, nó dao động lên xuống qua mặt phẳng thiên hà dưới tác động hấp dẫn của đĩa thiên hà, tạo nên quỹ đạo ba chiều dạng sóng.",
+    "orbitRadius": "Bán kính quỹ đạo",
+    "orbitPeriod": "Một vòng quanh tâm",
+    "orbitAmplitude": "Biên độ dao động",
+    "orbitVerticalPeriod": "Chu kỳ lên xuống",
+    "orbitExaggeration": "Trục đứng đã phóng đại",
+    "orbitNotClosed": "Tỉ số giữa hai chu kỳ không phải số nguyên, nên quỹ đạo thật không khép kín: mỗi vòng Mặt Trời trở lại cùng bán kính nhưng ở một pha dao động khác. Đường vẽ ở đây làm tròn thành 4 lần lên xuống mỗi vòng để khép lại được.",
+    "millionYears": "triệu năm"
   },
   "universe": {
     "title": "Vũ trụ",
@@ -368,7 +378,7 @@
   },
   "zoom": {
     "title": "Hành trình thu phóng",
-    "subtitle": "Bảy cấp, từ vũ trụ quan sát được xuống tới con người",
+    "subtitle": "Bốn cấp, từ vũ trụ quan sát được xuống tới Trái Đất",
     "levelOf": "Cấp {step}/{total}",
     "zoomIn": "Thu vào",
     "zoomOut": "Lùi ra",
