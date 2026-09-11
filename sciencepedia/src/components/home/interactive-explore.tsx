@@ -10,11 +10,11 @@ import { StaggerGroup, StaggerItem } from "@/components/motion/reveal";
  *
  * ## Vì sao nó tồn tại
  *
- * Trang chủ trước đây chỉ có một nút dẫn tới Hệ Mặt Trời 3D. Bốn công cụ
- * tương tác còn lại — Ngân Hà, Vũ trụ, hành trình thu phóng, bản đồ bầu trời
- * — chỉ nằm trong menu thả xuống của thanh điều hướng, tức là chỉ ai đã biết
- * chúng tồn tại mới tìm ra. Người vào lần đầu kết luận đây là một trang đọc
- * bài có kèm một mô hình 3D.
+ * Trang chủ trước đây chỉ có một nút dẫn tới Hệ Mặt Trời 3D. Năm công cụ
+ * tương tác còn lại — Ngân Hà, Vũ trụ, hành trình thu phóng, bản đồ bầu trời,
+ * Trái Đất thời gian thực — chỉ nằm trong menu thả xuống của thanh điều
+ * hướng, tức là chỉ ai đã biết chúng tồn tại mới tìm ra. Người vào lần đầu
+ * kết luận đây là một trang đọc bài có kèm một mô hình 3D.
  *
  * ## Vì sao là Server Component
  *
@@ -40,7 +40,24 @@ type ExploreCard = {
   credit: string;
 };
 
+/*
+ * Thứ tự là thứ tự ưu tiên giới thiệu, không phải thứ tự quy mô.
+ *
+ * Hành trình thu phóng đứng đầu vì nó là thứ duy nhất giải thích được cả năm
+ * cái kia: đi qua nó một lượt là hiểu các mô hình kia đang ở bậc nào. Hệ
+ * Mặt Trời thứ hai vì quen nhất. Trái Đất thời gian thực thứ ba vì nó là thứ
+ * duy nhất đổi mỗi ngày. Ngân Hà và Vũ trụ xuống cuối không phải vì kém quan
+ * trọng mà vì trừu tượng nhất — người vào lần đầu cần một chỗ bám trước đã.
+ */
 const CARDS: ExploreCard[] = [
+  {
+    id: "zoom",
+    href: "/zoom",
+    image: "/images/explore/zoom.jpg",
+    emoji: "🔍",
+    accent: "#38bdf8",
+    credit: "NASA / Apollo 17",
+  },
   {
     id: "solarSystem",
     href: "/solar-system",
@@ -48,6 +65,22 @@ const CARDS: ExploreCard[] = [
     emoji: "☀️",
     accent: "#f59e0b",
     credit: "NASA",
+  },
+  {
+    id: "earthLive",
+    href: "/earth-live",
+    image: "/images/explore/earth-live.jpg",
+    emoji: "🌍",
+    accent: "#34d399",
+    credit: "NASA EPIC / DSCOVR",
+  },
+  {
+    id: "skyMap",
+    href: "/space-map",
+    image: "/images/explore/sky-map.jpg",
+    emoji: "⭐",
+    accent: "#2dd4bf",
+    credit: "ESO/B. Tafreshi (CC BY 4.0)",
   },
   {
     id: "milkyWay",
@@ -65,32 +98,15 @@ const CARDS: ExploreCard[] = [
     accent: "#c084fc",
     credit: "NASA/ESA",
   },
-  {
-    id: "zoom",
-    href: "/zoom",
-    image: "/images/explore/zoom.jpg",
-    emoji: "🔍",
-    accent: "#38bdf8",
-    credit: "NASA / Apollo 17",
-  },
-  {
-    id: "skyMap",
-    href: "/space-map",
-    image: "/images/explore/sky-map.jpg",
-    emoji: "⭐",
-    accent: "#2dd4bf",
-    credit: "ESO/B. Tafreshi (CC BY 4.0)",
-  },
 ];
 
-/**
- * Ba card hàng trên, hai card hàng dưới trên màn hình lớn.
+/*
+ * Lưới 3 cột, sáu card chia ba–ba trên màn hình lớn.
  *
- * Lưới 6 cột: hàng trên mỗi card chiếm 2 cột, hàng dưới mỗi card chiếm 3.
- * Cách này cho đúng bố cục 3–2 mà không phải tách thành hai lưới rời, nên
- * khoảng cách giữa hai hàng vẫn do `gap` lo và luôn bằng nhau.
+ * Lúc còn năm card thì bố cục phải là 3–2, cần một lưới 6 cột với span riêng
+ * cho hai card hàng dưới để không chừa một ô trống. Sáu card thì chia đều,
+ * nên span biến mất và mọi card có cùng bề rộng.
  */
-const SPAN = ["lg:col-span-2", "lg:col-span-2", "lg:col-span-2", "lg:col-span-3", "lg:col-span-3"];
 
 export async function InteractiveExplore() {
   const t = await getTranslations("explore");
@@ -106,9 +122,9 @@ export async function InteractiveExplore() {
         </p>
       </div>
 
-      <StaggerGroup className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-6">
-        {CARDS.map((card, index) => (
-          <StaggerItem key={card.id} className={SPAN[index]}>
+      <StaggerGroup className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {CARDS.map((card) => (
+          <StaggerItem key={card.id}>
             <Link
               href={card.href}
               className="group relative flex h-full min-h-[15rem] flex-col justify-end overflow-hidden rounded-3xl border border-white/10 bg-[#05070f] p-5 transition-[transform,border-color,box-shadow] duration-300 hover:-translate-y-1.5 hover:border-white/30 hover:shadow-2xl focus-visible:ring-[3px] focus-visible:ring-ring/40 focus-visible:outline-none sm:min-h-[17rem]"
@@ -123,7 +139,7 @@ export async function InteractiveExplore() {
 
               {/* Hai lớp phủ chồng nhau: một lớp dọc cho chữ ở đáy luôn đọc
                   được bất kể ảnh sáng tối thế nào, một lớp màu nhận dạng rất
-                  nhạt để năm card không thành năm ô xám giống nhau. */}
+                  nhạt để sáu card không thành sáu ô xám giống nhau. */}
               <div
                 aria-hidden
                 className="absolute inset-0 bg-gradient-to-t from-[#05070f] via-[#05070f]/75 to-[#05070f]/15"
@@ -164,9 +180,9 @@ export async function InteractiveExplore() {
         ))}
       </StaggerGroup>
 
-      {/* Một dòng ghi nguồn cho cả lưới thay vì một dòng trên mỗi card: năm
-          dòng chữ nhỏ rải trong năm tấm ảnh làm hỏng đúng thứ khối này cần —
-          một cú nhìn là hiểu có năm công cụ. Giấy phép vẫn được ghi đủ. */}
+      {/* Một dòng ghi nguồn cho cả lưới thay vì một dòng trên mỗi card: sáu
+          dòng chữ nhỏ rải trong sáu tấm ảnh làm hỏng đúng thứ khối này cần —
+          một cú nhìn là hiểu có sáu công cụ. Giấy phép vẫn được ghi đủ. */}
       <p className="mt-4 text-xs text-muted-foreground">
         {t("credit")}:{" "}
         {CARDS.map((card) => `${t(`cards.${card.id}.title`)} — ${card.credit}`).join(" · ")}

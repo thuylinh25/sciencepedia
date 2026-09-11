@@ -23,7 +23,8 @@
     "universe": "Vũ trụ 3D",
     "models": "Mô hình 3D",
     "zoom": "Hành trình thu phóng",
-    "spaceMap": "Bản đồ bầu trời"
+    "spaceMap": "Bản đồ bầu trời",
+    "earthLive": "Trái Đất thời gian thực"
   },
   "auth": {
     "login": "Đăng nhập",
@@ -451,7 +452,41 @@
         "title": "Bản đồ bầu trời",
         "body": "Tìm thiên hà, tinh vân và bề mặt hành tinh trên ảnh bầu trời thật.",
         "cta": "Mở bản đồ"
+      },
+      "earthLive": {
+        "title": "Trái Đất thời gian thực",
+        "body": "Theo dõi hình ảnh toàn cảnh Trái Đất ghi từ điểm Lagrange L1 bởi vệ tinh DSCOVR của NASA.",
+        "cta": "Xem trực tiếp"
       }
     }
+  },
+  "earthLive": {
+    "title": "Trái Đất thời gian thực",
+    "metaDescription": "Xem hình ảnh toàn cảnh Trái Đất mới nhất từ vệ tinh DSCOVR và camera EPIC của NASA, cập nhật vài giờ một lần từ điểm Lagrange L1.",
+    "intro": "Mỗi ngày, một chiếc camera cách đây 1,5 triệu km chụp Trái Đất hơn chục lần. Đây là những tấm ảnh đó, mới nhất mà NASA đã phát ra, xếp lại thành một vòng quay.",
+    "howTitle": "Ảnh này đến từ đâu",
+    "facts": {
+      "spacecraft": {
+        "term": "Vệ tinh DSCOVR",
+        "detail": "Phóng năm 2015, đứng ở điểm Lagrange L1 — chỗ lực hấp dẫn của Trái Đất và Mặt Trời cân nhau, nên vệ tinh giữ được vị trí trên đường thẳng nối hai thiên thể mà gần như không tốn nhiên liệu. Nhiệm vụ chính của nó là cảnh báo bão từ: nó thấy gió Mặt Trời trước Trái Đất khoảng một giờ."
+      },
+      "instrument": {
+        "term": "Camera EPIC",
+        "detail": "Chụp qua mười kênh lọc từ tử ngoại tới hồng ngoại gần, mỗi kênh một ảnh. Ba kênh đỏ, lục, lam được ghép lại thành ảnh màu tự nhiên mà bạn đang thấy. Bảy kênh còn lại dùng để đo ozone, khí dung và độ cao mây."
+      },
+      "cadence": {
+        "term": "Vài giờ một lần",
+        "detail": "EPIC chụp trọn một vòng lọc mỗi một đến hai giờ, nên mỗi ngày có hơn chục bộ ảnh. Dữ liệu về tới mặt đất rồi qua xử lý nên ảnh mới nhất thường trễ vài giờ so với lúc chụp — đủ gần để gọi là hôm nay, chưa đủ để gọi là ngay lúc này."
+      }
+    },
+    "dayTitle": "Vì sao lúc nào cũng thấy ban ngày",
+    "dayBody": "Vì DSCOVR luôn nằm giữa Trái Đất và Mặt Trời. Từ chỗ đó, nó chỉ có thể thấy nửa đang được chiếu sáng — không phải vì camera chọn thời điểm, mà vì hình học của vị trí. Đó cũng là lý do đường phân giới ngày–đêm không bao giờ xuất hiện trong các ảnh này, khác hẳn ảnh từ vệ tinh quỹ đạo thấp.",
+    "colourTitle": "Đây có phải màu thật",
+    "colourBody": "Gần như thật. Ảnh ghép từ ba kênh lọc 680 nm (đỏ), 551 nm (lục) và 443 nm (lam) — cùng vùng phổ mà mắt người nhìn, nhưng là ba dải hẹp chứ không phải toàn dải liên tục. Kết quả rất sát với những gì một người ở L1 sẽ thấy, hơi khác ở chỗ màu lam của khí quyển đậm hơn một chút.",
+    "limitTitle": "Những gì ảnh này không cho biết",
+    "limitBody": "Một bán cầu duy nhất, và luôn là bán cầu đang hướng về Mặt Trời tại thời điểm chụp. Trong một ngày, Trái Đất tự quay dưới ống kính nên các châu lục lần lượt đi qua — nhưng nửa đêm thì không bao giờ thấy. Muốn theo dõi một điểm cụ thể trên mặt đất thì phải dùng vệ tinh quỹ đạo cực, không phải DSCOVR.",
+    "nextHint": "Muốn thấy Trái Đất nằm ở đâu trong những thứ lớn hơn nó? Hành trình thu phóng đi từ vũ trụ quan sát được xuống tới đây.",
+    "nextCta": "Hành trình thu phóng",
+    "credit": "Ảnh: NASA EPIC / DSCOVR, thuộc phạm vi công cộng. Dữ liệu lấy trực tiếp từ api.nasa.gov, dự phòng bằng epic.gsfc.nasa.gov."
   }
 }
