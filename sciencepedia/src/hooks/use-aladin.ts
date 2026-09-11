@@ -59,11 +59,21 @@ export function loadAladin(): Promise<AladinFactory> {
       return;
     }
 
-    const existing = document.querySelector<HTMLScriptElement>(
-      `script[src="${ALADIN_SCRIPT_URL}"]`,
-    );
+    /*
+     * Dọn thẻ của lượt hỏng trước rồi mới dựng thẻ mới.
+     *
+     * Bản cũ tìm lại thẻ `<script>` đang có và GẮN THÊM listener vào đó.
+     * Với một thẻ đã tải xong hoặc đã lỗi thì `load`/`error` sẽ không bao
+     * giờ nổ lần nữa, nên promise của lượt "thử lại" treo vĩnh viễn và khung
+     * bản đồ đứng ở "Đang tải bản đồ bầu trời…" — không lỗi, không xong, và
+     * không còn nút nào bấm được.
+     *
+     * Trùng lặp trong cùng một lượt sống của trang đã do `aladinPromise` ở
+     * mức module chặn rồi, nên cái cần ở đây chỉ là không để lại rác.
+     */
+    document.querySelector("script[data-aladin]")?.remove();
 
-    const script = existing ?? document.createElement("script");
+    const script = document.createElement("script");
 
     const onLoad = () => {
       const factory = window.A;
@@ -78,16 +88,57 @@ export function loadAladin(): Promise<AladinFactory> {
     script.addEventListener("load", onLoad, { once: true });
     script.addEventListener(
       "error",
-      () => reject(new Error("Không tải được Aladin Lite từ CDS")),
+      () => reject(new Error("Không tải được Aladin Lite")),
       { once: true },
     );
 
-    if (!existing) {
-      script.src = ALADIN_SCRIPT_URL;
-      script.async = true;
-      script.charset = "utf-8";
-      document.head.append(script);
-    }
+    /*
+     * Nạp qua một module trung gian, KHÔNG trỏ `src` thẳng vào gói.
+     *
+     * Gói `aladin-lite` trên npm là ES module thuần: nó kết thúc bằng
+     * `export{P as default}` và KHÔNG gán `window.A` bao giờ. Trỏ thẳng
+     * `<script src>` vào nó thì trình duyệt báo lỗi cú pháp ở `export`,
+     * sự kiện `load` vẫn nổ, rồi `window.A` vẫn rỗng — đúng nhánh
+     * "đã tải nhưng không thấy đối tượng A" ở trên, và người xem nhận
+     * thông báo "máy chủ CDS đang bận" cho một lỗi chẳng liên quan gì tới
+     * CDS. Đây là lỗi đã bị báo sau lượt đổi CDN ngày 2026-09-11.
+     *
+     * Bản UMD mà CDS tự phát thì có gán `window.A`, nhưng máy chủ CDS đo
+     * được 57 giây cho 1,8 MB — xem `ALADIN_SCRIPT_URL` trong
+     * `lib/sky-data.ts`. Nên đường đúng là giữ CDN nhanh và sửa cách nạp.
+     *
+     * Module trung gian này chịu được CẢ HAI dạng, nên biến môi trường
+     * `NEXT_PUBLIC_ALADIN_SCRIPT_URL` trỏ đi đâu cũng chạy:
+     *
+     *   · gói ESM  → không gán gì, factory nằm ở `default`
+     *   · gói UMD  → vỏ UMD tự gán `globalThis.A`, namespace rỗng
+     *
+     * `?? window.A` ở cuối là nhánh UMD.
+     *
+     * Dùng blob chứ không dùng script nội tuyến: blob có `src` nên nó là
+     * script NGOÀI, và sự kiện `load`/`error` chạy đúng như mọi script
+     * khác. Đường dẫn nhập là URL tuyệt đối nên gốc blob không ảnh hưởng
+     * tới việc phân giải, và gói đã nhúng sẵn WebAssembly nên nó không đi
+     * xin thêm tệp tương đối nào.
+     */
+    const loader = `import * as m from ${JSON.stringify(ALADIN_SCRIPT_URL)};
+window.A = m.default ?? window.A;`;
+
+    const blobUrl = URL.createObjectURL(
+      new Blob([loader], { type: "text/javascript" }),
+    );
+
+    script.type = "module";
+    script.dataset.aladin = "";
+    script.src = blobUrl;
+    script.async = true;
+
+    // Giải phóng ngay sau khi trình duyệt đã đọc xong, dù thành hay bại.
+    const release = () => URL.revokeObjectURL(blobUrl);
+    script.addEventListener("load", release, { once: true });
+    script.addEventListener("error", release, { once: true });
+
+    document.head.append(script);
   });
 
   // Hỏng mạng một lần không được khoá vĩnh viễn: xoá cache để lần bấm "thử

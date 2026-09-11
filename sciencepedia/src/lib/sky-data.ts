@@ -51,10 +51,20 @@ import { stripDiacritics } from "@/lib/utils";
  * `src/types/aladin.ts`); nhận một bản beta tự động là mời một lượt hỏng mà
  * không ai bấm nút nào. 3.8.2 là bản ổn định mới nhất.
  *
+ * ## Gói này là ES MODULE, không phải script thường
+ *
+ * Nó kết thúc bằng `export{P as default}` và không gán `window.A` bao giờ.
+ * Bản UMD mà CDS tự phát thì có gán. `loadAladin()` trong
+ * `hooks/use-aladin.ts` nạp qua một module trung gian để chịu được cả hai
+ * dạng — đọc chú thích ở đó TRƯỚC KHI đổi giá trị này, vì lượt đổi CDN ngày
+ * 2026-09-11 đã đổi URL mà không đổi cách nạp, và bản đồ chết hẳn.
+ *
  * ## Đường lui
  *
  * Đặt `NEXT_PUBLIC_ALADIN_SCRIPT_URL` là quay lại được máy chủ CDS ngay, không
- * cần sửa mã.
+ * cần sửa mã — bản pin theo phiên bản là
+ * `https://aladin.cds.unistra.fr/AladinLite/api/v3/3.8.2/aladin.js`. Chậm,
+ * nhưng chạy.
  */
 export const ALADIN_SCRIPT_URL =
   process.env.NEXT_PUBLIC_ALADIN_SCRIPT_URL ??
@@ -63,8 +73,9 @@ export const ALADIN_SCRIPT_URL =
 /**
  * Máy chủ CDS — nơi Aladin xin ô tile HiPS và giải tên qua Sesame.
  *
- * Từ 2026-09-11 nó KHÔNG còn phát script nữa (xem `ALADIN_SCRIPT_URL`), nhưng
- * vẫn đáng preconnect: mỗi khung bản đồ kéo hàng chục ô tile từ đây.
+ * Từ 2026-09-11 script KHÔNG lấy từ đây nữa vì quá chậm — máy chủ vẫn phát,
+ * chỉ là 57 giây cho 1,8 MB (xem `ALADIN_SCRIPT_URL`). Vẫn đáng preconnect:
+ * mỗi khung bản đồ kéo hàng chục ô tile từ đây.
  */
 export const ALADIN_ORIGIN = "https://aladin.cds.unistra.fr";
 
