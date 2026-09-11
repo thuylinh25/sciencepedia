@@ -55,7 +55,16 @@ export function AssistantLauncher() {
         aria-label={t("title")}
         // env(safe-area-inset-bottom): trên iPhone có thanh chỉ báo trang chủ,
         // bottom-4 thuần đặt nút đè lên vùng vuốt của hệ điều hành.
-        className="fixed right-4 bottom-[max(1rem,env(safe-area-inset-bottom))] z-50 grid size-14 place-items-center rounded-full bg-primary text-primary-foreground shadow-lg transition-transform hover:scale-105 active:scale-95"
+        /* Đẩy cao hơn trên điện thoại.
+
+           Ở `bottom: 1rem` nút nằm đè lên dòng chữ cuối của phần tử cuối
+           trang — trên màn hình hẹp thì gần như luôn có một dòng ở đó. 1,5rem
+           cộng safe area cho khoảng cách tối thiểu 24px tới nội dung, và
+           `main` cũng được đệm dưới đúng bằng chiều cao nút cộng khoảng cách
+           đó (xem layout) nên không còn gì lọt xuống dưới nó.
+
+           Từ `sm` trở lên thì lề trang đã đủ rộng, giữ nguyên 1rem. */
+        className="fixed right-4 bottom-[max(1.5rem,calc(env(safe-area-inset-bottom)+0.75rem))] z-50 grid size-14 place-items-center rounded-full bg-primary text-primary-foreground shadow-lg transition-transform hover:scale-105 active:scale-95 sm:bottom-[max(1rem,env(safe-area-inset-bottom))]"
       >
         {open ? (
           <X className="size-6" />

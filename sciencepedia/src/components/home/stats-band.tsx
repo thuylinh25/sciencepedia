@@ -44,7 +44,14 @@ export async function StatsBand({
        Đó là lời giải thật cho hai lần báo "nội dung bị lệch" — không phải lỗi
        căn giữa. */
     <Reveal as="section" className="container-page relative z-10 -mt-10">
-      <dl className="grid grid-cols-2 gap-px overflow-hidden rounded-2xl border bg-border shadow-sm md:grid-cols-4">
+      {/* Bốn cột ngay từ màn hình hẹp nhất, thay vì hai cột hai hàng.
+
+          Lưới 2×2 cao gấp đôi lưới 1×4 mà chở đúng chừng ấy thông tin. Bốn
+          con số này đều ngắn — số bài, số lĩnh vực, số chủ đề, lượt đọc —
+          nên ở 360px mỗi ô còn khoảng 80px, vừa đủ cho một con số và một nhãn
+          xuống dòng. Đổi lại là cả dải thấp đi một nửa, và trên điện thoại
+          nửa đó nằm đúng trong màn hình đầu tiên. */}
+      <dl className="grid grid-cols-4 gap-px overflow-hidden rounded-[20px] border bg-border shadow-sm">
         {items.map(({ value, label, Icon }) => (
           <div
             key={label}
@@ -63,7 +70,7 @@ export async function StatsBand({
                tiết kiệm 16px trên một màn hình chỉ cao chừng 780px. Đây là
                mức sàn — dưới 12px thì con số dính vào đường kẻ ô và cả dải
                đọc ra như một bảng dữ liệu chứ không phải một khối tóm tắt. */
-            className="flex flex-col items-center justify-center gap-0.5 bg-card px-3 py-3 sm:px-4 sm:py-6"
+            className="flex flex-col items-center justify-center gap-0.5 bg-card px-1.5 py-2.5 sm:px-4 sm:py-5"
           >
             {/* Icon nằm CÙNG DÒNG với con số, không xếp chồng bên trên.
 

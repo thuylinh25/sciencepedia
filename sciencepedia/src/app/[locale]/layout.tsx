@@ -126,7 +126,14 @@ export default async function LocaleLayout({
             </a>
             <div className="flex min-h-dvh flex-col">
               <SiteHeader categories={categories} />
-              <main id="main" className="flex-1">
+              {/* Đệm dưới bằng chiều cao nút trợ lý cộng khoảng cách.
+
+                  Nút đó là position: fixed nên nó không chiếm chỗ trong luồng,
+                  và trên màn hình hẹp nó nằm đè lên dòng cuối của bất cứ thứ
+                  gì kết thúc ở đáy trang. 5,5rem là 56px của nút cộng 32px hở
+                  ra. Từ sm trở lên lề trang đã đủ rộng để nút không chạm chữ,
+                  nên đệm về 0. */}
+              <main id="main" className="flex-1 pb-22 sm:pb-0">
                 {children}
               </main>
               <SiteFooter />

@@ -494,7 +494,10 @@
     },
     "quickSolar": "Khám phá hành tinh",
     "quickZoom": "Từ vũ trụ xuống Trái Đất",
-    "quickSky": "Quan sát bầu trời đêm"
+    "quickSky": "Quan sát bầu trời đêm",
+    "quickEarth": "Ảnh vệ tinh mới nhất",
+    "quickGalaxy": "Thiên hà của chúng ta",
+    "quickUniverse": "Mạng vũ trụ"
   },
   "earthLive": {
     "title": "Trái Đất nhìn từ điểm L1",

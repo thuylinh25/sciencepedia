@@ -3,10 +3,8 @@
 import type { ReactNode } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import { useLocale, useTranslations } from "next-intl";
-import { Rocket } from "lucide-react";
 
 import { Link } from "@/i18n/navigation";
-import { Button } from "@/components/ui/button";
 import { HeroGalaxy } from "@/components/home/hero-galaxy";
 
 /**
@@ -129,71 +127,81 @@ export function Hero({
 
             Quầng sáng dùng `--color-accent` chứ không phải một mã màu viết
             cứng, để nó tự theo nếu bảng màu đổi lần nữa. */}
-          {/* Một nút chính cộng ba lối tắt, thay cho một nút đơn dẫn tới
-              Hệ Mặt Trời.
+          {/*
+            Không còn nút lớn "Khám phá tương tác".
 
-              Nút đơn trước đây nói rằng mô hình 3D của trang này là Hệ Mặt
-              Trời, hết. Ba lối tắt cạnh nó nói ngay rằng còn nhiều nữa, mà
-              không biến hero thành một bảng menu: chúng nhỏ, thứ cấp, và nút
-              chính vẫn là thứ duy nhất có màu.
+            Nút đó dẫn tới /models, và ngay dưới hero đã là khối "Khám phá
+            tương tác" với sáu card cùng nội dung — hai thứ nói cùng một câu,
+            cách nhau một màn hình cuộn. Trên điện thoại cái giá còn cao hơn:
+            nút cao 56px cộng khoảng cách chiếm gần một phần mười màn hình
+            đầu tiên, đúng phần đắt nhất của trang.
 
-              Vẫn dùng `accent` (xanh) chứ không `primary` (vàng): vàng đã
-              thuộc về nút tìm kiếm ngay phía trên, và hai nút vàng cạnh nhau
-              thì không nút nào còn là nút chính. */}
-          <motion.div {...rise(0.32)} className="mt-6 flex flex-col gap-3">
-            <div className="flex flex-wrap gap-3">
-              <Button
-                asChild
-                size="xl"
-                variant="accent"
-                className="shadow-[0_0_36px_-6px_var(--color-accent)] transition-shadow hover:shadow-[0_0_52px_-4px_var(--color-accent)]"
-              >
-                <Link href="/models">
-                  <Rocket className="size-4" />
-                  {tExplore("quickActions")}
-                </Link>
-              </Button>
-            </div>
-
+            Thay bằng một dải cuộn ngang sáu công cụ. Cuộn ngang trả lại chiều
+            cao mà vẫn cho thấy đủ sáu thứ; xếp dọc sáu card thì đẩy mọi nội
+            dung khác xuống dưới tầm nhìn.
+          */}
+          <motion.div {...rise(0.32)} className="mt-6">
             {/*
-              Card mini thay cho chip.
+              `-mx-4 px-4` cho dải chạm được tới mép màn hình trên điện thoại:
+              card đầu và card cuối vẫn thẳng hàng với chữ phía trên, nhưng khi
+              cuộn thì nội dung trôi ra sát mép chứ không dừng lại ở một lề
+              trắng — dấu hiệu thị giác nói rằng còn thứ nữa ở bên phải.
 
-              Chip chỉ có tên, và tên thì trả lời "cái này gọi là gì" chứ
-              không trả lời "nó làm được gì" — đúng câu người vào lần đầu
-              đang hỏi. Thêm một dòng phụ là đủ, và vẫn nhỏ hơn card thật ở
-              khối "Khám phá tương tác" phía dưới nên không cạnh tranh với
-              nút chính ngay trên nó.
-
-              Dòng phụ của hành trình thu phóng ghi "xuống Trái Đất", không
-              phải "đến nguyên tử": mô hình dừng ở Trái Đất, và hứa một bậc
-              không tồn tại thì người bấm vào sẽ thấy mình bị lừa.
+              `snap-x` để mỗi lần vuốt dừng gọn ở một card thay vì dừng giữa
+              hai card.
             */}
-            <div className="grid gap-2 sm:grid-cols-3">
+            <div className="-mx-4 flex snap-x snap-mandatory gap-2 overflow-x-auto px-4 pb-2 sm:mx-0 sm:grid sm:grid-cols-2 sm:px-0 lg:grid-cols-3">
               {(
                 [
+                  {
+                    href: "/zoom",
+                    emoji: "🔍",
+                    key: "zoom",
+                    sub: "quickZoom",
+                  },
                   {
                     href: "/solar-system",
                     emoji: "☀️",
                     key: "solarSystem",
                     sub: "quickSolar",
                   },
-                  { href: "/zoom", emoji: "🔍", key: "zoom", sub: "quickZoom" },
+                  {
+                    href: "/earth-live",
+                    emoji: "🌍",
+                    key: "earthLive",
+                    sub: "quickEarth",
+                  },
                   {
                     href: "/space-map",
                     emoji: "⭐",
                     key: "skyMap",
                     sub: "quickSky",
                   },
+                  {
+                    href: "/milky-way",
+                    emoji: "🌌",
+                    key: "milkyWay",
+                    sub: "quickGalaxy",
+                  },
+                  {
+                    href: "/universe",
+                    emoji: "🌠",
+                    key: "universe",
+                    sub: "quickUniverse",
+                  },
                 ] as const
               ).map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="group flex items-center gap-3 rounded-2xl border border-white/12 bg-white/5 px-3.5 py-3 backdrop-blur-md transition-colors hover:border-white/30 hover:bg-white/12"
+                  /* min-h-[4.5rem] là 72px — vùng chạm tối thiểu 44px cộng
+                     chỗ cho hai dòng chữ. w-[15rem] chỉ áp dưới sm, nơi dải
+                     cuộn ngang; từ sm trở lên nó vào lưới và tự giãn. */
+                  className="flex min-h-[4.5rem] w-[15rem] shrink-0 snap-start items-center gap-3 rounded-[20px] border border-white/12 bg-white/5 px-3.5 py-3 backdrop-blur-md transition-colors hover:border-white/30 hover:bg-white/12 sm:w-auto"
                 >
                   <span
                     aria-hidden
-                    className="inline-flex size-9 shrink-0 items-center justify-center rounded-xl border border-white/12 bg-white/10 text-base"
+                    className="inline-flex size-10 shrink-0 items-center justify-center rounded-2xl border border-white/12 bg-white/10 text-lg"
                   >
                     {item.emoji}
                   </span>

@@ -494,7 +494,10 @@
     },
     "quickSolar": "Explore the planets",
     "quickZoom": "From the universe down to Earth",
-    "quickSky": "Look at the night sky"
+    "quickSky": "Look at the night sky",
+    "quickEarth": "The latest satellite images",
+    "quickGalaxy": "Our own galaxy",
+    "quickUniverse": "The cosmic web"
   },
   "earthLive": {
     "title": "Earth from the L1 point",
