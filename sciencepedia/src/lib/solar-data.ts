@@ -1,7 +1,7 @@
 /**
  * Số liệu Hệ Mặt Trời (nguồn: NASA Planetary Fact Sheet).
  *
- * `displayRadius` và `orbitRadius` là đơn vị của cảnh 3D, KHÔNG phải tỉ lệ thật —
+ * `displayRadius` là đơn vị của cảnh 3D, KHÔNG phải tỉ lệ thật —
  * nếu vẽ đúng tỉ lệ thì Sao Hải Vương sẽ nằm ngoài màn hình còn các hành tinh đá
  * nhỏ hơn một pixel. Tỉ lệ thật vẫn được giữ trong `realRadiusKm` / `realDistanceKm`
  * để hiển thị trong bảng thông tin và để chế độ "tỉ lệ thực" dùng tới.
@@ -16,7 +16,6 @@ export type Planet = {
   emissive?: string;
 
   displayRadius: number;
-  orbitRadius: number;
   /** Số vòng quay quanh Mặt Trời mỗi đơn vị thời gian của cảnh */
   orbitSpeed: number;
   /** Tốc độ tự quay quanh trục */
@@ -192,8 +191,8 @@ export const SUN = {
 /**
  * Mặt Trăng.
  *
- * Đứng riêng chứ không nằm trong `PLANETS`: kiểu `Planet` mang `orbitRadius`,
- * `orbitSpeed` và `realDistanceKm` — toàn những đại lượng đo so với Mặt Trời.
+ * Đứng riêng chứ không nằm trong `PLANETS`: kiểu `Planet` mang `orbitSpeed`
+ * và `realDistanceKm` — cả hai đều đo so với Mặt Trời.
  * Nhét Mặt Trăng vào đó thì hoặc phải bịa số, hoặc phải cho những trường ấy
  * thành tuỳ chọn cho cả tám hành tinh vốn luôn có chúng. Thư viện ảnh lấy nó
  * vào danh sách riêng, ngay sau Trái Đất.
@@ -239,7 +238,6 @@ export const PLANETS: Planet[] = [
     articleSlug: "sao-thuy",
     color: "#9c8f84",
     displayRadius: 0.38,
-    orbitRadius: 6,
     orbitSpeed: 1.607,
     spinSpeed: 0.017,
     axialTilt: 0.03,
@@ -295,7 +293,6 @@ export const PLANETS: Planet[] = [
     articleSlug: "sao-kim",
     color: "#e8c39e",
     displayRadius: 0.62,
-    orbitRadius: 8.4,
     orbitSpeed: 1.174,
     spinSpeed: -0.004,
     axialTilt: 177.4,
@@ -311,21 +308,33 @@ export const PLANETS: Planet[] = [
       "Hành tinh nóng nhất hệ vì hiệu ứng nhà kính cực đoan từ khí quyển CO₂ dày đặc. Nó tự quay ngược chiều so với hầu hết hành tinh khác.",
     descriptionEn:
       "The hottest planet, thanks to a runaway greenhouse effect in its dense CO₂ atmosphere. It spins backwards relative to most other planets.",
+    /**
+     * Bìa dựng từ chính bản đồ radar mà thẻ này mở ra.
+     *
+     * Bìa cũ là ảnh MESSENGER chụp trong ánh sáng nhìn thấy: một quả cầu
+     * trắng ngà không chi tiết, vì mây acid sulfuric che kín bề mặt. Bấm vào
+     * thì hiện ra một quả cầu bảy sắc — không còn một điểm chung nào với tấm
+     * ảnh vừa bấm.
+     *
+     * Hai tấm ảnh đó không mâu thuẫn: một tấm là ĐỈNH MÂY, tấm kia là BỀ MẶT
+     * dưới lớp mây, đo bằng radar xuyên mây của tàu Magellan. Nhưng chú thích
+     * phải nói ra điều đó, vì không ai đoán được từ hai tấm ảnh.
+     */
     photo: {
-      url: `${TEXTURE_BASE}/b/b2/Venus_2_Approach_Image.jpg/960px-Venus_2_Approach_Image.jpg`,
+      url: "/images/venus-magellan.jpg",
       captionVi:
-        "Tàu MESSENGER chụp trong lần bay ngang thứ hai, năm 2007. Thứ nhìn thấy là đỉnh tầng mây acid sulfuric, không phải bề mặt.",
+        "Không phải màu mắt thấy, và cũng không phải thứ nhìn được từ ngoài: mây acid sulfuric che kín Sao Kim. Đây là bề mặt bên dưới, do radar tàu Magellan quét xuyên mây; màu mã hoá độ cao — lam là đồng bằng thấp, đỏ là cao nguyên. Bấm vào để xoay chính bản đồ này.",
       captionEn:
-        "MESSENGER during its second Venus flyby, 2007. What is visible is the top of the sulphuric-acid cloud deck, not the surface.",
-      credit: "NASA / JHUAPL / Carnegie",
-      sourceUrl: `${COMMONS_FILE}Venus_2_Approach_Image.jpg`,
+        "Neither true colour nor anything visible from outside: sulfuric-acid cloud hides Venus completely. This is the surface beneath, mapped by Magellan's cloud-piercing radar, with colour coding elevation — blue for low plains, red for highlands. Click to rotate this very map.",
+      credit: "NASA / JPL — Magellan",
+      sourceUrl: "https://photojournal.jpl.nasa.gov/catalog/PIA00271",
     },
     surface: {
       hipsUrl: `${SURFACE_BASE}/CDS_P_Venus_Magellan_C3-MDIR-ClrTopo-6600m-color`,
       captionVi:
-        "Bề mặt dựng bằng radar của tàu Magellan, tô màu theo độ cao. Radar xuyên được lớp mây mà ánh sáng không qua nổi.",
+        "Bản đồ radar của tàu Magellan — chính là tấm ảnh trên thẻ, giờ xoay và phóng to được. Màu mã hoá độ cao chứ không phải màu thật.",
       captionEn:
-        "Surface mapped by the Magellan radar and coloured by elevation. Radar penetrates the cloud deck that light cannot.",
+        "The Magellan radar map — the same image shown on the card, now free to rotate and zoom. Colour codes elevation, not real colour.",
       credit: "NASA / JPL — Magellan",
     },
   },
@@ -337,7 +346,6 @@ export const PLANETS: Planet[] = [
     color: "#2e6fdb",
     emissive: "#0b2a5c",
     displayRadius: 0.65,
-    orbitRadius: 11.2,
     orbitSpeed: 1,
     spinSpeed: 1,
     axialTilt: 23.4,
@@ -353,21 +361,28 @@ export const PLANETS: Planet[] = [
       "Hành tinh duy nhất được biết có sự sống, với nước lỏng trên bề mặt và từ quyển che chắn gió Mặt Trời.",
     descriptionEn:
       "The only planet known to host life, with liquid surface water and a magnetosphere shielding it from the solar wind.",
+    /**
+     * Bìa dựng từ chính bản đồ Blue Marble mà thẻ này mở ra.
+     *
+     * Bìa cũ là ảnh Apollo 17 chụp năm 1972 — nổi tiếng, nhưng nó cho thấy
+     * châu Phi và Nam Cực dưới một góc chiếu khác hẳn, nên bấm vào là quả cầu
+     * xoay sang một bán cầu khác với tông màu khác.
+     */
     photo: {
-      url: `${TEXTURE_BASE}/9/97/The_Earth_seen_from_Apollo_17.jpg/960px-The_Earth_seen_from_Apollo_17.jpg`,
+      url: "/images/earth-bluemarble.jpg",
       captionVi:
-        "Viên bi xanh — phi hành đoàn Apollo 17 chụp trên đường tới Mặt Trăng, ngày 07/12/1972.",
+        "Blue Marble của NASA: ghép từ dữ liệu vệ tinh MODIS, mỗi điểm ảnh lấy ngày quang mây nhất trong tháng nên không có đám mây nào che đất. Đây là bề mặt thật ở màu mắt thấy. Bấm vào để xoay chính bản đồ này.",
       captionEn:
-        "The Blue Marble, taken by the Apollo 17 crew on the way to the Moon, 7 December 1972.",
-      credit: "NASA / Apollo 17",
-      sourceUrl: `${COMMONS_FILE}The_Earth_seen_from_Apollo_17.jpg`,
+        "NASA's Blue Marble: composed from MODIS satellite data, each pixel taken from the clearest day of the month, so no cloud hides the ground. This is the real surface in visible light. Click to rotate this very map.",
+      credit: "NASA Earth Observatory",
+      sourceUrl: "https://visibleearth.nasa.gov/collection/1484/blue-marble",
     },
     surface: {
       hipsUrl: `${SURFACE_BASE}/CDS_P_Earth_BlueMarble`,
       captionVi:
-        "Blue Marble Next Generation — ghép ảnh vệ tinh của NASA Earth Observatory, kèm địa hình và độ sâu đáy biển.",
+        "Bản đồ Blue Marble — chính là tấm ảnh trên thẻ, giờ xoay và phóng to được.",
       captionEn:
-        "Blue Marble Next Generation, a NASA Earth Observatory satellite mosaic with topography and bathymetry.",
+        "The Blue Marble map — the same image shown on the card, now free to rotate and zoom.",
       credit: "NASA Earth Observatory",
     },
   },
@@ -378,7 +393,6 @@ export const PLANETS: Planet[] = [
     articleSlug: "sao-hoa",
     color: "#c1440e",
     displayRadius: 0.45,
-    orbitRadius: 15,
     orbitSpeed: 0.531,
     spinSpeed: 0.97,
     axialTilt: 25.2,
@@ -434,7 +448,6 @@ export const PLANETS: Planet[] = [
     articleSlug: "sao-moc",
     color: "#d8a47f",
     displayRadius: 1.9,
-    orbitRadius: 22,
     orbitSpeed: 0.084,
     spinSpeed: 2.42,
     axialTilt: 3.1,
@@ -475,12 +488,23 @@ export const PLANETS: Planet[] = [
     articleSlug: "sao-tho",
     color: "#e3d5a1",
     displayRadius: 1.6,
-    orbitRadius: 29,
     orbitSpeed: 0.034,
     spinSpeed: 2.24,
     axialTilt: 26.7,
     texture: `${TEXTURE_BASE}/e/ea/Solarsystemscope_texture_2k_saturn.jpg/1280px-Solarsystemscope_texture_2k_saturn.jpg`,
-    ring: { inner: 2.1, outer: 3.4, color: "#d8c9a3", opacity: 0.75 },
+    /*
+     * Đơn vị là BÁN KÍNH HÀNH TINH, không phải đơn vị cảnh.
+     *
+     * Trước đây ghi 2,1–3,4 và đó là lý do Sao Thổ trông to hơn Sao Mộc: bề
+     * ngang của nó thành 6,8 bán kính, trong khi hai quả cầu vốn đúng tỉ lệ
+     * (69.911 km so với 58.232, tức 1,20 lần — và displayRadius 1,9 so với
+     * 1,6 đúng bằng 1,19).
+     *
+     * Số thật: vành C bắt đầu ở 74.500 km và mép ngoài vành A ở 136.780 km,
+     * chia cho bán kính 58.232 ra 1,28 và 2,35. Ở con số đó Sao Thổ vẫn rộng
+     * hơn Sao Mộc — nhưng đó là sự thật chứ không phải lỗi vẽ.
+     */
+    ring: { inner: 1.28, outer: 2.35, color: "#d8c9a3", opacity: 0.75 },
     realRadiusKm: 58_232,
     realDistanceKm: 1_432_000_000,
     orbitalPeriodDays: 10_747,
@@ -511,12 +535,12 @@ export const PLANETS: Planet[] = [
     articleSlug: "sao-thien-vuong",
     color: "#9fd8e0",
     displayRadius: 1.1,
-    orbitRadius: 36,
     orbitSpeed: 0.012,
     spinSpeed: -1.39,
     axialTilt: 97.8,
     texture: `${TEXTURE_BASE}/9/95/Solarsystemscope_texture_2k_uranus.jpg/1280px-Solarsystemscope_texture_2k_uranus.jpg`,
-    ring: { inner: 1.4, outer: 1.7, color: "#8fbfd0", opacity: 0.35 },
+    // Vành ε nằm ở 51.149 km, chia cho bán kính 25.559 km ra đúng 2,00
+    ring: { inner: 1.64, outer: 2.0, color: "#8fbfd0", opacity: 0.35 },
     realRadiusKm: 25_362,
     realDistanceKm: 2_867_000_000,
     orbitalPeriodDays: 30_589,
@@ -547,7 +571,6 @@ export const PLANETS: Planet[] = [
     articleSlug: "sao-hai-vuong",
     color: "#3b5fd4",
     displayRadius: 1.05,
-    orbitRadius: 43,
     orbitSpeed: 0.006,
     spinSpeed: 1.49,
     axialTilt: 28.3,
@@ -584,6 +607,54 @@ export const PLANETS: Planet[] = [
 ];
 
 export const AU_KM = 149_600_000;
+
+/**
+ * Bán kính quỹ đạo ở CHẾ ĐỘ GIÁO DỤC: tỉ lệ với căn bậc hai khoảng cách thật.
+ *
+ * Trước đây tám con số này được đặt tay — 6, 8,4, 11,2, 15, 22, 29, 36, 43 —
+ * và bốn hành tinh ngoài cách đều nhau đúng 7 đơn vị. Hệ Mặt Trời thật thì
+ * ngược hẳn: khoảng cách giữa Sao Thiên Vương và Sao Hải Vương là 10,9 AU,
+ * gấp hơn ba lần khoảng cách Sao Mộc–Sao Thổ trong cùng bậc. Vẽ đều nhau là
+ * dạy rằng hệ hành tinh được xếp thành hàng ngay ngắn, mà điều đáng nhớ nhất
+ * về nó lại là các khoảng trống cứ mỗi bậc lại nở ra.
+ *
+ * Căn bậc hai giữ được thứ tự và giữ được việc khoảng cách nở ra, mà vẫn kéo
+ * Sao Hải Vương từ 30 AU về một chỗ nhìn thấy được. Nói thành lời thì đây là
+ * quy tắc duy nhất: **vẽ xa gấp đôi nghĩa là thật ra xa gấp bốn**.
+ *
+ * Với hệ số 11,2 cho Trái Đất, tám hành tinh rơi vào 7,0 · 9,5 · 11,2 · 13,8
+ * · 25,5 · 34,7 · 49,0 · 61,5. Sao Hải Vương lùi từ 43 ra 61, và các khoảng
+ * trống ngoài đo được 11,7 · 9,1 · 14,4 · 12,5 thay vì đều đúng 7.
+ *
+ * Một hạn chế phải ghi ra vì nó không tự lộ: căn bậc hai nén mạnh dần về
+ * phía ngoài, nên khoảng Sao Thiên Vương–Sao Hải Vương vẽ ra HẸP hơn khoảng
+ * Sao Thổ–Sao Thiên Vương (12,5 so với 14,4), trong khi thực tế thì ngược
+ * lại (11,0 AU so với 9,6). Thứ tự và chiều nở ra là đúng; riêng hai khoảng
+ * ngoài cùng bị đảo. Sửa được bằng số mũ lớn hơn, nhưng đổi lại Sao Hải
+ * Vương đi quá xa khung hình.
+ */
+const EDUCATIONAL_EARTH_ORBIT = 11.2;
+
+export function educationalOrbitAu(au: number): number {
+  return EDUCATIONAL_EARTH_ORBIT * Math.sqrt(au);
+}
+
+/** Bán kính quỹ đạo của một hành tinh ở chế độ giáo dục. */
+export function educationalOrbit(planet: Planet): number {
+  return educationalOrbitAu(planet.realDistanceKm / AU_KM);
+}
+
+/**
+ * Hệ số nén đang dùng, để hiện cho người xem thay vì giấu đi.
+ *
+ * Ở chế độ giáo dục con số này thay đổi theo khoảng cách — đó chính là điều
+ * khiến nó cần được nói ra. Hàm trả về "thật xa gấp bao nhiêu lần so với tỉ
+ * lệ mà Trái Đất đang được vẽ".
+ */
+export function compressionAt(au: number): number {
+  const drawn = educationalOrbitAu(au) / EDUCATIONAL_EARTH_ORBIT;
+  return au / drawn;
+}
 
 /** Nén log dùng chung cho mọi thứ đặt theo tỉ lệ thật — hành tinh lẫn vành đai. */
 function auToRealScale(au: number): number {
@@ -639,6 +710,60 @@ export const ASTEROID_BELT = {
  * tỉ lệ AU — cách duy nhất giữ cho nó nằm đúng chỗ dù hai con số kia có được
  * chỉnh lại.
  */
+/**
+ * Vành đai Kuiper.
+ *
+ * Phần đông đúc nằm trong 30–50 AU, với lõi cộng hưởng quanh 39,4 AU nơi Sao
+ * Diêm Vương và các "plutino" bị Sao Hải Vương khoá theo cộng hưởng 2:3. Mép
+ * ngoài ở 50 AU là một vách thật chứ không phải chỗ hết dữ liệu: mật độ vật
+ * thể sụt hẳn ở đó, và cho tới nay chưa ai giải thích dứt điểm được vì sao.
+ *
+ * Thêm nó vào là sửa một hiểu sai mà mô hình cũ tạo ra: hệ kết thúc ở Sao Hải
+ * Vương. Sao Hải Vương chỉ là hành tinh ngoài cùng, không phải mép ngoài.
+ */
+export const KUIPER_BELT = {
+  id: "kuiper-belt",
+  name: "Vành đai Kuiper",
+  nameEn: "The Kuiper belt",
+  innerAu: 30,
+  outerAu: 50,
+  /** Cộng hưởng 2:3 với Sao Hải Vương — nơi Sao Diêm Vương ở */
+  resonanceAu: 39.4,
+  color: "#9fb6d4",
+} as const;
+
+/**
+ * Đám mây Oort — vẽ theo sơ đồ, không theo tỉ lệ.
+ *
+ * Đây là chỗ duy nhất trong mô hình mà tỉ lệ bị phá vỡ có chủ ý, nên phải nói
+ * thẳng: rìa trong của đám mây Oort ở khoảng 2.000 AU và rìa ngoài có thể tới
+ * 100.000 AU. Ngay cả với phép nén căn bậc hai, 100.000 AU sẽ rơi ra 3.540
+ * đơn vị cảnh — xa gấp 45 lần vành đai Kuiper, và mọi thứ còn lại của Hệ Mặt
+ * Trời co về một chấm.
+ *
+ * Nên nó được vẽ như một vỏ cầu mờ ngay ngoài vành đai Kuiper, kèm nhãn nói
+ * rõ khoảng cách thật. Một sơ đồ có ghi chú thì trung thực; một sơ đồ không
+ * ghi chú mới là nói dối.
+ */
+export const OORT_CLOUD = {
+  id: "oort-cloud",
+  name: "Đám mây Oort",
+  nameEn: "The Oort cloud",
+  innerAu: 2_000,
+  outerAu: 100_000,
+  color: "#7c8db5",
+} as const;
+
+/** Bán kính trong/ngoài của vành đai Kuiper trong toạ độ cảnh. */
+export function kuiperRadii(realScale: boolean): [number, number] {
+  return realScale
+    ? [auToRealScale(KUIPER_BELT.innerAu), auToRealScale(KUIPER_BELT.outerAu)]
+    : [
+        educationalOrbitAu(KUIPER_BELT.innerAu),
+        educationalOrbitAu(KUIPER_BELT.outerAu),
+      ];
+}
+
 export function beltRadii(realScale: boolean): [number, number] {
   if (realScale) {
     return [
@@ -646,17 +771,16 @@ export function beltRadii(realScale: boolean): [number, number] {
       auToRealScale(ASTEROID_BELT.outerAu),
     ];
   }
-  const mars = PLANETS.find((planet) => planet.id === "mars");
-  const jupiter = PLANETS.find((planet) => planet.id === "jupiter");
-  if (!mars || !jupiter) return [16, 18.5];
-
-  const marsAu = mars.realDistanceKm / AU_KM;
-  const jupiterAu = jupiter.realDistanceKm / AU_KM;
-  const place = (au: number) => {
-    const t = (au - marsAu) / (jupiterAu - marsAu);
-    return mars.orbitRadius + t * (jupiter.orbitRadius - mars.orbitRadius);
-  };
-  return [place(ASTEROID_BELT.innerAu), place(ASTEROID_BELT.outerAu)];
+  /*
+   * Cùng một quy luật với hành tinh, không nội suy giữa Sao Hoả và Sao Mộc
+   * nữa. Nội suy tuyến tính giữa hai quỹ đạo cho ra vị trí lệch khỏi chính
+   * quy luật đang đặt hai quỹ đạo đó, nên vành đai sẽ không còn nằm đúng chỗ
+   * của nó so với hai hàng xóm.
+   */
+  return [
+    educationalOrbitAu(ASTEROID_BELT.innerAu),
+    educationalOrbitAu(ASTEROID_BELT.outerAu),
+  ];
 }
 
 /** Bán kính hành tinh theo tỉ lệ thật so với Trái Đất (nén nhẹ). */

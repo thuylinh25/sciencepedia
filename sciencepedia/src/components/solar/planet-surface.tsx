@@ -84,6 +84,7 @@ export function PlanetSurface({
       crumbRoot={crumbRoot}
       crumbCurrent={name}
       openOnEventId={bodyId}
+      openFullscreen
       posterCaption={caption}
       posterBackground={
         <Image

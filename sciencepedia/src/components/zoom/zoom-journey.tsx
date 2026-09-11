@@ -44,6 +44,14 @@ function supportsWebGL(): boolean {
   }
 }
 
+/*
+ * Ba cảnh trong hành trình đều BẬT nhãn, giống hệt trang mô hình đầy đủ.
+ *
+ * Trước đây tắt hết để khung trông gọn. Nhưng gọn ở đây đổi bằng việc người
+ * xem nhìn một đĩa sao mà không biết nhánh nào là nhánh nào, chấm nào là Mặt
+ * Trời — và hành trình này tồn tại để chỉ ra đúng những thứ đó. Một cảnh đẹp
+ * mà không đọc được thì không dạy gì.
+ */
 function LevelScene({
   level,
   locale,
@@ -64,7 +72,7 @@ function LevelScene({
             showFilaments: true,
             scientific: false,
             showScales: false,
-            showLabels: false,
+            showLabels: true,
             distance: 26,
           }}
           locale={locale}
@@ -76,9 +84,9 @@ function LevelScene({
           settings={{
             playing: true,
             speed: 1,
-            showLabels: false,
+            showLabels: true,
             showSun: true,
-            showObjects: false,
+            showObjects: true,
             view: "free",
             tour: false,
             scientific: false,
@@ -96,7 +104,7 @@ function LevelScene({
             playing: true,
             speed: 1,
             showOrbits: true,
-            showLabels: false,
+            showLabels: true,
             realScale: false,
           }}
           selectedId={null}

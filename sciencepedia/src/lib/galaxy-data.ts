@@ -112,6 +112,19 @@ export type GalaxyFeature = {
   angle: number;
   description: string;
   descriptionEn: string;
+  /**
+   * Vài số đo để bảng thông tin có gì mà đọc.
+   *
+   * Trước đây mốc chỉ có tên và một câu mô tả, trong khi tinh vân và cụm sao
+   * đều kèm dòng khoảng cách — bấm vào một nhánh xoắn ốc thì bảng mở ra gần
+   * như trống. Mỗi dòng ở đây là một số đo có nguồn, không phải chữ cho đầy.
+   */
+  facts?: Array<{
+    label: string;
+    labelEn: string;
+    value: string;
+    valueEn: string;
+  }>;
   color: string;
 };
 
@@ -131,6 +144,20 @@ export const GALAXY_FEATURES: GalaxyFeature[] = [
       "Hố đen siêu khối lượng ở tâm Ngân Hà, nặng khoảng 4,3 triệu lần Mặt Trời. Việc theo dõi quỹ đạo các ngôi sao quanh nó đã mang lại giải Nobel Vật lý 2020.",
     descriptionEn:
       "The supermassive black hole at the galactic centre, about 4.3 million solar masses. Tracking the stars orbiting it won the 2020 Nobel Prize in Physics.",
+    facts: [
+      {
+        label: "Cách Mặt Trời",
+        labelEn: "From the Sun",
+        value: "26.670 năm ánh sáng",
+        valueEn: "26,670 light-years",
+      },
+      {
+        label: "Khối lượng hố đen",
+        labelEn: "Black hole mass",
+        value: "~4,3 triệu lần Mặt Trời",
+        valueEn: "~4.3 million solar masses",
+      },
+    ],
     color: "#f97316",
   },
   {
@@ -143,6 +170,26 @@ export const GALAXY_FEATURES: GalaxyFeature[] = [
       "Hệ Mặt Trời nằm cách tâm 26.670 năm ánh sáng, ở rìa trong nhánh Orion. Nó mất khoảng 230 triệu năm để đi hết một vòng quanh tâm thiên hà.",
     descriptionEn:
       "The Solar System sits 26,670 light-years from the centre, on the inner edge of the Orion Arm. One lap around the galaxy takes some 230 million years.",
+    facts: [
+      {
+        label: "Cách tâm Ngân Hà",
+        labelEn: "From the galactic centre",
+        value: "26.670 năm ánh sáng",
+        valueEn: "26,670 light-years",
+      },
+      {
+        label: "Một vòng quanh tâm",
+        labelEn: "One lap of the galaxy",
+        value: "~230 triệu năm",
+        valueEn: "~230 million years",
+      },
+      {
+        label: "Nằm trên",
+        labelEn: "Sits on",
+        value: "Nhánh Orion (nhánh phụ)",
+        valueEn: "The Orion Spur (a minor arm)",
+      },
+    ],
     color: "#fde047",
   },
   {
@@ -152,9 +199,29 @@ export const GALAXY_FEATURES: GalaxyFeature[] = [
     radius: 7.4,
     angle: Math.PI * 0.95,
     description:
-      "Một trong hai nhánh xoắn ốc chính, nằm phía ngoài vị trí Mặt Trời.",
+      "Một trong hai nhánh xoắn ốc chính, nằm phía ngoài quỹ đạo Mặt Trời khoảng 6.400 năm ánh sáng. Nhánh này là nơi tập trung khí và các ngôi sao trẻ sáng nhất, nên nhìn từ Trái Đất nó hiện thành một dải sao dày về phía chòm Perseus.",
     descriptionEn:
-      "One of the two major spiral arms, lying outward from the Sun's position.",
+      "One of the two major spiral arms, some 6,400 light-years beyond the Sun's orbit. It concentrates gas and the brightest young stars, which is why from Earth it shows up as a thick band of stars toward the constellation Perseus.",
+    facts: [
+      {
+        label: "Cách tâm Ngân Hà",
+        labelEn: "From the galactic centre",
+        value: "~33.000 năm ánh sáng",
+        valueEn: "~33,000 light-years",
+      },
+      {
+        label: "Cách Mặt Trời",
+        labelEn: "From the Sun",
+        value: "~6.400 năm ánh sáng",
+        valueEn: "~6,400 light-years",
+      },
+      {
+        label: "Loại",
+        labelEn: "Type",
+        value: "Nhánh xoắn ốc chính",
+        valueEn: "Major spiral arm",
+      },
+    ],
     color: "#93c5fd",
   },
   {
@@ -167,6 +234,26 @@ export const GALAXY_FEATURES: GalaxyFeature[] = [
       "Nhánh chính còn lại, nằm phía trong so với Mặt Trời — hướng nhìn về tâm Ngân Hà đi qua nhánh này.",
     descriptionEn:
       "The other major arm, inward of the Sun — the line of sight to the galactic centre passes through it.",
+    facts: [
+      {
+        label: "Cách tâm Ngân Hà",
+        labelEn: "From the galactic centre",
+        value: "~21.800 năm ánh sáng",
+        valueEn: "~21,800 light-years",
+      },
+      {
+        label: "Cách Mặt Trời",
+        labelEn: "From the Sun",
+        value: "~4.900 năm ánh sáng",
+        valueEn: "~4,900 light-years",
+      },
+      {
+        label: "Loại",
+        labelEn: "Type",
+        value: "Nhánh xoắn ốc chính",
+        valueEn: "Major spiral arm",
+      },
+    ],
     color: "#a5b4fc",
   },
 ];

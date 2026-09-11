@@ -11,6 +11,10 @@ import {
   PLANETS,
   SUN,
   beltRadii,
+  educationalOrbit,
+  KUIPER_BELT,
+  kuiperRadii,
+  OORT_CLOUD,
   realScaleOrbit,
   realScaleRadius,
   type Planet,
@@ -244,7 +248,7 @@ function PlanetBody({
 
   const orbitRadius = settings.realScale
     ? realScaleOrbit(planet)
-    : planet.orbitRadius;
+    : educationalOrbit(planet);
   const radius = settings.realScale
     ? realScaleRadius(planet)
     : planet.displayRadius;
@@ -356,6 +360,149 @@ function PlanetBody({
 
 // ------------------------------------------------------------------ Cảnh
 
+/**
+ * Vành đai Kuiper.
+ *
+ * Thiếu nó thì mô hình dạy rằng Hệ Mặt Trời kết thúc ở Sao Hải Vương. Sao Hải
+ * Vương chỉ là hành tinh ngoài cùng, không phải mép ngoài — ngoài quỹ đạo nó
+ * còn một vành vật thể băng giá rộng 20 AU, và Sao Diêm Vương nằm trong đó.
+ *
+ * Mật độ dồn về vùng cộng hưởng 2:3 ở 39,4 AU, nơi Sao Hải Vương khoá các
+ * "plutino" lại. Vành đai Kuiper dẹt hơn vành đai tiểu hành tinh nhiều nhưng
+ * độ nghiêng quỹ đạo lại tản rộng hơn, nên bề dày theo phương đứng ở đây lớn
+ * hơn tỉ lệ với bề rộng.
+ */
+function KuiperBelt({
+  settings,
+  locale,
+  lowPower,
+}: {
+  settings: SceneSettings;
+  locale: string;
+  lowPower: boolean;
+}) {
+  const [inner, outer] = kuiperRadii(settings.realScale);
+  const count = lowPower ? 900 : 2200;
+
+  const geometry = useMemo(() => {
+    const positions: number[] = [];
+    const colors: number[] = [];
+    const base = new THREE.Color(KUIPER_BELT.color);
+    const span = KUIPER_BELT.outerAu - KUIPER_BELT.innerAu;
+
+    for (let i = 0; i < count; i += 1) {
+      /*
+       * Một phần ba số vật thể dồn quanh cộng hưởng 2:3, phần còn lại rải
+       * đều. Rải đều hết thì vành trông như một cái đĩa trơn, mà điều đáng
+       * nói nhất về vành đai Kuiper là nó có cấu trúc.
+       */
+      const au =
+        Math.random() < 0.34
+          ? KUIPER_BELT.resonanceAu + (Math.random() + Math.random() - 1) * 1.6
+          : KUIPER_BELT.innerAu + Math.random() * span;
+
+      const t = (au - KUIPER_BELT.innerAu) / span;
+      const radius = inner + t * (outer - inner);
+      const angle = Math.random() * Math.PI * 2;
+      const y = (Math.random() + Math.random() - 1) * (outer - inner) * 0.22;
+
+      positions.push(
+        Math.cos(angle) * radius,
+        y,
+        Math.sin(angle) * radius,
+      );
+      const dim = 0.45 + Math.random() * 0.55;
+      colors.push(base.r * dim, base.g * dim, base.b * dim);
+    }
+
+    const geo = new THREE.BufferGeometry();
+    geo.setAttribute("position", new THREE.Float32BufferAttribute(positions, 3));
+    geo.setAttribute("color", new THREE.Float32BufferAttribute(colors, 3));
+    return geo;
+  }, [inner, outer, count]);
+
+  return (
+    <group>
+      <points geometry={geometry}>
+        <pointsMaterial
+          size={settings.realScale ? 0.2 : 0.15}
+          sizeAttenuation
+          vertexColors
+          transparent
+          opacity={0.75}
+          depthWrite={false}
+        />
+      </points>
+
+      {settings.showLabels && (
+        <Html
+          position={[0, 0, outer * 1.04]}
+          center
+          distanceFactor={60}
+          zIndexRange={[6, 0]}
+        >
+          <span className="rounded-full bg-slate-900/70 px-2 py-0.5 text-[10px] whitespace-nowrap text-slate-300 backdrop-blur">
+            {locale === "en" ? KUIPER_BELT.nameEn : KUIPER_BELT.name}
+          </span>
+        </Html>
+      )}
+    </group>
+  );
+}
+
+/**
+ * Đám mây Oort — vỏ cầu theo sơ đồ, KHÔNG theo tỉ lệ.
+ *
+ * Đây là chỗ duy nhất trong cảnh mà tỉ lệ bị phá vỡ có chủ ý. Rìa trong của
+ * đám mây Oort ở khoảng 2.000 AU; ngay cả với phép nén căn bậc hai nó đã rơi
+ * ra 500 đơn vị cảnh, và rìa ngoài 100.000 AU thì ra 3.540 — xa gấp 45 lần
+ * vành đai Kuiper, đủ để mọi thứ còn lại co về một chấm.
+ *
+ * Nên nó được vẽ như một vỏ mờ ngay ngoài vành đai Kuiper, và nhãn phải nói
+ * đúng khoảng cách thật. Một sơ đồ có ghi chú thì trung thực; một sơ đồ không
+ * ghi chú mới là nói dối.
+ */
+function OortShell({
+  settings,
+  locale,
+}: {
+  settings: SceneSettings;
+  locale: string;
+}) {
+  const [, kuiperOuter] = kuiperRadii(settings.realScale);
+  const radius = kuiperOuter * 1.22;
+
+  return (
+    <group>
+      <mesh>
+        <sphereGeometry args={[radius, 24, 16]} />
+        <meshBasicMaterial
+          color={OORT_CLOUD.color}
+          wireframe
+          transparent
+          opacity={0.07}
+          depthWrite={false}
+        />
+      </mesh>
+
+      {settings.showLabels && (
+        <Html
+          position={[0, radius * 0.62, 0]}
+          center
+          distanceFactor={60}
+          zIndexRange={[6, 0]}
+        >
+          <span className="rounded-full bg-slate-900/70 px-2 py-0.5 text-[10px] whitespace-nowrap text-slate-300 backdrop-blur">
+            {locale === "en" ? OORT_CLOUD.nameEn : OORT_CLOUD.name} ·{" "}
+            {OORT_CLOUD.innerAu.toLocaleString(locale)}–
+            {OORT_CLOUD.outerAu.toLocaleString(locale)} AU
+          </span>
+        </Html>
+      )}
+    </group>
+  );
+}
+
 export function SolarScene({
   settings,
   selectedId,
@@ -462,13 +609,17 @@ export function SolarScene({
       <Sun radius={sunRadius} />
 
       <AsteroidBelt settings={settings} locale={locale} lowPower={lowPower} />
+      <KuiperBelt settings={settings} locale={locale} lowPower={lowPower} />
+      <OortShell settings={settings} locale={locale} />
 
       {PLANETS.map((planet) => (
         <group key={planet.id}>
           {settings.showOrbits && (
             <OrbitRing
               radius={
-                settings.realScale ? realScaleOrbit(planet) : planet.orbitRadius
+                settings.realScale
+                  ? realScaleOrbit(planet)
+                  : educationalOrbit(planet)
               }
             />
           )}

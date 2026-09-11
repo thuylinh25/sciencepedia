@@ -9,7 +9,6 @@ import type { SkyView } from "@/hooks/use-aladin";
 import { OPEN_BODY_EVENT } from "@/lib/solar-data";
 import { useInView } from "@/hooks/use-in-view";
 import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
 
 /**
  * Cảnh Aladin nằm ở chunk riêng và chỉ được tải khi component này quyết định
@@ -66,6 +65,15 @@ export type AladinViewerProps = {
    * dải "Khám phá tiếp" ở thẻ khác mở được thẻ này. Xem `body-jump-list`.
    */
   openOnEventId?: string;
+  /**
+   * Bấm vào bìa là vào thẳng toàn màn hình, không dừng ở khung trong thẻ.
+   *
+   * Dùng cho thư viện ảnh: khung trong thẻ chỉ cao bằng một ô vuông nhỏ, mà
+   * thứ người ta bấm vào để làm là xoay và phóng to một quả cầu — việc đó cần
+   * chỗ. Bắt bấm hai lần mới tới nơi dùng được là bắt trả tiền hai lần cho
+   * cùng một ý định.
+   */
+  openFullscreen?: boolean;
   className?: string;
 };
 
@@ -95,6 +103,7 @@ export function AladinViewer({
   crumbRoot,
   crumbCurrent,
   openOnEventId,
+  openFullscreen,
   className,
 }: AladinViewerProps) {
   const t = useTranslations("sky");
@@ -157,6 +166,7 @@ export function AladinViewer({
           fullscreenInfo={fullscreenInfo}
           crumbRoot={crumbRoot}
           crumbCurrent={crumbCurrent}
+          openFullscreen={openFullscreen}
           // Chỉ cho đóng khi chính người đọc đã bấm để mở. Khung tự nạp theo
           // tầm nhìn (trang bản đồ) thì đóng nó chỉ để nó mở lại ngay.
           onClose={clicked ? () => setClicked(false) : undefined}
@@ -165,11 +175,23 @@ export function AladinViewer({
         <div className="absolute inset-0">
           {posterBackground}
           {poster ?? (
-            <div
+            /*
+              Cả tấm bìa là một nút, không chỉ mỗi cái pill ở giữa.
+
+              Người xem đọc một tấm ảnh có dòng chữ "bấm để mở" là một thứ bấm
+              được, rồi bấm vào ảnh — trúng chỗ nào cũng phải mở. Con trỏ đổi
+              thành bàn tay trên toàn khung nói trước điều đó.
+
+              Cái pill giữ nguyên hình dáng nhưng là <span>: một <button> lồng
+              trong <button> là HTML không hợp lệ, và trình đọc màn hình sẽ
+              đọc ra hai điều khiển chồng nhau cho cùng một việc.
+            */
+            <button
+              type="button"
+              onClick={() => setClicked(true)}
+              aria-label={posterCaption ?? label}
               className={cn(
-                "grid size-full place-items-center px-6 text-center",
-                // Có ảnh nền thì phủ một lớp tối để chữ trắng còn đọc được;
-                // không có thì vẽ nền sao mờ như cũ.
+                "group grid size-full cursor-pointer place-items-center px-6 text-center",
                 posterBackground
                   ? "relative bg-gradient-to-t from-black/85 via-black/35 to-black/15"
                   : "bg-[radial-gradient(circle_at_50%_35%,#16224a,#04060e_70%)]",
@@ -177,22 +199,18 @@ export function AladinViewer({
             >
               <div>
                 <Telescope
-                  className="mx-auto size-7 text-white/50"
+                  className="mx-auto size-7 text-white/50 transition-colors group-hover:text-white/80"
                   aria-hidden
                 />
                 {posterCaption && (
                   <p className="mt-3 text-sm text-white/65">{posterCaption}</p>
                 )}
-                <Button
-                  onClick={() => setClicked(true)}
-                  className="mt-4 gap-2"
-                  size="sm"
-                >
-                  <Telescope className="size-4" />
+                <span className="mt-4 inline-flex items-center gap-2 rounded-md bg-primary px-3 py-1.5 text-sm font-medium text-primary-foreground shadow-sm transition-colors group-hover:bg-primary/90">
+                  <Telescope className="size-4" aria-hidden />
                   {t("open")}
-                </Button>
+                </span>
               </div>
-            </div>
+            </button>
           )}
         </div>
       )}

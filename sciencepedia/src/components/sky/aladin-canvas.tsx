@@ -11,7 +11,6 @@ import {
 } from "lucide-react";
 
 import { useAladin, type SkyView } from "@/hooks/use-aladin";
-import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 
 /**
@@ -29,6 +28,7 @@ export function AladinCanvas({
   fullscreenInfo,
   crumbRoot,
   crumbCurrent,
+  openFullscreen,
 }: {
   view: SkyView;
   /** Nhãn cho trình đọc màn hình — canvas WebGL tự nó không mô tả được gì */
@@ -56,11 +56,14 @@ export function AladinCanvas({
    */
   crumbRoot?: string;
   crumbCurrent?: string;
+  /** Mở thẳng ở chế độ toàn màn hình — xem `useAladin` */
+  openFullscreen?: boolean;
 }) {
   const t = useTranslations("sky");
   const { containerRef, status, isFullscreen, goTo, retry } = useAladin({
     enabled: true,
     initialView: view,
+    fullscreen: openFullscreen,
   });
 
   // So sánh theo giá trị: cha render lại với cùng toạ độ là chuyện thường, mà
@@ -93,15 +96,31 @@ export function AladinCanvas({
         trang (xem `.aladin-fullscreen` trong `globals.css`), nên nút này phải
         cố định và nằm cao hơn lớp đó. Trong thẻ thì nó chỉ là một nút góc.
       */}
-      {onClose && status !== "error" && (
+      {/*
+        Trong thẻ thì chỉ một nút lùi; breadcrumb để dành cho toàn màn hình.
+
+        Ở trong thẻ, cả lưới thiên thể vẫn nằm ngay xung quanh, nên một đường
+        dẫn nhắc "bạn đang ở Hệ Mặt Trời, mục Sao Kim" là nói lại thứ người
+        xem đang nhìn thấy — và nó chiếm mất một góc của khung ảnh vốn đã nhỏ.
+        Toàn màn hình thì ngược lại: khung phủ kín cửa sổ, không còn gì khác
+        trên màn hình để định vị, nên lúc đó đường dẫn mới có việc để làm.
+      */}
+      {onClose && status !== "error" && !isFullscreen && (
+        <button
+          type="button"
+          onClick={onClose}
+          aria-label={t("backToList")}
+          title={t("backToList")}
+          className="absolute top-2 left-2 z-10 inline-flex items-center justify-center rounded-full bg-black/65 p-2 text-white backdrop-blur-sm transition-colors hover:bg-black/85"
+        >
+          <ArrowLeft className="size-4" aria-hidden />
+        </button>
+      )}
+
+      {onClose && status !== "error" && isFullscreen && (
         <nav
           aria-label={crumbRoot ? `${crumbRoot} / ${crumbCurrent ?? ""}` : undefined}
-          className={cn(
-            "flex items-center gap-1.5 rounded-full bg-black/65 px-2 py-1.5 text-xs text-white backdrop-blur-sm",
-            isFullscreen
-              ? "fixed top-4 left-4 z-[70]"
-              : "absolute top-2 left-2 z-10",
-          )}
+          className="fixed top-4 left-4 z-[70] flex items-center gap-1.5 rounded-full bg-black/65 px-2 py-1.5 text-xs text-white backdrop-blur-sm"
         >
           <button
             type="button"

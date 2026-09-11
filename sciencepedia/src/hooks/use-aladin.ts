@@ -140,6 +140,15 @@ type UseAladinOptions = {
   enabled: boolean;
   /** Khung nhìn ban đầu. Đổi sau đó thì dùng `goTo`, không dựng lại cảnh. */
   initialView: SkyView;
+  /**
+   * Mở thẳng ở chế độ toàn màn hình.
+   *
+   * Dùng được vì "toàn màn hình" của Aladin không phải Fullscreen API của
+   * trình duyệt — nó chỉ gắn lớp `aladin-fullscreen` để đặt khung thành
+   * `position: fixed`. Không có cử chỉ người dùng nào bị đòi hỏi, nên bật
+   * ngay lúc khởi tạo là hợp lệ. Xem quy tắc CSS cùng tên trong globals.css.
+   */
+  fullscreen?: boolean;
 };
 
 /**
@@ -150,14 +159,19 @@ type UseAladinOptions = {
  * đi qua `goTo`, đổi survey đi qua `setSurvey` — cả hai đều là lệnh trên
  * instance đang sống.
  */
-export function useAladin({ enabled, initialView }: UseAladinOptions) {
+export function useAladin({
+  enabled,
+  initialView,
+  fullscreen = false,
+}: UseAladinOptions) {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const instanceRef = useRef<AladinInstance | null>(null);
   const resizeObserverRef = useRef<ResizeObserver | null>(null);
   const classObserverRef = useRef<MutationObserver | null>(null);
 
   const [status, setStatus] = useState<AladinStatus>("idle");
-  const [isFullscreen, setIsFullscreen] = useState(false);
+  const [isFullscreen, setIsFullscreen] = useState(fullscreen);
+  const fullscreenRef = useRef(fullscreen);
   const [attempt, setAttempt] = useState(0);
 
   // Khung nhìn ban đầu đọc qua ref: nó chỉ có ý nghĩa ở lần dựng đầu tiên, và
@@ -188,6 +202,7 @@ export function useAladin({ enabled, initialView }: UseAladinOptions) {
         const instance = factory.aladin(container, {
           survey: view.survey ?? DEFAULT_SURVEY,
           fov: fovForFrame(container, view),
+          fullScreen: fullscreenRef.current,
           // Xem chú thích `planetary` ở SkyView: bề mặt thiên thể phải để
           // Aladin tự chọn hệ toạ độ theo `hips_body`.
           ...(view.planetary ? {} : { cooFrame: "ICRS" as const }),

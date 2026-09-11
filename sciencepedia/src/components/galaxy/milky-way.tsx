@@ -107,6 +107,7 @@ export function MilkyWay() {
         color: feature.color,
         text: feature.description,
         textEn: feature.descriptionEn,
+        facts: feature.facts,
       };
     }
     const object = GALAXY_OBJECTS.find((item) => item.id === selectedId);
@@ -115,6 +116,7 @@ export function MilkyWay() {
       name: object.name,
       nameEn: object.nameEn,
       color: object.color,
+      facts: undefined,
       text: `${object.note} Cách Mặt Trời khoảng ${object.distanceLy.toLocaleString("vi")} năm ánh sáng.`,
       textEn: `${object.noteEn} About ${object.distanceLy.toLocaleString("en")} light-years from the Sun.`,
     };
@@ -218,6 +220,26 @@ export function MilkyWay() {
             <p className="mt-2.5 text-sm leading-relaxed text-white/75">
               {locale === "en" ? selected.textEn : selected.text}
             </p>
+
+            {/* Số đo đứng tách khỏi câu mô tả: đọc một bảng nhanh hơn đọc
+                một câu có bốn con số nhét vào giữa. */}
+            {selected.facts && (
+              <dl className="mt-3 space-y-1 border-t border-white/10 pt-3 text-xs">
+                {selected.facts.map((fact) => (
+                  <div
+                    key={fact.labelEn}
+                    className="flex items-baseline justify-between gap-4"
+                  >
+                    <dt className="text-white/55">
+                      {locale === "en" ? fact.labelEn : fact.label}
+                    </dt>
+                    <dd className="text-right font-mono text-white/90">
+                      {locale === "en" ? fact.valueEn : fact.value}
+                    </dd>
+                  </div>
+                ))}
+              </dl>
+            )}
           </div>
         )}
       </div>
