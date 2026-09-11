@@ -20,7 +20,6 @@ import {
 import { Hero } from "@/components/home/hero";
 import { StatsBand } from "@/components/home/stats-band";
 import { InteractiveExplore } from "@/components/home/interactive-explore";
-import { EpicEarth } from "@/components/earth/epic-earth";
 import { HeroFields } from "@/components/home/hero-fields";
 import { SolarPreview } from "@/components/home/solar-preview";
 import { AiQuestions } from "@/components/home/ai-questions";
@@ -107,16 +106,6 @@ export default async function HomePage({
       {/* Ngay dưới hero, trên bài nổi bật: đây là câu trả lời cho "trang này
           làm được gì", và nó phải đến trước danh sách bài đọc. */}
       <InteractiveExplore />
-
-      {/* Trái Đất hôm nay, ngay sau lưới công cụ.
-
-          Nó đứng ở đây vì là thứ duy nhất trên trang chủ có dữ liệu MỚI mỗi
-          ngày: năm card phía trên nói trang này làm được gì, còn khối này
-          chứng minh bằng một tấm ảnh chụp cách đây vài giờ. Đặt sau bài nổi
-          bật thì phần lớn người đọc không cuộn tới. */}
-      <div className="container-page section-gap">
-        <EpicEarth locale={locale} />
-      </div>
 
       {/* ---------------------------------------------------- Nổi bật */}
       {heroArticle && (
