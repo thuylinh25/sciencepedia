@@ -89,7 +89,11 @@
     "heroStatsModels": "3D models",
     "heroStatsTopics": "topics",
     "heroStatsAi": "AI assistant",
-    "heroSocialProof": "From cosmology and physics to biology, Earth and climate — every article is sourced and reviewed."
+    "heroSocialProof": "From cosmology and physics to biology, Earth and climate — every article is sourced and reviewed.",
+    "previewLatest": "Latest article",
+    "previewModel": "3D model",
+    "previewTopic": "Trending topic",
+    "previewTopicCount": "{count} articles"
   },
   "article": {
     "readingTime": "{minutes} min read",
@@ -236,7 +240,8 @@
       "two": "Why is Mars red?",
       "three": "How does deep sleep affect memory?",
       "four": "How does the immune system recognise a virus?"
-    }
+    },
+    "askLabel": "Ask AI"
   },
   "admin": {
     "title": "Dashboard",

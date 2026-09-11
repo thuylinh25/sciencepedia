@@ -16,11 +16,14 @@ export function Hero({
   search,
   fields,
   stats,
+  previews,
 }: {
   search?: ReactNode;
   fields?: ReactNode;
   /** Dòng số liệu dưới ô tìm kiếm — xem `HeroStats` */
   stats?: ReactNode;
+  /** Ba thẻ nội dung động ở cuối hero — xem `HeroPreviewCards` */
+  previews?: ReactNode;
 }) {
   const t = useTranslations("home");
   const locale = useLocale();
@@ -58,13 +61,11 @@ export function Hero({
         className="pointer-events-none absolute inset-x-0 bottom-0 h-20 bg-gradient-to-b from-transparent to-background"
       />
 
-      {/* Padding bất đối xứng có chủ đích: StatsBand đè lên đáy hero bằng
-          `-mt-10`, nên khoảng trống dưới phải dư ra chừng đó. */}
-      {/* Hai cột từ lg trở lên. Cột phải cố định 24rem thay vì `1fr`: để nó co
-          giãn thì ở 1024px thiên hà chiếm gần nửa bề ngang và bóp cột chữ xuống
-          mức tiêu đề phải xuống bốn dòng. 28rem là mức cân được với cột chữ đã
-          thu hẹp còn max-w-3xl. */}
-      {/* Chiều cao hạ từ min(64svh,34rem) xuống min(52svh,28rem) — chừng 19%.
+      {/* Hai cột từ `lg` trở lên, cột phải cố định chứ không `1fr`: để nó co
+          giãn thì ở 1024px thiên hà chiếm gần nửa bề ngang và bóp cột chữ
+          xuống mức tiêu đề phải xuống bốn dòng.
+
+          Chiều cao hạ từ min(64svh,34rem) xuống min(52svh,28rem) — chừng 19%.
 
           Mục đích không phải tiết kiệm pixel mà là ĐỂ LỘ khối kế tiếp. Ở 64svh
           cộng đệm, "Khám phá tương tác" nằm hoàn toàn dưới nếp gấp trên laptop,
@@ -113,7 +114,7 @@ export function Hero({
 
           <motion.p
             {...rise(0.16)}
-            className="mt-5 max-w-2xl text-lg leading-[1.55] text-pretty text-white/75"
+            className="mt-5 max-w-2xl text-lg leading-[1.55] text-pretty text-white/85"
           >
             {t("heroSubtitle")}
           </motion.p>
@@ -146,6 +147,22 @@ export function Hero({
           {fields && (
             <motion.div {...rise(0.32)} className="mt-5">
               {fields}
+            </motion.div>
+          )}
+
+          {/* Ba thẻ nội dung động, đứng CUỐI cột chữ.
+
+              Cuối chứ không phải trên: thứ tự của hero là tiêu đề → ô tìm kiếm
+              → số liệu → lĩnh vực → nội dung cụ thể, tức đi từ "trang này là
+              gì" xuống dần tới "đây, đọc cái này". Đảo lên trên thì ba thẻ
+              tranh chỗ với chính ô tìm kiếm.
+
+              Đây cũng là khối bị mép dưới màn hình cắt ngang trên laptop, và
+              đó là cố ý — một hàng thẻ bị cắt dở nói "còn nữa" rõ hơn khoảng
+              trắng. */}
+          {previews && (
+            <motion.div {...rise(0.38)} className="mt-6 max-w-2xl">
+              {previews}
             </motion.div>
           )}
 

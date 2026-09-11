@@ -58,7 +58,7 @@ export async function SearchHeroForm({ locale }: { locale: Locale }) {
         autoComplete="off"
         enterKeyHint="search"
         placeholder={t("heroSearchPlaceholder")}
-        className="h-14 w-full rounded-full border border-transparent bg-star ps-13 pe-16 text-base text-space-900 shadow-[0_10px_34px_-8px_rgb(0_0_0/0.5)] outline-none placeholder:text-space-700/70 focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 sm:h-16 sm:ps-14 sm:pe-44 sm:text-lg"
+        className="h-14 w-full rounded-full border border-transparent bg-star ps-13 pe-16 text-base text-space-900 shadow-[0_10px_34px_-8px_rgb(0_0_0/0.5)] outline-none placeholder:text-space-700/85 focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 sm:h-16 sm:ps-14 sm:pe-44 sm:text-lg"
       />
       {/* Nút chính, không phải phần phụ gắn thêm vào ô.
           Dùng `primary` (vàng) chứ không `accent` (xanh): nền hero tối ở cả hai

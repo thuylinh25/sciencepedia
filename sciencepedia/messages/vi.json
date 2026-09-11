@@ -89,7 +89,11 @@
     "heroStatsModels": "mô hình 3D",
     "heroStatsTopics": "chủ đề",
     "heroStatsAi": "Trợ lý AI",
-    "heroSocialProof": "Từ vũ trụ học và vật lý tới sinh học, Trái Đất và khí hậu — mỗi bài đều dẫn nguồn và có người duyệt."
+    "heroSocialProof": "Từ vũ trụ học và vật lý tới sinh học, Trái Đất và khí hậu — mỗi bài đều dẫn nguồn và có người duyệt.",
+    "previewLatest": "Bài mới nhất",
+    "previewModel": "Mô hình 3D",
+    "previewTopic": "Chủ đề đang quan tâm",
+    "previewTopicCount": "{count} bài"
   },
   "article": {
     "readingTime": "{minutes} phút đọc",
@@ -236,7 +240,8 @@
       "two": "Vì sao sao Hoả có màu đỏ?",
       "three": "Giấc ngủ sâu ảnh hưởng gì tới trí nhớ?",
       "four": "Hệ miễn dịch nhận diện virus bằng cách nào?"
-    }
+    },
+    "askLabel": "Hỏi AI"
   },
   "admin": {
     "title": "Bảng điều khiển",

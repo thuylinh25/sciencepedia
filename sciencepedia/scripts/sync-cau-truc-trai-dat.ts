@@ -60,8 +60,25 @@ const prisma = new PrismaClient();
 
 const SLUG = "cau-truc-ben-trong-trai-dat";
 
-/** Ngày chạy lượt này — cũng là `reviewedAt` và `lastVerifiedAt` được đặt. */
-const VERIFIED_AT = new Date("2026-09-10T00:00:00Z");
+/**
+ * Ngày chạy lượt này — cũng là `reviewedAt` và `lastVerifiedAt` được đặt.
+ *
+ * 2026-09-11, KHÔNG phải 2026-09-10 như bản đầu.
+ *
+ * Mốc 09-10 là ngày bản tiếng Việt qua gate. Nhưng lệnh ghi này đặt cả
+ * `content` LẪN `contentEn` trong một transaction, mà bản tiếng Anh ngày đó
+ * còn chưa tồn tại — nó được dịch và duyệt ngày 11. Đóng dấu 09-10 lên một
+ * hàng có nửa tiếng Anh chưa hề qua gate vào ngày đó là đúng thứ sai mà
+ * `docs/content/corrections.md` mục 2026-09-10 đã phán quyết: một byline
+ * chứng thực cho văn bản chưa được thẩm định ở thời điểm nó ghi.
+ *
+ * Đẩy mốc tới ngày muộn hơn cũng đúng cho bản tiếng Việt: hàng dữ liệu chỉ
+ * trọn vẹn khi cả hai ngôn ngữ cùng qua gate, và đó là ngày 11.
+ *
+ * `reviewedById` KHÔNG đổi — vẫn là tài khoản tổ chức "Ban biên tập
+ * Sciencepedia".
+ */
+const VERIFIED_AT = new Date("2026-09-11T00:00:00Z");
 
 const DRAFTS = path.resolve(process.cwd(), "..", "docs", "content", "drafts");
 const VI_FILE = path.join(DRAFTS, `${SLUG}.md`);

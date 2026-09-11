@@ -8,11 +8,56 @@ import { MessageCircle, X } from "lucide-react";
 import { usePathname } from "@/i18n/navigation";
 import { AssistantChat } from "@/components/ai/assistant-chat";
 
+/** Khoá `sessionStorage` đánh dấu nhãn chữ đã bung một lần trong phiên này. */
+const LABEL_SEEN_KEY = "sciencepedia:assistant-label-seen";
+
 /** Nút nổi mở trợ lý AI ở mọi trang, trừ trang /assistant và khu quản trị. */
 export function AssistantLauncher() {
   const t = useTranslations("ai");
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+
+  /**
+   * Nhãn chữ cạnh icon.
+   *
+   * Nút tròn chỉ có một bong bóng thoại không nói được nó làm gì — người dùng
+   * đoán ra "chat hỗ trợ", tức là đoán sai: đây là trợ lý trả lời câu hỏi khoa
+   * học, không phải kênh liên hệ.
+   *
+   * Bung ra sau 4 giây, và **chỉ một lần mỗi phiên**. Bung lại ở mỗi lần tải
+   * trang là quấy rối: người đã đọc nhãn một lần rồi thì lần thứ mười nó chỉ
+   * còn là thứ nhảy vào mắt. `sessionStorage` giữ dấu trong đúng tab đó, và
+   * mất khi đóng tab — vừa đủ để "phiên này đã thấy rồi".
+   */
+  const [showLabel, setShowLabel] = useState(false);
+
+  useEffect(() => {
+    let seen = false;
+    try {
+      seen = sessionStorage.getItem(LABEL_SEEN_KEY) === "1";
+    } catch {
+      // Chế độ riêng tư hoặc trình duyệt chặn lưu trữ: coi như chưa thấy. Thà
+      // hiện thừa một lần còn hơn ném lỗi làm hỏng cả nút.
+    }
+    if (seen) return;
+
+    const show = setTimeout(() => {
+      setShowLabel(true);
+      try {
+        sessionStorage.setItem(LABEL_SEEN_KEY, "1");
+      } catch {
+        /* không lưu được thì thôi, nhãn vẫn hiện đúng lần này */
+      }
+    }, 4000);
+
+    // Thu lại sau 6 giây để nút về đúng kích thước cũ, không chiếm chỗ mãi.
+    const hide = setTimeout(() => setShowLabel(false), 10000);
+
+    return () => {
+      clearTimeout(show);
+      clearTimeout(hide);
+    };
+  }, []);
 
   // Bảng này là một hộp thoại: Esc phải đóng được nó. Trước đây người dùng bàn
   // phím mở ra rồi chỉ còn cách tab ngược lại nút để đóng.
@@ -53,6 +98,12 @@ export function AssistantLauncher() {
         aria-expanded={open}
         aria-haspopup="dialog"
         aria-label={t("title")}
+        /* `title` cho tooltip gốc của trình duyệt khi rê chuột.
+
+           Dùng thuộc tính gốc chứ không dựng tooltip riêng: tooltip tự làm cần
+           state, cần định vị, cần xử lý bàn phím và màn hình cảm ứng, để đổi
+           lấy đúng một dòng chữ. `title` có sẵn tất cả những thứ đó. */
+        title={t("askLabel")}
         // env(safe-area-inset-bottom): trên iPhone có thanh chỉ báo trang chủ,
         // bottom-4 thuần đặt nút đè lên vùng vuốt của hệ điều hành.
         /* Đẩy cao hơn trên điện thoại.
@@ -64,13 +115,29 @@ export function AssistantLauncher() {
            đó (xem layout) nên không còn gì lọt xuống dưới nó.
 
            Từ `sm` trở lên thì lề trang đã đủ rộng, giữ nguyên 1rem. */
-        className="fixed right-4 bottom-[max(1.5rem,calc(env(safe-area-inset-bottom)+0.75rem))] z-50 grid size-14 place-items-center rounded-full bg-primary text-primary-foreground shadow-lg transition-transform hover:scale-105 active:scale-95 sm:bottom-[max(1rem,env(safe-area-inset-bottom))]"
+        /* Viên thuốc co giãn thay vì hình tròn cứng.
+
+           `h-14` và `rounded-full` giữ nguyên; bề rộng do chính nhãn quyết
+           định. Nhãn thu về `max-w-0` thì nút còn đúng 56px — bằng chiều cao,
+           tức tròn như cũ. Chuyển động chỉ nằm ở bề rộng của chính nút, mà nút
+           là `position: fixed`, nên không đẩy một pixel nào của trang.
+
+           Nhãn dùng `max-w` chứ không `display`: `display` không chuyển động
+           được, và nhãn bật/tắt đột ngột trông như lỗi render. */
+        className="fixed right-4 bottom-[max(1.5rem,calc(env(safe-area-inset-bottom)+0.75rem))] z-50 flex h-14 items-center justify-center rounded-full bg-primary px-4 text-primary-foreground shadow-lg transition-[transform,width] duration-300 ease-out hover:scale-105 active:scale-95 sm:bottom-[max(1rem,env(safe-area-inset-bottom))]"
       >
         {open ? (
-          <X className="size-6" />
+          <X className="size-6 shrink-0" />
         ) : (
-          <MessageCircle className="size-6" />
+          <MessageCircle className="size-6 shrink-0" />
         )}
+        <span
+          className={`overflow-hidden ps-2 text-sm font-semibold whitespace-nowrap transition-[max-width,opacity] duration-300 ease-out ${
+            showLabel && !open ? "max-w-40 opacity-100" : "max-w-0 opacity-0"
+          }`}
+        >
+          {t("askLabel")}
+        </span>
       </button>
     </>
   );
