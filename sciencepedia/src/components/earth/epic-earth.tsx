@@ -52,7 +52,7 @@ type Status = "loading" | "ready" | "empty" | "error";
  * đúng tỉ lệ mất 24 giờ — nhưng đủ chậm để thấy các châu lục trôi qua chứ
  * không nhảy, và một vòng 13 khung hết chừng 12 giây.
  */
-const FRAME_MS = 900;
+const FRAME_MS = 1600;
 
 /** Cache còn hiệu lực bao lâu. EPIC cập nhật vài giờ một lần. */
 const CACHE_TTL_MS = 3 * 60 * 60 * 1000;
