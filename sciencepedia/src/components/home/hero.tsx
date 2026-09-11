@@ -155,21 +155,56 @@ export function Hero({
               </Button>
             </div>
 
-            <div className="flex flex-wrap items-center gap-2">
+            {/*
+              Card mini thay cho chip.
+
+              Chip chỉ có tên, và tên thì trả lời "cái này gọi là gì" chứ
+              không trả lời "nó làm được gì" — đúng câu người vào lần đầu
+              đang hỏi. Thêm một dòng phụ là đủ, và vẫn nhỏ hơn card thật ở
+              khối "Khám phá tương tác" phía dưới nên không cạnh tranh với
+              nút chính ngay trên nó.
+
+              Dòng phụ của hành trình thu phóng ghi "xuống Trái Đất", không
+              phải "đến nguyên tử": mô hình dừng ở Trái Đất, và hứa một bậc
+              không tồn tại thì người bấm vào sẽ thấy mình bị lừa.
+            */}
+            <div className="grid gap-2 sm:grid-cols-3">
               {(
                 [
-                  { href: "/solar-system", emoji: "☀️", key: "solarSystem" },
-                  { href: "/zoom", emoji: "🔍", key: "zoom" },
-                  { href: "/space-map", emoji: "⭐", key: "skyMap" },
+                  {
+                    href: "/solar-system",
+                    emoji: "☀️",
+                    key: "solarSystem",
+                    sub: "quickSolar",
+                  },
+                  { href: "/zoom", emoji: "🔍", key: "zoom", sub: "quickZoom" },
+                  {
+                    href: "/space-map",
+                    emoji: "⭐",
+                    key: "skyMap",
+                    sub: "quickSky",
+                  },
                 ] as const
               ).map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="inline-flex items-center gap-1.5 rounded-full border border-white/15 bg-white/5 px-3 py-1.5 text-sm text-white/80 backdrop-blur-md transition-colors hover:border-white/35 hover:bg-white/10 hover:text-white"
+                  className="group flex items-center gap-3 rounded-2xl border border-white/12 bg-white/5 px-3.5 py-3 backdrop-blur-md transition-colors hover:border-white/30 hover:bg-white/12"
                 >
-                  <span aria-hidden>{item.emoji}</span>
-                  {tExplore(`cards.${item.key}.title`)}
+                  <span
+                    aria-hidden
+                    className="inline-flex size-9 shrink-0 items-center justify-center rounded-xl border border-white/12 bg-white/10 text-base"
+                  >
+                    {item.emoji}
+                  </span>
+                  <span className="min-w-0">
+                    <span className="block truncate text-sm font-medium text-white/90">
+                      {tExplore(`cards.${item.key}.title`)}
+                    </span>
+                    <span className="block truncate text-xs text-white/55">
+                      {tExplore(item.sub)}
+                    </span>
+                  </span>
                 </Link>
               ))}
             </div>

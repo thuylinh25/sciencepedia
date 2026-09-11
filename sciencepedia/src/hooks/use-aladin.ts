@@ -301,6 +301,23 @@ export function useAladin({
     if (view.survey) setSurveyOn(instance, view.survey);
   }, []);
 
+  /**
+   * Đổi tâm khung nhìn mà KHÔNG chạm vào mức phóng.
+   *
+   * `goTo` gọi cả `setFoV`, hợp khi nhảy tới một mục tiêu mới nhưng sai khi
+   * dùng cho chuyển động liên tục: mỗi khung nó sẽ kéo mức phóng về giá trị
+   * tính từ khung nhìn ban đầu, tức là giật lại mọi thao tác phóng to của
+   * người xem, mỗi vài chục mili giây một lần.
+   */
+  const panTo = useCallback((ra: number, dec: number) => {
+    instanceRef.current?.gotoRaDec(ra, dec);
+  }, []);
+
+  /** Tâm khung nhìn hiện tại, để chuyển động tiếp tục từ đúng chỗ đang đứng. */
+  const centre = useCallback((): [number, number] | null => {
+    return instanceRef.current?.getRaDec() ?? null;
+  }, []);
+
   const setSurvey = useCallback((surveyId: string) => {
     const instance = instanceRef.current;
     if (instance) setSurveyOn(instance, surveyId);
@@ -314,6 +331,8 @@ export function useAladin({
     status,
     isFullscreen,
     goTo,
+    panTo,
+    centre,
     setSurvey,
     retry,
   } as const;

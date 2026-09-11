@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { ArrowRight, Orbit, Sparkles } from "lucide-react";
+import { ArrowRight, Sparkles } from "lucide-react";
 
 import { Link } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
@@ -21,7 +21,6 @@ import { Hero } from "@/components/home/hero";
 import { StatsBand } from "@/components/home/stats-band";
 import { InteractiveExplore } from "@/components/home/interactive-explore";
 import { HeroFields } from "@/components/home/hero-fields";
-import { SolarPreview } from "@/components/home/solar-preview";
 import { AiQuestions } from "@/components/home/ai-questions";
 import { DiscoverToday } from "@/components/home/discover-today";
 import { SearchHeroForm } from "@/components/search/search-hero-form";
@@ -173,34 +172,6 @@ export default async function HomePage({
         </StaggerGroup>
       </section>
 
-      {/* ---------------------------------------------------- Hệ Mặt Trời */}
-      <section className="section-gap">
-        <Reveal>
-          <div className="bg-cosmos starfield relative isolate overflow-hidden py-24">
-            <div className="container-page grid items-center gap-12 lg:grid-cols-2">
-              <div className="text-star">
-                <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3.5 py-1 text-xs font-medium tracking-widest text-white/85 uppercase">
-                  <Orbit className="size-3.5" /> 3D · WebGL
-                </span>
-                <h2 className="font-display text-3xl font-bold tracking-tight text-balance text-white sm:text-4xl lg:text-5xl">
-                  {t("solarTitle")}
-                </h2>
-                <p className="mt-4 max-w-lg text-lg leading-relaxed text-pretty text-white/70">
-                  {t("solarSubtitle")}
-                </p>
-                <Button asChild size="xl" variant="accent" className="mt-8">
-                  <Link href="/solar-system">
-                    {t("solarCta")}
-                    <ArrowRight className="size-4" />
-                  </Link>
-                </Button>
-              </div>
-
-              <SolarPreview />
-            </div>
-          </div>
-        </Reveal>
-      </section>
 
       {/* --------------------------------------------------- Mới xuất bản */}
       <section className="container-page section-gap">

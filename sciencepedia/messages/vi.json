@@ -180,7 +180,26 @@
     "surfacePrompt": "{body} — bấm để mở bề mặt, xoay và phóng to",
     "surfaceLabel": "Bản đồ bề mặt {body}",
     "galleryCredit": "Ảnh chụp lấy từ Wikimedia Commons, giấy phép ghi ở từng tấm. Bản đồ bề mặt do CDS (Strasbourg) phát dưới dạng HiPS, dựng từ dữ liệu của NASA, ESA và USGS.",
-    "exploreNext": "Khám phá tiếp"
+    "exploreNext": "Khám phá tiếp",
+    "tabAbout": "Thông tin",
+    "tabMap": "Bản đồ bề mặt",
+    "tabPhysical": "Đặc điểm vật lý",
+    "tabRelated": "Khám phá liên quan",
+    "viewInSolarSystem": "Xem trong Hệ Mặt Trời",
+    "dragHint": "Kéo để xoay · Cuộn để phóng to",
+    "autoRotate": "Tự quay",
+    "factRadius": "Bán kính",
+    "factDiameter": "Đường kính",
+    "factDistance": "Cách Mặt Trời",
+    "factPeriod": "Một năm",
+    "factDay": "Một ngày",
+    "factMoons": "Số vệ tinh",
+    "factTemp": "Nhiệt độ trung bình",
+    "factGravity": "Trọng lực bề mặt",
+    "factTilt": "Độ nghiêng trục",
+    "unitDays": "ngày Trái Đất",
+    "unitHours": "giờ Trái Đất",
+    "unitYears": "năm Trái Đất"
   },
   "ai": {
     "title": "Trợ lý khoa học",
@@ -458,7 +477,10 @@
         "body": "Theo dõi hình ảnh toàn cảnh Trái Đất ghi từ điểm Lagrange L1 bởi vệ tinh DSCOVR của NASA.",
         "cta": "Xem trực tiếp"
       }
-    }
+    },
+    "quickSolar": "Khám phá hành tinh",
+    "quickZoom": "Từ vũ trụ xuống Trái Đất",
+    "quickSky": "Quan sát bầu trời đêm"
   },
   "earthLive": {
     "title": "Trái Đất thời gian thực",

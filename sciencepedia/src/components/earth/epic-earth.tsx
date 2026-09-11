@@ -39,8 +39,20 @@ type Frame = {
 
 type Status = "loading" | "ready" | "empty" | "error";
 
-/** Chu kỳ đổi khung hình, mili giây. */
-const FRAME_MS = 250;
+/**
+ * Chu kỳ đổi khung hình, mili giây.
+ *
+ * 250 ms là con số ban đầu và nó gây chóng mặt thật, vì lý do nằm ở khoảng
+ * cách giữa hai khung chứ không ở tốc độ phát: EPIC chụp một đến hai giờ một
+ * lần, nên mỗi khung Trái Đất đã quay thêm 15–30 độ. Phát chúng cách nhau
+ * 250 ms là khoảng 100 độ mỗi giây — nhanh gấp hơn hai nghìn lần thực tế, và
+ * mắt đọc ra cú giật chứ không ra chuyển động.
+ *
+ * 900 ms cho khoảng 25 độ mỗi giây. Vẫn nhanh hơn thật rất nhiều — một vòng
+ * đúng tỉ lệ mất 24 giờ — nhưng đủ chậm để thấy các châu lục trôi qua chứ
+ * không nhảy, và một vòng 13 khung hết chừng 12 giây.
+ */
+const FRAME_MS = 900;
 
 /** Cache còn hiệu lực bao lâu. EPIC cập nhật vài giờ một lần. */
 const CACHE_TTL_MS = 3 * 60 * 60 * 1000;
@@ -332,7 +344,14 @@ export function EpicEarth({ locale = "vi" }: { locale?: string }) {
                     sizes="(min-width: 1280px) 500px, (min-width: 1024px) 440px, (min-width: 640px) 320px, 80vw"
                     priority={i === 0}
                     aria-hidden={i !== index}
-                    className="object-cover transition-opacity duration-100"
+                    /*
+                     * Phóng 1,36 lần. Đo trên ảnh EPIC thật thì đĩa Trái Đất
+                     * chỉ chiếm 73,8% bề ngang khung 1080 px, phần còn lại là
+                     * khoảng đen. Không phóng thì khung tròn hiện ra một quầng
+                     * đen dày quanh quả cầu, và người xem đọc quầng đó là một
+                     * phần của thiết kế chứ không phải lề của tấm ảnh.
+                     */
+                    className="scale-[1.36] object-cover transition-opacity duration-300"
                     style={{ opacity: i === index ? 1 : 0 }}
                   />
                 ))}

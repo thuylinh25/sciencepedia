@@ -85,6 +85,7 @@ export function PlanetSurface({
       crumbCurrent={name}
       openOnEventId={bodyId}
       openFullscreen
+      canSpin
       posterCaption={caption}
       posterBackground={
         <Image

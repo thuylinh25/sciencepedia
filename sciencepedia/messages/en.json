@@ -180,7 +180,26 @@
     "surfacePrompt": "{body} — click to open the surface, rotate and zoom",
     "surfaceLabel": "Surface map of {body}",
     "galleryCredit": "Photographs come from Wikimedia Commons; the licence is named on each one. Surface maps are published as HiPS by CDS (Strasbourg), built from NASA, ESA and USGS data.",
-    "exploreNext": "Explore next"
+    "exploreNext": "Explore next",
+    "tabAbout": "Overview",
+    "tabMap": "Surface map",
+    "tabPhysical": "Physical data",
+    "tabRelated": "Related",
+    "viewInSolarSystem": "See it in the Solar System",
+    "dragHint": "Drag to rotate · Scroll to zoom",
+    "autoRotate": "Auto-rotate",
+    "factRadius": "Radius",
+    "factDiameter": "Diameter",
+    "factDistance": "From the Sun",
+    "factPeriod": "One year",
+    "factDay": "One day",
+    "factMoons": "Moons",
+    "factTemp": "Mean temperature",
+    "factGravity": "Surface gravity",
+    "factTilt": "Axial tilt",
+    "unitDays": "Earth days",
+    "unitHours": "Earth hours",
+    "unitYears": "Earth years"
   },
   "ai": {
     "title": "Science assistant",
@@ -458,7 +477,10 @@
         "body": "Follow full-disk images of Earth captured from the L1 Lagrange point by NASA's DSCOVR spacecraft.",
         "cta": "View live"
       }
-    }
+    },
+    "quickSolar": "Explore the planets",
+    "quickZoom": "From the universe down to Earth",
+    "quickSky": "Look at the night sky"
   },
   "earthLive": {
     "title": "Earth, near real time",

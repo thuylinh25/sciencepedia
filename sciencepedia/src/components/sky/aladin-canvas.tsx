@@ -1,16 +1,20 @@
 "use client";
 
-import { useEffect, useRef, type ReactNode } from "react";
+import { useCallback, useEffect, useRef, useState, type ReactNode } from "react";
 import { useTranslations } from "next-intl";
 import {
   AlertTriangle,
   ArrowLeft,
   ChevronRight,
   Loader2,
+  MousePointer2,
+  Pause,
+  Play,
   RotateCcw,
 } from "lucide-react";
 
 import { useAladin, type SkyView } from "@/hooks/use-aladin";
+import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 
 /**
@@ -29,6 +33,7 @@ export function AladinCanvas({
   crumbRoot,
   crumbCurrent,
   openFullscreen,
+  canSpin,
 }: {
   view: SkyView;
   /** Nhãn cho trình đọc màn hình — canvas WebGL tự nó không mô tả được gì */
@@ -58,13 +63,64 @@ export function AladinCanvas({
   crumbCurrent?: string;
   /** Mở thẳng ở chế độ toàn màn hình — xem `useAladin` */
   openFullscreen?: boolean;
+  /**
+   * Cho bật tự quay. Chỉ bật ở bề mặt thiên thể: xoay một bản đồ bầu trời
+   * theo kinh độ không có nghĩa vật lý nào, nó chỉ trôi ngang qua các chòm
+   * sao.
+   */
+  canSpin?: boolean;
 }) {
   const t = useTranslations("sky");
-  const { containerRef, status, isFullscreen, goTo, retry } = useAladin({
-    enabled: true,
-    initialView: view,
-    fullscreen: openFullscreen,
-  });
+  const { containerRef, status, isFullscreen, goTo, panTo, centre, retry } =
+    useAladin({
+      enabled: true,
+      initialView: view,
+      fullscreen: openFullscreen,
+    });
+
+  const [spinning, setSpinning] = useState(false);
+  const [hintVisible, setHintVisible] = useState(false);
+
+  /**
+   * Tự quay bằng cách dịch tâm khung nhìn theo kinh độ.
+   *
+   * Aladin không có API quay, nhưng ở chế độ bề mặt thiên thể thì dịch tâm
+   * theo kinh độ CHÍNH LÀ quay quả cầu — kinh độ là toạ độ quanh trục.
+   *
+   * Đọc tâm hiện tại mỗi bước thay vì giữ một biến đếm riêng: người xem kéo
+   * chuột giữa lúc đang quay thì chuyển động phải tiếp tục từ chỗ họ vừa kéo
+   * tới, không giật về quỹ tích của biến đếm.
+   *
+   * 0,55 độ mỗi 60 ms là khoảng 9 độ mỗi giây — một vòng 40 giây. Chậm hơn
+   * thế thì trông như đứng yên, nhanh hơn thì thành cái vòng xoay.
+   */
+  useEffect(() => {
+    if (!spinning || status !== "ready") return;
+
+    const timer = window.setInterval(() => {
+      const position = centre();
+      if (!position) return;
+      panTo((position[0] + 0.55) % 360, position[1]);
+    }, 60);
+
+    return () => window.clearInterval(timer);
+  }, [spinning, status, centre, panTo]);
+
+  /**
+   * Gợi ý "kéo để xoay", tự tắt.
+   *
+   * Hiện 4,5 giây rồi biến mất, và biến mất ngay khi người xem chạm vào khung
+   * — lúc đó họ đã biết nó kéo được, nên câu nhắc trở thành thứ che mất chính
+   * cái vừa được khám phá.
+   */
+  useEffect(() => {
+    if (status !== "ready") return;
+    setHintVisible(true);
+    const timer = window.setTimeout(() => setHintVisible(false), 4500);
+    return () => window.clearTimeout(timer);
+  }, [status]);
+
+  const dismissHint = useCallback(() => setHintVisible(false), []);
 
   // So sánh theo giá trị: cha render lại với cùng toạ độ là chuyện thường, mà
   // mỗi lần `goTo` thừa là một lượt yêu cầu ô tile mới.
@@ -88,6 +144,8 @@ export function AladinCanvas({
         ref={containerRef}
         role="application"
         aria-label={label}
+        onPointerDown={dismissHint}
+        onWheel={dismissHint}
         className="size-full"
       />
 
@@ -151,9 +209,51 @@ export function AladinCanvas({
           khung bị CSS ép về hình vuông giữa màn hình (xem `.aladin-body-view`),
           nên mép trái của nó không phải mép trái của cái người xem đang nhìn. */}
       {fullscreenInfo && isFullscreen && status === "ready" && (
-        <div className="fixed top-16 left-4 z-[70] max-h-[calc(100dvh-6rem)] w-[min(22rem,calc(100vw-2rem))] overflow-y-auto rounded-2xl border border-white/10 bg-black/70 p-4 text-white backdrop-blur-xl">
+        /* Nền đặc hơn và viền sáng hơn bản đầu: bảng nằm trên ảnh bầu trời
+           hoặc bề mặt hành tinh, và cả hai đều tối — ở bg-black/70 thì khối
+           bảng gần như tan vào nền, chữ vẫn đọc được nhưng mắt không thấy đâu
+           là mép bảng. slate-900 là xanh đen chứ không phải đen tuyệt đối,
+           nên nó tách khỏi nền bằng sắc màu chứ không chỉ bằng độ sáng. */
+        <div className="fixed top-16 left-4 z-[70] max-h-[calc(100dvh-6rem)] w-[min(22rem,calc(100vw-2rem))] overflow-y-auto rounded-2xl border border-white/[0.08] bg-slate-900/85 p-4 text-white shadow-2xl backdrop-blur-xl">
           {fullscreenInfo}
         </div>
+      )}
+
+      {status === "ready" && hintVisible && (
+        <div
+          className={cn(
+            "pointer-events-none flex items-center gap-2 rounded-full bg-black/70 px-3 py-1.5 text-xs text-white/85 backdrop-blur-sm transition-opacity duration-500",
+            isFullscreen
+              ? "fixed bottom-6 left-1/2 z-[70] -translate-x-1/2"
+              : "absolute bottom-3 left-1/2 z-10 -translate-x-1/2",
+          )}
+        >
+          <MousePointer2 className="size-3.5" aria-hidden />
+          {t("dragHint")}
+        </div>
+      )}
+
+      {canSpin && status === "ready" && (
+        <button
+          type="button"
+          onClick={() => setSpinning((value) => !value)}
+          aria-label={t("autoRotate")}
+          title={t("autoRotate")}
+          aria-pressed={spinning}
+          className={cn(
+            "inline-flex items-center gap-1.5 rounded-full bg-black/65 px-3 py-1.5 text-xs font-medium text-white backdrop-blur-sm transition-colors hover:bg-black/85",
+            isFullscreen
+              ? "fixed top-4 right-16 z-[70]"
+              : "absolute top-2 right-12 z-10",
+          )}
+        >
+          {spinning ? (
+            <Pause className="size-3.5" aria-hidden />
+          ) : (
+            <Play className="size-3.5" aria-hidden />
+          )}
+          <span className="hidden sm:inline">{t("autoRotate")}</span>
+        </button>
       )}
 
       {status === "loading" && (

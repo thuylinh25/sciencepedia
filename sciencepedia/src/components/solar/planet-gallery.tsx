@@ -14,7 +14,7 @@ import {
 import { cn, formatNumber } from "@/lib/utils";
 import { filterPublishedSlugs } from "@/server/queries";
 import { PlanetSurface } from "@/components/solar/planet-surface";
-import { BodyJumpList } from "@/components/solar/body-jump-list";
+import { BodyPanel, type BodyPanelData } from "@/components/solar/body-panel";
 
 /**
  * Thư viện ảnh Hệ Mặt Trời — Mặt Trời và tám hành tinh.
@@ -46,6 +46,11 @@ type GalleryBody = {
   /** Mặt Trời không có hai trường này — nó là tâm hệ, không quay quanh ai. */
   realDistanceKm?: number;
   moons?: number;
+  orbitalPeriodDays?: number;
+  dayLengthHours?: number;
+  temperatureC?: number;
+  gravity?: number;
+  axialTilt?: number;
 };
 
 /*
@@ -78,6 +83,86 @@ export async function PlanetGallery() {
   const published = await filterPublishedSlugs(
     BODIES.map((body) => body.articleSlug),
   );
+
+  /**
+   * Dựng danh sách số đo cho tab "Đặc điểm vật lý".
+   *
+   * Bỏ qua trường nào không có thay vì in dấu gạch: Mặt Trời không quay
+   * quanh chính nó theo nghĩa một hành tinh quay quanh Mặt Trời, và Mặt Trăng
+   * không có "khoảng cách tới Mặt Trời" nào đáng ghi ở đây. Một hàng trống
+   * không phải thông tin, nó chỉ là chỗ trống trông như lỗi.
+   */
+  const factsFor = (body: GalleryBody) => {
+    const rows: Array<{ label: string; value: string }> = [
+      {
+        label: t("factDiameter"),
+        value: `${formatNumber(body.realRadiusKm * 2, locale)} km`,
+      },
+      {
+        label: t("factRadius"),
+        value: `${formatNumber(body.realRadiusKm, locale)} km`,
+      },
+    ];
+
+    if (body.realDistanceKm !== undefined) {
+      rows.push({
+        label: t("factDistance"),
+        value: `${formatNumber(body.realDistanceKm, locale)} km`,
+      });
+    }
+    if (body.orbitalPeriodDays !== undefined) {
+      // Dưới hai năm thì đọc bằng ngày dễ hình dung hơn; trên thì ngược lại
+      const days = body.orbitalPeriodDays;
+      rows.push({
+        label: t("factPeriod"),
+        value:
+          days < 700
+            ? `${formatNumber(Math.round(days), locale)} ${t("unitDays")}`
+            : `${(days / 365.25).toLocaleString(locale, {
+                maximumFractionDigits: 1,
+              })} ${t("unitYears")}`,
+      });
+    }
+    if (body.dayLengthHours !== undefined) {
+      const hours = body.dayLengthHours;
+      rows.push({
+        label: t("factDay"),
+        value:
+          hours < 72
+            ? `${hours.toLocaleString(locale, { maximumFractionDigits: 1 })} ${t("unitHours")}`
+            : `${(hours / 24).toLocaleString(locale, {
+                maximumFractionDigits: 1,
+              })} ${t("unitDays")}`,
+      });
+    }
+    if (body.moons !== undefined) {
+      rows.push({ label: t("factMoons"), value: String(body.moons) });
+    }
+    if (body.temperatureC !== undefined) {
+      rows.push({
+        label: t("factTemp"),
+        value: `${formatNumber(body.temperatureC, locale)} °C`,
+      });
+    }
+    if (body.gravity !== undefined) {
+      rows.push({
+        label: t("factGravity"),
+        value: `${body.gravity.toLocaleString(locale, {
+          maximumFractionDigits: 2,
+        })} m/s²`,
+      });
+    }
+    if (body.axialTilt !== undefined) {
+      rows.push({
+        label: t("factTilt"),
+        value: `${body.axialTilt.toLocaleString(locale, {
+          maximumFractionDigits: 1,
+        })}°`,
+      });
+    }
+
+    return rows;
+  };
 
   const jumpTargets = BODIES.map((body) => ({
     id: body.id,
@@ -185,13 +270,6 @@ export async function PlanetGallery() {
                   {body.photo.credit}
                 </a>
               </p>
-              {/* Chỉ ở bản toàn màn hình: trong thẻ thì cả lưới đã nằm ngay
-                  đó, thêm một danh sách chuyển thẻ nữa là thừa. */}
-              {dark && (
-                <BodyJumpList
-                  targets={jumpTargets.filter((item) => item.id !== body.id)}
-                />
-              )}
             </>
           );
 
@@ -207,7 +285,34 @@ export async function PlanetGallery() {
                   photo={body.photo}
                   surface={body.surface}
                   caption={t("surfacePrompt", { body: displayName })}
-                  info={info(true)}
+                  info={
+                    <BodyPanel
+                      body={
+                        {
+                          id: body.id,
+                          name: displayName,
+                          secondaryName,
+                          description,
+                          photoCaption: caption,
+                          photoCredit: body.photo.credit,
+                          photoSourceUrl: body.photo.sourceUrl,
+                          surfaceCaption: body.surface
+                            ? isEnglish
+                              ? body.surface.captionEn
+                              : body.surface.captionVi
+                            : null,
+                          surfaceCredit: body.surface?.credit ?? null,
+                          facts: factsFor(body),
+                          articleHref: published.has(body.articleSlug)
+                            ? `/articles/${body.articleSlug}`
+                            : null,
+                        } satisfies BodyPanelData
+                      }
+                      targets={jumpTargets.filter(
+                        (item) => item.id !== body.id,
+                      )}
+                    />
+                  }
                   crumbRoot={t("title")}
                   bodyId={body.id}
                   sizes={IMAGE_SIZES}

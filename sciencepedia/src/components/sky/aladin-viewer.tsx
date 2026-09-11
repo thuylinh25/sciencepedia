@@ -74,6 +74,8 @@ export type AladinViewerProps = {
    * cùng một ý định.
    */
   openFullscreen?: boolean;
+  /** Cho bật tự quay — xem chú thích cùng tên ở `AladinCanvas` */
+  canSpin?: boolean;
   className?: string;
 };
 
@@ -104,6 +106,7 @@ export function AladinViewer({
   crumbCurrent,
   openOnEventId,
   openFullscreen,
+  canSpin,
   className,
 }: AladinViewerProps) {
   const t = useTranslations("sky");
@@ -167,6 +170,7 @@ export function AladinViewer({
           crumbRoot={crumbRoot}
           crumbCurrent={crumbCurrent}
           openFullscreen={openFullscreen}
+          canSpin={canSpin}
           // Chỉ cho đóng khi chính người đọc đã bấm để mở. Khung tự nạp theo
           // tầm nhìn (trang bản đồ) thì đóng nó chỉ để nó mở lại ngay.
           onClose={clicked ? () => setClicked(false) : undefined}

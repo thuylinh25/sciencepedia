@@ -5,6 +5,8 @@
 // người dùng, hai thứ chỉ biết được ở trình duyệt.
 
 import { useEffect, useRef, useState } from "react";
+
+import { useRouter } from "@/i18n/navigation";
 import dynamic from "next/dynamic";
 
 /**
@@ -81,6 +83,7 @@ const GalaxyScene = dynamic(
 );
 
 export function HeroGalaxy({ locale }: { locale: string }) {
+  const router = useRouter();
   const [showScene, setShowScene] = useState(false);
   const [gentle, setGentle] = useState(false);
   const [lowPower, setLowPower] = useState(false);
@@ -184,17 +187,37 @@ export function HeroGalaxy({ locale }: { locale: string }) {
               // kéo mắt khỏi ô tìm kiếm ngay bên cạnh. Từng đặt 0.3 và một
               // vòng mất mười phút — mắt không nhận ra, khối trông như ảnh dán.
               speed: NORMAL_SPEED,
-              // Nhãn và các thiên thể là chuyện của trang /milky-way. Ở hero
-              // chúng chỉ thành chữ nhỏ li ti không đọc nổi, và mỗi nhãn là
-              // một phần tử HTML chồng lên canvas.
-              showLabels: false,
-              showSun: false,
-              showObjects: false,
+              /*
+               * Bật đủ như trang /milky-way: nhãn, dấu Mặt Trời kèm quỹ đạo
+               * xoắn, và các thiên thể đáng xem.
+               *
+               * Quyết định của chủ sản phẩm, và nó đảo lại lựa chọn trước đó
+               * nên ghi lại cả cái giá phải trả: nhãn là phần tử HTML nằm
+               * TRÊN canvas, nên lớp mask toả tròn làm mờ mép chỉ ăn vào phần
+               * 3D chứ không ăn vào nhãn. Nhãn rơi gần mép sẽ nổi rõ trên
+               * vùng đã mờ. Ở khung hero thì các mốc đều nằm quanh tâm nên
+               * phần lớn thời gian không thấy, nhưng lúc cảnh quay tới góc
+               * xấu thì sẽ thấy.
+               *
+               * Đổi lại: người xem nhận ra ngay đây là cùng một mô hình với
+               * trang /milky-way, thay vì một hình xoáy trang trí.
+               */
+              showLabels: true,
+              showSun: true,
+              showObjects: true,
               view: "free",
               tour: false,
               scientific: false,
             }}
-            onSelect={() => {}}
+            /*
+             * Bấm vào nhãn thì sang trang mô hình đầy đủ.
+             *
+             * Nhãn ở đây là thẻ <button> thật, nên nó có con trỏ bàn tay và
+             * trạng thái hover. Để hàm rỗng thì nó trông bấm được mà bấm
+             * không ra gì — tệ hơn là không cho bấm. Hero không có bảng thông
+             * tin để mở, nên đích đúng là chỗ có bảng đó.
+             */
+            onSelect={() => router.push("/milky-way")}
             locale={locale}
             onTourStep={() => {}}
             onTourEnd={() => {}}
