@@ -4,7 +4,6 @@ import type { ReactNode } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import { useLocale, useTranslations } from "next-intl";
 
-import { Link } from "@/i18n/navigation";
 import { HeroGalaxy } from "@/components/home/hero-galaxy";
 
 /**
@@ -21,7 +20,6 @@ export function Hero({
   fields?: ReactNode;
 }) {
   const t = useTranslations("home");
-  const tExplore = useTranslations("explore");
   const locale = useLocale();
   const reduced = useReducedMotion();
 
@@ -128,95 +126,17 @@ export function Hero({
             Quầng sáng dùng `--color-accent` chứ không phải một mã màu viết
             cứng, để nó tự theo nếu bảng màu đổi lần nữa. */}
           {/*
-            Không còn nút lớn "Khám phá tương tác".
+            Hero không còn card công cụ nào.
 
-            Nút đó dẫn tới /models, và ngay dưới hero đã là khối "Khám phá
-            tương tác" với sáu card cùng nội dung — hai thứ nói cùng một câu,
-            cách nhau một màn hình cuộn. Trên điện thoại cái giá còn cao hơn:
-            nút cao 56px cộng khoảng cách chiếm gần một phần mười màn hình
-            đầu tiên, đúng phần đắt nhất của trang.
+            Đã thử ba lần và mỗi lần đều dồn thêm lựa chọn vào đúng chỗ ít
+            chịu được nhất: một nút lớn, rồi ba chip, rồi sáu card cuộn ngang.
+            Khối "Khám phá tương tác" ngay bên dưới đã liệt kê đủ sáu công cụ
+            với ảnh và mô tả — nhắc lại chúng ở hero là bắt người vào lần đầu
+            chọn hai lần cho cùng một việc.
 
-            Thay bằng một dải cuộn ngang sáu công cụ. Cuộn ngang trả lại chiều
-            cao mà vẫn cho thấy đủ sáu thứ; xếp dọc sáu card thì đẩy mọi nội
-            dung khác xuống dưới tầm nhìn.
+            Hero giờ còn đúng một hành động: ô tìm kiếm. Các lĩnh vực khoa học
+            bên dưới nó là lối vào thứ hai cho ai chưa biết mình tìm gì.
           */}
-          <motion.div {...rise(0.32)} className="mt-6">
-            {/*
-              `-mx-4 px-4` cho dải chạm được tới mép màn hình trên điện thoại:
-              card đầu và card cuối vẫn thẳng hàng với chữ phía trên, nhưng khi
-              cuộn thì nội dung trôi ra sát mép chứ không dừng lại ở một lề
-              trắng — dấu hiệu thị giác nói rằng còn thứ nữa ở bên phải.
-
-              `snap-x` để mỗi lần vuốt dừng gọn ở một card thay vì dừng giữa
-              hai card.
-            */}
-            <div className="-mx-4 flex snap-x snap-mandatory gap-2 overflow-x-auto px-4 pb-2 sm:mx-0 sm:grid sm:grid-cols-2 sm:px-0 lg:grid-cols-3">
-              {(
-                [
-                  {
-                    href: "/zoom",
-                    emoji: "🔍",
-                    key: "zoom",
-                    sub: "quickZoom",
-                  },
-                  {
-                    href: "/solar-system",
-                    emoji: "☀️",
-                    key: "solarSystem",
-                    sub: "quickSolar",
-                  },
-                  {
-                    href: "/earth-live",
-                    emoji: "🌍",
-                    key: "earthLive",
-                    sub: "quickEarth",
-                  },
-                  {
-                    href: "/space-map",
-                    emoji: "⭐",
-                    key: "skyMap",
-                    sub: "quickSky",
-                  },
-                  {
-                    href: "/milky-way",
-                    emoji: "🌌",
-                    key: "milkyWay",
-                    sub: "quickGalaxy",
-                  },
-                  {
-                    href: "/universe",
-                    emoji: "🌠",
-                    key: "universe",
-                    sub: "quickUniverse",
-                  },
-                ] as const
-              ).map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  /* min-h-[4.5rem] là 72px — vùng chạm tối thiểu 44px cộng
-                     chỗ cho hai dòng chữ. w-[15rem] chỉ áp dưới sm, nơi dải
-                     cuộn ngang; từ sm trở lên nó vào lưới và tự giãn. */
-                  className="flex min-h-[4.5rem] w-[15rem] shrink-0 snap-start items-center gap-3 rounded-[20px] border border-white/12 bg-white/5 px-3.5 py-3 backdrop-blur-md transition-colors hover:border-white/30 hover:bg-white/12 sm:w-auto"
-                >
-                  <span
-                    aria-hidden
-                    className="inline-flex size-10 shrink-0 items-center justify-center rounded-2xl border border-white/12 bg-white/10 text-lg"
-                  >
-                    {item.emoji}
-                  </span>
-                  <span className="min-w-0">
-                    <span className="block truncate text-sm font-medium text-white/90">
-                      {tExplore(`cards.${item.key}.title`)}
-                    </span>
-                    <span className="block truncate text-xs text-white/55">
-                      {tExplore(item.sub)}
-                    </span>
-                  </span>
-                </Link>
-              ))}
-            </div>
-          </motion.div>
         </div>
 
         {/* Một thể hiện duy nhất, hai cách đặt.

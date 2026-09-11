@@ -466,7 +466,6 @@
     "title": "Khám phá tương tác",
     "subtitle": "Trải nghiệm khoa học bằng mô hình 3D, bản đồ sao và hành trình khám phá từ quy mô vũ trụ xuống tới hành tinh của chúng ta.",
     "credit": "Ảnh",
-    "quickActions": "Khám phá tương tác",
     "cards": {
       "solarSystem": {
         "title": "Hệ Mặt Trời 3D",
@@ -498,13 +497,7 @@
         "body": "Ảnh toàn cảnh Trái Đất do vệ tinh DSCOVR của NASA chụp từ điểm Lagrange L1, cách 1,5 triệu km.",
         "cta": "Xem trực tiếp"
       }
-    },
-    "quickSolar": "Khám phá hành tinh",
-    "quickZoom": "Từ vũ trụ xuống Trái Đất",
-    "quickSky": "Quan sát bầu trời đêm",
-    "quickEarth": "Ảnh vệ tinh mới nhất",
-    "quickGalaxy": "Thiên hà của chúng ta",
-    "quickUniverse": "Mạng vũ trụ"
+    }
   },
   "earthLive": {
     "title": "Trái Đất nhìn từ điểm L1",

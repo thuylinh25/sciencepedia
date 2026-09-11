@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Clock, Eye } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 
@@ -8,6 +7,7 @@ import type { ArticleCard as ArticleCardData } from "@/server/queries";
 import { pick, pickName } from "@/lib/i18n-content";
 import { cn, formatNumber } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
+import { CoverImage } from "@/components/article/cover-image";
 
 type Props = {
   article: ArticleCardData;
@@ -42,11 +42,10 @@ export async function ArticleCard({
       >
         <div className="relative size-16 shrink-0 overflow-hidden rounded-lg bg-muted">
           {article.coverImage && (
-            <Image
+            <CoverImage
               src={article.coverImage}
-              alt=""
-              fill
               sizes="64px"
+              fallbackColor={article.category.color}
               className="object-cover transition-transform duration-500 group-hover:scale-105"
             />
           )}
@@ -87,16 +86,15 @@ export async function ArticleCard({
         )}
       >
         {article.coverImage ? (
-          <Image
+          <CoverImage
             src={article.coverImage}
-            alt=""
-            fill
             priority={priority}
             sizes={
               isHero
                 ? "(max-width: 768px) 100vw, 50vw"
                 : "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
             }
+            fallbackColor={article.category.color}
             className="object-cover transition-transform duration-500 group-hover:scale-[1.05]"
           />
         ) : (

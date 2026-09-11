@@ -466,7 +466,6 @@
     "title": "Interactive exploration",
     "subtitle": "Experience science through 3D models, sky maps and a journey across scales, from the observable universe down to our own planet.",
     "credit": "Images",
-    "quickActions": "Explore interactively",
     "cards": {
       "solarSystem": {
         "title": "The Solar System in 3D",
@@ -498,13 +497,7 @@
         "body": "Full-disk images of Earth captured from the L1 Lagrange point by NASA's DSCOVR spacecraft.",
         "cta": "View live"
       }
-    },
-    "quickSolar": "Explore the planets",
-    "quickZoom": "From the universe down to Earth",
-    "quickSky": "Look at the night sky",
-    "quickEarth": "The latest satellite images",
-    "quickGalaxy": "Our own galaxy",
-    "quickUniverse": "The cosmic web"
+    }
   },
   "earthLive": {
     "title": "Earth from the L1 point",
