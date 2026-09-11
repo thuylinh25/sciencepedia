@@ -184,8 +184,25 @@ export function SolarSystem({
           />
         )}
 
-        {/* ------------------------------------------------ Bảng điều khiển */}
-        <div className="absolute inset-x-4 bottom-4 flex flex-wrap items-center gap-x-5 gap-y-3 rounded-2xl border border-white/10 bg-black/45 px-5 py-3.5 backdrop-blur-xl sm:inset-x-auto sm:left-4">
+        {/* ------------------------------------------------ Bảng điều khiển
+
+            Dưới `sm` bảng phải gói gọn trong MỘT hàng.
+
+            Bản cũ dùng `gap-x-5`, `px-5` và một nhãn "Tốc độ" hiện rõ. Ở
+            360px thì hàng ấy tràn, `flex-wrap` đẩy nút tuỳ chọn và nút đặt
+            lại xuống hàng hai, và tấm thẻ cao gấp đôi — nó phủ lên vành đai
+            tiểu hành tinh và quỹ đạo các hành tinh trong. Đây là lần thứ hai
+            một tấm nổi che mất mô hình trên điện thoại; lần trước là bảng
+            thông tin hành tinh.
+
+            Nhãn chuyển sang `sr-only` chứ KHÔNG xoá: thanh trượt vẫn cần một
+            nhãn cho trình đọc màn hình, và một thanh trượt không nhãn là lỗi
+            a11y chứ không phải một lựa chọn bố cục. Người nhìn thấy đã có nút
+            phát/dừng ngay bên trái và số nhân "1.0×" ngay bên phải.
+
+            Thanh trượt co giãn thay vì rộng cố định `w-24`: ở một hàng thì
+            phần còn thừa nên thuộc về thứ duy nhất cần kéo. */}
+        <div className="absolute inset-x-3 bottom-3 flex flex-wrap items-center gap-x-3 gap-y-3 rounded-2xl border border-white/10 bg-black/45 px-3 py-3 backdrop-blur-xl sm:inset-x-auto sm:left-4 sm:gap-x-5 sm:px-5 sm:py-3.5">
           <Button
             size="icon-sm"
             variant="glass"
@@ -200,10 +217,10 @@ export function SolarSystem({
             )}
           </Button>
 
-          <div className="flex items-center gap-2.5">
+          <div className="flex min-w-0 flex-1 items-center gap-2.5 sm:flex-none">
             <Label
               htmlFor="speed"
-              className="text-xs whitespace-nowrap text-white/70"
+              className="sr-only text-xs whitespace-nowrap text-white/70 sm:not-sr-only"
             >
               {t("speed")}
             </Label>
@@ -215,9 +232,9 @@ export function SolarSystem({
               step={0.1}
               value={settings.speed}
               onChange={(event) => update("speed", Number(event.target.value))}
-              className="h-1 w-24 cursor-pointer appearance-none rounded-full bg-white/25 accent-[var(--color-accent)]"
+              className="h-1 w-full min-w-0 cursor-pointer appearance-none rounded-full bg-white/25 accent-[var(--color-accent)] sm:w-24 sm:min-w-24"
             />
-            <span className="w-9 font-mono text-xs text-white/70">
+            <span className="w-9 shrink-0 font-mono text-xs text-white/70">
               {settings.speed.toFixed(1)}×
             </span>
           </div>
