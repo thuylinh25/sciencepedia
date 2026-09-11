@@ -84,7 +84,8 @@
     "heroSearchCta": "Khám phá",
     "heroCategoriesLabel": "Bắt đầu từ một lĩnh vực",
     "seeAllArticles": "Xem tất cả bài viết",
-    "aiTryAsking": "Thử hỏi"
+    "aiTryAsking": "Thử hỏi",
+    "heroFieldsMore": "Thêm {count} lĩnh vực"
   },
   "article": {
     "readingTime": "{minutes} phút đọc",

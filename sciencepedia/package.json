@@ -36,7 +36,8 @@
     "covers:build": "tsx scripts/build-covers.ts",
     "sky:seed": "tsx --env-file-if-exists=.env scripts/seed-sky-objects.ts",
     "rename:slug": "tsx --env-file-if-exists=.env scripts/rename-slug.ts",
-    "check:covers": "tsx --env-file-if-exists=.env scripts/check-covers.ts"
+    "check:covers": "tsx --env-file-if-exists=.env scripts/check-covers.ts",
+    "covers:replace": "tsx --env-file-if-exists=.env scripts/replace-dead-covers.ts"
   },
   "prisma": {
     "seed": "tsx --env-file-if-exists=.env prisma/seed.ts"

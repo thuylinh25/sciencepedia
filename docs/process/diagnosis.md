@@ -519,3 +519,32 @@ Tra ra: Kempf et al. 2023, *Science Advances* — thời gian phơi nhiễm suy 
 **Khoảng cách giữa "tôi nhớ khác" và "bài này sai" là một lượt tra cứu.** Với
 nội dung đã publish thì cái giá của việc bỏ qua lượt tra đó là một đính chính
 sai — tệ hơn hẳn so với không đính chính.
+
+## Trước khi tin một phép kiểm, kiểm chính nó
+
+Chốt 2026-09-11, sau lượt rà ảnh bìa.
+
+`check:covers` báo 21/26 ảnh bìa hỏng. Con số đó đủ lớn để nghe như một sự cố
+hạ tầng, và bước tiếp theo tự nhiên là đi tìm chuyện gì đã xảy ra với kho ảnh.
+
+Không có chuyện gì xảy ra cả. **16 trong 21 là báo động giả**: Node gửi
+`User-Agent: node`, và Wikimedia trả 403 cho mọi request không khai một
+User-Agent mô tả được — đó là chính sách của họ, không phải sự cố. Mười sáu ảnh
+ấy vẫn hiện bình thường trong trình duyệt suốt thời gian đó.
+
+Dấu hiệu đáng lẽ phải thấy ngay: **các mục hỏng phân bố theo MÁY CHỦ chứ không
+theo bài.** Mọi URL Wikimedia đều hỏng, mọi URL Supabase cũng hỏng — nhưng hai
+nhóm hỏng vì hai lý do khác nhau, và chỉ một nhóm là hỏng thật. Khi một phép
+kiểm báo hỏng gần như toàn bộ một nhóm đồng nhất, nghi ngờ phép kiểm trước khi
+nghi ngờ dữ liệu.
+
+Cách kiểm rẻ nhất, mất 10 giây: gọi tay **một** URL bị báo hỏng bằng `curl`. Nó
+trả 200 thì vấn đề nằm ở phép kiểm, không nằm ở dữ liệu.
+
+Cùng lượt đó còn một dạng báo động giả thứ hai, nhẹ hơn nhưng cùng hậu quả: một
+lượt gọi rơi vì mạng bị ghi thành "ảnh hỏng". **Lỗi truyền tải không phải kết
+luận về URL** — `404` nói về cái URL, còn đứt kết nối chỉ nói về mạng lúc đó.
+Đã tách hai thứ và cho lỗi truyền tải thử lại một lần.
+
+**Một phép kiểm báo sai ba phần tư thì tệ hơn không có phép kiểm nào**: nó dạy
+người đọc kết quả bỏ qua chính nó, và lần nó nói đúng sẽ bị bỏ qua cùng.

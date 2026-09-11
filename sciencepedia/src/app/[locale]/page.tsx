@@ -100,10 +100,13 @@ export default async function HomePage({
         fields={<HeroFields fields={categories} locale={locale as Locale} />}
       />
 
-      <StatsBand stats={stats} />
-
       {/* Ngay dưới hero, trên bài nổi bật: đây là câu trả lời cho "trang này
-          làm được gì", và nó phải đến trước danh sách bài đọc. */}
+          làm được gì", và nó phải đến trước danh sách bài đọc.
+
+          Khối này nay là thứ ĐẦU TIÊN sau hero. Trước đây `StatsBand` chen
+          vào giữa và người đọc phải cuộn qua một bảng số mới tới được câu trả
+          lời đó. Xem chú thích của `StatsBand` để biết vì sao số liệu
+          chuyển xuống sau khối bài nổi bật. */}
       <InteractiveExplore />
 
       {/* ---------------------------------------------------- Nổi bật */}
@@ -140,6 +143,11 @@ export default async function HomePage({
           )}
         </section>
       )}
+
+      {/* --------------------------------------------------- Thống kê */}
+      {/* Số liệu đứng SAU nội dung, không đứng trước. Lý do đầy đủ nằm trong
+          chú thích của chính component. */}
+      <StatsBand stats={stats} />
 
       {/* ------------------------------------------- Khám phá hôm nay */}
       <DiscoverToday

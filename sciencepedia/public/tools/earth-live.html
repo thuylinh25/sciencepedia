@@ -220,7 +220,9 @@
       }
 
       #banner {
-        top: 12px;
+        /* 64px chứ không 12px: ô tìm khu vực nay chiếm giữa mép trên, và
+           biểu ngữ hay bật lên đúng lúc vừa chọn khu vực xong. */
+        top: 64px;
         left: 50%;
         transform: translateX(-50%);
         padding: 9px 14px;
@@ -272,6 +274,100 @@
           padding: 6px 10px;
         }
       }
+
+      /* ------------------------------------------------ Tìm theo khu vực */
+      /* Giữa mép trên: chỗ duy nhất còn trống giữa bộ chọn lớp (trái) và
+         đồng hồ UTC (phải). Bề rộng chặn trên bằng 360px để ở màn hình rộng
+         nó không kéo dài thành một thanh công cụ. */
+      #search {
+        top: 12px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: min(360px, calc(100vw - 340px));
+        padding: 8px;
+      }
+
+      #region-input {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 8px 11px;
+        border-radius: 10px;
+        border: 1px solid var(--line);
+        background: rgba(2, 6, 23, 0.65);
+        color: var(--text);
+        font: inherit;
+        font-size: 13px;
+      }
+
+      #region-input::placeholder {
+        color: var(--muted);
+      }
+
+      #region-input:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 1px;
+      }
+
+      #region-list {
+        list-style: none;
+        margin: 8px 0 0;
+        padding: 0;
+        max-height: min(320px, 50dvh);
+        overflow-y: auto;
+        display: none;
+      }
+
+      #search[data-open="true"] #region-list {
+        display: block;
+      }
+
+      #region-list li {
+        margin: 0;
+      }
+
+      #region-list button {
+        display: flex;
+        width: 100%;
+        align-items: baseline;
+        gap: 8px;
+        padding: 7px 10px;
+        border: 0;
+        border-radius: 9px;
+        background: transparent;
+        color: var(--text);
+        font: inherit;
+        font-size: 13px;
+        text-align: left;
+        cursor: pointer;
+      }
+
+      #region-list button:hover,
+      #region-list button[data-active="true"] {
+        background: rgba(56, 189, 248, 0.14);
+      }
+
+      #region-list button span {
+        color: var(--muted);
+        font-size: 11px;
+        margin-left: auto;
+        white-space: nowrap;
+      }
+
+      #region-empty {
+        padding: 8px 10px;
+        color: var(--muted);
+        font-size: 12px;
+      }
+
+      /* Dưới 860px ô tìm kiếm không còn chỗ ở giữa hai panel kia — cho nó
+         xuống hàng riêng bên dưới bộ chọn lớp, vẫn căn giữa. */
+      @media (max-width: 860px) {
+        #search {
+          top: auto;
+          bottom: 52px;
+          width: min(360px, calc(100vw - 24px));
+        }
+      }
     </style>
   </head>
 
@@ -299,6 +395,21 @@
         <dd id="info-age">—</dd>
       </dl>
       <p class="note" id="info-note"></p>
+    </section>
+
+    <section class="panel" id="search" aria-label="Tìm theo khu vực">
+      <input
+        id="region-input"
+        type="text"
+        role="combobox"
+        aria-expanded="false"
+        aria-controls="region-list"
+        aria-autocomplete="list"
+        autocomplete="off"
+        placeholder="Tìm khu vực — Việt Nam, Nhật Bản, Bắc Mỹ…"
+      />
+      <ul id="region-list" role="listbox" aria-label="Khu vực"></ul>
+      <p id="region-empty" hidden>Không có khu vực nào khớp.</p>
     </section>
 
     <div class="panel" id="cursor">—</div>
@@ -338,6 +449,7 @@
       var LAYERS = [
         {
           id: "goes-east-geocolor",
+          subLon: -75,
           emoji: "🌍",
           name: "GeoColor",
           where: "GOES-East · châu Mỹ, Đại Tây Dương",
@@ -353,6 +465,7 @@
         },
         {
           id: "goes-west-geocolor",
+          subLon: -137,
           emoji: "🌏",
           name: "GeoColor",
           where: "GOES-West · Thái Bình Dương",
@@ -368,6 +481,7 @@
         },
         {
           id: "himawari-visible",
+          subLon: 140,
           emoji: "🇻🇳",
           name: "Ảnh nhìn thấy",
           where: "Himawari · châu Á, Việt Nam",
@@ -383,6 +497,7 @@
         },
         {
           id: "himawari-ir",
+          subLon: 140,
           emoji: "🌙",
           name: "Hồng ngoại",
           where: "Himawari · châu Á, Việt Nam",
@@ -398,6 +513,7 @@
         },
         {
           id: "goes-east-ir",
+          subLon: -75,
           emoji: "🌙",
           name: "Hồng ngoại",
           where: "GOES-East · châu Mỹ",
@@ -413,6 +529,7 @@
         },
         {
           id: "himawari-airmass",
+          subLon: 140,
           emoji: "🌀",
           name: "Khối khí",
           where: "Himawari · châu Á",
@@ -428,6 +545,9 @@
         },
         {
           id: "viirs-truecolor",
+          // Vệ tinh quỹ đạo cực: ảnh ghép phủ toàn cầu, không đứng trên
+          // một kinh tuyến cố định nào
+          subLon: null,
           emoji: "☀️",
           name: "Màu thật",
           where: "VIIRS NOAA-20 · toàn cầu",
@@ -443,6 +563,9 @@
         },
         {
           id: "modis-truecolor",
+          // Vệ tinh quỹ đạo cực: ảnh ghép phủ toàn cầu, không đứng trên
+          // một kinh tuyến cố định nào
+          subLon: null,
           emoji: "🛰️",
           name: "Màu thật",
           where: "MODIS Terra · toàn cầu",
@@ -627,9 +750,25 @@
        * thế giới.
        */
       var map = L.map("map", {
-        center: [12, 108],
-        zoom: 4,
-        minZoom: 2,
+        center: [0, 60],
+        zoom: 2,
+        /*
+         * "minZoom: 1" chứ không 2, và zoomSnap lẻ.
+         *
+         * Yêu cầu là mở trang ra thấy CẢ Trái Đất. Ở mức 2 thế giới rộng
+         * 1024px và cao 1024px — lọt bề ngang một màn hình laptop nhưng
+         * KHÔNG lọt bề cao (cửa sổ thường chỉ cao 600–800px), nên vẫn phải
+         * cuộn. Mức 1 là 512px, lọt cả hai chiều trên mọi màn hình.
+         *
+         * "zoomSnap: 0.25" để fitBounds chọn được mức lẻ (1,75 chẳng hạn)
+         * thay vì làm tròn xuống số nguyên. Không có nó thì khung nhìn toàn
+         * cầu luôn thừa một viền đen rộng vì phải lùi hẳn một mức.
+         *
+         * Lùi xa hơn KHÔNG sinh ra nhiều bản sao Trái Đất: thứ chặn việc đó
+         * là "noWrap" trên từng lớp ảnh, không phải minZoom.
+         */
+        minZoom: 1,
+        zoomSnap: 0.25,
         maxZoom: 9,
         worldCopyJump: false,
         maxBounds: [
@@ -642,6 +781,27 @@
       });
 
       L.control.scale({ imperial: false, position: "bottomleft" }).addTo(map);
+
+      /*
+       * Lùi khung nhìn về đúng một quả Trái Đất, vừa khít khung cửa sổ.
+       *
+       * Không dùng map.fitWorld(): nó fit theo [[-90,-180],[90,180]], mà
+       * Mercator kéo hai cực ra vô hạn nên Leaflet phải kẹp về ±85 và kết
+       * quả là một mức thu phóng nhỏ hơn cần thiết — thừa ra viền đen trên
+       * dưới. Kẹp sẵn ở ±80 thì khít hơn, và ±80 vẫn chứa trọn mọi thứ ảnh
+       * vệ tinh địa tĩnh nhìn được: đĩa của chúng chỉ tới khoảng ±81 và đã
+       * mờ hẳn từ 70 trở ra.
+       */
+      function showWholeEarth() {
+        map.fitBounds(
+          [
+            [-80, -180],
+            [80, 180],
+          ],
+          { animate: false, padding: [8, 8] },
+        );
+      }
+
 
       /* -------------------------------------------------- Nút toàn màn hình */
       var FullscreenControl = L.Control.extend({
@@ -773,7 +933,20 @@
         };
 
         if (!keepView) {
-          map.setView(spec.centre, spec.zoom, { animate: false });
+          /*
+           * Đổi lớp thì lùi về CẢ Trái Đất, không nhảy tới khung nhìn riêng
+           * của lớp.
+           *
+           * Bản cũ đặt mỗi lớp một centre/zoom riêng ở mức 3. Ở mức đó thế
+           * giới rộng 2048px, tức rộng hơn hẳn cửa sổ — nên mở trang ra chỉ
+           * thấy một DẢI DỌC, và đúng lúc Himawari đang chụp ban đêm thì dải
+           * đó gần như đen trơn. Người xem không có cách nào biết mình đang
+           * nhìn chỗ nào của Trái Đất.
+           *
+           * Lùi hết ra trước rồi để người dùng tự chọn khu vực mới là thứ tự
+           * đúng: thấy toàn cảnh trước, rồi mới đi vào chi tiết.
+           */
+          showWholeEarth();
         }
 
         elements.layer.textContent = spec.name + " — " + spec.where;
@@ -995,6 +1168,301 @@
        * được cả ban đêm. Người muốn xem ảnh nhìn thấy vẫn bấm được, và lúc đó
        * chú thích của lớp đã nói trước vì sao nó tối.
        */
+
+      /* ==================================================================
+         6. TÌM THEO KHU VỰC
+
+         ## Vì sao là danh sách dựng sẵn chứ không phải geocoder
+
+         Một ô tìm kiếm gõ tự do cần dịch vụ geocoding (Nominatim và tương
+         tự). Ba lý do không dùng ở đây: nó thêm một phụ thuộc mạng nữa vào
+         một trang vốn đã phụ thuộc GIBS; chính sách dùng của Nominatim giới
+         hạn tần suất và đòi User-Agent riêng; và kết quả của nó là ĐỊA CHỈ,
+         trong khi thứ cần ở đây là KHU VỰC ở đúng cỡ mà một vệ tinh thấy
+         được. Gõ "Hà Nội" vào geocoder trả về một toạ độ nhà; ở ảnh vệ tinh
+         độ phân giải 1–2 km thì mức đó vô nghĩa.
+
+         Danh sách dựng sẵn chạy tức thì, chạy được khi mất mạng, và mỗi mục
+         đã kèm sẵn mức thu phóng hợp với cỡ của chính khu vực đó.
+
+         ## Vì sao mỗi khu vực phải biết vệ tinh nào nhìn thấy nó
+
+         Đây là phần dễ bỏ sót nhất. Vệ tinh địa tĩnh chỉ thấy nửa Trái Đất
+         quanh kinh tuyến nó đứng. Bay tới châu Âu trong khi đang xem lớp
+         Himawari thì được một khung đen tuyền — và người dùng sẽ kết luận
+         trang hỏng, đúng như lần "không thấy trái đất đâu" trước đây.
+
+         Nên khi khu vực đích nằm ngoài tầm nhìn của lớp đang bật, trang tự
+         đổi sang lớp nhìn thấy nó và NÓI RÕ là đã đổi. Tự đổi mà im lặng
+         cũng tệ ngang: người dùng vừa chọn một lớp, thấy nó đổi, không hiểu
+         vì sao.
+         ================================================================== */
+
+      /*
+       * Nửa góc nhìn của một vệ tinh địa tĩnh, tính theo kinh độ.
+       *
+       * Hình học thì đĩa nhìn thấy rộng tới ±81°, nhưng ở rìa đĩa góc nhìn
+       * quá xiên: một điểm ở 80° lệch khỏi kinh tuyến vệ tinh bị trải ra
+       * thành vệt mờ dài và thực tế không đọc được gì. 70° là mức còn cho ảnh
+       * dùng được, và cũng là mức các cơ quan khí tượng dùng khi vẽ vùng phủ
+       * "hữu ích" thay vì vùng phủ hình học.
+       */
+      var USEFUL_HALF_SPAN = 70;
+
+      /** Chênh lệch kinh độ ngắn nhất giữa hai kinh tuyến, luôn trong [0,180]. */
+      function lonDelta(a, b) {
+        var d = Math.abs(a - b) % 360;
+        return d > 180 ? 360 - d : d;
+      }
+
+      /** Lớp này có nhìn thấy điểm đó không? Lớp toàn cầu thì luôn có. */
+      function covers(spec, lon) {
+        if (spec.subLon === null || spec.subLon === undefined) return true;
+        return lonDelta(spec.subLon, lon) <= USEFUL_HALF_SPAN;
+      }
+
+      /*
+       * Lớp hợp nhất để xem một khu vực.
+       *
+       * Ưu tiên giữ NGUYÊN lớp đang bật nếu nó thấy được khu vực đó — người
+       * dùng chọn lớp là có ý, đừng đổi khi không cần.
+       *
+       * Không thì ưu tiên một lớp địa tĩnh, vì ảnh mười phút một lần mới là
+       * điểm khác biệt của trang này. Chỉ khi không vệ tinh địa tĩnh nào phủ
+       * — châu Âu, châu Phi, Trung Đông và Ấn Độ Dương đều rơi vào khoảng
+       * trống giữa GOES và Himawari, do bộ lớp GIBS dùng ở đây không có
+       * Meteosat — mới lùi về ảnh ghép mỗi ngày.
+       */
+      function bestLayerFor(lon) {
+        if (current && current.spec && covers(current.spec, lon)) {
+          return current.spec;
+        }
+
+        var geo = LAYERS.filter(function (spec) {
+          return spec.subLon !== null && spec.subLon !== undefined;
+        }).filter(function (spec) {
+          return covers(spec, lon);
+        });
+
+        if (geo.length > 0) {
+          // Gần tâm đĩa nhất thì ảnh ít méo nhất
+          geo.sort(function (a, b) {
+            return lonDelta(a.subLon, lon) - lonDelta(b.subLon, lon);
+          });
+          return geo[0];
+        }
+
+        return LAYERS.find(function (spec) {
+          return spec.subLon === null || spec.subLon === undefined;
+        });
+      }
+
+      /*
+       * Danh mục khu vực.
+       *
+       * `zoom` chọn theo cỡ thật của khu vực, không theo một con số chung:
+       * một thành phố ở mức 7 (ảnh địa tĩnh hết độ phân giải quanh đó), một
+       * quốc gia ở 4–5, một châu lục ở 3.
+       *
+       * Thứ tự là thứ tự gợi ý khi ô còn trống, nên Việt Nam và vùng quanh nó
+       * đứng đầu — đây là trang tiếng Việt.
+       */
+      var REGIONS = [
+        { name: "Toàn cầu", lat: 0, lon: 0, zoom: null },
+        { name: "Việt Nam", lat: 16.0, lon: 107.5, zoom: 5 },
+        { name: "Hà Nội", lat: 21.03, lon: 105.85, zoom: 7 },
+        { name: "TP Hồ Chí Minh", lat: 10.82, lon: 106.63, zoom: 7 },
+        { name: "Đà Nẵng", lat: 16.05, lon: 108.2, zoom: 7 },
+        { name: "Biển Đông", lat: 15, lon: 114, zoom: 4 },
+        { name: "Đông Nam Á", lat: 5, lon: 110, zoom: 4 },
+        { name: "Thái Lan", lat: 15, lon: 101, zoom: 5 },
+        { name: "Philippines", lat: 13, lon: 122, zoom: 5 },
+        { name: "Indonesia", lat: -2, lon: 118, zoom: 4 },
+        { name: "Trung Quốc", lat: 35, lon: 105, zoom: 4 },
+        { name: "Nhật Bản", lat: 36, lon: 138, zoom: 5 },
+        { name: "Hàn Quốc", lat: 36, lon: 128, zoom: 6 },
+        { name: "Đông Á", lat: 32, lon: 120, zoom: 4 },
+        { name: "Ấn Độ", lat: 21, lon: 79, zoom: 4 },
+        { name: "Úc", lat: -25, lon: 134, zoom: 4 },
+        { name: "New Zealand", lat: -41, lon: 174, zoom: 5 },
+        { name: "Thái Bình Dương", lat: 0, lon: -160, zoom: 3 },
+        { name: "Hawaii", lat: 20.5, lon: -157, zoom: 6 },
+        { name: "Alaska", lat: 64, lon: -152, zoom: 4 },
+        { name: "Bắc Mỹ", lat: 45, lon: -100, zoom: 3 },
+        { name: "Hoa Kỳ", lat: 39, lon: -98, zoom: 4 },
+        { name: "Canada", lat: 58, lon: -100, zoom: 3 },
+        { name: "Mexico", lat: 23, lon: -102, zoom: 5 },
+        { name: "Trung Mỹ", lat: 13, lon: -85, zoom: 5 },
+        { name: "Caribbean", lat: 18, lon: -70, zoom: 5 },
+        { name: "Nam Mỹ", lat: -15, lon: -60, zoom: 3 },
+        { name: "Brazil", lat: -10, lon: -52, zoom: 4 },
+        { name: "Argentina", lat: -35, lon: -65, zoom: 4 },
+        { name: "Đại Tây Dương", lat: 10, lon: -40, zoom: 3 },
+        { name: "Châu Âu", lat: 50, lon: 15, zoom: 4 },
+        { name: "Châu Phi", lat: 2, lon: 20, zoom: 3 },
+        { name: "Trung Đông", lat: 28, lon: 45, zoom: 4 },
+        { name: "Bắc Cực", lat: 78, lon: 0, zoom: 3 },
+        { name: "Nam Cực", lat: -72, lon: 0, zoom: 3 },
+      ];
+
+      /*
+       * Bỏ dấu tiếng Việt để "viet nam", "Việt Nam" và "VIET NAM" cùng khớp.
+       *
+       * NFD tách chữ cái khỏi dấu thanh và dấu mũ, rồi lớp ký tự dưới đây xoá
+       * phần dấu. Riêng đ/Đ không phải tổ hợp dấu nên NFD không đụng tới —
+       * phải thay tay, và bỏ sót nó thì gõ "da nang" sẽ không ra "Đà Nẵng".
+       */
+      function fold(text) {
+        return text
+          .normalize("NFD")
+          .replace(/[̀-ͯ]/g, "")
+          .replace(/đ/g, "d")
+          .replace(/Đ/g, "D")
+          .toLowerCase()
+          .trim();
+      }
+
+      var searchElements = {
+        panel: document.getElementById("search"),
+        input: document.getElementById("region-input"),
+        list: document.getElementById("region-list"),
+        empty: document.getElementById("region-empty"),
+      };
+
+      var activeIndex = -1;
+      var matches = [];
+
+      function closeList() {
+        searchElements.panel.setAttribute("data-open", "false");
+        searchElements.input.setAttribute("aria-expanded", "false");
+        activeIndex = -1;
+      }
+
+      function openList() {
+        searchElements.panel.setAttribute("data-open", "true");
+        searchElements.input.setAttribute("aria-expanded", "true");
+      }
+
+      function renderMatches() {
+        var query = fold(searchElements.input.value);
+        matches = query
+          ? REGIONS.filter(function (region) {
+              return fold(region.name).indexOf(query) !== -1;
+            })
+          : REGIONS.slice();
+
+        searchElements.list.innerHTML = "";
+        searchElements.empty.hidden = matches.length > 0;
+
+        matches.forEach(function (region, index) {
+          var item = document.createElement("li");
+          item.setAttribute("role", "option");
+          item.setAttribute(
+            "aria-selected",
+            index === activeIndex ? "true" : "false",
+          );
+
+          var button = document.createElement("button");
+          button.type = "button";
+          button.textContent = region.name;
+          if (index === activeIndex) button.setAttribute("data-active", "true");
+
+          /* Nhãn phụ nói TRƯỚC sẽ xem bằng vệ tinh nào. Biết trước thì việc
+             lớp tự đổi sau khi bấm không còn là chuyện bất ngờ. */
+          var hint = document.createElement("span");
+          var target = bestLayerFor(region.lon);
+          hint.textContent =
+            region.zoom === null ? "cả Trái Đất" : target.where.split(" · ")[0];
+          button.appendChild(hint);
+
+          button.addEventListener("click", function () {
+            goToRegion(region);
+          });
+
+          item.appendChild(button);
+          searchElements.list.appendChild(item);
+        });
+      }
+
+      async function goToRegion(region) {
+        searchElements.input.value = region.name;
+        closeList();
+        searchElements.input.blur();
+
+        // "Toàn cầu" không có kinh độ đích nào để chọn vệ tinh theo — nó chỉ
+        // lùi khung nhìn về cả Trái Đất và giữ nguyên lớp đang bật.
+        if (region.zoom === null) {
+          showWholeEarth();
+          return;
+        }
+
+        var target = bestLayerFor(region.lon);
+        var switching = !current || current.spec.id !== target.id;
+
+        map.flyTo([region.lat, region.lon], region.zoom, { duration: 0.9 });
+
+        if (switching) {
+          await selectLayer(target, { keepView: true });
+          showBanner(
+            "Đã đổi sang " +
+              target.name +
+              " — " +
+              target.where +
+              ", vì vệ tinh trước đó không nhìn thấy " +
+              region.name +
+              ".",
+          );
+          setTimeout(hideBanner, 7000);
+        }
+      }
+
+      searchElements.input.addEventListener("focus", function () {
+        renderMatches();
+        openList();
+      });
+
+      searchElements.input.addEventListener("input", function () {
+        activeIndex = -1;
+        renderMatches();
+        openList();
+      });
+
+      searchElements.input.addEventListener("keydown", function (event) {
+        if (event.key === "Escape") {
+          closeList();
+          return;
+        }
+        if (event.key === "ArrowDown" || event.key === "ArrowUp") {
+          event.preventDefault();
+          if (matches.length === 0) return;
+          var step = event.key === "ArrowDown" ? 1 : -1;
+          activeIndex = (activeIndex + step + matches.length) % matches.length;
+          renderMatches();
+          var active = searchElements.list.querySelector("[data-active]");
+          if (active) active.scrollIntoView({ block: "nearest" });
+          return;
+        }
+        if (event.key === "Enter") {
+          event.preventDefault();
+          // Chưa chọn bằng phím thì lấy kết quả đầu tiên — gõ "nhat" rồi Enter
+          // phải ra Nhật Bản, không phải không ra gì.
+          var pick = matches[activeIndex >= 0 ? activeIndex : 0];
+          if (pick) goToRegion(pick);
+        }
+      });
+
+      /* Đóng khi bấm ra ngoài. Dùng `pointerdown` chứ không `click`: `blur`
+         của ô nhập chạy trước `click` của nút trong danh sách, nên nếu đóng
+         theo `blur` thì chính cú bấm chọn bị nuốt mất. */
+      document.addEventListener("pointerdown", function (event) {
+        if (!searchElements.panel.contains(event.target)) closeList();
+      });
+
+      /* Leaflet bắt sự kiện chuột trên mọi thứ nằm trên bản đồ; không chặn
+         thì kéo chọn chữ trong ô nhập sẽ kéo theo cả bản đồ. */
+      L.DomEvent.disableClickPropagation(searchElements.panel);
+      L.DomEvent.disableScrollPropagation(searchElements.panel);
+
       var utcHour = new Date().getUTCHours();
       var asiaInDaylight = utcHour >= 22 || utcHour < 10;
       var startId = asiaInDaylight ? "himawari-visible" : "himawari-ir";

@@ -84,7 +84,8 @@
     "heroSearchCta": "Explore",
     "heroCategoriesLabel": "Start with a field",
     "seeAllArticles": "See all articles",
-    "aiTryAsking": "Try asking"
+    "aiTryAsking": "Try asking",
+    "heroFieldsMore": "{count} more fields"
   },
   "article": {
     "readingTime": "{minutes} min read",

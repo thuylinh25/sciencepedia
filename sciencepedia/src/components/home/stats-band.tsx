@@ -1,5 +1,4 @@
 import { getTranslations } from "next-intl/server";
-import { Eye, FileText, Library, Microscope } from "lucide-react";
 
 import { Counter } from "@/components/motion/counter";
 import { Reveal } from "@/components/motion/reveal";
@@ -7,13 +6,36 @@ import { Reveal } from "@/components/motion/reveal";
 /**
  * Bốn con số thật, không làm tròn lên, không "35+".
  *
- * "Lượt đọc" ở lại dù đang bằng 0: đường ghi lượt đọc chạy đúng
+ * "Lượt đọc" ở lại dù còn rất nhỏ: đường ghi lượt đọc chạy đúng
  * (`ViewCounter` → `POST /api/articles/[id]/view` → `incrementViews`), site mới
  * lên nên chưa có lưu lượng. Gỡ ô này đi rồi lắp lại khi có traffic là đổi bố
  * cục hai lần vì một lý do tạm thời.
  *
  * Nhãn phải khớp đúng thứ con số đếm — xem `getSiteStats`, nơi hai truy vấn đã
  * được vá lại cho khớp với "Lĩnh vực khoa học" và "Chủ đề đã có bài".
+ *
+ * ## Vì sao một dòng chứ không phải bốn ô
+ *
+ * Bản cũ là lưới 4 ô có viền, đặt chờm lên đáy hero. Nó cao chừng 100px và
+ * đứng ở vị trí đắt nhất trang: giữa hero và khối nội dung đầu tiên. Tức là
+ * thứ đầu tiên người đọc gặp sau tiêu đề không phải khoa học mà là một bảng
+ * số — và với 57 bài, 141 lượt đọc thì bảng số đó cũng chưa chứng minh được
+ * điều gì. Nó trả giá bằng chiều dọc mà không mua lại được uy tín.
+ *
+ * Bốn ô có viền còn kéo theo một cái giá thứ hai khó gỡ hơn: nó đọc ra như
+ * một **dashboard**. Bách khoa toàn thư thì không có dashboard ở trang chủ.
+ *
+ * Một dòng chữ giữ nguyên đủ bốn con số nhưng chỉ còn chừng 24px, và quan
+ * trọng hơn là nó tự xếp mình đúng hạng: một dòng chú thích, không phải một
+ * mục. Bỏ luôn icon vì ở cỡ này icon chỉ thêm nhiễu — nhãn đã nói rõ con số
+ * đếm cái gì.
+ *
+ * ## Vì sao đứng SAU "Bài viết nổi bật"
+ *
+ * Số liệu là thứ người ta tra khi đã quan tâm, không phải thứ làm người ta
+ * quan tâm. Đặt sau khối bài nổi bật thì nó đóng đúng vai trò: người vừa đọc
+ * xong vài tựa đề, thấy bốn con số, và biết kho này lớn cỡ nào. Đặt trước thì
+ * nó chỉ là một chướng ngại giữa tiêu đề và bài viết.
  */
 export async function StatsBand({
   stats,
@@ -22,90 +44,45 @@ export async function StatsBand({
 }) {
   const t = await getTranslations("home");
 
-  // Icon dùng lucide chứ không dùng emoji: emoji render khác nhau theo hệ điều
-  // hành (Segoe UI Emoji trên Windows, Apple Color Emoji trên macOS), không
-  // nhận màu theme, và không chỉnh được kích thước theo thang chữ.
   const items = [
-    { value: stats.articles, label: t("statsArticles"), Icon: FileText },
-    { value: stats.categories, label: t("statsFields"), Icon: Microscope },
-    { value: stats.tags, label: t("statsTopics"), Icon: Library },
-    { value: stats.views, label: t("statsReaders"), Icon: Eye },
+    { value: stats.articles, label: t("statsArticles") },
+    { value: stats.categories, label: t("statsFields") },
+    { value: stats.tags, label: t("statsTopics") },
+    { value: stats.views, label: t("statsReaders") },
   ];
 
   return (
-    /* `relative z-10` là bắt buộc, không phải thừa.
+    <Reveal as="section" className="container-page">
+      {/* `<dl>` vẫn là thẻ đúng — đây là bốn cặp tên/giá trị, và việc nó được
+          vẽ thành một dòng không đổi quan hệ ngữ nghĩa giữa chúng.
 
-       Thanh này thụt lên 40px (`-mt-10`) để chờm vào đáy hero. Hero là
-       `position: relative`, còn khối này nếu để tĩnh thì bị vẽ ở lớp DƯỚI —
-       phần tử có position luôn vẽ trên phần tử tĩnh, bất kể thứ tự DOM. Hệ quả
-       là dải gradient `h-20` ở đáy hero phủ lên 40px trên cùng của thanh số và
-       **cắt cụt phần đầu các icon**, khiến cả dải trông như bị dồn xuống.
+          `flex-wrap` + `justify-center`: ở 360px bốn cặp không lọt một dòng,
+          và xuống hai dòng cân nhau vẫn thấp hơn hẳn lưới cũ. */}
+      <dl className="flex flex-wrap items-baseline justify-center gap-x-3 gap-y-1.5 border-t pt-5 text-sm text-muted-foreground sm:gap-x-5">
+        {items.map(({ value, label }, index) => (
+          <div key={label} className="flex items-baseline gap-x-3 sm:gap-x-5">
+            {/* Dấu chấm giữa là TRANG TRÍ, nên `aria-hidden` và nằm ngoài mọi
+                cặp dt/dd. Trình đọc màn hình đọc "57, Bài viết, 7, Lĩnh
+                vực…" — dấu phân cách chỉ dành cho mắt. */}
+            {index > 0 && (
+              <span aria-hidden className="text-border select-none">
+                •
+              </span>
+            )}
+            <div className="flex items-baseline gap-1.5">
+              {/* Con số giữ `font-display` và `tabular-nums` như bản cũ: đây
+                  là phần duy nhất của dòng cần đọc nhanh, và `tabular-nums`
+                  giữ bề rộng chữ số ổn định khi Counter đếm lên.
 
-       Đó là lời giải thật cho hai lần báo "nội dung bị lệch" — không phải lỗi
-       căn giữa. */
-    <Reveal as="section" className="container-page relative z-10 -mt-10">
-      {/* Bốn cột ngay từ màn hình hẹp nhất, thay vì hai cột hai hàng.
-
-          Lưới 2×2 cao gấp đôi lưới 1×4 mà chở đúng chừng ấy thông tin. Bốn
-          con số này đều ngắn — số bài, số lĩnh vực, số chủ đề, lượt đọc —
-          nên ở 360px mỗi ô còn khoảng 80px, vừa đủ cho một con số và một nhãn
-          xuống dòng. Đổi lại là cả dải thấp đi một nửa, và trên điện thoại
-          nửa đó nằm đúng trong màn hình đầu tiên. */}
-      <dl className="grid grid-cols-4 gap-px overflow-hidden rounded-[20px] border bg-border shadow-sm">
-        {items.map(({ value, label, Icon }) => (
-          <div
-            key={label}
-            /* `justify-center` là bắt buộc, không phải trang trí.
-
-               Các ô trong lưới bị kéo cao bằng ô cao nhất, mà nhãn dài nhất
-               ("Bài viết đã xuất bản") xuống hai dòng ở một số bề rộng. Không
-               có `justify-center` thì `flex-col` dồn nội dung lên đầu ô, và cả
-               dải trông như bị lệch lên — thấy rõ trong ảnh chụp màn hình:
-               khoảng trống dưới gấp rưỡi khoảng trống trên. */
-            /* Đệm hẹp lại dưới `sm`. Ở 360px, lưới 2 cột cho mỗi ô khoảng
-               160px, và với `px-4` thì chữ chỉ còn 127px — đủ hẹp để cả hai
-               nhãn dài nhất xuống hai dòng. `px-3` trả lại 8px mỗi bên.
-
-               `py-3` thay `py-5`: cả dải cao 2 hàng, nên mỗi 8px cắt ở đây
-               tiết kiệm 16px trên một màn hình chỉ cao chừng 780px. Đây là
-               mức sàn — dưới 12px thì con số dính vào đường kẻ ô và cả dải
-               đọc ra như một bảng dữ liệu chứ không phải một khối tóm tắt. */
-            className="flex flex-col items-center justify-center gap-0.5 bg-card px-1.5 py-2.5 sm:px-4 sm:py-5"
-          >
-            {/* Icon nằm CÙNG DÒNG với con số, không xếp chồng bên trên.
-
-                Xếp chồng thì mỗi ô mất thêm một hàng (icon ~24px) cộng một
-                khoảng cách, tức cả dải cao thêm chừng 30px mà không thêm thông
-                tin nào. Đặt ngang: cùng lượng thông tin, thấp hơn hẳn, và icon
-                đứng cạnh con số cũng nói rõ hơn nó chú thích cho cái gì.
-
-                KHÔNG dùng `leading-none` cho con số. Chữ số không có nét thò
-                xuống, nên `leading-none` để lại khoảng trống chân chữ rỗng
-                trong hộp; flexbox căn giữa theo HỘP nên nét nhìn thấy được bị
-                đẩy lên trên tâm thật. */}
-            {/* `text-3xl` dưới `sm`, không phải `text-4xl`. Con số cao nhất
-                trong kho có hai chữ số; 36px chỉ để chiếm chỗ chứ không giúp
-                đọc nhanh hơn 30px, mà mỗi hàng cao thêm 7px thì cả dải cao
-                thêm 14px. Từ `sm` giữ nguyên 42px như cũ. */}
-            <dd className="flex items-center gap-2 font-display text-3xl leading-tight font-bold tracking-tight tabular-nums sm:text-[42px]">
-              <Icon
-                aria-hidden
-                className="size-5 shrink-0 text-primary-strong sm:size-6"
-              />
-              <Counter value={value} />
-            </dd>
-            {/* `text-balance` để nhãn hai dòng gãy cho cân.
-
-                Không có nó, trình duyệt nhồi tối đa vào dòng đầu rồi đẩy phần
-                thừa xuống: "BÀI VIẾT ĐÃ XUẤT / BẢN" — một từ mồ côi dưới một
-                dòng chật cứng. `text-balance` chia đều thành "BÀI VIẾT ĐÃ /
-                XUẤT BẢN", tức hai dòng cùng nhịp và không còn từ đứng lẻ.
-
-                Dùng được ở đây vì nhãn rất ngắn; `text-balance` chỉ cân tối đa
-                vài dòng nên không hợp cho đoạn văn dài. */}
-            <dt className="text-center text-xs font-medium tracking-widest text-balance text-muted-foreground uppercase">
-              {label}
-            </dt>
+                  `text-foreground` chứ không `text-primary-strong`: vàng
+                  thương hiệu ở đây sẽ kéo mắt về bốn con số đúng lúc ta vừa
+                  quyết định hạ chúng xuống hàng phụ. Đậm hơn nền chữ xung
+                  quanh là đủ để tách. */}
+              <dd className="font-display text-base font-bold tabular-nums text-foreground">
+                <Counter value={value} />
+              </dd>
+              <dt>{label}</dt>
+            </div>
           </div>
         ))}
       </dl>
