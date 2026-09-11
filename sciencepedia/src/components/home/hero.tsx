@@ -74,7 +74,7 @@ export function Hero({
           dải trống rộng nhất trang đúng ở chỗ cần liền mạch nhất.
 
           Cột phải 28rem → 36rem, tức thiên hà rộng thêm chừng 29%. */}
-      <div className="container-page relative z-10 grid min-h-[min(52svh,28rem)] items-center gap-8 pt-10 pb-6 text-star lg:grid-cols-[minmax(0,1fr)_36rem] lg:gap-12 lg:pt-12 lg:pb-7">
+      <div className="container-page relative z-10 grid min-h-[min(52svh,28rem)] items-center gap-8 pt-10 pb-3 text-star lg:grid-cols-[minmax(0,1fr)_36rem] lg:gap-12 lg:pt-12 lg:pb-3">
         {/* `relative z-10` là bắt buộc, không phải trang trí.
 
             Dưới `lg` thiên hà là một lớp `absolute`, và trong CSS phần tử đã
@@ -218,7 +218,28 @@ export function Hero({
             cục đó nó nằm DƯỚI cột chữ; to quá thì phần sáng của đĩa dâng lên
             sau chữ trắng và ăn mất tương phản. Đây là ràng buộc đọc được, không
             phải sở thích bố cục. */}
-        <div className="pointer-events-none absolute -right-[24%] bottom-10 z-0 w-[21rem] max-w-[70%] opacity-60 lg:pointer-events-auto lg:static lg:-mr-10 lg:w-auto lg:max-w-none lg:opacity-100">
+        {/* `lg:-mb-16` — thiên hà tràn XUỐNG dưới đáy hàng lưới.
+
+            Thiên hà là ô vuông rộng 36rem cộng `-mr-10`, tức cao chừng 616px,
+            trong khi cột chữ chỉ cao chừng 400px. Lưới lấy chiều cao theo ô
+            cao nhất, còn `items-center` canh giữa cột chữ trong chiều cao ấy
+            — nên dưới hàng chip lĩnh vực còn dư hơn 100px trống. Đó là dải
+            trống rộng nhất trang, đúng chỗ cần liền mạch với "Khám phá tương
+            tác".
+
+            Cách chữa KHÔNG phải thu nhỏ thiên hà: bề rộng 36rem là một quyết
+            định đã cân nhắc ở trên. Lề âm dưới kéo chiều cao hàng lưới xuống
+            64px mà kích thước vẽ của thiên hà giữ nguyên — nó tràn qua đáy
+            hàng, đúng cùng lối đã dùng cho `-mr-10` ở mép phải.
+
+            Phần tràn ra bị `overflow-hidden` của hero cắt, và chỗ bị cắt chỉ
+            là vành quầng sáng mờ (lớp `inset-[4%]` blur), lại nằm sẵn dưới
+            dải chuyển mềm cao 80px ở đáy hero. Đệm dưới hạ từ pb-6/pb-7 xuống
+            pb-3 trong cùng lượt này.
+
+            Ai tăng bề rộng cột phải lần nữa thì phải tăng cả số âm này, không
+            thì quãng trống quay lại y như cũ. */}
+        <div className="pointer-events-none absolute -right-[24%] bottom-10 z-0 w-[21rem] max-w-[70%] opacity-60 lg:pointer-events-auto lg:static lg:-mr-10 lg:-mb-16 lg:w-auto lg:max-w-none lg:opacity-100">
           <HeroGalaxy locale={locale} />
         </div>
       </div>

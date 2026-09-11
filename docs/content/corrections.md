@@ -184,3 +184,98 @@ Ba bài đã xuất bản (`trai-dat-hanh-tinh-duy-nhat-ta-biet-co-su-song`, `su
 `cau-truc-ben-trong-trai-dat` **qua gate xuất bản** (1/1), sau khi thêm bốn liên kết nội bộ bọc quanh cụm từ đã có sẵn — không đổi một chữ nào của bản vừa qua gate accuracy hai vòng.
 
 Chín bài trong lô vẫn để `factCheck = PENDING`: chưa bài nào có Source gắn vào CSDL. 32 bài PENDING còn lại chưa rà.
+
+## 2026-09-11 (tiếp) — rà "cụt giữa chừng" toàn kho: giả thuyết đúng một nửa
+
+Mục trước đặt một nghi vấn: ba trong chín bài lô không nguồn không có phần kết, và đó là dấu vết **một lượt sinh bài bị cắt ngang**, nên 32 bài PENDING còn lại đáng nghi mang cùng khuyết tật. Lượt này đo thử. Công cụ: `scripts/check-closure.ts` (`--all` cho cả kho).
+
+### Phép đo phải chỉnh hai lần, và đó là phần đáng nhớ
+
+Cả hai lần đầu đều cho ra một phép đo **dương tính với gần hết kho**, tức không phân biệt được gì:
+
+1. Mọi bài đều kết bằng mục "Đọc thêm" chỉ chứa liên kết nội bộ → 41/41 bài "kết bằng gạch đầu dòng". Mục ấy là điều hướng, không phải phần cuối của lập luận.
+2. Kho **không** dùng tiêu đề "## Kết luận" làm chuẩn — chỉ 7/41 bài có nó. Phần lớn khép bằng đoạn tóm dẫn bằng emoji hoặc trích dẫn khối `>`. Bắt theo tiêu đề thì 34/41 báo dương tính.
+
+Bài học chung: **một phép rà dương tính với gần hết tập đo là một phép rà hỏng, không phải một phát hiện lớn.** Cả hai lần, cái sai nằm ở chỗ lấy quy ước của mình làm chuẩn thay vì đọc quy ước của kho.
+
+### Kết quả
+
+| | PENDING (41) | Cả kho (58) |
+|---|---|---|
+| Không có động tác khép | 13 | 21 |
+| Khép bằng đoạn tóm (emoji / `>`) | 13 | 21 |
+| Khép bằng tiêu đề "Kết luận" | 7 | 7 |
+| Khép bằng dòng ghi bài gốc | 5 | 6 |
+| Khép bằng dòng miễn trừ y tế | 3 | 3 |
+
+### Vì sao giả thuyết chỉ đúng một nửa
+
+**Tám bài đã `factCheck = PASSED` cũng nằm trong nhóm không khép**: `bi-mat-dang-sau-cam-giac-nang-va-nhe`, `khi-quyen-trai-dat`, `nang-luong-la-gi`, `newton-da-giai-ma-the-gioi-nhu-the-nao`, `nhung-hat-vo-hinh-tao-nen-the-gioi-vat-chat`, `song-truyen-nang-luong-nhu-the-nao`, `thang-khoang-cach-vu-tru-do-toi-sao-va-thien-ha-bang-cach-nao`, `tu-electron-den-dong-dien-nguon-goc-cua-dien-nang`.
+
+Đọc chúng thì thấy: chúng kết bằng một câu tóm ý thật, chỉ là không mang dấu hiệu hình thức nào. `newton-da-giai-ma-the-gioi-nhu-the-nao` kết bằng "Ông đã tìm ra những…" — một câu khép, không phải một câu bị cắt.
+
+Nên "không khép" gộp hai thứ khác hẳn nhau: bài **thiếu dấu hiệu hình thức** (không sao) và bài **dừng giữa lúc đang trình bày** (khuyết tật thật). Thứ phân biệt được hai loại không phải động tác khép, mà là **mục cuối mỏng** và **kết bằng gạch đầu dòng**.
+
+### Khuyết tật thật, và nó là một cụm
+
+Lọc theo hai dấu hiệu đó thì nhóm nghi vấn co lại và lộ ra hình dạng: **chín bài hành tinh và thiên văn, dài 242–361 từ, đều dừng ở một mục cuối dưới 60 từ.**
+
+`sao-hoa` · `sao-thuy` · `sao-kim` · `sao-moc` · `sao-tho` · `sao-thien-vuong` · `sao-hai-vuong` · `trai-dat-hanh-tinh-duy-nhat-ta-biet-co-su-song` · `kinh-james-webb-nhin-nguoc-ve-thuo-vu-tru-so-sinh`
+
+`sao-hoa` kết bằng gạch đầu dòng "Hai vệ tinh nhỏ Phobos và Deimos…" nằm dưới tiêu đề **"Địa hình cực đoan"** — vệ tinh không phải địa hình. Đó không phải một bài thiếu dấu hiệu khép; đó là một bài bị cắt giữa lúc đổi chủ đề.
+
+Đây là **một lô sinh bài**, không phải khuyết tật rải đều toàn kho như nghi vấn ban đầu. Chữa nó là viết nốt chín bài, không phải rà lại 32 bài.
+
+### Rác cú pháp: một phát hiện, đã sửa
+
+`scripts/check-artefacts.ts` rà cả 58 bài ở cả hai ngôn ngữ, tìm backtick lạc, fence chưa đóng, `${...}` chưa nội suy, câu đứt giữa chừng.
+
+Một phát hiện: `20-ngoi-sao-sang-nhat-bau-troi-dem` có một dòng chỉ chứa đúng một dấu `` ` `` ở cuối mục "Điều thú vị" — đuôi của một template literal rò vào cột `content`, và Markdown in nó ra màn hình. Toàn bài không có khối mã nào.
+
+Đã gỡ qua `scripts/fix-stray-backtick.ts`, kèm `Revision` chụp bản trước trong cùng transaction. Không đụng `factCheck` và **không** đặt `lastVerifiedAt`: lượt này không đối chiếu câu nào với nguồn nào, đặt mốc ấy là nói dối rằng bài vừa được rà lại.
+
+### Còn nợ sau lượt này
+
+- **Danh sách 2–4 nguồn kèm DOI cho lô 9 bài không nguồn KHÔNG có trong repo.** Toàn repo chỉ ghi 20 DOI rải rác, và chúng gắn với các claim đã đính chính chứ không phải một danh sách đủ cho từng bài. Việc này **không còn là việc cơ học** — phải chạy lại bước 1 và bước 2 của pipeline cho từng bài.
+- 32 bài PENDING vẫn chưa rà nội dung. Lượt này chỉ rà **cấu trúc**, không đọc claim nào.
+- Chín bài trong cụm trên cần viết nốt phần cuối, không phải chỉ thêm một câu khép.
+
+## 2026-09-11 (tiếp) — gốc rễ "cụt giữa chừng": một lỗ hổng trong đặc tả, không phải một lượt chạy bị cắt
+
+Lịch cron của `content-pipeline.yml` vừa được bật lại, hai giờ một lượt. Nếu khuyết tật ở mục trên do lượt sinh bài bị cắt ngang thì nó sẽ tự tái diễn, nên phải biết gốc rễ trước khi bàn chuyện chữa chín bài cũ.
+
+### Gốc rễ
+
+`.claude/skills/article-generator/SKILL.md`, bước 4, liệt kê thứ tự các phần một bài phải có: định nghĩa một câu · các số liệu chính · các mục thân bài · khái niệm liên quan và tiên quyết · trích dẫn.
+
+**Không có phần khép.** Đặc tả gọi tên mọi phần khác và bỏ sót đúng phần này.
+
+Nên việc một bản nháp có khép lại hay không là chuyện may rủi, và kho phản ánh đúng như vậy: 37/58 bài có động tác khép, 21 bài không. Không phải một lượt chạy hỏng — là một lỗ hổng chạy suốt mọi lượt.
+
+Điều này cũng giải thích vì sao tám bài **đã qua gate accuracy** nằm trong nhóm không khép: `science-editor` không có tiêu chí nào để bắt, vì đặc tả không đặt ra tiêu chí ấy.
+
+### Hai chỗ đã bịt
+
+**Quy tắc 10 của `article-generator`.** Phần khép thành bắt buộc, và nêu đủ năm động tác hợp lệ mà kho đang dùng để người viết sau không phải đoán. Kèm số đo, vì một quy tắc không có lý do thì lần sau sẽ bị gỡ.
+
+**Cảnh báo trong `scripts/check-publish.ts`.** Kêu khi thiếu động tác khép **và** mục cuối dưới 70 từ.
+
+CẢNH chứ không CHẶN, và đó là phán quyết chứ không phải sự thận trọng: phép đo nhận diện một **động tác hình thức**, mà một bài kết bằng câu tóm ý thật nhưng không mang dấu hiệu nào thì vẫn hoàn chỉnh — tám bài đã duyệt ở trên đúng là trường hợp đó. Chặn theo dấu hiệu hình thức là chặn nhầm tám bài hoàn chỉnh để bắt chín bài cụt.
+
+### Ngưỡng 70 là số đo được
+
+Xếp cả 21 bài không có động tác khép theo số từ của mục cuối thì chúng tách làm hai cụm, hở rõ ở giữa:
+
+```
+45 · 50 · 51 · 53 · 54 · 55 · 64 · 64 · 66     ← chín bài cụt
+──────────────── khoảng hở ────────────────
+76 · 85 · 93 · 100 · 124 · 126 · 128 · 143 · 146 · 154 · 156 · 207
+```
+
+Bài đầu tiên bên kia khoảng hở là `nang-luong-la-gi`, đã qua gate accuracy và kết bằng một câu tóm ý thật. Đặt ngưỡng ở 70 thì cảnh báo kêu **đúng chín bài** và im ở 49 bài còn lại — đã chạy `publish:check` để xác nhận.
+
+Bản đầu đặt ngưỡng 60 theo cảm giác và bỏ sót ba bài nằm ở 64–66. **Bài học: ngưỡng phải đọc ra từ phân bố, không chọn cho tròn số.**
+
+### Vì sao chín bài cũ vẫn chưa chữa
+
+Trần độ dài 400 từ trong `check-publish.ts` đã chặn dạng cụt nặng nhất ở bài mới. Chín bài cũ thoát vì `lengthExempt` — chúng publish trước khi trần ấy được chốt. Chữa chúng là **viết nốt phần cuối**, tức đi lại bước 1–4 của pipeline cho từng bài, không phải thêm một câu khép. Chưa làm.

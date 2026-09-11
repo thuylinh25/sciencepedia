@@ -6,6 +6,7 @@ import {
   Aperture,
   ChevronDown,
   Disc3,
+  Globe,
   Menu,
   Orbit,
   Scaling,
@@ -62,6 +63,10 @@ const MODELS = [
   // Bản đồ bầu trời không phải một bậc của thang kích thước như ba mô hình
   // trên, nhưng nó đứng cùng nhóm "nhìn vũ trụ bằng mắt" nên vào cùng menu.
   { href: "/space-map", key: "spaceMap" as const, icon: Telescope },
+  // Không phải mô hình dựng bằng hình học như bốn mục trên: đây là ảnh thật
+  // chụp vài giờ trước. Vẫn cùng menu vì nó trả lời cùng một câu hỏi — nhìn
+  // thấy cái gì và nó trông thế nào.
+  { href: "/earth-live", key: "earthLive" as const, icon: Globe },
 ];
 
 /**
