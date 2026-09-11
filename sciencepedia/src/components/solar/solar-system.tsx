@@ -169,20 +169,36 @@ export function SolarSystem({
   return (
     <>
       <div className="relative h-[calc(100dvh-5rem)] min-h-[34rem] w-full overflow-hidden rounded-2xl border bg-[#05070f]">
-        {webgl === null ? (
-          <div className="grid h-full place-items-center text-sm text-white/60">
-            <Loader2 className="size-5 animate-spin" />
-          </div>
-        ) : (
-          <SolarScene
-            key={sceneKey}
-            settings={settings}
-            selectedId={selectedId}
-            onSelect={setSelectedId}
-            locale={locale}
-            longitudes={positions?.longitudes}
-          />
-        )}
+        {/* Khung 3D DỪNG phía trên bảng điều khiển, không chạy xuống dưới nó.
+
+            Đây là lượt thứ hai xử lý "bảng tốc độ đè lên mô hình". Lượt trước
+            chỉ thu bảng về một hàng — nó vẫn là một tấm nổi nằm ĐÈ lên cảnh,
+            chỉ đè ít hơn. Thu nhỏ một thứ đang che không làm nó thôi che.
+
+            Cách chữa thật là lấy lại không gian: dưới `sm`, vùng vẽ kết thúc
+            ở `bottom-[4.5rem]` — đúng chiều cao bảng cộng đệm — nên tâm cảnh
+            dịch lên và không còn gì chồng lên nhau. Từ `sm` trở lên bảng nằm
+            nép ở góc trái dưới, xa tâm cảnh, nên vùng vẽ trải kín `inset-0`
+            như cũ.
+
+            Đổi vùng vẽ chứ không đổi chiều cao khung ngoài: khung ngoài là
+            `100dvh-5rem`, và rút nó lại sẽ để một dải trống dưới đáy trang. */}
+        <div className="absolute inset-x-0 top-0 bottom-[4.5rem] sm:inset-0">
+          {webgl === null ? (
+            <div className="grid h-full place-items-center text-sm text-white/60">
+              <Loader2 className="size-5 animate-spin" />
+            </div>
+          ) : (
+            <SolarScene
+              key={sceneKey}
+              settings={settings}
+              selectedId={selectedId}
+              onSelect={setSelectedId}
+              locale={locale}
+              longitudes={positions?.longitudes}
+            />
+          )}
+        </div>
 
         {/* ------------------------------------------------ Bảng điều khiển
 

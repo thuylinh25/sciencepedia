@@ -301,12 +301,25 @@ export function useAladin({
         // canvas; hai observer không giẫm lên nhau vì `setFoV` chỉ đổi độ, và
         // không đổi kích thước phần tử — không có vòng lặp bố cục.
         if (view.planetary && typeof ResizeObserver !== "undefined") {
+          /* Tỉ lệ khung của lần chỉnh gần nhất.
+
+             Observer nổ cho MỌI lần đổi kích thước, kể cả đổi thuần chiều
+             cao khi thanh địa chỉ trên điện thoại trượt đi. Với những lần
+             ấy thì không có gì phải tính lại, mà mỗi lần gọi `setFoV` là
+             một lần Aladin dựng lại cảnh — đủ để thành rung nếu chúng dồn
+             lại. Chỉ tỉ lệ đổi mới đáng chạm vào FOV. */
+          let lastRatio = 0;
+
           const observer = new ResizeObserver(() => {
             const live = instanceRef.current;
             if (!live) return;
 
             const { width, height } = container.getBoundingClientRect();
             if (!width || !height) return;
+
+            const ratio = width / height;
+            if (Math.abs(ratio - lastRatio) < 0.01) return;
+            lastRatio = ratio;
 
             /* Giữ NGUYÊN mức phóng người xem đang đặt, chỉ tính lại bề rộng
                theo tỉ lệ khung mới.
@@ -333,7 +346,7 @@ export function useAladin({
             const held = Math.min(fovWidth, fovHeight);
             if (!held || !Number.isFinite(held)) return;
 
-            live.setFoV(Math.min(180, held * Math.max(1, width / height)));
+            live.setFoV(Math.min(180, held * Math.max(1, ratio)));
           });
           observer.observe(container);
           resizeObserverRef.current = observer;
@@ -411,6 +424,21 @@ export function useAladin({
     return instanceRef.current?.getRaDec() ?? null;
   }, []);
 
+  /**
+   * Bề rộng khung nhìn hiện tại, đơn vị độ — chiều NHỎ hơn trong hai chiều.
+   *
+   * Chuyển động tự quay cần biết số này: quay 0,18° mỗi nhịp trên một khung
+   * rộng 180° gần như không thấy, nhưng trên một khung đã phóng tới 10° thì
+   * cùng bước ấy là một cú nhảy 2% bề ngang mỗi 60 ms. Bước phải tỉ lệ với
+   * mức phóng thì tốc độ TRÔI TRÊN MÀN HÌNH mới không đổi.
+   */
+  const fov = useCallback((): number | null => {
+    const pair = instanceRef.current?.getFov();
+    if (!pair) return null;
+    const value = Math.min(pair[0], pair[1]);
+    return Number.isFinite(value) && value > 0 ? value : null;
+  }, []);
+
   const setSurvey = useCallback((surveyId: string) => {
     const instance = instanceRef.current;
     if (instance) setSurveyOn(instance, surveyId);
@@ -426,6 +454,7 @@ export function useAladin({
     goTo,
     panTo,
     centre,
+    fov,
     setSurvey,
     retry,
   } as const;
