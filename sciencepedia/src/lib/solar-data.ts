@@ -10,7 +10,26 @@ export type Planet = {
   id: string;
   name: string;
   nameEn: string;
-  /** Slug bài viết tương ứng trong bách khoa */
+  /**
+   * Slug bài viết tương ứng, **đúng như nó nằm trong cột `Article.slug`**.
+   *
+   * Không phải một slug lý tưởng hoá. Cho tới 2026-09-11, cả 14 giá trị ở đây
+   * đều là tên ngắn gọn kiểu `mat-troi`, `sao-kim`, `trai-dat` — không giá trị
+   * nào tồn tại trong cơ sở dữ liệu, vì bài thật mang slug dài theo tiêu đề
+   * (`mat-troi-lo-phan-ung-giu-ca-he-hanh-tinh`). Hệ quả: **mọi** liên kết
+   * "Đọc bài chi tiết" trong thư viện thiên thể và bảng thông tin đều biến
+   * mất, và biến mất trong im lặng.
+   *
+   * Im lặng là phần đáng ngại hơn. `filterPublishedSlugs` ẩn liên kết khi slug
+   * không có bài đã xuất bản — đúng thiết kế, vì nó chặn 404. Nhưng nó cũng
+   * làm cho "slug viết sai" và "bài chưa viết" trông giống hệt nhau trên giao
+   * diện, nên lỗi này sống được nhiều tháng mà không ai thấy.
+   *
+   * Thêm thiên thể mới thì **tra slug trong CSDL**, đừng đoán từ tên. Bốn thiên
+   * thể còn giữ tên ngắn (`mat-trang`, `eris`, `haumea`, `makemake`) là bốn
+   * thiên thể CHƯA có bài — ở đó liên kết ẩn là đúng, và slug ngắn là chỗ dành
+   * sẵn cho bài tương lai.
+   */
   articleSlug: string;
   color: string;
   emissive?: string;
@@ -260,7 +279,7 @@ export const SUN = {
   id: "sun",
   name: "Mặt Trời",
   nameEn: "The Sun",
-  articleSlug: "mat-troi",
+  articleSlug: "mat-troi-lo-phan-ung-giu-ca-he-hanh-tinh",
   color: "#ffb703",
   texture: `${TEXTURE_BASE}/c/cb/Solarsystemscope_texture_2k_sun.jpg/1280px-Solarsystemscope_texture_2k_sun.jpg`,
   displayRadius: 3.2,
@@ -350,7 +369,7 @@ export const PLANETS: Planet[] = [
     id: "mercury",
     name: "Sao Thuỷ",
     nameEn: "Mercury",
-    articleSlug: "sao-thuy",
+    articleSlug: "sao-thuy-the-gioi-da-bi-nung-va-dong-bang-cung-luc",
     color: "#9c8f84",
     displayRadius: 0.38,
     orbitSpeed: 1.607,
@@ -407,7 +426,7 @@ export const PLANETS: Planet[] = [
     id: "venus",
     name: "Sao Kim",
     nameEn: "Venus",
-    articleSlug: "sao-kim",
+    articleSlug: "sao-kim-bai-hoc-ve-hieu-ung-nha-kinh-mat-kiem-soat",
     color: "#e8c39e",
     displayRadius: 0.62,
     orbitSpeed: 1.174,
@@ -461,7 +480,7 @@ export const PLANETS: Planet[] = [
     id: "earth",
     name: "Trái Đất",
     nameEn: "Earth",
-    articleSlug: "trai-dat",
+    articleSlug: "trai-dat-hanh-tinh-duy-nhat-ta-biet-co-su-song",
     color: "#2e6fdb",
     emissive: "#0b2a5c",
     displayRadius: 0.65,
@@ -511,7 +530,7 @@ export const PLANETS: Planet[] = [
     id: "mars",
     name: "Sao Hoả",
     nameEn: "Mars",
-    articleSlug: "sao-hoa",
+    articleSlug: "sao-hoa-hanh-tinh-do-va-cau-hoi-ve-nuoc",
     color: "#c1440e",
     displayRadius: 0.45,
     orbitSpeed: 0.531,
@@ -568,7 +587,7 @@ export const PLANETS: Planet[] = [
     id: "jupiter",
     name: "Sao Mộc",
     nameEn: "Jupiter",
-    articleSlug: "sao-moc",
+    articleSlug: "sao-moc-nguoi-khong-lo-khi-va-tam-khien-cua-he",
     color: "#d8a47f",
     displayRadius: 1.9,
     orbitSpeed: 0.084,
@@ -610,7 +629,7 @@ export const PLANETS: Planet[] = [
     id: "saturn",
     name: "Sao Thổ",
     nameEn: "Saturn",
-    articleSlug: "sao-tho",
+    articleSlug: "sao-tho-vanh-dai-mong-manh-va-ve-tinh-co-dai-duong",
     color: "#e3d5a1",
     displayRadius: 1.6,
     orbitSpeed: 0.034,
@@ -659,7 +678,7 @@ export const PLANETS: Planet[] = [
     id: "uranus",
     name: "Sao Thiên Vương",
     nameEn: "Uranus",
-    articleSlug: "sao-thien-vuong",
+    articleSlug: "sao-thien-vuong-hanh-tinh-lan-nghieng-tren-quy-dao",
     color: "#9fd8e0",
     displayRadius: 1.1,
     orbitSpeed: 0.012,
@@ -697,7 +716,7 @@ export const PLANETS: Planet[] = [
     id: "neptune",
     name: "Sao Hải Vương",
     nameEn: "Neptune",
-    articleSlug: "sao-hai-vuong",
+    articleSlug: "sao-hai-vuong-hanh-tinh-tim-ra-bang-toan-hoc",
     color: "#3b5fd4",
     displayRadius: 1.05,
     orbitSpeed: 0.006,
@@ -756,7 +775,7 @@ export const DWARF_PLANETS = [
     id: "pluto",
     name: "Sao Diêm Vương",
     nameEn: "Pluto",
-    articleSlug: "sao-diem-vuong",
+    articleSlug: "tai-sao-pluto-khong-con-la-hanh-tinh",
     color: "#c9b39a",
     au: 39.48,
     eccentricity: 0.2488,
