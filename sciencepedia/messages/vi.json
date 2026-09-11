@@ -382,7 +382,6 @@
     "error": "Không tải được bản đồ bầu trời. Có thể máy chủ của CDS đang bận, hoặc trình duyệt của bạn không hỗ trợ WebGL2.",
     "retry": "Thử lại",
     "open": "Mở bản đồ",
-    "weight": "Tải khoảng 1 MB dữ liệu",
     "searchPlaceholder": "M31, Orion Nebula, Sgr A*, hoặc toạ độ…",
     "searchLabel": "Tìm thiên thể",
     "go": "Bay tới",

@@ -382,7 +382,6 @@
     "error": "The sky map could not be loaded. The CDS servers may be busy, or your browser may not support WebGL2.",
     "retry": "Try again",
     "open": "Open the map",
-    "weight": "Downloads about 1 MB",
     "searchPlaceholder": "M31, Orion Nebula, Sgr A*, or coordinates…",
     "searchLabel": "Search for an object",
     "go": "Go",

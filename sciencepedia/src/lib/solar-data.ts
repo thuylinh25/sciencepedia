@@ -134,26 +134,33 @@ export const SUN = {
   descriptionEn:
     "The central star holding 99.86% of the system mass, fusing hydrogen into helium continuously for 4.6 billion years.",
   /**
-   * Ảnh bìa cố tình chọn CÙNG bước sóng với bản đồ bề mặt (304 Å). Trước đây
-   * hai bên khác dải, nên bấm mở bản đồ là mất hết các quầng sáng thấy trong
-   * ảnh — người xem tưởng bản đồ hỏng, trong khi thật ra đó là hai lớp khác
-   * nhau của Mặt Trời.
+   * Ảnh bìa được dựng TỪ CHÍNH bản đồ mà thẻ này mở ra, không phải một tấm
+   * ảnh khác cùng bước sóng.
+   *
+   * Trước đây bìa là ảnh SDO chụp 10/06/2014, cùng dải 304 Å với bản đồ nhưng
+   * khác thời điểm. Mặt Trời đổi bộ mặt từng ngày, nên bấm mở là quầng sáng
+   * nhảy chỗ và cả tông màu cũng đổi — người xem tưởng bản đồ hỏng. Cùng một
+   * bước sóng vẫn chưa đủ; phải cùng một dữ liệu.
+   *
+   * Ảnh lấy từ preview của survey, cắt lấy đĩa và thay nền xám của CDS bằng
+   * nền tối của khung. 256 px là cỡ lớn nhất CDS phát ra cho preview — đủ cho
+   * một tấm bìa, và đổi lại là bấm vào không thấy hình đổi.
    */
   photo: {
-    url: `${TEXTURE_BASE}/0/01/Sun_-_SDO_-_2014-06-10_304.jpg/960px-Sun_-_SDO_-_2014-06-10_304.jpg`,
+    url: "/images/sun-hips-304.jpg",
     captionVi:
-      "Đài quan sát SDO của NASA chụp ngày 10/06/2014 ở bước sóng cực tím 304 Å — lớp sắc quyển, nơi thấy rõ các quầng lửa ở rìa đĩa. Màu cam là màu quy ước, mắt người không nhìn thấy bước sóng này.",
+      "Bản đồ cầu toàn Mặt Trời ở bước sóng cực tím 304 Å — lớp sắc quyển. CDS ghép từ đoạn phim NASA/GSFC theo dõi toàn bộ bề mặt trong khoảng 01/01–27/09/2012. Màu cam là màu quy ước, mắt người không nhìn thấy bước sóng này. Bấm vào để xoay chính bản đồ này.",
     captionEn:
-      "NASA Solar Dynamics Observatory, 10 June 2014, at 304 Å in the extreme ultraviolet — the chromosphere, where prominences stand out along the limb. The orange is false colour: the eye cannot see this wavelength.",
-    credit: "NASA/SDO (AIA)",
-    sourceUrl: `${COMMONS_FILE}Sun_-_SDO_-_2014-06-10_304.jpg`,
+      "Whole-Sun spherical map at 304 Å in the extreme ultraviolet — the chromosphere. Assembled by CDS from a NASA/GSFC movie tracking the entire surface between 1 January and 27 September 2012. The orange is false colour: the eye cannot see this wavelength. Click to rotate this very map.",
+    credit: "CDS / NASA GSFC (SVS 30362)",
+    sourceUrl: "https://svs.gsfc.nasa.gov/30362",
   },
   surface: {
     hipsUrl: `${SURFACE_BASE}/CDS_P_Sun_euvi-aia304-2012`,
     captionVi:
-      "Bản đồ cầu toàn Mặt Trời ở 304 Å, ghép năm 2012. Khác với hành tinh, Mặt Trời đổi bộ mặt từng ngày — bản đồ này là một thời điểm khác với tấm ảnh trên, nên các quầng sáng nằm ở chỗ khác.",
+      "Bản đồ cầu toàn Mặt Trời ở 304 Å, CDS ghép năm 2012 — chính là tấm ảnh trên thẻ, giờ xoay và phóng to được. Khác hành tinh, Mặt Trời đổi bộ mặt từng ngày, nên đây là một thời điểm cụ thể chứ không phải bộ mặt cố định của nó.",
     captionEn:
-      "Whole-Sun spherical map at 304 Å, assembled in 2012. Unlike a planet, the Sun changes from day to day: this map is a different moment from the photograph above, so the bright regions sit elsewhere.",
+      "Whole-Sun spherical map at 304 Å, assembled by CDS in 2012 — the same image shown on the card, now free to rotate and zoom. Unlike a planet, the Sun changes from day to day, so this is one particular moment rather than a fixed face.",
     credit: "CDS / NASA SDO",
   },
 };
