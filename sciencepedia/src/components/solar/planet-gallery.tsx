@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { getLocale, getTranslations } from "next-intl/server";
-import { ArrowUpRight, Orbit, Scaling } from "lucide-react";
+import { ArrowUpRight, Orbit } from "lucide-react";
 
 import { Link } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
@@ -391,10 +391,21 @@ export async function PlanetGallery() {
                   </p>
                 </div>
 
-                {/* CTA có thứ bậc: một nút chính có nền, hai lối đi phụ là
+                {/* CTA có thứ bậc: một nút chính có nền, một lối đi phụ là
                     chữ. Trước đây ba liên kết cùng một kiểu chữ nhỏ nên không
                     cái nào là đường chính, và người bấm phải đọc hết ba cái
-                    mới chọn được. Chiều cao 40px cho ngón tay bấm trúng. */}
+                    mới chọn được. Chiều cao 40px cho ngón tay bấm trúng.
+
+                    Liên kết thứ ba — "Hành trình thu phóng" — đã gỡ. Nó trỏ
+                    `/zoom` không kèm tham số, tức GIỐNG HỆT nhau ở cả tám
+                    thẻ: lặp lại tám lần cùng một đích ngay dưới tám thiên thể
+                    khác nhau, và không thẻ nào đưa người bấm tới đúng thiên
+                    thể của thẻ đó. Trang /zoom vẫn còn, vào được từ menu,
+                    footer và thẻ trên trang chủ.
+
+                    Muốn nối lại hai thứ này thì đường đúng là cho /zoom nhận
+                    một mục tiêu (`/zoom?body=...`), không phải dán lại tám
+                    liên kết giống nhau. */}
                 <div className="mt-auto flex flex-wrap items-center gap-x-4 gap-y-2 border-t pt-4">
                   <Link
                     href={`/solar-system?body=${body.id}`}
@@ -414,13 +425,6 @@ export async function PlanetGallery() {
                     </Link>
                   )}
 
-                  <Link
-                    href="/zoom"
-                    className="inline-flex h-10 items-center gap-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground"
-                  >
-                    <Scaling className="size-3.5" aria-hidden />
-                    {t("viewInZoom")}
-                  </Link>
                 </div>
               </div>
             </li>
