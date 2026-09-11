@@ -6,6 +6,7 @@ import { useTranslations } from "next-intl";
 import { Loader2, Telescope } from "lucide-react";
 
 import type { SkyView } from "@/hooks/use-aladin";
+import { OPEN_BODY_EVENT } from "@/lib/solar-data";
 import { useInView } from "@/hooks/use-in-view";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -57,6 +58,14 @@ export type AladinViewerProps = {
   posterCaption?: string;
   /** Xem chú thích cùng tên ở `AladinCanvas` — chỉ hiện khi toàn màn hình */
   fullscreenInfo?: ReactNode;
+  /** Hai nhánh của breadcrumb khi toàn màn hình: gốc bấm được, lá là chỗ đang đứng */
+  crumbRoot?: string;
+  crumbCurrent?: string;
+  /**
+   * Tự mở khi có nơi khác phát `OPEN_BODY_EVENT` mang đúng id này — đường để
+   * dải "Khám phá tiếp" ở thẻ khác mở được thẻ này. Xem `body-jump-list`.
+   */
+  openOnEventId?: string;
   className?: string;
 };
 
@@ -83,6 +92,9 @@ export function AladinViewer({
   posterBackground,
   posterCaption,
   fullscreenInfo,
+  crumbRoot,
+  crumbCurrent,
+  openOnEventId,
   className,
 }: AladinViewerProps) {
   const t = useTranslations("sky");
@@ -101,6 +113,17 @@ export function AladinViewer({
     ).connection;
     if (connection?.saveData) setSaveData(true);
   }, []);
+
+  useEffect(() => {
+    if (!openOnEventId) return;
+    const open = (event: Event) => {
+      if ((event as CustomEvent<string>).detail === openOnEventId) {
+        setClicked(true);
+      }
+    };
+    window.addEventListener(OPEN_BODY_EVENT, open);
+    return () => window.removeEventListener(OPEN_BODY_EVENT, open);
+  }, [openOnEventId]);
 
   const active = clicked || (activation === "visible" && !saveData && inView);
 
@@ -124,6 +147,8 @@ export function AladinViewer({
           view={view}
           label={label}
           fullscreenInfo={fullscreenInfo}
+          crumbRoot={crumbRoot}
+          crumbCurrent={crumbCurrent}
           // Chỉ cho đóng khi chính người đọc đã bấm để mở. Khung tự nạp theo
           // tầm nhìn (trang bản đồ) thì đóng nó chỉ để nó mở lại ngay.
           onClose={clicked ? () => setClicked(false) : undefined}

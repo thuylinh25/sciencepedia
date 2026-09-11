@@ -1,9 +1,14 @@
 /**
- * Bảy cấp của hành trình thu phóng, từ vũ trụ quan sát được xuống tới con
- * người.
+ * Bốn cấp của hành trình thu phóng, từ vũ trụ quan sát được xuống Trái Đất.
+ *
+ * Hành trình dừng ở Trái Đất chứ không đi tiếp xuống châu lục, sinh vật và con
+ * người. Bốn cấp này đều là mô hình 3D thật, cùng một ngôn ngữ hình ảnh; ba cấp
+ * dưới thì một cấp dùng lại chính quả cầu Trái Đất nhìn gần và hai cấp còn lại
+ * phải minh hoạ bằng ảnh chụp, nên đoạn cuối đổi hẳn chất liệu giữa chừng. Kết
+ * thúc ở hành tinh của mình là một cái kết trọn vẹn hơn là đuối dần.
  *
  * Mỗi cấp là một cảnh 3D riêng chứ không phải một cảnh duy nhất phóng to liên
- * tục. Dải tỉ lệ ở đây là khoảng 26 bậc độ lớn, vượt xa độ chính xác của số
+ * tục. Dải tỉ lệ ở đây là khoảng 19 bậc độ lớn, vượt xa độ chính xác của số
  * thực 32-bit mà WebGL dùng, nên ép vào cùng một cảnh thì hình học sẽ rã. Cảm
  * giác liền mạch được tạo bằng cách thu phóng và hoà mờ giữa hai cảnh liền kề
  * — đúng cách các trang "Powers of Ten" vẫn làm.
@@ -23,20 +28,7 @@ export type ZoomLevel = {
   /** Trang chi tiết tương ứng, nếu có */
   href?: string;
   color: string;
-  /**
-   * Cấp không có mô hình 3D thì minh hoạ bằng ảnh, và nói rõ đó là ảnh.
-   *
-   * Giờ chỉ còn cấp "Sinh vật" dùng ảnh. Một khu rừng là hàng triệu cá thể
-   * khác loài chen nhau — dựng thủ tục thì ra đồ hoạ trò chơi chứ không ra
-   * sinh quyển, nên ảnh thật trung thực hơn. Cấp "Con người" thì ngược lại:
-   * cơ thể người có bảng tỉ lệ nhân trắc đo được, dựng từ bảng đó cho ra hình
-   * đúng tỉ lệ và xoay được — xem `human-scene.tsx`.
-   */
-  image?: { src: string; creditVi: string; creditEn: string };
 };
-
-const thumb = (dir: string, file: string) =>
-  `https://upload.wikimedia.org/wikipedia/commons/thumb/${dir}/${file}/1280px-${file}`;
 
 export const ZOOM_LEVELS: ZoomLevel[] = [
   {
@@ -93,50 +85,6 @@ export const ZOOM_LEVELS: ZoomLevel[] = [
     blurbEn:
       "The third planet, and so far the only place known to hold life. All of human history has happened on the thin skin of this ball.",
     color: "#38bdf8",
-  },
-  {
-    id: "continent",
-    name: "Châu lục",
-    nameEn: "A continent",
-    size: "~5.000 km",
-    sizeEn: "~5,000 km",
-    metres: 5e6,
-    blurb:
-      "Lớp vỏ rắn mà toàn bộ sự sống trên cạn bám vào. Ở tỉ lệ này, dãy Himalaya cao 8,8 km chỉ là một nếp gấp mỏng hơn lớp vỏ quả táo.",
-    blurbEn:
-      "The solid crust that all land life clings to. At this scale the Himalaya, 8.8 km high, is a wrinkle thinner than an apple's skin.",
-    color: "#22c55e",
-  },
-  {
-    id: "biosphere",
-    name: "Sinh vật",
-    nameEn: "Living things",
-    size: "1 mm – 100 m",
-    sizeEn: "1 mm – 100 m",
-    metres: 30,
-    blurb:
-      "Từ vi khuẩn tới cây tùng bách cao trăm mét. Toàn bộ sinh quyển nằm trong một lớp mỏng chưa tới 20 km tính từ đáy biển sâu lên tới tầng bình lưu.",
-    blurbEn:
-      "From bacteria to hundred-metre conifers. The entire biosphere fits in a shell under 20 km thick, from the deep sea floor up into the stratosphere.",
-    color: "#84cc16",
-    image: {
-      src: thumb("f/f6", "Amazon_rainforest.jpg"),
-      creditVi: "Ảnh chụp rừng Amazon, Wikimedia Commons",
-      creditEn: "Photograph of the Amazon rainforest, Wikimedia Commons",
-    },
-  },
-  {
-    id: "human",
-    name: "Con người",
-    nameEn: "A human being",
-    size: "~1,7 m",
-    sizeEn: "~1.7 m",
-    metres: 1.7,
-    blurb:
-      "Điểm cuối của hành trình, và cũng là điểm xuất phát: mọi con số ở các cấp trên đều do sinh vật cao 1,7 mét này đo được, từ bề mặt một hành tinh mà nó chưa từng rời xa quá 400.000 km.",
-    blurbEn:
-      "The end of the journey, and also its beginning: every figure at every level above was measured by this 1.7-metre creature, from the surface of a planet it has never left by more than 400,000 km.",
-    color: "#f472b6",
   },
 ];
 

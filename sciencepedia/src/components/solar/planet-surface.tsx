@@ -35,6 +35,8 @@ export function PlanetSurface({
   surface,
   caption,
   info,
+  crumbRoot,
+  bodyId,
   priority,
   sizes,
 }: {
@@ -53,6 +55,10 @@ export function PlanetSurface({
    * dịch lại đúng những nhãn vừa dịch xong ở trên.
    */
   info?: ReactNode;
+  /** Nhánh gốc của breadcrumb khi toàn màn hình, thường là "Hệ Mặt Trời" */
+  crumbRoot: string;
+  /** Id thiên thể, để dải "Khám phá tiếp" ở thẻ khác mở được thẻ này */
+  bodyId: string;
   priority?: boolean;
   sizes: string;
 }) {
@@ -75,6 +81,9 @@ export function PlanetSurface({
       label={t("surfaceLabel", { body: name })}
       activation="click"
       fullscreenInfo={info}
+      crumbRoot={crumbRoot}
+      crumbCurrent={name}
+      openOnEventId={bodyId}
       posterCaption={caption}
       posterBackground={
         <Image

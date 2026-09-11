@@ -2,7 +2,13 @@
 
 import { useEffect, useRef, type ReactNode } from "react";
 import { useTranslations } from "next-intl";
-import { AlertTriangle, ArrowLeft, Loader2, RotateCcw } from "lucide-react";
+import {
+  AlertTriangle,
+  ArrowLeft,
+  ChevronRight,
+  Loader2,
+  RotateCcw,
+} from "lucide-react";
 
 import { useAladin, type SkyView } from "@/hooks/use-aladin";
 import { cn } from "@/lib/utils";
@@ -21,6 +27,8 @@ export function AladinCanvas({
   label,
   onClose,
   fullscreenInfo,
+  crumbRoot,
+  crumbCurrent,
 }: {
   view: SkyView;
   /** Nhãn cho trình đọc màn hình — canvas WebGL tự nó không mô tả được gì */
@@ -38,6 +46,16 @@ export function AladinCanvas({
    * nuốt hết phần chữ đó — người xem còn lại một quả cầu không tên.
    */
   fullscreenInfo?: ReactNode;
+  /**
+   * Breadcrumb thay cho một mũi tên trơ trọi.
+   *
+   * Mũi tên nói được "lùi lại" nhưng không nói lùi về đâu, và ở toàn màn hình
+   * thì không còn gì trên màn hình để đoán. Breadcrumb nói cả hai: đang đứng ở
+   * đâu, và bấm thì về đâu. Nó cũng là khung chịu được việc sau này có thêm
+   * cấp — thiên thể rồi tới đặc điểm bề mặt — mà không phải nghĩ lại từ đầu.
+   */
+  crumbRoot?: string;
+  crumbCurrent?: string;
 }) {
   const t = useTranslations("sky");
   const { containerRef, status, isFullscreen, goTo, retry } = useAladin({
@@ -76,24 +94,38 @@ export function AladinCanvas({
         cố định và nằm cao hơn lớp đó. Trong thẻ thì nó chỉ là một nút góc.
       */}
       {onClose && status !== "error" && (
-        <button
-          type="button"
-          onClick={onClose}
-          /* Chỉ còn mũi tên, không còn chữ: tấm bìa vừa biến mất ngay
-             dưới con trỏ người vừa bấm, nên không ai cần đọc chữ mới hiểu nút
-             này trả về đâu. Nhãn vẫn còn cho trình đọc màn hình, nơi không có
-             bối cảnh thị giác đó. */
-          aria-label={t("backToList")}
-          title={t("backToList")}
+        <nav
+          aria-label={crumbRoot ? `${crumbRoot} / ${crumbCurrent ?? ""}` : undefined}
           className={cn(
-            "inline-flex items-center justify-center rounded-full bg-black/65 p-2 text-white backdrop-blur-sm transition-colors hover:bg-black/85",
+            "flex items-center gap-1.5 rounded-full bg-black/65 px-2 py-1.5 text-xs text-white backdrop-blur-sm",
             isFullscreen
               ? "fixed top-4 left-4 z-[70]"
               : "absolute top-2 left-2 z-10",
           )}
         >
-          <ArrowLeft className="size-4" aria-hidden />
-        </button>
+          <button
+            type="button"
+            onClick={onClose}
+            aria-label={t("backToList")}
+            title={t("backToList")}
+            className="inline-flex items-center gap-1.5 rounded-full px-1.5 py-0.5 font-medium transition-colors hover:bg-white/15"
+          >
+            <ArrowLeft className="size-3.5" aria-hidden />
+            {crumbRoot}
+          </button>
+
+          {crumbCurrent && (
+            <>
+              <ChevronRight
+                className="size-3.5 shrink-0 text-white/40"
+                aria-hidden
+              />
+              <span aria-current="page" className="pr-1.5 text-white/70">
+                {crumbCurrent}
+              </span>
+            </>
+          )}
+        </nav>
       )}
 
       {/* Ghim vào mép trái cửa sổ, không vào khung: ở chế độ bề mặt thiên thể

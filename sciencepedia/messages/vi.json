@@ -179,7 +179,8 @@
     "galleryNote": "Hành tinh không nằm cố định trên bản đồ sao phía trên: chúng đi dọc hoàng đạo và đổi chỗ mỗi đêm, nên không có toạ độ nào ghi cứng được. Dưới đây là ảnh chụp từ tàu thăm dò và kính thiên văn. Thiên thể nào CDS có bản đồ bề mặt thì bấm vào ảnh để xoay và phóng to trực tiếp.",
     "surfacePrompt": "{body} — bấm để mở bề mặt, xoay và phóng to",
     "surfaceLabel": "Bản đồ bề mặt {body}",
-    "galleryCredit": "Ảnh chụp lấy từ Wikimedia Commons, giấy phép ghi ở từng tấm. Bản đồ bề mặt do CDS (Strasbourg) phát dưới dạng HiPS, dựng từ dữ liệu của NASA, ESA và USGS."
+    "galleryCredit": "Ảnh chụp lấy từ Wikimedia Commons, giấy phép ghi ở từng tấm. Bản đồ bề mặt do CDS (Strasbourg) phát dưới dạng HiPS, dựng từ dữ liệu của NASA, ESA và USGS.",
+    "exploreNext": "Khám phá tiếp"
   },
   "ai": {
     "title": "Trợ lý khoa học",

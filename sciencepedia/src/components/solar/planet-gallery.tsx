@@ -13,6 +13,7 @@ import {
 import { cn, formatNumber } from "@/lib/utils";
 import { filterPublishedSlugs } from "@/server/queries";
 import { PlanetSurface } from "@/components/solar/planet-surface";
+import { BodyJumpList } from "@/components/solar/body-jump-list";
 
 /**
  * Thư viện ảnh Hệ Mặt Trời — Mặt Trời và tám hành tinh.
@@ -65,6 +66,12 @@ export async function PlanetGallery() {
   const published = await filterPublishedSlugs(
     BODIES.map((body) => body.articleSlug),
   );
+
+  const jumpTargets = BODIES.map((body) => ({
+    id: body.id,
+    name: isEnglish ? body.nameEn : body.name,
+    hasSurface: body.surface !== null,
+  }));
 
   return (
     <section className="pt-10">
@@ -167,13 +174,21 @@ export async function PlanetGallery() {
                   {body.photo.credit}
                 </a>
               </p>
+              {/* Chỉ ở bản toàn màn hình: trong thẻ thì cả lưới đã nằm ngay
+                  đó, thêm một danh sách chuyển thẻ nữa là thừa. */}
+              {dark && (
+                <BodyJumpList
+                  targets={jumpTargets.filter((item) => item.id !== body.id)}
+                />
+              )}
             </>
           );
 
           return (
             <li
               key={body.id}
-              className="flex flex-col overflow-hidden rounded-2xl border bg-card"
+              id={`body-${body.id}`}
+              className="flex flex-col overflow-hidden rounded-2xl border bg-card scroll-mt-24"
             >
               {body.surface ? (
                 <PlanetSurface
@@ -182,6 +197,8 @@ export async function PlanetGallery() {
                   surface={body.surface}
                   caption={t("surfacePrompt", { body: displayName })}
                   info={info(true)}
+                  crumbRoot={t("title")}
+                  bodyId={body.id}
                   sizes={IMAGE_SIZES}
                 />
               ) : (

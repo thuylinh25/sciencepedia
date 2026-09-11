@@ -179,7 +179,8 @@
     "galleryNote": "Planets do not sit still on the star map above: they travel along the ecliptic and move every night, so no fixed coordinate can describe them. Below are images taken by spacecraft and telescopes. Where CDS publishes a surface map, click the image to rotate and zoom into it.",
     "surfacePrompt": "{body} — click to open the surface, rotate and zoom",
     "surfaceLabel": "Surface map of {body}",
-    "galleryCredit": "Photographs come from Wikimedia Commons; the licence is named on each one. Surface maps are published as HiPS by CDS (Strasbourg), built from NASA, ESA and USGS data."
+    "galleryCredit": "Photographs come from Wikimedia Commons; the licence is named on each one. Surface maps are published as HiPS by CDS (Strasbourg), built from NASA, ESA and USGS data.",
+    "exploreNext": "Explore next"
   },
   "ai": {
     "title": "Science assistant",

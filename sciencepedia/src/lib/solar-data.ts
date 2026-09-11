@@ -118,6 +118,29 @@ export const TEXTURE_CREDIT = {
   license: "CC BY 4.0",
 };
 
+/**
+ * Ký hiệu thiên văn cổ điển của từng thiên thể.
+ *
+ * Đặt riêng thành bảng tra thay vì thêm một trường vào chín đối tượng dữ
+ * liệu: đây là chuyện hiển thị của đúng một khối giao diện, không phải thuộc
+ * tính của thiên thể. Trái Đất dùng emoji quả địa cầu chứ không dùng ♁ — ký
+ * hiệu đó phần lớn phông hệ thống không có, và ô trống thì tệ hơn.
+ */
+export const BODY_SYMBOL: Record<string, string> = {
+  sun: "☉",
+  mercury: "☿",
+  venus: "♀",
+  earth: "🌍",
+  mars: "♂",
+  jupiter: "♃",
+  saturn: "♄",
+  uranus: "♅",
+  neptune: "♆",
+};
+
+/** Sự kiện yêu cầu mở bản đồ bề mặt của một thiên thể — xem `body-jump-list`. */
+export const OPEN_BODY_EVENT = "sciencepedia:open-body";
+
 export const SUN = {
   id: "sun",
   name: "Mặt Trời",
