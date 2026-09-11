@@ -189,21 +189,36 @@ export const PLANETS: Planet[] = [
       "Hành tinh nhỏ nhất và gần Mặt Trời nhất. Không có khí quyển đáng kể nên chênh lệch nhiệt độ ngày–đêm lên tới 600°C.",
     descriptionEn:
       "The smallest planet and the closest to the Sun. With almost no atmosphere, its day-night temperature swing reaches 600°C.",
+    /**
+     * Bìa lấy từ chính bản đồ tăng màu mà thẻ này mở ra, cùng lý do như Mặt
+     * Trời: bấm vào thì hình không được đổi.
+     *
+     * Bìa cũ là ảnh màu thật của MESSENGER. Nó đúng về mặt quang học nhưng
+     * sai về mặt truyền đạt ở hai đầu. Một là nó không khớp bản đồ: bấm vào
+     * là một quả cầu xám biến thành một quả cầu lam vàng. Hai là ở màu thật,
+     * Sao Thuỷ trông y hệt Mặt Trăng — cả hai đều là thiên thể không khí
+     * quyển, bề mặt cổ đầy hố va chạm, suất phản chiếu 0,14 với 0,12 — nên
+     * người đọc lướt qua thẻ này thường tưởng đặt nhầm ảnh.
+     *
+     * Đánh đổi phải trả bằng chú thích, không được giấu: đây KHÔNG phải màu
+     * mắt thấy, và câu đầu tiên của chú thích phải nói đúng điều đó.
+     */
     photo: {
-      url: `${TEXTURE_BASE}/4/4a/Mercury_in_true_color.jpg/960px-Mercury_in_true_color.jpg`,
+      url: "/images/mercury-mdis-enhanced.jpg",
       captionVi:
-        "Ảnh màu thật, ghép từ dữ liệu tàu MESSENGER.",
+        "Không phải màu mắt thấy — nhìn thẳng thì Sao Thuỷ xám như Mặt Trăng. Đây là ảnh tăng màu của máy MDIS trên tàu MESSENGER: ba dải 430, 750 và 1000 nm được phân tích thành phần chính rồi gán vào đỏ, lục, lam, để lộ ra những loại đá mà mắt không tách nổi. Bấm vào để xoay chính bản đồ này.",
       captionEn:
-        "True-colour mosaic assembled from MESSENGER data.",
-      credit: "NASA / JHUAPL / Carnegie",
-      sourceUrl: `${COMMONS_FILE}Mercury_in_true_color.jpg`,
+        "Not what the eye would see — to the naked eye Mercury is as grey as the Moon. This is an enhanced-colour mosaic from MESSENGER's MDIS: the 430, 750 and 1000 nm bands run through a principal-component analysis and mapped to red, green and blue, which pulls apart rock types the eye cannot separate. Click to rotate this very map.",
+      credit: "USGS Astrogeology / NASA (qua CDS)",
+      sourceUrl:
+        "https://astrogeology.usgs.gov/search/map/mercury_messenger_mdis_basemap_enhanced_color_global_mosaic_665m",
     },
     surface: {
       hipsUrl: `${SURFACE_BASE}/CDS_P_Mercury_MDIS-enhanced-color`,
       captionVi:
-        "Ghép ảnh của máy MDIS trên tàu MESSENGER, màu được đẩy lên để tách các loại đá khác nhau — không phải màu mắt thấy.",
+        "Ghép ảnh của máy MDIS trên tàu MESSENGER — chính là tấm ảnh trên thẻ, giờ xoay và phóng to được. Màu được đẩy lên để tách các loại đá khác nhau, không phải màu mắt thấy.",
       captionEn:
-        "MESSENGER MDIS mosaic with colour stretched to separate rock types, not what the eye would see.",
+        "MESSENGER MDIS mosaic — the same image shown on the card, now free to rotate and zoom. Colour is stretched to separate rock types, not what the eye would see.",
       credit: "USGS Astrogeology / NASA",
     },
   },
