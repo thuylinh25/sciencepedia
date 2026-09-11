@@ -56,7 +56,6 @@
     "heroSubtitle": "Kiến thức khoa học trình bày chính xác, trực quan và dễ hiểu",
     "heroSearchPlaceholder": "Tìm \"hố đen\", \"CRISPR\", \"vật chất tối\"…",
     "heroCta": "Bắt đầu khám phá",
-    "heroCtaSecondary": "Xem Hệ Mặt Trời 3D",
     "featured": "Bài viết nổi bật",
     "featuredSubtitle": "Những chủ đề được biên tập kỹ lưỡng nhất tuần này",
     "latest": "Mới trong kho tri thức",
@@ -421,5 +420,38 @@
     "openFullMap": "Mở bản đồ bầu trời đầy đủ",
     "constellation": "Chòm sao",
     "backToList": "Quay lại danh sách"
+  },
+  "explore": {
+    "title": "Khám phá tương tác",
+    "subtitle": "Trải nghiệm khoa học bằng mô hình 3D, bản đồ sao và hành trình khám phá từ quy mô vũ trụ xuống tới hành tinh của chúng ta.",
+    "credit": "Ảnh",
+    "quickActions": "Khám phá tương tác",
+    "cards": {
+      "solarSystem": {
+        "title": "Hệ Mặt Trời 3D",
+        "body": "Quan sát các hành tinh chuyển động theo quỹ đạo thực trong không gian ba chiều.",
+        "cta": "Mở mô hình"
+      },
+      "milkyWay": {
+        "title": "Ngân Hà 3D",
+        "body": "Khám phá cấu trúc của Dải Ngân Hà và vị trí của Hệ Mặt Trời trong đó.",
+        "cta": "Khám phá"
+      },
+      "universe": {
+        "title": "Vũ trụ 3D",
+        "body": "Du hành qua mạng vũ trụ — các sợi vật chất, cụm thiên hà và những khoảng rỗng khổng lồ.",
+        "cta": "Khám phá"
+      },
+      "zoom": {
+        "title": "Hành trình thu phóng",
+        "body": "Đi từ vũ trụ quan sát được xuống tới Trái Đất trong một mạch liền.",
+        "cta": "Bắt đầu"
+      },
+      "skyMap": {
+        "title": "Bản đồ bầu trời",
+        "body": "Tìm thiên hà, tinh vân và bề mặt hành tinh trên ảnh bầu trời thật.",
+        "cta": "Mở bản đồ"
+      }
+    }
   }
 }

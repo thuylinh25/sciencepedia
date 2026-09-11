@@ -23,6 +23,7 @@ export function Hero({
   fields?: ReactNode;
 }) {
   const t = useTranslations("home");
+  const tExplore = useTranslations("explore");
   const locale = useLocale();
   const reduced = useReducedMotion();
 
@@ -128,18 +129,50 @@ export function Hero({
 
             Quầng sáng dùng `--color-accent` chứ không phải một mã màu viết
             cứng, để nó tự theo nếu bảng màu đổi lần nữa. */}
-          <motion.div {...rise(0.32)} className="mt-6 flex flex-wrap gap-3">
-            <Button
-              asChild
-              size="xl"
-              variant="accent"
-              className="shadow-[0_0_36px_-6px_var(--color-accent)] transition-shadow hover:shadow-[0_0_52px_-4px_var(--color-accent)]"
-            >
-              <Link href="/solar-system">
-                <Rocket className="size-4" />
-                {t("heroCtaSecondary")}
-              </Link>
-            </Button>
+          {/* Một nút chính cộng ba lối tắt, thay cho một nút đơn dẫn tới
+              Hệ Mặt Trời.
+
+              Nút đơn trước đây nói rằng mô hình 3D của trang này là Hệ Mặt
+              Trời, hết. Ba lối tắt cạnh nó nói ngay rằng còn nhiều nữa, mà
+              không biến hero thành một bảng menu: chúng nhỏ, thứ cấp, và nút
+              chính vẫn là thứ duy nhất có màu.
+
+              Vẫn dùng `accent` (xanh) chứ không `primary` (vàng): vàng đã
+              thuộc về nút tìm kiếm ngay phía trên, và hai nút vàng cạnh nhau
+              thì không nút nào còn là nút chính. */}
+          <motion.div {...rise(0.32)} className="mt-6 flex flex-col gap-3">
+            <div className="flex flex-wrap gap-3">
+              <Button
+                asChild
+                size="xl"
+                variant="accent"
+                className="shadow-[0_0_36px_-6px_var(--color-accent)] transition-shadow hover:shadow-[0_0_52px_-4px_var(--color-accent)]"
+              >
+                <Link href="/models">
+                  <Rocket className="size-4" />
+                  {tExplore("quickActions")}
+                </Link>
+              </Button>
+            </div>
+
+            <div className="flex flex-wrap items-center gap-2">
+              {(
+                [
+                  { href: "/solar-system", emoji: "☀️", key: "solarSystem" },
+                  { href: "/zoom", emoji: "🔍", key: "zoom" },
+                  { href: "/space-map", emoji: "⭐", key: "skyMap" },
+                ] as const
+              ).map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="inline-flex items-center gap-1.5 rounded-full border border-white/15 bg-white/5 px-3 py-1.5 text-sm text-white/80 backdrop-blur-md transition-colors hover:border-white/35 hover:bg-white/10 hover:text-white"
+                >
+                  <span aria-hidden>{item.emoji}</span>
+                  {tExplore(`cards.${item.key}.title`)}
+                </Link>
+              ))}
+            </div>
           </motion.div>
         </div>
 

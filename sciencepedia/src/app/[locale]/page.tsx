@@ -19,6 +19,7 @@ import {
 
 import { Hero } from "@/components/home/hero";
 import { StatsBand } from "@/components/home/stats-band";
+import { InteractiveExplore } from "@/components/home/interactive-explore";
 import { HeroFields } from "@/components/home/hero-fields";
 import { SolarPreview } from "@/components/home/solar-preview";
 import { AiQuestions } from "@/components/home/ai-questions";
@@ -101,6 +102,10 @@ export default async function HomePage({
       />
 
       <StatsBand stats={stats} />
+
+      {/* Ngay dưới hero, trên bài nổi bật: đây là câu trả lời cho "trang này
+          làm được gì", và nó phải đến trước danh sách bài đọc. */}
+      <InteractiveExplore />
 
       {/* ---------------------------------------------------- Nổi bật */}
       {heroArticle && (

@@ -56,7 +56,6 @@
     "heroSubtitle": "Science explained accurately, visually, and in plain language",
     "heroSearchPlaceholder": "Search \"black hole\", \"CRISPR\", \"dark matter\"…",
     "heroCta": "Start exploring",
-    "heroCtaSecondary": "View the 3D Solar System",
     "featured": "Featured",
     "featuredSubtitle": "Our most carefully edited pieces this week",
     "latest": "New in the library",
@@ -421,5 +420,38 @@
     "openFullMap": "Open the full sky map",
     "constellation": "Constellation",
     "backToList": "Back to the list"
+  },
+  "explore": {
+    "title": "Interactive exploration",
+    "subtitle": "Experience science through 3D models, sky maps and a journey across scales, from the observable universe down to our own planet.",
+    "credit": "Images",
+    "quickActions": "Explore interactively",
+    "cards": {
+      "solarSystem": {
+        "title": "The Solar System in 3D",
+        "body": "Watch the planets move along their real orbits in three dimensions.",
+        "cta": "Open the model"
+      },
+      "milkyWay": {
+        "title": "The Milky Way in 3D",
+        "body": "Explore the structure of our galaxy and where the Solar System sits inside it.",
+        "cta": "Explore"
+      },
+      "universe": {
+        "title": "The universe in 3D",
+        "body": "Travel through the cosmic web — matter filaments, galaxy clusters and vast empty voids.",
+        "cta": "Explore"
+      },
+      "zoom": {
+        "title": "The zoom journey",
+        "body": "Go from the observable universe down to Earth in one continuous run.",
+        "cta": "Start"
+      },
+      "skyMap": {
+        "title": "The sky map",
+        "body": "Find galaxies, nebulae and planetary surfaces on real survey imagery.",
+        "cta": "Open the map"
+      }
+    }
   }
 }
