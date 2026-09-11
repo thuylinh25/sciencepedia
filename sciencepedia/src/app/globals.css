@@ -656,3 +656,35 @@
   top: calc(50vh - min(100vw, 100vh) / 2) !important;
   box-shadow: 0 0 0 100vmax #04060e;
 }
+
+/**
+ * Trái Đất EPIC: trôi nhẹ và quầng sáng thở.
+ *
+ * Cả hai đều rất nhỏ — dịch 8px và đổi độ mờ 0,2 — và chu kỳ lệch nhau (11 s
+ * với 7 s) để hai chuyển động không bao giờ khớp nhịp thành một hiệu ứng đập
+ * đều đặn, thứ kéo mắt khỏi chính tấm ảnh.
+ *
+ * Chỉ chạy dưới `motion-safe`: người đã bật giảm chuyển động trong hệ điều
+ * hành thì thấy một quả cầu đứng yên, và không mất gì cả.
+ */
+@keyframes epic-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes epic-glow {
+  0%,
+  100% {
+    opacity: 0.75;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.95;
+    transform: scale(1.03);
+  }
+}

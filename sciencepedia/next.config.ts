@@ -35,6 +35,8 @@ const nextConfig: NextConfig = {
       { protocol: "https", hostname: "images.unsplash.com" },
       { protocol: "https", hostname: "science.nasa.gov" },
       { protocol: "https", hostname: "upload.wikimedia.org" },
+      // Ảnh Trái Đất toàn cảnh của camera EPIC trên vệ tinh DSCOVR
+      { protocol: "https", hostname: "epic.gsfc.nasa.gov" },
     ],
   },
   experimental: {
