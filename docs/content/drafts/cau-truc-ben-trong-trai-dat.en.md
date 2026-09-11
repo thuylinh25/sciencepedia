@@ -1,27 +1,59 @@
-By chemical composition Earth has three layers — crust, mantle and core — but the core itself splits into two parts that differ by state: a liquid outer core and a solid inner core. Only the crust is within reach; everything below it is inferred from seismic [waves](/articles/song-buoc-song-tan-so-bien-do) crossing the planet and from experiments that compress rock at high pressure.
+## How deep have we drilled?
 
-## Nobody has been down there
+A Soviet borehole on the Kola Peninsula reached **12 km** and still has not pierced the crust–mantle boundary.
 
-A Soviet borehole on the Kola Peninsula reached 12 km and still has not pierced the crust–mantle boundary. Against the roughly 6,375 km from the surface to the centre (half the 12,750 km diameter USGS gives), 12 km is 0.19%.
+That sounds like a lot, but against the roughly **6,375 km** from the surface to the centre (half the 12,750 km diameter USGS gives), 12 km is only **0.19%**.
 
-Newton worked out that the average density of [Earth](/articles/trai-dat) is twice that of surface rock, so the interior had to be made of something far denser.
+## How do we know what is inside the Earth?
 
-The rest is seismology. P waves are compressional, travel through both solids and fluids, and are the fastest seismic waves; S waves are shear waves. The crust–mantle boundary is named the Mohorovičić discontinuity, and USGS says plainly that no one has ever seen it — it is detected only by the sharp increase in wave speed going downward.
+When an earthquake happens, seismic waves travel through the planet.
 
-The most expensive piece of evidence is an absence. According to IRIS, S waves do not appear beyond an angular distance of about 103° from the epicentre, because the liquid outer core stops them — shear waves do not travel through liquid. Add the sharply reduced velocity of P waves passing through it, and USGS writes that the outer core is *presumed* to be liquid; the inner core is *considered* solid, on the behaviour of both P and S waves passing through it.
+- **P waves** travel through both solids and fluids.
+- **S waves** travel only through solids.
 
-## Four layers, the way NASA counts them
+S waves do not appear beyond an angular distance of about **103°** from the epicentre (IRIS) — and that is the main evidence that the outer core *is presumed* to be liquid.
 
-According to NASA: the crust averages about 31 km on land and about 5 km at the ocean floor; the mantle is about 2,900 km thick; the liquid outer core about 2,250 km; the solid inner core is a sphere of radius about 1,221 km.
+## The Earth's internal structure
 
-The core is metallic, nearly twice as dense as the mantle. USGS holds that it is principally iron, with about 10% alloy of oxygen, sulfur or nickel, or some combination of the three.
+### The crust
 
-The temperature at the inner-core boundary is only *expected* to be close to the melting point of iron at 330 GPa. Anzellini and colleagues (2013) compressed iron up to 200 GPa and then extrapolated, concluding that this melting point is 6,230 ± 500 K — a figure for pure iron, not a measured core temperature. The paper itself notes that as of 2013 there was "little consensus" on how iron melts at that pressure.
+The outermost layer, where we live.
 
-## The crust is not the tectonic plate
+- According to NASA, about 31 km deep on average on land.
+- About 5 km at the ocean bottom.
 
-A tectonic plate includes the crust *and* part of the upper mantle; the crust is only the topmost part of the plate. Crust plus upper mantle — cooler and more rigid than the deep mantle — form the lithosphere, divided by mechanical strength rather than chemistry; averaging at least 80 km thick over much of the planet, and it is the lithosphere that has broken into moving plates.
+### The mantle
 
-## The liquid layer that makes the shield
+The hot rock layer beneath the crust.
 
-Nearly all of Earth's magnetic field originates in the outer core. Molten metal convects there, is organised into rolls by the Coriolis force, and the [electric current](/articles/dien-tich-va-dong-dien) that follows generates the [magnetic field](/articles/tu-truong-va-luc-hap-dan) around the planet — the mechanism NASA calls the geodynamo.
+- About 2,900 km thick.
+- It makes up most of the planet's volume.
+- Its material can flow very slowly over geological time.
+
+### The outer core
+
+- About 2,250 km thick.
+- Composed mainly of molten iron and nickel.
+- USGS *presumes* the outer core to be liquid, because it does not transmit S waves and because the velocity of P waves passing through it is sharply reduced.
+
+### The inner core
+
+- A radius of about 1,221 km (NASA).
+- Composed mainly of iron and nickel.
+- USGS *considers* the inner core to be solid, on the behaviour of both P and S waves passing through it.
+
+## How hot is it?
+
+The temperature at the inner core boundary is only *expected* to be close to the melting point of iron at 330 GPa. Anzellini and colleagues (2013) compressed iron up to 200 GPa and then extrapolated, concluding that this melting temperature is **6,230 ± 500 K** — a figure for **pure iron**, not a measured core temperature. The paper itself notes that as of 2013 there was "little consensus" on how iron melts at that pressure.
+
+The pressure at that depth raises the melting point of iron above the temperature actually reached there — which is why the inner core is still *considered* to be solid.
+
+## What creates Earth's magnetic field?
+
+Nearly all of Earth's magnetic field originates in the **fluid outer core**, where currents of molten iron and nickel convect continuously.
+
+As the Earth rotates, these currents of electrically conducting metal generate enormous electrical currents, which in turn produce the magnetic field surrounding the planet. This mechanism is known as the **geodynamo**.
+
+That field creates the magnetosphere, which NASA describes as the layer shielding the planet from harmful radiation from space.
+
+🌍 Even without reaching it directly, scientists have built a fairly detailed picture of the Earth's interior. Every earthquake not only shakes the surface but also helps reveal the secrets lying thousands of kilometres beneath our feet.

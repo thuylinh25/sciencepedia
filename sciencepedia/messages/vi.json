@@ -85,7 +85,11 @@
     "heroCategoriesLabel": "Bắt đầu từ một lĩnh vực",
     "seeAllArticles": "Xem tất cả bài viết",
     "aiTryAsking": "Thử hỏi",
-    "heroFieldsMore": "Thêm {count} lĩnh vực"
+    "heroStatsArticles": "bài đã thẩm định",
+    "heroStatsModels": "mô hình 3D",
+    "heroStatsTopics": "chủ đề",
+    "heroStatsAi": "Trợ lý AI",
+    "heroSocialProof": "Từ vũ trụ học và vật lý tới sinh học, Trái Đất và khí hậu — mỗi bài đều dẫn nguồn và có người duyệt."
   },
   "article": {
     "readingTime": "{minutes} phút đọc",
@@ -207,7 +211,8 @@
     "scaleEducationalNote": "Chế độ giáo dục nén khoảng cách theo căn bậc hai: vẽ xa gấp đôi nghĩa là thật ra xa gấp bốn.",
     "scaleRealNote": "Chế độ tỉ lệ thực nén khoảng cách theo hàm logarit để Sao Hải Vương còn nằm trong khung.",
     "scaleNeptune": "Sao Hải Vương bị kéo gần lại khoảng {factor} lần.",
-    "dataSource": "Nguồn dữ liệu"
+    "dataSource": "Nguồn dữ liệu",
+    "options": "Tuỳ chọn hiển thị"
   },
   "ai": {
     "title": "Trợ lý khoa học",
@@ -471,33 +476,51 @@
       "solarSystem": {
         "title": "Hệ Mặt Trời 3D",
         "body": "Quan sát các hành tinh chuyển động theo quỹ đạo thực trong không gian ba chiều.",
-        "cta": "Mở mô hình"
+        "cta": "Mở mô hình",
+        "metaA": "8 hành tinh",
+        "metaB": "Vị trí theo NASA Horizons"
       },
       "milkyWay": {
         "title": "Ngân Hà 3D",
         "body": "Khám phá cấu trúc của Dải Ngân Hà và vị trí của Hệ Mặt Trời trong đó.",
-        "cta": "Khám phá"
+        "cta": "Khám phá",
+        "metaA": "4 nhánh xoắn",
+        "metaB": "Vị trí Hệ Mặt Trời"
       },
       "universe": {
         "title": "Vũ trụ 3D",
         "body": "Du hành qua mạng vũ trụ — các sợi vật chất, cụm thiên hà và những khoảng rỗng khổng lồ.",
-        "cta": "Khám phá"
+        "cta": "Khám phá",
+        "metaA": "Sợi vật chất và khoảng rỗng",
+        "metaB": "Cấu trúc quy mô lớn"
       },
       "zoom": {
         "title": "Hành trình thu phóng",
         "body": "Đi từ vũ trụ quan sát được xuống tới Trái Đất trong một mạch liền.",
-        "cta": "Bắt đầu"
+        "cta": "Bắt đầu",
+        "metaA": "4 cấp quy mô",
+        "metaB": "Vũ trụ → Trái Đất"
       },
       "skyMap": {
         "title": "Bản đồ bầu trời",
         "body": "Tìm thiên hà, tinh vân và bề mặt hành tinh trên ảnh bầu trời thật.",
-        "cta": "Mở bản đồ"
+        "cta": "Mở bản đồ",
+        "metaA": "Ảnh bầu trời thật",
+        "metaB": "18 điểm đến gợi ý"
       },
       "earthLive": {
         "title": "Trái Đất nhìn từ điểm L1",
         "body": "Ảnh toàn cảnh Trái Đất do vệ tinh DSCOVR của NASA chụp từ điểm Lagrange L1, cách 1,5 triệu km.",
-        "cta": "Xem trực tiếp"
+        "cta": "Xem trực tiếp",
+        "metaA": "Ảnh NASA EPIC",
+        "metaB": "Mỗi ngày một vòng quay"
       }
+    },
+    "eyebrow": "Khám phá • Mô hình • Mô phỏng",
+    "viewModels": "Xem thư viện mô hình 3D",
+    "badges": {
+      "start": "🚀 Nên bắt đầu ở đây",
+      "highlight": "⭐ Nổi bật"
     }
   },
   "earthLive": {

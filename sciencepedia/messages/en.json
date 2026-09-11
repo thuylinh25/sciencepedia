@@ -85,7 +85,11 @@
     "heroCategoriesLabel": "Start with a field",
     "seeAllArticles": "See all articles",
     "aiTryAsking": "Try asking",
-    "heroFieldsMore": "{count} more fields"
+    "heroStatsArticles": "checked articles",
+    "heroStatsModels": "3D models",
+    "heroStatsTopics": "topics",
+    "heroStatsAi": "AI assistant",
+    "heroSocialProof": "From cosmology and physics to biology, Earth and climate — every article is sourced and reviewed."
   },
   "article": {
     "readingTime": "{minutes} min read",
@@ -207,7 +211,8 @@
     "scaleEducationalNote": "Teaching mode compresses distance by its square root: twice as far on screen means four times as far in reality.",
     "scaleRealNote": "True-scale mode compresses distance logarithmically so Neptune still fits in frame.",
     "scaleNeptune": "Neptune is pulled about {factor}× closer.",
-    "dataSource": "Data source"
+    "dataSource": "Data source",
+    "options": "Display options"
   },
   "ai": {
     "title": "Science assistant",
@@ -471,33 +476,51 @@
       "solarSystem": {
         "title": "The Solar System in 3D",
         "body": "Watch the planets move along their real orbits in three dimensions.",
-        "cta": "Open the model"
+        "cta": "Open the model",
+        "metaA": "8 planets",
+        "metaB": "Positions from NASA Horizons"
       },
       "milkyWay": {
         "title": "The Milky Way in 3D",
         "body": "Explore the structure of our galaxy and where the Solar System sits inside it.",
-        "cta": "Explore"
+        "cta": "Explore",
+        "metaA": "4 spiral arms",
+        "metaB": "Where the Sun sits"
       },
       "universe": {
         "title": "The universe in 3D",
         "body": "Travel through the cosmic web — matter filaments, galaxy clusters and vast empty voids.",
-        "cta": "Explore"
+        "cta": "Explore",
+        "metaA": "Filaments and voids",
+        "metaB": "Large-scale structure"
       },
       "zoom": {
         "title": "The zoom journey",
         "body": "Go from the observable universe down to Earth in one continuous run.",
-        "cta": "Start"
+        "cta": "Start",
+        "metaA": "4 scale steps",
+        "metaB": "Universe → Earth"
       },
       "skyMap": {
         "title": "The sky map",
         "body": "Find galaxies, nebulae and planetary surfaces on real survey imagery.",
-        "cta": "Open the map"
+        "cta": "Open the map",
+        "metaA": "Real sky imagery",
+        "metaB": "18 suggested targets"
       },
       "earthLive": {
         "title": "Earth from the L1 point",
         "body": "Full-disk images of Earth captured from the L1 Lagrange point by NASA's DSCOVR spacecraft.",
-        "cta": "View live"
+        "cta": "View live",
+        "metaA": "NASA EPIC imagery",
+        "metaB": "One full rotation a day"
       }
+    },
+    "eyebrow": "Explore • Models • Simulations",
+    "viewModels": "Browse the 3D model library",
+    "badges": {
+      "start": "🚀 Start here",
+      "highlight": "⭐ Featured"
     }
   },
   "earthLive": {

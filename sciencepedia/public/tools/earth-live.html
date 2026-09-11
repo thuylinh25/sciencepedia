@@ -1155,19 +1155,6 @@
       renderButtons();
 
       /*
-       * Lớp mở đầu chọn theo GIỜ, không cố định.
-       *
-       * Vệ tinh phủ Việt Nam là Himawari, nên lớp mở đầu phải là của nó —
-       * GOES-East và GOES-West đều không nhìn thấy Đông Nam Á. Nhưng kênh ánh
-       * sáng nhìn thấy chỉ có hình khi vùng đó đang là ban ngày: mở trang lúc
-       * 12h UTC là 19h giờ Việt Nam, và người xem gặp một đĩa đen tuyền rồi
-       * kết luận trang hỏng.
-       *
-       * Châu Á được Mặt Trời chiếu sáng trong khoảng 22h–10h UTC. Ngoài
-       * khoảng đó thì mở bằng hồng ngoại, kênh đo nhiệt độ đỉnh mây nên nhìn
-       * được cả ban đêm. Người muốn xem ảnh nhìn thấy vẫn bấm được, và lúc đó
-       * chú thích của lớp đã nói trước vì sao nó tối.
-       */
 
       /* ==================================================================
          6. TÌM THEO KHU VỰC
@@ -1463,12 +1450,36 @@
       L.DomEvent.disableClickPropagation(searchElements.panel);
       L.DomEvent.disableScrollPropagation(searchElements.panel);
 
-      var utcHour = new Date().getUTCHours();
-      var asiaInDaylight = utcHour >= 22 || utcHour < 10;
-      var startId = asiaInDaylight ? "himawari-visible" : "himawari-ir";
-
+      /*
+       * Mở trang bằng ẢNH GHÉP TOÀN CẦU, không phải vệ tinh địa tĩnh.
+       *
+       * Yêu cầu là mở ra thấy CẢ Trái Đất, và một vệ tinh địa tĩnh không bao
+       * giờ làm được điều đó — nó đứng yên trên một kinh tuyến và chỉ nhìn
+       * thấy nửa hành tinh quanh đó. Nửa còn lại không phải là đen vì trời
+       * tối, mà là KHÔNG CÓ DỮ LIỆU.
+       *
+       * Chồng lên đó là chuyện ngày và đêm. Kênh ánh sáng nhìn thấy chỉ có
+       * hình ở phần đang được Mặt Trời chiếu; mở trang lúc 13h UTC là 20h giờ
+       * Việt Nam, và phần Himawari nhìn thấy được lúc đó gần như tối hết, chỉ
+       * còn một vành trăng lưỡi liềm sáng ở rìa. Cộng hai điều lại thì cái
+       * người xem gặp là một khung gần như đen tuyền — đúng hai lần đã bị báo
+       * lỗi.
+       *
+       * Bản vá trước chọn hồng ngoại khi châu Á đang đêm. Nó chữa được vế
+       * ngày–đêm nhưng KHÔNG chữa được vế nửa hành tinh, nên vẫn sai yêu cầu.
+       *
+       * Ảnh ghép mỗi ngày của vệ tinh quỹ đạo cực giải cả hai: vệ tinh bay
+       * qua từng dải vào đúng giờ địa phương có nắng, nên bản ghép là một quả
+       * Trái Đất TRỌN VẸN và được chiếu sáng đều. Cái giá là độ mới — mỗi
+       * điểm một ảnh mỗi ngày thay vì mười phút một lần.
+       *
+       * Đánh đổi đúng hướng cho lượt mở đầu: thấy toàn cảnh trước, rồi mới
+       * chọn thời gian thực. Nhóm "Ảnh mỗi 10 phút" nằm ngay trên đầu bảng
+       * chọn lớp, và ô tìm khu vực sẽ tự chuyển sang vệ tinh địa tĩnh phủ nơi
+       * người dùng bay tới.
+       */
       selectLayer(LAYERS.find(function (spec) {
-        return spec.id === startId;
+        return spec.id === "viirs-truecolor";
       }));
     </script>
   </body>

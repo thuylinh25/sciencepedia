@@ -44,11 +44,21 @@
 #       S2-4 chưa đóng.
 #
 #   drafts/cau-truc-ben-trong-trai-dat.en.md
-#     = CHƯA dịch lại. Lượt dịch bị người dùng dừng trước khi chạy.
+#     = ĐÃ DỊCH LẠI 2026-09-11, 499 từ theo countWords của gate (băng
+#       400–600). Dịch từ bản VI 574 từ, KHÔNG hợp nhất với bản pipeline cũ.
+#       Đã BỎ khỏi bản en: mục "The crust is not the tectonic plate", bộ ba
+#       15/84/1, góc vùng tối sóng P, và Lehmann kèm năm — bốn thứ bản VI
+#       không có, nên giữ lại là dịch THÊM chứ không phải dịch.
+#       Ràng buộc thuật ngữ đã áp: "fluids" (không phải "liquids") cho sóng
+#       P; *presumed* cho lõi ngoài và *considered* cho lõi trong, hai động
+#       từ KHÁC NHAU đúng như s2 viết; "is only *expected* to be close to"
+#       theo s7; 6,230 ± 500 K dính liền "the melting temperature of iron"
+#       và mệnh đề "a figure for pure iron, not a measured core temperature".
+#       CHƯA QUA science-editor — xem việc còn lại số 2.
 #
 # ── Việc còn lại, theo đúng thứ tự ──
 #
-#   1. Dịch bản vi 574 từ sang en. Ràng buộc thuật ngữ do science-editor chốt
+#   1. [XONG 2026-09-11] Dịch bản vi 574 từ sang en. Ràng buộc thuật ngữ do science-editor chốt
 #      nằm trong lịch sử hội thoại lượt 2026-09-10; điểm cứng nhất: "fluids"
 #      không phải "liquids"; *presumed* cho lõi ngoài và *considered* cho lõi
 #      trong (s2 dùng hai động từ khác nhau, KHÔNG gộp); "is only *expected* to

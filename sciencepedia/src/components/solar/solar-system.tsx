@@ -1,11 +1,17 @@
 "use client";
 
-
 import { useEffect, useMemo, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import dynamic from "next/dynamic";
 import { useLocale, useTranslations } from "next-intl";
-import { ExternalLink, Loader2, Pause, Play, RotateCcw } from "lucide-react";
+import {
+  ExternalLink,
+  Loader2,
+  Pause,
+  Play,
+  RotateCcw,
+  SlidersHorizontal,
+} from "lucide-react";
 
 import {
   AU_KM,
@@ -112,6 +118,20 @@ export function SolarSystem({
   // Đổi key để buộc Canvas dựng lại — cách đơn giản nhất để "đặt lại góc nhìn"
   const [sceneKey, setSceneKey] = useState(0);
 
+  /*
+   * Sáu công tắc có gập lại hay không — chỉ có tác dụng dưới `sm`.
+   *
+   * Bảng điều khiển là một hàng `flex-wrap`. Trên màn hình rộng nó nằm gọn
+   * một tới hai hàng, nhưng ở 360px thì chín phần tử xuống NĂM hàng và bảng
+   * cao chừng 300px, tức gần nửa khung nhìn — nó không còn là bảng điều khiển
+   * nữa mà là một tấm chắn đặt trước mô hình.
+   *
+   * Mặc định ĐÓNG. Người mở trang lần đầu trên điện thoại đến để xem Hệ Mặt
+   * Trời chứ không để chỉnh sáu tuỳ chọn; hai thứ họ cần ngay là dừng/chạy và
+   * tốc độ, và hai thứ đó ở lại ngoài.
+   */
+  const [optionsOpen, setOptionsOpen] = useState(false);
+
   useEffect(() => setWebgl(supportsWebGL()), []);
 
   /*
@@ -120,7 +140,10 @@ export function SolarSystem({
    * lại, nên nếu chỉ đặt ở khởi tạo thì lần chuyển thứ hai sẽ không đổi gì.
    */
   useEffect(() => {
-    if (requestedBody && PLANETS.some((planet) => planet.id === requestedBody)) {
+    if (
+      requestedBody &&
+      PLANETS.some((planet) => planet.id === requestedBody)
+    ) {
       setSelectedId(requestedBody);
     }
   }, [requestedBody]);
@@ -199,70 +222,104 @@ export function SolarSystem({
             </span>
           </div>
 
-          <div className="flex items-center gap-2">
-            <Switch
-              id="orbits"
-              checked={settings.showOrbits}
-              onCheckedChange={(value) => update("showOrbits", value)}
-            />
-            <Label htmlFor="orbits" className="text-xs text-white/70">
-              {t("showOrbits")}
-            </Label>
-          </div>
+          {/* Nút gập, chỉ có dưới `sm`. Từ `sm` trở lên các công tắc luôn hiện
+              nên nút này không còn việc gì để làm và bị ẩn hẳn — để lại một nút
+              không đổi được gì là tệ hơn không có nút. */}
+          <Button
+            size="icon-sm"
+            variant="glass"
+            onClick={() => setOptionsOpen((open) => !open)}
+            aria-expanded={optionsOpen}
+            aria-controls="solar-options"
+            aria-label={t("options")}
+            className="border-white/20 bg-white/10 text-white hover:bg-white/20 sm:hidden"
+          >
+            <SlidersHorizontal className="size-4" />
+          </Button>
 
-          <div className="flex items-center gap-2">
-            <Switch
-              id="labels"
-              checked={settings.showLabels}
-              onCheckedChange={(value) => update("showLabels", value)}
-            />
-            <Label htmlFor="labels" className="text-xs text-white/70">
-              {t("showLabels")}
-            </Label>
-          </div>
+          {/* `w-full` khi mở dưới `sm`: nhóm công tắc phải bắt đầu ở một hàng
+              mới, không chen tiếp vào hàng có thanh tốc độ.
 
-          <div className="flex items-center gap-2">
-            <Switch
-              id="scale"
-              checked={settings.realScale}
-              onCheckedChange={(value) => update("realScale", value)}
-            />
-            <Label htmlFor="scale" className="text-xs text-white/70">
-              {t("realScale")}
-            </Label>
-          </div>
+              `sm:contents` chứ không phải `sm:flex`: từ `sm` trở lên nhóm này
+              phải BIẾN MẤT khỏi cây bố cục để sáu công tắc trở thành con trực
+              tiếp của bảng, đúng như bản cũ. Bọc chúng trong một flex lồng sẽ
+              đổi cách `flex-wrap` của bảng ngắt hàng, và hàng điều khiển trên
+              desktop sẽ gãy khác đi. */}
+          {/* Gập bằng LỚP, không bằng thuộc tính `hidden`.
 
-          <div className="flex items-center gap-2">
-            <Switch
-              id="solar-moons"
-              checked={settings.showMoons}
-              onCheckedChange={(value) => update("showMoons", value)}
-            />
-            <Label htmlFor="solar-moons" className="text-xs text-white/70">
-              {t("showMoons")}
-            </Label>
-          </div>
+              `[hidden]{display:none}` nằm trong stylesheet của trình duyệt, mà
+              một lớp `flex` của Tailwind là khai báo của tác giả nên thắng
+              nó. Đặt `hidden` cạnh `flex` thì nhóm vẫn hiện, và lỗi chỉ lộ ra
+              trên máy thật. */}
+          <div
+            id="solar-options"
+            className={`${optionsOpen ? "flex" : "hidden"} w-full flex-wrap items-center gap-x-5 gap-y-3 sm:contents`}
+          >
+            <div className="flex items-center gap-2">
+              <Switch
+                id="orbits"
+                checked={settings.showOrbits}
+                onCheckedChange={(value) => update("showOrbits", value)}
+              />
+              <Label htmlFor="orbits" className="text-xs text-white/70">
+                {t("showOrbits")}
+              </Label>
+            </div>
 
-          <div className="flex items-center gap-2">
-            <Switch
-              id="solar-dwarfs"
-              checked={settings.showDwarfs}
-              onCheckedChange={(value) => update("showDwarfs", value)}
-            />
-            <Label htmlFor="solar-dwarfs" className="text-xs text-white/70">
-              {t("showDwarfs")}
-            </Label>
-          </div>
+            <div className="flex items-center gap-2">
+              <Switch
+                id="labels"
+                checked={settings.showLabels}
+                onCheckedChange={(value) => update("showLabels", value)}
+              />
+              <Label htmlFor="labels" className="text-xs text-white/70">
+                {t("showLabels")}
+              </Label>
+            </div>
 
-          <div className="flex items-center gap-2">
-            <Switch
-              id="solar-ecliptic"
-              checked={settings.showEcliptic}
-              onCheckedChange={(value) => update("showEcliptic", value)}
-            />
-            <Label htmlFor="solar-ecliptic" className="text-xs text-white/70">
-              {t("showEcliptic")}
-            </Label>
+            <div className="flex items-center gap-2">
+              <Switch
+                id="scale"
+                checked={settings.realScale}
+                onCheckedChange={(value) => update("realScale", value)}
+              />
+              <Label htmlFor="scale" className="text-xs text-white/70">
+                {t("realScale")}
+              </Label>
+            </div>
+
+            <div className="flex items-center gap-2">
+              <Switch
+                id="solar-moons"
+                checked={settings.showMoons}
+                onCheckedChange={(value) => update("showMoons", value)}
+              />
+              <Label htmlFor="solar-moons" className="text-xs text-white/70">
+                {t("showMoons")}
+              </Label>
+            </div>
+
+            <div className="flex items-center gap-2">
+              <Switch
+                id="solar-dwarfs"
+                checked={settings.showDwarfs}
+                onCheckedChange={(value) => update("showDwarfs", value)}
+              />
+              <Label htmlFor="solar-dwarfs" className="text-xs text-white/70">
+                {t("showDwarfs")}
+              </Label>
+            </div>
+
+            <div className="flex items-center gap-2">
+              <Switch
+                id="solar-ecliptic"
+                checked={settings.showEcliptic}
+                onCheckedChange={(value) => update("showEcliptic", value)}
+              />
+              <Label htmlFor="solar-ecliptic" className="text-xs text-white/70">
+                {t("showEcliptic")}
+              </Label>
+            </div>
           </div>
 
           <Button
@@ -340,9 +397,7 @@ export function SolarSystem({
           {settings.realScale ? t("scaleRealNote") : t("scaleEducationalNote")}{" "}
           {t("scaleNeptune", {
             factor: Math.round(
-              compressionAt(
-                PLANETS[PLANETS.length - 1].realDistanceKm / AU_KM,
-              ),
+              compressionAt(PLANETS[PLANETS.length - 1].realDistanceKm / AU_KM),
             ),
           })}
         </span>

@@ -147,7 +147,13 @@ export function HeroGalaxy({ locale }: { locale: string }) {
     <div
       aria-hidden
       ref={wrap}
-      className="relative isolate mx-auto aspect-square w-full max-w-[30rem] transition-transform duration-300 ease-out will-change-transform"
+      /* Trần 30rem → 40rem.
+
+         Cột lưới của hero đã nới lên 36rem; giữ trần cũ thì khung bọc chặn ở
+         30rem và phần nới thêm biến thành khoảng trắng bên phải chứ không
+         thành thiên hà. Trần phải lớn hơn cột một chút để đĩa còn chỗ tràn qua
+         mép — chính chỗ tràn đó là thứ tạo cảm giác khối lớn hơn khung. */
+      className="relative isolate mx-auto aspect-square w-full max-w-[40rem] transition-transform duration-300 ease-out will-change-transform"
     >
       {/* Quầng sáng nền. Nằm dưới canvas trong suốt nên khi cảnh lên nó thành
           ánh nền của đĩa thiên hà chứ không phải một lớp thừa phải gỡ đi. */}

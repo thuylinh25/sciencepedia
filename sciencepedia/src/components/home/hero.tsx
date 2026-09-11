@@ -15,9 +15,12 @@ import { HeroGalaxy } from "@/components/home/hero-galaxy";
 export function Hero({
   search,
   fields,
+  stats,
 }: {
   search?: ReactNode;
   fields?: ReactNode;
+  /** Dòng số liệu dưới ô tìm kiếm — xem `HeroStats` */
+  stats?: ReactNode;
 }) {
   const t = useTranslations("home");
   const locale = useLocale();
@@ -61,7 +64,20 @@ export function Hero({
           giãn thì ở 1024px thiên hà chiếm gần nửa bề ngang và bóp cột chữ xuống
           mức tiêu đề phải xuống bốn dòng. 28rem là mức cân được với cột chữ đã
           thu hẹp còn max-w-3xl. */}
-      <div className="container-page relative z-10 grid min-h-[min(64svh,34rem)] items-center gap-10 pt-12 pb-14 text-star lg:grid-cols-[minmax(0,1fr)_28rem] lg:gap-14 lg:pt-16 lg:pb-16">
+      {/* Chiều cao hạ từ min(64svh,34rem) xuống min(52svh,28rem) — chừng 19%.
+
+          Mục đích không phải tiết kiệm pixel mà là ĐỂ LỘ khối kế tiếp. Ở 64svh
+          cộng đệm, "Khám phá tương tác" nằm hoàn toàn dưới nếp gấp trên laptop,
+          nên màn hình đầu tiên không có gì gợi rằng còn nội dung phía dưới. Hạ
+          xuống 52svh thì tiêu đề mục sau ló lên, và một khối bị cắt dở nói
+          "còn nữa" mạnh hơn bất kỳ mũi tên cuộn nào.
+
+          Đệm dưới giảm từ pb-14 xuống pb-8: lý do cũ của khoảng dư đó là
+          StatsBand thụt lên đè vào đáy hero bằng -mt-10, mà thanh ấy nay đã bỏ
+          — số liệu chuyển thành một dòng nằm trong chính hero.
+
+          Cột phải 28rem → 36rem, tức thiên hà rộng thêm chừng 29%. */}
+      <div className="container-page relative z-10 grid min-h-[min(52svh,28rem)] items-center gap-8 pt-10 pb-8 text-star lg:grid-cols-[minmax(0,1fr)_36rem] lg:gap-12 lg:pt-12 lg:pb-10">
         {/* `relative z-10` là bắt buộc, không phải trang trí.
 
             Dưới `lg` thiên hà là một lớp `absolute`, và trong CSS phần tử đã
@@ -103,13 +119,32 @@ export function Hero({
           </motion.p>
 
           {search && (
-            <motion.div {...rise(0.2)} className="mt-6">
+            <motion.div {...rise(0.2)} className="mt-5">
               {search}
             </motion.div>
           )}
 
+          {/* Số liệu đứng ngay dưới ô tìm kiếm, TRƯỚC các chip lĩnh vực.
+
+              Thứ tự này có lý do. Ô tìm kiếm hỏi "bạn muốn gì?", và người mở
+              trang lần đầu chưa trả lời được câu đó — họ cần biết ở đây CÓ gì
+              trước khi được mời chọn một lĩnh vực. Đặt sau chip thì nó thành
+              một dòng chú thích ở cuối khối, và không ai đọc chú thích. */}
+          {stats && (
+            <motion.div {...rise(0.24)} className="mt-4">
+              {stats}
+            </motion.div>
+          )}
+
+          <motion.p
+            {...rise(0.28)}
+            className="mt-3 max-w-xl text-sm leading-relaxed text-white/60"
+          >
+            {t("heroSocialProof")}
+          </motion.p>
+
           {fields && (
-            <motion.div {...rise(0.26)} className="mt-5">
+            <motion.div {...rise(0.32)} className="mt-5">
               {fields}
             </motion.div>
           )}
@@ -170,7 +205,18 @@ export function Hero({
             không theo % vì thứ phải né là `-mt-10`, một giá trị px cố định —
             dùng % thì khoảng hở đổi theo chiều cao hero và có bề rộng màn hình
             sẽ chạm lại. */}
-        <div className="pointer-events-none absolute -right-[22%] bottom-14 z-0 w-[17rem] max-w-[62%] opacity-60 lg:pointer-events-auto lg:static lg:w-auto lg:max-w-none lg:opacity-100">
+        {/* Rộng thêm ở cả hai bố cục, và cho tràn qua mép phải.
+
+            Từ `lg`: cột lưới đã lên 36rem, cộng `-mr-10` để đĩa chạy quá mép
+            container. Hero có `overflow-hidden` nên phần tràn bị cắt gọn ở
+            cạnh khung — đó chính là hiệu ứng cần: thiên hà trông LỚN HƠN khung
+            chứa nó, chứ không phải một tấm ảnh dán vừa khít.
+
+            Dưới `lg`: 17rem → 21rem, chừng +24%. Không tăng mạnh hơn vì ở bố
+            cục đó nó nằm DƯỚI cột chữ; to quá thì phần sáng của đĩa dâng lên
+            sau chữ trắng và ăn mất tương phản. Đây là ràng buộc đọc được, không
+            phải sở thích bố cục. */}
+        <div className="pointer-events-none absolute -right-[24%] bottom-10 z-0 w-[21rem] max-w-[70%] opacity-60 lg:pointer-events-auto lg:static lg:-mr-10 lg:w-auto lg:max-w-none lg:opacity-100">
           <HeroGalaxy locale={locale} />
         </div>
       </div>

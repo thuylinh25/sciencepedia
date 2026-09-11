@@ -18,7 +18,7 @@ import {
 } from "@/server/queries";
 
 import { Hero } from "@/components/home/hero";
-import { StatsBand } from "@/components/home/stats-band";
+import { HeroStats } from "@/components/home/hero-stats";
 import { InteractiveExplore } from "@/components/home/interactive-explore";
 import { HeroFields } from "@/components/home/hero-fields";
 import { AiQuestions } from "@/components/home/ai-questions";
@@ -98,15 +98,16 @@ export default async function HomePage({
       <Hero
         search={<SearchHeroForm locale={locale as Locale} />}
         fields={<HeroFields fields={categories} locale={locale as Locale} />}
+        stats={<HeroStats stats={stats} locale={locale as Locale} />}
       />
 
       {/* Ngay dưới hero, trên bài nổi bật: đây là câu trả lời cho "trang này
           làm được gì", và nó phải đến trước danh sách bài đọc.
 
-          Khối này nay là thứ ĐẦU TIÊN sau hero. Trước đây `StatsBand` chen
-          vào giữa và người đọc phải cuộn qua một bảng số mới tới được câu trả
-          lời đó. Xem chú thích của `StatsBand` để biết vì sao số liệu
-          chuyển xuống sau khối bài nổi bật. */}
+          Khối này là thứ ĐẦU TIÊN sau hero. Đã có hai lượt thử đặt một thanh
+          bốn ô số liệu chen vào giữa, và cả hai lượt đều bắt người đọc cuộn
+          qua một bảng số trước khi tới được câu trả lời đó. Số liệu nay là
+          một dòng chữ nằm trong chính hero — xem `HeroStats`. */}
       <InteractiveExplore />
 
       {/* ---------------------------------------------------- Nổi bật */}
@@ -143,11 +144,6 @@ export default async function HomePage({
           )}
         </section>
       )}
-
-      {/* --------------------------------------------------- Thống kê */}
-      {/* Số liệu đứng SAU nội dung, không đứng trước. Lý do đầy đủ nằm trong
-          chú thích của chính component. */}
-      <StatsBand stats={stats} />
 
       {/* ------------------------------------------- Khám phá hôm nay */}
       <DiscoverToday
