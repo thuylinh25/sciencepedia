@@ -513,6 +513,10 @@
     "limitBody": "Một bán cầu duy nhất, và luôn là bán cầu đang hướng về Mặt Trời tại thời điểm chụp. Trong một ngày, Trái Đất tự quay dưới ống kính nên các châu lục lần lượt đi qua — nhưng nửa đêm thì không bao giờ thấy. Muốn theo dõi một điểm cụ thể trên mặt đất thì phải dùng vệ tinh quỹ đạo cực, không phải DSCOVR.",
     "nextHint": "Muốn thấy Trái Đất nằm ở đâu trong những thứ lớn hơn nó? Hành trình thu phóng đi từ vũ trụ quan sát được xuống tới đây.",
     "nextCta": "Hành trình thu phóng",
-    "credit": "Ảnh: NASA EPIC / DSCOVR, thuộc phạm vi công cộng. Dữ liệu lấy trực tiếp từ api.nasa.gov, dự phòng bằng epic.gsfc.nasa.gov."
+    "credit": "Ảnh: NASA EPIC / DSCOVR, thuộc phạm vi công cộng. Dữ liệu lấy trực tiếp từ api.nasa.gov, dự phòng bằng epic.gsfc.nasa.gov.",
+    "nextTitle": "Khám phá tiếp",
+    "nextMapTitle": "Bản đồ vệ tinh phóng to được",
+    "nextMapBody": "Ba giới hạn vừa nêu — một bán cầu, không phóng to, không thấy nửa đêm — đều biến mất ở công cụ này: tile bản đồ mới mỗi 10 phút từ GOES, Himawari và VIIRS, phóng tới từng vùng. Himawari là vệ tinh phủ Việt Nam.",
+    "nextMapCta": "Mở bản đồ vệ tinh"
   }
 }

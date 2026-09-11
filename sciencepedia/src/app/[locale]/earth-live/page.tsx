@@ -1,6 +1,13 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { ArrowRight, Radio, Satellite, Telescope } from "lucide-react";
+import {
+  ArrowRight,
+  ExternalLink,
+  Layers,
+  Radio,
+  Satellite,
+  Telescope,
+} from "lucide-react";
 
 import { Link } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
@@ -155,20 +162,63 @@ export default async function EarthLivePage({
       </section>
 
       <section className="section-gap">
-        <div className="flex flex-wrap items-center gap-4 rounded-2xl border bg-muted/30 p-5">
-          <p className="min-w-0 flex-1 text-sm text-muted-foreground">
-            {t("nextHint")}
-          </p>
+        <h2 className="font-display text-2xl font-bold tracking-tight">
+          {t("nextTitle")}
+        </h2>
+
+        <div className="mt-5 grid gap-4 sm:grid-cols-2">
+          {/*
+            Công cụ GIBS đặt Ở ĐÂY chứ không vào menu chính hay lưới trang chủ.
+
+            Ba lý do. Menu đã có mục "Trái Đất thời gian thực" trỏ tới chính
+            trang này; thêm một mục nữa cùng tên thì người dùng phải đoán hai
+            mục khác nhau chỗ nào, mà khác biệt thật — toàn đĩa từ L1 so với
+            tile phóng to được — không viết vừa một dòng menu. Lưới trang chủ
+            đang chia đều ba–ba, card thứ bảy sẽ để lại một ô trống. Và nó là
+            một trang HTML độc lập: không header, không footer, không theo chủ
+            đề sáng tối, không đi qua định tuyến locale — đặt vào điều hướng
+            chính là hứa một sự đồng nhất nó không có.
+
+            Đặt ở đây thì người đọc tới nơi đã biết ba giới hạn của EPIC vừa
+            được nêu ngay phía trên, và công cụ này trả lời đúng cả ba.
+
+            Dùng thẻ <a> chứ không phải <Link>: tệp nằm ngoài vùng định tuyến
+            của Next, nên bộ định tuyến phía client không xử lý được nó.
+          */}
+          <a
+            href="/tools/earth-live.html"
+            className="group rounded-2xl border bg-card p-5 transition-colors hover:border-primary-strong/40"
+          >
+            <Layers className="size-5 text-primary-strong" aria-hidden />
+            <h3 className="mt-3 font-display font-semibold">
+              {t("nextMapTitle")}
+            </h3>
+            <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">
+              {t("nextMapBody")}
+            </p>
+            <span className="mt-3 inline-flex items-center gap-1.5 text-sm font-medium text-primary-strong">
+              {t("nextMapCta")}
+              <ExternalLink className="size-3.5" aria-hidden />
+            </span>
+          </a>
+
           <Link
             href="/zoom"
-            className="inline-flex items-center gap-1.5 text-sm font-medium text-primary-strong hover:underline"
+            className="group rounded-2xl border bg-card p-5 transition-colors hover:border-primary-strong/40"
           >
-            {t("nextCta")}
-            <ArrowRight className="size-4" aria-hidden />
+            <Telescope className="size-5 text-primary-strong" aria-hidden />
+            <h3 className="mt-3 font-display font-semibold">{t("nextCta")}</h3>
+            <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">
+              {t("nextHint")}
+            </p>
+            <span className="mt-3 inline-flex items-center gap-1.5 text-sm font-medium text-primary-strong">
+              {t("nextCta")}
+              <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-1" />
+            </span>
           </Link>
         </div>
 
-        <p className="mt-4 text-xs leading-relaxed text-muted-foreground">
+        <p className="mt-5 text-xs leading-relaxed text-muted-foreground">
           {t("credit")}
         </p>
       </section>

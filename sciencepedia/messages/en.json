@@ -513,6 +513,10 @@
     "limitBody": "One hemisphere only, and always the one facing the Sun at the moment of capture. Over a day Earth turns beneath the lens so the continents pass through in turn — but midnight is never visible. Following a specific spot on the ground needs a polar-orbiting satellite, not DSCOVR.",
     "nextHint": "Want to see where Earth sits among the things larger than it? The zoom journey runs from the observable universe down to here.",
     "nextCta": "The zoom journey",
-    "credit": "Images: NASA EPIC / DSCOVR, public domain. Data fetched from api.nasa.gov, with epic.gsfc.nasa.gov as a fallback."
+    "credit": "Images: NASA EPIC / DSCOVR, public domain. Data fetched from api.nasa.gov, with epic.gsfc.nasa.gov as a fallback.",
+    "nextTitle": "Explore next",
+    "nextMapTitle": "A satellite map you can zoom into",
+    "nextMapBody": "The three limits just described — one hemisphere, no zoom, never midnight — all fall away here: map tiles refreshed every ten minutes from GOES, Himawari and VIIRS, down to individual regions. Himawari is the satellite that covers Vietnam.",
+    "nextMapCta": "Open the satellite map"
   }
 }
