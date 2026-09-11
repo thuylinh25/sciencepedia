@@ -178,8 +178,8 @@ export type CosmicLandmark = {
 export const COSMIC_LANDMARKS: CosmicLandmark[] = [
   {
     id: "milky-way",
-    name: "Ngân Hà — bạn đang ở đây",
-    nameEn: "The Milky Way — you are here",
+    name: "Ngân Hà",
+    nameEn: "The Milky Way",
     distanceMly: 0,
     azimuth: 0,
     elevation: 0,
@@ -189,8 +189,8 @@ export const COSMIC_LANDMARKS: CosmicLandmark[] = [
   },
   {
     id: "andromeda",
-    name: "Thiên hà Andromeda (M31)",
-    nameEn: "The Andromeda Galaxy (M31)",
+    name: "Andromeda",
+    nameEn: "Andromeda",
     distanceMly: 2.5,
     azimuth: 0.6,
     elevation: 0.18,
@@ -233,8 +233,8 @@ export const COSMIC_LANDMARKS: CosmicLandmark[] = [
   },
   {
     id: "great-attractor",
-    name: "Đại Thu Hút (tâm Laniakea)",
-    nameEn: "The Great Attractor (Laniakea's focus)",
+    name: "Đại Thu Hút",
+    nameEn: "The Great Attractor",
     distanceMly: 250,
     azimuth: 5.3,
     elevation: -0.45,

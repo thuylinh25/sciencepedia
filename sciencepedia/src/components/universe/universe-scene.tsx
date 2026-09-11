@@ -211,8 +211,14 @@ const shellLabelPos = (radius: number): [number, number, number] => [
   radius * 0.72,
   radius * 0.72,
 ];
-const LANDMARK_FACTOR = 22;
-const SHELL_FACTOR = 18;
+/*
+ * Nhãn to bằng distanceFactor / khoảng cách tới camera, nên càng lại gần
+ * càng phình. Ở 22 thì lúc bay vào giữa mạng vũ trụ một cái nhãn chiếm gần
+ * nửa bề ngang khung và che mất chính cấu trúc nó đang chỉ vào. 13 giữ nhãn
+ * đọc được ở tầm nhìn mặc định mà không nuốt hình khi phóng to.
+ */
+const LANDMARK_FACTOR = 13;
+const SHELL_FACTOR = 11;
 
 type LabelSlot = {
   id: string;
@@ -340,6 +346,40 @@ function useLabelSlots(
  * vị trí của chúng ta được đánh dấu bằng một vòng sáng đập nhịp ngay giữa, và
  * các mốc quen thuộc được gắn tên — đó là những điểm neo để đọc phần còn lại.
  */
+/**
+ * Giữ dấu "bạn đang ở đây" ở nguyên một cỡ trên màn hình, bất kể camera đứng
+ * gần hay xa.
+ *
+ * Dấu này vốn có kích thước cố định trong không gian cảnh: quả cầu bán kính
+ * 0,28 đơn vị cộng vòng ngắm 2,6. Ở tầm nhìn mặc định, cách chừng 55 đơn vị,
+ * đó là một chấm nhỏ đúng ý. Nhưng bay vào tới 3–5 đơn vị — đúng việc người
+ * xem sẽ làm để tìm xem Ngân Hà nằm ở đâu — thì cùng cái chấm đó phình thành
+ * một khối trắng chiếm nửa khung, và nó che mất chính thứ nó đang chỉ.
+ *
+ * Cách chữa là cho tỉ lệ chạy tỉ lệ thuận với khoảng cách tới camera: hai đại
+ * lượng triệt tiêu nhau trong phép chiếu phối cảnh, nên cỡ trên màn hình
+ * không đổi. Chặn trên để ở khoảng cách rất xa nó không nở thành một đốm.
+ *
+ * Chỉ áp cho dấu home. Các mốc khác là thiên thể có vị trí và kích thước
+ * tương đối với nhau; phóng to mà chúng không lớn lên thì mới là sai.
+ */
+function HomeMarkerScale({ children }: { children: React.ReactNode }) {
+  const group = useRef<THREE.Group>(null);
+  const world = useRef(new THREE.Vector3());
+
+  useFrame(({ camera }) => {
+    if (!group.current) return;
+    group.current.getWorldPosition(world.current);
+    const distance = camera.position.distanceTo(world.current);
+    // 1/55 giữ đúng cỡ mà tầm nhìn mặc định đang cho
+    group.current.scale.setScalar(
+      THREE.MathUtils.clamp(distance / 55, 0.06, 1.4),
+    );
+  });
+
+  return <group ref={group}>{children}</group>;
+}
+
 function Landmarks({
   sprite,
   showLabels,
@@ -379,7 +419,7 @@ function Landmarks({
         return (
           <group key={landmark.id} position={position}>
             {home && (
-              <>
+              <HomeMarkerScale>
                 <mesh ref={pulse}>
                   <sphereGeometry args={[0.28, 20, 20]} />
                   <meshBasicMaterial
@@ -417,7 +457,7 @@ function Landmarks({
                     depthTest={false}
                   />
                 </mesh>
-              </>
+              </HomeMarkerScale>
             )}
 
             <sprite
