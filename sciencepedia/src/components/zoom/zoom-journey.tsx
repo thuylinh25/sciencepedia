@@ -29,6 +29,10 @@ const GlobeScene = dynamic(
   () => import("@/components/solar/globe-scene").then((m) => m.GlobeScene),
   { ssr: false },
 );
+const HumanScene = dynamic(
+  () => import("@/components/human/human-scene").then((m) => m.HumanScene),
+  { ssr: false },
+);
 
 /** Thời gian hoà mờ giữa hai cấp, mili giây. */
 const FADE_MS = 900;
@@ -122,7 +126,17 @@ function LevelScene({
       );
     case "earth":
     case "continent":
-      // Cùng quả cầu, khác khoảng cách camera: cấp châu lục là Trái Đất nhìn gần
+      /*
+       * Cùng quả cầu, khác chỗ đứng camera.
+       *
+       * 1,9 bán kính là con số suy từ chính tỉ lệ của cấp này: với fov 42°,
+       * khung nhìn cắt ngang bề mặt đúng khoảng 5.000 km — bằng bề ngang một
+       * châu lục. Khung rộng hơn cao nên đường chân trời cong vẫn lọt vào hai
+       * mép trái phải, nhờ đó vẫn thấy đây là một mảng vỏ trên quả cầu chứ
+       * không phải một tấm bản đồ phẳng. Đứng gần hơn (1,25 như trước) thì
+       * khung chỉ còn bao khoảng 1.200 km, mất hẳn độ cong và lệch tỉ lệ ghi
+       * trong thẻ.
+       */
       return earth ? (
         <GlobeScene
           body={{
@@ -131,9 +145,11 @@ function LevelScene({
             axialTilt: earth.axialTilt,
           }}
           spinning
-          distance={level.id === "continent" ? 1.25 : 3.2}
+          distance={level.id === "continent" ? 1.9 : 3.2}
         />
       ) : null;
+    case "human":
+      return <HumanScene locale={locale} />;
     default:
       return null;
   }
@@ -195,7 +211,7 @@ export function ZoomJourney() {
 
   return (
     <>
-      <div className="relative h-[calc(100dvh-5rem)] min-h-[34rem] w-full overflow-hidden rounded-2xl border bg-[#02030a]">
+      <div className="relative h-[calc(100dvh-14rem)] min-h-[28rem] w-full overflow-hidden rounded-2xl border bg-[#02030a]">
         {webgl === null ? (
           <div className="grid h-full place-items-center text-sm text-white/60">
             <Loader2 className="size-5 animate-spin" />
@@ -228,39 +244,6 @@ export function ZoomJourney() {
             </div>
           </>
         )}
-
-        {/* --------------------------------------------- Thông tin cấp hiện tại */}
-        <div className="pointer-events-none absolute inset-x-4 top-4 sm:max-w-sm">
-          <div className="rounded-2xl border border-white/10 bg-black/55 p-5 backdrop-blur-xl">
-            <p className="text-[11px] tracking-widest text-white/50 uppercase">
-              {t("levelOf", { step: index + 1, total: ZOOM_LEVELS.length })}
-            </p>
-            <h2
-              className="mt-1 font-display text-2xl font-bold"
-              style={{ color: level.color }}
-            >
-              {locale === "en" ? level.nameEn : level.name}
-            </h2>
-            <p className="font-mono text-sm text-white/70">
-              {locale === "en" ? level.sizeEn : level.size}
-            </p>
-            <p className="mt-2.5 text-sm leading-relaxed text-white/75">
-              {locale === "en" ? level.blurbEn : level.blurb}
-            </p>
-
-            {level.href && (
-              <span className="pointer-events-auto mt-3 inline-block">
-                <Link
-                  href={level.href}
-                  className="inline-flex items-center gap-1.5 text-sm font-medium text-white/90 underline underline-offset-4 hover:text-white"
-                >
-                  {t("openFull")}
-                  <ExternalLink className="size-3.5" />
-                </Link>
-              </span>
-            )}
-          </div>
-        </div>
 
         {/* --------------------------------------------- Điều khiển thu phóng */}
         <div className="absolute inset-x-4 bottom-4 flex items-center justify-between gap-3 sm:inset-x-auto sm:left-1/2 sm:-translate-x-1/2">
@@ -312,9 +295,40 @@ export function ZoomJourney() {
         )}
       </div>
 
-      <p className="mt-3 text-xs leading-relaxed text-muted-foreground">
-        {t("note")}
-      </p>
+      {/* ------------------------------------------------ Thông tin cấp hiện tại
+          Để ngoài khung chứ không phủ lên cảnh: overlay ở góc trái trên che
+          đúng phần thiên hà và cấu trúc sợi mà người xem đang muốn nhìn. */}
+      <div className="mt-3 flex flex-col gap-x-6 gap-y-2 sm:flex-row sm:items-baseline">
+        <div className="shrink-0 sm:w-64">
+          <p className="text-[11px] tracking-widest text-muted-foreground uppercase">
+            {t("levelOf", { step: index + 1, total: ZOOM_LEVELS.length })}
+          </p>
+          <h2
+            className="font-display text-xl font-bold"
+            style={{ color: level.color }}
+          >
+            {locale === "en" ? level.nameEn : level.name}
+          </h2>
+          <p className="font-mono text-sm text-muted-foreground">
+            {locale === "en" ? level.sizeEn : level.size}
+          </p>
+        </div>
+
+        <div className="min-w-0 flex-1">
+          <p className="text-sm leading-relaxed text-muted-foreground">
+            {locale === "en" ? level.blurbEn : level.blurb}
+          </p>
+          {level.href && (
+            <Link
+              href={level.href}
+              className="mt-2 inline-flex items-center gap-1.5 text-sm font-medium underline underline-offset-4"
+            >
+              {t("openFull")}
+              <ExternalLink className="size-3.5" />
+            </Link>
+          )}
+        </div>
+      </div>
     </>
   );
 }

@@ -1,8 +1,9 @@
 /**
- * Bốn cấp của hành trình thu phóng, từ vũ trụ quan sát được xuống Trái Đất.
+ * Bảy cấp của hành trình thu phóng, từ vũ trụ quan sát được xuống tới con
+ * người.
  *
  * Mỗi cấp là một cảnh 3D riêng chứ không phải một cảnh duy nhất phóng to liên
- * tục. Dải tỉ lệ ở đây là khoảng 19 bậc độ lớn, vượt xa độ chính xác của số
+ * tục. Dải tỉ lệ ở đây là khoảng 26 bậc độ lớn, vượt xa độ chính xác của số
  * thực 32-bit mà WebGL dùng, nên ép vào cùng một cảnh thì hình học sẽ rã. Cảm
  * giác liền mạch được tạo bằng cách thu phóng và hoà mờ giữa hai cảnh liền kề
  * — đúng cách các trang "Powers of Ten" vẫn làm.
@@ -25,10 +26,11 @@ export type ZoomLevel = {
   /**
    * Cấp không có mô hình 3D thì minh hoạ bằng ảnh, và nói rõ đó là ảnh.
    *
-   * Ba cấp sinh học không có mô hình vì Sciencepedia không có sẵn tài nguyên
-   * 3D cho chúng, và dựng một hình người thô sơ bằng vài khối cầu sẽ trông tệ
-   * hơn hẳn bốn cấp thiên văn phía trên — làm hỏng luôn độ tin cậy của cả
-   * trang. Một bức ảnh thật thì trung thực hơn.
+   * Giờ chỉ còn cấp "Sinh vật" dùng ảnh. Một khu rừng là hàng triệu cá thể
+   * khác loài chen nhau — dựng thủ tục thì ra đồ hoạ trò chơi chứ không ra
+   * sinh quyển, nên ảnh thật trung thực hơn. Cấp "Con người" thì ngược lại:
+   * cơ thể người có bảng tỉ lệ nhân trắc đo được, dựng từ bảng đó cho ra hình
+   * đúng tỉ lệ và xoay được — xem `human-scene.tsx`.
    */
   image?: { src: string; creditVi: string; creditEn: string };
 };
@@ -135,11 +137,6 @@ export const ZOOM_LEVELS: ZoomLevel[] = [
     blurbEn:
       "The end of the journey, and also its beginning: every figure at every level above was measured by this 1.7-metre creature, from the surface of a planet it has never left by more than 400,000 km.",
     color: "#f472b6",
-    image: {
-      src: thumb("2/22", "Da_Vinci_Vitruve_Luc_Viatour.jpg"),
-      creditVi: "Người Vitruvius của Leonardo da Vinci — một nghiên cứu về tỉ lệ cơ thể người",
-      creditEn: "Leonardo da Vinci's Vitruvian Man — a study of human proportion",
-    },
   },
 ];
 

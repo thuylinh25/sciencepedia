@@ -368,13 +368,12 @@
   },
   "zoom": {
     "title": "The zoom journey",
-    "subtitle": "Four levels, from the observable universe down to Earth",
+    "subtitle": "Seven levels, from the observable universe down to a human being",
     "levelOf": "Level {step} of {total}",
     "zoomIn": "Zoom in",
     "zoomOut": "Zoom out",
     "openFull": "Open the full model",
-    "nextIsSmaller": "The next level is about {factor}× smaller",
-    "note": "Seven levels, seven separate scenes — not one continuously zoomable view. The four astronomical levels are 3D models; the continent level reuses the same Earth globe seen from close range, while the biology and human levels are illustrated with photographs because the project has no 3D assets for them. The span from the observable universe down to a human being is about 26 orders of magnitude, far beyond the precision of the 32-bit floats WebGL uses, so a single scene would fall apart. The seamless feel comes from zooming and cross-fading between adjacent levels."
+    "nextIsSmaller": "The next level is about {factor}× smaller"
   },
   "sky": {
     "title": "Sky map",

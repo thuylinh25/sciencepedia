@@ -100,8 +100,9 @@ export function GlobeScene({
    * Khoảng cách camera tới tâm quả cầu, đơn vị bán kính.
    *
    * Mặc định 3,2 cho vừa cả quả cầu vào khung. Hành trình thu phóng hạ xuống
-   * ~1,25 để dựng cấp "châu lục": cùng một quả cầu, chỉ khác chỗ đứng — bề mặt
-   * lúc đó lấp đầy khung nhìn đúng như khi bay thấp trên hành tinh.
+   * 1,9 để dựng cấp "châu lục": cùng một quả cầu, chỉ khác chỗ đứng — khung
+   * nhìn khi đó bao khoảng 5.000 km bề mặt, còn đường chân trời cong vẫn ở
+   * trong hai mép ngang.
    */
   distance?: number;
 }) {

@@ -368,13 +368,12 @@
   },
   "zoom": {
     "title": "Hành trình thu phóng",
-    "subtitle": "Bốn cấp, từ vũ trụ quan sát được xuống tới Trái Đất",
+    "subtitle": "Bảy cấp, từ vũ trụ quan sát được xuống tới con người",
     "levelOf": "Cấp {step}/{total}",
     "zoomIn": "Thu vào",
     "zoomOut": "Lùi ra",
     "openFull": "Mở mô hình đầy đủ",
-    "nextIsSmaller": "Cấp sau nhỏ hơn khoảng {factor} lần",
-    "note": "Bảy cấp là bảy cảnh riêng, không phải một cảnh phóng to liên tục. Riêng bốn cấp thiên văn là mô hình 3D; cấp châu lục dùng lại chính quả cầu Trái Đất nhìn ở khoảng cách gần, còn hai cấp sinh vật và con người minh hoạ bằng ảnh vì dự án không có mô hình 3D cho chúng. Dải tỉ lệ từ vũ trụ quan sát được xuống tới con người là khoảng 26 bậc độ lớn, vượt xa độ chính xác của số thực 32-bit mà WebGL dùng, nên ép vào cùng một cảnh thì hình học sẽ rã. Cảm giác liền mạch đến từ thu phóng và hoà mờ giữa hai cấp liền kề."
+    "nextIsSmaller": "Cấp sau nhỏ hơn khoảng {factor} lần"
   },
   "sky": {
     "title": "Bản đồ bầu trời",
