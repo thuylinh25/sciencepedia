@@ -37,9 +37,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...entry("/tags", { priority: 0.5 }),
     ...entry("/solar-system", { changeFrequency: "monthly", priority: 0.8 }),
     ...entry("/space-map", { changeFrequency: "monthly", priority: 0.7 }),
-    // Nội dung đổi mỗi ngày theo dữ liệu NASA, nên changeFrequency là daily
-    // dù bản thân trang là static.
-    ...entry("/earth-live", { changeFrequency: "daily", priority: 0.7 }),
     ...entry("/assistant", { changeFrequency: "monthly", priority: 0.7 }),
   ];
 

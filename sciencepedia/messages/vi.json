@@ -23,8 +23,7 @@
     "universe": "Vũ trụ 3D",
     "models": "Mô hình 3D",
     "zoom": "Hành trình thu phóng",
-    "spaceMap": "Bản đồ bầu trời",
-    "earthLive": "Trái Đất từ điểm L1"
+    "spaceMap": "Bản đồ bầu trời"
   },
   "auth": {
     "login": "Đăng nhập",
@@ -85,11 +84,6 @@
     "heroCategoriesLabel": "Bắt đầu từ một lĩnh vực",
     "seeAllArticles": "Xem tất cả bài viết",
     "aiTryAsking": "Thử hỏi",
-    "heroStatsArticles": "bài đã thẩm định",
-    "heroStatsModels": "mô hình 3D",
-    "heroStatsTopics": "chủ đề",
-    "heroStatsAi": "Trợ lý AI",
-    "heroSocialProof": "Từ vũ trụ học và vật lý tới sinh học, Trái Đất và khí hậu — mỗi bài đều dẫn nguồn và có người duyệt.",
     "previewLatest": "Bài mới nhất",
     "previewModel": "Mô hình 3D",
     "previewTopic": "Chủ đề đang quan tâm",
@@ -512,53 +506,12 @@
         "cta": "Mở bản đồ",
         "metaA": "Ảnh bầu trời thật",
         "metaB": "18 điểm đến gợi ý"
-      },
-      "earthLive": {
-        "title": "Trái Đất nhìn từ điểm L1",
-        "body": "Ảnh toàn cảnh Trái Đất do vệ tinh DSCOVR của NASA chụp từ điểm Lagrange L1, cách 1,5 triệu km.",
-        "cta": "Xem trực tiếp",
-        "metaA": "Ảnh NASA EPIC",
-        "metaB": "Mỗi ngày một vòng quay"
       }
     },
     "eyebrow": "Khám phá • Mô hình • Mô phỏng",
-    "viewModels": "Xem thư viện mô hình 3D",
     "badges": {
       "start": "🚀 Nên bắt đầu ở đây",
       "highlight": "⭐ Nổi bật"
     }
-  },
-  "earthLive": {
-    "title": "Trái Đất nhìn từ điểm L1",
-    "metaDescription": "Ảnh toàn cảnh Trái Đất từ camera EPIC trên vệ tinh DSCOVR, chụp ở điểm Lagrange L1 cách 1,5 triệu km. NASA phát hành chậm vài ngày so với lúc chụp.",
-    "intro": "Mỗi ngày, một chiếc camera cách đây 1,5 triệu km chụp Trái Đất hơn chục lần. Đây là bộ ảnh mới nhất NASA đã phát hành, xếp lại thành một vòng quay. Khâu xử lý và phát hành mất vài ngày, nên tấm ảnh mới nhất thường đã hai tới bốn ngày tuổi — bảng bên dưới ghi chính xác tuổi của tấm đang xem.",
-    "howTitle": "Ảnh này đến từ đâu",
-    "facts": {
-      "spacecraft": {
-        "term": "Vệ tinh DSCOVR",
-        "detail": "Phóng năm 2015, đứng ở điểm Lagrange L1 — chỗ lực hấp dẫn của Trái Đất và Mặt Trời cân nhau, nên vệ tinh giữ được vị trí trên đường thẳng nối hai thiên thể mà gần như không tốn nhiên liệu. Nhiệm vụ chính của nó là cảnh báo bão từ: nó thấy gió Mặt Trời trước Trái Đất khoảng một giờ."
-      },
-      "instrument": {
-        "term": "Camera EPIC",
-        "detail": "Chụp qua mười kênh lọc từ tử ngoại tới hồng ngoại gần, mỗi kênh một ảnh. Ba kênh đỏ, lục, lam được ghép lại thành ảnh màu tự nhiên mà bạn đang thấy. Bảy kênh còn lại dùng để đo ozone, khí dung và độ cao mây."
-      },
-      "cadence": {
-        "term": "Vài giờ một lần",
-        "detail": "EPIC chụp trọn một vòng lọc mỗi một đến hai giờ, nên mỗi ngày có hơn chục bộ ảnh. Dữ liệu về tới mặt đất rồi qua xử lý nên ảnh mới nhất thường trễ vài giờ so với lúc chụp — đủ gần để gọi là hôm nay, chưa đủ để gọi là ngay lúc này."
-      }
-    },
-    "dayTitle": "Vì sao lúc nào cũng thấy ban ngày",
-    "dayBody": "Vì DSCOVR luôn nằm giữa Trái Đất và Mặt Trời. Từ chỗ đó, nó chỉ có thể thấy nửa đang được chiếu sáng — không phải vì camera chọn thời điểm, mà vì hình học của vị trí. Đó cũng là lý do đường phân giới ngày–đêm không bao giờ xuất hiện trong các ảnh này, khác hẳn ảnh từ vệ tinh quỹ đạo thấp.",
-    "colourTitle": "Đây có phải màu thật",
-    "colourBody": "Gần như thật. Ảnh ghép từ ba kênh lọc 680 nm (đỏ), 551 nm (lục) và 443 nm (lam) — cùng vùng phổ mà mắt người nhìn, nhưng là ba dải hẹp chứ không phải toàn dải liên tục. Kết quả rất sát với những gì một người ở L1 sẽ thấy, hơi khác ở chỗ màu lam của khí quyển đậm hơn một chút.",
-    "limitTitle": "Những gì ảnh này không cho biết",
-    "limitBody": "Một bán cầu duy nhất, và luôn là bán cầu đang hướng về Mặt Trời tại thời điểm chụp. Trong một ngày, Trái Đất tự quay dưới ống kính nên các châu lục lần lượt đi qua — nhưng nửa đêm thì không bao giờ thấy. Muốn theo dõi một điểm cụ thể trên mặt đất thì phải dùng vệ tinh quỹ đạo cực, không phải DSCOVR.",
-    "nextHint": "Muốn thấy Trái Đất nằm ở đâu trong những thứ lớn hơn nó? Hành trình thu phóng đi từ vũ trụ quan sát được xuống tới đây.",
-    "nextCta": "Hành trình thu phóng",
-    "credit": "Ảnh: NASA EPIC / DSCOVR, thuộc phạm vi công cộng. Dữ liệu lấy trực tiếp từ api.nasa.gov, dự phòng bằng epic.gsfc.nasa.gov.",
-    "nextTitle": "Khám phá tiếp",
-    "nextMapTitle": "Bản đồ vệ tinh phóng to được",
-    "nextMapBody": "Ba giới hạn vừa nêu — một bán cầu, không phóng to, không thấy nửa đêm — đều biến mất ở công cụ này: tile bản đồ mới mỗi 10 phút từ GOES, Himawari và VIIRS, phóng tới từng vùng. Himawari là vệ tinh phủ Việt Nam.",
-    "nextMapCta": "Mở bản đồ vệ tinh"
   }
 }

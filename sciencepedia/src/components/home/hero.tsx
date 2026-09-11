@@ -15,13 +15,10 @@ import { HeroGalaxy } from "@/components/home/hero-galaxy";
 export function Hero({
   search,
   fields,
-  stats,
   previews,
 }: {
   search?: ReactNode;
   fields?: ReactNode;
-  /** Dòng số liệu dưới ô tìm kiếm — xem `HeroStats` */
-  stats?: ReactNode;
   /** Ba thẻ nội dung động ở cuối hero — xem `HeroPreviewCards` */
   previews?: ReactNode;
 }) {
@@ -73,12 +70,14 @@ export function Hero({
           xuống 52svh thì tiêu đề mục sau ló lên, và một khối bị cắt dở nói
           "còn nữa" mạnh hơn bất kỳ mũi tên cuộn nào.
 
-          Đệm dưới giảm từ pb-14 xuống pb-8: lý do cũ của khoảng dư đó là
+          Đệm dưới giảm từ pb-14 xuống pb-6. Khoảng dư cũ chỉ để chừa chỗ cho
           StatsBand thụt lên đè vào đáy hero bằng -mt-10, mà thanh ấy nay đã bỏ
-          — số liệu chuyển thành một dòng nằm trong chính hero.
+          hẳn — nên nó không còn chừa cho ai cả. Khối ngay dưới cũng đã đổi từ
+          `section-gap` (5rem) xuống `mt-10`, vì hai khoảng trống cộng lại tạo ra
+          dải trống rộng nhất trang đúng ở chỗ cần liền mạch nhất.
 
           Cột phải 28rem → 36rem, tức thiên hà rộng thêm chừng 29%. */}
-      <div className="container-page relative z-10 grid min-h-[min(52svh,28rem)] items-center gap-8 pt-10 pb-8 text-star lg:grid-cols-[minmax(0,1fr)_36rem] lg:gap-12 lg:pt-12 lg:pb-10">
+      <div className="container-page relative z-10 grid min-h-[min(52svh,28rem)] items-center gap-8 pt-10 pb-6 text-star lg:grid-cols-[minmax(0,1fr)_36rem] lg:gap-12 lg:pt-12 lg:pb-7">
         {/* `relative z-10` là bắt buộc, không phải trang trí.
 
             Dưới `lg` thiên hà là một lớp `absolute`, và trong CSS phần tử đã
@@ -125,25 +124,17 @@ export function Hero({
             </motion.div>
           )}
 
-          {/* Số liệu đứng ngay dưới ô tìm kiếm, TRƯỚC các chip lĩnh vực.
+          {/* Giữa ô tìm kiếm và các chip lĩnh vực KHÔNG còn gì.
 
-              Thứ tự này có lý do. Ô tìm kiếm hỏi "bạn muốn gì?", và người mở
-              trang lần đầu chưa trả lời được câu đó — họ cần biết ở đây CÓ gì
-              trước khi được mời chọn một lĩnh vực. Đặt sau chip thì nó thành
-              một dòng chú thích ở cuối khối, và không ai đọc chú thích. */}
-          {stats && (
-            <motion.div {...rise(0.24)} className="mt-4">
-              {stats}
-            </motion.div>
-          )}
+              Chỗ này đã hai lần được lấp: một thanh bốn ô số liệu, rồi một
+              dòng số liệu gọn kèm câu giới thiệu. Cả hai đều bị gỡ, và lý do
+              giống nhau — chúng chen vào đúng quãng mắt đang đi từ ô tìm kiếm
+              xuống lối vào đầu tiên, và bắt người đọc xử lý một thông tin họ
+              không hỏi. Hero chỉ còn: tiêu đề, một câu, ô tìm kiếm, lĩnh vực.
 
-          <motion.p
-            {...rise(0.28)}
-            className="mt-3 max-w-xl text-sm leading-relaxed text-white/60"
-          >
-            {t("heroSocialProof")}
-          </motion.p>
-
+              Muốn khoe số liệu thì chỗ đúng là SAU nội dung, không phải trước
+              — nhưng lượt thử đó cũng đã bị gỡ, nên trước khi lắp lại lần ba
+              hãy đọc lịch sử này. */}
           {fields && (
             <motion.div {...rise(0.32)} className="mt-5">
               {fields}
@@ -153,9 +144,9 @@ export function Hero({
           {/* Ba thẻ nội dung động, đứng CUỐI cột chữ.
 
               Cuối chứ không phải trên: thứ tự của hero là tiêu đề → ô tìm kiếm
-              → số liệu → lĩnh vực → nội dung cụ thể, tức đi từ "trang này là
-              gì" xuống dần tới "đây, đọc cái này". Đảo lên trên thì ba thẻ
-              tranh chỗ với chính ô tìm kiếm.
+              → lĩnh vực → nội dung cụ thể, tức đi từ "trang này là gì" xuống
+              dần tới "đây, đọc cái này". Đảo lên trên thì ba thẻ tranh chỗ
+              với chính ô tìm kiếm.
 
               Đây cũng là khối bị mép dưới màn hình cắt ngang trên laptop, và
               đó là cố ý — một hàng thẻ bị cắt dở nói "còn nữa" rõ hơn khoảng

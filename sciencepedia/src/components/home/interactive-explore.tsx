@@ -87,13 +87,6 @@ const CARDS: ExploreCard[] = [
     badge: "highlight",
   },
   {
-    id: "earthLive",
-    href: "/earth-live",
-    image: "/images/explore/earth-live.jpg",
-    emoji: "🌍",
-    accent: "#34d399",
-  },
-  {
     id: "skyMap",
     href: "/space-map",
     image: "/images/explore/sky-map.jpg",
@@ -116,28 +109,31 @@ const CARDS: ExploreCard[] = [
   },
 ];
 
-/**
- * Số công cụ tương tác, đếm từ chính mảng dựng ra khối này.
- *
- * Dòng số liệu trên hero khoe con số đó. Viết cứng số ở bên kia thì ngày ai
- * thêm công cụ thứ bảy, hero lặng lẽ nói sai — và một con số sai trên trang
- * chủ của bách khoa toàn thư thì đắt hơn nhiều so với một import thừa.
- */
-export const INTERACTIVE_TOOL_COUNT = CARDS.length;
-
 /*
- * Lưới 3 cột, sáu card chia ba–ba trên màn hình lớn.
+ * Lưới 3 cột, năm card chia 3–2 trên màn hình lớn.
  *
- * Lúc còn năm card thì bố cục phải là 3–2, cần một lưới 6 cột với span riêng
- * cho hai card hàng dưới để không chừa một ô trống. Sáu card thì chia đều,
- * nên span biến mất và mọi card có cùng bề rộng.
+ * Hàng dưới còn một ô trống, và để nguyên như vậy là cố ý. Bản cũ từng dùng
+ * lưới 6 cột với span riêng cho hai card hàng dưới để lấp ô đó, nhưng cái
+ * giá là hai card cuối rộng hơn ba card trên — người xem đọc ra thành hai
+ * hạng mục khác nhau, trong khi cả năm đều ngang hàng. Một ô trống thành
+ * thật hơn một thứ bậc bịa ra.
  */
 
 export async function InteractiveExplore() {
   const t = await getTranslations("explore");
 
   return (
-    <section className="container-page section-gap">
+    /* `mt-10` chứ không `section-gap`.
+
+       Đây là khối ĐẦU TIÊN sau hero, và hero đã tự có đệm dưới. Cộng thêm
+       một khoảng cách mục tiêu chuẩn nữa thì hai khoảng trống chồng lên
+       nhau, và dải trống giữa hàng thẻ cuối hero với tiêu đề mục này rộng
+       hơn hẳn mọi khoảng cách khác trên trang — đúng chỗ cần liền mạch nhất,
+       vì hàng thẻ kia cố ý bị mép màn hình cắt dở để mời cuộn xuống.
+
+       Các mục sau vẫn dùng `section-gap`; chỉ mục đứng ngay dưới hero là
+       ngoại lệ. */
+    <section className="container-page mt-10">
       <div className="max-w-3xl">
         {/* Nhãn phân loại trên tiêu đề: ba từ nói ngay đây là loại nội dung
             KHÁC với danh sách bài viết bên dưới. Cỡ chữ nhỏ và giãn ký tự rộng
@@ -272,23 +268,15 @@ export async function InteractiveExplore() {
         ))}
       </StaggerGroup>
 
-      {/* CTA cuối mục dẫn tới `/models`, và nhãn nói ĐÚNG chỗ nó dẫn tới.
+      {/* KHÔNG có CTA "xem tất cả" ở cuối mục.
 
-          Bản mô tả đề nghị "Xem tất cả trải nghiệm". Không dùng được: sáu thẻ
-          trên đây đã là TOÀN BỘ công cụ tương tác của site, còn `/models` chỉ
-          liệt kê ba mô hình quy mô (Hệ Mặt Trời, Ngân Hà, Vũ trụ) kèm phần dẫn
-          giải sâu hơn. Một nút "xem tất cả" dẫn tới chỗ có ÍT hơn là lời hứa
-          hụt, và nó gợi ra một thư viện lớn hơn thực tế — cùng loại thổi phồng
-          đã phải gỡ khỏi hàng số liệu trên hero. */}
-      <div className="mt-8 flex justify-center">
-        <Link
-          href="/models"
-          className="group/all inline-flex min-h-11 items-center gap-2 rounded-full border border-white/15 px-5 text-sm font-medium text-foreground/80 transition-colors hover:border-white/35 hover:text-foreground focus-visible:ring-[3px] focus-visible:ring-ring/40 focus-visible:outline-none"
-        >
-          {t("viewModels")}
-          <ArrowRight className="size-4 transition-transform duration-300 ease-out group-hover/all:translate-x-1" />
-        </Link>
-      </div>
+          Đã thử một nút dẫn tới `/models`, và nó bị gỡ. Lý do gốc vẫn đứng:
+          sáu thẻ trên đây ĐÃ LÀ toàn bộ công cụ tương tác của site, còn
+          `/models` chỉ liệt kê ba mô hình quy mô — một nút "xem tất cả" dẫn
+          tới chỗ có ÍT hơn là lời hứa hụt.
+
+          Muốn có nút đó thật thì trước hết phải có một trang liệt kê đủ cả
+          sáu trải nghiệm. Đừng lắp nút trước rồi tìm chỗ cho nó trỏ tới. */}
     </section>
   );
 }

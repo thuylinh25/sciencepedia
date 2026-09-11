@@ -1,6 +1,12 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState, type ReactNode } from "react";
+import {
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+  type ReactNode,
+} from "react";
 import { useTranslations } from "next-intl";
 import {
   AlertTriangle,
@@ -191,21 +197,44 @@ export function AladinCanvas({
         Toàn màn hình thì ngược lại: khung phủ kín cửa sổ, không còn gì khác
         trên màn hình để định vị, nên lúc đó đường dẫn mới có việc để làm.
       */}
-      {onClose && status !== "error" && !isFullscreen && (
-        <button
-          type="button"
-          onClick={onClose}
-          aria-label={t("backToList")}
-          title={t("backToList")}
-          className="absolute top-2 left-2 z-10 inline-flex items-center justify-center rounded-full bg-black/65 p-2 text-white backdrop-blur-sm transition-colors hover:bg-black/85"
-        >
-          <ArrowLeft className="size-4" aria-hidden />
-        </button>
-      )}
+      {/* `!isFullscreen || status !== "ready"` chứ không chỉ `!isFullscreen`.
 
-      {onClose && status !== "error" && isFullscreen && (
+          `isFullscreen` khởi tạo bằng chính tuỳ chọn `fullscreen` (xem
+          `use-aladin.ts`), nên nó đã là `true` ngay từ lần render ĐẦU — trước
+          khi script Aladin tải xong và trước khi lớp `.aladin-fullscreen` được
+          gắn vào DOM. Trong quãng đó khung vẫn nằm gọn trong thẻ.
+
+          Không có vế thứ hai thì suốt quãng tải, cả nút này lẫn breadcrumb bên
+          dưới đều biến mất, và người bấm nhầm không có đường lui nào. */}
+      {onClose &&
+        status !== "error" &&
+        (!isFullscreen || status !== "ready") && (
+          <button
+            type="button"
+            onClick={onClose}
+            aria-label={t("backToList")}
+            title={t("backToList")}
+            className="absolute top-2 left-2 z-10 inline-flex items-center justify-center rounded-full bg-black/65 p-2 text-white backdrop-blur-sm transition-colors hover:bg-black/85"
+          >
+            <ArrowLeft className="size-4" aria-hidden />
+          </button>
+        )}
+
+      {/* Breadcrumb chỉ hiện khi ĐÃ toàn màn hình THẬT.
+
+          Đây là lỗi đã thấy trên máy thật: `isFullscreen` bật `true` ngay lúc
+          mount, nhưng khung Aladin còn đang tải và vẫn nằm trong thẻ. Kết quả
+          là một breadcrumb `position: fixed` trôi lên góc trái trên cùng của
+          trang, đè lên logo và thanh điều hướng, trong khi thẻ bên dưới vẫn
+          quay vòng "Đang tải bản đồ bầu trời…".
+
+          Hai lớp phủ `fixed` khác (bảng thông tin, nút mở lại) đã có sẵn điều
+          kiện `status === "ready"`; chỗ này bị bỏ sót. */}
+      {onClose && status === "ready" && isFullscreen && (
         <nav
-          aria-label={crumbRoot ? `${crumbRoot} / ${crumbCurrent ?? ""}` : undefined}
+          aria-label={
+            crumbRoot ? `${crumbRoot} / ${crumbCurrent ?? ""}` : undefined
+          }
           className="fixed top-4 left-4 z-[70] flex items-center gap-1.5 rounded-full bg-black/65 px-2 py-1.5 text-xs text-white backdrop-blur-sm"
         >
           <button
