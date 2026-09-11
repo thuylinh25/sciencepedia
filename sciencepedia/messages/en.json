@@ -24,7 +24,7 @@
     "models": "3D models",
     "zoom": "Zoom journey",
     "spaceMap": "Sky map",
-    "earthLive": "Earth, near real time"
+    "earthLive": "Earth from L1"
   },
   "auth": {
     "login": "Sign in",
@@ -443,7 +443,17 @@
     "autoRotate": "Auto-rotate",
     "dragHint": "Drag to rotate · Scroll to zoom",
     "showInfo": "Info",
-    "close": "Close"
+    "close": "Close",
+    "filterAll": "All",
+    "showOnMap": "Show on the map →",
+    "kind": {
+      "GALAXY": "🌌 Galaxies",
+      "NEBULA": "✨ Nebulae",
+      "STAR": "⭐ Stars",
+      "CLUSTER": "🌠 Clusters",
+      "BLACK_HOLE": "⚫ Black holes",
+      "OTHER": "Other"
+    }
   },
   "explore": {
     "title": "Interactive exploration",
@@ -477,8 +487,8 @@
         "cta": "Open the map"
       },
       "earthLive": {
-        "title": "Earth, near real time",
-        "body": "Follow full-disk images of Earth captured from the L1 Lagrange point by NASA's DSCOVR spacecraft.",
+        "title": "Earth from the L1 point",
+        "body": "Full-disk images of Earth captured from the L1 Lagrange point by NASA's DSCOVR spacecraft.",
         "cta": "View live"
       }
     },
@@ -487,9 +497,9 @@
     "quickSky": "Look at the night sky"
   },
   "earthLive": {
-    "title": "Earth, near real time",
-    "metaDescription": "See the latest full-disk images of Earth from NASA's DSCOVR spacecraft and EPIC camera, refreshed every few hours from the L1 Lagrange point.",
-    "intro": "Every day a camera 1.5 million km away photographs Earth more than a dozen times. These are those images — the most recent NASA has released — replayed as one rotation.",
+    "title": "Earth from the L1 point",
+    "metaDescription": "Full-disk images of Earth from the EPIC camera aboard DSCOVR, taken at the L1 Lagrange point 1.5 million km away. NASA publishes them a few days after capture.",
+    "intro": "Every day a camera 1.5 million km away photographs Earth more than a dozen times. This is the most recent set NASA has released, replayed as one rotation. Processing and release take a few days, so the newest frame is usually two to four days old — the panel below gives the exact age of the one on screen.",
     "howTitle": "Where these images come from",
     "facts": {
       "spacecraft": {

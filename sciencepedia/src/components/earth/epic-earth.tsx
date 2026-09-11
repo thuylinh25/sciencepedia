@@ -48,11 +48,37 @@ type Status = "loading" | "ready" | "empty" | "error";
  * 250 ms là khoảng 100 độ mỗi giây — nhanh gấp hơn hai nghìn lần thực tế, và
  * mắt đọc ra cú giật chứ không ra chuyển động.
  *
- * 900 ms cho khoảng 25 độ mỗi giây. Vẫn nhanh hơn thật rất nhiều — một vòng
- * đúng tỉ lệ mất 24 giờ — nhưng đủ chậm để thấy các châu lục trôi qua chứ
- * không nhảy, và một vòng 13 khung hết chừng 12 giây.
+ * Đã hạ hai lần: 250 → 900 → 1600. Ở 900 ms vẫn còn 25 độ mỗi giây, nhanh
+ * gấp hơn sáu trăm lần thực tế và vẫn bị báo là chóng mặt.
+ *
+ * 1600 ms cho khoảng 14 độ mỗi giây, một vòng 13 khung hết 21 giây. Vẫn
+ * không phải tốc độ thật — một vòng đúng tỉ lệ mất 24 giờ — nhưng đủ chậm để
+ * mắt bám được một đám mây từ khung này sang khung sau.
  */
 const FRAME_MS = 1600;
+
+/**
+ * Tuổi của TẤM ẢNH đang xem.
+ *
+ * Trang mang tên "nhìn từ điểm L1" chứ không còn là "thời gian thực", và cái
+ * tên đó đổi vì một lý do đo được: EPIC chụp liên tục nhưng NASA phát hành
+ * chậm — lúc kiểm ngày 11/09/2026 thì bộ ảnh mới nhất là của 08/09, tức đã
+ * 3,3 ngày tuổi, và bộ enhanced còn cũ hơn một ngày nữa.
+ *
+ * Dòng này nói ra con số đó thay vì để người đọc tự suy từ ngày chụp. Không
+ * có nó thì "Ngày chụp 08/09" nằm cạnh một trang nói "thời gian thực" là hai
+ * thông tin mâu thuẫn nhau mà không ai hoà giải.
+ */
+function formatAge(takenAt: Date, vi: boolean): string {
+  const hours = (Date.now() - takenAt.getTime()) / 3600000;
+  if (hours < 1) return vi ? "dưới một giờ" : "under an hour";
+  if (hours < 48) {
+    const rounded = Math.round(hours);
+    return vi ? `${rounded} giờ` : `${rounded} hours`;
+  }
+  const days = Math.round(hours / 24);
+  return vi ? `${days} ngày` : `${days} days`;
+}
 
 /** Cache còn hiệu lực bao lâu. EPIC cập nhật vài giờ một lần. */
 const CACHE_TTL_MS = 3 * 60 * 60 * 1000;
@@ -295,7 +321,7 @@ export function EpicEarth({ locale = "vi" }: { locale?: string }) {
     <section className="overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-b from-[#0a1730] via-[#050a18] to-[#02030a] p-6 sm:p-8">
       <header className="max-w-2xl">
         <h2 className="font-display text-2xl font-bold text-white sm:text-3xl">
-          🌍 {vi ? "Trái Đất thời gian thực" : "Earth, near real time"}
+          🌍 {vi ? "Trái Đất nhìn từ điểm L1" : "Earth from the L1 point"}
         </h2>
         <p className="mt-2 text-sm leading-relaxed text-white/65">
           {vi
@@ -417,6 +443,10 @@ export function EpicEarth({ locale = "vi" }: { locale?: string }) {
                     [
                       vi ? "Số khung hình" : "Frames",
                       frames.length > 0 ? String(frames.length) : "—",
+                    ],
+                    [
+                      vi ? "Ảnh đã cũ" : "Image age",
+                      current ? formatAge(current.takenAt, vi) : "—",
                     ],
                   ] as const
                 ).map(([label, value]) => (

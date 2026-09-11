@@ -605,12 +605,29 @@ export const filterPublishedSlugs = cache(
   async (slugs: string[]): Promise<Set<string>> => {
     if (slugs.length === 0) return new Set();
 
-    const rows = await prisma.article.findMany({
-      where: { ...PUBLISHED, slug: { in: slugs } },
-      select: { slug: true },
-    });
-
-    return new Set(rows.map((row) => row.slug));
+    /*
+     * Nuốt lỗi kết nối và trả về tập rỗng.
+     *
+     * Hàm này chỉ quyết định có in link "Đọc bài chi tiết" hay không. Mất nó
+     * thì thẻ vẫn đủ dùng; mất cả trang thì không. Mà chuyện đó đã xảy ra
+     * thật: `/space-map` trước đây không chạm cơ sở dữ liệu, thêm truy vấn
+     * này vào là nó thừa hưởng luôn khả năng chết theo, và một lần cơ sở dữ
+     * liệu không với tới được đã làm hỏng cả lượt build ở bước prerender.
+     *
+     * Tập rỗng nghĩa là "coi như chưa bài nào xuất bản": không link nào hiện,
+     * và cũng không link nào dẫn vào 404. Sai về phía im lặng, không sai về
+     * phía hỏng.
+     */
+    try {
+      const rows = await prisma.article.findMany({
+        where: { ...PUBLISHED, slug: { in: slugs } },
+        select: { slug: true },
+      });
+      return new Set(rows.map((row) => row.slug));
+    } catch (error) {
+      console.error("[filterPublishedSlugs] không truy vấn được:", error);
+      return new Set<string>();
+    }
   },
 );
 

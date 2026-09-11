@@ -24,7 +24,7 @@
     "models": "Mô hình 3D",
     "zoom": "Hành trình thu phóng",
     "spaceMap": "Bản đồ bầu trời",
-    "earthLive": "Trái Đất thời gian thực"
+    "earthLive": "Trái Đất từ điểm L1"
   },
   "auth": {
     "login": "Đăng nhập",
@@ -443,7 +443,17 @@
     "autoRotate": "Tự quay",
     "dragHint": "Kéo để xoay · Cuộn để phóng to",
     "showInfo": "Thông tin",
-    "close": "Đóng"
+    "close": "Đóng",
+    "filterAll": "Tất cả",
+    "showOnMap": "Xem trên bản đồ →",
+    "kind": {
+      "GALAXY": "🌌 Thiên hà",
+      "NEBULA": "✨ Tinh vân",
+      "STAR": "⭐ Sao",
+      "CLUSTER": "🌠 Cụm sao",
+      "BLACK_HOLE": "⚫ Hố đen",
+      "OTHER": "Khác"
+    }
   },
   "explore": {
     "title": "Khám phá tương tác",
@@ -477,8 +487,8 @@
         "cta": "Mở bản đồ"
       },
       "earthLive": {
-        "title": "Trái Đất thời gian thực",
-        "body": "Theo dõi hình ảnh toàn cảnh Trái Đất ghi từ điểm Lagrange L1 bởi vệ tinh DSCOVR của NASA.",
+        "title": "Trái Đất nhìn từ điểm L1",
+        "body": "Ảnh toàn cảnh Trái Đất do vệ tinh DSCOVR của NASA chụp từ điểm Lagrange L1, cách 1,5 triệu km.",
         "cta": "Xem trực tiếp"
       }
     },
@@ -487,9 +497,9 @@
     "quickSky": "Quan sát bầu trời đêm"
   },
   "earthLive": {
-    "title": "Trái Đất thời gian thực",
-    "metaDescription": "Xem hình ảnh toàn cảnh Trái Đất mới nhất từ vệ tinh DSCOVR và camera EPIC của NASA, cập nhật vài giờ một lần từ điểm Lagrange L1.",
-    "intro": "Mỗi ngày, một chiếc camera cách đây 1,5 triệu km chụp Trái Đất hơn chục lần. Đây là những tấm ảnh đó, mới nhất mà NASA đã phát ra, xếp lại thành một vòng quay.",
+    "title": "Trái Đất nhìn từ điểm L1",
+    "metaDescription": "Ảnh toàn cảnh Trái Đất từ camera EPIC trên vệ tinh DSCOVR, chụp ở điểm Lagrange L1 cách 1,5 triệu km. NASA phát hành chậm vài ngày so với lúc chụp.",
+    "intro": "Mỗi ngày, một chiếc camera cách đây 1,5 triệu km chụp Trái Đất hơn chục lần. Đây là bộ ảnh mới nhất NASA đã phát hành, xếp lại thành một vòng quay. Khâu xử lý và phát hành mất vài ngày, nên tấm ảnh mới nhất thường đã hai tới bốn ngày tuổi — bảng bên dưới ghi chính xác tuổi của tấm đang xem.",
     "howTitle": "Ảnh này đến từ đâu",
     "facts": {
       "spacecraft": {

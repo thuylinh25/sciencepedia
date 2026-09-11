@@ -94,6 +94,37 @@ export type SkyObjectKind =
   | "BLACK_HOLE"
   | "OTHER";
 
+/**
+ * Cần gì để nhìn thấy thiên thể này.
+ *
+ * Đây là thông tin người đọc hỏi đầu tiên và trang này chưa từng trả lời:
+ * "tôi có thấy được nó không". Bốn bậc, xếp theo thiết bị tối thiểu.
+ *
+ * Ngưỡng lấy theo cấp sao biểu kiến và kích thước biểu kiến, trong điều kiện
+ * trời tối tốt — không phải trong thành phố. M31 cấp 3,4 nhìn được bằng mắt
+ * thường ở nông thôn nhưng vô hình giữa Hà Nội, và khác biệt đó lớn tới mức
+ * phải nói ra trong chú thích chứ không giấu vào một cái nhãn.
+ */
+export type Visibility = "NAKED_EYE" | "BINOCULARS" | "SMALL_SCOPE" | "IMAGE_ONLY";
+
+export const VISIBILITY_LABELS: Record<
+  Visibility,
+  { emoji: string; label: string; labelEn: string }
+> = {
+  NAKED_EYE: { emoji: "👁", label: "Mắt thường", labelEn: "Naked eye" },
+  BINOCULARS: { emoji: "🔭", label: "Ống nhòm", labelEn: "Binoculars" },
+  SMALL_SCOPE: {
+    emoji: "🔭",
+    label: "Kính thiên văn nhỏ",
+    labelEn: "Small telescope",
+  },
+  IMAGE_ONLY: {
+    emoji: "🛰",
+    label: "Chỉ qua ảnh thiên văn",
+    labelEn: "Astrophotography only",
+  },
+};
+
 export type SkyTarget = {
   /** Khoá ổn định, dùng trong URL `?object=` */
   id: string;
@@ -115,6 +146,21 @@ export type SkyTarget = {
   constellationEn: string;
   blurb: string;
   blurbEn: string;
+  /** Thiết bị tối thiểu để nhìn thấy — xem `Visibility` */
+  visibility: Visibility;
+  /** Ảnh 800×450 trong `/public/images/sky` */
+  image: string;
+  /**
+   * Ghi nguồn ảnh. `null` khi ảnh thuộc phạm vi công cộng.
+   *
+   * Không phải trang trí: ảnh nào không phải phạm vi công cộng thì đây là
+   * điều kiện của giấy phép. Betelgeuse là trường hợp duy nhất — mọi ảnh chụp
+   * bề mặt nó đều của ESO/ALMA dưới CC BY 4.0.
+   */
+  imageCredit: string | null;
+  /** Hai tới ba ý ngắn, mỗi ý một sự kiện kiểm được */
+  facts: string[];
+  factsEn: string[];
 };
 
 /**
@@ -138,6 +184,19 @@ export const SKY_TARGETS: SkyTarget[] = [
       "Thiên hà xoắn ốc lớn gần Ngân Hà nhất, cách khoảng 2,5 triệu năm ánh sáng. Đường kính biểu kiến hơn 3 độ — rộng gấp sáu lần Mặt Trăng tròn.",
     blurbEn:
       "The nearest large spiral galaxy to the Milky Way, about 2.5 million light-years away. It spans over 3 degrees of sky, six times the width of the full Moon.",
+    visibility: "NAKED_EYE",
+    image: "/images/sky/m31.jpg",
+    imageCredit: null,
+    facts: [
+      "Thiên hà lớn gần Ngân Hà nhất",
+      "Cách 2,5 triệu năm ánh sáng",
+      "Đang lao về phía ta 110 km/s",
+    ],
+    factsEn: [
+      "The nearest large galaxy to the Milky Way",
+      "2.5 million light-years away",
+      "Approaching us at 110 km/s",
+    ],
   },
   {
     id: "m87",
@@ -155,6 +214,19 @@ export const SKY_TARGETS: SkyTarget[] = [
       "Thiên hà elip khổng lồ ở tâm cụm Xử Nữ. Lỗ đen siêu khối lượng của nó là vật thể đầu tiên được chụp ảnh trực tiếp, công bố năm 2019.",
     blurbEn:
       "A giant elliptical galaxy at the centre of the Virgo Cluster. Its supermassive black hole was the first ever imaged directly, published in 2019.",
+    visibility: "SMALL_SCOPE",
+    image: "/images/sky/m87.jpg",
+    imageCredit: null,
+    facts: [
+      "Chứa hố đen đầu tiên được chụp ảnh trực tiếp",
+      "Hố đen nặng khoảng 6,5 tỉ lần Mặt Trời",
+      "Nằm ở tâm cụm Virgo",
+    ],
+    factsEn: [
+      "Home to the first black hole ever imaged",
+      "That black hole weighs about 6.5 billion Suns",
+      "Sits at the heart of the Virgo Cluster",
+    ],
   },
   {
     id: "m42",
@@ -172,6 +244,19 @@ export const SKY_TARGETS: SkyTarget[] = [
       "Vùng tạo sao khối lượng lớn gần Trái Đất nhất, cách khoảng 1.300 năm ánh sáng. Mắt thường nhìn thấy được như một vệt mờ trong thanh kiếm chòm Orion.",
     blurbEn:
       "The closest region of massive star formation to Earth, about 1,300 light-years away. Visible to the naked eye as a smudge in the sword of Orion.",
+    visibility: "NAKED_EYE",
+    image: "/images/sky/m42.jpg",
+    imageCredit: null,
+    facts: [
+      "Vùng tạo sao gần Trái Đất nhất",
+      "Cách khoảng 1.300 năm ánh sáng",
+      "Nhìn thấy ở thanh kiếm chòm Orion",
+    ],
+    factsEn: [
+      "The closest massive star-forming region to Earth",
+      "About 1,300 light-years away",
+      "Visible in the sword of Orion",
+    ],
   },
   {
     id: "betelgeuse",
@@ -195,6 +280,19 @@ export const SKY_TARGETS: SkyTarget[] = [
       "Sao siêu khổng lồ đỏ ở vai chòm Orion, một trong những ngôi sao sáng nhất bầu trời. Độ sáng biến thiên rõ rệt và nó được xem là ứng viên siêu tân tinh.",
     blurbEn:
       "A red supergiant on the shoulder of Orion and one of the brightest stars in the sky. Its brightness varies markedly and it is considered a supernova candidate.",
+    visibility: "NAKED_EYE",
+    image: "/images/sky/betelgeuse.jpg",
+    imageCredit: "ALMA (ESO/NAOJ/NRAO)/E. O'Gorman/P. Kervella — CC BY 4.0",
+    facts: [
+      "Sao siêu khổng lồ đỏ ở vai chòm Orion",
+      "Nếu đặt ở chỗ Mặt Trời, nó nuốt tới quỹ đạo Sao Mộc",
+      "Ứng viên siêu tân tinh trong 100.000 năm tới",
+    ],
+    factsEn: [
+      "A red supergiant on Orion's shoulder",
+      "Placed at the Sun, it would swallow Jupiter's orbit",
+      "A supernova candidate within the next 100,000 years",
+    ],
   },
   {
     id: "sgr-a-star",
@@ -220,6 +318,19 @@ export const SKY_TARGETS: SkyTarget[] = [
       "Lỗ đen siêu khối lượng ở tâm Ngân Hà, khối lượng khoảng 4 triệu lần Mặt Trời. Ảnh chụp trực tiếp được công bố năm 2022.",
     blurbEn:
       "The supermassive black hole at the centre of the Milky Way, about four million solar masses. Its direct image was published in 2022.",
+    visibility: "IMAGE_ONLY",
+    image: "/images/sky/sgr-a-star.jpg",
+    imageCredit: null,
+    facts: [
+      "Hố đen siêu khối lượng ở tâm Ngân Hà",
+      "Nặng khoảng 4 triệu lần Mặt Trời",
+      "Ảnh trực tiếp công bố năm 2022",
+    ],
+    factsEn: [
+      "The supermassive black hole at the Milky Way's centre",
+      "About 4 million times the Sun's mass",
+      "First direct image released in 2022",
+    ],
   },
   {
     id: "m45",
@@ -237,6 +348,19 @@ export const SKY_TARGETS: SkyTarget[] = [
       "Cụm sao phân tán trẻ, cách khoảng 440 năm ánh sáng. Mắt thường thấy sáu tới bảy ngôi; ống nhòm cho thấy hàng trăm.",
     blurbEn:
       "A young open cluster about 440 light-years away. Six or seven stars are visible to the naked eye; binoculars show hundreds.",
+    visibility: "NAKED_EYE",
+    image: "/images/sky/m45.jpg",
+    imageCredit: null,
+    facts: [
+      "Cụm sao phân tán trẻ, cách 440 năm ánh sáng",
+      "Mắt thường thấy sáu tới bảy ngôi",
+      "Ống nhòm cho thấy hàng trăm",
+    ],
+    factsEn: [
+      "A young open cluster 440 light-years away",
+      "Six or seven stars to the naked eye",
+      "Binoculars reveal hundreds",
+    ],
   },
   {
     id: "m1",
@@ -254,6 +378,19 @@ export const SKY_TARGETS: SkyTarget[] = [
       "Tàn dư của siêu tân tinh mà các nhà thiên văn Trung Hoa ghi lại năm 1054. Ở tâm là một sao neutron quay khoảng 30 vòng mỗi giây.",
     blurbEn:
       "The remnant of a supernova recorded by Chinese astronomers in 1054. At its centre is a neutron star spinning about 30 times a second.",
+    visibility: "SMALL_SCOPE",
+    image: "/images/sky/m1.jpg",
+    imageCredit: null,
+    facts: [
+      "Tàn dư siêu tân tinh mà sử Trung Hoa ghi năm 1054",
+      "Ở tâm là một sao neutron quay 30 vòng mỗi giây",
+      "Vẫn đang nở ra 1.500 km/s",
+    ],
+    factsEn: [
+      "Remnant of the supernova Chinese astronomers recorded in 1054",
+      "A neutron star at its centre spins 30 times a second",
+      "Still expanding at 1,500 km/s",
+    ],
   },
   {
     id: "m51",
@@ -271,6 +408,19 @@ export const SKY_TARGETS: SkyTarget[] = [
       "Thiên hà xoắn ốc nhìn thẳng mặt, đang tương tác với thiên hà nhỏ NGC 5195. Đây là thiên hà đầu tiên được nhận ra là có cấu trúc xoắn ốc, năm 1845.",
     blurbEn:
       "A face-on spiral interacting with the smaller galaxy NGC 5195. It was the first galaxy recognised as having spiral structure, in 1845.",
+    visibility: "BINOCULARS",
+    image: "/images/sky/m51.jpg",
+    imageCredit: null,
+    facts: [
+      "Thiên hà đầu tiên được nhận ra là có cấu trúc xoắn ốc, năm 1845",
+      "Đang tương tác với thiên hà nhỏ NGC 5195",
+      "Nhìn thẳng mặt nên thấy rõ hai nhánh",
+    ],
+    factsEn: [
+      "The first galaxy recognised as a spiral, in 1845",
+      "Interacting with the smaller galaxy NGC 5195",
+      "Seen face-on, so both arms stand out",
+    ],
   },
   {
     id: "m104",
@@ -288,6 +438,19 @@ export const SKY_TARGETS: SkyTarget[] = [
       "Thiên hà xoắn ốc nhìn gần như nghiêng cạnh, với dải bụi tối cắt ngang phần phình sáng — hình dáng đã đặt tên cho nó.",
     blurbEn:
       "A nearly edge-on spiral whose dark dust lane cuts across a bright bulge — the shape that gave it its name.",
+    visibility: "BINOCULARS",
+    image: "/images/sky/m104.jpg",
+    imageCredit: null,
+    facts: [
+      "Nhìn gần như nghiêng cạnh",
+      "Dải bụi tối cắt ngang phần phình sáng",
+      "Hình dáng đó đặt tên cho nó",
+    ],
+    factsEn: [
+      "Seen almost exactly edge-on",
+      "A dark dust lane cuts across the bright bulge",
+      "That shape is what gave it its name",
+    ],
   },
   {
     id: "m13",
@@ -305,6 +468,19 @@ export const SKY_TARGETS: SkyTarget[] = [
       "Cụm sao cầu sáng nhất bầu trời bắc: vài trăm nghìn ngôi sao già dồn trong một quả cầu rộng khoảng 145 năm ánh sáng.",
     blurbEn:
       "The brightest globular cluster in the northern sky: a few hundred thousand old stars packed into a ball about 145 light-years across.",
+    visibility: "BINOCULARS",
+    image: "/images/sky/m13.jpg",
+    imageCredit: null,
+    facts: [
+      "Cụm sao cầu sáng nhất bầu trời bắc",
+      "Vài trăm nghìn ngôi sao già trong một quả cầu",
+      "Rộng khoảng 145 năm ánh sáng",
+    ],
+    factsEn: [
+      "The brightest globular cluster in the northern sky",
+      "Several hundred thousand old stars in one ball",
+      "About 145 light-years across",
+    ],
   },
 ];
 

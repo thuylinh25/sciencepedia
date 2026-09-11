@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 
@@ -10,7 +11,9 @@ import {
   DEFAULT_SURVEY,
   SKY_SURVEYS,
   SKY_TARGETS,
+  VISIBILITY_LABELS,
   findSkyTarget,
+  type SkyObjectKind,
   type SkyTarget,
 } from "@/lib/sky-data";
 import { cn } from "@/lib/utils";
@@ -56,6 +59,25 @@ export function SkyMap() {
 
   const initial = SKY_TARGETS[0];
   const initialView = targetToView(initial);
+
+  /**
+
+   * Nhóm đang lọc. `null` là xem tất cả.
+
+   *
+
+   * Mười thiên thể chưa đủ nhiều để bắt buộc phải lọc, nhưng chúng thuộc năm
+
+   * loại vật thể khác hẳn nhau — thiên hà, tinh vân, cụm sao, sao, hố đen —
+
+   * và người vào đây thường đang quan tâm đúng một loại. Bộ lọc biến một
+
+   * danh sách phải đọc hết thành một danh sách chọn được.
+
+   */
+
+  const [kind, setKind] = useState<SkyObjectKind | null>(null);
+
 
   const [view, setView] = useState<SkyView>(
     initialView ?? { ra: 0, dec: 0, fovDeg: 60 },
@@ -179,46 +201,142 @@ export function SkyMap() {
         <h2 className="font-display text-2xl font-bold tracking-tight">
           {t("catalogTitle")}
         </h2>
-        <ul className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          {SKY_TARGETS.map((target) => (
-            <li key={target.id}>
-              <button
-                type="button"
-                onClick={() => applyTarget(target)}
-                aria-current={activeId === target.id ? "true" : undefined}
-                className={cn(
-                  "h-full w-full rounded-2xl border p-4 text-left transition-colors hover:border-accent hover:bg-accent/5",
-                  activeId === target.id && "border-accent bg-accent/5",
-                )}
-              >
-                <div className="flex items-baseline justify-between gap-3">
-                  <h3 className="font-display font-semibold">
-                    {nameOf(target, locale)}
-                  </h3>
-                  <span className="shrink-0 font-mono text-xs text-muted-foreground">
-                    {target.catalogId}
-                  </span>
-                </div>
-                {/* Tên chòm sao đứng trơ một mình đọc ra vô nghĩa — người
-                    đọc không biết "Orion" ở đây là chòm sao hay là tên khác
-                    của chính thiên thể. Nhãn phía trước là bắt buộc. */}
-                <p className="mt-1 text-xs text-muted-foreground">
-                  {t("constellation")}{" "}
-                  {locale === "en"
-                    ? target.constellationEn
-                    : target.constellation}
-                </p>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                  {locale === "en" ? target.blurbEn : target.blurb}
-                </p>
-              </button>
-            </li>
+        {/* Bộ lọc nhóm. Nút "tất cả" đứng đầu và là mặc định — vào trang
+            lần đầu thì thấy hết, không phải chọn gì mới thấy gì. */}
+        <div className="mt-4 flex flex-wrap gap-2">
+          <button
+            type="button"
+            onClick={() => setKind(null)}
+            aria-pressed={kind === null}
+            className={cn(
+              "rounded-full border px-3 py-1 text-xs font-medium transition-colors",
+              kind === null
+                ? "border-accent bg-accent/10 text-foreground"
+                : "text-muted-foreground hover:border-accent/60 hover:text-foreground",
+            )}
+          >
+            {t("filterAll")}
+          </button>
+
+          {PRESENT_KINDS.map((item) => (
+            <button
+              key={item}
+              type="button"
+              onClick={() => setKind(item === kind ? null : item)}
+              aria-pressed={kind === item}
+              className={cn(
+                "rounded-full border px-3 py-1 text-xs font-medium transition-colors",
+                kind === item
+                  ? "border-accent bg-accent/10 text-foreground"
+                  : "text-muted-foreground hover:border-accent/60 hover:text-foreground",
+              )}
+            >
+              {t(`kind.${item}`)}
+            </button>
           ))}
+        </div>
+
+        <ul className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {SKY_TARGETS.filter(
+            (target) => kind === null || target.kind === kind,
+          ).map((target) => {
+            const visibility = VISIBILITY_LABELS[target.visibility];
+            const facts = locale === "en" ? target.factsEn : target.facts;
+
+            return (
+              <li key={target.id}>
+                <button
+                  type="button"
+                  onClick={() => applyTarget(target)}
+                  aria-current={activeId === target.id ? "true" : undefined}
+                  className={cn(
+                    "group flex h-full w-full flex-col overflow-hidden rounded-2xl border text-left transition-colors hover:border-accent",
+                    activeId === target.id && "border-accent",
+                  )}
+                >
+                  {/* Ảnh 16:9 đứng trước mọi thứ khác.
+                      Mười thiên thể này khác nhau rõ tới mức một tấm ảnh nói
+                      được nhiều hơn cả đoạn mô tả — mà bản trước lại chỉ có
+                      chữ, nên M31, M42, M87 và M1 trông giống hệt nhau. */}
+                  <span className="relative block aspect-video overflow-hidden bg-[#04060e]">
+                    <Image
+                      src={target.image}
+                      alt=""
+                      fill
+                      sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, calc(100vw - 3rem)"
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+
+                    <span className="absolute top-2 right-2 inline-flex items-center gap-1 rounded-full bg-black/65 px-2 py-0.5 text-[11px] text-white/90 backdrop-blur-sm">
+                      <span aria-hidden>{visibility.emoji}</span>
+                      {locale === "en" ? visibility.labelEn : visibility.label}
+                    </span>
+                  </span>
+
+                  <span className="flex flex-1 flex-col p-4">
+                    <span className="flex items-baseline justify-between gap-3">
+                      <h3 className="font-display font-semibold">
+                        {nameOf(target, locale)}
+                      </h3>
+                      <span className="shrink-0 font-mono text-xs text-muted-foreground">
+                        {target.catalogId}
+                      </span>
+                    </span>
+
+                    {/* Tên chòm sao đứng trơ một mình đọc ra vô nghĩa — người
+                        đọc không biết "Orion" ở đây là chòm sao hay là tên
+                        khác của chính thiên thể. Nhãn phía trước là bắt buộc. */}
+                    <span className="mt-1 text-xs text-muted-foreground">
+                      {t("constellation")}{" "}
+                      {locale === "en"
+                        ? target.constellationEn
+                        : target.constellation}
+                    </span>
+
+                    {/* Ba ý ngắn thay cho một đoạn: mắt quét được ba dòng
+                        trong thời gian đọc hết một câu. */}
+                    <ul className="mt-3 space-y-1">
+                      {facts.map((fact) => (
+                        <li
+                          key={fact}
+                          className="flex gap-2 text-xs leading-relaxed text-muted-foreground"
+                        >
+                          <span aria-hidden className="text-accent">
+                            ·
+                          </span>
+                          {fact}
+                        </li>
+                      ))}
+                    </ul>
+
+                    {target.imageCredit && (
+                      <span className="mt-3 text-[10px] leading-relaxed text-muted-foreground/70">
+                        {target.imageCredit}
+                      </span>
+                    )}
+
+                    <span className="mt-auto pt-3 text-xs font-medium text-accent">
+                      {t("showOnMap")}
+                    </span>
+                  </span>
+                </button>
+              </li>
+            );
+          })}
         </ul>
       </section>
     </div>
   );
 }
+
+/**
+ * Các nhóm CÓ MẶT trong dữ liệu, theo thứ tự xuất hiện.
+ *
+ * Suy từ `SKY_TARGETS` chứ không viết tay danh sách: thêm một thiên thể loại
+ * mới mà quên cập nhật danh sách thì nút lọc của loại đó không bao giờ hiện,
+ * và không ai phát hiện ra vì mọi thứ khác vẫn chạy.
+ */
+const PRESENT_KINDS = [...new Set(SKY_TARGETS.map((target) => target.kind))];
 
 function nameOf(target: SkyTarget, locale: Locale): string {
   return locale === "en" ? target.nameEn : target.name;
