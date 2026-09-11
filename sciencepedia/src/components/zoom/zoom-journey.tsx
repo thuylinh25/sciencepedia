@@ -106,6 +106,9 @@ function LevelScene({
             showOrbits: true,
             showLabels: true,
             realScale: false,
+            showMoons: false,
+            showDwarfs: false,
+            showEcliptic: false,
           }}
           selectedId={null}
           onSelect={() => {}}

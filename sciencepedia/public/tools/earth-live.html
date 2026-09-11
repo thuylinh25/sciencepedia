@@ -347,7 +347,7 @@
           ext: "png",
           maxNativeZoom: 7,
           cadence: "10min",
-          centre: [10, -60],
+          centre: [0, -75],
           zoom: 3,
           note: "Ảnh tổng hợp: ban ngày là màu gần thật, ban đêm chuyển sang hồng ngoại với ánh đèn thành phố. Vệ tinh đứng yên trên kinh tuyến 75°T nên chỉ thấy nửa Trái Đất quanh châu Mỹ.",
         },
@@ -362,7 +362,7 @@
           ext: "png",
           maxNativeZoom: 7,
           cadence: "10min",
-          centre: [5, -140],
+          centre: [0, -137],
           zoom: 3,
           note: "Cùng sản phẩm GeoColor nhưng từ vệ tinh đứng trên kinh tuyến 137°T, phủ Thái Bình Dương và bờ tây nước Mỹ.",
         },
@@ -377,8 +377,8 @@
           ext: "png",
           maxNativeZoom: 7,
           cadence: "10min",
-          centre: [12, 110],
-          zoom: 4,
+          centre: [0, 140],
+          zoom: 3,
           note: "Kênh đỏ 0,64 µm của vệ tinh Himawari, đứng trên kinh tuyến 140°Đ — đây là vệ tinh phủ Việt Nam. Ảnh nhìn thấy nên nửa đêm của Trái Đất sẽ tối đen, đó là dữ liệu đúng chứ không phải lỗi.",
         },
         {
@@ -392,8 +392,8 @@
           ext: "png",
           maxNativeZoom: 6,
           cadence: "10min",
-          centre: [12, 110],
-          zoom: 4,
+          centre: [0, 140],
+          zoom: 3,
           note: "Kênh 10,4 µm đo nhiệt độ đỉnh mây, nên nó nhìn được cả ban đêm. Càng trắng càng lạnh, tức đỉnh mây càng cao — đó là cách nhận ra vùng đối lưu mạnh và mắt bão.",
         },
         {
@@ -407,7 +407,7 @@
           ext: "png",
           maxNativeZoom: 6,
           cadence: "10min",
-          centre: [10, -60],
+          centre: [0, -75],
           zoom: 3,
           note: "Kênh 10,4 µm đo nhiệt độ đỉnh mây. Nhìn được cả ban đêm vì nó đo bức xạ nhiệt chứ không đo ánh sáng phản xạ.",
         },
@@ -422,8 +422,8 @@
           ext: "png",
           maxNativeZoom: 6,
           cadence: "10min",
-          centre: [15, 115],
-          zoom: 4,
+          centre: [0, 140],
+          zoom: 3,
           note: "Ảnh tổ hợp RGB từ các kênh hơi nước và ozone, tách các khối khí khác nhau bằng màu. Đây KHÔNG phải Day Cloud Phase — GIBS không phát sản phẩm đó, và bảng màu của hai thứ khác nhau hoàn toàn.",
         },
         {
@@ -981,10 +981,26 @@
 
       renderButtons();
 
-      // Mở bằng lớp phủ Việt Nam, không phải lớp phủ châu Mỹ: GOES-East và
-      // GOES-West đều không nhìn thấy Đông Nam Á.
+      /*
+       * Lớp mở đầu chọn theo GIỜ, không cố định.
+       *
+       * Vệ tinh phủ Việt Nam là Himawari, nên lớp mở đầu phải là của nó —
+       * GOES-East và GOES-West đều không nhìn thấy Đông Nam Á. Nhưng kênh ánh
+       * sáng nhìn thấy chỉ có hình khi vùng đó đang là ban ngày: mở trang lúc
+       * 12h UTC là 19h giờ Việt Nam, và người xem gặp một đĩa đen tuyền rồi
+       * kết luận trang hỏng.
+       *
+       * Châu Á được Mặt Trời chiếu sáng trong khoảng 22h–10h UTC. Ngoài
+       * khoảng đó thì mở bằng hồng ngoại, kênh đo nhiệt độ đỉnh mây nên nhìn
+       * được cả ban đêm. Người muốn xem ảnh nhìn thấy vẫn bấm được, và lúc đó
+       * chú thích của lớp đã nói trước vì sao nó tối.
+       */
+      var utcHour = new Date().getUTCHours();
+      var asiaInDaylight = utcHour >= 22 || utcHour < 10;
+      var startId = asiaInDaylight ? "himawari-visible" : "himawari-ir";
+
       selectLayer(LAYERS.find(function (spec) {
-        return spec.id === "himawari-visible";
+        return spec.id === startId;
       }));
     </script>
   </body>

@@ -61,23 +61,14 @@ export function SkyMap() {
   const initialView = targetToView(initial);
 
   /**
-
    * Nhóm đang lọc. `null` là xem tất cả.
-
    *
-
    * Mười thiên thể chưa đủ nhiều để bắt buộc phải lọc, nhưng chúng thuộc năm
-
    * loại vật thể khác hẳn nhau — thiên hà, tinh vân, cụm sao, sao, hố đen —
-
    * và người vào đây thường đang quan tâm đúng một loại. Bộ lọc biến một
-
    * danh sách phải đọc hết thành một danh sách chọn được.
-
    */
-
   const [kind, setKind] = useState<SkyObjectKind | null>(null);
-
 
   const [view, setView] = useState<SkyView>(
     initialView ?? { ra: 0, dec: 0, fovDeg: 60 },
@@ -100,6 +91,21 @@ export function SkyMap() {
 
   const applyTarget = useCallback(
     (target: SkyTarget) => {
+      /*
+       * Cuộn lên khung bản đồ trước khi đổi mục tiêu.
+       *
+       * Danh sách thiên thể nằm dưới khung bản đồ, nên khi bấm một thẻ ở hàng
+       * thứ hai trở xuống thì khung bản đồ đã ra khỏi tầm nhìn. Bản đồ đổi
+       * đúng mục tiêu nhưng người bấm không thấy gì đổi cả — họ kết luận nút
+       * hỏng, đúng như đã xảy ra với dải "Khám phá tiếp".
+       *
+       * `block: "start"` chứ không phải `"center"`: khung bản đồ cao gần bằng
+       * màn hình, căn giữa nó thì mép trên bị đẩy lên khỏi tầm nhìn.
+       */
+      document
+        .getElementById("sky-map-frame")
+        ?.scrollIntoView({ behavior: "smooth", block: "start" });
+
       const next = targetToView(target);
       if (!next) return;
 
@@ -149,15 +155,20 @@ export function SkyMap() {
 
   return (
     <div className="space-y-4">
-      <AladinSearch onSelect={applySearch} className="max-w-xl" />
+      {/* Mốc để cuộn về khi bấm một thẻ thiên thể ở phía dưới.
+          scroll-mt-20 chừa chỗ cho thanh điều hướng dính trên đỉnh, nếu
+          không thì mép trên khung bản đồ nằm khuất sau nó. */}
+      <div id="sky-map-frame" className="scroll-mt-20 space-y-4">
+        <AladinSearch onSelect={applySearch} className="max-w-xl" />
 
-      <AladinViewer
-        view={view}
-        label={t("viewerLabel", { object: label })}
-        activation="visible"
-        posterCaption={t("posterCaption", { object: label })}
-        className="h-[calc(100dvh-16rem)] min-h-[30rem]"
-      />
+        <AladinViewer
+          view={view}
+          label={t("viewerLabel", { object: label })}
+          activation="visible"
+          posterCaption={t("posterCaption", { object: label })}
+          className="h-[calc(100dvh-16rem)] min-h-[30rem]"
+        />
+      </div>
 
       {/* --------------------------------------------------- Thanh trạng thái */}
       <div className="flex flex-wrap items-center justify-between gap-x-6 gap-y-3 rounded-2xl border bg-card px-5 py-3.5">

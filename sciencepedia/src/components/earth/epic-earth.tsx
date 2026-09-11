@@ -377,7 +377,21 @@ export function EpicEarth({ locale = "vi" }: { locale?: string }) {
                      * đen dày quanh quả cầu, và người xem đọc quầng đó là một
                      * phần của thiết kế chứ không phải lề của tấm ảnh.
                      */
-                    className="scale-[1.36] object-cover transition-opacity duration-300"
+                    /*
+                     * Hoà mờ 700 ms, gần nửa chu kỳ 1600 ms giữa hai khung.
+                     *
+                     * Ở 300 ms thì mỗi khung đứng yên 1,3 giây rồi đổi gần
+                     * như tức thì — mắt đọc ra một chuỗi ảnh rời chứ không ra
+                     * chuyển động. Hoà mờ dài gần nửa chu kỳ thì luôn có hai
+                     * khung chồng nhau ở giữa, và chỗ chồng đó chính là thứ
+                     * lấp vào khoảng trống 15–30 độ mà EPIC bỏ qua giữa hai
+                     * lần chụp.
+                     *
+                     * Không dài hơn nửa chu kỳ: quá nửa thì khung thứ ba bắt
+                     * đầu hiện trước khi khung thứ nhất tắt hẳn, và ba lớp
+                     * chồng nhau cho ra một quả cầu nhoè.
+                     */
+                    className="scale-[1.36] object-cover transition-opacity duration-700 ease-linear"
                     style={{ opacity: i === index ? 1 : 0 }}
                   />
                 ))}

@@ -199,7 +199,14 @@
     "unitHours": "Earth hours",
     "unitYears": "Earth years",
     "millionKm": "million km",
-    "viewInZoom": "Zoom journey"
+    "viewInZoom": "Zoom journey",
+    "showMoons": "Moons",
+    "showDwarfs": "Dwarf planets",
+    "showEcliptic": "Ecliptic plane",
+    "scaleEducationalNote": "Teaching mode compresses distance by its square root: twice as far on screen means four times as far in reality.",
+    "scaleRealNote": "True-scale mode compresses distance logarithmically so Neptune still fits in frame.",
+    "scaleNeptune": "Neptune is pulled about {factor}× closer.",
+    "dataSource": "Data source"
   },
   "ai": {
     "title": "Science assistant",

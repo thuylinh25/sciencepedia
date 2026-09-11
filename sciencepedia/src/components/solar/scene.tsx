@@ -11,7 +11,11 @@ import {
   PLANETS,
   SUN,
   beltRadii,
+  DWARF_PLANETS,
   educationalOrbit,
+  educationalOrbitAu,
+  MOONS,
+  NAMED_ASTEROIDS,
   KUIPER_BELT,
   kuiperRadii,
   OORT_CLOUD,
@@ -26,6 +30,12 @@ export type SceneSettings = {
   showOrbits: boolean;
   showLabels: boolean;
   realScale: boolean;
+  /** Vệ tinh của Trái Đất, Sao Mộc, Sao Thổ và Sao Hải Vương */
+  showMoons: boolean;
+  /** Hành tinh lùn ngoài Sao Hải Vương và ba tiểu hành tinh có tên */
+  showDwarfs: boolean;
+  /** Mặt phẳng hoàng đạo — mốc để đo mọi độ nghiêng quỹ đạo */
+  showEcliptic: boolean;
 };
 
 // ------------------------------------------------------------------ Mặt Trời
@@ -84,34 +94,140 @@ function Sun({ radius }: { radius: number }) {
  * với phần tử SVG <line> và bị TypeScript hiểu nhầm.
  * Đối tượng được memo hoá — nếu tạo mới mỗi lần render, R3F sẽ gắn lại liên tục.
  */
-function OrbitRing({ radius }: { radius: number }) {
-  const line = useMemo(() => {
-    const curve = new THREE.EllipseCurve(0, 0, radius, radius, 0, Math.PI * 2);
-    const points = curve
-      .getPoints(180)
-      .map((point) => new THREE.Vector3(point.x, 0, point.y));
+/* ══════════════════════════════════════════════════ Quỹ đạo elip và nghiêng
 
-    return new THREE.Line(
-      new THREE.BufferGeometry().setFromPoints(points),
-      new THREE.LineBasicMaterial({
-        color: "#ffffff",
-        transparent: true,
-        opacity: 0.14,
-      }),
-    );
-  }, [radius]);
+   Ba đại lượng quyết định hình một quỹ đạo trong cảnh này:
 
-  useEffect(() => {
-    return () => {
-      line.geometry.dispose();
-      (line.material as THREE.Material).dispose();
-    };
-  }, [line]);
+   · bán trục lớn  — đã có, từ `educationalOrbit` hoặc `realScaleOrbit`
+   · độ lệch tâm   — kéo vòng tròn thành elip và đẩy Mặt Trời khỏi tâm
+   · độ nghiêng    — xoay cả mặt phẳng quỹ đạo quanh trục x
 
-  return <primitive object={line} />;
+   ## Vì sao Mặt Trời không ở tâm elip
+
+   Nó ở TIÊU ĐIỂM. Đó là định luật Kepler thứ nhất, và nó là toàn bộ lý do
+   khoảng cách tới Mặt Trời thay đổi trong một vòng. Vẽ elip mà đặt Mặt Trời
+   vào tâm thì có hình elip nhưng mất đúng cái ý nghĩa của nó: mọi điểm trên
+   quỹ đạo vẫn cách đều, và người xem không hiểu vì sao lại phải vẽ elip.
+
+   Khoảng cách từ tâm elip tới tiêu điểm là c = a·e, nên dịch cả quỹ đạo đi
+   một đoạn c theo trục lớn là Mặt Trời rơi đúng vào tiêu điểm.
+
+   ## Độ nghiêng nhỏ nhưng không bỏ được
+
+   Tám hành tinh nghiêng dưới 7°, nhìn từ trên xuống gần như không thấy. Nhưng
+   nghiêng cảnh đi một chút là thấy ngay các quỹ đạo không nằm trong cùng một
+   mặt phẳng — và đó là lý do nhật thực không xảy ra mỗi tháng. Hành tinh lùn
+   thì không cần nghiêng cảnh cũng thấy: Eris 44°. */
+
+/** Điểm trên quỹ đạo tại góc `angle`, đã tính lệch tâm và nghiêng. */
+function orbitPoint(
+  semiMajor: number,
+  eccentricity: number,
+  inclinationRad: number,
+  angle: number,
+): THREE.Vector3 {
+  const semiMinor = semiMajor * Math.sqrt(1 - eccentricity * eccentricity);
+  // Dịch theo trục lớn để tiêu điểm — chỗ Mặt Trời đứng — về gốc toạ độ
+  const focus = semiMajor * eccentricity;
+
+  const x = Math.cos(angle) * semiMajor - focus;
+  const z = Math.sin(angle) * semiMinor;
+
+  // Xoay quanh trục x: mặt phẳng quỹ đạo nghiêng so với mặt phẳng hoàng đạo
+  return new THREE.Vector3(
+    x,
+    -z * Math.sin(inclinationRad),
+    z * Math.cos(inclinationRad),
+  );
 }
 
-// ------------------------------------------------------------- Vành đai tiểu hành tinh
+/**
+ * Vành quỹ đạo, vẽ bằng ống mảnh chạy dọc đường elip.
+ *
+ * Dùng `TubeGeometry` chứ không `<line>` vì cùng lý do đã ghi ở quỹ đạo Mặt
+ * Trời quanh Ngân Hà: WebGL ghim `linewidth` ở 1 pixel trên gần hết trình
+ * duyệt, nên đường kẻ không dày lên khi phóng to và biến mất khi thu nhỏ.
+ */
+function OrbitPath({
+  semiMajor,
+  eccentricity,
+  inclinationDeg,
+  color = "#94a3b8",
+  opacity = 0.25,
+}: {
+  semiMajor: number;
+  eccentricity: number;
+  inclinationDeg: number;
+  color?: string;
+  opacity?: number;
+}) {
+  const geometry = useMemo(() => {
+    const inclination = THREE.MathUtils.degToRad(inclinationDeg);
+    const points: THREE.Vector3[] = [];
+    for (let i = 0; i < 240; i += 1) {
+      points.push(
+        orbitPoint(
+          semiMajor,
+          eccentricity,
+          inclination,
+          (i / 240) * Math.PI * 2,
+        ),
+      );
+    }
+    const curve = new THREE.CatmullRomCurve3(points, true, "centripetal");
+    // Bề rộng tỉ lệ với bán kính: quỹ đạo ngoài xa hơn nên trông mảnh hơn nếu
+    // mọi vành cùng một bề rộng tuyệt đối.
+    return new THREE.TubeGeometry(
+      curve,
+      240,
+      Math.max(0.012, semiMajor * 0.0016),
+      6,
+      true,
+    );
+  }, [semiMajor, eccentricity, inclinationDeg]);
+
+  return (
+    <mesh geometry={geometry}>
+      <meshBasicMaterial
+        color={color}
+        transparent
+        opacity={opacity}
+        depthWrite={false}
+      />
+    </mesh>
+  );
+}
+
+/**
+ * Mặt phẳng hoàng đạo — mặt phẳng quỹ đạo Trái Đất, mốc để đo mọi độ nghiêng.
+ *
+ * Vẽ bằng vài vòng tròn đồng tâm chứ không phải một mặt đĩa trong suốt: đĩa
+ * trong suốt cộng dồn qua nhiều lớp sẽ thành một màn sữa che mất chính các
+ * hành tinh, còn vòng tròn thì để lộ mọi thứ bên trong nó.
+ */
+function EclipticPlane({ radius }: { radius: number }) {
+  const rings = useMemo(
+    () => [0.25, 0.5, 0.75, 1].map((k) => radius * k),
+    [radius],
+  );
+
+  return (
+    <group>
+      {rings.map((r) => (
+        <mesh key={r} rotation={[-Math.PI / 2, 0, 0]}>
+          <ringGeometry args={[r - 0.03, r + 0.03, 128]} />
+          <meshBasicMaterial
+            color="#38bdf8"
+            transparent
+            opacity={0.1}
+            side={THREE.DoubleSide}
+            depthWrite={false}
+          />
+        </mesh>
+      ))}
+    </group>
+  );
+}
 
 /**
  * Vành đai tiểu hành tinh, giữa Sao Hoả và Sao Mộc.
@@ -270,21 +386,70 @@ function PlanetBody({
     );
   }, [planet.id, realLongitude]);
 
+  /*
+   * Góc trên quỹ đạo, giữ trong ref chứ không trong state: nó đổi mỗi khung
+   * hình, và một state đổi 60 lần mỗi giây sẽ render lại cả cây React 60 lần
+   * mỗi giây để vẽ đúng thứ mà three.js đã vẽ xong.
+   */
+  const angleRef = useRef(startAngle);
+  const bodyRef = useRef<THREE.Group>(null);
+
   useFrame((_, delta) => {
     if (!settings.playing) return;
     const step = delta * settings.speed;
 
-    if (orbitRef.current) {
-      orbitRef.current.rotation.y += step * planet.orbitSpeed * 0.28;
+    angleRef.current += step * planet.orbitSpeed * 0.28;
+
+    /*
+     * Đặt vị trí thay vì xoay một nhóm cha.
+     *
+     * Cách cũ để hành tinh ở khoảng cách cố định rồi xoay cả nhóm quanh trục
+     * y — chỉ vẽ được vòng tròn. Quỹ đạo elip có bán kính đổi theo góc, và
+     * quỹ đạo nghiêng còn có cả thành phần theo trục y, nên vị trí phải tính
+     * từng khung.
+     */
+    if (bodyRef.current) {
+      bodyRef.current.position.copy(
+        orbitPoint(
+          orbitRadius,
+          planet.eccentricity,
+          THREE.MathUtils.degToRad(planet.inclinationDeg),
+          angleRef.current,
+        ),
+      );
     }
+
     if (spinRef.current) {
       spinRef.current.rotation.y += step * planet.spinSpeed * 0.6;
     }
   });
 
+  const moons = MOONS.filter((moon) => moon.planetId === planet.id);
+
   return (
-    <group ref={orbitRef} rotation={[0, startAngle, 0]}>
-      <group position={[orbitRadius, 0, 0]}>
+    <group ref={orbitRef}>
+      <group
+        ref={bodyRef}
+        position={orbitPoint(
+          orbitRadius,
+          planet.eccentricity,
+          THREE.MathUtils.degToRad(planet.inclinationDeg),
+          startAngle,
+        )}
+      >
+        {settings.showMoons &&
+          moons.map((moon, index) => (
+            <MoonBody
+              key={moon.id}
+              moon={moon}
+              planetRadius={radius}
+              planetRealRadiusKm={planet.realRadiusKm}
+              index={index}
+              settings={settings}
+              locale={locale}
+            />
+          ))}
+
         <mesh
           ref={spinRef}
           rotation={[0, 0, THREE.MathUtils.degToRad(planet.axialTilt)]}
@@ -503,6 +668,194 @@ function OortShell({
   );
 }
 
+/**
+ * Một vệ tinh, quay quanh hành tinh mẹ.
+ *
+ * ## Bán kính quỹ đạo phải nén, và nén rất mạnh
+ *
+ * Quỹ đạo Mặt Trăng rộng 384.400 km trong khi Trái Đất bán kính 6.371 km —
+ * tỉ lệ 60:1. Vẽ đúng tỉ lệ đó thì ở cỡ Trái Đất trong cảnh này, Mặt Trăng
+ * nằm cách xa hơn cả khoảng cách tới Sao Kim, và bốn vệ tinh của Sao Mộc
+ * trải rộng hơn cả vành đai tiểu hành tinh.
+ *
+ * Nén bằng logarit của tỉ lệ thật giữ được THỨ TỰ — Io trong cùng, Callisto
+ * ngoài cùng, đúng như thực tế — trong khi kéo cả bốn về khoảng 3 tới 5 lần
+ * bán kính hành tinh. Cái mất là tỉ lệ khoảng cách; cái giữ là cấu trúc, và
+ * ở khung hình này thì chỉ giữ được một trong hai.
+ */
+function MoonBody({
+  moon,
+  planetRadius,
+  planetRealRadiusKm,
+  index,
+  settings,
+  locale,
+}: {
+  moon: (typeof MOONS)[number];
+  planetRadius: number;
+  planetRealRadiusKm: number;
+  index: number;
+  settings: SceneSettings;
+  locale: string;
+}) {
+  const group = useRef<THREE.Group>(null);
+  const angle = useRef((index * Math.PI * 2) / 3);
+
+  const orbit =
+    planetRadius *
+    (2 + Math.log10(moon.orbitKm / planetRealRadiusKm) * 1.6);
+
+  // Bán kính vẽ theo tỉ lệ thật so với hành tinh, nhưng có sàn để vệ tinh
+  // nhỏ nhất không teo thành vô hình.
+  const size = Math.max(
+    planetRadius * 0.09,
+    planetRadius * (moon.realRadiusKm / planetRealRadiusKm) * 0.6,
+  );
+
+  useFrame((_, delta) => {
+    if (!settings.playing || !group.current) return;
+    /*
+     * Dấu của `periodDays` mang thông tin: Triton âm vì nó nghịch hành, quay
+     * ngược chiều Sao Hải Vương tự quay. Chia cho chu kỳ nên dấu đi thẳng vào
+     * chiều quay, không cần xử lý riêng.
+     */
+    angle.current += (delta * settings.speed * 2.2) / moon.periodDays;
+    group.current.position.set(
+      Math.cos(angle.current) * orbit,
+      0,
+      Math.sin(angle.current) * orbit,
+    );
+  });
+
+  return (
+    <group ref={group}>
+      <mesh>
+        <sphereGeometry args={[size, 16, 16]} />
+        <meshStandardMaterial color={moon.color} roughness={0.9} />
+      </mesh>
+
+      {settings.showLabels && (
+        <Html center distanceFactor={26} zIndexRange={[8, 0]}>
+          <span className="rounded-full bg-black/65 px-1.5 py-0.5 text-[9px] whitespace-nowrap text-white/80 backdrop-blur-sm">
+            {locale === "en" ? moon.nameEn : moon.name}
+          </span>
+        </Html>
+      )}
+    </group>
+  );
+}
+
+/**
+ * Hành tinh lùn và ba tiểu hành tinh có tên.
+ *
+ * Chúng đứng yên chứ không chuyển động: chu kỳ của Eris là 558 năm, và ở tốc
+ * độ mà Trái Đất đi hết một vòng trong vài giây thì Eris nhích được vài phần
+ * nghìn độ — chuyển động không quan sát được, chỉ tốn thêm phép tính mỗi
+ * khung hình.
+ *
+ * Vẽ chúng nhỏ và có nhãn chứ không theo tỉ lệ: Sao Diêm Vương bán kính 1.188
+ * km, ở cùng tỉ lệ với Trái Đất thì nó nhỏ hơn một điểm ảnh.
+ */
+function OuterWorlds({
+  settings,
+  locale,
+  onSelect,
+}: {
+  settings: SceneSettings;
+  locale: string;
+  onSelect: (id: string) => void;
+}) {
+  const place = (au: number, eccentricity: number, inclinationDeg: number, seed: string) => {
+    const semiMajor = settings.realScale
+      ? auToRealScaleSafe(au)
+      : educationalOrbitAu(au);
+    const angle =
+      (([...seed].reduce((sum, char) => sum + char.charCodeAt(0), 0) % 360) *
+        Math.PI) /
+      180;
+    return {
+      semiMajor,
+      position: orbitPoint(
+        semiMajor,
+        eccentricity,
+        THREE.MathUtils.degToRad(inclinationDeg),
+        angle,
+      ),
+    };
+  };
+
+  return (
+    <group>
+      {DWARF_PLANETS.map((world) => {
+        const { semiMajor, position } = place(
+          world.au,
+          world.eccentricity,
+          world.inclinationDeg,
+          world.id,
+        );
+        return (
+          <group key={world.id}>
+            {settings.showOrbits && (
+              <OrbitPath
+                semiMajor={semiMajor}
+                eccentricity={world.eccentricity}
+                inclinationDeg={world.inclinationDeg}
+                color={world.color}
+                opacity={0.18}
+              />
+            )}
+            <group position={position}>
+              <mesh
+                onClick={(event) => {
+                  event.stopPropagation();
+                  onSelect(world.id);
+                }}
+                onPointerOver={() => (document.body.style.cursor = "pointer")}
+                onPointerOut={() => (document.body.style.cursor = "auto")}
+              >
+                <sphereGeometry args={[0.22, 20, 20]} />
+                <meshStandardMaterial color={world.color} roughness={0.9} />
+              </mesh>
+
+              {settings.showLabels && (
+                <Html center distanceFactor={60} zIndexRange={[9, 0]}>
+                  <span className="rounded-full bg-black/65 px-2 py-0.5 text-[10px] whitespace-nowrap text-white/85 backdrop-blur-sm">
+                    {locale === "en" ? world.nameEn : world.name}
+                  </span>
+                </Html>
+              )}
+            </group>
+          </group>
+        );
+      })}
+
+      {NAMED_ASTEROIDS.map((asteroid) => {
+        const { position } = place(asteroid.au, 0.08, 8, asteroid.id);
+        return (
+          <group key={asteroid.id} position={position}>
+            <mesh>
+              <sphereGeometry args={[0.1, 12, 12]} />
+              <meshStandardMaterial color="#cbbda6" roughness={1} />
+            </mesh>
+            {settings.showLabels && (
+              <Html center distanceFactor={40} zIndexRange={[8, 0]}>
+                <span className="rounded-full bg-black/65 px-1.5 py-0.5 text-[9px] whitespace-nowrap text-white/75 backdrop-blur-sm">
+                  {locale === "en" ? asteroid.nameEn : asteroid.name}
+                </span>
+              </Html>
+            )}
+          </group>
+        );
+      })}
+    </group>
+  );
+}
+
+/** Bọc `auToRealScale` vì hàm đó không được xuất ra ngoài solar-data. */
+function auToRealScaleSafe(au: number): number {
+  return 6 + Math.log10(au + 1) * 46;
+}
+
 export function SolarScene({
   settings,
   selectedId,
@@ -612,15 +965,31 @@ export function SolarScene({
       <KuiperBelt settings={settings} locale={locale} lowPower={lowPower} />
       <OortShell settings={settings} locale={locale} />
 
+      {settings.showEcliptic && (
+        <EclipticPlane
+          radius={
+            settings.realScale
+              ? realScaleOrbit(PLANETS[PLANETS.length - 1])
+              : educationalOrbit(PLANETS[PLANETS.length - 1])
+          }
+        />
+      )}
+
+      {settings.showDwarfs && (
+        <OuterWorlds settings={settings} locale={locale} onSelect={onSelect} />
+      )}
+
       {PLANETS.map((planet) => (
         <group key={planet.id}>
           {settings.showOrbits && (
-            <OrbitRing
-              radius={
+            <OrbitPath
+              semiMajor={
                 settings.realScale
                   ? realScaleOrbit(planet)
                   : educationalOrbit(planet)
               }
+              eccentricity={planet.eccentricity}
+              inclinationDeg={planet.inclinationDeg}
             />
           )}
           <PlanetBody

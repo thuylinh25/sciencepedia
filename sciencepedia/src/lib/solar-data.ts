@@ -22,6 +22,23 @@ export type Planet = {
   spinSpeed: number;
   /** Độ nghiêng trục quay (độ) */
   axialTilt: number;
+  /**
+   * Độ lệch tâm quỹ đạo, J2000.
+   *
+   * Không hành tinh nào đi trên một vòng tròn. Sao Thuỷ lệch 0,206 — khoảng
+   * cách tới Mặt Trời của nó dao động từ 46 tới 70 triệu km, tức chênh hơn
+   * 50%. Vẽ tròn hết là bỏ mất một trong vài điều mà ai cũng nghe nói nhưng
+   * chưa từng nhìn thấy.
+   */
+  eccentricity: number;
+  /**
+   * Độ nghiêng mặt phẳng quỹ đạo so với mặt phẳng hoàng đạo, độ.
+   *
+   * Nhỏ với cả tám hành tinh — lớn nhất là Sao Thuỷ 7° — nhưng KHÔNG bằng
+   * không, và chính chỗ khác không đó là lý do nhật thực không xảy ra mỗi
+   * tháng. Hành tinh lùn thì nghiêng hẳn: Eris 44°.
+   */
+  inclinationDeg: number;
   /** Bản đồ bề mặt dạng equirectangular — xem chú thích TEXTURES bên dưới */
   texture: string;
   ring?: { inner: number; outer: number; color: string; opacity: number };
@@ -125,6 +142,41 @@ export const TEXTURE_CREDIT = {
  * tính của thiên thể. Trái Đất dùng emoji quả địa cầu chứ không dùng ♁ — ký
  * hiệu đó phần lớn phông hệ thống không có, và ô trống thì tệ hơn.
  */
+/**
+ * Rút một dòng ghi nguồn dài thành danh sách tổ chức.
+ *
+ * "CDS / NASA GSFC (SVS 30362)" và "USGS Astrogeology / NASA (qua CDS)" đều
+ * đúng, nhưng trên một thẻ rộng 380 px thì chúng chiếm ba dòng và đẩy phần
+ * còn lại xuống. Người lướt qua chỉ cần biết dữ liệu đến từ đâu ở mức tổ
+ * chức; ai cần đủ thì bấm vào link — link vẫn giữ nguyên, chỉ phần chữ hiện
+ * ra là rút gọn.
+ *
+ * Giữ thứ tự xuất hiện trong chuỗi gốc, vì tổ chức đứng đầu thường là nơi
+ * làm ra dữ liệu chứ không phải nơi phân phối nó.
+ */
+export function shortenCredit(credit: string): string {
+  const KNOWN = [
+    "NASA",
+    "ESA",
+    "JPL",
+    "USGS",
+    "CDS",
+    "GSFC",
+    "JHUAPL",
+    "Carnegie",
+    "NOAA",
+    "ASU",
+  ];
+
+  const found: string[] = [];
+  for (const org of KNOWN) {
+    if (credit.includes(org) && !found.includes(org)) found.push(org);
+  }
+
+  // Không nhận ra tổ chức nào thì trả nguyên văn, đừng nuốt mất ghi nguồn
+  return found.length > 0 ? found.join(" · ") : credit;
+}
+
 export const BODY_SYMBOL: Record<string, string> = {
   sun: "☉",
   mercury: "☿",
@@ -304,6 +356,8 @@ export const PLANETS: Planet[] = [
     orbitSpeed: 1.607,
     spinSpeed: 0.017,
     axialTilt: 0.03,
+    eccentricity: 0.2056,
+    inclinationDeg: 7,
     texture: `${TEXTURE_BASE}/9/92/Solarsystemscope_texture_2k_mercury.jpg/1280px-Solarsystemscope_texture_2k_mercury.jpg`,
     realRadiusKm: 2439.7,
     realDistanceKm: 57_900_000,
@@ -359,6 +413,8 @@ export const PLANETS: Planet[] = [
     orbitSpeed: 1.174,
     spinSpeed: -0.004,
     axialTilt: 177.4,
+    eccentricity: 0.0068,
+    inclinationDeg: 3.39,
     texture: `${TEXTURE_BASE}/6/63/Solarsystemscope_texture_2k_venus_atmosphere.jpg/1280px-Solarsystemscope_texture_2k_venus_atmosphere.jpg`,
     realRadiusKm: 6051.8,
     realDistanceKm: 108_200_000,
@@ -412,6 +468,8 @@ export const PLANETS: Planet[] = [
     orbitSpeed: 1,
     spinSpeed: 1,
     axialTilt: 23.4,
+    eccentricity: 0.0167,
+    inclinationDeg: 0,
     texture: `${TEXTURE_BASE}/c/c3/Solarsystemscope_texture_2k_earth_daymap.jpg/1280px-Solarsystemscope_texture_2k_earth_daymap.jpg`,
     realRadiusKm: 6371,
     realDistanceKm: 149_600_000,
@@ -459,6 +517,8 @@ export const PLANETS: Planet[] = [
     orbitSpeed: 0.531,
     spinSpeed: 0.97,
     axialTilt: 25.2,
+    eccentricity: 0.0934,
+    inclinationDeg: 1.85,
     texture: `${TEXTURE_BASE}/4/46/Solarsystemscope_texture_2k_mars.jpg/1280px-Solarsystemscope_texture_2k_mars.jpg`,
     realRadiusKm: 3389.5,
     realDistanceKm: 228_000_000,
@@ -514,6 +574,8 @@ export const PLANETS: Planet[] = [
     orbitSpeed: 0.084,
     spinSpeed: 2.42,
     axialTilt: 3.1,
+    eccentricity: 0.0489,
+    inclinationDeg: 1.3,
     texture: `${TEXTURE_BASE}/b/be/Solarsystemscope_texture_2k_jupiter.jpg/1280px-Solarsystemscope_texture_2k_jupiter.jpg`,
     realRadiusKm: 69_911,
     realDistanceKm: 778_500_000,
@@ -554,6 +616,8 @@ export const PLANETS: Planet[] = [
     orbitSpeed: 0.034,
     spinSpeed: 2.24,
     axialTilt: 26.7,
+    eccentricity: 0.0565,
+    inclinationDeg: 2.49,
     texture: `${TEXTURE_BASE}/e/ea/Solarsystemscope_texture_2k_saturn.jpg/1280px-Solarsystemscope_texture_2k_saturn.jpg`,
     /*
      * Đơn vị là BÁN KÍNH HÀNH TINH, không phải đơn vị cảnh.
@@ -601,6 +665,8 @@ export const PLANETS: Planet[] = [
     orbitSpeed: 0.012,
     spinSpeed: -1.39,
     axialTilt: 97.8,
+    eccentricity: 0.0457,
+    inclinationDeg: 0.77,
     texture: `${TEXTURE_BASE}/9/95/Solarsystemscope_texture_2k_uranus.jpg/1280px-Solarsystemscope_texture_2k_uranus.jpg`,
     // Vành ε nằm ở 51.149 km, chia cho bán kính 25.559 km ra đúng 2,00
     ring: { inner: 1.64, outer: 2.0, color: "#8fbfd0", opacity: 0.35 },
@@ -637,6 +703,8 @@ export const PLANETS: Planet[] = [
     orbitSpeed: 0.006,
     spinSpeed: 1.49,
     axialTilt: 28.3,
+    eccentricity: 0.0113,
+    inclinationDeg: 1.77,
     texture: `${TEXTURE_BASE}/1/1e/Solarsystemscope_texture_2k_neptune.jpg/1280px-Solarsystemscope_texture_2k_neptune.jpg`,
     realRadiusKm: 24_622,
     realDistanceKm: 4_515_000_000,
@@ -670,6 +738,206 @@ export const PLANETS: Planet[] = [
 ];
 
 export const AU_KM = 149_600_000;
+
+/**
+ * Hành tinh lùn ngoài Sao Hải Vương.
+ *
+ * Thêm vào để sửa nốt hiểu sai mà vành đai Kuiper mới chỉ sửa một nửa: hệ
+ * không kết thúc ở Sao Hải Vương, và thứ nằm ngoài đó không phải bụi vô danh
+ * mà là những thế giới có tên, có đường kính nghìn km, có vệ tinh riêng.
+ *
+ * Chúng cũng là nơi thấy rõ nhất hai đại lượng mà tám hành tinh giấu đi vì
+ * quá nhỏ: Eris lệch tâm 0,44 và nghiêng 44 độ. Vẽ đúng hai con số đó thì
+ * người xem hiểu ngay vì sao ranh giới "hành tinh" lại thành một cuộc tranh
+ * cãi — quỹ đạo của chúng không giống quỹ đạo hành tinh chút nào.
+ */
+export const DWARF_PLANETS = [
+  {
+    id: "pluto",
+    name: "Sao Diêm Vương",
+    nameEn: "Pluto",
+    articleSlug: "sao-diem-vuong",
+    color: "#c9b39a",
+    au: 39.48,
+    eccentricity: 0.2488,
+    inclinationDeg: 17.16,
+    realRadiusKm: 1188,
+    note: "Cộng hưởng 2:3 với Sao Hải Vương, nên dù quỹ đạo cắt qua quỹ đạo Sao Hải Vương thì hai bên không bao giờ gặp nhau.",
+    noteEn:
+      "Locked in a 2:3 resonance with Neptune, so although their orbits cross, the two never meet.",
+  },
+  {
+    id: "eris",
+    name: "Eris",
+    nameEn: "Eris",
+    articleSlug: "eris",
+    color: "#dfe6ef",
+    au: 67.78,
+    eccentricity: 0.4407,
+    inclinationDeg: 44.04,
+    realRadiusKm: 1163,
+    note: "Phát hiện năm 2005, nặng hơn Sao Diêm Vương — chính nó buộc giới thiên văn định nghĩa lại thế nào là hành tinh.",
+    noteEn:
+      "Found in 2005 and more massive than Pluto — it is what forced astronomers to define what a planet is.",
+  },
+  {
+    id: "haumea",
+    name: "Haumea",
+    nameEn: "Haumea",
+    articleSlug: "haumea",
+    color: "#e8e2d8",
+    au: 43.13,
+    eccentricity: 0.1912,
+    inclinationDeg: 28.21,
+    realRadiusKm: 816,
+    note: "Quay một vòng chỉ mất 3,9 giờ, nhanh tới mức lực ly tâm kéo nó thành hình quả trứng dài gấp đôi bề ngang.",
+    noteEn:
+      "It spins once every 3.9 hours, fast enough that centrifugal force has stretched it into an egg twice as long as it is wide.",
+  },
+  {
+    id: "makemake",
+    name: "Makemake",
+    nameEn: "Makemake",
+    articleSlug: "makemake",
+    color: "#d8b49c",
+    au: 45.43,
+    eccentricity: 0.159,
+    inclinationDeg: 28.98,
+    realRadiusKm: 715,
+    note: "Bề mặt phủ băng methane. Mãi tới 2016 mới phát hiện nó có một vệ tinh nhỏ.",
+    noteEn:
+      "Its surface is coated in methane ice. A small moon was only found in 2016.",
+  },
+] as const;
+
+/**
+ * Ba tiểu hành tinh lớn nhất, đặt đúng bán trục lớn của chúng.
+ *
+ * Vành đai tiểu hành tinh vẽ bằng vài nghìn chấm vô danh thì đọc ra là một
+ * đám bụi. Ba cái tên này nói điều ngược lại: trong đám đó có những vật thể
+ * đủ lớn để có tên, và Ceres đủ lớn để tự kéo mình thành hình cầu — nó vừa là
+ * tiểu hành tinh vừa là hành tinh lùn.
+ */
+export const NAMED_ASTEROIDS = [
+  {
+    id: "ceres",
+    name: "Ceres",
+    nameEn: "Ceres",
+    au: 2.77,
+    realRadiusKm: 473,
+    note: "Vật thể lớn nhất vành đai, và là hành tinh lùn duy nhất nằm trong quỹ đạo Sao Hải Vương.",
+    noteEn:
+      "The largest object in the belt, and the only dwarf planet inside Neptune's orbit.",
+  },
+  {
+    id: "vesta",
+    name: "Vesta",
+    nameEn: "Vesta",
+    au: 2.36,
+    realRadiusKm: 262,
+    note: "Sáng nhất vành đai; những lúc thuận lợi có thể thấy bằng mắt thường.",
+    noteEn:
+      "The brightest object in the belt; under good conditions it is visible to the naked eye.",
+  },
+  {
+    id: "pallas",
+    name: "Pallas",
+    nameEn: "Pallas",
+    au: 2.77,
+    realRadiusKm: 256,
+    note: "Quỹ đạo nghiêng 35 độ so với mặt phẳng hoàng đạo — nghiêng nhất trong các vật thể lớn của vành đai.",
+    noteEn:
+      "Its orbit is tilted 35° to the ecliptic, the steepest of any large belt object.",
+  },
+] as const;
+
+/**
+ * Bảy vệ tinh đáng xem, gắn với hành tinh mẹ.
+ *
+ * `orbitKm` là bán kính quỹ đạo thật. Nó KHÔNG dùng trực tiếp để vẽ: quỹ đạo
+ * Mặt Trăng rộng 384.400 km, còn khoảng cách Trái Đất–Mặt Trời là 149,6 triệu
+ * km — tỉ lệ 1:389, nên vẽ đúng tỉ lệ thì mọi vệ tinh nằm trong đúng một điểm
+ * ảnh của hành tinh mẹ. Hệ số phóng đại nằm ở `scene.tsx`, cùng chỗ vẽ.
+ */
+export const MOONS = [
+  {
+    id: "moon",
+    planetId: "earth",
+    name: "Mặt Trăng",
+    nameEn: "The Moon",
+    orbitKm: 384_400,
+    realRadiusKm: 1737.4,
+    periodDays: 27.3,
+    color: "#d6d6d6",
+  },
+  {
+    id: "io",
+    planetId: "jupiter",
+    name: "Io",
+    nameEn: "Io",
+    orbitKm: 421_700,
+    realRadiusKm: 1821.6,
+    periodDays: 1.77,
+    color: "#e8d16a",
+  },
+  {
+    id: "europa",
+    planetId: "jupiter",
+    name: "Europa",
+    nameEn: "Europa",
+    orbitKm: 671_034,
+    realRadiusKm: 1560.8,
+    periodDays: 3.55,
+    color: "#e0d5c0",
+  },
+  {
+    id: "ganymede",
+    planetId: "jupiter",
+    name: "Ganymede",
+    nameEn: "Ganymede",
+    orbitKm: 1_070_412,
+    realRadiusKm: 2634.1,
+    periodDays: 7.15,
+    color: "#b6a894",
+  },
+  {
+    id: "callisto",
+    planetId: "jupiter",
+    name: "Callisto",
+    nameEn: "Callisto",
+    orbitKm: 1_882_709,
+    realRadiusKm: 2410.3,
+    periodDays: 16.69,
+    color: "#8d8377",
+  },
+  {
+    id: "titan",
+    planetId: "saturn",
+    name: "Titan",
+    nameEn: "Titan",
+    orbitKm: 1_221_870,
+    realRadiusKm: 2574.7,
+    periodDays: 15.95,
+    color: "#d9a441",
+  },
+  {
+    id: "triton",
+    planetId: "neptune",
+    name: "Triton",
+    nameEn: "Triton",
+    orbitKm: 354_759,
+    realRadiusKm: 1353.4,
+    /*
+     * Dấu âm là chuyển động NGHỊCH HÀNH: Triton quay quanh Sao Hải Vương
+     * ngược chiều hành tinh tự quay. Đó là bằng chứng mạnh nhất cho giả
+     * thuyết nó vốn là một vật thể vành đai Kuiper bị bắt giữ, chứ không
+     * hình thành cùng hành tinh — nên dấu này phải giữ, không được lấy trị
+     * tuyệt đối cho tiện.
+     */
+    periodDays: -5.88,
+    color: "#c7b8a8",
+  },
+] as const;
 
 /**
  * Bán kính quỹ đạo ở CHẾ ĐỘ GIÁO DỤC: tỉ lệ với căn bậc hai khoảng cách thật.

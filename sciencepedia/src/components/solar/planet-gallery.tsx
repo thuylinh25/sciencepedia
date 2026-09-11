@@ -6,6 +6,7 @@ import { Link } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
 import {
   BODY_BADGES,
+  shortenCredit,
   MOON,
   PLANETS,
   SUN,
@@ -216,7 +217,7 @@ export async function PlanetGallery() {
                 Viền và bóng đổ không tạo containing block, nên hiệu ứng nổi
                 khối vẫn làm được bằng hai thứ đó.
               */
-              className="group flex scroll-mt-24 flex-col overflow-hidden rounded-2xl border bg-card transition-[border-color,box-shadow] duration-300 hover:border-primary-strong/40 hover:shadow-xl"
+              className="group flex scroll-mt-24 flex-col overflow-hidden rounded-2xl border bg-card transition-[border-color,box-shadow] duration-300 hover:border-sky-400/45 hover:shadow-[0_18px_50px_-20px_rgba(56,189,248,0.45)]"
             >
               {body.surface ? (
                 <PlanetSurface
@@ -263,29 +264,42 @@ export async function PlanetGallery() {
                     alt={displayName}
                     fill
                     sizes={IMAGE_SIZES}
-                    className="object-cover"
+                    className="object-cover transition-transform duration-300 group-hover:scale-[1.03]"
                   />
                 </div>
               )}
 
-              <div className="flex flex-1 flex-col p-4">
-                <div className="flex items-baseline justify-between gap-3">
-                  <h3 className="font-display font-semibold">{displayName}</h3>
+              {/* p-5 thay p-4, và khoảng cách giữa các khối nâng lên một
+                  nhịp thống nhất: mọi khối cách nhau 16px thay vì 8–12px mỗi
+                  chỗ một kiểu. Cộng thêm pt-5 sau ảnh cho ảnh và chữ thôi
+                  dính vào nhau. */}
+              <div className="flex flex-1 flex-col gap-4 p-5">
+                {/* Tên tiếng Anh xuống dòng dưới thay vì trôi sang mép phải.
+
+                    Đặt hai tên ở hai đầu một hàng thì mắt phải đi hết bề ngang
+                    thẻ mới đọc xong một cái tên, và với tên dài ngắn khác nhau
+                    thì cột phải so le trên mọi thẻ. Xếp chồng giữ chúng cạnh
+                    nhau và cùng một mép trái. */}
+                <div>
+                  <h3 className="font-display text-lg leading-tight font-semibold">
+                    {displayName}
+                  </h3>
                   {secondaryName && (
-                    <span className="shrink-0 text-xs text-muted-foreground">
+                    <p className="mt-0.5 text-sm text-muted-foreground">
                       {secondaryName}
-                    </span>
+                    </p>
                   )}
                 </div>
 
-                {/* Nhãn phân loại. Mỗi nhãn là một mệnh đề kiểm được, không
-                    phải tính từ — xem `BODY_BADGES`. */}
+                {/* Badge tương phản hơn: nền sáng hơn và viền rõ hơn. Ở
+                    bg-muted/40 chúng gần như tan vào nền thẻ. Cùng chiều cao
+                    và cùng đệm cho mọi badge. */}
                 {BODY_BADGES[body.id] && (
-                  <ul className="mt-2.5 flex flex-wrap gap-1.5">
+                  <ul className="flex flex-wrap gap-1.5">
                     {BODY_BADGES[body.id].map((badge) => (
                       <li
                         key={badge.labelEn}
-                        className="inline-flex items-center gap-1.5 rounded-full border bg-muted/40 px-2 py-0.5 text-[11px] text-muted-foreground"
+                        className="inline-flex h-7 items-center gap-1.5 rounded-full border border-border/80 bg-muted px-2.5 text-[11px] font-medium text-foreground/85"
                       >
                         <span aria-hidden>{badge.emoji}</span>
                         {isEnglish ? badge.labelEn : badge.label}
@@ -294,14 +308,19 @@ export async function PlanetGallery() {
                   </ul>
                 )}
 
-                {/* Ô thống kê thay cho một dòng chữ liền.
-                    Ba con số cùng cỡ, cùng vị trí trên mọi thẻ thì mắt so
-                    được theo cột; nhét chúng vào một câu thì phải đọc mới
-                    thấy, và đọc chín lần cho chín thẻ. */}
-                <dl className="mt-3 grid grid-cols-3 gap-2">
+                {/* Ô thống kê cùng chiều cao, cùng cách căn.
+
+                    Đơn vị viết thống nhất: đường kính luôn là km, khoảng cách
+                    luôn là "triệu km". Trước đây mỗi thẻ một kiểu — "1,4 Tr
+                    km" ở Mặt Trời nhưng "4.879,4 km" ở Sao Thuỷ — nên hai con
+                    số cạnh nhau không so được với nhau. */}
+                <dl className="grid grid-cols-3 gap-2">
                   {[
                     {
-                      value: `${formatNumber(Math.round(body.realRadiusKm * 2), locale)}`,
+                      value: formatNumber(
+                        Math.round(body.realRadiusKm * 2),
+                        locale,
+                      ),
                       unit: "km",
                       label: t("diameter"),
                     },
@@ -327,7 +346,7 @@ export async function PlanetGallery() {
                     .map((stat) => (
                       <div
                         key={stat.label}
-                        className="rounded-xl border bg-muted/30 px-2.5 py-2"
+                        className="flex min-h-[4.25rem] flex-col justify-center rounded-xl border bg-muted/40 px-2.5 py-2"
                       >
                         <dd className="font-mono text-sm font-semibold tabular-nums">
                           {stat.value}
@@ -337,40 +356,58 @@ export async function PlanetGallery() {
                             </span>
                           )}
                         </dd>
-                        <dt className="mt-0.5 text-[11px] text-muted-foreground">
+                        <dt className="mt-1 text-[11px] leading-tight text-muted-foreground">
                           {stat.label}
                         </dt>
                       </div>
                     ))}
                 </dl>
 
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                {/* Mô tả giới hạn bốn dòng để mọi thẻ trong một hàng cao bằng
+                    nhau. Bản đầy đủ nằm ở bài viết. */}
+                <p className="line-clamp-4 text-sm leading-relaxed text-muted-foreground">
                   {description}
                 </p>
 
-                {/* Chú thích ảnh là nội dung bắt buộc, không phải trang trí:
-                    ảnh Mặt Trời, bề mặt Sao Thuỷ và Sao Kim đều là màu quy
-                    ước, và người đọc không có cách nào tự nhận ra. Nó nhỏ và
-                    nằm cuối, nhưng không được bỏ. */}
-                <p className="mt-3 text-xs leading-relaxed text-muted-foreground/75">
-                  {caption}{" "}
-                  <a
-                    href={body.photo.sourceUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="underline underline-offset-2"
-                  >
-                    {body.photo.credit}
-                  </a>
-                </p>
+                {/* Chú thích ảnh là nội dung bắt buộc chứ không phải trang
+                    trí — ảnh Mặt Trời, bề mặt Sao Thuỷ và Sao Kim đều là màu
+                    quy ước — nhưng nó cũng giới hạn ba dòng, và dòng ghi nguồn
+                    rút về danh sách tổ chức. Link vẫn dẫn tới nguồn đầy đủ. */}
+                <div>
+                  <p className="line-clamp-3 text-xs leading-relaxed text-muted-foreground/75">
+                    {caption}
+                  </p>
+                  <p className="mt-1.5 text-[11px] text-muted-foreground/60">
+                    {t("dataSource")}:{" "}
+                    <a
+                      href={body.photo.sourceUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      title={body.photo.credit}
+                      className="underline underline-offset-2 hover:text-foreground"
+                    >
+                      {shortenCredit(body.photo.credit)}
+                    </a>
+                  </p>
+                </div>
 
-                {/* Liên kết ngữ cảnh, đẩy xuống đáy bằng mt-auto để mọi thẻ
-                    trong một hàng có cùng một đường chân. */}
-                <div className="mt-auto flex flex-wrap gap-x-4 gap-y-2 border-t pt-3 text-sm">
+                {/* CTA có thứ bậc: một nút chính có nền, hai lối đi phụ là
+                    chữ. Trước đây ba liên kết cùng một kiểu chữ nhỏ nên không
+                    cái nào là đường chính, và người bấm phải đọc hết ba cái
+                    mới chọn được. Chiều cao 40px cho ngón tay bấm trúng. */}
+                <div className="mt-auto flex flex-wrap items-center gap-x-4 gap-y-2 border-t pt-4">
+                  <Link
+                    href={`/solar-system?body=${body.id}`}
+                    className="inline-flex h-10 items-center gap-1.5 rounded-full bg-sky-500/15 px-3.5 text-sm font-medium text-sky-300 transition-colors hover:bg-sky-500/25"
+                  >
+                    <Orbit className="size-4" aria-hidden />
+                    {t("viewInSolarSystem")}
+                  </Link>
+
                   {published.has(body.articleSlug) && (
                     <Link
                       href={`/articles/${body.articleSlug}`}
-                      className="inline-flex items-center gap-1.5 text-primary-strong hover:underline"
+                      className="inline-flex h-10 items-center gap-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground"
                     >
                       <ArrowUpRight className="size-3.5" aria-hidden />
                       {t("readMore")}
@@ -378,16 +415,8 @@ export async function PlanetGallery() {
                   )}
 
                   <Link
-                    href={`/solar-system?body=${body.id}`}
-                    className="inline-flex items-center gap-1.5 text-muted-foreground hover:text-foreground"
-                  >
-                    <Orbit className="size-3.5" aria-hidden />
-                    {t("viewInSolarSystem")}
-                  </Link>
-
-                  <Link
                     href="/zoom"
-                    className="inline-flex items-center gap-1.5 text-muted-foreground hover:text-foreground"
+                    className="inline-flex h-10 items-center gap-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground"
                   >
                     <Scaling className="size-3.5" aria-hidden />
                     {t("viewInZoom")}

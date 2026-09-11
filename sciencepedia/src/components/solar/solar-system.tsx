@@ -7,7 +7,12 @@ import dynamic from "next/dynamic";
 import { useLocale, useTranslations } from "next-intl";
 import { ExternalLink, Loader2, Pause, Play, RotateCcw } from "lucide-react";
 
-import { PLANETS, TEXTURE_CREDIT } from "@/lib/solar-data";
+import {
+  AU_KM,
+  compressionAt,
+  PLANETS,
+  TEXTURE_CREDIT,
+} from "@/lib/solar-data";
 import type { PlanetPositions } from "@/lib/horizons";
 import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
@@ -100,6 +105,9 @@ export function SolarSystem({
     showOrbits: true,
     showLabels: true,
     realScale: false,
+    showMoons: true,
+    showDwarfs: true,
+    showEcliptic: false,
   });
   // Đổi key để buộc Canvas dựng lại — cách đơn giản nhất để "đặt lại góc nhìn"
   const [sceneKey, setSceneKey] = useState(0);
@@ -224,6 +232,39 @@ export function SolarSystem({
             </Label>
           </div>
 
+          <div className="flex items-center gap-2">
+            <Switch
+              id="solar-moons"
+              checked={settings.showMoons}
+              onCheckedChange={(value) => update("showMoons", value)}
+            />
+            <Label htmlFor="solar-moons" className="text-xs text-white/70">
+              {t("showMoons")}
+            </Label>
+          </div>
+
+          <div className="flex items-center gap-2">
+            <Switch
+              id="solar-dwarfs"
+              checked={settings.showDwarfs}
+              onCheckedChange={(value) => update("showDwarfs", value)}
+            />
+            <Label htmlFor="solar-dwarfs" className="text-xs text-white/70">
+              {t("showDwarfs")}
+            </Label>
+          </div>
+
+          <div className="flex items-center gap-2">
+            <Switch
+              id="solar-ecliptic"
+              checked={settings.showEcliptic}
+              onCheckedChange={(value) => update("showEcliptic", value)}
+            />
+            <Label htmlFor="solar-ecliptic" className="text-xs text-white/70">
+              {t("showEcliptic")}
+            </Label>
+          </div>
+
           <Button
             size="icon-sm"
             variant="glass"
@@ -287,6 +328,24 @@ export function SolarSystem({
         ) : (
           <span>{t("positionsSchematic")}</span>
         )}
+
+        {/* Hệ số nén nói ra thay vì để người xem tự đoán.
+
+            Ở chế độ giáo dục hệ số đổi theo khoảng cách, và chính vì thế nó
+            cần được nói: hai hành tinh cách nhau gấp đôi trên màn hình thì
+            thật ra cách nhau gấp bốn. Một mô hình nén tỉ lệ mà không ghi
+            mình nén bao nhiêu thì người xem sẽ đọc khoảng cách trên màn hình
+            như khoảng cách thật. */}
+        <span>
+          {settings.realScale ? t("scaleRealNote") : t("scaleEducationalNote")}{" "}
+          {t("scaleNeptune", {
+            factor: Math.round(
+              compressionAt(
+                PLANETS[PLANETS.length - 1].realDistanceKm / AU_KM,
+              ),
+            ),
+          })}
+        </span>
 
         <span>
           {t("texturesFrom")}{" "}

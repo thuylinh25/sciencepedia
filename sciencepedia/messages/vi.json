@@ -199,7 +199,14 @@
     "unitHours": "giờ Trái Đất",
     "unitYears": "năm Trái Đất",
     "millionKm": "triệu km",
-    "viewInZoom": "Hành trình thu phóng"
+    "viewInZoom": "Hành trình thu phóng",
+    "showMoons": "Vệ tinh",
+    "showDwarfs": "Hành tinh lùn",
+    "showEcliptic": "Mặt phẳng hoàng đạo",
+    "scaleEducationalNote": "Chế độ giáo dục nén khoảng cách theo căn bậc hai: vẽ xa gấp đôi nghĩa là thật ra xa gấp bốn.",
+    "scaleRealNote": "Chế độ tỉ lệ thực nén khoảng cách theo hàm logarit để Sao Hải Vương còn nằm trong khung.",
+    "scaleNeptune": "Sao Hải Vương bị kéo gần lại khoảng {factor} lần.",
+    "dataSource": "Nguồn dữ liệu"
   },
   "ai": {
     "title": "Trợ lý khoa học",

@@ -195,6 +195,9 @@ export function SolarPreview() {
               // chồng lên canvas.
               showLabels: false,
               realScale: false,
+              showMoons: false,
+              showDwarfs: false,
+              showEcliptic: false,
             }}
             selectedId={null}
             onSelect={() => {}}
