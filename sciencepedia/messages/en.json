@@ -23,7 +23,8 @@
     "universe": "3D Universe",
     "models": "3D models",
     "zoom": "Zoom journey",
-    "spaceMap": "Sky map"
+    "spaceMap": "Sky map",
+    "earthLive": "Earth from L1"
   },
   "auth": {
     "login": "Sign in",
@@ -198,7 +199,6 @@
     "unitHours": "Earth hours",
     "unitYears": "Earth years",
     "millionKm": "million km",
-    "viewInZoom": "Zoom journey",
     "showMoons": "Moons",
     "showDwarfs": "Dwarf planets",
     "showEcliptic": "Ecliptic plane",
@@ -206,7 +206,8 @@
     "scaleRealNote": "True-scale mode compresses distance logarithmically so Neptune still fits in frame.",
     "scaleNeptune": "Neptune is pulled about {factor}× closer.",
     "dataSource": "Data source",
-    "options": "Display options"
+    "options": "Display options",
+    "viewInZoom": "Zoom journey"
   },
   "ai": {
     "title": "Science assistant",
@@ -504,11 +505,11 @@
         "metaB": "18 suggested targets"
       },
       "earthLive": {
-        "title": "Earth from satellites",
-        "body": "A NASA GIBS satellite imagery map: see the whole Earth, or zoom to a region to follow clouds and storms.",
-        "cta": "Open the map",
-        "metaA": "Refreshed every 10 minutes",
-        "metaB": "35 regions built in"
+        "title": "Earth from the L1 point",
+        "body": "Full-disk images of Earth captured from the L1 Lagrange point by NASA's DSCOVR spacecraft.",
+        "cta": "View live",
+        "metaA": "NASA EPIC imagery",
+        "metaB": "One full rotation a day"
       }
     },
     "eyebrow": "Explore • Models • Simulations",
@@ -516,5 +517,35 @@
       "start": "🚀 Start here",
       "highlight": "⭐ Featured"
     }
+  },
+  "earthLive": {
+    "title": "Earth from the L1 point",
+    "metaDescription": "Full-disk images of Earth from the EPIC camera aboard DSCOVR, taken at the L1 Lagrange point 1.5 million km away. NASA publishes them a few days after capture.",
+    "intro": "Every day a camera 1.5 million km away photographs Earth more than a dozen times. This is the most recent set NASA has released, replayed as one rotation. Processing and release take a few days, so the newest frame is usually two to four days old — the panel below gives the exact age of the one on screen.",
+    "howTitle": "Where these images come from",
+    "facts": {
+      "spacecraft": {
+        "term": "The DSCOVR spacecraft",
+        "detail": "Launched in 2015, it sits at the L1 Lagrange point, where Earth's gravity and the Sun's balance out, so it holds its place on the line between the two using almost no fuel. Its main job is space-weather warning: it sees the solar wind about an hour before Earth does."
+      },
+      "instrument": {
+        "term": "The EPIC camera",
+        "detail": "It shoots through ten filters from the ultraviolet to the near infrared, one frame each. Three of them — red, green and blue — combine into the natural-colour image you see here. The other seven measure ozone, aerosols and cloud height."
+      },
+      "cadence": {
+        "term": "Every few hours",
+        "detail": "EPIC runs a full filter cycle every one to two hours, so each day brings more than a dozen sets. The data still has to reach the ground and be processed, so the newest image usually lags a few hours behind the shutter — close enough to call it today, not close enough to call it live."
+      }
+    },
+    "dayTitle": "Why it is always daytime",
+    "dayBody": "Because DSCOVR always sits between Earth and the Sun. From there it can only see the lit half — not because the camera picks its moment, but because of the geometry of where it stands. That is also why the day–night terminator never appears in these images, unlike those from low-orbit satellites.",
+    "colourTitle": "Is this the real colour",
+    "colourBody": "Almost. The image combines three filters at 680 nm (red), 551 nm (green) and 443 nm (blue) — the same part of the spectrum the eye uses, but as three narrow bands rather than the full continuous range. The result is close to what a person at L1 would see, a little heavier on atmospheric blue.",
+    "limitTitle": "What these images cannot tell you",
+    "limitBody": "One hemisphere only, and always the one facing the Sun at the moment of capture. Over a day Earth turns beneath the lens so the continents pass through in turn — but midnight is never visible. Following a specific spot on the ground needs a polar-orbiting satellite, not DSCOVR.",
+    "nextHint": "Want to see where Earth sits among the things larger than it? The zoom journey runs from the observable universe down to here.",
+    "nextCta": "The zoom journey",
+    "credit": "Images: NASA EPIC / DSCOVR, public domain. Data fetched from api.nasa.gov, with epic.gsfc.nasa.gov as a fallback.",
+    "nextTitle": "Explore next"
   }
 }

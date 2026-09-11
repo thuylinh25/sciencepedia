@@ -98,16 +98,19 @@ const CARDS: ExploreCard[] = [
   {
     id: "earthLive",
     /*
-     * Trỏ thẳng tệp tĩnh, không trỏ route.
+     * Trỏ lại route `/earth-live` — trang ảnh EPIC/DSCOVR nhìn từ điểm L1.
      *
-     * Trang `/earth-live` (ảnh EPIC/DSCOVR từ điểm L1) đã bị gỡ. Công cụ
-     * còn lại là bản đồ ảnh vệ tinh NASA GIBS — thứ KHÁC hẳn: ảnh từ vệ
-     * tinh địa tĩnh và vệ tinh quỹ đạo cực, mười phút một lần thay vì mỗi
-     * ngày một vòng. Nên chữ trên thẻ cũng đã viết lại theo đúng thứ nó
-     * dẫn tới; giữ nguyên chữ cũ là hứa một đằng đưa một nẻo.
+     * Trang này từng bị gỡ một lượt, và trong quãng đó thẻ trỏ sang tệp tĩnh
+     * `/tools/earth-live.html` (bản đồ ảnh vệ tinh NASA GIBS). Nay trang L1
+     * quay lại và công cụ GIBS đã xoá hẳn, nên thẻ trỏ về route như ban đầu
+     * và KHÔNG còn cần cờ `external`.
+     *
+     * Hai thứ đó khác nhau thật chứ không phải hai bản của cùng một công cụ:
+     * L1 cho toàn đĩa Trái Đất mỗi ngày một vòng, GIBS cho tile phóng to
+     * được mười phút một lần. Ai muốn lắp lại GIBS thì lắp thành thẻ RIÊNG,
+     * đừng đổi đích của thẻ này — chữ trên thẻ nói về DSCOVR.
      */
-    href: "/tools/earth-live.html",
-    external: true,
+    href: "/earth-live",
     image: "/images/explore/earth-live.jpg",
     emoji: "🌍",
     accent: "#34d399",
@@ -179,22 +182,28 @@ export async function InteractiveExplore() {
   const t = await getTranslations("explore");
 
   return (
-    /* `mt-10` chứ không `section-gap`.
+    /* `mt-4` chứ không `section-gap`.
 
        Đây là khối ĐẦU TIÊN sau hero, và hero đã tự có đệm dưới. Cộng thêm
        một khoảng cách mục tiêu chuẩn nữa thì hai khoảng trống chồng lên
-       nhau, và dải trống giữa hàng thẻ cuối hero với tiêu đề mục này rộng
+       nhau, và dải trống giữa hàng chip lĩnh vực với tiêu đề mục này rộng
        hơn hẳn mọi khoảng cách khác trên trang — đúng chỗ cần liền mạch nhất,
-       vì hàng thẻ kia cố ý bị mép màn hình cắt dở để mời cuộn xuống.
+       vì hàng chip kia cố ý bị mép màn hình cắt dở để mời cuộn xuống.
+
+       Từ 10 xuống 4 là lượt thu hẹp thứ hai. Lượt này không đứng một mình:
+       phần lớn dải trống không nằm ở đây mà nằm TRONG hero — thiên hà cột
+       phải cao hơn cột chữ nên `items-center` để lại quãng trống dưới hàng
+       chip. Xem ghi chú `lg:-mb-16` ở `hero.tsx`. Ai muốn nới lại chỗ này
+       thì phải đo cả hai chỗ, sửa một mình `mt` không đổi được gì nhiều.
 
        Các mục sau vẫn dùng `section-gap`; chỉ mục đứng ngay dưới hero là
        ngoại lệ. */
-    <section className="container-page mt-10">
+    <section className="container-page mt-4">
       <div className="max-w-3xl">
         {/* Nhãn phân loại trên tiêu đề: ba từ nói ngay đây là loại nội dung
             KHÁC với danh sách bài viết bên dưới. Cỡ chữ nhỏ và giãn ký tự rộng
             để nó đọc ra như một nhãn chứ không như một dòng chữ bị lạc. */}
-        <p className="mb-3 text-xs font-medium tracking-[0.18em] text-primary-strong/80 uppercase">
+        <p className="mb-2 text-xs font-medium tracking-[0.18em] text-primary-strong/80 uppercase">
           {t("eyebrow")}
         </p>
         <h2 className="font-display text-3xl font-bold tracking-tight sm:text-4xl">
