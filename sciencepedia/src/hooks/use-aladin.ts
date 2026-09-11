@@ -214,7 +214,18 @@ export function useAladin({
           // lên giữa quả cầu hành tinh thì nó chỉ là vệt bẩn giữa màn hình.
           showReticle: !view.planetary,
           showZoomControl: true,
-          showFullscreenControl: true,
+          /*
+           * Tắt nút toàn màn hình của Aladin.
+           *
+           * Thư viện ảnh đã mở thẳng ở chế độ toàn màn hình ngay khi bấm vào
+           * bìa, nên cái nút này chỉ còn một việc: thoát ra khung nhỏ trong
+           * thẻ — trạng thái không ai muốn tới, vì đã bấm để xem to thì không
+           * bấm tiếp để xem nhỏ. Đường quay lại là breadcrumb.
+           *
+           * Nó cũng là nút duy nhất trong khung do Aladin tự vẽ, nên nó không
+           * theo kiểu dáng của các nút còn lại và luôn lệch một nhịp.
+           */
+          showFullscreenControl: false,
           showLayersControl: false,
           showGotoControl: false,
           showShareControl: false,

@@ -71,10 +71,26 @@ export function PlanetSurface({
         // không phải một điểm trên thiên cầu.
         ra: 0,
         dec: 0,
-        // Quả cầu chiếm khoảng 91 độ trong khung. Ở chế độ thiên thể đây là
-        // bề CAO (xem `fovForFrame`), nên 110 để lại một vành lề quanh nó và
-        // giữ nguyên như vậy khi bấm toàn màn hình.
-        fovDeg: 110,
+        /*
+         * 180 độ, không phải 110.
+         *
+         * Ở chế độ thiên thể, mặt cầu nhìn từ ngoài trải đúng 180 độ trong
+         * phép chiếu — nên fov nhỏ hơn 180 là cắt bớt quả cầu, và cắt đúng
+         * hai cực vì đó là chỗ xa tâm nhất theo chiều dọc.
+         *
+         * Giá trị cũ là 110 với lập luận "chừa một vành lề". Lập luận đó dựa
+         * trên con số 91 độ, vốn là bề rộng biểu kiến của một hành tinh nhìn
+         * từ xa trên NỀN TRỜI — không phải bề rộng của chính mặt cầu khi
+         * Aladin trải nó ra. Nó chạy đúng một thời gian chỉ vì `fovForFrame`
+         * nhân fov với tỉ lệ khung, và lúc mount thì khung `aspect-square`
+         * chưa có chiều cao cuối nên tỉ lệ đo được đủ rộng để kết quả bị chặn
+         * về 180. Từ khi mở thẳng ở chế độ toàn màn hình, phép đo rơi vào
+         * khung đã vuông, ra đúng 110, và quả cầu khuyết trên khuyết dưới.
+         *
+         * Aladin chặn cứng fov ở 180 trong phép chiếu cầu, nên đặt 180 là
+         * vừa khít chứ không tràn.
+         */
+        fovDeg: 180,
         survey: surface.hipsUrl,
         planetary: true,
       }}
