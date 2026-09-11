@@ -329,21 +329,36 @@ export const PLANETS: Planet[] = [
     descriptionEn:
       "Its red colour comes from surface iron oxide. It hosts Olympus Mons, the tallest volcano in the Solar System.",
     photo: {
-      url: `${TEXTURE_BASE}/5/58/Mars_23_aug_2003_hubble.jpg/960px-Mars_23_aug_2003_hubble.jpg`,
+      url: "/images/mars-viking-mdim21.jpg",
       captionVi:
-        "Kính Hubble chụp cuối tháng 8/2003, quanh kỳ xung đối mà Sao Hoả tới gần Trái Đất nhất trong gần 60 000 năm.",
+        "Ghép ảnh màu từ các tàu quỹ đạo Viking, bản MDIM 2.1 của USGS ở 232 m mỗi điểm ảnh. Chỏm băng bắc nằm ở phía trên; vệt sẫm chạy ngang là vùng Syrtis Major. Bấm vào để xoay chính bản đồ này.",
       captionEn:
-        "Hubble, late August 2003, around the opposition that brought Mars closer to Earth than at any time in nearly 60,000 years.",
-      credit: "NASA, ESA và Hubble Heritage Team (STScI/AURA)",
-      sourceUrl: `${COMMONS_FILE}Mars_23_aug_2003_hubble.jpg`,
+        "Colour mosaic from the Viking orbiters — the USGS MDIM 2.1 basemap at 232 m per pixel. The north polar cap sits at the top; the dark streak across the middle is Syrtis Major. Click to rotate this very map.",
+      credit: "USGS Astrogeology / NASA (Viking)",
+      sourceUrl:
+        "https://astrogeology.usgs.gov/search/map/mars_viking_mdim21_clrmosaic_global_232m",
     },
+    /**
+     * Viking MDIM 2.1 chứ không phải bản ghép HRSC của Mars Express.
+     *
+     * Bản Mars Express phủ kín theo metadata — `moc_sky_fraction` bằng 1 —
+     * nhưng chính các ô tile chứa vùng chưa chụp, và chúng là màu đen. Trên
+     * quả cầu, nó hiện thành hàng chục vệt đen dọc cắt ngang bề mặt, trông
+     * đúng như bản đồ bị hỏng. Không có cách nào phát hiện kiểu hỏng này qua
+     * metadata: MOC chỉ biết có tile hay không, không biết trong tile có dữ
+     * liệu hay không.
+     *
+     * MDIM 2.1 cũ hơn và thô hơn (232 m so với 12,5 m chỗ tốt nhất của HRSC)
+     * nhưng liền mạch toàn cầu. Một bản đồ thấp phân giải mà kín thì đọc được;
+     * một bản đồ sắc nét mà thủng lỗ chỗ thì không.
+     */
     surface: {
-      hipsUrl: `${SURFACE_BASE}/CDS_P_Mars_Express286545`,
+      hipsUrl: `${SURFACE_BASE}/Mars_Viking_MDIM21`,
       captionVi:
-        "Ghép ảnh camera stereo độ phân giải cao của tàu Mars Express.",
+        "Ghép ảnh màu toàn cầu từ các tàu quỹ đạo Viking — chính là tấm ảnh trên thẻ, giờ xoay và phóng to được.",
       captionEn:
-        "Mosaic from the High Resolution Stereo Camera aboard Mars Express.",
-      credit: "ESA/DLR/FU Berlin (G. Neukum)",
+        "Global colour mosaic from the Viking orbiters — the same image shown on the card, now free to rotate and zoom.",
+      credit: "USGS Astrogeology / NASA",
     },
   },
   {
