@@ -366,7 +366,11 @@
     "mly": "million light-years",
     "scaleSlider": "Field of view",
     "fitsInView": "At this scale you are seeing:",
-    "tourHint": "To fly from Earth out to the cosmic web, see the Zoom journey."
+    "tourHint": "To fly from Earth out to the cosmic web, see the Zoom journey.",
+    "scientificMode": "Scientific mode",
+    "legendFilament": "Matter filament",
+    "legendVoid": "Void boundary",
+    "webIntro": "On the largest scales the universe is not laid out at random. Hundreds of billions of galaxies gather along vast filaments of matter — the cosmic web — separated by enormous voids that hold almost no galaxies at all."
   },
   "models": {
     "title": "3D models",

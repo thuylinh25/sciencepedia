@@ -8,6 +8,8 @@ import { ArrowRight, Loader2, Pause, Play, RotateCcw } from "lucide-react";
 
 import {
   COSMIC_LANDMARKS,
+  DISTANCE_UNITS,
+  formatDistance,
   NODE_TIERS,
   SCALE_STEPS,
   UNIVERSE_FACTS,
@@ -17,6 +19,7 @@ import { cn } from "@/lib/utils";
 import { Link } from "@/i18n/navigation";
 import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
+import type { DistanceUnit } from "@/lib/universe-data";
 import { Label } from "@/components/ui/label";
 import type { UniverseSettings } from "@/components/universe/universe-scene";
 
@@ -75,11 +78,13 @@ export function Universe() {
     playing: true,
     speed: 1,
     showFilaments: true,
+    scientific: false,
     showScales: false,
     showLabels: true,
     distance: SCALE_STEPS[4].distance,
   });
   const [scaleIndex, setScaleIndex] = useState(4);
+  const [unit, setUnit] = useState<DistanceUnit>("mly");
   const [selectedId, setSelectedId] = useState<string | null>(null);
 
   const selected =
@@ -149,6 +154,21 @@ export function Universe() {
                 </span>
               </li>
             ))}
+
+            {/* Sợi không phải một hạng nút nên không nằm trong NODE_TIERS,
+                nhưng nó chiếm phần lớn diện tích hình — thiếu nó thì chú giải
+                giải thích được các chấm mà không giải thích được cái nền. */}
+            <li className="flex items-center gap-2">
+              <span className="h-1.5 w-3 shrink-0 rounded-full bg-gradient-to-r from-[#41527d] to-[#8fa6e8]" />
+              <span className="text-white/75">{t("legendFilament")}</span>
+            </li>
+
+            {settings.scientific && (
+              <li className="flex items-center gap-2">
+                <span className="size-2 shrink-0 rounded-full border border-slate-400/70" />
+                <span className="text-white/75">{t("legendVoid")}</span>
+              </li>
+            )}
           </ul>
         </div>
 
@@ -170,7 +190,7 @@ export function Universe() {
             </div>
             {selected.distanceMly > 0 && (
               <p className="mt-1 font-mono text-xs text-white/60">
-                {selected.distanceMly.toLocaleString(locale)} {t("mly")}
+                {formatDistance(selected.distanceMly, unit, locale)}
               </p>
             )}
             <p className="mt-2 text-sm leading-relaxed text-white/75">
@@ -230,6 +250,19 @@ export function Universe() {
             {t("showFilaments")}
           </Label>
         </div>
+        <div className="flex items-center gap-2">
+          <Switch
+            id="universe-scientific"
+            checked={settings.scientific}
+            onCheckedChange={(value) => update("scientific", value)}
+          />
+          <Label
+            htmlFor="universe-scientific"
+            className="text-xs text-muted-foreground"
+          >
+            {t("scientificMode")}
+          </Label>
+        </div>
 
         <div className="flex items-center gap-2">
           <Switch
@@ -280,9 +313,31 @@ export function Universe() {
           >
             {t("scaleSlider")}
           </label>
-          <span className="font-mono text-sm font-medium">
-            {SCALE_STEPS[scaleIndex].mly.toLocaleString(locale)} {t("mly")}
-          </span>
+          <div className="flex items-center gap-2">
+            <span className="font-mono text-sm font-medium">
+              {formatDistance(SCALE_STEPS[scaleIndex].mly, unit, locale)}
+            </span>
+
+            {/* Đổi đơn vị ngay cạnh con số chứ không giấu trong cài đặt: đây
+                là thứ người đọc muốn đổi đúng lúc đang nhìn con số đó. */}
+            <div className="flex items-center gap-0.5 rounded-full border bg-muted/40 p-0.5">
+              {(Object.keys(DISTANCE_UNITS) as DistanceUnit[]).map((key) => (
+                <button
+                  key={key}
+                  type="button"
+                  onClick={() => setUnit(key)}
+                  className={cn(
+                    "rounded-full px-2 py-0.5 font-mono text-[11px] transition-colors",
+                    unit === key
+                      ? "bg-background text-foreground shadow-sm"
+                      : "text-muted-foreground hover:text-foreground",
+                  )}
+                >
+                  {DISTANCE_UNITS[key].suffix}
+                </button>
+              ))}
+            </div>
+          </div>
         </div>
 
         <input
@@ -320,6 +375,13 @@ export function Universe() {
               ? SCALE_STEPS[scaleIndex].structureEn
               : SCALE_STEPS[scaleIndex].structure}
           </span>
+        </p>
+
+        {/* Điều mô hình này muốn nói, viết thành câu. Một người chỉ nhìn
+            hình sẽ thấy "đẹp" chứ chưa chắc thấy "không ngẫu nhiên", mà
+            không ngẫu nhiên mới là phát hiện. */}
+        <p className="mt-4 max-w-3xl text-sm leading-relaxed text-muted-foreground">
+          {t("webIntro")}
         </p>
 
         {/* Chế độ du hành không dựng lại ở đây: /zoom đã có sẵn hành trình bốn

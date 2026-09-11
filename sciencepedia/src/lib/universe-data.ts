@@ -13,6 +13,39 @@
 
 export const MLY_PER_UNIT = 40;
 
+/**
+ * Ba đơn vị người đọc có thể chọn cho mọi khoảng cách trên trang.
+ *
+ * Triệu năm ánh sáng là đơn vị dễ hình dung nhất nhưng đến quy mô mạng vũ trụ
+ * thì con số dài lê thê; tỉ năm ánh sáng gọn hơn nhưng ở cấp Cụm địa phương
+ * lại thành 0,005. Megaparsec là đơn vị các bài báo thiên văn thật sự dùng,
+ * nên ai đối chiếu với nguồn sẽ cần tới nó. Không đơn vị nào đúng ở cả ba
+ * quy mô, nên để người đọc chọn.
+ *
+ * 1 parsec = 3,26156 năm ánh sáng.
+ */
+export const DISTANCE_UNITS = {
+  mly: { suffix: "Mly", perMly: 1, decimals: 0 },
+  gly: { suffix: "Gly", perMly: 1 / 1_000, decimals: 3 },
+  mpc: { suffix: "Mpc", perMly: 1 / 3.26156, decimals: 1 },
+} as const;
+
+export type DistanceUnit = keyof typeof DISTANCE_UNITS;
+
+/** Đổi một khoảng cách tính bằng triệu năm ánh sáng sang đơn vị đang chọn. */
+export function formatDistance(
+  mly: number,
+  unit: DistanceUnit,
+  locale: string,
+): string {
+  const { suffix, perMly, decimals } = DISTANCE_UNITS[unit];
+  const value = mly * perMly;
+  return `${value.toLocaleString(locale, {
+    minimumFractionDigits: value === 0 ? 0 : decimals,
+    maximumFractionDigits: decimals,
+  })} ${suffix}`;
+}
+
 /** Nửa cạnh của khối lập phương chứa mô hình. */
 export const BOX_HALF = 12;
 

@@ -366,7 +366,11 @@
     "mly": "triệu năm ánh sáng",
     "scaleSlider": "Tầm nhìn",
     "fitsInView": "Ở tầm này vừa khung là:",
-    "tourHint": "Muốn bay từ Trái Đất ra tới mạng vũ trụ, xem Hành trình thu phóng."
+    "tourHint": "Muốn bay từ Trái Đất ra tới mạng vũ trụ, xem Hành trình thu phóng.",
+    "scientificMode": "Chế độ khoa học",
+    "legendFilament": "Sợi vật chất",
+    "legendVoid": "Ranh giới khoảng rỗng",
+    "webIntro": "Vũ trụ ở quy mô lớn không phân bố ngẫu nhiên. Hàng trăm tỉ thiên hà tập trung dọc theo các sợi vật chất khổng lồ tạo thành mạng vũ trụ (cosmic web), xen giữa là những khoảng trống rộng lớn gần như không chứa thiên hà."
   },
   "models": {
     "title": "Mô hình 3D",

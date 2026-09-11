@@ -62,6 +62,7 @@ function LevelScene({
             playing: true,
             speed: 1,
             showFilaments: true,
+            scientific: false,
             showScales: false,
             showLabels: false,
             distance: 26,

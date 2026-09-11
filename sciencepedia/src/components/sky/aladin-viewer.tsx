@@ -116,10 +116,18 @@ export function AladinViewer({
 
   useEffect(() => {
     if (!openOnEventId) return;
+    /*
+     * Một sự kiện làm hai việc: mở thẻ đích và ĐÓNG mọi thẻ còn lại.
+     *
+     * Thiếu vế thứ hai thì thẻ đích có mở cũng vô ích — thẻ đang xem vẫn giữ
+     * lớp toàn màn hình phủ kín cửa sổ, và người bấm chỉ thấy đúng cái ảnh cũ
+     * nên kết luận là nút hỏng. Gộp vào một sự kiện thay vì phát thêm một sự
+     * kiện đóng-tất-cả riêng: hai sự kiện thì phải bảo đảm thứ tự giữa chúng,
+     * còn một thì không có thứ tự nào để sai.
+     */
     const open = (event: Event) => {
-      if ((event as CustomEvent<string>).detail === openOnEventId) {
-        setClicked(true);
-      }
+      const target = (event as CustomEvent<string>).detail;
+      setClicked(target === openOnEventId);
     };
     window.addEventListener(OPEN_BODY_EVENT, open);
     return () => window.removeEventListener(OPEN_BODY_EVENT, open);

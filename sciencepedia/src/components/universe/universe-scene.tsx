@@ -5,11 +5,10 @@ import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { Html, OrbitControls } from "@react-three/drei";
 import * as THREE from "three";
 
+import { buildCosmicWeb, voidDiameterMly } from "@/lib/cosmic-web";
+
 import {
-  BOX_HALF,
   COSMIC_LANDMARKS,
-  FILAMENT_MAX_DISTANCE,
-  NODE_COUNT,
   NODE_TIERS,
   UNIVERSE_SCALES,
   landmarkPosition,
@@ -18,16 +17,17 @@ import {
 export type UniverseSettings = {
   playing: boolean;
   speed: number;
+  /** Lớp sương dựng nên thân các sợi vật chất */
   showFilaments: boolean;
+  /**
+   * Chế độ khoa học: khoanh các khoảng rỗng lớn và ghi đường kính của chúng.
+   */
+  scientific: boolean;
   showScales: boolean;
   showLabels: boolean;
   /** Khoảng cách camera, do thanh tỉ lệ điều khiển */
   distance: number;
 };
-
-function gaussian(): number {
-  return (Math.random() + Math.random() + Math.random() - 1.5) / 1.5;
-}
 
 /** Sprite tròn mềm — xem chú thích cùng tên ở galaxy-scene.tsx */
 function useStarSprite(): THREE.Texture {
@@ -112,144 +112,46 @@ function useReticleSprite(): THREE.Texture {
   }, []);
 }
 
-type Node = { position: THREE.Vector3; weight: number };
+/**
+ * Sprite cho hạt sương của sợi vật chất.
+ *
+ * Khác hẳn sprite sao: không có lõi đặc, chỉ là một vệt mờ tắt dần đều từ tâm
+ * ra mép. Một hạt đứng riêng gần như vô hình; thân sợi hiện ra từ chỗ hàng
+ * trăm hạt chồng lên nhau. Đó là điều làm nó ra thể tích chứ không ra chấm.
+ */
+function useFogSprite(): THREE.Texture {
+  return useMemo(() => {
+    const size = 64;
+    const canvas = document.createElement("canvas");
+    canvas.width = size;
+    canvas.height = size;
+
+    const ctx = canvas.getContext("2d");
+    if (ctx) {
+      const half = size / 2;
+      const gradient = ctx.createRadialGradient(half, half, 0, half, half, half);
+      gradient.addColorStop(0, "rgba(255,255,255,0.55)");
+      gradient.addColorStop(0.45, "rgba(255,255,255,0.18)");
+      gradient.addColorStop(0.75, "rgba(255,255,255,0.05)");
+      gradient.addColorStop(1, "rgba(255,255,255,0)");
+      ctx.fillStyle = gradient;
+      ctx.fillRect(0, 0, size, size);
+    }
+
+    const texture = new THREE.CanvasTexture(canvas);
+    texture.colorSpace = THREE.SRGBColorSpace;
+    return texture;
+  }, []);
+}
 
 /**
- * Mạng vũ trụ.
+ * Mạng vũ trụ. Toàn bộ phần dựng hình nằm ở `@/lib/cosmic-web`.
  *
- * Cách dựng: gieo các nút đám thiên hà, nối những nút đủ gần nhau thành sợi,
- * rồi rắc thiên hà dọc theo các sợi đó với nhiễu ngang nhỏ. Khoảng trống giữa
- * các sợi tự hình thành — đó chính là các void, và chúng chiếm phần lớn thể
- * tích vũ trụ.
- *
- * Đây là mô hình hình thái, không phải mô phỏng N-body: nó tái tạo dáng của
- * cấu trúc chứ không tính lực hấp dẫn giữa các khối vật chất tối.
+ * Tách ra khỏi component vì nó là hình học thuần tuý, không đụng gì tới React
+ * — và vì nó đủ dài để che khuất phần còn lại của file này nếu để lẫn vào.
  */
 function useCosmicWeb() {
-  return useMemo(() => {
-    // 1. Gieo nút, dồn nhẹ về tâm để rìa khối không bị cắt cụt lộ liễu
-    const nodes: Node[] = [];
-    for (let i = 0; i < NODE_COUNT; i += 1) {
-      const r = Math.pow(Math.random(), 0.75) * BOX_HALF;
-      const theta = Math.random() * Math.PI * 2;
-      const phi = Math.acos(2 * Math.random() - 1);
-      nodes.push({
-        position: new THREE.Vector3(
-          r * Math.sin(phi) * Math.cos(theta),
-          r * Math.cos(phi),
-          r * Math.sin(phi) * Math.sin(theta),
-        ),
-        weight: 0.35 + Math.pow(Math.random(), 2.2) * 1.9,
-      });
-    }
-
-    // 2. Nối các nút đủ gần nhau, mỗi nút giới hạn số sợi để không thành lưới đặc
-    const edges: [Node, Node][] = [];
-    const degree = new Array(nodes.length).fill(0);
-    for (let i = 0; i < nodes.length; i += 1) {
-      for (let j = i + 1; j < nodes.length; j += 1) {
-        if (degree[i] >= 4 || degree[j] >= 4) continue;
-        const distance = nodes[i].position.distanceTo(nodes[j].position);
-        if (distance > FILAMENT_MAX_DISTANCE) continue;
-        // sợi càng dài càng ít khả năng tồn tại
-        if (Math.random() > 1 - distance / FILAMENT_MAX_DISTANCE) continue;
-        edges.push([nodes[i], nodes[j]]);
-        degree[i] += 1;
-        degree[j] += 1;
-      }
-    }
-
-    // 3. Rắc thiên hà: phần lớn nằm dọc sợi, phần còn lại tụ quanh nút
-    const positions: number[] = [];
-    const colors: number[] = [];
-    const scratch = new THREE.Color();
-    const supercluster = new THREE.Color(NODE_TIERS.supercluster.color);
-    const cluster = new THREE.Color(NODE_TIERS.cluster.color);
-    const galaxy = new THREE.Color(NODE_TIERS.galaxy.color);
-
-    /**
-     * `density` quyết định hạng: thiên hà lẻ nằm dọc sợi và trong void, cụm ở
-     * quanh nút vừa, siêu cụm ở những nút nặng nhất. Ba màu tách bạch để mắt
-     * đọc được cấu trúc thay vì thấy một mớ chấm giống nhau.
-     */
-    const push = (point: THREE.Vector3, density: number) => {
-      positions.push(point.x, point.y, point.z);
-      if (density > 0.85) scratch.copy(supercluster);
-      else if (density > 0.55) scratch.copy(cluster);
-      else scratch.copy(galaxy);
-      const dim = 0.45 + Math.random() * 0.5;
-      colors.push(scratch.r * dim, scratch.g * dim, scratch.b * dim);
-    };
-
-    for (const [a, b] of edges) {
-      const count = Math.round(a.position.distanceTo(b.position) * 26);
-      for (let k = 0; k < count; k += 1) {
-        const t = Math.random();
-        const point = a.position.clone().lerp(b.position, t);
-        // thắt lại ở giữa sợi, phình ra ở hai đầu nút
-        const thickness = 0.1 + 0.32 * Math.abs(t - 0.5);
-        point.x += gaussian() * thickness;
-        point.y += gaussian() * thickness;
-        point.z += gaussian() * thickness;
-        push(point, 0.35 + (1 - Math.abs(t - 0.5) * 2) * 0.15);
-      }
-    }
-
-    for (const node of nodes) {
-      const count = Math.round(node.weight * 130);
-      for (let k = 0; k < count; k += 1) {
-        const point = node.position.clone();
-        const spread = node.weight * 0.34;
-        point.x += gaussian() * spread;
-        point.y += gaussian() * spread;
-        point.z += gaussian() * spread;
-        push(point, 0.75 + Math.random() * 0.3);
-      }
-    }
-
-    // 4. Vài thiên hà lẻ trong void — void rỗng chứ không tuyệt đối trống
-    for (let i = 0; i < 1800; i += 1) {
-      const point = new THREE.Vector3(
-        (Math.random() * 2 - 1) * BOX_HALF,
-        (Math.random() * 2 - 1) * BOX_HALF,
-        (Math.random() * 2 - 1) * BOX_HALF,
-      );
-      if (point.length() > BOX_HALF) continue;
-      push(point, 0.05);
-    }
-
-    const geometry = new THREE.BufferGeometry();
-    geometry.setAttribute(
-      "position",
-      new THREE.Float32BufferAttribute(positions, 3),
-    );
-    geometry.setAttribute("color", new THREE.Float32BufferAttribute(colors, 3));
-
-    // Đường sợi mảnh nối các nút, bật/tắt được
-    const linePoints: THREE.Vector3[] = [];
-    for (const [a, b] of edges) linePoints.push(a.position, b.position);
-    const lineGeometry = new THREE.BufferGeometry().setFromPoints(linePoints);
-
-    // Nút sáng cho các đám lớn nhất
-    const clusterPositions: number[] = [];
-    for (const node of nodes) {
-      if (node.weight < 1.5) continue;
-      clusterPositions.push(node.position.x, node.position.y, node.position.z);
-    }
-    const clusterGeometry = new THREE.BufferGeometry();
-    clusterGeometry.setAttribute(
-      "position",
-      new THREE.Float32BufferAttribute(clusterPositions, 3),
-    );
-
-    return {
-      geometry,
-      lineGeometry,
-      clusterGeometry,
-      galaxyCount: positions.length / 3,
-      filamentCount: edges.length,
-    };
-  }, []);
+  return useMemo(() => buildCosmicWeb(), []);
 }
 
 /* ────────────────────────── Giãn nhãn, dùng chung ──────────────────────────
@@ -619,7 +521,8 @@ function Web({
 }) {
   const group = useRef<THREE.Group>(null);
   const sprite = useStarSprite();
-  const { geometry, lineGeometry, clusterGeometry } = useCosmicWeb();
+  const fogSprite = useFogSprite();
+  const web = useCosmicWeb();
 
   // Một lượt giãn nhãn cho CẢ mốc lẫn vỏ tỉ lệ. Phải nằm ở đây chứ không nằm
   // trong hai component con: hai lượt riêng thì không lượt nào biết lượt kia
@@ -634,7 +537,32 @@ function Web({
 
   return (
     <group ref={group}>
-      <points geometry={geometry}>
+      {/* ---------------------------------------------- Thân các sợi vật chất
+          Lớp này KHÔNG phải đường nối. Trước đây chỗ này là `lineSegments`
+          nối tâm hai nút, và một đường kẻ sáng giữa hai chấm thì người xem
+          đọc ra là tuyến đường — là quan hệ giữa hai vật thể. Filament không
+          phải đường nối mà là vật chất: một dải khí và vật chất tối dày hàng
+          chục triệu năm ánh sáng, thiên hà nằm TRONG nó chứ không ở hai đầu.
+
+          Nên nó được dựng bằng hàng nghìn hạt mờ chồng lấn. Mỗi hạt một mình
+          gần như vô hình; hình chỉ hiện ra ở chỗ chúng chồng nhau, đúng cách
+          các mô phỏng N-body được dựng ảnh. */}
+      {settings.showFilaments && (
+        <points geometry={web.filamentFog}>
+          <pointsMaterial
+            map={fogSprite}
+            size={0.42}
+            sizeAttenuation
+            vertexColors
+            transparent
+            opacity={0.26}
+            depthWrite={false}
+            blending={THREE.AdditiveBlending}
+          />
+        </points>
+      )}
+
+      <points geometry={web.galaxies}>
         <pointsMaterial
           map={sprite}
           size={0.075}
@@ -647,29 +575,21 @@ function Web({
         />
       </points>
 
-      <points geometry={clusterGeometry}>
+      <points geometry={web.nodes}>
         <pointsMaterial
           map={sprite}
           size={0.5}
           sizeAttenuation
-          color="#ffd9a8"
+          vertexColors
           transparent
-          opacity={0.55}
+          opacity={0.6}
           depthWrite={false}
           blending={THREE.AdditiveBlending}
         />
       </points>
 
-      {settings.showFilaments && (
-        <lineSegments geometry={lineGeometry}>
-          <lineBasicMaterial
-            color="#5b7cff"
-            transparent
-            opacity={0.07}
-            depthWrite={false}
-            blending={THREE.AdditiveBlending}
-          />
-        </lineSegments>
+      {settings.scientific && (
+        <Voids voids={web.voids} showLabels={settings.showLabels} />
       )}
 
       {settings.showScales && (
@@ -687,6 +607,60 @@ function Web({
         locale={locale}
         onSelect={onSelect}
       />
+    </group>
+  );
+}
+
+/**
+ * Khoanh các khoảng rỗng lớn — chỉ ở chế độ khoa học.
+ *
+ * Void là thứ khó thấy nhất trong mạng vũ trụ, vì mắt đọc chỗ SÁNG chứ không
+ * đọc chỗ tối: người xem thấy sợi và nút, rồi kết luận phần còn lại là nền.
+ * Nhưng phần còn lại mới chiếm gần hết thể tích, và đó là điều đáng nói nhất
+ * về cấu trúc lớn.
+ *
+ * Vẽ bằng lưới cầu thưa thay vì mặt cầu trong suốt: mặt trong suốt cộng dồn
+ * qua nhiều lớp sẽ thành một khối sữa che mất chính các sợi, còn lưới thì để
+ * lộ mọi thứ bên trong nó.
+ */
+function Voids({
+  voids,
+  showLabels,
+}: {
+  voids: import("@/lib/cosmic-web").CosmicVoid[];
+  showLabels: boolean;
+}) {
+  return (
+    <group>
+      {voids.map((cosmicVoid, index) => (
+        <group
+          key={index}
+          position={[
+            cosmicVoid.centre.x,
+            cosmicVoid.centre.y,
+            cosmicVoid.centre.z,
+          ]}
+        >
+          <mesh>
+            <sphereGeometry args={[cosmicVoid.radius, 14, 10]} />
+            <meshBasicMaterial
+              color="#64748b"
+              wireframe
+              transparent
+              opacity={0.13}
+              depthWrite={false}
+            />
+          </mesh>
+
+          {showLabels && (
+            <Html center distanceFactor={SHELL_FACTOR} zIndexRange={[8, 0]}>
+              <span className="rounded-full bg-slate-900/70 px-2 py-0.5 font-mono text-[10px] whitespace-nowrap text-slate-300 backdrop-blur">
+                {voidDiameterMly(cosmicVoid).toLocaleString()} Mly
+              </span>
+            </Html>
+          )}
+        </group>
+      ))}
     </group>
   );
 }

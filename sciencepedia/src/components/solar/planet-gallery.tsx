@@ -70,7 +70,6 @@ export async function PlanetGallery() {
   const jumpTargets = BODIES.map((body) => ({
     id: body.id,
     name: isEnglish ? body.nameEn : body.name,
-    hasSurface: body.surface !== null,
   }));
 
   return (

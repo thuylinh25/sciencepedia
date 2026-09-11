@@ -7,8 +7,6 @@ import { BODY_SYMBOL, OPEN_BODY_EVENT } from "@/lib/solar-data";
 export type JumpTarget = {
   id: string;
   name: string;
-  /** Thiên thể có bản đồ bề mặt thì bấm là mở thẳng, không thì chỉ cuộn tới */
-  hasSurface: boolean;
 };
 
 /**
@@ -29,11 +27,8 @@ export type JumpTarget = {
  */
 export function BodyJumpList({
   targets,
-  onLeave,
 }: {
   targets: JumpTarget[];
-  /** Đóng khung đang mở trước khi nhảy sang thiên thể khác */
-  onLeave?: () => void;
 }) {
   const t = useTranslations("solar");
 
@@ -51,22 +46,28 @@ export function BodyJumpList({
             <button
               type="button"
               onClick={() => {
-                onLeave?.();
+                /*
+                 * Phát sự kiện cho MỌI thiên thể, kể cả thiên thể không có
+                 * bản đồ. Thẻ nào trùng id thì mở, mọi thẻ còn lại đóng —
+                 * xem chú thích ở `AladinViewer`. Với thiên thể không có
+                 * bản đồ thì không thẻ nào mở, và tác dụng duy nhất là đóng
+                 * khung đang che kín màn hình, đúng cái cần.
+                 */
+                window.dispatchEvent(
+                  new CustomEvent(OPEN_BODY_EVENT, { detail: target.id }),
+                );
 
                 /*
-                 * Cuộn trước, mở sau. Aladin đo kích thước khung lúc khởi tạo;
-                 * khung còn nằm ngoài màn hình thì phép đo đó vẫn đúng, nhưng
-                 * người bấm sẽ không thấy gì xảy ra và tưởng nút hỏng.
+                 * Cuộn ở khung hình SAU. Khung toàn màn hình vừa nhận lệnh
+                 * đóng nhưng React chưa vẽ lại, nên lúc này nó vẫn đang phủ
+                 * kín cửa sổ và cuộn tới một phần tử nằm dưới nó thì trình
+                 * duyệt không có gì để cuộn.
                  */
-                document
-                  .getElementById(`body-${target.id}`)
-                  ?.scrollIntoView({ behavior: "smooth", block: "center" });
-
-                if (target.hasSurface) {
-                  window.dispatchEvent(
-                    new CustomEvent(OPEN_BODY_EVENT, { detail: target.id }),
-                  );
-                }
+                requestAnimationFrame(() => {
+                  document
+                    .getElementById(`body-${target.id}`)
+                    ?.scrollIntoView({ behavior: "smooth", block: "center" });
+                });
               }}
               className="inline-flex items-center gap-1.5 rounded-full border border-white/15 bg-white/5 px-2.5 py-1 text-xs text-white/80 transition-colors hover:bg-white/15 hover:text-white"
             >
