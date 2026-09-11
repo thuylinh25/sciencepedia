@@ -10,7 +10,8 @@ import {
   type BodyPhoto,
   type BodySurface,
 } from "@/lib/solar-data";
-import { formatNumber } from "@/lib/utils";
+import { cn, formatNumber } from "@/lib/utils";
+import { filterPublishedSlugs } from "@/server/queries";
 import { PlanetSurface } from "@/components/solar/planet-surface";
 
 /**
@@ -56,6 +57,15 @@ export async function PlanetGallery() {
   const locale = (await getLocale()) as Locale;
   const isEnglish = locale === "en";
 
+  /*
+   * Slug trong `solar-data.ts` là hằng số viết tay, không phải khoá ngoại.
+   * Bài nào chưa xuất bản thì trang bài trả 404, nên link phải tự biến mất
+   * thay vì dẫn người đọc vào ngõ cụt. Một truy vấn cho cả chín thẻ.
+   */
+  const published = await filterPublishedSlugs(
+    BODIES.map((body) => body.articleSlug),
+  );
+
   return (
     <section className="pt-10">
       <h2 className="font-display text-2xl font-bold tracking-tight">
@@ -83,6 +93,83 @@ export async function PlanetGallery() {
           const displayName = isEnglish ? body.nameEn : body.name;
           const secondaryName = isEnglish ? null : body.nameEn;
 
+          /*
+           * Dựng một lần, dùng hai chỗ: dưới ảnh trong thẻ, và trong lớp phủ
+           * khi người xem bấm toàn màn hình. Ở toàn màn hình nền luôn là đen
+           * nên chữ phải sáng, còn trong thẻ thì theo chủ đề của trang — đó
+           * là toàn bộ khác biệt giữa hai lần gọi.
+           */
+          const info = (dark: boolean) => (
+            <>
+              <div className="flex items-baseline justify-between gap-3">
+                <h3 className="font-display font-semibold">{displayName}</h3>
+                {secondaryName && (
+                  <span
+                    className={cn(
+                      "shrink-0 text-xs",
+                      dark ? "text-white/50" : "text-muted-foreground",
+                    )}
+                  >
+                    {secondaryName}
+                  </span>
+                )}
+              </div>
+
+              <dl
+                className={cn(
+                  "mt-2 flex flex-wrap gap-x-4 gap-y-1 font-mono text-xs",
+                  dark ? "text-white/60" : "text-muted-foreground",
+                )}
+              >
+                <div className="flex gap-1.5">
+                  <dt>{t("diameter")}</dt>
+                  <dd>{formatNumber(body.realRadiusKm * 2, locale)} km</dd>
+                </div>
+                {body.realDistanceKm !== undefined && (
+                  <div className="flex gap-1.5">
+                    <dt>{t("distance")}</dt>
+                    <dd>{formatNumber(body.realDistanceKm, locale)} km</dd>
+                  </div>
+                )}
+                {body.moons !== undefined && (
+                  <div className="flex gap-1.5">
+                    <dt>{t("moons")}</dt>
+                    <dd>{body.moons}</dd>
+                  </div>
+                )}
+              </dl>
+
+              <p
+                className={cn(
+                  "mt-3 text-sm leading-relaxed",
+                  dark ? "text-white/80" : "text-muted-foreground",
+                )}
+              >
+                {description}
+              </p>
+
+              {/* Chú thích ảnh là nội dung bắt buộc, không phải trang trí:
+                  ảnh Mặt Trời và bề mặt Sao Thuỷ, Sao Kim đều là màu quy
+                  ước, và người đọc không có cách nào tự nhận ra. */}
+              <p
+                className={cn(
+                  "mt-3 text-xs leading-relaxed",
+                  dark ? "text-white/55" : "text-muted-foreground/80",
+                )}
+              >
+                {caption}{" "}
+                <a
+                  href={body.photo.sourceUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="underline underline-offset-2"
+                >
+                  {body.photo.credit}
+                </a>
+              </p>
+            </>
+          );
+
           return (
             <li
               key={body.id}
@@ -94,6 +181,7 @@ export async function PlanetGallery() {
                   photo={body.photo}
                   surface={body.surface}
                   caption={t("surfacePrompt", { body: displayName })}
+                  info={info(true)}
                   sizes={IMAGE_SIZES}
                 />
               ) : (
@@ -109,60 +197,18 @@ export async function PlanetGallery() {
               )}
 
               <div className="flex flex-1 flex-col p-4">
-                <div className="flex items-baseline justify-between gap-3">
-                  <h3 className="font-display font-semibold">{displayName}</h3>
-                  {secondaryName && (
-                    <span className="shrink-0 text-xs text-muted-foreground">
-                      {secondaryName}
-                    </span>
-                  )}
-                </div>
+                {info(false)}
 
-                <dl className="mt-2 flex flex-wrap gap-x-4 gap-y-1 font-mono text-xs text-muted-foreground">
-                  <div className="flex gap-1.5">
-                    <dt>{t("diameter")}</dt>
-                    <dd>{formatNumber(body.realRadiusKm * 2, locale)} km</dd>
-                  </div>
-                  {body.realDistanceKm !== undefined && (
-                    <div className="flex gap-1.5">
-                      <dt>{t("distance")}</dt>
-                      <dd>{formatNumber(body.realDistanceKm, locale)} km</dd>
-                    </div>
-                  )}
-                  {body.moons !== undefined && (
-                    <div className="flex gap-1.5">
-                      <dt>{t("moons")}</dt>
-                      <dd>{body.moons}</dd>
-                    </div>
-                  )}
-                </dl>
-
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                  {description}
-                </p>
-
-                {/* Chú thích ảnh là nội dung bắt buộc, không phải trang trí:
-                    ảnh Mặt Trời và bề mặt Sao Thuỷ, Sao Kim đều là màu quy
-                    ước, và người đọc không có cách nào tự nhận ra. */}
-                <p className="mt-3 text-xs leading-relaxed text-muted-foreground/80">
-                  {caption}{" "}
-                  <a
-                    href={body.photo.sourceUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="underline underline-offset-2"
+                {/* Bài chưa xuất bản thì không có link: xem `filterPublishedSlugs` */}
+                {published.has(body.articleSlug) && (
+                  <Link
+                    href={`/articles/${body.articleSlug}`}
+                    className="mt-4 inline-flex items-center gap-1 text-sm text-primary-strong underline underline-offset-4"
                   >
-                    {body.photo.credit}
-                  </a>
-                </p>
-
-                <Link
-                  href={`/articles/${body.articleSlug}`}
-                  className="mt-4 inline-flex items-center gap-1 text-sm text-primary-strong underline underline-offset-4"
-                >
-                  {t("readMore")}
-                  <ArrowUpRight className="size-3.5" aria-hidden />
-                </Link>
+                    {t("readMore")}
+                    <ArrowUpRight className="size-3.5" aria-hidden />
+                  </Link>
+                )}
               </div>
             </li>
           );

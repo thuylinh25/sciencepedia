@@ -55,6 +55,8 @@ export type AladinViewerProps = {
   posterBackground?: ReactNode;
   /** Chú thích trên tấm bìa mặc định */
   posterCaption?: string;
+  /** Xem chú thích cùng tên ở `AladinCanvas` — chỉ hiện khi toàn màn hình */
+  fullscreenInfo?: ReactNode;
   className?: string;
 };
 
@@ -80,6 +82,7 @@ export function AladinViewer({
   poster,
   posterBackground,
   posterCaption,
+  fullscreenInfo,
   className,
 }: AladinViewerProps) {
   const t = useTranslations("sky");
@@ -120,6 +123,7 @@ export function AladinViewer({
         <AladinCanvas
           view={view}
           label={label}
+          fullscreenInfo={fullscreenInfo}
           // Chỉ cho đóng khi chính người đọc đã bấm để mở. Khung tự nạp theo
           // tầm nhìn (trang bản đồ) thì đóng nó chỉ để nó mở lại ngay.
           onClose={clicked ? () => setClicked(false) : undefined}
@@ -154,7 +158,6 @@ export function AladinViewer({
                   <Telescope className="size-4" />
                   {t("open")}
                 </Button>
-                <p className="mt-3 text-xs text-white/40">{t("weight")}</p>
               </div>
             </div>
           )}

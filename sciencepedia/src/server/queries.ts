@@ -590,6 +590,31 @@ export async function getRandomPublishedSlug(): Promise<string | null> {
 }
 
 /**
+ * Lọc ra những slug đã xuất bản trong một danh sách cho trước.
+ *
+ * Dùng cho các khối có link tới bài viết ĐƯỢC VIẾT CỨNG trong code — thư viện
+ * ảnh Hệ Mặt Trời là chỗ đầu tiên. Ở đó slug đến từ `solar-data.ts` chứ không
+ * từ cơ sở dữ liệu, nên không có gì bảo đảm bài tương ứng đã tồn tại và đã
+ * xuất bản: trang bài chỉ nhận `status: PUBLISHED`, và một bài còn ở bản nháp
+ * sẽ cho ra 404 ngay giữa một trang đang chạy tốt.
+ *
+ * `cache` của React chứ không phải `unstable_cache`: dữ liệu này đổi mỗi lần
+ * xuất bản một bài, và trang gọi nó đã có `revalidate` riêng rồi.
+ */
+export const filterPublishedSlugs = cache(
+  async (slugs: string[]): Promise<Set<string>> => {
+    if (slugs.length === 0) return new Set();
+
+    const rows = await prisma.article.findMany({
+      where: { ...PUBLISHED, slug: { in: slugs } },
+      select: { slug: true },
+    });
+
+    return new Set(rows.map((row) => row.slug));
+  },
+);
+
+/**
  * Múi giờ dùng để cắt ngày. Vercel chạy UTC, nên nếu không ghim múi giờ thì
  * "bài hôm nay" sẽ đổi lúc 7 giờ sáng giờ Việt Nam.
  */

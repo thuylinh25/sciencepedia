@@ -1,5 +1,7 @@
 "use client";
 
+import type { ReactNode } from "react";
+
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 
@@ -32,6 +34,7 @@ export function PlanetSurface({
   photo,
   surface,
   caption,
+  info,
   priority,
   sizes,
 }: {
@@ -41,6 +44,15 @@ export function PlanetSurface({
   surface: BodySurface;
   /** Chú thích trên tấm bìa, ngay trên nút mở */
   caption: string;
+  /**
+   * Khối thông tin để hiện khi người xem bấm toàn màn hình.
+   *
+   * Dựng sẵn ở `PlanetGallery` — một Server Component — rồi truyền xuống đây
+   * dưới dạng JSX. Nhờ vậy phần chữ trong thẻ và phần chữ trong toàn màn hình
+   * đến từ đúng một chỗ, và không phải kéo next-intl vào lớp client này chỉ để
+   * dịch lại đúng những nhãn vừa dịch xong ở trên.
+   */
+  info?: ReactNode;
   priority?: boolean;
   sizes: string;
 }) {
@@ -62,6 +74,7 @@ export function PlanetSurface({
       }}
       label={t("surfaceLabel", { body: name })}
       activation="click"
+      fullscreenInfo={info}
       posterCaption={caption}
       posterBackground={
         <Image

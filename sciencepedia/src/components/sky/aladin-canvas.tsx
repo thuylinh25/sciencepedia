@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, type ReactNode } from "react";
 import { useTranslations } from "next-intl";
 import { AlertTriangle, ArrowLeft, Loader2, RotateCcw } from "lucide-react";
 
@@ -20,6 +20,7 @@ export function AladinCanvas({
   view,
   label,
   onClose,
+  fullscreenInfo,
 }: {
   view: SkyView;
   /** Nhãn cho trình đọc màn hình — canvas WebGL tự nó không mô tả được gì */
@@ -29,6 +30,14 @@ export function AladinCanvas({
    * một cú bấm — người đã tự mở thì phải tự đóng được.
    */
   onClose?: () => void;
+  /**
+   * Thông tin về thiên thể, chỉ hiện khi ở TOÀN MÀN HÌNH.
+   *
+   * Trong thẻ thì đã có sẵn tên, số đo và mô tả ngay dưới khung, nên vẽ lại
+   * là thừa. Toàn màn hình thì khung `position: fixed` phủ kín cửa sổ và
+   * nuốt hết phần chữ đó — người xem còn lại một quả cầu không tên.
+   */
+  fullscreenInfo?: ReactNode;
 }) {
   const t = useTranslations("sky");
   const { containerRef, status, isFullscreen, goTo, retry } = useAladin({
@@ -70,16 +79,30 @@ export function AladinCanvas({
         <button
           type="button"
           onClick={onClose}
+          /* Chỉ còn mũi tên, không còn chữ: tấm bìa vừa biến mất ngay
+             dưới con trỏ người vừa bấm, nên không ai cần đọc chữ mới hiểu nút
+             này trả về đâu. Nhãn vẫn còn cho trình đọc màn hình, nơi không có
+             bối cảnh thị giác đó. */
+          aria-label={t("backToList")}
+          title={t("backToList")}
           className={cn(
-            "inline-flex items-center gap-1.5 rounded-full bg-black/65 px-3 py-1.5 text-xs font-medium text-white backdrop-blur-sm transition-colors hover:bg-black/85",
+            "inline-flex items-center justify-center rounded-full bg-black/65 p-2 text-white backdrop-blur-sm transition-colors hover:bg-black/85",
             isFullscreen
               ? "fixed top-4 left-4 z-[70]"
               : "absolute top-2 left-2 z-10",
           )}
         >
-          <ArrowLeft className="size-3.5" aria-hidden />
-          {t("backToList")}
+          <ArrowLeft className="size-4" aria-hidden />
         </button>
+      )}
+
+      {/* Ghim vào mép trái cửa sổ, không vào khung: ở chế độ bề mặt thiên thể
+          khung bị CSS ép về hình vuông giữa màn hình (xem `.aladin-body-view`),
+          nên mép trái của nó không phải mép trái của cái người xem đang nhìn. */}
+      {fullscreenInfo && isFullscreen && status === "ready" && (
+        <div className="fixed top-16 left-4 z-[70] max-h-[calc(100dvh-6rem)] w-[min(22rem,calc(100vw-2rem))] overflow-y-auto rounded-2xl border border-white/10 bg-black/70 p-4 text-white backdrop-blur-xl">
+          {fullscreenInfo}
+        </div>
       )}
 
       {status === "loading" && (
