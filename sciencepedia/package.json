@@ -39,7 +39,8 @@
     "check:covers": "tsx --env-file-if-exists=.env scripts/check-covers.ts",
     "covers:replace": "tsx --env-file-if-exists=.env scripts/replace-dead-covers.ts",
     "covers:bodies": "tsx scripts/build-body-covers.ts",
-    "fix:s1-gut": "tsx --env-file-if-exists=.env scripts/fix-s1-gut.ts"
+    "fix:s1-gut": "tsx --env-file-if-exists=.env scripts/fix-s1-gut.ts",
+    "fix:s2s3": "tsx --env-file-if-exists=.env scripts/fix-s2s3-batch1.ts"
   },
   "prisma": {
     "seed": "tsx --env-file-if-exists=.env prisma/seed.ts"

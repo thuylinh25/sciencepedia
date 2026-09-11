@@ -6,7 +6,7 @@ That sounds like a lot, but against the roughly **6,375 km** from the surface to
 
 ## How do we know what is inside the Earth?
 
-When an earthquake happens, seismic waves travel through the planet.
+When an earthquake happens, [seismic waves](/articles/song-truyen-nang-luong-nhu-the-nao) travel through the planet.
 
 - **P waves** travel through both solids and fluids.
 - **S waves** travel only through solids.
@@ -50,10 +50,10 @@ The pressure at that depth raises the melting point of iron above the temperatur
 
 ## What creates Earth's magnetic field?
 
-Nearly all of Earth's magnetic field originates in the **fluid outer core**, where currents of molten iron and nickel convect continuously.
+Nearly all of [Earth's magnetic field](/articles/tu-truong-va-luc-hap-dan-hai-luc-vo-hinh-hai-co-che-khac-nhau) originates in the **fluid outer core**, where currents of molten iron and nickel convect continuously.
 
-As the Earth rotates, these flows of electrically conducting metal generate enormous electrical currents, which in turn produce the magnetic field surrounding the planet. This mechanism is known as the **geodynamo**.
+As [the Earth rotates](/articles/neu-trai-dat-dang-quay-vi-sao-chung-ta-khong-cam-nhan-duoc), these flows of electrically conducting metal generate enormous electrical currents, which in turn produce the magnetic field surrounding the planet. This mechanism is known as the **geodynamo**.
 
-That field creates the magnetosphere, which NASA describes as shielding the planet from harmful solar and cosmic particle radiation.
+That field creates the [magnetosphere](/articles/cuc-quang-anh-sang-do-chinh-khi-quyen-trai-dat-phat-ra), which NASA describes as shielding the planet from harmful solar and cosmic particle radiation.
 
 🌍 Even without reaching it directly, scientists have built a fairly detailed picture of the Earth's interior. Every earthquake not only shakes the surface but also helps reveal the secrets lying thousands of kilometres beneath our feet.

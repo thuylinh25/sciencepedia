@@ -6,7 +6,7 @@ Nghe có vẻ lớn, nhưng so với chừng **6.375 km** từ mặt đất xu�
 
 ## Làm sao biết được bên trong Trái Đất có gì?
 
-Khi động đất xảy ra, các sóng địa chấn lan truyền qua lòng đất.
+Khi động đất xảy ra, các [sóng địa chấn](/articles/song-truyen-nang-luong-nhu-the-nao) lan truyền qua lòng đất.
 
 - **Sóng P** truyền được qua chất rắn và chất lưu.
 - **Sóng S** chỉ truyền được qua chất rắn.
@@ -50,10 +50,10 @@ Nhiệt độ ở ranh giới lõi trong chỉ được *kỳ vọng* gần đi�
 
 ## Điều gì tạo ra từ trường Trái Đất?
 
-Gần như toàn bộ từ trường Trái Đất sinh ra trong **lõi ngoài lỏng** — nơi các dòng sắt và niken nóng chảy liên tục đối lưu.
+Gần như toàn bộ [từ trường Trái Đất](/articles/tu-truong-va-luc-hap-dan-hai-luc-vo-hinh-hai-co-che-khac-nhau) sinh ra trong **lõi ngoài lỏng** — nơi các dòng sắt và niken nóng chảy liên tục đối lưu.
 
-Khi Trái Đất quay, các dòng kim loại dẫn điện này tạo ra những dòng điện khổng lồ, sinh ra từ trường bao quanh hành tinh. Cơ chế này được gọi là **geodynamo**.
+Khi [Trái Đất quay](/articles/neu-trai-dat-dang-quay-vi-sao-chung-ta-khong-cam-nhan-duoc), các dòng kim loại dẫn điện này tạo ra những dòng điện khổng lồ, sinh ra từ trường bao quanh hành tinh. Cơ chế này được gọi là **geodynamo**.
 
-Chính từ trường ấy tạo nên vùng từ quyển mà NASA mô tả là lớp che chắn hành tinh khỏi bức xạ có hại từ không gian.
+Chính từ trường ấy tạo nên vùng [từ quyển](/articles/cuc-quang-anh-sang-do-chinh-khi-quyen-trai-dat-phat-ra) mà NASA mô tả là lớp che chắn hành tinh khỏi bức xạ có hại từ không gian.
 
 🌍 Dù chưa thể tiếp cận trực tiếp, các nhà khoa học đã dựng nên bức tranh khá chi tiết về cấu trúc bên trong Trái Đất. Mỗi trận động đất không chỉ làm rung chuyển bề mặt mà còn giúp hé lộ những bí mật đang nằm sâu hàng nghìn kilomet dưới chân chúng ta.

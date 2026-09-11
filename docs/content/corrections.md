@@ -152,3 +152,35 @@ Kèm trong cùng lượt: số nơron hệ thần kinh ruột (400–600 triệu
 Lỗi lặp nhiều nhất trong chín bài là **con số đúng gắn vào kết luận sai**: tốc độ kỷ lục của Parker Solar Probe quy thành thời gian bay tới Proxima (tàu ở quỹ đạo đóng, không bao giờ rời Hệ Mặt Trời); biên độ nhiệt vỏ trạm ISS gán cho thân người; "95% serotonin" ở trên. Cả ba đều qua được phép kiểm số học và phép kiểm link — **chỉ đọc nguồn mới bắt được**, đúng như mục Pollack 1996 đã ghi.
 
 Ba trong chín bài **không có phần kết** — một bài cụt hẳn giữa mục. Đó là dấu hiệu một lượt sinh bài bị cắt ngang chứ không phải lựa chọn biên tập, nên 32 bài PENDING còn lại đáng nghi mang cùng khuyết tật.
+
+## 2026-09-11 (tiếp) — 19 câu sửa S2/S3 trên bảy bài, và một lỗi liên kết cả kho
+
+Áp nốt phán quyết của `science-editor` cho lô 9 bài không nguồn, sau khi hai lỗi S1 đã xử ở mục trên. Mọi câu thay thế là **nguyên văn của editor**, không diễn đạt lại.
+
+Mẫu lỗi chung, đáng nhớ hơn từng bài: **con số đúng gắn vào kết luận sai.**
+
+- `neu-roi-he-mat-troi-proxima-centauri` — tốc độ kỷ lục 192 km/s của Parker Solar Probe quy thành "6.700 năm tới Proxima", xếp cùng bảng với Voyager 1 và New Horizons. Số học đúng; suy luận sai: PSP ở **quỹ đạo đóng** quanh Mặt Trời và không bao giờ rời Hệ Mặt Trời. Cùng họ với lỗi Pollack 1996.
+- `dieu-gi-se-xay-ra-neu-con-nguoi-ra-ngoai-vu-tru` — biên độ nhiệt +120°C/−150°C là của **vỏ tàu vũ trụ**, bị gán cho thân người. Cơ thể mất nhiệt do nước bay hơi, nên da thấy hơi mát.
+- "95% serotonin" ở mục trên.
+
+Cả ba đều qua được phép kiểm số học **và** phép kiểm link. Chỉ đọc nguồn mới bắt được.
+
+Hai phán quyết khác đáng ghi:
+
+**`neu-trai-dat-dang-quay`** — con số "1,2%" sinh ra từ việc nhân bốn lần con số **đã làm tròn của chính bài** (0,3% × 4); giá trị thật là 1,38%. Cùng họ với lỗi làm tròn chồng làm tròn đã ghi ở đợt Sao Mộc. Bài cũng bị **cụt**: mở mục "nếu quay nhanh gấp đôi" rồi dừng sau một gạch đầu dòng, không có phần kết. Theo khuyến nghị của editor, đã **cắt hẳn mục đó** và viết phần kết — câu hỏi ở tiêu đề đã được trả lời trọn vẹn trước khi mục ấy bắt đầu, nên cắt rẻ và an toàn hơn viết nốt.
+
+**`bi-mat-dang-sau-cam-giac-hut-hang`** — gán gia tốc thẳng cho **ống bán khuyên**. Ống bán khuyên cảm nhận gia tốc **góc**; gia tốc thẳng là việc của **cơ quan sỏi tai** (soan nang và cầu nang). Toàn bộ tình huống bài mô tả — xe tăng tốc, phanh gấp — là gia tốc thẳng.
+
+### Liên kết nội bộ trỏ tới slug đã đổi
+
+Ba bài đã xuất bản (`trai-dat-hanh-tinh-duy-nhat-ta-biet-co-su-song`, `su-song-tren-trai-dat-4-ti-nam-trong-mot-dong-thoi-gian`, `dai-tuyet-chung-permi-lan-su-song-suyt-bien-mat`) vẫn trỏ tới `/articles/hanh-trinh-vao-tam-trai-dat` — slug đã đổi từ 2026-09-10. Đã đổi cả ba sang slug hiện hành.
+
+**Vì sao đáng sửa dù đã có 301.** Người đọc vẫn tới đúng chỗ, nên lỗi này vô hình trên giao diện. Nhưng `check-publish` đếm liên kết vào theo **chuỗi slug**, nên bài đích bị tính là 0 link vào và bị chặn gate; và liên kết nội bộ đi qua redirect là chi phí SEO không có lý do gì phải trả.
+
+**Bài học cho lượt đổi slug sau:** đổi slug là **ba** việc, không phải hai. Đổi cột `slug`, thêm 301, **và viết lại mọi liên kết nội bộ đang trỏ tới slug cũ**. Việc thứ ba từng bị bỏ sót và chỉ lộ ra khi gate xuất bản kêu.
+
+### Trạng thái sau lượt này
+
+`cau-truc-ben-trong-trai-dat` **qua gate xuất bản** (1/1), sau khi thêm bốn liên kết nội bộ bọc quanh cụm từ đã có sẵn — không đổi một chữ nào của bản vừa qua gate accuracy hai vòng.
+
+Chín bài trong lô vẫn để `factCheck = PENDING`: chưa bài nào có Source gắn vào CSDL. 32 bài PENDING còn lại chưa rà.
