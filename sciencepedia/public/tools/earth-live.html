@@ -1,0 +1,961 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Trái Đất thời gian thực — Sciencepedia</title>
+    <meta
+      name="description"
+      content="Ảnh vệ tinh Trái Đất gần thời gian thực từ NASA GIBS: GOES-East, GOES-West, Himawari và VIIRS."
+    />
+
+    <!--
+      Leaflet 1.9.4 từ unpkg. Chọn Leaflet chứ không phải OpenLayers hay Cesium:
+
+      · Leaflet nén gzip khoảng 42 KB và không cần bước build nào. OpenLayers
+        gấp khoảng năm lần và phần lớn khối lượng đó là những thứ trang này
+        không dùng: chiếu bản đồ tuỳ ý, vector tiles, chỉnh sửa hình học.
+      · GIBS phát tile theo WMTS RESTful, tức là một mẫu URL có {z}/{y}/{x}.
+        Với dạng đó thì `L.tileLayer` dùng thẳng được; không cần lớp WMTS
+        chuyên dụng của OpenLayers.
+      · Cesium là quả cầu 3D: khoảng 3 MB script cộng một thư mục tài nguyên
+        phải tự phục vụ, và một số tính năng đòi token ion. Đổi lại chỉ là góc
+        nhìn cầu — trong khi ảnh vệ tinh khí tượng vốn được đọc trên bản đồ
+        phẳng.
+    -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <link rel="preconnect" href="https://gibs.earthdata.nasa.gov" crossorigin />
+
+    <style>
+      :root {
+        --bg: #04060e;
+        --panel: rgba(15, 23, 42, 0.85);
+        --line: rgba(255, 255, 255, 0.08);
+        --text: #e8edf7;
+        --muted: rgba(232, 237, 247, 0.55);
+        --accent: #38bdf8;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        height: 100%;
+        background: var(--bg);
+        color: var(--text);
+        font: 14px/1.5 ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+          Roboto, sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      #map {
+        position: absolute;
+        inset: 0;
+        background: var(--bg);
+      }
+
+      /* Leaflet vẽ nền ô chưa tải bằng màu xám sáng. Giữa một giao diện tối,
+         mỗi ô đang tải sẽ là một mảng sáng nhấp nháy. */
+      .leaflet-container {
+        background: var(--bg);
+      }
+
+      .panel {
+        position: absolute;
+        z-index: 1000;
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        box-shadow: 0 20px 60px -20px rgba(0, 0, 0, 0.8);
+      }
+
+      /* ------------------------------------------------- Bộ chọn lớp ảnh */
+      #layers {
+        top: 12px;
+        left: 12px;
+        padding: 10px;
+        max-width: min(290px, calc(100vw - 24px));
+        max-height: calc(100dvh - 24px);
+        overflow-y: auto;
+      }
+
+      #layers h1 {
+        margin: 2px 6px 8px;
+        font-size: 13px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--muted);
+        font-weight: 600;
+      }
+
+      .group {
+        margin: 10px 6px 4px;
+        font-size: 11px;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: rgba(232, 237, 247, 0.38);
+      }
+
+      .layer-btn {
+        display: flex;
+        align-items: center;
+        gap: 9px;
+        width: 100%;
+        padding: 8px 10px;
+        margin-top: 3px;
+        border: 1px solid transparent;
+        border-radius: 11px;
+        background: transparent;
+        color: var(--text);
+        font: inherit;
+        text-align: left;
+        cursor: pointer;
+        transition: background 0.15s, border-color 0.15s;
+      }
+
+      .layer-btn:hover {
+        background: rgba(255, 255, 255, 0.07);
+      }
+
+      .layer-btn[aria-pressed="true"] {
+        background: rgba(56, 189, 248, 0.14);
+        border-color: rgba(56, 189, 248, 0.45);
+      }
+
+      .layer-btn:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 2px;
+      }
+
+      .layer-btn .emoji {
+        font-size: 16px;
+        line-height: 1;
+      }
+
+      .layer-btn .meta {
+        min-width: 0;
+      }
+
+      .layer-btn .name {
+        display: block;
+        font-weight: 500;
+      }
+
+      .layer-btn .where {
+        display: block;
+        font-size: 11px;
+        color: var(--muted);
+      }
+
+      /* ---------------------------------------------------- Bảng dữ liệu */
+      #info {
+        right: 12px;
+        bottom: 12px;
+        padding: 12px 14px;
+        max-width: min(310px, calc(100vw - 24px));
+      }
+
+      #info dl {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 3px 14px;
+        margin: 0;
+        font-size: 12px;
+      }
+
+      #info dt {
+        color: var(--muted);
+      }
+
+      #info dd {
+        margin: 0;
+        text-align: right;
+        font-variant-numeric: tabular-nums;
+        font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      }
+
+      #info .note {
+        margin: 9px 0 0;
+        font-size: 11px;
+        line-height: 1.45;
+        color: var(--muted);
+      }
+
+      /* ------------------------------------------------- Đồng hồ và toạ độ */
+      #clock {
+        top: 12px;
+        right: 12px;
+        padding: 8px 13px;
+        font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+        font-size: 13px;
+        font-variant-numeric: tabular-nums;
+      }
+
+      #cursor {
+        left: 50%;
+        bottom: 12px;
+        transform: translateX(-50%);
+        padding: 6px 12px;
+        font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+        font-size: 12px;
+        color: var(--muted);
+        white-space: nowrap;
+      }
+
+      /* Toạ độ con trỏ vô nghĩa trên thiết bị cảm ứng — ở đó không có con trỏ */
+      @media (hover: none) {
+        #cursor {
+          display: none;
+        }
+      }
+
+      #banner {
+        top: 12px;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 9px 14px;
+        font-size: 12px;
+        border-color: rgba(251, 191, 36, 0.35);
+        background: rgba(69, 26, 3, 0.9);
+        color: #fde68a;
+        display: none;
+      }
+
+      #banner[data-open="true"] {
+        display: block;
+      }
+
+      .leaflet-control-attribution {
+        background: rgba(15, 23, 42, 0.8) !important;
+        color: var(--muted) !important;
+        font-size: 10px !important;
+      }
+
+      .leaflet-control-attribution a {
+        color: var(--accent) !important;
+      }
+
+      .leaflet-bar a {
+        background: var(--panel) !important;
+        color: var(--text) !important;
+        border-color: var(--line) !important;
+      }
+
+      .leaflet-bar a:hover {
+        background: rgba(30, 41, 59, 0.95) !important;
+      }
+
+      .leaflet-control-scale-line {
+        background: rgba(15, 23, 42, 0.8) !important;
+        border-color: var(--line) !important;
+        color: var(--text) !important;
+      }
+
+      @media (max-width: 640px) {
+        #info {
+          left: 12px;
+          right: 12px;
+          max-width: none;
+        }
+        #clock {
+          font-size: 12px;
+          padding: 6px 10px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="map" role="application" aria-label="Bản đồ ảnh vệ tinh Trái Đất"></div>
+
+    <section class="panel" id="layers" aria-label="Chọn lớp ảnh vệ tinh">
+      <h1>Lớp ảnh vệ tinh</h1>
+      <div id="layer-buttons"></div>
+    </section>
+
+    <div class="panel" id="clock" aria-live="off">
+      <span id="utc">--:--:--</span> UTC
+    </div>
+
+    <section class="panel" id="info" aria-label="Thông tin dữ liệu">
+      <dl>
+        <dt>Nguồn</dt>
+        <dd id="info-source">NASA GIBS</dd>
+        <dt>Lớp</dt>
+        <dd id="info-layer">—</dd>
+        <dt>Thời điểm dữ liệu</dt>
+        <dd id="info-time">—</dd>
+        <dt>Cập nhật</dt>
+        <dd id="info-age">—</dd>
+      </dl>
+      <p class="note" id="info-note"></p>
+    </section>
+
+    <div class="panel" id="cursor">—</div>
+    <div class="panel" id="banner" role="status"></div>
+
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+
+    <script>
+      "use strict";
+
+      /* ==================================================================
+         1. DANH MỤC LỚP ẢNH
+
+         Mọi định danh, TileMatrixSet và định dạng dưới đây đọc thẳng từ
+         WMTSCapabilities của GIBS (epsg3857/best), không phải đoán. Sai một
+         trong ba thứ đó là ra đúng cái "ảnh trắng" mà trang này phải tránh.
+
+         Hai lớp trong yêu cầu ban đầu KHÔNG tồn tại trên GIBS và không được
+         thay bằng lớp khác rồi gắn nhãn của chúng:
+
+         · Day Cloud Phase Distinction
+         · Night Microphysics
+
+         GIBS chỉ phát sáu sản phẩm RGB cho GOES (GeoColor, Band 2 Red
+         Visible, Band 13 Clean IR, Air Mass, Dust, Fire Temperature) và ba
+         cho Himawari. Gắn nhãn "Cloud Phase" lên Air Mass là dán tên một
+         sản phẩm lên dữ liệu của sản phẩm khác — người đọc sẽ diễn giải màu
+         theo bảng tra sai. Air Mass vẫn có mặt, dưới đúng tên của nó.
+         ================================================================== */
+
+      var GIBS = "https://gibs.earthdata.nasa.gov/wmts/epsg3857/best";
+
+      var LAYERS = [
+        {
+          id: "goes-east-geocolor",
+          emoji: "🌍",
+          name: "GeoColor",
+          where: "GOES-East · châu Mỹ, Đại Tây Dương",
+          group: "Ảnh mỗi 10 phút",
+          layer: "GOES-East_ABI_GeoColor",
+          tms: "GoogleMapsCompatible_Level7",
+          ext: "png",
+          maxNativeZoom: 7,
+          cadence: "10min",
+          centre: [10, -60],
+          zoom: 3,
+          note: "Ảnh tổng hợp: ban ngày là màu gần thật, ban đêm chuyển sang hồng ngoại với ánh đèn thành phố. Vệ tinh đứng yên trên kinh tuyến 75°T nên chỉ thấy nửa Trái Đất quanh châu Mỹ.",
+        },
+        {
+          id: "goes-west-geocolor",
+          emoji: "🌏",
+          name: "GeoColor",
+          where: "GOES-West · Thái Bình Dương",
+          group: "Ảnh mỗi 10 phút",
+          layer: "GOES-West_ABI_GeoColor",
+          tms: "GoogleMapsCompatible_Level7",
+          ext: "png",
+          maxNativeZoom: 7,
+          cadence: "10min",
+          centre: [5, -140],
+          zoom: 3,
+          note: "Cùng sản phẩm GeoColor nhưng từ vệ tinh đứng trên kinh tuyến 137°T, phủ Thái Bình Dương và bờ tây nước Mỹ.",
+        },
+        {
+          id: "himawari-visible",
+          emoji: "🇻🇳",
+          name: "Ảnh nhìn thấy",
+          where: "Himawari · châu Á, Việt Nam",
+          group: "Ảnh mỗi 10 phút",
+          layer: "Himawari_AHI_Band3_Red_Visible_1km",
+          tms: "GoogleMapsCompatible_Level7",
+          ext: "png",
+          maxNativeZoom: 7,
+          cadence: "10min",
+          centre: [12, 110],
+          zoom: 4,
+          note: "Kênh đỏ 0,64 µm của vệ tinh Himawari, đứng trên kinh tuyến 140°Đ — đây là vệ tinh phủ Việt Nam. Ảnh nhìn thấy nên nửa đêm của Trái Đất sẽ tối đen, đó là dữ liệu đúng chứ không phải lỗi.",
+        },
+        {
+          id: "himawari-ir",
+          emoji: "🌙",
+          name: "Hồng ngoại",
+          where: "Himawari · châu Á, Việt Nam",
+          group: "Ảnh mỗi 10 phút",
+          layer: "Himawari_AHI_Band13_Clean_Infrared",
+          tms: "GoogleMapsCompatible_Level6",
+          ext: "png",
+          maxNativeZoom: 6,
+          cadence: "10min",
+          centre: [12, 110],
+          zoom: 4,
+          note: "Kênh 10,4 µm đo nhiệt độ đỉnh mây, nên nó nhìn được cả ban đêm. Càng trắng càng lạnh, tức đỉnh mây càng cao — đó là cách nhận ra vùng đối lưu mạnh và mắt bão.",
+        },
+        {
+          id: "goes-east-ir",
+          emoji: "🌙",
+          name: "Hồng ngoại",
+          where: "GOES-East · châu Mỹ",
+          group: "Ảnh mỗi 10 phút",
+          layer: "GOES-East_ABI_Band13_Clean_Infrared",
+          tms: "GoogleMapsCompatible_Level6",
+          ext: "png",
+          maxNativeZoom: 6,
+          cadence: "10min",
+          centre: [10, -60],
+          zoom: 3,
+          note: "Kênh 10,4 µm đo nhiệt độ đỉnh mây. Nhìn được cả ban đêm vì nó đo bức xạ nhiệt chứ không đo ánh sáng phản xạ.",
+        },
+        {
+          id: "himawari-airmass",
+          emoji: "🌀",
+          name: "Khối khí",
+          where: "Himawari · châu Á",
+          group: "Ảnh mỗi 10 phút",
+          layer: "Himawari_AHI_Air_Mass",
+          tms: "GoogleMapsCompatible_Level6",
+          ext: "png",
+          maxNativeZoom: 6,
+          cadence: "10min",
+          centre: [15, 115],
+          zoom: 4,
+          note: "Ảnh tổ hợp RGB từ các kênh hơi nước và ozone, tách các khối khí khác nhau bằng màu. Đây KHÔNG phải Day Cloud Phase — GIBS không phát sản phẩm đó, và bảng màu của hai thứ khác nhau hoàn toàn.",
+        },
+        {
+          id: "viirs-truecolor",
+          emoji: "☀️",
+          name: "Màu thật",
+          where: "VIIRS NOAA-20 · toàn cầu",
+          group: "Ảnh ghép mỗi ngày",
+          layer: "VIIRS_NOAA20_CorrectedReflectance_TrueColor",
+          tms: "GoogleMapsCompatible_Level9",
+          ext: "jpg",
+          maxNativeZoom: 9,
+          cadence: "daily",
+          centre: [16, 106],
+          zoom: 3,
+          note: "Vệ tinh quỹ đạo cực quét từng dải khi bay qua, và cả ngày mới ghép đủ một vòng Trái Đất. Đổi lại nó phủ toàn cầu và nét hơn nhiều so với vệ tinh địa tĩnh — nhưng mỗi điểm chỉ có một ảnh mỗi ngày, không phải mười phút một lần.",
+        },
+        {
+          id: "modis-truecolor",
+          emoji: "🛰️",
+          name: "Màu thật",
+          where: "MODIS Terra · toàn cầu",
+          group: "Ảnh ghép mỗi ngày",
+          layer: "MODIS_Terra_CorrectedReflectance_TrueColor",
+          tms: "GoogleMapsCompatible_Level9",
+          ext: "jpg",
+          maxNativeZoom: 9,
+          cadence: "daily",
+          centre: [16, 106],
+          zoom: 3,
+          note: "Cùng loại sản phẩm với VIIRS nhưng từ vệ tinh Terra, hoạt động từ năm 1999. Giữ lại để so hai nguồn độc lập trong cùng một ngày.",
+        },
+      ];
+
+      /* ==================================================================
+         2. THỜI GIAN
+
+         Đây là phần dễ hỏng nhất, và nó hỏng theo ba kiểu khác nhau:
+
+         · Lấy giờ máy người dùng thay vì UTC. Ở Việt Nam, 7 giờ sáng ngày mai
+           theo giờ địa phương vẫn là hôm nay theo UTC — hỏi GIBS ngày mai thì
+           không có dữ liệu nào cả.
+         · Lấy đúng phút hiện tại. GIBS cần thời gian xử lý; ảnh của phút này
+           chưa tồn tại, và tile trả về sẽ trong suốt.
+         · Làm tròn sai bước. Lớp mười phút chỉ nhận mốc chia hết cho 10 phút.
+
+         Cách xử lý: lùi lại một khoảng an toàn, làm tròn xuống theo đúng bước
+         của lớp, rồi THỬ một ô tile thật. Không được thì lùi thêm một bước và
+         thử lại. Nhờ vậy trang không phụ thuộc vào giả định về độ trễ của
+         NASA — nó đo độ trễ đó mỗi lần chạy.
+         ================================================================== */
+
+      /** Lùi bao nhiêu phút trước khi bắt đầu thử, với lớp 10 phút. */
+      var LAG_MINUTES = 25;
+
+      /** Số bước lùi tối đa khi dò. 12 bước × 10 phút = hai giờ. */
+      var MAX_STEPS = 12;
+
+      function pad(value) {
+        return String(value).padStart(2, "0");
+      }
+
+      /** Mốc 10 phút gần nhất tính tới thời điểm cho trước, theo UTC. */
+      function floorTenMinutes(date) {
+        var copy = new Date(date.getTime());
+        copy.setUTCSeconds(0, 0);
+        copy.setUTCMinutes(Math.floor(copy.getUTCMinutes() / 10) * 10);
+        return copy;
+      }
+
+      /** "YYYY-MM-DDTHH:MM:SSZ" — dạng GIBS nhận cho lớp dưới ngày. */
+      function isoInstant(date) {
+        return (
+          date.getUTCFullYear() +
+          "-" + pad(date.getUTCMonth() + 1) +
+          "-" + pad(date.getUTCDate()) +
+          "T" + pad(date.getUTCHours()) +
+          ":" + pad(date.getUTCMinutes()) +
+          ":00Z"
+        );
+      }
+
+      /** "YYYY-MM-DD" — dạng GIBS nhận cho lớp theo ngày. */
+      function isoDate(date) {
+        return (
+          date.getUTCFullYear() +
+          "-" + pad(date.getUTCMonth() + 1) +
+          "-" + pad(date.getUTCDate())
+        );
+      }
+
+      function tileUrl(spec, time, z, y, x) {
+        return (
+          GIBS + "/" + spec.layer + "/default/" + time + "/" + spec.tms +
+          "/" + z + "/" + y + "/" + x + "." + spec.ext
+        );
+      }
+
+      /**
+       * Một ô tile có dữ liệu thật hay không.
+       *
+       * Dùng `Image` chứ không `fetch`: GIBS không đặt CORS cho mọi đường, mà
+       * thẻ ảnh thì không cần CORS để biết tải được hay không. Ảnh lỗi gọi
+       * `onerror`, và đó chính là tín hiệu cần.
+       */
+      function tileExists(url) {
+        return new Promise(function (resolve) {
+          var image = new Image();
+          var settled = false;
+          var done = function (ok) {
+            if (settled) return;
+            settled = true;
+            resolve(ok);
+          };
+          image.onload = function () {
+            done(image.naturalWidth > 0);
+          };
+          image.onerror = function () {
+            done(false);
+          };
+          // Mạng chậm không được treo cả trang
+          setTimeout(function () {
+            done(false);
+          }, 6000);
+          image.src = url;
+        });
+      }
+
+      /**
+       * Tìm mốc thời gian mới nhất thật sự có dữ liệu cho một lớp.
+       *
+       * Ô dò lấy ở zoom 2, ngay trên tâm mặc định của lớp — phải là chỗ vệ
+       * tinh đó nhìn thấy. Dò một ô giữa Thái Bình Dương cho GOES-East thì ô
+       * nào cũng trống và vòng lặp sẽ chạy hết mà không tìm ra gì.
+       */
+      async function resolveTime(spec) {
+        var step = spec.cadence === "daily" ? 24 * 60 : 10;
+        var start =
+          spec.cadence === "daily"
+            ? new Date()
+            : floorTenMinutes(new Date(Date.now() - LAG_MINUTES * 60000));
+
+        var probe = probeTileCoords(spec);
+
+        for (var i = 0; i < MAX_STEPS; i += 1) {
+          var candidate = new Date(start.getTime() - i * step * 60000);
+          var time =
+            spec.cadence === "daily"
+              ? isoDate(candidate)
+              : isoInstant(floorTenMinutes(candidate));
+
+          var ok = await tileExists(
+            tileUrl(spec, time, probe.z, probe.y, probe.x),
+          );
+          if (ok) return { time: time, at: candidate, probed: true };
+        }
+
+        /*
+         * Không dò ra thì dùng từ khoá `default` của GIBS, nó tự trả bản mới
+         * nhất. Đánh đổi: ta không biết đó là lúc nào, nên bảng thông tin phải
+         * nói "không xác định" chứ không được đoán một con số.
+         */
+        return { time: "default", at: null, probed: false };
+      }
+
+      /** Ô tile dùng để dò, tính từ tâm mặc định của lớp ở zoom 2. */
+      function probeTileCoords(spec) {
+        var z = 2;
+        var n = Math.pow(2, z);
+        var lat = spec.centre[0];
+        var lng = spec.centre[1];
+        var x = Math.floor(((lng + 180) / 360) * n);
+        var latRad = (lat * Math.PI) / 180;
+        var y = Math.floor(
+          ((1 -
+            Math.log(Math.tan(latRad) + 1 / Math.cos(latRad)) / Math.PI) /
+            2) *
+            n,
+        );
+        return {
+          z: z,
+          x: Math.min(Math.max(x, 0), n - 1),
+          y: Math.min(Math.max(y, 0), n - 1),
+        };
+      }
+
+      /* ==================================================================
+         3. BẢN ĐỒ
+         ================================================================== */
+
+      var map = L.map("map", {
+        center: [12, 108],
+        zoom: 3,
+        minZoom: 1,
+        maxZoom: 9,
+        worldCopyJump: true,
+        zoomControl: true,
+        attributionControl: true,
+      });
+
+      L.control.scale({ imperial: false, position: "bottomleft" }).addTo(map);
+
+      /* -------------------------------------------------- Nút toàn màn hình */
+      var FullscreenControl = L.Control.extend({
+        options: { position: "topleft" },
+        onAdd: function () {
+          var container = L.DomUtil.create(
+            "div",
+            "leaflet-bar leaflet-control",
+          );
+          var link = L.DomUtil.create("a", "", container);
+          link.href = "#";
+          link.title = "Toàn màn hình";
+          link.setAttribute("role", "button");
+          link.setAttribute("aria-label", "Toàn màn hình");
+          link.innerHTML = "⤢";
+          link.style.fontSize = "17px";
+          link.style.lineHeight = "26px";
+
+          L.DomEvent.on(link, "click", function (event) {
+            L.DomEvent.stop(event);
+            if (document.fullscreenElement) {
+              document.exitFullscreen();
+            } else {
+              document.documentElement.requestFullscreen().catch(function () {
+                // Trình duyệt từ chối (thường do thiếu cử chỉ người dùng hợp
+                // lệ). Không có gì để sửa, và không đáng làm hỏng gì khác.
+              });
+            }
+          });
+
+          return container;
+        },
+      });
+      map.addControl(new FullscreenControl());
+
+      /* ==================================================================
+         4. LỚP ẢNH ĐANG HIỂN THỊ
+         ================================================================== */
+
+      var current = null; // { spec, layer, time, at, fetchedAt }
+      var tileErrors = 0;
+
+      var elements = {
+        buttons: document.getElementById("layer-buttons"),
+        source: document.getElementById("info-source"),
+        layer: document.getElementById("info-layer"),
+        time: document.getElementById("info-time"),
+        age: document.getElementById("info-age"),
+        note: document.getElementById("info-note"),
+        cursor: document.getElementById("cursor"),
+        utc: document.getElementById("utc"),
+        banner: document.getElementById("banner"),
+      };
+
+      function showBanner(message) {
+        elements.banner.textContent = message;
+        elements.banner.setAttribute("data-open", "true");
+      }
+
+      function hideBanner() {
+        elements.banner.setAttribute("data-open", "false");
+      }
+
+      function formatDataTime(result) {
+        if (!result.probed) return "không xác định";
+        if (result.time.length === 10) return result.time;
+        return result.time.replace("T", " ").replace(":00Z", " UTC");
+      }
+
+      async function selectLayer(spec, options) {
+        var keepView = options && options.keepView;
+
+        elements.time.textContent = "đang dò…";
+        hideBanner();
+
+        var result = await resolveTime(spec);
+
+        // Leaflet tự thay {z}/{y}/{x}; ở đây chỉ nối chuỗi nên chúng đi
+        // nguyên vẹn vào mẫu URL.
+        var url = tileUrl(spec, result.time, "{z}", "{y}", "{x}");
+
+        var layer = L.tileLayer(url, {
+          tileSize: 256,
+          minZoom: 1,
+          maxZoom: 9,
+          maxNativeZoom: spec.maxNativeZoom,
+          noWrap: false,
+          bounds: [
+            [-85.05, -180],
+            [85.05, 180],
+          ],
+          attribution:
+            'Ảnh: <a href="https://worldview.earthdata.nasa.gov/" target="_blank" rel="noreferrer">NASA GIBS</a> · ' +
+            spec.where,
+        });
+
+        tileErrors = 0;
+        layer.on("tileerror", function () {
+          tileErrors += 1;
+          /*
+           * Vài ô lỗi là bình thường: vệ tinh địa tĩnh không nhìn thấy nửa
+           * kia Trái Đất, nên ô ở đó không tồn tại. Chỉ báo khi số ô hỏng đủ
+           * nhiều để nghĩa là cả lớp không tải được.
+           */
+          if (tileErrors === 40) {
+            showBanner(
+              "Nhiều ô ảnh không tải được. Có thể máy chủ NASA đang bận — thử lớp khác hoặc đợi lượt làm mới sau.",
+            );
+          }
+        });
+
+        if (current && current.layer) map.removeLayer(current.layer);
+        layer.addTo(map);
+
+        current = {
+          spec: spec,
+          layer: layer,
+          time: result.time,
+          at: result.at,
+          fetchedAt: Date.now(),
+        };
+
+        if (!keepView) {
+          map.setView(spec.centre, spec.zoom, { animate: false });
+        }
+
+        elements.layer.textContent = spec.name + " — " + spec.where;
+        elements.time.textContent = formatDataTime(result);
+        elements.note.textContent = spec.note;
+        updateAge();
+        renderButtons();
+      }
+
+      function renderButtons() {
+        elements.buttons.innerHTML = "";
+        var lastGroup = null;
+
+        LAYERS.forEach(function (spec) {
+          if (spec.group !== lastGroup) {
+            lastGroup = spec.group;
+            var heading = document.createElement("div");
+            heading.className = "group";
+            heading.textContent = spec.group;
+            elements.buttons.appendChild(heading);
+          }
+
+          var button = document.createElement("button");
+          button.type = "button";
+          button.className = "layer-btn";
+          button.setAttribute(
+            "aria-pressed",
+            current && current.spec.id === spec.id ? "true" : "false",
+          );
+          button.innerHTML =
+            '<span class="emoji" aria-hidden="true">' + spec.emoji + "</span>" +
+            '<span class="meta">' +
+            '<span class="name">' + spec.name + "</span>" +
+            '<span class="where">' + spec.where + "</span>" +
+            "</span>";
+          button.addEventListener("click", function () {
+            selectLayer(spec);
+          });
+          elements.buttons.appendChild(button);
+        });
+      }
+
+      /* ==================================================================
+         5. LÀM MỚI
+
+         Chỉ dò lại thời gian rồi đổi URL của lớp đang hiển thị. Không dựng
+         lại bản đồ, không đụng tới vị trí và mức phóng — người đang xem một
+         cơn bão ở Biển Đông thì sau mười phút vẫn phải đang xem đúng chỗ đó.
+         ================================================================== */
+
+      var REFRESH_MS = 10 * 60 * 1000;
+
+      setInterval(async function () {
+        if (!current) return;
+        if (document.hidden) return; // tab ẩn thì không tốn băng thông
+
+        var spec = current.spec;
+        var result = await resolveTime(spec);
+        if (!current || current.spec.id !== spec.id) return; // người dùng đã đổi lớp
+        if (result.time === current.time) {
+          current.fetchedAt = Date.now();
+          updateAge();
+          return;
+        }
+
+        current.layer.setUrl(
+          tileUrl(spec, result.time, "{z}", "{y}", "{x}"),
+          false,
+        );
+        current.time = result.time;
+        current.at = result.at;
+        current.fetchedAt = Date.now();
+        elements.time.textContent = formatDataTime(result);
+        updateAge();
+      }, REFRESH_MS);
+
+      function updateAge() {
+        if (!current) return;
+        var minutes = Math.round((Date.now() - current.fetchedAt) / 60000);
+        elements.age.textContent =
+          minutes < 1 ? "vừa xong" : minutes + " phút trước";
+      }
+
+      setInterval(updateAge, 30000);
+
+      /* ==================================================================
+         6. ĐỒNG HỒ UTC VÀ TOẠ ĐỘ CON TRỎ
+         ================================================================== */
+
+      function tickClock() {
+        var now = new Date();
+        elements.utc.textContent =
+          pad(now.getUTCHours()) + ":" +
+          pad(now.getUTCMinutes()) + ":" +
+          pad(now.getUTCSeconds());
+      }
+      tickClock();
+      setInterval(tickClock, 1000);
+
+      map.on("mousemove", function (event) {
+        var lat = event.latlng.lat;
+        var lng = ((event.latlng.lng + 540) % 360) - 180; // gộp các bản sao thế giới
+        elements.cursor.textContent =
+          lat.toFixed(2) + "° " + (lat >= 0 ? "B" : "N") + "   " +
+          Math.abs(lng).toFixed(2) + "° " + (lng >= 0 ? "Đ" : "T");
+      });
+
+      /* ==================================================================
+         7. ĐƯỜNG PHÂN GIỚI NGÀY ĐÊM
+
+         Vẽ từ vị trí Mặt Trời chứ không tải thêm thư viện nào.
+
+         Các bước: tính độ xích vĩ của Mặt Trời và kinh độ điểm Mặt Trời ở
+         thiên đỉnh, rồi với mỗi kinh độ suy ra vĩ độ nơi Mặt Trời vừa chạm
+         chân trời — đó là đường phân giới. Nửa tối là nửa nằm về phía cực
+         đang mùa đông.
+
+         Độ chính xác cỡ một phần tư độ, đủ cho một lớp phủ minh hoạ. Muốn
+         đúng tới giây cung thì phải tính cả phương trình thời gian đầy đủ và
+         nhiễu loạn — không đáng cho việc này.
+         ================================================================== */
+
+      function solarPosition(date) {
+        var rad = Math.PI / 180;
+        // Số ngày Julian tính từ J2000.0
+        var days = date.getTime() / 86400000 - 10957.5;
+
+        var meanLongitude = (280.46 + 0.9856474 * days) % 360;
+        var meanAnomaly = ((357.528 + 0.9856003 * days) % 360) * rad;
+        var eclipticLongitude =
+          (meanLongitude +
+            1.915 * Math.sin(meanAnomaly) +
+            0.02 * Math.sin(2 * meanAnomaly)) *
+          rad;
+
+        var obliquity = (23.439 - 0.0000004 * days) * rad;
+        var declination = Math.asin(
+          Math.sin(obliquity) * Math.sin(eclipticLongitude),
+        );
+
+        // Giờ Mặt Trời trung bình Greenwich, đổi ra kinh độ điểm thiên đỉnh
+        var utcHours =
+          date.getUTCHours() +
+          date.getUTCMinutes() / 60 +
+          date.getUTCSeconds() / 3600;
+        var rightAscension = Math.atan2(
+          Math.cos(obliquity) * Math.sin(eclipticLongitude),
+          Math.cos(eclipticLongitude),
+        );
+        var gmst = (18.697374558 + 24.06570982441908 * days) % 24;
+        var subsolarLongitude =
+          (((rightAscension / rad) - gmst * 15 + 540) % 360) - 180;
+
+        return {
+          declination: declination,
+          longitude: subsolarLongitude,
+          utcHours: utcHours,
+        };
+      }
+
+      var terminator = null;
+
+      function drawTerminator() {
+        var sun = solarPosition(new Date());
+        var rad = Math.PI / 180;
+        var points = [];
+
+        for (var lng = -180; lng <= 180; lng += 1) {
+          var hourAngle = (lng - sun.longitude) * rad;
+          // Vĩ độ nơi Mặt Trời ở đúng chân trời với góc giờ này
+          var lat =
+            Math.atan(-Math.cos(hourAngle) / Math.tan(sun.declination)) / rad;
+          points.push([lat, lng]);
+        }
+
+        /*
+         * Khép đa giác về phía cực đang trong mùa đông — đó là cực đang không
+         * được chiếu sáng. Khép nhầm phía thì cả lớp phủ đảo ngược và vùng
+         * đang giữa trưa bị tô là đêm.
+         */
+        var polarLat = sun.declination > 0 ? -90 : 90;
+        points.push([polarLat, 180]);
+        points.push([polarLat, -180]);
+
+        if (terminator) map.removeLayer(terminator);
+        terminator = L.polygon(points, {
+          stroke: false,
+          fillColor: "#020617",
+          fillOpacity: 0.42,
+          interactive: false,
+        }).addTo(map);
+      }
+
+      drawTerminator();
+      setInterval(drawTerminator, 5 * 60 * 1000);
+
+      /* ==================================================================
+         8. KHỞI ĐỘNG
+         ================================================================== */
+
+      renderButtons();
+
+      // Mở bằng lớp phủ Việt Nam, không phải lớp phủ châu Mỹ: GOES-East và
+      // GOES-West đều không nhìn thấy Đông Nam Á.
+      selectLayer(LAYERS.find(function (spec) {
+        return spec.id === "himawari-visible";
+      }));
+    </script>
+  </body>
+</html>
