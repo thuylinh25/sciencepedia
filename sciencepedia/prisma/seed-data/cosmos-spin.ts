@@ -79,8 +79,19 @@ Câu trả lời: chúng không sinh ra đã là khối khí.
       year: 2018,
     },
     {
-      title: "Long-term evolution of the spin of Venus",
-      url: "https://doi.org/10.1038/35107009",
+      // DOI đã đối chiếu 2026-09-12: resolve ra đúng bài này — Correia &
+      // Laskar, Nature 411, 2001.
+      //
+      // Giá trị cũ ở đây là 10.1038/35107009, và nó resolve THẬT — tới
+      // "Multisite phosphorylation of a CDK inhibitor sets a threshold for
+      // the onset of DNA replication", một bài sinh học tế bào. Một DOI sai
+      // vẫn trả 200, nên phép kiểm link không bao giờ bắt được; chỉ đối
+      // chiếu tiêu đề mới bắt. Xem scripts/check-citations.ts.
+      //
+      // Hàng trong CSDL vốn đã đúng — lỗi chỉ nằm ở seed, tức nó sẽ tiêm
+      // vào lần seed lại.
+      title: "The four final rotation states of Venus",
+      url: "https://doi.org/10.1038/35081000",
       publisher: "Nature",
       year: 2001,
     },
