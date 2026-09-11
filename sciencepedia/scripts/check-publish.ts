@@ -114,7 +114,8 @@ const INTERNAL_LINK = /\]\(\/(?:[a-z]{2}\/)?articles\/([a-z0-9-]+)\)/gi;
  * ở lại và trở thành ghi công của tấm ảnh cũ. Ghi công sai người tệ hơn không
  * ghi, nên đây là mức CHẶN chứ không phải CẢNH.
  */
-const INLINE_CREDIT = /^\s*(?:\*\*|_)?\s*(?:Ảnh bìa|Ảnh|Nguồn ảnh|Image credit)\s*:/im;
+const INLINE_CREDIT =
+  /^\s*(?:\*\*|_)?\s*(?:Ảnh bìa|Ảnh|Nguồn ảnh|Image credit)\s*:/im;
 
 /**
  * Bỏ khối dẫn nguồn ở cuối bài trước khi đo.
@@ -160,7 +161,11 @@ function flagValue(argv: string[], name: string): string | undefined {
   if (index !== -1 && argv[index + 1] && !argv[index + 1].startsWith("--")) {
     return argv[index + 1];
   }
-  return argv.find((a) => a.startsWith(`--${name}=`))?.split("=").slice(1).join("=");
+  return argv
+    .find((a) => a.startsWith(`--${name}=`))
+    ?.split("=")
+    .slice(1)
+    .join("=");
 }
 
 /**
@@ -361,12 +366,70 @@ async function audit(
     );
   }
 
+  /* Bài có khép lại không, hay dừng giữa lúc đang trình bày.
+
+     CẢNH chứ không CHẶN. Phép đo này nhận diện một ĐỘNG TÁC hình thức — tiêu
+     đề kết luận, đoạn emoji tóm ý, trích dẫn khối, dòng ghi bài gốc, dòng
+     miễn trừ y tế — và một bài kết bằng câu tóm ý thật mà không mang dấu hiệu
+     nào thì vẫn hoàn chỉnh. Tám bài đã qua gate accuracy nằm đúng vào trường
+     hợp đó (xem docs/content/corrections.md, mục 2026-09-11). Chặn theo dấu
+     hiệu hình thức là chặn nhầm tám bài hoàn chỉnh để bắt chín bài cụt.
+
+     Thứ phân biệt được hai loại là mục cuối MỎNG, nên cảnh báo chỉ kêu khi
+     thiếu động tác khép VÀ mục cuối ngắn.
+
+     Ngưỡng 70 từ là số ĐO ĐƯỢC, không phải số chọn cho đẹp. Xếp cả 21 bài
+     không có động tác khép theo số từ của mục cuối thì chúng tách làm hai
+     cụm, hở rõ ở giữa:
+
+       45 · 50 · 51 · 53 · 54 · 55 · 64 · 64 · 66   ← chín bài cụt, đều là
+                                                      bài hành tinh/thiên văn
+       ────────── khoảng hở ──────────
+       76 · 85 · 93 · 100 · 124 · 126 · 128 · 143 · 146 · 154 · 156 · 207
+
+     Bài đầu tiên bên kia khoảng hở là `nang-luong-la-gi`, đã qua gate
+     accuracy và kết bằng một câu tóm ý thật. Đặt ngưỡng ở 70 thì cảnh báo
+     kêu đúng chín bài và im ở 49 bài còn lại.
+
+     Ai đổi số này thì chạy lại phép đo trước, đừng chỉnh theo cảm giác:
+     ngưỡng 60 của bản đầu bỏ sót ba bài nằm ở 64–66.
+
+     Trần độ dài 400 từ ở trên đã chặn dạng cụt nặng nhất. Cảnh báo này bắt
+     phần còn lại: bài đủ dài nhưng dừng giữa chừng. */
+  const CLOSURE =
+    /(^##\s*(kết luận|tóm lại|tổng kết|điều đáng nhớ|conclusion)|^[\p{Extended_Pictographic}]|^>|^\*?(biên tập lại từ|lược dịch từ)|không thay thế cho tư vấn)/imu;
+
+  const sections = article.content.trim().split(/^(?=##\s)/m);
+  while (
+    sections.length > 1 &&
+    /^##\s*(đọc thêm|xem thêm|nguồn|tham khảo)/i.test(
+      sections[sections.length - 1],
+    )
+  ) {
+    sections.pop();
+  }
+  const closingBody = sections.join("").trim();
+  const closingLines = closingBody.split("\n").filter((line) => line.trim());
+  const lastLine = closingLines[closingLines.length - 1]?.trim() ?? "";
+  const lastSection = sections[sections.length - 1] ?? "";
+  const lastSectionWords = countWords(prose(lastSection));
+
+  if (sections.length > 1 && !CLOSURE.test(lastLine) && lastSectionWords < 70) {
+    warn(
+      `bài không khép lại — mục cuối chỉ ${lastSectionWords} từ và không có ` +
+        "tiêu đề kết luận, đoạn tóm ý hay trích dẫn khối. Xem quy tắc 10 của " +
+        "skill article-generator.",
+    );
+  }
+
   // readingTime phải khớp nội dung thật, không đặt tay. Cho lệch 1 phút vì
   // cách đếm từ khác nhau ở chỗ dấu câu và Markdown, không vì cho phép áng chừng.
   // Đếm trên văn xuôi vì người đọc không "đọc" danh sách nguồn.
   const expected = Math.max(1, Math.round(words / WORDS_PER_MINUTE));
   if (Math.abs(article.readingTime - expected) > 1) {
-    block(`readingTime = ${article.readingTime} nhưng nội dung đọc ~${expected} phút`);
+    block(
+      `readingTime = ${article.readingTime} nhưng nội dung đọc ~${expected} phút`,
+    );
   }
 
   if (INLINE_CREDIT.test(article.content)) {
@@ -450,7 +513,9 @@ async function main() {
   if (articles.length === 0) {
     const target = id ?? slug ?? "(không có bài nào khớp)";
     if (asJson) {
-      console.log(JSON.stringify({ ok: false, error: `Không tìm thấy bài: ${target}` }));
+      console.log(
+        JSON.stringify({ ok: false, error: `Không tìm thấy bài: ${target}` }),
+      );
     } else {
       console.log(`Không tìm thấy bài: ${target}`);
     }
@@ -485,8 +550,12 @@ async function main() {
             slug: article.slug,
             status: article.status,
             ok: !findings.some((f) => f.level === "CHẶN"),
-            blocks: findings.filter((f) => f.level === "CHẶN").map((f) => f.message),
-            warns: findings.filter((f) => f.level === "CẢNH").map((f) => f.message),
+            blocks: findings
+              .filter((f) => f.level === "CHẶN")
+              .map((f) => f.message),
+            warns: findings
+              .filter((f) => f.level === "CẢNH")
+              .map((f) => f.message),
           })),
         },
         null,
@@ -514,7 +583,9 @@ async function main() {
   }
 
   console.log("--- Tổng kết ---");
-  console.log(`Qua gate:  ${results.length - failed.length} / ${results.length}`);
+  console.log(
+    `Qua gate:  ${results.length - failed.length} / ${results.length}`,
+  );
   console.log(`Bị chặn:   ${failed.length}`);
 
   /* Nợ độ dài gom thành MỘT dòng thay vì một dòng CHẶN mỗi bài.
