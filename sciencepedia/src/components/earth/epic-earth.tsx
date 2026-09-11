@@ -51,11 +51,20 @@ type Status = "loading" | "ready" | "empty" | "error";
  * Đã hạ hai lần: 250 → 900 → 1600. Ở 900 ms vẫn còn 25 độ mỗi giây, nhanh
  * gấp hơn sáu trăm lần thực tế và vẫn bị báo là chóng mặt.
  *
- * 1600 ms cho khoảng 14 độ mỗi giây, một vòng 13 khung hết 21 giây. Vẫn
- * không phải tốc độ thật — một vòng đúng tỉ lệ mất 24 giờ — nhưng đủ chậm để
- * mắt bám được một đám mây từ khung này sang khung sau.
+ * Đã hạ ba lần: 250 → 900 → 1600 → 2600. Ở 1600 ms (14 độ mỗi giây, một
+ * vòng 13 khung hết 21 giây) vẫn còn bị báo là chuyển cảnh gấp.
+ *
+ * 2600 ms cho khoảng 8 độ mỗi giây, một vòng hết 34 giây. Vẫn không phải tốc
+ * độ thật — một vòng đúng tỉ lệ mất 24 giờ — nhưng đủ chậm để mắt bám được
+ * một đám mây từ khung này sang khung sau.
+ *
+ * Con số này đi CẶP với thời lượng hoà hình ở dưới (xem class
+ * `duration-[1200ms]` trên thẻ ảnh): hoà hình phải nằm trong khoảng một phần
+ * ba tới một nửa chu kỳ. Ngắn hơn thì vẫn đọc ra cú cắt; dài hơn nửa chu kỳ
+ * thì khung thứ ba hiện trước khi khung thứ nhất tắt hẳn và quả cầu nhoè.
+ * Đổi một trong hai số mà quên số kia là hỏng đúng thứ vừa sửa.
  */
-const FRAME_MS = 1600;
+const FRAME_MS = 2600;
 
 /**
  * Tuổi của TẤM ẢNH đang xem.
@@ -116,7 +125,10 @@ const ENDPOINTS = [
  * nửa phút chờ và một khoản dữ liệu không xin phép. Bản jpg là 2,7 MB cho cả
  * loạt, và ở khung rộng nhất 520 px thì 1024 px đã thừa nét.
  */
-function buildImageUrl(image: EpicImage, variant: "jpg" | "png" = "jpg"): string {
+function buildImageUrl(
+  image: EpicImage,
+  variant: "jpg" | "png" = "jpg",
+): string {
   const [datePart] = image.date.split(" ");
   const [year, month, day] = datePart.split("-");
   return `https://epic.gsfc.nasa.gov/archive/natural/${year}/${month}/${day}/${variant}/${image.image}.${variant}`;
@@ -390,8 +402,20 @@ export function EpicEarth({ locale = "vi" }: { locale?: string }) {
                      * Không dài hơn nửa chu kỳ: quá nửa thì khung thứ ba bắt
                      * đầu hiện trước khi khung thứ nhất tắt hẳn, và ba lớp
                      * chồng nhau cho ra một quả cầu nhoè.
+                     *
+                     * 1200 ms trên chu kỳ 2600 ms là 46% — sát trần ấy mà
+                     * chưa chạm. Cặp cũ là 700/1600, tức 44%: cùng tỉ lệ,
+                     * nhưng cả hai vế đều ngắn hơn nên mắt vẫn đọc ra nhịp
+                     * cắt. Thứ đổi ở lượt này là ĐỘ DÀI tuyệt đối, không phải
+                     * tỉ lệ.
+                     *
+                     * `ease-in-out` thay `ease-linear`: hoà tuyến tính đi qua
+                     * mốc 50/50 với tốc độ tối đa, và đúng ở mốc đó hai khung
+                     * cùng mờ một nửa — chỗ hình nhoè nhất. Đường cong chậm
+                     * lại ở hai đầu và lướt nhanh qua giữa, nên quãng nhoè
+                     * ngắn đi mà tổng thời gian vẫn dài ra.
                      */
-                    className="scale-[1.36] object-cover transition-opacity duration-700 ease-linear"
+                    className="scale-[1.36] object-cover transition-opacity duration-[1200ms] ease-in-out"
                     style={{ opacity: i === index ? 1 : 0 }}
                   />
                 ))}
@@ -412,7 +436,10 @@ export function EpicEarth({ locale = "vi" }: { locale?: string }) {
                     </p>
                   )}
                   {status === "error" && (
-                    <AlertTriangle className="size-8 text-amber-400" aria-hidden />
+                    <AlertTriangle
+                      className="size-8 text-amber-400"
+                      aria-hidden
+                    />
                   )}
                 </div>
               )}

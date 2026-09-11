@@ -79,12 +79,20 @@ export function AladinCanvas({
   canSpin?: boolean;
 }) {
   const t = useTranslations("sky");
-  const { containerRef, status, isFullscreen, goTo, panTo, centre, retry } =
-    useAladin({
-      enabled: true,
-      initialView: view,
-      fullscreen: openFullscreen,
-    });
+  const {
+    containerRef,
+    status,
+    isFullscreen,
+    goTo,
+    panTo,
+    centre,
+    fov,
+    retry,
+  } = useAladin({
+    enabled: true,
+    initialView: view,
+    fullscreen: openFullscreen,
+  });
 
   /**
    * Bảng thông tin mở sẵn hay không.
@@ -116,29 +124,74 @@ export function AladinCanvas({
    * Aladin không có API quay, nhưng ở chế độ bề mặt thiên thể thì dịch tâm
    * theo kinh độ CHÍNH LÀ quay quả cầu — kinh độ là toạ độ quanh trục.
    *
-   * Đọc tâm hiện tại mỗi bước thay vì giữ một biến đếm riêng: người xem kéo
-   * chuột giữa lúc đang quay thì chuyển động phải tiếp tục từ chỗ họ vừa kéo
-   * tới, không giật về quỹ tích của biến đếm.
+   * ## Vì sao KHÔNG đọc ngược vị trí mỗi nhịp
    *
-   * 0,18 độ mỗi 60 ms là 3 độ mỗi giây, một vòng hai phút.
+   * Bản cũ mỗi 60 ms đọc `centre()` rồi cộng 0,18° vào kết quả vừa đọc. Nó
+   * giả định `gotoRaDec` đặt tâm tức thời, nên đọc ra luôn bằng thứ vừa
+   * ghi. Không đúng: Aladin nội suy chuyển động, nên phép đọc rơi vào giữa
+   * một cú bay còn đang chạy và trả về một vị trí dở dang. Bước kế tiếp cộng
+   * lên một con số sai, sinh bước dài ngắn thất thường, và lệnh mới lại cắt
+   * ngang lệnh cũ.
+   *
+   * Ở khung rộng 180° thì 0,18° quá nhỏ để thấy sai lệch. PHÓNG TO rồi bật
+   * tự quay thì cùng sai lệch ấy chiếm vài phần trăm bề ngang mỗi nhịp, và
+   * nó hiện ra đúng như người dùng báo: mô hình rung lắc mạnh.
+   *
+   * Nay kinh độ là một biến đếm do chính effect này giữ. Nó chỉ ĐỌC vị trí
+   * thật ở nhịp đầu, và đọc lại khi phát hiện người xem vừa kéo khung đi —
+   * tức khi vị trí thật lệch khỏi lệnh vừa gửi quá một ngưỡng. Ý định của
+   * bản cũ được giữ (kéo giữa lúc đang quay thì quay tiếp từ chỗ vừa kéo)
+   * mà không còn vòng phản hồi.
+   *
+   * ## Vì sao bước phải tỉ lệ với mức phóng
+   *
+   * 0,18° mỗi 60 ms là 3 độ mỗi giây, một vòng hai phút — đo trên khung rộng
+   * 180°. Cùng bước ấy trên khung đã phóng tới 18° thì bề mặt trôi nhanh gấp
+   * mười lần và không ai theo kịp. Bước nhân với `fov/180` giữ cho tốc độ
+   * TRÔI TRÊN MÀN HÌNH không đổi ở mọi mức phóng.
    *
    * Bản đầu đặt 0,55 (9 độ mỗi giây, một vòng 40 giây) và nó quá nhanh để
    * làm việc mà chuyển động này sinh ra: nhìn kỹ một vùng bề mặt khi nó đi
-   * qua. Ở 40 giây một vòng thì mỗi vùng chỉ ở giữa khung vài giây, và người
-   * xem phải đuổi theo thay vì quan sát. Hai phút thì đủ chậm để dừng lại
-   * bằng mắt mà vẫn thấy rõ là đang quay.
+   * qua. Hai phút thì đủ chậm để dừng lại bằng mắt mà vẫn thấy rõ là đang quay.
    */
   useEffect(() => {
     if (!spinning || status !== "ready") return;
 
+    /** Kinh độ effect này đang điều khiển. `null` = chưa đọc lần nào. */
+    let longitude: number | null = null;
+    /** Vĩ độ giữ nguyên: quay quanh trục, không trôi lên xuống. */
+    let latitude = 0;
+
+    const STEP_AT_FULL_DISC = 0.18;
+    /** Lệch quá ngần này so với lệnh vừa gửi nghĩa là người xem đã kéo khung. */
+    const DRIFT_LIMIT_DEG = 1.5;
+
     const timer = window.setInterval(() => {
-      const position = centre();
-      if (!position) return;
-      panTo((position[0] + 0.18) % 360, position[1]);
+      const actual = centre();
+      if (!actual) return;
+
+      if (longitude === null) {
+        [longitude, latitude] = actual;
+      } else {
+        // So theo đường tròn: 359,5° và 0,5° cách nhau 1°, không phải 359°.
+        const gap = Math.abs(((actual[0] - longitude + 540) % 360) - 180);
+        if (
+          gap > DRIFT_LIMIT_DEG ||
+          Math.abs(actual[1] - latitude) > DRIFT_LIMIT_DEG
+        ) {
+          [longitude, latitude] = actual;
+        }
+      }
+
+      const width = fov() ?? 180;
+      const step = STEP_AT_FULL_DISC * Math.min(1, width / 180);
+
+      longitude = (longitude + step + 360) % 360;
+      panTo(longitude, latitude);
     }, 60);
 
     return () => window.clearInterval(timer);
-  }, [spinning, status, centre, panTo]);
+  }, [spinning, status, centre, fov, panTo]);
 
   /**
    * Gợi ý "kéo để xoay", tự tắt.
