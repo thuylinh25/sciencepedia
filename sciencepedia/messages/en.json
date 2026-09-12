@@ -336,7 +336,9 @@
     "goHome": "Go home",
     "lastUpdated": "Last updated: {date}",
     "home": "Home",
-    "breadcrumb": "Breadcrumb"
+    "breadcrumb": "Breadcrumb",
+    "firstPage": "First page",
+    "lastPage": "Last page"
   },
   "footer": {
     "about": "About Sciencepedia",

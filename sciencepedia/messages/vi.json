@@ -336,7 +336,9 @@
     "goHome": "Về trang chủ",
     "lastUpdated": "Cập nhật lần cuối: {date}",
     "home": "Trang chủ",
-    "breadcrumb": "Đường dẫn"
+    "breadcrumb": "Đường dẫn",
+    "firstPage": "Trang đầu",
+    "lastPage": "Trang cuối"
   },
   "footer": {
     "about": "Về Sciencepedia",
