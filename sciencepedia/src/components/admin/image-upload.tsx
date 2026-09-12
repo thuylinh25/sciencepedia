@@ -11,7 +11,13 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 
 const MAX_BYTES = 8 * 1024 * 1024;
-const ALLOWED = ["image/jpeg", "image/png", "image/webp", "image/avif", "image/gif"];
+const ALLOWED = [
+  "image/jpeg",
+  "image/png",
+  "image/webp",
+  "image/avif",
+  "image/gif",
+];
 
 /**
  * Ô chọn ảnh cho khu quản trị: kéo thả hoặc bấm chọn, tải thẳng lên
@@ -64,7 +70,9 @@ export function ImageUpload({
     } catch (error) {
       const code = (error as Error).message;
       toast.error(
-        code === "STORAGE_NOT_CONFIGURED" ? t("imageNotConfigured") : t("imageFailed"),
+        code === "STORAGE_NOT_CONFIGURED"
+          ? t("imageNotConfigured")
+          : t("imageFailed"),
       );
     } finally {
       setUploading(false);
@@ -82,7 +90,7 @@ export function ImageUpload({
   return (
     <div className={cn("space-y-3", className)}>
       {value ? (
-        <div className="group relative overflow-hidden rounded-xl border">
+        <div className="overflow-hidden rounded-xl border">
           <div className="relative aspect-[16/9] bg-muted">
             <Image
               src={value}
@@ -96,15 +104,36 @@ export function ImageUpload({
             />
           </div>
 
-          <div className="absolute inset-0 flex items-center justify-center gap-2 bg-black/50 opacity-0 transition-opacity group-hover:opacity-100">
+          {/* Hàng nút LUÔN thấy, nằm dưới ảnh — không phải lớp phủ khi rê chuột.
+
+              Bản cũ đặt hai nút này trong một lớp `absolute inset-0` với
+              `opacity-0 group-hover:opacity-100`. Ba hệ quả, và cả ba đều là
+              lỗi thật chứ không phải chuyện thẩm mỹ:
+
+              · Trên cảm ứng KHÔNG có trạng thái hover. Khi bài đã có ảnh bìa,
+                hai nút ấy không bao giờ hiện, nên ô dán URL thành lối duy
+                nhất còn thấy — đúng lỗi "chỉ dán được URL, chưa tải được ảnh
+                từ máy" đã bị báo.
+              · `opacity-0` KHÔNG gỡ phần tử khỏi thứ tự tab. Người dùng bàn
+                phím tab vào hai nút vô hình và không biết mình đang ở đâu.
+              · Ngay cả trên máy có chuột, một hành động chỉ lộ ra khi rê
+                chuột đúng chỗ là một hành động hầu hết mọi người không tìm thấy.
+
+              Đặt dưới ảnh chứ không đè lên: chỗ này còn có nút xoá, và một nút
+              phá huỷ nằm chồng lên nội dung thì dễ bấm nhầm khi cuộn trang. */}
+          <div className="flex flex-wrap items-center gap-2 border-t bg-muted/40 p-2">
             <Button
               type="button"
               size="sm"
-              variant="glass"
+              variant="secondary"
               onClick={() => inputRef.current?.click()}
               disabled={uploading}
             >
-              <Upload className="size-4" />
+              {uploading ? (
+                <Loader2 className="size-4 animate-spin" />
+              ) : (
+                <Upload className="size-4" />
+              )}
               {t("imageReplace")}
             </Button>
             <Button
