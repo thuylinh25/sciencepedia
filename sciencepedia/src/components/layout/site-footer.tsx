@@ -24,15 +24,16 @@ import { formatMeasure } from "@/lib/utils";
 /**
  * Địa chỉ liên hệ, viết một chỗ để dòng chữ và link `mailto:` không lệch nhau.
  *
- * `contact@` chứ không `hello@`: `hello@` là giọng của một sản phẩm khởi
- * nghiệp, còn đây là một bách khoa khoa học — người viết thư tới đây thường là
- * để báo một lỗi nội dung hoặc hỏi về giấy phép ảnh, và `contact@` nói đúng
- * rằng có người đọc hộp thư ấy.
+ * Hộp thư CÓ THẬT, do chủ dự án cung cấp. Giá trị trước đó
+ * (`contact@sciencepedia.vn`) là địa chỉ tôi tự đặt ra và không ai nhận thư —
+ * một địa chỉ như thế in ra footer còn tệ hơn không in gì, vì người đọc bỏ
+ * công viết rồi im lặng.
  *
- * ĐÂY LÀ MỘT HỘP THƯ PHẢI CÓ THẬT. Một địa chỉ in ra footer mà không ai nhận
- * thư còn tệ hơn không in gì: người đọc bỏ công viết rồi im lặng.
+ * Dùng Gmail chứ không phải địa chỉ theo tên miền riêng là lựa chọn có ý thức
+ * trong giai đoạn này: một hộp thư đọc được ngay hơn hẳn một địa chỉ đẹp mà
+ * chưa cấu hình xong. Đổi sang tên miền riêng thì sửa đúng dòng dưới đây.
  */
-const CONTACT_EMAIL = "contact@sciencepedia.vn";
+const CONTACT_EMAIL = "sciencepedia.contact@gmail.com";
 
 export async function SiteFooter() {
   const t = await getTranslations("footer");

@@ -65,7 +65,12 @@ export async function SearchHeaderForm({ locale }: { locale: Locale }) {
       action={getPathname({ href: "/search", locale })}
       method="get"
       role="search"
-      className="hidden w-full max-w-xl sm:block"
+      /* max-w-xl (36rem) → max-w-[32rem] (512px), ngắn chừng 11%.
+
+         Ô tìm kiếm phải nổi bật, nhưng ở 36rem nó chiếm gần nửa bề ngang
+         header và đẩy cụm nút bên phải sát mép. Nổi bật không phải là to
+         nhất — nó là nút vàng bên trong ô và hiệu ứng focus. */
+      className="hidden w-full max-w-[32rem] sm:block"
     >
       <div className="relative">
         <label htmlFor="header-search" className="sr-only">
@@ -84,9 +89,16 @@ export async function SearchHeaderForm({ locale }: { locale: Locale }) {
           placeholder={t("searchPlaceholder")}
           className="h-11 w-full rounded-full border bg-background ps-11 pe-32 text-sm shadow-[0_6px_20px_-8px_rgb(0_0_0/0.45)] outline-none transition-[border-color,box-shadow] duration-200 placeholder:text-muted-foreground focus-visible:border-accent focus-visible:shadow-[0_0_0_4px_var(--color-ring)]"
         />
+        {/* `variant="secondary"` chứ không phải nút vàng mặc định.
+
+            Vàng là màu hành động CHÍNH của trang, và ở header nó xuất hiện
+            trên mọi màn hình cùng lúc với nút "Đăng nhập" — hai nút vàng cạnh
+            nhau thì không nút nào còn là nút chính. Ô tìm kiếm đã có viền, có
+            icon và có hiệu ứng focus để nói nó bấm được. */}
         <Button
           type="submit"
           size="sm"
+          variant="secondary"
           className="absolute end-1.5 top-1/2 h-8 -translate-y-1/2 rounded-full px-4 text-sm font-semibold"
         >
           {th("heroSearchCta")}
