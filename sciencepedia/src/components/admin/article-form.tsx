@@ -4,7 +4,7 @@ import { useState, useTransition } from "react";
 import { useForm, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useTranslations } from "next-intl";
-import { Eye, Loader2, Save, Wand2 } from "lucide-react";
+import { Eye, Loader2, Save, Sparkles, Wand2 } from "lucide-react";
 import { toast } from "sonner";
 
 import { useRouter } from "@/i18n/navigation";
@@ -54,6 +54,7 @@ export function ArticleForm({
     control,
     watch,
     setValue,
+    getValues,
     setError,
     formState: { errors, isDirty },
   } = useForm<ArticleInput>({
@@ -63,6 +64,75 @@ export function ArticleForm({
 
   const content = watch("content");
   const title = watch("title");
+  const summary = watch("summary");
+  const [classifying, setClassifying] = useState(false);
+
+  /**
+   * Nhờ mô hình đề xuất danh mục, thẻ và SEO từ tiêu đề + nội dung.
+   *
+   * ĐỀ XUẤT chứ không tự áp đặt: kết quả đổ thẳng vào form nhưng form chưa
+   * lưu, nên người biên tập nhìn thấy mọi thứ vừa đổi và vẫn phải bấm Lưu.
+   * Một tính năng đoán hộ mà ghi thẳng vào CSDL thì lần đoán sai đầu tiên sẽ
+   * dạy người dùng thôi tin nó.
+   *
+   * KHÔNG ghi đè ô đã có chữ: người biên tập viết tay một tiêu đề SEO rồi bấm
+   * nút này để lấy phần còn lại là chuyện bình thường, và mất công viết tay vì
+   * một cú bấm là lỗi tệ hơn hẳn việc thiếu một gợi ý.
+   */
+  async function suggest() {
+    if (!title?.trim() || !content?.trim()) {
+      toast.error(t("form.classifyNeedsText"));
+      return;
+    }
+
+    setClassifying(true);
+    try {
+      const response = await fetch("/api/admin/classify", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ title, content, summary }),
+      });
+      const data = (await response.json()) as {
+        categoryId?: string | null;
+        tagIds?: string[];
+        seoTitle?: string;
+        seoDescription?: string;
+        seoKeywords?: string;
+        reason?: string;
+        error?: string;
+        detail?: string;
+      };
+
+      if (!response.ok) {
+        toast.error(data.detail ?? t("form.classifyFailed"));
+        return;
+      }
+
+      if (data.categoryId) {
+        setValue("categoryId", data.categoryId, { shouldDirty: true });
+      }
+      if (data.tagIds?.length) {
+        setValue("tagIds", data.tagIds, { shouldDirty: true });
+      }
+      for (const key of [
+        "seoTitle",
+        "seoDescription",
+        "seoKeywords",
+      ] as const) {
+        const value = data[key];
+        if (value && !getValues(key)?.trim()) {
+          setValue(key, value, { shouldDirty: true });
+        }
+      }
+
+      toast.success(data.reason || t("form.classifyDone"));
+    } catch (error) {
+      toast.error((error as Error).message);
+    } finally {
+      setClassifying(false);
+    }
+  }
+
   const selectedTags = watch("tagIds");
 
   function generateSlug() {
@@ -280,6 +350,26 @@ export function ArticleForm({
                 )}
               />
             </div>
+
+            {/* Nút đặt NGAY TRÊN ô Danh mục, không ở cuối form.
+
+                Nó điền hộ đúng ba thứ nằm ngay dưới nó — danh mục, thẻ, SEO —
+                nên chỗ của nó là đầu cụm ấy. Ở cuối form thì người biên tập đã
+                điền tay xong hết rồi mới nhìn thấy. */}
+            <Button
+              type="button"
+              variant="secondary"
+              className="w-full"
+              onClick={suggest}
+              disabled={classifying || pending}
+            >
+              {classifying ? (
+                <Loader2 className="size-4 animate-spin" />
+              ) : (
+                <Sparkles className="size-4" />
+              )}
+              {t("form.classify")}
+            </Button>
 
             <div className="space-y-2">
               <Label htmlFor="categoryId">{t("form.categoryField")}</Label>

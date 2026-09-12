@@ -309,7 +309,11 @@
       "imageNotConfigured": "Supabase Storage is not configured",
       "coverCredit": "Image credit (Markdown)",
       "coverCreditEn": "Image credit — Vietnamese",
-      "coverCreditHint": "Image: [NASA/JPL](https://…), public domain"
+      "coverCreditHint": "Image: [NASA/JPL](https://…), public domain",
+      "classify": "Auto-classify and draft SEO",
+      "classifyNeedsText": "Add a title and content first",
+      "classifyFailed": "Could not reach the classifier",
+      "classifyDone": "Suggestions filled in — review, then save"
     },
     "articleCount": "{count, plural, one {# article} other {# articles}}",
     "searchResults": "{count, plural, =0 {No articles match “{query}”} one {# article matches “{query}”} other {# articles match “{query}”}}",

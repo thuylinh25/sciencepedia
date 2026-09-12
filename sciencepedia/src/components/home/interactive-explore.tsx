@@ -293,12 +293,20 @@ export async function InteractiveExplore() {
                 }}
               />
 
-              {/* Huy hiệu góc trên phải. Dùng màu nhận dạng của chính card chứ
-                  không dùng một màu chung: nó phải đọc ra như một phần của
-                  card, không như một nhãn dán từ bên ngoài. */}
+              {/* Huy hiệu góc trên TRÁI.
+
+                  Trước đây nó ở góc phải, và ở đó nó là thứ mắt gặp SAU CÙNG
+                  trên thẻ — trong khi nội dung của nó ("Nên bắt đầu ở đây") là
+                  thứ chỉ có giá trị nếu đọc TRƯỚC. Chữ Việt đọc từ trái sang,
+                  nên góc trái trên là điểm dừng đầu tiên của mắt trong một
+                  khối hình chữ nhật.
+
+                  Dùng màu nhận dạng của chính card chứ không dùng một màu
+                  chung: nó phải đọc ra như một phần của card, không như một
+                  nhãn dán từ bên ngoài. */}
               {card.badge && (
                 <span
-                  className="absolute top-4 right-4 z-10 inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-[11px] font-medium backdrop-blur-md"
+                  className="absolute top-4 left-4 z-10 inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-[11px] font-medium whitespace-nowrap backdrop-blur-md"
                   style={{
                     color: card.accent,
                     borderColor: `${card.accent}55`,

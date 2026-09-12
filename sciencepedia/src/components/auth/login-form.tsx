@@ -19,9 +19,11 @@ import { Separator } from "@/components/ui/separator";
 export function LoginForm({
   hasGithub,
   hasGoogle,
+  hasFacebook,
 }: {
   hasGithub: boolean;
   hasGoogle: boolean;
+  hasFacebook: boolean;
 }) {
   const t = useTranslations("auth");
   const router = useRouter();
@@ -80,7 +82,9 @@ export function LoginForm({
             {...register("password")}
           />
           {errors.password && (
-            <p className="text-xs text-destructive">{errors.password.message}</p>
+            <p className="text-xs text-destructive">
+              {errors.password.message}
+            </p>
           )}
         </div>
 
@@ -96,7 +100,7 @@ export function LoginForm({
         </Button>
       </form>
 
-      {(hasGithub || hasGoogle) && (
+      {(hasGithub || hasGoogle || hasFacebook) && (
         <>
           <div className="flex items-center gap-3">
             <Separator className="flex-1" />
@@ -115,6 +119,21 @@ export function LoginForm({
               >
                 <Github className="size-4" />
                 GitHub
+              </Button>
+            )}
+            {hasFacebook && (
+              <Button
+                type="button"
+                variant="outline"
+                onClick={() => signIn("facebook", { callbackUrl: "/" })}
+              >
+                <svg viewBox="0 0 24 24" className="size-4" aria-hidden>
+                  <path
+                    fill="currentColor"
+                    d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5.02 3.66 9.18 8.44 9.94v-7.03H7.9v-2.9h2.54V9.85c0-2.52 1.5-3.91 3.77-3.91 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.78-1.63 1.57v1.89h2.78l-.44 2.9h-2.34V22c4.78-.76 8.44-4.92 8.44-9.94Z"
+                  />
+                </svg>
+                Facebook
               </Button>
             )}
             {hasGoogle && (

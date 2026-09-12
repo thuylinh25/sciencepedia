@@ -38,6 +38,7 @@ export default async function LoginPage({
       <LoginForm
         hasGithub={Boolean(process.env.AUTH_GITHUB_ID)}
         hasGoogle={Boolean(process.env.AUTH_GOOGLE_ID)}
+        hasFacebook={Boolean(process.env.AUTH_FACEBOOK_ID)}
       />
     </AuthShell>
   );

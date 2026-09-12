@@ -3,6 +3,7 @@ import { PrismaAdapter } from "@auth/prisma-adapter";
 import Credentials from "next-auth/providers/credentials";
 import GitHub from "next-auth/providers/github";
 import Google from "next-auth/providers/google";
+import Facebook from "next-auth/providers/facebook";
 import bcrypt from "bcryptjs";
 import { Role } from "@prisma/client";
 
@@ -40,7 +41,10 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
         });
         if (!user?.passwordHash) return null;
 
-        const ok = await bcrypt.compare(parsed.data.password, user.passwordHash);
+        const ok = await bcrypt.compare(
+          parsed.data.password,
+          user.passwordHash,
+        );
         if (!ok) return null;
 
         return {
@@ -66,6 +70,27 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
           Google({
             clientId: process.env.AUTH_GOOGLE_ID,
             clientSecret: process.env.AUTH_GOOGLE_SECRET,
+            allowDangerousEmailAccountLinking: true,
+          }),
+        ]
+      : []),
+    /* Facebook bật theo env như hai nhà cung cấp trên, nhưng nó có một điều
+       kiện RIÊNG mà GitHub và Google không có.
+
+       Facebook chỉ trả về email khi ứng dụng được cấp quyền `email`, và quyền
+       ấy đòi App Review cộng xác minh doanh nghiệp. Trước khi qua được bước
+       đó, ứng dụng ở chế độ Development và CHỈ tài khoản có vai trò trong
+       ứng dụng (admin, developer, tester) mới đăng nhập được.
+
+       Điều này quan trọng vì `allowDangerousEmailAccountLinking` dựa vào email
+       để nối tài khoản: không có email thì mỗi lần đăng nhập Facebook tạo một
+       người dùng mới. Nên nếu bật Facebook mà chưa có quyền `email`, hãy tắt
+       cờ nối tài khoản cho riêng nhà cung cấp này. */
+    ...(process.env.AUTH_FACEBOOK_ID && process.env.AUTH_FACEBOOK_SECRET
+      ? [
+          Facebook({
+            clientId: process.env.AUTH_FACEBOOK_ID,
+            clientSecret: process.env.AUTH_FACEBOOK_SECRET,
             allowDangerousEmailAccountLinking: true,
           }),
         ]
