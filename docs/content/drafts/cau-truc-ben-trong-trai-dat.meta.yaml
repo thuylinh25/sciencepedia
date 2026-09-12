@@ -66,16 +66,47 @@
 #      temperature of iron" và mệnh đề "a figure for pure iron, not a measured
 #      core temperature". KHÔNG mang sang mục "The crust is not the tectonic
 #      plate", bộ ba 15/84/1, góc vùng tối sóng P, hay Lehmann kèm năm.
-#   2. Đưa bản dịch qua science-editor — đó là phần duy nhất của hàng còn chưa
-#      qua gate.
-#   3. `npm run sync:cau-truc -- --write`. Nó ghi Revision chụp bản cũ + nội
-#      dung mới + reviewedAt/lastVerifiedAt 2026-09-10 trong MỘT transaction.
-#      reviewedById giữ nguyên cmti8v05z0000k5ccfg55mget.
+#   2. [XONG 2026-09-12] Đưa bản dịch qua science-editor — 2 vòng THẬT (agent
+#      science-editor, tool Agent, run_in_background: false, chờ trả kết quả
+#      trực tiếp):
+#        vòng 1: REVISE — 1 finding chặn T1 (S3): câu từ quyển bản EN viết
+#          "shielding the planet from harmful solar and cosmic particle
+#          radiation" — ba chữ "solar", "cosmic", "particle" KHÔNG xuất hiện ở
+#          bất kỳ đâu trong research.yaml/checks.yaml (kiểm bằng grep -niE
+#          "solar|cosmic|particle", 0 hit). Bản VI đã duyệt chỉ nói "bức xạ có
+#          hại từ không gian" — bản EN tự thêm 2 nguồn bức xạ + 1 loại bức xạ
+#          trong lúc dịch, một biến thể nhẹ của đúng lớp lỗi S2-1 (gán phát
+#          biểu cho NASA mà NASA không nói) mà vòng 1 bước 4 (bản VI) đã bắt.
+#        sửa áp dụng, đúng 1 dòng: → "shielding the planet from harmful
+#          energy from space" — bám sát tiêu đề s6 ("Protecting Our Planet
+#          from Harmful Space Energy"), không thêm claim mới.
+#        vòng 2: APPROVE 2026-09-12. Xác nhận git diff đúng 1 dòng, không đụng
+#          câu nào khác; 494 từ (băng 400–600); không vi phạm binding_on_draft.
+#          Đây là APPROVE CUỐI của bước 4 cho bản dịch.
+#        2 ghi chú KHÔNG chặn từ vòng 2:
+#          N1 (S3, không chặn EN): bản VI (đã PUBLISHED) dùng "bức xạ", nguồn
+#            gốc NASA dùng "energy" — EN nay bám nguồn sát hơn VI. Sửa đúng ở
+#            phía VI, để dành cho lần chạm tiếp theo (refresh queue, S3 trên
+#            bài published → chỉ cập nhật lastVerifiedAt, KHÔNG ghi
+#            corrections.md, theo tiền lệ checks.yaml:332).
+#          N2: khối `translation:` bên dưới (dòng ~452) mang số liệu CŨ của
+#            bản dịch 2026-09-06 (559 từ, 4 mục h2, 5 link) — đã cập nhật lại
+#            đúng số của bản 2026-09-11/12 (494 từ, 5 mục h2, 4 link) ngay
+#            dưới đây, cùng lúc gỡ `reviewer: null`.
+#   3. CHẶN bởi hạ tầng, KHÔNG phải bởi nội dung: `npm run sync:cau-truc --
+#      write` cần DATABASE_URL sống. Lượt 2026-09-12 xác nhận DATABASE_URL
+#      trong môi trường này bị Postgres từ chối xác thực (Prisma P1000,
+#      "Authentication failed... credentials for `postgres` are not valid"),
+#      lặp lại ổn định qua nhiều lần thử, không phải lỗi mạng thoáng qua (P1001
+#      sẽ là lỗi khác). KHÔNG phải việc của content pipeline để tự sửa — cần
+#      thông tin xác thực CSDL hợp lệ ở lượt sau. Khi có DB sống: chạy bước 3
+#      rồi bước 4 theo đúng thứ tự dưới, KHÔNG cần quay lại bước 1–2 (đã xong
+#      và đã kiểm thật).
 #   4. `npm run publish:check -- --slug cau-truc-ben-trong-trai-dat`.
 #
 # CẢNH BÁO: đừng chạy bước 3 trước bước 1–2. Ghi content mà chưa có bản dịch
 # đã duyệt thì đóng dấu `reviewedAt` mới lên một hàng mà một nửa chưa qua gate
-# — đúng cái sai mà lượt này đi sửa.
+# — đúng cái sai mà lượt này đi sửa. (Bước 1–2 nay ĐÃ xong thật, xem trên.)
 #
 # ── Hồ sơ lượt 2026-09-06 giữ nguyên bên dưới ──
 #
@@ -452,12 +483,17 @@ figure:
 # BƯỚC 9 — translation (2026-09-06)
 # ─────────────────────────────────────────────────────────────────────────────
 translation:
+  # ── CẬP NHẬT 2026-09-12: khối này từng mô tả bản dịch 2026-09-06 (đã bỏ,
+  # xem đầu file — bản đó dịch từ bản pipeline cũ, không phải bản sửa tay đã
+  # duyệt). Số liệu dưới đây đã sửa lại đúng theo bản dịch 2026-09-11, được
+  # science-editor duyệt thật (2 vòng) ngày 2026-09-12 — xem "việc còn lại"
+  # mục 2 ở đầu file.
   locale: en
   file: docs/content/drafts/cau-truc-ben-trong-trai-dat.en.md
-  source_revision: "bản nháp vi 591 từ, sau vòng sửa E1–E6 của bước 4"
-  words_en: 559
-  structure: "4 mục h2, khớp 1–1 với bản vi; không mục nào bị gộp hay tách"
-  links: "cùng 5 slug, giữ nguyên slug tiếng Việt (đúng cách bản en của dien-tich-va-dong-dien đã làm) — hreflang mới đối xứng được"
+  source_revision: "bản vi 574 từ đã APPROVE (bản sửa tay 2026-09-08, qua 2 vòng science-editor 2026-09-10)"
+  words_en: 494
+  structure: "5 mục h2, 4 mục h3, khớp 1–1 với bản vi; không mục nào bị gộp hay tách; KHÔNG mang mục 'The crust is not the tectonic plate' của bản dịch cũ (cố ý, bản vi chuẩn không có mục đó)"
+  links: "4 internal link nội bộ, giữ nguyên slug tiếng Việt (đúng cách bản en của dien-tich-va-dong-dien đã làm) — hreflang đối xứng được; ≥3 nên không chặn gate SEO"
 
   # Không có content/glossary/en.yaml trong kho, nên thuật ngữ neo vào các bản
   # en ĐÃ publish, không neo vào thói quen dịch.
@@ -488,10 +524,12 @@ translation:
     - "Đơn vị SI (km, GPa, K, °) và ký hiệu ± giữ nguyên, không dịch"
     - "Mohorovičić giữ nguyên dấu phụ ở cả hai bản"
 
-  reviewer: null
+  reviewer: "agent science-editor (spawn thật qua tool Agent, run_in_background: false, 2 vòng, 2026-09-12)"
   reviewer_blocker: >
-    Quy tắc 9 của skill đòi một người duyệt chuyên môn cho ngôn ngữ đích trước
-    khi publish, và quy tắc 1 nói bản dịch chịu đúng mức kiểm của bản gốc. Lượt
-    này KHÔNG gọi được agent nào (xem editor_pass_2.blocker trong file checks),
-    nên bản en cũng ở trạng thái chờ duyệt cùng bản vi. Bản dịch đã ghi vào CSDL
-    ở trạng thái DRAFT, không hiển thị công khai.
+    ĐÃ GỠ 2026-09-12. Vòng 1 REVISE (finding T1, S3, câu từ quyển gán cho NASA
+    một đặc tả không có trong bảng nguồn) → sửa 1 dòng → vòng 2 APPROVE. Chi
+    tiết đầy đủ ở đầu file, mục "việc còn lại" #2. Bản dịch đã qua đúng mức
+    kiểm của bản gốc (quy tắc 1 của skill translation), sẵn sàng cho bước
+    sync — hiện CHỈ còn chặn bởi DATABASE_URL không xác thực được trong môi
+    trường lượt 2026-09-12 (xem "việc còn lại" #3), không còn chặn bởi thiếu
+    người duyệt.

@@ -687,3 +687,138 @@ editor_pass:
     ngữ chỉ độ cao / vĩ độ / thời điểm / phạm vi là bất khả xâm phạm. Cả hai lỗi S3
     của lượt rút gọn trước đều sinh ra từ cùng một thao tác: xoá một định ngữ hạn
     định để tiết kiệm 3–4 chữ, biến câu có điều kiện thành câu khẳng định trần.
+
+# ═════════════════════════════════════════════════════════════════════════════
+# ROUND_3 — VÒNG THẨM ĐỊNH ĐỘC LẬP THẬT, 2026-09-11 (agent science-editor,
+# spawn qua tool Agent của phiên chính, run_in_background: false, chờ kết quả
+# trực tiếp trong cùng lượt chạy)
+# ═════════════════════════════════════════════════════════════════════════════
+#
+# LÝ DO VÒNG NÀY TỒN TẠI: khối `editor_pass` (round_1/round_2) phía trên tự
+# xưng "spawn thật" nhưng chính file này cũng ghi "KHÔNG có dấu vết nào trên
+# đĩa chứng minh điều đó". Vòng round_3 không sửa hay xoá round_1/round_2 —
+# thay vào đó làm lại TOÀN BỘ review từ nguồn gốc, không tin bất kỳ số nào
+# trong round_1/round_2, và tự để lại bằng chứng tái lập được (sha256, trích
+# nguyên văn, phép tính) thay vì bằng chứng theo commit (đã xác nhận KHÔNG
+# tồn tại: `git cat-file -t f78ca62` và `b876706` đều báo "not a valid object
+# name" — repo checkout này chỉ có đúng 1 commit).
+round_3:
+  verdict: approve
+  reviewed_at: 2026-09-11
+  reviewed_word_count: 598
+  draft_fingerprint:
+    sha256: 5b8ca32081d681f1e20baee26d2afcf0411ca9bd568e5c223bee14e639e1e4ea
+    bytes: 3692
+    note: >
+      Chữ ký approve của vòng này CHỈ phủ văn bản có đúng sha256 này. Bất kỳ
+      sửa nào sau đó (kể cả rút gọn hình thức) huỷ approve — tiền lệ
+      dien-tich-va-dong-dien: rút 1.016→588 từ tự sinh lỗi S2 mới.
+  method: >
+    Tự fetch lại cả 8 nguồn (HTTP 200 toàn bộ) và NOAA GML CO2 trực tiếp
+    (co2_mm_gl.txt + trang global.html có cache-bust), tự tính lại mọi công
+    thức (áp suất NASA Glenn, tỉ lệ %, mốc 50%), tự đối chiếu 12/12
+    binding_on_draft. KHÔNG đọc số liệu từ round_1/round_2 hay từ bất kỳ
+    khối editor_pass nào có sẵn.
+  co2_reverified:
+    fetched_at: 2026-09-11
+    raw_file: "https://gml.noaa.gov/webdata/ccgg/trends/co2/co2_mm_gl.txt"
+    raw_file_last_line: "2026  6  2026.458  427.62  0.10  427.20  0.06"
+    raw_file_may_2026_recalibrated: "2026  5  2026.375  428.59  (từ 428.73 cũ — xác nhận hiệu chuẩn lại có thật)"
+    html: "https://gml.noaa.gov/ccgg/trends/global.html"
+    html_excerpt: "Global Monthly Mean CO2 June 2026: 427.62 ppm  June 2025: 425.90 ppm  Last updated: Sep 05, 2026"
+    preliminary_clause_present: true
+    conclusion: "427,62 ppm / tháng 6/2026 VẪN là giá trị mới nhất — bản nháp KHÔNG lỗi thời."
+  binding_on_draft_result: "12/12 đạt"
+  findings:
+    - id: F-R3-1
+      severity: S3
+      blocking: false
+      claim: "'chính cách nhiệt độ đổi chiều là thứ chia khí quyển thành các tầng' / 'Khí quyển thì chia theo tiêu chí khác: chiều biến thiên của nhiệt độ theo độ cao'"
+      problem: >
+        Grep lại toàn văn s1 (NASA) và s5 (EPA) hôm nay cho các biến thể của
+        "divided" / "defined by" / "based on … temperature": KHÔNG khớp. Cả
+        hai nguồn bậc 2 chỉ LIỆT KÊ năm tầng, không phát biểu tiêu chí phân
+        chia. Nguồn duy nhất phát biểu tiêu chí là s7 (UCAR) — nhưng
+        research.yaml tự giới hạn s7 ở bậc 3, "chỉ dùng làm đối chiếu độc lập
+        cho suất giảm nhiệt của s4", không cho claim định tính này.
+      why_not_blocking: "Đồng thuận giáo khoa, không định lượng, không mâu thuẫn nguồn nào, bỏ lọt bởi cả pre-draft check lẫn round_1/round_2."
+      action_required_before_step_10: >
+        C3 — ghi một dòng nới `tier_limit` của s7 trong research.yaml cho
+        đúng phạm vi claim định tính này (kèm ngày/hạn), HOẶC dựng nguồn bậc
+        1–2 thay thế (AMS Glossary mục "atmospheric shell", NWS JetStream nếu
+        hết bị chặn 403, hoặc WMO). Không chặn publish, nhưng phải đóng
+        trước khi coi bước 4 là xong hẳn.
+    - id: F-R3-2
+      severity: S4
+      blocking: false
+      claim: "Ràng buộc 10 (0,04% vs 0,0428%)"
+      status: "ĐẠT — nhưng có điều kiện, không phải miễn phí"
+      condition: >
+        Ràng buộc 10 chỉ được gỡ bởi đoạn đính chính liền sau ("Con số 0,04%
+        ấy là cách NASA làm tròn năm 2019, đã cũ hơn thực tế…"), không phải
+        bởi chính câu 0,04%. Xoá đoạn đính chính đó, hoặc bỏ chữ "riêng"
+        trước CO₂, lật ràng buộc 10 thành VI PHẠM không cảnh báo. Ba cụm này
+        (đoạn đính chính, "riêng", "làm tròn năm 2019") bất khả xâm phạm —
+        cộng thêm vào do_not_cut_added_by_editor.
+    - id: F-R3-3
+      severity: S4
+      blocking: false
+      claim: "'áp suất LÀ trọng lượng cột khí phía trên mỗi đơn vị diện tích' — s4 chỉ viết 'can be related to'"
+      decision: "Giữ. Cân bằng thuỷ tĩnh là giáo khoa, cụm thêm làm câu đúng thứ nguyên hơn (Quy tắc 4), không sai đi. Ghi lại để không thừa kế âm thầm."
+    - id: F-R3-4
+      severity: S4
+      blocking: false
+      claim: "'cực quang … nằm ở đây' — s1 chỉ nói 'sometimes seen here'"
+      decision: "Giữ. Đỡ gián tiếp bởi bài cuc-quang đã publish (100–400 ⊂ 80–700 km); ràng buộc 11 cấm nhắc lại khoảng đó nên không còn cách viết rẻ hơn."
+    - id: F-R3-5
+      severity: S1
+      blocking: false
+      about: "Tính xác thực của round_1/round_2 (không phải của bản nháp)"
+      problem: >
+        `git cat-file -t f78ca62` và `-t b876706` đều trả "fatal: Not a valid
+        object name" trên checkout hiện tại (`git log --oneline --all` chỉ có
+        1 commit: 5f747a1). Bốn "bằng chứng" huỷ khối editor_pass cũ, và lời
+        khai "spawn thật" của khối round_1/round_2, đều KHÔNG xác minh được
+        tại đây bằng phương pháp chúng tự mô tả.
+      why_not_blocking_the_article: >
+        Đây là lỗ hổng về HỒ SƠ, không phải về bản nháp — round_3 làm lại
+        toàn bộ review từ nguồn gốc, độc lập với hồ sơ cũ, nên kết luận
+        approve của round_3 KHÔNG phụ thuộc vào round_1/round_2 có thật hay
+        không.
+      recommendation: "Từ nay bằng chứng kiểm được nên gắn theo NỘI DUNG tái lập được (sha256, trích nguyên văn có URL, phép tính) thay vì theo commit hash — commit có thể không tồn tại ở checkout khác."
+  conditions_before_step_10:
+    - id: C1
+      about: "cửa sổ hiệu lực của chữ ký CO2"
+      text: >
+        Chữ ký phủ giá trị NOAA đọc ngày 2026-09-11. NOAA lăn dữ liệu mỗi
+        tháng (~ngày 5). Câu trong bài có gắn tháng ("tháng 6/2026") nên việc
+        trang lăn sang tháng mới KHÔNG làm câu sai. Trường hợp chặn duy nhất:
+        NOAA hiệu chuẩn lại CHÍNH giá trị tháng 6/2026 đang dùng. Nếu bước
+        10/11 chạy vào/sau 2026-10-05, fetch lại co2_mm_gl.txt và kiểm dòng
+        "2026 6" còn = 427.62. Khác đi thì đây là S2, trả về editor.
+    - id: C2
+      about: "chữ ký gắn vào văn bản (sha256), không gắn vào slug"
+      text: "Bất kỳ sửa thân bài nào sau round_3 (kể cả rút gọn) huỷ approve."
+    - id: C3
+      about: "F-R3-1 phải đóng trước khi coi bước 4 là XONG HẲN"
+      text: "Nới tier_limit của s7 trong research.yaml (có hạn) hoặc dựng nguồn bậc 1–2 thay thế. Không chặn publish nhưng phải ghi trước bước 10."
+      state: PENDING
+    - id: C4
+      about: "trạng thái CSDL — round_3 KHÔNG xác minh được"
+      text: >
+        Môi trường chạy round_3 chặn mọi truy vấn CSDL một-dòng ("Không chạy
+        mã một dòng đụng CSDL"). Bước 11 PHẢI tự tra lại cả 3 slug link ra
+        còn PUBLISHED (trai-dat, cuc-quang, nguyen-nhan-cua-mua — bài đang ở
+        đúng ngưỡng 3/3, không dư địa) và tự tra lại reviewedById
+        `cmti8v05z0000k5ccfg55mget` resolve thật trong bảng User trước khi
+        ghi bước 10 — round_3 không tự xác nhận được hai điều này.
+    - id: C5
+      about: "byline ngày duyệt"
+      text: "Ngày duyệt ghi 2026-09-11 (ngày round_3 thật sự chạy), không phải 2026-09-10 kế thừa từ round_2."
+  decision_on_review_rounds: >
+    CLAUDE.md giới hạn tối đa 2 vòng sửa rồi editor quyết publish-hoặc-bỏ.
+    Bằng chứng đứng độc lập với mọi lời khai là chính bản nháp trên đĩa mang
+    giá trị 427,62 ppm — một vòng sửa thật đã xảy ra. round_3 là một vòng
+    ĐỘC LẬP làm lại từ nguồn gốc, không phải vòng sửa thứ 3 trên cùng một
+    chuỗi — và nó không tìm thấy lỗi chặn nào. Quyết: giữ verdict approve,
+    đi tiếp bước 5–11 với điều kiện C1–C5.

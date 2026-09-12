@@ -228,6 +228,21 @@ sources:
       của NASA Glenn cho 27 − 6,49 × 4 = 1,04 °C. Hai nguồn dựng riêng, khớp
       tới 0,04 °C. Đó là bằng chứng công thức của s4 được dùng đúng, không
       phải một claim mới.
+    tier_limit_extension: >
+      NỚI 2026-09-11 theo phán quyết science-editor (checks/…yaml, round_3,
+      finding F-R3-1, điều kiện C3). Phạm vi nới DUY NHẤT: câu định tính
+      "khí quyển được chia tầng theo tiêu chí chiều biến thiên của nhiệt độ
+      theo độ cao" — câu s1 (NASA) và s5 (EPA) chỉ LIỆT KÊ năm tầng mà không
+      phát biểu tiêu chí phân chia, để lộ một khoảng trống mà s7 lấp bằng
+      câu "The atmosphere is divided into different layers depending on how
+      temperature changes." Lý do cho phép: đồng thuận giáo khoa, không định
+      lượng, không mâu thuẫn với nguồn bậc 1–2 nào trong bảng. KHÔNG nới cho
+      bất kỳ con số nào của s7 — mọi con số vẫn giữ nguyên giới hạn "chỉ đối
+      chiếu suất giảm nhiệt của s4".
+      expires: 2027-03-31 hoặc lần sửa bài kế tiếp, cái nào đến trước. Việc
+      lượt sau: dựng nguồn bậc 1–2 thay thế cho đúng claim định tính này
+      (AMS Glossary mục "atmospheric shell", NWS JetStream nếu hết bị chặn
+      403, hoặc WMO) rồi gỡ khối nới này.
 
   - id: s8
     tier: 1

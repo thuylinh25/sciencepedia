@@ -54,6 +54,6 @@ Nearly all of [Earth's magnetic field](/articles/tu-truong-va-luc-hap-dan-hai-lu
 
 As [the Earth rotates](/articles/neu-trai-dat-dang-quay-vi-sao-chung-ta-khong-cam-nhan-duoc), these flows of electrically conducting metal generate enormous electrical currents, which in turn produce the magnetic field surrounding the planet. This mechanism is known as the **geodynamo**.
 
-That field creates the [magnetosphere](/articles/cuc-quang-anh-sang-do-chinh-khi-quyen-trai-dat-phat-ra), which NASA describes as shielding the planet from harmful solar and cosmic particle radiation.
+That field creates the [magnetosphere](/articles/cuc-quang-anh-sang-do-chinh-khi-quyen-trai-dat-phat-ra), which NASA describes as shielding the planet from harmful energy from space.
 
 🌍 Even without reaching it directly, scientists have built a fairly detailed picture of the Earth's interior. Every earthquake not only shakes the surface but also helps reveal the secrets lying thousands of kilometres beneath our feet.

@@ -1,3 +1,39 @@
+# ══ DỞ DANG 2026-09-12 — bước 4 nay ĐÃ THẬT, bước 5–11 chặn bởi hạ tầng ══
+#
+# Lượt 2026-09-12 KHÔNG tin khối `editor_pass` (round_1/round_2) bên dưới —
+# đúng như cảnh báo của chính khối "DỞ DANG 2026-09-10" ở dưới đây. Đã spawn
+# agent `science-editor` THẬT qua tool Agent (run_in_background: false, chờ
+# kết quả trực tiếp — không phải tự chấm), làm lại toàn bộ review từ nguồn
+# gốc. Ghi đầy đủ ở `checks/khi-quyen-trai-dat.yaml`, khối `round_3`.
+#
+# KẾT QUẢ: APPROVE (round_3, 2026-09-11/12). Editor tự fetch lại NOAA GML
+# (co2_mm_gl.txt + global.html có cache-bust) và xác nhận 427,62 ppm/tháng
+# 6-2026 VẪN là số mới nhất — bản nháp KHÔNG lỗi thời. Tự tải lại cả 8 nguồn,
+# tự tính lại mọi công thức, đối chiếu 12/12 binding_on_draft — đạt cả 12.
+# 1 finding không chặn (F-R3-1, S3: luận điểm "chia tầng theo chiều nhiệt độ"
+# chỉ có nguồn bậc 3) đã xử lý bằng cách nới có hạn `tier_limit` của s7 trong
+# research.yaml (điều kiện C3, expires 2027-03-31). Không finding nào chặn.
+#
+# BƯỚC 5–11 VẪN CHƯA CHẠY — nhưng LÝ DO đã đổi: không còn là "chưa có tool
+# Agent" (B1 đã tự giải, phiên này gọi science-editor thật thành công), mà là
+# HẠ TẦNG: DATABASE_URL trong môi trường lượt 2026-09-12 bị Postgres từ chối
+# xác thực — `npm run publish:check -- --draft` báo Prisma P1000
+# ("Authentication failed... credentials for `postgres` are not valid"), lặp
+# lại ổn định qua nhiều lần thử cách nhau, không phải lỗi mạng thoáng qua.
+# KHÔNG có DIRECT_URL hay SUPABASE_* nào khác trong môi trường để thử đường
+# khác. Đây không phải việc content pipeline tự sửa được (không có thông tin
+# xác thực đúng, và không nên đoán/brute-force). Bước 5 (entity), 7 (category)
+# đều cần tra CSDL để tránh trùng — cố làm mù (không tra được) sẽ tạo ra thứ
+# lượt sau phải kiểm lại từ đầu, nên KHÔNG làm tiếp ở lượt này.
+#
+# Việc lượt sau (khi DB sống): bước 5 → 11 theo đúng thứ tự, dùng draft 598
+# từ hiện có (KHÔNG viết lại — đã qua accuracy gate thật), tôn trọng C1–C5
+# trong round_3 (đặc biệt C1: nếu chạy sau 2026-10-05 phải fetch lại
+# co2_mm_gl.txt xác nhận dòng "2026 6" còn 427.62; C4: tự tra lại 3 slug link
+# ra còn PUBLISHED và reviewedById resolve thật).
+#
+# ── Ghi chép của lượt 2026-09-10 giữ nguyên bên dưới, đọc để biết lịch sử ──
+#
 # ══ DỞ DANG 2026-09-10 — bài VẪN KHÔNG có trong CSDL ══
 #
 # Lượt 2026-09-10 bị NGƯỜI DÙNG DỪNG giữa chừng, đúng lúc đang ghi verdict vòng
@@ -73,7 +109,7 @@
 
 slug: khi-quyen-trai-dat
 status: NOT_IN_DB          # không phải DRAFT — chưa từng có hàng Article
-turn: 2026-09-10           # lượt 2026-09-07 ở bên dưới; lượt này bị dừng giữa chừng
+turn: 2026-09-12           # bước 4 xong thật (round_3, science-editor thật); bước 5-11 chặn bởi DATABASE_URL không xác thực được
 prose_words: 598           # 2026-09-10, rút từ 769 — B2 đã gỡ, trong băng 400–600
 reading_time_min: 3        # round(598/200); ĐỪNG đặt tay khi ghi CSDL — src/lib/utils.ts tự tính
 internal_links_out: 4      # ngưỡng 3 — đã đủ, xem verified.V5
