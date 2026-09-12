@@ -1,0 +1,246 @@
+# Thẩm định nguồn — ba-dinh-luat-newton (bước 2: fact-check, TRƯỚC khi viết)
+#
+# Bước 2 thẩm định BẢNG NGUỒN chứ không thẩm định bài — bài chưa tồn tại. Nhưng
+# lượt này có thêm một việc thứ hai, và nó quan trọng hơn: chủ đề được giao ĐÃ
+# CÓ BÀI TRONG KHO. Phần `duplication` bên dưới là phát hiện chính.
+#
+# Tên tệp dùng slug của chủ đề (`ba-dinh-luat-newton`) để khớp quy ước thư mục
+# và khớp research/ cùng tên. Prompt giao việc ghi "ba-dinh-newton.yaml" — đã
+# hiểu là lỗi gõ; tạo hai tệp cho một chủ đề chính là thứ bước này sinh ra để
+# ngăn.
+
+slug: ba-dinh-luat-newton
+checked: 2026-09-12
+verdict: pass                    # bảng nguồn đủ và sạch để viết
+blocked_for_new_article: true    # NHƯNG không được viết thành bài MỚI — xem duplication
+recommendation: refresh-existing
+
+# --- Điều kiện định lượng ------------------------------------------------
+thresholds:
+  strong_sources:
+    required: 3
+    actual: 10
+    note: >
+      Bốn trang NASA Glenn (BGA), hai trang NASA Science, bốn mục OpenStax
+      University Physics Volume 1, một bài của Royal Society. Tính theo NHÀ
+      XUẤT BẢN thì là 3 nguồn độc lập — NASA, OpenStax (Rice University),
+      Royal Society — đủ ngưỡng nhưng không dư dả như con số 10 gợi ra.
+  independence:
+    verdict: đạt
+    note: >
+      Đây là điểm mạnh thật của bảng này so với bài đang publish: bài cũ dựng
+      gần như toàn bộ trên NASA (5/7 nguồn cùng một cơ quan). Ở đây mỗi phát
+      biểu định luật đều có ÍT NHẤT một nguồn NASA và một nguồn OpenStax nói
+      cùng hướng, bằng hai lối diễn đạt khác nhau. Ba mệnh đề chỉ có một nguồn
+      (s4 giới hạn áp dụng, s8 gia tốc hướng tâm, s9 quan hệ Kepler–Newton) đã
+      đánh dấu `single_source: true` trong bảng nguồn.
+  liveness:
+    verdict: đạt
+    note: >
+      10/10 URL đọc được nội dung thật ngày 2026-09-12 (không chỉ trả 200 —
+      từng đoạn trích trong bảng đều lấy ra từ lần đọc đó).
+  citation_match:
+    verdict: đạt
+    note: >
+      Không có DOI nào trong bảng nên không chạy được `check-citations.ts`.
+      Bù lại: mọi `passage` là chuỗi nguyên văn đọc từ chính URL ghi kèm, và
+      một trường hợp TÌM MÀ KHÔNG THẤY đã được ghi lại thay vì bỏ qua (s8
+      `not_found`) — đúng cái mà quy tắc "verify at the source" nhắm tới.
+
+# --- Nguồn đã thử và LOẠI, ghi để lượt sau khỏi thử lại -------------------
+rejected_candidates:
+  - url: https://www.britannica.com/science/Newtons-laws-of-motion
+    why: "HTTP 403 với WebFetch ngày 2026-09-12. Không đọc được thì không trích — không đoán nội dung Britannica từ trí nhớ."
+  - url: https://physics.nist.gov/cuu/Units/units.html
+    why: "301 sang nist.gov/pml/owm/metric-si/si-units; trang đích KHÔNG định nghĩa newton. Bài đang publish trích 'NIST SP 330' cho đơn vị SI — trích dẫn đó chưa được kiểm trong lượt này."
+
+# --- PHÁT HIỆN CHÍNH: chủ đề đã có bài -----------------------------------
+duplication:
+  severity: S1
+  status: chặn-bài-mới
+  existing_slug: newton-da-giai-ma-the-gioi-nhu-the-nao
+  state: PUBLISHED · factCheck PASSED · danh mục Vật lý · 7 nguồn
+  evidence:
+    - "Có trong sitemap production ngày 2026-09-12 (57 bài /vi/articles/); đọc thẳng trang thấy đủ nội dung."
+    - "Mục lục của bài: Ba định luật chuyển động của Newton · Định luật I: Quán tính · Định luật II: Lực và gia tốc · Định luật III: Tác dụng và phản tác dụng · Newton đã giải thích Kepler như thế nào? · Ba định luật Newton còn đúng ngày nay không?"
+    - "/vi/articles/ba-dinh-luat-newton trả 404 — chưa có bài nào ở slug đề xuất."
+    - "NHƯNG sciencepedia/public/covers/ba-dinh-luat-newton.{svg,webp} đã tồn tại trong repo và scripts/build-covers.ts có khoá 'ba-dinh-luat-newton' → nhiều khả năng CSDL còn một bản DRAFT ở slug ấy, đúng như docs/process/diagnosis.md ghi lại (lượt chạy bị cắt giữa chừng)."
+  detail: >
+    Lý do chọn ghi ở hàng đợi — "dinh-luat-kepler mô tả hành tinh chuyển động
+    thế nào nhưng không bài nào nói vì sao" — đã không còn đúng. Bài đang
+    publish có hẳn một mục tên "Newton đã giải thích Kepler như thế nào?".
+    Hàng đợi lập ngày 2026-09-05 bằng một truy vấn đọc slug, mà slug của bài ấy
+    không chứa chữ "dinh-luat" nào — nên bộ lọc (a) "trùng hoặc gần trùng một
+    trong 41 slug đã có" trượt qua nó. Lỗi nằm ở phép lọc theo CHỮ trong khi
+    trùng lặp là chuyện NGHĨA.
+  why_blocking: >
+    Viết bài mới ở `ba-dinh-luat-newton` tạo ra hai trang tranh nhau đúng một
+    ý định tìm kiếm, và trang cũ đang giữ authority (đã index, đã có link vào
+    từ ba bài khác qua mục "Đọc thêm"). Đó là định nghĩa của near-duplicate
+    trong phần việc của content-curator, và quy tắc "refresh beats new" áp
+    thẳng vào đây.
+  route: >
+    Bước 3 soạn BẢN LÀM MỚI cho `newton-da-giai-ma-the-gioi-nhu-the-nao`, không
+    soạn bài mới. Quyết định cuối về việc giữ slug cũ hay đổi slug KHÔNG thuộc
+    bước này — chuyển cho science-editor (bước 4) và knowledge-architect (chủ
+    hàng đợi), theo quy tắc 6 của skill fact-check.
+
+# --- Vì sao bài đang publish ĐÁNG được làm mới (chứ không phải để yên) ----
+# Đọc trang thật ngày 2026-09-12 rồi đối chiếu với bảng nguồn. Đây là các phát
+# hiện về BÀI ĐÃ PUBLISH, không phải về bảng nguồn.
+findings_on_existing_article:
+  - id: E1
+    severity: S2
+    claim_on_page: 'Hai câu trên trang: "Kepler mô tả hiện tượng. Newton giải thích nguyên nhân." và "Newton chứng minh được vì sao các hành tinh phải chuyển động đúng như Kepler đã quan sát."'
+    verdict: partially-supported
+    evidence: >
+      s9 chỉ nói: "Kepler's laws were instrumental in Isaac Newton's development
+      of his theory of universal gravitation, which explained the unknown force
+      behind Kepler's third law." Phạm vi hẹp hơn hẳn chữ "chứng minh… đúng như
+      Kepler đã quan sát". Trên s8 (Basics of Space Flight ch.3) đã TÌM và
+      KHÔNG THẤY câu nào dạng "Kepler mô tả thế nào, Newton giải thích vì sao".
+    note: >
+      Cùng họ với lỗi Pollack 1996 ghi ở docs/content-rules.md: câu văn tự tin,
+      nguồn có thật, nhưng nguồn không nói điều đang viết.
+  - id: E2
+    severity: S2
+    claim_on_page: "ở những điều kiện cực đoan như vận tốc gần bằng tốc độ ánh sáng hoặc gần lỗ đen, vật lý Newton phải được thay thế bằng thuyết tương đối của Einstein"
+    verdict: partially-supported
+    evidence: >
+      Vế tốc độ có nguồn (s4). Vế "gần lỗ đen" KHÔNG có trong bảng nguồn nào —
+      và nó lẫn hai lý thuyết khác nhau: trường hấp dẫn mạnh là địa hạt của
+      thuyết tương đối RỘNG, không phải thuyết tương đối hẹp mà kho đang có bài.
+      Đồng thời bài BỎ MẤT điều kiện thứ hai mà s4 nêu ngay trong cùng câu: vật
+      phải lớn hơn cỡ phân tử (~10⁻⁹ m).
+  - id: E3
+    severity: S3
+    claim_on_page: 'Hai phát biểu trên trang: "Một vật sẽ giữ nguyên trạng thái đứng yên hoặc chuyển động thẳng đều nếu không có lực tổng hợp tác dụng lên nó." và "Lực càng lớn, vật càng tăng tốc nhanh."'
+    verdict: partially-supported
+    evidence: >
+      Phát biểu định luật I có chữ "tổng hợp", nhưng phát biểu định luật II thì
+      mất — s6 để chữ NET ngay trong câu ("net external force"). Không đồng
+      nhất trong cùng một bài, và vế mất chữ là vế dễ hiểu sai.
+  - id: E4
+    severity: S3
+    claim_on_page: "Với mọi lực tác dụng luôn tồn tại một lực phản tác dụng có cùng độ lớn và ngược chiều."
+    verdict: partially-supported
+    evidence: >
+      Thiếu mệnh đề mang toàn bộ giá trị của định luật III: hai lực đặt lên HAI
+      vật khác nhau nên không triệt tiêu (s3 "Notice that the forces are exerted
+      on different objects"; s7 "they do not cancel each other"). Hai ví dụ của
+      bài (chân–mặt đất, tên lửa–khí) thì đúng, nhưng người đọc không có câu
+      giúp họ đọc ra điều đúng ấy.
+  - id: E5
+    severity: S3
+    claim_on_page: 'Định luật nổi tiếng nhất của Newton: F = ma'
+    verdict: unsupported
+    evidence: >
+      Không nguồn nào xếp hạng mức nổi tiếng. Nặng hơn: s1 phát biểu định luật
+      II bằng động lượng ("force to be equal to change in momentum per change in
+      time") và s6 cho F = dp/dt, tức F = ma là TRƯỜNG HỢP RIÊNG khi khối lượng
+      không đổi. Trình bày F = ma như phát biểu gốc duy nhất là hạ mức tổng quát
+      của nguồn.
+  - id: E6
+    severity: S3
+    claim_on_page: 'Có. Chúng vẫn được sử dụng để: Thiết kế cầu đường và phương tiện giao thông. Tính toán quỹ đạo vệ tinh và tên lửa. Mô phỏng chuyển động trong kỹ thuật.'
+    verdict: unsupported
+    evidence: >
+      Danh sách ứng dụng không truy về nguồn nào trong bảng. Thay được bằng ví
+      dụ CÓ nguồn: Wright 1903 Flyer (s3), gia tốc hướng tâm của hành tinh (s8).
+  - id: E7
+    severity: S4
+    claim_on_page: 'Mục nguồn số 7: The fishy blunder that nearly prevented Newton''s masterpiece from being published — The Royal Society (2012)'
+    verdict: unverifiable
+    evidence: >
+      Không đọc trong lượt này. Bảng nguồn mới dùng một bài khác của chính
+      Royal Society (s10) có hai mốc 1686/1687 đọc được nguyên văn.
+
+# --- Phát hiện về BẢNG NGUỒN (việc chính của bước 2) ----------------------
+findings:
+  - id: F1
+    severity: S2
+    status: chặn-trước
+    title: Câu của NASA gộp hai mốc Principia
+    detail: >
+      s1 viết "In 1686, he presented his three laws of motion in the 'Principia
+      Mathematica Philosophiae Naturalis.'" Chép nguyên xi sang tiếng Việt sẽ
+      thành "Principia xuất bản năm 1686" — sai. s10 (Royal Society, nơi giữ bản
+      thảo) tách rõ: trình Quyển 1 cuối tháng 4 năm 1686, bản in đầu ra 1687.
+    resolution: >
+      Nếu bài nêu năm thì nêu theo s10 và nói rõ mốc nào là mốc gì; nếu không
+      cần năm thì bỏ hẳn. Cấm chép câu của s1.
+  - id: F2
+    severity: S1
+    status: chặn-trước
+    title: Mở rộng phạm vi mệnh đề Kepler–Newton
+    detail: >
+      Bảng nguồn chỉ chống lưng được mệnh đề hẹp của s9. Mọi câu mạnh hơn
+      ("Newton chứng minh ba định luật Kepler", "Kepler mô tả — Newton giải
+      thích") là claim không nguồn mang dấu kiểm định.
+    resolution: >
+      Bản làm mới chỉ được viết trong phạm vi s9 + s8: hành tinh đi đường cong
+      nhờ gia tốc hướng tâm do hấp dẫn cung cấp (s8), và các định luật Kepler là
+      đầu vào cho thuyết hấp dẫn của Newton, thuyết ấy giải thích lực còn thiếu
+      đằng sau định luật thứ ba của Kepler (s9).
+  - id: F3
+    severity: S2
+    status: chặn-trước
+    title: Giới hạn áp dụng có HAI vế, không phải một
+    detail: >
+      s4: "speeds much less than the speed of light AND … larger than the size
+      of most molecules (about 10−9 m in diameter)". Nêu mỗi vế tốc độ là cắt
+      mất nửa mệnh đề — đúng kiểu hỏng mà docs/content-rules.md gọi là "rút gọn
+      làm mất mức dè dặt".
+    resolution: Bản làm mới nêu cả hai vế, kèm con số 10⁻⁹ m của nguồn.
+  - id: F4
+    severity: S3
+    status: chặn-trước
+    title: Chữ "tổng hợp" trong định luật II
+    detail: 's6 để chữ "net external force" ngay trong phát biểu; bỏ nó thì hai lực cân bằng cũng thành "có lực nên phải có gia tốc".'
+    resolution: Giữ chữ "tổng hợp" ở cả ba định luật, không chỉ định luật I.
+  - id: F5
+    severity: S3
+    status: đã-xử-lý-trước-khi-viết
+    title: Wikidata QID chưa tra
+    detail: "`wikidata_qid: Q16590` trong bảng nguồn là suy đoán, chưa xác minh — và bước 5 (entity) đang bị chặn vì CSDL chết."
+    resolution: Đã ghi vào `open_questions`. Bước 5 phải tự tra, không được tin dòng đó.
+
+# --- Ranh giới với bài đã có ---------------------------------------------
+overlap:
+  - slug: newton-da-giai-ma-the-gioi-nhu-the-nao
+    state: PUBLISHED / PASSED
+    rule: "TRÙNG Ý ĐỊNH. Không viết bài thứ hai — làm mới bài này. Xem `duplication`."
+  - slug: ba-dinh-luat-kepler-hanh-tinh-chuyen-dong-theo-quy-luat-nao
+    state: PUBLISHED
+    rule: Nêu quan hệ Kepler–Newton trong phạm vi s8/s9 rồi liên kết sang; KHÔNG phát biểu lại ba định luật Kepler.
+  - slug: thuyet-tuong-doi-hep-khi-thoi-gian-khong-con-tuyet-doi
+    state: PUBLISHED
+    rule: Chỉ nêu ĐIỀU KIỆN áp dụng của cơ học Newton rồi liên kết sang; không kể lại thuyết tương đối.
+  - slug: tu-truong-va-luc-hap-dan-hai-luc-vo-hinh-hai-co-che-khac-nhau
+    state: PUBLISHED
+    rule: Liên kết ở chỗ nói lực hấp dẫn; không kể lại cơ chế so sánh hai lực.
+  - slug: bi-mat-dang-sau-cam-giac-hut-hang-khi-van-toc-thay-doi
+    state: PUBLISHED
+    rule: >
+      Bài đó đã dùng định luật I để giải thích cảm giác hụt hẫng trên xe. Bài
+      này liên kết sang làm ví dụ đời thường của quán tính, KHÔNG kể lại cơ chế
+      tai trong.
+  - slug: bi-mat-dang-sau-cam-giac-nang-va-nhe
+    state: PUBLISHED
+    rule: Liên kết ở chỗ nói khối lượng đo quán tính; phân biệt khối lượng/trọng lượng là dòng #3 hàng đợi, chưa viết.
+  - slug: ba-dinh-luat-newton
+    state: "NGHI CÓ DRAFT trong CSDL — chưa kiểm được (CSDL chết)"
+    rule: >
+      Bằng chứng gián tiếp: ảnh bìa đã dựng sẵn trong repo và diagnosis.md ghi
+      lại một bản DRAFT ở slug này. Lượt nào có CSDL sống PHẢI hoà giải ba thứ
+      trước khi ghi bất cứ gì: bài đã publish, bản DRAFT ấy, và bản làm mới của
+      lượt này. Ghi thêm một bản thứ tư là làm vấn đề tệ hơn.
+
+conclusion: >
+  Bảng nguồn ĐỦ và SẠCH để viết (verdict pass). Nhưng chủ đề KHÔNG còn là một
+  lỗ hổng: kho đã có bài cho đúng ý định này, đang publish và đang giữ
+  authority. Vì vậy bước 3 soạn bản LÀM MỚI cho slug đã có, không soạn bài mới
+  ở slug mới — và bảy phát hiện E1–E7 ở trên là danh sách việc phải sửa, đủ để
+  biện minh cho một lượt làm mới thay vì để yên. Quyết định cuối về slug và về
+  việc hoà giải với bản DRAFT nghi còn trong CSDL thuộc science-editor và
+  knowledge-architect, không thuộc bước này.

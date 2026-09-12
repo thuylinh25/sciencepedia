@@ -1,0 +1,174 @@
+# ══ DỞ DANG 2026-09-12 — bước 1–3 XONG, bước 4 CHƯA CHẠY, bước 5–11 chặn ══
+#
+# Chủ đề "Ba định luật Newton" (dòng #2 của docs/content/topic-queue.md). Lượt
+# này KHÔNG sinh ra bài mới, và đó là kết luận chính — xem `duplication`.
+#
+# Tệp meta đặt tên theo slug CHỦ ĐỀ (`ba-dinh-luat-newton`) để lượt sau tra
+# hàng đợi là thấy ngay; còn bản nháp thì đặt tên theo slug BÀI ĐÍCH đã có
+# trong kho. Hai tên khác nhau là cố ý, không phải nhầm.
+
+topic: Ba định luật Newton
+queue_row: 2
+proposed_slug: ba-dinh-luat-newton      # KHÔNG DÙNG — xem duplication
+target_slug: newton-da-giai-ma-the-gioi-nhu-the-nao
+run_date: 2026-09-12
+outcome: refresh-draft-chờ-science-editor
+
+# ── PHÁT HIỆN CHÍNH: chủ đề đã có bài đang publish ──
+duplication:
+  existing: newton-da-giai-ma-the-gioi-nhu-the-nao
+  state: PUBLISHED · factCheck PASSED · danh mục Vật lý · 7 nguồn
+  proof:
+    - "Có trong sitemap production 2026-09-12 (57 bài); đọc thẳng trang thấy đủ ba định luật, mục 'Newton đã giải thích Kepler như thế nào?', mục giới hạn áp dụng."
+    - "/vi/articles/ba-dinh-luat-newton trả 404 — slug đề xuất chưa có bài PUBLISHED."
+    - "NHƯNG public/covers/ba-dinh-luat-newton.{svg,webp} đã có trong repo và build-covers.ts có khoá cùng tên → nhiều khả năng CSDL còn một bản DRAFT ở slug ấy (đúng sự cố đã ghi ở docs/process/diagnosis.md)."
+  why_queue_missed_it: >
+    Hàng đợi lọc trùng bằng CHỮ TRONG SLUG. Slug của bài đã có không chứa
+    "dinh-luat" lẫn "newton-laws" theo dạng bộ lọc tìm, nên bộ lọc (a) trượt.
+    Trùng lặp là chuyện NGHĨA, không phải chuyện chuỗi — đây là lỗi quy trình
+    cần báo về `knowledge-architect`, không phải lỗi của một lượt chạy.
+  decision_this_run: >
+    Không viết bài thứ hai. Bước 3 soạn BẢN LÀM MỚI cho bài đã có. Quyết định
+    cuối (giữ slug cũ hay đổi slug + redirect; hoà giải với bản DRAFT nghi còn
+    trong CSDL) thuộc science-editor và knowledge-architect.
+
+# ── Từng bước đã làm gì ──
+steps:
+  step_1_content_research:
+    status: xong
+    file: docs/content/research/ba-dinh-luat-newton.yaml
+    detail: >
+      10 nguồn, đọc thật qua WebFetch/WebSearch ngày 2026-09-12, mỗi đoạn
+      `passages` là chuỗi nguyên văn lấy từ chính URL ghi kèm. Ba nhà xuất bản
+      độc lập: NASA (Glenn BGA ×3, NASA Science ×2), OpenStax University
+      Physics Volume 1 (§5.1, §5.2, §5.3, §5.5), The Royal Society.
+      Đã ghi cả hai thứ mà bảng nguồn thường bỏ qua: nguồn thử mà KHÔNG đọc
+      được (Britannica 403; trang đơn vị SI của NIST đã đổi địa chỉ và không
+      còn định nghĩa newton), và một chỗ TÌM MÀ KHÔNG THẤY (s8 `not_found`).
+  step_2_fact_check:
+    status: xong
+    file: docs/content/checks/ba-dinh-luat-newton.yaml
+    verdict: pass (bảng nguồn) · blocked_for_new_article (bài mới)
+    detail: >
+      5 finding về bảng nguồn (F1–F5) và 7 finding về BÀI ĐANG PUBLISH (E1–E7).
+      Hai finding chặn đáng chú ý: F2/E1 — bảng nguồn chỉ chống lưng được mệnh
+      đề hẹp "thuyết hấp dẫn giải thích lực còn thiếu đằng sau định luật THỨ BA
+      của Kepler", trong khi bài đang publish viết "Newton chứng minh được vì
+      sao các hành tinh phải chuyển động đúng như Kepler đã quan sát"; F1 —
+      câu của NASA gộp mốc trình bày (1686) với mốc in sách (1687), Royal
+      Society tách rõ hai mốc.
+  step_3_article_generator:
+    status: xong
+    file: docs/content/drafts/newton-da-giai-ma-the-gioi-nhu-the-nao.md
+    detail: >
+      Bản làm mới, soạn từ bảng nguồn đã thẩm định, áp đủ 5 resolution của
+      bước 2. Không mang sang bất kỳ câu nào của bài cũ mà bước 2 đánh dấu
+      unsupported.
+  step_4_science_editor:
+    status: CHƯA CHẠY — thiếu công cụ, KHÔNG phải đã duyệt
+    detail: >
+      Phiên content-curator này KHÔNG có tool spawn agent (đã tra: không có
+      Agent/Task trong toolset; ToolSearch trả về không khớp; ListAgents chỉ
+      thấy chính phiên này). Không có cách nào gọi một `science-editor` thật từ
+      đây.
+      Tự chấm bài của chính mình là đúng thứ gate accuracy sinh ra để chặn
+      (quy tắc 8 của skill article-generator: "No self-approval"), nên lượt này
+      DỪNG tại đây thay vì tự kết luận APPROVE.
+      Bản nháp ở trạng thái: chưa qua gate accuracy. Không được ghi vào CSDL,
+      không được publish, kể cả khi CSDL sống lại.
+
+# ── Số liệu chốt ──
+prose_words: 596               # trần 400–600, đo bằng cùng phép đo với countWords/prose của check-publish.ts
+prose_chars: 3027
+reading_time_min: 3
+last_section_words: 114        # ngưỡng cảnh báo "bài không khép lại" là <70
+closing_move: đoạn mở đầu bằng emoji 🍎 (một trong ba dạng khép mà kho đang dùng)
+internal_links_out:            # 4 link, đều trỏ tới bài CÓ trong sitemap production 2026-09-12
+  - /articles/bi-mat-dang-sau-cam-giac-hut-hang-khi-van-toc-thay-doi   # quán tính, ví dụ đời thường
+  - /articles/tu-truong-va-luc-hap-dan-hai-luc-vo-hinh-hai-co-che-khac-nhau  # lực hấp dẫn cấp gia tốc hướng tâm
+  - /articles/ba-dinh-luat-kepler-hanh-tinh-chuyen-dong-theo-quy-luat-nao    # quan hệ Kepler–Newton
+  - /articles/thuyet-tuong-doi-hep-khi-thoi-gian-khong-con-tuyet-doi         # giới hạn áp dụng, vế tốc độ
+links_chosen_by: >
+  NGHĨA, không phải chữ trùng. Đã cân nhắc rồi BỎ
+  `bi-mat-dang-sau-cam-giac-nang-va-nhe` ở câu "khối lượng là thước đo quán
+  tính": bài đó nói về cảm giác NẶNG–NHẸ (trọng lượng), còn câu này nói về
+  KHỐI LƯỢNG — đúng kiểu bẫy chữ trùng mà kho đã mắc một lần.
+
+# ── Việc lượt sau phải làm, ĐÚNG THỨ TỰ ──
+#
+# Bước 4 trước đã, rồi mới tới phần bị CSDL chặn. Đừng đảo.
+next_steps:
+  - step: 4
+    blocked_by: thiếu tool spawn agent trong phiên vừa rồi
+    todo: >
+      Gọi một `science-editor` THẬT, cho nó đọc LẠI TỪ NGUỒN GỐC (10 URL trong
+      research/ba-dinh-luat-newton.yaml), không đối chiếu bản nháp với chính
+      bản nháp. Ba câu hỏi phải trả lời, theo thứ tự:
+        (a) Bản nháp có câu nào vượt phạm vi nguồn không? Soi kỹ nhất đoạn
+            Kepler–Newton (xem F2/E1) và câu về giới hạn áp dụng (F3).
+        (b) Có nên làm mới bài đã publish, hay để yên? Bảy finding E1–E7 là
+            căn cứ đề xuất làm mới; editor có quyền bác.
+        (c) Giữ slug `newton-da-giai-ma-the-gioi-nhu-the-nao` hay đổi sang
+            `ba-dinh-luat-newton` (cần redirect, và cần biết bản DRAFT nghi
+            còn trong CSDL là gì). Quyết cùng knowledge-architect.
+      Tối đa 2 vòng sửa, rồi publish-hoặc-bỏ. KHÔNG nới trần 600 từ, KHÔNG hạ
+      số link nội bộ xuống dưới 3.
+  - step: "5–11"
+    blocked_by: >
+      CSDL không truy cập được. Lượt 2026-09-12 đã xác nhận nhiều lần: Prisma
+      P1000 "Authentication failed against database server, the provided
+      database credentials for `postgres` are not valid". Không có DIRECT_URL
+      hay SUPABASE_* nào khác để thử đường khác. Không phải việc pipeline tự
+      sửa được; KHÔNG đoán, KHÔNG brute-force.
+    todo: >
+      Chỉ chạy SAU khi bước 4 cho verdict. Và trước khi ghi bất cứ gì: đọc
+      trạng thái thật của CẢ BA thứ — bài đang publish, bản DRAFT nghi ở slug
+      `ba-dinh-luat-newton`, và bản làm mới này. Ghi thêm bản thứ tư là làm
+      vấn đề tệ hơn.
+    per_step:
+      5_knowledge_graph_manager: >
+        Entity loại LAW cho ba định luật Newton. `wikidata_qid: Q16590` ghi
+        trong research/ là SUY ĐOÁN CHƯA TRA — phải tự xác minh, đừng tin dòng
+        đó. Quan hệ có kiểu: tới entity Kepler (giải thích/được suy ra), tới
+        lực hấp dẫn, tới thuyết tương đối hẹp (giới hạn áp dụng).
+      6_seo_optimizer: >
+        Nếu giữ slug cũ thì title/description hiện tại phải xem lại — tiêu đề
+        "Newton đã giải mã thế giới như thế nào?" là tiêu đề feed, không phải
+        tiêu đề mục từ bách khoa. Xác nhận lại 4 link ra vẫn trỏ bài PUBLISHED.
+      7_category_manager: >
+        Bài đang ở danh mục "Vật lý" (gốc phẳng). Kho đã có danh mục con
+        `co-hoc` (thấy trong sitemap) — nhiều khả năng đó mới là primary
+        category đúng. Tra cây danh mục thật rồi xếp.
+      8_image_finder: >
+        Ảnh bìa đã có sẵn: public/covers/ba-dinh-luat-newton.{svg,webp}, tự vẽ
+        bằng scripts/build-covers.ts (ba ô: quán tính, F=ma, tác dụng–phản tác
+        dụng). Nếu dùng thì `coverImageCredit` phải đặt theo CREDIT trong
+        build-covers.ts, KHÔNG chép ghi công cũ (ảnh Unsplash của Sören Funk
+        đang gắn với bài publish) — ghi công sai người tệ hơn không ghi.
+        Trước khi dùng: kết xuất ra XEM ở đúng kích thước, vì hình này mang
+        mệnh đề định lượng (ô F=ma vẽ khối lượng gấp đôi thì gia tốc còn một
+        nửa — phải đúng theo nghĩa đo được).
+      9_translation: >
+        Ràng buộc thuật ngữ bắt buộc giữ khi dịch sang en:
+          · "lực tổng hợp" = "net force" — không được rụng chữ net;
+          · định luật III phải giữ vế "acting on different bodies … do not
+            cancel each other";
+          · giới hạn áp dụng phải giữ ĐỦ HAI vế (speeds much less than c AND
+            larger than the size of most molecules, ~10⁻⁹ m);
+          · mốc Principia: presented 1686 / printed 1687, không gộp.
+      10_supabase_manager: >
+        Đây là SỬA BÀI ĐÃ PUBLISH, tức ĐÍNH CHÍNH chứ không phải biên tập.
+        Theo docs/content-rules.md phải để lại đủ ba thứ: một dòng trong
+        docs/content/corrections.md (claim cũ, claim mới, căn cứ — ít nhất cho
+        E1 và E2), một bản Revision chụp nội dung TRƯỚC khi sửa ghi trong CÙNG
+        transaction, và `lastVerifiedAt` cập nhật.
+      11_content_curator: >
+        `npm run publish:check -- --slug <slug>` rồi `npm run publish -- --slug
+        <slug>`. Bài đã publish trước 2026-09-07 được miễn trần độ dài, nhưng
+        bản làm mới này 596 từ nên lọt băng mới dù có được miễn hay không.
+
+# ── Ghi cho lượt audit thư viện ──
+library_health_notes:
+  - "Bộ lọc trùng lặp của topic-queue.md dò theo chữ trong slug; nó vừa trượt một bài trùng ý định hoàn toàn. Các dòng còn lại của hàng đợi cần rà lại theo NGHĨA, không theo slug — đặc biệt dòng #15 ('Hấp dẫn: Newton và điều Newton không giải thích'), vốn chồng lấn với chính bài này và với `tu-truong-va-luc-hap-dan-…`."
+  - "`newton-da-giai-ma-the-gioi-nhu-the-nao` ~371 từ văn xuôi — dưới sàn 400 của luật hiện hành, được miễn vì publish trước 2026-09-07. Thuộc nhóm bài mỏng, và nay có thêm bằng chứng dưới chuẩn về nội dung (E1–E7)."
+  - "Nghi có bài DRAFT mồ côi ở slug `ba-dinh-luat-newton` — ảnh bìa đã dựng, bài chưa publish. Đúng dạng nợ mà docs/process/diagnosis.md mô tả. Lượt nào có CSDL sống nên chạy `publish:check --draft` để đếm hết loại này, không chỉ bài Newton."

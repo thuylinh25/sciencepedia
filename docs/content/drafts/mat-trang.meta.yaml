@@ -1,0 +1,113 @@
+# ══ DỞ DANG 2026-09-12 — bước 1–4 XONG THẬT, bước 5–11 chặn bởi hạ tầng ══
+#
+# Chủ đề "Mặt Trăng" (mat-trang), lấy từ docs/content/topic-queue.md. Lượt
+# 2026-09-12 chạy trọn bước 1–4 trong một phiên, KHÔNG tự chấm — cả hai vòng
+# science-editor đều là agent thật qua tool Agent, run_in_background: false,
+# chờ kết quả trực tiếp.
+#
+#   bước 1  ✔ docs/content/research/mat-trang.yaml — 8 nguồn (5 NASA bậc 2,
+#           2 Nature bậc 1 giới hạn phạm vi vì không đọc được toàn văn, 1 NASA
+#           bậc 2 Milankovitch). accessed 2026-09-12.
+#   bước 2  ✔ docs/content/checks/mat-trang.yaml — verdict pass, 5 finding
+#           F1–F5 (F2, F3 mức S1: cấm "0°–85° nếu không có Mặt Trăng" và cấm
+#           gán "Mặt Trăng lùi xa → ngày Trái Đất dài thêm X" — cả hai kiểm
+#           lại ở bước 4, không bị phạm).
+#   bước 3  ✔ docs/content/drafts/mat-trang.md — soạn, rồi SỬA hai lần theo
+#           đúng finding của bước 4 (không viết lại tự do).
+#   bước 4  ✔ science-editor THẬT, 2 vòng (tối đa cho phép):
+#             vòng 1: REVISE — 1 finding S1 (F-E1, 931 từ, vượt trần 600) +
+#               5 S2 (F-E2..F-E6) + 6 S3 (F-E7..F-E13). Chi tiết đầy đủ nằm
+#               trong lịch sử phiên chạy (agentId aaeaeb73db862f61f) — TÓM TẮT:
+#                 F-E2 đoạn kết đánh rơi mức dè dặt nguồn (thành khẳng định
+#                   chắc "là mảnh vỡ va chạm" / "giữ trục quay ổn định");
+#                 F-E3 "phần lớn" nâng cấp "includes a sampling of" của s5;
+#                 F-E4 "sáng thứ hai trên bầu trời" không có trong bảng nguồn;
+#                 F-E5 "đúng sáu chuyến hạ cánh" — số không nguồn, sai quy
+#                   thuộc (tri thức thật ra đến từ đá + tàu quỹ đạo + đo laser);
+#                 F-E6 tấm gương phản xạ laser là thiết bị THỤ ĐỘNG — không
+#                   được nói nó "gửi số liệu về", và "vẫn đang" là claim ràng
+#                   buộc thời gian không có mốc ngày chống lưng;
+#                 F-E7 gán "mảng sẫm màu nhìn mắt thường" cho lòng chảo dung
+#                   nham — nguồn không nói vậy;
+#                 F-E8 "nóng chảy hoàn toàn" chặt hơn "molten...deep ocean of
+#                   magma" của s4;
+#                 F-E9 thêm "gần cực" cho băng nước — s5 chỉ nói "permanently
+#                   shadowed craters";
+#                 F-E10 so sánh "chậm hơn tốc độ móng tay mọc" không nguồn và
+#                   chiều so sánh không vững;
+#                 F-E11 độ chính xác "một phần mười tỉ" đặt cạnh hai con số
+#                   khoảng cách khác nhau (384.400 km vs 385.000 km) — kho tự
+#                   mâu thuẫn;
+#                 F-E12 mục va chạm chỉ dựa hai trang NASA (cùng cơ quan),
+#                   thiếu đối chứng — nên thêm Canup & Asphaug, Nature 2001
+#                   (s6), đúng phạm vi tiêu đề cho phép;
+#                 F-E13 "thiên thể duy nhất... đặt chân lên" không có nguồn.
+#             Đã sửa: cắt "Đọc thêm", rút gọn từng mục, áp đúng 13 resolution
+#               — không thêm claim mới ngoài đề nghị của vòng 1.
+#             vòng 2 (cuối, tối đa cho phép): REVISE — 12/13 finding đã đóng
+#               (kiểm lại từ nguồn gốc, không tin lời khai), còn F-E6 mở MỘT
+#               NỬA: đã bỏ "gửi số liệu về" nhưng chữ "vẫn" ở "vẫn phản chiếu
+#               tia laser" vẫn là claim ràng buộc thời gian không mốc ngày.
+#               Editor tự nói rõ: sửa đúng câu đó thì "gate accuracy coi như
+#               đã qua", KHÔNG cần vòng thẩm định thứ ba (đã hết hạn mức 2
+#               vòng). Đã áp sửa: "...đến từ đá Apollo, tàu quỹ đạo, và tấm
+#               gương laser đặt trên đó từ năm 1969." — bỏ "vẫn", quy về mốc
+#               1969 thay vì khẳng định hiện tại.
+#             agentId các phiên: vòng 1 = aaeaeb73db862f61f, vòng 2 =
+#             ac35a0f31a84798bc.
+#
+# Kết quả bước 4: APPROVE (theo xác nhận của chính vòng 2 sau khi áp bản vá
+# cuối — không phát sinh vòng 3). 5 finding S3 còn tồn, KHÔNG chặn, ghi lại
+# để lượt sau không phải dò lại: "tàu quỹ đạo" ở câu kết không có trong bảng
+# nguồn (do resolution vòng 1 gợi ý; vô hại); "đủ tích luỹ... thời gian địa
+# chất" là suy diễn định tính không nguồn; "chuyện phổ biến trong hệ hành
+# tinh" mở rộng nhẹ phạm vi so với "quite common" của s2; "một phần mười tỉ"
+# gắn với 385.000 km ở s3 trong khi bài dùng 384.400 km của s1 — không mâu
+# thuẫn lộ ra nhờ quy thuộc "NASA mô tả là", nhưng là chỗ mềm nếu sau này sửa
+# dòng 1 hoặc dòng cuối phải xem lại cả hai cùng lúc.
+#
+# ── Số liệu chốt ──
+prose_words: 593              # trần 400–600, đếm bằng countWords của check-publish.ts
+reading_time_min: 3
+sources_in_db: 8               # 6 NASA bậc 2, 2 Nature bậc 1 (giới hạn phạm vi dùng)
+internal_links_out:
+  - /articles/su-ra-doi-cua-he-mat-troi
+  - /articles/dieu-gi-tao-ra-gio-thuy-trieu-va-cac-dong-hai-luu
+  - /articles/nhat-thuc-va-nguyet-thuc-hai-hien-tuong-che-khuat-khong-doi-xung
+  - /articles/nguyen-nhan-cua-mua-do-nghieng-truc-khong-phai-khoang-cach
+
+# ── Bước 5–11: CHẶN BỞI HẠ TẦNG, không phải bởi nội dung ──
+#
+# Lượt 2026-09-12 xác nhận LẠI (lần thứ ba trong ngày, sau cau-truc-ben-
+# trong-trai-dat và khi-quyen-trai-dat): `npm run publish:check -- --draft`
+# báo Prisma P1000 ("Authentication failed... credentials for `postgres` are
+# not valid"). Không có DIRECT_URL hay SUPABASE_* nào khác trong môi trường
+# để thử đường khác. Đây KHÔNG phải việc content pipeline tự sửa được.
+#
+# Bước 5 (entity) và bước 7 (category) đều cần tra CSDL để tránh trùng —
+# entity-plan.json (gốc 2026-09-05) là bản kế hoạch TĨNH, không phản ánh
+# những gì đã ghi thật vào CSDL từ đó tới nay, nên KHÔNG đủ để làm mù bước 5/7
+# một cách an toàn. Theo đúng tiền lệ của hai bản nháp kia: KHÔNG đoán, KHÔNG
+# brute-force, KHÔNG làm tiếp bước 5–11 ở lượt này.
+#
+# Việc lượt sau (khi DB sống), THEO ĐÚNG THỨ TỰ, KHÔNG quay lại bước 1–4:
+#   5. knowledge-graph-manager — entity "mặt-trăng" (OBJECT, Wikidata Q405),
+#      quan hệ tới "trai-dat" (vệ tinh của), "he-mat-troi" (thành viên).
+#   6. seo-optimizer — metadata, JSON-LD, xác nhận 4 internal link ra vẫn trỏ
+#      đúng bài PUBLISHED.
+#   7. category-manager — khả năng cao thuộc nhánh Hệ Mặt Trời / Trái Đất và
+#      Khí hậu (tra category tree thật để xếp).
+#   8. image-finder — ảnh Mặt Trăng (NASA/công cộng, kiểm bản quyền).
+#   9. translation — bản .en.md từ 593 từ vi hiện có, giữ đúng ràng buộc
+#      thuật ngữ: "far side" không phải "dark side"; hedge Theia giữ nguyên
+#      "perhaps a single object... perhaps a series"; hedge Laskar 1993 giữ
+#      "is thought to" / tương đương, không nâng thành khẳng định.
+#  10. supabase-manager — ghi Article (state DRAFT), Source[], claim map.
+#  11. content-curator — `npm run publish:check -- --slug mat-trang`, rồi
+#      `npm run publish -- --slug mat-trang`.
+#
+# CẢNH BÁO cho bước 11: bài cần ≥1 link VÀO từ một bài đã PUBLISHED. Ứng viên
+# tốt nhất theo nghĩa (không theo chữ trùng): bài
+# `nhat-thuc-va-nguyet-thuc-hai-hien-tuong-che-khuat-khong-doi-xven` (đã có
+# 3/4 dòng overlap nhắc Mặt Trăng), hoặc `su-ra-doi-cua-he-mat-troi`. Chưa
+# chọn — để lượt sau quyết dựa theo ngữ cảnh câu chữ thật của bài đích lúc đó.

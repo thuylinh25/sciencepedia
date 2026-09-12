@@ -1,0 +1,269 @@
+# Bảng nguồn — ba-dinh-luat-newton (bước 1: content-research)
+#
+# Lập 2026-09-12, cho dòng #2 của docs/content/topic-queue.md.
+#
+# ĐỌC TRƯỚC KHI DÙNG BẢNG NÀY. Lý do chọn ghi trong hàng đợi — "dinh-luat-kepler
+# mô tả hành tinh chuyển động thế nào nhưng không bài nào nói vì sao" — ĐÃ SAI
+# KỂ TỪ LÚC HÀNG ĐỢI ĐƯỢC LẬP. Kho đã có bài `newton-da-giai-ma-the-gioi-nhu-
+# the-nao`, PUBLISHED, factCheck PASSED, danh mục Vật lý, 7 nguồn NASA/NIST/
+# Royal Society, với đúng các mục: ba định luật, "Newton đã giải thích Kepler
+# như thế nào?", "còn đúng ngày nay không?". Kiểm ngày 2026-09-12 qua sitemap
+# production và đọc thẳng trang.
+#
+# Nên bảng nguồn này KHÔNG phải bảng nguồn cho một bài MỚI. Nó là bảng nguồn cho
+# một lượt LÀM MỚI bài đã có. Xem verdict ở docs/content/checks/ba-dinh-luat-
+# newton.yaml trước khi ai đó dùng nó để soạn bài mới.
+#
+# Mọi đoạn trong `passages` được ĐỌC THẬT từ URL ghi kèm trong lượt này, không
+# nhớ lại. Chỗ tìm mà KHÔNG thấy cũng ghi lại — xem `not_found` ở s8.
+
+topic: Ba định luật Newton
+slug: ba-dinh-luat-newton
+target_slug: newton-da-giai-ma-the-gioi-nhu-the-nao   # bài đã có, xem check
+entity_type: LAW
+wikidata_qid: Q16590                                  # CHƯA xác minh, xem gaps
+accessed: 2026-09-12
+sufficient: true
+
+sources:
+  - id: s1
+    tier: 2
+    title: Newton's Laws of Motion
+    publisher: NASA Glenn Research Center — Beginner's Guide to Aeronautics
+    url: https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/newtons-laws-of-motion/
+    accessed: 2026-09-12
+    passages:
+      - "An object at rest remains at rest, and an object in motion remains in motion at constant speed and in a straight line unless acted on by an unbalanced force."
+      - "This tendency to resist changes in a state of motion is inertia."
+      - "The acceleration of an object depends on the mass of the object and the amount of force applied."
+      - "Momentum is defined to be the mass m of an object times its velocity V."
+      - "Whenever one object exerts a force on another object, the second object exerts an equal and opposite force on the first."
+      - "In 1686, he presented his three laws of motion in the 'Principia Mathematica Philosophiae Naturalis.'"
+    note: >
+      Trang này phát biểu định luật II bằng NGÔN NGỮ ĐỘNG LƯỢNG (lực bằng biến
+      thiên động lượng trên biến thiên thời gian), và đưa dạng rời rạc
+      F = (m1·V1 − m0·V0)/(t1 − t0). Đó là dạng tổng quát hơn F = ma: nó còn
+      đúng khi khối lượng thay đổi. Bài KHÔNG được trình bày F = ma như thể đó
+      là phát biểu gốc duy nhất.
+    warning: >
+      BẪY NIÊN ĐẠI. Câu "In 1686, he presented his three laws of motion in the
+      Principia" gộp hai mốc khác nhau: trình bày trước Royal Society (1686) và
+      IN THÀNH SÁCH (1687). Xem s10. Nếu bài nêu năm thì phải nêu đúng mốc nào,
+      không chép nguyên câu của NASA.
+
+  - id: s2
+    tier: 2
+    title: Aircraft Motion — Newton's First Law
+    publisher: NASA Glenn Research Center — Beginner's Guide to Aeronautics
+    url: https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/aircraft-motion-newtons-first-law/
+    accessed: 2026-09-12
+    passages:
+      - "Every object remains at rest or in uniform motion in a straight line unless compelled to change its state by the action of an external force."
+      - "This is normally taken as the definition of inertia."
+      - "A net external force changes the velocity of the object."
+
+  - id: s3
+    tier: 2
+    title: Newton's Third Law — Action & Reaction
+    publisher: NASA Glenn Research Center — Beginner's Guide to Aeronautics
+    url: https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/newtons-third-law-action-reaction/
+    accessed: 2026-09-12
+    passages:
+      - "For every action (force) in nature there is an equal and opposite reaction."
+      - "Notice that the forces are exerted on different objects."
+    examples_on_page:
+      - "Wright 1903 Flyer: cánh hắt dòng khí xuống dưới (tác dụng), dòng khí đẩy cánh lên trên (phản tác dụng)."
+      - "Cánh quạt gia tốc khối khí về phía sau; khối khí đẩy cánh quạt — và máy bay gắn với nó — về phía trước."
+    note: >
+      Câu "the forces are exerted on different objects" là mệnh đề mang toàn bộ
+      giá trị dạy học của định luật III. Bỏ nó đi thì người đọc còn lại một
+      nghịch lý ("hai lực bằng nhau ngược chiều thì sao vật vẫn chuyển động?").
+
+  - id: s4
+    tier: 2
+    title: "University Physics Volume 1, §5.1 Forces"
+    publisher: OpenStax — Rice University (sách giáo khoa mở, có bình duyệt)
+    url: https://openstax.org/books/university-physics-volume-1/pages/5-1-forces
+    accessed: 2026-09-12
+    passages:
+      - "Newton's laws produce a good description of motion only when the objects are moving at speeds much less than the speed of light and when those objects are larger than the size of most molecules (about 10−9 m in diameter)."
+      - "Since force is a vector, it adds just like other vectors."
+    note: >
+      ĐÂY là nguồn duy nhất trong bảng phát biểu giới hạn áp dụng, và nó nêu
+      HAI điều kiện, không phải một: tốc độ nhỏ hơn nhiều so với ánh sáng VÀ
+      vật lớn hơn cỡ phân tử (~10⁻⁹ m). Bài chỉ nêu vế tốc độ là cắt mất nửa
+      mệnh đề của nguồn.
+
+  - id: s5
+    tier: 2
+    title: "University Physics Volume 1, §5.2 Newton's First Law"
+    publisher: OpenStax — Rice University
+    url: https://openstax.org/books/university-physics-volume-1/pages/5-2-newtons-first-law
+    accessed: 2026-09-12
+    passages:
+      - "A body at rest remains at rest or, if in motion, remains in motion at constant velocity unless acted on by a net external force."
+      - "The ability of an object to resist changes in its motion—in other words, to resist acceleration."
+      - "A reference frame moving at constant velocity relative to an inertial frame is also inertial. A reference frame accelerating relative to an inertial frame is not inertial."
+    examples_on_page:
+      - "Quả bóng hockey đứng yên tới khi bị gậy tác động; đang trượt thì đi thẳng tới khi ma sát hoặc lực khác hãm lại."
+      - "Cùng một vật trượt trên mặt càng nhẵn (bột talc, dầu bôi trơn) thì đi càng xa — cái hãm nó là MA SÁT, không phải một xu hướng tự dừng."
+    note: >
+      Khối lượng ĐO quán tính (s5), nên đây là chỗ nối sang bài
+      `bi-mat-dang-sau-cam-giac-nang-va-nhe`. Khái niệm hệ quy chiếu quán tính
+      là điều kiện để định luật I phát biểu được — nhưng nó là một bài khác
+      (hàng đợi dòng #3), bài này chỉ nhắc, không khai triển.
+
+  - id: s6
+    tier: 2
+    title: "University Physics Volume 1, §5.3 Newton's Second Law"
+    publisher: OpenStax — Rice University
+    url: https://openstax.org/books/university-physics-volume-1/pages/5-3-newtons-second-law
+    accessed: 2026-09-12
+    passages:
+      - "The acceleration of a system is directly proportional to and in the same direction as the net external force acting on the system and is inversely proportional to its mass."
+      - "The instantaneous rate at which a body's momentum changes is equal to the net force acting on the body."
+    note: >
+      Chữ NET (lực tổng hợp) nằm trong chính phát biểu. Viết "lực càng lớn thì
+      gia tốc càng lớn" mà bỏ chữ "tổng hợp" là bỏ mất điều kiện làm định luật
+      đúng — hai lực cân bằng cũng "lớn" mà gia tốc bằng không.
+
+  - id: s7
+    tier: 2
+    title: "University Physics Volume 1, §5.5 Newton's Third Law"
+    publisher: OpenStax — Rice University
+    url: https://openstax.org/books/university-physics-volume-1/pages/5-5-newtons-third-law
+    accessed: 2026-09-12
+    passages:
+      - "Whenever one body exerts a force on a second body, the first body experiences a force that is equal in magnitude and opposite in direction to the force that it exerts."
+      - "These forces are acting on different bodies or systems: A's force acts on B and B's force acts on A. In other words, the two forces are distinct forces that do not act on the same body. Thus, they do not cancel each other."
+
+  - id: s8
+    tier: 2
+    title: "Basics of Space Flight, Chapter 3: Gravity & Mechanics"
+    publisher: NASA Science
+    url: https://science.nasa.gov/learn/basics-of-space-flight/chapter3-3/
+    accessed: 2026-09-12
+    passages:
+      - "Newton's first law describes how, once in motion, planets remain in motion."
+      - "To move in a curved path, a planet must have an acceleration toward the center of the circle."
+      - "This is called centripetal acceleration and is supplied by the mutual gravitational attraction between the Sun and the planet."
+      - "Gravity's strength is inversely proportional to the square of the objects' distance from each other."
+    not_found: >
+      ĐÃ TÌM, KHÔNG CÓ trên trang này: bất kỳ câu nào dạng "Kepler mô tả THẾ
+      NÀO còn Newton giải thích VÌ SAO", hay "Newton chứng minh các định luật
+      Kepler". Ghi lại vì đó chính là câu mà bài đang publish
+      (`newton-da-giai-ma-the-gioi-nhu-the-nao`) đang khẳng định. Mệnh đề gần
+      nhất mà bảng nguồn chống lưng được là s9, và nó HẸP HƠN.
+
+  - id: s9
+    tier: 2
+    title: Orbits and Kepler's Laws
+    publisher: NASA Science
+    url: https://science.nasa.gov/solar-system/orbits-and-keplers-laws/
+    accessed: 2026-09-12
+    updated_on_page: 2024-10-28
+    passages:
+      - "Kepler didn't know about gravity."
+      - "Kepler's laws were instrumental in Isaac Newton's development of his theory of universal gravitation, which explained the unknown force behind Kepler's third law."
+    note: >
+      Phạm vi thật của nguồn: các định luật Kepler là ĐẦU VÀO cho việc Newton
+      dựng thuyết vạn vật hấp dẫn, và thuyết ấy giải thích lực còn thiếu đằng
+      sau định luật THỨ BA của Kepler. Không phải "Newton chứng minh cả ba định
+      luật Kepler". Nâng phạm vi lên là đúng mẫu lỗi Pollack 1996 đã ghi ở
+      docs/content-rules.md: trích dẫn resolve đúng bài nhưng bài không nói
+      điều đang viết.
+
+  - id: s10
+    tier: 2
+    title: Principia
+    publisher: The Royal Society (blog của thư viện — đơn vị giữ bản thảo gốc)
+    url: https://royalsociety.org/blog/2014/07/principia/
+    year: 2014
+    accessed: 2026-09-12
+    passages:
+      - "Newton presented Book 1 of the text to the Society at the end of April 1686"
+      - "the 1687 printed first edition was produced"
+    note: >
+      Hai mốc, hai việc khác nhau. Đây là nguồn phân xử cho `warning` ở s1, và
+      nó là cơ quan giữ chính bản thảo ấy nên có thẩm quyền cao hơn NASA ở đúng
+      câu hỏi này.
+
+# --- Sự kiện rút ra, mỗi cái buộc vào nguồn -------------------------------
+key_facts:
+  - claim: "Vật đứng yên hoặc chuyển động thẳng đều giữ nguyên trạng thái đó tới khi có lực TỔNG HỢP từ bên ngoài tác dụng"
+    sources: [s1, s2, s5]
+    confidence: high
+  - claim: "Quán tính là xu hướng chống lại thay đổi chuyển động; khối lượng là thước đo quán tính"
+    sources: [s1, s2, s5]
+    confidence: high
+  - claim: "Gia tốc tỉ lệ thuận và cùng hướng với lực tổng hợp, tỉ lệ nghịch với khối lượng"
+    sources: [s1, s6]
+    confidence: high
+  - claim: "Dạng tổng quát của định luật II là lực bằng tốc độ biến thiên động lượng, không phải F = ma"
+    sources: [s1, s6]
+    confidence: high
+  - claim: "Hai lực tác dụng–phản tác dụng bằng độ lớn, ngược chiều, và đặt lên HAI vật khác nhau nên không triệt tiêu nhau"
+    sources: [s1, s3, s7]
+    confidence: high
+  - claim: "Ba định luật Newton chỉ mô tả tốt chuyển động khi vật chạy chậm hơn nhiều so với ánh sáng VÀ lớn hơn cỡ phân tử (~10⁻⁹ m)"
+    sources: [s4]
+    confidence: high
+    single_source: true
+  - claim: "Hành tinh đi đường cong được là nhờ gia tốc hướng tâm, do lực hấp dẫn giữa Mặt Trời và hành tinh cung cấp"
+    sources: [s8]
+    confidence: high
+    single_source: true
+  - claim: "Các định luật Kepler là đầu vào cho thuyết vạn vật hấp dẫn của Newton; thuyết ấy giải thích lực còn thiếu đằng sau định luật thứ ba của Kepler"
+    sources: [s9]
+    confidence: high
+    single_source: true
+  - claim: "Newton trình Quyển 1 trước Royal Society cuối tháng 4 năm 1686; bản in đầu tiên ra năm 1687"
+    sources: [s10]
+    confidence: high
+
+# --- Nguồn nói ngược nhau -------------------------------------------------
+conflicts:
+  - about: Năm của Principia
+    s1: "In 1686, he presented his three laws of motion in the 'Principia Mathematica Philosophiae Naturalis.'"
+    s10: 'Hai câu tách nhau: "presented Book 1 … at the end of April 1686" và "the 1687 printed first edition was produced"'
+    resolution: >
+      Không phải mâu thuẫn thật mà là một câu gộp. Theo s10: TRÌNH 1686, IN
+      1687. Bài hoặc nêu cả hai mốc, hoặc không nêu năm nào. Chép câu của NASA
+      nguyên xi sẽ sinh ra "Principia xuất bản 1686" — sai, và sai theo kiểu
+      không ai kiểm vì nó có một nguồn bậc 2 đứng sau.
+
+open_questions:
+  - "Bảng này không có nguồn nào cho phát biểu 'ở gần lỗ đen phải thay Newton bằng thuyết tương đối'. s4 chỉ nêu điều kiện tốc độ và kích thước. Muốn nêu trường hấp dẫn mạnh thì phải đi tìm nguồn khác, hoặc không nêu."
+  - "Bảng này không có nguồn nào cho danh sách ứng dụng ('thiết kế cầu đường', 'mô phỏng chuyển động trong kỹ thuật'). s3 có ví dụ máy bay, s8 có quỹ đạo hành tinh — dùng ví dụ CÓ NGUỒN thay cho danh sách không nguồn."
+  - "Wikidata QID Q16590 ghi ở trên là suy đoán, CHƯA tra. Bước 5 phải tự xác minh, không tin dòng này."
+
+gaps: []
+
+# --- Những gì bài KHÔNG nói, và vì sao ------------------------------------
+exclusions:
+  - claim: "Newton chứng minh các định luật Kepler là đúng"
+    why: >
+      Vượt phạm vi s9 (nguồn chỉ nói thuyết hấp dẫn giải thích lực đằng sau
+      định luật THỨ BA của Kepler), và không tìm thấy trên s8. Xem `not_found`
+      ở s8.
+  - claim: "Định luật II là định luật nổi tiếng nhất của Newton"
+    why: Không nguồn nào trong bảng xếp hạng mức nổi tiếng. Câu này đang nằm trong bài đã publish.
+  - claim: "Gần lỗ đen thì vật lý Newton phải thay bằng thuyết tương đối"
+    why: Không có trong bảng nguồn. Xem open_questions.
+  - claim: Cơ chế hấp dẫn, độ cong không–thời gian, vì sao hấp dẫn khác lực điện từ
+    why: >
+      Đã có bài `tu-truong-va-luc-hap-dan-hai-luc-vo-hinh-hai-co-che-khac-nhau`
+      (PUBLISHED). Bài này liên kết sang, không kể lại.
+  - claim: Ba định luật Kepler phát biểu ra sao
+    why: >
+      Đã có bài `ba-dinh-luat-kepler-hanh-tinh-chuyen-dong-theo-quy-luat-nao`
+      (PUBLISHED). Bài này nêu quan hệ Kepler–Newton rồi liên kết sang.
+  - claim: Thời gian giãn, đồng thời tương đối, vì sao tốc độ ánh sáng là trần
+    why: >
+      Đã có bài `thuyet-tuong-doi-hep-khi-thoi-gian-khong-con-tuyet-doi`
+      (PUBLISHED). Bài này chỉ nêu ĐIỀU KIỆN áp dụng rồi liên kết sang.
+  - claim: Phân biệt khối lượng / quán tính / trọng lượng
+    why: >
+      Dòng #3 của hàng đợi, chưa viết; kho đã có `bi-mat-dang-sau-cam-giac-nang-
+      va-nhe` (PUBLISHED) chạm tới cảm giác nặng–nhẹ. Bài này nói khối lượng ĐO
+      quán tính rồi dừng.
