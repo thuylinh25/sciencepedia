@@ -300,7 +300,10 @@
       "imageTooLarge": "Ảnh vượt quá 8 MB",
       "imageBadType": "Chỉ nhận JPG, PNG, WebP, AVIF hoặc GIF",
       "imageFailed": "Tải ảnh lên thất bại",
-      "imageNotConfigured": "Chưa cấu hình Supabase Storage"
+      "imageNotConfigured": "Chưa cấu hình Supabase Storage",
+      "coverCredit": "Ghi công ảnh (Markdown)",
+      "coverCreditEn": "Ghi công ảnh — tiếng Anh",
+      "coverCreditHint": "Ảnh: [NASA/JPL](https://…), phạm vi công cộng"
     },
     "articleCount": "{count, plural, other {# bài viết}}",
     "searchResults": "{count, plural, =0 {Không có bài nào khớp “{query}”} other {# bài khớp “{query}”}}",

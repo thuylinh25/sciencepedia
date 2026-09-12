@@ -37,6 +37,18 @@ export const articleSchema = z.object({
   content: z.string().min(50, "Nội dung tối thiểu 50 ký tự"),
   contentEn: z.string().optional().or(z.literal("")),
   coverImage: imageUrl,
+  /* Ghi công ảnh bìa. Markdown, để nhét được liên kết tới trang gốc.
+
+     Đây KHÔNG phải trường trang trí: ảnh dùng giấy phép đòi ghi công (CC BY,
+     CC BY-SA) thì đây là điều kiện của giấy phép, và thiếu nó là vi phạm chứ
+     không phải thiếu sót thẩm mỹ. Ảnh phạm vi công cộng không bắt buộc nhưng
+     vẫn nên ghi — người đọc cần biết bức ảnh đến từ đâu.
+
+     Không bắt buộc ở tầng schema vì phần lớn ảnh trong kho là NASA/ESA thuộc
+     phạm vi công cộng. Điều kiện bắt buộc theo giấy phép nằm ở gate xuất bản
+     (`scripts/check-publish.ts`), nơi biết được ảnh đến từ host nào. */
+  coverImageCredit: z.string().max(500).optional().or(z.literal("")),
+  coverImageCreditEn: z.string().max(500).optional().or(z.literal("")),
   categoryId: z.string().min(1, "Chọn danh mục"),
   // Không dùng .default() ở các schema gắn với form: nó khiến kiểu đầu vào và
   // đầu ra của Zod lệch nhau, và zodResolver sẽ báo lỗi kiểu với useForm.

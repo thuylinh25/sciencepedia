@@ -36,6 +36,8 @@ export default async function NewArticlePage({
           content: "",
           contentEn: "",
           coverImage: "",
+          coverImageCredit: "",
+          coverImageCreditEn: "",
           categoryId: categories[0]?.id ?? "",
           tagIds: [],
           status: "DRAFT",

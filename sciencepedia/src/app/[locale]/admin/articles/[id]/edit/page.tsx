@@ -44,6 +44,8 @@ export default async function EditArticlePage({
           content: article.content,
           contentEn: article.contentEn ?? "",
           coverImage: article.coverImage ?? "",
+          coverImageCredit: article.coverImageCredit ?? "",
+          coverImageCreditEn: article.coverImageCreditEn ?? "",
           categoryId: article.categoryId,
           tagIds: article.tags.map((tag) => tag.tagId),
           status: article.status,

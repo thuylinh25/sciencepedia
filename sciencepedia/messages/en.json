@@ -300,7 +300,10 @@
       "imageTooLarge": "Image exceeds 8 MB",
       "imageBadType": "Only JPG, PNG, WebP, AVIF or GIF are accepted",
       "imageFailed": "Upload failed",
-      "imageNotConfigured": "Supabase Storage is not configured"
+      "imageNotConfigured": "Supabase Storage is not configured",
+      "coverCredit": "Image credit (Markdown)",
+      "coverCreditEn": "Image credit — Vietnamese",
+      "coverCreditHint": "Image: [NASA/JPL](https://…), public domain"
     },
     "articleCount": "{count, plural, one {# article} other {# articles}}",
     "searchResults": "{count, plural, =0 {No articles match “{query}”} one {# article matches “{query}”} other {# articles match “{query}”}}",

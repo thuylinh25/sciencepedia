@@ -241,7 +241,9 @@ export function ArticleForm({
                 />
               </div>
               <div className="space-y-2">
-                <Label htmlFor="seoKeywords">{t("form.seoKeywordsField")}</Label>
+                <Label htmlFor="seoKeywords">
+                  {t("form.seoKeywordsField")}
+                </Label>
                 <Input id="seoKeywords" {...register("seoKeywords")} />
               </div>
             </TabsContent>
@@ -266,13 +268,13 @@ export function ArticleForm({
                       <SelectValue />
                     </SelectTrigger>
                     <SelectContent>
-                      {(["DRAFT", "REVIEW", "PUBLISHED", "ARCHIVED"] as const).map(
-                        (status) => (
-                          <SelectItem key={status} value={status}>
-                            {tStatus(status)}
-                          </SelectItem>
-                        ),
-                      )}
+                      {(
+                        ["DRAFT", "REVIEW", "PUBLISHED", "ARCHIVED"] as const
+                      ).map((status) => (
+                        <SelectItem key={status} value={status}>
+                          {tStatus(status)}
+                        </SelectItem>
+                      ))}
                     </SelectContent>
                   </Select>
                 )}
@@ -363,6 +365,44 @@ export function ArticleForm({
                 {errors.coverImage.message}
               </p>
             )}
+
+            {/* Ghi công ảnh, ngay dưới ô chọn ảnh chứ không ở một thẻ khác.
+
+                Đây là điều kiện của giấy phép với mọi ảnh CC BY / CC BY-SA —
+                thiếu nó là vi phạm, không phải thiếu sót thẩm mỹ. Đặt nó cạnh
+                chỗ vừa chọn ảnh thì người biên tập điền ngay lúc còn nhớ ảnh
+                lấy từ đâu; đặt ở cuối form thì họ điền khi đã quên, hoặc bỏ qua.
+
+                Nhận Markdown để nhét được liên kết tới trang gốc — xem chú
+                thích của cột `coverImageCredit` trong schema.prisma. */}
+            <div className="space-y-1.5 border-t pt-3">
+              <Label htmlFor="coverImageCredit" className="text-xs">
+                {t("form.coverCredit")}
+              </Label>
+              <Input
+                id="coverImageCredit"
+                placeholder={t("form.coverCreditHint")}
+                className="text-xs"
+                {...register("coverImageCredit")}
+              />
+              {errors.coverImageCredit && (
+                <p className="text-xs text-destructive">
+                  {errors.coverImageCredit.message}
+                </p>
+              )}
+            </div>
+
+            <div className="space-y-1.5">
+              <Label htmlFor="coverImageCreditEn" className="text-xs">
+                {t("form.coverCreditEn")}
+              </Label>
+              <Input
+                id="coverImageCreditEn"
+                placeholder={t("form.coverCreditHint")}
+                className="text-xs"
+                {...register("coverImageCreditEn")}
+              />
+            </div>
           </div>
 
           <div className="flex gap-2">
