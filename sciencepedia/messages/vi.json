@@ -358,7 +358,16 @@
     "terms": "Điều khoản sử dụng",
     "contact": "Liên hệ",
     "rights": "Nội dung phát hành theo giấy phép CC BY-SA 4.0.",
-    "tools": "Công cụ"
+    "tools": "Công cụ",
+    "topics": "Chủ đề",
+    "fields": "Các lĩnh vực",
+    "contactTitle": "Liên hệ",
+    "statsTitle": "Khám phá khoa học mở",
+    "statArticles": "bài viết đã xuất bản",
+    "statTools": "công cụ tương tác",
+    "statFields": "lĩnh vực khoa học",
+    "statTopics": "chủ đề",
+    "licenceNote": "Một số nội dung được phát hành theo giấy phép CC BY-SA 4.0 hoặc các giấy phép tương thích. Nguồn và giấy phép được ghi rõ trên từng trang nội dung."
   },
   "galaxy": {
     "title": "Ngân Hà",

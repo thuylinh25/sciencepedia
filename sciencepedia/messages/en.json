@@ -358,7 +358,16 @@
     "terms": "Terms of use",
     "contact": "Contact",
     "rights": "Content released under CC BY-SA 4.0.",
-    "tools": "Tools"
+    "tools": "Tools",
+    "topics": "Topics",
+    "fields": "Fields",
+    "contactTitle": "Contact",
+    "statsTitle": "Open science, explored",
+    "statArticles": "published articles",
+    "statTools": "interactive tools",
+    "statFields": "fields of science",
+    "statTopics": "topics",
+    "licenceNote": "Some content is released under CC BY-SA 4.0 or a compatible licence. The source and licence are stated on each content page."
   },
   "galaxy": {
     "title": "The Milky Way",
