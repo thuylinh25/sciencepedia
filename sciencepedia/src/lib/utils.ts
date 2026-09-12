@@ -58,6 +58,24 @@ export function formatNumber(n: number, locale = "vi"): string {
   }).format(n);
 }
 
+/**
+ * Số ĐO, luôn viết đủ chữ số và có dấu phân nhóm.
+ *
+ * Khác `formatNumber` ở chỗ KHÔNG rút gọn. Hàm kia đổi sang ký hiệu
+ * ngắn từ 10.000 trở lên, nên đường kính Sao Thổ in ra "12,1 N km" và đường
+ * kính Mặt Trời thành "1,4 Tr km" — hai dạng khác nhau đứng cạnh "4.879 km"
+ * của Sao Thuỷ trong cùng một lưới, và người đọc phổ thông phải giải mã "N"
+ * trước khi so được hai con số.
+ *
+ * Rút gọn đúng chỗ của nó ở lượt đọc, lượt xem — nơi con số chỉ cần cho một
+ * cảm giác về độ lớn. Số đo vật lý thì ngược lại: chúng tồn tại để so sánh.
+ */
+export function formatMeasure(n: number, locale = "vi"): string {
+  return new Intl.NumberFormat(locale === "vi" ? "vi-VN" : "en-US", {
+    maximumFractionDigits: 0,
+  }).format(n);
+}
+
 export function formatDate(date: Date | string, locale = "vi"): string {
   return new Intl.DateTimeFormat(locale === "vi" ? "vi-VN" : "en-US", {
     day: "2-digit",

@@ -209,7 +209,11 @@
     "scaleRealNote": "True-scale mode compresses distance logarithmically so Neptune still fits in frame.",
     "scaleNeptune": "Neptune is pulled about {factor}× closer.",
     "dataSource": "Data source",
-    "options": "Display options"
+    "options": "Display options",
+    "positionFromSun": "Position #{index} from the Sun",
+    "positionStar": "The system’s central star",
+    "positionMoon": "Earth’s natural satellite",
+    "positionUnknown": "In the Solar System"
   },
   "ai": {
     "title": "Science assistant",

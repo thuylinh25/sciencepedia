@@ -13,7 +13,7 @@ import {
   type BodyPhoto,
   type BodySurface,
 } from "@/lib/solar-data";
-import { formatNumber } from "@/lib/utils";
+import { formatMeasure, formatNumber } from "@/lib/utils";
 import { filterPublishedSlugs } from "@/server/queries";
 import { PlanetSurface } from "@/components/solar/planet-surface";
 import { BodyPanel, type BodyPanelData } from "@/components/solar/body-panel";
@@ -67,6 +67,25 @@ const BODIES: GalleryBody[] = [
   MOON,
   ...PLANETS.slice(EARTH_INDEX + 1),
 ];
+
+/**
+ * Vị trí của thiên thể trong Hệ Mặt Trời, để in lên thẻ.
+ *
+ * Suy ra từ chính `PLANETS` chứ không viết tay: thứ tự hành tinh là dữ liệu đã
+ * có, và chép lại nó thành một bảng thứ hai là mời hai bảng lệch nhau.
+ *
+ * Mặt Trời và Mặt Trăng không có số thứ tự quỹ đạo quanh Mặt Trời — một cái LÀ
+ * Mặt Trời, cái kia quay quanh Trái Đất — nên chúng nhận nhãn riêng thay vì bị
+ * ép vào một con số sai.
+ */
+function orbitalRank(bodyId: string): { key: string; index?: number } {
+  if (bodyId === "sun") return { key: "positionStar" };
+  if (bodyId === "moon") return { key: "positionMoon" };
+  const index = PLANETS.findIndex((planet) => planet.id === bodyId);
+  return index >= 0
+    ? { key: "positionFromSun", index: index + 1 }
+    : { key: "positionUnknown" };
+}
 
 /** Cùng một chuỗi cho mọi thẻ: lưới tối đa ba cột trong `container-page`. */
 const IMAGE_SIZES =
@@ -182,6 +201,7 @@ export async function PlanetGallery() {
 
       <ul className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {BODIES.map((body) => {
+          const rank = orbitalRank(body.id);
           const description = isEnglish
             ? body.descriptionEn
             : body.descriptionVi;
@@ -259,12 +279,23 @@ export async function PlanetGallery() {
                 />
               ) : (
                 <div className="relative aspect-square bg-[#04060e]">
+                  {/* `object-contain` chứ KHÔNG `object-cover`.
+
+                      `cover` phóng ảnh cho phủ kín khung rồi cắt phần thừa, nên
+                      với ảnh không vuông thì đĩa thiên thể bị xén — Mặt Trời,
+                      Sao Thuỷ và Sao Kim mất gần nửa hình cầu. Một thẻ giới
+                      thiệu thiên thể mà không cho thấy trọn thiên thể thì hỏng
+                      đúng việc nó sinh ra để làm.
+
+                      `contain` ghép với `p-[6%]` cho đĩa nằm gọn trong khung,
+                      chừa một vành lề đều. Nền thẻ cùng màu `#04060e` với nền
+                      ảnh nên phần letterbox không đọc ra là letterbox. */}
                   <Image
                     src={body.photo.url}
                     alt={displayName}
                     fill
                     sizes={IMAGE_SIZES}
-                    className="object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+                    className="object-contain p-[6%] transition-transform duration-300 group-hover:scale-[1.04]"
                   />
                 </div>
               )}
@@ -317,7 +348,7 @@ export async function PlanetGallery() {
                 <dl className="grid grid-cols-3 gap-2">
                   {[
                     {
-                      value: formatNumber(
+                      value: formatMeasure(
                         Math.round(body.realRadiusKm * 2),
                         locale,
                       ),
@@ -326,7 +357,7 @@ export async function PlanetGallery() {
                     },
                     body.realDistanceKm !== undefined
                       ? {
-                          value: formatNumber(
+                          value: formatMeasure(
                             Math.round(body.realDistanceKm / 1_000_000),
                             locale,
                           ),
@@ -363,9 +394,13 @@ export async function PlanetGallery() {
                     ))}
                 </dl>
 
-                {/* Mô tả giới hạn bốn dòng để mọi thẻ trong một hàng cao bằng
-                    nhau. Bản đầy đủ nằm ở bài viết. */}
-                <p className="line-clamp-4 text-sm leading-relaxed text-muted-foreground">
+                {/* Ba dòng, không phải bốn.
+
+                    Thẻ chứa tag, thông số, mô tả, chú thích ảnh, dòng nguồn và
+                    CTA — sáu khối. Trên laptop nhỏ chiều cao ấy khiến mỗi màn
+                    chỉ thấy được một hàng thẻ. Bản đầy đủ nằm ở bài viết, và
+                    liên kết tới đó đã có sẵn ngay dưới. */}
+                <p className="line-clamp-3 text-sm leading-relaxed text-muted-foreground">
                   {description}
                 </p>
 
@@ -374,10 +409,15 @@ export async function PlanetGallery() {
                     quy ước — nhưng nó cũng giới hạn ba dòng, và dòng ghi nguồn
                     rút về danh sách tổ chức. Link vẫn dẫn tới nguồn đầy đủ. */}
                 <div>
-                  <p className="line-clamp-3 text-xs leading-relaxed text-muted-foreground/75">
+                  <p className="line-clamp-2 text-xs leading-relaxed text-muted-foreground/75">
                     {caption}
                   </p>
-                  <p className="mt-1.5 text-[11px] text-muted-foreground/60">
+                  {/* Dòng nguồn dữ liệu KHÔNG được mờ hơn chú thích phía trên.
+
+                      Ở mức 60% nó gần như biến mất, mà trong một sản phẩm khoa
+                      học thì chính dòng này là thứ cho phép người đọc kiểm lại
+                      con số. Nâng lên 85% và cỡ chữ 12px. */}
+                  <p className="mt-1.5 text-xs text-muted-foreground/85">
                     {t("dataSource")}:{" "}
                     <a
                       href={body.photo.sourceUrl}
@@ -406,7 +446,24 @@ export async function PlanetGallery() {
                     Muốn nối lại hai thứ này thì đường đúng là cho /zoom nhận
                     một mục tiêu (`/zoom?body=...`), không phải dán lại tám
                     liên kết giống nhau. */}
-                <div className="mt-auto flex flex-wrap items-center gap-x-4 gap-y-2 border-t pt-4">
+                {/* Dòng vị trí đứng TRƯỚC hàng nút.
+
+                    "Xem trong Hệ Mặt Trời" nói được hành động nhưng không nói
+                    được người bấm sẽ tới đâu. Một dòng "Vị trí #2 tính từ Mặt
+                    Trời" biến nút ấy từ một liên kết chung chung thành một chỗ
+                    cụ thể trong mô hình — và nó cũng dạy luôn thứ tự hành tinh
+                    mà không cần một bảng riêng. */}
+                <p className="mt-auto flex items-center gap-1.5 border-t pt-4 text-xs font-medium text-muted-foreground">
+                  <span aria-hidden>📍</span>
+                  {t(
+                    rank.key,
+                    rank.index !== undefined
+                      ? { index: rank.index }
+                      : undefined,
+                  )}
+                </p>
+
+                <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
                   <Link
                     href={`/solar-system?body=${body.id}`}
                     className="inline-flex h-10 items-center gap-1.5 rounded-full bg-sky-500/15 px-3.5 text-sm font-medium text-sky-300 transition-colors hover:bg-sky-500/25"
@@ -424,7 +481,6 @@ export async function PlanetGallery() {
                       {t("readMore")}
                     </Link>
                   )}
-
                 </div>
               </div>
             </li>

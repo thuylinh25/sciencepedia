@@ -209,7 +209,11 @@
     "scaleRealNote": "Chế độ tỉ lệ thực nén khoảng cách theo hàm logarit để Sao Hải Vương còn nằm trong khung.",
     "scaleNeptune": "Sao Hải Vương bị kéo gần lại khoảng {factor} lần.",
     "dataSource": "Nguồn dữ liệu",
-    "options": "Tuỳ chọn hiển thị"
+    "options": "Tuỳ chọn hiển thị",
+    "positionFromSun": "Vị trí #{index} tính từ Mặt Trời",
+    "positionStar": "Ngôi sao trung tâm của hệ",
+    "positionMoon": "Vệ tinh tự nhiên của Trái Đất",
+    "positionUnknown": "Trong Hệ Mặt Trời"
   },
   "ai": {
     "title": "Trợ lý khoa học",
