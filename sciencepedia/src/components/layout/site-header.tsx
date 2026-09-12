@@ -38,7 +38,6 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Separator } from "@/components/ui/separator";
 import { CategoryIcon } from "@/components/category-icon";
-import { ThemeToggle } from "@/components/layout/theme-toggle";
 import { LocaleSwitcher } from "@/components/layout/locale-switcher";
 import { UserMenu } from "@/components/layout/user-menu";
 import { Logo } from "@/components/layout/logo";
@@ -353,6 +352,13 @@ export function SiteHeader({
                 ra ngoài viewport. Dưới lg, hai nút này nằm trong drawer. */}
             {/* Ở chế độ rút gọn, hai nút này phải hiện ở MỌI bề ngang: drawer
                 — chỗ chứa chúng dưới `lg` — đã bị gỡ cùng với nav. */}
+            {/* Chỉ còn nút đổi ngôn ngữ.
+
+                Nút sáng/tối đã gỡ: giao diện đã theo cài đặt hệ điều hành, và
+                phần lớn người dùng không đổi nó bao giờ — nhưng nó thì chiếm
+                chỗ trên mọi trang, cạnh đúng hai thứ người ta thật sự bấm.
+                Ngôn ngữ thì khác: nó đổi được NỘI DUNG người đọc nhận, và
+                trình duyệt không đoán hộ được. */}
             <div
               className={cn(
                 "items-center gap-1.5",
@@ -360,7 +366,6 @@ export function SiteHeader({
               )}
             >
               <LocaleSwitcher />
-              <ThemeToggle />
             </div>
             {/* Không có UserMenu ở trang đăng nhập: nút "Đăng nhập" trong đó
                 trỏ về chính trang đang đứng. */}
@@ -486,11 +491,12 @@ export function SiteHeader({
                     ))}
                   </nav>
 
-                  {/* Ngôn ngữ + theme bị ẩn khỏi thanh header dưới lg, đưa vào đây */}
+                  {/* Ngôn ngữ bị ẩn khỏi thanh header dưới lg, đưa vào đây.
+                      Nút sáng/tối đã gỡ khỏi cả hai chỗ — xem chú thích ở cụm
+                      điều khiển bên phải header. */}
                   <Separator className="mt-2" />
                   <div className="flex items-center gap-2 px-4 lg:hidden">
                     <LocaleSwitcher />
-                    <ThemeToggle />
                   </div>
                 </SheetContent>
               </Sheet>

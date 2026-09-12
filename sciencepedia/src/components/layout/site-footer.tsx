@@ -1,11 +1,15 @@
 import { getLocale, getTranslations } from "next-intl/server";
 import {
-  Disc3,
   Aperture,
+  Compass,
+  Disc3,
+  FileText,
+  Layers,
   Mail,
   Orbit,
   Scaling,
   Sparkles,
+  Tags,
   Telescope,
 } from "lucide-react";
 
@@ -115,11 +119,21 @@ export async function SiteFooter() {
   /* Bốn con số, tất cả đếm được. "Công cụ tương tác" là chính mảng `tools` ở
      trên trừ trợ lý AI — suy ra từ đó chứ không viết một số riêng, để hai chỗ
      không lệch nhau khi thêm công cụ mới. */
+  /* Icon nhỏ phía trên mỗi con số: bốn ô cạnh nhau cùng cỡ chữ thì mắt phải
+     đọc nhãn mới phân biệt được ô nào là ô nào. Một hình nhỏ cho mỗi ô tạo
+     điểm neo trước khi chữ được đọc.
+
+     SỐ ĐỂ NGUYÊN, KHÔNG THÊM DẤU "+". Bản mô tả đề nghị "57+" và "20+", nhưng
+     con số ở đây là phép đếm CHÍNH XÁC đọc từ CSDL — một dấu cộng sau nó vừa
+     không thêm thông tin gì, vừa ngụ ý rằng con số thật đang bị giấu. Với một
+     bách khoa, độ chính xác của chính dải số liệu này là thứ nó đang quảng
+     cáo; làm tròn lên ở đó là tự mâu thuẫn. Đây cũng đúng tinh thần "không
+     marketing quá đà" mà yêu cầu nêu ra. */
   const figures = [
-    { n: stats.articles, label: t("statArticles") },
-    { n: tools.length - 1, label: t("statTools") },
-    { n: stats.categories, label: t("statFields") },
-    { n: stats.tags, label: t("statTopics") },
+    { n: stats.articles, label: t("statArticles"), icon: FileText },
+    { n: tools.length - 1, label: t("statTools"), icon: Compass },
+    { n: stats.categories, label: t("statFields"), icon: Layers },
+    { n: stats.tags, label: t("statTopics"), icon: Tags },
   ].map((figure) => ({ ...figure, value: formatMeasure(figure.n, locale) }));
 
   const linkClass =
@@ -139,8 +153,12 @@ export async function SiteFooter() {
           <p className={headingClass}>{t("statsTitle")}</p>
           <dl className="mt-5 grid grid-cols-2 gap-x-6 gap-y-7 sm:grid-cols-4">
             {figures.map((figure) => (
-              <div key={figure.label}>
+              <div key={figure.label} className="group">
                 <dt className="sr-only">{figure.label}</dt>
+                <figure.icon
+                  className="mb-2.5 size-5 text-muted-foreground transition-colors group-hover:text-primary-strong"
+                  aria-hidden
+                />
                 {/* Số to hơn ~25% (3xl/4xl → 4xl/5xl) và dùng màu chữ chính
                     thay vì màu mặc định: dải này tồn tại để người đọc TIN, mà
                     một con số mờ ngang với nhãn của nó thì không thuyết phục
@@ -150,7 +168,7 @@ export async function SiteFooter() {
                   <CountUp
                     value={figure.n}
                     formatted={figure.value}
-                    className="block font-display text-4xl font-bold tracking-tight text-foreground tabular-nums sm:text-5xl"
+                    className="block font-display text-4xl font-bold tracking-tight text-foreground tabular-nums transition-colors group-hover:text-primary-strong sm:text-5xl"
                   />
                   <span className="mt-1.5 block text-sm text-muted-foreground">
                     {figure.label}

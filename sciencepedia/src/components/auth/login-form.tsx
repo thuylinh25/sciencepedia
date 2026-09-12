@@ -86,6 +86,21 @@ export function LoginForm({
               {errors.password.message}
             </p>
           )}
+
+          {/* "Quên mật khẩu?" đặt NGAY DƯỚI ô mật khẩu, không ở cuối form.
+
+              Người dùng đi theo đúng thứ tự này: gõ mật khẩu → sai → tìm lối
+              thoát. Lối thoát ấy phải nằm ở chỗ mắt vừa rời đi. Đặt nó cạnh
+              "Chưa có tài khoản? Đăng ký" ở cuối form thì họ phải quét lại cả
+              form, và một số sẽ bỏ cuộc trước khi thấy. */}
+          <div className="flex justify-end">
+            <Link
+              href="/forgot-password"
+              className="text-xs font-medium text-muted-foreground transition-colors hover:text-primary-strong"
+            >
+              {t("forgotLink")}
+            </Link>
+          </div>
         </div>
 
         {serverError && (
