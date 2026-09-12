@@ -21,10 +21,11 @@
     "close": "Close",
     "milkyWay": "3D Milky Way",
     "universe": "3D Universe",
-    "models": "3D models",
+    "models": "Tools",
     "zoom": "Zoom journey",
     "spaceMap": "Sky map",
-    "earthLive": "Earth from L1"
+    "earthLive": "Earth from L1",
+    "modelsLibrary": "3D model library"
   },
   "auth": {
     "login": "Sign in",

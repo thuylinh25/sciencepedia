@@ -70,20 +70,21 @@ const MODELS = [
 ];
 
 /**
- * Mục phẳng, đứng sau hai menu xổ.
+ * Mục phẳng, đứng sau hai menu xổ. Nay còn đúng MỘT.
  *
- * "Bài viết" là lỗ hổng điều hướng có thật chứ không phải thêm cho đầy thanh:
- * `/articles` là danh sách bài chính của cả site, mà trước đây chỉ tới được
- * qua link "xem tất cả" ở trang chủ. Ai vào thẳng một bài rồi muốn xem còn gì
- * nữa thì không có đường.
+ * Thanh nav rút từ bốn mục xuống ba: Khám phá · Công cụ · Trợ lý AI.
  *
- * Không đặt nó trong menu "Khám phá": menu đó liệt kê các lĩnh vực, còn đây là
- * toàn bộ kho không phân loại — gộp vào sẽ khiến nó trông như một lĩnh vực nữa.
+ * "Bài viết" chuyển XUỐNG trong menu "Khám phá", không bị xoá. Nó vẫn là lỗ
+ * hổng điều hướng có thật: `/articles` là danh sách bài chính của cả site, mà
+ * nếu không có mục nào trỏ tới thì người vào thẳng một bài rồi muốn xem còn gì
+ * nữa sẽ không có đường.
+ *
+ * Bản trước từ chối gộp nó vào "Khám phá" vì menu ấy liệt kê các lĩnh vực, và
+ * một mục "Bài viết" nằm lẫn trong đó trông như một lĩnh vực nữa. Lý do đó
+ * vẫn đúng — nên nó KHÔNG nằm lẫn: nó đứng dưới đường kẻ ngăn, cùng khối với
+ * "Danh mục", tức khối "xem toàn bộ" chứ không phải khối lĩnh vực.
  */
-const NAV = [
-  { href: "/articles", key: "articles" as const, icon: Newspaper },
-  { href: "/assistant", key: "assistant" as const, icon: Sparkles },
-];
+const NAV = [{ href: "/assistant", key: "assistant" as const, icon: Sparkles }];
 
 /**
  * Route có hero nền tối tràn xuống dưới header. Thêm route mới vào đây khi
@@ -216,7 +217,15 @@ export function SiteHeader({ categories }: { categories: NavCategory[] }) {
                       </Link>
                     </DropdownMenuItem>
                   ))}
+                  {/* Dưới đường kẻ ngăn là khối "xem toàn bộ", không phải
+                      một lĩnh vực nữa — xem chú thích của `NAV`. */}
                   <DropdownMenuSeparator />
+                  <DropdownMenuItem asChild>
+                    <Link href="/articles">
+                      <Newspaper className="size-4" />
+                      {t("articles")}
+                    </Link>
+                  </DropdownMenuItem>
                   <DropdownMenuItem asChild>
                     <Link href="/categories">{t("categories")}</Link>
                   </DropdownMenuItem>
@@ -256,9 +265,16 @@ export function SiteHeader({ categories }: { categories: NavCategory[] }) {
                     </Link>
                   </DropdownMenuItem>
                 ))}
+                {/* Nhãn RIÊNG, không dùng lại `nav.models`.
+
+                    Từ khi menu đổi tên thành "Công cụ", dùng lại nhãn ấy cho
+                    mục này là hứa sai: `/models` chỉ có ba mô hình 3D, còn
+                    menu thì gồm cả bản đồ bầu trời, hành trình thu phóng và
+                    Trái Đất từ L1. Một mục "xem tất cả" dẫn tới nơi có ít hơn
+                    những gì vừa liệt kê là điều hướng nói dối. */}
                 <DropdownMenuSeparator />
                 <DropdownMenuItem asChild>
-                  <Link href="/models">{t("models")}</Link>
+                  <Link href="/models">{t("modelsLibrary")}</Link>
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
@@ -403,6 +419,26 @@ export function SiteHeader({ categories }: { categories: NavCategory[] }) {
                     </Link>
                   ))}
 
+                  {/* "Bài viết" đặt NGAY SAU danh sách lĩnh vực, cùng bậc
+                      với "Khám phá" chứ không thụt vào như các lĩnh vực: nó là
+                      toàn bộ kho không phân loại, không phải một lĩnh vực nữa.
+                      Cùng lý do với vị trí của nó trong menu xổ trên desktop —
+                      xem chú thích của `NAV`.
+
+                      Không để nó rơi theo `NAV`: khi `NAV` rút còn "Trợ lý
+                      AI", mục này sẽ biến mất hẳn khỏi điện thoại. */}
+                  <Link
+                    href="/articles"
+                    onClick={() => setMobileOpen(false)}
+                    className={cn(
+                      "mt-2 flex items-center gap-3 rounded-xl px-3 py-3 text-base font-medium transition-colors hover:bg-muted",
+                      isActive("/articles") && "bg-muted text-primary-strong",
+                    )}
+                  >
+                    <Newspaper className="size-4" />
+                    {t("articles")}
+                  </Link>
+
                   <Link
                     href="/models"
                     onClick={() => setMobileOpen(false)}
@@ -411,7 +447,7 @@ export function SiteHeader({ categories }: { categories: NavCategory[] }) {
                       isActive("/models") && "bg-muted text-primary-strong",
                     )}
                   >
-                    {t("models")}
+                    {t("modelsLibrary")}
                   </Link>
                   {MODELS.map((item) => (
                     <Link

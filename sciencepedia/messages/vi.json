@@ -21,10 +21,11 @@
     "close": "Đóng",
     "milkyWay": "Ngân Hà 3D",
     "universe": "Vũ trụ 3D",
-    "models": "Mô hình 3D",
+    "models": "Công cụ",
     "zoom": "Hành trình thu phóng",
     "spaceMap": "Bản đồ bầu trời",
-    "earthLive": "Trái Đất từ điểm L1"
+    "earthLive": "Trái Đất từ điểm L1",
+    "modelsLibrary": "Thư viện mô hình 3D"
   },
   "auth": {
     "login": "Đăng nhập",
