@@ -137,11 +137,20 @@ export function AladinCanvas({
    * tự quay thì cùng sai lệch ấy chiếm vài phần trăm bề ngang mỗi nhịp, và
    * nó hiện ra đúng như người dùng báo: mô hình rung lắc mạnh.
    *
-   * Nay kinh độ là một biến đếm do chính effect này giữ. Nó chỉ ĐỌC vị trí
-   * thật ở nhịp đầu, và đọc lại khi phát hiện người xem vừa kéo khung đi —
-   * tức khi vị trí thật lệch khỏi lệnh vừa gửi quá một ngưỡng. Ý định của
-   * bản cũ được giữ (kéo giữa lúc đang quay thì quay tiếp từ chỗ vừa kéo)
-   * mà không còn vòng phản hồi.
+   * Nay kinh độ là một biến đếm do chính effect này giữ, và nó ĐỌC vị trí
+   * thật đúng hai trường hợp: nhịp đầu tiên, và ngay sau khi người xem chạm
+   * vào khung (`pointerdown` hoặc `wheel`, xem `touchedRef` ở trên). Ý định
+   * của bản cũ được giữ — kéo giữa lúc đang quay thì quay tiếp từ chỗ vừa
+   * kéo — mà không còn vòng phản hồi.
+   *
+   * Lượt sửa đầu dùng NGƯỠNG LỆCH thay cho cờ chạm: đọc vị trí thật mỗi
+   * nhịp, và coi "lệch quá 1,5° so với lệnh vừa gửi" là dấu hiệu người xem
+   * đã kéo. Cách đó vẫn rung, và rung đúng lúc PHÓNG TO GIỮA KHI ĐANG QUAY.
+   * Lý do: phóng to làm Aladin dịch tâm khung thật, cú dịch ấy vượt ngưỡng,
+   * biến đếm bị kéo ngược về vị trí đang nội suy dở, rồi lại chạy tới —
+   * chính là vòng phản hồi cũ quay lại dưới một cái tên khác. Một ngưỡng đo
+   * trên đại lượng mà chính mình đang ghi thì không phân biệt được "người
+   * dùng đổi" với "hệ thống chưa theo kịp".
    *
    * ## Vì sao bước phải tỉ lệ với mức phóng
    *
@@ -154,6 +163,31 @@ export function AladinCanvas({
    * làm việc mà chuyển động này sinh ra: nhìn kỹ một vùng bề mặt khi nó đi
    * qua. Hai phút thì đủ chậm để dừng lại bằng mắt mà vẫn thấy rõ là đang quay.
    */
+  /**
+   * Cờ "người xem vừa chạm vào khung".
+   *
+   * Đây là đường DUY NHẤT khiến vòng quay đọc lại vị trí thật. Xem chú thích
+   * của effect quay bên dưới để biết vì sao không được dùng ngưỡng lệch.
+   */
+  const touchedRef = useRef(false);
+
+  useEffect(() => {
+    const node = containerRef.current;
+    if (!node) return;
+
+    const mark = () => {
+      touchedRef.current = true;
+    };
+
+    // `pointerdown` bắt cả chuột lẫn chạm. `wheel` bắt cuộn để phóng.
+    node.addEventListener("pointerdown", mark);
+    node.addEventListener("wheel", mark, { passive: true });
+    return () => {
+      node.removeEventListener("pointerdown", mark);
+      node.removeEventListener("wheel", mark);
+    };
+  }, [containerRef, status]);
+
   useEffect(() => {
     if (!spinning || status !== "ready") return;
 
@@ -163,24 +197,17 @@ export function AladinCanvas({
     let latitude = 0;
 
     const STEP_AT_FULL_DISC = 0.18;
-    /** Lệch quá ngần này so với lệnh vừa gửi nghĩa là người xem đã kéo khung. */
-    const DRIFT_LIMIT_DEG = 1.5;
+
+    touchedRef.current = false;
 
     const timer = window.setInterval(() => {
-      const actual = centre();
-      if (!actual) return;
-
-      if (longitude === null) {
+      // Đọc vị trí thật CHỈ khi chưa có mốc, hoặc khi người xem vừa chạm vào
+      // khung. Mọi nhịp khác chạy hoàn toàn từ biến đếm.
+      if (longitude === null || touchedRef.current) {
+        const actual = centre();
+        if (!actual) return;
         [longitude, latitude] = actual;
-      } else {
-        // So theo đường tròn: 359,5° và 0,5° cách nhau 1°, không phải 359°.
-        const gap = Math.abs(((actual[0] - longitude + 540) % 360) - 180);
-        if (
-          gap > DRIFT_LIMIT_DEG ||
-          Math.abs(actual[1] - latitude) > DRIFT_LIMIT_DEG
-        ) {
-          [longitude, latitude] = actual;
-        }
+        touchedRef.current = false;
       }
 
       const width = fov() ?? 180;
