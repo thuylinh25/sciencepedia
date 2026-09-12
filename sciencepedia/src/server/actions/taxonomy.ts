@@ -1,13 +1,16 @@
 "use server";
 
+import bcrypt from "bcryptjs";
 import { revalidatePath, revalidateTag } from "next/cache";
 import { Prisma, type Role } from "@prisma/client";
 
 import { prisma } from "@/lib/prisma";
 import { AuthError, requireRole } from "@/lib/rbac";
 import {
+  adminUserSchema,
   categorySchema,
   tagSchema,
+  type AdminUserInput,
   type CategoryInput,
   type TagInput,
 } from "@/lib/validations";
@@ -245,6 +248,53 @@ export async function deleteTag(id: string): Promise<ActionResult> {
 }
 
 // ------------------------------------------------------------------ Người dùng
+
+/**
+ * Quản trị viên tạo một tài khoản mới.
+ *
+ * Đường này KHÔNG đi qua `/api/auth/register`: route đó luôn tạo USER và không
+ * nhận vai trò, đúng như một trang đăng ký công khai phải thế. Trộn hai việc
+ * vào một chỗ sẽ mở đường cho người ngoài tự đặt vai trò cho mình.
+ *
+ * Email chuẩn hoá về chữ thường trước khi kiểm và trước khi lưu. Postgres so
+ * chuỗi có phân biệt hoa thường, nên không chuẩn hoá thì "A@x.com" và
+ * "a@x.com" thành hai tài khoản, và người dùng đăng nhập được bằng đúng một
+ * trong hai mà không hiểu vì sao.
+ */
+export async function createUser(
+  raw: AdminUserInput,
+): Promise<ActionResult<{ id: string }>> {
+  try {
+    await requireRole("ADMIN");
+
+    const parsed = adminUserSchema.safeParse(raw);
+    if (!parsed.success) {
+      return { ok: false, error: parsed.error.issues[0]?.message ?? "INVALID" };
+    }
+
+    const email = parsed.data.email.trim().toLowerCase();
+
+    const existing = await prisma.user.findUnique({ where: { email } });
+    if (existing) return { ok: false, error: "EMAIL_TAKEN" };
+
+    const user = await prisma.user.create({
+      data: {
+        name: parsed.data.name.trim(),
+        email,
+        role: parsed.data.role,
+        // 12 vòng, cùng con số với trang đăng ký. Hai đường tạo tài khoản mà
+        // băm khác độ mạnh thì đường yếu hơn thành điểm tấn công.
+        passwordHash: await bcrypt.hash(parsed.data.password, 12),
+      },
+      select: { id: true },
+    });
+
+    revalidatePath("/[locale]/admin/users", "page");
+    return { ok: true, data: user };
+  } catch (error) {
+    return toFailure(error, "users");
+  }
+}
 
 export async function updateUserRole(
   userId: string,

@@ -319,7 +319,13 @@
     "searchResults": "{count, plural, =0 {No articles match “{query}”} one {# article matches “{query}”} other {# articles match “{query}”}}",
     "searchPlaceholder": "Search by title…",
     "search": "Search",
-    "clearSearch": "Clear search"
+    "clearSearch": "Clear search",
+    "addUser": "Add user",
+    "userName": "Display name",
+    "userEmail": "Email",
+    "userPassword": "Password",
+    "userCreated": "Account created",
+    "emailTaken": "That email already has an account"
   },
   "status": {
     "DRAFT": "Draft",

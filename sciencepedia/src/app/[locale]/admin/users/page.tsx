@@ -4,6 +4,7 @@ import { auth } from "@/auth";
 import { prisma } from "@/lib/prisma";
 import { formatDate } from "@/lib/utils";
 import { RoleSelect } from "@/components/admin/role-select";
+import { UserCreate } from "@/components/admin/user-create";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
   Table,
@@ -40,9 +41,15 @@ export default async function AdminUsersPage({
 
   return (
     <div className="space-y-6">
-      <h1 className="font-display text-3xl font-bold tracking-tight">
-        {t("users")}
-      </h1>
+      {/* Tiêu đề và nút tạo cùng một hàng: nút là hành động DUY NHẤT của
+          trang này, nên nó thuộc về hàng tiêu đề chứ không trôi xuống dưới
+          bảng — nơi người ta phải cuộn qua cả danh sách mới thấy. */}
+      <div className="flex flex-wrap items-center justify-between gap-3">
+        <h1 className="font-display text-3xl font-bold tracking-tight">
+          {t("users")}
+        </h1>
+        <UserCreate />
+      </div>
 
       <Table>
         <TableHeader>

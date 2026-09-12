@@ -11,7 +11,10 @@ export const localeSchema = z.enum(["vi", "en"]);
  */
 const imageUrl = z
   .string()
-  .refine(isAllowedImageUrl, "Ảnh phải tải lên Supabase Storage, hoặc dùng URL https từ Unsplash / NASA / Wikimedia")
+  .refine(
+    isAllowedImageUrl,
+    "Ảnh phải tải lên Supabase Storage, hoặc dùng URL https từ Unsplash / NASA / Wikimedia",
+  )
   .optional()
   .or(z.literal(""));
 
@@ -83,6 +86,36 @@ export const tagSchema = z.object({
   color: z.string().regex(/^#[0-9a-fA-F]{6}$/, "Màu phải ở dạng #rrggbb"),
 });
 export type TagInput = z.infer<typeof tagSchema>;
+
+/**
+ * Quản trị viên tạo tài khoản hộ người khác.
+ *
+ * Khác `registerSchema` ở hai chỗ, và cả hai đều có lý do:
+ *
+ * - KHÔNG có `confirmPassword`. Ô nhắc lại mật khẩu tồn tại để bắt lỗi gõ của
+ *   người đang đặt mật khẩu CHO CHÍNH MÌNH — gõ sai thì họ tự khoá mình ra
+ *   ngoài. Ở đây quản trị viên nhìn thấy mật khẩu mình vừa đặt và sẽ chuyển
+ *   nó cho người dùng, nên ô nhắc lại chỉ là một bước thừa.
+ * - CÓ `role`. Đó là toàn bộ lý do đường này tồn tại song song với trang đăng
+ *   ký: đăng ký công khai luôn tạo USER, còn quản trị viên cần tạo thẳng một
+ *   EDITOR mà không phải tạo rồi nâng quyền ở bước hai.
+ *
+ * Ràng buộc độ mạnh mật khẩu giữ NGUYÊN như trang đăng ký. Một tài khoản do
+ * quản trị viên tạo không vì thế mà được phép yếu hơn — nó thường còn có
+ * quyền cao hơn.
+ */
+export const adminUserSchema = z.object({
+  name: z.string().min(2, "Tên tối thiểu 2 ký tự").max(80),
+  email: z.string().email("Email không hợp lệ"),
+  password: z
+    .string()
+    .min(8, "Mật khẩu tối thiểu 8 ký tự")
+    .regex(/[a-z]/, "Cần ít nhất 1 chữ thường")
+    .regex(/[A-Z]/, "Cần ít nhất 1 chữ hoa")
+    .regex(/[0-9]/, "Cần ít nhất 1 chữ số"),
+  role: z.enum(["USER", "EDITOR", "ADMIN"]),
+});
+export type AdminUserInput = z.infer<typeof adminUserSchema>;
 
 export const registerSchema = z
   .object({

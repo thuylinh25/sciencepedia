@@ -319,7 +319,13 @@
     "searchResults": "{count, plural, =0 {Không có bài nào khớp “{query}”} other {# bài khớp “{query}”}}",
     "searchPlaceholder": "Tìm theo tiêu đề…",
     "search": "Tìm",
-    "clearSearch": "Xoá tìm kiếm"
+    "clearSearch": "Xoá tìm kiếm",
+    "addUser": "Thêm người dùng",
+    "userName": "Tên hiển thị",
+    "userEmail": "Email",
+    "userPassword": "Mật khẩu",
+    "userCreated": "Đã tạo tài khoản",
+    "emailTaken": "Email này đã có tài khoản"
   },
   "status": {
     "DRAFT": "Nháp",
