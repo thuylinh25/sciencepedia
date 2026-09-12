@@ -114,7 +114,6 @@ const CARDS: ExploreCard[] = [
     image: "/images/explore/zoom.jpg",
     emoji: "🔍",
     accent: "#38bdf8",
-    badge: "highlight",
   },
   {
     id: "earthLive",
@@ -142,6 +141,10 @@ const CARDS: ExploreCard[] = [
     image: "/images/explore/sky-map.jpg",
     emoji: "⭐",
     accent: "#2dd4bf",
+    // Nhãn "Nổi bật" chuyển từ hành trình thu phóng sang đây. Chỉ MỘT thẻ
+    // được đeo nó cùng lúc với thẻ chủ lực: hai nhãn nhấn mạnh trong một lưới
+    // sáu thẻ thì không nhãn nào còn nhấn mạnh được gì.
+    badge: "highlight",
   },
   {
     id: "milkyWay",

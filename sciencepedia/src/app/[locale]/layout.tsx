@@ -9,6 +9,7 @@ import { routing, type Locale } from "@/i18n/routing";
 import { getRootCategories } from "@/server/queries";
 import { Providers } from "@/components/providers";
 import { SiteHeader, type NavCategory } from "@/components/layout/site-header";
+import { SearchHeaderForm } from "@/components/search/search-header-form";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { AssistantLauncher } from "@/components/ai/assistant-launcher";
 import { Toaster } from "@/components/ui/sonner";
@@ -125,7 +126,10 @@ export default async function LocaleLayout({
               {tNav("skipToContent")}
             </a>
             <div className="flex min-h-dvh flex-col">
-              <SiteHeader categories={categories} />
+              <SiteHeader
+                categories={categories}
+                search={<SearchHeaderForm locale={locale as Locale} />}
+              />
               {/* Đệm dưới bằng chiều cao nút trợ lý cộng khoảng cách.
 
                   Nút đó là position: fixed nên nó không chiếm chỗ trong luồng,

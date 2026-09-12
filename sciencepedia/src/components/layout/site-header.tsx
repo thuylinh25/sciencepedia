@@ -1,5 +1,7 @@
 "use client";
 
+import type { ReactNode } from "react";
+
 import { useEffect, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import {
@@ -39,7 +41,6 @@ import { CategoryIcon } from "@/components/category-icon";
 import { ThemeToggle } from "@/components/layout/theme-toggle";
 import { LocaleSwitcher } from "@/components/layout/locale-switcher";
 import { UserMenu } from "@/components/layout/user-menu";
-import { SearchCommand } from "@/components/search/search-command";
 import { Logo } from "@/components/layout/logo";
 
 /** Lĩnh vực gốc — do layout truyền vào từ CSDL, xem `NavCategory`. */
@@ -112,37 +113,26 @@ const DARK_HERO_ROUTES = ["/"];
  */
 const FOCUSED_ROUTES = ["/login", "/register"];
 
-/**
- * Nhãn phím tắt theo hệ điều hành.
- *
- * "⌘K" là ký hiệu phím Command, chỉ có trên bàn phím Mac. Người dùng Windows
- * và Linux nhìn vào đó không hiểu là phím gì — nó đã bị hỏi thẳng "đây là cái
- * gì?".
- *
- * Mặc định trả "Ctrl" chứ không "⌘": HTML dựng sẵn ở máy chủ không biết hệ
- * điều hành của người xem, và Windows chiếm phần lớn. Mac đổi lại sau khi
- * hydrate — một lần đổi nhãn rất ngắn, đổi lại là không ai thấy ký hiệu sai
- * cho hệ máy của mình.
- */
-function useShortcutKey(): string {
-  const [key, setKey] = useState("Ctrl");
-
-  useEffect(() => {
-    const ua = navigator.userAgent;
-    if (/Mac|iPhone|iPad|iPod/.test(ua)) setKey("⌘");
-  }, []);
-
-  return key;
-}
-
-export function SiteHeader({ categories }: { categories: NavCategory[] }) {
+export function SiteHeader({
+  categories,
+  search,
+}: {
+  categories: NavCategory[];
+  /**
+   * Ô tìm kiếm, dựng sẵn ở layout rồi truyền xuống.
+   *
+   * Header buộc phải là Client Component (state cuộn, drawer, framer-motion),
+   * mà `SearchHeaderForm` phải là Server Component để chạy khi tắt JS và để
+   * `getPathname` sinh đúng tiền tố ngôn ngữ. Server Component không import
+   * được vào client, nên nó đi qua prop — cùng lối hero từng dùng.
+   */
+  search?: ReactNode;
+}) {
   const t = useTranslations("nav");
   const locale = useLocale() as Locale;
   const pathname = usePathname();
-  const shortcutKey = useShortcutKey();
 
   const [scrolled, setScrolled] = useState(false);
-  const [searchOpen, setSearchOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const categoryName = (category: NavCategory) =>
@@ -153,18 +143,6 @@ export function SiteHeader({ categories }: { categories: NavCategory[] }) {
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
-  // Cmd/Ctrl + K mở tìm kiếm nhanh
-  useEffect(() => {
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key.toLowerCase() === "k" && (e.metaKey || e.ctrlKey)) {
-        e.preventDefault();
-        setSearchOpen((open) => !open);
-      }
-    };
-    document.addEventListener("keydown", onKey);
-    return () => document.removeEventListener("keydown", onKey);
   }, []);
 
   const isActive = (href: string) =>
@@ -347,56 +325,26 @@ export function SiteHeader({ categories }: { categories: NavCategory[] }) {
                 hành trình đọc, còn nút ở header là lối tắt luôn ở đúng chỗ trên
                 mọi trang. Thanh điều hướng mà đổi thành phần theo vị trí cuộn
                 thì người dùng phải học hai phiên bản của cùng một thanh. */}
-            {!focused && (
-              <button
-                type="button"
-                onClick={() => setSearchOpen(true)}
-                /* Rộng hơn, cao hơn, và có phản hồi khi chạm vào.
+            {/* Ô tìm kiếm là FORM THẬT, không phải nút mở hộp thoại.
 
-                   Tìm kiếm là chức năng chính của một bách khoa, nhưng ô cũ
-                   `max-w-md` (28rem) cao 40px hoà lẫn vào nền thanh nav và đọc
-                   ra như một nút phụ. `max-w-xl` (36rem) là +29%, cao 44px.
+                Bản trước bấm vào thì bật bảng lệnh ⌘K. Người dùng thấy một ô
+                nhập nhưng gõ vào không được — phải bấm, đợi hộp thoại hiện,
+                rồi mới gõ. Một thứ trông như ô nhập mà không nhận chữ là lời
+                hứa bị phá ngay ở cú chạm đầu tiên. Nó cũng không chạy khi tắt
+                JavaScript.
 
-                   `focus-visible` đổi cả viền lẫn quầng sáng chứ không chỉ đổi
-                   màu chữ: ô này mở một hộp thoại, nên khoảnh khắc nó nhận
-                   focus phải thấy rõ là "sắp có chuyện xảy ra". Chuyển động
-                   giới hạn ở `border-color`, `background-color` và `box-shadow` —
-                   KHÔNG dùng `transition-all`, nó kéo theo cả backdrop-filter và
-                   gây giật trên Safari, đúng cái đã ghi ở thẻ header. */
-                className={cn(
-                  "hidden h-11 w-full max-w-xl items-center gap-2.5 rounded-full border ps-4 pe-2 text-start text-sm transition-[border-color,background-color,box-shadow] duration-200 focus-visible:outline-none sm:flex",
-                  onDark
-                    ? "border-white/20 bg-white/10 text-white/70 hover:border-white/35 hover:bg-white/15 focus-visible:border-accent/60 focus-visible:bg-white/15 focus-visible:shadow-[0_0_0_4px_rgba(56,189,248,0.18)]"
-                    : "bg-background text-muted-foreground hover:border-foreground/25 hover:bg-muted/50 focus-visible:border-accent focus-visible:shadow-[0_0_0_4px_var(--color-ring)]",
-                )}
-              >
-                <Search className="size-4 shrink-0" />
-                <span className="flex-1 truncate">
-                  {t("searchPlaceholder")}
-                </span>
-                {/* Khung phím tắt phải đổi theo nền: `bg-muted` + `border` là
-                  token của nền sáng, đặt trên hero tối thì gần như tàng hình. */}
-                <kbd
-                  className={cn(
-                    "ms-1 hidden rounded px-1.5 py-0.5 font-mono text-[10px] md:inline",
-                    onDark
-                      ? "border border-white/25 bg-white/10"
-                      : "border bg-muted",
-                  )}
-                >
-                  {shortcutKey}K
-                </kbd>
-              </button>
-            )}
+                Xem `SearchHeaderForm`. */}
+            {!focused && search}
+
+            {/* Dưới `sm` không đủ chỗ cho ô nhập, nên vẫn là một nút — nhưng
+                nay nó ĐIỀU HƯỚNG tới /search thay vì mở hộp thoại. Trang đó có
+                sẵn ô nhập lớn và bộ lọc, tức là nơi đáng tới hơn một hộp thoại
+                nổi trên màn hình 360px. */}
             {!focused && (
-              <Button
-                variant="ghost"
-                size="icon"
-                className="sm:hidden"
-                onClick={() => setSearchOpen(true)}
-                aria-label={t("search")}
-              >
-                <Search className="size-5" />
+              <Button variant="ghost" size="icon" className="sm:hidden" asChild>
+                <Link href="/search" aria-label={t("search")}>
+                  <Search className="size-5" />
+                </Link>
               </Button>
             )}
 
@@ -550,8 +498,6 @@ export function SiteHeader({ categories }: { categories: NavCategory[] }) {
           </div>
         </div>
       </header>
-
-      <SearchCommand open={searchOpen} onOpenChange={setSearchOpen} />
     </>
   );
 }
