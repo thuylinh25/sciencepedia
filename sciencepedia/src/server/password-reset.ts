@@ -75,7 +75,7 @@ export async function requestReset(
 
   const link = `${origin}/${locale}/reset-password?token=${token}`;
 
-  await sendMail({
+  const sent = await sendMail({
     to: email,
     subject: "Đặt lại mật khẩu Sciencepedia",
     text: [
@@ -93,7 +93,20 @@ export async function requestReset(
 <p>Nếu không phải bạn, bỏ qua thư này — mật khẩu hiện tại vẫn nguyên.</p>`,
   });
 
-  // Gửi thư hỏng cũng trả về ok, và lỗi đã được ghi ở tầng `sendMail`.
+  /* Gửi thư hỏng vẫn trả về ok cho NGƯỜI DÙNG, nhưng phải ghi log cho MÁY CHỦ.
+
+     Bản đầu chỉ trả về ok và bỏ qua kết quả của `sendMail`, với chú thích nói
+     rằng lỗi "đã được ghi ở tầng sendMail" — điều đó không đúng: `sendMail`
+     TRẢ VỀ lỗi chứ không ghi nó. Hệ quả là một khoá Resend sai, một tên miền
+     chưa xác minh, hay một địa chỉ bị từ chối đều thất bại hoàn toàn im lặng,
+     và người vận hành không có cách nào biết ngoài việc chờ người dùng báo.
+
+     Đây đúng là thứ lỗi mà một luồng "không được để lộ thông tin" dễ mắc:
+     giấu thông tin khỏi người dùng bị nhầm thành giấu khỏi chính mình. */
+  if (!sent.ok) {
+    console.error("[password-reset] gửi thư thất bại:", sent.error);
+  }
+
   return { ok: true };
 }
 

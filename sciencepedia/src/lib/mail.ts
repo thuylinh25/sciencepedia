@@ -33,6 +33,12 @@ export function isMailConfigured(): boolean {
  *
  * Nên `MAIL_FROM` là biến môi trường: ngày tên miền được xác minh thì đổi một
  * dòng cấu hình, không phải sửa mã.
+ *
+ * HỆ QUẢ PHẢI BIẾT khi chưa xác minh tên miền: mọi thư gửi tới địa chỉ KHÁC
+ * chủ tài khoản Resend đều bị từ chối. Người thử luồng quên mật khẩu bằng một
+ * email bất kỳ sẽ không nhận được gì, và vì luồng ấy cố ý không phân biệt các
+ * nhánh với người dùng nên nó trông y hệt như thành công. Dòng log ở
+ * `password-reset.ts` là chỗ duy nhất nhìn ra được.
  */
 const FROM = process.env.MAIL_FROM ?? "Sciencepedia <onboarding@resend.dev>";
 
