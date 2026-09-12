@@ -14,6 +14,7 @@ import type { Locale } from "@/i18n/routing";
 import { getRootCategories, getSiteStats } from "@/server/queries";
 import { Logo } from "@/components/layout/logo";
 import { Separator } from "@/components/ui/separator";
+import { CountUp } from "@/components/layout/count-up";
 import { formatMeasure } from "@/lib/utils";
 
 /**
@@ -115,11 +116,11 @@ export async function SiteFooter() {
      trên trừ trợ lý AI — suy ra từ đó chứ không viết một số riêng, để hai chỗ
      không lệch nhau khi thêm công cụ mới. */
   const figures = [
-    { value: formatMeasure(stats.articles, locale), label: t("statArticles") },
-    { value: formatMeasure(tools.length - 1, locale), label: t("statTools") },
-    { value: formatMeasure(stats.categories, locale), label: t("statFields") },
-    { value: formatMeasure(stats.tags, locale), label: t("statTopics") },
-  ];
+    { n: stats.articles, label: t("statArticles") },
+    { n: tools.length - 1, label: t("statTools") },
+    { n: stats.categories, label: t("statFields") },
+    { n: stats.tags, label: t("statTopics") },
+  ].map((figure) => ({ ...figure, value: formatMeasure(figure.n, locale) }));
 
   const linkClass =
     "text-sm leading-7 text-muted-foreground transition-colors hover:text-primary-strong hover:underline hover:underline-offset-4";
@@ -140,11 +141,18 @@ export async function SiteFooter() {
             {figures.map((figure) => (
               <div key={figure.label}>
                 <dt className="sr-only">{figure.label}</dt>
+                {/* Số to hơn ~25% (3xl/4xl → 4xl/5xl) và dùng màu chữ chính
+                    thay vì màu mặc định: dải này tồn tại để người đọc TIN, mà
+                    một con số mờ ngang với nhãn của nó thì không thuyết phục
+                    được ai. Nhãn giữ nguyên màu phụ để tương phản giữa hai
+                    tầng rõ hơn, không phải để nhãn chìm đi. */}
                 <dd>
-                  <span className="block font-display text-3xl font-bold tracking-tight tabular-nums sm:text-4xl">
-                    {figure.value}
-                  </span>
-                  <span className="mt-1 block text-sm text-muted-foreground">
+                  <CountUp
+                    value={figure.n}
+                    formatted={figure.value}
+                    className="block font-display text-4xl font-bold tracking-tight text-foreground tabular-nums sm:text-5xl"
+                  />
+                  <span className="mt-1.5 block text-sm text-muted-foreground">
                     {figure.label}
                   </span>
                 </dd>
@@ -158,7 +166,7 @@ export async function SiteFooter() {
           khoảng cách dọc bằng khoảng cách ngang để lưới không lệch nhịp khi
           xuống hai hàng trên tablet. */}
       <div className="container-page py-14">
-        <div className="grid gap-x-12 gap-y-12 md:grid-cols-2 lg:grid-cols-5">
+        <div className="grid gap-x-12 gap-y-12 sm:grid-cols-2 lg:grid-cols-6">
           <div className="md:col-span-2">
             {/* Logo lớn hơn chừng 12% bằng `scale-110` gắn gốc trái.
 
@@ -205,22 +213,28 @@ export async function SiteFooter() {
                 </li>
               ))}
             </ul>
-
-            {fields.length > 0 && (
-              <>
-                <h2 className={`${headingClass} mt-8`}>{t("fields")}</h2>
-                <ul className="mt-4 space-y-1">
-                  {fields.map((item) => (
-                    <li key={item.href}>
-                      <Link href={item.href} className={linkClass}>
-                        {item.label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </>
-            )}
           </nav>
+
+          {/* "Các lĩnh vực" là cột RIÊNG, ngang hàng với "Khám phá".
+
+              Bản trước đặt nó làm tiêu đề thứ hai BÊN TRONG cột Khám phá, và
+              ở đó nó đọc ra như một mục con — trong khi lĩnh vực là trục phân
+              loại chính của cả kho, ngang vai với "Bài viết" và "Danh mục"
+              chứ không nằm dưới chúng. */}
+          {fields.length > 0 && (
+            <nav aria-label={t("fields")}>
+              <h2 className={headingClass}>{t("fields")}</h2>
+              <ul className="mt-4 space-y-1">
+                {fields.map((item) => (
+                  <li key={item.href}>
+                    <Link href={item.href} className={linkClass}>
+                      {item.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          )}
 
           <nav aria-label={t("tools")}>
             <h2 className={headingClass}>{t("tools")}</h2>

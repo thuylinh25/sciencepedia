@@ -89,18 +89,28 @@ function orbitalRank(bodyId: string): { key: string; index?: number } {
 
 /** Cùng một chuỗi cho mọi thẻ: lưới tối đa ba cột trong `container-page`. */
 /**
- * Thiên thể mà tấm poster phải dùng `object-cover` thay vì `contain` mặc định.
+ * Cách lấp khung của tấm poster, theo TỪNG thiên thể.
  *
- * Sao Thổ có vành đai trải rộng gấp hơn hai lần đường kính hành tinh, và Sao
- * Thiên Vương cũng vậy ở mức nhẹ hơn. Với chúng, `contain` phải thu cả khung
- * lại cho vừa bề ngang vành đai — hành tinh teo thành một chấm giữa hai dải
- * đen dày, và thẻ trông rỗng.
+ * Mặc định là `contain` có lề 7%: phần lớn ảnh là một hình cầu trên nền đen,
+ * và lề giữ cho đĩa không chạm mép.
  *
- * Danh sách này KHÔNG phải mặc định đảo ngược: mặc định vẫn là `contain`, vì
- * phần lớn ảnh là một đĩa tròn và `cover` xén mất đĩa. Đây là hai ngoại lệ đã
- * nhìn bằng mắt.
+ * Sao Thổ và Sao Thiên Vương là ngoại lệ vì vành đai trải ngang rộng hơn hẳn
+ * đường kính hành tinh. Với chúng:
+ *
+ *   `cover` cắt mất vành — đúng thứ đáng nhìn nhất ở Sao Thổ.
+ *   `contain` cộng lề 7% thu cả khung cho vừa bề ngang vành, nên hành tinh
+ *           teo thành một chấm giữa hai dải đen dày.
+ *
+ * Nên chúng dùng `fill`: hiện trọn, không chừa lề. Vành đai chạm đúng hai mép
+ * khung và khung hình đầy đặn.
+ *
+ * Danh sách này phải nhìn bằng mắt mới lập được — không có quy tắc nào suy ra
+ * được nó từ dữ liệu.
  */
-const POSTER_COVER = new Set(["saturn", "uranus"]);
+const POSTER_FIT: Record<string, "contain" | "cover" | "fill"> = {
+  saturn: "fill",
+  uranus: "fill",
+};
 
 const IMAGE_SIZES =
   "(min-width: 1024px) 30vw, (min-width: 640px) 45vw, calc(100vw - 3rem)";
@@ -290,7 +300,7 @@ export async function PlanetGallery() {
                   crumbRoot={t("title")}
                   bodyId={body.id}
                   sizes={IMAGE_SIZES}
-                  posterFit={POSTER_COVER.has(body.id) ? "cover" : "contain"}
+                  posterFit={POSTER_FIT[body.id] ?? "contain"}
                 />
               ) : (
                 <div className="relative aspect-square bg-[#04060e]">

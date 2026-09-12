@@ -56,9 +56,19 @@ export function PlanetSurface({
    * cho vừa bề ngang — hành tinh teo lại thành một chấm giữa hai dải đen dày.
    * Với những ảnh như thế, `cover` cho ra khung hình đầy đặn hơn dù có xén.
    *
+   * Ba chế độ:
+   *
+   *   `contain` — mặc định. Đĩa hiện trọn, chừa lề 7%. Đúng cho ảnh là một
+   *              hình cầu trên nền đen.
+   *   `cover`   — lấp kín khung, chấp nhận xén. Cho ảnh mà phần rìa không
+   *              mang thông tin.
+   *   `fill`    — hiện trọn NHƯNG không chừa lề. Cho ảnh có cấu trúc trải
+   *              ngang như vành đai Sao Thổ: `contain` cộng lề đẩy hành tinh
+   *              nhỏ thêm một nấc nữa, còn `cover` thì cắt mất vành.
+   *
    * Nên đây là lựa chọn theo TỪNG ẢNH, không phải một quy tắc chung.
    */
-  posterFit?: "contain" | "cover";
+  posterFit?: "contain" | "cover" | "fill";
   /**
    * Nhãn trên tấm bìa — chỉ là TÊN thiên thể, không phải một câu hướng dẫn.
    *
