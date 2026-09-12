@@ -115,7 +115,17 @@ export function PlanetSurface({
           fill
           sizes={sizes}
           priority={priority}
-          className="object-cover"
+          /* `object-contain` chứ KHÔNG `object-cover`.
+
+             Đây là tấm poster hiện TRƯỚC khi người xem bấm vào, tức là thứ họ
+             thấy trong lưới thư viện. `cover` phóng ảnh cho phủ kín khung rồi
+             cắt phần thừa, nên với ảnh không vuông thì đĩa thiên thể bị xén —
+             Mặt Trời, Sao Thuỷ và Sao Kim mất gần nửa hình cầu.
+
+             `p-[7%]` chừa một vành lề đều quanh đĩa, nên thiên thể chiếm chừng
+             86% bề ngang khung thay vì chạm sát mép. Nền sau ảnh cùng màu tối
+             nên phần letterbox không đọc ra là letterbox. */
+          className="object-contain p-[7%]"
         />
       }
       className="aspect-square"

@@ -19,8 +19,8 @@
     "menu": "Menu",
     "skipToContent": "Skip to main content",
     "close": "Close",
-    "milkyWay": "3D Milky Way",
-    "universe": "3D Universe",
+    "milkyWay": "The Milky Way in 3D",
+    "universe": "Map of the Universe in 3D",
     "models": "Tools",
     "zoom": "Zoom journey",
     "spaceMap": "Sky map",
@@ -495,7 +495,7 @@
         "metaB": "Where the Sun sits"
       },
       "universe": {
-        "title": "The universe in 3D",
+        "title": "Map of the Universe in 3D",
         "body": "Travel through the cosmic web — matter filaments, galaxy clusters and vast empty voids.",
         "cta": "Explore",
         "metaA": "Filaments and voids",
@@ -516,7 +516,7 @@
         "metaB": "18 suggested targets"
       },
       "earthLive": {
-        "title": "Earth from the L1 point",
+        "title": "Earth from L1",
         "body": "Full-disk images of Earth captured from the L1 Lagrange point by NASA's DSCOVR spacecraft.",
         "cta": "View live",
         "metaA": "NASA EPIC imagery",

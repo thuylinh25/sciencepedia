@@ -19,12 +19,12 @@
     "menu": "Menu",
     "skipToContent": "Bỏ qua tới nội dung chính",
     "close": "Đóng",
-    "milkyWay": "Ngân Hà 3D",
-    "universe": "Vũ trụ 3D",
+    "milkyWay": "Dải Ngân Hà 3D",
+    "universe": "Bản đồ Vũ trụ 3D",
     "models": "Công cụ",
     "zoom": "Hành trình thu phóng",
     "spaceMap": "Bản đồ bầu trời",
-    "earthLive": "Trái Đất từ điểm L1",
+    "earthLive": "Trái Đất từ L1",
     "modelsLibrary": "Thư viện mô hình 3D",
     "searchPlaceholder": "Tìm \"hố đen\", \"CRISPR\", \"vật chất tối\"…"
   },
@@ -488,14 +488,14 @@
         "metaB": "Vị trí theo NASA Horizons"
       },
       "milkyWay": {
-        "title": "Ngân Hà 3D",
+        "title": "Dải Ngân Hà 3D",
         "body": "Khám phá cấu trúc của Dải Ngân Hà và vị trí của Hệ Mặt Trời trong đó.",
         "cta": "Khám phá",
         "metaA": "4 nhánh xoắn",
         "metaB": "Vị trí Hệ Mặt Trời"
       },
       "universe": {
-        "title": "Vũ trụ 3D",
+        "title": "Bản đồ Vũ trụ 3D",
         "body": "Du hành qua mạng vũ trụ — các sợi vật chất, cụm thiên hà và những khoảng rỗng khổng lồ.",
         "cta": "Khám phá",
         "metaA": "Sợi vật chất và khoảng rỗng",
@@ -516,7 +516,7 @@
         "metaB": "18 điểm đến gợi ý"
       },
       "earthLive": {
-        "title": "Trái Đất nhìn từ điểm L1",
+        "title": "Trái Đất từ L1",
         "body": "Ảnh toàn cảnh Trái Đất do vệ tinh DSCOVR của NASA chụp từ điểm Lagrange L1, cách 1,5 triệu km.",
         "cta": "Xem trực tiếp",
         "metaA": "Ảnh NASA EPIC",

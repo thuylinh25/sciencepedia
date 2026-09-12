@@ -5,6 +5,7 @@ import { ArrowRight } from "lucide-react";
 
 import { Link } from "@/i18n/navigation";
 import { StaggerGroup, StaggerItem } from "@/components/motion/reveal";
+import { cn } from "@/lib/utils";
 
 /**
  * Khối "Khám phá tương tác" trên trang chủ.
@@ -65,6 +66,14 @@ type ExploreCard = {
    * thành `/vi/tools/x.html` và trả 404.
    */
   external?: boolean;
+  /**
+   * Thẻ chủ lực: chiếm 2x2 ô trên lưới lớn.
+   *
+   * Chỉ ĐÚNG MỘT thẻ được đặt cờ này. Hai thẻ cùng lớn thì không thẻ nào lớn,
+   * và lưới quay về trạng thái mọi thẻ ngang hàng — chính thứ cờ này sinh ra
+   * để phá.
+   */
+  feature?: boolean;
 };
 
 /*
@@ -78,21 +87,33 @@ type ExploreCard = {
  */
 const CARDS: ExploreCard[] = [
   {
-    id: "zoom",
-    href: "/zoom",
-    image: "/images/explore/zoom.jpg",
-    emoji: "🔍",
-    accent: "#38bdf8",
-    // Đứng đầu danh sách vì nó giải thích được cả năm cái kia, nên nó cũng là
-    // chỗ nên vào trước. Huy hiệu chỉ nói lại điều thứ tự đã nói.
-    badge: "start",
-  },
-  {
+    /*
+     * Thẻ CHỦ LỰC, và nó đứng đầu vì lưới đọc theo thứ tự nguồn.
+     *
+     * Trước đây sáu thẻ có trọng số thị giác ngang nhau, và chú thích của lưới
+     * còn ghi rõ đó là chủ ý. Chủ ý ấy đổi: sáu công cụ KHÔNG ngang nhau về
+     * mức độ quen thuộc, và người vào lần đầu cần một chỗ hiển nhiên để bắt
+     * đầu chứ không phải sáu lựa chọn cùng cỡ. Hệ Mặt Trời là thứ ai cũng có
+     * sẵn một hình dung trong đầu, nên nó là cửa vào rẻ nhất.
+     *
+     * Huy hiệu đổi từ "highlight" sang "start": kích thước đã nói nó nổi bật
+     * rồi, nên nhãn nên nói thứ kích thước KHÔNG nói được — rằng đây là chỗ
+     * nên vào trước. Thẻ hành trình thu phóng nhường lại nhãn ấy.
+     */
     id: "solarSystem",
     href: "/solar-system",
     image: "/images/explore/solar-system.jpg",
     emoji: "☀️",
     accent: "#f59e0b",
+    badge: "start",
+    feature: true,
+  },
+  {
+    id: "zoom",
+    href: "/zoom",
+    image: "/images/explore/zoom.jpg",
+    emoji: "🔍",
+    accent: "#38bdf8",
     badge: "highlight",
   },
   {
@@ -214,9 +235,12 @@ export async function InteractiveExplore() {
         </p>
       </div>
 
-      <StaggerGroup className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <StaggerGroup className="mt-8 grid auto-rows-fr gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {CARDS.map((card) => (
-          <StaggerItem key={card.id}>
+          <StaggerItem
+            key={card.id}
+            className={card.feature ? "sm:col-span-2 lg:row-span-2" : undefined}
+          >
             <CardLink
               card={card}
               /* Quầng sáng xanh khi rê chuột, thay cho `shadow-2xl` đen.
@@ -230,7 +254,10 @@ export async function InteractiveExplore() {
                  đúng cái đã làm hỏng nút toàn màn hình của Aladin hồi trước.
                  Ở đây an toàn vì card chỉ chứa ảnh và chữ, nhưng ai thêm một
                  lớp phủ `fixed` vào trong card thì phải đọc lại chỗ này. */
-              className="group relative flex h-full min-h-[15rem] flex-col justify-end overflow-hidden rounded-3xl border border-white/10 bg-[#05070f] p-5 transition-[transform,border-color,box-shadow] duration-300 ease-out hover:-translate-y-1.5 hover:border-white/30 hover:shadow-[0_20px_55px_-18px_rgba(56,189,248,0.45)] focus-visible:ring-[3px] focus-visible:ring-ring/40 focus-visible:outline-none sm:min-h-[17rem]"
+              className={cn(
+                "group relative flex h-full min-h-[15rem] flex-col justify-end overflow-hidden rounded-3xl border border-white/10 bg-[#05070f] p-5 transition-[transform,border-color,box-shadow] duration-300 ease-out hover:-translate-y-1.5 hover:border-white/30 hover:shadow-[0_20px_55px_-18px_rgba(56,189,248,0.45)] focus-visible:ring-[3px] focus-visible:ring-ring/40 focus-visible:outline-none sm:min-h-[17rem]",
+                card.feature && "lg:min-h-[35rem]",
+              )}
             >
               {/* Ảnh sáng hơn hẳn: opacity 55% → 72%, cộng `brightness-110`.
 
