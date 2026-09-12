@@ -209,10 +209,8 @@ export function Hero({
             sẽ chạm lại. */}
         {/* Rộng thêm ở cả hai bố cục, và cho tràn qua mép phải.
 
-            Từ `lg`: cột lưới đã lên 36rem, cộng `-mr-24` để đĩa chạy quá mép
-            container. Số âm này đã nới từ `-mr-10`: đẩy đĩa sang phải thêm
-            chừng 56px thì lõi sáng rời xa cột chữ hơn, và phần bị mép khung
-            cắt nhiều hơn — cả hai đều làm nó bớt tranh chỗ với tiêu đề. Hero có `overflow-hidden` nên phần tràn bị cắt gọn ở
+            Từ `lg`: cột lưới đã lên 36rem, cộng `-mr-10` để đĩa chạy quá mép
+            container. Hero có `overflow-hidden` nên phần tràn bị cắt gọn ở
             cạnh khung — đó chính là hiệu ứng cần: thiên hà trông LỚN HƠN khung
             chứa nó, chứ không phải một tấm ảnh dán vừa khít.
 
@@ -241,35 +239,8 @@ export function Hero({
 
             Ai tăng bề rộng cột phải lần nữa thì phải tăng cả số âm này, không
             thì quãng trống quay lại y như cũ. */}
-        {/* Ba lớp hạ sáng, cộng lại chừng 25–30%.
-
-            Thiên hà là thứ sáng nhất trong hero và nó nằm cùng hàng với cột
-            chữ trắng. Ở độ sáng gốc, lõi đĩa hút mắt trước cả tiêu đề — mà
-            thứ tự đọc phải là tiêu đề, câu tóm, ô tìm kiếm, rồi mới tới hình.
-
-            `brightness-75` đánh vào chính pixel của canvas. `opacity-[0.85]`
-            hoà nó thêm vào nền. Lớp phủ tối bên dưới dùng gradient chứ không
-            phải một màu phẳng: đặc hơn ở mép trái — nơi giáp cột chữ — và
-            loãng dần sang phải, nên phần đĩa xa chữ vẫn giữ được chi tiết.
-
-            `pointer-events-none` trên lớp phủ là bắt buộc: từ `lg` thiên hà
-            nhận được chuột (`lg:pointer-events-auto`), và một tấm phủ đặc
-            trên đó sẽ nuốt sạch thao tác. */}
-        <div className="pointer-events-none absolute -right-[24%] bottom-10 z-0 w-[21rem] max-w-[70%] opacity-60 brightness-75 lg:pointer-events-auto lg:static lg:-mr-24 lg:-mb-16 lg:w-auto lg:max-w-none lg:opacity-[0.85]">
-          {/* Lớp bọc `relative` RIÊNG cho lớp phủ, không gộp vào thẻ ngoài.
-
-              Thẻ ngoài là `absolute` dưới `lg` nhưng `lg:static` từ `lg` trở
-              lên — và `static` KHÔNG phải containing block. Treo lớp phủ
-              thẳng vào nó thì trên desktop lớp phủ sẽ căn theo một tổ tiên
-              nào đó ở xa và trùm sai chỗ. Một lớp bọc `relative` thì đúng ở
-              cả hai bố cục. */}
-          <div className="relative">
-            <HeroGalaxy locale={locale} />
-            <div
-              aria-hidden
-              className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#070b18]/55 via-[#070b18]/25 to-transparent"
-            />
-          </div>
+        <div className="pointer-events-none absolute -right-[24%] bottom-10 z-0 w-[21rem] max-w-[70%] opacity-60 lg:pointer-events-auto lg:static lg:-mr-10 lg:-mb-16 lg:w-auto lg:max-w-none lg:opacity-100">
+          <HeroGalaxy locale={locale} />
         </div>
       </div>
     </section>

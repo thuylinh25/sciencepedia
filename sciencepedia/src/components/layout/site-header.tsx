@@ -97,6 +97,22 @@ const NAV = [{ href: "/assistant", key: "assistant" as const, icon: Sparkles }];
 const DARK_HERO_ROUTES = ["/"];
 
 /**
+ * Route mà header rút gọn còn logo + ngôn ngữ + theme.
+ *
+ * Đăng nhập và đăng ký là hai trang có ĐÚNG MỘT việc để làm. Một thanh nav
+ * đầy đủ ở đó chỉ chào mời người dùng bỏ dở việc ấy — và với người vừa nhập
+ * sai mật khẩu, mỗi lối thoát thêm là một lý do để rời đi thay vì thử lại.
+ *
+ * Giữ lại ngôn ngữ và theme vì chúng KHÔNG dẫn đi đâu cả: chúng đổi chính
+ * trang đang đứng, và người đọc tiếng Việt gặp form tiếng Anh thì cần nút đó
+ * trước cả nút đăng nhập.
+ *
+ * Giữ logo, và nó vẫn bấm được về trang chủ: rút gọn không có nghĩa là nhốt
+ * người dùng lại.
+ */
+const FOCUSED_ROUTES = ["/login", "/register"];
+
+/**
  * Nhãn phím tắt theo hệ điều hành.
  *
  * "⌘K" là ký hiệu phím Command, chỉ có trên bàn phím Mac. Người dùng Windows
@@ -155,6 +171,9 @@ export function SiteHeader({ categories }: { categories: NavCategory[] }) {
     href === "/" ? pathname === "/" : pathname.startsWith(href);
 
   const overHero = DARK_HERO_ROUTES.includes(pathname);
+  const focused = FOCUSED_ROUTES.some(
+    (route) => pathname === route || pathname.startsWith(`${route}/`),
+  );
   const onDark = overHero && !scrolled;
 
   /* Lỗi ở trạng thái chưa cuộn không nằm ở cái nền trong suốt mà ở MÀU MỰC:
@@ -192,7 +211,12 @@ export function SiteHeader({ categories }: { categories: NavCategory[] }) {
             <Logo tone={onDark ? "onDark" : "auto"} />
           </Link>
 
-          <nav className="ml-6 hidden items-center gap-7 lg:flex">
+          <nav
+            className={cn(
+              "ml-6 items-center gap-7",
+              focused ? "hidden" : "hidden lg:flex",
+            )}
+          >
             {/* Xếp ngang cả 5 lĩnh vực sẽ đẩy thanh nav quá bề ngang khả dụng
                 (riêng "Trái Đất và Khí hậu" đã ~150px), nên gom vào menu xổ. */}
             {categories.length > 0 ? (
@@ -319,68 +343,82 @@ export function SiteHeader({ categories }: { categories: NavCategory[] }) {
                 hành trình đọc, còn nút ở header là lối tắt luôn ở đúng chỗ trên
                 mọi trang. Thanh điều hướng mà đổi thành phần theo vị trí cuộn
                 thì người dùng phải học hai phiên bản của cùng một thanh. */}
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={() => setSearchOpen(true)}
-              className={cn(
-                "hidden gap-2 rounded-full pe-2 ps-3 sm:flex",
-                onDark ? "text-white/80" : "text-muted-foreground",
-              )}
-            >
-              <Search className="size-4" />
-              <span>{t("search")}</span>
-              {/* Khung phím tắt phải đổi theo nền: `bg-muted` + `border` là
-                  token của nền sáng, đặt trên hero tối thì gần như tàng hình. */}
-              <kbd
+            {!focused && (
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={() => setSearchOpen(true)}
                 className={cn(
-                  "ms-1 hidden rounded px-1.5 py-0.5 font-mono text-[10px] md:inline",
-                  onDark
-                    ? "border border-white/25 bg-white/10"
-                    : "border bg-muted",
+                  "hidden gap-2 rounded-full pe-2 ps-3 sm:flex",
+                  onDark ? "text-white/80" : "text-muted-foreground",
                 )}
               >
-                {shortcutKey}K
-              </kbd>
-            </Button>
-            <Button
-              variant="ghost"
-              size="icon"
-              className="sm:hidden"
-              onClick={() => setSearchOpen(true)}
-              aria-label={t("search")}
-            >
-              <Search className="size-5" />
-            </Button>
+                <Search className="size-4" />
+                <span>{t("search")}</span>
+                {/* Khung phím tắt phải đổi theo nền: `bg-muted` + `border` là
+                  token của nền sáng, đặt trên hero tối thì gần như tàng hình. */}
+                <kbd
+                  className={cn(
+                    "ms-1 hidden rounded px-1.5 py-0.5 font-mono text-[10px] md:inline",
+                    onDark
+                      ? "border border-white/25 bg-white/10"
+                      : "border bg-muted",
+                  )}
+                >
+                  {shortcutKey}K
+                </kbd>
+              </Button>
+            )}
+            {!focused && (
+              <Button
+                variant="ghost"
+                size="icon"
+                className="sm:hidden"
+                onClick={() => setSearchOpen(true)}
+                aria-label={t("search")}
+              >
+                <Search className="size-5" />
+              </Button>
+            )}
 
             {/* Ngôn ngữ + theme chỉ là cài đặt: trên mobile chúng chiếm ~112px
                 khiến hàng header không co nổi dưới 482px và đẩy nút đăng nhập
                 ra ngoài viewport. Dưới lg, hai nút này nằm trong drawer. */}
-            <div className="hidden items-center gap-1.5 lg:flex">
+            {/* Ở chế độ rút gọn, hai nút này phải hiện ở MỌI bề ngang: drawer
+                — chỗ chứa chúng dưới `lg` — đã bị gỡ cùng với nav. */}
+            <div
+              className={cn(
+                "items-center gap-1.5",
+                focused ? "flex" : "hidden lg:flex",
+              )}
+            >
               <LocaleSwitcher />
               <ThemeToggle />
             </div>
-            <UserMenu />
+            {/* Không có UserMenu ở trang đăng nhập: nút "Đăng nhập" trong đó
+                trỏ về chính trang đang đứng. */}
+            {!focused && <UserMenu />}
 
-            <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
-              <SheetTrigger asChild>
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  className="lg:hidden"
-                  aria-label={t("menu")}
-                >
-                  <Menu className="size-5" />
-                </Button>
-              </SheetTrigger>
-              <SheetContent side="right" className="w-[85vw] max-w-[320px]">
-                <SheetHeader>
-                  <SheetTitle>
-                    <Logo />
-                  </SheetTitle>
-                </SheetHeader>
-                <Separator />
-                {/* Drawer phải cuộn được: danh sách lĩnh vực dài ra theo dữ
+            {!focused && (
+              <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
+                <SheetTrigger asChild>
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    className="lg:hidden"
+                    aria-label={t("menu")}
+                  >
+                    <Menu className="size-5" />
+                  </Button>
+                </SheetTrigger>
+                <SheetContent side="right" className="w-[85vw] max-w-[320px]">
+                  <SheetHeader>
+                    <SheetTitle>
+                      <Logo />
+                    </SheetTitle>
+                  </SheetHeader>
+                  <Separator />
+                  {/* Drawer phải cuộn được: danh sách lĩnh vực dài ra theo dữ
                     liệu, màn hình thấp sẽ không đủ chỗ cho cả khối cài đặt.
 
                     `min-h-0 flex-1` là phần bắt buộc, không phải trang trí.
@@ -391,35 +429,36 @@ export function SiteHeader({ categories }: { categories: NavCategory[] }) {
                     — và mọi mục nằm dưới mép màn hình trở thành không với tới
                     được. Trên điện thoại, đó là "Mô hình 3D" và tất cả những
                     gì đứng sau danh sách lĩnh vực. */}
-                <nav className="flex min-h-0 flex-1 flex-col gap-1 overflow-y-auto px-4">
-                  <Link
-                    href="/categories"
-                    onClick={() => setMobileOpen(false)}
-                    className={cn(
-                      "flex items-center gap-3 rounded-xl px-3 py-3 text-base font-medium transition-colors hover:bg-muted",
-                      isActive("/categories") && "bg-muted text-primary-strong",
-                    )}
-                  >
-                    {t("explore")}
-                  </Link>
-
-                  {categories.map((category) => (
+                  <nav className="flex min-h-0 flex-1 flex-col gap-1 overflow-y-auto px-4">
                     <Link
-                      key={category.slug}
-                      href={`/categories/${category.slug}`}
+                      href="/categories"
                       onClick={() => setMobileOpen(false)}
                       className={cn(
-                        "ml-3 flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground",
-                        isActive(`/categories/${category.slug}`) &&
+                        "flex items-center gap-3 rounded-xl px-3 py-3 text-base font-medium transition-colors hover:bg-muted",
+                        isActive("/categories") &&
                           "bg-muted text-primary-strong",
                       )}
                     >
-                      <CategoryIcon name={category.icon} className="size-4" />
-                      {categoryName(category)}
+                      {t("explore")}
                     </Link>
-                  ))}
 
-                  {/* "Bài viết" đặt NGAY SAU danh sách lĩnh vực, cùng bậc
+                    {categories.map((category) => (
+                      <Link
+                        key={category.slug}
+                        href={`/categories/${category.slug}`}
+                        onClick={() => setMobileOpen(false)}
+                        className={cn(
+                          "ml-3 flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground",
+                          isActive(`/categories/${category.slug}`) &&
+                            "bg-muted text-primary-strong",
+                        )}
+                      >
+                        <CategoryIcon name={category.icon} className="size-4" />
+                        {categoryName(category)}
+                      </Link>
+                    ))}
+
+                    {/* "Bài viết" đặt NGAY SAU danh sách lĩnh vực, cùng bậc
                       với "Khám phá" chứ không thụt vào như các lĩnh vực: nó là
                       toàn bộ kho không phân loại, không phải một lĩnh vực nữa.
                       Cùng lý do với vị trí của nó trong menu xổ trên desktop —
@@ -427,67 +466,68 @@ export function SiteHeader({ categories }: { categories: NavCategory[] }) {
 
                       Không để nó rơi theo `NAV`: khi `NAV` rút còn "Trợ lý
                       AI", mục này sẽ biến mất hẳn khỏi điện thoại. */}
-                  <Link
-                    href="/articles"
-                    onClick={() => setMobileOpen(false)}
-                    className={cn(
-                      "mt-2 flex items-center gap-3 rounded-xl px-3 py-3 text-base font-medium transition-colors hover:bg-muted",
-                      isActive("/articles") && "bg-muted text-primary-strong",
-                    )}
-                  >
-                    <Newspaper className="size-4" />
-                    {t("articles")}
-                  </Link>
-
-                  <Link
-                    href="/models"
-                    onClick={() => setMobileOpen(false)}
-                    className={cn(
-                      "mt-2 flex items-center gap-3 rounded-xl px-3 py-3 text-base font-medium transition-colors hover:bg-muted",
-                      isActive("/models") && "bg-muted text-primary-strong",
-                    )}
-                  >
-                    {t("modelsLibrary")}
-                  </Link>
-                  {MODELS.map((item) => (
                     <Link
-                      key={item.href}
-                      href={item.href}
+                      href="/articles"
                       onClick={() => setMobileOpen(false)}
                       className={cn(
-                        "ml-3 flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground",
-                        isActive(item.href) && "bg-muted text-primary-strong",
+                        "mt-2 flex items-center gap-3 rounded-xl px-3 py-3 text-base font-medium transition-colors hover:bg-muted",
+                        isActive("/articles") && "bg-muted text-primary-strong",
                       )}
                     >
-                      <item.icon className="size-4" />
-                      {t(item.key)}
+                      <Newspaper className="size-4" />
+                      {t("articles")}
                     </Link>
-                  ))}
 
-                  {NAV.map((item) => (
                     <Link
-                      key={item.href}
-                      href={item.href}
+                      href="/models"
                       onClick={() => setMobileOpen(false)}
                       className={cn(
-                        "mt-1 flex items-center gap-3 rounded-xl px-3 py-3 text-base font-medium transition-colors hover:bg-muted",
-                        isActive(item.href) && "bg-muted text-primary-strong",
+                        "mt-2 flex items-center gap-3 rounded-xl px-3 py-3 text-base font-medium transition-colors hover:bg-muted",
+                        isActive("/models") && "bg-muted text-primary-strong",
                       )}
                     >
-                      {item.icon && <item.icon className="size-5" />}
-                      {t(item.key)}
+                      {t("modelsLibrary")}
                     </Link>
-                  ))}
-                </nav>
+                    {MODELS.map((item) => (
+                      <Link
+                        key={item.href}
+                        href={item.href}
+                        onClick={() => setMobileOpen(false)}
+                        className={cn(
+                          "ml-3 flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground",
+                          isActive(item.href) && "bg-muted text-primary-strong",
+                        )}
+                      >
+                        <item.icon className="size-4" />
+                        {t(item.key)}
+                      </Link>
+                    ))}
 
-                {/* Ngôn ngữ + theme bị ẩn khỏi thanh header dưới lg, đưa vào đây */}
-                <Separator className="mt-2" />
-                <div className="flex items-center gap-2 px-4 lg:hidden">
-                  <LocaleSwitcher />
-                  <ThemeToggle />
-                </div>
-              </SheetContent>
-            </Sheet>
+                    {NAV.map((item) => (
+                      <Link
+                        key={item.href}
+                        href={item.href}
+                        onClick={() => setMobileOpen(false)}
+                        className={cn(
+                          "mt-1 flex items-center gap-3 rounded-xl px-3 py-3 text-base font-medium transition-colors hover:bg-muted",
+                          isActive(item.href) && "bg-muted text-primary-strong",
+                        )}
+                      >
+                        {item.icon && <item.icon className="size-5" />}
+                        {t(item.key)}
+                      </Link>
+                    ))}
+                  </nav>
+
+                  {/* Ngôn ngữ + theme bị ẩn khỏi thanh header dưới lg, đưa vào đây */}
+                  <Separator className="mt-2" />
+                  <div className="flex items-center gap-2 px-4 lg:hidden">
+                    <LocaleSwitcher />
+                    <ThemeToggle />
+                  </div>
+                </SheetContent>
+              </Sheet>
+            )}
           </div>
         </div>
       </header>
