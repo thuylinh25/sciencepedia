@@ -10,7 +10,7 @@ Một vật đứng yên vẫn đứng yên; một vật đang chuyển động 
 
 Gia tốc của một hệ tỉ lệ thuận và **cùng hướng** với lực tổng hợp bên ngoài, tỉ lệ nghịch với khối lượng. Đó là công thức **F = ma** quen thuộc.
 
-Dạng gốc còn rộng hơn thế: lực bằng tốc độ biến thiên của **động lượng** — tích khối lượng và vận tốc. Hai cách viết trùng nhau khi khối lượng không đổi; với một tên lửa đang đốt dần nhiên liệu của chính nó, chỉ dạng động lượng còn đúng.
+Phát biểu tổng quát hơn: lực bằng tốc độ biến thiên của **động lượng** — tích khối lượng và vận tốc. Hai cách viết trùng nhau khi khối lượng không đổi; với một tên lửa đang đốt nhiên liệu thì khối lượng không còn là hằng số, nên F = ma không dùng được nữa.
 
 Chữ *tổng hợp* không thừa: hai lực bằng nhau, ngược chiều, cùng đặt lên một vật thì gia tốc bằng không.
 
@@ -32,4 +32,4 @@ Newton trình Quyển 1 của *Principia* trước Royal Society cuối tháng 4
 
 Không phải ở mọi nơi. Cơ học Newton mô tả tốt chuyển động khi vật chạy **chậm hơn nhiều** so với tốc độ ánh sáng, **và** khi vật lớn hơn cỡ phân tử — khoảng 10⁻⁹ mét. Ra khỏi vế thứ nhất là địa hạt của [thuyết tương đối](/articles/thuyet-tuong-doi-hep-khi-thoi-gian-khong-con-tuyet-doi); ra khỏi vế thứ hai là vật lý lượng tử.
 
-🍎 Ba định luật Newton không nói vật chuyển động *ra sao*, mà nói điều gì làm chuyển động **thay đổi**. Đó là lý do chúng còn dùng được sau hơn ba thế kỷ, và cũng là lý do chúng có biên giới rõ ràng.
+🍎 Ba định luật Newton không mô tả riêng một chuyển động nào; chúng nói điều gì làm chuyển động **thay đổi**. Theo NASA, chúng vẫn đủ chính xác cho nhiều ứng dụng ngày nay — trong đúng hai điều kiện vừa nêu.
