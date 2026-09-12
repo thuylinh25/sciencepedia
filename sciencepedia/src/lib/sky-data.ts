@@ -214,7 +214,16 @@ export type SkyTarget = {
 export const SKY_TARGETS: SkyTarget[] = [
   {
     /*
-     * Ngân Hà đứng ĐẦU danh sách, trước cả Andromeda.
+     * Tâm Dải Ngân Hà đứng ĐẦU danh sách, trước cả Andromeda.
+     *
+     * TÊN LÀ MỘT ĐÍNH CHÍNH. Mục này ban đầu đặt tên "Ngân Hà" / "The Milky
+     * Way", trong khi cả ảnh lẫn khung nhìn đều là VÙNG TRUNG TÂM trong chòm
+     * Nhân Mã. Gọi một vùng cụ thể bằng tên của cả thiên hà khiến người xem
+     * tin rằng họ đang nhìn toàn bộ Dải Ngân Hà — nhầm lẫn ấy nằm đúng trên
+     * trục mà một bách khoa khoa học không được phép sai.
+     *
+     * Quy tắc rút ra: đặt tên điểm đến theo THỨ KHUNG HÌNH THẬT SỰ CHỨA, không
+     * theo thứ lớn nhất mà nó thuộc về.
      *
      * Bản đồ bầu trời trước đây có 10 điểm đến và không có cái nào là thiên
      * hà của chính chúng ta — trong khi mọi điểm đến còn lại đều nằm BÊN
@@ -230,16 +239,17 @@ export const SKY_TARGETS: SkyTarget[] = [
      * hiển thị, việc dẫn hướng đi bằng ra/dec, nên để tên thường là trung
      * thực hơn bịa một mã.
      */
-    id: "milky-way",
-    catalogId: "Milky Way",
-    name: "Ngân Hà",
-    nameEn: "The Milky Way",
+    id: "galactic-centre",
+    catalogId: "Galactic Centre",
+    name: "Tâm Dải Ngân Hà",
+    nameEn: "The Galactic Centre",
     aliases: [
-      "Milky Way",
-      "Ngân Hà",
-      "Dải Ngân Hà",
       "Galactic Centre",
-      "Sông Ngân",
+      "Galactic Center",
+      "Tâm Ngân Hà",
+      "Vùng trung tâm Dải Ngân Hà",
+      "Hướng tâm Ngân Hà",
+      "Sagittarius",
     ],
     kind: "GALAXY",
     // Tâm Ngân Hà, cùng toạ độ với Sgr A*.
@@ -255,21 +265,21 @@ export const SKY_TARGETS: SkyTarget[] = [
     constellation: "Sagittarius",
     constellationEn: "Sagittarius",
     blurb:
-      "Thiên hà xoắn ốc chứa Mặt Trời và toàn bộ những ngôi sao bạn nhìn thấy bằng mắt thường. Dải sáng mờ vắt ngang bầu trời đêm chính là đĩa của nó, nhìn từ bên trong.",
+      "Vùng trung tâm của Dải Ngân Hà, ở hướng chòm Nhân Mã và cách Mặt Trời khoảng 26.000 năm ánh sáng. Đây là phần dày đặc sao và bụi nhất trên bầu trời — không phải toàn bộ thiên hà, mà là chỗ ta nhìn về khi nhìn vào lõi của nó.",
     blurbEn:
-      "The spiral galaxy that holds the Sun and every star you can see with the naked eye. The faint band across a dark night sky is its disc, seen from the inside.",
+      "The central region of the Milky Way, towards the constellation Sagittarius and about 26,000 light-years from the Sun. It is the densest patch of stars and dust in our sky — not the whole galaxy, but the direction we look when we look towards its core.",
     visibility: "NAKED_EYE",
-    image: "/images/sky/milky-way.jpg",
+    image: "/images/sky/galactic-centre.jpg",
     imageCredit: null,
     facts: [
-      "Chứa Mặt Trời và mọi ngôi sao thấy bằng mắt thường",
-      "Tâm nằm ở hướng chòm Nhân Mã",
-      "Ta nhìn đĩa của nó từ bên trong, nên thấy một dải",
+      "Hệ Mặt Trời nằm trong Dải Ngân Hà, cách tâm khoảng 26.000 năm ánh sáng",
+      "Ta đang nhìn về phía vùng trung tâm, trong chòm Nhân Mã",
+      "Đây là khu vực dày đặc sao và bụi nhất trên bầu trời",
     ],
     factsEn: [
-      "Holds the Sun and every naked-eye star",
-      "Its centre lies towards Sagittarius",
-      "We see its disc from inside, so it appears as a band",
+      "The Solar System sits about 26,000 light-years from the galactic centre",
+      "We are looking towards that centre, in the constellation Sagittarius",
+      "It is the densest patch of stars and dust in our sky",
     ],
   },
   {

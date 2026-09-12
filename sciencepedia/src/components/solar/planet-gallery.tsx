@@ -88,6 +88,20 @@ function orbitalRank(bodyId: string): { key: string; index?: number } {
 }
 
 /** Cùng một chuỗi cho mọi thẻ: lưới tối đa ba cột trong `container-page`. */
+/**
+ * Thiên thể mà tấm poster phải dùng `object-cover` thay vì `contain` mặc định.
+ *
+ * Sao Thổ có vành đai trải rộng gấp hơn hai lần đường kính hành tinh, và Sao
+ * Thiên Vương cũng vậy ở mức nhẹ hơn. Với chúng, `contain` phải thu cả khung
+ * lại cho vừa bề ngang vành đai — hành tinh teo thành một chấm giữa hai dải
+ * đen dày, và thẻ trông rỗng.
+ *
+ * Danh sách này KHÔNG phải mặc định đảo ngược: mặc định vẫn là `contain`, vì
+ * phần lớn ảnh là một đĩa tròn và `cover` xén mất đĩa. Đây là hai ngoại lệ đã
+ * nhìn bằng mắt.
+ */
+const POSTER_COVER = new Set(["saturn", "uranus"]);
+
 const IMAGE_SIZES =
   "(min-width: 1024px) 30vw, (min-width: 640px) 45vw, calc(100vw - 3rem)";
 
@@ -276,6 +290,7 @@ export async function PlanetGallery() {
                   crumbRoot={t("title")}
                   bodyId={body.id}
                   sizes={IMAGE_SIZES}
+                  posterFit={POSTER_COVER.has(body.id) ? "cover" : "contain"}
                 />
               ) : (
                 <div className="relative aspect-square bg-[#04060e]">

@@ -39,11 +39,26 @@ export function PlanetSurface({
   bodyId,
   priority,
   sizes,
+  posterFit = "contain",
 }: {
   /** Tên hiển thị, dùng cho `alt` và nhãn trình đọc màn hình */
   name: string;
   photo: BodyPhoto;
   surface: BodySurface;
+  /**
+   * Cách tấm poster lấp khung: `contain` (mặc định) hay `cover`.
+   *
+   * Mặc định là `contain` vì phần lớn ảnh thiên thể là một đĩa tròn trên nền
+   * đen, và `cover` xén mất đĩa khi ảnh không vuông.
+   *
+   * Nhưng KHÔNG phải ảnh nào cũng là một đĩa. Sao Thổ có vành đai trải rộng
+   * gấp hơn hai lần đường kính hành tinh, nên `contain` phải thu cả khung lại
+   * cho vừa bề ngang — hành tinh teo lại thành một chấm giữa hai dải đen dày.
+   * Với những ảnh như thế, `cover` cho ra khung hình đầy đặn hơn dù có xén.
+   *
+   * Nên đây là lựa chọn theo TỪNG ẢNH, không phải một quy tắc chung.
+   */
+  posterFit?: "contain" | "cover";
   /**
    * Nhãn trên tấm bìa — chỉ là TÊN thiên thể, không phải một câu hướng dẫn.
    *
@@ -115,17 +130,11 @@ export function PlanetSurface({
           fill
           sizes={sizes}
           priority={priority}
-          /* `object-contain` chứ KHÔNG `object-cover`.
-
-             Đây là tấm poster hiện TRƯỚC khi người xem bấm vào, tức là thứ họ
-             thấy trong lưới thư viện. `cover` phóng ảnh cho phủ kín khung rồi
-             cắt phần thừa, nên với ảnh không vuông thì đĩa thiên thể bị xén —
-             Mặt Trời, Sao Thuỷ và Sao Kim mất gần nửa hình cầu.
-
-             `p-[7%]` chừa một vành lề đều quanh đĩa, nên thiên thể chiếm chừng
-             86% bề ngang khung thay vì chạm sát mép. Nền sau ảnh cùng màu tối
-             nên phần letterbox không đọc ra là letterbox. */
-          className="object-contain p-[7%]"
+          /* Xem chú thích của prop `posterFit`: mặc định `contain` cho đĩa
+             hiện trọn, nhưng ảnh có cấu trúc trải rộng thì dùng `cover`. */
+          className={
+            posterFit === "cover" ? "object-cover" : "object-contain p-[7%]"
+          }
         />
       }
       className="aspect-square"
