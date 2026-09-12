@@ -351,11 +351,23 @@ export function SiteHeader({ categories }: { categories: NavCategory[] }) {
               <button
                 type="button"
                 onClick={() => setSearchOpen(true)}
+                /* Rộng hơn, cao hơn, và có phản hồi khi chạm vào.
+
+                   Tìm kiếm là chức năng chính của một bách khoa, nhưng ô cũ
+                   `max-w-md` (28rem) cao 40px hoà lẫn vào nền thanh nav và đọc
+                   ra như một nút phụ. `max-w-xl` (36rem) là +29%, cao 44px.
+
+                   `focus-visible` đổi cả viền lẫn quầng sáng chứ không chỉ đổi
+                   màu chữ: ô này mở một hộp thoại, nên khoảnh khắc nó nhận
+                   focus phải thấy rõ là "sắp có chuyện xảy ra". Chuyển động
+                   giới hạn ở `border-color`, `background-color` và `box-shadow` —
+                   KHÔNG dùng `transition-all`, nó kéo theo cả backdrop-filter và
+                   gây giật trên Safari, đúng cái đã ghi ở thẻ header. */
                 className={cn(
-                  "hidden h-10 w-full max-w-md items-center gap-2 rounded-full border ps-3.5 pe-2 text-start text-sm transition-colors sm:flex",
+                  "hidden h-11 w-full max-w-xl items-center gap-2.5 rounded-full border ps-4 pe-2 text-start text-sm transition-[border-color,background-color,box-shadow] duration-200 focus-visible:outline-none sm:flex",
                   onDark
-                    ? "border-white/20 bg-white/10 text-white/70 hover:border-white/35 hover:bg-white/15"
-                    : "bg-background text-muted-foreground hover:border-foreground/25 hover:bg-muted/50",
+                    ? "border-white/20 bg-white/10 text-white/70 hover:border-white/35 hover:bg-white/15 focus-visible:border-accent/60 focus-visible:bg-white/15 focus-visible:shadow-[0_0_0_4px_rgba(56,189,248,0.18)]"
+                    : "bg-background text-muted-foreground hover:border-foreground/25 hover:bg-muted/50 focus-visible:border-accent focus-visible:shadow-[0_0_0_4px_var(--color-ring)]",
                 )}
               >
                 <Search className="size-4 shrink-0" />

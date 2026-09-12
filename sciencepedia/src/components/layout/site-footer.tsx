@@ -16,8 +16,18 @@ import { Logo } from "@/components/layout/logo";
 import { Separator } from "@/components/ui/separator";
 import { formatMeasure } from "@/lib/utils";
 
-/** Địa chỉ liên hệ, viết một chỗ để dòng chữ và link `mailto:` không lệch nhau. */
-const CONTACT_EMAIL = "hello@sciencepedia.dev";
+/**
+ * Địa chỉ liên hệ, viết một chỗ để dòng chữ và link `mailto:` không lệch nhau.
+ *
+ * `contact@` chứ không `hello@`: `hello@` là giọng của một sản phẩm khởi
+ * nghiệp, còn đây là một bách khoa khoa học — người viết thư tới đây thường là
+ * để báo một lỗi nội dung hoặc hỏi về giấy phép ảnh, và `contact@` nói đúng
+ * rằng có người đọc hộp thư ấy.
+ *
+ * ĐÂY LÀ MỘT HỘP THƯ PHẢI CÓ THẬT. Một địa chỉ in ra footer mà không ai nhận
+ * thư còn tệ hơn không in gì: người đọc bỏ công viết rồi im lặng.
+ */
+const CONTACT_EMAIL = "contact@sciencepedia.vn";
 
 export async function SiteFooter() {
   const t = await getTranslations("footer");

@@ -99,6 +99,13 @@ export async function HeroFields({
 
   if (shown.length === 0) return null;
 
+  /* Chip to hơn chừng 12%: cao 44 → 48px, chữ 14 → 15px, đệm ngang 16 → 20px,
+     emoji 16 → 18px.
+
+     Đây KHÔNG phải chuyện thẩm mỹ. Sau khi ô tìm kiếm rời hero lên header,
+     hàng chip này là lối vào DUY NHẤT còn lại trong hero — nhưng nó vẫn mang
+     kích thước của thời còn đứng dưới một ô tìm kiếm lớn, nên đọc ra như một
+     menu phụ. Kích thước phải nói đúng vai trò hiện tại của nó. */
   return (
     <nav aria-label={t("heroCategoriesLabel")} className="w-full max-w-3xl">
       <p className="mb-2.5 text-xs font-medium tracking-widest text-white/55 uppercase">
@@ -116,13 +123,13 @@ export async function HeroFields({
                 gradient nền chỉ làm chip đổi màu. */}
             <Link
               href={`/categories/${field.slug}`}
-              className={`group flex min-h-11 items-center gap-2 rounded-full border px-4 text-sm font-medium backdrop-blur transition-[border-color,background-color,box-shadow] duration-200 focus-visible:ring-[3px] focus-visible:ring-ring/50 focus-visible:outline-none ${
+              className={`group flex min-h-12 items-center gap-2.5 rounded-full border px-5 text-[15px] font-medium backdrop-blur transition-[border-color,background-color,box-shadow] duration-200 focus-visible:ring-[3px] focus-visible:ring-ring/50 focus-visible:outline-none ${
                 field._count.articles > 0
                   ? "border-white/20 bg-white/10 text-white/90 hover:border-accent/50 hover:bg-white/[0.16] hover:text-white hover:shadow-[0_0_22px_-6px_var(--color-accent)]"
                   : "border-dashed border-white/15 bg-white/[0.04] text-white/55 hover:border-white/30 hover:text-white/80"
               }`}
             >
-              <span aria-hidden className="text-base leading-none">
+              <span aria-hidden className="text-lg leading-none">
                 {FIELD_EMOJI[field.slug] ?? "•"}
               </span>
               {pickName(locale, field)}

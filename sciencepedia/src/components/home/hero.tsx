@@ -72,7 +72,7 @@ export function Hero({ fields }: { fields?: ReactNode }) {
           dải trống rộng nhất trang đúng ở chỗ cần liền mạch nhất.
 
           Cột phải 28rem → 36rem, tức thiên hà rộng thêm chừng 29%. */}
-      <div className="container-page relative z-10 grid min-h-[min(52svh,28rem)] items-center gap-8 pt-10 pb-3 text-star lg:grid-cols-[minmax(0,1fr)_36rem] lg:gap-12 lg:pt-12 lg:pb-3">
+      <div className="container-page relative z-10 grid min-h-[min(52svh,28rem)] items-center gap-8 pt-10 pb-3 text-star lg:grid-cols-[minmax(0,1fr)_30rem] lg:gap-12 lg:pt-12 lg:pb-3">
         {/* `relative z-10` là bắt buộc, không phải trang trí.
 
             Dưới `lg` thiên hà là một lớp `absolute`, và trong CSS phần tử đã
@@ -244,7 +244,20 @@ export function Hero({ fields }: { fields?: ReactNode }) {
             mọi con `position: fixed`. Ở đây an toàn vì bên trong chỉ có một
             canvas WebGL — nhưng ai thêm một lớp phủ `fixed` vào HeroGalaxy thì
             phải đọc lại chỗ này. Cùng cái bẫy đã ghi ở thẻ Khám phá tương tác. */}
-        <div className="pointer-events-none absolute -right-[24%] bottom-10 z-0 w-[21rem] max-w-[70%] opacity-60 lg:pointer-events-auto lg:static lg:-mr-10 lg:-mb-16 lg:w-auto lg:max-w-none lg:-translate-y-10 lg:opacity-100">
+        {/* Nhỏ đi 15% và tối đi, KHÔNG dùng lớp phủ.
+
+            Lượt hạ sáng trước đắp một lớp gradient lên riêng hộp thiên hà, và
+            mép trái của lớp ấy tạo một đường viền dọc thấy rõ giữa hero —
+            sáng một bên, tối một bên. Đã hoàn tác.
+
+            Lần này chỉ đụng vào chính thiên hà: `brightness-75` và
+            `opacity-90` tác động lên pixel của canvas nên không có mép nào để
+            lộ, và cột lưới 36rem → 30rem thu nó nhỏ đi chừng 17%.
+
+            Lề âm phải giảm theo: đĩa nhỏ hơn thì phần tràn qua đáy cũng ít đi,
+            nên `-mb-16` → `-mb-10`. Giữ nguyên số cũ sẽ mở lại quãng trống
+            dưới hàng chip mà lượt trước vừa đóng. */}
+        <div className="pointer-events-none absolute -right-[24%] bottom-10 z-0 w-[21rem] max-w-[70%] opacity-60 brightness-75 lg:pointer-events-auto lg:static lg:-mr-10 lg:-mb-10 lg:w-auto lg:max-w-none lg:-translate-y-10 lg:opacity-90">
           <HeroGalaxy locale={locale} />
         </div>
       </div>
