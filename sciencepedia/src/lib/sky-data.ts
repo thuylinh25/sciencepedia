@@ -213,6 +213,66 @@ export type SkyTarget = {
  */
 export const SKY_TARGETS: SkyTarget[] = [
   {
+    /*
+     * Ngân Hà đứng ĐẦU danh sách, trước cả Andromeda.
+     *
+     * Bản đồ bầu trời trước đây có 10 điểm đến và không có cái nào là thiên
+     * hà của chính chúng ta — trong khi mọi điểm đến còn lại đều nằm BÊN
+     * TRONG nó hoặc được nhìn xuyên qua nó. Người mở bản đồ lần đầu không có
+     * chỗ nào để thấy mình đang đứng ở đâu.
+     *
+     * Khác `sgr-a-star` ở quy mô, không ở toạ độ: cùng tâm, nhưng lỗ đen là
+     * một điểm 0,3° còn đây là 90° — gần nửa bầu trời, đủ để thấy dải Ngân Hà
+     * trải ngang chứ không phải một đám sao sáng.
+     *
+     * `catalogId` không phải mã catalog thật: thiên hà chứa chính người quan
+     * sát thì không có số hiệu trong bất kỳ catalog nào. Trường này chỉ để
+     * hiển thị, việc dẫn hướng đi bằng ra/dec, nên để tên thường là trung
+     * thực hơn bịa một mã.
+     */
+    id: "milky-way",
+    catalogId: "Milky Way",
+    name: "Ngân Hà",
+    nameEn: "The Milky Way",
+    aliases: [
+      "Milky Way",
+      "Ngân Hà",
+      "Dải Ngân Hà",
+      "Galactic Centre",
+      "Sông Ngân",
+    ],
+    kind: "GALAXY",
+    // Tâm Ngân Hà, cùng toạ độ với Sgr A*.
+    ra: "17 45 40.036",
+    dec: "-29 00 28.17",
+    // 90° — gần nửa bầu trời. Nhỏ hơn thì mất chính thứ cần thấy: dải sáng
+    // trải ngang. Aladin chặn cứng ở 180°.
+    fovDeg: 90,
+    /* Mellinger là ảnh ghép TOÀN BẦU TRỜI ở bước sóng khả kiến, dựng cho đúng
+       kiểu nhìn này. DSS2 mặc định là khảo sát theo ô nhỏ, độ sâu cao — kéo nó
+       ra 90° thì được một tấm chắp vá lỗ chỗ chứ không ra dải Ngân Hà. */
+    survey: "P/Mellinger/color",
+    constellation: "Sagittarius",
+    constellationEn: "Sagittarius",
+    blurb:
+      "Thiên hà xoắn ốc chứa Mặt Trời và toàn bộ những ngôi sao bạn nhìn thấy bằng mắt thường. Dải sáng mờ vắt ngang bầu trời đêm chính là đĩa của nó, nhìn từ bên trong.",
+    blurbEn:
+      "The spiral galaxy that holds the Sun and every star you can see with the naked eye. The faint band across a dark night sky is its disc, seen from the inside.",
+    visibility: "NAKED_EYE",
+    image: "/images/sky/milky-way.jpg",
+    imageCredit: null,
+    facts: [
+      "Chứa Mặt Trời và mọi ngôi sao thấy bằng mắt thường",
+      "Tâm nằm ở hướng chòm Nhân Mã",
+      "Ta nhìn đĩa của nó từ bên trong, nên thấy một dải",
+    ],
+    factsEn: [
+      "Holds the Sun and every naked-eye star",
+      "Its centre lies towards Sagittarius",
+      "We see its disc from inside, so it appears as a band",
+    ],
+  },
+  {
     id: "m31",
     catalogId: "M31",
     name: "Thiên hà Andromeda",
