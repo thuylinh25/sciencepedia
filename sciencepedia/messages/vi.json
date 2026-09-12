@@ -341,7 +341,13 @@
     "userEmail": "Email",
     "userPassword": "Mật khẩu",
     "userCreated": "Đã tạo tài khoản",
-    "emailTaken": "Email này đã có tài khoản"
+    "emailTaken": "Email này đã có tài khoản",
+    "resetLink": "Đặt lại mật khẩu",
+    "resetLinkHint": "Liên kết dùng được MỘT lần, hiệu lực 60 phút. Chuyển tay qua kênh bạn tin được — đừng dán vào nhóm chat công khai.",
+    "copyLink": "Chép liên kết",
+    "linkCopied": "Đã chép liên kết",
+    "copyFailed": "Không chép được — hãy bôi đen ô bên cạnh",
+    "noSuchUser": "Không có tài khoản với email này"
   },
   "status": {
     "DRAFT": "Nháp",

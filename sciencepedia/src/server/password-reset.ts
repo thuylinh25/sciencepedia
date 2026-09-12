@@ -41,6 +41,37 @@ const TTL_MS = 60 * 60 * 1000;
 const hash = (token: string) =>
   createHash("sha256").update(token).digest("hex");
 
+/**
+ * Phát một token mới và dựng liên kết đặt lại.
+ *
+ * Tách riêng vì có HAI đường tới đây: người dùng tự bấm "quên mật khẩu" (gửi
+ * qua email), và quản trị viên sinh liên kết để chuyển tay. Hai đường phải
+ * dùng chung đúng một cách phát token — nếu không thì thời hạn, độ dài token
+ * và việc dọn token cũ sẽ trôi khỏi nhau.
+ */
+async function issueLink(
+  email: string,
+  origin: string,
+  locale: string,
+): Promise<string> {
+  /* Xoá mọi token cũ của email này trước khi phát token mới.
+     Không xoá thì mỗi lần bấm "gửi lại" để lại thêm một liên kết còn hiệu lực,
+     và cửa sổ tấn công rộng ra theo số lần bấm. */
+  await prisma.verificationToken.deleteMany({ where: { identifier: email } });
+
+  const token = randomBytes(32).toString("hex");
+
+  await prisma.verificationToken.create({
+    data: {
+      identifier: email,
+      token: hash(token),
+      expires: new Date(Date.now() + TTL_MS),
+    },
+  });
+
+  return `${origin}/${locale}/reset-password?token=${token}`;
+}
+
 export type ResetRequestResult = { ok: true };
 
 export async function requestReset(
@@ -58,22 +89,7 @@ export async function requestReset(
   // Không có tài khoản: dừng im lặng, vẫn trả về ok. Xem chú thích đầu file.
   if (!user) return { ok: true };
 
-  /* Xoá mọi token cũ của email này trước khi phát token mới.
-     Không xoá thì mỗi lần bấm "gửi lại" để lại thêm một liên kết còn hiệu lực,
-     và cửa sổ tấn công rộng ra theo số lần bấm. */
-  await prisma.verificationToken.deleteMany({ where: { identifier: email } });
-
-  const token = randomBytes(32).toString("hex");
-
-  await prisma.verificationToken.create({
-    data: {
-      identifier: email,
-      token: hash(token),
-      expires: new Date(Date.now() + TTL_MS),
-    },
-  });
-
-  const link = `${origin}/${locale}/reset-password?token=${token}`;
+  const link = await issueLink(email, origin, locale);
 
   const sent = await sendMail({
     to: email,
@@ -125,6 +141,43 @@ export async function requestReset(
   }
 
   return { ok: true };
+}
+
+/**
+ * Quản trị viên sinh liên kết đặt lại cho MỘT tài khoản, để chuyển tay.
+ *
+ * ## Vì sao tính năng này tồn tại
+ *
+ * Gửi thư chỉ chạy khi tên miền đã xác minh trong Resend. Trước đó, luồng
+ * quên mật khẩu trả về "ok" nhưng không thư nào tới — và không có đường nào
+ * khác để một người dùng mất mật khẩu lấy lại tài khoản.
+ *
+ * ## Vì sao KHÔNG in ra log production thay vì làm cái này
+ *
+ * In liên kết ra log là ghi một mật khẩu tạm còn sống vào một file mà nhiều
+ * người đọc được, cho MỌI yêu cầu đặt lại — kể cả của tài khoản quản trị.
+ * Ở đây thì ngược lại: liên kết chỉ sinh khi một ADMIN chủ động bấm, hiện
+ * đúng một lần trên màn hình của người ấy, và không đi vào log nào.
+ *
+ * Hàm này KHÔNG gửi thư. Nó cố ý trả liên kết về cho người gọi.
+ */
+export async function issueResetLinkForAdmin(
+  rawEmail: string,
+  origin: string,
+  locale: string,
+): Promise<{ ok: true; link: string } | { ok: false; error: string }> {
+  const email = rawEmail.trim().toLowerCase();
+
+  const user = await prisma.user.findUnique({
+    where: { email },
+    select: { id: true },
+  });
+  /* Ở ĐÂY thì nói thẳng khi không có tài khoản, khác hẳn luồng công khai.
+     Lý do giấu thông tin bên kia là để người lạ không dò được ai có tài khoản;
+     người gọi hàm này ĐÃ là quản trị viên và đọc được cả bảng người dùng. */
+  if (!user) return { ok: false, error: "NO_SUCH_USER" };
+
+  return { ok: true, link: await issueLink(email, origin, locale) };
 }
 
 export type ResetResult =

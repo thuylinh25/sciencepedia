@@ -15,6 +15,7 @@ import {
   type TagInput,
 } from "@/lib/validations";
 import { slugify } from "@/lib/utils";
+import { issueResetLinkForAdmin } from "@/server/password-reset";
 import type { ActionResult } from "@/server/actions/types";
 
 function toFailure(error: unknown, entity: string): ActionResult<never> {
@@ -291,6 +292,33 @@ export async function createUser(
 
     revalidatePath("/[locale]/admin/users", "page");
     return { ok: true, data: user };
+  } catch (error) {
+    return toFailure(error, "users");
+  }
+}
+
+/**
+ * Sinh liên kết đặt lại mật khẩu cho một tài khoản, để quản trị viên chuyển tay.
+ *
+ * Chỉ ADMIN. Đây là đường vòng qua toàn bộ việc xác thực mật khẩu của một tài
+ * khoản bất kỳ, nên nó phải ở mức quyền cao nhất — một EDITOR gọi được hàm này
+ * là một EDITOR chiếm được tài khoản quản trị.
+ *
+ * `origin` lấy từ biến môi trường chứ KHÔNG từ header, cùng lý do đã ghi ở
+ * route công khai: header Host do client gửi và sửa được.
+ */
+export async function issueResetLink(
+  email: string,
+  locale: string,
+): Promise<ActionResult<{ link: string }>> {
+  try {
+    await requireRole("ADMIN");
+
+    const origin = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+    const result = await issueResetLinkForAdmin(email, origin, locale);
+
+    if (!result.ok) return { ok: false, error: result.error };
+    return { ok: true, data: { link: result.link } };
   } catch (error) {
     return toFailure(error, "users");
   }

@@ -341,7 +341,13 @@
     "userEmail": "Email",
     "userPassword": "Password",
     "userCreated": "Account created",
-    "emailTaken": "That email already has an account"
+    "emailTaken": "That email already has an account",
+    "resetLink": "Reset password",
+    "resetLinkHint": "Single-use link, valid for 60 minutes. Hand it over through a channel you trust — do not paste it into a public chat.",
+    "copyLink": "Copy link",
+    "linkCopied": "Link copied",
+    "copyFailed": "Could not copy — select the field instead",
+    "noSuchUser": "No account with that email"
   },
   "status": {
     "DRAFT": "Draft",

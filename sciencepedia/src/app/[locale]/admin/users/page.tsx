@@ -5,6 +5,7 @@ import { prisma } from "@/lib/prisma";
 import { formatDate } from "@/lib/utils";
 import { RoleSelect } from "@/components/admin/role-select";
 import { UserCreate } from "@/components/admin/user-create";
+import { ResetLinkButton } from "@/components/admin/reset-link-button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
   Table,
@@ -57,6 +58,7 @@ export default async function AdminUsersPage({
             <TableHead>{t("users")}</TableHead>
             <TableHead className="w-24 text-right">{t("articles")}</TableHead>
             <TableHead className="w-32">{t("save")}</TableHead>
+            <TableHead className="w-64">{t("resetLink")}</TableHead>
             <TableHead className="w-44">{t("role")}</TableHead>
           </TableRow>
         </TableHeader>
@@ -87,6 +89,13 @@ export default async function AdminUsersPage({
 
               <TableCell className="text-muted-foreground">
                 {formatDate(user.createdAt, locale)}
+              </TableCell>
+
+              {/* Chỉ hiện với tài khoản CÓ email. Tài khoản đăng nhập bằng
+                  OAuth mà nhà cung cấp không trả email thì không đặt lại mật
+                  khẩu được — chúng không có mật khẩu để đặt lại. */}
+              <TableCell>
+                {user.email ? <ResetLinkButton email={user.email} /> : "—"}
               </TableCell>
 
               <TableCell>
