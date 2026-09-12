@@ -238,8 +238,21 @@ export function Hero({
             pb-3 trong cùng lượt này.
 
             Ai tăng bề rộng cột phải lần nữa thì phải tăng cả số âm này, không
-            thì quãng trống quay lại y như cũ. */}
-        <div className="pointer-events-none absolute -right-[24%] bottom-10 z-0 w-[21rem] max-w-[70%] opacity-60 lg:pointer-events-auto lg:static lg:-mr-10 lg:-mb-16 lg:w-auto lg:max-w-none lg:opacity-100">
+            thì quãng trống quay lại y như cũ.
+
+            `lg:-translate-y-10` — nhích đĩa lên 40px.
+
+            Dùng transform chứ KHÔNG dùng `-mt`: lề âm rút chiều cao hàng lưới,
+            mà chiều cao ấy đang do chính thiên hà quyết định (xem trên), nên
+            nhích bằng lề sẽ kéo theo cả cột chữ và làm hỏng lượt cân khoảng
+            trống vừa xong. Transform chỉ dịch lúc VẼ, hàng lưới không đổi một
+            pixel nào.
+
+            Đánh đổi đã biết: transform trên thẻ cha tạo containing block cho
+            mọi con `position: fixed`. Ở đây an toàn vì bên trong chỉ có một
+            canvas WebGL — nhưng ai thêm một lớp phủ `fixed` vào HeroGalaxy thì
+            phải đọc lại chỗ này. Cùng cái bẫy đã ghi ở thẻ Khám phá tương tác. */}
+        <div className="pointer-events-none absolute -right-[24%] bottom-10 z-0 w-[21rem] max-w-[70%] opacity-60 lg:pointer-events-auto lg:static lg:-mr-10 lg:-mb-16 lg:w-auto lg:max-w-none lg:-translate-y-10 lg:opacity-100">
           <HeroGalaxy locale={locale} />
         </div>
       </div>
