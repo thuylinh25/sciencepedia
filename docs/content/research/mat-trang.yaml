@@ -1,0 +1,170 @@
+# Bảng nguồn — mat-trang (bước 1: content-research)
+#
+# Lập 2026-09-12. Kho có 58 bài, mười bài NHẮC tới Mặt Trăng (bài nhật thực
+# nguyệt thực nhắc 19 lần) nhưng KHÔNG bài nào nói về chính Mặt Trăng. Đây là
+# lỗ hổng lớn nhất còn lại trong nhánh Hệ Mặt Trời.
+#
+# Mọi đoạn `passages` dưới đây được ĐỌC THẬT từ URL ghi kèm trong lượt này,
+# không nhớ lại. Chỗ nào không đọc được thì ghi rõ ở `limitation`, và claim
+# dựa vào nó bị giới hạn tương ứng.
+#
+# Một URL là một nguồn. Năm trang NASA dưới đây là năm trang KHÁC nhau, mỗi
+# trang phụ trách một phần — nhưng chúng cùng một cơ quan, nên chúng KHÔNG
+# phải năm nguồn độc lập theo nghĩa đối chứng. Hai nguồn bậc 1 ở cuối là chỗ
+# đối chứng thật.
+
+topic: Mặt Trăng
+slug: mat-trang
+entity_type: OBJECT
+wikidata_qid: Q405
+accessed: 2026-09-12
+sufficient: true
+
+sources:
+  - id: s1
+    tier: 2
+    title: Moon Facts
+    publisher: NASA Science
+    url: https://science.nasa.gov/moon/facts/
+    accessed: 2026-09-12
+    passages:
+      - "With a radius of about 1,080 miles (1,740 kilometers), the Moon is less than a third of the width of Earth."
+      - "The Moon is an average of 238,855 miles (384,400 kilometers) away."
+      - "The Moon makes a complete orbit around Earth in 27 Earth days and rotates or spins at that same rate."
+      - "Because Earth is moving as well – rotating on its axis as it orbits the Sun – from our perspective, the Moon appears to orbit us every 29 days."
+      - "The Moon is rotating at the same rate that it revolves around Earth (called synchronous rotation), so the same hemisphere faces Earth all the time."
+      - "The Moon likely formed after a Mars-sized body collided with Earth several billion years ago."
+      - "The temperature on the Moon reaches about 260 degrees Fahrenheit (127 degrees Celsius) when in full Sun, but in darkness, the temperatures plummet to about -280 degrees Fahrenheit (-173 degrees Celsius)."
+      - "The Moon has a very thin and weak atmosphere. It does not provide any protection from the Sun's radiation or impacts from meteoroids."
+
+  - id: s2
+    tier: 2
+    title: Tidal Locking
+    publisher: NASA Science
+    url: https://science.nasa.gov/moon/tidal-locking/
+    accessed: 2026-09-12
+    passages:
+      - "As the Moon bent and fluxed in this tug of war, energy was released in the form of heat. As the energy dissipated, the Moon's rotation slowed until a single spin on its axis took the same amount of time as one trip around Earth."
+      - "Each time that the Moon completes a turn, it also orbits the Earth once, keeping its far side perpetually hidden."
+      - "This phenomenon, called synchronous tidal locking, sounds like a weird coincidence but it is actually quite common."
+    note: >
+      Trang dùng "near side" / "far side", KHÔNG dùng "dark side". Bản tiếng
+      Việt phải theo: "nửa xa" chứ không phải "nửa tối" — nửa xa vẫn được Mặt
+      Trời chiếu sáng đúng nửa thời gian.
+
+  - id: s3
+    tier: 2
+    title: Measuring the Moon's Distance
+    publisher: NASA Goddard Space Flight Center
+    url: https://eclipse.gsfc.nasa.gov/SEhelp/ApolloLaser.html
+    accessed: 2026-09-12
+    passages:
+      - "The first laser ranging retroreflector was positioned on the Moon in 1969 by the Apollo 11 astronauts."
+      - "From the ranging experiments, scientists know that the average distance between the centers of the Earth and the Moon is 385,000 kilometers with an accuracy of better than one part in 10 billion."
+      - "Measurements show that the Moon is receding from Earth at a rate of about 3.8 centimeters per year."
+      - "Ranging has also determined that the length of an Earth day has distinct small-scale variations of about one thousandth of a second over the course of a year, caused by the atmosphere, tides, and Earth's core."
+    warning: >
+      BẪY. Đoạn cuối nói về BIẾN THIÊN cỡ một phần nghìn giây TRONG MỘT NĂM,
+      do khí quyển, thuỷ triều VÀ lõi Trái Đất cùng gây ra. Nó KHÔNG nói ngày
+      Trái Đất đang dài ra vì Mặt Trăng, và KHÔNG cho con số cho hiệu ứng ấy.
+      Ghép "3,8 cm mỗi năm" với "một phần nghìn giây" thành một câu nhân quả
+      là đúng mẫu lỗi "số đúng gắn vào kết luận sai" mà science-editor đã ghi
+      ở docs/content/corrections.md. Bài này KHÔNG được nêu con số nào cho
+      việc ngày dài ra.
+
+  - id: s4
+    tier: 2
+    title: How Did the Moon Form?
+    publisher: NASA Science
+    url: https://science.nasa.gov/moon/formation/
+    accessed: 2026-09-12
+    passages:
+      - "A massive object ― named Theia after the mythological Greek Titan who was the mother of Selene, goddess of the Moon ― smashed into Earth"
+      - "The Moon formed around 60 million years after the solar system began to form."
+      - "The Apollo evidence all pointed to the Moon forming from a large impact."
+      - "The Moon had been molten during its formation and was covered with a deep ocean of magma for tens of millions to hundreds of millions of years"
+      - "Lava flowed up through cracks in the Moon's crust and filled its impact basins."
+      - "something ― perhaps a single object the size of Mars, perhaps a series of objects ― crashed into the young Earth"
+    note: >
+      Đoạn cuối giữ mức dè dặt của nguồn: "perhaps a single object, perhaps a
+      series of objects". Bản viết KHÔNG được nâng thành "một vụ va chạm duy
+      nhất đã tạo ra Mặt Trăng".
+
+  - id: s5
+    tier: 2
+    title: Earth's Moon
+    publisher: NASA Science
+    url: https://science.nasa.gov/moon/
+    accessed: 2026-09-12
+    passages:
+      - "Earth's Moon is covered in craters"
+      - "the Moon's exosphere is a bit like the haze you get when you whack a dirty rug with a broom: it includes a sampling of particles knocked free by impact"
+      - "Ancient ice hidden deep in permanently shadowed craters."
+      - "its gravitational pull plays a huge role in the formation of Earth's ocean tides"
+
+  - id: s6
+    tier: 1
+    title: Origin of the Moon in a giant impact near the end of the Earth's formation
+    publisher: Nature 412, 708–712 — Canup & Asphaug
+    url: https://doi.org/10.1038/35089010
+    doi: 10.1038/35089010
+    year: 2001
+    accessed: 2026-09-12
+    limitation: >
+      TOÀN VĂN VÀ ABSTRACT KHÔNG ĐỌC ĐƯỢC. nature.com chuyển hướng qua cổng
+      đăng nhập; Semantic Scholar không có abstract cho bản ghi này. Metadata
+      đã đối chiếu qua Crossref ngày 2026-09-12: đúng tiêu đề, đúng tác giả
+      Canup và Asphaug, đúng Nature tập 412 trang 708–712, năm 2001.
+
+      Nên nguồn này chỉ được dùng cho MỘT mệnh đề — chính mệnh đề tiêu đề nó
+      phát biểu: Mặt Trăng sinh ra từ một vụ va chạm lớn vào cuối quá trình
+      hình thành Trái Đất. KHÔNG được trích số nào từ nó.
+
+  - id: s7
+    tier: 1
+    title: Stabilization of the Earth's obliquity by the Moon
+    publisher: Nature 361, 615–617 — Laskar, Joutel & Robutel
+    url: https://doi.org/10.1038/361615a0
+    doi: 10.1038/361615a0
+    year: 1993
+    accessed: 2026-09-12
+    limitation: >
+      Cùng tình trạng s6: metadata đã đối chiếu qua Crossref, toàn văn không
+      đọc được. Chỉ dùng cho mệnh đề tiêu đề phát biểu — Mặt Trăng giữ ổn
+      định độ nghiêng trục Trái Đất.
+
+      Con số "không có Mặt Trăng thì độ nghiêng biến thiên 0°–85°" xuất hiện
+      rộng rãi trên web và truy về chính bài này, nhưng CHƯA ĐỌC ĐƯỢC từ
+      nguồn gốc nên KHÔNG đưa vào bài. Đây đúng là loại con số sống sót nhờ
+      được chép lại, như 10^14 vi sinh vật đã ghi ở corrections.md.
+
+  - id: s8
+    tier: 2
+    title: Milankovitch (Orbital) Cycles and Their Role in Earth's Climate
+    publisher: NASA Science
+    url: https://science.nasa.gov/science-research/earth-science/milankovitch-orbital-cycles-and-their-role-in-earths-climate/
+    accessed: 2026-09-12
+    passages:
+      - "Over the last million years, it has varied between 22.1 and 24.5 degrees with respect to Earth's orbital plane."
+      - "Earth's axis is currently tilted 23.4 degrees, or about half way between its extremes, and this angle is very slowly decreasing in a cycle that spans about 41,000 years."
+    note: >
+      Trang này cho KHOẢNG biến thiên thật của độ nghiêng, nhưng KHÔNG quy nó
+      cho Mặt Trăng. Việc quy nhân quả phải dựa vào s7, và s7 chỉ chống lưng
+      được mệnh đề định tính. Nên bài nói: độ nghiêng dao động trong khoảng
+      hẹp 22,1–24,5° (s8) và Mặt Trăng là thứ giữ nó ổn định (s7) — hai câu,
+      hai nguồn, không gộp thành một con số nhân quả.
+
+# Những gì bài này KHÔNG nói, và vì sao
+exclusions:
+  - claim: Ngày Trái Đất dài thêm bao nhiêu mỗi thế kỷ
+    why: Không nguồn nào trong bảng phát biểu con số đó. Xem `warning` ở s3.
+  - claim: Không có Mặt Trăng thì độ nghiêng trục biến thiên 0°–85°
+    why: Chưa đọc được từ nguồn gốc. Xem `limitation` ở s7.
+  - claim: Nhật thực và nguyệt thực
+    why: >
+      Đã có bài riêng `nhat-thuc-va-nguyet-thuc-hai-hien-tuong-che-khuat-khong-doi-xung`,
+      đã qua gate accuracy với 15 nguồn. Bài này chỉ liên kết sang, không kể lại.
+  - claim: Cơ chế thuỷ triều
+    why: >
+      Đã có bài `dieu-gi-tao-ra-gio-thuy-trieu-va-cac-dong-hai-luu`. Bài này
+      nêu vai trò của Mặt Trăng rồi liên kết sang.

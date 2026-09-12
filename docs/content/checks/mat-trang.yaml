@@ -1,0 +1,127 @@
+# Thẩm định nguồn — mat-trang (bước 2: fact-check, TRƯỚC khi viết)
+#
+# Bước 2 thẩm định BẢNG NGUỒN, không thẩm định bài — bài chưa tồn tại. Việc
+# của nó là trả lời: bảng này có đủ và có sạch để viết không.
+#
+# Sửa nguồn rẻ hơn viết lại bài. Đó là toàn bộ lý do bước này đứng trước bước 3.
+
+slug: mat-trang
+checked: 2026-09-12
+verdict: pass
+
+# --- Điều kiện định lượng ------------------------------------------------
+thresholds:
+  strong_sources:
+    required: 3
+    actual: 8
+    note: >
+      Sáu nguồn bậc 2 (NASA) và hai nguồn bậc 1 (Nature, bình duyệt). Vượt
+      ngưỡng thoải mái.
+  independence:
+    verdict: đạt-nhưng-có-lưu-ý
+    note: >
+      Sáu trong tám nguồn là NASA. Chúng là sáu TRANG khác nhau, mỗi trang
+      phụ trách một phần, nhưng cùng một cơ quan — nên chúng không đối chứng
+      được cho nhau. Hai nguồn Nature là chỗ đối chứng thật, và cả hai đều
+      chống lưng cho mệnh đề mà NASA cũng phát biểu (va chạm lớn; Mặt Trăng
+      giữ ổn định độ nghiêng trục). Không có claim nào trong bài chỉ dựa vào
+      MỘT nguồn duy nhất mà không có nguồn thứ hai cùng hướng.
+  liveness:
+    verdict: đạt
+    note: >
+      Cả 8 URL trả 200 ngày 2026-09-12. Hai DOI Nature chuyển hướng sang
+      nature.com kèm tham số `error=cookies_not_supported` nhưng vẫn dẫn tới
+      đúng trang bài — người đọc bấm vào tới đúng chỗ.
+  citation_match:
+    verdict: đạt
+    note: >
+      Hai DOI đã đối chiếu qua Crossref: `10.1038/35089010` ra đúng Canup &
+      Asphaug, Nature 412, 708–712, 2001; `10.1038/361615a0` ra đúng Laskar,
+      Joutel & Robutel, Nature 361, 615–617, 1993. Đây là phép kiểm mà
+      `scripts/check-citations.ts` vừa được viết để làm, và nó đã bắt được
+      một DOI trỏ nhầm bài trong kho cùng ngày.
+
+# --- Phát hiện -----------------------------------------------------------
+findings:
+  - id: F1
+    severity: S2
+    status: đã-xử-lý-trước-khi-viết
+    title: Hai nguồn bậc 1 không đọc được toàn văn
+    detail: >
+      nature.com chặn sau cổng đăng nhập, Semantic Scholar không có abstract
+      cho cả hai bản ghi. Nên s6 và s7 có metadata đã xác minh nhưng KHÔNG có
+      đoạn trích nào đọc thật.
+    resolution: >
+      Giới hạn phạm vi dùng thay vì loại bỏ: mỗi nguồn chỉ được dùng cho đúng
+      mệnh đề mà chính TIÊU ĐỀ nó phát biểu, và không được trích số nào. Hai
+      tiêu đề ấy đều là mệnh đề trọn vẹn và không mơ hồ. Đã ghi vào
+      `limitation` của từng nguồn.
+
+  - id: F2
+    severity: S1
+    status: chặn-trước
+    title: Con số 0°–85° cho độ nghiêng trục của một Trái Đất không Mặt Trăng
+    detail: >
+      Con số này xuất hiện dày đặc trên web và truy về Laskar 1993, nhưng
+      KHÔNG đọc được từ nguồn gốc trong lượt này.
+    resolution: >
+      Cấm đưa vào bài. Ghi ở `exclusions`. Đây đúng loại con số sống sót nhờ
+      được chép lại qua nhiều tầng — cùng họ với 10^14 vi sinh vật đường ruột
+      (truy về Luckey 1972, sai từ 2016) đã ghi ở corrections.md.
+
+  - id: F3
+    severity: S1
+    status: chặn-trước
+    title: Ghép tốc độ lùi xa với độ dài ngày Trái Đất
+    detail: >
+      s3 cho hai con số cạnh nhau — Mặt Trăng lùi xa 3,8 cm mỗi năm, và độ
+      dài ngày Trái Đất biến thiên cỡ một phần nghìn giây trong một năm.
+      Người viết rất dễ ghép thành "Mặt Trăng lùi xa nên ngày dài thêm một
+      phần nghìn giây". Nguồn KHÔNG nói thế: nó quy biến thiên ấy cho khí
+      quyển, thuỷ triều VÀ lõi Trái Đất, và đó là biến thiên trong năm chứ
+      không phải xu hướng dài ra.
+    resolution: >
+      Bài nêu 3,8 cm mỗi năm (có nguồn) và KHÔNG nêu con số nào cho việc ngày
+      dài ra. Đã ghi `warning` ngay tại s3 để lượt sửa sau không lắp lại.
+
+  - id: F4
+    severity: S3
+    status: đã-xử-lý-trước-khi-viết
+    title: "Nửa tối" của Mặt Trăng
+    detail: >
+      Cách gọi phổ biến trong tiếng Việt là "vùng tối của Mặt Trăng", và nó
+      sai: nửa xa vẫn được Mặt Trời chiếu sáng đúng nửa thời gian. NASA dùng
+      "far side", không dùng "dark side".
+    resolution: Bài dùng "nửa xa". Đã ghi `note` ở s2.
+
+  - id: F5
+    severity: S3
+    status: đã-xử-lý-trước-khi-viết
+    title: Mức dè dặt của nguồn về vụ va chạm
+    detail: >
+      s4 viết "perhaps a single object the size of Mars, perhaps a series of
+      objects" và s1 viết "likely formed after". Nâng thành "Mặt Trăng được
+      tạo ra bởi một vụ va chạm duy nhất" là bỏ mất mức dè dặt.
+    resolution: Bài giữ nguyên mức dè dặt của nguồn.
+
+# --- Ranh giới với bài đã có ---------------------------------------------
+overlap:
+  - slug: nhat-thuc-va-nguyet-thuc-hai-hien-tuong-che-khuat-khong-doi-xung
+    state: PUBLISHED / PASSED, 15 nguồn
+    rule: Bài Mặt Trăng liên kết sang, KHÔNG kể lại cơ chế che khuất.
+  - slug: dieu-gi-tao-ra-gio-thuy-trieu-va-cac-dong-hai-luu
+    state: PUBLISHED / PENDING
+    rule: Nêu vai trò hấp dẫn của Mặt Trăng rồi liên kết sang.
+  - slug: nguyen-nhan-cua-mua-do-nghieng-truc-khong-phai-khoang-cach
+    state: PUBLISHED / PASSED
+    rule: >
+      Bài đó giải thích độ nghiêng trục sinh ra mùa. Bài này nói Mặt Trăng
+      giữ độ nghiêng ấy ổn định — đó là mắt xích còn thiếu giữa hai bài, nên
+      liên kết là bắt buộc chứ không tuỳ chọn.
+  - slug: su-ra-doi-cua-he-mat-troi
+    state: PUBLISHED / PENDING
+    rule: Liên kết ở phần hình thành.
+
+conclusion: >
+  Bảng nguồn đủ và sạch để viết. Ba chỗ bị chặn trước (F2, F3 mức S1 và F4
+  mức S3) đã ghi thành ràng buộc cho bước 3, không phải ghi nhớ trong đầu.
