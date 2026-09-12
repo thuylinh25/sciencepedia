@@ -107,6 +107,23 @@ export async function requestReset(
     console.error("[password-reset] gửi thư thất bại:", sent.error);
   }
 
+  /* Ở môi trường phát triển, in liên kết ra console.
+
+     Lý do rất cụ thể: trước khi xác minh một tên miền, Resend chỉ gửi được từ
+     `onboarding@resend.dev` và CHỈ tới địa chỉ chủ tài khoản Resend. Lệnh gọi
+     API vẫn trả 200 kèm một id — tức phía mình trông như thành công — nhưng
+     thư không tới hộp nào cả. Không có đường nào khác để thử luồng này cho
+     tới khi tên miền được xác minh, và "không thử được" nghĩa là luồng đặt
+     lại mật khẩu đi vào production mà chưa ai chạy qua nó lần nào.
+
+     CHỈ ở development. Liên kết này là một mật khẩu tạm dùng được một lần;
+     in nó ra log production là để một credential sống nằm trong file log mà
+     nhiều người đọc được. Điều kiện dưới đây là `NODE_ENV`, không phải một
+     cờ tự đặt — cờ tự đặt thì có ngày ai đó bật nhầm trên server thật. */
+  if (process.env.NODE_ENV === "development") {
+    console.info("[password-reset] liên kết (chỉ hiện ở dev):", link);
+  }
+
   return { ok: true };
 }
 
