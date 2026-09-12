@@ -7,18 +7,16 @@ import { useLocale, useTranslations } from "next-intl";
 import { HeroGalaxy } from "@/components/home/hero-galaxy";
 
 /**
- * `search` là một slot: ô tìm kiếm phải là Server Component (chạy khi tắt JS,
- * không hook nào) nhưng Hero buộc phải là client vì framer-motion. Server
+ * `fields` là một slot: danh sách lĩnh vực phải là Server Component (đọc CSDL,
+ * chạy khi tắt JS) nhưng Hero buộc phải là client vì framer-motion. Server
  * Component không import được vào client, nên trang chủ render nó rồi truyền
  * xuống đây qua prop.
+ *
+ * Prop `search` đã bỏ: ô tìm kiếm chuyển hẳn lên header, nơi nó đứng trên MỌI
+ * trang chứ không riêng trang chủ. Hero từng có một ô riêng, và hai ô cùng làm
+ * một việc trên cùng một màn hình thì người vào lần đầu phải chọn giữa chúng.
  */
-export function Hero({
-  search,
-  fields,
-}: {
-  search?: ReactNode;
-  fields?: ReactNode;
-}) {
+export function Hero({ fields }: { fields?: ReactNode }) {
   const t = useTranslations("home");
   const locale = useLocale();
   const reduced = useReducedMotion();
@@ -115,12 +113,6 @@ export function Hero({
             {t("heroSubtitle")}
           </motion.p>
 
-          {search && (
-            <motion.div {...rise(0.2)} className="mt-5">
-              {search}
-            </motion.div>
-          )}
-
           {/* Giữa ô tìm kiếm và các chip lĩnh vực KHÔNG còn gì.
 
               Chỗ này đã hai lần được lấp: một thanh bốn ô số liệu, rồi một
@@ -133,7 +125,7 @@ export function Hero({
               — nhưng lượt thử đó cũng đã bị gỡ, nên trước khi lắp lại lần ba
               hãy đọc lịch sử này. */}
           {fields && (
-            <motion.div {...rise(0.32)} className="mt-5">
+            <motion.div {...rise(0.24)} className="mt-7">
               {fields}
             </motion.div>
           )}

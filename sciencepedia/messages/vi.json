@@ -25,7 +25,8 @@
     "zoom": "Hành trình thu phóng",
     "spaceMap": "Bản đồ bầu trời",
     "earthLive": "Trái Đất từ điểm L1",
-    "modelsLibrary": "Thư viện mô hình 3D"
+    "modelsLibrary": "Thư viện mô hình 3D",
+    "searchPlaceholder": "Tìm \"hố đen\", \"CRISPR\", \"vật chất tối\"…"
   },
   "auth": {
     "login": "Đăng nhập",
@@ -85,7 +86,8 @@
     "heroSearchCta": "Khám phá",
     "heroCategoriesLabel": "Bắt đầu từ một lĩnh vực",
     "seeAllArticles": "Xem tất cả bài viết",
-    "aiTryAsking": "Thử hỏi"
+    "aiTryAsking": "Thử hỏi",
+    "heroFieldEmpty": "sắp có"
   },
   "article": {
     "readingTime": "{minutes} phút đọc",

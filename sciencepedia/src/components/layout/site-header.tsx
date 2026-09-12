@@ -323,9 +323,13 @@ export function SiteHeader({ categories }: { categories: NavCategory[] }) {
           {/* variant="ghost" mang theo hover:bg-muted hover:text-foreground —
               hỏng hoàn toàn trên nền tối. Vá một chỗ ở container thay vì sửa
               từng nút, để nút thêm sau này tự đúng. */}
+          {/* `flex-1` chứ không `ml-auto`: ô tìm kiếm bên trong cần bề ngang
+              thật để trông ra một ô nhập, mà `ml-auto` thì cụm này chỉ rộng
+              bằng nội dung và ô sẽ co lại bằng chữ bên trong. `min-w-0` cho
+              phép nó co dưới bề rộng nội dung trên màn hình hẹp. */}
           <div
             className={cn(
-              "ml-auto flex items-center gap-1.5",
+              "flex min-w-0 flex-1 items-center justify-end gap-1.5",
               onDark &&
                 "[&_[data-slot=button]]:text-white/80 [&_[data-slot=button]:hover]:bg-white/12 [&_[data-slot=button]:hover]:text-white",
             )}
@@ -344,17 +348,20 @@ export function SiteHeader({ categories }: { categories: NavCategory[] }) {
                 mọi trang. Thanh điều hướng mà đổi thành phần theo vị trí cuộn
                 thì người dùng phải học hai phiên bản của cùng một thanh. */}
             {!focused && (
-              <Button
-                variant="ghost"
-                size="sm"
+              <button
+                type="button"
                 onClick={() => setSearchOpen(true)}
                 className={cn(
-                  "hidden gap-2 rounded-full pe-2 ps-3 sm:flex",
-                  onDark ? "text-white/80" : "text-muted-foreground",
+                  "hidden h-10 w-full max-w-md items-center gap-2 rounded-full border ps-3.5 pe-2 text-start text-sm transition-colors sm:flex",
+                  onDark
+                    ? "border-white/20 bg-white/10 text-white/70 hover:border-white/35 hover:bg-white/15"
+                    : "bg-background text-muted-foreground hover:border-foreground/25 hover:bg-muted/50",
                 )}
               >
-                <Search className="size-4" />
-                <span>{t("search")}</span>
+                <Search className="size-4 shrink-0" />
+                <span className="flex-1 truncate">
+                  {t("searchPlaceholder")}
+                </span>
                 {/* Khung phím tắt phải đổi theo nền: `bg-muted` + `border` là
                   token của nền sáng, đặt trên hero tối thì gần như tàng hình. */}
                 <kbd
@@ -367,7 +374,7 @@ export function SiteHeader({ categories }: { categories: NavCategory[] }) {
                 >
                   {shortcutKey}K
                 </kbd>
-              </Button>
+              </button>
             )}
             {!focused && (
               <Button

@@ -22,7 +22,6 @@ import { InteractiveExplore } from "@/components/home/interactive-explore";
 import { HeroFields } from "@/components/home/hero-fields";
 import { AiQuestions } from "@/components/home/ai-questions";
 import { DiscoverToday } from "@/components/home/discover-today";
-import { SearchHeroForm } from "@/components/search/search-hero-form";
 import { SectionHeading } from "@/components/section-heading";
 import { ArticleCard } from "@/components/article/article-card";
 import { ArticleGrid } from "@/components/article/article-grid";
@@ -95,7 +94,6 @@ export default async function HomePage({
   return (
     <>
       <Hero
-        search={<SearchHeroForm locale={locale as Locale} />}
         fields={<HeroFields fields={categories} locale={locale as Locale} />}
       />
 

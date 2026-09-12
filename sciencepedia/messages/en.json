@@ -25,7 +25,8 @@
     "zoom": "Zoom journey",
     "spaceMap": "Sky map",
     "earthLive": "Earth from L1",
-    "modelsLibrary": "3D model library"
+    "modelsLibrary": "3D model library",
+    "searchPlaceholder": "Search \"black hole\", \"CRISPR\", \"dark matter\"…"
   },
   "auth": {
     "login": "Sign in",
@@ -85,7 +86,8 @@
     "heroSearchCta": "Explore",
     "heroCategoriesLabel": "Start with a field",
     "seeAllArticles": "See all articles",
-    "aiTryAsking": "Try asking"
+    "aiTryAsking": "Try asking",
+    "heroFieldEmpty": "coming soon"
   },
   "article": {
     "readingTime": "{minutes} min read",

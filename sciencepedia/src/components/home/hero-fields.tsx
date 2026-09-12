@@ -74,24 +74,33 @@ export async function HeroFields({
   const t = await getTranslations("home");
 
   /*
-   * Bỏ lĩnh vực chưa có bài nào.
+   * Hiện ĐỦ mọi lĩnh vực gốc, kể cả lĩnh vực chưa có bài nào.
    *
-   * Tính đến 2026-09-11, "Hoá học" và "Công nghệ và Kỹ thuật" đều 0 bài. Một
-   * chip dẫn tới trang rỗng tệ hơn hẳn một chip vắng mặt: người bấm vào đã bỏ
-   * ra một cú nhấp và nhận lại con số không, và đó là ấn tượng đầu tiên về độ
-   * đầy đặn của cả kho.
+   * Bản trước lọc bỏ lĩnh vực 0 bài — tính đến 2026-09-12 là "Hoá học" và
+   * "Công nghệ và Kỹ thuật" — với lý do: một chip dẫn tới trang rỗng tệ hơn
+   * một chip vắng mặt, vì người bấm vào đã bỏ ra một cú nhấp và nhận lại con
+   * số không.
    *
-   * Lọc theo dữ liệu chứ không theo danh sách viết cứng, nên ngày hai lĩnh vực
-   * đó có bài đầu tiên thì chúng tự xuất hiện, không cần ai nhớ để sửa chỗ này.
+   * Lý do ấy có thật, nhưng nó đánh đổi lấy một thứ tệ hơn: hero trình bày
+   * NĂM lĩnh vực trong khi kho có BẢY, nên người đọc kết luận rằng trang này
+   * không có hoá học. Một lĩnh vực vắng mặt không đọc ra là "chưa có bài" — nó
+   * đọc ra là "không thuộc phạm vi".
+   *
+   * Cách giữ cả hai: vẫn hiện, nhưng nói thẳng nó đang trống. Chip 0 bài mang
+   * nhãn "sắp có" thay cho con số và chìm hơn một bậc, nên cú nhấp không còn
+   * là lời hứa bị phá — người bấm đã biết mình sẽ thấy gì.
+   *
+   * Xếp theo số bài giảm dần, nên các lĩnh vực trống tự rơi xuống cuối hàng mà
+   * không cần một quy tắc sắp xếp riêng.
    */
-  const shown = fields
-    .filter((field) => field._count.articles > 0)
-    .sort((a, b) => b._count.articles - a._count.articles);
+  const shown = [...fields].sort(
+    (a, b) => b._count.articles - a._count.articles,
+  );
 
   if (shown.length === 0) return null;
 
   return (
-    <nav aria-label={t("heroCategoriesLabel")} className="w-full max-w-2xl">
+    <nav aria-label={t("heroCategoriesLabel")} className="w-full max-w-3xl">
       <p className="mb-2.5 text-xs font-medium tracking-widest text-white/55 uppercase">
         {t("heroCategoriesLabel")}
       </p>
@@ -107,7 +116,11 @@ export async function HeroFields({
                 gradient nền chỉ làm chip đổi màu. */}
             <Link
               href={`/categories/${field.slug}`}
-              className="group flex min-h-11 items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 text-sm font-medium text-white/90 backdrop-blur transition-[border-color,background-color,box-shadow] duration-200 hover:border-accent/50 hover:bg-white/[0.16] hover:text-white hover:shadow-[0_0_22px_-6px_var(--color-accent)] focus-visible:ring-[3px] focus-visible:ring-ring/50 focus-visible:outline-none"
+              className={`group flex min-h-11 items-center gap-2 rounded-full border px-4 text-sm font-medium backdrop-blur transition-[border-color,background-color,box-shadow] duration-200 focus-visible:ring-[3px] focus-visible:ring-ring/50 focus-visible:outline-none ${
+                field._count.articles > 0
+                  ? "border-white/20 bg-white/10 text-white/90 hover:border-accent/50 hover:bg-white/[0.16] hover:text-white hover:shadow-[0_0_22px_-6px_var(--color-accent)]"
+                  : "border-dashed border-white/15 bg-white/[0.04] text-white/55 hover:border-white/30 hover:text-white/80"
+              }`}
             >
               <span aria-hidden className="text-base leading-none">
                 {FIELD_EMOJI[field.slug] ?? "•"}
@@ -118,9 +131,15 @@ export async function HeroFields({
                   hover" đồng nghĩa với "không bao giờ hiện" cho phần lớn người
                   đọc trang chủ. Để sẵn ở mức chữ mờ thì cả hai loại thiết bị
                   đều đọc được, và khi rê chuột nó sáng lên thành nhấn mạnh. */}
-              <span className="text-xs text-white/45 tabular-nums transition-colors group-hover:text-white/75">
-                {field._count.articles}
-              </span>
+              {field._count.articles > 0 ? (
+                <span className="text-xs text-white/45 tabular-nums transition-colors group-hover:text-white/75">
+                  {field._count.articles}
+                </span>
+              ) : (
+                <span className="text-[11px] tracking-wide text-white/40 uppercase">
+                  {t("heroFieldEmpty")}
+                </span>
+              )}
             </Link>
           </li>
         ))}
