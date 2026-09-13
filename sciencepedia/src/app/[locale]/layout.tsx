@@ -10,6 +10,7 @@ import { getRootCategories } from "@/server/queries";
 import { Providers } from "@/components/providers";
 import { SiteHeader, type NavCategory } from "@/components/layout/site-header";
 import { SearchHeaderForm } from "@/components/search/search-header-form";
+import { FooterSlot } from "@/components/layout/footer-slot";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { AssistantLauncher } from "@/components/ai/assistant-launcher";
 import { Toaster } from "@/components/ui/sonner";
@@ -140,7 +141,9 @@ export default async function LocaleLayout({
               <main id="main" className="flex-1 pb-22 sm:pb-0">
                 {children}
               </main>
-              <SiteFooter />
+              <FooterSlot>
+                <SiteFooter />
+              </FooterSlot>
             </div>
             <AssistantLauncher />
             <Toaster />

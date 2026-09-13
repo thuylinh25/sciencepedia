@@ -53,29 +53,36 @@ export async function AuthShell({
 
             Đường kẻ làm việc mà khoảng trắng không làm nổi ở đây — cột trái
             kết thúc bằng một dòng chữ nhỏ, và không có gì phân định thì nó đọc
-            ra như phần đuôi của form thay vì một tầng khác của trang. */}
-        <footer className="mx-auto mt-10 w-full max-w-sm border-t pt-5">
-          <p className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-muted-foreground/70">
-            <span>© {new Date().getFullYear()} Sciencepedia</span>
-            <span aria-hidden className="text-muted-foreground/30">
-              |
-            </span>
-            <Link
-              href="/privacy"
-              className="transition-colors hover:text-foreground"
-            >
-              {tFooter("privacy")}
-            </Link>
-            <span aria-hidden className="text-muted-foreground/30">
-              |
-            </span>
-            <Link
-              href="/terms"
-              className="transition-colors hover:text-foreground"
-            >
-              {tFooter("terms")}
-            </Link>
-          </p>
+            ra như phần đuôi của form thay vì một tầng khác của trang.
+
+            HAI KHỐI chứ không một dòng chữ chảy tự do. Bản trước để cả bản
+            quyền lẫn hai liên kết trong một `flex-wrap` duy nhất, và ở bề
+            ngang 24rem thì "Điều khoản sử dụng" rơi xuống dòng dưới một mình —
+            trông như chữ bị tràn chứ không như một hàng hai phần. Tách làm hai
+            nhóm thì lúc chật, chỗ gãy rơi vào ĐÚNG khe giữa hai nhóm: bản
+            quyền một dòng, hai liên kết một dòng, cả hai đều trọn vẹn. */}
+        <footer className="mx-auto mt-10 w-full max-w-sm border-t pt-5 text-xs text-muted-foreground/70">
+          <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-2">
+            <p>© {new Date().getFullYear()} Sciencepedia</p>
+
+            <p className="flex items-center gap-x-2.5">
+              <Link
+                href="/privacy"
+                className="transition-colors hover:text-foreground"
+              >
+                {tFooter("privacy")}
+              </Link>
+              <span aria-hidden className="text-muted-foreground/30">
+                |
+              </span>
+              <Link
+                href="/terms"
+                className="transition-colors hover:text-foreground"
+              >
+                {tFooter("terms")}
+              </Link>
+            </p>
+          </div>
         </footer>
       </div>
 
@@ -85,51 +92,79 @@ export async function AuthShell({
           gần đen vì nó sinh ra cho hero — nơi có chữ, nút và ảnh đè lên. Ở đây
           nửa màn hình chỉ có một câu trích, nên nền chịu được màu xanh sâu hơn
           và cần nó: hai cột cùng gần đen thì đường chia giữa chúng biến mất và
-          bố cục đọc ra như một khối tối liền. */}
-      <aside className="auth-aside starfield deep-space relative hidden items-center justify-center overflow-hidden p-12 lg:flex">
-        {/* Hình minh hoạ ở GÓC DƯỚI PHẢI, tràn qua hai mép.
+          bố cục đọc ra như một khối tối liền.
 
-            Vị trí là ràng buộc tương phản, không phải sở thích bố cục: câu
-            trích là chữ trắng và nó nằm ở giữa-trái, nên vùng sáng nhất của
-            hình phải tránh xa chỗ đó. Ai dịch hình vào giữa thì phải hạ độ
-            sáng của nó xuống, nếu không câu trích mất tương phản.
-
-            Tràn qua mép (`-right-24 -bottom-20`) để hình trông LỚN HƠN khung
-            chứa nó — cùng thủ pháp đã dùng cho thiên hà ở hero. `aside` có
-            `overflow-hidden` nên phần thừa bị cắt gọn ở cạnh.
-
-            `z-0` và câu trích `z-10`: hình là nền, chữ nằm trên. */}
-        <AuthArtwork className="pointer-events-none absolute -right-24 -bottom-20 z-0 w-[34rem] max-w-[85%] opacity-90" />
-
+          `pb-44`: cột căn giữa theo chiều dọc, nhưng phần đáy đã dành cho hình
+          minh hoạ. Đệm đáy lớn đẩy câu trích lên phía trên tâm, tức là nhường
+          hẳn dải dưới cho hình thay vì để hai thứ tranh nhau một chỗ. */}
+      <aside className="auth-aside starfield deep-space relative hidden flex-col justify-center overflow-hidden px-12 pt-12 pb-44 lg:flex">
         <div className="relative z-10 w-full max-w-lg">
           {/* Dấu ngoặc kép lớn, vẽ bằng ký tự của chính bộ chữ đang dùng cho
               câu trích — cùng một hình dáng, nên nó đọc ra như phần phóng to
               của câu chứ không phải một món trang trí mượn ở đâu về.
 
-              Ở mức mờ cũ (6%) nó gần như biến mất trên nền xanh. Nay 14% và
-              mang chính màu xanh nhạt của nền, nên nó hiện ra là một hình
-              khối chứ không phải một vệt bẩn — vẫn đủ nhạt để chữ trắng đè lên
-              không mất tương phản. */}
+              ĐẶT TRONG LUỒNG, không `absolute`. Bản trước ghim nó ở
+              `-top-14 -left-3` so với khối trích; con số đó chỉ đúng với đúng
+              một cỡ chữ và đúng một độ dài câu, nên khi câu dài thêm một dòng
+              hoặc bộ chữ dựng lại, dấu ngoặc trườn xuống đè lên chính dòng đầu
+              — lỗi đã thấy trên máy thật. Một khối nằm trong luồng thì không
+              có toạ độ nào để mà sai: chữ luôn bắt đầu bên dưới nó.
+
+              `leading-[0.55]` cắt bỏ phần khoảng trắng phía dưới glyph, để
+              dấu ngoặc ngồi sát câu trích như một dấu mở thật, chứ không trôi
+              lửng cách một khoảng trống vô cớ. */}
           <span
             aria-hidden
-            className="pointer-events-none absolute -top-14 -left-3 font-display text-[11rem] leading-none font-bold text-sky-300/[0.14] select-none"
+            className="block font-display text-[7rem] leading-[0.55] font-bold text-sky-300/[0.18] select-none"
           >
             “
           </span>
 
-          <blockquote className="relative">
+          <blockquote className="relative mt-6">
             <p className="font-display text-[2.6rem] leading-[1.25] font-bold text-balance text-white">
               {t.rich("quote", {
-                hl: (chunks) => (
-                  <span className="text-primary">{chunks}</span>
-                ),
+                hl: (chunks) => <span className="text-primary">{chunks}</span>,
               })}
             </p>
+            {/* Dấu đóng, đối xứng với dấu mở ở trên.
+
+                Một dấu mở không có dấu đóng thì không phải cặp ngoặc kép —
+                nó là một hình trang trí ngẫu nhiên đặt cạnh câu, và mắt đọc
+                ra chính điều đó. Cặp đầy đủ mới đóng khung được câu trích.
+
+                Căn PHẢI và đặt sau câu, trước dòng ghi tác giả: đó là chỗ dấu
+                đóng đứng trong một câu trích thật — sau lời được trích, trước
+                người nói nó. */}
+            <span
+              aria-hidden
+              className="block text-right font-display text-[7rem] leading-[0.55] font-bold text-sky-300/[0.18] select-none"
+            >
+              ”
+            </span>
+
             <footer className="mt-7 text-base text-white/55">
               — {t("quoteAuthor")}
             </footer>
           </blockquote>
         </div>
+
+        {/* Hình minh hoạ NẰM TRỌN trong khung, góc dưới phải.
+
+            Bản trước cho nó tràn qua hai mép (`-right-24 -bottom-20`) để trông
+            lớn hơn khung chứa — thủ pháp mượn từ thiên hà ở hero. Ở hero nó
+            hợp vì thứ bị cắt là một vệt sáng không có hình thù rõ; ở đây thứ
+            bị cắt là một QUYỂN SÁCH MỞ có đường viền dứt khoát, nên mắt không
+            đọc ra "hình lớn hơn khung" mà đọc ra "hình tải thiếu" — đúng như
+            người dùng báo lại.
+
+            Cỡ tính bằng `min()` chứ không `max-w-[…%]`: trên màn hình rất rộng
+            thì 20rem là đủ cho một món trang trí, còn trên màn hình vừa thì
+            38% giữ cho nó không lấn sang câu trích.
+
+            Vị trí góc dưới phải vẫn là ràng buộc tương phản như cũ: câu trích
+            là chữ trắng và nó ở nửa trên bên trái, nên vùng sáng nhất của hình
+            phải ở xa chỗ đó. */}
+        <AuthArtwork className="pointer-events-none absolute right-8 bottom-8 z-0 w-[min(20rem,38%)] opacity-90" />
       </aside>
     </div>
   );

@@ -22,6 +22,7 @@ import {
 import { Link, usePathname } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
 import { cn } from "@/lib/utils";
+import { isFocusedRoute } from "@/lib/auth-routes";
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
@@ -97,21 +98,8 @@ const NAV = [{ href: "/assistant", key: "assistant" as const, icon: Sparkles }];
  */
 const DARK_HERO_ROUTES = ["/"];
 
-/**
- * Route mà header rút gọn còn logo + ngôn ngữ + theme.
- *
- * Đăng nhập và đăng ký là hai trang có ĐÚNG MỘT việc để làm. Một thanh nav
- * đầy đủ ở đó chỉ chào mời người dùng bỏ dở việc ấy — và với người vừa nhập
- * sai mật khẩu, mỗi lối thoát thêm là một lý do để rời đi thay vì thử lại.
- *
- * Giữ lại ngôn ngữ và theme vì chúng KHÔNG dẫn đi đâu cả: chúng đổi chính
- * trang đang đứng, và người đọc tiếng Việt gặp form tiếng Anh thì cần nút đó
- * trước cả nút đăng nhập.
- *
- * Giữ logo, và nó vẫn bấm được về trang chủ: rút gọn không có nghĩa là nhốt
- * người dùng lại.
- */
-const FOCUSED_ROUTES = ["/login", "/register"];
+/* Danh sách route rút gọn header nằm ở `@/lib/auth-routes`: chỗ đặt footer
+   của site cũng đọc chính danh sách đó. */
 
 export function SiteHeader({
   categories,
@@ -149,9 +137,7 @@ export function SiteHeader({
     href === "/" ? pathname === "/" : pathname.startsWith(href);
 
   const overHero = DARK_HERO_ROUTES.includes(pathname);
-  const focused = FOCUSED_ROUTES.some(
-    (route) => pathname === route || pathname.startsWith(`${route}/`),
-  );
+  const focused = isFocusedRoute(pathname);
   const onDark = overHero && !scrolled;
 
   /* Lỗi ở trạng thái chưa cuộn không nằm ở cái nền trong suốt mà ở MÀU MỰC:
