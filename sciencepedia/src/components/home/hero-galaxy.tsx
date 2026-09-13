@@ -1,103 +1,63 @@
 "use client";
 
-// Client vì phải quyết định tại thời điểm chạy có mount cảnh WebGL hay không —
-// quyết định đó phụ thuộc bề rộng màn hình và thiết lập giảm chuyển động của
-// người dùng, hai thứ chỉ biết được ở trình duyệt.
+// Client vì parallax theo con trỏ: nó đọc vị trí chuột và ghi `transform`,
+// hai việc chỉ có ở trình duyệt. Bản thân hình thì render ở server.
 
 import { useEffect, useRef, useState } from "react";
 
-import dynamic from "next/dynamic";
+import { HeroGalaxyArt } from "@/components/home/hero-galaxy-art";
 
 /**
- * Một tốc độ duy nhất, không phân biệt `prefers-reduced-motion`.
+ * Thiên hà ở cột phải của hero.
  *
- * Bản trước để nhánh chậm 0.5 = 1 độ/giây, tức một vòng mất 6 phút — trên máy
- * bật giảm chuyển động thì mắt đọc ra là "đứng yên", và khối lại bị báo hỏng
- * lần nữa. Nửa vời ở đây tệ hơn cả hai đầu: không đủ chậm để gọi là tôn trọng
- * thiết lập, không đủ nhanh để thấy.
+ * ## Vì sao KHÔNG còn là cảnh WebGL
  *
- * Đây là chỗ duy nhất cần sửa nếu muốn khôi phục chế độ dịu: đặt
- * `GENTLE_SPEED` thấp hơn và nối lại vào `gentle`.
+ * Bản trước dựng `GalaxyScene` — mô hình Ngân Hà bằng three.js, dùng chung với
+ * trang /milky-way. Nó đúng về mặt khoa học nhưng ở hero nó sai việc: mô hình
+ * ấy vẽ Ngân Hà nhìn từ ngoài bằng đám hạt màu vàng nhạt, và sau lớp mặt nạ
+ * toả tròn cùng độ mờ cần thiết để chữ tiêu đề còn đọc được, thứ còn lại trên
+ * màn hình là một vệt sáng mờ mà người xem đọc ra là "ảnh chưa tải xong" —
+ * đúng phản hồi đã nhận.
+ *
+ * Đổi sang hình vẽ vector được ba thứ cùng lúc:
+ *
+ * 1. **Trang chủ không còn tải three.js.** Vài trăm KB rời khỏi vùng LCP của
+ *    trang nhiều người mở nhất. Đây là cái lợi lớn nhất và nó không mất đi khi
+ *    thiết kế đổi lần nữa.
+ * 2. **Hình có mặt trong HTML đầu tiên.** Không còn khoảng chờ hydrate rồi mới
+ *    thấy gì, không còn nhánh `lowPower`, không còn cảnh 3D đóng băng bị nhầm
+ *    là hỏng trên máy yếu.
+ * 3. **Điều khiển được độ sáng và màu.** Cái mà một cảnh hạt WebGL không cho
+ *    làm nếu không sửa chính cảnh đang dùng ở /milky-way.
+ *
+ * Mô hình 3D thật vẫn còn nguyên và vẫn là nơi để xem Ngân Hà: trang
+ * /milky-way, có đường dẫn từ chính hero và từ lưới "Khám phá tương tác".
+ *
+ * ## Giảm chuyển động — chậm lại, KHÔNG dừng hẳn
+ *
+ * Giữ nguyên phán quyết cũ của chủ sản phẩm, nay thực thi bằng CSS thay vì JS:
+ * đĩa vẫn quay khi người dùng bật `prefers-reduced-motion`, chỉ chậm hơn. Một
+ * khối trang trí đứng yên đã hai lần bị báo là "hỏng". Xem `.hero-galaxy-spin`
+ * trong `globals.css` — đó là chỗ duy nhất cần sửa nếu muốn dừng hẳn.
  */
-const NORMAL_SPEED = 1.6;
-
-/**
- * Ngân Hà xoay ở cột phải của hero.
- *
- * ## Vì sao khối này phải cẩn thận
- *
- * Hero là vùng quyết định LCP, và trang chủ là trang nhiều người mở nhất.
- * three.js + fiber + drei là vài trăm KB. Nhét thẳng vào hero là cách nhanh
- * nhất để phá Core Web Vitals của cả site. Mục "Hệ Mặt Trời" phía dưới trang
- * chủ đã từng chọn minh hoạ bằng CSS thay vì canvas đúng vì lý do này — khối
- * ở đây không phá lệ đó mà đi vòng qua nó.
- *
- * ## Ba lớp phòng vệ
- *
- * 1. **`ssr: false` + `next/dynamic`.** three.js không nằm trong bundle của
- *    trang chủ; nó chỉ được tải khi khối này quyết định mount. HTML đầu tiên
- *    không chứa một byte nào của nó.
- *
- * 2. **Chỉ mount sau khi hydrate.** `mounted` bắt đầu là `false`, chỉ bật lên
- *    trong `useEffect`. Việc tải và dựng cảnh bắt đầu SAU khi trang đã tương
- *    tác được, không tranh băng thông với nội dung.
- *
- * 3. **Chỗ đứng cùng kích thước.** Quầng sáng CSS chiếm đúng ô vuông mà canvas
- *    sẽ chiếm, nên lúc canvas xuất hiện không đẩy gì cả — CLS bằng 0.
- *
- * 4. **`lowPower` trên màn hình nhỏ.** Thưa hạt đĩa từ 47.200 xuống 17.000,
- *    bớt sao nền, ghim `dpr` ở 1.25.
- *
- * ## Vì sao điện thoại cũng mount cảnh thật
- *
- * Trước đây chặn ở `lg`: dưới ngưỡng đó hero chỉ còn quầng sáng CSS. Bỏ chặn
- * vì cùng lý do đã bỏ ở `SolarPreview` — người dùng so sánh giữa hai thiết bị
- * của chính họ, và khi máy tính có thiên hà còn điện thoại không có thì kết
- * luận tự nhiên là bản điện thoại hỏng.
- *
- * Đây vẫn là vùng LCP, nên ba lớp phòng vệ ở trên KHÔNG được nới: cảnh chỉ tải
- * sau hydrate, không nằm trong bundle trang chủ, và không đẩy bố cục. Cái được
- * nới chỉ là ngưỡng bề rộng, và cái bù lại là `lowPower`.
- *
- * ## Giảm chuyển động — chuyển động chậm lại, KHÔNG dừng hẳn
- *
- * Quyết định của chủ sản phẩm, ghi lại kèm lý do vì nó đi ngược mặc định của
- * web: cảnh vẫn chạy kể cả khi người dùng bật `prefers-reduced-motion`, chỉ
- * chạy chậm hơn.
- *
- * Bản trước dừng hẳn, và hai lần liên tiếp bị báo là "mô hình 3D bị hỏng" —
- * một cảnh 3D đóng băng trông y hệt một cảnh 3D lỗi, không ai phân biệt được.
- * Đó là lý do không quay lại phương án dừng hẳn.
- *
- * Nếu sau này cần siết lại theo chuẩn trợ năng, chỗ phải sửa là hằng số
- * `GENTLE_SPEED` — đặt về 0 là quay lại hành vi dừng hẳn.
- *
- * Lưu ý quy tắc CSS `prefers-reduced-motion` toàn cục KHÔNG chạm được vòng lặp
- * `useFrame` của WebGL; nó chỉ tắt animation CSS. Nên tốc độ ở đây buộc phải
- * điều khiển bằng JS.
- */
-const GalaxyScene = dynamic(
-  () => import("@/components/galaxy/galaxy-scene").then((m) => m.GalaxyScene),
-  { ssr: false },
-);
-
-export function HeroGalaxy({ locale }: { locale: string }) {
-  const [showScene, setShowScene] = useState(false);
-  const [gentle, setGentle] = useState(false);
-  const [lowPower, setLowPower] = useState(false);
+export function HeroGalaxy() {
   const wrap = useRef<HTMLDivElement>(null);
+  const [gentle, setGentle] = useState(false);
+
+  useEffect(() => {
+    const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const decide = () => setGentle(motion.matches);
+
+    decide();
+    motion.addEventListener("change", decide);
+    return () => motion.removeEventListener("change", decide);
+  }, []);
 
   /**
    * Parallax theo con trỏ.
    *
-   * Làm bằng `transform` trên khung bọc chứ không đổi camera của cảnh. Ba lý
-   * do: không phải sửa `GalaxyScene` (đang dùng chung với trang /milky-way),
-   * transform chạy trên compositor nên không tốn một khung dựng WebGL nào, và
-   * `GalaxyScene` đã đặt `resize={{ offsetSize: true }}` nên transform không
-   * làm canvas đo sai kích thước.
-   *
-   * Biên độ 14px là cố ý nhỏ. Parallax mạnh trên một khối trang trí gây cảm
-   * giác giật khi người đọc chỉ đang đưa chuột qua để bấm ô tìm kiếm.
+   * Biên độ nhỏ là cố ý. Parallax mạnh trên một khối trang trí gây cảm giác
+   * giật khi người đọc chỉ đang đưa chuột qua để bấm ô tìm kiếm.
    */
   useEffect(() => {
     if (gentle) return; // xin giảm chuyển động thì bỏ hẳn parallax theo chuột
@@ -122,110 +82,29 @@ export function HeroGalaxy({ locale }: { locale: string }) {
     };
   }, [gentle]);
 
-  useEffect(() => {
-    // Bề rộng không còn quyết định CÓ mount hay không, chỉ quyết định mount ở
-    // mức chi tiết nào.
-    const small = window.matchMedia("(max-width: 1023px)");
-    const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
-
-    const decide = () => {
-      setLowPower(small.matches);
-      setGentle(motion.matches);
-    };
-
-    decide();
-    setShowScene(true);
-    motion.addEventListener("change", decide);
-    small.addEventListener("change", decide);
-    return () => {
-      motion.removeEventListener("change", decide);
-      small.removeEventListener("change", decide);
-    };
-  }, []);
-
   return (
     <div
       aria-hidden
       ref={wrap}
-      /* Trần 30rem → 40rem.
-
-         Cột lưới của hero đã nới lên 36rem; giữ trần cũ thì khung bọc chặn ở
-         30rem và phần nới thêm biến thành khoảng trắng bên phải chứ không
-         thành thiên hà. Trần phải lớn hơn cột một chút để đĩa còn chỗ tràn qua
-         mép — chính chỗ tràn đó là thứ tạo cảm giác khối lớn hơn khung. */
+      /* Trần 40rem: lớn hơn cột lưới của hero (36rem) một chút để quầng sáng
+         còn chỗ tràn qua mép — chính chỗ tràn đó tạo cảm giác khối lớn hơn
+         khung chứa nó. */
       className="relative isolate mx-auto aspect-square w-full max-w-[40rem] transition-transform duration-300 ease-out will-change-transform"
     >
-      {/* Quầng sáng nền. Nằm dưới canvas trong suốt nên khi cảnh lên nó thành
-          ánh nền của đĩa thiên hà chứ không phải một lớp thừa phải gỡ đi. */}
+      {/* Quầng sáng CSS nằm DƯỚI hình vẽ.
+
+          Nó không còn là chỗ đứng tạm chờ WebGL như trước, mà là ánh nền thật
+          của đĩa: blur-3xl trải rộng hơn mọi thứ vẽ được trong SVG, nên nó làm
+          mềm ranh giới giữa thiên hà và nền hero. */}
       <div
-        className="absolute inset-[4%] rounded-full blur-3xl"
+        className="absolute inset-[6%] rounded-full blur-3xl"
         style={{
           background:
-            "radial-gradient(circle at 50% 50%, rgb(255 224 173 / 0.5) 0%, rgb(127 168 255 / 0.3) 34%, transparent 68%)",
+            "radial-gradient(circle at 50% 50%, rgb(255 224 173 / 0.42) 0%, rgb(127 168 255 / 0.28) 34%, transparent 68%)",
         }}
       />
 
-      {showScene && (
-        /**
-         * Mặt nạ toả tròn để mép canvas biến mất.
-         *
-         * Canvas là hình vuông, và dù `alpha` đã bật thì lớp sao nền của cảnh
-         * vẫn phủ kín ô vuông đó — kết quả là một mảng sẫm có cạnh thẳng nổi rõ
-         * trên nền hero. Mặt nạ làm bốn cạnh mờ dần về trong suốt nên thiên hà
-         * trông như đang lơ lửng trong nền chứ không như một tấm ảnh dán lên.
-         */
-        <div
-          className="absolute inset-0"
-          style={{
-            maskImage:
-              "radial-gradient(circle at 50% 50%, #000 38%, transparent 72%)",
-            WebkitMaskImage:
-              "radial-gradient(circle at 50% 50%, #000 38%, transparent 72%)",
-          }}
-        >
-          <GalaxyScene
-            settings={{
-              playing: true,
-              // Cảnh quay ở `delta * 0.035 * speed` rad/s. 1.6 cho một vòng
-              // khoảng hai phút: thấy rõ là đang sống, vẫn đủ chậm để không
-              // kéo mắt khỏi ô tìm kiếm ngay bên cạnh. Từng đặt 0.3 và một
-              // vòng mất mười phút — mắt không nhận ra, khối trông như ảnh dán.
-              speed: NORMAL_SPEED,
-              /*
-               * Hero là hiệu ứng nền, KHÔNG phải viewer 3D. Nhãn, dấu Mặt Trời
-               * và các thiên thể đều tắt.
-               *
-               * Đã thử bật đủ như trang /milky-way và phải trả lại: nhãn là
-               * phần tử HTML nằm TRÊN canvas nên lớp mask toả tròn không ăn
-               * vào nó, và trên điện thoại — nơi khung hero nhỏ nhất còn nhãn
-               * giữ nguyên cỡ chữ — chúng phủ kín chính cái thiên hà chúng
-               * đang chỉ vào.
-               *
-               * Chỗ để xem mô hình đầy đủ là /milky-way, và cả hero lẫn lưới
-               * "Khám phá tương tác" đều đã có đường dẫn tới đó.
-               */
-              showLabels: false,
-              showSun: false,
-              showObjects: false,
-              view: "free",
-              tour: false,
-              scientific: false,
-            }}
-            // Không có gì bấm được: nhãn và dấu Mặt Trời đều tắt.
-            onSelect={() => {}}
-            locale={locale}
-            onTourStep={() => {}}
-            onTourEnd={() => {}}
-            // Tắt điều khiển: đây là hình minh hoạ, không phải mô hình để
-            // nghịch. Bật lên thì OrbitControls nuốt sự kiện `wheel` và người
-            // đọc đưa chuột qua thiên hà rồi cuộn sẽ thấy trang đứng im.
-            // Muốn nghịch thật thì có trang /milky-way.
-            interactive={false}
-            transparent
-            lowPower={lowPower}
-          />
-        </div>
-      )}
+      <HeroGalaxyArt className="absolute inset-0 size-full" />
     </div>
   );
 }

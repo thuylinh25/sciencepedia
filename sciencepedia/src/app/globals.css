@@ -358,6 +358,32 @@
 }
 
 @layer components {
+  /* Đĩa thiên hà ở hero quay trong mặt phẳng của chính nó.
+
+     `transform-box: fill-box` là phần bắt buộc: mặc định `view-box` lấy gốc
+     toạ độ của cả viewBox, mà nhóm này nằm trong một nhóm cha đã translate,
+     rotate và scale — tâm quay tính theo viewBox sẽ rơi lệch ra ngoài đĩa và
+     thiên hà văng thành một vòng tròn lớn. `fill-box` lấy hộp bao của chính
+     nhóm, và nhóm đã có một vòng tròn vô hình ép hộp bao về đúng tâm đĩa (xem
+     `hero-galaxy-art.tsx`).
+
+     240 giây một vòng: đủ để thấy là đang sống nếu nhìn vài giây, không đủ để
+     kéo mắt khỏi ô tìm kiếm ngay bên cạnh. */
+  .hero-galaxy-spin {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: hero-galaxy-spin 240s linear infinite;
+  }
+
+  /* Giảm chuyển động thì CHẬM LẠI, không dừng. Một khối trang trí đứng yên đã
+     hai lần bị báo là hỏng — xem chú thích ở `hero-galaxy.tsx`. Đặt
+     `animation: none` ở đây là chỗ duy nhất cần sửa nếu muốn dừng hẳn. */
+  @media (prefers-reduced-motion: reduce) {
+    .hero-galaxy-spin {
+      animation-duration: 600s !important;
+    }
+  }
+
   /* Nền vũ trụ có chiều sâu — dùng cho hero, trang 3D, khối CTA */
   .bg-cosmos {
     background:
@@ -463,11 +489,13 @@
         radial-gradient(1.2px 1.2px at 28% 20%, var(--star), transparent),
       radial-gradient(1px 1px at 32% 24%, var(--star), transparent),
       radial-gradient(0.8px 0.8px at 30% 27%, var(--star), transparent),
-      /* chùm B quanh 72%/64% */ radial-gradient(1.2px 1.2px at 70% 62%, var(--star), transparent),
+      /* chùm B quanh 72%/64% */
+        radial-gradient(1.2px 1.2px at 70% 62%, var(--star), transparent),
       radial-gradient(1px 1px at 74% 66%, var(--star), transparent),
       radial-gradient(0.8px 0.8px at 76% 61%, var(--star), transparent),
       radial-gradient(0.8px 0.8px at 71% 68%, var(--star), transparent),
-      /* chùm C quanh 52%/88% */ radial-gradient(1px 1px at 50% 86%, var(--star), transparent),
+      /* chùm C quanh 52%/88% */
+        radial-gradient(1px 1px at 50% 86%, var(--star), transparent),
       radial-gradient(1.2px 1.2px at 54% 90%, var(--star), transparent),
       radial-gradient(0.8px 0.8px at 56% 85%, var(--star), transparent),
       /* 3 — bụi không gian, thưa và mờ */
@@ -789,5 +817,11 @@
   50% {
     opacity: 0.95;
     transform: scale(1.03);
+  }
+}
+
+@keyframes hero-galaxy-spin {
+  to {
+    transform: rotate(360deg);
   }
 }

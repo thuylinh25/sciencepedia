@@ -2,7 +2,7 @@
 
 import type { ReactNode } from "react";
 import { motion, useReducedMotion } from "framer-motion";
-import { useLocale, useTranslations } from "next-intl";
+import { useTranslations } from "next-intl";
 
 import { HeroGalaxy } from "@/components/home/hero-galaxy";
 
@@ -18,7 +18,6 @@ import { HeroGalaxy } from "@/components/home/hero-galaxy";
  */
 export function Hero({ fields }: { fields?: ReactNode }) {
   const t = useTranslations("home");
-  const locale = useLocale();
   const reduced = useReducedMotion();
 
   const rise = (delay: number) => ({
@@ -271,8 +270,8 @@ export function Hero({ fields }: { fields?: ReactNode }) {
             Lề âm phải giảm theo: đĩa nhỏ hơn thì phần tràn qua đáy cũng ít đi,
             nên `-mb-16` → `-mb-10`. Giữ nguyên số cũ sẽ mở lại quãng trống
             dưới hàng chip mà lượt trước vừa đóng. */}
-        <div className="pointer-events-none absolute -right-[24%] bottom-10 z-0 w-[21rem] max-w-[70%] opacity-60 brightness-75 lg:pointer-events-auto lg:static lg:-mr-10 lg:-mb-10 lg:w-auto lg:max-w-none lg:-translate-y-10 lg:opacity-90">
-          <HeroGalaxy locale={locale} />
+        <div className="pointer-events-none absolute -right-[24%] bottom-10 z-0 w-[21rem] max-w-[70%] opacity-75 lg:pointer-events-auto lg:static lg:-mr-10 lg:-mb-10 lg:w-auto lg:max-w-none lg:-translate-y-10 lg:opacity-100">
+          <HeroGalaxy />
         </div>
       </div>
     </section>
