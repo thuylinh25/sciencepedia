@@ -169,21 +169,22 @@ export function SolarSystem({
   return (
     <>
       <div className="relative h-[calc(100dvh-5rem)] min-h-[34rem] w-full overflow-hidden rounded-2xl border bg-[#05070f]">
-        {/* Khung 3D DỪNG phía trên bảng điều khiển, không chạy xuống dưới nó.
+        {/* Vùng vẽ chiếm TRỌN khung, không phải chừa chỗ cho bảng nữa.
 
-            Đây là lượt thứ hai xử lý "bảng tốc độ đè lên mô hình". Lượt trước
-            chỉ thu bảng về một hàng — nó vẫn là một tấm nổi nằm ĐÈ lên cảnh,
-            chỉ đè ít hơn. Thu nhỏ một thứ đang che không làm nó thôi che.
+            Đây là lượt thứ ba của cùng một lỗi "bảng điều khiển đè lên mô
+            hình", và hai lượt trước đều chữa trong cùng một giả định sai —
+            rằng bảng phải nổi trên cảnh:
 
-            Cách chữa thật là lấy lại không gian: dưới `sm`, vùng vẽ kết thúc
-            ở `bottom-[4.5rem]` — đúng chiều cao bảng cộng đệm — nên tâm cảnh
-            dịch lên và không còn gì chồng lên nhau. Từ `sm` trở lên bảng nằm
-            nép ở góc trái dưới, xa tâm cảnh, nên vùng vẽ trải kín `inset-0`
-            như cũ.
+              1. thu bảng về một hàng → vẫn đè, chỉ đè ít hơn;
+              2. cắt vùng vẽ tới `bottom-[4.5rem]` dưới sm → hết đè trên điện
+                 thoại, nhưng từ sm trở lên bảng vẫn nằm trên cảnh, và ở đó nó
+                 che đúng vành đai tiểu hành tinh cùng quỹ đạo các hành tinh
+                 trong.
 
-            Đổi vùng vẽ chứ không đổi chiều cao khung ngoài: khung ngoài là
-            `100dvh-5rem`, và rút nó lại sẽ để một dải trống dưới đáy trang. */}
-        <div className="absolute inset-x-0 top-0 bottom-[4.5rem] sm:inset-0">
+            Lượt này bỏ giả định: bảng ra HẲN ngoài khung, thành một thẻ nằm
+            dưới — đúng cách trang Vũ trụ 3D đã làm từ đầu và chưa bị báo lỗi
+            lần nào. Không còn gì nổi trên cảnh thì không còn gì để đè. */}
+        <div className="absolute inset-0">
           {webgl === null ? (
             <div className="grid h-full place-items-center text-sm text-white/60">
               <Loader2 className="size-5 animate-spin" />
@@ -218,157 +219,6 @@ export function SolarSystem({
 
             Thanh trượt co giãn thay vì rộng cố định `w-24`: ở một hàng thì
             phần còn thừa nên thuộc về thứ duy nhất cần kéo. */}
-        <div className="absolute inset-x-3 bottom-3 flex flex-wrap items-center gap-x-3 gap-y-3 rounded-2xl border border-white/10 bg-black/45 px-3 py-3 backdrop-blur-xl sm:inset-x-auto sm:left-4 sm:gap-x-5 sm:px-5 sm:py-3.5">
-          <Button
-            size="icon-sm"
-            variant="glass"
-            onClick={() => update("playing", !settings.playing)}
-            aria-label={settings.playing ? t("pause") : t("play")}
-            className="border-white/20 bg-white/10 text-white hover:bg-white/20"
-          >
-            {settings.playing ? (
-              <Pause className="size-4" />
-            ) : (
-              <Play className="size-4" />
-            )}
-          </Button>
-
-          <div className="flex min-w-0 flex-1 items-center gap-2.5 sm:flex-none">
-            <Label
-              htmlFor="speed"
-              className="sr-only text-xs whitespace-nowrap text-white/70 sm:not-sr-only"
-            >
-              {t("speed")}
-            </Label>
-            <input
-              id="speed"
-              type="range"
-              min={0.1}
-              max={5}
-              step={0.1}
-              value={settings.speed}
-              onChange={(event) => update("speed", Number(event.target.value))}
-              className="h-1 w-full min-w-0 cursor-pointer appearance-none rounded-full bg-white/25 accent-[var(--color-accent)] sm:w-24 sm:min-w-24"
-            />
-            <span className="w-9 shrink-0 font-mono text-xs text-white/70">
-              {settings.speed.toFixed(1)}×
-            </span>
-          </div>
-
-          {/* Nút gập, chỉ có dưới `sm`. Từ `sm` trở lên các công tắc luôn hiện
-              nên nút này không còn việc gì để làm và bị ẩn hẳn — để lại một nút
-              không đổi được gì là tệ hơn không có nút. */}
-          <Button
-            size="icon-sm"
-            variant="glass"
-            onClick={() => setOptionsOpen((open) => !open)}
-            aria-expanded={optionsOpen}
-            aria-controls="solar-options"
-            aria-label={t("options")}
-            className="border-white/20 bg-white/10 text-white hover:bg-white/20 sm:hidden"
-          >
-            <SlidersHorizontal className="size-4" />
-          </Button>
-
-          {/* `w-full` khi mở dưới `sm`: nhóm công tắc phải bắt đầu ở một hàng
-              mới, không chen tiếp vào hàng có thanh tốc độ.
-
-              `sm:contents` chứ không phải `sm:flex`: từ `sm` trở lên nhóm này
-              phải BIẾN MẤT khỏi cây bố cục để sáu công tắc trở thành con trực
-              tiếp của bảng, đúng như bản cũ. Bọc chúng trong một flex lồng sẽ
-              đổi cách `flex-wrap` của bảng ngắt hàng, và hàng điều khiển trên
-              desktop sẽ gãy khác đi. */}
-          {/* Gập bằng LỚP, không bằng thuộc tính `hidden`.
-
-              `[hidden]{display:none}` nằm trong stylesheet của trình duyệt, mà
-              một lớp `flex` của Tailwind là khai báo của tác giả nên thắng
-              nó. Đặt `hidden` cạnh `flex` thì nhóm vẫn hiện, và lỗi chỉ lộ ra
-              trên máy thật. */}
-          <div
-            id="solar-options"
-            className={`${optionsOpen ? "flex" : "hidden"} w-full flex-wrap items-center gap-x-5 gap-y-3 sm:contents`}
-          >
-            <div className="flex items-center gap-2">
-              <Switch
-                id="orbits"
-                checked={settings.showOrbits}
-                onCheckedChange={(value) => update("showOrbits", value)}
-              />
-              <Label htmlFor="orbits" className="text-xs text-white/70">
-                {t("showOrbits")}
-              </Label>
-            </div>
-
-            <div className="flex items-center gap-2">
-              <Switch
-                id="labels"
-                checked={settings.showLabels}
-                onCheckedChange={(value) => update("showLabels", value)}
-              />
-              <Label htmlFor="labels" className="text-xs text-white/70">
-                {t("showLabels")}
-              </Label>
-            </div>
-
-            <div className="flex items-center gap-2">
-              <Switch
-                id="scale"
-                checked={settings.realScale}
-                onCheckedChange={(value) => update("realScale", value)}
-              />
-              <Label htmlFor="scale" className="text-xs text-white/70">
-                {t("realScale")}
-              </Label>
-            </div>
-
-            <div className="flex items-center gap-2">
-              <Switch
-                id="solar-moons"
-                checked={settings.showMoons}
-                onCheckedChange={(value) => update("showMoons", value)}
-              />
-              <Label htmlFor="solar-moons" className="text-xs text-white/70">
-                {t("showMoons")}
-              </Label>
-            </div>
-
-            <div className="flex items-center gap-2">
-              <Switch
-                id="solar-dwarfs"
-                checked={settings.showDwarfs}
-                onCheckedChange={(value) => update("showDwarfs", value)}
-              />
-              <Label htmlFor="solar-dwarfs" className="text-xs text-white/70">
-                {t("showDwarfs")}
-              </Label>
-            </div>
-
-            <div className="flex items-center gap-2">
-              <Switch
-                id="solar-ecliptic"
-                checked={settings.showEcliptic}
-                onCheckedChange={(value) => update("showEcliptic", value)}
-              />
-              <Label htmlFor="solar-ecliptic" className="text-xs text-white/70">
-                {t("showEcliptic")}
-              </Label>
-            </div>
-          </div>
-
-          <Button
-            size="icon-sm"
-            variant="glass"
-            onClick={() => {
-              setSelectedId(null);
-              setSceneKey((key) => key + 1);
-            }}
-            aria-label={t("reset")}
-            className="border-white/20 bg-white/10 text-white hover:bg-white/20"
-          >
-            <RotateCcw className="size-4" />
-          </Button>
-        </div>
-
         {/* ------------------------------------------------ Bảng thông tin */}
         <PlanetPanel
           planet={selected}
@@ -397,6 +247,169 @@ export function SolarSystem({
             </button>
           ))}
         </div>
+      </div>
+
+      {/* --------------------------------------------- Bảng điều khiển
+
+          Nằm DƯỚI khung, không nổi trên cảnh. Xem lý do ở chú thích vùng vẽ.
+          Màu theo thẻ bình thường chứ không phải kính đen: ra khỏi nền vũ
+          trụ thì chữ trắng trên nền mờ không còn chỗ dựa nào. */}
+      <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-3 rounded-2xl border bg-card px-3 py-3 sm:gap-x-5 sm:px-5 sm:py-3.5">
+        <Button
+          size="icon-sm"
+          variant="outline"
+          onClick={() => update("playing", !settings.playing)}
+          aria-label={settings.playing ? t("pause") : t("play")}
+        >
+          {settings.playing ? (
+            <Pause className="size-4" />
+          ) : (
+            <Play className="size-4" />
+          )}
+        </Button>
+
+        <div className="flex min-w-0 flex-1 items-center gap-2.5 sm:flex-none">
+          <Label
+            htmlFor="speed"
+            className="sr-only text-xs whitespace-nowrap text-muted-foreground sm:not-sr-only"
+          >
+            {t("speed")}
+          </Label>
+          <input
+            id="speed"
+            type="range"
+            min={0.1}
+            max={5}
+            step={0.1}
+            value={settings.speed}
+            onChange={(event) => update("speed", Number(event.target.value))}
+            className="h-1 w-full min-w-0 cursor-pointer appearance-none rounded-full bg-muted accent-[var(--color-accent)] sm:w-24 sm:min-w-24"
+          />
+          <span className="w-9 shrink-0 font-mono text-xs text-muted-foreground">
+            {settings.speed.toFixed(1)}×
+          </span>
+        </div>
+
+        {/* Nút gập, chỉ có dưới `sm`. Từ `sm` trở lên các công tắc luôn hiện
+            nên nút này không còn việc gì để làm và bị ẩn hẳn — để lại một nút
+            không đổi được gì là tệ hơn không có nút. */}
+        <Button
+          size="icon-sm"
+          variant="outline"
+          onClick={() => setOptionsOpen((open) => !open)}
+          aria-expanded={optionsOpen}
+          aria-controls="solar-options"
+          aria-label={t("options")}
+          className="sm:hidden"
+        >
+          <SlidersHorizontal className="size-4" />
+        </Button>
+
+        {/* `w-full` khi mở dưới `sm`: nhóm công tắc phải bắt đầu ở một hàng
+            mới, không chen tiếp vào hàng có thanh tốc độ.
+
+            `sm:contents` chứ không phải `sm:flex`: từ `sm` trở lên nhóm này
+            phải BIẾN MẤT khỏi cây bố cục để sáu công tắc trở thành con trực
+            tiếp của bảng, đúng như bản cũ. Bọc chúng trong một flex lồng sẽ
+            đổi cách `flex-wrap` của bảng ngắt hàng, và hàng điều khiển trên
+            desktop sẽ gãy khác đi. */}
+        {/* Gập bằng LỚP, không bằng thuộc tính `hidden`.
+
+            `[hidden]{display:none}` nằm trong stylesheet của trình duyệt, mà
+            một lớp `flex` của Tailwind là khai báo của tác giả nên thắng
+            nó. Đặt `hidden` cạnh `flex` thì nhóm vẫn hiện, và lỗi chỉ lộ ra
+            trên máy thật. */}
+        <div
+          id="solar-options"
+          className={`${optionsOpen ? "flex" : "hidden"} w-full flex-wrap items-center gap-x-5 gap-y-3 sm:contents`}
+        >
+          <div className="flex items-center gap-2">
+            <Switch
+              id="orbits"
+              checked={settings.showOrbits}
+              onCheckedChange={(value) => update("showOrbits", value)}
+            />
+            <Label htmlFor="orbits" className="text-xs text-muted-foreground">
+              {t("showOrbits")}
+            </Label>
+          </div>
+
+          <div className="flex items-center gap-2">
+            <Switch
+              id="labels"
+              checked={settings.showLabels}
+              onCheckedChange={(value) => update("showLabels", value)}
+            />
+            <Label htmlFor="labels" className="text-xs text-muted-foreground">
+              {t("showLabels")}
+            </Label>
+          </div>
+
+          <div className="flex items-center gap-2">
+            <Switch
+              id="scale"
+              checked={settings.realScale}
+              onCheckedChange={(value) => update("realScale", value)}
+            />
+            <Label htmlFor="scale" className="text-xs text-muted-foreground">
+              {t("realScale")}
+            </Label>
+          </div>
+
+          <div className="flex items-center gap-2">
+            <Switch
+              id="solar-moons"
+              checked={settings.showMoons}
+              onCheckedChange={(value) => update("showMoons", value)}
+            />
+            <Label
+              htmlFor="solar-moons"
+              className="text-xs text-muted-foreground"
+            >
+              {t("showMoons")}
+            </Label>
+          </div>
+
+          <div className="flex items-center gap-2">
+            <Switch
+              id="solar-dwarfs"
+              checked={settings.showDwarfs}
+              onCheckedChange={(value) => update("showDwarfs", value)}
+            />
+            <Label
+              htmlFor="solar-dwarfs"
+              className="text-xs text-muted-foreground"
+            >
+              {t("showDwarfs")}
+            </Label>
+          </div>
+
+          <div className="flex items-center gap-2">
+            <Switch
+              id="solar-ecliptic"
+              checked={settings.showEcliptic}
+              onCheckedChange={(value) => update("showEcliptic", value)}
+            />
+            <Label
+              htmlFor="solar-ecliptic"
+              className="text-xs text-muted-foreground"
+            >
+              {t("showEcliptic")}
+            </Label>
+          </div>
+        </div>
+
+        <Button
+          size="icon-sm"
+          variant="outline"
+          onClick={() => {
+            setSelectedId(null);
+            setSceneKey((key) => key + 1);
+          }}
+          aria-label={t("reset")}
+        >
+          <RotateCcw className="size-4" />
+        </Button>
       </div>
 
       {/* --------------------------------------------- Nguồn và độ tin cậy

@@ -34,16 +34,29 @@ export function Hero({ fields }: { fields?: ReactNode }) {
       {/* Ảnh nền hero.
 
           Ảnh được bố cục sẵn cho đúng việc này: nửa trái gần như trống, thiên
-          Dưới lg, ảnh để 80% độ mờ và lớp phủ đậm ở HAI ĐẦU, nhạt ở giữa
-          (90% / 40% / 85%). Lượt đầu đặt 60% + phủ dày 65% ở giữa vì khung dọc
-          cắt sát tới mức lõi sáng nằm đúng sau chữ trắng — nhưng như thế thì
-          thiên hà bị che gần hết, và người dùng báo lại đúng chuyện đó. Chữ
-          không cần cả khung phải tối: tiêu đề nằm ở ĐỈNH và các chip lĩnh vực
-          tự có nền mờ riêng, nên chỉ hai đầu khung cần đậm. Dải giữa — đúng
-          chỗ lõi thiên hà — được để sáng.
+          DƯỚI lg ảnh KHÔNG phủ kín khung, mà là một dải ngang cao 34vw ghim
+          ở đáy hero. Đây là lượt sửa thứ ba của cùng một chỗ, và hai lượt
+          trước đều chữa triệu chứng:
 
-          Trên lg thì chữ nằm CẠNH thiên hà chứ không đè lên, nên ảnh giữ
-          nguyên độ sáng và lớp phủ chạy theo chiều ngang.
+          - lượt 1: hạ độ mờ xuống 60% + phủ dày ở giữa → thiên hà bị che gần
+            hết;
+          - lượt 2: nâng lên 80%, phủ nhạt ở giữa → chữ đỡ hơn nhưng ảnh vẫn
+            vừa mờ vừa bị chữ đè.
+
+          Nguyên nhân thật là HÌNH HỌC, không phải độ mờ. Khung dọc của điện
+          thoại cắt tấm 3:1 xuống còn chừng một phần tư bề ngang, tức chỉ ~430
+          trong 1760 pixel gốc được dùng, rồi kéo chúng ra 390 CSS px × 3 lần
+          mật độ điểm ảnh — phóng hơn hai lần. Không có mức độ mờ nào chữa được
+          phép phóng đó.
+
+          Dải ngang giữ nguyên tỉ lệ ảnh nên toàn bộ 1760 pixel được thu vào
+          390 CSS px: ảnh được THU NHỎ, tức luôn nét. Và vì nó nằm DƯỚI hàng
+          chip (lưới chừa sẵn `pb-[calc(34vw+3rem)]`) nên không còn chữ nào đè
+          lên thiên hà — hai lời phàn nàn "mờ" và "bị che" tắt cùng lúc, bằng
+          một phép bố cục thay vì một con số độ mờ.
+
+          Trên lg thì chữ nằm CẠNH thiên hà chứ không đè lên, nên ảnh phủ kín
+          khung như cũ và lớp phủ chạy theo chiều ngang.
 
           hà lệch phải. Nên nó không phải một tấm ảnh dán vào rồi chữa cháy
           bằng lớp phủ — cột chữ nằm đúng vào chỗ ảnh vốn để trống.
@@ -77,16 +90,19 @@ export function Hero({ fields }: { fields?: ReactNode }) {
           lg phủ theo chiều NGANG (đậm trái, trong suốt phải) để thiên hà bên
           phải không bị hạ sáng; dưới lg phủ theo chiều DỌC vì lúc đó chữ nằm
           trên ảnh chứ không cạnh ảnh. */}
-      <div aria-hidden className="pointer-events-none absolute inset-0">
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-x-0 bottom-6 h-[34vw] lg:inset-0 lg:bottom-0 lg:h-auto"
+      >
         <Image
           src="/images/hero-galaxy.jpg"
           alt=""
           fill
           priority
           sizes="100vw"
-          className="object-cover object-[68%_center] opacity-80 lg:object-center lg:opacity-100"
+          className="object-cover object-center opacity-100"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-space-900/90 via-space-900/40 to-space-900/85 lg:bg-gradient-to-r lg:from-space-900/90 lg:via-space-900/40 lg:to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-space-900/70 via-transparent to-space-900/60 lg:bg-gradient-to-r lg:from-space-900/90 lg:via-space-900/40 lg:to-transparent" />
       </div>
       {/* Quầng sáng nền, chuyển động rất chậm */}
       <div
@@ -105,7 +121,7 @@ export function Hero({ fields }: { fields?: ReactNode }) {
           nuốt cú nhấp. */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-x-0 bottom-0 h-20 bg-gradient-to-b from-transparent to-background"
+        className="pointer-events-none absolute inset-x-0 bottom-0 h-8 bg-gradient-to-b from-transparent to-background sm:h-20"
       />
 
       {/* Hai cột từ `lg` trở lên, cột phải cố định chứ không `1fr`: để nó co
@@ -127,7 +143,7 @@ export function Hero({ fields }: { fields?: ReactNode }) {
           dải trống rộng nhất trang đúng ở chỗ cần liền mạch nhất.
 
           Cột phải 28rem → 36rem, tức thiên hà rộng thêm chừng 29%. */}
-      <div className="container-page relative z-10 grid min-h-[min(52svh,28rem)] items-center gap-8 pt-10 pb-3 text-star lg:grid-cols-[minmax(0,1fr)_30rem] lg:gap-12 lg:pt-12 lg:pb-3">
+      <div className="container-page relative z-10 grid min-h-[min(52svh,28rem)] items-center gap-8 pt-10 pb-[calc(34vw+3rem)] text-star lg:pb-3 lg:grid-cols-[minmax(0,1fr)_30rem] lg:gap-12 lg:pt-12 lg:pb-3">
         {/* `relative z-10` là bắt buộc, không phải trang trí.
 
             Dưới `lg` thiên hà là một lớp `absolute`, và trong CSS phần tử đã

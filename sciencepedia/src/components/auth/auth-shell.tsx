@@ -125,7 +125,17 @@ export async function AuthShell({
             nó tràn thấy được ngay, chứ không âm thầm gãy dòng lại. */}
         <footer className="mx-auto mt-10 w-full max-w-sm border-t pt-5 text-[11px] text-muted-foreground/70 short:mt-6 short:pt-3.5 shorter:mt-2.5 shorter:pt-2.5">
           <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 whitespace-nowrap sm:flex-nowrap">
-            <p>© {new Date().getFullYear()} Sciencepedia</p>
+            {/* Tên thương hiệu chỉ hiện từ sm.
+
+                Ở 390px, cột form còn 342px mà cả hàng cần chừng 345px — thiếu
+                đúng ba pixel, và hậu quả là hàng gãy làm hai dòng. Bỏ một thứ
+                thì phải bỏ thứ ít mất mát nhất: tên thương hiệu đã in ngay
+                trên header cùng màn hình, còn hai liên kết pháp lý thì không
+                rút gọn được. Từ sm trở lên chỗ rộng ra, tên quay lại. */}
+            <p>
+              © {new Date().getFullYear()}
+              <span className="hidden sm:inline"> Sciencepedia</span>
+            </p>
 
             <p className="flex items-center gap-x-4">
               <Link

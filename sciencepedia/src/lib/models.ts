@@ -72,6 +72,149 @@ export const MODEL_STEPS: ModelStep[] = [
   },
 ];
 
+/**
+ * Bậc thang kích thước — bảy nấc từ Mặt Trăng ra tới Ngân Hà.
+ *
+ * ## Vì sao đây là mảng RIÊNG, không phải `MODEL_STEPS` nới dài ra
+ *
+ * `MODEL_STEPS` là danh sách MÔ HÌNH 3D chạy được: mỗi phần tử có một trang
+ * và một cảnh WebGL. Bậc thang thì là một công cụ GIẢNG GIẢI về tỉ lệ, và nó
+ * cần cả những nấc không có mô hình nào — Đám mây Oort, vùng lân cận sao —
+ * bởi vì bỏ chúng đi là bỏ mất chính chỗ mà bước nhảy tỉ lệ lớn nhất xảy ra:
+ * từ 9 tỉ km lên 100.000 năm ánh sáng là gấp hơn một trăm nghìn lần, và không
+ * ai hình dung được cú nhảy đó nếu không có nấc trung gian.
+ *
+ * Gộp hai thứ vào một mảng thì hoặc bậc thang thiếu nấc, hoặc trang /models
+ * mọc ra bốn thẻ dẫn tới hư không.
+ *
+ * ## Vì sao `href` là tuỳ chọn
+ *
+ * Bốn nấc có đích thật (mô hình 3D, ảnh EPIC trực tiếp); ba nấc còn lại chỉ
+ * để đối chiếu tỉ lệ. Một nấc không có đích thì KHÔNG được vẽ thành thẻ bấm
+ * được — quy tắc đã chốt khi bỏ cột "Tài nguyên" khỏi footer: dựng năm liên
+ * kết chết còn tệ hơn không dựng gì.
+ *
+ * ## Con số lấy ở đâu
+ *
+ * Đường kính Mặt Trăng, Trái Đất, Mặt Trời là hằng số đo đạc phổ thông, làm
+ * tròn tới ba chữ số. Hai nấc còn lại PHẢI giữ mệnh đề dè dặt:
+ *
+ * - **Đám mây Oort** chưa từng được quan sát trực tiếp; ước lượng rìa ngoài
+ *   trải từ 0,03 tới hơn 3 năm ánh sáng tuỳ mô hình. In một con số điểm ở đây
+ *   là dựng lên một độ chính xác không tồn tại.
+ * - **Lân cận sao** không có biên giới vật lý nào cả; "~10 năm ánh sáng" là
+ *   một lát cắt tiện dụng, nên nó đi kèm mốc kiểm được là Proxima Centauri.
+ */
+export type ScaleRung = {
+  id: string;
+  /** Chỉ có khi nấc này thật sự dẫn tới một trang */
+  href?: string;
+  name: string;
+  nameEn: string;
+  /** Kích thước đặc trưng, đã làm tròn */
+  size: string;
+  sizeEn: string;
+  /** Một dòng, nói vì sao nấc này đáng đứng ở đây */
+  note: string;
+  noteEn: string;
+  emoji: string;
+  color: string;
+};
+
+export const SCALE_RUNGS: ScaleRung[] = [
+  {
+    id: "moon",
+    name: "Mặt Trăng",
+    nameEn: "The Moon",
+    size: "3.475 km",
+    sizeEn: "3,475 km",
+    note: "Thiên thể duy nhất ngoài Trái Đất mà con người từng đặt chân lên.",
+    noteEn: "The only world beyond Earth that people have walked on.",
+    emoji: "🌙",
+    color: "#cbd5e1",
+  },
+  {
+    id: "earth",
+    href: "/earth-live",
+    name: "Trái Đất",
+    nameEn: "Earth",
+    size: "12.742 km",
+    sizeEn: "12,742 km",
+    note: "Gấp gần bốn lần Mặt Trăng — và là nơi mọi phép đo này được thực hiện.",
+    noteEn:
+      "Nearly four times the Moon, and where every one of these measurements was made.",
+    emoji: "🌍",
+    color: "#38bdf8",
+  },
+  {
+    id: "sun",
+    href: "/solar-system",
+    name: "Mặt Trời",
+    nameEn: "The Sun",
+    size: "1,39 triệu km",
+    sizeEn: "1.39 million km",
+    note: "Đường kính gấp 109 lần Trái Đất; chứa 99,86% khối lượng cả hệ.",
+    noteEn: "109 Earths across, and 99.86% of the whole system's mass.",
+    emoji: "☀️",
+    color: "#f59e0b",
+  },
+  {
+    id: "solar-system",
+    href: "/solar-system",
+    name: "Hệ Mặt Trời",
+    nameEn: "The Solar System",
+    size: "~9 tỉ km",
+    sizeEn: "~9 billion km",
+    note: "Bề ngang quỹ đạo Sao Hải Vương — ánh sáng đi hết chừng tám giờ.",
+    noteEn:
+      "The width of Neptune's orbit; light takes about eight hours to cross it.",
+    emoji: "🪐",
+    color: "#fbbf24",
+  },
+  {
+    id: "oort",
+    name: "Đám mây Oort",
+    nameEn: "The Oort Cloud",
+    size: "~1–3 năm ánh sáng",
+    sizeEn: "~1–3 light-years",
+    note: "Vỏ băng bao quanh cả hệ, chưa ai quan sát trực tiếp — nơi sao chổi chu kỳ dài đến từ.",
+    noteEn:
+      "An icy shell around the whole system, never directly observed — the source of long-period comets.",
+    emoji: "❄️",
+    color: "#a5b4fc",
+  },
+  {
+    id: "neighbourhood",
+    href: "/space-map",
+    name: "Lân cận sao",
+    nameEn: "Stellar neighbourhood",
+    size: "~10 năm ánh sáng",
+    sizeEn: "~10 light-years",
+    note: "Sao gần nhất, Proxima Centauri, cách 4,2 năm ánh sáng.",
+    noteEn: "The nearest star, Proxima Centauri, lies 4.2 light-years away.",
+    emoji: "✨",
+    color: "#67e8f9",
+  },
+  {
+    id: "milky-way",
+    href: "/milky-way",
+    name: "Dải Ngân Hà",
+    nameEn: "The Milky Way",
+    size: "~100.000 năm ánh sáng",
+    sizeEn: "~100,000 light-years",
+    note: "Gấp mười nghìn lần vùng lân cận sao — và Mặt Trời chỉ là một chấm trong đó.",
+    noteEn:
+      "Ten thousand times the stellar neighbourhood, and the Sun is one dot inside it.",
+    emoji: "🌌",
+    color: "#8b5cf6",
+  },
+];
+
+/** Nấc tương ứng với mô hình đang xem, để đánh dấu "bạn đang ở đây". */
+export function rungIdForModel(modelId: string): string {
+  return modelId === "universe" ? "milky-way" : modelId;
+}
+
 export function modelNeighbours(id: string) {
   const index = MODEL_STEPS.findIndex((step) => step.id === id);
   if (index === -1) return { previous: null, next: null };

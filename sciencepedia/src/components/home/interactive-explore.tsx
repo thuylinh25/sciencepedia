@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import Image from "next/image";
 import { getTranslations } from "next-intl/server";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Sparkles } from "lucide-react";
 
 import { Link } from "@/i18n/navigation";
 import { StaggerGroup, StaggerItem } from "@/components/motion/reveal";
@@ -303,6 +303,27 @@ export async function InteractiveExplore() {
                 }}
               />
 
+              {/* Nhãn "Bắt đầu từ đây", chỉ trên thẻ chủ lực.
+
+                  Sáu thẻ công cụ đều bấm được và đều hấp dẫn như nhau, nên
+                  người vào lần đầu không có gợi ý nào về chỗ bắt đầu — và khi
+                  mọi lựa chọn ngang nhau thì lựa chọn tốn sức nhất là lựa chọn
+                  đầu tiên. Một nhãn trên ĐÚNG MỘT thẻ biến sáu ngả rẽ thành
+                  một con đường có điểm vào.
+
+                  Góc trên PHẢI vì cả khối chữ của thẻ nằm ở đáy trái; đặt cùng
+                  bên là chồng lên tiêu đề. Màu vàng thương hiệu chứ không phải
+                  màu accent của thẻ: nhãn này nói về thứ tự đọc, không nói về
+                  nội dung thẻ.
+
+                  `z-10` vì hai lớp phủ gradient phía trên đều `absolute
+                  inset-0`; thiếu nó thì nhãn nằm dưới chúng và mờ đi. */}
+              {card.feature && (
+                <span className="absolute top-4 right-4 z-10 inline-flex items-center gap-1.5 rounded-full border border-primary/45 bg-primary/15 px-3 py-1 text-[11px] font-semibold tracking-wide text-primary backdrop-blur-md">
+                  <Sparkles className="size-3" aria-hidden />
+                  {t("startHere")}
+                </span>
+              )}
 
               <div className="relative">
                 {/* Icon nhích lên và sáng viền khi rê chuột — chuyển động nhỏ

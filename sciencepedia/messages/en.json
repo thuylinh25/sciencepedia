@@ -471,6 +471,11 @@
     "title": "3D models",
     "subtitle": "Three rungs of scale, each hundreds of thousands of times larger than the last",
     "open": "Open the model",
+    "ladderLead": "Start from familiar objects and zoom out step by step, to see where the Solar System sits inside the Milky Way.",
+    "youAreHere": "You are here",
+    "explore": "Explore",
+    "noPage": "No model of its own yet",
+    "nextTitle": "Explore next",
     "ladderTitle": "Scale ladder",
     "zoomIn": "One rung in",
     "zoomOut": "One rung out",
@@ -591,6 +596,7 @@
         "metaB": "One full rotation a day"
       }
     },
+    "startHere": "Start here",
     "eyebrow": "Explore • Models • Simulations"
   },
   "earthLive": {

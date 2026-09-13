@@ -471,6 +471,11 @@
     "title": "Mô hình 3D",
     "subtitle": "Ba bậc thang kích thước, mỗi bậc lớn hơn bậc trước hàng trăm nghìn lần",
     "open": "Mở mô hình",
+    "ladderLead": "Bắt đầu từ những vật thể quen thuộc rồi phóng to dần, để thấy Hệ Mặt Trời nằm ở đâu trong Ngân Hà.",
+    "youAreHere": "Bạn đang ở đây",
+    "explore": "Khám phá",
+    "noPage": "Chưa có mô hình riêng",
+    "nextTitle": "Khám phá tiếp",
     "ladderTitle": "Bậc thang kích thước",
     "zoomIn": "Thu vào một bậc",
     "zoomOut": "Lùi ra một bậc",
@@ -591,6 +596,7 @@
         "metaB": "Mỗi ngày một vòng quay"
       }
     },
+    "startHere": "Bắt đầu từ đây",
     "eyebrow": "Khám phá • Mô hình • Mô phỏng"
   },
   "earthLive": {
