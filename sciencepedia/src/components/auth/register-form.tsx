@@ -91,10 +91,10 @@ export function RegisterForm() {
   ];
 
   return (
-    <div className="space-y-5 short:space-y-4 shorter:space-y-3">
+    <div className="space-y-5 short:space-y-4 shorter:space-y-2">
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="space-y-4 shorter:space-y-3"
+        className="space-y-4 shorter:space-y-2"
         noValidate
       >
         {fields.map((field) => (
@@ -130,7 +130,11 @@ export function RegisterForm() {
           </p>
         )}
 
-        <Button type="submit" className="w-full" disabled={isSubmitting}>
+        <Button
+          type="submit"
+          className="w-full shorter:h-9"
+          disabled={isSubmitting}
+        >
           {isSubmitting && <Loader2 className="size-4 animate-spin" />}
           {t("register")}
         </Button>

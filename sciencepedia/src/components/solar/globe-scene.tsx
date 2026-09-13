@@ -68,7 +68,13 @@ const ATMOSPHERE_FRAGMENT = /* glsl */ `
   }
 `;
 
-function Atmosphere({ color, intensity }: { color: string; intensity: number }) {
+function Atmosphere({
+  color,
+  intensity,
+}: {
+  color: string;
+  intensity: number;
+}) {
   // Uniforms phải giữ nguyên tham chiếu giữa các lần render, nếu không
   // three sẽ dựng lại chương trình shader mỗi khung.
   const uniforms = useMemo(
@@ -105,6 +111,25 @@ function Atmosphere({ color, intensity }: { color: string; intensity: number }) 
   );
 }
 
+/**
+ * Tốc độ quay, đơn vị radian trên giây.
+ *
+ * Đo bằng ĐỘ TRÊN GIÂY chứ không bằng cảm nhận, theo đúng quy tắc chuyển
+ * động trong docs/design-system.md.
+ *
+ * 0,18 rad/s của bản trước là 10,3°/s — một vòng 35 giây. Nhanh tới mức quả
+ * cầu tự kéo mắt về phía nó và người đọc khó dừng lại ở một vùng bề mặt để
+ * nhìn cho kỹ, mà nhìn kỹ mới là việc khối này sinh ra để phục vụ.
+ *
+ * 0,06 rad/s là 3,4°/s — một vòng gần hai phút. Cùng nhịp đã chốt cho thiên
+ * hà ở hero: đủ để thấy rõ là đang sống nếu nhìn vài giây, không đủ để giành
+ * sự chú ý khỏi phần chữ bên cạnh.
+ *
+ * Mây giữ nguyên tỉ lệ 0,75 so với bề mặt, để chúng vẫn trôi tương đối.
+ */
+const SURFACE_SPIN = 0.06;
+const CLOUD_SPIN = SURFACE_SPIN * 0.75;
+
 function Body({ body, spinning }: { body: GlobeBody; spinning: boolean }) {
   const ref = useRef<THREE.Group>(null);
   const cloudRef = useRef<THREE.Group>(null);
@@ -117,11 +142,11 @@ function Body({ body, spinning }: { body: GlobeBody; spinning: boolean }) {
 
   useFrame((_, delta) => {
     if (!spinning) return;
-    if (ref.current) ref.current.rotation.y += delta * 0.18;
+    if (ref.current) ref.current.rotation.y += delta * SURFACE_SPIN;
     // Mây chậm hơn bề mặt chừng một phần tư. Chạy trong một group RIÊNG chứ
     // không lồng trong group bề mặt — lồng vào thì nó thừa hưởng trọn vòng
     // quay của mặt đất và không bao giờ trôi tương đối được.
-    if (cloudRef.current) cloudRef.current.rotation.y += delta * 0.135;
+    if (cloudRef.current) cloudRef.current.rotation.y += delta * CLOUD_SPIN;
   });
 
   return (

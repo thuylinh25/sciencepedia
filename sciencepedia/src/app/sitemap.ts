@@ -41,10 +41,32 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...entry("/tags", { priority: 0.5 }),
     ...entry("/solar-system", { changeFrequency: "monthly", priority: 0.8 }),
     ...entry("/space-map", { changeFrequency: "monthly", priority: 0.7 }),
+
+    /* Bốn công cụ còn lại. Chúng bị bỏ sót chứ không bị loại: cùng hạng với
+       /solar-system và /space-map ngay trên, cùng là trang tĩnh có chữ, và
+       cùng được liệt kê trong menu Công cụ lẫn ở footer. Một trang nằm trong
+       điều hướng mà vắng mặt trong sitemap là một mâu thuẫn tự mình tạo ra. */
+    ...entry("/milky-way", { changeFrequency: "monthly", priority: 0.7 }),
+    ...entry("/universe", { changeFrequency: "monthly", priority: 0.7 }),
+    ...entry("/zoom", { changeFrequency: "monthly", priority: 0.7 }),
+    ...entry("/models", { changeFrequency: "monthly", priority: 0.6 }),
+
+    /* Liên hệ: ưu tiên thấp, gần như không đổi, nhưng phải có mặt vì nó là
+       một trong ba trang mà bên xét duyệt ứng dụng đi tìm — cùng nhóm với
+       /privacy và /terms bên dưới. */
+    ...entry("/contact", { changeFrequency: "yearly", priority: 0.4 }),
     // Nội dung đổi mỗi ngày theo dữ liệu NASA, nên changeFrequency là daily
     // dù bản thân trang là static.
     ...entry("/earth-live", { changeFrequency: "daily", priority: 0.7 }),
     ...entry("/assistant", { changeFrequency: "monthly", priority: 0.7 }),
+
+    /* KHÔNG có trong sitemap, và đó là chủ ý:
+         /login /register /forgot-password /reset-password — đã noindex
+         /profile /bookmarks /admin                        — cần đăng nhập
+         /search                                           — trang kết quả
+         /random                                           — chuyển hướng
+       Thêm bất kỳ route nào ở trên vào đây là mời Google lập chỉ mục một
+       trang trống hoặc một trang riêng tư. */
 
     /* Hai trang pháp lý. Ưu tiên thấp và gần như không đổi, nhưng PHẢI có
        mặt: bên xét duyệt ứng dụng (Facebook, Google) tự tìm chúng bằng máy,

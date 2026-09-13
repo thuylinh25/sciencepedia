@@ -26,8 +26,20 @@ export async function AuthShell({
   const t = await getTranslations("auth");
   const tFooter = await getTranslations("footer");
 
+  /*
+   * Chiều cao khung phải trừ ĐÚNG chiều cao header, và header đổi theo
+   * breakpoint: `h-16` (4rem) mặc định, `lg:h-20` (5rem) từ lg. Bản trước
+   * trừ cứng 4rem ở mọi bề rộng, nên trên desktop khung luôn cao hơn phần
+   * nhìn thấy đúng 16px — vừa đủ để dòng pháp lý ở đáy bị đẩy khỏi màn hình,
+   * và đủ khó thấy để ba lượt nén khoảng cách trước đó không chạm tới nguyên
+   * nhân. Ai đổi chiều cao header thì phải đổi cả hai số ở đây.
+   *
+   * Trừ thêm 1px là đường viền dưới của header — đo được: header cao 81px
+   * chứ không phải 80px. Thiếu 1px ấy thì trang hiện thanh cuộn cho đúng
+   * một pixel, thứ trông y như lỗi bố cục.
+   */
   return (
-    <div className="grid min-h-[calc(100dvh-4rem)] lg:grid-cols-2">
+    <div className="grid min-h-[calc(100dvh-4rem-1px)] lg:min-h-[calc(100dvh-5rem-1px)] lg:grid-cols-2">
       {/* Cột trái là flex dọc chứ không căn giữa cả khối: footer phải neo ở
           đáy cột, không bị kéo vào giữa và dính đáy form.
 
@@ -45,7 +57,7 @@ export async function AuthShell({
           Nén bằng KHOẢNG CÁCH và một bậc cỡ tiêu đề, không đụng vào cỡ chữ
           của nhãn hay ô nhập: chỗ tiết kiệm được nằm ở khoảng trống, còn thu
           nhỏ ô nhập thì đổi lấy vài chục pixel bằng chính khả năng gõ đúng. */}
-      <div className="flex flex-col px-6 py-10 short:py-5 shorter:py-3">
+      <div className="flex flex-col px-6 py-10 short:py-5 shorter:py-1">
         <div className="flex flex-1 items-center justify-center">
           <div className="w-full max-w-sm">
             <Link href="/" className="lg:hidden">
@@ -55,10 +67,18 @@ export async function AuthShell({
             <h1 className="mt-8 font-display text-4xl font-bold tracking-tight lg:mt-0 short:text-3xl shorter:text-2xl">
               {title}
             </h1>
-            <p className="mt-3 text-sm leading-relaxed text-muted-foreground short:mt-2 shorter:mt-1.5">
+            <p className="mt-3 text-sm leading-relaxed text-muted-foreground short:mt-2 shorter:hidden">
               {subtitle}
             </p>
 
+            {/* Ở cửa sổ RẤT thấp, phụ đề bị ẩn.
+
+                Không phải để cho gọn mắt: ở 607px chiều cao với header 80px,
+                phần nhìn thấy còn 527px cho một form cần chừng 550px. Phải bỏ
+                bớt một thứ, và phụ đề là thứ duy nhất trong cột này không mang
+                hành động (nút, ô nhập) lẫn nghĩa vụ (hai liên kết pháp lý).
+                Tiêu đề "Chào mừng trở lại" cộng chính cái form đã nói đủ việc
+                trang này làm. */}
             <div className="mt-8 short:mt-5 shorter:mt-4">{children}</div>
           </div>
         </div>
@@ -70,39 +90,42 @@ export async function AuthShell({
             kết thúc bằng một dòng chữ nhỏ, và không có gì phân định thì nó đọc
             ra như phần đuôi của form thay vì một tầng khác của trang.
 
-            MỘT hàng, không xuống dòng, và chỗ tiết kiệm lấy từ dòng bản
-            quyền chứ không từ hai liên kết.
+            MỘT hàng, không xuống dòng. Đây là lượt sửa thứ tư của đúng hàng
+            chữ này, nên ghi lại cả phép đo để lần sau khỏi mò.
 
-            Đã thử hai bố cục trước đó. Bản đầu để cả ba phần trong một
-            `flex-wrap`: "Điều khoản sử dụng" rơi xuống một mình, trông như
-            chữ bị tràn. Bản thứ hai tách hai nhóm để chỗ gãy rơi vào khe giữa
-            — gọn hơn, nhưng vẫn là hai dòng, và chủ sản phẩm không muốn hai
-            dòng.
+            Bản 1: cả ba phần trong một `flex-wrap` — "Điều khoản sử dụng" rơi
+            xuống một mình, trông như chữ bị tràn.
+            Bản 2: tách hai nhóm để chỗ gãy rơi vào khe giữa — gọn hơn nhưng
+            vẫn là hai dòng.
+            Bản 3: bỏ tên thương hiệu khỏi dòng bản quyền — một dòng thật,
+            nhưng mất tên.
+            Bản 4 (hiện tại): giữ đủ tên, bỏ DẤU GẠCH ĐỨNG giữa hai liên kết,
+            và hạ cỡ chữ xuống 11px.
 
-            Đo lại thì rõ là không có cách xếp nào cứu được: "© 2026
-            Sciencepedia · Chính sách bảo mật | Điều khoản sử dụng" dài hơn
-            24rem của cột form ở cỡ chữ 12px. Phải bỏ bớt chữ, và chữ đáng bỏ
-            là tên thương hiệu trong dòng bản quyền — nó vừa được in ngay phía
-            trên trong logo, còn hai liên kết pháp lý thì không rút gọn được:
-            "Điều khoản" cụt nghĩa hơn "Điều khoản sử dụng", và đây là hai
-            đường dẫn được bên xét duyệt ứng dụng đọc.
+            Vì sao dấu gạch đứng là thứ đáng bỏ: nó chiếm chừng 28px — bản
+            thân ký tự cộng hai khoảng đệm hai bên — để làm đúng một việc là
+            nói "đây là hai mục riêng". Khoảng trắng 16px nói y hệt, rẻ hơn
+            một nửa. Còn 11px thay cho 12px cắt thêm chừng 8% bề ngang cả
+            hàng, đủ để "© 2026 Sciencepedia" quay lại mà vẫn dư chỗ ở cột
+            rộng 24rem.
 
-            `flex-nowrap` + `whitespace-nowrap` để nếu sau này có ai nới chữ
-            dài ra thì nó tràn thấy được ngay, chứ không âm thầm gãy dòng lại. */}
-        <footer className="mx-auto mt-10 w-full max-w-sm border-t pt-5 text-xs text-muted-foreground/70 short:mt-6 short:pt-3.5 shorter:mt-4 shorter:pt-3">
-          <div className="flex flex-nowrap items-center justify-between gap-x-3 whitespace-nowrap">
-            <p>© {new Date().getFullYear()}</p>
+            Không rút gọn hai liên kết pháp lý: "Điều khoản" cụt nghĩa hơn
+            "Điều khoản sử dụng", và đây là hai đường dẫn bên xét duyệt ứng
+            dụng đi tìm.
 
-            <p className="flex items-center gap-x-2.5">
+            `flex-nowrap` + `whitespace-nowrap` để lần sau ai nới chữ dài ra thì
+            nó tràn thấy được ngay, chứ không âm thầm gãy dòng lại. */}
+        <footer className="mx-auto mt-10 w-full max-w-sm border-t pt-5 text-[11px] text-muted-foreground/70 short:mt-6 short:pt-3.5 shorter:mt-2.5 shorter:pt-2.5">
+          <div className="flex flex-nowrap items-center justify-between gap-x-4 whitespace-nowrap">
+            <p>© {new Date().getFullYear()} Sciencepedia</p>
+
+            <p className="flex items-center gap-x-4">
               <Link
                 href="/privacy"
                 className="transition-colors hover:text-foreground"
               >
                 {tFooter("privacy")}
               </Link>
-              <span aria-hidden className="text-muted-foreground/30">
-                |
-              </span>
               <Link
                 href="/terms"
                 className="transition-colors hover:text-foreground"
@@ -124,8 +147,17 @@ export async function AuthShell({
 
           `pb-44`: cột căn giữa theo chiều dọc, nhưng phần đáy đã dành cho hình
           minh hoạ. Đệm đáy lớn đẩy câu trích lên phía trên tâm, tức là nhường
-          hẳn dải dưới cho hình thay vì để hai thứ tranh nhau một chỗ. */}
-      <aside className="auth-aside starfield deep-space relative hidden flex-col justify-center overflow-hidden px-12 pt-12 pb-44 lg:flex">
+          hẳn dải dưới cho hình thay vì để hai thứ tranh nhau một chỗ.
+
+          CỘT NÀY MỚI LÀ CỘT QUYẾT ĐỊNH CHIỀU CAO TRANG, không phải cột form.
+          Đo trên cửa sổ cao 607px: cột trái sau khi nén còn thấp hơn, nhưng
+          hàng lưới lấy chiều cao theo ô CAO NHẤT, mà ô đó là cột trích dẫn —
+          176px đệm đáy cộng hai dấu ngoặc 7rem cộng câu trích 2,6rem. Ba lượt
+          nén cột trái trước đó vì thế không đổi được một pixel nào của trang.
+
+          Nên `short:` và `shorter:` phải siết cả ở đây: đệm, cỡ câu trích và
+          cỡ hai dấu ngoặc. Đừng gỡ chúng mà không đo lại chiều cao hàng lưới. */}
+      <aside className="auth-aside starfield deep-space relative hidden flex-col justify-center overflow-hidden px-12 pt-12 pb-44 short:pt-8 short:pb-28 shorter:pt-6 shorter:pb-16 lg:flex">
         <div className="relative z-10 w-full max-w-lg">
           {/* Dấu ngoặc kép lớn, vẽ bằng ký tự của chính bộ chữ đang dùng cho
               câu trích — cùng một hình dáng, nên nó đọc ra như phần phóng to
@@ -143,13 +175,13 @@ export async function AuthShell({
               lửng cách một khoảng trống vô cớ. */}
           <span
             aria-hidden
-            className="block font-display text-[7rem] leading-[0.55] font-bold text-sky-300/[0.18] select-none"
+            className="block font-display text-[7rem] leading-[0.55] font-bold text-sky-300/[0.18] select-none short:text-[5rem] shorter:text-[3.5rem]"
           >
             “
           </span>
 
-          <blockquote className="relative mt-6">
-            <p className="font-display text-[2.6rem] leading-[1.25] font-bold text-balance text-white">
+          <blockquote className="relative mt-6 short:mt-4 shorter:mt-2">
+            <p className="font-display text-[2.6rem] leading-[1.25] font-bold text-balance text-white short:text-[2.1rem] shorter:text-[1.75rem]">
               {t.rich("quote", {
                 hl: (chunks) => <span className="text-primary">{chunks}</span>,
               })}
@@ -165,12 +197,12 @@ export async function AuthShell({
                 người nói nó. */}
             <span
               aria-hidden
-              className="block text-right font-display text-[7rem] leading-[0.55] font-bold text-sky-300/[0.18] select-none"
+              className="block text-right font-display text-[7rem] leading-[0.55] font-bold text-sky-300/[0.18] select-none short:text-[5rem] shorter:text-[3.5rem]"
             >
               ”
             </span>
 
-            <footer className="mt-7 text-base text-white/55">
+            <footer className="mt-7 text-base text-white/55 short:mt-5 shorter:mt-3">
               — {t("quoteAuthor")}
             </footer>
           </blockquote>

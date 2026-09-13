@@ -59,7 +59,7 @@ export function LoginForm({
   const hasSocial = hasGithub || hasGoogle || hasFacebook;
 
   return (
-    <div className="space-y-5 short:space-y-4 shorter:space-y-3">
+    <div className="space-y-5 short:space-y-4 shorter:space-y-2">
       {/* Đăng nhập mạng xã hội đứng TRƯỚC form email.
 
           Thứ tự này là một phán quyết chứ không phải thẩm mỹ: người đã có tài
@@ -76,12 +76,12 @@ export function LoginForm({
           không có nút. */}
       {hasSocial && (
         <>
-          <div className="grid gap-2">
+          <div className="grid gap-2 shorter:gap-1.5">
             {hasGoogle && (
               <Button
                 type="button"
                 variant="outline"
-                className="w-full"
+                className="w-full shorter:h-9"
                 onClick={() => signIn("google", { callbackUrl: "/" })}
               >
                 <svg viewBox="0 0 24 24" className="size-4" aria-hidden>
@@ -97,7 +97,7 @@ export function LoginForm({
               <Button
                 type="button"
                 variant="outline"
-                className="w-full"
+                className="w-full shorter:h-9"
                 onClick={() => signIn("github", { callbackUrl: "/" })}
               >
                 <Github className="size-4" />
@@ -108,7 +108,7 @@ export function LoginForm({
               <Button
                 type="button"
                 variant="outline"
-                className="w-full"
+                className="w-full shorter:h-9"
                 onClick={() => signIn("facebook", { callbackUrl: "/" })}
               >
                 <svg viewBox="0 0 24 24" className="size-4" aria-hidden>
@@ -139,7 +139,7 @@ export function LoginForm({
 
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="space-y-4 shorter:space-y-3"
+        className="space-y-4 shorter:space-y-2"
         noValidate
       >
         <div className="space-y-2">
@@ -169,7 +169,7 @@ export function LoginForm({
               type="email"
               autoComplete="email"
               aria-invalid={Boolean(errors.email)}
-              className="h-12 bg-input/30 pl-14"
+              className="h-12 bg-input/30 pl-14 shorter:h-10"
               {...register("email")}
             />
           </div>
@@ -191,7 +191,7 @@ export function LoginForm({
               id="password"
               autoComplete="current-password"
               aria-invalid={Boolean(errors.password)}
-              className="h-12 bg-input/30 pl-14"
+              className="h-12 bg-input/30 pl-14 shorter:h-10"
               {...register("password")}
             />
           </div>
@@ -240,7 +240,7 @@ export function LoginForm({
         <Button
           type="submit"
           disabled={isSubmitting}
-          className="h-12 w-full rounded-xl text-base font-semibold"
+          className="h-12 w-full rounded-xl text-base font-semibold shorter:h-10"
         >
           {isSubmitting ? (
             <>
