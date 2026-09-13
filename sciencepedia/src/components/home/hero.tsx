@@ -1,10 +1,9 @@
 "use client";
 
 import type { ReactNode } from "react";
+import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 import { useTranslations } from "next-intl";
-
-import { HeroGalaxy } from "@/components/home/hero-galaxy";
 
 /**
  * `fields` là một slot: danh sách lĩnh vực phải là Server Component (đọc CSDL,
@@ -32,10 +31,46 @@ export function Hero({ fields }: { fields?: ReactNode }) {
 
   return (
     <section className="bg-cosmos starfield relative isolate overflow-hidden">
+      {/* Ảnh nền hero.
+
+          Ảnh được bố cục sẵn cho đúng việc này: nửa trái gần như trống, thiên
+          Dưới lg, ảnh hạ xuống 60% độ mờ và lớp phủ dày lên ở giữa (65% thay
+          vì 35%). Không phải để cho dịu mắt: khung dọc cắt sát tới mức LÕI
+          SÁNG của thiên hà nằm đúng sau chữ trắng — đã dựng thử bằng cách cắt
+          ảnh theo đúng phép object-cover trước khi viết dòng này. Trên lg thì
+          ngược lại, chữ nằm CẠNH thiên hà chứ không đè lên, nên ảnh để nguyên
+          độ sáng.
+
+          hà lệch phải. Nên nó không phải một tấm ảnh dán vào rồi chữa cháy
+          bằng lớp phủ — cột chữ nằm đúng vào chỗ ảnh vốn để trống.
+
+          `object-[68%_center]` dưới lg: khung dọc của điện thoại cắt một tấm
+          16:9 rất sâu, và cắt giữa thì mất luôn thiên hà — thứ duy nhất đáng
+          giữ. Neo về 68% bề ngang giữ lõi sáng trong khung.
+
+          `priority`: đây là phần tử LCP của trang chủ. Thiếu nó thì Next hoãn
+          tải và chính vùng lớn nhất màn hình là vùng lên sau cùng.
+
+          Lớp phủ gradient KHÔNG phải để "làm tối cho đẹp": chữ trắng của tiêu
+          đề nằm đè lên ảnh, và độ sáng của ảnh không do ta kiểm soát. Trên
+          lg phủ theo chiều NGANG (đậm trái, trong suốt phải) để thiên hà bên
+          phải không bị hạ sáng; dưới lg phủ theo chiều DỌC vì lúc đó chữ nằm
+          trên ảnh chứ không cạnh ảnh. */}
+      <div aria-hidden className="pointer-events-none absolute inset-0">
+        <Image
+          src="/images/hero-galaxy.jpg"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-[68%_center] opacity-60 lg:object-center lg:opacity-100"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-space-900/90 via-space-900/65 to-space-900/95 lg:bg-gradient-to-r lg:from-space-900/90 lg:via-space-900/40 lg:to-transparent" />
+      </div>
       {/* Quầng sáng nền, chuyển động rất chậm */}
       <div
         aria-hidden
-        className="animate-aurora pointer-events-none absolute -top-1/3 left-1/2 size-[70rem] -translate-x-1/2 rounded-full opacity-40 blur-3xl"
+        className="animate-aurora pointer-events-none absolute -top-1/3 left-1/2 size-[70rem] -translate-x-1/2 rounded-full opacity-20 blur-3xl"
         style={{
           background:
             "radial-gradient(circle, var(--color-chart-1), transparent 65%)",
@@ -143,6 +178,21 @@ export function Hero({ fields }: { fields?: ReactNode }) {
             </motion.div>
           )}
 
+          {/* Ghi nguồn ảnh nền, đặt ngay trên trang dùng nó.
+
+              Ảnh này do AI sinh ra. Một bách khoa khoa học để một "ảnh thiên
+              hà" AI ở trang chủ mà không nói gì thì tự mâu thuẫn với thứ nó
+              dạy người đọc — và tệ hơn: nó làm người đọc có lý do nghi ngờ cả
+              những ảnh CHỤP THẬT ở các trang khác (Mặt Trời, Sao Hoả, hố đen
+              M87). Một dòng mười hai chữ mua lại toàn bộ độ tin đó.
+
+              Không nhét vào tooltip hay thẻ mờ ở góc: quy tắc provenance
+              trong docs/content-rules.md nói rõ chỗ đúng là ngay dưới thứ
+              đang được quy nguồn. */}
+          <p className="mt-8 max-w-md text-[11px] leading-relaxed text-white/45">
+            {t("heroImageCredit")}
+          </p>
+
           {/* Cuối cột chữ KHÔNG còn khối nào.
 
               Đã bốn lượt thử lấp chỗ này: một nút lớn, ba chip, sáu card công
@@ -179,99 +229,6 @@ export function Hero({ fields }: { fields?: ReactNode }) {
             Hero giờ còn đúng một hành động: ô tìm kiếm. Các lĩnh vực khoa học
             bên dưới nó là lối vào thứ hai cho ai chưa biết mình tìm gì.
           */}
-        </div>
-
-        {/* Một thể hiện duy nhất, hai cách đặt.
-
-            Từ `lg`: ô vuông ở cột phải của lưới, như cũ.
-
-            Dưới `lg`: `absolute` ở góc dưới phải, tràn ra ngoài mép, mờ đi và
-            nằm dưới cột chữ. Cách này chọn sau khi cân hai ràng buộc ngược
-            nhau — thiên hà phải thấy được trên điện thoại, nhưng hero vừa được
-            hạ từ 88vh xuống 70vh và thêm một ô vuông vào cột dọc là trả lại
-            đúng chỗ vừa lấy được. Ra khỏi luồng thì nó cao 0px, CLS vẫn bằng 0.
-
-            KHÔNG dựng hai thẻ rồi ẩn bớt một bằng `hidden`: mỗi thẻ là một
-            canvas WebGL riêng, dựng hai cái rồi giấu một là trả tiền hai lần.
-
-            Góc dưới phải chứ không phải sau chữ: ở đó chỉ có nút CTA nằm bên
-            trái, nên không có chữ trắng nào phải đọc trên nền có lõi thiên hà
-            sáng. Đây là ràng buộc tương phản, không phải sở thích bố cục. */}
-        {/* `bottom-14` chứ KHÔNG phải `-bottom-[6%]`.
-
-            Bản cũ để thiên hà thò xuống dưới đáy hero, và ở đó nó bị che hai
-            lần: `overflow-hidden` của hero cắt phần tràn ra, rồi StatsBand —
-            thụt lên 40px bằng `-mt-10` — phủ nốt 40px cuối. Mất chừng một
-            phần ba khối, đúng phần có lõi sáng.
-
-            Thu nhỏ thanh số KHÔNG chữa được: mép trên của nó nằm ở "đáy hero
-            trừ 40px", tính từ `-mt-10`, nên nó đứng nguyên chỗ đó dù thanh cao
-            hay thấp. Thứ phải đổi là vị trí thiên hà.
-
-            3.5rem = 56px, tức trên mép thanh số 16px. Đo theo px cố định chứ
-            không theo % vì thứ phải né là `-mt-10`, một giá trị px cố định —
-            dùng % thì khoảng hở đổi theo chiều cao hero và có bề rộng màn hình
-            sẽ chạm lại. */}
-        {/* Rộng thêm ở cả hai bố cục, và cho tràn qua mép phải.
-
-            Từ `lg`: cột lưới đã lên 36rem, cộng `-mr-10` để đĩa chạy quá mép
-            container. Hero có `overflow-hidden` nên phần tràn bị cắt gọn ở
-            cạnh khung — đó chính là hiệu ứng cần: thiên hà trông LỚN HƠN khung
-            chứa nó, chứ không phải một tấm ảnh dán vừa khít.
-
-            Dưới `lg`: 17rem → 21rem, chừng +24%. Không tăng mạnh hơn vì ở bố
-            cục đó nó nằm DƯỚI cột chữ; to quá thì phần sáng của đĩa dâng lên
-            sau chữ trắng và ăn mất tương phản. Đây là ràng buộc đọc được, không
-            phải sở thích bố cục. */}
-        {/* `lg:-mb-16` — thiên hà tràn XUỐNG dưới đáy hàng lưới.
-
-            Thiên hà là ô vuông rộng 36rem cộng `-mr-10`, tức cao chừng 616px,
-            trong khi cột chữ chỉ cao chừng 400px. Lưới lấy chiều cao theo ô
-            cao nhất, còn `items-center` canh giữa cột chữ trong chiều cao ấy
-            — nên dưới hàng chip lĩnh vực còn dư hơn 100px trống. Đó là dải
-            trống rộng nhất trang, đúng chỗ cần liền mạch với "Khám phá tương
-            tác".
-
-            Cách chữa KHÔNG phải thu nhỏ thiên hà: bề rộng 36rem là một quyết
-            định đã cân nhắc ở trên. Lề âm dưới kéo chiều cao hàng lưới xuống
-            64px mà kích thước vẽ của thiên hà giữ nguyên — nó tràn qua đáy
-            hàng, đúng cùng lối đã dùng cho `-mr-10` ở mép phải.
-
-            Phần tràn ra bị `overflow-hidden` của hero cắt, và chỗ bị cắt chỉ
-            là vành quầng sáng mờ (lớp `inset-[4%]` blur), lại nằm sẵn dưới
-            dải chuyển mềm cao 80px ở đáy hero. Đệm dưới hạ từ pb-6/pb-7 xuống
-            pb-3 trong cùng lượt này.
-
-            Ai tăng bề rộng cột phải lần nữa thì phải tăng cả số âm này, không
-            thì quãng trống quay lại y như cũ.
-
-            `lg:-translate-y-10` — nhích đĩa lên 40px.
-
-            Dùng transform chứ KHÔNG dùng `-mt`: lề âm rút chiều cao hàng lưới,
-            mà chiều cao ấy đang do chính thiên hà quyết định (xem trên), nên
-            nhích bằng lề sẽ kéo theo cả cột chữ và làm hỏng lượt cân khoảng
-            trống vừa xong. Transform chỉ dịch lúc VẼ, hàng lưới không đổi một
-            pixel nào.
-
-            Đánh đổi đã biết: transform trên thẻ cha tạo containing block cho
-            mọi con `position: fixed`. Ở đây an toàn vì bên trong chỉ có một
-            canvas WebGL — nhưng ai thêm một lớp phủ `fixed` vào HeroGalaxy thì
-            phải đọc lại chỗ này. Cùng cái bẫy đã ghi ở thẻ Khám phá tương tác. */}
-        {/* Nhỏ đi 15% và tối đi, KHÔNG dùng lớp phủ.
-
-            Lượt hạ sáng trước đắp một lớp gradient lên riêng hộp thiên hà, và
-            mép trái của lớp ấy tạo một đường viền dọc thấy rõ giữa hero —
-            sáng một bên, tối một bên. Đã hoàn tác.
-
-            Lần này chỉ đụng vào chính thiên hà: `brightness-75` và
-            `opacity-90` tác động lên pixel của canvas nên không có mép nào để
-            lộ, và cột lưới 36rem → 30rem thu nó nhỏ đi chừng 17%.
-
-            Lề âm phải giảm theo: đĩa nhỏ hơn thì phần tràn qua đáy cũng ít đi,
-            nên `-mb-16` → `-mb-10`. Giữ nguyên số cũ sẽ mở lại quãng trống
-            dưới hàng chip mà lượt trước vừa đóng. */}
-        <div className="pointer-events-none absolute -right-[24%] bottom-10 z-0 w-[21rem] max-w-[70%] opacity-75 lg:pointer-events-auto lg:static lg:-mr-10 lg:-mb-10 lg:w-auto lg:max-w-none lg:-translate-y-10 lg:opacity-100">
-          <HeroGalaxy />
         </div>
       </div>
     </section>
