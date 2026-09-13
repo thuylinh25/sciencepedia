@@ -3,7 +3,6 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 
 import type { Locale } from "@/i18n/routing";
 import { buildMetadata } from "@/lib/seo";
-import { ScaleLadder } from "@/components/models/scale-ladder";
 import { Universe } from "@/components/universe/universe";
 
 export async function generateMetadata({
@@ -43,7 +42,13 @@ export default async function UniversePage({
 
       <Universe />
 
-      <ScaleLadder current="universe" />
+      {/* KHÔNG có bậc thang dùng chung ở đây.
+
+          Trang này đã tự có một bậc thang riêng — từ Ngân Hà ra tới chân trời
+          vũ trụ, xem `UNIVERSE_SCALES` — và nó là phần nội dung chính của
+          trang chứ không phải khối điều hướng cuối bài. Thêm bậc thang bảy nấc
+          dùng chung vào đây là in hai thang bậc chồng nhau trên cùng một trang,
+          mỗi thang một cách chia. */}
     </div>
   );
 }

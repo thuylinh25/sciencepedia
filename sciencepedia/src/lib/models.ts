@@ -210,11 +210,6 @@ export const SCALE_RUNGS: ScaleRung[] = [
   },
 ];
 
-/** Nấc tương ứng với mô hình đang xem, để đánh dấu "bạn đang ở đây". */
-export function rungIdForModel(modelId: string): string {
-  return modelId === "universe" ? "milky-way" : modelId;
-}
-
 export function modelNeighbours(id: string) {
   const index = MODEL_STEPS.findIndex((step) => step.id === id);
   if (index === -1) return { previous: null, next: null };

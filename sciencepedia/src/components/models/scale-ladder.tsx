@@ -3,7 +3,7 @@ import { ArrowRight, LayoutGrid } from "lucide-react";
 
 import { Link } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
-import { SCALE_RUNGS, rungIdForModel, type ScaleRung } from "@/lib/models";
+import { SCALE_RUNGS, type ScaleRung } from "@/lib/models";
 import { cn } from "@/lib/utils";
 
 /**
@@ -38,7 +38,7 @@ import { cn } from "@/lib/utils";
 export async function ScaleLadder({ current }: { current: string }) {
   const t = await getTranslations("models");
   const locale = (await getLocale()) as Locale;
-  const currentRung = rungIdForModel(current);
+  const currentRung = current;
 
   const name = (rung: ScaleRung) => (locale === "en" ? rung.nameEn : rung.name);
   const size = (rung: ScaleRung) => (locale === "en" ? rung.sizeEn : rung.size);
@@ -111,14 +111,21 @@ export async function ScaleLadder({ current }: { current: string }) {
           );
 
           const shell = cn(
-            "flex h-full w-[15rem] shrink-0 snap-start flex-col rounded-2xl border p-4 sm:w-auto",
+            // `sm:w-full sm:shrink` là bắt buộc, không phải trang trí.
+
+            // Dưới sm thẻ là item của một hàng cuộn ngang nên cần bề rộng cố
+            // định và `shrink-0`. Từ sm nó thành item của LƯỚI, mà một item
+            // mang `shrink-0` với bề rộng auto sẽ phình theo nội dung thay vì
+            // vừa ô — nó tràn ra ngoài ô và đè lên thẻ bên cạnh. Đã thấy trên
+            // máy thật: bốn thẻ chồng chữ lên nhau ở 1339px.
+            "flex h-full w-[15rem] shrink-0 snap-start flex-col rounded-2xl border p-4 sm:w-full sm:shrink",
             here
               ? "border-primary/60 bg-primary/[0.07]"
               : "bg-card/40 hover:bg-card",
           );
 
           return (
-            <li key={rung.id} className="flex">
+            <li key={rung.id} className="flex min-w-0">
               {rung.href ? (
                 <Link
                   href={rung.href}
