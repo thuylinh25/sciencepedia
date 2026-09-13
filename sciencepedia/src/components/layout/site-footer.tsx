@@ -135,10 +135,16 @@ export async function SiteFooter() {
           <div className="md:col-span-2">
             {/* Logo lớn hơn chừng 12% bằng `scale-110` gắn gốc trái.
 
+                `w-fit` là bắt buộc, không phải để cho gọn: khối này mặc định
+                rộng bằng cả cột, nên `scale-110` kéo mép phải của HỘP VẼ ra
+                thêm 10% bề rộng cột — đo được 15px tràn ngang trên khung
+                390px, tức trang cuộn ngang được. Thu về đúng bề rộng logo thì
+                phần phóng thêm chỉ là 10% của logo.
+
                 Dùng transform chứ không sửa component Logo: nó còn dùng ở
                 header và trong drawer, nơi kích thước hiện tại đã đúng. Phóng
                 tại chỗ dùng thì chỉ chỗ này đổi. */}
-            <div className="origin-left scale-110">
+            <div className="w-fit origin-left scale-110">
               <Logo />
             </div>
 

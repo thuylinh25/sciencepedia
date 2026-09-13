@@ -2,7 +2,6 @@ import type { ReactNode } from "react";
 import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 
-import { Logo } from "@/components/layout/logo";
 import { Link } from "@/i18n/navigation";
 
 /**
@@ -60,11 +59,13 @@ export async function AuthShell({
       <div className="flex flex-col px-6 py-10 short:py-5 shorter:py-1">
         <div className="flex flex-1 items-center justify-center">
           <div className="w-full max-w-sm">
-            <Link href="/" className="lg:hidden">
-              <Logo />
-            </Link>
+            {/* KHÔNG vẽ logo ở đây.
 
-            <h1 className="mt-8 font-display text-4xl font-bold tracking-tight lg:mt-0 short:text-3xl shorter:text-2xl">
+                Bản trước có một logo riêng cho mobile, dựng từ thời header bị
+                ẩn trên trang đăng nhập. Header nay hiện ở mọi bề rộng — bản rút
+                gọn còn logo + ngôn ngữ + theme — nên cái logo này thành cái thứ
+                hai trên cùng một màn hình. Đã bị báo lỗi. */}
+            <h1 className="font-display text-4xl font-bold tracking-tight short:text-3xl shorter:text-2xl">
               {title}
             </h1>
             <p className="mt-3 text-sm leading-relaxed text-muted-foreground short:mt-2 shorter:hidden">

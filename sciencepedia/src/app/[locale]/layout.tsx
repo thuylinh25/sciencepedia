@@ -135,10 +135,10 @@ export default async function LocaleLayout({
 
                   Nút đó là position: fixed nên nó không chiếm chỗ trong luồng,
                   và trên màn hình hẹp nó nằm đè lên dòng cuối của bất cứ thứ
-                  gì kết thúc ở đáy trang. 5,5rem là 56px của nút cộng 32px hở
+                  gì kết thúc ở đáy trang. 5rem là 48px của nút cộng 32px hở
                   ra. Từ sm trở lên lề trang đã đủ rộng để nút không chạm chữ,
                   nên đệm về 0. */}
-              <main id="main" className="flex-1 pb-22 sm:pb-0">
+              <main id="main" className="flex-1 pb-20 sm:pb-0">
                 {children}
               </main>
               <FooterSlot>

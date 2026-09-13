@@ -83,12 +83,19 @@ export function AssistantLauncher() {
 
      Bốn route chứ không chỉ /login và /register: quên mật khẩu và đặt lại mật
      khẩu là cùng một luồng, và người đang ở đó còn ít kiên nhẫn hơn. */
-  const AUTH_ROUTES = ["/login", "/register", "/forgot-password", "/reset-password"];
+  const AUTH_ROUTES = [
+    "/login",
+    "/register",
+    "/forgot-password",
+    "/reset-password",
+  ];
 
   if (
     pathname.startsWith("/assistant") ||
     pathname.startsWith("/admin") ||
-    AUTH_ROUTES.some((route) => pathname === route || pathname.startsWith(`${route}/`))
+    AUTH_ROUTES.some(
+      (route) => pathname === route || pathname.startsWith(`${route}/`),
+    )
   ) {
     return null;
   }
@@ -136,19 +143,27 @@ export function AssistantLauncher() {
            Từ `sm` trở lên thì lề trang đã đủ rộng, giữ nguyên 1rem. */
         /* Viên thuốc co giãn thay vì hình tròn cứng.
 
-           `h-14` và `rounded-full` giữ nguyên; bề rộng do chính nhãn quyết
-           định. Nhãn thu về `max-w-0` thì nút còn đúng 56px — bằng chiều cao,
-           tức tròn như cũ. Chuyển động chỉ nằm ở bề rộng của chính nút, mà nút
-           là `position: fixed`, nên không đẩy một pixel nào của trang.
+           `h-12` và `rounded-full`; bề rộng do chính nhãn quyết định. Nhãn thu
+           về `max-w-0` thì nút còn đúng 48px — bằng chiều cao, tức tròn. Chuyển
+           động chỉ nằm ở bề rộng của chính nút, mà nút là `position: fixed`,
+           nên không đẩy một pixel nào của trang.
+
+           56px → 48px (nhỏ đi 14%) và icon 24px → 20px. Nút này nổi trên MỌI
+           trang, kể cả những trang mà việc chính là đọc; ở 56px nó là vật sáng
+           màu lớn thứ hai trên màn hình sau tiêu đề. Bù lại, `hover:scale-105`
+           lên `hover:scale-110`: nhỏ khi bị lờ đi, lớn rõ khi được chú ý.
+
+           48px vẫn trên ngưỡng 44px của WCAG cho vùng chạm, nên nhỏ đi không
+           đổi lấy khả năng bấm trúng trên di động.
 
            Nhãn dùng `max-w` chứ không `display`: `display` không chuyển động
            được, và nhãn bật/tắt đột ngột trông như lỗi render. */
-        className="fixed right-4 bottom-[max(1.5rem,calc(env(safe-area-inset-bottom)+0.75rem))] z-50 flex h-14 items-center justify-center rounded-full bg-primary px-4 text-primary-foreground shadow-lg transition-[transform,width] duration-300 ease-out hover:scale-105 active:scale-95 sm:bottom-[max(1rem,env(safe-area-inset-bottom))]"
+        className="fixed right-4 bottom-[max(1.5rem,calc(env(safe-area-inset-bottom)+0.75rem))] z-50 flex h-12 items-center justify-center rounded-full bg-primary px-3.5 text-primary-foreground shadow-lg transition-[transform,width] duration-300 ease-out hover:scale-110 active:scale-95 sm:bottom-[max(1rem,env(safe-area-inset-bottom))]"
       >
         {open ? (
-          <X className="size-6 shrink-0" />
+          <X className="size-5 shrink-0" />
         ) : (
-          <MessageCircle className="size-6 shrink-0" />
+          <MessageCircle className="size-5 shrink-0" />
         )}
         <span
           className={`overflow-hidden ps-2 text-sm font-semibold whitespace-nowrap transition-[max-width,opacity] duration-300 ease-out ${
