@@ -155,7 +155,12 @@ export default async function EarthLivePage({
         }}
       />
 
-      <header className="mb-6 max-w-3xl">
+      {/* Bề ngang khối đầu trang bằng ĐÚNG cột chữ bên dưới (56rem).
+
+          max-w-3xl cũ là 48rem, hẹp hơn cột chữ 8rem, nên dòng dẫn ngắt sớm
+          hơn mọi đoạn văn phía dưới và mép phải của trang gãy làm hai bậc.
+          Cùng một bề ngang thì cả trang chỉ còn một mép. */}
+      <header className="mb-6 max-w-[56rem]">
         <h1 className="font-display text-4xl font-bold tracking-tight sm:text-5xl">
           {t("title")}
         </h1>
@@ -203,11 +208,13 @@ export default async function EarthLivePage({
                     />
                     {term}
                   </dt>
-                  {/* Cắt còn ba dòng CHỈ ở bố cục hai cột: cột phải là chỗ để
-                      liếc, và ba thẻ dài đầy đủ ở đó sẽ cao hơn cả phần chữ
-                      bên trái. Dưới xl không cắt, nên trên di động người đọc
-                      vẫn nhận đủ chữ như bản cũ. */}
-                  <dd className="mt-2 text-sm leading-relaxed text-muted-foreground xl:line-clamp-3">
+                  {/* KHÔNG cắt dòng. Bản trước cắt còn ba dòng ở bố cục hai cột cho
+                      cột phải gọn lại, nhưng một thẻ cụt bằng dấu ba chấm thì
+                      người đọc mất phần cuối mà không có cách nào lấy lại —
+                      không có nút mở rộng, và cùng đoạn chữ ấy không xuất hiện
+                      ở chỗ nào khác trên trang. Cột phải dài hơn là cái giá
+                      đúng để trả. */}
+                  <dd className="mt-2 text-sm leading-relaxed text-muted-foreground">
                     {detail}
                   </dd>
                 </div>

@@ -114,10 +114,17 @@ export async function AuthShell({
             "Điều khoản sử dụng", và đây là hai đường dẫn bên xét duyệt ứng
             dụng đi tìm.
 
-            `flex-nowrap` + `whitespace-nowrap` để lần sau ai nới chữ dài ra thì
+            `flex-nowrap` CHỈ từ sm trở lên. Ở 390px, cột form còn 342px sau
+            khi trừ đệm mà cả hàng cần chừng 345px — ép không-gãy ở đó thì trang
+            cuộn ngang được 11px, đã đo thấy. Dưới sm cho gãy hai dòng: điện
+            thoại vốn cuộn dọc, thêm một dòng không mất gì, còn cuộn ngang thì
+            luôn là lỗi.
+
+            `whitespace-nowrap` giữ ở mọi bề rộng để từng phần không tự vỡ giữa
+            chừng, và để lần sau ai nới chữ dài ra thì
             nó tràn thấy được ngay, chứ không âm thầm gãy dòng lại. */}
         <footer className="mx-auto mt-10 w-full max-w-sm border-t pt-5 text-[11px] text-muted-foreground/70 short:mt-6 short:pt-3.5 shorter:mt-2.5 shorter:pt-2.5">
-          <div className="flex flex-nowrap items-center justify-between gap-x-4 whitespace-nowrap">
+          <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 whitespace-nowrap sm:flex-nowrap">
             <p>© {new Date().getFullYear()} Sciencepedia</p>
 
             <p className="flex items-center gap-x-4">

@@ -14,6 +14,7 @@ import {
   VISIBILITY_LABELS,
   findSkyTarget,
   type SkyObjectKind,
+  type SkySurvey,
   type SkyTarget,
 } from "@/lib/sky-data";
 import { cn } from "@/lib/utils";
@@ -23,6 +24,7 @@ import {
   type SkySearchResult,
 } from "@/components/sky/aladin-search";
 import { AladinViewer } from "@/components/sky/aladin-viewer";
+import { SkyObjectPanel } from "@/components/sky/sky-object-panel";
 
 /**
  * Vỏ trang bản đồ bầu trời: ô tìm kiếm, khung bản đồ, bộ chọn survey và danh
@@ -179,6 +181,11 @@ export function SkyMap() {
   const active =
     SKY_SURVEYS.find((item) => item.id === survey) ?? SKY_SURVEYS[0];
 
+  /* Thiên thể đang xem. `null` khi khung nhìn ở một toạ độ tự do — tìm kiếm
+     Sesame hoặc người dùng tự kéo — và bảng thông tin phải nói được cả trạng
+     thái đó thay vì giả vờ đang nhắm vào một mục trong danh mục. */
+  const activeTarget = SKY_TARGETS.find((item) => item.id === activeId) ?? null;
+
   const applySurvey = useCallback((surveyId: string) => {
     setSurvey(surveyId);
     setView((current) => ({ ...current, survey: surveyId }));
@@ -279,14 +286,15 @@ export function SkyMap() {
         />
       </div>
 
-      {/* --------------------------------------------------- Thanh trạng thái */}
+      {/* ------------------------------------------------ Bộ chọn khảo sát
+
+          Đứng RIÊNG một hàng ngay dưới khung, không còn ghép chung với dòng
+          "đang hướng vào". Hai thứ ấy trả lời hai câu khác nhau — "nhìn bằng
+          gì" và "nhìn cái gì" — và câu thứ hai nay có hẳn một bảng bên dưới,
+          nên nhồi cả hai vào một thanh chỉ làm cả hai khó thấy. */}
       <div className="flex flex-wrap items-center justify-between gap-x-6 gap-y-3 rounded-2xl border bg-card px-5 py-3.5">
-        <p className="text-sm">
-          <span className="text-muted-foreground">{t("centeredOn")} </span>
-          <span className="font-medium">{label}</span>
-          <span className="ml-3 font-mono text-xs text-muted-foreground">
-            {formatCoordinates(view.ra, view.dec)}
-          </span>
+        <p className="text-xs font-semibold tracking-widest text-muted-foreground uppercase">
+          {t("surveyLabel")}
         </p>
 
         <SurveySwitcher
@@ -301,25 +309,33 @@ export function SkyMap() {
 
           Yêu cầu ban đầu là tooltip. Tooltip giải được đúng một nửa bài toán:
           trên thiết bị cảm ứng không có trạng thái hover, nên "hiện khi rê
-          chuột" đồng nghĩa với "không bao giờ hiện" cho phần lớn người đọc —
-          cùng lập luận đã chốt khi cho số bài hiện sẵn trên chip lĩnh vực ở
-          hero thay vì đợi hover.
+          chuột" đồng nghĩa với "không bao giờ hiện" cho phần lớn người đọc.
 
           Nên làm cả hai: thuộc tính `title` vẫn có (rẻ, chạy ngay khi rê chuột
           lên một nút CHƯA chọn), còn một dòng cố định nói về nút ĐANG chọn thì
-          ai cũng đọc được. Dòng ấy cũng trả lời câu hỏi thật của người dùng —
-          "tôi đang nhìn bằng cái gì" — chứ không phải "nút kia tên gì".
+          ai cũng đọc được.
 
           `aria-live="polite"`: đổi khảo sát là đổi thứ đang xem, và người dùng
           trình đọc màn hình cần biết điều đó mà không phải đi tìm. */}
       <p
         aria-live="polite"
-        className="mt-2 text-xs leading-relaxed text-muted-foreground"
+        className="text-xs leading-relaxed text-muted-foreground"
       >
         <span className="font-medium text-foreground">{active.fullName}</span>
         {" — "}
         {locale === "en" ? active.blurbEn : active.blurb}
       </p>
+
+      {/* Bảng thông tin thiên thể: hộp dữ kiện, các nút đi tiếp, khối "bạn
+          đang nhìn thấy gì" và dải thiên thể liên quan. */}
+      <SkyObjectPanel
+        target={activeTarget}
+        label={label}
+        ra={view.ra}
+        dec={view.dec}
+        survey={active}
+        onSelect={applyTarget}
+      />
 
       {/* --------------------------------------------------- Danh sách thiên thể
           Render ở server cùng phần còn lại của trang: đây là nội dung có chữ,
@@ -480,41 +496,78 @@ function SurveySwitcher({
 }) {
   const overlay = tone === "overlay";
 
-  return (
-    <div
-      role="group"
-      aria-label={label}
-      className={cn(
-        "flex flex-wrap items-center gap-1 rounded-full border p-0.5",
-        overlay ? "border-white/10 bg-white/5" : "bg-muted/40",
-      )}
-    >
-      {SKY_SURVEYS.map((item) => {
-        const selected = survey === item.id;
+  const describe = (item: SkySurvey) =>
+    `${item.fullName} — ${locale === "en" ? item.bandEn : item.band}`;
 
-        return (
-          <button
-            key={item.id}
-            type="button"
-            onClick={() => onSelect(item.id)}
-            aria-pressed={selected}
-            title={`${item.fullName} — ${locale === "en" ? item.bandEn : item.band}`}
-            className={cn(
-              "rounded-full px-2.5 py-1 text-xs font-medium transition-colors",
-              overlay
-                ? selected
-                  ? "bg-white text-slate-900"
-                  : "text-white/60 hover:text-white"
-                : selected
-                  ? "bg-background text-foreground shadow-sm"
-                  : "text-muted-foreground hover:text-foreground",
-            )}
-          >
-            {item.name}
-          </button>
-        );
-      })}
-    </div>
+  return (
+    <>
+      {/* Dưới sm: danh sách xổ xuống.
+
+          Năm nút cạnh nhau ở bề ngang 390px hoặc là xuống hai hàng, hoặc là
+          mỗi nút hẹp tới mức chạm trượt. Một `<select>` gốc của hệ điều hành
+          giải cả hai: nó cao đúng 44px, mở ra bằng bánh xe chọn quen thuộc,
+          và không tốn một dòng JavaScript nào. */}
+      <label className="w-full sm:hidden">
+        <span className="sr-only">{label}</span>
+        <select
+          value={survey}
+          onChange={(event) => onSelect(event.target.value)}
+          className={cn(
+            "h-11 w-full rounded-xl border px-3 text-sm",
+            overlay
+              ? "border-white/15 bg-slate-900/80 text-white"
+              : "bg-background",
+          )}
+        >
+          {SKY_SURVEYS.map((item) => (
+            <option key={item.id} value={item.id}>
+              {describe(item)}
+            </option>
+          ))}
+        </select>
+      </label>
+
+      {/* Từ sm: segmented control.
+
+          Nút ĐANG CHỌN phải khác hẳn chứ không chỉ đậm hơn một nhịp — bản cũ
+          chỉ đổi màu chữ, và trên nền tối thì "xám nhạt" với "trắng" cách nhau
+          quá gần để nhận ra trong một hàng năm mục. Nay nền đặc, chữ nghịch
+          đảo, cộng `aria-pressed` cho trình đọc màn hình. */}
+      <div
+        role="group"
+        aria-label={label}
+        className={cn(
+          "hidden flex-wrap items-center gap-1 rounded-full border p-1 sm:flex",
+          overlay ? "border-white/10 bg-white/5" : "bg-muted/40",
+        )}
+      >
+        {SKY_SURVEYS.map((item) => {
+          const selected = survey === item.id;
+
+          return (
+            <button
+              key={item.id}
+              type="button"
+              onClick={() => onSelect(item.id)}
+              aria-pressed={selected}
+              title={describe(item)}
+              className={cn(
+                "rounded-full px-3 py-1.5 text-xs font-medium transition-colors",
+                overlay
+                  ? selected
+                    ? "bg-white text-slate-900"
+                    : "text-white/60 hover:bg-white/10 hover:text-white"
+                  : selected
+                    ? "bg-primary text-primary-foreground shadow-sm"
+                    : "text-muted-foreground hover:bg-background hover:text-foreground",
+              )}
+            >
+              {item.name}
+            </button>
+          );
+        })}
+      </div>
+    </>
   );
 }
 

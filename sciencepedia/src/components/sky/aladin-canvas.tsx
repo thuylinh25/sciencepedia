@@ -305,14 +305,18 @@ export function AladinCanvas({
           kín trang, và nút này phải nằm trên nó để còn bấm thoát ra được.
 
           Nhãn và tiêu đề đổi theo trạng thái — một nút "Toàn màn hình" khi
-          đang ở toàn màn hình là nói sai việc nó sắp làm. */}
+          đang ở toàn màn hình là nói sai việc nó sắp làm.
+
+          Có viền sáng mờ và phóng nhẹ khi rê chuột: nút nằm trên ảnh bầu trời,
+          mà ảnh đó chỗ đen chỗ sáng nên một nút chỉ có nền đen mờ sẽ chìm hẳn
+          ở những vùng tối. Viền 1px giữ cho nó luôn có mép ở mọi nền. */}
       {showFullscreenToggle && status === "ready" && (
         <button
           type="button"
           onClick={toggleFullscreen}
           aria-label={isFullscreen ? t("exitFullscreen") : t("enterFullscreen")}
           title={isFullscreen ? t("exitFullscreen") : t("enterFullscreen")}
-          className="absolute top-2 right-2 z-20 inline-flex items-center justify-center rounded-full bg-black/65 p-2 text-white backdrop-blur-sm transition-colors hover:bg-black/85"
+          className="absolute top-2 right-2 z-20 inline-flex items-center justify-center rounded-full bg-black/70 p-2.5 text-white ring-1 ring-white/15 backdrop-blur-sm transition-[background-color,transform,box-shadow] hover:scale-105 hover:bg-black/90 hover:ring-white/40"
         >
           {isFullscreen ? (
             <Minimize2 className="size-4" aria-hidden />
