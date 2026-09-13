@@ -47,6 +47,31 @@ là chủ ý, không phải nuốt lỗi cẩu thả.
 
 ---
 
+
+### Hero trang chủ: hình vẽ, không phải WebGL
+
+Chốt 2026-09-13, đảo lại quyết định trước đó.
+
+Thiên hà ở hero từng là `GalaxyScene` — chính mô hình three.js của trang
+/milky-way. Nay là một SVG tự vẽ (`hero-galaxy-art.tsx`), sinh toạ độ cánh xoắn
+từ công thức `r = a·e^(bθ)` và quay bằng CSS.
+
+Ba lý do, xếp theo thứ tự quan trọng:
+
+1. **Vài trăm KB three.js rời khỏi vùng LCP của trang nhiều người mở nhất.** Ba
+   lớp phòng vệ cũ (dynamic import, chỉ mount sau hydrate, `lowPower`) là cách
+   sống chung với chi phí đó; bỏ hẳn thì không phải sống chung nữa.
+2. **Hình có mặt trong HTML đầu tiên**, không còn quãng chờ hydrate mà người
+   xem đọc ra là "ảnh chưa tải xong".
+3. **Điều khiển được màu và độ sáng** mà không phải sửa cảnh đang dùng ở
+   /milky-way — nơi màu là màu KHOA HỌC và không được chỉnh cho đẹp.
+
+Mô hình 3D thật vẫn ở /milky-way, có đường dẫn từ hero và từ lưới "Khám phá
+tương tác". Số ngẫu nhiên trong hình đi qua bộ sinh có hạt giống cố định:
+`Math.random()` ở đây là một lỗi hydration trên chính khối chiếm phần lớn màn
+hình đầu tiên.
+
+---
 ## Đếm lượt đọc — vì sao đếm từ trình duyệt
 
 Trang bài viết đặt `revalidate = 300` và được prerender sẵn, nên phần lớn lượt
@@ -217,6 +242,22 @@ quầng sáng thấy trong ảnh và người xem tưởng bản đồ hỏng. V
 thêm một điều phải nói trong chú thích mà hành tinh không cần: nó đổi bộ mặt
 từng ngày, nên ảnh và bản đồ chụp khác ngày thì khác nhau là đúng.
 
+
+### Toàn màn hình nuốt mất trang, nên bảng thông tin phải chở theo điều hướng
+
+Ở toàn màn hình, khung Aladin là một lớp `position: fixed` phủ kín cửa sổ. Mọi
+thứ nằm DƯỚI khung trên trang — tên thiên thể, toạ độ, bộ chọn khảo sát, chú
+giải, danh sách thiên thể — biến mất đúng lúc người xem có nhiều chỗ nhất để
+dùng chúng. Prop `fullscreenInfo` vì thế không phải chú thích: nó chở cả phần
+điều hướng của trang.
+
+**Đổi khảo sát KHÔNG được đi qua `goTo`.** `goTo` gọi kèm `setFoV` tính từ
+`view.fovDeg` — mức phóng mặc định của mục tiêu, không phải mức người xem đang
+dùng. Mà việc người ta làm với bộ chọn khảo sát là so sánh cùng một vùng trời
+qua nhiều bước sóng: phóng sâu rồi bấm lần lượt DSS2 · 2MASS · AllWISE. Kéo về
+khung rộng ban đầu mỗi lần bấm là giết chính phép so sánh đó. Khi chỉ có survey
+đổi, `aladin-canvas` gọi thẳng `setSurvey`.
+
 ### Ba cái bẫy của nút toàn màn hình Aladin
 
 CSS của Aladin đặt `.aladin-fullscreen` thành `position: fixed` phủ kín cửa sổ
@@ -247,6 +288,27 @@ mặt Trái Đất và bắt chúng quay cùng.
 
 Nền đen là thứ duy nhất không nói dối, và cũng là thứ NASA dùng cho ảnh hành
 tinh. Chốt 2026-09-10.
+
+
+### Trang pháp lý phải công khai với máy
+
+`/privacy` và `/terms` nằm ngoài mọi lớp bảo vệ, và điều đó là bắt buộc chứ
+không tình cờ: Facebook App Review và màn hình chấp thuận OAuth của Google tự
+truy cập hai URL này bằng máy, không mang theo phiên đăng nhập nào. `middleware`
+chỉ làm định tuyến ngôn ngữ, nên đừng thêm bất kỳ điều kiện đăng nhập nào vào đó
+mà không kiểm lại hai route này.
+
+Chính sách bảo mật phải mô tả ĐÚNG hệ thống đang chạy, không mô tả hệ thống mong
+muốn. Hiện chưa có nút tự xoá tài khoản, nên trang ghi đường xoá bằng email và
+cam kết 30 ngày — đó cũng chính là "data deletion instructions" mà Facebook đòi.
+Khi có nút tự xoá thì sửa lại trang; một chính sách hứa thứ sản phẩm không làm
+được thì tệ hơn là không hứa.
+
+Ngày cập nhật là hằng số viết tay, không sinh từ `new Date()`: dòng "cập nhật
+lần cuối" nói rằng NỘI DUNG đã được xem lại vào ngày đó, chứ không phải rằng
+trang vừa được deploy.
+
+---
 
 ## Triển khai
 

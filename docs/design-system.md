@@ -230,6 +230,32 @@ sửa nếu muốn khôi phục chế độ dịu. Ngoại lệ cho hai animatio
 
 ---
 
+
+## Trang xác thực không mang khung của site
+
+Chốt 2026-09-13.
+
+`/login`, `/register`, `/forgot-password`, `/reset-password` dùng chung
+`AuthShell` — khung hai cột cao bằng cửa sổ, tự có footer pháp lý tối giản.
+Header đã rút gọn từ trước; nay footer đầy đủ cũng không render trên bốn route
+này (`FooterSlot` + `src/lib/auth-routes.ts`).
+
+Vì sao bỏ hẳn chứ không thu nhỏ: dải số liệu cộng bốn cột liên kết cao hơn cả
+form đăng nhập, nên nó biến một trang đáng lẽ gọn trong một màn hình thành trang
+phải cuộn — và thứ người ta cuộn tới là hai mươi lối đi khác, đặt ngay dưới ô
+mật khẩu đang gõ dở. Cùng lập luận đã dùng khi rút gọn header.
+
+Ba cái bẫy nhỏ ở cột phải, cả ba đều đã cắn thật:
+
+- **Hình minh hoạ tràn qua mép** đọc ra là "ảnh tải thiếu", không phải "hình lớn
+  hơn khung". Thủ pháp tràn mép chỉ hợp với thứ không có đường viền rõ (vệt sáng,
+  thiên hà); một quyển sách mở thì không. Nay hình nằm trọn trong khung.
+- **Dấu ngoặc kép ghim bằng `absolute`** trườn lên đè dòng đầu của câu trích
+  ngay khi câu dài thêm một dòng. Toạ độ tuyệt đối chỉ đúng với đúng một cỡ chữ.
+  Nay nó là khối trong luồng.
+- **Dấu mở không có dấu đóng** không đọc ra là ngoặc kép, chỉ ra một hình trang
+  trí đặt cạnh câu.
+
 ## Icon mang theo tuyên bố
 
 Chọn icon là một phát biểu, không phải trang trí:
@@ -351,6 +377,26 @@ theo loại ảnh, đừng đổi lại quy tắc chung.
 
 Quy tắc "dải 30–50%" vẫn còn hiệu lực cho **thẻ danh sách ô vuông 64 px** — chỗ
 đó vẫn cắt.
+
+
+**Thẻ bài đổi sang `object-cover`, chốt 2026-09-13.** Mục trên nói thẻ bài cho
+thấy "trọn ảnh"; không còn đúng nữa, và lý do nằm ở chỗ kho ảnh đã đổi.
+
+Khi quy tắc cũ được chốt, 12/12 ảnh bìa là hình tự vẽ. Nay phần lớn bài mới
+dùng ảnh CHỤP (NASA, ESO, ảnh y khoa), và ảnh chụp không cùng một tỉ lệ nào cả.
+`contain` vì thế sinh ra hai vành đen rộng hẹp khác nhau tuỳ từng ảnh, và trong
+một lưới bốn thẻ thì các vành ấy đọc ra là bố cục vỡ chứ không phải một lựa
+chọn — đúng cái đã bị báo.
+
+Phép rẽ nhánh theo loại ảnh mà mục trên đề nghị hoá ra KHÔNG cần: 12 ảnh vẽ đều
+được dựng sẵn ở 3200×2000, tức đúng `aspect-[16/10]` của khung thẻ, nên
+`cover` không cắt của chúng một pixel nào. Chỉ ảnh chụp bị cắt, mà ảnh chụp vốn
+là kết cấu kín khung — cắt được.
+
+Hai chỗ khác GIỮ NGUYÊN `object-contain`: hero trang bài (lý do ở ngay trên) và
+thư viện ảnh hành tinh (đĩa hình cầu, cắt là cụt hai cực). Muốn một bài cụ thể
+hiện trọn hình cầu trên thẻ thì cắt sẵn ảnh bìa của bài đó về 16/10, đừng đổi
+lại `object-fit` cho cả lưới.
 
 **Không đặt chữ vào ảnh.** Site song ngữ dùng chung một `coverImage`, nên chữ chỉ
 đúng một thứ tiếng và không có đường nào dịch. Dùng hình học thay chữ: mũi tên hai
