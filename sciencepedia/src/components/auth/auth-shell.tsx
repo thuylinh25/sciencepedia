@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import { getTranslations } from "next-intl/server";
 
+import { AuthArtwork } from "@/components/auth/auth-artwork";
 import { Logo } from "@/components/layout/logo";
 import { Link } from "@/i18n/navigation";
 
@@ -86,7 +87,21 @@ export async function AuthShell({
           và cần nó: hai cột cùng gần đen thì đường chia giữa chúng biến mất và
           bố cục đọc ra như một khối tối liền. */}
       <aside className="auth-aside starfield deep-space relative hidden items-center justify-center overflow-hidden p-12 lg:flex">
-        <div className="relative w-full max-w-lg">
+        {/* Hình minh hoạ ở GÓC DƯỚI PHẢI, tràn qua hai mép.
+
+            Vị trí là ràng buộc tương phản, không phải sở thích bố cục: câu
+            trích là chữ trắng và nó nằm ở giữa-trái, nên vùng sáng nhất của
+            hình phải tránh xa chỗ đó. Ai dịch hình vào giữa thì phải hạ độ
+            sáng của nó xuống, nếu không câu trích mất tương phản.
+
+            Tràn qua mép (`-right-24 -bottom-20`) để hình trông LỚN HƠN khung
+            chứa nó — cùng thủ pháp đã dùng cho thiên hà ở hero. `aside` có
+            `overflow-hidden` nên phần thừa bị cắt gọn ở cạnh.
+
+            `z-0` và câu trích `z-10`: hình là nền, chữ nằm trên. */}
+        <AuthArtwork className="pointer-events-none absolute -right-24 -bottom-20 z-0 w-[34rem] max-w-[85%] opacity-90" />
+
+        <div className="relative z-10 w-full max-w-lg">
           {/* Dấu ngoặc kép lớn, vẽ bằng ký tự của chính bộ chữ đang dùng cho
               câu trích — cùng một hình dáng, nên nó đọc ra như phần phóng to
               của câu chứ không phải một món trang trí mượn ở đâu về.
