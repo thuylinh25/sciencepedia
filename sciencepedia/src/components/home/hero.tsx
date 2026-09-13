@@ -34,12 +34,16 @@ export function Hero({ fields }: { fields?: ReactNode }) {
       {/* Ảnh nền hero.
 
           Ảnh được bố cục sẵn cho đúng việc này: nửa trái gần như trống, thiên
-          Dưới lg, ảnh hạ xuống 60% độ mờ và lớp phủ dày lên ở giữa (65% thay
-          vì 35%). Không phải để cho dịu mắt: khung dọc cắt sát tới mức LÕI
-          SÁNG của thiên hà nằm đúng sau chữ trắng — đã dựng thử bằng cách cắt
-          ảnh theo đúng phép object-cover trước khi viết dòng này. Trên lg thì
-          ngược lại, chữ nằm CẠNH thiên hà chứ không đè lên, nên ảnh để nguyên
-          độ sáng.
+          Dưới lg, ảnh để 80% độ mờ và lớp phủ đậm ở HAI ĐẦU, nhạt ở giữa
+          (90% / 40% / 85%). Lượt đầu đặt 60% + phủ dày 65% ở giữa vì khung dọc
+          cắt sát tới mức lõi sáng nằm đúng sau chữ trắng — nhưng như thế thì
+          thiên hà bị che gần hết, và người dùng báo lại đúng chuyện đó. Chữ
+          không cần cả khung phải tối: tiêu đề nằm ở ĐỈNH và các chip lĩnh vực
+          tự có nền mờ riêng, nên chỉ hai đầu khung cần đậm. Dải giữa — đúng
+          chỗ lõi thiên hà — được để sáng.
+
+          Trên lg thì chữ nằm CẠNH thiên hà chứ không đè lên, nên ảnh giữ
+          nguyên độ sáng và lớp phủ chạy theo chiều ngang.
 
           hà lệch phải. Nên nó không phải một tấm ảnh dán vào rồi chữa cháy
           bằng lớp phủ — cột chữ nằm đúng vào chỗ ảnh vốn để trống.
@@ -80,9 +84,9 @@ export function Hero({ fields }: { fields?: ReactNode }) {
           fill
           priority
           sizes="100vw"
-          className="object-cover object-[68%_center] opacity-60 lg:object-center lg:opacity-100"
+          className="object-cover object-[68%_center] opacity-80 lg:object-center lg:opacity-100"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-space-900/90 via-space-900/65 to-space-900/95 lg:bg-gradient-to-r lg:from-space-900/90 lg:via-space-900/40 lg:to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-space-900/90 via-space-900/40 to-space-900/85 lg:bg-gradient-to-r lg:from-space-900/90 lg:via-space-900/40 lg:to-transparent" />
       </div>
       {/* Quầng sáng nền, chuyển động rất chậm */}
       <div

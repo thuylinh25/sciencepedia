@@ -793,3 +793,35 @@
     transform: scale(1.03);
   }
 }
+
+/* ---------------------------------------------------------------------------
+   Ảnh bầu trời hết vỡ ô khi canvas bị co giãn.
+
+   Aladin Lite tự tiêm một stylesheet lúc chạy, trong đó có:
+
+     .aladin-container canvas { image-rendering: pixelated; … }
+
+   Nghĩa là mọi phép co giãn canvas đều dùng nearest-neighbour. Trên màn HiDPI
+   — nơi canvas gần như luôn phải co giãn một nhịp — kết quả là bầu trời vỡ
+   thành lưới ô vuông, và người xem đọc ra là "ảnh mờ". Đã thấy trên máy thật
+   ở khung nhìn 3° quanh Andromeda, trong khi dữ liệu DSS2 ở đó mịn gấp mười
+   lăm lần những gì hiện ra — tức đây là lỗi hiển thị, không phải giới hạn của
+   khảo sát.
+
+   Vì sao `!important`, dù dự án tránh nó: stylesheet kia được tiêm lúc chạy
+   nên luôn đứng SAU tệp này trong tài liệu, và nó không nằm trong `@layer`
+   nào. Hai luật không layer cùng độ đặc trưng thì luật đứng sau thắng — ta
+   không có cách nào đứng sau một thứ được tiêm sau. Tăng độ đặc trưng bằng
+   selector giả thì thắng, nhưng để lại một selector không ai đọc ra ý định.
+
+   Đánh đổi đã biết: khi phóng VƯỢT độ phân giải thật của khảo sát, pixel gốc
+   nay được nội suy mềm thay vì hiện thành ô vuông sắc cạnh. Aladin chọn
+   `pixelated` chính vì lý do đó — hiện đúng sự thật là "hết dữ liệu rồi".
+   Chúng ta chọn ngược lại vì trang này là nơi người đọc phổ thông ngắm bầu
+   trời, và họ gặp cảnh vỡ ô ở mức phóng BÌNH THƯỜNG nhiều hơn hẳn ở mức
+   phóng tới hạn.
+   --------------------------------------------------------------------------- */
+.aladin-container canvas {
+  image-rendering: auto !important;
+}
+

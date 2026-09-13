@@ -29,22 +29,35 @@ export async function AuthShell({
   return (
     <div className="grid min-h-[calc(100dvh-4rem)] lg:grid-cols-2">
       {/* Cột trái là flex dọc chứ không căn giữa cả khối: footer phải neo ở
-          đáy cột, không bị kéo vào giữa và dính đáy form. */}
-      <div className="flex flex-col px-6 py-10">
+          đáy cột, không bị kéo vào giữa và dính đáy form.
+
+          `[@media(max-height:820px)]` rải trên bốn khoảng cách dọc: đây là
+          lỗi CHIỀU CAO cửa sổ, không phải bề ngang. Trên cùng một laptop
+          1355px ngang, cửa sổ cao 900px thì form vừa khít, cửa sổ cao 600px
+          thì phải cuộn mới thấy nút "Đăng nhập" — mà một form đăng nhập bắt
+          cuộn để bấm nút chính là form hỏng. Mọi breakpoint mặc định của
+          Tailwind đều đo bề ngang nên không cái nào bắt được ca này.
+
+          Nén bằng KHOẢNG CÁCH và một bậc cỡ tiêu đề, không đụng vào cỡ chữ
+          của nhãn hay ô nhập: chỗ tiết kiệm được nằm ở khoảng trống, còn thu
+          nhỏ ô nhập thì đổi lấy vài chục pixel bằng chính khả năng gõ đúng. */}
+      <div className="flex flex-col px-6 py-10 [@media(max-height:820px)]:py-5">
         <div className="flex flex-1 items-center justify-center">
           <div className="w-full max-w-sm">
             <Link href="/" className="lg:hidden">
               <Logo />
             </Link>
 
-            <h1 className="mt-8 font-display text-4xl font-bold tracking-tight lg:mt-0">
+            <h1 className="mt-8 font-display text-4xl font-bold tracking-tight lg:mt-0 [@media(max-height:820px)]:text-3xl">
               {title}
             </h1>
-            <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+            <p className="mt-3 text-sm leading-relaxed text-muted-foreground [@media(max-height:820px)]:mt-2">
               {subtitle}
             </p>
 
-            <div className="mt-8">{children}</div>
+            <div className="mt-8 [@media(max-height:820px)]:mt-5">
+              {children}
+            </div>
           </div>
         </div>
 
@@ -61,7 +74,7 @@ export async function AuthShell({
             trông như chữ bị tràn chứ không như một hàng hai phần. Tách làm hai
             nhóm thì lúc chật, chỗ gãy rơi vào ĐÚNG khe giữa hai nhóm: bản
             quyền một dòng, hai liên kết một dòng, cả hai đều trọn vẹn. */}
-        <footer className="mx-auto mt-10 w-full max-w-sm border-t pt-5 text-xs text-muted-foreground/70">
+        <footer className="mx-auto mt-10 w-full max-w-sm border-t pt-5 text-xs text-muted-foreground/70 [@media(max-height:820px)]:mt-6 [@media(max-height:820px)]:pt-3.5">
           <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-2">
             <p>© {new Date().getFullYear()} Sciencepedia</p>
 

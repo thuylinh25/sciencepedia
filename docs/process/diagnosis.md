@@ -548,3 +548,33 @@ luận về URL** — `404` nói về cái URL, còn đứt kết nối chỉ n�
 
 **Một phép kiểm báo sai ba phần tư thì tệ hơn không có phép kiểm nào**: nó dạy
 người đọc kết quả bỏ qua chính nó, và lần nó nói đúng sẽ bị bỏ qua cùng.
+
+---
+
+## `.next` cũ nói dối, và nó nói dối rất thuyết phục
+
+Chốt 2026-09-13.
+
+Ảnh bầu trời bị báo mờ. Truy ra được nguyên nhân thật — chính CSS của Aladin
+Lite đặt `image-rendering: pixelated` lên `.aladin-container canvas` — rồi thêm
+một luật đè trong `globals.css`, build, và `grep` trong `.next/static/css`:
+**không thấy luật đâu cả.**
+
+Từ đó suýt đi vào một cuộc điều tra sai hoàn toàn: thêm luật mồi
+`.zz-sentinel-xyz` → cũng không thấy; phát hiện `.auth-aside` cũng không có
+trong bản build dù nó đã chạy trên production nhiều ngày. Kết luận đang thành
+hình là "Tailwind v4 đang cắt bớt luật CSS của mình".
+
+Sai. Thứ chứng minh điều đó chỉ tốn một lệnh: chạy thẳng `globals.css` qua
+đúng `@tailwindcss/postcss` của dự án bằng `node`. Kết quả có đủ cả ba luật,
+202 KB — trong khi tệp trong `.next` chỉ 155 KB. Nhìn lại `mtime` mới thấy tệp
+CSS **không hề được ghi lại** ở hai lượt build cuối. `.next` bị kẹt (trên
+Windows + OneDrive, dấu hiệu là những thư mục `.next-stale-*` nằm cạnh). Dời
+`.next` đi rồi build lại: hash tệp đổi, ba luật có mặt đầy đủ.
+
+Quy tắc: **`.next` là kết quả của một quá trình có cache, không phải bằng
+chứng về mã nguồn.** Trước khi kết luận công cụ build đang ăn mất thứ mình
+viết, hãy chạy chính bộ biên dịch đó trên chính tệp nguồn đó — một lệnh, không
+qua cache, và nó trả lời dứt điểm. Dấu hiệu nhận biết rẻ nhất: tên tệp trong
+`.next/static/css` là hash nội dung; **nội dung đổi mà hash không đổi thì bản
+build không phải của lần sửa vừa rồi.**
