@@ -79,9 +79,22 @@ export async function ArticleCard({
         className,
       )}
     >
+      {/* Nền gần đen chứ không `bg-muted`, và ảnh `object-contain`.
+
+          Lý do y hệt thứ đã chốt ở `planet-gallery.tsx`: `cover` phóng ảnh
+          cho phủ kín khung rồi xén phần thừa, nên một thiên thể hình cầu
+          trong khung 16/10 bị cắt cụt trên dưới — ảnh Mặt Trời mất hẳn hai
+          chỏm. Một thẻ giới thiệu bài về Mặt Trời mà không cho thấy trọn
+          Mặt Trời thì hỏng đúng việc nó sinh ra để làm.
+
+          `#04060e` là nền của phần lớn ảnh thiên văn trong kho (ảnh NASA
+          chụp trên nền vũ trụ), nên vành letterbox không đọc ra là
+          letterbox. Với ảnh nền sáng — sơ đồ giải phẫu, biểu đồ — vành ấy
+          có thấy được, và đó là đánh đổi đã chọn: thà thấy vành còn hơn
+          mất nội dung hình. */}
       <div
         className={cn(
-          "relative overflow-hidden bg-muted",
+          "relative overflow-hidden bg-[#04060e]",
           isHero ? "aspect-[16/10] md:aspect-auto md:w-1/2" : "aspect-[16/10]",
         )}
       >
@@ -95,7 +108,7 @@ export async function ArticleCard({
                 : "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
             }
             fallbackColor={article.category.color}
-            className="object-cover transition-transform duration-500 group-hover:scale-[1.05]"
+            className="object-contain transition-transform duration-500 group-hover:scale-[1.05]"
           />
         ) : (
           <div

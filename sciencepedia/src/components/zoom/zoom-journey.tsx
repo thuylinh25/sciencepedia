@@ -6,7 +6,7 @@ import { useLocale, useTranslations } from "next-intl";
 import { ChevronDown, ChevronUp, ExternalLink, Loader2 } from "lucide-react";
 
 import { Link } from "@/i18n/navigation";
-import { PLANETS } from "@/lib/solar-data";
+import { EARTH_CLOUDS_TEXTURE, PLANETS } from "@/lib/solar-data";
 import { ZOOM_LEVELS, stepRatio, type ZoomLevel } from "@/lib/zoom-levels";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -122,9 +122,30 @@ function LevelScene({
             texture: earth.texture,
             fallbackColor: earth.color,
             axialTilt: earth.axialTilt,
+            clouds: EARTH_CLOUDS_TEXTURE,
+            /* Xanh lam nhạt, cường độ dưới 1.
+
+               Màu lấy theo thứ gây ra nó: khí quyển sáng ở rìa vì phân tử khí
+               tán xạ ánh sáng bước sóng ngắn mạnh hơn — cùng cơ chế làm bầu
+               trời xanh. Nên một quầng xanh lam là mô tả đúng, không phải một
+               lựa chọn màu.
+
+               0,85 chứ không 1: ở cường độ đầy, vành sáng bắt đầu đè lên
+               đường bờ biển ở rìa đĩa và nuốt mất chi tiết đúng chỗ mắt hay
+               nhìn nhất. */
+            atmosphere: { color: "#6ba8ff", intensity: 0.85 },
           }}
           spinning
-          distance={3.2}
+          /* 3,2 → 3,6: lùi camera ra chừng 12%, tức đĩa Trái Đất nhỏ đi chừng
+             ấy trong khung.
+
+             Lùi camera chứ không thu nhỏ quả cầu: thu nhỏ mesh sẽ kéo theo cả
+             vỏ mây và vỏ khí quyển phải tính lại bán kính, và ba con số phải
+             đi cùng nhau mãi mãi. Đổi chỗ đứng thì chỉ một con số đổi.
+
+             Nó cũng chừa chỗ cho quầng khí quyển: ở 3,2 vành sáng chạm sát
+             mép khung trên và dưới, nên thứ vừa thêm vào lại bị xén. */
+          distance={3.6}
         />
       ) : null;
     default:

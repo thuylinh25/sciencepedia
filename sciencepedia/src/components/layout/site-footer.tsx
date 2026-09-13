@@ -130,11 +130,19 @@ export async function SiteFooter() {
      bách khoa, độ chính xác của chính dải số liệu này là thứ nó đang quảng
      cáo; làm tròn lên ở đó là tự mâu thuẫn. Đây cũng đúng tinh thần "không
      marketing quá đà" mà yêu cầu nêu ra. */
+  /* Mỗi ô một màu nhận dạng riêng, đặt trên ô icon chứ KHÔNG trên con số.
+
+     Con số phải giữ đúng một màu chữ chính ở cả bốn ô: chúng là bốn phép đếm
+     cùng loại, và tô mỗi số một màu sẽ ngụ ý chúng khác hạng nhau. Màu đi vào
+     ô icon — chỗ nó làm được việc phân biệt mà không nói sai điều gì.
+
+     Bốn màu này trùng bảng màu đã dùng cho thẻ công cụ ở trang chủ
+     (`interactive-explore.tsx`), nên toàn site chỉ có MỘT bộ màu phụ. */
   const figures = [
-    { n: stats.articles, label: t("statArticles"), icon: FileText },
-    { n: tools.length - 1, label: t("statTools"), icon: Compass },
-    { n: stats.categories, label: t("statFields"), icon: Layers },
-    { n: stats.tags, label: t("statTopics"), icon: Tags },
+    { n: stats.articles, label: t("statArticles"), icon: FileText, tint: "#3b82f6" },
+    { n: tools.length - 1, label: t("statTools"), icon: Compass, tint: "#10b981" },
+    { n: stats.categories, label: t("statFields"), icon: Layers, tint: "#8b5cf6" },
+    { n: stats.tags, label: t("statTopics"), icon: Tags, tint: "#f59e0b" },
   ].map((figure) => ({ ...figure, value: formatMeasure(figure.n, locale) }));
 
   const linkClass =
@@ -144,37 +152,78 @@ export async function SiteFooter() {
     "text-xs font-semibold tracking-widest text-foreground/80 uppercase";
 
   return (
-    <footer className="mt-24 border-t bg-muted/30">
+    /* Lề trên 96px → 56px (72px từ sm).
+
+       96px là khoảng thở hợp lý sau một bài dài, nhưng nó là một con số CỐ
+       ĐỊNH áp cho mọi trang, kể cả những trang có nội dung ngắn. Trên trang
+       quản trị Người dùng — một bảng vài dòng — 96px lề cộng 40px padding của
+       khung thành gần 140px đen trước dải số liệu, và người xem đọc nó là
+       "trang bị thiếu nội dung" chứ không phải "bố cục thoáng".
+
+       56px vẫn tách được footer khỏi nội dung (nó còn có thêm đường viền trên
+       và nền khác màu để làm việc đó), mà không tạo ra lỗ hổng trên trang
+       ngắn. Nới lại ở sm trở lên vì màn hình rộng chịu được khoảng trống
+       lớn hơn trước khi nó đọc ra là thiếu sót. */
+    <footer className="mt-14 border-t bg-muted/30 sm:mt-18">
       {/* Dải số liệu đứng ĐẦU footer, trên các cột liên kết.
 
           Nó trả lời "đây là nền tảng cỡ nào" — câu hỏi đến trước "đi đâu tiếp",
           và người cuộn hết một trang nội dung thì đang ở đúng lúc để hỏi nó. */}
       <div className="border-b">
         <div className="container-page py-10">
-          <p className={headingClass}>{t("statsTitle")}</p>
-          <dl className="mt-5 grid grid-cols-2 gap-x-6 gap-y-7 sm:grid-cols-4">
+          {/* Vạch vàng ngắn phía trên tiêu đề.
+
+              Dải này là khối duy nhất trong footer mang số liệu, và nó nằm
+              ngay dưới một trang nội dung dài — không có gì đánh dấu chỗ bắt
+              đầu thì mắt đọc tiếp như thể vẫn còn trong bài. Một vạch màu
+              thương hiệu rẻ hơn một đường kẻ ngang cả bề ngang, và nó không
+              cắt trang làm đôi. */}
+          <span aria-hidden className="block h-1 w-12 rounded-full bg-primary" />
+          <p className={`${headingClass} mt-4`}>{t("statsTitle")}</p>
+
+          {/* Bốn THẺ thay cho bốn cột chữ trần.
+
+              Bản cũ đặt icon nhỏ nằm trên con số, không viền, không nền. Ở
+              bề ngang lớn, bốn cụm chữ trôi trong một dải rộng thì mắt không
+              nhóm chúng lại thành một bộ — chúng đọc ra như bốn mẩu rời rạc
+              lạc vào đầu footer. Một cái viền mờ quanh mỗi ô làm đúng việc
+              nhóm ấy, và đây là chỗ hiếm hoi mà thêm đường nét lại giảm nhiễu.
+
+              Icon chuyển sang ô bo tròn có nền màu, đặt CẠNH con số thay vì
+              phía trên: hàng ngang icon–số ngắn hơn cột dọc icon–số–nhãn, nên
+              thẻ thấp đi và cả dải bớt chiếm chỗ. */}
+          <dl className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {figures.map((figure) => (
-              <div key={figure.label} className="group">
-                <dt className="sr-only">{figure.label}</dt>
-                <figure.icon
-                  className="mb-2.5 size-5 text-muted-foreground transition-colors group-hover:text-primary-strong"
-                  aria-hidden
-                />
-                {/* Số to hơn ~25% (3xl/4xl → 4xl/5xl) và dùng màu chữ chính
-                    thay vì màu mặc định: dải này tồn tại để người đọc TIN, mà
-                    một con số mờ ngang với nhãn của nó thì không thuyết phục
-                    được ai. Nhãn giữ nguyên màu phụ để tương phản giữa hai
-                    tầng rõ hơn, không phải để nhãn chìm đi. */}
-                <dd>
-                  <CountUp
-                    value={figure.n}
-                    formatted={figure.value}
-                    className="block font-display text-4xl font-bold tracking-tight text-foreground tabular-nums transition-colors group-hover:text-primary-strong sm:text-5xl"
-                  />
-                  <span className="mt-1.5 block text-sm text-muted-foreground">
-                    {figure.label}
+              <div
+                key={figure.label}
+                className="group rounded-2xl border bg-card/50 p-5 transition-colors hover:border-primary/40"
+              >
+                <div className="flex items-center gap-4">
+                  <span
+                    aria-hidden
+                    className="flex size-12 shrink-0 items-center justify-center rounded-xl"
+                    style={{ backgroundColor: figure.tint }}
+                  >
+                    <figure.icon className="size-5 text-white" />
                   </span>
-                </dd>
+
+                  {/* `flex-col-reverse` để MÃ đúng thứ tự ngữ nghĩa (dt trước
+                      dd) mà MẮT vẫn thấy con số trước nhãn. Bản cũ giải bài
+                      này bằng một `dt` ẩn cộng một nhãn hiện, tức trình đọc
+                      màn hình nghe nhãn hai lần. */}
+                  <div className="flex min-w-0 flex-col-reverse">
+                    <dt className="mt-1 truncate text-sm text-muted-foreground">
+                      {figure.label}
+                    </dt>
+                    <dd>
+                      <CountUp
+                        value={figure.n}
+                        formatted={figure.value}
+                        className="block font-display text-4xl font-bold tracking-tight text-foreground tabular-nums transition-colors group-hover:text-primary-strong"
+                      />
+                    </dd>
+                  </div>
+                </div>
               </div>
             ))}
           </dl>

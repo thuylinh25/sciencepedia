@@ -147,6 +147,19 @@ const COMMONS_FILE = "https://commons.wikimedia.org/wiki/File:";
 export const SURFACE_HIPS_ORIGIN = "https://alasky.cds.unistra.fr";
 const SURFACE_BASE = `${SURFACE_HIPS_ORIGIN}/Planets`;
 
+/**
+ * Bản đồ mây của Trái Đất — mây trắng trên nền đen, dùng làm `alphaMap`.
+ *
+ * Cùng bộ Solar System Scope với các bản đồ bề mặt, cùng giấy phép CC BY 4.0,
+ * nên `TEXTURE_CREDIT` ngay dưới đây phủ luôn cho nó — không cần thêm một
+ * dòng ghi công thứ hai.
+ *
+ * Đường băng `e/ed` tra từ API Commons ngày 2026-09-13, không đoán: lượt
+ * đoán đầu tiên ra `2/2c` và trả 404. Bản gốc 2048×1024, lấy thumb 1280 cho
+ * cùng cỡ với các bản đồ bề mặt khác.
+ */
+export const EARTH_CLOUDS_TEXTURE = `${TEXTURE_BASE}/e/ed/Solarsystemscope_texture_2k_earth_clouds.jpg/1280px-Solarsystemscope_texture_2k_earth_clouds.jpg`;
+
 export const TEXTURE_CREDIT = {
   name: "Solar System Scope",
   url: "https://www.solarsystemscope.com/textures/",

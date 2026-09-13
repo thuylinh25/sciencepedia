@@ -41,7 +41,15 @@ export default async function AdminLayout({
   }
 
   return (
-    <div className="container-page grid gap-8 py-10 lg:grid-cols-[15rem_minmax(0,1fr)]">
+    /* `content-start` để hai cột KHÔNG bị kéo cao bằng nhau.
+
+       Mặc định của grid là `stretch`: cột thanh bên và cột nội dung luôn cao
+       bằng cột dài hơn. Trên trang Người dùng, thanh bên (6 mục) cao hơn cái
+       bảng một dòng, nên chính nó là thứ định chiều cao cả khối — và phần
+       thừa ở cột nội dung là khoảng trắng không ai đặt ra.
+
+       `py-10` → `py-8`: cùng lý do với lề footer ngay bên cạnh. */
+    <div className="container-page grid content-start gap-8 py-8 lg:grid-cols-[15rem_minmax(0,1fr)]">
       <AdminSidebar role={session.user.role} />
       <div className="min-w-0">{children}</div>
     </div>
