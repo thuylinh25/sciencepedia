@@ -26,7 +26,8 @@
     "spaceMap": "Sky map",
     "earthLive": "Earth from L1",
     "modelsLibrary": "3D model library",
-    "searchPlaceholder": "Search articles and topics…"
+    "searchPlaceholder": "Search articles and topics…",
+    "backHome": "Back to home"
   },
   "auth": {
     "login": "Sign in",
@@ -67,7 +68,10 @@
     "resetExpired": "That link has expired. Please request a new one.",
     "resetInvalid": "That link is invalid or has already been used.",
     "tooManyRequests": "Too many attempts. Wait a few minutes and try again.",
-    "networkError": "Could not connect. Check your network and try again."
+    "networkError": "Could not connect. Check your network and try again.",
+    "or": "Or",
+    "continueWithProvider": "Continue with {provider}",
+    "loggingIn": "Signing in…"
   },
   "home": {
     "heroEyebrow": "An open science encyclopedia",
@@ -383,7 +387,7 @@
   },
   "footer": {
     "about": "About Sciencepedia",
-    "aboutText": "Data and imagery from NASA, ESA, NOIRLab, Wikimedia Commons and other open sources.",
+    "aboutText": "Sciencepedia – a science encyclopedia where accurate knowledge is told beautifully and clearly.",
     "explore": "Explore",
     "legal": "Legal",
     "privacy": "Privacy policy",
@@ -398,7 +402,7 @@
     "statTools": "Interactive tools",
     "statFields": "Fields of research",
     "statTopics": "Topics to explore",
-    "licenceNote": "Some content is released under CC BY-SA 4.0 or a compatible licence. The source and licence are stated on each content page."
+    "licenceNote": "Data and imagery from NASA, ESA, Aladin, NOIRLab, Wikimedia Commons and other open sources."
   },
   "galaxy": {
     "title": "The Milky Way",
@@ -553,21 +557,17 @@
         "body": "Find galaxies, nebulae and planetary surfaces on real survey imagery.",
         "cta": "Open the map",
         "metaA": "Real sky imagery",
-        "metaB": "18 suggested targets"
+        "metaB": "{count} suggested targets"
       },
       "earthLive": {
-        "title": "Earth from L1",
+        "title": "Earth seen from point L1",
         "body": "Full-disk images of Earth captured from the L1 Lagrange point by NASA's DSCOVR spacecraft.",
         "cta": "View live",
         "metaA": "NASA EPIC imagery",
         "metaB": "One full rotation a day"
       }
     },
-    "eyebrow": "Explore • Models • Simulations",
-    "badges": {
-      "start": "🚀 Start here",
-      "highlight": "⭐ Featured"
-    }
+    "eyebrow": "Explore • Models • Simulations"
   },
   "earthLive": {
     "title": "Earth from the L1 point",

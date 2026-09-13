@@ -189,6 +189,43 @@ rõ. Giữ mạch lập luận, cắt phần trang trí.
 - **Dòng dẫn nguồn và ghi công ảnh** ở cuối bài.
 - **Tối thiểu 3 link nội bộ** resolve được.
 
+### Rút gọn là một lượt viết, nên nó phải qua gate accuracy lần nữa
+
+Chốt 2026-09-12, sau khi mẫu lỗi này xảy ra **lần thứ hai**.
+
+Cám dỗ tự nhiên là coi rút gọn như thao tác hình thức: chữ ít đi, nội dung giữ
+nguyên, nên duyệt một lần trước khi rút là đủ. Hai lượt đo nói ngược lại.
+
+- `dien-tich-va-dong-dien` — rút 1.016 → 588 từ. Bản nén **tự sinh ra** một lỗi
+  S2 mà bản dài không có: nó viết hai dây dẫn song song "HÚT NHAU", một mệnh đề
+  về chiều lực mà không nguồn nào phát biểu.
+- `mat-trang` — rút 842 → 600 từ. Câu bản dài là "Ở đáy **vài** hố **gần cực** —
+  nơi ánh nắng chưa bao giờ chạm tới — vẫn còn băng nước cổ." Lượt rút xoá cùng
+  lúc lượng từ *vài* và vị trí *gần cực*, rồi để câu đứng ngay sau "bề mặt chi
+  chít hố va chạm". Kết quả đọc ra thành: hố nào tối cũng có băng. Nguồn không
+  nói thế — s1 gắn băng với **vùng cực**.
+
+Hai lần, cùng một cơ chế: **xoá định ngữ hạn định để tiết kiệm vài chữ.** Định
+ngữ là thứ trông giống chữ đệm nhất và chịu lực nhiều nhất, nên nó luôn là thứ
+đầu tiên bị cắt và luôn là thứ đắt nhất khi mất.
+
+Lần hai còn cho thêm một dữ kiện: câu ấy **không sai một mình**. Nó sai vì chỗ
+nó đứng. Nên phép kiểm không thể là đọc từng câu — phải đọc câu trong ngữ cảnh
+hai câu kề.
+
+**Quy tắc:**
+
+1. Rút gọn xong thì bài đi qua gate accuracy **một lần nữa**, trên đúng văn bản
+   sau khi rút. Chữ ký approve không được nằm trên một văn bản đã bị thay.
+2. Thứ tự bắt buộc là **rút trước, duyệt sau** — không phải duyệt bản dài rồi
+   rút cho vừa trần.
+3. Câu thay thế do `science-editor` viết nguyên văn, không phải bản diễn đạt
+   lại. Cùng lý do đã chốt ở mục đính chính bên dưới.
+
+**Vì sao không nới trần thay vì thêm một vòng duyệt.** Trần 2–3 phút là quyết
+định về sản phẩm, còn đây là lỗi ở quy trình. Nới trần chữa triệu chứng và bỏ
+lại nguyên cơ chế — mọi lượt sửa độ dài về sau vẫn sinh lỗi y như vậy.
+
 **Ngắn nhưng không cụt.** Sau khi rút, bài vẫn phải trả lời trọn vẹn câu hỏi ở tiêu
 đề. Nếu 3 phút không đủ để trả lời tử tế thì chủ đề đó quá rộng cho một bài — tách
 thành hai bài, đừng viết một bài dài.
@@ -370,3 +407,46 @@ Rua" hay "Lạp Hộ" vẫn ra. Bỏ khỏi nhãn không có nghĩa là bỏ kh�
 Nhãn phải nói rõ nó là nhãn của cái gì. Một dòng chỉ ghi "Orion" dưới tên thẻ
 là vô nghĩa — người đọc không biết đó là chòm sao hay một tên gọi khác của
 chính thiên thể ấy, nên nhãn đứng trước: "Chòm sao Orion".
+
+## Thẻ thiên thể trả lời bốn câu, theo thứ tự
+
+Chốt 2026-09-12. Mô tả (`blurb` trong `src/lib/sky-data.ts`) đi theo khuôn:
+
+> **là gì → ở đâu → cách bao xa → vì sao đáng xem**
+
+Trước đó mỗi thẻ tự chọn kể cái gì, và đo ra thì **9 trong 11 thẻ thiếu ít nhất
+một phần**: bảy thẻ không nói cách bao xa, sáu thẻ không nói nằm ở chòm nào.
+Phần thiếu không lộ ra trên giao diện — thẻ vẫn đọc trôi chảy — nó chỉ khiến
+người mở bản đồ lần đầu không quyết được có đáng bấm vào hay không.
+
+**"Ở đâu" luôn là tên chòm sao dạng Latin**, theo mục "Tên thiên thể" ở trên.
+Cùng lượt đã dọn hai chỗ sót của quy ước cũ: `galactic-centre` ghi "chòm Nhân
+Mã", M87 ghi "cụm Xử Nữ".
+
+**Khoảng cách là con số lên trang, nên nó có nguồn.** Cả chín lấy từ NASA, đọc
+thật ngày 2026-09-12 — bảy từ Hubble Messier Catalog, Sgr A* từ trang riêng.
+Nguồn ghi trong chú thích của trường `blurb`, không ghi ở đây, để nó nằm cạnh
+chỗ người sau sẽ sửa.
+
+**Hai chỗ phải giữ mệnh đề dè dặt:**
+
+- **M45 = 445 năm ánh sáng**, kèm "chưa được thống nhất hoàn toàn" — chính
+  trang NASA viết "not universally agreed upon". Con số cũ trong kho là 440 và
+  không có nguồn. Mảng `facts` của thẻ đã đổi theo: để 440 ở đó trong khi blurb
+  ghi 445 là một thẻ tự mâu thuẫn trong chính nó.
+- **Betelgeuse = 500–700 năm ánh sáng**, không phải một con số. Bốn trang của
+  **cùng một cơ quan** cho bốn giá trị: 548, 642, 650, 700. Chọn một rồi in ra
+  như số đã chốt là dựng lên một độ chính xác không tồn tại — cùng họ với
+  "ước lượng điểm không đặt vào tiêu đề" ở trên.
+
+### Con số quảng cáo phải suy ra từ dữ liệu
+
+Cùng lượt phát hiện thẻ "Bản đồ bầu trời" trên trang chủ ghi **"18 điểm đến
+gợi ý"** trong khi trang thật mời 21 chỗ bấm (11 thiên thể sâu + Mặt Trời + 8
+hành tinh + Mặt Trăng). Con số ấy đúng vào lúc viết rồi lạc hậu im lặng, vì nó
+sống trong tệp ngôn ngữ còn danh mục sống trong tệp dữ liệu và không gì buộc
+hai bên đi cùng nhau.
+
+Nay nhãn nhận `{count}` và component tính `SKY_TARGETS.length + PLANETS.length + 2`.
+**Quy tắc chung: một con số mô tả chính sản phẩm thì không được có bản sao thứ
+hai.** Thêm một thiên thể là nhãn tự đúng, không cần ai nhớ.

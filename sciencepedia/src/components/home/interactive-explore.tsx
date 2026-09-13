@@ -5,6 +5,8 @@ import { ArrowRight } from "lucide-react";
 
 import { Link } from "@/i18n/navigation";
 import { StaggerGroup, StaggerItem } from "@/components/motion/reveal";
+import { SKY_TARGETS } from "@/lib/sky-data";
+import { PLANETS } from "@/lib/solar-data";
 import { cn } from "@/lib/utils";
 
 /**
@@ -48,17 +50,6 @@ type ExploreCard = {
   /** Màu nhận dạng, trùng với màu chủ đạo của chính mô hình đó */
   accent: string;
   /**
-   * Huy hiệu góc trên, nếu có.
-   *
-   * Chỉ hai giá trị, và cả hai đều là **phán quyết biên tập** chứ không phải
-   * phép đo. Cố ý không có nhãn kiểu "🔥 Phổ biến": toàn site mới có 141 lượt
-   * đọc, nên gắn nhãn phổ biến là bịa ra một dữ liệu mình không có. Nhãn sai
-   * kiểu đó rẻ tiền đúng một lần, rồi người đọc thôi tin mọi nhãn khác.
-   *
-   * `start` — chỗ nên vào trước. `highlight` — thứ đáng xem nhất.
-   */
-  badge?: "start" | "highlight";
-  /**
    * Đích là một tệp tĩnh trong `/public`, không phải route của ứng dụng.
    *
    * Phải render bằng thẻ `<a>` thường chứ không bằng `Link` của next-intl:
@@ -85,27 +76,47 @@ type ExploreCard = {
  * duy nhất đổi mỗi ngày. Ngân Hà và Vũ trụ xuống cuối không phải vì kém quan
  * trọng mà vì trừu tượng nhất — người vào lần đầu cần một chỗ bám trước đã.
  */
+/**
+ * Số điểm đến mà trang `/space-map` thật sự mời người xem bấm vào: danh mục
+ * thiên thể sâu của bản đồ bầu trời, cộng Mặt Trời, tám hành tinh và Mặt
+ * Trăng trong dải ảnh bề mặt ngay bên dưới.
+ *
+ * TÍNH RA, không viết tay. Nhãn cũ ghi cứng "18 điểm đến" trong tệp ngôn
+ * ngữ — đúng với một phiên bản danh mục đã qua, và từ đó lạc hậu im lặng:
+ * thêm một thiên thể vào `SKY_TARGETS` thì nhãn sai mà không có gì kêu lên.
+ * Đây đúng loại lỗi mà docs/content-rules.md mở đầu bằng — số trên trang
+ * phải bằng số trong thực tế, và cách rẻ nhất để giữ điều đó là đừng có hai
+ * bản sao của cùng một con số.
+ */
+const SKY_MAP_DESTINATIONS = SKY_TARGETS.length + PLANETS.length + 2;
+
 const CARDS: ExploreCard[] = [
   {
     /*
-     * Thẻ CHỦ LỰC, và nó đứng đầu vì lưới đọc theo thứ tự nguồn.
+     * Thẻ CHỦ LỰC. Đứng đầu vì lưới đọc theo thứ tự nguồn, và to hơn năm thẻ
+     * còn lại vì sáu công cụ KHÔNG ngang nhau về mức độ quen thuộc — người
+     * vào lần đầu cần một chỗ hiển nhiên để bắt đầu chứ không phải sáu lựa
+     * chọn cùng cỡ.
      *
-     * Trước đây sáu thẻ có trọng số thị giác ngang nhau, và chú thích của lưới
-     * còn ghi rõ đó là chủ ý. Chủ ý ấy đổi: sáu công cụ KHÔNG ngang nhau về
-     * mức độ quen thuộc, và người vào lần đầu cần một chỗ hiển nhiên để bắt
-     * đầu chứ không phải sáu lựa chọn cùng cỡ. Hệ Mặt Trời là thứ ai cũng có
-     * sẵn một hình dung trong đầu, nên nó là cửa vào rẻ nhất.
+     * Đổi 2026-09-13 (yêu cầu của chủ sản phẩm): trước đây vị trí này là Hệ
+     * Mặt Trời 3D, với lý do "ai cũng có sẵn một hình dung trong đầu nên nó
+     * là cửa vào rẻ nhất". Bản đồ bầu trời thay chỗ vì nó là thứ DUY NHẤT
+     * trong sáu công cụ cho xem ảnh quan sát thật thay vì mô hình dựng —
+     * và vì nó dẫn tới 21 điểm đến, nhiều hơn hẳn các thẻ còn lại.
      *
-     * Huy hiệu đổi từ "highlight" sang "start": kích thước đã nói nó nổi bật
-     * rồi, nên nhãn nên nói thứ kích thước KHÔNG nói được — rằng đây là chỗ
-     * nên vào trước. Thẻ hành trình thu phóng nhường lại nhãn ấy.
+     * Ba thẻ mô hình 3D nay xếp liền nhau ở hàng dưới, từ lớn tới nhỏ:
+     * Vũ trụ → Dải Ngân Hà → Hệ Mặt Trời. Thứ tự ấy là một thang quy mô,
+     * nên hàng dưới tự đọc ra thành một mạch chứ không phải ba thẻ rời.
+     *
+     * Huy hiệu góc thẻ đã BỎ HẲN (2026-09-12). Thứ tự và kích thước phải tự
+     * nói ra việc nên vào đâu trước — một nhãn chữ dán thêm chỉ cần thiết khi
+     * bố cục không nói nổi điều đó.
      */
-    id: "solarSystem",
-    href: "/solar-system",
-    image: "/images/explore/solar-system.jpg",
-    emoji: "☀️",
-    accent: "#f59e0b",
-    badge: "start",
+    id: "skyMap",
+    href: "/space-map",
+    image: "/images/explore/sky-map.jpg",
+    emoji: "⭐",
+    accent: "#2dd4bf",
     feature: true,
   },
   {
@@ -136,15 +147,11 @@ const CARDS: ExploreCard[] = [
     accent: "#34d399",
   },
   {
-    id: "skyMap",
-    href: "/space-map",
-    image: "/images/explore/sky-map.jpg",
-    emoji: "⭐",
-    accent: "#2dd4bf",
-    // Nhãn "Nổi bật" chuyển từ hành trình thu phóng sang đây. Chỉ MỘT thẻ
-    // được đeo nó cùng lúc với thẻ chủ lực: hai nhãn nhấn mạnh trong một lưới
-    // sáu thẻ thì không nhãn nào còn nhấn mạnh được gì.
-    badge: "highlight",
+    id: "universe",
+    href: "/universe",
+    image: "/images/explore/universe.jpg",
+    emoji: "🌠",
+    accent: "#c084fc",
   },
   {
     id: "milkyWay",
@@ -154,11 +161,11 @@ const CARDS: ExploreCard[] = [
     accent: "#818cf8",
   },
   {
-    id: "universe",
-    href: "/universe",
-    image: "/images/explore/universe.jpg",
-    emoji: "🌠",
-    accent: "#c084fc",
+    id: "solarSystem",
+    href: "/solar-system",
+    image: "/images/explore/solar-system.jpg",
+    emoji: "☀️",
+    accent: "#f59e0b",
   },
 ];
 
@@ -296,29 +303,6 @@ export async function InteractiveExplore() {
                 }}
               />
 
-              {/* Huy hiệu góc trên TRÁI.
-
-                  Trước đây nó ở góc phải, và ở đó nó là thứ mắt gặp SAU CÙNG
-                  trên thẻ — trong khi nội dung của nó ("Nên bắt đầu ở đây") là
-                  thứ chỉ có giá trị nếu đọc TRƯỚC. Chữ Việt đọc từ trái sang,
-                  nên góc trái trên là điểm dừng đầu tiên của mắt trong một
-                  khối hình chữ nhật.
-
-                  Dùng màu nhận dạng của chính card chứ không dùng một màu
-                  chung: nó phải đọc ra như một phần của card, không như một
-                  nhãn dán từ bên ngoài. */}
-              {card.badge && (
-                <span
-                  className="absolute top-4 left-4 z-10 inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-[11px] font-medium whitespace-nowrap backdrop-blur-md"
-                  style={{
-                    color: card.accent,
-                    borderColor: `${card.accent}55`,
-                    backgroundColor: `${card.accent}1a`,
-                  }}
-                >
-                  {t(`badges.${card.badge}`)}
-                </span>
-              )}
 
               <div className="relative">
                 {/* Icon nhích lên và sáng viền khi rê chuột — chuyển động nhỏ
@@ -339,7 +323,7 @@ export async function InteractiveExplore() {
                 </p>
 
                 {/* Dòng dữ liệu: hai mẩu, đều là sự thật KIỂM ĐƯỢC về chính mô
-                    hình đó — 8 hành tinh, 4 nhánh xoắn, 18 điểm đến — chứ
+                    hình đó — 8 hành tinh, 4 nhánh xoắn — chứ
                     không phải con số quảng cáo. Bản mô tả đề nghị "200+ vệ
                     tinh" cho Hệ Mặt Trời và "cập nhật gần thời gian thực" cho
                     Trái Đất L1; cả hai đều sai: mô hình có 7 vệ tinh, và NASA
@@ -353,7 +337,9 @@ export async function InteractiveExplore() {
                           ·
                         </span>
                       )}
-                      {t(`cards.${card.id}.${key}`)}
+                      {t(`cards.${card.id}.${key}`, {
+                        count: SKY_MAP_DESTINATIONS,
+                      })}
                     </li>
                   ))}
                 </ul>

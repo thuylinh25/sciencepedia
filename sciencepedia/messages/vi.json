@@ -26,7 +26,8 @@
     "spaceMap": "Bản đồ bầu trời",
     "earthLive": "Trái Đất từ L1",
     "modelsLibrary": "Thư viện mô hình 3D",
-    "searchPlaceholder": "Tìm kiếm bài viết, chủ đề…"
+    "searchPlaceholder": "Tìm kiếm bài viết, chủ đề…",
+    "backHome": "Về trang chủ"
   },
   "auth": {
     "login": "Đăng nhập",
@@ -67,7 +68,10 @@
     "resetExpired": "Liên kết đã hết hạn. Hãy xin một liên kết mới.",
     "resetInvalid": "Liên kết không hợp lệ hoặc đã được dùng.",
     "tooManyRequests": "Bạn đã thử quá nhiều lần. Chờ ít phút rồi thử lại.",
-    "networkError": "Không kết nối được. Kiểm tra mạng rồi thử lại."
+    "networkError": "Không kết nối được. Kiểm tra mạng rồi thử lại.",
+    "or": "Hoặc",
+    "continueWithProvider": "Tiếp tục với {provider}",
+    "loggingIn": "Đang đăng nhập…"
   },
   "home": {
     "heroEyebrow": "Bách khoa toàn thư khoa học mở",
@@ -383,7 +387,7 @@
   },
   "footer": {
     "about": "Về Sciencepedia",
-    "aboutText": "Dữ liệu và hình ảnh từ NASA, ESA, NOIRLab, Wikimedia Commons và các nguồn mở khác.",
+    "aboutText": "Sciencepedia – bách khoa toàn thư khoa học, nơi kiến thức chính xác được kể lại một cách đẹp đẽ và dễ hiểu.",
     "explore": "Khám phá",
     "legal": "Pháp lý",
     "privacy": "Chính sách riêng tư",
@@ -398,7 +402,7 @@
     "statTools": "Công cụ tương tác",
     "statFields": "Lĩnh vực nghiên cứu",
     "statTopics": "Chủ đề khám phá",
-    "licenceNote": "Một số nội dung được phát hành theo giấy phép CC BY-SA 4.0 hoặc các giấy phép tương thích. Nguồn và giấy phép được ghi rõ trên từng trang nội dung."
+    "licenceNote": "Dữ liệu và hình ảnh từ NASA, ESA, Aladin, NOIRLab, Wikimedia Commons và các nguồn mở khác."
   },
   "galaxy": {
     "title": "Ngân Hà",
@@ -553,21 +557,17 @@
         "body": "Tìm thiên hà, tinh vân và bề mặt hành tinh trên ảnh bầu trời thật.",
         "cta": "Mở bản đồ",
         "metaA": "Ảnh bầu trời thật",
-        "metaB": "18 điểm đến gợi ý"
+        "metaB": "{count} điểm đến gợi ý"
       },
       "earthLive": {
-        "title": "Trái Đất từ L1",
+        "title": "Trái Đất nhìn từ điểm L1",
         "body": "Ảnh toàn cảnh Trái Đất do vệ tinh DSCOVR của NASA chụp từ điểm Lagrange L1, cách 1,5 triệu km.",
         "cta": "Xem trực tiếp",
         "metaA": "Ảnh NASA EPIC",
         "metaB": "Mỗi ngày một vòng quay"
       }
     },
-    "eyebrow": "Khám phá • Mô hình • Mô phỏng",
-    "badges": {
-      "start": "🚀 Nên bắt đầu ở đây",
-      "highlight": "⭐ Nổi bật"
-    }
+    "eyebrow": "Khám phá • Mô hình • Mô phỏng"
   },
   "earthLive": {
     "title": "Trái Đất nhìn từ điểm L1",

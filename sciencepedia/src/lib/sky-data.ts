@@ -188,6 +188,45 @@ export type SkyTarget = {
   survey?: string;
   constellation: string;
   constellationEn: string;
+  /**
+   * Mô tả thẻ. Bốn phần, LUÔN theo thứ tự này:
+   *
+   *   là gì  →  ở đâu  →  cách bao xa  →  vì sao đáng xem
+   *
+   * Chốt 2026-09-12. Trước đó mỗi thẻ tự chọn kể cái gì, và kết quả là chín
+   * trong mười một thẻ thiếu ít nhất một phần: M87, Betelgeuse, Sgr A*, M1,
+   * M51, M104 và M13 không nói cách bao xa; M31, M45, M1, M51, M104 và M13
+   * không nói nằm ở chòm nào. Người mở bản đồ lần đầu hỏi đúng bốn câu ấy, và
+   * một thẻ trả lời ba câu thì phần thiếu không lộ ra — nó chỉ làm người đọc
+   * không quyết được có đáng bấm vào hay không.
+   *
+   * "Ở đâu" LUÔN là tên chòm sao dạng Latin, theo quy tắc đã chốt ở
+   * docs/content-rules.md, mục "Tên thiên thể". Cùng lượt này đã sửa
+   * `galactic-centre` từ "chòm Nhân Mã" về "chòm Sagittarius" và bỏ "cụm Xử
+   * Nữ" khỏi M87 — hai chỗ sót lại của quy ước cũ.
+   *
+   * ## Khoảng cách lấy ở đâu
+   *
+   * Toàn bộ từ NASA, đọc thật ngày 2026-09-12, không lấy từ trí nhớ:
+   *
+   *   M1 6.500 · M31 2,5 triệu · M45 445 · M51 31 triệu · M87 54 triệu
+   *   M104 28 triệu · M13 25.000  — science.nasa.gov, mục Hubble Messier Catalog
+   *   Sgr A* 26.000 — nasa.gov, trang Sagittarius A*
+   *
+   * Hai chỗ PHẢI giữ mệnh đề dè dặt, không được "dọn cho gọn":
+   *
+   * - **M45 = 445 năm ánh sáng.** Chính trang NASA viết "though this number is
+   *   not universally agreed upon". Con số cũ trong tệp này là 440 và không có
+   *   nguồn. Mảng `facts` cũng đã đổi theo — để 440 ở đó trong khi blurb ghi
+   *   445 là một thẻ tự mâu thuẫn trong chính nó, loại lỗi mà
+   *   docs/content/corrections.md gọi là "máy dò lỗi rẻ nhất".
+   *
+   * - **Betelgeuse = 500–700 năm ánh sáng.** Đây không phải sự lười biếng. Bốn
+   *   trang của CÙNG một cơ quan cho bốn con số: 548, 642, 650 và 700. Chọn
+   *   một trong bốn rồi in ra như số đã chốt là dựng lên một độ chính xác
+   *   không tồn tại — đúng thứ mà quy tắc "ước lượng điểm không đặt vào tiêu
+   *   đề" trong content-rules ngăn.
+   */
   blurb: string;
   blurbEn: string;
   /** Thiết bị tối thiểu để nhìn thấy — xem `Visibility` */
@@ -265,7 +304,7 @@ export const SKY_TARGETS: SkyTarget[] = [
     constellation: "Sagittarius",
     constellationEn: "Sagittarius",
     blurb:
-      "Vùng trung tâm của Dải Ngân Hà, ở hướng chòm Nhân Mã và cách Mặt Trời khoảng 26.000 năm ánh sáng. Đây là phần dày đặc sao và bụi nhất trên bầu trời — không phải toàn bộ thiên hà, mà là chỗ ta nhìn về khi nhìn vào lõi của nó.",
+      "Vùng trung tâm của Dải Ngân Hà, ở hướng chòm Sagittarius và cách Mặt Trời khoảng 26.000 năm ánh sáng. Đây là phần dày đặc sao và bụi nhất trên bầu trời — không phải toàn bộ thiên hà, mà là chỗ ta nhìn về khi nhìn vào lõi của nó.",
     blurbEn:
       "The central region of the Milky Way, towards the constellation Sagittarius and about 26,000 light-years from the Sun. It is the densest patch of stars and dust in our sky — not the whole galaxy, but the direction we look when we look towards its core.",
     visibility: "NAKED_EYE",
@@ -295,9 +334,9 @@ export const SKY_TARGETS: SkyTarget[] = [
     constellation: "Andromeda",
     constellationEn: "Andromeda",
     blurb:
-      "Thiên hà xoắn ốc lớn gần Ngân Hà nhất, cách khoảng 2,5 triệu năm ánh sáng. Đường kính biểu kiến hơn 3 độ — rộng gấp sáu lần Mặt Trăng tròn.",
+      "Thiên hà xoắn ốc lớn gần Ngân Hà nhất, nằm trong chòm Andromeda, cách khoảng 2,5 triệu năm ánh sáng. Đáng xem vì kích thước biểu kiến: hơn 3 độ bề ngang, rộng gấp sáu lần Mặt Trăng tròn.",
     blurbEn:
-      "The nearest large spiral galaxy to the Milky Way, about 2.5 million light-years away. It spans over 3 degrees of sky, six times the width of the full Moon.",
+      "The nearest large spiral galaxy to the Milky Way, in the constellation Andromeda, about 2.5 million light-years away. Worth finding for its apparent size: over 3 degrees across, six times the width of the full Moon.",
     visibility: "NAKED_EYE",
     image: "/images/sky/m31.jpg",
     imageCredit: null,
@@ -325,9 +364,9 @@ export const SKY_TARGETS: SkyTarget[] = [
     constellation: "Virgo",
     constellationEn: "Virgo",
     blurb:
-      "Thiên hà elip khổng lồ ở tâm cụm Xử Nữ. Lỗ đen siêu khối lượng của nó là vật thể đầu tiên được chụp ảnh trực tiếp, công bố năm 2019.",
+      "Thiên hà elip khổng lồ trong chòm Virgo, ở tâm cụm thiên hà cùng tên, cách khoảng 54 triệu năm ánh sáng. Đáng xem vì lỗ đen siêu khối lượng của nó là vật thể đầu tiên được chụp ảnh trực tiếp, công bố năm 2019.",
     blurbEn:
-      "A giant elliptical galaxy at the centre of the Virgo Cluster. Its supermassive black hole was the first ever imaged directly, published in 2019.",
+      "A giant elliptical galaxy in the constellation Virgo, at the heart of the cluster of the same name, about 54 million light-years away. Worth a look because its supermassive black hole was the first ever imaged directly, published in 2019.",
     visibility: "SMALL_SCOPE",
     image: "/images/sky/m87.jpg",
     imageCredit: null,
@@ -391,9 +430,9 @@ export const SKY_TARGETS: SkyTarget[] = [
     constellation: "Orion",
     constellationEn: "Orion",
     blurb:
-      "Sao siêu khổng lồ đỏ ở vai chòm Orion, một trong những ngôi sao sáng nhất bầu trời. Độ sáng biến thiên rõ rệt và nó được xem là ứng viên siêu tân tinh.",
+      "Sao siêu khổng lồ đỏ ở vai chòm Orion, cách chừng 500–700 năm ánh sáng — các trang của NASA vẫn đưa ra những con số khác nhau. Đáng xem vì độ sáng biến thiên rõ rệt và nó được xem là ứng viên siêu tân tinh.",
     blurbEn:
-      "A red supergiant on the shoulder of Orion and one of the brightest stars in the sky. Its brightness varies markedly and it is considered a supernova candidate.",
+      "A red supergiant on the shoulder of Orion, somewhere between 500 and 700 light-years away — NASA's own pages still quote different figures. Worth watching because its brightness varies markedly and it is considered a supernova candidate.",
     visibility: "NAKED_EYE",
     image: "/images/sky/betelgeuse.jpg",
     imageCredit: "ALMA (ESO/NAOJ/NRAO)/E. O'Gorman/P. Kervella — CC BY 4.0",
@@ -424,9 +463,9 @@ export const SKY_TARGETS: SkyTarget[] = [
     constellation: "Sagittarius",
     constellationEn: "Sagittarius",
     blurb:
-      "Lỗ đen siêu khối lượng ở tâm Ngân Hà, khối lượng khoảng 4 triệu lần Mặt Trời. Ảnh chụp trực tiếp được công bố năm 2022.",
+      "Lỗ đen siêu khối lượng ở tâm Ngân Hà, về hướng chòm Sagittarius, cách khoảng 26.000 năm ánh sáng. Đáng xem vì đây là lỗ đen siêu khối lượng gần ta nhất — khối lượng chừng 4 triệu lần Mặt Trời — và ảnh chụp trực tiếp được công bố năm 2022.",
     blurbEn:
-      "The supermassive black hole at the centre of the Milky Way, about four million solar masses. Its direct image was published in 2022.",
+      "The supermassive black hole at the centre of the Milky Way, towards the constellation Sagittarius, about 26,000 light-years away. It is the closest supermassive black hole to us — some four million solar masses — and its direct image was published in 2022.",
     visibility: "IMAGE_ONLY",
     image: "/images/sky/sgr-a-star.jpg",
     imageCredit: null,
@@ -454,19 +493,19 @@ export const SKY_TARGETS: SkyTarget[] = [
     constellation: "Taurus",
     constellationEn: "Taurus",
     blurb:
-      "Cụm sao phân tán trẻ, cách khoảng 440 năm ánh sáng. Mắt thường thấy sáu tới bảy ngôi; ống nhòm cho thấy hàng trăm.",
+      "Cụm sao phân tán trẻ trong chòm Taurus, cách khoảng 445 năm ánh sáng — con số này chưa được thống nhất hoàn toàn. Đáng xem vì mắt thường đã thấy sáu tới bảy ngôi, còn ống nhòm cho thấy hàng trăm.",
     blurbEn:
-      "A young open cluster about 440 light-years away. Six or seven stars are visible to the naked eye; binoculars show hundreds.",
+      "A young open cluster in the constellation Taurus, about 445 light-years away — a figure not universally agreed on. Six or seven stars show to the naked eye; binoculars reveal hundreds.",
     visibility: "NAKED_EYE",
     image: "/images/sky/m45.jpg",
     imageCredit: null,
     facts: [
-      "Cụm sao phân tán trẻ, cách 440 năm ánh sáng",
+      "Cụm sao phân tán trẻ, cách 445 năm ánh sáng",
       "Mắt thường thấy sáu tới bảy ngôi",
       "Ống nhòm cho thấy hàng trăm",
     ],
     factsEn: [
-      "A young open cluster 440 light-years away",
+      "A young open cluster 445 light-years away",
       "Six or seven stars to the naked eye",
       "Binoculars reveal hundreds",
     ],
@@ -484,9 +523,9 @@ export const SKY_TARGETS: SkyTarget[] = [
     constellation: "Taurus",
     constellationEn: "Taurus",
     blurb:
-      "Tàn dư của siêu tân tinh mà các nhà thiên văn Trung Hoa ghi lại năm 1054. Ở tâm là một sao neutron quay khoảng 30 vòng mỗi giây.",
+      "Tàn dư siêu tân tinh trong chòm Taurus, cách khoảng 6.500 năm ánh sáng. Đáng xem vì vụ nổ sinh ra nó được các nhà thiên văn Trung Hoa ghi lại năm 1054, và ở tâm còn một sao neutron quay khoảng 30 vòng mỗi giây.",
     blurbEn:
-      "The remnant of a supernova recorded by Chinese astronomers in 1054. At its centre is a neutron star spinning about 30 times a second.",
+      "A supernova remnant in the constellation Taurus, about 6,500 light-years away. The explosion that made it was recorded by Chinese astronomers in 1054, and a neutron star at its centre still spins about 30 times a second.",
     visibility: "SMALL_SCOPE",
     image: "/images/sky/m1.jpg",
     imageCredit: null,
@@ -514,9 +553,9 @@ export const SKY_TARGETS: SkyTarget[] = [
     constellation: "Canes Venatici",
     constellationEn: "Canes Venatici",
     blurb:
-      "Thiên hà xoắn ốc nhìn thẳng mặt, đang tương tác với thiên hà nhỏ NGC 5195. Đây là thiên hà đầu tiên được nhận ra là có cấu trúc xoắn ốc, năm 1845.",
+      "Thiên hà xoắn ốc nhìn thẳng mặt trong chòm Canes Venatici, cách khoảng 31 triệu năm ánh sáng. Đáng xem vì đây là thiên hà đầu tiên được nhận ra là có cấu trúc xoắn ốc, năm 1845, và nó đang tương tác với thiên hà nhỏ NGC 5195.",
     blurbEn:
-      "A face-on spiral interacting with the smaller galaxy NGC 5195. It was the first galaxy recognised as having spiral structure, in 1845.",
+      "A face-on spiral in the constellation Canes Venatici, about 31 million light-years away. It was the first galaxy recognised as having spiral structure, in 1845, and it is interacting with the smaller galaxy NGC 5195.",
     visibility: "BINOCULARS",
     image: "/images/sky/m51.jpg",
     imageCredit: null,
@@ -544,9 +583,9 @@ export const SKY_TARGETS: SkyTarget[] = [
     constellation: "Virgo",
     constellationEn: "Virgo",
     blurb:
-      "Thiên hà xoắn ốc nhìn gần như nghiêng cạnh, với dải bụi tối cắt ngang phần phình sáng — hình dáng đã đặt tên cho nó.",
+      "Thiên hà xoắn ốc nhìn gần như nghiêng cạnh, trong chòm Virgo, cách khoảng 28 triệu năm ánh sáng. Đáng xem vì dải bụi tối cắt ngang phần phình sáng — hình dáng đã đặt tên cho nó.",
     blurbEn:
-      "A nearly edge-on spiral whose dark dust lane cuts across a bright bulge — the shape that gave it its name.",
+      "A nearly edge-on spiral in the constellation Virgo, about 28 million light-years away. Its dark dust lane cuts across a bright bulge — the shape that gave it its name.",
     visibility: "BINOCULARS",
     image: "/images/sky/m104.jpg",
     imageCredit: null,
@@ -574,9 +613,9 @@ export const SKY_TARGETS: SkyTarget[] = [
     constellation: "Hercules",
     constellationEn: "Hercules",
     blurb:
-      "Cụm sao cầu sáng nhất bầu trời bắc: vài trăm nghìn ngôi sao già dồn trong một quả cầu rộng khoảng 145 năm ánh sáng.",
+      "Cụm sao cầu trong chòm Hercules, cách khoảng 25.000 năm ánh sáng. Đáng xem vì đây là cụm sao cầu sáng nhất bầu trời bắc: vài trăm nghìn ngôi sao già dồn trong một quả cầu rộng khoảng 145 năm ánh sáng.",
     blurbEn:
-      "The brightest globular cluster in the northern sky: a few hundred thousand old stars packed into a ball about 145 light-years across.",
+      "A globular cluster in the constellation Hercules, about 25,000 light-years away. It is the brightest globular in the northern sky: a few hundred thousand old stars packed into a ball about 145 light-years across.",
     visibility: "BINOCULARS",
     image: "/images/sky/m13.jpg",
     imageCredit: null,
