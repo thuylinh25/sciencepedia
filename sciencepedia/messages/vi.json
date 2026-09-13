@@ -111,7 +111,8 @@
     "heroCategoriesLabel": "Bắt đầu từ một lĩnh vực",
     "seeAllArticles": "Xem tất cả bài viết",
     "aiTryAsking": "Thử hỏi",
-    "heroFieldEmpty": "sắp có"
+    "heroFieldEmpty": "sắp có",
+    "heroTitleRich": "Vũ trụ trong <hl>tầm tay bạn</hl>"
   },
   "article": {
     "readingTime": "{minutes} phút đọc",

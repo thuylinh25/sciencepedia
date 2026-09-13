@@ -103,7 +103,21 @@ export function Hero({ fields }: { fields?: ReactNode }) {
             {...rise(0.08)}
             className="max-w-[44rem] font-display text-4xl leading-[1.08] font-bold tracking-tight text-balance text-white sm:text-5xl lg:text-6xl"
           >
-            {t("heroTitle")}
+            {/* Nửa sau tiêu đề mang màu accent (xanh), KHÔNG phải primary
+                (vàng).
+
+                Vàng đã có chủ trên màn hình này: nút tìm kiếm ở header. Tô
+                vàng thêm nửa tiêu đề là dựng hai điểm vàng cạnh nhau, và lúc
+                đó không điểm nào còn nhấn mạnh được gì — cùng lập luận đã chốt
+                khi bỏ nút CTA vàng thứ hai khỏi hero.
+
+                Dựng bằng `t.rich` nên câu vẫn nằm trọn trong tệp ngôn ngữ.
+                Cắt thành hai khoá để nối bằng JSX là cách chắc chắn dịch sai ở
+                ngôn ngữ có trật tự từ khác — tiếng Anh là "The universe within
+                reach", chỗ ngắt rơi vào vị trí khác hẳn tiếng Việt. */}
+            {t.rich("heroTitleRich", {
+              hl: (chunks) => <span className="text-accent">{chunks}</span>,
+            })}
           </motion.h1>
 
           <motion.p

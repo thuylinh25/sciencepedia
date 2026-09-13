@@ -111,7 +111,8 @@
     "heroCategoriesLabel": "Start with a field",
     "seeAllArticles": "See all articles",
     "aiTryAsking": "Try asking",
-    "heroFieldEmpty": "coming soon"
+    "heroFieldEmpty": "coming soon",
+    "heroTitleRich": "The universe <hl>within reach</hl>"
   },
   "article": {
     "readingTime": "{minutes} min read",

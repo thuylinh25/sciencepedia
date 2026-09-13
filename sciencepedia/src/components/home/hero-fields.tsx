@@ -1,4 +1,5 @@
 import { getTranslations } from "next-intl/server";
+import { ChevronRight } from "lucide-react";
 
 import { Link } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
@@ -147,6 +148,20 @@ export async function HeroFields({
                   {t("heroFieldEmpty")}
                 </span>
               )}
+              {/* Mũi tên cuối chip.
+
+                  Nó làm một việc mà hình viên thuốc không làm được: nói rằng
+                  chip này DẪN ĐI ĐÂU ĐÓ. Hình viên thuốc cũng là hình của nút
+                  lọc và của thẻ trạng thái, nên nếu không có mũi tên thì hàng
+                  này đọc ra như một bộ lọc — bấm vào và chờ trang lọc lại tại
+                  chỗ, chứ không phải chuyển sang trang khác.
+
+                  Nhích sang phải khi rê chuột: cùng ngôn ngữ chuyển động với
+                  mọi liên kết "xem thêm" khác trong trang. */}
+              <ChevronRight
+                aria-hidden
+                className="-mr-1 size-4 text-white/35 transition-[transform,color] duration-200 group-hover:translate-x-0.5 group-hover:text-white/70"
+              />
             </Link>
           </li>
         ))}
