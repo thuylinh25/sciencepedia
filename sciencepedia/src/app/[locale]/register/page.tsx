@@ -34,7 +34,10 @@ export default async function RegisterPage({
   const t = await getTranslations("auth");
 
   return (
-    <AuthShell title={t("registerTitle")} subtitle={t("registerSubtitle")}>
+    <AuthShell
+      title={t.rich("registerTitleRich", {
+        hl: (chunks) => <span className="text-primary">{chunks}</span>,
+      })} subtitle={t("registerSubtitle")}>
       <RegisterForm />
     </AuthShell>
   );

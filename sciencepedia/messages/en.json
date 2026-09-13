@@ -71,7 +71,11 @@
     "networkError": "Could not connect. Check your network and try again.",
     "or": "Or",
     "continueWithProvider": "Continue with {provider}",
-    "loggingIn": "Signing in…"
+    "loggingIn": "Signing in…",
+    "loginTitleRich": "Welcome <hl>back</hl>",
+    "registerTitleRich": "Create an <hl>account</hl>",
+    "quote": "Somewhere, something <hl>incredible</hl> is waiting to be known.",
+    "quoteAuthor": "Carl Sagan"
   },
   "home": {
     "heroEyebrow": "An open science encyclopedia",

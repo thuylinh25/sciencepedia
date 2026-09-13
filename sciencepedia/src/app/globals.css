@@ -395,6 +395,35 @@
     pointer-events: none;
   }
 
+  /* Nền cột phải của trang đăng nhập.
+
+     KHÁC `bg-cosmos`, và khác có chủ ý. `bg-cosmos` ngả gần đen vì nó sinh
+     ra cho hero — nơi có tiêu đề, nút và ảnh đè lên, nên nền phải lùi hẳn về
+     sau. Ở trang đăng nhập thì nửa màn hình này chỉ có một câu trích, nên nó
+     chịu được màu xanh sâu hơn.
+
+     Và nó CẦN màu ấy: cột trái là nền trang bình thường, cũng gần đen. Hai
+     cột cùng gần đen thì đường chia giữa chúng biến mất, và bố cục hai cột
+     đọc ra như một khối tối liền — mất đúng thứ khiến bố cục này đáng dùng.
+
+     Ba lớp: một vệt sáng chéo từ góc trên phải (nguồn sáng ngầm, để quầng
+     sáng và dấu ngoặc có chỗ mà đổ), một vệt xanh đậm ở đáy trái, rồi dốc
+     nền từ xanh navy sang gần đen. */
+  .auth-aside {
+    background:
+      radial-gradient(
+        ellipse 70% 60% at 85% 15%,
+        color-mix(in oklab, var(--accent) 42%, transparent),
+        transparent 62%
+      ),
+      radial-gradient(
+        ellipse 60% 55% at 10% 90%,
+        color-mix(in oklab, var(--accent) 20%, transparent),
+        transparent 60%
+      ),
+      linear-gradient(155deg, oklch(0.22 0.075 255), oklch(0.14 0.05 258) 70%);
+  }
+
   /* Lớp chiều sâu cho cột phải trang đăng nhập.
      Chồng LÊN .bg-cosmos + .starfield, không thay chúng.
 

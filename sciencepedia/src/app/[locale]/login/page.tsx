@@ -34,7 +34,10 @@ export default async function LoginPage({
   const t = await getTranslations("auth");
 
   return (
-    <AuthShell title={t("loginTitle")} subtitle={t("loginSubtitle")}>
+    <AuthShell
+      title={t.rich("loginTitleRich", {
+        hl: (chunks) => <span className="text-primary">{chunks}</span>,
+      })} subtitle={t("loginSubtitle")}>
       <LoginForm
         hasGithub={Boolean(process.env.AUTH_GITHUB_ID)}
         hasGoogle={Boolean(process.env.AUTH_GOOGLE_ID)}

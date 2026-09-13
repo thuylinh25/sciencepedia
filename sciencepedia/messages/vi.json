@@ -71,7 +71,11 @@
     "networkError": "Không kết nối được. Kiểm tra mạng rồi thử lại.",
     "or": "Hoặc",
     "continueWithProvider": "Tiếp tục với {provider}",
-    "loggingIn": "Đang đăng nhập…"
+    "loggingIn": "Đang đăng nhập…",
+    "loginTitleRich": "Chào mừng <hl>trở lại</hl>",
+    "registerTitleRich": "Tạo <hl>tài khoản</hl>",
+    "quote": "Ở đâu đó, một điều gì đó <hl>tuyệt vời</hl> đang chờ được biết đến.",
+    "quoteAuthor": "Carl Sagan"
   },
   "home": {
     "heroEyebrow": "Bách khoa toàn thư khoa học mở",

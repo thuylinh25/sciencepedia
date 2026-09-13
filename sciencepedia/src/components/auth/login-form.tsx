@@ -6,7 +6,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { signIn } from "next-auth/react";
 import { useTranslations } from "next-intl";
 import { useSearchParams } from "next/navigation";
-import { Github, Loader2 } from "lucide-react";
+import { ArrowRight, Github, Loader2, Lock, Mail } from "lucide-react";
 
 import { Link, useRouter } from "@/i18n/navigation";
 import { loginSchema, type LoginInput } from "@/lib/validations";
@@ -140,13 +140,35 @@ export function LoginForm({
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-4" noValidate>
         <div className="space-y-2">
           <Label htmlFor="email">{t("email")}</Label>
-          <Input
-            id="email"
-            type="email"
-            autoComplete="email"
-            aria-invalid={Boolean(errors.email)}
-            {...register("email")}
-          />
+          {/* Icon nằm trong một ngăn riêng bên trái, ngăn cách bằng một vạch
+              đứng — không phải icon thả nổi đè lên chỗ gõ chữ.
+
+              Vạch ấy làm một việc cụ thể: nó cho con trỏ chuột biết chỗ nào
+              bấm được để gõ. Icon thả nổi trong ô thì vùng bên trái nó trông
+              như vẫn gõ được, và người dùng bấm vào đó rồi thấy con trỏ nhảy
+              ra sau icon.
+
+              `pointer-events-none` để bấm vào icon vẫn rơi vào ô nhập phía
+              sau. Icon sáng lên theo ô qua `group-focus-within` đặt trên thẻ
+              bọc — KHÔNG dùng `peer-focus` được, vì `peer-*` của Tailwind chỉ
+              với tới phần tử ĐỨNG SAU phần tử mang `peer`, mà icon thì đứng
+              trước ô nhập. */}
+          <div className="group relative">
+            <span
+              aria-hidden
+              className="pointer-events-none absolute inset-y-0 left-0 z-10 flex w-11 items-center justify-center border-r border-input text-muted-foreground transition-colors group-focus-within:text-foreground"
+            >
+              <Mail className="size-4" />
+            </span>
+            <Input
+              id="email"
+              type="email"
+              autoComplete="email"
+              aria-invalid={Boolean(errors.email)}
+              className="h-12 bg-input/30 pl-14"
+              {...register("email")}
+            />
+          </div>
           {errors.email && (
             <p className="text-xs text-destructive">{errors.email.message}</p>
           )}
@@ -154,12 +176,21 @@ export function LoginForm({
 
         <div className="space-y-2">
           <Label htmlFor="password">{t("password")}</Label>
-          <PasswordInput
-            id="password"
-            autoComplete="current-password"
-            aria-invalid={Boolean(errors.password)}
-            {...register("password")}
-          />
+          <div className="group relative">
+            <span
+              aria-hidden
+              className="pointer-events-none absolute inset-y-0 left-0 z-10 flex w-11 items-center justify-center border-r border-input text-muted-foreground transition-colors group-focus-within:text-foreground"
+            >
+              <Lock className="size-4" />
+            </span>
+            <PasswordInput
+              id="password"
+              autoComplete="current-password"
+              aria-invalid={Boolean(errors.password)}
+              className="h-12 bg-input/30 pl-14"
+              {...register("password")}
+            />
+          </div>
           {errors.password && (
             <p className="text-xs text-destructive">
               {errors.password.message}
@@ -202,9 +233,25 @@ export function LoginForm({
 
             `disabled` chặn lần bấm thứ hai — `signIn` không idempotent, hai
             lượt gửi song song cho hai kết quả đua nhau. */}
-        <Button type="submit" className="w-full" disabled={isSubmitting}>
-          {isSubmitting && <Loader2 className="size-4 animate-spin" />}
-          {isSubmitting ? t("loggingIn") : t("login")}
+        <Button
+          type="submit"
+          disabled={isSubmitting}
+          className="h-12 w-full rounded-xl text-base font-semibold"
+        >
+          {isSubmitting ? (
+            <>
+              <Loader2 className="size-4 animate-spin" />
+              {t("loggingIn")}
+            </>
+          ) : (
+            <>
+              {t("login")}
+              {/* Mũi tên chỉ ở trạng thái nghỉ. Lúc đang gửi, chỗ của nó là
+                  spinner — giữ cả hai thì nút có hai thứ chuyển động cạnh
+                  nhau và không thứ nào nói rõ điều gì. */}
+              <ArrowRight className="size-4" aria-hidden />
+            </>
+          )}
         </Button>
       </form>
 
