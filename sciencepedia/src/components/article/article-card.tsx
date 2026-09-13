@@ -79,19 +79,23 @@ export async function ArticleCard({
         className,
       )}
     >
-      {/* Nền gần đen chứ không `bg-muted`, và ảnh `object-contain`.
+      {/* Ảnh cover LẤP ĐẦY khung (`object-cover`), nền gần đen phía sau.
 
-          Lý do y hệt thứ đã chốt ở `planet-gallery.tsx`: `cover` phóng ảnh
-          cho phủ kín khung rồi xén phần thừa, nên một thiên thể hình cầu
-          trong khung 16/10 bị cắt cụt trên dưới — ảnh Mặt Trời mất hẳn hai
-          chỏm. Một thẻ giới thiệu bài về Mặt Trời mà không cho thấy trọn
-          Mặt Trời thì hỏng đúng việc nó sinh ra để làm.
+          Đây là lượt đảo lại một quyết định trước đó, nên ghi rõ cả hai vế.
 
-          `#04060e` là nền của phần lớn ảnh thiên văn trong kho (ảnh NASA
-          chụp trên nền vũ trụ), nên vành letterbox không đọc ra là
-          letterbox. Với ảnh nền sáng — sơ đồ giải phẫu, biểu đồ — vành ấy
-          có thấy được, và đó là đánh đổi đã chọn: thà thấy vành còn hơn
-          mất nội dung hình. */}
+          Bản trước dùng `object-contain` để không xén mất chỏm của các thiên
+          thể hình cầu — ảnh Mặt Trời trong khung 16/10 bị `cover` cắt cụt trên
+          dưới. Đúng về nội dung, nhưng cái giá là hai vành letterbox ở mọi thẻ
+          có ảnh không đúng tỉ lệ, và trong một lưới bốn thẻ thì các vành ấy
+          rộng hẹp khác nhau tuỳ ảnh: lưới đọc ra như bố cục vỡ chứ không như
+          một lựa chọn. Chủ sản phẩm đã xem cả hai bản và chọn lấp đầy.
+
+          Nền `#04060e` giữ lại: nó vẫn là nền đúng cho quãng ảnh đang tải, và
+          cho ảnh PNG có nền trong suốt.
+
+          Nếu sau này một bài cụ thể cần thấy trọn hình cầu, chỗ sửa là ảnh
+          cover của chính bài đó — cắt sẵn về 16/10 — chứ không phải đổi lại
+          `object-fit` cho toàn bộ lưới. */}
       <div
         className={cn(
           "relative overflow-hidden bg-[#04060e]",
@@ -108,7 +112,7 @@ export async function ArticleCard({
                 : "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
             }
             fallbackColor={article.category.color}
-            className="object-contain transition-transform duration-500 group-hover:scale-[1.05]"
+            className="object-cover transition-transform duration-500 group-hover:scale-[1.05]"
           />
         ) : (
           <div
