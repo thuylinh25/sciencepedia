@@ -3,7 +3,13 @@ import dynamic from "next/dynamic";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { BookOpen, Clock, Eye, ShieldCheck, Tag as TagIcon } from "lucide-react";
+import {
+  BookOpen,
+  Clock,
+  Eye,
+  ShieldCheck,
+  Tag as TagIcon,
+} from "lucide-react";
 
 import { Link } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
@@ -190,50 +196,40 @@ export default async function ArticlePage({
       />
 
       {/* ------------------------------------------------------- Ảnh bìa */}
-      {/* Ảnh bìa hiện TRỌN VẸN: `object-contain`, không phải `object-cover`.
+      {/* Ảnh bìa LẤP ĐẦY khung: `object-cover`.
 
-              Ba lần trước tôi sửa nhầm chỗ — nới khung, rồi nắn lại ba bản vẽ
-              cho vừa dải khung để lộ ra. Cả ba lần đều đi chữa triệu chứng.
-              Nguyên nhân là `object-cover`: nó cắt ảnh cho vừa khung, mà khung
-              thì dẹt (tỉ lệ ~3,6 trên cửa sổ thấp) còn ảnh bìa là 16:10. Khung
-              càng dẹt thì càng cắt sâu, và không có bản vẽ nào sống sót được
-              phép cắt đó nếu nội dung của nó cao hơn một dải hẹp ở giữa.
+          Đây là lượt đảo lại quyết định ngày 06/09, nên phải ghi cả hai vế,
+          không thì lần sau có người đọc mỗi một vế rồi đảo tiếp.
 
-              Ảnh CHỤP không sao vì chúng là kết cấu kín khung — cắt chỗ nào
-              cũng còn là ảnh. Hình VẼ thì mỗi nét đều mang nghĩa: thang khoảng
-              cách mất nấc trên cùng và trục hoành là mất đúng cái nó định nói.
-              12/12 ảnh bìa hiện nay đều là hình tự vẽ, nên cân nhắc đã đổi
-              chiều: giữ trọn nội dung quan trọng hơn lấp đầy khung.
+          Vế cũ: khung hero dẹt (~3,6:1 trên cửa sổ thấp) còn ảnh bìa là 16:10,
+          nên `cover` cắt mất quá nửa chiều cao. Với 12 ảnh bìa TỰ VẼ lúc đó —
+          thang khoảng cách, sơ đồ nguyên tử — mỗi nét đều mang nghĩa, và cắt
+          là mất đúng cái hình định nói. `contain` giữ trọn nội dung.
 
-              `object-contain` không cắt, đổi lại ảnh không phủ kín bề ngang.
-              Chỗ hụt được lấp bằng chính ảnh đó phóng to và làm mờ, nên mép
-              không lộ và nền vẫn là nền vũ trụ của bản vẽ, không phải một mảng
-              đen chết. Lớp ảnh thật dừng trên đáy khung 7rem — đúng bằng
-              `-mt-28` mà khối tiêu đề đè lên — để không nét nào nằm dưới chữ.
+          Vế mới: kho ảnh đã đổi. Phần lớn bài dùng ảnh CHỤP, mà ảnh chụp là
+          kết cấu kín khung — cắt chỗ nào cũng còn là ảnh. Đổi lại, `contain`
+          để ảnh nổi lơ lửng giữa một khung rộng với hai vệt mờ hai bên, và
+          trên một trang bài thì đó là thứ đầu tiên người đọc nhìn thấy.
 
-              Hệ quả đã chấp nhận: trên cửa sổ thấp hình nhỏ đi (~435 px ngang
-              thay vì tràn khung). Nhỏ mà đủ hơn là to mà cụt. */}
+          Cái giá còn nguyên và có thật: ảnh bìa tự vẽ ở các bài cũ sẽ bị cắt
+          trên dưới. Nếu một bài nào đó mất nghĩa vì phép cắt, chỗ sửa là cắt
+          sẵn ảnh bìa của CHÍNH bài đó về dải ngang — đừng đổi lại `object-fit`
+          cho mọi bài.
+
+          Lớp ảnh phóng to làm mờ phía sau đã bỏ: nó sinh ra để lấp phần hụt
+          hai bên của `contain`, mà nay không còn phần hụt nào. Giữ lại là tải
+          và giải mã một tấm ảnh không ai nhìn thấy. */}
       <header className="relative">
         {article.coverImage ? (
           <div className="relative h-[58vh] min-h-[24rem] w-full overflow-hidden bg-space-900">
             <Image
               src={article.coverImage}
               alt=""
-              aria-hidden
               fill
+              priority
               sizes="100vw"
-              className="scale-125 object-cover opacity-40 blur-2xl"
+              className="object-cover"
             />
-            <div className="absolute inset-x-0 top-0 bottom-28">
-              <Image
-                src={article.coverImage}
-                alt=""
-                fill
-                priority
-                sizes="100vw"
-                className="object-contain"
-              />
-            </div>
             <div className="absolute inset-0 bg-gradient-to-t from-background via-background/45 to-transparent" />
           </div>
         ) : (

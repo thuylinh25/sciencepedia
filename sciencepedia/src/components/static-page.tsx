@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import { getTranslations } from "next-intl/server";
+import { ChevronDown } from "lucide-react";
 
 /**
  * Một mục của trang tĩnh dài.
@@ -55,41 +56,54 @@ export async function StaticPage({
         </p>
       )}
 
-      {/* Mục lục chỉ từ md trở lên.
+      {/* Mục lục hiện ở MỌI bề ngang, nhưng trên điện thoại thì gập được.
 
-          Trên điện thoại, một danh sách bảy dòng đặt ngay đầu trang đẩy nội
-          dung thật xuống gần hết một màn hình — mà lợi ích của nó ở đó gần
-          bằng không: cuộn bằng ngón tay qua bảy mục ngắn nhanh hơn là đọc mục
-          lục rồi chạm đúng dòng. Trên màn hình rộng thì ngược lại, nó là bản
-          đồ cho một tài liệu mà người ta thường vào để tìm ĐÚNG MỘT mục (xoá
-          dữ liệu, liên hệ) chứ không để đọc từ đầu. */}
+          Bản trước ẩn hẳn dưới md. Lý do khi đó: bảy dòng đặt đầu trang đẩy
+          nội dung thật xuống gần hết một màn hình điện thoại. Lý do ấy đúng
+          với một danh sách dọc bảy dòng, nhưng nó giải bài bằng cách lấy mất
+          của người dùng di động đúng thứ họ cần nhất — trang chính sách là
+          nơi người ta vào để tìm MỘT mục ("xoá dữ liệu", "liên hệ"), và trên
+          điện thoại thì cuộn tìm tay còn tốn hơn trên máy tính.
+
+          `<details>` giải được cả hai mà không cần một dòng JavaScript nào,
+          cũng không cần biến khung này thành Client Component. Mặc định mở,
+          lưới hai cột nên bảy mục chỉ cao bốn dòng; ai thấy vướng thì gập
+          lại. Từ md trở lên, mũi tên ẩn đi và khối đọc ra như một hộp mục lục
+          bình thường — dù nó vẫn gập được nếu bấm vào tiêu đề. */}
       {sections && sections.length > 0 && (
-        <nav
-          aria-label={tArticle("tableOfContents")}
-          className="mt-10 hidden rounded-2xl border bg-muted/30 p-6 md:block"
+        <details
+          open
+          className="group mt-10 rounded-2xl border bg-muted/30 px-6 py-5"
         >
-          <h2 className="text-xs font-semibold tracking-widest text-foreground/80 uppercase">
+          <summary className="flex cursor-pointer list-none items-center justify-between gap-3 text-xs font-semibold tracking-widest text-foreground/80 uppercase [&::-webkit-details-marker]:hidden">
             {tArticle("tableOfContents")}
-          </h2>
-          <ol className="mt-4 grid gap-x-8 gap-y-2 sm:grid-cols-2">
-            {sections.map((section, index) => (
-              <li key={section.id} className="flex gap-2 text-sm leading-6">
-                <span
-                  aria-hidden
-                  className="w-4 shrink-0 text-right font-mono text-xs text-muted-foreground/70"
-                >
-                  {index + 1}
-                </span>
-                <a
-                  href={`#${section.id}`}
-                  className="text-muted-foreground underline-offset-4 transition-colors hover:text-primary-strong hover:underline"
-                >
-                  {section.title}
-                </a>
-              </li>
-            ))}
-          </ol>
-        </nav>
+            <ChevronDown
+              aria-hidden
+              className="size-4 shrink-0 text-muted-foreground transition-transform group-open:rotate-180 md:hidden"
+            />
+          </summary>
+
+          <nav aria-label={tArticle("tableOfContents")}>
+            <ol className="mt-4 grid gap-x-8 gap-y-2 sm:grid-cols-2">
+              {sections.map((section, index) => (
+                <li key={section.id} className="flex gap-2 text-sm leading-6">
+                  <span
+                    aria-hidden
+                    className="w-4 shrink-0 text-right font-mono text-xs text-muted-foreground/70"
+                  >
+                    {index + 1}
+                  </span>
+                  <a
+                    href={`#${section.id}`}
+                    className="text-muted-foreground underline-offset-4 transition-colors hover:text-primary-strong hover:underline"
+                  >
+                    {section.title}
+                  </a>
+                </li>
+              ))}
+            </ol>
+          </nav>
+        </details>
       )}
 
       <div className="article-prose mt-8">

@@ -393,10 +393,18 @@ Phép rẽ nhánh theo loại ảnh mà mục trên đề nghị hoá ra KHÔNG 
 `cover` không cắt của chúng một pixel nào. Chỉ ảnh chụp bị cắt, mà ảnh chụp vốn
 là kết cấu kín khung — cắt được.
 
-Hai chỗ khác GIỮ NGUYÊN `object-contain`: hero trang bài (lý do ở ngay trên) và
-thư viện ảnh hành tinh (đĩa hình cầu, cắt là cụt hai cực). Muốn một bài cụ thể
-hiện trọn hình cầu trên thẻ thì cắt sẵn ảnh bìa của bài đó về 16/10, đừng đổi
-lại `object-fit` cho cả lưới.
+**Hero trang bài cũng đổi theo, cùng ngày.** Cùng lập luận: kho ảnh nay chủ yếu
+là ảnh chụp, và `contain` trong một khung rộng 3,6:1 để ảnh nổi lơ lửng giữa hai
+vệt mờ — thứ đầu tiên người đọc nhìn thấy trên trang bài. Lớp ảnh phóng to làm mờ
+phía sau đã bỏ vì không còn phần hụt nào để lấp.
+
+Cái giá còn nguyên: 12 ảnh bìa TỰ VẼ của các bài cũ bị cắt trên dưới ở hero, đúng
+lỗi đã khiến quyết định 06/09 ra đời. Chấp nhận, vì tỉ lệ ảnh vẽ trong kho đang
+giảm dần. Nếu một bài mất nghĩa vì phép cắt, cắt sẵn ảnh bìa của CHÍNH bài đó về
+dải ngang — đừng đổi lại `object-fit` cho mọi bài.
+
+Chỗ duy nhất còn `object-contain`: thư viện ảnh hành tinh (đĩa hình cầu, cắt là
+cụt hai cực).
 
 **Không đặt chữ vào ảnh.** Site song ngữ dùng chung một `coverImage`, nên chữ chỉ
 đúng một thứ tiếng và không có đường nào dịch. Dùng hình học thay chữ: mũi tên hai
