@@ -127,7 +127,7 @@ export function Hero({ fields }: { fields?: ReactNode }) {
           dải trống rộng nhất trang đúng ở chỗ cần liền mạch nhất.
 
           Cột phải 28rem → 36rem, tức thiên hà rộng thêm chừng 29%. */}
-      <div className="container-page relative z-10 grid min-h-[min(52svh,28rem)] items-center gap-8 pt-10 pb-9 text-star lg:grid-cols-[minmax(0,1fr)_30rem] lg:gap-12 lg:pt-12 lg:pb-3">
+      <div className="container-page relative z-10 grid min-h-[min(52svh,28rem)] items-center gap-8 pt-10 pb-3 text-star lg:grid-cols-[minmax(0,1fr)_30rem] lg:gap-12 lg:pt-12 lg:pb-3">
         {/* `relative z-10` là bắt buộc, không phải trang trí.
 
             Dưới `lg` thiên hà là một lớp `absolute`, và trong CSS phần tử đã
@@ -237,27 +237,6 @@ export function Hero({ fields }: { fields?: ReactNode }) {
           */}
         </div>
       </div>
-
-      {/* Ghi nguồn ảnh nền, ở mép dưới PHẢI — tức ngay dưới thiên hà, đúng
-          thứ nó đang quy nguồn.
-
-          Lượt trước đặt nó cuối cột chữ bên trái. Ở đó nó đọc ra như một dòng
-          nữa của phần nội dung — nằm ngay dưới hàng chip lĩnh vực, cùng lề
-          trái, cùng dòng chảy — nên vừa làm loãng đoạn mở đầu vừa không nói rõ
-          nó đang nói về CÁI GÌ. Quy tắc provenance trong docs/content-rules.md
-          đòi dòng nguồn đứng cạnh thứ được quy nguồn; ở một tấm ảnh nền thì
-          "cạnh" nghĩa là góc ảnh, không phải cuối cột chữ.
-
-          `pb-9` của lưới nội dung (chỉ dưới lg) là chỗ đã chừa cho nó: trên
-          điện thoại hàng chip chạy gần hết bề ngang nên không có góc nào trống
-          sẵn để mà chen vào.
-
-          `text-white/40`: đủ đọc khi tìm, đủ mờ để không tranh chỗ với tiêu
-          đề. Đây là một chú thích bắt buộc phải có, không phải một thông điệp
-          cần được chú ý. */}
-      <p className="pointer-events-none absolute right-5 bottom-3 z-10 max-w-[62%] text-right text-[11px] leading-relaxed text-white/40 sm:right-8">
-        {t("heroImageCredit")}
-      </p>
     </section>
   );
 }

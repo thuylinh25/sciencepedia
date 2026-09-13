@@ -252,6 +252,14 @@ export function useAladin({
 }: UseAladinOptions) {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const instanceRef = useRef<AladinInstance | null>(null);
+  /**
+   * Khảo sát ĐANG hiển thị.
+   *
+   * Có ref này chỉ để trả lời đúng một câu: lệnh đổi khảo sát sắp gửi có thật
+   * sự đổi gì không. Xem `setSurveyOn` bên dưới để biết vì sao câu đó quan
+   * trọng đến thế.
+   */
+  const appliedSurveyRef = useRef<string | null>(null);
   const resizeObserverRef = useRef<ResizeObserver | null>(null);
   const classObserverRef = useRef<MutationObserver | null>(null);
 
@@ -329,6 +337,7 @@ export function useAladin({
         instance.gotoRaDec(view.ra, view.dec);
 
         instanceRef.current = instance;
+        appliedSurveyRef.current = view.survey ?? DEFAULT_SURVEY;
         setStatus("ready");
 
         // Toàn màn hình đổi tỉ lệ khung mà không dựng lại instance, nên bề
@@ -439,7 +448,31 @@ export function useAladin({
     if (containerRef.current) {
       instance.setFoV(fovForFrame(containerRef.current, view));
     }
-    if (view.survey) setSurveyOn(instance, view.survey);
+
+    /*
+     * Chỉ gửi lệnh đổi khảo sát khi khảo sát THẬT SỰ đổi.
+     *
+     * Đây là bản sửa cho lỗi "ảnh bầu trời vỡ thành hình thoi", tái hiện được
+     * và đã dựng lại bằng Chrome điều khiển từ xa: mở trang, bấm thẻ Thiên hà
+     * M87, và khung đứng nguyên ở lớp xem trước order 3 — không tự khỏi sau
+     * 20 giây, trong khi mở thẳng `?object=m87` thì nét trong 3 giây.
+     *
+     * Nguyên nhân: `applyTarget` luôn đặt `survey` cho khung nhìn mới, kể cả
+     * khi nó bằng đúng khảo sát đang xem (phần lớn thiên thể không khai
+     * `survey` riêng nên rơi về `DEFAULT_SURVEY`). `goTo` vì thế gọi
+     * `setBaseImageLayer` ở ĐÚNG khoảnh khắc `setFoV` vừa nhảy từ 90° xuống
+     * 0,4° — Aladin dựng lại lớp HiPS từ đầu trong lúc phép bay còn dở, và
+     * lớp mới không bao giờ xin tiếp tile ở độ phân giải cần thiết.
+     *
+     * Bài học rộng hơn: một lệnh "đặt lại giá trị đang có" trông vô hại vì nó
+     * luỹ đẳng về KẾT QUẢ, nhưng nó không luỹ đẳng về CHI PHÍ và về trạng
+     * thái trung gian. Với một thư viện đồ hoạ đang chạy dở một chuyển động,
+     * chi phí ấy chính là lỗi.
+     */
+    if (view.survey && view.survey !== appliedSurveyRef.current) {
+      setSurveyOn(instance, view.survey);
+      appliedSurveyRef.current = view.survey;
+    }
   }, []);
 
   /**
@@ -476,7 +509,10 @@ export function useAladin({
 
   const setSurvey = useCallback((surveyId: string) => {
     const instance = instanceRef.current;
-    if (instance) setSurveyOn(instance, surveyId);
+    if (!instance || surveyId === appliedSurveyRef.current) return;
+
+    setSurveyOn(instance, surveyId);
+    appliedSurveyRef.current = surveyId;
   }, []);
 
   /** Dựng lại từ đầu sau khi lỗi — dùng cho nút "thử lại". */

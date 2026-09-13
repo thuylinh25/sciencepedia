@@ -109,10 +109,35 @@ export function SkyMap() {
       const next = targetToView(target);
       if (!next) return;
 
-      setView(next);
+      /*
+       * Khung nhìn phải mang survey ĐÃ GIẢI, không để trống.
+       *
+       * Đây là chỗ sinh ra lỗi "ảnh bầu trời vỡ thành hình thoi", tái hiện
+       * được bằng Chrome điều khiển từ xa và tìm ra bằng nhật ký mạng: sau
+       * khi bấm thẻ M87, trình duyệt chỉ xin tile Norder1 và Norder4 — dấu
+       * hiệu của Mellinger (maxOrder 4), không phải DSS2 (maxOrder 9).
+       *
+       * Nguyên nhân: chỉ những thiên thể mà survey mặc định không cho thấy
+       * được mới khai `survey` riêng, nên `targetToView`
+       * trả `undefined` cho phần lớn mục tiêu. Bản cũ đặt `undefined` đó thẳng vào khung nhìn
+       * rồi đặt chip UI ở MỘT state khác — hai đường không gặp nhau.
+       * `goTo` có chốt `if (view.survey)` nên nó bỏ qua, và lớp ảnh giữ
+       * nguyên survey của mục tiêu TRƯỚC. Mục tiêu đầu tiên của trang là Tâm
+       * Dải Ngân Hà, khai Mellinger — nên mọi cú bấm sau đó đều phóng to một
+       * ảnh ghép góc rộng và người xem thấy hình thoi HEALPix.
+       *
+       * Tệ hơn cả ảnh vỡ: hàng chip vẫn sáng ở "DSS2". Giao diện nói sai thứ
+       * đang hiển thị, nên không ai lần ra được vì sao ảnh xấu.
+       *
+       * Giải survey MỘT lần ở đây rồi dùng chung cho cả khung nhìn lẫn chip
+       * là cách duy nhất giữ hai thứ đó không lệch nhau.
+       */
+      const nextSurvey = next.survey ?? DEFAULT_SURVEY;
+
+      setView({ ...next, survey: nextSurvey });
       setLabel(nameOf(target, locale));
       setActiveId(target.id);
-      setSurvey(next.survey ?? DEFAULT_SURVEY);
+      setSurvey(nextSurvey);
       syncUrl(target.id);
     },
     [locale, syncUrl],
