@@ -103,6 +103,7 @@ export function AladinCanvas({
     panTo,
     centre,
     fov,
+    setSurvey,
     retry,
   } = useAladin({
     enabled: true,
@@ -262,9 +263,24 @@ export function AladinCanvas({
     const key = viewKey(view);
     if (key === appliedRef.current) return;
 
+    /* Đổi MỖI khảo sát thì chỉ đổi lớp ảnh, không đi qua `goTo`.
+
+       `goTo` kéo theo `setFoV` tính từ `view.fovDeg` — mức phóng MẶC ĐỊNH
+       của mục tiêu, chứ không phải mức người xem đang dùng. Mà việc người ta
+       làm với bộ chọn khảo sát là so sánh cùng một vùng trời qua nhiều bước
+       sóng: phóng sâu vào một vùng rồi bấm lần lượt DSS2 · 2MASS · AllWISE.
+       Nếu mỗi lần bấm lại bị kéo về khung rộng ban đầu thì phép so sánh ấy
+       không làm được. */
+    const samePlace = placeKey(key) === placeKey(appliedRef.current);
     appliedRef.current = key;
+
+    if (samePlace && view.survey) {
+      setSurvey(view.survey);
+      return;
+    }
+
     goTo(view);
-  }, [status, view, goTo]);
+  }, [status, view, goTo, setSurvey]);
 
   return (
     <div className="absolute inset-0">
@@ -494,6 +510,14 @@ export function AladinCanvas({
       )}
     </div>
   );
+}
+
+/**
+ * Phần TOẠ ĐỘ của `viewKey` — cùng chỗ nhưng khác khảo sát thì hai chuỗi này
+ * bằng nhau. Cắt theo dấu phân cách cuối cùng vì survey là trường cuối.
+ */
+function placeKey(key: string): string {
+  return key.slice(0, key.lastIndexOf("|"));
 }
 
 function viewKey(view: SkyView): string {

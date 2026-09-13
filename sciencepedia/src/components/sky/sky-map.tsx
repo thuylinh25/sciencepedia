@@ -173,6 +173,83 @@ export function SkyMap() {
           activation="visible"
           posterCaption={t("posterCaption", { object: label })}
           showFullscreenToggle
+          fullscreenInfo={
+            /*
+              Toàn màn hình thì khung Aladin là một lớp `fixed` phủ kín cửa
+              sổ, và nó nuốt sạch mọi thứ nằm dưới khung: tên thiên thể đang
+              xem, toạ độ, bộ chọn khảo sát, chú giải khảo sát, danh sách
+              thiên thể. Người xem còn lại một mảng trời không tên và không
+              đường đi — đúng lúc họ có nhiều chỗ nhất để dùng những thứ đó.
+
+              Nên bảng này KHÔNG chỉ là chú thích: nó chở theo cả điều hướng.
+              Ba khối theo đúng thứ tự câu hỏi người xem hỏi — "tôi đang nhìn
+              đâu", "tôi đang nhìn bằng gì", "tôi đi đâu tiếp".
+            */
+            <div className="space-y-4">
+              <div className="pr-6">
+                <p className="text-[11px] tracking-wide text-white/45 uppercase">
+                  {t("centeredOn")}
+                </p>
+                <p className="font-display text-base font-semibold">{label}</p>
+                <p className="mt-0.5 font-mono text-xs text-white/55">
+                  {formatCoordinates(view.ra, view.dec)}
+                </p>
+              </div>
+
+              <div>
+                <SurveySwitcher
+                  survey={survey}
+                  onSelect={applySurvey}
+                  locale={locale}
+                  label={t("surveyLabel")}
+                  tone="overlay"
+                />
+
+                {/* Không đặt `aria-live` ở bản này: dòng chú giải dưới khung
+                    vẫn nằm trong DOM khi toàn màn hình, và hai vùng live cùng
+                    đọc một nội dung thì trình đọc màn hình nói hai lần. */}
+                <p className="mt-2 text-xs leading-relaxed text-white/60">
+                  <span className="font-medium text-white">
+                    {active.fullName}
+                  </span>
+                  {" — "}
+                  {locale === "en" ? active.blurbEn : active.blurb}
+                </p>
+              </div>
+
+              <div>
+                <p className="text-[11px] tracking-wide text-white/45 uppercase">
+                  {t("catalogTitle")}
+                </p>
+                <ul className="-mx-2 mt-1.5">
+                  {SKY_TARGETS.map((target) => (
+                    <li key={target.id}>
+                      <button
+                        type="button"
+                        onClick={() => applyTarget(target)}
+                        aria-current={
+                          activeId === target.id ? "true" : undefined
+                        }
+                        className={cn(
+                          "flex w-full items-baseline justify-between gap-3 rounded-lg px-2 py-1.5 text-left text-xs transition-colors hover:bg-white/10",
+                          activeId === target.id
+                            ? "bg-white/10 font-medium text-white"
+                            : "text-white/70",
+                        )}
+                      >
+                        <span className="truncate">
+                          {nameOf(target, locale)}
+                        </span>
+                        <span className="shrink-0 font-mono text-[10px] text-white/40">
+                          {target.catalogId}
+                        </span>
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          }
           className="h-[calc(100dvh-16rem)] min-h-[30rem]"
         />
       </div>
@@ -187,29 +264,12 @@ export function SkyMap() {
           </span>
         </p>
 
-        <div
-          className="flex flex-wrap items-center gap-1 rounded-full border bg-muted/40 p-0.5"
-          role="group"
-          aria-label={t("surveyLabel")}
-        >
-          {SKY_SURVEYS.map((item) => (
-            <button
-              key={item.id}
-              type="button"
-              onClick={() => applySurvey(item.id)}
-              aria-pressed={survey === item.id}
-              title={`${item.fullName} — ${locale === "en" ? item.bandEn : item.band}`}
-              className={cn(
-                "rounded-full px-2.5 py-1 text-xs font-medium transition-colors",
-                survey === item.id
-                  ? "bg-background text-foreground shadow-sm"
-                  : "text-muted-foreground hover:text-foreground",
-              )}
-            >
-              {item.name}
-            </button>
-          ))}
-        </div>
+        <SurveySwitcher
+          survey={survey}
+          onSelect={applySurvey}
+          locale={locale}
+          label={t("surveyLabel")}
+        />
       </div>
 
       {/* Chú giải cho khảo sát ĐANG CHỌN, luôn hiện.
@@ -367,6 +427,68 @@ export function SkyMap() {
           })}
         </ul>
       </section>
+    </div>
+  );
+}
+
+/**
+ * Bộ chọn khảo sát, dùng ở hai chỗ: thanh trạng thái dưới khung, và bảng
+ * thông tin khi toàn màn hình.
+ *
+ * Một component chứ không hai khối JSX giống nhau: danh mục khảo sát còn dài
+ * ra, và hai bản chép tay thì lần thêm khảo sát sau chỉ có một bản được sửa.
+ * Khác biệt duy nhất là bảng màu — `overlay` nằm trên ảnh bầu trời tối nên
+ * không dùng được token nền sáng của thẻ.
+ */
+function SurveySwitcher({
+  survey,
+  onSelect,
+  locale,
+  label,
+  tone = "card",
+}: {
+  survey: string;
+  onSelect: (surveyId: string) => void;
+  locale: Locale;
+  label: string;
+  tone?: "card" | "overlay";
+}) {
+  const overlay = tone === "overlay";
+
+  return (
+    <div
+      role="group"
+      aria-label={label}
+      className={cn(
+        "flex flex-wrap items-center gap-1 rounded-full border p-0.5",
+        overlay ? "border-white/10 bg-white/5" : "bg-muted/40",
+      )}
+    >
+      {SKY_SURVEYS.map((item) => {
+        const selected = survey === item.id;
+
+        return (
+          <button
+            key={item.id}
+            type="button"
+            onClick={() => onSelect(item.id)}
+            aria-pressed={selected}
+            title={`${item.fullName} — ${locale === "en" ? item.bandEn : item.band}`}
+            className={cn(
+              "rounded-full px-2.5 py-1 text-xs font-medium transition-colors",
+              overlay
+                ? selected
+                  ? "bg-white text-slate-900"
+                  : "text-white/60 hover:text-white"
+                : selected
+                  ? "bg-background text-foreground shadow-sm"
+                  : "text-muted-foreground hover:text-foreground",
+            )}
+          >
+            {item.name}
+          </button>
+        );
+      })}
     </div>
   );
 }
