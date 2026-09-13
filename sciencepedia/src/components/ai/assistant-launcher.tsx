@@ -70,7 +70,26 @@ export function AssistantLauncher() {
     return () => document.removeEventListener("keydown", onKey);
   }, [open]);
 
-  if (pathname.startsWith("/assistant") || pathname.startsWith("/admin")) {
+  /* Trang xác thực KHÔNG có nút trợ lý.
+
+     Không phải vì nó che mất gì — nó nằm ở góc dưới phải, cách form một quãng.
+     Lý do là sự chú ý: trang đăng nhập có đúng MỘT việc để làm, và một nút
+     tròn màu vàng tự bung nhãn chữ sau 4 giây là thứ duy nhất trên màn hình
+     chuyển động. Nó thắng cuộc tranh chú ý với chính CTA mà trang sinh ra để
+     phục vụ.
+
+     Ẩn hẳn chứ không thu nhỏ: thu nhỏ vẫn giữ nguyên chuyển động, mà chuyển
+     động mới là thứ kéo mắt, không phải kích thước.
+
+     Bốn route chứ không chỉ /login và /register: quên mật khẩu và đặt lại mật
+     khẩu là cùng một luồng, và người đang ở đó còn ít kiên nhẫn hơn. */
+  const AUTH_ROUTES = ["/login", "/register", "/forgot-password", "/reset-password"];
+
+  if (
+    pathname.startsWith("/assistant") ||
+    pathname.startsWith("/admin") ||
+    AUTH_ROUTES.some((route) => pathname === route || pathname.startsWith(`${route}/`))
+  ) {
     return null;
   }
 

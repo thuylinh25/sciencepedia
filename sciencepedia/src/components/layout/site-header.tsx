@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import {
   Aperture,
+  ArrowLeft,
   ChevronDown,
   Disc3,
   Globe,
@@ -187,6 +188,34 @@ export function SiteHeader({
           >
             <Logo tone={onDark ? "onDark" : "auto"} />
           </Link>
+
+          {/* Lối quay lại, CHỈ ở chế độ rút gọn (đăng nhập / đăng ký).
+
+              Ở chế độ ấy toàn bộ nav, ô tìm kiếm và menu người dùng đều bị ẩn,
+              nên logo là thứ duy nhất còn dẫn đi đâu được — mà một logo bấm
+              được thì không tự nói ra rằng nó bấm được. Người đang phân vân có
+              nên đăng nhập không cần một lối ra nhìn thấy bằng mắt, không phải
+              một lối ra phải đoán.
+
+              Ẩn dưới sm: ở bề ngang đó ngân sách chữ đã dành cho logo, và nút
+              lùi của trình duyệt vẫn làm đúng việc này.
+
+              Cỡ chữ nhỏ, màu mực nhạt, không viền: nó là lối thoát phụ, không
+              được tranh chỗ với nút đăng nhập trong form. */}
+          {focused && (
+            <Link
+              href="/"
+              className={cn(
+                "hidden shrink-0 items-center gap-1.5 text-sm transition-colors sm:inline-flex",
+                onDark
+                  ? "text-white/60 hover:text-white"
+                  : "text-muted-foreground hover:text-foreground",
+              )}
+            >
+              <ArrowLeft className="size-4" aria-hidden />
+              {t("backHome")}
+            </Link>
+          )}
 
           <nav
             className={cn(

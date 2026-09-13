@@ -395,6 +395,64 @@
     pointer-events: none;
   }
 
+  /* Lớp chiều sâu cho cột phải trang đăng nhập.
+     Chồng LÊN .bg-cosmos + .starfield, không thay chúng.
+
+     Vì sao là ::after chứ không sửa .starfield: .starfield dùng ở hero trang
+     chủ và vài trang mô hình, nơi nó nằm sau nội dung dày đặc. Ở đó thêm bụi
+     và tinh vân là thêm nhiễu. Trang đăng nhập thì ngược lại — nửa phải chỉ
+     có một câu trích, nên nó chịu được và cần thêm chiều sâu.
+
+     Ba lớp, xếp từ xa tới gần:
+       1. tinh vân xanh — hai vệt lớn, rất mờ (5% và 4%). Nó KHÔNG được đọc ra
+          thành một vật thể; nó chỉ làm nền thôi phẳng.
+       2. cụm sao — ba chùm nhỏ, mỗi chùm 3-4 chấm sát nhau. Sao rải đều trông
+          như nhiễu hạt; sao có chùm mới đọc ra là bầu trời.
+       3. bụi không gian — chấm 0,5px, mờ hơn hẳn, rải thưa.
+
+     KHÔNG có animation riêng. .starfield::before đã nhấp nháy sẵn; thêm một
+     nhịp thứ hai lệch pha sẽ thành thứ mắt bắt được, mà yêu cầu là chiều sâu
+     chứ không phải chuyển động. */
+  .deep-space::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+      /* 1 — tinh vân xanh, cực mờ */
+      radial-gradient(
+        ellipse 55% 45% at 78% 28%,
+        color-mix(in oklab, var(--accent) 5%, transparent),
+        transparent 70%
+      ),
+      radial-gradient(
+        ellipse 45% 40% at 22% 72%,
+        color-mix(in oklab, var(--accent) 4%, transparent),
+        transparent 70%
+      ),
+      /* 2 — cụm sao: chùm A quanh 30%/22% */
+        radial-gradient(1.2px 1.2px at 28% 20%, var(--star), transparent),
+      radial-gradient(1px 1px at 32% 24%, var(--star), transparent),
+      radial-gradient(0.8px 0.8px at 30% 27%, var(--star), transparent),
+      /* chùm B quanh 72%/64% */ radial-gradient(1.2px 1.2px at 70% 62%, var(--star), transparent),
+      radial-gradient(1px 1px at 74% 66%, var(--star), transparent),
+      radial-gradient(0.8px 0.8px at 76% 61%, var(--star), transparent),
+      radial-gradient(0.8px 0.8px at 71% 68%, var(--star), transparent),
+      /* chùm C quanh 52%/88% */ radial-gradient(1px 1px at 50% 86%, var(--star), transparent),
+      radial-gradient(1.2px 1.2px at 54% 90%, var(--star), transparent),
+      radial-gradient(0.8px 0.8px at 56% 85%, var(--star), transparent),
+      /* 3 — bụi không gian, thưa và mờ */
+        radial-gradient(0.5px 0.5px at 15% 45%, var(--star), transparent),
+      radial-gradient(0.5px 0.5px at 42% 12%, var(--star), transparent),
+      radial-gradient(0.5px 0.5px at 88% 44%, var(--star), transparent),
+      radial-gradient(0.5px 0.5px at 64% 34%, var(--star), transparent),
+      radial-gradient(0.5px 0.5px at 8% 62%, var(--star), transparent),
+      radial-gradient(0.5px 0.5px at 38% 58%, var(--star), transparent),
+      radial-gradient(0.5px 0.5px at 84% 76%, var(--star), transparent),
+      radial-gradient(0.5px 0.5px at 20% 92%, var(--star), transparent);
+    opacity: 0.6;
+  }
+
   /* Kính mờ kiểu Apple cho header và thẻ nổi */
   .glass {
     @apply border border-white/10 bg-white/70 backdrop-blur-xl dark:bg-white/5;
