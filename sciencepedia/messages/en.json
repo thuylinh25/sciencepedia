@@ -368,6 +368,8 @@
     "loading": "Loading…",
     "error": "Something went wrong",
     "retry": "Try again",
+    "errorDetails": "Technical details",
+    "errorReloading": "Loading the new version…",
     "back": "Back",
     "next": "Next",
     "previous": "Previous",

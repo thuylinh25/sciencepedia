@@ -368,6 +368,8 @@
     "loading": "Đang tải…",
     "error": "Đã có lỗi xảy ra",
     "retry": "Thử lại",
+    "errorDetails": "Chi tiết kỹ thuật",
+    "errorReloading": "Đang tải lại phiên bản mới…",
     "back": "Quay lại",
     "next": "Tiếp",
     "previous": "Trước",
