@@ -46,3 +46,334 @@ resolved:
   by: science-editor (duyệt từng chuỗi thay thế) + apply-corrections.ts
   what: "Các phát hiện S2/S3 về nội dung ở trên ĐÃ SỬA trên bản đang publish. Chi tiết claim cũ/mới và căn cứ ở docs/content/corrections.md. Bản trước khi sửa nằm trong bảng Revision."
   still_open: "factCheck vẫn PENDING — bài chưa có reviewedById. Các phát hiện về SỐ LƯỢNG NGUỒN vẫn còn nguyên."
+
+# ═══════════════════════════════════════════════════════════════════════════
+# Lượt duyệt của science-editor — bài ĐÃ PUBLISHED, mọi sửa là ĐÍNH CHÍNH
+# CÓ PHÁT HIỆN S1: một khối văn bản thô của trợ lý AI bị dán thẳng vào thân
+# bài, cả hai ngôn ngữ, không nguồn, và nó MỞ LẠI một lỗi S1 đã đóng.
+# ═══════════════════════════════════════════════════════════════════════════
+editor_pass:
+  round: 1
+  date: 2026-09-12
+  verdict: revise
+  reviewed_by: "Ban biên tập Sciencepedia"
+  article_slug: he-vi-sinh-duong-ruot-hang-chuc-nghin-ti-cu-dan-va-anh-huong-cua-chung
+
+  fetched:
+    - doi: 10.1371/journal.pbio.1002533
+      resolved: "Sender, Fuchs & Milo, 'Revised Estimates for the Number of Human and Bacteria Cells in the Body', PLOS Biology 2016"
+      how: "Đọc toàn văn trên journals.plos.org. Nguyên văn: '3.8·10^13 bacteria in the colon with a standard error uncertainty of 25% and a variation of 52% SD over a population of 70 kg males'; 'there is about 0.2 kg of bacteria in the body overall'"
+    - doi: 10.1016/j.cell.2021.06.019
+      resolved: "Wastyk et al., 'Gut-microbiota-targeted diets modulate human immune status', Cell 2021, 184:4137-4153"
+      how: "Crossref resolve theo DOI — khớp tiêu đề, tác giả, năm, tạp chí"
+    - doi: 10.1038/nrmicro2974
+      resolved: "Sommer & Bäckhed, 'The gut microbiota — masters of host development and physiology', Nature Reviews Microbiology 2013"
+      how: "Crossref resolve — khớp NGUYÊN VĂN tiêu đề, đúng tạp chí, đúng năm"
+    - doi: 10.1128/mbio.01018-16
+      resolved: "Sze & Schloss, 'Looking for a Signal in the Noise: Revisiting Obesity and the Microbiome', mBio 2016"
+      how: "Tìm và đọc — nguồn ĐỐI CHỨNG cho mệnh đề Firmicutes/Bacteroidetes trong khối bị dán, chưa có trong bảng Source"
+    - internal_cross_check:
+        - "ruot-he-vi-sinh-vat-va-quyen-luc-cua-bo-nao-thu-hai — đã sửa S1 ngày 2026-09-11"
+        - "nhin-an-gian-doan-anh-huong-toi-he-vi-sinh-duong-ruot-nhu-the-nao — đã sửa S1 ngày 2026-09-11, ĐÃ CÓ mục 'Ai không nên nhịn ăn gián đoạn'"
+      result: >
+        Cả ba bài dùng nhất quán "hàng chục nghìn tỉ" trong văn xuôi — ràng buộc
+        tiêu đề được tôn trọng ở cả ba. Nhưng xem E1 và E5: bài này mâu thuẫn với
+        hai bài kia ở ĐÚNG hai chỗ vừa được sửa S1.
+
+  mental_model: >
+    Nửa đầu bài dựng một mô hình đúng và có kỷ luật: vi khuẩn lên men chất xơ,
+    tạo SCFA, tương tác miễn dịch, và có hẳn một khung nhắc người đọc phân biệt
+    tương quan với nhân quả. Rồi khối bị dán ở E1 phá sạch mô hình đó và thay
+    bằng mô hình của ngành thực phẩm chức năng: ruột là thứ cần "thanh lọc",
+    "dọn dẹp", "bỏ đói" vi khuẩn xấu; nhịn 16 tiếng thì vi khuẩn tốt lên, vi
+    khuẩn xấu chết đi, mỡ được đốt, cảm giác thèm đường biến mất. Người đọc
+    lướt tới cuối bài mang đi mô hình thứ hai, không phải mô hình thứ nhất — vì
+    nó cụ thể hơn, có số giờ, và nói thẳng phải làm gì.
+    Đây là dạng nặng nhất của mẫu lỗi kho đã ghi: không phải "con số đúng gắn
+    vào kết luận sai", mà là một khối không có lấy một con số nào có nguồn, gắn
+    vào một chỉ dẫn hành vi cụ thể.
+  silence: >
+    Khối bị dán kê một phác đồ — "từ 16 tiếng trở lên" — trong bài thuộc chuyên
+    mục **dinh dưỡng**, và không có một dòng chống chỉ định nào. Đây CHÍNH LÀ
+    lỗi S1 đã được phán quyết và đã được sửa cho bài `nhin-an-gian-doan` ngày
+    2026-09-11 bằng cách thêm mục "Ai không nên nhịn ăn gián đoạn". Bài đó nay
+    có mục ấy; bài này thì kê cùng một phác đồ mà không có. Người đọc gặp phác
+    đồ ở bài nào trước là chuyện may rủi. Một lỗi S1 đã đóng đang bị mở lại ở
+    một URL khác.
+
+  findings:
+    - id: E1
+      severity: S1
+      claim: >-
+        Khối bắt đầu bằng "vì sao nhịn ăn gián đoạn (Intermittent Fasting) lại làm
+        thay đổi quần thể vi khuẩn ruột.Nhịn ăn gián đoạn (Intermittent Fasting -
+        IF) làm thay đổi mạnh mẽ quần thể vi khuẩn ruột..." và chạy liền tới hết
+        mục 4, ngay trước "## Kết luận". Khoảng 470 từ trong bản tiếng Việt; bản
+        tiếng Anh có khối tương ứng, mở đầu "Why Intermittent Fasting (IF) changes
+        the gut microbial population."
+      problem: >
+        Đây là ĐẦU RA THÔ CỦA MỘT TRỢ LÝ AI bị dán thẳng vào cột `content`, ở CẢ
+        HAI ngôn ngữ. Bằng chứng, không phải suy đoán:
+        (a) CÂU LỆNH RÒ VÀO BÀI. Khối mở đầu bằng chính câu hỏi đặt cho trợ lý,
+        viết thường, không có tiêu đề Markdown, không viết hoa đầu câu: "vì sao
+        nhịn ăn gián đoạn ... lại làm thay đổi quần thể vi khuẩn ruột." Bản tiếng
+        Anh giữ nguyên dạng ấy ở thể khẳng định.
+        (b) ĐỊNH DẠNG BỊ HUỶ Ở BẢN TIẾNG VIỆT. Số thứ tự dính vào chữ liền trước:
+        "các tác động cụ thể sau:1.", "nhịp sinh học của vi khuẩn2.", "bên trong
+        đường ruột sẽ thay đổi:Gia tăng". Bản tiếng Anh thì danh sách còn nguyên
+        cấu trúc. Cùng một nội dung, một bản giữ được định dạng và một bản mất —
+        dấu vết của thao tác dán, không phải của một lượt soạn bài.
+        (c) KHÔNG CÓ TIÊU ĐỀ. Khối không nằm dưới mục nào; nó chen vào giữa mục
+        "Hệ vi sinh có ảnh hưởng tới não bộ không?" và "## Kết luận", nên trên
+        trang nó đọc ra như phần đuôi của mục nói về não.
+        (d) KHÔNG MỘT NGUỒN NÀO. Bài có ba nguồn: Sender 2016 (đếm vi khuẩn),
+        Wastyk 2021 (chế độ ăn và miễn dịch), Sommer & Bäckhed 2013 (tổng quan).
+        Không nguồn nào nói về nhịn ăn gián đoạn, Akkermansia, MMC hay SIBO.
+        (e) SAI NGƯỢC Ở ĐIỂM QUAN TRỌNG NHẤT. Khối viết Bacteroidetes là nhóm
+        "tạo Axit béo chuỗi ngắn" có lợi, còn Firmicutes là "vi khuẩn hảo ngọt và
+        cơ hội" cần bỏ đói. Thực tế NGƯỢC LẠI ở vế then chốt: phần lớn vi khuẩn
+        sinh butyrate — Faecalibacterium prausnitzii, Roseburia, Eubacterium,
+        Anaerostipes, Coprococcus — thuộc ngành **Firmicutes**, cụm Clostridium.
+        Chính thân bài ở trên đã gọi butyrate là SCFA quan trọng nhất. Nên khối
+        này khuyên người đọc bỏ đói đúng nhóm vi khuẩn mà bài vừa khen.
+        Ngoài ra tỉ số Firmicutes/Bacteroidetes như dấu ấn béo phì đã bị Sze &
+        Schloss (mBio 2016) bác bằng phân tích gộp lại dữ liệu.
+        (f) NGÔN NGỮ THỰC PHẨM CHỨC NĂNG, KHÔNG PHẢI NGÔN NGỮ LÂM SÀNG: "thanh
+        lọc hệ tiêu hóa", "chống rò rỉ ruột", "quét sạch ... vi khuẩn bám bẩn",
+        "đốt cháy mỡ thừa", vi khuẩn "bị mất phương hướng". "Rò rỉ ruột" (leaky
+        gut) không phải chẩn đoán được công nhận.
+        (g) KHẲNG ĐỊNH QUÁ MỨC: "SIBO – nguyên nhân chính gây đầy hơi, chướng
+        bụng". SIBO là một trong nhiều nguyên nhân và bản thân tiêu chuẩn chẩn
+        đoán còn đang tranh cãi; gọi nó là nguyên nhân chính là nâng một giả
+        thuyết thành sự thật.
+        (h) KÊ PHÁC ĐỒ MÀ KHÔNG CHỐNG CHỈ ĐỊNH — xem mục `silence`. Đây là vế
+        khiến phát hiện này là S1 chứ không phải S2: nó có thể đổi hành vi của
+        đúng những người không nên nhịn ăn.
+        (i) TRÙNG LẶP. Toàn bộ chủ đề đã có bài riêng, và bài này đã trỏ tới bài
+        đó ở mục "Đọc thêm".
+      source_checked: >
+        Ba nguồn của bài — đọc cả ba, không nguồn nào chạm tới chủ đề của khối.
+        10.1128/mbio.01018-16 cho mệnh đề Firmicutes/Bacteroidetes. Phân loại vi
+        khuẩn sinh butyrate đối chiếu qua tổng quan "Butyrate producers, The
+        Sentinel of Gut" (PMC9877435). Đối chiếu nội kho với
+        `nhin-an-gian-doan-anh-huong-toi-he-vi-sinh-duong-ruot-nhu-the-nao`, bài
+        đã mang mục chống chỉ định từ 2026-09-11.
+      resolution: >
+        CẮT TOÀN BỘ KHỐI, ở CẢ HAI ngôn ngữ. Không viết lại, không sửa từng câu.
+        Theo quy tắc 8 (khi nghi ngờ thì cắt): bỏ sót còn cứu được, đăng thứ sai
+        thì không — và ở đây không có gì để cứu, vì không một câu nào trong khối
+        có nguồn. Chủ đề đã có bài riêng đã qua gate chống chỉ định; thay khối
+        bằng đúng một câu trỏ sang bài đó, ở replacement_text R1.
+        Việc này cũng kéo bài từ 1.139 từ về khoảng 670 từ, gần băng 400–600 hơn
+        — nhưng đó là hệ quả, không phải lý do cắt.
+
+    - id: E2
+      severity: S2
+      claim: '"Khoảng 70% mô miễn dịch của cơ thể liên quan đến đường tiêu hóa."'
+      problem: >
+        Con số không có nguồn, và đây là lần thứ HAI nó bị nêu. Mục "Còn nợ sau
+        lượt này" trong corrections.md ngày 2026-09-05 đã ghi đúng câu này:
+        "con số '70% mô lympho' vẫn chưa có nguồn. Theo quy tắc 6 của skill
+        fact-check thì số không nguồn phải GỠ, không phải làm mềm." Bảy ngày sau
+        nó vẫn nguyên vị. Một khoản nợ đã ghi mà không đóng thì lần rà sau sẽ lại
+        ghi nó lần nữa; đây là lượt thứ hai, nên xếp S2 chứ không S3.
+      source_checked: >
+        Ba nguồn của bài — không nguồn nào phát biểu con số này. Sommer & Bäckhed
+        2013 bàn về tương tác miễn dịch nhưng không đưa tỉ lệ mô lympho.
+      resolution: "GỠ con số. Thay bằng replacement_text R2 — phát biểu định tính, không có số."
+
+    - id: E3
+      severity: S2
+      claim: >-
+        Mục "Hệ vi sinh có ảnh hưởng tới não bộ không?" mở đầu bằng một chữ "Có."
+        đứng riêng một dòng, rồi trong danh sách có gạch đầu dòng "Tác động gián
+        tiếp đến quá trình sản xuất serotonin và các tín hiệu thần kinh khác."
+      problem: >
+        Hai vấn đề, cùng gốc.
+        (1) TRẬT TỰ SAI. Một chữ "Có." in đậm đứng riêng là câu trả lời dứt khoát
+        nhất mà tiếng Việt có, đặt cho một câu hỏi mà chính bài bốn đoạn sau thừa
+        nhận là "mới chỉ cho thấy sự tương quan". Người lướt đọc chữ "Có.", không
+        đọc phần đính chính phía dưới. Quy tắc 3 và quy tắc 7 của gate đều bị chạm.
+        (2) MÂU THUẪN NỘI KHO Ở ĐÚNG CHỖ VỪA SỬA S1. Bài
+        `ruot-he-vi-sinh-vat-va-quyen-luc-cua-bo-nao-thu-hai` đã được sửa ngày
+        2026-09-11 để nói rõ: 90–95% serotonin nằm ở đường tiêu hoá NHƯNG **không
+        đi qua hàng rào máu–não** và không phải nguồn serotonin của não. Bài này
+        chỉ viết "tác động gián tiếp đến quá trình sản xuất serotonin", bỏ trống
+        đúng chỗ mà lượt sửa kia phải lấp — nên nó tái dựng chính mô hình
+        "serotonin của tâm trạng nằm ở ruột" đã bị phán quyết là S1.
+      source_checked: >
+        Đối chiếu nội kho với bản đã qua gate của `ruot-he-vi-sinh-vat`; đối chiếu
+        mục S1 ngày 2026-09-11 trong corrections.md (căn cứ gốc: Hwang YK et al.,
+        Int J Mol Sci 2025;26(3):1160, 10.3390/ijms26031160).
+      resolution: >
+        Thay phần mở và phần serotonin bằng replacement_text R4, dùng đúng mệnh đề
+        hàng rào máu–não đã qua gate ở bài kia. Hai bài phải nói cùng một điều.
+
+    - id: E4
+      severity: S3
+      claim: '"> **3,8 × 10¹³ đến 4 × 10¹³ vi sinh vật** ... tức khoảng **40 nghìn tỉ cá thể**"'
+      problem: >
+        Sender 2016 KHÔNG đưa ra khoảng "3,8 đến 4". Nguyên văn là một ước lượng
+        điểm kèm sai số: "3.8·10^13 bacteria in the colon with a standard error
+        uncertainty of 25%". Sai số 25% ứng với khoảng chừng 2,9–4,8 × 10¹³ — rộng
+        hơn nhiều. Viết "3,8 × 10¹³ đến 4 × 10¹³" là bịa ra một dải hẹp trông
+        chính xác hơn bằng chứng, tức đúng loại lỗi "làm con số trông chắc hơn
+        bằng chứng" đã phán quyết ở mục Casgevy ngày 2026-09-05.
+        Thêm nữa: phán quyết "Ước lượng điểm không đặt vào tiêu đề" nói rõ tiêu đề
+        dùng bậc độ lớn còn "thân bài mới dùng con số kèm nguồn và năm". Tiêu đề
+        đã đúng, nhưng thân bài đưa con số mà KHÔNG kèm năm và KHÔNG kèm tên
+        nguồn tại chỗ — tức mới làm được một nửa phán quyết.
+      source_checked: "10.1371/journal.pbio.1002533 — đọc toàn văn, trích nguyên văn ở mục `fetched`. Khối lượng '200 gram' thì ĐÚNG: nguồn ghi 'about 0.2 kg'."
+      resolution: "Thay bằng replacement_text R3 — ước lượng điểm, sai số, tên tác giả và năm ngay tại chỗ."
+
+    - id: E5
+      severity: S3
+      claim: '"số lượng gene của chúng lớn hơn hàng trăm lần bộ gene người"'
+      problem: >
+        Không nguồn, và phóng đại. Danh mục gene hệ vi sinh ruột người thường được
+        nêu ở mức ~3,3 triệu gene, so với ~20.000 gene mã hoá protein của người —
+        tức khoảng 150–170 lần. "Hàng trăm lần" đọc ra thành vài trăm. Đúng họ với
+        lỗi làm tròn lên con số của chính mình.
+      source_checked: "Ba nguồn của bài — không nguồn nào nêu số gene."
+      resolution: >
+        Gắn nguồn và ghi đúng bậc ("hơn một trăm lần"), hoặc gỡ hẳn vế này theo
+        quy tắc 6. Editor nghiêng về gỡ: nó không đỡ cho lập luận nào trong bài.
+
+    - id: E6
+      severity: S3
+      claim: "seoTitle = 'Hệ vi sinh đường ruột: hàng chục nghìn tỉ cư dân và ảnh...'"
+      problem: >
+        Chuỗi đã qua gate bị cắt và nối bằng "...". content-rules.md, mục "Trích
+        nội dung": không cắt chuỗi đã duyệt. Ở đây phần bị cắt chỉ là "hưởng của
+        chúng" nên không mất mệnh đề dè dặt nào — vì vậy S3, không nặng hơn —
+        nhưng cơ chế cắt thì vẫn là cơ chế đã bị cấm.
+      source_checked: "Đối chiếu `title` với `seoTitle` trong CSDL."
+      resolution: "Viết seoTitle riêng, đủ nghĩa, trong giới hạn độ dài — không cắt title rồi chấm lửng."
+
+    - id: E7
+      severity: null
+      claim: "Mục 'Thực phẩm lên men' và mục 'Ăn nhiều loại thực vật khác nhau'"
+      problem: >
+        KHÔNG phải lỗi — ghi lại để lượt sau không "sửa cho chặt hơn". Hai mục này
+        giữ đúng mức dè dặt ("có thể giúp làm tăng", "một trong những yếu tố") và
+        được Wastyk 2021 (s1) chống lưng thật. Khung nhắc phân biệt tương quan với
+        nhân quả ở cuối mục về não cũng đúng và nên giữ nguyên văn.
+      source_checked: "10.1016/j.cell.2021.06.019"
+      resolution: "Giữ nguyên."
+
+  # ─────────────────────────────────────────────────────────────────────────
+  # NGUYÊN VĂN câu thay thế của science-editor. Không diễn đạt lại.
+  # ─────────────────────────────────────────────────────────────────────────
+  replacement_text:
+
+    R1:
+      replaces: >-
+        TOÀN BỘ khối nhịn ăn gián đoạn, từ "vì sao nhịn ăn gián đoạn (Intermittent
+        Fasting) lại làm thay đổi quần thể vi khuẩn ruột." tới hết "...Giảm trạng
+        thái viêm nhiễm hệ thống trong cơ thể." — và khối tiếng Anh tương ứng, từ
+        "Why Intermittent Fasting (IF) changes the gut microbial population." tới
+        "...Reduce systemic inflammatory states in the body."
+      mandatory: true
+      note: >
+        Cắt, không viết lại. Chủ đề đã có bài riêng đã qua gate chống chỉ định
+        ngày 2026-09-11; nhắc lại nó ở đây mà không có mục chống chỉ định là mở
+        lại một lỗi S1 đã đóng.
+      text: |
+        Nhịn ăn gián đoạn cũng làm thay đổi thành phần hệ vi sinh, nhưng đó là một
+        chủ đề riêng và có những chống chỉ định riêng — xem bài [Nhịn ăn gián đoạn
+        ảnh hưởng tới hệ vi sinh đường ruột như thế nào?](/articles/nhin-an-gian-doan-anh-huong-toi-he-vi-sinh-duong-ruot-nhu-the-nao).
+      text_en: |
+        Intermittent fasting also shifts the composition of the gut microbiota, but
+        that is a separate topic with contraindications of its own — see [How
+        intermittent fasting affects the gut microbiota](/articles/nhin-an-gian-doan-anh-huong-toi-he-vi-sinh-duong-ruot-nhu-the-nao).
+
+    R2:
+      replaces: '"Khoảng 70% mô miễn dịch của cơ thể liên quan đến đường tiêu hóa."'
+      text: |
+        Niêm mạc ruột là nơi hệ miễn dịch tiếp xúc thường xuyên nhất với vật chất
+        từ bên ngoài, và ruột mang một hệ thống mô lympho riêng gọi là mô lympho
+        liên kết với ruột (GALT).
+      text_en: |
+        The gut lining is where the immune system meets material from outside the
+        body most often, and the intestine carries a lymphoid system of its own,
+        known as gut-associated lymphoid tissue (GALT).
+
+    R3:
+      replaces: >-
+        "> **3,8 × 10¹³ đến 4 × 10¹³ vi sinh vật**" và câu "tức khoảng **40 nghìn
+        tỉ cá thể**, chủ yếu là vi khuẩn sống trong đại tràng."
+      text: |
+        > **khoảng 3,8 × 10¹³ vi sinh vật**
+
+        Đó là ước lượng của Sender, Fuchs và Milo (2016), kèm sai số chuẩn khoảng
+        25% — tức bậc vài chục nghìn tỉ cá thể, chủ yếu là vi khuẩn sống trong đại
+        tràng. Nếu bạn từng gặp con số "100 nghìn tỉ" ở nơi khác: nó truy về một
+        ước lượng năm 1972 và đã được hạ xuống.
+      text_en: |
+        > **about 3.8 × 10¹³ microorganisms**
+
+        That is the estimate of Sender, Fuchs and Milo (2016), carrying a standard
+        error of about 25% — an order of tens of trillions of individuals, mostly
+        bacteria living in the colon. If you have met the figure "100 trillion"
+        elsewhere: it traces back to a 1972 estimate and has since been revised down.
+
+    R4:
+      replaces: >-
+        phần mở mục "## Hệ vi sinh có ảnh hưởng tới não bộ không?" (chữ "Có." đứng
+        riêng và đoạn ngay sau), cùng gạch đầu dòng "Tác động gián tiếp đến quá
+        trình sản xuất serotonin và các tín hiệu thần kinh khác."
+      text: |
+        ## Hệ vi sinh có ảnh hưởng tới não bộ không?
+
+        Có tín hiệu đi từ ruột lên não — điều đó đã rõ. Còn tín hiệu ấy ảnh hưởng
+        tới tâm trạng và hành vi tới mức nào thì chưa.
+
+        Ruột và não liên lạc qua **trục ruột–não**, chủ yếu bằng ba đường: dây
+        thần kinh phế vị, các chất trung gian miễn dịch, và nội tiết. Vi khuẩn
+        đường ruột có thể:
+
+        - Tạo ra các chất chuyển hoá ảnh hưởng tới hệ thần kinh.
+        - Ảnh hưởng đến cảm giác đói, no và mức độ căng thẳng.
+
+        Một hiểu lầm phổ biến cần nói rõ ở đây: 90–95% serotonin của cơ thể nằm ở
+        đường tiêu hoá, nhưng lượng serotonin đó **không đi qua hàng rào máu–não**
+        và không phải nguồn serotonin mà não dùng — nó điều hoà nhu động ruột. Vì
+        vậy "ăn thứ này để tăng serotonin cho tâm trạng" không phải là điều con số
+        ấy nói.
+
+  correction_note_for_corrections_md: >
+    `he-vi-sinh-duong-ruot-hang-chuc-nghin-ti-cu-dan-va-anh-huong-cua-chung`
+    (1) S1 — KHỐI VĂN BẢN THÔ CỦA TRỢ LÝ AI TRONG THÂN BÀI. Cũ: khoảng 470 từ về
+    nhịn ăn gián đoạn, dán thẳng vào cột `content` ở CẢ HAI ngôn ngữ, mở đầu bằng
+    chính câu lệnh ("vì sao nhịn ăn gián đoạn ... lại làm thay đổi quần thể vi
+    khuẩn ruột." / "Why Intermittent Fasting (IF) changes the gut microbial
+    population."), không tiêu đề Markdown, số thứ tự dính liền chữ ở bản tiếng
+    Việt ("sau:1.", "vi khuẩn2."), không một nguồn nào.
+    Mới: cắt toàn bộ, thay bằng một câu trỏ sang bài chuyên đề đã qua gate.
+    Căn cứ: (a) không nguồn nào trong ba nguồn của bài chạm tới chủ đề; (b) khối
+    đảo ngược sự thật then chốt — phần lớn vi khuẩn sinh butyrate
+    (Faecalibacterium prausnitzii, Roseburia, Eubacterium) thuộc ngành
+    **Firmicutes**, đúng nhóm mà khối bảo "bỏ đói", trong khi khối gán vai trò
+    sinh SCFA cho Bacteroidetes; tỉ số Firmicutes/Bacteroidetes như dấu ấn béo
+    phì đã bị Sze & Schloss, mBio 2016, 10.1128/mbio.01018-16 bác; (c) khối kê
+    phác đồ nhịn ≥16 giờ trong chuyên mục dinh dưỡng mà không có một dòng chống
+    chỉ định — tức MỞ LẠI đúng lỗi S1 đã đóng cho `nhin-an-gian-doan` ngày
+    2026-09-11; (d) ngôn ngữ thực phẩm chức năng ("thanh lọc", "rò rỉ ruột", "đốt
+    cháy mỡ thừa") và một khẳng định quá mức ("SIBO – nguyên nhân chính gây đầy
+    hơi, chướng bụng").
+    (2) S2 — "Khoảng 70% mô miễn dịch của cơ thể liên quan đến đường tiêu hóa".
+    Cũ: giữ nguyên từ lượt 2026-09-05, khi đã được ghi vào mục "Còn nợ" là số
+    không nguồn phải GỠ. Mới: phát biểu định tính về GALT, không có số.
+    (3) S2 — mục về não mở bằng một chữ "Có." dứt khoát và bỏ trống mệnh đề hàng
+    rào máu–não. Mới: nêu rõ serotonin đường tiêu hoá không qua hàng rào máu–não,
+    thống nhất với bản đã qua gate của `ruot-he-vi-sinh-vat-va-quyen-luc-cua-bo-nao-thu-hai`.
+    Căn cứ: Hwang YK et al., Int J Mol Sci 2025;26(3):1160, 10.3390/ijms26031160.
+    (4) S3 — "3,8 × 10¹³ đến 4 × 10¹³". Cũ: một dải hẹp không có trong nguồn. Mới:
+    ước lượng điểm 3,8 × 10¹³ kèm sai số chuẩn 25%, kèm tên tác giả và năm tại
+    chỗ. Căn cứ: Sender, Fuchs & Milo 2016, 10.1371/journal.pbio.1002533, nguyên
+    văn "3.8·10^13 bacteria in the colon with a standard error uncertainty of 25%".
+
+  counts: { S1: 1, S2: 2, S3: 3 }
+  sources_resolve: partial   # s3 có url+doi; s1 và s2 thiếu cả hai dù là nguồn CÓ THẬT
+  strong_tier_sources: 3     # đạt ngưỡng về SỐ LƯỢNG, nhưng không nguồn nào đỡ cho khối bị cắt
+  title_constraint_ok: true  # tiêu đề dùng bậc độ lớn "hàng chục nghìn tỉ" — đúng phán quyết 2026-09-05

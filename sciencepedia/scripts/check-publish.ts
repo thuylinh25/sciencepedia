@@ -213,7 +213,14 @@ async function loadArticles(where: object) {
       entityId: true,
       categoryId: true,
       sources: {
-        select: { url: true, tier: true, retractedAt: true, title: true },
+        // `doi` cần cho phép kiểm "nguồn không có gì để kiểm" phía dưới.
+        select: {
+          url: true,
+          doi: true,
+          tier: true,
+          retractedAt: true,
+          title: true,
+        },
       },
     },
     orderBy: { slug: "asc" },
@@ -273,6 +280,31 @@ async function audit(
   const retracted = article.sources.filter((s) => s.retractedAt);
   for (const source of retracted) {
     block(`nguồn đã bị rút vẫn còn trong bài: ${source.title}`);
+  }
+
+  /* Nguồn KHÔNG có url và KHÔNG có doi — điểm mù của chính bộ kiểm này.
+     Chốt 2026-09-13, sau khi một trích dẫn BỊA lọt tới PUBLISHED.
+
+     `van-dong-thay-doi-tim-va-mach-mau` mang nguồn "Exercise and cardiovascular
+     health: mechanisms and clinical implications", Circulation Research 2019.
+     Bài báo ấy không tồn tại. Nó sống sót qua mọi phép kiểm vì nó không có gì
+     để kiểm: `check-citations.ts` chỉ resolve hàng CÓ doi, `isAlive()` chỉ gọi
+     hàng CÓ url. Một nguồn không cung cấp định danh nào thì đi lọt qua cả hai
+     bằng cách không cung cấp gì.
+
+     Đây là loại lỗ hổng tệ nhất — không phải phép kiểm chạy sai, mà phép kiểm
+     KHÔNG CHẠY, và im lặng khi không chạy.
+
+     CẢNH chứ chưa CHẶN: lượt đo 2026-09-13 tìm được đúng 10 hàng như vậy trên
+     250 nguồn, ở 7 bài đã publish. Chặn ngay là kêu ở 7 chỗ mà lượt này chưa
+     kịp sửa, và một gate kêu ở chỗ không ai định sửa là gate người ta học cách
+     bỏ qua. Nâng lên CHẶN khi 10 hàng đó đã có doi hoặc url — chúng đều là bài
+     báo có thật, chỉ thiếu định danh, trừ đúng cái vừa gỡ. */
+  const unverifiable = article.sources.filter((s) => !s.url && !s.doi);
+  for (const source of unverifiable) {
+    warn(
+      `nguồn không có url lẫn doi nên không phép kiểm nào chạm tới được: ${source.title}`,
+    );
   }
 
   // --- Gate SEO (seo-expert) ---

@@ -39,3 +39,168 @@ resolved:
   by: science-editor (duyệt từng chuỗi thay thế) + apply-corrections.ts
   what: "Các phát hiện S2/S3 về nội dung ở trên ĐÃ SỬA trên bản đang publish. Chi tiết claim cũ/mới và căn cứ ở docs/content/corrections.md. Bản trước khi sửa nằm trong bảng Revision."
   still_open: "factCheck vẫn PENDING — bài chưa có reviewedById. Các phát hiện về SỐ LƯỢNG NGUỒN vẫn còn nguyên."
+
+# ─────────────────────────────────────────────────────────────────────────────
+editor_pass:
+  round: 2
+  date: 2026-09-12
+  verdict: REVISE
+  reviewed_by: Ban biên tập Sciencepedia (science-editor)
+  article_slug: sao-kim-bai-hoc-ve-hieu-ung-nha-kinh-mat-kiem-soat
+  scope: >
+    Rà nội dung sau lượt đính chính 2026-09-05. Câu hỏi đặt ra cho lượt này là
+    "lỗi ngày/năm đã được sửa THẬT chưa" — và câu trả lời là sửa đúng ở bài này,
+    nhưng chưa hết ở kho.
+
+  fetched:
+    - url: https://science.nasa.gov/venus/venus-facts/
+      status: 200
+      read: >
+        "surface temperatures hot enough to melt lead - about 872 degrees Fahrenheit
+        (467 Celsius)" (lặp lại hai lần trên trang) · "atmospheric pressure at the
+        surface measures a crushing 93 times what it is at sea level on Earth" ·
+        "atmospheric pressure at the surface squeezes with the same force as being
+        more than 3,000 feet underwater on Earth (930 meters)" · "Venus is the third
+        brightest object in the sky after the Sun and Moon" · "your day would be 243
+        Earth days long - longer even than a Venus year ... sunrise to sunset would
+        take 117 Earth days" · "The atmosphere is mostly carbon dioxide" (không có
+        con số phần trăm) · không có con số suất phản xạ 75%.
+    - url: https://nssdc.gsfc.nasa.gov/planetary/factsheet/
+      status: 200
+      read: "Venus: Rotation Period -5832,5 h · Length of Day 2802,0 h · Orbital Period 224,7 ngày · Mean Temperature 464 C · Surface Pressure 92 bars · Mass 4,87e24 kg · Diameter 12.104 km"
+    unreachable: []
+
+  recomputed:
+    - "Ngày mặt trời: 2802,0 h / 24 = 116,75 ngày. Bài ghi khoảng 117 ngày — ĐÚNG, và ngắn hơn năm 224,7 ngày."
+    - "Chu kỳ tự quay sao: 5832,5 h / 24 = 243,02 ngày. Bài ghi 243 — ĐÚNG."
+    - "Bán kính: 1 - 12.104/12.756 = 5,1% nhỏ hơn Trái Đất. Bài ghi 5% — ĐÚNG."
+    - "Khối lượng: 4,87 / 5,97 = 81,6%. Bài ghi 82% — ĐÚNG."
+
+  findings:
+    - id: KIM-1
+      severity: S2
+      claim: "(không nằm trong bài này) — \"một ngày trên Sao Kim (243 ngày Trái Đất) còn dài hơn một năm của chính nó (225 ngày Trái Đất)\""
+      problem: >
+        Lượt 2026-09-05 sửa lỗi ngày/năm ở `sao-kim` và `tam-hanh-tinh-he-mat-troi`.
+        Cả hai ĐÃ sửa thật, đọc lại hôm nay thấy đúng. Nhưng bài thứ ba mang đúng
+        câu sai ấy thì không ai chạm tới: `vi-sao-cac-hanh-tinh-tu-quay-quanh-truc`,
+        trạng thái PUBLISHED và factCheck = PASSED.
+        Nặng hơn nữa: câu đã sửa của `sao-kim` LIÊN KẾT thẳng sang bài đó. Người đọc
+        bấm vào cụm "tự quay theo chiều ngược lại" ngay trong câu vừa được đính chính
+        thì rơi đúng vào bản chưa đính chính, trên một trang đã đóng dấu đã thẩm định.
+        Đây là phiên bản tệ nhất của "kho tự mâu thuẫn": không chỉ hai bài nói khác
+        nhau, mà bài đúng đang dẫn người đọc sang bài sai.
+      source_checked: "đọc lại cột content của cả ba bài từ CSDL, 2026-09-12; NASA Venus Facts cho con số 117 ngày"
+      resolution: >
+        Đính chính `vi-sao-cac-hanh-tinh-tu-quay-quanh-truc` bằng đúng cách chữ đã
+        dùng ở `sao-kim`, và phải đóng dấu lại reviewedAt của bài đó — dấu PASSED
+        hiện thời đang chứng thực cho một câu sai.
+    - id: KIM-2
+      severity: S3
+      claim: "ngày mặt trời ở đó — từ bình minh này tới bình minh kế tiếp — chỉ khoảng 117 ngày Trái Đất"
+      problem: >
+        Kết luận ĐÚNG, nhưng đoạn trích được dẫn để chống lưng nó thì không nói điều
+        đó. corrections.md ghi căn cứ là NASA Venus Facts, "sunrise to sunset would
+        take 117 Earth days". Đọc đúng chữ thì bình minh tới HOÀNG HÔN là NỬA ngày
+        mặt trời, tức câu ấy hàm ý một ngày mặt trời 234 ngày, không phải 117.
+        Chỗ thật sự chống lưng con số 117 là Planetary Fact Sheet, "Length of Day
+        2802,0 hours" = 116,75 ngày — một dòng không được nhắc tới trong đính chính.
+        Nên bản sửa đi tới số đúng bằng một câu trích không phát biểu số đó. Đây
+        chính là dạng lỗi Pollack 1996, lần này nằm bên trong một lượt đính chính.
+      source_checked: "science.nasa.gov/venus/venus-facts + nssdc factsheet, đọc 2026-09-12"
+      resolution: >
+        Giữ nguyên câu trong bài. Sửa CĂN CỨ: neo con số 117 vào Length of Day của
+        Planetary Fact Sheet, và ghi rõ trong corrections.md rằng trang Venus Facts
+        của NASA tự mâu thuẫn với bảng của chính NASA ở chỗ này.
+    - id: KIM-3
+      severity: S3
+      claim: "áp suất bề mặt tương đương khi lặn sâu 900 mét dưới đại dương Trái Đất"
+      problem: >
+        Nguồn gắn vào bài ghi 930 mét ("more than 3,000 feet underwater on Earth
+        (930 meters)"). Bài làm tròn xuống thành 900. Con số bị làm tròn là con số
+        của chính nguồn, và làm tròn xuống còn xoá mất chữ "more than". Cùng họ với
+        "35+ khi số thật là 35".
+      source_checked: "science.nasa.gov/venus/venus-facts — đọc 2026-09-12"
+      resolution: "Trả lại 930 mét."
+    - id: KIM-4
+      severity: S3
+      claim: "đã đẩy nhiệt độ tới 464°C" (và summary: "bề mặt nóng 464°C")
+      problem: >
+        Hai nguồn gắn vào bài, cả hai đều của NASA, cho hai con số: Planetary Fact
+        Sheet ghi 464 C (nhiệt độ trung bình), trang Venus Facts ghi 467 C, nhắc hai
+        lần. Bài in 464 như một con số đã chốt. Lượt 2026-09-05 đã THẤY chênh lệch
+        này và ghi vào ô evidence rồi vẫn cho verdict "verified" — tức đã nhìn thấy
+        bất đồng mà không xử lý.
+        Theo phán quyết Betelgeuse trong content-rules: khi các trang của CÙNG một
+        cơ quan cho các giá trị khác nhau, chọn lấy một rồi in ra như số đã chốt là
+        dựng lên một độ chính xác không tồn tại.
+      source_checked: "cả hai URL, đọc 2026-09-12"
+      resolution: "In khoảng, kèm tên hai phép đo, thay vì một con số."
+    - id: KIM-5
+      severity: S3
+      claim: "Nhiệt độ tăng, nước bốc hơi, hơi nước lại là khí nhà kính mạnh — vòng lặp tự khuếch đại này đã đẩy nhiệt độ tới 464°C"
+      problem: >
+        Lấy cơ chế của quá khứ giải thích trạng thái hiện tại — cùng họ với lỗi
+        "dynamo hôm nay làm phanh của 4,5 tỉ năm trước" ở đợt Sao Mộc, chỉ đảo chiều.
+        Vòng lặp hơi nước là chuyện đã KẾT THÚC: nước của Sao Kim đã mất vào không
+        gian, khí quyển hiện nay gần như khô. Thứ giữ bề mặt ở mức đó hôm nay là
+        khối CO2 dày, không phải hơi nước. Câu văn hiện tại để lại mô hình sai — một
+        vòng lặp hơi nước đang chạy ngay lúc này.
+        Bản thân chuyện Sao Kim từng có đại dương cũng chưa ngã ngũ; NASA viết
+        "Venus' vanished ocean" ở chỗ này nhưng "harboring oceans in their younger
+        days ... most likely" ở chỗ khác trên cùng trang.
+      source_checked: "science.nasa.gov/venus/venus-facts — đọc 2026-09-12"
+      resolution: "Tách rõ hai thì: vòng lặp đã chạy trong quá khứ, CO2 giữ nhiệt ở hiện tại."
+    - id: KIM-6
+      severity: S3
+      claim: "Khí quyển Sao Kim gồm 96% CO₂" · "Lớp mây axit sulfuric phản xạ 75% ánh sáng tới"
+      problem: >
+        Hai con số, không nguồn nào gắn vào bài phát biểu chúng. Trang Venus Facts
+        chỉ nói "mostly carbon dioxide" và "dense clouds composed of sulfuric acid",
+        không có phần trăm nào; bảng Planetary Fact Sheet không có cột thành phần
+        khí quyển lẫn suất phản xạ. Cả hai con số đều đúng theo văn liệu, nhưng theo
+        quy tắc 6 thì số không nguồn phải gỡ, không phải làm mềm.
+      source_checked: "cả hai URL, đọc 2026-09-12 — tìm chuỗi 96, 75, albedo: không có"
+      resolution: >
+        Gắn thêm nssdc.gsfc.nasa.gov/planetary/factsheet/venusfact.html (có cả thành
+        phần khí quyển lẫn Bond albedo) rồi giữ số. Không gắn được thì gỡ số.
+    - id: KIM-7
+      severity: S4
+      claim: "Các sứ mệnh sắp tới như DAVINCI và VERITAS của NASA"
+      problem: >
+        Lượt 2026-09-05 đã ghi phát hiện này (claim date-bound không có mốc, VERITAS
+        đã bị lùi lịch) và nó chưa được xử lý. Ghi lại ở đây để nó không rơi khỏi sổ.
+      source_checked: "trang Venus Facts không nêu mốc phóng"
+      resolution: "Thêm as-of date, hoặc bỏ chữ sắp tới."
+
+  replacement_text:
+    - id: KIM-3
+      field: content
+      old: "dày đến mức áp suất bề mặt tương đương khi lặn sâu 900 mét dưới đại dương Trái Đất"
+      new: "dày đến mức áp suất bề mặt tương đương khi lặn sâu hơn 930 mét dưới đại dương Trái Đất"
+    - id: KIM-4-5
+      field: content
+      old: "Ánh sáng xuyên qua mây, làm nóng bề mặt, nhưng bức xạ hồng ngoại phát ra lại bị CO₂ giữ lại. Nhiệt độ tăng, nước bốc hơi, hơi nước lại là khí nhà kính mạnh — vòng lặp tự khuếch đại này đã đẩy nhiệt độ tới 464°C, đủ nóng để nung chảy chì, và đồng đều từ xích đạo tới cực."
+      new: "Ánh sáng xuyên qua mây, làm nóng bề mặt, nhưng bức xạ hồng ngoại phát ra lại bị CO₂ giữ lại. Trong quá khứ, nhiệt độ tăng làm nước bốc hơi, mà hơi nước cũng là khí nhà kính mạnh — vòng lặp tự khuếch đại đó chạy cho tới khi Sao Kim mất hết nước vào không gian. Thứ giữ bề mặt nóng hôm nay là khối CO₂ còn lại: NASA đo được 464°C ở bảng số liệu hành tinh và 467°C ở trang giới thiệu, đủ nóng để nung chảy chì, và gần như đồng đều từ xích đạo tới cực."
+    - id: KIM-4
+      field: summary
+      old: "Cùng kích thước với Trái Đất nhưng bề mặt nóng 464°C và áp suất gấp 92 lần — Sao Kim cho thấy khí hậu có thể trượt tới đâu."
+      new: "Cùng kích thước với Trái Đất nhưng bề mặt nóng quanh 464-467°C và áp suất gấp hơn 90 lần — Sao Kim cho thấy khí hậu có thể trượt tới đâu."
+    - id: KIM-1
+      field: "content của bài vi-sao-cac-hanh-tinh-tu-quay-quanh-truc (bài KHÁC, phải đính chính riêng)"
+      old: "Sao Kim quay ngược chiều với Trái Đất và hầu hết hành tinh khác, lại quay chậm đến kỳ lạ: một ngày trên Sao Kim (243 ngày Trái Đất) còn dài hơn một năm của chính nó (225 ngày Trái Đất)."
+      new: "Sao Kim quay ngược chiều với Trái Đất và hầu hết hành tinh khác, lại quay chậm đến kỳ lạ: một vòng tự quay so với các ngôi sao nền mất 243 ngày Trái Đất, lâu hơn cả 225 ngày nó đi hết một vòng quỹ đạo. Đó là chu kỳ tự quay sao, không phải độ dài một ngày — vì Sao Kim quay ngược, ngày mặt trời ở đó chỉ khoảng 117 ngày."
+
+  verified_unchanged:
+    - "Bán kính nhỏ hơn 5%, khối lượng 82% — tính lại từ Planetary Fact Sheet, khớp."
+    - "243 ngày tự quay sao / 225 ngày quỹ đạo / 117 ngày mặt trời — khớp Length of Day 2802,0 h."
+    - "Vật thể sáng thứ ba sau Mặt Trời và Mặt Trăng — khớp nguyên văn NASA."
+    - "Quay ngược chiều; nguyên nhân còn tranh luận giữa va chạm lớn và thuỷ triều khí quyển — mức dè dặt khớp cả NASA lẫn bài vi-sao-cac-hanh-tinh-tu-quay-quanh-truc."
+    - "Áp suất gấp 92 lần — khớp Surface Pressure 92 bars (trang Venus Facts ghi 93; xem KIM-4 cho cách xử lý cùng loại)."
+    - "50-60 km có nhiệt độ và áp suất gần điều kiện bề mặt Trái Đất — khớp NASA, 30-70 C ở độ cao khoảng 50 km."
+
+  note_for_generator: >
+    KIM-2 là bài học đắt nhất của lượt này và nó không nhằm vào người viết bài, mà
+    nhằm vào người SỬA bài: một lượt đính chính cũng phải đi qua gate nguồn như bản
+    thảo gốc. Đính chính 2026-09-05 đi tới con số đúng bằng một câu trích không
+    phát biểu con số đó, và không ai bắt được vì kết quả cuối cùng trông đúng.

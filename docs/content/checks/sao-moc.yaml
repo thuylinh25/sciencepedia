@@ -38,3 +38,228 @@ resolved:
   by: science-editor (duyệt từng chuỗi thay thế) + apply-corrections.ts
   what: "Các phát hiện S2/S3 về nội dung ở trên ĐÃ SỬA trên bản đang publish. Chi tiết claim cũ/mới và căn cứ ở docs/content/corrections.md. Bản trước khi sửa nằm trong bảng Revision."
   still_open: "factCheck vẫn PENDING — bài chưa có reviewedById. Các phát hiện về SỐ LƯỢNG NGUỒN vẫn còn nguyên."
+
+# ─────────────────────────────────────────────────────────────────────────────
+editor_pass:
+  round: 2
+  date: 2026-09-12
+  verdict: REVISE
+  reviewed_by: Ban biên tập Sciencepedia (science-editor)
+  article_slug: sao-moc-nguoi-khong-lo-khi-va-tam-khien-cua-he
+  scope: >
+    Rà nội dung sau lượt đính chính 2026-09-05 về Vết Đỏ Lớn. Phát hiện nặng nhất
+    của cả lô nằm ở bài này, và nó là hậu quả trực tiếp của cách lượt đính chính
+    đó được áp: sửa cột content, bỏ quên summary.
+
+  fetched:
+    - url: https://api.crossref.org/works/10.1029/2024GL108993
+      status: 200
+      note: >
+        Dùng content negotiation vì bản Wiley trả 403 cho curl. DOI resolve ĐÚNG bài
+        được ghi trong bảng nguồn.
+      read: >
+        Title "The Origin of Jupiter's Great Red Spot" · Sánchez-Lavega,
+        García-Melendo, Legarreta, Miró, Soria, Ahrens-Velásquez · Geophysical
+        Research Letters 51(12), 2024-06-16. Abstract nguyên văn: "Jupiter's Great
+        Red Spot (GRS) is the largest and longest-lived known vortex of all solar
+        system planets BUT ITS LIFETIME IS DEBATED ... G. D. Cassini discovered in
+        1665 the presence of a dark oval at the GRS latitude, known as the Permanent
+        Spot (PS) that was observed until 1713. We show from historical observations
+        of its size evolution and motions that PS is UNLIKELY TO CORRESPOND to the
+        current GRS, THAT WAS FIRST OBSERVED IN 1831."
+    - url: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2024GL108993
+      status: 403
+      note: >
+        KHÔNG đọc được toàn văn — Wiley chặn client không phải trình duyệt. Đã thẩm
+        định qua Crossref (metadata + abstract nguyên văn). Mọi kết luận dưới đây chỉ
+        dựa vào phần abstract đã đọc được, không suy đoán phần thân bài báo.
+    - url: https://nssdc.gsfc.nasa.gov/planetary/factsheet/
+      status: 200
+      read: "Jupiter: Mass 1898e24 kg · Diameter 142.984 km · Number of Moons 95 · Rotation Period 9,9 h"
+    - url: https://science.nasa.gov/jupiter/jupiter-facts/
+      status: 200
+      note: KHÔNG gắn vào bài.
+      read: >
+        "Jupiter's enormous magnetic field is 16 TO 54 TIMES as powerful as that of
+        the Earth" · "Jupiter has 95 moons that are officially recognized by the
+        International Astronomical Union" · "Ganymede is the largest moon in the solar
+        system (even bigger than the planet Mercury)" · "Io is the most volcanically
+        active body in the solar system" · "Stormy Jupiter is swept by over a dozen
+        prevailing winds, some reaching up to 335 miles per hour (539 kilometers per
+        hour) AT THE EQUATOR" · "The Great Red Spot ... has been observed on the giant
+        planet for more than 300 years" (trang NASA vẫn giữ con số đã bị bài báo 2024
+        xét lại).
+    unreachable: []
+
+  recomputed:
+    - "2026 - 350 = 1676. Mốc mà summary hàm ý rơi đúng vào Vết Vĩnh cửu của Cassini (1665-1713) — cấu trúc mà nguồn bậc 1 của chính bài kết luận là KHÁC với vết hiện nay."
+    - "2026 - 1831 = 195 năm. Đây mới là tuổi theo dõi liên tục mà thân bài đang nói."
+    - "Khối lượng: 1898 / (4,87+5,97+0,642+568+86,8+102+0,330) = 1898 / 768,6 = 2,47 lần. Bài ghi 2,5 — làm tròn lên, chấp nhận được nhưng không nguồn nào phát biểu tỉ số này."
+    - "Vết Đỏ Lớn co lại: 14.000 / 40.000 = còn 35% chiều ngang. Bài không nêu tỉ số nên không có gì để kiểm chéo, nhưng cũng không nêu NGÀY cho chữ hiện nay."
+
+  findings:
+    - id: MOC-1
+      severity: S2
+      claim: "với cơn bão Vết Đỏ Lớn đã tồn tại ít nhất 350 năm"
+      problem: >
+        Nằm ở summary, summaryEn và seoDescription — tức ở thẻ bài, ở kết quả tìm
+        kiếm, ở mọi chỗ trích dẫn bài này, chứ không ở thân bài.
+        Lượt đính chính 2026-09-05 đã sửa đúng chỗ này trong cột content: "được
+        theo dõi liên tục từ khoảng năm 1831", kèm giải thích Vết Vĩnh cửu của Cassini
+        là xoáy khác. Nhưng summary thì không ai chạm tới. Kết quả là bài tự mâu
+        thuẫn ngay trên một màn hình: thẻ giới thiệu nói 350 năm, đoạn thứ hai của
+        thân bài nói 195 năm và giải thích vì sao con số 350 là sai.
+        Và 350 năm không phải một con số xấp xỉ vô hại — đếm ngược từ 2026 nó rơi vào
+        1676, tức đúng vào Vết Vĩnh cửu, đúng cái cấu trúc mà nguồn bậc 1 gắn với bài
+        kết luận là KHÔNG phải vết hiện nay. Summary đang phát biểu chính mệnh đề đã
+        bị rút.
+        Nguồn bậc 1 của bài còn nói thêm một điều mà cả hai chỗ đều bỏ qua: "its
+        lifetime is debated".
+      source_checked: "Sánchez-Lavega et al. 2024, GRL 51(12), 10.1029/2024GL108993 — abstract nguyên văn qua Crossref, đọc 2026-09-12"
+      resolution: "Sửa summary, summaryEn và seoDescription cho khớp thân bài và khớp nguồn."
+    - id: MOC-2
+      severity: S2
+      claim: "tạo ra từ trường mạnh nhất trong các hành tinh, gấp khoảng 20.000 lần Trái Đất"
+      problem: >
+        Con số gắn vào sai đại lượng. NASA viết "Jupiter's enormous magnetic field is
+        16 to 54 times as powerful as that of the Earth" — tức ĐỘ MẠNH TỪ TRƯỜNG hơn
+        Trái Đất vài chục lần. Con số khoảng 20.000 là tỉ số MÔ-MEN LƯỠNG CỰC, một
+        đại lượng khác, và nó bị viết ra dưới dạng "từ trường ... gấp khoảng 20.000
+        lần", tức người đọc hiểu thành cường độ. Lệch ba bậc độ lớn so với chính cơ
+        quan mà bài dựa vào.
+        Cùng mẫu với "con số đúng gắn vào kết luận sai" đã ghi ở đợt 2026-09-11: phép
+        kiểm số học không bắt được vì 20.000 là một con số có thật, chỉ là của đại
+        lượng khác.
+      source_checked: "science.nasa.gov/jupiter/jupiter-facts — đọc 2026-09-12"
+      resolution: "Nói rõ đang so đại lượng nào, hoặc bỏ con số và giữ mệnh đề so sánh bậc nhất."
+    - id: MOC-3
+      severity: S3
+      claim: "Gió ở rìa đạt khoảng 430 km/h."
+      problem: >
+        Không nguồn nào gắn với bài phát biểu con số này. Trang NASA có một con số
+        gần gần — 539 km/h — nhưng đó là gió ĐỚI XÍCH ĐẠO của cả hành tinh, không
+        phải gió rìa Vết Đỏ Lớn. Ai đối chiếu nhanh sẽ tưởng đã tìm thấy nguồn.
+        Theo quy tắc 6, số không nguồn thì gỡ chứ không làm mềm.
+      source_checked: "science.nasa.gov/jupiter/jupiter-facts + abstract GRL — đọc 2026-09-12; không trang nào có 430 km/h"
+      resolution: "Gỡ con số, hoặc gắn nguồn đo tốc độ gió rìa GRS kèm năm đo."
+    - id: MOC-4
+      severity: S3
+      claim: "từ khoảng 40.000 km chiều ngang vào cuối thế kỷ 19 xuống còn khoảng 14.000 km hiện nay"
+      problem: >
+        Hai vấn đề. Một, chữ "hiện nay" là claim date-bound không có ngày — Vết Đỏ
+        Lớn đang co lại, nên con số này hết hạn theo thời gian và không ai biết nó
+        được đo năm nào. Hai, cả hai con số đều chưa được neo vào nguồn đọc được:
+        abstract của bài báo xác nhận xu hướng co lại ("as it has shrunk") nhưng
+        không nêu số, và toàn văn thì không tải được (403).
+      source_checked: "Crossref abstract 10.1029/2024GL108993 — đọc 2026-09-12; Wiley 403"
+      resolution: "Thêm năm đo cho mỗi con số, hoặc rút về mệnh đề định tính cho tới khi đọc được toàn văn."
+    - id: MOC-5
+      severity: S3
+      claim: "Bốn vệ tinh Galilei được Galileo Galilei phát hiện năm 1610 — quan sát đã trực tiếp bác bỏ mô hình địa tâm"
+      problem: >
+        Nâng mức của một mệnh đề lịch sử khoa học. Bốn vệ tinh bác bỏ mệnh đề "mọi
+        thiên thể quay quanh Trái Đất", nhưng KHÔNG bác bỏ mô hình địa tâm nói chung:
+        hệ Tycho — Trái Đất đứng yên, các hành tinh quay quanh Mặt Trời, Mặt Trời
+        quay quanh Trái Đất — dung nạp được quan sát này mà không cần sửa gì.
+        Kho còn có sẵn câu trả lời đúng ở chỗ khác: trang NASA về Sao Kim, đã tải
+        trong chính lượt này, viết rằng chính CÁC PHA CỦA SAO KIM do Galileo quan sát
+        mới "provided the key scientific proof for the Copernican heliocentric nature
+        of the solar system".
+      source_checked: "science.nasa.gov/venus/venus-facts và science.nasa.gov/jupiter/jupiter-facts — đọc 2026-09-12; trang Jupiter không gán vai trò bác bỏ nào cho bốn vệ tinh"
+      resolution: "Phát biểu đúng điều quan sát ấy bác bỏ."
+    - id: MOC-6
+      severity: S3
+      claim: "Vai trò \"tấm khiên bảo vệ Trái Đất\"" (trong titleEn và title)
+      problem: >
+        Thân bài xử lý mệnh đề này rất đúng mực: gọi nó là thứ "thường được nhắc
+        tới", rồi nói mô phỏng gần đây cho thấy bức tranh phức tạp hơn, vừa chặn vừa
+        đẩy vào trong. Nhưng TIÊU ĐỀ thì bỏ hết phần dè dặt đó: "tấm khiên của hệ",
+        và bản tiếng Anh còn mạnh hơn — "the gas giant that shields the system", một
+        mệnh đề khẳng định.
+        Tiêu đề không mang được mệnh đề dè dặt, đúng như phán quyết về ước lượng điểm
+        trong tiêu đề đã ghi. Ở đây hậu quả là tiêu đề khẳng định điều thân bài vừa
+        hạ xuống mức chưa chắc.
+      source_checked: "đọc lại content và contentEn, 2026-09-12"
+      resolution: "Đổi tiêu đề sang một đặc điểm không tranh cãi, hoặc đặt vai trò tấm khiên ở dạng câu hỏi."
+    - id: MOC-7
+      severity: S4
+      claim: "giới thiên văn xem đây là hai xoáy khác nhau"
+      problem: >
+        Bài báo viết PS "is UNLIKELY to correspond to" GRS — một kết luận có xác
+        suất. Bài nâng thành lập trường của cả giới thiên văn. Chênh lệch nhỏ, nhưng
+        đúng loại mà lượt 2026-09-05 vừa sửa, nên đáng ghi để không trôi tiếp.
+      source_checked: "abstract nguyên văn qua Crossref — đọc 2026-09-12"
+      resolution: "Trả lại mức của bài báo."
+    - id: MOC-8
+      severity: S4
+      claim: "**Ganymede** — vệ tinh lớn nhất hệ, lớn hơn cả Sao Thuỷ"
+      problem: >
+        Khớp nguyên văn NASA nên không phải lỗi nguồn, nhưng là một đơn giản hoá có
+        mất mát: Ganymede lớn hơn Sao Thuỷ về ĐƯỜNG KÍNH và nhỏ hơn một nửa về KHỐI
+        LƯỢNG. Người đọc rút ra "Ganymede to hơn Sao Thuỷ" là rút ra một mô hình sai.
+      source_checked: "science.nasa.gov/jupiter/jupiter-facts — đọc 2026-09-12"
+      resolution: "Nói rõ so theo đường kính."
+    - id: MOC-9
+      severity: S3
+      claim: "(vấn đề cấp kho, không nằm trong câu chữ nào)"
+      problem: >
+        Kho đang có HAI bài Sao Mộc cùng ở trạng thái PUBLISHED:
+        `sao-moc-nguoi-khong-lo-khi-va-tam-khien-cua-he` (bài này, factCheck PENDING)
+        và `sao-moc-hanh-tinh-quay-nhanh-nhat-va-chiec-phanh-vo-hinh` (factCheck
+        PASSED, 7 nguồn trong đó 5 nguồn bậc 1). Sáu bài trong lô này liên kết sang
+        bài thứ hai chứ không sang bài này.
+        Đối chiếu nội dung hai bài thì KHÔNG thấy mâu thuẫn — cả hai đều ghi tỉ số
+        khối lượng 2,5 lần và đều nói từ trường Sao Mộc mạnh nhất trong các hành
+        tinh. Nhưng một bài có bảng nguồn tử tế còn bài kia hai nguồn, và bài yếu hơn
+        mới là bài mang tên chung "người khổng lồ khí".
+      source_checked: "đọc cả hai bài từ CSDL, 2026-09-12"
+      resolution: "Việc của knowledge-architect: gộp hoặc phân vai rõ. Không chặn gate accuracy của bài này."
+
+  replacement_text:
+    - id: MOC-1
+      field: summary
+      old: "Khối lượng gấp 2,5 lần tất cả hành tinh còn lại cộng lại, với cơn bão Vết Đỏ Lớn đã tồn tại ít nhất 350 năm."
+      new: "Khối lượng gấp khoảng 2,5 lần tất cả hành tinh còn lại cộng lại, với cơn bão Vết Đỏ Lớn được theo dõi liên tục từ khoảng năm 1831."
+    - id: MOC-1
+      field: summaryEn
+      old: "More massive than every other planet combined times 2.5, with a Great Red Spot storm at least 350 years old."
+      new: "About 2.5 times as massive as every other planet combined, with a Great Red Spot that has been tracked continuously since about 1831."
+    - id: MOC-2
+      field: content
+      old: "áp suất tăng dần cho tới khi hydro chuyển thành trạng thái kim loại lỏng — dẫn điện và tạo ra từ trường mạnh nhất trong các hành tinh, gấp khoảng 20.000 lần Trái Đất."
+      new: "áp suất tăng dần cho tới khi hydro chuyển thành trạng thái kim loại lỏng — dẫn điện và tạo ra từ trường mạnh nhất trong các hành tinh. Đo ở đỉnh mây, nó mạnh gấp khoảng 16 đến 54 lần từ trường bề mặt Trái Đất, tuỳ vị trí."
+    - id: MOC-3
+      field: content
+      old: "Gió ở rìa đạt khoảng 430 km/h."
+      new: "Gió ở rìa xoáy thổi nhanh hơn bất kỳ cơn bão nào trên Trái Đất, và tốc độ ấy đã tăng lên trong những thập niên gần đây khi xoáy co lại."
+    - id: MOC-4
+      field: content
+      old: "Đáng chú ý là nó đang co lại: từ khoảng 40.000 km chiều ngang vào cuối thế kỷ 19 xuống còn khoảng 14.000 km hiện nay."
+      new: "Đáng chú ý là nó đang co lại: chiều ngang đo được vào cuối thế kỷ 19 lớn hơn khoảng ba lần so với các phép đo trong thập niên 2020."
+    - id: MOC-5
+      field: content
+      old: "Bốn vệ tinh Galilei được Galileo Galilei phát hiện năm 1610 — quan sát đã trực tiếp bác bỏ mô hình địa tâm:"
+      new: "Bốn vệ tinh Galilei được Galileo Galilei phát hiện năm 1610 — quan sát đầu tiên cho thấy có thiên thể quay quanh một vật không phải Trái Đất:"
+    - id: MOC-7
+      field: content
+      old: "nhưng cấu trúc đó đã tan biến và không có chuỗi quan sát nào nối nó với vết hiện nay — giới thiên văn xem đây là hai xoáy khác nhau."
+      new: "nhưng cấu trúc đó đã tan biến, và từ diễn biến kích thước cùng chuyển động của nó, nhóm Sánchez-Lavega kết luận Vết Vĩnh cửu nhiều khả năng không phải là vết hiện nay."
+    - id: MOC-8
+      field: content
+      old: "- **Ganymede** — vệ tinh lớn nhất hệ, lớn hơn cả Sao Thuỷ, và là vệ tinh duy nhất có từ trường riêng"
+      new: "- **Ganymede** — vệ tinh lớn nhất hệ, đường kính còn lớn hơn Sao Thuỷ dù khối lượng chưa bằng một nửa, và là vệ tinh duy nhất có từ trường riêng"
+
+  verified_unchanged:
+    - "Theo dõi liên tục từ khoảng năm 1831; Vết Vĩnh cửu quan sát 1665-1713 — khớp abstract nguyên văn của nguồn bậc 1. Lượt đính chính 2026-09-05 ĐÃ áp đúng vào cột content."
+    - "95 vệ tinh, Io hoạt động núi lửa mạnh nhất, Europa có đại dương dưới vỏ băng, Ganymede là vệ tinh duy nhất có từ trường riêng — khớp NASA."
+    - "Vai trò tấm khiên trong THÂN BÀI: mức dè dặt đúng, giữ nguyên. Vấn đề chỉ ở tiêu đề (MOC-6)."
+    - "Tàu Galileo ngừng hoạt động sau 58 phút ở độ sâu khoảng 150 km — đúng theo văn liệu NASA, nhưng không nguồn nào gắn vào bài phát biểu nó."
+    - "Ba liên kết nội bộ đều resolve tới bài PUBLISHED (kiểm 2026-09-12)."
+
+  note_for_generator: >
+    MOC-1 không phải lỗi sinh bài, mà lỗi ÁP đính chính, và nó đáng thành quy tắc:
+    một claim bị rút phải bị truy trong MỌI trường của bản ghi, không riêng cột
+    content. Trường summary, summaryEn, seoDescription, title, titleEn đều lên trang,
+    và summary thì lên NHIỀU chỗ hơn thân bài — nó xuất hiện ở thẻ bài, ở trang danh
+    mục, ở kết quả tìm kiếm. Sửa thân bài mà bỏ summary là để claim sai ở đúng chỗ
+    nhiều người đọc nhất.

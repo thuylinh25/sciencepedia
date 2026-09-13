@@ -31,3 +31,263 @@ findings:
   - severity: note
     detail: "Mức dè dặt về quan hệ nhân quả hai chiều giữa thiếu ngủ và thoái hoá thần kinh được giữ đúng — không nâng tương quan thành nhân quả."
 recommendation: revise
+
+# ═══════════════════════════════════════════════════════════════════════════
+# Lượt duyệt của science-editor — bài ĐÃ PUBLISHED, mọi sửa là ĐÍNH CHÍNH
+# ═══════════════════════════════════════════════════════════════════════════
+editor_pass:
+  round: 1
+  date: 2026-09-12
+  verdict: revise
+  reviewed_by: "Ban biên tập Sciencepedia"
+  article_slug: giac-ngu-sau-lam-gi-voi-tri-nho-cua-ban
+
+  fetched:
+    - doi: 10.1126/science.1241224
+      resolved: "Xie et al., 'Sleep Drives Metabolite Clearance from the Adult Brain', Science 2013"
+      how: "Crossref resolve + đọc toàn văn bản lưu PMC3880190, trích nguyên văn abstract"
+    - doi: 10.1152/physrev.00032.2012
+      resolved: "Rasch & Born, 'About Sleep's Role in Memory', Physiological Reviews 2013 — khớp tiêu đề, tác giả, năm"
+      how: "Crossref resolve theo DOI"
+    - doi: 10.1126/scitranslmed.3003748
+      resolved: "Iliff et al., Sci Transl Med 2012, 4:147ra111 — bài thực sự mô tả hệ glymphatic"
+      how: "Crossref resolve theo DOI (nguồn ĐỐI CHỨNG, chưa có trong bảng Source)"
+    - doi: 10.1038/s41593-024-01638-y
+      resolved: "Miao, Luo et al., 'Brain clearance is reduced during sleep and anesthesia', Nature Neuroscience 2024, 27:1046-1050"
+      how: "Crossref resolve theo DOI (nguồn ĐỐI CHỨNG, chưa có trong bảng Source)"
+    - doi: 10.5665/sleep.4716
+      resolved: "Watson et al., đồng thuận AASM/SRS, SLEEP 2015 — khuyến nghị thời lượng ngủ"
+      how: "Crossref resolve theo DOI (nguồn ĐỐI CHỨNG, chưa có trong bảng Source)"
+
+  # Hai câu hỏi bắt buộc của gate
+  mental_model: >
+    Đọc cả bài chứ không từng câu, mô hình đọng lại là: "giấc ngủ rửa trôi
+    protein Alzheimer ra khỏi não, nên làm theo năm gạch đầu dòng ở cuối bài là
+    giảm được nguy cơ sa sút trí tuệ". Mô hình đó KHÔNG đúng ở mức bài đang
+    khẳng định. Con số 60% hoàn toàn chính xác — và đó chính là cái bẫy: nó đúng
+    ở CHUỘT, trong một kết quả hiện đang bị tranh cãi trực diện, rồi được đặt
+    cạnh một danh sách hành vi dành cho người đọc. Đúng mẫu lỗi "con số đúng gắn
+    vào kết luận sai" mà corrections.md đã ghi ngày 2026-09-11.
+  silence: >
+    Bài im lặng ở chỗ nguy hiểm nhất của một bài về giấc ngủ: nó không nói khi
+    nào ngủ kém là BỆNH chứ không phải thói quen. Người ngưng thở khi ngủ do tắc
+    nghẽn đọc bài này sẽ nhận được năm lời khuyên vệ sinh giấc ngủ, không lời nào
+    chữa được bệnh của họ, và không một dòng nào bảo họ đi khám. Dòng miễn trừ y
+    tế chung chung ở cuối bài không thay thế được — người lướt không đọc nó, và
+    nó không nêu được dấu hiệu cụ thể nào.
+
+  findings:
+    - id: E1
+      severity: S2
+      claim: >-
+        "Năm 2013, nhóm của Maiken Nedergaard mô tả hệ glymphatic: khoảng gian
+        bào trong não giãn ra khoảng 60% khi ngủ, cho phép dịch não tuỷ chảy qua
+        mạnh hơn và cuốn đi các sản phẩm chuyển hoá, trong đó có beta-amyloid —
+        protein tích tụ trong bệnh Alzheimer."
+      problem: >
+        Ba lỗi chồng lên nhau trong một câu.
+        (1) LOÀI BỊ GIẤU. Xie 2013 đo trên CHUỘT. Abstract nguyên văn: "Using
+        real-time assessments of tetramethylammonium diffusion and two-photon
+        imaging in live mice, we show that natural sleep or anesthesia are
+        associated with a 60% increase in the interstitial space". Bài viết
+        "khoảng gian bào trong não" trống không, trong một bài xưng "bạn" và kết
+        bằng lời khuyên hành vi cho người — người đọc không có cách nào biết đây
+        là kết quả trên chuột.
+        (2) MỆNH ĐỀ DÈ DẶT BỊ GỠ. Xie viết "the restorative function of sleep MAY
+        BE a consequence of the enhanced removal". Bài phát biểu như cơ chế đã
+        xác lập. Theo quy tắc 3 của gate, nâng mức chắc chắn là lỗi cấp từ chối.
+        (3) SAI NĂM VÀ SAI BÀI. Hệ glymphatic được mô tả năm 2012 (Iliff et al.,
+        Sci Transl Med 4:147ra111), không phải 2013. Bài 2013 nói về vai trò của
+        GIẤC NGỦ, không phải bài mô tả hệ thống.
+        Ngoài ra abstract ghi "natural sleep OR ANESTHESIA" — con số 60% không
+        đặc hiệu cho giấc ngủ sinh lý.
+      source_checked: >
+        10.1126/science.1241224 — đọc toàn văn. Con số 60% và "twofold faster"
+        beta-amyloid clearance ĐÚNG nguyên văn. Không một chữ nào trong bài báo
+        nói tới người. 10.1126/scitranslmed.3003748 xác nhận năm mô tả glymphatic
+        là 2012.
+      resolution: >
+        Thay toàn bộ mục "Dọn dẹp chất thải" bằng replacement_text R1. Thêm hai
+        nguồn đối chứng vào bảng Source (Iliff 2012, Miao 2024). Sửa tier của
+        s1/s2 từ 2 xuống 1 — cả hai là bình duyệt sơ cấp/tổng quan, thuộc bậc 1.
+
+    - id: E2
+      severity: S2
+      claim: >-
+        Toàn bộ mục "Dọn dẹp chất thải" trình bày cơ chế thải glymphatic khi ngủ
+        như đồng thuận đã chốt.
+      problem: >
+        Kết quả cốt lõi của Xie 2013 ĐANG BỊ TRANH CÃI TRỰC DIỆN. Miao, Luo và
+        cộng sự (Nature Neuroscience 2024, 27:1046-1050) tiêm phân tử huỳnh quang
+        thẳng vào nhu mô não chuột thức / ngủ / gây mê và báo cáo điều NGƯỢC LẠI:
+        "Brain clearance is reduced during sleep and anesthesia". Nedergaard đã
+        phản bác phương pháp của nhóm này, và tranh luận chưa ngã ngũ. Quy tắc 7
+        của gate đòi trình bày bất đồng thật như một bất đồng; bài đang trình bày
+        một bên của tranh luận như thể không có bên kia.
+      source_checked: "10.1038/s41593-024-01638-y — Crossref xác nhận tiêu đề, tập, trang, năm."
+      resolution: "Gộp vào replacement_text R1 — đoạn nêu rõ tranh cãi."
+
+    - id: E3
+      severity: S2
+      claim: "(không có câu nào — đây là chỗ bài IM LẶNG)"
+      problem: >
+        Bài đưa năm khuyến nghị hành vi về giấc ngủ nhưng không có một dòng nào
+        nói khi nào ngủ kém cần đi khám. Với ngưng thở khi ngủ do tắc nghẽn, toàn
+        bộ danh sách "điều nên làm" là vô hiệu, và việc bài không nhắc tới nó có
+        thể khiến người bệnh trì hoãn chẩn đoán. Đây đúng dạng lỗi S1 đã ghi cho
+        `nhin-an-gian-doan` ngày 2026-09-11: bài không nói gì sai, cái nó im lặng
+        mới nguy. Xếp S2 chứ không S1 vì bài này ít nhất có dòng miễn trừ y tế
+        chung và không kê một phác đồ cụ thể nào.
+      source_checked: >
+        Không phải lỗi đối chiếu nguồn; là lỗi phạm vi. Khuyến nghị 7-9 giờ đối
+        chiếu với đồng thuận AASM/SRS (10.5665/sleep.4716) — lưu ý đồng thuận ấy
+        phát biểu "7 or more hours", KHÔNG đặt trần 9 giờ.
+      resolution: >
+        Chèn mục riêng CÓ TIÊU ĐỀ "Khi nào vệ sinh giấc ngủ là không đủ", đặt
+        TRƯỚC dòng miễn trừ y tế. Nguyên văn ở replacement_text R2. Không được
+        nhét vào kết luận hay vào dòng miễn trừ.
+
+    - id: E4
+      severity: S3
+      claim: >-
+        "Cắt ngắn giấc ngủ hai tiếng cuối không làm mất 'một phần đều' của mọi
+        giai đoạn — nó cắt gần như trọn phần REM."
+      problem: >
+        Tự tính lại: REM chiếm 20-25% cả đêm theo chính bảng ngay phía trên, tức
+        khoảng 95-120 phút trong một đêm 8 giờ. Hai tiếng cuối chứa các đợt REM
+        DÀI NHẤT nhưng không chứa hết REM — REM xuất hiện ở mọi chu kỳ, kể cả chu
+        kỳ đầu. "Gần như trọn phần REM" vì thế là một mệnh đề định lượng bị nâng
+        quá mức bằng chứng. Hướng của câu đúng; độ lớn thì không.
+      source_checked: >
+        Chính bảng giai đoạn trong bài (kho tự mâu thuẫn — máy dò lỗi rẻ nhất theo
+        content-rules.md). Rasch & Born 2013 mô tả phân bố REM tăng dần về cuối
+        đêm nhưng không phát biểu "gần trọn".
+      resolution: "Thay bằng replacement_text R3."
+
+    - id: E5
+      severity: S3
+      claim: >-
+        "Khuyến nghị của các hiệp hội giấc ngủ dành cho người trưởng thành là 7–9
+        giờ" · "Tránh caffeine sau buổi trưa — thời gian bán thải khoảng 5–6 giờ"
+        · "Giữ phòng ngủ tối và mát (khoảng 18–20°C)" · "Ngủ bù cuối tuần ... không
+        phục hồi hết suy giảm nhận thức tích luỹ"
+      problem: >
+        Bốn mệnh đề định lượng, KHÔNG mệnh đề nào được bảng Source chống lưng. Bài
+        chỉ có hai nguồn: Xie 2013 (thải chất chuyển hoá) và Rasch & Born 2013
+        (trí nhớ). Không nguồn nào nói về caffeine, nhiệt độ phòng, hay ngủ bù.
+        "Các hiệp hội giấc ngủ" là quy nguồn mơ hồ — không nói hiệp hội nào, và
+        đồng thuận AASM/SRS thực tế phát biểu "7 giờ trở lên" chứ không đặt trần 9.
+      source_checked: >
+        Đọc cả hai nguồn của bài; không nguồn nào chứa các số này. Đối chiếu
+        10.5665/sleep.4716 cho mốc thời lượng.
+      resolution: >
+        Theo quy tắc 6 (số không nguồn thì GỠ, không làm mềm): hoặc gắn nguồn đích
+        danh cho từng số trong đúng một vòng sửa, hoặc gỡ số. Khuyến nghị của
+        editor là GẮN NGUỒN — các số này đều đúng và tra được — và nêu đích danh
+        tổ chức thay vì "các hiệp hội giấc ngủ".
+
+    - id: E6
+      severity: S3
+      claim: "(siêu dữ liệu bảng Source)"
+      problem: >
+        Cả hai nguồn có url=null VÀ doi=null. Trích dẫn không resolve được: người
+        đọc không có đường nào đi từ bài tới nguồn. Gate accuracy đòi "citation
+        resolve". Ngoài ra cả hai bị ghi tier=2 trong khi chúng là bình duyệt sơ
+        cấp và tổng quan — tức bậc 1. Sau khi sửa tier, bài vẫn chỉ có 2 nguồn,
+        dưới ngưỡng 3 nguồn bậc 1-2 của dự án.
+      source_checked: "Crossref resolve cả hai DOI thành công — nguồn CÓ THẬT, chỉ là chưa được ghi."
+      resolution: >
+        Ghi doi=10.1126/science.1241224 và doi=10.1152/physrev.00032.2012, kèm
+        URL. Đổi tier về 1. Thêm tối thiểu một nguồn nữa để đạt ngưỡng 3.
+
+  # ─────────────────────────────────────────────────────────────────────────
+  # NGUYÊN VĂN câu thay thế của science-editor. Không diễn đạt lại.
+  # ─────────────────────────────────────────────────────────────────────────
+  replacement_text:
+
+    R1:
+      replaces: "toàn bộ mục '## Dọn dẹp chất thải', cả hai đoạn"
+      text: |
+        ## Dọn dẹp chất thải
+
+        Năm 2012, nhóm của Maiken Nedergaard mô tả **hệ glymphatic** — một đường
+        dẫn dịch chạy dọc theo thành mạch máu, qua đó dịch não tuỷ trao đổi với
+        dịch gian bào và cuốn theo các sản phẩm chuyển hoá.
+
+        Năm 2013, cũng nhóm này báo cáo rằng ở **chuột**, khi con vật ngủ tự
+        nhiên hoặc bị gây mê, khoảng gian bào trong não giãn ra khoảng 60% và
+        beta-amyloid — protein tích tụ trong bệnh Alzheimer — được dọn đi nhanh
+        gấp đôi so với lúc thức. Chính bài báo ấy chỉ viết rằng chức năng phục
+        hồi của giấc ngủ **có thể** là hệ quả của việc thải chất thải mạnh hơn.
+
+        Hai giới hạn cần nói rõ. Thứ nhất, đây là phép đo trên chuột; chưa có
+        phép đo tương đương trên người. Thứ hai, kết quả này **đang bị tranh
+        cãi**: năm 2024, một nhóm khác dùng cách đo khác — tiêm chất đánh dấu
+        thẳng vào mô não thay vì vào dịch não tuỷ — và báo cáo điều ngược lại,
+        rằng não thải chất *chậm đi* khi ngủ và khi gây mê. Nhóm của Nedergaard
+        đã phản bác phương pháp đó. Tranh luận chưa ngã ngũ.
+
+        Vì vậy, "ngủ đủ để rửa trôi protein Alzheimer" hiện là một giả thuyết
+        đang được kiểm chứng, không phải một cơ chế đã xác lập ở người. Thiếu ngủ
+        mạn tính có tương quan với nguy cơ thoái hoá thần kinh trong các nghiên
+        cứu quan sát, nhưng chiều nhân quả vẫn chưa rõ — bản thân thoái hoá thần
+        kinh cũng phá giấc ngủ.
+
+    R2:
+      inserts: "mục mới, đặt NGAY TRƯỚC dòng miễn trừ y tế ở cuối bài"
+      mandatory: true
+      note: >
+        Câu về chống chỉ định y tế phải là nguyên văn của editor. Người khác diễn
+        đạt lại thì nó không còn là câu đã qua gate.
+      text: |
+        ## Khi nào vệ sinh giấc ngủ là không đủ
+
+        Những gợi ý ở trên dành cho người ngủ kém vì thói quen. Chúng không thay
+        thế việc khám bệnh, và có những dấu hiệu cần đi khám thay vì tự điều
+        chỉnh:
+
+        - **Ngáy to kèm những quãng ngừng thở, hoặc người ngủ cùng chứng kiến bạn
+          ngừng thở khi ngủ.** Đây là dấu hiệu của ngưng thở khi ngủ do tắc nghẽn
+          — bệnh này cần chẩn đoán bằng đo đa ký giấc ngủ, và không một biện pháp
+          vệ sinh giấc ngủ nào chữa được nó.
+        - **Buồn ngủ nhiều ban ngày dù đã nằm trên giường đủ 7 giờ trở lên**, đặc
+          biệt nếu bạn từng ngủ gật khi lái xe.
+        - **Mất ngủ kéo dài trên ba tháng, từ ba đêm mỗi tuần trở lên.** Ở mức
+          này, điều trị hàng đầu là liệu pháp nhận thức hành vi cho mất ngủ
+          (CBT-I), và nó cần người hướng dẫn chứ không phải một danh sách mẹo.
+        - **Cảm giác bứt rứt ở chân về đêm buộc bạn phải cử động mới dễ chịu.**
+        - **Mất ngủ đi kèm khí sắc trầm, mất hứng thú kéo dài, hoặc ý nghĩ về cái
+          chết.** Rối loạn giấc ngủ và trầm cảm thường đi cùng nhau và cần được xử
+          lý cùng nhau.
+
+        Không tự dùng thuốc ngủ hay melatonin kéo dài khi chưa có chỉ định: chúng
+        làm dịu triệu chứng của những tình trạng trên và vì thế làm chậm chẩn đoán.
+
+    R3:
+      replaces: >-
+        "Cắt ngắn giấc ngủ hai tiếng cuối không làm mất 'một phần đều' của mọi
+        giai đoạn — nó cắt gần như trọn phần REM."
+      text: |
+        Cắt ngắn giấc ngủ hai tiếng cuối không làm mất một phần đều của mọi giai
+        đoạn: các đợt REM dài nhất nằm ở những chu kỳ cuối, nên phần bị mất
+        nghiêng hẳn về REM thay vì chia theo đúng tỉ lệ thời lượng ở bảng trên.
+
+  correction_note_for_corrections_md: >
+    `giac-ngu-sau-lam-gi-voi-tri-nho-cua-ban` · Hệ glymphatic và beta-amyloid.
+    Cũ: "khoảng gian bào trong não giãn ra khoảng 60% khi ngủ ... cuốn đi ...
+    beta-amyloid", không nêu loài, không nêu tranh cãi, quy việc mô tả hệ
+    glymphatic cho năm 2013.
+    Mới: nêu rõ phép đo thực hiện trên CHUỘT; giữ nguyên mệnh đề dè dặt "có thể"
+    của chính bài báo; nêu rõ kết quả đang bị tranh cãi; trả việc mô tả hệ
+    glymphatic về năm 2012.
+    Căn cứ: Xie et al., Science 2013, 10.1126/science.1241224 — abstract nguyên
+    văn "in live mice ... a 60% increase in the interstitial space" và "the
+    restorative function of sleep MAY BE a consequence". Iliff et al., Sci Transl
+    Med 2012, 10.1126/scitranslmed.3003748 mới là bài mô tả hệ glymphatic. Miao,
+    Luo et al., Nature Neuroscience 2024, 27:1046-1050, 10.1038/s41593-024-01638-y
+    — "Brain clearance is reduced during sleep and anesthesia".
+    Kèm theo: thêm mục có tiêu đề "Khi nào vệ sinh giấc ngủ là không đủ".
+
+  counts: { S1: 0, S2: 3, S3: 3 }
+  sources_resolve: false
+  strong_tier_sources: 2   # ngưỡng 3 — CHƯA ĐẠT

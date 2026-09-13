@@ -26,3 +26,156 @@ findings:
   - severity: S3
     detail: "URL nguồn nssdc.gsfc.nasa.gov/planetary/factsheet/ hiện trả 307 về nasa.gov/nssdc — bảng số liệu không truy cập được (đo 2026-09-05). Lưu ý check-publish --links coi URL này là \"còn sống\" vì nó theo redirect tới một trang trả 200."
 recommendation: revise
+
+# ─────────────────────────────────────────────────────────────────────────────
+editor_pass:
+  round: 2
+  date: 2026-09-12
+  verdict: REVISE
+  reviewed_by: Ban biên tập Sciencepedia (science-editor)
+  article_slug: sao-tho-vanh-dai-mong-manh-va-ve-tinh-co-dai-duong
+  scope: >
+    Rà nội dung. Phát hiện chính là một phép so sánh mang mệnh đề định lượng mà
+    chưa ai tính — cùng loại với lỗi hình Kepler đã chốt ngày 2026-09-06, chỉ khác
+    là lần này nó nằm trong câu văn chứ không trong hình.
+
+  fetched:
+    - url: https://nssdc.gsfc.nasa.gov/planetary/factsheet/
+      status: 200
+      read: "Saturn: Density 687 kg/m3 · Diameter 120.536 km · NUMBER OF MOONS 274 · Rotation Period 10,7 h · Mean Temperature -140 C"
+    - url: https://science.nasa.gov/saturn/facts/
+      status: 200
+      note: KHÔNG gắn vào bài.
+      read: >
+        "Saturn's ring system extends up to 175,000 miles (282,000 kilometers) FROM
+        THE PLANET, yet the vertical height is typically about 30 feet (10 meters) IN
+        THE MAIN RINGS" · "The ring particles mostly range from tiny, dust-sized icy
+        grains to chunks AS BIG AS A HOUSE. A few particles are as large as mountains"
+        · "As of March 2025, Saturn had 274 confirmed moons" · "Saturn is the only
+        planet in our solar system with an average density that is less than water.
+        The giant gas planet could float in a bathtub" · "Spanning about 20,000 miles
+        (30,000 kilometers) across, the hexagon is a wavy jet stream ... first noticed
+        in images taken by the twin Voyager spacecraft in the early 80s" · "recent
+        observations with NASA's Hubble Space Telescope revealed a giant, evolving,
+        10-sided - or decagonal - atmospheric wave encircling Saturn's south pole,
+        according to a research study published in September 2026"
+    unreachable: []
+
+  recomputed:
+    - "Tỉ lệ rộng trên dày của vành đai: 280.000 km = 2,8e8 m; chia cho 10 m = 2,8e7. Vành đai mỏng hơn chiều rộng của nó khoảng 28 TRIỆU lần."
+    - "Tỉ lệ của phép so sánh trong bài: một tờ giấy dày 0,1 mm trên một sân bóng đá rộng 100 m cho tỉ lệ 1e6 — tức 1 triệu lần. Phép so sánh SAI 28 lần, và sai về phía làm vành đai trông DÀY hơn thực tế."
+    - "Muốn tờ giấy đúng tỉ lệ thì nó phải rộng 2,8 km, tức gần ba chục sân bóng đá nối nhau."
+    - "Mật độ: 687 kg/m3 = 0,687 g/cm3, thấp hơn nước 1,000 g/cm3 — ĐÚNG."
+
+  findings:
+    - id: THO-1
+      severity: S2
+      claim: "tỉ lệ tương đương một tờ giấy rộng bằng sân bóng đá"
+      problem: >
+        Phép so sánh này mang một mệnh đề kiểm chứng được, và tính ra thì nó sai 28
+        lần. Vành đai mỏng hơn chiều rộng của nó khoảng 28 triệu lần; tờ giấy trên
+        sân bóng đá chỉ cho tỉ lệ 1 triệu lần. Muốn đúng, tờ giấy ấy phải rộng 2,8 km.
+        Sai về phía nào cũng đáng sửa, nhưng ở đây nó sai về phía làm vành đai trông
+        DÀY hơn thực tế — tức nó phá đúng cái điều mà cả mục đang muốn nói, và phá
+        đúng cái điều nằm trong tiêu đề bài ("vành đai mỏng manh").
+        Đây là bản văn xuôi của phán quyết đã chốt ngày 2026-09-06 cho hình Kepler:
+        nếu một phép minh hoạ mang mệnh đề định lượng thì tham số của nó là dữ liệu,
+        không phải lựa chọn thẩm mỹ. Một phép ví chọn vì nghe xuôi tai cũng là chọn
+        bằng mắt.
+      source_checked: "science.nasa.gov/saturn/facts — đọc 2026-09-12; tự tính lại"
+      resolution: "Nêu thẳng tỉ số đã tính, rồi mới đưa phép ví đã được tính cho khớp."
+    - id: THO-2
+      severity: S3
+      claim: "Chúng trải rộng khoảng 280.000 km"
+      problem: >
+        Nguồn NASA viết vành đai trải "up to 282,000 kilometers FROM THE PLANET" —
+        đó là một BÁN KÍNH, tính từ hành tinh ra. Đọc thành chiều rộng toàn hệ vành
+        đai thì phải nhân đôi, tức khoảng 564.000 km.
+        Con số 280.000 km tình cờ lại xấp xỉ đúng đường kính của vành đai CHÍNH (mép
+        ngoài vành A cách tâm chừng 136.800 km), nên nó không hẳn sai — nhưng bài
+        không nói nó đang đo cái nào, và nó không phải con số mà nguồn phát biểu.
+        Một số đúng vì trùng hợp vẫn là một số chưa được kiểm.
+      source_checked: "science.nasa.gov/saturn/facts — đọc 2026-09-12"
+      resolution: "Nói rõ đang đo vành đai chính, theo đường kính."
+    - id: THO-3
+      severity: S3
+      claim: "Cấu trúc này đã được quan sát từ thời Voyager và vẫn tồn tại — một hiện tượng chưa có ở bất kỳ hành tinh nào khác."
+      problem: >
+        Một siêu ngữ ("chưa có ở bất kỳ hành tinh nào khác") không kèm mốc thời gian
+        và không kèm lịch rà lại — đúng thứ quy tắc 5 cấm. Mệnh đề vẫn đúng tính tới
+        hôm nay, nhưng nó thuộc loại tự hết hạn.
+        Cùng chỗ này còn một khoảng trống về tính cập nhật: NASA vừa công bố (nghiên
+        cứu tháng 9/2026, dữ liệu từ 2023) một sóng khí quyển MƯỜI cạnh quanh cực NAM
+        Sao Thổ. Không mâu thuẫn với câu của bài — vẫn cùng một hành tinh — nhưng
+        đoạn văn hiện tại dựng lên hình ảnh một cấu trúc lục giác đơn độc, trong khi
+        bức tranh mới là hai cực đều có sóng tia đa giác.
+      source_checked: "science.nasa.gov/saturn/facts — đọc 2026-09-12"
+      resolution: "Thêm mốc as-of; nhắc tới phát hiện ở cực nam."
+    - id: THO-4
+      severity: S4
+      claim: "kích thước từ hạt bụi tới nhà cao tầng"
+      problem: >
+        Nguồn nói "as big as a house" — nhà, không phải nhà cao tầng. Bài phóng lên
+        một bậc, rồi lại bỏ mất vế mà nguồn có và mạnh hơn hẳn: "a few particles are
+        as large as mountains". Vừa nâng chỗ không cần nâng, vừa bỏ chỗ đáng giữ.
+      source_checked: "science.nasa.gov/saturn/facts — đọc 2026-09-12"
+      resolution: "Trả lại đúng thang của nguồn."
+    - id: THO-5
+      severity: S4
+      claim: "ở nhiều vùng chỉ dày chừng 10 mét"
+      problem: >
+        Nguồn giới hạn con số này vào VÀNH ĐAI CHÍNH ("in the main rings"); bài đổi
+        thành "ở nhiều vùng", một phạm vi rộng hơn và mơ hồ hơn. Vành E thì dày hàng
+        nghìn km, nên phạm vi mở rộng ấy không đúng.
+      source_checked: "science.nasa.gov/saturn/facts — đọc 2026-09-12"
+      resolution: "Giới hạn lại đúng như nguồn."
+    - id: THO-6
+      severity: S4
+      claim: "Nếu có một đại dương đủ lớn, Sao Thổ sẽ nổi."
+      problem: >
+        NASA nói y như vậy nên không phải lỗi nguồn, nhưng là đơn giản hoá có mất
+        mát: đây là một phép so sánh MẬT ĐỘ TRUNG BÌNH, không phải một dự đoán về
+        lực đẩy Archimedes — Sao Thổ không phải một khối rắn và sẽ không giữ được
+        hình dạng trong tình huống ấy. Theo quy tắc 4, khi đơn giản hoá có mất mát
+        thì phải nói là nó có mất mát.
+      source_checked: "science.nasa.gov/saturn/facts — đọc 2026-09-12"
+      resolution: "Giữ phép ví, thêm nửa câu nói rõ nó chỉ là cách đọc con số mật độ."
+    - id: THO-7
+      severity: S3
+      claim: "(cả bài)"
+      problem: >
+        Một nguồn duy nhất là Planetary Fact Sheet, và nó chống lưng được đúng một
+        con số trong bài: mật độ 0,687 g/cm3. Toàn bộ phần vành đai, tuổi vành đai
+        100-400 triệu năm, mưa vành đai, Enceladus, Titan, Dragonfly, lục giác cực
+        bắc đều không có trong nguồn nào gắn với bài.
+      source_checked: "đối chiếu từng claim với nội dung đã tải"
+      resolution: "Chạy lại bước 1-2 pipeline trước khi đặt factCheck = PASSED."
+
+  replacement_text:
+    - id: THO-1+THO-2+THO-5
+      field: content
+      old: "Vành đai Sao Thổ gồm hàng tỉ mảnh băng nước và đá, kích thước từ hạt bụi tới nhà cao tầng. Chúng trải rộng khoảng 280.000 km nhưng ở nhiều vùng chỉ dày chừng 10 mét — tỉ lệ tương đương một tờ giấy rộng bằng sân bóng đá."
+      new: "Vành đai Sao Thổ gồm hàng tỉ mảnh băng nước và đá, phần lớn từ cỡ hạt bụi tới cỡ một ngôi nhà, vài mảnh lớn ngang một quả núi. Vành đai chính trải ngang chừng 280.000 km, trong khi bề dày của nó thường chỉ khoảng 10 mét — rộng gấp gần 28 triệu lần bề dày của chính nó. Muốn dựng lại tỉ lệ đó bằng một tờ giấy, tờ giấy ấy phải rộng gần ba cây số."
+    - id: THO-3
+      field: content
+      old: "Cấu trúc này đã được quan sát từ thời Voyager và vẫn tồn tại — một hiện tượng chưa có ở bất kỳ hành tinh nào khác."
+      new: "Cấu trúc này đã được quan sát từ thời Voyager đầu thập niên 1980 và tới năm 2026 vẫn còn đó; chưa hành tinh nào khác được thấy có dòng tia đa giác như vậy. Năm 2026, Hubble còn phát hiện một sóng khí quyển mười cạnh quanh cực nam của chính Sao Thổ."
+    - id: THO-6
+      field: content
+      old: "Mật độ trung bình của Sao Thổ là 0,687 g/cm³ — thấp hơn nước. Nếu có một đại dương đủ lớn, Sao Thổ sẽ nổi."
+      new: "Mật độ trung bình của Sao Thổ là 0,687 g/cm³ — thấp hơn nước. NASA hay diễn đạt điều này bằng câu Sao Thổ sẽ nổi nếu có một bồn tắm đủ lớn; đó là một cách đọc con số mật độ chứ không phải một dự đoán, vì Sao Thổ không phải khối rắn và sẽ không giữ nổi hình dạng trong tình huống ấy."
+
+  verified_unchanged:
+    - "Mật độ 0,687 g/cm3, thấp hơn nước, hành tinh duy nhất như vậy — khớp Planetary Fact Sheet và NASA."
+    - "Lục giác rộng khoảng 30.000 km, phát hiện từ thời Voyager — khớp nguyên văn NASA."
+    - "Enceladus rộng khoảng 500 km; Cassini bay xuyên cột phun và phát hiện muối, silica, phân tử hữu cơ — đúng theo văn liệu Cassini."
+    - "Titan là vệ tinh duy nhất có khí quyển dày, chủ yếu nitơ; sông hồ biển chứa methane và ethane lỏng ở -179 C; Dragonfly dự kiến tới trong thập niên 2030 — đúng."
+    - "Tuổi vành đai 100-400 triệu năm: mức dè dặt (có thể, có lẽ chỉ) ĐÚNG và phải giữ nguyên — đây là kết quả còn đang tranh luận."
+    - "Ba liên kết nội bộ đều resolve tới bài PUBLISHED (kiểm 2026-09-12)."
+
+  note_for_generator: >
+    Thêm vào quy tắc về hình của article-generator một vế cho VĂN XUÔI: mọi phép ví
+    dạng "tương đương như", "giống như", "cỡ bằng" mà hai vế đều có số thì phải tính
+    ra tỉ số của cả hai vế rồi đối chiếu, trước khi viết. Phép ví là một mệnh đề định
+    lượng đội lốt tu từ, và nó trốn được mọi phép kiểm số học vì trong câu không có
+    con số nào để kiểm.

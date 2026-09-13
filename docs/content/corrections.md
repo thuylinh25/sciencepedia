@@ -313,3 +313,184 @@ Sửa cả cột `doi` lẫn cột `url`: sửa một cột và bỏ cột kia l
 Hàng trong CSDL vốn đã đúng (`10.1038/35081000`). Lỗi chỉ nằm trong seed file, tức nó **chưa bao giờ lên trang** nhưng **sẽ tiêm vào lần seed lại**. Đã sửa tại chỗ kèm ghi chú.
 
 **Bài học:** một phép kiểm chỉ đo "link còn sống" không phải phép kiểm trích dẫn. Nó bắt được DOI 404 và mù hoàn toàn trước DOI trỏ nhầm bài — mà loại thứ hai mới là loại người đọc không thể tự phát hiện.
+
+## 2026-09-13 — bài `mat-trang` đi hết 11 bước, và hai lỗi do chính gate gây ra
+
+Bài Mặt Trăng là lỗ hổng lớn nhất còn lại của nhánh Hệ Mặt Trời: mười bài NHẮC
+tới nó, không bài nào nói về nó. Nay đã PUBLISHED, `factCheck = PASSED`, 8
+nguồn (2 bậc 1), 4 liên kết ra, 2 liên kết vào, 599 từ.
+
+### Hai lỗi đáng nhớ, cả hai đều do khâu SỬA sinh ra chứ không phải khâu viết
+
+**E1 — lượt rút gọn tự đẻ ra một claim sai.** Bản nháp 842 từ phải rút về trần
+600. Câu gốc: "Ở đáy **vài** hố **gần cực** — nơi ánh nắng chưa bao giờ chạm
+tới — vẫn còn băng nước cổ." Lượt rút xoá cùng lúc lượng từ *vài* và vị trí
+*gần cực*, rồi để câu đứng ngay sau "bề mặt chi chít hố va chạm". Kết quả đọc
+ra thành: hố nào tối cũng có băng. Nguồn không nói thế — s1 gắn băng với **vùng
+cực**.
+
+Đây là lần thứ HAI mẫu lỗi này xảy ra (lần đầu: `dien-tich-va-dong-dien`, rút
+1.016 → 588 từ và tự sinh ra mệnh đề hai dây song song "HÚT NHAU"). Cùng một cơ
+chế cả hai lần: **xoá định ngữ hạn định để tiết kiệm vài chữ.** Định ngữ là thứ
+trông giống chữ đệm nhất và chịu lực nhiều nhất. Đã nâng thành quy tắc trong
+`content-rules.md`, mục "Rút gọn là một lượt viết".
+
+**E10 — câu sửa của editor làm bài tự đếm sai chính nó.** Vòng 1 cắt mệnh đề
+"bóng của nó quét lên Trái Đất mỗi khi có nhật thực" vì không nguồn nào trong
+bảng đỡ nó. Câu thay thế giữ được link nhưng bỏ mất *vai trò* — trong khi đoạn
+ngay sau vẫn mở bằng "**Vai trò thứ ba** ít được nhắc hơn". Bài đếm ba, nêu
+hai.
+
+Điều đáng ghi: lỗi này do **chính gate accuracy** gây ra, không phải do lượt áp
+sửa — câu R2 được chèn vào chính xác từng chữ. Và nó chỉ lộ ra khi đọc câu
+TRONG NGỮ CẢNH hai câu kề, đúng cơ chế đã sinh ra E1. Sửa bằng R5, dựa trên
+chính trang eclipse của NASA/GSFC: *"improved historic knowledge of the Moon's
+orbit, enough to permit accurate analyses of solar eclipses"* → "còn nhật thực
+thì **phụ thuộc vào quỹ đạo của nó**". Nói được mối liên hệ mà không phát biểu
+mệnh đề cơ chế nào.
+
+### Một phủ quyết bị rút lại vì tiền đề đã đổ
+
+Bước 2 chặn con số "không có Mặt Trăng thì độ nghiêng trục biến thiên 0°–85°"
+với lý do nó "chưa đọc được từ nguồn gốc", và xếp nó cùng họ với 10¹⁴ vi sinh
+vật — loại con số sống sót nhờ được chép lại. Vòng 2, editor **tải được nguyên
+văn abstract Laskar 1993** và đọc thấy đúng câu ấy.
+
+Theo mục "kiểm chứng tiền đề trước khi thi hành một phủ quyết" (2026-09-02),
+lệnh cấm không còn căn cứ cũ. Kết quả giữ nguyên — con số không vào bài — nhưng
+nay **vì lý do biên tập**: đó là kết quả phản thực của một mô hình, Laskar tự
+viết "might" và "potential", và bài không còn chỗ mang mệnh đề điều kiện.
+`research/mat-trang.yaml` đã sửa: s6/s7 nay có `passages` nguyên văn, và ràng
+buộc neo vào **tình trạng đọc được** chứ không ghim một giá trị chết.
+
+Lợi ích kèm theo: s6 nói "generally believed", nên cụm "Giả thuyết được ủng hộ
+nhiều nhất" nay có chỗ dựa bậc 1 ngoài NASA.
+
+### Hai bài đã publish bị chạm, và chạm thế nào
+
+`check-publish` CHẶN bài không có liên kết vào. Đã thêm từ hai bài:
+
+| Bài | Câu | Đổi |
+|---|---|---|
+| `nhat-thuc-va-nguyet-thuc-…` | "Nhật thực xảy ra khi Mặt Trăng che khuất Mặt Trời." | bọc "Mặt Trăng" thành link |
+| `dieu-gi-tao-ra-gio-thuy-trieu-…` | "…lực hấp dẫn của Mặt Trăng và Mặt Trời…" | bọc "Mặt Trăng" thành link |
+
+**Không đổi một chữ nào** — chỉ bọc cụm từ đã nằm sẵn trong câu, ở cả VI lẫn
+EN. Mỗi bài có một `Revision` chụp bản trước, ghi trong **cùng transaction**
+với lệnh sửa. `lastVerifiedAt` **không** đụng tới: lượt này không đối chiếu câu
+nào với nguồn nào, đặt mốc ấy là nói dối rằng bài vừa được rà lại.
+
+Script: `scripts/link-to-mat-trang.ts`, có chạy khô và **dừng nếu câu cần tìm
+khớp khác một lần** — khớp nhiều nghĩa là sắp sửa nhầm chỗ, khớp không lần nào
+nghĩa là bài đã đổi từ lúc khảo sát.
+
+### Còn nợ
+
+`npm run search:reindex` chưa chạy được — `MEILISEARCH_HOST` không có trong
+`.env` local (chỉ có trên Vercel). Kho rơi về Postgres FTS nên bài vẫn tìm được;
+chạy lại khi có biến môi trường.
+
+## 2026-09-13 — ba lỗi S1, và một trích dẫn BỊA lọt tới PUBLISHED
+
+Lượt rà 32 bài PENDING chạy được 8 bài trước khi hết hạn mức. Cả 8 đều REVISE.
+Ba phát hiện mức S1, **cả ba đều ở nội dung sức khoẻ** — lặp lại đúng mẫu của
+lượt 2026-09-11. Lượt này chỉ đóng S1; S2/S3 còn nguyên.
+
+### S1 — một nguồn không tồn tại, và vì sao không phép kiểm nào bắt được
+
+`van-dong-thay-doi-tim-va-mach-mau-nhu-the-nao` mang nguồn:
+
+> "Exercise and cardiovascular health: mechanisms and clinical implications",
+> Circulation Research, 2019, tier 2
+
+**Bài báo ấy không tồn tại.** Bài tổng quan có thật và gần nhất của Circulation
+Research về đúng chủ đề là Lavie, Arena, Swift et al., *Exercise and the
+Cardiovascular System*, 2015, 117:207–219 — khác tiêu đề, khác năm.
+
+Điều đáng ghi hơn cả bản thân lỗi là **vì sao nó sống sót**. Nguồn ấy không có
+`url` và không có `doi`. `check-citations.ts` chỉ resolve những hàng CÓ doi;
+`isAlive()` trong `check-publish.ts` chỉ gọi những hàng CÓ url. Một nguồn không
+cung cấp định danh nào thì **đi lọt qua cả hai phép kiểm bằng cách không cung
+cấp gì để kiểm**.
+
+Đây là loại lỗ hổng tệ nhất: không phải phép kiểm chạy sai, mà phép kiểm KHÔNG
+CHẠY — và im lặng khi không chạy. Nó cũng là lời nhắc rằng mục Pollack 1996
+chưa nói hết: ở đó, citation hợp lệ gắn vào claim bịa; ở đây, chính citation là
+thứ bịa.
+
+**Đo toàn kho:** 250 nguồn, 63 có doi, 240 có url, **10 hàng không có cả hai**,
+nằm ở 7 bài. Chín hàng còn lại đều là bài báo CÓ THẬT và nổi tiếng — Jinek 2012,
+LIGO GW150914, Einstein 1905 — chỉ thiếu định danh.
+
+**Đã bịt:** `check-publish.ts` nay CẢNH khi một nguồn không có url lẫn doi.
+Chưa CHẶN, vì chặn ngay là kêu ở 7 bài mà lượt này chưa kịp sửa, và một gate
+kêu ở chỗ không ai định sửa là gate người ta học cách bỏ qua. **Nâng lên CHẶN
+khi 9 hàng còn lại đã có doi.**
+
+Nguồn bịa đã gỡ, thay bằng ba nguồn bậc 1 có DOI, mỗi nguồn gắn vào đúng claim
+nó chống lưng: Cornelissen & Smart 2013 (huyết áp), Mandsager 2018 (VO₂max và
+tử vong), Lavie 2015 (thích nghi tim và nội mô). Bài nay có 4 nguồn, 3 có DOI,
+3 bậc 1 — trước đó là 2 nguồn, 0 DOI.
+
+### S1 — đặt vận động ngang hàng thuốc hạ áp, rồi im lặng
+
+- Cũ: "…mức giảm khoảng 5–8 mmHg huyết áp tâm thu ở người tăng huyết áp —
+  **tương đương một số thuốc đơn trị liệu**."
+- Mới: con số theo đúng phân nhóm của nguồn — 8,3 mmHg (CI 6,0–10,7) ở người
+  **đã tăng huyết áp**, 3,5 mmHg ở người huyết áp bình thường — và bỏ hẳn phép
+  so với thuốc.
+- Thêm **mục riêng có tiêu đề** "Vận động không thay thế thuốc đang dùng", đặt
+  trước dòng miễn trừ y tế.
+- Căn cứ: 10.1161/JAHA.112.004473, đọc toàn văn. Không chỗ nào trong nguồn đề
+  xuất vận động thay cho thuốc.
+
+**Vì sao là S1.** Con số đúng, phép so đúng, kết luận người đọc rút ra thì nguy
+hiểm: với người đang uống thuốc hạ áp — đúng nhóm mà con số nói tới — câu ấy
+đọc ra thành một lý do để bỏ thuốc. Ngừng thuốc hạ áp đột ngột có thể gây tăng
+huyết áp bật lại. Cùng cấu trúc với lỗi S1 của `nhin-an-gian-doan`: bài không
+nói gì sai, cái nó im lặng mới đổi được hành vi. Khác ở chỗ bài này còn **chủ
+động gợi ra phép so**, nên sự im lặng nặng hơn.
+
+Câu chống chỉ định cũ nằm làm dòng cuối mục "Khuyến nghị hiện hành", không có
+tiêu đề riêng — đúng thứ phán quyết 2026-09-11 đã cấm: chống chỉ định y tế phải
+gặp được khi LƯỚT.
+
+### S1 — đầu ra thô của trợ lý AI nằm trong thân bài, ở cả hai ngôn ngữ
+
+`he-vi-sinh-duong-ruot-…` mang một khối ~470 từ về nhịn ăn gián đoạn, dán thẳng
+vào cột `content` và `contentEn`. Bằng chứng, không phải suy đoán:
+
+- **Câu lệnh rò vào bài.** Khối mở đầu bằng chính câu hỏi đặt cho trợ lý, viết
+  thường, không tiêu đề, kết bằng dấu chấm rồi dính liền câu trả lời:
+  *"vì sao nhịn ăn gián đoạn (Intermittent Fasting) lại làm thay đổi quần thể
+  vi khuẩn ruột.Nhịn ăn gián đoạn…"*
+- **Định dạng bị huỷ ở bản tiếng Việt** nhưng còn nguyên ở bản tiếng Anh:
+  `"các tác động cụ thể sau:1."`, `"nhịp sinh học của vi khuẩn2."`. Cùng một
+  nội dung, một bản giữ được cấu trúc và một bản mất — dấu vết của thao tác
+  DÁN, không phải của một lượt soạn bài.
+- **Không một nguồn nào.** Ba nguồn của bài không nguồn nào chạm tới nhịn ăn
+  gián đoạn, Akkermansia, MMC hay SIBO.
+- **Sai ngược ở điểm then chốt.** Khối viết Firmicutes là "vi khuẩn hảo ngọt và
+  cơ hội" cần bỏ đói. Nhưng phần lớn vi khuẩn sinh butyrate — *Faecalibacterium
+  prausnitzii*, *Roseburia*, *Eubacterium* — **thuộc chính ngành Firmicutes**,
+  và thân bài ở trên vừa gọi butyrate là SCFA quan trọng nhất. Khối này khuyên
+  người đọc bỏ đói đúng nhóm vi khuẩn mà bài vừa khen.
+- **Kê phác đồ không chống chỉ định**, trong khi bài riêng về đúng chủ đề đã
+  được bổ sung mục chống chỉ định từ 2026-09-11. Một lỗi S1 đã đóng đang bị mở
+  lại ở một URL khác.
+
+**Xử: CẮT TOÀN BỘ, cả hai ngôn ngữ.** Không viết lại từng câu — theo quy tắc 8
+(khi nghi ngờ thì cắt), và ở đây không có gì để cứu vì không một câu nào có
+nguồn. Thay bằng đúng một câu trỏ sang bài riêng. Bài rút từ 5.525 xuống 3.530
+ký tự (1.139 → 712 từ).
+
+### Ghi chung
+
+`factCheck` của cả hai bài **vẫn PENDING**, `lastVerifiedAt` **không** đặt:
+lượt này chỉ đóng S1, mỗi bài còn 3–6 phát hiện S2/S3 chưa áp. Mỗi bài có một
+`Revision` chụp bản trước, ghi trong cùng transaction với lệnh sửa. Script:
+`scripts/fix-s1-2026-09-13.ts`, có chạy khô và dừng nếu bất kỳ neo nào khớp
+khác đúng một lần.
+
+**Còn nợ:** 24/32 bài chưa rà (hết hạn mức phiên giữa chừng); toàn bộ phát hiện
+S2/S3 của 8 bài đã rà chưa áp; 9 nguồn vẫn thiếu định danh.

@@ -39,3 +39,160 @@ findings:
   - severity: S3
     detail: "URL nguồn nssdc.gsfc.nasa.gov/planetary/factsheet/ hiện trả 307 về nasa.gov/nssdc — bảng số liệu không truy cập được (đo 2026-09-05). Lưu ý check-publish --links coi URL này là \"còn sống\" vì nó theo redirect tới một trang trả 200."
 recommendation: revise
+
+# ─────────────────────────────────────────────────────────────────────────────
+editor_pass:
+  round: 2
+  date: 2026-09-12
+  verdict: REVISE
+  reviewed_by: Ban biên tập Sciencepedia (science-editor)
+  article_slug: sao-hoa-hanh-tinh-do-va-cau-hoi-ve-nuoc
+  scope: >
+    Rà nội dung. Bài này chứa hai lỗi thuộc hai mẫu đã được ghi tên trong
+    corrections.md: một tỉ số chưa từng được tính, và một cơ chế nhân quả mà
+    chính kho đã phán là không có nguồn chống lưng.
+
+  fetched:
+    - url: https://nssdc.gsfc.nasa.gov/planetary/factsheet/
+      status: 200
+      read: "Mars: Diameter 6.792 km · Orbital Period 687,0 ngày · Mean Temperature -65 C · Number of Moons 2 · Global Magnetic Field? No"
+      note: >
+        Đây là nguồn DUY NHẤT của bài. Bảng không có Olympus Mons, không có Valles
+        Marineris, không có MAVEN, không có khoáng vật, không có Jezero, không có
+        mốc 3,5-4 tỉ năm. Nó chống lưng được đúng một dòng của bài (hai vệ tinh).
+    - url: https://science.nasa.gov/mars/facts/
+      status: 200
+      note: KHÔNG gắn vào bài.
+      read: >
+        "Olympus Mons stands more than 25 miles (that's more than 132,000 feet, or 40
+        kilometers) tall from base to summit" · "Mount Everest, which rises 29,029
+        feet, or 8,848 meters, above the Earth's surface" · "Valles Marineris ...
+        extends about 2,400 miles (3,870 kilometers) in length, spans about 370 miles
+        (600 kilometers) across at its widest, and descends about 5.8 miles (9.3
+        kilometers) at its deepest" · "Mars has two small moons, Phobos and Deimos,
+        that MAY BE captured asteroids" · "water on Mars is found in the form of
+        water-ice JUST UNDER THE SURFACE in the polar regions as well as in briny
+        (salty) water" · "Mars has no global magnetic field today, but areas of the
+        Martian crust in the southern hemisphere are highly magnetized, indicating
+        traces of a magnetic field from 4 billion years ago" — trang KHÔNG nói từ
+        trường tắt khiến gió mặt trời bào mòn khí quyển.
+    unreachable: []
+
+  recomputed:
+    - "22 km / 8,848 km = 2,49. Bài ghi gần gấp ba — SAI. Tỉ số đúng với con số của chính bài là gấp khoảng hai lần rưỡi."
+    - "Nếu lấy con số NASA hiện hành (40 km từ chân tới đỉnh) thì tỉ số là 4,5 — vẫn không phải gần gấp ba. Không có cách đọc nào cho ra gần gấp ba từ một cặp số nhất quán."
+    - "Valles Marineris: NASA 3.870 km, bài ghi 4.000 km (làm tròn lên 3,4%); NASA 9,3 km sâu, bài ghi 7 km (lệch 25% và lệch về phía nông hơn)."
+
+  findings:
+    - id: HOA-1
+      severity: S2
+      claim: "**Olympus Mons** — núi lửa cao 22 km, gần gấp ba đỉnh Everest"
+      problem: >
+        Tỉ số không khớp chính cặp số mà bài in ra: 22 / 8,848 = 2,49, tức gấp hai
+        lần rưỡi, không phải gần gấp ba. Đây đúng mẫu "tỉ số chưa từng được tính"
+        đã ghi trong corrections.md ở đợt Sao Mộc — cụm tỉ số được mượn từ một nguồn
+        dùng chiều cao khác rồi dán cạnh một chiều cao do bài tự chọn.
+        Còn một tầng sai nữa bên dưới, nghiêm trọng hơn con số: hai vế đo theo hai
+        mốc khác nhau. 22 km là độ cao so với mốc chuẩn địa hình Sao Hoả, còn 8.848 m
+        là độ cao Everest so với mực nước biển — mà Everest chỉ nhô lên khoảng 3-5 km
+        so với cao nguyên quanh nó. So "từ chân tới đỉnh" của bên này với "so với mực
+        nước biển" của bên kia thì tỉ số nào cũng vô nghĩa. Chính NASA cũng mắc lỗi
+        ghép này trên trang của mình, nên chép lại tỉ số của NASA không cứu được.
+      source_checked: "science.nasa.gov/mars/facts — đọc 2026-09-12; tự tính lại"
+      resolution: "Tính lại tỉ số từ con số bài dùng, và nói rõ hai mốc đo."
+    - id: HOA-2
+      severity: S2
+      claim: "Sao Hoả nhỏ, nên lõi nguội nhanh và từ trường toàn cầu tắt từ sớm. Không còn lá chắn, gió mặt trời bào mòn khí quyển suốt hàng tỉ năm."
+      problem: >
+        Một chuỗi nhân quả bốn mắt xích, phát biểu như sự thật đã xác lập, không
+        nguồn nào gắn với bài nói tới. Trang Mars Facts của NASA chỉ nói Sao Hoả
+        không còn từ trường toàn cầu và vỏ nam bán cầu còn từ tính dư — nó KHÔNG nối
+        hai chuyện đó lại thành nguyên nhân của việc mất khí quyển.
+        Quan trọng hơn: kho đã phán quyết đúng mệnh đề này rồi. Ngày 2026-09-10, khi
+        sửa `cau-truc-ben-trong-trai-dat`, `science-editor` gỡ câu "từ trường giúp
+        bảo vệ khí quyển" với lý do không passage nào chống lưng và vấn đề còn đang
+        tranh cãi — dẫn chính Sao Kim làm phản ví dụ, một hành tinh không có từ
+        trường nội tại mà vẫn giữ được khí quyển dày.
+        Nên bài này đang phát biểu, ở mức chắc chắn cao hơn, đúng cái mệnh đề mà kho
+        đã bỏ ở chỗ khác. Hai bài cùng kho trả lời khác nhau cho cùng một câu hỏi
+        vật lý, và bài đứng sai lại là bài nói chắc hơn.
+      source_checked: "science.nasa.gov/mars/facts — đọc 2026-09-12; đối chiếu docs/content/corrections.md mục 2026-09-10 và bài sao-kim trong chính lô này"
+      resolution: >
+        Viết lại thành thứ MAVEN thật sự đo được — tốc độ thoát khí đang diễn ra —
+        và hạ mệnh đề nhân quả về từ trường xuống đúng mức một giả thuyết.
+    - id: HOA-3
+      severity: S3
+      claim: "**Valles Marineris** — hệ hẻm vực dài 4.000 km, sâu tới 7 km"
+      problem: >
+        NASA hiện ghi 3.870 km và sâu tới 9,3 km. Chiều dài bị làm tròn lên, còn độ
+        sâu thì lệch 25% VỀ PHÍA NÔNG HƠN — tức bài đang kể một hẻm vực nhỏ hơn hẻm
+        vực thật. Con số 7 km là giá trị cũ, trích lại mà không mang theo mốc nào.
+      source_checked: "science.nasa.gov/mars/facts — đọc 2026-09-12"
+      resolution: "Lấy cặp số hiện hành của NASA."
+    - id: HOA-4
+      severity: S3
+      claim: "Băng nước lộ thiên ở hai cực và băng ngầm ở vĩ độ trung bình"
+      problem: >
+        NASA viết băng nước nằm "just under the surface in the polar regions" — ngay
+        DƯỚI bề mặt, không phải lộ thiên. Bài cũng gộp hai cực làm một, trong khi
+        chỏm vĩnh cửu ở cực nam chủ yếu là băng CO2 phủ trên băng nước, còn cực bắc
+        mới là băng nước lộ ra vào mùa hè. Một đơn giản hoá để lại mô hình sai về
+        thứ người ta sẽ thấy nếu đứng ở đó.
+      source_checked: "science.nasa.gov/mars/facts — đọc 2026-09-12"
+      resolution: "Nói đúng vị trí băng theo nguồn."
+    - id: HOA-5
+      severity: S3
+      claim: "(mục Địa hình cực đoan)"
+      problem: >
+        Gạch đầu dòng cuối cùng — "Hai vệ tinh nhỏ Phobos và Deimos" — nằm dưới tiêu
+        đề "Địa hình cực đoan". Vệ tinh không phải địa hình. Lượt rà cấu trúc
+        2026-09-11 đã nhận ra đây là dấu vết bài bị cắt giữa lúc đổi chủ đề; lượt này
+        xác nhận từ phía nội dung: bài kết thúc mà không trả lời xong câu hỏi ở tiêu
+        đề ("câu hỏi về nước" chưa được khép).
+      source_checked: "đọc cột content, 2026-09-12"
+      resolution: >
+        Tách hai vệ tinh ra khỏi mục địa hình và viết phần khép quay lại câu hỏi về
+        nước. Đây là việc của bước 1-3 pipeline, không phải một phép thay chuỗi.
+    - id: HOA-6
+      severity: S3
+      claim: "(cả bài)"
+      problem: >
+        Một nguồn duy nhất, và nó chống lưng được gần như không claim nào của bài.
+        Jezero/Perseverance, đất sét và sulfat, MAVEN, mốc 3,5-4 tỉ năm, Olympus
+        Mons, Valles Marineris — không mệnh đề nào trong số này có trong Planetary
+        Fact Sheet. Sàn của dự án là 3 nguồn bậc 1-2 độc lập; bài đang ở mức một
+        nguồn phủ được một dòng.
+      source_checked: "đối chiếu từng claim với nội dung đã tải"
+      resolution: "Chạy lại bước 1-2 của pipeline trước khi đặt factCheck = PASSED."
+
+  replacement_text:
+    - id: HOA-1
+      field: content
+      old: "- **Olympus Mons** — núi lửa cao 22 km, gần gấp ba đỉnh Everest"
+      new: "- **Olympus Mons** — núi lửa lớn nhất Hệ Mặt Trời, đỉnh cao khoảng 22 km so với mốc chuẩn địa hình của Sao Hoả, tức gấp khoảng hai lần rưỡi độ cao của Everest so với mực nước biển"
+    - id: HOA-3
+      field: content
+      old: "- **Valles Marineris** — hệ hẻm vực dài 4.000 km, sâu tới 7 km"
+      new: "- **Valles Marineris** — hệ hẻm vực dài chừng 3.870 km, chỗ rộng nhất khoảng 600 km và chỗ sâu nhất khoảng 9,3 km tính từ vách xuống đáy, theo số liệu NASA"
+    - id: HOA-2
+      field: content
+      old: "Sao Hoả nhỏ, nên lõi nguội nhanh và từ trường toàn cầu tắt từ sớm. Không còn lá chắn, gió mặt trời bào mòn khí quyển suốt hàng tỉ năm. Sứ mệnh MAVEN đo được quá trình mất khí này vẫn đang tiếp diễn ngày nay."
+      new: "Sao Hoả hôm nay không còn từ trường toàn cầu; vỏ hành tinh ở nam bán cầu vẫn còn từ tính dư, dấu vết của một từ trường đã tắt từ khoảng bốn tỉ năm trước. Sứ mệnh MAVEN đo được khí quyển vẫn đang thoát vào không gian ngày nay dưới tác động của gió mặt trời. Mức độ mà việc mất từ trường gây ra việc mất khí quyển thì vẫn đang được tranh luận — Sao Kim không có từ trường nội tại mà vẫn giữ được một khí quyển rất dày."
+    - id: HOA-4
+      field: content
+      old: "- Băng nước lộ thiên ở hai cực và băng ngầm ở vĩ độ trung bình"
+      new: "- Băng nước ở hai vùng cực, nằm ngay dưới bề mặt, cùng với băng ngầm ở vĩ độ trung bình"
+
+  verified_unchanged:
+    - "Màu đỏ do oxit sắt, bụi mịn bị gió thổi khắp hành tinh — khớp NASA: iron minerals in the Martian dirt oxidize, or rust."
+    - "Phobos và Deimos nhiều khả năng là tiểu hành tinh bị bắt giữ — mức dè dặt khớp nguyên văn NASA MAY BE captured asteroids. Giữ nguyên."
+    - "Mạng lưới thung lũng và châu thổ cổ; khoáng vật chỉ hình thành khi có nước — khớp NASA: ancient river valley networks, deltas, and lakebeds, as well as rocks and minerals that could only have formed in liquid water."
+    - "Khoảng 3,5-4 tỉ năm trước ấm và ẩm hơn — khớp NASA: huge floods about 3.5 billion years ago."
+    - "Ba liên kết nội bộ đều resolve tới bài PUBLISHED (kiểm 2026-09-12)."
+
+  note_for_generator: >
+    HOA-2 cho thấy một lỗ hổng của quy trình, không của bài: một phán quyết biên tập
+    đã chốt (2026-09-10, "từ trường bảo vệ khí quyển" là mệnh đề không có nguồn) chỉ
+    được áp vào ĐÚNG BÀI đang sửa lúc đó. Không có bước nào đi hỏi kho còn chỗ nào
+    khác nói cùng mệnh đề ấy. Mỗi phán quyết ở corrections.md cần một lượt quét kho
+    theo mệnh đề, không phải theo slug.

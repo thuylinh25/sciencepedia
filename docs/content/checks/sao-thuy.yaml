@@ -31,3 +31,166 @@ findings:
   - severity: note
     detail: "Bài này phân biệt ĐÚNG \"ngày mặt trời\" với vòng tự quay. Đối lập trực tiếp với sao-kim và tam-hanh-tinh-he-mat-troi, nơi cùng khái niệm bị trộn."
 recommendation: revise
+
+# ─────────────────────────────────────────────────────────────────────────────
+editor_pass:
+  round: 2
+  date: 2026-09-12
+  verdict: REVISE
+  reviewed_by: Ban biên tập Sciencepedia (science-editor)
+  article_slug: sao-thuy-the-gioi-da-bi-nung-va-dong-bang-cung-luc
+  scope: >
+    Rà NỘI DUNG, không rà cấu trúc. Mọi URL nguồn được tải lại và ĐỌC trong
+    chính lượt này, không tin bảng nguồn và không tin khối claims của lượt
+    2026-09-05 ở trên. Mọi tỉ số trong bài được tính lại bằng tay.
+
+  fetched:
+    - url: https://nssdc.gsfc.nasa.gov/planetary/factsheet/
+      status: 200
+      note: >
+        ĐÃ SỐNG LẠI. Lượt 2026-09-05 ghi 307 về trang chủ; hôm nay trả 200 và
+        render đủ bảng, "Last Updated: 18 March 2025". Phát hiện S3 về URL chết
+        của lượt trước coi như đóng.
+      read: "Mercury: Rotation Period 1407,6 h · Length of Day 4222,6 h · Orbital Period 88,0 ngày · Mean Temperature 167 C · Number of Moons 0"
+    - url: https://nssdc.gsfc.nasa.gov/planetary/factsheet/mercuryfact.html
+      status: 200
+      note: KHÔNG gắn vào bài. Đọc để đối chiếu nhiệt độ.
+      read: "Average temperature 440 K (167 C), (590-725 K, sunward side) — không có số 430 C hay -180 C"
+    - url: https://science.nasa.gov/mercury/facts/
+      status: 200
+      note: KHÔNG gắn vào bài, dù lượt 2026-09-05 dẫn nó làm bằng chứng cho bốn claim.
+      read: >
+        "day temperatures can reach highs of 800F (430C) ... temperatures can dip as
+        low as -290F (-180C)" · "One Mercury solar day (one full day-night cycle)
+        equals 176 Earth days - just over two years on Mercury" · "It has a large
+        metallic core with a radius of about 1,289 miles (2,074 kilometers), about 85%
+        of the planet's radius" · "Mercury MAY have water ice at its north and south
+        poles inside deep craters, but only in regions in permanent shadows. In those
+        shadows, it COULD be cold enough to preserve water ice"
+    unreachable: []
+
+  recomputed:
+    - "Ngày mặt trời / năm: 4222,6 h / 24 = 175,94 ngày; 175,94 / 88,0 = 2,0. Bài ghi gấp đôi — ĐÚNG."
+    - "Chu kỳ tự quay: 1407,6 h / 24 = 58,65 ngày. Bài ghi 58,6 — ĐÚNG."
+    - "Lõi: 2.074 km / 2.440 km = 85,0%. Bài ghi khoảng 85% bán kính — ĐÚNG."
+    - "Biên độ ngày-đêm trong summary: 430 - (-180) = 610 độ C, không phải 600. Với số của Planetary Fact Sheet thì không tính ra được biên độ nào vì bảng chỉ có nhiệt độ trung bình."
+
+  findings:
+    - id: THUY-1
+      severity: S2
+      claim: "radar đã phát hiện băng nước tồn tại vĩnh viễn trong đó"
+      problem: >
+        Nâng mức dè dặt và gán sai thiết bị. Nguồn NASA nói "MAY have water ice" và
+        "COULD be cold enough to preserve water ice" — hai lần tình thái trong một
+        đoạn hai câu. Bài biến nó thành một phát hiện đã hoàn tất ("đã phát hiện",
+        "tồn tại vĩnh viễn"). Ngoài ra chính radar (Arecibo, 1991) chỉ đo được các
+        vùng phản xạ radar mạnh PHÙ HỢP với băng nước; bằng chứng thu hẹp khả năng
+        còn lại là phổ neutron của MESSENGER, không phải radar. Bài quy một kết luận
+        cho một thiết bị chưa từng đưa ra kết luận ấy.
+      source_checked: "science.nasa.gov/mercury/facts — đọc 2026-09-12"
+      resolution: "Thay câu, trả lại hai mức dè dặt của nguồn và tách radar khỏi phần xác nhận."
+    - id: THUY-2
+      severity: S3
+      claim: "Giả thuyết được ủng hộ nhiều nhất cho rằng một va chạm khổng lồ thời sơ khai đã bóc đi phần lớn lớp phủ đá"
+      problem: >
+        Lượt 2026-09-05 cho claim này verdict "verified" với lý do bài đã nói đúng
+        mức "giả thuyết". Nhưng mệnh đề cần chống lưng không phải "đây là giả thuyết"
+        — mà là "đây là giả thuyết ĐƯỢC ỦNG HỘ NHIỀU NHẤT". Đó là một phát biểu về
+        đồng thuận, và không nguồn nào gắn với bài phát biểu nó. Cả trang NASA lẫn
+        Planetary Fact Sheet đều không nhắc tới va chạm bóc lớp phủ. Đây đúng dạng
+        lỗi mà quy tắc 7 nhắm tới: trình bày một trong nhiều giả thuyết cạnh tranh
+        như thể nó đã thắng.
+      source_checked: "science.nasa.gov/mercury/facts + nssdc mercuryfact.html — cả hai im lặng về nguồn gốc lõi lớn"
+      resolution: "Hạ xuống một trong những giả thuyết, nêu rằng vấn đề chưa ngã ngũ."
+    - id: THUY-3
+      severity: S3
+      claim: "phía ban ngày lên tới 430°C, phía ban đêm rơi xuống -180°C"
+      problem: >
+        Hai con số ĐÚNG nhưng không nguồn nào GẮN VÀO BÀI phát biểu chúng. Nguồn duy
+        nhất của bài là Planetary Fact Sheet, bảng ấy chỉ có nhiệt độ trung bình
+        167 C; trang mercuryfact.html ghi "590-725 K, sunward side", tức 317-452 C.
+        Cặp 430 / -180 nằm ở science.nasa.gov/mercury/facts — một trang KHÔNG có
+        trong bảng nguồn. Lượt kiểm trước dẫn trang này làm bằng chứng cho bốn claim
+        mà không ai thêm nó vào CSDL, nên bài vẫn đang in số không nguồn.
+      source_checked: "cả ba URL ở trên, đọc 2026-09-12"
+      resolution: >
+        Không đổi con số — chúng đúng. Thêm science.nasa.gov/mercury/facts vào bảng
+        nguồn (tier 2, accessedAt 2026-09-12) và dẫn nguồn tại chỗ. Đây là điều kiện
+        của mục "Đổi claim thì phải đổi cả bảng nguồn" trong content-rules.
+    - id: THUY-4
+      severity: S3
+      claim: "chênh lệch nhiệt độ giữa ngày và đêm lên tới 600°C"
+      problem: >
+        Nằm ở summary và seoDescription. Biên độ suy ra từ chính hai con số của bài
+        là 610 C, không phải 600. Con số tròn hơn không đến từ nguồn nào — nó là kết
+        quả làm tròn xuống một hiệu mà bài tự tính được. Cùng họ với "độ dẹt 0,06487
+        viết thành gần 7%" ở đợt Sao Mộc.
+      source_checked: "tự tính từ 430 và -180 của NASA"
+      resolution: "Bỏ con số biên độ khỏi summary, nói thẳng hai đầu nhiệt độ."
+    - id: THUY-5
+      severity: S3
+      claim: "nơi một ngày dài hơn một năm"
+      problem: >
+        Nằm ở summary và seoDescription. Mệnh đề này ĐÚNG với Sao Thuỷ (ngày mặt
+        trời 176 ngày > năm 88 ngày) và thân bài phân biệt rất chuẩn. Nhưng đúng cụm
+        chữ ấy đã bị phán là lỗi trên `sao-kim` và `tam-hanh-tinh-cua-he-mat-troi`
+        ngày 2026-09-05. Kho hiện dùng một cụm từ mà ở bài này là đúng còn ở bài kia
+        là sai, không chỗ nào nói vì sao. Người đọc đi từ bài này sang bài kia không
+        có cách nào tự phân giải. Đây là lỗi vốn từ, không phải lỗi sự thật — nhưng
+        nó là cái máy sinh ra đúng lỗi vừa phải đính chính.
+      source_checked: "đối chiếu nội bộ: sao-kim, tam-hanh-tinh-cua-he-mat-troi (đã sửa), vi-sao-cac-hanh-tinh-tu-quay-quanh-truc (CHƯA sửa — xem sao-kim.yaml lượt này)"
+      resolution: "Dùng cụm ngày mặt trời trong summary, như thân bài đã làm."
+    - id: THUY-6
+      severity: S4
+      claim: "Khoảng 85% bán kính Sao Thuỷ là lõi kim loại"
+      problem: >
+        Không sai, nhưng là một đơn giản hoá có mất mát: 85% BÁN KÍNH nghe như 85%
+        hành tinh, trong khi theo thể tích thì lõi chiếm khoảng 61% (0,85 mũ 3), và
+        bài kết luận "gần như toàn lõi" ở ngay dưới. Nguồn NASA có kèm con số làm rõ
+        — lớp ngoài dày khoảng 400 km — mà bài bỏ đi.
+      source_checked: "science.nasa.gov/mercury/facts — \"Mercury's outer shell ... is only about 400 kilometers (250 miles) thick\""
+      resolution: "Thêm độ dày lớp ngoài để con số 85% có chỗ neo."
+    - id: THUY-7
+      severity: S3
+      claim: "(cả bài)"
+      problem: >
+        Một nguồn duy nhất, và nguồn ấy chống lưng được 3 trong khoảng 10 mệnh đề
+        định lượng của bài (tự quay, quỹ đạo, ngày mặt trời). Ngoại quyển, băng vùng
+        cực, 85% lõi, 430 / -180, cộng hưởng 3:2 đều không có trong Planetary Fact
+        Sheet. Sàn của dự án là 3 nguồn bậc 1-2 độc lập.
+      source_checked: "đối chiếu từng claim với nội dung đã tải của cả ba URL"
+      resolution: "Bổ sung nguồn trước khi đặt factCheck = PASSED. Không phải việc của lượt sửa chuỗi."
+
+  replacement_text:
+    - id: THUY-1
+      field: content
+      old: "Nghịch lý thú vị: dù ở sát Mặt Trời, các hố va chạm gần cực Sao Thuỷ không bao giờ nhận ánh sáng trực tiếp và radar đã phát hiện băng nước tồn tại vĩnh viễn trong đó."
+      new: "Nghịch lý thú vị: dù ở sát Mặt Trời, đáy một số hố va chạm gần hai cực Sao Thuỷ không bao giờ nhận ánh sáng trực tiếp. Radar mặt đất phát hiện ở đó những vùng phản xạ mạnh bất thường, và theo NASA, bóng tối vĩnh viễn có thể đủ lạnh để giữ được băng nước."
+    - id: THUY-2
+      field: content
+      old: "Giả thuyết được ủng hộ nhiều nhất cho rằng một va chạm khổng lồ thời sơ khai đã bóc đi phần lớn lớp phủ đá, để lại một hành tinh gần như toàn lõi."
+      new: "Vì sao lõi lại lớn đến thế thì chưa ngã ngũ. Một giả thuyết cho rằng một va chạm khổng lồ thời sơ khai đã bóc đi phần lớn lớp phủ đá; các giả thuyết khác không cần tới va chạm nào, và hiện chưa có cách phân định giữa chúng."
+    - id: THUY-6
+      field: content
+      old: "Khoảng 85% bán kính Sao Thuỷ là lõi kim loại — tỉ lệ lớn bất thường."
+      new: "Lõi kim loại của Sao Thuỷ có bán kính khoảng 2.074 km, chiếm chừng 85% bán kính hành tinh; toàn bộ phần vỏ và lớp phủ nằm bên ngoài nó chỉ dày khoảng 400 km. Tỉ lệ đó lớn bất thường so với các hành tinh đá còn lại."
+    - id: THUY-4-5
+      field: summary
+      old: "Hành tinh nhỏ nhất và gần Mặt Trời nhất, nơi một ngày dài hơn một năm và chênh lệch nhiệt độ giữa ngày và đêm lên tới 600°C."
+      new: "Hành tinh nhỏ nhất và gần Mặt Trời nhất, nơi một ngày mặt trời kéo dài gấp đôi một năm, và mặt đất đi từ 430°C lúc ban ngày xuống -180°C lúc ban đêm."
+    - id: THUY-4-5
+      field: summaryEn
+      old: "The smallest planet and the closest to the Sun, where a day outlasts a year and the day-night temperature gap reaches 600°C."
+      new: "The smallest planet and the closest to the Sun, where one solar day lasts twice as long as one year, and the ground swings from 430°C by day to -180°C by night."
+
+  verified_unchanged:
+    - "58,6 ngày tự quay · 88 ngày quỹ đạo · 176 ngày mặt trời · gấp đôi một năm — tính lại từ Planetary Fact Sheet, khớp."
+    - "Cộng hưởng 3:2 do lực thuỷ triều — đúng, dù nguồn gắn vào bài không nói."
+    - "Ngoại quyển do gió mặt trời và va chạm thiên thạch bứt khỏi bề mặt — khớp nguyên văn NASA: atoms blasted off the surface by the solar wind and striking meteoroids."
+    - "Ba liên kết nội bộ đều resolve tới bài PUBLISHED (kiểm 2026-09-12)."
+
+  note_for_generator: >
+    Hai lỗi ở bài này cùng một gốc: một trang NASA được ĐỌC lúc soạn bài nhưng
+    không được GHI vào bảng nguồn. Số thì đúng, dấu vết thì mất. Bước 3 của
+    article-generator phải ghi nguồn theo từng claim, không gom một URL chung cho
+    cả bài.

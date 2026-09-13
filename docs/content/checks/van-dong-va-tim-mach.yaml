@@ -31,3 +31,291 @@ findings:
   - severity: note
     detail: "Có khuyến cáo hỏi bác sĩ trước khi tập cường độ cao và disclaimer y tế ở cuối bài — đúng yêu cầu với nội dung sức khoẻ."
 recommendation: revise
+
+# ═══════════════════════════════════════════════════════════════════════════
+# Lượt duyệt của science-editor — bài ĐÃ PUBLISHED, mọi sửa là ĐÍNH CHÍNH
+# CÓ PHÁT HIỆN S1: một trích dẫn KHÔNG TỒN TẠI.
+# ═══════════════════════════════════════════════════════════════════════════
+editor_pass:
+  round: 1
+  date: 2026-09-12
+  verdict: revise
+  reviewed_by: "Ban biên tập Sciencepedia"
+  article_slug: van-dong-thay-doi-tim-va-mach-mau-nhu-the-nao
+
+  fetched:
+    - url: https://www.who.int/publications/i/item/9789240015128
+      status: "đọc được qua bản NCBI Bookshelf NBK566046 của chính tài liệu"
+      resolved: "WHO 2020 Guidelines on physical activity and sedentary behaviour — XÁC NHẬN, khớp nguyên văn"
+    - doi: 10.1161/JAHA.112.004473
+      resolved: "Cornelissen & Smart, 'Exercise Training for Blood Pressure: A Systematic Review and Meta-analysis', JAHA 2013"
+      how: "Crossref resolve + đọc toàn văn PMC3603230, trích nguyên văn số liệu phân nhóm"
+    - doi: 10.1001/jamanetworkopen.2018.3605
+      resolved: "Mandsager et al., JAMA Network Open 2018, 1:e183605 — thể lực tim phổi và tử vong dài hạn"
+      how: "Crossref resolve + đọc toàn văn, trích nguyên văn các tỉ số nguy cơ"
+    - doi: 10.1161/CIRCRESAHA.117.305205
+      resolved: "Lavie, Arena, Swift et al., 'Exercise and the Cardiovascular System', Circulation Research 2015, 117:207-219"
+      how: "Crossref resolve theo DOI — đây là bài tổng quan CÓ THẬT của Circulation Research về chủ đề này, dùng để đối chiếu với nguồn s2 đang ghi trong CSDL"
+    - citation_hunted: "Exercise and cardiovascular health: mechanisms and clinical implications, Circulation Research, 2019"
+      result: KHÔNG_TỒN_TẠI
+      how: >
+        Bốn phép tìm độc lập, đều âm tính:
+        (1) Crossref query.bibliographic toàn kho — ba kết quả đầu là ba bài
+        khác hẳn về tiêu đề, tạp chí và năm;
+        (2) Crossref giới hạn trong CHÍNH tạp chí Circulation Research
+        (ISSN 1524-4571) — không có mục nào khớp ở bất kỳ năm nào;
+        (3) Crossref query.title 20 dòng toàn kho, lọc riêng các dòng thuộc
+        Circulation hoặc năm 2019 — không dòng nào khớp;
+        (4) tìm web — trả về các bài khác tên, khác tạp chí.
+
+  mental_model: >
+    Đọc cả bài, mô hình đọng lại là: "vận động là thuốc, và là thuốc mạnh —
+    hạ huyết áp ngang một thuốc đơn trị, còn thể lực thì quan trọng hơn cả
+    thuốc lá". Vế thứ nhất của mô hình ấy có thể đổi hành vi theo hướng nguy
+    hiểm: một người đang uống thuốc hạ áp, đọc "tương đương một số thuốc đơn
+    trị liệu" mà không gặp một dòng nào nói vận động KHÔNG thay thế thuốc, hoàn
+    toàn có thể tự bỏ thuốc. Vế thứ hai được dựng từ một phép so lệch loại —
+    xem E5. Cả hai vế đều là "con số đúng gắn vào kết luận sai".
+  silence: >
+    Ba chỗ im lặng, xếp theo mức nguy hiểm giảm dần.
+    (1) Không một dòng nào nói vận động là biện pháp ĐI KÈM thuốc hạ áp chứ
+    không thay thế, dù bài chủ động đặt phép so với thuốc.
+    (2) Không có dấu hiệu cảnh báo phải NGỪNG tập và đi khám — đau ngực, ngất,
+    khó thở bất thường. Đây là bài về tim mạch và gắng sức; thiếu phần này là
+    thiếu đúng chỗ.
+    (3) Câu chống chỉ định DUY NHẤT của bài ("Người có bệnh tim mạch... nên trao
+    đổi với bác sĩ") bị đặt làm dòng cuối của mục "Khuyến nghị hiện hành", không
+    có tiêu đề riêng. Phán quyết ngày 2026-09-11 đã chốt: chống chỉ định y tế
+    phải gặp được khi lướt.
+
+  findings:
+    - id: E1
+      severity: S1
+      claim: >-
+        Nguồn s2 trong CSDL: "Exercise and cardiovascular health: mechanisms and
+        clinical implications", Circulation Research, 2019, tier=2.
+      problem: >
+        TRÍCH DẪN NÀY KHÔNG TỒN TẠI. Không có bài báo nào mang tiêu đề ấy trên
+        Circulation Research, năm 2019 hay bất kỳ năm nào. Bài tổng quan có thật
+        và gần nhất của Circulation Research về đúng chủ đề là Lavie, Arena,
+        Swift et al., "Exercise and the Cardiovascular System", 2015, 117:207-219
+        — KHÁC tiêu đề và KHÁC năm.
+        Đây là mức S1 chứ không phải S2 vì ba lẽ. Thứ nhất, theo quy tắc 2 của
+        skill `article-generator` và mục Pollack 1996 trong content-rules.md, một
+        nguồn bịa là failure mode tệ nhất của hệ. Thứ hai, nguồn này không có url
+        và không có doi, nên không phép kiểm tự động nào của kho chạm tới được
+        nó: `check-citations.ts` chỉ soi hàng CÓ doi, `isAlive()` chỉ soi hàng CÓ
+        url. Một nguồn không url không doi đi lọt qua CẢ HAI phép kiểm bằng cách
+        không cung cấp gì để kiểm. Thứ ba, s2 là nguồn DUY NHẤT chống lưng cho
+        mọi con số của bài ngoài khối WHO — nên khi nó sụp, bài mất nền cho toàn
+        bộ phần định lượng cùng một lúc.
+      source_checked: "Bốn phép tìm độc lập ghi ở mục `fetched`, đều âm tính."
+      resolution: >
+        GỠ s2 khỏi bảng Source. Thay bằng ba nguồn có thật, đã resolve trong lượt
+        này, mỗi nguồn gắn vào đúng claim nó chống lưng:
+        Cornelissen & Smart 2013, 10.1161/JAHA.112.004473 (huyết áp);
+        Mandsager et al. 2018, 10.1001/jamanetworkopen.2018.3605 (VO2max và tử vong);
+        Lavie et al. 2015, 10.1161/CIRCRESAHA.117.305205 (thích nghi tim và nội mô).
+        Đây là điều kiện của phán quyết 2026-09-05: đổi claim thì phải đổi cả bảng
+        nguồn.
+
+    - id: E2
+      severity: S1
+      claim: >-
+        "...các phân tích tổng hợp cho thấy mức giảm khoảng 5–8 mmHg huyết áp tâm
+        thu ở người tăng huyết áp — tương đương một số thuốc đơn trị liệu."
+      problem: >
+        Con số ĐÚNG, phép so ĐÚNG, kết luận mà người đọc rút ra thì nguy hiểm.
+        Bài chủ động đặt vận động ngang hàng với thuốc hạ áp, rồi không nói thêm
+        một chữ nào về quan hệ giữa hai thứ đó. Với người đang uống thuốc hạ áp —
+        tức đúng nhóm người mà con số "ở người tăng huyết áp" nói tới — câu này
+        đọc ra thành một lý do để bỏ thuốc. Tự ngừng thuốc hạ áp có thể gây tăng
+        huyết áp bật lại và làm tăng nguy cơ đột quỵ.
+        Cùng cấu trúc với lỗi S1 của `nhin-an-gian-doan` ngày 2026-09-11: bài
+        không nói gì sai, cái nó im lặng mới đổi được hành vi. Khác biệt là ở đây
+        bài còn chủ động gợi ra phép so, nên sự im lặng nặng hơn.
+      source_checked: >
+        10.1161/JAHA.112.004473 — đọc toàn văn. Nguyên văn phân nhóm: "BP
+        reductions after endurance training were greater (P<0.0001) in 26 study
+        groups of hypertensive subjects (−8.3 [−10.7 to −6.0]/−5.2 [−6.8 to −3.4]
+        mm Hg)"; toàn mẫu là −3.5/−2.5 mmHg. Không chỗ nào trong nguồn đề xuất
+        vận động thay cho thuốc.
+      resolution: >
+        Thay câu bằng replacement_text R1, và chèn mục riêng CÓ TIÊU ĐỀ ở
+        replacement_text R2. R2 là bắt buộc và phải giữ nguyên văn.
+
+    - id: E3
+      severity: S2
+      claim: >-
+        "nhịp tim nghỉ của vận động viên bền bỉ thường ở mức 40–50 lần/phút, so
+        với 60–80 ở người ít vận động" · "khoảng 5–8 mmHg" · "mạnh hơn cả hút
+        thuốc, tăng huyết áp hay đái tháo đường" · "Đi từ 0 lên 90 phút mỗi tuần
+        đã giảm nguy cơ đáng kể; đi từ 300 lên 400 phút thì lợi ích thêm nhỏ hơn
+        nhiều"
+      problem: >
+        Sau khi s2 bị gỡ vì không tồn tại, KHÔNG con số nào trong số này còn nguồn.
+        Nguồn còn lại duy nhất là WHO, và WHO không phát biểu bất kỳ điều nào
+        trong bốn điều trên. Theo quy tắc 6, số không nguồn thì gỡ chứ không làm
+        mềm — nhưng cả bốn đều tra được trong nguồn có thật, nên hướng xử lý đúng
+        là gắn nguồn chứ không phải gỡ số.
+      source_checked: >
+        Đối chiếu WHO 2020 (nguyên văn: "at least 150–300 minutes of
+        moderate-intensity aerobic physical activity; or at least 75–150 minutes
+        of vigorous-intensity", "2 or more days a week", "should limit the amount
+        of time spent being sedentary") — khối khuyến nghị WHO của bài KHỚP HOÀN
+        TOÀN, không có lỗi. Mốc 90 phút/tuần truy được về Wen et al., Lancet 2011,
+        378:1244-1253, 10.1016/S0140-6736(11)60749-6 (Crossref xác nhận).
+      resolution: >
+        Gắn nguồn cho từng con số theo bảng ở E1. Mốc 90 phút gắn Wen 2011. Nhịp
+        tim nghỉ vận động viên gắn Lavie 2015 hoặc gỡ nếu không tìm được đoạn
+        chống lưng trong một vòng sửa.
+
+    - id: E4
+      severity: S3
+      claim: >-
+        "Trong các nghiên cứu đoàn hệ lớn, đây là một trong những yếu tố dự báo tử
+        vong do mọi nguyên nhân mạnh nhất — mạnh hơn cả hút thuốc, tăng huyết áp
+        hay đái tháo đường trong một số phân tích."
+      problem: >
+        Phép so LỆCH LOẠI, và nó thổi phồng độ tương phản. Trong Mandsager 2018,
+        tỉ số nguy cơ 5,04 là giữa nhóm thể lực THẤP NHẤT và nhóm thể lực ĐỈNH
+        CAO — hai cực của một thang; còn 1,41 (hút thuốc) và 1,40 (đái tháo
+        đường) là mức tăng do CÓ hay KHÔNG CÓ một yếu tố. So một khoảng cách giữa
+        hai cực với một hiệu ứng nhị phân rồi kết luận "mạnh hơn hút thuốc" là
+        đọc sai chính con số mình dẫn. Bản thân nguồn phát biểu dè dặt hơn nhiều:
+        "comparable to or greater than traditional clinical risk factors" —
+        "sánh ngang hoặc hơn", không phải "mạnh hơn".
+        Bài cũng viết "tăng huyết áp" trong danh sách, nhưng nguồn so với bệnh
+        động mạch vành (1,29), không so với tăng huyết áp.
+      source_checked: >
+        10.1001/jamanetworkopen.2018.3605 — đọc toàn văn. Nguyên văn: "Low vs
+        Elite CRF: adjusted HR 5.04 (95% CI, 4.10-6.20)"; "Smoking: 1.41";
+        "Diabetes: 1.40"; "Coronary Artery Disease: 1.29"; kết luận nguyên văn
+        "was comparable to or greater than traditional clinical risk factors".
+      resolution: "Thay bằng replacement_text R3."
+
+    - id: E5
+      severity: S3
+      claim: >-
+        Tóm tắt bài (`summary`): "Tập luyện đều đặn làm dày thành tâm thất, tăng
+        thể tích tống máu..."
+      problem: >
+        Thân bài viết đúng: "tâm thất trái giãn rộng hơn và thành cơ dày lên VỪA
+        PHẢI", và ngay sau đó phân biệt với phì đại BỆNH LÝ. Tóm tắt bỏ mất cả
+        chữ "vừa phải" lẫn vế "giãn rộng", chỉ giữ "làm dày thành tâm thất" —
+        tức giữ đúng vế dễ nhầm với phì đại bệnh lý và bỏ mất mệnh đề dè dặt.
+        Đúng lỗi mà content-rules.md cảnh báo ở mục "Trích nội dung": cắt mệnh đề
+        dè dặt là nâng mức chắc chắn.
+      source_checked: "Đối chiếu nội bộ giữa `summary` và `content` của chính bài."
+      resolution: >
+        Sửa summary và summaryEn thành mô tả khớp thân bài: nhấn "giãn rộng buồng
+        thất" trước, "dày lên vừa phải" sau. Không đụng tới phần còn lại của tóm
+        tắt.
+
+    - id: E6
+      severity: S3
+      claim: >-
+        "Người có bệnh tim mạch, tăng huyết áp chưa kiểm soát hoặc lâu không vận
+        động nên trao đổi với bác sĩ trước khi bắt đầu chương trình cường độ cao."
+      problem: >
+        Nội dung đúng, VỊ TRÍ sai. Câu này là dòng cuối cùng của mục "Khuyến nghị
+        hiện hành", không có tiêu đề riêng, nên người lướt trang không gặp nó —
+        đúng tình huống mà phán quyết 2026-09-11 đã bác. Nó cũng thiếu vế quan
+        trọng hơn: dấu hiệu phải NGỪNG tập giữa chừng.
+      source_checked: "Không phải lỗi nguồn; là lỗi vị trí và phạm vi."
+      resolution: "Nâng thành mục riêng có tiêu đề — gộp vào replacement_text R2."
+
+  # ─────────────────────────────────────────────────────────────────────────
+  # NGUYÊN VĂN câu thay thế của science-editor. Không diễn đạt lại.
+  # ─────────────────────────────────────────────────────────────────────────
+  replacement_text:
+
+    R1:
+      replaces: >-
+        "Tập luyện đều đặn cải thiện chức năng nội mô, và đây được xem là một
+        trong những cơ chế trung tâm giải thích vì sao vận động hạ được huyết áp:
+        các phân tích tổng hợp cho thấy mức giảm khoảng 5–8 mmHg huyết áp tâm thu
+        ở người tăng huyết áp — tương đương một số thuốc đơn trị liệu."
+      text: |
+        Tập luyện đều đặn cải thiện chức năng nội mô, và đây được xem là một trong
+        những cơ chế giải thích vì sao vận động hạ được huyết áp. Phân tích tổng
+        hợp 93 thử nghiệm của Cornelissen và Smart (2013) cho thấy ở nhóm người
+        **đã tăng huyết áp**, tập bền bỉ hạ huyết áp tâm thu trung bình **8,3
+        mmHg** (giới hạn tin cậy 6,0–10,7) và huyết áp tâm trương 5,2 mmHg. Ở
+        người huyết áp bình thường, mức giảm nhỏ hơn hẳn — 3,5 mmHg tâm thu.
+
+    R2:
+      inserts: >-
+        mục mới CÓ TIÊU ĐỀ, đặt sau mục "Khuyến nghị hiện hành" và TRƯỚC dòng
+        miễn trừ y tế. Câu chống chỉ định cũ ở cuối mục "Khuyến nghị hiện hành"
+        được gỡ khỏi chỗ cũ và thay bằng mục này.
+      mandatory: true
+      note: >
+        Câu về chống chỉ định y tế phải là nguyên văn của editor. Người khác diễn
+        đạt lại thì nó không còn là câu đã qua gate.
+      text: |
+        ## Vận động không thay thế thuốc đang dùng
+
+        Mức hạ huyết áp nhờ tập luyện có thể sánh với một thuốc hạ áp đơn trị, và
+        chính điều đó khiến một số người nghĩ tới chuyện bỏ thuốc. **Đừng tự bỏ.**
+        Các khuyến cáo điều trị xếp vận động là biện pháp *đi kèm* thuốc, không
+        phải biện pháp thay thế; ngừng thuốc hạ áp đột ngột có thể làm huyết áp
+        bật lên cao hơn trước và làm tăng nguy cơ đột quỵ. Nếu tập luyện đã đưa
+        huyết áp của bạn xuống, đó là lý do để bác sĩ cân nhắc chỉnh liều — và
+        việc chỉnh liều là của bác sĩ.
+
+        Hãy đi khám trước khi bắt đầu nếu bạn có bệnh tim mạch đã biết, tăng huyết
+        áp chưa kiểm soát, đái tháo đường, hoặc đã lâu không vận động.
+
+        **Ngừng tập và đi khám ngay nếu khi gắng sức bạn thấy:** đau hoặc tức
+        ngực, khó thở nhiều hơn hẳn so với mức gắng sức đang làm, choáng váng hoặc
+        ngất, tim đập không đều, hoặc đau lan lên hàm, cổ hay cánh tay.
+
+    R3:
+      replaces: >-
+        "Trong các nghiên cứu đoàn hệ lớn, đây là một trong những yếu tố dự báo tử
+        vong do mọi nguyên nhân mạnh nhất — mạnh hơn cả hút thuốc, tăng huyết áp
+        hay đái tháo đường trong một số phân tích."
+      text: |
+        Trong các nghiên cứu đoàn hệ lớn, đây là một trong những yếu tố dự báo tử
+        vong do mọi nguyên nhân mạnh nhất. Ở đoàn hệ của Mandsager và cộng sự
+        (2018), nguy cơ tử vong của nhóm thể lực kém nhất cao gấp **5,0 lần** nhóm
+        thể lực đỉnh cao, trong khi hút thuốc làm tăng nguy cơ 1,4 lần và đái tháo
+        đường 1,4 lần. Cần đọc con số ấy cho đúng: 5,0 là khoảng cách giữa hai
+        **cực** của thang thể lực, còn 1,4 là mức tăng do **có hay không có** một
+        yếu tố nguy cơ — hai phép so khác loại. Kết luận mà nguồn cho phép rút ra
+        là thể lực kém "sánh ngang hoặc hơn" các yếu tố nguy cơ kinh điển, không
+        phải "quan trọng hơn bỏ thuốc lá".
+
+  correction_note_for_corrections_md: >
+    `van-dong-thay-doi-tim-va-mach-mau-nhu-the-nao` · Nguồn bịa và mô hình thay
+    thuốc.
+    (1) NGUỒN KHÔNG TỒN TẠI. Cũ: s2 = "Exercise and cardiovascular health:
+    mechanisms and clinical implications", Circulation Research, 2019. Không có
+    bài báo nào như vậy — kiểm bằng Crossref query.bibliographic toàn kho, Crossref
+    giới hạn trong ISSN 1524-4571 của chính Circulation Research, Crossref
+    query.title 20 dòng, và tìm web; cả bốn đều âm tính. Bài tổng quan có thật của
+    Circulation Research về chủ đề này là Lavie, Arena, Swift et al. 2015,
+    117:207-219, 10.1161/CIRCRESAHA.117.305205 — khác tiêu đề, khác năm. Nguồn bịa
+    lọt qua mọi phép kiểm của kho vì nó không có url và không có doi, tức không
+    cung cấp gì để kiểm.
+    Mới: gỡ s2; thay bằng Cornelissen & Smart 2013 (10.1161/JAHA.112.004473),
+    Mandsager et al. 2018 (10.1001/jamanetworkopen.2018.3605), Lavie et al. 2015
+    (10.1161/CIRCRESAHA.117.305205).
+    (2) HUYẾT ÁP. Cũ: "khoảng 5–8 mmHg ... tương đương một số thuốc đơn trị liệu".
+    Mới: 8,3 mmHg tâm thu (GTC 6,0–10,7) ở người đã tăng huyết áp, 3,5 mmHg ở
+    người huyết áp bình thường, bỏ phép so với thuốc khỏi chỗ này. Căn cứ:
+    Cornelissen & Smart 2013, nguyên văn "(−8.3 [−10.7 to −6.0]/−5.2 [−6.8 to
+    −3.4] mm Hg)".
+    (3) VO2MAX. Cũ: "mạnh hơn cả hút thuốc, tăng huyết áp hay đái tháo đường".
+    Mới: nêu HR 5,04 (thể lực thấp so với đỉnh) cạnh 1,41 (hút thuốc) và 1,40 (đái
+    tháo đường), kèm cảnh báo hai phép so khác loại. Căn cứ: Mandsager et al.
+    2018, kết luận nguyên văn "comparable to or greater than traditional clinical
+    risk factors". Nguồn so với bệnh động mạch vành (1,29), KHÔNG so với tăng
+    huyết áp.
+    (4) Thêm mục có tiêu đề "Vận động không thay thế thuốc đang dùng", gồm cả dấu
+    hiệu phải ngừng tập.
+
+  counts: { S1: 2, S2: 1, S3: 3 }
+  sources_resolve: false
+  strong_tier_sources: 1   # sau khi gỡ nguồn bịa, chỉ còn WHO. Ngưỡng 3 — CHƯA ĐẠT
