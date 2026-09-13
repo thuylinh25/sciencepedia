@@ -87,7 +87,7 @@ findings:
   - id: F4
     severity: S3
     status: đã-xử-lý-trước-khi-viết
-    title: "Nửa tối" của Mặt Trăng
+    title: '"Nửa tối" của Mặt Trăng'
     detail: >
       Cách gọi phổ biến trong tiếng Việt là "vùng tối của Mặt Trăng", và nó
       sai: nửa xa vẫn được Mặt Trời chiếu sáng đúng nửa thời gian. NASA dùng
@@ -125,3 +125,821 @@ overlap:
 conclusion: >
   Bảng nguồn đủ và sạch để viết. Ba chỗ bị chặn trước (F2, F3 mức S1 và F4
   mức S3) đã ghi thành ràng buộc cho bước 3, không phải ghi nhớ trong đầu.
+
+# ═════════════════════════════════════════════════════════════════════════════
+# BƯỚC 4 — GATE ACCURACY. Ghi bởi agent `science-editor`, 2026-09-12.
+# Đầu vào: drafts/mat-trang.md (bản 600 từ, vừa rút từ bản .bak 931 từ).
+# Editor tự tải lại cả 8 URL trong CHÍNH lượt này; không tin `passages` chép ở
+# research/mat-trang.yaml, theo đúng mục Pollack 1996 của corrections.md.
+# ═════════════════════════════════════════════════════════════════════════════
+editor_pass:
+  round: 1                 # trần 2 vòng, sau đó editor quyết publish-hoặc-bỏ
+  date: 2026-09-12
+  verdict: REVISE
+  revise_to_step: 3        # VIẾT LẠI, không phải bước 1
+  revise_rationale: >
+    Bảng nguồn KHÔNG hỏng — 8/8 URL trả 200 trong lượt này và mọi đoạn trích
+    kiểm được đều nguyên văn. Ba lỗi chặn đều nằm ở khâu soạn/rút gọn văn bản,
+    nên vòng sửa thuộc bước 3. Quay về bước 1 sẽ là chẩn đoán sai chỗ.
+  reviewed_by: >
+    agent `science-editor`, spawn thật qua tool Agent của phiên chính, chạy
+    2026-09-12. Không phải ô điền sẵn: dấu vết trên đĩa của lượt này là 8 tệp
+    HTML tải bằng curl + 8 tệp .txt bóc thẻ trong scratchpad của phiên
+    (8f9287f9-4b23-4420-804d-5bcd1b5df9d2/scratchpad/moon), và bản thử
+    scratchpad/trial.md dùng để đo lại độ dài sau khi áp câu thay thế.
+  reviewed_word_count: 600          # bản đang duyệt, ĐÚNG trần, không còn dư địa
+  projected_word_count_after_fix: 598
+  draft_not_modified: true          # editor KHÔNG sửa drafts/mat-trang.md
+
+  method: >
+    (1) curl cả 8 URL với User-Agent trình duyệt, bóc thẻ HTML thành văn bản
+    thô, rồi dò NGUYÊN VĂN từng chuỗi. (2) Đối chiếu bản 600 từ với bản .bak
+    931 từ để tách lỗi DO RÚT GỌN SINH RA khỏi lỗi có sẵn — đây là phép kiểm
+    mà tiền lệ `dien-tich-va-dong-dien` bắt buộc. (3) Đo lại độ dài bằng đúng
+    biểu thức của gate, md.trim().split(/\s+/).length, trên một bản sao trong
+    scratchpad.
+
+  # ── Nguồn: editor tự tải lại được gì ───────────────────────────────────────
+  fetched:
+    ok:
+      - id: s1
+        url: https://science.nasa.gov/moon/facts/
+        http: 200
+        says: >
+          Nguyên văn: "radius of about 1,080 miles (1,740 kilometers)";
+          "an average of 238,855 miles (384,400 kilometers) away";
+          "27 Earth days and rotates or spins at that same rate";
+          "(called synchronous rotation)"; "likely formed after a Mars-sized
+          body collided with Earth"; "about 260 degrees Fahrenheit (127 degrees
+          Celsius) when in full Sun" và "-280 degrees Fahrenheit (-173 degrees
+          Celsius)"; "a very thin and weak atmosphere". Trang còn nói rõ
+          "Some people call the far side … the 'dark side', but that's
+          misleading" — chống lưng thẳng cho câu đính chính F4 của bài.
+      - id: s2
+        url: https://science.nasa.gov/moon/tidal-locking/
+        http: 200
+        says: >
+          Nguyên văn cả ba đoạn: "energy was released in the form of heat";
+          "keeping its far side perpetually hidden"; "synchronous tidal
+          locking … it's actually quite common". Chuỗi "dark side" VẮNG MẶT
+          trên trang — `note` ở s2 nói đúng.
+      - id: s3
+        url: https://eclipse.gsfc.nasa.gov/SEhelp/ApolloLaser.html
+        http: 200
+        says: >
+          Nguyên văn: "The first laser ranging retroreflector was positioned on
+          the Moon in 1969 by the Apollo 11 astronauts"; "the average distance
+          between the centers of the Earth and the Moon is 385,000 kilometers
+          with an accuracy of better than one part in 10 billion"; "receding
+          from Earth at a rate of about 3.8 centimeters per year"; và đoạn bẫy
+          "about one thousandth of a second over the course of a year, caused
+          by the atmosphere, tides, and Earth's core". `warning` ở s3 đúng từng
+          chữ.
+      - id: s4
+        url: https://science.nasa.gov/moon/formation/
+        http: 200
+        says: >
+          Nguyên văn: "named Theia"; "around 60 million years after the solar
+          system began to form"; "deep ocean of magma for tens of millions to
+          hundreds of millions of years"; và mệnh đề dè dặt "perhaps a single
+          object the size of Mars, perhaps a series of objects".
+      - id: s5
+        url: https://science.nasa.gov/moon/
+        http: 200
+        says: >
+          Nguyên văn: "Earth's Moon is covered in craters"; "whack a dirty rug
+          with a broom"; "Ancient ice hidden deep in permanently shadowed
+          craters"; "its gravitational pull plays a huge role in the formation
+          of Earth's ocean tides". KHÔNG có câu nào về bóng Mặt Trăng quét lên
+          Trái Đất — xem E3.
+      - id: s6
+        url: https://doi.org/10.1038/35089010
+        http: 200
+        says: >
+          ĐỌC ĐƯỢC ABSTRACT trong lượt này (điều mà `limitation` nói là không
+          đọc được — xem E8). Nguyên văn: "The Moon is generally believed to
+          have formed from debris ejected by a large off-centre collision with
+          the early Earth" và "suggests that the Moon formed near the very end
+          of Earth's accumulation". Metadata khớp: Canup & Asphaug, Nature 412,
+          708–712, 2001.
+      - id: s7
+        url: https://doi.org/10.1038/361615a0
+        http: 200
+        says: >
+          ĐỌC ĐƯỢC ABSTRACT trong lượt này. Nguyên văn: "its obliquity is
+          essentially stable, exhibiting only small variations of ± 1.3° around
+          the mean value of 23.3°"; "But if the Moon were not present … the
+          chaotic zone would then extend from nearly 0° up to about 85°";
+          "might have driven dramatic changes in climate"; "In this sense one
+          might consider the Moon to act as a potential climate regulator for
+          the Earth". Metadata khớp: Laskar, Joutel & Robutel, Nature 361,
+          615–617, 1993.
+      - id: s8
+        url: https://science.nasa.gov/science-research/earth-science/milankovitch-orbital-cycles-and-their-role-in-earths-climate/
+        http: 200
+        says: >
+          Nguyên văn: "Over the last million years, it has varied between 22.1
+          and 24.5 degrees with respect to Earth's orbital plane"; "Earth's
+          axis is currently tilted 23.4 degrees … a cycle that spans about
+          41,000 years".
+    failed: []
+    note_on_failures: >
+      KHÔNG có URL nào tải hỏng trong lượt này. Đây là khác biệt quan trọng so
+      với bước 1: hai nguồn bậc 1 lúc đó bị coi là không đọc được abstract, nay
+      đọc được đầy đủ. Không claim nào của bài bị giới hạn vì lý do tải nguồn.
+
+  # ── Phát hiện ──────────────────────────────────────────────────────────────
+  findings:
+    - id: E1
+      severity: S2
+      blocking: true
+      born_in_shortening: true          # LỖI DO CHÍNH LƯỢT RÚT GỌN SINH RA
+      claim: "Dưới đáy những hố vĩnh viễn nằm trong bóng tối vẫn còn băng nước cổ."
+      problem: >
+        Lượt rút gọn xoá HAI định ngữ hạn định cùng lúc. Bản .bak viết "Ở đáy
+        VÀI hố GẦN CỰC — nơi ánh nắng chưa bao giờ chạm tới — vẫn còn băng nước
+        cổ."; bản 600 từ bỏ cả lượng từ "vài" lẫn vị trí "gần cực".
+        Hai hệ quả, cả hai đều là claim mới:
+        (a) "những hố" biến một phát biểu về MỘT SỐ hố thành phát biểu về MỌI
+        hố nằm trong bóng tối vĩnh viễn. Không nguồn nào nói vậy.
+        (b) Mất "gần cực", câu lại đứng NGAY SAU "bề mặt chi chít hố va chạm",
+        nên "những hố" đọc ngược về đám hố vừa nhắc — tức hố ở khắp Mặt Trăng.
+        Người đọc mang đi một mô hình sai: hố sâu ở đâu trên Mặt Trăng cũng có
+        thể chứa băng. Đây đúng điều quy tắc 4 cấm — rút gọn làm sai mô hình
+        trong đầu người đọc thì tệ hơn là để nguyên phần phức tạp.
+      source_checked: >
+        s1 (fetch 2026-09-12, 200) nói: "there are actually high concentrations
+        of ice water in the permanently shadowed regions of the lunar POLES".
+        s5 (200) nói: "Ancient ice hidden deep in permanently shadowed
+        craters." Cả hai đều gắn băng với vùng cực và KHÔNG nguồn nào phát biểu
+        rằng mọi hố tối vĩnh viễn đều có băng. s1 còn nói thêm, theo chiều
+        ngược lại, rằng SOFIA phát hiện nước cả trên bề mặt CÓ NẮNG và "water
+        may be distributed across the lunar surface, and not limited to cold,
+        shadowed places" — nên "hố tối" không phải điều kiện cần, và càng không
+        phải điều kiện đủ.
+      resolution: >
+        THAY CÂU. Xem `replacement_text` R1. Đây là tái lập tiền lệ
+        `dien-tich-va-dong-dien` E1: một lượt rút gọn tự sinh ra lỗi S2 mà bản
+        dài không có, bằng đúng một thao tác — xoá định ngữ hạn định để tiết
+        kiệm vài chữ.
+
+    - id: E2
+      severity: S2
+      blocking: true
+      born_in_shortening: false         # có sẵn từ bản .bak
+      claim: "…và đổi lại, nó giữ cho trục quay của hành tinh này khỏi lắc lư."
+      problem: >
+        Hai lỗi chồng nhau trong một vế câu kết.
+        (a) NÂNG MỨC CHẮC CHẮN. Thân bài quy đúng địa chỉ và đúng độ dè dặt —
+        "Công trình của Laskar và cộng sự … CHO RẰNG". Câu kết bỏ cả người phát
+        biểu lẫn chữ "cho rằng", đưa mệnh đề sang giọng khẳng định của chính
+        trang. Nguồn gốc còn dè dặt hơn thân bài nữa (xem `source_checked`).
+        Theo chuẩn của gate này, nâng mức chắc chắn là lỗi cấp từ chối.
+        (b) ĐƠN GIẢN HOÁ LÀM SAI MÔ HÌNH. "Khỏi lắc lư" nói Mặt Trăng làm trục
+        Trái Đất thôi lắc. Trục Trái Đất VẪN lắc: chính s8 mà bài đang trích
+        cho biết độ nghiêng đi hết một chu kỳ ~41.000 năm giữa 22,1° và 24,5°.
+        Điều Laskar phát biểu hẹp hơn nhiều: không có Mặt Trăng thì vùng hỗn
+        độn trải rộng ra, tức biên độ dao động LỚN hơn — chứ không phải có Mặt
+        Trăng thì hết dao động.
+        Câu kết cũng bỏ luôn mức dè dặt về nguồn gốc: "Nó LÀ mảnh vỡ của một va
+        chạm cổ xưa", trong khi thân bài giữ "Giả thuyết được ủng hộ nhiều
+        nhất cho rằng…" và s1 chỉ nói "LIKELY formed after".
+      source_checked: >
+        s7 abstract (doi.org/10.1038/361615a0, fetch 2026-09-12, 200) — tải
+        được nguyên văn trong lượt này: "In its present state, the Earth avoids
+        this chaotic zone and its obliquity is essentially stable, exhibiting
+        only small variations of ± 1.3° around the mean value of 23.3°. But if
+        the Moon were not present … the chaotic zone would then extend from
+        nearly 0° up to about 85°. Thus, had the planet not acquired the Moon,
+        large variations in obliquity … MIGHT HAVE driven dramatic changes in
+        climate. In this sense one MIGHT consider the Moon to act as a
+        POTENTIAL climate regulator for the Earth."
+        Laskar tự phát biểu ở mức "might" / "potential", trên một kết quả tích
+        phân mô hình và một phản thực. Câu kết của bài đang chắc chắn hơn cả
+        bài báo gốc.
+        s1 (200) cho vế kia: "The Moon LIKELY formed after a Mars-sized body
+        collided with Earth several billion years ago."
+      resolution: "THAY CÂU. Xem `replacement_text` R4."
+
+    - id: E3
+      severity: S2
+      blocking: true
+      born_in_shortening: false         # có sẵn từ bản .bak
+      claim: "…và bóng của nó quét lên Trái Đất mỗi khi có [nhật thực](…)."
+      problem: >
+        Mệnh đề cơ chế KHÔNG có nguồn nào trong bảng nguồn của bài NÀY chống
+        lưng, và nó vi phạm chính `exclusions` của bảng nguồn ("Bài này chỉ
+        liên kết sang, không kể lại").
+        Mệnh đề đúng về vật lý — nhưng đúng không phải là tiêu chí ở đây. Bảng
+        Source hiển thị trên trang bài sẽ không chứa nguồn nào đỡ câu này, nên
+        người đọc bấm vào mục nguồn sẽ không tìm thấy chỗ nào nói điều vừa đọc.
+        Đó là provenance hỏng, cùng loại với phán quyết ở
+        `dien-tich-va-dong-dien` rằng bảng Source chỉ được chứa nguồn mà văn
+        xuôi còn dùng — và chiều ngược lại cũng phải đúng: văn xuôi không được
+        vượt quá bảng Source.
+        Theo quy tắc 6, claim không nguồn thì GỠ, không phải làm nhẹ đi.
+      source_checked: >
+        Đã dò chuỗi "eclipse" và "shadow" trên văn bản đã bóc thẻ của cả 8
+        nguồn, fetch 2026-09-12. Kết quả: mọi lần xuất hiện đều là chrome điều
+        hướng của site NASA ("Phases Eclipses Supermoons Tides…") hoặc tiêu đề
+        tin tức ở thanh bên ("NASA Johnson Pilots Chase Moon's Shadow for
+        Eclipse Science", "2026 Total Solar Eclipse in Spain") — KHÔNG một câu
+        thân bài nào của s1–s8 phát biểu rằng bóng Mặt Trăng quét lên Trái Đất.
+        Chỗ gần nhất là s3, và nó nói chuyện khác hẳn: "Ranging has also
+        improved historic knowledge of the Moon's orbit, enough to permit
+        accurate analyses of solar eclipses as far back as 1400 BC."
+        Lưu ý cách lỗi này ẩn mình: chuỗi "shadow" CÓ trên cả 8 trang, nên một
+        phép kiểm tự động dò từ khoá sẽ báo xanh. Chỉ đọc mới thấy nó nằm ở
+        thanh điều hướng.
+      resolution: >
+        THAY VẾ CÂU, GIỮ LINK. Xem `replacement_text` R2. Link nội bộ phải còn
+        vì bài nhật thực là đích liên kết bắt buộc theo `exclusions`, và vì bài
+        chỉ có 4 link — gỡ một là tụt xuống đúng ngưỡng sàn 3.
+
+    - id: E4
+      severity: S3
+      blocking: true
+      claim: "Nhờ nó, khoảng cách Trái Đất–Mặt Trăng nay đo được với sai số nhỏ hơn một phần mười tỉ"
+      problem: >
+        Rơi định ngữ "trung bình". Nguồn gắn sai số một phần mười tỉ vào
+        KHOẢNG CÁCH TRUNG BÌNH GIỮA TÂM hai thiên thể — một đại lượng suy ra từ
+        nhiều năm đo. Bỏ chữ "trung bình", câu thành ra nói mọi phép đo khoảng
+        cách Trái Đất–Mặt Trăng đều chính xác tới mức ấy. Một phần mười tỉ của
+        385.000 km là 0,04 mm; đó không phải độ chính xác của một lần bắn laser.
+        Cùng họ với E1 và E2: một định ngữ bị bỏ làm câu nghe dứt khoát hơn sự
+        thật.
+      source_checked: >
+        s3 (fetch 2026-09-12, 200), nguyên văn: "From the ranging experiments,
+        scientists know that the AVERAGE distance BETWEEN THE CENTERS of the
+        Earth and the Moon is 385,000 kilometers with an accuracy of better
+        than one part in 10 billion."
+      resolution: >
+        SỬA MỘT TỪ. Xem `replacement_text` R3. Chỉ khôi phục "trung bình"; cụm
+        "giữa tâm" KHÔNG khôi phục vì hết ngân sách chữ — ghi ở `residual_risk`
+        R-A.
+
+    - id: E5
+      severity: S4
+      blocking: false
+      claim: "Không có lớp khí nào giữ nhiệt hay chắn bức xạ, nên nhiệt độ bề mặt nhảy từ khoảng 127°C … xuống chừng −173°C"
+      problem: >
+        Hai con số đều đúng và đúng nguồn, nhưng vế nhân quả "giữ nhiệt" thì
+        không nguồn nào phát biểu. s1 chỉ nói khí quyển Mặt Trăng không che
+        chắn được BỨC XẠ và VA ĐẬP THIÊN THẠCH; nó không nói gì về giữ nhiệt,
+        và cũng không quy biên độ nhiệt cho việc thiếu khí quyển.
+      source_checked: >
+        s1 (200): "The Moon has a very thin and weak atmosphere. It does not
+        provide any protection from the Sun's radiation or impacts from
+        meteoroids." Hai câu nhiệt độ nằm ở mục khác của cùng trang, không nối
+        với nhau bằng chữ "because" nào.
+      why_not_blocking: >
+        Là vật lý phổ thông không gây tranh cãi ở bất kỳ cơ quan bậc 1–2 nào,
+        không định lượng, và không mệnh đề nào khác trong bài rút ra từ nó.
+        Cùng hạng với F-E2 của `khi-quyen-trai-dat`. Bài đang ở 598/600 từ sau
+        khi sửa ba lỗi chặn, không còn chữ để tiêu vào chỗ này.
+      resolution: "GHI LẠI, KHÔNG SỬA. Không được thừa kế âm thầm thành đồ đã duyệt."
+
+    - id: E6
+      severity: S4
+      blocking: false
+      claim: "Chưa ai từng đứng trên mặt đất mà nhìn thấy nửa bên kia của nó."
+      problem: >
+        Câu mở CÓ NGUỒN và ĐÚNG — đây là kết luận sau khi kiểm, không phải một
+        chỗ cần sửa. Cách viết còn chính xác hơn mức thường thấy: "đứng trên
+        mặt đất" loại tàu vũ trụ ra khỏi phạm vi, nên câu không xung đột với
+        việc Luna 3 đã chụp nửa xa năm 1959.
+        Điểm duy nhất đáng ghi: chữ "nửa" hơi rộng. Do dao động libration,
+        phần bề mặt không bao giờ quan sát được từ Trái Đất nhỏ hơn một nửa.
+        Editor CỐ Ý không đưa con số phần trăm vào bài: không nguồn nào trong
+        bảng phát biểu nó, và chèn vào sẽ đúng là mẫu lỗi "con số sống sót nhờ
+        được chép lại" mà F2 đang chặn.
+      source_checked: >
+        s1 (200): "the far side – the hemisphere we NEVER SEE FROM EARTH".
+        s2 (200): "keeping its far side PERPETUALLY HIDDEN". Bài đang dùng đúng
+        mức mà cả hai nguồn phát biểu, và dùng đúng chữ "nửa xa" chứ không
+        "nửa tối" (F4 đạt).
+      resolution: "GIỮ NGUYÊN. Ghi để lượt sau không 'sửa cho chặt' bằng một con số không nguồn."
+
+    - id: E7
+      severity: S4
+      blocking: false
+      claim: "Mặt Trăng đang lùi xa khoảng 3,8 cm mỗi năm"
+      problem: >
+        Con số đúng nguồn, nhưng hai nguồn NASA trong chính bảng này lệch nhau
+        và bài phải tiếp tục chọn đúng nguồn. s1 nói "about an inch farther
+        away each year" — một inch là 2,54 cm, không phải 3,8 cm. s3 (phép đo
+        laser thật) nói 3,8 cm. Bài đã chọn s3 và gắn con số vào đúng phép đo
+        sinh ra nó.
+      source_checked: >
+        s1 (200): "The Moon is slowly moving away from Earth, getting about an
+        inch farther away each year." s3 (200): "Measurements show that the
+        Moon is receding from Earth at a rate of about 3.8 centimeters per
+        year." Lệch 50%; s1 là cách nói tròn trịa cho độc giả phổ thông, s3 là
+        kết quả đo.
+      resolution: >
+        GIỮ 3,8 cm. Ràng buộc cho bước 5–11: KHÔNG được "thống nhất" con số này
+        về "một inch" hay 2,54 cm với lý do s1 cũng là NASA.
+
+    - id: E8
+      severity: S3
+      blocking: false
+      about: "Không phải lỗi của bản nháp — lỗi của ràng buộc trong file research"
+      claim: "`limitation` ở s6 và s7: 'TOÀN VĂN VÀ ABSTRACT KHÔNG ĐỌC ĐƯỢC'"
+      problem: >
+        Sai dữ kiện tính tới 2026-09-12. Editor tải được ĐẦY ĐỦ abstract của cả
+        hai bài Nature trong lượt này. Hệ quả là hai ràng buộc đang chỉ thị sai
+        cho các bước sau: s6/s7 hiện bị giới hạn ở "chỉ mệnh đề tiêu đề phát
+        biểu, không trích số nào", trong khi abstract thật đã đọc được và nói
+        nhiều hơn thế.
+        Đây đúng con bug mà `khi-quyen-trai-dat` ghi ở P1: một ràng buộc ghim
+        chặt vào một dữ kiện đã cũ thì quay ra chỉ thị cho lượt sau làm sai.
+        Ghi lại thay vì sửa lặng lẽ, vì lượt sau sẽ TIN dòng `limitation` đó.
+      source_checked: >
+        s6 abstract nguyên văn, fetch 2026-09-12: "The Moon is generally
+        believed to have formed from debris ejected by a large off-centre
+        collision with the early Earth … This class of impacts involves a
+        smaller—and thus more likely—object than previously considered viable,
+        and suggests that the Moon formed near the very end of Earth's
+        accumulation."
+        s7 abstract nguyên văn: đã chép ở E2, gồm cả đoạn "the chaotic zone
+        would then extend from nearly 0° up to about 85°".
+      resolution: >
+        (a) KHÔNG đổi một chữ nào trong bản nháp. Bài không dùng con số 0°–85°,
+        và quyết định không dùng vẫn ĐÚNG — nhưng nay đúng vì lý do biên tập
+        (con số phản thực từ một mô hình, cần nhiều chỗ để trình bày tử tế
+        trong một bài 600 từ), không còn vì lý do "không đọc được". F2 vì thế
+        chuyển từ "chặn vì không xác minh được" sang "loại vì không đủ chỗ".
+        (b) Bước tiếp theo phải viết lại `limitation` của s6 và s7 trong
+        research/mat-trang.yaml cho khớp sự thật, kèm ngày fetch. KHÔNG được
+        ghim giá trị chết vào ràng buộc — theo đúng P1 của khi-quyen-trai-dat.
+        (c) Ghi nhận theo chiều tốt: abstract s6 ("generally believed") và s7
+        ("essentially stable, ± 1.3° around 23.3°") nay chống lưng ĐỘC LẬP cho
+        hai mệnh đề mà trước đó chỉ NASA đỡ.
+
+  # ── Đối chứng cộng thêm mà lượt này tìm được ───────────────────────────────
+  corroboration_found:
+    - >
+      s7 và s8 khớp nhau về số, từ hai hướng dựng hoàn toàn độc lập: Laskar
+      1993 nói độ nghiêng hiện dao động "± 1.3° around the mean value of 23.3°"
+      (tức 22,0°–24,6°); NASA Milankovitch nói "between 22.1 and 24.5 degrees"
+      quanh 23,4°. Hai khoảng chồng khít nhau. Đây là bằng chứng thật rằng câu
+      "Mặt Trăng giữ ĐỘ NGHIÊNG ĐÓ ổn định" của bài trỏ đúng đại lượng — chữ
+      "đó" nối sang khoảng 22,1–24,5° là hợp lệ, không phải một phép ghép nhân
+      quả tự chế như `note` ở s8 lo ngại.
+    - >
+      s6 ("The Moon is generally believed to have formed from debris ejected by
+      a large off-centre collision") chống lưng cho cụm "Giả thuyết được ủng hộ
+      nhiều nhất" của bài, từ một nguồn bậc 1 ngoài NASA.
+
+  # ── Chỗ KHÔNG có lỗi, kiểm rồi mới nói ─────────────────────────────────────
+  cleared:
+    - "F3 (S1) ĐẠT. Bài nêu 3,8 cm mỗi năm và KHÔNG nêu con số nào cho việc ngày Trái Đất dài ra. Cụm 'một phần nghìn giây' không xuất hiện trong bài. Cái bẫy ở s3 đã không sập."
+    - "F2 (S1) ĐẠT. Chuỗi '85' và '0°–85°' vắng mặt trong bản nháp."
+    - "F4 (S3) ĐẠT. Bài dùng 'nửa xa', và còn dành hẳn một câu đính chính 'không phải nửa tối' — khớp với chính lời NASA rằng gọi 'dark side' là misleading."
+    - "F5 (S3) ĐẠT ở thân bài: 'NASA giữ mức dè dặt: có thể là một vật thể duy nhất, cũng có thể là một loạt vật thể.' Nhưng KHÔNG đạt ở câu kết — xem E2(b)."
+    - "Ba con số 127°C / −173°C / 3,8 cm resolve đúng nguồn: hai số đầu về s1, số thứ ba về s3, cả ba nguyên văn."
+    - "Lượt rút gọn KHÔNG đụng vào: khối nguồn, mức dè dặt ở đoạn Theia, câu đính chính 'nửa xa', và 4 link nội bộ. Chỉ MỘT mệnh đề điều kiện bị mất trong lượt rút gọn, và đó là E1."
+
+  # ── Câu thay thế: nguyên văn, chữ của chính editor ─────────────────────────
+  # Quy tắc đã chốt ở corrections.md: văn bản chèn vào là nguyên văn câu sửa của
+  # science-editor, KHÔNG phải bản diễn đạt lại của người khác. Áp đúng chuỗi
+  # dưới đây, không sửa lời cho mượt.
+  replacement_text:
+    - id: R1
+      fixes: E1
+      find: "Dưới đáy những hố vĩnh viễn nằm trong bóng tối vẫn còn băng nước cổ."
+      replace: "Riêng vài hố gần cực, vĩnh viễn không có nắng, vẫn giữ băng nước cổ."
+      words: "15 → 15 (delta 0)"
+      why_these_words: >
+        "Riêng" cắt câu khỏi đám hố vừa nhắc ở câu trước, chặn đúng chỗ mà hiểu
+        lầm sinh ra. "vài" trả lại lượng từ. "gần cực" trả lại vị trí mà s1 gắn
+        với băng. "vĩnh viễn không có nắng" dịch sát "permanently shadowed".
+
+    - id: R2
+      fixes: E3
+      find: "và bóng của nó quét lên Trái Đất mỗi khi có [nhật thực](/articles/nhat-thuc-va-nguyet-thuc-hai-hien-tuong-che-khuat-khong-doi-xung)."
+      replace: "còn [nhật thực](/articles/nhat-thuc-va-nguyet-thuc-hai-hien-tuong-che-khuat-khong-doi-xung) được nói riêng ở một bài khác."
+      words: "13 → 10 (delta −3)"
+      why_these_words: >
+        Câu mới KHÔNG phát biểu mệnh đề vật lý nào, nên không cần nguồn nào
+        trong bảng đỡ nó — nó chỉ là một chỉ dẫn điều hướng, đúng điều
+        `exclusions` yêu cầu. Link giữ nguyên, số link nội bộ vẫn là 4.
+
+    - id: R3
+      fixes: E4
+      find: "khoảng cách Trái Đất–Mặt Trăng nay đo được"
+      replace: "khoảng cách trung bình Trái Đất–Mặt Trăng nay đo được"
+      words: "8 → 10 (delta +2)"
+      why_these_words: >
+        Khôi phục đúng định ngữ mà nguồn gắn vào con số. Một chữ, và nó là chữ
+        chịu lực.
+
+    - id: R4
+      fixes: E2
+      find: "Nó là mảnh vỡ của một va chạm cổ xưa, bị chính Trái Đất ghìm lại tới mức chỉ còn quay một mặt về phía ta — và đổi lại, nó giữ cho trục quay của hành tinh này khỏi lắc lư."
+      replace: "Nhiều khả năng nó là mảnh vỡ của một va chạm cổ xưa, bị Trái Đất ghìm lại, chỉ còn quay một mặt về phía ta — đổi lại, có thể nó giữ trục quay hành tinh này không đảo mạnh."
+      words: "42 → 41 (delta −1)"
+      why_these_words: >
+        "Nhiều khả năng" dịch thẳng chữ "likely" của s1, trả lại mức dè dặt về
+        nguồn gốc mà thân bài vẫn đang giữ.
+        "có thể" trả lại mức dè dặt của Laskar, vốn tự viết "might" và
+        "potential".
+        "không đảo mạnh" thay "khỏi lắc lư": Mặt Trăng KHÔNG làm trục Trái Đất
+        hết lắc — chính s8 mà bài đang trích cho thấy độ nghiêng vẫn đi hết một
+        chu kỳ 41.000 năm. Điều Laskar nói là biên độ sẽ LỚN hơn nhiều nếu
+        không có Mặt Trăng. "Đảo mạnh" nói đúng chuyện biên độ, "lắc lư" nói
+        sai thành chuyện có hay không có dao động.
+        Vế "bị Trái Đất ghìm lại, chỉ còn quay một mặt về phía ta" giữ nguyên
+        nội dung, chỉ bỏ chữ đệm để trả chỗ cho hai hedge vừa thêm vào.
+
+  length_check:
+    method: "md.trim().split(/\\s+/).length trên một bản sao trong scratchpad, đếm cả tiêu đề"
+    before: 600
+    after: 598
+    band: "400–600 — ĐẠT, còn 2 từ dư địa"
+    internal_links_after: 4
+    note: >
+      Bản đang duyệt ở ĐÚNG 600/600, tức không còn một chữ dư địa nào. Bộ bốn
+      câu thay thế được cân để tổng đi XUỐNG chứ không đi lên: R2 và R4 trả lại
+      4 từ, đủ nuôi R3 và chừa 2 từ. Người áp KHÔNG được sửa lời cho mượt, vì
+      mọi chữ thêm vào đều ăn vào 2 từ dư địa đó.
+
+  # ── Điều bước 5–11 không được làm hỏng ─────────────────────────────────────
+  binding_on_next_steps:
+    - id: B1
+      applies_to: "mọi bước"
+      rule: >
+        Bốn hedge sau là BẤT KHẢ XÂM PHẠM: "Giả thuyết được ủng hộ nhiều nhất
+        cho rằng", "NASA giữ mức dè dặt: có thể là một vật thể duy nhất, cũng
+        có thể là một loạt vật thể", "cho rằng" trong câu Laskar, và "Nhiều khả
+        năng" + "có thể" trong câu kết mới. Bỏ bất kỳ cụm nào là lỗi cấp từ
+        chối, không phải lỗi văn phong.
+    - id: B2
+      applies_to: "mọi bước"
+      rule: >
+        Ba định ngữ hạn định mới khôi phục — "Riêng", "vài", "gần cực" ở câu
+        băng, và "trung bình" ở câu đo laser — là kết quả của phán quyết S2/S3
+        ở vòng này. Xoá chúng là lật lại đúng lỗi vừa sửa.
+    - id: B3
+      applies_to: "bước 6 (seo-optimizer), bước 7 (category-manager)"
+      rule: >
+        Tiêu đề, seoTitle, description và mọi nhãn KHÔNG được mang con số kèm
+        mệnh đề dè dặt — theo mục "Ước lượng điểm không đặt vào tiêu đề" của
+        docs/content-rules.md. Cụ thể: cấm đưa "3,8 cm mỗi năm", "127°C",
+        "−173°C", "22,1–24,5°" vào bất kỳ trường tiêu đề nào. Thân bài mới là
+        chỗ mang con số kèm nguồn.
+    - id: B4
+      applies_to: "bước 6"
+      rule: >
+        Bài có ĐÚNG 4 link nội bộ sau khi sửa. Ngưỡng sàn là 3, nên chỉ còn dư
+        đúng một. KHÔNG được gỡ link nhật thực dù câu quanh nó đã đổi — link đó
+        là điều kiện của `exclusions`, không phải trang trí.
+    - id: B5
+      applies_to: "bước 9 (translation)"
+      rule: >
+        Bản tiếng Anh chịu cùng một bar. Ba chỗ dễ mất nhất khi dịch: "nửa xa"
+        phải là "far side", TUYỆT ĐỐI không "dark side" (F4, và chính NASA gọi
+        cách nói đó là misleading); "Nhiều khả năng" phải là "likely" chứ không
+        phải một khẳng định trần; "không đảo mạnh" phải giữ nghĩa biên độ
+        (ví dụ "from swinging widely"), không được dịch thành "from wobbling".
+    - id: B6
+      applies_to: "bước 10 (supabase-manager)"
+      rule: >
+        `reviewedById` = tài khoản ADMIN "Ban biên tập Sciencepedia", KHÔNG bịa
+        tên người — theo mục byline đã chốt ở docs/content-rules.md. Ngày duyệt
+        ghi 2026-09-12. Editor KHÔNG tự truy vấn Prisma ở lượt này, nên id phải
+        được tra lại trước khi ghi.
+    - id: B7
+      applies_to: "bước 11 (content-curator)"
+      rule: >
+        Xác nhận LẠI cả 4 slug đích còn ở trạng thái PUBLISHED ngay trước khi
+        publish — su-ra-doi-cua-he-mat-troi,
+        dieu-gi-tao-ra-gio-thuy-trieu-va-cac-dong-hai-luu,
+        nhat-thuc-va-nguyet-thuc-hai-hien-tuong-che-khuat-khong-doi-xung,
+        nguyen-nhan-cua-mua-do-nghieng-truc-khong-phai-khoang-cach.
+        KHÔNG tin trạng thái ghi ở khối `overlap` phía trên: nó là số đọc ngày
+        2026-09-12 của bước 2, và hai trong bốn bài đang ở factCheck PENDING.
+    - id: B8
+      applies_to: "vòng 2"
+      rule: >
+        Vòng 2 chỉ kiểm ĐÚNG bốn phép thay chuỗi R1–R4 và đếm lại độ dài. Nếu
+        git diff của bản nháp có vùng thay đổi thứ năm, vòng 2 dừng và trả về
+        bước 3 — một lượt "sửa luôn cho gọn" là đúng cách E1 đã sinh ra.
+    - id: B9
+      applies_to: "bước tiếp theo, trước khi chạy bước 5"
+      rule: >
+        Viết lại `limitation` của s6 và s7 trong research/mat-trang.yaml theo
+        E8. Ràng buộc dựa trên dữ kiện sai vẫn là ràng buộc đang chỉ thị.
+
+  residual_risk:
+    - id: R-A
+      status: accepted
+      about: "Cụm 'giữa tâm' trong câu đo laser"
+      problem: >
+        s3 gắn sai số một phần mười tỉ vào khoảng cách trung bình GIỮA TÂM hai
+        thiên thể. R3 chỉ khôi phục 'trung bình', không khôi phục 'giữa tâm'.
+      why_accepted: >
+        Hết ngân sách chữ (còn 2 từ). 'Trung bình' là định ngữ chịu lực chính —
+        nó chặn cách đọc sai nguy hiểm (mọi phép đo đều chính xác 0,04 mm).
+        'Giữa tâm' chỉ định nghĩa điểm quy chiếu và không làm sai mô hình của
+        người đọc phổ thông.
+      next_turn_action: "Nếu lượt sau bài được nới chỗ vì bất kỳ lý do gì, thêm lại 'giữa tâm'."
+    - id: R-B
+      status: accepted
+      about: "E5 — vế nhân quả 'giữ nhiệt' không nguồn"
+      why_accepted: "Xem E5. Không chặn, nhưng KHÔNG được thừa kế âm thầm thành đồ đã duyệt."
+
+  next_round:
+    round: 2
+    scope: "Chỉ kiểm R1–R4 đã áp đúng nguyên văn, đếm lại từ, đếm lại link. Không mở lại claim nào khác."
+    if_clean: "APPROVE, và bài đi tiếp bước 5."
+
+  # ── Vệ sinh tệp, ghi lại vì nó là một lần sửa tay ────────────────────────
+  file_hygiene:
+    fixed_preexisting_yaml_error: >
+      Tệp này KHÔNG parse được trước lượt duyệt. Dòng 90 của bản đã commit ghi
+      title: "Nửa tối" của Mặt Trăng — một chuỗi mở bằng nháy kép rồi còn chữ
+      chạy tiếp phía sau, tức YAML hỏng cú pháp. Lỗi có từ bước 2, không phải do
+      khối editor_pass sinh ra (khối này parse sạch khi đứng riêng).
+      Editor đã bọc cả chuỗi trong nháy đơn. KHÔNG đổi một ký tự nào của nội
+      dung F4. Ghi lại vì một phán quyết gate nằm trong tệp mà máy không đọc
+      được thì không ai thi hành được nó, và vì lần sau sẽ có người tưởng dòng
+      nháy đơn ấy là lựa chọn văn phong.
+
+# ═════════════════════════════════════════════════════════════════════════════
+# BƯỚC 4 — VÒNG 2, VÒNG CUỐI. Ghi bởi agent `science-editor`, 2026-09-13.
+# Vòng 1 ở khối `editor_pass` phía trên, GIỮ NGUYÊN, không xoá không sửa.
+# Đầu vào: drafts/mat-trang.md sau khi content-curator áp R1–R4 (598 từ).
+# ═════════════════════════════════════════════════════════════════════════════
+editor_pass_round_2:
+  round: 2                  # vòng cuối. Sau vòng này editor quyết publish-hoặc-bỏ.
+  date: 2026-09-13
+  verdict: APPROVE
+  verdict_conditional_on: >
+    Áp ĐÚNG MỘT phép thay chuỗi R5 dưới đây, không kèm gì khác. Đây không phải
+    vòng sửa thứ ba: không còn phán quyết nào phải ra, văn bản cuối đã được
+    editor viết sẵn và đo sẵn. Áp R5 rồi đi thẳng bước 5.
+  reviewed_by: >
+    agent `science-editor`, spawn thật qua tool Agent của phiên chính. Vòng 1
+    chạy 2026-09-12, vòng 2 chạy 2026-09-13 (phiên vòng 1 bị cắt vì hết hạn
+    mức giữa lúc đang sửa file research; phần E8 khi đó chưa ghi được xuống
+    đĩa và đã làm lại từ đầu ở vòng này).
+  reviewed_word_count: 598          # bản trên đĩa lúc bắt đầu vòng 2
+  final_word_count_after_R5: 599
+  draft_not_modified_by_editor: true
+
+  # ── Vòng 1 đã đóng chưa ────────────────────────────────────────────────────
+  verification_of_round_1_fixes:
+    method: >
+      Editor KHÔNG nhận báo cáo của content-curator làm bằng chứng. Tự đọc lại
+      tệp trên đĩa, tự dò nguyên văn bốn chuỗi thay thế, tự quét chuỗi cấm, tự
+      đếm lại bằng đúng biểu thức của gate, và tự chạy phép kiểm B8.
+    b8_no_fifth_edit: >
+      ĐẠT. Hoàn nguyên đúng bốn chuỗi R1–R4 về dạng cũ thì văn bản trở lại
+      đúng 600 từ của bản vòng 1 — tức không có vùng thay đổi thứ năm nào lẫn
+      vào lượt áp sửa.
+    strings_verbatim: "R1, R2, R3, R4 — cả bốn khớp NGUYÊN VĂN, không một chữ bị sửa cho mượt."
+    forbidden_strings_absent:
+      - "'Dưới đáy những hố' — vắng"
+      - "'bóng của nó quét lên' — vắng"
+      - "'khỏi lắc lư' — vắng"
+      - "'một phần nghìn giây' — vắng (bẫy F3 vẫn không sập)"
+      - "'85°' và '0°–85°' — vắng (xem E9)"
+    findings_closed:
+      - "E1 (S2) — ĐÓNG. Xem E10 để biết vì sao vẫn phải đọc lại câu này trong ngữ cảnh."
+      - "E2 (S2) — ĐÓNG. Câu kết nay mang 'Nhiều khả năng' và 'có thể'; 'khỏi lắc lư' đã thành 'không đảo mạnh'."
+      - "E3 (S2) — ĐÓNG về mặt claim: mệnh đề cơ chế không nguồn đã biến mất. Nhưng phép cắt để lại một lỗ — xem E10."
+      - "E4 (S3) — ĐÓNG. 'trung bình' đã về đúng chỗ."
+    findings_still_open_not_blocking:
+      - "E5 (S4) — vế nhân quả 'giữ nhiệt' không nguồn. Vẫn ghi nhận, vẫn KHÔNG sửa."
+      - "E6 (S4) — chữ 'nửa' và libration. Giữ nguyên như đã quyết."
+      - "E7 (S4) — cấm 'thống nhất' 3,8 cm về 'một inch'. Còn hiệu lực."
+
+  # ── Phát hiện mới của vòng 2 ───────────────────────────────────────────────
+  findings:
+    - id: E10
+      severity: S3
+      blocking: true
+      born_in_round_1_fix: true      # DO CHÍNH R2 CỦA EDITOR SINH RA
+      claim: >
+        "…còn [nhật thực](…) được nói riêng ở một bài khác."  —  rồi ngay đoạn
+        sau: "Vai trò thứ ba ít được nhắc hơn."
+      problem: >
+        R2 cắt đúng mệnh đề cơ chế không nguồn, nhưng cắt luôn VAI TRÒ. Đoạn
+        này liệt kê những việc Mặt Trăng làm cho Trái Đất, và câu kế tiếp đếm
+        tới "vai trò thứ ba". Sau R2 thì chỉ còn MỘT vai trò được nêu (thuỷ
+        triều) — vế nhật thực nay không nói Mặt Trăng làm gì cả, nó nói một
+        chuyện về bố cục thư viện. Bài tự mâu thuẫn với chính nó: đếm ba, nêu
+        hai.
+        Hai hỏng riêng biệt, cùng một gốc:
+        (a) BÀI TỰ MÂU THUẪN. Đúng loại lỗi mà docs/content-rules.md gọi là máy
+        dò lỗi rẻ nhất — không cần tra nguồn ngoài, chỉ cần đọc hai câu kề nhau.
+        (b) HỤT MẮT XÍCH. Trong một bài về Mặt Trăng, đặt chữ "nhật thực" rồi
+        không nói nó dính gì tới Mặt Trăng là bỏ người đọc lại với một câu chú
+        thích biên tập chen vào giữa văn xuôi.
+        Ghi rõ để không đổ lỗi nhầm chỗ: content-curator áp R2 ĐÚNG NGUYÊN VĂN.
+        Lỗi là của câu thay thế mà editor viết ở vòng 1 — tôi đã cân đủ chuyện
+        cắt claim và giữ link, nhưng không đọc câu thay thế trong ngữ cảnh câu
+        kề. Đúng cơ chế đã sinh ra E1, lần này do chính gate gây ra.
+      source_checked: >
+        Không phải câu hỏi về nguồn — là câu hỏi về tính nhất quán nội tại, đọc
+        thẳng trên bản 598 từ.
+        Cho câu thay R5, nguồn là s3 (fetch 2026-09-12, 200), nguyên văn:
+        "Ranging has also improved historic knowledge of the Moon's orbit,
+        enough to permit accurate analyses of solar eclipses as far back as
+        1400 BC." Trang này là chính trang eclipse của NASA/GSFC, và nó buộc
+        QUỸ ĐẠO Mặt Trăng với việc TÍNH nhật thực — đủ đỡ cho một mệnh đề phụ
+        thuộc, và KHÔNG phát biểu hình học che khuất nào.
+      resolution: "THAY VẾ CÂU. Xem `replacement_text` R5."
+
+    - id: E11
+      severity: S4
+      blocking: false
+      claim: "Năm 1969, phi hành đoàn Apollo 11 đặt … một tấm gương phản xạ laser. Nhờ nó, khoảng cách trung bình … đo được với sai số nhỏ hơn một phần mười tỉ"
+      problem: >
+        "Nhờ nó" quy toàn bộ độ chính xác hiện nay cho riêng tấm gương Apollo
+        11. s3 nói tấm gương 1969 là tấm ĐẦU TIÊN, và độ chính xác hôm nay đến
+        từ laser ranging như một chương trình — nhiều tấm phản xạ, nhiều đài
+        quan sát, nhiều thập niên số liệu.
+      source_checked: >
+        s3 (200): "The FIRST laser ranging retroreflector was positioned on the
+        Moon in 1969 by the Apollo 11 astronauts." Và câu dẫn ở đầu trang quy
+        công cho phương pháp chứ không cho một thiết bị: "laser ranging has
+        allowed us to determine with great accuracy the rate at which the Moon
+        is gradually receding from the Earth."
+      why_not_blocking: >
+        Cả đoạn đang kể chuyện tấm gương ấy, và s3 cũng dựng tường thuật quanh
+        nó. Không con số nào sai, không mệnh đề nào khác dựa vào chỗ này. Sửa
+        cho chặt ("nhờ phép đo laser") tốn chữ mà bài chỉ còn 1 từ dư địa sau
+        R5.
+      resolution: "GHI LẠI, KHÔNG SỬA. Nếu lượt sau bài được nới chỗ, đổi 'Nhờ nó' thành 'Nhờ phép đo laser'."
+
+    - id: E9
+      severity: S3
+      blocking: false
+      about: "Phán quyết về F2 của bước 2 — nay đứng hay đổ"
+      claim: "F2 (S1, 'chặn-trước'): cấm đưa con số 0°–85° vào bài vì CHƯA ĐỌC ĐƯỢC từ nguồn gốc"
+      problem: >
+        Phải tách hai thứ mà F2 gộp làm một: TIỀN ĐỀ của nó và KẾT QUẢ của nó.
+        TIỀN ĐỀ ĐÃ ĐỔ. Editor tải được abstract Laskar 1993 đầy đủ ngày
+        2026-09-12 và con số nằm nguyên văn trong đó. Nó KHÔNG còn là "con số
+        sống sót nhờ được chép lại"; phép so với 10^14 vi sinh vật đường ruột
+        mà F2 dùng làm chỗ dựa KHÔNG còn đúng cho trường hợp này.
+        docs/content-rules.md đã chốt đúng tình huống này ở mục quyền phủ quyết
+        2026-09-02: kiểm chứng tiền đề trước khi thi hành một phủ quyết; một
+        phán quyết đúng logic nhưng sai dữ kiện vẫn là phán quyết sai. Giữ
+        nguyên chữ của F2 sẽ là thi hành tiếp một lệnh cấm mà căn cứ đã mất.
+        KẾT QUẢ THÌ VẪN ĐỨNG, vì một lý do KHÁC và phải nói rõ là lý do khác:
+        đây là kết quả PHẢN THỰC của một mô hình ("if the Moon were not
+        present"), và chính Laskar phát biểu ở mức "might have" / "potential".
+        Trình bày tử tế đòi mang theo cả mệnh đề điều kiện lẫn mức dè dặt. Bài
+        ở 599/600 từ sau R5 không có chỗ, và câu kết vừa được chỉnh đúng mức dè
+        dặt ở E2 — nhét một con số phản thực vào đó là mở lại đúng chỗ vừa đóng.
+      source_checked: >
+        s7 abstract, nguyên văn, fetch 2026-09-12, HTTP 200 qua
+        doi.org/10.1038/361615a0 → nature.com/articles/361615a0: "But if the
+        Moon were not present, the torque exerted on the Earth would be
+        smaller, and the chaotic zone would then extend from nearly 0° up to
+        about 85°."
+      resolution: >
+        F2 ĐỔI CĂN CỨ, GIỮ KẾT QUẢ. Con số vẫn KHÔNG vào bài lần này, nhưng nay
+        vì lý do biên tập và ngân sách chữ, không còn vì lý do xác minh.
+        Đã sửa trên đĩa ngày 2026-09-13, ở research/mat-trang.yaml:
+        (a) s6 — thêm `abstract_read: true`, `abstract_read_at`,
+        `abstract_read_how`, 2 đoạn `passages` nguyên văn; viết lại
+        `limitation` từ "TOÀN VĂN VÀ ABSTRACT KHÔNG ĐỌC ĐƯỢC" thành "ĐỌC ĐƯỢC
+        ABSTRACT, KHÔNG đọc được toàn văn", nới phạm vi dùng sang mọi mệnh đề
+        abstract phát biểu.
+        (b) s7 — như trên, 4 đoạn `passages` nguyên văn gồm cả câu 0°–85°;
+        `limitation` mới nói rõ con số đã xác minh, và nếu dùng thì PHẢI mang
+        theo nguyên mệnh đề điều kiện "nếu không có Mặt Trăng".
+        (c) `exclusions` — mục 0°–85° đổi lý do từ "chưa đọc được từ nguồn gốc"
+        sang lý do biên tập.
+        Cả ba chỗ đều ghi ngày và ghi cách đọc, và ràng buộc neo vào TÌNH TRẠNG
+        ĐỌC ĐƯỢC chứ không ghim một giá trị chết — theo đúng bài học P1 của
+        khi-quyen-trai-dat.
+      side_effect_positive: >
+        Phạm vi dùng của s6 rộng ra một cách có ích: abstract nói "The Moon is
+        GENERALLY BELIEVED to have formed from debris ejected by a large
+        off-centre collision". Cụm "Giả thuyết được ủng hộ nhiều nhất" của bài
+        nay có chỗ dựa bậc 1 ngoài NASA, chứ không chỉ suy từ chữ "likely" của
+        s1.
+
+  # ── Câu thay thế cuối cùng ─────────────────────────────────────────────────
+  replacement_text:
+    - id: R5
+      fixes: E10
+      find: "còn [nhật thực](/articles/nhat-thuc-va-nguyet-thuc-hai-hien-tuong-che-khuat-khong-doi-xung) được nói riêng ở một bài khác."
+      replace: "còn [nhật thực](/articles/nhat-thuc-va-nguyet-thuc-hai-hien-tuong-che-khuat-khong-doi-xung) thì phụ thuộc vào quỹ đạo của nó."
+      words: "10 → 11 (delta +1) — tổng 598 → 599, còn 1 từ dư địa"
+      links_after: 4
+      why_these_words: >
+        "Phụ thuộc vào quỹ đạo của nó" nói được MỐI LIÊN HỆ mà không phát biểu
+        mệnh đề cơ chế nào: không bóng, không che khuất, không hình học thẳng
+        hàng. Đó chính là thứ đã bị cắt ở E3 và không được phép quay lại.
+        Nó khôi phục vai trò thứ hai, nên "Vai trò thứ ba" ở đoạn sau đếm đúng
+        trở lại.
+        Nguồn: s3 buộc quỹ đạo Mặt Trăng với việc tính nhật thực. Động từ chọn
+        là "phụ thuộc" chứ không phải "quyết định" — s3 nói biết quỹ đạo thì
+        tính được nhật thực, nên mệnh đề phụ thuộc là mức mà nguồn đỡ chắc,
+        còn "quyết định" sẽ nhích thêm một bậc mà nguồn không nói.
+        Và nó nối tự nhiên sang mục kế tiếp, vốn nói về việc đo chính quỹ đạo
+        ấy bằng laser.
+      do_not_reword: >
+        Đây là chữ của editor. Đừng đổi "phụ thuộc vào" thành "do … quyết
+        định", "gây ra", "tạo ra" hay "sinh ra" — cả bốn đều là mệnh đề cơ chế
+        hoặc nhân quả mạnh hơn mức s3 đỡ, và sẽ dựng lại đúng E3.
+
+  # ── Ba trường bước 5–11 cần, editor quyết ──────────────────────────────────
+  fields_decided_by_editor:
+    seoTitle:
+      value: "Mặt Trăng: nguồn gốc, nửa xa và vai trò với Trái Đất"
+      chars: 52
+      rationale: >
+        Không con số nào trong tiêu đề, theo ràng buộc B3 của vòng 1 và mục
+        "Ước lượng điểm không đặt vào tiêu đề" của content-rules. Ba vế đúng
+        ba mục thân bài thật sự có — không hứa "cấu tạo" hay "thăm dò" vì bài
+        không nói tới. Dùng "nửa xa", không dùng "nửa tối" (F4).
+    seoDescription:
+      value: "Vì sao ta chỉ thấy một mặt của Mặt Trăng, nhiều khả năng nó sinh ra từ đâu, và nó làm gì cho Trái Đất — tổng hợp từ NASA và hai công trình trên Nature."
+      chars: 151
+      rationale: >
+        Dưới trần 160. Mang chữ "nhiều khả năng" vào ngay mô tả, vì nguồn gốc
+        va chạm là mệnh đề dè dặt trong bài và một dòng mô tả khẳng định trần
+        sẽ nâng mức chắc chắn ở đúng chỗ dễ bị trích lại nhất. Không con số.
+    summary:
+      value: "Mặt Trăng quay đồng bộ với quỹ đạo nên chỉ hướng một mặt về Trái Đất; nhiều khả năng nó sinh ra từ một vụ va chạm cổ xưa, và nó vẫn đang lùi xa từng năm."
+      chars: 153
+      written_fresh: true
+      rationale: >
+        VIẾT MỚI, không cắt từ thân bài — content-rules cấm cắt chuỗi đã duyệt
+        vì một tóm tắt bị cắt có thể mất đúng mệnh đề dè dặt ở cuối.
+        Ba vế, ba nguồn: quay đồng bộ (s1 "synchronous rotation … the same
+        hemisphere faces Earth all the time"); "nhiều khả năng … va chạm" (s1
+        "likely formed after", s6 "generally believed"); "vẫn đang lùi xa"
+        (s3 "receding … about 3.8 centimeters per year").
+        KHÔNG mang con số: thẻ bài là chỗ con số dễ bị tách khỏi mốc của nó
+        nhất. "Từng năm" giữ được nhịp mà không nêu 3,8 cm.
+    reverifyDueAt:
+      value: 2027-09-13
+      rationale: >
+        12 tháng. Bài này KHÔNG có nguồn cấp dữ liệu lăn theo tháng — khác hẳn
+        ca NOAA của khi-quyen-trai-dat, nơi chính con số trong bài đã đổi trong
+        30 ngày và buộc chu kỳ ngắn. Bán kính, khoảng cách, biên độ nhiệt, tốc
+        độ lùi xa và giả thuyết va chạm đều là đại lượng ổn định hàng thập niên.
+        Rủi ro thật nằm ở chỗ khác, và nó có nhịp năm chứ không phải nhịp tháng:
+        (a) sáu trang NASA là trang SỐNG, bị viết lại không báo trước — s1 hiện
+        đã tự lệch với s3 ngay trong bảng nguồn ("about an inch" so với 3,8 cm,
+        xem E7), nên một lần viết lại nữa có thể làm đoạn trích trong bảng nguồn
+        không còn tìm thấy;
+        (b) băng ở cực là vùng đang có số liệu mới của các chuyến bay thời
+        Artemis, tức chính câu R1 là câu dễ cũ nhất trong bài.
+        Khi tới hạn: tải lại cả 8 URL và dò lại nguyên văn TRƯỚC, rồi mới đọc bài.
+
+  # ── Điều bước 5–11 không được làm hỏng (bổ sung cho B1–B9 của vòng 1) ──────
+  binding_on_next_steps:
+    - id: B10
+      applies_to: "lượt mở rộng bài sau này, nếu có"
+      rule: >
+        Con số 0°–85° của Laskar 1993 NAY ĐỦ ĐIỀU KIỆN NGUỒN để dùng — đã xác
+        minh nguyên văn từ abstract gốc. Editor KHÔNG đưa vào lần này vì ngân
+        sách chữ, không vì thiếu nguồn.
+        Nếu lượt sau muốn đưa vào, ba điều kiện, thiếu một thì thôi:
+        (1) mang theo NGUYÊN mệnh đề điều kiện "nếu không có Mặt Trăng" — nêu
+        trần "độ nghiêng trục Trái Đất có thể biến thiên 0°–85°" là sai hẳn
+        nghĩa; (2) giữ mức dè dặt "might" / "potential" của chính Laskar;
+        (3) nói rõ đây là kết quả tích phân mô hình cho một Trái Đất phản thực,
+        không phải một đại lượng đo được.
+        Chỗ đúng để đặt nó là một câu MỚI trong mục "Nó làm gì cho Trái Đất",
+        KHÔNG phải câu kết — câu kết vừa được chỉnh đúng mức dè dặt ở E2 và
+        không còn chỗ cho một mệnh đề điều kiện nữa.
+    - id: B11
+      applies_to: "mọi bước"
+      rule: >
+        Sau R5 bài ở 599/600 từ — còn ĐÚNG MỘT từ dư địa. Mọi bước từ 5 tới 11
+        không được thêm chữ nào vào thân bài. Ghi công ảnh đi vào
+        `Article.coverImageCredit`, KHÔNG viết vào Markdown (content-rules).
+    - id: B12
+      applies_to: "bước 5 (knowledge-graph-manager)"
+      rule: >
+        Quan hệ dựng từ bài này phải dừng ở mức bài phát biểu. Cụ thể: quan hệ
+        Mặt Trăng ↔ độ nghiêng trục Trái Đất là quan hệ CÓ DÈ DẶT, nguồn là một
+        công trình 1993 phát biểu ở mức "potential"; đừng dựng thành một cạnh
+        nhân quả trần. Và quan hệ Mặt Trăng ↔ nhật thực chỉ được ở mức "phụ
+        thuộc quỹ đạo" như R5, không mạnh hơn.
+    - id: B13
+      applies_to: "bước 10"
+      rule: >
+        Bảng Source của bài chỉ chứa nguồn mà văn xuôi CÒN dùng. Sau hai vòng
+        sửa, s1–s8 đều còn được dùng: s6 đỡ "giả thuyết được ủng hộ nhiều nhất"
+        (xem E9), s3 nay đỡ thêm vế nhật thực của R5. Không nguồn nào rơi ra.
+
+  final_state:
+    words_after_R5: 599
+    band: "400–600 — ĐẠT, còn 1 từ dư địa"
+    internal_links: 4
+    floor: 3
+    chars: 2963
+    gates:
+      accuracy: "ĐẠT sau R5 — mọi phát hiện chặn đã đóng; E5, E6, E7, E11 là S4 ghi nhận, không chặn."
+      reviewer: "Ban biên tập Sciencepedia (tài khoản ADMIN), ngày duyệt 2026-09-13. Xem B6 vòng 1 — id phải tra lại trước khi ghi."

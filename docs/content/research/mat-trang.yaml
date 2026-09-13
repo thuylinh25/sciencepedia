@@ -110,15 +110,32 @@ sources:
     doi: 10.1038/35089010
     year: 2001
     accessed: 2026-09-12
+    # SỬA 2026-09-12 bởi science-editor ở vòng 2 (bước 4). Bản trước ghi
+    # "TOÀN VĂN VÀ ABSTRACT KHÔNG ĐỌC ĐƯỢC" — sai dữ kiện. Xem E8/E9 ở
+    # checks/mat-trang.yaml. Giữ lại lịch sử này vì lượt sau sẽ cần biết vì
+    # sao phạm vi dùng của s6 rộng ra.
+    abstract_read: true
+    abstract_read_at: 2026-09-12
+    abstract_read_how: >
+      curl doi.org/10.1038/35089010 với User-Agent trình duyệt, theo chuyển
+      hướng tới nature.com/articles/35089010. Trả 200. Abstract hiển thị đầy
+      đủ ngoài cổng đăng nhập; chỉ TOÀN VĂN mới nằm sau tường phí.
+    passages:
+      - "The Moon is generally believed to have formed from debris ejected by a large off-centre collision with the early Earth"
+      - "This class of impacts involves a smaller—and thus more likely—object than previously considered viable, and suggests that the Moon formed near the very end of Earth's accumulation."
     limitation: >
-      TOÀN VĂN VÀ ABSTRACT KHÔNG ĐỌC ĐƯỢC. nature.com chuyển hướng qua cổng
-      đăng nhập; Semantic Scholar không có abstract cho bản ghi này. Metadata
-      đã đối chiếu qua Crossref ngày 2026-09-12: đúng tiêu đề, đúng tác giả
-      Canup và Asphaug, đúng Nature tập 412 trang 708–712, năm 2001.
+      ĐỌC ĐƯỢC ABSTRACT, KHÔNG đọc được toàn văn. Metadata đã đối chiếu qua
+      Crossref ngày 2026-09-12: đúng tiêu đề, đúng tác giả Canup và Asphaug,
+      đúng Nature tập 412 trang 708–712, năm 2001.
 
-      Nên nguồn này chỉ được dùng cho MỘT mệnh đề — chính mệnh đề tiêu đề nó
-      phát biểu: Mặt Trăng sinh ra từ một vụ va chạm lớn vào cuối quá trình
-      hình thành Trái Đất. KHÔNG được trích số nào từ nó.
+      Phạm vi dùng: mọi mệnh đề mà ABSTRACT phát biểu, tức gồm cả cụm
+      "generally believed" — đây là chỗ chống lưng bậc 1 cho mức dè dặt
+      "Giả thuyết được ủng hộ nhiều nhất" của bài. KHÔNG trích số nào nằm
+      trong toàn văn, vì toàn văn vẫn chưa đọc được.
+
+      Ràng buộc này neo vào TÌNH TRẠNG ĐỌC ĐƯỢC, không neo vào một giá trị
+      chết. Lượt sau đọc được toàn văn thì nới tiếp; đọc không được nữa thì
+      siết lại. Đừng chép lại kết luận của lượt này mà không tự tải.
 
   - id: s7
     tier: 1
@@ -128,15 +145,40 @@ sources:
     doi: 10.1038/361615a0
     year: 1993
     accessed: 2026-09-12
+    # SỬA 2026-09-12 bởi science-editor ở vòng 2 (bước 4). Xem E8/E9 ở
+    # checks/mat-trang.yaml. Tiền đề của lệnh chặn cũ đã đổ.
+    abstract_read: true
+    abstract_read_at: 2026-09-12
+    abstract_read_how: >
+      curl doi.org/10.1038/361615a0 với User-Agent trình duyệt, theo chuyển
+      hướng tới nature.com/articles/361615a0. Trả 200. Abstract hiển thị đầy
+      đủ ngoài cổng đăng nhập.
+    passages:
+      - "In its present state, the Earth avoids this chaotic zone and its obliquity is essentially stable, exhibiting only small variations of ± 1.3° around the mean value of 23.3°."
+      - "But if the Moon were not present, the torque exerted on the Earth would be smaller, and the chaotic zone would then extend from nearly 0° up to about 85°."
+      - "Thus, had the planet not acquired the Moon, large variations in obliquity resulting from its chaotic behaviour might have driven dramatic changes in climate."
+      - "In this sense one might consider the Moon to act as a potential climate regulator for the Earth."
     limitation: >
-      Cùng tình trạng s6: metadata đã đối chiếu qua Crossref, toàn văn không
-      đọc được. Chỉ dùng cho mệnh đề tiêu đề phát biểu — Mặt Trăng giữ ổn
-      định độ nghiêng trục Trái Đất.
+      ĐỌC ĐƯỢC ABSTRACT, KHÔNG đọc được toàn văn. Metadata đã đối chiếu qua
+      Crossref ngày 2026-09-12: đúng Laskar, Joutel & Robutel, Nature 361,
+      615–617, 1993.
 
-      Con số "không có Mặt Trăng thì độ nghiêng biến thiên 0°–85°" xuất hiện
-      rộng rãi trên web và truy về chính bài này, nhưng CHƯA ĐỌC ĐƯỢC từ
-      nguồn gốc nên KHÔNG đưa vào bài. Đây đúng là loại con số sống sót nhờ
-      được chép lại, như 10^14 vi sinh vật đã ghi ở corrections.md.
+      Con số 0°–85° NAY ĐÃ XÁC MINH TỪ NGUỒN GỐC, nguyên văn ở `passages`.
+      Nó không còn là con số "sống sót nhờ được chép lại"; phép so với 10^14
+      vi sinh vật ở bản trước KHÔNG còn đúng và đã bỏ.
+
+      Nhưng nó vẫn KHÔNG vào bài lần này, vì lý do biên tập chứ không phải
+      lý do xác minh: đó là kết quả PHẢN THỰC của một mô hình ("if the Moon
+      were not present"), và Laskar tự phát biểu ở mức "might have" /
+      "potential". Trình bày tử tế cần cả mệnh đề điều kiện lẫn mức dè dặt —
+      chỗ mà bài 599/600 từ không có. Xem ràng buộc B10 ở checks.
+
+      Khi dùng, phải mang theo NGUYÊN mệnh đề điều kiện. Nêu trần "độ nghiêng
+      trục Trái Đất có thể biến thiên 0°–85°" là bỏ mất chữ "nếu không có Mặt
+      Trăng" — sai hẳn nghĩa.
+
+      Lưu ý đối chứng: "± 1.3° quanh 23,3°" của Laskar và "22.1–24.5 degrees"
+      của s8 là cùng một khoảng, dựng từ hai hướng độc lập.
 
   - id: s8
     tier: 2
@@ -159,7 +201,13 @@ exclusions:
   - claim: Ngày Trái Đất dài thêm bao nhiêu mỗi thế kỷ
     why: Không nguồn nào trong bảng phát biểu con số đó. Xem `warning` ở s3.
   - claim: Không có Mặt Trăng thì độ nghiêng trục biến thiên 0°–85°
-    why: Chưa đọc được từ nguồn gốc. Xem `limitation` ở s7.
+    why: >
+      SỬA 2026-09-12 (vòng 2, science-editor). Lý do cũ — "chưa đọc được từ
+      nguồn gốc" — KHÔNG còn đúng: abstract Laskar 1993 đã tải được và con số
+      nằm nguyên văn trong đó. Nay loại vì lý do biên tập: là kết quả phản
+      thực của một mô hình, cần mang theo mệnh đề điều kiện và mức dè dặt
+      "might" của chính tác giả, và bài đang ở 599/600 từ. Xem `limitation`
+      ở s7 và ràng buộc B10 ở checks/mat-trang.yaml.
   - claim: Nhật thực và nguyệt thực
     why: >
       Đã có bài riêng `nhat-thuc-va-nguyet-thuc-hai-hien-tuong-che-khuat-khong-doi-xung`,
