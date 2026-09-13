@@ -59,7 +59,7 @@ export function LoginForm({
   const hasSocial = hasGithub || hasGoogle || hasFacebook;
 
   return (
-    <div className="space-y-5">
+    <div className="space-y-5 short:space-y-4 shorter:space-y-3">
       {/* Đăng nhập mạng xã hội đứng TRƯỚC form email.
 
           Thứ tự này là một phán quyết chứ không phải thẩm mỹ: người đã có tài
@@ -137,7 +137,11 @@ export function LoginForm({
         </>
       )}
 
-      <form onSubmit={handleSubmit(onSubmit)} className="space-y-4" noValidate>
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        className="space-y-4 shorter:space-y-3"
+        noValidate
+      >
         <div className="space-y-2">
           <Label htmlFor="email">{t("email")}</Label>
           {/* Icon nằm trong một ngăn riêng bên trái, ngăn cách bằng một vạch

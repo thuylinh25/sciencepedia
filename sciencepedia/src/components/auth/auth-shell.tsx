@@ -31,33 +31,35 @@ export async function AuthShell({
       {/* Cột trái là flex dọc chứ không căn giữa cả khối: footer phải neo ở
           đáy cột, không bị kéo vào giữa và dính đáy form.
 
-          `[@media(max-height:820px)]` rải trên bốn khoảng cách dọc: đây là
-          lỗi CHIỀU CAO cửa sổ, không phải bề ngang. Trên cùng một laptop
-          1355px ngang, cửa sổ cao 900px thì form vừa khít, cửa sổ cao 600px
-          thì phải cuộn mới thấy nút "Đăng nhập" — mà một form đăng nhập bắt
-          cuộn để bấm nút chính là form hỏng. Mọi breakpoint mặc định của
-          Tailwind đều đo bề ngang nên không cái nào bắt được ca này.
+          `short:` và `shorter:` là hai biến thể theo CHIỀU CAO cửa sổ, khai
+          trong globals.css. Đây là lỗi chiều cao chứ không phải bề ngang:
+          cùng một laptop 1355px ngang, cửa sổ cao 900px thì form vừa khít,
+          cửa sổ cao 607px thì phải cuộn mới thấy nút "Đăng nhập" — mà một
+          form đăng nhập bắt cuộn để bấm nút chính là form hỏng.
+
+          Lượt đầu chỉ có một bậc 820px và vẫn chưa đủ ở 607px. Nay hai bậc,
+          và `login-form.tsx` / `register-form.tsx` siết theo — phần lớn
+          chiều cao nằm trong form chứ không nằm ở khung này, nên siết mỗi
+          khung là siết vào chỗ ít mỡ nhất.
 
           Nén bằng KHOẢNG CÁCH và một bậc cỡ tiêu đề, không đụng vào cỡ chữ
           của nhãn hay ô nhập: chỗ tiết kiệm được nằm ở khoảng trống, còn thu
           nhỏ ô nhập thì đổi lấy vài chục pixel bằng chính khả năng gõ đúng. */}
-      <div className="flex flex-col px-6 py-10 [@media(max-height:820px)]:py-5">
+      <div className="flex flex-col px-6 py-10 short:py-5 shorter:py-3">
         <div className="flex flex-1 items-center justify-center">
           <div className="w-full max-w-sm">
             <Link href="/" className="lg:hidden">
               <Logo />
             </Link>
 
-            <h1 className="mt-8 font-display text-4xl font-bold tracking-tight lg:mt-0 [@media(max-height:820px)]:text-3xl">
+            <h1 className="mt-8 font-display text-4xl font-bold tracking-tight lg:mt-0 short:text-3xl shorter:text-2xl">
               {title}
             </h1>
-            <p className="mt-3 text-sm leading-relaxed text-muted-foreground [@media(max-height:820px)]:mt-2">
+            <p className="mt-3 text-sm leading-relaxed text-muted-foreground short:mt-2 shorter:mt-1.5">
               {subtitle}
             </p>
 
-            <div className="mt-8 [@media(max-height:820px)]:mt-5">
-              {children}
-            </div>
+            <div className="mt-8 short:mt-5 shorter:mt-4">{children}</div>
           </div>
         </div>
 
@@ -68,15 +70,28 @@ export async function AuthShell({
             kết thúc bằng một dòng chữ nhỏ, và không có gì phân định thì nó đọc
             ra như phần đuôi của form thay vì một tầng khác của trang.
 
-            HAI KHỐI chứ không một dòng chữ chảy tự do. Bản trước để cả bản
-            quyền lẫn hai liên kết trong một `flex-wrap` duy nhất, và ở bề
-            ngang 24rem thì "Điều khoản sử dụng" rơi xuống dòng dưới một mình —
-            trông như chữ bị tràn chứ không như một hàng hai phần. Tách làm hai
-            nhóm thì lúc chật, chỗ gãy rơi vào ĐÚNG khe giữa hai nhóm: bản
-            quyền một dòng, hai liên kết một dòng, cả hai đều trọn vẹn. */}
-        <footer className="mx-auto mt-10 w-full max-w-sm border-t pt-5 text-xs text-muted-foreground/70 [@media(max-height:820px)]:mt-6 [@media(max-height:820px)]:pt-3.5">
-          <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-2">
-            <p>© {new Date().getFullYear()} Sciencepedia</p>
+            MỘT hàng, không xuống dòng, và chỗ tiết kiệm lấy từ dòng bản
+            quyền chứ không từ hai liên kết.
+
+            Đã thử hai bố cục trước đó. Bản đầu để cả ba phần trong một
+            `flex-wrap`: "Điều khoản sử dụng" rơi xuống một mình, trông như
+            chữ bị tràn. Bản thứ hai tách hai nhóm để chỗ gãy rơi vào khe giữa
+            — gọn hơn, nhưng vẫn là hai dòng, và chủ sản phẩm không muốn hai
+            dòng.
+
+            Đo lại thì rõ là không có cách xếp nào cứu được: "© 2026
+            Sciencepedia · Chính sách bảo mật | Điều khoản sử dụng" dài hơn
+            24rem của cột form ở cỡ chữ 12px. Phải bỏ bớt chữ, và chữ đáng bỏ
+            là tên thương hiệu trong dòng bản quyền — nó vừa được in ngay phía
+            trên trong logo, còn hai liên kết pháp lý thì không rút gọn được:
+            "Điều khoản" cụt nghĩa hơn "Điều khoản sử dụng", và đây là hai
+            đường dẫn được bên xét duyệt ứng dụng đọc.
+
+            `flex-nowrap` + `whitespace-nowrap` để nếu sau này có ai nới chữ
+            dài ra thì nó tràn thấy được ngay, chứ không âm thầm gãy dòng lại. */}
+        <footer className="mx-auto mt-10 w-full max-w-sm border-t pt-5 text-xs text-muted-foreground/70 short:mt-6 short:pt-3.5 shorter:mt-4 shorter:pt-3">
+          <div className="flex flex-nowrap items-center justify-between gap-x-3 whitespace-nowrap">
+            <p>© {new Date().getFullYear()}</p>
 
             <p className="flex items-center gap-x-2.5">
               <Link

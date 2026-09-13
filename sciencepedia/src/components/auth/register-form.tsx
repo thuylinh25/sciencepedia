@@ -43,7 +43,9 @@ export function RegisterForm() {
         error?: string;
       };
       setServerError(
-        data.error === "EMAIL_TAKEN" ? t("emailTaken") : t("invalidCredentials"),
+        data.error === "EMAIL_TAKEN"
+          ? t("emailTaken")
+          : t("invalidCredentials"),
       );
       return;
     }
@@ -62,8 +64,18 @@ export function RegisterForm() {
   }
 
   const fields = [
-    { name: "name" as const, label: t("name"), type: "text", autoComplete: "name" },
-    { name: "email" as const, label: t("email"), type: "email", autoComplete: "email" },
+    {
+      name: "name" as const,
+      label: t("name"),
+      type: "text",
+      autoComplete: "name",
+    },
+    {
+      name: "email" as const,
+      label: t("email"),
+      type: "email",
+      autoComplete: "email",
+    },
     {
       name: "password" as const,
       label: t("password"),
@@ -79,8 +91,12 @@ export function RegisterForm() {
   ];
 
   return (
-    <div className="space-y-5">
-      <form onSubmit={handleSubmit(onSubmit)} className="space-y-4" noValidate>
+    <div className="space-y-5 short:space-y-4 shorter:space-y-3">
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        className="space-y-4 shorter:space-y-3"
+        noValidate
+      >
         {fields.map((field) => (
           <div key={field.name} className="space-y-2">
             <Label htmlFor={field.name}>{field.label}</Label>

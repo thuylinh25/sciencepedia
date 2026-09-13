@@ -4,6 +4,20 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* Hai biến thể theo CHIỀU CAO cửa sổ.
+
+   Mọi breakpoint mặc định của Tailwind đều đo bề ngang, nên không cái nào
+   thấy được lỗi thật sự hay gặp trên laptop: cửa sổ rộng nhưng THẤP. Trang
+   đăng nhập ở cửa sổ cao 600px phải cuộn mới bấm được nút chính — mà một form
+   đăng nhập bắt cuộn để bấm nút chính là form hỏng.
+
+   Hai bậc chứ không một: 820px là laptop 13" mở cửa sổ gần đầy màn hình, chỉ
+   cần siết nhẹ; 700px là cửa sổ đã bị chia đôi hoặc màn hình rất thấp, phải
+   siết mạnh. Một bậc duy nhất thì hoặc quá lỏng cho bậc dưới, hoặc bóp nghẹt
+   bậc trên một cách vô cớ. */
+@custom-variant short (@media (max-height: 820px));
+@custom-variant shorter (@media (max-height: 700px));
+
 /* ------------------------------------------------------------------ */
 /*  Bảng màu                                                           */
 /*  National Geographic (viền vàng, ảnh tràn khung)                     */
@@ -824,4 +838,3 @@
 .aladin-container canvas {
   image-rendering: auto !important;
 }
-
