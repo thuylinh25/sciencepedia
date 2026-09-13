@@ -544,12 +544,28 @@
   }
   .link-underline::after {
     content: "";
-    /* `currentColor` chứ không phải `bg-accent`: gạch chân phải đọc được ở cả
-       bốn tổ hợp (header mực trắng trên hero, header mực tối trên nền sáng, và
-       hai theme). Màu cố định thì hoặc chìm trên nền sáng, hoặc biến mất khi
-       header chuyển sang mực trắng. */
+    /* Gạch chân VÀNG — màu thương hiệu, chốt 2026-09-13 theo yêu cầu chủ sản
+       phẩm. Trước đó là `currentColor`, và lý do của lựa chọn cũ vẫn đúng:
+       gạch chân phải đọc được ở BA tổ hợp nền/mực khác nhau, nên một mã màu
+       viết cứng sẽ chìm ở ít nhất một chỗ.
+
+       Cách giải là một biến, không phải một màu:
+
+         - mặc định `--primary-strong` — ở theme sáng nó là hổ phách đậm, đọc
+           được trên nền trắng; ở theme tối nó đã là vàng sáng.
+         - khi header nằm TRÊN hero tối (lớp `nav-on-dark`) thì chuyển sang
+           `--primary` vàng sáng. Tổ hợp này mới là chỗ bẫy: theme SÁNG mà nền
+           sau header lại TỐI, nên hổ phách đậm biến mất.
+
+       Ai đổi màu ở đây phải thử đủ ba chỗ: trang chủ chưa cuộn, trang chủ đã
+       cuộn, và một trang bài viết ở cả hai theme. */
     @apply absolute -bottom-1 left-0 h-0.5 w-0 rounded-full transition-[width] duration-300;
-    background: currentColor;
+    background: var(--nav-underline, var(--primary-strong));
+  }
+
+  /* Header đang nằm trên hero tối: mực trắng, nên gạch chân phải là vàng sáng. */
+  .nav-on-dark {
+    --nav-underline: var(--primary);
   }
   .link-underline:hover::after,
   .link-underline[data-active="true"]::after {

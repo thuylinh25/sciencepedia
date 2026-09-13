@@ -172,7 +172,7 @@ export function SiteHeader({
         className={cn(
           "sticky top-0 z-50 w-full transition-[background-color,border-color,box-shadow,color] duration-300",
           onDark
-            ? "border-b border-transparent bg-transparent text-white"
+            ? "nav-on-dark border-b border-transparent bg-transparent text-white"
             : "glass-bar shadow-sm",
         )}
       >
