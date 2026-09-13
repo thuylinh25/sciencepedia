@@ -2,7 +2,11 @@ import type { MetadataRoute } from "next";
 
 import { routing } from "@/i18n/routing";
 import { absoluteUrl } from "@/lib/utils";
-import { getAllCategories, getAllTags, getPublishedSlugs } from "@/server/queries";
+import {
+  getAllCategories,
+  getAllTags,
+  getPublishedSlugs,
+} from "@/server/queries";
 
 /** Sinh cả hai bản ngôn ngữ cho mỗi đường dẫn, kèm hreflang alternates. */
 function entry(
@@ -41,6 +45,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     // dù bản thân trang là static.
     ...entry("/earth-live", { changeFrequency: "daily", priority: 0.7 }),
     ...entry("/assistant", { changeFrequency: "monthly", priority: 0.7 }),
+
+    /* Hai trang pháp lý. Ưu tiên thấp và gần như không đổi, nhưng PHẢI có
+       mặt: bên xét duyệt ứng dụng (Facebook, Google) tự tìm chúng bằng máy,
+       và một URL chính sách chỉ sống trong footer thì khó chứng minh là công
+       khai hơn hẳn một URL nằm trong sitemap. */
+    ...entry("/privacy", { changeFrequency: "yearly", priority: 0.3 }),
+    ...entry("/terms", { changeFrequency: "yearly", priority: 0.3 }),
   ];
 
   let articles: Awaited<ReturnType<typeof getPublishedSlugs>> = [];
