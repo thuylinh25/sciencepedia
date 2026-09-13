@@ -20,6 +20,7 @@ import { Logo } from "@/components/layout/logo";
 import { Separator } from "@/components/ui/separator";
 import { CountUp } from "@/components/layout/count-up";
 import { formatMeasure } from "@/lib/utils";
+import { CONTACT_EMAIL } from "@/lib/seo";
 
 /**
  * Địa chỉ liên hệ, viết một chỗ để dòng chữ và link `mailto:` không lệch nhau.
@@ -33,7 +34,7 @@ import { formatMeasure } from "@/lib/utils";
  * trong giai đoạn này: một hộp thư đọc được ngay hơn hẳn một địa chỉ đẹp mà
  * chưa cấu hình xong. Đổi sang tên miền riêng thì sửa đúng dòng dưới đây.
  */
-const CONTACT_EMAIL = "sciencepedia.contact@gmail.com";
+/* Địa chỉ này nay sống trong `@/lib/seo` vì hai trang pháp lý cũng in nó. */
 
 export async function SiteFooter() {
   const t = await getTranslations("footer");
@@ -139,9 +140,24 @@ export async function SiteFooter() {
      Bốn màu này trùng bảng màu đã dùng cho thẻ công cụ ở trang chủ
      (`interactive-explore.tsx`), nên toàn site chỉ có MỘT bộ màu phụ. */
   const figures = [
-    { n: stats.articles, label: t("statArticles"), icon: FileText, tint: "#3b82f6" },
-    { n: tools.length - 1, label: t("statTools"), icon: Compass, tint: "#10b981" },
-    { n: stats.categories, label: t("statFields"), icon: Layers, tint: "#8b5cf6" },
+    {
+      n: stats.articles,
+      label: t("statArticles"),
+      icon: FileText,
+      tint: "#3b82f6",
+    },
+    {
+      n: tools.length - 1,
+      label: t("statTools"),
+      icon: Compass,
+      tint: "#10b981",
+    },
+    {
+      n: stats.categories,
+      label: t("statFields"),
+      icon: Layers,
+      tint: "#8b5cf6",
+    },
     { n: stats.tags, label: t("statTopics"), icon: Tags, tint: "#f59e0b" },
   ].map((figure) => ({ ...figure, value: formatMeasure(figure.n, locale) }));
 
@@ -178,7 +194,10 @@ export async function SiteFooter() {
               đầu thì mắt đọc tiếp như thể vẫn còn trong bài. Một vạch màu
               thương hiệu rẻ hơn một đường kẻ ngang cả bề ngang, và nó không
               cắt trang làm đôi. */}
-          <span aria-hidden className="block h-1 w-12 rounded-full bg-primary" />
+          <span
+            aria-hidden
+            className="block h-1 w-12 rounded-full bg-primary"
+          />
           <p className={`${headingClass} mt-4`}>{t("statsTitle")}</p>
 
           {/* Bốn THẺ thay cho bốn cột chữ trần.

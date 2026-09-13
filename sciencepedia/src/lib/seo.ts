@@ -4,6 +4,14 @@ import type { Locale } from "@/i18n/routing";
 
 export const SITE_NAME = process.env.NEXT_PUBLIC_SITE_NAME ?? "Sciencepedia";
 
+/**
+ * Hộp thư liên hệ chính thức. Viết MỘT chỗ vì nó xuất hiện ở footer, ở trang
+ * Chính sách bảo mật và ở Điều khoản sử dụng — mà hai trang sau là thứ được
+ * nộp cho bên xét duyệt ứng dụng, nên một địa chỉ lệch giữa ba chỗ không chỉ
+ * khó đọc: nó làm hồ sơ trông như không có ai duy trì.
+ */
+export const CONTACT_EMAIL = "sciencepedia.contact@gmail.com";
+
 type SeoInput = {
   title: string;
   description: string;
@@ -55,7 +63,11 @@ export function buildMetadata({
       : {
           index: true,
           follow: true,
-          googleBot: { index: true, follow: true, "max-image-preview": "large" },
+          googleBot: {
+            index: true,
+            follow: true,
+            "max-image-preview": "large",
+          },
         },
     openGraph: {
       title,
@@ -144,7 +156,9 @@ export function articleJsonLd(input: {
       ? input.citations.map((source) => ({
           "@type": "CreativeWork",
           name: source.title,
-          url: source.doi ? `https://doi.org/${source.doi}` : source.url ?? undefined,
+          url: source.doi
+            ? `https://doi.org/${source.doi}`
+            : (source.url ?? undefined),
         }))
       : undefined,
     about: input.entity
