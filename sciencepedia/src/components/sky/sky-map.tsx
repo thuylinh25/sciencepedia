@@ -148,6 +148,12 @@ export function SkyMap() {
     if (target) applyTarget(target);
   }, [applyTarget]);
 
+  /* Khảo sát đang chọn. Rơi về phần tử đầu nếu `survey` mang một id không
+     có trong danh mục — trạng thái ấy tới được từ tham số URL do người dùng
+     sửa tay, và một dòng chú giải trống trông như lỗi tải. */
+  const active =
+    SKY_SURVEYS.find((item) => item.id === survey) ?? SKY_SURVEYS[0];
+
   const applySurvey = useCallback((surveyId: string) => {
     setSurvey(surveyId);
     setView((current) => ({ ...current, survey: surveyId }));
@@ -166,6 +172,7 @@ export function SkyMap() {
           label={t("viewerLabel", { object: label })}
           activation="visible"
           posterCaption={t("posterCaption", { object: label })}
+          showFullscreenToggle
           className="h-[calc(100dvh-16rem)] min-h-[30rem]"
         />
       </div>
@@ -191,7 +198,7 @@ export function SkyMap() {
               type="button"
               onClick={() => applySurvey(item.id)}
               aria-pressed={survey === item.id}
-              title={locale === "en" ? item.bandEn : item.band}
+              title={`${item.fullName} — ${locale === "en" ? item.bandEn : item.band}`}
               className={cn(
                 "rounded-full px-2.5 py-1 text-xs font-medium transition-colors",
                 survey === item.id
@@ -204,6 +211,30 @@ export function SkyMap() {
           ))}
         </div>
       </div>
+
+      {/* Chú giải cho khảo sát ĐANG CHỌN, luôn hiện.
+
+          Yêu cầu ban đầu là tooltip. Tooltip giải được đúng một nửa bài toán:
+          trên thiết bị cảm ứng không có trạng thái hover, nên "hiện khi rê
+          chuột" đồng nghĩa với "không bao giờ hiện" cho phần lớn người đọc —
+          cùng lập luận đã chốt khi cho số bài hiện sẵn trên chip lĩnh vực ở
+          hero thay vì đợi hover.
+
+          Nên làm cả hai: thuộc tính `title` vẫn có (rẻ, chạy ngay khi rê chuột
+          lên một nút CHƯA chọn), còn một dòng cố định nói về nút ĐANG chọn thì
+          ai cũng đọc được. Dòng ấy cũng trả lời câu hỏi thật của người dùng —
+          "tôi đang nhìn bằng cái gì" — chứ không phải "nút kia tên gì".
+
+          `aria-live="polite"`: đổi khảo sát là đổi thứ đang xem, và người dùng
+          trình đọc màn hình cần biết điều đó mà không phải đi tìm. */}
+      <p
+        aria-live="polite"
+        className="mt-2 text-xs leading-relaxed text-muted-foreground"
+      >
+        <span className="font-medium text-foreground">{active.fullName}</span>
+        {" — "}
+        {locale === "en" ? active.blurbEn : active.blurb}
+      </p>
 
       {/* --------------------------------------------------- Danh sách thiên thể
           Render ở server cùng phần còn lại của trang: đây là nội dung có chữ,

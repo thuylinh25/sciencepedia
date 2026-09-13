@@ -522,7 +522,9 @@
       "CLUSTER": "🌠 Clusters",
       "BLACK_HOLE": "⚫ Black holes",
       "OTHER": "Other"
-    }
+    },
+    "enterFullscreen": "Full screen",
+    "exitFullscreen": "Exit full screen"
   },
   "explore": {
     "title": "Interactive exploration",

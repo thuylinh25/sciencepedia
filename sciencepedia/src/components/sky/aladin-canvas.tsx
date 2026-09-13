@@ -13,6 +13,8 @@ import {
   ArrowLeft,
   ChevronRight,
   Loader2,
+  Maximize2,
+  Minimize2,
   Info,
   MousePointer2,
   Pause,
@@ -42,6 +44,7 @@ export function AladinCanvas({
   crumbCurrent,
   openFullscreen,
   canSpin,
+  showFullscreenToggle,
 }: {
   view: SkyView;
   /** Nhãn cho trình đọc màn hình — canvas WebGL tự nó không mô tả được gì */
@@ -77,12 +80,25 @@ export function AladinCanvas({
    * sao.
    */
   canSpin?: boolean;
+  /**
+   * Nút phóng to/thu nhỏ ở góc trên phải.
+   *
+   * Mặc định TẮT, và mặc định ấy có lý do. Thư viện ảnh bề mặt hành tinh mở
+   * thẳng ở chế độ toàn màn hình ngay khi bấm vào bìa, nên ở đó nút này chỉ
+   * còn một việc — thoát ra khung nhỏ trong thẻ, trạng thái không ai muốn
+   * tới. Đó cũng là lý do `showFullscreenControl` của Aladin bị tắt.
+   *
+   * Trang bản đồ bầu trời thì ngược lại: khung là một ô nhúng giữa trang, và
+   * thứ người ta làm trong đó — dò tìm, phóng to, đổi khảo sát — cần chỗ.
+   */
+  showFullscreenToggle?: boolean;
 }) {
   const t = useTranslations("sky");
   const {
     containerRef,
     status,
     isFullscreen,
+    toggleFullscreen,
     goTo,
     panTo,
     centre,
@@ -262,6 +278,33 @@ export function AladinCanvas({
         onWheel={dismissHint}
         className="size-full"
       />
+
+      {/* Nút phóng to/thu nhỏ, góc trên PHẢI.
+
+          Trái đã có nút lùi và breadcrumb; chồng thêm vào đó là bắt mắt chọn
+          giữa hai thứ ở cùng một chỗ. Phải thì trống — logo Aladin nằm ở góc
+          dưới phải, cách xa.
+
+          `z-20` chứ không `z-10`: ở toàn màn hình, khung là một lớp fixed phủ
+          kín trang, và nút này phải nằm trên nó để còn bấm thoát ra được.
+
+          Nhãn và tiêu đề đổi theo trạng thái — một nút "Toàn màn hình" khi
+          đang ở toàn màn hình là nói sai việc nó sắp làm. */}
+      {showFullscreenToggle && status === "ready" && (
+        <button
+          type="button"
+          onClick={toggleFullscreen}
+          aria-label={isFullscreen ? t("exitFullscreen") : t("enterFullscreen")}
+          title={isFullscreen ? t("exitFullscreen") : t("enterFullscreen")}
+          className="absolute top-2 right-2 z-20 inline-flex items-center justify-center rounded-full bg-black/65 p-2 text-white backdrop-blur-sm transition-colors hover:bg-black/85"
+        >
+          {isFullscreen ? (
+            <Minimize2 className="size-4" aria-hidden />
+          ) : (
+            <Maximize2 className="size-4" aria-hidden />
+          )}
+        </button>
+      )}
 
       {/*
         Ở toàn màn hình, khung Aladin là một lớp `position: fixed` đè lên cả

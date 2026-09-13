@@ -99,6 +99,21 @@ export type SkySurvey = {
   /** Dải sóng — để người đọc biết mình đang nhìn bằng "mắt" nào */
   band: string;
   bandEn: string;
+  /**
+   * Tên đầy đủ của khảo sát, không dịch.
+   *
+   * "DSS2" và "2MASS" là chữ viết tắt, và một chữ viết tắt không giải thích
+   * được chính nó. Tên đầy đủ nói ra ngay rằng đây là một cuộc KHẢO SÁT BẦU
+   * TRỜI có tên tuổi chứ không phải một chế độ hiển thị do trang này bịa ra.
+   *
+   * Giữ nguyên tiếng Anh ở cả hai ngôn ngữ: đây là danh từ riêng, và người đọc
+   * muốn tra tiếp thì phải mang theo được đúng cái tên ấy — cùng lý do đã chốt
+   * cho tên thiên thể trong docs/content-rules.md.
+   */
+  fullName: string;
+  /** Một câu nói khảo sát này cho thấy GÌ, không phải nó tên gì. */
+  blurb: string;
+  blurbEn: string;
 };
 
 export const SKY_SURVEYS: SkySurvey[] = [
@@ -107,30 +122,55 @@ export const SKY_SURVEYS: SkySurvey[] = [
     name: "DSS2",
     band: "Khả kiến",
     bandEn: "Visible",
+    fullName: "Digitized Sky Survey 2",
+    blurb:
+      "Ảnh chụp trên phim của các kính thiên văn khảo sát, quét lại thành ảnh số. Đây là bầu trời gần đúng như mắt người thấy nếu mắt đủ nhạy.",
+    blurbEn:
+      "Photographic plates from survey telescopes, digitised. This is the sky roughly as the eye would see it, if the eye were sensitive enough.",
   },
   {
     id: "P/2MASS/color",
     name: "2MASS",
     band: "Hồng ngoại gần",
     bandEn: "Near-infrared",
+    fullName: "Two Micron All-Sky Survey",
+    blurb:
+      "Nhìn bằng hồng ngoại gần, nên xuyên qua được bụi che. Vùng bị bụi chắn ở ảnh khả kiến sẽ lộ ra ở đây.",
+    blurbEn:
+      "Near-infrared, so it sees through dust. Regions hidden in visible light open up here.",
   },
   {
     id: "P/allWISE/color",
     name: "AllWISE",
     band: "Hồng ngoại giữa",
     bandEn: "Mid-infrared",
+    fullName: "Wide-field Infrared Survey Explorer",
+    blurb:
+      "Hồng ngoại giữa — bắt nhiệt của bụi ấm thay vì ánh sáng của sao. Tinh vân và vùng tạo sao nổi bật.",
+    blurbEn:
+      "Mid-infrared — it picks up the heat of warm dust rather than starlight. Nebulae and star-forming regions stand out.",
   },
   {
     id: "P/SDSS9/color",
     name: "SDSS9",
     band: "Khả kiến, sâu",
     bandEn: "Visible, deep",
+    fullName: "Sloan Digital Sky Survey, bản phát hành 9",
+    blurb:
+      "Khảo sát khả kiến hiện đại, sâu hơn DSS2 nhiều nên thấy được thiên hà mờ — nhưng chỉ phủ một phần bầu trời.",
+    blurbEn:
+      "A modern visible-light survey, far deeper than DSS2 so faint galaxies show — but it covers only part of the sky.",
   },
   {
     id: "P/Mellinger/color",
     name: "Mellinger",
     band: "Toàn bầu trời",
     bandEn: "All-sky",
+    fullName: "Mellinger All-Sky Panorama",
+    blurb:
+      "Ảnh ghép toàn bầu trời dựng từ hàng trăm tấm chụp góc rộng. Dùng khi cần thấy dải Ngân Hà trải ngang, không phải khi cần phóng to.",
+    blurbEn:
+      "An all-sky mosaic built from hundreds of wide-angle exposures. Use it to see the Milky Way stretch across, not to zoom in.",
   },
 ];
 

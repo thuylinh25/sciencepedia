@@ -447,10 +447,32 @@ export function useAladin({
   /** Dựng lại từ đầu sau khi lỗi — dùng cho nút "thử lại". */
   const retry = useCallback(() => setAttempt((value) => value + 1), []);
 
+  /**
+   * Bật/tắt toàn màn hình.
+   *
+   * Gắn thẳng lớp `aladin-fullscreen` lên container — đúng cái Aladin tự làm
+   * khi người ta bấm nút của nó. KHÔNG gọi một method nào của instance: Aladin
+   * đổi tên method giữa các bản v3 (xem `setSurveyOn`), và `src/types/aladin.ts`
+   * không khai báo method toàn màn hình nào, nên gọi bừa là đặt cược vào một
+   * API không có hợp đồng.
+   *
+   * Gắn lớp thì đi qua đúng đường đã có sẵn và đã kiểm: `ResizeObserver` tính
+   * lại khung nhìn theo tỉ lệ khung mới, `MutationObserver` cập nhật
+   * `isFullscreen` cho React. Cả hai đều đang chạy sẵn cho nút của Aladin.
+   *
+   * KHÔNG dùng Fullscreen API của trình duyệt: nó đòi cử chỉ người dùng, bị
+   * iframe chặn, và trên iOS Safari thì không có cho phần tử thường. Lớp CSS
+   * `position: fixed` phủ kín viewport cho kết quả giống hệt ở mọi nơi.
+   */
+  const toggleFullscreen = useCallback(() => {
+    containerRef.current?.classList.toggle("aladin-fullscreen");
+  }, []);
+
   return {
     containerRef,
     status,
     isFullscreen,
+    toggleFullscreen,
     goTo,
     panTo,
     centre,

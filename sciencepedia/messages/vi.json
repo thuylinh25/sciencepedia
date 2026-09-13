@@ -522,7 +522,9 @@
       "CLUSTER": "🌠 Cụm sao",
       "BLACK_HOLE": "⚫ Hố đen",
       "OTHER": "Khác"
-    }
+    },
+    "enterFullscreen": "Toàn màn hình",
+    "exitFullscreen": "Thoát toàn màn hình"
   },
   "explore": {
     "title": "Khám phá tương tác",
