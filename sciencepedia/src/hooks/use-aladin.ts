@@ -174,16 +174,51 @@ export function supportsWebGL2(): boolean {
  * Nên ở chế độ thiên thể, `fovDeg` được hiểu là bề CAO và bề rộng suy ra từ tỉ
  * lệ khung. Quả cầu giữ nguyên kích thước biểu kiến, vuông hay bẹt cũng vậy.
  */
-function fovForFrame(element: HTMLElement, view: SkyView): number {
-  if (!view.planetary) return view.fovDeg;
+/**
+ * Chiều CAO khung nhìn tối đa cho bản đồ bầu trời, tính bằng độ.
+ *
+ * Phép chiếu SIN vẽ bầu trời thành một ĐĨA: quá một mức nào đó thì mép đĩa lọt
+ * vào khung và bốn góc khung thành khoảng đen. Trên máy tính chuyện này không
+ * xảy ra vì khung nằm ngang; trên điện thoại thì khung dọc, chiều cao gấp rưỡi
+ * chiều ngang, nên chính chiều cao là chiều chạm mép trước.
+ *
+ * 90° chọn theo một điểm đo thật: ở khung 90°×129,5° (điện thoại, mục tiêu Tâm
+ * Dải Ngân Hà) mép đĩa hiện rõ và người dùng báo "ảnh hiển thị khuyết". 90° để
+ * lại biên an toàn rộng dưới ngưỡng đó mà vẫn còn là một khung nhìn rất rộng.
+ */
+const MAX_SKY_HEIGHT_FOV = 90;
 
+/**
+ * Khung nhìn ban đầu, đã chỉnh theo HÌNH DẠNG của khung chứa.
+ *
+ * `fovDeg` trong dữ liệu là bề RỘNG mong muốn, và nó được chọn khi nhìn một
+ * khung nằm ngang. Cùng con số đó đặt vào khung dọc của điện thoại sẽ cho một
+ * chiều cao lớn hơn nhiều — 90° ngang thành 129,5° dọc — và đó là chỗ hỏng.
+ */
+function fovForFrame(element: HTMLElement, view: SkyView): number {
   const { width, height } = element.getBoundingClientRect();
   if (!width || !height) return view.fovDeg;
 
-  // Aladin chặn cứng ở 180° trong phép chiếu cầu, nên khung càng bẹt thì càng
-  // không cứu được bằng fov — đó là lý do khung toàn màn hình của bề mặt thiên
-  // thể bị CSS ép về vuông (`.aladin-body-view` trong `globals.css`).
-  return Math.min(180, view.fovDeg * Math.max(1, width / height));
+  if (view.planetary) {
+    // Aladin chặn cứng ở 180° trong phép chiếu cầu, nên khung càng bẹt thì
+    // càng không cứu được bằng fov — đó là lý do khung toàn màn hình của bề
+    // mặt thiên thể bị CSS ép về vuông (`.aladin-body-view` trong
+    // `globals.css`).
+    return Math.min(180, view.fovDeg * Math.max(1, width / height));
+  }
+
+  /*
+   * Khung nằm ngang thì `width / height` > 1 và trần này lớn hơn mọi `fovDeg`
+   * đang có, nên máy tính không đổi gì cả. Chỉ khung dọc mới bị siết.
+   *
+   * Siết bề RỘNG chứ không siết bề cao, vì `fov` mà Aladin nhận là bề rộng.
+   * Sàn 15° để một khung cực hẹp cũng không rơi xuống mức phóng vô nghĩa.
+   */
+  // Sàn đặt trên chính CÁI TRẦN, không đặt trên kết quả: đặt nhầm chỗ thì
+  // mọi mục tiêu phóng gần (M31 ở 3°, hố đen M87 ở 0,4°) đều bị kéo về 15° và
+  // bản đồ mở ra ở sai mức phóng hoàn toàn.
+  const widthCap = Math.max(15, MAX_SKY_HEIGHT_FOV * (width / height));
+  return Math.min(view.fovDeg, widthCap);
 }
 
 type UseAladinOptions = {
