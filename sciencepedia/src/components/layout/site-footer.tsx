@@ -1,26 +1,21 @@
 import { getLocale, getTranslations } from "next-intl/server";
 import {
   Aperture,
-  Compass,
   Disc3,
-  FileText,
-  Layers,
   Mail,
   Orbit,
   Scaling,
   Sparkles,
-  Tags,
   Telescope,
 } from "lucide-react";
 
 import { Link } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
-import { getRootCategories, getSiteStats } from "@/server/queries";
+import { getRootCategories } from "@/server/queries";
+import { CONTACT_EMAIL } from "@/lib/seo";
 import { Logo } from "@/components/layout/logo";
 import { Separator } from "@/components/ui/separator";
-import { CountUp } from "@/components/layout/count-up";
-import { formatMeasure } from "@/lib/utils";
-import { CONTACT_EMAIL } from "@/lib/seo";
+import { FooterStats } from "@/components/layout/footer-stats";
 
 /**
  * Địa chỉ liên hệ, viết một chỗ để dòng chữ và link `mailto:` không lệch nhau.
@@ -48,25 +43,6 @@ export async function SiteFooter() {
     categories = await getRootCategories();
   } catch (error) {
     console.warn("[footer] không nạp được danh mục:", (error as Error).message);
-  }
-
-  /*
-   * Số liệu ĐO ĐƯỢC, không phải số tròn cho đẹp.
-   *
-   * Bản mô tả đề nghị một dải "12.500+ bài viết · 120+ mô hình · 50+ công cụ".
-   * Kho thật có 58 bài, 6 công cụ và 3 mô hình. In những con số kia là bịa ra
-   * quy mô mình không có — và một dải số liệu sai ở footer thì phá đúng thứ nó
-   * sinh ra để xây: độ tin cậy. Cùng phán quyết đã ghi cho nhãn "phổ biến"
-   * trong `interactive-explore.tsx`: gắn một nhãn dựa trên dữ liệu mình không
-   * có thì rẻ tiền đúng một lần, rồi người đọc thôi tin mọi nhãn khác.
-   *
-   * Nên dải này in số thật, và nó sẽ tự lớn lên khi kho lớn lên.
-   */
-  let stats = { articles: 0, categories: 0, tags: 0, views: 0 };
-  try {
-    stats = await getSiteStats();
-  } catch (error) {
-    console.warn("[footer] không nạp được thống kê:", (error as Error).message);
   }
 
   /**
@@ -118,49 +94,6 @@ export async function SiteFooter() {
     { href: "/contact", label: t("contact") },
   ] as const;
 
-  /* Bốn con số, tất cả đếm được. "Công cụ tương tác" là chính mảng `tools` ở
-     trên trừ trợ lý AI — suy ra từ đó chứ không viết một số riêng, để hai chỗ
-     không lệch nhau khi thêm công cụ mới. */
-  /* Icon nhỏ phía trên mỗi con số: bốn ô cạnh nhau cùng cỡ chữ thì mắt phải
-     đọc nhãn mới phân biệt được ô nào là ô nào. Một hình nhỏ cho mỗi ô tạo
-     điểm neo trước khi chữ được đọc.
-
-     SỐ ĐỂ NGUYÊN, KHÔNG THÊM DẤU "+". Bản mô tả đề nghị "57+" và "20+", nhưng
-     con số ở đây là phép đếm CHÍNH XÁC đọc từ CSDL — một dấu cộng sau nó vừa
-     không thêm thông tin gì, vừa ngụ ý rằng con số thật đang bị giấu. Với một
-     bách khoa, độ chính xác của chính dải số liệu này là thứ nó đang quảng
-     cáo; làm tròn lên ở đó là tự mâu thuẫn. Đây cũng đúng tinh thần "không
-     marketing quá đà" mà yêu cầu nêu ra. */
-  /* Mỗi ô một màu nhận dạng riêng, đặt trên ô icon chứ KHÔNG trên con số.
-
-     Con số phải giữ đúng một màu chữ chính ở cả bốn ô: chúng là bốn phép đếm
-     cùng loại, và tô mỗi số một màu sẽ ngụ ý chúng khác hạng nhau. Màu đi vào
-     ô icon — chỗ nó làm được việc phân biệt mà không nói sai điều gì.
-
-     Bốn màu này trùng bảng màu đã dùng cho thẻ công cụ ở trang chủ
-     (`interactive-explore.tsx`), nên toàn site chỉ có MỘT bộ màu phụ. */
-  const figures = [
-    {
-      n: stats.articles,
-      label: t("statArticles"),
-      icon: FileText,
-      tint: "#3b82f6",
-    },
-    {
-      n: tools.length - 1,
-      label: t("statTools"),
-      icon: Compass,
-      tint: "#10b981",
-    },
-    {
-      n: stats.categories,
-      label: t("statFields"),
-      icon: Layers,
-      tint: "#8b5cf6",
-    },
-    { n: stats.tags, label: t("statTopics"), icon: Tags, tint: "#f59e0b" },
-  ].map((figure) => ({ ...figure, value: formatMeasure(figure.n, locale) }));
-
   const linkClass =
     "text-sm leading-7 text-muted-foreground transition-colors hover:text-primary-strong hover:underline hover:underline-offset-4";
 
@@ -181,73 +114,18 @@ export async function SiteFooter() {
        ngắn. Nới lại ở sm trở lên vì màn hình rộng chịu được khoảng trống
        lớn hơn trước khi nó đọc ra là thiếu sót. */
     <footer className="mt-14 border-t bg-muted/30 sm:mt-18">
-      {/* Dải số liệu đứng ĐẦU footer, trên các cột liên kết.
+      {/* Dải số liệu CHỈ hiện với quản trị.
 
-          Nó trả lời "đây là nền tảng cỡ nào" — câu hỏi đến trước "đi đâu tiếp",
-          và người cuộn hết một trang nội dung thì đang ở đúng lúc để hỏi nó. */}
-      <div className="border-b">
-        <div className="container-page py-10">
-          {/* Vạch vàng ngắn phía trên tiêu đề.
+          Trước đây nó hiện cho mọi người và đứng đầu footer, để trả lời "đây
+          là nền tảng cỡ nào". Chủ sản phẩm quyết định con số kho — 58 bài, 7
+          lĩnh vực — là thông tin vận hành, không phải thông tin cho người đọc.
+          Với một kho đang xây, một dải số nhỏ in ở mọi trang nói về quy mô
+          nhiều hơn là về nội dung.
 
-              Dải này là khối duy nhất trong footer mang số liệu, và nó nằm
-              ngay dưới một trang nội dung dài — không có gì đánh dấu chỗ bắt
-              đầu thì mắt đọc tiếp như thể vẫn còn trong bài. Một vạch màu
-              thương hiệu rẻ hơn một đường kẻ ngang cả bề ngang, và nó không
-              cắt trang làm đôi. */}
-          <span
-            aria-hidden
-            className="block h-1 w-12 rounded-full bg-primary"
-          />
-          <p className={`${headingClass} mt-4`}>{t("statsTitle")}</p>
-
-          {/* Bốn THẺ thay cho bốn cột chữ trần.
-
-              Bản cũ đặt icon nhỏ nằm trên con số, không viền, không nền. Ở
-              bề ngang lớn, bốn cụm chữ trôi trong một dải rộng thì mắt không
-              nhóm chúng lại thành một bộ — chúng đọc ra như bốn mẩu rời rạc
-              lạc vào đầu footer. Một cái viền mờ quanh mỗi ô làm đúng việc
-              nhóm ấy, và đây là chỗ hiếm hoi mà thêm đường nét lại giảm nhiễu.
-
-              Icon chuyển sang ô bo tròn có nền màu, đặt CẠNH con số thay vì
-              phía trên: hàng ngang icon–số ngắn hơn cột dọc icon–số–nhãn, nên
-              thẻ thấp đi và cả dải bớt chiếm chỗ. */}
-          <dl className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {figures.map((figure) => (
-              <div
-                key={figure.label}
-                className="group rounded-2xl border bg-card/50 p-5 transition-colors hover:border-primary/40"
-              >
-                <div className="flex items-center gap-4">
-                  <span
-                    aria-hidden
-                    className="flex size-12 shrink-0 items-center justify-center rounded-xl"
-                    style={{ backgroundColor: figure.tint }}
-                  >
-                    <figure.icon className="size-5 text-white" />
-                  </span>
-
-                  {/* `flex-col-reverse` để MÃ đúng thứ tự ngữ nghĩa (dt trước
-                      dd) mà MẮT vẫn thấy con số trước nhãn. Bản cũ giải bài
-                      này bằng một `dt` ẩn cộng một nhãn hiện, tức trình đọc
-                      màn hình nghe nhãn hai lần. */}
-                  <div className="flex min-w-0 flex-col-reverse">
-                    <dt className="mt-1 truncate text-sm text-muted-foreground">
-                      {figure.label}
-                    </dt>
-                    <dd>
-                      <CountUp
-                        value={figure.n}
-                        formatted={figure.value}
-                        className="block font-display text-4xl font-bold tracking-tight text-foreground tabular-nums transition-colors group-hover:text-primary-strong"
-                      />
-                    </dd>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </dl>
-        </div>
-      </div>
+          Kiểm quyền nằm trong component (và trong API mà nó gọi), không nằm ở
+          đây: footer phải giữ được tính tĩnh cho toàn site. Xem chú thích
+          trong `footer-stats.tsx`. */}
+      <FooterStats toolCount={tools.length - 1} />
 
       {/* gap-10 → gap-x-12 gap-y-12: cột thưa hơn chừng 20% theo yêu cầu, và
           khoảng cách dọc bằng khoảng cách ngang để lưới không lệch nhịp khi
