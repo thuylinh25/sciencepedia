@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
+import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 
-import { AuthArtwork } from "@/components/auth/auth-artwork";
 import { Logo } from "@/components/layout/logo";
 import { Link } from "@/i18n/navigation";
 
@@ -148,23 +148,46 @@ export async function AuthShell({
           </blockquote>
         </div>
 
-        {/* Hình minh hoạ NẰM TRỌN trong khung, góc dưới phải.
+        {/* Ảnh nền, GHIM Ở ĐÁY cột chứ không phủ kín.
 
-            Bản trước cho nó tràn qua hai mép (`-right-24 -bottom-20`) để trông
-            lớn hơn khung chứa — thủ pháp mượn từ thiên hà ở hero. Ở hero nó
-            hợp vì thứ bị cắt là một vệt sáng không có hình thù rõ; ở đây thứ
-            bị cắt là một QUYỂN SÁCH MỞ có đường viền dứt khoát, nên mắt không
-            đọc ra "hình lớn hơn khung" mà đọc ra "hình tải thiếu" — đúng như
-            người dùng báo lại.
+            Phủ kín là phản xạ đầu tiên và nó sai ở đây. Cột này hẹp và cao
+            (chừng 0,8:1), còn ảnh là 16:9; `object-cover` toàn khung sẽ cắt
+            mất hai phần ba bề ngang, mà quyển sách — thứ duy nhất đáng giữ —
+            nằm lệch phải nên nó là phần bị cắt đầu tiên. Neo sang phải thì
+            cứu được quyển sách, nhưng lúc đó chính nó nằm sau câu trích, và
+            trang sách là vùng SÁNG NHẤT của ảnh: chữ trắng mất chỗ đứng.
 
-            Cỡ tính bằng `min()` chứ không `max-w-[…%]`: trên màn hình rất rộng
-            thì 20rem là đủ cho một món trang trí, còn trên màn hình vừa thì
-            38% giữ cho nó không lấn sang câu trích.
+            Ghim ở đáy theo đúng tỉ lệ gốc 16:9 thì không cắt một pixel nào,
+            và nó tái lập đúng bố cục mà ảnh được vẽ ra để có: khoảng tối ở
+            trên cho chữ, quyển sách ở dưới. Đệm `pb-44` của cột chính là dải
+            đã chừa sẵn cho nó.
 
-            Vị trí góc dưới phải vẫn là ràng buộc tương phản như cũ: câu trích
-            là chữ trắng và nó ở nửa trên bên trái, nên vùng sáng nhất của hình
-            phải ở xa chỗ đó. */}
-        <AuthArtwork className="pointer-events-none absolute right-8 bottom-8 z-0 w-[min(20rem,38%)] opacity-90" />
+            Mép trên hoà vào nền bằng `mask-image` chứ không bằng một lớp
+            gradient màu: nền cột là ba lớp gradient chồng nhau (xem
+            `.auth-aside`), nên không có MỘT mã màu nào để mà khớp — đắp màu
+            vào sẽ lộ một vệt ngang. Mặt nạ làm ảnh mờ dần về trong suốt, nền
+            nào phía sau cũng ăn khớp. */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-x-0 bottom-0 z-0"
+        >
+          <div
+            className="relative aspect-[16/9] w-full"
+            style={{
+              maskImage: "linear-gradient(to bottom, transparent, #000 32%)",
+              WebkitMaskImage:
+                "linear-gradient(to bottom, transparent, #000 32%)",
+            }}
+          >
+            <Image
+              src="/images/auth-book.jpg"
+              alt=""
+              fill
+              sizes="50vw"
+              className="object-cover"
+            />
+          </div>
+        </div>
       </aside>
     </div>
   );
