@@ -127,14 +127,30 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
       return session;
     },
   },
-  events: {
-    /** Tài khoản OAuth mới mặc định là USER — quyền chỉ được nâng thủ công. */
-    async createUser({ user }) {
-      if (!user.id) return;
-      await prisma.user.update({
-        where: { id: user.id },
-        data: { role: Role.USER },
-      });
-    },
-  },
+  /*
+   * KHÔNG có `events.createUser` đặt role.
+   *
+   * Ở đây từng có một handler ghi `role: USER` cho mọi lượt `createUser`, với
+   * ý định "tài khoản OAuth mới mặc định là USER". Ý định đúng, cách làm sai,
+   * và nó đã gây hậu quả thật ngày 2026-09-13: tài khoản quản trị DUY NHẤT của
+   * site bị hạ xuống USER ngay sau khi Google và GitHub được bật.
+   *
+   * Hai lỗi chồng nhau:
+   *
+   * 1. THỪA. `prisma/schema.prisma` đã khai `role Role @default(USER)`. Người
+   *    dùng mới đã là USER từ lúc hàng được tạo; handler này không thêm gì.
+   *
+   * 2. NGUY. Nó là một `update` VÔ ĐIỀU KIỆN lên một id có sẵn. Chừng nào
+   *    next-auth còn gọi `createUser` với id của một người dùng ĐANG TỒN TẠI —
+   *    và với `allowDangerousEmailAccountLinking` bật, đường đi của lượt nối
+   *    tài khoản theo email là chỗ dễ xảy ra nhất — thì nó hạ quyền người ấy
+   *    mà không báo gì.
+   *
+   * Nguyên tắc rút ra, đáng giữ hơn chính lượt sửa: **đừng viết mã ghi lại một
+   * giá trị mà lược đồ đã bảo đảm.** Nó không mang lại gì, và nó biến một bảo
+   * đảm tĩnh thành một lệnh ghi động — thứ có thể chạy nhầm lúc.
+   *
+   * Nâng quyền vẫn chỉ có đúng một đường: `updateUserRole` trong
+   * `server/actions/taxonomy.ts`, đòi ADMIN và chặn tự hạ quyền chính mình.
+   */
 });
