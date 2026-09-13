@@ -48,6 +48,23 @@ export function Hero({ fields }: { fields?: ReactNode }) {
           16:9 rất sâu, và cắt giữa thì mất luôn thiên hà — thứ duy nhất đáng
           giữ. Neo về 68% bề ngang giữ lõi sáng trong khung.
 
+          TỈ LỆ CỦA TỆP QUAN TRỌNG NGANG ĐỘ PHÂN GIẢI, và lượt đầu đã sai ở
+          đúng chỗ đó. Tệp đầu tiên là 1280×720 (16:9) và hiện ra mờ trên máy
+          thật. Hai nguyên nhân cộng lại, không phải một: hero tràn hết bề
+          ngang nên trên màn HiDPI trình duyệt phải kéo 1280px lên hơn gấp
+          đôi; mà dải hero lại dẹt cỡ 3,4:1, nên `object-cover` vứt luôn
+          khoảng 45% chiều cao của tấm 16:9 — tức gần một nửa số pixel mua về
+          không bao giờ lên tới màn hình.
+
+          Tệp hiện tại là 1760×576, tỉ lệ 3,06:1, gần đúng tỉ lệ dải hero. Nó
+          vừa nhiều pixel ngang hơn 35%, vừa gần như không bị cắt, nên mức
+          phóng tụt từ ~2,1 lần xuống ~1,5 lần.
+
+          Lưu ý cho lần thay ảnh sau: Next KHÔNG bao giờ phóng ảnh quá kích
+          thước gốc, nên `srcset` có `w=2048` hay `w=3840` cũng chỉ trả về
+          đúng tệp gốc. Muốn nét hơn nữa thì phải có tệp lớn hơn — chọn tệp
+          theo TỈ LỆ DẢI HERO trước, rồi mới tới số pixel.
+
           `priority`: đây là phần tử LCP của trang chủ. Thiếu nó thì Next hoãn
           tải và chính vùng lớn nhất màn hình là vùng lên sau cùng.
 
