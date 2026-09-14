@@ -7,3 +7,6 @@ sciencepedia/.git.bak/
 
 # Báo cáo mỗi lần chạy pipeline — hiện vật của lần chạy, không phải nguồn
 docs/content/pipeline-run-*.md
+
+# Bản sao xung đột OneDrive sinh khi hai máy cùng sửa — bản cũ, không phải nguồn
+*-DESKTOP-*

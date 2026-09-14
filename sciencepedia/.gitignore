@@ -23,3 +23,6 @@ tsconfig.tsbuildinfo
 
 # Script dùng một lần khi khảo sát/nhập liệu — không thuộc về repo
 scripts/tmp-*
+
+# Bản sao xung đột OneDrive sinh khi hai máy cùng sửa — bản cũ, không phải nguồn
+*-DESKTOP-*

@@ -17,5 +17,8 @@
     "paths": { "@/*": ["./src/*"] }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules"]
+  // "*-DESKTOP-*": bản sao xung đột do OneDrive sinh ra khi hai máy cùng
+  // sửa một file. Chúng là bản CŨ, không phải nguồn — để tsc đọc thì một
+  // component đã đổi prop sẽ làm typecheck đỏ ở file không ai dùng.
+  "exclude": ["node_modules", "**/*-DESKTOP-*"]
 }
