@@ -233,7 +233,29 @@ export default async function ArticlePage({
           và giải mã một tấm ảnh không ai nhìn thấy. */}
       <header className="relative">
         {article.coverImage ? (
-          <div className="relative h-[58vh] min-h-[24rem] w-full overflow-hidden bg-space-900">
+          /* Chiều cao 72vh, KHÔNG phải 58vh — và con số này suy ra từ phép
+             cắt, không phải từ thẩm mỹ.
+
+             Ở 58vh, trên cửa sổ 1355×845 khung hero là 1355×490, tức 2,76:1.
+             Kho ảnh bìa phần lớn là ảnh CHỤP vuông hoặc đứng (ảnh NASA thường
+             1:1, ảnh y khoa thường đứng), nên `object-cover` khớp theo bề ngang
+             và chỉ để lộ 490/1355 = 27% chiều cao ảnh. Người đọc thấy một dải
+             giữa bức ảnh phóng hết cỡ và gọi đúng tên nó: "zoom quá to".
+
+             72vh cho 608px, tức 45% chiều cao ảnh — gần gấp đôi. `max-h` chặn
+             ở 44rem để trên màn rất cao hero không nuốt trọn màn hình đầu;
+             `min-h` nâng lên 32rem để trên cửa sổ thấp phép cắt không tụt lại
+             về mức cũ.
+
+             Đã cân nhắc và BỎ `object-contain`: nó cho thấy trọn ảnh, nhưng để
+             ảnh nổi lơ lửng giữa hai vệt nền — đúng bố cục đã gỡ ngày 13/09.
+             Xem docs/design-system.md, mục "Ảnh phải sống được ở MỌI khung nó
+             bị cắt".
+
+             Cái giá đã nhận: tiêu đề bài tụt xuống chừng 120px, nên khối nội
+             dung đầu tiên lùi khỏi màn hình đầu trên laptop. Đổi lại ảnh bìa
+             không còn bị đọc nhầm là ảnh hỏng. */
+          <div className="relative h-[72vh] max-h-[44rem] min-h-[32rem] w-full overflow-hidden bg-space-900">
             <Image
               src={article.coverImage}
               alt=""

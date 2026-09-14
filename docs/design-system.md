@@ -467,3 +467,29 @@ giống nhau ở mọi bề ngang dưới `lg`, nên chỉnh một lần là đ�
 
 Phép kiểm: chụp ở ít nhất hai bề ngang — 390 và 768. Một bề ngang duy nhất
 không phân biệt được "mặt nạ đúng" với "mặt nạ tình cờ vừa".
+
+**Hero trang bài cao 72vh, chốt 2026-09-14.** Bổ sung cho mục trên, và là lượt
+thứ ba chạm vào cùng một chỗ.
+
+Ở `h-[58vh] min-h-[24rem]`, trên cửa sổ 1355×845 khung hero là 1355×490 — tỉ lệ
+2,76:1. Kho ảnh bìa nay phần lớn là ảnh CHỤP vuông hoặc đứng: ảnh NASA thường
+1:1, ảnh y khoa thường đứng. `object-cover` khớp theo bề ngang, nên chỉ 27%
+chiều cao ảnh lọt vào khung. Người đọc thấy một dải giữa bức ảnh và gọi đúng
+tên hiện tượng: "zoom quá to".
+
+Đáng chú ý: đây KHÔNG phải phép phóng to. Ảnh 1920px hiển thị ở bề ngang 1355px
+là đang được thu nhỏ. Thứ tạo cảm giác zoom là PHẦN BỊ BỎ ĐI, không phải hệ số
+phóng — hai thứ hay bị gộp làm một khi đọc lời phàn nàn, và chúng có hai cách
+chữa khác hẳn nhau.
+
+`h-[72vh] max-h-[44rem] min-h-[32rem]` cho 608px, tức 45% chiều cao ảnh. `max-h`
+để trên màn rất cao hero không nuốt trọn màn hình đầu; `min-h` để trên cửa sổ
+thấp phép cắt không tụt về mức cũ.
+
+Đã cân nhắc và bỏ `object-contain` một lần nữa: nó cho thấy trọn ảnh nhưng dựng
+lại đúng bố cục "ảnh lơ lửng giữa hai vệt nền" đã gỡ ngày 13/09. Cũng bỏ phương
+án cắt sẵn 58 ảnh bìa về dải ngang — nó đúng về nguyên tắc và vẫn là lối thoát
+cho một bài cụ thể bị mất nghĩa vì phép cắt, nhưng ảnh Wikimedia cắt xong thì
+phải tự lưu trữ, tức đổi một vấn đề bố cục lấy một kho ảnh phải tự bảo trì.
+
+Cái giá đã nhận: tiêu đề bài tụt xuống chừng 120px trên laptop.
