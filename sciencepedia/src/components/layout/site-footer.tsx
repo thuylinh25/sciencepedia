@@ -243,7 +243,7 @@ export async function SiteFooter() {
 
         <Separator className="my-10" />
 
-        {/* Bản quyền tách LÀM HAI câu, và đó là một đính chính chứ không phải
+        {/* Bản quyền tách LÀM HAI khối, và đó là một đính chính chứ không phải
             chuyện bố cục.
 
             Dòng cũ — "© 2026 Sciencepedia. Nội dung phát hành theo giấy phép
@@ -254,11 +254,36 @@ export async function SiteFooter() {
             sai vừa nguy hiểm: người đọc tin nó rồi dùng lại một bức ảnh theo
             điều kiện không áp dụng cho bức ảnh đó.
 
-            Nên câu thứ hai nói "một số nội dung" và chỉ về trang nội dung —
-            nơi giấy phép thật được ghi cạnh từng thứ. */}
+            Khối thứ hai vì thế KHÔNG tuyên bố giấy phép. Nó chỉ kê nguồn, và
+            giấy phép thật được ghi cạnh từng ảnh trên trang nội dung.
+
+            Danh sách nguồn lưu thành MỘT chuỗi ngăn bằng dấu phẩy rồi dựng dấu
+            chấm tròn ở đây, không nhét "•" thẳng vào tệp ngôn ngữ. Hai lý do:
+            dấu phân cách là việc của giao diện chứ không phải của bản dịch, và
+            trình đọc màn hình gặp một chuỗi đầy "•" sẽ đọc ra sáu lần "bullet"
+            — nên dấu chấm mang `aria-hidden` và danh sách là `<ul>` thật. */}
         <div className="space-y-2 text-xs leading-relaxed text-muted-foreground/85">
-          <p>© {year} Sciencepedia.</p>
-          <p className="max-w-3xl">{t("licenceNote")}</p>
+          <p>{t("copyright", { year })}</p>
+
+          <div className="max-w-3xl">
+            <p>{t("sourcesLabel")}:</p>
+            <ul>
+              {t("sources")
+                .split(",")
+                .map((name) => name.trim())
+                .filter(Boolean)
+                .map((name, index) => (
+                  <li key={name} className="inline">
+                    {index > 0 && (
+                      <span aria-hidden className="px-1.5 text-muted-foreground/50">
+                        •
+                      </span>
+                    )}
+                    {name}
+                  </li>
+                ))}
+            </ul>
+          </div>
         </div>
       </div>
     </footer>

@@ -409,7 +409,9 @@
     "statTools": "Interactive tools",
     "statFields": "Fields of research",
     "statTopics": "Topics to explore",
-    "licenceNote": "Data and imagery from NASA, ESA, Aladin, NOIRLab, Wikimedia Commons and other open sources."
+    "copyright": "© {year} Sciencepedia. All rights reserved.",
+    "sourcesLabel": "Data and image sources",
+    "sources": "NASA, ESA, Aladin, NOIRLab, Wikimedia Commons, Other open sources"
   },
   "galaxy": {
     "title": "The Milky Way",

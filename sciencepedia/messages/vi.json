@@ -409,7 +409,9 @@
     "statTools": "Công cụ tương tác",
     "statFields": "Lĩnh vực nghiên cứu",
     "statTopics": "Chủ đề khám phá",
-    "licenceNote": "Dữ liệu và hình ảnh từ NASA, ESA, Aladin, NOIRLab, Wikimedia Commons và các nguồn mở khác."
+    "copyright": "© {year} Sciencepedia. All rights reserved.",
+    "sourcesLabel": "Nguồn dữ liệu và hình ảnh",
+    "sources": "NASA, ESA, Aladin, NOIRLab, Wikimedia Commons, Các nguồn mở khác"
   },
   "galaxy": {
     "title": "Ngân Hà",
