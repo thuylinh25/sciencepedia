@@ -111,12 +111,22 @@ export function OortCloudDiagram({ className }: { className?: string }) {
             strokeDasharray="2 5"
             fill="none"
           />
+          {/* Cỡ chữ 18 đơn vị, KHÔNG phải 11.
+
+              Khung vẽ rộng 600 đơn vị nhưng hình hiển thị ở cột 416px, tức thu
+              0,69 lần: chữ 11 xuống còn 7,6px trên màn — dưới mức đọc được, và
+              đã bị báo đúng như vậy. 18 đơn vị cho 12,5px, ngang cỡ chữ chú
+              thích của trang.
+
+              Đây không phải chi tiết trang trí co được. Sáu con số này là thứ
+              duy nhất giữ cho thang loga không nói dối — bỏ chúng đi thì đám mây
+              trông gần hơn thực tế mấy bậc. Xem khối chú thích đầu tệp. */}
           <text
-            x={CX + 4}
-            y={CY - radius(au) - 4}
+            x={CX + 6}
+            y={CY - radius(au) - 7}
             className="fill-current font-mono"
-            fontSize="11"
-            opacity="0.45"
+            fontSize="18"
+            opacity="0.75"
           >
             {au.toLocaleString("vi-VN")} AU
           </text>
