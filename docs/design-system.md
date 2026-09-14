@@ -493,3 +493,29 @@ cho một bài cụ thể bị mất nghĩa vì phép cắt, nhưng ảnh Wikime
 phải tự lưu trữ, tức đổi một vấn đề bố cục lấy một kho ảnh phải tự bảo trì.
 
 Cái giá đã nhận: tiêu đề bài tụt xuống chừng 120px trên laptop.
+
+**Đảo lại, cùng ngày: hero trang bài dùng `object-scale-down`.** Mục ngay trên
+chốt 72vh và đã sai ở tiền đề, nên ghi lại cả đường đi.
+
+Ba lượt liên tiếp vào cùng một chỗ: nâng độ phân giải nguồn (1280 → 1920px) →
+vẫn bị báo "zoom quá to"; nâng khung 58vh → 72vh → bị báo ngược lại "ảnh quá
+to"; hạ xuống 64vh → vẫn không đúng. Hai lời phàn nàn kéo về hai phía vì với
+`object-cover` trong một khung tràn bề ngang, cách DUY NHẤT để lộ thêm ảnh là
+cao thêm. Ta đang chọn giữa "cắt nhiều" và "chiếm chỗ nhiều", và không ô nào là
+đúng — dấu hiệu của một phép chọn sai, không phải của một con số sai.
+
+Yêu cầu thật, khi nói ra hết, là "hiển thị đúng size ảnh, không phóng to thu
+nhỏ". `object-scale-down` làm đúng câu đó: ảnh hiện TRỌN, đúng tỉ lệ, giữ
+nguyên cỡ gốc khi nó vừa khung, chỉ thu lại khi lớn hơn khung, không bao giờ
+phóng to, không cắt một pixel.
+
+**Vì sao `scale-down` chứ không `contain`.** Chúng chỉ khác nhau một điểm, và
+điểm đó quyết định: `contain` PHÓNG một ảnh nhỏ cho đầy khung. Kho đang có sáu
+ảnh bìa gốc dưới 1280px — có bản 369px — nên `contain` sẽ kéo chúng to ra rồi
+vỡ. `scale-down` để chúng nguyên cỡ thật: nhỏ mà nét.
+
+**Cái giá, đo thật ở cửa sổ 1355×845.** Ảnh ngang (847×545) vẽ ra 840×541, tức
+gần đúng cỡ gốc và gần kín khung. Ảnh ĐỨNG (903×986) vẽ ra 495×541 — hai bên
+còn 860px nền. Đó là bố cục "ảnh lơ lửng" đã gỡ ngày 13/09; lần này giữ, vì nó
+là hệ quả trực tiếp của yêu cầu. Nếu sau này muốn bớt vệt nền thì chỗ sửa là
+ảnh bìa của các bài ĐỨNG, không phải `object-fit`.

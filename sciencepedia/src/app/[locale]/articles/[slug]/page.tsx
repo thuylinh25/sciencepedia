@@ -242,10 +242,31 @@ export default async function ArticlePage({
              và chỉ để lộ 490/1355 = 27% chiều cao ảnh. Người đọc thấy một dải
              giữa bức ảnh phóng hết cỡ và gọi đúng tên nó: "zoom quá to".
 
-             72vh cho 608px, tức 45% chiều cao ảnh — gần gấp đôi. `max-h` chặn
-             ở 44rem để trên màn rất cao hero không nuốt trọn màn hình đầu;
-             `min-h` nâng lên 32rem để trên cửa sổ thấp phép cắt không tụt lại
-             về mức cũ.
+             `object-scale-down`, KHÔNG phải `cover` — và đây là lượt thứ ba của
+             cùng một chỗ, nên chép lại cả ba để lần sau không đi lại vòng này.
+
+             Lượt 1 nâng độ phân giải nguồn (1280px → 1920px). Có thật và vẫn
+             cần, nhưng không chữa được lời phàn nàn, vì thứ tạo cảm giác zoom là
+             PHẦN BỊ CẮT chứ không phải hệ số phóng. Lượt 2 nâng khung từ 58vh
+             lên 72vh để bớt cắt; bị báo ngược lại là "ảnh quá to". Hai lời phàn
+             nàn kéo về hai phía vì với `cover` trong một khung tràn bề ngang,
+             cách duy nhất để lộ thêm ảnh là cao thêm — ta đang chọn giữa "cắt
+             nhiều" và "chiếm chỗ nhiều", không có ô nào là đúng.
+
+             `scale-down` bỏ hẳn phép chọn đó: ảnh hiện TRỌN, đúng tỉ lệ, và giữ
+             nguyên kích thước gốc khi nó vừa khung — chỉ thu lại khi lớn hơn
+             khung, không bao giờ phóng to. Không cắt một pixel nào.
+
+             Khác `contain` ở đúng một điểm, và điểm đó là lý do chọn nó: `contain`
+             PHÓNG một ảnh nhỏ cho đầy khung, nên sáu ảnh bìa gốc dưới 1280px
+             trong kho sẽ bị kéo to ra rồi vỡ. `scale-down` để chúng nguyên cỡ
+             thật, nhỏ mà nét.
+
+             Cái giá: ảnh hẹp hơn khung để lộ nền hai bên. Đó chính là bố cục
+             "ảnh lơ lửng" đã gỡ ngày 13/09 — lần này giữ, vì nó là hệ quả trực
+             tiếp của yêu cầu "hiển thị đúng size ảnh, không phóng to thu nhỏ".
+             Nền hai bên là `bg-space-900` chứ không phải một vệt mờ, nên nó đọc
+             ra như nền trang chứ không như phần thiếu của ảnh.
 
              Đã cân nhắc và BỎ `object-contain`: nó cho thấy trọn ảnh, nhưng để
              ảnh nổi lơ lửng giữa hai vệt nền — đúng bố cục đã gỡ ngày 13/09.
@@ -255,14 +276,14 @@ export default async function ArticlePage({
              Cái giá đã nhận: tiêu đề bài tụt xuống chừng 120px, nên khối nội
              dung đầu tiên lùi khỏi màn hình đầu trên laptop. Đổi lại ảnh bìa
              không còn bị đọc nhầm là ảnh hỏng. */
-          <div className="relative h-[72vh] max-h-[44rem] min-h-[32rem] w-full overflow-hidden bg-space-900">
+          <div className="relative h-[64vh] max-h-[36rem] min-h-[24rem] w-full overflow-hidden bg-space-900">
             <Image
               src={article.coverImage}
               alt=""
               fill
               priority
               sizes="100vw"
-              className="object-cover"
+              className="object-scale-down"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-background via-background/45 to-transparent" />
           </div>
