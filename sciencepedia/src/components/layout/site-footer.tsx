@@ -257,6 +257,18 @@ export async function SiteFooter() {
             Khối thứ hai vì thế KHÔNG tuyên bố giấy phép. Nó chỉ kê nguồn, và
             giấy phép thật được ghi cạnh từng ảnh trên trang nội dung.
 
+            "All rights reserved." đã được thêm rồi GỠ, cùng ngày. Nó hỏng theo
+            đúng cách dòng CC BY-SA cũ hỏng, chỉ ngược chiều: thay vì cho đi
+            quyền không có, nó giành quyền không có. Ngay bên dưới nó là danh
+            sách nguồn gồm ảnh NASA/ESA thuộc phạm vi công cộng và ảnh Wikimedia
+            theo CC BY-SA — không thứ nào Sciencepedia giữ bản quyền được.
+
+            Rút ra: chân trang KHÔNG phải chỗ tuyên bố quyền, theo cả hai
+            chiều. Dấu © cho biết ai vận hành trang; điều kiện dùng lại nằm ở
+            trang Điều khoản và ở dòng ghi công cạnh từng ảnh, nơi chúng đúng
+            cho từng thứ một. Lần sau muốn thêm một câu quyền vào đây, sửa hai
+            chỗ kia trước.
+
             Danh sách nguồn lưu thành MỘT chuỗi ngăn bằng dấu phẩy rồi dựng dấu
             chấm tròn ở đây, không nhét "•" thẳng vào tệp ngôn ngữ. Hai lý do:
             dấu phân cách là việc của giao diện chứ không phải của bản dịch, và
