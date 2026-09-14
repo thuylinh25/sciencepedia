@@ -108,7 +108,21 @@ export async function HeroFields({
      kích thước của thời còn đứng dưới một ô tìm kiếm lớn, nên đọc ra như một
      menu phụ. Kích thước phải nói đúng vai trò hiện tại của nó. */
   return (
-    <nav aria-label={t("heroCategoriesLabel")} className="w-full max-w-3xl">
+    <nav
+      aria-label={t("heroCategoriesLabel")}
+      /* KHÔNG đặt trần bề ngang cho hàng chip.
+
+         Đã thử `max-w-[60%]` để chip không tràn sang vùng thiên hà bên phải.
+         Nó hỏng: chip dài nhất — "Công nghệ và Kỹ thuật" kèm nhãn "sắp có" —
+         đo được 316px, mà cột chữ ở màn 390px chỉ rộng 350px. Trần 60% (210px)
+         bẻ ba chip xuống hai dòng, và một viên thuốc hai dòng đọc ra như một
+         thẻ nội dung chứ không như một nút.
+
+         Chỗ chồng lấn được xử lý ở PHÍA ẢNH thay vì ở đây: dải thiên hà mang
+         `mask-image` nên phần nằm dưới chip đã gần trong suốt (xem
+         `hero.tsx`), và chip có `backdrop-blur` nên chữ vẫn tách nền. */
+      className="w-full max-w-3xl"
+    >
       <p className="mb-2.5 text-xs font-medium tracking-widest text-white/55 uppercase">
         {t("heroCategoriesLabel")}
       </p>

@@ -410,3 +410,60 @@ cụt hai cực).
 đúng một thứ tiếng và không có đường nào dịch. Dùng hình học thay chữ: mũi tên hai
 đầu đo biên độ, cung quét đo diện tích. Tiêu đề và tóm tắt nằm ngay dưới đã nói
 phần chữ rồi.
+
+## `sizes` của `next/image` phải suy từ CHIỀU bị `cover` ép, không từ bề ngang khung
+
+Chốt 2026-09-14, sau lượt sửa thứ tư của ảnh thiên hà trên hero trang chủ.
+
+Ảnh bị báo mờ trên điện thoại ba lượt liền. Hai lượt đầu chữa độ mờ, lượt thứ
+ba chữa hình học: đổi ảnh phủ kín khung thành một dải cao đúng 280px, vì hệ số
+phóng trên màn DPR 3 bằng `3 × chiều_cao_CSS / 576` — 280px cho 1,46 lần,
+600px cho hơn ba lần.
+
+Phép tính đúng. Ảnh vẫn mờ, và lý do không nằm trong CSS: `sizes="100vw"`.
+
+`sizes` khai với trình duyệt bề ngang mà ảnh sẽ chiếm, và trình duyệt chọn tệp
+trong `srcset` theo con số đó. Ở 390px × DPR 2 nó xin 780px và nhận tệp
+828×271. Nhưng `object-cover` trong một khung 343×280 khớp theo **chiều cao**:
+271 điểm ảnh ấy phải phủ 560 điểm ảnh thật — phóng 2,07 lần, trên DPR 3 là
+3,1 lần. Toàn bộ khoản tiết kiệm của việc hạ chiều cao dải bị `sizes` trả lại.
+
+**Quy tắc: với `fill` + `object-cover`, tính `sizes` từ chiều mà `cover` đang
+ép, rồi đổi sang bề ngang bằng tỉ lệ ẢNH — không lấy bề ngang của khung.**
+Ở đây khung dẹt hơn ảnh nên `cover` ép theo chiều cao, và bề ngang ảnh cần là
+`3,06 × 280 ≈ 857` CSS px. Khai `sizes="(min-width: 1024px) 100vw, 900px"` thì
+DPR 2 xin 1800 và nhận đúng tệp gốc 1760 — hệ số phóng về 0,97.
+
+**Cách phát hiện, vì mắt không phát hiện được.** Ảnh chụp màn hình ở DPR 2
+trông vẫn ổn, nhất là với ảnh vốn mềm như thiên hà hay tinh vân. Thứ nói thật
+là `img.currentSrc` — đọc nó trong trình duyệt và so với kích thước khung ×
+DPR. `naturalWidth` KHÔNG dùng được cho phép so này: với `srcset` mô tả `w`,
+Chrome trả về kích thước đã chia cho mật độ đã chọn, nên tệp 1760px hiện ra là
+824px và trông như bằng chứng buộc tội trong khi tệp hoàn toàn đúng.
+
+Đánh đổi đã nhận: điện thoại tải đủ 285 KB thay vì tệp nhỏ hơn. Chấp nhận —
+đây là phần tử LCP, và một tệp nhỏ hơn nhưng phóng ba lần thì không tiết kiệm
+gì cả, chỉ đổi một khoản băng thông lấy đúng lời phàn nàn đang phải sửa.
+
+## Mặt nạ của một khối ảnh: bán kính phải cùng đơn vị với bề ngang khối
+
+Chốt 2026-09-14, cùng lượt sửa trên.
+
+Dải thiên hà dưới `lg` là một khối `absolute` đặt giữa nền vũ trụ. Khối chữ
+nhật để lộ bốn cạnh thẳng thì đọc ra như ảnh dán vào, nên nó mang
+`mask-image` hình ê-líp lệch phải để tan dần về phía trái.
+
+Lượt đầu dùng khung rộng `w-[88%]` và bán kính mặt nạ theo `%`. Ở 390px vừa
+khít; ở 768px hiện rõ một hình chữ nhật sáng hơn nền — đúng thứ mặt nạ sinh ra
+để xoá. Nguyên nhân: `%` của bán kính và `%` của bề ngang khung cùng giãn, nên
+tâm mặt nạ xa mép trái theo tỉ lệ cố định, nhưng **nền phía sau thì không
+giãn** — mặt nạ chỉ cần còn 6–15% độ đục ở mép là cạnh hiện ra, và ở khung
+rộng hơn thì phần mép nằm trong vùng còn đục ấy rộng hơn nhiều.
+
+**Quy tắc: khối ảnh có mặt nạ thì cố định bề ngang bằng `rem`, và đặt bán kính
+mặt nạ cũng bằng `rem`.** Ở đây `w-[26rem]` với bán kính `20rem` lệch tâm về
+76%: tâm cách mép trái 19,8rem, tức mép trái đã nằm ngoài bán kính. Hình học
+giống nhau ở mọi bề ngang dưới `lg`, nên chỉnh một lần là đúng mọi máy.
+
+Phép kiểm: chụp ở ít nhất hai bề ngang — 390 và 768. Một bề ngang duy nhất
+không phân biệt được "mặt nạ đúng" với "mặt nạ tình cờ vừa".

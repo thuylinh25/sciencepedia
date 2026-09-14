@@ -31,78 +31,95 @@ export function Hero({ fields }: { fields?: ReactNode }) {
 
   return (
     <section className="bg-cosmos starfield relative isolate overflow-hidden">
-      {/* Ảnh nền hero.
+      {/* Ảnh nền hero — hai bố cục, cắt ở lg.
 
-          Ảnh được bố cục sẵn cho đúng việc này: nửa trái gần như trống, thiên
-          DƯỚI lg ảnh KHÔNG phủ kín khung, mà là một dải ngang cao 34vw ghim
-          ở đáy hero. Đây là lượt sửa thứ ba của cùng một chỗ, và hai lượt
-          trước đều chữa triệu chứng:
+          ## Dưới lg: một DẢI ghim bên phải, không phải ảnh phủ kín khung
 
-          - lượt 1: hạ độ mờ xuống 60% + phủ dày ở giữa → thiên hà bị che gần
-            hết;
-          - lượt 2: nâng lên 80%, phủ nhạt ở giữa → chữ đỡ hơn nhưng ảnh vẫn
-            vừa mờ vừa bị chữ đè.
+          Đây là lượt sửa thứ tư của cùng một chỗ. Ba lượt trước lần lượt hạ độ
+          mờ xuống 60%, nâng lên 80%, rồi đổi lớp phủ — cả ba đều chữa triệu
+          chứng, vì nguyên nhân là HÌNH HỌC chứ không phải độ mờ.
 
-          Nguyên nhân thật là HÌNH HỌC, không phải độ mờ. Khung dọc của điện
-          thoại cắt tấm 3:1 xuống còn chừng một phần tư bề ngang, tức chỉ ~430
-          trong 1760 pixel gốc được dùng, rồi kéo chúng ra 390 CSS px × 3 lần
-          mật độ điểm ảnh — phóng hơn hai lần. Không có mức độ mờ nào chữa được
-          phép phóng đó.
+          Ảnh là tấm 1760×576, tỉ lệ 3,06:1. Khung dọc của điện thoại phủ kín
+          bằng `object-cover` sẽ kéo ảnh cho CHIỀU CAO vừa khung: cao 600 CSS px
+          trên màn DPR 3 nghĩa là 1800 điểm ảnh thật lấy từ 576 điểm ảnh gốc —
+          phóng hơn ba lần. Không có mức độ mờ nào chữa được phép phóng đó.
 
-          Dải ngang giữ nguyên tỉ lệ ảnh nên toàn bộ 1760 pixel được thu vào
-          390 CSS px: ảnh được THU NHỎ, tức luôn nét. Và vì nó nằm DƯỚI hàng
-          chip (lưới chừa sẵn `pb-[calc(34vw+3rem)]`) nên không còn chữ nào đè
-          lên thiên hà — hai lời phàn nàn "mờ" và "bị che" tắt cùng lúc, bằng
-          một phép bố cục thay vì một con số độ mờ.
+          Nên chiều cao dải là con số ĐƯỢC TÍNH: hệ số phóng trên DPR 3 bằng
+          `3 × chiều_cao_CSS / 576`, tức 280px cho hệ số 1,46 — và trên DPR 2 thì
+          0,97, tức ảnh còn được thu nhỏ. Muốn dải cao hơn thì phải có tệp gốc
+          cao hơn; đổi số ở đây mà không đổi tệp là mua lại đúng vết mờ cũ.
 
-          Trên lg thì chữ nằm CẠNH thiên hà chứ không đè lên, nên ảnh phủ kín
-          khung như cũ và lớp phủ chạy theo chiều ngang.
+          ## `sizes` — cái bẫy đã suýt làm hỏng cả phép tính trên
 
-          hà lệch phải. Nên nó không phải một tấm ảnh dán vào rồi chữa cháy
-          bằng lớp phủ — cột chữ nằm đúng vào chỗ ảnh vốn để trống.
+          `sizes="100vw"` là SAI ở đây, và sai lặng lẽ. Nó khai với trình duyệt
+          rằng ảnh rộng bằng khung nhìn, nên ở 390px × DPR 2 trình duyệt xin
+          780px và Next trả về tệp 828×271. Nhưng `object-cover` khớp theo CHIỀU
+          CAO: 271px ấy phải phủ 560 điểm ảnh thật, tức phóng 2,07 lần — trên
+          DPR 3 là 3,1 lần. Đo bằng `img.currentSrc` mới thấy; nhìn ảnh chụp màn
+          hình DPR 2 thì không, vì bản thân thiên hà đã mềm sẵn.
 
-          `object-[68%_center]` dưới lg: khung dọc của điện thoại cắt một tấm
-          16:9 rất sâu, và cắt giữa thì mất luôn thiên hà — thứ duy nhất đáng
-          giữ. Neo về 68% bề ngang giữ lõi sáng trong khung.
+          Con số đúng suy ra từ chiều cao, không từ bề ngang: cần
+          `3,06 × 280 = 857` CSS px bề ngang ảnh. Khai 900px thì ở DPR 2 trình
+          duyệt xin 1800 và nhận đúng tệp gốc 1760 — hệ số phóng trở lại 0,97.
 
-          TỈ LỆ CỦA TỆP QUAN TRỌNG NGANG ĐỘ PHÂN GIẢI, và lượt đầu đã sai ở
-          đúng chỗ đó. Tệp đầu tiên là 1280×720 (16:9) và hiện ra mờ trên máy
-          thật. Hai nguyên nhân cộng lại, không phải một: hero tràn hết bề
-          ngang nên trên màn HiDPI trình duyệt phải kéo 1280px lên hơn gấp
-          đôi; mà dải hero lại dẹt cỡ 3,4:1, nên `object-cover` vứt luôn
-          khoảng 45% chiều cao của tấm 16:9 — tức gần một nửa số pixel mua về
-          không bao giờ lên tới màn hình.
+          ## Vì sao bề ngang dải tính bằng rem chứ không bằng %
 
-          Tệp hiện tại là 1760×576, tỉ lệ 3,06:1, gần đúng tỉ lệ dải hero. Nó
-          vừa nhiều pixel ngang hơn 35%, vừa gần như không bị cắt, nên mức
-          phóng tụt từ ~2,1 lần xuống ~1,5 lần.
+          Mặt nạ ở dưới dùng bán kính theo rem, mà bán kính rem trên một khung
+          rộng theo % thì hình học đổi theo bề ngang màn hình: chỉnh cho vừa ở
+          390px là hở mép ở 768px. Đã thấy thật — ở 768px hiện rõ một hình chữ
+          nhật sáng hơn nền, đúng thứ mặt nạ sinh ra để xoá. Khung rộng cố định
+          26rem giữ cho mọi bề ngang dưới lg cùng một hình học.
+
+          ## Vì sao nằm bên phải chứ không dưới đáy
+
+          Bản trước đặt dải này dưới đáy hero. Nó nét, nhưng bỏ trống đúng vùng
+          lớn nhất còn lại của màn hình: khoảng bên phải hàng chip lĩnh vực.
+          Chuyển sang phải thì hero không còn khoảng chết, và dải vẫn giữ nguyên
+          chiều cao nên vẫn nét.
+
+          ## Mặt nạ, không phải viền
+
+          Một khối ảnh chữ nhật đặt giữa nền vũ trụ để lộ bốn cạnh thẳng thì đọc
+          ra như ảnh dán vào chứ không như bầu trời. `mask-image` hình ê-líp,
+          tâm lệch về 76% bề ngang, làm ảnh tan hết TRƯỚC khi chạm mép: bán kính
+          20rem so với tâm cách mép trái 19,8rem, nên mép trái đã ở ngoài vùng
+          nhìn thấy. Đó là điều kiện, không phải thẩm mỹ — mặt nạ chỉ cần còn
+          6% độ đục ở mép là cạnh hiện ra.
+
+          Mặt nạ cũng là thứ cho phép GỠ trần `max-w` của hàng chip (xem
+          `hero-fields.tsx`): phần ảnh nằm dưới chip đã gần trong suốt.
+
+          ## Lớp phủ gradient chỉ còn từ lg
+
+          Nó sinh ra để cứu chữ trắng nằm ĐÈ lên ảnh. Dưới lg chữ không còn nằm
+          trên ảnh, mà một gradient dọc bên trong một dải cao 280px thì tự nó vẽ
+          ra hai vệt tối ở mép — đúng thứ mặt nạ vừa xoá đi.
+
+          ## lg trở lên: giữ nguyên ảnh phủ kín khung
+
+          Ở đó chữ nằm CẠNH thiên hà chứ không đè lên, khung đủ rộng để tấm
+          3,06:1 gần như không bị cắt, và lớp phủ chạy ngang (đậm trái, trong
+          suốt phải) để thiên hà bên phải không bị hạ sáng.
+
+          `priority`: đây là phần tử LCP của trang chủ.
 
           Lưu ý cho lần thay ảnh sau: Next KHÔNG bao giờ phóng ảnh quá kích
-          thước gốc, nên `srcset` có `w=2048` hay `w=3840` cũng chỉ trả về
-          đúng tệp gốc. Muốn nét hơn nữa thì phải có tệp lớn hơn — chọn tệp
-          theo TỈ LỆ DẢI HERO trước, rồi mới tới số pixel.
-
-          `priority`: đây là phần tử LCP của trang chủ. Thiếu nó thì Next hoãn
-          tải và chính vùng lớn nhất màn hình là vùng lên sau cùng.
-
-          Lớp phủ gradient KHÔNG phải để "làm tối cho đẹp": chữ trắng của tiêu
-          đề nằm đè lên ảnh, và độ sáng của ảnh không do ta kiểm soát. Trên
-          lg phủ theo chiều NGANG (đậm trái, trong suốt phải) để thiên hà bên
-          phải không bị hạ sáng; dưới lg phủ theo chiều DỌC vì lúc đó chữ nằm
-          trên ảnh chứ không cạnh ảnh. */}
+          thước gốc, nên khai `sizes` lớn hơn tệp cũng chỉ trả về tệp gốc. Muốn
+          dải cao hơn mà vẫn nét thì phải có tệp lớn hơn — chọn tệp theo TỈ LỆ
+          3:1 trước, rồi mới tới số điểm ảnh. */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-x-0 bottom-6 h-[34vw] lg:inset-0 lg:bottom-0 lg:h-auto"
+        className="pointer-events-none absolute top-[34%] right-0 h-[17.5rem] w-[26rem] [mask-image:radial-gradient(20rem_10rem_at_76%_50%,#000_24%,rgba(0,0,0,0.5)_52%,transparent_78%)] lg:inset-0 lg:top-0 lg:h-auto lg:w-auto lg:[mask-image:none]"
       >
         <Image
           src="/images/hero-galaxy.jpg"
           alt=""
           fill
           priority
-          sizes="100vw"
-          className="object-cover object-center opacity-100"
+          sizes="(min-width: 1024px) 100vw, 900px"
+          className="object-cover object-[66%_center] lg:object-center"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-space-900/70 via-transparent to-space-900/60 lg:bg-gradient-to-r lg:from-space-900/90 lg:via-space-900/40 lg:to-transparent" />
+        <div className="absolute inset-0 hidden bg-gradient-to-r from-space-900/90 via-space-900/40 to-transparent lg:block" />
       </div>
       {/* Quầng sáng nền, chuyển động rất chậm */}
       <div
@@ -143,7 +160,7 @@ export function Hero({ fields }: { fields?: ReactNode }) {
           dải trống rộng nhất trang đúng ở chỗ cần liền mạch nhất.
 
           Cột phải 28rem → 36rem, tức thiên hà rộng thêm chừng 29%. */}
-      <div className="container-page relative z-10 grid min-h-[min(52svh,28rem)] items-center gap-8 pt-10 pb-[calc(34vw+3rem)] text-star lg:pb-3 lg:grid-cols-[minmax(0,1fr)_30rem] lg:gap-12 lg:pt-12 lg:pb-3">
+      <div className="container-page relative z-10 grid min-h-[min(52svh,28rem)] items-center gap-8 pt-10 pb-6 text-star lg:pb-3 lg:grid-cols-[minmax(0,1fr)_30rem] lg:gap-12 lg:pt-12 lg:pb-3">
         {/* `relative z-10` là bắt buộc, không phải trang trí.
 
             Dưới `lg` thiên hà là một lớp `absolute`, và trong CSS phần tử đã

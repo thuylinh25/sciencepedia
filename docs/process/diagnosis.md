@@ -578,3 +578,32 @@ viết, hãy chạy chính bộ biên dịch đó trên chính tệp nguồn đ�
 qua cache, và nó trả lời dứt điểm. Dấu hiệu nhận biết rẻ nhất: tên tệp trong
 `.next/static/css` là hash nội dung; **nội dung đổi mà hash không đổi thì bản
 build không phải của lần sửa vừa rồi.**
+
+## Ở `next dev`, tệp CSS trên đĩa không phải tệp đang chạy
+
+Bổ sung 2026-09-14 cho mục trên. Cùng một cái cache, nhưng ở dev nó nói dối
+theo chiều NGƯỢC LẠI, nên phép kiểm của mục trên không dùng được.
+
+Đang sửa dải ảnh trên hero, các lớp Tailwind mới lần lượt không ăn. Kiểm bằng
+đúng cách của mục trên — `grep` trong `.next/static/css` — thấy `0` cho mọi
+lớp mới, kể cả những lớp ĐANG hiển thị đúng trên màn hình. Xem `mtime` thì tệp
+đứng im từ lần build đầu. Kết luận đang thành hình: "Tailwind không quét
+`hero.tsx`".
+
+Sai. Ở dev, Next phục vụ CSS qua HMR từ bộ nhớ; tệp trong `.next/static/css`
+chỉ là dấu vết của lần build đầu và không được ghi lại sau mỗi lần sửa.
+`grep` vào nó ở chế độ dev cho cả dương tính giả lẫn âm tính giả.
+
+**Phép kiểm đúng ở dev là ĐO HÌNH HỌC trong trình duyệt, không đọc tệp.**
+`getBoundingClientRect()` của chính phần tử ấy: một lớp `w-[26rem]` không được
+sinh ra thì khối `absolute` không có nội dung trong luồng sẽ có `width: 0` —
+con số 0 ấy là bằng chứng dứt điểm, và nó cũng phân biệt được "lớp thiếu" với
+"lớp có nhưng bị đè".
+
+Và cái cache vẫn có thật: sau vài lượt sửa liên tiếp thì Tailwind ở dev ngừng
+sinh lớp mới hẳn (Windows + OneDrive). Dấu hiệu: lớp cũ vẫn ăn, lớp vừa thêm
+thì không, và một giá trị `object-position` không sinh ra sẽ lặng lẽ rơi về
+`50% 50%` — tức bố cục ĐỔI, chỉ là đổi sai. Hai lượt chỉnh liền nhau cho ra
+hai ảnh chụp gần giống nhau là dấu hiệu của chuyện này, không phải dấu hiệu
+rằng phép chỉnh quá nhỏ. Cách chữa: dừng dev, dời `.next` đi, chạy lại — rồi
+đo lại hình học trước khi tin bất cứ ảnh chụp nào.
