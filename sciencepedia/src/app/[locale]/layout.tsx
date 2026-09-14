@@ -11,6 +11,7 @@ import { Providers } from "@/components/providers";
 import { SiteHeader, type NavCategory } from "@/components/layout/site-header";
 import { SearchHeaderForm } from "@/components/search/search-header-form";
 import { FooterSlot } from "@/components/layout/footer-slot";
+import { HashScroll } from "@/components/layout/hash-scroll";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { AssistantLauncher } from "@/components/ai/assistant-launcher";
 import { Toaster } from "@/components/ui/sonner";
@@ -119,6 +120,8 @@ export default async function LocaleLayout({
         </noscript>
         <NextIntlClientProvider>
           <Providers>
+            <HashScroll />
+
             <JsonLd data={websiteJsonLd(locale as Locale)} />
             <a
               href="#main"

@@ -607,3 +607,34 @@ thì không, và một giá trị `object-position` không sinh ra sẽ lặng l
 hai ảnh chụp gần giống nhau là dấu hiệu của chuyện này, không phải dấu hiệu
 rằng phép chỉnh quá nhỏ. Cách chữa: dừng dev, dời `.next` đi, chạy lại — rồi
 đo lại hình học trước khi tin bất cứ ảnh chụp nào.
+
+## Mở thẳng địa chỉ được mà bấm liên kết không được: hỏng ở điều hướng, không ở đích
+
+Chốt 2026-09-14.
+
+Thẻ "Mặt Trăng" trong bậc thang kích thước trỏ tới `/space-map#body-moon` và
+bị báo là không tới đúng chỗ. Hai phép kiểm đầu đều cho kết quả SẠCH, và suýt
+thành kết luận "không tái hiện được":
+
+- `href` dựng ra đúng: `/vi/space-map#body-moon`.
+- Neo có thật: trang bản đồ có `id="body-moon"`.
+
+Phép kiểm thứ ba mới tách được hai khả năng. Mở THẲNG địa chỉ ấy: `scrollY`
+4480, thẻ Mặt Trăng cách đỉnh khung nhìn 192px — đúng. BẤM vào liên kết: URL
+đổi đúng thành `/vi/space-map#body-moon`, nhưng `scrollY` bằng 0 và thẻ nằm ở
+4657px.
+
+Cùng một URL, hai kết quả. Khác biệt duy nhất là cách tới đó, nên lỗi nằm ở
+cách tới: trình duyệt chỉ tự cuộn khi nó TẢI một địa chỉ có `#hash`, còn điều
+hướng trong App Router không tải lại trang — router đổi URL rồi vẽ lại cây
+React, và tới lúc nó thử cuộn thì phần tử đích có thể chưa tồn tại.
+
+**Quy tắc: với một lỗi "liên kết không tới đúng chỗ", luôn chạy CẢ HAI đường
+tới — gõ thẳng địa chỉ và bấm liên kết.** Chúng đi qua hai cơ chế khác nhau, và
+chỉ cần một đường đúng là đủ để loại bỏ mọi giả thuyết về cái đích: `href`,
+`id`, `scroll-mt`, thứ tự render. Kiểm cái đích mãi thì không bao giờ thấy, vì
+cái đích không hỏng.
+
+Hệ quả về chỗ sửa: lỗi thuộc về điều hướng nên bản vá cũng phải nằm ở tầng điều
+hướng. Đặt một cú cuộn vá víu vào trang bản đồ là để lại đúng cái bẫy ấy cho
+liên kết `#hash` tiếp theo — mà kho đang có sẵn vài cái.

@@ -26,3 +26,8 @@ scripts/tmp-*
 
 # Bản sao xung đột OneDrive sinh khi hai máy cùng sửa — bản cũ, không phải nguồn
 *-DESKTOP-*
+
+# Thư mục .next bị dời sang một bên khi cache kẹt (Windows + OneDrive).
+# Xoá thường thất bại vì I/O error, nên ít nhất đừng để chúng vào repo.
+.next-*
+.next.*
