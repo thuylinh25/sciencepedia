@@ -11,7 +11,7 @@ import {
 } from "@/lib/sky-data";
 import { SURFACE_HIPS_ORIGIN } from "@/lib/solar-data";
 import { JsonLd } from "@/components/json-ld";
-import { OortCloudDiagram } from "@/components/sky/oort-cloud-diagram";
+import { OortCloudFigure } from "@/components/sky/oort-cloud-figure";
 import { SkyMap } from "@/components/sky/sky-map";
 import { PlanetGallery } from "@/components/solar/planet-gallery";
 
@@ -136,9 +136,7 @@ export default async function SpaceMapPage({
         </p>
 
         <div className="mt-6 grid gap-6 lg:grid-cols-[minmax(0,26rem)_minmax(0,1fr)] lg:items-center">
-          <div className="rounded-2xl border bg-[#04060e] p-4 text-white">
-            <OortCloudDiagram className="w-full" />
-          </div>
+          <OortCloudFigure />
 
           <div className="space-y-4">
             <ul className="space-y-2.5 text-sm leading-relaxed">
