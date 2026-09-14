@@ -26,6 +26,22 @@ metadata phải có trong HTML đầu tiên — không fetch nội dung phía cl
 
 **Server Component mặc định.** `'use client'` đặt ở lá, kèm comment lý do.
 
+### Sửa dữ liệu thẳng trên Supabase thì trang không tự đổi
+
+Trang bài đặt `revalidate = 300` và được prerender. Một `UPDATE` chạy tay
+trong Supabase không đi qua code, nên Next không biết là đã có gì khác: bản
+HTML cũ còn được phục vụ tới năm phút, và vì stale-while-revalidate, lượt truy
+cập đầu tiên sau khi hết hạn **vẫn** nhận bản cũ — lượt sau mới thấy bản mới.
+
+Ghi lại vì cái bẫy này đã tốn một lượt chẩn đoán: thêm `sketchfabModelId` vào
+một bài, mở trang không thấy model 3D, và kết luận đầu tiên là code hỏng.
+
+Muốn thấy ngay: `POST /api/revalidate` với `Authorization: Bearer $CRON_SECRET`
+và body `{"slug":"..."}`. Route chỉ nhận slug rồi tự dựng đường dẫn cho từng
+locale — nhận `path` thô là để người gọi quyết định cái gì bị xoá khỏi cache.
+Dùng chung `CRON_SECRET` vì cùng một loại quyền (bắt máy chủ làm việc nặng
+theo yêu cầu); thêm biến môi trường thứ hai chỉ tạo thêm một thứ để quên đặt.
+
 ### Build không cần database
 
 Mọi `generateStaticParams` đều bọc `try/catch` trả `[]` khi truy vấn hỏng:
