@@ -148,6 +148,41 @@ export function AladinViewer({
     return () => window.removeEventListener(OPEN_BODY_EVENT, open);
   }, [openOnEventId]);
 
+  /**
+   * Mở sẵn khung toàn màn hình khi URL gọi đích danh thiên thể này:
+   * `/space-map?body=moon`.
+   *
+   * ## Vì sao cần một đường vào bằng URL
+   *
+   * Nấc "Mặt Trăng" ở bậc thang kích thước hứa một thứ rất cụ thể — bề mặt
+   * Mặt Trăng do LRO chụp. Trước đây nó trỏ tới `#body-moon`, tức chỉ cuộn
+   * tới tấm bìa, và người bấm "Khám phá" rơi xuống giữa một lưới chín thẻ rồi
+   * phải tự nhận ra là còn phải bấm thêm một lần nữa. Lời hứa và cái nhận
+   * được lệch nhau đúng một cú bấm, mà cú bấm ấy không ai nói trước.
+   *
+   * ## Vì sao đọc `window.location` chứ không phải `useSearchParams`
+   *
+   * Khung này nằm trên những trang tĩnh (`revalidate`), mà `useSearchParams`
+   * kéo cả route ra khỏi prerender. Query ở đây chỉ là một giá trị đọc một
+   * lần lúc mount, không phải nguồn trạng thái cần theo dõi: không trang nào
+   * chứa thư viện ảnh lại có liên kết trỏ ngược về chính nó, nên không có
+   * tình huống `?body=` đổi mà component không mount lại.
+   */
+  useEffect(() => {
+    if (!openOnEventId) return;
+    const requested = new URLSearchParams(window.location.search).get("body");
+    if (requested !== openOnEventId) return;
+
+    setClicked(true);
+
+    /*
+     * Cuộn tới thẻ dù lớp toàn màn hình đang phủ kín cửa sổ. Không phải để
+     * xem bây giờ, mà để lúc ĐÓNG lại người xem rơi đúng xuống thẻ vừa mở —
+     * thay vì rơi về đầu trang và mất dấu thứ mình vừa xem.
+     */
+    ref.current?.scrollIntoView({ block: "center" });
+  }, [openOnEventId, ref]);
+
   const active = clicked || (activation === "visible" && !saveData && inView);
 
   return (

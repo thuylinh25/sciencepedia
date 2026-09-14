@@ -124,11 +124,14 @@ export type ScaleRung = {
 export const SCALE_RUNGS: ScaleRung[] = [
   {
     id: "moon",
-    /* Neo tới đúng quả cầu Mặt Trăng trong thư viện bề mặt của trang bản đồ
-       bầu trời — thẻ ở đó mang id `body-moon` (xem `planet-gallery.tsx`).
-       Không phải một trang riêng, nhưng là ẢNH BỀ MẶT THẬT do LRO chụp, tức
-       đúng thứ nấc này hứa hẹn. */
-    href: "/space-map#body-moon",
+    /* Mở THẲNG quả cầu Mặt Trăng ở chế độ toàn màn hình trên trang bản đồ
+       bầu trời. Không phải một trang riêng, nhưng là ẢNH BỀ MẶT THẬT do LRO
+       chụp, tức đúng thứ nấc này hứa hẹn.
+
+       `?body=moon` chứ không phải `#body-moon`: cái neo chỉ cuộn tới tấm bìa
+       và bắt người bấm "Khám phá" bấm thêm một lần nữa giữa một lưới chín
+       thẻ. Xem chú thích `?body=` trong `aladin-viewer.tsx`. */
+    href: "/space-map?body=moon",
     name: "Mặt Trăng",
     nameEn: "The Moon",
     size: "3.475 km",
