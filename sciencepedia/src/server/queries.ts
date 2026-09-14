@@ -220,6 +220,14 @@ export const getArticleBySlug = cache(async (slug: string) =>
   }),
 );
 
+/** Slug cũ -> bài hiện tại, để trả 301 thay vì 404 sau khi đổi slug. */
+export const getArticleSlugRedirect = cache(async (oldSlug: string) =>
+  prisma.articleSlugRedirect.findUnique({
+    where: { oldSlug },
+    select: { article: { select: { slug: true, status: true } } },
+  }),
+);
+
 export type ArticleDetail = NonNullable<
   Awaited<ReturnType<typeof getArticleBySlug>>
 >;

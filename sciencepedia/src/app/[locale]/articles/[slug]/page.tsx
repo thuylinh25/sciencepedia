@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import dynamic from "next/dynamic";
-import { notFound } from "next/navigation";
+import { notFound, permanentRedirect } from "next/navigation";
 import Image from "next/image";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import {
@@ -15,6 +15,7 @@ import { Link } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
 import {
   getArticleBySlug,
+  getArticleSlugRedirect,
   getPublishedSlugs,
   getRelatedForArticle,
 } from "@/server/queries";
@@ -37,6 +38,7 @@ import {
 } from "@/components/article/table-of-contents";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { SOLAR_BODY_SLUGS } from "@/lib/solar-data";
+import SketchfabViewer from "@/components/sketchfab-viewer";
 
 // Tách thành chunk riêng: chỉ bài về thiên thể mới tải
 const PlanetGlobe = dynamic(() =>
@@ -94,6 +96,10 @@ export async function generateMetadata({
   // not-found.tsx hay middleware). Chừng nào status còn sai, `noindex` là thứ
   // thực sự ngăn Google đưa slug không tồn tại vào chỉ mục.
   if (!article) {
+    const moved = await getArticleSlugRedirect(slug);
+    if (moved?.article.status === "PUBLISHED") {
+      permanentRedirect(`/${locale}/articles/${moved.article.slug}`);
+    }
     return { title: "404", robots: { index: false, follow: false } };
   }
 
@@ -126,7 +132,13 @@ export default async function ArticlePage({
   setRequestLocale(locale);
 
   const article = await getArticleBySlug(slug);
-  if (!article) notFound();
+  if (!article) {
+    const moved = await getArticleSlugRedirect(slug);
+    if (moved?.article.status === "PUBLISHED") {
+      permanentRedirect(`/${locale}/articles/${moved.article.slug}`);
+    }
+    notFound();
+  }
 
   const loc = locale as Locale;
   const t = await getTranslations("article");
@@ -175,12 +187,12 @@ export default async function ArticlePage({
           })),
           entity: article.entity
             ? {
-                name: pickName(loc, {
-                  name: article.entity.canonicalName,
-                  nameEn: article.entity.canonicalNameEn,
-                }),
-                wikidataQid: article.entity.wikidataQid,
-              }
+              name: pickName(loc, {
+                name: article.entity.canonicalName,
+                nameEn: article.entity.canonicalNameEn,
+              }),
+              wikidataQid: article.entity.wikidataQid,
+            }
             : null,
         })}
       />
@@ -348,6 +360,13 @@ export default async function ArticlePage({
           {/* Cột mục lục bên phải là `hidden lg:block`; đây là bản cho điện
               thoại, bố cục chính của dự án. */}
           <MobileTableOfContents headings={headings} />
+
+          {article.sketchfabModelId && (
+            <SketchfabViewer
+              modelId={article.sketchfabModelId}
+              title={title}
+            />
+          )}
 
           <ArticleContent markdown={content} locale={loc} />
 

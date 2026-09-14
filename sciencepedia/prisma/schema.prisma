@@ -162,6 +162,9 @@ model Article {
   /// Thiên thể mà bài này nói tới, nếu có. Nguồn của khối "Xem trên bản đồ
   /// bầu trời" cuối bài. Nullable vì tuyệt đại đa số bài không phải thiên văn.
   skyObjectId        String?
+  /// Id model Sketchfab cho khối 3D cuối bài. Chỉ lưu id, không lưu URL
+  /// nhúng: URL nhúng là thứ Sketchfab đổi được, id thì không.
+  sketchfabModelId   String?
   author             User                     @relation("ArticleAuthor", fields: [authorId], references: [id], onDelete: Cascade)
   category           Category                 @relation(fields: [categoryId], references: [id])
   entity             Entity?                  @relation(fields: [entityId], references: [id])
@@ -172,6 +175,7 @@ model Article {
   comments           Comment[]
   revisions          Revision[]
   sources            Source[]
+  slugRedirects      ArticleSlugRedirect[]
 
   @@index([searchVector], type: Gin)
   @@index([status, publishedAt])
@@ -182,6 +186,18 @@ model Article {
   @@index([reverifyDueAt])
   @@index([reviewedById])
   @@index([skyObjectId])
+}
+
+/// Slug cũ trỏ về bài hiện tại. Đổi slug mà không giữ bản đồ chuyển hướng
+/// là vứt toàn bộ link ngoài và thứ hạng đã có của URL cũ.
+model ArticleSlugRedirect {
+  id        String   @id @default(cuid())
+  oldSlug   String   @unique
+  articleId String
+  createdAt DateTime @default(now())
+  article   Article  @relation(fields: [articleId], references: [id], onDelete: Cascade)
+
+  @@index([articleId])
 }
 
 model ArticleTag {
