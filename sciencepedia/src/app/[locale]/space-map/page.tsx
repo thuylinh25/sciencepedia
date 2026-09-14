@@ -11,6 +11,7 @@ import {
 } from "@/lib/sky-data";
 import { SURFACE_HIPS_ORIGIN } from "@/lib/solar-data";
 import { JsonLd } from "@/components/json-ld";
+import { OortCloudDiagram } from "@/components/sky/oort-cloud-diagram";
 import { SkyMap } from "@/components/sky/sky-map";
 import { PlanetGallery } from "@/components/solar/planet-gallery";
 
@@ -115,6 +116,65 @@ export default async function SpaceMapPage({
       <SkyMap />
 
       <PlanetGallery />
+
+      {/* --------------------------------------------- Sơ đồ Đám mây Oort
+
+          Nấc "Đám mây Oort" trong bậc thang kích thước trỏ về đây. Trước đó
+          nó là nấc duy nhất không có chỗ nào để tới, vì đám mây Oort không có
+          ảnh — chưa ai quan sát trực tiếp nó.
+
+          Giải pháp KHÔNG phải là đi tìm một tấm ảnh: mọi "ảnh đám mây Oort"
+          đều là hình vẽ, và mượn một hình vẽ về rồi đặt giữa một trang mang
+          tên "ảnh bầu trời thật" là làm đúng điều trang này dạy người đọc
+          đừng làm. Giải pháp là vẽ một sơ đồ và dán nhãn nó là sơ đồ. */}
+      <section id="oort-cloud" className="section-gap scroll-mt-24">
+        <h2 className="font-display text-2xl font-bold tracking-tight">
+          {t("oortTitle")}
+        </h2>
+        <p className="mt-3 max-w-3xl text-sm leading-relaxed text-muted-foreground">
+          {t("oortLead")}
+        </p>
+
+        <div className="mt-6 grid gap-6 lg:grid-cols-[minmax(0,26rem)_minmax(0,1fr)] lg:items-center">
+          <div className="rounded-2xl border bg-[#04060e] p-4 text-white">
+            <OortCloudDiagram className="w-full" />
+          </div>
+
+          <div className="space-y-4">
+            <ul className="space-y-2.5 text-sm leading-relaxed">
+              <li className="flex gap-3">
+                <span
+                  aria-hidden
+                  className="mt-1.5 size-2.5 shrink-0 rounded-full bg-[#a78bfa]"
+                />
+                {t("oortKuiper")}
+              </li>
+              <li className="flex gap-3">
+                <span
+                  aria-hidden
+                  className="mt-1.5 size-2.5 shrink-0 rounded-full bg-[#7dd3fc]"
+                />
+                {t("oortInner")}
+              </li>
+              <li className="flex gap-3">
+                <span
+                  aria-hidden
+                  className="mt-1.5 size-2.5 shrink-0 rounded-full bg-[#bae6fd]"
+                />
+                {t("oortOuter")}
+              </li>
+            </ul>
+
+            <p className="rounded-2xl border border-accent/25 bg-accent/[0.06] p-4 text-sm leading-relaxed">
+              {t("oortScaleNote")}
+            </p>
+
+            <p className="text-xs leading-relaxed text-muted-foreground">
+              {t("oortUnknown")}
+            </p>
+          </div>
+        </div>
+      </section>
 
       <p className="mt-10 text-xs leading-relaxed text-muted-foreground">
         {t("credit")}

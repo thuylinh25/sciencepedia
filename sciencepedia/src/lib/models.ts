@@ -89,8 +89,8 @@ export const MODEL_STEPS: ModelStep[] = [
  *
  * ## Vì sao `href` là tuỳ chọn
  *
- * Bốn nấc có đích thật (mô hình 3D, ảnh EPIC trực tiếp); ba nấc còn lại chỉ
- * để đối chiếu tỉ lệ. Một nấc không có đích thì KHÔNG được vẽ thành thẻ bấm
+ * Sáu nấc có đích thật (mô hình 3D, ảnh EPIC trực tiếp, ảnh bề mặt LRO, sơ đồ
+ * Đám mây Oort); riêng nấc lân cận sao chỉ để đối chiếu tỉ lệ. Một nấc không có đích thì KHÔNG được vẽ thành thẻ bấm
  * được — quy tắc đã chốt khi bỏ cột "Tài nguyên" khỏi footer: dựng năm liên
  * kết chết còn tệ hơn không dựng gì.
  *
@@ -124,6 +124,11 @@ export type ScaleRung = {
 export const SCALE_RUNGS: ScaleRung[] = [
   {
     id: "moon",
+    /* Neo tới đúng quả cầu Mặt Trăng trong thư viện bề mặt của trang bản đồ
+       bầu trời — thẻ ở đó mang id `body-moon` (xem `planet-gallery.tsx`).
+       Không phải một trang riêng, nhưng là ẢNH BỀ MẶT THẬT do LRO chụp, tức
+       đúng thứ nấc này hứa hẹn. */
+    href: "/space-map#body-moon",
     name: "Mặt Trăng",
     nameEn: "The Moon",
     size: "3.475 km",
@@ -173,6 +178,9 @@ export const SCALE_RUNGS: ScaleRung[] = [
   },
   {
     id: "oort",
+    /* Không có ảnh chụp nào của đám mây Oort, nên đích ở đây là SƠ ĐỒ trên
+       trang bản đồ bầu trời — có dán nhãn rõ là sơ đồ thang loga. */
+    href: "/space-map#oort-cloud",
     name: "Đám mây Oort",
     nameEn: "The Oort Cloud",
     size: "~1–3 năm ánh sáng",
