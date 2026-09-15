@@ -69,7 +69,17 @@ export default async function ProfilePage({
           Kẻ dọc chỉ từ lg trở lên. Dưới ngưỡng đó thẻ xếp chồng nên đường kẻ
           phải nằm ngang, nếu không nó cắt ngang chỗ không có gì để ngăn. */}
       <div className="flex flex-col gap-8 rounded-2xl border bg-card p-8 lg:flex-row lg:items-center lg:gap-10">
-        <div className="flex flex-1 flex-col gap-6 sm:flex-row sm:items-start">
+        {/* Khối danh tính KHÔNG nở.
+
+            Trước đây nó mang `flex-1`, tức chiếm hết chiều ngang còn lại và
+            đẩy khối số liệu ra sát mép phải thẻ. Nhưng nội dung bên trong đã
+            bị chặn bề rộng từ trước — tiểu sử dừng ở 38ch — nên phần nở thêm
+            chỉ là khoảng trống, và nó rơi vào ĐÚNG GIỮA hai nhóm. Một khoảng
+            trống ở giữa thì đọc ra là hai khối rời nhau, không phải một thẻ.
+
+            Bỏ `flex-1` thì hai nhóm đứng liền nhau, cách nhau đúng `gap`, và
+            chỗ thừa dồn về mép phải — nơi nó là lề, không phải vết nứt. */}
+        <div className="flex flex-col gap-6 sm:flex-row sm:items-start">
           {/* Vòng sáng quanh avatar.
 
               Chữ cái thay ảnh vốn là một đĩa phẳng cùng tông với nền thẻ, nên
