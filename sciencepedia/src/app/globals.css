@@ -768,28 +768,34 @@
  * Chỉ áp cho bề mặt thiên thể — bản đồ bầu trời không phải hình tròn, khung
  * bẹt ở đó là đúng.
  *
- * ## Vì sao khung nhỏ hơn cửa sổ 14%
+ * ## Vì sao thu bằng `transform`, KHÔNG phải bằng `width`/`height`
  *
- * `fov: 180` lấp khung VỪA KHÍT, nên khung bằng đúng cửa sổ thì đĩa chạm cả
- * bốn mép ngay khi mở. Nhìn ra là một quả cầu bị khung bó sát, và người xem
- * không còn đường nào để thấy nó NHỎ LẠI: Aladin chặn cứng fov ở 180 nên thu
- * nhỏ bằng thao tác zoom cũng không ra thêm lề.
+ * `fov: 180` lấp khung vừa khít, nên đĩa chạm cả bốn mép ngay khi mở, và
+ * Aladin chặn cứng fov ở 180 nên thao tác thu nhỏ cũng không ra thêm lề.
  *
- * Không chữa được bằng fov thì chữa bằng khung. 0,86 để lại một vành đen
- * chừng 7% mỗi bên — đủ để đọc ra "đây là một vật thể tròn nằm trong không
- * gian" chứ không phải "một tấm ảnh bị cắt", mà vẫn đủ lớn để chi tiết bề mặt
- * không mất. Phóng to vẫn chạy bình thường từ mức này.
+ * Lần đầu tôi chữa bằng cách thu `width`/`height` của khung xuống 86%. Cách
+ * đó KHÔNG có tác dụng, và lý do đáng ghi lại: đổi kích thước khung thì Aladin
+ * dựng lại canvas theo kích thước mới và quả cầu lại lấp đầy đúng như cũ — cả
+ * khung lẫn đĩa cùng nhỏ đi, tỉ lệ giữa chúng không đổi, nên vẫn không có lề.
  *
- * `box-shadow` phủ 100vmax nên phần cửa sổ ngoài khung vẫn là nền tối liền
- * mạch — thu khung lại không để lộ trang phía sau.
+ * `transform: scale` thì khác: hộp bố cục vẫn nguyên cỡ nên Aladin vẫn tính
+ * toán trên một khung đầy đủ và quả cầu vẫn lấp đầy CANVAS, nhưng trình duyệt
+ * vẽ canvas ấy nhỏ lại. Lề xuất hiện giữa đĩa và mép màn hình.
+ *
+ * Cái giá phải theo dõi: canvas WebGL được vẽ lại ở tỉ lệ khác nên nét mềm đi
+ * một chút, và mọi phép quy đổi toạ độ con trỏ của Aladin giờ đi qua một phép
+ * biến đổi. Trình duyệt tự áp phép biến đổi đó cho cả sự kiện chuột lẫn
+ * `getBoundingClientRect()`, nên kéo và phóng vẫn đúng — nhưng đây là chỗ phải
+ * thử tay trước khi tin.
+ *
+ * `box-shadow` phủ 100vmax nên phần ngoài vẫn là nền tối liền mạch.
  */
 .aladin-body-view .aladin-fullscreen {
-  --aladin-body-frame: calc(min(100vw, 100vh) * 0.86);
-
-  width: var(--aladin-body-frame) !important;
-  height: var(--aladin-body-frame) !important;
-  left: calc(50vw - var(--aladin-body-frame) / 2) !important;
-  top: calc(50vh - var(--aladin-body-frame) / 2) !important;
+  width: min(100vw, 100vh) !important;
+  height: min(100vw, 100vh) !important;
+  left: calc(50vw - min(100vw, 100vh) / 2) !important;
+  top: calc(50vh - min(100vw, 100vh) / 2) !important;
+  transform: scale(0.86);
   box-shadow: 0 0 0 100vmax #04060e;
 }
 

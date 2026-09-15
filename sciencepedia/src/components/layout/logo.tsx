@@ -38,10 +38,20 @@ export function Logo({
           `rounded-[30%]` thay `rounded-lg`: icon ứng dụng dùng dạng squircle
           bo sâu, `rounded-lg` cho ra một ô vuông bo nhẹ trông khác hẳn. */}
       <span className="relative grid size-9 place-items-center rounded-[30%] bg-primary">
+        {/* Glyph chiếm 7/9 ô thay vì 5/9.
+
+            Ở cỡ 5 thì vành đai rộng chừng 46% bề ngang ô vàng, tức hình hành
+            tinh nổi lên như một chi tiết nhỏ giữa một mảng vàng lớn — đọc ra
+            là "ô vàng", không phải "hành tinh". Ô thương hiệu càng nhỏ trên
+            màn hẹp thì phần glyph càng ít pixel để nhận ra hình gì.
+
+            7/9 cho vành đai chừng 64% bề ngang, cân với icon ứng dụng đã cài.
+            Không lên nữa: vành đai nghiêng 24° nên bốn góc của nó là chỗ chạm
+            mép trước tiên, và chạm mép thì ô vàng thôi đọc ra là một cái khung. */}
         <svg
           viewBox="0 0 24 24"
           fill="none"
-          className="size-5 text-primary-foreground"
+          className="size-7 text-primary-foreground"
           aria-hidden="true"
         >
           <circle cx="12" cy="12" r="3.2" fill="currentColor" />

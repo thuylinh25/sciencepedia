@@ -36,11 +36,22 @@ export function LocaleSwitcher() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
+        {/* Viên thuốc có viền, không còn là nút ghost trơn.
+
+            Ghost nghĩa là không viền không nền, nên nút này trôi tự do cạnh
+            avatar — vốn là một hình tròn đặc. Hai thứ cạnh nhau, một cái có
+            hình dạng rõ một cái không, đọc ra như avatar là nút còn chữ "VI"
+            là nhãn trang trí. Viền mảnh cộng `rounded-full` cho nó đúng một
+            hình dạng bấm được, và hình dạng ấy đi cùng bộ với hình tròn của
+            avatar thay vì chọi lại.
+
+            `bg-card/50` chứ không nền đặc: header vốn trong suốt có làm mờ
+            nền, một khối đặc sẽ thành mảng vá trên đó. */}
         <Button
           variant="ghost"
           size="sm"
           disabled={pending}
-          className="gap-1.5 px-2.5"
+          className="gap-1.5 rounded-full border bg-card/50 px-3 transition-colors hover:border-primary/40 hover:bg-card"
           aria-label={t("language")}
         >
           {/* Globe chứ không Languages: icon Languages của lucide vẽ chữ 文

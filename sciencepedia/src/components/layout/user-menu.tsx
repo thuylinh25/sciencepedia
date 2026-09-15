@@ -2,7 +2,12 @@
 
 import { useSession, signOut } from "next-auth/react";
 import { useTranslations } from "next-intl";
-import { Bookmark, LayoutDashboard, LogOut, User as UserIcon } from "lucide-react";
+import {
+  Bookmark,
+  LayoutDashboard,
+  LogOut,
+  User as UserIcon,
+} from "lucide-react";
 
 import { Link } from "@/i18n/navigation";
 import { Button } from "@/components/ui/button";
@@ -59,11 +64,18 @@ export function UserMenu() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
+        {/* Vòng sáng quanh avatar, đậm lên khi rê.
+
+            Avatar chữ cái là một đĩa đặc cùng tông với header, nên nó đọc ra
+            như một chấm màu chứ không như nút. Vòng sáng tách nó khỏi nền và
+            cho nó phản hồi khi rê — thứ mọi nút khác trong header đều có còn
+            nó thì không. Dùng `ring` chứ không `border`: viền sẽ ăn vào đường
+            kính đĩa và làm hai chữ cái chật lại. */}
         <button
           className="ml-1 rounded-full outline-none focus-visible:ring-[3px] focus-visible:ring-ring/40"
           aria-label={t("profile")}
         >
-          <Avatar>
+          <Avatar className="ring-2 ring-border transition-[--tw-ring-color] hover:ring-primary/50">
             {user.image && <AvatarImage src={user.image} alt="" />}
             <AvatarFallback>{initials(user.name, user.email)}</AvatarFallback>
           </Avatar>
