@@ -153,7 +153,6 @@ export const chatSchema = z.object({
     .max(40),
   locale: localeSchema.default("vi"),
 });
-export type ChatInput = z.infer<typeof chatSchema>;
 
 export const searchQuerySchema = z.object({
   q: z.string().max(200).default(""),

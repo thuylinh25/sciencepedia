@@ -228,10 +228,6 @@ export const getArticleSlugRedirect = cache(async (oldSlug: string) =>
   }),
 );
 
-export type ArticleDetail = NonNullable<
-  Awaited<ReturnType<typeof getArticleBySlug>>
->;
-
 /** Bài liên quan: ưu tiên trùng thẻ, bù thêm bằng bài cùng danh mục. */
 export async function getRelatedArticles(
   articleId: string,

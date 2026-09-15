@@ -64,8 +64,6 @@ export type AladinOptions = {
 /** Sự kiện chúng ta lắng nghe. Aladin phát nhiều hơn, đây là phần đang dùng. */
 export type AladinEvent = "positionChanged" | "zoomChanged" | "objectClicked";
 
-export type AladinPosition = { ra: number; dec: number };
-
 export type AladinInstance = {
   /** ra, dec tính bằng ĐỘ (không phải giờ) */
   gotoRaDec(ra: number, dec: number): void;

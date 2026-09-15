@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "code-review-graph": {
+      "command": "C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python313\\Scripts\\code-review-graph.exe",
+      "args": [
+        "serve"
+      ],
+      "cwd": "C:\\Users\\Admin\\OneDrive - CTCPGP NGON SONG MOI -newwave.com.vn-hn\\Website Builder",
+      "type": "stdio"
+    }
+  }
+}

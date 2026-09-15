@@ -1,11 +1,24 @@
 "use client";
 
-import { useMemo, useRef, useState } from "react";
-import { Canvas, useFrame, useThree } from "@react-three/fiber";
+import { useMemo, useRef } from "react";
+import { Canvas, useFrame } from "@react-three/fiber";
 import { Html, OrbitControls } from "@react-three/drei";
 import * as THREE from "three";
 
 import { buildCosmicWeb, voidDiameterMly } from "@/lib/cosmic-web";
+import {
+  useCanvasTexture,
+  useRadialSprite,
+  type GradientStop,
+} from "@/lib/three/sprites";
+import {
+  LANDMARK_FACTOR,
+  SHELL_FACTOR,
+  landmarkLabelY,
+  shellLabelPos,
+  useLabelDeclutter,
+  useLabelSlots,
+} from "@/components/universe/label-layout";
 
 import {
   COSMIC_LANDMARKS,
@@ -29,38 +42,20 @@ export type UniverseSettings = {
   distance: number;
 };
 
-/** Sprite tròn mềm — xem chú thích cùng tên ở galaxy-scene.tsx */
-function useStarSprite(): THREE.Texture {
-  return useMemo(() => {
-    const size = 64;
-    const canvas = document.createElement("canvas");
-    canvas.width = size;
-    canvas.height = size;
-
-    const ctx = canvas.getContext("2d");
-    if (ctx) {
-      const half = size / 2;
-      const gradient = ctx.createRadialGradient(
-        half,
-        half,
-        0,
-        half,
-        half,
-        half,
-      );
-      gradient.addColorStop(0, "rgba(255,255,255,1)");
-      gradient.addColorStop(0.22, "rgba(255,255,255,0.7)");
-      gradient.addColorStop(0.5, "rgba(255,255,255,0.18)");
-      gradient.addColorStop(1, "rgba(255,255,255,0)");
-      ctx.fillStyle = gradient;
-      ctx.fillRect(0, 0, size, size);
-    }
-
-    const texture = new THREE.CanvasTexture(canvas);
-    texture.colorSpace = THREE.SRGBColorSpace;
-    return texture;
-  }, []);
-}
+/**
+ * Sprite tròn mềm — xem `radialSprite` ở `@/lib/three/sprites`.
+ *
+ * Các chặng màu ở đây KHÁC bản của galaxy-scene (0.22/0.5 so với 0.2/0.45).
+ * Giữ nguyên chênh lệch đó: mạng vũ trụ thưa hơn đĩa thiên hà nhiều nên lõi
+ * sprite phải đặc hơn một chút thì chấm mới đọc được khi đứng riêng lẻ.
+ */
+const STAR_SPRITE_SIZE = 64;
+const STAR_STOPS: readonly GradientStop[] = [
+  [0, "rgba(255,255,255,1)"],
+  [0.22, "rgba(255,255,255,0.7)"],
+  [0.5, "rgba(255,255,255,0.18)"],
+  [1, "rgba(255,255,255,0)"],
+];
 
 /**
  * Vòng ngắm cho dấu "bạn đang ở đây".
@@ -75,41 +70,28 @@ function useStarSprite(): THREE.Texture {
  * bị các thiên hà phía trước che. Một hình dạng KHÁC HẲN (vòng tròn có bốn
  * vạch chỉ vào tâm) đọc nhanh hơn nhiều so với "chấm sáng to hơn một chút".
  */
-function useReticleSprite(): THREE.Texture {
-  return useMemo(() => {
-    const size = 256;
-    const canvas = document.createElement("canvas");
-    canvas.width = size;
-    canvas.height = size;
+const RETICLE_SPRITE_SIZE = 256;
+function drawReticle(ctx: CanvasRenderingContext2D, size: number) {
+  const half = size / 2;
+  ctx.strokeStyle = "#fde047";
+  ctx.lineCap = "round";
 
-    const ctx = canvas.getContext("2d");
-    if (ctx) {
-      const half = size / 2;
-      ctx.strokeStyle = "#fde047";
-      ctx.lineCap = "round";
+  ctx.lineWidth = 7;
+  ctx.beginPath();
+  ctx.arc(half, half, size * 0.3, 0, Math.PI * 2);
+  ctx.stroke();
 
-      ctx.lineWidth = 7;
-      ctx.beginPath();
-      ctx.arc(half, half, size * 0.3, 0, Math.PI * 2);
-      ctx.stroke();
-
-      // Bốn vạch chỉ vào tâm, chừa khe hở để không lấp mất chính cái chấm.
-      ctx.lineWidth = 9;
-      for (let i = 0; i < 4; i++) {
-        const angle = i * (Math.PI / 2);
-        const cos = Math.cos(angle);
-        const sin = Math.sin(angle);
-        ctx.beginPath();
-        ctx.moveTo(half + cos * size * 0.45, half + sin * size * 0.45);
-        ctx.lineTo(half + cos * size * 0.36, half + sin * size * 0.36);
-        ctx.stroke();
-      }
-    }
-
-    const texture = new THREE.CanvasTexture(canvas);
-    texture.colorSpace = THREE.SRGBColorSpace;
-    return texture;
-  }, []);
+  // Bốn vạch chỉ vào tâm, chừa khe hở để không lấp mất chính cái chấm.
+  ctx.lineWidth = 9;
+  for (let i = 0; i < 4; i++) {
+    const angle = i * (Math.PI / 2);
+    const cos = Math.cos(angle);
+    const sin = Math.sin(angle);
+    ctx.beginPath();
+    ctx.moveTo(half + cos * size * 0.45, half + sin * size * 0.45);
+    ctx.lineTo(half + cos * size * 0.36, half + sin * size * 0.36);
+    ctx.stroke();
+  }
 }
 
 /**
@@ -119,30 +101,13 @@ function useReticleSprite(): THREE.Texture {
  * ra mép. Một hạt đứng riêng gần như vô hình; thân sợi hiện ra từ chỗ hàng
  * trăm hạt chồng lên nhau. Đó là điều làm nó ra thể tích chứ không ra chấm.
  */
-function useFogSprite(): THREE.Texture {
-  return useMemo(() => {
-    const size = 64;
-    const canvas = document.createElement("canvas");
-    canvas.width = size;
-    canvas.height = size;
-
-    const ctx = canvas.getContext("2d");
-    if (ctx) {
-      const half = size / 2;
-      const gradient = ctx.createRadialGradient(half, half, 0, half, half, half);
-      gradient.addColorStop(0, "rgba(255,255,255,0.55)");
-      gradient.addColorStop(0.45, "rgba(255,255,255,0.18)");
-      gradient.addColorStop(0.75, "rgba(255,255,255,0.05)");
-      gradient.addColorStop(1, "rgba(255,255,255,0)");
-      ctx.fillStyle = gradient;
-      ctx.fillRect(0, 0, size, size);
-    }
-
-    const texture = new THREE.CanvasTexture(canvas);
-    texture.colorSpace = THREE.SRGBColorSpace;
-    return texture;
-  }, []);
-}
+const FOG_SPRITE_SIZE = 64;
+const FOG_STOPS: readonly GradientStop[] = [
+  [0, "rgba(255,255,255,0.55)"],
+  [0.45, "rgba(255,255,255,0.18)"],
+  [0.75, "rgba(255,255,255,0.05)"],
+  [1, "rgba(255,255,255,0)"],
+];
 
 /**
  * Mạng vũ trụ. Toàn bộ phần dựng hình nằm ở `@/lib/cosmic-web`.
@@ -152,191 +117,6 @@ function useFogSprite(): THREE.Texture {
  */
 function useCosmicWeb() {
   return useMemo(() => buildCosmicWeb(), []);
-}
-
-/* ────────────────────────── Giãn nhãn, dùng chung ──────────────────────────
-
-   Chốt 2026-09-06 sau khi nhãn đè lên nhau ở mức thu nhỏ mặc định.
-
-   Trước đây mỗi nhóm nhãn tự lo lấy mình: `Landmarks` có logic tránh đè, còn
-   `ScaleShells` thì không có gì cả. Hai nhóm render trong hai <group> tách
-   biệt nên không nhóm nào biết nhóm kia đang chiếm chỗ nào — và một cơ chế
-   tránh đè chỉ nhìn thấy một nửa số nhãn thì không phải cơ chế tránh đè.
-
-   Phép đo cũ còn sai ở hai chỗ nữa, và cả hai đều làm khung va chạm lệch khỏi
-   thứ đang thật sự hiện trên màn hình:
-
-   1. Nó chiếu TÂM VẬT THỂ, trong khi <Html> được đặt lệch lên trên vài đơn vị
-      thế giới. Hai điểm đó không rơi vào cùng một chỗ trên màn hình.
-   2. Nó so hai tâm nhãn bằng một khung cứng 150×30 px, trong khi drei co giãn
-      nhãn theo khoảng cách camera. Cùng một cặp nhãn, lúc thu nhỏ cách nhau
-      30 px thật, lúc phóng to cách nhau 300 px — một ngưỡng cứng không thể
-      đúng ở cả hai đầu, và nó cũng bỏ qua việc "Ngân Hà — bạn đang ở đây"
-      rộng gấp đôi "Đám Virgo".
-
-   Bản này chiếu ĐÚNG điểm neo của nhãn, ước lượng bề rộng theo số ký tự thật
-   của từng nhãn, rồi nhân với đúng hệ số drei dùng. */
-
-/**
- * Hệ số drei áp cho `<Html distanceFactor>`, chép từ `objectScale()` của nó:
- * `scale = distanceFactor / (2·tan(fov/2)·khoảng cách tới camera)`.
- *
- * Phải khớp chính xác. Sai số ở đây là sai số của khung va chạm, và nó biểu
- * hiện thành đúng cái lỗi ta đang sửa.
- */
-function htmlScale(
-  camera: THREE.Camera,
-  anchor: THREE.Vector3,
-  distanceFactor: number,
-): number {
-  const { fov } = camera as THREE.PerspectiveCamera;
-  const vFOV = (fov * Math.PI) / 180;
-  const dist = camera.position.distanceTo(anchor);
-  return distanceFactor / (2 * Math.tan(vFOV / 2) * dist);
-}
-
-/* Bề rộng nhãn khi chưa co giãn, đo thô theo số ký tự.
-   Đo DOM thật sẽ chính xác hơn nhưng không khả thi: nhãn bị ẩn thì không có
-   DOM để mà đo, nên phép đo sẽ dao động qua lại giữa hai trạng thái. */
-const CHAR_PX = 6.4;
-const PAD_PX = 26;
-const LABEL_PX_H = 26;
-/** Khe hở tối thiểu: hai nhãn sát cạnh nhau vẫn khó đọc dù về hình học là không đè. */
-const GAP_PX = 8;
-
-/** Nhãn mốc nằm lệch lên trên chấm sáng; mốc "home" to hơn nên lệch nhiều hơn. */
-const landmarkLabelY = (home: boolean) => (home ? 0.75 : 0.45);
-const shellLabelPos = (radius: number): [number, number, number] => [
-  0,
-  radius * 0.72,
-  radius * 0.72,
-];
-/*
- * Nhãn to bằng distanceFactor / khoảng cách tới camera, nên càng lại gần
- * càng phình. Ở 22 thì lúc bay vào giữa mạng vũ trụ một cái nhãn chiếm gần
- * nửa bề ngang khung và che mất chính cấu trúc nó đang chỉ vào. 13 giữ nhãn
- * đọc được ở tầm nhìn mặc định mà không nuốt hình khi phóng to.
- */
-const LANDMARK_FACTOR = 13;
-const SHELL_FACTOR = 11;
-
-type LabelSlot = {
-  id: string;
-  anchor: THREE.Vector3;
-  /** Bề rộng px khi scale = 1 */
-  width: number;
-  distanceFactor: number;
-};
-
-/**
- * Bỏ nhãn nào đè lên một nhãn đã giữ, xét theo thứ tự ưu tiên của `slots`.
- *
- * Không sửa bằng cách bóp méo khoảng cách giữa các mốc: khoảng cách ở đây là
- * số đo thật, chỉ hướng mới là bịa ra cho dễ nhìn. Nhãn bị ẩn hiện lại khi
- * người xem phóng to — đúng hành vi người ta chờ đợi.
- */
-function useLabelDeclutter(slots: LabelSlot[], enabled: boolean): Set<string> {
-  const { camera, size } = useThree();
-  const [hidden, setHidden] = useState<Set<string>>(() => new Set());
-  const lastKey = useRef("");
-
-  useFrame(() => {
-    if (!enabled) {
-      if (lastKey.current !== "") {
-        lastKey.current = "";
-        setHidden(new Set());
-      }
-      return;
-    }
-
-    const kept: { x: number; y: number; hw: number; hh: number }[] = [];
-    const next = new Set<string>();
-
-    for (const slot of slots) {
-      const ndc = slot.anchor.clone().project(camera);
-      // z > 1 nghĩa là nằm sau camera; chiếu ra một điểm vô nghĩa
-      if (ndc.z > 1) {
-        next.add(slot.id);
-        continue;
-      }
-      const x = (ndc.x * 0.5 + 0.5) * size.width;
-      const y = (-ndc.y * 0.5 + 0.5) * size.height;
-      const scale = htmlScale(camera, slot.anchor, slot.distanceFactor);
-      const hw = (slot.width * scale + GAP_PX) / 2;
-      const hh = (LABEL_PX_H * scale + GAP_PX) / 2;
-
-      const clash = kept.some(
-        (k) => Math.abs(k.x - x) < k.hw + hw && Math.abs(k.y - y) < k.hh + hh,
-      );
-      if (clash) next.add(slot.id);
-      else kept.push({ x, y, hw, hh });
-    }
-
-    // Chỉ setState khi tập hợp thật sự đổi — setState mỗi khung hình sẽ khiến
-    // React dựng lại cây này 60 lần một giây.
-    const key = [...next].sort().join(",");
-    if (key !== lastKey.current) {
-      lastKey.current = key;
-      setHidden(next);
-    }
-  });
-
-  return hidden;
-}
-
-/**
- * Danh sách nhãn theo THỨ TỰ ƯU TIÊN — slot đứng trước thắng khi tranh chỗ.
- *
- * "Bạn đang ở đây" luôn thắng, sau đó tới mốc xa nhất: mốc xa nằm ở rìa và ít
- * tranh chỗ, giữ chúng thì phần trung tâm chỉ mất những nhãn mà zoom vào là
- * thấy lại.
- *
- * Vỏ tỉ lệ xếp sau toàn bộ mốc: vỏ mất nhãn thì vòng tròn vẫn còn đó để nhìn,
- * còn một mốc mất nhãn thì chỉ còn là một chấm sáng vô danh.
- */
-function useLabelSlots(
-  locale: string,
-  showScales: boolean,
-): LabelSlot[] {
-  return useMemo(() => {
-    const slots: LabelSlot[] = [];
-    const textWidth = (text: string) => text.length * CHAR_PX + PAD_PX;
-
-    const landmarks = [...COSMIC_LANDMARKS].sort(
-      (a, b) =>
-        Number(b.tier === "home") - Number(a.tier === "home") ||
-        b.distanceMly - a.distanceMly,
-    );
-    for (const landmark of landmarks) {
-      const home = landmark.tier === "home";
-      const [x, y, z] = landmarkPosition(landmark);
-      const text = locale === "en" ? landmark.nameEn : landmark.name;
-      slots.push({
-        id: landmark.id,
-        anchor: new THREE.Vector3(x, y + landmarkLabelY(home), z),
-        // Mốc home có thêm ngôi sao ở đầu nhãn
-        width: textWidth(text) + (home ? 14 : 0),
-        distanceFactor: LANDMARK_FACTOR,
-      });
-    }
-
-    // Vỏ tỉ lệ đang tắt thì không chiếm chỗ của ai cả.
-    if (showScales) {
-      const shells = UNIVERSE_SCALES.filter(
-        (scale) => scale.radius !== null,
-      ).sort((a, b) => (b.radius as number) - (a.radius as number));
-      for (const scale of shells) {
-        slots.push({
-          id: `shell-${scale.id}`,
-          anchor: new THREE.Vector3(...shellLabelPos(scale.radius as number)),
-          width: textWidth(locale === "en" ? scale.nameEn : scale.name),
-          distanceFactor: SHELL_FACTOR,
-        });
-      }
-    }
-
-    return slots;
-  }, [locale, showScales]);
 }
 
 /**
@@ -395,7 +175,7 @@ function Landmarks({
   onSelect: (id: string) => void;
 }) {
   const pulse = useRef<THREE.Mesh>(null);
-  const reticle = useReticleSprite();
+  const reticle = useCanvasTexture(RETICLE_SPRITE_SIZE, drawReticle);
 
   // Chỉ còn nhịp đập của dấu "bạn đang ở đây". Việc giãn nhãn đã chuyển lên
   // `Web` để nó nhìn thấy cả nhãn vỏ tỉ lệ — xem `useLabelDeclutter`.
@@ -560,8 +340,8 @@ function Web({
   onSelect: (id: string) => void;
 }) {
   const group = useRef<THREE.Group>(null);
-  const sprite = useStarSprite();
-  const fogSprite = useFogSprite();
+  const sprite = useRadialSprite(STAR_SPRITE_SIZE, STAR_STOPS);
+  const fogSprite = useRadialSprite(FOG_SPRITE_SIZE, FOG_STOPS);
   const web = useCosmicWeb();
 
   // Một lượt giãn nhãn cho CẢ mốc lẫn vỏ tỉ lệ. Phải nằm ở đây chứ không nằm

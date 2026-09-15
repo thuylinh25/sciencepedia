@@ -10,3 +10,5 @@ docs/content/pipeline-run-*.md
 
 # Bản sao xung đột OneDrive sinh khi hai máy cùng sửa — bản cũ, không phải nguồn
 *-DESKTOP-*
+# Added by code-review-graph
+.code-review-graph/

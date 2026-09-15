@@ -22,10 +22,3 @@ export type SearchHit = {
   titleHtml: string;
   summaryHtml: string;
 };
-
-export type SearchResponse = {
-  hits: SearchHit[];
-  total: number;
-  page: number;
-  backend: "meilisearch" | "postgres";
-};
