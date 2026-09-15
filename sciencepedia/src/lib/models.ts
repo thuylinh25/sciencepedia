@@ -156,7 +156,12 @@ export const SCALE_RUNGS: ScaleRung[] = [
   },
   {
     id: "sun",
-    href: "/solar-system",
+    /* Cùng lý do với nấc "Mặt Trăng" ở trên: mở THẲNG quả cầu Mặt Trời ở chế
+       độ toàn màn hình. Nấc này hứa đường kính 1,39 triệu km và 99,86% khối
+       lượng cả hệ — thứ trả được lời hứa đó là bản đồ cầu 304 Å xoay được,
+       không phải trang /solar-system vốn mở ra mô hình quỹ đạo tám hành tinh
+       với Mặt Trời chỉ là quả cầu vàng ở giữa. */
+    href: "/space-map?body=sun",
     name: "Mặt Trời",
     nameEn: "The Sun",
     size: "1,39 triệu km",
