@@ -77,9 +77,25 @@ export default async function ProfilePage({
               nền chuyển sắc cho nó đủ khối để mắt nhận ra đây là chỗ của một
               con người — và vẫn đúng khi người dùng có ảnh thật, vì vòng sáng
               nằm ngoài khung ảnh. */}
-          <Avatar className="size-24 shrink-0 ring-4 ring-primary/15">
+          {/* Nền avatar dùng token `accent`, không phải mã màu viết cứng.
+
+              Bản trước là `from-indigo-500 to-violet-600` — hai màu tím lấy
+              thẳng từ bảng Tailwind, không có trong hệ token của dự án. Kết
+              quả là một đĩa tím không khớp với bất cứ thứ gì khác trên trang.
+              `accent` chính là màu xanh đang tô nửa sau tiêu đề hero, nên
+              avatar và điểm nhấn lớn nhất của site giờ cùng một màu.
+
+              Đi kèm `text-accent-foreground` chứ không phải `text-white`:
+              cặp token này đã được chọn để tương phản ở CẢ hai theme — ở giao
+              diện sáng nền xanh đậm chữ gần trắng, ở giao diện tối nền xanh
+              nhạt chữ gần đen. Viết cứng `text-white` thì theme sáng còn đúng,
+              theme tối thành trắng trên xanh nhạt.
+
+              Vòng sáng đổi từ `primary` (vàng) sang `accent`: một vành vàng
+              quanh đĩa xanh là hai màu thương hiệu chọi nhau ở cùng một chỗ. */}
+          <Avatar className="size-24 shrink-0 ring-4 ring-accent/20">
             {user.image && <AvatarImage src={user.image} alt="" />}
-            <AvatarFallback className="bg-gradient-to-br from-indigo-500 to-violet-600 font-display text-3xl font-bold text-white">
+            <AvatarFallback className="bg-accent font-display text-3xl font-bold text-accent-foreground">
               {(user.name ?? user.email)[0]?.toUpperCase()}
             </AvatarFallback>
           </Avatar>
