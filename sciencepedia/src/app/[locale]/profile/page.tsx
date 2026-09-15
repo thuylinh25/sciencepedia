@@ -106,8 +106,26 @@ export default async function ProfilePage({
               {user.email}
             </p>
 
+            {/* Bề rộng đọc chặn ở 38ch, không để tiểu sử chạy hết chiều ngang
+                thẻ.
+
+                Ở bề rộng đầy đủ, câu giới thiệu 107 ký tự vắt thành hai dòng
+                mà dòng thứ hai chỉ còn một chữ — một dòng cụt ngay giữa thẻ,
+                và mắt đọc nó ra như chữ bị rớt chứ không như hết câu. 38ch
+                chia câu thành ba dòng gần đều nhau.
+
+                Dùng `ch` chứ không `rem`: đơn vị này đo theo bề rộng ký tự
+                của chính phông đang dùng, nên số dòng giữ nguyên khi cỡ chữ
+                gốc đổi. Trên màn hẹp thì bề rộng thẻ mới là thứ chặn trước,
+                và câu tự vắt thêm dòng — đúng như mong đợi.
+
+                `text-pretty` lo nốt phần còn lại: nó cấm để lại một chữ đơn
+                độc ở dòng cuối, thứ mà một con số bề rộng cố định không bảo
+                đảm được cho mọi ngôn ngữ. */}
             {user.bio && (
-              <p className="mt-3 text-sm leading-relaxed">{user.bio}</p>
+              <p className="mt-3 max-w-[38ch] text-sm leading-relaxed text-pretty">
+                {user.bio}
+              </p>
             )}
 
             <p className="mt-3 flex items-center gap-2 text-xs text-muted-foreground">
