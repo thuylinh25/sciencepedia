@@ -40,7 +40,38 @@ const nextConfig: NextConfig = {
     ],
   },
   experimental: {
-    optimizePackageImports: ["lucide-react", "framer-motion", "@react-three/drei"],
+    optimizePackageImports: [
+      "lucide-react",
+      "framer-motion",
+      "@react-three/drei",
+    ],
+
+    /**
+     * Dựng tối đa 4 trang tĩnh cùng lúc, thay cho mặc định 8.
+     *
+     * 268 trang nội dung, mỗi trang vài truy vấn Prisma, dựng song song trên
+     * nhiều worker — đó là thứ làm build trên Vercel chết với P2024 (hết
+     * connection pool) quanh trang thứ 60. Xem chú thích dài trong
+     * `src/lib/prisma.ts` để biết vì sao chỗ nghẽn nằm ở pooler chứ không ở
+     * Prisma.
+     *
+     * Đây là nửa thứ hai của cùng một phép chữa: `prisma.ts` hạ số kết nối mỗi
+     * worker, còn chỗ này hạ số worker chạy cùng lúc. Chỉ làm một trong hai thì
+     * tổng tải vẫn có thể vượt pooler khi máy build có nhiều nhân hơn.
+     *
+     * Build lâu hơn. Đổi lại nó chạy xong.
+     */
+    staticGenerationMaxConcurrency: 4,
+
+    /**
+     * Thử lại 2 lần trước khi bỏ cuộc trên một trang.
+     *
+     * Hết pool là lỗi NHẤT THỜI: chờ một nhịp rồi gọi lại thì gần như luôn
+     * được. Mặc định Next dừng cả build ngay ở trang đầu tiên hỏng, nên một cú
+     * nghẽn thoáng qua giết luôn bản triển khai. Ba lần thử không giấu được
+     * lỗi thật — hỏng thật thì hỏng cả ba.
+     */
+    staticGenerationRetryCount: 2,
   },
   serverExternalPackages: ["@prisma/client", "bcryptjs"],
   /**
