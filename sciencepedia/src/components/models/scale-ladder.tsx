@@ -125,7 +125,10 @@ export async function ScaleLadder({ current }: { current: string }) {
           );
 
           return (
-            <li key={rung.id} className="flex min-w-0">
+            // Dưới sm `li` cũng là item của hàng cuộn: thiếu `shrink-0` thì nó
+            // bị ép co trong khi thẻ con giữ 15rem — thẻ tràn ra ngoài ô và đè
+            // lên thẻ kế bên. `min-w-0` chỉ đúng từ sm, khi `li` thành ô lưới.
+            <li key={rung.id} className="flex shrink-0 sm:min-w-0 sm:shrink">
               {rung.href ? (
                 <Link
                   href={rung.href}
