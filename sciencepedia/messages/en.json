@@ -49,6 +49,8 @@
     "emailTaken": "That email is already in use.",
     "profile": "Profile",
     "myBookmarks": "Saved",
+    "myComments": "Comments",
+    "joined": "Joined",
     "bookmarksEmpty": "You have not saved any articles yet",
     "bookmarksEmptyHint": "Tap “Bookmark” at the top of any article to read it later.",
     "showPassword": "Show password",
