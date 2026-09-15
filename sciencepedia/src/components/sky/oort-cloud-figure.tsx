@@ -111,8 +111,13 @@ export function OortCloudFigure() {
         <DialogTitle className="text-base font-semibold">
           {t("oortTitle")}
         </DialogTitle>
+        {/* Nghĩa của AU lặp lại ở đây, dù trang đã có một bản ngay dưới chú
+            giải. Hộp thoại phủ kín màn hình nên phần giải thích ngoài kia bị
+            che hoàn toàn — mà đây lại đúng là chỗ người xem soi kỹ sáu con số
+            AU trên hình. Bắt họ đóng hộp thoại để tra nghĩa một đơn vị rồi mở
+            lại là bắt họ mất chỗ đang xem. */}
         <DialogDescription className="text-xs leading-relaxed text-white/60">
-          {t("oortScaleNote")}
+          {t("oortAu")} {t("oortScaleNote")}
         </DialogDescription>
 
         <OortCloudDiagram className="mx-auto w-full max-w-[68svh]" />

@@ -537,6 +537,7 @@
     "oortLead": "An icy shell wrapped around the whole Solar System, the source of long-period comets. This is a DIAGRAM, not a photograph: the Oort Cloud has never been observed directly. Its position is inferred from the orbits of long-period comets — Jan Oort proposed it in 1950 after noticing they all fall in from similar distances.",
     "oortScaleNote": "LOGARITHMIC scale, not true proportion. Each ring is ten times the last. At true scale the orbits of all eight planets would be a single invisible dot at the centre — which is exactly what 100,000 AU means.",
     "oortInner": "The Hills cloud, inner region — roughly 2,000 to 20,000 AU",
+    "oortAu": "AU stands for astronomical unit — roughly the mean Earth–Sun distance, about 149.6 million km. Light takes a little over eight minutes to cross it.",
     "oortOuter": "The outer cloud — out to roughly 100,000 AU, about 1.5 light-years",
     "oortKuiper": "The Kuiper Belt — 30 to 50 AU, where Pluto and Eris orbit",
     "oortUnknown": "The boundaries drawn here are estimates, and uncertain ones, because no direct measurement exists.",

@@ -178,7 +178,17 @@ export function AladinCanvas({
    *
    * Bản đầu đặt 0,55 (9 độ mỗi giây, một vòng 40 giây) và nó quá nhanh để
    * làm việc mà chuyển động này sinh ra: nhìn kỹ một vùng bề mặt khi nó đi
-   * qua. Hai phút thì đủ chậm để dừng lại bằng mắt mà vẫn thấy rõ là đang quay.
+   * qua. Rồi 0,18 (3 độ mỗi giây, một vòng hai phút) — vẫn bị báo là nhanh.
+   *
+   * Nay 0,11: 1,8 độ mỗi giây, một vòng hơn ba phút. Lý do hai lần trước đều
+   * hụt là vì tôi đo "có thấy nó quay không", còn người xem đo "có kịp nhìn
+   * một vết đen từ lúc nó hiện ra ở rìa tới lúc vào giữa không". Vế sau đòi
+   * chậm hơn hẳn, và ở mức này thì một điểm trên xích đạo mất chừng 50 giây
+   * để đi từ rìa vào tâm — đủ để nhìn, và vẫn đủ nhanh để không ai tưởng
+   * hình đứng yên.
+   *
+   * Quả cầu R3F ở `globe-scene.tsx` chỉnh cùng đợt và cùng tỉ lệ, để hai
+   * đường vào khác nhau của cùng một thiên thể không quay hai tốc độ.
    */
   /**
    * Cờ "người xem vừa chạm vào khung".
@@ -213,7 +223,7 @@ export function AladinCanvas({
     /** Vĩ độ giữ nguyên: quay quanh trục, không trôi lên xuống. */
     let latitude = 0;
 
-    const STEP_AT_FULL_DISC = 0.18;
+    const STEP_AT_FULL_DISC = 0.11;
 
     touchedRef.current = false;
 

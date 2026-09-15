@@ -163,6 +163,21 @@ export default async function SpaceMapPage({
               </li>
             </ul>
 
+            {/* AU được giải nghĩa NGAY DƯỚI chú giải, không đẩy xuống cuối.
+
+                Cả ba dòng chú giải và cả sáu nhãn trên hình đều đo bằng AU,
+                nên người chưa biết đơn vị ấy thì ba dòng trên là ba con số
+                không có nghĩa. Đặt lời giải thích sau chỗ dùng đầu tiên thì
+                nó tới đúng lúc người đọc vừa gặp thắc mắc; đẩy xuống cuối
+                khối là để họ đọc xong rồi mới được biết mình vừa đọc gì.
+
+                Kèm mốc "hơn tám phút ánh sáng" vì một con số kilômét chín chữ
+                số không hình dung được — mà thời gian ánh sáng thì có, và nó
+                nối thẳng với cách trang này mô tả các khoảng cách khác. */}
+            <p className="text-sm leading-relaxed text-muted-foreground">
+              {t("oortAu")}
+            </p>
+
             <p className="rounded-2xl border border-accent/25 bg-accent/[0.06] p-4 text-sm leading-relaxed">
               {t("oortScaleNote")}
             </p>

@@ -127,7 +127,19 @@ function Atmosphere({
  *
  * Mây giữ nguyên tỉ lệ 0,75 so với bề mặt, để chúng vẫn trôi tương đối.
  */
-const SURFACE_SPIN = 0.06;
+/*
+ * Hạ từ 0,06 xuống 0,036 (3,4°/s → 2,1°/s, một vòng gần ba phút).
+ *
+ * Con số cũ chọn theo tiêu chí "thấy rõ là đang sống" — đúng cho một quả cầu
+ * nhỏ cạnh khối chữ ở hero. Nhưng cùng hằng số này chạy cả ở chế độ xem toàn
+ * màn hình, nơi quả cầu rộng gần bằng chiều cao cửa sổ: cùng một vận tốc góc
+ * thành ra tốc độ TRÔI TRÊN MÀN HÌNH lớn hơn nhiều, và ở đó người xem đang cố
+ * nhìn kỹ một vùng bề mặt chứ không liếc qua.
+ *
+ * Giảm cùng tỉ lệ với `STEP_AT_FULL_DISC` bên `aladin-canvas.tsx`, để cùng
+ * một thiên thể không quay hai tốc độ khác nhau tuỳ đường vào.
+ */
+const SURFACE_SPIN = 0.036;
 const CLOUD_SPIN = SURFACE_SPIN * 0.75;
 
 function Body({ body, spinning }: { body: GlobeBody; spinning: boolean }) {

@@ -1,8 +1,16 @@
 import { PrismaClient, Role } from "@prisma/client";
 import bcrypt from "bcryptjs";
 
-import { cosmosArticles, cosmosCategories, cosmosTags } from "./seed-data/cosmos";
-import { healthArticles, healthCategories, healthTags } from "./seed-data/health";
+import {
+  cosmosArticles,
+  cosmosCategories,
+  cosmosTags,
+} from "./seed-data/cosmos";
+import {
+  healthArticles,
+  healthCategories,
+  healthTags,
+} from "./seed-data/health";
 import { otherArticles, otherCategories, otherTags } from "./seed-data/other";
 import { vacaArticles } from "./seed-data/vaca";
 import type { SeedArticle } from "./seed-data/types";
@@ -68,8 +76,9 @@ async function main() {
   console.log("→ Bắt đầu seed Sciencepedia");
 
   // ---------------------------------------------------------------- Người dùng
-  const email = (process.env.SEED_ADMIN_EMAIL ?? "admin@sciencepedia.dev")
-    .toLowerCase();
+  const email = (
+    process.env.SEED_ADMIN_EMAIL ?? "admin@sciencepedia.dev"
+  ).toLowerCase();
   const password = process.env.SEED_ADMIN_PASSWORD ?? "Admin@12345";
 
   const admin = await prisma.user.upsert({
@@ -79,7 +88,11 @@ async function main() {
       email,
       name: "Ban biên tập Sciencepedia",
       role: Role.ADMIN,
-      bio: "Tài khoản quản trị được tạo bởi script seed.",
+      /* Tiểu sử này HIỆN RA trang Hồ sơ, nên nó phải nói với người đọc chứ
+         không phải với người chạy script. Câu cũ — "Tài khoản quản trị được
+         tạo bởi script seed" — mô tả cách hàng dữ liệu ra đời, một chi tiết
+         vận hành lọt thẳng lên giao diện. */
+      bio: "Sciencepedia – bách khoa toàn thư khoa học, nơi kiến thức chính xác được kể lại một cách đẹp đẽ và dễ hiểu.",
       passwordHash: await bcrypt.hash(password, 12),
     },
   });
@@ -242,9 +255,8 @@ async function main() {
   // ---------------------------------------------------------------- Meilisearch
   if (process.env.MEILISEARCH_HOST) {
     try {
-      const { ensureIndex, articlesIndex, toDocument } = await import(
-        "../src/lib/meili"
-      );
+      const { ensureIndex, articlesIndex, toDocument } =
+        await import("../src/lib/meili");
       await ensureIndex();
 
       const published = await prisma.article.findMany({
