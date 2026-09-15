@@ -68,7 +68,17 @@ export default async function ProfilePage({
 
           Kẻ dọc chỉ từ lg trở lên. Dưới ngưỡng đó thẻ xếp chồng nên đường kẻ
           phải nằm ngang, nếu không nó cắt ngang chỗ không có gì để ngăn. */}
-      <div className="flex flex-col gap-8 rounded-2xl border bg-card p-8 lg:flex-row lg:items-center lg:gap-10">
+      {/* Thẻ chặn ở 64rem, không chạy hết `container-page` (80rem).
+
+          Nội dung của thẻ này là cố định và không nhiều: một avatar, bốn dòng
+          chữ, ba con số. Kéo nó rộng 80rem thì phần thừa không biến thành gì
+          cả — chỉ thành một dải trống dài bên phải, và một thẻ rỗng ruột đọc
+          ra là thẻ thiếu nội dung.
+
+          Căn TRÁI chứ không căn giữa: tiêu đề "Hồ sơ" ngay trên nó căn trái,
+          và khối số liệu kho bên dưới cũng bắt đầu từ mép trái. Căn giữa thẻ
+          này thì nó lệch khỏi cả hai thứ kẹp nó. */}
+      <div className="flex flex-col gap-8 rounded-2xl border bg-card p-8 lg:max-w-5xl lg:flex-row lg:items-center lg:gap-10">
         {/* Khối danh tính KHÔNG nở.
 
             Trước đây nó mang `flex-1`, tức chiếm hết chiều ngang còn lại và
@@ -189,7 +199,14 @@ export default async function ProfilePage({
             chính người dùng chủ động tạo ra, và cũng là màu của nút Lưu bài
             trên trang bài viết. Hai cột kia là số liệu quan sát được nên lấy
             màu `accent`, cùng màu với avatar ngay bên cạnh. */}
-        <dl className="grid shrink-0 grid-cols-3 divide-x border-t pt-6 text-center lg:border-t-0 lg:border-l lg:pt-0 lg:pl-4">
+        {/* `lg:ml-auto` đẩy khối số liệu về mép phải thẻ.
+
+            Đi cùng `lg:max-w-5xl` ở trên chứ không đứng một mình. Ở bề rộng
+            cũ, `ml-auto` sẽ dựng lại đúng khoảng trống giữa hai nhóm mà
+            d05f068 vừa bỏ đi. Khi thẻ đã hẹp, chỗ thừa chỉ còn vài chục
+            pixel — đủ để khối số liệu tựa vào lề phải và cân với avatar ở lề
+            trái, không đủ để thành một vết nứt giữa thẻ. */}
+        <dl className="grid shrink-0 grid-cols-3 divide-x border-t pt-6 text-center lg:ml-auto lg:border-t-0 lg:border-l lg:pt-0 lg:pl-4">
           {[
             {
               label: tAdmin("articles"),
