@@ -152,7 +152,7 @@ export function LibraryStats() {
               className="absolute inset-0 rounded-2xl focus-visible:ring-[3px] focus-visible:ring-ring/40 focus-visible:outline-none"
             />
 
-            <div className="flex min-w-0 items-center gap-4">
+            <div className="flex min-w-0 items-center gap-3.5">
               <span
                 aria-hidden
                 className="flex size-12 shrink-0 items-center justify-center rounded-xl"
@@ -164,7 +164,19 @@ export function LibraryStats() {
               {/* `flex-col-reverse` để MÃ đúng thứ tự ngữ nghĩa (dt trước
                     dd) mà MẮT vẫn thấy con số trước nhãn. */}
               <div className="flex min-w-0 flex-col-reverse">
-                <dt className="mt-1 truncate text-sm text-muted-foreground">
+                {/* KHÔNG `truncate`.
+
+                    Nhãn vốn cắt được vì thẻ chỉ có icon và con số, còn thừa
+                    chỗ. Từ khi thêm nút mũi tên, cột chữ hẹp đi chừng 48px
+                    (nút 32 cộng khoảng cách) và "Lĩnh vực nghiên cứu" cụt
+                    thành "Lĩnh vực nghiên c…" ở bốn cột trên màn rộng.
+
+                    Cho xuống dòng thay vì cắt: lưới đã kéo các thẻ cùng hàng
+                    bằng nhau nên một nhãn hai dòng chỉ làm cả hàng cao thêm
+                    một dòng, không làm vỡ bố cục. Cắt chữ thì mất thông tin,
+                    và mất đúng chữ nói thẻ này đếm cái gì. Bản tiếng Anh còn
+                    dài hơn, nên đây không phải chuyện chỉnh riêng một nhãn. */}
+                <dt className="mt-1 text-sm leading-snug text-muted-foreground">
                   {figure.label}
                 </dt>
                 <dd>
