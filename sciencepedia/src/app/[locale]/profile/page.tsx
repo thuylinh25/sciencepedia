@@ -155,30 +155,56 @@ export default async function ProfilePage({
 
             Nhãn dưới con số vẫn giữ — icon một mình thì mơ hồ, nhất là dấu
             trang với bình luận. Nhưng icon đứng trên cho người lướt nhận ra
-            cột nào là cột nào mà không phải đọc ba nhãn cỡ chữ nhỏ. */}
-        <dl className="grid shrink-0 grid-cols-3 gap-6 border-t pt-6 text-center lg:gap-8 lg:border-t-0 lg:border-l lg:pt-0 lg:pl-10">
+            cột nào là cột nào mà không phải đọc ba nhãn cỡ chữ nhỏ.
+
+            ## Vạch ngăn giữa các cột, không phải khoảng trắng
+
+            Ba cột trước đây chỉ cách nhau bằng `gap`. Ba con số một chữ số
+            nằm giữa ba vùng trống rộng thì mắt không nối được số với nhãn cho
+            tới khi đọc — nhất là khi cả ba cùng ngắn và cùng cỡ. `divide-x`
+            kẻ một đường mảnh giữa hai cột liền nhau, rẻ hơn nhiều so với nới
+            rộng khoảng cách và không làm khối này phình ra.
+
+            Khoảng cách chuyển từ `gap` sang `px` trên từng ô: `gap` đẩy vạch
+            lệch khỏi khoảng giữa hai cột, còn padding giữ vạch đúng chính
+            giữa.
+
+            ## Vì sao icon không cùng một màu
+
+            Cả ba trước đây đều vàng, nên chúng đọc ra như ba bản sao của một
+            huy hiệu chứ không như ba thứ khác nhau. Vàng là màu thương hiệu;
+            tô cả ba thì nó thôi trỏ vào cái gì cụ thể.
+
+            Nay chỉ "Đã lưu" giữ vàng — đó là thứ DUY NHẤT trong ba cái do
+            chính người dùng chủ động tạo ra, và cũng là màu của nút Lưu bài
+            trên trang bài viết. Hai cột kia là số liệu quan sát được nên lấy
+            màu `accent`, cùng màu với avatar ngay bên cạnh. */}
+        <dl className="grid shrink-0 grid-cols-3 divide-x border-t pt-6 text-center lg:border-t-0 lg:border-l lg:pt-0 lg:pl-4">
           {[
             {
               label: tAdmin("articles"),
               value: user._count.articles,
               icon: FileText,
+              tint: "text-accent",
             },
             {
               label: t("myBookmarks"),
               value: user._count.bookmarks,
               icon: Bookmark,
+              tint: "text-primary-strong",
             },
             {
               label: t("myComments"),
               value: user._count.comments,
               icon: MessageCircle,
+              tint: "text-accent",
             },
           ].map((item) => (
-            <div key={item.label} className="flex flex-col items-center">
-              <item.icon
-                aria-hidden
-                className="size-5 text-primary-strong/70"
-              />
+            <div
+              key={item.label}
+              className="flex flex-col items-center px-5 lg:px-6"
+            >
+              <item.icon aria-hidden className={`size-6 ${item.tint}`} />
               <dd className="mt-2 font-display text-3xl font-bold tabular-nums">
                 {item.value}
               </dd>

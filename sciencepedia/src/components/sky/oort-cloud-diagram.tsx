@@ -99,6 +99,32 @@ export function OortCloudDiagram({ className }: { className?: string }) {
       {/* Vỏ cầu ngoài */}
       <circle cx={CX} cy={CY} r={radius(100_000)} fill="url(#oort-shell)" />
 
+      {/*
+        Nền của hai vùng, vẽ TRƯỚC hạt băng để hạt nổi lên trên.
+
+        Xem chú thích ở khối đường biên bên dưới để biết vì sao phải có hai
+        dải này. Đặt ở đây vì thứ tự vẽ quyết định: nếu nằm sau nhóm hạt băng
+        thì lớp mờ phủ lên chính các hạt, làm nhạt đi thứ nó đang làm nền.
+      */}
+      <circle
+        cx={CX}
+        cy={CY}
+        r={(radius(20_000) + radius(100_000)) / 2}
+        stroke="#bae6fd"
+        strokeOpacity="0.07"
+        strokeWidth={radius(100_000) - radius(20_000)}
+        fill="none"
+      />
+      <circle
+        cx={CX}
+        cy={CY}
+        r={(radius(2_000) + radius(20_000)) / 2}
+        stroke="#7dd3fc"
+        strokeOpacity="0.12"
+        strokeWidth={radius(20_000) - radius(2_000)}
+        fill="none"
+      />
+
       {/* Vạch chia loga */}
       {TICKS.map((au) => (
         <g key={au}>
@@ -163,13 +189,35 @@ export function OortCloudDiagram({ className }: { className?: string }) {
         ))}
       </g>
 
-      {/* Đám Hills — phần trong, đặc hơn */}
+      {/*
+        Ba vùng trong chú giải phải đọc ra là ba VÙNG trên hình.
+
+        Trước đây chỉ Vành đai Kuiper có hình dạng — nó là một dải dày. Đám
+        Hills chỉ có hai đường tròn mảnh ở 2.000 và 20.000 AU, còn Đám ngoài
+        thì không có đường nào cả, chỉ là chỗ các hạt băng thưa dần. Người đọc
+        nhìn chú giải rồi nhìn hình thì không chỉ ra được hai vùng ấy nằm đâu —
+        và đã báo đúng như vậy.
+
+        Dựng bằng ĐÚNG kỹ thuật của dải Kuiper: một đường tròn ở bán kính giữa
+        vùng, `strokeWidth` bằng bề dày vùng. Rẻ hơn hẳn so với `<path>` hình
+        vành khăn hay `<mask>`, và bề dày tự đúng theo thang loga vì cả hai
+        bán kính đều đi qua `radius()`.
+
+        Độ mờ rất thấp: đây là nền cho các hạt băng chứ không phải hình chính.
+        Vùng ngoài mờ hơn vùng trong, đúng theo mật độ thật — và cũng để hai
+        dải chồng nhau không cộng thành một mảng đặc.
+
+        Vẫn giữ hai đường biên mảnh, nay rõ hơn (0,55 thay vì 0,35): dải cho
+        biết vùng NẰM ĐÂU, đường biên cho biết nó BẮT ĐẦU và KẾT THÚC ở con số
+        nào trên thang chia.
+      */}
+      {/* Đám Hills — hai đường biên của phần trong */}
       <circle
         cx={CX}
         cy={CY}
         r={radius(20_000)}
         stroke="#7dd3fc"
-        strokeOpacity="0.35"
+        strokeOpacity="0.55"
         strokeWidth="1"
         fill="none"
       />
@@ -178,7 +226,7 @@ export function OortCloudDiagram({ className }: { className?: string }) {
         cy={CY}
         r={radius(2_000)}
         stroke="#7dd3fc"
-        strokeOpacity="0.35"
+        strokeOpacity="0.55"
         strokeWidth="1"
         fill="none"
       />
