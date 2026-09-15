@@ -1,5 +1,13 @@
 import { getLocale, getTranslations } from "next-intl/server";
-import { Mail } from "lucide-react";
+import {
+  ArrowRight,
+  BookOpen,
+  FileText,
+  FlaskConical,
+  Mail,
+  Send,
+  Settings,
+} from "lucide-react";
 
 import { Link } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
@@ -85,11 +93,38 @@ export async function SiteFooter() {
     { href: "/contact", label: t("contact") },
   ] as const;
 
-  const linkClass =
-    "text-sm leading-7 text-muted-foreground transition-colors hover:text-primary-strong hover:underline hover:underline-offset-4";
+  /* Mỗi liên kết là một HÀNG có mũi tên đẩy về mép phải, không còn là một
+     dòng chữ trần.
 
+     Mũi tên hiện sẵn ở độ mờ thấp chứ không chỉ hiện khi rê chuột: trên điện
+     thoại không có trạng thái rê, nên một dấu hiệu "bấm được" chỉ xuất hiện
+     lúc hover là dấu hiệu không tồn tại với quá nửa người dùng. Khi rê thì nó
+     đậm lên và trượt sang phải một chút — đủ để xác nhận, không đủ để làm
+     hàng chữ nhảy.
+
+     Bỏ gạch chân khi hover: bốn cột liên kết nay đã có mũi tên làm dấu hiệu,
+     thêm gạch chân nữa là hai tín hiệu cho cùng một việc, và gạch chân kéo
+     chiều cao dòng lệch khỏi lưới. */
+  const linkClass =
+    "group flex items-center justify-between gap-4 text-sm leading-7 text-muted-foreground transition-colors hover:text-primary-strong";
+
+  const linkArrow = (
+    <ArrowRight
+      aria-hidden
+      className="size-3.5 shrink-0 text-muted-foreground/35 transition-all group-hover:translate-x-0.5 group-hover:text-primary-strong"
+    />
+  );
+
+  /* Icon đứng trước tiêu đề cột.
+
+     Bốn tiêu đề đều là chữ hoa cỡ nhỏ giãn ký tự — đọc ra rất giống nhau, nên
+     mắt phải đọc HẾT chữ mới phân biệt được cột. Một hình ở đầu mỗi tiêu đề
+     cho người quay lại nhận ra cột mình cần trước khi đọc. Cùng lý do đã cho
+     cột "Công cụ" icon riêng từng mục. */
   const headingClass =
-    "text-xs font-semibold tracking-widest text-foreground/80 uppercase";
+    "flex items-center gap-2 text-xs font-semibold tracking-widest text-foreground/80 uppercase";
+
+  const headingIconClass = "size-4 shrink-0 text-primary-strong/70";
 
   return (
     /* Lề trên 96px → 56px (72px từ sm).
@@ -150,8 +185,27 @@ export async function SiteFooter() {
                 dụng thư, nên họ không bao giờ đọc được địa chỉ để chép đi nơi
                 khác. Một dòng liên hệ có thật là thứ phân biệt một tổ chức với
                 một trang cá nhân. */}
-            <div className="mt-8">
-              <p className={headingClass}>{t("contactTitle")}</p>
+            {/* Đường kẻ trên khối liên hệ.
+
+                Khối này là thứ DUY NHẤT trong cột trái mời người ta làm một
+                việc, nhưng nó đứng ngay sau đoạn mô tả nên đọc liền thành một
+                mạch. Một đường kẻ mảnh tách nó ra mà không cần thêm khoảng
+                trống — cột trái đã cao bằng bốn cột liên kết bên phải, nới
+                thêm nữa là footer dài hơn nội dung nó đỡ. */}
+            <div className="mt-8 border-t pt-6">
+              <div className="flex items-center gap-3">
+                {/* Huy hiệu tròn: cột trái không có icon nào khác, nên tiêu đề
+                    "LIÊN HỆ" trơ ra so với bốn tiêu đề cột bên phải vốn đã có
+                    hình. Đây là thứ kéo nó về cùng một ngôn ngữ thị giác. */}
+                <span
+                  aria-hidden
+                  className="flex size-10 shrink-0 items-center justify-center rounded-full border bg-card/50 text-primary-strong"
+                >
+                  <Send className="size-4" />
+                </span>
+                <p className={headingClass}>{t("contactTitle")}</p>
+              </div>
+
               <a
                 href={`mailto:${CONTACT_EMAIL}`}
                 className="mt-3 inline-flex items-center gap-2.5 rounded-full border px-4 py-2 text-sm font-medium transition-all hover:border-accent hover:text-accent hover:shadow-[0_0_18px_-4px_var(--color-accent)]"
@@ -163,12 +217,16 @@ export async function SiteFooter() {
           </div>
 
           <nav aria-label={t("explore")}>
-            <h2 className={headingClass}>{t("explore")}</h2>
+            <h2 className={headingClass}>
+              <BookOpen aria-hidden className={headingIconClass} />
+              {t("explore")}
+            </h2>
             <ul className="mt-4 space-y-1">
               {explore.map((item) => (
                 <li key={item.href}>
                   <Link href={item.href} className={linkClass}>
-                    {item.label}
+                    <span>{item.label}</span>
+                    {linkArrow}
                   </Link>
                 </li>
               ))}
@@ -183,12 +241,16 @@ export async function SiteFooter() {
               chứ không nằm dưới chúng. */}
           {fields.length > 0 && (
             <nav aria-label={t("fields")}>
-              <h2 className={headingClass}>{t("fields")}</h2>
+              <h2 className={headingClass}>
+                <FlaskConical aria-hidden className={headingIconClass} />
+                {t("fields")}
+              </h2>
               <ul className="mt-4 space-y-1">
                 {fields.map((item) => (
                   <li key={item.href}>
                     <Link href={item.href} className={linkClass}>
-                      {item.label}
+                      <span>{item.label}</span>
+                      {linkArrow}
                     </Link>
                   </li>
                 ))}
@@ -197,19 +259,25 @@ export async function SiteFooter() {
           )}
 
           <nav aria-label={t("tools")}>
-            <h2 className={headingClass}>{t("tools")}</h2>
+            <h2 className={headingClass}>
+              <Settings aria-hidden className={headingIconClass} />
+              {t("tools")}
+            </h2>
             <ul className="mt-4 space-y-1">
               {tools.map((item) => (
                 <li key={item.href}>
-                  <Link
-                    href={item.href}
-                    className={`${linkClass} flex items-center gap-2.5`}
-                  >
-                    <item.icon
-                      className="size-4 shrink-0 text-primary-strong/70"
-                      aria-hidden
-                    />
-                    {item.label}
+                  <Link href={item.href} className={linkClass}>
+                    {/* Cột này có icon riêng từng mục, nên nhãn phải bọc
+                        chung với icon trong MỘT khối — để `justify-between`
+                        đẩy mũi tên ra mép chứ không xé icon khỏi chữ. */}
+                    <span className="flex min-w-0 items-center gap-2.5">
+                      <item.icon
+                        className="size-4 shrink-0 text-primary-strong/70"
+                        aria-hidden
+                      />
+                      {item.label}
+                    </span>
+                    {linkArrow}
                   </Link>
                 </li>
               ))}
@@ -217,12 +285,16 @@ export async function SiteFooter() {
           </nav>
 
           <nav aria-label={t("legal")}>
-            <h2 className={headingClass}>{t("legal")}</h2>
+            <h2 className={headingClass}>
+              <FileText aria-hidden className={headingIconClass} />
+              {t("legal")}
+            </h2>
             <ul className="mt-4 space-y-1">
               {legal.map((item) => (
                 <li key={item.href}>
                   <Link href={item.href} className={linkClass}>
-                    {item.label}
+                    <span>{item.label}</span>
+                    {linkArrow}
                   </Link>
                 </li>
               ))}

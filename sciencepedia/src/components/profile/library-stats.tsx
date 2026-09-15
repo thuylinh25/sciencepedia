@@ -3,8 +3,9 @@
 import { useEffect, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { useSession } from "next-auth/react";
-import { Compass, FileText, Layers, Tags } from "lucide-react";
+import { ArrowRight, Compass, FileText, Layers, Tags } from "lucide-react";
 
+import { Link } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
 import { atLeast } from "@/lib/roles";
 import { formatMeasure } from "@/lib/utils";
@@ -78,26 +79,42 @@ export function LibraryStats() {
   /* Mỗi ô một màu nhận dạng riêng, đặt trên ô icon chứ KHÔNG trên con số:
      bốn phép đếm cùng loại, tô mỗi số một màu sẽ ngụ ý chúng khác hạng nhau.
      Bốn màu này trùng bảng màu đã dùng cho thẻ công cụ ở trang chủ. */
+  /* Mỗi thẻ dẫn tới trang LIỆT KÊ đúng thứ nó đang đếm. Một con số không bấm
+     được thì chỉ là một con số; bấm được thì nó thành lối vào.
+
+     "Công cụ tương tác" là ngoại lệ và cần nói rõ: site không có trang liệt kê
+     công cụ, nên nó dẫn về /models — trang gần nhất, nhưng /models chỉ trưng
+     ba mô hình 3D trong khi con số đếm năm công cụ. Muốn hai thứ khớp nhau thì
+     phải dựng một trang /tools thật, chưa làm ở đây. */
   const figures = [
     {
       n: stats.articles,
       label: t("statArticles"),
       icon: FileText,
       tint: "#3b82f6",
+      href: "/articles",
     },
     {
       n: INTERACTIVE_TOOL_COUNT,
       label: t("statTools"),
       icon: Compass,
       tint: "#10b981",
+      href: "/models",
     },
     {
       n: stats.categories,
       label: t("statFields"),
       icon: Layers,
       tint: "#8b5cf6",
+      href: "/categories",
     },
-    { n: stats.tags, label: t("statTopics"), icon: Tags, tint: "#f59e0b" },
+    {
+      n: stats.tags,
+      label: t("statTopics"),
+      icon: Tags,
+      tint: "#f59e0b",
+      href: "/tags",
+    },
   ].map((figure) => ({ ...figure, value: formatMeasure(figure.n, locale) }));
 
   /* Không còn `border-b` và `container-page` như hồi ở footer: khối này giờ
@@ -114,11 +131,27 @@ export function LibraryStats() {
 
       <dl className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {figures.map((figure) => (
+          /* Liên kết PHỦ thẻ chứ không bọc thẻ.
+
+             `<dl>` chỉ nhận `dt`, `dd` và `div` làm con trực tiếp — đặt một
+             `<a>` ở đó là HTML sai, và trình đọc màn hình mất luôn quan hệ
+             thuật ngữ–định nghĩa giữa nhãn và con số. Nên thẻ vẫn là `div`,
+             còn liên kết trải kín bằng `absolute inset-0`: cả thẻ vẫn bấm
+             được, cấu trúc `dl` vẫn đúng.
+
+             Mũi tên chỉ là hình, `aria-hidden` — tên của liên kết lấy từ
+             `aria-label`, vì chữ trong thẻ nằm ngoài thẻ `<a>`. */
           <div
             key={figure.label}
-            className="group rounded-2xl border bg-card/50 p-5 transition-colors hover:border-primary/40"
+            className="group relative flex items-center justify-between gap-4 rounded-2xl border bg-card/50 p-5 transition-colors focus-within:border-primary/40 hover:border-primary/40"
           >
-            <div className="flex items-center gap-4">
+            <Link
+              href={figure.href}
+              aria-label={figure.label}
+              className="absolute inset-0 rounded-2xl focus-visible:ring-[3px] focus-visible:ring-ring/40 focus-visible:outline-none"
+            />
+
+            <div className="flex min-w-0 items-center gap-4">
               <span
                 aria-hidden
                 className="flex size-12 shrink-0 items-center justify-center rounded-xl"
@@ -142,6 +175,13 @@ export function LibraryStats() {
                 </dd>
               </div>
             </div>
+
+            <span
+              aria-hidden
+              className="flex size-8 shrink-0 items-center justify-center rounded-full border bg-background/40 text-muted-foreground transition-all group-hover:translate-x-0.5 group-hover:border-primary/40 group-hover:text-primary-strong"
+            >
+              <ArrowRight className="size-4" />
+            </span>
           </div>
         ))}
       </dl>
