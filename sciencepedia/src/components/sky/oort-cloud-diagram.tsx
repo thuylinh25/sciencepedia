@@ -121,12 +121,24 @@ export function OortCloudDiagram({ className }: { className?: string }) {
               Đây không phải chi tiết trang trí co được. Sáu con số này là thứ
               duy nhất giữ cho thang loga không nói dối — bỏ chúng đi thì đám mây
               trông gần hơn thực tế mấy bậc. Xem khối chú thích đầu tệp. */}
+          {/* Độ mờ 0,9 chứ không phải 0,75.
+
+              CẢ SÁU nhãn đều bắt đầu bằng chữ số `1` (1 · 10 · 100 · 1.000 ·
+              10.000 · 100.000), mà `1` là glyph mảnh nhất của bộ mono: chỉ một
+              nét đứng, không có phần cong nào đỡ. Ở cỡ hiển thị nhỏ trên điện
+              thoại, nét ấy mỏng hơn một điểm ảnh và khử răng cưa pha nó vào nền
+              #04060e cho tới khi biến mất — người dùng báo là "mất số đầu
+              tiên", và đúng là mất, ở cả sáu dòng cùng lúc.
+
+              0,75 hợp lý khi nhãn chỉ cần lùi sau hình. Nhưng thứ dễ mất nhất ở
+              đây lại là chữ số hàng cao nhất, tức chữ số mang toàn bộ bậc độ
+              lớn — mất nó thì 100.000 đọc thành 00.000. Đánh đổi sai hướng. */}
           <text
             x={CX + 6}
             y={CY - radius(au) - 7}
             className="fill-current font-mono"
             fontSize="18"
-            opacity="0.75"
+            opacity="0.9"
           >
             {au.toLocaleString("vi-VN")} AU
           </text>

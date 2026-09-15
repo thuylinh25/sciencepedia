@@ -77,7 +77,22 @@ export function OortCloudFigure() {
         </button>
       </DialogTrigger>
 
-      <DialogContent className="max-h-[calc(100svh-2rem)] max-w-[min(56rem,calc(100vw-2rem))] overflow-y-auto bg-[#04060e] text-white">
+      {/* Lề của hộp thoại phải MỎNG trên điện thoại, nếu không "phóng to" lại
+          làm hình nhỏ đi.
+
+          Đo trên khung 412px: bản nhỏ nằm trong `container-page` (px-5) cộng
+          `p-4` của nút, còn lại 340px cho hình. Hộp thoại mặc định là
+          `w-[calc(100%-2rem)]` cộng `p-6`, chỉ còn 332px — tức nút "Mở rộng"
+          trả về một hình BÉ HƠN hình nó vừa che đi.
+
+          Đó không chỉ là chuyện vô duyên. Sáu nhãn vạch chia đều bắt đầu bằng
+          chữ số `1`, mà `1` là glyph mảnh nhất của bộ mono; ở 332px thì cỡ chữ
+          18 đơn vị rơi xuống 9,96px và nét đứng ấy chìm vào nền — đọc ra đúng
+          như "mất chữ số đầu", dù chuỗi trong DOM vẫn đủ.
+
+          1rem lề và `p-3` cho 372px, hơn bản nhỏ 9%. Nới lại ở sm trở lên vì
+          trên màn rộng thì lề dày là đúng và hình vốn đã đủ to. */}
+      <DialogContent className="max-h-[calc(100svh-2rem)] w-[calc(100%-1rem)] max-w-[min(56rem,calc(100vw-1rem))] overflow-y-auto bg-[#04060e] p-3 text-white sm:w-[calc(100%-2rem)] sm:max-w-[min(56rem,calc(100vw-2rem))] sm:p-6">
         <DialogTitle className="text-base font-semibold">
           {t("oortTitle")}
         </DialogTitle>
