@@ -7,6 +7,7 @@ import { formatDate } from "@/lib/utils";
 import { SectionHeading } from "@/components/section-heading";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
+import { LibraryStats } from "@/components/profile/library-stats";
 
 export const dynamic = "force-dynamic";
 
@@ -84,6 +85,10 @@ export default async function ProfilePage({
           ))}
         </dl>
       </div>
+
+      {/* Số liệu kho — tự ẩn với người không phải quản trị. Đặt ở đây thay vì
+          trong footer: xem chú thích đầu `library-stats.tsx`. */}
+      <LibraryStats />
     </div>
   );
 }

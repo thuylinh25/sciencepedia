@@ -1,21 +1,13 @@
 import { getLocale, getTranslations } from "next-intl/server";
-import {
-  Aperture,
-  Disc3,
-  Mail,
-  Orbit,
-  Scaling,
-  Sparkles,
-  Telescope,
-} from "lucide-react";
+import { Mail } from "lucide-react";
 
 import { Link } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
 import { getRootCategories } from "@/server/queries";
 import { CONTACT_EMAIL } from "@/lib/seo";
+import { SITE_TOOLS } from "@/lib/site-tools";
 import { Logo } from "@/components/layout/logo";
 import { Separator } from "@/components/ui/separator";
-import { FooterStats } from "@/components/layout/footer-stats";
 
 /**
  * Địa chỉ liên hệ, viết một chỗ để dòng chữ và link `mailto:` không lệch nhau.
@@ -79,14 +71,13 @@ export async function SiteFooter() {
    * khác nhau giữa các cột làm hàng chữ so le, còn màu thì phá bảng màu hiện
    * tại. Icon thêm một tầng nhận diện mà không đụng tới hai thứ đó.
    */
-  const tools = [
-    { href: "/solar-system", label: tNav("solarSystem"), icon: Orbit },
-    { href: "/milky-way", label: tNav("milkyWay"), icon: Disc3 },
-    { href: "/universe", label: tNav("universe"), icon: Aperture },
-    { href: "/space-map", label: tNav("spaceMap"), icon: Telescope },
-    { href: "/zoom", label: tNav("zoom"), icon: Scaling },
-    { href: "/assistant", label: tNav("assistant"), icon: Sparkles },
-  ];
+  /* Danh sách nằm ở `@/lib/site-tools` vì trang Hồ sơ cũng đếm nó — xem chú
+     thích `INTERACTIVE_TOOL_COUNT` ở đó. */
+  const tools = SITE_TOOLS.map((tool) => ({
+    href: tool.href,
+    label: tNav(tool.navKey),
+    icon: tool.icon,
+  }));
 
   const legal = [
     { href: "/privacy", label: t("privacy") },
@@ -114,18 +105,16 @@ export async function SiteFooter() {
        ngắn. Nới lại ở sm trở lên vì màn hình rộng chịu được khoảng trống
        lớn hơn trước khi nó đọc ra là thiếu sót. */
     <footer className="mt-14 border-t bg-muted/30 sm:mt-18">
-      {/* Dải số liệu CHỈ hiện với quản trị.
+      {/* Dải số liệu kho KHÔNG còn ở đây.
 
-          Trước đây nó hiện cho mọi người và đứng đầu footer, để trả lời "đây
-          là nền tảng cỡ nào". Chủ sản phẩm quyết định con số kho — 58 bài, 7
-          lĩnh vực — là thông tin vận hành, không phải thông tin cho người đọc.
-          Với một kho đang xây, một dải số nhỏ in ở mọi trang nói về quy mô
-          nhiều hơn là về nội dung.
-
-          Kiểm quyền nằm trong component (và trong API mà nó gọi), không nằm ở
-          đây: footer phải giữ được tính tĩnh cho toàn site. Xem chú thích
-          trong `footer-stats.tsx`. */}
-      <FooterStats toolCount={tools.length - 1} />
+          Nó từng hiện cho mọi người, rồi bị thu về chỉ quản trị, và giờ rời
+          footer hẳn sang trang Hồ sơ (`LibraryStats`). Lý do là cùng một lý do
+          đã thu hẹp nó hai lần trước: con số kho là thông tin vận hành của
+          người quản trị, mà footer thì đứng dưới mọi trang — kể cả những trang
+          mà một dải số liệu không liên quan gì tới thứ người đọc vừa đọc.
+          Trang Hồ sơ là chỗ duy nhất người xem đang chủ động nhìn vào tài
+          khoản của chính mình, nên số liệu vận hành đứng ở đó mới đúng ngữ
+          cảnh. */}
 
       {/* gap-10 → gap-x-12 gap-y-12: cột thưa hơn chừng 20% theo yêu cầu, và
           khoảng cách dọc bằng khoảng cách ngang để lưới không lệch nhịp khi
@@ -287,7 +276,10 @@ export async function SiteFooter() {
                 .map((name, index) => (
                   <li key={name} className="inline">
                     {index > 0 && (
-                      <span aria-hidden className="px-1.5 text-muted-foreground/50">
+                      <span
+                        aria-hidden
+                        className="px-1.5 text-muted-foreground/50"
+                      >
                         •
                       </span>
                     )}
