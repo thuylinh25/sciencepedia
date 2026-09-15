@@ -470,9 +470,14 @@
     "webIntro": "Vũ trụ ở quy mô lớn không phân bố ngẫu nhiên. Hàng trăm tỉ thiên hà tập trung dọc theo các sợi vật chất khổng lồ tạo thành mạng vũ trụ (cosmic web), xen giữa là những khoảng trống rộng lớn gần như không chứa thiên hà."
   },
   "models": {
-    "title": "Mô hình 3D",
-    "subtitle": "Ba bậc thang kích thước, mỗi bậc lớn hơn bậc trước hàng trăm nghìn lần",
+    "title": "Công cụ tương tác",
+    "subtitle": "Năm công cụ để tự xoay, tự phóng và tự đo lấy vũ trụ",
+    "modelsGroup": "Mô hình 3D",
+    "modelsGroupNote": "Ba bậc thang kích thước, mỗi bậc lớn hơn bậc trước hàng trăm nghìn lần",
+    "toolsGroup": "Bản đồ và hành trình",
+    "toolsGroupNote": "Hai công cụ không nằm trên bậc thang: một để đi khắp bầu trời thật, một để đi suốt mọi bậc tỉ lệ trong một mạch",
     "open": "Mở mô hình",
+    "openTool": "Mở công cụ",
     "ladderLead": "Bắt đầu từ những vật thể quen thuộc rồi phóng to dần, để thấy Hệ Mặt Trời nằm ở đâu trong Ngân Hà.",
     "youAreHere": "Bạn đang ở đây",
     "explore": "Khám phá",

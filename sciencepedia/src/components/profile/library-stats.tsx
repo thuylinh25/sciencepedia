@@ -82,10 +82,11 @@ export function LibraryStats() {
   /* Mỗi thẻ dẫn tới trang LIỆT KÊ đúng thứ nó đang đếm. Một con số không bấm
      được thì chỉ là một con số; bấm được thì nó thành lối vào.
 
-     "Công cụ tương tác" là ngoại lệ và cần nói rõ: site không có trang liệt kê
-     công cụ, nên nó dẫn về /models — trang gần nhất, nhưng /models chỉ trưng
-     ba mô hình 3D trong khi con số đếm năm công cụ. Muốn hai thứ khớp nhau thì
-     phải dựng một trang /tools thật, chưa làm ở đây. */
+     "Công cụ tương tác" dẫn về /models, và trang đó liệt kê đủ cả năm — ba mô
+     hình 3D cộng bản đồ bầu trời và hành trình thu phóng. Con số ở đây suy ra
+     từ `SITE_TOOLS`, còn trang kia dựng từ `MODEL_STEPS` + `EXPLORE_TOOLS`;
+     thêm công cụ mới thì phải chạm cả hai chỗ, nếu không con số và trang sẽ
+     lệch nhau. */
   const figures = [
     {
       n: stats.articles,

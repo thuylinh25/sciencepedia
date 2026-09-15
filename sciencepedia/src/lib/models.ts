@@ -73,6 +73,52 @@ export const MODEL_STEPS: ModelStep[] = [
 ];
 
 /**
+ * Hai công cụ tương tác KHÔNG nằm trên bậc thang kích thước.
+ *
+ * ## Vì sao là mảng riêng, không phải `MODEL_STEPS` nới dài ra
+ *
+ * Cùng lý do đã tách `SCALE_RUNGS` ra, chỉ ngược chiều. `MODEL_STEPS` được
+ * SẮP THEO TỈ LỆ, và `modelNeighbours()` lấy phần tử liền trước/liền sau để
+ * dựng liên kết "lùi ra / thu vào" ở cuối mỗi trang mô hình. Nhét Bản đồ bầu
+ * trời vào cuối mảng đó thì trang Vũ trụ mọc ra một liên kết "lùi ra" dẫn tới
+ * bản đồ bầu trời — tức tuyên bố bầu trời lớn hơn vũ trụ. Thứ tự mảng ở đó là
+ * một PHÁT BIỂU về tỉ lệ, không phải một danh sách.
+ *
+ * Hai công cụ này thật sự không có nấc: bản đồ bầu trời là hướng nhìn chứ
+ * không phải kích thước, còn hành trình thu phóng đi qua MỌI nấc nên không
+ * đứng ở nấc nào. Chúng vẫn là công cụ tương tác đầy đủ và được đếm như vậy —
+ * xem `INTERACTIVE_TOOL_COUNT` ở `@/lib/site-tools`.
+ *
+ * Không có `scale`: thẻ của chúng không mang huy hiệu tỉ lệ đánh số, vì đánh
+ * số chúng là đặt chúng lên lại cái thang vừa nói là chúng không thuộc về.
+ */
+export type ExploreTool = {
+  id: string;
+  href: string;
+  /** Khoá namespace gốc chứa `title` và `subtitle` của chính công cụ đó */
+  copyKey: "sky" | "zoom";
+  image: string;
+  color: string;
+};
+
+export const EXPLORE_TOOLS: ExploreTool[] = [
+  {
+    id: "space-map",
+    href: "/space-map",
+    copyKey: "sky",
+    image: "/images/explore/sky-map.jpg",
+    color: "#38bdf8",
+  },
+  {
+    id: "zoom",
+    href: "/zoom",
+    copyKey: "zoom",
+    image: "/images/explore/zoom.jpg",
+    color: "#10b981",
+  },
+];
+
+/**
  * Bậc thang kích thước — bảy nấc từ Mặt Trăng ra tới Ngân Hà.
  *
  * ## Vì sao đây là mảng RIÊNG, không phải `MODEL_STEPS` nới dài ra

@@ -470,9 +470,14 @@
     "webIntro": "On the largest scales the universe is not laid out at random. Hundreds of billions of galaxies gather along vast filaments of matter — the cosmic web — separated by enormous voids that hold almost no galaxies at all."
   },
   "models": {
-    "title": "3D models",
-    "subtitle": "Three rungs of scale, each hundreds of thousands of times larger than the last",
+    "title": "Interactive tools",
+    "subtitle": "Five tools for turning, zooming and measuring the universe yourself",
+    "modelsGroup": "3D models",
+    "modelsGroupNote": "Three rungs of scale, each hundreds of thousands of times larger than the last",
+    "toolsGroup": "Maps and journeys",
+    "toolsGroupNote": "Two tools that sit off the ladder: one to roam the real sky, one to run through every rung of scale in a single pass",
     "open": "Open the model",
+    "openTool": "Open the tool",
     "ladderLead": "Start from familiar objects and zoom out step by step, to see where the Solar System sits inside the Milky Way.",
     "youAreHere": "You are here",
     "explore": "Explore",
