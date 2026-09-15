@@ -767,12 +767,29 @@
  * lại của cửa sổ, thay cho một lớp nền mà CSS không tự thêm phần tử được.
  * Chỉ áp cho bề mặt thiên thể — bản đồ bầu trời không phải hình tròn, khung
  * bẹt ở đó là đúng.
+ *
+ * ## Vì sao khung nhỏ hơn cửa sổ 14%
+ *
+ * `fov: 180` lấp khung VỪA KHÍT, nên khung bằng đúng cửa sổ thì đĩa chạm cả
+ * bốn mép ngay khi mở. Nhìn ra là một quả cầu bị khung bó sát, và người xem
+ * không còn đường nào để thấy nó NHỎ LẠI: Aladin chặn cứng fov ở 180 nên thu
+ * nhỏ bằng thao tác zoom cũng không ra thêm lề.
+ *
+ * Không chữa được bằng fov thì chữa bằng khung. 0,86 để lại một vành đen
+ * chừng 7% mỗi bên — đủ để đọc ra "đây là một vật thể tròn nằm trong không
+ * gian" chứ không phải "một tấm ảnh bị cắt", mà vẫn đủ lớn để chi tiết bề mặt
+ * không mất. Phóng to vẫn chạy bình thường từ mức này.
+ *
+ * `box-shadow` phủ 100vmax nên phần cửa sổ ngoài khung vẫn là nền tối liền
+ * mạch — thu khung lại không để lộ trang phía sau.
  */
 .aladin-body-view .aladin-fullscreen {
-  width: min(100vw, 100vh) !important;
-  height: min(100vw, 100vh) !important;
-  left: calc(50vw - min(100vw, 100vh) / 2) !important;
-  top: calc(50vh - min(100vw, 100vh) / 2) !important;
+  --aladin-body-frame: calc(min(100vw, 100vh) * 0.86);
+
+  width: var(--aladin-body-frame) !important;
+  height: var(--aladin-body-frame) !important;
+  left: calc(50vw - var(--aladin-body-frame) / 2) !important;
+  top: calc(50vh - var(--aladin-body-frame) / 2) !important;
   box-shadow: 0 0 0 100vmax #04060e;
 }
 
