@@ -92,7 +92,22 @@ export function OortCloudFigure() {
 
           1rem lề và `p-3` cho 372px, hơn bản nhỏ 9%. Nới lại ở sm trở lên vì
           trên màn rộng thì lề dày là đúng và hình vốn đã đủ to. */}
-      <DialogContent className="max-h-[calc(100svh-2rem)] w-[calc(100%-1rem)] max-w-[min(56rem,calc(100vw-1rem))] overflow-y-auto bg-[#04060e] p-3 text-white sm:w-[calc(100%-2rem)] sm:max-w-[min(56rem,calc(100vw-2rem))] sm:p-6">
+      {/* Hộp thoại này mở KHÔNG kèm hiệu ứng phóng.
+
+          `DialogContent` mặc định vào bằng `zoom-in-95`, tức một transform
+          scale chạy từ 0,95 lên 1. Với nội dung chữ thường thì vô hại, nhưng
+          nội dung ở đây là chữ trong SVG: trình duyệt raster hoá lớp đó MỘT
+          LẦN, và nếu nó raster đúng lúc lớp còn ở 0,95 thì bản ảnh ấy được
+          dùng lại cho cả scale 1. Sáu nhãn vạch chia đều mở đầu bằng chữ số
+          `1`, mà `1` chỉ là một nét đứng rộng chưa tới một điểm ảnh ở cỡ hiển
+          thị này — nó là thứ đầu tiên rụng khỏi bản raster.
+
+          Đó là lý do lỗi có vẻ thất thường và "refresh thì lại đủ": nó phụ
+          thuộc thời điểm raster rơi vào đâu trong hiệu ứng, chứ không phụ
+          thuộc kích thước hay độ tương phản. Bỏ scale đi thì không còn khoảnh
+          khắc nào để raster nhầm. Hiệu ứng mờ dần vẫn giữ — nó không đụng tới
+          transform nên không gây raster lại. */}
+      <DialogContent className="max-h-[calc(100svh-2rem)] w-[calc(100%-1rem)] max-w-[min(56rem,calc(100vw-1rem))] overflow-y-auto bg-[#04060e] p-3 text-white data-[state=closed]:zoom-out-100 data-[state=open]:zoom-in-100 sm:w-[calc(100%-2rem)] sm:max-w-[min(56rem,calc(100vw-2rem))] sm:p-6">
         <DialogTitle className="text-base font-semibold">
           {t("oortTitle")}
         </DialogTitle>

@@ -125,14 +125,18 @@ export function OortCloudDiagram({ className }: { className?: string }) {
 
               CẢ SÁU nhãn đều bắt đầu bằng chữ số `1` (1 · 10 · 100 · 1.000 ·
               10.000 · 100.000), mà `1` là glyph mảnh nhất của bộ mono: chỉ một
-              nét đứng, không có phần cong nào đỡ. Ở cỡ hiển thị nhỏ trên điện
-              thoại, nét ấy mỏng hơn một điểm ảnh và khử răng cưa pha nó vào nền
-              #04060e cho tới khi biến mất — người dùng báo là "mất số đầu
-              tiên", và đúng là mất, ở cả sáu dòng cùng lúc.
+              nét đứng, không có phần cong nào đỡ. Nó cũng là chữ số mang toàn
+              bộ bậc độ lớn — mất nó thì 100.000 đọc thành 00.000, tức nhãn nói
+              sai chứ không phải khó đọc.
 
-              0,75 hợp lý khi nhãn chỉ cần lùi sau hình. Nhưng thứ dễ mất nhất ở
-              đây lại là chữ số hàng cao nhất, tức chữ số mang toàn bộ bậc độ
-              lớn — mất nó thì 100.000 đọc thành 00.000. Đánh đổi sai hướng. */}
+              0,75 hợp lý khi nhãn chỉ cần lùi sau hình. Ở đây thứ dễ mất nhất
+              lại là thứ đắt nhất khi mất, nên đánh đổi ngược lại.
+
+              ĐÍNH CHÍNH: độ mờ KHÔNG phải nguyên nhân của lỗi "mất số đầu
+              tiên" đã báo. Nguyên nhân thật nằm ở hiệu ứng `zoom-in-95` của
+              hộp thoại — xem chú thích `DialogContent` trong
+              `oort-cloud-figure.tsx`. Giữ 0,9 vì nó vẫn đúng về mặt đọc được,
+              không phải vì nó chữa lỗi kia. */}
           <text
             x={CX + 6}
             y={CY - radius(au) - 7}
