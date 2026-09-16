@@ -132,6 +132,14 @@ const ALLOWED_IMAGE_HOSTS = [
   /\.supabase\.co$/,
   /\.supabase\.in$/,
   /^images\.unsplash\.com$/,
+  /*
+   * TRANG ảnh Unsplash, không phải tệp ảnh.
+   *
+   * Biên tập viên dán URL này để `intakeCover` hỏi API lấy tên tác giả — thứ
+   * không suy được từ URL CDN. Nó không bao giờ nằm lại trong CSDL: lượt lưu
+   * thay nó bằng URL trên R2, hoặc bỏ trống bìa nếu tra hụt.
+   */
+  /^(www\.)?unsplash\.com$/,
   /^science\.nasa\.gov$/,
   /^upload\.wikimedia\.org$/,
 ];

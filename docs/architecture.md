@@ -476,6 +476,32 @@ và xoá mất thứ `images:credit` đã điền.
 Phần suy ghi công nằm ở `src/lib/commons-credit.ts`, dùng chung với
 `scripts/backfill-image-credit.ts` — một cách suy, hai nơi gọi.
 
+#### Unsplash: phải dán URL TRANG ảnh
+
+URL trên CDN có dạng `images.unsplash.com/photo-1454789548928-9efd52dc4031`. Chuỗi
+`photo-…` ấy **không phải** id ảnh của Unsplash. Đo ngày 2026-09-16:
+
+```
+unsplash.com/photos/<id CDN>       → 401 (tường chặn bot)
+api.unsplash.com/photos/<id CDN>   → 401
+EXIF / IPTC / XMP của tệp ảnh      → rỗng sạch
+```
+
+Nghĩa là từ một URL CDN thì **không có đường nào** suy ra tác giả, kể cả khi có khoá
+API. Muốn ghi công đúng thì phải dán URL trang ảnh (`unsplash.com/photos/…`) — nơi
+duy nhất chứa id tra cứu được. `src/lib/unsplash.ts` tra API lấy tác giả và bản gốc,
+`intakeCover` dùng kết quả đó rồi mới sao về R2.
+
+Khoá: `UNSPLASH_ACCESS_KEY` (đăng ký miễn phí ở unsplash.com/developers). Bỏ trống thì
+dán URL trang ảnh sẽ bị bỏ bìa — nhánh này KHÔNG được phép hụt mà vẫn lưu, vì đầu vào
+là một trang HTML.
+
+Hai nghĩa vụ theo điều khoản API, cả hai đã cài sẵn: gọi `download_location` mỗi lần
+dùng ảnh (đếm lượt về cho tác giả), và link ghi công mang `utm_source`/`utm_medium`.
+
+Id ảnh dài đúng 11 ký tự base64url, tức **chứa được dấu `-`**. Tách id bằng cách cắt
+theo dấu gạch cuối cùng là sai và sai lác đác (chỉ với id có gạch) — cắt theo độ dài.
+
 ---
 
 Kết quả sau lượt chuyển 2026-09-16: mọi trang nội dung render **0** URL `/_next/image`.

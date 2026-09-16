@@ -3,6 +3,7 @@ import "server-only";
 import { assetKey } from "@/lib/asset";
 import { commonsFile, fetchCommonsCredit } from "@/lib/commons-credit";
 import { isConfigured, uploadBuffer } from "@/lib/storage";
+import { fetchUnsplashPhoto, unsplashPageId } from "@/lib/unsplash";
 
 /**
  * Biên tập viên dán một URL ảnh ngoài vào ô "Ảnh bìa" → lấy ghi công, kéo ảnh
@@ -15,6 +16,14 @@ import { isConfigured, uploadBuffer } from "@/lib/storage";
  * (hạn mức Image Optimization của Vercel đã cạn). Chữa được bằng
  * `npm run images:credit` rồi `npm run covers:mirror`, ĐÚNG THỨ TỰ đó — tức
  * một bước phải nhớ bằng đầu, và bước bị quên thì hỏng âm thầm.
+ *
+ * ## URL trang Unsplash là trường hợp riêng
+ *
+ * Dán `unsplash.com/photos/…` thì API trả về cả tác giả lẫn bản gốc — đó là
+ * đường DUY NHẤT lấy được tên người chụp, vì URL CDN của Unsplash không mang
+ * id tra cứu được (xem `src/lib/unsplash.ts`). Nhánh này khác mọi nhánh khác ở
+ * chỗ nó KHÔNG được phép hụt mà vẫn lưu: đầu vào là một trang HTML, để nguyên
+ * vào `coverImage` là chắc chắn hỏng. Hụt thì bỏ trống bìa và ghi log.
  *
  * ## Vì sao ghi công phải lấy TRƯỚC khi sao ảnh
  *
@@ -57,14 +66,34 @@ export async function intakeCover<T extends CoverFields>(
   if (!url || assetKey(url)) return data;
   if (!isConfigured()) return data;
 
+  let source = url;
   let credit = data.coverImageCredit;
   let creditEn = data.coverImageCreditEn;
+
+  /*
+   * 0. URL TRANG Unsplash → hỏi API lấy tác giả và bản gốc.
+   *
+   * Nhánh này bắt buộc phải thành công: `url` đang là một trang HTML, để
+   * nguyên vào `coverImage` là chắc chắn hỏng. Khác hẳn nhánh sao ảnh bên
+   * dưới, nơi thất bại chỉ có nghĩa "ảnh còn nằm ở máy chủ cũ".
+   */
+  const unsplashId = unsplashPageId(url);
+  if (unsplashId) {
+    const photo = await fetchUnsplashPhoto(unsplashId).catch(() => null);
+    if (!photo) {
+      console.error("[cover-intake] khong tra duoc anh Unsplash", url);
+      return { ...data, coverImage: null };
+    }
+    source = photo.imageUrl;
+    credit = credit || photo.creditVi;
+    creditEn = creditEn || photo.creditEn;
+  }
 
   // 1. Ghi công TRƯỚC, khi URL còn mang tên tệp Commons.
   //    Chỉ một lượt thử: người dùng đang ngồi chờ, và `covers:mirror` +
   //    `images:credit` sẽ dọn nốt những lượt hụt.
   if (!credit) {
-    const file = commonsFile(url);
+    const file = commonsFile(source);
     if (file) {
       const got = await fetchCommonsCredit(file, 1).catch(() => null);
       if (got) {
@@ -76,7 +105,7 @@ export async function intakeCover<T extends CoverFields>(
 
   // 2. Kéo ảnh về rồi dựng các cỡ trên R2.
   try {
-    const response = await fetch(url, {
+    const response = await fetch(source, {
       headers: { "User-Agent": USER_AGENT },
       redirect: "follow",
       signal: AbortSignal.timeout(TIMEOUT_MS),
@@ -92,8 +121,20 @@ export async function intakeCover<T extends CoverFields>(
     const uploaded = await uploadBuffer(body, `${name}.img`, prefix);
     return { ...data, coverImage: uploaded.url, coverImageCredit: credit, coverImageCreditEn: creditEn };
   } catch (error) {
-    // Ghi log chứ không ném: lượt lưu phải đi tiếp.
-    console.error("[cover-intake]", url, error);
-    return { ...data, coverImageCredit: credit, coverImageCreditEn: creditEn };
+    /*
+     * Ghi log chứ không ném: lượt lưu phải đi tiếp.
+     *
+     * Trả về `source`, KHÔNG phải `url`. Với đầu vào là trang Unsplash thì
+     * `url` là một trang HTML — để nguyên vào `coverImage` là chắc chắn hỏng,
+     * còn `source` là URL ảnh thật trên CDN Unsplash, một host đã khai báo.
+     * Với mọi đầu vào khác thì hai biến bằng nhau.
+     */
+    console.error("[cover-intake]", source, error);
+    return {
+      ...data,
+      coverImage: source,
+      coverImageCredit: credit,
+      coverImageCreditEn: creditEn,
+    };
   }
 }
