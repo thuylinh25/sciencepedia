@@ -33,17 +33,20 @@
     "entity:apply": "tsx --env-file-if-exists=.env scripts/apply-entity-plan.ts",
     "corrections": "tsx --env-file-if-exists=.env scripts/apply-corrections.ts",
     "sync:cau-truc": "tsx --env-file-if-exists=.env scripts/sync-cau-truc-trai-dat.ts",
-    "covers:build": "tsx scripts/build-covers.ts",
+    "covers:build": "tsx --env-file-if-exists=.env scripts/build-covers.ts",
     "sky:seed": "tsx --env-file-if-exists=.env scripts/seed-sky-objects.ts",
     "rename:slug": "tsx --env-file-if-exists=.env scripts/rename-slug.ts",
     "slugs:rename": "tsx --env-file-if-exists=.env scripts/rename-article-slugs.ts",
     "check:covers": "tsx --env-file-if-exists=.env scripts/check-covers.ts",
     "covers:replace": "tsx --env-file-if-exists=.env scripts/replace-dead-covers.ts",
     "covers:upgrade": "tsx --env-file-if-exists=.env scripts/upgrade-wikimedia-covers.ts",
-    "covers:bodies": "tsx scripts/build-body-covers.ts",
+    "covers:bodies": "tsx --env-file-if-exists=.env scripts/build-body-covers.ts",
     "fix:s1-gut": "tsx --env-file-if-exists=.env scripts/fix-s1-gut.ts",
     "fix:s2s3": "tsx --env-file-if-exists=.env scripts/fix-s2s3-batch1.ts",
-    "build:local": "prisma generate && tsx --env-file-if-exists=.env scripts/build-local.ts"
+    "build:local": "prisma generate && tsx --env-file-if-exists=.env scripts/build-local.ts",
+    "assets:upload": "tsx --env-file-if-exists=.env scripts/upload-assets.ts",
+    "images:variants": "tsx --env-file-if-exists=.env scripts/build-image-variants.ts",
+    "covers:mirror": "tsx --env-file-if-exists=.env scripts/mirror-covers.ts"
   },
   "prisma": {
     "seed": "tsx --env-file-if-exists=.env prisma/seed.ts"

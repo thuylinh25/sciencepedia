@@ -1,8 +1,9 @@
 import type { ReactNode } from "react";
-import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 
 import { Link } from "@/i18n/navigation";
+import { assetUrl } from "@/lib/asset";
+import { AssetImage } from "@/components/ui/asset-image";
 
 /**
  * Khung hai cột cho trang đăng nhập / đăng ký.
@@ -257,10 +258,9 @@ export async function AuthShell({
                 "linear-gradient(to bottom, transparent, #000 32%)",
             }}
           >
-            <Image
-              src="/images/auth-book.jpg"
+            <AssetImage
+              src={assetUrl("auth-book.jpg")}
               alt=""
-              fill
               sizes="50vw"
               className="object-cover"
             />

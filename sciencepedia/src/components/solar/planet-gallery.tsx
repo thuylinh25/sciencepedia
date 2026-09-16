@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { getLocale, getTranslations } from "next-intl/server";
 import { ArrowUpRight, Orbit } from "lucide-react";
 
@@ -17,6 +16,7 @@ import { formatMeasure, formatNumber } from "@/lib/utils";
 import { filterPublishedSlugs } from "@/server/queries";
 import { PlanetSurface } from "@/components/solar/planet-surface";
 import { BodyPanel, type BodyPanelData } from "@/components/solar/body-panel";
+import { AssetImage } from "@/components/ui/asset-image";
 
 /**
  * Thư viện ảnh Hệ Mặt Trời — Mặt Trời và tám hành tinh.
@@ -315,10 +315,9 @@ export async function PlanetGallery() {
                       `contain` ghép với `p-[6%]` cho đĩa nằm gọn trong khung,
                       chừa một vành lề đều. Nền thẻ cùng màu `#04060e` với nền
                       ảnh nên phần letterbox không đọc ra là letterbox. */}
-                  <Image
+                  <AssetImage
                     src={body.photo.url}
                     alt={displayName}
-                    fill
                     sizes={IMAGE_SIZES}
                     className="object-contain p-[6%] transition-transform duration-300 group-hover:scale-[1.04]"
                   />

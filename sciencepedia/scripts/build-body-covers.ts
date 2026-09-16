@@ -1,8 +1,9 @@
-import { statSync, writeFileSync } from "node:fs";
+import { mkdirSync, statSync, writeFileSync } from "node:fs";
 import path from "node:path";
 
 import sharp from "sharp";
 
+import { assetKey } from "../src/lib/asset";
 import { MOON, PLANETS, SUN } from "../src/lib/solar-data";
 
 /**
@@ -64,10 +65,11 @@ function collect(): Job[] {
   for (const body of bodies) {
     const hipsUrl = body.surface?.hipsUrl;
     const url = body.photo?.url;
-    // Chỉ dựng cho thiên thể có CẢ bản đồ HiPS lẫn một tệp ảnh nội bộ. Thiên
-    // thể trỏ ảnh ra máy chủ ngoài không phải việc của script này.
-    if (!hipsUrl || !url || !url.startsWith("/images/")) continue;
-    jobs.push({ name: body.name, hipsUrl, file: url.replace("/images/", "") });
+    // Chỉ dựng cho thiên thể có CẢ bản đồ HiPS lẫn một tệp ảnh của mình trên
+    // R2. Thiên thể trỏ ảnh ra máy chủ ngoài không phải việc của script này.
+    const key = url ? assetKey(url) : null;
+    if (!hipsUrl || !key) continue;
+    jobs.push({ name: body.name, hipsUrl, file: key });
   }
   return jobs;
 }
@@ -140,7 +142,13 @@ async function main() {
   );
 
   const jobs = collect();
-  const outDir = path.resolve(process.cwd(), "public", "images");
+  /*
+   * Ảnh ra nằm ở `assets/images/` chứ không `public/images/`: bộ ảnh này đã
+   * chuyển sang Cloudflare R2 (xem `src/lib/asset.ts`), nên `public/` không
+   * còn phục vụ nó nữa. Đây là thư mục dàn — dựng xong phải TỰ TAY tải lên
+   * bucket, giữ nguyên đường dẫn tương đối, thì trang mới thấy ảnh mới.
+   */
+  const outDir = path.resolve(process.cwd(), "assets", "images");
   let failed = false;
 
   for (const job of jobs) {
@@ -192,7 +200,10 @@ async function main() {
       }
 
       console.log(`${meta.width}×${meta.height}, ${kb} KB`);
-      if (write) writeFileSync(target, image);
+      if (write) {
+        mkdirSync(path.dirname(target), { recursive: true });
+        writeFileSync(target, image);
+      }
     } catch (error) {
       failed = true;
       console.log(`LỖI — ${error instanceof Error ? error.message : error}`);

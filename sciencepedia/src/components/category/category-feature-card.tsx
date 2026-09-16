@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { ArrowUpRight } from "lucide-react";
 
@@ -6,6 +5,7 @@ import { Link } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
 import { CategoryIcon } from "@/components/category-icon";
 import { cn } from "@/lib/utils";
+import { AssetImage } from "@/components/ui/asset-image";
 
 type CategoryLike = {
   slug: string;
@@ -79,12 +79,12 @@ export async function CategoryFeatureCard({
     >
       {coverImage ? (
         <>
-          <Image
+          <AssetImage
             src={coverImage}
             alt=""
-            fill
             // Card chiếm 1/3 bề ngang container ở lg, 1/2 ở sm, cả bề ngang ở
-            // mobile. Không khai báo thì Next tải bản đủ rộng cho cả viewport.
+            // mobile. Không khai báo thì trình duyệt tải bản đủ rộng cho cả
+            // viewport.
             sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
             priority={priority}
             className="object-cover transition-transform duration-500 group-hover:scale-105"

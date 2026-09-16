@@ -1,6 +1,8 @@
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 
+import { ASSET_BASE_URL } from "@/lib/asset";
+
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
@@ -117,8 +119,16 @@ export function extractHeadings(markdown: string) {
 /**
  * Các host ảnh được phép. Phải khớp với `images.remotePatterns` trong
  * next.config.ts — nếu lệch, next/image sẽ ném lỗi lúc chạy thay vì lúc lưu.
+ *
+ * Host R2 đọc từ chính biến mà `src/lib/asset.ts` dùng, không viết cứng: đổi
+ * sang tên miền riêng thì cả ba chỗ (asset.ts, next.config.ts, đây) đi theo
+ * cùng một giá trị. Bỏ sót chỗ này thì biểu mẫu quản trị từ chối đúng những
+ * ảnh mà trang đang hiển thị bình thường.
  */
+const ASSET_HOST = new URL(ASSET_BASE_URL).hostname;
+
 const ALLOWED_IMAGE_HOSTS = [
+  new RegExp(`^${ASSET_HOST.replace(/\./g, "\.")}$`),
   /\.supabase\.co$/,
   /\.supabase\.in$/,
   /^images\.unsplash\.com$/,

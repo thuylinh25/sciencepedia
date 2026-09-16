@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useLocale, useTranslations } from "next-intl";
 import { toast } from "sonner";
 import {
@@ -23,6 +22,7 @@ import {
   type SkyTarget,
 } from "@/lib/sky-data";
 import { cn } from "@/lib/utils";
+import { AssetImage } from "@/components/ui/asset-image";
 
 /**
  * Bảng thông tin về thiên thể đang xem, đặt ngay dưới khung bản đồ.
@@ -249,10 +249,9 @@ export function SkyObjectPanel({
                   className="group flex w-full items-center gap-3 overflow-hidden rounded-xl border p-2 text-left transition-colors hover:border-accent lg:flex-col lg:items-stretch lg:p-0"
                 >
                   <span className="relative block size-12 shrink-0 overflow-hidden rounded-lg bg-[#04060e] lg:aspect-video lg:size-auto lg:w-full lg:rounded-none">
-                    <Image
+                    <AssetImage
                       src={item.image}
                       alt=""
-                      fill
                       sizes="(min-width: 1024px) 20vw, 48px"
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
                     />

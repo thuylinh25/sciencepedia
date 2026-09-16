@@ -13,7 +13,7 @@ const imageUrl = z
   .string()
   .refine(
     isAllowedImageUrl,
-    "Ảnh phải tải lên Supabase Storage, hoặc dùng URL https từ Unsplash / NASA / Wikimedia",
+    "Ảnh phải nằm trên Cloudflare R2 hoặc Supabase Storage, hoặc dùng URL https từ Unsplash / NASA / Wikimedia",
   )
   .optional()
   .or(z.literal(""));

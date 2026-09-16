@@ -3,6 +3,8 @@ import { join } from "node:path";
 
 import sharp from "sharp";
 
+import { assetUrl } from "../src/lib/asset";
+
 /**
  * Dựng ảnh bìa cho các bài khái niệm trừu tượng.
  *
@@ -843,12 +845,12 @@ async function applyToDatabase(slugs: string[]) {
       await prisma.article.update({
         where: { id: article.id },
         data: {
-          coverImage: `/covers/${slug}.webp`,
+          coverImage: assetUrl(`covers/${slug}.webp`),
           coverImageCredit: CREDIT,
           coverImageCreditEn: CREDIT_EN,
         },
       });
-      console.log(`   ↳ CSDL: ${article.coverImage ?? "(trống)"}\n              → /covers/${slug}.webp`);
+      console.log(`   ↳ CSDL: ${article.coverImage ?? "(trống)"}\n              → ${assetUrl(`covers/${slug}.webp`)}`);
     }
   } finally {
     await prisma.$disconnect();
@@ -859,7 +861,13 @@ async function main() {
   const argv = process.argv.slice(2);
   const apply = argv.includes("--apply");
   const only = argv.filter((a) => !a.startsWith("--"));
-  const outDir = join(process.cwd(), "public", "covers");
+  /*
+   * Ảnh ra nằm ở `assets/covers/` chứ không `public/covers/`: bìa đã chuyển
+   * sang Cloudflare R2 (xem `src/lib/asset.ts`). Đây là thư mục dàn — dựng
+   * xong phải TỰ TAY tải lên bucket dưới tiền tố `covers/`, rồi mới chạy lại
+   * với `--apply` để ghi CSDL. Ghi CSDL trước khi tải lên thì bài hiện ô đen.
+   */
+  const outDir = join(process.cwd(), "assets", "covers");
   mkdirSync(outDir, { recursive: true });
 
   const slugs = only.length > 0 ? only : Object.keys(COVERS);
@@ -880,7 +888,7 @@ async function main() {
       .toFile(out);
     const { size } = statSync(out);
     console.log(
-      `✓ /covers/${slug}.webp  ${W * SCALE}×${H * SCALE}  ${(size / 1024).toFixed(0)} KB`,
+      `✓ covers/${slug}.webp  ${W * SCALE}×${H * SCALE}  ${(size / 1024).toFixed(0)} KB`,
     );
   }
 
@@ -888,7 +896,7 @@ async function main() {
     console.log("");
     await applyToDatabase(slugs.filter((slug) => COVERS[slug]));
   } else {
-    console.log("\nChưa ghi CSDL. Thêm --apply để gắn ảnh vào bài.");
+    console.log("\nChưa ghi CSDL. Tải `assets/covers/` lên R2 (tiền tố `covers/`) rồi chạy lại với --apply.");
   }
 }
 

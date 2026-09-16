@@ -1,13 +1,14 @@
 import type { ReactNode } from "react";
-import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { ArrowRight, Sparkles } from "lucide-react";
 
 import { Link } from "@/i18n/navigation";
+import { assetUrl } from "@/lib/asset";
 import { StaggerGroup, StaggerItem } from "@/components/motion/reveal";
 import { SKY_TARGETS } from "@/lib/sky-data";
 import { PLANETS } from "@/lib/solar-data";
 import { cn } from "@/lib/utils";
+import { AssetImage } from "@/components/ui/asset-image";
 
 /**
  * Khối "Khám phá tương tác" trên trang chủ.
@@ -114,7 +115,7 @@ const CARDS: ExploreCard[] = [
      */
     id: "skyMap",
     href: "/space-map",
-    image: "/images/explore/sky-map.jpg",
+    image: assetUrl("explore/sky-map.jpg"),
     emoji: "⭐",
     accent: "#2dd4bf",
     feature: true,
@@ -122,7 +123,7 @@ const CARDS: ExploreCard[] = [
   {
     id: "zoom",
     href: "/zoom",
-    image: "/images/explore/zoom.jpg",
+    image: assetUrl("explore/zoom.jpg"),
     emoji: "🔍",
     accent: "#38bdf8",
   },
@@ -142,28 +143,28 @@ const CARDS: ExploreCard[] = [
      * đừng đổi đích của thẻ này — chữ trên thẻ nói về DSCOVR.
      */
     href: "/earth-live",
-    image: "/images/explore/earth-live.jpg",
+    image: assetUrl("explore/earth-live.jpg"),
     emoji: "🌍",
     accent: "#34d399",
   },
   {
     id: "universe",
     href: "/universe",
-    image: "/images/explore/universe.jpg",
+    image: assetUrl("explore/universe.jpg"),
     emoji: "🌠",
     accent: "#c084fc",
   },
   {
     id: "milkyWay",
     href: "/milky-way",
-    image: "/images/explore/milky-way.jpg",
+    image: assetUrl("explore/milky-way.jpg"),
     emoji: "🌌",
     accent: "#818cf8",
   },
   {
     id: "solarSystem",
     href: "/solar-system",
-    image: "/images/explore/solar-system.jpg",
+    image: assetUrl("explore/solar-system.jpg"),
     emoji: "☀️",
     accent: "#f59e0b",
   },
@@ -276,10 +277,9 @@ export async function InteractiveExplore() {
                   lớn là nhận ra chủ thể trước khi đọc. Chữ vẫn đọc được vì lớp
                   phủ dọc bên dưới giữ nguyên độ đặc ở ĐÁY, nơi có chữ; chỉ
                   phần trên của card sáng lên. */}
-              <Image
+              <AssetImage
                 src={card.image}
                 alt=""
-                fill
                 sizes="(min-width: 1024px) 40vw, (min-width: 640px) 50vw, 100vw"
                 className="object-cover opacity-[0.72] brightness-110 transition-[transform,opacity] duration-300 ease-out group-hover:scale-[1.05] group-hover:opacity-90"
               />

@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { ArrowRight } from "lucide-react";
 
@@ -8,6 +7,7 @@ import type { Locale } from "@/i18n/routing";
 import { buildMetadata } from "@/lib/seo";
 import { EXPLORE_TOOLS, MODEL_STEPS } from "@/lib/models";
 import { SectionHeading } from "@/components/section-heading";
+import { AssetImage } from "@/components/ui/asset-image";
 
 export const revalidate = 3600;
 
@@ -69,10 +69,9 @@ export default async function ModelsPage({
               className="group flex h-full flex-col overflow-hidden rounded-2xl border bg-card shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
             >
               <div className="relative aspect-[16/10] overflow-hidden bg-space-900">
-                <Image
+                <AssetImage
                   src={step.image}
                   alt=""
-                  fill
                   sizes="(max-width: 1024px) 100vw, 33vw"
                   className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
                 />
@@ -121,10 +120,9 @@ export default async function ModelsPage({
                 className="group flex h-full flex-col overflow-hidden rounded-2xl border bg-card shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
               >
                 <div className="relative aspect-[16/10] overflow-hidden bg-space-900">
-                  <Image
+                  <AssetImage
                     src={tool.image}
                     alt=""
-                    fill
                     sizes="(max-width: 1024px) 100vw, 33vw"
                     className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
                   />

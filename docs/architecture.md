@@ -345,6 +345,107 @@ Production deploy từ `main`. Xem `docs/process/` cho quy trình phát hành.
 
 ---
 
+## Ảnh — ba kho, ba lý do
+
+| Kho | Chứa gì | Vì sao ở đó |
+|---|---|---|
+| **Cloudflare R2** | Toàn bộ ảnh tĩnh: hero, bìa thiên thể, ô "khám phá", và bìa tự vẽ của bài khái niệm | 50 tệp, ~5,4 MB, gần như không đổi. Để trong `public/` thì mỗi deploy đóng gói lại toàn bộ và mọi lượt tải tính vào băng thông Vercel. R2 **không tính phí egress**. |
+| **Supabase Storage** | Ảnh bài viết và ảnh danh mục do biên tập tải lên | Ghi lúc chạy, cần khoá service role và RLS — thuộc về cùng hệ với CSDL. |
+| **`public/`** | Chỉ còn `icon.svg` | Favicon phải nằm cùng gốc với trang. |
+
+Hai script dựng ảnh — `npm run covers:build` (bìa tự vẽ) và `npm run covers:bodies`
+(bìa thiên thể) — ghi ra `assets/` chứ không `public/`. `assets/` bị gitignore: đó là
+thư mục dàn, dựng lại được bất cứ lúc nào. Đẩy lên bucket bằng
+`npm run assets:upload -- --write` (chạy khô là mặc định); nó giữ nguyên đường dẫn
+tương đối thành tiền tố khoá (`covers/…`, `sky/…`) và kiểm lại bằng chính URL công
+khai sau mỗi tệp.
+
+Với `covers:build --apply`, thứ tự bắt buộc là **tải lên trước, ghi CSDL sau** —
+ghi trước thì bài hiện ô đen cho tới khi tệp có mặt.
+
+`assets:upload` ký SigV4 bằng `node:crypto` (`scripts/r2-client.ts`) thay vì kéo
+`@aws-sdk/client-s3` vào: vài chục gói cho hai thao tác chạy tay dăm lần một năm là
+cái giá sai. Nó đặt `Cache-Control: public, max-age=86400` — một ngày, không phải một
+năm, vì tên tệp không mang dấu vân nội dung nên sửa ảnh là ghi đè đúng khoá cũ. Muốn
+đệm lâu hơn thì phải gắn hash vào tên tệp trước.
+
+---
+
+## Ảnh tĩnh KHÔNG đi qua `/_next/image`
+
+Ngày 2026-09-16, production trả **HTTP 402 `OPTIMIZED_IMAGE_REQUEST_PAYMENT_REQUIRED`**
+cho mọi biến thể ảnh chưa nằm sẵn trong cache: hạn mức Image Optimization của tài khoản
+Vercel đã cạn.
+
+Triệu chứng độc ở chỗ nó **không hỏng đều**. Biến thể đã cache vẫn hiện, biến thể mới
+thì chết — nên ảnh hỏng theo bề rộng màn hình của từng khách chứ không theo trang, và
+mở máy mình ra xem thì thấy bình thường.
+
+```
+/_next/image?url=/images/hero-galaxy.jpg&w=828  -> 402
+                                         &w=3840 -> 200   (cache cũ)
+wikimedia … &w=256      -> 200   (cache cũ)
+wikimedia … &w=3840&q=40 -> 402
+```
+
+**Đổi kho ảnh không chữa được.** Ảnh Wikimedia cũng chết y hệt, mà Wikimedia đâu phải
+Vercel hay R2 — nút thắt nằm ở bộ tối ưu, không ở nơi chứa ảnh. Ai định "chuyển ảnh về
+chỗ khác cho nhẹ" lần sau nên đọc lại đoạn này trước.
+
+Cách chữa: dựng SẴN các bề rộng (`npm run images:variants`) và cho trình duyệt tải
+thẳng từ R2 qua `<AssetImage>` (`src/components/ui/asset-image.tsx`). Egress R2 miễn
+phí, và không cú nào chạm hạn mức Vercel nữa. Hero đo được:
+
+| | Byte |
+|---|---|
+| JPEG gốc | 285 KB |
+| 640w WebP (điện thoại thật sự tải) | 6 KB |
+| bản `/_next/image` cũ ở 3840w | 51 KB |
+
+**Quy tắc:** ảnh trên R2 dùng `<AssetImage>`, không dùng `next/image`. Thêm ảnh mới thì
+tải lên R2, chạy `images:variants -- --write`, rồi `assets:upload -- --write`; bản kê
+`src/lib/image-variants.json` được commit vì component cần nó lúc render.
+
+Bìa trong CSDL (`Article.coverImage`, `Category.coverImage`) đã được sao hết về R2 bằng
+`npm run covers:mirror`. Script tải đúng tệp đang hiển thị và đặt lại ở R2 — **không**
+đổi ảnh, không cắt, không nén — nên `coverImageCredit` vẫn đúng và điều kiện ghi công
+của giấy phép Wikimedia/Unsplash vẫn được giữ. Bài mới do pipeline sinh ra có thể lại
+mang URL ngoài; chạy `covers:mirror` lần nữa là xong, nó bỏ qua những gì đã ở trên R2.
+
+`<CoverImage>` giữ nhánh `next/image` cho đúng khoảng thời gian ấy — nhánh đó vẫn dính
+402, nhưng `onError` lui về dải màu thay vì để lại ô đen.
+
+Danh sách host hợp lệ của biểu mẫu quản trị (`isAllowedImageUrl` trong `src/lib/utils.ts`)
+đọc host R2 từ cùng biến môi trường. Quên chỗ này thì biên tập viên bị từ chối đúng
+những URL mà trang đang hiển thị bình thường.
+
+Vì sao là `<img srcset>` chứ không `next/image` kèm `unoptimized`: `unoptimized` bỏ luôn
+`srcset`, tức điện thoại tải đúng tệp gốc 285 KB cho một ô rộng 360 px. Thứ đáng giữ
+lại của `next/image` là `srcset`, không phải phần biến đổi ảnh lúc chạy.
+
+Vì sao WebP mà không AVIF: `<img srcset>` chỉ trỏ được một định dạng; muốn cả hai phải
+`<picture>` hai nguồn, gấp đôi số tệp. WebP chạy trên mọi trình duyệt còn được hỗ trợ.
+
+Kết quả sau lượt chuyển 2026-09-16: mọi trang nội dung render **0** URL `/_next/image`.
+Còn lại đi qua bộ tối ưu chỉ có ảnh người dùng tải lên (avatar) và ảnh EPIC của NASA —
+ảnh EPIC vốn đã `unoptimized` vì nó đổi từng giờ.
+
+URL R2 dựng bằng `assetUrl()` trong `src/lib/asset.ts`, **không viết cứng trong
+component**. Gốc URL đọc từ `NEXT_PUBLIC_ASSET_BASE_URL`; `next.config.ts` đọc cùng
+biến ấy để mở `images.remotePatterns` — một nguồn sự thật, nên không có cảnh đổi
+host rồi ngồi đoán vì sao `next/image` trả 400.
+
+**Cảnh báo phải biết trước:** giá trị mặc định là `pub-….r2.dev`, tức *Public
+Development URL* của R2. Cloudflare bóp băng thông đường này và nói rõ nó không
+dành cho lưu lượng thật. Trước khi trang có tải thật, gắn tên miền riêng vào
+bucket và khai vào `NEXT_PUBLIC_ASSET_BASE_URL`.
+
+Đánh đổi đã chốt: bộ ảnh này **không còn trong git**. Thay một tấm là tải trực tiếp
+lên bucket — R2 là bản duy nhất, không có bản trong repo để đối chiếu. Đổi lại,
+`git clone` nhẹ đi 4,5 MB và deploy không phát lại thứ chưa từng đổi.
+
+---
+
 ## Tìm kiếm
 
 Meilisearch, fallback Postgres FTS. HTML highlight từ search **phải** đi qua

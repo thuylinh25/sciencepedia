@@ -31,3 +31,8 @@ scripts/tmp-*
 # Xoá thường thất bại vì I/O error, nên ít nhất đừng để chúng vào repo.
 .next-*
 .next.*
+
+# Thư mục dàn của `covers:build`, `covers:bodies` và `images:variants`. Ảnh thật
+# sống trên Cloudflare R2 (src/lib/asset.ts); đây chỉ là bản dựng ra chờ tải lên,
+# không phải nguồn — dựng lại được bất cứ lúc nào từ chính các script ấy.
+/assets

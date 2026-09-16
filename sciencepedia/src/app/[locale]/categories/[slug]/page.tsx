@@ -1,4 +1,3 @@
-import Image from "next/image";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
@@ -14,6 +13,7 @@ import { CategoryIcon } from "@/components/category-icon";
 import { ArticleGrid } from "@/components/article/article-grid";
 import { Pagination } from "@/components/pagination";
 import { Badge } from "@/components/ui/badge";
+import { AssetImage } from "@/components/ui/asset-image";
 
 export const revalidate = 300;
 
@@ -124,10 +124,9 @@ export default async function CategoryPage({
       <header className="relative overflow-hidden border-b py-16">
         {category.coverImage && (
           <>
-            <Image
+            <AssetImage
               src={category.coverImage}
               alt=""
-              fill
               // Trải hết bề ngang màn hình ở mọi kích thước
               sizes="100vw"
               // Khối đầu tiên của trang, quyết định LCP

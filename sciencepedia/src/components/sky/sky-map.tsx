@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 
@@ -25,6 +24,7 @@ import {
 } from "@/components/sky/aladin-search";
 import { AladinViewer } from "@/components/sky/aladin-viewer";
 import { SkyObjectPanel } from "@/components/sky/sky-object-panel";
+import { AssetImage } from "@/components/ui/asset-image";
 
 /**
  * Vỏ trang bản đồ bầu trời: ô tìm kiếm, khung bản đồ, bộ chọn survey và danh
@@ -402,10 +402,9 @@ export function SkyMap() {
                       được nhiều hơn cả đoạn mô tả — mà bản trước lại chỉ có
                       chữ, nên M31, M42, M87 và M1 trông giống hệt nhau. */}
                   <span className="relative block aspect-video overflow-hidden bg-[#04060e]">
-                    <Image
+                    <AssetImage
                       src={target.image}
                       alt=""
-                      fill
                       sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, calc(100vw - 3rem)"
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
                     />

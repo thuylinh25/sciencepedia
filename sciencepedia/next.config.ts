@@ -4,6 +4,16 @@ import createNextIntlPlugin from "next-intl/plugin";
 
 const withNextIntl = createNextIntlPlugin("./src/i18n/request.ts");
 
+/**
+ * Host phát ảnh tĩnh. Phải khớp với `NEXT_PUBLIC_ASSET_BASE_URL` trong
+ * `src/lib/asset.ts` — giữ cùng một giá trị mặc định ở hai nơi vì next.config
+ * không import được module dùng path alias `@/`.
+ */
+const ASSET_HOST = new URL(
+  process.env.NEXT_PUBLIC_ASSET_BASE_URL ??
+    "https://pub-2f39abf8661142edaf3c3c48f755ffa8.r2.dev",
+).hostname;
+
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
@@ -19,7 +29,12 @@ const nextConfig: NextConfig = {
   images: {
     formats: ["image/avif", "image/webp"],
     remotePatterns: [
-      // Supabase Storage — nguồn ảnh chính của hệ thống.
+      // Cloudflare R2 — ảnh tĩnh của giao diện (hero, bìa thiên thể, ô khám
+      // phá). Host đọc từ chính biến mà `src/lib/asset.ts` dùng để dựng URL:
+      // một nguồn sự thật, nên đổi sang tên miền riêng không thể quên mở cổng
+      // ở đây rồi ngồi đoán vì sao `next/image` trả 400.
+      { protocol: "https", hostname: ASSET_HOST },
+      // Supabase Storage — ảnh bài viết và ảnh danh mục do biên tập tải lên.
       // Chỉ mở đúng đường dẫn public object, không mở cả domain.
       {
         protocol: "https",

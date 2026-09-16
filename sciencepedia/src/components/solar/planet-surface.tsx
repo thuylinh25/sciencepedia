@@ -2,11 +2,11 @@
 
 import type { ReactNode } from "react";
 
-import Image from "next/image";
 import { useTranslations } from "next-intl";
 
 import type { BodyPhoto, BodySurface } from "@/lib/solar-data";
 import { AladinViewer } from "@/components/sky/aladin-viewer";
+import { AssetImage } from "@/components/ui/asset-image";
 
 /**
  * Ảnh chụp một thiên thể, bấm vào thì mở bản đồ bề mặt tương tác.
@@ -134,10 +134,9 @@ export function PlanetSurface({
       canSpin
       posterCaption={caption}
       posterBackground={
-        <Image
+        <AssetImage
           src={photo.url}
           alt={name}
-          fill
           sizes={sizes}
           priority={priority}
           /* Xem chú thích của prop `posterFit`: mặc định `contain` cho đĩa

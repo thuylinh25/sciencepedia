@@ -6,6 +6,8 @@
  * nhỏ hơn một pixel. Tỉ lệ thật vẫn được giữ trong `realRadiusKm` / `realDistanceKm`
  * để hiển thị trong bảng thông tin và để chế độ "tỉ lệ thực" dùng tới.
  */
+import { assetUrl } from "@/lib/asset";
+
 export type Planet = {
   id: string;
   name: string;
@@ -317,7 +319,7 @@ export const SUN = {
    * một tấm bìa, và đổi lại là bấm vào không thấy hình đổi.
    */
   photo: {
-    url: "/images/sun-hips-304.jpg",
+    url: assetUrl("sun-hips-304.jpg"),
     captionVi:
       "Bản đồ cầu toàn Mặt Trời ở bước sóng cực tím 304 Å — lớp sắc quyển. CDS ghép từ đoạn phim NASA/GSFC theo dõi toàn bộ bề mặt trong khoảng 01/01–27/09/2012. Màu cam là màu quy ước, mắt người không nhìn thấy bước sóng này. Bấm vào để xoay chính bản đồ này.",
     captionEn:
@@ -359,7 +361,7 @@ export const MOON = {
   descriptionEn:
     "Earth's only natural satellite, 384,400 km away. It keeps one face turned toward us because its spin is locked to its orbital period.",
   photo: {
-    url: "/images/moon-lroc-wac.jpg",
+    url: assetUrl("moon-lroc-wac.jpg"),
     captionVi:
       "Bản đồ hình thái toàn cầu của máy WAC trên tàu Lunar Reconnaissance Orbiter, 100 m mỗi điểm ảnh. Vùng sẫm quanh cực bắc là bóng thật do Mặt Trời ở đó luôn sà sát chân trời, không phải chỗ thiếu dữ liệu. Bấm vào để xoay chính bản đồ này.",
     captionEn:
@@ -417,7 +419,7 @@ export const PLANETS: Planet[] = [
      * mắt thấy, và câu đầu tiên của chú thích phải nói đúng điều đó.
      */
     photo: {
-      url: "/images/mercury-mdis-enhanced.jpg",
+      url: assetUrl("mercury-mdis-enhanced.jpg"),
       captionVi:
         "Không phải màu mắt thấy — nhìn thẳng thì Sao Thuỷ xám như Mặt Trăng. Đây là ảnh tăng màu của máy MDIS trên tàu MESSENGER: ba dải 430, 750 và 1000 nm được phân tích thành phần chính rồi gán vào đỏ, lục, lam, để lộ ra những loại đá mà mắt không tách nổi. Bấm vào để xoay chính bản đồ này.",
       captionEn:
@@ -472,7 +474,7 @@ export const PLANETS: Planet[] = [
      * phải nói ra điều đó, vì không ai đoán được từ hai tấm ảnh.
      */
     photo: {
-      url: "/images/venus-magellan.jpg",
+      url: assetUrl("venus-magellan.jpg"),
       captionVi:
         "Không phải màu mắt thấy, và cũng không phải thứ nhìn được từ ngoài: mây acid sulfuric che kín Sao Kim. Đây là bề mặt bên dưới, do radar tàu Magellan quét xuyên mây; màu mã hoá độ cao — lam là đồng bằng thấp, đỏ là cao nguyên. Bấm vào để xoay chính bản đồ này.",
       captionEn:
@@ -522,7 +524,7 @@ export const PLANETS: Planet[] = [
      * xoay sang một bán cầu khác với tông màu khác.
      */
     photo: {
-      url: "/images/earth-bluemarble.jpg",
+      url: assetUrl("earth-bluemarble.jpg"),
       captionVi:
         "Blue Marble của NASA: ghép từ dữ liệu vệ tinh MODIS, mỗi điểm ảnh lấy ngày quang mây nhất trong tháng nên không có đám mây nào che đất. Đây là bề mặt thật ở màu mắt thấy. Bấm vào để xoay chính bản đồ này.",
       captionEn:
@@ -564,7 +566,7 @@ export const PLANETS: Planet[] = [
     descriptionEn:
       "Its red colour comes from surface iron oxide. It hosts Olympus Mons, the tallest volcano in the Solar System.",
     photo: {
-      url: "/images/mars-viking-mdim21.jpg",
+      url: assetUrl("mars-viking-mdim21.jpg"),
       captionVi:
         "Ghép ảnh màu từ các tàu quỹ đạo Viking, bản MDIM 2.1 của USGS ở 232 m mỗi điểm ảnh. Chỏm băng bắc nằm ở phía trên; vệt sẫm chạy ngang là vùng Syrtis Major. Bấm vào để xoay chính bản đồ này.",
       captionEn:
@@ -621,7 +623,7 @@ export const PLANETS: Planet[] = [
     descriptionEn:
       "The largest planet, 2.5 times the mass of every other planet combined. The Great Red Spot is a storm centuries old.",
     photo: {
-      url: "https://upload.wikimedia.org/wikipedia/commons/2/2b/Jupiter_and_its_shrunken_Great_Red_Spot.jpg",
+      url: assetUrl("jupiter-great-red-spot.jpg"),
       captionVi:
         "Kính Hubble chụp trong chương trình theo dõi các hành tinh ngoài. Vết Đỏ Lớn đang thu nhỏ dần qua từng năm.",
       captionEn:
@@ -676,7 +678,7 @@ export const PLANETS: Planet[] = [
     descriptionEn:
       "Famous for rings of ice and rock spanning hundreds of thousands of kilometres yet only about ten metres thick in places.",
     photo: {
-      url: `${TEXTURE_BASE}/c/c7/Saturn_during_Equinox.jpg/960px-Saturn_during_Equinox.jpg`,
+      url: assetUrl("saturn-equinox.jpg"),
       captionVi:
         "Tàu Cassini ghép từ hàng chục khung ảnh vào kỳ phân điểm năm 2009, khi Mặt Trời chiếu sát rìa vành đai nên mọi gợn cao thấp đều đổ bóng dài.",
       captionEn:
@@ -714,7 +716,7 @@ export const PLANETS: Planet[] = [
     descriptionEn:
       "Its axis is tilted nearly 98°, so the planet rolls along its orbit rather than spinning upright.",
     photo: {
-      url: `${TEXTURE_BASE}/3/3d/Uranus2.jpg/960px-Uranus2.jpg`,
+      url: assetUrl("uranus-voyager2.jpg"),
       captionVi:
         "Tàu Voyager 2 chụp năm 1986 — con tàu duy nhất từng bay ngang Sao Thiên Vương.",
       captionEn:
@@ -750,7 +752,7 @@ export const PLANETS: Planet[] = [
     descriptionEn:
       "The most distant planet, home to the fastest winds in the Solar System at over 2,000 km/h.",
     photo: {
-      url: `${TEXTURE_BASE}/5/56/Neptune_Full.jpg/960px-Neptune_Full.jpg`,
+      url: assetUrl("neptune-full.jpg"),
       captionVi:
         "Tàu Voyager 2 chụp năm 1989. Vệt sẫm là Đại Hắc Ban, cơn bão đã tan mất khi Hubble nhìn lại vào năm 1994.",
       captionEn:

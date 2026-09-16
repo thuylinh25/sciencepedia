@@ -1,9 +1,11 @@
 "use client";
 
 import type { ReactNode } from "react";
-import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 import { useTranslations } from "next-intl";
+
+import { assetUrl } from "@/lib/asset";
+import { AssetImage } from "@/components/ui/asset-image";
 
 /**
  * `fields` là một slot: danh sách lĩnh vực phải là Server Component (đọc CSDL,
@@ -111,10 +113,9 @@ export function Hero({ fields }: { fields?: ReactNode }) {
         aria-hidden
         className="pointer-events-none absolute top-[49%] right-0 h-[17.5rem] w-[26rem] [mask-image:radial-gradient(20rem_10rem_at_76%_50%,#000_24%,rgba(0,0,0,0.5)_52%,transparent_78%)] lg:inset-0 lg:top-0 lg:h-auto lg:w-auto lg:[mask-image:none]"
       >
-        <Image
-          src="/images/hero-galaxy.jpg"
+        <AssetImage
+          src={assetUrl("hero-galaxy.jpg")}
           alt=""
-          fill
           priority
           sizes="(min-width: 1024px) 100vw, 900px"
           className="object-cover object-[66%_center] lg:object-center"

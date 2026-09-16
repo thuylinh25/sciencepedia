@@ -1,3 +1,4 @@
+import { assetUrl } from "@/lib/asset";
 import { stripDiacritics } from "@/lib/utils";
 
 /**
@@ -348,7 +349,7 @@ export const SKY_TARGETS: SkyTarget[] = [
     blurbEn:
       "The central region of the Milky Way, towards the constellation Sagittarius and about 26,000 light-years from the Sun. It is the densest patch of stars and dust in our sky — not the whole galaxy, but the direction we look when we look towards its core.",
     visibility: "NAKED_EYE",
-    image: "/images/sky/galactic-centre.jpg",
+    image: assetUrl("sky/galactic-centre.jpg"),
     imageCredit: null,
     facts: [
       "Hệ Mặt Trời nằm trong Dải Ngân Hà, cách tâm khoảng 26.000 năm ánh sáng",
@@ -378,7 +379,7 @@ export const SKY_TARGETS: SkyTarget[] = [
     blurbEn:
       "The nearest large spiral galaxy to the Milky Way, in the constellation Andromeda, about 2.5 million light-years away. Worth finding for its apparent size: over 3 degrees across, six times the width of the full Moon.",
     visibility: "NAKED_EYE",
-    image: "/images/sky/m31.jpg",
+    image: assetUrl("sky/m31.jpg"),
     imageCredit: null,
     facts: [
       "Thiên hà lớn gần Ngân Hà nhất",
@@ -408,7 +409,7 @@ export const SKY_TARGETS: SkyTarget[] = [
     blurbEn:
       "A giant elliptical galaxy in the constellation Virgo, at the heart of the cluster of the same name, about 54 million light-years away. Worth a look because its supermassive black hole was the first ever imaged directly, published in 2019.",
     visibility: "SMALL_SCOPE",
-    image: "/images/sky/m87.jpg",
+    image: assetUrl("sky/m87.jpg"),
     imageCredit: null,
     facts: [
       "Chứa hố đen đầu tiên được chụp ảnh trực tiếp",
@@ -438,7 +439,7 @@ export const SKY_TARGETS: SkyTarget[] = [
     blurbEn:
       "The closest region of massive star formation to Earth, about 1,300 light-years away. Visible to the naked eye as a smudge in the sword of Orion.",
     visibility: "NAKED_EYE",
-    image: "/images/sky/m42.jpg",
+    image: assetUrl("sky/m42.jpg"),
     imageCredit: null,
     facts: [
       "Vùng tạo sao gần Trái Đất nhất",
@@ -474,7 +475,7 @@ export const SKY_TARGETS: SkyTarget[] = [
     blurbEn:
       "A red supergiant on the shoulder of Orion, somewhere between 500 and 700 light-years away — NASA's own pages still quote different figures. Worth watching because its brightness varies markedly and it is considered a supernova candidate.",
     visibility: "NAKED_EYE",
-    image: "/images/sky/betelgeuse.jpg",
+    image: assetUrl("sky/betelgeuse.jpg"),
     imageCredit: "ALMA (ESO/NAOJ/NRAO)/E. O'Gorman/P. Kervella — CC BY 4.0",
     facts: [
       "Sao siêu khổng lồ đỏ ở vai chòm Orion",
@@ -507,7 +508,7 @@ export const SKY_TARGETS: SkyTarget[] = [
     blurbEn:
       "The supermassive black hole at the centre of the Milky Way, towards the constellation Sagittarius, about 26,000 light-years away. It is the closest supermassive black hole to us — some four million solar masses — and its direct image was published in 2022.",
     visibility: "IMAGE_ONLY",
-    image: "/images/sky/sgr-a-star.jpg",
+    image: assetUrl("sky/sgr-a-star.jpg"),
     imageCredit: null,
     facts: [
       "Hố đen siêu khối lượng ở tâm Ngân Hà",
@@ -537,7 +538,7 @@ export const SKY_TARGETS: SkyTarget[] = [
     blurbEn:
       "A young open cluster in the constellation Taurus, about 445 light-years away — a figure not universally agreed on. Six or seven stars show to the naked eye; binoculars reveal hundreds.",
     visibility: "NAKED_EYE",
-    image: "/images/sky/m45.jpg",
+    image: assetUrl("sky/m45.jpg"),
     imageCredit: null,
     facts: [
       "Cụm sao phân tán trẻ, cách 445 năm ánh sáng",
@@ -567,7 +568,7 @@ export const SKY_TARGETS: SkyTarget[] = [
     blurbEn:
       "A supernova remnant in the constellation Taurus, about 6,500 light-years away. The explosion that made it was recorded by Chinese astronomers in 1054, and a neutron star at its centre still spins about 30 times a second.",
     visibility: "SMALL_SCOPE",
-    image: "/images/sky/m1.jpg",
+    image: assetUrl("sky/m1.jpg"),
     imageCredit: null,
     facts: [
       "Tàn dư siêu tân tinh mà sử Trung Hoa ghi năm 1054",
@@ -597,7 +598,7 @@ export const SKY_TARGETS: SkyTarget[] = [
     blurbEn:
       "A face-on spiral in the constellation Canes Venatici, about 31 million light-years away. It was the first galaxy recognised as having spiral structure, in 1845, and it is interacting with the smaller galaxy NGC 5195.",
     visibility: "BINOCULARS",
-    image: "/images/sky/m51.jpg",
+    image: assetUrl("sky/m51.jpg"),
     imageCredit: null,
     facts: [
       "Thiên hà đầu tiên được nhận ra là có cấu trúc xoắn ốc, năm 1845",
@@ -627,7 +628,7 @@ export const SKY_TARGETS: SkyTarget[] = [
     blurbEn:
       "A nearly edge-on spiral in the constellation Virgo, about 28 million light-years away. Its dark dust lane cuts across a bright bulge — the shape that gave it its name.",
     visibility: "BINOCULARS",
-    image: "/images/sky/m104.jpg",
+    image: assetUrl("sky/m104.jpg"),
     imageCredit: null,
     facts: [
       "Nhìn gần như nghiêng cạnh",
@@ -657,7 +658,7 @@ export const SKY_TARGETS: SkyTarget[] = [
     blurbEn:
       "A globular cluster in the constellation Hercules, about 25,000 light-years away. It is the brightest globular in the northern sky: a few hundred thousand old stars packed into a ball about 145 light-years across.",
     visibility: "BINOCULARS",
-    image: "/images/sky/m13.jpg",
+    image: assetUrl("sky/m13.jpg"),
     imageCredit: null,
     facts: [
       "Cụm sao cầu sáng nhất bầu trời bắc",

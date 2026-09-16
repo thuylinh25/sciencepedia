@@ -6,6 +6,8 @@
  * thêm một mô hình mới chỉ cần chèn đúng chỗ vào đây.
  */
 
+import { assetUrl } from "@/lib/asset";
+
 export type ModelStep = {
   id: string;
   href: string;
@@ -21,9 +23,6 @@ export type ModelStep = {
   color: string;
 };
 
-const thumb = (dir: string, file: string) =>
-  `https://upload.wikimedia.org/wikipedia/commons/thumb/${dir}/${file}/1280px-${file}`;
-
 export const MODEL_STEPS: ModelStep[] = [
   {
     id: "solar-system",
@@ -37,7 +36,7 @@ export const MODEL_STEPS: ModelStep[] = [
       "Tám hành tinh chuyển động quanh Mặt Trời, mỗi hành tinh mang bản đồ bề mặt thật và nghiêng đúng trục quay của nó. Bấm vào một hành tinh để xem thông số và mở bài viết.",
     blurbEn:
       "Eight planets orbiting the Sun, each with its real surface map and true axial tilt. Click a planet for its figures and article.",
-    image: thumb("a/a9", "Planets2013.jpg"),
+    image: assetUrl("explore/planets-2013.jpg"),
     color: "#f59e0b",
   },
   {
@@ -52,7 +51,7 @@ export const MODEL_STEPS: ModelStep[] = [
       "Thiên hà của chúng ta với bốn nhánh xoắn ốc, phần phình trung tâm và quầng cụm sao cầu. Có chế độ nhìn ngang đĩa để thấy nó mỏng tới mức nào, và nhãn đánh dấu vị trí Mặt Trời.",
     blurbEn:
       "Our galaxy with its four spiral arms, central bulge and globular-cluster halo. An edge-on view shows how thin the disk is, and a marker gives the Sun's position.",
-    image: thumb("1/16", "The_Milky_Way_over_ALMA.jpg"),
+    image: assetUrl("explore/milky-way-alma.jpg"),
     color: "#8b5cf6",
   },
   {
@@ -67,7 +66,7 @@ export const MODEL_STEPS: ModelStep[] = [
       "Mạng vũ trụ ở quy mô lớn nhất: các đám thiên hà nối nhau thành sợi, bao quanh những khoảng rỗng khổng lồ. Kèm bậc thang kích thước từ Ngân Hà ra tới chân trời vũ trụ.",
     blurbEn:
       "The cosmic web at the largest scale: galaxy clusters strung into filaments around enormous voids. Includes a scale ladder from the Milky Way out to the cosmic horizon.",
-    image: thumb("0/0f", "Cosmic_web.jpg"),
+    image: assetUrl("explore/cosmic-web.jpg"),
     color: "#6366f1",
   },
 ];
@@ -106,14 +105,14 @@ export const EXPLORE_TOOLS: ExploreTool[] = [
     id: "space-map",
     href: "/space-map",
     copyKey: "sky",
-    image: "/images/explore/sky-map.jpg",
+    image: assetUrl("explore/sky-map.jpg"),
     color: "#38bdf8",
   },
   {
     id: "zoom",
     href: "/zoom",
     copyKey: "zoom",
-    image: "/images/explore/zoom.jpg",
+    image: assetUrl("explore/zoom.jpg"),
     color: "#10b981",
   },
 ];

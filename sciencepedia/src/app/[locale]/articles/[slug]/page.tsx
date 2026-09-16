@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 import { notFound, permanentRedirect } from "next/navigation";
-import Image from "next/image";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import {
   BookOpen,
@@ -62,6 +61,7 @@ import { SectionHeading } from "@/components/section-heading";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { AssetImage } from "@/components/ui/asset-image";
 
 export const revalidate = 300;
 
@@ -277,10 +277,9 @@ export default async function ArticlePage({
              dung đầu tiên lùi khỏi màn hình đầu trên laptop. Đổi lại ảnh bìa
              không còn bị đọc nhầm là ảnh hỏng. */
           <div className="relative h-[64vh] max-h-[36rem] min-h-[24rem] w-full overflow-hidden bg-space-900">
-            <Image
+            <AssetImage
               src={article.coverImage}
               alt=""
-              fill
               priority
               sizes="100vw"
               className="object-scale-down"
