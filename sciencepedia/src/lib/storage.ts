@@ -138,12 +138,27 @@ export async function uploadImage(
   file: File,
   prefix?: string,
 ): Promise<UploadResult> {
-  const source = Buffer.from(await file.arrayBuffer());
+  return uploadBuffer(Buffer.from(await file.arrayBuffer()), file.name, prefix);
+}
+
+/**
+ * Cùng việc như `uploadImage` nhưng nhận sẵn byte.
+ *
+ * Tách ra vì có hai nguồn ảnh: tệp biên tập viên chọn, và ảnh tải về từ máy
+ * chủ ngoài khi người ta dán một URL (`src/lib/cover-intake.ts`). Hai nguồn,
+ * một cách xử lý — nếu chép đôi thì nấc, chất lượng WebP và header cache sẽ
+ * lệch nhau ở lần sửa sau.
+ */
+export async function uploadBuffer(
+  source: Buffer,
+  originalName: string,
+  prefix?: string,
+): Promise<UploadResult> {
   const meta = await sharp(source).metadata();
   const origWidth = meta.width ?? 0;
   if (!origWidth) throw new Error("Không đọc được kích thước ảnh");
 
-  const stem = buildStem(file.name, prefix);
+  const stem = buildStem(originalName, prefix);
   const targets = [...LADDER.filter((w) => w < origWidth), Math.min(origWidth, LADDER[LADDER.length - 1])];
 
   const widths: number[] = [];

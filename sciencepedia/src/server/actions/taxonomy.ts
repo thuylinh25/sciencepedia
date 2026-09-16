@@ -4,6 +4,7 @@ import bcrypt from "bcryptjs";
 import { revalidatePath, revalidateTag } from "next/cache";
 import { Prisma, type Role } from "@prisma/client";
 
+import { intakeCover, type CoverFields } from "@/lib/cover-intake";
 import { prisma } from "@/lib/prisma";
 import { AuthError, requireRole } from "@/lib/rbac";
 import {
@@ -17,6 +18,39 @@ import {
 import { slugify } from "@/lib/utils";
 import { issueResetLinkForAdmin } from "@/server/password-reset";
 import type { ActionResult } from "@/server/actions/types";
+
+/**
+ * Ba trường ảnh bìa của một lĩnh vực, ở dạng `intakeCover` nhận.
+ *
+ * Biểu mẫu lĩnh vực không có ô ghi công — nhưng cột thì có, và bìa lĩnh vực
+ * phần lớn là ảnh Wikimedia đòi ghi công. Nên để `intakeCover` tự suy: nó chỉ
+ * điền khi đang trống, không đè lên thứ ai đó đã sửa tay qua đường khác.
+ */
+function coverOf(input: CategoryInput): CoverFields {
+  return {
+    coverImage: input.coverImage?.trim() || null,
+    coverImageCredit: null,
+    coverImageCreditEn: null,
+  };
+}
+
+/**
+ * Phần ảnh bìa đem ghi vào CSDL.
+ *
+ * Chỉ kèm ghi công khi `intakeCover` thật sự suy ra được. Nếu ghi thẳng cả ba
+ * trường thì mỗi lượt sửa lĩnh vực sẽ đặt `coverImageCredit = null`, tức xoá
+ * mất ghi công ai đó đã điền qua `npm run images:credit` — mà ghi công là điều
+ * kiện của giấy phép chứ không phải trang trí.
+ */
+function coverWrite(cover: CoverFields) {
+  return cover.coverImageCredit
+    ? {
+        coverImage: cover.coverImage,
+        coverImageCredit: cover.coverImageCredit,
+        coverImageCreditEn: cover.coverImageCreditEn,
+      }
+    : { coverImage: cover.coverImage };
+}
 
 function toFailure(error: unknown, entity: string): ActionResult<never> {
   if (error instanceof AuthError) return { ok: false, error: error.code };
@@ -62,16 +96,22 @@ export async function createCategory(
     }
 
     const input = parsed.data;
+    const slug = input.slug?.trim() || slugify(input.name);
+    const cover = await intakeCover(coverOf(input), {
+      prefix: "categories",
+      name: slug,
+    });
+
     const category = await prisma.category.create({
       data: {
-        slug: input.slug?.trim() || slugify(input.name),
+        slug,
         name: input.name.trim(),
         nameEn: input.nameEn.trim(),
         description: input.description?.trim() || null,
         descriptionEn: input.descriptionEn?.trim() || null,
         icon: input.icon?.trim() || null,
         color: input.color,
-        coverImage: input.coverImage?.trim() || null,
+        ...coverWrite(cover),
         parentId: input.parentId || null,
         order: input.order,
       },
@@ -117,17 +157,23 @@ export async function updateCategory(
       };
     }
 
+    const slug = input.slug?.trim() || slugify(input.name);
+    const cover = await intakeCover(coverOf(input), {
+      prefix: "categories",
+      name: slug,
+    });
+
     const category = await prisma.category.update({
       where: { id },
       data: {
-        slug: input.slug?.trim() || slugify(input.name),
+        slug,
         name: input.name.trim(),
         nameEn: input.nameEn.trim(),
         description: input.description?.trim() || null,
         descriptionEn: input.descriptionEn?.trim() || null,
         icon: input.icon?.trim() || null,
         color: input.color,
-        coverImage: input.coverImage?.trim() || null,
+        ...coverWrite(cover),
         parentId: input.parentId || null,
         order: input.order,
       },

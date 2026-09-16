@@ -5,6 +5,7 @@ import { Prisma } from "@prisma/client";
 
 import { prisma } from "@/lib/prisma";
 import { requireRole, AuthError } from "@/lib/rbac";
+import { intakeCover } from "@/lib/cover-intake";
 import { articleSchema, type ArticleInput } from "@/lib/validations";
 import { readingTime, slugify } from "@/lib/utils";
 import { removeArticle, syncArticle } from "@/lib/meili";
@@ -83,7 +84,14 @@ export async function createArticle(
       };
     }
 
-    const data = normalise(parsed.data);
+    /* Dán URL ảnh ngoài thì kéo về R2 ngay trong lượt lưu — xem
+       `src/lib/cover-intake.ts`. Hỏng thì vẫn lưu, chỉ là bìa còn trỏ ra
+       ngoài cho tới lượt `covers:mirror` kế tiếp. */
+    const base = normalise(parsed.data);
+    const data = await intakeCover(base, {
+      prefix: "articles",
+      name: base.slug,
+    });
 
     const article = await prisma.article.create({
       data: {
@@ -139,7 +147,14 @@ export async function updateArticle(
     });
     if (!existing) return { ok: false, error: "NOT_FOUND" };
 
-    const data = normalise(parsed.data);
+    /* Dán URL ảnh ngoài thì kéo về R2 ngay trong lượt lưu — xem
+       `src/lib/cover-intake.ts`. Hỏng thì vẫn lưu, chỉ là bìa còn trỏ ra
+       ngoài cho tới lượt `covers:mirror` kế tiếp. */
+    const base = normalise(parsed.data);
+    const data = await intakeCover(base, {
+      prefix: "articles",
+      name: base.slug,
+    });
 
     // Chỉ đặt publishedAt lần đầu xuất bản — giữ nguyên ở các lần sửa sau
     const publishedAt =

@@ -88,7 +88,7 @@ Gate accuracy **không có ngoại lệ**.
 - **Ảnh:** luôn có kích thước; dùng `next/image`; remote host phải khai báo trong `next.config.ts`.
 - **Ảnh tĩnh giao diện nằm trên Cloudflare R2**, không trong `public/`. Dựng URL bằng `assetUrl()` (`@/lib/asset`), đừng viết cứng.
 - **Ảnh R2 render bằng `<AssetImage>`, KHÔNG bằng `next/image`.** Hạn mức Image Optimization của Vercel đã cạn (HTTP 402), nên các cỡ được dựng sẵn và tải thẳng từ R2. Thêm ảnh: tải lên R2 → `npm run images:variants -- --write` → `npm run assets:upload -- --write`. Lý do đầy đủ: `docs/architecture.md`, mục "Ảnh tĩnh KHÔNG đi qua `/_next/image`".
-- **Bài mới có ảnh bìa ngoài:** chạy `npm run images:credit -- --write` TRƯỚC rồi mới `npm run covers:mirror -- --write`. Sao ảnh xong thì URL mất dấu vết Commons và không suy được ghi công nữa — mà ghi công là điều kiện giấy phép.
+- **Dán URL ảnh ngoài vào form quản trị thì tự về R2** kèm ghi công Commons, ngay trong lượt lưu (`src/lib/cover-intake.ts`). Hỏng thì vẫn lưu, bìa còn trỏ ra ngoài. `npm run covers:mirror -- --write` là lưới hứng cho những lượt hụt và cho ảnh do pipeline sinh ra — chạy `npm run images:credit -- --write` TRƯỚC nó, vì sao ảnh xong là mất dấu vết Commons.
 - **Ảnh tải lên qua trang quản trị đi thẳng R2** (`/api/upload`), tự chuyển WebP và dựng sẵn các cỡ — không cần chạy script nào sau đó. Supabase Storage không còn nhận ảnh mới.
 - **Song ngữ:** dùng `pick()` / `pickName()` từ `@/lib/i18n-content`, không hardcode.
 

@@ -451,6 +451,31 @@ người ta tin là đã xoá.
 `serverExternalPackages` — nó là thư viện native, gói vào bundle server thì bản nhị
 phân đúng nền tảng bị bỏ lại.
 
+### Dán URL ảnh ngoài cũng tự về R2
+
+Ô "Hoặc dán URL ảnh có sẵn" chỉ lưu một chuỗi, nên trước đây dán URL Wikimedia rồi
+bấm Lưu sẽ để lại một bìa trỏ ra ngoài: không có các cỡ dựng sẵn, rơi về `next/image`,
+dính 402. Chữa được bằng `images:credit` rồi `covers:mirror` — tức một bước phải nhớ
+bằng đầu, và bước bị quên thì hỏng âm thầm.
+
+`intakeCover()` (`src/lib/cover-intake.ts`) chạy ngay trong lượt lưu bài và lưu lĩnh
+vực: lấy ghi công từ Commons, kéo ảnh về, dựng các cỡ trên R2, trả lại URL R2.
+
+**Thứ tự trong hàm là bắt buộc: ghi công TRƯỚC, sao ảnh SAU.** Ghi công suy ra từ tên
+tệp Commons nằm trong URL; sao ảnh xong thì URL không còn dấu vết ấy.
+
+**Hỏng thì vẫn lưu.** Hàm không bao giờ ném lỗi — Wikimedia chậm hay R2 trục trặc là
+chuyện của bên thứ ba, chặn lượt lưu vì thế là đổi một phiền toái nhỏ (bìa còn trỏ ra
+ngoài, `covers:mirror` dọn sau) lấy một phiền toái lớn (biên tập viên mất bài đang
+viết).
+
+Lúc SỬA lĩnh vực chỉ ghi ghi công khi thật sự suy ra được (`coverWrite` trong
+`taxonomy.ts`). Ghi thẳng cả ba trường thì mỗi lượt sửa sẽ đặt `coverImageCredit = null`
+và xoá mất thứ `images:credit` đã điền.
+
+Phần suy ghi công nằm ở `src/lib/commons-credit.ts`, dùng chung với
+`scripts/backfill-image-credit.ts` — một cách suy, hai nơi gọi.
+
 ---
 
 Kết quả sau lượt chuyển 2026-09-16: mọi trang nội dung render **0** URL `/_next/image`.
