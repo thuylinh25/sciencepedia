@@ -16,8 +16,12 @@ export const runtime = "nodejs";
 export const maxDuration = 30;
 
 /**
- * POST /api/upload — tải một ảnh lên Supabase Storage.
+ * POST /api/upload — tải một ảnh lên Cloudflare R2.
  * Nhận multipart/form-data với trường `file`, tuỳ chọn `prefix` và `alt`.
+ *
+ * Ảnh được chuyển sang WebP và dựng sẵn nhiều bề rộng ngay tại đây; trường
+ * `url` trả về là nấc LỚN NHẤT, và `<AssetImage>`/`<CoverImage>` suy ngược cả
+ * bộ `srcset` từ con số trong tên tệp. Xem `src/lib/storage.ts` cho lý do.
  */
 export async function POST(request: NextRequest) {
   try {
@@ -80,8 +84,10 @@ export async function POST(request: NextRequest) {
         path: uploaded.path,
         bucket: uploaded.bucket,
         url: uploaded.url,
-        mimeType: file.type,
-        size: file.size,
+        // Ảnh được chuyển hết sang WebP lúc tải lên, nên ghi đúng thứ đang
+        // nằm trên R2 chứ không phải kiểu và cỡ của tệp người dùng chọn.
+        mimeType: "image/webp",
+        size: uploaded.bytes,
         alt: typeof alt === "string" && alt.trim() ? alt.trim().slice(0, 300) : null,
         uploadedById: user.id,
       },

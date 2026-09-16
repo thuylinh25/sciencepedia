@@ -54,13 +54,45 @@ export function assetSrcSet(
   const key = assetKey(url);
   if (!key) return null;
 
-  const widths = variantWidths(key);
+  const widths = variantWidths(key).length > 0
+    ? variantWidths(key)
+    : widthsFromKey(key);
   if (widths.length === 0) return null;
 
+  const stem = widthsFromKey(key).length > 0 ? key.replace(VARIANT_SUFFIX, "") : key;
+
   return {
-    src: assetUrl(variantKey(key, widths[widths.length - 1])),
+    src: assetUrl(variantKey(stem, widths[widths.length - 1])),
     srcSet: widths
-      .map((w) => `${assetUrl(variantKey(key, w))} ${w}w`)
+      .map((w) => `${assetUrl(variantKey(stem, w))} ${w}w`)
       .join(", "),
   };
+}
+
+/** `articles/2026/09/x-1200.webp` → 1200 */
+const VARIANT_SUFFIX = /-(\d+)\.webp$/;
+
+/**
+ * Suy các nấc có sẵn từ CHÍNH tên tệp, khi bản kê không có mục nào.
+ *
+ * ## Vì sao cần đường thứ hai
+ *
+ * Bản kê được sinh lúc dựng và commit vào repo, nên nó chỉ biết những ảnh có
+ * mặt trước lúc build. Ảnh biên tập viên tải lên SAU đó — qua `/api/upload` —
+ * không thể có trong bản kê, và nếu chỉ dựa vào bản kê thì mọi ảnh mới đều mất
+ * `srcset`, tức rơi lại đúng cái bẫy vừa thoát ra.
+ *
+ * Nên đường tải lên tự ràng buộc mình vào một quy ước: nó dựng đủ các nấc
+ * `LADDER` không vượt bề rộng gốc, và trả về URL của nấc LỚN NHẤT. Con số
+ * trong tên tệp vì thế nói luôn "có tới đây" — đủ để suy ngược cả bộ mà không
+ * cần tra ở đâu.
+ *
+ * Bản kê vẫn đứng trước: ảnh dựng lúc build có bề rộng gốc lẻ (800, 1760,
+ * 3200…) không nằm trong `LADDER`, chỉ bản kê mới biết chúng.
+ */
+function widthsFromKey(key: string): number[] {
+  const max = Number(VARIANT_SUFFIX.exec(key)?.[1] ?? 0);
+  if (!max) return [];
+  const widths = LADDER.filter((w) => w < max);
+  return [...widths, max];
 }

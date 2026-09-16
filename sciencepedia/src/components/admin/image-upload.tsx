@@ -98,9 +98,15 @@ export function ImageUpload({
               fill
               sizes="(max-width: 1024px) 100vw, 18rem"
               className="object-cover"
-              // Ảnh do biên tập viên dán vào có thể ở host chưa khai báo;
-              // khi đó next/image sẽ lỗi, nên bỏ tối ưu cho an toàn.
-              unoptimized={!value.includes("/storage/v1/object/public/")}
+              /* LUÔN bỏ tối ưu, hai lý do cộng lại.
+                 Ảnh biên tập viên dán vào có thể ở host chưa khai báo, và khi
+                 đó next/image ném lỗi. Còn ảnh ở host đã khai báo thì vẫn đi
+                 qua `/_next/image`, nơi hạn mức Vercel đã cạn (HTTP 402) —
+                 nghĩa là ô xem trước trong trang quản trị trắng trơn đúng lúc
+                 người ta cần nhìn xem đã chọn đúng ảnh chưa. Đây là ô xem
+                 trước một tấm, không phải trang công khai: byte không đáng lo
+                 bằng việc nó hiện ra. */
+              unoptimized
             />
           </div>
 

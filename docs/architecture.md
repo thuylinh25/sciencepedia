@@ -350,7 +350,7 @@ Production deploy từ `main`. Xem `docs/process/` cho quy trình phát hành.
 | Kho | Chứa gì | Vì sao ở đó |
 |---|---|---|
 | **Cloudflare R2** | Toàn bộ ảnh tĩnh: hero, bìa thiên thể, ô "khám phá", và bìa tự vẽ của bài khái niệm | 50 tệp, ~5,4 MB, gần như không đổi. Để trong `public/` thì mỗi deploy đóng gói lại toàn bộ và mọi lượt tải tính vào băng thông Vercel. R2 **không tính phí egress**. |
-| **Supabase Storage** | Ảnh bài viết và ảnh danh mục do biên tập tải lên | Ghi lúc chạy, cần khoá service role và RLS — thuộc về cùng hệ với CSDL. |
+| **Supabase Storage** | Không còn ảnh mới nào. Bucket cũ giữ lại vì `npm run covers:mirror` đã sao hết sang R2, nhưng chưa xoá | Xoá bucket là thao tác một chiều; để đó tới khi chắc chắn không còn URL nào trỏ vào. `scripts/setup-storage.ts` từ đó thành script chết. |
 | **`public/`** | Chỉ còn `icon.svg` | Favicon phải nằm cùng gốc với trang. |
 
 Hai script dựng ảnh — `npm run covers:build` (bìa tự vẽ) và `npm run covers:bodies`
@@ -425,6 +425,33 @@ lại của `next/image` là `srcset`, không phải phần biến đổi ảnh 
 
 Vì sao WebP mà không AVIF: `<img srcset>` chỉ trỏ được một định dạng; muốn cả hai phải
 `<picture>` hai nguồn, gấp đôi số tệp. WebP chạy trên mọi trình duyệt còn được hỗ trợ.
+
+### Đường tải lên cũng dựng sẵn các cỡ
+
+`/api/upload` ghi thẳng vào R2 (`src/lib/storage.ts`), chuyển ảnh sang WebP và dựng đủ
+các nấc **ngay tại lượt tải lên**, rồi trả về URL của nấc lớn nhất.
+
+Cách rẻ hơn là để `images:variants` chạy sau. Nhưng khi đó ảnh vừa tải trông hoàn hảo
+trong trang quản trị rồi hỏng ngoài trang công khai, và chỉ hỏng ở vài bề rộng màn
+hình — kiểu lỗi phát hiện muộn nhất có thể. Vài giây ở lượt tải lên đổi lấy việc không
+ai phải nhớ chạy ba lệnh.
+
+**Quy ước tên tệp thay cho bản kê.** `image-variants.json` sinh lúc dựng nên không thể
+biết ảnh tải lên sau đó. Vì vậy đường tải lên tự ràng buộc: dựng đủ các nấc `LADDER`
+không vượt bề rộng gốc, và URL trong CSDL trỏ nấc LỚN NHẤT. Con số trong tên tệp
+(`…-1400.webp`) nói luôn "có tới đây", và `assetSrcSet()` suy ngược cả bộ. Bản kê vẫn
+đứng trước vì ảnh dựng lúc build có bề rộng gốc lẻ (800, 1760, 3200…) mà chỉ nó biết.
+
+**Xoá ảnh thì HỎI R2, đừng đoán theo `LADDER`.** Lượt đầu viết `deleteImage` đoán — và
+phép thử cho thấy nó để sót đúng bản to nhất, vì nấc lớn nhất bằng bề rộng gốc nên gần
+như luôn là con số lẻ ngoài `LADDER`. Xoá mà để lại bản to nhất thì tệ hơn không xoá:
+người ta tin là đã xoá.
+
+`sharp` phải nằm trong `dependencies` (không phải `devDependencies`) và trong
+`serverExternalPackages` — nó là thư viện native, gói vào bundle server thì bản nhị
+phân đúng nền tảng bị bỏ lại.
+
+---
 
 Kết quả sau lượt chuyển 2026-09-16: mọi trang nội dung render **0** URL `/_next/image`.
 Còn lại đi qua bộ tối ưu chỉ có ảnh người dùng tải lên (avatar) và ảnh EPIC của NASA —

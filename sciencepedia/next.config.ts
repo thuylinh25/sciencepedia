@@ -88,7 +88,12 @@ const nextConfig: NextConfig = {
      */
     staticGenerationRetryCount: 2,
   },
-  serverExternalPackages: ["@prisma/client", "bcryptjs"],
+  /*
+   * `sharp` là thư viện native. Để Next gói nó vào bundle server thì bản nhị
+   * phân đúng nền tảng bị bỏ lại — nó phải được `require` lúc chạy. `/api/upload`
+   * dùng sharp để dựng các cỡ ảnh ngay khi biên tập viên tải lên.
+   */
+  serverExternalPackages: ["@prisma/client", "bcryptjs", "sharp"],
   /**
    * Đổi slug bài viết thì URL cũ phải còn sống.
    *

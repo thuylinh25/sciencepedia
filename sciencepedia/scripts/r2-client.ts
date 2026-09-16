@@ -1,144 +1,55 @@
-import { createHash, createHmac } from "node:crypto";
+import { signR2Request, type R2Credentials } from "../src/lib/r2-sign";
 
 /**
- * Nói chuyện với Cloudflare R2 qua giao thức S3, ký SigV4 bằng `node:crypto`.
+ * Nói chuyện với Cloudflare R2 qua giao thức S3, dùng cho các script chạy tay.
  *
- * ## Vì sao không dùng `@aws-sdk/client-s3`
- *
- * SDK của AWS kéo theo vài chục gói cho hai thao tác (PUT và LIST) trong những
- * script chạy tay dăm lần một năm. Đây là ứng dụng Next, không phải hộp công cụ
- * hạ tầng: mỗi phụ thuộc thêm vào `package.json` là thứ phải vá và nâng cấp mãi
- * về sau. Chữ ký SigV4 gói gọn trong một tệp.
- *
- * ## Vì sao không dùng `wrangler`
- *
- * `wrangler` xác thực bằng OAuth hoặc `CLOUDFLARE_API_TOKEN` — khác hẳn cặp
- * khoá S3 mà R2 phát riêng cho truy cập kiểu S3. Đã có cặp khoá ấy trong `.env`
- * thì đi thẳng bằng nó, khỏi dựng thêm một đường xác thực thứ hai.
+ * Phần ký SigV4 nằm ở `src/lib/r2-sign.ts` và dùng chung với `src/lib/storage.ts`
+ * (đường tải lên của trang quản trị). Ở đây chỉ còn phần đọc khoá từ `.env` và
+ * vài thao tác tiện tay — một cách ký, hai nơi gọi, không có bản chép thứ hai
+ * để lệch đi ở lần sửa sau.
  */
 
-const ACCESS_KEY = process.env.CLOUDFLARE_R2_ACCESS_KEY_ID;
-const SECRET_KEY = process.env.CLOUDFLARE_R2_SECRET_ACCESS_KEY;
-
-/**
- * `CLOUDFLARE_ACCOUNT_ID` là tên `wrangler` và tài liệu Cloudflare dùng, nên nó
- * đứng trước; `CLOUDFLARE_R2_ACCOUNT_ID` giữ lại cho ai đã đặt theo lối gom
- * tiền tố R2. Cùng một giá trị — đây là chỗ dễ mất nửa tiếng vì một biến đặt
- * đúng nhưng sai tên.
- */
-const ACCOUNT_ID =
-  process.env.CLOUDFLARE_ACCOUNT_ID ?? process.env.CLOUDFLARE_R2_ACCOUNT_ID;
+function credentials(): R2Credentials {
+  return {
+    /*
+     * `CLOUDFLARE_ACCOUNT_ID` là tên `wrangler` và tài liệu Cloudflare dùng,
+     * nên nó đứng trước; `CLOUDFLARE_R2_ACCOUNT_ID` giữ lại cho ai đã đặt theo
+     * lối gom tiền tố R2. Cùng một giá trị — đây là chỗ dễ mất nửa tiếng vì
+     * một biến đặt đúng nhưng sai tên.
+     */
+    accountId:
+      process.env.CLOUDFLARE_ACCOUNT_ID ??
+      process.env.CLOUDFLARE_R2_ACCOUNT_ID ??
+      "",
+    bucket: process.env.CLOUDFLARE_R2_BUCKET ?? "",
+    accessKeyId: process.env.CLOUDFLARE_R2_ACCESS_KEY_ID ?? "",
+    secretAccessKey: process.env.CLOUDFLARE_R2_SECRET_ACCESS_KEY ?? "",
+  };
+}
 
 export const BUCKET = process.env.CLOUDFLARE_R2_BUCKET;
 
-const REGION = "auto"; // R2 không có vùng; SigV4 vẫn đòi một chuỗi vùng.
-const SERVICE = "s3";
-
 /** Tên biến còn thiếu, rỗng nghĩa là đủ. Script gọi để báo lỗi sớm và rõ. */
 export function missingEnv(): string[] {
+  const c = credentials();
   return (
     [
-      ["CLOUDFLARE_ACCOUNT_ID", ACCOUNT_ID],
-      ["CLOUDFLARE_R2_BUCKET", BUCKET],
-      ["CLOUDFLARE_R2_ACCESS_KEY_ID", ACCESS_KEY],
-      ["CLOUDFLARE_R2_SECRET_ACCESS_KEY", SECRET_KEY],
+      ["CLOUDFLARE_ACCOUNT_ID", c.accountId],
+      ["CLOUDFLARE_R2_BUCKET", c.bucket],
+      ["CLOUDFLARE_R2_ACCESS_KEY_ID", c.accessKeyId],
+      ["CLOUDFLARE_R2_SECRET_ACCESS_KEY", c.secretAccessKey],
     ] as const
   )
     .filter(([, value]) => !value)
     .map(([name]) => name);
 }
 
-const sha256 = (data: Buffer | string) =>
-  createHash("sha256").update(data).digest("hex");
-
-const hmac = (key: Buffer | string, data: string) =>
-  createHmac("sha256", key).update(data, "utf8").digest();
-
-/**
- * Mã hoá từng đoạn đường dẫn theo luật của SigV4.
- *
- * `encodeURIComponent` bỏ sót `!'()*` — AWS đòi mã hoá cả chúng, và chữ ký
- * lệch một ký tự là 403 không kèm giải thích.
- */
-function encodeSegment(segment: string): string {
-  return encodeURIComponent(segment).replace(
-    /[!'()*]/g,
-    (c) => `%${c.charCodeAt(0).toString(16).toUpperCase()}`,
-  );
-}
-
-type Request = {
-  method: "GET" | "PUT";
-  /** Khoá trong bucket; rỗng nghĩa là thao tác trên chính bucket (list). */
-  key?: string;
-  /** Chuỗi truy vấn đã sắp xếp theo alphabet, đúng như SigV4 đòi. */
-  query?: string;
-  body?: Buffer;
-  headers?: Record<string, string>;
-};
-
-export async function send({
-  method,
-  key = "",
-  query = "",
-  body,
-  headers: extra = {},
-}: Request): Promise<Response> {
-  const host = `${ACCOUNT_ID}.r2.cloudflarestorage.com`;
-  const amzDate = new Date().toISOString().replace(/[:-]|\.\d{3}/g, "");
-  const dateStamp = amzDate.slice(0, 8);
-  const payloadHash = sha256(body ?? "");
-
-  const path = key
-    ? `/${BUCKET}/${key.split("/").map(encodeSegment).join("/")}`
-    : `/${BUCKET}`;
-
-  // Tên header phải viết thường và sắp theo alphabet, ở cả hai chỗ.
-  const headers: Record<string, string> = {
-    ...Object.fromEntries(
-      Object.entries(extra).map(([k, v]) => [k.toLowerCase(), v]),
-    ),
-    host,
-    "x-amz-content-sha256": payloadHash,
-    "x-amz-date": amzDate,
-  };
-  const names = Object.keys(headers).sort();
-
-  const canonicalRequest = [
-    method,
-    path,
-    query,
-    names.map((n) => `${n}:${headers[n]}\n`).join(""),
-    names.join(";"),
-    payloadHash,
-  ].join("\n");
-
-  const scope = `${dateStamp}/${REGION}/${SERVICE}/aws4_request`;
-  const stringToSign = [
-    "AWS4-HMAC-SHA256",
-    amzDate,
-    scope,
-    sha256(canonicalRequest),
-  ].join("\n");
-
-  const signingKey = hmac(
-    hmac(hmac(hmac(`AWS4${SECRET_KEY}`, dateStamp), REGION), SERVICE),
-    "aws4_request",
-  );
-  const signature = createHmac("sha256", signingKey)
-    .update(stringToSign, "utf8")
-    .digest("hex");
-
-  const { host: _host, ...sendable } = headers;
-  return fetch(`https://${host}${path}${query ? `?${query}` : ""}`, {
-    method,
-    headers: {
-      ...sendable,
-      Authorization:
-        `AWS4-HMAC-SHA256 Credential=${ACCESS_KEY}/${scope}, ` +
-        `SignedHeaders=${names.join(";")}, Signature=${signature}`,
-    },
-    body: body ? new Uint8Array(body) : undefined,
+async function send(request: Parameters<typeof signR2Request>[1]) {
+  const signed = signR2Request(credentials(), request);
+  return fetch(signed.url, {
+    method: request.method,
+    headers: signed.headers,
+    body: request.body ? new Uint8Array(request.body) : undefined,
   });
 }
 
