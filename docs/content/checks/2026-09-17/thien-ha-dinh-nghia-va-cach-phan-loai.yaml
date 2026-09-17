@@ -1,0 +1,109 @@
+slug: thien-ha-dinh-nghia-va-cach-phan-loai
+checkedAt: 2026-09-17
+checkedBy: science-editor
+sourceCount: 2
+verdict: revise
+summary: "Số sao trong một thiên hà sai ở cả hai đầu khoảng; con số 50% sáp nhập Ngân Hà–Andromeda mất khung thời gian 10 tỷ năm và được trình bày như đã chốt, trong khi một nghiên cứu năm 2026 đưa ra 90%; kích thước Ngân Hà là số chính xác giả không có nguồn."
+claims:
+  - id: C-1
+    claim: "Một thiên hà thường chứa hàng triệu đến hàng trăm tỷ ngôi sao"
+    verdict: contradicted
+    severity: S2
+    evidence: https://science.nasa.gov/universe/galaxies/
+    note: "NASA: thiên hà lùn có thể chỉ vài nghìn sao; thiên hà lớn nhất chứa hàng nghìn tỷ (trillions) sao. Sai khoảng 3 bậc độ lớn ở đầu dưới và 1 bậc ở đầu trên. Sửa thành «từ vài nghìn đến hàng nghìn tỷ ngôi sao (NASA)»."
+  - id: C-2
+    claim: "Ngân Hà rộng khoảng 105.000 năm ánh sáng"
+    verdict: unsupported
+    severity: S3
+    evidence: https://science.nasa.gov/universe/galaxies/
+    note: "Không nguồn nào trong bài đưa ra 105.000. NASA: đĩa sao «trải dài hơn 100.000 năm ánh sáng». Đây là số chính xác giả không có nguồn: thay bằng «hơn 100.000 năm ánh sáng (NASA)»."
+  - id: C-3
+    claim: "Thiên hà lùn chỉ vài nghìn năm ánh sáng; thiên hà khổng lồ có thể rộng hàng trăm nghìn năm ánh sáng"
+    verdict: partially-supported
+    severity: S3
+    evidence: https://science.nasa.gov/universe/galaxies/
+    note: "NASA: thiên hà nhỏ nhất chỉ vài trăm năm ánh sáng; lớn nhất hơn một triệu năm ánh sáng. Cả hai đầu đều bị thu hẹp. Sửa theo NASA."
+  - id: C-4
+    claim: "Andromeda (M31) cách chúng ta khoảng 2,5 triệu năm ánh sáng"
+    verdict: verified
+    severity: none
+    evidence: https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-messier-catalog/messier-31/
+    note: "NASA: khoảng 2,5 triệu năm ánh sáng. Gắn nguồn này."
+  - id: C-5
+    claim: "Khả năng Ngân Hà và Andromeda sáp nhập trong tương lai vào khoảng 50%"
+    verdict: partially-supported
+    severity: S3
+    evidence: "https://doi.org/10.1038/s41550-025-02563-1 ; https://blogs.helsinki.fi/sawala/paper-apocalypse-when-no-certainty-of-a-milky-way-andromeda-collision/"
+    note: "Sawala và cộng sự (Nature Astronomy 9, 1206–1217, 2025) cho xác suất «nhỉnh hơn ~50%» sáp nhập TRONG 10 TỶ NĂM TỚI. Bỏ khung thời gian khiến con số sai nghĩa (50% vô thời hạn). Phải thêm «trong 10 tỷ năm tới»."
+  - id: C-6
+    claim: "Nếu va chạm xảy ra, nhiều khả năng sau 7 đến 8 tỷ năm"
+    verdict: partially-supported
+    severity: S3
+    evidence: https://blogs.helsinki.fi/sawala/paper-apocalypse-when-no-certainty-of-a-milky-way-andromeda-collision/
+    note: "Trang của tác giả chính: trong các trường hợp có sáp nhập, trung vị khoảng 7 tỷ năm. Phần «8» lấy từ bản tóm tắt thứ cấp (~7,6 tỷ năm), chưa kiểm tại bài gốc. Sửa thành «trung vị khoảng 7 tỷ năm (Sawala và cộng sự, 2025)» hoặc kiểm số tại bài gốc."
+  - id: C-7
+    claim: "«Các nghiên cứu gần đây cho thấy» khoảng 50% — trình bày như kết luận thống nhất"
+    verdict: contradicted
+    severity: S3
+    evidence: "https://arxiv.org/abs/2603.22863 ; https://doi.org/10.3847/2041-8213/ae5799"
+    note: "Wu, Huang, Zhang, Sun, Shao (ApJL 1001, L19, 04/2026) dùng cùng khung với Sawala nhưng số liệu chuyển động riêng Gaia mới hơn, cho xác suất sáp nhập 90% với trung vị 6,5 (+1,3/−1,5) tỷ năm, «khôi phục phần lớn bức tranh cổ điển». Đây là bất đồng thật và mới, phải nêu cả hai kết quả kèm mốc thời gian, không tự phân xử (quy tắc 7). Bài xuất bản 31/08/2026, sau khi bài của Wu và cộng sự đã ra."
+  - id: C-8
+    claim: "Nếu sáp nhập, kết quả có thể là một thiên hà elip khổng lồ"
+    verdict: unverifiable
+    severity: S3
+    evidence: "—"
+    note: "Không nguồn nào trong bài đỡ claim này, lượt này chưa mở được nguồn. Gắn nguồn hoặc cắt."
+  - id: C-9
+    claim: "Nguồn 1 (thienvanvietnam.org, VACA, 2010) là tier 2"
+    verdict: contradicted
+    severity: S3
+    evidence: "https://www.thienvanvietnam.org/?option=com_content&view=article&id=51:thien-ha-dinh-nghia-va-phan-loai&catid=40:thien-has&Itemid=150"
+    note: "URL trả HTTP 200 ngày 17/09/2026, nhưng VACA là hội thiên văn nghiệp dư, tối đa bậc 4. Phần phân loại thiên hà (xoắn ốc, elip, thấu kính, không định hình; Ngân Hà có thanh chắn; Mây Magellan là thiên hà vệ tinh) chỉ được nguồn này đỡ, nên đang thiếu nguồn."
+  - id: C-10
+    claim: "Tên nguồn 2 là «Apocalypse When? No Certainty of a Milky Way–Andromeda Collision»"
+    verdict: contradicted
+    severity: S4
+    evidence: https://doi.org/10.1038/s41550-025-02563-1
+    note: "Crossref: bản Nature Astronomy mang DOI này tên là «No certainty of a Milky Way–Andromeda collision» (Sawala và cộng sự, 9:1206–1217, 02/06/2025). «Apocalypse When?» là tên bản tiền ấn phẩm arXiv:2408.00064. Sửa tên cho khớp DOI."
+fixes:
+  - "Sửa số sao thành «từ vài nghìn đến hàng nghìn tỷ ngôi sao» và gắn NASA science.nasa.gov/universe/galaxies."
+  - "Thay «khoảng 105.000 năm ánh sáng» bằng «hơn 100.000 năm ánh sáng» (NASA)."
+  - "Sửa khoảng kích thước: nhỏ nhất vài trăm năm ánh sáng, lớn nhất hơn một triệu năm ánh sáng (NASA)."
+  - "Viết lại mục Tương lai của Ngân Hà: nêu Sawala và cộng sự 2025 (~50% trong 10 tỷ năm, trung vị ~7 tỷ năm nếu có sáp nhập) VÀ Wu và cộng sự 2026 (90%, trung vị ~6,5 tỷ năm, dùng số liệu Gaia mới hơn); ghi rõ đây là vấn đề đang tranh luận tính đến 09/2026."
+  - "Sửa tên nguồn 2 thành «No certainty of a Milky Way–Andromeda collision»; thêm nguồn ApJL DOI 10.3847/2041-8213/ae5799."
+  - "Hạ tier nguồn VACA xuống 4, điền accessedAt, và bổ sung nguồn bậc 1–2 cho phần phân loại thiên hà."
+  - "Gắn nguồn cho câu «kết quả có thể là thiên hà elip khổng lồ», không có thì cắt."
+  - "Gắn nguồn NASA cho khoảng cách Andromeda 2,5 triệu năm ánh sáng."
+suggestedSources:
+  - title: "Galaxies"
+    url: https://science.nasa.gov/universe/galaxies/
+    doi:
+    publisher: NASA
+    year: 2026
+    tier: 2
+    covers: "Số sao trong thiên hà, khoảng kích thước, kích thước Ngân Hà"
+  - title: "Messier 31 (The Andromeda Galaxy)"
+    url: https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-messier-catalog/messier-31/
+    doi:
+    publisher: NASA
+    year: 2026
+    tier: 2
+    covers: "Khoảng cách tới Andromeda"
+  - title: "No certainty of a Milky Way–Andromeda collision"
+    url: https://doi.org/10.1038/s41550-025-02563-1
+    doi: 10.1038/s41550-025-02563-1
+    publisher: Nature Astronomy
+    year: 2025
+    tier: 1
+    covers: "Xác suất ~50% sáp nhập trong 10 tỷ năm"
+  - title: "The Fate of the Milky Way–Andromeda System: To Merge or Not?"
+    url: https://doi.org/10.3847/2041-8213/ae5799
+    doi: 10.3847/2041-8213/ae5799
+    publisher: The Astrophysical Journal Letters
+    year: 2026
+    tier: 1
+    covers: "Kết quả ngược lại: 90%, trung vị 6,5 tỷ năm"
+openQuestions:
+  - "Số phận Ngân Hà–Andromeda là tranh luận mở (Sawala 2025 ~50% và Wu 2026 90%). Editor không phân xử; bài phải trình bày cả hai kết quả."
+  - "Chưa kiểm được ở nguồn bậc 1–2 việc Mây Magellan Lớn nên xếp là thiên hà không định hình hay xoắn ốc Magellan; cần kiểm trước khi giữ làm ví dụ."
+  - "Điều phối viên báo thienvanvietnam.org đã chết, nhưng trong lượt này URL trả HTTP 200. Cần người kiểm lại."

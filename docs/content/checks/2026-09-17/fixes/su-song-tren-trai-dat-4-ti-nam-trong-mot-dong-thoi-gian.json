@@ -1,0 +1,123 @@
+{
+  "slug": "su-song-tren-trai-dat-4-ti-nam-trong-mot-dong-thoi-gian",
+  "edits": [
+    {
+      "claimId": "C-2",
+      "severity": "S1",
+      "find": "Các mẫu vật cổ nhất — thiên thạch và tinh thể zircon ở Tây Australia có tuổi tới 4,4 tỉ năm — cho phép xác định niên đại này khá chắc chắn.",
+      "replace": "Niên đại 4,54 tỉ năm đến từ phép đo phóng xạ trên thiên thạch, với sai số dưới 1% (U.S. Geological Survey). Các tinh thể zircon tìm được trong đá trầm tích trẻ hơn ở Tây Australia — theo USGS có tuổi tới 4,3 tỉ năm — là vật chất cổ nhất từng tìm thấy trên Trái Đất, nhưng chúng chỉ cho tuổi tối thiểu của lớp vỏ chứ không phải là căn cứ của con số 4,54 tỉ năm.",
+      "why": "Mốc 4,54 tỉ năm được gắn cho nguồn VACA, nhưng trang đó ghi ~4,7 tỉ năm — nguồn không đỡ claim. Trang USGS mở được lượt này ghi \"4.54 billion years with an uncertainty of less than 1 percent\" và ghi zircon Tây Australia \"as much as 4.3 billion years\", không phải 4,4. Câu cũ còn gộp hai thứ khác nhau và ngụ ý sai rằng zircon xác định tuổi Trái Đất.",
+      "evidence": "https://pubs.usgs.gov/gip/geotime/age.html"
+    },
+    {
+      "claimId": "C-6",
+      "severity": "S1",
+      "find": "Khi sắt cạn, oxy bắt đầu tích tụ trong khí quyển.",
+      "replace": "Khi sắt cạn, oxy bắt đầu tích tụ trong khí quyển. Đây không phải một sự kiện chớp nhoáng: Philippot và cộng sự (2018) xác định oxy khí quyển bắt đầu tăng khoảng 2,45 tỉ năm trước hoặc sớm hơn, và đề nghị hiểu Sự kiện oxy hoá lớn như một giai đoạn chuyển tiếp kéo dài chừng 300 triệu năm chứ không phải một mốc toàn cầu duy nhất.",
+      "why": "Mốc \"khoảng 2,4 tỉ năm\" trong bài không có nguồn đỡ (VACA không nêu). Philippot và cộng sự 2018 (Nature Communications), mở được lượt này, ghi \"a rise in atmospheric oxygen occurred around 2.45 Ga ago or earlier\" và mô tả GOE là \"a ~300 Myr interval\". Bổ sung để mốc có nguồn và để người đọc không hiểu GOE là một thời điểm.",
+      "evidence": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5993798/ (doi 10.1038/s41467-018-04621-x)"
+    },
+    {
+      "claimId": "C-15",
+      "severity": "S1",
+      "find": "**252 triệu năm trước**, [đại tuyệt chủng Permi](/articles/dai-tuyet-chung-permi-lan-su-song-suyt-bien-mat) xoá sổ khoảng 80% loài sinh vật biển và mở đường cho nhóm archosaur.",
+      "replace": "**Khoảng 251,9 triệu năm trước** — đợt tuyệt chủng biển bắt đầu ở 251,941 ± 0,037 triệu năm — [đại tuyệt chủng Permi](/articles/dai-tuyet-chung-permi-lan-su-song-suyt-bien-mat) xoá sổ khoảng 81% loài sinh vật biển theo ước tính của Stanley (2016); các ước tính cũ hơn vẫn được trích dẫn rộng rãi đặt con số ở 88–96%, và khác biệt này phản ánh một bất đồng về phương pháp chưa ngã ngũ. Sự kiện mở đường cho nhóm archosaur.",
+      "why": "Nguồn được gắn (VACA) ghi 248 triệu năm và 95% loài biển — không đỡ con số nào của bài. Thay bằng hai nguồn peer-review đã mở lượt này: Gastaldo và cộng sự 2020 cho niên đại 251,941 ± 0,037 Ma, Stanley 2016 cho ~81% và cho biết ước tính 88–96% của Raup vẫn được trích dẫn rộng rãi. Trình bày cả hai ước tính như bất đồng, không phân xử. Số liệu này khớp với bản đính chính của bài Đại tuyệt chủng Permi để hai bài không lệch nhau.",
+      "evidence": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5081622/ (doi 10.1073/pnas.1613094113); https://pmc.ncbi.nlm.nih.gov/articles/PMC7080820/ (doi 10.1038/s41467-020-15243-7)"
+    },
+    {
+      "claimId": "C-18",
+      "severity": "S1",
+      "find": "Dấu chân Laetoli ở Tanzania, khoảng **3,66 triệu năm** tuổi, là bằng chứng trực tiếp sớm nhất về dáng đi hai chân, thuộc về chi *Australopithecus*.",
+      "replace": "Dấu chân Laetoli ở Tanzania, khoảng **3,66 triệu năm** tuổi, là những dấu chân người cổ sớm nhất được biết trên thế giới, được quy cho *Australopithecus afarensis* (Masao và cộng sự, 2016). Nguồn nói về dấu chân chứ không nói đây là bằng chứng sớm nhất về dáng đi hai chân nói chung — bằng chứng từ xương có thể còn cổ hơn.",
+      "why": "Sửa kèm theo việc gắn nguồn: con số 3,66 triệu năm trước nay chỉ dựa vào VACA (nguồn không nêu). Nguồn thật (Masao và cộng sự 2016, eLife) viết \"the earliest hominin footprints in the world (3.66 million years old) ... attributed to Australopithecus afarensis\" — nguồn KHÔNG nói \"bằng chứng trực tiếp sớm nhất về dáng đi hai chân\". Nếu gắn eLife vào câu cũ thì lại tái lập đúng lỗi S1 đang sửa, nên câu phải khớp với điều nguồn nói.",
+      "evidence": "https://elifesciences.org/articles/19568 (doi 10.7554/eLife.19568)"
+    }
+  ],
+  "summaryEdits": [],
+  "addSources": [
+    {
+      "title": "Age of the Earth",
+      "url": "https://pubs.usgs.gov/gip/geotime/age.html",
+      "doi": "",
+      "publisher": "U.S. Geological Survey",
+      "year": null,
+      "tier": 2,
+      "covers": "C-1, C-2 — Trái Đất 4,54 tỉ năm, sai số dưới 1%; zircon Tây Australia tới 4,3 tỉ năm, vật chất cổ nhất tìm thấy trên Trái Đất. (Trang không hiển thị năm xuất bản.)"
+    },
+    {
+      "title": "Globally asynchronous sulphur isotope signals require re-definition of the Great Oxidation Event",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5993798/",
+      "doi": "10.1038/s41467-018-04621-x",
+      "publisher": "Nature Communications (Philippot, Ávila, Killingsworth và cộng sự)",
+      "year": 2018,
+      "tier": 1,
+      "covers": "C-6 — oxy khí quyển tăng khoảng 2,45 tỉ năm trước hoặc sớm hơn; GOE là giai đoạn chuyển tiếp kéo dài ~300 triệu năm"
+    },
+    {
+      "title": "Estimates of the magnitudes of major marine mass extinctions in earth history",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5081622/",
+      "doi": "10.1073/pnas.1613094113",
+      "publisher": "PNAS (Steven M. Stanley)",
+      "year": 2016,
+      "tier": 1,
+      "covers": "C-15 — ~81% loài biển ở đại tuyệt chủng Permi; ước tính cũ 88–96% của Raup"
+    },
+    {
+      "title": "The base of the Lystrosaurus Assemblage Zone, Karoo Basin, predates the end-Permian marine extinction",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7080820/",
+      "doi": "10.1038/s41467-020-15243-7",
+      "publisher": "Nature Communications",
+      "year": 2020,
+      "tier": 1,
+      "covers": "C-15 — đợt tuyệt chủng biển cuối Permi bắt đầu ở 251,941 ± 0,037 Ma"
+    },
+    {
+      "title": "New footprints from Laetoli (Tanzania) provide evidence for marked body size variation in early hominins",
+      "url": "https://elifesciences.org/articles/19568",
+      "doi": "10.7554/eLife.19568",
+      "publisher": "eLife (Masao và cộng sự)",
+      "year": 2016,
+      "tier": 1,
+      "covers": "C-18 — dấu chân người cổ sớm nhất được biết, 3,66 triệu năm, quy cho Australopithecus afarensis"
+    },
+    {
+      "title": "New fossils from Jebel Irhoud, Morocco and the pan-African origin of Homo sapiens",
+      "url": "https://kar.kent.ac.uk/62267/",
+      "doi": "10.1038/nature22336",
+      "publisher": "Nature (Hublin và cộng sự)",
+      "year": 2017,
+      "tier": 1,
+      "covers": "C-20 — hoá thạch Jebel Irhoud 315 ± 34 nghìn năm; đỡ mốc \"khoảng 300.000 năm\" đang có trong bài (nằm trong khoảng sai số của nguồn)"
+    },
+    {
+      "title": "Homo erectus",
+      "url": "https://humanorigins.si.edu/evidence/human-fossils/species/homo-erectus",
+      "doi": "",
+      "publisher": "Smithsonian National Museum of Natural History",
+      "year": null,
+      "tier": 3,
+      "covers": "C-19 — \"Between about 1.89 million and 110,000 years ago\"; \"generally considered to have been the first species to have expanded beyond Africa\". Gắn để mốc 1,9 triệu năm không còn treo sau khi gỡ VACA. (Trang không hiển thị năm xuất bản.)"
+    }
+  ],
+  "dropSources": [
+    {
+      "title": "Hình thành và tiến hóa của sự sống trên Trái Đất",
+      "why": "Nguồn mâu thuẫn với hầu hết mốc trong bài: trang này ghi Trái Đất ~4,7 tỉ năm, Theia 4,3 tỉ năm, quả cầu tuyết ~850 triệu năm, tetrapod lên cạn 410 triệu năm, Permi 248 triệu năm / 95% loài biển, Chicxulub 65 triệu năm, H. erectus 1,8 triệu năm, H. sapiens 100.000 năm — trong khi bài ghi 4,54 tỉ / ~4,5 tỉ / 720–635 / 375–360 / 252 và 80% / 66 / 1,9 triệu / 300.000. Nguồn không đỡ claim nào nó đang được gắn, tính như citation bịa. Ngoài ra tier sai: trang của một hội thiên văn nghiệp dư, phần tham khảo chỉ gồm Beyondgenes.com, National Geographic và Exploringorigins.org, không có peer-review — theo thang nguồn tối đa là bậc 4 (tài liệu bối cảnh), không được làm nguồn đỡ. Giữ nguyên nguồn 2 (Smithsonian, Omo I) — nguồn đó đỡ đúng claim 195.000 năm."
+    }
+  ],
+  "corrections": [
+    "Niên đại Trái Đất: \"Các mẫu vật cổ nhất — thiên thạch và tinh thể zircon ở Tây Australia có tuổi tới 4,4 tỉ năm — cho phép xác định niên đại này khá chắc chắn\" → \"Niên đại 4,54 tỉ năm đến từ đo phóng xạ trên thiên thạch, sai số dưới 1%; zircon Tây Australia tới 4,3 tỉ năm chỉ cho tuổi tối thiểu của lớp vỏ\" — căn cứ: USGS, Age of the Earth. Nguồn cũ (VACA) ghi 4,7 tỉ năm.",
+    "Sự kiện oxy hoá lớn: mốc \"khoảng 2,4 tỉ năm\" không nguồn → bổ sung \"oxy khí quyển bắt đầu tăng khoảng 2,45 tỉ năm trước hoặc sớm hơn, GOE là giai đoạn chuyển tiếp kéo dài chừng 300 triệu năm\" — căn cứ: Philippot và cộng sự 2018, Nature Communications, doi 10.1038/s41467-018-04621-x.",
+    "Đại tuyệt chủng Permi: \"252 triệu năm trước ... khoảng 80% loài sinh vật biển\" → \"khoảng 251,9 triệu năm trước (bắt đầu 251,941 ± 0,037 triệu năm) ... khoảng 81% theo Stanley (2016), trong khi các ước tính cũ đặt ở 88–96% — bất đồng về phương pháp\" — căn cứ: doi 10.1073/pnas.1613094113 và doi 10.1038/s41467-020-15243-7. Nguồn cũ (VACA) ghi 248 triệu năm và 95%.",
+    "Dấu chân Laetoli: \"là bằng chứng trực tiếp sớm nhất về dáng đi hai chân, thuộc về chi Australopithecus\" → \"là những dấu chân người cổ sớm nhất được biết trên thế giới, được quy cho Australopithecus afarensis; bằng chứng đi hai chân từ xương có thể còn cổ hơn\" — căn cứ: Masao và cộng sự 2016, eLife, doi 10.7554/eLife.19568.",
+    "Nguồn: gỡ \"Hình thành và tiến hóa của sự sống trên Trái Đất\" (VACA, 2011) khỏi danh sách nguồn đỡ — nguồn mâu thuẫn với gần như mọi mốc trong bài và bị gắn sai tier 2 (tối đa là bậc 4); thay bằng bảy nguồn bậc 1–3."
+  ],
+  "openQuestions": [
+    "Dòng ghi công cuối bài \"Biên tập lại từ bài ... của Đặng Vũ Tuấn Sơn ... Bản quyền nội dung gốc thuộc về VACA\" — gần như mọi mốc thời gian trong bài đã khác bài gốc và nay dựa trên nguồn peer-review. Tôi KHÔNG tự xoá dòng này. Cần người quyết: dòng ghi công còn đúng sự thật không, có giấy phép phái sinh không, và nếu giữ thì diễn đạt lại ra sao để không ngụ ý số liệu đến từ VACA.",
+    "Sau khi gỡ VACA, các mốc sau KHÔNG còn nguồn nào: va chạm Theia \"khoảng 4,5 tỉ năm\" và \"ngày dài vài giờ\"; vi hoá thạch \"3,5 tỉ năm được chấp nhận rộng rãi\"; quả cầu tuyết \"720–635 triệu năm\"; bùng nổ Cambri \"538 triệu năm\" và \"20–25 triệu năm\"; thực vật lên cạn \"470 triệu năm\"; tetrapod \"375–360 triệu năm\"; Chicxulub \"66 triệu năm\" và \"đường kính khoảng 10 km\"; linh trưởng \"55 triệu năm\"; nông nghiệp \"12.000 năm\"; lịch sử thành văn \"5.000 năm\". Tất cả là S3/S4 nên ngoài phạm vi lượt này, nhưng bài đang PUBLISHED với các con số trần — lô sau phải xử lý.",
+    "Lượt này không trích được số từ bảng niên đại ICS (stratigraphy.org trả về PDF chỉ đọc được metadata), nên mốc Cryogen 720–635 triệu năm và ranh giới Creta–Paleogene 66 triệu năm chưa gắn được nguồn bậc 1–2. Cần một bản ICS trích được chữ, hoặc nguồn peer-review thay thế.",
+    "Câu \"là loài người đầu tiên rời châu Phi\" (H. erectus) khẳng định chắc hơn nguồn Smithsonian vừa gắn (\"generally considered to have been the first species to have expanded beyond Africa\"). Đây là nâng mức tự tin so với nguồn — đã đánh S4 trong bản thẩm định nên tôi không sửa lượt này, nhưng nên đưa lên đầu lô S3: theo chuẩn biên tập, nâng mức tự tin là lỗi mức từ chối.",
+    "Bảng \"nén 4,54 tỉ năm thành một năm\" có dòng \"Tế bào đầu tiên — cuối tháng 2\" ứng với ~3,8 tỉ năm, lệch với thân bài (hoá thạch 3,5 tỉ năm → khoảng 25/3). Tính toán nội tại, S4, ngoài phạm vi lượt này nhưng cần tính lại sau khi chốt mốc có nguồn."
+  ]
+}

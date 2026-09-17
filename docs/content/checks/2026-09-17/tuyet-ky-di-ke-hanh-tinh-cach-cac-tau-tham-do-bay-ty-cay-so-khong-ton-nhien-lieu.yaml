@@ -1,0 +1,115 @@
+slug: tuyet-ky-di-ke-hanh-tinh-cach-cac-tau-tham-do-bay-ty-cay-so-khong-ton-nhien-lieu
+checkedAt: 2026-09-17
+checkedBy: science-editor
+sourceCount: 0
+verdict: revise
+summary: "Không có nguồn nào nên không thể pass; các phép tính Δv 12,3 và 51,6 km/s đúng trong hệ quy chiếu Mặt Trời, nhưng so sánh nhiên liệu “hàng chục hoặc hàng trăm lần” sai hàng nghìn tới hàng chục nghìn lần theo chính phương trình Tsiolkovsky, Ulysses bị gán riêng cho NASA, “ngoại lệ” đã lỗi thời vì Solar Orbiter, trợ giúp hấp dẫn bị gọi là “miễn phí” mà không giải thích trao đổi động lượng, và tiêu đề không khớp slug."
+claims:
+  - id: C-1
+    claim: "Trái Đất quay quanh Mặt Trời khoảng 29,8 km/s (~108.000 km/h)."
+    verdict: partially-supported
+    severity: S4
+    evidence: "https://nssdc.gsfc.nasa.gov/planetary/factsheet/earthfact.html"
+    note: "Mean orbital velocity 29,78 km/s — đúng. Quy đổi 29,78 × 3600 ≈ 107.200 km/h, không phải ~108.000; sửa thành ~107.000 km/h."
+  - id: C-2
+    claim: "Tốc độ thoát khỏi Mặt Trời tại quỹ đạo Trái Đất là 42,1 km/s; phóng theo chiều quỹ đạo chỉ cần thêm 12,3 km/s."
+    verdict: partially-supported
+    severity: S3
+    evidence: "https://nssdc.gsfc.nasa.gov/planetary/factsheet/earthfact.html"
+    note: "√2 × 29,78 ≈ 42,1 km/s (xấp xỉ quỹ đạo tròn) — đúng; 42,1 − 29,8 = 12,3 — đúng. Nhưng bảng ghi “Delta-v cần thiết” như tổng yêu cầu, trong khi đó chỉ là vận tốc dư sau khi đã thoát giếng hấp dẫn Trái Đất (vận tốc thoát 11,186 km/s theo Fact Sheet). Ghi rõ “tính trong hệ quy chiếu Mặt Trời, chưa kể phần thoát khỏi Trái Đất”; không có nguồn nào cho công thức — gắn nguồn cơ học quỹ đạo."
+  - id: C-3
+    claim: "Bay vuông góc cần Δv = √(29,8² + 42,1²) ≈ 51,6 km/s, lớn hơn 4 lần."
+    verdict: partially-supported
+    severity: S3
+    evidence: "https://nssdc.gsfc.nasa.gov/planetary/factsheet/earthfact.html"
+    note: "Phép cộng vectơ đúng (≈51,58 km/s; 51,6/12,3 ≈ 4,2). Nhưng bài đánh đồng “bay vuông góc” với “thoát Hệ Mặt Trời theo phương vuông góc”; muốn chỉ nghiêng quỹ đạo lên cao (như Ulysses) thì không cần thoát. Nói rõ kịch bản. Lỗi chính tả “lớn hơn hơn 4 lần”."
+  - id: C-4
+    claim: "Theo phương trình Tsiolkovsky, nhiệm vụ Δv 51,6 km/s có thể cần nhiên liệu lớn hơn “hàng chục hoặc hàng trăm lần” so với 12,3 km/s; mức đó vượt khả năng của “phần lớn” tên lửa hóa học."
+    verdict: contradicted
+    severity: S2
+    evidence: "https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/ideal-rocket-equation/"
+    note: "NASA Glenn: Δu = Isp·g₀·ln(MR), lấy ví dụ Isp ≈ 350 s cho động cơ LH2/LOX. Với Isp 350 s: tỉ số khối lượng 36 (12,3 km/s) so với ≈3,4 triệu (51,6 km/s) — chênh ≈94.000 lần; kể cả Isp 450 s vẫn chênh ≈7.400 lần. “Hàng chục hoặc hàng trăm lần” đánh giá thấp nhiều bậc độ lớn, và 51,6 km/s vượt khả năng của mọi tên lửa hoá học một tầng, không chỉ “phần lớn”. Sửa theo phép tính có ghi rõ Isp giả định, hoặc cắt con số."
+  - id: C-5
+    claim: "Thay đổi mặt phẳng quỹ đạo là một trong những thao tác tốn nhiên liệu nhất."
+    verdict: unverifiable
+    severity: S3
+    evidence: "—"
+    note: "Đúng theo cơ học quỹ đạo chuẩn nhưng không mở được nguồn nêu trực tiếp trong lượt này. Gắn nguồn cơ học quỹ đạo tier 2."
+  - id: C-6
+    claim: "Các hành tinh dọc Hoàng Đạo là “máy gia tốc miễn phí”; bay sát hành tinh có thể tăng/giảm tốc, đổi hướng, đổi mặt phẳng “mà gần như không tốn nhiên liệu”."
+    verdict: partially-supported
+    severity: S3
+    evidence: "https://science.nasa.gov/learn/basics-of-space-flight/chapter4-1/"
+    note: "NASA Basics of Space Flight: mômen động lượng được truyền từ hành tinh sang tàu; hành tinh mất một ít năng lượng quỹ đạo (quá nhỏ để đo); so với hành tinh, tốc độ tàu đi ra bằng lúc đi vào, chỉ đổi hướng. Không tốn nhiên liệu là đúng, nhưng “miễn phí” không kèm giải thích nguồn năng lượng để lại mô hình tâm trí sai (năng lượng từ hư không). Thêm một câu về trao đổi động lượng với hành tinh và hệ quy chiếu Mặt Trời, hoặc bỏ chữ “miễn phí”."
+  - id: C-7
+    claim: "Danh sách hành tinh dọc Hoàng Đạo: Sao Kim, Trái Đất, Sao Hỏa, Sao Mộc, Sao Thổ, Sao Thiên Vương, Sao Hải Vương."
+    verdict: partially-supported
+    severity: S4
+    evidence: "—"
+    note: "Thiếu Sao Thuỷ mà không giải thích; vài dòng sau lại viết “tất cả các hành tinh lớn” nằm gần mặt phẳng. Thêm Sao Thuỷ hoặc nói rõ lý do bỏ."
+  - id: C-8
+    claim: "Phần lớn vật chất Hệ Mặt Trời tập trung gần mặt phẳng Hoàng Đạo: hành tinh, vành đai tiểu hành tinh, Đai Kuiper, phần lớn sao chổi chu kỳ ngắn."
+    verdict: unverifiable
+    severity: S4
+    evidence: "—"
+    note: "Hợp lý ở mức khái quát nhưng không có nguồn và không mở nguồn trong lượt này. Gắn nguồn hoặc giữ ở mức “các hành tinh”."
+  - id: C-9
+    claim: "“NASA từng thực hiện” sứ mệnh Ulysses (1990): phóng tới Sao Mộc, dùng hấp dẫn Sao Mộc bẻ quỹ đạo lên gần vuông góc với Hoàng Đạo."
+    verdict: partially-supported
+    severity: S3
+    evidence: "https://science.nasa.gov/mission/ulysses/"
+    note: "Phóng 6/10/1990, bay qua Sao Mộc 8/2/1992, vĩ độ Mặt Trời tối đa 80,2° — đúng. Nhưng đây là sứ mệnh chung ESA–NASA: ESA cung cấp tàu, NASA cung cấp phóng bằng tàu con thoi, nguồn điện và Deep Space Network. Sửa “NASA từng thực hiện” thành “ESA và NASA”."
+  - id: C-10
+    claim: "Ulysses là “ngoại lệ nổi tiếng” của sứ mệnh rời mặt phẳng Hoàng Đạo (bài không có mốc thời gian)."
+    verdict: outdated
+    severity: S3
+    evidence: "https://www.esa.int/Science_Exploration/Space_Science/Solar_Orbiter/Solar_Orbiter_gets_world-first_views_of_the_Sun_s_poles"
+    note: "Từ tháng 2/2025, Solar Orbiter (do ESA dẫn dắt) nghiêng quỹ đạo 17° so với xích đạo Mặt Trời nhờ các lần bay qua Sao Kim; theo kế hoạch lên 24° từ 24/12/2026 và 33° từ 10/6/2029. Bổ sung Solar Orbiter kèm mốc “tính đến tháng 9/2026” và lịch kiểm lại sau 24/12/2026."
+fixes:
+  - "Đổi slug cho khớp tiêu đề “Vì sao không thể bay thẳng vuông góc khỏi mặt phẳng Hoàng Đạo?” (slug hiện nói về “tuyệt kỹ đi ké”, gần trùng slug bài trợ giúp hấp dẫn) và đặt redirect 301 từ slug cũ vì bài đã xuất bản."
+  - "Sửa ~108.000 km/h thành ~107.000 km/h."
+  - "Ghi rõ 12,3 và 51,6 km/s là Δv trong hệ quy chiếu Mặt Trời, chưa kể phần thoát khỏi giếng hấp dẫn Trái Đất (11,186 km/s)."
+  - "Thay “hàng chục hoặc hàng trăm lần” bằng kết quả tính theo Tsiolkovsky có ghi Isp giả định (vd. Isp 350 s: tỉ số khối lượng ≈36 so với ≈3,4 triệu), hoặc cắt; đổi “phần lớn tên lửa hóa học” thành “mọi tên lửa hóa học một tầng”."
+  - "Sửa “NASA từng thực hiện” thành “ESA và NASA”, gắn https://science.nasa.gov/mission/ulysses/."
+  - "Bổ sung Solar Orbiter (17° từ 2/2025; 24° từ 24/12/2026) kèm mốc thời gian, gắn trang ESA."
+  - "Thêm một câu giải thích năng lượng của trợ giúp hấp dẫn đến từ chuyển động quỹ đạo của hành tinh (theo NASA Basics of Space Flight) hoặc bỏ chữ “miễn phí”."
+  - "Thêm Sao Thuỷ vào danh sách hoặc giải thích lý do bỏ; sửa “lớn hơn hơn”; bỏ emoji ở kết luận."
+suggestedSources:
+  - title: "Earth Fact Sheet"
+    url: https://nssdc.gsfc.nasa.gov/planetary/factsheet/earthfact.html
+    doi:
+    publisher: "NASA NSSDC"
+    year:
+    tier: 2
+    covers: "Vận tốc quỹ đạo trung bình 29,78 km/s; vận tốc thoát Trái Đất 11,186 km/s"
+  - title: "The Ideal Rocket Equation"
+    url: https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/ideal-rocket-equation/
+    doi:
+    publisher: "NASA Glenn Research Center"
+    year:
+    tier: 2
+    covers: "Phương trình Tsiolkovsky và Isp điển hình — mục so sánh nhiên liệu"
+  - title: "Basics of Space Flight, Chapter 4: Trajectories"
+    url: https://science.nasa.gov/learn/basics-of-space-flight/chapter4-1/
+    doi:
+    publisher: NASA
+    year:
+    tier: 2
+    covers: "Cơ chế trợ giúp hấp dẫn và nguồn năng lượng/động lượng"
+  - title: "Ulysses"
+    url: https://science.nasa.gov/mission/ulysses/
+    doi:
+    publisher: NASA
+    year:
+    tier: 2
+    covers: "Ngày phóng, bay qua Sao Mộc 1992, vĩ độ tối đa 80,2°, vai trò ESA–NASA"
+  - title: "Solar Orbiter gets world-first views of the Sun's poles"
+    url: https://www.esa.int/Science_Exploration/Space_Science/Solar_Orbiter/Solar_Orbiter_gets_world-first_views_of_the_Sun_s_poles
+    doi:
+    publisher: ESA
+    year: 2025
+    tier: 2
+    covers: "Sứ mệnh rời mặt phẳng Hoàng Đạo hiện nay: 17° (2025), 24° (từ 24/12/2026), 33° (từ 2029)"
+openQuestions:
+  - "Slug bài này (“tuyet-ky-di-ke-hanh-tinh-cach-cac-tau-tham-do-bay-ty-cay-so-khong-ton-nhien-lieu”) mô tả chủ đề trợ giúp hấp dẫn, trong khi nội dung là “vì sao không bay vuông góc khỏi Hoàng Đạo”. Bài song sinh “tuyet-ky-di-ke-hanh-tinh-cach-tau-vu-tru-bay-hang-ty-kilomet-ma-khong-ton-them-nhien-lieu” (cùng ngày xuất bản 16/09/2026) mới đúng chủ đề slug. Hai bài KHÔNG trùng lặp toàn văn nhưng chồng lấn: cùng khung “xa lộ Hoàng Đạo”, cùng cụm “máy gia tốc miễn phí”, cùng lập luận tiết kiệm năng lượng khi bay dọc Hoàng Đạo. Cần người quyết: đổi slug + redirect cho bài này và cắt phần chồng lấn, hay gộp thành một bài."
+  - "Bài 0 nguồn nhưng hồ sơ ghi status PUBLISHED — gate xuất bản đã cho qua thế nào?"

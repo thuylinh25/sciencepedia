@@ -1,0 +1,216 @@
+slug: tai-sao-pluto-khong-con-la-hanh-tinh
+checkedAt: 2026-09-17
+checkedBy: science-editor
+sourceCount: 1
+verdict: revise
+summary: "Các số chính (248 năm, 30–49 AU, Eris nặng hơn 27%, bay ngang 14/7/2015, năm vệ tinh) đều đúng, nhưng bài định nghĩa sai nhóm hành tinh lùn (“thoả mãn hai điều đầu” — bỏ mất điều kiện (c) chưa dọn sạch và (d) không phải vệ tinh), diễn giải thay vì trích nghị quyết B5, và nguồn duy nhất là trang VACA đã chết, gắn sai tier."
+claims:
+  - id: C-1
+    claim: "Pluto đi hết một vòng quanh Mặt Trời trong 248 năm."
+    verdict: verified
+    severity: none
+    evidence: https://science.nasa.gov/dwarf-planets/pluto/facts/
+    note: "NASA: “Pluto's 248-year-long, oval-shaped orbit”. Khớp."
+  - id: C-2
+    claim: "Clyde Tombaugh phát hiện Pluto năm 1930 tại đài Lowell, Arizona, bằng cách so sánh từng cặp ảnh."
+    verdict: unverifiable
+    severity: S3
+    evidence: "—"
+    note: "Không mở được nguồn bậc 1–2 cho chi tiết này trong lượt này (trang NASA Pluto đã mở không nêu). Nguồn gắn kèm đã chết. Thêm nguồn Lowell Observatory hoặc NASA."
+  - id: C-3
+    claim: "Lowell tìm “Hành tinh X” vì sai lệch quỹ đạo Thiên Vương/Hải Vương; các sai lệch đó không có thật, đến từ giá trị khối lượng Sao Hải Vương không chính xác."
+    verdict: partially-supported
+    severity: S3
+    evidence: https://ui.adsabs.harvard.edu/abs/1993AJ....105.2000S/abstract
+    note: "Standish (1993), AJ 105:2000, “Planet X: No Dynamical Evidence in the Optical Observations”: sai lệch biến mất khi dùng khối lượng Hải Vương đo từ Voyager 2 (nhẹ hơn khoảng 0,5%). Nội dung lấy từ bản ghi ADS qua kết quả tìm kiếm; trang ADS chặn truy cập trực tiếp (HTTP 405). Chưa có nguồn cho vế “Pluto quá nhỏ để gây nhiễu loạn đo được”. Gắn Standish 1993 vào bài sau khi mở được toàn văn."
+  - id: C-4
+    claim: "Tên Pluto do Venetia Burney, học sinh 11 tuổi ở Oxford, đề xuất."
+    verdict: unverifiable
+    severity: S3
+    evidence: "—"
+    note: "Chưa mở được nguồn bậc 1–2. Thêm nguồn hoặc cắt tuổi và nơi ở."
+  - id: C-5
+    claim: "Pluto nhỏ hơn cả Mặt Trăng của Trái Đất."
+    verdict: partially-supported
+    severity: S4
+    evidence: https://science.nasa.gov/dwarf-planets/pluto/facts/
+    note: "NASA: đường kính xích đạo Pluto 2.377 km. Đường kính Mặt Trăng chưa mở nguồn trong lượt này (khoảng 3.475 km theo Fact Sheet Mặt Trăng — cần gắn)."
+  - id: C-6
+    claim: "Quỹ đạo Pluto nghiêng 17 độ so với mặt phẳng hoàng đạo."
+    verdict: unverifiable
+    severity: S3
+    evidence: "—"
+    note: "Trang NASA Pluto Facts đã mở không nêu độ nghiêng. Thêm nguồn (JPL SBDB hoặc NSSDCA Pluto Fact Sheet) hoặc cắt số."
+  - id: C-7
+    claim: "Khoảng cách Pluto tới Mặt Trời dao động từ 30 tới 49 AU; có đoạn gần Mặt Trời hơn Sao Hải Vương."
+    verdict: verified
+    severity: none
+    evidence: https://science.nasa.gov/dwarf-planets/pluto/facts/
+    note: "NASA: xa nhất 49,3 AU, gần nhất 30 AU. Khớp."
+  - id: C-8
+    claim: "Vành đai Kuiper trải từ quỹ đạo Sao Hải Vương ra khoảng 50 AU."
+    verdict: unverifiable
+    severity: S3
+    evidence: "—"
+    note: "Không mở được nguồn trong lượt này. Thêm nguồn NASA Kuiper Belt."
+  - id: C-9
+    claim: "Năm 2005 nhóm của Mike Brown tìm ra Eris — một thiên thể vành đai Kuiper nặng hơn Pluto khoảng 27%."
+    verdict: verified
+    severity: S4
+    evidence: https://authors.library.caltech.edu/records/2tvst-3hf35
+    note: "Brown & Schaller (2007), Science 316:1585, DOI 10.1126/science.1139415: khối lượng Eris bằng 1,27 ± 0,02 lần Pluto. Số đúng. Lỗi vặt: Eris thuộc đĩa phân tán (scattered disk) chứ không phải vành đai Kuiper cổ điển; và năm 2005 là năm nhận diện/công bố (ảnh chụp từ 2003). Viết “thiên thể ngoài Sao Hải Vương”."
+  - id: C-10
+    claim: "IAU định nghĩa hành tinh: (2) đủ khối lượng để lực hấp dẫn kéo nó về dạng gần cầu; (3) đã dọn sạch vùng lân cận quỹ đạo."
+    verdict: partially-supported
+    severity: S3
+    evidence: https://iauarchive.eso.org/news/pressreleases/detail/iau0603/
+    note: "(1) và (3) khớp. (2) bị diễn giải: văn bản là “has sufficient mass for its self-gravity to overcome rigid body forces so that it assumes a hydrostatic equilibrium (nearly round) shape” — thiếu “tự hấp dẫn thắng lực vật rắn” và “cân bằng thuỷ tĩnh”. Trích sát văn bản B5, không diễn giải."
+  - id: C-11
+    claim: "Đại hội lập nhóm hành tinh lùn cho các thiên thể thoả mãn hai điều đầu."
+    verdict: contradicted
+    severity: S2
+    evidence: https://iauarchive.eso.org/news/pressreleases/detail/iau0603/
+    note: "Sai định nghĩa. B5(2): hành tinh lùn là thiên thể (a) quay quanh Mặt Trời, (b) đủ khối lượng để đạt cân bằng thuỷ tĩnh, (c) CHƯA dọn sạch vùng lân cận quỹ đạo, và (d) KHÔNG phải vệ tinh. Theo cách viết của bài, cả tám hành tinh và các vệ tinh tròn cũng “thoả mãn hai điều đầu”. Viết lại đủ bốn điều kiện."
+  - id: C-12
+    claim: "Nhóm hành tinh lùn hiện có năm thành viên được IAU công nhận: Pluto, Eris, Ceres, Haumea, Makemake."
+    verdict: verified
+    severity: S4
+    evidence: https://science.nasa.gov/dwarf-planets/
+    note: "NASA: “So far, the IAU has only recognized five dwarf planets”. Thêm mốc “(tính tới 9/2026)”."
+  - id: C-13
+    claim: "Trái Đất nặng hơn tổng khối lượng mọi thiên thể khác cùng vùng quỹ đạo khoảng 1,7 triệu lần."
+    verdict: unverifiable
+    severity: S3
+    evidence: https://arxiv.org/abs/astro-ph/0608359
+    note: "Con số có vẻ lấy từ tham số μ của Soter (2006), “What is a Planet?”. Đã mở trang tóm tắt arXiv (xác nhận bài tồn tại và bàn về mức độ thống trị động lực học, khoảng cách 4–5 bậc độ lớn giữa hành tinh và phần còn lại), nhưng không trích được Bảng 1 để kiểm giá trị 1,7 × 10^6. Mở Bảng 1 và gắn nguồn; không kiểm được thì cắt số, giữ ý định tính."
+  - id: C-14
+    claim: "Chính Trái Đất, nếu đặt ở quỹ đạo của Pluto, cũng sẽ không dọn sạch nổi vùng lân cận của mình."
+    verdict: unsupported
+    severity: S3
+    evidence: "—"
+    note: "Viết như sự thật, nhưng đây là lập luận của phía phản đối và phụ thuộc vào tiêu chí định lượng chọn dùng. Quy kết cho người nói (vd. “những người phản đối lập luận rằng…”) kèm nguồn, hoặc cắt."
+  - id: C-15
+    claim: "Một số nhà khoa học hành tinh, trong đó có trưởng nhóm sứ mệnh New Horizons, vẫn không chấp nhận cách phân loại này."
+    verdict: unverifiable
+    severity: S3
+    evidence: "—"
+    note: "Chưa mở được nguồn cho phát biểu của trưởng nhóm (Alan Stern). Thêm nguồn trực tiếp hoặc cắt quy kết cá nhân."
+  - id: C-16
+    claim: "New Horizons bay ngang Pluto ngày 14 tháng 7 năm 2015."
+    verdict: verified
+    severity: none
+    evidence: https://science.nasa.gov/mission/new-horizons/
+    note: "NASA: “July 14, 2015” lúc 11:49 UT. Khớp."
+  - id: C-17
+    claim: "Sputnik Planitia — đồng bằng băng nitơ rộng khoảng 1.000 km, chia thành ô đa giác do đối lưu."
+    verdict: partially-supported
+    severity: S4
+    evidence: https://science.nasa.gov/mission/new-horizons/
+    note: "NASA: sông băng nitơ hình trái tim rộng khoảng 600 dặm (khoảng 965 km). Cơ chế đối lưu tạo ô 10–40 km là của McKinnon et al. (2016), Nature 534:82 — chỉ thấy qua kết quả tìm kiếm, trang Nature và PubMed chặn truy cập. Gắn nguồn McKinnon 2016 sau khi mở được."
+  - id: C-18
+    claim: "Gần như không có hố va chạm; bề mặt còn được làm mới, tuổi có thể chỉ dưới 10 triệu năm."
+    verdict: unverifiable
+    severity: S3
+    evidence: "—"
+    note: "Mức dè dặt “có thể” hợp lý nhưng con số dưới 10 triệu năm không có nguồn đã mở. Gắn bài báo New Horizons tương ứng (Science 2016) hoặc cắt số."
+  - id: C-19
+    claim: "Dãy núi băng nước cao tới 3.500 m, đủ cứng để đứng vững ở nhiệt độ khoảng −230 °C."
+    verdict: partially-supported
+    severity: S3
+    evidence: https://science.nasa.gov/dwarf-planets/pluto/facts/
+    note: "Nhiệt độ khớp: NASA ghi trung bình −232 °C, dải −226 tới −240 °C. Chiều cao 3.500 m và thành phần băng nước chưa có nguồn đã mở (trang New Horizons đã mở không nêu độ cao). Gắn nguồn hoặc cắt số."
+  - id: C-20
+    claim: "Khí quyển mỏng gồm chủ yếu nitơ, với hàng chục lớp mù quang hoá xếp chồng."
+    verdict: partially-supported
+    severity: S3
+    evidence: https://science.nasa.gov/mission/new-horizons/
+    note: "NASA xác nhận có mù khí quyển, nhưng không nêu số lớp hay thành phần trên trang đã mở. “Hàng chục lớp” chưa có nguồn. Gắn nguồn hoặc viết “nhiều lớp mù”."
+  - id: C-21
+    claim: "Dấu hiệu gợi ý một đại dương nước lỏng bên dưới lớp vỏ băng."
+    verdict: verified
+    severity: none
+    evidence: https://science.nasa.gov/mission/new-horizons/
+    note: "NASA: “hints that Pluto could have an internal water-ice ocean today”. Mức dè dặt được giữ. Khớp."
+  - id: C-22
+    claim: "Năm vệ tinh; tâm khối chung Pluto–Charon nằm bên ngoài Pluto."
+    verdict: verified
+    severity: none
+    evidence: https://science.nasa.gov/dwarf-planets/pluto/facts/
+    note: "NASA: “Pluto has five known moons: Charon, Nix, Hydra, Kerberos, and Styx”. Tâm khối nằm ngoài Pluto: NASA Photojournal “Pluto and Charon in Color: Barycentric View” (thấy qua kết quả tìm kiếm). Khớp."
+  - id: C-23
+    claim: "Pluto ở cách Mặt Trời gần 5 tỉ km."
+    verdict: contradicted
+    severity: S3
+    evidence: https://science.nasa.gov/dwarf-planets/pluto/facts/
+    note: "NASA: khoảng cách trung bình khoảng 5,9 tỉ km (39 AU); dải 30–49,3 AU tương đương khoảng 4,5–7,4 tỉ km. “Gần 5 tỉ km” chỉ đúng gần cận điểm. Sửa thành “trung bình khoảng 5,9 tỉ km”."
+  - id: C-24
+    claim: "Nguồn 1: Thiên văn Việt Nam (VACA), tier 2 — nguồn duy nhất, bài biên tập lại từ đó."
+    verdict: unverifiable
+    severity: S3
+    evidence: "—"
+    note: "Domain thienvanvietnam.org không phân giải DNS ngày 17/09/2026 (đã thử curl). VACA là CLB thiên văn nghiệp dư, không phải bậc 2; accessedAt THIẾU. Mọi claim của bài hiện chỉ dựa vào nguồn này. Under-sourced toàn bài."
+fixes:
+  - "Viết lại định nghĩa hành tinh lùn đủ bốn điều kiện theo văn bản B5(2): (a) quay quanh Mặt Trời, (b) đủ khối lượng để đạt cân bằng thuỷ tĩnh, (c) chưa dọn sạch vùng lân cận quỹ đạo, (d) không phải vệ tinh."
+  - "Thay điều kiện 2 trong danh sách hành tinh bằng bản dịch sát văn bản: “đủ khối lượng để lực tự hấp dẫn thắng lực vật rắn, khiến nó đạt hình dạng cân bằng thuỷ tĩnh (gần tròn)”; gắn nguồn IAU 2006 (iau0603)."
+  - "Thêm câu trích B6: Pluto là hành tinh lùn và là nguyên mẫu của một nhóm mới các thiên thể ngoài Sao Hải Vương."
+  - "Sửa “cách Mặt Trời gần 5 tỉ km” thành “trung bình khoảng 5,9 tỉ km”."
+  - "Sửa “thiên thể vành đai Kuiper” cho Eris thành “thiên thể ngoài Sao Hải Vương”; gắn Brown & Schaller 2007 cho con số 27%."
+  - "Kiểm Bảng 1 của Soter (2006) cho con số 1,7 triệu lần; không kiểm được thì cắt số."
+  - "Chuyển câu “Trái Đất đặt ở quỹ đạo Pluto cũng không dọn sạch nổi” thành lập luận có quy kết của phía phản đối, kèm nguồn; hoặc cắt."
+  - "Gắn nguồn hoặc cắt: độ nghiêng 17°, vành đai Kuiper tới 50 AU, núi 3.500 m, “hàng chục lớp mù”, tuổi bề mặt dưới 10 triệu năm, Venetia Burney 11 tuổi, chi tiết phát hiện của Tombaugh, phát biểu của trưởng nhóm New Horizons."
+  - "Gắn Standish 1993 (AJ 105:2000) cho đoạn Hành tinh X."
+  - "Thêm mốc “(tính tới 9/2026)” cho năm hành tinh lùn."
+  - "Bỏ nguồn VACA khỏi vai trò đỡ claim và xoá nhãn tier 2; kiểm lại link Đọc thêm /articles/tam-hanh-tinh-cua-he-mat-troi có tồn tại không."
+suggestedSources:
+  - title: "IAU 2006 General Assembly: Result of the IAU Resolution votes (iau0603)"
+    url: https://iauarchive.eso.org/news/pressreleases/detail/iau0603/
+    doi: ""
+    publisher: International Astronomical Union
+    year: 2006
+    tier: 2
+    covers: "Định nghĩa hành tinh, hành tinh lùn (đủ 4 điều kiện), Pluto là hành tinh lùn và nguyên mẫu nhóm TNO"
+  - title: "Resolution B5 Definition of a Planet in the Solar System; Resolution B6 Pluto (PDF)"
+    url: https://iauarchive.eso.org/static/resolutions/Resolution_GA26-5-6.pdf
+    doi: ""
+    publisher: International Astronomical Union
+    year: 2006
+    tier: 2
+    covers: "Văn bản chính thức B5/B6 (tệp tải được; nội dung đối chiếu qua trang iau0603)"
+  - title: Pluto Facts
+    url: https://science.nasa.gov/dwarf-planets/pluto/facts/
+    doi: ""
+    publisher: NASA Science
+    year: 2026
+    tier: 2
+    covers: "Chu kỳ 248 năm, khoảng cách 30–49,3 AU và trung bình 5,9 tỉ km, đường kính 2.377 km, nhiệt độ, năm vệ tinh"
+  - title: New Horizons (mission page)
+    url: https://science.nasa.gov/mission/new-horizons/
+    doi: ""
+    publisher: NASA Science
+    year: 2026
+    tier: 2
+    covers: "Ngày bay ngang 14/7/2015, Sputnik Planitia, mù khí quyển, gợi ý đại dương ngầm"
+  - title: Dwarf Planets
+    url: https://science.nasa.gov/dwarf-planets/
+    doi: ""
+    publisher: NASA Science
+    year: 2026
+    tier: 2
+    covers: "Năm hành tinh lùn được IAU công nhận"
+  - title: The Mass of Dwarf Planet Eris
+    url: https://authors.library.caltech.edu/records/2tvst-3hf35
+    doi: 10.1126/science.1139415
+    publisher: Science (AAAS) — bản ghi CaltechAUTHORS
+    year: 2007
+    tier: 1
+    covers: "Eris nặng bằng 1,27 lần Pluto"
+  - title: What is a Planet?
+    url: https://arxiv.org/abs/astro-ph/0608359
+    doi: ""
+    publisher: arXiv (Soter, bản đăng The Astronomical Journal 2006)
+    year: 2006
+    tier: 1
+    covers: "Lập luận thống trị động lực học; nguồn ứng viên cho con số 1,7 triệu lần — PHẢI kiểm Bảng 1 trước khi dùng"
+openQuestions:
+  - "Bài là bản biên tập lại từ một trang VACA nay không truy cập được và ghi “Bản quyền nội dung gốc thuộc về VACA” — cần người quyết có giữ bản phái sinh này hay viết lại độc lập từ nguồn bậc 1–2."
+  - "Hộp khuyên dùng “Pluto” thay “Sao Diêm Vương” là quy ước biên tập, không phải phát hiện khoa học — cần xác nhận đây là quy ước chính thức của SciencePedia (và nhất quán với các bài khác) trước khi giữ."

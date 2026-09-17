@@ -1,0 +1,104 @@
+slug: cac-sao-toi-co-the-da-de-lai-tieng-vong-duoi-dang-song-hap-dan-khap-vu-tru
+checkedAt: 2026-09-17
+checkedBy: science-editor
+sourceCount: 0
+verdict: revise
+summary: "Đã truy ra bài gốc có thật (Ghodla & Ilie, PRD 114, L041303, 2026) và phần lớn nội dung khớp, nên không phải claim không kiểm được; nhưng bài có 0 nguồn nên không thể pass, và phần tóm tắt mô tả sai cơ chế (sao tối là hạt giống của các cặp lỗ đen siêu nặng phát sóng, không phải một nguồn tín hiệu riêng)."
+claims:
+  - id: C-1
+    claim: "Ghodla và Ilie (2026, Physical Review D) tính rằng hậu duệ của sao tối có thể đóng góp đáng kể vào nền sóng hấp dẫn PTA"
+    verdict: verified
+    severity: S3
+    evidence: "https://doi.org/10.1103/hvfd-8fkr ; https://arxiv.org/abs/2507.06163"
+    note: "Crossref: «Reconstructing PTA measurements via early seeding of supermassive black holes», Ghodla & Ilie, Phys. Rev. D 114, L041303, xuất bản 17/08/2026 (arXiv 08/07/2025). Tóm tắt: lỗ đen siêu nặng có hạt giống từ sao tối, với mật độ hạt giống đồng chuyển động cỡ 10⁻³ Mpc⁻³, «có thể là nguồn đóng góp chính»; kênh DCBH đóng góp thứ yếu. Bài viết «đóng góp đáng kể» là nhẹ hơn nguồn, chấp nhận được, nhưng phải nêu điều kiện mật độ hạt giống. Claim đúng nhưng không có mục trích dẫn → S3."
+  - id: C-2
+    claim: "Tóm tắt: tín hiệu có thể không chỉ đến từ các cặp lỗ đen siêu nặng đang hợp nhất, mà còn chứa dấu vết của sao tối"
+    verdict: contradicted
+    severity: S2
+    evidence: https://arxiv.org/abs/2507.06163
+    note: "Trong mô hình của bài báo, tín hiệu VẪN đến từ các cặp lỗ đen siêu nặng (M ≳ 10⁹ M☉); sao tối là cơ chế tạo HẠT GIỐNG cho những lỗ đen đó, không phải nguồn sóng thứ hai. Cách viết «không chỉ… mà còn» tạo mô hình hiểu sai. Sửa: «tín hiệu có thể chủ yếu đến từ các cặp lỗ đen siêu nặng mà hạt giống ban đầu là sao tối sụp đổ»."
+  - id: C-3
+    claim: "Sao tối từng tồn tại hơn 13 tỷ năm trước"
+    verdict: unverifiable
+    severity: S3
+    evidence: "—"
+    note: "Tóm tắt bài gốc chỉ nói «high-z», không có con số 13 tỷ năm; cụm này trùng tít ScienceDaily («13-billion-year-old dark stars», bậc 4). Cắt con số hoặc gắn nguồn bậc 1 cho độ dịch đỏ và mốc thời gian."
+  - id: C-4
+    claim: "Công bố NANOGrav 15 năm báo cáo mức ý nghĩa khoảng 3,5–4σ, chưa đạt ngưỡng 5σ"
+    verdict: verified
+    severity: S4
+    evidence: https://arxiv.org/abs/2306.16213
+    note: "NANOGrav 15 năm: phép thử tần suất trên tương quan giữa các pulsar cho p = 5×10⁻⁵ đến 1,9×10⁻⁴ (~3,5–4σ); tương quan theo mẫu Hellings–Downs. Đúng. Cần gắn nguồn (ApJL 951, L8, 2023) và ghi rõ đây là kết quả 2023; «gần đây» trong tóm tắt phải thay bằng mốc năm."
+  - id: C-5
+    claim: "Sao tối có thể lớn tới khoảng 10⁴–10⁷ lần khối lượng Mặt Trời trước khi sụp thành lỗ đen"
+    verdict: verified
+    severity: S3
+    evidence: https://arxiv.org/abs/2511.08578
+    note: "Freese, Fuller, Ghodla, Ilie và cộng sự (arXiv:2511.08578, 11/2025): sao tối có thể bồi tụ tới O(10⁴)–O(10⁷) M☉ trước khi bất ổn định Feynman–Chandrasekhar làm chúng sụp. Khớp số. Lưu ý đây là tiền ấn phẩm; chưa xác nhận đã qua bình duyệt. Gắn nguồn và giữ «theo một số mô hình»."
+  - id: C-6
+    claim: "Sao tối là sao giả thuyết được cấp năng lượng bởi vật chất tối, chưa quan sát được"
+    verdict: partially-supported
+    severity: S3
+    evidence: https://arxiv.org/abs/2511.08578
+    note: "Nguồn gọi là «dark-matter-powered stars in the early universe». «Nuôi dưỡng bởi sự tương tác của vật chất tối» thì mơ hồ; theo mô hình chuẩn là năng lượng từ hủy cặp hạt vật chất tối (WIMP), nhưng chi tiết WIMP lượt này chưa mở kiểm tại nguồn. Bài KHÔNG nói rõ sao tối chưa được quan sát xác nhận; thêm «chưa được quan sát xác nhận (tính đến 2026)»."
+  - id: C-7
+    claim: "JWST đã phát hiện nhiều lỗ đen siêu nặng khi vũ trụ còn rất trẻ, gây khó cho các mô hình"
+    verdict: partially-supported
+    severity: S3
+    evidence: https://aasnova.org/2025/03/07/observational-obstacles-to-detecting-early-universe-supermassive-black-holes/
+    note: "AAS Nova (2025): JWST tìm thấy quần thể lỗ đen có vẻ «quá nặng» so với thiên hà chủ ở z ≳ 4 (~1,5 tỷ năm đầu), NHƯNG nghiên cứu được đưa tin cho rằng đó có thể là thiên lệch chọn mẫu (JWST chỉ thấy lỗ đen sáng nhất). Bài trình bày bài toán như đã chốt; phải nêu cả cách giải thích bằng thiên lệch quan sát."
+  - id: C-8
+    claim: "Số hạt giống từ sao tối không thể quá nhiều, nếu không nền sóng sẽ mạnh hơn quan sát; nếu quá ít thì cần cơ chế khác"
+    verdict: partially-supported
+    severity: S3
+    evidence: https://arxiv.org/abs/2507.06163
+    note: "Tóm tắt chỉ nói tác giả «gợi ý cách đặt cận trên cho mật độ hạt giống». Nửa sau («nếu quá ít thì cần cơ chế khác») không có trong tóm tắt. Kiểm tại toàn văn hoặc cắt nửa sau."
+  - id: C-9
+    claim: "Nếu được xác nhận, sao tối có thể là mắt xích còn thiếu giữa vật chất tối, lỗ đen đầu tiên và nền sóng hấp dẫn"
+    verdict: unsupported
+    severity: S4
+    evidence: https://arxiv.org/abs/2507.06163
+    note: "Có dè dặt («nếu», «có thể») nhưng là lời bình của người viết, bài gốc không nói vậy. Cắt, hoặc ghi rõ là suy diễn."
+fixes:
+  - "Thêm mục nguồn: Ghodla & Ilie, Phys. Rev. D 114, L041303 (2026), DOI 10.1103/hvfd-8fkr, tier 1."
+  - "Sửa tóm tắt theo C-2: sao tối là hạt giống của các lỗ đen siêu nặng mà cặp của chúng tạo ra tín hiệu PTA, không phải một nguồn sóng riêng."
+  - "Cắt «hơn 13 tỷ năm trước», hoặc gắn nguồn bậc 1 cho mốc thời gian."
+  - "Gắn NANOGrav 15 năm (ApJL 951, L8, 2023; arXiv:2306.16213) và thay «gần đây» bằng «năm 2023»."
+  - "Gắn arXiv:2511.08578 cho khoảng 10⁴–10⁷ M☉, ghi là tiền ấn phẩm."
+  - "Thêm câu «sao tối chưa được quan sát xác nhận (tính đến 09/2026)» ở mục định nghĩa."
+  - "Ở mục JWST, nêu cả cách giải thích thiên lệch quan sát (AAS Nova 2025), không trình bày bài toán lỗ đen xuất hiện sớm như đã chốt."
+  - "Nêu điều kiện của kết quả: mật độ hạt giống cỡ 10⁻³ Mpc⁻³."
+  - "Cắt nửa câu «nếu quá ít thì cần cơ chế khác» trừ khi kiểm được trong toàn văn; cắt hoặc gắn nhãn suy diễn cho câu «mắt xích còn thiếu»."
+suggestedSources:
+  - title: "Reconstructing PTA measurements via early seeding of supermassive black holes"
+    url: https://doi.org/10.1103/hvfd-8fkr
+    doi: 10.1103/hvfd-8fkr
+    publisher: Physical Review D
+    year: 2026
+    tier: 1
+    covers: "Nghiên cứu chính của bài: sao tối làm hạt giống, đóng góp vào tín hiệu PTA, cận trên mật độ hạt giống"
+  - title: "The NANOGrav 15-year Data Set: Evidence for a Gravitational-Wave Background"
+    url: https://arxiv.org/abs/2306.16213
+    doi:
+    publisher: NANOGrav Collaboration (The Astrophysical Journal Letters)
+    year: 2023
+    tier: 1
+    covers: "Nền sóng hấp dẫn nanohertz, mức ý nghĩa 3,5–4σ"
+  - title: "Early Formation of Supermassive Black Holes via Dark Star Gravitational Instability"
+    url: https://arxiv.org/abs/2511.08578
+    doi:
+    publisher: arXiv (Freese, Fuller, Ghodla, Ilie và cộng sự) — tiền ấn phẩm
+    year: 2025
+    tier: 1
+    covers: "Định nghĩa sao tối, khoảng khối lượng 10⁴–10⁷ M☉, sụp thành lỗ đen"
+  - title: "Observational Obstacles to Detecting Early Universe Supermassive Black Holes"
+    url: https://aasnova.org/2025/03/07/observational-obstacles-to-detecting-early-universe-supermassive-black-holes/
+    doi:
+    publisher: AAS Nova (American Astronomical Society)
+    year: 2025
+    tier: 3
+    covers: "Lỗ đen quá nặng thời kỳ đầu do JWST phát hiện và cách giải thích bằng thiên lệch quan sát (chỉ dùng làm bối cảnh; cần gắn bài bình duyệt gốc)"
+openQuestions:
+  - "Bài đang PUBLISHED với 0 nguồn. Cần xác định vì sao gate publish (scripts/publish.ts) không chặn một bài không có nguồn."
+  - "arXiv:2511.08578 là tiền ấn phẩm: cần quyết định có chấp nhận làm nguồn cho khoảng khối lượng hay chờ bản bình duyệt."
+  - "Lỗ đen thời kỳ đầu do JWST phát hiện có thật sự «quá nặng» hay chỉ do thiên lệch quan sát vẫn đang tranh luận. Editor không phân xử."

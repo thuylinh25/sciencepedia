@@ -1,0 +1,105 @@
+slug: nhin-an-gian-doan-anh-huong-toi-he-vi-sinh-duong-ruot-nhu-the-nao
+checkedAt: 2026-09-17
+checkedBy: science-editor
+sourceCount: 0
+verdict: reject
+summary: "Bài sức khoẻ không có nguồn nào, nêu như sự thật đã xác lập trên người những điều mà tổng quan hệ thống 2024 (8 nghiên cứu, kết quả không đồng nhất) không đỡ được — nhịn ăn 'giúp thiết lập lại chu kỳ' hệ vi sinh, Akkermansia 'phát triển mạnh hơn' — và dựa vào lời kể 'một số người nhận thấy'. Nâng mức tự tin ở đề tài sức khoẻ là lỗi cỡ từ chối. Phần chống chỉ định đúng hướng nhưng cũng chưa có nguồn."
+claims:
+  - id: C-1
+    claim: "Giống như con người, vi khuẩn đường ruột cũng có nhịp sinh học riêng"
+    verdict: partially-supported
+    severity: S3
+    evidence: https://pure.johnshopkins.edu/en/publications/transkingdom-control-of-microbiota-diurnal-oscillations-promotes-/
+    note: "Thaiss và cộng sự 2014 (Cell, doi 10.1016/j.cell.2014.09.048): hệ vi sinh ở chuột và người dao động theo ngày, 'influenced by feeding rhythms' — nhịp này do giờ ăn của vật chủ điều khiển, nguồn không nói vi khuẩn có đồng hồ 'riêng'. Sửa: 'Thành phần hệ vi sinh dao động theo ngày, chủ yếu theo nhịp ăn của vật chủ.'"
+  - id: C-2
+    claim: "Giai đoạn nhịn ăn tạo khoảng nghỉ rõ ràng, giúp thiết lập lại chu kỳ hoạt động tự nhiên của hệ vi sinh"
+    verdict: unsupported
+    severity: S2
+    evidence: https://pure.johnshopkins.edu/en/publications/transkingdom-control-of-microbiota-diurnal-oscillations-promotes-/
+    note: "Thaiss 2014 cho thấy phá vỡ nhịp ăn (jet lag, hỏng đồng hồ vật chủ) làm rối dao động và gây loạn khuẩn, với bằng chứng chuyển giao chủ yếu qua chuột vô trùng. Nguồn KHÔNG chứng minh nhịn ăn gián đoạn ở người 'thiết lập lại' chu kỳ. Khẳng định nhân quả trên người — cắt, hoặc viết: 'Ở chuột, rối loạn nhịp ăn làm rối dao động hệ vi sinh; chưa rõ nhịn ăn gián đoạn có tác dụng ngược lại ở người hay không.'"
+  - id: C-3
+    claim: "Một số nghiên cứu cho thấy việc đồng bộ có liên quan đến cải thiện chuyển hoá năng lượng, giảm viêm mức thấp kéo dài, tăng tính đa dạng hệ vi sinh"
+    verdict: partially-supported
+    severity: S3
+    evidence: https://www.frontiersin.org/journals/nutrition/articles/10.3389/fnut.2024.1342787/full
+    note: "Tổng quan hệ thống Paukkonen và cộng sự 2024 (Frontiers in Nutrition, doi 10.3389/fnut.2024.1342787): 8 nghiên cứu trên người; 'it seems possible that IF can improve richness and alpha diversity' nhưng kết quả không đồng nhất, các loài thay đổi khác nhau giữa các nghiên cứu. Về viêm: có tăng Faecalibacterium ở một số nghiên cứu nhưng cũng có tăng Proteobacteria gây lo ngại. Sửa: nêu số nghiên cứu, 'có thể' tăng đa dạng, kết quả không nhất quán, và nói cả tín hiệu bất lợi. Cắt 'giảm viêm mức thấp kéo dài' nếu không có nguồn riêng."
+  - id: C-4
+    claim: "Trong thời gian nhịn ăn kéo dài, nhóm vi khuẩn dùng chất nhầy ruột làm dinh dưỡng phát triển mạnh hơn; loài được nghiên cứu nhiều nhất là Akkermansia muciniphila"
+    verdict: contradicted
+    severity: S2
+    evidence: https://www.frontiersin.org/journals/nutrition/articles/10.3389/fnut.2024.1342787/full
+    note: "Nêu như quy luật. Tổng quan 2024 trên người: Akkermansia tăng ở MỘT nghiên cứu, không nhất quán trên toàn bộ bằng chứng. Tín hiệu mạnh hơn đến từ chuột và nghiên cứu Ramadan cỡ rất nhỏ (chưa mở được nguồn gốc trong lượt này). Sửa: 'Ở chuột, và trong một số nghiên cứu nhỏ ở người, ...; tổng quan 2024 không thấy thay đổi nhất quán.'"
+  - id: C-5
+    claim: "Akkermansia muciniphila liên quan đến hàng rào niêm mạc khoẻ, chuyển hoá đường và mỡ tốt hơn, giảm nguy cơ béo phì và hội chứng chuyển hoá"
+    verdict: unverifiable
+    severity: S3
+    evidence: "—"
+    note: "Không mở được nguồn bậc 1 trong lượt này (trang Nature của thử nghiệm Depommier 2019 chuyển hướng đăng nhập). Theo kết quả tìm kiếm, bằng chứng chủ yếu từ chuột cộng một thử nghiệm thăm dò nhỏ ở người — không đỡ 'giảm nguy cơ béo phì' (một claim về nguy cơ ở quần thể). Cắt 'giảm nguy cơ béo phì và hội chứng chuyển hoá'; phần còn lại chỉ giữ khi có nguồn đã mở, kèm 'chủ yếu trên chuột'."
+  - id: C-6
+    claim: "Một số vi khuẩn tạo SCFA như butyrate có xu hướng tăng khi chế độ ăn phù hợp"
+    verdict: unsupported
+    severity: S3
+    evidence: "—"
+    note: "'Chế độ ăn phù hợp' không xác định, không gắn với nhịn ăn gián đoạn, không nguồn. Tổng quan 2024 có nhắc Faecalibacterium (tạo butyrate) tăng ở một số nghiên cứu IF — nếu giữ thì viết đúng như thế và gắn nguồn."
+  - id: C-7
+    claim: "Khi không có thức ăn mới vài giờ, ruột non xuất hiện các đợt co bóp mạnh (MMC), đẩy cặn xuống ruột già, hạn chế tích tụ vi khuẩn ở ruột non"
+    verdict: unverifiable
+    severity: S3
+    evidence: https://api.crossref.org/works/10.1038/nrgastro.2012.57
+    note: "Tổng quan Deloose và cộng sự 2012 (Nature Reviews Gastroenterology & Hepatology, doi 10.1038/nrgastro.2012.57) tồn tại (đã mở metadata Crossref) nhưng toàn văn/tóm tắt bị chặn trong lượt này. Theo kết quả tìm kiếm: MMC xảy ra lúc đói, bị bữa ăn ngắt; thiếu MMC liên quan đến tăng sinh vi khuẩn ruột non; vai trò sinh lý 'chưa được hiểu đầy đủ'. Mở kiểm tóm tắt rồi mới giữ. 'Vài giờ' không chính xác bằng chu kỳ nêu trong nguồn — lấy đúng số từ nguồn. MMC không phải tác dụng riêng của nhịn ăn gián đoạn; nó diễn ra giữa mọi bữa ăn — nói rõ để không gán công cho IF."
+  - id: C-8
+    claim: "MMC được cho là có thể liên quan đến giảm đầy hơi và chướng bụng ở một số người"
+    verdict: unsupported
+    severity: S3
+    evidence: "—"
+    note: "Có từ rào đón nhưng không nguồn nào. Không bằng chứng → cắt."
+  - id: C-9
+    claim: "Hệ vi sinh liên hệ với các hormone điều hoà ăn uống: ghrelin, leptin, GLP-1, PYY"
+    verdict: unverifiable
+    severity: S3
+    evidence: "—"
+    note: "Không nguồn; nội dung trùng bài 'ruot-he-vi-sinh-vat-...'. Cắt hoặc gắn nguồn và chỉ rõ cấp bằng chứng (chuột/người)."
+  - id: C-10
+    claim: "Khi chế độ ăn ổn định hơn, một số người nhận thấy giảm thèm ngọt, ít ăn vặt, đói ổn định hơn"
+    verdict: unsupported
+    severity: S3
+    evidence: "—"
+    note: "Lời kể, không phải bằng chứng; cũng không nối được với hệ vi sinh. Cắt."
+  - id: C-11
+    claim: "Chống chỉ định: phụ nữ mang thai/cho con bú, trẻ em; thận trọng với tiền sử rối loạn ăn uống, hạ đường huyết nặng, người cao tuổi có nguy cơ thiểu cơ; người đái tháo đường dùng thuốc hạ đường huyết chỉ nên làm dưới giám sát y tế"
+    verdict: unverifiable
+    severity: S3
+    evidence: "—"
+    note: "Hướng nội dung thận trọng và cần giữ, nhưng 'các hướng dẫn hiện hành khuyến cáo' không nêu hướng dẫn nào, năm nào. Trang Johns Hopkins Medicine trả 403 trong lượt này. Bắt buộc gắn hướng dẫn cụ thể (cơ quan y tế hoặc hội chuyên môn, có năm) cho từng nhóm chống chỉ định trước khi xuất bản lại; nhóm nào không có nguồn thì chuyển sang 'hỏi ý kiến bác sĩ' chung."
+  - id: C-12
+    claim: "Summary: khi thời gian ăn và nhịn được tách biệt rõ ràng, thành phần và hoạt động hệ vi sinh thay đổi theo"
+    verdict: partially-supported
+    severity: S3
+    evidence: https://www.frontiersin.org/journals/nutrition/articles/10.3389/fnut.2024.1342787/full
+    note: "Tổng quan 2024 thấy có thay đổi nhưng không đồng nhất giữa các nghiên cứu. Thêm 'có thể' và 'kết quả chưa nhất quán'."
+fixes:
+  - "Không sửa tại chỗ. Đưa bài về bước 1 (content-research): lấy tổng quan hệ thống Paukkonen 2024 làm xương sống, viết mọi kết luận ở mức 'kết quả không nhất quán, số nghiên cứu ít'."
+  - "Tách rõ mọi claim thành 'trên chuột' / 'trên người' ngay trong câu; cắt các claim nhân quả C-2, C-4 (dạng hiện tại), C-8, C-10."
+  - "Cắt 'giảm nguy cơ béo phì và hội chứng chuyển hoá' khỏi mục Akkermansia."
+  - "Viết lại đoạn MMC: nói rõ MMC diễn ra lúc đói giữa mọi bữa ăn, không riêng IF; lấy chu kỳ và vai trò từ tổng quan Deloose 2012 sau khi mở được tóm tắt."
+  - "Gắn một hướng dẫn y khoa cụ thể có năm cho mục 'Ai không nên nhịn ăn gián đoạn'; thay 'các hướng dẫn hiện hành' bằng tên cơ quan và năm."
+  - "Bỏ danh sách hormone trùng với bài 'ruot-he-vi-sinh-vat-...'; chỉ liên kết sang."
+suggestedSources:
+  - title: "The impact of intermittent fasting on gut microbiota: a systematic review of human studies"
+    url: https://www.frontiersin.org/journals/nutrition/articles/10.3389/fnut.2024.1342787/full
+    doi: 10.3389/fnut.2024.1342787
+    publisher: Frontiers in Nutrition
+    year: 2024
+    tier: 1
+    covers: "toàn bộ luận điểm chính: IF và độ đa dạng, Akkermansia, tín hiệu viêm, giới hạn bằng chứng"
+  - title: "Transkingdom control of microbiota diurnal oscillations promotes metabolic homeostasis"
+    url: https://pure.johnshopkins.edu/en/publications/transkingdom-control-of-microbiota-diurnal-oscillations-promotes-/
+    doi: 10.1016/j.cell.2014.09.048
+    publisher: Cell
+    year: 2014
+    tier: 1
+    covers: "mục nhịp sinh học hệ vi sinh — dao động theo nhịp ăn, jet lag gây loạn khuẩn (chuột + người, chuyển giao qua chuột vô trùng)"
+openQuestions:
+  - "Chồng lấn với 'he-vi-sinh-duong-ruot-...' (SCFA/butyrate, đa dạng) và 'ruot-he-vi-sinh-vat-...' (hormone đói/no). Đề xuất bài này chỉ giữ phạm vi IF × hệ vi sinh; knowledge-architect quyết định."
+  - "Bài sức khoẻ đang PUBLISHED với 0 nguồn và có lời khuyên chống chỉ định không dẫn hướng dẫn nào. Khuyến nghị gỡ xuống cho tới khi viết lại; cần người quyết."
+  - "Mục chống chỉ định cần một người có chuyên môn y khoa duyệt sau khi gắn nguồn — science-editor kiểm nguồn nhưng không thay được phán quyết lâm sàng."

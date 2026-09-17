@@ -1,0 +1,117 @@
+slug: vat-chat-toi-va-nang-luong-toi-tran-chien-keo-co-vi-dai-cua-vu-tru
+checkedAt: 2026-09-17
+checkedBy: science-editor
+sourceCount: 1
+verdict: revise
+summary: "Nguồn duy nhất là trang CLB nghiệp dư năm 2010 (trước Planck) gắn nhầm tier 2; tỉ lệ thành phần không có nguồn Planck và sai số; bài đưa ra cơ chế vô căn cứ và tự mâu thuẫn về lý do năng lượng tối thống trị; bỏ qua căng thẳng Hubble; không nêu ai phát hiện gì. Cả bài phải quay lại bước content-research."
+claims:
+  - id: C-1
+    claim: "Năng lượng tối ~68%, vật chất tối ~27%, vật chất thông thường ~5%."
+    verdict: partially-supported
+    severity: S3
+    evidence: "https://www.aanda.org/articles/aa/full_html/2020/09/aa33910-18/T2.html"
+    note: "Planck 2018 (A&A 641, A6), Bảng 2, cột TT,TE,EE+lowE+lensing: ΩΛ = 0,6847 ± 0,0073; Ωm = 0,3153 ± 0,0073; Ωch² = 0,1200 ± 0,0012; Ωbh² = 0,02237 ± 0,00015; H0 = 67,36 ± 0,54. Tự quy đổi với h = 0,6736 ra vật chất tối ≈ 26,4%, vật chất thường ≈ 4,9%. Bảng trong bài dùng số tròn không sai số và không nguồn; 27% cao hơn Planck 2018 khoảng 0,6 điểm phần trăm. Sửa bảng thành 68,5 ± 0,7% / ≈26,4% / ≈4,9% và ghi 'Planck 2018, mô hình ΛCDM'."
+  - id: C-2
+    claim: "Cộng lại vật chất tối và năng lượng tối chiếm 95% vũ trụ; mọi thứ nhìn thấy chỉ chiếm khoảng 5%."
+    verdict: verified
+    severity: S4
+    evidence: "https://www.aanda.org/articles/aa/full_html/2020/09/aa33910-18/T2.html"
+    note: "Suy từ Planck 2018: 1 − Ωb ≈ 1 − 0,049 ≈ 95,1%. Đúng về số, nhưng câu kết 'toàn bộ sao, hành tinh, đại dương, sinh vật chỉ chiếm khoảng 5%' gộp cả khí liên thiên hà (phần lớn vật chất thường) vào nhóm 'nhìn thấy'. Nên viết 'toàn bộ vật chất thường, kể cả khí giữa các thiên hà, chiếm khoảng 5%' và thêm nguồn."
+  - id: C-3
+    claim: "Chính vì không gian trống chiếm phần lớn vũ trụ nên dù mật độ rất thấp, năng lượng tối vẫn trở thành thành phần thống trị."
+    verdict: unsupported
+    severity: S3
+    evidence: "—"
+    note: "Không nguồn nào đỡ cơ chế này. Bài còn tự mâu thuẫn: đoạn sau viết 'khi vũ trụ ngày càng loãng, năng lượng tối dần chiếm ưu thế', tức lý do là mật độ vật chất giảm dần khi vũ trụ giãn nở, chứ không phải 'không gian trống chiếm phần lớn'. Cách giải thích sai kiểu này để lại mô hình tư duy sai (quy tắc 4). Cắt câu; nếu muốn giải thích cơ chế thì phải tìm nguồn bậc 1–2 (lượt này không mở được nguồn vì công cụ tìm kiếm gặp lỗi)."
+  - id: C-4
+    claim: "Trong hàng tỷ năm đầu, hấp dẫn thắng thế; sau đó năng lượng tối chiếm ưu thế và khiến giãn nở tăng tốc."
+    verdict: partially-supported
+    severity: S3
+    evidence: "https://science.nasa.gov/dark-energy/"
+    note: "Trang Dark Energy của NASA Science viết: 'Nine billion years after the universe began, its expansion started to speed up'. Vậy 'hàng tỷ năm đầu' đúng hướng, nhưng mốc cụ thể là khoảng 9 tỷ năm sau Big Bang, tức khoảng 5 tỷ năm trước. Sửa thành mốc này, ghi 'theo NASA' và kèm nguồn."
+  - id: C-5
+    claim: "Năm 1998, quan sát siêu tân tinh Ia ở xa cho thấy vũ trụ giãn nở ngày càng nhanh; người ta đưa ra khái niệm năng lượng tối để giải thích."
+    verdict: verified
+    severity: S3
+    evidence: "https://arxiv.org/abs/astro-ph/9805201"
+    note: "Riess và cs. 1998 (AJ 116, 1009; doi 10.1086/300499): siêu tân tinh Ia ở xa xa hơn dự kiến 10–15%, giãn nở tăng tốc ở mức 2,8–3,9σ (không ràng buộc Ωm) và 7–9σ khi giả định vũ trụ phẳng. Nội dung đúng nhưng không có nguồn và không nêu ai phát hiện. Viết 'Kết quả lại hoàn toàn ngược lại' cũng tuyệt đối hóa: bài gốc ghi mức tin cậy cụ thể. Thêm quy kết cho hai nhóm và trích dẫn."
+  - id: C-6
+    claim: "Các ngôi sao ở rìa thiên hà quay nhanh hơn nhiều so với dự đoán từ vật chất nhìn thấy; thấu kính hấp dẫn cho thấy tổng khối lượng lớn hơn nhiều so với vật chất phát sáng."
+    verdict: unverifiable
+    severity: S3
+    evidence: "—"
+    note: "Mô tả định tính đúng hướng nhưng không có nguồn và không nêu ai phát hiện, năm nào. Lượt này chưa mở được bài gốc (đường cong quay, bằng chứng thấu kính). Thêm nguồn bậc 1 và tên người phát hiện; không tìm được nguồn thì hạ về mô tả chung có trích một cơ quan bậc 2."
+  - id: C-7
+    claim: "Chúng ta biết vật chất tối tồn tại, nhưng chưa biết nó là gì. / Biết vật chất tối tồn tại nhờ tác dụng hấp dẫn của nó."
+    verdict: partially-supported
+    severity: S3
+    evidence: "https://science.nasa.gov/dark-energy/"
+    note: "NASA viết dè dặt hơn: 'dark matter is thought to make up about 85% of all matter' (được cho là). Thứ quan sát được là các hiệu ứng hấp dẫn không giải thích được bằng vật chất nhìn thấy; vật chất tối là cách giải thích được đa số ủng hộ. 'Chúng ta biết... tồn tại' nâng mức tự tin. Sửa thành 'Nhiều bằng chứng hấp dẫn độc lập cho thấy có một lượng lớn khối lượng không phát sáng, mà phần lớn giới khoa học giải thích là vật chất tối'. Giả thuyết hấp dẫn sửa đổi chỉ nên nhắc ngắn như quan điểm thiểu số, nếu có nguồn; không tạo cân bằng giả."
+  - id: C-8
+    claim: "Các ứng viên WIMP, axion, neutrino vô sinh, lỗ đen nguyên thủy; chưa có ứng viên nào được xác nhận."
+    verdict: unverifiable
+    severity: S3
+    evidence: "—"
+    note: "Không có nguồn, và 'chưa được xác nhận' là claim ràng buộc thời gian nhưng thiếu mốc. Thêm 'tính tới <ngày kiểm>' và một nguồn review bậc 1 về ứng viên vật chất tối."
+  - id: C-9
+    claim: "Năng lượng tối phân bố gần như đồng đều, không tụ thành đám, hoạt động như hiệu ứng đẩy làm tăng tốc giãn nở."
+    verdict: unverifiable
+    severity: S3
+    evidence: "—"
+    note: "Chưa có nguồn. 'Hiệu ứng đẩy' là cách đơn giản hóa có mất mát: trong thuyết tương đối rộng, áp suất âm làm tăng tốc giãn nở chứ không phải một lực đẩy các vật ra xa. Ghi rõ đây là cách hình dung đơn giản, hoặc bỏ chữ 'đẩy'. Thêm nguồn."
+  - id: C-10
+    claim: "Bài không nhắc bất đồng hiện nay về tốc độ giãn nở (căng thẳng Hubble)."
+    verdict: partially-supported
+    severity: S3
+    evidence: "https://arxiv.org/abs/2112.04510"
+    note: "Bài viết về năng lượng tối và sự giãn nở nhưng bỏ qua căng thẳng Hubble. Planck 2018 cho H0 = 67,36 ± 0,54 km/s/Mpc; SH0ES (Riess và cs. 2022, doi 10.3847/2041-8213/ac5c5b) cho H0 = 73,04 ± 1,04 km/s/Mpc, lệch 5σ. Đây là một ẩn số lớn trong chính chủ đề bài viết. Thêm đoạn trình bày như bất đồng chưa giải quyết, không chọn bên."
+  - id: C-11
+    claim: "Nguồn duy nhất: thienvanvietnam.org (VACA, Đặng Vũ Tuấn Sơn, 2010), xếp tier 2."
+    verdict: unsupported
+    severity: S3
+    evidence: "https://www.thienvanvietnam.org/?option=com_content&view=article&id=72:vat-chat-toi-va-nang-luong-toi&catid=42:vu-tru-hoc&Itemid=151"
+    note: "Trang 'Thiên văn Việt Nam - VACA' là website CLB thiên văn nghiệp dư (Joomla), tối đa bậc 4 trong thứ bậc nguồn, và không được đỡ một mình cả bài. Bài năm 2010 có trước Planck 2018, nên không thể là nguồn cho tỉ lệ 68/27/5. accessedAt THIẾU. Ngày 17/09/2026 URL vẫn trả HTTP 200 với tiêu đề 'Vật chất tối và năng lượng tối'. Toàn bộ bài under-sourced: quay lại bước 1."
+fixes:
+  - "Quay bài về bước 1 (content-research): thay nguồn thienvanvietnam.org bằng nguồn bậc 1–2; nếu giữ thì hạ xuống tier 4, điền accessedAt, và không dùng làm nguồn đỡ cho con số nào."
+  - "Sửa bảng thành phần theo Planck 2018 kèm sai số: năng lượng tối ΩΛ = 0,6847 ± 0,0073; vật chất tối ≈ 26,4%; vật chất thường ≈ 4,9% (suy từ Ωch² và Ωbh², h = 0,6736); trích doi 10.1051/0004-6361/201833910."
+  - "Cắt câu 'Chính vì không gian trống chiếm phần lớn vũ trụ nên... năng lượng tối vẫn trở thành thành phần thống trị'. Chỉ giữ giải thích cơ chế nếu có nguồn bậc 1–2."
+  - "Sửa 'Trong hàng tỷ năm đầu, hấp dẫn thắng thế' thành 'Khoảng 9 tỷ năm sau Big Bang, sự giãn nở bắt đầu tăng tốc' và trích NASA Science Dark Energy."
+  - "Hạ 'Chúng ta biết vật chất tối tồn tại' thành 'nhiều bằng chứng hấp dẫn độc lập cho thấy có khối lượng không phát sáng, mà phần lớn giới khoa học giải thích là vật chất tối'."
+  - "Thêm quy kết và nguồn cho phát hiện 1998 (Riess và cs. 1998, doi 10.1086/300499; Perlmutter và cs. 1999, mở kiểm trước khi trích) và cho bằng chứng đường cong quay / thấu kính hấp dẫn."
+  - "Thêm đoạn căng thẳng Hubble: H0 = 67,36 ± 0,54 (Planck 2018) và 73,04 ± 1,04 km/s/Mpc (SH0ES 2022), lệch ~5σ, chưa giải quyết, không chọn bên."
+  - "Thêm 'tính tới <ngày kiểm>' cho câu 'chưa có ứng viên nào được xác nhận' và trích một review bậc 1 về ứng viên vật chất tối."
+  - "Ghi rõ 'hiệu ứng đẩy' là cách hình dung đơn giản hóa."
+suggestedSources:
+  - title: "Planck 2018 results. VI. Cosmological parameters"
+    url: "https://www.aanda.org/articles/aa/full_html/2020/09/aa33910-18/aa33910-18.html"
+    doi: "10.1051/0004-6361/201833910"
+    publisher: "Astronomy & Astrophysics 641, A6 (Planck Collaboration)"
+    year: 2020
+    tier: 1
+    covers: "Bảng thành phần vũ trụ (ΩΛ, Ωm, Ωch², Ωbh²) kèm sai số; H0 từ CMB; ghi nhận căng thẳng với H0 tại chỗ"
+  - title: "A Comprehensive Measurement of the Local Value of the Hubble Constant with 1 km/s/Mpc Uncertainty from HST and the SH0ES Team"
+    url: "https://arxiv.org/abs/2112.04510"
+    doi: "10.3847/2041-8213/ac5c5b"
+    publisher: "The Astrophysical Journal Letters (Riess et al.)"
+    year: 2022
+    tier: 1
+    covers: "Phía đo tại chỗ của căng thẳng Hubble: H0 = 73,04 ± 1,04 km/s/Mpc, lệch 5σ"
+  - title: "Observational Evidence from Supernovae for an Accelerating Universe and a Cosmological Constant"
+    url: "https://arxiv.org/abs/astro-ph/9805201"
+    doi: "10.1086/300499"
+    publisher: "The Astronomical Journal 116, 1009 (Riess et al.)"
+    year: 1998
+    tier: 1
+    covers: "Phát hiện giãn nở tăng tốc 1998 và mức tin cậy"
+  - title: "Dark Energy"
+    url: "https://science.nasa.gov/dark-energy/"
+    doi: ""
+    publisher: "NASA Science"
+    year: 2026
+    tier: 2
+    covers: "Năng lượng tối chiếm khoảng 68,3–70%; vật chất tối được cho là chiếm khoảng 85% tổng vật chất; giãn nở tăng tốc từ khoảng 9 tỷ năm sau Big Bang"
+openQuestions:
+  - "Bài đang PUBLISHED với một nguồn nghiệp dư duy nhất. Gỡ xuống cho tới khi viết lại, hay giữ và gắn nhãn đính chính?"
+  - "Căng thẳng Hubble chưa ngã ngũ; cần người quyết phạm vi trình bày (bao nhiêu phép đo) với điều kiện không chọn bên."
+  - "Có nhắc giả thuyết hấp dẫn sửa đổi (thay cho vật chất tối) không, và ở mức nào để không tạo cân bằng giả? Cần nguồn bậc 1 trước khi quyết."
+  - "Điều phối viên nói domain thienvanvietnam.org đã chết, nhưng ngày 17/09/2026 URL vẫn trả HTTP 200 với đúng tiêu đề. Cần kiểm lại; kết luận hạ tier không đổi."

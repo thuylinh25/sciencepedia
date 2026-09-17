@@ -1,0 +1,132 @@
+slug: 20-ngoi-sao-sang-nhat-bau-troi-dem
+checkedAt: 2026-09-17
+checkedBy: science-editor
+sourceCount: 1
+verdict: revise
+summary: "Bảng dán tên IAU của một sao đơn lẻ (Rigil Kentaurus, Acrux) lên cấp sao gộp của cả hệ nên sai với catalogue IAU, trộn quy ước gộp/tách với Sirius, và toàn bộ số liệu chỉ dựa vào một trang CLB nghiệp dư đã chết domain."
+claims:
+  - id: C-1
+    claim: "Hàng 3: Alpha Centauri (Rigil Kentaurus), cấp sao −0,27"
+    verdict: contradicted
+    severity: S2
+    evidence: "https://www.pas.rochester.edu/~emamajek/WGSN/IAU-CSN.txt ; https://simbad.u-strasbg.fr/simbad/sim-id?Ident=alf+Cen&output.format=ASCII"
+    note: "Catalogue tên sao của IAU (WGSN) gán tên Rigil Kentaurus RIÊNG cho α Cen A (HR 5459), V = −0,01; α Cen B mang tên Toliman (HR 5460), V = 1,35. Con số −0,27 là cấp sao gộp A+B, không thể đi kèm tên Rigil Kentaurus. Bản ghi SIMBAD 'alf Cen' là bản ghi cả hệ (SB*, G2V+K1V), chỉ cho V = −0,1 (độ chính xác thấp); lượt này CHƯA mở được nguồn bậc 1–2 nào ghi đúng −0,27. Sửa thành một trong hai: (a) 'Rigil Kentaurus (α Cen A)' −0,01; (b) 'Alpha Centauri AB (gộp)' kèm nguồn đã mở kiểm cho giá trị gộp."
+  - id: C-2
+    claim: "Hàng 12: Acrux, cấp sao 0,76"
+    verdict: contradicted
+    severity: S2
+    evidence: "https://www.pas.rochester.edu/~emamajek/WGSN/IAU-CSN.txt ; https://simbad.u-strasbg.fr/simbad/sim-id?Ident=alf+Cru&output.format=ASCII"
+    note: "IAU gán tên Acrux cho α Cru Aa (HR 4730), V = 1,33. Giá trị 0,76 là cấp sao gộp của hệ (SIMBAD: 'alf Cru' là sao đôi quang phổ B0.5IV+B1V, bản ghi cả hệ). Nếu xếp theo từng sao thì Acrux Aa (1,33) mờ hơn Mimosa (1,25) và không còn đứng thứ 12, nên thứ tự bảng đổi theo."
+  - id: C-3
+    claim: "Hàng 1: Sirius, cấp sao −1,46 (hệ sao đôi Sirius A/B)"
+    verdict: partially-supported
+    severity: S3
+    evidence: "https://www.pas.rochester.edu/~emamajek/WGSN/IAU-CSN.txt"
+    note: "IAU gán tên Sirius cho α CMa A, V = −1,45; lệch 0,01 thì chấp nhận được khi làm tròn. Lỗi thật nằm ở chỗ Sirius được ghi theo sao thành phần (A), còn Alpha Centauri và Acrux lại ghi cấp sao gộp. Bảng trộn hai quy ước mà không nói ra, đúng chỗ các danh sách loại này hay sai."
+  - id: C-4
+    claim: "Hàng 11: Hadar 0,61; hàng 20: Mimosa 1,25"
+    verdict: verified
+    severity: none
+    evidence: "https://www.pas.rochester.edu/~emamajek/WGSN/IAU-CSN.txt"
+    note: "IAU CSN: Hadar (β Cen Aa) V = 0,61; Mimosa (β Cru) V = 1,25. Khớp."
+  - id: C-5
+    claim: "Alpha Centauri cách 4,4 năm ánh sáng"
+    verdict: verified
+    severity: S4
+    evidence: "https://simbad.u-strasbg.fr/simbad/sim-id?Ident=alf+Cen&output.format=ASCII"
+    note: "SIMBAD ghi thị sai 750,81 ± 0,38 mas, tức 1,332 pc = 4,34 năm ánh sáng. Làm tròn đúng là 4,3. (Lưu ý cho người kiểm sau: công cụ tóm tắt đọc nhầm đơn vị thành '4,34 parsec'; con số trên do tôi tự tính lại từ thị sai.)"
+  - id: C-6
+    claim: "Acrux cách 320 năm ánh sáng"
+    verdict: verified
+    severity: none
+    evidence: "https://simbad.u-strasbg.fr/simbad/sim-id?Ident=alf+Cru&output.format=ASCII"
+    note: "Thị sai 10,13 ± 0,50 mas, tức ≈ 98,7 pc ≈ 322 năm ánh sáng (sai số ~±5%). Khớp."
+  - id: C-7
+    claim: "15 cặp cấp sao/khoảng cách còn lại (Canopus, Arcturus, Vega, Capella, Rigel, Procyon, Achernar, Betelgeuse, Altair, Aldebaran, Antares, Spica, Pollux, Fomalhaut, Deneb)"
+    verdict: unverifiable
+    severity: S3
+    evidence: "—"
+    note: "Lượt này chưa mở được bản ghi SIMBAD/Hipparcos/Gaia cho từng sao. Nguồn duy nhất (thienvanvietnam.org, 2010) đã chết domain, và một trang năm 2010 cũng không đỡ được khoảng cách thời Gaia. Mỗi giá trị cần một nguồn bậc 2 đã mở kiểm."
+  - id: C-8
+    claim: "Alpha Centauri chứa Proxima Centauri, ngôi sao gần chúng ta nhất"
+    verdict: partially-supported
+    severity: S4
+    evidence: "https://www.pas.rochester.edu/~emamajek/WGSN/IAU-CSN.txt"
+    note: "IAU CSN ghi Proxima Centauri là α Cen C (GJ 551), nên việc xếp Proxima vào hệ Alpha Centauri có nguồn đỡ. Ý 'gần nhất' chưa được kiểm trong lượt này."
+  - id: C-9
+    claim: "Vega từng là Sao Bắc Cực khoảng 12.000 năm trước và sẽ trở lại vị trí này"
+    verdict: partially-supported
+    severity: S3
+    evidence: "https://www.astronomy.com/science/earths-axis-precesses-bright-stars-become-the-north-star/"
+    note: "Nguồn đã mở (báo phổ biến khoa học, chỉ dùng làm bối cảnh) nói Vega sẽ thay Polaris 'sau 14.000 năm', chu kỳ tiến động ~26.000 năm, và Vega 'sẽ không bao giờ đến gần cực thiên cầu bằng sao Bắc Cực hiện nay', còn cách cỡ 10 đường kính Mặt Trăng. Vì vậy 'trở lại vị trí này' là nói quá. Mốc quá khứ '12.000 năm trước' không có trong nguồn nào đã mở. Các tài liệu thường ghi 'khoảng 12.000 TCN' (≈14.000 năm trước), nên có khả năng bài nhầm TCN thành 'năm trước', nhưng tôi mới thấy điều này ở đoạn trích kết quả tìm kiếm, chưa mở trang, nên không dùng làm bằng chứng."
+  - id: C-10
+    claim: "Chênh lệch 5 cấp tương ứng độ sáng chênh 100 lần"
+    verdict: unverifiable
+    severity: S4
+    evidence: "—"
+    note: "Là định nghĩa thang Pogson, nhưng lượt này chưa mở nguồn nào. Gắn nguồn giáo trình hoặc cơ quan bậc 2."
+  - id: C-11
+    claim: "Betelgeuse có bán kính lớn hơn Mặt Trời hàng trăm lần và sẽ nổ siêu tân tinh"
+    verdict: unverifiable
+    severity: S3
+    evidence: "—"
+    note: "Không có nguồn còn sống. Vế 'sẽ nổ siêu tân tinh' phải giữ đúng mức dè dặt của nguồn (ví dụ 'được dự đoán sẽ...')."
+  - id: C-12
+    claim: "Deneb cách ~1.400–2.600 năm ánh sáng; xa hơn Sirius hàng trăm lần"
+    verdict: unverifiable
+    severity: S3
+    evidence: "—"
+    note: "Ghi một khoảng là cách thể hiện sự bất định đúng tinh thần, nên giữ lại, nhưng khoảng này chưa có nguồn. Phép so sánh 'hàng trăm lần' khớp nội bộ với bảng (1.400/8,6 ≈ 163; 2.600/8,6 ≈ 302)."
+  - id: C-13
+    claim: "Tam giác mùa hè (Vega, Altair, Deneb); Lục giác mùa đông (Sirius, Procyon, Pollux, Capella, Aldebaran, Rigel), Betelgeuse gần tâm"
+    verdict: unverifiable
+    severity: S4
+    evidence: "—"
+    note: "Chưa có nguồn. Tên 'mùa hè/mùa đông' chỉ đúng ở Bắc bán cầu, cần ghi rõ."
+  - id: C-14
+    claim: "Phần đông các ngôi sao trong Ngân Hà là sao lùn đỏ, không nhìn thấy bằng mắt thường"
+    verdict: unverifiable
+    severity: S3
+    evidence: "—"
+    note: "Claim về tỉ lệ dân số sao cần nguồn bậc 1–2. Chưa có nguồn thì cắt."
+  - id: C-15
+    claim: "Nguồn duy nhất: thienvanvietnam.org (VACA, 2010), gắn tier 2, accessedAt THIẾU"
+    verdict: unsupported
+    severity: S3
+    evidence: "—"
+    note: "Theo điều phối viên, toàn domain đã chết. VACA là CLB thiên văn nghiệp dư, không thuộc bậc 1–2 nên nhãn tier 2 là sai. Bài coi như không còn nguồn đỡ dùng được."
+fixes:
+  - "Chốt một quy ước cho cột cấp sao, hoặc 'cấp sao gộp của hệ' hoặc 'sao thành phần sáng nhất', ghi quy ước thành chú thích dưới bảng, rồi xếp lại thứ hạng theo quy ước đó."
+  - "Hàng 3: nếu giữ −0,27 thì đổi tên thành 'Alpha Centauri AB (gộp)' và gắn nguồn đã mở kiểm cho giá trị gộp; nếu giữ tên Rigil Kentaurus thì đổi cấp sao thành −0,01 (IAU CSN, HR 5459)."
+  - "Hàng 12: nếu giữ 0,76 thì đổi tên thành 'Alpha Crucis (gộp)'; nếu giữ tên Acrux thì đổi thành 1,33 (IAU CSN, HR 4730) và xếp lại dưới Mimosa (1,25)."
+  - "Sửa khoảng cách Alpha Centauri từ 4,4 thành 4,3 năm ánh sáng (thị sai SIMBAD 750,81 mas)."
+  - "Kiểm từng cặp cấp sao/khoảng cách của 15 sao còn lại trên SIMBAD (URL dạng sim-id?Ident=<tên>), ghi thị sai và catalogue gốc vào ghi chú nguồn; hàng nào không kiểm được thì bỏ khoảng cách của hàng đó."
+  - "Thêm mốc thời gian dữ liệu dưới bảng, ví dụ: 'Số liệu theo SIMBAD/IAU-CSN, truy cập 09/2026'."
+  - "Xóa câu 'Từng là Sao Bắc Cực khoảng 12.000 năm trước'. Viết lại thành 'Sau khoảng 14.000 năm nữa, do tiến động, Vega sẽ ở gần cực Bắc thiên cầu, dù không gần bằng Polaris hiện nay', kèm nguồn bậc 1–2."
+  - "Gắn nguồn bậc 1–2 cho các claim về Betelgeuse, Deneb, dân số sao lùn đỏ, thang Pogson và các hình sao; claim nào không tìm được nguồn thì cắt. Ghi rõ 'Bắc bán cầu' cho tam giác mùa hè và lục giác mùa đông."
+  - "Xóa nguồn thienvanvietnam.org khỏi danh sách nguồn đỡ; điền accessedAt cho mọi nguồn mới."
+suggestedSources:
+  - title: "IAU Catalog of Star Names (IAU-CSN)"
+    url: "https://www.pas.rochester.edu/~emamajek/WGSN/IAU-CSN.txt"
+    doi: ""
+    publisher: "IAU Working Group on Star Names (WGSN)"
+    year: "không ghi trên tệp (truy cập 2026-09-17)"
+    tier: 2
+    covers: "Tên chính thức gắn với thành phần nào của hệ (A/B/Aa) và cấp sao V của từng thành phần: Sirius, Rigil Kentaurus, Toliman, Proxima, Acrux, Hadar, Mimosa"
+  - title: "SIMBAD: alf Cen"
+    url: "https://simbad.u-strasbg.fr/simbad/sim-id?Ident=alf+Cen&output.format=ASCII"
+    doi: ""
+    publisher: "CDS Strasbourg"
+    year: "cơ sở dữ liệu sống (truy cập 2026-09-17)"
+    tier: 2
+    covers: "Thị sai và khoảng cách Alpha Centauri; xác nhận đây là bản ghi cả hệ. Dùng cùng mẫu URL cho từng sao trong bảng."
+  - title: "SIMBAD: alf Cru"
+    url: "https://simbad.u-strasbg.fr/simbad/sim-id?Ident=alf+Cru&output.format=ASCII"
+    doi: ""
+    publisher: "CDS Strasbourg"
+    year: "cơ sở dữ liệu sống (truy cập 2026-09-17)"
+    tier: 2
+    covers: "Thị sai và khoảng cách Acrux; bản ghi cả hệ sao đôi"
+openQuestions:
+  - "Bảng nên xếp theo cấp sao gộp (gần với cảm nhận mắt thường, vì mắt không tách được A/B) hay theo từng sao mang tên IAU? Người quyết cần chọn trước khi sửa, vì hai cách cho thứ hạng khác nhau."
+  - "Khoảng cách nên theo Hipparcos (bản rút gọn 2007) hay Gaia DR3? Với sao rất sáng như Rigel, Deneb, Betelgeuse, trắc lượng Gaia có thể kém tin cậy; cần một quy ước chung cho toàn kho."

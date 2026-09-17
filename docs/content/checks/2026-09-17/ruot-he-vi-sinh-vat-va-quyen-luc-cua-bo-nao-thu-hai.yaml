@@ -1,0 +1,112 @@
+slug: ruot-he-vi-sinh-vat-va-quyen-luc-cua-bo-nao-thu-hai
+checkedAt: 2026-09-17
+checkedBy: science-editor
+sourceCount: 0
+verdict: reject
+summary: "Không có nguồn nào, và luận điểm chính của bài nâng bằng chứng chủ yếu từ chuột và tương quan thành nhân quả trên người ('sức khoẻ đường ruột có ảnh hưởng đáng kể đến tâm trạng', vi khuẩn tác động dây phế vị điều khiển cơn đói) — lỗi cỡ từ chối. Mục 'Những con số' thì làm tốt: số nơron ENS 168 triệu (Michel 2022) và serotonin ruột không qua hàng rào máu–não đều đúng hướng và nên giữ khi viết lại."
+claims:
+  - id: C-1
+    claim: "Ước lượng thường trích 400–600 triệu nơron ENS; phép đếm trực tiếp toàn diện đầu tiên (2022) cho khoảng 168 triệu, tương đương số nơron tuỷ sống"
+    verdict: verified
+    severity: S4
+    evidence: https://api.crossref.org/works/10.1111/nmo.14440
+    note: "Michel và cộng sự 2022, Neurogastroenterology & Motility, doi 10.1111/nmo.14440: '168 million for human', số nơron ruột tương đương tuỷ sống, 'first comprehensive nerve cell enumeration'. Đúng. S4: con số 400–600 triệu chưa có nguồn gắn — hoặc gắn nguồn, hoặc chỉ nói 'các ước lượng cũ cao hơn nhiều'. Nêu tên tác giả + năm trong câu."
+  - id: C-2
+    claim: "Khoảng 90–95% serotonin của cơ thể nằm ở đường tiêu hoá, chủ yếu do tế bào ưa crôm ruột tiết ra"
+    verdict: partially-supported
+    severity: S4
+    evidence: https://pmc.ncbi.nlm.nih.gov/articles/PMC5688111/
+    note: "Scientific Reports 2017 (doi 10.1038/s41598-017-15834-3): 'More than 90% of the serotonin ... in the body is produced and released into circulation by ... the enterochromaffin (EC) cell'. Cận trên 95% không có trong nguồn này — sửa thành 'hơn 90%'."
+  - id: C-3
+    claim: "Serotonin ruột không đi qua hàng rào máu–não, không phải nguồn serotonin não dùng; điều hoà nhu động, hấp thu, chuyển hoá"
+    verdict: unverifiable
+    severity: S3
+    evidence: "—"
+    note: "Hướng nội dung đúng và là chỗ bài viết cẩn thận nhất, nhưng trong lượt này chỉ tìm thấy blog/trang thương mại nói điều này, chưa mở được nguồn bậc 1–2. Phải tìm tổng quan sinh lý serotonin ngoại vi (bậc 1) rồi mới giữ. Không được cắt ý này khi viết lại — nó là thứ chặn huyền thoại 'ruột làm ra serotonin cho tâm trạng'."
+  - id: C-4
+    claim: "Dây thần kinh phế vị kết nối não và ruột, truyền tín hiệu theo cả hai chiều"
+    verdict: verified
+    severity: none
+    evidence: https://www.frontiersin.org/journals/psychiatry/articles/10.3389/fpsyt.2018.00044/full
+    note: "Breit và cộng sự 2018: kết nối hai chiều; sợi hướng tâm (ruột→não) chiếm 80–90%. Nên thêm tỉ lệ này vì nó cho thấy ruột chủ yếu là cơ quan cảm giác báo lên não."
+  - id: C-5
+    claim: "ENS có khả năng hoạt động độc lập với não, tự kiểm soát nhu động, tiết enzyme, hấp thu"
+    verdict: unverifiable
+    severity: S3
+    evidence: "—"
+    note: "Chưa mở được nguồn bậc 1–2 trong lượt này. Cần tổng quan sinh lý ENS (ví dụ của Furness) — mở kiểm rồi mới gắn. Mục 'tiết enzyme tiêu hoá' cần kiểm riêng tại nguồn: phạm vi ENS tự điều khiển là gì, phần nào cần tín hiệu nội tiết/trung ương."
+  - id: C-6
+    claim: "Căng thẳng có thể gây đau bụng/tiêu chảy; vấn đề đường ruột có thể ảnh hưởng tâm trạng và giấc ngủ"
+    verdict: unverifiable
+    severity: S3
+    evidence: "—"
+    note: "Không nguồn. Hai chiều có mức bằng chứng khác nhau: chiều ruột/vi sinh→tâm trạng ở người chủ yếu là tương quan (xem C-7); chiều căng thẳng→triệu chứng tiêu hoá cần nguồn lâm sàng riêng. Tách hai chiều và gắn nguồn riêng."
+  - id: C-7
+    claim: "Vi sinh vật đường ruột sản xuất nhiều chất hoá học có vai trò trong giao tiếp thần kinh và ảnh hưởng đến cảm giác thèm ăn, trao đổi chất, tâm trạng, sức khoẻ tổng thể"
+    verdict: partially-supported
+    severity: S2
+    evidence: https://pmc.ncbi.nlm.nih.gov/articles/PMC10917620/
+    note: "Viết như sự thật đã xác lập trên người. Tổng quan 2023 (doi 10.20517/mrr.2023.33): bằng chứng cơ chế đến từ gặm nhấm vô trùng/dùng kháng sinh; ở người các liên hệ 'mostly variable and inconsistent across observational studies', nhân quả chưa xác lập. Breit 2018 cũng nói hiệu ứng lên tâm trạng/lo âu chủ yếu thấy ở gặm nhấm. Nâng mức tự tin — lỗi cỡ từ chối. Sửa: 'Trên chuột, ...; ở người mới thấy tương quan.'"
+  - id: C-8
+    claim: "Vi khuẩn đường ruột tạo chất hoá học ảnh hưởng dây phế vị, từ đó tác động các trung tâm đói/no (kèm danh sách ghrelin, leptin, PYY, GLP-1)"
+    verdict: unsupported
+    severity: S2
+    evidence: "—"
+    note: "Cơ chế nêu như đã chứng minh trên người, không nguồn. Không mở được nguồn nào xác nhận chuỗi vi khuẩn→phế vị→trung tâm đói ở người. Ngoài ra lỗi cấu trúc: danh sách hormone treo lơ lửng, không nối với câu nào; nơi tiết của từng hormone phải lấy từ nguồn khi viết lại. Cắt cả mục hoặc viết lại từ nguồn."
+  - id: C-9
+    claim: "Có thể thay đổi thành phần hệ vi sinh qua ăn uống (nhiều rau quả, chất xơ, thực phẩm lên men, hạn chế đồ uống có đường và thực phẩm siêu chế biến), từ đó ảnh hưởng thèm ăn và sức khoẻ tiêu hoá"
+    verdict: partially-supported
+    severity: S3
+    evidence: https://med.stanford.edu/news/all-news/2021/07/fermented-food-diet-increases-microbiome-diversity-lowers-inflammation.html
+    note: "Thực phẩm lên men làm tăng độ đa dạng: có thử nghiệm đỡ (Wastyk 2021, n=36, 10 tuần). Nhưng cùng thử nghiệm đó thấy tăng chất xơ trong 10 tuần KHÔNG làm tăng độ đa dạng trung bình. Mục đồ uống có đường/siêu chế biến và hệ quả 'ảnh hưởng cảm giác thèm ăn' không có nguồn — cắt hoặc tìm nguồn. Tiêu đề 'lập trình lại' là cường điệu."
+  - id: C-10
+    claim: "Kết luận: mối liên hệ ruột–não khiến sức khoẻ đường ruột có ảnh hưởng đáng kể đến tiêu hoá, cảm giác thèm ăn, tâm trạng và sức khoẻ tổng thể"
+    verdict: contradicted
+    severity: S2
+    evidence: https://pmc.ncbi.nlm.nih.gov/articles/PMC10917620/
+    note: "'Ảnh hưởng đáng kể đến tâm trạng' là khẳng định nhân quả trên người mà tài liệu hiện có nói rõ là chưa xác lập. Đây là lỗi nặng nhất của bài. Thay bằng: 'Ruột có hệ thần kinh riêng và liên lạc hai chiều với não; vai trò của vi khuẩn đối với tâm trạng con người vẫn đang được nghiên cứu, bằng chứng chủ yếu từ động vật.'"
+  - id: C-11
+    claim: "Các nhà khoa học gọi ruột là 'bộ não thứ hai'"
+    verdict: unverifiable
+    severity: S4
+    evidence: "—"
+    note: "Là cách gọi phổ thông; nên ghi nguồn gốc thuật ngữ (có nguồn) và nói rõ đây là ẩn dụ, như kết luận đã làm đúng."
+fixes:
+  - "Không sửa tại chỗ. Đưa bài về bước 1 (content-research) và viết lại từ nguồn đã thẩm định."
+  - "Giữ mục 'Những con số' khi viết lại: gắn Michel 2022 cho 168 triệu nơron; đổi '90–95%' thành 'hơn 90%' và gắn Sci Rep 2017; tìm nguồn bậc 1–2 cho ý serotonin ruột không qua hàng rào máu–não."
+  - "Cắt mọi khẳng định vi khuẩn ảnh hưởng tâm trạng/thèm ăn ở người nếu không kèm 'chủ yếu trên chuột' hoặc 'tương quan'; viết lại kết luận theo C-10."
+  - "Cắt hoặc viết lại từ nguồn mục 'Vi khuẩn ảnh hưởng tới cơn thèm ăn' — sửa danh sách hormone treo và kiểm nơi tiết từng hormone tại nguồn."
+  - "Thêm tỉ lệ 80–90% sợi hướng tâm của dây phế vị (Breit 2018)."
+  - "Bỏ phần lời khuyên ăn uống trùng với bài 'he-vi-sinh-duong-ruot-...'; chỉ liên kết sang bài đó."
+suggestedSources:
+  - title: "How big is the little brain in the gut? Neuronal numbers in the enteric nervous system of mice, Guinea pig, and human"
+    url: https://onlinelibrary.wiley.com/doi/10.1111/nmo.14440
+    doi: 10.1111/nmo.14440
+    publisher: Neurogastroenterology & Motility
+    year: 2022
+    tier: 1
+    covers: "số nơron ENS ở người (168 triệu), so sánh với tuỷ sống"
+  - title: "Sodium channel NaV1.3 is important for enterochromaffin cell excitability and serotonin release"
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC5688111/
+    doi: 10.1038/s41598-017-15834-3
+    publisher: Scientific Reports
+    year: 2017
+    tier: 1
+    covers: "hơn 90% serotonin cơ thể do tế bào ưa crôm ruột sản xuất"
+  - title: "Vagus Nerve as Modulator of the Brain–Gut Axis in Psychiatric and Inflammatory Disorders"
+    url: https://www.frontiersin.org/journals/psychiatry/articles/10.3389/fpsyt.2018.00044/full
+    doi: 10.3389/fpsyt.2018.00044
+    publisher: Frontiers in Psychiatry
+    year: 2018
+    tier: 1
+    covers: "dây phế vị hai chiều, 80–90% sợi hướng tâm; bằng chứng tâm trạng chủ yếu từ gặm nhấm"
+  - title: "Methodological recommendations for human microbiota-gut-brain axis research"
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC10917620/
+    doi: 10.20517/mrr.2023.33
+    publisher: Microbiome Research Reports
+    year: 2023
+    tier: 1
+    covers: "mức bằng chứng trục vi sinh–ruột–não ở người: tương quan, chưa nhân quả"
+openQuestions:
+  - "Chồng lấn: mục 'Hệ vi sinh vật đường ruột', danh sách hormone đói/no và mục 'lập trình lại hệ vi sinh' trùng với bài 'he-vi-sinh-duong-ruot-...' và bài 'nhin-an-gian-doan-...'. Đề xuất bài này chỉ giữ phạm vi ENS + dây phế vị + serotonin ngoại vi; knowledge-architect quyết định."
+  - "Bài đang PUBLISHED với 0 nguồn và claim nhân quả trên người. Gỡ xuống hay giữ kèm ghi chú đính chính công khai trong lúc viết lại? Cần người quyết (quy tắc 9: không sửa lặng lẽ)."

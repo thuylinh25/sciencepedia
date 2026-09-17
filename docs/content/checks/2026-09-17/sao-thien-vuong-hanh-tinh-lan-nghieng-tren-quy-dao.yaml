@@ -1,0 +1,127 @@
+slug: sao-thien-vuong-hanh-tinh-lan-nghieng-tren-quy-dao
+checkedAt: 2026-09-17
+checkedBy: science-editor
+sourceCount: 1
+verdict: revise
+summary: Không có claim sai nặng — trục nghiêng, 42 năm, -224°C, Voyager 2 đều khớp NASA — nhưng nguồn duy nhất (Fact Sheet) không đỡ phần lớn bài và còn ghi -220°C trái với con số bài dùng; claim "tới nay" thiếu mốc ngày.
+claims:
+  - id: C-1
+    claim: "Trục quay Sao Thiên Vương nghiêng gần 98°."
+    verdict: verified
+    severity: none
+    evidence: https://nssdc.gsfc.nasa.gov/planetary/factsheet/uranusfact.html
+    note: "Fact Sheet: obliquity 97,77°. NASA Uranus Facts cũng ghi 97,77°. Khớp."
+  - id: C-2
+    claim: "Giả thuyết phổ biến nhất là một hoặc vài va chạm với thiên thể cỡ hành tinh trong giai đoạn sơ khai đã lật nó."
+    verdict: partially-supported
+    severity: S4
+    evidence: https://science.nasa.gov/uranus/facts/
+    note: "NASA: độ nghiêng 'may be the result of a collision with an Earth-sized object long ago'. Nguồn đỡ ý va chạm (có dè dặt) nhưng không đỡ 'phổ biến nhất' hay 'vài va chạm'. Viết theo NASA hoặc gắn nguồn peer-review cho so sánh giả thuyết."
+  - id: C-3
+    claim: "Mỗi cực có 42 năm Trái Đất được chiếu sáng liên tục, rồi 42 năm trong bóng tối."
+    verdict: verified
+    severity: none
+    evidence: https://www.ssec.wisc.edu/planetary/uranus/science/
+    note: "SSEC, Đại học Wisconsin: 'its poles alternate between 42 years of sunlight and 42 years of darkness'. Nhất quán với chu kỳ quỹ đạo 30.685 ngày ≈ 84 năm (Fact Sheet). NASA Uranus Facts dùng cách nói khác ('21-year-long dark winter' — thời gian Mặt Trời gần như ở thiên đỉnh cực); hai cách không mâu thuẫn."
+  - id: C-4
+    claim: "Hệ quả là mùa cực đoan nhất trong Hệ Mặt Trời."
+    verdict: verified
+    severity: none
+    evidence: https://www.ssec.wisc.edu/planetary/uranus/science/
+    note: "SSEC: 'the largest fractional seasonal forcing of any planet in our solar system'. Khớp (nói về hành tinh)."
+  - id: C-5
+    claim: "Dưới khí quyển hydro–heli là lớp phủ đặc gồm nước, methane và amoniac ở trạng thái siêu tới hạn."
+    verdict: partially-supported
+    severity: S4
+    evidence: https://science.nasa.gov/uranus/facts/
+    note: "NASA: 'a hot dense fluid of \"icy\" materials – water, methane, and ammonia – above a small rocky core'. Nguồn đã mở không nói 'siêu tới hạn'. Dùng 'chất lưu nóng, đặc' như NASA hoặc gắn nguồn cho 'siêu tới hạn'."
+  - id: C-6
+    claim: "Methane trong khí quyển hấp thụ ánh sáng đỏ, để lại màu lam nhạt đặc trưng."
+    verdict: partially-supported
+    severity: S4
+    evidence: https://science.nasa.gov/solar-system/why-uranus-and-neptune-are-different-colors/
+    note: "Methane hấp thụ đỏ → xanh: đúng (NASA Uranus Facts). Nhưng độ 'nhạt' của Sao Thiên Vương là do lớp sương mù (haze) dày hơn Sao Hải Vương 'whitens' màu (Irwin et al. 2022, JGR Planets, DOI 10.1029/2022JE007189). Quy màu lam nhạt chỉ cho methane là đơn giản hoá mất thông tin; thêm một câu về lớp sương mù."
+  - id: C-7
+    claim: "Sao Thiên Vương giữ kỷ lục nhiệt độ thấp nhất từng đo được trong khí quyển hành tinh: -224°C."
+    verdict: verified
+    severity: S3
+    evidence: https://science.nasa.gov/uranus/facts/
+    note: "NASA Uranus Facts: 'minimum temperature of 49K (-224.2 degrees Celsius) makes it even colder than Neptune'. Claim đúng, NHƯNG nguồn duy nhất của bài (Fact Sheet) ghi 53 K (-220°C) ở 0,1 bar — nguồn được trích không đỡ, còn cho số khác. Gắn NASA Uranus Facts cho con số này."
+  - id: C-8
+    claim: "Nguyên nhân có thể là hành tinh này gần như không toả thêm nhiệt từ bên trong."
+    verdict: verified
+    severity: none
+    evidence: https://www.aanda.org/articles/aa/full_html/2024/06/aa48987-23/aa48987-23.html
+    note: "Milcareck et al. 2024 (A&A 686, A303), dẫn Pearl et al. 1990: thông lượng nội nhiệt Sao Thiên Vương '0.042 ± 0.047 W m⁻² at most' so với năng lượng Mặt Trời hấp thụ 0,64 W m⁻². 'Có thể' giữ đúng mức."
+  - id: C-9
+    claim: "...khác với các hành tinh khổng lồ còn lại."
+    verdict: partially-supported
+    severity: S4
+    evidence: https://www.aanda.org/articles/aa/full_html/2024/06/aa48987-23/aa48987-23.html
+    note: "Nguồn đã mở chỉ đỡ phần so sánh với Sao Hải Vương (nội nhiệt 0,43 W m⁻² > 0,27 W m⁻² hấp thụ). Sao Mộc và Sao Thổ chưa có nguồn trong lượt này. Gắn nguồn hoặc thu hẹp thành 'khác với Sao Hải Vương'."
+  - id: C-10
+    claim: "Voyager 2 bay ngang năm 1986 và tới nay vẫn là tàu duy nhất từng tới."
+    verdict: verified
+    severity: S3
+    evidence: https://science.nasa.gov/uranus/
+    note: "NASA: Voyager 2 là 'the first, and so far only, spacecraft to visit Uranus', tháng 1/1986. Đúng, nhưng 'tới nay' là claim ràng buộc thời gian thiếu mốc. Sửa thành 'tính đến tháng 9/2026'."
+  - id: C-11
+    claim: "Phần lớn hiểu biết đến từ vài giờ quan sát đó cộng với kính thiên văn."
+    verdict: unverifiable
+    severity: S4
+    evidence: "—"
+    note: "Không mở được nguồn về thời lượng quan sát của Voyager 2 tại Sao Thiên Vương; 'vài giờ' có thể chỉ đúng với giai đoạn tiếp cận gần nhất. Nghi ngờ thì cắt 'vài giờ'."
+  - id: C-12
+    claim: "Nguồn duy nhất (NASA Planetary Fact Sheet) đỡ toàn bài."
+    verdict: partially-supported
+    severity: S3
+    evidence: https://nssdc.gsfc.nasa.gov/planetary/factsheet/uranusfact.html
+    note: "Fact Sheet chỉ đỡ độ nghiêng và chu kỳ quỹ đạo; không có giả thuyết va chạm, thành phần lớp phủ, màu, nội nhiệt, Voyager 2; nhiệt độ còn lệch với bài. accessedAt THIẾU; ghi '2024' trong khi trang cập nhật 02/10/2024 (index 18/03/2025)."
+fixes:
+  - "Gắn NASA Uranus Facts cho '-224°C'; ghi rõ đó là nhiệt độ tối thiểu khí quyển (49 K)."
+  - "Thay 'tới nay' bằng 'tính đến tháng 9/2026' cho câu Voyager 2."
+  - "Thay 'Giả thuyết phổ biến nhất là một hoặc vài va chạm' bằng 'Độ nghiêng có thể là hệ quả của một va chạm với thiên thể cỡ Trái Đất từ lâu', trích NASA."
+  - "Thay 'siêu tới hạn' bằng 'chất lưu nóng và đặc' (NASA), hoặc gắn nguồn cho thuật ngữ."
+  - "Thêm câu: màu lam nhạt hơn Sao Hải Vương chủ yếu do lớp sương mù dày hơn (Irwin et al., 2022)."
+  - "Thu hẹp 'khác với các hành tinh khổng lồ còn lại' thành 'khác với Sao Hải Vương', hoặc gắn nguồn cho Sao Mộc/Sao Thổ."
+  - "Cắt 'vài giờ quan sát'; viết 'một lần bay ngang năm 1986'."
+  - "Điền accessedAt cho Fact Sheet; bổ sung các nguồn trong suggestedSources."
+suggestedSources:
+  - title: Uranus Facts
+    url: https://science.nasa.gov/uranus/facts/
+    doi:
+    publisher: NASA Science
+    year: 2025
+    tier: 2
+    covers: Độ nghiêng, giả thuyết va chạm, lớp phủ băng, methane, -224°C
+  - title: Uranus (overview)
+    url: https://science.nasa.gov/uranus/
+    doi:
+    publisher: NASA Science
+    year: 2025
+    tier: 2
+    covers: Voyager 2 là tàu duy nhất tới Sao Thiên Vương
+  - title: Uranus Atmospheric Research at SSEC
+    url: https://www.ssec.wisc.edu/planetary/uranus/science/
+    doi:
+    publisher: Space Science and Engineering Center, University of Wisconsin–Madison
+    year: 2025
+    tier: 3
+    covers: 42 năm sáng / 42 năm tối; mùa cực đoan nhất
+  - title: "Radiative-convective models of the atmospheres of Uranus and Neptune: Heating sources and seasonal effects"
+    url: https://www.aanda.org/articles/aa/full_html/2024/06/aa48987-23/aa48987-23.html
+    doi: 10.1051/0004-6361/202348987
+    publisher: Astronomy & Astrophysics 686, A303
+    year: 2024
+    tier: 1
+    covers: Nội nhiệt gần bằng 0 của Sao Thiên Vương
+  - title: Why Uranus and Neptune Are Different Colors
+    url: https://science.nasa.gov/solar-system/why-uranus-and-neptune-are-different-colors/
+    doi: 10.1029/2022JE007189
+    publisher: NASA Science (Irwin et al., JGR Planets)
+    year: 2022
+    tier: 2
+    covers: Methane hấp thụ đỏ; lớp sương mù làm Sao Thiên Vương nhạt màu
+openQuestions:
+  - "NASA có hai con số nhiệt độ tối thiểu: Fact Sheet 53 K (-220°C, ở 0,1 bar) và Uranus Facts 49 K (-224,2°C). Cần chốt dùng số nào và ghi rõ điều kiện đo."
+  - "Không cần đối chiếu IAU MPC / JPL SSD: bài không nêu số vệ tinh. Nếu bổ sung: KHÔNG dùng số 28 của Fact Sheet / NASA Uranus Facts bản đã mở — scripts/apply-corrections-2026-09-13.ts ghi 29 theo NASA tháng 8/2026 (lượt này chưa mở lại nguồn đó). Phải đối chiếu IAU MPC / JPL SSD và kèm mốc ngày."

@@ -1,0 +1,61 @@
+{
+  "slug": "ruot-he-vi-sinh-vat-va-quyen-luc-cua-bo-nao-thu-hai",
+  "edits": [
+    {
+      "claimId": "C-7",
+      "severity": "S2",
+      "find": "Các vi sinh vật này sản xuất nhiều chất hóa học có vai trò trong giao tiếp thần kinh và ảnh hưởng đến:\n\n- Cảm giác thèm ăn.\n- Quá trình trao đổi chất.\n- Tâm trạng.\n- Sức khỏe tổng thể.",
+      "replace": "Các vi sinh vật này sản xuất nhiều chất hóa học có hoạt tính thần kinh. Nhưng mức bằng chứng cho từng ảnh hưởng thì rất khác nhau, và cần tách rõ:\n\n- **Trên gặm nhấm** (chuột vô trùng, chuột dùng kháng sinh): thay đổi hệ vi sinh gây thay đổi đáng kể ở sinh lý não và hành vi. Phần lớn cơ chế phân tử được phát hiện ở đây.\n- **Ở người**: mới chủ yếu là **tương quan** từ nghiên cứu quan sát, và theo tổng quan phương pháp luận năm 2023, các liên hệ này \"phần lớn thay đổi và không nhất quán giữa các nghiên cứu quan sát\". Việc chuyển từ tương quan sang nhân quả dọc trục vi sinh–ruột–não vẫn là \"một thách thức lớn\" chưa vượt qua được (Ou và cộng sự, 2023).\n\nNghĩa là: ảnh hưởng của hệ vi sinh lên tâm trạng, cảm giác thèm ăn và trao đổi chất ở người là **hướng nghiên cứu đang mở**, không phải cơ chế đã xác lập.",
+      "why": "Bản cũ nêu ảnh hưởng của vi sinh vật lên thèm ăn, trao đổi chất, tâm trạng và sức khỏe tổng thể như sự thật đã xác lập trên người, không phân biệt cấp bằng chứng. Tổng quan phương pháp luận 2023 (Ou và cộng sự, Microbiome Research Reports) nói rõ cơ chế đến từ gặm nhấm vô trùng/dùng kháng sinh, còn ở người các liên hệ \"mostly variable and inconsistent across observational studies\" và nhân quả chưa xác lập. Bản sửa tách rõ \"trên chuột\" và \"ở người\", giữ đúng mức dè dặt của nguồn.",
+      "evidence": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10917620/ (doi 10.20517/mrr.2023.33)"
+    },
+    {
+      "claimId": "C-8",
+      "severity": "S2",
+      "find": "## Vi khuẩn đường ruột ảnh hưởng tới cơn thèm ăn như thế nào?\n\n### Tác động đến tín hiệu thần kinh\n\nVi khuẩn đường ruột có thể tạo ra các chất hóa học ảnh hưởng đến hoạt động của dây thần kinh phế vị, từ đó tác động tới các trung tâm kiểm soát cảm giác đói và no.\n\n- **Ghrelin** (hormone tạo cảm giác đói).\n- **Leptin** (hormone tạo cảm giác no).\n- **PYY** và **GLP-1** (các hormone giúp giảm cảm giác thèm ăn).",
+      "replace": "## Vi khuẩn đường ruột và cảm giác thèm ăn: bằng chứng tới đâu?\n\n### Đường truyền tín hiệu từ ruột lên não\n\nDây thần kinh phế vị là kênh liên lạc chính, và nó nghiêng hẳn về một chiều: **80–90% số sợi là sợi hướng tâm**, đi từ ruột lên não; chỉ 10–20% đi theo chiều ngược lại (Breit và cộng sự, 2018). Các sợi hướng tâm này ghi nhận thức ăn đang tiêu hóa trong đường ruột và góp phần định đoạt tốc độ hấp thu, dự trữ và huy động chất dinh dưỡng. Theo nghĩa đó, ruột chủ yếu là một cơ quan cảm giác báo tin lên não.\n\n### Chuỗi \"vi khuẩn → phế vị → trung tâm đói/no\" thì sao?\n\nChuỗi cụ thể này **chưa được chứng minh ở người**. Bằng chứng cho việc hệ vi sinh liên lạc với não qua dây phế vị và từ đó tác động lên hành vi đến từ **nghiên cứu trên động vật** (Breit và cộng sự, 2018); ở người, quan hệ nhân quả dọc trục vi sinh–ruột–não vẫn chưa được thiết lập (Ou và cộng sự, 2023).\n\nVì vậy bài này không mô tả cơ chế đó như một điều đã biết.",
+      "why": "Bản cũ trình bày chuỗi nhân quả vi khuẩn → dây phế vị → trung tâm đói/no như đã chứng minh ở người, không có nguồn nào; kèm danh sách ghrelin/leptin/PYY/GLP-1 treo lơ lửng, không nối với câu nào và không có nguồn cho nơi tiết của từng hormone. Danh sách hormone bị cắt theo quy tắc \"số liệu/khẳng định không truy được nguồn thì cắt\". Phần giữ lại chỉ nêu điều nguồn đã mở nói được: dây phế vị 80–90% sợi hướng tâm và vai trò của nó với hấp thu (Breit 2018), còn liên hệ vi sinh → hành vi qua phế vị là bằng chứng trên động vật (Breit 2018), nhân quả ở người chưa thiết lập (Ou 2023).",
+      "evidence": "https://www.frontiersin.org/journals/psychiatry/articles/10.3389/fpsyt.2018.00044/full (doi 10.3389/fpsyt.2018.00044) ; https://pmc.ncbi.nlm.nih.gov/articles/PMC10917620/ (doi 10.20517/mrr.2023.33)"
+    },
+    {
+      "claimId": "C-10",
+      "severity": "S2",
+      "find": "Chính mối liên hệ này khiến sức khỏe đường ruột có ảnh hưởng đáng kể đến tiêu hóa, cảm giác thèm ăn, tâm trạng và sức khỏe tổng thể của con người.",
+      "replace": "Điều đã vững là ruột có hệ thần kinh riêng và liên lạc hai chiều với não. Điều chưa vững là phần còn lại: vai trò của vi khuẩn đường ruột đối với tâm trạng và cảm giác thèm ăn ở người vẫn đang được nghiên cứu — bằng chứng cơ chế chủ yếu đến từ động vật, còn ở người mới là những liên hệ tương quan và không nhất quán giữa các nghiên cứu (Ou và cộng sự, 2023).",
+      "why": "Câu kết luận cũ khẳng định nhân quả trên người (\"sức khỏe đường ruột có ảnh hưởng đáng kể đến ... tâm trạng\"), đúng loại câu người đọc dễ làm theo. Tài liệu hiện có nói ngược lại: ở người mới là tương quan không nhất quán, nhân quả chưa xác lập (Ou và cộng sự, 2023). Bản sửa tách phần đã vững (ENS, liên lạc hai chiều) khỏi phần chưa vững (vai trò vi khuẩn với tâm trạng).",
+      "evidence": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10917620/ (doi 10.20517/mrr.2023.33)"
+    }
+  ],
+  "addSources": [
+    {
+      "title": "Methodological recommendations for human microbiota-gut-brain axis research",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10917620/",
+      "doi": "10.20517/mrr.2023.33",
+      "publisher": "Microbiome Research Reports",
+      "year": 2023,
+      "tier": 1,
+      "covers": "C-7 và C-10 — cấp bằng chứng trục vi sinh–ruột–não: cơ chế từ gặm nhấm vô trùng/dùng kháng sinh, ở người là tương quan \"mostly variable and inconsistent\", nhân quả chưa xác lập"
+    },
+    {
+      "title": "Vagus Nerve as Modulator of the Brain–Gut Axis in Psychiatric and Inflammatory Disorders",
+      "url": "https://www.frontiersin.org/journals/psychiatry/articles/10.3389/fpsyt.2018.00044/full",
+      "doi": "10.3389/fpsyt.2018.00044",
+      "publisher": "Frontiers in Psychiatry",
+      "year": 2018,
+      "tier": 1,
+      "covers": "C-8 — dây phế vị truyền hai chiều, 80–90% sợi hướng tâm (ruột→não), 10–20% ly tâm; vai trò sợi hướng tâm với hấp thu/dự trữ dinh dưỡng; liên lạc vi sinh–não qua phế vị là bằng chứng từ nghiên cứu trên động vật"
+    }
+  ],
+  "dropSources": [],
+  "corrections": [
+    "C-7: \"Các vi sinh vật này sản xuất nhiều chất hóa học ... ảnh hưởng đến: cảm giác thèm ăn, trao đổi chất, tâm trạng, sức khỏe tổng thể\" → tách rõ \"trên gặm nhấm: thay đổi sinh lý não và hành vi\" / \"ở người: mới là tương quan, không nhất quán, nhân quả chưa xác lập\" → căn cứ: Ou và cộng sự 2023, Microbiome Research Reports, doi 10.20517/mrr.2023.33.",
+    "C-8: \"Vi khuẩn đường ruột có thể tạo ra các chất hóa học ảnh hưởng đến hoạt động của dây thần kinh phế vị, từ đó tác động tới các trung tâm kiểm soát cảm giác đói và no\" (kèm danh sách ghrelin/leptin/PYY/GLP-1) → cắt danh sách hormone không nguồn; nêu chuỗi này chưa được chứng minh ở người, bằng chứng liên lạc vi sinh–não qua phế vị đến từ nghiên cứu trên động vật; bổ sung tỉ lệ 80–90% sợi hướng tâm → căn cứ: Breit và cộng sự 2018, doi 10.3389/fpsyt.2018.00044; Ou và cộng sự 2023, doi 10.20517/mrr.2023.33.",
+    "C-10: \"Chính mối liên hệ này khiến sức khỏe đường ruột có ảnh hưởng đáng kể đến tiêu hóa, cảm giác thèm ăn, tâm trạng và sức khỏe tổng thể của con người\" → \"Ruột có hệ thần kinh riêng và liên lạc hai chiều với não; vai trò của vi khuẩn đường ruột với tâm trạng và thèm ăn ở người vẫn đang được nghiên cứu, bằng chứng cơ chế chủ yếu từ động vật\" → căn cứ: Ou và cộng sự 2023, doi 10.20517/mrr.2023.33."
+  ],
+  "openQuestions": [
+    "Lượt này chỉ xử lý S1–S2. Các lỗi S3/S4 vẫn còn trên bài đã xuất bản: C-1 (con số 400–600 triệu nơron chưa gắn nguồn), C-2 (\"90–95% serotonin\" — nguồn chỉ đỡ \"hơn 90%\"), C-3 (serotonin ruột không qua hàng rào máu–não — chưa mở được nguồn bậc 1–2), C-5 (ENS hoạt động độc lập), C-6 (căng thẳng → triệu chứng tiêu hóa), C-9 (mục \"lập trình lại hệ vi sinh\"). Cần lô sau.",
+    "Mục \"Có thể lập trình lại hệ vi sinh đường ruột không?\" vẫn nói thay đổi ăn uống \"có thể ảnh hưởng đến cảm giác thèm ăn\" — cùng loại lỗi nhân quả với C-7/C-10 nhưng được chấm S3 nên không sửa lượt này. Đề nghị nâng lên hàng đầu của lô S3, vì để nguyên thì bài vẫn còn một câu dạng hành động cho người đọc mà không có nguồn.",
+    "Bài vẫn đang PUBLISHED với 0 nguồn gốc. Hai nguồn thêm ở đây chỉ đỡ các claim vừa sửa, không đỡ toàn bài — cần người quyết có gắn nhãn đính chính công khai trên trang trong lúc chờ viết lại hay không (quy tắc 9: không sửa lặng lẽ).",
+    "Chồng lấn nội dung với bài \"he-vi-sinh-duong-ruot-...\" và \"nhin-an-gian-doan-...\" chưa được giải quyết; thuộc thẩm quyền knowledge-architect."
+  ]
+}

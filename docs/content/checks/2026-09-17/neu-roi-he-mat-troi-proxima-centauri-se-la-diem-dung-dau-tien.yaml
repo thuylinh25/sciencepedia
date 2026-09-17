@@ -1,0 +1,198 @@
+slug: neu-roi-he-mat-troi-proxima-centauri-se-la-diem-dung-dau-tien
+checkedAt: 2026-09-17
+checkedBy: science-editor
+sourceCount: 0
+verdict: revise
+summary: "Bài không có nguồn nào nên không thể pass; nội dung phần lớn đúng hướng nhưng nhiệt độ cân bằng của Proxima d sai (bài 282 K, bài báo phát hiện 360 K), khối lượng tối thiểu bị viết thành khối lượng, Proxima b bị gọi chắc là “hành tinh đá”, và thời gian bay của Voyager 1/New Horizons đưa ra không kèm giả định."
+claims:
+  - id: C-1
+    claim: "Hệ Alpha Centauri là hệ sao gần nhất, cách khoảng 4,37 năm ánh sáng."
+    verdict: unverifiable
+    severity: S3
+    evidence: "—"
+    note: "Không mở được nguồn bậc 1–2 cho con số 4,37 trong lượt này (trang NASA Alpha Centauri trả 404). Gắn nguồn hoặc cắt số."
+  - id: C-2
+    claim: "Hệ gồm ba sao: Alpha Centauri A, B và C (Proxima Centauri); Proxima nằm ở quỹ đạo ngoài cùng."
+    verdict: unverifiable
+    severity: S3
+    evidence: "—"
+    note: "Không có nguồn đã mở cho việc Proxima liên kết hấp dẫn và quỹ đạo quanh cặp A–B. Gắn nguồn (vd. bài đo quỹ đạo Proxima quanh Alpha Cen AB)."
+  - id: C-3
+    claim: "Proxima Centauri là ngôi sao gần Trái Đất nhất, cách khoảng 4,25 năm ánh sáng."
+    verdict: partially-supported
+    severity: S3
+    evidence: https://www.eso.org/public/news/eso1629/
+    note: "ESO chỉ viết “just over four light-years”. Giá trị 4,2465 năm ánh sáng (Gaia) thấy ở kết quả tìm kiếm, nguồn không đạt chuẩn. Phải viết “gần nhất ngoài Mặt Trời”. Gắn nguồn bậc 1–2 cho 4,25."
+  - id: C-4
+    claim: "Sao lùn đỏ chiếm khoảng 70% đến 75% tổng số sao trong Ngân Hà."
+    verdict: partially-supported
+    severity: S3
+    evidence: "—"
+    note: "Kết quả tìm kiếm trỏ tới các trang NASA ghi “hơn 70%”, “khoảng 73%”, “khoảng 75%”, nhưng trang NASA Stars đã mở không nêu tỉ lệ. Dải 70–75% hợp lý; phải gắn một trang NASA cụ thể đã mở."
+  - id: C-5
+    claim: "Sao lùn đỏ có tuổi thọ từ hàng trăm tỷ đến hàng nghìn tỷ năm."
+    verdict: unverifiable
+    severity: S3
+    evidence: "—"
+    note: "Không có nguồn. Tuổi thọ phụ thuộc mạnh vào khối lượng; gắn nguồn mô hình tiến hoá sao khối lượng thấp hoặc cắt số."
+  - id: C-6
+    claim: "Vùng có thể có nước lỏng rất gần sao; hành tinh dễ bị khoá thuỷ triều; bùng phát có thể làm suy giảm khí quyển."
+    verdict: unverifiable
+    severity: S3
+    evidence: "—"
+    note: "Mức dè dặt (“dễ bị”, “có thể”) phù hợp, nhưng không có nguồn. Gắn nguồn NASA/ESO về khả năng sinh sống quanh sao lùn đỏ."
+  - id: C-7
+    claim: "Proxima Centauri b vẫn được xem là một trong những ứng viên đáng chú ý nhất trong cuộc tìm kiếm sự sống."
+    verdict: unverifiable
+    severity: S4
+    evidence: "—"
+    note: "Nhận định chủ quan không có nguồn. Quy kết cho nguồn cụ thể hoặc viết trung tính (“là hành tinh gần nhất nằm trong vùng có thể sinh sống”)."
+  - id: C-8
+    claim: "Khoảng cách tới Proxima Centauri khoảng 40 nghìn tỷ km."
+    verdict: verified
+    severity: none
+    evidence: https://www.eso.org/public/news/eso1629/
+    note: "Quy đổi: 4,25 năm ánh sáng nhân 9,46 nghìn tỷ km bằng khoảng 40,2 nghìn tỷ km. Bậc độ lớn và đơn vị đúng. Cần gắn nguồn cho khoảng cách gốc (C-3)."
+  - id: C-9
+    claim: "Voyager 1 cần khoảng 75.000 năm để tới Proxima Centauri."
+    verdict: partially-supported
+    severity: S3
+    evidence: https://science.nasa.gov/mission/voyager/voyager-1/
+    note: "NASA: 17,0 km/s so với Mặt Trời (21/8/2024). 4,02 × 10^13 km chia 17 km/s bằng khoảng 2,36 × 10^12 s, tức khoảng 75.000 năm — số học đúng. Nhưng bài không nêu giả định: vận tốc không đổi, đi thẳng; và Voyager 1 KHÔNG bay về phía Proxima. Số trần không giả định. Thêm câu: “nếu giữ nguyên 17 km/s và bay thẳng về phía đó — thực tế Voyager 1 không hướng tới Proxima”."
+  - id: C-10
+    claim: "New Horizons cần khoảng 90.000 năm."
+    verdict: unverifiable
+    severity: S3
+    evidence: "—"
+    note: "Không có nguồn đã mở cho vận tốc New Horizons. 90.000 năm tương ứng khoảng 14 km/s — cần nguồn NASA cho vận tốc, nêu giả định (vận tốc không đổi, bay thẳng, tàu không hướng tới Proxima), hoặc cắt."
+  - id: C-11
+    claim: "Parker Solar Probe khoảng 6.700 năm — chỉ là phép quy đổi từ tốc độ kỷ lục tại cận nhật; tàu không thể rời Hệ Mặt Trời."
+    verdict: verified
+    severity: S4
+    evidence: https://science.nasa.gov/science-research/heliophysics/nasas-parker-solar-probe-makes-history-with-closest-pass-to-sun/
+    note: "NASA: 430.000 dặm/giờ (khoảng 692.000 km/h) ngày 24/12/2024. 4,02 × 10^13 km chia 692.000 km/h bằng khoảng 58 triệu giờ, tức khoảng 6.600 năm. Giả định đã nêu rõ. Chỉ thiếu gắn nguồn; có thể viết “khoảng 6.600 năm”."
+  - id: C-12
+    claim: "Breakthrough Starshot: nếu đạt khoảng 20% tốc độ ánh sáng, hành trình tới Proxima Centauri có thể còn khoảng 20 năm."
+    verdict: partially-supported
+    severity: S3
+    evidence: https://breakthroughinitiatives.org/initiative/3
+    note: "Trang dự án ghi tốc độ “up to 100 million miles an hour” (khoảng 161 triệu km/h, tức khoảng 15% tốc độ ánh sáng) và tới Alpha Centauri “in just over 20 years”. Không có con số 20%. Đích ghi là Alpha Centauri, và là bay ngang (flyby) chứ không dừng lại. Sửa thành “lên tới khoảng 15% tốc độ ánh sáng”, “bay ngang hệ Alpha Centauri sau hơn 20 năm”."
+  - id: C-13
+    claim: "Proxima Centauri b: hành tinh đá nằm trong vùng có thể sinh sống."
+    verdict: partially-supported
+    severity: S3
+    evidence: "https://science.nasa.gov/exoplanet-catalog/proxima-centauri-b/ ; https://www.eso.org/public/news/eso1629/"
+    note: "ESO: “well within the habitable zone” — khớp. Nhưng NASA xếp loại “Super Earth”, khối lượng 1,055 Trái Đất là khối lượng tối thiểu từ vận tốc xuyên tâm; hành tinh không đi qua đĩa sao nên chưa đo được bán kính, thành phần đá chưa được xác lập. “Hành tinh đá” là nâng mức chắc chắn. Viết “hành tinh có khối lượng tối thiểu khoảng 1,07 lần Trái Đất, có thể là hành tinh đá”."
+  - id: C-14
+    claim: "Proxima Centauri c: tín hiệu đề xuất năm 2020, chưa được xác nhận và hiện không nằm trong danh mục ngoại hành tinh của NASA."
+    verdict: partially-supported
+    severity: S3
+    evidence: https://arxiv.org/abs/2507.21751
+    note: "NIRPS (2025): “inconclusive evidence of the signal attributed to Proxima c (P = 1900 d)” — đỡ vế chưa xác nhận. Vế “không nằm trong danh mục NASA” chưa kiểm được: trang NASA của Proxima b không liệt kê hành tinh khác, nhưng một kết quả tìm kiếm tóm tắt danh mục NASA ghi “ba ngoại hành tinh quanh Proxima”. Kiểm trực tiếp NASA Exoplanet Archive và thêm mốc thời gian, hoặc cắt vế này."
+  - id: C-15
+    claim: "Proxima Centauri d: khoảng 0,26 lần khối lượng Trái Đất, chu kỳ 5,1 ngày."
+    verdict: partially-supported
+    severity: S3
+    evidence: "https://www.aanda.org/articles/aa/full_html/2022/02/aa42337-21/aa42337-21.html ; https://arxiv.org/abs/2507.21751 ; https://science.nasa.gov/exoplanet-catalog/proxima-centauri-d/"
+    note: "Giá trị đúng: Faria et al. 2022 ghi M sin i = 0,26 ± 0,05 Trái Đất, P = 5,12 ± 0,04 ngày; NIRPS 2025 xác nhận hành tinh (0,260 ± 0,038). Nhưng đây là KHỐI LƯỢNG TỐI THIỂU, bài viết như khối lượng thật. Sửa: “khối lượng tối thiểu khoảng 0,26 lần Trái Đất”; thêm rằng hành tinh được xác nhận năm 2025."
+  - id: C-16
+    claim: "Proxima d có nhiệt độ cân bằng ước tính khoảng 282 K."
+    verdict: contradicted
+    severity: S2
+    evidence: https://www.aanda.org/articles/aa/full_html/2022/02/aa42337-21/aa42337-21.html
+    note: "Bài báo phát hiện (Faria et al. 2022, A&A) ghi nhiệt độ cân bằng 360 K với albedo Bond 0,3. Không nguồn nào đã mở cho 282 K. Sửa thành “khoảng 360 K (giả định albedo 0,3)”."
+  - id: C-17
+    claim: "Khối lượng quá nhỏ khiến Proxima d khó giữ được khí quyển."
+    verdict: unsupported
+    severity: S3
+    evidence: "—"
+    note: "Khẳng định nhân quả không có nguồn; bài báo phát hiện không kết luận như vậy. Cắt, hoặc hạ thành giả thuyết có nguồn."
+  - id: C-18
+    claim: "Nếu con người thực hiện chuyến du hành giữa các vì sao đầu tiên, Proxima Centauri gần như chắc chắn sẽ là điểm đến đầu tiên (tiêu đề: “điểm dừng đầu tiên”)."
+    verdict: unsupported
+    severity: S3
+    evidence: https://breakthroughinitiatives.org/initiative/3
+    note: "Suy đoán nhưng viết với mức “gần như chắc chắn”. Dự án cụ thể duy nhất được nêu (Starshot) nhắm bay ngang hệ Alpha Centauri, không “dừng”. Hạ mức: “là ứng viên hiển nhiên vì là sao gần nhất”; cân nhắc sửa tiêu đề bỏ chữ “điểm dừng”."
+  - id: C-19
+    claim: "Bài không có nguồn nào (sources: 0)."
+    verdict: unsupported
+    severity: S3
+    evidence: "—"
+    note: "Mọi con số (4,37; 4,25; 70–75%; 75.000; 90.000; 6.700 năm; 20%; 0,26; 5,1 ngày; 282 K) đều không gắn nguồn. Không thể pass theo quy tắc."
+  - id: C-20
+    claim: "Summary: Proxima Centauri là “ngôi sao gần Trái Đất nhất”."
+    verdict: contradicted
+    severity: S4
+    evidence: https://www.eso.org/public/news/eso1629/
+    note: "Ngôi sao gần Trái Đất nhất là Mặt Trời. Sửa thành “ngôi sao gần nhất ngoài Mặt Trời”."
+fixes:
+  - "Sửa nhiệt độ cân bằng Proxima d từ 282 K thành khoảng 360 K (albedo Bond 0,3), gắn Faria et al. 2022 (A&A)."
+  - "Đổi “khoảng 0,26 lần khối lượng Trái Đất” thành “khối lượng tối thiểu khoảng 0,26 lần Trái Đất”; ghi Proxima d được xác nhận năm 2025 (NIRPS)."
+  - "Đổi “Proxima Centauri b: hành tinh đá” thành “hành tinh khối lượng tối thiểu khoảng 1,07 lần Trái Đất, có thể là hành tinh đá”; gắn NASA Exoplanet Catalog và ESO eso1629."
+  - "Cắt câu “khối lượng quá nhỏ khiến nó khó giữ được khí quyển” hoặc gắn nguồn."
+  - "Thêm giả định cho thời gian bay: vận tốc không đổi, bay thẳng, và ghi rõ Voyager 1 và New Horizons không hướng tới Proxima; gắn NASA cho vận tốc Voyager 1 (17,0 km/s); tìm nguồn NASA cho vận tốc New Horizons, không có thì cắt dòng New Horizons."
+  - "Sửa Breakthrough Starshot: “lên tới khoảng 160 triệu km/h (khoảng 15% tốc độ ánh sáng)” và “bay ngang hệ Alpha Centauri sau hơn 20 năm”; gắn trang breakthroughinitiatives.org."
+  - "Kiểm trực tiếp NASA Exoplanet Archive xem Proxima c có trong danh mục không; ghi kèm mốc thời gian, hoặc cắt vế đó."
+  - "Gắn nguồn bậc 1–2 cho: 4,37 và 4,25 năm ánh sáng; hệ ba sao và quỹ đạo Proxima; tỉ lệ sao lùn đỏ 70–75%; tuổi thọ sao lùn đỏ; khoá thuỷ triều và bùng phát. Không gắn được thì cắt số."
+  - "Sửa summary “ngôi sao gần Trái Đất nhất” thành “ngôi sao gần nhất ngoài Mặt Trời”."
+  - "Hạ câu kết “gần như chắc chắn” thành nhận định có điều kiện; cân nhắc sửa tiêu đề bỏ chữ “điểm dừng”; bỏ emoji ⭐."
+suggestedSources:
+  - title: "Planet Found in Habitable Zone Around Nearest Star (eso1629)"
+    url: https://www.eso.org/public/news/eso1629/
+    doi: ""
+    publisher: European Southern Observatory
+    year: 2016
+    tier: 2
+    covers: "Proxima b trong vùng có thể sinh sống, khối lượng tối thiểu, chu kỳ khoảng 11,2 ngày; Proxima cách hơn 4 năm ánh sáng"
+  - title: Proxima Centauri b (Exoplanet Catalog)
+    url: https://science.nasa.gov/exoplanet-catalog/proxima-centauri-b/
+    doi: ""
+    publisher: NASA Science
+    year: 2026
+    tier: 2
+    covers: "Phân loại Super Earth, khối lượng 1,055 Trái Đất, chu kỳ 11,2 ngày, 0,04848 AU"
+  - title: Proxima Centauri d (Exoplanet Catalog)
+    url: https://science.nasa.gov/exoplanet-catalog/proxima-centauri-d/
+    doi: ""
+    publisher: NASA Science
+    year: 2026
+    tier: 2
+    covers: "0,26 Trái Đất, chu kỳ 5,1 ngày, 0,02881 AU, năm công bố trong danh mục 2025"
+  - title: A candidate short-period sub-Earth orbiting Proxima Centauri
+    url: https://www.aanda.org/articles/aa/full_html/2022/02/aa42337-21/aa42337-21.html
+    doi: ""
+    publisher: Astronomy & Astrophysics (Faria et al.)
+    year: 2022
+    tier: 1
+    covers: "Proxima d: khối lượng tối thiểu 0,26 ± 0,05, chu kỳ 5,12 ngày, bán trục 0,02885 AU, nhiệt độ cân bằng 360 K"
+  - title: "Diving into the planetary system of Proxima with NIRPS — Breaking the metre per second barrier in the infrared"
+    url: https://arxiv.org/abs/2507.21751
+    doi: ""
+    publisher: arXiv (nhóm NIRPS)
+    year: 2025
+    tier: 1
+    covers: "Xác nhận Proxima d; khối lượng tối thiểu b và d; bằng chứng cho Proxima c không kết luận được"
+  - title: Voyager 1
+    url: https://science.nasa.gov/mission/voyager/voyager-1/
+    doi: ""
+    publisher: NASA Science
+    year: 2026
+    tier: 2
+    covers: "Vận tốc 17,0 km/s so với Mặt Trời (21/8/2024) — đầu vào cho phép quy đổi thời gian bay"
+  - title: "NASA's Parker Solar Probe Makes History With Closest Pass to Sun"
+    url: https://science.nasa.gov/science-research/heliophysics/nasas-parker-solar-probe-makes-history-with-closest-pass-to-sun/
+    doi: ""
+    publisher: NASA Science
+    year: 2024
+    tier: 2
+    covers: "Tốc độ kỷ lục 430.000 dặm/giờ ngày 24/12/2024"
+  - title: Breakthrough Starshot
+    url: https://breakthroughinitiatives.org/initiative/3
+    doi: ""
+    publisher: Breakthrough Initiatives
+    year: 2026
+    tier: 3
+    covers: "Mục tiêu tốc độ (lên tới 100 triệu dặm/giờ) và thời gian bay ngang Alpha Centauri (hơn 20 năm) — chỉ dùng cho mô tả dự án, không cho claim khoa học"
+openQuestions:
+  - "Proxima c có còn nằm trong danh mục NASA Exoplanet Archive không? Hai tín hiệu trong lượt này mâu thuẫn nhau; cần mở trực tiếp Archive."
+  - "Tiêu đề “điểm dừng đầu tiên” mang hàm ý dừng lại, trong khi dự án thật duy nhất được nêu là bay ngang. Cần người quyết có đổi tiêu đề không (ảnh hưởng slug/SEO)."

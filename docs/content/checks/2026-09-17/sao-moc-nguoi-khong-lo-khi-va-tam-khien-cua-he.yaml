@@ -1,0 +1,183 @@
+slug: sao-moc-nguoi-khong-lo-khi-va-tam-khien-cua-he
+checkedAt: 2026-09-17
+checkedBy: science-editor
+sourceCount: 2
+verdict: revise
+summary: Summary nói Vết Đỏ Lớn "ít nhất 350 năm" — bị chính nguồn bậc 1 của bài (Sánchez-Lavega 2024) và thân bài bác bỏ; thêm tốc độ gió 430 km/h không khớp nguồn nào, "20.000 lần" không nói rõ đại lượng, bỏ mức dè dặt về Europa, và tiêu đề khẳng định "tấm khiên" — một claim đang tranh cãi.
+claims:
+  - id: C-1
+    claim: "Khối lượng Sao Mộc gấp 2,5 lần tất cả hành tinh còn lại cộng lại."
+    verdict: verified
+    severity: none
+    evidence: https://nssdc.gsfc.nasa.gov/planetary/factsheet/
+    note: "Fact Sheet (cập nhật 18/03/2025): Sao Mộc 1898e24 kg; 7 hành tinh còn lại cộng 768,6e24 kg; tỉ số 2,47 ≈ 2,5. Khớp."
+  - id: C-2
+    claim: "Summary: cơn bão Vết Đỏ Lớn đã tồn tại ít nhất 350 năm."
+    verdict: contradicted
+    severity: S2
+    evidence: https://www.sciencedaily.com/releases/2024/06/240619143717.htm
+    note: "Bản tin về chính bài GRL 2024 (DOI 10.1029/2024GL108993) mà bài trích: 'highly unlikely' Vết Đỏ Lớn hiện nay là 'Vết Vĩnh cửu' Cassini thấy 1665–1713; vết hiện nay quan sát từ 1831, tồn tại 'ít nhất 190 năm'. Con số 350 năm ngầm nối hai xoáy — mâu thuẫn với nguồn và với chính thân bài. Trang NASA Jupiter Facts còn ghi 'more than 300 years' là outreach chưa cập nhật, không đủ đỡ. Trang Wiley trả 403; nội dung bài kiểm qua bản tin ScienceDaily."
+  - id: C-3
+    claim: "Hydro kim loại lỏng dẫn điện và tạo ra từ trường."
+    verdict: verified
+    severity: none
+    evidence: https://www.jpl.nasa.gov/news/press_kits/juno/jupiter/
+    note: "JPL: 'Scientists think' từ trường sinh ra bởi dòng điện trong đại dương hydro kim loại lỏng. Nên giữ mức 'được cho là'."
+  - id: C-4
+    claim: "Từ trường mạnh nhất trong các hành tinh, gấp khoảng 20.000 lần Trái Đất."
+    verdict: partially-supported
+    severity: S3
+    evidence: https://science.nasa.gov/jupiter/jupiter-facts/
+    note: "Hai trang NASA khác nhau: JPL press kit Juno ghi 'nearly 20,000 times as powerful', còn NASA Jupiter Facts ghi cường độ từ trường '16 to 54 times as powerful as that of the Earth'. Fact Sheet: dipole 4,30 G·Rj³, bề mặt 4–13 G. 20.000 là tỉ số MÔMEN từ, không phải cường độ trường; viết 'từ trường gấp 20.000 lần' để lại mô hình sai ~1000 lần. Sửa thành 'mômen từ gấp khoảng 20.000 lần; cường độ trường gấp khoảng 16–54 lần Trái Đất'."
+  - id: C-5
+    claim: "Tàu thăm dò Galileo thả xuống năm 1995 ngừng hoạt động sau 58 phút."
+    verdict: verified
+    severity: none
+    evidence: https://science.nasa.gov/mission/galileo/
+    note: "NASA: 'Fifty-eight minutes into its descent, high temperatures silenced the probe's transmitters.' Khớp."
+  - id: C-6
+    claim: "...ở độ sâu chỉ khoảng 150 km."
+    verdict: contradicted
+    severity: S3
+    evidence: https://science.nasa.gov/mission/galileo/
+    note: "NASA mission page: probe 'floated down about 200 kilometers'. 150 km không có trong nguồn nào đã mở và không có trong nguồn của bài. Sửa thành 'khoảng 200 km' kèm nguồn NASA, hoặc cắt."
+  - id: C-7
+    claim: "Vết Đỏ Lớn là xoáy nghịch rộng hơn Trái Đất, theo dõi liên tục từ khoảng 1831; Vết Vĩnh cửu 1665–1713 là xoáy khác."
+    verdict: verified
+    severity: S4
+    evidence: https://www.sciencedaily.com/releases/2024/06/240619143717.htm
+    note: "Khớp Sánchez-Lavega et al. 2024. Giữ mức của nguồn: 'rất khó có khả năng' là cùng một xoáy, thay vì 'giới thiên văn xem đây là hai xoáy khác nhau'. NASA Jupiter Facts: 'twice as wide as Earth'."
+  - id: C-8
+    claim: "Gió ở rìa Vết Đỏ Lớn đạt khoảng 430 km/h."
+    verdict: contradicted
+    severity: S2
+    evidence: https://esahubble.org/news/heic2110/
+    note: "ESA/Hubble (Wong et al. 2021, GRL, dữ liệu 2009–2020): mây xoáy với tốc độ 'exceed 640 kilometres per hour'; bản NASA của cùng tin ghi vòng tốc độ cao 'exceed 400 miles per hour' (~640 km/h). 430 km/h không khớp nguồn nào. Cắt, hoặc thay bằng 'vượt 640 km/h (Hubble, 2009–2020)'."
+  - id: C-9
+    claim: "Vết Đỏ Lớn co từ khoảng 40.000 km cuối thế kỷ 19 xuống khoảng 14.000 km hiện nay."
+    verdict: partially-supported
+    severity: S3
+    evidence: https://www.sciencedaily.com/releases/2024/06/240619143717.htm
+    note: "Nguồn: khoảng 39.000 km năm 1879, khoảng 14.000 km 'today' (công bố 2024). 'Hiện nay' thiếu mốc ngày. Sửa thành '39.000 km năm 1879 xuống khoảng 14.000 km (số đo công bố năm 2024)' và đặt lịch kiểm lại."
+  - id: C-10
+    claim: "Bốn vệ tinh Galilei được Galileo Galilei phát hiện năm 1610."
+    verdict: unverifiable
+    severity: S4
+    evidence: "—"
+    note: Không mở nguồn bậc 1–2 cho mốc 1610 trong lượt này; hai nguồn của bài không đề cập. Bổ sung nguồn NASA cho câu này.
+  - id: C-11
+    claim: "Quan sát vệ tinh Galilei đã trực tiếp bác bỏ mô hình địa tâm."
+    verdict: unsupported
+    severity: S3
+    evidence: "—"
+    note: "Nói quá, không nguồn nào của bài đỡ. Vệ tinh quay quanh Sao Mộc chỉ cho thấy không phải mọi thiên thể quay quanh Trái Đất; nó không loại được mọi mô hình lấy Trái Đất làm tâm (vd. mô hình Tycho). Đơn giản hoá để lại mô hình sai. Cắt vế 'trực tiếp bác bỏ'."
+  - id: C-12
+    claim: "Io — thiên thể có hoạt động núi lửa mạnh nhất Hệ Mặt Trời."
+    verdict: verified
+    severity: none
+    evidence: https://science.nasa.gov/jupiter/moons/io/
+    note: "NASA: 'the most volcanically active world in the solar system'. Khớp; cần gắn nguồn vào bài."
+  - id: C-13
+    claim: "Europa — lớp vỏ băng phủ trên đại dương nước mặn."
+    verdict: partially-supported
+    severity: S3
+    evidence: https://science.nasa.gov/jupiter/moons/europa/
+    note: "NASA: 'scientists believe a saltwater ocean lies beneath its icy shell'. Bài bỏ mức dè dặt, viết như sự thật đã xác nhận. Sửa thành 'nhiều bằng chứng cho thấy có đại dương nước mặn dưới lớp vỏ băng'."
+  - id: C-14
+    claim: "Ganymede — vệ tinh lớn nhất hệ, lớn hơn Sao Thuỷ, và là vệ tinh duy nhất có từ trường riêng."
+    verdict: verified
+    severity: S4
+    evidence: https://science.nasa.gov/jupiter/moons/ganymede/
+    note: "NASA: 'the only moon known to have its own magnetic field'. Thêm 'được biết tới' để giữ mức của nguồn."
+  - id: C-15
+    claim: "Callisto — bề mặt cổ, dày đặc hố va chạm."
+    verdict: unverifiable
+    severity: S4
+    evidence: "—"
+    note: Không nằm trong nguồn của bài; không mở nguồn cho câu này trong lượt này. Bổ sung nguồn NASA Callisto.
+  - id: C-16
+    claim: "Tiêu đề 'tấm khiên của hệ' + đoạn: vai trò tấm khiên thường được nhắc, dù mô phỏng gần đây cho thấy nó vừa chặn bớt vừa đẩy một số thiên thể vào trong."
+    verdict: partially-supported
+    severity: S3
+    evidence: https://arxiv.org/abs/0806.2795
+    note: "Thân bài dè dặt đúng hướng: Horner & Jones 2008 (Int. J. Astrobiology 7:251–261) viết hành tinh khổng lồ 'can act to enhance the impact rate of asteroids on the Earth significantly' và tình hình 'far less clear cut'. Nhưng (1) đoạn này không có nguồn trong bài; (2) 'mô phỏng gần đây' không có mốc — bài này từ 2008; (3) TIÊU ĐỀ khẳng định 'tấm khiên' như sự thật, nâng mức tự tin so với thân bài. Không phân xử — xem openQuestions."
+fixes:
+  - "Sửa summary: bỏ 'ít nhất 350 năm', thay bằng 'được theo dõi liên tục từ khoảng năm 1831 (Sánchez-Lavega et al., 2024)'."
+  - "Đổi tiêu đề để không khẳng định Sao Mộc là tấm khiên (ví dụ 'Sao Mộc: người khổng lồ khí — khiên chắn hay mối đe doạ?'); nếu đổi slug thì seo-expert làm redirect 301."
+  - "Thay '20.000 lần' bằng 'mômen từ gấp khoảng 20.000 lần Trái Đất; cường độ từ trường gấp khoảng 16–54 lần', trích NASA Jupiter Facts + JPL Juno press kit."
+  - "Thay '150 km' bằng 'khoảng 200 km', trích https://science.nasa.gov/mission/galileo/."
+  - "Cắt '430 km/h'; nếu giữ, viết 'vượt 640 km/h (Hubble, 2009–2020)' và trích ESA/Hubble heic2110."
+  - "Sửa '40.000 km' thành '39.000 km năm 1879'; thêm 'số đo công bố năm 2024' sau '14.000 km'; ghi lịch kiểm lại 12 tháng."
+  - "Cắt vế 'trực tiếp bác bỏ mô hình địa tâm'."
+  - "Europa: thêm 'nhiều bằng chứng cho thấy'. Ganymede: thêm 'được biết tới'. Vết Vĩnh cửu: đổi 'xem đây là hai xoáy khác nhau' thành 'cho rằng rất khó là cùng một xoáy'."
+  - "Đoạn 'Vai trò trong hệ': gắn Horner & Jones 2008 và thay 'mô phỏng gần đây' bằng 'các mô phỏng từ năm 2008'."
+  - "Nguồn 1: điền accessedAt và sửa năm — Fact Sheet là trang sống (index cập nhật 18/03/2025, trang Jupiter 02/10/2024)."
+  - "Gắn nguồn cấp claim cho Io, Europa, Ganymede, Callisto, tàu Galileo, gió Vết Đỏ Lớn (xem suggestedSources)."
+suggestedSources:
+  - title: "Jupiter's great red spot is not the same one Cassini observed in 1600s (bản tin về Sánchez-Lavega et al., The Origin of Jupiter's Great Red Spot)"
+    url: https://www.sciencedaily.com/releases/2024/06/240619143717.htm
+    doi: 10.1029/2024GL108993
+    publisher: Geophysical Research Letters / ScienceDaily
+    year: 2024
+    tier: 1
+    covers: Tuổi và kích thước Vết Đỏ Lớn (1831; 39.000 km năm 1879 → ~14.000 km)
+  - title: Jupiter Facts
+    url: https://science.nasa.gov/jupiter/jupiter-facts/
+    doi:
+    publisher: NASA Science
+    year: 2025
+    tier: 2
+    covers: Cường độ từ trường 16–54 lần Trái Đất; Vết Đỏ Lớn rộng gấp đôi Trái Đất
+  - title: Juno Jupiter Orbit Insertion Press Kit — Jupiter
+    url: https://www.jpl.nasa.gov/news/press_kits/juno/jupiter/
+    doi:
+    publisher: NASA JPL
+    year: 2016
+    tier: 2
+    covers: Hydro kim loại lỏng sinh từ trường; con số ~20.000 lần
+  - title: Galileo
+    url: https://science.nasa.gov/mission/galileo/
+    doi:
+    publisher: NASA Science
+    year: 2025
+    tier: 2
+    covers: Tàu thăm dò khí quyển 58 phút, ~200 km
+  - title: Hubble Shows Winds in Jupiter's Great Red Spot Are Speeding Up (heic2110)
+    url: https://esahubble.org/news/heic2110/
+    doi:
+    publisher: ESA/Hubble (Wong et al., Geophysical Research Letters)
+    year: 2021
+    tier: 2
+    covers: Tốc độ gió Vết Đỏ Lớn
+  - title: Io
+    url: https://science.nasa.gov/jupiter/moons/io/
+    doi:
+    publisher: NASA Science
+    year: 2025
+    tier: 2
+    covers: Io núi lửa mạnh nhất
+  - title: Europa
+    url: https://science.nasa.gov/jupiter/moons/europa/
+    doi:
+    publisher: NASA Science
+    year: 2025
+    tier: 2
+    covers: Đại dương nước mặn dưới vỏ băng (có mức dè dặt)
+  - title: Ganymede
+    url: https://science.nasa.gov/jupiter/moons/ganymede/
+    doi:
+    publisher: NASA Science
+    year: 2025
+    tier: 2
+    covers: Vệ tinh lớn nhất, duy nhất được biết có từ trường riêng
+  - title: "Jupiter – friend or foe? I: the asteroids"
+    url: https://arxiv.org/abs/0806.2795
+    doi:
+    publisher: International Journal of Astrobiology 7(3-4):251-261
+    year: 2008
+    tier: 1
+    covers: Tranh luận Sao Mộc có che chắn Trái Đất hay không
+openQuestions:
+  - "Sao Mộc làm GIẢM hay TĂNG tốc độ va chạm lên Trái Đất? Horner & Jones (2008) cho thấy với tiểu hành tinh nó có thể làm tăng; kết quả phụ thuộc quần thể thiên thể và giả định mô phỏng. Đây là tranh cãi khoa học — bài chỉ nên trình bày hai phía, không kết luận. Cần người quyết tiêu đề có giữ chữ 'tấm khiên' không."
+  - "NASA Jupiter Facts vẫn ghi Vết Đỏ Lớn 'observed for more than 300 years', mâu thuẫn Sánchez-Lavega 2024. Cần chốt chính sách: khi outreach bậc 2 lạc hậu so với bài peer-review, ưu tiên bậc 1 và nêu rõ."
+  - "Không cần đối chiếu IAU MPC / JPL SSD: bài không nêu số vệ tinh. Nếu bổ sung: KHÔNG dùng số 95 của Fact Sheet (02/10/2024) hay NASA Jupiter Facts — đã lạc hậu; scripts/apply-corrections-2026-09-13.ts ghi 115 theo NASA tháng 8/2026 (lượt này chưa mở lại nguồn đó). Phải đối chiếu IAU MPC / JPL SSD tại thời điểm viết và kèm mốc ngày."

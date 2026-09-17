@@ -1,0 +1,159 @@
+slug: giac-ngu-sau-lam-gi-voi-tri-nho-cua-ban
+checkedAt: 2026-09-17
+checkedBy: science-editor
+sourceCount: 2
+verdict: revise
+summary: "Khung chính (củng cố hệ thống hoá, phát lại, thoi ngủ, 7–9 giờ) đúng nguồn, nhưng phần glymphatic đem kết quả trên chuột thành sinh lý người và bỏ qua nghiên cứu phản bác năm 2024, độ dài chu kỳ lệch NIH, và cả khối lời khuyên thực hành toàn số không nguồn."
+claims:
+  - id: C-1
+    claim: "Một đêm ngủ gồm khoảng 4–6 chu kỳ, mỗi chu kỳ dài 90–110 phút"
+    verdict: contradicted
+    severity: S3
+    evidence: https://www.nhlbi.nih.gov/health/sleep/stages-of-sleep
+    note: "NHLBI ghi “The cycle starts over every 80 to 100 minutes” và “four to six cycles per night”. Số chu kỳ đúng; độ dài phải sửa thành 80–100 phút."
+  - id: C-2
+    claim: "Tỉ lệ thời gian: N1 ~5%, N2 ~45–55%, N3 ~15–25%, REM ~20–25%"
+    verdict: partially-supported
+    severity: S3
+    evidence: https://pmc.ncbi.nlm.nih.gov/articles/PMC3768102/
+    note: "Rasch & Born 2013 chỉ đỡ “gần 50% giấc ngủ người trưởng thành là N2”. Các tỉ lệ N1, N3, REM không có nguồn trong bài; NHLBI không cho tỉ lệ. Cắt các con số N1/N3/REM hoặc gắn nguồn bậc 1–2 cho từng số."
+  - id: C-3
+    claim: "N3 tập trung ở nửa đầu đêm, REM kéo dài dần về sáng"
+    verdict: verified
+    severity: none
+    evidence: https://www.nhlbi.nih.gov/health/sleep/stages-of-sleep
+    note: "NHLBI: deep sleep “more time … early in the night”, “more REM sleep later in the night”. Rasch & Born cũng nêu cùng phân bố."
+  - id: C-4
+    claim: "Cắt ngắn giấc ngủ hai tiếng cuối cắt gần như trọn phần REM"
+    verdict: unsupported
+    severity: S3
+    evidence: https://pmc.ncbi.nlm.nih.gov/articles/PMC3768102/
+    note: "Nguồn chỉ nói REM dày hơn về cuối đêm, không nói bỏ 2 giờ cuối mất “gần như trọn” REM. Hạ xuống: cắt ngắn cuối đêm làm mất phần lớn hơn của REM so với các giai đoạn khác — hoặc cắt câu."
+  - id: C-5
+    claim: "Giả thuyết củng cố hệ thống hoá: hải mã ghi tạm, phát lại trong ngủ sóng chậm, vỏ não mới tích hợp"
+    verdict: verified
+    severity: none
+    evidence: https://pmc.ncbi.nlm.nih.gov/articles/PMC3768102/
+    note: "Rasch & Born 2013 (DOI 10.1152/physrev.00032.2012) mô tả đúng active system consolidation. Nên ghi đây là giả thuyết đang dẫn đầu, không phải cơ chế đã chốt — bài đã dùng chữ “giả thuyết”, giữ nguyên."
+  - id: C-6
+    claim: "Hải mã phát lại chuỗi hoạt động với tốc độ nén; chính xác cùng một chuỗi tế bào vị trí được phát lại khi ngủ"
+    verdict: partially-supported
+    severity: S4
+    evidence: https://pmc.ncbi.nlm.nih.gov/articles/PMC3768102/
+    note: "Nguồn: replay ở chuột cống, nhanh 10–20 lần, cùng thứ tự thời gian. Đổi “chính xác cùng một chuỗi” thành “cùng thứ tự kích hoạt” và ghi rõ “ở chuột”, “nhanh khoảng 10–20 lần”."
+  - id: C-7
+    claim: "Mật độ thoi ngủ tương quan với mức cải thiện trí nhớ sau khi ngủ"
+    verdict: verified
+    severity: none
+    evidence: https://pmc.ncbi.nlm.nih.gov/articles/PMC3768102/
+    note: "Rasch & Born: mật độ thoi ngủ nhanh dự báo cải thiện phụ thuộc giấc ngủ. Giữ nguyên chữ “tương quan”, không nâng thành nhân quả."
+  - id: C-8
+    claim: "REM: vai trò nổi bật là trí nhớ quy trình (bảng giai đoạn)"
+    verdict: partially-supported
+    severity: S3
+    evidence: https://pmc.ncbi.nlm.nih.gov/articles/PMC3768102/
+    note: "Rasch & Born coi vai trò REM với trí nhớ quy trình là còn tranh luận (dual-process hypothesis, kết quả ở người không nhất quán; ức chế REM bằng thuốc chống trầm cảm không làm hỏng trí nhớ). Thêm “được cho là / còn tranh luận” vào ô bảng."
+  - id: C-9
+    claim: "Năm 2013 nhóm Nedergaard mô tả hệ glymphatic: khoảng gian bào giãn khoảng 60% khi ngủ, dịch não tuỷ chảy mạnh hơn, cuốn đi beta-amyloid"
+    verdict: partially-supported
+    severity: S2
+    evidence: https://pmc.ncbi.nlm.nih.gov/articles/PMC3880190/
+    note: "Xie et al. 2013 (Science 342:373, DOI 10.1126/science.1241224) đo trên CHUỘT sống, cả khi ngủ tự nhiên LẪN gây mê: thể tích gian bào 13–15% → 22–24% (~60%), Aβ thải nhanh gấp 2 lần. Bài bỏ chữ “ở chuột” nên đọc như sinh lý người — sai về phạm vi. Năm ra đời của thuật ngữ “glymphatic” chưa kiểm trong lượt này — viết “năm 2013, nhóm Nedergaard báo cáo trên chuột…” thay vì “mô tả hệ glymphatic”."
+  - id: C-10
+    claim: "Vai trò dọn thải của giấc ngủ (trình bày như kết luận đã xác lập)"
+    verdict: outdated
+    severity: S2
+    evidence: https://www.nature.com/articles/s41593-024-01638-y
+    note: "Miao et al. 2024 (Nature Neuroscience 27:1046–1050) đo trên chuột và thấy thanh thải não GIẢM khi ngủ và gây mê. Đây là tranh cãi khoa học đang mở; bài phải nêu cả hai kết quả là bất đồng, không tự phân xử."
+  - id: C-11
+    claim: "Đây là một trong những lý do thiếu ngủ mạn tính được xem là yếu tố nguy cơ thoái hoá thần kinh, dù quan hệ nhân quả hai chiều vẫn đang nghiên cứu"
+    verdict: unsupported
+    severity: S3
+    evidence: "—"
+    note: "Không nguồn nào trong bài đỡ câu “yếu tố nguy cơ”. Xie 2013 chỉ viết chức năng phục hồi “may be a consequence”. Hoặc cắt, hoặc gắn nguồn dịch tễ bậc 1 và giữ nguyên mức “có liên quan”."
+  - id: C-12
+    claim: "Khuyến nghị cho người trưởng thành là 7–9 giờ"
+    verdict: verified
+    severity: none
+    evidence: https://www.nhlbi.nih.gov/health/sleep/how-much-sleep
+    note: "NHLBI: “Experts recommend that adults sleep between 7 and 9 hours a night.” Đổi “các hiệp hội giấc ngủ” thành NHLBI (NIH) và gắn citation."
+  - id: C-13
+    claim: "Ngủ bù cuối tuần không phục hồi hết suy giảm nhận thức tích luỹ"
+    verdict: unsupported
+    severity: S3
+    evidence: "—"
+    note: "Không có nguồn trong bài; trang NHLBI đã mở không đề cập. Gắn nghiên cứu can thiệp bậc 1 hoặc cắt."
+  - id: C-14
+    claim: "Giờ ngủ dao động lớn làm lệch nhịp sinh học, tương tự lệch múi giờ; ánh sáng xanh buổi tối ức chế melatonin"
+    verdict: unsupported
+    severity: S3
+    evidence: "—"
+    note: "Không nguồn. So sánh “tương tự lệch múi giờ” là suy diễn; cắt so sánh này nếu không có nguồn dùng đúng khái niệm (social jetlag)."
+  - id: C-15
+    claim: "Thời gian bán thải caffeine khoảng 5–6 giờ"
+    verdict: unsupported
+    severity: S3
+    evidence: "—"
+    note: "Số không nguồn → cắt theo quy tắc, hoặc gắn nguồn dược lý bậc 1–2 và ghi rõ khoảng dao động giữa các cá nhân."
+  - id: C-16
+    claim: "Phòng ngủ mát khoảng 18–20°C; rời giường nếu không ngủ được sau 20 phút"
+    verdict: unsupported
+    severity: S3
+    evidence: "—"
+    note: "Hai con số không nguồn → cắt số. Quy tắc 20 phút thuộc liệu pháp kiểm soát kích thích (CBT-I); chỉ giữ nếu gắn hướng dẫn lâm sàng bậc 1–2."
+  - id: C-17
+    claim: "Hai nguồn trong danh sách NGUỒN (Science 2013; Physiological Reviews 2013)"
+    verdict: partially-supported
+    severity: S3
+    evidence: https://pmc.ncbi.nlm.nih.gov/articles/PMC3768102/
+    note: "Cả hai bài có thật nhưng mục nguồn thiếu url, doi, accessedAt — citation không resolve được. Hai nguồn không đỡ bảng giai đoạn, khuyến nghị giờ ngủ, và toàn bộ mục “Điều nên làm”: under-sourced."
+fixes:
+  - "Điền DOI và URL cho nguồn 1: 10.1126/science.1241224, https://pmc.ncbi.nlm.nih.gov/articles/PMC3880190/ ; nguồn 2: 10.1152/physrev.00032.2012, https://pmc.ncbi.nlm.nih.gov/articles/PMC3768102/ ; ghi accessedAt."
+  - "Sửa độ dài chu kỳ ngủ thành 80–100 phút và gắn NHLBI stages-of-sleep."
+  - "Trong bảng giai đoạn: giữ “N2 gần 50%” (Rasch & Born); cắt tỉ lệ N1, N3, REM trừ khi gắn được nguồn bậc 1–2 cho từng số; thêm “còn tranh luận” cho vai trò REM với trí nhớ quy trình."
+  - "Viết lại câu “cắt hai tiếng cuối cắt gần như trọn REM” thành nhận định định tính không lượng hoá, hoặc cắt."
+  - "Mục glymphatic: ghi rõ thí nghiệm năm 2013 làm trên chuột, hiệu ứng xuất hiện cả khi gây mê; thêm một câu nêu Miao et al. 2024 (Nature Neuroscience) thấy thanh thải giảm khi ngủ, và nói thẳng đây là bất đồng chưa ngã ngũ."
+  - "Câu thiếu ngủ và thoái hoá thần kinh: gắn nguồn bậc 1 và giữ mức “có liên quan”, hoặc cắt."
+  - "Mục “Ngủ bao nhiêu là đủ”: đổi chủ thể thành NHLBI (NIH), gắn citation 7–9 giờ; cắt hoặc gắn nguồn cho ba gạch đầu dòng còn lại."
+  - "Mục “Điều nên làm”: cắt các con số 5–6 giờ, 18–20°C, 20 phút; chỉ giữ lời khuyên nào có hướng dẫn bậc 1–2 kèm citation."
+  - "Sửa câu replay: ghi “ở chuột”, “nhanh khoảng 10–20 lần”, bỏ chữ “chính xác”."
+suggestedSources:
+  - title: "Sleep Drives Metabolite Clearance from the Adult Brain"
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC3880190/
+    doi: 10.1126/science.1241224
+    publisher: Science
+    year: 2013
+    tier: 1
+    covers: "Glymphatic trên chuột: gian bào tăng ~60%, Aβ thải nhanh gấp 2 khi ngủ/gây mê"
+  - title: "Brain clearance is reduced during sleep and anesthesia"
+    url: https://www.nature.com/articles/s41593-024-01638-y
+    doi: 10.1038/s41593-024-01638-y
+    publisher: Nature Neuroscience
+    year: 2024
+    tier: 1
+    covers: "Kết quả phản bác: thanh thải não giảm khi ngủ — cần cho phần nêu tranh cãi"
+  - title: "About Sleep's Role in Memory"
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC3768102/
+    doi: 10.1152/physrev.00032.2012
+    publisher: Physiological Reviews
+    year: 2013
+    tier: 1
+    covers: "Củng cố hệ thống hoá, replay nén 10–20 lần, thoi ngủ, N2 ~50%, tranh luận về REM"
+  - title: "How Sleep Works — Sleep Phases and Stages"
+    url: https://www.nhlbi.nih.gov/health/sleep/stages-of-sleep
+    doi: ""
+    publisher: NHLBI, NIH
+    year: "không rõ — trang web, truy cập 2026-09-17"
+    tier: 2
+    covers: "Chu kỳ 80–100 phút, 4–6 chu kỳ/đêm, N3 đầu đêm, REM cuối đêm"
+  - title: "How Sleep Works — How Much Sleep Is Enough?"
+    url: https://www.nhlbi.nih.gov/health/sleep/how-much-sleep
+    doi: ""
+    publisher: NHLBI, NIH
+    year: "không rõ — trang web, truy cập 2026-09-17"
+    tier: 2
+    covers: "Khuyến nghị 7–9 giờ cho người trưởng thành"
+openQuestions:
+  - "Vai trò giấc ngủ trong thanh thải chất thải của não đang có kết quả trái ngược (Xie 2013 và Miao 2024, đều trên chuột). Biên tập cần quyết giữ mục này dưới dạng “tranh cãi đang mở” hay cắt hẳn khỏi bài phổ thông."
+  - "Hai trang NHLBI không hiển thị năm xuất bản trong lượt kiểm này; khi gắn citation cần ghi accessedAt thay cho năm."
+  - "Bài đang ở trạng thái PUBLISHED dù brief ghi PENDING. Cần người quyết có gỡ xuống trong lúc sửa (S2 về glymphatic) hay giữ nguyên chờ bản sửa."

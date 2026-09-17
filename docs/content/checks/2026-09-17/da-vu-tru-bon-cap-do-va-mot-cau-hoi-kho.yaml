@@ -1,0 +1,120 @@
+slug: da-vu-tru-bon-cap-do-va-mot-cau-hoi-kho
+checkedAt: 2026-09-17
+checkedBy: science-editor
+sourceCount: 1
+verdict: revise
+summary: "Bài nói đúng rằng đa vũ trụ chưa có bằng chứng quan sát và vẫn đang bị tranh luận, không trình bày giả thuyết như sự thật ở cấp toàn bài. Nhưng nguồn duy nhất là trang CLB nghiệp dư gắn nhầm tier 2, mọi claim cụ thể đều thiếu nguồn, có vài chỗ nâng mức tự tin cục bộ (cấp 3 viết như cơ chế thật; mô hình lạm phát gọi là 'lý thuyết đã được kiểm chứng'), và bán kính vũ trụ quan sát được thiếu nguồn."
+claims:
+  - id: C-1
+    claim: "Vũ trụ quan sát được có bán kính khoảng 46,5 tỷ năm ánh sáng."
+    verdict: partially-supported
+    severity: S3
+    evidence: "https://iopscience.iop.org/article/10.1086/428890/fulltext/59364.text.html"
+    note: "Gott và cs. 2005 (ApJ 624, 463; doi 10.1086/428890), 'A Map of the Universe', cho bán kính đồng chuyển động tới CMB là 14,0 Gpc, tức khoảng 45,7 tỷ năm ánh sáng. Con số 46,5 tỷ năm ánh sáng cùng bậc nhưng không khớp đúng nguồn này, vì giá trị phụ thuộc bộ tham số vũ trụ học. Bài không có nguồn. Sửa thành 'khoảng 46 tỷ năm ánh sáng (khoảng cách đồng chuyển động)' kèm nguồn, hoặc giữ đúng số của nguồn được trích. Phải ghi 'đồng chuyển động' để người đọc không nhầm với 13,8 tỷ năm ánh sáng."
+  - id: C-2
+    claim: "Chưa ai xác định được toàn bộ vũ trụ là hữu hạn hay vô hạn."
+    verdict: unverifiable
+    severity: S3
+    evidence: "—"
+    note: "Hợp lý nhưng chưa có nguồn trong lượt này, và là claim ràng buộc thời gian nên cần mốc. Thêm nguồn bậc 1–2 (ví dụ ràng buộc độ cong trong Planck 2018) và 'tính tới <ngày kiểm>'; nếu không tìm được thì cắt."
+  - id: C-3
+    claim: "Max Tegmark đề xuất bốn cấp độ đa vũ trụ."
+    verdict: verified
+    severity: S3
+    evidence: "https://arxiv.org/abs/astro-ph/0302131"
+    note: "Tegmark, 'Parallel Universes' (arXiv:astro-ph/0302131; in trong 'Science and Ultimate Reality', Cambridge University Press 2003): 'a natural four-level hierarchy of multiverses'. Claim đúng nhưng bài không trích Tegmark; thêm nguồn này và năm 2003."
+  - id: C-4
+    claim: "Cấp 1: nếu không gian vô hạn, bên ngoài vùng quan sát được vẫn có các vùng khác của cùng vũ trụ, định luật vật lý giống hệt, chỉ khác cách sắp xếp vật chất."
+    verdict: verified
+    severity: S4
+    evidence: "https://arxiv.org/abs/astro-ph/0302131"
+    note: "Khớp mô tả Cấp I của Tegmark, và bài giữ điều kiện 'nếu không gian là vô hạn'. Lưu ý: Tegmark tự gọi Cấp I là 'uncontroversial', nhưng đó là quan điểm của tác giả, bài không nên chép thành đồng thuận. Giữ nguyên cách viết có điều kiện."
+  - id: C-5
+    claim: "Cấp 2: trong một số mô hình lạm phát, có vô số vũ trụ bong bóng, mỗi bong bóng có thể có hằng số vật lý khác."
+    verdict: verified
+    severity: S4
+    evidence: "https://arxiv.org/abs/astro-ph/0302131"
+    note: "Khớp Cấp II của Tegmark (vùng lạm phát hỗn loạn với hằng số, số chiều, thành phần hạt khác nhau). Bài giữ điều kiện 'trong một số mô hình' và 'có thể'; đạt."
+  - id: C-6
+    claim: "Cấp 3: theo cách diễn giải nhiều thế giới, mọi kết quả có thể xảy ra đều thực sự xảy ra. Mỗi lựa chọn lượng tử tạo ra một nhánh mới của vũ trụ."
+    verdict: partially-supported
+    severity: S3
+    evidence: "https://arxiv.org/abs/astro-ph/0302131"
+    note: "Câu đầu có điều kiện 'theo cách diễn giải'. Câu thứ hai bỏ mất điều kiện, viết thành cơ chế có thật: nâng mức tự tin. Cách diễn giải nhiều thế giới chỉ là một trong nhiều cách diễn giải cơ học lượng tử, chưa thể phân biệt bằng thực nghiệm. Chữ 'lựa chọn' cũng gây hiểu sai (gợi ý con người chọn). Sửa thành 'Trong cách diễn giải này, mỗi phép đo lượng tử được xem như tách thực tại thành các nhánh' và nói rõ đây là một cách diễn giải, không phải kết quả đo được."
+  - id: C-7
+    claim: "Cấp 4: các vũ trụ có định luật vật lý hoàn toàn khác cũng tồn tại nếu tương ứng với một cấu trúc toán học nhất quán."
+    verdict: partially-supported
+    severity: S3
+    evidence: "https://arxiv.org/abs/astro-ph/0302131"
+    note: "Khớp Cấp IV của Tegmark, nhưng 'cũng tồn tại' viết ở thể khẳng định. Đây là đề xuất riêng của Tegmark và gây tranh cãi. Sửa thành 'Tegmark đề xuất rằng...' để quy kết rõ đây là giả thuyết của một tác giả."
+  - id: C-8
+    claim: "Chưa có bằng chứng quan sát nào được chấp nhận rộng rãi cho sự tồn tại của đa vũ trụ."
+    verdict: partially-supported
+    severity: S3
+    evidence: "https://arxiv.org/abs/1012.1995"
+    note: "Nhất quán với Feeney và cs. 2011 (PRL 107, 071301): dữ liệu WMAP 7 năm 'do not warrant augmenting ΛCDM with bubble collisions'. Đây là cách trình bày dè dặt đúng. Còn thiếu mốc thời gian cho chữ 'hiện nay' và thiếu nguồn cho claim tổng quát. Thêm 'tính tới <ngày kiểm>' và nguồn."
+  - id: C-9
+    claim: "Đã có nỗ lực tìm dấu vết va chạm giữa các vũ trụ bong bóng trong CMB, nhưng tới nay kết quả chưa đủ sức thuyết phục."
+    verdict: verified
+    severity: S3
+    evidence: "https://arxiv.org/abs/1012.1995"
+    note: "Feeney, Johnson, Mortlock, Peiris 2011 (PRL 107, 071301; doi 10.1103/PhysRevLett.107.071301) tìm dấu va chạm bong bóng trong dữ liệu WMAP và không thấy bằng chứng đáng kể (ràng buộc < 1,6 va chạm phát hiện được trên toàn bầu trời, mức 68%). Chính xác hơn 'chưa đủ sức thuyết phục' là 'không tìm thấy bằng chứng đáng kể'. Thêm nguồn và năm; chữ 'cho tới nay' cần mốc thời gian, vì lượt này chưa kiểm các tìm kiếm sau 2011 (ví dụ với dữ liệu Planck)."
+  - id: C-10
+    claim: "Quan điểm ủng hộ: nếu đa vũ trụ là hệ quả tất yếu của những lý thuyết đã được kiểm chứng, chẳng hạn một số mô hình lạm phát vũ trụ, thì nó vẫn đáng nghiên cứu."
+    verdict: unsupported
+    severity: S3
+    evidence: "—"
+    note: "Nâng mức tự tin: các mô hình lạm phát, và đặc biệt lạm phát vĩnh cửu sinh ra bong bóng, không phải 'lý thuyết đã được kiểm chứng'. Feeney và cs. 2011 gọi lạm phát vĩnh cửu là 'scenario' mà họ đang kiểm. Sửa thành 'hệ quả của một số lý thuyết có cơ sở, như một số mô hình lạm phát'. Cả hai quan điểm ủng hộ và phản đối đều chưa được quy kết cho người hay bài nào; thêm nguồn bậc 1 cho mỗi bên."
+  - id: C-11
+    claim: "Quan điểm phản đối: giả thuyết không thể kiểm chứng hoặc bác bỏ bằng quan sát thì nằm ngoài phạm vi khoa học thực nghiệm."
+    verdict: unverifiable
+    severity: S3
+    evidence: "—"
+    note: "Mô tả đúng một lập trường có thật trong tranh luận, nhưng không quy kết cho ai. Lượt này đã thử mở Ellis & Silk 2014 (Nature 516, 321) nhưng bị chặn đăng nhập. Thêm quy kết và nguồn bậc 1."
+  - id: C-12
+    claim: "Việc liệu còn những vũ trụ khác tồn tại hay không vẫn là một trong những câu hỏi lớn nhất của khoa học hiện đại."
+    verdict: unverifiable
+    severity: S4
+    evidence: "—"
+    note: "Phóng đại không có nguồn. Sửa thành 'vẫn là câu hỏi mở và gây tranh luận' hoặc cắt."
+  - id: C-13
+    claim: "Nguồn duy nhất thienvanvietnam.org (VACA, Đặng Vũ Tuấn Sơn, 2011), xếp tier 2."
+    verdict: unsupported
+    severity: S3
+    evidence: "https://www.thienvanvietnam.org/?option=com_content&view=article&id=308:a-v-tr-gii-hn-ca-khong-gian&catid=13&Itemid=151"
+    note: "Website CLB thiên văn nghiệp dư, tối đa bậc 4, không được đỡ một mình cả bài. accessedAt THIẾU. Ngày 17/09/2026 trang id=308 vẫn trả tiêu đề 'Đa vũ trụ, giới hạn của không gian?'. Hạ tier và thay bằng Tegmark 2003 cùng các nguồn bậc 1 khác."
+fixes:
+  - "Thay nguồn duy nhất bằng Tegmark 2003 (arXiv:astro-ph/0302131) cho bốn cấp độ; hạ thienvanvietnam.org xuống tier 4 và điền accessedAt, hoặc gỡ."
+  - "Sửa câu Cấp 3 'Mỗi lựa chọn lượng tử tạo ra một nhánh mới của vũ trụ' thành 'Trong cách diễn giải này, mỗi phép đo lượng tử được xem như tách thực tại thành các nhánh — đây là một cách diễn giải, chưa phân biệt được bằng thực nghiệm'."
+  - "Sửa Cấp 4 thành 'Tegmark đề xuất rằng mọi cấu trúc toán học nhất quán đều tương ứng với một vũ trụ có thật'."
+  - "Sửa 'những lý thuyết đã được kiểm chứng, chẳng hạn một số mô hình lạm phát' thành 'một số lý thuyết có cơ sở, như vài mô hình lạm phát' và quy kết quan điểm ủng hộ/phản đối cho người cụ thể có nguồn bậc 1."
+  - "Trích Feeney và cs. 2011 (doi 10.1103/PhysRevLett.107.071301) cho đoạn tìm va chạm bong bóng; đổi 'chưa đủ sức thuyết phục' thành 'không tìm thấy bằng chứng đáng kể trong dữ liệu WMAP' và ghi năm 2011."
+  - "Sửa bán kính vũ trụ quan sát được thành 'khoảng 46 tỷ năm ánh sáng (khoảng cách đồng chuyển động)', trích Gott và cs. 2005 (doi 10.1086/428890, 14,0 Gpc) hoặc nguồn khác có đúng số 46,5."
+  - "Thêm 'tính tới <ngày kiểm>' cho các câu 'hiện nay chưa có bằng chứng' và 'chưa ai xác định được vũ trụ hữu hạn hay vô hạn'."
+  - "Cắt hoặc hạ câu 'một trong những câu hỏi lớn nhất của khoa học hiện đại'."
+suggestedSources:
+  - title: "Parallel Universes"
+    url: "https://arxiv.org/abs/astro-ph/0302131"
+    doi: ""
+    publisher: "Tegmark, trong 'Science and Ultimate Reality: From Quantum to Cosmos', Cambridge University Press"
+    year: 2003
+    tier: 1
+    covers: "Phân loại bốn cấp độ đa vũ trụ (Cấp I–IV)"
+  - title: "First Observational Tests of Eternal Inflation"
+    url: "https://arxiv.org/abs/1012.1995"
+    doi: "10.1103/PhysRevLett.107.071301"
+    publisher: "Physical Review Letters 107, 071301 (Feeney, Johnson, Mortlock, Peiris)"
+    year: 2011
+    tier: 1
+    covers: "Tìm dấu va chạm vũ trụ bong bóng trong CMB (WMAP) và không thấy bằng chứng đáng kể"
+  - title: "A Map of the Universe"
+    url: "https://iopscience.iop.org/article/10.1086/428890/fulltext/59364.text.html"
+    doi: "10.1086/428890"
+    publisher: "The Astrophysical Journal 624, 463 (Gott et al.)"
+    year: 2005
+    tier: 1
+    covers: "Bán kính đồng chuyển động tới CMB (vũ trụ quan sát được) 14,0 Gpc"
+openQuestions:
+  - "Tegmark coi Cấp I là 'không gây tranh cãi'. Có trình bày Cấp I khác các cấp còn lại không, hay giữ mọi cấp ở dạng giả thuyết có điều kiện? Cần người quyết, có nguồn cho cả hai phía."
+  - "Có tìm kiếm va chạm bong bóng nào sau 2011 (dữ liệu Planck) không? Lượt này chưa kiểm; lượt sửa phải kiểm rồi mới được viết 'cho tới nay'."
+  - "Bài đang PUBLISHED với một nguồn nghiệp dư duy nhất. Gỡ xuống hay sửa tại chỗ kèm ghi chú đính chính?"

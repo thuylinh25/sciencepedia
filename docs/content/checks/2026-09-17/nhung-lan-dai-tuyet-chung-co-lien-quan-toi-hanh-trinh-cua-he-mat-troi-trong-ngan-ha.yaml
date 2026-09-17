@@ -1,0 +1,251 @@
+slug: nhung-lan-dai-tuyet-chung-co-lien-quan-toi-hanh-trinh-cua-he-mat-troi-trong-ngan-ha
+checkedAt: 2026-09-17
+checkedBy: science-editor
+sourceCount: 0
+verdict: reject
+summary: >-
+  Bài đã PUBLISHED với 0 nguồn cho một chủ đề gây tranh cãi nặng; ngoài lỗi không nguồn, bài
+  còn mô tả sai hiện trạng đồng thuận về nhánh xoắn ốc (bị Overholt 2009 bác), dùng K-Pg làm
+  minh hoạ cho kịch bản mưa sao chổi trong khi vật thể va chạm đã được xác định là tiểu hành
+  tinh kiểu carbonaceous (Fischer-Gödde 2024), và gom giả thuyết vào mục "Điều đã được chứng minh".
+claims:
+  - id: C-1
+    claim: "Hệ Mặt Trời hoàn thành một vòng quay quanh tâm Ngân Hà trong khoảng 225–250 triệu năm."
+    verdict: partially-supported
+    severity: S3
+    evidence: https://ar5iv.labs.arxiv.org/html/1602.07702
+    note: >-
+      Bland-Hawthorn & Gerhard 2016 (ARA&A) cho R0 = 8.2 ± 0.1 kpc và Ωg,⊙ = 30.24 ± 0.12 km/s/kpc,
+      suy ra chu kỳ ~230 Myr — nằm trong khoảng bài nêu, nên con số không sai. Nhưng bài không dẫn
+      nguồn nào và không nói đây là giá trị suy ra từ R0/Ω (phụ thuộc mô hình). Gắn nguồn hoặc cắt biên độ.
+  - id: C-2
+    claim: "Chu kỳ dao động lên xuống qua mặt phẳng Ngân Hà khoảng 50–70 triệu năm, tương đương 25–35 triệu năm giữa hai lần cắt mặt phẳng."
+    verdict: partially-supported
+    severity: S3
+    evidence: https://ar5iv.labs.arxiv.org/html/1403.0576
+    note: >-
+      Randall & Reece 2014 (PRL 112, 161301) dùng khoảng cách giữa hai lần băng qua đĩa ~35 Myr
+      (khớp tốt nhất với dữ liệu hố va chạm) — tức nửa trên của khoảng bài nêu. Không mở kiểm được
+      nguồn nào trong lượt này đỡ trực tiếp biên "50–70 Myr"/"25–35 Myr"; giá trị phụ thuộc mật độ
+      đĩa địa phương nên phải ghi kèm nguồn và điều kiện mô hình, hoặc cắt xuống một con số có nguồn.
+  - id: C-3
+    claim: "Khoảng thời gian giữa hai lần cắt mặt phẳng gần với một số chu kỳ tuyệt chủng được đề xuất trong hồ sơ hóa thạch."
+    verdict: verified
+    severity: none
+    evidence: https://arxiv.org/abs/1307.1884
+    note: >-
+      Melott & Bambach 2013 (ApJ 773, 6) xác nhận tín hiệu ~27 Myr trong tỉ lệ tuyệt chủng biển
+      vẫn tồn tại sau khi cập nhật thang địa chất. Bài giữ đúng mức "được đề xuất". Vẫn phải dẫn nguồn.
+  - id: C-4
+    claim: "Giả thuyết Shiva: mỗi lần Hệ Mặt Trời đi qua vùng đậm đặc vật chất của đĩa thiên hà, Trái Đất đối mặt rủi ro cao hơn."
+    verdict: partially-supported
+    severity: S3
+    evidence: https://doi.org/10.1007/bf00117548
+    note: >-
+      Tên gọi và nội dung giả thuyết có thật (Rampino & Haggerty 1996, Earth Moon and Planets).
+      Bài không quy kết tác giả, không ghi năm, và gọi là "nổi tiếng" mà không nói đây là giả thuyết
+      thiểu số. Thêm quy kết "Rampino & Haggerty 1996" + câu nêu rõ đa số phân tích thống kê sau này không ủng hộ.
+  - id: C-5
+    claim: "Đám mây Oort chứa hàng tỷ thiên thể băng giá quay quanh Mặt Trời ở khoảng cách cực lớn."
+    verdict: unverifiable
+    severity: S3
+    evidence: https://science.nasa.gov/solar-system/oort-cloud/
+    note: >-
+      Trang NASA mở trong lượt này xác nhận Đám mây Oort là vùng suy đoán, "NASA không có ảnh chụp
+      trực tiếp", nhưng KHÔNG nêu con số "hàng tỷ". Số lượng không có nguồn đỡ thì cắt, không làm tròn.
+      Phần "vùng giả định" của bài là đúng và nên giữ.
+  - id: C-6
+    claim: "Khi Hệ Mặt Trời đi qua vùng mật độ cao hơn, đám mây khí liên sao / sao đi ngang / trường hấp dẫn thiên hà có thể xáo trộn quỹ đạo Đám mây Oort và đẩy sao chổi vào vùng trong."
+    verdict: partially-supported
+    severity: S3
+    evidence: https://ar5iv.labs.arxiv.org/html/1403.0576
+    note: >-
+      Cơ chế nhiễu loạn thuỷ triều thiên hà là cơ chế được bàn trong Randall & Reece 2014, nhưng chính
+      bài báo đó nói các cơ chế hấp dẫn thông thường KHÔNG đủ mạnh để tạo chu kỳ quan sát được (đó là
+      lý do họ phải giả định đĩa vật chất tối). Bài đang trình bày cơ chế như thể đã đủ; phải nêu giới hạn này.
+  - id: C-7
+    claim: "Một vụ va chạm thiên thạch lớn đã thực sự gây ra đại tuyệt chủng K-Pg cách đây khoảng 66 triệu năm."
+    verdict: verified
+    severity: none
+    evidence: https://doi.org/10.1126/science.adk4868
+    note: >-
+      Fischer-Gödde et al. 2024 (Science) nêu va chạm Chicxulub 66 triệu năm trước; Renne et al. 2013
+      (Science, doi:10.1126/science.1230492) chứng minh đồng bộ giữa ranh giới K-Pg và va chạm trong phạm vi 32.000 năm.
+  - id: C-8
+    claim: "Ý tưởng mưa sao chổi hấp dẫn VÌ va chạm K-Pg đã thực sự xảy ra (K-Pg được dùng làm minh hoạ cho kịch bản sao chổi từ Đám mây Oort)."
+    verdict: contradicted
+    severity: S2
+    evidence: https://doi.org/10.1126/science.adk4868
+    note: >-
+      Đồng vị ruthenium cho thấy vật thể Chicxulub là TIỂU HÀNH TINH kiểu carbonaceous hình thành ngoài
+      quỹ đạo Sao Mộc, không phải sao chổi. Đặt K-Pg ngay sau đoạn mưa sao chổi Oort để lại mô hình nhận
+      thức sai. Sửa: tách K-Pg ra, ghi rõ "vật thể va chạm được xác định là tiểu hành tinh carbonaceous
+      (Fischer-Gödde et al. 2024), nên K-Pg KHÔNG phải bằng chứng cho kịch bản mưa sao chổi thiên hà".
+  - id: C-9
+    claim: "Bụi liên sao có thể làm giảm ánh sáng Mặt Trời tới bề mặt và thay đổi khí hậu, nhưng hiện chưa có bằng chứng địa chất mạnh cho thấy đây từng là nguyên nhân chính của các kỳ tuyệt chủng lớn."
+    verdict: unverifiable
+    severity: S3
+    evidence: "—"
+    note: >-
+      Không mở kiểm được nguồn bậc 1–2 nào cho cơ chế bụi liên sao trong lượt này (WebSearch chạm hạn mức).
+      Mức dè dặt của bài là hợp lý và câu phủ định cuối đoạn phù hợp với kết luận tổng quan của
+      Bailer-Jones 2009, nhưng đoạn vẫn cần ít nhất một nguồn peer-review hoặc bị cắt.
+  - id: C-10
+    claim: "Ngày nay nhiều nhà nghiên cứu cho rằng nếu Ngân Hà ảnh hưởng đến sự sống trên Trái Đất thì nguyên nhân có thể liên quan nhiều hơn tới các nhánh xoắn ốc."
+    verdict: contradicted
+    severity: S2
+    evidence: https://doi.org/10.1088/0004-637X/705/2/L101
+    note: >-
+      Overholt, Melott & Pohl 2009 (ApJL 705, L101) kiểm lại đúng mối liên hệ này với dữ liệu cấu trúc
+      xoắn ốc từ CO và kết luận "các tương quan được nêu biến mất" và không phục hồi được với bất kỳ
+      tốc độ pattern hợp lý nào; Bailer-Jones 2009 (doi:10.1017/S147355040999005X) kết luận "có rất ít
+      bằng chứng" cho chu kỳ nội tại trong đa dạng sinh học, hố va chạm hay khí hậu. Kịch bản nhánh xoắn
+      ốc là của Shaviv 2002 và Gies & Helsel 2005 — thiểu số và đã bị phản bác, không phải xu hướng "ngày nay".
+      Sửa: "Một số tác giả (Shaviv 2002; Gies & Helsel 2005) đề xuất..., nhưng kiểm định lại (Overholt et al. 2009) không tìm thấy tương quan."
+  - id: C-11
+    claim: "Các nghiên cứu khác nhau cho ra chu kỳ 26, 30, 35 triệu năm hoặc không phát hiện chu kỳ rõ ràng nào."
+    verdict: partially-supported
+    severity: S3
+    evidence: https://arxiv.org/abs/1307.1884
+    note: >-
+      Đúng tinh thần và là đoạn mạnh nhất của bài. Mở kiểm được: ~27 Myr (Melott & Bambach 2013),
+      ~35 Myr (Randall & Reece 2014), "little evidence" (Bailer-Jones 2009). Con số "26 Myr"
+      (Raup & Sepkoski 1984) và "30 Myr" chưa mở kiểm được trong lượt này — hoặc dẫn nguồn gốc, hoặc thay 26 bằng 27 có nguồn.
+  - id: C-12
+    claim: "Sai số thời gian của các đợt tuyệt chủng có thể lên tới hàng triệu năm."
+    verdict: unverifiable
+    severity: S3
+    evidence: "—"
+    note: >-
+      Con số không có nguồn. Với K-Pg, độ chính xác hiện nay tốt hơn nhiều bậc (đồng bộ trong 32.000 năm,
+      Renne et al. 2013), nên khái quát "hàng triệu năm" cho mọi sự kiện là sai lệch. Cắt hoặc thay bằng
+      phát biểu có nguồn về sai số của thang địa chất ở Cổ sinh.
+  - id: C-13
+    claim: "Hệ Mặt Trời hiện nằm khá gần mặt phẳng thiên hà."
+    verdict: verified
+    severity: S4
+    evidence: https://ar5iv.labs.arxiv.org/html/1602.07702
+    note: >-
+      Bland-Hawthorn & Gerhard 2016: z⊙ = 25 ± 5 pc (Randall & Reece dùng z⊙ = 20 pc) — rất nhỏ so với
+      bề dày đĩa mỏng. Nên nêu con số kèm nguồn thay vì nói "khá gần". Là claim ràng buộc thời gian nhẹ: ghi mốc "tính tới 2026".
+  - id: C-14
+    claim: "Mục 'Điều đã được chứng minh': va chạm lớn có thể gây tuyệt chủng hàng loạt; siêu tân tinh gần có thể ảnh hưởng sinh quyển; môi trường thiên hà có thể tác động tới Hệ Mặt Trời — 'gần như chắc chắn'."
+    verdict: partially-supported
+    severity: S2
+    evidence: https://doi.org/10.1073/pnas.2013774117
+    note: >-
+      Chỉ ý thứ nhất (va chạm lớn gây tuyệt chủng) và ý "Hệ Mặt Trời liên tục di chuyển" là chắc chắn.
+      Ý siêu tân tinh vẫn là giả thuyết: Fields et al. 2020 (PNAS) chỉ "đề xuất" siêu tân tinh kích hoạt
+      tuyệt chủng cuối Devon và nói rõ cần phát hiện đồng vị phóng xạ trong tầng đá mới xác nhận. Gộp một
+      giả thuyết chưa xác nhận vào tiêu đề "Điều đã được chứng minh"/"gần như chắc chắn" là nâng mức tự tin — lỗi cỡ từ chối.
+      Sửa: đổi tiêu đề thành "Điều đã vững" và tách ý siêu tân tinh sang mục giả thuyết, giữ nguyên chữ "có thể" kèm nguồn.
+  - id: C-15
+    claim: "Trong suốt lịch sử 4,5 tỷ năm, Hệ Mặt Trời đã nhiều lần đi qua các môi trường rất khác nhau bên trong Ngân Hà."
+    verdict: partially-supported
+    severity: S4
+    evidence: https://doi.org/10.1086/430250
+    note: >-
+      Tuổi Hệ Mặt Trời ~4,5 tỷ năm không có nguồn trong bài (cắt hoặc dẫn nguồn). Việc Mặt Trời đi qua nhiều
+      môi trường khác nhau được mô hình hoá trong Gies & Helsel 2005 nhưng chỉ cho 500 triệu năm gần đây, và
+      thời điểm các lần băng qua vẫn không chắc — bài nói đúng điều này ở đoạn trên, cần nhất quán.
+fixes:
+  - "Không được để bài ở trạng thái PUBLISHED khi sourceCount = 0. Đưa về DRAFT/REVIEW cho tới khi mỗi mục có ít nhất một nguồn bậc 1–2."
+  - "Viết lại đoạn 'Ngày nay nhiều nhà nghiên cứu cho rằng ... nhánh xoắn ốc': quy kết đúng cho Shaviv 2002 và Gies & Helsel 2005, rồi nêu kết quả phản bác của Overholt et al. 2009 ngay sau đó. Bỏ cụm 'ngày nay nhiều nhà nghiên cứu'."
+  - "Tách ví dụ K-Pg khỏi mạch mưa sao chổi Oort và thêm câu: vật thể va chạm Chicxulub là tiểu hành tinh kiểu carbonaceous (Fischer-Gödde et al. 2024), không phải sao chổi — nên K-Pg không đỡ cho kịch bản thiên hà."
+  - "Đổi tiêu đề '🦖 Điều đã được chứng minh' và bỏ chữ 'gần như chắc chắn'; chuyển ý 'siêu tân tinh gần Trái Đất ảnh hưởng sinh quyển' sang mục giả thuyết kèm Fields et al. 2020 và câu 'chưa được xác nhận bằng đồng vị phóng xạ trong tầng đá'."
+  - "Cắt con số 'hàng tỷ thiên thể' của Đám mây Oort (không có nguồn) — giữ mô tả định tính và trích NASA cho việc đây là vùng chưa quan sát trực tiếp."
+  - "Cắt hoặc thay câu 'sai số thời gian có thể lên tới hàng triệu năm' bằng phát biểu có nguồn; nêu đối chứng K-Pg đồng bộ trong 32.000 năm (Renne et al. 2013)."
+  - "Gắn nguồn cho hai con số chu kỳ: 225–250 Myr (suy từ R0 và Ω, Bland-Hawthorn & Gerhard 2016) và khoảng cách giữa hai lần băng qua mặt phẳng (~35 Myr là giá trị khớp tốt nhất trong Randall & Reece 2014). Nếu không tìm được nguồn cho biên '50–70 Myr' thì cắt biên đó."
+  - "Thêm đoạn nêu hiện trạng đồng thuận ngay sau phần mở: các phân tích thống kê hiện đại (Bailer-Jones 2009; Overholt et al. 2009) không tìm thấy bằng chứng chắc chắn cho chu kỳ tuyệt chủng do chuyển động thiên hà; đây là giả thuyết thiểu số."
+  - "Thay '26 triệu năm' bằng con số có nguồn (27 Myr, Melott & Bambach 2013) hoặc dẫn đúng Raup & Sepkoski 1984 sau khi mở kiểm được bản gốc."
+  - "Đổi 'Hệ Mặt Trời hiện nằm khá gần mặt phẳng thiên hà' thành con số có nguồn: z⊙ = 25 ± 5 pc (Bland-Hawthorn & Gerhard 2016), ghi mốc 'tính tới 2026'."
+suggestedSources:
+  - title: "The Evidence for and Against Astronomical Impacts on Climate Change and Mass Extinctions: A Review"
+    url: https://doi.org/10.1017/S147355040999005X
+    doi: 10.1017/s147355040999005x
+    publisher: International Journal of Astrobiology (Cambridge University Press)
+    year: 2009
+    tier: 1
+    covers: "Hiện trạng đồng thuận — mục 'Khoa học hiện nay nói gì?' và toàn bộ khung dè dặt của bài"
+  - title: "Testing the Link Between Terrestrial Climate Change and Galactic Spiral Arm Transit"
+    url: https://arxiv.org/abs/0906.2777
+    doi: 10.1088/0004-637X/705/2/L101
+    publisher: The Astrophysical Journal Letters
+    year: 2009
+    tier: 1
+    covers: "Phản bác kịch bản nhánh xoắn ốc — mục 'Đi xuyên qua các nhánh xoắn ốc'"
+  - title: "Cosmic Ray Diffusion from the Galactic Spiral Arms, Iron Meteorites, and a Possible Climatic Connection"
+    url: https://arxiv.org/abs/astro-ph/0207637
+    doi: 10.1103/PhysRevLett.89.051102
+    publisher: Physical Review Letters
+    year: 2002
+    tier: 1
+    covers: "Nguồn gốc kịch bản nhánh xoắn ốc (phía ủng hộ) — cần trích kèm nguồn phản bác"
+  - title: "Ice Age Epochs and the Sun's Path Through the Galaxy"
+    url: https://arxiv.org/abs/astro-ph/0503306
+    doi: 10.1086/430250
+    publisher: The Astrophysical Journal
+    year: 2005
+    tier: 1
+    covers: "Mô hình đường đi của Mặt Trời qua các nhánh xoắn ốc trong 500 triệu năm gần đây"
+  - title: "Dark Matter as a Trigger for Periodic Comet Impacts"
+    url: https://arxiv.org/abs/1403.0576
+    doi: 10.1103/PhysRevLett.112.161301
+    publisher: Physical Review Letters
+    year: 2014
+    tier: 1
+    covers: "Khoảng cách giữa hai lần băng qua mặt phẳng (~35 Myr), cơ chế nhiễu loạn Đám mây Oort và mức dè dặt 'statistical evidence is not overwhelming'"
+  - title: "Do Periodicities in Extinction — with Possible Astronomical Connections — Survive a Revision of the Geological Timescale?"
+    url: https://arxiv.org/abs/1307.1884
+    doi: 10.1088/0004-637X/773/1/6
+    publisher: The Astrophysical Journal
+    year: 2013
+    tier: 1
+    covers: "Chu kỳ ~27 Myr trong hồ sơ tuyệt chủng biển và kết luận Nemesis không đứng vững"
+  - title: "The Galaxy in Context: Structural, Kinematic and Integrated Properties"
+    url: https://arxiv.org/abs/1602.07702
+    doi: 10.1146/annurev-astro-081915-023441
+    publisher: Annual Review of Astronomy and Astrophysics
+    year: 2016
+    tier: 1
+    covers: "R0 = 8.2 ± 0.1 kpc, Ωg,⊙ = 30.24 km/s/kpc (suy ra chu kỳ quay ~230 Myr) và z⊙ = 25 ± 5 pc"
+  - title: "Ruthenium isotopes show the Chicxulub impactor was a carbonaceous-type asteroid"
+    url: https://doi.org/10.1126/science.adk4868
+    doi: 10.1126/science.adk4868
+    publisher: Science (AAAS)
+    year: 2024
+    tier: 1
+    covers: "Bản chất vật thể va chạm K-Pg (tiểu hành tinh, không phải sao chổi) và mốc 66 triệu năm"
+  - title: "Time Scales of Critical Events Around the Cretaceous-Paleogene Boundary"
+    url: https://doi.org/10.1126/science.1230492
+    doi: 10.1126/science.1230492
+    publisher: Science (AAAS)
+    year: 2013
+    tier: 1
+    covers: "Độ chính xác định tuổi K-Pg (đồng bộ trong 32.000 năm) — đối chứng cho câu 'sai số hàng triệu năm'"
+  - title: "Supernova triggers for end-Devonian extinctions"
+    url: https://doi.org/10.1073/pnas.2013774117
+    doi: 10.1073/pnas.2013774117
+    publisher: Proceedings of the National Academy of Sciences
+    year: 2020
+    tier: 1
+    covers: "Mục siêu tân tinh và sinh quyển — nguồn giữ đúng mức 'đề xuất, cần xác nhận bằng đồng vị'"
+  - title: "The 'Shiva Hypothesis': Impacts, Mass Extinctions, and the Galaxy"
+    url: https://doi.org/10.1007/BF00117548
+    doi: 10.1007/bf00117548
+    publisher: Earth, Moon, and Planets (Springer)
+    year: 1996
+    tier: 1
+    covers: "Quy kết tên gọi và nội dung giả thuyết Shiva (Rampino & Haggerty)"
+  - title: "Oort Cloud — NASA Science"
+    url: https://science.nasa.gov/solar-system/oort-cloud/
+    doi:
+    publisher: NASA
+    year: 2026
+    tier: 2
+    covers: "Mô tả Đám mây Oort là vùng suy đoán, chưa có ảnh chụp trực tiếp"
+openQuestions:
+  - "Bài đã PUBLISHED hôm nay (17/09/2026) với 0 nguồn — cần người quyết: gỡ khỏi bản live hay giữ kèm nhãn 'đang thẩm định'? Theo quy tắc sửa lỗi hiển thị, việc gỡ/sửa phải nhìn thấy được."
+  - "Biên '50–70 triệu năm cho một chu kỳ dao động đứng' chưa mở kiểm được nguồn gốc (Bahcall & Bahcall 1985, Nature, doi:10.1038/316706a0 — chỉ xác nhận được siêu dữ liệu qua Crossref, chưa đọc được giá trị trong bài báo). Cần một lượt mở toàn văn trước khi giữ hay cắt con số."
+  - "Con số chu kỳ 26 Myr (Raup & Sepkoski 1984) và 30 Myr chưa mở kiểm được trong lượt này do WebSearch chạm hạn mức phiên; cần kiểm lại trước khi tái công bố."
+  - "Tranh cãi chu kỳ tuyệt chủng thiên hà chưa ngã ngũ (tín hiệu ~27 Myr vẫn tồn tại trong Melott & Bambach 2013 nhưng không có cơ chế thiên văn được chấp nhận) — biên tập không tự phân xử; bài phải trình bày là tranh cãi mở."

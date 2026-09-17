@@ -1,0 +1,136 @@
+slug: co-the-nguoi-bien-doi-the-nao-ngoai-vu-tru-khong-bao-ho
+checkedAt: 2026-09-17
+checkedBy: science-editor
+sourceCount: 0
+verdict: revise
+summary: "Bài không có nguồn nào nên không thể pass; khung chính (không nổ, không đóng băng tức thì, còn ý thức khoảng 9–11 giây, có ebullism) khớp NASA SP-3006, nhưng câu “máu không sôi nhờ áp suất tuần hoàn đẩy điểm sôi lên 46°C” là số không nguồn và trái với NASA (hơi nước vẫn hình thành trong máu tĩnh mạch, tuần hoàn gần như ngừng trong khoảng 1 phút), còn câu nín thở “gần như chắc chắn tử vong” nâng mức chắc chắn so với nguồn."
+claims:
+  - id: C-1
+    claim: "Sau khoảng 9–11 giây, con người sẽ bất tỉnh"
+    verdict: verified
+    severity: S3
+    evidence: https://archive.org/stream/bioastronautics_data_book/bioastronautics_data_book_djvu.txt
+    note: "NASA SP-3006 (Bioastronautics Data Book, 1973), chương Barometric Pressure: “Some degree of consciousness will probably be retained for 9 to 11 seconds”. Cùng chỗ: “very unlikely that a human … will have more than 5 to 10 seconds to help himself”. Số đúng nhưng bài không gắn nguồn; giữ chữ “probably” thành “có lẽ”."
+  - id: C-2
+    claim: "Oxy trong máu nhanh chóng bị tiêu thụ, não thiếu oxy nghiêm trọng"
+    verdict: partially-supported
+    severity: S4
+    evidence: https://imagine.gsfc.nasa.gov/ask_astro/space_travel.html
+    note: "Trang NASA giải thích thời gian ~14 giây là “the time it takes for O2 deprived blood to go from the lungs to the brain” — tức là máu đi qua phổi không còn khí để lấy oxy, không phải do oxy “bị tiêu thụ”. Sửa cơ chế cho khớp."
+  - id: C-3
+    claim: "Tai nạn buồng chân không tại NASA Houston năm 1966: nạn nhân mất ý thức sau 12–15 giây và hồi phục không di chứng"
+    verdict: partially-supported
+    severity: S3
+    evidence: https://imagine.gsfc.nasa.gov/ask_astro/space_travel.html
+    note: "Trang NASA ghi sự cố ở Manned Spacecraft Center, người thử “remained conscious for about 14 seconds”, bắt đầu tăng áp lại “within 15 seconds”, tỉnh lại ở độ cao tương đương khoảng 15.000 ft — nhưng ghi năm 1965, không phải 1966. Sửa “12–15 giây” thành “khoảng 14 giây”. Cận dưới 12 giây không có nguồn. Trang NASA không nói “không di chứng” — cắt vế này hoặc tìm nguồn."
+  - id: C-4
+    claim: "Nín thở: phổi giãn, mô phổi và mao mạch rách, khí vào tuần hoàn thành thuyên tắc khí tới tim và não — gần như chắc chắn gây tử vong"
+    verdict: partially-supported
+    severity: S2
+    evidence: https://archive.org/stream/bioastronautics_data_book/bioastronautics_data_book_djvu.txt
+    note: "SP-3006: phổi động vật có vú có thể rách khi chênh áp trên khoảng 80 mmHg; “Severe lung injury or death can result from a rapid decompression while the glottis is closed”. Nguồn nói “có thể” tổn thương nặng HOẶC tử vong; bài nâng thành “gần như chắc chắn tử vong” — nâng mức chắc chắn. Chuỗi thuyên tắc khí tới tim và não không có trong phần nguồn đã đọc. Sửa thành “có thể gây tổn thương phổi nặng hoặc tử vong”; cắt thuyên tắc khí trừ khi gắn nguồn."
+  - id: C-5
+    claim: "Chất lỏng trong mô tạo bọt (ebullism); cơ thể sưng, tăng thể tích đáng kể nhưng không nổ vì da đủ đàn hồi"
+    verdict: partially-supported
+    severity: S3
+    evidence: https://pubmed.ncbi.nlm.nih.gov/23447845/
+    note: "Murray et al. 2013 định nghĩa ebullism là nước trong mô hoá hơi ở thân nhiệt khi áp suất môi trường ≤47 mmHg. SP-3006: sưng “perhaps as much as twice its normal volume”, và hiện tượng không xảy ra đúng ở 47 mmHg nhờ đối áp của “skin and connective tissues and blood vessels”. Thay “tăng thể tích đáng kể” bằng “có thể tới khoảng gấp đôi”; thay “da đủ đàn hồi” bằng “da, mô liên kết và thành mạch tạo đối áp”."
+  - id: C-6
+    claim: "Nước bọt sủi bọt, nước mắt bốc hơi nhanh"
+    verdict: partially-supported
+    severity: S4
+    evidence: https://imagine.gsfc.nasa.gov/ask_astro/space_travel.html
+    note: "NASA: “The saliva on your tongue might boil”; người thử nhớ cảm giác nước trên lưỡi bắt đầu sôi. Nước mắt không có trong nguồn đã đọc. Giữ ý nước bọt kèm “có thể”, cắt nước mắt hoặc gắn nguồn."
+  - id: C-7
+    claim: "Máu trong các mạch lớn không sôi chừng nào tim còn đập: áp suất tuần hoàn đẩy điểm sôi của nước lên khoảng 46°C"
+    verdict: contradicted
+    severity: S2
+    evidence: https://archive.org/stream/bioastronautics_data_book/bioastronautics_data_book_djvu.txt
+    note: "Con số 46°C không có trong nguồn nào đã mở → cắt. SP-3006 viết hơi nước hình thành “rapidly in the soft tissues and somewhat less rapidly in the venous blood”; huyết áp động mạch giảm trong 30–60 giây, áp tĩnh mạch bằng hoặc vượt áp động mạch trong vòng 1 phút, “virtually no effective circulation”. Trang NASA Imagine thì viết máu không sôi chừng nào huyết áp còn trên 47 mmHg. Viết lại: máu động mạch được huyết áp giữ không sôi lúc đầu; hơi nước vẫn hình thành trong mô mềm và chậm hơn trong máu tĩnh mạch, và tuần hoàn gần như ngừng trong khoảng một phút."
+  - id: C-8
+    claim: "Cơ thể không đóng băng ngay; chân không truyền nhiệt kém; da thấy hơi mát do nước bay hơi"
+    verdict: partially-supported
+    severity: S3
+    evidence: https://archive.org/stream/bioastronautics_data_book/bioastronautics_data_book_djvu.txt
+    note: "NASA Imagine: “You do not freeze.” SP-3006: bay hơi liên tục “will cool the mouth and nose to near-freezing temperatures; the remainder of the body will also become cooled, but more slowly”. “Hơi mát” là nói nhẹ — sửa thành miệng và mũi lạnh gần mức đóng băng, phần còn lại nguội chậm hơn."
+  - id: C-9
+    claim: "Hai con số trên 120°C (chỗ nắng) và dưới −150°C (chỗ khuất) là biên độ nhiệt của vỏ tàu vũ trụ ở quỹ đạo thấp, không phải của cơ thể người"
+    verdict: partially-supported
+    severity: S3
+    evidence: https://www.nasa.gov/centers-and-facilities/johnson/spacewalk-spacesuit-basics/
+    note: "NASA: “Temperatures on spacewalks may vary from as cold as minus 250 degrees Fahrenheit to as hot as 250 degrees in the sunlight” (≈ −157°C đến 121°C). NASA gắn số này với môi trường đi bộ ngoài không gian, không nói là vỏ tàu. Viết “khoảng −157°C đến 121°C, theo NASA, là nhiệt độ môi trường khi đi bộ ngoài không gian”; ý “không phải nhiệt độ cơ thể” giữ nguyên."
+  - id: C-10
+    claim: "Ngoài không gian, tia cực tím chiếu thẳng lên da; tia X, proton năng lượng cao và tia vũ trụ xuyên qua cơ thể; tiếp xúc lâu làm tế bào tổn thương nặng"
+    verdict: unsupported
+    severity: S3
+    evidence: "—"
+    note: "Trang NASA về đồ đi bộ ngoài không gian chỉ nêu “radiation” là một nguy cơ, không nêu từng loại. Gắn nguồn NASA về bức xạ không gian cho từng loại hoặc rút gọn thành “bức xạ” chung. Nêu rõ trong thang 1–2 phút, bức xạ không phải nguyên nhân tử vong."
+  - id: C-11
+    claim: "Tử vong thường xảy ra trong khoảng 1–2 phút"
+    verdict: partially-supported
+    severity: S3
+    evidence: https://imagine.gsfc.nasa.gov/ask_astro/space_travel.html
+    note: "NASA Imagine: “After perhaps one or two minutes you're dying. The limits are not really known.” SP-3006: áp suất dưới ~50 mmHg “must be considered lethal if sustained for more than 60 to 90 seconds”. Bỏ chữ “thường” (không có thống kê ở người); ghi “có lẽ sau khoảng 60–90 giây tới 2 phút, và giới hạn thật chưa được biết rõ”."
+  - id: C-12
+    claim: "Nếu được đưa về nơi có áp suất và oxy trong vòng dưới khoảng 1 phút, có thể hồi phục và không để lại tổn thương nghiêm trọng"
+    verdict: partially-supported
+    severity: S3
+    evidence: https://archive.org/stream/bioastronautics_data_book/bioastronautics_data_book_djvu.txt
+    note: "SP-3006 (dữ liệu trên chó, khỉ, khỉ đầu chó): sống sót là thường lệ nếu tăng áp lại trong khoảng 90 giây; tăng áp lên 200 mmHg trong 60–90 giây “could result in survival”; nhưng “no guarantee”, có con chết trong vài giây, vài con tổn thương thần kinh trung ương lâu dài; rối loạn thị lực thường gặp nhưng thường hết nhanh. Murray 2013: nhiều ca phơi nhiễm “may be survivable”. Sửa mốc thành 60–90 giây, ghi rõ phần lớn dữ liệu từ động vật, bỏ “không để lại tổn thương nghiêm trọng” hoặc thay bằng “có thể hồi phục, không có gì bảo đảm”."
+  - id: C-13
+    claim: "Kết bài: tử vong trong vòng vài phút"
+    verdict: contradicted
+    severity: S4
+    evidence: https://archive.org/stream/bioastronautics_data_book/bioastronautics_data_book_djvu.txt
+    note: "Mâu thuẫn với chính bài (1–2 phút) và rộng hơn nguồn (60–90 giây). Đồng bộ với mốc ở C-11. Bỏ emoji 🌌 ở đầu đoạn kết."
+  - id: C-14
+    claim: "Toàn bài (danh sách NGUỒN rỗng)"
+    verdict: unsupported
+    severity: S3
+    evidence: "—"
+    note: "0 nguồn cho một bài có nhiều con số sinh lý — không thể pass. Bài đang PUBLISHED."
+fixes:
+  - "Gắn NASA SP-3006 (chương Barometric Pressure) làm nguồn chính cho các mục ý thức, ebullism, sưng, tuần hoàn, lạnh do bay hơi, cửa sổ tăng áp; gắn Murray et al. 2013 (DOI 10.3357/ASEM.3468.2013) cho định nghĩa ebullism và khả năng sống sót."
+  - "Cắt con số 46°C. Viết lại đoạn “Chất lỏng bắt đầu sôi” theo C-7: hơi nước hình thành trong mô mềm và chậm hơn trong máu tĩnh mạch; tuần hoàn gần như ngừng trong khoảng 1 phút."
+  - "Đoạn nín thở: đổi “gần như chắc chắn gây tử vong” thành “có thể gây tổn thương phổi nặng hoặc tử vong”; cắt câu thuyên tắc khí tới tim và não trừ khi có nguồn."
+  - "Sự cố buồng chân không: đổi thành “khoảng 14 giây”, bỏ “không di chứng” nếu không có nguồn, và ghi năm theo quyết định ở openQuestions."
+  - "Mục sưng: ghi “có thể tới khoảng gấp đôi thể tích” và đối áp do da, mô liên kết và thành mạch."
+  - "Mục không đóng băng: ghi miệng và mũi lạnh gần mức đóng băng do bay hơi, phần còn lại nguội chậm hơn."
+  - "Mục nhiệt độ: dùng −157°C đến 121°C theo NASA, gắn với môi trường đi bộ ngoài không gian thay vì “vỏ tàu”."
+  - "Mục tử vong và cứu sống: dùng 60–90 giây theo SP-3006, giữ “có lẽ”, “giới hạn chưa được biết rõ”, ghi rằng dữ liệu cửa sổ tăng áp chủ yếu từ động vật."
+  - "Sửa kết bài cho khớp mốc thời gian, bỏ emoji."
+  - "Mục bức xạ: gắn nguồn NASA cho từng loại bức xạ hoặc gộp thành “bức xạ”."
+suggestedSources:
+  - title: "Bioastronautics Data Book, Second Edition (NASA SP-3006), chương Barometric Pressure — mục Survival Under Near-Vacuum Conditions"
+    url: https://archive.org/stream/bioastronautics_data_book/bioastronautics_data_book_djvu.txt
+    doi: ""
+    publisher: NASA
+    year: 1973
+    tier: 2
+    covers: "Còn ý thức 9–11 giây; hơi nước ở mô mềm và máu tĩnh mạch; sưng tới ~2 lần; tuần hoàn ngừng trong ~1 phút; lạnh do bay hơi; tăng áp trong 60–90 giây; nguy cơ vỡ phổi khi thanh môn đóng. Bản NASA gốc mang số NTRS 19730006364 — người sửa nên dẫn bản trên ntrs.nasa.gov sau khi mở kiểm."
+  - title: "Pathophysiology, prevention, and treatment of ebullism"
+    url: https://pubmed.ncbi.nlm.nih.gov/23447845/
+    doi: 10.3357/ASEM.3468.2013
+    publisher: Aviation, Space, and Environmental Medicine
+    year: 2013
+    tier: 1
+    covers: "Định nghĩa ebullism (≤47 mmHg ở thân nhiệt); nhiều ca phơi nhiễm có thể sống sót; hướng dự phòng và điều trị"
+  - title: "Ask an Astrophysicist — Space Travel (câu hỏi về cơ thể người trong chân không)"
+    url: https://imagine.gsfc.nasa.gov/ask_astro/space_travel.html
+    doi: ""
+    publisher: NASA Goddard Space Flight Center (Imagine the Universe!)
+    year: "không rõ — trang web, truy cập 2026-09-17"
+    tier: 2
+    covers: "Sự cố ở Manned Spacecraft Center (còn tỉnh ~14 giây, tăng áp trong 15 giây); nước bọt có thể sôi; không đóng băng; “perhaps one or two minutes”. Lưu ý: trang tự ghi là tổng hợp từ sci.space FAQ và một trang y khoa NASA đã gỡ — chỉ dùng kèm SP-3006, không dùng làm nguồn duy nhất."
+  - title: "Spacewalk Spacesuit Basics"
+    url: https://www.nasa.gov/centers-and-facilities/johnson/spacewalk-spacesuit-basics/
+    doi: ""
+    publisher: NASA Johnson Space Center
+    year: "không rõ — trang web, truy cập 2026-09-17"
+    tier: 2
+    covers: "Nhiệt độ khi đi bộ ngoài không gian −250°F đến 250°F; đồ bảo hộ cung cấp áp suất, oxy, chống bức xạ"
+openQuestions:
+  - "Năm của sự cố buồng chân không: trang NASA Imagine ghi 1965; các nguồn phổ thông thấy qua tìm kiếm (chưa mở, không phải bậc 1–2) ghi 14/12/1966 và tên Jim LeBlanc. Cần tìm hồ sơ gốc của NASA JSC trước khi ghi năm hoặc tên người."
+  - "Hai nguồn NASA khác nhau về máu: SP-3006 nói hơi nước vẫn hình thành trong máu tĩnh mạch, trang Imagine nói máu không sôi chừng nào huyết áp trên 47 mmHg. Không tự phân xử — bài nên nêu cả hai: động mạch được huyết áp giữ lúc đầu, tĩnh mạch thì không."
+  - "Các bài khác (giac-ngu-sau…, crispr…) có link “Đọc thêm” tới slug dieu-gi-se-xay-ra-neu-con-nguoi-ra-ngoai-vu-tru-ma-khong-co-bo-do-vu-tru, khác slug bài này. Có thể là bài trùng chủ đề hoặc link chết — content-curator cần kiểm."
+  - "Bài 0 nguồn đang PUBLISHED, vượt qua gate xuất bản. Cần backend-architect/content-curator kiểm vì sao scripts/publish.ts cho qua, và người quyết gỡ bài trong lúc chờ sửa."

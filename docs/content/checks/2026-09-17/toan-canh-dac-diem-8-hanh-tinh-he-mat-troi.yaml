@@ -1,0 +1,191 @@
+slug: toan-canh-dac-diem-8-hanh-tinh-he-mat-troi
+checkedAt: 2026-09-17
+checkedBy: science-editor
+sourceCount: 5
+verdict: revise
+summary: "Bảng số khớp NASA gần như từng dòng và số vệ tinh có mốc tháng 8/2026, nhưng đoạn tên gọi có một khẳng định sai (thứ tự thần thoại “theo đúng thứ tự phát hiện”), điều kiện thứ ba của IAU bị diễn giải thay vì trích, và phần định nghĩa, phân nhóm, đường tuyết, Hành tinh thứ chín chỉ dựa vào một trang VACA đã chết, gắn sai tier."
+claims:
+  - id: C-1
+    claim: "Đường kính: Thuỷ 4.879, Kim 12.104, Trái Đất 12.756, Hoả 6.792, Mộc 142.984, Thổ 120.536, Thiên Vương 51.118, Hải Vương 49.528 km."
+    verdict: verified
+    severity: none
+    evidence: https://nssdc.gsfc.nasa.gov/planetary/factsheet/
+    note: "Cả 8 giá trị khớp Planetary Fact Sheet (đường kính xích đạo). Nhưng bài không trích Fact Sheet — xem C-20."
+  - id: C-2
+    claim: "Khoảng cách (AU): Thuỷ 0,39; Kim 0,72; Trái Đất 1,00; Hoả 1,52; Mộc 5,20; Thiên Vương 19,2; Hải Vương 30,1."
+    verdict: verified
+    severity: none
+    evidence: https://nssdc.gsfc.nasa.gov/planetary/factsheet/
+    note: "Quy từ Fact Sheet (10^6 km chia 149,6): 57,9 ra 0,387; 108,2 ra 0,723; 228,0 ra 1,524; 778,5 ra 5,204; 2.867 ra 19,16; 4.515 ra 30,18 (neptunefact: 4.514,953). Khớp ở số chữ số có nghĩa đã dùng."
+  - id: C-3
+    claim: "Sao Thổ cách Mặt Trời 9,54 AU."
+    verdict: contradicted
+    severity: S4
+    evidence: https://nssdc.gsfc.nasa.gov/planetary/factsheet/
+    note: "Fact Sheet ghi 1.432,0 triệu km, tức 1432,0 / 149,6 = 9,57 AU. Sửa 9,54 thành 9,57."
+  - id: C-4
+    claim: "Chu kỳ quỹ đạo: 88 ngày; 224,7 ngày; 365,26 ngày; 687 ngày; 11,86 năm; 29,4 năm; 84,0 năm; 164,8 năm."
+    verdict: verified
+    severity: none
+    evidence: "https://nssdc.gsfc.nasa.gov/planetary/factsheet/ ; https://nssdc.gsfc.nasa.gov/planetary/factsheet/neptunefact.html"
+    note: "88,0; 224,7; 365,2; 687,0 ngày khớp. Mộc 4.331 ngày = 11,86 năm; Thổ 10.747 ngày = 29,42 năm; Thiên Vương 30.589 ngày = 83,75 năm (bài làm tròn 84,0 — chấp nhận được, chính xác hơn là 83,7); Hải Vương 60.189,018 ngày = 164,8 năm."
+  - id: C-5
+    claim: "Chu kỳ tự quay: Thuỷ 58,6 ngày; Kim 243 ngày (ngược); Trái Đất 23 giờ 56 phút; Hoả 24,6 giờ; Mộc 9,9; Thổ 10,7; Thiên Vương 17,2 (ngược); Hải Vương 16,1 giờ."
+    verdict: verified
+    severity: none
+    evidence: https://nssdc.gsfc.nasa.gov/planetary/factsheet/
+    note: "1.407,6 h = 58,65 ngày; −5.832,5 h = 243,0 ngày (dấu âm = nghịch hành); 23,9 h; 24,6; 9,9; 10,7; −17,2; 16,1 h (neptunefact 16,11). Khớp."
+  - id: C-6
+    claim: "Ngày mặt trời trên Sao Kim chỉ khoảng 117 ngày, ngắn hơn một năm của nó."
+    verdict: verified
+    severity: none
+    evidence: https://nssdc.gsfc.nasa.gov/planetary/factsheet/
+    note: "Length of Day 2.802,0 h = 116,75 ngày, nhỏ hơn 224,7 ngày. Khớp."
+  - id: C-7
+    claim: "Số vệ tinh xác nhận tính tới 8/2026: Mộc 115, Thổ 293, Thiên Vương 29, Hải Vương 16."
+    verdict: verified
+    severity: S4
+    evidence: "https://science.nasa.gov/jupiter/jupiter-moons/ ; https://science.nasa.gov/saturn/moons/ ; https://science.nasa.gov/uranus/moons/ ; https://nssdc.gsfc.nasa.gov/planetary/factsheet/neptunefact.html"
+    note: "Ba trang NASA ghi đúng 115 (IAU công nhận), 293 (confirmed), 29 (known), đều “as of August 2026”. Hải Vương 16 khớp neptunefact nhưng bài không có nguồn cho Hải Vương. Bảng tổng Fact Sheet vẫn ghi 95/274/28 — đã cũ, đừng dùng cho cột này. Ba trang NASA dùng ba tiêu chí đếm khác nhau, câu “số vệ tinh đã được xác nhận” gộp chúng lại."
+  - id: C-8
+    claim: "Sao Thổ nhảy vọt sau khi Trung tâm Tiểu hành tinh của IAU công nhận thêm 128 vệ tinh trong một lần công bố tháng 3/2025."
+    verdict: partially-supported
+    severity: S3
+    evidence: https://nssdc.gsfc.nasa.gov/planetary/factsheet/
+    note: "Không trang nào đã mở nêu con số 128 hay mốc 3/2025. Fact Sheet ghi 274 cho Sao Thổ, nhất quán với một đợt bổ sung lớn, nhưng không đỡ được số và ngày. Thêm nguồn MPC hoặc NASA cho đợt công bố, hoặc cắt câu."
+  - id: C-9
+    claim: "Điều kiện 3: “Chiếm ưu thế hấp dẫn tuyệt đối trong vùng quỹ đạo của mình, tức đã dọn sạch các thiên thể khác cùng quỹ đạo, trừ vệ tinh của chính nó.”"
+    verdict: contradicted
+    severity: S3
+    evidence: https://iauarchive.eso.org/news/pressreleases/detail/iau0603/
+    note: "Nghị quyết IAU 2006 (5A, bản cuối B5) chỉ ghi “(c) has cleared the neighbourhood around its orbit”. “Ưu thế hấp dẫn tuyệt đối” và “trừ vệ tinh của chính nó” là diễn giải thêm, không có trong văn bản. Thay bằng bản dịch sát: “(c) đã dọn sạch vùng lân cận quanh quỹ đạo của nó”, có ghi nguồn IAU 2006."
+  - id: C-10
+    claim: "Tháng 8/2006 IAU định nghĩa hành tinh: quay quanh Mặt Trời; đủ khối lượng để tự hấp dẫn thắng độ bền vật chất, đạt cân bằng thuỷ tĩnh (gần cầu)."
+    verdict: verified
+    severity: S3
+    evidence: https://iauarchive.eso.org/news/pressreleases/detail/iau0603/
+    note: "(a) và (b) khớp văn bản: “is in orbit around the Sun” và “has sufficient mass for its self-gravity to overcome rigid body forces so that it assumes a hydrostatic equilibrium (nearly round) shape”. Nhưng bài không trích nghị quyết IAU — định nghĩa trung tâm của bài không có nguồn."
+  - id: C-11
+    claim: "Nhóm hành tinh lùn hiện có năm thành viên được công nhận: Pluto, Ceres, Eris, Haumea, Makemake."
+    verdict: verified
+    severity: S4
+    evidence: https://science.nasa.gov/dwarf-planets/
+    note: "NASA: “So far, the IAU has only recognized five dwarf planets”. Chữ “hiện” cần mốc thời gian: “(tính tới 9/2026)”."
+  - id: C-12
+    claim: "Sao Thiên Vương và Sao Hải Vương là hành tinh băng khổng lồ: dưới lớp khí là hỗn hợp nước, methane, ammoniac ở áp suất cực lớn chứ không phải hydro kim loại."
+    verdict: unverifiable
+    severity: S3
+    evidence: "—"
+    note: "Không nguồn nào trong bài đỡ; nguồn VACA đã chết. Thêm nguồn NASA cho cấu trúc trong của băng khổng lồ và khí khổng lồ, hoặc cắt vế so sánh hydro kim loại."
+  - id: C-13
+    claim: "Ranh giới hai nhóm là vành đai tiểu hành tinh, và đó không phải trùng hợp: chỉ ở đủ xa thì nước đóng băng, cho lõi tích tụ đủ nhanh để giữ khí."
+    verdict: unverifiable
+    severity: S3
+    evidence: "—"
+    note: "Không có nguồn. “Không phải trùng hợp” là khẳng định mạnh hơn mức một mô hình cho phép (vị trí đường tuyết thay đổi theo thời gian trong đĩa). Hạ xuống “theo mô hình phổ biến…” và gắn nguồn, hoặc cắt câu."
+  - id: C-14
+    claim: "Hành tinh là thiên thể dưới cấp sao, khối lượng không đủ châm ngòi hợp hạch; có những hành tinh trôi tự do."
+    verdict: unverifiable
+    severity: S3
+    evidence: "—"
+    note: "Không có nguồn. Đơn giản hoá mất thông tin: định nghĩa IAU 2006 chỉ áp dụng cho Hệ Mặt Trời; ranh giới hành tinh và sao lùn nâu được đặt theo ngưỡng đốt deuterium, không phải “hợp hạch” chung chung. Ghi rõ đây là cách hiểu chung cho ngoại hành tinh và gắn nguồn, hoặc cắt."
+  - id: C-15
+    claim: "Saturn là cha của Jupiter, Uranus là cha của Saturn: thứ tự thần thoại đi ngược ra xa dần Mặt Trời, theo đúng thứ tự chúng được phát hiện."
+    verdict: contradicted
+    severity: S2
+    evidence: https://science.nasa.gov/uranus/facts/
+    note: "Sai. Sao Mộc và Sao Thổ đã được biết từ thời cổ đại; Sao Thiên Vương là hành tinh đầu tiên tìm bằng kính thiên văn, do William Herschel phát hiện năm 1781 (NASA). Không có “thứ tự phát hiện” Mộc rồi Thổ nào để khớp với phả hệ thần thoại. Cắt vế “theo đúng thứ tự chúng được phát hiện”."
+  - id: C-16
+    claim: "Neptune là thần biển cả — hành tinh có màu xanh nước biển (mỗi cái tên đều bám vào một đặc điểm quan sát được)."
+    verdict: unsupported
+    severity: S3
+    evidence: "—"
+    note: "Câu gợi ý tên được đặt vì màu; không nguồn nào đỡ quan hệ nhân quả này, cũng như câu khái quát “mỗi cái tên đều bám vào một đặc điểm quan sát được”. Bỏ quan hệ nhân quả hoặc gắn nguồn lịch sử đặt tên."
+  - id: C-17
+    claim: "Sao Kim là thiên thể sáng nhất bầu trời đêm sau Mặt Trăng; Sao Mai và Sao Hôm là cùng một hành tinh."
+    verdict: unverifiable
+    severity: S4
+    evidence: "—"
+    note: "Không mở kiểm được trong lượt này và bài không gắn nguồn. Gắn nguồn NASA Venus Facts nếu trang có nói, nếu không thì thêm nguồn khác."
+  - id: C-18
+    claim: "Năm 2016 hai nhà thiên văn Caltech công bố bằng chứng gián tiếp về một hành tinh xa: quỹ đạo một nhóm thiên thể vành đai Kuiper gom cụm; cho tới nay chưa quan sát trực tiếp."
+    verdict: partially-supported
+    severity: S3
+    evidence: https://arxiv.org/abs/1601.05438
+    note: "Batygin & Brown (2016), AJ 151:22, xác nhận phần công bố và lập luận gom cụm (khối lượng đề xuất trên khoảng 10 lần Trái Đất). Bài không trích bài báo. “Cho tới nay chưa quan sát” cần mốc thời gian và nguồn về hiện trạng tìm kiếm; nên ghi giả thuyết vẫn còn tranh luận."
+  - id: C-19
+    claim: "Cả Sao Kim lẫn Sao Thiên Vương đều quay theo chiều ngược với phần còn lại."
+    verdict: verified
+    severity: none
+    evidence: "https://science.nasa.gov/uranus/facts/ ; https://nssdc.gsfc.nasa.gov/planetary/factsheet/"
+    note: "NASA: độ nghiêng trục Thiên Vương 97,77°; Fact Sheet ghi chu kỳ tự quay âm cho cả Kim và Thiên Vương. Khớp."
+  - id: C-20
+    claim: "Nguồn 1: Thiên văn Việt Nam (VACA), tier 2 — nguồn gốc của toàn bộ bài (“Biên tập lại từ bài…”)."
+    verdict: unverifiable
+    severity: S3
+    evidence: "—"
+    note: "Cả domain thienvanvietnam.org không phân giải DNS ngày 17/09/2026 (đã thử curl). VACA là CLB thiên văn nghiệp dư, không phải cơ quan bậc 2; accessedAt THIẾU. Nguồn này đang đỡ định nghĩa, phân nhóm, đường tuyết, tên gọi, Hành tinh thứ chín — toàn bộ phần chữ. Bốn nguồn NASA chỉ đỡ số vệ tinh và Sao Kim. Bài under-sourced."
+fixes:
+  - "Bỏ nguồn VACA khỏi vai trò đỡ claim (domain đã chết, là CLB nghiệp dư); xoá nhãn tier 2."
+  - "Thêm NASA Planetary Fact Sheet (https://nssdc.gsfc.nasa.gov/planetary/factsheet/) làm nguồn cho bảng thông số, kèm accessedAt."
+  - "Sửa khoảng cách Sao Thổ từ 9,54 thành 9,57 AU; cân nhắc sửa chu kỳ Thiên Vương 84,0 thành 83,7 năm."
+  - "Thay điều kiện 3 bằng bản dịch sát văn bản IAU: “(c) đã dọn sạch vùng lân cận quanh quỹ đạo của nó”; bỏ “ưu thế hấp dẫn tuyệt đối” và “trừ vệ tinh của chính nó”; gắn nguồn nghị quyết IAU 2006."
+  - "Cắt vế “theo đúng thứ tự chúng được phát hiện” trong đoạn Saturn/Uranus; nếu muốn giữ ý phát hiện, viết: Sao Thiên Vương được William Herschel phát hiện năm 1781, hành tinh đầu tiên tìm bằng kính thiên văn (nguồn NASA Uranus Facts)."
+  - "Thêm mốc “(tính tới 9/2026)” cho năm hành tinh lùn và cho câu Hành tinh thứ chín chưa được quan sát."
+  - "Thêm nguồn cho số 128 vệ tinh Sao Thổ tháng 3/2025, hoặc cắt câu."
+  - "Thêm nguồn neptunefact cho 16 vệ tinh Sao Hải Vương; ghi rõ các trang NASA dùng tiêu chí đếm khác nhau."
+  - "Gắn nguồn hoặc cắt: cấu trúc trong băng khổng lồ vs hydro kim loại; câu “không phải trùng hợp” về đường tuyết; định nghĩa hành tinh dưới cấp sao; lý do đặt tên Neptune theo màu."
+  - "Gắn Batygin & Brown 2016 (AJ 151:22) cho đoạn Hành tinh thứ chín và thêm một câu rằng giả thuyết còn tranh luận."
+suggestedSources:
+  - title: Planetary Fact Sheet - Metric
+    url: https://nssdc.gsfc.nasa.gov/planetary/factsheet/
+    doi: ""
+    publisher: NASA Goddard Space Flight Center (NSSDCA)
+    year: 2026
+    tier: 2
+    covers: "Bảng thông số: đường kính, khoảng cách, chu kỳ quỹ đạo, chu kỳ tự quay, độ dài ngày (không dùng cột số vệ tinh — đã cũ)"
+  - title: Neptune Fact Sheet
+    url: https://nssdc.gsfc.nasa.gov/planetary/factsheet/neptunefact.html
+    doi: ""
+    publisher: NASA Goddard Space Flight Center (NSSDCA)
+    year: 2026
+    tier: 2
+    covers: "Chu kỳ quỹ đạo 60.189 ngày, bán trục lớn, 16 vệ tinh Sao Hải Vương"
+  - title: "IAU 2006 General Assembly: Result of the IAU Resolution votes (iau0603)"
+    url: https://iauarchive.eso.org/news/pressreleases/detail/iau0603/
+    doi: ""
+    publisher: International Astronomical Union
+    year: 2006
+    tier: 2
+    covers: "Văn bản định nghĩa hành tinh, hành tinh lùn, Small Solar System Bodies; Pluto là hành tinh lùn"
+  - title: "Resolution B5 Definition of a Planet in the Solar System; Resolution B6 Pluto (PDF)"
+    url: https://iauarchive.eso.org/static/resolutions/Resolution_GA26-5-6.pdf
+    doi: ""
+    publisher: International Astronomical Union
+    year: 2006
+    tier: 2
+    covers: "Văn bản chính thức B5/B6 (tệp tồn tại và tải được; lớp chữ không trích tự động được, nội dung đối chiếu qua trang iau0603)"
+  - title: Dwarf Planets
+    url: https://science.nasa.gov/dwarf-planets/
+    doi: ""
+    publisher: NASA Science
+    year: 2026
+    tier: 2
+    covers: "Năm hành tinh lùn được IAU công nhận"
+  - title: Uranus Facts
+    url: https://science.nasa.gov/uranus/facts/
+    doi: ""
+    publisher: NASA Science
+    year: 2026
+    tier: 2
+    covers: "Herschel phát hiện Thiên Vương năm 1781; độ nghiêng trục 97,77°"
+  - title: Evidence for a Distant Giant Planet in the Solar System
+    url: https://arxiv.org/abs/1601.05438
+    doi: 10.3847/0004-6256/151/2/22
+    publisher: The Astronomical Journal (AAS)
+    year: 2016
+    tier: 1
+    covers: "Đoạn Hành tinh thứ chín"
+openQuestions:
+  - "Dòng “Biên tập lại từ bài… Bản quyền nội dung gốc thuộc về VACA”: bài là tác phẩm phái sinh từ một nguồn nay không truy cập được — cần người quyết có giữ nội dung phái sinh và dòng ghi công này, hay viết lại độc lập từ nguồn bậc 1–2."
+  - "Cột vệ tinh gộp ba tiêu chí đếm khác nhau của NASA (IAU công nhận / confirmed / known). Có chuẩn hoá về một tiêu chí duy nhất không?"

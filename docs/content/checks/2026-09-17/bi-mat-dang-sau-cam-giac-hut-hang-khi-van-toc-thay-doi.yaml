@@ -1,0 +1,73 @@
+slug: bi-mat-dang-sau-cam-giac-hut-hang-khi-van-toc-thay-doi
+checkedAt: 2026-09-17
+checkedBy: science-editor
+sourceCount: 0
+verdict: revise
+summary: "Không có nguồn nào nên không thể pass; phần quán tính và phân vai sỏi tai/ống bán khuyên cơ bản đúng, nhưng nghiêng đầu bị gán sai cho ống bán khuyên, và các khẳng định sinh lý (cảm giác căng kéo nội tạng, não diễn giải, chóng mặt, “chủ yếu đến từ sỏi tai”) không có nguồn sinh lý học nào đỡ."
+claims:
+  - id: C-1
+    claim: "Theo Định luật I Newton, vật có xu hướng giữ nguyên trạng thái chuyển động; khi xe tăng tốc, ghế đẩy lưng về trước còn cơ thể “chưa kịp” đổi vận tốc; khi phanh gấp, cơ thể tiếp tục lao về trước."
+    verdict: verified
+    severity: S3
+    evidence: "https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/newtons-laws-of-motion/"
+    note: "NASA Glenn: “An object at rest remains at rest, and an object in motion remains in motion at constant speed and in a straight line unless acted on by an unbalanced force.” Đúng; S3 vì bài không gắn nguồn."
+  - id: C-2
+    claim: "Cơ quan sỏi tai — soan nang và cầu nang — cảm nhận gia tốc thẳng."
+    verdict: verified
+    severity: S3
+    evidence: "https://www.nidcd.nih.gov/health/balance-disorders"
+    note: "NIDCD: soan nang và cầu nang báo vị trí đầu so với trọng lực và chuyển động thẳng (lên–xuống, trước–sau, sang ngang). Đúng; thiếu nguồn. Nên bổ sung ý sỏi tai cũng cảm nhận trọng lực — đó là lý do tăng tốc có thể bị cảm nhận như ngả người ra sau."
+  - id: C-3
+    claim: "Ống bán khuyên cảm nhận chuyển động xoay, “tức khi bạn quay hay nghiêng đầu”."
+    verdict: partially-supported
+    severity: S3
+    evidence: "https://www.nidcd.nih.gov/health/balance-disorders"
+    note: "NIDCD: ống bán khuyên báo khi đầu xoay; còn tư thế đầu so với trọng lực (“sitting up, leaning back, or lying down”) là việc của sỏi tai. Động tác nghiêng đầu có thành phần xoay, nhưng tư thế nghiêng giữ yên thì do sỏi tai cảm nhận. Sửa thành “khi bạn xoay đầu” và chuyển ý nghiêng/tư thế sang sỏi tai."
+  - id: C-4
+    claim: "Lớp màng chứa sỏi tai bị trễ lại so với lớp tế bào cảm nhận bên dưới, độ lệch đó kích thích tế bào và gửi tín hiệu về não."
+    verdict: unverifiable
+    severity: S3
+    evidence: "—"
+    note: "Mô tả cơ chế phù hợp giải phẫu chuẩn nhưng trang NIDCD đã mở không mô tả chi tiết màng sỏi tai trễ pha; không mở được StatPearls (NCBI chặn truy cập tự động). Gắn nguồn sinh lý học tier 1–2 mô tả màng sỏi tai và tế bào lông, hoặc rút gọn câu."
+  - id: C-5
+    claim: "Lực chỉ tác động lên phần tiếp xúc với xe; đầu, cơ bắp, nội tạng tiếp tục theo trạng thái cũ, tạo cảm giác căng kéo mà não diễn giải thành “hụt hẫng”."
+    verdict: unverifiable
+    severity: S3
+    evidence: "—"
+    note: "Phần vật lý (lực truyền qua điểm tiếp xúc) hợp lý, nhưng khẳng định não diễn giải tín hiệu căng kéo nội tạng/cơ thành cảm giác “hụt hẫng” là claim sinh lý cảm giác bản thể, không có nguồn. Gắn nguồn sinh lý học hoặc hạ xuống “có thể góp phần”; nghi ngờ thì cắt."
+  - id: C-6
+    claim: "Cảm giác bị kéo khi xe thay đổi vận tốc chủ yếu đến từ nhóm sỏi tai."
+    verdict: unverifiable
+    severity: S3
+    evidence: "—"
+    note: "Mâu thuẫn nhẹ với đoạn trước nói cảm giác căng kéo cơ thể cũng tạo ra “hụt hẫng”; không nguồn nào xác định phần nào “chủ yếu”. Cắt chữ “chủ yếu” hoặc gắn nguồn định lượng."
+  - id: C-7
+    claim: "Quá trình này tạo nên cảm giác bị kéo, chao đảo hoặc đôi khi là chóng mặt."
+    verdict: unverifiable
+    severity: S3
+    evidence: "—"
+    note: "Không nguồn. Chóng mặt do thay đổi vận tốc tuyến tính ngắn là claim y khoa; cắt “chóng mặt” hoặc gắn nguồn."
+fixes:
+  - "Gắn NIDCD https://www.nidcd.nih.gov/health/balance-disorders làm nguồn cho mục tai trong, và NASA Glenn Newton's Laws of Motion cho mục quán tính."
+  - "Sửa “Ống bán khuyên ... khi bạn quay hay nghiêng đầu” thành “khi bạn xoay đầu”; ghi rõ tư thế đầu so với trọng lực do sỏi tai cảm nhận."
+  - "Gắn nguồn sinh lý học tier 1–2 cho cơ chế màng sỏi tai trễ so với tế bào lông, hoặc rút gọn đoạn đó."
+  - "Cắt hoặc gắn nguồn cho: “não diễn giải tín hiệu căng kéo nội tạng thành cảm giác hụt hẫng”, “chủ yếu đến từ nhóm thứ nhất”, “đôi khi là chóng mặt”."
+  - "Thống nhất tiêu đề với slug: tiêu đề hiện là “Tại sao chúng ta bị hẫng khi thay đổi tốc độ?” còn slug là “bi-mat-dang-sau-cam-giac-hut-hang...”."
+suggestedSources:
+  - title: "Balance Disorders"
+    url: https://www.nidcd.nih.gov/health/balance-disorders
+    doi:
+    publisher: "National Institute on Deafness and Other Communication Disorders (NIH)"
+    year:
+    tier: 2
+    covers: "Ống bán khuyên (xoay đầu) và soan nang/cầu nang (trọng lực, tư thế, chuyển động thẳng)"
+  - title: "Newton's Laws of Motion"
+    url: https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/newtons-laws-of-motion/
+    doi:
+    publisher: "NASA Glenn Research Center"
+    year:
+    tier: 2
+    covers: "Định luật I Newton — mục quán tính"
+openQuestions:
+  - "Trong tiếng Việt, “hụt hẫng” thường gợi cảm giác rơi khi thang máy/tàu lượn đi xuống (giảm trọng lượng biểu kiến, gia tốc theo phương thẳng đứng), nhưng bài chỉ bàn xe tăng/giảm tốc theo phương ngang. Cần quyết phạm vi bài: đổi tên cho khớp nội dung hay bổ sung phần gia tốc thẳng đứng."
+  - "Bài 0 nguồn nhưng hồ sơ ghi status PUBLISHED — gate xuất bản đã cho qua thế nào?"

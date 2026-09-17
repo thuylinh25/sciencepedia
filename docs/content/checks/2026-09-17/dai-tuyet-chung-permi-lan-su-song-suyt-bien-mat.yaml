@@ -1,0 +1,184 @@
+slug: dai-tuyet-chung-permi-lan-su-song-suyt-bien-mat
+checkedAt: 2026-09-17
+checkedBy: science-editor
+sourceCount: 1
+verdict: reject
+summary: "Nguồn duy nhất (bài VACA 2012, bị gắn nhầm tier 2, không trích dẫn peer-review) KHÔNG đỡ các con số chính của bài — nguồn ghi 95% loài biển, 250 triệu năm, 1,5 triệu km³ dung nham và coi giả thuyết fullerene là 'khá thuyết phục', còn bài ghi 80%, 252 triệu năm, 1–4 triệu km³ và nói fullerene đã bị bác: nguồn gắn sai claim là S1. Phần lớn nội dung thật ra đúng hơn nguồn và cứu được, nhưng phải dựng lại từ nguồn peer-review; ngoài ra 'lần duy nhất côn trùng bị tuyệt chủng hàng loạt' bị Nature Communications 2022 bác."
+claims:
+  - id: C-0
+    claim: "Nguồn duy nhất: 'Đại tuyệt chủng Permi, vụ thảm sát đẫm máu nhất lịch sử' — Đặng Vũ Tuấn Sơn, Thiên văn Việt Nam (VACA), tier 2; nội dung 'Biên tập lại từ bài' này"
+    verdict: contradicted
+    severity: S1
+    evidence: https://www.thienvanvietnam.org/?option=com_content&view=article&id=570:dai-tuyet-chung-permi-vu-tham-sat-dam-mau-nhat-lich-su&catid=37:trai-dat&Itemid=145
+    note: "Đã mở được trang (lần đầu lỗi DNS EAI_AGAIN tạm thời, lần sau vào được — link KHÔNG chết). Bài đăng 09/08/2012, không có danh mục tham khảo peer-review. Trang này ghi: ~250 triệu năm, 95% loài biển, 70%+ loài trên cạn, 1,5 triệu km³ dung nham, giả thuyết fullerene 'khá thuyết phục'. Bài SciencePedia ghi 252 triệu năm, 80%, 1–4 triệu km³, fullerene 'không lặp lại được'. Tức là các con số trong bài KHÔNG đến từ nguồn được gắn. Đây là hội thiên văn phổ thông, không phải cơ quan khoa học — theo thang nguồn, tối đa là tài liệu bối cảnh (bậc 4), không được làm nguồn đỡ duy nhất; gắn tier 2 là sai. Dòng 'Biên tập lại từ bài ... của VACA' gây hiểu nhầm về nguồn gốc số liệu."
+  - id: C-1
+    claim: "Đại tuyệt chủng Permi diễn ra khoảng 252 triệu năm trước"
+    verdict: partially-supported
+    severity: S3
+    evidence: https://pmc.ncbi.nlm.nih.gov/articles/PMC7080820/
+    note: "Đúng về làm tròn nhưng thiếu sai số theo yêu cầu. Nature Communications 2020 (doi 10.1038/s41467-020-15243-7), dựa trên niên đại U-Pb zircon ở Meishan: 'The marine event began at 251.941 ± 0.037 Ma', ranh giới Permi–Trias 'placed at 251.902 ± 0.024 Ma (2σ)'. Sửa thành 'bắt đầu khoảng 251,94 ± 0,04 triệu năm trước; ranh giới Permi–Trias đặt ở 251,902 ± 0,024 triệu năm' và gắn Burgess, Bowring & Shen 2014 (PNAS, doi 10.1073/pnas.1317692111) làm nguồn niên đại gốc."
+  - id: C-2
+    claim: "Khoảng 80% số loài sinh vật biển biến mất (summary và thân bài)"
+    verdict: partially-supported
+    severity: S3
+    evidence: https://pmc.ncbi.nlm.nih.gov/articles/PMC5081622/
+    note: "Stanley 2016 (PNAS, doi 10.1073/pnas.1613094113): 'An estimate of ∼81% is made here for extinction of species', 'much lower than the frequently cited estimate of 88–96% by Raup'. Con số của bài gần đúng ước tính này nhưng không nguồn, và bài giấu việc các ước tính khác nhau (Chen & Benton 2012 vẫn ghi >90%). Sửa: 'khoảng 81% loài biển theo ước tính của Stanley (2016); các ước tính cũ hơn là 88–96%'. Đây là bất định thật về phương pháp — trình bày cả hai, không tự phân xử."
+  - id: C-3
+    claim: "Khoảng 70% số loài động vật có xương sống trên cạn biến mất"
+    verdict: unverifiable
+    severity: S3
+    evidence: "—"
+    note: "Không mở được nguồn bậc 1 trong lượt này (chỉ thấy trên trang tổng hợp). Nguồn VACA ghi '70%+ loài trên cạn' — khác đối tượng (loài nói chung, không riêng động vật có xương sống). Số không nguồn → cắt, hoặc tìm bài peer-review và ghi rõ đơn vị (loài hay chi)."
+  - id: C-4
+    claim: "Đây là lần duy nhất trong lịch sử mà côn trùng cũng chịu một cuộc tuyệt chủng hàng loạt"
+    verdict: contradicted
+    severity: S2
+    evidence: https://pmc.ncbi.nlm.nih.gov/articles/PMC9726944/
+    note: "Nature Communications 2022 (doi 10.1038/s41467-022-35284-4): cuối Permi làm mất 82,6% chi côn trùng — mạnh nhất — nhưng các đỉnh tuyệt chủng côn trùng cũng được ghi nhận ở ranh giới Roadian/Wordian (64,5% chi) và Ladinian/Carnian (74,8% chi). Sửa: 'Đây là đợt tuyệt chủng côn trùng nặng nhất được ghi nhận — khoảng 82,6% chi biến mất.'"
+  - id: C-5
+    claim: "Không có sự kiện nào khác trong 540 triệu năm qua tiến gần được tới mức đó"
+    verdict: verified
+    severity: S4
+    evidence: https://api.crossref.org/works/10.1073/pnas.1317692111
+    note: "Burgess, Bowring & Shen 2014: 'the most severe loss of marine and terrestrial biota in the last 542 My'. Gắn nguồn này; đổi '540' thành '542' hoặc 'hơn 500'."
+  - id: C-6
+    claim: "Hệ sinh thái biển phải mất khoảng 10 triệu năm mới hồi phục về mức đa dạng cũ"
+    verdict: partially-supported
+    severity: S4
+    evidence: https://research-information.bris.ac.uk/en/publications/the-timing-and-pattern-of-biotic-recovery-following-the-end-permi/
+    note: "Chen & Benton 2012 (Nature Geoscience, doi 10.1038/NGEO1475): một số nhóm đa dạng hoá lại trong 1–3 triệu năm; 'a stable, complex ecosystem did not re-emerge until the beginning of the Middle Triassic, 8–9 Myr after the crisis'. Nguồn nói về hệ sinh thái ổn định, phức tạp — không phải 'mức đa dạng cũ'. Sửa: 'hệ sinh thái ổn định, phức tạp chỉ xuất hiện lại sau khoảng 8–9 triệu năm'."
+  - id: C-7
+    claim: "Siberian Traps phun trào trong khoảng vài trăm nghìn năm, trùng với ranh giới tuyệt chủng ở độ chính xác vài chục nghìn năm; tuyệt chủng diễn ra trong vài chục nghìn năm (summary)"
+    verdict: unverifiable
+    severity: S3
+    evidence: "—"
+    note: "Theo kết quả tìm kiếm, Burgess 2014 cho khoảng tuyệt chủng 60 ± 48 nghìn năm (khớp 'vài chục nghìn năm'), nhưng trang PNAS và Science Advances (Burgess & Bowring 2015, niên đại Siberian Traps) đều trả 403 trong lượt này, nên chưa đối chiếu được tại nguồn. Mở kiểm rồi ghi số kèm sai số; nếu không mở được thì cắt thời lượng phun trào."
+  - id: C-8
+    claim: "Lượng dung nham Siberian Traps ước tính khoảng 1–4 triệu km³; những vụ phun trào lớn nhất loài người ghi nhận hiếm khi vượt vài km³"
+    verdict: unverifiable
+    severity: S3
+    evidence: "—"
+    note: "Nguồn gắn (VACA) ghi 1,5 triệu km³ — không phải khoảng 1–4. Kết quả tìm kiếm (Elements Magazine) nêu ~4×10⁶ km³, nhưng chưa mở kiểm được. Bài peer-review mở được (Augland 2019, Sci Rep) chỉ nêu diện tích đến 5 triệu km², không nêu thể tích. Khoảng '1–4' trông như gộp tuỳ ý — cắt hoặc thay bằng một con số có nguồn, ghi rõ là dung nham hay tổng magma. Phần so sánh 'vài km³' không có nguồn — cắt."
+  - id: C-9
+    claim: "Ước lượng đồng vị oxy cho thấy nước biển nhiệt đới ấm lên khoảng 8–10 °C"
+    verdict: unverifiable
+    severity: S3
+    evidence: "—"
+    note: "Theo kết quả tìm kiếm, Joachimski và cộng sự 2012 (Geology 40:195–198) đo đồng vị oxy trong apatit conodont và suy ra nước mặt vĩ độ thấp ấm lên ~8 °C; Sun và cộng sự 2012 (Science) nêu nhiệt độ mặt biển ~40 °C đầu Trias. Chưa mở được trang của hai bài (403/chặn). Cận trên 10 °C chưa thấy nguồn nào đỡ. Mở Joachimski 2012, rồi ghi '~8 °C' theo đó; bỏ '10'."
+  - id: C-10
+    claim: "Axit hoá đại dương và thiếu oxy trên diện rộng là cơ chế giết chóc đi kèm; trầm tích mang dấu vết thiếu oxy, thậm chí nhiễm độc sunfua"
+    verdict: partially-supported
+    severity: S4
+    evidence: https://research-information.bris.ac.uk/en/publications/the-timing-and-pattern-of-biotic-recovery-following-the-end-permi/
+    note: "Chen & Benton 2012 liệt kê nóng lên toàn cầu, axit hoá đại dương và thiếu oxy trong đại dương là các cú sốc môi trường. Phần 'nhiễm độc sunfua' (euxinia) và 'phá huỷ khả năng tạo vỏ' của san hô, tay cuộn chưa có nguồn — gắn nguồn hoặc cắt."
+  - id: C-11
+    claim: "Magma xuyên qua tầng than và hydrocarbon của lòng chảo Tunguska, giải phóng thêm carbon và khí halogen phá huỷ tầng ozone"
+    verdict: unverifiable
+    severity: S3
+    evidence: "—"
+    note: "Không mở được nguồn trong lượt này. Là giả thuyết cơ chế cụ thể — cần nguồn peer-review và phải trình bày là giả thuyết đang được ủng hộ, không phải sự thật đã xác lập."
+  - id: C-12
+    claim: "Bốn cơ chế này nối tiếp nhau, và đó là lý do cuộc tuyệt chủng kéo dài chứ không tức thời"
+    verdict: unsupported
+    severity: S3
+    evidence: "—"
+    note: "Suy diễn của người viết. Còn lệch với chính summary ('trong vài chục nghìn năm' — theo thang địa chất là rất nhanh). Cắt câu quan hệ nhân quả này."
+  - id: C-13
+    claim: "Đầu những năm 2000, một nhóm công bố fullerene chứa heli-3 và argon-36 ở ranh giới Permi–Trias, kết luận có va chạm tiểu hành tinh"
+    verdict: verified
+    severity: S4
+    evidence: https://www.giss.nasa.gov/pubs/abs/be01000b.html
+    note: "Becker, Poreda, Hunt, Bunch & Rampino 2001, Science 291:1530–1533: fullerene chứa heli và argon 'with isotope ratios similar to the planetary component of carbonaceous chondrites'. Nêu tên tác giả + năm; tóm tắt nguồn nói heli và argon chung, kiểm lại cụ thể '³He và ³⁶Ar' trong toàn văn trước khi giữ."
+  - id: C-14
+    claim: "Kết quả không lặp lại được; nhiều phòng thí nghiệm độc lập phân tích cùng loại mẫu không thấy tín hiệu"
+    verdict: unverifiable
+    severity: S3
+    evidence: "—"
+    note: "Theo kết quả tìm kiếm, Farley, Ward, Garrison & Mukhopadhyay 2005 ('Absence of extraterrestrial 3He in Permian–Triassic age sedimentary rocks', Earth and Planetary Science Letters 240:265–275) không thấy ³He ngoài Trái Đất; trang ScienceDirect trả 403 nên chưa đối chiếu tại nguồn. Nội dung gần như chắc đúng nhưng phải gắn bài này sau khi mở được. Lưu ý: có một bài 2019 trên Progress in Earth and Planetary Science tiêu đề 'Enhanced flux of extraterrestrial 3He across the Permian–Triassic boundary' (lượt này mới thấy tiêu đề, chưa mở) — phải mở kiểm bài này trước khi viết rằng không phòng thí nghiệm nào thấy tín hiệu ³He."
+  - id: C-15
+    claim: "Hố Bedout không được công nhận; ranh giới Permi–Trias không có lớp iridium toàn cầu, không có thạch anh biến dạng do sốc, không có hố va chạm"
+    verdict: unverifiable
+    severity: S3
+    evidence: "—"
+    note: "Không mở được nguồn trong lượt này. Ba chữ 'không có' là khẳng định phủ định tuyệt đối — cần nguồn tổng quan peer-review nói đúng như vậy, nếu không thì viết 'không có bằng chứng va chạm được chấp nhận rộng rãi'."
+  - id: C-16
+    claim: "Pangaea làm giảm diện tích thềm lục địa nông, khí hậu cực đoan, tuần hoàn đại dương đơn giản hoá; 'một hành tinh có đất liền gộp thành một khối là hành tinh có hệ sinh thái kém bền hơn'"
+    verdict: unsupported
+    severity: S3
+    evidence: "—"
+    note: "Không nguồn. Câu khái quát cuối là tuyên bố chung không có cơ sở — cắt. Ba gạch đầu dòng: tìm nguồn hoặc cắt."
+  - id: C-17
+    claim: "Bọ ba thuỳ bị xoá sổ sau 270 triệu năm tồn tại; phần lớn therapsid biến mất; archosaur rồi khủng long thống trị 165 triệu năm tiếp theo"
+    verdict: unverifiable
+    severity: S4
+    evidence: "—"
+    note: "Không kiểm được tại nguồn trong lượt này. Hai con số 270 và 165 triệu năm cần nguồn hoặc đổi thành mô tả không số."
+  - id: C-18
+    claim: "Cơ chế chính — bơm carbon vào khí quyển nhanh hơn tốc độ hệ Trái Đất hấp thụ — là điều loài người đang làm, chỉ nhanh hơn nhiều bậc"
+    verdict: unverifiable
+    severity: S3
+    evidence: "—"
+    note: "So sánh tốc độ phát thải hiện đại với cuối Permi là claim định lượng ('nhiều bậc') cần nguồn peer-review về tốc độ phát thải cuối Permi và nguồn IPCC cho hiện tại. Không có → cắt 'nhanh hơn nhiều bậc'; giữ phép so sánh định tính nếu có nguồn."
+  - id: C-19
+    claim: "Summary: 'Thủ phạm không phải một thiên thạch mà là một vùng núi lửa'"
+    verdict: partially-supported
+    severity: S3
+    evidence: https://research-information.bris.ac.uk/en/publications/the-timing-and-pattern-of-biotic-recovery-following-the-end-permi/
+    note: "Thân bài viết đúng mức ('giải thích được chấp nhận rộng rãi nhất'), summary thì khẳng định chắc. Giữ mức dè dặt của thân bài trong summary, và gắn mốc năm cho 'hiện nay'/'đến nay'."
+fixes:
+  - "Gỡ nguồn VACA khỏi vai trò nguồn đỡ (tối đa là tham khảo bối cảnh, bậc 4) và bỏ dòng 'Biên tập lại từ bài...' hoặc đổi thành ghi công đúng sự thật sau khi rõ quyền sử dụng."
+  - "Đưa bài về bước 1 (content-research) và gắn nguồn peer-review cho từng con số theo danh sách suggestedSources."
+  - "Đổi '252 triệu năm' thành '251,941 ± 0,037 triệu năm (bắt đầu)' và nêu ranh giới 251,902 ± 0,024 triệu năm."
+  - "Đổi '80% loài biển' thành 'khoảng 81% (Stanley 2016); các ước tính cũ hơn 88–96%'."
+  - "Sửa câu côn trùng thành 'đợt tuyệt chủng côn trùng nặng nhất được ghi nhận, ~82,6% chi'."
+  - "Đổi 'khoảng 10 triệu năm hồi phục' thành 'hệ sinh thái ổn định, phức tạp xuất hiện lại sau 8–9 triệu năm'."
+  - "Cắt '1–4 triệu km³' và câu 'vài km³' cho tới khi có con số từ nguồn peer-review đã mở; cắt cận trên '10 °C'."
+  - "Cắt câu 'bốn cơ chế nối tiếp nhau là lý do kéo dài', câu khái quát về Pangaea và 'nhanh hơn nhiều bậc' nếu không có nguồn."
+  - "Gắn Becker 2001 và Farley 2005 cho mục giả thuyết fullerene; mở kiểm bài 2019 về thông lượng ³He qua ranh giới trước khi viết câu 'không lặp lại được'."
+suggestedSources:
+  - title: "High-precision timeline for Earth's most severe extinction"
+    url: https://www.pnas.org/doi/10.1073/pnas.1317692111
+    doi: 10.1073/pnas.1317692111
+    publisher: PNAS
+    year: 2014
+    tier: 1
+    covers: "niên đại tuyệt chủng; 'nặng nhất trong 542 triệu năm' (đã mở tóm tắt qua Crossref; trang PNAS trả 403)"
+  - title: "The base of the Lystrosaurus Assemblage Zone, Karoo Basin, predates the end-Permian marine extinction"
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC7080820/
+    doi: 10.1038/s41467-020-15243-7
+    publisher: Nature Communications
+    year: 2020
+    tier: 1
+    covers: "251,941 ± 0,037 Ma (bắt đầu tuyệt chủng biển), ranh giới 251,902 ± 0,024 Ma"
+  - title: "Estimates of the magnitudes of major marine mass extinctions in earth history"
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC5081622/
+    doi: 10.1073/pnas.1613094113
+    publisher: PNAS
+    year: 2016
+    tier: 1
+    covers: "~81% loài biển, so với ước tính cũ 88–96%"
+  - title: "The timing and pattern of biotic recovery following the end-Permian mass extinction"
+    url: https://research-information.bris.ac.uk/en/publications/the-timing-and-pattern-of-biotic-recovery-following-the-end-permi/
+    doi: 10.1038/NGEO1475
+    publisher: Nature Geoscience
+    year: 2012
+    tier: 1
+    covers: "thời gian hồi phục 8–9 triệu năm; các cú sốc môi trường (nóng lên, axit hoá, thiếu oxy)"
+  - title: "Multiple drivers and lineage-specific insect extinctions during the Permo–Triassic"
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC9726944/
+    doi: 10.1038/s41467-022-35284-4
+    publisher: Nature Communications
+    year: 2022
+    tier: 1
+    covers: "tuyệt chủng côn trùng: 82,6% chi cuối Permi, và các đỉnh khác"
+  - title: "Becker et al. 2001 — Impact event at the Permian-Triassic boundary: Evidence from extraterrestrial noble gases in fullerenes (abstract)"
+    url: https://www.giss.nasa.gov/pubs/abs/be01000b.html
+    doi: ""
+    publisher: NASA GISS (tóm tắt bài Science 291:1530–1533)
+    year: 2001
+    tier: 2
+    covers: "mục 'Một giả thuyết đã không đứng vững' — nội dung giả thuyết gốc"
+openQuestions:
+  - "Quyền sử dụng: bài ghi 'Biên tập lại từ bài ... Bản quyền nội dung gốc thuộc về VACA'. Có giấy phép tái sử dụng/phái sinh không? Nếu viết lại hoàn toàn từ nguồn peer-review thì dòng ghi công này có còn đúng không? Cần người quyết."
+  - "Tỉ lệ loài biển biến mất: 81% (Stanley 2016, rarefaction) và 90–96% (Raup; vẫn được Chen & Benton 2012 dùng) phản ánh khác biệt phương pháp. Science-editor không phân xử — bài nên trình bày cả hai."
+  - "Bài đang PUBLISHED với con số không có nguồn đỡ. Đăng đính chính công khai cho các con số đổi (quy tắc 9) hay gỡ xuống trong lúc dựng lại? Cần người quyết."

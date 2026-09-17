@@ -1,0 +1,164 @@
+slug: sao-hai-vuong-hanh-tinh-tim-ra-bang-toan-hoc
+checkedAt: 2026-09-17
+checkedBy: science-editor
+sourceCount: 1
+verdict: revise
+summary: Số liệu chính (gió 2.100 km/h, 1/900 ánh sáng, 2,6 lần năng lượng, lệch dưới 1 độ) đều khớp nguồn, nhưng bài nâng mức tự tin về Triton ("dấu hiệu rõ ràng", "sẽ bị xé"), trình bày quy kết Le Verrier–Adams như ngang hàng mà không nêu tranh chấp ưu tiên, bỏ d'Arrest, và chỉ có một Fact Sheet làm nguồn.
+claims:
+  - id: C-1
+    claim: "Đầu thế kỷ 19, các nhà thiên văn nhận thấy quỹ đạo Sao Thiên Vương lệch khỏi dự đoán."
+    verdict: unverifiable
+    severity: S4
+    evidence: "—"
+    note: Không mở nguồn lịch sử nêu mốc này trong lượt này; Fact Sheet không đề cập. Gắn nguồn lịch sử thiên văn.
+  - id: C-2
+    claim: "Urbain Le Verrier và John Couch Adams độc lập tính toán vị trí hành tinh chưa biết."
+    verdict: partially-supported
+    severity: S3
+    evidence: https://www.astronomy.com/science/neptunes-discovery/
+    note: "Astronomy.com: Adams dự đoán độc lập trước đó nhưng 'did not publish his results'; phát hiện gây tranh chấp Anh–Pháp. NASA Neptune Facts chỉ ghi công Le Verrier dự đoán và Galle quan sát, không nhắc Adams. Câu trong bài đặt hai người ngang hàng mà không nêu: Le Verrier công bố, tính toán của ông dẫn trực tiếp tới quan sát; của Adams không công bố và không dẫn tới quan sát. Quy kết 'đồng phát hiện' là đồng thuận thoả hiệp thế kỷ 19 và đã bị giới sử học xem xét lại — xem openQuestions."
+  - id: C-3
+    claim: "Năm 1846, Johann Galle hướng kính về toạ độ Le Verrier đưa ra và tìm thấy Sao Hải Vương."
+    verdict: verified
+    severity: S4
+    evidence: https://science.nasa.gov/neptune/neptune-facts/
+    note: "NASA: Galle ở Đài thiên văn Berlin tìm thấy 'on his first night of searching in 1846'. Astronomy.com: đêm 23–24/9/1846, cùng trợ lý Heinrich d'Arrest, dùng bản đồ sao. Bài bỏ d'Arrest — thêm tên và ngày."
+  - id: C-4
+    claim: "...chỉ trong vòng một giờ."
+    verdict: verified
+    severity: none
+    evidence: https://www.astronomy.com/science/neptunes-discovery/
+    note: "Astronomy.com: 'After about half an hour of searching'. 'Trong vòng một giờ' đúng; có thể chính xác hơn: 'khoảng nửa giờ'."
+  - id: C-5
+    claim: "...lệch chưa tới 1 độ."
+    verdict: verified
+    severity: none
+    evidence: https://www.astronomy.com/science/neptunes-discovery/
+    note: "Astronomy.com: 'only 55 arcminutes (about two Moon diameters) from Le Verrier's calculated position'. Khớp."
+  - id: C-6
+    claim: "Summary: được dự đoán bằng tính toán nhiễu loạn quỹ đạo trước khi ai kịp nhìn thấy."
+    verdict: unverifiable
+    severity: S3
+    evidence: https://science.nasa.gov/neptune/neptune-facts/
+    note: "NASA viết 'first planet located through mathematical predictions rather than through regular observations' — tức được ĐỊNH VỊ nhờ toán, không phải 'chưa ai nhìn thấy'. 'Trước khi ai kịp nhìn thấy' là claim mạnh hơn nguồn, chưa kiểm được. Sửa thành 'được định vị nhờ tính toán trước khi được nhận ra qua kính thiên văn'."
+  - id: C-7
+    claim: "Sao Hải Vương nhận lượng ánh sáng chỉ bằng 1/900 Trái Đất."
+    verdict: verified
+    severity: none
+    evidence: https://science.nasa.gov/neptune/neptune-facts/
+    note: "NASA: ánh sáng trên Trái Đất 'roughly 900 times as bright as sunlight on Neptune'. Khớp; bán trục lớn 30,07 AU (Fact Sheet) → 1/904."
+  - id: C-8
+    claim: "Khí quyển hoạt động dữ dội nhất hệ / gió mạnh nhất Hệ Mặt Trời (summary)."
+    verdict: partially-supported
+    severity: S4
+    evidence: https://science.nasa.gov/neptune/neptune-facts/
+    note: "NASA: gió 'can be three times stronger than Jupiter's and nine times stronger than Earth's'. Nguồn đỡ 'gió rất mạnh' nhưng không nói nguyên văn 'mạnh nhất Hệ Mặt Trời' hay 'dữ dội nhất'. Viết theo so sánh của NASA."
+  - id: C-9
+    claim: "Gió đạt tới khoảng 2.100 km/h."
+    verdict: verified
+    severity: none
+    evidence: https://nssdc.gsfc.nasa.gov/planetary/factsheet/neptunefact.html
+    note: "Fact Sheet: tốc độ gió 0–580 m/s; 580 m/s = 2.088 km/h ≈ 2.100. NASA Neptune Facts ghi 'more than 1,200 miles per hour' (~1.930 km/h). Khớp."
+  - id: C-10
+    claim: "...vượt xa tốc độ âm thanh trong khí quyển Trái Đất."
+    verdict: unverifiable
+    severity: S4
+    evidence: "—"
+    note: "Không mở nguồn tốc độ âm thanh trong lượt này; so sánh với khí quyển Trái Đất cũng không có ý nghĩa vật lý cho khí quyển Sao Hải Vương. Cắt."
+  - id: C-11
+    claim: "Sao Hải Vương phát ra năng lượng gấp khoảng 2,6 lần lượng nhận từ Mặt Trời."
+    verdict: verified
+    severity: S3
+    evidence: https://www.aanda.org/articles/aa/full_html/2024/06/aa48987-23/aa48987-23.html
+    note: "Milcareck et al. 2024 (A&A 686, A303), dẫn Pearl & Conrath 1991: năng lượng hấp thụ 0,27 W m⁻², nội nhiệt 0,43 ± 0,09 W m⁻² → (0,27+0,43)/0,27 ≈ 2,6. Đúng, nhưng nguồn của bài (Fact Sheet) không có thông tin này — thiếu nguồn. Gắn Pearl & Conrath 1991 (DOI 10.1029/91JA01087) hoặc bài A&A."
+  - id: C-12
+    claim: "Voyager 2 chụp xoáy bão tối rộng cỡ Trái Đất năm 1989; Hubble quan sát lại vài năm sau thì nó đã biến mất, vết tối mới xuất hiện nơi khác."
+    verdict: partially-supported
+    severity: S4
+    evidence: https://science.nasa.gov/neptune/neptune-facts/
+    note: "NASA: năm 1989 'Great Dark Spot' đủ lớn chứa cả Trái Đất; 'has since disappeared, but new ones have appeared'. Vế 'Hubble quan sát lại vài năm sau' chưa mở nguồn. Gắn nguồn Hubble hoặc bỏ chi tiết Hubble."
+  - id: C-13
+    claim: "Các cấu trúc bão trên Sao Hải Vương chỉ tồn tại vài năm."
+    verdict: unverifiable
+    severity: S4
+    evidence: "—"
+    note: Không có trong nguồn đã mở. Gắn nguồn Hubble về vòng đời vết tối, hoặc cắt.
+  - id: C-14
+    claim: "Triton quay ngược chiều tự quay của hành tinh."
+    verdict: verified
+    severity: none
+    evidence: https://science.nasa.gov/neptune/moons/triton/
+    note: "NASA: 'the only large moon in our solar system that orbits in the opposite direction of its planet's rotation'. Khớp."
+  - id: C-15
+    claim: "...dấu hiệu rõ ràng rằng nó là một thiên thể vành đai Kuiper bị bắt giữ."
+    verdict: partially-supported
+    severity: S2
+    evidence: https://science.nasa.gov/neptune/neptune-facts/
+    note: "NASA Neptune Facts: quỹ đạo nghịch 'suggests that it may once have been an independent object that Neptune captured'; trang Triton: 'Scientists think Triton is a Kuiper Belt Object captured'. Bài nâng 'gợi ý / có thể' thành 'dấu hiệu rõ ràng rằng nó là' — nâng mức tự tin, lỗi cỡ từ chối theo quy tắc 3. Sửa thành 'gợi ý rằng Triton có thể là một thiên thể vành đai Kuiper bị Sao Hải Vương bắt giữ'."
+  - id: C-16
+    claim: "Triton có hoạt động phun trào nitơ."
+    verdict: partially-supported
+    severity: S4
+    evidence: https://science.nasa.gov/neptune/moons/triton/
+    note: "NASA: Voyager 2 thấy 'active geysers'; khí quyển mỏng 'mainly of nitrogen'. Trang không nói cột phun là nitơ. Viết 'có mạch phun hoạt động (Voyager 2)' hoặc gắn nguồn cho thành phần."
+  - id: C-17
+    claim: "Triton đang dần xoắn vào trong; trong vài tỉ năm nữa nó sẽ bị lực thuỷ triều xé thành một hệ vành đai mới."
+    verdict: unverifiable
+    severity: S3
+    evidence: "—"
+    note: "NASA Triton và Neptune Facts không nói gì về số phận Triton. Chỉ mục tìm kiếm cho thấy Chyba, Jankowski & Nicholson 1989 (A&A 219, L23) ước tính Triton tới giới hạn Roche sau ~3,6 tỉ năm (kịch bản danh nghĩa) và kết cục là HOẶC va vào khí quyển HOẶC vỡ thành vành đai — nhưng trang ADS trả 405, CHƯA mở được nên không dùng làm evidence. Dù vậy, 'sẽ bị xé thành vành đai' là mức chắc chắn cao hơn bất kỳ mô hình nào. Nghi ngờ thì cắt; nếu giữ, mở bài 1989 và viết 'mô hình cho thấy có thể ... hoặc va vào hành tinh'."
+  - id: C-18
+    claim: "Nguồn duy nhất (NASA Planetary Fact Sheet) đỡ toàn bài."
+    verdict: partially-supported
+    severity: S3
+    evidence: https://nssdc.gsfc.nasa.gov/planetary/factsheet/neptunefact.html
+    note: "Fact Sheet chỉ đỡ tốc độ gió và khoảng cách. Không có lịch sử phát hiện, nội nhiệt, Vết Tối Lớn, Triton. accessedAt THIẾU; trang cập nhật 03/10/2024."
+fixes:
+  - "Triton: thay 'dấu hiệu rõ ràng rằng nó là' bằng 'gợi ý rằng nó có thể là', trích NASA Neptune Facts + Triton."
+  - "Triton: cắt câu 'trong vài tỉ năm nữa nó sẽ bị lực thuỷ triều xé thành một hệ vành đai mới'; nếu muốn giữ, người sửa phải mở Chyba et al. 1989 (A&A 219, L23) và viết đủ hai kết cục kèm 'mô hình cho thấy'."
+  - "Phát hiện: viết 'Le Verrier công bố tính toán năm 1846; Galle và trợ lý Heinrich d'Arrest tìm thấy hành tinh đêm 23–24/9/1846, sau khoảng nửa giờ, cách vị trí dự đoán 55 phút cung. John Couch Adams ở Anh đã tính độc lập trước đó nhưng không công bố; quyền ưu tiên từng gây tranh chấp Anh–Pháp.' Trích Astronomy.com + NASA."
+  - "Summary: thay 'trước khi ai kịp nhìn thấy' bằng 'được định vị nhờ tính toán trước khi được nhận ra qua kính thiên văn'; thay 'gió mạnh nhất Hệ Mặt Trời' bằng 'gió mạnh gấp ba Sao Mộc'."
+  - "Cắt 'vượt xa tốc độ âm thanh trong khí quyển Trái Đất'."
+  - "Gắn nguồn cho '2,6 lần' (Pearl & Conrath 1991 hoặc Milcareck et al. 2024)."
+  - "Gắn nguồn Hubble cho vế 'Hubble quan sát lại' và 'chỉ tồn tại vài năm', hoặc cắt hai vế."
+  - "Điền accessedAt cho Fact Sheet; bổ sung nguồn trong suggestedSources."
+suggestedSources:
+  - title: Neptune Facts
+    url: https://science.nasa.gov/neptune/neptune-facts/
+    doi:
+    publisher: NASA Science
+    year: 2025
+    tier: 2
+    covers: Phát hiện (Le Verrier, Galle), gió, Vết Tối Lớn, Triton nghịch hành, 1/900 ánh sáng
+  - title: Triton
+    url: https://science.nasa.gov/neptune/moons/triton/
+    doi:
+    publisher: NASA Science
+    year: 2025
+    tier: 2
+    covers: Quỹ đạo nghịch, giả thuyết bị bắt từ vành đai Kuiper, mạch phun, khí quyển nitơ
+  - title: Neptune Fact Sheet
+    url: https://nssdc.gsfc.nasa.gov/planetary/factsheet/neptunefact.html
+    doi:
+    publisher: NASA NSSDC
+    year: 2024
+    tier: 2
+    covers: Tốc độ gió 0–580 m/s, khoảng cách
+  - title: "Radiative-convective models of the atmospheres of Uranus and Neptune: Heating sources and seasonal effects"
+    url: https://www.aanda.org/articles/aa/full_html/2024/06/aa48987-23/aa48987-23.html
+    doi: 10.1051/0004-6361/202348987
+    publisher: Astronomy & Astrophysics 686, A303
+    year: 2024
+    tier: 1
+    covers: Cân bằng năng lượng (dẫn Pearl & Conrath 1991) → ~2,6 lần
+  - title: Neptune's discovery
+    url: https://www.astronomy.com/science/neptunes-discovery/
+    doi:
+    publisher: Astronomy Magazine
+    year: 2021
+    tier: 3
+    covers: Galle và d'Arrest, nửa giờ, 55 phút cung, vai trò Adams và tranh chấp — chỉ làm bối cảnh, cần nguồn sử học bậc 1 đi kèm
+openQuestions:
+  - "Quyền ưu tiên dự đoán Sao Hải Vương: đồng thuận thế kỷ 19 chia công Le Verrier–Adams; các tài liệu 'Neptune papers' được tìm lại cuối thập niên 1990 khiến một số sử gia (vd. Kollerstrom) cho rằng Adams được ghi công nhiều hơn mức xứng đáng. Bài KHÔNG nên phân xử; cần người quyết cách trình bày và tìm nguồn sử học peer-review (Sky & Telescope và bài peer-review về Neptune papers trả 403, chưa mở được)."
+  - "Số phận Triton (vỡ thành vành đai hay va vào Sao Hải Vương) phụ thuộc mô hình thuỷ triều; cần mở Chyba et al. 1989 trước khi giữ bất kỳ câu nào về tương lai Triton."
+  - "Không cần đối chiếu IAU MPC / JPL SSD: bài không nêu số vệ tinh. Lưu ý Fact Sheet ghi 16 (cập nhật 03/10/2024) — nếu bổ sung phải đối chiếu MPC và kèm mốc ngày."

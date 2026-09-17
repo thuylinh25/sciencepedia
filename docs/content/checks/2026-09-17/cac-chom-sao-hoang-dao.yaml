@@ -1,0 +1,87 @@
+slug: cac-chom-sao-hoang-dao
+checkedAt: 2026-09-17
+checkedBy: science-editor
+sourceCount: 1
+verdict: revise
+summary: "Bài tách đúng 13 chòm sao theo ranh giới IAU với 12 cung chiêm tinh, nhưng chính nó lại trộn hai hệ khi ghi xuân phân 'ở chòm Bạch Dương/Song Ngư' mà không có mốc thời gian, viết ý nghĩa chiêm tinh bằng giọng khẳng định, và nguồn duy nhất là trang nghiệp dư đã chết."
+claims:
+  - id: C-1
+    claim: "Thiên văn hiện đại định nghĩa chòm sao theo vùng có ranh giới cụ thể"
+    verdict: verified
+    severity: S4
+    evidence: "https://www.iau.org/IAU/IAU/Astronomy-FAQs/Constellations.aspx"
+    note: "IAU: 88 chòm sao được thống nhất ở Đại hội đồng Rome năm 1922; ranh giới do Eugène Delporte vẽ, được thông qua ở Leiden năm 1928, xuất bản năm 1930 trong 'Délimitation Scientifique des Constellations'. Bài đúng nhưng không nêu IAU, Delporte hay năm 1928/1930, nên người đọc không truy được gốc."
+  - id: C-2
+    claim: "Theo ranh giới đó, Hoàng Đạo cắt qua 13 chòm sao, thêm Ophiuchus (Xà Phu) nằm giữa Scorpius và Sagittarius"
+    verdict: partially-supported
+    severity: S3
+    evidence: "https://www.iau.org/IAU/IAU/Astronomy-FAQs/Constellations.aspx"
+    note: "Trang IAU đã mở xác nhận hệ ranh giới 1930 nhưng không nói gì về Hoàng Đạo hay Ophiuchus. Việc Hoàng Đạo đi qua Ophiuchus theo ranh giới IAU chưa có nguồn bậc 1–2 nào đã mở trong lượt này; nguồn duy nhất của bài đã chết. Ý chính gần như chắc đúng, nhưng theo quy tắc phải có nguồn mở kiểm được."
+  - id: C-3
+    claim: "Xuân phân: Mặt Trời ở chòm sao Bạch Dương/Song Ngư"
+    verdict: unverifiable
+    severity: S3
+    evidence: "—"
+    note: "Câu này trộn đúng hai thứ mà chính bài dặn phải tách: 'cung Bạch Dương' (chiêm tinh, quy ước điểm xuân phân = 0° Bạch Dương) và 'chòm sao' mà Mặt Trời thực sự nằm trong đó vào ngày xuân phân, vốn đã dịch đi do tiến động. Viết 'Bạch Dương/Song Ngư' ở thì hiện tại, không có mốc năm, là mơ hồ đúng chỗ nhạy cảm. Lượt này chưa mở được nguồn nêu chòm sao chứa điểm xuân phân năm 2026."
+  - id: C-4
+    claim: "Mặt Trời mất đúng 1 năm để đi hết một vòng Hoàng Đạo"
+    verdict: unverifiable
+    severity: S4
+    evidence: "—"
+    note: "'Đúng 1 năm' không nói là năm nào: năm thiên văn (so với nền sao) và năm chí tuyến (so với điểm xuân phân) chênh nhau khoảng 20 phút, và khoảng chênh đó chính là tiến động mà bài nhắc tới. Viết 'khoảng một năm' hoặc nêu rõ loại năm, kèm nguồn."
+  - id: C-5
+    claim: "Chiêm tinh phương Tây chia Hoàng Đạo thành 12 phần 30°; mỗi chòm sao mang một ý nghĩa năng lượng và hình mẫu tính cách riêng"
+    verdict: unsupported
+    severity: S3
+    evidence: "https://spaceplace.nasa.gov/starfinder2/en/"
+    note: "Vế sau được viết bằng giọng của chính chiêm tinh học, như thể các 'ý nghĩa năng lượng' là thuộc tính của chòm sao. NASA Space Place: chiêm tinh 'dựa trên niềm tin' rằng vị trí sao và hành tinh dự đoán được tương lai hay tính cách, và 'các khẳng định của nó không dựa trên bằng chứng khoa học'. Phải đổi sang thể quy gán ('chiêm tinh học gán cho...'). Ngoài ra, bài dùng 'chòm sao' cho 12 phần 30°, trong khi chính bài nói đó là 'cung', không phải chòm."
+  - id: C-6
+    claim: "Chòm sao Mặt Trời đang đi qua trong một tháng không thể quan sát được vào ban đêm tháng đó"
+    verdict: unverifiable
+    severity: S4
+    evidence: "—"
+    note: "Đúng về nguyên lý nhưng tuyệt đối hóa: các chòm lớn trải dài vẫn có phần thấy được lúc chạng vạng. Viết 'khó hoặc không thể quan sát'. Chưa có nguồn."
+  - id: C-7
+    claim: "Người cổ đại chia Hoàng Đạo thành 12 phần bằng nhau phục vụ lịch pháp và chiêm tinh"
+    verdict: unverifiable
+    severity: S3
+    evidence: "—"
+    note: "Claim lịch sử chưa có nguồn (nguồn duy nhất đã chết). Nên nêu nền văn minh và niên đại có nguồn, hoặc giữ ở mức tổng quát kèm nguồn."
+  - id: C-8
+    claim: "Phân biệt 'chòm sao Hoàng Đạo' (vùng trời thực, thiên văn) với 'cung hoàng đạo' (12 cung bằng nhau, chiêm tinh)"
+    verdict: verified
+    severity: none
+    evidence: "https://spaceplace.nasa.gov/starfinder2/en/"
+    note: "Theo yêu cầu (b) của lô: bài KHÔNG lẫn hai chuyện ở phần định nghĩa. Mục 'Hoàng Đạo và cung hoàng đạo không giống nhau' viết đúng, và NASA Space Place đỡ việc tách thiên văn khỏi chiêm tinh. Chỗ lẫn duy nhất là C-3 và cách gọi 'chòm sao' ở C-5."
+  - id: C-9
+    claim: "Nguồn duy nhất: thienvanvietnam.org (VACA, 2010), gắn tier 2, accessedAt THIẾU"
+    verdict: unsupported
+    severity: S3
+    evidence: "—"
+    note: "Toàn domain đã chết (theo điều phối viên); là CLB nghiệp dư nên nhãn tier 2 sai. Bài coi như không còn nguồn đỡ."
+fixes:
+  - "Trong mục 'Vì sao thực tế có 13 chòm sao?', thêm: 'Năm 1922, IAU thống nhất 88 chòm sao; ranh giới do Eugène Delporte vẽ, được thông qua năm 1928 và xuất bản năm 1930'. Gắn https://www.iau.org/IAU/IAU/Astronomy-FAQs/Constellations.aspx."
+  - "Tìm và mở kiểm một nguồn bậc 1–2 nêu rằng Hoàng Đạo đi qua Ophiuchus theo ranh giới IAU, gồm khoảng ngày Mặt Trời ở trong Ophiuchus, rồi gắn vào mục đó. Không tìm được thì hạ câu xuống mức đã có nguồn."
+  - "Sửa câu xuân phân thành hai vế có mốc thời gian: chòm sao thực chứa điểm xuân phân vào năm 2026 (kèm nguồn), và 'trong chiêm tinh, xuân phân được quy ước là điểm đầu cung Bạch Dương'. Không để dạng 'Bạch Dương/Song Ngư'."
+  - "Sửa 'đại diện bởi 12 chòm sao (cung hoàng đạo). Mỗi chòm sao mang một ý nghĩa năng lượng...' thành 'đặt tên theo 12 chòm sao. Chiêm tinh học gán cho mỗi cung một số đặc điểm tính cách; các khẳng định này không được bằng chứng khoa học ủng hộ', kèm link bài 'Vì sao chiêm tinh học không phải khoa học' và nguồn NASA Space Place."
+  - "Đổi 'Mặt Trời mất đúng 1 năm' thành 'khoảng một năm'."
+  - "Đổi 'không thể quan sát được' thành 'khó hoặc không thể quan sát'."
+  - "Gắn nguồn cho claim lịch sử về việc chia 12 phần; không có nguồn thì cắt."
+  - "Xóa nguồn thienvanvietnam.org khỏi danh sách nguồn đỡ; điền accessedAt cho mọi nguồn."
+suggestedSources:
+  - title: "The Constellations (Astronomy FAQs)"
+    url: "https://www.iau.org/IAU/IAU/Astronomy-FAQs/Constellations.aspx"
+    doi: ""
+    publisher: "International Astronomical Union"
+    year: "không ghi (truy cập 2026-09-17)"
+    tier: 2
+    covers: "88 chòm sao (1922), ranh giới Delporte (thông qua 1928, xuất bản 1930)"
+  - title: "What Is Your Star Sign? (Space Place)"
+    url: "https://spaceplace.nasa.gov/starfinder2/en/"
+    doi: ""
+    publisher: "NASA Space Place"
+    year: "không ghi (truy cập 2026-09-17)"
+    tier: 2
+    covers: "Phân biệt thiên văn với chiêm tinh; các khẳng định của chiêm tinh không dựa trên bằng chứng khoa học"
+openQuestions:
+  - "Bài có nên nêu cả việc Mặt Trăng và các hành tinh còn đi qua những chòm sao ngoài 13 chòm này (vì quỹ đạo nghiêng so với Hoàng Đạo)? Mở rộng phạm vi thì cần nguồn riêng; nên để người quyết."

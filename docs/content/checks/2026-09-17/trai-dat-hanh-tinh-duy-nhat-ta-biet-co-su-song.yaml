@@ -1,0 +1,171 @@
+slug: trai-dat-hanh-tinh-duy-nhat-ta-biet-co-su-song
+checkedAt: 2026-09-17
+checkedBy: science-editor
+sourceCount: 1
+verdict: revise
+summary: Phần lớn số liệu đúng, nhưng cả bài chỉ dựa vào một Planetary Fact Sheet không chứa tuổi Trái Đất, lượng nước ngọt, mốc oxy hoá hay hoá thạch; bài còn khẳng định Sao Kim "từng có nước lỏng" như sự thật trong khi đây là tranh cãi đang mở, và trình bày vai trò che chắn của từ trường như điều đã xác lập.
+claims:
+  - id: C-1
+    claim: "Trái Đất nằm trong vùng ở được của Mặt Trời — khoảng cách cho phép nước tồn tại ở thể lỏng trên bề mặt."
+    verdict: unsupported
+    severity: S3
+    evidence: "—"
+    note: Khái niệm đúng, nhưng Fact Sheet không nói về vùng ở được. Cần một nguồn tier 1–2 hoặc để câu ở mức định nghĩa chung, không kèm số.
+  - id: C-2
+    claim: "Sao Kim và Sao Hoả cũng từng có nước lỏng, và cả hai đều đã mất."
+    verdict: contradicted
+    severity: S2
+    evidence: https://doi.org/10.1038/s41550-024-02414-5
+    note: 'Đúng với Sao Hoả (NASA Mars Facts: thung lũng sông cổ, châu thổ, đáy hồ, khoáng vật chỉ hình thành trong nước lỏng). Với Sao Kim thì đây là tranh cãi đang mở: Constantinou, Shorttle & Rimmer (Nature Astronomy, 02/12/2024) kết luận phần bên trong Sao Kim quá khô để từng có đại dương trên bề mặt, trong khi NASA Science vẫn viết về "Venus'' vanished ocean". Viết như sự thật đã xác lập là vi phạm quy tắc "không tạo đồng thuận giả". Sửa: "Sao Hoả từng có nước lỏng và đã mất; Sao Kim có thể cũng từng có — đây vẫn là câu hỏi đang tranh luận."'
+  - id: C-3
+    claim: "Lõi sắt lỏng chuyển động tạo hiệu ứng dynamo, sinh từ trường bao quanh hành tinh."
+    verdict: verified
+    severity: S3
+    evidence: https://science.nasa.gov/earth/facts/
+    note: 'NASA: "rapid rotation and molten nickel-iron core give rise to a magnetic field". Đúng; lưu ý lõi là sắt–niken và chỉ LÕI NGOÀI lỏng. Nguồn bài dẫn (Fact Sheet) không đỡ claim này — phải thêm nguồn.'
+  - id: C-4
+    claim: "Từ trường bẻ hướng gió mặt trời, ngăn nó thổi bay dần khí quyển — điều đã xảy ra với Sao Hoả sau khi lõi nguội đi."
+    verdict: partially-supported
+    severity: S3
+    evidence: https://doi.org/10.1051/0004-6361/201832934
+    note: 'Từ trường bẻ hướng gió mặt trời là đúng. Nhưng "ngăn thổi bay khí quyển" là cách hiểu bị thách thức trong văn liệu: Gunell et al. 2018 (A&A 614, L3) chỉ ra tốc độ thoát khí quan sát được ở Trái Đất, Sao Hoả, Sao Kim tương tự nhau (~0,5–2 kg/s) và hành tinh có từ trường có thể mất khí NHANH hơn trong một dải cường độ, qua vùng cực và điểm lõm từ quyển. Về Sao Hoả: NASA xác nhận không còn từ trường toàn cầu và vỏ còn dấu từ hoá từ ~4 tỉ năm trước; MAVEN đo tốc độ gió mặt trời bào mòn ~100 g/s — nhưng chuỗi "lõi nguội → mất từ trường → mất khí quyển" là giả thuyết dẫn đầu, không phải đã chứng minh. Sửa: hạ giọng thành "được cho là góp phần" và thêm một câu nêu tranh luận.'
+  - id: C-5
+    claim: "Khí quyển gồm 78% nitơ, 21% oxy."
+    verdict: verified
+    severity: none
+    evidence: https://nssdc.gsfc.nasa.gov/planetary/factsheet/earthfact.html
+    note: Fact Sheet ghi 78,08% N₂, 20,95% O₂ (theo thể tích, khí khô). Khớp.
+  - id: C-6
+    claim: "Oxy tự do là sản phẩm của quang hợp; bầu khí quyển nguyên thuỷ hầu như không có oxy cho tới Sự kiện Oxy hoá Lớn khoảng 2,4 tỉ năm trước."
+    verdict: partially-supported
+    severity: S3
+    evidence: https://doi.org/10.1038/nature02260
+    note: 'Nội dung đúng về cơ bản. Bekker et al. 2004 (Nature 427, 117) cho thấy oxy khí quyển đã tăng trước 2,32 tỉ năm; Luo et al. 2016 (Science Advances) đặt mốc 2,33 tỉ năm; các tổng quan thường nêu khoảng 2,4–2,1 tỉ năm. "Khoảng 2,4 tỉ năm" chấp nhận được như mốc khởi đầu nhưng phải có nguồn — Fact Sheet không có. Nên viết "khoảng 2,4–2,3 tỉ năm trước".'
+  - id: C-7
+    claim: "Kiến tạo mảng tái chế carbon giữa đá, đại dương và khí quyển — bộ điều nhiệt dài hạn giữ khí hậu trong khoảng sống được suốt hàng tỉ năm."
+    verdict: partially-supported
+    severity: S3
+    evidence: https://doi.org/10.1029/JC086iC10p09776
+    note: 'Cơ chế điều nhiệt là chu trình carbonate–silicate: phong hoá silicate phụ thuộc nhiệt độ rút CO₂ (Walker, Hays & Kasting 1981, JGR 86, 9776). Kiến tạo mảng là thứ giúp tái chế carbon về khí quyển qua núi lửa, nhưng "bộ điều nhiệt" chính là phản hồi phong hoá, không phải kiến tạo mảng. Bài gộp hai thứ làm một. Sửa: "Kiến tạo mảng giữ cho chu trình carbonate–silicate vận hành — phong hoá đá rút CO₂ khi khí hậu ấm, núi lửa trả CO₂ lại" và dẫn Walker et al. 1981. Không có nguồn nào trong bài đỡ đoạn này.'
+  - id: C-8
+    claim: "Mặt Trăng lớn bất thường giúp ổn định độ nghiêng trục ở khoảng 23,4°; nếu không có nó, độ nghiêng có thể dao động hỗn loạn và kéo theo biến động khí hậu cực đoan."
+    verdict: partially-supported
+    severity: S3
+    evidence: https://doi.org/10.1016/j.icarus.2011.10.013
+    note: 'Laskar et al. 1993 (Nature 361, 615) cho rằng không có Mặt Trăng, độ nghiêng dao động hỗn loạn 0–85°. Lissauer, Barnes & Chambers 2012 (Icarus 217, 77) phản bác một phần: với Mặt Trăng độ nghiêng nằm trong 22,1°–24,5°, còn không có Mặt Trăng thì biến động chậm và hẹp hơn nhiều so với Laskar nói trong khoảng thời gian liên quan tới sự sống. Chữ "có thể" của bài giữ được mức dè dặt, nhưng người đọc không biết đây là điểm đang tranh luận. Thêm một câu nêu hai kết quả. Độ nghiêng 23,44° khớp Fact Sheet.'
+  - id: C-9
+    claim: "Tuổi Trái Đất: 4,54 tỉ năm."
+    verdict: partially-supported
+    severity: S3
+    evidence: https://science.nasa.gov/earth/facts/
+    note: 'Giá trị được chấp nhận rộng rãi là 4,54 ± 0,05 tỉ năm (định tuổi phóng xạ thiên thạch; Dalrymple). Nhưng bỏ sai số là mất thông tin, và Fact Sheet — nguồn duy nhất của bài — không có tuổi Trái Đất. Trang NASA Earth Facts tôi mở chỉ ghi "khoảng 4,5 tỉ năm". Sửa: "khoảng 4,54 tỉ năm (± 0,05)" kèm nguồn tier 1, hoặc dùng "khoảng 4,5 tỉ năm" theo NASA.'
+  - id: C-10
+    claim: "71% bề mặt là nước."
+    verdict: verified
+    severity: S3
+    evidence: https://science.nasa.gov/earth/facts/
+    note: 'NASA: "global ocean, which covers about 71% of the planet''s surface". Đúng, nhưng không có trên Fact Sheet đang dẫn — thêm nguồn.'
+  - id: C-11
+    claim: "Chỉ 2,5% lượng nước là nước ngọt."
+    verdict: partially-supported
+    severity: S3
+    evidence: https://www.usgs.gov/water-science-school/science/how-much-water-there-earth
+    note: 'Theo đoạn trích của USGS Water Science School trả về trong kết quả tìm kiếm: "only 2.5% of Earth''s water is freshwater", phần lớn khoá trong băng và nước ngầm. Trang chặn truy cập tự động (HTTP 405) nên tôi chưa đọc được toàn văn — người sửa bài phải mở trang để xác nhận trước khi dẫn. Câu văn trong bài "71% bề mặt là nước, nhưng chỉ 2,5% trong đó là nước ngọt" gộp hai đại lượng khác nhau (diện tích bề mặt và thể tích nước) — "trong đó" khiến người đọc hiểu 2,5% của 71% diện tích. Sửa: "chỉ khoảng 2,5% tổng lượng nước trên Trái Đất là nước ngọt".'
+  - id: C-12
+    claim: "Bằng chứng hoá thạch sự sống có từ ít nhất 3,5 tỉ năm trước."
+    verdict: partially-supported
+    severity: S3
+    evidence: https://doi.org/10.1038/nature04764
+    note: 'Bằng chứng vững nhất là ~3,43–3,48 tỉ năm (rạn stromatolite Strelley Pool, Pilbara — Allwood et al. 2006, Nature; thành hệ Dresser ~3,48 tỉ năm). "Ít nhất 3,5 tỉ năm" hơi nâng quá con số vững nhất; các dấu vết cũ hơn (Greenland ~3,7 tỉ năm) đang bị tranh cãi. Sửa: "khoảng 3,5 tỉ năm" hoặc "ít nhất 3,4 tỉ năm", dẫn Allwood et al. 2006.'
+  - id: C-13
+    claim: "Nước lỏng, khí quyển giàu oxy, từ quyển che chắn và kiến tạo mảng — bốn điều kiện hiếm gặp cùng lúc trên một hành tinh. [Summary]"
+    verdict: unsupported
+    severity: S3
+    evidence: "—"
+    note: '"Hiếm gặp" là khẳng định về tần suất ở hành tinh khác mà hiện chưa có dữ liệu. Thân bài lại liệt kê bốn hệ thống khác (từ quyển, khí quyển, kiến tạo mảng, Mặt Trăng), không có "nước lỏng" — summary không khớp thân bài. Sửa summary cho khớp thân bài và bỏ "hiếm gặp", hoặc viết "chưa thấy ở hành tinh nào khác mà ta biết".'
+  - id: C-14
+    claim: "Toàn bộ bài được đỡ bởi một nguồn tier 2 tổng quát, không có accessedAt."
+    verdict: unsupported
+    severity: S3
+    evidence: https://nssdc.gsfc.nasa.gov/planetary/factsheet/earthfact.html
+    note: 'Fact Sheet chỉ đỡ C-5 và độ nghiêng 23,44° ở C-8. Mười claim khác (tuổi, nước, nước ngọt, sự kiện oxy hoá, hoá thạch, dynamo, kiến tạo mảng, Mặt Trăng, Sao Kim/Sao Hoả) không có nguồn. accessedAt = "THIẾU".'
+fixes:
+  - Sửa câu "Sao Kim và Sao Hoả cũng từng có nước lỏng" thành "Sao Hoả từng có nước lỏng trên bề mặt; Sao Kim có thể cũng từng có, nhưng điều này vẫn đang tranh luận", dẫn NASA Mars Facts và Constantinou et al. 2024 (DOI 10.1038/s41550-024-02414-5).
+  - Hạ giọng câu từ quyển thành "được cho là giúp hạn chế gió mặt trời bào mòn khí quyển", thêm một câu nêu Gunell et al. 2018 (DOI 10.1051/0004-6361/201832934) cho rằng từ trường không nhất thiết bảo vệ khí quyển, và bỏ quan hệ nhân quả chắc chắn "điều đã xảy ra với Sao Hoả sau khi lõi nguội".
+  - Viết lại đoạn kiến tạo mảng để phân biệt. Bộ điều nhiệt là chu trình carbonate–silicate (phong hoá phụ thuộc nhiệt độ), còn kiến tạo mảng giữ cho chu trình vận hành. Dẫn Walker, Hays & Kasting 1981 (DOI 10.1029/JC086iC10p09776).
+  - Thêm một câu vào đoạn Mặt Trăng nêu mức ổn định là điểm đang tranh luận (Laskar et al. 1993, DOI 10.1038/361615a0 vs Lissauer et al. 2012, DOI 10.1016/j.icarus.2011.10.013).
+  - Sửa "Tuổi 4,54 tỉ năm" thành "khoảng 4,54 ± 0,05 tỉ năm" kèm nguồn tier 1, hoặc "khoảng 4,5 tỉ năm" dẫn https://science.nasa.gov/earth/facts/.
+  - Sửa "71% bề mặt là nước, nhưng chỉ 2,5% trong đó là nước ngọt" thành hai ý tách rời. Đại dương phủ khoảng 71% bề mặt (NASA Earth Facts). Khoảng 2,5% tổng lượng nước là nước ngọt (USGS — mở trang xác nhận trước khi dẫn).
+  - Sửa "Sự kiện Oxy hoá Lớn khoảng 2,4 tỉ năm trước" thành "khoảng 2,4–2,3 tỉ năm trước", dẫn Bekker et al. 2004 (DOI 10.1038/nature02260).
+  - Sửa "bằng chứng hoá thạch có từ ít nhất 3,5 tỉ năm trước" thành "khoảng 3,5 tỉ năm trước (các rạn stromatolite 3,43 tỉ năm ở Pilbara, Úc)", dẫn Allwood et al. 2006 (DOI 10.1038/nature04764).
+  - Viết lại summary cho khớp bốn hệ thống trong thân bài và bỏ khẳng định "hiếm gặp".
+  - Điền accessedAt cho Planetary Fact Sheet, ghi 2026-09-17.
+suggestedSources:
+  - title: Earth Fact Sheet
+    url: https://nssdc.gsfc.nasa.gov/planetary/factsheet/earthfact.html
+    doi:
+    publisher: NASA NSSDC
+    year: 2024
+    tier: 2
+    covers: 78,08% N₂, 20,95% O₂; độ nghiêng 23,44°; 1 vệ tinh tự nhiên
+  - title: Earth Facts (NASA Science)
+    url: https://science.nasa.gov/earth/facts/
+    doi:
+    publisher: NASA
+    year: 2025
+    tier: 2
+    covers: Đại dương phủ ~71% bề mặt; lõi niken–sắt nóng chảy sinh từ trường; độ nghiêng 23,4° gây mùa; Mặt Trăng ổn định dao động trục; tuổi ~4,5 tỉ năm
+  - title: A dry Venusian interior constrained by atmospheric chemistry
+    url: https://doi.org/10.1038/s41550-024-02414-5
+    doi: 10.1038/s41550-024-02414-5
+    publisher: Nature Astronomy — Constantinou, Shorttle, Rimmer
+    year: 2024
+    tier: 1
+    covers: Phản chứng Sao Kim từng có đại dương (DOI xác nhận qua Crossref)
+  - title: Why an intrinsic magnetic field does not protect a planet against atmospheric escape
+    url: https://doi.org/10.1051/0004-6361/201832934
+    doi: 10.1051/0004-6361/201832934
+    publisher: Astronomy & Astrophysics — Gunell et al.
+    year: 2018
+    tier: 1
+    covers: Tranh luận vai trò che chắn khí quyển của từ trường (DOI xác nhận qua Crossref)
+  - title: A negative feedback mechanism for the long-term stabilization of Earth's surface temperature
+    url: https://doi.org/10.1029/JC086iC10p09776
+    doi: 10.1029/JC086iC10p09776
+    publisher: Journal of Geophysical Research — Walker, Hays, Kasting
+    year: 1981
+    tier: 1
+    covers: Chu trình carbonate–silicate làm bộ điều nhiệt dài hạn (DOI xác nhận qua Crossref)
+  - title: Stabilization of the Earth's obliquity by the Moon
+    url: https://doi.org/10.1038/361615a0
+    doi: 10.1038/361615a0
+    publisher: Nature — Laskar, Joutel, Robutel
+    year: 1993
+    tier: 1
+    covers: Mặt Trăng ổn định độ nghiêng; không có Mặt Trăng dao động hỗn loạn 0–85° (DOI xác nhận qua Crossref)
+  - title: Obliquity variations of a moonless Earth
+    url: https://doi.org/10.1016/j.icarus.2011.10.013
+    doi: 10.1016/j.icarus.2011.10.013
+    publisher: Icarus — Lissauer, Barnes, Chambers
+    year: 2012
+    tier: 1
+    covers: Quan điểm phản biện — Trái Đất không có Mặt Trăng biến động độ nghiêng hẹp hơn Laskar 1993 cho rằng (DOI xác nhận qua Crossref)
+  - title: Dating the rise of atmospheric oxygen
+    url: https://doi.org/10.1038/nature02260
+    doi: 10.1038/nature02260
+    publisher: Nature — Bekker et al.
+    year: 2004
+    tier: 1
+    covers: Mốc Sự kiện Oxy hoá Lớn — oxy khí quyển đã tăng trước 2,32 tỉ năm (DOI xác nhận qua Crossref)
+  - title: Stromatolite reef from the Early Archaean era of Australia
+    url: https://doi.org/10.1038/nature04764
+    doi: 10.1038/nature04764
+    publisher: Nature — Allwood et al.
+    year: 2006
+    tier: 1
+    covers: Bằng chứng sự sống ~3,43 tỉ năm ở Pilbara (DOI xác nhận qua Crossref)
+openQuestions:
+  - Sao Kim từng có đại dương hay không — NASA Science và Constantinou et al. 2024 trái ngược nhau. Editor quyết cách trình bày thống nhất cho cả bài Trái Đất và bài Sao Kim.
+  - Mức độ Mặt Trăng cần thiết cho sự ổn định khí hậu (Laskar 1993 vs Lissauer 2012) — bài chỉ nên nêu tranh luận, không kết luận.
+  - Từ trường có thật sự bảo vệ khí quyển hay không (Gunell et al. 2018 thách thức quan điểm phổ biến) — cần chốt giọng trình bày cho cả bài Trái Đất và bài Sao Hoả, vì hai bài đang dùng cùng một khẳng định.
+  - Số liệu nước ngọt 2,5% của USGS chưa đọc được toàn văn ở lượt này (trang chặn truy cập tự động) — cần người mở trang xác nhận trước khi dẫn.

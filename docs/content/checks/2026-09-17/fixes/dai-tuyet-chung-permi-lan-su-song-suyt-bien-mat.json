@@ -1,0 +1,113 @@
+{
+  "slug": "dai-tuyet-chung-permi-lan-su-song-suyt-bien-mat",
+  "edits": [
+    {
+      "claimId": "C-1",
+      "severity": "S1",
+      "find": "diễn ra khoảng **252 triệu năm trước**, đánh dấu điểm kết của đại Cổ sinh và điểm mở của đại Trung sinh.",
+      "replace": "diễn ra khoảng **251,9 triệu năm trước** — đợt tuyệt chủng biển bắt đầu ở 251,941 ± 0,037 triệu năm, còn ranh giới Permi–Trias được đặt ở 251,902 ± 0,024 triệu năm (2σ) theo niên đại U–Pb công bố trên *Nature Communications* (2020) — đánh dấu điểm kết của đại Cổ sinh và điểm mở của đại Trung sinh.",
+      "why": "Con số 252 triệu năm được gắn cho nguồn VACA, nhưng trang đó ghi 250 triệu năm — tức là nguồn không đỡ claim. Niên đại U–Pb thật, đã mở lượt này, cho 251,941 ± 0,037 Ma (bắt đầu tuyệt chủng biển) và 251,902 ± 0,024 Ma (ranh giới). Sai số được ghi kèm vì nguồn ghi kèm.",
+      "evidence": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7080820/ (doi 10.1038/s41467-020-15243-7)"
+    },
+    {
+      "claimId": "C-2",
+      "severity": "S1",
+      "find": "- Khoảng **80% số loài sinh vật biển** biến mất",
+      "replace": "- Khoảng **81% số loài sinh vật biển** biến mất, theo ước tính của Stanley (2016) dựa trên phép rarefaction ở cấp chi. Con số này thấp hơn hẳn ước tính 88–96% của Raup vốn vẫn được trích dẫn rộng rãi; Stanley cho rằng ước tính cao đó dựa trên một bộ dữ liệu không phù hợp, trong khi nhiều tài liệu khác vẫn tiếp tục dùng mức trên 90%. Đây là bất đồng về phương pháp chưa ngã ngũ, không phải một con số duy nhất đã chốt",
+      "why": "Con số 80% không có nguồn: trang VACA được gắn làm nguồn duy nhất ghi 95% loài biển. Nguồn peer-review mở được lượt này (Stanley 2016, PNAS) ước tính ~81% và nói rõ ước tính 88–96% của Raup vẫn được trích dẫn rộng rãi. Bài trình bày cả hai ước tính như bất đồng phương pháp, không tự phân xử (quy tắc 3).",
+      "evidence": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5081622/ (doi 10.1073/pnas.1613094113)"
+    },
+    {
+      "claimId": "C-4",
+      "severity": "S2",
+      "find": "- Đây là lần duy nhất trong lịch sử mà **côn trùng** cũng chịu một cuộc tuyệt chủng hàng loạt",
+      "replace": "- Đây là đợt tuyệt chủng **côn trùng** nặng nhất được ghi nhận: khoảng 82,6% số chi côn trùng biến mất ở ranh giới Permi–Trias. Nhưng không phải đợt duy nhất — cùng nghiên cứu đó ghi nhận các đỉnh tuyệt chủng côn trùng khác ở ranh giới Roadian–Wordian (64,5% số chi) và Ladinian–Carnian (74,8% số chi)",
+      "why": "\"Lần duy nhất\" bị Jouault và cộng sự 2022 (Nature Communications) bác trực tiếp: bài ghi ba đỉnh tuyệt chủng côn trùng — Roadian–Wordian 64,5% chi, Permi–Trias 82,6% chi, Ladinian–Carnian 74,8% chi. Giữ đúng điều nguồn nói: nặng nhất, không phải duy nhất.",
+      "evidence": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9726944/ (doi 10.1038/s41467-022-35284-4)"
+    },
+    {
+      "claimId": "C-5",
+      "severity": "S1",
+      "find": "Không có sự kiện nào khác trong 540 triệu năm qua tiến gần được tới mức đó.",
+      "replace": "Burgess, Bowring và Shen (2014) mô tả đây là tổn thất sinh giới biển và trên cạn nặng nề nhất trong 542 triệu năm qua.",
+      "why": "Mốc \"540 triệu năm\" và mệnh đề so sánh không đến từ nguồn được gắn (VACA không nêu con số này). Bài Burgess, Bowring & Shen 2014 (PNAS), tóm tắt đã mở qua bản ghi Crossref lượt này, viết \"the most severe loss of marine and terrestrial biota in the last 542 My\" — ghi theo đúng con số và cách diễn đạt của nguồn, có quy cho tác giả.",
+      "evidence": "https://api.crossref.org/works/10.1073/pnas.1317692111 (doi 10.1073/pnas.1317692111)"
+    }
+  ],
+  "summaryEdits": [
+    {
+      "claimId": "C-1",
+      "severity": "S1",
+      "find": "252 triệu năm trước,",
+      "replace": "Khoảng 251,9 triệu năm trước,",
+      "why": "Summary lặp lại đúng con số vừa đính chính trong thân bài. Nếu không sửa, trang sẽ tự mâu thuẫn: summary ghi 252 triệu năm còn thân bài ghi 251,941 ± 0,037 triệu năm. Summary giữ dạng làm tròn có chữ \"khoảng\"; sai số đầy đủ nằm ở thân bài.",
+      "evidence": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7080820/ (doi 10.1038/s41467-020-15243-7)"
+    },
+    {
+      "claimId": "C-2",
+      "severity": "S1",
+      "find": "khoảng 80% số loài sinh vật biển biến mất trong vài chục nghìn năm.",
+      "replace": "chừng 81% số loài sinh vật biển biến mất trong vài chục nghìn năm — ước tính của Stanley (2016); các ước tính cũ hơn đặt con số ở 88–96%.",
+      "why": "Summary lặp lại con số 80% vừa đính chính trong thân bài, và bỏ qua việc các ước tính khác nhau. Nêu cả hai khoảng ngay ở summary để người chỉ đọc summary không nhận một con số duy nhất tưởng đã chốt. Cụm \"trong vài chục nghìn năm\" giữ nguyên văn — claim đó là S3, ngoài phạm vi lượt này.",
+      "evidence": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5081622/ (doi 10.1073/pnas.1613094113)"
+    }
+  ],
+  "addSources": [
+    {
+      "title": "The base of the Lystrosaurus Assemblage Zone, Karoo Basin, predates the end-Permian marine extinction",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7080820/",
+      "doi": "10.1038/s41467-020-15243-7",
+      "publisher": "Nature Communications",
+      "year": 2020,
+      "tier": 1,
+      "covers": "C-1 — đợt tuyệt chủng biển bắt đầu 251,941 ± 0,037 Ma; ranh giới Permi–Trias 251,902 ± 0,024 Ma (2σ)"
+    },
+    {
+      "title": "Estimates of the magnitudes of major marine mass extinctions in earth history",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5081622/",
+      "doi": "10.1073/pnas.1613094113",
+      "publisher": "PNAS (Steven M. Stanley)",
+      "year": 2016,
+      "tier": 1,
+      "covers": "C-2 — ~81% loài biển (rarefaction cấp chi) và ước tính 88–96% của Raup vẫn được trích dẫn rộng rãi"
+    },
+    {
+      "title": "Multiple drivers and lineage-specific insect extinctions during the Permo–Triassic",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9726944/",
+      "doi": "10.1038/s41467-022-35284-4",
+      "publisher": "Nature Communications (Jouault, Nel, Perrichot, Legendre, Condamine)",
+      "year": 2022,
+      "tier": 1,
+      "covers": "C-4 — 82,6% chi côn trùng ở ranh giới Permi–Trias; các đỉnh Roadian–Wordian 64,5% và Ladinian–Carnian 74,8%"
+    },
+    {
+      "title": "High-precision timeline for Earth's most severe extinction",
+      "url": "https://api.crossref.org/works/10.1073/pnas.1317692111",
+      "doi": "10.1073/pnas.1317692111",
+      "publisher": "PNAS (Burgess, Bowring & Shen)",
+      "year": 2014,
+      "tier": 1,
+      "covers": "C-5 — \"most severe loss of marine and terrestrial biota in the last 542 My\". Lưu ý: trang PNAS trả 403 trong lượt này, tóm tắt đối chiếu qua bản ghi Crossref; đổi URL sang trang PNAS khi mở được."
+    }
+  ],
+  "dropSources": [
+    {
+      "title": "Đại tuyệt chủng Permi, vụ thảm sát đẫm máu nhất lịch sử",
+      "why": "Hai lý do độc lập. (1) Nguồn mâu thuẫn với chính bài: trang này ghi ~250 triệu năm, 95% loài biển, 1,5 triệu km³ dung nham và coi giả thuyết fullerene là \"khá thuyết phục\", trong khi bài ghi 252 triệu năm, 80%, 1–4 triệu km³ và nói fullerene không lặp lại được — nguồn không đỡ claim nào nó đang được gắn, tính như citation bịa. (2) Tier sai: đây là trang của một hội thiên văn nghiệp dư, không trích dẫn peer-review, theo thang nguồn tối đa là bậc 4 (tài liệu bối cảnh), không được làm nguồn đỡ, càng không phải nguồn đỡ duy nhất. Bỏ khỏi danh sách nguồn đỡ; nếu muốn giữ để ghi công nguồn gốc biên tập thì chỉ được giữ ở bậc 4 và không gắn với claim nào."
+    }
+  ],
+  "corrections": [
+    "Niên đại: \"diễn ra khoảng 252 triệu năm trước\" → \"khoảng 251,9 triệu năm trước; đợt tuyệt chủng biển bắt đầu ở 251,941 ± 0,037 triệu năm, ranh giới Permi–Trias ở 251,902 ± 0,024 triệu năm (2σ)\" — căn cứ: Gastaldo và cộng sự 2020, Nature Communications, doi 10.1038/s41467-020-15243-7. Số cũ được gắn cho nguồn VACA, nơi thực tế ghi 250 triệu năm.",
+    "Quy mô: \"khoảng 80% số loài sinh vật biển biến mất\" → \"khoảng 81% theo Stanley (2016); ước tính 88–96% của Raup vẫn được trích dẫn rộng rãi và khác biệt này là bất đồng về phương pháp\" — căn cứ: Stanley 2016, PNAS, doi 10.1073/pnas.1613094113. Số cũ không có nguồn; nguồn được gắn ghi 95%.",
+    "Côn trùng: \"lần duy nhất trong lịch sử mà côn trùng cũng chịu một cuộc tuyệt chủng hàng loạt\" → \"đợt tuyệt chủng côn trùng nặng nhất được ghi nhận (~82,6% số chi), không phải đợt duy nhất; còn có các đỉnh Roadian–Wordian 64,5% và Ladinian–Carnian 74,8%\" — căn cứ: Jouault và cộng sự 2022, Nature Communications, doi 10.1038/s41467-022-35284-4.",
+    "So sánh quy mô: \"Không có sự kiện nào khác trong 540 triệu năm qua tiến gần được tới mức đó\" → \"Burgess, Bowring và Shen (2014) mô tả đây là tổn thất sinh giới biển và trên cạn nặng nề nhất trong 542 triệu năm qua\" — căn cứ: doi 10.1073/pnas.1317692111.",
+    "Nguồn: gỡ \"Đại tuyệt chủng Permi, vụ thảm sát đẫm máu nhất lịch sử\" (VACA, 2012) khỏi danh sách nguồn đỡ — nguồn mâu thuẫn với số liệu bài và bị gắn sai tier 2 (tối đa là bậc 4, tài liệu bối cảnh); thay bằng bốn nguồn peer-review bậc 1."
+  ],
+  "openQuestions": [
+    "Dòng ghi công cuối bài \"Biên tập lại từ bài ... của Đặng Vũ Tuấn Sơn ... Bản quyền nội dung gốc thuộc về VACA\" — sau lượt này gần như mọi con số chính của bài đã thay bằng nguồn peer-review và không còn trùng với bài gốc. Tôi KHÔNG tự xoá dòng này. Cần người quyết: (a) dòng ghi công còn đúng sự thật không, (b) có giấy phép tái sử dụng/phái sinh không, (c) nếu giữ thì diễn đạt lại thế nào cho không gây hiểu nhầm rằng số liệu đến từ VACA.",
+    "Trường Summary của bài vẫn ghi \"252 triệu năm trước, khoảng 80% số loài sinh vật biển biến mất\" — đúng hai con số vừa được đính chính trong thân bài. Summary nằm ngoài phần `## NỘI DUNG` nên không sửa được bằng find/replace lượt này. Phải áp cùng bản sửa vào trường summary, nếu không bài sẽ tự mâu thuẫn ngay trên trang.",
+    "Sau khi gỡ VACA, các con số sau KHÔNG còn bất kỳ nguồn nào: \"1–4 triệu km³\" dung nham (nguồn cũ ghi 1,5 triệu km³), \"vài km³\" cho phun trào hiện đại, \"8–10 °C\" ấm lên, \"70% loài động vật có xương sống trên cạn\", \"khoảng 10 triệu năm hồi phục\", \"270 triệu năm\" bọ ba thuỳ, \"165 triệu năm\" khủng long. Đều là S3/S4 nên ngoài phạm vi lượt này, nhưng bài đang PUBLISHED với các con số trần — cần lô sau xử lý sớm, hoặc cắt.",
+    "Mục \"Một giả thuyết đã không đứng vững\" (fullerene) hiện không có nguồn nào và trái với nguồn VACA đang bị gỡ (trang đó coi giả thuyết này \"khá thuyết phục\"). Cần mở Becker 2001 và Farley 2005, và mở kiểm bài 2019 \"Enhanced flux of extraterrestrial 3He across the Permian–Triassic boundary\" TRƯỚC khi giữ câu \"không lặp lại được\" — lô S3.",
+    "Burgess, Bowring & Shen 2014: lượt này chỉ mở được bản ghi Crossref (trang PNAS trả 403). URL nguồn đang để tạm là endpoint Crossref. Cần đổi sang URL trang bài khi có người mở được."
+  ]
+}

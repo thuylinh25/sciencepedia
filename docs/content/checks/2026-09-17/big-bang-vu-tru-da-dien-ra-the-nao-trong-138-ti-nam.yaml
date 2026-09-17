@@ -1,0 +1,172 @@
+slug: big-bang-vu-tru-da-dien-ra-the-nao-trong-138-ti-nam
+checkedAt: 2026-09-17
+checkedBy: science-editor
+sourceCount: 3
+verdict: revise
+summary: "Khung khoa học đúng nhưng có 2 lỗi S2 (mốc Mặt Trời thành sao lùn trắng lệch nguồn NASA; kỷ lục thiên hà xa nhất đã lỗi thời), các số vũ trụ học không mang nguồn Planck và sai số, bài bỏ qua căng thẳng Hubble, và 2/3 nguồn không đỡ nội dung (một trang CLB nghiệp dư gắn nhầm tier 2, một bài Nature Astronomy về va chạm Andromeda mà bài không hề nhắc)."
+claims:
+  - id: C-1
+    claim: "Vũ trụ có tuổi khoảng 13,8 tỷ năm."
+    verdict: partially-supported
+    severity: S3
+    evidence: "https://www.aanda.org/articles/aa/full_html/2020/09/aa33910-18/T2.html"
+    note: "Planck 2018 (A&A 641, A6), Bảng 2, cột TT,TE,EE+lowE+lensing: tuổi = 13,797 ± 0,023 tỷ năm. Số đúng nhưng bài không trích nguồn và không ghi sai số. Con số này suy từ mô hình ΛCDM khớp dữ liệu CMB, không phải phép đo trực tiếp. Sửa thành: khoảng 13,8 tỷ năm (13,797 ± 0,023 tỷ năm theo Planck 2018, trong mô hình ΛCDM)."
+  - id: C-2
+    claim: "Năng lượng tối chiếm khoảng 68%, vật chất tối 27%, vật chất thông thường 5%."
+    verdict: partially-supported
+    severity: S3
+    evidence: "https://www.aanda.org/articles/aa/full_html/2020/09/aa33910-18/T2.html"
+    note: "Planck 2018 Bảng 2: ΩΛ = 0,6847 ± 0,0073; Ωm = 0,3153 ± 0,0073; Ωch² = 0,1200 ± 0,0012; Ωbh² = 0,02237 ± 0,00015; H0 = 67,36 ± 0,54. Tự quy đổi với h = 0,6736 ra vật chất tối ≈ 26,4%, vật chất thường ≈ 4,9%. Con số 27% cao hơn giá trị Planck 2018 khoảng 0,6 điểm phần trăm. Sửa thành: năng lượng tối 68,5 ± 0,7%, vật chất tối ≈ 26,4%, vật chất thường ≈ 4,9% (Planck 2018). Câu dẫn hiện đọc như năng lượng tối chiếm cả ba phần; tách thành câu riêng về thành phần vũ trụ."
+  - id: C-3
+    claim: "Vũ trụ vẫn đang giãn nở (bài không nhắc rằng tốc độ giãn nở hiện nay đang được đo ra hai giá trị bất đồng)."
+    verdict: partially-supported
+    severity: S3
+    evidence: "https://arxiv.org/abs/2112.04510"
+    note: "Bài bỏ sót căng thẳng Hubble. Planck 2018 (từ CMB + ΛCDM, Bảng 2) cho H0 = 67,36 ± 0,54 km/s/Mpc. SH0ES (Riess và cs. 2022, ApJL, doi 10.3847/2041-8213/ac5c5b), dùng thang khoảng cách Cepheid và siêu tân tinh Ia, cho H0 = 73,04 ± 1,04 km/s/Mpc, lệch 5σ so với Planck+ΛCDM. Bản thân bài Planck 2018 cũng ghi nhận độ căng với phép đo tại chỗ. Bài nêu tuổi vũ trụ và sự giãn nở mà không nói tuổi vũ trụ phụ thuộc mô hình và H0 đang bị tranh cãi. Phải trình bày đây là bất đồng CHƯA GIẢI QUYẾT giữa hai phương pháp, không chọn bên."
+  - id: C-4
+    claim: "Bức xạ nền vi sóng vũ trụ hiện được quan sát dưới dạng bức xạ nhiệt ở khoảng 2,7 K."
+    verdict: verified
+    severity: S4
+    evidence: "https://arxiv.org/abs/0911.1955"
+    note: "Fixsen 2009 (ApJ 707, 916; doi 10.1088/0004-637X/707/2/916): T0 = 2,72548 ± 0,00057 K. Con số 2,7 K đúng nhưng không có nguồn; thêm trích dẫn Fixsen 2009."
+  - id: C-5
+    claim: "Mô hình Big Bang dự đoán chính xác rằng vũ trụ ban đầu chứa khoảng 75% hydro, 25% heli, cùng một lượng nhỏ deuteri và lithi."
+    verdict: partially-supported
+    severity: S3
+    evidence: "https://arxiv.org/html/1505.01076v1"
+    note: "Cyburt, Fields, Olive, Yeh (Rev. Mod. Phys. 88, 015004, 2016) định nghĩa Yp là tỉ lệ KHỐI LƯỢNG, Yp ≡ ρ(He-4)/ρb; dự đoán BBN+CMB Yp = 0,24709 ± 0,00025, quan sát Yp = 0,2449 ± 0,0040. Vì bài bỏ chữ 'theo khối lượng', người đọc sẽ hiểu sai: tính theo SỐ hạt nhân thì heli chỉ khoảng 8% (tự suy từ Yp: nHe/nH = (Y/4)/(1−Y) ≈ 0,082). Sửa thành 'khoảng 75% hydro và 25% heli tính theo khối lượng'. Tóm tắt của cùng bài review ghi dự đoán lithi-7 vẫn lệch quan sát, nên không được gộp lithi vào 'dự đoán chính xác'."
+  - id: C-6
+    claim: "380.000 năm sau Big Bang, electron kết hợp với hạt nhân, ánh sáng truyền tự do và tạo ra CMB."
+    verdict: partially-supported
+    severity: S3
+    evidence: "https://www.aanda.org/articles/aa/full_html/2020/09/aa33910-18/T2.html"
+    note: "Planck 2018 Bảng 2 cho z* = 1089,92 ± 0,25 (dịch chuyển đỏ lúc tái kết hợp) nhưng không nêu thời điểm tính bằng năm. Mốc 380.000 năm chưa được kiểm tại nguồn trong lượt này; cần trích nguồn bậc 1–2 nêu thời điểm, hoặc cắt con số."
+  - id: C-7
+    claim: "Kỷ nguyên Planck (10⁻⁴³ giây đầu); lạm phát vũ trụ; hình thành proton/neutron; ba phút đầu tạo các hạt nhân nhẹ."
+    verdict: unverifiable
+    severity: S3
+    evidence: "—"
+    note: "Không nguồn nào trong danh sách phủ dòng thời gian sơ khai. Lạm phát vũ trụ được viết như sự kiện đã xác lập; phải ghi là giả thuyết được ủng hộ rộng rãi nhưng chưa được xác nhận trực tiếp, hoặc cắt."
+  - id: C-8
+    claim: "Khoảng 200 triệu năm, những ngôi sao đầu tiên hình thành; khoảng 300 triệu năm, những thiên hà đầu tiên đã hình thành."
+    verdict: unverifiable
+    severity: S3
+    evidence: "—"
+    note: "Không có nguồn. Bài tự mâu thuẫn: chính bài nêu một thiên hà đã tồn tại lúc ~290 triệu năm (và MoM-z14 lúc ~280 triệu năm, xem C-9), nên 300 triệu năm không thể là mốc thiên hà 'đầu tiên'. Cắt cả hai con số, hoặc thay bằng mốc có nguồn và ghi rõ là ước tính theo mô hình."
+  - id: C-9
+    claim: "Thiên hà xa nhất được xác nhận cho tới nay là JADES-GS-z14-0, ở độ dịch chuyển đỏ 14,32, tức khoảng 290 triệu năm sau Big Bang (số liệu tháng 5/2024)."
+    verdict: outdated
+    severity: S2
+    evidence: "https://arxiv.org/abs/2505.11263"
+    note: "Tháng 5/2025, Naidu và cs. (arXiv:2505.11263, Open Journal of Astrophysics) xác nhận bằng quang phổ thiên hà MoM-z14 ở z_spec = 14,44 ± 0,02, khoảng 280 triệu năm sau Big Bang, xa hơn JADES-GS-z14-0. Kết quả tìm kiếm cũng cho thấy dịch chuyển đỏ của JADES-GS-z14-0 đã được ALMA đo lại ra z ≈ 14,18 (arXiv:2409.20549); nguồn này chưa được mở nên chỉ ghi để lượt sửa kiểm tiếp. Ghi mốc 'tháng 5/2024' là đúng cách, nhưng chữ 'cho tới nay' đã sai tại ngày 17/09/2026. Sửa thành: tính tới <ngày kiểm>, thiên hà xa nhất được xác nhận bằng quang phổ là MoM-z14 (z = 14,44, khoảng 280 triệu năm sau Big Bang; Naidu và cs. 2025). Đặt lịch kiểm lại mỗi 6 tháng."
+  - id: C-10
+    claim: "Các quan sát siêu tân tinh loại Ia năm 1998 cho thấy vũ trụ đang giãn nở ngày càng nhanh."
+    verdict: verified
+    severity: S3
+    evidence: "https://arxiv.org/abs/astro-ph/9805201"
+    note: "Riess và cs. 1998 (AJ 116, 1009; doi 10.1086/300499): siêu tân tinh Ia ở xa xa hơn dự kiến 10–15%, ủng hộ giãn nở tăng tốc ở mức 2,8–3,9σ khi không ràng buộc mật độ vật chất và 7–9σ khi giả định vũ trụ phẳng. Nội dung claim đúng, nhưng bài không có nguồn và không nêu ai phát hiện. Theo kết quả tìm kiếm, nhóm độc lập Supernova Cosmology Project cũng công bố kết quả này (Perlmutter và cs. 1999, ApJ 517, 565); bài đó chưa được mở trong lượt này."
+  - id: C-11
+    claim: "Khoảng 8 tỷ năm nữa, Mặt Trời trở thành sao lùn trắng."
+    verdict: contradicted
+    severity: S2
+    evidence: "https://science.nasa.gov/sun/facts/"
+    note: "NASA Science (Sun: Facts) viết Mặt Trời 'will last another 5 billion years or so before it becomes a white dwarf', tính từ hiện tại. Bài ghi 8 tỷ năm mà không có nguồn. Sửa thành khoảng 5 tỷ năm nữa kèm nguồn NASA, hoặc cắt dòng này."
+  - id: C-12
+    claim: "Khoảng 100 nghìn tỷ năm nữa ngôi sao cuối cùng tắt; khoảng 10¹⁰⁰ năm nữa các lỗ đen cuối cùng bốc hơi."
+    verdict: unverifiable
+    severity: S3
+    evidence: "https://arxiv.org/abs/astro-ph/9701131"
+    note: "Bài không có nguồn cho hai mốc này. Adams & Laughlin 1997 (Rev. Mod. Phys. 69, 337) là tài liệu gốc về các thang thời gian này; lượt này chỉ xác nhận được bài báo tồn tại và đúng chủ đề, chưa đọc được con số trong toàn văn. Lấy đúng số trong Adams & Laughlin, không làm tròn; không kiểm được thì cắt. Ghi 'theo các mô hình hiện nay' vì kết quả phụ thuộc giả định về năng lượng tối."
+  - id: C-13
+    claim: "Kịch bản được ủng hộ nhiều nhất hiện nay là cái chết nhiệt."
+    verdict: unverifiable
+    severity: S3
+    evidence: "—"
+    note: "Chữ 'nhiều nhất' không có nguồn, chữ 'hiện nay' không có mốc thời gian. Số phận xa của vũ trụ phụ thuộc vào bản chất năng lượng tối, mà điều này chưa ai biết. Hạ mức thành 'Nếu năng lượng tối là hằng số vũ trụ thì kịch bản dự kiến là...' kèm nguồn, hoặc cắt câu."
+  - id: C-14
+    claim: "Nguồn 2 (Nature Astronomy 2025, 'No certainty of a Milky Way–Andromeda collision') được gắn vào bài."
+    verdict: unsupported
+    severity: S3
+    evidence: "https://doi.org/10.1038/s41550-025-02563-1"
+    note: "DOI mở ra đúng bài 'No certainty of a Milky Way–Andromeda collision' (Nature Astronomy), nhưng thân bài không có câu nào về Andromeda hay va chạm thiên hà. Nguồn này không đỡ claim nào mà vẫn được tính vào số nguồn. Gỡ khỏi bài."
+  - id: C-15
+    claim: "Nguồn 1 (thienvanvietnam.org, VACA, 2010) được xếp tier 2."
+    verdict: unsupported
+    severity: S3
+    evidence: "https://www.thienvanvietnam.org/?option=com_content&view=article&id=103:big-bang-va-buc-tranh-vu-tru&catid=42:vu-tru-hoc&Itemid=151"
+    note: "Theo điều phối viên, đây là trang của một CLB thiên văn nghiệp dư, không phải cơ quan có thẩm quyền. Theo thứ bậc nguồn, trang này tối đa là bậc 4 và không được làm nguồn đỡ chính. Bài viết năm 2010, trước Planck 2018, nên không thể là nguồn cho các con số hiện hành. accessedAt đang THIẾU. Ghi chú: ngày 17/09/2026 trang cùng domain (id=72) vẫn trả HTTP 200 với đúng tiêu đề bài, trái với thông tin 'domain đã chết'. Hạ xuống tier 4 và thay bằng nguồn bậc 1–2."
+fixes:
+  - "Thay 'khoảng 8 tỷ năm nữa Mặt Trời trở thành sao lùn trắng' bằng 'khoảng 5 tỷ năm nữa' và trích NASA Science, Sun: Facts (https://science.nasa.gov/sun/facts/)."
+  - "Sửa mục thiên hà xa nhất: nêu MoM-z14 (z_spec = 14,44 ± 0,02, khoảng 280 triệu năm sau Big Bang; Naidu và cs. 2025, arXiv:2505.11263), ghi 'tính tới <ngày kiểm>' và đặt lịch kiểm lại 6 tháng một lần."
+  - "Sửa tuổi vũ trụ thành '13,797 ± 0,023 tỷ năm (Planck 2018, mô hình ΛCDM)' và trích A&A 641, A6, doi 10.1051/0004-6361/201833910."
+  - "Sửa tỉ lệ thành phần theo Planck 2018 kèm sai số: ΩΛ = 0,6847 ± 0,0073; vật chất tối ≈ 26,4% và vật chất thường ≈ 4,9% (suy từ Ωch² = 0,1200 ± 0,0012 và Ωbh² = 0,02237 ± 0,00015 với h = 0,6736). Viết thành câu riêng để không đọc thành 'năng lượng tối chiếm cả ba'."
+  - "Thêm một đoạn về căng thẳng Hubble: Planck 2018 cho H0 = 67,36 ± 0,54 km/s/Mpc, SH0ES 2022 cho H0 = 73,04 ± 1,04 km/s/Mpc, lệch khoảng 5σ; nói rõ đây là bất đồng chưa giải quyết và không kết luận bên nào đúng."
+  - "Thêm chữ 'tính theo khối lượng' sau tỉ lệ 75% hydro / 25% heli và trích Cyburt và cs. 2016 (doi 10.1103/RevModPhys.88.015004); bỏ lithi khỏi phần 'dự đoán chính xác'."
+  - "Trích Fixsen 2009 (doi 10.1088/0004-637X/707/2/916) cho nhiệt độ CMB."
+  - "Ghi rõ ai phát hiện năm 1998 (High-z Supernova Search Team, Riess và cs. 1998, doi 10.1086/300499; Supernova Cosmology Project, Perlmutter và cs. 1999 — mở kiểm bài này trước khi trích)."
+  - "Cắt các mốc '200 triệu năm – sao đầu tiên' và '300 triệu năm – thiên hà đầu tiên', trừ khi tìm được nguồn bậc 1–2."
+  - "Kiểm hai mốc 100 nghìn tỷ năm và 10¹⁰⁰ năm trong toàn văn Adams & Laughlin 1997 (doi 10.1103/RevModPhys.69.337); không khớp thì cắt."
+  - "Ghi lạm phát vũ trụ là giả thuyết chưa được xác nhận trực tiếp; hạ câu 'cái chết nhiệt được ủng hộ nhiều nhất' thành câu điều kiện có nguồn."
+  - "Gỡ nguồn Nature Astronomy về va chạm Andromeda; hạ nguồn thienvanvietnam.org xuống tier 4 và điền accessedAt, hoặc thay hẳn."
+suggestedSources:
+  - title: "Planck 2018 results. VI. Cosmological parameters"
+    url: "https://www.aanda.org/articles/aa/full_html/2020/09/aa33910-18/aa33910-18.html"
+    doi: "10.1051/0004-6361/201833910"
+    publisher: "Astronomy & Astrophysics 641, A6 (Planck Collaboration)"
+    year: 2020
+    tier: 1
+    covers: "Tuổi vũ trụ, ΩΛ, Ωm, Ωch², Ωbh², H0, z* lúc tái kết hợp; ghi nhận căng thẳng với H0 đo tại chỗ"
+  - title: "A Comprehensive Measurement of the Local Value of the Hubble Constant with 1 km/s/Mpc Uncertainty from HST and the SH0ES Team"
+    url: "https://arxiv.org/abs/2112.04510"
+    doi: "10.3847/2041-8213/ac5c5b"
+    publisher: "The Astrophysical Journal Letters (Riess et al.)"
+    year: 2022
+    tier: 1
+    covers: "H0 = 73,04 ± 1,04 km/s/Mpc, lệch 5σ so với Planck+ΛCDM (căng thẳng Hubble)"
+  - title: "The Temperature of the Cosmic Microwave Background"
+    url: "https://arxiv.org/abs/0911.1955"
+    doi: "10.1088/0004-637X/707/2/916"
+    publisher: "The Astrophysical Journal 707, 916 (Fixsen)"
+    year: 2009
+    tier: 1
+    covers: "Nhiệt độ CMB 2,72548 ± 0,00057 K"
+  - title: "Big Bang Nucleosynthesis: 2015"
+    url: "https://arxiv.org/abs/1505.01076"
+    doi: "10.1103/RevModPhys.88.015004"
+    publisher: "Reviews of Modern Physics 88, 015004 (Cyburt, Fields, Olive, Yeh)"
+    year: 2016
+    tier: 1
+    covers: "Tỉ lệ nguyên tố nhẹ nguyên thủy: Yp (tỉ lệ khối lượng) dự đoán 0,24709 ± 0,00025, quan sát 0,2449 ± 0,0040; vấn đề lithi"
+  - title: "Observational Evidence from Supernovae for an Accelerating Universe and a Cosmological Constant"
+    url: "https://arxiv.org/abs/astro-ph/9805201"
+    doi: "10.1086/300499"
+    publisher: "The Astronomical Journal 116, 1009 (Riess et al.)"
+    year: 1998
+    tier: 1
+    covers: "Phát hiện giãn nở tăng tốc năm 1998 từ siêu tân tinh Ia"
+  - title: "A Cosmic Miracle: A Remarkably Luminous Galaxy at z_spec = 14.44 Confirmed with JWST"
+    url: "https://arxiv.org/abs/2505.11263"
+    doi: ""
+    publisher: "The Open Journal of Astrophysics (Naidu et al.)"
+    year: 2025
+    tier: 1
+    covers: "Thiên hà xa nhất được xác nhận bằng quang phổ tính tới lần kiểm: MoM-z14, z = 14,44, khoảng 280 triệu năm sau Big Bang"
+  - title: "A Dying Universe: The Long Term Fate and Evolution of Astrophysical Objects"
+    url: "https://arxiv.org/abs/astro-ph/9701131"
+    doi: "10.1103/RevModPhys.69.337"
+    publisher: "Reviews of Modern Physics 69, 337 (Adams & Laughlin)"
+    year: 1997
+    tier: 1
+    covers: "Các mốc tương lai xa: sao cuối cùng tắt, lỗ đen bốc hơi (phải đọc toàn văn để lấy đúng số)"
+  - title: "Sun: Facts"
+    url: "https://science.nasa.gov/sun/facts/"
+    doi: ""
+    publisher: "NASA Science"
+    year: 2026
+    tier: 2
+    covers: "Mặt Trời còn khoảng 5 tỷ năm nữa trước khi thành sao lùn trắng"
+openQuestions:
+  - "Bài đang ở trạng thái PUBLISHED dù chưa qua gate chính xác. Gỡ xuống ngay, hay sửa tại chỗ kèm ghi chú đính chính công khai (quy tắc 9) cho hai lỗi S2?"
+  - "Căng thẳng Hubble chưa ngã ngũ. Ngoài Planck và SH0ES còn các phép đo khác chưa được kiểm trong lượt này; cần người quyết bài nêu bao nhiêu phép đo, miễn không chọn bên."
+  - "Tuổi 13,797 tỷ năm phụ thuộc vào ΛCDM và H0. Có cần ghi chú điều này ngay dưới tiêu đề '13,8 tỉ năm' không?"
+  - "Điều phối viên nói domain thienvanvietnam.org đã chết, nhưng lượt kiểm ngày 17/09/2026 thấy trang vẫn trả HTTP 200 với đúng tiêu đề. Cần kiểm lại trước khi đánh dấu link hỏng; kết luận hạ tier không đổi dù link sống hay chết."

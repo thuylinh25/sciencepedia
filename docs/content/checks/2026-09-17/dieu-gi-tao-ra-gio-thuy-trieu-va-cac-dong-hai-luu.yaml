@@ -1,0 +1,108 @@
+slug: dieu-gi-tao-ra-gio-thuy-trieu-va-cac-dong-hai-luu
+checkedAt: 2026-09-17
+checkedBy: science-editor
+sourceCount: 0
+verdict: revise
+summary: "Không có nguồn nên không thể pass, nhưng nội dung đối chiếu với NOAA/NWS đều đúng (hai chỗ phình thuỷ triều do hấp dẫn và quán tính, ngày mặt trăng 24 giờ 50 phút, gió địa chuyển song song đường đẳng áp, hải lưu mặt do gió) và không có claim rủi ro cao; chỉ cần gắn nguồn NOAA từng đoạn, bổ sung loại triều hỗn hợp và ghi rằng lời giải thích bằng 'quán tính' là cách đơn giản hoá."
+claims:
+  - id: C-1
+    claim: "Nguyên nhân chính của thuỷ triều là lực hấp dẫn của Mặt Trăng và Mặt Trời tác động lên khối nước đại dương"
+    verdict: verified
+    severity: S3
+    evidence: https://oceanservice.noaa.gov/education/tutorial_tides/tides03_gravity.html
+    note: "Đúng theo NOAA. S3 chỉ vì không có nguồn gắn — gắn NOAA."
+  - id: C-2
+    claim: "Mặt Trăng gần hơn nên ảnh hưởng mạnh nhất, kéo nước phình lên ở phía hướng về Mặt Trăng; chuyển động quay của hệ Trái Đất–Mặt Trăng tạo lực quán tính làm nước phình lên ở phía đối diện"
+    verdict: verified
+    severity: S4
+    evidence: https://oceanservice.noaa.gov/education/tutorial_tides/tides03_gravity.html
+    note: "NOAA: phía gần 'the gravitational force of the moon pulls the ocean's waters toward it, creating one bulge'; phía xa 'inertia dominates, creating a second bulge'. Bài đúng với cách NOAA giải thích. Theo quy tắc 'đơn giản hoá không làm sai', thêm một câu nói đây là cách giải thích đơn giản hoá, và gắn nguồn cho vế 'Mặt Trăng gần hơn nên mạnh hơn' (lượt này chưa trích được câu tương ứng)."
+  - id: C-3
+    claim: "Phần lớn nơi trên thế giới có hai lần nước lên và hai lần nước xuống mỗi ngày mặt trăng (khoảng 24 giờ 50 phút); một số vùng chỉ có một lần lên một lần xuống"
+    verdict: partially-supported
+    severity: S4
+    evidence: https://oceanservice.noaa.gov/education/tutorial_tides/tides05_lunarday.html
+    note: "NOAA: 'a lunar day is 24 hours and 50 minutes'; vùng ven biển có 'two high and two low tides every 24 hours and 50 minutes'. Trang NOAA về chu kỳ triều (tides07_cycles.html) nêu ba loại: nhật triều (một lên một xuống), bán nhật triều (hai lần, cao bằng nhau), bán nhật triều hỗn hợp (hai lần, cao khác nhau). Bài bỏ loại hỗn hợp — thêm vào. 'Phần lớn nơi trên thế giới' không có nguồn — đổi thành 'nhiều vùng ven biển' hoặc gắn nguồn."
+  - id: C-4
+    claim: "Bề mặt nhận nhiệt không đều tạo vùng áp thấp và áp cao; không khí chuyển động từ áp cao về áp thấp nhưng chuyển động quay của Trái Đất làm lệch hướng, nên ở quy mô lớn gió thổi gần như song song với đường đẳng áp; chênh lệch áp suất càng lớn gió càng mạnh"
+    verdict: partially-supported
+    severity: S3
+    evidence: https://forecast.weather.gov/glossary.php?word=geostrophic+wind
+    note: "Thuật ngữ NWS: gió địa chuyển 'is affected by coriolis force, blows parallel to isobars and whose strength is related to the pressure gradient' — đỡ đúng vế song song đẳng áp và vế cường độ theo gradien áp suất. Chuỗi 'nóng không đều → áp thấp/áp cao' chưa kiểm được tại nguồn trong lượt này (trang NOAA JetStream 'Origin of Wind' trả 403) — gắn nguồn sau khi mở. Nên gọi tên lực Coriolis, và nói rõ gần mặt đất ma sát làm gió cắt chéo đường đẳng áp (kiểm tại nguồn trước khi thêm)."
+  - id: C-5
+    claim: "Thuỷ triều là một trong những động lực chính của dòng nước ven bờ"
+    verdict: partially-supported
+    severity: S4
+    evidence: https://oceanservice.noaa.gov/education/tutorial_currents/02tidal1.html
+    note: "NOAA: 'The vertical motion of the tides near the shore causes the water to move horizontally, creating currents'; dòng triều thuận nghịch 'typically are found in coastal rivers and estuaries'. Đỡ ý dòng triều ở ven bờ; chữ 'chính' không có trong nguồn — bỏ hoặc gắn nguồn."
+  - id: C-6
+    claim: "Ở quy mô đại dương, động lực quan trọng nhất là các hệ gió thường xuyên (Tín phong, gió Tây ôn đới, gió mùa) đẩy khối nước mặt thành hải lưu"
+    verdict: partially-supported
+    severity: S4
+    evidence: https://oceanservice.noaa.gov/education/tutorial_currents/04currents1.html
+    note: "NOAA: 'Surface ocean currents, which occur on the open ocean, are driven by a complex global wind system', và phải xét lực Coriolis và xoắn Ekman. Nguồn nói về hải lưu MẶT; 'động lực quan trọng nhất' cho mọi hải lưu quy mô đại dương là nói rộng hơn nguồn — thu hẹp thành 'hải lưu mặt'. Tên từng hệ gió cần nguồn riêng."
+  - id: C-7
+    claim: "Chênh lệch nhiệt độ, độ mặn và chuyển động quay của Trái Đất cũng góp phần định hình hướng đi của hải lưu"
+    verdict: partially-supported
+    severity: S4
+    evidence: https://oceanservice.noaa.gov/education/tutorial_currents/04currents1.html
+    note: "Trang NOAA có mục hoàn lưu nhiệt muối (thermohaline) và Coriolis, nhưng đoạn trích được trong lượt này không nêu cơ chế nhiệt độ/độ mặn. Mở trang NOAA về hoàn lưu nhiệt muối để gắn. Nên nói rõ nhiệt độ và độ mặn điều khiển dòng sâu (không chỉ 'định hình hướng')."
+  - id: C-8
+    claim: "Summary: gió, thuỷ triều, hải lưu tác động mạnh mẽ đến khí hậu, thời tiết và hệ sinh thái biển; kết luận: ba hiện tượng đều là kết quả của những lực tự nhiên"
+    verdict: unverifiable
+    severity: S4
+    evidence: "—"
+    note: "Câu chung, không nguồn, không thông tin. Summary hứa nói tới khí hậu và hệ sinh thái nhưng thân bài không có — hoặc thêm đoạn có nguồn, hoặc bỏ khỏi summary."
+fixes:
+  - "Gắn nguồn NOAA cho từng đoạn: tides03_gravity (hai chỗ phình), tides05_lunarday (24 giờ 50 phút), tides07_cycles (loại triều), tutorial_currents/02tidal1 (dòng triều ven bờ), tutorial_currents/04currents1 (hải lưu mặt do gió), thuật ngữ NWS (gió địa chuyển)."
+  - "Thêm loại bán nhật triều hỗn hợp; đổi 'Phần lớn nơi trên thế giới' thành 'nhiều vùng ven biển'."
+  - "Thêm một câu nói giải thích 'hấp dẫn ở phía gần, quán tính ở phía xa' là cách đơn giản hoá."
+  - "Gọi tên lực Coriolis trong đoạn gió; gắn nguồn cho chuỗi 'nóng không đều → chênh áp'."
+  - "Thu hẹp câu 'động lực quan trọng nhất ... hải lưu' thành 'hải lưu mặt'; tách đoạn hoàn lưu nhiệt muối (dòng sâu) và gắn nguồn NOAA."
+  - "Bỏ 'khí hậu, hệ sinh thái biển' khỏi summary hoặc thêm đoạn có nguồn."
+suggestedSources:
+  - title: "Tides and Water Levels — Gravity, Inertia, and the Two Bulges"
+    url: https://oceanservice.noaa.gov/education/tutorial_tides/tides03_gravity.html
+    doi: ""
+    publisher: NOAA National Ocean Service
+    year: "không hiển thị trên trang"
+    tier: 2
+    covers: "nguyên nhân thuỷ triều, hai chỗ phình"
+  - title: "Tides and Water Levels — The Frequency of Tides: The Lunar Day"
+    url: https://oceanservice.noaa.gov/education/tutorial_tides/tides05_lunarday.html
+    doi: ""
+    publisher: NOAA National Ocean Service
+    year: "không hiển thị trên trang"
+    tier: 2
+    covers: "ngày mặt trăng 24 giờ 50 phút, hai lần lên/xuống"
+  - title: "Tides and Water Levels — Types and Causes of Tidal Cycles"
+    url: https://oceanservice.noaa.gov/education/tutorial_tides/tides07_cycles.html
+    doi: ""
+    publisher: NOAA National Ocean Service
+    year: "không hiển thị trên trang"
+    tier: 2
+    covers: "nhật triều, bán nhật triều, bán nhật triều hỗn hợp"
+  - title: "Currents — Tidal Currents"
+    url: https://oceanservice.noaa.gov/education/tutorial_currents/02tidal1.html
+    doi: ""
+    publisher: NOAA National Ocean Service
+    year: "không hiển thị trên trang"
+    tier: 2
+    covers: "dòng triều ven bờ, cửa sông"
+  - title: "Currents — Surface Ocean Currents"
+    url: https://oceanservice.noaa.gov/education/tutorial_currents/04currents1.html
+    doi: ""
+    publisher: NOAA National Ocean Service
+    year: "không hiển thị trên trang"
+    tier: 2
+    covers: "hải lưu mặt do hệ gió toàn cầu, Coriolis, xoắn Ekman"
+  - title: "NWS Glossary — Geostrophic wind"
+    url: https://forecast.weather.gov/glossary.php?word=geostrophic+wind
+    doi: ""
+    publisher: NOAA National Weather Service
+    year: "không hiển thị trên trang"
+    tier: 2
+    covers: "gió địa chuyển song song đường đẳng áp, cường độ theo gradien áp suất"
+openQuestions:
+  - "Bài đang PUBLISHED với 0 nguồn. Nội dung không sai nên đề xuất bổ sung nguồn tại chỗ và ghi chú cập nhật công khai, không cần gỡ — cần người xác nhận."
+  - "Các trang giáo dục NOAA không hiển thị năm xuất bản trong phần trích được — người gắn nguồn ghi accessedAt thay cho năm."

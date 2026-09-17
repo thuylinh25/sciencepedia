@@ -1,0 +1,148 @@
+slug: he-vi-sinh-duong-ruot-hang-chuc-nghin-ti-cu-dan-va-anh-huong-cua-chung
+checkedAt: 2026-09-17
+checkedBy: science-editor
+sourceCount: 3
+verdict: revise
+summary: "Các con số lõi (3,8×10¹³ vi khuẩn, ~200 g) đúng theo Sender 2016 và bài KHÔNG dùng tỉ lệ 10:1 đã bị bác. Nhưng một câu nâng tương quan thành nhân quả ('đa dạng thực vật giúp tăng đa dạng hệ vi sinh và thúc đẩy butyrate'), câu trả lời 'Có.' về tác động lên não, 2/3 nguồn thiếu URL/DOI/accessedAt, và phần vitamin/miễn dịch không có nguồn nào đỡ. Sửa được trong một vòng; nếu câu nâng mức tự tin còn nguyên ở vòng 2 thì từ chối."
+claims:
+  - id: C-1
+    claim: "Đường ruột người chứa khoảng 3,8×10¹³ đến 4×10¹³ vi sinh vật, tức khoảng 40 nghìn tỉ cá thể"
+    verdict: partially-supported
+    severity: S4
+    evidence: https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1002533
+    note: "Sender, Fuchs & Milo 2016 ước tính 3,8·10¹³ VI KHUẨN (không phải mọi vi sinh vật: nấm, cổ khuẩn, virus không nằm trong con số này). Sửa thành 'khoảng 3,8×10¹³ vi khuẩn (Sender và cộng sự, 2016)'; bỏ cận trên 4×10¹³ vì là làm tròn. Bài KHÔNG dùng tỉ lệ 10:1 — đúng. Nếu muốn nêu tỉ lệ thì dùng 'khoảng 1,3 vi khuẩn trên 1 tế bào người, sai số ~25%' theo chính bài này."
+  - id: C-2
+    claim: "Tổng khối lượng hệ vi sinh chỉ khoảng 200 gram"
+    verdict: verified
+    severity: none
+    evidence: https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1002533
+    note: "Nguồn: 'about 0.2 kg (wet weight) from bacteria'. Ghi rõ 'khối lượng ướt, của vi khuẩn'."
+  - id: C-3
+    claim: "Số lượng gene của hệ vi sinh lớn hơn hàng trăm lần bộ gene người"
+    verdict: partially-supported
+    severity: S3
+    evidence: https://research.wur.nl/en/publications/a-human-gut-microbial-gene-catalogue-established-by-metagenomic-s/
+    note: "Qin và cộng sự 2010 (Nature, doi 10.1038/nature08821): danh mục 3,3 triệu gene không trùng lặp, '~150 times larger than the human gene complement'. Đây là danh mục gộp từ phân của 124 người, không phải số gene trong ruột một người. Sửa thành 'danh mục gene vi khuẩn ruột gộp từ 124 người châu Âu lớn gấp khoảng 150 lần số gene người'. 'hàng trăm lần' là phóng đại, cắt."
+  - id: C-4
+    claim: "Butyrate là nguồn năng lượng quan trọng cho tế bào đại tràng và góp phần duy trì môi trường chống viêm"
+    verdict: verified
+    severity: none
+    evidence: https://www.frontiersin.org/journals/immunology/articles/10.3389/fimmu.2019.00277/full
+    note: "Parada Venegas và cộng sự 2019: 'butyrate is the main energy source of colonocytes'; có tác dụng điều hoà miễn dịch/chống viêm. Chưa có nguồn nào trong 3 nguồn hiện gắn cho claim này — thêm nguồn này."
+  - id: C-5
+    claim: "Một số vi khuẩn đường ruột tổng hợp vitamin K, biotin (B7), folate (B9) và một số vitamin B khác"
+    verdict: unverifiable
+    severity: S3
+    evidence: "—"
+    note: "Không nguồn nào hiện gắn đỡ claim này. Ứng viên LeBlanc và cộng sự 2013 (Current Opinion in Biotechnology 24:160–168) — repository CONICET từ chối kết nối trong lượt này nên chưa mở được. Cần nguồn đã mở, và phải nói rõ vi khuẩn tổng hợp được KHÔNG đồng nghĩa với việc cơ thể hấp thu đủ lượng đó."
+  - id: C-6
+    claim: "Hệ vi sinh giúp hệ miễn dịch nhận biết tác nhân gây bệnh, dung nạp chất vô hại, điều hoà phản ứng viêm; vi khuẩn có lợi cạnh tranh chỗ và dinh dưỡng với mầm bệnh"
+    verdict: unverifiable
+    severity: S3
+    evidence: "—"
+    note: "Nguồn 2 (Sommer & Bäckhed 2013, Nature Reviews Microbiology) có thể đỡ nhưng thiếu URL/DOI nên không đối chiếu được trong lượt này. Bổ sung DOI, mở kiểm, rồi gắn nguồn ở mức từng mục."
+  - id: C-7
+    claim: "Bằng chứng hiện nay cho thấy sự đa dạng thực phẩm thực vật là một trong những yếu tố quan trọng nhất giúp tăng tính đa dạng của hệ vi sinh và thúc đẩy sản xuất butyrate"
+    verdict: partially-supported
+    severity: S2
+    evidence: https://today.ucsd.edu/story/whats-in-your-gut
+    note: "American Gut Project (McDonald và cộng sự 2018, mSystems) là nghiên cứu QUAN SÁT, dữ liệu tự khai báo: người ăn >30 loại thực vật/tuần có hệ vi sinh đa dạng hơn người ăn ≤10 loại. Đây là tương quan, không phải 'giúp tăng'; 'quan trọng nhất' và 'thúc đẩy sản xuất butyrate' không có trong nguồn. Ngược lại, thử nghiệm can thiệp Wastyk 2021 (n=36, 10 tuần) thấy chế độ nhiều chất xơ KHÔNG làm tăng độ đa dạng trung bình trong thời gian ngắn. Nâng tương quan thành nhân quả là lỗi cỡ từ chối. Sửa: 'Trong một nghiên cứu quan sát lớn (American Gut, 2018), người ăn trên 30 loại thực vật mỗi tuần có hệ vi sinh đa dạng hơn; thử nghiệm ngắn hạn tăng chất xơ chưa cho thấy hiệu ứng tương tự.' Bỏ 'hiện nay' hoặc gắn mốc năm."
+  - id: C-8
+    claim: "Thực phẩm lên men (sữa chua, kim chi, dưa muối, kefir) có thể giúp tăng độ đa dạng hệ vi sinh và cải thiện một số chỉ dấu viêm"
+    verdict: verified
+    severity: S4
+    evidence: https://med.stanford.edu/news/all-news/2021/07/fermented-food-diet-increases-microbiome-diversity-lowers-inflammation.html
+    note: "Đúng với Wastyk và cộng sự 2021 (Cell) — chính là nguồn 1 của bài: 36 người lớn khoẻ mạnh, 10 tuần, độ đa dạng tăng, 19 protein viêm trong máu giảm. Mức dè dặt 'có thể' là phù hợp. Thêm phạm vi: 'trong một thử nghiệm 10 tuần trên 36 người lớn khoẻ mạnh'."
+  - id: C-9
+    claim: "Đa số trường hợp hệ vi sinh phục hồi sau vài tuần hoặc vài tháng sau kháng sinh, nhưng đôi khi một số loài không trở lại"
+    verdict: partially-supported
+    severity: S3
+    evidence: https://vbn.aau.dk/en/publications/recovery-of-gut-microbiota-of-healthy-adults-following-antibiotic/
+    note: "Palleja và cộng sự 2018 (Nature Microbiology, doi 10.1038/s41564-018-0257-9): 12 nam giới khoẻ mạnh, 4 ngày dùng tổ hợp meropenem + gentamicin + vancomycin; thành phần về gần mức ban đầu trong 1,5 tháng, nhưng 9 loài phổ biến vẫn không phát hiện được ở phần lớn người tham gia sau 180 ngày. Không có nguồn nào hiện gắn cho claim. 'Đa số trường hợp' là khái quát từ n=12 — sửa thành 'Trong một nghiên cứu trên 12 nam giới khoẻ mạnh, thành phần hệ vi sinh gần trở lại ban đầu sau khoảng 1,5 tháng, nhưng 9 loài phổ biến vẫn vắng mặt ở phần lớn người sau 6 tháng.'"
+  - id: C-10
+    claim: "Hệ vi sinh có ảnh hưởng tới não bộ không? — Có."
+    verdict: partially-supported
+    severity: S3
+    evidence: https://pmc.ncbi.nlm.nih.gov/articles/PMC10917620/
+    note: "Tổng quan phương pháp 2023 (Microbiome Research Reports, doi 10.20517/mrr.2023.33): bằng chứng cơ chế chủ yếu từ loài gặm nhấm vô trùng/dùng kháng sinh; ở người các liên hệ 'mostly variable and inconsistent across observational studies', nhân quả chưa xác lập. Câu 'Có.' đứng một mình là nâng mức tự tin; các đoạn cảnh báo phía sau thì đúng. Sửa thành: 'Có bằng chứng, nhưng phần lớn từ nghiên cứu trên chuột; ở người mới chủ yếu là tương quan.'"
+  - id: C-11
+    claim: "Vi khuẩn đường ruột có thể tác động gián tiếp đến sản xuất serotonin và ảnh hưởng đến cảm giác đói, no và mức độ căng thẳng"
+    verdict: partially-supported
+    severity: S3
+    evidence: https://www.frontiersin.org/journals/psychiatry/articles/10.3389/fpsyt.2018.00044/full
+    note: "Breit và cộng sự 2018: bằng chứng về tác động của vi khuẩn lên hành vi giống lo âu/trầm cảm chủ yếu từ mô hình gặm nhấm; ở người còn sơ bộ. Ghi rõ 'chủ yếu trên chuột' ở mục đói/no/căng thẳng, hoặc cắt mục căng thẳng."
+  - id: C-12
+    claim: "Tìm thấy mối liên hệ không có nghĩa vi khuẩn là nguyên nhân trực tiếp; nhiều kết quả mới chỉ cho thấy tương quan"
+    verdict: verified
+    severity: none
+    evidence: https://pmc.ncbi.nlm.nih.gov/articles/PMC10917620/
+    note: "Đúng mức dè dặt của tài liệu. Giữ nguyên."
+  - id: C-13
+    claim: "Danh sách nguồn: nguồn 1 (Cell 2021) và nguồn 2 (Nature Reviews Microbiology 2013) không có url, doi, accessedAt"
+    verdict: unverifiable
+    severity: S3
+    evidence: "—"
+    note: "Không thể mở kiểm nguồn thiếu định danh. Trang Cell trả 403 trong lượt này. Bổ sung DOI + URL + accessedAt cho cả hai sau khi mở, và gắn từng nguồn vào đúng đoạn nó đỡ. Hiện 3 nguồn không phủ các phần vitamin, kháng sinh, butyrate, gene."
+fixes:
+  - "Đổi '3,8 × 10¹³ đến 4 × 10¹³ vi sinh vật' thành 'khoảng 3,8 × 10¹³ vi khuẩn' và gắn Sender 2016; ghi '200 g khối lượng ướt của vi khuẩn'."
+  - "Thay 'lớn hơn hàng trăm lần bộ gene người' bằng 'danh mục gene gộp từ 124 người lớn gấp khoảng 150 lần số gene người (Qin 2010)'."
+  - "Viết lại câu về đa dạng thực vật thành tương quan quan sát (American Gut 2018), bỏ 'quan trọng nhất' và 'thúc đẩy sản xuất butyrate', thêm kết quả nhóm chất xơ của Wastyk 2021."
+  - "Thêm phạm vi cho claim thực phẩm lên men: 36 người lớn khoẻ mạnh, 10 tuần, 19 protein viêm giảm."
+  - "Viết lại đoạn kháng sinh theo Palleja 2018 với n=12, 1,5 tháng, 9 loài vắng mặt sau 180 ngày; bỏ 'đa số trường hợp'."
+  - "Thay câu trả lời 'Có.' bằng câu có mức dè dặt: bằng chứng chủ yếu từ chuột, ở người chủ yếu là tương quan."
+  - "Tìm và mở nguồn bậc 1–2 cho phần tổng hợp vitamin và phần miễn dịch/cạnh tranh mầm bệnh; nếu không có thì cắt."
+  - "Bổ sung DOI, URL, accessedAt cho nguồn 1 và 2; gắn nguồn ở mức đoạn."
+  - "Bỏ hoặc gắn mốc năm cho 'Bằng chứng hiện nay' và 'hiện nay' trong kết luận."
+suggestedSources:
+  - title: "Revised Estimates for the Number of Human and Bacteria Cells in the Body"
+    url: https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1002533
+    doi: 10.1371/journal.pbio.1002533
+    publisher: PLOS Biology
+    year: 2016
+    tier: 1
+    covers: "số vi khuẩn 3,8×10¹³, khối lượng ~0,2 kg, tỉ lệ ~1,3:1 thay cho 10:1"
+  - title: "A human gut microbial gene catalogue established by metagenomic sequencing"
+    url: https://research.wur.nl/en/publications/a-human-gut-microbial-gene-catalogue-established-by-metagenomic-s/
+    doi: 10.1038/nature08821
+    publisher: Nature
+    year: 2010
+    tier: 1
+    covers: "3,3 triệu gene, ~150 lần số gene người"
+  - title: "Short Chain Fatty Acids (SCFAs)-Mediated Gut Epithelial and Immune Regulation and Its Relevance for Inflammatory Bowel Diseases"
+    url: https://www.frontiersin.org/journals/immunology/articles/10.3389/fimmu.2019.00277/full
+    doi: 10.3389/fimmu.2019.00277
+    publisher: Frontiers in Immunology
+    year: 2019
+    tier: 1
+    covers: "SCFA, butyrate là nguồn năng lượng chính của tế bào đại tràng, vai trò chống viêm"
+  - title: "Recovery of gut microbiota of healthy adults following antibiotic exposure"
+    url: https://vbn.aau.dk/en/publications/recovery-of-gut-microbiota-of-healthy-adults-following-antibiotic/
+    doi: 10.1038/s41564-018-0257-9
+    publisher: Nature Microbiology
+    year: 2018
+    tier: 1
+    covers: "mục Kháng sinh — thời gian phục hồi và các loài không trở lại"
+  - title: "Fermented-food diet increases microbiome diversity, decreases inflammatory proteins, study finds"
+    url: https://med.stanford.edu/news/all-news/2021/07/fermented-food-diet-increases-microbiome-diversity-lowers-inflammation.html
+    doi: ""
+    publisher: Stanford Medicine
+    year: 2021
+    tier: 3
+    covers: "tóm tắt thiết kế Wastyk 2021 (n=36, 10 tuần) — chỉ để lấy phạm vi; nguồn đỡ chính vẫn phải là bài Cell"
+  - title: "What's in Your Gut? (American Gut Project, mSystems 2018)"
+    url: https://today.ucsd.edu/story/whats-in-your-gut
+    doi: ""
+    publisher: UC San Diego
+    year: 2018
+    tier: 3
+    covers: "mục đa dạng thực vật — tương quan quan sát >30 loại thực vật/tuần; cần thay bằng bài mSystems gốc khi mở được"
+  - title: "Methodological recommendations for human microbiota-gut-brain axis research"
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC10917620/
+    doi: 10.20517/mrr.2023.33
+    publisher: Microbiome Research Reports
+    year: 2023
+    tier: 1
+    covers: "mục trục ruột–não: bằng chứng chủ yếu từ động vật, ở người chủ yếu là tương quan"
+openQuestions:
+  - "Chồng lấn nội dung: bài này, 'ruot-he-vi-sinh-vat-va-quyen-luc-cua-bo-nao-thu-hai' và 'nhin-an-gian-doan-...' cùng trình bày trục ruột–não, danh sách hormone đói/no và lời khuyên ăn uống (rau, chất xơ, thực phẩm lên men). Cần knowledge-architect quyết định bài nào giữ phần nào (đề xuất: bài này là bài gốc về hệ vi sinh; bài 'bộ não thứ hai' chỉ giữ ENS + dây phế vị; bài nhịn ăn chỉ giữ IF), hoặc gộp lại."
+  - "Bài đang ở trạng thái PUBLISHED dù chưa qua gate chính xác. Có hạ xuống chờ sửa hay giữ online kèm ghi chú đính chính công khai (quy tắc 9) không? Cần người quyết."

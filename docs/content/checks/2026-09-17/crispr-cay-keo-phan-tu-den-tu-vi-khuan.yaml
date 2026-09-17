@@ -1,0 +1,118 @@
+slug: crispr-cay-keo-phan-tu-den-tu-vi-khuan
+checkedAt: 2026-09-17
+checkedBy: science-editor
+sourceCount: 3
+verdict: revise
+summary: "Mốc phê duyệt Casgevy của MHRA (16/11/2023) và FDA (08/12/2023) đúng nguồn (mốc 16/01/2024 còn thiếu nguồn đọc được) và không lẫn chuyện Nobel với tranh chấp bằng sáng chế, nhưng câu “chỉ cần tổng hợp RNA 20 nucleotide là cắt được chỗ muốn” bỏ điều kiện PAM nên để lại mô hình sai (S2), vụ He Jiankui thiếu số liệu đúng, và câu cấm chỉnh sửa dòng mầm không có nguồn lẫn mốc thời gian."
+claims:
+  - id: C-1
+    claim: "CRISPR là hệ miễn dịch thích ứng của vi khuẩn; vi khuẩn lưu một đoạn DNA của virus vào bộ gene để nhận diện lần sau"
+    verdict: partially-supported
+    severity: S4
+    evidence: https://pmc.ncbi.nlm.nih.gov/articles/PMC6286148/
+    note: "Jinek et al. 2012 đỡ ý “CRISPR/Cas provide bacteria and archaea with adaptive immunity … using crRNAs”. Bổ sung “và vi khuẩn cổ”. Bước lưu spacer vào bộ gene không nằm trong phần đã đọc — gắn thêm nguồn cho bước này hoặc viết gọn."
+  - id: C-2
+    claim: "RNA dẫn đường khoảng 20 nucleotide khớp bổ sung với vị trí DNA cần cắt; Cas9 cắt cả hai mạch"
+    verdict: verified
+    severity: none
+    evidence: https://pmc.ncbi.nlm.nih.gov/articles/PMC6286148/
+    note: "Nguồn: đoạn nhắm đích ~20 nt; Cas9 cắt cả hai mạch bằng miền HNH (mạch bổ sung) và RuvC (mạch không bổ sung)."
+  - id: C-3
+    claim: "Muốn cắt ở đâu, chỉ cần tổng hợp một đoạn RNA 20 nucleotide tương ứng"
+    verdict: contradicted
+    severity: S2
+    evidence: https://pmc.ncbi.nlm.nih.gov/articles/PMC6286148/
+    note: "Jinek 2012: vị trí cắt do CẢ bắt cặp bổ sung VÀ motif PAM nằm cạnh đích quyết định; với SpCas9 PAM là NGG, cả hai G đều thiết yếu. Không có PAM thì không cắt dù RNA khớp. Sửa thành: “có thể nhắm gần như mọi vị trí có trình tự PAM (NGG với Cas9 của S. pyogenes) nằm ngay cạnh, bằng cách đổi đoạn RNA ~20 nucleotide”."
+  - id: C-4
+    claim: "Đột phá năm 2012 của Jennifer Doudna và Emmanuelle Charpentier là chứng minh có thể lập trình lại RNA dẫn đường"
+    verdict: partially-supported
+    severity: S3
+    evidence: https://pmc.ncbi.nlm.nih.gov/articles/PMC6286148/
+    note: "Bài Jinek et al. 2012 (Science 337:816–821, DOI 10.1126/science.1225829) có kết luận Cas9 lập trình được bằng một phân tử RNA. Bài 2012 do nhóm Jinek làm, Doudna và Charpentier là tác giả chủ trì — viết “nhóm của Doudna và Charpentier” thay cho quy công riêng hai người. Danh sách tác giả chưa đọc trực tiếp trong lượt này; người sửa phải kiểm tại trang bài."
+  - id: C-5
+    claim: "Hai người nhận giải Nobel Hoá học năm 2020"
+    verdict: partially-supported
+    severity: S3
+    evidence: https://www.gov.uk/government/news/mhra-authorises-world-first-gene-therapy-that-aims-to-cure-sickle-cell-disease-and-transfusion-dependent-thalassemia
+    note: "MHRA chỉ ghi các nhà phát minh CRISPR “were awarded the Nobel Prize in 2020”, không nêu tên và hạng mục. nobelprize.org trả 403 trong lượt này. Gắn trang giải thưởng của nobelprize.org làm citation trước khi xuất bản. Bài KHÔNG nhắc tranh chấp bằng sáng chế Broad/UC — đúng: hai chuyện tách rời; nếu thêm, phải để ở đoạn riêng, không gộp vào câu Nobel."
+  - id: C-6
+    claim: "NHEJ nhanh nhưng hay sai, dùng để tắt gene; HDR chính xác hơn, cho phép chèn trình tự nếu có khuôn"
+    verdict: unsupported
+    severity: S3
+    evidence: "—"
+    note: "Không nguồn nào trong ba nguồn của bài đỡ phần sửa chữa DNA. Gắn tổng quan peer-review về sửa chữa đứt gãy mạch đôi sau Cas9."
+  - id: C-7
+    claim: "Casgevy (exagamglogene autotemcel) là liệu pháp dùng CRISPR đầu tiên được cơ quan quản lý chấp thuận"
+    verdict: verified
+    severity: S4
+    evidence: https://www.gov.uk/government/news/mhra-authorises-world-first-gene-therapy-that-aims-to-cure-sickle-cell-disease-and-transfusion-dependent-thalassemia
+    note: "MHRA: “Casgevy is the first medicine to be licensed that uses … CRISPR”; FDA: “the first FDA-approved therapy utilizing CRISPR/Cas9”. Thêm “(tháng 11/2023, tại Anh)” để câu có mốc."
+  - id: C-8
+    claim: "MHRA phê duyệt tháng 11/2023 cho cả hồng cầu hình liềm và beta-thalassemia"
+    verdict: verified
+    severity: S4
+    evidence: https://www.gov.uk/government/news/mhra-authorises-world-first-gene-therapy-that-aims-to-cure-sickle-cell-disease-and-transfusion-dependent-thalassemia
+    note: "Ngày công bố 16/11/2023; chỉ định là thalassemia PHỤ THUỘC TRUYỀN MÁU, bệnh nhân từ 12 tuổi. Bổ sung hai điều kiện này — viết “beta-thalassemia” trơn là rộng hơn chỉ định."
+  - id: C-9
+    claim: "FDA phê duyệt ngày 08/12/2023, ban đầu chỉ cho hồng cầu hình liềm"
+    verdict: verified
+    severity: S4
+    evidence: https://www.fda.gov/news-events/press-announcements/fda-approves-first-gene-therapies-treat-patients-sickle-cell-disease
+    note: "Đúng ngày; chỉ định là bệnh nhân từ 12 tuổi có tiền sử cơn tắc mạch. Thêm điều kiện chỉ định."
+  - id: C-10
+    claim: "Chỉ định beta-thalassemia được FDA bổ sung ngày 16/01/2024"
+    verdict: partially-supported
+    severity: S3
+    evidence: "—"
+    note: "Ngày 16/01/2024 xuất hiện trong tiêu đề tài liệu FDA “Summary Basis for Regulatory Action” (fda.gov/media/175842) nhưng PDF không đọc được trong lượt này, và không nguồn nào trong bài đỡ câu này (thông cáo FDA đã gắn là của 08/12/2023). Gắn tài liệu FDA cho ngày 16/01/2024 và ghi “thalassemia phụ thuộc truyền máu, từ 12 tuổi”."
+  - id: C-11
+    claim: "Năm 2018 He Jiankui công bố chỉnh sửa phôi người và tạo ra hai em bé, dẫn tới án tù"
+    verdict: partially-supported
+    severity: S3
+    evidence: "—"
+    note: "Chỉ thấy qua kết quả tìm kiếm, chưa mở trang nào (nên evidence để trống): tiêu đề và trích đoạn của MIT Technology Review và Science/AAAS tháng 12/2019 nêu tuyên án 30/12/2019, 3 năm tù; thí nghiệm dẫn tới ba trẻ ra đời từ hai phụ nữ. “Hai em bé” chỉ đúng với công bố 11/2018. Nguồn này là báo chí (bậc 4) — chỉ dùng cho bối cảnh; cần thêm nguồn bậc 1–2 (ví dụ tin của Nature) trước khi giữ số liệu. Sửa: “công bố tháng 11/2018 hai bé song sinh; toà án Thâm Quyến sau đó xác định có ba trẻ, và ngày 30/12/2019 tuyên ông 3 năm tù”."
+  - id: C-12
+    claim: "Hiện nay việc chỉnh sửa dòng mầm ở người bị cấm hoặc hạn chế nghiêm ngặt ở hầu hết các nước"
+    verdict: unsupported
+    severity: S3
+    evidence: "—"
+    note: "Claim ràng buộc thời gian, không có mốc và không có nguồn. Gắn khảo sát pháp lý peer-review hoặc báo cáo của học viện quốc gia/WHO kèm “tính đến <năm>”, hoặc cắt."
+  - id: C-13
+    claim: "Ba nguồn trong danh sách NGUỒN"
+    verdict: partially-supported
+    severity: S3
+    evidence: https://pmc.ncbi.nlm.nih.gov/articles/PMC6286148/
+    note: "Nguồn 1 (Science 2012) thiếu url, doi, accessedAt. Không nguồn nào đỡ phần NHEJ/HDR, Nobel, He Jiankui và luật dòng mầm."
+fixes:
+  - "Viết lại câu lập trình RNA dẫn đường: nêu điều kiện PAM (NGG với SpCas9) nằm cạnh đích; bỏ “chỉ cần”."
+  - "Đổi quy kết thành “nhóm của Doudna và Charpentier (Jinek et al., 2012)”; điền DOI 10.1126/science.1225829, url https://www.science.org/doi/10.1126/science.1225829 và accessedAt cho nguồn 1."
+  - "Gắn nobelprize.org cho câu giải Nobel Hoá học 2020; giữ tách biệt với mọi nhắc tới tranh chấp bằng sáng chế Broad/UC."
+  - "Gắn tổng quan peer-review cho đoạn NHEJ/HDR hoặc cắt đoạn."
+  - "Bổ sung chỉ định chính xác: MHRA 16/11/2023, bệnh nhân ≥12 tuổi, hồng cầu hình liềm và thalassemia phụ thuộc truyền máu; FDA 08/12/2023 ≥12 tuổi có tiền sử cơn tắc mạch; gắn tài liệu FDA cho mốc 16/01/2024."
+  - "Sửa đoạn He Jiankui theo C-11 và gắn nguồn bậc 1–2; báo chí chỉ làm bối cảnh."
+  - "Câu cấm chỉnh sửa dòng mầm: thêm nguồn và “tính đến năm …”, hoặc cắt."
+suggestedSources:
+  - title: "A Programmable Dual-RNA–Guided DNA Endonuclease in Adaptive Bacterial Immunity"
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC6286148/
+    doi: 10.1126/science.1225829
+    publisher: Science
+    year: 2012
+    tier: 1
+    covers: "Cơ chế Cas9: crRNA ~20 nt, PAM NGG bắt buộc, cắt hai mạch bằng HNH/RuvC, lập trình bằng một RNA"
+  - title: "MHRA authorises world-first gene therapy that aims to cure sickle-cell disease and transfusion-dependent β-thalassemia"
+    url: https://www.gov.uk/government/news/mhra-authorises-world-first-gene-therapy-that-aims-to-cure-sickle-cell-disease-and-transfusion-dependent-thalassemia
+    doi: ""
+    publisher: Medicines and Healthcare products Regulatory Agency (UK)
+    year: 2023
+    tier: 2
+    covers: "Phê duyệt 16/11/2023, chỉ định ≥12 tuổi, “first medicine … that uses CRISPR”"
+  - title: "FDA Approves First Gene Therapies to Treat Patients with Sickle Cell Disease"
+    url: https://www.fda.gov/news-events/press-announcements/fda-approves-first-gene-therapies-treat-patients-sickle-cell-disease
+    doi: ""
+    publisher: U.S. Food and Drug Administration
+    year: 2023
+    tier: 2
+    covers: "Phê duyệt 08/12/2023 Casgevy và Lyfgenia, chỉ định ≥12 tuổi có tiền sử cơn tắc mạch"
+openQuestions:
+  - "Hai nguồn MHRA/FDA dùng chữ “first”. Người biên tập cần quyết có thêm “tính đến 2023” hay coi đây là mốc lịch sử không cần hẹn ngày kiểm lại."
+  - "Nguồn bậc 1–2 cho vụ He Jiankui và cho khung pháp lý chỉnh sửa dòng mầm chưa được mở trong lượt này — content-research cần tìm."

@@ -1,0 +1,152 @@
+slug: sao-kim-bai-hoc-ve-hieu-ung-nha-kinh-mat-kiem-soat
+checkedAt: 2026-09-17
+checkedBy: science-editor
+sourceCount: 2
+verdict: revise
+summary: Số liệu quỹ đạo, nhiệt độ, áp suất khớp NASA NSSDC, nhưng bài gán sai VERITAS là sứ mệnh khảo sát tầng khí quyển 50–60 km (thực ra là tàu radar lập bản đồ bề mặt), đưa ra tỉ lệ phản xạ 75% không có nguồn và nói "sắp tới" mà không có mốc ngày trong khi cả hai sứ mệnh đều không phóng trước 2030.
+claims:
+  - id: C-1
+    claim: "Sao Kim có bán kính chỉ nhỏ hơn Trái Đất 5%."
+    verdict: verified
+    severity: none
+    evidence: https://nssdc.gsfc.nasa.gov/planetary/factsheet/venusfact.html
+    note: Bán kính trung bình 6051,8 km so với 6371,0 km của Trái Đất = nhỏ hơn 5,0%. Khớp.
+  - id: C-2
+    claim: "Khối lượng Sao Kim bằng 82% Trái Đất."
+    verdict: verified
+    severity: none
+    evidence: https://nssdc.gsfc.nasa.gov/planetary/factsheet/venusfact.html
+    note: Fact Sheet ghi tỉ số khối lượng so với Trái Đất là 0,815. Làm tròn 82% là hợp lệ.
+  - id: C-3
+    claim: "Khí quyển Sao Kim gồm 96% CO₂."
+    verdict: verified
+    severity: S4
+    evidence: https://nssdc.gsfc.nasa.gov/planetary/factsheet/venusfact.html
+    note: Fact Sheet ghi 96,5%. "96%" làm tròn xuống; nên ghi 96,5% cho khớp nguồn.
+  - id: C-4
+    claim: "Bề mặt nóng 464°C, áp suất gấp 92 lần Trái Đất. [Summary + thân bài]"
+    verdict: partially-supported
+    severity: S4
+    evidence: https://nssdc.gsfc.nasa.gov/planetary/factsheet/venusfact.html
+    note: 'Khớp chính xác với Fact Sheet (737 K = 464°C; 92 bar). NHƯNG nguồn thứ hai mà bài dẫn — science.nasa.gov/venus/venus-facts/, cập nhật 14/09/2026 — ghi "about 467 Celsius" và "about 93 times". Hai nguồn trong cùng bài lệch nhau. Không sai, nhưng phải chọn một nguồn cho mỗi con số và ghi rõ, hoặc viết "khoảng 465°C, khoảng 92–93 lần".'
+  - id: C-5
+    claim: "Áp suất bề mặt tương đương khi lặn sâu 900 mét dưới đại dương Trái Đất."
+    verdict: partially-supported
+    severity: S4
+    evidence: https://science.nasa.gov/venus/venus-facts/
+    note: 'NASA Science ghi "more than 3,000 feet underwater on Earth (930 meters)". Kiểm độc lập: 92 bar ≈ 1 bar khí quyển + ~91 bar nước ≈ 900 m nước biển, nên 900 m cũng nhất quán với số 92 bar của Fact Sheet. Sửa thành "khoảng 900 m" và dẫn nguồn, hoặc dùng 930 m của NASA Science.'
+  - id: C-6
+    claim: "Lớp mây axit sulfuric phản xạ 75% ánh sáng tới."
+    verdict: contradicted
+    severity: S3
+    evidence: https://nssdc.gsfc.nasa.gov/planetary/factsheet/venusfact.html
+    note: 'Mây axit sulfuric: đúng (NASA Science). Nhưng con số 75% không có ở nguồn nào bài dẫn. Fact Sheet ghi Bond albedo 0,77 (tức 77%) và albedo hình học 0,689. 75% không khớp cả hai. Theo quy tắc biên tập: số không có nguồn thì cắt, không làm tròn. Sửa thành "phản xạ khoảng 77% ánh sáng Mặt Trời (Bond albedo)" hoặc bỏ số.'
+  - id: C-7
+    claim: "Sao Kim là vật thể sáng thứ ba trên bầu trời sau Mặt Trời và Mặt Trăng."
+    verdict: verified
+    severity: none
+    evidence: https://science.nasa.gov/venus/venus-facts/
+    note: 'NASA: "the third brightest object in the sky after the Sun and Moon". Khớp. Riêng quan hệ nhân quả "mây phản xạ … khiến Sao Kim sáng thứ ba" là đơn giản hoá: độ sáng còn phụ thuộc khoảng cách gần Trái Đất và gần Mặt Trời. Chấp nhận được nếu viết "góp phần".'
+  - id: C-8
+    claim: "Ánh sáng làm nóng bề mặt, bức xạ hồng ngoại bị CO₂ giữ lại. Nhiệt độ tăng, nước bốc hơi, hơi nước lại là khí nhà kính mạnh — vòng lặp tự khuếch đại này đã đẩy nhiệt độ tới 464°C."
+    verdict: partially-supported
+    severity: S3
+    evidence: https://science.nasa.gov/venus/venus-facts/
+    note: 'NASA xác nhận "thick atmosphere traps heat in a runaway greenhouse effect". Nhưng đoạn này để lại mô hình tư duy sai: nó ngụ ý vòng hồi tiếp hơi nước là thứ ĐANG giữ nhiệt độ 464°C. Thực tế hơi nước hiện chỉ là vết trong khí quyển; nhiệt độ hiện nay được duy trì bởi khí quyển CO₂ 92 bar. Hồi tiếp hơi nước (nếu có) là giai đoạn quá khứ — và chính việc Sao Kim từng có nhiều nước hay không đang bị tranh cãi (xem openQuestions). Sửa: tách hai thì — "ngày nay nhiệt độ được giữ bởi lớp CO₂ dày" và "một giả thuyết cho rằng trong quá khứ, hồi tiếp hơi nước đã khởi động quá trình này". Không có nguồn nào trong bài đỡ chuỗi cơ chế này; phải thêm.'
+  - id: C-9
+    claim: "Nhiệt độ đủ nóng để nung chảy chì, và đồng đều từ xích đạo tới cực."
+    verdict: partially-supported
+    severity: S3
+    evidence: https://nssdc.gsfc.nasa.gov/planetary/factsheet/venusfact.html
+    note: Chì nóng chảy ở 327,5°C < 464°C nên vế đầu đúng về vật lý. Vế "đồng đều từ xích đạo tới cực" đúng theo hiểu biết chung nhưng không có trong hai nguồn bài dẫn (Fact Sheet chỉ cho giá trị trung bình; trang NASA Science tôi đã mở không nói điều này). Thêm nguồn hoặc cắt vế sau.
+  - id: C-10
+    claim: "Sao Kim tự quay ngược chiều; một vòng tự quay so với sao nền mất 243 ngày Trái Đất, dài hơn một năm của nó (225 ngày)."
+    verdict: verified
+    severity: none
+    evidence: https://nssdc.gsfc.nasa.gov/planetary/factsheet/venusfact.html
+    note: Chu kỳ tự quay −5832,6 h = 243,0 ngày (dấu âm = nghịch hành); chu kỳ quỹ đạo 224,701 ngày. Khớp.
+  - id: C-11
+    claim: "Ngày mặt trời ở Sao Kim chỉ khoảng 117 ngày Trái Đất, ngắn hơn một năm."
+    verdict: verified
+    severity: none
+    evidence: https://nssdc.gsfc.nasa.gov/planetary/factsheet/venusfact.html
+    note: Length of day 2802,0 h = 116,75 ngày; NASA Science cũng ghi 117 ngày. Giải thích vì sao ngày mặt trời ngắn hơn chu kỳ sao là đúng và rõ — giữ nguyên.
+  - id: C-12
+    claim: "Nguyên nhân [quay ngược] vẫn đang tranh luận, giữa giả thuyết va chạm lớn và giả thuyết thuỷ triều khí quyển."
+    verdict: unsupported
+    severity: S3
+    evidence: "—"
+    note: Cách trình bày (nêu là tranh luận, không chọn phe) là đúng tinh thần biên tập. Nhưng không nguồn nào trong bài nói về nguyên nhân quay ngược. Phải thêm một nguồn tier 1 tổng quan, hoặc cắt câu.
+  - id: C-13
+    claim: "Ở độ cao 50–60 km, nhiệt độ và áp suất trong khí quyển Sao Kim gần với điều kiện bề mặt Trái Đất."
+    verdict: unsupported
+    severity: S3
+    evidence: "—"
+    note: Đây là nhận định phổ biến trong văn liệu, nhưng không nằm trong hai nguồn bài dẫn. Không được giữ số "50–60 km" nếu không có nguồn. Thêm nguồn tier 1–2 hoặc cắt dải độ cao.
+  - id: C-14
+    claim: "Các sứ mệnh sắp tới như DAVINCI và VERITAS của NASA sẽ khảo sát chính vùng này [50–60 km] cùng lịch sử nước của hành tinh."
+    verdict: contradicted
+    severity: S2
+    evidence: https://science.nasa.gov/mission/veritas/overview/
+    note: 'Sai với VERITAS. Trang tổng quan của NASA mô tả VERITAS là tàu quỹ đạo lập bản đồ radar độ phân giải cao bề mặt ("global maps of the hellish surface hidden beneath the clouds") với các thiết bị VISAR và VEM — nó KHÔNG khảo sát tầng khí quyển 50–60 km. Chỉ có DAVINCI (tàu thăm dò rơi xuyên khí quyển) đo khí quyển và nghiên cứu Sao Kim có từng ẩm ướt hay không. Sửa: tách hai sứ mệnh — DAVINCI: đo khí quyển khi rơi xuống + lịch sử nước; VERITAS: bản đồ radar bề mặt và cấu trúc bên trong.'
+  - id: C-15
+    claim: "DAVINCI và VERITAS là các sứ mệnh 'sắp tới'."
+    verdict: outdated
+    severity: S3
+    evidence: https://science.nasa.gov/mission/veritas/overview/
+    note: 'Claim ràng buộc thời gian mà không có mốc. Tính đến 17/09/2026: NASA ghi VERITAS "planned to launch no earlier than 2031"; trang sứ mệnh DAVINCI của NASA chỉ ghi "Future Mission", không có ngày phóng. Báo chí (SpaceNews, Space.com — tier 4, chỉ làm bối cảnh) đưa tin cả hai từng bị đề xuất huỷ trong đề xuất ngân sách NASA năm tài khoá 2026. "Sắp tới" là quá lạc quan. Sửa: "VERITAS (dự kiến phóng không sớm hơn 2031) và DAVINCI (NASA chưa công bố ngày phóng), tính đến 17/09/2026" và lên lịch rà lại mỗi 6 tháng.'
+  - id: C-16
+    claim: "Nguồn 1 (Planetary Fact Sheet) không có accessedAt."
+    verdict: unverifiable
+    severity: S4
+    evidence: https://nssdc.gsfc.nasa.gov/planetary/factsheet/
+    note: accessedAt đang là "THIẾU". Không biết bài đọc bản nào của Fact Sheet.
+fixes:
+  - Viết lại câu về sứ mệnh — tách vai trò. DAVINCI là tàu thăm dò rơi xuyên khí quyển, nghiên cứu khí quyển và Sao Kim có từng có nước hay không. VERITAS là tàu quỹ đạo lập bản đồ radar bề mặt và cấu trúc bên trong, KHÔNG khảo sát tầng 50–60 km.
+  - Thay "sắp tới" bằng mốc cụ thể "tính đến 17/09/2026, VERITAS dự kiến phóng không sớm hơn 2031; NASA chưa công bố ngày phóng DAVINCI", dẫn https://science.nasa.gov/mission/veritas/overview/ và https://science.nasa.gov/mission/davinci/; đặt lịch rà lại sau 6 tháng vì ngân sách của cả hai đang bất định.
+  - Xoá con số "phản xạ 75%". Nếu giữ, ghi "khoảng 77% (Bond albedo 0,77, NASA NSSDC)".
+  - Thống nhất nhiệt độ/áp suất. Hoặc dùng số Fact Sheet (464°C, 92 bar, ~900 m nước) và chỉ dẫn Fact Sheet cho các số đó, hoặc dùng số NASA Science cập nhật 14/09/2026 (467°C, 93 lần, 930 m). Không trộn.
+  - Sửa "96% CO₂" thành "96,5% CO₂".
+  - Viết lại đoạn hiệu ứng nhà kính để tách hiện tại và quá khứ. Ngày nay 464°C được giữ bởi lớp CO₂ dày 92 bar. Vòng hồi tiếp hơi nước chỉ là giả thuyết về quá khứ, phải viết ở thì giả định và dẫn nguồn.
+  - Thêm nguồn cho, hoặc cắt, ba claim hiện chưa có nguồn nào đỡ — nhiệt độ đồng đều xích đạo–cực, điều kiện giống Trái Đất ở 50–60 km, và tranh luận nguyên nhân quay ngược (va chạm vs thuỷ triều khí quyển).
+  - Điền accessedAt cho nguồn 1 (Planetary Fact Sheet), ghi 2026-09-17.
+suggestedSources:
+  - title: Venus Fact Sheet
+    url: https://nssdc.gsfc.nasa.gov/planetary/factsheet/venusfact.html
+    doi:
+    publisher: NASA NSSDC
+    year: 2024
+    tier: 2
+    covers: Bán kính 6051,8 km; khối lượng 0,815 Trái Đất; 737 K (464°C); 92 bar; 96,5% CO₂; Bond albedo 0,77; tự quay −5832,6 h; ngày mặt trời 2802,0 h; quỹ đạo 224,701 ngày
+  - title: Venus Facts (NASA Science)
+    url: https://science.nasa.gov/venus/venus-facts/
+    doi:
+    publisher: NASA
+    year: 2026
+    tier: 2
+    covers: Vật thể sáng thứ ba; mây axit sulfuric; hiệu ứng nhà kính mất kiểm soát; áp suất ~930 m nước; ngày mặt trời 117 ngày (bản cập nhật 14/09/2026 ghi 467°C, 93 lần)
+  - title: VERITAS — Mission Overview
+    url: https://science.nasa.gov/mission/veritas/overview/
+    doi:
+    publisher: NASA
+    year: 2026
+    tier: 2
+    covers: VERITAS là tàu radar lập bản đồ bề mặt/bên trong; phóng không sớm hơn 2031
+  - title: DAVINCI — NASA mission page
+    url: https://science.nasa.gov/mission/davinci/
+    doi:
+    publisher: NASA
+    year: 2026
+    tier: 2
+    covers: DAVINCI gồm tàu bay ngang + tàu thăm dò rơi xuyên khí quyển, đo hoá học, nhiệt độ, áp suất, gió; mục tiêu xác định Sao Kim có từng ẩm ướt và ở được hay không; trang không ghi ngày phóng
+  - title: A dry Venusian interior constrained by atmospheric chemistry
+    url: https://www.nature.com/articles/s41550-024-02414-5
+    doi: 10.1038/s41550-024-02414-5
+    publisher: Nature Astronomy — Constantinou, Shorttle, Rimmer
+    year: 2024
+    tier: 1
+    covers: Phản chứng giả thuyết Sao Kim từng có đại dương — dùng cho đoạn "lịch sử nước" và cho phần hồi tiếp hơi nước ở quá khứ (DOI xác nhận qua Crossref; trang nature.com chặn truy cập tự động)
+openQuestions:
+  - Sao Kim từng có đại dương nước lỏng hay chưa bao giờ có? NASA Science (cập nhật 09/2026) vẫn viết "Venus' vanished ocean", còn Constantinou et al. 2024 (Nature Astronomy) kết luận phần bên trong quá khô để từng có đại dương. Tranh cãi thật — bài không được chọn phe; editor cần quyết cách trình bày cả hai.
+  - Nguyên nhân Sao Kim quay ngược (va chạm lớn, thuỷ triều khí quyển, hay lật trục) là câu hỏi mở; nếu giữ câu này phải có nguồn tổng quan tier 1.
+  - Số nhiệt độ/áp suất chuẩn nào dùng toàn kho — NSSDC (464°C, 92 bar) hay NASA Science 2026 (467°C, 93 lần)? Cần một quyết định chung để các bài hành tinh không lệch nhau.

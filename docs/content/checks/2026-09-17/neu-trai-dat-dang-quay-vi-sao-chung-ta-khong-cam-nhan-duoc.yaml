@@ -1,0 +1,66 @@
+slug: neu-trai-dat-dang-quay-vi-sao-chung-ta-khong-cam-nhan-duoc
+checkedAt: 2026-09-17
+checkedBy: science-editor
+sourceCount: 1
+verdict: revise
+summary: "Hai con số chính (≈1.670 km/h, ≈0,35%) đúng, nhưng lời giải thích trung tâm sai về cơ chế: bài nói ta không cảm nhận vì Trái Đất quay “vận tốc đều”, trong khi chuyển động tròn luôn có gia tốc (chính bài nêu 0,35%); lý do đúng là gia tốc đó nhỏ và không đổi. Nguồn duy nhất không đỡ phần sinh lý tiền đình."
+claims:
+  - id: C-1
+    claim: "Ở xích đạo, bề mặt Trái Đất di chuyển khoảng 1.670 km/h."
+    verdict: verified
+    severity: S4
+    evidence: "https://nssdc.gsfc.nasa.gov/planetary/factsheet/earthfact.html"
+    note: "Fact Sheet không in sẵn vận tốc quay xích đạo; suy ra từ bán kính xích đạo 6378,137 km và chu kỳ quay thiên văn 23,9345 h: 2π·6378,137/23,9345 ≈ 1.674 km/h. “Khoảng 1.670 km/h” chấp nhận được; ghi rõ là tính từ hai giá trị này."
+  - id: C-2
+    claim: "Tại xích đạo, lực ly tâm chỉ làm giảm trọng lượng khoảng 0,35%."
+    verdict: partially-supported
+    severity: S3
+    evidence: "https://nssdc.gsfc.nasa.gov/planetary/factsheet/earthfact.html"
+    note: "Tính từ Fact Sheet: ω²R ≈ 0,0339 m/s², chia cho g ≈ 9,78 m/s² ≈ 0,347% — khớp. Nhưng nguồn không nêu con số này; ghi phép tính hoặc gắn nguồn trắc địa (gia tốc hướng tâm ở xích đạo). Chữ “triệt tiêu 0,35% lực hấp dẫn” ở kết luận đúng hơn “giảm trọng lượng”; thống nhất một cách nói."
+  - id: C-3
+    claim: "Cơ thể chỉ nhận ra sự thay đổi vận tốc chứ không nhận ra vận tốc đều; Trái Đất quay với tốc độ gần như không đổi nên ta không cảm thấy."
+    verdict: contradicted
+    severity: S2
+    evidence: "https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/newtons-laws-of-motion/ ; https://nssdc.gsfc.nasa.gov/planetary/factsheet/earthfact.html"
+    note: "NASA Glenn: trạng thái không gia tốc là chuyển động “at constant speed and in a straight line”. Người đứng trên Trái Đất đi theo đường tròn nên LUÔN có gia tốc hướng tâm (≈0,034 m/s² ở xích đạo — chính là 0,35% bài nêu). Bài tự định nghĩa gia tốc gồm cả “thay đổi hướng” rồi lại kết luận ngược. Lý do đúng: gia tốc hướng tâm rất nhỏ và không đổi, nên hoà vào cảm nhận “phương thẳng đứng” và trọng lượng; tốc độ quay góc (1 vòng/ngày) cũng không đổi. Viết lại đoạn này và câu kết luận."
+  - id: C-4
+    claim: "Hệ tiền đình trong tai trong chủ yếu cảm nhận gia tốc."
+    verdict: partially-supported
+    severity: S3
+    evidence: "https://www.nidcd.nih.gov/health/balance-disorders"
+    note: "NIDCD: ống bán khuyên báo khi đầu xoay; cơ quan sỏi tai báo vị trí đầu so với trọng lực và chuyển động thẳng. Tức sỏi tai cũng cảm nhận trọng lực — một gia tốc KHÔNG đổi — nên “chỉ cảm nhận thay đổi” là sai về phía sỏi tai. Không có nguồn sinh lý nào trong bài; gắn NIDCD và tách vai trò hai nhóm cảm biến."
+  - id: C-5
+    claim: "Khí quyển, đại dương và mọi vật trên Trái Đất đều cùng quay với hành tinh."
+    verdict: unverifiable
+    severity: S4
+    evidence: "—"
+    note: "Đúng ở mức khái quát; gió và dòng hải lưu vẫn chuyển động tương đối với mặt đất. Không mở nguồn trong lượt này; thêm chữ “về cơ bản” hoặc gắn nguồn."
+  - id: C-6
+    claim: "Máy bay có thể bay ở khoảng 900 km/h."
+    verdict: unverifiable
+    severity: S4
+    evidence: "—"
+    note: "Không có nguồn. Theo quy tắc số không nguồn thì cắt: viết “máy bay chở khách bay hành trình ổn định” mà không cần con số."
+fixes:
+  - "Viết lại mục “Cơ thể chỉ cảm nhận được sự thay đổi vận tốc” và câu kết luận: bỏ khẳng định Trái Đất chuyển động “vận tốc đều”; giải thích rằng chuyển động quay có gia tốc hướng tâm ≈0,034 m/s² (≈0,35% g), nhưng nhỏ và không đổi nên cơ thể coi nó là một phần của trọng lực."
+  - "Tách vai trò hai nhóm cảm biến tiền đình theo NIDCD (ống bán khuyên: xoay; sỏi tai: trọng lực và chuyển động thẳng) và gắn https://www.nidcd.nih.gov/health/balance-disorders làm nguồn."
+  - "Ghi phép tính cho 1.670 km/h và 0,35% từ Earth Fact Sheet (bán kính 6378,137 km, chu kỳ quay 23,9345 h), hoặc gắn nguồn nêu trực tiếp các con số."
+  - "Cắt con số 900 km/h."
+  - "Bỏ emoji ở summary và kết luận."
+suggestedSources:
+  - title: "Balance Disorders"
+    url: https://www.nidcd.nih.gov/health/balance-disorders
+    doi:
+    publisher: "National Institute on Deafness and Other Communication Disorders (NIH)"
+    year:
+    tier: 2
+    covers: "Chức năng ống bán khuyên (xoay) và cơ quan sỏi tai (trọng lực, chuyển động thẳng)"
+  - title: "Newton's Laws of Motion"
+    url: https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/newtons-laws-of-motion/
+    doi:
+    publisher: "NASA Glenn Research Center"
+    year:
+    tier: 2
+    covers: "Định luật I: không gia tốc nghĩa là tốc độ không đổi VÀ theo đường thẳng — nền cho việc giải thích gia tốc hướng tâm"
+openQuestions:
+  - "Hồ sơ ghi status PUBLISHED với lời giải thích cơ chế sai ở trọng tâm bài; cần quyết định có gỡ tạm/ghi đính chính công khai theo chính sách đính chính hay không."

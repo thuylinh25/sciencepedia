@@ -1,0 +1,126 @@
+slug: sao-thuy-the-gioi-da-bi-nung-va-dong-bang-cung-luc
+checkedAt: 2026-09-17
+checkedBy: science-editor
+sourceCount: 1
+verdict: revise
+summary: Mọi con số quỹ đạo và nhiệt độ đều khớp NASA, nhưng cả bài chỉ dựa vào một Planetary Fact Sheet không hề nói về băng ở cực, thành phần ngoại quyển hay nguồn gốc lõi — và bài nâng mức tự tin ở hai chỗ (băng nước, giả thuyết va chạm).
+claims:
+  - id: C-1
+    claim: "Một vòng tự quay của Sao Thuỷ mất 58,6 ngày Trái Đất."
+    verdict: verified
+    severity: none
+    evidence: https://nssdc.gsfc.nasa.gov/planetary/factsheet/mercuryfact.html
+    note: Fact Sheet ghi chu kỳ tự quay 1407,6 giờ = 58,65 ngày. Khớp.
+  - id: C-2
+    claim: "Một vòng quanh Mặt Trời chỉ mất 88 ngày."
+    verdict: verified
+    severity: none
+    evidence: https://nssdc.gsfc.nasa.gov/planetary/factsheet/mercuryfact.html
+    note: Chu kỳ quỹ đạo sao 87,969 ngày. Làm tròn 88 là hợp lệ.
+  - id: C-3
+    claim: "Một ngày mặt trời trên Sao Thuỷ kéo dài 176 ngày Trái Đất, tức gấp đôi một năm của chính nó."
+    verdict: verified
+    severity: none
+    evidence: https://nssdc.gsfc.nasa.gov/planetary/factsheet/mercuryfact.html
+    note: Length of day 4222,6 giờ = 175,94 ngày. 175,94 / 87,969 = 2,000. NASA Science cũng ghi "176 Earth days". Khớp cả giá trị lẫn tỉ lệ.
+  - id: C-4
+    claim: "Đây là hệ quả của cộng hưởng quỹ đạo–tự quay 3:2, một trạng thái ổn định do lực thuỷ triều từ Mặt Trời tạo ra."
+    verdict: partially-supported
+    severity: S3
+    evidence: https://academic.oup.com/mnras/article/452/4/4145/1054107
+    note: 'Cộng hưởng 3:2 đúng (58,646 / 87,969 = 2/3) và MESSENGER đã xác nhận. Nhưng cơ chế bắt giữ không chỉ là "lực thuỷ triều": cần thêm độ lệch tâm quỹ đạo, bất đối xứng khối lượng ở mặt phẳng xích đạo, và theo Correia & Laskar (2004) là cả động lực hỗn loạn của quỹ đạo. Nguồn duy nhất của bài (Fact Sheet) không nói một chữ nào về cộng hưởng 3:2. Sửa: dẫn nguồn riêng cho câu này, và bỏ "do lực thuỷ triều từ Mặt Trời tạo ra" hoặc viết thành "do hãm thuỷ triều kết hợp với quỹ đạo lệch tâm".'
+  - id: C-5
+    claim: "Sao Thuỷ chỉ có một lớp ngoại quyển cực loãng gồm nguyên tử bị gió mặt trời và va chạm thiên thạch bứt khỏi bề mặt."
+    verdict: verified
+    severity: S3
+    evidence: https://science.nasa.gov/mercury/facts/
+    note: 'NASA: "a thin exosphere made up of atoms blasted off the surface by the solar wind and striking meteoroids… composed mostly of oxygen, sodium, hydrogen, helium, and potassium". Nội dung đúng, nhưng nguồn được gắn trong bài (Fact Sheet) chỉ ghi "surface bounded exosphere, essentially a vacuum" — không đỡ phần cơ chế. Thêm nguồn.'
+  - id: C-6
+    claim: "Phía ban ngày lên tới 430°C, phía ban đêm rơi xuống -180°C."
+    verdict: verified
+    severity: S3
+    evidence: https://science.nasa.gov/mercury/facts/
+    note: 'NASA Science ghi đúng 800°F (430°C) ban ngày và -290°F (-180°C) ban đêm. Nhưng hai số này KHÔNG có trên Fact Sheet đang được dẫn (Fact Sheet chỉ có mean 440 K và sunward side 590–725 K). Phải bổ sung nguồn science.nasa.gov/mercury/facts/.'
+  - id: C-7
+    claim: "Chênh lệch nhiệt độ giữa ngày và đêm lên tới 600°C. [Summary]"
+    verdict: partially-supported
+    severity: S4
+    evidence: https://science.nasa.gov/mercury/facts/
+    note: 'NASA ghi rõ "a 1,120°F (610°C) temperature swing". Chính thân bài cho 430 − (−180) = 610. "Lên tới 600°C" là nói thiếu so với nguồn. Sửa summary thành "khoảng 610°C".'
+  - id: C-8
+    claim: "Các hố va chạm gần cực Sao Thuỷ không bao giờ nhận ánh sáng trực tiếp và radar đã phát hiện băng nước tồn tại vĩnh viễn trong đó."
+    verdict: partially-supported
+    severity: S3
+    evidence: https://www.science.org/doi/10.1126/science.1229953
+    note: 'Có vùng phản xạ radar mạnh ở cực từ 1991–92, và Lawrence et al. 2013 (Science, MESSENGER Neutron Spectrometer) kết luận dữ liệu neutron + radar khớp nhất với "nearly pure water ice" chôn dưới lớp phủ 10–30 cm. Nhưng hai lỗi: (a) nguồn được gắn (Fact Sheet) không nói gì về băng ở cực, còn trang NASA Science chỉ dám nói "Mercury MAY have water ice" — bài nâng thành khẳng định; (b) "tồn tại vĩnh viễn" là suy diễn, nguồn chỉ nói vùng bị che bóng là vĩnh viễn, không nói băng là vĩnh viễn. Sửa: "radar và phổ kế neutron của MESSENGER cho thấy trong các hố bị che bóng vĩnh viễn ở hai cực nhiều khả năng có băng nước" + dẫn Lawrence et al. 2013.'
+  - id: C-9
+    claim: "Khoảng 85% bán kính Sao Thuỷ là lõi kim loại."
+    verdict: verified
+    severity: S3
+    evidence: https://science.nasa.gov/mercury/facts/
+    note: 'NASA: "a large metallic core with a radius of about 1,289 miles (2,074 kilometers), about 85% of the planet''s radius". Khớp chính xác (2074 / 2440,5 = 85,0%). Nhưng số này không có trên nguồn đang dẫn — phải thêm nguồn.'
+  - id: C-10
+    claim: "Giả thuyết được ủng hộ nhiều nhất cho rằng một va chạm khổng lồ thời sơ khai đã bóc đi phần lớn lớp phủ đá."
+    verdict: partially-supported
+    severity: S3
+    evidence: https://www.aanda.org/articles/aa/full_html/2025/04/aa50128-24/aa50128-24.html
+    note: 'Đây là khẳng định về TÌNH TRẠNG ĐỒNG THUẬN, và nó không còn đúng. Va chạm khổng lồ từng là giả thuyết dẫn đầu nhưng nay bị hai phản chứng: (a) bề mặt Sao Thuỷ giàu nguyên tố dễ bay hơi, một va chạm đủ mạnh sẽ thổi bay chúng; (b) mô phỏng cho thấy một va chạm đơn lẻ khó bóc đủ lớp phủ để đạt phần khối lượng lõi ~0,7. Các cơ chế cạnh tranh đang được theo đuổi: phân tách quang di (photophoresis) trong tinh vân, nhiều va chạm xói mòn nhỏ, và bồi tụ hạt sắt tại chỗ. Sửa: bỏ "được ủng hộ nhiều nhất", viết thành "nhiều giả thuyết cạnh tranh, chưa ngã ngũ", liệt kê ít nhất hai cơ chế, và ghi vào Open Question.'
+  - id: C-11
+    claim: "Sao Thuỷ là hành tinh nhỏ nhất và gần Mặt Trời nhất. [Summary]"
+    verdict: verified
+    severity: none
+    evidence: https://nssdc.gsfc.nasa.gov/planetary/factsheet/mercuryfact.html
+    note: Bán kính 2440,5 km, nhỏ nhất trong 8 hành tinh; khoảng cách trung bình nhỏ nhất. Đúng.
+  - id: C-12
+    claim: "Toàn bộ bài (12 claim) được đỡ bởi đúng một nguồn tier 2 tổng quát, không có accessedAt."
+    verdict: unsupported
+    severity: S3
+    evidence: https://nssdc.gsfc.nasa.gov/planetary/factsheet/
+    note: 'Planetary Fact Sheet chỉ đỡ C-1, C-2, C-3, C-11. Bảy claim còn lại (ngoại quyển, nhiệt độ ngày/đêm, băng ở cực, lõi 85%, nguồn gốc lõi, cộng hưởng 3:2) không có nguồn nào. Ngoài ra accessedAt ghi "THIẾU" — không biết bài đọc bản nào của Fact Sheet.'
+fixes:
+  - Điền accessedAt cho nguồn 1 (Planetary Fact Sheet) — hiện đang là "THIẾU"; ghi 2026-09-17.
+  - Thêm nguồn tier 2 https://science.nasa.gov/mercury/facts/ và gắn nó vào các claim nhiệt độ ngày/đêm (430°C / −180°C), lõi 85% bán kính, và thành phần ngoại quyển.
+  - Sửa summary "chênh lệch… lên tới 600°C" thành "khoảng 610°C" (NASA ghi 1.120°F = 610°C).
+  - Viết lại câu băng ở cực thành "radar mặt đất và phổ kế neutron của MESSENGER cho thấy trong các hố bị che bóng vĩnh viễn ở hai cực nhiều khả năng có băng nước" — bỏ "tồn tại vĩnh viễn", bỏ giọng khẳng định — và dẫn Lawrence et al. 2013 (DOI 10.1126/science.1229953).
+  - Bỏ cụm "Giả thuyết được ủng hộ nhiều nhất" ở phần lõi sắt. Thay bằng trình bày ít nhất hai giả thuyết cạnh tranh (va chạm khổng lồ; phân tách vật liệu trong tinh vân / nhiều va chạm xói mòn) và nói rõ chưa có kết luận, dẫn A&A 2025 "Can metal-rich worlds form by giant impacts?".
+  - Ở câu cộng hưởng 3:2, bỏ quy kết đơn nhân "do lực thuỷ triều từ Mặt Trời tạo ra"; viết "do hãm thuỷ triều kết hợp với quỹ đạo lệch tâm và bất đối xứng khối lượng của hành tinh", dẫn MNRAS 452, 4145 (2015).
+  - Thêm mốc "tính đến 17/09/2026" cho các số liệu lấy từ Fact Sheet, vì bài đang ở trạng thái PUBLISHED mà không có ngày rà soát nào.
+suggestedSources:
+  - title: Mercury Fact Sheet
+    url: https://nssdc.gsfc.nasa.gov/planetary/factsheet/mercuryfact.html
+    doi:
+    publisher: NASA NSSDC
+    year: 2024
+    tier: 2
+    covers: Chu kỳ tự quay 1407,6 h; length of day 4222,6 h; chu kỳ quỹ đạo 87,969 ngày; bán kính 2440,5 km; ngoại quyển là chân không thực dụng
+  - title: Mercury Facts (NASA Science)
+    url: https://science.nasa.gov/mercury/facts/
+    doi:
+    publisher: NASA
+    year: 2026
+    tier: 2
+    covers: Nhiệt độ 430°C / −180°C và biên độ 610°C; lõi kim loại bán kính 2.074 km ≈ 85% bán kính hành tinh; thành phần ngoại quyển; ngày mặt trời 176 ngày
+  - title: "Evidence for Water Ice Near Mercury's North Pole from MESSENGER Neutron Spectrometer Measurements"
+    url: https://www.science.org/doi/10.1126/science.1229953
+    doi: 10.1126/science.1229953
+    publisher: Science (AAAS) — Lawrence et al.
+    year: 2013
+    tier: 1
+    covers: Băng nước trong các hố bị che bóng vĩnh viễn ở cực bắc; lớp giàu hydro dưới lớp phủ 10–30 cm; khối lượng băng ước tính 2×10^16 – 10^18 g
+  - title: Can metal-rich worlds form by giant impacts?
+    url: https://www.aanda.org/articles/aa/full_html/2025/04/aa50128-24/aa50128-24.html
+    doi:
+    publisher: Astronomy & Astrophysics
+    year: 2025
+    tier: 1
+    covers: Phản biện giả thuyết va chạm khổng lồ là lời giải cho lõi sắt lớn của Sao Thuỷ
+  - title: Effective resonant stability of Mercury
+    url: https://academic.oup.com/mnras/article/452/4/4145/1054107
+    doi:
+    publisher: Monthly Notices of the Royal Astronomical Society
+    year: 2015
+    tier: 1
+    covers: Cộng hưởng quỹ đạo–tự quay 3:2, chu kỳ tự quay 58,64616 d và quỹ đạo 87,969216879 d, cơ chế hãm thuỷ triều
+openQuestions:
+  - Nguồn gốc lõi kim loại chiếm 85% bán kính vẫn chưa ngã ngũ (va chạm khổng lồ vs phân tách trong tinh vân vs nhiều va chạm xói mòn). Bài không được chọn phe — cần người quyết cách trình bày, đề xuất là nêu cả ba và ghi rõ chưa có đồng thuận.
+  - Có nên giữ tuyên bố về băng nước ở cực ở mức "nhiều khả năng" (theo giọng của NASA Science) hay mức "đã xác lập" (theo giọng của Lawrence et al. 2013)? Hai nguồn tier 1–2 khác giọng nhau; editor cần chốt một chuẩn.

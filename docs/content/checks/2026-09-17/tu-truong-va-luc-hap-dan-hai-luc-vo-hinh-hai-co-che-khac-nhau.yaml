@@ -1,0 +1,102 @@
+slug: tu-truong-va-luc-hap-dan-hai-luc-vo-hinh-hai-co-che-khac-nhau
+checkedAt: 2026-09-17
+checkedBy: science-editor
+sourceCount: 4
+verdict: revise
+summary: "Các số liệu kiểm được đều đúng và khung trích dẫn cuối bài phản ánh đúng Gunell 2018, nhưng tiêu đề mục và thân bài lại khẳng định Sao Hoả mất khí quyển vì mất lá chắn từ, tức nâng mức tự tin vượt quá chính nguồn tier 1 của bài; thời điểm dynamo tắt “hơn 4 tỉ năm” đang còn tranh luận nhưng bài viết như đã chốt."
+claims:
+  - id: C-1
+    claim: "Mục “Vì sao Sao Hoả mất khí quyển còn Trái Đất thì không” + “Sao Hoả không còn lá chắn đó”: mất từ trường là lời giải cho việc Sao Hoả mất khí quyển."
+    verdict: contradicted
+    severity: S2
+    evidence: "https://www.aeronomie.be/en/annual-report/does-earths-magnetic-field-protect-our-atmosphere"
+    note: "BIRA-IASB (nguồn 4 của bài, tóm tắt Gunell et al. 2018 — nguồn 3): tốc độ thoát khối lượng quan sát ở ba hành tinh “similar (in the approximate 0.5-2 kg/s range)”; một Trái Đất giả định không có từ trường sẽ thoát “about the same as—or even a little less than” hiện nay. Khung trích dẫn cuối bài nói đúng điều này, nhưng tiêu đề mục và đoạn ngay trước nói ngược lại. Đổi tiêu đề mục (vd. “Từ trường có thật sự giữ khí quyển?”), bỏ ngụ ý nhân quả “không còn lá chắn → mất khí quyển”, đưa nội dung khung trích dẫn lên làm kết luận chính."
+  - id: C-2
+    claim: "Dynamo Sao Hoả tắt từ hơn 4 tỉ năm trước."
+    verdict: partially-supported
+    severity: S3
+    evidence: "https://spiral.imperial.ac.uk/server/api/core/bitstreams/ae29893f-8e81-488f-a416-2b350baf06f7/content"
+    note: "Không nguồn nào của bài đỡ con số này. Cách hiểu truyền thống (từ tính yếu trên các bồn va chạm lớn) là 4,1–4,0 tỉ năm; Steele et al. 2023 (Science Advances, DOI 10.1126/sciadv.ade9071 — DOI xác nhận trong metadata bản lưu ở Imperial; nội dung tóm tắt chỉ đọc được qua trích đoạn tìm kiếm, chưa đọc toàn văn) lập luận dynamo còn hoạt động tới khoảng 3,9 tỉ năm. Viết “khoảng 4 tỉ năm trước; thời điểm chính xác vẫn đang tranh luận” và gắn nguồn."
+  - id: C-3
+    claim: "Gió Mặt Trời có vận tốc 400–800 km/s."
+    verdict: verified
+    severity: S4
+    evidence: "https://www.spaceweather.gov/phenomena/solar-wind"
+    note: "NOAA SWPC: gió chậm khoảng 400 km/s, gió nhanh 500–800 km/s. Số đúng nhưng không nguồn nào của bài đỡ — thêm NOAA SWPC."
+  - id: C-4
+    claim: "MAVEN đo được Sao Hoả vẫn đang mất khí quyển, và tốc độ mất tăng vọt khi có bão Mặt Trời."
+    verdict: partially-supported
+    severity: S3
+    evidence: "https://www.nasa.gov/news-release/nasa-mission-reveals-speed-of-solar-wind-stripping-martian-atmosphere/ ; https://science.nasa.gov/mission/maven/"
+    note: "Thông cáo NASA 2015: khoảng 100 g/giây, “increases significantly during solar storms”. Trang tổng quan MAVEN mà bài dẫn không có các số liệu này — đổi nguồn sang thông cáo 2015. “Tăng vọt” mạnh hơn “increases significantly”; viết “tăng đáng kể”."
+  - id: C-5
+    claim: "Áp suất bề mặt Sao Hoả hiện chưa tới 1% của Trái Đất."
+    verdict: verified
+    severity: S4
+    evidence: "https://nssdc.gsfc.nasa.gov/planetary/factsheet/marsfact.html ; https://nssdc.gsfc.nasa.gov/planetary/factsheet/earthfact.html"
+    note: "6,36 mb (dao động 4,0–8,7 mb theo mùa) so với 1014 mb ≈ 0,63%. Đúng; gắn thêm Mars Fact Sheet (bài chỉ dẫn Earth Fact Sheet)."
+  - id: C-6
+    claim: "Sao Kim không có từ trường lưỡng cực toàn cầu mà vẫn giữ khí quyển dày; tốc độ thất thoát ở Trái Đất, Sao Kim, Sao Hoả xấp xỉ nhau; từ trường chắn một số cơ chế nhưng mở cơ chế khác qua hai cực; vai trò của nó còn tranh luận."
+    verdict: verified
+    severity: none
+    evidence: "https://www.aeronomie.be/en/annual-report/does-earths-magnetic-field-protect-our-atmosphere"
+    note: "Khớp BIRA-IASB: từ trường “offers better protection from some escape processes, it enables others”, ion thoát qua vùng cực. Trang Gunell 2018 trên aanda.org trả 403 trong lượt này nên chỉ kiểm qua bản tóm tắt của BIRA-IASB. Đây là đoạn cân bằng tốt nhất của bài — giữ nguyên."
+  - id: C-7
+    claim: "Hấp dẫn yếu nhất trong bốn lực cơ bản; từ trường lưỡng cực suy giảm theo luỹ thừa ba khoảng cách; nhiễu loạn của cả hai trường lan truyền không nhanh hơn ánh sáng."
+    verdict: unverifiable
+    severity: S3
+    evidence: "—"
+    note: "Đúng theo vật lý chuẩn, nhưng không nguồn nào của bài phủ bảng so sánh, và trong lượt này không mở nguồn cho phần đó. Gắn một nguồn giáo khoa/đại học cho cả bảng. Lưu ý: 1/r³ là cường độ trường lưỡng cực; lực giữa hai lưỡng cực giảm nhanh hơn nữa — ghi rõ đang nói về cường độ trường."
+  - id: C-8
+    claim: "Bảng: từ trường “vừa hút vừa đẩy, tuỳ cực”; “che chắn được bằng vật liệu từ tính”."
+    verdict: partially-supported
+    severity: S4
+    evidence: "—"
+    note: "Hút/đẩy đúng giữa các nam châm, nhưng lực từ lên điện tích chuyển động vuông góc với vận tốc (lực Lorentz) — chính cơ chế bài dùng để giải thích từ quyển. Vật liệu độ từ thẩm cao chỉ dẫn lệch/làm giảm trường tĩnh, không chặn hoàn toàn. Chưa mở nguồn trong lượt này; sửa câu chữ cho khỏi lossy."
+  - id: C-9
+    claim: "Phần hạt lọt vào theo đường sức ở hai cực thì tạo ra cực quang."
+    verdict: unverifiable
+    severity: S4
+    evidence: "—"
+    note: "Mô tả đơn giản hoá; không mở nguồn về cơ chế cực quang trong lượt này. Gắn nguồn NASA/NOAA về cực quang hoặc cắt chi tiết cơ chế."
+fixes:
+  - "Đổi tiêu đề mục “Vì sao Sao Hoả mất khí quyển còn Trái Đất thì không” thành câu hỏi mở; bỏ câu “Sao Hoả không còn lá chắn đó” như lời giải thích nhân quả; chuyển nội dung khung trích dẫn cuối lên làm kết luận chính của mục."
+  - "Sửa “dynamo tắt từ hơn 4 tỉ năm trước” thành “khoảng 4 tỉ năm trước, thời điểm chính xác còn tranh luận” và gắn Steele et al. 2023 (DOI 10.1126/sciadv.ade9071) sau khi đọc toàn văn."
+  - "Thay nguồn MAVEN (trang tổng quan) bằng thông cáo NASA 2015 https://www.nasa.gov/news-release/nasa-mission-reveals-speed-of-solar-wind-stripping-martian-atmosphere/; đổi “tăng vọt” thành “tăng đáng kể”."
+  - "Thêm NOAA SWPC https://www.spaceweather.gov/phenomena/solar-wind cho vận tốc gió Mặt Trời và Mars Fact Sheet cho áp suất bề mặt."
+  - "Điền accessedAt cho nguồn 1 và 2."
+  - "Gắn một nguồn cho bảng so sánh (bốn lực cơ bản, 1/r² và 1/r³); ghi rõ 1/r³ là cường độ trường lưỡng cực."
+  - "Sửa ô “Vừa hút vừa đẩy” và “Che chắn được” để không mâu thuẫn với lực Lorentz và giới hạn của vật liệu che chắn."
+  - "Xem lại category: bài chủ yếu so sánh hai lực (vật lý), không thuộc “Hệ Mặt Trời”."
+suggestedSources:
+  - title: "NASA Mission Reveals Speed of Solar Wind Stripping Martian Atmosphere"
+    url: https://www.nasa.gov/news-release/nasa-mission-reveals-speed-of-solar-wind-stripping-martian-atmosphere/
+    doi:
+    publisher: NASA
+    year: 2015
+    tier: 2
+    covers: "Tốc độ mất khí quyển của Sao Hoả (~100 g/s) và việc tăng khi có bão Mặt Trời"
+  - title: "Solar Wind"
+    url: https://www.spaceweather.gov/phenomena/solar-wind
+    doi:
+    publisher: "NOAA Space Weather Prediction Center"
+    year:
+    tier: 2
+    covers: "Vận tốc gió Mặt Trời chậm (~400 km/s) và nhanh (500–800 km/s)"
+  - title: "Mars Fact Sheet"
+    url: https://nssdc.gsfc.nasa.gov/planetary/factsheet/marsfact.html
+    doi:
+    publisher: "NASA NSSDC"
+    year:
+    tier: 2
+    covers: "Áp suất bề mặt Sao Hoả 6,36 mb"
+  - title: "Paleomagnetic evidence for a long-lived, potentially reversing martian dynamo at ~3.9 Ga"
+    url: https://spiral.imperial.ac.uk/server/api/core/bitstreams/ae29893f-8e81-488f-a416-2b350baf06f7/content
+    doi: 10.1126/sciadv.ade9071
+    publisher: "Science Advances (Steele et al.)"
+    year: 2023
+    tier: 1
+    covers: "Tranh luận về thời điểm dynamo Sao Hoả tắt — người sửa bài phải đọc toàn văn trước khi trích"
+openQuestions:
+  - "Thời điểm dynamo Sao Hoả ngừng hoạt động còn tranh luận (4,1–4,0 tỉ năm theo từ tính bồn va chạm; ~3,9 tỉ năm theo Steele et al. 2023). Bài không nên chọn phe; cần người quyết cách diễn đạt."
+  - "Vai trò bảo vệ khí quyển của từ trường hành tinh vẫn đang tranh luận. Bài phải giữ đúng mức “đang tranh luận” ở mọi đoạn, không chỉ trong khung trích dẫn."

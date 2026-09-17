@@ -1,0 +1,130 @@
+slug: ngoi-sao-cau-tao-va-vong-doi
+checkedAt: 2026-09-17
+checkedBy: science-editor
+sourceCount: 3
+verdict: revise
+summary: "Phần 'bụi sao' có nguồn CERN/NASA đỡ tốt, nhưng thân bài dựa vào một nguồn nghiệp dư đã chết; thành phần 71/27/2 bị gán cho 'hầu hết các ngôi sao' mà không nói là tỉ lệ theo khối lượng của Mặt Trời; và ngưỡng 8 lần khối lượng Mặt Trời bị đơn giản hóa thành 'mọi sao nặng đều nổ siêu tân tinh'."
+claims:
+  - id: C-1
+    claim: "Ngưỡng tối thiểu để thành sao ~0,08 khối lượng Mặt Trời ≈ 80 lần khối lượng Sao Mộc; nhẹ hơn là sao lùn nâu"
+    verdict: verified
+    severity: none
+    evidence: "https://science.nasa.gov/universe/stars/types/"
+    note: "NASA: sao lùn nâu 'nằm trong khoảng 13 đến 80 lần khối lượng Sao Mộc'. Khớp với cận trên 80 lần Sao Mộc (≈0,08 khối lượng Mặt Trời)."
+  - id: C-2
+    claim: "Lõi sao đạt nhiệt độ hàng triệu độ"
+    verdict: verified
+    severity: S4
+    evidence: "https://nssdc.gsfc.nasa.gov/planetary/factsheet/sunfact.html"
+    note: "NASA: nhiệt độ tâm Mặt Trời 1,571×10^7 K (≈15,7 triệu K). Câu đúng nhưng mơ hồ; nên nêu con số của Mặt Trời làm ví dụ."
+  - id: C-3
+    claim: "Hầu hết các ngôi sao gồm khoảng 71% hydro, 27% heli, 2% nguyên tố nặng hơn"
+    verdict: unsupported
+    severity: S3
+    evidence: "https://nssdc.gsfc.nasa.gov/planetary/factsheet/sunfact.html"
+    note: "Tờ số liệu Mặt Trời của NASA ghi thành phần quang cầu là H 90,965% và He 8,889%, các nguyên tố khác tính bằng ppm, tức là tỉ lệ THEO SỐ NGUYÊN TỬ. Bộ 71/27/2 chỉ có thể là tỉ lệ theo khối lượng của Mặt Trời, nhưng bài không ghi 'theo khối lượng' và cũng không có nguồn còn sống nào đỡ con số này. Người đọc tra NASA sẽ thấy 91/9 và tưởng bài sai. Ngoài ra, việc khái quát từ Mặt Trời ra 'hầu hết các ngôi sao' không có nguồn đỡ, vì hàm lượng nguyên tố nặng khác nhau nhiều giữa các thế hệ sao."
+  - id: C-4
+    claim: "Mặt Trời loại G, nhiệt độ bề mặt khoảng 5.800 K"
+    verdict: verified
+    severity: S4
+    evidence: "https://nssdc.gsfc.nasa.gov/planetary/factsheet/sunfact.html"
+    note: "NASA: nhiệt độ hiệu dụng 5772 K. 'Khoảng 5.800 K' là làm tròn chấp nhận được; nên ghi 5.772 K. Loại phổ G chưa kiểm trên trang này."
+  - id: C-5
+    claim: "Sao giống Mặt Trời có tuổi thọ dãy chính khoảng 10 tỷ năm"
+    verdict: partially-supported
+    severity: S4
+    evidence: "https://science.nasa.gov/universe/stars/types/"
+    note: "NASA chỉ nói Mặt Trời 'sẽ còn ở dãy chính thêm khoảng 5 tỷ năm nữa trước khi thành sao khổng lồ đỏ'. Tổng 10 tỷ năm không được ghi trên trang đã mở. Cần nguồn nêu thẳng tổng tuổi thọ, hoặc viết lại theo đúng câu của NASA."
+  - id: C-6
+    claim: "Sao nặng hơn khoảng 8 lần Mặt Trời đốt tới lõi sắt, lõi sụp đổ, nổ siêu tân tinh; lõi quá nặng thành lỗ đen"
+    verdict: partially-supported
+    severity: S3
+    evidence: "https://science.nasa.gov/universe/stars/types/"
+    note: "NASA: sao dãy chính 'khoảng 8 đến 20 lần khối lượng Mặt Trời' cạn hydro trong lõi, còn 'sao nặng hơn tạo ra lỗ đen khối lượng sao'. Bài gộp mọi sao trên 8 lần thành một nhánh nên để lại mô hình sai rằng sao nào cũng nổ siêu tân tinh rồi mới phân nhánh. Chuỗi carbon → oxy → silic → lõi sắt và cơ chế 'hợp hạch sắt không sinh năng lượng' chưa có nguồn nào còn sống đỡ."
+  - id: C-7
+    claim: "Khi hydro cạn: lõi co lại nóng lên, lớp ngoài phồng thành sao khổng lồ đỏ; sao giống Mặt Trời thổi vỏ ngoài thành tinh vân hành tinh, để lại sao lùn trắng"
+    verdict: unverifiable
+    severity: S3
+    evidence: "—"
+    note: "Nguồn đỡ phần này (thienvanvietnam.org) đã chết. NASA 'Types of stars' có nhắc giai đoạn khổng lồ đỏ nhưng tôi chưa kiểm câu về tinh vân hành tinh trên trang đó. Cần gắn nguồn bậc 2."
+  - id: C-8
+    claim: "Sao lùn trắng: lõi dưới khoảng 1,4 khối lượng Mặt Trời, kích thước tương đương Trái Đất"
+    verdict: verified
+    severity: none
+    evidence: "https://imagine.gsfc.nasa.gov/science/objects/dwarfs2.html"
+    note: "NASA: Chandrasekhar tìm ra giới hạn '1,4 lần khối lượng Mặt Trời'; sao lùn trắng điển hình 'chỉ lớn hơn Trái Đất một chút'. Khớp."
+  - id: C-9
+    claim: "Sao neutron có đường kính chỉ khoảng 20 km"
+    verdict: verified
+    severity: S4
+    evidence: "https://science.nasa.gov/universe/stars/types/"
+    note: "NASA diễn đạt là quả cầu 'rộng cỡ chiều dài đảo Manhattan', tức khoảng 20 km. Nên thay bằng một nguồn nêu thẳng con số km."
+  - id: C-10
+    claim: "Một thìa cà phê vật chất sao neutron có thể nặng hàng tỷ tấn"
+    verdict: unverifiable
+    severity: S3
+    evidence: "—"
+    note: "Trang NASA đã mở chỉ dùng hình ảnh 'một thìa cà phê' cho SAO LÙN TRẮNG ('nặng hơn một chiếc xe bán tải'), không cho sao neutron. Con số cho sao neutron chưa có nguồn nên cắt theo quy tắc số không nguồn."
+  - id: C-11
+    claim: "Phần lớn heli trong vũ trụ hình thành trong vài phút đầu sau Big Bang"
+    verdict: verified
+    severity: none
+    evidence: "https://home.cern/science/physics/early-universe"
+    note: "CERN: 'Trong vòng vài phút, các proton và neutron kết hợp thành hạt nhân', chủ yếu là heli và hydro. Khớp."
+  - id: C-12
+    claim: "Carbon, oxy, sắt được tạo trong lòng các ngôi sao và phát tán khi sao chết"
+    verdict: verified
+    severity: none
+    evidence: "https://home.cern/science/physics/early-universe"
+    note: "CERN: carbon, oxy, sắt 'được liên tục tạo ra trong lòng các ngôi sao và bị phóng ra khắp vũ trụ trong các vụ nổ sao gọi là siêu tân tinh'. Khớp. Riêng canxi thì trang không nêu tên."
+  - id: C-13
+    claim: "Vàng, bạch kim ra đời trong những biến cố dữ dội, trong đó có va chạm giữa hai sao neutron"
+    verdict: verified
+    severity: none
+    evidence: "https://science.nasa.gov/missions/chandra/nasa-missions-catch-first-light-from-a-gravitational-wave-event/"
+    note: "NASA (GW170817): va chạm sao neutron 'CÓ THỂ là nguồn chủ yếu' của nhiều nguyên tố nặng nhất, gồm bạch kim và vàng. Bài viết 'trong đó có' nên giữ được mức dè dặt. Đạt."
+  - id: C-14
+    claim: "Hạt nhân hydro hợp nhất thành heli, giải phóng năng lượng theo công thức E = mc²"
+    verdict: unverifiable
+    severity: S4
+    evidence: "—"
+    note: "Là một cách đơn giản hóa: năng lượng đến từ độ hụt khối, E = mc² chỉ là quy đổi khối lượng ra năng lượng. Nên thêm cụm 'phần khối lượng hao hụt' để không tạo mô hình sai. Chưa có nguồn."
+  - id: C-15
+    claim: "Nguồn 1: thienvanvietnam.org (VACA, 2010), gắn tier 2, accessedAt THIẾU"
+    verdict: unsupported
+    severity: S3
+    evidence: "—"
+    note: "Toàn domain đã chết (theo điều phối viên). Đây là CLB nghiệp dư, nhãn tier 2 là sai. Nguồn này đang đỡ toàn bộ thân bài (ngưỡng khối lượng, thành phần, vòng đời, xác sao). Hai nguồn còn lại (CERN, NASA) chỉ đỡ đoạn 'bụi sao' cuối bài."
+fixes:
+  - "Sửa mục 'Thành phần' thành: 'Mặt Trời, tính theo khối lượng, gồm khoảng … hydro, … heli, … nguyên tố nặng hơn', gắn nguồn bậc 1–2 cho bộ số theo khối lượng. Không tìm được nguồn thì cắt bộ số. Xóa cụm 'hầu hết các ngôi sao'."
+  - "Tách nhánh sao nặng theo NASA: khoảng 8–20 lần khối lượng Mặt Trời thì nổ siêu tân tinh để lại sao neutron; nặng hơn thì tạo lỗ đen khối lượng sao. Gắn https://science.nasa.gov/universe/stars/types/ và giữ chữ 'khoảng'."
+  - "Xóa câu 'Một thìa cà phê vật chất có thể nặng hàng tỷ tấn' khỏi mục sao neutron, trừ khi tìm được nguồn bậc 1–2 nêu con số cho sao neutron."
+  - "Sửa 'Tuổi thọ trên dãy chính khoảng 10 tỷ năm' thành câu có nguồn, ví dụ theo NASA: 'Mặt Trời sẽ còn ở dãy chính khoảng 5 tỷ năm nữa'."
+  - "Đổi nhiệt độ bề mặt thành 5.772 K (nhiệt độ hiệu dụng, NASA Sun Fact Sheet) và thêm ví dụ lõi Mặt Trời ≈15,7 triệu K."
+  - "Gắn nguồn bậc 2 cho: giai đoạn khổng lồ đỏ, tinh vân hành tinh, chuỗi đốt C/O/Si tới lõi sắt, bảng màu theo nhiệt độ. Phần nào không có nguồn thì cắt."
+  - "Thêm cụm 'từ phần khối lượng hao hụt' vào câu E = mc²."
+  - "Xóa nguồn thienvanvietnam.org khỏi danh sách nguồn đỡ; điền accessedAt cho mọi nguồn."
+suggestedSources:
+  - title: "Types of Stars"
+    url: "https://science.nasa.gov/universe/stars/types/"
+    doi: ""
+    publisher: "NASA Science"
+    year: "không ghi (truy cập 2026-09-17)"
+    tier: 2
+    covers: "Ngưỡng sao lùn nâu 13–80 lần Sao Mộc; nhánh 8–20 lần khối lượng Mặt Trời và trên 20 lần; sao lùn trắng; sao neutron cỡ Manhattan; Mặt Trời còn 5 tỷ năm ở dãy chính"
+  - title: "Sun Fact Sheet"
+    url: "https://nssdc.gsfc.nasa.gov/planetary/factsheet/sunfact.html"
+    doi: ""
+    publisher: "NASA Goddard (NSSDCA)"
+    year: "không ghi (truy cập 2026-09-17)"
+    tier: 2
+    covers: "Nhiệt độ hiệu dụng 5772 K, nhiệt độ tâm 1,571×10^7 K, thành phần quang cầu theo số nguyên tử"
+  - title: "White Dwarfs (Imagine the Universe)"
+    url: "https://imagine.gsfc.nasa.gov/science/objects/dwarfs2.html"
+    doi: ""
+    publisher: "NASA Goddard"
+    year: "không ghi (truy cập 2026-09-17)"
+    tier: 2
+    covers: "Giới hạn Chandrasekhar 1,4 khối lượng Mặt Trời; kích thước sao lùn trắng so với Trái Đất"
+openQuestions:
+  - "Kho có nên chuẩn hóa một quy ước ghi thành phần hóa học (theo khối lượng hay theo số nguyên tử) cho mọi bài về sao? Hiện hai cách cho số rất khác nhau (71% so với 91% hydro)."

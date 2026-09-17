@@ -1,0 +1,150 @@
+slug: sao-hoa-hanh-tinh-do-va-cau-hoi-ve-nuoc
+checkedAt: 2026-09-17
+checkedBy: science-editor
+sourceCount: 4
+verdict: revise
+summary: Bài có nguồn tốt nhất trong lô và trình bày tranh cãi Phobos/Deimos đúng mực, nhưng kích thước Valles Marineris (4.000 km, sâu 7 km) lệch trang NASA hiện hành (3.870 km, sâu 9,3 km) và không có nguồn, còn các claim về nước, MAVEN, Perseverance và MMX thiếu nguồn hoặc thiếu mốc thời gian.
+claims:
+  - id: C-1
+    claim: "Bề mặt Sao Hoả phủ bụi giàu oxit sắt — về bản chất là gỉ sét — tạo màu đỏ."
+    verdict: verified
+    severity: S3
+    evidence: https://science.nasa.gov/mars/facts/
+    note: 'NASA: "Mars looks reddish is due to oxidization — or rusting — of iron in the rocks, regolith, and dust". Đúng; lưu ý NASA nói cả đá và regolith, không chỉ bụi. Không nguồn nào trong 4 nguồn bài dẫn đỡ claim này (trang Fact Sheet không nói về màu) — thêm nguồn.'
+  - id: C-2
+    claim: "Mạng lưới thung lũng và châu thổ cổ, rõ nhất ở hố Jezero nơi Perseverance đang hoạt động."
+    verdict: partially-supported
+    severity: S3
+    evidence: https://doi.org/10.1126/science.abl4051
+    note: 'Châu thổ–hồ cổ ở Jezero đã được Perseverance xác nhận (Mangold et al. 2021, Science). Hai vấn đề: (a) không nguồn nào trong bài đỡ; (b) "đang hoạt động" là claim ràng buộc thời gian mà không có mốc — Perseverance đã rời đáy hố lên vành hố, tôi chưa xác minh vị trí ở thời điểm 09/2026. "Rõ nhất ở Jezero" là đánh giá chủ quan, nguồn không nói. Sửa: "châu thổ cổ ở hố Jezero, nơi Perseverance hạ cánh năm 2021" và dẫn Mangold et al. 2021.'
+  - id: C-3
+    claim: "Khoáng vật chỉ hình thành khi có nước như đất sét và sulfat."
+    verdict: partially-supported
+    severity: S3
+    evidence: https://science.nasa.gov/mars/facts/
+    note: 'NASA: "rocks and minerals on the surface that could only have formed in liquid water". NASA không nêu tên đất sét và sulfat trên trang này; Mangold et al. 2021 nêu lớp sét và bùn ở chân châu thổ. Chấp nhận được nếu dẫn cả hai. Hiện không có nguồn.'
+  - id: C-4
+    claim: "Băng nước lộ thiên ở hai cực và băng ngầm ở vĩ độ trung bình."
+    verdict: unsupported
+    severity: S3
+    evidence: "—"
+    note: Không nguồn nào trong bài đỡ, và tôi chưa mở nguồn tier 1–2 cho claim này ở lượt kiểm. Nội dung phù hợp hiểu biết chung nhưng theo quy tắc phải có nguồn trước khi giữ. Thêm nguồn hoặc cắt.
+  - id: C-5
+    claim: "Khoảng 3,5–4 tỉ năm trước Sao Hoả ấm và ẩm hơn nhiều."
+    verdict: partially-supported
+    severity: S3
+    evidence: https://science.nasa.gov/mars/facts/
+    note: 'NASA nêu "watery past" và "huge floods about 3.5 billion years ago"; châu thổ Jezero được định tuổi ~3,6–3,8 tỉ năm (Mangold et al. 2021). Khoảng 3,5–4 tỉ năm là hợp lý. Nhưng chữ "ấm" không được hai nguồn này đỡ — việc Sao Hoả cổ "ấm và ẩm" hay "lạnh và băng giá với các đợt tan chảy" vẫn là tranh luận trong giới. Sửa: "ẩm ướt hơn" và bỏ "ấm", hoặc nêu tranh luận.'
+  - id: C-6
+    claim: "Sao Hoả nhỏ, nên lõi nguội nhanh và từ trường toàn cầu tắt từ sớm."
+    verdict: partially-supported
+    severity: S3
+    evidence: https://science.nasa.gov/mars/facts/
+    note: 'NASA: "no global magnetic field today, but areas of the Martian crust in the southern hemisphere are highly magnetized, indicating traces of a magnetic field from 4 billion years ago". Việc từ trường từng có rồi mất: đỡ được. Quan hệ nhân quả "nhỏ → lõi nguội nhanh → dynamo tắt" là giải thích dẫn đầu nhưng trang NASA không nêu. Thêm nguồn cho chuỗi nhân quả, hoặc viết "được cho là".'
+  - id: C-7
+    claim: "Không còn lá chắn, gió mặt trời bào mòn khí quyển suốt hàng tỉ năm. Sứ mệnh MAVEN đo được quá trình mất khí này vẫn đang tiếp diễn ngày nay."
+    verdict: partially-supported
+    severity: S3
+    evidence: https://www.nasa.gov/news-release/nasa-mission-reveals-speed-of-solar-wind-stripping-martian-atmosphere
+    note: 'Thông cáo NASA 05/11/2015: MAVEN đo gió mặt trời bóc khí ở tốc độ khoảng 100 g/giây, tăng mạnh trong bão mặt trời, và "the loss rate was much higher billions of years ago". Đỡ được "MAVEN đo được sự mất khí". Ba vấn đề: (a) không có trong 4 nguồn bài dẫn; (b) "ngày nay" dựa trên dữ liệu 2015, cần mốc; (c) "không còn lá chắn" ngụ ý từ trường là lá chắn — xem Gunell et al. 2018, cùng tranh luận như bài Trái Đất. Thêm nguồn MAVEN (Jakosky et al. 2015, Science, DOI 10.1126/science.aad0210) và ghi "MAVEN đo năm 2015".'
+  - id: C-8
+    claim: "Áp suất giảm khiến nước lỏng không còn ổn định trên bề mặt: phần thoát vào không gian, phần đóng băng dưới đất."
+    verdict: unsupported
+    severity: S3
+    evidence: "—"
+    note: Cơ chế đúng về vật lý nhưng không có nguồn nào đỡ, và tỉ lệ "phần thoát / phần đóng băng" là chủ đề nghiên cứu đang mở (có nghiên cứu cho rằng phần lớn nước bị giữ lại trong khoáng vật vỏ). Thêm nguồn và cân nhắc nêu khả năng thứ ba (nước bị khoá trong khoáng vật).
+  - id: C-9
+    claim: "Olympus Mons — núi lửa cao khoảng 21,9 km so với mốc chuẩn của Sao Hoả."
+    verdict: partially-supported
+    severity: S3
+    evidence: https://themis.asu.edu/zoom-20230811a
+    note: 'Nguồn THEMIS/ASU ghi "Olympus Mons is 21.9km (13.6 miles, 72,000 feet) tall" nhưng KHÔNG nói "so với mốc chuẩn" — cụm này bài tự thêm. Trang NASA Mars Facts lại ghi "more than 25 miles (40 km) tall from base to summit" — một thước đo khác. Hai số khác nhau vì khác mốc đo. Nguồn đang dẫn là tier 3 (tài nguyên đại học) cho một con số then chốt. Sửa: giữ 21,9 km nhưng thêm nguồn tier 1–2 nêu rõ mốc đo (dữ liệu độ cao MOLA), hoặc ghi rõ cả hai cách đo.'
+  - id: C-10
+    claim: "[21,9 km] tức gấp khoảng hai lần rưỡi đỉnh Everest."
+    verdict: verified
+    severity: S4
+    evidence: https://themis.asu.edu/zoom-20230811a
+    note: 21,9 / 8,849 km (Everest) = 2,47. Phép quy đổi đúng. Nhưng độ cao Everest không có nguồn trong bài; so sánh này cũng chỉ đúng với số 21,9 km, không đúng với số 40 km của NASA — càng cần ghi rõ mốc đo.
+  - id: C-11
+    claim: "Valles Marineris — hệ hẻm vực dài 4.000 km, sâu tới 7 km."
+    verdict: contradicted
+    severity: S2
+    evidence: https://science.nasa.gov/mars/facts/
+    note: 'Trang NASA Mars Facts (cập nhật 10/07/2026) ghi Valles Marineris "about 2,400 miles (3,870 kilometers) in length, … 370 miles (600 kilometers) across at its widest, and descends about 5.8 miles (9.3 kilometers) at its deepest". Độ sâu 7 km trong bài thấp hơn 25% so với 9,3 km của NASA; chiều dài 4.000 km cao hơn 3.870 km. Không nguồn nào trong 4 nguồn bài dẫn có số này. Sửa: "dài khoảng 3.870 km, rộng tới 600 km, sâu tới khoảng 9,3 km (NASA)".'
+  - id: C-12
+    claim: "Hai vệ tinh nhỏ Phobos và Deimos."
+    verdict: verified
+    severity: S4
+    evidence: https://science.nasa.gov/mars/facts/
+    note: 'NASA: "two small moons: Phobos and Deimos". Số vệ tinh là claim đổi theo thời gian; theo yêu cầu riêng của lô, phải ghi "tính đến 17/09/2026". Rủi ro thay đổi thấp nhưng quy tắc áp dụng cho mọi số vệ tinh.'
+  - id: C-13
+    claim: "Quang phổ của Phobos/Deimos giống tiểu hành tinh nguyên thuỷ, gợi ý bị bắt giữ; nhưng quỹ đạo gần tròn, gần mặt phẳng xích đạo hợp hơn với kịch bản bồi tụ từ đĩa mảnh vỡ sau va chạm lớn."
+    verdict: unsupported
+    severity: S3
+    evidence: https://www.mmx.jaxa.jp/en/
+    note: 'Cách lập luận đúng tinh thần văn liệu và giữ tranh luận mở. Nhưng hai nguồn được gắn không chứa lập luận này: trang JAXA chỉ nêu hai giả thuyết (va chạm lớn vs tiểu hành tinh bị bắt), không nói quang phổ hay quỹ đạo; trang NASA Moons (cập nhật 05/11/2024) chỉ ghi "thought to be captured asteroids, or debris from early in the formation of our solar system" và không nêu là chưa ngã ngũ. Bằng chứng quang phổ và quỹ đạo cần nguồn tier 1 riêng. Không phải S1 vì nguồn có liên quan và không bị xuyên tạc — chỉ là không đủ phủ.'
+  - id: C-14
+    claim: "JAXA xếp đây vào nhóm bài toán chưa có lời giải của thuyết hình thành Hệ Mặt Trời, và lập sứ mệnh MMX để lấy mẫu Phobos đem về phân xử."
+    verdict: verified
+    severity: S3
+    evidence: https://www.mmx.jaxa.jp/en/
+    note: 'JAXA: "one of the unsolved problems in the theory of the Solar System''s formation"; MMX sẽ hạ cánh lấy mẫu Phobos đem về. Quy kết chính xác. Nhưng thiếu mốc thời gian: tính đến 17/09/2026, JAXA công bố lịch phóng MMX ngày 20/10/2026 lúc 04:41:03 JST trên H3 số 10 — tức khoảng một tháng nữa. Bài sẽ lỗi thời ngay sau khi phóng. Thêm mốc và lên lịch rà lại sau 20/10/2026.'
+  - id: C-15
+    claim: "Nguồn 1 (Planetary Fact Sheet) không có accessedAt, và không claim nào trong bài dùng số của Fact Sheet."
+    verdict: unverifiable
+    severity: S4
+    evidence: https://nssdc.gsfc.nasa.gov/planetary/factsheet/
+    note: accessedAt = "THIẾU". Bài không có con số nào lấy từ Fact Sheet (không có khối lượng, chu kỳ, nhiệt độ, áp suất), nên nguồn này đang treo, không đỡ claim nào. Hoặc dùng nó cho một đoạn số liệu cơ bản, hoặc bỏ.
+fixes:
+  - Sửa "Valles Marineris — hệ hẻm vực dài 4.000 km, sâu tới 7 km" thành "dài khoảng 3.870 km, rộng tới 600 km, sâu tới khoảng 9,3 km" và dẫn https://science.nasa.gov/mars/facts/ (cập nhật 10/07/2026).
+  - Bỏ cụm "so với mốc chuẩn của Sao Hoả" ở Olympus Mons vì nguồn THEMIS không nói vậy; hoặc thêm nguồn tier 1–2 nêu mốc đo. Nêu rõ số 21,9 km khác số "hơn 40 km từ chân tới đỉnh" của NASA vì khác mốc đo.
+  - Thêm mốc thời gian cho MMX — "tính đến 17/09/2026, MMX dự kiến phóng ngày 20/10/2026" — và đặt lịch rà lại bài ngay sau ngày đó.
+  - Thêm "tính đến 17/09/2026" cho câu hai vệ tinh Phobos và Deimos.
+  - Sửa "hố Jezero nơi Perseverance đang hoạt động" thành "hố Jezero, nơi Perseverance hạ cánh năm 2021" và dẫn Mangold et al. 2021 (DOI 10.1126/science.abl4051).
+  - Thêm nguồn MAVEN cho đoạn mất khí quyển (thông cáo NASA 05/11/2015 và Jakosky et al. 2015, DOI 10.1126/science.aad0210), ghi rõ đo năm 2015, khoảng 100 g/giây.
+  - Hạ giọng chuỗi nhân quả "nhỏ → lõi nguội → mất từ trường → mất khí quyển" thành "được cho là", đồng bộ với cách xử lý ở bài Trái Đất.
+  - Bỏ chữ "ấm" trong "ấm và ẩm hơn nhiều" hoặc nêu tranh luận ấm–ẩm vs lạnh–băng giá.
+  - Thêm nguồn tier 1–2 cho, hoặc cắt, các claim chưa được nguồn nào đỡ — băng ở hai cực và vĩ độ trung bình, số phận của nước (thoát vào không gian / đóng băng), và lập luận quang phổ–quỹ đạo của Phobos/Deimos.
+  - Thêm https://science.nasa.gov/mars/facts/ làm nguồn cho màu đỏ (oxit sắt) và khoáng vật hình thành trong nước.
+  - Điền accessedAt cho Planetary Fact Sheet hoặc bỏ nguồn này vì không claim nào dùng nó.
+suggestedSources:
+  - title: Mars Facts (NASA Science)
+    url: https://science.nasa.gov/mars/facts/
+    doi:
+    publisher: NASA
+    year: 2026
+    tier: 2
+    covers: Màu đỏ do oxy hoá sắt; Valles Marineris 3.870 km dài, 600 km rộng, 9,3 km sâu; Olympus Mons >40 km từ chân tới đỉnh; hai vệ tinh; quá khứ có nước, lũ lớn ~3,5 tỉ năm; từ hoá vỏ ~4 tỉ năm trước
+  - title: Perseverance rover reveals an ancient delta-lake system and flood deposits at Jezero crater, Mars
+    url: https://doi.org/10.1126/science.abl4051
+    doi: 10.1126/science.abl4051
+    publisher: Science — Mangold et al.
+    year: 2021
+    tier: 1
+    covers: Châu thổ–hồ cổ ở Jezero, trầm tích lũ, lớp sét/bùn (DOI xác nhận qua Crossref)
+  - title: NASA Mission Reveals Speed of Solar Wind Stripping Martian Atmosphere
+    url: https://www.nasa.gov/news-release/nasa-mission-reveals-speed-of-solar-wind-stripping-martian-atmosphere
+    doi:
+    publisher: NASA
+    year: 2015
+    tier: 2
+    covers: MAVEN đo tốc độ mất khí ~100 g/giây, tăng trong bão mặt trời, cao hơn nhiều trong quá khứ
+  - title: MAVEN observations of the response of Mars to an interplanetary coronal mass ejection
+    url: https://doi.org/10.1126/science.aad0210
+    doi: 10.1126/science.aad0210
+    publisher: Science — Jakosky et al.
+    year: 2015
+    tier: 1
+    covers: Mất khí quyển tăng khi có bão mặt trời (DOI xác nhận qua Crossref)
+  - title: MMX — Martian Moons eXploration
+    url: https://www.mmx.jaxa.jp/en/
+    doi:
+    publisher: JAXA
+    year: 2026
+    tier: 2
+    covers: Nguồn gốc Phobos/Deimos là bài toán chưa có lời giải; MMX lấy mẫu Phobos; lịch phóng 20/10/2026
+openQuestions:
+  - Nguồn gốc Phobos và Deimos (bị bắt giữ vs bồi tụ từ đĩa mảnh vỡ) là tranh cãi thật. Bài đang trình bày đúng mực — giữ nguyên, chỉ cần nguồn tier 1 cho bằng chứng quang phổ và quỹ đạo. Lưu ý trang NASA Moons (2024) nghiêng về giả thuyết bắt giữ, khác giọng với JAXA.
+  - Sao Hoả cổ "ấm và ẩm" hay "lạnh và băng giá với các đợt tan chảy" — tranh luận mở, bài không được chọn phe.
+  - Độ cao Olympus Mons nên dùng thước đo nào cho toàn kho (21,9 km trên mốc chuẩn vs hơn 40 km từ chân tới đỉnh của NASA)? Cần một quyết định chung để bài 8 hành tinh và bài này không lệch nhau.
+  - Nước của Sao Hoả mất đi đâu — thoát vào không gian, đóng băng dưới đất, hay bị giữ trong khoáng vật vỏ — tỉ lệ vẫn là câu hỏi nghiên cứu.

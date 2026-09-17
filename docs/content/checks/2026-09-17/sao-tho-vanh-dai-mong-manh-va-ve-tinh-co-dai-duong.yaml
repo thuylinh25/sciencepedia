@@ -1,0 +1,179 @@
+slug: sao-tho-vanh-dai-mong-manh-va-ve-tinh-co-dai-duong
+checkedAt: 2026-09-17
+checkedBy: science-editor
+sourceCount: 1
+verdict: revise
+summary: Phần lớn claim đúng khi đối chiếu NASA, nhưng tuổi vành đai "100–400 triệu năm" là khoảng không nguồn nào đưa ra (Iess 2019 cho 10–100, Kempf 2023 cho tối đa 400), và cả bài chỉ đứng trên một Fact Sheet không nói gì về vành đai, Enceladus, Titan hay lục giác.
+claims:
+  - id: C-1
+    claim: "Vành đai gồm hàng tỉ mảnh băng nước và đá, kích thước từ hạt bụi tới nhà cao tầng."
+    verdict: verified
+    severity: S4
+    evidence: https://science.nasa.gov/saturn/facts/
+    note: "NASA: 'billions of small chunks of ice and rock'; 'from tiny, dust-sized icy grains to chunks as big as a house. A few particles are as large as mountains.' NASA nói 'ngôi nhà', không phải 'nhà cao tầng'; sửa cho khớp."
+  - id: C-2
+    claim: "Vành đai trải rộng khoảng 280.000 km."
+    verdict: partially-supported
+    severity: S4
+    evidence: https://science.nasa.gov/saturn/facts/
+    note: "NASA: 'extends up to 175,000 miles (282,000 kilometers) from the planet'. Nguồn nói 'tính từ hành tinh', bài nói 'trải rộng' — hai đại lượng khác nhau. Viết đúng như nguồn."
+  - id: C-3
+    claim: "Ở nhiều vùng vành đai chỉ dày chừng 10 mét."
+    verdict: verified
+    severity: none
+    evidence: https://science.nasa.gov/saturn/facts/
+    note: "NASA: 'the vertical height is typically about 30 feet (10 meters) in the main rings'. Khớp."
+  - id: C-4
+    claim: "Tỉ lệ tương đương một tờ giấy rộng bằng sân bóng đá."
+    verdict: contradicted
+    severity: S3
+    evidence: https://science.nasa.gov/saturn/facts/
+    note: "Tính theo số của NASA: 10 m / 282.000 km ≈ 3,5×10⁻⁸. Tờ giấy 0,1 mm trên sân ~105 m ≈ 1×10⁻⁶ — dày tương đối gấp ~30 lần vành đai. So sánh sai bậc độ lớn (dù theo hướng làm nhẹ đi). Sửa: tờ giấy 0,1 mm phải rộng khoảng 2,8 km; hoặc cắt so sánh."
+  - id: C-5
+    claim: "Dữ liệu Cassini cho thấy vành đai có thể còn khá trẻ, có lẽ chỉ 100–400 triệu năm tuổi."
+    verdict: contradicted
+    severity: S2
+    evidence: https://www.jpl.nasa.gov/news/nasas-cassini-data-show-saturns-rings-relatively-new/
+    note: "Iess et al. 2019 (Science, trọng trường Cassini): hình thành 'between 10 million and 100 million years ago'. Kempf et al. 2023 (Science Advances, DOI 10.1126/sciadv.adf8537, bụi vi thiên thạch — https://www.sciencedaily.com/releases/2023/05/230512144752.htm): 'no more than 400 million years old'. Khoảng '100–400 triệu' không có trong nguồn nào: ghép cận trên của hai nghiên cứu khác phương pháp và bỏ cận dưới 10 triệu. Sửa thành 'Cassini cho thấy vành đai có thể trẻ: ước tính 10–100 triệu năm (Iess 2019) hoặc không quá 400 triệu năm (Kempf 2023)' và nêu vẫn còn tranh luận."
+  - id: C-6
+    claim: "Vành đai đang dần rơi vào hành tinh dưới dạng 'mưa vành đai'."
+    verdict: verified
+    severity: none
+    evidence: https://www.nasa.gov/news-release/nasa-research-reveals-saturn-is-losing-its-rings-at-worst-case-scenario-rate/
+    note: "NASA 17/12/2018 (O'Donoghue et al., Icarus): 'ring rain' rút nước khỏi vành đai; tính cả vật chất rơi ở xích đạo thì vành đai còn dưới 100 triệu năm. Khớp; cần gắn nguồn."
+  - id: C-7
+    claim: "Mật độ trung bình Sao Thổ là 0,687 g/cm³ — thấp hơn nước."
+    verdict: verified
+    severity: none
+    evidence: https://nssdc.gsfc.nasa.gov/planetary/factsheet/
+    note: "Fact Sheet: 687 kg/m³ = 0,687 g/cm³. NASA Saturn Facts: 'the only planet ... less than water'. Khớp."
+  - id: C-8
+    claim: "Nếu có một đại dương đủ lớn, Sao Thổ sẽ nổi."
+    verdict: partially-supported
+    severity: S4
+    evidence: https://science.nasa.gov/saturn/facts/
+    note: "Suy từ mật độ, nhưng là đơn giản hoá mất thông tin (hành tinh khí không giữ nguyên hình khối trong chất lỏng). Theo quy tắc 4: thêm 'nói vui' hoặc 'về mặt mật độ trung bình'."
+  - id: C-9
+    claim: "Enceladus chỉ rộng 500 km."
+    verdict: verified
+    severity: none
+    evidence: https://science.nasa.gov/saturn/moons/enceladus/
+    note: "NASA: 'only about 310 miles (500 kilometers) across'. Khớp."
+  - id: C-10
+    claim: "Enceladus phun cột hơi nước từ khe nứt cực nam; Cassini bay xuyên qua và phát hiện muối, silica và phân tử hữu cơ."
+    verdict: verified
+    severity: none
+    evidence: https://science.nasa.gov/saturn/moons/enceladus/
+    note: "NASA: tia nước từ 'tiger stripes' vùng cực nam; cột phun có 'salts and silica'; vật chất hữu cơ 'about 20 times denser than scientists expected'. Khớp; cần gắn nguồn."
+  - id: C-11
+    claim: "...dấu hiệu của một đại dương nước lỏng tiếp xúc với đáy đá."
+    verdict: verified
+    severity: none
+    evidence: https://science.nasa.gov/saturn/moons/enceladus/
+    note: "NASA: hạt nano silica 'can only be generated where liquid water and rock interact at temperatures above about 200 degrees Fahrenheit'; đại dương xác định qua trọng lực và dao động libration. Chữ 'dấu hiệu' giữ đúng mức."
+  - id: C-12
+    claim: "Titan là vệ tinh duy nhất trong hệ có khí quyển dày, chủ yếu là nitơ."
+    verdict: verified
+    severity: S4
+    evidence: https://science.nasa.gov/saturn/moons/titan/facts/
+    note: "NASA: 'the only moon in our solar system known to have a substantial atmosphere'; ~95% nitơ, ~5% methane. Thêm 'được biết tới'."
+  - id: C-13
+    claim: "Trên bề mặt có sông, hồ, biển methane và ethane lỏng ở -179°C."
+    verdict: verified
+    severity: none
+    evidence: https://science.nasa.gov/saturn/moons/titan/facts/
+    note: "NASA: '-290 degrees Fahrenheit or -179 degrees Celsius'; 'rivers, lakes and seas of liquid hydrocarbons like methane and ethane'. Khớp."
+  - id: C-14
+    claim: "Sứ mệnh Dragonfly dự kiến đưa thiết bị bay tới Titan trong thập niên 2030."
+    verdict: partially-supported
+    severity: S3
+    evidence: https://science.nasa.gov/mission/dragonfly/
+    note: "NASA (mở 17/09/2026): phóng 'NET July 2028', tới Titan 'Late 2034'. Claim lịch trình thiếu mốc ngày và mơ hồ. Sửa thành 'dự kiến phóng không sớm hơn 7/2028 và tới Titan cuối 2034 (theo NASA, tính đến 9/2026)', kiểm lại 6 tháng một lần."
+  - id: C-15
+    claim: "Dòng tia khí quyển tạo hình lục giác rộng khoảng 30.000 km quanh cực bắc."
+    verdict: verified
+    severity: none
+    evidence: https://science.nasa.gov/saturn/facts/
+    note: "NASA: 'Spanning about 20,000 miles (30,000 kilometers) across, the hexagon is a wavy jet stream'. Khớp. Bỏ chữ 'đều' — NASA mô tả là dòng tia gợn sóng."
+  - id: C-16
+    claim: "Cấu trúc này quan sát từ thời Voyager và vẫn tồn tại."
+    verdict: partially-supported
+    severity: S3
+    evidence: https://science.nasa.gov/saturn/facts/
+    note: "NASA: 'first noticed in images taken by the twin Voyager spacecraft in the early 80s'. Vế 'vẫn tồn tại' không có mốc và không có nguồn quan sát mới. Thêm mốc của lần quan sát gần nhất có nguồn, hoặc viết 'vẫn còn trong suốt sứ mệnh Cassini (tới 2017)' sau khi gắn nguồn."
+  - id: C-17
+    claim: "...một hiện tượng chưa có ở bất kỳ hành tinh nào khác."
+    verdict: unverifiable
+    severity: S3
+    evidence: "—"
+    note: "Trang NASA Saturn Facts không nói lục giác là duy nhất. Claim 'duy nhất' cần nguồn và mốc thời gian. Nghi ngờ thì cắt."
+  - id: C-18
+    claim: "Nguồn duy nhất (NASA Planetary Fact Sheet) đỡ toàn bài."
+    verdict: partially-supported
+    severity: S3
+    evidence: https://nssdc.gsfc.nasa.gov/planetary/factsheet/
+    note: "Fact Sheet chỉ đỡ mật độ (C-7). Không có gì về vành đai, tuổi vành đai, Enceladus, Titan, Dragonfly, lục giác. Thiếu nguồn. accessedAt THIẾU; ghi '2024' trong khi trang cập nhật 18/03/2025."
+fixes:
+  - "Thay '100–400 triệu năm tuổi' bằng 'ước tính 10–100 triệu năm (Iess et al., 2019) hoặc không quá 400 triệu năm (Kempf et al., 2023) — vẫn đang tranh luận', gắn hai nguồn."
+  - "Sửa hoặc cắt so sánh 'tờ giấy rộng bằng sân bóng': tỉ lệ đúng là tờ giấy 0,1 mm rộng khoảng 2,8 km."
+  - "Viết '282.000 km tính từ hành tinh' như NASA, không viết 'trải rộng'."
+  - "Đổi 'nhà cao tầng' thành 'ngôi nhà, vài mảnh cỡ ngọn núi'."
+  - "Dragonfly: thay 'thập niên 2030' bằng 'phóng không sớm hơn 7/2028, tới Titan cuối 2034 (theo NASA, 9/2026)'."
+  - "Lục giác: bỏ chữ 'đều'; thêm mốc cho 'vẫn tồn tại'; cắt 'chưa có ở bất kỳ hành tinh nào khác' nếu không có nguồn."
+  - "Titan: thêm 'được biết tới'. 'Sao Thổ sẽ nổi': đánh dấu là cách nói hình ảnh."
+  - "Gắn nguồn cấp claim cho vành đai, mưa vành đai, Enceladus, Titan, Dragonfly (xem suggestedSources); điền accessedAt cho Fact Sheet."
+  - "Cân nhắc thêm link tới bài cùng lô /articles/sao-moc-nguoi-khong-lo-khi-va-tam-khien-cua-he (hai link nội bộ hiện có đều trỏ tới bài có thật — việc của seo-expert)."
+suggestedSources:
+  - title: Saturn Facts
+    url: https://science.nasa.gov/saturn/facts/
+    doi:
+    publisher: NASA Science
+    year: 2025
+    tier: 2
+    covers: Cấu tạo, kích thước, độ dày vành đai; lục giác; mật độ
+  - title: NASA's Cassini Data Show Saturn's Rings Relatively New
+    url: https://www.jpl.nasa.gov/news/nasas-cassini-data-show-saturns-rings-relatively-new/
+    doi:
+    publisher: NASA JPL (Iess et al., Science)
+    year: 2019
+    tier: 2
+    covers: Tuổi vành đai 10–100 triệu năm
+  - title: New study puts a definitive age on Saturn's rings (bản tin về Kempf et al.)
+    url: https://www.sciencedaily.com/releases/2023/05/230512144752.htm
+    doi: 10.1126/sciadv.adf8537
+    publisher: Science Advances / ScienceDaily
+    year: 2023
+    tier: 1
+    covers: Tuổi vành đai không quá 400 triệu năm
+  - title: NASA Research Reveals Saturn is Losing Its Rings at "Worst-Case-Scenario" Rate
+    url: https://www.nasa.gov/news-release/nasa-research-reveals-saturn-is-losing-its-rings-at-worst-case-scenario-rate/
+    doi:
+    publisher: NASA (O'Donoghue et al., Icarus)
+    year: 2018
+    tier: 2
+    covers: Mưa vành đai
+  - title: Enceladus
+    url: https://science.nasa.gov/saturn/moons/enceladus/
+    doi:
+    publisher: NASA Science
+    year: 2025
+    tier: 2
+    covers: Kích thước, cột phun, muối/silica/hữu cơ, đại dương tiếp xúc đá
+  - title: Titan Facts
+    url: https://science.nasa.gov/saturn/moons/titan/facts/
+    doi:
+    publisher: NASA Science
+    year: 2025
+    tier: 2
+    covers: Khí quyển nitơ, -179°C, hồ methane/ethane
+  - title: Dragonfly
+    url: https://science.nasa.gov/mission/dragonfly/
+    doi:
+    publisher: NASA Science
+    year: 2026
+    tier: 2
+    covers: Lịch phóng và tới Titan
+openQuestions:
+  - "Tuổi vành đai Sao Thổ vẫn tranh luận: nghiên cứu trọng trường (Iess 2019) và bụi vi thiên thạch (Kempf 2023) cho 'trẻ'; tìm kiếm cho thấy có bài Icarus 2026 'Saturn's rings age, I: Reconsideration of the exposure age' (ScienceDirect trả 403, CHƯA mở được nên chưa dùng). Cần người mở bài đó trước khi bài viết khẳng định vành đai 'trẻ'."
+  - "Lục giác cực bắc có còn quan sát được sau khi Cassini kết thúc (2017) không, và có 'duy nhất' không — cần nguồn quan sát mới."
+  - "Không cần đối chiếu IAU MPC / JPL SSD: bài không nêu số vệ tinh. Nếu bổ sung: KHÔNG dùng số 274 'as of March 2025' của NASA Saturn Facts bản đã mở — scripts/apply-corrections-2026-09-13.ts ghi 293 theo NASA tháng 8/2026 (lượt này chưa mở lại nguồn đó). Phải đối chiếu IAU MPC / JPL SSD tại thời điểm viết và kèm mốc ngày."

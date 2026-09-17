@@ -1,0 +1,75 @@
+slug: thuyet-tuong-doi-hep-khi-thoi-gian-khong-con-tuyet-doi
+checkedAt: 2026-09-17
+checkedBy: science-editor
+sourceCount: 1
+verdict: revise
+summary: "Vật lý cốt lõi và các con số GPS đúng, nhưng nguồn duy nhất (bài tháng 6/1905, thiếu URL/DOI/ngày truy cập) không đỡ E = mc² (vốn nằm ở bài tháng 9/1905), không đỡ số liệu GPS, muon hay con số “10 km/ngày”."
+claims:
+  - id: C-1
+    claim: "Năm 1905 Einstein công bố bài báo xây dựng thuyết từ hai tiên đề (nguyên lý tương đối; tốc độ ánh sáng không đổi với mọi quan sát viên)."
+    verdict: partially-supported
+    severity: S4
+    evidence: "https://doi.org/10.1002/andp.19053221004"
+    note: "DOI của “Zur Elektrodynamik bewegter Körper”, Annalen der Physik 322 (1905) 891–921 có trong kho DOI đã đối chiếu; trang Wiley trả 403 nên không đọc được toàn văn trong lượt này. Nguồn trong bài không có url/doi/accessedAt và bị gắn tier 2 — bài gốc peer-review là tier 1. Cụm “xây dựng lại toàn bộ cơ học” là phóng đại; viết “xây dựng lại động học và điện động lực học”."
+  - id: C-2
+    claim: "E = mc² là hệ quả được trình bày trong cùng bài báo đó (bài là nguồn duy nhất, liệt kê E = mc² dưới “Hệ quả”)."
+    verdict: contradicted
+    severity: S3
+    evidence: "https://onlinelibrary.wiley.com/doi/10.1002/andp.19053231314 ; https://ui.adsabs.harvard.edu/abs/1905AnP...323..639E/abstract"
+    note: "Quan hệ khối lượng–năng lượng nằm ở bài thứ hai: “Ist die Trägheit eines Körpers von seinem Energieinhalt abhängig?”, Annalen der Physik 323 (1905) 639–641, DOI 10.1002/andp.19053231314. Thêm nguồn này và ghi rõ E = mc² đến từ bài tháng 9/1905."
+  - id: C-3
+    claim: "Giãn nở thời gian theo γ = 1/√(1 − v²/c²); co độ dài cùng hệ số; tính đồng thời là tương đối."
+    verdict: partially-supported
+    severity: S4
+    evidence: "—"
+    note: "Đúng theo vật lý chuẩn nhưng không kiểm được tại nguồn trong lượt này vì bài gốc không đọc được. Gắn DOI bài tháng 6/1905 (có url) là đủ."
+  - id: C-4
+    claim: "Đồng hồ vệ tinh GPS chậm khoảng 7 μs/ngày do tương đối hẹp, nhanh khoảng 45 μs/ngày do tương đối rộng, tổng khoảng 38 μs/ngày."
+    verdict: verified
+    severity: S3
+    evidence: "https://www.astronomy.ohio-state.edu/pogge.1/Ast162/Unit5/gps.html ; https://pmc.ncbi.nlm.nih.gov/articles/PMC5253894/"
+    note: "Pogge (Ohio State) ghi đúng 7 / 45 / 38 μs/ngày. Ashby (Living Reviews in Relativity 6, 2003) cho độ lệch tần số thực của đồng hồ là 4,4647 × 10⁻¹⁰, tức ≈ 38,6 μs/ngày — khớp. Số đúng nhưng nguồn của bài không đỡ phần này (S3 under-sourced): thêm Ashby 2003 làm nguồn."
+  - id: C-5
+    claim: "Nếu bỏ qua, sai số định vị sẽ tích luỹ khoảng 10 km mỗi ngày."
+    verdict: partially-supported
+    severity: S3
+    evidence: "https://www.astronomy.ohio-state.edu/pogge.1/Ast162/Unit5/gps.html"
+    note: "Chỉ có nguồn giảng dạy (bậc 3) ghi “about 10 kilometers each day”; Ashby 2003 không nêu con số km/ngày. 38,6 μs × c ≈ 11,4 km là quãng đường ánh sáng, không phải sai số vị trí đo được. Sửa thành “độ lệch thời gian tương đương khoảng 11 km quãng đường ánh sáng mỗi ngày, đủ làm hệ thống mất tác dụng” hoặc cắt số."
+  - id: C-6
+    claim: "Muon sinh ở tầng cao khí quyển có thời gian sống quá ngắn để tới mặt đất mà vẫn tới, vì đồng hồ của chúng chạy chậm trong hệ quy chiếu mặt đất."
+    verdict: unverifiable
+    severity: S3
+    evidence: "—"
+    note: "Đúng về vật lý nhưng bài không có nguồn cho phần này, và trong lượt này không mở được trang AIP/OSTI của thí nghiệm Frisch & Smith 1963 (403 / ECONNREFUSED). Gắn nguồn thực nghiệm tier 1 sau khi đã mở được: Frisch & Smith, Am. J. Phys. 31, 342 (1963). “Quá ngắn để tới được mặt đất” nên viết “phần lớn sẽ phân rã trước khi tới mặt đất”."
+fixes:
+  - "Sửa nguồn 1: đổi tier thành 1, thêm doi 10.1002/andp.19053221004, url https://doi.org/10.1002/andp.19053221004 và accessedAt."
+  - "Thêm nguồn tier 1 cho E = mc²: Einstein 1905, Annalen der Physik 323, 639–641, DOI 10.1002/andp.19053231314; sửa câu mở đầu để không ngụ ý E = mc² nằm trong bài tháng 6."
+  - "Thêm Ashby 2003 (Living Reviews in Relativity 6:1, https://pmc.ncbi.nlm.nih.gov/articles/PMC5253894/) làm nguồn cho đoạn GPS."
+  - "Thay “sai số định vị tích luỹ khoảng 10 km mỗi ngày” bằng “độ lệch tương đương khoảng 11 km quãng đường ánh sáng mỗi ngày”, hoặc cắt con số."
+  - "Thêm nguồn thực nghiệm tier 1 cho đoạn muon (đã mở được) hoặc cắt đoạn đó."
+  - "Đổi “xây dựng lại toàn bộ cơ học” thành “xây dựng lại động học của chuyển động”."
+suggestedSources:
+  - title: "Relativity in the Global Positioning System"
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC5253894/
+    doi: 10.12942/lrr-2003-1
+    publisher: "Living Reviews in Relativity 6 (N. Ashby)"
+    year: 2003
+    tier: 1
+    covers: "Độ lệch tần số đồng hồ vệ tinh GPS (4,4647 × 10⁻¹⁰ ≈ 38,6 μs/ngày), đóng góp của tương đối hẹp và rộng"
+  - title: "Ist die Trägheit eines Körpers von seinem Energieinhalt abhängig?"
+    url: https://ui.adsabs.harvard.edu/abs/1905AnP...323..639E/abstract
+    doi: 10.1002/andp.19053231314
+    publisher: "Annalen der Physik 323 (A. Einstein)"
+    year: 1905
+    tier: 1
+    covers: "Quan hệ khối lượng–năng lượng E = mc²"
+  - title: "Real-World Relativity: The GPS Navigation System"
+    url: https://www.astronomy.ohio-state.edu/pogge.1/Ast162/Unit5/gps.html
+    doi:
+    publisher: "The Ohio State University, Department of Astronomy (R. Pogge)"
+    year:
+    tier: 3
+    covers: "Tách 7 / 45 / 38 μs/ngày dễ hiểu cho độc giả; chỉ dùng kèm Ashby, không làm nguồn duy nhất"
+openQuestions:
+  - "Hồ sơ ghi status PUBLISHED dù nguồn duy nhất thiếu url/doi/accessedAt — gate xuất bản đã cho qua thế nào? Cần kiểm lại scripts/publish.ts."
+  - "Trang Pogge không ghi năm cập nhật; trường year để trống, người sửa bài điền nếu tìm được."

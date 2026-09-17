@@ -1,0 +1,112 @@
+slug: vi-sao-chiem-tinh-hoc-khong-phai-khoa-hoc
+checkedAt: 2026-09-17
+checkedBy: science-editor
+sourceCount: 1
+verdict: revise
+summary: "Giọng bài đúng yêu cầu (lập luận bằng kiểm chứng, không chê bai), nhưng chính bằng chứng then chốt, thí nghiệm mù đôi trên Nature 1985, lại không nêu tên Carlson và không trích dẫn, các 'nghiên cứu khác' không có nguồn nào, và nguồn duy nhất là trang nghiệp dư đã chết."
+claims:
+  - id: C-1
+    claim: "Một thử nghiệm mù đôi công bố trên Nature năm 1985: các nhà chiêm tinh ghép lá số với hồ sơ tính cách, kết quả không cao hơn ngẫu nhiên"
+    verdict: partially-supported
+    severity: S3
+    evidence: "https://api.crossref.org/works/10.1038/318419a0"
+    note: "Crossref xác nhận bài tồn tại: Shawn Carlson, 'A double-blind test of astrology', Nature 318: 419–425 (1985), DOI 10.1038/318419a0. Toàn văn và tóm tắt bị chặn sau trang đăng nhập (nature.com, link.springer.com đều chuyển hướng; ADS trả 405), nên lượt này CHƯA đọc được tại nguồn kết luận 'không hơn ngẫu nhiên'. Chi tiết 'ghép lá số với hồ sơ CPI' mới chỉ thấy ở đoạn trích tìm kiếm. Bài không nêu tên tác giả, không có DOI, không có trong danh sách nguồn, trong khi đây là bằng chứng mà cả bài dựa vào."
+  - id: C-2
+    claim: "Nhiều nghiên cứu đã kiểm tra chiêm tinh bằng phương pháp mù đôi"
+    verdict: unsupported
+    severity: S3
+    evidence: "—"
+    note: "Bài chỉ mô tả một nghiên cứu. 'Nhiều' không có nguồn đỡ."
+  - id: C-3
+    claim: "Các nghiên cứu khác về tính cách, nghề nghiệp, hôn nhân, chỉ số thông minh không tìm thấy liên hệ đáng tin cậy với lá số"
+    verdict: unsupported
+    severity: S3
+    evidence: "—"
+    note: "Bốn lĩnh vực được liệt kê mà không có một trích dẫn nào. Theo quy tắc, claim tổng hợp nghiên cứu không nguồn phải có nguồn peer-review hoặc bị cắt."
+  - id: C-4
+    claim: "Chưa có cơ chế vật lý nào được biết; các lực đã đo không cho thấy ảnh hưởng đáng kể từ hành tinh lên trẻ sơ sinh"
+    verdict: unsupported
+    severity: S3
+    evidence: "—"
+    note: "Vế 'các lực đã đo không cho thấy...' là một khẳng định định lượng ngầm, không có nguồn. Câu sau của bài ('khoa học không bác bỏ một ý tưởng chỉ vì chưa có lời giải thích') là cách viết đúng mực, nên giữ."
+  - id: C-5
+    claim: "Chiêm tinh phương Tây cho rằng vị trí Mặt Trời, Mặt Trăng, hành tinh lúc sinh ảnh hưởng tính cách/số phận"
+    verdict: verified
+    severity: none
+    evidence: "https://spaceplace.nasa.gov/starfinder2/en/"
+    note: "NASA Space Place mô tả chiêm tinh là 'dựa trên niềm tin rằng vị trí của một số sao và hành tinh có thể dự đoán tương lai hoặc mô tả tính cách một người', và 'các khẳng định của nó không dựa trên bằng chứng khoa học'. Khớp, và đây là nguồn bậc 2 phù hợp cho kết luận của bài."
+  - id: C-6
+    claim: "Hệ thống được xây dựng cách đây hơn 2.000 năm"
+    verdict: unverifiable
+    severity: S4
+    evidence: "—"
+    note: "Chưa có nguồn. Cần nguồn lịch sử khoa học, hoặc cắt con số."
+  - id: C-7
+    claim: "Trục Trái Đất dịch chuyển chậm (tiến động), nên vị trí thực của Mặt Trời trên nền chòm sao đã khác so với lúc lập hệ cung"
+    verdict: partially-supported
+    severity: S4
+    evidence: "https://www.astronomy.com/science/earths-axis-precesses-bright-stars-become-the-north-star/"
+    note: "Nguồn đã mở (báo phổ biến khoa học, chỉ dùng làm bối cảnh) xác nhận tiến động có chu kỳ khoảng 26.000 năm. Hệ quả cụ thể về độ lệch cung/chòm chưa có nguồn bậc 1–2."
+  - id: C-8
+    claim: "Đường đi của Mặt Trời cắt qua 13 chòm sao, có Xà Phu"
+    verdict: partially-supported
+    severity: S3
+    evidence: "https://www.iau.org/IAU/IAU/Astronomy-FAQs/Constellations.aspx"
+    note: "Giống C-2 của bài cac-chom-sao-hoang-dao: IAU xác nhận ranh giới năm 1930 nhưng trang đã mở không nói về Hoàng Đạo/Ophiuchus. Cần một nguồn cho riêng ý này."
+  - id: C-9
+    claim: "Nhiều trường phái hiện đại dùng hệ quy ước riêng, không dùng vị trí thực của chòm sao, nên tiến động không phải lập luận quyết định"
+    verdict: unverifiable
+    severity: S4
+    evidence: "—"
+    note: "Đây là sắc thái công bằng và nên giữ, vì nó chặn một lập luận yếu hay bị dùng. Nhưng cần nguồn mô tả cung hoàng đạo chí tuyến (tropical zodiac)."
+  - id: C-10
+    claim: "Hiệu ứng Forer: người ta chấp nhận mô tả mơ hồ, phổ quát như thể nói riêng về mình; kết hợp với thiên kiến xác nhận"
+    verdict: unverifiable
+    severity: S3
+    evidence: "—"
+    note: "Hiệu ứng được nêu tên mà không trích nghiên cứu gốc hay tổng quan tâm lý học nào. Cần nguồn peer-review đã mở kiểm."
+  - id: C-11
+    claim: "Giọng văn và cách lập luận của bài"
+    verdict: verified
+    severity: none
+    evidence: "https://spaceplace.nasa.gov/starfinder2/en/"
+    note: "Theo yêu cầu (c) của lô: bài lập luận bằng khả năng kiểm chứng, không chê bai. Bài tự gạt các lập luận yếu (tuổi đời, tiến động), thừa nhận 'thiếu cơ chế' chưa đủ để bác bỏ, và phân biệt dùng để giải trí với dùng để ra quyết định. Giữ nguyên khung này. Vấn đề chỉ nằm ở chỗ phần bằng chứng quá mỏng so với khung lập luận."
+  - id: C-12
+    claim: "Nguồn duy nhất: thienvanvietnam.org (VACA, 2013), gắn tier 2, accessedAt THIẾU"
+    verdict: unsupported
+    severity: S3
+    evidence: "—"
+    note: "Toàn domain đã chết (theo điều phối viên); là CLB nghiệp dư nên nhãn tier 2 sai. Bài coi như không còn nguồn đỡ."
+fixes:
+  - "Thêm Carlson (1985) vào danh sách nguồn: Shawn Carlson, 'A double-blind test of astrology', Nature 318: 419–425, DOI 10.1038/318419a0, tier 1. Trong thân bài, nêu tên tác giả và năm ngay tại câu mô tả thí nghiệm."
+  - "Trước khi xuất bản, đọc toàn văn Carlson (1985) qua quyền truy cập thư viện, rồi viết lại đoạn mô tả đúng thiết kế (bao nhiêu nhà chiêm tinh, ghép với loại hồ sơ nào, tiêu chí 'ngẫu nhiên'). Không viết thêm chi tiết nào chưa đọc tại bài gốc."
+  - "Sửa 'Nhiều nghiên cứu đã kiểm tra... bằng phương pháp mù đôi' thành câu chỉ nói về nghiên cứu đã có nguồn, hoặc bổ sung ít nhất một nghiên cứu mù đôi/tổng quan peer-review khác đã mở kiểm."
+  - "Với danh sách 'tính cách, nghề nghiệp, hôn nhân, chỉ số thông minh': mỗi mục gắn một nguồn peer-review đã mở kiểm; mục nào không có nguồn thì xóa khỏi danh sách."
+  - "Gắn nguồn cho câu về các lực vật lý đã đo, hoặc rút gọn thành 'chưa có cơ chế vật lý nào được biết' kèm nguồn."
+  - "Gắn nguồn peer-review cho hiệu ứng Forer (bài gốc năm 1949 hoặc một tổng quan), mở kiểm DOI trước khi gắn."
+  - "Thêm https://spaceplace.nasa.gov/starfinder2/en/ làm nguồn bậc 2 cho câu kết về vị thế khoa học của chiêm tinh."
+  - "Xóa nguồn thienvanvietnam.org khỏi danh sách nguồn đỡ; điền accessedAt cho mọi nguồn."
+suggestedSources:
+  - title: "A double-blind test of astrology"
+    url: "https://api.crossref.org/works/10.1038/318419a0"
+    doi: "10.1038/318419a0"
+    publisher: "Nature (Springer Nature) — Shawn Carlson"
+    year: 1985
+    tier: 1
+    covers: "Thí nghiệm mù đôi được mô tả ở mục 'Khi được kiểm chứng...'. Siêu dữ liệu đã xác nhận qua Crossref; toàn văn cần quyền truy cập để kiểm nội dung."
+  - title: "What Is Your Star Sign? (Space Place)"
+    url: "https://spaceplace.nasa.gov/starfinder2/en/"
+    doi: ""
+    publisher: "NASA Space Place"
+    year: "không ghi (truy cập 2026-09-17)"
+    tier: 2
+    covers: "Định nghĩa chiêm tinh; các khẳng định của chiêm tinh không dựa trên bằng chứng khoa học"
+  - title: "The Constellations (Astronomy FAQs)"
+    url: "https://www.iau.org/IAU/IAU/Astronomy-FAQs/Constellations.aspx"
+    doi: ""
+    publisher: "International Astronomical Union"
+    year: "không ghi (truy cập 2026-09-17)"
+    tier: 2
+    covers: "Ranh giới chòm sao IAU năm 1930 (nền cho ý 13 chòm; chưa đỡ ý Ophiuchus)"
+openQuestions:
+  - "Kết quả tìm kiếm cho thấy có các bài phân tích lại thiết kế và thống kê của Carlson (1985) và đi tới kết luận khác, nhưng những bài tôi thấy đăng ở kênh ủng hộ chiêm tinh, không phải nguồn bậc 1–2, và tôi chưa mở kiểm. Có nên nêu rằng nghiên cứu này từng bị phản biện? Nếu có, cần tìm phản biện hoặc phúc đáp đã qua bình duyệt. Người biên tập không tự phân xử tranh cãi này."

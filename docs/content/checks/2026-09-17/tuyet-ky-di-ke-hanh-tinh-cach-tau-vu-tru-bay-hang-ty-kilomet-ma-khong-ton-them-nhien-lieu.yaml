@@ -1,0 +1,123 @@
+slug: tuyet-ky-di-ke-hanh-tinh-cach-tau-vu-tru-bay-hang-ty-kilomet-ma-khong-ton-them-nhien-lieu
+checkedAt: 2026-09-17
+checkedBy: science-editor
+sourceCount: 0
+verdict: revise
+summary: "Không có nguồn nào nên không thể pass; cơ chế trao đổi động lượng giải thích đúng, nhưng bài nói sai rằng cả Voyager 1 và Voyager 2 đều “đi ké” lần lượt Sao Mộc, Sao Thổ, Sao Thiên Vương, Sao Hải Vương (chỉ Voyager 2 làm vậy), gọi trợ giúp hấp dẫn là “miễn phí” ở summary, và kỷ lục của Parker Solar Probe không có mốc thời gian."
+claims:
+  - id: C-1
+    claim: "Các hành tinh gần cùng mặt phẳng vì hình thành từ một đĩa khí bụi quay cách đây khoảng 4,57 tỷ năm."
+    verdict: unverifiable
+    severity: S3
+    evidence: "—"
+    note: "Phù hợp đồng thuận nhưng không mở được nguồn tier 1–2 cho con số 4,57 tỷ năm trong lượt này. Gắn nguồn tuổi Hệ Mặt Trời (niên đại khoáng vật CAI trong thiên thạch) hoặc viết “khoảng 4,6 tỷ năm” kèm nguồn."
+  - id: C-2
+    claim: "Mặt phẳng này chính là nơi đường Hoàng Đạo nằm trên thiên cầu."
+    verdict: partially-supported
+    severity: S4
+    evidence: "—"
+    note: "Hoàng Đạo là mặt phẳng quỹ đạo Trái Đất; các hành tinh khác lệch vài độ. Đơn giản hoá lossy: viết “gần trùng với mặt phẳng quỹ đạo Trái Đất (Hoàng Đạo)”. Chưa mở nguồn trong lượt này."
+  - id: C-3
+    claim: "Trái Đất chuyển động khoảng 30 km/s, Sao Mộc khoảng 13 km/s quanh Mặt Trời."
+    verdict: verified
+    severity: S3
+    evidence: "https://nssdc.gsfc.nasa.gov/planetary/factsheet/earthfact.html ; https://nssdc.gsfc.nasa.gov/planetary/factsheet/jupiterfact.html"
+    note: "29,78 km/s và 13,06 km/s — đúng. S3 vì bài không gắn nguồn."
+  - id: C-4
+    claim: "Tàu nhận thêm động lượng từ hành tinh; theo bảo toàn động lượng, hành tinh mất một lượng tương ứng; năng lượng bổ sung đến từ chuyển động quỹ đạo của hành tinh; thay đổi của hành tinh nhỏ đến mức không đo được."
+    verdict: verified
+    severity: S3
+    evidence: "https://science.nasa.gov/learn/basics-of-space-flight/chapter4-1/"
+    note: "NASA Basics of Space Flight: mômen động lượng truyền từ hành tinh sang tàu; hành tinh mất năng lượng quỹ đạo, “too small to be measured”. Giải thích đúng. Thiếu một ý quan trọng để khỏi sai mô hình: so với hành tinh, tốc độ tàu đi ra bằng lúc đi vào, chỉ đổi hướng; phần tăng tốc chỉ xuất hiện trong hệ quy chiếu Mặt Trời. Thêm câu đó và gắn nguồn."
+  - id: C-5
+    claim: "Summary và kết luận: tàu “tăng hoặc giảm tốc miễn phí”, hành tinh là “máy gia tốc miễn phí”."
+    verdict: partially-supported
+    severity: S3
+    evidence: "https://science.nasa.gov/learn/basics-of-space-flight/chapter4-1/"
+    note: "Không tốn nhiên liệu là đúng, nhưng năng lượng lấy từ chuyển động quỹ đạo hành tinh — không miễn phí. Summary là phần đọc nhiều nhất và không có giải thích đi kèm. Viết “không tốn thêm nhiên liệu, nhờ mượn động lượng quỹ đạo của hành tinh”."
+  - id: C-6
+    claim: "Sao Mộc nặng gấp khoảng 318 lần Trái Đất."
+    verdict: verified
+    severity: S4
+    evidence: "https://nssdc.gsfc.nasa.gov/planetary/factsheet/jupiterfact.html"
+    note: "Tỉ số 317,83 — đúng; gắn nguồn."
+  - id: C-7
+    claim: "NASA tận dụng sự thẳng hàng hiếm gặp của Sao Mộc, Sao Thổ, Sao Thiên Vương, Sao Hải Vương để lần lượt “đi ké”; nhờ đó Voyager 1 và Voyager 2 vượt ra ngoài Hệ Mặt Trời."
+    verdict: contradicted
+    severity: S2
+    evidence: "https://science.nasa.gov/mission/voyager/planetary-voyage/ ; https://science.nasa.gov/mission/voyager-2/"
+    note: "Voyager 1 chỉ bay qua Sao Mộc (5/3/1979) và Sao Thổ (12/11/1980), sau đó quỹ đạo bị bẻ lên phía bắc khỏi mặt phẳng Hoàng Đạo. Chỉ Voyager 2 bay qua cả bốn hành tinh (Sao Mộc 7/1979, Sao Thổ 8/1981, Sao Thiên Vương 1/1986, Sao Hải Vương 8/1989); NASA: “Voyager 2 is the only spacecraft to visit Uranus and Neptune.” Sửa để chỉ Voyager 2 thực hiện chuỗi bốn hành tinh."
+  - id: C-8
+    claim: "Voyager 1 và 2 “vượt ra ngoài Hệ Mặt Trời”; tổng quãng đường “hàng chục tỷ kilomet”."
+    verdict: unverifiable
+    severity: S3
+    evidence: "—"
+    note: "Không mở nguồn về khoảng cách hiện tại và mốc vượt nhật quyển trong lượt này. “Ra ngoài Hệ Mặt Trời” là lossy: tàu đã rời nhật quyển vào không gian liên sao, nhưng vẫn trong vùng ảnh hưởng hấp dẫn Mặt Trời. Viết “rời nhật quyển”, kèm mốc năm và nguồn NASA; con số quãng đường phải có ngày đo hoặc cắt."
+  - id: C-9
+    claim: "Cassini lần lượt bay qua Sao Kim, Trái Đất, Sao Mộc để tích luỹ vận tốc trước khi tới Sao Thổ."
+    verdict: partially-supported
+    severity: S4
+    evidence: "https://science.nasa.gov/resource/cassini-trajectory"
+    note: "Trang NASA: quỹ đạo VVEJGA — Sao Kim 26/4/1998, Sao Kim 21/6/1999, Trái Đất 18/8/1999, Sao Mộc 30/12/2000; tới Sao Thổ sau 6,7 năm, với “an exchange of energy between the planet and the spacecraft”. Đúng nhưng thiếu lần bay qua Sao Kim thứ hai — ghi “hai lần qua Sao Kim”."
+  - id: C-10
+    claim: "Parker Solar Probe dùng nhiều lần bay ngang Sao Kim để hãm tốc dần, cho phép tiến gần Mặt Trời hơn bất kỳ tàu nào trong lịch sử."
+    verdict: partially-supported
+    severity: S3
+    evidence: "https://www.jhuapl.edu/news/news-releases/241108-venus-gravity-assist-7 ; https://science.nasa.gov/blogs/parker-solar-probe/2024/12/27/nasas-parker-solar-probe-reports-successful-closest-approach-to-sun/"
+    note: "JHUAPL: lần trợ giúp hấp dẫn Sao Kim thứ bảy và cuối cùng ngày 6/11/2024, giảm năng lượng quỹ đạo để đưa điểm cận nhật lại gần. NASA: điểm gần nhất 24/12/2024, 3,8 triệu dặm (≈6,1 triệu km) tính từ bề mặt Mặt Trời. Kỷ lục là claim ràng buộc thời gian: ghi “bảy lần”, mốc 24/12/2024, và lịch kiểm lại."
+fixes:
+  - "Sửa đoạn Voyager: chỉ Voyager 2 bay qua cả Sao Mộc, Sao Thổ, Sao Thiên Vương, Sao Hải Vương; Voyager 1 chỉ qua Sao Mộc và Sao Thổ. Gắn https://science.nasa.gov/mission/voyager/planetary-voyage/."
+  - "Đổi “vượt ra ngoài Hệ Mặt Trời” thành “rời nhật quyển”, kèm năm và nguồn NASA; cắt “hàng chục tỷ kilomet” nếu không có số đo kèm ngày."
+  - "Sửa summary: bỏ “miễn phí”, viết “không tốn thêm nhiên liệu, nhờ mượn động lượng quỹ đạo của hành tinh”; làm tương tự ở kết luận."
+  - "Thêm câu: so với hành tinh, tốc độ tàu không đổi, chỉ đổi hướng; phần tăng/giảm tốc là trong hệ quy chiếu Mặt Trời. Gắn NASA Basics of Space Flight chương 4."
+  - "Parker: ghi bảy lần qua Sao Kim (lần cuối 6/11/2024) và kỷ lục 24/12/2024 ≈6,1 triệu km từ bề mặt Mặt Trời, gắn trang NASA/JHUAPL."
+  - "Cassini: ghi hai lần bay qua Sao Kim."
+  - "Gắn Earth/Jupiter Fact Sheet cho 30 km/s, 13 km/s, 318 lần; gắn nguồn cho 4,57 tỷ năm hoặc cắt."
+  - "Cắt phần mở đầu “Vì sao tàu vũ trụ thường bay dọc Hoàng Đạo?” (chồng lấn với bài “vì sao không bay vuông góc khỏi Hoàng Đạo”), thay bằng một câu và link nội bộ tới bài đó sau khi bài đó được đổi slug."
+  - "Bỏ emoji ở kết luận."
+suggestedSources:
+  - title: "Basics of Space Flight, Chapter 4: Trajectories"
+    url: https://science.nasa.gov/learn/basics-of-space-flight/chapter4-1/
+    doi:
+    publisher: NASA
+    year:
+    tier: 2
+    covers: "Cơ chế trợ giúp hấp dẫn, nguồn động lượng/năng lượng, tốc độ so với hành tinh không đổi"
+  - title: "Voyager 1 and 2: Planetary Voyage"
+    url: https://science.nasa.gov/mission/voyager/planetary-voyage/
+    doi:
+    publisher: NASA
+    year:
+    tier: 2
+    covers: "Hành tinh mỗi tàu Voyager đã bay qua, kèm ngày"
+  - title: "Voyager 2"
+    url: https://science.nasa.gov/mission/voyager-2/
+    doi:
+    publisher: NASA
+    year:
+    tier: 2
+    covers: "Voyager 2 là tàu duy nhất tới Sao Thiên Vương và Sao Hải Vương"
+  - title: "NASA's Sun-Bound Parker Solar Probe Swings Through Final Venus Flyby"
+    url: https://www.jhuapl.edu/news/news-releases/241108-venus-gravity-assist-7
+    doi:
+    publisher: "Johns Hopkins University Applied Physics Laboratory"
+    year: 2024
+    tier: 2
+    covers: "Bảy lần trợ giúp hấp dẫn Sao Kim, mục đích giảm năng lượng quỹ đạo"
+  - title: "NASA's Parker Solar Probe Reports Successful Closest Approach to Sun"
+    url: https://science.nasa.gov/blogs/parker-solar-probe/2024/12/27/nasas-parker-solar-probe-reports-successful-closest-approach-to-sun/
+    doi:
+    publisher: NASA
+    year: 2024
+    tier: 2
+    covers: "Điểm gần Mặt Trời kỷ lục 24/12/2024, 3,8 triệu dặm từ bề mặt"
+  - title: "Jupiter Fact Sheet"
+    url: https://nssdc.gsfc.nasa.gov/planetary/factsheet/jupiterfact.html
+    doi:
+    publisher: "NASA NSSDC"
+    year:
+    tier: 2
+    covers: "Vận tốc quỹ đạo 13,06 km/s; khối lượng gấp 317,83 lần Trái Đất"
+openQuestions:
+  - "Kiểm song trùng với “tuyet-ky-di-ke-hanh-tinh-cach-cac-tau-tham-do-bay-ty-cay-so-khong-ton-nhien-lieu”: không trùng toàn văn (bài kia bàn vì sao không bay vuông góc khỏi Hoàng Đạo), nhưng hai slug gần như trùng, xuất bản cùng ngày 16/09/2026, và chồng lấn ở khung “xa lộ Hoàng Đạo”, cụm “máy gia tốc miễn phí”, lập luận tiết kiệm năng lượng. Slug của bài kia sai chủ đề. Cần người quyết: giữ slug này cho chủ đề trợ giúp hấp dẫn, đổi slug + redirect cho bài kia và cắt phần chồng lấn, hay gộp hai bài."
+  - "Bài 0 nguồn nhưng hồ sơ ghi status PUBLISHED, với lỗi quy kết Voyager đang hiển thị công khai — cần đính chính công khai theo chính sách, không sửa lặng lẽ."

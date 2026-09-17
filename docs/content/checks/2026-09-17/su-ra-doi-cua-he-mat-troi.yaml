@@ -1,0 +1,138 @@
+slug: su-ra-doi-cua-he-mat-troi
+checkedAt: 2026-09-17
+checkedBy: science-editor
+sourceCount: 1
+verdict: revise
+summary: "Khung chính (4,57 tỷ năm, đám mây sụp đổ có thể do siêu tân tinh, đĩa quay, bồi tụ) đúng với NASA, nhưng bài xếp “di cư hành tinh” vào lời giải bài toán động lượng góc của Mặt Trời (sai cơ chế), đưa số 99,86% và 1% mà không có nguồn, rút kết luận “quy luật phổ quát” vượt quá bằng chứng, và nguồn duy nhất là trang VACA đã chết."
+claims:
+  - id: C-1
+    claim: "Hệ Mặt Trời hình thành cách đây khoảng 4,57 tỷ năm."
+    verdict: verified
+    severity: none
+    evidence: https://science.nasa.gov/solar-system/solar-system-facts/
+    note: "NASA: “about 4.6 billion years ago”. Giá trị chính xác hơn 4.567,30 ± 0,16 triệu năm (tuổi CAI, Connelly et al. 2012, Science 338:651) — chỉ thấy qua bản ghi ADS trong kết quả tìm kiếm, ADS và PubMed chặn truy cập trực tiếp. 4,57 là làm tròn hợp lệ, nhưng bài chưa gắn nguồn."
+  - id: C-2
+    claim: "Mặt Trời chứa 99,86% khối lượng của cả hệ."
+    verdict: partially-supported
+    severity: S3
+    evidence: https://science.nasa.gov/solar-system/solar-system-facts/
+    note: "NASA chỉ viết Mặt Trời gom “more than 99%” vật chất. Không nguồn bậc 1–2 đã mở nào đỡ đến chữ số 99,86. Sửa thành “hơn 99%” hoặc gắn nguồn đỡ 99,86%."
+  - id: C-3
+    claim: "Mặt Trời chỉ giữ khoảng 1% động lượng góc; phần lớn nằm ở các hành tinh, đặc biệt là Sao Mộc."
+    verdict: unverifiable
+    severity: S3
+    evidence: "—"
+    note: "Chỉ tìm thấy ở nguồn không đạt chuẩn (Wikipedia, diễn đàn), với các giá trị khác nhau (0,3% tới khoảng 1%). Không có nguồn bậc 1–2 đã mở. Gắn nguồn review hoặc sách giáo trình, hoặc bỏ con số và giữ ý “phần rất nhỏ”."
+  - id: C-4
+    claim: "Đám mây phân tử bắt đầu sụp đổ, có thể do sóng xung kích từ một vụ nổ siêu tân tinh gần đó."
+    verdict: verified
+    severity: none
+    evidence: https://science.nasa.gov/solar-system/solar-system-facts/
+    note: "NASA: “possibly due to the shockwave of a nearby exploding star, called a supernova”. Mức dè dặt “có thể” được giữ đúng."
+  - id: C-5
+    claim: "Khi co lại, đám mây quay nhanh dần, dẹt thành đĩa tiền hành tinh; phần lớn vật chất tập trung ở tâm thành Mặt Trời."
+    verdict: verified
+    severity: none
+    evidence: https://science.nasa.gov/solar-system/solar-system-facts/
+    note: "NASA: “a spinning, swirling disk of material… At the center, gravity pulled more and more material in”. Khớp."
+  - id: C-6
+    claim: "ALMA và James Webb đã quan sát được nhiều đĩa tiền hành tinh quanh các sao trẻ."
+    verdict: unverifiable
+    severity: S3
+    evidence: "—"
+    note: "Quy kết cho hai thiết bị cụ thể nhưng không có nguồn đã mở. Gắn nguồn ESO/ALMA và NASA/ESA Webb, hoặc bỏ tên thiết bị."
+  - id: C-7
+    claim: "Bụi va chạm, kết dính, thành vật thể mét tới kilômét, hợp nhất; sau hàng triệu năm tạo nên các hành tinh."
+    verdict: partially-supported
+    severity: S3
+    evidence: https://science.nasa.gov/solar-system/solar-system-facts/
+    note: "NASA đỡ ý các khối va chạm lớn dần. Thang thời gian “hàng triệu năm” không có nguồn và làm mất thông tin: hành tinh khí phải hình thành trước khi đĩa khí tan, còn hành tinh đất đá như Trái Đất cần lâu hơn nhiều. Gắn nguồn cho thang thời gian hoặc viết “hàng triệu tới hàng chục triệu năm” kèm nguồn."
+  - id: C-8
+    claim: "Các hành tinh không tách ra từ những “vành vật chất” như các mô hình cổ điển từng đề xuất."
+    verdict: unverifiable
+    severity: S4
+    evidence: "—"
+    note: "Không có nguồn; nêu tên mô hình (giả thuyết tinh vân của Laplace) và gắn nguồn lịch sử, hoặc cắt."
+  - id: C-9
+    claim: "Bên trong đường tuyết, nước đá, amoniac và methane không thể ngưng tụ; chỉ đá và kim loại ở dạng rắn."
+    verdict: partially-supported
+    severity: S3
+    evidence: https://science.nasa.gov/solar-system/solar-system-facts/
+    note: "NASA đỡ ý gần Mặt Trời chỉ vật liệu đá chịu được nhiệt. Trang không nói về đường tuyết. Gộp nước, amoniac, methane dưới một “đường tuyết” là đơn giản hoá mất thông tin: mỗi chất có đường ngưng tụ riêng, methane ở xa hơn nhiều so với nước. Viết “đường tuyết của nước” và gắn nguồn."
+  - id: C-10
+    claim: "Ngoài đường tuyết, vật liệu rắn tăng mạnh giúp lõi phát triển nhanh và đủ lớn để hút khí từ đĩa, tạo ra Mộc, Thổ, Thiên Vương, Hải Vương."
+    verdict: unverifiable
+    severity: S3
+    evidence: "—"
+    note: "Đây là mô hình bồi tụ lõi — mô hình chủ đạo, nhưng bài viết như sự thật đã chốt và không có nguồn. Nêu là “mô hình bồi tụ lõi” và gắn nguồn review."
+  - id: C-11
+    claim: "Mô hình hiện nay giải thích bài toán động lượng góc bằng ba cơ chế: phanh từ tính, gió Mặt Trời, và sự di cư của hành tinh."
+    verdict: unsupported
+    severity: S2
+    evidence: "—"
+    note: "Sai cơ chế. Bài toán là vì sao Mặt Trời quay chậm; phanh từ tính và gió sao lấy động lượng góc khỏi Mặt Trời, còn di cư hành tinh chỉ chuyển động lượng góc giữa hành tinh và đĩa, không làm Mặt Trời quay chậm lại. Xếp nó là cơ chế thứ ba giải bài toán là gắn sai. Ngoài ra câu “mô hình hiện nay giải thích” nâng mức chắc chắn so với một vấn đề còn nghiên cứu. Tách di cư hành tinh ra một mục riêng, và viết phanh từ tính/gió sao là “các cơ chế được đề xuất” kèm nguồn. (Không có nguồn bậc 1–2 đã mở trong lượt này — xem Open Question.)"
+  - id: C-12
+    claim: "Sao Mộc và Sao Thổ có thể đã dịch chuyển đáng kể; một số hành tinh sơ khai có thể đã bị hất ra khỏi hệ."
+    verdict: unverifiable
+    severity: S3
+    evidence: "—"
+    note: "Mức dè dặt “có thể” phù hợp với các mô hình di cư, nhưng không có nguồn. Gắn nguồn cho mô hình Nice / Grand Tack, hoặc cắt."
+  - id: C-13
+    claim: "Việc phát hiện hơn 6.000 ngoại hành tinh cho thấy Hệ Mặt Trời không phải khuôn mẫu duy nhất."
+    verdict: verified
+    severity: S4
+    evidence: https://science.nasa.gov/exoplanets/
+    note: "NASA: “We've confirmed more than 6,000 exoplanets”. Cần mốc thời gian: “(tính tới 9/2026)”."
+  - id: C-14
+    claim: "Đã tìm thấy Sao Mộc nóng, siêu Trái Đất (lớn hơn Trái Đất, nhỏ hơn Sao Hải Vương), các hệ có quỹ đạo rất khác."
+    verdict: unverifiable
+    severity: S4
+    evidence: "—"
+    note: "Đúng theo hiểu biết chung nhưng không có nguồn đã mở trong lượt này. Gắn trang phân loại ngoại hành tinh của NASA."
+  - id: C-15
+    claim: "Điều đó cho thấy các quy luật hình thành hành tinh là phổ quát, nhưng kết quả phụ thuộc mạnh vào điều kiện ban đầu."
+    verdict: unsupported
+    severity: S3
+    evidence: "—"
+    note: "Suy luận vượt bằng chứng: sự đa dạng của ngoại hành tinh không tự chứng minh tính phổ quát của cơ chế — nó còn là lý do các mô hình hình thành đang được xem lại. Hạ mức: “gợi ý rằng cùng những quá trình vật lý có thể cho ra rất nhiều kết cục khác nhau”, kèm nguồn, hoặc cắt."
+  - id: C-16
+    claim: "Nguồn 1: Thiên văn Việt Nam (VACA), tier 2 — nguồn duy nhất."
+    verdict: unverifiable
+    severity: S3
+    evidence: "—"
+    note: "Domain thienvanvietnam.org không phân giải DNS ngày 17/09/2026 (đã thử curl). VACA là CLB thiên văn nghiệp dư, không phải bậc 2; accessedAt THIẾU. Toàn bộ bài chỉ dựa vào nguồn này. Under-sourced."
+  - id: C-17
+    claim: "Trình bày: emoji ☀️ ở Kết luận; viết “Sao Thủy/Sao Hỏa” trong khi các bài cùng chuyên mục dùng “Sao Thuỷ/Sao Hoả”."
+    verdict: verified
+    severity: S4
+    evidence: "—"
+    note: "Lỗi vặt biên tập. Bỏ emoji, thống nhất chính tả tên hành tinh."
+fixes:
+  - "Tách “sự di cư của hành tinh” khỏi danh sách lời giải bài toán động lượng góc; chỉ giữ phanh từ tính và gió sao, gọi là “các cơ chế được đề xuất”, có nguồn."
+  - "Sửa “99,86% khối lượng” thành “hơn 99% khối lượng” (NASA), trừ khi gắn được nguồn bậc 1–2 cho 99,86%."
+  - "Gắn nguồn bậc 1–2 cho “khoảng 1% động lượng góc” và “đặc biệt là Sao Mộc”; không có thì bỏ con số."
+  - "Viết lại câu kết luận của mục ngoại hành tinh: bỏ “quy luật hình thành hành tinh là phổ quát”."
+  - "Thêm mốc “(tính tới 9/2026)” cho “hơn 6.000 ngoại hành tinh”."
+  - "Viết “đường tuyết của nước”; ghi rõ amoniac và methane ngưng tụ ở xa hơn."
+  - "Gọi đúng tên mô hình bồi tụ lõi và gắn nguồn; gắn nguồn cho thang thời gian hình thành hành tinh."
+  - "Gắn nguồn hoặc bỏ tên ALMA/James Webb; gắn nguồn hoặc cắt câu về mô hình “vành vật chất” cổ điển và câu về hành tinh bị hất ra."
+  - "Gắn NASA Solar System Facts cho các phần tuổi, sụp đổ, đĩa, bồi tụ, hành tinh đá gần Mặt Trời; gắn Connelly et al. 2012 cho 4,57 tỷ năm sau khi mở được."
+  - "Bỏ nguồn VACA khỏi vai trò đỡ claim và xoá nhãn tier 2; bỏ emoji; thống nhất chính tả Thuỷ/Hoả."
+suggestedSources:
+  - title: Solar System Facts
+    url: https://science.nasa.gov/solar-system/solar-system-facts/
+    doi: ""
+    publisher: NASA Science
+    year: 2026
+    tier: 2
+    covers: "Tuổi khoảng 4,6 tỷ năm, sụp đổ có thể do siêu tân tinh, tinh vân quay, Mặt Trời gom hơn 99% vật chất, các khối va chạm lớn dần, hành tinh đá ở gần Mặt Trời"
+  - title: Exoplanets
+    url: https://science.nasa.gov/exoplanets/
+    doi: ""
+    publisher: NASA Science
+    year: 2026
+    tier: 2
+    covers: "Hơn 6.000 ngoại hành tinh đã xác nhận"
+openQuestions:
+  - "C-11 được đánh S2 dựa trên lập luận vật lý (di cư hành tinh không làm Mặt Trời mất động lượng góc) nhưng chưa mở được nguồn review bậc 1 nói thẳng điều này trong lượt này. Cần người duyệt xác nhận bằng một bài review về bài toán động lượng góc trước khi đóng."
+  - "Các bài báo đỡ tuổi CAI (Connelly 2012) chỉ truy cập được qua bản ghi tìm kiếm (ADS/PubMed chặn). Có chấp nhận DOI 10.1126/science.1226919 làm nguồn khi chưa ai mở toàn văn không?"

@@ -1,0 +1,222 @@
+slug: su-song-tren-trai-dat-4-ti-nam-trong-mot-dong-thoi-gian
+checkedAt: 2026-09-17
+checkedBy: science-editor
+sourceCount: 2
+verdict: reject
+summary: "Nguồn chính (VACA 2011, gắn nhầm tier 2, không trích dẫn peer-review) mâu thuẫn với chính bài ở hầu hết các mốc — nguồn ghi Trái Đất 4,7 tỉ năm, va chạm Theia 4,3 tỉ năm, quả cầu tuyết ~850 triệu năm, Homo sapiens 100.000 năm, Permi 248 triệu năm/95% — nên các con số hiện đại trong bài không có nguồn đỡ (S1: nguồn gắn sai claim). Các mốc đã kiểm được (4,54 tỉ năm, Laetoli 3,66 triệu năm, Jebel Irhoud, H. erectus, kỷ Cryogen) thì đúng, nên dựng lại từ nguồn là khả thi."
+claims:
+  - id: C-0
+    claim: "Nguồn 1: 'Hình thành và tiến hoá của sự sống trên Trái Đất' — Đặng Vũ Tuấn Sơn, VACA 2011, tier 2; nội dung 'Biên tập lại từ bài' này"
+    verdict: contradicted
+    severity: S1
+    evidence: https://www.thienvanvietnam.org/?option=com_content&view=article&id=312:hinh-thanh-va-tien-hoa-cua-su-song-tren-trai-dat&catid=22&Itemid=145
+    note: "Đã mở được trang (lần đầu lỗi DNS tạm thời, link không chết). Đăng 03/10/2011; tham khảo chỉ là Beyondgenes.com, National Geographic, Exploringorigins.org — không có peer-review. Nguồn ghi: Trái Đất ~4,7 tỉ năm; Theia 4,3 tỉ năm; quả cầu tuyết ~850 triệu năm, kéo dài >200 triệu năm; tetrapod lên cạn 410 triệu năm; Permi 248 triệu năm, 95% loài biển; Chicxulub 65 triệu năm; H. erectus 1,8 triệu năm; H. sapiens 100.000 năm. Bài ghi 4,54 / ~4,5 / 720–635 / 375–360 / 252 và 80% / 66 / 1,9 triệu / 300.000 năm. Các con số của bài không đến từ nguồn được gắn. Theo thang nguồn, một trang hội thiên văn phổ thông không trích dẫn tối đa là bậc 4 (bối cảnh), không được làm nguồn đỡ."
+  - id: C-1
+    claim: "Trái Đất hình thành 4,54 tỉ năm trước"
+    verdict: verified
+    severity: S4
+    evidence: https://pubs.usgs.gov/gip/geotime/age.html
+    note: "USGS: '4.54 billion years with an uncertainty of less than 1 percent'. Gắn nguồn, ghi sai số '< 1%'."
+  - id: C-2
+    claim: "Mẫu vật cổ nhất — thiên thạch và tinh thể zircon ở Tây Australia có tuổi tới 4,4 tỉ năm — cho phép xác định niên đại này khá chắc chắn"
+    verdict: partially-supported
+    severity: S3
+    evidence: https://pubs.usgs.gov/gip/geotime/age.html
+    note: "Câu gộp hai thứ khác nhau. Trang USGS (bản cũ) nêu zircon Tây Australia 'as much as 4.3 billion years'; kết quả tìm kiếm cho Wilde và cộng sự 2001 (Nature 409:175–178) ghi 4.404 ± 8 triệu năm nhưng trang Nature chuyển hướng đăng nhập nên chưa mở kiểm. Quan trọng hơn: zircon chỉ cho tuổi TỐI THIỂU của vỏ; con số 4,54 tỉ năm không suy ra từ zircon 4,4 tỉ năm. Tách câu: nêu 4,54 tỉ năm (USGS) và zircon cổ nhất (gắn Wilde 2001 sau khi mở) như hai mệnh đề riêng."
+  - id: C-3
+    claim: "Va chạm với Theia cỡ Sao Hoả khoảng 4,5 tỉ năm trước tạo ra Mặt Trăng; Mặt Trăng ổn định độ nghiêng trục; ngày trên Trái Đất sơ khai chỉ dài vài giờ"
+    verdict: unverifiable
+    severity: S3
+    evidence: "—"
+    note: "Không mở được nguồn bậc 1–2 trong lượt này; nguồn gắn (VACA) ghi Theia 4,3 tỉ năm, mâu thuẫn. Bài viết va chạm Theia như sự kiện đã xác lập — lấy mức đồng thuận từ nguồn (giả thuyết hay kết luận) và viết đúng mức đó. Mọi con số (4,5 tỉ năm, 'vài giờ') cần nguồn."
+  - id: C-4
+    claim: "Hoá thạch vi khuẩn cổ nhất được chấp nhận rộng rãi có tuổi khoảng 3,5 tỉ năm; sự sống xuất hiện nhanh là lý do nhiều nhà khoa học cho rằng sự sống có thể không hiếm"
+    verdict: unverifiable
+    severity: S3
+    evidence: "—"
+    note: "Không mở được nguồn bậc 1–2 trong lượt này. 'Được chấp nhận rộng rãi' là claim về mức đồng thuận — cần nguồn tổng quan nêu đúng mức đồng thuận đó, nếu không thì bỏ cụm này. Nửa sau là suy luận; nếu giữ thì gắn nguồn."
+  - id: C-5
+    claim: "Stromatolite vẫn đang hình thành ở vịnh Shark, Australia"
+    verdict: unverifiable
+    severity: S4
+    evidence: "—"
+    note: "Không kiểm trong lượt này; rủi ro thấp. Gắn nguồn (cơ quan di sản/địa chất Australia)."
+  - id: C-6
+    claim: "Sự kiện oxy hoá lớn khoảng 2,4 tỉ năm trước"
+    verdict: partially-supported
+    severity: S4
+    evidence: https://pmc.ncbi.nlm.nih.gov/articles/PMC5993798/
+    note: "Philippot và cộng sự 2018 (Nature Communications, doi 10.1038/s41467-018-04621-x): tín hiệu không đồng bộ giữa các vùng, oxy khí quyển tăng 'around 2.45 Ga ago or earlier', GOE là 'a ~300 Myr interval'. 'Khoảng 2,4 tỉ năm' chấp nhận được nhưng nên nói đây là quá trình kéo dài hàng trăm triệu năm, bắt đầu khoảng 2,45–2,4 tỉ năm trước."
+  - id: C-7
+    claim: "Oxy ban đầu bị sắt hoà tan hấp thụ, tạo tầng quặng sắt dải — nguồn sắt mà phần lớn ngành thép hiện đại khai thác"
+    verdict: unverifiable
+    severity: S3
+    evidence: "—"
+    note: "Không nguồn. 'Phần lớn ngành thép' là claim định lượng về kinh tế khoáng sản — cần nguồn USGS hoặc tương đương, không thì cắt vế này."
+  - id: C-8
+    claim: "Với hầu hết sinh vật khi đó oxy là chất độc, và sự kiện này có thể là cuộc tuyệt chủng hàng loạt lớn nhất từng xảy ra"
+    verdict: unsupported
+    severity: S3
+    evidence: "—"
+    note: "Bài tự thừa nhận không có hoá thạch làm bằng chứng. 'Có thể là lớn nhất' là suy đoán không nguồn trình bày như một khả năng chính đáng. Nghi ngờ thì cắt."
+  - id: C-9
+    claim: "Trái Đất quả cầu tuyết trong kỷ Cryogen, 720–635 triệu năm trước"
+    verdict: verified
+    severity: S4
+    evidence: https://paleobiodb.org/classic/displayTimescale?scale=1
+    note: "Bảng niên đại PaleoDB (theo thang ICS) cho kỷ Cryogen 720–635 Ma. Nên gắn trực tiếp bảng ICS (stratigraphy.org) — lượt này không trích được chữ từ PDF của ICS. Kiểm tại nguồn xem băng hà có phủ liên tục cả 85 triệu năm hay theo từng đợt, và viết cho đúng — câu hiện tại dễ đọc thành một khối liên tục."
+  - id: C-10
+    claim: "Cơ chế quả cầu tuyết là vòng phản hồi albedo; núi lửa tiếp tục thải CO₂ khi phong hoá gần như dừng, sau hàng triệu năm làm tan băng"
+    verdict: unverifiable
+    severity: S3
+    evidence: "—"
+    note: "Không mở được nguồn trong lượt này. Là giả thuyết quả cầu tuyết — cần nguồn peer-review (Hoffman và cộng sự) và trình bày đúng mức: 'theo giả thuyết...'."
+  - id: C-11
+    claim: "Bùng nổ Cambri 538 triệu năm trước, kéo dài khoảng 20–25 triệu năm; lần đầu có bộ xương cứng, mắt, săn mồi chủ động; Anomalocaris dài tới nửa mét"
+    verdict: partially-supported
+    severity: S3
+    evidence: https://paleobiodb.org/classic/displayTimescale?scale=1
+    note: "Bảng PaleoDB đặt đáy kỷ Cambri (đỉnh Ediacara) ở 538,8 Ma — mốc 538 đúng cho ĐẦU kỷ Cambri, nhưng 'bùng nổ Cambri' không trùng khít với ranh giới kỷ. Thời lượng 20–25 triệu năm, 'lần đầu tiên có ... săn mồi chủ động' và kích thước Anomalocaris không kiểm được trong lượt này. 'Lần đầu tiên' là claim ưu tiên — cần nguồn hoặc cắt. Ghi '538,8 triệu năm (đáy kỷ Cambri, ICS)'."
+  - id: C-12
+    claim: "Thực vật lên cạn khoảng 470 triệu năm trước"
+    verdict: unverifiable
+    severity: S3
+    evidence: "—"
+    note: "Không kiểm được trong lượt này. Cần nguồn peer-review, và nêu rõ mốc này dựa trên loại bằng chứng nào."
+  - id: C-13
+    claim: "Tetrapod xuất hiện vào cuối kỷ Devon, khoảng 375–360 triệu năm trước; Tiktaalik và Ichthyostega là dạng chuyển tiếp"
+    verdict: unverifiable
+    severity: S3
+    evidence: "—"
+    note: "Theo kết quả tìm kiếm, Niedźwiedzki và cộng sự 2010 (Nature, 'Tetrapod trackways from the early Middle Devonian period of Poland') báo cáo dấu chân tetrapod ở Zachełmie có tuổi đầu Devon giữa, sớm hơn hoá thạch thân tetrapod cổ nhất khoảng 18 triệu năm; một số tác giả sau đó đặt nghi vấn về cách diễn giải. Trang Nature chuyển hướng đăng nhập nên chưa mở kiểm. Nếu xác nhận thì '375–360' chỉ là mốc hoá thạch thân — phải ghi rõ và nêu bằng chứng dấu chân sớm hơn đang có tranh luận. Kiểm tại nguồn vị trí phân loại của Tiktaalik và Ichthyostega trước khi gọi chung là 'dạng chuyển tiếp' của tetrapod."
+  - id: C-14
+    claim: "Kỷ Than đá để lại các mỏ than hiện đại và trứng có màng ối"
+    verdict: unverifiable
+    severity: S4
+    evidence: "—"
+    note: "Không kiểm trong lượt này. Gắn nguồn."
+  - id: C-15
+    claim: "252 triệu năm trước, đại tuyệt chủng Permi xoá sổ khoảng 80% loài sinh vật biển"
+    verdict: partially-supported
+    severity: S3
+    evidence: https://pmc.ncbi.nlm.nih.gov/articles/PMC5081622/
+    note: "Stanley 2016 (PNAS, doi 10.1073/pnas.1613094113): ~81%, so với ước tính cũ 88–96%. Niên đại: 251,941 ± 0,037 Ma (Nature Communications 2020, doi 10.1038/s41467-020-15243-7). Đồng bộ với bài Permi sau khi bài đó được dựng lại; không để hai bài lệch số."
+  - id: C-16
+    claim: "66 triệu năm trước, tiểu hành tinh đường kính khoảng 10 km đâm xuống Yucatán, tạo hố Chicxulub; Deccan Traps có thể đã làm hệ sinh thái suy yếu sẵn"
+    verdict: unverifiable
+    severity: S3
+    evidence: "—"
+    note: "Trang USGS về Chicxulub trả 405 trong lượt này; kết quả tìm kiếm (NASA) cho kích thước khác nhau (~10 km và ~14 km). Mở USGS/NASA rồi ghi kích thước kèm khoảng. Vai trò Deccan Traps là tranh luận khoa học thật — viết là tranh luận, gắn nguồn cả hai phía."
+  - id: C-17
+    claim: "Linh trưởng xuất hiện khoảng 55 triệu năm trước"
+    verdict: unverifiable
+    severity: S4
+    evidence: "—"
+    note: "Không kiểm trong lượt này. Gắn nguồn và ghi rõ mốc dựa trên hoá thạch hay ước lượng phân tử."
+  - id: C-18
+    claim: "Dấu chân Laetoli ở Tanzania, khoảng 3,66 triệu năm, là bằng chứng trực tiếp sớm nhất về dáng đi hai chân, thuộc chi Australopithecus"
+    verdict: partially-supported
+    severity: S3
+    evidence: https://elifesciences.org/articles/19568
+    note: "Masao và cộng sự 2016 (eLife, doi 10.7554/eLife.19568): 'the earliest hominin footprints in the world (3.66 million years old)', 'attributed to Australopithecus afarensis'. Nguồn nói 'dấu chân người cổ sớm nhất', không nói 'bằng chứng sớm nhất về đi hai chân' — bằng chứng đi hai chân từ xương có thể cổ hơn. Sửa: 'dấu chân người cổ sớm nhất được biết (3,66 triệu năm), được quy cho Australopithecus afarensis'."
+  - id: C-19
+    claim: "Homo erectus xuất hiện khoảng 1,9 triệu năm trước và là loài người đầu tiên rời châu Phi"
+    verdict: verified
+    severity: S4
+    evidence: https://humanorigins.si.edu/evidence/human-fossils/species/homo-erectus
+    note: "Smithsonian: 'Between about 1.89 million and 110,000 years ago'; 'generally considered to have been the first species to have expanded beyond Africa'. Giữ mức dè dặt của nguồn: 'thường được coi là loài đầu tiên...'."
+  - id: C-20
+    claim: "Homo sapiens xuất hiện khoảng 300.000 năm trước — hoá thạch Jebel Irhoud, Maroc; con số cũ khoảng 195.000 năm dựa trên Omo I ở Ethiopia"
+    verdict: verified
+    severity: S4
+    evidence: https://kar.kent.ac.uk/62267/
+    note: "Hublin và cộng sự 2017 (Nature, doi 10.1038/nature22336): '315±34 thousand years' (nhiệt phát quang). Omo I: Smithsonian ghi 'About 195,000 years old', sông Omo, Ethiopia (nguồn 2 của bài — đỡ đúng claim này). Ghi '315.000 ± 34.000 năm' thay cho '300.000'."
+  - id: C-21
+    claim: "Nông nghiệp bắt đầu khoảng 12.000 năm trước; lịch sử thành văn khoảng 5.000 năm"
+    verdict: unverifiable
+    severity: S4
+    evidence: "—"
+    note: "Không kiểm trong lượt này. Gắn nguồn."
+  - id: C-22
+    claim: "Bảng 'nén 4,54 tỉ năm thành một năm': tế bào đầu tiên cuối tháng 2; oxy 21/6; động vật đa bào giữa tháng 11; Cambri 19/11; khủng long tuyệt chủng 26/12; Homo sapiens 23:25 ngày 31/12; lịch sử thành văn 30 giây cuối"
+    verdict: partially-supported
+    severity: S4
+    evidence: "tự tính từ 4,54 tỉ năm = 365 ngày (1 ngày ≈ 12,44 triệu năm)"
+    note: "Tính lại: 2,4 tỉ năm → 21/6 ✓; 538,8 triệu năm → 18–19/11 ✓; 66 triệu năm → 26/12 ✓; 300.000 năm → 23:25 ngày 31/12 ✓ (315.000 năm → ~23:24); 5.000 năm → ~35 giây (bài ghi 30 giây — S4). LỆCH: 'tế bào đầu tiên cuối tháng 2' ứng với ~3,8 tỉ năm, trong khi thân bài nêu hoá thạch được chấp nhận là 3,5 tỉ năm (→ khoảng 25/3). Chọn một mốc có nguồn rồi tính lại dòng này; ghi rõ mốc dùng cho từng dòng."
+  - id: C-23
+    claim: "Nếu ngoài kia có sự sống, khả năng cao nhất là ta sẽ tìm thấy nó ở dạng vi khuẩn"
+    verdict: unsupported
+    severity: S3
+    evidence: "—"
+    note: "Suy đoán của người viết, nêu với mức tự tin 'khả năng cao nhất'. Cắt, hoặc hạ thành ý kiến có nguồn."
+fixes:
+  - "Gỡ nguồn VACA khỏi vai trò nguồn đỡ (tối đa bậc 4, bối cảnh); bỏ hoặc sửa dòng 'Biên tập lại từ bài...' sau khi rõ quyền sử dụng."
+  - "Đưa bài về bước 1 (content-research): mỗi mốc trong dòng thời gian gắn một nguồn bậc 1–2 riêng."
+  - "Tách câu 4,54 tỉ năm (USGS) khỏi câu zircon; zircon chỉ là tuổi tối thiểu."
+  - "Sửa Laetoli thành 'dấu chân người cổ sớm nhất được biết'; ghi Jebel Irhoud 315.000 ± 34.000 năm; thêm 'thường được coi là' cho H. erectus rời châu Phi."
+  - "Ghi rõ 375–360 triệu năm là hoá thạch thân tetrapod, nêu dấu chân Zachełmie sớm hơn (đang tranh luận) sau khi mở được Niedźwiedzki 2010."
+  - "Đổi GOE thành quá trình bắt đầu khoảng 2,45–2,4 tỉ năm, kéo dài hàng trăm triệu năm (Philippot 2018)."
+  - "Cắt: 'có thể là cuộc tuyệt chủng lớn nhất' (GOE), 'phần lớn ngành thép', 'khả năng cao nhất ... dạng vi khuẩn', trừ khi có nguồn."
+  - "Tính lại dòng 'tế bào đầu tiên' trong bảng cho khớp mốc có nguồn; đổi '30 giây' thành 'khoảng 35 giây'."
+  - "Đồng bộ số liệu Permi (251,94 ± 0,04 triệu năm, ~81%) với bài dai-tuyet-chung-permi sau khi bài đó được dựng lại."
+suggestedSources:
+  - title: "Age of the Earth"
+    url: https://pubs.usgs.gov/gip/geotime/age.html
+    doi: ""
+    publisher: U.S. Geological Survey
+    year: "không hiển thị trên trang"
+    tier: 2
+    covers: "4,54 tỉ năm, sai số < 1% (lưu ý: trang cũ, con số zircon 4,3 tỉ năm đã được cập nhật bởi Wilde 2001)"
+  - title: "Globally asynchronous sulphur isotope signals require re-definition of the Great Oxidation Event"
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC5993798/
+    doi: 10.1038/s41467-018-04621-x
+    publisher: Nature Communications
+    year: 2018
+    tier: 1
+    covers: "mục Sự kiện oxy hoá lớn — mốc ~2,45 tỉ năm, kéo dài ~300 triệu năm"
+  - title: "International Chronostratigraphic Timescale (PaleoDB, theo ICS)"
+    url: https://paleobiodb.org/classic/displayTimescale?scale=1
+    doi: ""
+    publisher: Paleobiology Database
+    year: "không hiển thị trên trang"
+    tier: 3
+    covers: "kỷ Cryogen 720–635 Ma; đáy kỷ Cambri 538,8 Ma — nên thay bằng bảng ICS gốc tại stratigraphy.org khi trích được"
+  - title: "New footprints from Laetoli (Tanzania) provide evidence for marked body size variation in early hominins"
+    url: https://elifesciences.org/articles/19568
+    doi: 10.7554/eLife.19568
+    publisher: eLife
+    year: 2016
+    tier: 1
+    covers: "dấu chân Laetoli 3,66 triệu năm, Australopithecus afarensis"
+  - title: "New fossils from Jebel Irhoud, Morocco and the pan-African origin of Homo sapiens"
+    url: https://kar.kent.ac.uk/62267/
+    doi: 10.1038/nature22336
+    publisher: Nature
+    year: 2017
+    tier: 1
+    covers: "Homo sapiens 315 ± 34 nghìn năm"
+  - title: "Homo erectus"
+    url: https://humanorigins.si.edu/evidence/human-fossils/species/homo-erectus
+    doi: ""
+    publisher: Smithsonian National Museum of Natural History
+    year: "không hiển thị trên trang"
+    tier: 3
+    covers: "H. erectus 1,89 triệu – 110.000 năm; thường được coi là loài đầu tiên rời châu Phi"
+  - title: "Omo I"
+    url: https://humanorigins.si.edu/evidence/human-fossils/fossils/omo-i
+    doi: ""
+    publisher: Smithsonian National Museum of Natural History
+    year: 2024
+    tier: 3
+    covers: "Omo I khoảng 195.000 năm, sông Omo, Ethiopia (đã là nguồn 2 của bài)"
+  - title: "Estimates of the magnitudes of major marine mass extinctions in earth history"
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC5081622/
+    doi: 10.1073/pnas.1613094113
+    publisher: PNAS
+    year: 2016
+    tier: 1
+    covers: "mốc Permi — ~81% loài biển"
+openQuestions:
+  - "Quyền sử dụng: bài ghi 'Biên tập lại từ bài ... Bản quyền nội dung gốc thuộc về VACA', trong khi gần như mọi con số đã khác nguồn. Có giấy phép phái sinh không, và dòng ghi công có còn đúng không? Cần người quyết."
+  - "Mức đồng thuận về tuổi vi hoá thạch cổ nhất (3,5 tỉ năm) và về dấu chân tetrapod Zachełmie cần được xác lập từ nguồn tổng quan; nếu tài liệu còn tranh luận thì bài phải trình bày là tranh luận — science-editor không phân xử."
+  - "Bài đang PUBLISHED. Đăng đính chính công khai hay gỡ xuống trong lúc dựng lại? Cần người quyết."

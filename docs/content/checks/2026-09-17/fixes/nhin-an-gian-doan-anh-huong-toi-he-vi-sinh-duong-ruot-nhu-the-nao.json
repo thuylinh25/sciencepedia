@@ -1,0 +1,63 @@
+{
+  "slug": "nhin-an-gian-doan-anh-huong-toi-he-vi-sinh-duong-ruot-nhu-the-nao",
+  "summaryEdits": [
+    {
+      "claimId": "C-12",
+      "severity": "S2",
+      "find": "Nhịn ăn gián đoạn (Intermittent Fasting - IF) không chỉ làm thay đổi lượng calo nạp vào mà còn thay đổi môi trường sống của hàng chục nghìn tỉ vi sinh vật trong ruột. Khi thời gian ăn và nhịn được tách biệt rõ ràng, thành phần và hoạt động của hệ vi sinh đường ruột cũng thay đổi theo.",
+      "replace": "Nhịn ăn gián đoạn (Intermittent Fasting - IF) thay đổi không chỉ lượng calo nạp vào mà cả khung giờ ăn — và hệ vi sinh đường ruột có dao động theo ngày đi cùng nhịp ăn của vật chủ. Nhưng bằng chứng ở người về tác động của IF lên hệ vi sinh còn ít và không nhất quán: tổng quan hệ thống năm 2024 rà 8 nghiên cứu trên người và chỉ kết luận ở mức \"có thể\" IF làm tăng độ phong phú và đa dạng, với thay đổi khác nhau giữa các nghiên cứu.",
+      "why": "Summary khẳng định thẳng, không rào đón, rằng IF \"thay đổi môi trường sống\" của hệ vi sinh và khi tách biệt giờ ăn thì \"thành phần và hoạt động của hệ vi sinh đường ruột cũng thay đổi theo\" — đúng khung nhân quả trên người vừa bị hạ ở thân bài (C-2, C-4). Để nguyên thì summary mâu thuẫn với thân bài và vẫn là câu đầu tiên người đọc gặp. Tổng quan hệ thống Paukkonen và cộng sự 2024 (8 nghiên cứu ở người) chỉ nói \"it seems possible that IF can improve richness and alpha diversity\" và nhấn mạnh \"substantial heterogeneity of the results\"; nhịp dao động theo ngày của hệ vi sinh thì do nhịp ăn của vật chủ chi phối (Thaiss và cộng sự 2014). Bản sửa hạ về đúng mức \"có thể\" và nêu số nghiên cứu. Lưu ý: bản thẩm định chấm C-12 là S3 khi xét riêng câu summary; ở đây xử lý ở mức S2 vì summary lặp lại chính khung nhân quả của C-2/C-4 (đều S2) và nằm trên bài sức khỏe.",
+      "evidence": "https://www.frontiersin.org/journals/nutrition/articles/10.3389/fnut.2024.1342787/full (doi 10.3389/fnut.2024.1342787) ; https://pure.johnshopkins.edu/en/publications/transkingdom-control-of-microbiota-diurnal-oscillations-promotes-/ (doi 10.1016/j.cell.2014.09.048)"
+    }
+  ],
+  "edits": [
+    {
+      "claimId": "C-2",
+      "severity": "S2",
+      "find": "Giống như con người, vi khuẩn đường ruột cũng có nhịp sinh học riêng.\n\nKhi ăn uống kéo dài suốt ngày và thường xuyên ăn vặt, môi trường trong ruột gần như luôn ở trạng thái \"đang được cho ăn\". Ngược lại, giai đoạn nhịn ăn tạo ra các khoảng nghỉ rõ ràng, giúp thiết lập lại chu kỳ hoạt động tự nhiên của hệ vi sinh.",
+      "replace": "Ở cả chuột và người, thành phần và chức năng của hệ vi sinh đường ruột **dao động theo ngày**. Nhưng dao động đó không đến từ một \"đồng hồ riêng\" của vi khuẩn: nghiên cứu năm 2014 trên tạp chí *Cell* cho thấy nó **chịu ảnh hưởng của nhịp ăn** của vật chủ (Thaiss và cộng sự, 2014).\n\nChiều đã có bằng chứng là chiều **phá vỡ**: khi nhịp ăn bị xáo trộn — lệch múi giờ, hoặc chuột bị vô hiệu hóa các thành phần đồng hồ sinh học — dao động trở nên bất thường và dẫn tới loạn khuẩn; ở cả chuột và người, loạn khuẩn do lệch múi giờ thúc đẩy rối loạn dung nạp glucose và béo phì, và tình trạng này truyền được sang chuột vô trùng qua cấy phân.\n\nChiều ngược lại thì chưa có: **không có bằng chứng cho thấy nhịn ăn gián đoạn \"thiết lập lại\" chu kỳ hệ vi sinh ở người.** Điều quan sát được mới dừng ở chỗ ăn uống theo khung giờ cố định đi kèm thay đổi thành phần hệ vi sinh — đi kèm, chưa phải gây ra.",
+      "why": "Bản cũ khẳng định nhịn ăn \"giúp thiết lập lại chu kỳ hoạt động tự nhiên của hệ vi sinh\" — một câu nhân quả trên người, không nguồn. Thaiss và cộng sự 2014 (Cell) chỉ chứng minh chiều ngược lại: dao động ngày đêm của hệ vi sinh \"influenced by feeding rhythms\", và phá vỡ nhịp ăn (lệch múi giờ, chuột hỏng gen đồng hồ) gây dao động bất thường và loạn khuẩn, truyền được qua chuột vô trùng. Không nguồn nào cho thấy nhịn ăn gián đoạn \"reset\" hệ vi sinh ở người. Câu mở đoạn (\"vi khuẩn cũng có nhịp sinh học riêng\", chấm S3) được gộp vào cùng edit vì nằm cùng đoạn và sẽ mâu thuẫn trực tiếp với bản sửa nếu để nguyên.",
+      "evidence": "https://pure.johnshopkins.edu/en/publications/transkingdom-control-of-microbiota-diurnal-oscillations-promotes-/ (doi 10.1016/j.cell.2014.09.048)"
+    },
+    {
+      "claimId": "C-4",
+      "severity": "S2",
+      "find": "Trong thời gian nhịn ăn kéo dài, một số nhóm vi khuẩn có khả năng sử dụng lớp chất nhầy bảo vệ ruột làm nguồn dinh dưỡng sẽ phát triển mạnh hơn.\n\nLoài được nghiên cứu nhiều nhất là:\n\n**Akkermansia muciniphila**",
+      "replace": "Một giả thuyết thường được nhắc: khi không có thức ăn đi xuống, nhóm vi khuẩn dùng lớp chất nhầy bảo vệ ruột làm nguồn dinh dưỡng sẽ có lợi thế. Loài được nhắc nhiều nhất là:\n\n**Akkermansia muciniphila**\n\nỞ người, bằng chứng cho giả thuyết này còn mỏng. Tổng quan hệ thống năm 2024 rà 8 nghiên cứu trên người và chỉ **một** nghiên cứu ghi nhận *A. muciniphila* tăng lên (sau tháng nhịn ăn Ramadan); các nghiên cứu còn lại không báo cáo loài này, nên chưa thể coi đây là quy luật của nhịn ăn gián đoạn (Paukkonen và cộng sự, 2024). Cũng tổng quan đó ghi nhận thay đổi vi sinh giữa các nghiên cứu là **không đồng nhất**, và thay đổi nhất quán hơn cả lại là tăng ngành Proteobacteria — điều được xem là dấu hiệu loạn khuẩn chứ không phải cải thiện.",
+      "why": "Bản cũ nêu như quy luật rằng nhóm vi khuẩn ăn chất nhầy \"sẽ phát triển mạnh hơn\" khi nhịn ăn kéo dài. Tổng quan hệ thống Paukkonen và cộng sự 2024 (8 nghiên cứu trên người) cho thấy A. muciniphila chỉ tăng ở MỘT nghiên cứu (Ozkul và cộng sự 2020, Ramadan), các nghiên cứu khác không báo cáo loài này; tổng quan nhấn mạnh \"substantial heterogeneity of the results\". Bản sửa hạ về đúng mức giả thuyết, nêu số nghiên cứu, và bổ sung tín hiệu bất lợi (tăng Proteobacteria — dấu hiệu loạn khuẩn) mà bản cũ bỏ qua.",
+      "evidence": "https://www.frontiersin.org/journals/nutrition/articles/10.3389/fnut.2024.1342787/full (doi 10.3389/fnut.2024.1342787)"
+    }
+  ],
+  "addSources": [
+    {
+      "title": "The impact of intermittent fasting on gut microbiota: a systematic review of human studies",
+      "url": "https://www.frontiersin.org/journals/nutrition/articles/10.3389/fnut.2024.1342787/full",
+      "doi": "10.3389/fnut.2024.1342787",
+      "publisher": "Frontiers in Nutrition",
+      "year": 2024,
+      "tier": 1,
+      "covers": "C-4 — 8 nghiên cứu trên người; A. muciniphila chỉ tăng ở một nghiên cứu (Ramadan); kết quả không đồng nhất; tăng Proteobacteria được xem là dấu hiệu loạn khuẩn. Cũng đỡ phần \"chưa chứng minh ở người\" của C-2."
+    },
+    {
+      "title": "Transkingdom control of microbiota diurnal oscillations promotes metabolic homeostasis",
+      "url": "https://pure.johnshopkins.edu/en/publications/transkingdom-control-of-microbiota-diurnal-oscillations-promotes-/",
+      "doi": "10.1016/j.cell.2014.09.048",
+      "publisher": "Cell",
+      "year": 2014,
+      "tier": 1,
+      "covers": "C-2 — hệ vi sinh ở chuột và người dao động theo ngày, chịu ảnh hưởng của nhịp ăn; phá vỡ nhịp ăn (lệch múi giờ, hỏng đồng hồ vật chủ) gây loạn khuẩn, truyền được sang chuột vô trùng"
+    }
+  ],
+  "dropSources": [],
+  "corrections": [
+    "C-2: \"Giống như con người, vi khuẩn đường ruột cũng có nhịp sinh học riêng ... giai đoạn nhịn ăn tạo ra các khoảng nghỉ rõ ràng, giúp thiết lập lại chu kỳ hoạt động tự nhiên của hệ vi sinh\" → \"Hệ vi sinh dao động theo ngày và chịu ảnh hưởng của nhịp ăn của vật chủ; phá vỡ nhịp ăn gây loạn khuẩn. Không có bằng chứng nhịn ăn gián đoạn thiết lập lại chu kỳ hệ vi sinh ở người.\" → căn cứ: Thaiss và cộng sự 2014, Cell, doi 10.1016/j.cell.2014.09.048.",
+    "C-4: \"Trong thời gian nhịn ăn kéo dài, một số nhóm vi khuẩn ... sẽ phát triển mạnh hơn\" (Akkermansia muciniphila nêu như quy luật) → \"Đây là giả thuyết; tổng quan hệ thống 2024 trên 8 nghiên cứu ở người chỉ thấy A. muciniphila tăng ở một nghiên cứu, kết quả không đồng nhất, và thay đổi nhất quán hơn cả là tăng Proteobacteria — dấu hiệu loạn khuẩn\" → căn cứ: Paukkonen và cộng sự 2024, Frontiers in Nutrition, doi 10.3389/fnut.2024.1342787.",
+    "C-12 (Summary): \"Khi thời gian ăn và nhịn được tách biệt rõ ràng, thành phần và hoạt động của hệ vi sinh đường ruột cũng thay đổi theo\" → \"Bằng chứng ở người còn ít và không nhất quán; tổng quan hệ thống 2024 trên 8 nghiên cứu chỉ kết luận ở mức có thể IF làm tăng độ phong phú và đa dạng\" → căn cứ: Paukkonen và cộng sự 2024, doi 10.3389/fnut.2024.1342787; Thaiss và cộng sự 2014, doi 10.1016/j.cell.2014.09.048."
+  ],
+  "openQuestions": [
+    "Lượt này chỉ xử lý S1–S2. Bài vẫn còn các lỗi S3 chưa sửa, trong đó có claim sức khỏe đáng lo: C-5 \"giảm nguy cơ béo phì và hội chứng chuyển hóa\" (claim về nguy cơ ở quần thể, không nguồn, nằm ngay dưới đoạn Akkermansia vừa sửa) và C-11 \"các hướng dẫn hiện hành khuyến cáo\" mà không nêu cơ quan nào, năm nào. Đề nghị xếp hai mục này lên đầu lô S3, hoặc cho phép cắt sớm.",
+    "Mục chống chỉ định (C-11) cần một người có chuyên môn y khoa duyệt sau khi gắn hướng dẫn cụ thể. Science-editor kiểm được nguồn nhưng không thay được phán quyết lâm sàng.",
+    "C-7 (MMC): chưa mở được toàn văn/tóm tắt Deloose và cộng sự 2012 trong lượt này, nên không sửa. Khi sửa phải nói rõ MMC diễn ra lúc đói giữa mọi bữa ăn, không phải tác dụng riêng của nhịn ăn gián đoạn.",
+    "Bài sức khỏe đang PUBLISHED với 0 nguồn gốc; hai nguồn thêm ở đây chỉ đỡ hai claim vừa sửa. Cần người quyết: gắn nhãn đính chính công khai, hay gỡ xuống tới khi viết lại."
+  ]
+}

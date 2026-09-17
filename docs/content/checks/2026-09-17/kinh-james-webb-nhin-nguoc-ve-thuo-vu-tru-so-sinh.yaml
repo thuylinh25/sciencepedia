@@ -1,0 +1,123 @@
+slug: kinh-james-webb-nhin-nguoc-ve-thuo-vu-tru-so-sinh
+checkedAt: 2026-09-17
+checkedBy: science-editor
+sourceCount: 1
+verdict: revise
+summary: "Các thông số kỹ thuật chính (ngày phóng, gương 18 mảnh, tấm chắn 5 lớp, 85°C/−233°C, L2) khớp tờ số liệu NASA, nhưng nguồn được gắn là trang tổng quan vốn không chứa các con số đó; kết quả 'thiên hà 300 triệu năm' thiếu mốc thời gian và đã có kỷ lục mới hơn; con số 344 điểm hỏng đơn lẻ chưa có nguồn bậc 1–2."
+claims:
+  - id: C-1
+    claim: "JWST phóng ngày 25/12/2021"
+    verdict: verified
+    severity: none
+    evidence: "https://science.nasa.gov/mission/webb/fact-sheet/"
+    note: "NASA: 'December 25, 2021 07:20am EST', tên lửa Ariane 5 ECA."
+  - id: C-2
+    claim: "Bắt đầu gửi ảnh khoa học từ tháng 7/2022"
+    verdict: verified
+    severity: none
+    evidence: "https://science.nasa.gov/mission/webb/"
+    note: "NASA: ảnh khoa học đầu tiên 'công bố tháng 7/2022, ngay sau khi hoàn tất vận hành thử'."
+  - id: C-3
+    claim: "Hubble mạnh ở khả kiến và tử ngoại, Webb thiết kế cho hồng ngoại"
+    verdict: partially-supported
+    severity: S4
+    evidence: "https://science.nasa.gov/mission/webb/fact-sheet/"
+    note: "Dải bước sóng của Webb là 0,6–28,5 µm, tức bắt đầu từ ánh sáng khả kiến cam/đỏ. Nên viết 'chủ yếu hồng ngoại'. Phần về Hubble chưa kiểm."
+  - id: C-4
+    claim: "Tấm chắn nắng năm lớp rộng cỡ sân tennis, hạ từ khoảng 85°C ở mặt hướng Mặt Trời xuống −233°C ở mặt quan sát"
+    verdict: verified
+    severity: none
+    evidence: "https://science.nasa.gov/mission/webb/fact-sheet/"
+    note: "NASA: 5 lớp, 21,197 m × 14,162 m; mặt nóng 'khoảng 185F (85C)', mặt lạnh 'khoảng −388F (−233C)'. Khớp."
+  - id: C-5
+    claim: "Quỹ đạo quanh L2, cách Trái Đất 1,5 triệu km, nơi Mặt Trời, Trái Đất, Mặt Trăng luôn ở cùng một phía"
+    verdict: partially-supported
+    severity: S4
+    evidence: "https://science.nasa.gov/mission/webb/fact-sheet/"
+    note: "NASA xác nhận 1,5 triệu km, quỹ đạo quanh L2. Vế 'Mặt Trời, Trái Đất, Mặt Trăng luôn cùng một phía' không có trên các trang đã mở; cần nguồn."
+  - id: C-6
+    claim: "344 điểm hỏng đơn lẻ trong quá trình triển khai"
+    verdict: unverifiable
+    severity: S3
+    evidence: "—"
+    note: "Không có trên ba trang NASA đã mở (fact-sheet, innovations, mission). Con số 344 chỉ thấy ở đoạn trích kết quả tìm kiếm từ báo chí (SpaceNews, OPB, SpacePolicyOnline), chưa mở trang. Theo các đoạn trích đó, 344 là tổng số điểm hỏng đơn lẻ của cả tàu lúc phóng, khoảng 80% gắn với cơ chế triển khai, và còn 49 điểm sau khi triển khai xong. Nếu đúng vậy, cụm 'trong quá trình triển khai' là nói quá. Cần nguồn NASA gốc."
+  - id: C-7
+    claim: "Gương 6,5 m gồm 18 mảnh lục giác mạ vàng"
+    verdict: verified
+    severity: S4
+    evidence: "https://science.nasa.gov/mission/webb/fact-sheet/"
+    note: "NASA: đường kính 'khoảng 6,5 m', 18 mảnh, beryllium phủ vàng dày 100 nm. Hình lục giác không được ghi trên tờ số liệu; nên ghi thêm 'beryllium phủ vàng' cho chính xác."
+  - id: C-8
+    claim: "Căn chỉnh trong không gian với độ chính xác cỡ nanomet"
+    verdict: unverifiable
+    severity: S3
+    evidence: "—"
+    note: "Chưa có nguồn nào đã mở nêu độ chính xác căn chỉnh."
+  - id: C-9
+    claim: "Không tên lửa nào chứa nổi một gương 6,5 m nguyên khối"
+    verdict: unverifiable
+    severity: S3
+    evidence: "https://science.nasa.gov/mission/webb/fact-sheet/"
+    note: "Khẳng định tuyệt đối, phụ thuộc thời điểm, không có nguồn. Tờ số liệu chỉ cho biết Webb phóng bằng Ariane 5 ECA. Sửa thành câu gắn với tên lửa và thời điểm cụ thể, kèm nguồn nêu kích thước chụp mũi."
+  - id: C-10
+    claim: "Những thiên hà hình thành chỉ 300 triệu năm sau Big Bang"
+    verdict: outdated
+    severity: S3
+    evidence: "https://astro.theoj.org/article/156033-a-cosmic-miracle-a-remarkably-luminous-galaxy-at-_z_-sub-spec-sub-14-44-confirmed-with-jwst"
+    note: "Không có mốc thời gian, không nêu tên thiên hà. Tính đến 09/2026, kỷ lục xác nhận bằng quang phổ là MoM-z14, z_spec = 14,44 (+0,02/−0,02), 'chỉ 280 triệu năm sau Big Bang' (Naidu et al. 2026, Open Journal of Astrophysics, DOI 10.33232/001c.156033). Kỷ lục trước đó là JADES-GS-z14-0, z = 14,32, khoảng 290 triệu năm (2024), nhưng thông tin này mới thấy ở đoạn trích tìm kiếm. Lưu ý: 280 triệu năm là thời điểm ta QUAN SÁT thấy thiên hà, không phải thời điểm nó 'hình thành'."
+  - id: C-11
+    claim: "Các thiên hà đó sáng và trưởng thành hơn nhiều mô hình dự đoán"
+    verdict: partially-supported
+    severity: S3
+    evidence: "https://astro.theoj.org/article/156033-a-cosmic-miracle-a-remarkably-luminous-galaxy-at-_z_-sub-spec-sub-14-44-confirmed-with-jwst"
+    note: "Naidu et al. (2026): mật độ nguồn sáng ở z≈14–15 suy ra từ khảo sát của nhóm là '>100 lần (182, +329/−105)' so với 'các mô hình đồng thuận trước JWST'. Vậy vế 'sáng hơn/nhiều hơn dự đoán' có nguồn đỡ, nhưng nguồn so với mô hình TRƯỚC JWST và kèm sai số lớn. Vế 'trưởng thành hơn' không có trong phần tóm tắt đã mở. Bài viết 'nhiều mô hình' là nâng mức khái quát."
+  - id: C-12
+    claim: "Phân tích khí quyển ngoại hành tinh bằng quang phổ truyền qua, phát hiện CO₂, nước và methane"
+    verdict: unverifiable
+    severity: S3
+    evidence: "—"
+    note: "Trang nguồn không liệt kê các phân tử này. Mỗi phân tử cần gắn với một hành tinh cụ thể và một bài công bố."
+  - id: C-13
+    claim: "Ảnh chi tiết chưa từng có về 'Cột trụ sáng tạo' và vùng sinh sao"
+    verdict: unverifiable
+    severity: S4
+    evidence: "—"
+    note: "Trang mission không nhắc 'Pillars of Creation'. Gắn thông cáo NASA/ESA tương ứng; bỏ cụm 'chưa từng có' nếu nguồn không dùng."
+  - id: C-14
+    claim: "Hồng ngoại xuyên bụi tốt hơn khả kiến; ánh sáng khả kiến của thiên hà đầu tiên sau hơn 13 tỉ năm dịch sang hồng ngoại"
+    verdict: partially-supported
+    severity: S4
+    evidence: "https://science.nasa.gov/mission/webb/"
+    note: "NASA: Webb 'nhìn ngược thời gian hơn 13,5 tỷ năm để thấy những thiên hà đầu tiên'. Cơ chế dịch chuyển đỏ và khả năng xuyên bụi chưa có câu nguồn đã mở."
+  - id: C-15
+    claim: "Nguồn duy nhất: trang tổng quan Webb của NASA, accessedAt THIẾU"
+    verdict: partially-supported
+    severity: S3
+    evidence: "https://science.nasa.gov/mission/webb/"
+    note: "Nguồn thật và đúng bậc 2, nhưng trang tổng quan không chứa đường kính gương, nhiệt độ tấm chắn, con số 344 hay bất kỳ kết quả khoa học định lượng nào. Một nguồn tổng quát đang đỡ cả bài, tức under-sourced. Các con số kỹ thuật nằm ở /mission/webb/fact-sheet/."
+fixes:
+  - "Thêm nguồn https://science.nasa.gov/mission/webb/fact-sheet/ và gắn vào: ngày phóng/Ariane 5 ECA, gương 6,5 m 18 mảnh beryllium phủ vàng, tấm chắn 5 lớp 21,2 × 14,2 m, 85°C/−233°C, 1,5 triệu km quanh L2. Điền accessedAt cho cả hai trang NASA."
+  - "Sửa 'Những thiên hà hình thành chỉ 300 triệu năm sau Big Bang' thành: 'Tính đến 2026, thiên hà xa nhất được xác nhận bằng quang phổ là MoM-z14 (z = 14,44), mà ta thấy như nó ở khoảng 280 triệu năm sau Big Bang', gắn Naidu et al. 2026, DOI 10.33232/001c.156033. Đặt lịch kiểm lại claim này mỗi 6 tháng."
+  - "Sửa 'sáng và trưởng thành hơn nhiều mô hình dự đoán' thành 'nhiều thiên hà sáng hơn so với dự đoán của các mô hình trước khi có JWST', cùng nguồn. Bỏ 'trưởng thành' trừ khi có nguồn riêng."
+  - "Với '344 điểm hỏng đơn lẻ': tìm và mở kiểm nguồn NASA gốc. Nếu có, sửa thành '344 điểm hỏng đơn lẻ tính cho cả tàu lúc phóng, phần lớn gắn với các bước triển khai'; nếu không tìm được thì cắt con số."
+  - "Sửa 'Không tên lửa nào chứa nổi một gương 6,5 m nguyên khối' thành 'Gương 6,5 m nguyên khối không vừa chụp mũi tên lửa Ariane 5 dùng để phóng Webb', kèm nguồn nêu kích thước chụp mũi; không có nguồn thì cắt câu."
+  - "Gắn nguồn công bố cho từng phát hiện khí quyển (CO₂, nước, methane): nêu tên hành tinh và bài công bố; mục nào không có nguồn thì cắt."
+  - "Gắn nguồn cho 'căn chỉnh độ chính xác cỡ nanomet', cho vế Mặt Trời/Trái Đất/Mặt Trăng cùng phía ở L2, và cho ảnh 'Cột trụ sáng tạo'; câu nào không có nguồn thì cắt."
+  - "Đổi 'được thiết kế cho hồng ngoại' thành 'chủ yếu quan sát hồng ngoại (0,6–28,5 µm)'."
+suggestedSources:
+  - title: "Webb Fact Sheet"
+    url: "https://science.nasa.gov/mission/webb/fact-sheet/"
+    doi: ""
+    publisher: "NASA Science"
+    year: "không ghi (truy cập 2026-09-17)"
+    tier: 2
+    covers: "Toàn bộ thông số kỹ thuật: gương, tấm chắn, nhiệt độ, quỹ đạo, ngày phóng, tên lửa, dải bước sóng"
+  - title: "A Cosmic Miracle: A Remarkably Luminous Galaxy at z_spec = 14.44 Confirmed with JWST"
+    url: "https://astro.theoj.org/article/156033-a-cosmic-miracle-a-remarkably-luminous-galaxy-at-_z_-sub-spec-sub-14-44-confirmed-with-jwst"
+    doi: "10.33232/001c.156033"
+    publisher: "The Open Journal of Astrophysics — Naidu, Oesch, Brammer et al."
+    year: 2026
+    tier: 1
+    covers: "Thiên hà xa nhất đã xác nhận (tính đến 09/2026) và so sánh mật độ thiên hà sáng với các mô hình trước JWST"
+openQuestions:
+  - "Bài nên nói 'thiên hà xa nhất' (kỷ lục, đổi liên tục, phải kiểm lại định kỳ) hay chỉ nói khoảng thời gian (khoảng 300 triệu năm sau Big Bang) kèm mốc năm? Cách thứ hai bền hơn; người quyết chọn."

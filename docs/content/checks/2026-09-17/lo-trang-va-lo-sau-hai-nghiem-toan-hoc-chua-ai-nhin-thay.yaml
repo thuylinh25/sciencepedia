@@ -1,0 +1,108 @@
+slug: lo-trang-va-lo-sau-hai-nghiem-toan-hoc-chua-ai-nhin-thay
+checkedAt: 2026-09-17
+checkedBy: science-editor
+sourceCount: 1
+verdict: revise
+summary: "Nội dung giữ đúng mức dè dặt (lỗ trắng và lỗ sâu chỉ là nghiệm toán học, chưa quan sát được) và các mốc năm đều đúng, nhưng nguồn duy nhất là bài phổ biến khoa học năm 2012 của CLB thiên văn nghiệp dư VACA bị gắn nhầm tier 2, nên toàn bài chưa có nguồn đạt chuẩn."
+claims:
+  - id: C-1
+    claim: "Nguồn duy nhất «Lỗ đen, lỗ trắng và lỗ sâu» (thienvanvietnam.org, VACA, 2012) là nguồn tier 2"
+    verdict: contradicted
+    severity: S3
+    evidence: "https://www.thienvanvietnam.org/?option=com_content&view=article&id=534:lo-den-lo-trang-va-lo-sau&catid=39:sao-tinh-van&Itemid=149"
+    note: "Trang vẫn hoạt động (HTTP 200 ngày 17/09/2026, tác giả Đặng Vũ Tuấn Sơn), nhưng VACA là hội/CLB thiên văn nghiệp dư, không phải cơ quan uy tín bậc 2. Tối đa là bậc 4 (chỉ dùng làm bối cảnh, không bao giờ là nguồn duy nhất). Hạ tier và bổ sung nguồn bậc 1–2 cho từng mục."
+  - id: C-2
+    claim: "Năm 1916 Karl Schwarzschild tìm ra nghiệm đầu tiên cho phương trình trường Einstein"
+    verdict: verified
+    severity: S4
+    evidence: https://arxiv.org/abs/physics/9905030
+    note: "Bài gốc: Sitzungsber. Preuss. Akad. Wiss. Berlin 1916, tr. 189–196. Nói «nghiệm chính xác đầu tiên» thì an toàn hơn «nghiệm đầu tiên» (Einstein đã có nghiệm gần đúng từ 1915) — lượt này chưa mở nguồn cho chi tiết 1915, nên chỉ ghi S4."
+  - id: C-3
+    claim: "Ý tưởng lỗ sâu xuất hiện trong công trình Einstein–Rosen năm 1935 (cầu Einstein–Rosen)"
+    verdict: verified
+    severity: none
+    evidence: https://doi.org/10.1103/PhysRev.48.73
+    note: "A. Einstein & N. Rosen, «The Particle Problem in the General Theory of Relativity», Phys. Rev. 48, 73 (01/07/1935)."
+  - id: C-4
+    claim: "Lỗ sâu là con đường tắt nối hai điểm xa nhau (gắn với nghiệm Einstein–Rosen)"
+    verdict: partially-supported
+    severity: S3
+    evidence: https://doi.org/10.1103/PhysRev.48.73
+    note: "Bài 1935 dùng «cầu» nối hai tấm không–thời gian giống hệt nhau để làm mô hình hạt; nó không đề xuất đường tắt đi lại được. Hình ảnh đường tắt đến từ các mô hình về sau. Tách rõ: cầu Einstein–Rosen (1935, không đi qua được) khác với lỗ sâu đi qua được trong các mô hình sau này; gắn nguồn cho mô hình sau."
+  - id: C-5
+    claim: "Lỗ trắng là phiên bản đảo ngược thời gian của lỗ đen; vẫn có khối lượng và vẫn hút"
+    verdict: unverifiable
+    severity: S3
+    evidence: "—"
+    note: "Phù hợp vật lý chuẩn nhưng lượt này chưa mở được nguồn bậc 1–2, và nguồn VACA không đạt chuẩn. Gắn nguồn giáo trình/bài tổng quan trước khi xuất bản lại."
+  - id: C-6
+    claim: "Lỗ trắng rất không ổn định: một lượng vật chất nhỏ rơi vào là có thể sụp thành lỗ đen; phần lớn nhà vật lý cho rằng chúng khó tồn tại lâu"
+    verdict: unverifiable
+    severity: S3
+    evidence: "—"
+    note: "Claim về cơ chế và về đồng thuận («phần lớn nhà vật lý») đều không có nguồn. Gắn bài gốc về tính bất ổn định của lỗ trắng (được cho là Eardley 1974 — lượt này CHƯA mở kiểm, phải xác minh trước khi dùng) hoặc cắt cụm «phần lớn các nhà vật lý»."
+  - id: C-7
+    claim: "Giữ lỗ sâu mở cần vật chất có mật độ năng lượng âm (vật chất kỳ dị); chưa phát hiện ở quy mô cần thiết"
+    verdict: unverifiable
+    severity: S3
+    evidence: "—"
+    note: "Mức dè dặt đúng («ở quy mô cần thiết»). Nguồn chuẩn là Morris & Thorne, Am. J. Phys. 56, 395 (1988), nhưng trang nhà xuất bản trả 403 trong lượt này nên chưa kiểm được. Mở kiểm rồi mới gắn."
+  - id: C-8
+    claim: "Lỗ đen đã được xác nhận qua sóng hấp dẫn (2015), ảnh M87* (2019), ảnh Sagittarius A* (2022)"
+    verdict: verified
+    severity: S4
+    evidence: "https://doi.org/10.1103/PhysRevLett.116.061102 ; https://www.eso.org/public/news/eso1907/ ; https://www.eso.org/public/news/eso2208-eht-mw/"
+    note: "Năm và đối tượng đều đúng. Thứ được chụp là bóng hố đen (lớn hơn chân trời sự kiện ~2,5 lần theo ESO). Sửa «Ảnh lỗ đen M87*» thành «Ảnh bóng lỗ đen M87*», tương tự cho Sgr A*."
+  - id: C-9
+    claim: "Lỗ trắng và lỗ sâu chưa có bằng chứng quan sát"
+    verdict: unverifiable
+    severity: S4
+    evidence: "—"
+    note: "Mức dè dặt đúng và là cách nói an toàn. Claim phủ định cần mốc thời gian: thêm «tính đến 2026»."
+fixes:
+  - "Hạ tier nguồn VACA (thienvanvietnam.org) từ 2 xuống 4 và không dùng nó làm nguồn duy nhất cho claim nào; điền accessedAt."
+  - "Gắn Phys. Rev. 48, 73 (DOI 10.1103/PhysRev.48.73) cho mục Einstein–Rosen 1935 và bản dịch arXiv physics/9905030 cho nghiệm Schwarzschild 1916."
+  - "Viết lại đoạn «đường tắt»: nói rõ cầu Einstein–Rosen 1935 không đi qua được; hình ảnh đường tắt đi qua được thuộc về các mô hình sau này (gắn nguồn)."
+  - "Tìm, mở kiểm và gắn nguồn bậc 1 cho: tính bất ổn định của lỗ trắng (ứng viên Eardley 1974) và vật chất kỳ dị cho lỗ sâu đi qua được (ứng viên Morris & Thorne 1988). Không kiểm được thì cắt hai claim đó."
+  - "Cắt cụm «phần lớn các nhà vật lý cho rằng» nếu không có nguồn cho mức đồng thuận."
+  - "Đổi «Ảnh lỗ đen M87*/Sagittarius A*» thành «ảnh bóng lỗ đen»; gắn nguồn EHT/ESO và PRL 2016."
+  - "Thêm mốc «tính đến 2026» cho các câu «chưa có bằng chứng quan sát»."
+suggestedSources:
+  - title: "The Particle Problem in the General Theory of Relativity"
+    url: https://doi.org/10.1103/PhysRev.48.73
+    doi: 10.1103/PhysRev.48.73
+    publisher: Physical Review
+    year: 1935
+    tier: 1
+    covers: "Cầu Einstein–Rosen"
+  - title: "On the gravitational field of a mass point according to Einstein's theory (bản dịch Schwarzschild 1916)"
+    url: https://arxiv.org/abs/physics/9905030
+    doi:
+    publisher: arXiv (bản dịch của S. Antoci & A. Loinger; gốc Sitzungsber. Preuss. Akad. Wiss. 1916)
+    year: 1916
+    tier: 1
+    covers: "Nghiệm Schwarzschild 1916"
+  - title: "Observation of Gravitational Waves from a Binary Black Hole Merger"
+    url: https://doi.org/10.1103/PhysRevLett.116.061102
+    doi: 10.1103/PhysRevLett.116.061102
+    publisher: Physical Review Letters
+    year: 2016
+    tier: 1
+    covers: "Bằng chứng sóng hấp dẫn 2015"
+  - title: "Astronomers Capture First Image of a Black Hole (eso1907)"
+    url: https://www.eso.org/public/news/eso1907/
+    doi:
+    publisher: ESO
+    year: 2019
+    tier: 2
+    covers: "Ảnh bóng M87* năm 2019"
+  - title: "Astronomers reveal first image of the black hole at the heart of our galaxy (eso2208)"
+    url: https://www.eso.org/public/news/eso2208-eht-mw/
+    doi:
+    publisher: ESO
+    year: 2022
+    tier: 2
+    covers: "Ảnh bóng Sgr A* năm 2022"
+openQuestions:
+  - "Điều phối viên báo domain thienvanvietnam.org đã chết, nhưng trong lượt này cả hai URL VACA trả HTTP 200 kèm nội dung bài thật (17/09/2026). Có thể lỗi do mạng/vùng; cần người kiểm lại. Dù thế nào, kết luận về tier vẫn không đổi."
+  - "Mục «Vì sao nhà vật lý vẫn nghiên cứu» (liên hệ thông tin lượng tử, hấp dẫn lượng tử) được viết dè dặt nhưng không có nguồn. Cần quyết định giữ kèm nguồn tổng quan hay cắt."

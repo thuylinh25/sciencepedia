@@ -1,0 +1,140 @@
+slug: giai-ma-nhung-khoang-trong-rong-voids-trong-vu-tru
+checkedAt: 2026-09-17
+checkedBy: science-editor
+sourceCount: 0
+verdict: revise
+summary: "Bài không có nguồn nào nên không thể pass. Ý chính (void chiếm phần lớn thể tích, hình thành do hấp dẫn trong mạng lưới vũ trụ) được nguồn bậc 1 xác nhận, nhưng phần lớn con số chưa có nguồn hoặc không kiểm được. Bài có các mô tả sai lệch: 'rút sạch vật chất' trong khi void vẫn còn khoảng 20% mật độ trung bình; gọi 2,725 K là 'nhiệt độ của void', lẫn nhiệt độ bức xạ với nhiệt độ khí; 'cấu trúc lớn nhất' không có nguồn. Phải quay lại bước 1."
+claims:
+  - id: C-1
+    claim: "Phần lớn thể tích vũ trụ là những vùng gần như trống rỗng (void)."
+    verdict: verified
+    severity: S3
+    evidence: "https://arxiv.org/html/0912.2997"
+    note: "van de Weygaert & Platen, 'Cosmic Voids: structure, dynamics and galaxies' (arXiv:0912.2997): 'Voids in the galaxy distribution account for about 95% of the total volume'. Con số phụ thuộc cách định nghĩa void (theo phân bố thiên hà). Claim đúng nhưng không có nguồn; thêm nguồn và ghi 'theo phân bố thiên hà, khoảng 95% thể tích'."
+  - id: C-2
+    claim: "Void là vùng có mật độ thiên hà thấp bất thường; giữa các nhóm, cụm, siêu cụm và sợi thiên hà là khoảng không gần như rỗng hoàn toàn."
+    verdict: partially-supported
+    severity: S3
+    evidence: "https://arxiv.org/html/0912.2997"
+    note: "Review xác nhận void là thành phần chính của mạng lưới vũ trụ. 'Gần như rỗng hoàn toàn' là phóng đại: cùng review cho biết khi tới giai đoạn shell-crossing, void còn khoảng 20% mật độ vũ trụ trung bình (δ ≈ −0,8). Sửa thành 'mật độ chỉ khoảng một phần năm mức trung bình' kèm nguồn."
+  - id: C-3
+    claim: "Không gian liên thiên hà: trung bình mỗi mét khối chỉ chứa khoảng vài proton hoặc nguyên tử."
+    verdict: partially-supported
+    severity: S3
+    evidence: "https://www.aanda.org/articles/aa/full_html/2020/09/aa33910-18/T2.html"
+    note: "Không có nguồn. Tự suy từ Planck 2018 (Ωbh² = 0,02237, H0 = 67,36 km/s/Mpc) với ρcrit = 3H0²/8πG: mật độ baryon trung bình toàn vũ trụ ≈ 4,2×10⁻²⁸ kg/m³, tức khoảng 0,25 proton/m³. Vậy 'vài proton/m³' cao hơn mức trung bình vũ trụ khoảng 10 lần; con số đó có thể đúng cho khí trong sợi thiên hà nhưng không đúng cho 'trung bình'. Với δ ≈ −0,8 thì bên trong void chỉ vào khoảng 0,05 proton/m³ (suy luận, chưa có nguồn trực tiếp). Cắt con số, hoặc thay bằng giá trị có nguồn và nói rõ đó là trung bình vũ trụ hay mật độ trong sợi."
+  - id: C-4
+    claim: "Mật độ này thấp hơn nhiều so với bất kỳ môi trường chân không nào con người từng tạo trong phòng thí nghiệm; không gian liên thiên hà là một trong những môi trường chân không tự nhiên hoàn hảo nhất."
+    verdict: unverifiable
+    severity: S3
+    evidence: "—"
+    note: "Hợp lý nhưng không có nguồn và lượt này chưa mở được nguồn nào về chân không phòng thí nghiệm tốt nhất. Có nguồn so sánh thì giữ, không thì cắt."
+  - id: C-5
+    claim: "Bảng mật độ: môi trường liên sao hàng trăm nghìn đến hàng triệu hạt/m³; gió Mặt Trời gần Trái Đất vài triệu hạt/m³; không gian liên thiên hà vài hạt/m³; bên trong void thấp hơn nữa."
+    verdict: unverifiable
+    severity: S3
+    evidence: "—"
+    note: "Không số nào trong bảng có nguồn. Môi trường liên sao gồm nhiều pha, mật độ chênh nhau nhiều bậc (đám mây phân tử đặc hơn khí nóng rất nhiều), nên gom vào một khoảng 'hàng trăm nghìn đến hàng triệu' là đơn giản hóa làm sai lệch. Dòng liên thiên hà mâu thuẫn với C-3. Số không nguồn thì cắt: bỏ bảng, hoặc thay mỗi dòng bằng số có nguồn bậc 1–2."
+  - id: C-6
+    claim: "Sau Big Bang vật chất phân bố tương đối đồng đều; qua 13,8 tỷ năm hấp dẫn đã thay đổi cấu trúc vũ trụ."
+    verdict: verified
+    severity: S4
+    evidence: "https://www.aanda.org/articles/aa/full_html/2020/09/aa33910-18/T2.html"
+    note: "Tuổi vũ trụ theo Planck 2018 Bảng 2 là 13,797 ± 0,023 tỷ năm. Thêm nguồn."
+  - id: C-7
+    claim: "Vùng đậm đặc hút thêm vật chất; các vùng xung quanh 'bị rút sạch vật chất', phát triển thành khoảng trống khổng lồ."
+    verdict: partially-supported
+    severity: S3
+    evidence: "https://arxiv.org/html/0912.2997"
+    note: "Cơ chế tổng quát (bất ổn định hấp dẫn khuếch đại dao động mật độ) phù hợp với review. Nhưng 'rút sạch' là sai lệch: void vẫn còn khoảng 20% mật độ trung bình và vẫn có thiên hà. Bài cũng bỏ mất vai trò chính của void, là vùng kém đặc giãn nở nhanh hơn xung quanh chứ không chỉ bị 'hút cạn'. Sửa 'rút sạch' thành 'ngày càng thưa' và nêu cả sự giãn nở của void, kèm nguồn."
+  - id: C-8
+    claim: "Mạng lưới vũ trụ: sợi là nơi thiên hà tập trung, nút là cụm thiên hà, khoảng rỗng ở giữa là void."
+    verdict: partially-supported
+    severity: S4
+    evidence: "https://arxiv.org/html/0912.2997"
+    note: "Review mô tả void là thành phần của mạng lưới vũ trụ. Mô tả nút/sợi hợp lý nhưng cần nguồn cho đúng từng thành phần."
+  - id: C-9
+    claim: "Boötes Void có đường kính khoảng 330 triệu năm ánh sáng, còn gọi là 'The Great Nothing'."
+    verdict: unverifiable
+    severity: S3
+    evidence: "https://api.crossref.org/works/10.1086/183623"
+    note: "Crossref xác nhận bài phát hiện gốc: Kirshner, Oemler, Schechter, Shectman 1981, 'A million cubic megaparsec void in Bootes' (ApJ 248, L57; doi 10.1086/183623). Tiêu đề nêu thể tích khoảng 10⁶ Mpc³ (nếu là hình cầu thì đường kính khoảng 124 Mpc, tức khoảng 400 triệu năm ánh sáng, chưa xét hệ số h mà bài gốc dùng). Lượt này không mở được tóm tắt ADS, nên chưa đối chiếu được con số 330 triệu năm ánh sáng với nguồn bậc 1; con số này chỉ thấy trên nguồn bậc 4–5 (BBC Science Focus, Wikipedia). Biệt danh 'The Great Nothing' không có nguồn. Lấy đường kính từ bài gốc hoặc khảo sát sau (Kirshner và cs. 1987) kèm đơn vị và giá trị h; biệt danh thì cắt. Review arXiv:0912.2997 cũng ghi Boötes là 'most dramatic specimen', có thể trích cho ý đó."
+  - id: C-10
+    claim: "Đường kính Ngân Hà khoảng 105.000 năm ánh sáng; Boötes Void lớn hơn Ngân Hà hơn 3.000 lần."
+    verdict: unverifiable
+    severity: S3
+    evidence: "—"
+    note: "Phép chia đúng (330.000.000 / 105.000 ≈ 3.143), nhưng cả hai số đầu vào đều chưa có nguồn, và đường kính Ngân Hà thay đổi tùy cách định nghĩa rìa đĩa. 'Lớn hơn 3.000 lần' là so sánh đường kính, không phải thể tích; nói rõ. Có nguồn cho hai số thì giữ, không thì cắt."
+  - id: C-11
+    claim: "Với kích thước đó, khu vực này đáng lẽ chứa hàng nghìn thiên hà nhưng chỉ phát hiện khoảng vài chục thiên hà."
+    verdict: unverifiable
+    severity: S3
+    evidence: "—"
+    note: "Không có nguồn bậc 1–2 nào được mở. Kết quả tìm kiếm (nguồn bậc 4–5) nêu khoảng 60 thiên hà sau các khảo sát 1987–1989 và khoảng 2.000 thiên hà kỳ vọng; không được dùng. Lấy số từ các bài khảo sát gốc, kèm năm; không tìm được thì cắt."
+  - id: C-12
+    claim: "Nhiệt độ nền của void khoảng 2,725 K, tương đương −270,4°C."
+    verdict: partially-supported
+    severity: S3
+    evidence: "https://arxiv.org/abs/0911.1955"
+    note: "Fixsen 2009 (ApJ 707, 916): T_CMB = 2,72548 ± 0,00057 K, quy đổi ra −270,42°C nên số và phép đổi đúng. Nhưng gọi đây là 'nhiệt độ của void' là mô tả gây hiểu sai: 2,725 K là nhiệt độ của bức xạ nền, không phải nhiệt độ của lượng khí loãng trong void. Lượt này không mở được nguồn về nhiệt độ khí liên thiên hà (công cụ tìm kiếm lỗi; Hui & Gnedin 1997 chỉ đọc được tóm tắt, không có số), nên không kết luận khí nóng hay lạnh. Sửa thành 'bức xạ nền vi sóng vũ trụ, nhiệt độ 2,7255 K, lấp đầy cả các void' và bỏ cách gọi 'nhiệt độ của void'."
+  - id: C-13
+    claim: "Nếu không có CMB, nhiệt độ của các void sẽ tiến gần tới 0 Kelvin."
+    verdict: unsupported
+    severity: S3
+    evidence: "—"
+    note: "Không có nguồn. Câu này cũng lẫn nhiệt độ bức xạ với nhiệt độ vật chất, và bỏ qua các nguồn bức xạ khác (ánh sáng sao, thiên hà). Nghi ngờ thì cắt."
+  - id: C-14
+    claim: "Void vẫn chứa từ trường và điện trường yếu, tia vũ trụ năng lượng cao, dao động lượng tử của chân không."
+    verdict: unverifiable
+    severity: S3
+    evidence: "—"
+    note: "Không có nguồn cho từng thành phần. Từ trường trong void là chủ đề nghiên cứu còn mở; 'điện trường yếu' không có cơ sở được trích. Cắt những mục không tìm được nguồn bậc 1–2; ghi rõ mục nào là suy luận lý thuyết."
+  - id: C-15
+    claim: "Các Cosmic Voids là những cấu trúc lớn nhất và bí ẩn nhất trong vũ trụ."
+    verdict: unsupported
+    severity: S3
+    evidence: "https://arxiv.org/html/0912.2997"
+    note: "So sánh 'nhất' không có nguồn. Review cho đường kính void điển hình 10–20 h⁻¹ Mpc, và 20–50 h⁻¹ Mpc 'không hiếm'. Chưa có nguồn nào nói void là cấu trúc lớn nhất, và 'bí ẩn nhất' là phóng đại. Tiêu đề 'Cấu trúc bí ẩn bậc nhất' cũng vậy. Cắt các từ so sánh nhất."
+fixes:
+  - "Quay bài về bước 1 (content-research): bài có 0 nguồn; gắn nguồn bậc 1–2 cho từng mục trước khi duyệt lại."
+  - "Trích van de Weygaert & Platen (arXiv:0912.2997) cho: void chiếm khoảng 95% thể tích (theo phân bố thiên hà), δ ≈ −0,8, đường kính điển hình 10–20 h⁻¹ Mpc, vai trò của void trong mạng lưới vũ trụ."
+  - "Thay 'gần như rỗng hoàn toàn' và 'bị rút sạch vật chất' bằng 'mật độ chỉ khoảng một phần năm mức trung bình'; thêm ý void giãn nở nhanh hơn xung quanh, kèm nguồn."
+  - "Cắt câu 'mỗi mét khối chỉ chứa khoảng vài proton' và toàn bộ bảng mật độ, trừ khi mỗi dòng có nguồn bậc 1–2; nếu cần một số thì nêu mật độ baryon trung bình vũ trụ ≈ 0,25 proton/m³ và ghi rõ là suy từ Ωbh² Planck 2018."
+  - "Đổi mục 'Nhiệt độ bên trong các Void' thành 'Bức xạ nền vi sóng vũ trụ lấp đầy cả void', ghi 2,7255 K và trích Fixsen 2009 (doi 10.1088/0004-637X/707/2/916); cắt câu 'nếu không có CMB void sẽ tiến gần 0 K'."
+  - "Lấy đường kính Boötes Void từ bài phát hiện Kirshner và cs. 1981 (doi 10.1086/183623) hoặc khảo sát 1987, kèm đơn vị Mpc và hệ số h; cắt 'The Great Nothing' và số 'hàng nghìn / vài chục thiên hà' nếu không có nguồn bậc 1–2."
+  - "Cắt 'cấu trúc lớn nhất và bí ẩn nhất'; đổi tiêu đề bỏ 'bí ẩn bậc nhất'."
+  - "Cắt 'điện trường yếu' và các thành phần không có nguồn trong danh sách 'void vẫn chứa'."
+  - "Ghi rõ so sánh 'lớn hơn Ngân Hà 3.000 lần' là theo đường kính, và gắn nguồn cho đường kính Ngân Hà hoặc cắt."
+suggestedSources:
+  - title: "Cosmic Voids: structure, dynamics and galaxies"
+    url: "https://arxiv.org/abs/0912.2997"
+    doi: ""
+    publisher: "van de Weygaert & Platen (arXiv review)"
+    year: 2009
+    tier: 1
+    covers: "Định nghĩa void, tỉ lệ thể tích khoảng 95%, độ kém đặc δ ≈ −0,8, kích thước điển hình, động lực học và vai trò trong mạng lưới vũ trụ; nhắc Boötes void"
+  - title: "A million cubic megaparsec void in Bootes"
+    url: "https://doi.org/10.1086/183623"
+    doi: "10.1086/183623"
+    publisher: "The Astrophysical Journal 248, L57 (Kirshner, Oemler, Schechter, Shectman)"
+    year: 1981
+    tier: 1
+    covers: "Phát hiện gốc Boötes Void; kích thước (lượt này chỉ xác nhận tiêu đề/metadata qua Crossref, chưa đọc toàn văn)"
+  - title: "The Temperature of the Cosmic Microwave Background"
+    url: "https://arxiv.org/abs/0911.1955"
+    doi: "10.1088/0004-637X/707/2/916"
+    publisher: "The Astrophysical Journal 707, 916 (Fixsen)"
+    year: 2009
+    tier: 1
+    covers: "Nhiệt độ CMB 2,72548 ± 0,00057 K"
+  - title: "Planck 2018 results. VI. Cosmological parameters"
+    url: "https://www.aanda.org/articles/aa/full_html/2020/09/aa33910-18/aa33910-18.html"
+    doi: "10.1051/0004-6361/201833910"
+    publisher: "Astronomy & Astrophysics 641, A6 (Planck Collaboration)"
+    year: 2020
+    tier: 1
+    covers: "Tuổi vũ trụ; Ωbh² và H0 để suy mật độ baryon trung bình"
+openQuestions:
+  - "Nhiệt độ động học của khí trong void khác nhiệt độ CMB bao nhiêu? Lượt này không mở được nguồn bậc 1 (công cụ tìm kiếm lỗi), nên chưa viết được thay thế; cần nguồn trước khi bài nói gì về 'nhiệt độ của void'."
+  - "Con số 330 triệu năm ánh sáng cho Boötes Void phổ biến trên nguồn đại chúng nhưng chưa đối chiếu được với bài gốc 1981/1987 (ADS chặn truy cập tự động). Cần người mở toàn văn."
+  - "Bài xuất bản 2026-09-08 với 0 nguồn, nghĩa là nó đã lọt qua gate chính xác. Cần gỡ xuống ngay và điều tra đường xuất bản nào cho phép bài 0 nguồn ở trạng thái PUBLISHED."

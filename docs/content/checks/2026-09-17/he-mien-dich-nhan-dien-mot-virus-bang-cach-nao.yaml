@@ -1,0 +1,99 @@
+slug: he-mien-dich-nhan-dien-mot-virus-bang-cach-nao
+checkedAt: 2026-09-17
+checkedBy: science-editor
+sourceCount: 2
+verdict: reject
+summary: "Một trong hai nguồn (Nature Reviews Immunology 2021, “Immune memory: understanding long-term protection”) không tìm thấy dưới tên đó qua hai lượt tìm — coi là citation bịa, S1; phần còn lại chỉ tựa vào một cuốn giáo trình không có url/trang, và các mốc thời gian 5–10 ngày, 1–3 ngày, 10¹¹ chưa có nguồn đã mở."
+claims:
+  - id: C-1
+    claim: "Nguồn 2: “Immune memory: understanding long-term protection”, Nature Reviews Immunology (2021)"
+    verdict: unsupported
+    severity: S1
+    evidence: "—"
+    note: "Hai lượt tìm web theo đúng tên (có và không kèm tên tạp chí) ngày 2026-09-17 không ra bài nào (evidence là kết quả tìm rỗng, không có URL để dẫn). Kết quả gần nhất là bộ sưu tập “Immune memory” của Nature và bài “A guide to adaptive immune memory” (Nature Reviews Immunology, 2024) — khác tên, khác năm. Coi là citation bịa: gỡ khỏi bài; không được thay bằng bài gần tên mà không đọc và đối chiếu từng claim."
+  - id: C-2
+    claim: "Nguồn 1: Janeway's Immunobiology, 10th edition, W. W. Norton (2022)"
+    verdict: unverifiable
+    severity: S3
+    evidence: "—"
+    note: "Không mở được bản 10 trong lượt này. Mục nguồn thiếu url/ISBN/chương/trang, nên không claim nào trong bài truy về được một chỗ cụ thể. Một giáo trình đỡ cả bài là under-sourced."
+  - id: C-3
+    claim: "Miễn dịch bẩm sinh phản ứng trong vài phút tới vài giờ"
+    verdict: unverifiable
+    severity: S3
+    evidence: "—"
+    note: "Không có nguồn đã mở trong lượt này. Gắn chương giáo trình có trang, hoặc bỏ mốc thời gian."
+  - id: C-4
+    claim: "Đại thực bào và tế bào tua mang PRR, nhận diện đặc trưng phân tử chung như RNA sợi đôi; kích hoạt thì tiết interferon và cytokine"
+    verdict: unverifiable
+    severity: S3
+    evidence: "—"
+    note: "Nội dung phù hợp giáo trình chuẩn nhưng chưa có nguồn đã mở trong lượt này. Câu “RNA sợi đôi hầu như chỉ xuất hiện khi virus đang nhân lên” là khái quát quá mức nếu không kèm nguồn — đổi thành “thường gặp trong quá trình nhân lên của nhiều virus” khi có nguồn."
+  - id: C-5
+    claim: "Miễn dịch thích ứng mất 5–10 ngày cho lần gặp đầu tiên; lần thứ hai 1–3 ngày"
+    verdict: unsupported
+    severity: S3
+    evidence: "—"
+    note: "Hai khoảng số không có nguồn đã mở. Cắt số, hoặc gắn chương/trang giáo trình hoặc tổng quan bậc 1 nói đúng các khoảng này."
+  - id: C-6
+    claim: "Tái tổ hợp V(D)J sinh ra khoảng 10¹¹ biến thể; mỗi tế bào B và T mang một thụ thể duy nhất"
+    verdict: unverifiable
+    severity: S3
+    evidence: "—"
+    note: "Janeway bản 5 trên NCBI Bookshelf (NBK27140) được tìm thấy với câu “antibody repertoire … in humans is at least 10^11”, nhưng trang bị chặn khi mở nên không dùng làm evidence. Nếu xác nhận, số đó là kích thước repertoire KHÁNG THỂ ở người và là cận dưới (“ít nhất”), không phải số biến thể chung cho cả B và T. Sửa câu cho khớp; tách thụ thể T ra hoặc bỏ. “Mỗi tế bào mang một thụ thể duy nhất” là giản lược mất thông tin — ghi “mỗi dòng tế bào mang một loại thụ thể”."
+  - id: C-7
+    claim: "Chọn lọc dòng: cơ thể chọn ra thụ thể có sẵn rồi khuếch đại"
+    verdict: unverifiable
+    severity: S4
+    evidence: "—"
+    note: "Khái niệm chuẩn nhưng chưa có nguồn đã mở. Gắn chương giáo trình."
+  - id: C-8
+    claim: "Tế bào B và T nhớ có thể tồn tại hàng chục năm"
+    verdict: unsupported
+    severity: S3
+    evidence: "—"
+    note: "Không có nguồn; nguồn được gắn cho phần này chính là citation bịa ở C-1. Cần nguồn bậc 1 có số liệu theo dõi dài hạn, hoặc hạ thành “có thể kéo dài nhiều năm”."
+  - id: C-9
+    claim: "Vaccine đưa vào một phần mầm bệnh không gây bệnh (protein bề mặt, virus bất hoạt, mRNA) để tạo trí nhớ"
+    verdict: unverifiable
+    severity: S3
+    evidence: "—"
+    note: "Đúng về khái niệm nhưng không có nguồn. Đây là nội dung vaccine — lĩnh vực nhạy cảm — nên phải gắn nguồn CDC/WHO/NIH trước khi xuất bản."
+  - id: C-10
+    claim: "Virus cúm biến đổi protein bề mặt liên tục (kháng nguyên trôi dạt), vì vậy vaccine cúm được cập nhật hằng năm"
+    verdict: verified
+    severity: S4
+    evidence: https://www.cdc.gov/flu/php/viruses/change.html
+    note: "CDC: drift là đột biến nhỏ làm đổi HA và NA; thành phần vaccine “reviewed annually and updated as needed”. Sửa “được cập nhật hằng năm” thành “được xem xét hằng năm và cập nhật khi cần” để khớp nguồn; gắn citation."
+  - id: C-11
+    claim: "Vaccine sởi hiệu quả gần như trọn đời"
+    verdict: verified
+    severity: S4
+    evidence: https://www.cdc.gov/measles/vaccines/index.html
+    note: "CDC: “Most people who are vaccinated with MMR … will be protected for life”; 1 liều 93%, 2 liều 97%. Giữ ý, gắn citation, nên nêu 97% với 2 liều thay cho “gần như”."
+fixes:
+  - "Gỡ nguồn “Immune memory: understanding long-term protection” (Nature Reviews Immunology 2021) khỏi bài; ghi vào error-pattern của article-generator là citation bịa."
+  - "Quay lại bước 1 (content-research): lập source pack mới gồm chương giáo trình có trang cụ thể và ít nhất một tổng quan peer-review về trí nhớ miễn dịch đã mở và đọc."
+  - "Cắt hai khoảng thời gian 5–10 ngày và 1–3 ngày trừ khi có nguồn nêu đúng số."
+  - "Sửa câu 10¹¹: nói là kích thước repertoire kháng thể ở người, “ít nhất”, và chỉ giữ khi đã mở được nguồn; không gộp với thụ thể T."
+  - "Gắn CDC cho phần cúm (sửa thành “xem xét hằng năm, cập nhật khi cần”) và cho phần sởi (97% với 2 liều, bảo vệ suốt đời ở đa số người)."
+  - "Gắn nguồn CDC/WHO/NIH cho đoạn cơ chế vaccine."
+  - "Điền url, ISBN hoặc DOI và accessedAt cho mọi nguồn còn giữ."
+suggestedSources:
+  - title: "CDC — trang về cách virus cúm biến đổi (drift/shift); tiêu đề chính xác chưa ghi lại trong lượt này"
+    url: https://www.cdc.gov/flu/php/viruses/change.html
+    doi: ""
+    publisher: U.S. Centers for Disease Control and Prevention
+    year: "không rõ — trang web, truy cập 2026-09-17"
+    tier: 2
+    covers: "Kháng nguyên trôi dạt và việc xem xét thành phần vaccine cúm hằng năm"
+  - title: "CDC — trang về vaccine sởi (MMR/MMRV); tiêu đề chính xác chưa ghi lại trong lượt này"
+    url: https://www.cdc.gov/measles/vaccines/index.html
+    doi: ""
+    publisher: U.S. Centers for Disease Control and Prevention
+    year: "không rõ — trang web, truy cập 2026-09-17"
+    tier: 2
+    covers: "Hiệu quả MMR 93%/97%, bảo vệ suốt đời ở đa số người"
+openQuestions:
+  - "Có thể bài “A guide to adaptive immune memory” (Nature Reviews Immunology 2024) là thứ generator định trích nhưng nhớ sai tên và năm. Không được tự thay — cần người mở và đối chiếu từng claim trước khi dùng."
+  - "Bài đang PUBLISHED với một citation bịa. Theo chính sách đính chính hiển thị, cần người quyết gỡ bài ngay hay gắn ghi chú đính chính trong lúc chờ viết lại."

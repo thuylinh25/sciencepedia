@@ -1,0 +1,169 @@
+slug: ho-den-noi-hinh-hoc-cua-khong-gian-sup-do
+checkedAt: 2026-09-17
+checkedBy: science-editor
+sourceCount: 2
+verdict: revise
+summary: "Các con số, mốc năm và mô tả ảnh EHT (ảnh bóng hố đen) đều đúng, nhưng hai nguồn không đỡ được bài (một trang chủ, một trích dẫn thiếu cả URL lẫn DOI), và câu về hố đen khối lượng trung gian nói quá mức chắc chắn."
+claims:
+  - id: C-1
+    claim: "Bán kính Schwarzschild của hố đen khối lượng Mặt Trời ~3 km, khối lượng Trái Đất ~9 mm"
+    verdict: verified
+    severity: none
+    evidence: "Tính theo R_s = 2GM/c² (G=6,674e-11; c=2,998e8; M☉=1,989e30 kg; M⊕=5,972e24 kg) → 2,95 km và 8,87 mm"
+    note: "Đúng bậc độ lớn và làm tròn hợp lý. Vẫn cần một nguồn trích dẫn cho công thức."
+  - id: C-2
+    claim: "Sagittarius A* có khối lượng 4,3 triệu khối lượng Mặt Trời, bán kính ~12,7 triệu km"
+    verdict: verified
+    severity: S3
+    evidence: https://www.mpe.mpg.de/7968905/news20231025
+    note: "GRAVITY/MPE cho 4,297 triệu M☉; 2,953 km × 4,297e6 ≈ 12,69 triệu km. Số đúng nhưng bài không có nguồn nào cho khối lượng này (EHT 2022 dùng ~4 triệu). Gắn nguồn GRAVITY và ghi mốc đo."
+  - id: C-3
+    claim: "Hố đen sao có khối lượng 5–100 khối lượng Mặt Trời"
+    verdict: partially-supported
+    severity: S3
+    evidence: https://science.nasa.gov/universe/black-holes/types/
+    note: "NASA viết «từ vài đến hàng trăm lần khối lượng Mặt Trời», không có mốc cứng 5–100. Sửa theo NASA hoặc cắt khoảng số."
+  - id: C-4
+    claim: "Hố đen khối lượng trung gian (100–100.000 M☉) đến nay đã có vài ứng viên được xác nhận qua sóng hấp dẫn"
+    verdict: contradicted
+    severity: S3
+    evidence: "https://science.nasa.gov/universe/black-holes/types/ ; https://www.ligo.caltech.edu/news/ligo20200902"
+    note: "«Ứng viên được xác nhận» tự mâu thuẫn và nâng mức chắc chắn. NASA: nhiều ứng viên đã được xác định nhưng khó xác nhận; khoảng khối lượng NASA là ~100 tới hàng trăm nghìn M☉. LIGO: GW190521 (công bố 2020) để lại hố đen 142 M☉, lần phát hiện rõ ràng đầu tiên của hố đen khối lượng trung gian. Viết lại theo đúng hai ý này."
+  - id: C-5
+    claim: "Hố đen siêu khối lượng nằm ở tâm hầu hết các thiên hà lớn"
+    verdict: verified
+    severity: none
+    evidence: https://science.nasa.gov/universe/black-holes/types/
+    note: "NASA: hầu như mọi thiên hà lớn, kể cả Ngân Hà, đều có hố đen siêu khối lượng ở tâm."
+  - id: C-6
+    claim: "Theo dõi quỹ đạo sao quanh tâm Ngân Hà đã mang lại giải Nobel Vật lý 2020"
+    verdict: partially-supported
+    severity: S4
+    evidence: https://www.nobelprize.org/prizes/physics/2020/summary/
+    note: "Chỉ một nửa giải (Genzel & Ghez) dành cho phát hiện «một vật thể đặc siêu khối lượng ở tâm thiên hà»; nửa kia trao cho Penrose về lý thuyết. Sửa thành «một nửa giải Nobel Vật lý 2020, trao cho Reinhard Genzel và Andrea Ghez»."
+  - id: C-7
+    claim: "LIGO ghi nhận vụ sáp nhập hai hố đen lần đầu năm 2015"
+    verdict: verified
+    severity: none
+    evidence: https://doi.org/10.1103/PhysRevLett.116.061102
+    note: "GW150914 được ghi ngày 14/09/2015, công bố PRL 116, 061102 ngày 11/02/2016."
+  - id: C-8
+    claim: "Sóng hấp dẫn xác nhận một dự đoán của Einstein từ 1916"
+    verdict: unverifiable
+    severity: S4
+    evidence: "—"
+    note: "Lượt này chưa mở được bài gốc năm 1916. Gắn nguồn trước khi xuất bản lại; không gắn được thì bỏ mốc năm."
+  - id: C-9
+    claim: "Năm 2019 EHT công bố ảnh bóng hố đen ở M87, năm 2022 là Sagittarius A*"
+    verdict: verified
+    severity: none
+    evidence: "https://www.eso.org/public/news/eso1907/ ; https://www.eso.org/public/news/eso2208-eht-mw/ ; https://doi.org/10.3847/2041-8213/ab0ec7"
+    note: "Đúng năm (10/04/2019; 12/05/2022), đúng đối tượng, đúng thứ được chụp: bóng (shadow), không phải chân trời sự kiện; ESO nói bóng lớn hơn chân trời khoảng 2,5 lần. Giữ nguyên chữ «bóng»."
+  - id: C-10
+    claim: "Hawking năm 1974 chỉ ra hố đen phát bức xạ nhiệt yếu và bốc hơi; chưa quan sát được"
+    verdict: verified
+    severity: none
+    evidence: "https://doi.org/10.1038/248030a0 ; https://doi.org/10.1007/BF02345020"
+    note: "Nature 248, 30 (03/1974) là bài công bố; bài kỹ thuật đầy đủ là CMP 43, 199–220 (08/1975). Mốc 1974 chấp nhận được; nên trích cả hai."
+  - id: C-11
+    claim: "Người rơi qua chân trời sự kiện không cảm nhận điều gì đặc biệt tại thời điểm vượt qua"
+    verdict: unverifiable
+    severity: S3
+    evidence: "—"
+    note: "Không có nguồn, lượt này chưa mở được nguồn. Câu chỉ đúng với hố đen đủ lớn; với hố đen khối lượng sao, lực thủy triều tác động trước khi tới chân trời. Đây là rút gọn làm mất thông tin (quy tắc 4). Thêm điều kiện «với hố đen siêu khối lượng» kèm nguồn, hoặc cắt câu."
+  - id: C-12
+    claim: "Vật chất trong đĩa bồi tụ nóng tới hàng triệu độ, phát tia X"
+    verdict: unverifiable
+    severity: S3
+    evidence: "—"
+    note: "Con số không có nguồn. Gắn nguồn NASA/Chandra hoặc cắt «hàng triệu độ»."
+  - id: C-13
+    claim: "Liên kết «bán kính Schwarzschild» trỏ tới bài lỗ trắng và lỗ sâu"
+    verdict: contradicted
+    severity: S4
+    evidence: "scratchpad/pending/lo-trang-va-lo-sau-hai-nghiem-toan-hoc-chua-ai-nhin-thay.md"
+    note: "Bài đích không định nghĩa bán kính Schwarzschild. Đổi thành thuật ngữ [[bán kính Schwarzschild]] hoặc bỏ liên kết."
+fixes:
+  - "Thay nguồn 1 (trang chủ eventhorizontelescope.org, không đỡ claim cụ thể nào) bằng EHT ApJL 2019 (DOI 10.3847/2041-8213/ab0ec7) cho M87* và thông cáo ESO eso2208 cho Sgr A*; điền accessedAt."
+  - "Điền cho nguồn 2: DOI 10.1103/PhysRevLett.116.061102, URL https://doi.org/10.1103/PhysRevLett.116.061102, accessedAt."
+  - "Viết lại đoạn hố đen khối lượng trung gian: bỏ «vài ứng viên được xác nhận»; nêu GW190521 (~142 M☉, công bố 2020) là bằng chứng rõ đầu tiên, và phần lớn ứng viên khác chưa được xác nhận (NASA)."
+  - "Sửa khoảng khối lượng hố đen sao thành «từ vài đến hàng trăm M☉» theo NASA, hoặc cắt số."
+  - "Sửa câu Nobel thành «một nửa giải Nobel Vật lý 2020, trao cho Genzel và Ghez»."
+  - "Thêm điều kiện «với hố đen siêu khối lượng» vào câu người rơi qua chân trời, kèm nguồn; không có nguồn thì cắt câu."
+  - "Gắn nguồn cho «hàng triệu độ» ở đĩa bồi tụ, không có thì cắt con số."
+  - "Gắn nguồn GRAVITY (MPE 2023) cho khối lượng 4,3 triệu M☉ của Sgr A*."
+  - "Gắn hai bài Hawking (Nature 1974; CMP 1975) cho mục bức xạ Hawking."
+  - "Sửa liên kết «bán kính Schwarzschild» theo C-13."
+suggestedSources:
+  - title: "First M87 Event Horizon Telescope Results. I. The Shadow of the Supermassive Black Hole"
+    url: https://doi.org/10.3847/2041-8213/ab0ec7
+    doi: 10.3847/2041-8213/ab0ec7
+    publisher: The Astrophysical Journal Letters (EHT Collaboration)
+    year: 2019
+    tier: 1
+    covers: "Ảnh bóng M87* năm 2019"
+  - title: "Astronomers reveal first image of the black hole at the heart of our galaxy (eso2208)"
+    url: https://www.eso.org/public/news/eso2208-eht-mw/
+    doi:
+    publisher: ESO
+    year: 2022
+    tier: 2
+    covers: "Ảnh bóng Sgr A* năm 2022"
+  - title: "Astronomers Capture First Image of a Black Hole (eso1907)"
+    url: https://www.eso.org/public/news/eso1907/
+    doi:
+    publisher: ESO
+    year: 2019
+    tier: 2
+    covers: "M87* — thứ được chụp là bóng, không phải chân trời sự kiện"
+  - title: "Observation of Gravitational Waves from a Binary Black Hole Merger"
+    url: https://doi.org/10.1103/PhysRevLett.116.061102
+    doi: 10.1103/PhysRevLett.116.061102
+    publisher: Physical Review Letters
+    year: 2016
+    tier: 1
+    covers: "GW150914 (ghi năm 2015)"
+  - title: "Black Hole Types"
+    url: https://science.nasa.gov/universe/black-holes/types/
+    doi:
+    publisher: NASA
+    year: 2026
+    tier: 2
+    covers: "Ba loại hố đen, khoảng khối lượng, tình trạng hố đen khối lượng trung gian, hố đen ở tâm thiên hà"
+  - title: "A bang in LIGO and Virgo detectors signals most massive gravitational-wave source yet"
+    url: https://www.ligo.caltech.edu/news/ligo20200902
+    doi:
+    publisher: LIGO Lab, Caltech
+    year: 2020
+    tier: 2
+    covers: "GW190521 — hố đen khối lượng trung gian 142 M☉"
+  - title: "Ultracompact: The Black Hole at the center of our Milky Way"
+    url: https://www.mpe.mpg.de/7968905/news20231025
+    doi:
+    publisher: Max Planck Institute for Extraterrestrial Physics
+    year: 2023
+    tier: 2
+    covers: "Khối lượng Sgr A* là 4,297 triệu M☉ (GRAVITY)"
+  - title: "The Nobel Prize in Physics 2020 — summary"
+    url: https://www.nobelprize.org/prizes/physics/2020/summary/
+    doi:
+    publisher: Nobel Prize Outreach
+    year: 2020
+    tier: 2
+    covers: "Cách chia giải Nobel Vật lý 2020"
+  - title: "Black hole explosions?"
+    url: https://doi.org/10.1038/248030a0
+    doi: 10.1038/248030a0
+    publisher: Nature
+    year: 1974
+    tier: 1
+    covers: "Bức xạ Hawking (công bố 1974)"
+  - title: "Particle creation by black holes"
+    url: https://doi.org/10.1007/BF02345020
+    doi: 10.1007/BF02345020
+    publisher: Communications in Mathematical Physics
+    year: 1975
+    tier: 1
+    covers: "Bức xạ Hawking (bài kỹ thuật)"
+openQuestions:
+  - "Bài đang ở trạng thái PUBLISHED dù trích dẫn thiếu URL/DOI/accessedAt. Cần xác định vì sao gate publish không chặn."
