@@ -44,7 +44,7 @@ export default async function AdminLayout({
     /* `content-start` để hai cột KHÔNG bị kéo cao bằng nhau.
 
        Mặc định của grid là `stretch`: cột thanh bên và cột nội dung luôn cao
-       bằng cột dài hơn. Trên trang Người dùng, thanh bên (6 mục) cao hơn cái
+       bằng cột dài hơn. Trên trang Người dùng, thanh bên (7 mục) cao hơn cái
        bảng một dòng, nên chính nó là thứ định chiều cao cả khối — và phần
        thừa ở cột nội dung là khoảng trắng không ai đặt ra.
 

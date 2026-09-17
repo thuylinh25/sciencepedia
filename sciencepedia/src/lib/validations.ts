@@ -88,6 +88,35 @@ export const tagSchema = z.object({
 export type TagInput = z.infer<typeof tagSchema>;
 
 /**
+ * Mục từ điển thuật ngữ.
+ *
+ * `shortDef` giới hạn 320 ký tự vì nó hiện trong tooltip rộng 22rem: dài hơn
+ * thì tooltip che mất đoạn văn người ta đang đọc, mà tooltip có thanh cuộn thì
+ * còn tệ hơn. Định nghĩa dài thuộc về `fullDef`.
+ *
+ * `aliases` nhập bằng một dòng, cách nhau bởi dấu phẩy; server tự đưa về dạng
+ * slug. Không bắt người nhập tự gõ slug — họ gõ "mô-men động lượng", máy lo
+ * phần còn lại.
+ */
+export const glossaryTermSchema = z.object({
+  slug: optionalSlug,
+  term: z.string().min(1, "Chưa có tên thuật ngữ").max(120),
+  termEn: z.string().max(120).optional().or(z.literal("")),
+  shortDef: z
+    .string()
+    .min(20, "Định nghĩa ngắn tối thiểu 20 ký tự")
+    .max(320, "Định nghĩa ngắn tối đa 320 ký tự — phần dài hơn để ở định nghĩa đầy đủ"),
+  shortDefEn: z.string().max(320).optional().or(z.literal("")),
+  fullDef: z.string().max(4000).optional().or(z.literal("")),
+  fullDefEn: z.string().max(4000).optional().or(z.literal("")),
+  aliases: z.string().max(300).optional().or(z.literal("")),
+  category: z.string().max(60).optional().or(z.literal("")),
+  image: imageUrl,
+  imageCredit: z.string().max(300).optional().or(z.literal("")),
+});
+export type GlossaryTermInput = z.infer<typeof glossaryTermSchema>;
+
+/**
  * Quản trị viên tạo tài khoản hộ người khác.
  *
  * Khác `registerSchema` ở hai chỗ, và cả hai đều có lý do:

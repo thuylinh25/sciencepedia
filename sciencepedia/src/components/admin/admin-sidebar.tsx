@@ -4,6 +4,7 @@ import { useTranslations } from "next-intl";
 import type { Role } from "@prisma/client";
 import {
   ArrowLeft,
+  BookA,
   FileText,
   FolderTree,
   LayoutDashboard,
@@ -20,6 +21,7 @@ const ITEMS = [
   { href: "/admin/articles", key: "articles" as const, icon: FileText, min: "EDITOR" as Role },
   { href: "/admin/categories", key: "categories" as const, icon: FolderTree, min: "ADMIN" as Role },
   { href: "/admin/tags", key: "tags" as const, icon: Tags, min: "EDITOR" as Role },
+  { href: "/admin/glossary", key: "glossary" as const, icon: BookA, min: "EDITOR" as Role },
   { href: "/admin/users", key: "users" as const, icon: Users, min: "ADMIN" as Role },
 ];
 

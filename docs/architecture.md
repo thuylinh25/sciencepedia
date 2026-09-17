@@ -160,6 +160,13 @@ hoặc `aliases` (lưu dạng slug).
   chưa qua science-editor; lưu rồi phát lại là đưa nội dung chưa thẩm định lên trang
   bằng cửa sau. Client chỉ gửi slug — định nghĩa đọc từ DB và neo vào prompt, để
   endpoint không thành proxy LLM tự do. Rate limit khoá riêng `glossary:*`.
+- **Hai đường ghi, một bảng**: `/admin/glossary` (EDITOR; xoá đòi ADMIN) và
+  `prisma/seed-data/glossary.json` + `glossary:seed` (upsert theo slug). Seed
+  ghi đè theo file, nên sửa mục nào trên trang quản trị thì sửa cả trong file —
+  không thì lượt seed sau kéo bản cũ về. File vẫn là bản có NGUỒN.
+- **Slug và alias không được đụng nhau giữa các mục**: `[[khoá]]` trùng thì bài
+  hiện định nghĩa nào là may rủi theo thứ tự truy vấn, nên action chặn lúc lưu
+  và chỉ đích danh mục đang giữ khoá đó.
 - **Khoá không có mục từ hiện như chữ thường**, không phải tooltip rỗng. Liệt kê
   khoá còn thiếu: `npm run glossary:check` (chỉ đọc).
 
