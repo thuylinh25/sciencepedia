@@ -161,9 +161,11 @@ hoặc `aliases` (lưu dạng slug).
   bằng cửa sau. Client chỉ gửi slug — định nghĩa đọc từ DB và neo vào prompt, để
   endpoint không thành proxy LLM tự do. Rate limit khoá riêng `glossary:*`.
 - **Hai đường ghi, một bảng**: `/admin/glossary` (EDITOR; xoá đòi ADMIN) và
-  `prisma/seed-data/glossary.json` + `glossary:seed` (upsert theo slug). Seed
-  ghi đè theo file, nên sửa mục nào trên trang quản trị thì sửa cả trong file —
-  không thì lượt seed sau kéo bản cũ về. File vẫn là bản có NGUỒN.
+  `prisma/seed-data/glossary.json` + `glossary:seed`. File vẫn là bản có NGUỒN,
+  nhưng seed KHÔNG còn quyền đè vô điều kiện: mục nào trong CSDL đã khác file
+  thì `--write` giữ nguyên và in ra lệch ở trường nào, vì lệch gần như luôn có
+  nghĩa là biên tập viên vừa sửa tay — đè lên là xoá công của họ mà không có
+  một dòng lỗi nào. File thắng chỉ khi gõ thêm `--force`.
 - **Slug và alias không được đụng nhau giữa các mục**: `[[khoá]]` trùng thì bài
   hiện định nghĩa nào là may rủi theo thứ tự truy vấn, nên action chặn lúc lưu
   và chỉ đích danh mục đang giữ khoá đó.
