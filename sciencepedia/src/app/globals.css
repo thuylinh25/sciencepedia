@@ -703,6 +703,51 @@
   padding-inline: 1.5rem 1.25rem;
 }
 
+/* Thuật ngữ `[[...]]` — cùng lý do layer như trên.
+
+   Trigger là một `<a>` thật (trỏ tới trang thuật ngữ, cho crawler và người
+   không bật JS), nên typography tô nó thành link: chữ vàng, đậm 500, gạch liền.
+   Thuật ngữ KHÔNG được trông như link: người đọc bấm link để rời trang, còn
+   bấm thuật ngữ để ở lại. Gạch chấm + giữ màu chữ là quy ước Wikipedia và
+   `<abbr>` đã dạy người đọc từ lâu. `(0,2,0)` thắng `:where(a)` của typography. */
+.glossary-term,
+.article-prose .glossary-term {
+  color: inherit;
+  font-weight: inherit;
+  text-decoration-line: underline;
+  text-decoration-style: dotted;
+  text-decoration-thickness: 1.5px;
+  text-decoration-color: color-mix(in oklab, var(--primary-strong) 75%, transparent);
+  text-underline-offset: 0.25em;
+  cursor: help;
+  border-radius: 0.2rem;
+  transition:
+    text-decoration-color 150ms,
+    background-color 150ms;
+}
+
+.glossary-term:hover,
+.glossary-term[aria-expanded="true"],
+.article-prose .glossary-term:hover,
+.article-prose .glossary-term[aria-expanded="true"] {
+  text-decoration-style: solid;
+  text-decoration-color: var(--primary-strong);
+  background-color: color-mix(in oklab, var(--primary-strong) 12%, transparent);
+}
+
+.glossary-term:focus-visible,
+.article-prose .glossary-term:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .glossary-term,
+  .article-prose .glossary-term {
+    transition: none;
+  }
+}
+
 /* --------------------------------------------------------------------------
    Hành trình thu phóng: hoà mờ giữa hai cấp.
    Chuyển động nằm ở lớp bọc chứ không ở camera của từng cảnh — nhờ vậy ba

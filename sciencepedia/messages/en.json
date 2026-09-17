@@ -116,6 +116,24 @@
     "heroFieldEmpty": "coming soon",
     "heroTitleRich": "The universe <hl>within reach</hl>"
   },
+  "glossary": {
+    "title": "Glossary",
+    "termLabel": "Term: {term}. Show explanation",
+    "viewDetails": "View details",
+    "openPage": "Open glossary page",
+    "noFullDef": "This entry has no full definition yet.",
+    "loadError": "Could not load this term.",
+    "related": "Articles using this term",
+    "imageCredit": "Image: {credit}",
+    "explainSimply": "Explain it simply",
+    "explainAgain": "Explain it another way",
+    "explaining": "Finding a simpler way to say it…",
+    "aiNotice": "Rephrased by AI from the verified definition and may be inaccurate. The definition above is the reference.",
+    "aiError": "Could not explain this right now. Please try again later.",
+    "aiRateLimited": "You have asked a lot in the last minute — wait a moment and try again.",
+    "aiBusy": "The AI service is overloaded right now. Please try again in a few minutes.",
+    "aiNotConfigured": "AI explanations are not enabled."
+  },
   "article": {
     "readingTime": "{minutes} min read",
     "views": "{count} views",

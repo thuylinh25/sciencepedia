@@ -138,6 +138,33 @@ Kiểm lại bất cứ lúc nào: `npm run graph:check` (chỉ đọc, không c
 
 ---
 
+## Thuật ngữ `[[...]]` — định nghĩa đi cùng HTML, chi tiết đi theo cú bấm
+
+Bảng `GlossaryTerm` (migration `20260917090000_glossary_term`). Trong bài viết
+`[[động lượng góc]]` hoặc `[[khoá|nhãn]]`; khoá là `slugify` vế trái, khớp `slug`
+hoặc `aliases` (lưu dạng slug).
+
+- **Định nghĩa ngắn tra trên server lúc render** (`getGlossaryForMarkdown`), đi
+  vào trang ISR qua props. Tooltip không fetch — rê chuột tức thì, không request
+  nào chạm DB theo lượt đọc. Cùng luật "không fetch nội dung phía client".
+- **Chi tiết + bài liên quan fetch khi bấm** (`GET /api/glossary/[slug]`, `s-maxage=300`).
+  Được phép vì cùng nội dung có bản server-render ở `/[locale]/glossary/[slug]`
+  (`DefinedTerm`, có trong sitemap) — cũng là `href` thật của thuật ngữ, nên
+  crawler và người không bật JS không gặp 404.
+- **Modal là chunk riêng** (`next/dynamic`), hâm khi tooltip mở. Bài có hàng chục
+  thuật ngữ mà không ai mở modal thì không tải Dialog.
+- **Trigger là `<a>`, không phải `<button>`**: internal link cho SEO + đường lui
+  không-JS. Style nằm ở `globals.css` chứ không bằng utility — typography tô `a`
+  ngoài layer (xem mục đệm ô bảng ở đó).
+- **Giải thích AI không bao giờ được lưu** (`POST .../explain`). Chữ mô hình sinh
+  chưa qua science-editor; lưu rồi phát lại là đưa nội dung chưa thẩm định lên trang
+  bằng cửa sau. Client chỉ gửi slug — định nghĩa đọc từ DB và neo vào prompt, để
+  endpoint không thành proxy LLM tự do. Rate limit khoá riêng `glossary:*`.
+- **Khoá không có mục từ hiện như chữ thường**, không phải tooltip rỗng. Liệt kê
+  khoá còn thiếu: `npm run glossary:check` (chỉ đọc).
+
+---
+
 ## Bản đồ bầu trời — thư viện ngoài không được đè lên phần còn lại
 
 `/space-map` nhúng Aladin Lite v3 của CDS (Strasbourg). Ba quyết định ở đây

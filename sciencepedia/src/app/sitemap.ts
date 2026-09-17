@@ -7,6 +7,7 @@ import {
   getAllTags,
   getPublishedSlugs,
 } from "@/server/queries";
+import { getGlossarySlugs } from "@/server/glossary";
 
 /** Sinh cả hai bản ngôn ngữ cho mỗi đường dẫn, kèm hreflang alternates. */
 function entry(
@@ -92,7 +93,22 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     return staticEntries;
   }
 
+  // Try riêng: bảng thuật ngữ hỏng (chưa migrate) không được kéo mất cả phần
+  // bài viết ra khỏi sitemap.
+  const glossary = await getGlossarySlugs().catch((error: Error) => {
+    console.warn("[sitemap] không đọc được thuật ngữ:", error.message);
+    return [];
+  });
+
   return [
+    ...glossary.flatMap((term) =>
+      entry(`/glossary/${term.slug}`, {
+        lastModified: term.updatedAt,
+        changeFrequency: "monthly",
+        priority: 0.5,
+      }),
+    ),
+
     ...staticEntries,
 
     ...articles.flatMap((article) =>

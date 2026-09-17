@@ -350,9 +350,54 @@ model Entity {
   articles        Article[]
   outgoingEdges   Relationship[] @relation("EdgeFrom")
   incomingEdges   Relationship[] @relation("EdgeTo")
+  glossaryTerms   GlossaryTerm[]
 
   @@index([entityType])
   @@index([wikidataQid])
+}
+
+/// Mục từ điển thuật ngữ — thứ hiện lên khi người đọc rê chuột vào `[[...]]`
+/// trong bài.
+///
+/// Vì sao là bảng riêng chứ không phải dùng thẳng `Entity`: entity là một khái
+/// niệm trong knowledge graph, còn mục từ là một ĐỊNH NGHĨA NGẮN viết cho người
+/// đang đọc dở một bài khác. Nhiều entity không cần mục từ, và nhiều cách gọi
+/// ("spin", "mômen động lượng") trỏ về cùng một mục. Khi hai thứ trùng nhau thì
+/// nối bằng `entityId` — bài viết liên quan suy ra từ đó.
+///
+/// `shortDef`/`fullDef` là nội dung khoa học: qua gate accuracy như thân bài.
+/// Giải thích do AI sinh ra KHÔNG được ghi vào đây — xem
+/// `src/app/api/glossary/[slug]/explain/route.ts`.
+model GlossaryTerm {
+  id          String   @id @default(cuid())
+  /// Khoá tra cứu: `slugify` của chữ trong `[[...]]`. "Động lượng góc" →
+  /// "dong-luong-goc".
+  slug        String   @unique
+  term        String
+  termEn      String?
+  /// 2–3 câu. Hiện trong tooltip, nên dài hơn thì tooltip che mất bài.
+  shortDef    String
+  shortDefEn  String?
+  /// Chữ thường, đoạn cách nhau bằng một dòng trống. Không phải Markdown: modal
+  /// tải phía client, và kéo react-markdown vào bundle bài viết chỉ vì một
+  /// modal hiếm khi mở là không đáng.
+  fullDef     String?
+  fullDefEn   String?
+  /// Cách gọi khác, lưu ở DẠNG SLUG ("spin", "momen-dong-luong") để khớp thẳng
+  /// với khoá sinh từ `[[...]]` mà không phải chuẩn hoá lúc truy vấn.
+  aliases     String[] @default([])
+  category    String?
+  /// URL ảnh trên R2 (`assetUrl()`), không phải URL ngoài.
+  image       String?
+  /// Bắt buộc khi ảnh dùng giấy phép đòi ghi công. Chữ thường.
+  imageCredit String?
+  entityId    String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  entity      Entity?  @relation(fields: [entityId], references: [id], onDelete: SetNull)
+
+  @@index([aliases], type: Gin)
+  @@index([entityId])
 }
 
 model Relationship {

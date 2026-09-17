@@ -1,0 +1,286 @@
+[
+  {
+    "slug": "dong-luong-goc",
+    "term": "Động lượng góc",
+    "termEn": "Angular momentum",
+    "shortDef": "Đại lượng vật lý đặc trưng cho chuyển động quay của một vật quanh một điểm hoặc một trục; nó là một vectơ. Khi không có mômen ngoại lực, động lượng góc của hệ được bảo toàn, nên vật thu khối lượng về gần trục quay sẽ quay nhanh hơn.",
+    "shortDefEn": "A physical quantity that describes how an object rotates about a point or an axis; it is a vector. When no net external torque acts, a system's angular momentum is conserved, so a body that draws its mass closer to the axis spins faster.",
+    "fullDef": "Với một chất điểm, động lượng góc đối với một điểm là tích có hướng của vectơ vị trí và động lượng: L = r × p. Với một vật rắn quay quanh một trục, nó bằng tích của mômen quán tính và tốc độ góc: L = Iω.\n\nĐịnh luật bảo toàn động lượng góc phát biểu rằng nếu tổng mômen ngoại lực đối với một điểm bằng không thì động lượng góc của hệ đối với điểm đó không đổi. Vì vậy, khi mômen quán tính giảm, chẳng hạn khi vận động viên trượt băng thu tay chân vào sát người, tốc độ góc phải tăng lên.\n\nTrong thiên văn, nguyên lý này được dùng để giải thích vì sao một đám mây khí đang quay, khi co lại dưới tác dụng của hấp dẫn, lại quay nhanh dần; đây là một phần của mô hình hình thành Hệ Mặt Trời. Trong tiếng Việt, đại lượng này còn được gọi là mômen động lượng.",
+    "fullDefEn": "For a point particle, angular momentum about a point is the cross product of its position vector and its linear momentum: L = r × p. For a rigid body rotating about an axis, it equals the moment of inertia multiplied by the angular velocity: L = Iω.\n\nThe law of conservation of angular momentum states that if the net external torque about a point is zero, the system's angular momentum about that point stays constant. So when the moment of inertia decreases, as when a figure skater pulls in their arms and legs, the angular velocity must increase.\n\nIn astronomy, the principle is used to explain why a rotating gas cloud spins faster as it contracts under gravity, which is part of the model for how the Solar System formed.",
+    "aliases": ["mo-men-dong-luong", "momen-dong-luong", "angular-momentum"],
+    "category": "Vật lý",
+    "sources": [
+      {"title": "University Physics Volume 1, §11.3 Conservation of Angular Momentum", "publisher": "OpenStax, Rice University", "url": "https://openstax.org/books/university-physics-volume-1/pages/11-3-conservation-of-angular-momentum"},
+      {"title": "Angular Momentum", "publisher": "HyperPhysics, Georgia State University", "url": "http://hyperphysics.gsu.edu/hbase/amom.html"}
+    ],
+    "usedIn": [
+      "su-ra-doi-cua-he-mat-troi",
+      "sao-moc-hanh-tinh-quay-nhanh-nhat-va-chiec-phanh-vo-hinh",
+      "vi-sao-cac-hanh-tinh-tu-quay-quanh-truc",
+      "ba-dinh-luat-kepler-hanh-tinh-chuyen-dong-theo-quy-luat-nao"
+    ],
+    "verdict": "PASS",
+    "notes": "The site uses two names for this quantity: 'động lượng góc' (su-ra-doi-cua-he-mat-troi, ba-dinh-luat-kepler) and 'mô-men động lượng' (sao-moc..., vi-sao-cac-hanh-tinh-tu-quay). Both are standard Vietnamese, so both are in aliases. Without the alias the Jupiter article gets no tooltip. No conflict found: su-ra-doi's inline gloss ('mức độ quay của một vật quanh một điểm/trục') and the Kepler article ('bảo toàn động lượng góc, hệ quả khi lực luôn hướng về một điểm cố định') agree with the definition. The skater example is in OpenStax itself; it is a correct illustration, not a loose analogy. Unrelated to this entry: content-rules.md already records the Pollack 1996 citation problem in the Jupiter article."
+  },
+  {
+    "slug": "dich-chuyen-do",
+    "term": "Dịch chuyển đỏ",
+    "termEn": "Redshift",
+    "shortDef": "Hiện tượng ánh sáng từ một thiên thể được quan sát ở bước sóng dài hơn lúc phát ra, tức lệch về phía đỏ của quang phổ. Với các thiên hà ở xa, nguyên nhân chủ yếu là sự giãn nở của vũ trụ làm bước sóng ánh sáng bị kéo dài.",
+    "shortDefEn": "The observation of light from an object at a longer wavelength than it had when emitted, shifted toward the red end of the spectrum. For distant galaxies, the main cause is the expansion of the universe stretching the light's wavelength.",
+    "fullDef": "Dịch chuyển đỏ có thể có nhiều nguyên nhân. Khi nguồn sáng chuyển động ra xa người quan sát, các vạch quang phổ xuất hiện ở bước sóng dài hơn (hiệu ứng Doppler); khi nguồn tiến lại gần, các vạch lệch về bước sóng ngắn hơn, gọi là dịch chuyển xanh. Dịch chuyển đỏ của các thiên hà xa thì không hoàn toàn do hiệu ứng Doppler, mà chủ yếu do chính không gian giãn nở làm ánh sáng bị kéo dài trên đường truyền; phần này gọi là dịch chuyển đỏ vũ trụ học.\n\nĐộ dịch chuyển đỏ thường được ký hiệu là z, bằng hiệu giữa bước sóng quan sát được và bước sóng lúc phát ra, chia cho bước sóng lúc phát ra. Edwin Hubble nhận thấy thiên hà càng xa thì quang phổ càng lệch về phía đỏ; vì thế, với các thiên hà rất xa, dịch chuyển đỏ được dùng làm chỉ dấu chính về khoảng cách.\n\nVì ánh sáng cần thời gian để truyền tới, vật có dịch chuyển đỏ càng lớn thì ta đang nhìn thấy nó ở thời điểm càng xa trong quá khứ.",
+    "fullDefEn": "Redshift can have more than one cause. When a light source moves away from an observer, its spectral lines appear at longer wavelengths (the Doppler effect); when it moves closer, the lines shift to shorter wavelengths, which is called blueshift. The redshift of distant galaxies is not strictly a Doppler effect. It comes mainly from the expansion of space itself stretching light as it travels, and this part is called cosmological redshift.\n\nRedshift is usually written as z: the observed wavelength minus the emitted wavelength, divided by the emitted wavelength. Edwin Hubble found that more distant galaxies tend to have more strongly redshifted spectra, so for very distant galaxies redshift serves as a primary indicator of distance.\n\nBecause light takes time to reach us, the higher an object's redshift, the further back in time we are seeing it.",
+    "aliases": ["dich-chuyen-ve-phia-do", "chuyen-dich-do", "lech-do", "redshift"],
+    "category": "Thiên văn học",
+    "sources": [
+      {"title": "What is 'red shift'?", "publisher": "European Space Agency (ESA)", "url": "https://www.esa.int/Science_Exploration/Space_Science/What_is_red_shift"},
+      {"title": "Hubble Cosmological Redshift", "publisher": "NASA Science", "url": "https://science.nasa.gov/mission/hubble/science/science-behind-the-discoveries/hubble-cosmological-redshift/"},
+      {"title": "What Do Spectra Tell Us?", "publisher": "NASA Goddard, Imagine the Universe!", "url": "https://imagine.gsfc.nasa.gov/features/yba/M31_velocity/spectrum/spectra_info.html"},
+      {"title": "Dunlop, J. S. (2013). The Cosmic History of Star Formation, §2 Why redshift z > 5", "publisher": "NASA/IPAC Extragalactic Database (NED) Level 5, Caltech", "url": "https://ned.ipac.caltech.edu/level5/Sept14/Dunlop/Dunlop2.html"}
+    ],
+    "usedIn": [
+      "big-bang-vu-tru-da-dien-ra-the-nao-trong-138-ti-nam",
+      "thang-khoang-cach-vu-tru-do-toi-sao-va-thien-ha-bang-cach-nao",
+      "kinh-james-webb-nhin-nguoc-ve-thuo-vu-tru-so-sinh"
+    ],
+    "verdict": "PASS",
+    "notes": "Gravitational redshift is left out on purpose: I found no authoritative page for it that I could fetch, and none of the articles use that sense. The JWST infrared point ('visible light from the first galaxies is stretched into the infrared') is also left out of fullDef because I did not fetch a source for it; it stays in the Webb article. ARTICLE CONFLICT (date-bound claim now stale): big-bang-vu-tru-da-dien-ra-the-nao-trong-138-ti-nam says 'Thiên hà xa nhất được xác nhận cho tới nay là JADES-GS-z14-0, ở độ dịch chuyển đỏ 14,32 (số liệu tháng 5/2024)'. MoM-z14 has since been spectroscopically confirmed at z = 14.44 ± 0.02 (Naidu et al. 2025, arXiv:2505.11263), which beats that record. The article does carry its as-of date, but 'cho tới nay' is now wrong. It needs a visible correction and a re-check for anything newer than 2025. Not a conflict, but worth knowing: big-bang calls redshift proof that galaxies 'đang rời xa nhau', and thang-khoang-cach gives v = H₀ × d. Both are acceptable simplifications for nearby galaxies. thang-khoang-cach already names space expansion as the cause, which matches ESA."
+  },
+  {
+    "slug": "nam-anh-sang",
+    "term": "Năm ánh sáng",
+    "termEn": "Light-year",
+    "shortDef": "Đơn vị đo khoảng cách, không phải đơn vị đo thời gian: một năm ánh sáng là quãng đường ánh sáng đi được trong chân không trong một năm. Đơn vị này thường dùng để diễn đạt khoảng cách tới các ngôi sao và thiên hà.",
+    "shortDefEn": "A unit of distance, not of time: one light-year is the distance light travels in a vacuum in one year. It is commonly used to express distances to stars and galaxies.",
+    "fullDef": "Theo Liên đoàn Thiên văn Quốc tế (IAU), năm ánh sáng là quãng đường ánh sáng truyền trong chân không trong một năm Julius, tức 365,25 ngày. IAU nêu giá trị 9.460.730.472.580,8 km, tức khoảng 9,46 nghìn tỉ km.\n\nVì ánh sáng cần thời gian để truyền tới, nhìn một thiên thể càng xa là thấy nó ở thời điểm càng xa trong quá khứ.\n\nIAU ghi nhận rằng năm ánh sáng chủ yếu được dùng trong các ấn phẩm phổ biến khoa học. Trong nghiên cứu chuyên môn, chẳng hạn về cấu trúc thiên hà, các nhà thiên văn thường dùng đơn vị parsec, lớn hơn năm ánh sáng.",
+    "fullDefEn": "According to the International Astronomical Union (IAU), a light-year is the distance light travels in a vacuum in one Julian year of 365.25 days. The IAU gives the value as 9,460,730,472,580.8 km, or about 9.46 trillion km.\n\nBecause light takes time to reach us, looking at a more distant object means seeing it as it was further in the past.\n\nThe IAU notes that the light-year is used mostly in popular publications. In technical work, such as studies of galactic structure, astronomers generally use the parsec, which is a larger unit.",
+    "aliases": ["light-year", "light-years"],
+    "category": "Thiên văn học",
+    "sources": [
+      {"title": "Measuring the Universe", "publisher": "International Astronomical Union (IAU)", "url": "https://iauarchive.eso.org/public/themes/measuring/"},
+      {"title": "What is a light-year?", "publisher": "NASA Science", "url": "https://science.nasa.gov/exoplanets/what-is-a-light-year/"},
+      {"title": "Hubble Cosmological Redshift", "publisher": "NASA Science", "url": "https://science.nasa.gov/mission/hubble/science/science-behind-the-discoveries/hubble-cosmological-redshift/"}
+    ],
+    "usedIn": [
+      "thien-ha-dinh-nghia-va-cach-phan-loai",
+      "da-vu-tru-bon-cap-do-va-mot-cau-hoi-kho",
+      "20-ngoi-sao-sang-nhat-bau-troi-dem",
+      "thang-khoang-cach-vu-tru-do-toi-sao-va-thien-ha-bang-cach-nao",
+      "khong-gian-vu-tru-moi-truong-chan-khong-gan-nhu-hoan-hao"
+    ],
+    "verdict": "PASS",
+    "notes": "The entry deliberately does NOT say that light from an object N light-years away left it N years ago. That only holds roughly for nearby objects. da-vu-tru-bon-cap-do-va-mot-cau-hoi-kho gives the observable universe a radius of 46.5 billion light-years, larger than the age of the universe in years, so the 'N years ago' shortcut would make the tooltip contradict that article. The IAU exact figure is kept only in fullDef, and the parsec is not converted because no fetched source gives the ratio. I did not re-check the distance figures in the listed articles (Milky Way 105,000 ly, Boötes Void 330 million ly, Proxima 4.25 ly, and so on); they belong to those articles' own fact-check."
+  },
+  {
+    "slug": "vat-chat-toi",
+    "term": "Vật chất tối",
+    "termEn": "Dark matter",
+    "shortDef": "Thành phần vật chất được suy ra từ tác dụng hấp dẫn lên các ngôi sao, thiên hà và ánh sáng, nhưng chưa từng được phát hiện trực tiếp. Nó không phát ra, không hấp thụ và không phản xạ ánh sáng. Bản chất của vật chất tối đến nay vẫn chưa được xác định.",
+    "shortDefEn": "Matter whose presence is inferred from its gravitational effects on stars, galaxies and light, but which has never been directly detected. It does not emit, absorb or reflect light, and what it is made of has not yet been determined.",
+    "fullDef": "Các bằng chứng về vật chất tối đều gián tiếp. Các ngôi sao ở rìa ngoài thiên hà xoắn ốc chuyển động quá nhanh so với mức mà lượng vật chất nhìn thấy được có thể giữ lại. Ánh sáng từ các thiên hà xa bị trường hấp dẫn bẻ cong (thấu kính hấp dẫn) mạnh hơn mức vật chất phát sáng gây ra. Quan sát các cụm thiên hà va chạm nhau, như Cụm Viên Đạn (Bullet Cluster), cho thấy khối lượng phân bố khác với vật chất thông thường.\n\nTheo ước tính được NASA và CERN nêu, vật chất tối chiếm khoảng 27% thành phần của vũ trụ, trong khi vật chất thông thường chỉ khoảng 5%. Theo các ước tính này, phần lớn vật chất trong vũ trụ là vật chất tối.\n\nNhiều ứng viên đã được đề xuất, như WIMP (hạt nặng tương tác yếu), axion hay lỗ đen nguyên thủy, nhưng chưa có bằng chứng xác nhận ứng viên nào. Vật chất tối khác với năng lượng tối: vật chất tối được suy ra từ lực hấp dẫn mà nó gây ra, còn năng lượng tối là tên gọi cho nguyên nhân chưa rõ khiến vũ trụ giãn nở ngày càng nhanh.",
+    "fullDefEn": "All the evidence for dark matter is indirect. Stars at the outer edges of spiral galaxies move too fast to be held in place by the visible matter alone. Light from distant galaxies is bent by gravity (gravitational lensing) more strongly than the luminous matter can account for. Observations of colliding galaxy clusters, such as the Bullet Cluster, show mass distributed differently from ordinary matter.\n\nAccording to estimates cited by NASA and CERN, dark matter makes up about 27% of the universe, compared with about 5% for ordinary matter. On these estimates, most of the matter in the universe is dark matter.\n\nMany candidates have been proposed, including WIMPs (weakly interacting massive particles), axions and primordial black holes, but none has been confirmed. Dark matter is not the same as dark energy: dark matter is inferred from the gravity it exerts, while dark energy is the name for the unknown cause of the universe's accelerating expansion.",
+    "aliases": ["dark-matter"],
+    "category": "Thiên văn học",
+    "sources": [
+      {"title": "Dark Matter", "publisher": "NASA Science", "url": "https://science.nasa.gov/dark-matter/"},
+      {"title": "Dark matter", "publisher": "CERN", "url": "https://home.cern/science/physics/dark-matter"}
+    ],
+    "usedIn": [
+      "vat-chat-toi-va-nang-luong-toi-tran-chien-keo-co-vi-dai-cua-vu-tru",
+      "big-bang-vu-tru-da-dien-ra-the-nao-trong-138-ti-nam",
+      "thien-ha-dinh-nghia-va-cach-phan-loai",
+      "cac-sao-toi-co-the-da-de-lai-tieng-vong-duoi-dang-song-hap-dan-khap-vu-tru",
+      "da-vu-tru-bon-cap-do-va-mot-cau-hoi-kho",
+      "nang-luong-la-gi"
+    ],
+    "verdict": "PASS",
+    "notes": "Hedging is kept: the entry says 'inferred' and 'never directly detected', following CERN ('infer the existence of dark matter only from the gravitational effect it seems to have') and NASA ('have not yet found evidence which would confirm any candidate'). The 27% / 5% figures appear in both NASA and CERN and are marked as estimates. POSSIBLE ARTICLE CONFLICT (hedging): vat-chat-toi-va-nang-luong-toi-tran-chien-keo-co-vi-dai-cua-vu-tru says '> Chúng ta biết vật chất tối tồn tại, nhưng chưa biết nó là gì.' That is more certain than CERN's wording. NASA's own tone is also confident ('invisible glue'), so this is a judgment call for a human; a closer wording would be 'Các bằng chứng hấp dẫn cho thấy vật chất tối tồn tại'. The same article lists 'neutrino vô sinh' as a candidate; NASA's page does not, but that is an omission, not a contradiction. In nang-luong-la-gi and da-vu-tru the term only appears in link text. Alternative gravity theories are not mentioned because I consulted no source on them; add them only with a primary source."
+  },
+  {
+    "slug": "nang-luong-toi",
+    "term": "Năng lượng tối",
+    "termEn": "Dark energy",
+    "shortDef": "Tên gọi các nhà thiên văn đặt cho nguyên nhân chưa rõ khiến vũ trụ giãn nở ngày càng nhanh. Sự giãn nở tăng tốc được suy ra từ quan sát, nhưng năng lượng tối thực chất là gì thì đến nay vẫn chưa được biết.",
+    "shortDefEn": "The name astronomers give to the unknown cause of the universe's accelerating expansion. The acceleration is inferred from observations, but what dark energy actually is remains unknown.",
+    "fullDef": "Năm 1998, hai nhóm nhà thiên văn quan sát các siêu tân tinh loại Ia ở rất xa và thấy chúng mờ hơn dự kiến so với độ dịch chuyển đỏ của chúng, tức ở xa hơn dự kiến. Từ đó họ kết luận rằng vũ trụ đang giãn nở ngày càng nhanh.\n\nTheo NASA, năng lượng tối chiếm khoảng 68,3–70% thành phần của vũ trụ; CERN nêu con số khoảng 68%. CERN mô tả năng lượng tối phân bố đều trong vũ trụ, dường như gắn với chân không của không gian, và gây ra một hiệu ứng đẩy làm vũ trụ giãn nở nhanh dần.\n\nBản chất của năng lượng tối vẫn là câu hỏi mở. Kết quả công bố năm 2025 của dự án DESI, khi kết hợp với các bộ dữ liệu khác, gợi ý rằng năng lượng tối có thể thay đổi theo thời gian; tuy vậy, mức tin cậy chưa đạt ngưỡng \"5 sigma\" mà vật lý dùng để công nhận một khám phá.",
+    "fullDefEn": "In 1998, two teams of astronomers observing very distant Type Ia supernovae found them dimmer than expected for their redshift, meaning they were farther away than expected. They concluded that the expansion of the universe is speeding up.\n\nNASA puts dark energy at roughly 68.3–70% of the universe; CERN gives about 68%. CERN describes it as spread evenly through the universe, apparently associated with the vacuum of space, and producing a repulsive effect that accelerates the expansion.\n\nWhat dark energy is remains an open question. Results released by the DESI project in 2025, combined with other data sets, hint that dark energy may change over time, but the evidence has not reached the \"5 sigma\" level physicists require to claim a discovery.",
+    "aliases": ["dark-energy"],
+    "category": "Thiên văn học",
+    "sources": [
+      {"title": "Dark Energy", "publisher": "NASA Science", "url": "https://science.nasa.gov/dark-energy/"},
+      {"title": "Dark matter (section on dark energy)", "publisher": "CERN", "url": "https://home.cern/science/physics/dark-matter"},
+      {"title": "New DESI Results Strengthen Hints That Dark Energy May Evolve (19 March 2025)", "publisher": "Lawrence Berkeley National Laboratory", "url": "https://newscenter.lbl.gov/2025/03/19/new-desi-results-strengthen-hints-that-dark-energy-may-evolve/"}
+    ],
+    "usedIn": [
+      "vat-chat-toi-va-nang-luong-toi-tran-chien-keo-co-vi-dai-cua-vu-tru",
+      "big-bang-vu-tru-da-dien-ra-the-nao-trong-138-ti-nam",
+      "nang-luong-la-gi",
+      "cac-sao-toi-co-the-da-de-lai-tieng-vong-duoi-dang-song-hap-dan-khap-vu-tru",
+      "da-vu-tru-bon-cap-do-va-mot-cau-hoi-kho"
+    ],
+    "verdict": "PASS",
+    "notes": "The entry separates what is observed (the expansion is accelerating) from what is named (the unknown cause). That matches nang-luong-la-gi, which calls dark energy 'a named gap in our understanding, not a measured store of energy'. NASA's own page is more assertive ('we do know that it exists'); I did not follow that wording. CERN's 'appears to be associated with the vacuum' keeps its hedge ('dường như'). DATE-BOUND: the DESI sentence is as of the March 2025 release. Re-check when DESI publishes later results; if significance reaches or falls from 5 sigma, the sentence must change. The 1998 discovery is sourced to NASA; I left out 'expected to slow down because of gravity' because the fetched NASA text did not state it. Minor article wording, not a factual conflict: big-bang-vu-tru-da-dien-ra-the-nao-trong-138-ti-nam lists '68% năng lượng của vũ trụ – 27% vật chất tối – 5% vật chất thông thường', which reads as if only the first item were a share of 'năng lượng'. The numbers agree with CERN."
+  },
+  {
+    "slug": "phan-ung-nhiet-hach",
+    "term": "Phản ứng nhiệt hạch",
+    "termEn": "Nuclear fusion",
+    "shortDef": "Phản ứng trong đó hai hạt nhân nhẹ hợp lại thành một hạt nhân nặng hơn và giải phóng năng lượng. Phản ứng cần nhiệt độ cực cao để các hạt nhân vượt qua lực đẩy điện giữa chúng. Đây là nguồn năng lượng của Mặt Trời và các ngôi sao.",
+    "shortDefEn": "A reaction in which two light atomic nuclei combine into a heavier nucleus and release energy. It needs extremely high temperatures so the nuclei can overcome their electrical repulsion. It is what powers the Sun and other stars.",
+    "fullDef": "Năng lượng được giải phóng vì khối lượng của hạt nhân tạo thành nhỏ hơn tổng khối lượng các hạt nhân ban đầu; phần khối lượng hụt này tương ứng với năng lượng theo hệ thức E = mc². Các hạt nhân đều mang điện dương nên đẩy nhau; chỉ khi va chạm với tốc độ rất lớn, tức ở nhiệt độ cực cao, chúng mới vượt qua được lực đẩy đó để hợp lại. Phản ứng này còn được gọi là phản ứng tổng hợp hạt nhân hay phản ứng hợp hạch.\n\nTrong lõi Mặt Trời, áp suất và nhiệt độ rất lớn ép các hạt nhân hydro hợp lại thành heli. Năng lượng giải phóng làm nóng ngôi sao và giúp nó không co sụp dưới sức nặng của chính mình. Ở những ngôi sao nặng, chuỗi phản ứng tiếp tục với các nguyên tố nặng dần cho tới khi silic hợp thành sắt.\n\nCác dự án như ITER đang nghiên cứu cách duy trì phản ứng nhiệt hạch trên Trái Đất; trong thiết bị thí nghiệm, nhiệt độ cần thiết cao hơn nhiều so với lõi Mặt Trời.",
+    "fullDefEn": "Energy is released because the resulting nucleus has less mass than the nuclei that went into it, and that missing mass corresponds to energy through E = mc². Nuclei are all positively charged and repel one another; only when they collide at very high speeds, that is, at extremely high temperatures, can they overcome this repulsion and fuse.\n\nIn the Sun's core, immense pressure and temperature squeeze hydrogen nuclei together to form helium. The energy released heats the star and keeps it from collapsing under its own weight. In massive stars the chain goes on through progressively heavier elements until silicon fuses into iron.\n\nProjects such as ITER are working on sustaining fusion on Earth; in a laboratory device the temperature required is far higher than in the Sun's core.",
+    "aliases": ["nhiet-hach", "phan-ung-tong-hop-hat-nhan", "phan-ung-hop-hach", "hop-hach", "nuclear-fusion"],
+    "category": "Vật lý hạt nhân",
+    "sources": [
+      {"title": "DOE Explains... Fusion Reactions", "publisher": "U.S. Department of Energy, Office of Science", "url": "https://www.energy.gov/science/doe-explainsfusion-reactions"},
+      {"title": "What is fusion?", "publisher": "ITER Organization", "url": "https://www.iter.org/fusion-energy/what-fusion"},
+      {"title": "Stars", "publisher": "NASA Science", "url": "https://science.nasa.gov/universe/stars/"}
+    ],
+    "usedIn": [
+      "ngoi-sao-cau-tao-va-vong-doi",
+      "nhung-hat-vo-hinh-tao-nen-the-gioi-vat-chat",
+      "cac-sao-toi-co-the-da-de-lai-tieng-vong-duoi-dang-song-hap-dan-khap-vu-tru"
+    ],
+    "verdict": "PASS",
+    "notes": "Two aliases were considered and rejected. 'tong-hop-hat-nhan' is out because 'tổng hợp hạt nhân' is also the Vietnamese for nucleosynthesis ('tổng hợp hạt nhân Big Bang'), so the fusion tooltip would appear on the wrong concept. The longer 'phan-ung-tong-hop-hat-nhan' is unambiguous and is included. No published article actually used the bare 'tổng hợp hạt nhân'. The IAEA definition pages returned HTTP 402/403 and were not used; the ITER page was used for the electrostatic-repulsion point. tam-hanh-tinh-cua-he-mat-troi matched only on its English text ('nuclear fusion'), with no Vietnamese hit, so it is left out of usedIn. Check the Vietnamese body before linking it. No conflicts: ngoi-sao-cau-tao-va-vong-doi ('lõi sao đạt nhiệt độ hàng triệu độ', H→He, balance with gravity, the iron core ending energy production) agrees with NASA. That article uses both 'phản ứng hợp hạch' and 'phản ứng nhiệt hạch', which the aliases cover. The ITER figure (150 million °C, ten times the Sun's core) was deliberately left out of the definition text."
+  },
+  {
+    "slug": "chan-troi-su-kien",
+    "term": "Chân trời sự kiện",
+    "termEn": "Event horizon",
+    "shortDef": "Ranh giới bao quanh một lỗ đen, bên trong đó vận tốc cần để thoát ra lớn hơn tốc độ ánh sáng. Vì vậy mọi thứ đã vượt qua ranh giới này, kể cả ánh sáng, đều không thể quay ra. Chân trời sự kiện không phải một bề mặt vật chất.",
+    "shortDefEn": "The boundary around a black hole inside which the speed needed to escape exceeds the speed of light. Anything that crosses it, light included, cannot get back out. The event horizon is not a physical surface.",
+    "fullDef": "Chân trời sự kiện thường được gọi là \"điểm không thể quay lại\". Tại ranh giới này, vận tốc thoát bằng tốc độ ánh sáng; bán kính mà tại đó vận tốc thoát bằng tốc độ ánh sáng được gọi là bán kính Schwarzschild. Vì ánh sáng không thể thoát ra, không thông tin nào về những gì xảy ra bên trong đến được người quan sát ở bên ngoài.\n\nViệc một vật rơi vào bị lực thủy triều xé ra trước hay sau khi vượt qua chân trời sự kiện phụ thuộc vào khối lượng lỗ đen. Theo NASA, lỗ đen khối lượng sao có chân trời sự kiện nhỏ hơn nhiều và lực thủy triều mạnh hơn, có thể xé nát vật trước khi nó tới chân trời. Với một lỗ đen siêu khối lượng như ở tâm Ngân Hà, mô phỏng của NASA cho thấy vật vượt qua chân trời trước rồi mới bị kéo giãn.\n\nBản thân chân trời sự kiện không thể nhìn thấy vì nó không phát ra ánh sáng. Các ảnh chụp của kính thiên văn Event Horizon Telescope cho thấy một vùng tối ở giữa, gọi là bóng của lỗ đen, bao quanh bởi một vành sáng do khí nóng quay quanh lỗ đen phát ra.",
+    "fullDefEn": "The event horizon is often called the \"point of no return\". At this boundary the escape velocity equals the speed of light; the radius at which that happens is called the Schwarzschild radius. Because light cannot get out, nothing about what happens inside can reach an outside observer.\n\nWhether an infalling object is torn apart by tidal forces before or after crossing the horizon depends on the black hole's mass. According to NASA, stellar-mass black holes have much smaller event horizons and stronger tidal forces, which can rip objects apart before they reach the horizon. For a supermassive black hole like the one at the centre of the Milky Way, a NASA simulation shows an object crossing the horizon first and only then being stretched apart.\n\nThe event horizon itself cannot be seen, because it emits no light. Images from the Event Horizon Telescope show a dark central region, called the black hole's shadow, surrounded by a bright ring from hot gas orbiting the black hole.",
+    "aliases": ["event-horizon"],
+    "category": "Thiên văn học",
+    "sources": [
+      {"title": "Black Holes (Imagine the Universe!)", "publisher": "NASA Goddard Space Flight Center", "url": "https://imagine.gsfc.nasa.gov/science/objects/black_holes1.html"},
+      {"title": "Black Hole Anatomy", "publisher": "NASA Science", "url": "https://science.nasa.gov/universe/black-holes/anatomy/"},
+      {"title": "New NASA Black Hole Visualization Takes Viewers Beyond the Brink", "publisher": "NASA Science", "url": "https://science.nasa.gov/universe/black-holes/supermassive-black-holes/new-nasa-black-hole-visualization-takes-viewers-beyond-the-brink/"},
+      {"title": "First image of our black hole (eso2208)", "publisher": "European Southern Observatory (ESO)", "url": "https://www.eso.org/public/images/eso2208-eht-mwa/"}
+    ],
+    "usedIn": [
+      "ho-den-noi-hinh-hoc-cua-khong-gian-sup-do",
+      "lo-trang-va-lo-sau-hai-nghiem-toan-hoc-chua-ai-nhin-thay"
+    ],
+    "verdict": "PASS",
+    "notes": "The Schwarzschild radius is given exactly as NASA defines it (the radius where escape velocity equals c). I did not add the non-rotating/rotating distinction because no fetched source covers it. ARTICLE CONFLICT (qualifier missing, wrong because of where it sits): ho-den-noi-hinh-hoc-cua-khong-gian-sup-do says 'Một người rơi qua nó sẽ không cảm nhận điều gì đặc biệt tại thời điểm vượt qua', with no qualifier, directly after the example of a solar-mass black hole (~3 km). NASA says stellar-mass black holes 'possess much smaller event horizons and stronger tidal forces, which can rip apart approaching objects before they get to the horizon'. The sentence is only true for sufficiently massive (e.g. supermassive) black holes. This is the same 'deleted qualifier' pattern recorded in content-rules.md. Suggest adding 'với lỗ đen đủ lớn, như lỗ đen siêu khối lượng'. Minor wording in the same article: 'Hố đen sao ... hình thành khi lõi một ngôi sao nặng sụp đổ sau siêu tân tinh'. Per NASA the core collapse drives the supernova, so 'sau' reverses the order; 'trong một vụ siêu tân tinh' would be closer. The site uses both 'hố đen' and 'lỗ đen'; this entry uses 'lỗ đen'."
+  },
+  {
+    "slug": "sao-neutron",
+    "term": "Sao neutron",
+    "termEn": "Neutron star",
+    "shortDef": "Phần lõi cực kỳ đặc còn lại khi một ngôi sao nặng cạn nhiên liệu và lõi của nó sụp đổ, thường trong một vụ nổ siêu tân tinh. Khi sụp đổ, proton và electron bị ép thành neutron. Sao neutron chỉ rộng cỡ một thành phố.",
+    "shortDefEn": "The extremely dense core left behind when a massive star runs out of fuel and its core collapses, usually in a supernova explosion. During the collapse, protons and electrons are crushed together into neutrons. A neutron star is only about the size of a city.",
+    "fullDef": "Khi một ngôi sao nặng cạn nhiên liệu, lõi của nó sụp đổ và proton cùng electron bị ép lại thành neutron. Theo NASA, nếu lõi đang sụp đổ có khối lượng trong khoảng 1 đến 3 lần khối lượng Mặt Trời, các neutron mới tạo thành có thể chặn sự sụp đổ lại và để lại một sao neutron. Nếu ngôi sao ban đầu nặng hơn nữa, sự sụp đổ không dừng lại và tạo thành lỗ đen.\n\nSao neutron có đường kính khoảng 20 km. Vật chất của nó đặc đến mức, theo NASA, một khối cỡ viên đường có thể nặng khoảng 1 tỉ tấn trên Trái Đất.\n\nNhiều sao neutron được quan sát dưới dạng pulsar: sao neutron đang quay, phát ra các chùm bức xạ mạnh dọc theo các cực từ. Khi chùm tia quét qua hướng Trái Đất, ta thu được các xung bức xạ cách nhau rất đều.",
+    "fullDefEn": "When a massive star runs out of fuel, its core collapses and protons and electrons are crushed together into neutrons. According to NASA, if the collapsing core is between about 1 and 3 solar masses, the newly formed neutrons can halt the collapse, leaving a neutron star. If the original star is more massive still, the collapse does not stop and a black hole forms.\n\nA neutron star is about 20 km across. Its matter is so dense that, according to NASA, a sugar-cube-sized piece would weigh about a billion tons on Earth.\n\nMany neutron stars are observed as pulsars: rotating neutron stars that send out powerful beams of radiation along their magnetic poles. When a beam sweeps across Earth, we receive pulses of radiation at very regular intervals.",
+    "aliases": ["sao-notron", "neutron-star"],
+    "category": "Thiên văn học",
+    "sources": [
+      {"title": "Neutron Stars (Imagine the Universe!)", "publisher": "NASA Goddard Space Flight Center", "url": "https://imagine.gsfc.nasa.gov/science/objects/neutron_stars1.html"},
+      {"title": "Stellar Evolution", "publisher": "Chandra X-ray Center, Smithsonian Astrophysical Observatory", "url": "https://chandra.si.edu/stellarev/"},
+      {"title": "Stars", "publisher": "NASA Science", "url": "https://science.nasa.gov/universe/stars/"}
+    ],
+    "usedIn": [
+      "ngoi-sao-cau-tao-va-vong-doi",
+      "song-hap-dan-va-song-trong-luc-mot-chu-khac-nhau-hai-hien-tuong-khong-lien-quan",
+      "cac-sao-toi-co-the-da-de-lai-tieng-vong-duoi-dang-song-hap-dan-khap-vu-tru"
+    ],
+    "verdict": "PASS",
+    "notes": "'1 to 3 solar masses' refers to the collapsing core, not the original star, and is written that way. shortDef avoids numbers: 'cỡ một thành phố' is NASA Imagine's own comparison (Manhattan). I found no conflicts. ngoi-sao-cau-tao-va-vong-doi gives 'đường kính khoảng 20 km' (matches NASA) and 'một thìa cà phê vật chất có thể nặng hàng tỷ tấn' (NASA Imagine says a sugar cube weighs about 1 billion tons; same order of magnitude, so no conflict). Its label 'Khối lượng lớn hơn' for neutron stars versus white dwarfs is vague but not false. cac-sao-toi calls pulsars 'sao neutron quay rất nhanh'; NASA says 'rotating'. That is acceptable for millisecond pulsars but slightly generalised. Not verified here and outside this entry: 'va chạm giữa hai sao neutron' as a source of gold and platinum (ngoi-sao-cau-tao-va-vong-doi). That claim needs its own source in that article."
+  },
+  {
+    "slug": "sieu-tan-tinh",
+    "term": "Siêu tân tinh",
+    "termEn": "Supernova",
+    "shortDef": "Vụ nổ cực mạnh của một ngôi sao. Có hai cơ chế chính: lõi của một ngôi sao nặng sụp đổ khi không còn nhiên liệu hợp hạch, hoặc một sao lùn trắng trong hệ sao đôi phát nổ sau khi hút thêm vật chất từ sao đồng hành.",
+    "shortDefEn": "The powerful explosion of a star. There are two main mechanisms: the core of a massive star collapses once it has nothing left to fuse, or a white dwarf in a binary system explodes after pulling in material from its companion.",
+    "fullDef": "Siêu tân tinh sụp đổ lõi (ví dụ loại II) xảy ra ở những ngôi sao nặng hơn khoảng 8 lần Mặt Trời. Khi lõi gần như chỉ còn sắt, không còn gì để hợp hạch giải phóng năng lượng, lõi sụp đổ rồi bật ngược lại, tạo ra sóng xung kích lan ra ngoài và làm ngôi sao nổ tung. Phần lõi còn lại trở thành sao neutron, hoặc lỗ đen nếu ngôi sao ban đầu rất nặng.\n\nSiêu tân tinh loại Ia xảy ra trong hệ sao đôi. Sao lùn trắng nhận vật chất từ sao đồng hành; khi khối lượng của nó tiến gần giới hạn Chandrasekhar, khoảng 1,4 lần khối lượng Mặt Trời, carbon và oxy trong lõi bắt đầu hợp hạch mất kiểm soát. Vụ nổ không để lại lõi nào. Quan sát các siêu tân tinh loại Ia ở rất xa là cơ sở cho phát hiện năm 1998 rằng vũ trụ đang giãn nở ngày càng nhanh.\n\nCác nguyên tố được tạo ra trong lõi sao và trong chính vụ nổ bị phóng vào không gian, hòa vào môi trường giữa các vì sao.",
+    "fullDefEn": "Core-collapse supernovae (Type II, for example) happen in stars more than about 8 times the mass of the Sun. Once the core is essentially all iron, nothing is left to fuse for energy, so the core collapses and then rebounds, sending a shock wave outward that blows the star apart. What remains of the core becomes a neutron star, or a black hole if the original star was very massive.\n\nType Ia supernovae happen in binary systems. A white dwarf gains material from its companion; as its mass approaches the Chandrasekhar limit of about 1.4 solar masses, carbon and oxygen in its core begin to fuse uncontrollably. The explosion leaves no core behind. Observations of very distant Type Ia supernovae were the basis of the 1998 discovery that the expansion of the universe is accelerating.\n\nElements made in the star's core and in the explosion itself are thrown out into space, where they mix with the interstellar medium.",
+    "aliases": ["supernova", "supernovae"],
+    "category": "Thiên văn học",
+    "sources": [
+      {"title": "Supernovae (Imagine the Universe!)", "publisher": "NASA Goddard Space Flight Center", "url": "https://imagine.gsfc.nasa.gov/science/objects/supernovae1.html"},
+      {"title": "Stars", "publisher": "NASA Science", "url": "https://science.nasa.gov/universe/stars/"},
+      {"title": "Stellar Evolution", "publisher": "Chandra X-ray Center, Smithsonian Astrophysical Observatory", "url": "https://chandra.si.edu/stellarev/"},
+      {"title": "Dark Energy", "publisher": "NASA Science", "url": "https://science.nasa.gov/dark-energy/"}
+    ],
+    "usedIn": [
+      "ngoi-sao-cau-tao-va-vong-doi",
+      "thang-khoang-cach-vu-tru-do-toi-sao-va-thien-ha-bang-cach-nao",
+      "big-bang-vu-tru-da-dien-ra-the-nao-trong-138-ti-nam",
+      "vat-chat-toi-va-nang-luong-toi-tran-chien-keo-co-vi-dai-cua-vu-tru",
+      "ho-den-noi-hinh-hoc-cua-khong-gian-sup-do",
+      "su-ra-doi-cua-he-mat-troi",
+      "20-ngoi-sao-sang-nhat-bau-troi-dem"
+    ],
+    "verdict": "PASS",
+    "notes": "Both mechanisms are covered because the site uses both: core collapse in ngoi-sao-cau-tao-va-vong-doi and ho-den, Type Ia in thang-khoang-cach, big-bang and vat-chat-toi. 'Loại II' is given only as an example, because core-collapse supernovae also include Types Ib and Ic. The mass thresholds (~8 solar masses, the 1.4 solar-mass Chandrasekhar limit) are stated by NASA Imagine. Merging white dwarfs as another Type Ia route is left out: I saw it only in arXiv search snippets and did not fetch it. NOT VERIFIED (outside this entry): thang-khoang-cach-vu-tru-do-toi-sao-va-thien-ha-bang-cach-nao says Type Ia supernovae 'có độ sáng đỉnh gần giống nhau'. Standard practice calibrates (standardises) their peak brightness rather than treating it as identical, but I fetched no source, so this is only a flag for that article's fact-check. It also repeats the ordering issue in ho-den-noi-hinh-hoc-cua-khong-gian-sup-do ('sụp đổ sau siêu tân tinh'), recorded under chan-troi-su-kien. 20-ngoi-sao's claim that Betelgeuse will end as a supernova was not checked. su-ra-doi's 'có thể do sóng xung kích từ siêu tân tinh' is properly hedged."
+  },
+  {
+    "slug": "hieu-ung-nha-kinh",
+    "term": "Hiệu ứng nhà kính",
+    "termEn": "Greenhouse effect",
+    "shortDef": "Hiện tượng khí nhà kính, mây và một số sol khí trong khí quyển hấp thụ bức xạ hồng ngoại do bề mặt hành tinh phát ra, khiến nhiệt thoát ra không gian ít hơn và bề mặt ấm hơn. Hiệu ứng nhà kính tự nhiên giữ cho Trái Đất đủ ấm cho sự sống.",
+    "shortDefEn": "The process in which greenhouse gases, clouds and some aerosols in the atmosphere absorb infrared radiation given off by a planet's surface, so less heat escapes to space and the surface stays warmer. Earth's natural greenhouse effect keeps the planet warm enough for life.",
+    "fullDef": "IPCC định nghĩa hiệu ứng nhà kính là hiệu ứng bức xạ hồng ngoại của mọi thành phần hấp thụ hồng ngoại trong khí quyển. Các chất này hấp thụ bức xạ do bề mặt Trái Đất và khí quyển phát ra, rồi phát lại bức xạ hồng ngoại theo mọi hướng. Vì nhiệt độ giảm dần theo độ cao trong tầng đối lưu, lượng bức xạ thoát ra không gian thường ít hơn so với khi không có các chất hấp thụ này.\n\nCác khí nhà kính gồm hơi nước, cacbon đioxit (CO₂), mêtan, ôzôn, đinitơ oxit (N₂O) và các chlorofluorocarbon (CFC). Nếu không có hiệu ứng nhà kính tự nhiên, bề mặt Trái Đất sẽ lạnh hơn nhiều so với hiện nay.\n\nKhi nồng độ khí nhà kính tăng, hiệu ứng này mạnh lên; phần tăng thêm đôi khi được gọi là hiệu ứng nhà kính tăng cường. Theo NASA và IPCC, lượng CO₂ và các khí nhà kính khác mà con người thải ra, chủ yếu do đốt nhiên liệu hóa thạch, đã làm thay đổi cân bằng năng lượng của Trái Đất và khiến nhiệt độ tăng.",
+    "fullDefEn": "The IPCC defines the greenhouse effect as the infrared radiative effect of all infrared-absorbing constituents in the atmosphere. These substances absorb radiation emitted by Earth's surface and by the atmosphere, then emit infrared radiation in all directions. Because temperature falls with height in the troposphere, the amount of radiation that escapes to space is normally less than it would be without these absorbers.\n\nGreenhouse gases include water vapour, carbon dioxide (CO₂), methane, ozone, nitrous oxide (N₂O) and chlorofluorocarbons (CFCs). Without the natural greenhouse effect, Earth's surface would be much colder than it is today.\n\nRaising the concentration of greenhouse gases strengthens the effect; the added part is sometimes called the enhanced greenhouse effect. According to NASA and the IPCC, the carbon dioxide and other greenhouse gases released by human activity, mainly the burning of fossil fuels, have disrupted Earth's energy balance and are driving temperatures up.",
+    "aliases": ["greenhouse-effect"],
+    "category": "Khoa học Trái Đất",
+    "sources": [
+      {"title": "Climate Change 2021: The Physical Science Basis, Annex VII: Glossary (entries 'Greenhouse effect', 'Greenhouse gas')", "publisher": "Intergovernmental Panel on Climate Change (IPCC), AR6 WGI", "url": "https://www.ipcc.ch/report/ar6/wg1/downloads/report/IPCC_AR6_WGI_AnnexVII.pdf"},
+      {"title": "What is the greenhouse effect?", "publisher": "NASA Science", "url": "https://science.nasa.gov/climate-change/faq/what-is-the-greenhouse-effect/"}
+    ],
+    "usedIn": [
+      "sao-kim-bai-hoc-ve-hieu-ung-nha-kinh-mat-kiem-soat",
+      "su-song-tren-trai-dat-4-ti-nam-trong-mot-dong-thoi-gian"
+    ],
+    "verdict": "PASS",
+    "notes": "The mechanism follows the IPCC AR6 glossary (read directly from the PDF), not the popular 'gases trap heat like glass' picture. I did not describe how a real glass greenhouse works (a common and misleading analogy) because no fetched source addresses it. The NASA temperature figures (average 15 °C, ~33 °C drop) are left out: the NASA page ties the 33 °C figure to removing CO₂ specifically, and reusing it as 'without the greenhouse effect' would misquote the page. The gas list is NASA's; Vietnamese chemical names follow standard textbook usage (mêtan, ôzôn, đinitơ oxit). No conflicts. sao-kim says infrared 'bị CO₂ giữ lại', a simplification consistent with NASA's 'trapped'. Its runaway feedback story (water vapour, 464 °C, 96% CO₂, 75% reflection) was NOT checked here and needs its own sources in that article. su-song-tren-trai-dat (the Snowball Earth exit through volcanic CO₂) uses the term consistently."
+  },
+  {
+    "slug": "tien-dong",
+    "term": "Tiến động",
+    "termEn": "Precession",
+    "shortDef": "Sự đổi hướng chậm của trục quay của một vật đang quay dưới tác dụng của mômen lực, như trục con quay lắc vòng. Với Trái Đất, đó là sự đổi hướng rất chậm của trục quay so với các ngôi sao, khiến sao Bắc Cực thay đổi qua hàng nghìn năm.",
+    "shortDefEn": "The slow change in direction of a spinning object's rotation axis under a torque, like the wobbling axis of a spinning top. For Earth, it is the very slow change in the direction of the axis relative to the stars, which changes the North Star over thousands of years.",
+    "fullDef": "Trong cơ học, khi một mômen lực tác dụng lên một vật đang quay, trục quay của vật, cùng hướng với động lượng góc, có thể quay vòng chậm quanh một trục khác thay vì đổ xuống. Hiện tượng này gọi là tiến động, thấy rõ ở con quay hồi chuyển.\n\nTrái Đất hơi phình ra ở xích đạo. Lực hấp dẫn của Mặt Trời và Mặt Trăng tác dụng lên phần phình này làm trục quay Trái Đất tiến động, hoàn thành một vòng trong khoảng 26.000 năm (NASA nêu chu kỳ khoảng 25.771,5 năm). Đây là tiến động trục quay; nó khác với sự thay đổi độ nghiêng của trục, vốn là một chu kỳ riêng.\n\nVì trục quay đổi hướng, ngôi sao sáng nằm gần cực bắc của bầu trời thay đổi theo thời gian: hiện nay là Polaris, vài nghìn năm trước là Kochab, và khoảng 12.000 năm nữa sẽ là Vega. Tiến động cũng làm chênh lệch giữa các mùa rõ hơn ở bán cầu này và kém đi ở bán cầu kia; nó là một trong các chu kỳ quỹ đạo Milankovitch ảnh hưởng tới khí hậu Trái Đất trên thang thời gian rất dài.",
+    "fullDefEn": "In mechanics, when a torque acts on a spinning object, its rotation axis, which points along the angular momentum, can slowly sweep around another axis instead of toppling over. This is precession, clearly visible in a gyroscope.\n\nEarth bulges slightly at the equator. The gravitational pull of the Sun and Moon on this bulge makes Earth's axis precess, completing one circuit in about 26,000 years (NASA gives about 25,771.5 years). This is axial precession; it is separate from changes in the tilt of the axis, which follow a cycle of their own.\n\nBecause the axis changes direction, the bright star near the north celestial pole changes over time: today it is Polaris, a couple of thousand years ago it was Kochab, and in about 12,000 years it will be Vega. Precession also makes seasonal contrasts stronger in one hemisphere and weaker in the other, and it is one of the Milankovitch orbital cycles that affect Earth's climate over very long timescales.",
+    "aliases": ["tien-dong-truc-quay", "tue-sai", "precession", "axial-precession"],
+    "category": "Thiên văn học",
+    "sources": [
+      {"title": "Milankovitch (Orbital) Cycles and Their Role in Earth's Climate", "publisher": "NASA Science", "url": "https://science.nasa.gov/science-research/earth-science/milankovitch-orbital-cycles-and-their-role-in-earths-climate/"},
+      {"title": "University Physics Volume 1, §11.4 Precession of a Gyroscope", "publisher": "OpenStax, Rice University", "url": "https://openstax.org/books/university-physics-volume-1/pages/11-4-precession-of-a-gyroscope"},
+      {"title": "APOD 2015 May 8: When Vega is North", "publisher": "NASA Science", "url": "https://science.nasa.gov/image-article/apod-2015-may-8-when-vega-is-north/"},
+      {"title": "Summer Triangle Corner: Vega", "publisher": "NASA Night Sky Network", "url": "https://science.nasa.gov/solar-system/skywatching/night-sky-network/summer-triangle-corner-vega/"}
+    ],
+    "usedIn": [
+      "vi-sao-chiem-tinh-hoc-khong-phai-khoa-hoc",
+      "20-ngoi-sao-sang-nhat-bau-troi-dem"
+    ],
+    "verdict": "PASS",
+    "notes": "Scope: the general mechanics sense comes first, then the sense both articles use (axial precession of Earth), and shortDef says so explicitly. Only Earth's precession is covered; other planets are not claimed. The cycle length gives both OpenStax/APOD (~26,000 years) and NASA's figure (25,771.5 years), so neither implies false precision. Alias 'tue-sai' (tuế sai) is the traditional Vietnamese name for precession of the equinoxes, a consequence of axial precession, and is commonly used for it. Drop it if the editor wants aliases to be strict synonyms only. ARTICLE CONFLICT (number): 20-ngoi-sao-sang-nhat-bau-troi-dem says Vega 'Từng là Sao Bắc Cực khoảng 12.000 năm trước' (EN: 'about 12,000 years ago'). NASA Night Sky Network says Vega was the northern pole star about 14,000 years ago; the common figure '12,000 BC' is 12,000 years BEFORE THE COMMON ERA, not 12,000 years before today. This looks like a BC/years-ago mix-up. The entry avoids the past date for Vega and cites only the future one (~12,000 years from now, APOD). NOT VERIFIED: vi-sao-chiem-tinh-hoc-khong-phai-khoa-hoc says the Sun's actual position against the constellations 'đã khác đáng kể' since the zodiac was defined, and that the ecliptic crosses 13 constellations. Both are consistent with the concept, but I could not fetch Britannica (403) to confirm them."
+  },
+  {
+    "slug": "dong-vi",
+    "term": "Đồng vị",
+    "termEn": "Isotope",
+    "shortDef": "Các nguyên tử của cùng một nguyên tố hóa học, có cùng số proton nhưng khác số neutron, nên có số khối khác nhau. Một số đồng vị bền; số khác không bền và tự phân rã phóng xạ.",
+    "shortDefEn": "Atoms of the same chemical element that have the same number of protons but different numbers of neutrons, and therefore different mass numbers. Some isotopes are stable; others are unstable and undergo radioactive decay.",
+    "fullDef": "Số proton, tức số hiệu nguyên tử Z, quyết định nguyên tử thuộc nguyên tố nào. Các đồng vị của một nguyên tố có cùng Z nhưng khác số neutron, nên khác số khối A (tổng số proton và neutron). Ví dụ, carbon-12 và carbon-14 đều có 6 proton, nhưng lần lượt có 6 và 8 neutron.\n\nĐồng vị bền không tự biến đổi; đồng vị phóng xạ thì phân rã tự phát theo thời gian. Hầu hết các nguyên tố có nhiều hơn một đồng vị bền. Chỉ thêm một neutron cũng có thể làm tính chất của đồng vị thay đổi rõ rệt: carbon-12 bền, còn carbon-14 thì phân rã.\n\nĐồng vị được dùng để truy vết các quá trình tự nhiên thông qua sự thay đổi tỉ lệ đồng vị. Đồng vị phóng xạ còn cung cấp thông tin về thời gian, là cơ sở của phương pháp định tuổi bằng phóng xạ, chẳng hạn định tuổi bằng carbon-14.",
+    "fullDefEn": "The number of protons, the atomic number Z, determines which element an atom belongs to. Isotopes of an element share the same Z but have different numbers of neutrons, and so different mass numbers A (protons plus neutrons). Carbon-12 and carbon-14, for example, both have 6 protons but have 6 and 8 neutrons respectively.\n\nStable isotopes do not change on their own; radioactive isotopes decay spontaneously over time. Most elements have more than one stable isotope. Adding even a single neutron can change an isotope's properties markedly: carbon-12 is stable, while carbon-14 decays.\n\nIsotopes are used to trace natural processes through changes in isotope ratios. Radioactive isotopes also carry information about time, which is the basis of radiometric dating, such as carbon-14 dating.",
+    "aliases": ["isotope", "isotopes"],
+    "category": "Hóa học",
+    "sources": [
+      {"title": "Climate Change 2021: The Physical Science Basis, Annex VII: Glossary (entry 'Isotopes')", "publisher": "Intergovernmental Panel on Climate Change (IPCC), AR6 WGI", "url": "https://www.ipcc.ch/report/ar6/wg1/downloads/report/IPCC_AR6_WGI_AnnexVII.pdf"},
+      {"title": "DOE Explains... Isotopes", "publisher": "U.S. Department of Energy, Office of Science", "url": "https://www.energy.gov/science/doe-explainsisotopes"}
+    ],
+    "usedIn": [
+      "nhung-hat-vo-hinh-tao-nen-the-gioi-vat-chat",
+      "dai-tuyet-chung-permi-lan-su-song-suyt-bien-mat"
+    ],
+    "verdict": "PASS",
+    "notes": "The IUPAC Gold Book entry ('nuclides having the same atomic number but different mass numbers') agrees, but the page was behind a Cloudflare challenge, so I saw it only through a search snippet and it is NOT listed as a source. The neutron counts for C-12/C-14 are simple arithmetic (A − Z). 'Most elements have more than one stable isotope' is IPCC wording. DOE's '254 known stable isotopes' is deliberately left out. No conflict with nhung-hat-vo-hinh-tao-nen-the-gioi-vat-chat. FLAG, NOT VERIFIED (outside this entry): dai-tuyet-chung-permi-lan-su-song-suyt-bien-mat calls helium-3 and argon-36 'những đồng vị đặc trưng của vật chất ngoài Trái Đất'. Argon-36 is also present in Earth's atmosphere; as I recall, the original fullerene claim (early 2000s) rested on isotope RATIOS, not on the mere presence of these isotopes. I fetched no source, so that article's fact-check should confirm and, if needed, reword to 'tỉ lệ đồng vị heli và argon đặc trưng của vật chất ngoài Trái Đất'."
+  }
+]

@@ -22,6 +22,27 @@ export function stripDiacritics(input: string): string {
     .replace(/Đ/g, "D");
 }
 
+/**
+ * Cú pháp thuật ngữ `[[khoá]]` / `[[khoá|nhãn]]` — xem `@/lib/glossary`.
+ * Nằm ở đây chứ không ở glossary.ts vì glossary.ts import `slugify` từ file này;
+ * đặt ngược lại là import vòng.
+ */
+export const GLOSSARY_PATTERN =
+  /\[\[([^\[\]|\n]{1,80})(?:\|([^\[\]\n]{1,80}))?\]\]/g;
+
+/**
+ * Bỏ cú pháp thuật ngữ, giữ đúng chữ người đọc nhìn thấy.
+ *
+ * Mọi chỗ dùng Markdown thô ngoài `ArticleContent` phải đi qua đây: chỉ mục
+ * tìm kiếm (không thì snippet hiện `[[`), mục lục (không thì id heading lệch
+ * với id mà `ArticleContent` gắn), ngữ cảnh gửi cho AI.
+ */
+export function stripGlossaryMarkup(markdown: string): string {
+  return markdown.replace(GLOSSARY_PATTERN, (whole, key: string, label?: string) =>
+    (label ?? key).trim() || whole,
+  );
+}
+
 /** Chuyển tiếng Việt có dấu thành slug an toàn cho URL. */
 export function slugify(input: string): string {
   return input
@@ -101,7 +122,7 @@ export function extractHeadings(markdown: string) {
 
     const match = /^(#{2,3})\s+(.*)$/.exec(line);
     if (!match) continue;
-    const text = match[2]
+    const text = stripGlossaryMarkup(match[2])
       // Tiêu đề có link: giữ nhãn, bỏ URL. Nếu không bỏ, id tính ở đây sẽ khác
       // id mà ArticleContent gắn vào thẻ <h2>, và link mục lục trỏ vào hư không.
       .replace(/\[([^\]]*)\]\([^)]*\)/g, "$1")

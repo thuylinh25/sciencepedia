@@ -116,6 +116,24 @@
     "heroFieldEmpty": "sắp có",
     "heroTitleRich": "Vũ trụ trong <hl>tầm tay bạn</hl>"
   },
+  "glossary": {
+    "title": "Thuật ngữ",
+    "termLabel": "Thuật ngữ: {term}. Xem giải thích",
+    "viewDetails": "Xem chi tiết",
+    "openPage": "Mở trang thuật ngữ",
+    "noFullDef": "Mục từ này chưa có định nghĩa đầy đủ.",
+    "loadError": "Không tải được chi tiết thuật ngữ.",
+    "related": "Bài viết dùng thuật ngữ này",
+    "imageCredit": "Ảnh: {credit}",
+    "explainSimply": "Giải thích dễ hiểu",
+    "explainAgain": "Giải thích cách khác",
+    "explaining": "Đang tìm cách giải thích…",
+    "aiNotice": "Do AI viết lại từ định nghĩa đã thẩm định, có thể chưa chính xác. Định nghĩa phía trên mới là bản chuẩn.",
+    "aiError": "Chưa giải thích được lúc này. Thử lại sau nhé.",
+    "aiRateLimited": "Bạn đã hỏi khá nhiều trong một phút — đợi một lát rồi thử lại.",
+    "aiBusy": "Dịch vụ AI đang quá tải. Thử lại sau ít phút nhé.",
+    "aiNotConfigured": "Tính năng giải thích bằng AI chưa được bật."
+  },
   "article": {
     "readingTime": "{minutes} phút đọc",
     "views": "{count} lượt xem",

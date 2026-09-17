@@ -3,7 +3,9 @@ import ReactMarkdown, { type Components } from "react-markdown";
 import remarkGfm from "remark-gfm";
 
 import { slugify } from "@/lib/utils";
+import { remarkGlossary, type GlossaryMap } from "@/lib/glossary";
 import { defaultLocale, locales, type Locale } from "@/i18n/routing";
+import { GlossaryTerm } from "@/components/glossary/glossary-term";
 
 /**
  * Thêm tiền tố locale cho link nội bộ viết trong Markdown.
@@ -67,8 +69,25 @@ const headingId = (children: ReactNode) =>
  * react-markdown mặc định không cho HTML thô đi qua, nên nội dung do biên tập
  * viên nhập không thể chèn script.
  */
-function buildComponents(locale: string): Components {
-  return {
+function buildComponents(locale: string, glossary: GlossaryMap): Components {
+  const components: Components & {
+    "glossary-term": (props: { children?: ReactNode; "data-key"?: string }) => ReactNode;
+  } = {
+    /**
+     * `[[thuật ngữ]]` — xem `remarkGlossary`. Khoá không có mục từ thì hiện
+     * như chữ thường: bài được viết trước từ điển là chuyện bình thường, và
+     * một tooltip rỗng tệ hơn không có tooltip. `npm run glossary:check` liệt
+     * kê các khoá đang thiếu.
+     */
+    "glossary-term": ({ children, "data-key": key }) => {
+      const entry = key ? glossary[key] : undefined;
+      if (!entry) return <>{children}</>;
+      return (
+        <GlossaryTerm slug={entry.slug} term={entry.term} definition={entry.definition}>
+          {children}
+        </GlossaryTerm>
+      );
+    },
     h2: ({ children }) => <h2 id={headingId(children)}>{children}</h2>,
     h3: ({ children }) => <h3 id={headingId(children)}>{children}</h3>,
     a: ({ href, children }) => {
@@ -126,21 +145,29 @@ function buildComponents(locale: string): Components {
       </blockquote>
     ),
   };
+  // react-markdown chỉ khai kiểu cho thẻ HTML chuẩn; thẻ tự đặt đi qua ép kiểu
+  return components as Components;
 }
 
 export function ArticleContent({
   markdown,
   locale = defaultLocale,
+  glossary = {},
 }: {
   markdown: string;
   /** Locale đang xem — quyết định tiền tố của link nội bộ. */
   locale?: Locale;
+  /**
+   * Mục từ cho `[[...]]`, tra sẵn trên server bằng `getGlossaryForMarkdown`.
+   * Không truyền (form quản trị xem trước) thì thuật ngữ hiện như chữ thường.
+   */
+  glossary?: GlossaryMap;
 }) {
   return (
     <div className="article-prose">
       <ReactMarkdown
-        remarkPlugins={[remarkGfm]}
-        components={buildComponents(locale)}
+        remarkPlugins={[remarkGfm, remarkGlossary]}
+        components={buildComponents(locale, glossary)}
       >
         {markdown}
       </ReactMarkdown>

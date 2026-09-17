@@ -177,6 +177,32 @@ export function articleJsonLd(input: {
   };
 }
 
+/**
+ * `DefinedTerm` cho trang thuật ngữ. `description` phải là đúng định nghĩa
+ * ngắn đang HIỆN trên trang — cùng luật "chỉ khai báo thứ hiển thị" như
+ * `articleJsonLd`.
+ */
+export function definedTermJsonLd(input: {
+  name: string;
+  description: string;
+  url: string;
+  locale: Locale;
+  setName: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "DefinedTerm",
+    name: input.name,
+    description: input.description,
+    url: input.url,
+    inLanguage: input.locale,
+    inDefinedTermSet: {
+      "@type": "DefinedTermSet",
+      name: input.setName,
+    },
+  };
+}
+
 export function breadcrumbJsonLd(items: { name: string; url: string }[]) {
   return {
     "@context": "https://schema.org",

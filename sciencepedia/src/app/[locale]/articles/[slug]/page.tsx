@@ -18,6 +18,7 @@ import {
   getPublishedSlugs,
   getRelatedForArticle,
 } from "@/server/queries";
+import { getGlossaryForMarkdown } from "@/server/glossary";
 import { articleJsonLd, breadcrumbJsonLd, buildMetadata } from "@/lib/seo";
 import {
   absoluteUrl,
@@ -153,10 +154,15 @@ export default async function ArticlePage({
   const headings = extractHeadings(content);
   const url = absoluteUrl(`/${locale}/articles/${article.slug}`);
   // Ưu tiên quan hệ trong knowledge graph, thiếu thì bù bằng tag/category
-  const related = await getRelatedForArticle(
-    article,
-    article.tags.map((t) => t.tagId),
-  );
+  const [related, glossary] = await Promise.all([
+    getRelatedForArticle(
+      article,
+      article.tags.map((t) => t.tagId),
+    ),
+    // Định nghĩa cho `[[thuật ngữ]]` phải nằm sẵn trong trang ISR — tooltip
+    // không fetch khi rê chuột.
+    getGlossaryForMarkdown(content, loc),
+  ]);
 
   // Thống kê nguồn cho khối tín hiệu tin cậy
 
@@ -410,7 +416,7 @@ export default async function ArticlePage({
             />
           )}
 
-          <ArticleContent markdown={content} locale={loc} />
+          <ArticleContent markdown={content} locale={loc} glossary={glossary} />
 
           {/* Thẻ */}
           {article.tags.length > 0 && (

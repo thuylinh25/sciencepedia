@@ -3,6 +3,7 @@ import { NextRequest } from "next/server";
 import { chatSchema } from "@/lib/validations";
 import { searchSlugsForRag } from "@/lib/search";
 import { prisma } from "@/lib/prisma";
+import { stripGlossaryMarkup } from "@/lib/utils";
 import { rateLimitShared } from "@/lib/rate-limit";
 import { auth } from "@/auth";
 import { AiError, isConfigured, streamAnswer } from "@/lib/ai";
@@ -82,7 +83,7 @@ async function buildContext(question: string, locale: "vi" | "en") {
       return [
         `### [${article.slug}] ${title}`,
         summary,
-        content.slice(0, CONTEXT_CHARS_PER_ARTICLE),
+        stripGlossaryMarkup(content).slice(0, CONTEXT_CHARS_PER_ARTICLE),
       ].join("\n\n");
     });
 

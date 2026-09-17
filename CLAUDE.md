@@ -18,6 +18,7 @@ npm run db:deploy    # apply migration trên prod
 npm run db:seed
 npm run search:reindex
 npm run sky:seed     # đồng bộ danh mục thiên thể sang bảng SkyObject (chạy khô, cần --write)
+npm run glossary:check  # [[thuật ngữ]] nào trong bài đã xuất bản chưa có mục từ (chỉ đọc)
 
 npm run publish:check # rà điều kiện xuất bản toàn kho (chỉ đọc)
 npm run publish       # đổi state sang PUBLISHED — đường ghi DUY NHẤT, có gate
@@ -91,6 +92,7 @@ Gate accuracy **không có ngoại lệ**.
 - **Dán URL ảnh ngoài vào form quản trị thì tự về R2** kèm ghi công Commons, ngay trong lượt lưu (`src/lib/cover-intake.ts`). Hỏng thì vẫn lưu, bìa còn trỏ ra ngoài. `npm run covers:mirror -- --write` là lưới hứng cho những lượt hụt và cho ảnh do pipeline sinh ra — chạy `npm run images:credit -- --write` TRƯỚC nó, vì sao ảnh xong là mất dấu vết Commons.
 - **Ảnh tải lên qua trang quản trị đi thẳng R2** (`/api/upload`), tự chuyển WebP và dựng sẵn các cỡ — không cần chạy script nào sau đó. Supabase Storage không còn nhận ảnh mới.
 - **Song ngữ:** dùng `pick()` / `pickName()` từ `@/lib/i18n-content`, không hardcode.
+- **Thuật ngữ `[[...]]`:** định nghĩa ngắn tra trên server lúc render, không fetch khi rê chuột. Giải thích do AI sinh **không bao giờ ghi vào CSDL** và luôn mang nhãn "do AI" — lý do: `docs/architecture.md`, mục "Thuật ngữ".
 
 ## Tài liệu
 

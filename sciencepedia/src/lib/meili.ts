@@ -2,6 +2,7 @@ import { MeiliSearch, type Index } from "meilisearch";
 import type { Article, Category, Tag } from "@prisma/client";
 
 import { cleanQuery } from "@/lib/query-text";
+import { stripGlossaryMarkup } from "@/lib/utils";
 
 export const ARTICLES_INDEX = "articles";
 
@@ -140,7 +141,7 @@ export async function ensureIndex() {
 }
 
 function stripMarkdown(md: string, max = 4000) {
-  return md
+  return stripGlossaryMarkup(md)
     .replace(/```[\s\S]*?```/g, " ")
     .replace(/!\[[^\]]*\]\([^)]*\)/g, " ")
     .replace(/\[([^\]]*)\]\([^)]*\)/g, "$1")
