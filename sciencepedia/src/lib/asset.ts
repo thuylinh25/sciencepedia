@@ -34,7 +34,15 @@ const BASE = ASSET_BASE_URL;
  * truyền `/images/…` vào đây.
  */
 export function assetUrl(key: string): string {
-  return `${BASE}/${key.replace(/^\/+/, "")}`;
+  // Mã hoá từng đoạn, giữ nguyên `/`. Khoá có dấu cách ("article/James
+  // Webb.webp") mà để trần thì hỏng `srcset`: thuộc tính ấy tách URL với bề
+  // rộng bằng DẤU CÁCH, nên "James Webb-640.webp 640w" bị đọc thành ba mảnh.
+  const path = key
+    .replace(/^\/+/, "")
+    .split("/")
+    .map(encodeURIComponent)
+    .join("/");
+  return `${BASE}/${path}`;
 }
 
 /**
@@ -46,5 +54,15 @@ export function assetUrl(key: string): string {
  * đường dẫn nội bộ ấy không còn tồn tại.
  */
 export function assetKey(url: string): string | null {
-  return url.startsWith(`${BASE}/`) ? url.slice(BASE.length + 1) : null;
+  if (!url.startsWith(`${BASE}/`)) return null;
+  const path = url.slice(BASE.length + 1);
+  // Khoá trong bucket là tên THẬT, không phải dạng mã hoá của URL. Bỏ bước
+  // này thì "article/James%20Webb.webp" không khớp mục "article/James
+  // Webb.webp" của bản kê biến thể, ảnh rơi sang `next/image`, dính HTTP 402
+  // và thẻ bài chỉ còn dải màu.
+  try {
+    return decodeURIComponent(path);
+  } catch {
+    return path;
+  }
 }
