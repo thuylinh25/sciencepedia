@@ -1,3 +1,4 @@
+import { createHash } from "node:crypto";
 import { mkdirSync, writeFileSync } from "node:fs";
 import path from "node:path";
 
@@ -43,7 +44,21 @@ import { listKeys, missingEnv } from "./r2-client";
  * ngần ấy điểm ảnh.
  */
 
-/** Chỉ xử lý ảnh gốc; bỏ qua chính các biến thể đã dựng. */
+/**
+ * Công thức dựng, góp vào dấu vân cùng byte ảnh gốc.
+ *
+ * Dấu vân chỉ từ ảnh gốc thì đổi chất lượng WebP sẽ ghi ra byte MỚI dưới tên
+ * CŨ — đúng cái lỗi dấu vân sinh ra để chặn, vì tên cũ đang được đệm một năm.
+ * Sửa tham số `sharp` bên dưới thì tăng chuỗi này.
+ */
+const RECIPE = "webp-q80-v1";
+
+/** 8 ký tự hex: 4 tỉ khả năng, dư cho vài trăm ảnh mà tên tệp vẫn đọc được. */
+function fingerprint(source: Buffer): string {
+  return createHash("sha256").update(RECIPE).update(source).digest("hex").slice(0, 8);
+}
+
+/** Chỉ xử lý ảnh gốc; bỏ qua chính các biến thể đã dựng (có hay không dấu vân). */
 const VARIANT_PATTERN = /-\d+\.webp$/;
 
 const SOURCE_PATTERN = /\.(jpe?g|png|webp)$/i;
@@ -79,6 +94,7 @@ async function main() {
       const response = await fetch(assetUrl(key), { cache: "no-store" });
       if (!response.ok) throw new Error(`tải gốc: HTTP ${response.status}`);
       const source = Buffer.from(await response.arrayBuffer());
+      const hash = fingerprint(source);
 
       const meta = await sharp(source).metadata();
       const origWidth = meta.width ?? 0;
@@ -104,14 +120,14 @@ async function main() {
         made.push(actual);
 
         if (write) {
-          const file = path.join(outDir, ...variantKey(key, actual).split("/"));
+          const file = path.join(outDir, ...variantKey(key, actual, hash).split("/"));
           mkdirSync(path.dirname(file), { recursive: true });
           writeFileSync(file, buffer);
         }
       }
 
-      manifest[key] = made;
-      console.log(`${String(origWidth).padStart(5)} px gốc → ${made.join(", ")}`);
+      manifest[key] = { hash, widths: made };
+      console.log(`${String(origWidth).padStart(5)} px gốc ${hash} → ${made.join(", ")}`);
     } catch (error) {
       failed = true;
       console.log(`LỖI — ${error instanceof Error ? error.message : error}`);

@@ -2,6 +2,7 @@ import { readdirSync, readFileSync, statSync } from "node:fs";
 import path from "node:path";
 
 import { assetUrl } from "../src/lib/asset";
+import { HASHED_VARIANT } from "../src/lib/image-variants";
 import { BUCKET, missingEnv, put } from "./r2-client";
 
 /**
@@ -22,17 +23,22 @@ import { BUCKET, missingEnv, put } from "./r2-client";
  */
 
 /**
- * Một ngày, không phải một năm.
+ * Đệm bao lâu tuỳ tên tệp có mang dấu vân nội dung hay không.
  *
- * Tên tệp ở đây KHÔNG mang dấu vân nội dung: sửa bìa là ghi đè đúng
- * `covers/<slug>-<w>.webp`. Đặt `immutable` một năm thì bản cũ còn sống trong
- * bộ nhớ đệm của trình duyệt lâu hơn trí nhớ của người sửa — đó là kiểu lỗi
- * "máy tôi thấy ảnh mới, máy anh thấy ảnh cũ".
+ * Biến thể do `images:variants` dựng mang dấu vân (`sky/m31.3f2a9c1e-640.webp`):
+ * ảnh đổi thì tên đổi, tệp cũ không bị ghi đè, nên đệm `immutable` một năm là
+ * đúng. Đây là gần như toàn bộ lượt tải ảnh của trang.
  *
- * Muốn vừa đệm lâu vừa đổi được ngay thì phải gắn hash vào tên tệp trước; khi
- * nào làm việc đó hẵng nâng số này lên.
+ * Mọi tệp khác (bìa gốc `covers/<slug>.webp`…) là tên theo CHỖ: sửa bìa là ghi
+ * đè đúng khoá cũ. Đặt một năm ở đó thì bản cũ sống trong trình duyệt lâu hơn
+ * trí nhớ người sửa — "máy tôi thấy ảnh mới, máy anh thấy ảnh cũ". Giữ một ngày.
+ * Lý do đầy đủ: `HASHED_VARIANT` trong `src/lib/image-variants.ts`.
  */
-const CACHE_CONTROL = "public, max-age=86400";
+function cacheControl(key: string): string {
+  return HASHED_VARIANT.test(key)
+    ? "public, max-age=31536000, immutable"
+    : "public, max-age=86400";
+}
 
 /**
  * Đuôi tệp nào không có mặt ở đây thì script bỏ qua, không đẩy.
@@ -132,7 +138,7 @@ async function main() {
     try {
       await put(key, body, {
         "content-type": contentType,
-        "cache-control": CACHE_CONTROL,
+        "cache-control": cacheControl(key),
       });
       const result = await verify(key, size);
       if (result === "✓") done += 1;

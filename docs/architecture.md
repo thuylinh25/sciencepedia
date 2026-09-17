@@ -365,9 +365,30 @@ ghi trước thì bài hiện ô đen cho tới khi tệp có mặt.
 
 `assets:upload` ký SigV4 bằng `node:crypto` (`scripts/r2-client.ts`) thay vì kéo
 `@aws-sdk/client-s3` vào: vài chục gói cho hai thao tác chạy tay dăm lần một năm là
-cái giá sai. Nó đặt `Cache-Control: public, max-age=86400` — một ngày, không phải một
-năm, vì tên tệp không mang dấu vân nội dung nên sửa ảnh là ghi đè đúng khoá cũ. Muốn
-đệm lâu hơn thì phải gắn hash vào tên tệp trước.
+cái giá sai.
+
+**Đệm bao lâu tuỳ tên tệp.** Biến thể do `images:variants` dựng mang 8 ký tự hash của
+ảnh gốc cộng công thức dựng (`sky/m31.0a1d4b8b-640.webp`) và được đệm
+`public, max-age=31536000, immutable`. Mọi tệp khác — bìa gốc `covers/<slug>.webp`,
+`article/<slug>.jpg` — giữ `max-age=86400`.
+
+Vì sao phải có hash mới dám đệm một năm: tên theo CHỖ (`sky/m31-640.webp`) bị ghi đè
+khi thay ảnh, và trình duyệt đã từng xem giữ bản cũ suốt `max-age` mà không có cách nào
+gọi về. Trước 2026-09-17 các biến thể mang tên theo chỗ nên chỉ dám đệm một ngày — tức
+khách quay lại sau một ngày tải lại toàn bộ ảnh, và mỗi lượt ấy tính vào giới hạn tốc độ
+không công bố của `r2.dev`. Có hash thì ảnh đổi → tên đổi → bản kê đổi, tệp cũ không bao
+giờ bị ghi đè.
+
+Hai cái bẫy nếu sửa chỗ này:
+
+- **Đổi tham số `sharp` (chất lượng, định dạng) mà không tăng `RECIPE`** trong
+  `scripts/build-image-variants.ts` → byte mới dưới tên cũ đang đệm một năm. Hash chỉ
+  từ ảnh gốc là không đủ, nên công thức góp vào hash.
+- **Đẩy bản kê lên production trước khi đẩy tệp lên R2** → trang trỏ vào tên chưa tồn
+  tại. Thứ tự: `images:variants --write` → `assets:upload --write` → commit bản kê.
+
+Biến thể tên cũ (không hash) vẫn nằm trong bucket sau lượt đổi này; bản deploy cũ còn
+trỏ vào chúng cho tới khi bản mới lên. Không có gì trỏ vào chúng nữa sau đó, xoá được.
 
 ---
 

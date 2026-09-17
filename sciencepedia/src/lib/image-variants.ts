@@ -25,18 +25,46 @@ import manifest from "./image-variants.json";
  */
 export const LADDER = [128, 384, 640, 828, 1200, 1920] as const;
 
-export type VariantManifest = Record<string, number[]>;
+/**
+ * `hash` là dấu vân của ẢNH GỐC (cộng công thức dựng), nằm luôn trong tên tệp
+ * biến thể. Xem `HASHED_VARIANT` bên dưới để biết vì sao.
+ */
+export type VariantManifest = Record<string, { hash: string; widths: number[] }>;
 
 const VARIANTS = manifest as VariantManifest;
 
-/** `sky/m31.jpg` + 640 → `sky/m31-640.webp` */
-export function variantKey(key: string, width: number): string {
-  return `${key.replace(/\.[^./]+$/, "")}-${width}.webp`;
+/**
+ * `sky/m31.jpg` + 640            → `sky/m31-640.webp`          (ảnh tải lên)
+ * `sky/m31.jpg` + 640 + `3f2a9c1e` → `sky/m31.3f2a9c1e-640.webp` (ảnh dựng lúc build)
+ */
+export function variantKey(key: string, width: number, hash?: string): string {
+  const stem = key.replace(/\.[^./]+$/, "");
+  return hash ? `${stem}.${hash}-${width}.webp` : `${stem}-${width}.webp`;
 }
+
+/**
+ * Biến thể mang dấu vân trong tên — thứ duy nhất được đệm `immutable` một năm.
+ *
+ * ## Vì sao phải có dấu vân mới dám đệm lâu
+ *
+ * Tên cũ `sky/m31-640.webp` là tên theo CHỖ, không theo NỘI DUNG: thay ảnh gốc
+ * rồi dựng lại là ghi đè đúng khoá ấy. Đệm một năm trên tên như thế thì trình
+ * duyệt đã từng xem giữ bản cũ suốt một năm, không cách nào gọi về — kiểu lỗi
+ * "máy tôi thấy ảnh mới, máy anh thấy ảnh cũ". Vì thế trước đây chỉ dám đệm
+ * một ngày, tức khách quay lại sau một ngày tải lại toàn bộ ảnh, và mỗi lượt
+ * tải ấy đều tính vào giới hạn tốc độ của `r2.dev`.
+ *
+ * Có dấu vân thì ảnh đổi → tên đổi → bản kê đổi → trang trỏ sang tệp mới. Tệp
+ * cũ không bao giờ bị ghi đè nên đệm vĩnh viễn cũng không sai.
+ *
+ * Ảnh tải lên qua `/api/upload` không cần dấu vân: tên đã mang UUID sinh mới
+ * mỗi lượt, cũng không bao giờ bị ghi đè — `storage.ts` đặt `immutable` từ đầu.
+ */
+export const HASHED_VARIANT = /\.[0-9a-f]{8}-\d+\.webp$/;
 
 /** Bề rộng có sẵn của một ảnh, rỗng nghĩa là chưa dựng biến thể nào. */
 export function variantWidths(key: string): number[] {
-  return VARIANTS[key] ?? [];
+  return VARIANTS[key]?.widths ?? [];
 }
 
 /**
@@ -54,18 +82,20 @@ export function assetSrcSet(
   const key = assetKey(url);
   if (!key) return null;
 
-  const widths = variantWidths(key).length > 0
-    ? variantWidths(key)
-    : widthsFromKey(key);
+  const entry = VARIANTS[key];
+  const widths = entry ? entry.widths : widthsFromKey(key);
   if (widths.length === 0) return null;
 
-  const stem = widthsFromKey(key).length > 0 ? key.replace(VARIANT_SUFFIX, "") : key;
+  const at = (w: number) =>
+    assetUrl(
+      entry
+        ? variantKey(key, w, entry.hash)
+        : variantKey(key.replace(VARIANT_SUFFIX, ""), w),
+    );
 
   return {
-    src: assetUrl(variantKey(stem, widths[widths.length - 1])),
-    srcSet: widths
-      .map((w) => `${assetUrl(variantKey(stem, w))} ${w}w`)
-      .join(", "),
+    src: at(widths[widths.length - 1]),
+    srcSet: widths.map((w) => `${at(w)} ${w}w`).join(", "),
   };
 }
 
