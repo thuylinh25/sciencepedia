@@ -10,6 +10,7 @@ import { Button } from "@/components/ui/button";
 import { Reveal } from "@/components/motion/reveal";
 import { DidYouKnowCard } from "@/components/home/did-you-know-card";
 import { TopicChips } from "@/components/home/topic-chips";
+import { cn } from "@/lib/utils";
 
 type CategoryChip = {
   id: string;
@@ -76,7 +77,21 @@ export async function DiscoverToday({
 
       <Reveal>
         <div className="grid gap-8 lg:grid-cols-12 lg:gap-10">
-          <div className={hasAside ? "lg:col-span-7" : "lg:col-span-12"}>
+          {/* `flex-1`, KHÔNG phải `h-full`.
+
+              `h-full` là 100% chiều cao CỘT, mà cột còn chứa nhãn "Bài của hôm
+              nay" phía trên — nên thẻ cao hơn chỗ của nó đúng bằng nhãn cộng
+              `mb-4` (32px) và tràn ra ngoài cột. Đo trên production 17/09: ở
+              390px thẻ tràn 32px, bằng đúng `gap-8`, nên thẻ trích dẫn bên dưới
+              dính sát vào nó; ở 1440px nó ăn 32/40px khoảng cách tới dải chip.
+              `flex-1` lấp phần CÒN LẠI sau nhãn: màn rộng vẫn cao bằng cột bên
+              cạnh, màn hẹp thì cao đúng theo nội dung. */}
+          <div
+            className={cn(
+              "flex flex-col",
+              hasAside ? "lg:col-span-7" : "lg:col-span-12",
+            )}
+          >
             <h3 className="mb-4 text-xs font-medium tracking-widest text-muted-foreground uppercase">
               {t("todayPick")}
             </h3>
@@ -84,7 +99,7 @@ export async function DiscoverToday({
               article={article}
               locale={locale}
               variant={hasAside ? "default" : "hero"}
-              className="h-full"
+              className="flex-1"
             />
           </div>
 
@@ -127,11 +142,11 @@ export async function DiscoverToday({
             </aside>
           )}
 
-          {/* `gap-6` của lưới không đủ tách dải chip khỏi thẻ bài phía trên:
-              thẻ dùng `h-full` nên cao bằng cột bên cạnh, và nhãn "Lối rẽ
-              nhanh" nằm sát mép dưới của thẻ đến mức trông như đè lên. Thêm
-              đường kẻ và khoảng đệm riêng để đây thành một dải tách bạch chứ
-              không phải phần đuôi của khối trên. */}
+          {/* Đường kẻ + đệm riêng để dải chip thành một dải tách bạch chứ
+              không phải phần đuôi của khối trên. Lần đầu thêm vào vì nhãn "Lối
+              rẽ nhanh" trông như đè lên thẻ bài — triệu chứng đó thật ra do thẻ
+              tràn khỏi cột (xem chú thích `flex-1` ở trên), đã sửa ở gốc. Giữ
+              đường kẻ vì lý do bố cục, không còn vì chuyện tràn. */}
           <div className="mt-2 border-t pt-8 lg:col-span-12">
             <TopicChips
               tags={tags}
