@@ -1,23 +1,22 @@
 import "server-only";
 
-import { query } from "@anthropic-ai/claude-agent-sdk";
+import { AiError, generateGemini } from "@/lib/ai";
 
 /**
  * Gợi ý danh mục, thẻ và metadata SEO cho một bản nháp, từ tiêu đề và nội dung.
  *
- * ## Vì sao đi qua Agent SDK chứ không qua `@anthropic-ai/sdk`
+ * ## Vì sao Gemini chứ không phải Claude Agent SDK (đổi 17/09)
  *
- * `CLAUDE_CODE_OAUTH_TOKEN` xác thực bằng gói đăng ký Claude và CHỈ được Claude
- * Code / Agent SDK đọc. `@anthropic-ai/sdk` không đọc nó — đó cũng là lý do
- * `src/lib/rewrite.ts` phải có `ANTHROPIC_API_KEY` riêng. Chủ repo đã chốt
- * dùng token đăng ký cho tính năng này, nên đường đi là Agent SDK.
+ * Bản đầu đi qua Agent SDK với `CLAUDE_CODE_OAUTH_TOKEN`. Hai cái giá của nó
+ * lộ ra khi dùng thật: Agent SDK khởi chạy một tiến trình con nên KHÔNG chạy
+ * trên hàm serverless của Vercel — nút này chết trên production — và token
+ * đăng ký là thứ phải sinh tay, hết hạn, không nằm sẵn trong biến môi trường
+ * deploy. Gemini gọi bằng HTTP, chạy được trên Vercel, dùng chung
+ * `GEMINI_API_KEY`/`GEMINI_MODEL` với trợ lý AI.
  *
- * ## Ràng buộc triển khai phải biết
- *
- * Agent SDK khởi chạy một tiến trình con. Nó chạy được ở máy dev và trên máy
- * chủ Node tự quản, nhưng KHÔNG chạy trên hàm serverless của Vercel. Route gọi
- * hàm này vì thế khai báo `runtime = "nodejs"` và `maxDuration`, và khi thiếu
- * token thì trả về một lỗi nói rõ thay vì treo.
+ * Đây là việc CHỌN trong tập có sẵn, không có phán đoán khoa học nào phải cân,
+ * nên model nhanh là đủ. Kết quả chỉ là đề xuất: biên tập viên nhận hay sửa
+ * trong form, không có gì tự ghi xuống CSDL.
  *
  * ## Vì sao truyền cả danh sách danh mục và thẻ vào prompt
  *
@@ -47,10 +46,14 @@ export type ClassifySuggestion = {
 
 export type ClassifyResult =
   | { ok: true; data: ClassifySuggestion }
-  | { ok: false; error: "NO_CREDENTIAL" | "NO_OUTPUT" | "FAILED"; detail?: string };
+  | {
+      ok: false;
+      error: "NO_CREDENTIAL" | "NO_OUTPUT" | "RATE_LIMITED" | "FAILED";
+      detail?: string;
+    };
 
 export function isClassifyConfigured(): boolean {
-  return Boolean(process.env.CLAUDE_CODE_OAUTH_TOKEN);
+  return Boolean(process.env.GEMINI_API_KEY);
 }
 
 /** Cắt bài trước khi gửi: phần đầu đã đủ để phân loại, và prompt ngắn thì rẻ. */
@@ -87,7 +90,7 @@ ${tagList}
 
 1. Chọn một danh mục phù hợp nhất. Chỉ dùng id trong danh sách trên, KHÔNG đặt tên mới.
 2. Chọn 3–6 thẻ. Chỉ dùng id trong danh sách trên.
-3. seoTitle: tối đa 60 ký tự, nêu chủ đề, không giật tít, không nhồi từ khoá.
+3. seoTitle: tối đa 60 ký tự, nêu chủ đề, không giật tít, không nhồi từ khoá. Viết hoa kiểu câu tiếng Việt — chỉ hoa chữ đầu và tên riêng, KHÔNG hoa mọi chữ kiểu tiêu đề tiếng Anh.
 4. seoDescription: 140–160 ký tự, một câu trọn vẹn nói bài trả lời câu hỏi gì.
 5. seoKeywords: 5–8 cụm, phân tách bằng dấu phẩy, tiếng Việt có dấu.
 6. reason: một câu ngắn nói vì sao chọn danh mục đó.
@@ -96,11 +99,9 @@ Giữ đúng mức độ dè dặt của bản nháp — không nâng "có thể
 
 ## Cách trả lời
 
-Chỉ in ra MỘT khối JSON, không kèm giải thích nào ngoài khối đó:
+Trả về đúng MỘT đối tượng JSON với các khoá sau, không kèm chữ nào khác:
 
-\`\`\`json
-{"categoryId":"...","tagIds":["...","..."],"seoTitle":"...","seoDescription":"...","seoKeywords":"...","reason":"..."}
-\`\`\``;
+{"categoryId":"...","tagIds":["...","..."],"seoTitle":"...","seoDescription":"...","seoKeywords":"...","reason":"..."}`;
 }
 
 /**
@@ -131,32 +132,21 @@ export async function classifyDraft(
   let text = "";
 
   try {
-    for await (const message of query({
+    ({ text } = await generateGemini({
       prompt: buildPrompt(input),
-      options: {
-        /* Sonnet, không Opus. Đây là việc phân loại theo một tập chọn sẵn —
-           không có phán đoán khoa học nào phải cân. Opus dành cho bước duyệt
-           nội dung, nơi một phán đoán sai không được bước nào bắt lại. */
-        model: "sonnet",
-        /* KHÔNG nạp setting của project, KHÔNG bật skill, KHÔNG cho công cụ.
-           Lượt này chỉ cần một câu trả lời từ chính prompt; mở thêm bất cứ thứ
-           gì là mở đường cho nó đọc file hoặc chạy lệnh trên máy chủ. */
-        settingSources: [],
-        allowedTools: [],
-        permissionMode: "bypassPermissions",
-        maxTurns: 1,
-      },
-    })) {
-      if (message.type === "assistant") {
-        for (const block of message.message.content) {
-          if (block.type === "text") text += block.text;
-        }
-      }
-      if (message.type === "result" && "result" in message && message.result) {
-        text += message.result;
+      // Chế độ JSON: Gemini bị ràng buộc trả JSON hợp lệ. `extractJson` bên
+      // dưới vẫn giữ, vì đổi model sau này có thể mất ràng buộc đó.
+      json: true,
+      // Thấp: cùng một bài thì nên ra cùng một đề xuất, không "sáng tạo" thẻ.
+      temperature: 0.2,
+    }));
+  } catch (error) {
+    if (error instanceof AiError) {
+      if (error.code === "NOT_CONFIGURED") return { ok: false, error: "NO_CREDENTIAL", detail: error.message };
+      if (error.code === "RATE_LIMITED" || error.code === "OVERLOADED") {
+        return { ok: false, error: "RATE_LIMITED", detail: error.message };
       }
     }
-  } catch (error) {
     return { ok: false, error: "FAILED", detail: (error as Error).message };
   }
 

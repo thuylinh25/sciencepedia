@@ -1,6 +1,6 @@
 import "server-only";
 
-import { GoogleGenAI } from "@google/genai";
+import { GoogleGenAI, ThinkingLevel } from "@google/genai";
 
 /**
  * Lớp gọi mô hình cho trợ lý khoa học.
@@ -159,6 +159,71 @@ async function* streamGemini(
   }
 
   if (!produced) yield { type: "blocked", reason: blockReason };
+}
+
+/**
+ * Một lượt Gemini, không stream, trả về chuỗi — cho việc nền cần kết quả trọn
+ * vẹn (phân loại, sinh SEO) chứ không cần chữ chạy dần.
+ *
+ * `json: true` bật `responseMimeType: application/json`: Gemini bị ràng buộc
+ * trả JSON hợp lệ thay vì chỉ "được yêu cầu" trả JSON trong prompt.
+ *
+ * KHÔNG fallback sang OpenRouter: model miễn phí ở đó không hỗ trợ chế độ JSON
+ * đồng đều, và một đề xuất phân loại hỏng hình dạng tệ hơn một lỗi "thử lại".
+ */
+export async function generateGemini({
+  prompt,
+  system,
+  json = false,
+  temperature = 0.2,
+  maxOutputTokens = 8192,
+  thinking = ThinkingLevel.LOW,
+  signal,
+}: {
+  prompt: string;
+  system?: string;
+  json?: boolean;
+  temperature?: number;
+  /**
+   * Trần cho CẢ phần suy nghĩ LẪN câu trả lời. Gemini 3 tính token "thinking"
+   * vào đây: đo 17/09, một prompt phân loại 100 token tiêu 1.850 token nghĩ
+   * trước khi viết 190 token JSON. Với trần cũ 2.048 và prompt thật, JSON bị
+   * cắt giữa chừng và `classifyDraft` trả NO_OUTPUT.
+   */
+  maxOutputTokens?: number;
+  /** Việc chọn trong danh sách có sẵn không cần nghĩ sâu — LOW mặc định. */
+  thinking?: ThinkingLevel;
+  signal?: AbortSignal;
+}): Promise<{ text: string; model: string }> {
+  const apiKey = process.env.GEMINI_API_KEY;
+  if (!apiKey) throw new AiError("NOT_CONFIGURED", "Thiếu GEMINI_API_KEY");
+
+  const ai = new GoogleGenAI({ apiKey });
+
+  try {
+    const response = await ai.models.generateContent({
+      model: GEMINI_MODEL,
+      contents: [{ role: "user", parts: [{ text: prompt }] }],
+      config: {
+        ...(system ? { systemInstruction: system } : {}),
+        ...(json ? { responseMimeType: "application/json" } : {}),
+        temperature,
+        maxOutputTokens,
+        thinkingConfig: { thinkingLevel: thinking },
+        ...(signal ? { abortSignal: signal } : {}),
+      },
+    });
+    // Bị cắt vì hết trần thì nửa chuỗi JSON còn tệ hơn không có gì: báo lỗi rõ
+    // thay vì để lớp gọi đoán vì sao parse hỏng.
+    const finish = response.candidates?.[0]?.finishReason;
+    if (finish === "MAX_TOKENS") {
+      throw new AiError("UPSTREAM_ERROR", `Gemini dừng vì hết maxOutputTokens (${maxOutputTokens})`);
+    }
+    return { text: response.text ?? "", model: GEMINI_MODEL };
+  } catch (error) {
+    if ((error as Error)?.name === "AbortError") throw error;
+    throw new AiError(classifyGeminiError(error), (error as Error)?.message);
+  }
 }
 
 // ------------------------------------------------------------------ OpenRouter

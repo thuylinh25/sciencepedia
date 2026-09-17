@@ -5,17 +5,13 @@ import { requireRole } from "@/lib/rbac";
 import { classifyDraft, isClassifyConfigured } from "@/server/classify";
 
 /**
- * Gợi ý danh mục, thẻ và SEO cho một bản nháp đang soạn.
+ * Gợi ý danh mục, thẻ và SEO cho một bản nháp đang soạn — gọi Gemini.
  *
- * `runtime = "nodejs"` và `maxDuration` là BẮT BUỘC, không phải tối ưu:
- * Agent SDK khởi chạy một tiến trình con, nên route này không chạy được ở
- * Edge runtime, và một lượt gọi mô hình vượt xa mặc định 10 giây.
- *
- * Xem `src/server/classify.ts` để biết vì sao đi qua Agent SDK chứ không qua
- * `@anthropic-ai/sdk`, và ràng buộc triển khai kèm theo.
+ * `maxDuration` vẫn cần: một lượt gọi mô hình có thể vượt mặc định 10 giây
+ * của Vercel. Xem `src/server/classify.ts` để biết vì sao đã rời Agent SDK.
  */
 export const runtime = "nodejs";
-export const maxDuration = 120;
+export const maxDuration = 60;
 
 const bodySchema = z.object({
   title: z.string().min(3),
@@ -38,8 +34,7 @@ export async function POST(request: Request) {
     return Response.json(
       {
         error: "NO_CREDENTIAL",
-        detail:
-          "Chưa có CLAUDE_CODE_OAUTH_TOKEN. Sinh bằng `claude setup-token` rồi đặt vào .env.",
+        detail: "Chưa có GEMINI_API_KEY trong biến môi trường.",
       },
       { status: 503 },
     );
@@ -68,8 +63,23 @@ export async function POST(request: Request) {
   const result = await classifyDraft({ ...parsed.data, categories, tags });
 
   if (!result.ok) {
-    const status = result.error === "NO_CREDENTIAL" ? 503 : 502;
-    return Response.json(result, { status });
+    const status =
+      result.error === "NO_CREDENTIAL" ? 503 : result.error === "RATE_LIMITED" ? 429 : 502;
+    // `detail` là thông báo thô của nhà cung cấp — chỉ ghi log, không đưa lên
+    // toast. Form hiện `detail` nếu có, nên thay bằng câu người đọc hiểu được.
+    console.error("[classify]", result.error, result.detail);
+    return Response.json(
+      {
+        error: result.error,
+        detail:
+          result.error === "RATE_LIMITED"
+            ? "Gemini đang quá tải hoặc hết hạn mức — thử lại sau ít phút."
+            : result.error === "NO_OUTPUT"
+              ? "Gemini không trả về đề xuất hợp lệ — thử lại."
+              : undefined,
+      },
+      { status },
+    );
   }
 
   return Response.json(result.data);
