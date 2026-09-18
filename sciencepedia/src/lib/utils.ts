@@ -154,6 +154,16 @@ const ALLOWED_IMAGE_HOSTS = [
   /\.supabase\.in$/,
   /^images\.unsplash\.com$/,
   /*
+   * CDN của Unsplash+ (gói trả phí). Ảnh ở đây KHÔNG suy ra được tác giả —
+   * id trong URL CDN không tra được, nên ghi công phải điền tay; xem
+   * `src/lib/unsplash.ts`.
+   *
+   * Giấy phép Unsplash+ khác giấy phép Unsplash miễn phí và gắn với tài
+   * khoản đăng ký. Host này mở theo yêu cầu của biên tập viên: trách nhiệm
+   * kiểm giấy phép nằm ở người dán URL, không ở lớp kiểm này.
+   */
+  /^plus\.unsplash\.com$/,
+  /*
    * TRANG ảnh Unsplash, không phải tệp ảnh.
    *
    * Biên tập viên dán URL này để `intakeCover` hỏi API lấy tên tác giả — thứ

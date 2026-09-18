@@ -48,6 +48,7 @@ const nextConfig: NextConfig = {
       },
       // Nguồn ảnh ngoài dùng cho dữ liệu seed và ảnh dẫn nguồn
       { protocol: "https", hostname: "images.unsplash.com" },
+      { protocol: "https", hostname: "plus.unsplash.com" },
       { protocol: "https", hostname: "science.nasa.gov" },
       { protocol: "https", hostname: "upload.wikimedia.org" },
       { protocol: "https", hostname: "thumb.wikimedia.org" },
