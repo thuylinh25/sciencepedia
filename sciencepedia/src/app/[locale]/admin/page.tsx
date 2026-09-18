@@ -43,11 +43,16 @@ export default async function AdminDashboard({
 
   return (
     <div className="space-y-10">
-      <header className="flex flex-wrap items-center justify-between gap-4">
+      {/* Trên màn hình hẹp tiêu đề đứng riêng một dòng và hai nút tự xuống
+          hàng: "Đồng bộ Meilisearch" + "Bài viết mới" cạnh nhau đã rộng hơn
+          một màn điện thoại, mà `flex-wrap` ở cấp header không cứu được —
+          nhóm nút là MỘT flex item không tách được, nên nó tràn ra khỏi
+          khung và kéo cả trang trượt ngang. */}
+      <header className="flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center sm:justify-between">
         <h1 className="font-display text-3xl font-bold tracking-tight">
           {t("dashboard")}
         </h1>
-        <div className="flex gap-2">
+        <div className="flex flex-wrap gap-2">
           <ReindexButton />
           <Button asChild>
             <Link href="/admin/articles/new">{t("newArticle")}</Link>
