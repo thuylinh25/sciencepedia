@@ -19,7 +19,9 @@ export type Credit = { vi: string; en: string };
 export function commonsFile(url: string): string | null {
   try {
     const u = new URL(url);
-    if (u.hostname !== "upload.wikimedia.org") return null;
+    // `thumb` là host thu nhỏ mới của Wikimedia; đường dẫn giống hệt `upload`.
+    if (u.hostname !== "upload.wikimedia.org" && u.hostname !== "thumb.wikimedia.org")
+      return null;
     const parts = u.pathname.split("/").filter(Boolean);
     const thumbAt = parts.indexOf("thumb");
     // .../thumb/a/ab/Tên.jpg/1280px-Tên.jpg  → phần tử ngay trước bản thu nhỏ

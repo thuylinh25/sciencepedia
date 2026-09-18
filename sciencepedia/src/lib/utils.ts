@@ -162,7 +162,12 @@ const ALLOWED_IMAGE_HOSTS = [
    */
   /^(www\.)?unsplash\.com$/,
   /^science\.nasa\.gov$/,
-  /^upload\.wikimedia\.org$/,
+  /*
+   * Hai host ảnh của Wikimedia. `upload` là host cũ; từ 2025 Commons trả
+   * URL thu nhỏ trên `thumb`, nên biên tập viên chép địa chỉ ảnh từ
+   * Wikipedia sẽ dán vào host này. Thiếu nó thì form từ chối một URL hợp lệ.
+   */
+  /^(upload|thumb)\.wikimedia\.org$/,
 ];
 
 export function isAllowedImageUrl(url: string): boolean {
