@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useTransition } from "react";
-import { useForm, Controller } from "react-hook-form";
+import { useForm, Controller, type FieldErrors } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useTranslations } from "next-intl";
 import { Eye, Loader2, Save, Sparkles, Wand2 } from "lucide-react";
@@ -31,6 +31,48 @@ import {
 
 type Option = { id: string; name: string; color?: string };
 
+type Tab = "vi" | "en" | "seo";
+
+/**
+ * Ô nào nằm trong tab nào.
+ *
+ * Radix Tabs THÁO panel không hoạt động khỏi DOM. Lỗi rơi vào một ô ở tab
+ * đang đóng thì cả dòng chữ đỏ lẫn ô ấy đều không tồn tại: người biên tập
+ * bấm Lưu và thấy đúng một thứ — không có gì xảy ra, không có cả request.
+ * Bảng này để mở đúng tab trước khi đưa mắt tới ô sai.
+ */
+const FIELD_TAB: Partial<Record<keyof ArticleInput, Tab>> = {
+  summary: "vi",
+  content: "vi",
+  titleEn: "en",
+  summaryEn: "en",
+  contentEn: "en",
+  seoTitle: "seo",
+  seoDescription: "seo",
+  seoKeywords: "seo",
+};
+
+/** Thứ tự đọc của form — lỗi đầu tiên theo thứ tự này là nơi cần nhảy tới. */
+const FIELD_ORDER: (keyof ArticleInput)[] = [
+  "title",
+  "slug",
+  "summary",
+  "content",
+  "titleEn",
+  "summaryEn",
+  "contentEn",
+  "seoTitle",
+  "seoDescription",
+  "seoKeywords",
+  "categoryId",
+  "coverImage",
+  "coverImageCredit",
+  "coverImageCreditEn",
+  "tagIds",
+  "status",
+  "featured",
+];
+
 export function ArticleForm({
   articleId,
   defaultValues,
@@ -47,6 +89,7 @@ export function ArticleForm({
   const router = useRouter();
   const [pending, startTransition] = useTransition();
   const [preview, setPreview] = useState(false);
+  const [tab, setTab] = useState<Tab>("vi");
 
   const {
     register,
@@ -176,8 +219,43 @@ export function ArticleForm({
     });
   }
 
+  /**
+   * Form không hợp lệ: nói ra, rồi đưa người dùng tới ô sai.
+   *
+   * Không có nhánh này thì `handleSubmit` chỉ lặng lẽ không gọi server
+   * action — đúng thiết kế của react-hook-form, nhưng ở form này thông báo
+   * lỗi có thể nằm trong tab đang đóng hoặc ngoài màn hình, nên biểu hiện
+   * là nút Lưu bấm không ăn.
+   */
+  function onInvalid(fieldErrors: FieldErrors<ArticleInput>) {
+    const first =
+      FIELD_ORDER.find((name) => fieldErrors[name]) ??
+      (Object.keys(fieldErrors)[0] as keyof ArticleInput | undefined);
+    if (!first) return;
+
+    const message = fieldErrors[first]?.message;
+    toast.error(typeof message === "string" ? message : t("form.invalid"));
+
+    const target = FIELD_TAB[first];
+    if (target) setTab(target);
+
+    /* Đợi panel gắn xong rồi mới tìm ô: vừa đổi tab thì nó chưa có trong
+       DOM. Ô có thể không tồn tại (ảnh bìa là component riêng) — khi đó
+       toast ở trên là toàn bộ phản hồi, và thế vẫn hơn im lặng. */
+    setTimeout(() => {
+      const el = document.getElementById(first);
+      if (!(el instanceof HTMLElement)) return;
+      el.scrollIntoView({ behavior: "smooth", block: "center" });
+      el.focus({ preventScroll: true });
+    }, 0);
+  }
+
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-8" noValidate>
+    <form
+      onSubmit={handleSubmit(onSubmit, onInvalid)}
+      className="space-y-8"
+      noValidate
+    >
       <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_18rem] lg:items-start">
         {/* ------------------------------------------------ Cột nội dung */}
         <div className="space-y-6">
@@ -216,7 +294,7 @@ export function ArticleForm({
             )}
           </div>
 
-          <Tabs defaultValue="vi">
+          <Tabs value={tab} onValueChange={(value) => setTab(value as Tab)}>
             <TabsList>
               <TabsTrigger value="vi">{t("form.contentVi")}</TabsTrigger>
               <TabsTrigger value="en">{t("form.contentEn")}</TabsTrigger>
