@@ -301,6 +301,16 @@ export async function syncNewArticles({
               title: article.title,
               url: candidate.url,
               publisher: attribution,
+              /* VACA là câu lạc bộ thiên văn nghiệp dư: theo thang của
+                 `science-editor` đây là bậc 4 (báo chí phổ biến khoa học),
+                 dùng làm bối cảnh chứ không đỡ được claim.
+
+                 Phải ghi rõ vì `Source.tier` mặc định là **2** — bậc của
+                 NASA, NOAA, NIH, CERN. Bỏ trống trường này là lặng lẽ xếp một
+                 trang CLB ngang với cơ quan vũ trụ, và đợt thẩm định 17/09 đã
+                 bắt được đúng hậu quả: 20 hàng nguồn VACA mang tier 2, chín
+                 bài chỉ có một nguồn ấy nên trông như đã đủ nguồn bậc 2. */
+              tier: 4,
               year: article.created
                 ? new Date(article.created).getFullYear()
                 : null,
