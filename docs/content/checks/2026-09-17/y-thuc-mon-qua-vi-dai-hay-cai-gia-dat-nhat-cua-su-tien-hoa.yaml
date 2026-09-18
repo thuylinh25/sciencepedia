@@ -1,0 +1,163 @@
+slug: y-thuc-mon-qua-vi-dai-hay-cai-gia-dat-nhat-cua-su-tien-hoa
+checkedAt: 2026-09-17
+checkedBy: science-editor
+sourceCount: 0
+verdict: reject
+summary: >-
+  Bài không có nguồn nào, và phần kiểm được thì hầu hết là sai hoặc không đỡ được: quy sai ngành cho
+  Ernest Becker, thổi một nghiên cứu n=29 trên bệnh nhân rối loạn lo âu lan toả thành "nhiều nghiên
+  cứu" về "con người", và dựng nguyên bài trên tiền đề tự nhận thức là độc quyền của người — điều mà
+  y văn về nhận biết bản thân và về nhận thức cái chết ở động vật đang bác. Đây là bài luận, không
+  phải bài bách khoa; sửa hai vòng cũng không cứu được khung sườn.
+
+claims:
+  - id: C-1
+    claim: "Nhà tâm lý học Ernest Becker cho rằng phần lớn nền văn minh nhân loại là nỗ lực đối mặt với nhận thức về cái chết."
+    verdict: partially-supported
+    severity: S3
+    evidence: https://en.wikipedia.org/wiki/Ernest_Becker
+    note: >-
+      Nội dung luận điểm thì đúng và bài đã dè dặt đúng mức ("từng cho rằng"). Nhưng quy sai ngành:
+      Becker có bằng tiến sĩ NHÂN HỌC VĂN HOÁ (Syracuse University) và dạy nhân học, không phải nhà
+      tâm lý học. Sửa thành "nhà nhân học văn hoá Ernest Becker". Ngoài ra phải dẫn thẳng tác phẩm
+      "The Denial of Death" (1973, giải Pulitzer hạng mục phi hư cấu năm 1974, trao sau khi ông mất)
+      và phải nói rõ đây là một luận thuyết nhân học/triết học, không phải một phát hiện thực nghiệm.
+      Ghi chú kiểm chứng: không mở được trang pulitzer.org (HTTP 403) trong lượt này, nên mốc Pulitzer
+      1974 cần kiểm lại tại nguồn trước khi in.
+
+  - id: C-2
+    claim: "Nhiều nghiên cứu tâm lý học cho thấy phần lớn những điều con người lo lắng hàng ngày thực tế không bao giờ xảy ra."
+    verdict: unsupported
+    severity: S2
+    evidence: https://pure.psu.edu/en/publications/exposing-worrys-deceit-percentage-of-untrue-worries-in-generalize/ (doi:10.1016/j.beth.2019.07.003)
+    note: >-
+      Con số này trong đời sống truyền thông gần như luôn truy về một nghiên cứu duy nhất:
+      LaFreniere & Newman 2020, Behavior Therapy 51(3):413-423. Nguyên văn abstract: "Twenty-nine
+      participants with GAD recorded worries... Primary results revealed that 91.4% of worry
+      predictions did not come true." Ba chỗ bài nói quá. (1) "Nhiều nghiên cứu" — một nghiên cứu.
+      (2) "con người" — mẫu là 29 người ĐÃ ĐƯỢC CHẨN ĐOÁN rối loạn lo âu lan toả, không phải dân số
+      chung. (3) đây là nghiên cứu trong khuôn khổ một can thiệp điều trị (Worry Outcome Journal),
+      không phải khảo sát lo lắng thường ngày. Nếu giữ, phải viết: "Một nghiên cứu trên 29 bệnh nhân
+      rối loạn lo âu lan toả ghi nhận 91,4% dự đoán lo lắng của họ không thành hiện thực" — và không
+      được suy rộng ra người khoẻ mạnh.
+
+  - id: C-3
+    claim: "Không sinh vật nào khác trên Trái Đất được biết là có khả năng nhận thức rõ ràng về sự hữu hạn của đời sống như con người."
+    verdict: partially-supported
+    severity: S3
+    evidence: https://royalsocietypublishing.org/rstb/article/373/1754/20170263/23576/Comparative-thanatology-an-integrative-approach
+    note: >-
+      Cụm "được biết là" và "như con người" cứu câu này khỏi bị gọi là sai, nhưng bài viết như thể
+      đây là chuyện đã đóng, trong khi tử vong học so sánh (comparative thanatology) là một ngành
+      đang hoạt động: tinh tinh, voi và một số loài cá voi có phản ứng với xác đồng loại, và chính
+      các tác giả trong ngành nói rằng nhận thức về cái chết ở tinh tinh đã bị ĐÁNH GIÁ THẤP. Bài
+      lại còn dựng nhị phân giả người / vi khuẩn / cây cỏ, bỏ qua toàn bộ vùng xám động vật có vú xã
+      hội. Phải thêm một câu thừa nhận ngành này tồn tại và kết quả chưa ngã ngũ. Ghi chú kiểm chứng:
+      trang Phil Trans B trả HTTP 403 khi mở trực tiếp trong lượt này — URL có tồn tại và tiêu đề
+      chuyên đề đã xác nhận qua chỉ mục, nhưng nội dung abstract chưa đọc được tại nguồn, cần mở lại
+      trước khi trích dẫn câu chữ.
+
+  - id: C-4
+    claim: "Con người biết rằng mình đang biết — tự nhận thức (self-awareness) là bước ngoặt phân biệt con người."
+    verdict: contradicted
+    severity: S2
+    evidence: https://journals.plos.org/plosbiology/article?id=10.1371%2Fjournal.pbio.3000021 (doi:10.1371/journal.pbio.3000021)
+    note: >-
+      Đây là trụ chính của bài và nó không đứng được ở dạng hiện tại. Bài dùng thuật ngữ khoa học
+      "self-awareness" rồi ngầm gán độc quyền cho người. Nhưng phép thử nhận biết bản thân trong
+      gương (mark test) đã được vượt qua ở vượn lớn, cá heo, voi, chim ác là — và Kohda et al. 2019
+      (PLOS Biology) báo cáo cá bàng chài dọn vệ sinh Labroides dimidiatus "shows behaviour that may
+      reasonably be interpreted as passing through all phases of the mark test". Kết quả ở cá còn
+      đang tranh cãi, nhưng ở vượn lớn và voi thì không. Bài phải hoặc (a) bỏ hàm ý độc quyền, hoặc
+      (b) thu hẹp claim xuống một năng lực hẹp hơn có định nghĩa rõ, có nguồn.
+
+  - id: C-5
+    claim: "Một vi khuẩn không biết nó tồn tại; một cây cỏ không tự hỏi về tương lai; một tế bào không lo lắng về cái chết."
+    verdict: unverifiable
+    severity: S3
+    evidence: "—"
+    note: >-
+      Không kiểm được bằng quan sát — đây là khẳng định về trạng thái nội tâm của sinh vật không có
+      hệ thần kinh, thuộc loại không chứng minh cũng không bác bỏ được. Trong bài bách khoa thì phải
+      viết lại thành phát biểu về cấu trúc: "vi khuẩn không có hệ thần kinh" — kiểm được — thay vì
+      phát biểu về việc chúng biết hay không biết gì.
+
+  - id: C-6
+    claim: "Bộ não con người được tiến hóa để dự đoán; khả năng dự đoán giúp tổ tiên chúng ta sống sót."
+    verdict: unsupported
+    severity: S3
+    evidence: "—"
+    note: >-
+      Không có nguồn nào trong bài, và ở dạng này nó là một câu chuyện thích nghi luận: nêu một chức
+      năng rồi giả định chức năng đó là lý do tiến hoá chọn nó. Muốn giữ thì phải gắn một nguồn về
+      khung xử lý tiên đoán và hạ xuống mức mô tả cơ chế, bỏ phần suy đoán về áp lực chọn lọc ở tổ
+      tiên.
+
+  - id: C-7
+    claim: "Nếu ý thức chỉ mang lại đau khổ, có lẽ tiến hóa đã không ưu ái nó đến vậy."
+    verdict: unsupported
+    severity: S3
+    evidence: "—"
+    note: >-
+      Suy luận sai về tiến hoá: chọn lọc tự nhiên không tối ưu hoá phúc lợi chủ quan, và nhiều đặc
+      điểm tồn tại như hệ quả kèm theo chứ không vì được "ưu ái". Chính bài ở mục sau lại nói đúng
+      điều này ("tác dụng phụ không thể tránh khỏi") — hai mục tự mâu thuẫn. Cắt câu này.
+
+  - id: C-8
+    claim: "Chỉ một bộ não biết suy nghĩ về cái chết mới có thể thực sự trân trọng sự sống."
+    verdict: unsupported
+    severity: S3
+    evidence: "—"
+    note: >-
+      Khẳng định quy chuẩn, không phải khẳng định kiểm được, và chữ "chỉ" biến nó thành một tuyên bố
+      loại trừ không có gì đỡ. Trong bài bách khoa thì cắt, hoặc chuyển hẳn sang khối trích dẫn có
+      ghi tên người phát biểu.
+
+  - id: C-9
+    claim: "Ý thức chính là cái giá mà vũ trụ phải trả để có thể một lần nhìn lại và hiểu chính mình."
+    verdict: unsupported
+    severity: S3
+    evidence: "—"
+    note: >-
+      Câu kết mang hình thức một kết luận khoa học (đặt sau mục 'Kết luận', in đậm dạng trích) nhưng
+      là mệnh đề mục đích luận về vũ trụ. Cắt, hoặc ghi rõ là lời bình của tác giả và ký tên.
+
+fixes:
+  - "Đổi 'Nhà tâm lý học Ernest Becker' thành 'Nhà nhân học văn hoá Ernest Becker'. Dẫn thẳng 'The Denial of Death' (1973) và nói rõ đây là luận thuyết, không phải kết quả thực nghiệm. Kiểm lại mốc Pulitzer 1974 tại pulitzer.org trước khi in."
+  - "Thay câu 'Nhiều nghiên cứu tâm lý học cho thấy phần lớn những điều con người lo lắng...' bằng: 'Một nghiên cứu trên 29 bệnh nhân rối loạn lo âu lan toả ghi nhận 91,4% dự đoán lo lắng của họ không thành hiện thực (LaFreniere & Newman 2020).' Không suy rộng sang dân số chung."
+  - "Viết lại toàn bộ mục '🧠 Khoảnh khắc bộ não bắt đầu tự quan sát chính nó' để bỏ hàm ý tự nhận thức là độc quyền của người, hoặc thu hẹp claim xuống một năng lực có định nghĩa và có nguồn. Gắn Kohda et al. 2019."
+  - "Thêm một đoạn thừa nhận tử vong học so sánh là ngành đang hoạt động và kết quả ở tinh tinh, voi, cá voi chưa ngã ngũ — trước khi khẳng định con người là duy nhất."
+  - "Đổi 'một vi khuẩn không biết nó tồn tại' thành phát biểu về cấu trúc ('vi khuẩn không có hệ thần kinh'). Áp dụng cho cả ba ví dụ vi khuẩn / cây cỏ / tế bào."
+  - "Cắt câu 'Nếu ý thức chỉ mang lại đau khổ, có lẽ tiến hóa đã không ưu ái nó đến vậy' — mâu thuẫn với chính mục sau của bài."
+  - "Cắt hoặc ghi rõ tác giả cho ba câu luận: 'Chỉ một bộ não biết suy nghĩ về cái chết...', 'Chỉ một sinh vật nhận ra sự ngắn ngủi...', và câu kết về vũ trụ nhìn lại chính mình."
+  - "Bỏ định dạng blockquote cho mọi câu là khẳng định của bài. Trong bài này blockquote đang được dùng cho câu luận chứ không cho câu trích, khiến người đọc tưởng có nguồn."
+
+suggestedSources:
+  - title: "Exposing Worry's Deceit: Percentage of Untrue Worries in Generalized Anxiety Disorder Treatment"
+    url: https://pure.psu.edu/en/publications/exposing-worrys-deceit-percentage-of-untrue-worries-in-generalize/
+    doi: 10.1016/j.beth.2019.07.003
+    publisher: "Behavior Therapy 51(3):413-423 (LaFreniere & Newman)"
+    year: 2020
+    tier: 1
+    covers: "Mục 'Cái giá của việc biết tương lai' — con số 91,4% và giới hạn mẫu (n=29, chẩn đoán GAD)."
+
+  - title: "If a fish can pass the mark test, what are the implications for consciousness and self-awareness testing in animals?"
+    url: https://journals.plos.org/plosbiology/article?id=10.1371%2Fjournal.pbio.3000021
+    doi: 10.1371/journal.pbio.3000021
+    publisher: "PLOS Biology (Kohda et al.)"
+    year: 2019
+    tier: 1
+    covers: "Mục tự nhận thức — bác hàm ý tự nhận thức là độc quyền của người; nêu cả phần còn tranh cãi."
+
+  - title: "Ernest Becker — tiểu sử học thuật và The Denial of Death"
+    url: https://en.wikipedia.org/wiki/Ernest_Becker
+    doi:
+    publisher: Wikipedia
+    year: 2026
+    tier: 5
+    covers: "CHỈ dùng để xác nhận Becker là nhà nhân học văn hoá, không phải nhà tâm lý học. KHÔNG được dùng làm nguồn trong bài — theo thang nguồn của SciencePedia, bách khoa khác không bao giờ là nguồn chính. Lượt sửa phải thay bằng trang Ernest Becker Foundation hoặc bìa/trang thông tin của nhà xuất bản Simon & Schuster."
+
+openQuestions:
+  - "Bài này có nên tồn tại dưới dạng mục từ bách khoa không? Sau khi cắt hết các câu không kiểm được, phần còn lại gần như không còn nội dung. Đề xuất: hoặc chuyển sang chuyên mục tuỳ bút có nhãn rõ ràng và có ký tên tác giả, hoặc viết lại hoàn toàn thành mục từ 'Tự nhận thức' bám vào tài liệu thực nghiệm. Cần content-curator và knowledge-architect quyết trước khi giao lại lượt viết."
+  - "Ý thức và tự nhận thức là vùng chưa có đồng thuận (vấn đề khó của ý thức, các lý thuyết cạnh tranh). Biên tập không phân xử. Nếu vẫn giữ chủ đề, phải chốt trước: bài trình bày theo khung lý thuyết nào và nói rõ tên khung đó ngay trong bài."
+  - "Nghiên cứu tử vong học so sánh trả 403 khi mở trực tiếp trong lượt này. Cần mở lại và trích đúng câu chữ trước khi dùng làm nguồn."

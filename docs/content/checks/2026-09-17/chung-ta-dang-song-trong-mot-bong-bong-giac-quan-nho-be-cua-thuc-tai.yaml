@@ -1,0 +1,198 @@
+slug: chung-ta-dang-song-trong-mot-bong-bong-giac-quan-nho-be-cua-thuc-tai
+checkedAt: 2026-09-17
+checkedBy: science-editor
+sourceCount: 0
+verdict: revise
+summary: >-
+  Phần dữ kiện vật lý giác quan (20 Hz-20 kHz, 380-700 nm, rắn cảm hồng ngoại, ong thấy tử ngoại,
+  Umwelt) kiểm được và đúng, nhưng bài không có nguồn nào; hai chỗ phải sửa trước khi xuất bản là
+  con số khứu giác chó "hàng chục nghìn lần" (đang bị bác trong y văn) và việc trình bày mô hình
+  kiến tạo tri giác như đồng thuận đã chốt.
+
+claims:
+  - id: C-1
+    claim: "Tai người chỉ nghe được âm thanh trong dải 20 Hz đến khoảng 20.000 Hz."
+    verdict: partially-supported
+    severity: S3
+    evidence: https://pmc.ncbi.nlm.nih.gov/articles/PMC11674001/ (doi:10.3390/audiolres14060089)
+    note: >-
+      Dải 20-20.000 Hz đúng là con số quy ước ("humans can detect sounds from 20 to 20,000 Hz"),
+      nhưng nó là giới hạn lý thuyết của tai trẻ và khoẻ. Cùng nguồn cho thấy ngưỡng nghe suy giảm
+      rõ từ sau 40 tuổi: nhóm >40-70 tuổi có ngưỡng tăng từ 20 dB HL ở 9.000 Hz lên 70 dB HL ở
+      14.000-16.000 Hz. Bài đang dùng 20 kHz như một hằng số sinh học. Sửa thành "khoảng 20 Hz đến
+      20.000 Hz ở người trẻ; giới hạn trên tụt dần theo tuổi, phần lớn người trưởng thành không còn
+      nghe được trên 15-16 kHz".
+
+  - id: C-2
+    claim: "Mắt người chỉ nhìn thấy ánh sáng có bước sóng khoảng 380 đến 700 nanomet."
+    verdict: verified
+    severity: none
+    evidence: https://science.nasa.gov/ems/09_visiblelight/
+    note: >-
+      NASA ghi đúng "wavelengths from 380 to 700 nanometers". Không phải sửa số, chỉ cần gắn nguồn.
+
+  - id: C-3
+    claim: "Voi dùng hạ âm liên lạc xa; dơi và cá heo dùng siêu âm định vị."
+    verdict: unverifiable
+    severity: S3
+    evidence: "—"
+    note: >-
+      Không mở kiểm được nguồn bậc 1-2 trong lượt này (không phải vì nghi ngờ nội dung mà vì chưa
+      kiểm). Không được để trong bài ở dạng khẳng định trần. Hoặc gắn nguồn, hoặc cắt. Ghi chú cho
+      lượt sửa: cần một nguồn riêng cho hạ âm voi và một nguồn riêng cho định vị bằng tiếng vang;
+      gộp chung một nguồn là under-sourced.
+
+  - id: C-4
+    claim: "Jakob von Uexküll gọi thế giới cảm nhận riêng của mỗi sinh vật là Umwelt."
+    verdict: verified
+    severity: none
+    evidence: https://codebiology.org/pdf/von%20Uexk%C3%83%C2%BCll%20J%20(1934)%20A%20stroll%20through%20the%20worlds%20of%20animals%20and%20men.pdf
+    note: >-
+      Uexküll 1934, "A Stroll Through the Worlds of Animals and Men" (bản gốc "Streifzüge durch die
+      Umwelten von Tieren und Menschen", 1934). Đúng cả khái niệm lẫn cách gọi ông là nhà sinh học.
+      Đáng nói thêm: hình ảnh "bong bóng" trong tiêu đề bài chính là của Uexküll ("we must first
+      blow, in fancy, a soap bubble around each creature") — nên ghi công, đừng để người đọc tưởng
+      là ẩn dụ của toà soạn.
+
+  - id: C-5
+    claim: "Một số loài rắn có cơ quan cảm nhận hồng ngoại, nhìn thấy nhiệt độ cơ thể con mồi."
+    verdict: partially-supported
+    severity: S3
+    evidence: https://www.nature.com/articles/nature08943 (Gracheva et al. 2010, Nature 464:1006-1011)
+    note: >-
+      Sự kiện đúng và mức dè dặt "một số loài" đúng — nguồn xác nhận cơ quan hố má chỉ có ở vipers,
+      pythons và boas, và kênh TRPA1 là bộ cảm hồng ngoại. Nhưng chữ "nhìn thấy" làm hỏng mô hình
+      tinh thần: nguồn nói rõ cơ chế là đốt nóng bức xạ lên màng hố má (radiant heating), không
+      phải cảm quang. Đây là tín hiệu nhiệt đi vào hệ thần kinh cảm giác thân thể, không phải hệ
+      thị giác. Sửa thành "cảm nhận được bức xạ nhiệt", và nếu giữ chữ "nhìn" thì phải nói rõ là
+      ví von.
+
+  - id: C-6
+    claim: "Nhiều loài hoa có họa tiết tử ngoại vô hình với mắt người; với ong chúng chỉ đường tới mật hoa."
+    verdict: verified
+    severity: none
+    evidence: https://pmc.ncbi.nlm.nih.gov/articles/PMC12477309/ (Lunau, Camargo & Ren 2025, Plant Biology, doi:10.1111/plb.70050)
+    note: >-
+      Nguồn xác nhận đủ cả ba vế: "bees are sensitive to UV light, humans are not"; có hoa văn
+      "UV bull's eye" (tâm hấp thụ UV, rìa khác màu); và các hoa văn này "remain invisible to us".
+
+  - id: C-7
+    claim: "Khứu giác của chó mạnh hơn con người hàng chục nghìn lần."
+    verdict: contradicted
+    severity: S2
+    evidence: https://www.science.org/doi/10.1126/science.aam7263 (McGann 2017, Science 356:eaam7263)
+    note: >-
+      Đây là lỗi nặng nhất của bài. Con số 10.000-100.000 lần là một con số truyền miệng không có
+      nghiên cứu đối chứng đỡ. McGann 2017 truy nguồn gốc của nó về giả thuyết thế kỷ 19 của Paul
+      Broca về kích thước tương đối của hành khứu, không phải về đo đạc khứu giác; hành khứu người
+      xét về giá trị tuyệt đối là lớn và có số neuron tương đương các động vật có vú khác. Rất ít
+      phép so sánh chó-người có đối chứng thực nghiệm: chó nhạy hơn với một số chất, người nhạy hơn
+      với một số chất khác. CẮT con số. Nếu muốn giữ ý, viết "chó và người nhạy với những nhóm mùi
+      khác nhau; chó vượt trội ở các phân tử gắn với dấu vết động vật" và gắn McGann 2017.
+
+  - id: C-8
+    claim: "Cái chúng ta trải nghiệm không phải bản thân thực tại mà là mô hình thực tại do bộ não xây dựng."
+    verdict: unsupported
+    severity: S3
+    evidence: "—"
+    note: >-
+      Không phải là sai, nhưng bài đang chọn một lập trường trong một tranh luận còn mở (hiện thực
+      luận gián tiếp / xử lý tiên đoán so với các lập trường hiện thực trực tiếp) rồi trình bày như
+      dữ kiện đã chốt, lại còn đặt trong khung trích dẫn cho ra vẻ trích nguồn. Phần "mắt không thực
+      sự nhìn, tai không thực sự nghe" là cách nói gây hiểu sai — mắt có nhận và mã hoá tín hiệu
+      thật. Sửa: quy cho một khung lý thuyết có tên và có nguồn, và hạ xuống "theo các mô hình xử lý
+      tiên đoán hiện hành". Ghi vào openQuestions, không tự phân xử.
+
+  - id: C-9
+    claim: "Các giác quan của chúng ta được thiết kế để phục vụ sự sống còn, không phải để quan sát toàn bộ vũ trụ."
+    verdict: unsupported
+    severity: S3
+    evidence: "—"
+    note: >-
+      Hai lỗi trong một câu. Một là chữ "thiết kế" — trong bài sinh học tiến hoá thì đây là từ phải
+      tránh. Hai là câu này là một khẳng định thích nghi luận (mỗi giác quan có mặt vì giá trị sống
+      còn) mà bài không đỡ được. Sửa thành mô tả trung tính: "giác quan của mỗi loài chỉ bắt được
+      một phần các tín hiệu vật lý có mặt trong môi trường".
+
+  - id: C-10
+    claim: "Cơ thể bạn đang bị hồng ngoại, tử ngoại, sóng vô tuyến, vi sóng, tia X, tia gamma xuyên qua mỗi ngày."
+    verdict: partially-supported
+    severity: S4
+    evidence: "—"
+    note: >-
+      Đúng về đại thể nhưng gộp bừa. Sóng vô tuyến và vi sóng thì xuyên qua người thật và liên tục.
+      Hồng ngoại và tử ngoại bị da hấp thụ gần bề mặt chứ không "xuyên qua". Tia X và gamma tự
+      nhiên có thật nhưng ở liều nền rất thấp, và câu văn hiện tại dễ khiến người đọc tưởng đang bị
+      chiếu xạ mạnh mỗi ngày. Tách câu, hoặc bỏ tia X/gamma khỏi danh sách "xuyên qua mỗi ngày".
+
+  - id: C-11
+    claim: "Kính thiên văn giúp chúng ta nhìn thấy sóng vô tuyến, hồng ngoại, tia X; máy dò hạt phát hiện neutrino, tia vũ trụ."
+    verdict: verified
+    severity: none
+    evidence: https://science.nasa.gov/ems/09_visiblelight/
+    note: >-
+      Đúng về nguyên tắc và không có con số nào để sai. Giữ nguyên, gắn nguồn NASA EMS.
+
+fixes:
+  - "Cắt câu 'Khứu giác của chó mạnh hơn con người hàng chục nghìn lần'. Thay bằng phát biểu so sánh theo nhóm mùi, gắn McGann 2017 (doi:10.1126/science.aam7263). Không thay bằng một con số nhỏ hơn — vấn đề là không có con số nào đỡ được."
+  - "Thêm mốc tuổi vào dải thính giác: '20 Hz đến khoảng 20.000 Hz ở người trẻ; giới hạn trên giảm dần theo tuổi'. Gắn doi:10.3390/audiolres14060089."
+  - "Đổi 'rắn nhìn thấy nhiệt độ cơ thể' thành 'rắn cảm nhận được bức xạ nhiệt qua cơ quan hố má'. Nói rõ chỉ có ở vipers, pythons, boas. Gắn Gracheva 2010 (doi:10.1038/nature08943)."
+  - "Quy khung lý thuyết cho mục '🧠 Bộ não không nhìn thấy thực tại trực tiếp': nêu tên khung lý thuyết, hạ giọng xuống 'theo các mô hình xử lý tiên đoán hiện hành', và bỏ định dạng blockquote đang khiến câu khẳng định trông như câu trích nguồn."
+  - "Bỏ chữ 'thiết kế' ở câu mở đầu mục giác quan và viết lại theo hướng mô tả, không theo hướng mục đích luận."
+  - "Ghi công Uexküll cho chính ẩn dụ 'bong bóng' trong tiêu đề bài, dẫn Uexküll 1934."
+  - "Gắn nguồn riêng cho hạ âm voi và cho định vị bằng tiếng vang ở dơi/cá heo, hoặc cắt hai ví dụ này."
+  - "Tách lại danh sách bức xạ 'xuyên qua cơ thể mỗi ngày': giữ vô tuyến và vi sóng, bỏ hoặc chú thích riêng tia X và gamma."
+
+suggestedSources:
+  - title: "Visible Light — NASA Science, Introduction to the Electromagnetic Spectrum"
+    url: https://science.nasa.gov/ems/09_visiblelight/
+    doi:
+    publisher: NASA
+    year: 2026
+    tier: 2
+    covers: "Mục Thị giác (380-700 nm) và mục Khoa học mở rộng bong bóng giác quan (các dải phổ ngoài vùng nhìn thấy)."
+
+  - title: "Normative Data of Extended High Frequency Audiometry in Normal Hearing Subjects with Different Aged Groups"
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC11674001/
+    doi: 10.3390/audiolres14060089
+    publisher: "Audiology Research (MDPI)"
+    year: 2024
+    tier: 1
+    covers: "Mục Thính giác — dải 20-20.000 Hz và mức suy giảm ngưỡng nghe tần số cao theo tuổi."
+
+  - title: "Molecular basis of infrared detection by snakes"
+    url: https://www.nature.com/articles/nature08943
+    doi: 10.1038/nature08943
+    publisher: "Nature (Gracheva, Ingolia et al.)"
+    year: 2010
+    tier: 1
+    covers: "Mục Thế giới của loài rắn — cơ quan hố má, kênh TRPA1, giới hạn ở vipers/pythons/boas, cơ chế đốt nóng bức xạ."
+
+  - title: "Bees, flowers and UV"
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC12477309/
+    doi: 10.1111/plb.70050
+    publisher: "Plant Biology (Lunau, Camargo & Ren)"
+    year: 2025
+    tier: 1
+    covers: "Mục Thế giới của loài ong — thị giác tử ngoại của ong, hoa văn UV bull's eye, tính vô hình với mắt người."
+
+  - title: "Poor human olfaction is a 19th-century myth"
+    url: https://www.science.org/doi/10.1126/science.aam7263
+    doi: 10.1126/science.aam7263
+    publisher: "Science (McGann)"
+    year: 2017
+    tier: 1
+    covers: "Mục Thế giới của loài chó — bác con số 'hàng chục nghìn lần' và truy nguồn gốc của nó."
+
+  - title: "A Stroll Through the Worlds of Animals and Men: A Picture Book of Invisible Worlds"
+    url: https://codebiology.org/pdf/von%20Uexk%C3%83%C2%BCll%20J%20(1934)%20A%20stroll%20through%20the%20worlds%20of%20animals%20and%20men.pdf
+    doi:
+    publisher: "Jakob von Uexküll"
+    year: 1934
+    tier: 1
+    covers: "Mục Umwelt và ẩn dụ bong bóng trong tiêu đề bài."
+
+openQuestions:
+  - "Bài có được phép giữ khung 'não dựng mô hình thực tại' làm khung chủ đạo không? Đây là tranh luận còn mở giữa hiện thực luận gián tiếp / xử lý tiên đoán và các lập trường hiện thực trực tiếp. Nếu giữ, phải nêu tên khung và nói rõ là một khung lý thuyết. Biên tập không tự phân xử."
+  - "Hai ví dụ hạ âm voi và định vị bằng tiếng vang: giữ kèm nguồn, hay cắt để rút ngắn bài? Cần người quyết vì đây là đánh đổi độ dài, không phải đánh đổi độ chính xác."
+  - "Bài xếp category 'Sinh học' nhưng nửa nội dung là vật lý phổ điện từ và nhận thức luận. Cần knowledge-architect xác nhận vị trí taxonomy trước khi tái xuất bản."

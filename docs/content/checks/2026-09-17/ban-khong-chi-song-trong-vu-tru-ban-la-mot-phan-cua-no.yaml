@@ -1,0 +1,212 @@
+slug: ban-khong-chi-song-trong-vu-tru-ban-la-mot-phan-cua-no
+checkedAt: 2026-09-17
+checkedBy: science-editor
+sourceCount: 0
+verdict: revise
+summary: >-
+  Ý chính "chúng ta làm từ bụi sao" đúng và đỡ được, tuổi Hệ Mặt Trời 4,57 tỷ năm khớp chính xác với
+  định tuổi Pb-Pb. Nhưng bài có một câu sai thẳng ("trong gần 14 tỷ năm đầu tiên, vũ trụ chỉ đơn giản
+  tồn tại" — đó là toàn bộ tuổi vũ trụ), quy sai nguồn gốc sắt cho sao khổng lồ trong khi phần lớn
+  sắt đến từ siêu tân tinh nhiệt hạch, và dùng số thiên hà đã lỗi thời từ 2016.
+
+claims:
+  - id: C-1
+    claim: "Ngay sau Big Bang, vũ trụ gần như chỉ chứa hai nguyên tố chính: hydro và heli."
+    verdict: verified
+    severity: S4
+    evidence: https://science.nasa.gov/universe/overview/
+    note: >-
+      NASA: "protons and neutrons collided and produced the earliest elements – hydrogen, helium,
+      and traces of lithium and beryllium". Chữ "gần như" của bài đã che đúng phần lithi và beryli.
+      Chỉ nên thêm nửa câu "cùng lượng vết lithi" để hoàn chỉnh.
+
+  - id: C-2
+    claim: "Tuổi vũ trụ 13,8 tỷ năm."
+    verdict: verified
+    severity: none
+    evidence: https://science.nasa.gov/universe/overview/ ; https://arxiv.org/abs/1807.06209
+    note: >-
+      NASA ghi "Around 13.8 billion years ago"; nhất quán với Planck 2018 (Ω_m = 0,315 ± 0,007,
+      H₀ = 67,4 ± 0,5 km/s/Mpc). Con số đúng, chỉ thiếu nguồn.
+
+  - id: C-3
+    claim: "Trong gần 14 tỷ năm đầu tiên, vũ trụ chỉ đơn giản tồn tại. Sau đó nguyên tử tạo thành phân tử, phân tử tạo thành sự sống, sự sống tiến hóa thành trí tuệ."
+    verdict: contradicted
+    severity: S2
+    evidence: https://science.nasa.gov/universe/overview/ ; https://www.nature.com/articles/nature19355
+    note: >-
+      Sai thẳng, và sai theo cách tự mâu thuẫn với chính bài. Toàn bộ tuổi vũ trụ là 13,8 tỷ năm —
+      "gần 14 tỷ năm đầu tiên" chính là toàn bộ lịch sử vũ trụ cho tới hôm nay, nên theo câu này sự
+      sống chưa kịp xuất hiện. Cùng bài, ở mục sau, lại ghi đúng "13,8 tỷ năm". Thực tế: Hệ Mặt Trời
+      hình thành cách đây ~4,57 tỷ năm, dấu vết sự sống sớm nhất trên Trái Đất được báo cáo ở mức
+      ~3,5-3,7 tỷ năm trước (stromatolite Isua, Greenland, Nature 2016 — vẫn còn tranh cãi về nguồn
+      gốc sinh học). Sửa thành: "Trong khoảng 10 tỷ năm đầu, vũ trụ chỉ có vật chất không sống" —
+      hoặc bỏ hẳn con số và viết "trong phần lớn lịch sử của mình".
+
+  - id: C-4
+    claim: "Khoảng 4,57 tỷ năm trước, một phần 'tro tàn sao' hội tụ lại tạo nên Mặt Trời, Trái Đất và cuối cùng là con người."
+    verdict: partially-supported
+    severity: S3
+    evidence: https://www.science.org/doi/10.1126/science.1226919
+    note: >-
+      Con số 4,57 tỷ năm chính xác đến ba chữ số có nghĩa: Connelly et al. 2012, Science
+      338(6107):651-655 định tuổi Pb-Pb hiệu chỉnh urani cho các CAI ở 4567,30 ± 0,16 triệu năm —
+      đây là mốc khởi đầu Hệ Mặt Trời. Chỗ phải sửa là gộp: Trái Đất KHÔNG hình thành cùng mốc đó.
+      CAI đánh dấu các vật rắn đầu tiên; Trái Đất bồi tụ xong muộn hơn, quanh 4,5 tỷ năm trước. Tách
+      hai mốc ra. Và bỏ "cuối cùng là con người" khỏi cùng một câu — cách hàng tỷ năm.
+
+  - id: C-5
+    claim: "Hydro hợp nhất thành heli; heli tạo ra carbon và oxy; những ngôi sao lớn hơn tiếp tục tạo ra các nguyên tố ngày càng nặng."
+    verdict: verified
+    severity: none
+    evidence: https://imagine.gsfc.nasa.gov/educators/elements/imagine/01.html
+    note: >-
+      Chuỗi tổng hợp hạt nhân mô tả đúng. NASA Imagine xác nhận carbon hình thành trong sao nhỏ, các
+      nguyên tố nặng hơn trong sao lớn. Giữ nguyên, gắn nguồn.
+
+  - id: C-6
+    claim: "Khi các ngôi sao khổng lồ chết đi trong các vụ nổ siêu tân tinh, chúng phóng TOÀN BỘ những nguyên tố đã tạo ra vào không gian."
+    verdict: contradicted
+    severity: S3
+    evidence: https://imagine.gsfc.nasa.gov/educators/elements/imagine/01.html
+    note: >-
+      Chữ "toàn bộ" sai và phải cắt. Trong siêu tân tinh sụp đổ lõi, phần lõi trong cùng KHÔNG bị
+      phóng ra — nó sụp thành sao neutron hoặc lỗ đen, giữ lại chính phần vật chất nặng nhất. Câu
+      này cũng bỏ sót một đường phát tán lớn: NASA ghi carbon hình thành trong sao NHỎ, và các sao
+      này trả nguyên tố về không gian qua gió sao và tinh vân hành tinh chứ không qua siêu tân tinh
+      — chính bài ở mục khác có nhắc "tinh vân" nhưng không nối lại. Sửa: bỏ "toàn bộ", và thêm một
+      câu về gió sao / tinh vân hành tinh của các sao khối lượng nhỏ và trung bình.
+
+  - id: C-7
+    claim: "Sắt trong máu từng được rèn luyện trong những ngôi sao khổng lồ đã chết từ rất lâu trước khi Mặt Trời ra đời."
+    verdict: partially-supported
+    severity: S3
+    evidence: https://arxiv.org/abs/1704.00415 ; https://imagine.gsfc.nasa.gov/educators/elements/imagine/01.html
+    note: >-
+      Đây là chỗ đơn giản hoá để lại mô hình sai. Trang giáo dục của NASA có nói sắt hình thành
+      trong sao lớn, nhưng y văn chuyên ngành đặt phần lớn sắt ở nơi khác: Seitenzahl & Townsley
+      2017 (tổng quan tổng hợp hạt nhân trong siêu tân tinh nhiệt hạch) viết "most of the iron and
+      manganese in the sun and its planetary system were produced in thermonuclear supernovae" —
+      tức siêu tân tinh loại Ia, vụ nổ của SAO LÙN TRẮNG carbon-oxy, không phải sao khổng lồ. Theo
+      thang nguồn, tổng quan peer-review đứng trên trang giáo dục. Sửa thành: "Sắt trong máu bạn
+      phần lớn đến từ các vụ nổ siêu tân tinh nhiệt hạch của sao lùn trắng, phần còn lại từ siêu tân
+      tinh sụp đổ lõi của sao khối lượng lớn." Không được giữ nguyên câu hiện tại chỉ vì nghe hay.
+
+  - id: C-8
+    claim: "Oxy bạn hít thở từng được tạo ra trong một ngôi sao; canxi trong xương từng được tổng hợp trong lòng sao."
+    verdict: verified
+    severity: none
+    evidence: https://imagine.gsfc.nasa.gov/educators/elements/imagine/01.html
+    note: >-
+      NASA Imagine: "Elements of lower abundance in living organisms but essential to our biology,
+      such as calcium and iron, were formed in large stars." Oxy cũng là sản phẩm tổng hợp hạt nhân
+      trong sao. Cả hai vế đứng vững. (Lưu ý phần sắt đã xử lý riêng ở C-7.)
+
+  - id: C-9
+    claim: "Cơ thể con người được tạo nên từ bụi sao. Đó không phải là thơ ca, mà là một kết luận của vật lý thiên văn."
+    verdict: verified
+    severity: S4
+    evidence: https://imagine.gsfc.nasa.gov/educators/elements/imagine/01.html
+    note: >-
+      Nội dung đúng và NASA diễn đạt cùng ý ("Our very existence is connected to these elements, and
+      to their cosmic origin"). Chỉ có một điều chỉnh nhỏ: hydro trong cơ thể — chiếm phần lớn số
+      nguyên tử — KHÔNG đến từ sao mà có từ Big Bang, đúng như chính bài nói ở mục đầu. Nên thêm nửa
+      câu để không tự mâu thuẫn: "trừ hydro, vốn có từ Big Bang".
+
+  - id: C-10
+    claim: "Ngân Hà chỉ là một trong hàng trăm tỷ thiên hà."
+    verdict: outdated
+    severity: S3
+    evidence: https://arxiv.org/abs/1607.03909
+    note: >-
+      "Hàng trăm tỷ" là con số trước 2016. Conselice et al. 2016 (ApJ) ước lượng tổng số thiên hà
+      tới z = 8 là 2,0 (+0,7 / -0,6) × 10¹², tức khoảng 2 nghìn tỷ, cao hơn ước lượng cũ chừng mười
+      lần. Đây là claim ràng buộc thời gian không có mốc. Sửa: nêu con số 2016 kèm sai số và kèm
+      năm. Lưu ý: ước lượng này chưa đóng — các phép đo ánh sáng nền quang học sau đó cho con số
+      thấp hơn, nên phải nêu là ước lượng đang tranh luận chứ không phải hằng số.
+
+  - id: C-11
+    claim: "Vũ trụ đang tự quan sát chính nó thông qua bạn."
+    verdict: unsupported
+    severity: S3
+    evidence: "—"
+    note: >-
+      Mệnh đề mục đích luận, không kiểm được, và đang được in đậm ở dạng blockquote ngay dưới một
+      chuỗi sự kiện vật lý có thật — làm người đọc tưởng nó cũng là kết luận khoa học. Nếu giữ, phải
+      ghi rõ là lời bình và ghi công cách nói này cho nguồn văn hoá gốc của nó, không để trần.
+
+  - id: C-12
+    claim: "Nếu bất kỳ mắt xích nào trong chuỗi này không xảy ra, chúng ta sẽ không tồn tại để đọc những dòng chữ này."
+    verdict: unsupported
+    severity: S3
+    evidence: "—"
+    note: >-
+      Lập luận kiểu vị nhân: đúng một cách hiển nhiên (chúng ta đang ở đây nên chuỗi đã xảy ra) nhưng
+      được trình bày như một phát hiện về mức độ hiếm hoi. Nó không nói lên xác suất của bất cứ điều
+      gì. Cắt, hoặc viết lại thành mô tả chuỗi nhân quả mà không kèm hàm ý về sự hiếm.
+
+fixes:
+  - "SỬA NGAY câu 'Trong gần 14 tỷ năm đầu tiên, vũ trụ chỉ đơn giản tồn tại'. Thay bằng 'Trong khoảng 10 tỷ năm đầu' hoặc bỏ con số. Đây là lỗi tự mâu thuẫn với mục '13,8 tỷ năm' ở ngay dưới."
+  - "Viết lại câu về sắt: phần lớn sắt trong Hệ Mặt Trời đến từ siêu tân tinh nhiệt hạch (sao lùn trắng, loại Ia), không phải từ sao khổng lồ. Gắn Seitenzahl & Townsley 2017 (arXiv:1704.00415)."
+  - "Cắt chữ 'toàn bộ' trong 'phóng toàn bộ những nguyên tố đã tạo ra vào không gian'. Thêm một câu: lõi sụp thành sao neutron hoặc lỗ đen và giữ lại một phần vật chất."
+  - "Thêm đường phát tán thứ hai: gió sao và tinh vân hành tinh của các sao khối lượng nhỏ/trung bình — đây là nguồn chính của carbon, mà bài đang quy hết cho siêu tân tinh."
+  - "Tách mốc 4,57 tỷ năm (CAI, khởi đầu Hệ Mặt Trời — Connelly et al. 2012) khỏi mốc hình thành Trái Đất (~4,5 tỷ năm). Bỏ 'và cuối cùng là con người' khỏi cùng câu."
+  - "Cập nhật số thiên hà: thay 'hàng trăm tỷ' bằng 'khoảng 2 nghìn tỷ theo ước lượng năm 2016 (Conselice et al.)', kèm ghi chú rằng con số này vẫn đang được tranh luận."
+  - "Thêm 'cùng lượng vết lithi' vào danh sách nguyên tố sau Big Bang."
+  - "Thêm 'trừ hydro, vốn có từ Big Bang' vào khẳng định 'cơ thể con người được tạo nên từ bụi sao' — nếu không, bài tự mâu thuẫn với mục mở đầu."
+  - "Gỡ định dạng blockquote khỏi hai câu luận ('Vũ trụ đang tự quan sát chính nó thông qua bạn' và câu kết), hoặc ghi rõ là lời bình của tác giả."
+  - "Cắt hoặc viết lại câu 'Nếu bất kỳ mắt xích nào... chúng ta sẽ không tồn tại' — lập luận vị nhân, không nói lên xác suất."
+
+suggestedSources:
+  - title: "The Absolute Chronology and Thermal Processing of Solids in the Solar Protoplanetary Disk"
+    url: https://www.science.org/doi/10.1126/science.1226919
+    doi: 10.1126/science.1226919
+    publisher: "Science 338(6107):651-655 (Connelly, Bizzarro, Krot et al.)"
+    year: 2012
+    tier: 1
+    covers: "Mốc 4,57 tỷ năm — định tuổi Pb-Pb hiệu chỉnh urani cho CAI ở 4567,30 ± 0,16 triệu năm."
+
+  - title: "Nucleosynthesis in thermonuclear supernovae"
+    url: https://arxiv.org/abs/1704.00415
+    doi: 10.1007/978-3-319-21846-5_87
+    publisher: "Handbook of Supernovae, Springer (Seitenzahl & Townsley)"
+    year: 2017
+    tier: 1
+    covers: "Nguồn gốc sắt — 'most of the iron and manganese in the sun and its planetary system were produced in thermonuclear supernovae'. Nguồn bắt buộc để sửa C-7."
+
+  - title: "The Cosmic Origins of the Elements (Imagine the Universe! — Elements)"
+    url: https://imagine.gsfc.nasa.gov/educators/elements/imagine/01.html
+    doi:
+    publisher: "NASA Goddard Space Flight Center"
+    year: 2026
+    tier: 2
+    covers: "Mục lò luyện nguyên tố: hydro từ Big Bang, carbon trong sao nhỏ, canxi và sắt trong sao lớn, nguyên tố nặng trong siêu tân tinh."
+
+  - title: "The Universe — Overview"
+    url: https://science.nasa.gov/universe/overview/
+    doi:
+    publisher: NASA
+    year: 2026
+    tier: 2
+    covers: "Tuổi vũ trụ 13,8 tỷ năm và sản phẩm tổng hợp hạt nhân Big Bang (hydro, heli, vết lithi và beryli)."
+
+  - title: "The Evolution of Galaxy Number Density at z < 8 and its Implications"
+    url: https://arxiv.org/abs/1607.03909
+    doi: 10.3847/1538-4357/830/2/83
+    publisher: "Astrophysical Journal (Conselice, Wilkinson, Duncan & Mortlock)"
+    year: 2016
+    tier: 1
+    covers: "Số thiên hà: 2,0 (+0,7/-0,6) × 10¹² tới z = 8, thay cho con số 'hàng trăm tỷ' đã cũ."
+
+  - title: "Planck 2018 results. VI. Cosmological parameters"
+    url: https://arxiv.org/abs/1807.06209
+    doi: 10.1051/0004-6361/201833910
+    publisher: "Astronomy & Astrophysics (Planck Collaboration)"
+    year: 2018
+    tier: 1
+    covers: "Tham số vũ trụ học đỡ cho tuổi 13,8 tỷ năm."
+
+openQuestions:
+  - "Số thiên hà trong vũ trụ quan sát được là một con số đang tranh luận: ước lượng 2 nghìn tỷ của Conselice 2016 (ngoại suy các thiên hà quá mờ) so với các phép đo ánh sáng nền quang học cho con số thấp hơn. Biên tập không phân xử. Bài phải nêu con số kèm năm và kèm một câu nói rõ là chưa thống nhất."
+  - "Dấu vết sự sống sớm nhất (~3,7 tỷ năm, stromatolite Isua) còn bị phản bác là cấu trúc địa chất phi sinh học. Nếu lượt sửa muốn đưa mốc sự sống vào bài, phải nêu cả phản biện, hoặc lùi về mốc ~3,5 tỷ năm vững hơn ở Tây Úc. Chưa mở kiểm tại nguồn trong lượt này."
+  - "Bài xếp category 'Vũ trụ' còn bài cùng lô xếp 'Vũ trụ học'. Cần category-manager gộp lại — hai bài này chồng lấn nội dung đáng kể (bụi sao, tuổi vũ trụ, giãn nở) và nên được knowledge-architect rà trùng lặp trước khi tái xuất bản."

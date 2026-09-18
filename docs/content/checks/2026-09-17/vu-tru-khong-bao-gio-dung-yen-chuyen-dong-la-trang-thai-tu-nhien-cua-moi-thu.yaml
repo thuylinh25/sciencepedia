@@ -1,0 +1,227 @@
+slug: vu-tru-khong-bao-gio-dung-yen-chuyen-dong-la-trang-thai-tu-nhien-cua-moi-thu
+checkedAt: 2026-09-17
+checkedBy: science-editor
+sourceCount: 0
+verdict: revise
+summary: >-
+  Bài vững nhất trong lô: bốn trên năm con số thiên văn kiểm được và khớp. Nhưng tốc độ Hệ Mặt Trời
+  quanh Ngân Hà đang dùng giá trị cũ 220 km/s trong khi NASA ghi 828.000 km/h và đo lường hiện hành
+  cho 240 ± 8 km/s; các con số tốc độ lại nêu mà không nói hệ quy chiếu, ngay trong bài có hẳn một
+  mục nói rằng không có hệ quy chiếu tuyệt đối. Không có nguồn nào nên không thể pass.
+
+claims:
+  - id: C-1
+    claim: "Ở xích đạo, vận tốc tự quay của Trái Đất đạt khoảng 1.670 km/h."
+    verdict: verified
+    severity: none
+    evidence: https://nssdc.gsfc.nasa.gov/planetary/factsheet/earthfact.html
+    note: >-
+      Suy ra từ số liệu NASA: bán kính xích đạo 6378,137 km, chu kỳ tự quay sao 23,9345 giờ →
+      chu vi 40.075,0 km / 23,9345 h = 1.674 km/h. Bài ghi 1.670 km/h, lệch 0,25%, nằm trong mức
+      làm tròn hợp lý cho ba chữ số có nghĩa. Giữ nguyên, gắn nguồn.
+
+  - id: C-2
+    claim: "Trái Đất quay quanh Mặt Trời với vận tốc khoảng 107.000 km/h (29,8 km/s)."
+    verdict: verified
+    severity: none
+    evidence: https://nssdc.gsfc.nasa.gov/planetary/factsheet/earthfact.html
+    note: >-
+      NASA Earth Fact Sheet ghi mean orbital velocity 29,78 km/s. Quy đổi: 29,78 × 3600 = 107.208
+      km/h. Cả hai con số của bài đều khớp và nhất quán với nhau. Đây là chỗ bài làm đúng nhất —
+      nêu cả đơn vị gốc lẫn đơn vị quy đổi.
+
+  - id: C-3
+    claim: "Hệ Mặt Trời quay quanh tâm Ngân Hà với vận tốc khoảng 790.000 km/h (220 km/s)."
+    verdict: outdated
+    severity: S3
+    evidence: https://starchild.gsfc.nasa.gov/docs/StarChild/questions/question18.html ; https://arxiv.org/abs/1401.5377
+    note: >-
+      Quy đổi nội bộ thì đúng (220 km/s × 3600 = 792.000 km/h), nhưng chính giá trị 220 km/s là
+      hằng số IAU cũ. NASA StarChild ghi "We are moving at an average velocity of 828,000 km/hr"
+      (≈230 km/s). Reid et al. 2014 (ApJ 783:130), đo bằng thị sai lượng giác các maser, cho tốc độ
+      quay tròn tại vị trí Mặt Trời Θ₀ = 240 ± 8 km/s với R₀ = 8,34 ± 0,16 kpc. Bài đang thấp hơn
+      đo lường hiện hành khoảng 8-10% và không nêu sai số, không nêu mốc thời gian. Sửa: dùng
+      "khoảng 230 km/s (≈830.000 km/h)" theo NASA, hoặc "240 ± 8 km/s" theo Reid 2014 — nhưng phải
+      chọn một và nêu nguồn kèm năm, vì đây là đại lượng còn được đo lại.
+
+  - id: C-4
+    claim: "Phải mất khoảng 230 triệu năm để hoàn thành một vòng quay quanh thiên hà."
+    verdict: verified
+    severity: none
+    evidence: https://starchild.gsfc.nasa.gov/docs/StarChild/questions/question18.html
+    note: >-
+      NASA StarChild: "it still takes us about 230 million years to make one complete orbit around
+      the Milky Way". Khớp. Nên thêm chữ "ước tính" vì các nguồn khác cho khoảng 225-250 triệu năm.
+
+  - id: C-5
+    claim: "Ngân Hà đang lao qua không gian liên thiên hà với vận tốc hàng triệu km/h."
+    verdict: partially-supported
+    severity: S3
+    evidence: https://apod.nasa.gov/apod/ap140615.html
+    note: >-
+      Bậc độ lớn đúng: NASA APOD ghi "the Local Group moves at about 600 kilometers per second
+      relative to this primordial radiation" → ≈2,16 triệu km/h. Nhưng bài thiếu hai thứ bắt buộc.
+      (1) HỆ QUY CHIẾU: con số này chỉ có nghĩa khi nói "so với nền bức xạ vi sóng vũ trụ" — thiếu
+      nó thì câu văn vô nghĩa về mặt vật lý, và mâu thuẫn trực tiếp với mục cuối bài. (2) đối tượng:
+      600 km/s là của NHÓM ĐỊA PHƯƠNG, không phải riêng Ngân Hà. Sửa thành: "Nhóm Địa phương, trong
+      đó có Ngân Hà, chuyển động khoảng 600 km/s (≈2,2 triệu km/h) so với nền vi sóng vũ trụ."
+
+  - id: C-6
+    claim: "Năm 1929, nhà thiên văn học Edwin Hubble phát hiện rằng các thiên hà ở xa đang rời xa chúng ta."
+    verdict: partially-supported
+    severity: S3
+    evidence: https://pmc.ncbi.nlm.nih.gov/articles/PMC522427/ ; https://iauarchive.eso.org/news/pressreleases/detail/iau1812/
+    note: >-
+      Bài báo có thật và đúng năm: Edwin Hubble, "A Relation Between Distance and Radial Velocity
+      Among Extra-Galactic Nebulae", PNAS 15(3):168-173, 1929. Nhưng quy kết thì không đầy đủ theo
+      chuẩn hiện hành: năm 2018 IAU đã bỏ phiếu khuyến nghị gọi là định luật Hubble-Lemaître (thông
+      qua với 78% phiếu thuận, 20% chống, 2% trắng) để ghi công Georges Lemaître. Đây đúng là loại
+      lỗi quy kết mà quy trình yêu cầu soi. Sửa: nêu cả Lemaître và ghi khuyến nghị IAU 2018.
+
+  - id: C-7
+    claim: "Cuối những năm 1990, quan sát các siêu tân tinh xa cho thấy vũ trụ đang giãn nở ngày càng nhanh."
+    verdict: verified
+    severity: none
+    evidence: https://arxiv.org/abs/astro-ph/9805201
+    note: >-
+      Riess et al. 1998, "Observational Evidence from Supernovae for an Accelerating Universe and a
+      Cosmological Constant", Astronomical Journal 116:1009-1038 — dựa trên siêu tân tinh loại Ia.
+      Khớp cả mốc thời gian, loại thiên thể lẫn kết luận. Nên thêm cả Perlmutter et al. và mốc giải
+      Nobel Vật lý 2011 (chưa mở kiểm được trang Nobel trong lượt này — HTTP 403 — nên chưa được
+      dẫn cho tới khi kiểm lại).
+
+  - id: C-8
+    claim: "Hiện nay năng lượng tối được cho là chiếm khoảng 68% tổng năng lượng của vũ trụ."
+    verdict: verified
+    severity: S4
+    evidence: https://science.nasa.gov/universe/dark-matter-dark-energy/ ; https://arxiv.org/abs/1807.06209
+    note: >-
+      Số đúng. NASA: vật chất thường ~5%, vật chất tối ~27%, phần còn lại là năng lượng tối. Planck
+      2018 (arXiv:1807.06209) cho Ω_m = 0,315 ± 0,007 → trong vũ trụ phẳng Ω_Λ ≈ 0,685. Lỗi duy
+      nhất là chữ "Hiện nay" không kèm mốc: theo quy tắc biên tập, claim ràng buộc thời gian phải có
+      mốc. Sửa thành "theo kết quả Planck 2018". Cũng nên giữ cách nói dè dặt của bài ("được cho
+      là") — chỗ này bài làm đúng.
+
+  - id: C-9
+    claim: "Nhiệt độ của một vật thực chất là thước đo mức độ chuyển động trung bình của các hạt bên trong nó."
+    verdict: partially-supported
+    severity: S3
+    evidence: "—"
+    note: >-
+      Đúng với khí lý tưởng, nhưng là một đơn giản hoá gây mô hình sai nếu để trần: nhiệt độ được
+      định nghĩa qua entropy và năng lượng, và với chất rắn, hệ spin hay hệ lượng tử thì "động năng
+      trung bình" không còn là định nghĩa. Theo quy tắc "đơn giản hoá mà không làm sai", phải nói rõ
+      đây là cách hiểu gần đúng cho chất khí. Chưa mở kiểm được nguồn bậc 1-2 trong lượt này.
+
+  - id: C-10
+    claim: "Ngay cả trong môi trường cực lạnh, các hiệu ứng lượng tử vẫn khiến vật chất không bao giờ hoàn toàn bất động."
+    verdict: partially-supported
+    severity: S3
+    evidence: "—"
+    note: >-
+      Nội dung đúng về đại thể (năng lượng điểm không E₀ = ħω/2 của dao động tử điều hoà lượng tử
+      khác 0, và đó là lý do heli lỏng không đông đặc dưới áp suất hơi riêng ở gần không độ tuyệt
+      đối), nhưng không mở kiểm được nguồn bậc 1-2 tại nguồn trong lượt này nên chưa được dẫn. Cần
+      gắn một nguồn giáo trình vật lý hoặc NIST rồi mới giữ.
+
+  - id: C-11
+    claim: "Theo vật lý hiện đại, không có hệ quy chiếu tuyệt đối nào để xác định một vật thực sự đứng yên."
+    verdict: verified
+    severity: S3
+    evidence: https://apod.nasa.gov/apod/ap140615.html
+    note: >-
+      Nội dung đúng. Vấn đề là biên tập, không phải sự kiện: mục này mâu thuẫn với toàn bộ nửa đầu
+      bài, nơi các tốc độ được nêu như thuộc tính tuyệt đối của vật. Hai mục phải được nối lại —
+      mỗi con số tốc độ ở nửa đầu phải nói rõ "so với cái gì" thì mục cuối mới thành kết luận thay
+      vì thành lời tự phản bác. Lưu ý thêm: "đứng yên so với nền vi sóng vũ trụ" trong danh sách của
+      bài là chính xác và là ví dụ hay — nhưng đó là hệ quy chiếu ƯU TIÊN về mặt vũ trụ học, không
+      phải hệ quy chiếu tuyệt đối; đừng để người đọc gộp hai khái niệm.
+
+fixes:
+  - "Cập nhật tốc độ Hệ Mặt Trời quanh Ngân Hà: bỏ 220 km/s / 790.000 km/h. Dùng 'khoảng 230 km/s (≈828.000 km/h)' theo NASA StarChild, hoặc '240 ± 8 km/s' theo Reid et al. 2014 (arXiv:1401.5377). Nêu nguồn kèm năm vì đại lượng này còn được đo lại."
+  - "Thêm hệ quy chiếu cho MỌI con số tốc độ ở mục '🌍 Bạn đang di chuyển nhanh hơn mình tưởng': so với trục Trái Đất, so với Mặt Trời, so với tâm Ngân Hà, so với nền vi sóng vũ trụ."
+  - "Sửa câu về Ngân Hà: đổi chủ thể thành Nhóm Địa phương và nêu con số cụ thể 600 km/s (≈2,2 triệu km/h) so với nền vi sóng vũ trụ, thay cho 'hàng triệu km/h' trống không."
+  - "Bổ sung Georges Lemaître vào phần phát hiện giãn nở và ghi khuyến nghị IAU 2018 về tên gọi Hubble-Lemaître."
+  - "Thêm mốc thời gian cho con số 68%: 'theo kết quả Planck 2018'. Bỏ chữ 'Hiện nay' đứng một mình."
+  - "Thêm chữ 'ước tính' và khoảng 225-250 triệu năm cho chu kỳ quay quanh thiên hà."
+  - "Chú thích rằng 'nhiệt độ = động năng trung bình' là cách hiểu gần đúng cho chất khí, không phải định nghĩa tổng quát."
+  - "Gắn nguồn cho đoạn năng lượng điểm không, hoặc cắt — hiện đang là khẳng định vật lý lượng tử không có gì đỡ."
+  - "Bổ sung câu kết cuối cùng bị cụt ('Thay đổi chính là trạng thái tự nhiên nhất')."
+
+suggestedSources:
+  - title: "Earth Fact Sheet"
+    url: https://nssdc.gsfc.nasa.gov/planetary/factsheet/earthfact.html
+    doi:
+    publisher: "NASA Goddard Space Flight Center / NSSDC"
+    year: 2026
+    tier: 2
+    covers: "Vận tốc tự quay ở xích đạo (suy từ bán kính 6378,137 km và chu kỳ 23,9345 h) và vận tốc quỹ đạo 29,78 km/s."
+
+  - title: "StarChild Question of the Month — How fast is the Earth moving?"
+    url: https://starchild.gsfc.nasa.gov/docs/StarChild/questions/question18.html
+    doi:
+    publisher: NASA
+    year: 2000
+    tier: 2
+    covers: "Tốc độ Hệ Mặt Trời quanh Ngân Hà (828.000 km/h) và chu kỳ ~230 triệu năm."
+
+  - title: "Trigonometric Parallaxes of High Mass Star Forming Regions: the Structure and Kinematics of the Milky Way"
+    url: https://arxiv.org/abs/1401.5377
+    doi: 10.1088/0004-637X/783/2/130
+    publisher: "Astrophysical Journal 783:130 (Reid, Menten, Brunthaler et al.)"
+    year: 2014
+    tier: 1
+    covers: "Giá trị đo hiện hành Θ₀ = 240 ± 8 km/s, R₀ = 8,34 ± 0,16 kpc — thay cho hằng số cũ 220 km/s."
+
+  - title: "A Relation Between Distance and Radial Velocity Among Extra-Galactic Nebulae"
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC522427/
+    doi: 10.1073/pnas.15.3.168
+    publisher: "PNAS 15(3):168-173 (Edwin Hubble)"
+    year: 1929
+    tier: 1
+    covers: "Công bố gốc về quan hệ khoảng cách - vận tốc lùi xa của các tinh vân ngoài thiên hà."
+
+  - title: "IAU members vote to recommend renaming the Hubble law as the Hubble-Lemaître law"
+    url: https://iauarchive.eso.org/news/pressreleases/detail/iau1812/
+    doi:
+    publisher: "International Astronomical Union"
+    year: 2018
+    tier: 2
+    covers: "Quy kết phát hiện giãn nở — ghi công Lemaître, kết quả bỏ phiếu 78% thuận."
+
+  - title: "Observational Evidence from Supernovae for an Accelerating Universe and a Cosmological Constant"
+    url: https://arxiv.org/abs/astro-ph/9805201
+    doi: 10.1086/300499
+    publisher: "Astronomical Journal 116:1009-1038 (Riess et al.)"
+    year: 1998
+    tier: 1
+    covers: "Mục giãn nở tăng tốc — công bố gốc dựa trên siêu tân tinh loại Ia."
+
+  - title: "Planck 2018 results. VI. Cosmological parameters"
+    url: https://arxiv.org/abs/1807.06209
+    doi: 10.1051/0004-6361/201833910
+    publisher: "Astronomy & Astrophysics (Planck Collaboration)"
+    year: 2018
+    tier: 1
+    covers: "Tỷ lệ năng lượng tối: Ω_m = 0,315 ± 0,007, H₀ = 67,4 ± 0,5 km/s/Mpc."
+
+  - title: "Dark Matter & Dark Energy"
+    url: https://science.nasa.gov/universe/dark-matter-dark-energy/
+    doi:
+    publisher: NASA
+    year: 2026
+    tier: 2
+    covers: "Phân bố 5% vật chất thường / 27% vật chất tối / 68% năng lượng tối, dạng dễ đọc."
+
+  - title: "Astronomy Picture of the Day — CMB Dipole: Speeding Through the Universe"
+    url: https://apod.nasa.gov/apod/ap140615.html
+    doi:
+    publisher: NASA
+    year: 2014
+    tier: 2
+    covers: "Chuyển động 600 km/s của Nhóm Địa phương so với nền vi sóng vũ trụ, và khái niệm hệ quy chiếu."
+
+openQuestions:
+  - "Chọn giá trị nào cho tốc độ quay quanh Ngân Hà: 230 km/s (NASA, phổ thông, nhất quán với chu kỳ 230 triệu năm mà bài đang dùng) hay 240 ± 8 km/s (Reid 2014, đo lường hiện hành)? Hai con số kéo theo hai chu kỳ khác nhau. Cần chốt một và dùng nhất quán toàn kho, không để mỗi bài một số."
+  - "Mốc giải Nobel Vật lý 2011 cho phát hiện giãn nở tăng tốc chưa mở kiểm được (nobelprize.org trả HTTP 403 trong lượt này). Phải kiểm lại tại nguồn trước khi đưa vào bài."
+  - "Cần nguồn bậc 1-2 cho hai đoạn vật lý vi mô (nhiệt độ - động năng, năng lượng điểm không). Chưa kiểm được trong lượt này; nếu lượt sau vẫn không có nguồn thì cắt cả hai đoạn theo quy tắc 'nghi ngờ thì cắt'."
