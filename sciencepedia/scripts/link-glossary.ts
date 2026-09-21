@@ -413,6 +413,133 @@ const LINKS: Link[] = [
       "làm hành tinh **[[gia tốc]]** về phía Mặt Trời",
     ],
   },
+  /* ---- Đợt 21/09 (3): gắn 10 mục từ của đợt soạn thứ hai ----------------
+   *
+   * KHÔNG gắn `giả thuyết va chạm lớn` ở hai chỗ quét ra được, vì cùng cụm
+   * chữ mà chỉ vụ va chạm KHÁC:
+   *
+   * - `sao-kim`: "giữa giả thuyết va chạm lớn và giả thuyết thuỷ triều khí
+   *   quyển" — bàn về chiều tự quay của Sao Kim.
+   * - `sao-hoa`: "một vụ va chạm lớn" — bàn về nguồn gốc Phobos và Deimos.
+   *
+   * Mục từ định nghĩa vụ va chạm sinh ra MẶT TRĂNG. Gắn vào hai chỗ trên là
+   * đưa người đọc một thẻ nói về Mặt Trăng giữa đoạn đang nói về hành tinh
+   * khác — cùng loại bẫy với "hệ quy chiếu quán tính" ở đợt trước.
+   */
+
+  {
+    slug: "dai-tuyet-chung-permi-lan-su-song-suyt-bien-mat",
+    vi: ["**Axit hoá đại dương.**", "**[[Axit hoá đại dương]].**"],
+    en: ["**Ocean acidification.**", "**[[axit-hoa-dai-duong|Ocean acidification]].**"],
+  },
+  {
+    slug: "tai-sao-pluto-khong-con-la-hanh-tinh",
+    vi: ["cùng vùng: **vành đai Kuiper**", "cùng vùng: **[[vành đai Kuiper]]**"],
+    en: ["region: the **Kuiper belt**", "region: the **[[vanh-dai-kuiper|Kuiper belt]]**"],
+  },
+  {
+    slug: "sao-hai-vuong-hanh-tinh-tim-ra-bang-toan-hoc",
+    vi: [
+      "một thiên thể vành đai Kuiper bị bắt giữ",
+      "một thiên thể [[vành đai Kuiper]] bị bắt giữ",
+    ],
+    en: ["a captured Kuiper Belt object", "a captured [[vanh-dai-kuiper|Kuiper Belt]] object"],
+  },
+  {
+    slug: "toan-canh-dac-diem-8-hanh-tinh-he-mat-troi",
+    vi: [
+      "thiên thể khác trong vành đai Kuiper",
+      "thiên thể khác trong [[vành đai Kuiper]]",
+    ],
+    en: [
+      "other objects in the Kuiper belt",
+      "other objects in the [[vanh-dai-kuiper|Kuiper belt]]",
+    ],
+  },
+  {
+    slug: "mat-trang",
+    vi: ["được đặt tên **Theia**", "được đặt tên **[[Theia]]**"],
+    en: ["named **Theia**", "named **[[Theia]]**"],
+  },
+  {
+    slug: "su-song-tren-trai-dat-4-ti-nam-trong-mot-dong-thoi-gian",
+    vi: ["thường được gọi là **Theia**", "thường được gọi là **[[Theia]]**"],
+    en: ["commonly referred to as **Theia**", "commonly referred to as **[[Theia]]**"],
+  },
+  {
+    slug: "mat-trang",
+    vi: ["**khoá thuỷ triều đồng bộ**", "**[[khoá thuỷ triều]] đồng bộ**"],
+    en: [
+      "**synchronous tidal locking**",
+      "**synchronous [[khoa-thuy-trieu|tidal locking]]**",
+    ],
+  },
+  {
+    slug: "neu-roi-he-mat-troi-proxima-centauri-se-la-diem-dung-dau-tien",
+    vi: ["**khóa thủy triều**", "**[[khóa thủy triều]]**"],
+    en: ["**tidally locked**", "**[[khoa-thuy-trieu|tidally locked]]**"],
+  },
+  {
+    slug: "thuyet-tuong-doi-hep-khi-thoi-gian-khong-con-tuyet-doi",
+    vi: ["**Giãn nở thời gian.**", "**[[Giãn nở thời gian]].**"],
+    en: ["**Time dilation.**", "**[[gian-no-thoi-gian|Time dilation]].**"],
+  },
+  {
+    slug: "thuyet-tuong-doi-hep-khi-thoi-gian-khong-con-tuyet-doi",
+    vi: ["**Co độ dài.**", "**[[Co độ dài]].**"],
+    en: ["**Length contraction.**", "**[[co-do-dai|Length contraction]].**"],
+  },
+  {
+    slug: "mat-khong-thuc-su-nhin-nao-bo-tao-ra-hinh-anh-nhu-the-nao",
+    vi: ["**Tế bào que (Rods)**", "**[[Tế bào que]] (Rods)**"],
+  },
+  {
+    slug: "dopamine-va-chiec-bay-khien-ban-khong-the-roi-dien-thoai",
+    vi: [
+      "Dopamine là một chất dẫn truyền thần kinh",
+      "Dopamine là một [[chất dẫn truyền thần kinh]]",
+    ],
+  },
+  {
+    slug: "gaba-bo-phanh-cua-nao-co-khien-ban-lo-do-ue-oai",
+    vi: [
+      "là chất dẫn truyền thần kinh ức chế chính",
+      "là [[chất dẫn truyền thần kinh]] ức chế chính",
+    ],
+  },
+  {
+    slug: "nhung-su-gia-hoa-hoc-dieu-khien-hoat-dong-cua-nao-bo",
+    vi: [
+      "các túi nhỏ chứa chất dẫn truyền thần kinh",
+      "các túi nhỏ chứa [[chất dẫn truyền thần kinh]]",
+    ],
+  },
+  {
+    slug: "thuoc-gay-me-da-tat-y-thuc-cua-ban-nhu-the-nao",
+    vi: [
+      "một trong những chất dẫn truyền thần kinh kích thích",
+      "một trong những [[chất dẫn truyền thần kinh]] kích thích",
+    ],
+  },
+  {
+    slug: "nguyen-tu-cau-tao-nen-van-vat",
+    vi: [
+      "**năng lượng liên kết hạt nhân**",
+      "**[[năng lượng liên kết hạt nhân]]**",
+    ],
+    en: [
+      "the binding energy holding the nucleus together",
+      "the [[nang-luong-lien-ket-hat-nhan|binding energy]] holding the nucleus together",
+    ],
+  },
+  {
+    slug: "nguyen-tu-cau-tao-nen-van-vat",
+    // Bản VI không dùng cụm "số hiệu nguyên tử" ở đoạn tương ứng.
+    en: [
+      "The **atomic number Z**",
+      "The **[[so-hieu-nguyen-tu|atomic number Z]]**",
+    ],
+  },
 ];
 
 /** Khoá của mọi `[[...]]` trong một chuỗi thay thế. */
