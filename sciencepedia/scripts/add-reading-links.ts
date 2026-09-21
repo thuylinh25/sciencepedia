@@ -249,22 +249,18 @@ const PLANS: Plan[] = [
   },
 ];
 
-/**
- * Đích KHÔNG được đưa vào danh sách tiếng Anh, kèm lý do.
+/* Chỗ này từng có một danh sách chặn tay.
  *
- * `giai-ma-nhung-khoang-trong-rong-voids`: bản tiếng Anh của bài này là bài
- * KHÁC. `titleEn` là "Outer Space: A Near-Perfect Vacuum" và `contentEn` nói
- * về chân không vũ trụ, trong khi bản tiếng Việt nói về void — nội dung của
- * bài `khong-gian-vu-tru-moi-truong-chan-khong…` đã bị trộn đè vào đây. Trỏ
- * link tiếng Anh tới đó là dẫn người đọc sang một bài không phải bài họ bấm.
- * Gỡ khoá này sau khi nội dung được sửa.
+ * `giai-ma-nhung-khoang-trong-rong-voids` có `titleEn` và `contentEn` là nội
+ * dung của một bài KHÁC (chân không vũ trụ), nên nó bị chặn khỏi mọi danh
+ * sách tiếng Anh. Ngày 21/09 chủ kho quyết gỡ hẳn bản tiếng Anh sai ấy khỏi
+ * CSDL — văn bản lưu ở `content/salvage/khong-gian-vu-tru-chan-khong.md`.
+ *
+ * Bài nay không có bản tiếng Anh nào, nên luật chung bên dưới ("chỉ nhận đích
+ * CÓ bản tiếng Anh thật") đã phủ đúng trường hợp này. Danh sách chặn tay bị
+ * gỡ chứ không giữ lại rỗng: để nguyên thì ngày ai đó dịch bài tử tế, nó vẫn
+ * âm thầm chặn.
  */
-const EN_BLOCKED = new Map<string, string>([
-  [
-    "giai-ma-nhung-khoang-trong-rong-voids-trong-vu-tru",
-    "bản tiếng Anh là nội dung của một bài khác (chân không vũ trụ)",
-  ],
-]);
 
 /** Đầu đề mục Đọc thêm đang dùng trong kho, cả hai ngôn ngữ. */
 const HEADING_RE = /^##\s+(Đọc thêm|Read more|Read More|Further reading|Further Reading)\s*$/im;
@@ -330,11 +326,6 @@ async function main() {
            hứa hão — bấm vào là rơi vào một trang tiếng Việt. */
         wanted = wanted.filter((t) => {
           const target = bySlug.get(t)!;
-          const blocked = EN_BLOCKED.get(t);
-          if (blocked) {
-            console.log(`   contentEn: BỎ ${t} — ${blocked}`);
-            return false;
-          }
           if (!target.titleEn || !target.contentEn) {
             console.log(`   contentEn: BỎ ${t} — chưa có bản tiếng Anh`);
             return false;
