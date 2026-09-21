@@ -284,9 +284,30 @@
 
   html {
     scroll-behavior: smooth;
-    /* chừa chỗ cho header dính khi nhảy tới anchor mục lục */
-    scroll-padding-top: 6rem;
+    /* Chừa chỗ cho header dính khi nhảy tới anchor mục lục. Để ở biến vì có
+       một luật thứ hai phải triệt tiêu đúng giá trị này — xem ngay dưới. */
+    --scroll-offset: 6rem;
+    scroll-padding-top: var(--scroll-offset);
     -webkit-text-size-adjust: 100%;
+  }
+
+  /* Ô nhập TRONG header dính phải tự huỷ `scroll-padding-top`.
+  
+     Trình duyệt cuộn con trỏ nhập vào "vùng nhìn tối ưu" sau mỗi lần gõ.
+     `scroll-padding-top` khai 6rem trên cùng là vùng bị che, mà ô tìm kiếm ở
+     header dính lại nằm đúng trong 6rem ấy — nên mỗi ký tự gõ vào là một lần
+     trình duyệt kéo trang lên cho ô "thoát" khỏi vùng che. Đang ở cuối trang
+     thì thấy rõ nhất, vì còn chỗ để kéo. `scroll-behavior: smooth` biến cú
+     kéo thành một chuyển động ai cũng thấy.
+  
+     `scroll-margin-top` âm đúng bằng offset làm trình duyệt coi ô đã nằm
+     ngoài vùng che, nên không cuộn gì. Dùng chung biến để hai luật không bao
+     giờ lệch nhau.
+  
+     Chỉ nhắm ô nhập, không nhắm cả header: anchor trỏ tới phần tử khác trong
+     header (nếu có) vẫn cần offset bình thường. */
+  [data-site-header] :is(input, textarea, [contenteditable]) {
+    scroll-margin-top: calc(-1 * var(--scroll-offset));
   }
 
   body {
