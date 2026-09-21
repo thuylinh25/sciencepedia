@@ -673,3 +673,44 @@ tra, và lỗi sống sót nhiều tháng.
 `onError` chuyển hướng), việc kế tiếp — cùng lượt sửa, không để sau — là làm
 cho trang ấy HIỆN mã lỗi nó vừa nhận.** Một trang nhận lỗi mà không nói gì
 biến mọi sự cố thành "thỉnh thoảng phải bấm hai lần".
+
+---
+
+## Một lệnh "chuẩn hoá" có thể phá đúng thứ nó vừa được dùng để dựng
+
+Chốt 2026-09-21.
+
+`slugs:rename` chuẩn hoá slug về `slugify(title)`. Chạy khô cho ra 11 slug sẽ
+đổi, và một dòng trong đó là quả mìn:
+
+```
+cau-truc-ben-trong-trai-dat  →  hanh-trinh-vao-tam-trai-dat
+```
+
+`hanh-trinh-vao-tam-trai-dat` chính là slug mà `next.config.ts` đang 301 **về**
+`cau-truc-ben-trong-trai-dat`. Đổi tới đó là dựng một vòng lặp chuyển hướng vô
+hạn trên URL công khai — và lệnh sẽ làm thế một cách im lặng, vì nó chỉ biết
+kiểm trùng slug giữa các bài, không biết luật 301 tồn tại.
+
+Gốc rễ: bài ấy đổi slug ngày 10/09 nhưng **tiêu đề không đổi theo**. Slug nói
+"cấu trúc bên trong Trái Đất", tiêu đề vẫn là "Hành trình vào tâm Trái Đất".
+Chừng nào hai thứ còn lệch, mọi lệnh suy slug từ tiêu đề đều muốn kéo ngược.
+
+**Quy tắc: một lệnh hàng loạt suy giá trị mới từ dữ liệu hiện có phải kiểm cả
+những hệ thống ĐANG SỐNG dựa vào giá trị cũ, không chỉ kiểm tính nhất quán
+trong chính bảng của nó.** Ở đây là hai nơi, vì luật 301 sống ở hai chỗ: bảng
+`ArticleSlugRedirect` (nguồn sự thật) và `src/generated/slug-redirects.json`
+(bản kết xuất đang chạy trên production, có thể cũ hơn bảng). Kiểm một nơi là
+chưa đủ.
+
+Bộ chặn nay nằm trong `scripts/rename-article-slugs.ts` và dừng cả lượt chạy,
+kèm tên bài cần sửa tiêu đề. Dừng cả lượt chứ không bỏ qua một dòng: đây là
+thao tác hàng loạt trên URL công khai, cùng lý do với các bộ chặn có sẵn.
+
+Còn một hàng dữ liệu liên quan, **chưa xoá có chủ ý**:
+`ArticleSlugRedirect` có hàng `cau-truc-ben-trong-trai-dat` trỏ về chính bài
+đang mang slug ấy. Hiện nó không bao giờ chạy — `page.tsx` chỉ tra bảng khi
+KHÔNG tìm thấy bài. Nhưng nếu slug bài ấy đổi lần nữa, hàng này lập tức thành
+một luật 301 hợp lệ từ slug cũ sang slug mới. Nó vừa là bẫy vừa là lưới, nên
+để nguyên và ghi lại ở đây thay vì xoá. `redirects:sync` đã bỏ qua nó kèm cảnh
+báo.

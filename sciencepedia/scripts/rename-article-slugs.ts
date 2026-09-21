@@ -1,3 +1,5 @@
+import { readFileSync } from "node:fs";
+
 import { prisma } from "../src/lib/prisma";
 import { slugify } from "../src/lib/utils";
 
@@ -51,6 +53,42 @@ async function main() {
     if (owner && owner !== change.id) {
       throw new Error(
         `Slug đích ${change.nextSlug} đang thuộc bài ${owner}; không đổi dữ liệu`,
+      );
+    }
+  }
+
+  /* Slug đích đang là NGUỒN của một luật 301: dừng, vì đổi tới đó là tạo
+     vòng lặp chuyển hướng.
+
+     Đo 2026-09-21, tình huống có thật chứ không phải giả định: bài
+     `cau-truc-ben-trong-trai-dat` vẫn mang tiêu đề cũ "Hành trình vào tâm
+     Trái Đất", nên `slugify(title)` muốn đổi slug về `hanh-trinh-vao-tam-trai-dat`
+     — đúng slug mà next.config.ts đang 301 VỀ `cau-truc-ben-trong-trai-dat`.
+     Chạy `--write` lúc ấy là dựng một vòng lặp vô hạn trên URL công khai.
+
+     Hai chỗ phải kiểm, vì luật 301 sống ở hai nơi: bảng `ArticleSlugRedirect`
+     (nguồn sự thật) và `src/generated/slug-redirects.json` (bản kết xuất đang
+     thực sự chạy trên production). Bản kết xuất có thể cũ hơn bảng, nên kiểm
+     cả hai chứ không chỉ một. */
+  const redirectRows = await prisma.articleSlugRedirect.findMany({
+    select: { oldSlug: true },
+  });
+  const redirectSources = new Set(redirectRows.map((r) => r.oldSlug));
+  try {
+    const generated = JSON.parse(
+      readFileSync("src/generated/slug-redirects.json", "utf8"),
+    ) as { from: string }[];
+    for (const rule of generated) redirectSources.add(rule.from);
+  } catch {
+    // Chưa có tệp kết xuất thì chỉ dựa vào bảng — không phải lỗi.
+  }
+
+  for (const change of changes) {
+    if (redirectSources.has(change.nextSlug)) {
+      throw new Error(
+        `Slug đích ${change.nextSlug} đang là nguồn của một luật 301 — đổi tới đó ` +
+          `sẽ tạo vòng lặp chuyển hướng. Sửa tiêu đề bài ${change.slug} hoặc gỡ ` +
+          `luật 301 trước, rồi chạy lại.`,
       );
     }
   }
