@@ -226,8 +226,24 @@ Nên khối `::-webkit-scrollbar` trong `globals.css` nằm trong
 `@media (pointer: fine)`. Thiết bị cảm ứng giữ thanh cuộn gốc của hệ.
 
 Đừng gỡ media query đó để "cho mobile cũng đẹp": cái đẹp đó không cuộn được.
-Muốn báo cho người dùng biết còn nội dung bên phải thì dùng dải mờ ở mép hoặc
-`scroll-snap`, đừng dùng một thanh cuộn giả.
+
+Chỗ nào cần một thanh cuộn **vừa thấy vừa kéo được** trên cảm ứng — thanh tab
+trang quản trị là ví dụ — thì thanh ấy phải là phần tử của ta, nghe
+`pointerdown/pointermove`: dùng `<ScrollStrip>`
+(`components/ui/scroll-strip.tsx`). Nó tắt thanh cuộn của trình duyệt trong
+khung bằng `.scrollbar-none` rồi tự vẽ một thanh.
+
+Hai điều dễ làm sai khi tự vẽ, cả hai đã nằm trong component:
+
+- **Quãng kéo phải nhân tỉ lệ.** Ngón tay đi trên THANH chứ không đi trên nội
+  dung; `scrollLeft += deltaX` là kéo hết thanh mà nội dung mới đi được một
+  phần. Đúng: `deltaX * (scrollWidth / clientWidth)`.
+- **`touch-none` trên con trượt.** Thiếu nó, trình duyệt hiểu cử chỉ là cuộn
+  dọc cả trang và giành mất, kéo ngang không nhúc nhích.
+
+Không dùng Radix `ScrollArea` cho việc này: nó bọc nội dung trong một div
+`display: table`, nên trên máy tính nền của mục đang chọn co lại theo chữ thay
+vì trải hết bề ngang cột.
 
 ---
 

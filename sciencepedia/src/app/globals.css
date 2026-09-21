@@ -651,6 +651,15 @@
     mask-image: linear-gradient(to bottom, black 70%, transparent);
   }
 
+  /* Tắt hẳn thanh cuộn của trình duyệt cho khối tự vẽ thanh cuộn riêng
+     (`<ScrollStrip>`), nếu không sẽ có hai thanh chồng nhau. */
+  .scrollbar-none {
+    scrollbar-width: none;
+  }
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+
   /* Kết quả tìm kiếm được Meilisearch bọc trong <mark> */
   .search-highlight mark {
     @apply rounded bg-accent/40 px-0.5 text-inherit;

@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 
 import { Link, usePathname } from "@/i18n/navigation";
+import { ScrollStrip } from "@/components/ui/scroll-strip";
 import { atLeast } from "@/lib/roles";
 import { cn } from "@/lib/utils";
 
@@ -40,29 +41,35 @@ export function AdminSidebar({ role }: { role: Role }) {
         {t("title")}
       </p>
 
-      <nav className="flex gap-1 overflow-x-auto pb-2 lg:flex-col lg:overflow-visible lg:pb-0">
-        {ITEMS.filter((item) => atLeast(role, item.min)).map((item) => {
-          const active = item.exact
-            ? pathname === item.href
-            : pathname.startsWith(item.href);
+      {/* Thanh tab trượt ngang trên điện thoại. `ScrollStrip` vẽ thanh cuộn
+          riêng vì thanh cuộn của trình duyệt trên cảm ứng không kéo được —
+          lý do đầy đủ ở `docs/design-system.md`. Trên `lg` khối chuyển sang
+          cột dọc, hết tràn, thanh tự biến mất. */}
+      <ScrollStrip className="lg:overflow-visible" trackClassName="lg:hidden">
+        <nav className="flex gap-1 lg:flex-col">
+          {ITEMS.filter((item) => atLeast(role, item.min)).map((item) => {
+            const active = item.exact
+              ? pathname === item.href
+              : pathname.startsWith(item.href);
 
-          return (
-            <Link
-              key={item.href}
-              href={item.href}
-              className={cn(
-                "flex shrink-0 items-center gap-2.5 rounded-xl px-3.5 py-2.5 text-sm font-medium transition-colors",
-                active
-                  ? "bg-primary/10 text-primary-strong"
-                  : "text-muted-foreground hover:bg-muted hover:text-foreground",
-              )}
-            >
-              <item.icon className="size-4" />
-              {t(item.key)}
-            </Link>
-          );
-        })}
-      </nav>
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={cn(
+                  "flex shrink-0 items-center gap-2.5 rounded-xl px-3.5 py-2.5 text-sm font-medium transition-colors",
+                  active
+                    ? "bg-primary/10 text-primary-strong"
+                    : "text-muted-foreground hover:bg-muted hover:text-foreground",
+                )}
+              >
+                <item.icon className="size-4" />
+                {t(item.key)}
+              </Link>
+            );
+          })}
+        </nav>
+      </ScrollStrip>
 
       <Link
         href="/"
