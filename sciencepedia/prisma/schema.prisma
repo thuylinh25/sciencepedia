@@ -386,6 +386,16 @@ model GlossaryTerm {
   /// Cách gọi khác, lưu ở DẠNG SLUG ("spin", "momen-dong-luong") để khớp thẳng
   /// với khoá sinh từ `[[...]]` mà không phải chuẩn hoá lúc truy vấn.
   aliases     String[] @default([])
+  /// Nhãn NGÀNH, chữ tự do — KHÔNG phải tham chiếu tới bảng `Category`.
+  ///
+  /// Hai thứ này phân loại theo hai trục khác nhau và cố ý không trùng nhau:
+  /// bài xếp theo CHỦ ĐỀ ("Vũ trụ", "Hệ Mặt Trời", "Sao và Thiên hà"), mục từ
+  /// xếp theo NGÀNH ("Thiên văn học", "Vật lý hạt nhân"). Rà ngày 21/09 thấy
+  /// 4 trong 6 nhãn khi ấy không khớp tên danh mục nào, và đó KHÔNG phải lỗi.
+  ///
+  /// Nhãn chỉ để hiện: một dòng chữ ở `/glossary/[slug]` và một thẻ trong
+  /// modal. Không liên kết, không lọc, không join. Nên cái cần giữ là nhất
+  /// quán GIỮA CÁC MỤC TỪ với nhau, chứ không phải khớp với taxonomy bài.
   category    String?
   /// URL ảnh trên R2 (`assetUrl()`), không phải URL ngoài.
   image       String?
