@@ -98,6 +98,7 @@ Gate accuracy **không có ngoại lệ**.
 - **Ảnh tải lên qua trang quản trị đi thẳng R2** (`/api/upload`), tự chuyển WebP và dựng sẵn các cỡ — không cần chạy script nào sau đó. Supabase Storage không còn nhận ảnh mới.
 - **Song ngữ:** dùng `pick()` / `pickName()` từ `@/lib/i18n-content`, không hardcode.
 - **Thuật ngữ `[[...]]`:** định nghĩa ngắn tra trên server lúc render, không fetch khi rê chuột. Giải thích do AI sinh **không bao giờ ghi vào CSDL** và luôn mang nhãn "do AI" — lý do: `docs/architecture.md`, mục "Thuật ngữ".
+- **Dấu duyệt mục từ chỉ đến từ `glossary.json`, và tự gỡ khi nội dung đổi.** `GlossaryTerm.reviewedById`/`reviewedAt` trỏ tài khoản tổ chức như bài viết; `/admin/glossary` không đặt được chúng, chỉ gỡ khi tên thuật ngữ hoặc định nghĩa đổi. Mục không có bằng chứng duyệt thì để trống, không suy từ `createdAt` — lý do: `docs/content-rules.md`, mục "Byline người duyệt".
 
 ## Tài liệu
 

@@ -9,23 +9,24 @@ datasource db {
 }
 
 model User {
-  id               String        @id @default(cuid())
+  id               String         @id @default(cuid())
   name             String?
-  email            String        @unique
+  email            String         @unique
   emailVerified    DateTime?
   image            String?
   passwordHash     String?
   bio              String?
-  role             Role          @default(USER)
-  createdAt        DateTime      @default(now())
-  updatedAt        DateTime      @updatedAt
+  role             Role           @default(USER)
+  createdAt        DateTime       @default(now())
+  updatedAt        DateTime       @updatedAt
   accounts         Account[]
-  articles         Article[]     @relation("ArticleAuthor")
-  reviewedArticles Article[]     @relation("ArticleReviewer")
+  articles         Article[]      @relation("ArticleAuthor")
+  reviewedArticles Article[]      @relation("ArticleReviewer")
   bookmarks        Bookmark[]
   chats            ChatSession[]
   comments         Comment[]
   media            Media[]
+  reviewedTerms    GlossaryTerm[]
   sessions         Session[]
 
   @@index([role])
@@ -369,23 +370,23 @@ model Entity {
 /// Giải thích do AI sinh ra KHÔNG được ghi vào đây — xem
 /// `src/app/api/glossary/[slug]/explain/route.ts`.
 model GlossaryTerm {
-  id          String   @id @default(cuid())
+  id           String    @id @default(cuid())
   /// Khoá tra cứu: `slugify` của chữ trong `[[...]]`. "Động lượng góc" →
   /// "dong-luong-goc".
-  slug        String   @unique
-  term        String
-  termEn      String?
+  slug         String    @unique
+  term         String
+  termEn       String?
   /// 2–3 câu. Hiện trong tooltip, nên dài hơn thì tooltip che mất bài.
-  shortDef    String
-  shortDefEn  String?
+  shortDef     String
+  shortDefEn   String?
   /// Chữ thường, đoạn cách nhau bằng một dòng trống. Không phải Markdown: modal
   /// tải phía client, và kéo react-markdown vào bundle bài viết chỉ vì một
   /// modal hiếm khi mở là không đáng.
-  fullDef     String?
-  fullDefEn   String?
+  fullDef      String?
+  fullDefEn    String?
   /// Cách gọi khác, lưu ở DẠNG SLUG ("spin", "momen-dong-luong") để khớp thẳng
   /// với khoá sinh từ `[[...]]` mà không phải chuẩn hoá lúc truy vấn.
-  aliases     String[] @default([])
+  aliases      String[]  @default([])
   /// Nhãn NGÀNH, chữ tự do — KHÔNG phải tham chiếu tới bảng `Category`.
   ///
   /// Hai thứ này phân loại theo hai trục khác nhau và cố ý không trùng nhau:
@@ -396,18 +397,48 @@ model GlossaryTerm {
   /// Nhãn chỉ để hiện: một dòng chữ ở `/glossary/[slug]` và một thẻ trong
   /// modal. Không liên kết, không lọc, không join. Nên cái cần giữ là nhất
   /// quán GIỮA CÁC MỤC TỪ với nhau, chứ không phải khớp với taxonomy bài.
-  category    String?
+  category     String?
   /// URL ảnh trên R2 (`assetUrl()`), không phải URL ngoài.
-  image       String?
+  image        String?
   /// Bắt buộc khi ảnh dùng giấy phép đòi ghi công. Chữ thường.
-  imageCredit String?
-  entityId    String?
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
-  entity      Entity?  @relation(fields: [entityId], references: [id], onDelete: SetNull)
+  imageCredit  String?
+  entityId     String?
+  /// Ai đã duyệt mục từ này, và ngày duyệt.
+  ///
+  /// Vì sao tồn tại: gate accuracy đòi mọi thứ xuất bản mang tên người duyệt
+  /// và ngày duyệt ĐỌC ĐƯỢC. Trước hai cột này, hai thông tin ấy chỉ nằm
+  /// trong `notes` của `prisma/seed-data/glossary.json` — chữ tự do, không
+  /// truy vấn được, không hiện ra đâu cả, và `notes` còn không nằm trong nhóm
+  /// trường mà `seed-glossary.ts` ghi xuống. Tức là trên CSDL không hề có dấu
+  /// vết duyệt nào, trong khi định nghĩa vẫn hiện trong tooltip mọi bài.
+  ///
+  /// Vì sao tham chiếu `User` chứ không lưu chuỗi, giống `Article.reviewedById`:
+  /// `docs/content-rules.md` (mục "Byline người duyệt") đã chốt byline là tài
+  /// khoản tổ chức "Ban biên tập Sciencepedia" và đòi NHẤT QUÁN — lúc tổ chức
+  /// lúc tên riêng thì người đọc suy ra bài có tên người được soi kỹ hơn. Một
+  /// cột chuỗi mời gọi lần sau ai đó gõ một chuỗi khác; khoá ngoại làm cho sự
+  /// nhất quán ấy thành cấu trúc chứ không phải quy ước phải nhớ.
+  ///
+  /// `science-editor` là VAI AGENT, không phải một hàng `User`, và KHÔNG được
+  /// tạo thành một hàng `User` — làm vậy là dựng một người không tồn tại.
+  /// Seeder dịch vai ấy sang đúng tài khoản tổ chức mà bài viết đang trỏ tới,
+  /// đúng cách `scripts/pass-fact-check-2026-09-13.ts` đã làm cho `Article`:
+  /// tra theo `role: ADMIN` chứ không ghim cuid vào mã nguồn.
+  ///
+  /// Vì sao nullable: 12 mục đầu KHÔNG có dấu vết duyệt — `notes` của chúng
+  /// không nhắc người duyệt, không nhắc ngày duyệt. Suy ngày từ `createdAt`
+  /// hay gán `science-editor` vì "chắc là vậy" là bịa byline, cùng loại lỗi
+  /// với ghi công ảnh sai. Ô trống nói đúng sự thật: chưa ai ký mục này.
+  reviewedById String?
+  reviewedAt   DateTime?
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+  entity       Entity?   @relation(fields: [entityId], references: [id], onDelete: SetNull)
+  reviewedBy   User?     @relation(fields: [reviewedById], references: [id])
 
   @@index([aliases], type: Gin)
   @@index([entityId])
+  @@index([reviewedById])
 }
 
 model Relationship {

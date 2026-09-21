@@ -339,6 +339,8 @@
     "confirmDelete": "Bạn chắc chắn muốn xoá “{name}”? Thao tác này không thể hoàn tác.",
     "deleted": "Đã xoá",
     "saved": "Đã lưu thay đổi",
+    "reviewStampCleared": "Đã lưu. Vì nội dung thay đổi, dấu duyệt của mục từ đã được gỡ — byline “đã duyệt” không còn hiện cho tới lượt duyệt sau.",
+    "reviewStampWarning": "Mục từ này đang mang dấu duyệt. Sửa tên thuật ngữ hoặc phần định nghĩa sẽ gỡ dấu ấy — sửa alias, danh mục hay ảnh thì không.",
     "totalArticles": "Tổng bài viết",
     "published": "Đã xuất bản",
     "drafts": "Bản nháp",

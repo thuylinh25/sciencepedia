@@ -500,6 +500,8 @@
       }
     ],
     "verdict": "PASS",
+    "reviewedBy": "science-editor",
+    "reviewedAt": "2026-09-21",
     "notes": "Reviewed 2026-09-21 (science-editor). Both source URLs fetched and checked. OpenStax 6.2 carries the core verbatim: \"a photon's energy depends only on its frequency f\", E = hf, \"each photon moves at the speed of light\", \"doubling the intensity of radiation translates to doubling the number of photons\", and the cut-off frequency (\"when incident radiation has a frequency below the cut-off frequency, the photoelectric effect is not observed\").\n\nCHANGED - the red-vs-violet example. It was unconditional in Vietnamese (\"vẫn không bứt được\") but hedged in English (\"may fail\"): two different confidence levels for one claim, which is exactly what must not differ between locales. Neither version was right as an absolute either, because whether red sits below cut-off depends on the metal's work function - for platinum neither red nor violet ejects anything. Rewritten in both languages as conditional on the metal's cut-off, which is what OpenStax actually states.\n\nThe shortDef's unqualified \"luôn chuyển động với tốc độ ánh sáng\" is OpenStax's own wording and is left as is; fullDef adds \"trong chân không\". Aliases quang-tu and luong-tu-anh-sang are both current Vietnamese for this.",
     "usedIn": [
       "mat-khong-thuc-su-nhin-nao-bo-tao-ra-hinh-anh-nhu-the-nao",
@@ -534,6 +536,8 @@
       }
     ],
     "verdict": "PASS",
+    "reviewedBy": "science-editor",
+    "reviewedAt": "2026-09-21",
     "notes": "Reviewed 2026-09-21 (science-editor). NASA EMS intro fetched. Supported verbatim: the band list; \"Gamma rays, x-rays, and some ultraviolet waves are 'ionizing,' meaning these waves have such a high energy that they can knock electrons out of atoms\"; the atmosphere blocking gamma, X-ray and some UV while visible \"largely passes through\"; and \"instruments have to be positioned above Earth's energy-absorbing atmosphere\".\n\nCUT - \"đó là ranh giới giữa phần vô hại và phần nguy hiểm cho mô sống\" / \"the boundary between the harmless part of the spectrum and the part dangerous to living tissue\". No source says it and it is false: non-ionising radiation is not harmless (UV-A, infrared burns, microwave heating, high-power lasers). NASA is careful here - it characterises ionising radiation and gives non-ionising no safety characterisation at all. Replaced with the page's own framing: which bands are ionising, and that they can damage cells harmfully (sunburn) or by design (radiotherapy).\n\nFOR knowledge-architect, not blocking: alias pho-dien-tu points \"phổ điện từ\" (the spectrum) at the radiation entry. The two are distinct concepts. The tooltip a reader gets is still correct and relevant so it stays, but if a separate \"phổ điện từ\" entry is ever written this alias must move to it.",
     "usedIn": [
       "mat-khong-thuc-su-nhin-nao-bo-tao-ra-hinh-anh-nhu-the-nao"
@@ -566,6 +570,8 @@
       }
     ],
     "verdict": "PASS",
+    "reviewedBy": "science-editor",
+    "reviewedAt": "2026-09-21",
     "notes": "Reviewed 2026-09-21 (science-editor). NASA Visible Light fetched: \"Typically, the human eye can detect wavelengths from 380 to 700 nanometers\" and \"Violet has the shortest wavelength, at around 380 nanometers, and red has the longest wavelength, at around 700 nanometers\". The 380-700 nm range and both endpoints check out.\n\nCUT 1 - \"mắt người tiến hoá để nhạy đúng với dải mà khí quyển cho đi qua và Mặt Trời phát mạnh nhất\". Neither source says this. The NASA page states the correlation (\"the Sun ... the dominant source for visible-light waves our eyes receive\") and deliberately stops short of the causation, and why the visible window sits where it does is still argued in the literature. Replaced with what the page does support: cone cells tuned to this band, and the Sun as the dominant source of the visible light we receive.\n\nCUT 2 - \"450 nm cho xanh lam, 530 nm cho xanh lục\". These interior values are on neither cited page. Unsourced numbers are removed, not softened; the two sourced endpoints stay and the sentence now says the other colours lie between them.\n\nNEI \"How the Eyes Work\" stays as the second source for the observer side of the entry.",
     "usedIn": [
       "kinh-james-webb-nhin-nguoc-ve-thuo-vu-tru-so-sinh",
@@ -602,6 +608,8 @@
       }
     ],
     "verdict": "PASS",
+    "reviewedBy": "science-editor",
+    "reviewedAt": "2026-09-21",
     "notes": "Reviewed 2026-09-21 (science-editor). PASS on resubmission. The blocking gap from the first round is closed properly: the drafter found the source rather than the reviewer backfilling one, which is how this is supposed to work.\n\nTHIRD SOURCE VERIFIED INDEPENDENTLY. I fetched OpenStax Physics 23.3 myself rather than taking the quotes on trust. It resolves and it carries paragraph 3: \"Multiple current GUTs hypothesize that the stable proton should actually decay at a lifetime of 10^31 years\"; \"Scientists at the Super-Kamiokande in Japan have used a 50,000-ton tank of water to search for its existence\"; \"However, as of 2014, 17 years into the experiment, decay is yet to be found\". It also states an experimental minimum limit on the proton lifetime, which is what supports \"các phép đo chỉ đặt ra giới hạn dưới\". The drafter's note that section 11.6 404s and 11.1 defines GUTs without mentioning proton decay matches what I found; 23.3 is the right page.\n\nCARRIED OVER FROM ROUND 1, unchanged: the CODATA 2022 mass matches NIST to the last digit (\"1.672 621 925 95(52) x 10^-27 kg\"), and OpenStax 10.1 carries paragraphs 1 and 2 verbatim.\n\nCHANGED - date anchor, my edit, not the drafter's. The source's finding is explicitly \"as of 2014\", and a search for a rare event is exactly the kind of claim a later result can move - Hyper-Kamiokande is a live programme. So I split the sentence the way the evidence splits: the standing negative (\"chưa thí nghiệm nào quan sát được\", \"chỉ đặt ra giới hạn dưới\") stays undated because it remains true, while the concrete Super-Kamiokande result now carries its as-of year in both languages. RE-CHECK: revisit if a proton-decay detection is ever announced, or when this entry is next expanded - the published limits have moved since 2014 even though the null result has not.\n\nThe hedging itself is untouched and must stay untouched. It was correctly calibrated in round 1 and remains so: it neither asserts absolute stability nor implies decay has been seen or is expected, and the English tracks the Vietnamese clause for clause.",
     "usedIn": [
       "nguyen-tu-cau-tao-nen-van-vat",
@@ -638,6 +646,8 @@
       }
     ],
     "verdict": "PASS",
+    "reviewedBy": "science-editor",
+    "reviewedAt": "2026-09-21",
     "notes": "Reviewed 2026-09-21 (science-editor). PASS on resubmission.\n\nTHIRD SOURCE VERIFIED INDEPENDENTLY, and I checked two clauses the resubmission did not quote. OpenStax Biology 2e 36.5 resolves and carries paragraph 2: \"Rods are strongly photosensitive and are located in the outer edges of the retina. They detect dim light and are used primarily for peripheral and nighttime vision\"; \"Cones are weakly photosensitive and are located near the center of the retina. They respond to bright light, and their primary role is in daytime, color vision\". Beyond the quoted material I confirmed the two clauses that would otherwise have been left dangling: rods not distinguishing colour is supported by \"Rods respond in low light and can detect only shades of gray\", and cones giving fine detail is supported by \"The fovea is the region in the center back of the eye that is responsible for acute vision. The fovea has a high density of cones\". Every clause in the paragraph now traces to a sentence I read.\n\nCHANGED - paragraph 2 rewritten, answering the question the coordinator raised. The draft was accurate and would have passed as it stood; completeness is not a gate. But two things made the edit worth making. First, \"cho ta màu sắc cùng chi tiết\" asserted acuity with nothing visible behind it - the fovea is the reason, and naming it turns a bare assertion into a sourced one. Second, the distribution fact (rods at the rim, cones near the centre) is what makes the rest cohere, and peripheral vision is a real function the draft dropped. So the paragraph now carries location, dim-light and peripheral vision, grey-only, bright light, colour, and the fovea - each from the source. The English mirrors it clause for clause.\n\nCARRIED OVER FROM ROUND 1, unchanged: paragraphs 1 and 3 match NEI verbatim, and \"có thể mất thị lực vĩnh viễn\" correctly holds NEI's \"increases the risk of permanent vision loss or blindness\" at risk level instead of upgrading it to a certainty.\n\nNOT BLOCKING: category \"Sinh học\" is a new label for the glossary, correct, and matches the article taxonomy root sinh-hoc. Kept.",
     "usedIn": [
       "mat-khong-thuc-su-nhin-nao-bo-tao-ra-hinh-anh-nhu-the-nao"
@@ -669,6 +679,8 @@
       }
     ],
     "verdict": "PASS",
+    "reviewedBy": "science-editor",
+    "reviewedAt": "2026-09-21",
     "notes": "Reviewed 2026-09-21 (science-editor). Every number and every claim here is carried by the NASA heliophysics page, fetched and checked: \"A magnetosphere is the region around a planet dominated by the planet's magnetic field\" (the shortDef is this); \"the convective motion of charged, molten iron, far below the surface in Earth's outer core\"; \"a distance of about six to 10 times the radius of the Earth\" on the dayside - so the 6-10 Earth radii figure is sourced exactly as written, not rounded or invented; \"hundreds of Earth radii, far past the moon's orbit at 60 Earth radii\" for the tail; \"The magnetosphere shields our home planet from solar and cosmic particle radiation as well as erosion of the atmosphere by the solar wind\"; and \"Earth has the strongest one of all the rocky planets\".\n\nThat last one is a superlative, and superlatives normally need an as-of date under our date-bound rule. No re-check date attached here, deliberately: it rests on which terrestrial planets have an internal dynamo at all - Venus and Mars have no global field - not on a measurement ranking that a new result could reorder.\n\nNOAA independently confirms the tail (\"stretched out to hundreds of Earth radii, well beyond the orbit of the moon at 60 Earth radii\") and gives \"about 10 Earth radii\" dayside, consistent with NASA's range. Citation health: swpc.noaa.gov now 301s to spaceweather.gov, and the entry already stores the spaceweather.gov target, so it resolves without a redirect hop.\n\nNOT BLOCKING, for category-manager: category is \"Vật lý\" but all three paragraphs are about Earth and \"Khoa học Trái Đất\" already exists in the glossary labels. A placement question, not an accuracy one - left as drafted.",
     "usedIn": [
       "mat-troi-lo-phan-ung-giu-ca-he-hanh-tinh",
@@ -702,6 +714,8 @@
       }
     ],
     "verdict": "PASS",
+    "reviewedBy": "science-editor",
+    "reviewedAt": "2026-09-21",
     "notes": "Reviewed 2026-09-21 (science-editor). Both NASA pages fetched. The distances are exact: \"The inner edge of the Oort Cloud, however, is thought to be located between 2,000 and 5,000 AU from the Sun, with the outer edge being located somewhere between 10,000 and 100,000 AU from the Sun\". Both ranges check out and the entry already attributed them to NASA as estimates. \"Vì quá xa, NASA chưa có ảnh chụp trực tiếp nào\" is verbatim NASA (\"Because it is so far away, NASA doesn't have direct images of the Oort Cloud\") and \"artist's concept\" is the page's own caption.\n\nCHANGED - hedging. NASA hedges this object three separate times and the draft had dropped all three. Source: \"a theorized group of icy objects\"; \"There MAY BE hundreds of billions, even trillions, of icy bodies\"; \"SCIENTISTS THINK the Oort Cloud is a giant spherical shell\". The draft asserted a shell that \"gồm hàng trăm tỉ thiên thể băng\" as established fact and opened fullDef with \"Đám mây Oort LÀ một lớp vỏ cầu\". The count itself was right - \"hàng trăm tỉ, thậm chí hàng nghìn tỉ\" is NASA's own phrase - the error was purely modality. Restored in both languages (được cho là / thought to, có thể tới / possibly, các nhà khoa học cho rằng / scientists think), plus an opening line in fullDef stating plainly that this is a theorised structure inferred from long-period comet orbits. Epistemically that is the single most important thing about the Oort Cloud and the entry now leads with it rather than burying it.\n\nLong-period comets confirmed: Oort \"proposed the existence of the cloud to explain (among other things) where long-period comets come from\". The entry now says \"được nêu ra để giải thích nguồn gốc\", which matches that framing instead of over-claiming a settled origin.\n\nCHANGED - category from \"Vũ trụ học\" to \"Thiên văn học\". The Oort Cloud is Solar-System astronomy, not cosmology, and Thiên văn học is the label the approved entries already use for this material (nam-anh-sang, sao-neutron, sieu-tan-tinh, tien-dong).\n\nBoth sources are NASA, as the drafter flagged. Accepted: tier-2 authoritative body, two separately maintained pages, and every figure is attributed to NASA in the text rather than stated as settled fact. An independent source would still be an improvement if this entry is expanded.",
     "usedIn": [
       "nhung-lan-dai-tuyet-chung-co-lien-quan-toi-hanh-trinh-cua-he-mat-troi-trong-ngan-ha",
@@ -733,6 +747,8 @@
       }
     ],
     "verdict": "PASS",
+    "reviewedBy": "science-editor",
+    "reviewedAt": "2026-09-21",
     "notes": "Reviewed 2026-09-21 (science-editor). RESOLUTION NUMBER CONFIRMED: it is 5A, not B5. The IAU URL in this entry resolves and is the genuine 2006 General Assembly results page. Resolution 5A is the planet definition; Resolution 6A is the separate Pluto resolution. \"B5\" is a misreading that circulates widely - the 2006 GA also ran a B-series of resolutions and the pre-vote drafts were numbered 5A and 5B, which is the likely source of the transposition. The drafter was right to make a point of it.\n\nAlso verified on the same page: the three planet criteria (orbits the Sun; enough mass for self-gravity to give a nearly round shape; \"has cleared the neighbourhood around its orbit\"); the dwarf-planet definition as the first two but not the third, plus not being a satellite; and the three initial members Ceres, Pluto and 2003 UB313. \"Sau được đặt tên là Eris\" is correct and is the right way to put it - 2003 UB313 was the designation at the time of the vote.\n\n\"Đúng một tiêu chí ... là thứ tách hai nhóm ra\" is accurate: clearing the neighbourhood is the only differing criterion, the satellite clause being an added exclusion rather than a shared criterion, and the entry words it that way.\n\nCHANGED - category from \"Vũ trụ học\" to \"Thiên văn học\", same reason as dam-may-oort: Solar-System astronomy, not cosmology.\n\nKEEP AS IS: the IAU definition is scoped to the Solar System and the entry says \"quay quanh Mặt Trời\" rather than generalising to other stars. Do not 'improve' that into a general definition later.",
     "usedIn": [
       "tai-sao-pluto-khong-con-la-hanh-tinh",
@@ -764,6 +780,8 @@
       }
     ],
     "verdict": "PASS",
+    "reviewedBy": "science-editor",
+    "reviewedAt": "2026-09-21",
     "notes": "Reviewed 2026-09-21 (science-editor). OpenStax 5.2 fetched and carries paragraphs 1 and 2 verbatim: \"A body at rest remains at rest or, if in motion, remains in motion at constant velocity unless acted on by a net external force\"; \"Newton's first law is often called the law of inertia\"; \"The inertia of an object is measured by its mass\"; and friction as the reason motion appears to need a continuous force (\"Friction is thus the cause of slowing\"). HyperPhysics resolves and agrees.\n\nCUT - \"ngoài không gian tuy không có trọng lượng\" / \"in space has no weight\". Two problems. It is a simplification that leaves a false mental model: the reader concludes there is no gravity in space, when an object on a station is in free fall and still firmly inside Earth's gravity. And neither cited page discusses weightlessness at all. I removed the false clause rather than explaining free fall, because the explanation would have added a second claim neither source supports. What remains - a tonne of equipment floating on a station is just as hard to push and to stop, because its mass is unchanged - is the inertia point the paragraph existed to make, and it sits inside what OpenStax 5.2 supports.\n\nIf the free-fall explanation is wanted back, source it (OpenStax Vol 1 section 5.5, or the gravitation chapter) and it can be reinstated. It is a good illustration; it just needs a citation.",
     "usedIn": [
       "bi-mat-dang-sau-cam-giac-hut-hang-khi-van-toc-thay-doi",
@@ -796,6 +814,8 @@
       }
     ],
     "verdict": "PASS",
+    "reviewedBy": "science-editor",
+    "reviewedAt": "2026-09-21",
     "notes": "Reviewed 2026-09-21 (science-editor). OpenStax 5.3 fetched: \"acceleration is directly proportional to and in the same direction as the net external force acting on the system and is inversely proportional to its mass\"; \"the direction of the acceleration is the same direction as that of the net force\", which sources the vector claim; and the basketball-vs-SUV comparison, of which the entry's \"vật nặng gấp đôi thì gia tốc bằng một nửa\" is the arithmetic instance. No numbers in this entry to check. HyperPhysics resolves and agrees.\n\nThe uniform-circular-motion sentence is not in section 5.3; it belongs to Vol 1 chapter 4. Accepted - and here is the line I applied, on record so the next batch gets the same treatment: an elaboration of the very concept being defined, drawn from the same cited work and elementary enough to be uncontroversial, is within the source's scope; a claim about a topic the cited work never addresses is not. That is why this sentence passes and why the proton-decay paragraph in the proton entry does not. Both drafts had the same shape of gap; only one of them is about a subject its source actually covers.\n\n\"Đi đều 300 km/h thì không cảm thấy gì\" is an everyday illustration of a point the entry has already stated correctly, not a separate claim.",
     "usedIn": [
       "ba-dinh-luat-kepler-hanh-tinh-chuyen-dong-theo-quy-luat-nao",
@@ -828,6 +848,8 @@
       }
     ],
     "verdict": "PASS",
+    "reviewedBy": "science-editor",
+    "reviewedAt": "2026-09-21",
     "notes": "science-editor duyet 2026-09-21 (dot 2). Ca hai URL da tu tai lai va doi chieu tung menh de. So lieu KHOP nguyen van NASA: 30 AU / 50 AU / dia tan xa gan 1.000 AU / hang tram nghin thien the >=100 km / khoi luong khong qua ~10% Trai Dat / hon 2.000 TNO. Da sua 3 cho truoc khi PASS: (1) bo ranh gioi cung o 1.000 AU - nguon viet 'with some bodies on orbits that go even farther beyond', ban cu cat ve nay di (quy tac 11); (2) ba menh de ve Dam may Oort - 'lop vo cau', 'xa hon hang tram lan', 'chua tung duoc chup anh' - KHONG co trong ca hai nguon; da thay bang dung cau NASA co that ('a much more distant region of icy, comet-like bodies that surrounds the solar system, including the Kuiper Belt'); (3) 'hon 2.000 TNO' la so dang tang, nay mang moc 9/2026 (quy tac 5), ra soat lai thang 9/2027. Bo alias 'vanh-dai-kha-nang-kuiper': khong phai ten goi nao cua khai niem nay. Hai nguon cung NASA: CHAP NHAN - day la claim dinh nghia, NASA la co quan dinh nghia; nguon doc lap chi bat buoc khi claim gay tranh cai, so lieu de cu, hoac bai noi nguoc hieu biet pho thong.",
     "usedIn": [
       "sao-hai-vuong-hanh-tinh-tim-ra-bang-toan-hoc",
@@ -862,6 +884,8 @@
       }
     ],
     "verdict": "PASS",
+    "reviewedBy": "science-editor",
+    "reviewedAt": "2026-09-21",
     "notes": "science-editor duyet 2026-09-21 (dot 2). RAO QUA TAY, va rao gan nham menh de - day la loi chinh da sua. NASA viet: 'Several theories about our Moon's formation vie for dominance, but almost all share that point in common: ... something crashed into the young Earth.' Nghia la cu VA CHAM la phan CHUNG cua cac gia thuyet; thu dang canh tranh nhau la CHI TIET (mot vat the co Sao Hoa hay mot loat vat the). Ban cu doc nguoc: shortDef viet 'NASA goi day la mot trong vai gia thuyet dang canh tranh, khong phai dieu da chung minh', bien cai da dong thuan thanh cai dang tranh cai - vi pham quy tac 7 (phan anh dong thuan dung ti le) va chinh no cung la doc sai nguon. shortDef con tu mau thuan: cau dau goi la 'loi giai thich dang chiem uu the', cau sau goi la 'mot trong vai gia thuyet'. Da viet lai: giu du bon rao cua NASA nhung dat chung vao dung cho - rao o chi tiet va cham, khong rao o viec co va cham. Bo han doan thu ba cu ('Hay giu nguyen muc de dat... Chu cua NASA la...'): do la loi dan cho nguoi soan, khong phai van cho nguoi doc, ma fullDef duoc render thang tren /glossary/[slug]. Thay bang phan bat dinh CO THAT va co nguon: sat thap bat thuong, khac biet mat gan/mat xa. 'Mau da Apollo' -> 'bang chung Apollo' cho khop nguyen van nguon. Hai nguon cung NASA: chap nhan, claim dinh nghia.",
     "usedIn": [
       "mat-trang",
@@ -895,6 +919,8 @@
       }
     ],
     "verdict": "PASS",
+    "reviewedBy": "science-editor",
+    "reviewedAt": "2026-09-21",
     "notes": "science-editor duyet 2026-09-21 (dot 2). Loi NANG NHAT cua ca dot nam o day, va no la mot hinh dang MOI chua co quy tac nao bat. Khang dinh 'Mat Trang CO quay' la DUNG va co nguon truc tiep - giu nguyen. Nhung doan ket cu viet 'NASA mo ta he Trai Dat - Mat Trang la khoa thuy trieu LAN NHAU'. Hai nguon duoc trich MAU THUAN nhau: trang Moon Facts viet 'The Earth and Moon are tidally locked', con trang Tidal Locking cua chinh NASA viet khoang 50 ti nam nua 'Earth would ALSO tidally lock to the Moon'. Ban cu lay cau long hon. Trai Dat HIEN KHONG khoa vao Mat Trang - ngay van 24 gio, khong phai mot thang. Bai trung thanh voi mot cau cua nguon nhung sai su that: quy tac 3/11/12 chi cam VUOT qua nguon, khong noi gi khi nguon sai hoac hai nguon danh nhau. Da viet lai theo trang Tidal Locking (chinh xac hon) va noi ro khoa moi di mot chieu. LECH VIET-ANH o dung cho nay: ban VN co chu 'LAN NHAU', ban EN khong co - EN chi noi 'the Earth-Moon system as tidally locked'. Cung mot doan, hai muc khang dinh khac nhau; dung kieu lech da bat o muc photon dot 1. Nay hai ban da khop tung menh de.",
     "usedIn": [
       "mat-trang",
@@ -926,6 +952,8 @@
       }
     ],
     "verdict": "PASS",
+    "reviewedBy": "science-editor",
+    "reviewedAt": "2026-09-21",
     "notes": "science-editor duyet 2026-09-21 (dot 2). Dinh nghia va shortDef khop NGUYEN VAN OpenStax 5.3. 'So do NGAN NHAT' dung: nguon viet 'It is the smallest possible measured time between two events'. Khang dinh '\"thoi gian chay cham lai\" la cach noi tat gay hieu nham' la DUNG va giu lai. Nhung ban cu don qua da ve phia kia: phu dinh cach noi pho thong roi dung lai o 'hai nguoi do khac nhau' se de nguoi doc voi mo hinh sai thu hai - rang gian no thoi gian chi la chuyen ghi chep, khong co gi that xay ra. Do la loi gian luoc lam hong mo hinh (quy tac 4), chi khac chieu. Da bo sung: (a) cau cua chinh nguon - moi dong ho chuyen dong so voi nguoi quan sat deu duoc thay chay cham hon; (b) hai bang chung thuc nghiem co san trong cung trang nguon - chu ky ban ra cua muon, va thi nghiem Hafele-Keating 1971. Bo alias 'thoi-gian-rieng': the hover chi hien shortDef (xem src/server/glossary.ts), ma shortDef muc nay khong dinh nghia thoi gian rieng - nguoi re chuot vao lien ket thuat ngu 'thoi gian rieng' se nhan dinh nghia cua mot dai luong khac. De nguyen thanh muc rieng cho dot sau; glossary:check bao thieu thi dung hon la tra ve nham. Hai nguon cung OpenStax: chap nhan - giao trinh vat ly co ban, claim khong tranh cai.",
     "usedIn": [
       "thuyet-tuong-doi-hep-khi-thoi-gian-khong-con-tuyet-doi"
@@ -956,6 +984,8 @@
       }
     ],
     "verdict": "PASS",
+    "reviewedBy": "science-editor",
+    "reviewedAt": "2026-09-21",
     "notes": "science-editor duyet 2026-09-21 (dot 2). Muc SACH NHAT cua dot - khong phai sua cau nao. Doi chieu nguyen van OpenStax 5.4: cong thuc L = L0 nhan can bac hai cua (1 - v binh phuong tren c binh phuong) KHOP DUNG ky hieu va dung vi tri tung thua so; 'do dai rieng la so do DAI NHAT' khop ('we find its length L to be smaller than the proper length L0'); 'chi co theo phuong chuyen dong' khop ('measurements of a transverse length must be the same in different inertial frames'). Hai cau 'Vat khong he bi nen hay bien dang. Khong co luc nao tac dung len no' khong co nguyen van trong nguon, nhung la lam ro dinh nghia chu khong phai claim su kien moi, va no chan dung mot mo hinh sai pho bien - giu, theo quy tac 4. Viet-Anh khop tung menh de. Bo alias 'do-dai-rieng' cung ly do nhu 'thoi-gian-rieng' o muc gian no thoi gian: the hover chi hien shortDef, ma shortDef co nhac 'do dai rieng' nhung khong dinh nghia no.",
     "usedIn": [
       "thuyet-tuong-doi-hep-khi-thoi-gian-khong-con-tuyet-doi"
@@ -989,6 +1019,8 @@
       }
     ],
     "verdict": "PASS",
+    "reviewedBy": "science-editor",
+    "reviewedAt": "2026-09-21",
     "notes": "science-editor duyet 2026-09-21 (dot 2). Que/non doi chieu nguyen van OpenStax 36.5: 'outer edges of the retina' / 'strongly photosensitive' / 'detect dim light ... peripheral and nighttime vision' / 'can detect only shades of gray'; non 'near the center' / 'weakly photosensitive' / 'respond to bright light ... daytime, color vision'. Chuoi tin hieu dien - day than kinh thi - nao dung hinh anh lay tu NEI ('photoreceptors turn the light into electrical signals ... Then the brain turns the signals into the images you see'). SUA MOT CHO, dung hinh dang quy tac 12: ban cu viet ho trung tam 'co mat do te bao non rat cao, VA DO LA LY DO vung nay cho thi giac sac net'. OpenStax neu hai su kien RIENG: 'The fovea is the region in the center back of the eye that is responsible for acute vision' va 'The fovea has a high density of cones'. Nguon khong noi cai nay gay ra cai kia. Suy dien co ve hien nhien va gan nhu chac chan dung, nhung day dung la loai cau da bi cat bon lan o dot 1 - da doi lai thanh hai su kien dat canh nhau. Hai nguon KHAC nha xuat ban (OpenStax + NEI/NIH): dot nay chi co hai muc dat duoc dieu do.",
     "usedIn": [
       "mat-khong-thuc-su-nhin-nao-bo-tao-ra-hinh-anh-nhu-the-nao"
@@ -1021,6 +1053,8 @@
       }
     ],
     "verdict": "PASS",
+    "reviewedBy": "science-editor",
+    "reviewedAt": "2026-09-21",
     "notes": "science-editor duyet 2026-09-21 (dot 2). Tui synap, khe synap, chia-khoa-o-khoa deu khop nguyen van hai nguon. SUA HAI CHO. (1) Loi nang: doan ket cu chi ke MOT co che ket thuc tin hieu (thu hoi) roi gan cho no vai tro quyet dinh - 'chinh co che thu hoi ay QUYET DINH tin hieu keo dai bao lau'. OpenStax 35.2 liet ke BA duong: khuech tan ra khoi khe, enzyme phan huy trong khe, va thu hoi. NIDA thi viet thu hoi 'limiting or shutting OFF the signal' chu khong noi no dinh do dai tin hieu. Bai vua bo hai duong kia, vua nang duong con lai thanh yeu to quyet dinh - hinh dang quy tac 11 (dung ranh gioi nguon khong dung) nhung o dang it ai nhan ra: dung chon MOT trong nhieu roi ke nhu no la tat ca. Da tra lai du ba duong. (2) 'acetylcholine THUONG gay khu cuc' - nguon chi noi ve synap than kinh-co cu the (mo kenh Na+), khong noi 'thuong'; ACh qua thu the muscarinic o tim lai gay uc che. Da neo lai vao dung vi du cua nguon va noi ro loai kenh (Na+ / Cl-). Alias 'su-gia-hoa-hoc' GIU nhung ghi de canh chung: cum nay cung dung cho hormone, neu dot sau co muc 'hormone' thi phai xu ly va cham alias.",
     "usedIn": [
       "dopamine-va-chiec-bay-khien-ban-khong-the-roi-dien-thoai",
@@ -1055,6 +1089,8 @@
       }
     ],
     "verdict": "PASS",
+    "reviewedBy": "science-editor",
+    "reviewedAt": "2026-09-21",
     "notes": "science-editor duyet 2026-09-21 (dot 2). N = A - Z DUNG: OpenStax 10.1 viet A = Z + N (phuong trinh 10.1), hai cach viet tuong duong, va bai da noi ro A la tong so nucleon nen khong the hieu nham. Dinh nghia Z, N, A, dong vi, va vi du hydro/deuteri/triti khop nguyen van. BO ALIAS 'nucleon' - linh cam cua anh/chi dung. Nucleon khong phai ten goi khac cua so hieu nguyen tu; no la khai niem CHA cua ca proton lan neutron, tuc cua ca Z lan N. Muc 'nang luong lien ket hat nhan' ngay ben canh dung chu 'nucleon' nhu mot tu thong thuong suot ba doan - neu bai nao dat lien ket thuat ngu cho chu 'nucleon' thi the hover se hien the tieu de 'So hieu nguyen tu', tra loi mot dai luong khac han. Da quet toan bo cay sciencepedia (json/ts/mdx): hien chua bai nao dat lien ket thuat ngu cho chu 'nucleon', nen go alias khong lam hong lien ket nao. PHAN BIET voi truong hop 'do-hut-khoi' o muc ben canh (giu lai): tieu chi la shortDef cua muc dich co dinh nghia duoc chinh cai ten alias do hay khong, vi the hover CHI hien shortDef (src/server/glossary.ts). shortDef muc nay khong dinh nghia nucleon; shortDef muc kia co dinh nghia do hut khoi. Doi category 'Vat ly' -> 'Vat ly hat nhan' cho khop muc 'phan-ung-nhiet-hach' da co. Luu y ton dong ngoai dot: muc 'dong-vi' dang o 'Hoa hoc' trong khi no la anh em ruot cua muc nay - nen gom lai o mot dot ra soat taxonomy rieng, khong sua len lut trong dot nay.",
     "usedIn": [
       "nguyen-tu-cau-tao-nen-van-vat"
@@ -1087,6 +1123,8 @@
       }
     ],
     "verdict": "PASS",
+    "reviewedBy": "science-editor",
+    "reviewedAt": "2026-09-21",
     "notes": "science-editor duyet 2026-09-21 (dot 2). Do hut khoi, E = (delta m)c binh phuong, 'nang luong toa ra khi tao thanh hat nhan' va 've bang nang luong phai cap vao de thao hat nhan' deu khop nguyen van OpenStax 10.2. Menh de 'A > 8' cung khop nguyen van: 'the binding energy for a nucleus with mass number A>8 is roughly proportional to the total number of nucleons in the nucleus, A'. NHUNG CAU TIEP THEO LA LOI, va no la hinh dang thu tu, chua quy tac nao bat: bai SUY RA tu cau co nguon rang 'nang luong lien ket TREN MOI nucleon gan nhu khong doi trong phan lon bang tuan hoan'. Suy dien nghe rat chac (ti le voi A thi chia A ra phai la hang so) nhung CHINH TRANG NGUON AY bac no o cho khac: BEN 'range from 6-10 MeV, with an average value of about 8 MeV', do thi 'rises at low A, peaks very near iron (Fe, A=56), and then tapers off at high A'. Tuc la khong he khong doi - va neu no khong doi that thi da chang co nang luong nhiet hach hay phan hach nao. Bai vua khang dinh hang so vua noi 'chinh cho no doi moi sinh ra nang luong', tu mau thuan trong mot cau. Quy tac 3/11/12 deu noi ve quan he giua CAU trong bai voi CAU trong nguon; khong quy tac nao noi ve SUY DIEN rut ra tu mot cau co nguon nhung bi chinh nguon do phu dinh o doan khac. Da viet lai theo so lieu that: 6-10 MeV, trung binh ~8 MeV, dinh gan Fe-56, nhiet hach duoi sat va phan hach tren sat deu toa nhiet (nguyen van nguon). Cum 'phan lon bang tuan hoan' cung sai ve don vi: bang tuan hoan xep theo Z, con day dang noi theo A. GIU alias 'do-hut-khoi' va 'mass-defect' du chung la khai nghiem lien quan chu khong phai ten goi khac: tieu chi la the hover chi hien shortDef, va shortDef muc nay co dinh nghia do hut khoi ngay trong cau ('vi khoi luong hat nhan nho hon tong khoi luong cac nucleon tao nen no'), nen nguoi re chuot vao lien ket thuat ngu 'do hut khoi' nhan dung cau tra loi. Neu dot sau tach 'do hut khoi' thanh muc rieng thi phai go hai alias nay cung luc. Doi category sang 'Vat ly hat nhan'.",
     "usedIn": [
       "nguyen-tu-cau-tao-nen-van-vat"
@@ -1117,6 +1155,8 @@
       }
     ],
     "verdict": "PASS",
+    "reviewedBy": "science-editor",
+    "reviewedAt": "2026-09-21",
     "notes": "science-editor duyet 2026-09-21 (dot 2). Khang dinh '\"axit hoa\" chi CHIEU thay doi pH chu khong noi nuoc bien da thanh axit' la DUNG ve khoa hoc va dang giu - nhung khi duyet thi no KHONG co nguon: trang NOAA duoc trich khong he noi dieu do, chi noi nuoc bien 'become more acidic'. Cau dung ma khong co nguon van la cau phai xu ly (quy tac 6), va oai oam thay day lai la cau quan trong nhat cua muc. Da chua bang cach them nguon thu hai - National Park Service - co so lieu pH 8,2 xuong 8,1 trong 200 nam; tu do lap luan 'van tren 7' dung tren mot con so co nguon chu khong dung tren khang dinh suong. Viec nay dong thoi go not diem yeu con lai: muc khong con mot nguon, va nguon thu hai khac nha xuat ban - dung tieu chi 'bai noi nguoc hieu biet pho thong thi bat buoc phai co nguon doc lap'. SUA HAI CHO NUA. (1) So 30%: NOAA viet nguyen van 'The ocean absorbs about 30 percent of the CO2 that is released in the atmosphere'. Ban cu viet '30% luong CO2 MA CON NGUOI THAI RA' - them mot dinh ngu lam HEP mau so, ma nguon khong he co. Tra nguoc doi chieu thi NOAA PMEL va NPS deu ghi 'khoang mot phan tu', tuc chinh cac co quan cung khong thong nhat; nay bai ghi dung chu cua NOAA, kem moc tra cuu va kem dai 1/4-1/3 (quy tac 5). (2) Bo bot hai chu: nguon viet carbonat 'relatively less abundant', ban cu bo chu 'relatively' - dung loai rot ngu thai ma quy tac 3 vua duoc viet lai de chan. Va 'Day MOI la phan dang lo' dung len mot ranh gioi nguon khong dung (ham y pH doi thi khong dang lo) - da doi thanh 'phan co he qua sinh hoc truc tiep'. Bo so '30% more acidic' cua NPS: dung nhung de bi doc nham thanh pH giam 30%, khong dang rui ro (quy tac 8).",
     "usedIn": [
       "dai-tuyet-chung-permi-lan-su-song-suyt-bien-mat"
@@ -1149,6 +1189,8 @@
       }
     ],
     "verdict": "PASS",
+    "reviewedBy": "science-editor",
+    "reviewedAt": "2026-09-21",
     "notes": "Duyet accuracy gate dot 3 boi science-editor, 2026-09-21. Reviewer tu tai lai toan bo URL nguon trong cung ngay va doi chieu tung menh de Viet-Anh. CAT 2 menh de khong nguon: (a) '...va cho phep sao chep' - ca hai trang nguon deu KHONG noi bat cap base la co so cua sao chep, day la he qua tu rut ra (quy tac 14); (b) '...nen cho moi thu con lai trong di truyen hoc phan tu' - danh gia chu khong phai khang dinh co nguon (quy tac 1). THAY bang kich thuoc chuoi xoan, nguyen van OpenStax 14.2. DA XAC NHAN nguyen van OpenStax 14.2: hai lien ket hydro A-T va ba C-G; nguoc chieu 3'-5'; xoan phai do Watson-Crick de xuat. DA XAC NHAN nguyen van NHGRI: bon base A/C/G/T, quy luat bat cap, 'attached to each sugar'.",
     "usedIn": [
       "crispr-cay-keo-phan-tu-den-tu-vi-khuan"
@@ -1179,6 +1221,8 @@
       }
     ],
     "verdict": "PASS",
+    "reviewedBy": "science-editor",
+    "reviewedAt": "2026-09-21",
     "notes": "Duyet accuracy gate dot 3 boi science-editor, 2026-09-21. Reviewer tu tai lai toan bo URL nguon trong cung ngay va doi chieu tung menh de Viet-Anh. CAT cau 'Con so ay nho hon nhieu so voi hinh dung thong thuong ve do phuc tap cua co the nguoi': khang dinh ve truc giac cua nguoi doc ma khong nguon nao noi, va no cham vao mot tranh luan co that (g-value paradox) ma nguon khong mo (quy tac 1). SUA 'lam phan lon cong viec trong CO THE' thanh 'trong TE BAO' - NHGRI Protein viet 'critical to most of the work done by CELLS', con 'within the body' la cum cua trang Gene noi ve chuc nang khac nhau; ban cu han hai cum tu hai trang thanh mot khang dinh khong trang nao phat bieu. DA XAC NHAN nguyen van NHGRI: 'approximately 20,000 protein-coding genes' - hedge 'khoang' giu dung.",
     "usedIn": [
       "cai-chet-duoi-goc-nhin-tien-hoa-vi-sao-tu-nhien-khong-thiet-ke-chung-ta-de-song-mai",
@@ -1211,6 +1255,8 @@
       }
     ],
     "verdict": "PASS",
+    "reviewedBy": "science-editor",
+    "reviewedAt": "2026-09-21",
     "notes": "Duyet accuracy gate dot 3 boi science-editor, 2026-09-21. Reviewer tu tai lai toan bo URL nguon trong cung ngay va doi chieu tung menh de Viet-Anh. THEM '(moi chuoi goi la mot polypeptide)' vao shortDef - nguyen van NHGRI '(each called a polypeptide)' - de alias 'polypeptide' co cho tra loi; truoc do shortDef khong he chua tu ay nen alias truot phep thu dot 2. SUA 'lam nen mo co' thanh 'cac protein co rut nhu actin va myosin gay co co': OpenStax Bang 3.1 xep actin/myosin la protein CO RUT gay co co, khong o dau noi protein 'lam nen mo co'. SUA 'moi mo va co quan' thanh 'cac mo va co quan trong co the': NHGRI viet \"the body's tissues and organs\", khong viet 'every'. DA XAC NHAN nguyen van OpenStax 3.4 cho ca bon bac cau truc; them xoan alpha / phien gap beta vi nguon neu ro.",
     "usedIn": [
       "giac-ngu-sau-lam-gi-voi-tri-nho-cua-ban",
@@ -1242,6 +1288,8 @@
       }
     ],
     "verdict": "PASS",
+    "reviewedBy": "science-editor",
+    "reviewedAt": "2026-09-21",
     "notes": "Duyet accuracy gate dot 3 boi science-editor, 2026-09-21. Reviewer tu tai lai toan bo URL nguon trong cung ngay va doi chieu tung menh de Viet-Anh. SUA loi pham vi: ban cu viet mach ben 'quyet dinh chuoi protein se gap the nao' - qua rong. OpenStax noi 'PRIMARILY, the interactions among R groups create the protein's complex three-dimensional TERTIARY structure'; cau truc bac hai (xoan alpha, phien gap beta) khong do nhom R quyet dinh, va chinh trang do dinh nghia bac hai rieng - tuc la ban cu mau thuan voi trang minh trich (quy tac 14). Nay thu hep ve bac ba va giu hedge 'chu yeu'. SUA 'mang dien hay trung hoa' thanh 'co tinh axit, bazo, phan cuc hay khong phan cuc' - dung bon pham tru cua nguon. THEM ten goi 'nhom R' vi nguon dat ten."
   },
   {
@@ -1270,6 +1318,8 @@
       }
     ],
     "verdict": "PASS",
+    "reviewedBy": "science-editor",
+    "reviewedAt": "2026-09-21",
     "notes": "Duyet accuracy gate dot 3 boi science-editor, 2026-09-21. Reviewer tu tai lai toan bo URL nguon trong cung ngay va doi chieu tung menh de Viet-Anh. LOI QUY TAC 13 da sua. Hai nguon noi khac nhau ve tinh chuyen biet: NHGRI viet gon 'each specific to a particular chemical reaction'; OpenStax viet 'There is a specifically matched enzyme for each substrate and, thus, for each chemical reaction; HOWEVER, THERE IS FLEXIBILITY AS WELL.' Ban cu lay ve loose cua NHGRI va bo han menh de nhuong bo cua OpenStax - dung hinh dang quy tac 13 cong quy tac 3. Nay giu ca hai. DA XAC NHAN nguyen van NHGRI: 'almost always a protein' (hedge giu dung), 'not destroyed during the reaction and is used over and over', 'A cell contains thousands of different types of enzyme molecules'. Con so 'hang nghin' CO nguon, khong phai so tran.",
     "usedIn": [
       "he-vi-sinh-duong-ruot-hang-chuc-nghin-ti-cu-dan-va-anh-huong-cua-chung",
@@ -1301,6 +1351,8 @@
       }
     ],
     "verdict": "PASS",
+    "reviewedBy": "science-editor",
+    "reviewedAt": "2026-09-21",
     "notes": "Duyet accuracy gate dot 3 boi science-editor, 2026-09-21. Reviewer tu tai lai toan bo URL nguon trong cung ngay va doi chieu tung menh de Viet-Anh. LOI NANG NHAT CUA DOT NAY, da sua. Ban cu ket bang 'Dung danh dong dot bien voi benh. Phan lon khong co hau qua dang ke, mot phan vi cac co che sua loi, mot phan vi chung xay ra o TE BAO SINH DUONG nen khong truyen di xa.' Do la quy tac 15: chinh trang NHGRI duoc trich co CA HAI ve - 'Germline mutations (that occur in eggs and sperm) CAN BE PASSED ON to offspring' va 'When mutations occur in germline cells... they will be present in every cell... AND CAN HAVE LARGER EFFECTS'. Ban cu giu ve sinh duong va bo ve dong mam, roi trinh bay nhu toan bo. Cong them quy tac 14: OpenStax 14.6, nguon thu hai cua chinh muc tu nay, viet 'Mutations in repair genes have been known to cause cancer' va neu ung thu tuy/dai trang/dai truc trang - tuc la muc tu dan doc gia di nguoc trang no trich. Cau menh lenh 'Dung danh dong dot bien voi benh' cung bi cat: khong nguon nao ra chi thi do cho nguoi doc. Nay giu nguyen cau tran an cua NHGRI o doan 2 dung cho NHGRI dat no, va tra lai doi trong o doan 3. Ba co che sua loi: DA XAC NHAN OpenStax 14.6 co DUNG ba, dung ten - khong phai loi quy tac 15.",
     "usedIn": [
       "cai-chet-duoi-goc-nhin-tien-hoa-vi-sao-tu-nhien-khong-thiet-ke-chung-ta-de-song-mai",
@@ -1333,6 +1385,8 @@
       }
     ],
     "verdict": "PASS",
+    "reviewedBy": "science-editor",
+    "reviewedAt": "2026-09-21",
     "notes": "Duyet accuracy gate dot 3 boi science-editor, 2026-09-21. Reviewer tu tai lai toan bo URL nguon trong cung ngay va doi chieu tung menh de Viet-Anh. BO alias 'te-bao-lympho-b'. Phep thu alias cua dot 2: shortDef cua muc dich phai tra loi duoc chinh cai ten alias do. shortDef o day chi noi te bao lympho B LA BEN SAN XUAT khang the, khong dinh nghia te bao lympho B la gi; va ghep hai ten vao mot tooltip de khien nguoi doc tuong khang the va te bao B la mot. Te bao lympho B xung dang mot muc tu rieng. SUA doan 3: ban cu suy them 'nen viec gan khang the con la TIN HIEU GOI them cac nhanh khac cua he mien dich' - OpenStax 42.1 chi noi bo the 'are particularly attracted to' mam benh da bi khang the gan; bien mot lien he thanh mot co che tin hieu la quy tac 12. Nay dung o muc nguon dung. XAC NHAN hai cho reviewer da nghi ngo nhung DUNG: 'te bao lympho B truong thanh trong tuy xuong' co nguyen van tai OpenStax 42.1 ('B cells are lymphocytes that mature in the bone marrow'), va 'du de dap ung voi moi khang nguyen' co nguyen van tai NHGRI ('respond to all of the antigens that will assault the body'). Ca hai giu lai. Them cau dinh nghia khang nguyen vi nguon NHGRI co va no lam day doan 2.",
     "usedIn": [
       "he-mien-dich-nhan-dien-mot-virus-bang-cach-nao"
@@ -1368,6 +1422,8 @@
       }
     ],
     "verdict": "PASS",
+    "reviewedBy": "science-editor",
+    "reviewedAt": "2026-09-21",
     "notes": "Duyet accuracy gate dot 3 boi science-editor, 2026-09-21. Reviewer tu tai lai toan bo URL nguon trong cung ngay va doi chieu tung menh de Viet-Anh. CAU HOI CUA REVIEWER VE CAS9: lap luan CUA BAN DUNG. Trang NHGRI genetics-glossary/CRISPR dinh nghia CRISPR ma thuc su KHONG he nhac Cas9, RNA dan duong hay co che cat - reviewer da tai lai va xac nhan tung chu. Viet co che tu tri nho trong pham vi goi nguon do la vi pham quy tac 1, va ban da dung khi khong viet. NHUNG day la mot LO HONG NGUON chu khong phai mot su that phai giau: NHGRI co hai trang khac noi thang dieu do, va reviewer da them chung vao nguon - 'How Does Genome Editing Work?' cho RNA dan duong + Cas9 cat bo gen, va 'What is genome editing?' cho so sanh don gian/nhanh/re/chinh xac hon va nam 2009. Nen ket luan: cho trong la DUNG LUAT voi goi nguon cu, va nay da lap duoc bang nguon chu khong bang tri nho. (Hai URL genome editing cua NHGRI ma ban bao 404 la duong dan khac; hai duong dan tren tai duoc ngay 21/09.)\nCAT doan 2 cu: 'No thuoc nhom cong cu cua ky thuat di truyen - thay doi kieu gen bang cong nghe DNA TAI TO HOP'. OpenStax 17.1 - nguon duoc trich cho cau do - KHONG HE nhac toi CRISPR o bat ky dau, reviewer da doi chieu ca trang. Ban da tu han dinh nghia cua nguon A len doi tuong cua nguon B (quy tac 14), va ket qua sai ve chat: chinh sua bo gen bang CRISPR khong phai cong nghe DNA tai to hop theo nghia plasmid ma OpenStax dinh nghia. BO luon OpenStax 17.1 khoi danh sach nguon vi sau khi cat no khong con chong do menh de nao - citation khong chong do gi la trang tri. Quan he CRISPR <-> ky thuat di truyen nen do knowledge-graph-manager mo hinh hoa bang canh co kieu, dung de van xuoi khang dinh. Alias 'crispr-cas9' nay da hop le vi shortDef/fullDef co nhac Cas9.\nSUA THEM shortDef cho khop: ban cu dung cum loose cua trang glossary ('phong theo nhung he CHINH SUA BO GEN von co san trong vi khuan') trong khi trang 'How Does Genome Editing Work?' cua chinh NHGRI noi chinh xac hon - trong tu nhien do la mot HE MIEN DICH diet virus xam nhap. Quy tac 13, nguon chat hon thang. Va vi phep thu alias xet shortDef (do moi la chu hien trong tooltip), Cas9 phai nam o shortDef chu khong chi o fullDef thi alias 'crispr-cas9' moi thuc su hop le."
   },
   {
@@ -1397,6 +1453,8 @@
       }
     ],
     "verdict": "PASS",
+    "reviewedBy": "science-editor",
+    "reviewedAt": "2026-09-21",
     "notes": "Duyet accuracy gate dot 3 boi science-editor, 2026-09-21. Reviewer tu tai lai toan bo URL nguon trong cung ngay va doi chieu tung menh de Viet-Anh. CAT doan 3 cu: 'CRISPR la mot cong cu trong nhom nay, nhung khong phai cong cu duy nhat, va ky thuat di truyen DA TON TAI TRUOC KHI CRISPR duoc phong theo tu vi khuan.' OpenStax 17.1 khong nhac CRISPR o bat ky dau, va khong nguon nao trong goi dat nien dai cho ky thuat di truyen - khang dinh thu tu thoi gian nay khong co nguon nao ca (quy tac 1 + 14).\nLOI PHAM VI NGUON, nghiem trong hon: shortDef cu lay dinh nghia HEP cua OpenStax ('thay doi kieu gen bang cong nghe DNA TAI TO HOP') lam dinh nghia chinh. NHGRI - co quan co tham quyen, bac cao hon giao trinh dai hoc trong thang nguon - dinh nghia RONG hon: 'a process that uses laboratory-based technologies to alter the DNA makeup of an organism', khong han che o DNA tai to hop. Chinh dinh nghia hep ay la thu da lan sang muc 'crispr' va de ra khang dinh sai o do. Nay dan bang dinh nghia NHGRI, va dat ky thuat DNA tai to hop dung vi tri 'ky thuat kinh dien' ma OpenStax mo ta. THEM dinh nghia DNA tai to hop vao shortDef de hai alias 'dna-tai-to-hop' / 'recombinant-dna' co cho tra loi - truoc do shortDef dung cum 'cong nghe DNA tai to hop' ma khong giai thich, tuc la tooltip tra loi vong quanh. THEM nguon NHGRI Genetic Engineering; BO nguon NHGRI CRISPR vi sau khi cat doan 3 no khong con chong do menh de nao. 'Tao ra nhan tao va khong ton tai trong tu nhien': DA XAC NHAN nguyen van OpenStax 17.1, giu."
   },
   {
@@ -1426,6 +1484,8 @@
       }
     ],
     "verdict": "PASS",
+    "reviewedBy": "science-editor",
+    "reviewedAt": "2026-09-21",
     "notes": "Duyet accuracy gate dot 3 boi science-editor, 2026-09-21. Reviewer tu tai lai toan bo URL nguon trong cung ngay va doi chieu tung menh de Viet-Anh. BA SUA. (1) Quy tac 3, rot hedge, va lech Viet-Anh: ban tieng Anh giu 'placebos MAY be helpful', ban tieng Viet viet 'gia duoc VAN CO ICH ngay ca khi...' - mat chu 'may' cua NCCIH. Da tra lai 'CO THE'. Day la menh de duy nhat trong ca dot ma hai ban ngon ngu noi khac nhau ve muc do chac chan.\n(2) Quy tac 12: cat 'Do la ly do hieu ung nay xuat hien trong nhieu loai can thiep khac nhau.' NCCIH khong noi cau do, va no bien mot dinh nghia thanh mot khang dinh nhan qua cong mot khang dinh thuc nghiem ve pham vi.\n(3) Doan 3 cu la CHO REVIEWER DOC, khong phai cho nguoi doc: 'Trang khong khang dinh co che nao khac...', 'cung khong goi y gia duoc thay the duoc dieu tri dua tren bang chung'. Ba cau do deu DUNG ve mat mo ta trang nguon - reviewer da kiem, NCCIH that su im lang ca hai chuyen. Nhung lap luan tu su im lang cua nguon la mot dang vuot pham vi: nguoi doc nhan ve 'gia duoc khong thay the duoc dieu tri' nhu mot ket luan CO NGUON, trong khi nguon khong he ket luan gi. Da thay bang noi dung huong toi nguoi doc va co nguon: thu nghiem lam sang ngau nhien co doi chung gia duoc, nguyen van tren chinh trang NCCIH ay. Do la thu nguoi doc can nhat va no von nam san trong nguon.\n(4) MOT NGUON: da giai quyet. Them NCATS (mot trung tam cua NIH) cho dinh nghia GIA DUOC - danh tu. Ban cu co mot lech it ai de y: term la 'Gia duoc' (placebo) nhung shortDef chi dinh nghia HIEU UNG gia duoc, nen alias 'placebo' truot phep thu dot 2. Them dinh nghia NCATS vua vap dinh gate hai nguon, vua khop term voi dinh nghia, vua cuu alias 'placebo'. Mot sua, bon van de.\n(5) CATEGORY doi 'Suc khoe' -> 'Y hoc': xem ghi chu chung cua dot.",
     "usedIn": [
       "huyet-dao-va-cham-cuu-khi-cua-dong-y-co-lien-he-gi-voi-khoa-hoc-hien-dai"

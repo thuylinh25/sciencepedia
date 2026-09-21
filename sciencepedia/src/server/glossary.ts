@@ -90,7 +90,31 @@ const RELATED_LIMIT = 5;
  */
 export const getGlossaryDetail = cache(
   async (slug: string, locale: Locale): Promise<GlossaryDetail | null> => {
-    const row = await prisma.glossaryTerm.findUnique({ where: { slug } });
+    /* `select` tường minh, không lấy cả hàng.
+    
+       Không phải để tiết kiệm băng thông — mà để trang công khai này không
+       phụ thuộc vào những cột nó không dùng. Lần thêm `reviewedById` và
+       `reviewedAt` (21/09) cho thấy vì sao: một `findUnique` không `select`
+       đòi MỌI cột, nên giữa lúc code mới lên mà migration chưa chạy, mọi
+       trang `/glossary/<slug>` sẽ trả P2022 — một cột không ai đọc làm chết
+       một trang ai cũng đọc. */
+    const row = await prisma.glossaryTerm.findUnique({
+      where: { slug },
+      select: {
+        slug: true,
+        term: true,
+        termEn: true,
+        shortDef: true,
+        shortDefEn: true,
+        fullDef: true,
+        fullDefEn: true,
+        category: true,
+        image: true,
+        imageCredit: true,
+        entityId: true,
+        updatedAt: true,
+      },
+    });
     if (!row) return null;
 
     const needles = [row.term, row.termEn].filter(

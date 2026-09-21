@@ -43,6 +43,11 @@ export type GlossaryRow = {
   category: string | null;
   image: string | null;
   imageCredit: string | null;
+  /**
+   * Mục từ đang mang dấu duyệt. Chỉ cần biết CÓ hay KHÔNG: form dùng nó để
+   * báo trước rằng sửa nội dung sẽ gỡ dấu, chứ không hiện tên người duyệt.
+   */
+  reviewed: boolean;
   /** Số bài đã xuất bản đang dùng `[[khoá]]` này. */
   usage: number;
 };
@@ -125,7 +130,13 @@ export function GlossaryManager({ terms }: { terms: GlossaryRow[] }) {
         : await createGlossaryTerm(values);
 
       if (result.ok) {
-        toast.success(t("saved"));
+        // Lượt sửa vừa gỡ byline "đã duyệt" khỏi mục từ. Không nói ra thì biên
+        // tập viên chỉ phát hiện khi tình cờ mở trang công khai.
+        if (result.data.stampCleared) {
+          toast.warning(t("reviewStampCleared"), { duration: 8000 });
+        } else {
+          toast.success(t("saved"));
+        }
         setOpen(false);
         router.refresh();
         return;
@@ -294,6 +305,14 @@ export function GlossaryManager({ terms }: { terms: GlossaryRow[] }) {
           <DialogHeader className="text-left">
             <DialogTitle>{editing ? editing.term : t("newGlossaryTerm")}</DialogTitle>
           </DialogHeader>
+
+          {/* Báo TRƯỚC khi gõ, không chỉ sau khi lưu: biết mình sắp mất dấu
+              duyệt có thể đổi quyết định sửa hay không. */}
+          {editing?.reviewed && (
+            <p className="rounded-md border border-amber-500/40 bg-amber-500/10 px-3 py-2 text-sm text-amber-900 dark:text-amber-200">
+              {t("reviewStampWarning")}
+            </p>
+          )}
 
           <form
             id="glossary-form"

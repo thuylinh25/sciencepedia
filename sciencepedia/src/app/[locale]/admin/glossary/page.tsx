@@ -63,6 +63,7 @@ export default async function AdminGlossaryPage({
           category: term.category,
           image: term.image,
           imageCredit: term.imageCredit,
+          reviewed: Boolean(term.reviewedById),
           // Bài dùng mục từ qua slug HOẶC qua bất kỳ alias nào của nó
           usage: [term.slug, ...term.aliases].reduce(
             (total, key) => total + (usage.get(key) ?? 0),

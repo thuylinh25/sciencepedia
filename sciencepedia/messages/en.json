@@ -339,6 +339,8 @@
     "confirmDelete": "Delete “{name}”? This cannot be undone.",
     "deleted": "Deleted",
     "saved": "Changes saved",
+    "reviewStampCleared": "Saved. Because the wording changed, this term's review stamp was removed — the “reviewed” byline stays off until it is reviewed again.",
+    "reviewStampWarning": "This term carries a review stamp. Editing the term name or either definition removes it — editing aliases, category or image does not.",
     "totalArticles": "Total articles",
     "published": "Published",
     "drafts": "Drafts",

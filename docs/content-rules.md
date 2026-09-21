@@ -267,6 +267,31 @@ người được soi kỹ hơn — một hàm ý mà ta không có gì bảo đ
 **Điều kiện đổi sang tên người**: khi có biên tập viên thật ký từng bài. Lúc đó, và
 chỉ lúc đó.
 
+### Mục từ điển thuật ngữ áp cùng một luật
+
+Mở rộng 2026-09-21, khi `GlossaryTerm` có `reviewedById`/`reviewedAt`.
+
+Trước đó dấu duyệt của mục từ chỉ nằm trong `notes` của
+`prisma/seed-data/glossary.json` — chữ tự do, không truy vấn được, và seeder
+còn không ghi `notes` xuống CSDL. Tức là định nghĩa hiện trong tooltip của mọi
+bài mà **không có dấu vết duyệt nào trên CSDL**.
+
+Mục từ dùng **đúng tài khoản tổ chức** mà bài viết đang dùng, vì cùng một lý do:
+người duyệt là vai agent `science-editor`, không phải một con người. **Không tạo
+hàng `User` tên "science-editor"** — đó là dựng một người không tồn tại, đúng cái
+mà mục trên cấm. File JSON mang tên vai, seeder dịch vai sang tài khoản lúc ghi.
+
+**Mục nào không có bằng chứng duyệt thì để TRỐNG.** Mười hai mục đầu không nhắc
+người duyệt lẫn ngày duyệt trong bất kỳ nguồn nào; suy ngày từ `createdAt` hay
+gán `science-editor` vì "chắc là vậy" là bịa byline. Ô trống nói đúng sự thật.
+
+**Sửa nội dung thì dấu duyệt bị gỡ.** `/admin/glossary` đặt `reviewedById` và
+`reviewedAt` về `null` khi tên thuật ngữ hoặc phần định nghĩa đổi — không phải
+khi chỉ đổi alias, danh mục hay ảnh, vì những thứ ấy không đổi điều mục từ
+khẳng định. Một con dấu kêu ở cả lượt sửa vô hại là con dấu không ai còn nghe.
+Lý do gỡ: con dấu còn nguyên trên đoạn văn người duyệt chưa đọc là một claim
+bịa mang dấu kiểm định — cùng họ với lỗi ở mục ngay dưới đây.
+
 ## Trích dẫn resolve đúng bài KHÔNG có nghĩa là bài đó nói điều đang viết
 
 Chốt 2026-09-05. Lỗi đã lọt tới `PUBLISHED` một lần.

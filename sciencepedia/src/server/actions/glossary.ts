@@ -16,10 +16,13 @@ import type { ActionResult } from "@/server/actions/types";
  * biến mất thì mọi `[[...]]` trỏ vào nó lặng lẽ tụt về chữ thường — không có
  * lỗi nào hiện ra, chỉ là tính năng biến mất khỏi những bài đó.
  *
- * `prisma/seed-data/glossary.json` vẫn là bản có NGUỒN của 12 mục đầu và
+ * `prisma/seed-data/glossary.json` vẫn là bản có NGUỒN của mọi mục và
  * `glossary:seed` vẫn upsert theo slug. Hai đường không đá nhau: seed ghi đè
  * theo file, trang quản trị ghi đè theo form. Sửa mục nào ở đây thì sửa cả
  * trong file, nếu không lượt seed sau sẽ kéo bản cũ về.
+ *
+ * Một chiều KHÔNG đối xứng: `reviewedById`/`reviewedAt` chỉ đến từ file. Form
+ * này không đặt được chúng, chỉ GỠ được — xem `CLAIM_FIELDS` bên dưới.
  */
 
 function toFailure(error: unknown): ActionResult<never> {
@@ -36,6 +39,33 @@ function toFailure(error: unknown): ActionResult<never> {
   }
   console.error("[glossary]", error);
   return { ok: false, error: "SERVER_ERROR" };
+}
+
+/**
+ * Những trường mà sửa chúng là sửa điều mục từ KHẲNG ĐỊNH — và vì thế làm dấu
+ * duyệt hết hiệu lực.
+ *
+ * Cố ý KHÔNG có `aliases`, `category`, `image`, `imageCredit`: thêm một alias
+ * hay đổi tấm ảnh không đụng tới một mệnh đề nào, nên gỡ dấu duyệt vì chúng
+ * chỉ làm con dấu mất giá trị theo một kiểu khác — nó kêu ở cả những lượt sửa
+ * vô hại, rồi không ai nghe nữa và một lượt sửa thật sẽ trôi qua.
+ *
+ * CÓ `term`/`termEn` vì đổi tên mục từ là đổi chủ ngữ của định nghĩa: "X là Y"
+ * thành "Z là Y" là một khẳng định khác, dù phần sau không đổi chữ nào.
+ */
+const CLAIM_FIELDS = [
+  "term",
+  "termEn",
+  "shortDef",
+  "shortDefEn",
+  "fullDef",
+  "fullDefEn",
+] as const;
+
+type Claim = { [K in (typeof CLAIM_FIELDS)[number]]: string | null };
+
+function claimsDiffer(before: Claim, after: Claim): boolean {
+  return CLAIM_FIELDS.some((field) => before[field] !== after[field]);
 }
 
 /** "Mô-men động lượng, spin" → ["mo-men-dong-luong", "spin"], bỏ trùng và rỗng. */
@@ -134,9 +164,16 @@ function revalidateTerm(slug: string) {
   revalidatePath("/[locale]/admin/glossary", "page");
 }
 
+/**
+ * `stampCleared` báo cho giao diện biết lượt lưu này vừa gỡ dấu duyệt, để nó
+ * nói ra. Một tác dụng phụ im lặng lên byline là thứ biên tập viên phải được
+ * biết ngay lúc lưu, không phải phát hiện sau đó trên trang công khai.
+ */
+type SaveResult = { id: string; stampCleared: boolean };
+
 export async function createGlossaryTerm(
   raw: GlossaryTermInput,
-): Promise<ActionResult<{ id: string }>> {
+): Promise<ActionResult<SaveResult>> {
   try {
     await requireRole("EDITOR");
 
@@ -154,7 +191,7 @@ export async function createGlossaryTerm(
     });
 
     revalidateTerm(parsed.slug);
-    return { ok: true, data: term };
+    return { ok: true, data: { ...term, stampCleared: false } };
   } catch (error) {
     return toFailure(error);
   }
@@ -163,7 +200,7 @@ export async function createGlossaryTerm(
 export async function updateGlossaryTerm(
   id: string,
   raw: GlossaryTermInput,
-): Promise<ActionResult<{ id: string }>> {
+): Promise<ActionResult<SaveResult>> {
   try {
     await requireRole("EDITOR");
 
@@ -177,12 +214,53 @@ export async function updateGlossaryTerm(
 
     const previous = await prisma.glossaryTerm.findUnique({
       where: { id },
-      select: { slug: true },
+      select: {
+        slug: true,
+        reviewedById: true,
+        term: true,
+        termEn: true,
+        shortDef: true,
+        shortDefEn: true,
+        fullDef: true,
+        fullDefEn: true,
+      },
     });
+
+    /**
+     * Sửa nội dung thì GỠ dấu duyệt.
+     *
+     * Hai cột `reviewedById`/`reviewedAt` hiện thành byline "đã được biên tập
+     * viên duyệt". Form này không ghi được chúng, nên nếu không gỡ ở đây thì
+     * sửa một định nghĩa đã đóng dấu sẽ để lại con dấu nguyên vẹn trên một
+     * đoạn văn người duyệt chưa từng đọc — đúng loại lỗi mà gate accuracy tồn
+     * tại để chặn, và là loại khó thấy nhất vì trang vẫn hiện bình thường.
+     *
+     * Gỡ chứ không chặn sửa: biên tập viên vẫn phải sửa được lỗi ngay. Cái mất
+     * đi chỉ là lời bảo chứng, và nó được lấy lại qua lượt duyệt sau
+     * (`glossary:seed` đóng lại dấu khi file mang `reviewedBy`/`reviewedAt`).
+     */
+    const stampCleared =
+      previous !== null &&
+      previous.reviewedById !== null &&
+      claimsDiffer(previous, {
+        term: parsed.data.term,
+        termEn: parsed.data.termEn ?? null,
+        shortDef: parsed.data.shortDef,
+        shortDefEn: parsed.data.shortDefEn ?? null,
+        fullDef: parsed.data.fullDef ?? null,
+        fullDefEn: parsed.data.fullDefEn ?? null,
+      });
 
     const term = await prisma.glossaryTerm.update({
       where: { id },
-      data: { slug: parsed.slug, ...parsed.data },
+      data: {
+        slug: parsed.slug,
+        ...parsed.data,
+        // `disconnect` chứ không phải `reviewedById: null`: `parsed.data` dùng
+        // API "checked" của Prisma (quan hệ, không phải khoá trần), trộn hai
+        // kiểu vào một `data` thì Prisma không phân giải được overload.
+        ...(stampCleared ? { reviewedBy: { disconnect: true }, reviewedAt: null } : {}),
+      },
       select: { id: true },
     });
 
@@ -191,7 +269,7 @@ export async function updateGlossaryTerm(
     // đã cache của một mục từ nay mang địa chỉ khác.
     if (previous && previous.slug !== parsed.slug) revalidateTerm(previous.slug);
 
-    return { ok: true, data: term };
+    return { ok: true, data: { ...term, stampCleared } };
   } catch (error) {
     return toFailure(error);
   }
