@@ -540,6 +540,93 @@ const LINKS: Link[] = [
       "The **[[so-hieu-nguyen-tu|atomic number Z]]**",
     ],
   },
+  /* ---- Đợt 21/09 (4): gắn 10 mục từ của đợt soạn thứ ba -----------------
+   *
+   * Ba mục KHÔNG có chỗ gắn, và đó là kết quả đúng chứ không phải thiếu sót:
+   *
+   * - `crispr` và `ky-thuat-di-truyen`: cả hai chỉ xuất hiện trong chính bài
+   *   `crispr-cay-keo-phan-tu-den-tu-vi-khuan`. Quy ước là không gắn thuật
+   *   ngữ vào bài chuyên về nó.
+   * - `axit-amin`: chưa bài nào trong kho nhắc tới. Mục từ vẫn đáng có, vì
+   *   nó là thứ `protein` trỏ sang; nó sẽ có chỗ khi kho có bài sinh hoá.
+   *
+   * `he-mien-dich-nhan-dien-mot-virus-bang-cach-nao` nhận BA thuật ngữ khác
+   * nhau trong một bài — đúng quy ước: giới hạn là một dấu cho mỗi THUẬT NGỮ
+   * trong mỗi bài, không phải một dấu cho mỗi bài.
+   */
+
+  {
+    slug: "crispr-cay-keo-phan-tu-den-tu-vi-khuan",
+    vi: ["một đoạn DNA của kẻ tấn công", "một đoạn [[DNA]] của kẻ tấn công"],
+    en: ["a segment of the attacker's DNA", "a segment of the attacker's [[DNA]]"],
+  },
+  {
+    slug: "crispr-cay-keo-phan-tu-den-tu-vi-khuan",
+    vi: ["thường tạo ra đột biến làm hỏng gene", "thường tạo ra [[đột biến]] làm hỏng gene"],
+    en: [
+      "often creating mutations that disrupt the gene",
+      "often creating [[dot-bien|mutations]] that disrupt the gene",
+    ],
+  },
+  {
+    slug: "giac-ngu-sau-lam-gi-voi-tri-nho-cua-ban",
+    vi: ["beta-amyloid — protein tích tụ", "beta-amyloid — [[protein]] tích tụ"],
+    en: [
+      "beta-amyloid—a protein that accumulates",
+      "beta-amyloid—a [[protein]] that accumulates",
+    ],
+  },
+  {
+    slug: "he-mien-dich-nhan-dien-mot-virus-bang-cach-nao",
+    vi: ["(protein bề mặt, virus bất hoạt", "([[protein]] bề mặt, virus bất hoạt"],
+    en: [
+      "(surface proteins, inactivated viruses",
+      "(surface [[protein|proteins]], inactivated viruses",
+    ],
+  },
+  {
+    slug: "he-mien-dich-nhan-dien-mot-virus-bang-cach-nao",
+    vi: ["tái tổ hợp ngẫu nhiên các đoạn gen", "tái tổ hợp ngẫu nhiên các đoạn [[gen]]"],
+  },
+  {
+    slug: "he-mien-dich-nhan-dien-mot-virus-bang-cach-nao",
+    vi: ["sản xuất kháng thể gắn vào", "sản xuất [[kháng thể]] gắn vào"],
+    en: ["produce antibodies that bind", "produce [[khang-the|antibodies]] that bind"],
+  },
+  {
+    slug: "cai-chet-duoi-goc-nhin-tien-hoa-vi-sao-tu-nhien-khong-thiet-ke-chung-ta-de-song-mai",
+    vi: [
+      "Một gen thành công không phải là gen",
+      "Một [[gen]] thành công không phải là gen",
+    ],
+  },
+  {
+    slug: "cai-chet-duoi-goc-nhin-tien-hoa-vi-sao-tu-nhien-khong-thiet-ke-chung-ta-de-song-mai",
+    vi: [
+      "các đột biến gây hại xuất hiện ở tuổi già",
+      "các [[đột biến]] gây hại xuất hiện ở tuổi già",
+    ],
+  },
+  {
+    slug: "he-vi-sinh-duong-ruot-hang-chuc-nghin-ti-cu-dan-va-anh-huong-cua-chung",
+    vi: ["Con người không có enzyme để phân giải", "Con người không có [[enzyme]] để phân giải"],
+    en: [
+      "Humans lack the enzymes to break down",
+      "Humans lack the [[enzyme|enzymes]] to break down",
+    ],
+  },
+  {
+    slug: "ruot-he-vi-sinh-vat-va-quyen-luc-cua-bo-nao-thu-hai",
+    vi: ["Tiết enzyme tiêu hóa.", "Tiết [[enzyme]] tiêu hóa."],
+    en: ["Secretion of digestive enzymes.", "Secretion of digestive [[enzyme|enzymes]]."],
+  },
+  {
+    slug: "huyet-dao-va-cham-cuu-khi-cua-dong-y-co-lien-he-gi-voi-khoa-hoc-hien-dai",
+    vi: [
+      "Hiệu ứng giả dược có thể đóng một phần vai trò",
+      "[[Hiệu ứng giả dược]] có thể đóng một phần vai trò",
+    ],
+  },
 ];
 
 /** Khoá của mọi `[[...]]` trong một chuỗi thay thế. */

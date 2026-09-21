@@ -1149,7 +1149,10 @@
       }
     ],
     "verdict": "PASS",
-    "notes": "Duyet accuracy gate dot 3 boi science-editor, 2026-09-21. Reviewer tu tai lai toan bo URL nguon trong cung ngay va doi chieu tung menh de Viet-Anh. CAT 2 menh de khong nguon: (a) '...va cho phep sao chep' - ca hai trang nguon deu KHONG noi bat cap base la co so cua sao chep, day la he qua tu rut ra (quy tac 14); (b) '...nen cho moi thu con lai trong di truyen hoc phan tu' - danh gia chu khong phai khang dinh co nguon (quy tac 1). THAY bang kich thuoc chuoi xoan, nguyen van OpenStax 14.2. DA XAC NHAN nguyen van OpenStax 14.2: hai lien ket hydro A-T va ba C-G; nguoc chieu 3'-5'; xoan phai do Watson-Crick de xuat. DA XAC NHAN nguyen van NHGRI: bon base A/C/G/T, quy luat bat cap, 'attached to each sugar'."
+    "notes": "Duyet accuracy gate dot 3 boi science-editor, 2026-09-21. Reviewer tu tai lai toan bo URL nguon trong cung ngay va doi chieu tung menh de Viet-Anh. CAT 2 menh de khong nguon: (a) '...va cho phep sao chep' - ca hai trang nguon deu KHONG noi bat cap base la co so cua sao chep, day la he qua tu rut ra (quy tac 14); (b) '...nen cho moi thu con lai trong di truyen hoc phan tu' - danh gia chu khong phai khang dinh co nguon (quy tac 1). THAY bang kich thuoc chuoi xoan, nguyen van OpenStax 14.2. DA XAC NHAN nguyen van OpenStax 14.2: hai lien ket hydro A-T va ba C-G; nguoc chieu 3'-5'; xoan phai do Watson-Crick de xuat. DA XAC NHAN nguyen van NHGRI: bon base A/C/G/T, quy luat bat cap, 'attached to each sugar'.",
+    "usedIn": [
+      "crispr-cay-keo-phan-tu-den-tu-vi-khuan"
+    ]
   },
   {
     "slug": "gen",
@@ -1176,7 +1179,11 @@
       }
     ],
     "verdict": "PASS",
-    "notes": "Duyet accuracy gate dot 3 boi science-editor, 2026-09-21. Reviewer tu tai lai toan bo URL nguon trong cung ngay va doi chieu tung menh de Viet-Anh. CAT cau 'Con so ay nho hon nhieu so voi hinh dung thong thuong ve do phuc tap cua co the nguoi': khang dinh ve truc giac cua nguoi doc ma khong nguon nao noi, va no cham vao mot tranh luan co that (g-value paradox) ma nguon khong mo (quy tac 1). SUA 'lam phan lon cong viec trong CO THE' thanh 'trong TE BAO' - NHGRI Protein viet 'critical to most of the work done by CELLS', con 'within the body' la cum cua trang Gene noi ve chuc nang khac nhau; ban cu han hai cum tu hai trang thanh mot khang dinh khong trang nao phat bieu. DA XAC NHAN nguyen van NHGRI: 'approximately 20,000 protein-coding genes' - hedge 'khoang' giu dung."
+    "notes": "Duyet accuracy gate dot 3 boi science-editor, 2026-09-21. Reviewer tu tai lai toan bo URL nguon trong cung ngay va doi chieu tung menh de Viet-Anh. CAT cau 'Con so ay nho hon nhieu so voi hinh dung thong thuong ve do phuc tap cua co the nguoi': khang dinh ve truc giac cua nguoi doc ma khong nguon nao noi, va no cham vao mot tranh luan co that (g-value paradox) ma nguon khong mo (quy tac 1). SUA 'lam phan lon cong viec trong CO THE' thanh 'trong TE BAO' - NHGRI Protein viet 'critical to most of the work done by CELLS', con 'within the body' la cum cua trang Gene noi ve chuc nang khac nhau; ban cu han hai cum tu hai trang thanh mot khang dinh khong trang nao phat bieu. DA XAC NHAN nguyen van NHGRI: 'approximately 20,000 protein-coding genes' - hedge 'khoang' giu dung.",
+    "usedIn": [
+      "cai-chet-duoi-goc-nhin-tien-hoa-vi-sao-tu-nhien-khong-thiet-ke-chung-ta-de-song-mai",
+      "he-mien-dich-nhan-dien-mot-virus-bang-cach-nao"
+    ]
   },
   {
     "slug": "protein",
@@ -1204,7 +1211,11 @@
       }
     ],
     "verdict": "PASS",
-    "notes": "Duyet accuracy gate dot 3 boi science-editor, 2026-09-21. Reviewer tu tai lai toan bo URL nguon trong cung ngay va doi chieu tung menh de Viet-Anh. THEM '(moi chuoi goi la mot polypeptide)' vao shortDef - nguyen van NHGRI '(each called a polypeptide)' - de alias 'polypeptide' co cho tra loi; truoc do shortDef khong he chua tu ay nen alias truot phep thu dot 2. SUA 'lam nen mo co' thanh 'cac protein co rut nhu actin va myosin gay co co': OpenStax Bang 3.1 xep actin/myosin la protein CO RUT gay co co, khong o dau noi protein 'lam nen mo co'. SUA 'moi mo va co quan' thanh 'cac mo va co quan trong co the': NHGRI viet \"the body's tissues and organs\", khong viet 'every'. DA XAC NHAN nguyen van OpenStax 3.4 cho ca bon bac cau truc; them xoan alpha / phien gap beta vi nguon neu ro."
+    "notes": "Duyet accuracy gate dot 3 boi science-editor, 2026-09-21. Reviewer tu tai lai toan bo URL nguon trong cung ngay va doi chieu tung menh de Viet-Anh. THEM '(moi chuoi goi la mot polypeptide)' vao shortDef - nguyen van NHGRI '(each called a polypeptide)' - de alias 'polypeptide' co cho tra loi; truoc do shortDef khong he chua tu ay nen alias truot phep thu dot 2. SUA 'lam nen mo co' thanh 'cac protein co rut nhu actin va myosin gay co co': OpenStax Bang 3.1 xep actin/myosin la protein CO RUT gay co co, khong o dau noi protein 'lam nen mo co'. SUA 'moi mo va co quan' thanh 'cac mo va co quan trong co the': NHGRI viet \"the body's tissues and organs\", khong viet 'every'. DA XAC NHAN nguyen van OpenStax 3.4 cho ca bon bac cau truc; them xoan alpha / phien gap beta vi nguon neu ro.",
+    "usedIn": [
+      "giac-ngu-sau-lam-gi-voi-tri-nho-cua-ban",
+      "he-mien-dich-nhan-dien-mot-virus-bang-cach-nao"
+    ]
   },
   {
     "slug": "axit-amin",
@@ -1259,7 +1270,11 @@
       }
     ],
     "verdict": "PASS",
-    "notes": "Duyet accuracy gate dot 3 boi science-editor, 2026-09-21. Reviewer tu tai lai toan bo URL nguon trong cung ngay va doi chieu tung menh de Viet-Anh. LOI QUY TAC 13 da sua. Hai nguon noi khac nhau ve tinh chuyen biet: NHGRI viet gon 'each specific to a particular chemical reaction'; OpenStax viet 'There is a specifically matched enzyme for each substrate and, thus, for each chemical reaction; HOWEVER, THERE IS FLEXIBILITY AS WELL.' Ban cu lay ve loose cua NHGRI va bo han menh de nhuong bo cua OpenStax - dung hinh dang quy tac 13 cong quy tac 3. Nay giu ca hai. DA XAC NHAN nguyen van NHGRI: 'almost always a protein' (hedge giu dung), 'not destroyed during the reaction and is used over and over', 'A cell contains thousands of different types of enzyme molecules'. Con so 'hang nghin' CO nguon, khong phai so tran."
+    "notes": "Duyet accuracy gate dot 3 boi science-editor, 2026-09-21. Reviewer tu tai lai toan bo URL nguon trong cung ngay va doi chieu tung menh de Viet-Anh. LOI QUY TAC 13 da sua. Hai nguon noi khac nhau ve tinh chuyen biet: NHGRI viet gon 'each specific to a particular chemical reaction'; OpenStax viet 'There is a specifically matched enzyme for each substrate and, thus, for each chemical reaction; HOWEVER, THERE IS FLEXIBILITY AS WELL.' Ban cu lay ve loose cua NHGRI va bo han menh de nhuong bo cua OpenStax - dung hinh dang quy tac 13 cong quy tac 3. Nay giu ca hai. DA XAC NHAN nguyen van NHGRI: 'almost always a protein' (hedge giu dung), 'not destroyed during the reaction and is used over and over', 'A cell contains thousands of different types of enzyme molecules'. Con so 'hang nghin' CO nguon, khong phai so tran.",
+    "usedIn": [
+      "he-vi-sinh-duong-ruot-hang-chuc-nghin-ti-cu-dan-va-anh-huong-cua-chung",
+      "ruot-he-vi-sinh-vat-va-quyen-luc-cua-bo-nao-thu-hai"
+    ]
   },
   {
     "slug": "dot-bien",
@@ -1286,7 +1301,11 @@
       }
     ],
     "verdict": "PASS",
-    "notes": "Duyet accuracy gate dot 3 boi science-editor, 2026-09-21. Reviewer tu tai lai toan bo URL nguon trong cung ngay va doi chieu tung menh de Viet-Anh. LOI NANG NHAT CUA DOT NAY, da sua. Ban cu ket bang 'Dung danh dong dot bien voi benh. Phan lon khong co hau qua dang ke, mot phan vi cac co che sua loi, mot phan vi chung xay ra o TE BAO SINH DUONG nen khong truyen di xa.' Do la quy tac 15: chinh trang NHGRI duoc trich co CA HAI ve - 'Germline mutations (that occur in eggs and sperm) CAN BE PASSED ON to offspring' va 'When mutations occur in germline cells... they will be present in every cell... AND CAN HAVE LARGER EFFECTS'. Ban cu giu ve sinh duong va bo ve dong mam, roi trinh bay nhu toan bo. Cong them quy tac 14: OpenStax 14.6, nguon thu hai cua chinh muc tu nay, viet 'Mutations in repair genes have been known to cause cancer' va neu ung thu tuy/dai trang/dai truc trang - tuc la muc tu dan doc gia di nguoc trang no trich. Cau menh lenh 'Dung danh dong dot bien voi benh' cung bi cat: khong nguon nao ra chi thi do cho nguoi doc. Nay giu nguyen cau tran an cua NHGRI o doan 2 dung cho NHGRI dat no, va tra lai doi trong o doan 3. Ba co che sua loi: DA XAC NHAN OpenStax 14.6 co DUNG ba, dung ten - khong phai loi quy tac 15."
+    "notes": "Duyet accuracy gate dot 3 boi science-editor, 2026-09-21. Reviewer tu tai lai toan bo URL nguon trong cung ngay va doi chieu tung menh de Viet-Anh. LOI NANG NHAT CUA DOT NAY, da sua. Ban cu ket bang 'Dung danh dong dot bien voi benh. Phan lon khong co hau qua dang ke, mot phan vi cac co che sua loi, mot phan vi chung xay ra o TE BAO SINH DUONG nen khong truyen di xa.' Do la quy tac 15: chinh trang NHGRI duoc trich co CA HAI ve - 'Germline mutations (that occur in eggs and sperm) CAN BE PASSED ON to offspring' va 'When mutations occur in germline cells... they will be present in every cell... AND CAN HAVE LARGER EFFECTS'. Ban cu giu ve sinh duong va bo ve dong mam, roi trinh bay nhu toan bo. Cong them quy tac 14: OpenStax 14.6, nguon thu hai cua chinh muc tu nay, viet 'Mutations in repair genes have been known to cause cancer' va neu ung thu tuy/dai trang/dai truc trang - tuc la muc tu dan doc gia di nguoc trang no trich. Cau menh lenh 'Dung danh dong dot bien voi benh' cung bi cat: khong nguon nao ra chi thi do cho nguoi doc. Nay giu nguyen cau tran an cua NHGRI o doan 2 dung cho NHGRI dat no, va tra lai doi trong o doan 3. Ba co che sua loi: DA XAC NHAN OpenStax 14.6 co DUNG ba, dung ten - khong phai loi quy tac 15.",
+    "usedIn": [
+      "cai-chet-duoi-goc-nhin-tien-hoa-vi-sao-tu-nhien-khong-thiet-ke-chung-ta-de-song-mai",
+      "crispr-cay-keo-phan-tu-den-tu-vi-khuan"
+    ]
   },
   {
     "slug": "khang-the",
@@ -1314,7 +1333,10 @@
       }
     ],
     "verdict": "PASS",
-    "notes": "Duyet accuracy gate dot 3 boi science-editor, 2026-09-21. Reviewer tu tai lai toan bo URL nguon trong cung ngay va doi chieu tung menh de Viet-Anh. BO alias 'te-bao-lympho-b'. Phep thu alias cua dot 2: shortDef cua muc dich phai tra loi duoc chinh cai ten alias do. shortDef o day chi noi te bao lympho B LA BEN SAN XUAT khang the, khong dinh nghia te bao lympho B la gi; va ghep hai ten vao mot tooltip de khien nguoi doc tuong khang the va te bao B la mot. Te bao lympho B xung dang mot muc tu rieng. SUA doan 3: ban cu suy them 'nen viec gan khang the con la TIN HIEU GOI them cac nhanh khac cua he mien dich' - OpenStax 42.1 chi noi bo the 'are particularly attracted to' mam benh da bi khang the gan; bien mot lien he thanh mot co che tin hieu la quy tac 12. Nay dung o muc nguon dung. XAC NHAN hai cho reviewer da nghi ngo nhung DUNG: 'te bao lympho B truong thanh trong tuy xuong' co nguyen van tai OpenStax 42.1 ('B cells are lymphocytes that mature in the bone marrow'), va 'du de dap ung voi moi khang nguyen' co nguyen van tai NHGRI ('respond to all of the antigens that will assault the body'). Ca hai giu lai. Them cau dinh nghia khang nguyen vi nguon NHGRI co va no lam day doan 2."
+    "notes": "Duyet accuracy gate dot 3 boi science-editor, 2026-09-21. Reviewer tu tai lai toan bo URL nguon trong cung ngay va doi chieu tung menh de Viet-Anh. BO alias 'te-bao-lympho-b'. Phep thu alias cua dot 2: shortDef cua muc dich phai tra loi duoc chinh cai ten alias do. shortDef o day chi noi te bao lympho B LA BEN SAN XUAT khang the, khong dinh nghia te bao lympho B la gi; va ghep hai ten vao mot tooltip de khien nguoi doc tuong khang the va te bao B la mot. Te bao lympho B xung dang mot muc tu rieng. SUA doan 3: ban cu suy them 'nen viec gan khang the con la TIN HIEU GOI them cac nhanh khac cua he mien dich' - OpenStax 42.1 chi noi bo the 'are particularly attracted to' mam benh da bi khang the gan; bien mot lien he thanh mot co che tin hieu la quy tac 12. Nay dung o muc nguon dung. XAC NHAN hai cho reviewer da nghi ngo nhung DUNG: 'te bao lympho B truong thanh trong tuy xuong' co nguyen van tai OpenStax 42.1 ('B cells are lymphocytes that mature in the bone marrow'), va 'du de dap ung voi moi khang nguyen' co nguyen van tai NHGRI ('respond to all of the antigens that will assault the body'). Ca hai giu lai. Them cau dinh nghia khang nguyen vi nguon NHGRI co va no lam day doan 2.",
+    "usedIn": [
+      "he-mien-dich-nhan-dien-mot-virus-bang-cach-nao"
+    ]
   },
   {
     "slug": "crispr",
@@ -1404,6 +1426,9 @@
       }
     ],
     "verdict": "PASS",
-    "notes": "Duyet accuracy gate dot 3 boi science-editor, 2026-09-21. Reviewer tu tai lai toan bo URL nguon trong cung ngay va doi chieu tung menh de Viet-Anh. BA SUA. (1) Quy tac 3, rot hedge, va lech Viet-Anh: ban tieng Anh giu 'placebos MAY be helpful', ban tieng Viet viet 'gia duoc VAN CO ICH ngay ca khi...' - mat chu 'may' cua NCCIH. Da tra lai 'CO THE'. Day la menh de duy nhat trong ca dot ma hai ban ngon ngu noi khac nhau ve muc do chac chan.\n(2) Quy tac 12: cat 'Do la ly do hieu ung nay xuat hien trong nhieu loai can thiep khac nhau.' NCCIH khong noi cau do, va no bien mot dinh nghia thanh mot khang dinh nhan qua cong mot khang dinh thuc nghiem ve pham vi.\n(3) Doan 3 cu la CHO REVIEWER DOC, khong phai cho nguoi doc: 'Trang khong khang dinh co che nao khac...', 'cung khong goi y gia duoc thay the duoc dieu tri dua tren bang chung'. Ba cau do deu DUNG ve mat mo ta trang nguon - reviewer da kiem, NCCIH that su im lang ca hai chuyen. Nhung lap luan tu su im lang cua nguon la mot dang vuot pham vi: nguoi doc nhan ve 'gia duoc khong thay the duoc dieu tri' nhu mot ket luan CO NGUON, trong khi nguon khong he ket luan gi. Da thay bang noi dung huong toi nguoi doc va co nguon: thu nghiem lam sang ngau nhien co doi chung gia duoc, nguyen van tren chinh trang NCCIH ay. Do la thu nguoi doc can nhat va no von nam san trong nguon.\n(4) MOT NGUON: da giai quyet. Them NCATS (mot trung tam cua NIH) cho dinh nghia GIA DUOC - danh tu. Ban cu co mot lech it ai de y: term la 'Gia duoc' (placebo) nhung shortDef chi dinh nghia HIEU UNG gia duoc, nen alias 'placebo' truot phep thu dot 2. Them dinh nghia NCATS vua vap dinh gate hai nguon, vua khop term voi dinh nghia, vua cuu alias 'placebo'. Mot sua, bon van de.\n(5) CATEGORY doi 'Suc khoe' -> 'Y hoc': xem ghi chu chung cua dot."
+    "notes": "Duyet accuracy gate dot 3 boi science-editor, 2026-09-21. Reviewer tu tai lai toan bo URL nguon trong cung ngay va doi chieu tung menh de Viet-Anh. BA SUA. (1) Quy tac 3, rot hedge, va lech Viet-Anh: ban tieng Anh giu 'placebos MAY be helpful', ban tieng Viet viet 'gia duoc VAN CO ICH ngay ca khi...' - mat chu 'may' cua NCCIH. Da tra lai 'CO THE'. Day la menh de duy nhat trong ca dot ma hai ban ngon ngu noi khac nhau ve muc do chac chan.\n(2) Quy tac 12: cat 'Do la ly do hieu ung nay xuat hien trong nhieu loai can thiep khac nhau.' NCCIH khong noi cau do, va no bien mot dinh nghia thanh mot khang dinh nhan qua cong mot khang dinh thuc nghiem ve pham vi.\n(3) Doan 3 cu la CHO REVIEWER DOC, khong phai cho nguoi doc: 'Trang khong khang dinh co che nao khac...', 'cung khong goi y gia duoc thay the duoc dieu tri dua tren bang chung'. Ba cau do deu DUNG ve mat mo ta trang nguon - reviewer da kiem, NCCIH that su im lang ca hai chuyen. Nhung lap luan tu su im lang cua nguon la mot dang vuot pham vi: nguoi doc nhan ve 'gia duoc khong thay the duoc dieu tri' nhu mot ket luan CO NGUON, trong khi nguon khong he ket luan gi. Da thay bang noi dung huong toi nguoi doc va co nguon: thu nghiem lam sang ngau nhien co doi chung gia duoc, nguyen van tren chinh trang NCCIH ay. Do la thu nguoi doc can nhat va no von nam san trong nguon.\n(4) MOT NGUON: da giai quyet. Them NCATS (mot trung tam cua NIH) cho dinh nghia GIA DUOC - danh tu. Ban cu co mot lech it ai de y: term la 'Gia duoc' (placebo) nhung shortDef chi dinh nghia HIEU UNG gia duoc, nen alias 'placebo' truot phep thu dot 2. Them dinh nghia NCATS vua vap dinh gate hai nguon, vua khop term voi dinh nghia, vua cuu alias 'placebo'. Mot sua, bon van de.\n(5) CATEGORY doi 'Suc khoe' -> 'Y hoc': xem ghi chu chung cua dot.",
+    "usedIn": [
+      "huyet-dao-va-cham-cuu-khi-cua-dong-y-co-lien-he-gi-voi-khoa-hoc-hien-dai"
+    ]
   }
 ]
