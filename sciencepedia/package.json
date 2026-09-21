@@ -53,7 +53,8 @@
     "links:fix": "tsx --env-file-if-exists=.env scripts/fix-dead-internal-links.ts",
     "slugs:redirect": "tsx --env-file-if-exists=.env scripts/add-slug-redirects.ts",
     "redirects:sync": "tsx --env-file-if-exists=.env scripts/sync-slug-redirects.ts",
-    "links:reading": "tsx --env-file-if-exists=.env scripts/add-reading-links.ts"
+    "links:reading": "tsx --env-file-if-exists=.env scripts/add-reading-links.ts",
+    "glossary:usedin": "tsx --env-file-if-exists=.env scripts/sync-glossary-usedin.ts"
   },
   "prisma": {
     "seed": "tsx --env-file-if-exists=.env prisma/seed.ts"

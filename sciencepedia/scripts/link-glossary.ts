@@ -276,6 +276,143 @@ const LINKS: Link[] = [
       "- [[Siêu tân tinh]].\n- Nguồn phát tia vũ trụ",
     ],
   },
+  /* ---- Đợt 21/09 (2): gắn 10 mục từ vừa qua gate accuracy ---------------
+   *
+   * Mười mục này soạn cho các cụm **bôi đậm** chưa có định nghĩa. Ghi mục từ
+   * vào CSDL KHÔNG làm tooltip xuất hiện: `extractGlossaryKeys` chỉ bắt khoá
+   * `[[...]]`, nên chừng nào chưa gắn ở đây thì 22 mục từ vẫn vô hình.
+   *
+   * Ba chỗ quét ra nhưng KHÔNG gắn, vì chữ giống mà khái niệm khác:
+   *
+   * - "hệ quy chiếu quán tính" (ba-dinh-luat-kepler, thuyet-tuong-doi-hep) là
+   *   inertial frame, không phải quán tính của một vật.
+   * - "lực quán tính" (dieu-gi-tao-ra-gio-thuy-trieu) là lực ảo trong hệ quay,
+   *   không phải quán tính.
+   * - "chuỗi phản ứng proton–proton" (mat-troi) là tên một phản ứng; gắn mục
+   *   từ vào giữa tên riêng ấy đọc gãy, và bài đã có chỗ khác tốt hơn.
+   *
+   * Bản tiếng Anh của `giai-ma-nhung-khoang-trong-rong-voids` KHÔNG được gắn
+   * gì: `contentEn` của nó hiện là nội dung một bài khác (chân không vũ trụ).
+   * Xem ghi chú cùng tên trong `add-reading-links.ts`.
+   */
+
+  {
+    slug: "mat-khong-thuc-su-nhin-nao-bo-tao-ra-hinh-anh-nhu-the-nao",
+    vi: ["Ánh sáng là **bức xạ điện từ**", "Ánh sáng là **[[bức xạ điện từ]]**"],
+  },
+  {
+    slug: "mat-khong-thuc-su-nhin-nao-bo-tao-ra-hinh-anh-nhu-the-nao",
+    vi: ["gọi là **photon**", "gọi là **[[photon]]**"],
+  },
+  {
+    slug: "mat-khong-thuc-su-nhin-nao-bo-tao-ra-hinh-anh-nhu-the-nao",
+    vi: ["gọi là **ánh sáng khả kiến**", "gọi là **[[ánh sáng khả kiến]]**"],
+  },
+  {
+    slug: "mat-khong-thuc-su-nhin-nao-bo-tao-ra-hinh-anh-nhu-the-nao",
+    vi: ["hội tụ lên **võng mạc**", "hội tụ lên **[[võng mạc]]**"],
+  },
+  {
+    slug: "mat-troi-lo-phan-ung-giu-ca-he-hanh-tinh",
+    vi: ["Một photon sinh ra ở lõi", "Một [[photon]] sinh ra ở lõi"],
+    en: ["A photon born in the core", "A [[photon]] born in the core"],
+  },
+  {
+    slug: "mat-troi-lo-phan-ung-giu-ca-he-hanh-tinh",
+    vi: ["tương tác với từ quyển", "tương tác với [[từ quyển]]"],
+    en: ["interact with the magnetosphere", "interact with the [[tu-quyen|magnetosphere]]"],
+  },
+  {
+    slug: "proton-co-bat-tu-dieu-gi-xay-ra-neu-mot-ngay-vat-chat-bat-dau-phan-ra",
+    vi: ["- Photon có năng lượng ngày càng thấp.", "- [[Photon]] có năng lượng ngày càng thấp."],
+  },
+  {
+    slug: "kinh-james-webb-nhin-nguoc-ve-thuo-vu-tru-so-sinh",
+    vi: [
+      "Hubble mạnh ở ánh sáng khả kiến và tử ngoại",
+      "Hubble mạnh ở [[ánh sáng khả kiến]] và tử ngoại",
+    ],
+    en: [
+      "Visible light emitted by the first galaxies",
+      "[[anh-sang-kha-kien|Visible light]] emitted by the first galaxies",
+    ],
+  },
+  {
+    slug: "nguyen-tu-cau-tao-nen-van-vat",
+    vi: ["- **Proton** mang điện tích dương.", "- **[[Proton]]** mang điện tích dương."],
+    en: [
+      "a nucleus holding protons and neutrons",
+      "a nucleus holding [[proton|protons]] and neutrons",
+    ],
+  },
+  {
+    slug: "tu-electron-den-dong-dien-nguon-goc-cua-dien-nang",
+    vi: ["- **Proton** mang điện tích dương.", "- **[[Proton]]** mang điện tích dương."],
+  },
+  {
+    slug: "trai-dat-hanh-tinh-duy-nhat-ta-biet-co-su-song",
+    vi: ["**Từ quyển.**", "**[[Từ quyển]].**"],
+    en: ["**Magnetosphere.**", "**[[tu-quyen|Magnetosphere]].**"],
+  },
+  {
+    slug: "tu-truong-va-luc-hap-dan-hai-luc-vo-hinh-hai-co-che-khac-nhau",
+    vi: ["một khoang gọi là **từ quyển**", "một khoang gọi là **[[từ quyển]]**"],
+    en: [
+      "a cavity known as the **magnetosphere**",
+      "a cavity known as the **[[tu-quyen|magnetosphere]]**",
+    ],
+  },
+  {
+    slug: "nhung-lan-dai-tuyet-chung-co-lien-quan-toi-hanh-trinh-cua-he-mat-troi-trong-ngan-ha",
+    vi: ["> **Đám mây Oort**", "> **[[Đám mây Oort]]**"],
+  },
+  {
+    slug: "sao-choi-nguon-goc-cau-tao-va-so-phan",
+    vi: ["đến từ **đám mây Oort**", "đến từ **[[đám mây Oort]]**"],
+    en: ["from the **Oort cloud**", "from the **[[dam-may-oort|Oort cloud]]**"],
+  },
+  {
+    slug: "tai-sao-pluto-khong-con-la-hanh-tinh",
+    vi: ["lập ra nhóm **hành tinh lùn**", "lập ra nhóm **[[hành tinh lùn]]**"],
+    en: [
+      "established the **dwarf planet** category",
+      "established the **[[hanh-tinh-lun|dwarf planet]]** category",
+    ],
+  },
+  {
+    slug: "toan-canh-dac-diem-8-hanh-tinh-he-mat-troi",
+    vi: ["nhóm mới: **hành tinh lùn**", "nhóm mới: **[[hành tinh lùn]]**"],
+    en: ["a new group: **dwarf planets**", "a new group: **[[hanh-tinh-lun|dwarf planets]]**"],
+  },
+  {
+    slug: "bi-mat-dang-sau-cam-giac-nang-va-nhe",
+    vi: ["thước đo của **quán tính**", "thước đo của **[[quán tính]]**"],
+  },
+  {
+    slug: "bi-mat-dang-sau-cam-giac-nang-va-nhe",
+    vi: ["- **a**: gia tốc (m/s²)", "- **a**: [[gia tốc]] (m/s²)"],
+  },
+  {
+    slug: "bi-mat-dang-sau-cam-giac-hut-hang-khi-van-toc-thay-doi",
+    vi: ["lao về phía trước theo quán tính", "lao về phía trước theo [[quán tính]]"],
+    en: ["rush forward due to inertia", "rush forward due to [[quan-tinh|inertia]]"],
+  },
+  {
+    slug: "newton-da-giai-ma-the-gioi-nhu-the-nao",
+    en: ["the definition of **inertia**", "the definition of **[[quan-tinh|inertia]]**"],
+  },
+  {
+    slug: "neu-trai-dat-dang-quay-vi-sao-chung-ta-khong-cam-nhan-duoc",
+    vi: ["chủ yếu cảm nhận **gia tốc**", "chủ yếu cảm nhận **[[gia tốc]]**"],
+    en: ["primarily sense **acceleration**", "primarily sense **[[gia-toc|acceleration]]**"],
+  },
+  {
+    slug: "ba-dinh-luat-kepler-hanh-tinh-chuyen-dong-theo-quy-luat-nao",
+    vi: [
+      "làm hành tinh **gia tốc** về phía Mặt Trời",
+      "làm hành tinh **[[gia tốc]]** về phía Mặt Trời",
+    ],
+  },
 ];
 
 /** Khoá của mọi `[[...]]` trong một chuỗi thay thế. */

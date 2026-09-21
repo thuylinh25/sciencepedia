@@ -26,10 +26,10 @@
       }
     ],
     "usedIn": [
-      "su-ra-doi-cua-he-mat-troi",
+      "ba-dinh-luat-kepler-hanh-tinh-chuyen-dong-theo-quy-luat-nao",
+      "giai-ma-hanh-tinh-tu-quay-quanh-truc",
       "sao-moc-hanh-tinh-quay-nhanh-nhat-va-chiec-phanh-vo-hinh",
-      "vi-sao-cac-hanh-tinh-tu-quay-quanh-truc",
-      "ba-dinh-luat-kepler-hanh-tinh-chuyen-dong-theo-quy-luat-nao"
+      "su-ra-doi-cua-he-mat-troi"
     ],
     "verdict": "PASS",
     "notes": "The site uses two names for this quantity: 'động lượng góc' (su-ra-doi-cua-he-mat-troi, ba-dinh-luat-kepler) and 'mô-men động lượng' (sao-moc..., vi-sao-cac-hanh-tinh-tu-quay). Both are standard Vietnamese, so both are in aliases. Without the alias the Jupiter article gets no tooltip. No conflict found: su-ra-doi's inline gloss ('mức độ quay của một vật quanh một điểm/trục') and the Kepler article ('bảo toàn động lượng góc, hệ quả khi lực luôn hướng về một điểm cố định') agree with the definition. The skater example is in OpenStax itself; it is a correct illustration, not a loose analogy. Unrelated to this entry: content-rules.md already records the Pollack 1996 citation problem in the Jupiter article."
@@ -73,8 +73,8 @@
     ],
     "usedIn": [
       "big-bang-vu-tru-da-dien-ra-the-nao-trong-138-ti-nam",
-      "thang-khoang-cach-vu-tru-do-toi-sao-va-thien-ha-bang-cach-nao",
-      "kinh-james-webb-nhin-nguoc-ve-thuo-vu-tru-so-sinh"
+      "kinh-james-webb-nhin-nguoc-ve-thuo-vu-tru-so-sinh",
+      "thang-khoang-cach-vu-tru-do-toi-sao-va-thien-ha-bang-cach-nao"
     ],
     "verdict": "PASS",
     "notes": "Gravitational redshift is left out on purpose: I found no authoritative page for it that I could fetch, and none of the articles use that sense. The JWST infrared point ('visible light from the first galaxies is stretched into the infrared') is also left out of fullDef because I did not fetch a source for it; it stays in the Webb article. ARTICLE CONFLICT (date-bound claim now stale): big-bang-vu-tru-da-dien-ra-the-nao-trong-138-ti-nam says 'Thiên hà xa nhất được xác nhận cho tới nay là JADES-GS-z14-0, ở độ dịch chuyển đỏ 14,32 (số liệu tháng 5/2024)'. MoM-z14 has since been spectroscopically confirmed at z = 14.44 ± 0.02 (Naidu et al. 2025, arXiv:2505.11263), which beats that record. The article does carry its as-of date, but 'cho tới nay' is now wrong. It needs a visible correction and a re-check for anything newer than 2025. Not a conflict, but worth knowing: big-bang calls redshift proof that galaxies 'đang rời xa nhau', and thang-khoang-cach gives v = H₀ × d. Both are acceptable simplifications for nearby galaxies. thang-khoang-cach already names space expansion as the cause, which matches ESA."
@@ -110,11 +110,11 @@
       }
     ],
     "usedIn": [
-      "thien-ha-dinh-nghia-va-cach-phan-loai",
-      "da-vu-tru-bon-cap-do-va-mot-cau-hoi-kho",
       "20-ngoi-sao-sang-nhat-bau-troi-dem",
+      "da-vu-tru-bon-cap-do-va-mot-cau-hoi-kho",
+      "giai-ma-nhung-khoang-trong-rong-voids-trong-vu-tru",
       "thang-khoang-cach-vu-tru-do-toi-sao-va-thien-ha-bang-cach-nao",
-      "khong-gian-vu-tru-moi-truong-chan-khong-gan-nhu-hoan-hao"
+      "thien-ha-dinh-nghia-va-cach-phan-loai"
     ],
     "verdict": "PASS",
     "notes": "The entry deliberately does NOT say that light from an object N light-years away left it N years ago. That only holds roughly for nearby objects. da-vu-tru-bon-cap-do-va-mot-cau-hoi-kho gives the observable universe a radius of 46.5 billion light-years, larger than the age of the universe in years, so the 'N years ago' shortcut would make the tooltip contradict that article. The IAU exact figure is kept only in fullDef, and the parsec is not converted because no fetched source gives the ratio. I did not re-check the distance figures in the listed articles (Milky Way 105,000 ly, Boötes Void 330 million ly, Proxima 4.25 ly, and so on); they belong to those articles' own fact-check."
@@ -144,12 +144,12 @@
       }
     ],
     "usedIn": [
-      "vat-chat-toi-va-nang-luong-toi-tran-chien-keo-co-vi-dai-cua-vu-tru",
       "big-bang-vu-tru-da-dien-ra-the-nao-trong-138-ti-nam",
-      "thien-ha-dinh-nghia-va-cach-phan-loai",
       "cac-sao-toi-co-the-da-de-lai-tieng-vong-duoi-dang-song-hap-dan-khap-vu-tru",
       "da-vu-tru-bon-cap-do-va-mot-cau-hoi-kho",
-      "nang-luong-la-gi"
+      "nang-luong-la-gi",
+      "thien-ha-dinh-nghia-va-cach-phan-loai",
+      "vat-chat-toi-va-nang-luong-toi-tran-chien-keo-co-vi-dai-cua-vu-tru"
     ],
     "verdict": "PASS",
     "notes": "Hedging is kept: the entry says 'inferred' and 'never directly detected', following CERN ('infer the existence of dark matter only from the gravitational effect it seems to have') and NASA ('have not yet found evidence which would confirm any candidate'). The 27% / 5% figures appear in both NASA and CERN and are marked as estimates. POSSIBLE ARTICLE CONFLICT (hedging): vat-chat-toi-va-nang-luong-toi-tran-chien-keo-co-vi-dai-cua-vu-tru says '> Chúng ta biết vật chất tối tồn tại, nhưng chưa biết nó là gì.' That is more certain than CERN's wording. NASA's own tone is also confident ('invisible glue'), so this is a judgment call for a human; a closer wording would be 'Các bằng chứng hấp dẫn cho thấy vật chất tối tồn tại'. The same article lists 'neutrino vô sinh' as a candidate; NASA's page does not, but that is an omission, not a contradiction. In nang-luong-la-gi and da-vu-tru the term only appears in link text. Alternative gravity theories are not mentioned because I consulted no source on them; add them only with a primary source."
@@ -184,11 +184,12 @@
       }
     ],
     "usedIn": [
-      "vat-chat-toi-va-nang-luong-toi-tran-chien-keo-co-vi-dai-cua-vu-tru",
       "big-bang-vu-tru-da-dien-ra-the-nao-trong-138-ti-nam",
-      "nang-luong-la-gi",
       "cac-sao-toi-co-the-da-de-lai-tieng-vong-duoi-dang-song-hap-dan-khap-vu-tru",
-      "da-vu-tru-bon-cap-do-va-mot-cau-hoi-kho"
+      "da-vu-tru-bon-cap-do-va-mot-cau-hoi-kho",
+      "nang-luong-la-gi",
+      "vat-chat-toi-va-nang-luong-toi-tran-chien-keo-co-vi-dai-cua-vu-tru",
+      "vu-tru-khong-bao-gio-dung-yen-chuyen-dong-la-trang-thai-tu-nhien-cua-moi-thu"
     ],
     "verdict": "PASS",
     "notes": "The entry separates what is observed (the expansion is accelerating) from what is named (the unknown cause). That matches nang-luong-la-gi, which calls dark energy 'a named gap in our understanding, not a measured store of energy'. NASA's own page is more assertive ('we do know that it exists'); I did not follow that wording. CERN's 'appears to be associated with the vacuum' keeps its hedge ('dường như'). DATE-BOUND: the DESI sentence is as of the March 2025 release. Re-check when DESI publishes later results; if significance reaches or falls from 5 sigma, the sentence must change. The 1998 discovery is sourced to NASA; I left out 'expected to slow down because of gravity' because the fetched NASA text did not state it. Minor article wording, not a factual conflict: big-bang-vu-tru-da-dien-ra-the-nao-trong-138-ti-nam lists '68% năng lượng của vũ trụ – 27% vật chất tối – 5% vật chất thông thường', which reads as if only the first item were a share of 'năng lượng'. The numbers agree with CERN."
@@ -227,9 +228,11 @@
       }
     ],
     "usedIn": [
+      "ban-khong-chi-song-trong-vu-tru-ban-la-mot-phan-cua-no",
+      "cac-sao-toi-co-the-da-de-lai-tieng-vong-duoi-dang-song-hap-dan-khap-vu-tru",
       "ngoi-sao-cau-tao-va-vong-doi",
-      "nhung-hat-vo-hinh-tao-nen-the-gioi-vat-chat",
-      "cac-sao-toi-co-the-da-de-lai-tieng-vong-duoi-dang-song-hap-dan-khap-vu-tru"
+      "nguyen-tu-cau-tao-nen-van-vat",
+      "toan-canh-dac-diem-8-hanh-tinh-he-mat-troi"
     ],
     "verdict": "PASS",
     "notes": "Two aliases were considered and rejected. 'tong-hop-hat-nhan' is out because 'tổng hợp hạt nhân' is also the Vietnamese for nucleosynthesis ('tổng hợp hạt nhân Big Bang'), so the fusion tooltip would appear on the wrong concept. The longer 'phan-ung-tong-hop-hat-nhan' is unambiguous and is included. No published article actually used the bare 'tổng hợp hạt nhân'. The IAEA definition pages returned HTTP 402/403 and were not used; the ITER page was used for the electrostatic-repulsion point. tam-hanh-tinh-cua-he-mat-troi matched only on its English text ('nuclear fusion'), with no Vietnamese hit, so it is left out of usedIn. Check the Vietnamese body before linking it. No conflicts: ngoi-sao-cau-tao-va-vong-doi ('lõi sao đạt nhiệt độ hàng triệu độ', H→He, balance with gravity, the iron core ending energy production) agrees with NASA. That article uses both 'phản ứng hợp hạch' and 'phản ứng nhiệt hạch', which the aliases cover. The ITER figure (150 million °C, ten times the Sun's core) was deliberately left out of the definition text."
@@ -306,9 +309,10 @@
       }
     ],
     "usedIn": [
+      "cac-sao-toi-co-the-da-de-lai-tieng-vong-duoi-dang-song-hap-dan-khap-vu-tru",
       "ngoi-sao-cau-tao-va-vong-doi",
-      "song-hap-dan-va-song-trong-luc-mot-chu-khac-nhau-hai-hien-tuong-khong-lien-quan",
-      "cac-sao-toi-co-the-da-de-lai-tieng-vong-duoi-dang-song-hap-dan-khap-vu-tru"
+      "proton-co-bat-tu-dieu-gi-xay-ra-neu-mot-ngay-vat-chat-bat-dau-phan-ra",
+      "song-hap-dan-va-song-trong-luc-mot-chu-khac-nhau-hai-hien-tuong-khong-lien-quan"
     ],
     "verdict": "PASS",
     "notes": "'1 to 3 solar masses' refers to the collapsing core, not the original star, and is written that way. shortDef avoids numbers: 'cỡ một thành phố' is NASA Imagine's own comparison (Manhattan). I found no conflicts. ngoi-sao-cau-tao-va-vong-doi gives 'đường kính khoảng 20 km' (matches NASA) and 'một thìa cà phê vật chất có thể nặng hàng tỷ tấn' (NASA Imagine says a sugar cube weighs about 1 billion tons; same order of magnitude, so no conflict). Its label 'Khối lượng lớn hơn' for neutron stars versus white dwarfs is vague but not false. cac-sao-toi calls pulsars 'sao neutron quay rất nhanh'; NASA says 'rotating'. That is acceptable for millisecond pulsars but slightly generalised. Not verified here and outside this entry: 'va chạm giữa hai sao neutron' as a source of gold and platinum (ngoi-sao-cau-tao-va-vong-doi). That claim needs its own source in that article."
@@ -349,13 +353,16 @@
       }
     ],
     "usedIn": [
-      "ngoi-sao-cau-tao-va-vong-doi",
-      "thang-khoang-cach-vu-tru-do-toi-sao-va-thien-ha-bang-cach-nao",
+      "20-ngoi-sao-sang-nhat-bau-troi-dem",
+      "ban-khong-chi-song-trong-vu-tru-ban-la-mot-phan-cua-no",
       "big-bang-vu-tru-da-dien-ra-the-nao-trong-138-ti-nam",
-      "vat-chat-toi-va-nang-luong-toi-tran-chien-keo-co-vi-dai-cua-vu-tru",
       "ho-den-noi-hinh-hoc-cua-khong-gian-sup-do",
+      "ngoi-sao-cau-tao-va-vong-doi",
+      "nhung-lan-dai-tuyet-chung-co-lien-quan-toi-hanh-trinh-cua-he-mat-troi-trong-ngan-ha",
       "su-ra-doi-cua-he-mat-troi",
-      "20-ngoi-sao-sang-nhat-bau-troi-dem"
+      "thang-khoang-cach-vu-tru-do-toi-sao-va-thien-ha-bang-cach-nao",
+      "vat-chat-toi-va-nang-luong-toi-tran-chien-keo-co-vi-dai-cua-vu-tru",
+      "vu-tru-khong-bao-gio-dung-yen-chuyen-dong-la-trang-thai-tu-nhien-cua-moi-thu"
     ],
     "verdict": "PASS",
     "notes": "Both mechanisms are covered because the site uses both: core collapse in ngoi-sao-cau-tao-va-vong-doi and ho-den, Type Ia in thang-khoang-cach, big-bang and vat-chat-toi. 'Loại II' is given only as an example, because core-collapse supernovae also include Types Ib and Ic. The mass thresholds (~8 solar masses, the 1.4 solar-mass Chandrasekhar limit) are stated by NASA Imagine. Merging white dwarfs as another Type Ia route is left out: I saw it only in arXiv search snippets and did not fetch it. NOT VERIFIED (outside this entry): thang-khoang-cach-vu-tru-do-toi-sao-va-thien-ha-bang-cach-nao says Type Ia supernovae 'có độ sáng đỉnh gần giống nhau'. Standard practice calibrates (standardises) their peak brightness rather than treating it as identical, but I fetched no source, so this is only a flag for that article's fact-check. It also repeats the ordering issue in ho-den-noi-hinh-hoc-cua-khong-gian-sup-do ('sụp đổ sau siêu tân tinh'), recorded under chan-troi-su-kien. 20-ngoi-sao's claim that Betelgeuse will end as a supernova was not checked. su-ra-doi's 'có thể do sóng xung kích từ siêu tân tinh' is properly hedged."
@@ -429,8 +436,8 @@
       }
     ],
     "usedIn": [
-      "vi-sao-chiem-tinh-hoc-khong-phai-khoa-hoc",
-      "20-ngoi-sao-sang-nhat-bau-troi-dem"
+      "20-ngoi-sao-sang-nhat-bau-troi-dem",
+      "vi-sao-chiem-tinh-hoc-khong-phai-khoa-hoc"
     ],
     "verdict": "PASS",
     "notes": "Scope: the general mechanics sense comes first, then the sense both articles use (axial precession of Earth), and shortDef says so explicitly. Only Earth's precession is covered; other planets are not claimed. The cycle length gives both OpenStax/APOD (~26,000 years) and NASA's figure (25,771.5 years), so neither implies false precision. Alias 'tue-sai' (tuế sai) is the traditional Vietnamese name for precession of the equinoxes, a consequence of axial precession, and is commonly used for it. Drop it if the editor wants aliases to be strict synonyms only. ARTICLE CONFLICT (number): 20-ngoi-sao-sang-nhat-bau-troi-dem says Vega 'Từng là Sao Bắc Cực khoảng 12.000 năm trước' (EN: 'about 12,000 years ago'). NASA Night Sky Network says Vega was the northern pole star about 14,000 years ago; the common figure '12,000 BC' is 12,000 years BEFORE THE COMMON ERA, not 12,000 years before today. This looks like a BC/years-ago mix-up. The entry avoids the past date for Vega and cites only the future one (~12,000 years from now, APOD). NOT VERIFIED: vi-sao-chiem-tinh-hoc-khong-phai-khoa-hoc says the Sun's actual position against the constellations 'đã khác đáng kể' since the zodiac was defined, and that the ecliptic crosses 13 constellations. Both are consistent with the concept, but I could not fetch Britannica (403) to confirm them."
@@ -461,8 +468,8 @@
       }
     ],
     "usedIn": [
-      "nhung-hat-vo-hinh-tao-nen-the-gioi-vat-chat",
-      "dai-tuyet-chung-permi-lan-su-song-suyt-bien-mat"
+      "dai-tuyet-chung-permi-lan-su-song-suyt-bien-mat",
+      "nguyen-tu-cau-tao-nen-van-vat"
     ],
     "verdict": "PASS",
     "notes": "The IUPAC Gold Book entry ('nuclides having the same atomic number but different mass numbers') agrees, but the page was behind a Cloudflare challenge, so I saw it only through a search snippet and it is NOT listed as a source. The neutron counts for C-12/C-14 are simple arithmetic (A − Z). 'Most elements have more than one stable isotope' is IPCC wording. DOE's '254 known stable isotopes' is deliberately left out. No conflict with nhung-hat-vo-hinh-tao-nen-the-gioi-vat-chat. FLAG, NOT VERIFIED (outside this entry): dai-tuyet-chung-permi-lan-su-song-suyt-bien-mat calls helium-3 and argon-36 'những đồng vị đặc trưng của vật chất ngoài Trái Đất'. Argon-36 is also present in Earth's atmosphere; as I recall, the original fullerene claim (early 2000s) rested on isotope RATIOS, not on the mere presence of these isotopes. I fetched no source, so that article's fact-check should confirm and, if needed, reword to 'tỉ lệ đồng vị heli và argon đặc trưng của vật chất ngoài Trái Đất'."
@@ -493,7 +500,12 @@
       }
     ],
     "verdict": "PASS",
-    "notes": "Reviewed 2026-09-21 (science-editor). Both source URLs fetched and checked. OpenStax 6.2 carries the core verbatim: \"a photon's energy depends only on its frequency f\", E = hf, \"each photon moves at the speed of light\", \"doubling the intensity of radiation translates to doubling the number of photons\", and the cut-off frequency (\"when incident radiation has a frequency below the cut-off frequency, the photoelectric effect is not observed\").\n\nCHANGED - the red-vs-violet example. It was unconditional in Vietnamese (\"vẫn không bứt được\") but hedged in English (\"may fail\"): two different confidence levels for one claim, which is exactly what must not differ between locales. Neither version was right as an absolute either, because whether red sits below cut-off depends on the metal's work function - for platinum neither red nor violet ejects anything. Rewritten in both languages as conditional on the metal's cut-off, which is what OpenStax actually states.\n\nThe shortDef's unqualified \"luôn chuyển động với tốc độ ánh sáng\" is OpenStax's own wording and is left as is; fullDef adds \"trong chân không\". Aliases quang-tu and luong-tu-anh-sang are both current Vietnamese for this."
+    "notes": "Reviewed 2026-09-21 (science-editor). Both source URLs fetched and checked. OpenStax 6.2 carries the core verbatim: \"a photon's energy depends only on its frequency f\", E = hf, \"each photon moves at the speed of light\", \"doubling the intensity of radiation translates to doubling the number of photons\", and the cut-off frequency (\"when incident radiation has a frequency below the cut-off frequency, the photoelectric effect is not observed\").\n\nCHANGED - the red-vs-violet example. It was unconditional in Vietnamese (\"vẫn không bứt được\") but hedged in English (\"may fail\"): two different confidence levels for one claim, which is exactly what must not differ between locales. Neither version was right as an absolute either, because whether red sits below cut-off depends on the metal's work function - for platinum neither red nor violet ejects anything. Rewritten in both languages as conditional on the metal's cut-off, which is what OpenStax actually states.\n\nThe shortDef's unqualified \"luôn chuyển động với tốc độ ánh sáng\" is OpenStax's own wording and is left as is; fullDef adds \"trong chân không\". Aliases quang-tu and luong-tu-anh-sang are both current Vietnamese for this.",
+    "usedIn": [
+      "mat-khong-thuc-su-nhin-nao-bo-tao-ra-hinh-anh-nhu-the-nao",
+      "mat-troi-lo-phan-ung-giu-ca-he-hanh-tinh",
+      "proton-co-bat-tu-dieu-gi-xay-ra-neu-mot-ngay-vat-chat-bat-dau-phan-ra"
+    ]
   },
   {
     "slug": "buc-xa-dien-tu",
@@ -522,7 +534,10 @@
       }
     ],
     "verdict": "PASS",
-    "notes": "Reviewed 2026-09-21 (science-editor). NASA EMS intro fetched. Supported verbatim: the band list; \"Gamma rays, x-rays, and some ultraviolet waves are 'ionizing,' meaning these waves have such a high energy that they can knock electrons out of atoms\"; the atmosphere blocking gamma, X-ray and some UV while visible \"largely passes through\"; and \"instruments have to be positioned above Earth's energy-absorbing atmosphere\".\n\nCUT - \"đó là ranh giới giữa phần vô hại và phần nguy hiểm cho mô sống\" / \"the boundary between the harmless part of the spectrum and the part dangerous to living tissue\". No source says it and it is false: non-ionising radiation is not harmless (UV-A, infrared burns, microwave heating, high-power lasers). NASA is careful here - it characterises ionising radiation and gives non-ionising no safety characterisation at all. Replaced with the page's own framing: which bands are ionising, and that they can damage cells harmfully (sunburn) or by design (radiotherapy).\n\nFOR knowledge-architect, not blocking: alias pho-dien-tu points \"phổ điện từ\" (the spectrum) at the radiation entry. The two are distinct concepts. The tooltip a reader gets is still correct and relevant so it stays, but if a separate \"phổ điện từ\" entry is ever written this alias must move to it."
+    "notes": "Reviewed 2026-09-21 (science-editor). NASA EMS intro fetched. Supported verbatim: the band list; \"Gamma rays, x-rays, and some ultraviolet waves are 'ionizing,' meaning these waves have such a high energy that they can knock electrons out of atoms\"; the atmosphere blocking gamma, X-ray and some UV while visible \"largely passes through\"; and \"instruments have to be positioned above Earth's energy-absorbing atmosphere\".\n\nCUT - \"đó là ranh giới giữa phần vô hại và phần nguy hiểm cho mô sống\" / \"the boundary between the harmless part of the spectrum and the part dangerous to living tissue\". No source says it and it is false: non-ionising radiation is not harmless (UV-A, infrared burns, microwave heating, high-power lasers). NASA is careful here - it characterises ionising radiation and gives non-ionising no safety characterisation at all. Replaced with the page's own framing: which bands are ionising, and that they can damage cells harmfully (sunburn) or by design (radiotherapy).\n\nFOR knowledge-architect, not blocking: alias pho-dien-tu points \"phổ điện từ\" (the spectrum) at the radiation entry. The two are distinct concepts. The tooltip a reader gets is still correct and relevant so it stays, but if a separate \"phổ điện từ\" entry is ever written this alias must move to it.",
+    "usedIn": [
+      "mat-khong-thuc-su-nhin-nao-bo-tao-ra-hinh-anh-nhu-the-nao"
+    ]
   },
   {
     "slug": "anh-sang-kha-kien",
@@ -551,7 +566,11 @@
       }
     ],
     "verdict": "PASS",
-    "notes": "Reviewed 2026-09-21 (science-editor). NASA Visible Light fetched: \"Typically, the human eye can detect wavelengths from 380 to 700 nanometers\" and \"Violet has the shortest wavelength, at around 380 nanometers, and red has the longest wavelength, at around 700 nanometers\". The 380-700 nm range and both endpoints check out.\n\nCUT 1 - \"mắt người tiến hoá để nhạy đúng với dải mà khí quyển cho đi qua và Mặt Trời phát mạnh nhất\". Neither source says this. The NASA page states the correlation (\"the Sun ... the dominant source for visible-light waves our eyes receive\") and deliberately stops short of the causation, and why the visible window sits where it does is still argued in the literature. Replaced with what the page does support: cone cells tuned to this band, and the Sun as the dominant source of the visible light we receive.\n\nCUT 2 - \"450 nm cho xanh lam, 530 nm cho xanh lục\". These interior values are on neither cited page. Unsourced numbers are removed, not softened; the two sourced endpoints stay and the sentence now says the other colours lie between them.\n\nNEI \"How the Eyes Work\" stays as the second source for the observer side of the entry."
+    "notes": "Reviewed 2026-09-21 (science-editor). NASA Visible Light fetched: \"Typically, the human eye can detect wavelengths from 380 to 700 nanometers\" and \"Violet has the shortest wavelength, at around 380 nanometers, and red has the longest wavelength, at around 700 nanometers\". The 380-700 nm range and both endpoints check out.\n\nCUT 1 - \"mắt người tiến hoá để nhạy đúng với dải mà khí quyển cho đi qua và Mặt Trời phát mạnh nhất\". Neither source says this. The NASA page states the correlation (\"the Sun ... the dominant source for visible-light waves our eyes receive\") and deliberately stops short of the causation, and why the visible window sits where it does is still argued in the literature. Replaced with what the page does support: cone cells tuned to this band, and the Sun as the dominant source of the visible light we receive.\n\nCUT 2 - \"450 nm cho xanh lam, 530 nm cho xanh lục\". These interior values are on neither cited page. Unsourced numbers are removed, not softened; the two sourced endpoints stay and the sentence now says the other colours lie between them.\n\nNEI \"How the Eyes Work\" stays as the second source for the observer side of the entry.",
+    "usedIn": [
+      "kinh-james-webb-nhin-nguoc-ve-thuo-vu-tru-so-sinh",
+      "mat-khong-thuc-su-nhin-nao-bo-tao-ra-hinh-anh-nhu-the-nao"
+    ]
   },
   {
     "slug": "proton",
@@ -583,7 +602,11 @@
       }
     ],
     "verdict": "PASS",
-    "notes": "Reviewed 2026-09-21 (science-editor). PASS on resubmission. The blocking gap from the first round is closed properly: the drafter found the source rather than the reviewer backfilling one, which is how this is supposed to work.\n\nTHIRD SOURCE VERIFIED INDEPENDENTLY. I fetched OpenStax Physics 23.3 myself rather than taking the quotes on trust. It resolves and it carries paragraph 3: \"Multiple current GUTs hypothesize that the stable proton should actually decay at a lifetime of 10^31 years\"; \"Scientists at the Super-Kamiokande in Japan have used a 50,000-ton tank of water to search for its existence\"; \"However, as of 2014, 17 years into the experiment, decay is yet to be found\". It also states an experimental minimum limit on the proton lifetime, which is what supports \"các phép đo chỉ đặt ra giới hạn dưới\". The drafter's note that section 11.6 404s and 11.1 defines GUTs without mentioning proton decay matches what I found; 23.3 is the right page.\n\nCARRIED OVER FROM ROUND 1, unchanged: the CODATA 2022 mass matches NIST to the last digit (\"1.672 621 925 95(52) x 10^-27 kg\"), and OpenStax 10.1 carries paragraphs 1 and 2 verbatim.\n\nCHANGED - date anchor, my edit, not the drafter's. The source's finding is explicitly \"as of 2014\", and a search for a rare event is exactly the kind of claim a later result can move - Hyper-Kamiokande is a live programme. So I split the sentence the way the evidence splits: the standing negative (\"chưa thí nghiệm nào quan sát được\", \"chỉ đặt ra giới hạn dưới\") stays undated because it remains true, while the concrete Super-Kamiokande result now carries its as-of year in both languages. RE-CHECK: revisit if a proton-decay detection is ever announced, or when this entry is next expanded - the published limits have moved since 2014 even though the null result has not.\n\nThe hedging itself is untouched and must stay untouched. It was correctly calibrated in round 1 and remains so: it neither asserts absolute stability nor implies decay has been seen or is expected, and the English tracks the Vietnamese clause for clause."
+    "notes": "Reviewed 2026-09-21 (science-editor). PASS on resubmission. The blocking gap from the first round is closed properly: the drafter found the source rather than the reviewer backfilling one, which is how this is supposed to work.\n\nTHIRD SOURCE VERIFIED INDEPENDENTLY. I fetched OpenStax Physics 23.3 myself rather than taking the quotes on trust. It resolves and it carries paragraph 3: \"Multiple current GUTs hypothesize that the stable proton should actually decay at a lifetime of 10^31 years\"; \"Scientists at the Super-Kamiokande in Japan have used a 50,000-ton tank of water to search for its existence\"; \"However, as of 2014, 17 years into the experiment, decay is yet to be found\". It also states an experimental minimum limit on the proton lifetime, which is what supports \"các phép đo chỉ đặt ra giới hạn dưới\". The drafter's note that section 11.6 404s and 11.1 defines GUTs without mentioning proton decay matches what I found; 23.3 is the right page.\n\nCARRIED OVER FROM ROUND 1, unchanged: the CODATA 2022 mass matches NIST to the last digit (\"1.672 621 925 95(52) x 10^-27 kg\"), and OpenStax 10.1 carries paragraphs 1 and 2 verbatim.\n\nCHANGED - date anchor, my edit, not the drafter's. The source's finding is explicitly \"as of 2014\", and a search for a rare event is exactly the kind of claim a later result can move - Hyper-Kamiokande is a live programme. So I split the sentence the way the evidence splits: the standing negative (\"chưa thí nghiệm nào quan sát được\", \"chỉ đặt ra giới hạn dưới\") stays undated because it remains true, while the concrete Super-Kamiokande result now carries its as-of year in both languages. RE-CHECK: revisit if a proton-decay detection is ever announced, or when this entry is next expanded - the published limits have moved since 2014 even though the null result has not.\n\nThe hedging itself is untouched and must stay untouched. It was correctly calibrated in round 1 and remains so: it neither asserts absolute stability nor implies decay has been seen or is expected, and the English tracks the Vietnamese clause for clause.",
+    "usedIn": [
+      "nguyen-tu-cau-tao-nen-van-vat",
+      "tu-electron-den-dong-dien-nguon-goc-cua-dien-nang"
+    ]
   },
   {
     "slug": "vong-mac",
@@ -615,7 +638,10 @@
       }
     ],
     "verdict": "PASS",
-    "notes": "Reviewed 2026-09-21 (science-editor). PASS on resubmission.\n\nTHIRD SOURCE VERIFIED INDEPENDENTLY, and I checked two clauses the resubmission did not quote. OpenStax Biology 2e 36.5 resolves and carries paragraph 2: \"Rods are strongly photosensitive and are located in the outer edges of the retina. They detect dim light and are used primarily for peripheral and nighttime vision\"; \"Cones are weakly photosensitive and are located near the center of the retina. They respond to bright light, and their primary role is in daytime, color vision\". Beyond the quoted material I confirmed the two clauses that would otherwise have been left dangling: rods not distinguishing colour is supported by \"Rods respond in low light and can detect only shades of gray\", and cones giving fine detail is supported by \"The fovea is the region in the center back of the eye that is responsible for acute vision. The fovea has a high density of cones\". Every clause in the paragraph now traces to a sentence I read.\n\nCHANGED - paragraph 2 rewritten, answering the question the coordinator raised. The draft was accurate and would have passed as it stood; completeness is not a gate. But two things made the edit worth making. First, \"cho ta màu sắc cùng chi tiết\" asserted acuity with nothing visible behind it - the fovea is the reason, and naming it turns a bare assertion into a sourced one. Second, the distribution fact (rods at the rim, cones near the centre) is what makes the rest cohere, and peripheral vision is a real function the draft dropped. So the paragraph now carries location, dim-light and peripheral vision, grey-only, bright light, colour, and the fovea - each from the source. The English mirrors it clause for clause.\n\nCARRIED OVER FROM ROUND 1, unchanged: paragraphs 1 and 3 match NEI verbatim, and \"có thể mất thị lực vĩnh viễn\" correctly holds NEI's \"increases the risk of permanent vision loss or blindness\" at risk level instead of upgrading it to a certainty.\n\nNOT BLOCKING: category \"Sinh học\" is a new label for the glossary, correct, and matches the article taxonomy root sinh-hoc. Kept."
+    "notes": "Reviewed 2026-09-21 (science-editor). PASS on resubmission.\n\nTHIRD SOURCE VERIFIED INDEPENDENTLY, and I checked two clauses the resubmission did not quote. OpenStax Biology 2e 36.5 resolves and carries paragraph 2: \"Rods are strongly photosensitive and are located in the outer edges of the retina. They detect dim light and are used primarily for peripheral and nighttime vision\"; \"Cones are weakly photosensitive and are located near the center of the retina. They respond to bright light, and their primary role is in daytime, color vision\". Beyond the quoted material I confirmed the two clauses that would otherwise have been left dangling: rods not distinguishing colour is supported by \"Rods respond in low light and can detect only shades of gray\", and cones giving fine detail is supported by \"The fovea is the region in the center back of the eye that is responsible for acute vision. The fovea has a high density of cones\". Every clause in the paragraph now traces to a sentence I read.\n\nCHANGED - paragraph 2 rewritten, answering the question the coordinator raised. The draft was accurate and would have passed as it stood; completeness is not a gate. But two things made the edit worth making. First, \"cho ta màu sắc cùng chi tiết\" asserted acuity with nothing visible behind it - the fovea is the reason, and naming it turns a bare assertion into a sourced one. Second, the distribution fact (rods at the rim, cones near the centre) is what makes the rest cohere, and peripheral vision is a real function the draft dropped. So the paragraph now carries location, dim-light and peripheral vision, grey-only, bright light, colour, and the fovea - each from the source. The English mirrors it clause for clause.\n\nCARRIED OVER FROM ROUND 1, unchanged: paragraphs 1 and 3 match NEI verbatim, and \"có thể mất thị lực vĩnh viễn\" correctly holds NEI's \"increases the risk of permanent vision loss or blindness\" at risk level instead of upgrading it to a certainty.\n\nNOT BLOCKING: category \"Sinh học\" is a new label for the glossary, correct, and matches the article taxonomy root sinh-hoc. Kept.",
+    "usedIn": [
+      "mat-khong-thuc-su-nhin-nao-bo-tao-ra-hinh-anh-nhu-the-nao"
+    ]
   },
   {
     "slug": "tu-quyen",
@@ -643,7 +669,12 @@
       }
     ],
     "verdict": "PASS",
-    "notes": "Reviewed 2026-09-21 (science-editor). Every number and every claim here is carried by the NASA heliophysics page, fetched and checked: \"A magnetosphere is the region around a planet dominated by the planet's magnetic field\" (the shortDef is this); \"the convective motion of charged, molten iron, far below the surface in Earth's outer core\"; \"a distance of about six to 10 times the radius of the Earth\" on the dayside - so the 6-10 Earth radii figure is sourced exactly as written, not rounded or invented; \"hundreds of Earth radii, far past the moon's orbit at 60 Earth radii\" for the tail; \"The magnetosphere shields our home planet from solar and cosmic particle radiation as well as erosion of the atmosphere by the solar wind\"; and \"Earth has the strongest one of all the rocky planets\".\n\nThat last one is a superlative, and superlatives normally need an as-of date under our date-bound rule. No re-check date attached here, deliberately: it rests on which terrestrial planets have an internal dynamo at all - Venus and Mars have no global field - not on a measurement ranking that a new result could reorder.\n\nNOAA independently confirms the tail (\"stretched out to hundreds of Earth radii, well beyond the orbit of the moon at 60 Earth radii\") and gives \"about 10 Earth radii\" dayside, consistent with NASA's range. Citation health: swpc.noaa.gov now 301s to spaceweather.gov, and the entry already stores the spaceweather.gov target, so it resolves without a redirect hop.\n\nNOT BLOCKING, for category-manager: category is \"Vật lý\" but all three paragraphs are about Earth and \"Khoa học Trái Đất\" already exists in the glossary labels. A placement question, not an accuracy one - left as drafted."
+    "notes": "Reviewed 2026-09-21 (science-editor). Every number and every claim here is carried by the NASA heliophysics page, fetched and checked: \"A magnetosphere is the region around a planet dominated by the planet's magnetic field\" (the shortDef is this); \"the convective motion of charged, molten iron, far below the surface in Earth's outer core\"; \"a distance of about six to 10 times the radius of the Earth\" on the dayside - so the 6-10 Earth radii figure is sourced exactly as written, not rounded or invented; \"hundreds of Earth radii, far past the moon's orbit at 60 Earth radii\" for the tail; \"The magnetosphere shields our home planet from solar and cosmic particle radiation as well as erosion of the atmosphere by the solar wind\"; and \"Earth has the strongest one of all the rocky planets\".\n\nThat last one is a superlative, and superlatives normally need an as-of date under our date-bound rule. No re-check date attached here, deliberately: it rests on which terrestrial planets have an internal dynamo at all - Venus and Mars have no global field - not on a measurement ranking that a new result could reorder.\n\nNOAA independently confirms the tail (\"stretched out to hundreds of Earth radii, well beyond the orbit of the moon at 60 Earth radii\") and gives \"about 10 Earth radii\" dayside, consistent with NASA's range. Citation health: swpc.noaa.gov now 301s to spaceweather.gov, and the entry already stores the spaceweather.gov target, so it resolves without a redirect hop.\n\nNOT BLOCKING, for category-manager: category is \"Vật lý\" but all three paragraphs are about Earth and \"Khoa học Trái Đất\" already exists in the glossary labels. A placement question, not an accuracy one - left as drafted.",
+    "usedIn": [
+      "mat-troi-lo-phan-ung-giu-ca-he-hanh-tinh",
+      "trai-dat-hanh-tinh-duy-nhat-ta-biet-co-su-song",
+      "tu-truong-va-luc-hap-dan-hai-luc-vo-hinh-hai-co-che-khac-nhau"
+    ]
   },
   {
     "slug": "dam-may-oort",
@@ -671,7 +702,11 @@
       }
     ],
     "verdict": "PASS",
-    "notes": "Reviewed 2026-09-21 (science-editor). Both NASA pages fetched. The distances are exact: \"The inner edge of the Oort Cloud, however, is thought to be located between 2,000 and 5,000 AU from the Sun, with the outer edge being located somewhere between 10,000 and 100,000 AU from the Sun\". Both ranges check out and the entry already attributed them to NASA as estimates. \"Vì quá xa, NASA chưa có ảnh chụp trực tiếp nào\" is verbatim NASA (\"Because it is so far away, NASA doesn't have direct images of the Oort Cloud\") and \"artist's concept\" is the page's own caption.\n\nCHANGED - hedging. NASA hedges this object three separate times and the draft had dropped all three. Source: \"a theorized group of icy objects\"; \"There MAY BE hundreds of billions, even trillions, of icy bodies\"; \"SCIENTISTS THINK the Oort Cloud is a giant spherical shell\". The draft asserted a shell that \"gồm hàng trăm tỉ thiên thể băng\" as established fact and opened fullDef with \"Đám mây Oort LÀ một lớp vỏ cầu\". The count itself was right - \"hàng trăm tỉ, thậm chí hàng nghìn tỉ\" is NASA's own phrase - the error was purely modality. Restored in both languages (được cho là / thought to, có thể tới / possibly, các nhà khoa học cho rằng / scientists think), plus an opening line in fullDef stating plainly that this is a theorised structure inferred from long-period comet orbits. Epistemically that is the single most important thing about the Oort Cloud and the entry now leads with it rather than burying it.\n\nLong-period comets confirmed: Oort \"proposed the existence of the cloud to explain (among other things) where long-period comets come from\". The entry now says \"được nêu ra để giải thích nguồn gốc\", which matches that framing instead of over-claiming a settled origin.\n\nCHANGED - category from \"Vũ trụ học\" to \"Thiên văn học\". The Oort Cloud is Solar-System astronomy, not cosmology, and Thiên văn học is the label the approved entries already use for this material (nam-anh-sang, sao-neutron, sieu-tan-tinh, tien-dong).\n\nBoth sources are NASA, as the drafter flagged. Accepted: tier-2 authoritative body, two separately maintained pages, and every figure is attributed to NASA in the text rather than stated as settled fact. An independent source would still be an improvement if this entry is expanded."
+    "notes": "Reviewed 2026-09-21 (science-editor). Both NASA pages fetched. The distances are exact: \"The inner edge of the Oort Cloud, however, is thought to be located between 2,000 and 5,000 AU from the Sun, with the outer edge being located somewhere between 10,000 and 100,000 AU from the Sun\". Both ranges check out and the entry already attributed them to NASA as estimates. \"Vì quá xa, NASA chưa có ảnh chụp trực tiếp nào\" is verbatim NASA (\"Because it is so far away, NASA doesn't have direct images of the Oort Cloud\") and \"artist's concept\" is the page's own caption.\n\nCHANGED - hedging. NASA hedges this object three separate times and the draft had dropped all three. Source: \"a theorized group of icy objects\"; \"There MAY BE hundreds of billions, even trillions, of icy bodies\"; \"SCIENTISTS THINK the Oort Cloud is a giant spherical shell\". The draft asserted a shell that \"gồm hàng trăm tỉ thiên thể băng\" as established fact and opened fullDef with \"Đám mây Oort LÀ một lớp vỏ cầu\". The count itself was right - \"hàng trăm tỉ, thậm chí hàng nghìn tỉ\" is NASA's own phrase - the error was purely modality. Restored in both languages (được cho là / thought to, có thể tới / possibly, các nhà khoa học cho rằng / scientists think), plus an opening line in fullDef stating plainly that this is a theorised structure inferred from long-period comet orbits. Epistemically that is the single most important thing about the Oort Cloud and the entry now leads with it rather than burying it.\n\nLong-period comets confirmed: Oort \"proposed the existence of the cloud to explain (among other things) where long-period comets come from\". The entry now says \"được nêu ra để giải thích nguồn gốc\", which matches that framing instead of over-claiming a settled origin.\n\nCHANGED - category from \"Vũ trụ học\" to \"Thiên văn học\". The Oort Cloud is Solar-System astronomy, not cosmology, and Thiên văn học is the label the approved entries already use for this material (nam-anh-sang, sao-neutron, sieu-tan-tinh, tien-dong).\n\nBoth sources are NASA, as the drafter flagged. Accepted: tier-2 authoritative body, two separately maintained pages, and every figure is attributed to NASA in the text rather than stated as settled fact. An independent source would still be an improvement if this entry is expanded.",
+    "usedIn": [
+      "nhung-lan-dai-tuyet-chung-co-lien-quan-toi-hanh-trinh-cua-he-mat-troi-trong-ngan-ha",
+      "sao-choi-nguon-goc-cau-tao-va-so-phan"
+    ]
   },
   {
     "slug": "hanh-tinh-lun",
@@ -698,7 +733,11 @@
       }
     ],
     "verdict": "PASS",
-    "notes": "Reviewed 2026-09-21 (science-editor). RESOLUTION NUMBER CONFIRMED: it is 5A, not B5. The IAU URL in this entry resolves and is the genuine 2006 General Assembly results page. Resolution 5A is the planet definition; Resolution 6A is the separate Pluto resolution. \"B5\" is a misreading that circulates widely - the 2006 GA also ran a B-series of resolutions and the pre-vote drafts were numbered 5A and 5B, which is the likely source of the transposition. The drafter was right to make a point of it.\n\nAlso verified on the same page: the three planet criteria (orbits the Sun; enough mass for self-gravity to give a nearly round shape; \"has cleared the neighbourhood around its orbit\"); the dwarf-planet definition as the first two but not the third, plus not being a satellite; and the three initial members Ceres, Pluto and 2003 UB313. \"Sau được đặt tên là Eris\" is correct and is the right way to put it - 2003 UB313 was the designation at the time of the vote.\n\n\"Đúng một tiêu chí ... là thứ tách hai nhóm ra\" is accurate: clearing the neighbourhood is the only differing criterion, the satellite clause being an added exclusion rather than a shared criterion, and the entry words it that way.\n\nCHANGED - category from \"Vũ trụ học\" to \"Thiên văn học\", same reason as dam-may-oort: Solar-System astronomy, not cosmology.\n\nKEEP AS IS: the IAU definition is scoped to the Solar System and the entry says \"quay quanh Mặt Trời\" rather than generalising to other stars. Do not 'improve' that into a general definition later."
+    "notes": "Reviewed 2026-09-21 (science-editor). RESOLUTION NUMBER CONFIRMED: it is 5A, not B5. The IAU URL in this entry resolves and is the genuine 2006 General Assembly results page. Resolution 5A is the planet definition; Resolution 6A is the separate Pluto resolution. \"B5\" is a misreading that circulates widely - the 2006 GA also ran a B-series of resolutions and the pre-vote drafts were numbered 5A and 5B, which is the likely source of the transposition. The drafter was right to make a point of it.\n\nAlso verified on the same page: the three planet criteria (orbits the Sun; enough mass for self-gravity to give a nearly round shape; \"has cleared the neighbourhood around its orbit\"); the dwarf-planet definition as the first two but not the third, plus not being a satellite; and the three initial members Ceres, Pluto and 2003 UB313. \"Sau được đặt tên là Eris\" is correct and is the right way to put it - 2003 UB313 was the designation at the time of the vote.\n\n\"Đúng một tiêu chí ... là thứ tách hai nhóm ra\" is accurate: clearing the neighbourhood is the only differing criterion, the satellite clause being an added exclusion rather than a shared criterion, and the entry words it that way.\n\nCHANGED - category from \"Vũ trụ học\" to \"Thiên văn học\", same reason as dam-may-oort: Solar-System astronomy, not cosmology.\n\nKEEP AS IS: the IAU definition is scoped to the Solar System and the entry says \"quay quanh Mặt Trời\" rather than generalising to other stars. Do not 'improve' that into a general definition later.",
+    "usedIn": [
+      "tai-sao-pluto-khong-con-la-hanh-tinh",
+      "toan-canh-dac-diem-8-hanh-tinh-he-mat-troi"
+    ]
   },
   {
     "slug": "quan-tinh",
@@ -725,7 +764,12 @@
       }
     ],
     "verdict": "PASS",
-    "notes": "Reviewed 2026-09-21 (science-editor). OpenStax 5.2 fetched and carries paragraphs 1 and 2 verbatim: \"A body at rest remains at rest or, if in motion, remains in motion at constant velocity unless acted on by a net external force\"; \"Newton's first law is often called the law of inertia\"; \"The inertia of an object is measured by its mass\"; and friction as the reason motion appears to need a continuous force (\"Friction is thus the cause of slowing\"). HyperPhysics resolves and agrees.\n\nCUT - \"ngoài không gian tuy không có trọng lượng\" / \"in space has no weight\". Two problems. It is a simplification that leaves a false mental model: the reader concludes there is no gravity in space, when an object on a station is in free fall and still firmly inside Earth's gravity. And neither cited page discusses weightlessness at all. I removed the false clause rather than explaining free fall, because the explanation would have added a second claim neither source supports. What remains - a tonne of equipment floating on a station is just as hard to push and to stop, because its mass is unchanged - is the inertia point the paragraph existed to make, and it sits inside what OpenStax 5.2 supports.\n\nIf the free-fall explanation is wanted back, source it (OpenStax Vol 1 section 5.5, or the gravitation chapter) and it can be reinstated. It is a good illustration; it just needs a citation."
+    "notes": "Reviewed 2026-09-21 (science-editor). OpenStax 5.2 fetched and carries paragraphs 1 and 2 verbatim: \"A body at rest remains at rest or, if in motion, remains in motion at constant velocity unless acted on by a net external force\"; \"Newton's first law is often called the law of inertia\"; \"The inertia of an object is measured by its mass\"; and friction as the reason motion appears to need a continuous force (\"Friction is thus the cause of slowing\"). HyperPhysics resolves and agrees.\n\nCUT - \"ngoài không gian tuy không có trọng lượng\" / \"in space has no weight\". Two problems. It is a simplification that leaves a false mental model: the reader concludes there is no gravity in space, when an object on a station is in free fall and still firmly inside Earth's gravity. And neither cited page discusses weightlessness at all. I removed the false clause rather than explaining free fall, because the explanation would have added a second claim neither source supports. What remains - a tonne of equipment floating on a station is just as hard to push and to stop, because its mass is unchanged - is the inertia point the paragraph existed to make, and it sits inside what OpenStax 5.2 supports.\n\nIf the free-fall explanation is wanted back, source it (OpenStax Vol 1 section 5.5, or the gravitation chapter) and it can be reinstated. It is a good illustration; it just needs a citation.",
+    "usedIn": [
+      "bi-mat-dang-sau-cam-giac-hut-hang-khi-van-toc-thay-doi",
+      "bi-mat-dang-sau-cam-giac-nang-va-nhe",
+      "newton-da-giai-ma-the-gioi-nhu-the-nao"
+    ]
   },
   {
     "slug": "gia-toc",
@@ -752,6 +796,11 @@
       }
     ],
     "verdict": "PASS",
-    "notes": "Reviewed 2026-09-21 (science-editor). OpenStax 5.3 fetched: \"acceleration is directly proportional to and in the same direction as the net external force acting on the system and is inversely proportional to its mass\"; \"the direction of the acceleration is the same direction as that of the net force\", which sources the vector claim; and the basketball-vs-SUV comparison, of which the entry's \"vật nặng gấp đôi thì gia tốc bằng một nửa\" is the arithmetic instance. No numbers in this entry to check. HyperPhysics resolves and agrees.\n\nThe uniform-circular-motion sentence is not in section 5.3; it belongs to Vol 1 chapter 4. Accepted - and here is the line I applied, on record so the next batch gets the same treatment: an elaboration of the very concept being defined, drawn from the same cited work and elementary enough to be uncontroversial, is within the source's scope; a claim about a topic the cited work never addresses is not. That is why this sentence passes and why the proton-decay paragraph in the proton entry does not. Both drafts had the same shape of gap; only one of them is about a subject its source actually covers.\n\n\"Đi đều 300 km/h thì không cảm thấy gì\" is an everyday illustration of a point the entry has already stated correctly, not a separate claim."
+    "notes": "Reviewed 2026-09-21 (science-editor). OpenStax 5.3 fetched: \"acceleration is directly proportional to and in the same direction as the net external force acting on the system and is inversely proportional to its mass\"; \"the direction of the acceleration is the same direction as that of the net force\", which sources the vector claim; and the basketball-vs-SUV comparison, of which the entry's \"vật nặng gấp đôi thì gia tốc bằng một nửa\" is the arithmetic instance. No numbers in this entry to check. HyperPhysics resolves and agrees.\n\nThe uniform-circular-motion sentence is not in section 5.3; it belongs to Vol 1 chapter 4. Accepted - and here is the line I applied, on record so the next batch gets the same treatment: an elaboration of the very concept being defined, drawn from the same cited work and elementary enough to be uncontroversial, is within the source's scope; a claim about a topic the cited work never addresses is not. That is why this sentence passes and why the proton-decay paragraph in the proton entry does not. Both drafts had the same shape of gap; only one of them is about a subject its source actually covers.\n\n\"Đi đều 300 km/h thì không cảm thấy gì\" is an everyday illustration of a point the entry has already stated correctly, not a separate claim.",
+    "usedIn": [
+      "ba-dinh-luat-kepler-hanh-tinh-chuyen-dong-theo-quy-luat-nao",
+      "bi-mat-dang-sau-cam-giac-nang-va-nhe",
+      "neu-trai-dat-dang-quay-vi-sao-chung-ta-khong-cam-nhan-duoc"
+    ]
   }
 ]
