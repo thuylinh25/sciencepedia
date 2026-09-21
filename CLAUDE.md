@@ -19,6 +19,8 @@ npm run db:seed
 npm run search:reindex
 npm run sky:seed     # đồng bộ danh mục thiên thể sang bảng SkyObject (chạy khô, cần --write)
 npm run glossary:check  # [[thuật ngữ]] nào trong bài đã xuất bản chưa có mục từ (chỉ đọc)
+npm run links:fix     # link nội bộ trỏ slug đã chết — chạy khô, cần --write
+npm run slugs:redirect # ghi 301 cho slug cũ, để link từ ngoài site thôi 404 (cần --write)
 
 npm run publish:check # rà điều kiện xuất bản toàn kho (chỉ đọc)
 npm run publish       # đổi state sang PUBLISHED — đường ghi DUY NHẤT, có gate

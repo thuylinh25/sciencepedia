@@ -121,7 +121,9 @@ const LINKS: Link[] = [
     en: ["a **supernova** explosion", "a **[[sieu-tan-tinh|supernova]]** explosion"],
   },
   {
-    slug: "nhung-hat-vo-hinh-tao-nen-the-gioi-vat-chat",
+    // Slug đổi 21/09: bài này nay là `nguyen-tu-cau-tao-nen-van-vat`. Mục cũ
+    // trỏ slug chết nên lặng lẽ bị bỏ qua mỗi lượt chạy.
+    slug: "nguyen-tu-cau-tao-nen-van-vat",
     // Bản EN nói "fusion" bên trong nhãn một link có sẵn — không gắn được.
     vi: ["quá trình **nhiệt hạch**", "quá trình **[[phản ứng nhiệt hạch|nhiệt hạch]]**"],
   },
@@ -165,6 +167,114 @@ const LINKS: Link[] = [
     slug: "dai-tuyet-chung-permi-lan-su-song-suyt-bien-mat",
     vi: ["ước lượng đồng vị oxy", "ước lượng [[đồng vị]] oxy"],
     en: ["oxygen isotope estimates", "oxygen [[dong-vi|isotope]] estimates"],
+  },
+
+  /* ---- Đợt 21/09: quét lại toàn kho, 16 chỗ còn sót ----------------------
+   *
+   * Cách tìm: với mỗi mục từ, lấy những bài NHẮC tới nó bằng chữ thường mà cả
+   * bài chưa có lấy một dấu `[[...]]` nào của chính mục từ ấy. Bài đã gắn ở
+   * chỗ nhắc đầu tiên thì thôi — quy ước là một lần mỗi bài, không rải khắp.
+   *
+   * Hai chỗ trong danh sách quét ra đã bị science-editor phủ quyết từ 17/09 và
+   * KHÔNG được thêm lại ở đây: câu "sụp đổ sau siêu tân tinh" của bài hố đen
+   * (đảo nhân quả) và câu Vega của bài 20 ngôi sao (sai số năm). Hai ghi chú
+   * KHÔNG gắn ở phía trên là lý do, không phải sơ suất.
+   *
+   * Một chỗ nữa bỏ có chủ ý: "Dark energy" trong `nang-luong-la-gi` [en]. Câu
+   * ngay sau nó đã có link sang bài vật chất tối — chồng thêm tooltip vào cùng
+   * một khái niệm ở cùng một đoạn là nhiễu, không phải phục vụ người đọc. */
+
+  {
+    slug: "ho-den-noi-hinh-hoc-cua-khong-gian-sup-do",
+    vi: ["Ranh giới ấy gọi là chân trời sự kiện.", "Ranh giới ấy gọi là [[chân trời sự kiện]]."],
+    en: [
+      "That boundary is called the event horizon.",
+      "That boundary is called the [[chan-troi-su-kien|event horizon]].",
+    ],
+  },
+  {
+    slug: "thang-khoang-cach-vu-tru-do-toi-sao-va-thien-ha-bang-cach-nao",
+    vi: ["hiện tượng **dịch chuyển đỏ**", "hiện tượng **[[dịch chuyển đỏ]]**"],
+    en: ["phenomenon of **redshift**", "phenomenon of **[[dich-chuyen-do|redshift]]**"],
+  },
+  {
+    slug: "thang-khoang-cach-vu-tru-do-toi-sao-va-thien-ha-bang-cach-nao",
+    vi: ["sử dụng **siêu tân tinh loại Ia**", "sử dụng **[[siêu tân tinh]] loại Ia**"],
+    en: ["use **Type Ia supernovae**", "use **Type Ia [[sieu-tan-tinh|supernovae]]**"],
+  },
+  {
+    slug: "giai-ma-hanh-tinh-tu-quay-quanh-truc",
+    // Bản VI không dùng chữ "động lượng góc" ở đoạn tương ứng, nên chỉ gắn EN.
+    en: [
+      "the transfer of **angular momentum**",
+      "the transfer of **[[dong-luong-goc|angular momentum]]**",
+    ],
+  },
+  {
+    slug: "sao-moc-hanh-tinh-quay-nhanh-nhat-va-chiec-phanh-vo-hinh",
+    en: [
+      "carrying with it the angular momentum of that entire region",
+      "carrying with it the [[dong-luong-goc|angular momentum]] of that entire region",
+    ],
+  },
+  {
+    slug: "nguyen-tu-cau-tao-nen-van-vat",
+    vi: ["được gọi là **đồng vị**", "được gọi là **[[đồng vị]]**"],
+    en: ["the definition of an isotope", "the definition of an [[dong-vi|isotope]]"],
+  },
+  {
+    slug: "20-ngoi-sao-sang-nhat-bau-troi-dem",
+    // Lần xuất hiện đầu nằm trong đầu đề BẢNG — bỏ, lấy câu về Sirius.
+    vi: ["chỉ 8,6 năm ánh sáng", "chỉ 8,6 [[năm ánh sáng]]"],
+    en: ["Only 8.6 light-years from Earth", "Only 8.6 [[nam-anh-sang|light-years]] from Earth"],
+  },
+  {
+    slug: "giai-ma-nhung-khoang-trong-rong-voids-trong-vu-tru",
+    vi: ["**330 triệu năm ánh sáng**", "**330 triệu [[năm ánh sáng]]**"],
+    en: ["**330 million light-years**", "**330 million [[nam-anh-sang|light-years]]**"],
+  },
+  {
+    slug: "vu-tru-khong-bao-gio-dung-yen-chuyen-dong-la-trang-thai-tu-nhien-cua-moi-thu",
+    vi: ["**Năng lượng tối (Dark Energy)**", "**[[Năng lượng tối]] (Dark Energy)**"],
+  },
+  {
+    slug: "vu-tru-khong-bao-gio-dung-yen-chuyen-dong-la-trang-thai-tu-nhien-cua-moi-thu",
+    vi: ["quan sát các siêu tân tinh xa", "quan sát các [[siêu tân tinh]] xa"],
+  },
+  {
+    slug: "ban-khong-chi-song-trong-vu-tru-ban-la-mot-phan-cua-no",
+    vi: ["thực hiện phản ứng nhiệt hạch", "thực hiện [[phản ứng nhiệt hạch]]"],
+  },
+  {
+    slug: "ban-khong-chi-song-trong-vu-tru-ban-la-mot-phan-cua-no",
+    vi: ["các vụ nổ siêu tân tinh", "các vụ nổ [[siêu tân tinh]]"],
+  },
+  {
+    slug: "toan-canh-dac-diem-8-hanh-tinh-he-mat-troi",
+    en: [
+      "ignite nuclear fusion in its core",
+      "ignite [[phan-ung-nhiet-hach|nuclear fusion]] in its core",
+    ],
+  },
+  {
+    slug: "ngoi-sao-cau-tao-va-vong-doi",
+    // Lần đầu là ĐẦU ĐỀ `### Sao neutron` — bỏ, lấy câu về va chạm.
+    vi: ["va chạm giữa hai sao neutron", "va chạm giữa hai [[sao neutron]]"],
+  },
+  {
+    slug: "proton-co-bat-tu-dieu-gi-xay-ra-neu-mot-ngay-vat-chat-bat-dau-phan-ra",
+    // Neo kéo dài sang dòng sau: một mình "- Sao neutron." quá ngắn để chắc duy nhất.
+    vi: [
+      "- Sao neutron.\n- Các hành tinh lạnh.",
+      "- [[Sao neutron]].\n- Các hành tinh lạnh.",
+    ],
+  },
+  {
+    slug: "nhung-lan-dai-tuyet-chung-co-lien-quan-toi-hanh-trinh-cua-he-mat-troi-trong-ngan-ha",
+    vi: [
+      "- Siêu tân tinh.\n- Nguồn phát tia vũ trụ",
+      "- [[Siêu tân tinh]].\n- Nguồn phát tia vũ trụ",
+    ],
   },
 ];
 
