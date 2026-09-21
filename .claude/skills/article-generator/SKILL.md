@@ -65,5 +65,14 @@ Step 3 of the article chain. Turns a validated source pack into a draft with ful
     - **14** — A source says nuclear binding energy is roughly proportional to nucleon count for A > 8. The draft derived "so binding energy per nucleon is nearly constant". The same page gives 6–10 MeV with a peak at iron-56, and if the derived claim were true there would be no fusion and no fission — the entry contradicted itself in one sentence.
     - **15** — A source lists three mechanisms that end a neurotransmitter signal. The draft kept one and called it *the* determining factor.
 
+16. **When two sources define the same term at different SCOPE, the higher-tier source's scope wins.** Rule 13 covers loose versus precise. This is different: both sources are precise, but one draws the boundary narrower than the other. A textbook may tie a term to one particular technique; the standards body or agency that owns the field may define it without that tie. Take the wider definition, and never let a narrow one leak into a neighbouring entry as if it were the whole category.
+
+17. **Silence in a source is not evidence, and a paragraph about the source pack is not written for the reader.** "The page does not claim X" is not a source for "not X" — a reader receives it as a sourced conclusion when the source concluded nothing. The cheap tell: if a paragraph talks *about the sources* rather than *about the subject*, it is addressed to the reviewer. Move it to the notes and write the reader a paragraph that says something.
+
+    Why rules 16 and 17 exist: the THIRD glossary batch (2026-09-21), reviewed with rules 3 and 11–15 already in force. Those held — the old shapes recurred only mildly. The two worst errors were new:
+
+    - **16** — An entry defined genetic engineering using OpenStax's wording, which ties it to recombinant DNA technology. NHGRI, the agency that owns the field, defines it without that tie. The draft took the narrower definition from the lower-tier source, and then that narrow definition **leaked into the CRISPR entry**, where it produced a claim that is simply wrong: CRISPR editing is not recombinant DNA technology in the plasmid sense OpenStax means. One scope error, two entries damaged. It was also a rule-14 failure in the second entry: the cited OpenStax page never mentions CRISPR at all.
+    - **17** — A placebo entry closed by saying the source claims no mechanism beyond anticipation and does not suggest placebos replace evidence-based treatment. Both statements are accurate descriptions of the page. Neither is something the page says, and the reader takes them as conclusions. Replaced with the placebo-controlled trial material that was on the page all along.
+
 ## Fails when
 The source pack is insufficient, or a section required by the template cannot be sourced. Return a gap report rather than a padded article.

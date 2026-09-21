@@ -1239,8 +1239,8 @@
     "termEn": "Enzyme",
     "shortDef": "Chất xúc tác sinh học, gần như luôn là một protein. Enzyme làm tăng tốc một phản ứng hoá học cụ thể trong tế bào mà bản thân không bị biến đổi, nên dùng đi dùng lại được.",
     "shortDefEn": "A biological catalyst, almost always a protein. An enzyme speeds up one specific chemical reaction in the cell without being changed itself, so it can be reused again and again.",
-    "fullDef": "Enzyme hoạt động bằng cách hạ thấp năng lượng hoạt hoá của phản ứng — tức là hạ cái ngưỡng năng lượng phải vượt qua để phản ứng xảy ra. Nó KHÔNG làm thay đổi năng lượng tự do của phản ứng, nên nó không biến một phản ứng bất lợi thành có lợi; nó chỉ làm phản ứng vốn có thể xảy ra diễn ra nhanh hơn.\n\nChất mà enzyme gắn vào gọi là cơ chất. Chỗ gắn trên enzyme gọi là vị trí hoạt động — nơi phản ứng thực sự diễn ra.\n\nMột tế bào chứa hàng nghìn loại enzyme khác nhau, và mỗi loại xúc tác một phản ứng riêng.",
-    "fullDefEn": "An enzyme works by lowering the activation energy of a reaction — the energy threshold that must be crossed for the reaction to happen. It does NOT change the reaction's free energy, so it cannot turn an unfavourable reaction into a favourable one; it only makes a reaction that could already occur happen faster.\n\nThe substance an enzyme binds is its substrate. The place on the enzyme where that happens is the active site, where the action takes place.\n\nA cell holds thousands of different enzyme types, and each catalyses one particular reaction.",
+    "fullDef": "Enzyme hoạt động bằng cách hạ thấp năng lượng hoạt hoá của phản ứng — tức là hạ cái ngưỡng năng lượng phải vượt qua để phản ứng xảy ra. Nó KHÔNG làm thay đổi năng lượng tự do của phản ứng, nên nó không biến một phản ứng bất lợi thành có lợi; nó chỉ làm phản ứng vốn có thể xảy ra diễn ra nhanh hơn.\n\nChất mà enzyme gắn vào gọi là cơ chất. Chỗ gắn trên enzyme gọi là vị trí hoạt động — nơi phản ứng thực sự diễn ra.\n\nMột tế bào chứa hàng nghìn loại phân tử enzyme khác nhau, mỗi loại chuyên cho một phản ứng hoá học riêng. OpenStax nói thêm một ý quan trọng: có một enzyme khớp riêng cho từng cơ chất và do đó cho từng phản ứng — nhưng cũng có một độ linh hoạt nhất định.",
+    "fullDefEn": "An enzyme works by lowering the activation energy of a reaction — the energy threshold that must be crossed for the reaction to happen. It does NOT change the reaction's free energy, so it cannot turn an unfavourable reaction into a favourable one; it only makes a reaction that could already occur happen faster.\n\nThe substance an enzyme binds is its substrate. The place on the enzyme where that happens is the active site, where the action takes place.\n\nA cell contains thousands of different types of enzyme molecules, each specific to a particular chemical reaction. OpenStax adds an important qualifier: there is a specifically matched enzyme for each substrate and thus for each chemical reaction — however, there is flexibility as well.",
     "aliases": [
       "men",
       "chat-xuc-tac-sinh-hoc"
@@ -1258,8 +1258,8 @@
         "url": "https://openstax.org/books/biology-2e/pages/6-5-enzymes"
       }
     ],
-    "verdict": "REVISE",
-    "notes": "Dot 3, soan ngay 2026-09-21, nham vao nhom bai sinh hoc va suc khoe hien chua co tooltip nao. Moi URL da tai va doi chieu cung ngay. Ap ca sau quy tac 3/11/12/13/14/15. verdict de REVISE."
+    "verdict": "PASS",
+    "notes": "Duyet accuracy gate dot 3 boi science-editor, 2026-09-21. Reviewer tu tai lai toan bo URL nguon trong cung ngay va doi chieu tung menh de Viet-Anh. LOI QUY TAC 13 da sua. Hai nguon noi khac nhau ve tinh chuyen biet: NHGRI viet gon 'each specific to a particular chemical reaction'; OpenStax viet 'There is a specifically matched enzyme for each substrate and, thus, for each chemical reaction; HOWEVER, THERE IS FLEXIBILITY AS WELL.' Ban cu lay ve loose cua NHGRI va bo han menh de nhuong bo cua OpenStax - dung hinh dang quy tac 13 cong quy tac 3. Nay giu ca hai. DA XAC NHAN nguyen van NHGRI: 'almost always a protein' (hedge giu dung), 'not destroyed during the reaction and is used over and over', 'A cell contains thousands of different types of enzyme molecules'. Con so 'hang nghin' CO nguon, khong phai so tran."
   },
   {
     "slug": "dot-bien",
@@ -1267,8 +1267,8 @@
     "termEn": "Mutation",
     "shortDef": "Thay đổi trong trình tự DNA của một sinh vật. Nó có thể đến từ lỗi sao chép DNA lúc tế bào phân chia, từ tiếp xúc với tác nhân gây đột biến, hoặc từ nhiễm virus.",
     "shortDefEn": "A change in the DNA sequence of an organism. It can arise from errors in DNA replication during cell division, from exposure to mutagens, or from a viral infection.",
-    "fullDef": "Sao chép DNA là quá trình rất chính xác, nhưng thỉnh thoảng vẫn sai — chẳng hạn enzyme polymerase chèn nhầm một base. Tế bào có nhiều lớp sửa lỗi: polymerase tự đọc soát ngay trong lúc sao chép, cơ chế sửa bắt cặp sai dọn phần còn lại sau khi sao chép xong, và cơ chế cắt bỏ nucleotide gỡ những base hỏng do tác nhân bên ngoài như tia tử ngoại.\n\nĐột biến là phần lọt qua tất cả các lớp ấy. NHGRI mô tả: đột biến xảy ra trong tế bào của chúng ta suốt ngày đêm, nhưng gần như không cái nào ảnh hưởng tới sức khoẻ.\n\nĐừng đánh đồng đột biến với bệnh. Phần lớn không có hậu quả đáng kể, một phần vì các cơ chế sửa lỗi, một phần vì chúng xảy ra ở tế bào sinh dưỡng nên không truyền đi xa.",
-    "fullDefEn": "DNA replication is a highly accurate process, but mistakes occasionally happen — a polymerase inserting the wrong base, for instance. Cells have several layers of correction: the polymerase proofreads as it copies, mismatch repair cleans up after replication, and nucleotide excision repair removes bases damaged by outside factors such as UV.\n\nA mutation is what gets through all of those layers. NHGRI puts it plainly: mutations are happening in our cells all the time, but almost none of them affect our health.\n\nDo not equate mutation with disease. Most have no significant consequence, partly because of the repair mechanisms and partly because they occur in somatic cells and so travel no further.",
+    "fullDef": "Sao chép DNA là quá trình rất chính xác, nhưng thỉnh thoảng vẫn sai — chẳng hạn enzyme polymerase chèn nhầm một base. Tế bào có nhiều lớp sửa lỗi: polymerase tự đọc soát ngay trong lúc sao chép, cơ chế sửa bắt cặp sai dọn phần còn lại sau khi sao chép xong, và cơ chế cắt bỏ nucleotide gỡ những base hỏng do tác nhân bên ngoài như tia tử ngoại.\n\nĐột biến là phần lọt qua tất cả các lớp ấy. NHGRI mô tả: đột biến xảy ra trong tế bào của chúng ta suốt ngày đêm, nhưng gần như không cái nào ảnh hưởng tới sức khoẻ — một phần vì tế bào có bộ máy sửa chữa rất tinh vi và rất nhanh, một phần vì phần lớn đột biến xảy ra ở tế bào sinh dưỡng như tế bào cơ hay tế bào da, nên chỉ ảnh hưởng tới chính tế bào mang chúng.\n\nNhưng đó không phải toàn bộ câu chuyện, và phần còn lại nằm ngay trên cùng hai trang nguồn. NHGRI lưu ý đột biến ở tế bào dòng mầm — trứng và tinh trùng — sẽ có mặt trong mọi tế bào phát triển từ đó, tức là trong cả một con người, nên có thể gây hậu quả lớn hơn; đột biến dòng mầm có thể truyền sang đời sau, còn đột biến ở tế bào sinh dưỡng thì không. Và OpenStax cho biết đột biến ở chính các gen sửa lỗi đã được biết là gây ung thư: nhiều gen sửa lỗi bị đột biến có liên quan tới một số dạng ung thư tuỵ, ung thư đại tràng và ung thư đại trực tràng.",
+    "fullDefEn": "DNA replication is a highly accurate process, but mistakes occasionally happen — a polymerase inserting the wrong base, for instance. Cells have several layers of correction: the polymerase proofreads as it copies, mismatch repair cleans up after replication, and nucleotide excision repair removes bases damaged by outside factors such as UV.\n\nA mutation is what gets through all of those layers. NHGRI puts it plainly: mutations are happening in our cells all the time, but almost none of them affect our health — partly because cells have very sophisticated machinery for repairing mutations very quickly, and partly because most mutations occur in somatic cells such as muscle or skin cells and can only affect the cell where the mutation occurred.\n\nThat is not the whole story, though, and the rest of it is on the same two source pages. NHGRI notes that mutations in germline cells — eggs and sperm — will be present in every cell that develops from that egg or sperm, an entire person, and can have larger effects; germline mutations can be passed on to offspring, while somatic mutations are not. And OpenStax reports that mutations in the repair genes themselves have been known to cause cancer: many mutated repair genes have been implicated in certain forms of pancreatic, colon and colorectal cancer.",
     "aliases": [
       "mutation"
     ],
@@ -1285,8 +1285,8 @@
         "url": "https://openstax.org/books/biology-2e/pages/14-6-dna-repair"
       }
     ],
-    "verdict": "REVISE",
-    "notes": "Dot 3, soan ngay 2026-09-21, nham vao nhom bai sinh hoc va suc khoe hien chua co tooltip nao. Moi URL da tai va doi chieu cung ngay. Ap ca sau quy tac 3/11/12/13/14/15. verdict de REVISE."
+    "verdict": "PASS",
+    "notes": "Duyet accuracy gate dot 3 boi science-editor, 2026-09-21. Reviewer tu tai lai toan bo URL nguon trong cung ngay va doi chieu tung menh de Viet-Anh. LOI NANG NHAT CUA DOT NAY, da sua. Ban cu ket bang 'Dung danh dong dot bien voi benh. Phan lon khong co hau qua dang ke, mot phan vi cac co che sua loi, mot phan vi chung xay ra o TE BAO SINH DUONG nen khong truyen di xa.' Do la quy tac 15: chinh trang NHGRI duoc trich co CA HAI ve - 'Germline mutations (that occur in eggs and sperm) CAN BE PASSED ON to offspring' va 'When mutations occur in germline cells... they will be present in every cell... AND CAN HAVE LARGER EFFECTS'. Ban cu giu ve sinh duong va bo ve dong mam, roi trinh bay nhu toan bo. Cong them quy tac 14: OpenStax 14.6, nguon thu hai cua chinh muc tu nay, viet 'Mutations in repair genes have been known to cause cancer' va neu ung thu tuy/dai trang/dai truc trang - tuc la muc tu dan doc gia di nguoc trang no trich. Cau menh lenh 'Dung danh dong dot bien voi benh' cung bi cat: khong nguon nao ra chi thi do cho nguoi doc. Nay giu nguyen cau tran an cua NHGRI o doan 2 dung cho NHGRI dat no, va tra lai doi trong o doan 3. Ba co che sua loi: DA XAC NHAN OpenStax 14.6 co DUNG ba, dung ten - khong phai loi quy tac 15."
   },
   {
     "slug": "khang-the",
@@ -1294,12 +1294,11 @@
     "termEn": "Antibody",
     "shortDef": "Một protein của hệ miễn dịch, lưu thông trong máu, nhận diện các chất lạ như vi khuẩn và virus rồi vô hiệu hoá chúng. Kháng thể do tế bào lympho B sản xuất.",
     "shortDefEn": "A protein of the immune system that circulates in the blood, recognises foreign substances such as bacteria and viruses, and neutralises them. Antibodies are made by B cells.",
-    "fullDef": "Kháng thể do một loại bạch cầu gọi là tế bào lympho B sản xuất. Tế bào lympho B trưởng thành trong tuỷ xương.\n\nĐầu mút của phân tử kháng thể có một vùng siêu biến. Chính vùng ấy cho phép cơ thể tạo ra nhiều loại kháng thể khác nhau, đủ để đáp ứng với mọi kháng nguyên mà nó gặp phải.\n\nKháng thể không hoạt động một mình. Các protein bổ thể đặc biệt bị hút về phía mầm bệnh đã bị kháng thể gắn vào, nên việc gắn kháng thể còn là tín hiệu gọi thêm các nhánh khác của hệ miễn dịch.",
-    "fullDefEn": "Antibodies are made by a kind of white blood cell called a B cell. B cells are lymphocytes that mature in the bone marrow.\n\nThe tip of an antibody molecule carries a hypervariable region. That region is what lets the body make many different antibodies, enough to respond to all the antigens it meets.\n\nAntibodies do not act alone. Complement proteins are particularly attracted to pathogens already bound by antibodies, so antibody binding also serves as a call to other branches of the immune system.",
+    "fullDef": "Kháng thể do một loại bạch cầu gọi là tế bào lympho B sản xuất. Tế bào lympho B trưởng thành trong tuỵ xương.\n\nĐầu mút của phân tử kháng thể có một vùng siêu biến. Chính vùng ấy cho phép tạo ra nhiều loại kháng thể khác nhau, để đáp ứng với mọi kháng nguyên tấn công cơ thể. Kháng nguyên là bất cứ thứ gì lạ với cơ thể người — có thể là virus, có thể là vi khuẩn, và trong một số trường hợp chính một phần cơ thể bạn cũng bị nhận là lạ.\n\nKháng thể không hoạt động một mình. Các protein bổ thể gắn lên bề mặt vi sinh vật, và chúng đặc biệt bị hút về phía những mầm bệnh đã bị kháng thể gắn vào.",
+    "fullDefEn": "Antibodies are made by a kind of white blood cell called a B cell. B cells are lymphocytes that mature in the bone marrow.\n\nAt the very tip of an antibody molecule is a hypervariable region. That region is what allows many different types of antibody to be made, to respond to all of the antigens that assault the body. An antigen is anything that is foreign to the human body — it can be a virus, it can be a bacterium, and in some cases your own body will appear as foreign.\n\nAntibodies do not act alone. Complement proteins bind to the surfaces of microorganisms, and they are particularly attracted to pathogens that are already bound by antibodies.",
     "aliases": [
       "antibody",
-      "immunoglobulin",
-      "te-bao-lympho-b"
+      "immunoglobulin"
     ],
     "category": "Sinh học",
     "sources": [
@@ -1314,17 +1313,17 @@
         "url": "https://openstax.org/books/biology-2e/pages/42-1-innate-immune-response"
       }
     ],
-    "verdict": "REVISE",
-    "notes": "Dot 3, soan ngay 2026-09-21, nham vao nhom bai sinh hoc va suc khoe hien chua co tooltip nao. Moi URL da tai va doi chieu cung ngay. Ap ca sau quy tac 3/11/12/13/14/15. verdict de REVISE."
+    "verdict": "PASS",
+    "notes": "Duyet accuracy gate dot 3 boi science-editor, 2026-09-21. Reviewer tu tai lai toan bo URL nguon trong cung ngay va doi chieu tung menh de Viet-Anh. BO alias 'te-bao-lympho-b'. Phep thu alias cua dot 2: shortDef cua muc dich phai tra loi duoc chinh cai ten alias do. shortDef o day chi noi te bao lympho B LA BEN SAN XUAT khang the, khong dinh nghia te bao lympho B la gi; va ghep hai ten vao mot tooltip de khien nguoi doc tuong khang the va te bao B la mot. Te bao lympho B xung dang mot muc tu rieng. SUA doan 3: ban cu suy them 'nen viec gan khang the con la TIN HIEU GOI them cac nhanh khac cua he mien dich' - OpenStax 42.1 chi noi bo the 'are particularly attracted to' mam benh da bi khang the gan; bien mot lien he thanh mot co che tin hieu la quy tac 12. Nay dung o muc nguon dung. XAC NHAN hai cho reviewer da nghi ngo nhung DUNG: 'te bao lympho B truong thanh trong tuy xuong' co nguyen van tai OpenStax 42.1 ('B cells are lymphocytes that mature in the bone marrow'), va 'du de dap ung voi moi khang nguyen' co nguyen van tai NHGRI ('respond to all of the antigens that will assault the body'). Ca hai giu lai. Them cau dinh nghia khang nguyen vi nguon NHGRI co va no lam day doan 2."
   },
   {
     "slug": "crispr",
     "term": "CRISPR",
     "termEn": "CRISPR",
-    "shortDef": "Công nghệ các nhà nghiên cứu dùng để sửa DNA của sinh vật sống một cách có chọn lọc. Nó được phỏng theo những hệ chỉnh sửa bộ gen vốn có sẵn trong vi khuẩn.",
-    "shortDefEn": "A technology research scientists use to selectively modify the DNA of living organisms. It was adapted from naturally occurring genome editing systems found in bacteria.",
-    "fullDef": "CRISPR không phải phát minh từ con số không. NHGRI mô tả nó được phỏng theo, để dùng trong phòng thí nghiệm, từ những hệ chỉnh sửa bộ gen vốn tồn tại sẵn trong vi khuẩn.\n\nNó thuộc nhóm công cụ của kỹ thuật di truyền — thay đổi kiểu gen của một sinh vật bằng công nghệ DNA tái tổ hợp để đạt một đặc tính mong muốn.\n\nỨng dụng không chỉ nằm ở chỉnh sửa. NHGRI nêu một hướng khác: dùng CRISPR để phát hiện RNA của virus COVID mà không cần khuếch đại gen.",
-    "fullDefEn": "CRISPR was not invented from nothing. NHGRI describes it as adapted for laboratory use from naturally occurring genome editing systems found in bacteria.\n\nIt belongs to the toolkit of genetic engineering — altering an organism's genotype using recombinant DNA technology to achieve a desired trait.\n\nThe applications are not only editing. NHGRI notes another: using CRISPR to detect COVID RNA without gene amplification.",
+    "shortDef": "Công nghệ các nhà nghiên cứu dùng để sửa DNA của sinh vật sống một cách có chọn lọc: một đoạn RNA dẫn đường đưa enzyme Cas9 tới đúng trình tự DNA đích, và Cas9 cắt bộ gen tại đó. Trong tự nhiên, vi khuẩn dùng CRISPR như một hệ miễn dịch để tiêu diệt virus xâm nhập; nó đã được phỏng theo để dùng trong phòng thí nghiệm.",
+    "shortDefEn": "A technology research scientists use to selectively modify the DNA of living organisms: a guide RNA directs the Cas9 enzyme to the targeted DNA sequence, and Cas9 cuts the genome there. In nature, CRISPR is used by bacteria as an immune system to kill invading viruses; it has now been adapted for use in the lab.",
+    "fullDef": "CRISPR không phải phát minh từ con số không. Trong tự nhiên, vi khuẩn dùng CRISPR như một hệ miễn dịch để tiêu diệt virus xâm nhập; nó đã được phỏng theo để dùng trong phòng thí nghiệm.\n\nCách dùng: nhà nghiên cứu tạo một đoạn RNA ngắn khớp với trình tự DNA đích trong bộ gen. Đoạn RNA ấy, gọi là RNA dẫn đường, dẫn enzyme Cas9 tới trình tự đó, và Cas9 cắt bộ gen tại vị trí này để thực hiện chỉnh sửa. NHGRI mô tả CRISPR đơn giản hơn, nhanh hơn, rẻ hơn và chính xác hơn các phương pháp chỉnh sửa bộ gen cũ, và ghi niên đại ra đời là năm 2009.\n\nỨng dụng không chỉ nằm ở chỉnh sửa. NHGRI nêu một hướng khác: dùng CRISPR để phát hiện RNA của virus COVID mà không cần tạo bản sao trước hay khuếch đại gen.",
+    "fullDefEn": "CRISPR was not invented from nothing. In nature, CRISPR is used by bacteria as an immune system to kill invading viruses; it has now been adapted for use in the lab.\n\nHow it is used: researchers create a short RNA template that matches a target DNA sequence in the genome. That RNA portion, called a guide RNA, directs the Cas9 enzyme to the targeted sequence, and Cas9 cuts the genome at this location to make the edit. NHGRI describes CRISPR as simpler, faster, cheaper and more accurate than older genome editing methods, and dates its invention to 2009.\n\nThe applications are not only editing. NHGRI notes another: using CRISPR to detect COVID RNA without making copies up front or performing gene amplification.",
     "aliases": [
       "crispr-cas9"
     ],
@@ -1336,22 +1335,27 @@
         "url": "https://www.genome.gov/genetics-glossary/CRISPR"
       },
       {
-        "title": "Biology 2e, 17.1 Biotechnology",
-        "publisher": "OpenStax, Rice University",
-        "url": "https://openstax.org/books/biology-2e/pages/17-1-biotechnology"
+        "title": "How Does Genome Editing Work?",
+        "publisher": "National Human Genome Research Institute, NIH",
+        "url": "https://www.genome.gov/about-genomics/policy-issues/Genome-Editing/How-genome-editing-works"
+      },
+      {
+        "title": "What is genome editing?",
+        "publisher": "National Human Genome Research Institute, NIH",
+        "url": "https://www.genome.gov/about-genomics/policy-issues/what-is-Genome-Editing"
       }
     ],
-    "verdict": "REVISE",
-    "notes": "Dot 3, soan ngay 2026-09-21, nham vao nhom bai sinh hoc va suc khoe hien chua co tooltip nao. Moi URL da tai va doi chieu cung ngay. Ap ca sau quy tac 3/11/12/13/14/15. verdict de REVISE. LUU Y cho reviewer: nguon NHGRI dinh nghia CRISPR nhung KHONG mo ta Cas9. Muc tu vi the co y KHONG giai thich co che cat DNA cua Cas9 - do la quy tac 1 va 15, khong phai thieu sot. Neu reviewer muon co che thi phai them nguon phu du no."
+    "verdict": "PASS",
+    "notes": "Duyet accuracy gate dot 3 boi science-editor, 2026-09-21. Reviewer tu tai lai toan bo URL nguon trong cung ngay va doi chieu tung menh de Viet-Anh. CAU HOI CUA REVIEWER VE CAS9: lap luan CUA BAN DUNG. Trang NHGRI genetics-glossary/CRISPR dinh nghia CRISPR ma thuc su KHONG he nhac Cas9, RNA dan duong hay co che cat - reviewer da tai lai va xac nhan tung chu. Viet co che tu tri nho trong pham vi goi nguon do la vi pham quy tac 1, va ban da dung khi khong viet. NHUNG day la mot LO HONG NGUON chu khong phai mot su that phai giau: NHGRI co hai trang khac noi thang dieu do, va reviewer da them chung vao nguon - 'How Does Genome Editing Work?' cho RNA dan duong + Cas9 cat bo gen, va 'What is genome editing?' cho so sanh don gian/nhanh/re/chinh xac hon va nam 2009. Nen ket luan: cho trong la DUNG LUAT voi goi nguon cu, va nay da lap duoc bang nguon chu khong bang tri nho. (Hai URL genome editing cua NHGRI ma ban bao 404 la duong dan khac; hai duong dan tren tai duoc ngay 21/09.)\nCAT doan 2 cu: 'No thuoc nhom cong cu cua ky thuat di truyen - thay doi kieu gen bang cong nghe DNA TAI TO HOP'. OpenStax 17.1 - nguon duoc trich cho cau do - KHONG HE nhac toi CRISPR o bat ky dau, reviewer da doi chieu ca trang. Ban da tu han dinh nghia cua nguon A len doi tuong cua nguon B (quy tac 14), va ket qua sai ve chat: chinh sua bo gen bang CRISPR khong phai cong nghe DNA tai to hop theo nghia plasmid ma OpenStax dinh nghia. BO luon OpenStax 17.1 khoi danh sach nguon vi sau khi cat no khong con chong do menh de nao - citation khong chong do gi la trang tri. Quan he CRISPR <-> ky thuat di truyen nen do knowledge-graph-manager mo hinh hoa bang canh co kieu, dung de van xuoi khang dinh. Alias 'crispr-cas9' nay da hop le vi shortDef/fullDef co nhac Cas9.\nSUA THEM shortDef cho khop: ban cu dung cum loose cua trang glossary ('phong theo nhung he CHINH SUA BO GEN von co san trong vi khuan') trong khi trang 'How Does Genome Editing Work?' cua chinh NHGRI noi chinh xac hon - trong tu nhien do la mot HE MIEN DICH diet virus xam nhap. Quy tac 13, nguon chat hon thang. Va vi phep thu alias xet shortDef (do moi la chu hien trong tooltip), Cas9 phai nam o shortDef chu khong chi o fullDef thi alias 'crispr-cas9' moi thuc su hop le."
   },
   {
     "slug": "ky-thuat-di-truyen",
     "term": "Kỹ thuật di truyền",
     "termEn": "Genetic engineering",
-    "shortDef": "Thay đổi kiểu gen của một sinh vật bằng công nghệ DNA tái tổ hợp, để sinh vật mang một đặc tính mong muốn.",
-    "shortDefEn": "Altering an organism's genotype using recombinant DNA technology, so that the organism carries a desired trait.",
-    "fullDef": "Công cụ trung tâm là phân tử DNA tái tổ hợp: một plasmid đã được chèn DNA ngoại lai vào. Những phân tử như vậy được tạo ra nhân tạo và không tồn tại trong tự nhiên.\n\nTừ đó, đoạn DNA ngoại lai được đưa vào sinh vật đích, và nếu nó hoạt động thì sinh vật biểu hiện đặc tính mà đoạn DNA ấy quy định.\n\nCRISPR là một công cụ trong nhóm này, nhưng không phải công cụ duy nhất, và kỹ thuật di truyền đã tồn tại trước khi CRISPR được phỏng theo từ vi khuẩn.",
-    "fullDefEn": "The central tool is the recombinant DNA molecule: a plasmid with foreign DNA inserted into it. Such molecules are created artificially and do not occur in nature.\n\nThe foreign DNA is then introduced into the target organism, and if it works, the organism expresses the trait that stretch of DNA specifies.\n\nCRISPR is one tool in this family but not the only one, and genetic engineering existed before CRISPR was adapted from bacteria.",
+    "shortDef": "Quá trình dùng các công nghệ trong phòng thí nghiệm để thay đổi DNA của một sinh vật. Kỹ thuật kinh điển là DNA tái tổ hợp: một plasmid được chèn DNA ngoại lai vào, nhằm cho sinh vật mang một đặc tính mong muốn.",
+    "shortDefEn": "A process that uses laboratory-based technologies to alter the DNA makeup of an organism. The classic technique is recombinant DNA: a plasmid with foreign DNA inserted into it, so that the organism carries a desired trait.",
+    "fullDef": "NHGRI định nghĩa rộng: kỹ thuật di truyền, còn gọi là biến đổi gen, là quá trình dùng các công nghệ trong phòng thí nghiệm để thay đổi DNA của một sinh vật.\n\nOpenStax mô tả kỹ thuật kinh điển trong nhóm này: thay đổi kiểu gen của sinh vật bằng công nghệ DNA tái tổ hợp để đạt một đặc tính mong muốn. Phân tử DNA tái tổ hợp là một plasmid đã được chèn DNA ngoại lai vào; chúng mang tên ấy vì được tạo ra nhân tạo và không tồn tại trong tự nhiên.\n\nĐoạn DNA ngoại lai sau đó được đưa vào sinh vật đích, và nếu nó hoạt động thì sinh vật biểu hiện đặc tính mà đoạn DNA ấy quy định. NHGRI lưu ý lĩnh vực này đã đổi khác qua năm tháng, từ nhân dòng để phân tích và dùng trong phòng thí nghiệm, tới sinh học tổng hợp thực thụ.",
+    "fullDefEn": "NHGRI gives the broad definition: genetic engineering, also called genetic modification, is a process that uses laboratory-based technologies to alter the DNA makeup of an organism.\n\nOpenStax describes the classic technique in this family: altering an organism's genotype using recombinant DNA technology to achieve a desirable trait. A recombinant DNA molecule is a plasmid with foreign DNA inserted into it; they are called that because they are created artificially and do not occur in nature.\n\nThe foreign DNA is then introduced into the target organism, and if it works, the organism expresses the trait that stretch of DNA specifies. NHGRI notes that the field has changed over the years, from cloning for analysis and laboratory use to truly synthetic biology.",
     "aliases": [
       "genetic-engineering",
       "dna-tai-to-hop",
@@ -1360,41 +1364,46 @@
     "category": "Sinh học",
     "sources": [
       {
+        "title": "Genetic Engineering",
+        "publisher": "National Human Genome Research Institute, NIH",
+        "url": "https://www.genome.gov/genetics-glossary/Genetic-Engineering"
+      },
+      {
         "title": "Biology 2e, 17.1 Biotechnology",
         "publisher": "OpenStax, Rice University",
         "url": "https://openstax.org/books/biology-2e/pages/17-1-biotechnology"
-      },
-      {
-        "title": "CRISPR",
-        "publisher": "National Human Genome Research Institute, NIH",
-        "url": "https://www.genome.gov/genetics-glossary/CRISPR"
       }
     ],
-    "verdict": "REVISE",
-    "notes": "Dot 3, soan ngay 2026-09-21, nham vao nhom bai sinh hoc va suc khoe hien chua co tooltip nao. Moi URL da tai va doi chieu cung ngay. Ap ca sau quy tac 3/11/12/13/14/15. verdict de REVISE."
+    "verdict": "PASS",
+    "notes": "Duyet accuracy gate dot 3 boi science-editor, 2026-09-21. Reviewer tu tai lai toan bo URL nguon trong cung ngay va doi chieu tung menh de Viet-Anh. CAT doan 3 cu: 'CRISPR la mot cong cu trong nhom nay, nhung khong phai cong cu duy nhat, va ky thuat di truyen DA TON TAI TRUOC KHI CRISPR duoc phong theo tu vi khuan.' OpenStax 17.1 khong nhac CRISPR o bat ky dau, va khong nguon nao trong goi dat nien dai cho ky thuat di truyen - khang dinh thu tu thoi gian nay khong co nguon nao ca (quy tac 1 + 14).\nLOI PHAM VI NGUON, nghiem trong hon: shortDef cu lay dinh nghia HEP cua OpenStax ('thay doi kieu gen bang cong nghe DNA TAI TO HOP') lam dinh nghia chinh. NHGRI - co quan co tham quyen, bac cao hon giao trinh dai hoc trong thang nguon - dinh nghia RONG hon: 'a process that uses laboratory-based technologies to alter the DNA makeup of an organism', khong han che o DNA tai to hop. Chinh dinh nghia hep ay la thu da lan sang muc 'crispr' va de ra khang dinh sai o do. Nay dan bang dinh nghia NHGRI, va dat ky thuat DNA tai to hop dung vi tri 'ky thuat kinh dien' ma OpenStax mo ta. THEM dinh nghia DNA tai to hop vao shortDef de hai alias 'dna-tai-to-hop' / 'recombinant-dna' co cho tra loi - truoc do shortDef dung cum 'cong nghe DNA tai to hop' ma khong giai thich, tuc la tooltip tra loi vong quanh. THEM nguon NHGRI Genetic Engineering; BO nguon NHGRI CRISPR vi sau khi cat doan 3 no khong con chong do menh de nao. 'Tao ra nhan tao va khong ton tai trong tu nhien': DA XAC NHAN nguyen van OpenStax 17.1, giu."
   },
   {
     "slug": "gia-duoc",
     "term": "Giả dược",
     "termEn": "Placebo",
-    "shortDef": "Hiệu ứng giả dược là một kết quả sức khoẻ có lợi, đến từ việc người bệnh TRÔNG ĐỢI rằng can thiệp sẽ giúp ích.",
-    "shortDefEn": "The placebo effect is a beneficial health outcome resulting from a person's anticipation that an intervention will help.",
-    "fullDef": "Định nghĩa của NCCIH đặt trọng tâm vào sự trông đợi của người bệnh, chứ không vào bản thân viên thuốc. Đó là lý do hiệu ứng này xuất hiện trong nhiều loại can thiệp khác nhau.\n\nBa hướng nghiên cứu NCCIH nêu ra: đã tìm được một dấu ấn di truyền có thể dự đoán mức đáp ứng với giả dược; có bằng chứng cho thấy đáp ứng giả dược có thể diễn ra ngoài ý thức; và có kết quả cho thấy giả dược vẫn có ích ngay cả khi người bệnh BIẾT mình đang dùng giả dược.\n\nGiữ đúng phạm vi của định nghĩa: NCCIH nói về một kết quả có lợi đến từ trông đợi. Trang không khẳng định cơ chế nào khác ngoài trông đợi và tương tác với nhân viên y tế, và cũng không gợi ý giả dược thay thế được điều trị dựa trên bằng chứng.",
-    "fullDefEn": "NCCIH's definition puts the weight on the patient's anticipation, not on the pill itself. That is why the effect shows up across many different kinds of intervention.\n\nThree research findings NCCIH highlights: a genetic marker has been found that may predict placebo responsiveness; there is evidence that placebo responses can operate outside conscious awareness; and results suggest placebos may help even when patients know they are receiving one.\n\nKeep to the scope of the definition: NCCIH describes a beneficial outcome arising from anticipation. The page claims no mechanism beyond anticipation and interaction with a health-care provider, and does not suggest placebos replace evidence-based treatment.",
+    "shortDef": "Giả dược là một chất hoặc cách điều trị không có hoạt tính, trông giống và được dùng giống hệt liệu pháp đang được thử nghiệm. Hiệu ứng giả dược là một kết quả sức khoẻ có lợi, đến từ việc người bệnh TRÔNG ĐỢI rằng can thiệp sẽ giúp ích.",
+    "shortDefEn": "A placebo is an inactive substance or treatment that looks the same as, and is given the same way as, an active therapy being tested. The placebo effect is a beneficial health outcome resulting from a person's anticipation that an intervention will help.",
+    "fullDef": "Định nghĩa của NCCIH đặt trọng tâm vào sự trông đợi của người bệnh, chứ không vào bản thân viên thuốc. NCCIH nói thêm rằng cách nhân viên y tế tương tác với người bệnh cũng có thể tạo ra một đáp ứng tích cực, độc lập với bất kỳ điều trị cụ thể nào.\n\nBa kết quả nghiên cứu NCCIH nêu ra: một nghiên cứu đã xác định được một dấu ấn di truyền có thể dự đoán liệu một người có đáp ứng với giả dược hay không; một nghiên cứu khác củng cố ý rằng đáp ứng giả dược có thể diễn ra ngoài ý thức; và một nghiên cứu thứ ba gợi ý rằng giả dược CÓ THỂ vẫn có ích ngay cả khi người bệnh biết mình đang dùng giả dược.\n\nNCCIH gọi thử nghiệm lâm sàng ngẫu nhiên có đối chứng giả dược là tiêu chuẩn vàng để kiểm định can thiệp trên người: người tình nguyện được phân ngẫu nhiên vào nhóm thử nhận can thiệp thực nghiệm, hoặc nhóm chứng nhận giả dược. So sánh kết quả hai nhóm cho biết thay đổi ở nhóm thử là do điều trị hay chỉ xảy ra do ngẫu nhiên.",
+    "fullDefEn": "NCCIH's definition puts the weight on the patient's anticipation, not on the pill itself. NCCIH adds that how a health care provider interacts with a patient may also bring about a positive response that is independent of any specific treatment.\n\nThree research findings NCCIH highlights: one study identified a genetic marker that may predict whether someone will respond to a placebo; another supported the idea that placebo responses may occur outside of conscious awareness; and a third suggested that placebos MAY be helpful even if patients know they are receiving placebos.\n\nNCCIH calls the randomized, placebo-controlled clinical trial the gold standard for testing interventions in people: volunteers are randomly assigned to a test group receiving the experimental intervention or a control group receiving a placebo. Comparing results from the two groups suggests whether changes in the test group result from the treatment or occur by chance.",
     "aliases": [
       "placebo",
       "hieu-ung-gia-duoc",
       "placebo-effect"
     ],
-    "category": "Sức khoẻ",
+    "category": "Y học",
     "sources": [
       {
         "title": "Placebo Effect",
         "publisher": "National Center for Complementary and Integrative Health, NIH",
         "url": "https://www.nccih.nih.gov/health/placebo-effect"
+      },
+      {
+        "title": "Placebo — NCATS Toolkit glossary",
+        "publisher": "National Center for Advancing Translational Sciences, NIH",
+        "url": "https://toolkit.ncats.nih.gov/glossary/placebo/"
       }
     ],
-    "verdict": "REVISE",
-    "notes": "Dot 3, soan ngay 2026-09-21, nham vao nhom bai sinh hoc va suc khoe hien chua co tooltip nao. Moi URL da tai va doi chieu cung ngay. Ap ca sau quy tac 3/11/12/13/14/15. verdict de REVISE. CHI CO MOT NGUON, nhung la trung tam dinh nghia cua NIH cho chu de nay. Theo tieu chi reviewer chot o dot 2, day khong phai claim gay tranh cai ve mat dinh nghia."
+    "verdict": "PASS",
+    "notes": "Duyet accuracy gate dot 3 boi science-editor, 2026-09-21. Reviewer tu tai lai toan bo URL nguon trong cung ngay va doi chieu tung menh de Viet-Anh. BA SUA. (1) Quy tac 3, rot hedge, va lech Viet-Anh: ban tieng Anh giu 'placebos MAY be helpful', ban tieng Viet viet 'gia duoc VAN CO ICH ngay ca khi...' - mat chu 'may' cua NCCIH. Da tra lai 'CO THE'. Day la menh de duy nhat trong ca dot ma hai ban ngon ngu noi khac nhau ve muc do chac chan.\n(2) Quy tac 12: cat 'Do la ly do hieu ung nay xuat hien trong nhieu loai can thiep khac nhau.' NCCIH khong noi cau do, va no bien mot dinh nghia thanh mot khang dinh nhan qua cong mot khang dinh thuc nghiem ve pham vi.\n(3) Doan 3 cu la CHO REVIEWER DOC, khong phai cho nguoi doc: 'Trang khong khang dinh co che nao khac...', 'cung khong goi y gia duoc thay the duoc dieu tri dua tren bang chung'. Ba cau do deu DUNG ve mat mo ta trang nguon - reviewer da kiem, NCCIH that su im lang ca hai chuyen. Nhung lap luan tu su im lang cua nguon la mot dang vuot pham vi: nguoi doc nhan ve 'gia duoc khong thay the duoc dieu tri' nhu mot ket luan CO NGUON, trong khi nguon khong he ket luan gi. Da thay bang noi dung huong toi nguoi doc va co nguon: thu nghiem lam sang ngau nhien co doi chung gia duoc, nguyen van tren chinh trang NCCIH ay. Do la thu nguoi doc can nhat va no von nam san trong nguon.\n(4) MOT NGUON: da giai quyet. Them NCATS (mot trung tam cua NIH) cho dinh nghia GIA DUOC - danh tu. Ban cu co mot lech it ai de y: term la 'Gia duoc' (placebo) nhung shortDef chi dinh nghia HIEU UNG gia duoc, nen alias 'placebo' truot phep thu dot 2. Them dinh nghia NCATS vua vap dinh gate hai nguon, vua khop term voi dinh nghia, vua cuu alias 'placebo'. Mot sua, bon van de.\n(5) CATEGORY doi 'Suc khoe' -> 'Y hoc': xem ghi chu chung cua dot."
   }
 ]

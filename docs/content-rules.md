@@ -534,3 +534,39 @@ tranh cãi, khi số liệu dễ cũ, hoặc khi bài nói ngược hiểu biế
 
 Bản vá nằm ở quy tắc 13, 14, 15 trong
 `.claude/skills/article-generator/SKILL.md`.
+
+---
+
+## Hai hình dạng nữa: phạm vi nguồn, và lập luận từ sự im lặng
+
+Chốt 2026-09-21, từ lượt duyệt ĐỢT BA — chạy khi đã có đủ sáu quy tắc trước.
+
+Sáu quy tắc ấy giữ được: hình dạng cũ chỉ tái phát ở mức nhẹ. Hai lỗi nặng
+nhất đợt này lại là hai hình dạng mới.
+
+**1. Hai nguồn định nghĩa cùng một thuật ngữ ở PHẠM VI khác nhau.** Khác với
+"nguồn lỏng và nguồn chặt" của hình dạng trước: ở đây cả hai đều chặt, nhưng
+một bên vẽ đường bao hẹp hơn. Mục "kỹ thuật di truyền" lấy định nghĩa của
+OpenStax, vốn buộc khái niệm vào công nghệ DNA tái tổ hợp; NHGRI — cơ quan
+chủ quản của ngành — định nghĩa rộng hơn, không buộc.
+
+Bản nháp lấy định nghĩa hẹp của nguồn bậc thấp. Rồi **chính định nghĩa hẹp ấy
+lan sang mục CRISPR** và đẻ ra một khẳng định sai ở đó: chỉnh sửa bộ gen bằng
+CRISPR không phải công nghệ DNA tái tổ hợp theo nghĩa plasmid mà OpenStax
+định nghĩa. Một lỗi phạm vi, hai mục từ hỏng. **Nguồn bậc cao hơn quyết định
+phạm vi, và đừng để một định nghĩa hẹp rò sang mục lân cận như thể nó là cả
+loại.**
+
+**2. Lập luận từ sự im lặng của nguồn.** Mục "giả dược" kết bằng hai câu: nguồn
+không khẳng định cơ chế nào khác, và nguồn không gợi ý giả dược thay thế điều
+trị. Cả hai **đúng từng chữ** với tư cách mô tả trang nguồn. Nhưng không câu
+nào là điều trang ấy nói, còn người đọc thì nhận chúng như kết luận có nguồn.
+
+Kèm theo là một dấu hiệu rẻ tiền để tự bắt: **đoạn văn nói về GÓI NGUỒN thay
+vì nói về CHỦ ĐỀ là đoạn đang nói với người duyệt, không nói với người đọc.**
+Chuyển nó sang `notes` và viết cho người đọc một đoạn có nội dung. Cùng loại
+với lỗi ở đợt 2, khi một `fullDef` chứa nguyên đoạn dặn người soạn giữ mức dè
+dặt — `fullDef` render thẳng lên trang.
+
+Bản vá nằm ở quy tắc 16 và 17 trong
+`.claude/skills/article-generator/SKILL.md`.
