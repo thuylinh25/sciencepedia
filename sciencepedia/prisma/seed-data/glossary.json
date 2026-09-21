@@ -473,8 +473,8 @@
     "termEn": "Photon",
     "shortDef": "Hạt của ánh sáng: một lượng tử năng lượng điện từ. Photon luôn chuyển động với tốc độ ánh sáng và mang năng lượng E = hf, chỉ phụ thuộc vào tần số f, với h là hằng số Planck.",
     "shortDefEn": "The particle of light: a quantum of electromagnetic energy. A photon always moves at the speed of light and carries an energy E = hf that depends only on its frequency f, where h is Planck's constant.",
-    "fullDef": "Ánh sáng vừa lan truyền như sóng, vừa trao đổi năng lượng theo từng gói rời rạc. Mỗi gói ấy là một photon. Năng lượng của nó không phụ thuộc vào độ sáng của nguồn mà chỉ phụ thuộc vào tần số: E = hf. Tăng độ sáng là tăng SỐ photon, không phải tăng năng lượng của từng photon.\n\nĐó chính là điều hiệu ứng quang điện buộc vật lý phải chấp nhận. Chiếu ánh sáng đỏ thật mạnh vào một kim loại vẫn không bứt được electron ra, trong khi ánh sáng tím yếu hơn nhiều lại làm được, vì mỗi photon tím mang đủ năng lượng còn mỗi photon đỏ thì không, bất kể có bao nhiêu photon.\n\nPhoton không có khối lượng nghỉ, nên không thể đứng yên: trong chân không nó luôn đi với đúng tốc độ ánh sáng. Mọi bức xạ điện từ, từ sóng vô tuyến tới tia gamma, đều là dòng photon, chỉ khác nhau ở tần số và do đó khác nhau ở năng lượng mỗi hạt.",
-    "fullDefEn": "Light travels as a wave yet exchanges energy in discrete packets. Each packet is a photon. Its energy does not depend on how bright the source is, only on frequency: E = hf. Making a source brighter increases the NUMBER of photons, not the energy each one carries.\n\nThis is what the photoelectric effect forced physics to accept. Very intense red light may fail to eject electrons from a metal while much fainter violet light succeeds, because each violet photon carries enough energy and each red one does not, however many of them arrive.\n\nA photon has no rest mass and therefore cannot be at rest: in vacuum it always travels at exactly the speed of light. All electromagnetic radiation, from radio waves to gamma rays, is a stream of photons, differing only in frequency and so in the energy of each quantum.",
+    "fullDef": "Ánh sáng vừa lan truyền như sóng, vừa trao đổi năng lượng theo từng gói rời rạc. Mỗi gói ấy là một photon. Năng lượng của nó không phụ thuộc vào độ sáng của nguồn mà chỉ phụ thuộc vào tần số: E = hf. Tăng độ sáng là tăng SỐ photon, không phải tăng năng lượng của từng photon.\n\nĐó chính là điều hiệu ứng quang điện buộc vật lý phải chấp nhận. Mỗi kim loại có một tần số ngưỡng riêng, và dưới ngưỡng ấy thì không electron nào bật ra, chiếu mạnh đến đâu cũng vậy. Với một kim loại có ngưỡng nằm giữa đỏ và tím, ánh sáng đỏ thật mạnh vẫn không bứt được electron ra, trong khi ánh sáng tím yếu hơn nhiều lại làm được, vì mỗi photon tím mang đủ năng lượng còn mỗi photon đỏ thì không, bất kể có bao nhiêu photon.\n\nPhoton không có khối lượng nghỉ, nên không thể đứng yên: trong chân không nó luôn đi với đúng tốc độ ánh sáng. Mọi bức xạ điện từ, từ sóng vô tuyến tới tia gamma, đều là dòng photon, chỉ khác nhau ở tần số và do đó khác nhau ở năng lượng mỗi hạt.",
+    "fullDefEn": "Light travels as a wave yet exchanges energy in discrete packets. Each packet is a photon. Its energy does not depend on how bright the source is, only on frequency: E = hf. Making a source brighter increases the NUMBER of photons, not the energy each one carries.\n\nThis is what the photoelectric effect forced physics to accept. Every metal has its own cut-off frequency, and below it no electrons come out however intense the light. For a metal whose cut-off falls between red and violet, very intense red light still ejects no electrons while much fainter violet light does, because each violet photon carries enough energy and each red one does not, however many of them arrive.\n\nA photon has no rest mass and therefore cannot be at rest: in vacuum it always travels at exactly the speed of light. All electromagnetic radiation, from radio waves to gamma rays, is a stream of photons, differing only in frequency and so in the energy of each quantum.",
     "aliases": [
       "quang-tu",
       "luong-tu-anh-sang"
@@ -492,8 +492,8 @@
         "url": "https://science.nasa.gov/ems/01_intro/"
       }
     ],
-    "verdict": "REVISE",
-    "notes": "Soan ngay 2026-09-21, dot bo sung muc tu cho cac cum boi dam chua co dinh nghia. Moi URL nguon da duoc tai va doi chieu cung ngay. verdict de REVISE vi science-editor CHUA duyet: seed-glossary.ts chi ghi muc PASS, nen muc nay chua vao CSDL."
+    "verdict": "PASS",
+    "notes": "Reviewed 2026-09-21 (science-editor). Both source URLs fetched and checked. OpenStax 6.2 carries the core verbatim: \"a photon's energy depends only on its frequency f\", E = hf, \"each photon moves at the speed of light\", \"doubling the intensity of radiation translates to doubling the number of photons\", and the cut-off frequency (\"when incident radiation has a frequency below the cut-off frequency, the photoelectric effect is not observed\").\n\nCHANGED - the red-vs-violet example. It was unconditional in Vietnamese (\"vẫn không bứt được\") but hedged in English (\"may fail\"): two different confidence levels for one claim, which is exactly what must not differ between locales. Neither version was right as an absolute either, because whether red sits below cut-off depends on the metal's work function - for platinum neither red nor violet ejects anything. Rewritten in both languages as conditional on the metal's cut-off, which is what OpenStax actually states.\n\nThe shortDef's unqualified \"luôn chuyển động với tốc độ ánh sáng\" is OpenStax's own wording and is left as is; fullDef adds \"trong chân không\". Aliases quang-tu and luong-tu-anh-sang are both current Vietnamese for this."
   },
   {
     "slug": "buc-xa-dien-tu",
@@ -501,8 +501,8 @@
     "termEn": "Electromagnetic radiation",
     "shortDef": "Năng lượng lan truyền trong không gian dưới dạng sóng điện từ, trải từ sóng vô tuyến bước sóng rất dài tới tia gamma bước sóng rất ngắn. Ánh sáng nhìn thấy chỉ là một dải hẹp trong đó.",
     "shortDefEn": "Energy travelling through space as electromagnetic waves, spanning from very long radio waves to very short gamma rays. Visible light is only a narrow band within it.",
-    "fullDef": "Bức xạ điện từ là cùng MỘT hiện tượng trải trên một dải liên tục, không phải nhiều hiện tượng khác nhau. Sóng vô tuyến, vi sóng, hồng ngoại, ánh sáng nhìn thấy, tử ngoại, tia X và tia gamma chỉ khác nhau ở bước sóng và tần số.\n\nTần số càng cao thì mỗi photon mang càng nhiều năng lượng. Vượt qua một ngưỡng nhất định, năng lượng ấy đủ để bứt electron ra khỏi nguyên tử. Khi đó bức xạ được gọi là ion hoá, và đó là ranh giới giữa phần vô hại và phần nguy hiểm cho mô sống.\n\nKhí quyển Trái Đất chỉ trong suốt với một số dải: ánh sáng nhìn thấy và phần lớn sóng vô tuyến đi qua được, còn tia X và tia gamma từ vũ trụ thì bị chặn gần hết. Đó là lý do kính thiên văn tia X phải đặt trên quỹ đạo.",
-    "fullDefEn": "Electromagnetic radiation is ONE phenomenon spread across a continuous spectrum, not several different ones. Radio waves, microwaves, infrared, visible light, ultraviolet, X-rays and gamma rays differ only in wavelength and frequency.\n\nThe higher the frequency, the more energy each photon carries. Above a certain threshold that energy is enough to knock electrons out of atoms; such radiation is called ionising, and that is the boundary between the harmless part of the spectrum and the part dangerous to living tissue.\n\nEarth's atmosphere is transparent only to some bands: visible light and most radio waves pass through, while cosmic X-rays and gamma rays are almost entirely blocked. That is why X-ray telescopes have to be placed in orbit.",
+    "fullDef": "Bức xạ điện từ là cùng MỘT hiện tượng trải trên một dải liên tục, không phải nhiều hiện tượng khác nhau. Sóng vô tuyến, vi sóng, hồng ngoại, ánh sáng nhìn thấy, tử ngoại, tia X và tia gamma chỉ khác nhau ở bước sóng và tần số.\n\nTần số càng cao thì mỗi photon mang càng nhiều năng lượng. Vượt qua một ngưỡng nhất định, năng lượng ấy đủ để bứt electron ra khỏi nguyên tử; bức xạ khi đó được gọi là ion hoá. Tia gamma, tia X và một phần tia tử ngoại nằm trong nhóm này, và chúng có thể làm hỏng tế bào sống — gây hại như cháy nắng, hoặc được dùng có chủ đích như trong xạ trị ung thư.\n\nKhí quyển Trái Đất chỉ trong suốt với một số dải: ánh sáng nhìn thấy và phần lớn sóng vô tuyến đi qua được, còn tia X và tia gamma từ vũ trụ thì bị chặn gần hết. Đó là lý do kính thiên văn tia X phải đặt trên quỹ đạo.",
+    "fullDefEn": "Electromagnetic radiation is ONE phenomenon spread across a continuous spectrum, not several different ones. Radio waves, microwaves, infrared, visible light, ultraviolet, X-rays and gamma rays differ only in wavelength and frequency.\n\nThe higher the frequency, the more energy each photon carries. Above a certain threshold that energy is enough to knock electrons out of atoms; such radiation is called ionising. Gamma rays, X-rays and some ultraviolet fall in this group, and they can damage living cells — harmfully, as in sunburn, or by design, as in cancer radiotherapy.\n\nEarth's atmosphere is transparent only to some bands: visible light and most radio waves pass through, while cosmic X-rays and gamma rays are almost entirely blocked. That is why X-ray telescopes have to be placed in orbit.",
     "aliases": [
       "song-dien-tu",
       "electromagnetic-radiation",
@@ -521,8 +521,8 @@
         "url": "https://openstax.org/books/university-physics-volume-3/pages/6-2-photoelectric-effect"
       }
     ],
-    "verdict": "REVISE",
-    "notes": "Soan ngay 2026-09-21, dot bo sung muc tu cho cac cum boi dam chua co dinh nghia. Moi URL nguon da duoc tai va doi chieu cung ngay. verdict de REVISE vi science-editor CHUA duyet: seed-glossary.ts chi ghi muc PASS, nen muc nay chua vao CSDL."
+    "verdict": "PASS",
+    "notes": "Reviewed 2026-09-21 (science-editor). NASA EMS intro fetched. Supported verbatim: the band list; \"Gamma rays, x-rays, and some ultraviolet waves are 'ionizing,' meaning these waves have such a high energy that they can knock electrons out of atoms\"; the atmosphere blocking gamma, X-ray and some UV while visible \"largely passes through\"; and \"instruments have to be positioned above Earth's energy-absorbing atmosphere\".\n\nCUT - \"đó là ranh giới giữa phần vô hại và phần nguy hiểm cho mô sống\" / \"the boundary between the harmless part of the spectrum and the part dangerous to living tissue\". No source says it and it is false: non-ionising radiation is not harmless (UV-A, infrared burns, microwave heating, high-power lasers). NASA is careful here - it characterises ionising radiation and gives non-ionising no safety characterisation at all. Replaced with the page's own framing: which bands are ionising, and that they can damage cells harmfully (sunburn) or by design (radiotherapy).\n\nFOR knowledge-architect, not blocking: alias pho-dien-tu points \"phổ điện từ\" (the spectrum) at the radiation entry. The two are distinct concepts. The tooltip a reader gets is still correct and relevant so it stays, but if a separate \"phổ điện từ\" entry is ever written this alias must move to it."
   },
   {
     "slug": "anh-sang-kha-kien",
@@ -530,8 +530,8 @@
     "termEn": "Visible light",
     "shortDef": "Dải bức xạ điện từ mà mắt người nhìn thấy được, bước sóng khoảng 380 tới 700 nanomét: tím ở đầu ngắn, đỏ ở đầu dài. Nó chỉ là một phần rất nhỏ của toàn phổ điện từ.",
     "shortDefEn": "The band of electromagnetic radiation the human eye can see, roughly 380 to 700 nanometres: violet at the short end, red at the long end. It is only a tiny slice of the full electromagnetic spectrum.",
-    "fullDef": "Không có gì đặc biệt về mặt vật lý ở dải 380 tới 700 nm: nó không khác các dải khác về bản chất. Điều đặc biệt nằm ở phía người quan sát: mắt người tiến hoá để nhạy đúng với dải mà khí quyển cho đi qua và Mặt Trời phát mạnh nhất.\n\nBên trong dải ấy, bước sóng quyết định màu ta cảm nhận: khoảng 380 nm cho tím, 450 nm cho xanh lam, 530 nm cho xanh lục, gần 700 nm cho đỏ. Ánh sáng trắng không phải một bước sóng riêng mà là hỗn hợp của nhiều bước sóng.\n\nMọi bức xạ điện từ đều là ánh sáng theo nghĩa vật lý; chỉ phần rất hẹp này là ánh sáng theo nghĩa nhìn thấy được. Phần còn lại vẫn ở quanh ta, và chỉ tiếp cận được bằng thiết bị.",
-    "fullDefEn": "There is nothing physically special about 380 to 700 nm: it is not different in kind from other bands. What is special sits on the observer's side. The human eye evolved to be sensitive to the band the atmosphere lets through and the Sun emits most strongly.\n\nWithin that band, wavelength sets the perceived colour: about 380 nm reads as violet, 450 nm as blue, 530 nm as green, close to 700 nm as red. White light is not a wavelength of its own but a mixture of many.\n\nAll electromagnetic radiation is light in the physical sense; only this very narrow part is light in the sense of being visible. The rest is still all around us, reachable only through instruments.",
+    "fullDef": "Không có gì đặc biệt về mặt vật lý ở dải 380 tới 700 nm: nó không khác các dải khác về bản chất. Điều đặc biệt nằm ở phía người quan sát: tế bào nón trong mắt người chỉ bắt đúng dải hẹp này, và Mặt Trời là nguồn ánh sáng nhìn thấy chủ yếu mà mắt ta nhận được.\n\nBên trong dải ấy, bước sóng quyết định màu ta cảm nhận: tím nằm ở đầu bước sóng ngắn, khoảng 380 nm, đỏ ở đầu bước sóng dài, khoảng 700 nm, các màu còn lại trải giữa hai đầu. Ánh sáng trắng không phải một bước sóng riêng mà là hỗn hợp của nhiều bước sóng.\n\nMọi bức xạ điện từ đều là ánh sáng theo nghĩa vật lý; chỉ phần rất hẹp này là ánh sáng theo nghĩa nhìn thấy được. Phần còn lại vẫn ở quanh ta, và chỉ tiếp cận được bằng thiết bị.",
+    "fullDefEn": "There is nothing physically special about 380 to 700 nm: it is not different in kind from other bands. What is special sits on the observer's side: the cone cells in the human eye are tuned to this narrow band alone, and the Sun is the dominant source of the visible light our eyes receive.\n\nWithin that band, wavelength sets the perceived colour: violet sits at the short-wavelength end, around 380 nm, red at the long-wavelength end, around 700 nm, and the other colours lie in between. White light is not a wavelength of its own but a mixture of many.\n\nAll electromagnetic radiation is light in the physical sense; only this very narrow part is light in the sense of being visible. The rest is still all around us, reachable only through instruments.",
     "aliases": [
       "anh-sang-nhin-thay",
       "visible-light",
@@ -550,8 +550,8 @@
         "url": "https://www.nei.nih.gov/learn-about-eye-health/healthy-vision/how-eyes-work"
       }
     ],
-    "verdict": "REVISE",
-    "notes": "Soan ngay 2026-09-21, dot bo sung muc tu cho cac cum boi dam chua co dinh nghia. Moi URL nguon da duoc tai va doi chieu cung ngay. verdict de REVISE vi science-editor CHUA duyet: seed-glossary.ts chi ghi muc PASS, nen muc nay chua vao CSDL."
+    "verdict": "PASS",
+    "notes": "Reviewed 2026-09-21 (science-editor). NASA Visible Light fetched: \"Typically, the human eye can detect wavelengths from 380 to 700 nanometers\" and \"Violet has the shortest wavelength, at around 380 nanometers, and red has the longest wavelength, at around 700 nanometers\". The 380-700 nm range and both endpoints check out.\n\nCUT 1 - \"mắt người tiến hoá để nhạy đúng với dải mà khí quyển cho đi qua và Mặt Trời phát mạnh nhất\". Neither source says this. The NASA page states the correlation (\"the Sun ... the dominant source for visible-light waves our eyes receive\") and deliberately stops short of the causation, and why the visible window sits where it does is still argued in the literature. Replaced with what the page does support: cone cells tuned to this band, and the Sun as the dominant source of the visible light we receive.\n\nCUT 2 - \"450 nm cho xanh lam, 530 nm cho xanh lục\". These interior values are on neither cited page. Unsourced numbers are removed, not softened; the two sourced endpoints stay and the sentence now says the other colours lie between them.\n\nNEI \"How the Eyes Work\" stays as the second source for the observer side of the entry."
   },
   {
     "slug": "proton",
@@ -575,10 +575,15 @@
         "title": "CODATA Value: proton mass",
         "publisher": "NIST",
         "url": "https://physics.nist.gov/cgi-bin/cuu/Value?mp"
+      },
+      {
+        "title": "Physics, 23.3 The Unification of Forces",
+        "publisher": "OpenStax, Rice University",
+        "url": "https://openstax.org/books/physics/pages/23-3-the-unification-of-forces"
       }
     ],
     "verdict": "REVISE",
-    "notes": "Soan ngay 2026-09-21, dot bo sung muc tu cho cac cum boi dam chua co dinh nghia. Moi URL nguon da duoc tai va doi chieu cung ngay. verdict de REVISE vi science-editor CHUA duyet: seed-glossary.ts chi ghi muc PASS, nen muc nay chua vao CSDL."
+    "notes": "Bo sung nguon thu ba theo yeu cau cua science-editor (21/09): OpenStax Physics 23.3 The Unification of Forces phu dung doan 3 - GUT tien doan proton phan ra voi thoi gian song co 10 mu 31 nam, Super-Kamiokande dung be nuoc 50.000 tan de tim, va tinh toi 2014 sau 17 nam van chua thay. Hai nguon cu (OpenStax 10.1, NIST) khong noi gi ve phan ra proton - dung nhan xet cua reviewer. URL da tai va doi chieu ngay 2026-09-21. Cho science-editor duyet lai."
   },
   {
     "slug": "vong-mac",
@@ -602,10 +607,15 @@
         "title": "Retinal Detachment",
         "publisher": "National Eye Institute, NIH",
         "url": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/retinal-detachment"
+      },
+      {
+        "title": "Biology 2e, 36.5 Vision",
+        "publisher": "OpenStax, Rice University",
+        "url": "https://openstax.org/books/biology-2e/pages/36-5-vision"
       }
     ],
     "verdict": "REVISE",
-    "notes": "Soan ngay 2026-09-21, dot bo sung muc tu cho cac cum boi dam chua co dinh nghia. Moi URL nguon da duoc tai va doi chieu cung ngay. verdict de REVISE vi science-editor CHUA duyet: seed-glossary.ts chi ghi muc PASS, nen muc nay chua vao CSDL."
+    "notes": "Bo sung nguon thu ba theo yeu cau cua science-editor (21/09): OpenStax Biology 2e 36.5 Vision phu dung doan 2 - que nhay sang manh, nam o ria vong mac, lo thi giac thieu sang va ngoai vi; non kem nhay hon, tap trung gan tam vong mac, phu trach thi giac ban ngay va mau sac. Hai nguon NEI khong he nhac toi que hay non - dung nhan xet cua reviewer. URL da tai va doi chieu ngay 2026-09-21. Cho science-editor duyet lai."
   },
   {
     "slug": "tu-quyen",
@@ -632,22 +642,22 @@
         "url": "https://www.spaceweather.gov/phenomena/earths-magnetosphere"
       }
     ],
-    "verdict": "REVISE",
-    "notes": "Soan ngay 2026-09-21, dot bo sung muc tu cho cac cum boi dam chua co dinh nghia. Moi URL nguon da duoc tai va doi chieu cung ngay. verdict de REVISE vi science-editor CHUA duyet: seed-glossary.ts chi ghi muc PASS, nen muc nay chua vao CSDL."
+    "verdict": "PASS",
+    "notes": "Reviewed 2026-09-21 (science-editor). Every number and every claim here is carried by the NASA heliophysics page, fetched and checked: \"A magnetosphere is the region around a planet dominated by the planet's magnetic field\" (the shortDef is this); \"the convective motion of charged, molten iron, far below the surface in Earth's outer core\"; \"a distance of about six to 10 times the radius of the Earth\" on the dayside - so the 6-10 Earth radii figure is sourced exactly as written, not rounded or invented; \"hundreds of Earth radii, far past the moon's orbit at 60 Earth radii\" for the tail; \"The magnetosphere shields our home planet from solar and cosmic particle radiation as well as erosion of the atmosphere by the solar wind\"; and \"Earth has the strongest one of all the rocky planets\".\n\nThat last one is a superlative, and superlatives normally need an as-of date under our date-bound rule. No re-check date attached here, deliberately: it rests on which terrestrial planets have an internal dynamo at all - Venus and Mars have no global field - not on a measurement ranking that a new result could reorder.\n\nNOAA independently confirms the tail (\"stretched out to hundreds of Earth radii, well beyond the orbit of the moon at 60 Earth radii\") and gives \"about 10 Earth radii\" dayside, consistent with NASA's range. Citation health: swpc.noaa.gov now 301s to spaceweather.gov, and the entry already stores the spaceweather.gov target, so it resolves without a redirect hop.\n\nNOT BLOCKING, for category-manager: category is \"Vật lý\" but all three paragraphs are about Earth and \"Khoa học Trái Đất\" already exists in the glossary labels. A placement question, not an accuracy one - left as drafted."
   },
   {
     "slug": "dam-may-oort",
     "term": "Đám mây Oort",
     "termEn": "Oort Cloud",
-    "shortDef": "Lớp vỏ cầu gồm hàng trăm tỉ thiên thể băng bao quanh Hệ Mặt Trời, nằm xa hơn hẳn vành đai Kuiper. Đây là nơi sinh của các sao chổi chu kỳ dài, và chưa từng được chụp ảnh trực tiếp.",
-    "shortDefEn": "A spherical shell of hundreds of billions of icy bodies surrounding the Solar System, far beyond the Kuiper Belt. It is the source of long-period comets, and has never been imaged directly.",
-    "fullDef": "Khác với vành đai Kuiper vốn là một đĩa dẹt, Đám mây Oort là một lớp vỏ cầu: các thiên thể trong đó không đi chung một mặt phẳng quỹ đạo mà chuyển động ở đủ mọi độ nghiêng quanh Mặt Trời.\n\nƯớc lượng của NASA đặt rìa trong ở khoảng 2.000 tới 5.000 AU và rìa ngoài ở khoảng 10.000 tới 100.000 AU. Số thiên thể băng trong đó có thể lên tới hàng trăm tỉ, thậm chí hàng nghìn tỉ.\n\nThỉnh thoảng quỹ đạo của một thiên thể như vậy bị nhiễu loạn, và nó bắt đầu một cú rơi rất dài về phía Mặt Trời. Đó là cách sao chổi chu kỳ dài xuất hiện. Vì quá xa, NASA chưa có ảnh chụp trực tiếp nào của Đám mây Oort; mọi hình minh hoạ đều là tranh vẽ theo ý niệm.",
-    "fullDefEn": "Unlike the Kuiper Belt, which is a flattened disc, the Oort Cloud is a spherical shell: its objects do not share one orbital plane but move at all inclinations around the Sun.\n\nNASA's estimates place the inner edge at roughly 2,000 to 5,000 AU and the outer edge at roughly 10,000 to 100,000 AU. The number of icy bodies out there may run to hundreds of billions, perhaps trillions.\n\nOccasionally the orbit of one such body is disturbed and it begins a very long fall toward the Sun. This is how long-period comets arrive. Because it is so far away, NASA has no direct images of the Oort Cloud; every depiction is an artist's concept.",
+    "shortDef": "Lớp vỏ cầu gồm các thiên thể băng được cho là bao quanh Hệ Mặt Trời, nằm xa hơn hẳn vành đai Kuiper; theo NASA có thể tới hàng trăm tỉ, thậm chí hàng nghìn tỉ thiên thể. Đám mây Oort được nêu ra để giải thích nguồn gốc các sao chổi chu kỳ dài, và chưa từng được chụp ảnh trực tiếp.",
+    "shortDefEn": "A spherical shell of icy bodies thought to surround the Solar System, far beyond the Kuiper Belt; NASA puts the count at possibly hundreds of billions, even trillions. The Oort Cloud was proposed to explain where long-period comets come from, and it has never been imaged directly.",
+    "fullDef": "Đám mây Oort là một cấu trúc giả thuyết: nó được nêu ra để giải thích quỹ đạo của các sao chổi chu kỳ dài, nên mọi mô tả dưới đây là mô hình chứ không phải quan sát trực tiếp. Khác với vành đai Kuiper vốn là một đĩa dẹt, các nhà khoa học cho rằng Đám mây Oort là một lớp vỏ cầu: các thiên thể trong đó không đi chung một mặt phẳng quỹ đạo mà chuyển động ở đủ mọi độ nghiêng quanh Mặt Trời.\n\nƯớc lượng của NASA đặt rìa trong ở khoảng 2.000 tới 5.000 AU và rìa ngoài ở khoảng 10.000 tới 100.000 AU. Số thiên thể băng trong đó có thể lên tới hàng trăm tỉ, thậm chí hàng nghìn tỉ.\n\nThỉnh thoảng quỹ đạo của một thiên thể như vậy bị nhiễu loạn, và nó bắt đầu một cú rơi rất dài về phía Mặt Trời. Đó là cách sao chổi chu kỳ dài xuất hiện. Vì quá xa, NASA chưa có ảnh chụp trực tiếp nào của Đám mây Oort; mọi hình minh hoạ đều là tranh vẽ theo ý niệm.",
+    "fullDefEn": "The Oort Cloud is a theorised structure: it was proposed to explain the orbits of long-period comets, so everything described below is a model rather than a direct observation. Unlike the Kuiper Belt, which is a flattened disc, scientists think the Oort Cloud is a spherical shell: its objects do not share one orbital plane but move at all inclinations around the Sun.\n\nNASA's estimates place the inner edge at roughly 2,000 to 5,000 AU and the outer edge at roughly 10,000 to 100,000 AU. The number of icy bodies out there may run to hundreds of billions, perhaps trillions.\n\nOccasionally the orbit of one such body is disturbed and it begins a very long fall toward the Sun. This is how long-period comets arrive. Because it is so far away, NASA has no direct images of the Oort Cloud; every depiction is an artist's concept.",
     "aliases": [
       "oort-cloud",
       "may-oort"
     ],
-    "category": "Vũ trụ học",
+    "category": "Thiên văn học",
     "sources": [
       {
         "title": "Oort Cloud Facts",
@@ -660,8 +670,8 @@
         "url": "https://science.nasa.gov/solar-system/oort-cloud/"
       }
     ],
-    "verdict": "REVISE",
-    "notes": "Soan ngay 2026-09-21, dot bo sung muc tu cho cac cum boi dam chua co dinh nghia. Moi URL nguon da duoc tai va doi chieu cung ngay. verdict de REVISE vi science-editor CHUA duyet: seed-glossary.ts chi ghi muc PASS, nen muc nay chua vao CSDL. Hai nguon cung mot nha xuat ban (NASA) - reviewer can nhac them mot nguon doc lap."
+    "verdict": "PASS",
+    "notes": "Reviewed 2026-09-21 (science-editor). Both NASA pages fetched. The distances are exact: \"The inner edge of the Oort Cloud, however, is thought to be located between 2,000 and 5,000 AU from the Sun, with the outer edge being located somewhere between 10,000 and 100,000 AU from the Sun\". Both ranges check out and the entry already attributed them to NASA as estimates. \"Vì quá xa, NASA chưa có ảnh chụp trực tiếp nào\" is verbatim NASA (\"Because it is so far away, NASA doesn't have direct images of the Oort Cloud\") and \"artist's concept\" is the page's own caption.\n\nCHANGED - hedging. NASA hedges this object three separate times and the draft had dropped all three. Source: \"a theorized group of icy objects\"; \"There MAY BE hundreds of billions, even trillions, of icy bodies\"; \"SCIENTISTS THINK the Oort Cloud is a giant spherical shell\". The draft asserted a shell that \"gồm hàng trăm tỉ thiên thể băng\" as established fact and opened fullDef with \"Đám mây Oort LÀ một lớp vỏ cầu\". The count itself was right - \"hàng trăm tỉ, thậm chí hàng nghìn tỉ\" is NASA's own phrase - the error was purely modality. Restored in both languages (được cho là / thought to, có thể tới / possibly, các nhà khoa học cho rằng / scientists think), plus an opening line in fullDef stating plainly that this is a theorised structure inferred from long-period comet orbits. Epistemically that is the single most important thing about the Oort Cloud and the entry now leads with it rather than burying it.\n\nLong-period comets confirmed: Oort \"proposed the existence of the cloud to explain (among other things) where long-period comets come from\". The entry now says \"được nêu ra để giải thích nguồn gốc\", which matches that framing instead of over-claiming a settled origin.\n\nCHANGED - category from \"Vũ trụ học\" to \"Thiên văn học\". The Oort Cloud is Solar-System astronomy, not cosmology, and Thiên văn học is the label the approved entries already use for this material (nam-anh-sang, sao-neutron, sieu-tan-tinh, tien-dong).\n\nBoth sources are NASA, as the drafter flagged. Accepted: tier-2 authoritative body, two separately maintained pages, and every figure is attributed to NASA in the text rather than stated as settled fact. An independent source would still be an improvement if this entry is expanded."
   },
   {
     "slug": "hanh-tinh-lun",
@@ -674,7 +684,7 @@
     "aliases": [
       "dwarf-planet"
     ],
-    "category": "Vũ trụ học",
+    "category": "Thiên văn học",
     "sources": [
       {
         "title": "IAU 2006 General Assembly: Result of the IAU Resolution votes (Resolution 5A)",
@@ -687,8 +697,8 @@
         "url": "https://science.nasa.gov/dwarf-planets/"
       }
     ],
-    "verdict": "REVISE",
-    "notes": "Soan ngay 2026-09-21, dot bo sung muc tu cho cac cum boi dam chua co dinh nghia. Moi URL nguon da duoc tai va doi chieu cung ngay. verdict de REVISE vi science-editor CHUA duyet: seed-glossary.ts chi ghi muc PASS, nen muc nay chua vao CSDL."
+    "verdict": "PASS",
+    "notes": "Reviewed 2026-09-21 (science-editor). RESOLUTION NUMBER CONFIRMED: it is 5A, not B5. The IAU URL in this entry resolves and is the genuine 2006 General Assembly results page. Resolution 5A is the planet definition; Resolution 6A is the separate Pluto resolution. \"B5\" is a misreading that circulates widely - the 2006 GA also ran a B-series of resolutions and the pre-vote drafts were numbered 5A and 5B, which is the likely source of the transposition. The drafter was right to make a point of it.\n\nAlso verified on the same page: the three planet criteria (orbits the Sun; enough mass for self-gravity to give a nearly round shape; \"has cleared the neighbourhood around its orbit\"); the dwarf-planet definition as the first two but not the third, plus not being a satellite; and the three initial members Ceres, Pluto and 2003 UB313. \"Sau được đặt tên là Eris\" is correct and is the right way to put it - 2003 UB313 was the designation at the time of the vote.\n\n\"Đúng một tiêu chí ... là thứ tách hai nhóm ra\" is accurate: clearing the neighbourhood is the only differing criterion, the satellite clause being an added exclusion rather than a shared criterion, and the entry words it that way.\n\nCHANGED - category from \"Vũ trụ học\" to \"Thiên văn học\", same reason as dam-may-oort: Solar-System astronomy, not cosmology.\n\nKEEP AS IS: the IAU definition is scoped to the Solar System and the entry says \"quay quanh Mặt Trời\" rather than generalising to other stars. Do not 'improve' that into a general definition later."
   },
   {
     "slug": "quan-tinh",
@@ -696,8 +706,8 @@
     "termEn": "Inertia",
     "shortDef": "Khả năng của một vật chống lại thay đổi trong chuyển động của nó, tức là chống lại gia tốc. Khối lượng chính là thước đo quán tính: vật càng nặng càng khó làm cho đổi vận tốc.",
     "shortDefEn": "An object's resistance to changes in its motion, that is, its resistance to acceleration. Mass is the measure of inertia: the more massive a body, the harder it is to change its velocity.",
-    "fullDef": "Định luật thứ nhất của Newton phát biểu: một vật đang đứng yên thì vẫn đứng yên, một vật đang chuyển động thì vẫn chuyển động với vận tốc không đổi, trừ khi có lực ngoài tổng hợp tác dụng lên nó. Vì lẽ đó nó thường được gọi là định luật quán tính.\n\nĐiều hay bị hiểu nhầm: chuyển động KHÔNG cần lực để duy trì. Lực chỉ cần để THAY ĐỔI chuyển động. Cảm giác ngược lại đến từ ma sát, thứ luôn có mặt trong đời sống hằng ngày nhưng không phải quy luật của chuyển động.\n\nQuán tính không phụ thuộc vào nơi vật đang ở. Một thiết bị nặng hàng tấn ngoài không gian tuy không có trọng lượng nhưng vẫn khó đẩy cho chuyển động và khó hãm lại đúng như trên mặt đất, vì khối lượng của nó không đổi.",
-    "fullDefEn": "Newton's first law states that a body at rest remains at rest, and a body in motion remains in motion at constant velocity, unless acted on by a net external force. For that reason it is often called the law of inertia.\n\nThe common misreading: motion does NOT need a force to keep going. Force is needed only to CHANGE motion. The opposite intuition comes from friction, always present in everyday life, but not a law of motion.\n\nInertia does not depend on where the object is. A tonne of equipment in space has no weight, yet it is just as hard to set moving and to stop as it is on the ground, because its mass is unchanged.",
+    "fullDef": "Định luật thứ nhất của Newton phát biểu: một vật đang đứng yên thì vẫn đứng yên, một vật đang chuyển động thì vẫn chuyển động với vận tốc không đổi, trừ khi có lực ngoài tổng hợp tác dụng lên nó. Vì lẽ đó nó thường được gọi là định luật quán tính.\n\nĐiều hay bị hiểu nhầm: chuyển động KHÔNG cần lực để duy trì. Lực chỉ cần để THAY ĐỔI chuyển động. Cảm giác ngược lại đến từ ma sát, thứ luôn có mặt trong đời sống hằng ngày nhưng không phải quy luật của chuyển động.\n\nQuán tính không phụ thuộc vào nơi vật đang ở. Một thiết bị nặng hàng tấn trôi lơ lửng trên trạm vũ trụ vẫn khó đẩy cho chuyển động và khó hãm lại đúng như trên mặt đất, vì khối lượng của nó không đổi.",
+    "fullDefEn": "Newton's first law states that a body at rest remains at rest, and a body in motion remains in motion at constant velocity, unless acted on by a net external force. For that reason it is often called the law of inertia.\n\nThe common misreading: motion does NOT need a force to keep going. Force is needed only to CHANGE motion. The opposite intuition comes from friction, always present in everyday life, but not a law of motion.\n\nInertia does not depend on where the object is. A tonne of equipment floating on a space station is just as hard to set moving and to stop as it is on the ground, because its mass is unchanged.",
     "aliases": [
       "inertia"
     ],
@@ -714,8 +724,8 @@
         "url": "http://hyperphysics.gsu.edu/hbase/Newt.html"
       }
     ],
-    "verdict": "REVISE",
-    "notes": "Soan ngay 2026-09-21, dot bo sung muc tu cho cac cum boi dam chua co dinh nghia. Moi URL nguon da duoc tai va doi chieu cung ngay. verdict de REVISE vi science-editor CHUA duyet: seed-glossary.ts chi ghi muc PASS, nen muc nay chua vao CSDL."
+    "verdict": "PASS",
+    "notes": "Reviewed 2026-09-21 (science-editor). OpenStax 5.2 fetched and carries paragraphs 1 and 2 verbatim: \"A body at rest remains at rest or, if in motion, remains in motion at constant velocity unless acted on by a net external force\"; \"Newton's first law is often called the law of inertia\"; \"The inertia of an object is measured by its mass\"; and friction as the reason motion appears to need a continuous force (\"Friction is thus the cause of slowing\"). HyperPhysics resolves and agrees.\n\nCUT - \"ngoài không gian tuy không có trọng lượng\" / \"in space has no weight\". Two problems. It is a simplification that leaves a false mental model: the reader concludes there is no gravity in space, when an object on a station is in free fall and still firmly inside Earth's gravity. And neither cited page discusses weightlessness at all. I removed the false clause rather than explaining free fall, because the explanation would have added a second claim neither source supports. What remains - a tonne of equipment floating on a station is just as hard to push and to stop, because its mass is unchanged - is the inertia point the paragraph existed to make, and it sits inside what OpenStax 5.2 supports.\n\nIf the free-fall explanation is wanted back, source it (OpenStax Vol 1 section 5.5, or the gravitation chapter) and it can be reinstated. It is a good illustration; it just needs a citation."
   },
   {
     "slug": "gia-toc",
@@ -741,7 +751,7 @@
         "url": "http://hyperphysics.gsu.edu/hbase/Newt.html"
       }
     ],
-    "verdict": "REVISE",
-    "notes": "Soan ngay 2026-09-21, dot bo sung muc tu cho cac cum boi dam chua co dinh nghia. Moi URL nguon da duoc tai va doi chieu cung ngay. verdict de REVISE vi science-editor CHUA duyet: seed-glossary.ts chi ghi muc PASS, nen muc nay chua vao CSDL."
+    "verdict": "PASS",
+    "notes": "Reviewed 2026-09-21 (science-editor). OpenStax 5.3 fetched: \"acceleration is directly proportional to and in the same direction as the net external force acting on the system and is inversely proportional to its mass\"; \"the direction of the acceleration is the same direction as that of the net force\", which sources the vector claim; and the basketball-vs-SUV comparison, of which the entry's \"vật nặng gấp đôi thì gia tốc bằng một nửa\" is the arithmetic instance. No numbers in this entry to check. HyperPhysics resolves and agrees.\n\nThe uniform-circular-motion sentence is not in section 5.3; it belongs to Vol 1 chapter 4. Accepted - and here is the line I applied, on record so the next batch gets the same treatment: an elaboration of the very concept being defined, drawn from the same cited work and elementary enough to be uncontroversial, is within the source's scope; a claim about a topic the cited work never addresses is not. That is why this sentence passes and why the proton-decay paragraph in the proton entry does not. Both drafts had the same shape of gap; only one of them is about a subject its source actually covers.\n\n\"Đi đều 300 km/h thì không cảm thấy gì\" is an everyday illustration of a point the entry has already stated correctly, not a separate claim."
   }
 ]
