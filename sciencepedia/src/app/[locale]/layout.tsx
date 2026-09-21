@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { Inter, Playfair_Display } from "next/font/google";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { Analytics } from "@vercel/analytics/next";
 
 import { routing, type Locale } from "@/i18n/routing";
 import { getRootCategories } from "@/server/queries";
@@ -152,6 +153,7 @@ export default async function LocaleLayout({
             <Toaster />
           </Providers>
         </NextIntlClientProvider>
+        <Analytics />
       </body>
     </html>
   );
