@@ -1,18 +1,25 @@
 import * as React from "react";
 import { cn } from "@/lib/utils";
+import { ScrollStrip } from "@/components/ui/scroll-strip";
 
+/* Khung bảng cuộn ngang bằng `<ScrollStrip>`, không bằng `overflow-x-auto`
+   trần. Trên điện thoại, thanh cuộn của trình duyệt hoặc tự ẩn hoặc hiện mà
+   không kéo được bằng ngón tay — với một bảng rộng hơn màn hình, đó là mất
+   luôn phần nội dung bên phải. `tabIndex={0}` để người dùng bàn phím cũng tới
+   được phần ấy (WCAG 2.1.1). */
 function Table({ className, ...props }: React.ComponentProps<"table">) {
   return (
-    <div
-      data-slot="table-container"
-      className="relative w-full overflow-x-auto rounded-2xl border"
+    <ScrollStrip
+      className="w-full rounded-2xl border"
+      trackClassName="-mt-1"
+      tabIndex={0}
     >
       <table
         data-slot="table"
         className={cn("w-full caption-bottom text-sm", className)}
         {...props}
       />
-    </div>
+    </ScrollStrip>
   );
 }
 

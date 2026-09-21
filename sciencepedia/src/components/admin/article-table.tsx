@@ -82,7 +82,11 @@ export function AdminArticleTable({
 
   return (
     <>
-      <Table>
+      {/* `min-w`: năm cột sau đã cố định bề ngang (~38rem), nên trên điện
+          thoại cột tiêu đề bị bóp còn vài chục pixel và xuống dòng mỗi chữ
+          một hàng. Cho bảng một bề ngang tối thiểu rồi để nó CUỘN — đó mới là
+          việc của khung cuộn ngang. */}
+      <Table className="min-w-[52rem]">
         <TableHeader>
           <TableRow>
             <TableHead>{t("form.titleField")}</TableHead>

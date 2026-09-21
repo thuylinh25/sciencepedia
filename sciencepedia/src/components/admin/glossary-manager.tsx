@@ -21,6 +21,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { ImageUpload } from "@/components/admin/image-upload";
+import { ScrollStrip } from "@/components/ui/scroll-strip";
 import {
   Dialog,
   DialogContent,
@@ -214,7 +215,7 @@ export function GlossaryManager({ terms }: { terms: GlossaryRow[] }) {
         </Button>
       </div>
 
-      <div className="overflow-x-auto rounded-2xl border">
+      <ScrollStrip className="rounded-2xl border" trackClassName="-mt-1" tabIndex={0}>
         <table className="w-full text-sm">
           <thead className="bg-muted/50 text-left text-xs tracking-wide text-muted-foreground uppercase">
             <tr>
@@ -286,7 +287,7 @@ export function GlossaryManager({ terms }: { terms: GlossaryRow[] }) {
             )}
           </tbody>
         </table>
-      </div>
+      </ScrollStrip>
 
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogContent className="max-h-[calc(100dvh-2rem)] max-w-2xl overflow-y-auto">

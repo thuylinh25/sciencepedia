@@ -245,6 +245,15 @@ Không dùng Radix `ScrollArea` cho việc này: nó bọc nội dung trong mộ
 `display: table`, nên trên máy tính nền của mục đang chọn co lại theo chữ thay
 vì trải hết bề ngang cột.
 
+Khung của `<Table>` (`components/ui/table.tsx`) và bảng trong thân bài đã dùng
+`<ScrollStrip>` sẵn — bảng nào cũng cuộn kéo được, không phải nhớ bọc lại.
+
+Kèm theo: **bảng có cột cố định bề ngang thì phải đặt `min-w` cho cả bảng.**
+Bảng bài viết trong trang quản trị có năm cột cố định ~38rem; thiếu `min-w`,
+cột tiêu đề bị bóp còn vài chục pixel và xuống dòng mỗi chữ một hàng thay vì
+để bảng cuộn. Khung cuộn ngang sinh ra để bảng giữ bề ngang tử tế rồi trượt,
+không phải để bảng tự bóp cho vừa.
+
 ---
 
 ## `prefers-reduced-motion` và WebGL

@@ -18,12 +18,20 @@ import { cn } from "@/lib/utils";
    co lại theo chữ thay vì trải hết cột trên máy tính. */
 export function ScrollStrip({
   className,
+  rootClassName,
   trackClassName,
+  tabIndex,
   children,
 }: {
+  /** Đặt lên thẻ bọc ngoài cùng — lề ngoài phải ở đây để thanh cuộn nằm
+      TRONG khoảng lề, không bị đẩy ra ngoài. */
+  rootClassName?: string;
   /** Đặt lên chính phần tử cuộn — ví dụ `lg:overflow-visible` để thôi cuộn. */
   className?: string;
   trackClassName?: string;
+  /** `0` để vùng cuộn nhận được focus bàn phím (WCAG 2.1.1) — cần cho bảng:
+      người dùng bàn phím phải có cách xem phần nằm ngoài khung. */
+  tabIndex?: number;
   children: React.ReactNode;
 }) {
   const scroller = React.useRef<HTMLDivElement>(null);
@@ -106,10 +114,11 @@ export function ScrollStrip({
   const progress = ratio < 1 ? Math.round((offset / (1 - ratio)) * 100) : 0;
 
   return (
-    <div className="relative">
+    <div className={cn("relative", rootClassName)}>
       <div
         id={controlsId}
         ref={scroller}
+        tabIndex={tabIndex}
         className={cn("scrollbar-none overflow-x-auto", className)}
       >
         {children}

@@ -6,6 +6,7 @@ import { slugify } from "@/lib/utils";
 import { remarkGlossary, type GlossaryMap } from "@/lib/glossary";
 import { defaultLocale, locales, type Locale } from "@/i18n/routing";
 import { GlossaryTerm } from "@/components/glossary/glossary-term";
+import { ScrollStrip } from "@/components/ui/scroll-strip";
 
 /**
  * Thêm tiền tố locale cho link nội bộ viết trong Markdown.
@@ -130,9 +131,14 @@ function buildComponents(locale: string, glossary: GlossaryMap): Components {
       // nằm trong `@layer utilities`, còn `.article-prose` không nằm trong layer
       // nào, mà lớp cascade đứng trên độ ưu tiên. Luật đệm ô nằm ở globals.css,
       // ngay dưới định nghĩa `.article-prose`.
-      <div className="my-8 overflow-x-auto rounded-2xl border" tabIndex={0}>
+      <ScrollStrip
+        rootClassName="my-8"
+        className="rounded-2xl border"
+        trackClassName="-mt-1"
+        tabIndex={0}
+      >
         <table className="my-0 w-full">{children}</table>
-      </div>
+      </ScrollStrip>
     ),
     /**
      * Blockquote có NỀN, nên phải tự lo cả bốn phía — nhưng phần đệm nằm ở
