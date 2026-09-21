@@ -51,7 +51,8 @@
     "images:variants": "tsx --env-file-if-exists=.env scripts/build-image-variants.ts",
     "covers:mirror": "tsx --env-file-if-exists=.env scripts/mirror-covers.ts",
     "links:fix": "tsx --env-file-if-exists=.env scripts/fix-dead-internal-links.ts",
-    "slugs:redirect": "tsx --env-file-if-exists=.env scripts/add-slug-redirects.ts"
+    "slugs:redirect": "tsx --env-file-if-exists=.env scripts/add-slug-redirects.ts",
+    "redirects:sync": "tsx --env-file-if-exists=.env scripts/sync-slug-redirects.ts"
   },
   "prisma": {
     "seed": "tsx --env-file-if-exists=.env prisma/seed.ts"

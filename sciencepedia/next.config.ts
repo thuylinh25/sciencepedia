@@ -2,6 +2,8 @@ import path from "node:path";
 import type { NextConfig } from "next";
 import createNextIntlPlugin from "next-intl/plugin";
 
+import slugRedirects from "./src/generated/slug-redirects.json";
+
 const withNextIntl = createNextIntlPlugin("./src/i18n/request.ts");
 
 /**
@@ -99,33 +101,51 @@ const nextConfig: NextConfig = {
   /**
    * Đổi slug bài viết thì URL cũ phải còn sống.
    *
-   * `hanh-trinh-vao-tam-trai-dat` → `cau-truc-ben-trong-trai-dat`
-   * (2026-09-10): hàng Article đó đã mang entity, seoTitle và bản tiếng Anh
-   * của bài "Cấu trúc bên trong Trái Đất", và bài `trai-dat` đã trỏ link vào
-   * slug mới — link đó là 404 chừng nào chưa đổi. Slug cũ vẫn là URL công
-   * khai từ 2026-09-06, nên nó chuyển hướng thay vì chết.
+   * Danh sách sinh ra từ bảng `ArticleSlugRedirect` bằng
+   * `npm run redirects:sync`. Bảng là nguồn sự thật; tệp JSON là bản kết xuất
+   * và PHẢI được commit — luật chỉ có hiệu lực sau khi deploy.
+   *
+   * ## Vì sao không để `page.tsx` tự tra bảng lúc chạy
+   *
+   * Nó CÓ tra, và cách ấy KHÔNG hoạt động. Đo 2026-09-21 trên Next 15.5.25,
+   * cả dev lẫn production: hàng tra được, `status` đúng `PUBLISHED`,
+   * `permanentRedirect` được gọi đúng đường dẫn và có ném — nhưng phản hồi
+   * vẫn là HTTP 200 kèm trang 404 mặc định của Next. Cú ném bị nuốt. Cùng họ
+   * với lỗi ghi ở đầu `page.tsx`: `notFound()` trong route động cũng trả 200.
+   *
+   * Luật ở đây chạy trước khi React render nên không dính lỗi đó. Lệnh tra
+   * bảng trong `page.tsx` vẫn giữ: vô hại, và ngày Next sửa lỗi thì nó đỡ
+   * được quãng giữa lúc đổi slug và lúc deploy.
+   *
+   * ## Vì sao mỗi slug sinh ra HAI luật
+   *
+   * Dòng có tiền tố giữ đúng locale của người đọc. Dòng không tiền tố trỏ
+   * cứng về `/vi` — không phải vì muốn thế, mà vì không còn lựa chọn: đo
+   * 2026-09-21, middleware next-intl KHÔNG chèn locale cho `/articles/…`.
+   * `/articles/mat-trang` (slug đang sống) trả thẳng 404, trong khi `/` vẫn
+   * chuyển đúng sang `/vi`. Bỏ dòng không tiền tố đi là để link thân bài viết
+   * dạng `/articles/…` chết hẳn.
+   *
+   * Hệ quả còn tồn: mọi URL bài KHÔNG tiền tố mà không nằm trong danh sách
+   * này vẫn 404. Đó là lỗi riêng của tầng định tuyến, chưa sửa ở đây.
    *
    * 301 chứ không 307: đây là đổi tên vĩnh viễn, và 301 mới gộp được tín hiệu
    * xếp hạng về URL mới. Đánh đổi phải biết trước: trình duyệt và CDN nhớ 301
    * gần như vĩnh viễn, nên đảo lại quyết định này về sau là đắt.
-   *
-   * `localePrefix: "always"` (src/i18n/routing.ts) nên mọi URL thật đều có
-   * tiền tố locale; dòng không tiền tố là để bắt link nội bộ viết dạng
-   * `/articles/…` trong thân bài trước khi middleware chèn locale.
    */
   async redirects() {
-    return [
+    return slugRedirects.flatMap(({ from, to }) => [
       {
-        source: "/:locale(vi|en)/articles/hanh-trinh-vao-tam-trai-dat",
-        destination: "/:locale/articles/cau-truc-ben-trong-trai-dat",
+        source: `/:locale(vi|en)/articles/${from}`,
+        destination: `/:locale/articles/${to}`,
         permanent: true,
       },
       {
-        source: "/articles/hanh-trinh-vao-tam-trai-dat",
-        destination: "/vi/articles/cau-truc-ben-trong-trai-dat",
+        source: `/articles/${from}`,
+        destination: `/vi/articles/${to}`,
         permanent: true,
       },
-    ];
+    ]);
   },
   async headers() {
     return [
