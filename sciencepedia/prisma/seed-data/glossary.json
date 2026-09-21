@@ -802,5 +802,286 @@
       "bi-mat-dang-sau-cam-giac-nang-va-nhe",
       "neu-trai-dat-dang-quay-vi-sao-chung-ta-khong-cam-nhan-duoc"
     ]
+  },
+  {
+    "slug": "vanh-dai-kuiper",
+    "term": "Vành đai Kuiper",
+    "termEn": "Kuiper Belt",
+    "shortDef": "Vùng thiên thể băng hình vành khuyên nằm ngoài quỹ đạo Sao Hải Vương. Phần chính trải từ khoảng 30 AU tới khoảng 50 AU, và là nơi Pluto cùng nhiều hành tinh lùn khác cư trú.",
+    "shortDefEn": "A doughnut-shaped region of icy objects beyond Neptune's orbit. Its main region runs from about 30 AU to about 50 AU, and it is where Pluto and several other dwarf planets reside.",
+    "fullDef": "NASA mô tả vành đai Kuiper là một vùng hình bánh vòng chứa các thiên thể băng, nằm ngoài quỹ đạo Sao Hải Vương. Rìa trong bắt đầu ngay ở quỹ đạo Sao Hải Vương, khoảng 30 AU tính từ Mặt Trời; phần chính kết thúc quanh 50 AU. Phần đĩa tán xạ còn kéo tiếp ra gần 1.000 AU.\n\nTrong vùng ấy có hàng trăm nghìn thiên thể rộng từ 100 km trở lên, cùng Pluto, các hành tinh lùn khác, sao chổi và hàng triệu thế giới băng giá còn sót lại từ thuở Hệ Mặt Trời hình thành. Dù vậy tổng khối lượng của toàn bộ vật chất ở đó được ước lượng không quá khoảng 10% khối lượng Trái Đất.\n\nĐừng lẫn vành đai Kuiper với Đám mây Oort. Vành đai Kuiper là một đĩa phồng, nằm gần hơn nhiều, và đã có thiên thể được quan sát trực tiếp — hơn 2.000 thiên thể ngoài Sao Hải Vương đã được lập danh mục. Đám mây Oort thì là lớp vỏ cầu, xa hơn hàng trăm lần, và chưa từng được chụp ảnh.",
+    "fullDefEn": "NASA describes the Kuiper Belt as a doughnut-shaped region of icy objects beyond the orbit of Neptune. Its inner edge begins at Neptune's orbit, about 30 AU from the Sun; the main region ends around 50 AU. The scattered disc continues outward to nearly 1,000 AU.\n\nThe region holds hundreds of thousands of bodies 100 km across or larger, along with Pluto, other dwarf planets, comets and millions of icy worlds left over from the formation of the Solar System. Even so, the total mass of all the material there is estimated to be no more than about 10% of Earth's mass.\n\nDo not confuse the Kuiper Belt with the Oort Cloud. The Kuiper Belt is a puffed-up disc, far closer in, and its objects have been observed directly — more than 2,000 trans-Neptunian objects have been catalogued. The Oort Cloud is a spherical shell, hundreds of times farther out, and has never been imaged.",
+    "aliases": [
+      "kuiper-belt",
+      "vanh-dai-kha-nang-kuiper"
+    ],
+    "category": "Thiên văn học",
+    "sources": [
+      {
+        "title": "Kuiper Belt Facts",
+        "publisher": "NASA Science",
+        "url": "https://science.nasa.gov/solar-system/kuiper-belt/facts/"
+      },
+      {
+        "title": "The Kuiper Belt",
+        "publisher": "NASA Science",
+        "url": "https://science.nasa.gov/solar-system/kuiper-belt/"
+      }
+    ],
+    "verdict": "REVISE",
+    "notes": "Dot 2, soan ngay 2026-09-21. Moi URL nguon da duoc tai va doi chieu cung ngay. Ap ba quy tac vua them vao article-generator sau lan duyet dot 1: giu nguyen muc de dat cua nguon; khong dung ranh gioi nguon khong dung; tuong quan o nguon thi o bai cung la tuong quan. verdict de REVISE vi science-editor CHUA duyet. Hai nguon cung mot nha xuat ban - reviewer can nhac co can nguon doc lap khong."
+  },
+  {
+    "slug": "gia-thuyet-va-cham-lon",
+    "term": "Giả thuyết va chạm lớn",
+    "termEn": "Giant-impact hypothesis",
+    "shortDef": "Lời giải thích đang chiếm ưu thế cho nguồn gốc Mặt Trăng: khoảng 4,5 tỉ năm trước, một vật thể lớn — thường được gọi là Theia — đâm vào Trái Đất non trẻ, và Mặt Trăng hình thành từ vật chất văng ra. NASA gọi đây là một trong vài giả thuyết đang cạnh tranh, không phải điều đã chứng minh.",
+    "shortDefEn": "The leading explanation for the Moon's origin: about 4.5 billion years ago a large body — usually called Theia — struck the young Earth, and the Moon formed from the debris. NASA presents this as one of several competing theories, not as settled fact.",
+    "fullDef": "NASA viết rằng vài giả thuyết về nguồn gốc Mặt Trăng đang tranh nhau vị trí dẫn đầu, nhưng gần như tất cả cùng chung một điểm: vào quãng thời gian Hệ Mặt Trời hình thành, khoảng 4,5 tỉ năm trước, một thứ gì đó đã đâm vào Trái Đất non trẻ — có thể là một vật thể duy nhất cỡ Sao Hoả, cũng có thể là một loạt vật thể.\n\nVật thể lớn ấy được đặt tên Theia, theo tên nữ thần Titan trong thần thoại Hy Lạp, mẹ của Selene — nữ thần Mặt Trăng. Mẫu đá do các chuyến Apollo mang về đều chỉ về phía Mặt Trăng hình thành từ một cú va chạm lớn.\n\nHãy giữ nguyên mức dè dặt ấy khi nhắc tới giả thuyết này. Chữ của NASA là \"vài giả thuyết\", \"gần như tất cả\", \"có thể\" — và bằng chứng Apollo được mô tả là \"chỉ về phía\" chứ không phải chứng minh.",
+    "fullDefEn": "NASA writes that several theories about the Moon's formation vie for dominance, but almost all share one point: near the time of the Solar System's formation, about 4.5 billion years ago, something crashed into the young Earth — perhaps a single object the size of Mars, perhaps a series of objects.\n\nThat massive object was named Theia, after the mythological Greek Titan who was the mother of Selene, goddess of the Moon. The rock samples returned by the Apollo missions all pointed to the Moon forming from a large impact.\n\nKeep that hedging when citing the hypothesis. NASA's words are \"several theories\", \"almost all\", \"perhaps\" — and the Apollo evidence is described as pointing to the conclusion rather than proving it.",
+    "aliases": [
+      "theia",
+      "giant-impact-hypothesis",
+      "va-cham-lon"
+    ],
+    "category": "Thiên văn học",
+    "sources": [
+      {
+        "title": "Moon Formation",
+        "publisher": "NASA Science",
+        "url": "https://science.nasa.gov/moon/formation/"
+      },
+      {
+        "title": "Moon Facts",
+        "publisher": "NASA Science",
+        "url": "https://science.nasa.gov/moon/facts/"
+      }
+    ],
+    "verdict": "REVISE",
+    "notes": "Dot 2, soan ngay 2026-09-21. Moi URL nguon da duoc tai va doi chieu cung ngay. Ap ba quy tac vua them vao article-generator sau lan duyet dot 1: giu nguyen muc de dat cua nguon; khong dung ranh gioi nguon khong dung; tuong quan o nguon thi o bai cung la tuong quan. verdict de REVISE vi science-editor CHUA duyet. Hai nguon cung mot nha xuat ban - reviewer can nhac co can nguon doc lap khong."
+  },
+  {
+    "slug": "khoa-thuy-trieu",
+    "term": "Khoá thuỷ triều",
+    "termEn": "Tidal locking",
+    "shortDef": "Trạng thái một thiên thể mất đúng chừng ấy thời gian để tự quay một vòng và để đi hết một vòng quỹ đạo, nên luôn hướng cùng một mặt về phía thiên thể kia. Mặt Trăng và Trái Đất đang ở trạng thái này.",
+    "shortDefEn": "The state in which a body takes exactly as long to spin once on its axis as to complete one orbit, so it always keeps the same face toward the other body. The Moon and Earth are in this state.",
+    "fullDef": "Mặt Trăng không hề \"không quay\". Nó quay, nhưng mất đúng bằng ngần ấy thời gian để tự quay một vòng như để đi hết vòng quỹ đạo quanh Trái Đất. Hai chuyển động khớp nhau, nên từ Trái Đất ta luôn thấy cùng một mặt.\n\nCơ chế nằm ở lực hấp dẫn. Trái Đất kéo Mặt Trăng méo đi thành hình hơi thuôn. Khi Mặt Trăng còn trẻ và ở gần hơn, chỗ phình ấy bị lệch đi trong lúc Mặt Trăng quay; sự lệch đó tiêu tán năng lượng thành nhiệt và hãm dần vòng quay, cho tới khi chu kỳ quay bằng chu kỳ quỹ đạo. NASA gọi trạng thái ấy là khoá thuỷ triều đồng bộ.\n\nNASA mô tả hệ Trái Đất – Mặt Trăng là khoá thuỷ triều lẫn nhau: chuyển động quay của hai bên đồng bộ tới mức ta chỉ thấy một phía của Mặt Trăng.",
+    "fullDefEn": "The Moon is not failing to rotate. It rotates, but takes precisely as long to spin once on its axis as to complete its orbit around Earth. The two motions match, so from Earth we always see the same face.\n\nThe mechanism is gravity. Earth's pull distorts the Moon into a slightly elongated shape. When the Moon was younger and closer, that bulge shifted as the Moon turned; the shifting dissipated energy as heat and gradually slowed the spin until the rotation period matched the orbital period. NASA calls the result synchronous tidal locking.\n\nNASA describes the Earth-Moon system as tidally locked: their rotations are so in sync that we only see one side of the Moon.",
+    "aliases": [
+      "tidal-locking",
+      "khoa-trieu",
+      "quay-dong-bo"
+    ],
+    "category": "Thiên văn học",
+    "sources": [
+      {
+        "title": "Tidal Locking",
+        "publisher": "NASA Science",
+        "url": "https://science.nasa.gov/moon/tidal-locking/"
+      },
+      {
+        "title": "Moon Facts",
+        "publisher": "NASA Science",
+        "url": "https://science.nasa.gov/moon/facts/"
+      }
+    ],
+    "verdict": "REVISE",
+    "notes": "Dot 2, soan ngay 2026-09-21. Moi URL nguon da duoc tai va doi chieu cung ngay. Ap ba quy tac vua them vao article-generator sau lan duyet dot 1: giu nguyen muc de dat cua nguon; khong dung ranh gioi nguon khong dung; tuong quan o nguon thi o bai cung la tuong quan. verdict de REVISE vi science-editor CHUA duyet. Hai nguon cung mot nha xuat ban - reviewer can nhac co can nguon doc lap khong."
+  },
+  {
+    "slug": "gian-no-thoi-gian",
+    "term": "Giãn nở thời gian",
+    "termEn": "Time dilation",
+    "shortDef": "Khoảng thời gian giữa hai sự kiện dài ra khi được đo bởi người quan sát trong hệ quy chiếu quán tính đang chuyển động so với hệ nghỉ của hai sự kiện đó.",
+    "shortDefEn": "The lengthening of the time interval between two events for an observer in an inertial frame that is moving with respect to the rest frame of the events.",
+    "fullDef": "Thời gian riêng là khoảng thời gian đo bởi người quan sát mà với họ hai sự kiện xảy ra ở cùng một chỗ. Đó là số đo NGẮN NHẤT có thể có của khoảng thời gian ấy; mọi người quan sát khác đều đo được một khoảng dài hơn.\n\nNên câu \"thời gian chạy chậm lại\" là cách nói tắt dễ gây hiểu nhầm. Không ai thấy đồng hồ của chính mình chạy chậm. Điều xảy ra là hai người quan sát chuyển động tương đối với nhau KHÔNG đo được cùng một khoảng thời gian giữa cùng hai sự kiện.\n\nHiệu ứng này gắn liền với co độ dài: cùng một thừa số Lorentz chi phối cả hai, và nó chỉ đáng kể khi vận tốc tương đối tiến gần tốc độ ánh sáng.",
+    "fullDefEn": "Proper time is the interval measured by an observer for whom both events occur at the same location. It is the SHORTEST possible measure of that interval; every other observer measures a longer one.\n\nSo \"time slows down\" is a shorthand that misleads. Nobody sees their own clock run slow. What happens is that two observers in relative motion do NOT measure the same elapsed time between the same two events.\n\nThe effect is the twin of length contraction: the same Lorentz factor governs both, and it only becomes appreciable as the relative velocity approaches the speed of light.",
+    "aliases": [
+      "time-dilation",
+      "thoi-gian-rieng"
+    ],
+    "category": "Vật lý",
+    "sources": [
+      {
+        "title": "University Physics Volume 3, 5.3 Time Dilation",
+        "publisher": "OpenStax, Rice University",
+        "url": "https://openstax.org/books/university-physics-volume-3/pages/5-3-time-dilation"
+      },
+      {
+        "title": "University Physics Volume 3, 5.4 Length Contraction",
+        "publisher": "OpenStax, Rice University",
+        "url": "https://openstax.org/books/university-physics-volume-3/pages/5-4-length-contraction"
+      }
+    ],
+    "verdict": "REVISE",
+    "notes": "Dot 2, soan ngay 2026-09-21. Moi URL nguon da duoc tai va doi chieu cung ngay. Ap ba quy tac vua them vao article-generator sau lan duyet dot 1: giu nguyen muc de dat cua nguon; khong dung ranh gioi nguon khong dung; tuong quan o nguon thi o bai cung la tuong quan. verdict de REVISE vi science-editor CHUA duyet. Hai nguon cung mot nha xuat ban - reviewer can nhac co can nguon doc lap khong."
+  },
+  {
+    "slug": "co-do-dai",
+    "term": "Co độ dài",
+    "termEn": "Length contraction",
+    "shortDef": "Độ dài đo được của một vật ngắn lại so với độ dài riêng của nó, khi đo trong hệ quy chiếu đang chuyển động so với vật.",
+    "shortDefEn": "The decrease in the measured length of an object from its proper length when measured in a reference frame moving with respect to the object.",
+    "fullDef": "Độ dài riêng là khoảng cách giữa hai điểm, đo bởi người quan sát đứng yên so với cả hai điểm ấy. Đó là số đo DÀI NHẤT; người quan sát nào chuyển động so với vật cũng đo được ngắn hơn, theo công thức L = L₀ nhân căn bậc hai của (1 trừ v²/c²).\n\nVật không hề bị nén hay biến dạng. Không có lực nào tác dụng lên nó. Thứ thay đổi là kết quả ĐO trong một hệ quy chiếu khác — cùng loại chuyện với giãn nở thời gian, và do cùng một thừa số Lorentz gây ra.\n\nSự co chỉ xảy ra theo phương chuyển động. Kích thước theo hai phương vuông góc giữ nguyên.",
+    "fullDefEn": "Proper length is the distance between two points measured by an observer at rest relative to both of them. It is the LONGEST measure; any observer moving relative to the object measures less, following L = L₀ times the square root of (1 minus v²/c²).\n\nThe object is not squeezed or deformed. No force acts on it. What changes is the result of a MEASUREMENT made in a different frame — the same kind of statement as time dilation, and caused by the same Lorentz factor.\n\nThe contraction occurs only along the direction of motion. Dimensions perpendicular to it are unchanged.",
+    "aliases": [
+      "length-contraction",
+      "do-dai-rieng"
+    ],
+    "category": "Vật lý",
+    "sources": [
+      {
+        "title": "University Physics Volume 3, 5.4 Length Contraction",
+        "publisher": "OpenStax, Rice University",
+        "url": "https://openstax.org/books/university-physics-volume-3/pages/5-4-length-contraction"
+      },
+      {
+        "title": "University Physics Volume 3, 5.3 Time Dilation",
+        "publisher": "OpenStax, Rice University",
+        "url": "https://openstax.org/books/university-physics-volume-3/pages/5-3-time-dilation"
+      }
+    ],
+    "verdict": "REVISE",
+    "notes": "Dot 2, soan ngay 2026-09-21. Moi URL nguon da duoc tai va doi chieu cung ngay. Ap ba quy tac vua them vao article-generator sau lan duyet dot 1: giu nguyen muc de dat cua nguon; khong dung ranh gioi nguon khong dung; tuong quan o nguon thi o bai cung la tuong quan. verdict de REVISE vi science-editor CHUA duyet. Hai nguon cung mot nha xuat ban - reviewer can nhac co can nguon doc lap khong."
+  },
+  {
+    "slug": "te-bao-cam-thu-anh-sang",
+    "term": "Tế bào cảm thụ ánh sáng",
+    "termEn": "Photoreceptor",
+    "shortDef": "Tế bào trong võng mạc biến ánh sáng thành tín hiệu điện. Có hai loại: tế bào que nhạy sáng mạnh, lo thị giác thiếu sáng và ngoại vi nhưng chỉ thấy sắc xám; tế bào nón kém nhạy hơn, cần sáng mạnh, và cho ta màu sắc.",
+    "shortDefEn": "Cells in the retina that turn light into electrical signals. There are two kinds: rods, strongly photosensitive, handling dim-light and peripheral vision but seeing only shades of grey; and cones, less sensitive, needing bright light, and giving us colour.",
+    "fullDef": "Tế bào que nằm ở rìa ngoài võng mạc và rất nhạy sáng, nên chúng đảm nhiệm thị giác lúc thiếu sáng và thị giác ngoại vi. Đổi lại, chúng chỉ phân biệt được các sắc xám.\n\nTế bào nón tập trung gần tâm võng mạc và kém nhạy hơn, nên chúng cần ánh sáng mạnh. Vai trò chính của chúng là thị giác ban ngày và màu sắc. Hố trung tâm — vùng ở chính giữa phía sau mắt — có mật độ tế bào nón rất cao, và đó là lý do vùng này cho thị giác sắc nét.\n\nDù là loại nào, thứ rời khỏi võng mạc cũng là tín hiệu điện chứ không phải hình ảnh. Tín hiệu đi theo dây thần kinh thị giác lên não, và não mới dựng ra cái ta gọi là nhìn thấy.",
+    "fullDefEn": "Rods sit toward the outer edges of the retina and are strongly photosensitive, so they carry dim-light and peripheral vision. In exchange, they distinguish only shades of grey.\n\nCones cluster near the centre of the retina and are less sensitive, so they need bright light. Their primary role is daytime and colour vision. The fovea — the region in the centre back of the eye — has a high density of cones, and that is why it delivers acute vision.\n\nWhichever kind, what leaves the retina is electrical signals, not images. They travel along the optic nerve to the brain, and the brain is what builds what we call seeing.",
+    "aliases": [
+      "photoreceptor",
+      "te-bao-que",
+      "te-bao-non",
+      "rods-and-cones"
+    ],
+    "category": "Sinh học",
+    "sources": [
+      {
+        "title": "Biology 2e, 36.5 Vision",
+        "publisher": "OpenStax, Rice University",
+        "url": "https://openstax.org/books/biology-2e/pages/36-5-vision"
+      },
+      {
+        "title": "How the Eyes Work",
+        "publisher": "National Eye Institute, NIH",
+        "url": "https://www.nei.nih.gov/learn-about-eye-health/healthy-vision/how-eyes-work"
+      }
+    ],
+    "verdict": "REVISE",
+    "notes": "Dot 2, soan ngay 2026-09-21. Moi URL nguon da duoc tai va doi chieu cung ngay. Ap ba quy tac vua them vao article-generator sau lan duyet dot 1: giu nguyen muc de dat cua nguon; khong dung ranh gioi nguon khong dung; tuong quan o nguon thi o bai cung la tuong quan. verdict de REVISE vi science-editor CHUA duyet."
+  },
+  {
+    "slug": "chat-dan-truyen-than-kinh",
+    "term": "Chất dẫn truyền thần kinh",
+    "termEn": "Neurotransmitter",
+    "shortDef": "Phân tử một nơ-ron phóng ra khe synap để truyền tín hiệu sang tế bào kế tiếp. Nó khuếch tán qua khe rồi gắn vào thụ thể ở màng bên kia, và tuỳ loại mà làm tế bào nhận dễ phát xung hơn hoặc khó hơn.",
+    "shortDefEn": "A molecule a neuron releases into the synaptic cleft to pass a signal to the next cell. It diffuses across the gap and binds to receptors on the far membrane, making the receiving cell either more or less likely to fire.",
+    "fullDef": "Chất dẫn truyền thần kinh nằm sẵn trong các túi nhỏ có màng bọc gọi là túi synap. Khi xung điện tới đầu tận cùng của nơ-ron, túi giải phóng chất ấy vào khe synap — khoảng trống giữa màng trước synap và màng sau synap.\n\nPhân tử khuếch tán qua khe rồi gắn vào protein thụ thể ở màng sau synap, theo kiểu chìa khoá vào ổ khoá. Kết quả tuỳ loại chất và loại thụ thể: acetylcholine thường gây khử cực, tức đẩy tế bào nhận về phía phát xung; GABA thường gây tăng phân cực, tức kéo ngược lại.\n\nTín hiệu không kéo dài mãi. Các protein vận chuyển thu hồi chất dẫn truyền về nơ-ron phát, và chính cơ chế thu hồi ấy quyết định tín hiệu kéo dài bao lâu.",
+    "fullDefEn": "Neurotransmitters sit ready inside small membrane-bound sacs called synaptic vesicles. When an electrical impulse reaches the end of a neuron, the vesicles release them into the synaptic cleft — the space between the presynaptic and postsynaptic membranes.\n\nThe molecules diffuse across the cleft and bind to receptor proteins on the postsynaptic membrane, like a key into a lock. The result depends on the transmitter and the receptor: acetylcholine typically causes depolarisation, pushing the receiving cell toward firing; GABA typically causes hyperpolarisation, pulling it the other way.\n\nThe signal does not last indefinitely. Transporter proteins recycle the transmitter back into the sending neuron, and that recycling is what sets how long the signal lasts.",
+    "aliases": [
+      "neurotransmitter",
+      "chat-dan-truyen",
+      "su-gia-hoa-hoc"
+    ],
+    "category": "Sinh học",
+    "sources": [
+      {
+        "title": "Biology 2e, 35.2 How Neurons Communicate",
+        "publisher": "OpenStax, Rice University",
+        "url": "https://openstax.org/books/biology-2e/pages/35-2-how-neurons-communicate"
+      },
+      {
+        "title": "Drugs and the Brain",
+        "publisher": "National Institute on Drug Abuse, NIH",
+        "url": "https://nida.nih.gov/publications/drugs-brains-behavior-science-addiction/drugs-brain"
+      }
+    ],
+    "verdict": "REVISE",
+    "notes": "Dot 2, soan ngay 2026-09-21. Moi URL nguon da duoc tai va doi chieu cung ngay. Ap ba quy tac vua them vao article-generator sau lan duyet dot 1: giu nguyen muc de dat cua nguon; khong dung ranh gioi nguon khong dung; tuong quan o nguon thi o bai cung la tuong quan. verdict de REVISE vi science-editor CHUA duyet."
+  },
+  {
+    "slug": "so-hieu-nguyen-tu",
+    "term": "Số hiệu nguyên tử",
+    "termEn": "Atomic number",
+    "shortDef": "Số proton trong hạt nhân, ký hiệu Z. Nó quyết định nguyên tử thuộc nguyên tố nào: đổi Z là đổi nguyên tố, còn đổi số neutron mà giữ nguyên Z thì vẫn là nguyên tố ấy, chỉ khác đồng vị.",
+    "shortDefEn": "The number of protons in a nucleus, written Z. It decides which element an atom is: change Z and you change the element, while changing the neutron count at fixed Z leaves the same element, only a different isotope.",
+    "fullDef": "Hạt nhân gồm proton và neutron, gọi chung là nucleon. Số proton là số hiệu nguyên tử Z; số neutron là số neutron N; tổng số nucleon là số khối A.\n\nBa con số ấy khoá chặt vào nhau: N = A − Z. Và chính Z, không phải A, là thứ định danh nguyên tố. Mọi nguyên tử có Z = 6 đều là carbon, dù A bằng 12, 13 hay 14.\n\nNguyên tử cùng Z mà khác N là đồng vị của nhau. Hydro có ba đồng vị: hydro thường (1 proton, không neutron), deuteri (1 proton, 1 neutron) và triti (1 proton, 2 neutron).",
+    "fullDefEn": "A nucleus is made of protons and neutrons, collectively nucleons. The proton count is the atomic number Z; the neutron count is the neutron number N; the total nucleon count is the mass number A.\n\nThe three are locked together: N = A − Z. And it is Z, not A, that identifies the element. Every atom with Z = 6 is carbon, whether A is 12, 13 or 14.\n\nAtoms with the same Z but different N are isotopes of each other. Hydrogen has three: ordinary hydrogen (one proton, no neutrons), deuterium (one proton, one neutron) and tritium (one proton, two neutrons).",
+    "aliases": [
+      "atomic-number",
+      "so-z",
+      "nucleon"
+    ],
+    "category": "Vật lý",
+    "sources": [
+      {
+        "title": "University Physics Volume 3, 10.1 Properties of Nuclei",
+        "publisher": "OpenStax, Rice University",
+        "url": "https://openstax.org/books/university-physics-volume-3/pages/10-1-properties-of-nuclei"
+      },
+      {
+        "title": "University Physics Volume 3, 10.2 Nuclear Binding Energy",
+        "publisher": "OpenStax, Rice University",
+        "url": "https://openstax.org/books/university-physics-volume-3/pages/10-2-nuclear-binding-energy"
+      }
+    ],
+    "verdict": "REVISE",
+    "notes": "Dot 2, soan ngay 2026-09-21. Moi URL nguon da duoc tai va doi chieu cung ngay. Ap ba quy tac vua them vao article-generator sau lan duyet dot 1: giu nguyen muc de dat cua nguon; khong dung ranh gioi nguon khong dung; tuong quan o nguon thi o bai cung la tuong quan. verdict de REVISE vi science-editor CHUA duyet. Hai nguon cung mot nha xuat ban - reviewer can nhac co can nguon doc lap khong."
+  },
+  {
+    "slug": "nang-luong-lien-ket-hat-nhan",
+    "term": "Năng lượng liên kết hạt nhân",
+    "termEn": "Nuclear binding energy",
+    "shortDef": "Năng lượng giải phóng khi các nucleon ghép lại thành một hạt nhân. Nó bằng độ hụt khối nhân với c², vì khối lượng hạt nhân nhỏ hơn tổng khối lượng các nucleon tạo nên nó.",
+    "shortDefEn": "The energy released in forming a nucleus from its nucleons. It equals the mass defect times c², because a nucleus has less mass than the sum of the nucleons that make it up.",
+    "fullDef": "Cân một hạt nhân rồi cộng riêng khối lượng từng proton và neutron trong đó, hai con số không bằng nhau: hạt nhân NHẸ hơn. Phần chênh lệch gọi là độ hụt khối.\n\nPhần khối lượng ấy không biến mất mà đã được giải phóng thành năng lượng lúc hạt nhân hình thành, theo E = Δm·c². Đó là năng lượng liên kết hạt nhân, và cũng chính là năng lượng phải cấp vào nếu muốn tách hạt nhân trở lại thành từng nucleon.\n\nVới hạt nhân có số khối A lớn hơn 8, năng lượng liên kết xấp xỉ tỉ lệ với tổng số nucleon. Điều đó có nghĩa năng lượng liên kết TRÊN MỖI nucleon gần như không đổi trong phần lớn bảng tuần hoàn — và chính chỗ nó đổi mới là chỗ sinh ra năng lượng của phản ứng nhiệt hạch và phân hạch.",
+    "fullDefEn": "Weigh a nucleus, then add up the separate masses of the protons and neutrons inside it, and the two numbers differ: the nucleus is LIGHTER. The difference is the mass defect.\n\nThat mass did not vanish; it was released as energy when the nucleus formed, following E = Δm·c². This is the nuclear binding energy, and it is equally the energy that must be supplied to pull the nucleus back apart into free nucleons.\n\nFor nuclei with mass number A greater than 8, the binding energy is roughly proportional to the total nucleon count. That means the binding energy PER nucleon is nearly constant across much of the periodic table — and it is where that value does change that the energy of fusion and fission comes from.",
+    "aliases": [
+      "nuclear-binding-energy",
+      "do-hut-khoi",
+      "mass-defect"
+    ],
+    "category": "Vật lý",
+    "sources": [
+      {
+        "title": "University Physics Volume 3, 10.2 Nuclear Binding Energy",
+        "publisher": "OpenStax, Rice University",
+        "url": "https://openstax.org/books/university-physics-volume-3/pages/10-2-nuclear-binding-energy"
+      },
+      {
+        "title": "University Physics Volume 3, 10.1 Properties of Nuclei",
+        "publisher": "OpenStax, Rice University",
+        "url": "https://openstax.org/books/university-physics-volume-3/pages/10-1-properties-of-nuclei"
+      }
+    ],
+    "verdict": "REVISE",
+    "notes": "Dot 2, soan ngay 2026-09-21. Moi URL nguon da duoc tai va doi chieu cung ngay. Ap ba quy tac vua them vao article-generator sau lan duyet dot 1: giu nguyen muc de dat cua nguon; khong dung ranh gioi nguon khong dung; tuong quan o nguon thi o bai cung la tuong quan. verdict de REVISE vi science-editor CHUA duyet. Hai nguon cung mot nha xuat ban - reviewer can nhac co can nguon doc lap khong."
+  },
+  {
+    "slug": "axit-hoa-dai-duong",
+    "term": "Axit hoá đại dương",
+    "termEn": "Ocean acidification",
+    "shortDef": "pH của đại dương giảm dần trong một quãng thời gian dài, chủ yếu do biển hấp thụ khí carbon dioxide từ khí quyển.",
+    "shortDefEn": "A reduction in the pH of the ocean over an extended period, caused primarily by uptake of carbon dioxide from the atmosphere.",
+    "fullDef": "Khí carbon dioxide trong khí quyển đi vào nước biển và kéo theo một chuỗi phản ứng hoá học làm tăng nồng độ ion hydro. Nồng độ ion hydro tăng chính là pH giảm, tức nước biển ngả về phía axit hơn.\n\nCùng chuỗi phản ứng ấy làm giảm lượng ion carbonat sẵn có. Đây mới là phần đáng lo về mặt sinh học: ion carbonat là nguyên liệu để sinh vật biển dựng vỏ và bộ xương.\n\nNOAA cho biết nồng độ CO₂ trong khí quyển đã tăng suốt hơn 200 năm kể từ cách mạng công nghiệp, và đại dương hấp thụ khoảng 30% lượng CO₂ mà con người thải ra. Lưu ý cách dùng chữ: \"axit hoá\" nói về CHIỀU thay đổi của pH, không nói rằng nước biển đã thành axit.",
+    "fullDefEn": "Carbon dioxide from the atmosphere enters seawater and sets off chemical reactions that raise the concentration of hydrogen ions. A higher hydrogen-ion concentration is exactly what a lower pH means: the water shifts toward the acidic side.\n\nThe same reactions reduce the availability of carbonate ions. This is the biologically worrying part: carbonate is the raw material marine organisms use to build shells and skeletons.\n\nNOAA notes that atmospheric CO₂ has risen for more than 200 years since the industrial revolution, and that the ocean absorbs roughly 30 percent of the CO₂ humans release. Note the wording: \"acidification\" describes the DIRECTION in which pH is moving, not a claim that seawater has become an acid.",
+    "aliases": [
+      "ocean-acidification"
+    ],
+    "category": "Khoa học Trái Đất",
+    "sources": [
+      {
+        "title": "What is Ocean Acidification?",
+        "publisher": "NOAA National Ocean Service",
+        "url": "https://oceanservice.noaa.gov/facts/acidification.html"
+      }
+    ],
+    "verdict": "REVISE",
+    "notes": "Dot 2, soan ngay 2026-09-21. Moi URL nguon da duoc tai va doi chieu cung ngay. Ap ba quy tac vua them vao article-generator sau lan duyet dot 1: giu nguyen muc de dat cua nguon; khong dung ranh gioi nguon khong dung; tuong quan o nguon thi o bai cung la tuong quan. verdict de REVISE vi science-editor CHUA duyet. CHI CO MOT NGUON, nhung la co quan dinh nghia chinh (NOAA) - reviewer quyet dinh."
   }
 ]
