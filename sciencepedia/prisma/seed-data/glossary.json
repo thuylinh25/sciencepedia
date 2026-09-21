@@ -1121,5 +1121,280 @@
     "usedIn": [
       "dai-tuyet-chung-permi-lan-su-song-suyt-bien-mat"
     ]
+  },
+  {
+    "slug": "dna",
+    "term": "DNA",
+    "termEn": "DNA",
+    "shortDef": "Phân tử mang thông tin di truyền cho sự phát triển và hoạt động của một sinh vật. Nó gồm hai mạch xoắn quanh nhau thành chuỗi xoắn kép, và thông tin nằm ở trình tự bốn loại base: A, C, G, T.",
+    "shortDefEn": "The molecule that carries genetic information for the development and functioning of an organism. It has two strands wound around each other into a double helix, and the information lies in the sequence of four bases: A, C, G, T.",
+    "fullDef": "Hai mạch DNA xoắn quanh nhau trông như một cái thang bị vặn — hình dạng gọi là chuỗi xoắn kép. Gắn vào mỗi phân tử đường là một trong bốn base: adenine (A), cytosine (C), guanine (G) hoặc thymine (T).\n\nBase bắt cặp theo quy luật cố định: A với T, C với G. Cặp A–T giữ nhau bằng hai liên kết hydro, cặp C–G bằng ba. Chính quy luật bắt cặp ấy giữ cho hai mạch khớp nhau và cho phép sao chép.\n\nHai mạch chạy ngược chiều nhau: đầu 3' của mạch này đối diện đầu 5' của mạch kia. Watson và Crick đề xuất cấu trúc xoắn phải này, và nó là nền cho mọi thứ còn lại trong di truyền học phân tử.",
+    "fullDefEn": "The two DNA strands wind around each other like a twisted ladder — the shape known as a double helix. Attached to each sugar is one of four bases: adenine (A), cytosine (C), guanine (G) or thymine (T).\n\nBases pair by a fixed rule: A with T, C with G. The A–T pair is held by two hydrogen bonds, the C–G pair by three. That pairing rule is what keeps the strands matched and makes replication possible.\n\nThe two strands are antiparallel: the 3' end of one faces the 5' end of the other. Watson and Crick proposed this right-handed helix, and it underlies everything else in molecular genetics.",
+    "aliases": [
+      "deoxyribonucleic-acid",
+      "adn",
+      "chuoi-xoan-kep"
+    ],
+    "category": "Sinh học",
+    "sources": [
+      {
+        "title": "Deoxyribonucleic Acid (DNA)",
+        "publisher": "National Human Genome Research Institute, NIH",
+        "url": "https://www.genome.gov/genetics-glossary/Deoxyribonucleic-Acid"
+      },
+      {
+        "title": "Biology 2e, 14.2 DNA Structure and Sequencing",
+        "publisher": "OpenStax, Rice University",
+        "url": "https://openstax.org/books/biology-2e/pages/14-2-dna-structure-and-sequencing"
+      }
+    ],
+    "verdict": "REVISE",
+    "notes": "Dot 3, soan ngay 2026-09-21, nham vao nhom bai sinh hoc va suc khoe hien chua co tooltip nao. Moi URL da tai va doi chieu cung ngay. Ap ca sau quy tac 3/11/12/13/14/15. verdict de REVISE."
+  },
+  {
+    "slug": "gen",
+    "term": "Gen",
+    "termEn": "Gene",
+    "shortDef": "Đơn vị cơ bản của di truyền. Gen truyền từ cha mẹ sang con và chứa thông tin quy định các đặc điểm thể chất và sinh học.",
+    "shortDefEn": "The basic unit of inheritance. Genes pass from parents to offspring and contain the information that specifies physical and biological traits.",
+    "fullDef": "Gen là đoạn thông tin nằm trong trình tự DNA. Phần lớn gen mã hoá một protein hoặc một đoạn protein, và chính các protein ấy làm phần lớn công việc trong cơ thể.\n\nNHGRI cho biết người có khoảng 20.000 gen mã hoá protein. Con số ấy nhỏ hơn nhiều so với hình dung thông thường về độ phức tạp của cơ thể người.\n\nGen truyền từ thế hệ này sang thế hệ khác, và đó là lý do nó được gọi là đơn vị cơ bản của di truyền.",
+    "fullDefEn": "A gene is a stretch of information within the DNA sequence. Most genes encode a protein or a piece of one, and those proteins do most of the work in the body.\n\nNHGRI puts the human count at roughly 20,000 protein-coding genes. That number is far smaller than the usual intuition about the complexity of a human body would suggest.\n\nGenes pass from one generation to the next, which is why the gene is called the basic unit of inheritance.",
+    "aliases": [
+      "gene"
+    ],
+    "category": "Sinh học",
+    "sources": [
+      {
+        "title": "Gene",
+        "publisher": "National Human Genome Research Institute, NIH",
+        "url": "https://www.genome.gov/genetics-glossary/Gene"
+      },
+      {
+        "title": "Biology 2e, 14.2 DNA Structure and Sequencing",
+        "publisher": "OpenStax, Rice University",
+        "url": "https://openstax.org/books/biology-2e/pages/14-2-dna-structure-and-sequencing"
+      }
+    ],
+    "verdict": "REVISE",
+    "notes": "Dot 3, soan ngay 2026-09-21, nham vao nhom bai sinh hoc va suc khoe hien chua co tooltip nao. Moi URL da tai va doi chieu cung ngay. Ap ca sau quy tac 3/11/12/13/14/15. verdict de REVISE."
+  },
+  {
+    "slug": "protein",
+    "term": "Protein",
+    "termEn": "Protein",
+    "shortDef": "Phân tử lớn và phức tạp, đảm nhiệm nhiều vai trò trong cơ thể. Protein gồm một hoặc nhiều chuỗi axit amin dài đã gấp lại, và trình tự axit amin ấy do DNA quy định.",
+    "shortDefEn": "A large, complex molecule with many roles in the body. A protein is one or more long, folded chains of amino acids, and that amino-acid sequence is specified by DNA.",
+    "fullDef": "Protein là một trong những phân tử hữu cơ dồi dào nhất trong hệ sống, và là nhóm có dải chức năng rộng nhất trong các đại phân tử. Chúng làm nên mô cơ, làm enzyme xúc tác các phản ứng hoá học cần cho sự sống, và tham gia vào cấu trúc, chức năng lẫn điều hoà của mọi mô và cơ quan.\n\nĐơn vị cấu tạo là axit amin. Mỗi axit amin có cùng bộ khung: một nguyên tử carbon trung tâm gắn với nhóm amino, nhóm carboxyl và một nguyên tử hydro.\n\nChức năng của protein đến từ hình dạng, và hình dạng có bốn bậc: trình tự axit amin là bậc một; cách gấp cục bộ ở vài vùng là bậc hai; hình ba chiều tổng thể của chuỗi là bậc ba; và khi nhiều chuỗi ghép lại thì tương tác giữa chúng tạo bậc bốn.",
+    "fullDefEn": "Proteins are among the most abundant organic molecules in living systems, and have the widest range of functions of all macromolecules. They build muscle tissue, act as the enzymes that catalyse the chemical reactions life needs, and take part in the structure, function and regulation of every tissue and organ.\n\nThe building block is the amino acid. Each amino acid shares the same framework: a central carbon bonded to an amino group, a carboxyl group and a hydrogen atom.\n\nA protein's function comes from its shape, and shape has four levels: the amino-acid sequence is primary structure; local folding in some regions is secondary; the whole three-dimensional shape of the chain is tertiary; and where several chains combine, the interaction between them forms quaternary structure.",
+    "aliases": [
+      "chat-dam",
+      "polypeptide"
+    ],
+    "category": "Sinh học",
+    "sources": [
+      {
+        "title": "Protein",
+        "publisher": "National Human Genome Research Institute, NIH",
+        "url": "https://www.genome.gov/genetics-glossary/Protein"
+      },
+      {
+        "title": "Biology 2e, 3.4 Proteins",
+        "publisher": "OpenStax, Rice University",
+        "url": "https://openstax.org/books/biology-2e/pages/3-4-proteins"
+      }
+    ],
+    "verdict": "REVISE",
+    "notes": "Dot 3, soan ngay 2026-09-21, nham vao nhom bai sinh hoc va suc khoe hien chua co tooltip nao. Moi URL da tai va doi chieu cung ngay. Ap ca sau quy tac 3/11/12/13/14/15. verdict de REVISE."
+  },
+  {
+    "slug": "axit-amin",
+    "term": "Axit amin",
+    "termEn": "Amino acid",
+    "shortDef": "Đơn phân cấu tạo nên protein. Mỗi axit amin có một carbon trung tâm gắn với nhóm amino, nhóm carboxyl, một nguyên tử hydro, và một nhóm bên riêng phân biệt nó với các axit amin khác.",
+    "shortDefEn": "The monomer that builds proteins. Each amino acid has a central carbon bonded to an amino group, a carboxyl group, a hydrogen atom, and a side group that distinguishes it from the others.",
+    "fullDef": "Bộ khung của mọi axit amin giống hệt nhau: một nguyên tử carbon trung tâm, gọi là carbon alpha, gắn với một nhóm amino, một nhóm carboxyl và một nguyên tử hydro.\n\nThứ làm nên khác biệt là nhóm còn lại gắn vào carbon ấy. Chính nó quyết định axit amin đó ưa nước hay kỵ nước, mang điện hay trung hoà — và do đó quyết định chuỗi protein sẽ gấp thế nào.\n\nTrình tự axit amin trong một chuỗi polypeptide là cấu trúc bậc một của protein, và trình tự ấy do DNA quy định.",
+    "fullDefEn": "Every amino acid shares the same framework: a central carbon, the alpha carbon, bonded to an amino group, a carboxyl group and a hydrogen atom.\n\nWhat differs is the remaining group attached to that carbon. It decides whether the amino acid is water-loving or water-avoiding, charged or neutral — and therefore how the protein chain will fold.\n\nThe sequence of amino acids in a polypeptide chain is a protein's primary structure, and that sequence is specified by DNA.",
+    "aliases": [
+      "amino-acid"
+    ],
+    "category": "Sinh học",
+    "sources": [
+      {
+        "title": "Biology 2e, 3.4 Proteins",
+        "publisher": "OpenStax, Rice University",
+        "url": "https://openstax.org/books/biology-2e/pages/3-4-proteins"
+      },
+      {
+        "title": "Protein",
+        "publisher": "National Human Genome Research Institute, NIH",
+        "url": "https://www.genome.gov/genetics-glossary/Protein"
+      }
+    ],
+    "verdict": "REVISE",
+    "notes": "Dot 3, soan ngay 2026-09-21, nham vao nhom bai sinh hoc va suc khoe hien chua co tooltip nao. Moi URL da tai va doi chieu cung ngay. Ap ca sau quy tac 3/11/12/13/14/15. verdict de REVISE."
+  },
+  {
+    "slug": "enzyme",
+    "term": "Enzyme",
+    "termEn": "Enzyme",
+    "shortDef": "Chất xúc tác sinh học, gần như luôn là một protein. Enzyme làm tăng tốc một phản ứng hoá học cụ thể trong tế bào mà bản thân không bị biến đổi, nên dùng đi dùng lại được.",
+    "shortDefEn": "A biological catalyst, almost always a protein. An enzyme speeds up one specific chemical reaction in the cell without being changed itself, so it can be reused again and again.",
+    "fullDef": "Enzyme hoạt động bằng cách hạ thấp năng lượng hoạt hoá của phản ứng — tức là hạ cái ngưỡng năng lượng phải vượt qua để phản ứng xảy ra. Nó KHÔNG làm thay đổi năng lượng tự do của phản ứng, nên nó không biến một phản ứng bất lợi thành có lợi; nó chỉ làm phản ứng vốn có thể xảy ra diễn ra nhanh hơn.\n\nChất mà enzyme gắn vào gọi là cơ chất. Chỗ gắn trên enzyme gọi là vị trí hoạt động — nơi phản ứng thực sự diễn ra.\n\nMột tế bào chứa hàng nghìn loại enzyme khác nhau, và mỗi loại xúc tác một phản ứng riêng.",
+    "fullDefEn": "An enzyme works by lowering the activation energy of a reaction — the energy threshold that must be crossed for the reaction to happen. It does NOT change the reaction's free energy, so it cannot turn an unfavourable reaction into a favourable one; it only makes a reaction that could already occur happen faster.\n\nThe substance an enzyme binds is its substrate. The place on the enzyme where that happens is the active site, where the action takes place.\n\nA cell holds thousands of different enzyme types, and each catalyses one particular reaction.",
+    "aliases": [
+      "men",
+      "chat-xuc-tac-sinh-hoc"
+    ],
+    "category": "Sinh học",
+    "sources": [
+      {
+        "title": "Enzyme",
+        "publisher": "National Human Genome Research Institute, NIH",
+        "url": "https://www.genome.gov/genetics-glossary/Enzyme"
+      },
+      {
+        "title": "Biology 2e, 6.5 Enzymes",
+        "publisher": "OpenStax, Rice University",
+        "url": "https://openstax.org/books/biology-2e/pages/6-5-enzymes"
+      }
+    ],
+    "verdict": "REVISE",
+    "notes": "Dot 3, soan ngay 2026-09-21, nham vao nhom bai sinh hoc va suc khoe hien chua co tooltip nao. Moi URL da tai va doi chieu cung ngay. Ap ca sau quy tac 3/11/12/13/14/15. verdict de REVISE."
+  },
+  {
+    "slug": "dot-bien",
+    "term": "Đột biến",
+    "termEn": "Mutation",
+    "shortDef": "Thay đổi trong trình tự DNA của một sinh vật. Nó có thể đến từ lỗi sao chép DNA lúc tế bào phân chia, từ tiếp xúc với tác nhân gây đột biến, hoặc từ nhiễm virus.",
+    "shortDefEn": "A change in the DNA sequence of an organism. It can arise from errors in DNA replication during cell division, from exposure to mutagens, or from a viral infection.",
+    "fullDef": "Sao chép DNA là quá trình rất chính xác, nhưng thỉnh thoảng vẫn sai — chẳng hạn enzyme polymerase chèn nhầm một base. Tế bào có nhiều lớp sửa lỗi: polymerase tự đọc soát ngay trong lúc sao chép, cơ chế sửa bắt cặp sai dọn phần còn lại sau khi sao chép xong, và cơ chế cắt bỏ nucleotide gỡ những base hỏng do tác nhân bên ngoài như tia tử ngoại.\n\nĐột biến là phần lọt qua tất cả các lớp ấy. NHGRI mô tả: đột biến xảy ra trong tế bào của chúng ta suốt ngày đêm, nhưng gần như không cái nào ảnh hưởng tới sức khoẻ.\n\nĐừng đánh đồng đột biến với bệnh. Phần lớn không có hậu quả đáng kể, một phần vì các cơ chế sửa lỗi, một phần vì chúng xảy ra ở tế bào sinh dưỡng nên không truyền đi xa.",
+    "fullDefEn": "DNA replication is a highly accurate process, but mistakes occasionally happen — a polymerase inserting the wrong base, for instance. Cells have several layers of correction: the polymerase proofreads as it copies, mismatch repair cleans up after replication, and nucleotide excision repair removes bases damaged by outside factors such as UV.\n\nA mutation is what gets through all of those layers. NHGRI puts it plainly: mutations are happening in our cells all the time, but almost none of them affect our health.\n\nDo not equate mutation with disease. Most have no significant consequence, partly because of the repair mechanisms and partly because they occur in somatic cells and so travel no further.",
+    "aliases": [
+      "mutation"
+    ],
+    "category": "Sinh học",
+    "sources": [
+      {
+        "title": "Mutation",
+        "publisher": "National Human Genome Research Institute, NIH",
+        "url": "https://www.genome.gov/genetics-glossary/Mutation"
+      },
+      {
+        "title": "Biology 2e, 14.6 DNA Repair",
+        "publisher": "OpenStax, Rice University",
+        "url": "https://openstax.org/books/biology-2e/pages/14-6-dna-repair"
+      }
+    ],
+    "verdict": "REVISE",
+    "notes": "Dot 3, soan ngay 2026-09-21, nham vao nhom bai sinh hoc va suc khoe hien chua co tooltip nao. Moi URL da tai va doi chieu cung ngay. Ap ca sau quy tac 3/11/12/13/14/15. verdict de REVISE."
+  },
+  {
+    "slug": "khang-the",
+    "term": "Kháng thể",
+    "termEn": "Antibody",
+    "shortDef": "Một protein của hệ miễn dịch, lưu thông trong máu, nhận diện các chất lạ như vi khuẩn và virus rồi vô hiệu hoá chúng. Kháng thể do tế bào lympho B sản xuất.",
+    "shortDefEn": "A protein of the immune system that circulates in the blood, recognises foreign substances such as bacteria and viruses, and neutralises them. Antibodies are made by B cells.",
+    "fullDef": "Kháng thể do một loại bạch cầu gọi là tế bào lympho B sản xuất. Tế bào lympho B trưởng thành trong tuỷ xương.\n\nĐầu mút của phân tử kháng thể có một vùng siêu biến. Chính vùng ấy cho phép cơ thể tạo ra nhiều loại kháng thể khác nhau, đủ để đáp ứng với mọi kháng nguyên mà nó gặp phải.\n\nKháng thể không hoạt động một mình. Các protein bổ thể đặc biệt bị hút về phía mầm bệnh đã bị kháng thể gắn vào, nên việc gắn kháng thể còn là tín hiệu gọi thêm các nhánh khác của hệ miễn dịch.",
+    "fullDefEn": "Antibodies are made by a kind of white blood cell called a B cell. B cells are lymphocytes that mature in the bone marrow.\n\nThe tip of an antibody molecule carries a hypervariable region. That region is what lets the body make many different antibodies, enough to respond to all the antigens it meets.\n\nAntibodies do not act alone. Complement proteins are particularly attracted to pathogens already bound by antibodies, so antibody binding also serves as a call to other branches of the immune system.",
+    "aliases": [
+      "antibody",
+      "immunoglobulin",
+      "te-bao-lympho-b"
+    ],
+    "category": "Sinh học",
+    "sources": [
+      {
+        "title": "Antibody",
+        "publisher": "National Human Genome Research Institute, NIH",
+        "url": "https://www.genome.gov/genetics-glossary/Antibody"
+      },
+      {
+        "title": "Biology 2e, 42.1 Innate Immune Response",
+        "publisher": "OpenStax, Rice University",
+        "url": "https://openstax.org/books/biology-2e/pages/42-1-innate-immune-response"
+      }
+    ],
+    "verdict": "REVISE",
+    "notes": "Dot 3, soan ngay 2026-09-21, nham vao nhom bai sinh hoc va suc khoe hien chua co tooltip nao. Moi URL da tai va doi chieu cung ngay. Ap ca sau quy tac 3/11/12/13/14/15. verdict de REVISE."
+  },
+  {
+    "slug": "crispr",
+    "term": "CRISPR",
+    "termEn": "CRISPR",
+    "shortDef": "Công nghệ các nhà nghiên cứu dùng để sửa DNA của sinh vật sống một cách có chọn lọc. Nó được phỏng theo những hệ chỉnh sửa bộ gen vốn có sẵn trong vi khuẩn.",
+    "shortDefEn": "A technology research scientists use to selectively modify the DNA of living organisms. It was adapted from naturally occurring genome editing systems found in bacteria.",
+    "fullDef": "CRISPR không phải phát minh từ con số không. NHGRI mô tả nó được phỏng theo, để dùng trong phòng thí nghiệm, từ những hệ chỉnh sửa bộ gen vốn tồn tại sẵn trong vi khuẩn.\n\nNó thuộc nhóm công cụ của kỹ thuật di truyền — thay đổi kiểu gen của một sinh vật bằng công nghệ DNA tái tổ hợp để đạt một đặc tính mong muốn.\n\nỨng dụng không chỉ nằm ở chỉnh sửa. NHGRI nêu một hướng khác: dùng CRISPR để phát hiện RNA của virus COVID mà không cần khuếch đại gen.",
+    "fullDefEn": "CRISPR was not invented from nothing. NHGRI describes it as adapted for laboratory use from naturally occurring genome editing systems found in bacteria.\n\nIt belongs to the toolkit of genetic engineering — altering an organism's genotype using recombinant DNA technology to achieve a desired trait.\n\nThe applications are not only editing. NHGRI notes another: using CRISPR to detect COVID RNA without gene amplification.",
+    "aliases": [
+      "crispr-cas9"
+    ],
+    "category": "Sinh học",
+    "sources": [
+      {
+        "title": "CRISPR",
+        "publisher": "National Human Genome Research Institute, NIH",
+        "url": "https://www.genome.gov/genetics-glossary/CRISPR"
+      },
+      {
+        "title": "Biology 2e, 17.1 Biotechnology",
+        "publisher": "OpenStax, Rice University",
+        "url": "https://openstax.org/books/biology-2e/pages/17-1-biotechnology"
+      }
+    ],
+    "verdict": "REVISE",
+    "notes": "Dot 3, soan ngay 2026-09-21, nham vao nhom bai sinh hoc va suc khoe hien chua co tooltip nao. Moi URL da tai va doi chieu cung ngay. Ap ca sau quy tac 3/11/12/13/14/15. verdict de REVISE. LUU Y cho reviewer: nguon NHGRI dinh nghia CRISPR nhung KHONG mo ta Cas9. Muc tu vi the co y KHONG giai thich co che cat DNA cua Cas9 - do la quy tac 1 va 15, khong phai thieu sot. Neu reviewer muon co che thi phai them nguon phu du no."
+  },
+  {
+    "slug": "ky-thuat-di-truyen",
+    "term": "Kỹ thuật di truyền",
+    "termEn": "Genetic engineering",
+    "shortDef": "Thay đổi kiểu gen của một sinh vật bằng công nghệ DNA tái tổ hợp, để sinh vật mang một đặc tính mong muốn.",
+    "shortDefEn": "Altering an organism's genotype using recombinant DNA technology, so that the organism carries a desired trait.",
+    "fullDef": "Công cụ trung tâm là phân tử DNA tái tổ hợp: một plasmid đã được chèn DNA ngoại lai vào. Những phân tử như vậy được tạo ra nhân tạo và không tồn tại trong tự nhiên.\n\nTừ đó, đoạn DNA ngoại lai được đưa vào sinh vật đích, và nếu nó hoạt động thì sinh vật biểu hiện đặc tính mà đoạn DNA ấy quy định.\n\nCRISPR là một công cụ trong nhóm này, nhưng không phải công cụ duy nhất, và kỹ thuật di truyền đã tồn tại trước khi CRISPR được phỏng theo từ vi khuẩn.",
+    "fullDefEn": "The central tool is the recombinant DNA molecule: a plasmid with foreign DNA inserted into it. Such molecules are created artificially and do not occur in nature.\n\nThe foreign DNA is then introduced into the target organism, and if it works, the organism expresses the trait that stretch of DNA specifies.\n\nCRISPR is one tool in this family but not the only one, and genetic engineering existed before CRISPR was adapted from bacteria.",
+    "aliases": [
+      "genetic-engineering",
+      "dna-tai-to-hop",
+      "recombinant-dna"
+    ],
+    "category": "Sinh học",
+    "sources": [
+      {
+        "title": "Biology 2e, 17.1 Biotechnology",
+        "publisher": "OpenStax, Rice University",
+        "url": "https://openstax.org/books/biology-2e/pages/17-1-biotechnology"
+      },
+      {
+        "title": "CRISPR",
+        "publisher": "National Human Genome Research Institute, NIH",
+        "url": "https://www.genome.gov/genetics-glossary/CRISPR"
+      }
+    ],
+    "verdict": "REVISE",
+    "notes": "Dot 3, soan ngay 2026-09-21, nham vao nhom bai sinh hoc va suc khoe hien chua co tooltip nao. Moi URL da tai va doi chieu cung ngay. Ap ca sau quy tac 3/11/12/13/14/15. verdict de REVISE."
+  },
+  {
+    "slug": "gia-duoc",
+    "term": "Giả dược",
+    "termEn": "Placebo",
+    "shortDef": "Hiệu ứng giả dược là một kết quả sức khoẻ có lợi, đến từ việc người bệnh TRÔNG ĐỢI rằng can thiệp sẽ giúp ích.",
+    "shortDefEn": "The placebo effect is a beneficial health outcome resulting from a person's anticipation that an intervention will help.",
+    "fullDef": "Định nghĩa của NCCIH đặt trọng tâm vào sự trông đợi của người bệnh, chứ không vào bản thân viên thuốc. Đó là lý do hiệu ứng này xuất hiện trong nhiều loại can thiệp khác nhau.\n\nBa hướng nghiên cứu NCCIH nêu ra: đã tìm được một dấu ấn di truyền có thể dự đoán mức đáp ứng với giả dược; có bằng chứng cho thấy đáp ứng giả dược có thể diễn ra ngoài ý thức; và có kết quả cho thấy giả dược vẫn có ích ngay cả khi người bệnh BIẾT mình đang dùng giả dược.\n\nGiữ đúng phạm vi của định nghĩa: NCCIH nói về một kết quả có lợi đến từ trông đợi. Trang không khẳng định cơ chế nào khác ngoài trông đợi và tương tác với nhân viên y tế, và cũng không gợi ý giả dược thay thế được điều trị dựa trên bằng chứng.",
+    "fullDefEn": "NCCIH's definition puts the weight on the patient's anticipation, not on the pill itself. That is why the effect shows up across many different kinds of intervention.\n\nThree research findings NCCIH highlights: a genetic marker has been found that may predict placebo responsiveness; there is evidence that placebo responses can operate outside conscious awareness; and results suggest placebos may help even when patients know they are receiving one.\n\nKeep to the scope of the definition: NCCIH describes a beneficial outcome arising from anticipation. The page claims no mechanism beyond anticipation and interaction with a health-care provider, and does not suggest placebos replace evidence-based treatment.",
+    "aliases": [
+      "placebo",
+      "hieu-ung-gia-duoc",
+      "placebo-effect"
+    ],
+    "category": "Sức khoẻ",
+    "sources": [
+      {
+        "title": "Placebo Effect",
+        "publisher": "National Center for Complementary and Integrative Health, NIH",
+        "url": "https://www.nccih.nih.gov/health/placebo-effect"
+      }
+    ],
+    "verdict": "REVISE",
+    "notes": "Dot 3, soan ngay 2026-09-21, nham vao nhom bai sinh hoc va suc khoe hien chua co tooltip nao. Moi URL da tai va doi chieu cung ngay. Ap ca sau quy tac 3/11/12/13/14/15. verdict de REVISE. CHI CO MOT NGUON, nhung la trung tam dinh nghia cua NIH cho chu de nay. Theo tieu chi reviewer chot o dot 2, day khong phai claim gay tranh cai ve mat dinh nghia."
   }
 ]
