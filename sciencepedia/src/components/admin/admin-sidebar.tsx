@@ -30,7 +30,12 @@ export function AdminSidebar({ role }: { role: Role }) {
   const pathname = usePathname();
 
   return (
-    <aside className="lg:sticky lg:top-24 lg:self-start">
+    /* `min-w-0`: cột lưới sizing `auto` lấy min-content của item làm cận dưới,
+       mà min-content của thanh tab (flex, các link `shrink-0`) là tổng bề rộng
+       cả 6 tab — `overflow-x-auto` cho nội dung trượt chứ không cắt đóng góp
+       đó. Thiếu dòng này, track phình ~700px và kéo cả trang admin trượt
+       ngang trên điện thoại, thẻ số liệu bị cắt mất mép phải. */
+    <aside className="min-w-0 lg:sticky lg:top-24 lg:self-start">
       <p className="mb-4 font-display text-lg font-bold tracking-tight">
         {t("title")}
       </p>
