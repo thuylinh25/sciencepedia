@@ -491,3 +491,46 @@ thought to*, *estimated*, *as of <năm>*.
 trích dẫn, vì mọi trích dẫn đều resolve đúng. Chỉ lộ khi đọc chính nguồn rồi
 đối chiếu từng mệnh đề — cùng một kết luận với mục
 "Trích dẫn resolve đúng bài KHÔNG có nghĩa là bài đó nói điều đang viết".
+
+---
+
+## Ba hình dạng nữa: nguồn đánh nhau, hệ quả tự mâu thuẫn, chọn một kể như tất cả
+
+Chốt 2026-09-21, từ lượt duyệt ĐỢT HAI mười mục từ — chạy sau khi quy tắc 3,
+11 và 12 đã có hiệu lực.
+
+Ba quy tắc ấy **có tác dụng**: bốn hình dạng cũ chỉ tái phát hai lần, cả hai
+đều nhẹ. Nhưng ba lỗi nặng nhất của đợt không quy tắc nào chạm tới, vì cả ba
+quy tắc cũ đều chỉ soi quan hệ giữa **một câu trong bài** và **một câu trong
+nguồn**. Ba hình dạng mới soi quan hệ giữa bài và **toàn bộ** nguồn:
+
+**1. Hai nguồn đánh nhau, và bài chọn câu tiện hơn.** Mục "khoá thuỷ triều"
+viết Trái Đất và Mặt Trăng khoá lẫn nhau, trích đúng nguyên văn trang Moon
+Facts của NASA. Nhưng chính trang Tidal Locking của NASA nói khoảng 50 tỉ năm
+nữa Trái Đất mới khoá lại. Hai trang cùng một cơ quan, một câu lỏng một câu
+chặt; bài lấy câu lỏng, và nói với người đọc một điều sai về độ dài ngày.
+**Trung thành với nguồn không miễn trừ trách nhiệm đúng.**
+
+**2. Hệ quả tự rút ra, bị chính trang nguồn bác ở đoạn khác.** Nguồn nói năng
+lượng liên kết xấp xỉ tỉ lệ với số nucleon khi A > 8. Bài suy ra "vậy năng
+lượng liên kết trên mỗi nucleon gần như không đổi". Cùng trang ấy ghi giá trị
+6–10 MeV với đỉnh ở sắt-56 — và nếu điều bài suy ra là thật thì đã chẳng có
+nhiệt hạch lẫn phân hạch. Bài tự mâu thuẫn trong một câu. **Rút hệ quả là
+việc nên làm, nhưng hệ quả phải soi lại TOÀN trang nguồn, không chỉ soi câu
+gốc.**
+
+**3. Chọn một trong nhiều rồi kể như nó là tất cả.** Nguồn cho ba cơ chế kết
+thúc tín hiệu dẫn truyền thần kinh; bài giữ một và nâng nó thành yếu tố quyết
+định. Đây là họ hàng ngược dấu của hình dạng "dựng ranh giới nguồn không
+dựng": hình dạng kia **thêm** vế nguồn không có, hình dạng này **bớt** vế
+nguồn có rồi nâng cấp phần còn lại. **Không một chữ nào không có nguồn, mà
+vẫn nói sai về cách thế giới vận hành.**
+
+**Một quy tắc phụ, về nguồn cùng nhà xuất bản:** luật "≥2 nguồn" trong
+`seed-glossary.ts` là luật chống mục nát và đổi trang, không phải luật đòi
+tính độc lập. Nguồn khác nhà xuất bản chỉ **bắt buộc** khi khẳng định gây
+tranh cãi, khi số liệu dễ cũ, hoặc khi bài nói ngược hiểu biết phổ thông —
+đúng ba trường hợp mà một nguồn thứ hai thật sự kiểm được điều gì đó.
+
+Bản vá nằm ở quy tắc 13, 14, 15 trong
+`.claude/skills/article-generator/SKILL.md`.

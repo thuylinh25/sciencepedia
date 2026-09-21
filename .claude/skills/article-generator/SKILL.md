@@ -53,5 +53,17 @@ Step 3 of the article chain. Turns a validated source pack into a draft with ful
 
     Why rules 11 and 12 exist: `science-editor` reviewed a batch of ten glossary entries on 2026-09-21 and cut four passages. All four were unsourced, and all four were the same three shapes — a dropped hedge, an invented boundary, an invented cause. Rule 3 already covered the first and was still violated three times, which is why it now lists the specific words. The other two shapes had no rule at all. None of the four was a fabricated citation; each was a true-sounding sentence added *between* sourced ones, which is exactly the kind a reviewer has to catch by reading the source rather than by checking the reference list.
 
+13. **Two sources that disagree do not both get to be right — and neither does the convenient one.** When the pack contains a loose statement and a precise one about the same thing, the precise one wins, and the draft says what the precise one says. Being faithful to a source is not a defence against being wrong.
+
+14. **A consequence you derive must be checked against the whole source page, not just the sentence it came from.** Taking a true statement and stating its implication is how a draft earns its keep — and it is also where a draft can contradict the very page it cites, two paragraphs further down.
+
+15. **Picking one item from a list and presenting it as the whole is a fabrication, even though every word came from the source.** If the source gives three mechanisms and the draft gives one, the draft has told the reader the wrong thing about how the world works — and it did so without adding a single unsourced word.
+
+    Why rules 13–15 exist: they come from the SECOND glossary batch (2026-09-21), reviewed after rules 3, 11 and 12 were already in force. Those three worked — the old shapes recurred only twice, both minor. The three worst errors in the batch were shapes no rule covered, because 3, 11 and 12 all police the relation between *a sentence in the draft* and *a sentence in the source*. These three are about the relation between the draft and the source **as a whole**:
+
+    - **13** — An entry stated the Earth and Moon are tidally locked to each other, quoting NASA's Moon Facts verbatim. NASA's own Tidal Locking page says Earth will *also* become tidally locked in roughly 50 billion years. Two NASA pages, one loose and one precise; the draft took the loose one and told readers something false about the length of a day.
+    - **14** — A source says nuclear binding energy is roughly proportional to nucleon count for A > 8. The draft derived "so binding energy per nucleon is nearly constant". The same page gives 6–10 MeV with a peak at iron-56, and if the derived claim were true there would be no fusion and no fission — the entry contradicted itself in one sentence.
+    - **15** — A source lists three mechanisms that end a neurotransmitter signal. The draft kept one and called it *the* determining factor.
+
 ## Fails when
 The source pack is insufficient, or a section required by the template cannot be sourced. Return a gap report rather than a padded article.
