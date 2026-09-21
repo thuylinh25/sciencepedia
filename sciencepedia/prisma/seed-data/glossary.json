@@ -7,11 +7,23 @@
     "shortDefEn": "A physical quantity that describes how an object rotates about a point or an axis; it is a vector. When no net external torque acts, a system's angular momentum is conserved, so a body that draws its mass closer to the axis spins faster.",
     "fullDef": "Với một chất điểm, động lượng góc đối với một điểm là tích có hướng của vectơ vị trí và động lượng: L = r × p. Với một vật rắn quay quanh một trục, nó bằng tích của mômen quán tính và tốc độ góc: L = Iω.\n\nĐịnh luật bảo toàn động lượng góc phát biểu rằng nếu tổng mômen ngoại lực đối với một điểm bằng không thì động lượng góc của hệ đối với điểm đó không đổi. Vì vậy, khi mômen quán tính giảm, chẳng hạn khi vận động viên trượt băng thu tay chân vào sát người, tốc độ góc phải tăng lên.\n\nTrong thiên văn, nguyên lý này được dùng để giải thích vì sao một đám mây khí đang quay, khi co lại dưới tác dụng của hấp dẫn, lại quay nhanh dần; đây là một phần của mô hình hình thành Hệ Mặt Trời. Trong tiếng Việt, đại lượng này còn được gọi là mômen động lượng.",
     "fullDefEn": "For a point particle, angular momentum about a point is the cross product of its position vector and its linear momentum: L = r × p. For a rigid body rotating about an axis, it equals the moment of inertia multiplied by the angular velocity: L = Iω.\n\nThe law of conservation of angular momentum states that if the net external torque about a point is zero, the system's angular momentum about that point stays constant. So when the moment of inertia decreases, as when a figure skater pulls in their arms and legs, the angular velocity must increase.\n\nIn astronomy, the principle is used to explain why a rotating gas cloud spins faster as it contracts under gravity, which is part of the model for how the Solar System formed.",
-    "aliases": ["mo-men-dong-luong", "momen-dong-luong", "angular-momentum"],
+    "aliases": [
+      "mo-men-dong-luong",
+      "momen-dong-luong",
+      "angular-momentum"
+    ],
     "category": "Vật lý",
     "sources": [
-      {"title": "University Physics Volume 1, §11.3 Conservation of Angular Momentum", "publisher": "OpenStax, Rice University", "url": "https://openstax.org/books/university-physics-volume-1/pages/11-3-conservation-of-angular-momentum"},
-      {"title": "Angular Momentum", "publisher": "HyperPhysics, Georgia State University", "url": "http://hyperphysics.gsu.edu/hbase/amom.html"}
+      {
+        "title": "University Physics Volume 1, §11.3 Conservation of Angular Momentum",
+        "publisher": "OpenStax, Rice University",
+        "url": "https://openstax.org/books/university-physics-volume-1/pages/11-3-conservation-of-angular-momentum"
+      },
+      {
+        "title": "Angular Momentum",
+        "publisher": "HyperPhysics, Georgia State University",
+        "url": "http://hyperphysics.gsu.edu/hbase/amom.html"
+      }
     ],
     "usedIn": [
       "su-ra-doi-cua-he-mat-troi",
@@ -30,13 +42,34 @@
     "shortDefEn": "The observation of light from an object at a longer wavelength than it had when emitted, shifted toward the red end of the spectrum. For distant galaxies, the main cause is the expansion of the universe stretching the light's wavelength.",
     "fullDef": "Dịch chuyển đỏ có thể có nhiều nguyên nhân. Khi nguồn sáng chuyển động ra xa người quan sát, các vạch quang phổ xuất hiện ở bước sóng dài hơn (hiệu ứng Doppler); khi nguồn tiến lại gần, các vạch lệch về bước sóng ngắn hơn, gọi là dịch chuyển xanh. Dịch chuyển đỏ của các thiên hà xa thì không hoàn toàn do hiệu ứng Doppler, mà chủ yếu do chính không gian giãn nở làm ánh sáng bị kéo dài trên đường truyền; phần này gọi là dịch chuyển đỏ vũ trụ học.\n\nĐộ dịch chuyển đỏ thường được ký hiệu là z, bằng hiệu giữa bước sóng quan sát được và bước sóng lúc phát ra, chia cho bước sóng lúc phát ra. Edwin Hubble nhận thấy thiên hà càng xa thì quang phổ càng lệch về phía đỏ; vì thế, với các thiên hà rất xa, dịch chuyển đỏ được dùng làm chỉ dấu chính về khoảng cách.\n\nVì ánh sáng cần thời gian để truyền tới, vật có dịch chuyển đỏ càng lớn thì ta đang nhìn thấy nó ở thời điểm càng xa trong quá khứ.",
     "fullDefEn": "Redshift can have more than one cause. When a light source moves away from an observer, its spectral lines appear at longer wavelengths (the Doppler effect); when it moves closer, the lines shift to shorter wavelengths, which is called blueshift. The redshift of distant galaxies is not strictly a Doppler effect. It comes mainly from the expansion of space itself stretching light as it travels, and this part is called cosmological redshift.\n\nRedshift is usually written as z: the observed wavelength minus the emitted wavelength, divided by the emitted wavelength. Edwin Hubble found that more distant galaxies tend to have more strongly redshifted spectra, so for very distant galaxies redshift serves as a primary indicator of distance.\n\nBecause light takes time to reach us, the higher an object's redshift, the further back in time we are seeing it.",
-    "aliases": ["dich-chuyen-ve-phia-do", "chuyen-dich-do", "lech-do", "redshift"],
+    "aliases": [
+      "dich-chuyen-ve-phia-do",
+      "chuyen-dich-do",
+      "lech-do",
+      "redshift"
+    ],
     "category": "Thiên văn học",
     "sources": [
-      {"title": "What is 'red shift'?", "publisher": "European Space Agency (ESA)", "url": "https://www.esa.int/Science_Exploration/Space_Science/What_is_red_shift"},
-      {"title": "Hubble Cosmological Redshift", "publisher": "NASA Science", "url": "https://science.nasa.gov/mission/hubble/science/science-behind-the-discoveries/hubble-cosmological-redshift/"},
-      {"title": "What Do Spectra Tell Us?", "publisher": "NASA Goddard, Imagine the Universe!", "url": "https://imagine.gsfc.nasa.gov/features/yba/M31_velocity/spectrum/spectra_info.html"},
-      {"title": "Dunlop, J. S. (2013). The Cosmic History of Star Formation, §2 Why redshift z > 5", "publisher": "NASA/IPAC Extragalactic Database (NED) Level 5, Caltech", "url": "https://ned.ipac.caltech.edu/level5/Sept14/Dunlop/Dunlop2.html"}
+      {
+        "title": "What is 'red shift'?",
+        "publisher": "European Space Agency (ESA)",
+        "url": "https://www.esa.int/Science_Exploration/Space_Science/What_is_red_shift"
+      },
+      {
+        "title": "Hubble Cosmological Redshift",
+        "publisher": "NASA Science",
+        "url": "https://science.nasa.gov/mission/hubble/science/science-behind-the-discoveries/hubble-cosmological-redshift/"
+      },
+      {
+        "title": "What Do Spectra Tell Us?",
+        "publisher": "NASA Goddard, Imagine the Universe!",
+        "url": "https://imagine.gsfc.nasa.gov/features/yba/M31_velocity/spectrum/spectra_info.html"
+      },
+      {
+        "title": "Dunlop, J. S. (2013). The Cosmic History of Star Formation, §2 Why redshift z > 5",
+        "publisher": "NASA/IPAC Extragalactic Database (NED) Level 5, Caltech",
+        "url": "https://ned.ipac.caltech.edu/level5/Sept14/Dunlop/Dunlop2.html"
+      }
     ],
     "usedIn": [
       "big-bang-vu-tru-da-dien-ra-the-nao-trong-138-ti-nam",
@@ -54,12 +87,27 @@
     "shortDefEn": "A unit of distance, not of time: one light-year is the distance light travels in a vacuum in one year. It is commonly used to express distances to stars and galaxies.",
     "fullDef": "Theo Liên đoàn Thiên văn Quốc tế (IAU), năm ánh sáng là quãng đường ánh sáng truyền trong chân không trong một năm Julius, tức 365,25 ngày. IAU nêu giá trị 9.460.730.472.580,8 km, tức khoảng 9,46 nghìn tỉ km.\n\nVì ánh sáng cần thời gian để truyền tới, nhìn một thiên thể càng xa là thấy nó ở thời điểm càng xa trong quá khứ.\n\nIAU ghi nhận rằng năm ánh sáng chủ yếu được dùng trong các ấn phẩm phổ biến khoa học. Trong nghiên cứu chuyên môn, chẳng hạn về cấu trúc thiên hà, các nhà thiên văn thường dùng đơn vị parsec, lớn hơn năm ánh sáng.",
     "fullDefEn": "According to the International Astronomical Union (IAU), a light-year is the distance light travels in a vacuum in one Julian year of 365.25 days. The IAU gives the value as 9,460,730,472,580.8 km, or about 9.46 trillion km.\n\nBecause light takes time to reach us, looking at a more distant object means seeing it as it was further in the past.\n\nThe IAU notes that the light-year is used mostly in popular publications. In technical work, such as studies of galactic structure, astronomers generally use the parsec, which is a larger unit.",
-    "aliases": ["light-year", "light-years"],
+    "aliases": [
+      "light-year",
+      "light-years"
+    ],
     "category": "Thiên văn học",
     "sources": [
-      {"title": "Measuring the Universe", "publisher": "International Astronomical Union (IAU)", "url": "https://iauarchive.eso.org/public/themes/measuring/"},
-      {"title": "What is a light-year?", "publisher": "NASA Science", "url": "https://science.nasa.gov/exoplanets/what-is-a-light-year/"},
-      {"title": "Hubble Cosmological Redshift", "publisher": "NASA Science", "url": "https://science.nasa.gov/mission/hubble/science/science-behind-the-discoveries/hubble-cosmological-redshift/"}
+      {
+        "title": "Measuring the Universe",
+        "publisher": "International Astronomical Union (IAU)",
+        "url": "https://iauarchive.eso.org/public/themes/measuring/"
+      },
+      {
+        "title": "What is a light-year?",
+        "publisher": "NASA Science",
+        "url": "https://science.nasa.gov/exoplanets/what-is-a-light-year/"
+      },
+      {
+        "title": "Hubble Cosmological Redshift",
+        "publisher": "NASA Science",
+        "url": "https://science.nasa.gov/mission/hubble/science/science-behind-the-discoveries/hubble-cosmological-redshift/"
+      }
     ],
     "usedIn": [
       "thien-ha-dinh-nghia-va-cach-phan-loai",
@@ -79,11 +127,21 @@
     "shortDefEn": "Matter whose presence is inferred from its gravitational effects on stars, galaxies and light, but which has never been directly detected. It does not emit, absorb or reflect light, and what it is made of has not yet been determined.",
     "fullDef": "Các bằng chứng về vật chất tối đều gián tiếp. Các ngôi sao ở rìa ngoài thiên hà xoắn ốc chuyển động quá nhanh so với mức mà lượng vật chất nhìn thấy được có thể giữ lại. Ánh sáng từ các thiên hà xa bị trường hấp dẫn bẻ cong (thấu kính hấp dẫn) mạnh hơn mức vật chất phát sáng gây ra. Quan sát các cụm thiên hà va chạm nhau, như Cụm Viên Đạn (Bullet Cluster), cho thấy khối lượng phân bố khác với vật chất thông thường.\n\nTheo ước tính được NASA và CERN nêu, vật chất tối chiếm khoảng 27% thành phần của vũ trụ, trong khi vật chất thông thường chỉ khoảng 5%. Theo các ước tính này, phần lớn vật chất trong vũ trụ là vật chất tối.\n\nNhiều ứng viên đã được đề xuất, như WIMP (hạt nặng tương tác yếu), axion hay lỗ đen nguyên thủy, nhưng chưa có bằng chứng xác nhận ứng viên nào. Vật chất tối khác với năng lượng tối: vật chất tối được suy ra từ lực hấp dẫn mà nó gây ra, còn năng lượng tối là tên gọi cho nguyên nhân chưa rõ khiến vũ trụ giãn nở ngày càng nhanh.",
     "fullDefEn": "All the evidence for dark matter is indirect. Stars at the outer edges of spiral galaxies move too fast to be held in place by the visible matter alone. Light from distant galaxies is bent by gravity (gravitational lensing) more strongly than the luminous matter can account for. Observations of colliding galaxy clusters, such as the Bullet Cluster, show mass distributed differently from ordinary matter.\n\nAccording to estimates cited by NASA and CERN, dark matter makes up about 27% of the universe, compared with about 5% for ordinary matter. On these estimates, most of the matter in the universe is dark matter.\n\nMany candidates have been proposed, including WIMPs (weakly interacting massive particles), axions and primordial black holes, but none has been confirmed. Dark matter is not the same as dark energy: dark matter is inferred from the gravity it exerts, while dark energy is the name for the unknown cause of the universe's accelerating expansion.",
-    "aliases": ["dark-matter"],
+    "aliases": [
+      "dark-matter"
+    ],
     "category": "Thiên văn học",
     "sources": [
-      {"title": "Dark Matter", "publisher": "NASA Science", "url": "https://science.nasa.gov/dark-matter/"},
-      {"title": "Dark matter", "publisher": "CERN", "url": "https://home.cern/science/physics/dark-matter"}
+      {
+        "title": "Dark Matter",
+        "publisher": "NASA Science",
+        "url": "https://science.nasa.gov/dark-matter/"
+      },
+      {
+        "title": "Dark matter",
+        "publisher": "CERN",
+        "url": "https://home.cern/science/physics/dark-matter"
+      }
     ],
     "usedIn": [
       "vat-chat-toi-va-nang-luong-toi-tran-chien-keo-co-vi-dai-cua-vu-tru",
@@ -104,12 +162,26 @@
     "shortDefEn": "The name astronomers give to the unknown cause of the universe's accelerating expansion. The acceleration is inferred from observations, but what dark energy actually is remains unknown.",
     "fullDef": "Năm 1998, hai nhóm nhà thiên văn quan sát các siêu tân tinh loại Ia ở rất xa và thấy chúng mờ hơn dự kiến so với độ dịch chuyển đỏ của chúng, tức ở xa hơn dự kiến. Từ đó họ kết luận rằng vũ trụ đang giãn nở ngày càng nhanh.\n\nTheo NASA, năng lượng tối chiếm khoảng 68,3–70% thành phần của vũ trụ; CERN nêu con số khoảng 68%. CERN mô tả năng lượng tối phân bố đều trong vũ trụ, dường như gắn với chân không của không gian, và gây ra một hiệu ứng đẩy làm vũ trụ giãn nở nhanh dần.\n\nBản chất của năng lượng tối vẫn là câu hỏi mở. Kết quả công bố năm 2025 của dự án DESI, khi kết hợp với các bộ dữ liệu khác, gợi ý rằng năng lượng tối có thể thay đổi theo thời gian; tuy vậy, mức tin cậy chưa đạt ngưỡng \"5 sigma\" mà vật lý dùng để công nhận một khám phá.",
     "fullDefEn": "In 1998, two teams of astronomers observing very distant Type Ia supernovae found them dimmer than expected for their redshift, meaning they were farther away than expected. They concluded that the expansion of the universe is speeding up.\n\nNASA puts dark energy at roughly 68.3–70% of the universe; CERN gives about 68%. CERN describes it as spread evenly through the universe, apparently associated with the vacuum of space, and producing a repulsive effect that accelerates the expansion.\n\nWhat dark energy is remains an open question. Results released by the DESI project in 2025, combined with other data sets, hint that dark energy may change over time, but the evidence has not reached the \"5 sigma\" level physicists require to claim a discovery.",
-    "aliases": ["dark-energy"],
+    "aliases": [
+      "dark-energy"
+    ],
     "category": "Thiên văn học",
     "sources": [
-      {"title": "Dark Energy", "publisher": "NASA Science", "url": "https://science.nasa.gov/dark-energy/"},
-      {"title": "Dark matter (section on dark energy)", "publisher": "CERN", "url": "https://home.cern/science/physics/dark-matter"},
-      {"title": "New DESI Results Strengthen Hints That Dark Energy May Evolve (19 March 2025)", "publisher": "Lawrence Berkeley National Laboratory", "url": "https://newscenter.lbl.gov/2025/03/19/new-desi-results-strengthen-hints-that-dark-energy-may-evolve/"}
+      {
+        "title": "Dark Energy",
+        "publisher": "NASA Science",
+        "url": "https://science.nasa.gov/dark-energy/"
+      },
+      {
+        "title": "Dark matter (section on dark energy)",
+        "publisher": "CERN",
+        "url": "https://home.cern/science/physics/dark-matter"
+      },
+      {
+        "title": "New DESI Results Strengthen Hints That Dark Energy May Evolve (19 March 2025)",
+        "publisher": "Lawrence Berkeley National Laboratory",
+        "url": "https://newscenter.lbl.gov/2025/03/19/new-desi-results-strengthen-hints-that-dark-energy-may-evolve/"
+      }
     ],
     "usedIn": [
       "vat-chat-toi-va-nang-luong-toi-tran-chien-keo-co-vi-dai-cua-vu-tru",
@@ -129,12 +201,30 @@
     "shortDefEn": "A reaction in which two light atomic nuclei combine into a heavier nucleus and release energy. It needs extremely high temperatures so the nuclei can overcome their electrical repulsion. It is what powers the Sun and other stars.",
     "fullDef": "Năng lượng được giải phóng vì khối lượng của hạt nhân tạo thành nhỏ hơn tổng khối lượng các hạt nhân ban đầu; phần khối lượng hụt này tương ứng với năng lượng theo hệ thức E = mc². Các hạt nhân đều mang điện dương nên đẩy nhau; chỉ khi va chạm với tốc độ rất lớn, tức ở nhiệt độ cực cao, chúng mới vượt qua được lực đẩy đó để hợp lại. Phản ứng này còn được gọi là phản ứng tổng hợp hạt nhân hay phản ứng hợp hạch.\n\nTrong lõi Mặt Trời, áp suất và nhiệt độ rất lớn ép các hạt nhân hydro hợp lại thành heli. Năng lượng giải phóng làm nóng ngôi sao và giúp nó không co sụp dưới sức nặng của chính mình. Ở những ngôi sao nặng, chuỗi phản ứng tiếp tục với các nguyên tố nặng dần cho tới khi silic hợp thành sắt.\n\nCác dự án như ITER đang nghiên cứu cách duy trì phản ứng nhiệt hạch trên Trái Đất; trong thiết bị thí nghiệm, nhiệt độ cần thiết cao hơn nhiều so với lõi Mặt Trời.",
     "fullDefEn": "Energy is released because the resulting nucleus has less mass than the nuclei that went into it, and that missing mass corresponds to energy through E = mc². Nuclei are all positively charged and repel one another; only when they collide at very high speeds, that is, at extremely high temperatures, can they overcome this repulsion and fuse.\n\nIn the Sun's core, immense pressure and temperature squeeze hydrogen nuclei together to form helium. The energy released heats the star and keeps it from collapsing under its own weight. In massive stars the chain goes on through progressively heavier elements until silicon fuses into iron.\n\nProjects such as ITER are working on sustaining fusion on Earth; in a laboratory device the temperature required is far higher than in the Sun's core.",
-    "aliases": ["nhiet-hach", "phan-ung-tong-hop-hat-nhan", "phan-ung-hop-hach", "hop-hach", "nuclear-fusion"],
+    "aliases": [
+      "nhiet-hach",
+      "phan-ung-tong-hop-hat-nhan",
+      "phan-ung-hop-hach",
+      "hop-hach",
+      "nuclear-fusion"
+    ],
     "category": "Vật lý hạt nhân",
     "sources": [
-      {"title": "DOE Explains... Fusion Reactions", "publisher": "U.S. Department of Energy, Office of Science", "url": "https://www.energy.gov/science/doe-explainsfusion-reactions"},
-      {"title": "What is fusion?", "publisher": "ITER Organization", "url": "https://www.iter.org/fusion-energy/what-fusion"},
-      {"title": "Stars", "publisher": "NASA Science", "url": "https://science.nasa.gov/universe/stars/"}
+      {
+        "title": "DOE Explains... Fusion Reactions",
+        "publisher": "U.S. Department of Energy, Office of Science",
+        "url": "https://www.energy.gov/science/doe-explainsfusion-reactions"
+      },
+      {
+        "title": "What is fusion?",
+        "publisher": "ITER Organization",
+        "url": "https://www.iter.org/fusion-energy/what-fusion"
+      },
+      {
+        "title": "Stars",
+        "publisher": "NASA Science",
+        "url": "https://science.nasa.gov/universe/stars/"
+      }
     ],
     "usedIn": [
       "ngoi-sao-cau-tao-va-vong-doi",
@@ -152,13 +242,31 @@
     "shortDefEn": "The boundary around a black hole inside which the speed needed to escape exceeds the speed of light. Anything that crosses it, light included, cannot get back out. The event horizon is not a physical surface.",
     "fullDef": "Chân trời sự kiện thường được gọi là \"điểm không thể quay lại\". Tại ranh giới này, vận tốc thoát bằng tốc độ ánh sáng; bán kính mà tại đó vận tốc thoát bằng tốc độ ánh sáng được gọi là bán kính Schwarzschild. Vì ánh sáng không thể thoát ra, không thông tin nào về những gì xảy ra bên trong đến được người quan sát ở bên ngoài.\n\nViệc một vật rơi vào bị lực thủy triều xé ra trước hay sau khi vượt qua chân trời sự kiện phụ thuộc vào khối lượng lỗ đen. Theo NASA, lỗ đen khối lượng sao có chân trời sự kiện nhỏ hơn nhiều và lực thủy triều mạnh hơn, có thể xé nát vật trước khi nó tới chân trời. Với một lỗ đen siêu khối lượng như ở tâm Ngân Hà, mô phỏng của NASA cho thấy vật vượt qua chân trời trước rồi mới bị kéo giãn.\n\nBản thân chân trời sự kiện không thể nhìn thấy vì nó không phát ra ánh sáng. Các ảnh chụp của kính thiên văn Event Horizon Telescope cho thấy một vùng tối ở giữa, gọi là bóng của lỗ đen, bao quanh bởi một vành sáng do khí nóng quay quanh lỗ đen phát ra.",
     "fullDefEn": "The event horizon is often called the \"point of no return\". At this boundary the escape velocity equals the speed of light; the radius at which that happens is called the Schwarzschild radius. Because light cannot get out, nothing about what happens inside can reach an outside observer.\n\nWhether an infalling object is torn apart by tidal forces before or after crossing the horizon depends on the black hole's mass. According to NASA, stellar-mass black holes have much smaller event horizons and stronger tidal forces, which can rip objects apart before they reach the horizon. For a supermassive black hole like the one at the centre of the Milky Way, a NASA simulation shows an object crossing the horizon first and only then being stretched apart.\n\nThe event horizon itself cannot be seen, because it emits no light. Images from the Event Horizon Telescope show a dark central region, called the black hole's shadow, surrounded by a bright ring from hot gas orbiting the black hole.",
-    "aliases": ["event-horizon"],
+    "aliases": [
+      "event-horizon"
+    ],
     "category": "Thiên văn học",
     "sources": [
-      {"title": "Black Holes (Imagine the Universe!)", "publisher": "NASA Goddard Space Flight Center", "url": "https://imagine.gsfc.nasa.gov/science/objects/black_holes1.html"},
-      {"title": "Black Hole Anatomy", "publisher": "NASA Science", "url": "https://science.nasa.gov/universe/black-holes/anatomy/"},
-      {"title": "New NASA Black Hole Visualization Takes Viewers Beyond the Brink", "publisher": "NASA Science", "url": "https://science.nasa.gov/universe/black-holes/supermassive-black-holes/new-nasa-black-hole-visualization-takes-viewers-beyond-the-brink/"},
-      {"title": "First image of our black hole (eso2208)", "publisher": "European Southern Observatory (ESO)", "url": "https://www.eso.org/public/images/eso2208-eht-mwa/"}
+      {
+        "title": "Black Holes (Imagine the Universe!)",
+        "publisher": "NASA Goddard Space Flight Center",
+        "url": "https://imagine.gsfc.nasa.gov/science/objects/black_holes1.html"
+      },
+      {
+        "title": "Black Hole Anatomy",
+        "publisher": "NASA Science",
+        "url": "https://science.nasa.gov/universe/black-holes/anatomy/"
+      },
+      {
+        "title": "New NASA Black Hole Visualization Takes Viewers Beyond the Brink",
+        "publisher": "NASA Science",
+        "url": "https://science.nasa.gov/universe/black-holes/supermassive-black-holes/new-nasa-black-hole-visualization-takes-viewers-beyond-the-brink/"
+      },
+      {
+        "title": "First image of our black hole (eso2208)",
+        "publisher": "European Southern Observatory (ESO)",
+        "url": "https://www.eso.org/public/images/eso2208-eht-mwa/"
+      }
     ],
     "usedIn": [
       "ho-den-noi-hinh-hoc-cua-khong-gian-sup-do",
@@ -175,12 +283,27 @@
     "shortDefEn": "The extremely dense core left behind when a massive star runs out of fuel and its core collapses, usually in a supernova explosion. During the collapse, protons and electrons are crushed together into neutrons. A neutron star is only about the size of a city.",
     "fullDef": "Khi một ngôi sao nặng cạn nhiên liệu, lõi của nó sụp đổ và proton cùng electron bị ép lại thành neutron. Theo NASA, nếu lõi đang sụp đổ có khối lượng trong khoảng 1 đến 3 lần khối lượng Mặt Trời, các neutron mới tạo thành có thể chặn sự sụp đổ lại và để lại một sao neutron. Nếu ngôi sao ban đầu nặng hơn nữa, sự sụp đổ không dừng lại và tạo thành lỗ đen.\n\nSao neutron có đường kính khoảng 20 km. Vật chất của nó đặc đến mức, theo NASA, một khối cỡ viên đường có thể nặng khoảng 1 tỉ tấn trên Trái Đất.\n\nNhiều sao neutron được quan sát dưới dạng pulsar: sao neutron đang quay, phát ra các chùm bức xạ mạnh dọc theo các cực từ. Khi chùm tia quét qua hướng Trái Đất, ta thu được các xung bức xạ cách nhau rất đều.",
     "fullDefEn": "When a massive star runs out of fuel, its core collapses and protons and electrons are crushed together into neutrons. According to NASA, if the collapsing core is between about 1 and 3 solar masses, the newly formed neutrons can halt the collapse, leaving a neutron star. If the original star is more massive still, the collapse does not stop and a black hole forms.\n\nA neutron star is about 20 km across. Its matter is so dense that, according to NASA, a sugar-cube-sized piece would weigh about a billion tons on Earth.\n\nMany neutron stars are observed as pulsars: rotating neutron stars that send out powerful beams of radiation along their magnetic poles. When a beam sweeps across Earth, we receive pulses of radiation at very regular intervals.",
-    "aliases": ["sao-notron", "neutron-star"],
+    "aliases": [
+      "sao-notron",
+      "neutron-star"
+    ],
     "category": "Thiên văn học",
     "sources": [
-      {"title": "Neutron Stars (Imagine the Universe!)", "publisher": "NASA Goddard Space Flight Center", "url": "https://imagine.gsfc.nasa.gov/science/objects/neutron_stars1.html"},
-      {"title": "Stellar Evolution", "publisher": "Chandra X-ray Center, Smithsonian Astrophysical Observatory", "url": "https://chandra.si.edu/stellarev/"},
-      {"title": "Stars", "publisher": "NASA Science", "url": "https://science.nasa.gov/universe/stars/"}
+      {
+        "title": "Neutron Stars (Imagine the Universe!)",
+        "publisher": "NASA Goddard Space Flight Center",
+        "url": "https://imagine.gsfc.nasa.gov/science/objects/neutron_stars1.html"
+      },
+      {
+        "title": "Stellar Evolution",
+        "publisher": "Chandra X-ray Center, Smithsonian Astrophysical Observatory",
+        "url": "https://chandra.si.edu/stellarev/"
+      },
+      {
+        "title": "Stars",
+        "publisher": "NASA Science",
+        "url": "https://science.nasa.gov/universe/stars/"
+      }
     ],
     "usedIn": [
       "ngoi-sao-cau-tao-va-vong-doi",
@@ -198,13 +321,32 @@
     "shortDefEn": "The powerful explosion of a star. There are two main mechanisms: the core of a massive star collapses once it has nothing left to fuse, or a white dwarf in a binary system explodes after pulling in material from its companion.",
     "fullDef": "Siêu tân tinh sụp đổ lõi (ví dụ loại II) xảy ra ở những ngôi sao nặng hơn khoảng 8 lần Mặt Trời. Khi lõi gần như chỉ còn sắt, không còn gì để hợp hạch giải phóng năng lượng, lõi sụp đổ rồi bật ngược lại, tạo ra sóng xung kích lan ra ngoài và làm ngôi sao nổ tung. Phần lõi còn lại trở thành sao neutron, hoặc lỗ đen nếu ngôi sao ban đầu rất nặng.\n\nSiêu tân tinh loại Ia xảy ra trong hệ sao đôi. Sao lùn trắng nhận vật chất từ sao đồng hành; khi khối lượng của nó tiến gần giới hạn Chandrasekhar, khoảng 1,4 lần khối lượng Mặt Trời, carbon và oxy trong lõi bắt đầu hợp hạch mất kiểm soát. Vụ nổ không để lại lõi nào. Quan sát các siêu tân tinh loại Ia ở rất xa là cơ sở cho phát hiện năm 1998 rằng vũ trụ đang giãn nở ngày càng nhanh.\n\nCác nguyên tố được tạo ra trong lõi sao và trong chính vụ nổ bị phóng vào không gian, hòa vào môi trường giữa các vì sao.",
     "fullDefEn": "Core-collapse supernovae (Type II, for example) happen in stars more than about 8 times the mass of the Sun. Once the core is essentially all iron, nothing is left to fuse for energy, so the core collapses and then rebounds, sending a shock wave outward that blows the star apart. What remains of the core becomes a neutron star, or a black hole if the original star was very massive.\n\nType Ia supernovae happen in binary systems. A white dwarf gains material from its companion; as its mass approaches the Chandrasekhar limit of about 1.4 solar masses, carbon and oxygen in its core begin to fuse uncontrollably. The explosion leaves no core behind. Observations of very distant Type Ia supernovae were the basis of the 1998 discovery that the expansion of the universe is accelerating.\n\nElements made in the star's core and in the explosion itself are thrown out into space, where they mix with the interstellar medium.",
-    "aliases": ["supernova", "supernovae"],
+    "aliases": [
+      "supernova",
+      "supernovae"
+    ],
     "category": "Thiên văn học",
     "sources": [
-      {"title": "Supernovae (Imagine the Universe!)", "publisher": "NASA Goddard Space Flight Center", "url": "https://imagine.gsfc.nasa.gov/science/objects/supernovae1.html"},
-      {"title": "Stars", "publisher": "NASA Science", "url": "https://science.nasa.gov/universe/stars/"},
-      {"title": "Stellar Evolution", "publisher": "Chandra X-ray Center, Smithsonian Astrophysical Observatory", "url": "https://chandra.si.edu/stellarev/"},
-      {"title": "Dark Energy", "publisher": "NASA Science", "url": "https://science.nasa.gov/dark-energy/"}
+      {
+        "title": "Supernovae (Imagine the Universe!)",
+        "publisher": "NASA Goddard Space Flight Center",
+        "url": "https://imagine.gsfc.nasa.gov/science/objects/supernovae1.html"
+      },
+      {
+        "title": "Stars",
+        "publisher": "NASA Science",
+        "url": "https://science.nasa.gov/universe/stars/"
+      },
+      {
+        "title": "Stellar Evolution",
+        "publisher": "Chandra X-ray Center, Smithsonian Astrophysical Observatory",
+        "url": "https://chandra.si.edu/stellarev/"
+      },
+      {
+        "title": "Dark Energy",
+        "publisher": "NASA Science",
+        "url": "https://science.nasa.gov/dark-energy/"
+      }
     ],
     "usedIn": [
       "ngoi-sao-cau-tao-va-vong-doi",
@@ -226,11 +368,21 @@
     "shortDefEn": "The process in which greenhouse gases, clouds and some aerosols in the atmosphere absorb infrared radiation given off by a planet's surface, so less heat escapes to space and the surface stays warmer. Earth's natural greenhouse effect keeps the planet warm enough for life.",
     "fullDef": "IPCC định nghĩa hiệu ứng nhà kính là hiệu ứng bức xạ hồng ngoại của mọi thành phần hấp thụ hồng ngoại trong khí quyển. Các chất này hấp thụ bức xạ do bề mặt Trái Đất và khí quyển phát ra, rồi phát lại bức xạ hồng ngoại theo mọi hướng. Vì nhiệt độ giảm dần theo độ cao trong tầng đối lưu, lượng bức xạ thoát ra không gian thường ít hơn so với khi không có các chất hấp thụ này.\n\nCác khí nhà kính gồm hơi nước, cacbon đioxit (CO₂), mêtan, ôzôn, đinitơ oxit (N₂O) và các chlorofluorocarbon (CFC). Nếu không có hiệu ứng nhà kính tự nhiên, bề mặt Trái Đất sẽ lạnh hơn nhiều so với hiện nay.\n\nKhi nồng độ khí nhà kính tăng, hiệu ứng này mạnh lên; phần tăng thêm đôi khi được gọi là hiệu ứng nhà kính tăng cường. Theo NASA và IPCC, lượng CO₂ và các khí nhà kính khác mà con người thải ra, chủ yếu do đốt nhiên liệu hóa thạch, đã làm thay đổi cân bằng năng lượng của Trái Đất và khiến nhiệt độ tăng.",
     "fullDefEn": "The IPCC defines the greenhouse effect as the infrared radiative effect of all infrared-absorbing constituents in the atmosphere. These substances absorb radiation emitted by Earth's surface and by the atmosphere, then emit infrared radiation in all directions. Because temperature falls with height in the troposphere, the amount of radiation that escapes to space is normally less than it would be without these absorbers.\n\nGreenhouse gases include water vapour, carbon dioxide (CO₂), methane, ozone, nitrous oxide (N₂O) and chlorofluorocarbons (CFCs). Without the natural greenhouse effect, Earth's surface would be much colder than it is today.\n\nRaising the concentration of greenhouse gases strengthens the effect; the added part is sometimes called the enhanced greenhouse effect. According to NASA and the IPCC, the carbon dioxide and other greenhouse gases released by human activity, mainly the burning of fossil fuels, have disrupted Earth's energy balance and are driving temperatures up.",
-    "aliases": ["greenhouse-effect"],
+    "aliases": [
+      "greenhouse-effect"
+    ],
     "category": "Khoa học Trái Đất",
     "sources": [
-      {"title": "Climate Change 2021: The Physical Science Basis, Annex VII: Glossary (entries 'Greenhouse effect', 'Greenhouse gas')", "publisher": "Intergovernmental Panel on Climate Change (IPCC), AR6 WGI", "url": "https://www.ipcc.ch/report/ar6/wg1/downloads/report/IPCC_AR6_WGI_AnnexVII.pdf"},
-      {"title": "What is the greenhouse effect?", "publisher": "NASA Science", "url": "https://science.nasa.gov/climate-change/faq/what-is-the-greenhouse-effect/"}
+      {
+        "title": "Climate Change 2021: The Physical Science Basis, Annex VII: Glossary (entries 'Greenhouse effect', 'Greenhouse gas')",
+        "publisher": "Intergovernmental Panel on Climate Change (IPCC), AR6 WGI",
+        "url": "https://www.ipcc.ch/report/ar6/wg1/downloads/report/IPCC_AR6_WGI_AnnexVII.pdf"
+      },
+      {
+        "title": "What is the greenhouse effect?",
+        "publisher": "NASA Science",
+        "url": "https://science.nasa.gov/climate-change/faq/what-is-the-greenhouse-effect/"
+      }
     ],
     "usedIn": [
       "sao-kim-bai-hoc-ve-hieu-ung-nha-kinh-mat-kiem-soat",
@@ -247,13 +399,34 @@
     "shortDefEn": "The slow change in direction of a spinning object's rotation axis under a torque, like the wobbling axis of a spinning top. For Earth, it is the very slow change in the direction of the axis relative to the stars, which changes the North Star over thousands of years.",
     "fullDef": "Trong cơ học, khi một mômen lực tác dụng lên một vật đang quay, trục quay của vật, cùng hướng với động lượng góc, có thể quay vòng chậm quanh một trục khác thay vì đổ xuống. Hiện tượng này gọi là tiến động, thấy rõ ở con quay hồi chuyển.\n\nTrái Đất hơi phình ra ở xích đạo. Lực hấp dẫn của Mặt Trời và Mặt Trăng tác dụng lên phần phình này làm trục quay Trái Đất tiến động, hoàn thành một vòng trong khoảng 26.000 năm (NASA nêu chu kỳ khoảng 25.771,5 năm). Đây là tiến động trục quay; nó khác với sự thay đổi độ nghiêng của trục, vốn là một chu kỳ riêng.\n\nVì trục quay đổi hướng, ngôi sao sáng nằm gần cực bắc của bầu trời thay đổi theo thời gian: hiện nay là Polaris, vài nghìn năm trước là Kochab, và khoảng 12.000 năm nữa sẽ là Vega. Tiến động cũng làm chênh lệch giữa các mùa rõ hơn ở bán cầu này và kém đi ở bán cầu kia; nó là một trong các chu kỳ quỹ đạo Milankovitch ảnh hưởng tới khí hậu Trái Đất trên thang thời gian rất dài.",
     "fullDefEn": "In mechanics, when a torque acts on a spinning object, its rotation axis, which points along the angular momentum, can slowly sweep around another axis instead of toppling over. This is precession, clearly visible in a gyroscope.\n\nEarth bulges slightly at the equator. The gravitational pull of the Sun and Moon on this bulge makes Earth's axis precess, completing one circuit in about 26,000 years (NASA gives about 25,771.5 years). This is axial precession; it is separate from changes in the tilt of the axis, which follow a cycle of their own.\n\nBecause the axis changes direction, the bright star near the north celestial pole changes over time: today it is Polaris, a couple of thousand years ago it was Kochab, and in about 12,000 years it will be Vega. Precession also makes seasonal contrasts stronger in one hemisphere and weaker in the other, and it is one of the Milankovitch orbital cycles that affect Earth's climate over very long timescales.",
-    "aliases": ["tien-dong-truc-quay", "tue-sai", "precession", "axial-precession"],
+    "aliases": [
+      "tien-dong-truc-quay",
+      "tue-sai",
+      "precession",
+      "axial-precession"
+    ],
     "category": "Thiên văn học",
     "sources": [
-      {"title": "Milankovitch (Orbital) Cycles and Their Role in Earth's Climate", "publisher": "NASA Science", "url": "https://science.nasa.gov/science-research/earth-science/milankovitch-orbital-cycles-and-their-role-in-earths-climate/"},
-      {"title": "University Physics Volume 1, §11.4 Precession of a Gyroscope", "publisher": "OpenStax, Rice University", "url": "https://openstax.org/books/university-physics-volume-1/pages/11-4-precession-of-a-gyroscope"},
-      {"title": "APOD 2015 May 8: When Vega is North", "publisher": "NASA Science", "url": "https://science.nasa.gov/image-article/apod-2015-may-8-when-vega-is-north/"},
-      {"title": "Summer Triangle Corner: Vega", "publisher": "NASA Night Sky Network", "url": "https://science.nasa.gov/solar-system/skywatching/night-sky-network/summer-triangle-corner-vega/"}
+      {
+        "title": "Milankovitch (Orbital) Cycles and Their Role in Earth's Climate",
+        "publisher": "NASA Science",
+        "url": "https://science.nasa.gov/science-research/earth-science/milankovitch-orbital-cycles-and-their-role-in-earths-climate/"
+      },
+      {
+        "title": "University Physics Volume 1, §11.4 Precession of a Gyroscope",
+        "publisher": "OpenStax, Rice University",
+        "url": "https://openstax.org/books/university-physics-volume-1/pages/11-4-precession-of-a-gyroscope"
+      },
+      {
+        "title": "APOD 2015 May 8: When Vega is North",
+        "publisher": "NASA Science",
+        "url": "https://science.nasa.gov/image-article/apod-2015-may-8-when-vega-is-north/"
+      },
+      {
+        "title": "Summer Triangle Corner: Vega",
+        "publisher": "NASA Night Sky Network",
+        "url": "https://science.nasa.gov/solar-system/skywatching/night-sky-network/summer-triangle-corner-vega/"
+      }
     ],
     "usedIn": [
       "vi-sao-chiem-tinh-hoc-khong-phai-khoa-hoc",
@@ -270,11 +443,22 @@
     "shortDefEn": "Atoms of the same chemical element that have the same number of protons but different numbers of neutrons, and therefore different mass numbers. Some isotopes are stable; others are unstable and undergo radioactive decay.",
     "fullDef": "Số proton, tức số hiệu nguyên tử Z, quyết định nguyên tử thuộc nguyên tố nào. Các đồng vị của một nguyên tố có cùng Z nhưng khác số neutron, nên khác số khối A (tổng số proton và neutron). Ví dụ, carbon-12 và carbon-14 đều có 6 proton, nhưng lần lượt có 6 và 8 neutron.\n\nĐồng vị bền không tự biến đổi; đồng vị phóng xạ thì phân rã tự phát theo thời gian. Hầu hết các nguyên tố có nhiều hơn một đồng vị bền. Chỉ thêm một neutron cũng có thể làm tính chất của đồng vị thay đổi rõ rệt: carbon-12 bền, còn carbon-14 thì phân rã.\n\nĐồng vị được dùng để truy vết các quá trình tự nhiên thông qua sự thay đổi tỉ lệ đồng vị. Đồng vị phóng xạ còn cung cấp thông tin về thời gian, là cơ sở của phương pháp định tuổi bằng phóng xạ, chẳng hạn định tuổi bằng carbon-14.",
     "fullDefEn": "The number of protons, the atomic number Z, determines which element an atom belongs to. Isotopes of an element share the same Z but have different numbers of neutrons, and so different mass numbers A (protons plus neutrons). Carbon-12 and carbon-14, for example, both have 6 protons but have 6 and 8 neutrons respectively.\n\nStable isotopes do not change on their own; radioactive isotopes decay spontaneously over time. Most elements have more than one stable isotope. Adding even a single neutron can change an isotope's properties markedly: carbon-12 is stable, while carbon-14 decays.\n\nIsotopes are used to trace natural processes through changes in isotope ratios. Radioactive isotopes also carry information about time, which is the basis of radiometric dating, such as carbon-14 dating.",
-    "aliases": ["isotope", "isotopes"],
+    "aliases": [
+      "isotope",
+      "isotopes"
+    ],
     "category": "Hóa học",
     "sources": [
-      {"title": "Climate Change 2021: The Physical Science Basis, Annex VII: Glossary (entry 'Isotopes')", "publisher": "Intergovernmental Panel on Climate Change (IPCC), AR6 WGI", "url": "https://www.ipcc.ch/report/ar6/wg1/downloads/report/IPCC_AR6_WGI_AnnexVII.pdf"},
-      {"title": "DOE Explains... Isotopes", "publisher": "U.S. Department of Energy, Office of Science", "url": "https://www.energy.gov/science/doe-explainsisotopes"}
+      {
+        "title": "Climate Change 2021: The Physical Science Basis, Annex VII: Glossary (entry 'Isotopes')",
+        "publisher": "Intergovernmental Panel on Climate Change (IPCC), AR6 WGI",
+        "url": "https://www.ipcc.ch/report/ar6/wg1/downloads/report/IPCC_AR6_WGI_AnnexVII.pdf"
+      },
+      {
+        "title": "DOE Explains... Isotopes",
+        "publisher": "U.S. Department of Energy, Office of Science",
+        "url": "https://www.energy.gov/science/doe-explainsisotopes"
+      }
     ],
     "usedIn": [
       "nhung-hat-vo-hinh-tao-nen-the-gioi-vat-chat",
@@ -282,5 +466,282 @@
     ],
     "verdict": "PASS",
     "notes": "The IUPAC Gold Book entry ('nuclides having the same atomic number but different mass numbers') agrees, but the page was behind a Cloudflare challenge, so I saw it only through a search snippet and it is NOT listed as a source. The neutron counts for C-12/C-14 are simple arithmetic (A − Z). 'Most elements have more than one stable isotope' is IPCC wording. DOE's '254 known stable isotopes' is deliberately left out. No conflict with nhung-hat-vo-hinh-tao-nen-the-gioi-vat-chat. FLAG, NOT VERIFIED (outside this entry): dai-tuyet-chung-permi-lan-su-song-suyt-bien-mat calls helium-3 and argon-36 'những đồng vị đặc trưng của vật chất ngoài Trái Đất'. Argon-36 is also present in Earth's atmosphere; as I recall, the original fullerene claim (early 2000s) rested on isotope RATIOS, not on the mere presence of these isotopes. I fetched no source, so that article's fact-check should confirm and, if needed, reword to 'tỉ lệ đồng vị heli và argon đặc trưng của vật chất ngoài Trái Đất'."
+  },
+  {
+    "slug": "photon",
+    "term": "Photon",
+    "termEn": "Photon",
+    "shortDef": "Hạt của ánh sáng: một lượng tử năng lượng điện từ. Photon luôn chuyển động với tốc độ ánh sáng và mang năng lượng E = hf, chỉ phụ thuộc vào tần số f, với h là hằng số Planck.",
+    "shortDefEn": "The particle of light: a quantum of electromagnetic energy. A photon always moves at the speed of light and carries an energy E = hf that depends only on its frequency f, where h is Planck's constant.",
+    "fullDef": "Ánh sáng vừa lan truyền như sóng, vừa trao đổi năng lượng theo từng gói rời rạc. Mỗi gói ấy là một photon. Năng lượng của nó không phụ thuộc vào độ sáng của nguồn mà chỉ phụ thuộc vào tần số: E = hf. Tăng độ sáng là tăng SỐ photon, không phải tăng năng lượng của từng photon.\n\nĐó chính là điều hiệu ứng quang điện buộc vật lý phải chấp nhận. Chiếu ánh sáng đỏ thật mạnh vào một kim loại vẫn không bứt được electron ra, trong khi ánh sáng tím yếu hơn nhiều lại làm được, vì mỗi photon tím mang đủ năng lượng còn mỗi photon đỏ thì không, bất kể có bao nhiêu photon.\n\nPhoton không có khối lượng nghỉ, nên không thể đứng yên: trong chân không nó luôn đi với đúng tốc độ ánh sáng. Mọi bức xạ điện từ, từ sóng vô tuyến tới tia gamma, đều là dòng photon, chỉ khác nhau ở tần số và do đó khác nhau ở năng lượng mỗi hạt.",
+    "fullDefEn": "Light travels as a wave yet exchanges energy in discrete packets. Each packet is a photon. Its energy does not depend on how bright the source is, only on frequency: E = hf. Making a source brighter increases the NUMBER of photons, not the energy each one carries.\n\nThis is what the photoelectric effect forced physics to accept. Very intense red light may fail to eject electrons from a metal while much fainter violet light succeeds, because each violet photon carries enough energy and each red one does not, however many of them arrive.\n\nA photon has no rest mass and therefore cannot be at rest: in vacuum it always travels at exactly the speed of light. All electromagnetic radiation, from radio waves to gamma rays, is a stream of photons, differing only in frequency and so in the energy of each quantum.",
+    "aliases": [
+      "quang-tu",
+      "luong-tu-anh-sang"
+    ],
+    "category": "Vật lý",
+    "sources": [
+      {
+        "title": "University Physics Volume 3, 6.2 Photoelectric Effect",
+        "publisher": "OpenStax, Rice University",
+        "url": "https://openstax.org/books/university-physics-volume-3/pages/6-2-photoelectric-effect"
+      },
+      {
+        "title": "Introduction to the Electromagnetic Spectrum",
+        "publisher": "NASA Science",
+        "url": "https://science.nasa.gov/ems/01_intro/"
+      }
+    ],
+    "verdict": "REVISE",
+    "notes": "Soan ngay 2026-09-21, dot bo sung muc tu cho cac cum boi dam chua co dinh nghia. Moi URL nguon da duoc tai va doi chieu cung ngay. verdict de REVISE vi science-editor CHUA duyet: seed-glossary.ts chi ghi muc PASS, nen muc nay chua vao CSDL."
+  },
+  {
+    "slug": "buc-xa-dien-tu",
+    "term": "Bức xạ điện từ",
+    "termEn": "Electromagnetic radiation",
+    "shortDef": "Năng lượng lan truyền trong không gian dưới dạng sóng điện từ, trải từ sóng vô tuyến bước sóng rất dài tới tia gamma bước sóng rất ngắn. Ánh sáng nhìn thấy chỉ là một dải hẹp trong đó.",
+    "shortDefEn": "Energy travelling through space as electromagnetic waves, spanning from very long radio waves to very short gamma rays. Visible light is only a narrow band within it.",
+    "fullDef": "Bức xạ điện từ là cùng MỘT hiện tượng trải trên một dải liên tục, không phải nhiều hiện tượng khác nhau. Sóng vô tuyến, vi sóng, hồng ngoại, ánh sáng nhìn thấy, tử ngoại, tia X và tia gamma chỉ khác nhau ở bước sóng và tần số.\n\nTần số càng cao thì mỗi photon mang càng nhiều năng lượng. Vượt qua một ngưỡng nhất định, năng lượng ấy đủ để bứt electron ra khỏi nguyên tử. Khi đó bức xạ được gọi là ion hoá, và đó là ranh giới giữa phần vô hại và phần nguy hiểm cho mô sống.\n\nKhí quyển Trái Đất chỉ trong suốt với một số dải: ánh sáng nhìn thấy và phần lớn sóng vô tuyến đi qua được, còn tia X và tia gamma từ vũ trụ thì bị chặn gần hết. Đó là lý do kính thiên văn tia X phải đặt trên quỹ đạo.",
+    "fullDefEn": "Electromagnetic radiation is ONE phenomenon spread across a continuous spectrum, not several different ones. Radio waves, microwaves, infrared, visible light, ultraviolet, X-rays and gamma rays differ only in wavelength and frequency.\n\nThe higher the frequency, the more energy each photon carries. Above a certain threshold that energy is enough to knock electrons out of atoms; such radiation is called ionising, and that is the boundary between the harmless part of the spectrum and the part dangerous to living tissue.\n\nEarth's atmosphere is transparent only to some bands: visible light and most radio waves pass through, while cosmic X-rays and gamma rays are almost entirely blocked. That is why X-ray telescopes have to be placed in orbit.",
+    "aliases": [
+      "song-dien-tu",
+      "electromagnetic-radiation",
+      "pho-dien-tu"
+    ],
+    "category": "Vật lý",
+    "sources": [
+      {
+        "title": "Introduction to the Electromagnetic Spectrum",
+        "publisher": "NASA Science",
+        "url": "https://science.nasa.gov/ems/01_intro/"
+      },
+      {
+        "title": "University Physics Volume 3, 6.2 Photoelectric Effect",
+        "publisher": "OpenStax, Rice University",
+        "url": "https://openstax.org/books/university-physics-volume-3/pages/6-2-photoelectric-effect"
+      }
+    ],
+    "verdict": "REVISE",
+    "notes": "Soan ngay 2026-09-21, dot bo sung muc tu cho cac cum boi dam chua co dinh nghia. Moi URL nguon da duoc tai va doi chieu cung ngay. verdict de REVISE vi science-editor CHUA duyet: seed-glossary.ts chi ghi muc PASS, nen muc nay chua vao CSDL."
+  },
+  {
+    "slug": "anh-sang-kha-kien",
+    "term": "Ánh sáng khả kiến",
+    "termEn": "Visible light",
+    "shortDef": "Dải bức xạ điện từ mà mắt người nhìn thấy được, bước sóng khoảng 380 tới 700 nanomét: tím ở đầu ngắn, đỏ ở đầu dài. Nó chỉ là một phần rất nhỏ của toàn phổ điện từ.",
+    "shortDefEn": "The band of electromagnetic radiation the human eye can see, roughly 380 to 700 nanometres: violet at the short end, red at the long end. It is only a tiny slice of the full electromagnetic spectrum.",
+    "fullDef": "Không có gì đặc biệt về mặt vật lý ở dải 380 tới 700 nm: nó không khác các dải khác về bản chất. Điều đặc biệt nằm ở phía người quan sát: mắt người tiến hoá để nhạy đúng với dải mà khí quyển cho đi qua và Mặt Trời phát mạnh nhất.\n\nBên trong dải ấy, bước sóng quyết định màu ta cảm nhận: khoảng 380 nm cho tím, 450 nm cho xanh lam, 530 nm cho xanh lục, gần 700 nm cho đỏ. Ánh sáng trắng không phải một bước sóng riêng mà là hỗn hợp của nhiều bước sóng.\n\nMọi bức xạ điện từ đều là ánh sáng theo nghĩa vật lý; chỉ phần rất hẹp này là ánh sáng theo nghĩa nhìn thấy được. Phần còn lại vẫn ở quanh ta, và chỉ tiếp cận được bằng thiết bị.",
+    "fullDefEn": "There is nothing physically special about 380 to 700 nm: it is not different in kind from other bands. What is special sits on the observer's side. The human eye evolved to be sensitive to the band the atmosphere lets through and the Sun emits most strongly.\n\nWithin that band, wavelength sets the perceived colour: about 380 nm reads as violet, 450 nm as blue, 530 nm as green, close to 700 nm as red. White light is not a wavelength of its own but a mixture of many.\n\nAll electromagnetic radiation is light in the physical sense; only this very narrow part is light in the sense of being visible. The rest is still all around us, reachable only through instruments.",
+    "aliases": [
+      "anh-sang-nhin-thay",
+      "visible-light",
+      "pho-kha-kien"
+    ],
+    "category": "Vật lý",
+    "sources": [
+      {
+        "title": "Visible Light",
+        "publisher": "NASA Science",
+        "url": "https://science.nasa.gov/ems/09_visiblelight/"
+      },
+      {
+        "title": "How the Eyes Work",
+        "publisher": "National Eye Institute, NIH",
+        "url": "https://www.nei.nih.gov/learn-about-eye-health/healthy-vision/how-eyes-work"
+      }
+    ],
+    "verdict": "REVISE",
+    "notes": "Soan ngay 2026-09-21, dot bo sung muc tu cho cac cum boi dam chua co dinh nghia. Moi URL nguon da duoc tai va doi chieu cung ngay. verdict de REVISE vi science-editor CHUA duyet: seed-glossary.ts chi ghi muc PASS, nen muc nay chua vao CSDL."
+  },
+  {
+    "slug": "proton",
+    "term": "Proton",
+    "termEn": "Proton",
+    "shortDef": "Hạt mang điện dương nằm trong hạt nhân nguyên tử. Số proton, tức số hiệu nguyên tử Z, quyết định đó là nguyên tố nào; đổi số proton là đổi hẳn nguyên tố.",
+    "shortDefEn": "The positively charged particle in an atomic nucleus. The number of protons, the atomic number Z, determines which element an atom is; change it and the element itself changes.",
+    "fullDef": "Hạt nhân nguyên tử gồm proton và neutron, gọi chung là nucleon. Hai loại này có khối lượng xấp xỉ nhau, nhưng proton mang một đơn vị điện tích dương còn neutron trung hoà. Khối lượng proton theo CODATA 2022 là 1,672 621 925 95 nhân 10 mũ trừ 27 kg.\n\nSố proton Z định danh nguyên tố: mọi nguyên tử có Z = 6 đều là carbon, dù số neutron khác nhau. Các nguyên tử cùng Z mà khác số neutron là đồng vị của nhau.\n\nProton được coi là bền: chưa thí nghiệm nào quan sát được một proton tự do phân rã, và các phép đo chỉ đặt ra giới hạn dưới cho thời gian sống của nó. Một số lý thuyết thống nhất lớn tiên đoán proton có phân rã, nhưng điều đó chưa được kiểm chứng.",
+    "fullDefEn": "An atomic nucleus is made of protons and neutrons, together called nucleons. The two have roughly the same mass, but the proton carries one unit of positive charge while the neutron is neutral. The CODATA 2022 value for the proton mass is 1.672 621 925 95 times 10 to the minus 27 kg.\n\nThe proton count Z identifies the element: every atom with Z = 6 is carbon, whatever its neutron count. Atoms with the same Z but different neutron numbers are isotopes of each other.\n\nThe proton is treated as stable: no experiment has observed a free proton decaying, and measurements only set lower bounds on its lifetime. Some grand unified theories predict that protons do decay, but that prediction remains untested.",
+    "aliases": [
+      "hat-proton"
+    ],
+    "category": "Vật lý",
+    "sources": [
+      {
+        "title": "University Physics Volume 3, 10.1 Properties of Nuclei",
+        "publisher": "OpenStax, Rice University",
+        "url": "https://openstax.org/books/university-physics-volume-3/pages/10-1-properties-of-nuclei"
+      },
+      {
+        "title": "CODATA Value: proton mass",
+        "publisher": "NIST",
+        "url": "https://physics.nist.gov/cgi-bin/cuu/Value?mp"
+      }
+    ],
+    "verdict": "REVISE",
+    "notes": "Soan ngay 2026-09-21, dot bo sung muc tu cho cac cum boi dam chua co dinh nghia. Moi URL nguon da duoc tai va doi chieu cung ngay. verdict de REVISE vi science-editor CHUA duyet: seed-glossary.ts chi ghi muc PASS, nen muc nay chua vao CSDL."
+  },
+  {
+    "slug": "vong-mac",
+    "term": "Võng mạc",
+    "termEn": "Retina",
+    "shortDef": "Lớp mô nhạy sáng ở đáy mắt. Các tế bào cảm thụ ánh sáng ở đây biến ánh sáng thành tín hiệu điện, rồi tín hiệu đi theo dây thần kinh thị giác lên não.",
+    "shortDefEn": "The light-sensitive layer of tissue at the back of the eye. Its photoreceptor cells turn light into electrical signals, which travel along the optic nerve to the brain.",
+    "fullDef": "Mắt không gửi hình ảnh lên não. Thứ rời võng mạc là các xung điện, và hình ảnh chỉ xuất hiện sau khi não dựng lại từ những xung ấy.\n\nVõng mạc có hai loại tế bào cảm thụ. Tế bào que rất nhạy sáng nên đảm nhiệm thị giác lúc thiếu sáng, nhưng không phân biệt màu. Tế bào nón cần nhiều ánh sáng hơn và là thứ cho ta màu sắc cùng chi tiết.\n\nVì võng mạc chỉ là một lớp mô mỏng áp vào thành sau nhãn cầu, nó có thể bong ra khỏi vị trí. Bong võng mạc là cấp cứu nhãn khoa: không xử lý kịp có thể mất thị lực vĩnh viễn.",
+    "fullDefEn": "The eye does not send pictures to the brain. What leaves the retina is electrical impulses, and an image appears only after the brain reconstructs one from them.\n\nThe retina holds two kinds of photoreceptor. Rods are extremely light-sensitive and carry vision in dim conditions, but do not distinguish colour. Cones need more light and are what give us colour and fine detail.\n\nBecause the retina is only a thin layer of tissue lining the back of the eyeball, it can pull away from its place. Retinal detachment is an ophthalmic emergency: left untreated it can cause permanent loss of sight.",
+    "aliases": [
+      "retina"
+    ],
+    "category": "Sinh học",
+    "sources": [
+      {
+        "title": "How the Eyes Work",
+        "publisher": "National Eye Institute, NIH",
+        "url": "https://www.nei.nih.gov/learn-about-eye-health/healthy-vision/how-eyes-work"
+      },
+      {
+        "title": "Retinal Detachment",
+        "publisher": "National Eye Institute, NIH",
+        "url": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/retinal-detachment"
+      }
+    ],
+    "verdict": "REVISE",
+    "notes": "Soan ngay 2026-09-21, dot bo sung muc tu cho cac cum boi dam chua co dinh nghia. Moi URL nguon da duoc tai va doi chieu cung ngay. verdict de REVISE vi science-editor CHUA duyet: seed-glossary.ts chi ghi muc PASS, nen muc nay chua vao CSDL."
+  },
+  {
+    "slug": "tu-quyen",
+    "term": "Từ quyển",
+    "termEn": "Magnetosphere",
+    "shortDef": "Vùng quanh một hành tinh nơi từ trường của chính hành tinh đó chiếm ưu thế. Từ quyển Trái Đất chắn phần lớn hạt tích điện từ Mặt Trời và vũ trụ, và che khí quyển khỏi bị gió Mặt Trời bào mòn.",
+    "shortDefEn": "The region around a planet dominated by that planet's own magnetic field. Earth's magnetosphere deflects most charged particles from the Sun and from space, and shields the atmosphere from erosion by the solar wind.",
+    "fullDef": "Từ trường Trái Đất sinh ra từ chuyển động đối lưu của sắt nóng chảy dẫn điện trong lõi ngoài. Trường ấy vươn ra ngoài không gian và dựng nên từ quyển.\n\nTừ quyển không có dạng cầu mà méo đi vì gió Mặt Trời. Phía hướng về Mặt Trời bị nén lại, chỉ cách tâm Trái Đất khoảng sáu tới mười lần bán kính Trái Đất. Phía khuất kéo dài thành một đuôi từ dài hàng trăm lần bán kính Trái Đất, vượt xa quỹ đạo Mặt Trăng.\n\nTrong số các hành tinh đá của Hệ Mặt Trời, Trái Đất có từ quyển mạnh nhất.",
+    "fullDefEn": "Earth's magnetic field is generated by the convective motion of electrically conducting molten iron in the outer core. That field reaches out into space and forms the magnetosphere.\n\nThe magnetosphere is not spherical; the solar wind distorts it. The sunward side is compressed to about six to ten Earth radii from the planet's centre. The night side is drawn out into a magnetotail hundreds of Earth radii long, far beyond the Moon's orbit.\n\nAmong the rocky planets of the Solar System, Earth has the strongest magnetosphere.",
+    "aliases": [
+      "magnetosphere",
+      "quyen-tu"
+    ],
+    "category": "Vật lý",
+    "sources": [
+      {
+        "title": "Magnetospheres",
+        "publisher": "NASA Science",
+        "url": "https://science.nasa.gov/heliophysics/focus-areas/magnetosphere-ionosphere/"
+      },
+      {
+        "title": "Earth's magnetosphere",
+        "publisher": "NOAA / NWS Space Weather Prediction Center",
+        "url": "https://www.spaceweather.gov/phenomena/earths-magnetosphere"
+      }
+    ],
+    "verdict": "REVISE",
+    "notes": "Soan ngay 2026-09-21, dot bo sung muc tu cho cac cum boi dam chua co dinh nghia. Moi URL nguon da duoc tai va doi chieu cung ngay. verdict de REVISE vi science-editor CHUA duyet: seed-glossary.ts chi ghi muc PASS, nen muc nay chua vao CSDL."
+  },
+  {
+    "slug": "dam-may-oort",
+    "term": "Đám mây Oort",
+    "termEn": "Oort Cloud",
+    "shortDef": "Lớp vỏ cầu gồm hàng trăm tỉ thiên thể băng bao quanh Hệ Mặt Trời, nằm xa hơn hẳn vành đai Kuiper. Đây là nơi sinh của các sao chổi chu kỳ dài, và chưa từng được chụp ảnh trực tiếp.",
+    "shortDefEn": "A spherical shell of hundreds of billions of icy bodies surrounding the Solar System, far beyond the Kuiper Belt. It is the source of long-period comets, and has never been imaged directly.",
+    "fullDef": "Khác với vành đai Kuiper vốn là một đĩa dẹt, Đám mây Oort là một lớp vỏ cầu: các thiên thể trong đó không đi chung một mặt phẳng quỹ đạo mà chuyển động ở đủ mọi độ nghiêng quanh Mặt Trời.\n\nƯớc lượng của NASA đặt rìa trong ở khoảng 2.000 tới 5.000 AU và rìa ngoài ở khoảng 10.000 tới 100.000 AU. Số thiên thể băng trong đó có thể lên tới hàng trăm tỉ, thậm chí hàng nghìn tỉ.\n\nThỉnh thoảng quỹ đạo của một thiên thể như vậy bị nhiễu loạn, và nó bắt đầu một cú rơi rất dài về phía Mặt Trời. Đó là cách sao chổi chu kỳ dài xuất hiện. Vì quá xa, NASA chưa có ảnh chụp trực tiếp nào của Đám mây Oort; mọi hình minh hoạ đều là tranh vẽ theo ý niệm.",
+    "fullDefEn": "Unlike the Kuiper Belt, which is a flattened disc, the Oort Cloud is a spherical shell: its objects do not share one orbital plane but move at all inclinations around the Sun.\n\nNASA's estimates place the inner edge at roughly 2,000 to 5,000 AU and the outer edge at roughly 10,000 to 100,000 AU. The number of icy bodies out there may run to hundreds of billions, perhaps trillions.\n\nOccasionally the orbit of one such body is disturbed and it begins a very long fall toward the Sun. This is how long-period comets arrive. Because it is so far away, NASA has no direct images of the Oort Cloud; every depiction is an artist's concept.",
+    "aliases": [
+      "oort-cloud",
+      "may-oort"
+    ],
+    "category": "Vũ trụ học",
+    "sources": [
+      {
+        "title": "Oort Cloud Facts",
+        "publisher": "NASA Science",
+        "url": "https://science.nasa.gov/solar-system/oort-cloud/facts/"
+      },
+      {
+        "title": "Oort Cloud",
+        "publisher": "NASA Science",
+        "url": "https://science.nasa.gov/solar-system/oort-cloud/"
+      }
+    ],
+    "verdict": "REVISE",
+    "notes": "Soan ngay 2026-09-21, dot bo sung muc tu cho cac cum boi dam chua co dinh nghia. Moi URL nguon da duoc tai va doi chieu cung ngay. verdict de REVISE vi science-editor CHUA duyet: seed-glossary.ts chi ghi muc PASS, nen muc nay chua vao CSDL. Hai nguon cung mot nha xuat ban (NASA) - reviewer can nhac them mot nguon doc lap."
+  },
+  {
+    "slug": "hanh-tinh-lun",
+    "term": "Hành tinh lùn",
+    "termEn": "Dwarf planet",
+    "shortDef": "Theo định nghĩa IAU năm 2006: thiên thể quay quanh Mặt Trời, đủ khối lượng để tự lực hấp dẫn kéo nó thành hình gần cầu, NHƯNG chưa dọn sạch vùng lân cận quỹ đạo, và không phải vệ tinh của thiên thể khác.",
+    "shortDefEn": "By the IAU's 2006 definition: a body that orbits the Sun and has enough mass for its own gravity to pull it into a nearly round shape, BUT has not cleared the neighbourhood around its orbit, and is not a satellite.",
+    "fullDef": "Định nghĩa được Đại hội đồng IAU thông qua năm 2006, Nghị quyết 5A, đặt ba điều kiện cho một hành tinh: quay quanh Mặt Trời, đủ khối lượng để đạt cân bằng thuỷ tĩnh nên có hình gần cầu, và đã dọn sạch vùng lân cận quỹ đạo của nó.\n\nHành tinh lùn thoả hai điều đầu nhưng KHÔNG thoả điều thứ ba, và thêm một điều kiện nữa là không phải vệ tinh. Đúng một tiêu chí, dọn sạch quỹ đạo, là thứ tách hai nhóm ra.\n\nChính tiêu chí ấy đưa Hệ Mặt Trời về đúng tám hành tinh: Sao Thuỷ, Sao Kim, Trái Đất, Sao Hoả, Sao Mộc, Sao Thổ, Sao Thiên Vương, Sao Hải Vương. Ba thành viên đầu tiên của nhóm hành tinh lùn là Ceres, Pluto và thiên thể khi đó mang tên tạm 2003 UB313, sau được đặt tên là Eris.",
+    "fullDefEn": "The definition adopted by the IAU General Assembly in 2006, Resolution 5A, sets three conditions for a planet: it orbits the Sun, it has enough mass to reach hydrostatic equilibrium and so is nearly round, and it has cleared the neighbourhood around its orbit.\n\nA dwarf planet meets the first two but NOT the third, with the added condition that it is not a satellite. Exactly one criterion, clearing the orbital neighbourhood, separates the two groups.\n\nThat criterion is what left the Solar System with exactly eight planets: Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptune. The first three members of the dwarf planet category were Ceres, Pluto and the body then known by the provisional designation 2003 UB313, later named Eris.",
+    "aliases": [
+      "dwarf-planet"
+    ],
+    "category": "Vũ trụ học",
+    "sources": [
+      {
+        "title": "IAU 2006 General Assembly: Result of the IAU Resolution votes (Resolution 5A)",
+        "publisher": "International Astronomical Union",
+        "url": "https://www.iau.org/IAU/Iau/News/PR2006/iau-2006-general-assembly-resolution-votes.aspx"
+      },
+      {
+        "title": "Pluto & Dwarf Planets",
+        "publisher": "NASA Science",
+        "url": "https://science.nasa.gov/dwarf-planets/"
+      }
+    ],
+    "verdict": "REVISE",
+    "notes": "Soan ngay 2026-09-21, dot bo sung muc tu cho cac cum boi dam chua co dinh nghia. Moi URL nguon da duoc tai va doi chieu cung ngay. verdict de REVISE vi science-editor CHUA duyet: seed-glossary.ts chi ghi muc PASS, nen muc nay chua vao CSDL."
+  },
+  {
+    "slug": "quan-tinh",
+    "term": "Quán tính",
+    "termEn": "Inertia",
+    "shortDef": "Khả năng của một vật chống lại thay đổi trong chuyển động của nó, tức là chống lại gia tốc. Khối lượng chính là thước đo quán tính: vật càng nặng càng khó làm cho đổi vận tốc.",
+    "shortDefEn": "An object's resistance to changes in its motion, that is, its resistance to acceleration. Mass is the measure of inertia: the more massive a body, the harder it is to change its velocity.",
+    "fullDef": "Định luật thứ nhất của Newton phát biểu: một vật đang đứng yên thì vẫn đứng yên, một vật đang chuyển động thì vẫn chuyển động với vận tốc không đổi, trừ khi có lực ngoài tổng hợp tác dụng lên nó. Vì lẽ đó nó thường được gọi là định luật quán tính.\n\nĐiều hay bị hiểu nhầm: chuyển động KHÔNG cần lực để duy trì. Lực chỉ cần để THAY ĐỔI chuyển động. Cảm giác ngược lại đến từ ma sát, thứ luôn có mặt trong đời sống hằng ngày nhưng không phải quy luật của chuyển động.\n\nQuán tính không phụ thuộc vào nơi vật đang ở. Một thiết bị nặng hàng tấn ngoài không gian tuy không có trọng lượng nhưng vẫn khó đẩy cho chuyển động và khó hãm lại đúng như trên mặt đất, vì khối lượng của nó không đổi.",
+    "fullDefEn": "Newton's first law states that a body at rest remains at rest, and a body in motion remains in motion at constant velocity, unless acted on by a net external force. For that reason it is often called the law of inertia.\n\nThe common misreading: motion does NOT need a force to keep going. Force is needed only to CHANGE motion. The opposite intuition comes from friction, always present in everyday life, but not a law of motion.\n\nInertia does not depend on where the object is. A tonne of equipment in space has no weight, yet it is just as hard to set moving and to stop as it is on the ground, because its mass is unchanged.",
+    "aliases": [
+      "inertia"
+    ],
+    "category": "Vật lý",
+    "sources": [
+      {
+        "title": "University Physics Volume 1, 5.2 Newton's First Law",
+        "publisher": "OpenStax, Rice University",
+        "url": "https://openstax.org/books/university-physics-volume-1/pages/5-2-newtons-first-law"
+      },
+      {
+        "title": "Newton's Laws",
+        "publisher": "HyperPhysics, Georgia State University",
+        "url": "http://hyperphysics.gsu.edu/hbase/Newt.html"
+      }
+    ],
+    "verdict": "REVISE",
+    "notes": "Soan ngay 2026-09-21, dot bo sung muc tu cho cac cum boi dam chua co dinh nghia. Moi URL nguon da duoc tai va doi chieu cung ngay. verdict de REVISE vi science-editor CHUA duyet: seed-glossary.ts chi ghi muc PASS, nen muc nay chua vao CSDL."
+  },
+  {
+    "slug": "gia-toc",
+    "term": "Gia tốc",
+    "termEn": "Acceleration",
+    "shortDef": "Tốc độ thay đổi của vận tốc theo thời gian. Theo định luật thứ hai của Newton, gia tốc của một vật tỉ lệ thuận với lực ngoài tổng hợp và tỉ lệ nghịch với khối lượng của nó.",
+    "shortDefEn": "The rate at which velocity changes with time. By Newton's second law, a body's acceleration is proportional to the net external force on it and inversely proportional to its mass.",
+    "fullDef": "Gia tốc là một vectơ, nên nó có cả độ lớn lẫn hướng. Một vật đổi hướng mà giữ nguyên tốc độ vẫn đang có gia tốc; chuyển động tròn đều là ví dụ rõ nhất.\n\nĐịnh luật thứ hai của Newton nối gia tốc với nguyên nhân gây ra nó: cùng một lực tác dụng lên vật nặng gấp đôi thì gây ra gia tốc chỉ bằng một nửa. Đây là phát biểu định lượng cho điều mà quán tính mô tả về mặt định tính.\n\nTrong đời sống, cảm giác hẫng hay bị ép vào ghế không đến từ tốc độ mà đến từ gia tốc: đi đều 300 km/h thì không cảm thấy gì, còn đổi vận tốc đột ngột ở tốc độ thấp thì cảm thấy rõ.",
+    "fullDefEn": "Acceleration is a vector, so it has both a magnitude and a direction. A body that changes direction while holding its speed constant is still accelerating; uniform circular motion is the clearest case.\n\nNewton's second law ties acceleration to its cause: the same force applied to twice the mass produces half the acceleration. This is the quantitative statement of what inertia describes qualitatively.\n\nIn everyday life, the lurch in your stomach or the push into your seat comes not from speed but from acceleration: travelling steadily at 300 km/h feels like nothing, while a sudden change of velocity at low speed is unmistakable.",
+    "aliases": [
+      "acceleration"
+    ],
+    "category": "Vật lý",
+    "sources": [
+      {
+        "title": "University Physics Volume 1, 5.3 Newton's Second Law",
+        "publisher": "OpenStax, Rice University",
+        "url": "https://openstax.org/books/university-physics-volume-1/pages/5-3-newtons-second-law"
+      },
+      {
+        "title": "Newton's Laws",
+        "publisher": "HyperPhysics, Georgia State University",
+        "url": "http://hyperphysics.gsu.edu/hbase/Newt.html"
+      }
+    ],
+    "verdict": "REVISE",
+    "notes": "Soan ngay 2026-09-21, dot bo sung muc tu cho cac cum boi dam chua co dinh nghia. Moi URL nguon da duoc tai va doi chieu cung ngay. verdict de REVISE vi science-editor CHUA duyet: seed-glossary.ts chi ghi muc PASS, nen muc nay chua vao CSDL."
   }
 ]
