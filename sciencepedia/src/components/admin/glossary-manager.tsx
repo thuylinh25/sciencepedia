@@ -159,18 +159,54 @@ export function GlossaryManager({ terms }: { terms: GlossaryRow[] }) {
   const shortDef = watch("shortDef") ?? "";
   const term = watch("term") ?? "";
 
+  /* Hai con số phụ đứng cạnh tổng số, không phải trang trí: chúng là hai việc
+     tồn đọng duy nhất của kho thuật ngữ — mục chưa dịch, và mục chưa bài nào
+     dùng (ứng viên để xoá hoặc để đi cài `[[...]]` vào bài). Không có chúng
+     thì phải cuộn hết bảng mới biết còn bao nhiêu. */
+  const stats = useMemo(
+    () => ({
+      missingEn: terms.filter((row) => !row.shortDefEn).length,
+      unused: terms.filter((row) => row.usage === 0).length,
+    }),
+    [terms],
+  );
+
   return (
     <>
       <div className="flex flex-wrap items-center justify-between gap-3">
-        <div className="relative w-full max-w-xs">
-          <Search className="absolute top-1/2 left-3 size-4 -translate-y-1/2 text-muted-foreground" />
-          <Input
-            value={query}
-            onChange={(event) => setQuery(event.target.value)}
-            placeholder={tg("search")}
-            className="pl-9"
-            aria-label={tg("search")}
-          />
+        <div className="flex w-full max-w-xl flex-wrap items-center gap-x-3 gap-y-1.5">
+          <div className="relative w-full max-w-xs">
+            <Search className="absolute top-1/2 left-3 size-4 -translate-y-1/2 text-muted-foreground" />
+            <Input
+              value={query}
+              onChange={(event) => setQuery(event.target.value)}
+              placeholder={tg("search")}
+              className="pl-9"
+              aria-label={tg("search")}
+            />
+          </div>
+
+          {/* Đang lọc thì tổng số một mình nói dối: bảng chỉ còn vài dòng mà
+              con số vẫn là cả kho. Nên khi có bộ lọc, hiện "đang thấy/tổng". */}
+          <p
+            aria-live="polite"
+            className="text-sm tabular-nums text-muted-foreground"
+          >
+            <span className="font-medium text-foreground">
+              {query
+                ? tg("countFiltered", {
+                    visible: visible.length,
+                    total: terms.length,
+                  })
+                : tg("count", { count: terms.length })}
+            </span>
+            {stats.missingEn > 0 && (
+              <span> · {tg("countMissingEn", { count: stats.missingEn })}</span>
+            )}
+            {stats.unused > 0 && (
+              <span> · {tg("countUnused", { count: stats.unused })}</span>
+            )}
+          </p>
         </div>
         <Button onClick={openCreate}>
           <Plus className="size-4" />

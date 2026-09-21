@@ -301,6 +301,10 @@
     "glossaryForm": {
       "intro": "Định nghĩa hiện khi người đọc rê chuột vào [[thuật ngữ]] trong bài. Đây là nội dung khoa học: mọi khẳng định phải có nguồn, và 12 mục đầu tiên kèm nguồn nằm ở prisma/seed-data/glossary.json.",
       "search": "Tìm thuật ngữ…",
+      "count": "{count} thuật ngữ",
+      "countFiltered": "{visible}/{total} thuật ngữ",
+      "countMissingEn": "{count} mục chưa có bản tiếng Anh",
+      "countUnused": "{count} mục chưa bài nào dùng",
       "term": "Thuật ngữ",
       "shortDef": "Định nghĩa ngắn",
       "shortDefHint": "2–3 câu, hiện trong tooltip. Dài hơn 320 ký tự là tooltip che mất bài đang đọc.",

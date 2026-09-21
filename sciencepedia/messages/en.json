@@ -301,6 +301,10 @@
     "glossaryForm": {
       "intro": "These definitions appear when a reader hovers a [[term]] in an article. This is scientific content: every claim needs a source, and the first 12 entries with their sources live in prisma/seed-data/glossary.json.",
       "search": "Search terms…",
+      "count": "{count} terms",
+      "countFiltered": "{visible}/{total} terms",
+      "countMissingEn": "{count} without an English version",
+      "countUnused": "{count} not used by any article",
       "term": "Term",
       "shortDef": "Short definition",
       "shortDefHint": "2-3 sentences, shown in the tooltip. Past 320 characters the tooltip covers the text being read.",
