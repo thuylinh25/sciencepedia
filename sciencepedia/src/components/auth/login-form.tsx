@@ -6,7 +6,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { signIn } from "next-auth/react";
 import { useTranslations } from "next-intl";
 import { useSearchParams } from "next/navigation";
-import { ArrowRight, Github, Loader2, Lock, Mail } from "lucide-react";
+import { AlertTriangle, ArrowRight, Github, Loader2, Lock, Mail } from "lucide-react";
 
 import { Link, useRouter } from "@/i18n/navigation";
 import { loginSchema, type LoginInput } from "@/lib/validations";
@@ -15,6 +15,15 @@ import { Input } from "@/components/ui/input";
 import { PasswordInput } from "@/components/ui/password-input";
 import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
+
+/* Mã lỗi của Auth.js mà ta có câu chữ riêng. Mã ngoài danh sách vẫn hiện
+   được, qua `errorDefault`. */
+const KNOWN_ERRORS = new Set([
+  "OAuthCallback",
+  "OAuthAccountNotLinked",
+  "AccessDenied",
+  "Configuration",
+]);
 
 export function LoginForm({
   hasGithub,
@@ -58,8 +67,39 @@ export function LoginForm({
 
   const hasSocial = hasGithub || hasGoogle || hasFacebook;
 
+  /* Lỗi của Auth.js quay về ĐÂY, và trước đây không ai đọc nó.
+
+     `pages.error` trỏ về trang đăng nhập, nên mọi lượt OAuth hỏng đều kết
+     thúc bằng `/login?error=<mã>` — tức là đúng cái màn hình vừa rời đi,
+     không một chữ giải thích. Người dùng chỉ thấy "bấm Google xong quay lại
+     chỗ cũ", nên bấm lần nữa; lần hai thường chạy vì cookie PKCE của lượt
+     đầu đã nằm đúng ngữ cảnh trình duyệt. Triệu chứng "lần 1 hỏng, lần 2
+     được" là cái bẫy: nó khiến lỗi trông như chuyện vặt và không ai báo.
+
+     Mã hay gặp nhất là `OAuthCallback`: lượt đăng nhập bắt đầu trong trình
+     duyệt nhúng của một app (Zalo, Facebook, Messenger) rồi Google trả về
+     một trình duyệt khác — cookie `pkce.code_verifier` ở lại bên kia.
+
+     Mã lạ vẫn hiện, kèm chính mã đó, để lần sau còn lần ra được. */
+  const errorCode = searchParams.get("error");
+  const oauthError = errorCode
+    ? KNOWN_ERRORS.has(errorCode)
+      ? t(`error${errorCode}` as "errorOAuthCallback")
+      : t("errorDefault", { code: errorCode })
+    : null;
+
   return (
     <div className="space-y-5 short:space-y-4 shorter:space-y-2">
+      {oauthError && (
+        <p
+          role="alert"
+          className="flex items-start gap-2.5 rounded-xl border border-destructive/40 bg-destructive/10 px-4 py-3 text-sm text-destructive"
+        >
+          <AlertTriangle className="mt-0.5 size-4 shrink-0" aria-hidden />
+          {oauthError}
+        </p>
+      )}
+
       {/* Đăng nhập mạng xã hội đứng TRƯỚC form email.
 
           Thứ tự này là một phán quyết chứ không phải thẩm mỹ: người đã có tài

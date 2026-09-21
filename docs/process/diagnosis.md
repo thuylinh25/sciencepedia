@@ -638,3 +638,38 @@ cái đích không hỏng.
 Hệ quả về chỗ sửa: lỗi thuộc về điều hướng nên bản vá cũng phải nằm ở tầng điều
 hướng. Đặt một cú cuộn vá víu vào trang bản đồ là để lại đúng cái bẫy ấy cho
 liên kết `#hash` tiếp theo — mà kho đang có sẵn vài cái.
+
+---
+
+## "Lần 1 hỏng, lần 2 được" là lỗi TRẠNG THÁI, và nó đang bị giấu
+
+Chốt 2026-09-21.
+
+Bấm "Tiếp tục với Google" trên điện thoại: lần đầu quay về trang đăng nhập,
+lần hai vào được. Cám dỗ đầu tiên là coi đây là chuyện vặt — nó tự khỏi mà.
+
+Hai điều rút ra.
+
+**1. Lần hai chạy được vì lần một để lại thứ gì đó.** Cookie, mục trong bộ
+nhớ đệm, hàng trong CSDL, một tệp vừa ghi. Câu hỏi đúng không phải "vì sao
+lần một hỏng" mà "**lần một đã đặt cái gì mà lần hai dùng lại**". Với OAuth,
+thứ đó gần như luôn là cookie: `pkce.code_verifier`, `csrf-token`, `state`.
+
+**2. Kiểm phía máy chủ trước khi đoán phía trình duyệt.** Dựng lại đúng lượt
+đầu bằng `curl` với hũ cookie RỖNG — `GET /api/auth/csrf`, rồi `POST
+/api/auth/signin/google` kèm token vừa nhận. Ở lần chẩn đoán này, máy chủ trả
+đúng URL Google ngay lần đầu, nên toàn bộ nhánh giả thuyết "CSRF hỏng",
+"biến môi trường thiếu", "middleware chặn `/api/auth`" bị loại trong một
+lệnh, và chỗ hỏng lộ ra là ngữ cảnh trình duyệt — lượt đăng nhập bắt đầu
+trong trình duyệt nhúng của một app rồi Google trả về một trình duyệt khác.
+
+**Nhưng chỗ sửa đầu tiên không phải nguyên nhân — mà là chỗ lỗi bị nuốt.**
+`pages.error` của Auth.js trỏ về chính trang đăng nhập, và trang ấy không hề
+đọc `?error=`. Mọi lượt OAuth hỏng đều kết thúc bằng một trang đăng nhập câm.
+Người dùng không có gì để báo ngoài "nó quay về chỗ cũ", ta không có mã lỗi để
+tra, và lỗi sống sót nhiều tháng.
+
+**Quy tắc: mỗi khi khai báo một trang nhận lỗi (`pages.error`, `errorPage`,
+`onError` chuyển hướng), việc kế tiếp — cùng lượt sửa, không để sau — là làm
+cho trang ấy HIỆN mã lỗi nó vừa nhận.** Một trang nhận lỗi mà không nói gì
+biến mọi sự cố thành "thỉnh thoảng phải bấm hai lần".
