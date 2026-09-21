@@ -211,6 +211,26 @@ Cách kiểm, không phải đoán: dựng xong thì tìm cả hai luật trong
 
 ---
 
+## `::-webkit-scrollbar` chỉ được vẽ cho con trỏ chính xác
+
+Thanh tab trang quản trị trên điện thoại hiện một vệt xám dài dưới hàng tab,
+trông hệt thanh cuộn — kéo bằng ngón tay thì không nhúc nhích.
+
+Vệt đó là thanh cuộn do ta tự vẽ. Chỉ cần khai báo `::-webkit-scrollbar`, trình
+duyệt **bỏ thanh cuộn phủ (overlay)** và chuyển sang thanh cuộn cổ điển cho mọi
+vùng cuộn, kể cả trên cảm ứng. Mà thanh cuộn cổ điển trên cảm ứng là vật trang
+trí: nó chiếm 10px bố cục, luôn hiện, và không nhận thao tác kéo bằng ngón tay.
+Thanh cuộn phủ gốc thì ngược lại — tự ẩn, vuốt được.
+
+Nên khối `::-webkit-scrollbar` trong `globals.css` nằm trong
+`@media (pointer: fine)`. Thiết bị cảm ứng giữ thanh cuộn gốc của hệ.
+
+Đừng gỡ media query đó để "cho mobile cũng đẹp": cái đẹp đó không cuộn được.
+Muốn báo cho người dùng biết còn nội dung bên phải thì dùng dải mờ ở mép hoặc
+`scroll-snap`, đừng dùng một thanh cuộn giả.
+
+---
+
 ## `prefers-reduced-motion` và WebGL
 
 Quy tắc CSS toàn cục **không chạm được** vòng lặp `useFrame`. Nó chỉ đặt

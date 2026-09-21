@@ -318,19 +318,29 @@
     outline: none;
   }
 
-  /* Thanh cuộn mảnh, hợp với thẩm mỹ Apple */
-  ::-webkit-scrollbar {
-    width: 10px;
-    height: 10px;
-  }
-  ::-webkit-scrollbar-track {
-    background: transparent;
-  }
-  ::-webkit-scrollbar-thumb {
-    @apply rounded-full bg-border;
-  }
-  ::-webkit-scrollbar-thumb:hover {
-    @apply bg-muted-foreground/50;
+  /* Thanh cuộn mảnh, hợp với thẩm mỹ Apple — CHỈ cho con trỏ chính xác.
+
+     Khai báo `::-webkit-scrollbar` là tắt thanh cuộn phủ (overlay) của trình
+     duyệt và thay bằng thanh cuộn cổ điển. Trên điện thoại cái thay thế đó là
+     một vệt trang trí: nó chiếm 10px bố cục, luôn hiện, và KHÔNG kéo được bằng
+     ngón tay — người dùng thấy một thanh cuộn rồi kéo mãi không ăn (thanh tab
+     trang quản trị). Thanh cuộn phủ gốc thì vuốt được và tự ẩn.
+
+     `pointer: fine` = chuột/bút. Thiết bị cảm ứng giữ thanh cuộn gốc. */
+  @media (pointer: fine) {
+    ::-webkit-scrollbar {
+      width: 10px;
+      height: 10px;
+    }
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    ::-webkit-scrollbar-thumb {
+      @apply rounded-full bg-border;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      @apply bg-muted-foreground/50;
+    }
   }
 
   /* Tôn trọng người dùng bật giảm chuyển động */
