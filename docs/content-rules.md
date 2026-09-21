@@ -450,3 +450,44 @@ hai bên đi cùng nhau.
 Nay nhãn nhận `{count}` và component tính `SKY_TARGETS.length + PLANETS.length + 2`.
 **Quy tắc chung: một con số mô tả chính sản phẩm thì không được có bản sao thứ
 hai.** Thêm một thiên thể là nhãn tự đúng, không cần ai nhớ.
+
+---
+
+## Ba hình dạng của câu bịa: mất dè dặt, ranh giới tự dựng, nhân quả tự thêm
+
+Chốt 2026-09-21, từ lượt `science-editor` duyệt mười mục từ mới.
+
+Bốn đoạn bị cắt. Không đoạn nào bịa trích dẫn — lỗi mà quy tắc "Never invent a
+citation" đã chặn từ lâu. Cả bốn đều là **câu nghe đúng, chèn giữa những câu
+có nguồn**, và cả bốn rơi vào đúng ba hình dạng:
+
+**1. Mất mức dè dặt của nguồn.** NASA nói về Đám mây Oort bằng ba lớp rào —
+"a *theorized* group of icy objects", "there *may be* hundreds of billions",
+"*scientists think* the Oort Cloud is a giant spherical shell". Bản nháp giữ
+đúng các con số nhưng bỏ sạch cả ba lớp rào, biến một cấu trúc giả thuyết
+thành một sự vật đã biết. Không con số nào sai; toàn bộ sai nằm ở ngữ thái.
+
+**2. Dựng ranh giới mà nguồn không dựng.** Nguồn nói bức xạ trên một ngưỡng
+năng lượng là *ion hoá* và có thể làm hỏng tế bào — một phát biểu về MỘT phía.
+Bản nháp viết "ranh giới giữa phần vô hại và phần nguy hiểm", tự sinh ra phía
+còn lại, và sinh ra sai: bức xạ không ion hoá đâu có vô hại. Nguồn gọi tên một
+loại thì bài gọi tên đúng loại ấy, đừng đặt tên cho phần bù.
+
+**3. Thêm nhân quả vào chỗ nguồn chỉ nêu tương quan.** Nguồn nói Mặt Trời phát
+mạnh nhất ở dải mắt người nhìn thấy. Bản nháp viết mắt người "tiến hoá để"
+nhạy đúng dải ấy — một khẳng định nhân quả không nguồn nào đưa ra. Câu "vì sao
+tiến hoá lại thế" là chỗ hay dính nhất: đọc xuôi tai, thường có lý, và gần như
+không bao giờ nằm trong gói nguồn.
+
+**Vì sao ghi ở đây chứ không chỉ sửa bốn đoạn:** ba hình dạng này lặp trong
+cùng một batch, mà quy tắc của kho đã nói rõ — một lỗi lặp ba lần thì dừng lại
+sửa prompt, không sửa từng bài. Quy tắc 3, 11 và 12 trong
+`.claude/skills/article-generator/SKILL.md` là bản vá ấy. Quy tắc 3 vốn đã có
+("giữ nguyên mức dè dặt") nhưng vẫn bị vi phạm ba lần, nên nay nó liệt kê
+thẳng những chữ hay bị rụng: *theorized*, *may be*, *scientists think*, *is
+thought to*, *estimated*, *as of <năm>*.
+
+**Hệ quả cho người duyệt:** ba hình dạng này không lộ ra khi soát danh mục
+trích dẫn, vì mọi trích dẫn đều resolve đúng. Chỉ lộ khi đọc chính nguồn rồi
+đối chiếu từng mệnh đề — cùng một kết luận với mục
+"Trích dẫn resolve đúng bài KHÔNG có nghĩa là bài đó nói điều đang viết".

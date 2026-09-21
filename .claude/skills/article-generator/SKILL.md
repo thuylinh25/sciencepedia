@@ -34,7 +34,7 @@ Step 3 of the article chain. Turns a validated source pack into a draft with ful
 ## Rules
 1. **Source pack or nothing.** No parametric memory, ever.
 2. **Never invent a citation.** The single worst failure mode — a fabricated or mismatched reference halts the pipeline.
-3. **Keep the source's hedging.** Do not upgrade "evidence suggests" into "scientists proved".
+3. **Keep the source's hedging — including the quiet kind.** Do not upgrade "evidence suggests" into "scientists proved". The failure is rarely that blatant. Watch for the words a careful source sprinkles and a draft silently drops: *theorized*, *may be*, *scientists think*, *is thought to*, *estimated*, *as of <year>*. If the source hedges three times in a paragraph, the draft hedges three times.
 4. **Explain mechanisms.** A list of facts with no "why" or "how" has failed the educational purpose.
 5. **Write for the reader, not the crawler.** Follow the brief's structure, but never keyword-stuff, pad or repeat.
 6. **Flag, do not fill.** Where sources are thin, say so in the uncertainty report — never smooth it over with plausible prose.
@@ -46,6 +46,12 @@ Step 3 of the article chain. Turns a validated source pack into a draft with ful
     Why this rule exists: it was missing, and the gap is measurable. A survey of all 58 articles (`scripts/check-closure.ts`) found nine — every one of them a planet or astronomy piece of 242–361 words — ending on a final section under 60 words, one of them on a bullet about Phobos and Deimos placed under a heading called "Extreme terrain". The step list above named every other part of an article and never named this one, so whether a draft got a closing move was left to chance. Roughly one draft in five lost the toss.
 
     The length gate in `scripts/check-publish.ts` blocks anything under 400 words, so it catches the worst of this. It does not catch a 450-word article that stops mid-thought.
+
+11. **Do not draw a boundary the source does not draw.** Sources name a category; drafts turn it into a two-sided line. If a source says radiation above some energy is *ionising* and can damage cells, that is a statement about one side. Writing "the boundary between the harmless part and the dangerous part" invents the other side — and gets it wrong, because non-ionising radiation is not harmless. Name what the source names; leave the complement unnamed.
+
+12. **Correlation in the source stays correlation in the draft.** A source that says the Sun is the dominant emitter in the band our eyes use has stated a relationship. Writing that the eye *evolved to* match that band asserts a cause, and the source did not. Evolutionary "why" sentences are where this happens most: they read well, they are usually plausible, and they are almost never in the source pack.
+
+    Why rules 11 and 12 exist: `science-editor` reviewed a batch of ten glossary entries on 2026-09-21 and cut four passages. All four were unsourced, and all four were the same three shapes — a dropped hedge, an invented boundary, an invented cause. Rule 3 already covered the first and was still violated three times, which is why it now lists the specific words. The other two shapes had no rule at all. None of the four was a fabricated citation; each was a true-sounding sentence added *between* sourced ones, which is exactly the kind a reviewer has to catch by reading the source rather than by checking the reference list.
 
 ## Fails when
 The source pack is insufficient, or a section required by the template cannot be sourced. Return a gap report rather than a padded article.
