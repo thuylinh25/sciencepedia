@@ -17,12 +17,34 @@ import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
 
 /* Mã lỗi của Auth.js mà ta có câu chữ riêng. Mã ngoài danh sách vẫn hiện
-   được, qua `errorDefault`. */
+   được, qua `errorDefault`.
+
+   Đây là danh sách của **Auth.js v5**, không phải v4. Chỉ đúng tám kiểu lỗi
+   được trả nguyên văn về client (`clientErrors` trong `@auth/core/errors`);
+   MỌI kiểu còn lại bị gộp thành `Configuration` trước khi chuyển hướng về đây.
+   Danh sách cũ chép theo v4 nên lệch ở đúng chỗ đau nhất:
+
+   - `OAuthCallback` (tên v4) v5 KHÔNG bao giờ phát — v5 gọi nó là
+     `OAuthCallbackError`. Câu "hãy mở bằng trình duyệt" vì vậy treo vào một mã
+     chết, không ai đọc được nó.
+   - `InvalidCheck` — cookie `pkce.code_verifier`/`state` biến mất giữa chừng,
+     tức đúng ca trình duyệt nhúng (Zalo, Facebook, Messenger) — KHÔNG nằm
+     trong `clientErrors`, nên nó về đây đội lốt `Configuration`.
+
+   Hệ quả đo được ngày 2026-09-22: người dùng trong trình duyệt nhúng thấy
+   "đăng nhập mạng xã hội đang không chạy" — một câu sai (đo trên production:
+   `/api/auth/providers` liệt kê cả google lẫn github, và `POST
+   /api/auth/signin/google` trả về đúng URL Google) và không giúp được gì.
+
+   Nên `Configuration` nay mang câu của ca thường gặp nhất — mở bằng trình
+   duyệt thật — kèm lối thoát email/mật khẩu cho ca hiếm còn lại. */
 const KNOWN_ERRORS = new Set([
-  "OAuthCallback",
-  "OAuthAccountNotLinked",
-  "AccessDenied",
   "Configuration",
+  "OAuthCallbackError",
+  "OAuthAccountNotLinked",
+  "AccountNotLinked",
+  "AccessDenied",
+  "MissingCSRF",
 ]);
 
 export function LoginForm({
@@ -65,8 +87,6 @@ export function LoginForm({
     router.refresh();
   }
 
-  const hasSocial = hasGithub || hasGoogle || hasFacebook;
-
   /* Lỗi của Auth.js quay về ĐÂY, và trước đây không ai đọc nó.
 
      `pages.error` trỏ về trang đăng nhập, nên mọi lượt OAuth hỏng đều kết
@@ -82,11 +102,23 @@ export function LoginForm({
 
      Mã lạ vẫn hiện, kèm chính mã đó, để lần sau còn lần ra được. */
   const errorCode = searchParams.get("error");
+  /* `AccountNotLinked` và `OAuthAccountNotLinked` là cùng một tình huống với
+     người dùng — email đã có tài khoản tạo theo cách khác — nên dùng chung một
+     câu thay vì chép đôi. */
+  const messageKey =
+    errorCode === "AccountNotLinked" ? "OAuthAccountNotLinked" : errorCode;
   const oauthError = errorCode
     ? KNOWN_ERRORS.has(errorCode)
-      ? t(`error${errorCode}` as "errorOAuthCallback")
+      ? t(`error${messageKey}` as "errorConfiguration")
       : t("errorDefault", { code: errorCode })
     : null;
+
+  /* Các nút KHÔNG bị gỡ khi có `?error=`. Cám dỗ là gỡ — băng đỏ nằm ngay
+     trên những cái nút vừa hỏng trông như tự mâu thuẫn. Nhưng nguyên nhân
+     thường gặp là cookie mất giữa chừng, thứ tự khỏi khi mở lại bằng trình
+     duyệt thật; gỡ nút thì người làm đúng hướng dẫn quay lại không còn nút để
+     bấm. Băng đỏ giải thích, nút vẫn ở đó. */
+  const hasSocial = hasGithub || hasGoogle || hasFacebook;
 
   return (
     <div className="space-y-5 short:space-y-4 shorter:space-y-2">

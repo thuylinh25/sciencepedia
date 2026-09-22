@@ -3,7 +3,7 @@
 Quy tắc rút từ những lần **sửa nhầm chỗ**. Đây không phải mẹo kỹ thuật — mẹo kỹ
 thuật nằm ở `docs/design-system.md`. Đây là cách quyết định *sửa cái gì*.
 
-Cập nhật: 2026-09-06
+Cập nhật: 2026-09-22
 
 ---
 
@@ -714,3 +714,40 @@ KHÔNG tìm thấy bài. Nhưng nếu slug bài ấy đổi lần nữa, hàng n
 một luật 301 hợp lệ từ slug cũ sang slug mới. Nó vừa là bẫy vừa là lưới, nên
 để nguyên và ghi lại ở đây thay vì xoá. `redirects:sync` đã bỏ qua nó kèm cảnh
 báo.
+
+---
+
+## Một mã lỗi hiện ra không có nghĩa là thư viện phát ra mã ấy
+
+Chốt 2026-09-22.
+
+Trang đăng nhập trên điện thoại hiện "Đăng nhập bằng mạng xã hội đang không
+chạy. Hãy dùng email và mật khẩu." — ngay phía trên hai nút Google và GitHub
+vẫn đứng đó. Câu ấy gắn với `?error=Configuration`, nên giả thuyết đầu tiên
+là biến môi trường của nhà cung cấp thiếu trên production.
+
+Ba lệnh loại bỏ giả thuyết đó:
+
+```bash
+vercel env ls                                   # AUTH_GOOGLE_ID + _SECRET đều có
+curl -s $SITE/api/auth/providers                # liệt kê cả google lẫn github
+curl -X POST $SITE/api/auth/signin/google …     # 302 về accounts.google.com
+```
+
+Nguyên nhân thật nằm trong `@auth/core`: chỉ tám kiểu lỗi được trả nguyên văn
+về client (`clientErrors` trong `errors.js`); **mọi kiểu còn lại bị đổi tên
+thành `Configuration`** trước khi chuyển hướng. `InvalidCheck` — cookie PKCE
+mất giữa chừng, ca trình duyệt nhúng — nằm trong nhóm "còn lại". Và câu chữ
+đúng cho ca ấy đang treo vào mã `OAuthCallback`, tên của **v4**; v5 gọi nó là
+`OAuthCallbackError` nên nhánh ấy không bao giờ chạy.
+
+**Quy tắc: trước khi viết câu chữ cho một mã lỗi, đọc trong thư viện xem nó
+phát ra đúng những mã nào — đừng chép danh sách từ tài liệu phiên bản cũ hay
+từ trí nhớ.** Một mã catch-all đeo câu chữ của một nguyên nhân cụ thể thì mọi
+sự cố khác đều bị chẩn đoán sai, và bị chẩn đoán sai *một cách tự tin*: người
+dùng đọc "mạng xã hội không chạy" rồi báo đúng như thế.
+
+Hệ quả thứ hai, nhỏ hơn nhưng cùng gốc: điều kiện bật nhà cung cấp từng bị
+chép làm hai bản — `auth.ts` đòi id VÀ secret, trang đăng nhập chỉ kiểm id.
+Nay cả hai đọc `src/lib/auth-providers.ts`. Hai bản sao của cùng một điều kiện
+là hai câu trả lời chờ ngày lệch nhau.

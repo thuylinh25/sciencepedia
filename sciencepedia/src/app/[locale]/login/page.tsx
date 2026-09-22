@@ -5,6 +5,7 @@ import type { Locale } from "@/i18n/routing";
 import { buildMetadata } from "@/lib/seo";
 import { LoginForm } from "@/components/auth/login-form";
 import { AuthShell } from "@/components/auth/auth-shell";
+import { oauthProviders } from "@/lib/auth-providers";
 
 export async function generateMetadata({
   params,
@@ -38,10 +39,13 @@ export default async function LoginPage({
       title={t.rich("loginTitleRich", {
         hl: (chunks) => <span className="text-primary">{chunks}</span>,
       })} subtitle={t("loginSubtitle")}>
+      {/* Cờ suy từ `oauthProviders`, tức đúng điều kiện `auth.ts` dùng để đăng
+          ký nhà cung cấp (id VÀ secret). Chỉ kiểm id là cách cũ, và nó vẽ nút
+          cho nhà cung cấp không tồn tại. */}
       <LoginForm
-        hasGithub={Boolean(process.env.AUTH_GITHUB_ID)}
-        hasGoogle={Boolean(process.env.AUTH_GOOGLE_ID)}
-        hasFacebook={Boolean(process.env.AUTH_FACEBOOK_ID)}
+        hasGithub={oauthProviders.github}
+        hasGoogle={oauthProviders.google}
+        hasFacebook={oauthProviders.facebook}
       />
     </AuthShell>
   );
