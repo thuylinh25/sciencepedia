@@ -562,3 +562,45 @@ neo khớp khác đúng một lần.
 `factCheck` giữ nguyên REVISE/FAILED: lượt này chỉ đóng S1/S2, mỗi bài còn nhiều
 phát hiện S3/S4 và vẫn dưới ngưỡng ba nguồn bậc 1–2. Mỗi bài có một `Revision`
 chụp bản trước, ghi trong cùng transaction với lệnh sửa.
+
+## Đợt 2026-09-22 — hai câu science-editor phủ quyết từ 17/09
+
+Cả hai lộ ra khi `link-glossary.ts` định gắn `[[...]]` vào chúng. Editor chặn
+với cùng một lý do: đặt tooltip vào một câu sai là chống lưng cho câu ấy. Hai
+ghi chú `KHÔNG gắn` trong `link-glossary.ts` ghi "gắn lại sau khi bài được
+sửa" — đây là lượt sửa ấy.
+
+### ho-den-noi-hinh-hoc-cua-khong-gian-sup-do
+
+- Hình thành hố đen sao: "lõi một ngôi sao nặng sụp đổ **sau** siêu tân tinh"
+  → "lõi sụp đổ **trước**; cú sụp đổ giải phóng neutrino, và chính neutrino
+  truyền năng lượng cho các lớp ngoài, đẩy chúng nổ tung thành siêu tân tinh"
+  — căn cứ: OpenStax *Astronomy 2e* §23.2, thêm vào bảng nguồn (bậc 3).
+  Bản cũ đảo nhân quả. Bản sửa giữ đúng một chỗ dè dặt của nguồn: sóng xung
+  kích của cú sụp đổ **một mình** không đủ gây nổ.
+
+### 20-ngoi-sao-sang-nhat-bau-troi-dem
+
+- Vega: "Sao Bắc Cực khoảng **12.000 năm trước**" → "khoảng **14.000 năm
+  trước**, và sẽ trở lại sau chừng **12.000 năm nữa**" — căn cứ: NASA,
+  *Summer Triangle Corner: Vega*, thêm vào bảng nguồn (bậc 2).
+  Bản cũ trộn hai con số của hai chiều thời gian: NASA nói 14.000 năm TRƯỚC
+  và 12.000 năm NỮA, bài lấy số của tương lai gắn vào quá khứ. Trục Trái Đất
+  đảo một vòng ~26.000 năm, nên hai số ấy là hai đầu của cùng một chu kỳ.
+
+### Ghi chung
+
+`factCheck` giữ nguyên `REVISE` ở cả hai bài: sửa chuỗi không phải là qua
+gate. Mỗi bài có một `Revision` chụp bản trước, ghi trong cùng transaction
+với lệnh sửa nội dung và lệnh thêm nguồn — không có trạng thái trung gian nào
+mà claim đã đổi còn nguồn thì chưa. `lastVerifiedAt` đặt 2026-09-22.
+
+- **Còn nợ:** hai bài vẫn dưới ngưỡng ba nguồn bậc 1–2 (`ho-den` có 3 nguồn
+  nhưng một là bậc 3; `20-ngoi-sao` có 2, một là bậc 4). Nguồn thêm ở đây chỉ
+  đỡ đúng claim vừa sửa.
+- **Còn nợ:** dải "5–100 khối lượng Mặt Trời" cho hố đen sao vẫn chưa có
+  nguồn nào đỡ. Ngoài phạm vi lượt này vì không phải câu bị phủ quyết, nhưng
+  nó nằm ngay trong câu vừa sửa nên dễ bị tưởng là đã được kiểm.
+- **Còn nợ:** hai chỗ `[[...]]` mà editor chặn nay đã hết lý do chặn, nhưng
+  gắn lại là việc của lượt duyệt sau — `factCheck` vẫn REVISE, và quy tắc nói
+  rõ sửa chuỗi xong không có nghĩa là qua gate.
