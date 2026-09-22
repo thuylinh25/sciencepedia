@@ -77,6 +77,7 @@ export async function GET(request: NextRequest) {
       cause,
       cookies === "(không có)" ? "nocookie" : "cookie",
       isInAppBrowser(ua) ? "wv" : "br",
+      decoyReport(request),
     ].join("/"),
   );
 
@@ -85,4 +86,57 @@ export async function GET(request: NextRequest) {
   return new Response(response.body, { status: response.status, headers });
 }
 
-export const POST = handlers.POST;
+/* ── Cookie mồi: phân định "hộp cookie khác" với "cookie bị từ chối" ────────
+   TẠM, gỡ cùng phần dấu vết còn lại.
+
+   Mã chẩn đoán đang dừng ở `pkce-missing/cookie/br`: lượt quay về CÓ mang
+   cookie `authjs.*`, nhưng thiếu đúng `pkce.code_verifier`, và user-agent của
+   lượt ấy trông như trình duyệt thật. Hai lời giải thích còn sống, và chúng
+   đòi hai cách sửa trái ngược nhau:
+
+   1. Lượt bấm xuất phát từ hộp cookie KHÁC (trình duyệt nhúng), cookie
+      `authjs.*` thấy được chỉ là tàn dư của một lần mở trước trong trình duyệt
+      này. Sửa: buộc mở trình duyệt hệ thống.
+   2. Cùng một hộp cookie, nhưng riêng cookie PKCE không sống sót — tên có
+      tiền tố `__Secure-`, hoặc thuộc tính, hoặc kích thước.
+
+   Hai cookie mồi được đặt trong CHÍNH phản hồi dựng cookie PKCE, cùng thuộc
+   tính, khác nhau đúng một điểm: một cái mang tiền tố `__Secure-`, một cái
+   không. Lượt quay về báo lại cái nào tới được:
+
+     both   → cùng hộp cookie, cả hai mồi sống ⇒ riêng PKCE chết (giả thuyết 2)
+     plain  → tiền tố `__Secure-` là thủ phạm
+     secure → cookie không tiền tố bị chặn
+     none   → không mồi nào tới ⇒ hộp cookie khác hẳn (giả thuyết 1)
+
+   Mồi không mang nội dung gì: giá trị là "1", hết hạn sau 15 phút như PKCE. */
+const DECOY_PLAIN = "authdx";
+const DECOY_SECURE = "__Secure-authdx";
+
+function decoyReport(request: NextRequest): string {
+  const raw = request.headers.get("cookie") ?? "";
+  const has = (name: string) =>
+    raw.split(";").some((c) => c.trim().startsWith(`${name}=`));
+  const plain = has(DECOY_PLAIN);
+  const secure = has(DECOY_SECURE);
+  if (plain && secure) return "both";
+  if (plain) return "plain";
+  if (secure) return "secure";
+  return "none";
+}
+
+export async function POST(request: NextRequest) {
+  const response = await handlers.POST(request);
+
+  if (!new URL(request.url).pathname.includes("/signin/")) return response;
+
+  const headers = new Headers(response.headers);
+  const attributes = "Path=/; Max-Age=900; SameSite=Lax; HttpOnly";
+  headers.append("set-cookie", `${DECOY_PLAIN}=1; ${attributes}; Secure`);
+  headers.append("set-cookie", `${DECOY_SECURE}=1; ${attributes}; Secure`);
+
+  return new Response(response.body, {
+    status: response.status,
+    headers,
+  });
+}
