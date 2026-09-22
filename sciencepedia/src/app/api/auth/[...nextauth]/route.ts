@@ -1,6 +1,6 @@
 import type { NextRequest } from "next/server";
 
-import { handlers } from "@/auth";
+import { handlers, takeAuthCauseSlug } from "@/auth";
 
 /**
  * Handler của Auth.js, bọc thêm MỘT dòng log cho các lượt callback hỏng.
@@ -39,21 +39,40 @@ export async function GET(request: NextRequest) {
 
   const url = new URL(request.url);
   const location = response.headers.get("location") ?? "";
-  const failed = url.pathname.includes("/callback/") && location.includes("error=");
+  const failed =
+    url.pathname.includes("/callback/") && location.includes("error=");
 
-  if (failed) {
-    console.error(
-      "[auth] callback hỏng",
-      JSON.stringify({
-        path: url.pathname,
-        error: new URL(location, url.origin).searchParams.get("error"),
-        cookies: authCookieNames(request),
-        ua: (request.headers.get("user-agent") ?? "").slice(0, 120),
-      }),
-    );
-  }
+  if (!failed) return response;
 
-  return response;
+  const cookies = authCookieNames(request);
+  const target = new URL(location, url.origin);
+  /* Lấy MỘT lần: `takeAuthCauseSlug` xoá dấu vết khi đọc, gọi hai lần thì lần
+     sau trả `null`. */
+  const cause = takeAuthCauseSlug() ?? "nolog";
+
+  console.error(
+    "[auth] callback hỏng",
+    JSON.stringify({
+      path: url.pathname,
+      error: target.searchParams.get("error"),
+      cause,
+      cookies,
+      ua: (request.headers.get("user-agent") ?? "").slice(0, 120),
+    }),
+  );
+
+  /* Slug nguyên nhân + việc cookie có tới hay không được gắn vào URL để trang
+     đăng nhập hiện lên một dòng nhỏ. Đây là dấu vết TẠM: log của Vercel giữ
+     quá ít để bắt được lượt hỏng của người dùng thật (xem `auth.ts`). Gỡ cả
+     hai đầu khi đã chốt nguyên nhân. */
+  target.searchParams.set(
+    "dx",
+    `${cause}/${cookies === "(không có)" ? "nocookie" : "cookie"}`,
+  );
+
+  const headers = new Headers(response.headers);
+  headers.set("location", target.toString());
+  return new Response(response.body, { status: response.status, headers });
 }
 
 export const POST = handlers.POST;

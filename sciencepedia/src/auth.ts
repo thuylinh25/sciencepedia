@@ -15,6 +15,39 @@ import { oauthProviders } from "@/lib/auth-providers";
    phải lúc build: `auth.ts` chỉ được nạp khi một request chạm vào Auth.js. */
 const enabled = oauthProviders();
 
+/* ── Dấu vết TẠM để chẩn đoán lượt OAuth hỏng trên di động ─────────────────
+   Gỡ sau khi chốt nguyên nhân (chốt mở: 2026-09-22).
+
+   Auth.js chỉ kể nguyên nhân thật qua `logger.error`, rồi nuốt nó và chuyển
+   hướng với mã `Configuration` chung chung. Log của Vercel thì không giữ nổi:
+   API trả đúng 100 dòng gần nhất, mà site này đủ lưu lượng để cửa sổ ấy chỉ
+   trải khoảng một phút — ba lần thu liên tiếp đều trượt lượt của người dùng.
+
+   Nên nguyên nhân được hứng lại tại đây và gắn vào URL chuyển hướng dưới dạng
+   một SLUG ngắn (`dx=`), để người gặp lỗi chỉ cần chụp màn hình. Chỉ slug,
+   không thông điệp gốc, không stack: trang đăng nhập là trang công khai. */
+let lastCause: string | null = null;
+
+const CAUSE_SLUGS: Array<[RegExp, string]> = [
+  [/"iss" \(issuer\) missing|issuer.*missing/i, "iss-missing"],
+  [/pkce|code_verifier/i, "pkce-missing"],
+  [/state/i, "state-missing"],
+  [/csrf/i, "csrf"],
+  [/prisma|database|connect/i, "db"],
+  [/fetch|network|timeout|ENOTFOUND|discovery/i, "network"],
+];
+
+/** Lấy VÀ xoá slug của lỗi Auth.js vừa xảy ra trong request này. */
+export function takeAuthCauseSlug(): string | null {
+  const cause = lastCause;
+  lastCause = null;
+  if (!cause) return null;
+  for (const [pattern, slug] of CAUSE_SLUGS) {
+    if (pattern.test(cause)) return slug;
+  }
+  return "other";
+}
+
 /**
  * Auth.js v5.
  *
@@ -104,6 +137,19 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
         ]
       : []),
   ],
+  /* Vẫn in ra console như mặc định — chỉ chép thêm một bản vào `lastCause`
+     cho `takeAuthCauseSlug()`. Xem khối dấu vết TẠM ở đầu tệp. */
+  logger: {
+    error(error) {
+      const cause = (error as { cause?: { err?: unknown } }).cause?.err;
+      lastCause = [
+        error.name,
+        error.message,
+        cause instanceof Error ? cause.message : "",
+      ].join(" ");
+      console.error(error);
+    },
+  },
   callbacks: {
     async jwt({ token, user, trigger }) {
       if (user) {

@@ -132,6 +132,21 @@ export function LoginForm({
         </p>
       )}
 
+      {/* Mã chẩn đoán TẠM — gỡ khi đã chốt nguyên nhân lượt OAuth hỏng trên di
+          động (chốt mở 2026-09-22).
+
+          Lý do nó phải hiện trên màn hình chứ không nằm trong log: API log của
+          Vercel chỉ trả 100 dòng gần nhất, và site này đủ lưu lượng để cửa sổ
+          ấy chỉ trải khoảng một phút — ba lượt thu liên tiếp đều trượt đúng
+          lượt của người dùng. Một dòng chữ người gặp lỗi chụp được thì không
+          bao giờ trượt. Chỉ là slug do `api/auth/[...nextauth]/route.ts` sinh
+          ra, không phải thông điệp lỗi gốc. */}
+      {searchParams.get("dx") && (
+        <p className="text-center text-xs text-muted-foreground">
+          mã chẩn đoán: <code>{searchParams.get("dx")}</code>
+        </p>
+      )}
+
       {/* Đăng nhập mạng xã hội đứng TRƯỚC form email.
 
           Thứ tự này là một phán quyết chứ không phải thẩm mỹ: người đã có tài
