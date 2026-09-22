@@ -1,6 +1,7 @@
 import type { NextRequest } from "next/server";
 
 import { handlers, takeAuthCauseSlug } from "@/auth";
+import { isInAppBrowser } from "@/lib/in-app-browser";
 
 /**
  * Handler của Auth.js, bọc thêm MỘT dòng log cho các lượt callback hỏng.
@@ -65,9 +66,18 @@ export async function GET(request: NextRequest) {
      đăng nhập hiện lên một dòng nhỏ. Đây là dấu vết TẠM: log của Vercel giữ
      quá ít để bắt được lượt hỏng của người dùng thật (xem `auth.ts`). Gỡ cả
      hai đầu khi đã chốt nguyên nhân. */
+  /* Phần thứ ba nói phép dò trình duyệt nhúng có nhận ra thiết bị này không
+     (`wv` = có, `br` = không). Nếu lượt hỏng mà vẫn là `br` thì cảnh báo
+     "Mở bằng trình duyệt" đã không hiện, và chỗ cần sửa là các mẫu user-agent
+     trong `lib/in-app-browser.ts`, không phải luồng đăng nhập. */
+  const ua = request.headers.get("user-agent") ?? "";
   target.searchParams.set(
     "dx",
-    `${cause}/${cookies === "(không có)" ? "nocookie" : "cookie"}`,
+    [
+      cause,
+      cookies === "(không có)" ? "nocookie" : "cookie",
+      isInAppBrowser(ua) ? "wv" : "br",
+    ].join("/"),
   );
 
   const headers = new Headers(response.headers);

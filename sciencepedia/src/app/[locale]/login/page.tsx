@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { headers } from "next/headers";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 
 import type { Locale } from "@/i18n/routing";
@@ -6,6 +7,7 @@ import { buildMetadata } from "@/lib/seo";
 import { LoginForm } from "@/components/auth/login-form";
 import { AuthShell } from "@/components/auth/auth-shell";
 import { oauthProviders } from "@/lib/auth-providers";
+import { isInAppBrowser, systemBrowserUrl } from "@/lib/in-app-browser";
 
 /* Trang đăng nhập dựng theo REQUEST, không dựng sẵn lúc build.
 
@@ -48,6 +50,17 @@ export default async function LoginPage({
   const t = await getTranslations("auth");
   const providers = oauthProviders();
 
+  /* Lượt OAuth bắt đầu trong trình duyệt nhúng của một app thì không bao giờ
+     hoàn tất được: cookie PKCE ở lại hộp cookie của app, còn Google trả về
+     trình duyệt hệ thống (đo 2026-09-22, mã chẩn đoán `pkce-missing/cookie`).
+     Nên trang đưa sẵn một đường mở lại chính nó bằng trình duyệt thật. */
+  const userAgent = (await headers()).get("user-agent") ?? "";
+  const host = (await headers()).get("host") ?? "";
+  const openInBrowser =
+    isInAppBrowser(userAgent) && host
+      ? systemBrowserUrl(userAgent, `https://${host}/${locale}/login`)
+      : null;
+
   return (
     <AuthShell
       title={t.rich("loginTitleRich", {
@@ -57,6 +70,7 @@ export default async function LoginPage({
           đăng ký nhà cung cấp (id VÀ secret). Chỉ kiểm id là cách cũ, và nó vẽ
           nút cho nhà cung cấp không tồn tại. */}
       <LoginForm
+        openInBrowser={openInBrowser}
         hasGithub={providers.github}
         hasGoogle={providers.google}
         hasFacebook={providers.facebook}

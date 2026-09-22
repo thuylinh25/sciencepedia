@@ -6,7 +6,15 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { signIn } from "next-auth/react";
 import { useTranslations } from "next-intl";
 import { useSearchParams } from "next/navigation";
-import { AlertTriangle, ArrowRight, Github, Loader2, Lock, Mail } from "lucide-react";
+import {
+  AlertTriangle,
+  ArrowRight,
+  ExternalLink,
+  Github,
+  Loader2,
+  Lock,
+  Mail,
+} from "lucide-react";
 
 import { Link, useRouter } from "@/i18n/navigation";
 import { loginSchema, type LoginInput } from "@/lib/validations";
@@ -51,10 +59,13 @@ export function LoginForm({
   hasGithub,
   hasGoogle,
   hasFacebook,
+  openInBrowser,
 }: {
   hasGithub: boolean;
   hasGoogle: boolean;
   hasFacebook: boolean;
+  /** Đường mở lại trang bằng trình duyệt hệ thống; `null` khi không cần. */
+  openInBrowser?: string | null;
 }) {
   const t = useTranslations("auth");
   const router = useRouter();
@@ -96,9 +107,11 @@ export function LoginForm({
      đầu đã nằm đúng ngữ cảnh trình duyệt. Triệu chứng "lần 1 hỏng, lần 2
      được" là cái bẫy: nó khiến lỗi trông như chuyện vặt và không ai báo.
 
-     Mã hay gặp nhất là `OAuthCallback`: lượt đăng nhập bắt đầu trong trình
-     duyệt nhúng của một app (Zalo, Facebook, Messenger) rồi Google trả về
-     một trình duyệt khác — cookie `pkce.code_verifier` ở lại bên kia.
+     Nguyên nhân hay gặp nhất, đã đo chứ không đoán: lượt đăng nhập bắt đầu
+     trong trình duyệt nhúng của một app (Zalo, Facebook, Messenger) rồi Google
+     trả về một trình duyệt khác — cookie `pkce.code_verifier` ở lại bên kia.
+     Auth.js gộp nó thành `Configuration`; chỗ chặn nó nằm ở khối cảnh báo
+     `openInBrowser` bên dưới.
 
      Mã lạ vẫn hiện, kèm chính mã đó, để lần sau còn lần ra được. */
   const errorCode = searchParams.get("error");
@@ -147,6 +160,30 @@ export function LoginForm({
         </p>
       )}
 
+     {/* Cảnh báo ĐỨNG TRƯỚC các nút, không phải sau khi lỗi đã xảy ra.
+
+          Trình duyệt nhúng của một app (Zalo, Facebook, Messenger, TikTok) giữ
+          cookie trong hộp riêng của app. Lượt đăng nhập bấm ở đây sẽ đặt cookie
+          PKCE vào hộp ấy, rồi Google trả về trình duyệt hệ thống — nơi không có
+          cookie đó. Đo 2026-09-22 trên production: mã chẩn đoán
+          `pkce-missing/cookie`, tức máy chủ nhận được cookie `authjs.*` nhưng
+          thiếu đúng `pkce.code_verifier`.
+
+          Các nút vẫn để đó, không khoá. Phép dò dựa vào user-agent nên có thể
+          nhận sai, và khoá nút vì một phỏng đoán là cắt đường của người vốn
+          đăng nhập được. Nút "Mở bằng trình duyệt" chỉ cần nổi hơn. */}
+      {openInBrowser && hasSocial && (
+        <div className="space-y-2.5 rounded-xl border border-primary/40 bg-primary/10 px-4 py-3">
+          <p className="flex items-start gap-2.5 text-sm">
+            <ExternalLink className="mt-0.5 size-4 shrink-0" aria-hidden />
+            {t("inAppBrowserWarning")}
+          </p>
+          <Button asChild variant="outline" className="w-full shorter:h-9">
+            <a href={openInBrowser}>{t("openInBrowser")}</a>
+          </Button>
+        </div>
+      )}
+
       {/* Đăng nhập mạng xã hội đứng TRƯỚC form email.
 
           Thứ tự này là một phán quyết chứ không phải thẩm mỹ: người đã có tài
@@ -161,7 +198,7 @@ export function LoginForm({
           "Tiếp tục với Google" hiện vô điều kiện sẽ dẫn thẳng tới
           `/login?error=Configuration`. Một nút hứa thứ chưa chạy còn tệ hơn
           không có nút. */}
-      {hasSocial && (
+       {hasSocial && (
         <>
           <div className="grid gap-2 shorter:gap-1.5">
             {hasGoogle && (

@@ -50,6 +50,8 @@
     "errorAccessDenied": "You did not grant access, so sign-in stopped.",
     "errorMissingCSRF": "The sign-in session expired. Reload the page and try again.",
     "errorConfiguration": "Sign-in did not complete. If you opened this page inside another app (Zalo, Facebook, Messenger, TikTok), choose “Open in browser” and try again. If it still fails, use email and password.",
+    "inAppBrowserWarning": "You are viewing this page inside another app. Google and GitHub sign-in cannot complete here.",
+    "openInBrowser": "Open in browser",
     "errorDefault": "Sign-in failed (code {code}). Please try again.",
     "registerSuccess": "Account created. Please sign in.",
     "emailTaken": "That email is already in use.",

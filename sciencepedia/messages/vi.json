@@ -50,6 +50,8 @@
     "errorAccessDenied": "Bạn chưa cấp quyền cho ứng dụng, nên lượt đăng nhập dừng lại.",
     "errorMissingCSRF": "Phiên đăng nhập đã quá hạn. Hãy tải lại trang rồi thử lại.",
     "errorConfiguration": "Chưa hoàn tất được lượt đăng nhập. Nếu bạn đang mở trang bên trong một ứng dụng khác (Zalo, Facebook, Messenger, TikTok), hãy chọn “Mở bằng trình duyệt” rồi thử lại. Vẫn không được thì dùng email và mật khẩu.",
+    "inAppBrowserWarning": "Bạn đang mở trang bên trong một ứng dụng khác. Đăng nhập bằng Google hoặc GitHub sẽ không hoàn tất được ở đây.",
+    "openInBrowser": "Mở bằng trình duyệt",
     "errorDefault": "Đăng nhập không thành công (mã {code}). Hãy thử lại.",
     "registerSuccess": "Tạo tài khoản thành công. Mời bạn đăng nhập.",
     "emailTaken": "Email này đã được sử dụng.",
