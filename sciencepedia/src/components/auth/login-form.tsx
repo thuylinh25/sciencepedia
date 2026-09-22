@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { signIn } from "next-auth/react";
@@ -71,6 +71,11 @@ export function LoginForm({
   const router = useRouter();
   const searchParams = useSearchParams();
   const [serverError, setServerError] = useState<string | null>(null);
+  /* Đọc sau khi gắn vào DOM, không đọc trong lúc render: máy chủ không có
+     `navigator`, nên đọc thẳng sẽ cho hai kết quả khác nhau ở hai phía và React
+     báo lệch hydration. */
+  const [userAgent, setUserAgent] = useState("");
+  useEffect(() => setUserAgent(navigator.userAgent), []);
 
   const {
     register,
@@ -80,6 +85,24 @@ export function LoginForm({
     resolver: zodResolver(loginSchema),
     defaultValues: { email: "", password: "" },
   });
+
+  /* Lượt bắt lại do `api/auth/[...nextauth]/route.ts` yêu cầu: callback vừa
+     hỏng vì thiếu cookie PKCE, và trình duyệt ĐANG mở trang này là trình duyệt
+     đã nhận chuyển hướng từ nhà cung cấp — nên lượt mới bắt đầu từ đây sẽ có
+     cả hai nửa trong cùng một hộp cookie.
+
+     Máy chủ đã đặt một cookie đánh dấu nên đường này không lặp lại được: nếu
+     lượt thứ hai cũng hỏng, callback về thẳng trang lỗi, không kèm `retry`. */
+  const retryProvider = searchParams.get("retry");
+  useEffect(() => {
+    if (
+      retryProvider === "google" ||
+      retryProvider === "github" ||
+      retryProvider === "facebook"
+    ) {
+      void signIn(retryProvider, { callbackUrl: "/" });
+    }
+  }, [retryProvider]);
 
   async function onSubmit(values: LoginInput) {
     setServerError(null);
@@ -110,8 +133,9 @@ export function LoginForm({
      Nguyên nhân hay gặp nhất, đã đo chứ không đoán: lượt đăng nhập bắt đầu
      trong trình duyệt nhúng của một app (Zalo, Facebook, Messenger) rồi Google
      trả về một trình duyệt khác — cookie `pkce.code_verifier` ở lại bên kia.
-     Auth.js gộp nó thành `Configuration`; chỗ chặn nó nằm ở khối cảnh báo
-     `openInBrowser` bên dưới.
+     Auth.js gộp nó thành `Configuration`. Hai chỗ chặn: khối cảnh báo
+     `openInBrowser` bên dưới cho app dò được, và lượt bắt lại tự động
+     (`?retry=`) cho app không dò được.
 
      Mã lạ vẫn hiện, kèm chính mã đó, để lần sau còn lần ra được. */
   const errorCode = searchParams.get("error");
@@ -155,8 +179,14 @@ export function LoginForm({
           bao giờ trượt. Chỉ là slug do `api/auth/[...nextauth]/route.ts` sinh
           ra, không phải thông điệp lỗi gốc. */}
       {searchParams.get("dx") && (
-        <p className="text-center text-xs text-muted-foreground">
+        <p className="break-words text-center text-xs text-muted-foreground">
           mã chẩn đoán: <code>{searchParams.get("dx")}</code>
+          {/* User-agent đi kèm vì phần `br` của mã chẩn đoán nói phép dò trình
+              duyệt nhúng KHÔNG nhận ra app này. Muốn thêm mẫu vào
+              `lib/in-app-browser.ts` thì phải thấy chuỗi thật. Client đọc, vì
+              lượt render này có thể không cùng trình duyệt với lượt hỏng. */}
+          <br />
+          <code>{userAgent}</code>
         </p>
       )}
 

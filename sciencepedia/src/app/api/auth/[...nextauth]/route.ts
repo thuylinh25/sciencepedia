@@ -82,9 +82,46 @@ export async function GET(request: NextRequest) {
   );
 
   const headers = new Headers(response.headers);
+
+  /* ── Bắt lại lượt đăng nhập, MỘT lần, trong trình duyệt đang cầm callback ──
+
+     Đo trên production 2026-09-22: `pkce-missing/cookie/br/none`. Không cookie
+     mồi nào quay về, dù chúng được đặt trong chính phản hồi dựng cookie PKCE —
+     nên lượt bấm và lượt quay về nằm ở hai hộp cookie khác nhau. Người dùng
+     bấm trong trình duyệt nhúng của một app, Google trả về trình duyệt hệ
+     thống, và cookie PKCE ở lại bên kia.
+
+     Không dò được app ấy qua user-agent (phần `br`), nên cách chữa không được
+     phụ thuộc vào việc dò. Thay vào đó: trình duyệt ĐANG cầm callback chính là
+     một trình duyệt tử tế — nó vừa nhận được chuyển hướng từ Google. Bắt lại
+     lượt đăng nhập ở đây thì cả hai nửa cùng một hộp cookie, và lượt thứ hai
+     chạy được. Đây cũng chính là lời giải thích cho triệu chứng "lần 1 hỏng,
+     lần 2 được" đã ghi ở `docs/process/diagnosis.md`, nay làm tự động thay vì
+     bắt người dùng tự đoán ra.
+
+     Chặn vòng lặp bằng một cookie đánh dấu: chỉ bắt lại ĐÚNG MỘT lần, và chỉ
+     cho hai nguyên nhân thật sự tự khỏi khi đổi ngữ cảnh. Mọi nguyên nhân khác
+     đi thẳng tới trang lỗi như cũ. */
+  const provider = url.pathname.split("/").pop() ?? "";
+  const canRetry =
+    (cause === "pkce-missing" || cause === "state-missing") &&
+    provider !== "" &&
+    !request.cookies.has(RETRY_COOKIE);
+
+  if (canRetry) {
+    target.searchParams.set("retry", provider);
+    headers.append(
+      "set-cookie",
+      `${RETRY_COOKIE}=1; Path=/; Max-Age=300; SameSite=Lax; HttpOnly; Secure`,
+    );
+  }
+
   headers.set("location", target.toString());
   return new Response(response.body, { status: response.status, headers });
 }
+
+/** Đánh dấu "đã bắt lại một lần" — xem khối chú thích ở `GET`. */
+const RETRY_COOKIE = "authretry";
 
 /* ── Cookie mồi: phân định "hộp cookie khác" với "cookie bị từ chối" ────────
    TẠM, gỡ cùng phần dấu vết còn lại.
