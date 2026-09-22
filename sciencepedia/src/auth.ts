@@ -11,6 +11,10 @@ import { prisma } from "@/lib/prisma";
 import { loginSchema } from "@/lib/validations";
 import { oauthProviders } from "@/lib/auth-providers";
 
+/* Đọc MỘT lần khi module được nạp trong tiến trình phục vụ request — không
+   phải lúc build: `auth.ts` chỉ được nạp khi một request chạm vào Auth.js. */
+const enabled = oauthProviders();
+
 /**
  * Auth.js v5.
  *
@@ -57,10 +61,10 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
         };
       },
     }),
-    /* Điều kiện bật/tắt nằm ở `@/lib/auth-providers` — trang đăng nhập đọc
-       cùng hằng số ấy để vẽ nút. Đừng viết lại điều kiện tại chỗ: hai bản sao
-       lệch nhau là cách sinh ra nút dẫn thẳng vào `error=Configuration`. */
-    ...(oauthProviders.github
+    /* Điều kiện bật/tắt nằm ở `@/lib/auth-providers` — trang đăng nhập gọi
+       cùng hàm ấy để vẽ nút. Đừng viết lại điều kiện tại chỗ: hai bản sao lệch
+       nhau là cách sinh ra nút dẫn thẳng vào `error=Configuration`. */
+    ...(enabled.github
       ? [
           GitHub({
             clientId: process.env.AUTH_GITHUB_ID,
@@ -69,7 +73,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
           }),
         ]
       : []),
-    ...(oauthProviders.google
+    ...(enabled.google
       ? [
           Google({
             clientId: process.env.AUTH_GOOGLE_ID,
@@ -90,7 +94,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
        để nối tài khoản: không có email thì mỗi lần đăng nhập Facebook tạo một
        người dùng mới. Nên nếu bật Facebook mà chưa có quyền `email`, hãy tắt
        cờ nối tài khoản cho riêng nhà cung cấp này. */
-    ...(oauthProviders.facebook
+    ...(enabled.facebook
       ? [
           Facebook({
             clientId: process.env.AUTH_FACEBOOK_ID,
