@@ -54,7 +54,8 @@
     "slugs:redirect": "tsx --env-file-if-exists=.env scripts/add-slug-redirects.ts",
     "redirects:sync": "tsx --env-file-if-exists=.env scripts/sync-slug-redirects.ts",
     "links:reading": "tsx --env-file-if-exists=.env scripts/add-reading-links.ts",
-    "glossary:usedin": "tsx --env-file-if-exists=.env scripts/sync-glossary-usedin.ts"
+    "glossary:usedin": "tsx --env-file-if-exists=.env scripts/sync-glossary-usedin.ts",
+    "fix:earth-title": "tsx --env-file-if-exists=.env scripts/fix-earth-title-2026-09-22.ts"
   },
   "prisma": {
     "seed": "tsx --env-file-if-exists=.env prisma/seed.ts"
