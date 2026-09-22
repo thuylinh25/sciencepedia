@@ -751,3 +751,49 @@ Hệ quả thứ hai, nhỏ hơn nhưng cùng gốc: điều kiện bật nhà c
 chép làm hai bản — `auth.ts` đòi id VÀ secret, trang đăng nhập chỉ kiểm id.
 Nay cả hai đọc `src/lib/auth-providers.ts`. Hai bản sao của cùng một điều kiện
 là hai câu trả lời chờ ngày lệch nhau.
+
+---
+
+## Khi log không giữ nổi bằng chứng, đưa bằng chứng lên màn hình người dùng
+
+Chốt 2026-09-22, tiếp nối mục trên.
+
+Đăng nhập Google hỏng trên điện thoại, chạy trên máy tính. Mọi giả thuyết rẻ
+đều bị loại bằng phép đo: biến môi trường đủ, `/api/auth/providers` liệt kê cả
+google lẫn github, `POST /api/auth/signin/google` trả đúng URL Google, CSDL có
+sẵn bốn tài khoản OAuth đã tạo thành công, dự án không bật luật firewall nào.
+
+Chỗ tắc là **bằng chứng không sống đủ lâu**. API log của Vercel trả đúng 100
+dòng gần nhất; site này đủ lưu lượng để cửa sổ ấy chỉ trải khoảng một phút. Bốn
+lượt thu liên tiếp đều trượt lượt người dùng bấm, trong khi lượt tự gọi bằng
+`curl` thì bắt được ngay — một ảo giác nguy hiểm, vì nó khiến công cụ có vẻ
+đang chạy tốt.
+
+**Quy tắc: khi lỗi chỉ xảy ra trên máy người khác và log không giữ nổi nó, hãy
+đưa mã chẩn đoán vào chính phản hồi người ấy nhìn thấy.** Một dòng chữ họ chụp
+màn hình được thì không bao giờ trượt. Ở đây là `dx=<nguyên nhân>/<cookie>/…`
+gắn vào URL chuyển hướng: chỉ slug, không thông điệp gốc, không stack — trang
+đăng nhập là trang công khai. Dựng lên để chẩn, gỡ đi khi chẩn xong.
+
+**Quy tắc thứ hai, đắt hơn: khi hai giả thuyết còn sống đòi hai cách sửa trái
+ngược, đừng chọn cái nghe hợp lý hơn — dựng một phép đo tách đôi chúng.** Mã
+chẩn đoán dừng ở "cookie `authjs.*` có tới, riêng PKCE thiếu", và hai lời giải
+thích khớp như nhau: hộp cookie khác (trình duyệt nhúng), hay cookie PKCE bị
+chính trình duyệt này từ chối vì tên có tiền tố `__Secure-`. Phép tách là hai
+cookie mồi đặt trong CHÍNH phản hồi dựng cookie PKCE, cùng thuộc tính, khác
+đúng một điểm là tiền tố. Không mồi nào quay về ⇒ hộp cookie khác, và nhánh
+"tiền tố" chết ngay, không cần tranh luận.
+
+**Bản sửa không được phụ thuộc vào thứ vừa tỏ ra không đáng tin.** Phép dò trình
+duyệt nhúng theo user-agent không nhận ra app của người dùng (mã chẩn đoán trả
+`br`), nên nó chỉ còn là lớp cải thiện — hiện nút "Mở bằng trình duyệt" cho các
+app dò được. Lớp thật sự chữa không dò gì cả: trình duyệt đang cầm callback
+chắc chắn là một trình duyệt tử tế, vì nó vừa nhận chuyển hướng từ Google, nên
+lượt đăng nhập được bắt lại ngay tại đó và cả hai nửa nằm cùng một hộp cookie.
+Chính là triệu chứng "lần 1 hỏng, lần 2 được" ở mục trên — nay tự chạy, thay vì
+chờ người dùng tự đoán ra.
+
+Chặn vòng lặp bằng một cookie đánh dấu, và chỉ mở đường bắt lại cho đúng hai
+nguyên nhân tự khỏi khi đổi ngữ cảnh (`pkce-missing`, `state-missing`). Một cơ
+chế tự sửa mà không có điều kiện dừng thì biến một lỗi hiện rõ thành một vòng
+lặp âm thầm.

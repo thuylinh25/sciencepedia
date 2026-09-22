@@ -15,17 +15,17 @@ import { oauthProviders } from "@/lib/auth-providers";
    phải lúc build: `auth.ts` chỉ được nạp khi một request chạm vào Auth.js. */
 const enabled = oauthProviders();
 
-/* ── Dấu vết TẠM để chẩn đoán lượt OAuth hỏng trên di động ─────────────────
-   Gỡ sau khi chốt nguyên nhân (chốt mở: 2026-09-22).
+/* ── Nguyên nhân thật của một lượt OAuth hỏng ──────────────────────────────
 
-   Auth.js chỉ kể nguyên nhân thật qua `logger.error`, rồi nuốt nó và chuyển
-   hướng với mã `Configuration` chung chung. Log của Vercel thì không giữ nổi:
-   API trả đúng 100 dòng gần nhất, mà site này đủ lưu lượng để cửa sổ ấy chỉ
-   trải khoảng một phút — ba lần thu liên tiếp đều trượt lượt của người dùng.
+   Auth.js chỉ kể nguyên nhân qua `logger.error`, rồi nuốt nó và chuyển hướng
+   với mã `Configuration` chung chung — cùng một mã cho cookie mất, cho lỗi
+   CSDL, cho cấu hình sai. Nhưng hai trong số đó TỰ KHỎI khi lượt đăng nhập
+   được bắt lại trong đúng trình duyệt đang cầm callback, còn số còn lại thì
+   không. Nên nguyên nhân phải được giữ lại để `api/auth/[...nextauth]/route.ts`
+   quyết định có bắt lại hay không.
 
-   Nên nguyên nhân được hứng lại tại đây và gắn vào URL chuyển hướng dưới dạng
-   một SLUG ngắn (`dx=`), để người gặp lỗi chỉ cần chụp màn hình. Chỉ slug,
-   không thông điệp gốc, không stack: trang đăng nhập là trang công khai. */
+   Chỉ quy về SLUG, không giữ thông điệp gốc: nó đi vào một quyết định, không
+   đi ra màn hình. */
 let lastCause: string | null = null;
 
 const CAUSE_SLUGS: Array<[RegExp, string]> = [
@@ -138,7 +138,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
       : []),
   ],
   /* Vẫn in ra console như mặc định — chỉ chép thêm một bản vào `lastCause`
-     cho `takeAuthCauseSlug()`. Xem khối dấu vết TẠM ở đầu tệp. */
+     cho `takeAuthCauseSlug()`. Xem khối chú thích ở đầu tệp. */
   logger: {
     error(error) {
       const cause = (error as { cause?: { err?: unknown } }).cause?.err;

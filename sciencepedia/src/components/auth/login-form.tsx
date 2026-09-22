@@ -71,11 +71,6 @@ export function LoginForm({
   const router = useRouter();
   const searchParams = useSearchParams();
   const [serverError, setServerError] = useState<string | null>(null);
-  /* Đọc sau khi gắn vào DOM, không đọc trong lúc render: máy chủ không có
-     `navigator`, nên đọc thẳng sẽ cho hai kết quả khác nhau ở hai phía và React
-     báo lệch hydration. */
-  const [userAgent, setUserAgent] = useState("");
-  useEffect(() => setUserAgent(navigator.userAgent), []);
 
   const {
     register,
@@ -169,28 +164,7 @@ export function LoginForm({
         </p>
       )}
 
-      {/* Mã chẩn đoán TẠM — gỡ khi đã chốt nguyên nhân lượt OAuth hỏng trên di
-          động (chốt mở 2026-09-22).
-
-          Lý do nó phải hiện trên màn hình chứ không nằm trong log: API log của
-          Vercel chỉ trả 100 dòng gần nhất, và site này đủ lưu lượng để cửa sổ
-          ấy chỉ trải khoảng một phút — ba lượt thu liên tiếp đều trượt đúng
-          lượt của người dùng. Một dòng chữ người gặp lỗi chụp được thì không
-          bao giờ trượt. Chỉ là slug do `api/auth/[...nextauth]/route.ts` sinh
-          ra, không phải thông điệp lỗi gốc. */}
-      {searchParams.get("dx") && (
-        <p className="break-words text-center text-xs text-muted-foreground">
-          mã chẩn đoán: <code>{searchParams.get("dx")}</code>
-          {/* User-agent đi kèm vì phần `br` của mã chẩn đoán nói phép dò trình
-              duyệt nhúng KHÔNG nhận ra app này. Muốn thêm mẫu vào
-              `lib/in-app-browser.ts` thì phải thấy chuỗi thật. Client đọc, vì
-              lượt render này có thể không cùng trình duyệt với lượt hỏng. */}
-          <br />
-          <code>{userAgent}</code>
-        </p>
-      )}
-
-     {/* Cảnh báo ĐỨNG TRƯỚC các nút, không phải sau khi lỗi đã xảy ra.
+      {/* Cảnh báo ĐỨNG TRƯỚC các nút, không phải sau khi lỗi đã xảy ra.
 
           Trình duyệt nhúng của một app (Zalo, Facebook, Messenger, TikTok) giữ
           cookie trong hộp riêng của app. Lượt đăng nhập bấm ở đây sẽ đặt cookie
