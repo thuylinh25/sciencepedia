@@ -155,9 +155,9 @@ export function SiteHeader({
       {/* Liệt kê thuộc tính tường minh chứ không transition-all:
           transition-all cũng animate backdrop-filter, gây giật trên Safari. */}
       <header
-        /* Mốc cho luật `scroll-margin-top` trong globals.css: ô nhập trong
-           header dính phải tự huỷ `scroll-padding-top`, nếu không mỗi lần gõ
-           là một lần trang bị kéo lên. */
+        /* Mốc cho luật `scroll-margin-top` trong globals.css: phần tử có `id`
+           trong header dính không được mang offset anchor, nếu không focus vào
+           ô tìm kiếm là trang bị kéo lên. Xem chú thích ở `html` bên đó. */
         data-site-header
         className={cn(
           "sticky top-0 z-50 w-full transition-[background-color,border-color,box-shadow,color] duration-300",
