@@ -247,6 +247,255 @@ const PLANS: Plan[] = [
     to: ["huyet-dao-va-cham-cuu-khi-cua-dong-y-co-lien-he-gi-voi-khoa-hoc-hien-dai"],
     why: "Cùng một phép cân bằng chứng trên một hệ niềm tin cổ truyền, nhưng ra kết luận khác — đối chiếu được.",
   },
+
+  /* ---- Đợt 24/09: 17 bài mới không có link nào, ra lẫn vào ---------------
+   *
+   * Cả 17 bài đều chưa có bản tiếng Anh, nên chỉ danh sách tiếng Việt đổi.
+   * Nửa đầu cho mỗi bài mới một mục Đọc thêm; phần lớn đích là chính các bài
+   * mới với nhau, vì chúng đến theo cụm (lượng tử, ánh sáng, giấc ngủ, khí
+   * hậu). Nửa sau bù link VÀO từ bài cũ cho những bài mà trong cụm không ai
+   * trỏ tới — nếu không, cụm ấy chỉ trỏ quanh nhau và vẫn cô lập với kho. */
+
+  // ---- Lượng tử ----
+  {
+    slug: "co-hoc-luong-tu-the-gioi-ky-la-phia-sau-vat-chat",
+    to: [
+      "chong-chap-luong-tu-khi-mot-hat-co-the-ton-tai-trong-nhieu-trang-thai",
+      "vi-sao-einstein-noi-chua-khong-choi-tro-xuc-xac",
+      "ung-dung-co-hoc-luong-tu-tu-nen-tang-cong-nghe-hien-tai-den-dot-pha-tuong-lai",
+      "photon-hat-anh-sang-thuc-su-la-gi",
+    ],
+    why: "Bài tổng quan lướt qua bốn thứ mà mỗi thứ đã có bài riêng: chồng chập, cuộc tranh luận vướng víu của Einstein, các ứng dụng, và photon ở phần lưỡng tính sóng–hạt.",
+  },
+  {
+    slug: "chong-chap-luong-tu-khi-mot-hat-co-the-ton-tai-trong-nhieu-trang-thai",
+    to: [
+      "co-hoc-luong-tu-the-gioi-ky-la-phia-sau-vat-chat",
+      "ung-dung-co-hoc-luong-tu-tu-nen-tang-cong-nghe-hien-tai-den-dot-pha-tuong-lai",
+      "vi-sao-einstein-noi-chua-khong-choi-tro-xuc-xac",
+    ],
+    why: "Lùi ra bức tranh chung của cơ học lượng tử; đi tiếp sang qubit và QKD mà bài chỉ nêu tên; và con mèo Schrödinger là cùng một mối hoài nghi với câu 'Chúa không chơi xúc xắc'.",
+  },
+  {
+    slug: "ung-dung-co-hoc-luong-tu-tu-nen-tang-cong-nghe-hien-tai-den-dot-pha-tuong-lai",
+    to: [
+      "co-hoc-luong-tu-the-gioi-ky-la-phia-sau-vat-chat",
+      "chong-chap-luong-tu-khi-mot-hat-co-the-ton-tai-trong-nhieu-trang-thai",
+      "tu-electron-den-dong-dien-nguon-goc-cua-dien-nang",
+    ],
+    why: "Mỗi ứng dụng dựa trên một nguyên lý kể ở bài tổng quan; máy tính lượng tử dựa hẳn vào chồng chập; và transistor là chuyện electron dẫn điện trong vật liệu.",
+  },
+  {
+    slug: "vi-sao-einstein-noi-chua-khong-choi-tro-xuc-xac",
+    to: [
+      "co-hoc-luong-tu-the-gioi-ky-la-phia-sau-vat-chat",
+      "chong-chap-luong-tu-khi-mot-hat-co-the-ton-tai-trong-nhieu-trang-thai",
+      "thuyet-tuong-doi-hep-khi-thoi-gian-khong-con-tuyet-doi",
+    ],
+    why: "Thứ Einstein phản đối được giải thích ở hai bài lượng tử; và 'không gì nhanh hơn ánh sáng' — tiền đề của nghịch lý EPR — là của thuyết tương đối hẹp, cũng của chính ông.",
+  },
+
+  // ---- Ánh sáng và bức xạ ----
+  {
+    slug: "photon-hat-anh-sang-thuc-su-la-gi",
+    to: [
+      "buc-xa-dien-tu-tu-song-radio-den-tia-gamma",
+      "hanh-trinh-cua-photon-chuyen-di-100000-nam-tu-loi-mat-troi-den-trai-dat",
+      "co-hoc-luong-tu-the-gioi-ky-la-phia-sau-vat-chat",
+    ],
+    why: "E = hf nối photon với cả phổ điện từ; bài hành trình kể một photon cụ thể sinh ra và thoát khỏi Mặt Trời; và câu hỏi 'sóng hay hạt' là cửa vào cơ học lượng tử.",
+  },
+  {
+    slug: "buc-xa-dien-tu-tu-song-radio-den-tia-gamma",
+    to: [
+      "photon-hat-anh-sang-thuc-su-la-gi",
+      "song-truyen-nang-luong-nhu-the-nao",
+      "vi-sao-bau-troi-xanh-hoang-hon-do-va-may-lai-trang",
+    ],
+    why: "Phần bước sóng–tần số–năng lượng là chuyện năng lượng mỗi photon; sóng điện từ là một loại sóng trong bài sóng; và màu trời là ví dụ đời thường nhất của việc bước sóng quyết định cách ánh sáng tương tác.",
+  },
+  {
+    slug: "hanh-trinh-cua-photon-chuyen-di-100000-nam-tu-loi-mat-troi-den-trai-dat",
+    to: [
+      "mat-troi-lo-phan-ung-giu-ca-he-hanh-tinh",
+      "photon-hat-anh-sang-thuc-su-la-gi",
+      "mat-khong-thuc-su-nhin-nao-bo-tao-ra-hinh-anh-nhu-the-nao",
+    ],
+    why: "Ba chặng của chính hành trình ấy: lò phản ứng nơi năng lượng sinh ra, bản chất thứ đang đi, và võng mạc nơi bài kết thúc.",
+  },
+  {
+    slug: "vi-sao-bau-troi-xanh-hoang-hon-do-va-may-lai-trang",
+    to: [
+      "buc-xa-dien-tu-tu-song-radio-den-tia-gamma",
+      "mat-khong-thuc-su-nhin-nao-bo-tao-ra-hinh-anh-nhu-the-nao",
+      "thang-khoang-cach-vu-tru-do-toi-sao-va-thien-ha-bang-cach-nao",
+    ],
+    why: "Tán xạ Rayleigh là chuyện bước sóng; 'vì sao trời không tím' là chuyện độ nhạy của mắt; và phần bầu trời đêm là cửa sổ quá khứ cần biết ta đo khoảng cách tới sao thế nào.",
+  },
+  {
+    slug: "tia-vu-tru-nhung-vien-dan-vo-hinh-ban-pha-trai-dat-moi-giay",
+    to: [
+      "cuc-quang-anh-sang-do-chinh-khi-quyen-trai-dat-phat-ra",
+      "co-the-nguoi-bien-doi-the-nao-ngoai-vu-tru-khong-bao-ho",
+      "ngoi-sao-cau-tao-va-vong-doi",
+    ],
+    why: "Từ trường Trái Đất lái hạt mang điện — cũng là thứ tạo ra cực quang; bức xạ với phi hành gia được kể ở bài cơ thể người ngoài không gian; và tàn dư siêu tân tinh là một nguồn bài nêu.",
+  },
+
+  // ---- Giấc ngủ, não và cơ thể ----
+  {
+    slug: "thieu-ngu-khoan-no-the-chap-bang-suc-khoe-va-tuong-lai",
+    to: [
+      "giac-ngu-sau-lam-gi-voi-tri-nho-cua-ban",
+      "suc-manh-cua-giac-ngu-trua-ngan-vi-sao-20-phut-co-the-giup-nao-tinh-tao-hon",
+      "he-mien-dich-nhan-dien-mot-virus-bang-cach-nao",
+    ],
+    why: "Bài liệt kê thứ mất đi khi thiếu ngủ; giấc ngủ sâu là thứ mất đi đầu tiên, ngủ trưa là cách vá tạm, và phần miễn dịch cần biết hệ ấy vốn làm việc thế nào.",
+  },
+  {
+    slug: "suc-manh-cua-giac-ngu-trua-ngan-vi-sao-20-phut-co-the-giup-nao-tinh-tao-hon",
+    to: [
+      "thieu-ngu-khoan-no-the-chap-bang-suc-khoe-va-tuong-lai",
+      "giac-ngu-sau-lam-gi-voi-tri-nho-cua-ban",
+      "ca-phe-va-tra-danh-thuc-nao-bo-nhu-the-nao",
+    ],
+    why: "Bài kết rằng ngủ trưa không thay được giấc đêm — bài thiếu ngủ kể vì sao; quán tính giấc ngủ là chuyện bị đánh thức giữa giấc ngủ sâu; và cà phê là cách chống cơn buồn ngủ trưa còn lại.",
+  },
+  {
+    slug: "ca-phe-va-tra-danh-thuc-nao-bo-nhu-the-nao",
+    to: [
+      "suc-manh-cua-giac-ngu-trua-ngan-vi-sao-20-phut-co-the-giup-nao-tinh-tao-hon",
+      "thieu-ngu-khoan-no-the-chap-bang-suc-khoe-va-tuong-lai",
+      "nhung-su-gia-hoa-hoc-dieu-khien-hoat-dong-cua-nao-bo",
+    ],
+    why: "Caffeine chỉ che áp lực giấc ngủ; bài kết đúng câu 'thứ cơ thể cần là giấc ngủ đủ'; và adenosine là một trong các tín hiệu hoá học của não.",
+  },
+  {
+    slug: "runners-high-vi-sao-chay-bo-co-the-khien-ban-hung-phan",
+    to: [
+      "van-dong-thay-doi-tim-va-mach-mau-nhu-the-nao",
+      "nhung-su-gia-hoa-hoc-dieu-khien-hoat-dong-cua-nao-bo",
+      "dopamine-va-chiec-bay-khien-ban-khong-the-roi-dien-thoai",
+    ],
+    why: "Cùng một buổi chạy nhìn từ tim mạch; endocannabinoid là một nhóm tín hiệu hoá học của não; và dopamine là hệ phần thưởng mà cảm giác 'phê' hay bị nhầm sang.",
+  },
+  {
+    slug: "dang-sau-tieng-bung-keu-dieu-gi-xay-ra-khi-chung-ta-doi",
+    to: [
+      "ruot-he-vi-sinh-vat-va-quyen-luc-cua-bo-nao-thu-hai",
+      "nhin-an-gian-doan-anh-huong-toi-he-vi-sinh-duong-ruot-nhu-the-nao",
+      "thieu-ngu-khoan-no-the-chap-bang-suc-khoe-va-tuong-lai",
+    ],
+    why: "Trục não–ruột là khung của cả bài; nhịn ăn gián đoạn là chuyện kéo dài cái khoảng giữa bữa mà MMC hoạt động; và thiếu ngủ làm lệch chính ghrelin và leptin.",
+  },
+
+  // ---- Khí hậu và Hệ Mặt Trời ----
+  {
+    slug: "hien-tuong-el-nino-khi-dai-duong-noi-gian-va-dao-lon-khi-hau-toan-cau",
+    to: [
+      "nghich-ly-15-do-c-tai-sao-mot-thay-doi-nho-lai-quyet-dinh-so-phan-hanh-tinh",
+      "dieu-gi-tao-ra-gio-thuy-trieu-va-cac-dong-hai-luu",
+      "sao-kim-bai-hoc-ve-hieu-ung-nha-kinh-mat-kiem-soat",
+    ],
+    why: "Bài tách El Niño khỏi biến đổi khí hậu — bài 1,5°C là phía bên kia; gió và hải lưu là bộ máy mà El Niño làm lệch; và hiệu ứng nhà kính là nguyên nhân thật của xu hướng ấm lên dài hạn.",
+  },
+  {
+    slug: "nghich-ly-15-do-c-tai-sao-mot-thay-doi-nho-lai-quyet-dinh-so-phan-hanh-tinh",
+    to: [
+      "hien-tuong-el-nino-khi-dai-duong-noi-gian-va-dao-lon-khi-hau-toan-cau",
+      "sao-kim-bai-hoc-ve-hieu-ung-nha-kinh-mat-kiem-soat",
+      "dai-tuyet-chung-permi-lan-su-song-suyt-bien-mat",
+    ],
+    why: "El Niño cộng lên xu hướng ấm lên thành các năm kỷ lục; Sao Kim là phản hồi dương đi tới tận cùng; và Permi là lần Trái Đất nóng lên nhanh gần nhất mà sự sống suýt không qua.",
+  },
+  {
+    slug: "neu-phai-roi-trai-dat-con-nguoi-co-the-song-o-dau-trong-he-mat-troi",
+    to: [
+      "mat-trang",
+      "sao-hoa-hanh-tinh-do-va-cau-hoi-ve-nuoc",
+      "sao-tho-vanh-dai-mong-manh-va-ve-tinh-co-dai-duong",
+      "co-the-nguoi-bien-doi-the-nao-ngoai-vu-tru-khong-bao-ho",
+    ],
+    why: "Ba điểm đến đầu bảng xếp hạng — Mặt Trăng, Sao Hoả, và Sao Thổ của Titan và Enceladus — đều có bài riêng; và mọi phương án đều vấp cùng một câu hỏi cơ thể người chịu nổi không.",
+  },
+
+  // ---- Bù link VÀO cho cụm mới, từ bài cũ ----
+  {
+    slug: "ruot-he-vi-sinh-vat-va-quyen-luc-cua-bo-nao-thu-hai",
+    to: ["dang-sau-tieng-bung-keu-dieu-gi-xay-ra-khi-chung-ta-doi"],
+    why: "Bài 'bộ não thứ hai' nói ruột gửi tín hiệu lên não; bài đích là tín hiệu quen nhất trong số đó — cơn đói.",
+  },
+  {
+    slug: "nhin-an-gian-doan-anh-huong-toi-he-vi-sinh-duong-ruot-nhu-the-nao",
+    to: ["dang-sau-tieng-bung-keu-dieu-gi-xay-ra-khi-chung-ta-doi"],
+    why: "Người nhịn ăn gián đoạn sẽ gặp bụng kêu và cơn đói nhiều hơn ai hết; bài đích giải thích chúng và trả lời câu 'axit có ăn mòn dạ dày không'.",
+  },
+  {
+    slug: "sao-hoa-hanh-tinh-do-va-cau-hoi-ve-nuoc",
+    to: ["neu-phai-roi-trai-dat-con-nguoi-co-the-song-o-dau-trong-he-mat-troi"],
+    why: "Nước trên Sao Hoả là tiền đề của mọi kế hoạch định cư; bài đích đặt Sao Hoả cạnh các lựa chọn khác và cân nó.",
+  },
+  {
+    slug: "co-the-nguoi-bien-doi-the-nao-ngoai-vu-tru-khong-bao-ho",
+    to: [
+      "neu-phai-roi-trai-dat-con-nguoi-co-the-song-o-dau-trong-he-mat-troi",
+      "tia-vu-tru-nhung-vien-dan-vo-hinh-ban-pha-trai-dat-moi-giay",
+    ],
+    why: "Bài kể cơ thể chịu gì ngoài không gian; hai lối rẽ là chịu điều đó ở đâu lâu dài, và chính nguồn bức xạ bài nêu.",
+  },
+  {
+    slug: "cuc-quang-anh-sang-do-chinh-khi-quyen-trai-dat-phat-ra",
+    to: ["tia-vu-tru-nhung-vien-dan-vo-hinh-ban-pha-trai-dat-moi-giay"],
+    why: "Cực quang là hạt mang điện từ Mặt Trời bị từ trường lái xuống; tia vũ trụ là những hạt năng lượng cao hơn nhiều bị chính tấm khiên ấy chặn.",
+  },
+  {
+    slug: "van-dong-thay-doi-tim-va-mach-mau-nhu-the-nao",
+    to: ["runners-high-vi-sao-chay-bo-co-the-khien-ban-hung-phan"],
+    why: "Cùng một buổi vận động sức bền, nhìn từ não thay vì từ tim.",
+  },
+  {
+    slug: "mat-troi-lo-phan-ung-giu-ca-he-hanh-tinh",
+    to: ["hanh-trinh-cua-photon-chuyen-di-100000-nam-tu-loi-mat-troi-den-trai-dat"],
+    why: "Bài Mặt Trời nhắc photon sinh ra ở lõi mất rất lâu mới ra tới bề mặt; bài đích kể trọn hành trình đó.",
+  },
+  {
+    slug: "mat-khong-thuc-su-nhin-nao-bo-tao-ra-hinh-anh-nhu-the-nao",
+    to: ["photon-hat-anh-sang-thuc-su-la-gi"],
+    why: "Bài mở bằng câu hỏi ánh sáng thực chất là gì và gọi tên photon; bài đích trả lời câu ấy đầy đủ.",
+  },
+  {
+    slug: "song-truyen-nang-luong-nhu-the-nao",
+    to: ["buc-xa-dien-tu-tu-song-radio-den-tia-gamma"],
+    why: "Bài sóng nói ánh sáng chỉ là lát mỏng của phổ điện từ; bài đích đi hết cả phổ.",
+  },
+  {
+    slug: "nguyen-tu-cau-tao-nen-van-vat",
+    to: ["co-hoc-luong-tu-the-gioi-ky-la-phia-sau-vat-chat"],
+    why: "Electron trong nguyên tử không đi theo quỹ đạo cổ điển; bài đích là quy luật thật mà nó tuân theo.",
+  },
+  {
+    slug: "thuyet-tuong-doi-hep-khi-thoi-gian-khong-con-tuyet-doi",
+    to: ["vi-sao-einstein-noi-chua-khong-choi-tro-xuc-xac"],
+    why: "Cùng một Einstein, ở phía cuộc cách mạng mà ông không chấp nhận.",
+  },
+  {
+    slug: "giac-ngu-sau-lam-gi-voi-tri-nho-cua-ban",
+    to: [
+      "thieu-ngu-khoan-no-the-chap-bang-suc-khoe-va-tuong-lai",
+      "suc-manh-cua-giac-ngu-trua-ngan-vi-sao-20-phut-co-the-giup-nao-tinh-tao-hon",
+    ],
+    why: "Bài giấc ngủ sâu nói nó làm gì; hai bài đích nói điều gì xảy ra khi thiếu nó, và vì sao ngủ trưa nên tránh rơi vào nó.",
+  },
+  {
+    slug: "dieu-gi-tao-ra-gio-thuy-trieu-va-cac-dong-hai-luu",
+    to: ["hien-tuong-el-nino-khi-dai-duong-noi-gian-va-dao-lon-khi-hau-toan-cau"],
+    why: "Bài nói gió mậu dịch và hải lưu vận hành thế nào; El Niño là lúc bộ máy ấy chệch khỏi bình thường.",
+  },
+  {
+    slug: "sao-kim-bai-hoc-ve-hieu-ung-nha-kinh-mat-kiem-soat",
+    to: ["nghich-ly-15-do-c-tai-sao-mot-thay-doi-nho-lai-quyet-dinh-so-phan-hanh-tinh"],
+    why: "'Bài học' của Sao Kim là bài học cho Trái Đất; bài đích là phiên bản đo được của bài học ấy ở từng nửa độ.",
+  },
 ];
 
 /* Chỗ này từng có một danh sách chặn tay.
@@ -359,6 +608,10 @@ async function main() {
 
     if (Object.keys(data).length === 0) continue;
     changedArticles += 1;
+    // Hai kế hoạch cùng một bài: kế hoạch sau phải thấy bản đã sửa của kế hoạch
+    // trước, không thì lượt ghi thứ hai đè mất mục Đọc thêm vừa thêm.
+    const revisionContent = article.content;
+    Object.assign(article, data);
     if (!write) continue;
 
     await prisma.$transaction([
@@ -366,7 +619,7 @@ async function main() {
         data: {
           articleId: article.id,
           title: article.title,
-          content: article.content,
+          content: revisionContent,
           note: "Trước khi bổ sung mục Đọc thêm",
         },
       }),

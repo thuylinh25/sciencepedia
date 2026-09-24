@@ -627,6 +627,190 @@ const LINKS: Link[] = [
       "[[Hiệu ứng giả dược]] có thể đóng một phần vai trò",
     ],
   },
+  /* ---- Đợt 24/09: quét lại toàn kho sau 17 bài mới -----------------------
+   *
+   * Cùng cách tìm như đợt 21/09. Những chỗ quét ra mà KHÔNG gắn:
+   *
+   * - "hệ quy chiếu quán tính", "lực quán tính": đã loại từ đợt trước.
+   * - "Quán tính giấc ngủ" (`suc-manh-cua-giac-ngu-trua…`): sleep inertia là
+   *   trạng thái lờ đờ sau khi thức dậy, không phải quán tính của vật.
+   * - "gia tốc tia vũ trụ", "máy gia tốc miễn phí": động từ / ẩn dụ, không
+   *   phải đại lượng gia tốc mà mục từ định nghĩa.
+   * - Mọi "general"/"generate" mà máy dò khớp nhầm sang khoá `gene`.
+   * - `photon` trong `photon-hat-anh-sang…`, `proton` trong `proton-co-bat-tu…`,
+   *   `buc-xa-dien-tu` trong `buc-xa-dien-tu…`, hai mục tối trong bài vật chất
+   *   tối–năng lượng tối: bài chuyên về chính thuật ngữ ấy.
+   * - "proton–proton" (mat-troi), Vega (20-ngoi-sao), "Dark energy"
+   *   (nang-luong-la-gi) [en]: đã loại từ trước, lý do ở các ghi chú trên.
+   *
+   * Hố đen: bản VI câu "sụp đổ sau siêu tân tinh" đã được sửa đúng nhân quả
+   * ("Cú sụp đổ ấy đứng TRƯỚC vụ nổ"), nên nay gắn được. Bản EN VẪN viết
+   * "collapses after a supernova" — chưa gắn, cùng lý do như ghi chú 17/09.
+   */
+
+  {
+    slug: "ho-den-noi-hinh-hoc-cua-khong-gian-sup-do",
+    vi: ["đẩy chúng nổ tung thành siêu tân tinh.", "đẩy chúng nổ tung thành [[siêu tân tinh]]."],
+  },
+  {
+    slug: "buc-xa-dien-tu-tu-song-radio-den-tia-gamma",
+    vi: ["năng lượng photon thấp", "năng lượng [[photon]] thấp"],
+  },
+  {
+    slug: "buc-xa-dien-tu-tu-song-radio-den-tia-gamma",
+    vi: ["với cả ánh sáng nhìn thấy,", "với cả [[ánh sáng nhìn thấy]],"],
+  },
+  {
+    slug: "ca-phe-va-tra-danh-thuc-nao-bo-nhu-the-nao",
+    // Lần đầu tiên `axit-amin` có chỗ gắn — xem ghi chú đợt 21/09 (4).
+    vi: ["một amino acid tự nhiên", "một [[amino acid]] tự nhiên"],
+  },
+  {
+    slug: "chong-chap-luong-tu-khi-mot-hat-co-the-ton-tai-trong-nhieu-trang-thai",
+    vi: ["- Photon ánh sáng.", "- [[Photon]] ánh sáng."],
+  },
+  {
+    slug: "chung-ta-dang-song-trong-mot-bong-bong-giac-quan-nho-be-cua-thuc-tai",
+    vi: ["trong toàn bộ phổ điện từ.", "trong toàn bộ [[phổ điện từ]]."],
+  },
+  {
+    slug: "co-hoc-luong-tu-the-gioi-ky-la-phia-sau-vat-chat",
+    vi: ["Electron, photon và các hệ lượng tử", "Electron, [[photon]] và các hệ lượng tử"],
+  },
+  {
+    slug: "co-hoc-luong-tu-the-gioi-ky-la-phia-sau-vat-chat",
+    vi: ["cách hàng triệu năm ánh sáng.", "cách hàng triệu [[năm ánh sáng]]."],
+  },
+  {
+    slug: "co-the-nguoi-bien-doi-the-nao-ngoai-vu-tru-khong-bao-ho",
+    vi: ["Tia X, proton năng lượng cao", "Tia X, [[proton]] năng lượng cao"],
+    en: ["X-rays, high-energy protons,", "X-rays, high-energy [[proton|protons]],"],
+  },
+  {
+    slug: "crispr-cay-keo-phan-tu-den-tu-vi-khuan",
+    vi: ["**Enzyme Cas9** — protein thực hiện", "**[[Enzyme]] Cas9** — [[protein]] thực hiện"],
+    en: ["**Cas9 enzyme** — a protein that", "**Cas9 [[enzyme]]** — a [[protein]] that"],
+  },
+  {
+    slug: "crispr-cay-keo-phan-tu-den-tu-vi-khuan",
+    vi: ["vào bộ gene của mình", "vào bộ [[gene]] của mình"],
+    en: ["that disrupt the gene.", "that disrupt the [[gen|gene]]."],
+  },
+  {
+    slug: "dang-sau-tieng-bung-keu-dieu-gi-xay-ra-khi-chung-ta-doi",
+    vi: ["- Protein.", "- [[Protein]]."],
+  },
+  {
+    slug: "bi-mat-dang-sau-cam-giac-hut-hang-khi-van-toc-thay-doi",
+    vi: ["cảm nhận **gia tốc thẳng**", "cảm nhận **[[gia tốc]] thẳng**"],
+  },
+  {
+    slug: "bi-mat-dang-sau-cam-giac-nang-va-nhe",
+    en: ["Mass and inertia are two ways", "Mass and [[quan-tinh|inertia]] are two ways"],
+  },
+  {
+    slug: "bi-mat-dang-sau-cam-giac-nang-va-nhe",
+    en: ["the acceleration of an object depends", "the [[gia-toc|acceleration]] of an object depends"],
+  },
+  {
+    slug: "newton-da-giai-ma-the-gioi-nhu-the-nao",
+    en: ["mass times acceleration, F = ma", "mass times [[gia-toc|acceleration]], F = ma"],
+  },
+  {
+    slug: "big-bang-vu-tru-da-dien-ra-the-nao-trong-138-ti-nam",
+    vi: ["các quark kết hợp thành proton và neutron", "các quark kết hợp thành [[proton]] và neutron"],
+    en: ["quarks combined to form protons and neutrons", "quarks combined to form [[proton|protons]] and neutrons"],
+  },
+  {
+    slug: "giai-ma-nhung-khoang-trong-rong-voids-trong-vu-tru",
+    vi: ["chỉ chứa khoảng vài proton hoặc nguyên tử", "chỉ chứa khoảng vài [[proton]] hoặc nguyên tử"],
+  },
+  {
+    slug: "hanh-trinh-cua-photon-chuyen-di-100000-nam-tu-loi-mat-troi-den-trai-dat",
+    vi: ["các phản ứng nhiệt hạch biến hydro", "các [[phản ứng nhiệt hạch]] biến hydro"],
+  },
+  {
+    slug: "hanh-trinh-cua-photon-chuyen-di-100000-nam-tu-loi-mat-troi-den-trai-dat",
+    vi: ["dưới dạng bức xạ điện từ năng lượng cao", "dưới dạng [[bức xạ điện từ]] năng lượng cao"],
+  },
+  {
+    slug: "hanh-trinh-cua-photon-chuyen-di-100000-nam-tu-loi-mat-troi-den-trai-dat",
+    vi: ["Photon chỉ đi được một khoảng rất ngắn", "[[Photon]] chỉ đi được một khoảng rất ngắn"],
+  },
+  {
+    slug: "hanh-trinh-cua-photon-chuyen-di-100000-nam-tu-loi-mat-troi-den-trai-dat",
+    vi: ["biến thành photon ánh sáng khả kiến", "biến thành photon [[ánh sáng khả kiến]]"],
+  },
+  {
+    slug: "hanh-trinh-cua-photon-chuyen-di-100000-nam-tu-loi-mat-troi-den-trai-dat",
+    vi: ["võng mạc sẽ hấp thụ nó", "[[võng mạc]] sẽ hấp thụ nó"],
+  },
+  {
+    slug: "he-vi-sinh-duong-ruot-hang-chuc-nghin-ti-cu-dan-va-anh-huong-cua-chung",
+    vi: ["nhưng số lượng gene của chúng", "nhưng số lượng [[gene]] của chúng"],
+    en: ["but their gene count", "but their [[gen|gene]] count"],
+  },
+  {
+    slug: "nhung-su-gia-hoa-hoc-dieu-khien-hoat-dong-cua-nao-bo",
+    vi: ["chất dẫn truyền thần kinh, gene, môi trường", "chất dẫn truyền thần kinh, [[gene]], môi trường"],
+  },
+  {
+    slug: "photon-hat-anh-sang-thuc-su-la-gi",
+    vi: ["cho ánh sáng khả kiến truyền qua", "cho [[ánh sáng khả kiến]] truyền qua"],
+  },
+  {
+    slug: "photon-hat-anh-sang-thuc-su-la-gi",
+    vi: ["vào mắt, võng mạc biến thông tin", "vào mắt, [[võng mạc]] biến thông tin"],
+  },
+  {
+    slug: "song-truyen-nang-luong-nhu-the-nao",
+    vi: ["Sóng điện từ không cần môi trường truyền.", "[[Sóng điện từ]] không cần môi trường truyền."],
+    en: ["a very thin slice of the electromagnetic spectrum.", "a very thin slice of the [[buc-xa-dien-tu|electromagnetic spectrum]]."],
+  },
+  {
+    slug: "song-truyen-nang-luong-nhu-the-nao",
+    en: ["Visible light — including", "[[anh-sang-kha-kien|Visible light]] — including"],
+  },
+  {
+    slug: "thieu-ngu-khoan-no-the-chap-bang-suc-khoe-va-tuong-lai",
+    vi: ["**beta-amyloid**, protein liên quan", "**beta-amyloid**, [[protein]] liên quan"],
+  },
+  {
+    slug: "tia-vu-tru-nhung-vien-dan-vo-hinh-ban-pha-trai-dat-moi-giay",
+    vi: ["- Proton.\n- Hạt nhân heli.", "- [[Proton]].\n- Hạt nhân heli."],
+  },
+  {
+    slug: "tia-vu-tru-nhung-vien-dan-vo-hinh-ban-pha-trai-dat-moi-giay",
+    vi: ["- Positron.\n- Photon.", "- Positron.\n- [[Photon]]."],
+  },
+  {
+    slug: "tu-electron-den-dong-dien-nguon-goc-cua-dien-nang",
+    en: ["the proton carries exactly that magnitude", "the [[proton]] carries exactly that magnitude"],
+  },
+  {
+    slug: "ung-dung-co-hoc-luong-tu-tu-nen-tang-cong-nghe-hien-tai-den-dot-pha-tuong-lai",
+    vi: ["- Từ trường.\n- Gia tốc.", "- Từ trường.\n- [[Gia tốc]]."],
+  },
+  {
+    slug: "vi-sao-bau-troi-xanh-hoang-hon-do-va-may-lai-trang",
+    vi: ["nhiều bước sóng ánh sáng khả kiến khác nhau", "nhiều bước sóng [[ánh sáng khả kiến]] khác nhau"],
+  },
+  {
+    slug: "vi-sao-bau-troi-xanh-hoang-hon-do-va-may-lai-trang",
+    vi: ["cách chúng ta hơn 4 năm ánh sáng", "cách chúng ta hơn 4 [[năm ánh sáng]]"],
+  },
+  {
+    slug: "vi-sao-bau-troi-xanh-hoang-hon-do-va-may-lai-trang",
+    vi: ["nơi mỗi photon mang theo hình ảnh", "nơi mỗi [[photon]] mang theo hình ảnh"],
+  },
+  {
+    slug: "vi-sao-einstein-noi-chua-khong-choi-tro-xuc-xac",
+    vi: ["các thí nghiệm với photon vướng víu", "các thí nghiệm với [[photon]] vướng víu"],
+  },
+  {
+    slug: "vu-tru-khong-bao-gio-dung-yen-chuyen-dong-la-trang-thai-tu-nhien-cua-moi-thu",
+    vi: ["- DNA sao chép.", "- [[DNA]] sao chép."],
+  },
 ];
 
 /** Khoá của mọi `[[...]]` trong một chuỗi thay thế. */

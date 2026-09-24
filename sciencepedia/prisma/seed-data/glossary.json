@@ -111,10 +111,12 @@
     ],
     "usedIn": [
       "20-ngoi-sao-sang-nhat-bau-troi-dem",
+      "co-hoc-luong-tu-the-gioi-ky-la-phia-sau-vat-chat",
       "da-vu-tru-bon-cap-do-va-mot-cau-hoi-kho",
       "giai-ma-nhung-khoang-trong-rong-voids-trong-vu-tru",
       "thang-khoang-cach-vu-tru-do-toi-sao-va-thien-ha-bang-cach-nao",
-      "thien-ha-dinh-nghia-va-cach-phan-loai"
+      "thien-ha-dinh-nghia-va-cach-phan-loai",
+      "vi-sao-bau-troi-xanh-hoang-hon-do-va-may-lai-trang"
     ],
     "verdict": "PASS",
     "notes": "The entry deliberately does NOT say that light from an object N light-years away left it N years ago. That only holds roughly for nearby objects. da-vu-tru-bon-cap-do-va-mot-cau-hoi-kho gives the observable universe a radius of 46.5 billion light-years, larger than the age of the universe in years, so the 'N years ago' shortcut would make the tooltip contradict that article. The IAU exact figure is kept only in fullDef, and the parsec is not converted because no fetched source gives the ratio. I did not re-check the distance figures in the listed articles (Milky Way 105,000 ly, Boötes Void 330 million ly, Proxima 4.25 ly, and so on); they belong to those articles' own fact-check."
@@ -230,6 +232,7 @@
     "usedIn": [
       "ban-khong-chi-song-trong-vu-tru-ban-la-mot-phan-cua-no",
       "cac-sao-toi-co-the-da-de-lai-tieng-vong-duoi-dang-song-hap-dan-khap-vu-tru",
+      "hanh-trinh-cua-photon-chuyen-di-100000-nam-tu-loi-mat-troi-den-trai-dat",
       "ngoi-sao-cau-tao-va-vong-doi",
       "nguyen-tu-cau-tao-nen-van-vat",
       "toan-canh-dac-diem-8-hanh-tinh-he-mat-troi"
@@ -504,9 +507,16 @@
     "reviewedAt": "2026-09-21",
     "notes": "Reviewed 2026-09-21 (science-editor). Both source URLs fetched and checked. OpenStax 6.2 carries the core verbatim: \"a photon's energy depends only on its frequency f\", E = hf, \"each photon moves at the speed of light\", \"doubling the intensity of radiation translates to doubling the number of photons\", and the cut-off frequency (\"when incident radiation has a frequency below the cut-off frequency, the photoelectric effect is not observed\").\n\nCHANGED - the red-vs-violet example. It was unconditional in Vietnamese (\"vẫn không bứt được\") but hedged in English (\"may fail\"): two different confidence levels for one claim, which is exactly what must not differ between locales. Neither version was right as an absolute either, because whether red sits below cut-off depends on the metal's work function - for platinum neither red nor violet ejects anything. Rewritten in both languages as conditional on the metal's cut-off, which is what OpenStax actually states.\n\nThe shortDef's unqualified \"luôn chuyển động với tốc độ ánh sáng\" is OpenStax's own wording and is left as is; fullDef adds \"trong chân không\". Aliases quang-tu and luong-tu-anh-sang are both current Vietnamese for this.",
     "usedIn": [
+      "buc-xa-dien-tu-tu-song-radio-den-tia-gamma",
+      "chong-chap-luong-tu-khi-mot-hat-co-the-ton-tai-trong-nhieu-trang-thai",
+      "co-hoc-luong-tu-the-gioi-ky-la-phia-sau-vat-chat",
+      "hanh-trinh-cua-photon-chuyen-di-100000-nam-tu-loi-mat-troi-den-trai-dat",
       "mat-khong-thuc-su-nhin-nao-bo-tao-ra-hinh-anh-nhu-the-nao",
       "mat-troi-lo-phan-ung-giu-ca-he-hanh-tinh",
-      "proton-co-bat-tu-dieu-gi-xay-ra-neu-mot-ngay-vat-chat-bat-dau-phan-ra"
+      "proton-co-bat-tu-dieu-gi-xay-ra-neu-mot-ngay-vat-chat-bat-dau-phan-ra",
+      "tia-vu-tru-nhung-vien-dan-vo-hinh-ban-pha-trai-dat-moi-giay",
+      "vi-sao-bau-troi-xanh-hoang-hon-do-va-may-lai-trang",
+      "vi-sao-einstein-noi-chua-khong-choi-tro-xuc-xac"
     ]
   },
   {
@@ -540,7 +550,10 @@
     "reviewedAt": "2026-09-21",
     "notes": "Reviewed 2026-09-21 (science-editor). NASA EMS intro fetched. Supported verbatim: the band list; \"Gamma rays, x-rays, and some ultraviolet waves are 'ionizing,' meaning these waves have such a high energy that they can knock electrons out of atoms\"; the atmosphere blocking gamma, X-ray and some UV while visible \"largely passes through\"; and \"instruments have to be positioned above Earth's energy-absorbing atmosphere\".\n\nCUT - \"đó là ranh giới giữa phần vô hại và phần nguy hiểm cho mô sống\" / \"the boundary between the harmless part of the spectrum and the part dangerous to living tissue\". No source says it and it is false: non-ionising radiation is not harmless (UV-A, infrared burns, microwave heating, high-power lasers). NASA is careful here - it characterises ionising radiation and gives non-ionising no safety characterisation at all. Replaced with the page's own framing: which bands are ionising, and that they can damage cells harmfully (sunburn) or by design (radiotherapy).\n\nFOR knowledge-architect, not blocking: alias pho-dien-tu points \"phổ điện từ\" (the spectrum) at the radiation entry. The two are distinct concepts. The tooltip a reader gets is still correct and relevant so it stays, but if a separate \"phổ điện từ\" entry is ever written this alias must move to it.",
     "usedIn": [
-      "mat-khong-thuc-su-nhin-nao-bo-tao-ra-hinh-anh-nhu-the-nao"
+      "chung-ta-dang-song-trong-mot-bong-bong-giac-quan-nho-be-cua-thuc-tai",
+      "hanh-trinh-cua-photon-chuyen-di-100000-nam-tu-loi-mat-troi-den-trai-dat",
+      "mat-khong-thuc-su-nhin-nao-bo-tao-ra-hinh-anh-nhu-the-nao",
+      "song-truyen-nang-luong-nhu-the-nao"
     ]
   },
   {
@@ -574,8 +587,13 @@
     "reviewedAt": "2026-09-21",
     "notes": "Reviewed 2026-09-21 (science-editor). NASA Visible Light fetched: \"Typically, the human eye can detect wavelengths from 380 to 700 nanometers\" and \"Violet has the shortest wavelength, at around 380 nanometers, and red has the longest wavelength, at around 700 nanometers\". The 380-700 nm range and both endpoints check out.\n\nCUT 1 - \"mắt người tiến hoá để nhạy đúng với dải mà khí quyển cho đi qua và Mặt Trời phát mạnh nhất\". Neither source says this. The NASA page states the correlation (\"the Sun ... the dominant source for visible-light waves our eyes receive\") and deliberately stops short of the causation, and why the visible window sits where it does is still argued in the literature. Replaced with what the page does support: cone cells tuned to this band, and the Sun as the dominant source of the visible light we receive.\n\nCUT 2 - \"450 nm cho xanh lam, 530 nm cho xanh lục\". These interior values are on neither cited page. Unsourced numbers are removed, not softened; the two sourced endpoints stay and the sentence now says the other colours lie between them.\n\nNEI \"How the Eyes Work\" stays as the second source for the observer side of the entry.",
     "usedIn": [
+      "buc-xa-dien-tu-tu-song-radio-den-tia-gamma",
+      "hanh-trinh-cua-photon-chuyen-di-100000-nam-tu-loi-mat-troi-den-trai-dat",
       "kinh-james-webb-nhin-nguoc-ve-thuo-vu-tru-so-sinh",
-      "mat-khong-thuc-su-nhin-nao-bo-tao-ra-hinh-anh-nhu-the-nao"
+      "mat-khong-thuc-su-nhin-nao-bo-tao-ra-hinh-anh-nhu-the-nao",
+      "photon-hat-anh-sang-thuc-su-la-gi",
+      "song-truyen-nang-luong-nhu-the-nao",
+      "vi-sao-bau-troi-xanh-hoang-hon-do-va-may-lai-trang"
     ]
   },
   {
@@ -612,7 +630,11 @@
     "reviewedAt": "2026-09-21",
     "notes": "Reviewed 2026-09-21 (science-editor). PASS on resubmission. The blocking gap from the first round is closed properly: the drafter found the source rather than the reviewer backfilling one, which is how this is supposed to work.\n\nTHIRD SOURCE VERIFIED INDEPENDENTLY. I fetched OpenStax Physics 23.3 myself rather than taking the quotes on trust. It resolves and it carries paragraph 3: \"Multiple current GUTs hypothesize that the stable proton should actually decay at a lifetime of 10^31 years\"; \"Scientists at the Super-Kamiokande in Japan have used a 50,000-ton tank of water to search for its existence\"; \"However, as of 2014, 17 years into the experiment, decay is yet to be found\". It also states an experimental minimum limit on the proton lifetime, which is what supports \"các phép đo chỉ đặt ra giới hạn dưới\". The drafter's note that section 11.6 404s and 11.1 defines GUTs without mentioning proton decay matches what I found; 23.3 is the right page.\n\nCARRIED OVER FROM ROUND 1, unchanged: the CODATA 2022 mass matches NIST to the last digit (\"1.672 621 925 95(52) x 10^-27 kg\"), and OpenStax 10.1 carries paragraphs 1 and 2 verbatim.\n\nCHANGED - date anchor, my edit, not the drafter's. The source's finding is explicitly \"as of 2014\", and a search for a rare event is exactly the kind of claim a later result can move - Hyper-Kamiokande is a live programme. So I split the sentence the way the evidence splits: the standing negative (\"chưa thí nghiệm nào quan sát được\", \"chỉ đặt ra giới hạn dưới\") stays undated because it remains true, while the concrete Super-Kamiokande result now carries its as-of year in both languages. RE-CHECK: revisit if a proton-decay detection is ever announced, or when this entry is next expanded - the published limits have moved since 2014 even though the null result has not.\n\nThe hedging itself is untouched and must stay untouched. It was correctly calibrated in round 1 and remains so: it neither asserts absolute stability nor implies decay has been seen or is expected, and the English tracks the Vietnamese clause for clause.",
     "usedIn": [
+      "big-bang-vu-tru-da-dien-ra-the-nao-trong-138-ti-nam",
+      "co-the-nguoi-bien-doi-the-nao-ngoai-vu-tru-khong-bao-ho",
+      "giai-ma-nhung-khoang-trong-rong-voids-trong-vu-tru",
       "nguyen-tu-cau-tao-nen-van-vat",
+      "tia-vu-tru-nhung-vien-dan-vo-hinh-ban-pha-trai-dat-moi-giay",
       "tu-electron-den-dong-dien-nguon-goc-cua-dien-nang"
     ]
   },
@@ -650,7 +672,9 @@
     "reviewedAt": "2026-09-21",
     "notes": "Reviewed 2026-09-21 (science-editor). PASS on resubmission.\n\nTHIRD SOURCE VERIFIED INDEPENDENTLY, and I checked two clauses the resubmission did not quote. OpenStax Biology 2e 36.5 resolves and carries paragraph 2: \"Rods are strongly photosensitive and are located in the outer edges of the retina. They detect dim light and are used primarily for peripheral and nighttime vision\"; \"Cones are weakly photosensitive and are located near the center of the retina. They respond to bright light, and their primary role is in daytime, color vision\". Beyond the quoted material I confirmed the two clauses that would otherwise have been left dangling: rods not distinguishing colour is supported by \"Rods respond in low light and can detect only shades of gray\", and cones giving fine detail is supported by \"The fovea is the region in the center back of the eye that is responsible for acute vision. The fovea has a high density of cones\". Every clause in the paragraph now traces to a sentence I read.\n\nCHANGED - paragraph 2 rewritten, answering the question the coordinator raised. The draft was accurate and would have passed as it stood; completeness is not a gate. But two things made the edit worth making. First, \"cho ta màu sắc cùng chi tiết\" asserted acuity with nothing visible behind it - the fovea is the reason, and naming it turns a bare assertion into a sourced one. Second, the distribution fact (rods at the rim, cones near the centre) is what makes the rest cohere, and peripheral vision is a real function the draft dropped. So the paragraph now carries location, dim-light and peripheral vision, grey-only, bright light, colour, and the fovea - each from the source. The English mirrors it clause for clause.\n\nCARRIED OVER FROM ROUND 1, unchanged: paragraphs 1 and 3 match NEI verbatim, and \"có thể mất thị lực vĩnh viễn\" correctly holds NEI's \"increases the risk of permanent vision loss or blindness\" at risk level instead of upgrading it to a certainty.\n\nNOT BLOCKING: category \"Sinh học\" is a new label for the glossary, correct, and matches the article taxonomy root sinh-hoc. Kept.",
     "usedIn": [
-      "mat-khong-thuc-su-nhin-nao-bo-tao-ra-hinh-anh-nhu-the-nao"
+      "hanh-trinh-cua-photon-chuyen-di-100000-nam-tu-loi-mat-troi-den-trai-dat",
+      "mat-khong-thuc-su-nhin-nao-bo-tao-ra-hinh-anh-nhu-the-nao",
+      "photon-hat-anh-sang-thuc-su-la-gi"
     ]
   },
   {
@@ -819,8 +843,11 @@
     "notes": "Reviewed 2026-09-21 (science-editor). OpenStax 5.3 fetched: \"acceleration is directly proportional to and in the same direction as the net external force acting on the system and is inversely proportional to its mass\"; \"the direction of the acceleration is the same direction as that of the net force\", which sources the vector claim; and the basketball-vs-SUV comparison, of which the entry's \"vật nặng gấp đôi thì gia tốc bằng một nửa\" is the arithmetic instance. No numbers in this entry to check. HyperPhysics resolves and agrees.\n\nThe uniform-circular-motion sentence is not in section 5.3; it belongs to Vol 1 chapter 4. Accepted - and here is the line I applied, on record so the next batch gets the same treatment: an elaboration of the very concept being defined, drawn from the same cited work and elementary enough to be uncontroversial, is within the source's scope; a claim about a topic the cited work never addresses is not. That is why this sentence passes and why the proton-decay paragraph in the proton entry does not. Both drafts had the same shape of gap; only one of them is about a subject its source actually covers.\n\n\"Đi đều 300 km/h thì không cảm thấy gì\" is an everyday illustration of a point the entry has already stated correctly, not a separate claim.",
     "usedIn": [
       "ba-dinh-luat-kepler-hanh-tinh-chuyen-dong-theo-quy-luat-nao",
+      "bi-mat-dang-sau-cam-giac-hut-hang-khi-van-toc-thay-doi",
       "bi-mat-dang-sau-cam-giac-nang-va-nhe",
-      "neu-trai-dat-dang-quay-vi-sao-chung-ta-khong-cam-nhan-duoc"
+      "neu-trai-dat-dang-quay-vi-sao-chung-ta-khong-cam-nhan-duoc",
+      "newton-da-giai-ma-the-gioi-nhu-the-nao",
+      "ung-dung-co-hoc-luong-tu-tu-nen-tang-cong-nghe-hien-tai-den-dot-pha-tuong-lai"
     ]
   },
   {
@@ -1193,7 +1220,8 @@
     "reviewedAt": "2026-09-21",
     "notes": "Duyet accuracy gate dot 3 boi science-editor, 2026-09-21. Reviewer tu tai lai toan bo URL nguon trong cung ngay va doi chieu tung menh de Viet-Anh. CAT 2 menh de khong nguon: (a) '...va cho phep sao chep' - ca hai trang nguon deu KHONG noi bat cap base la co so cua sao chep, day la he qua tu rut ra (quy tac 14); (b) '...nen cho moi thu con lai trong di truyen hoc phan tu' - danh gia chu khong phai khang dinh co nguon (quy tac 1). THAY bang kich thuoc chuoi xoan, nguyen van OpenStax 14.2. DA XAC NHAN nguyen van OpenStax 14.2: hai lien ket hydro A-T va ba C-G; nguoc chieu 3'-5'; xoan phai do Watson-Crick de xuat. DA XAC NHAN nguyen van NHGRI: bon base A/C/G/T, quy luat bat cap, 'attached to each sugar'.",
     "usedIn": [
-      "crispr-cay-keo-phan-tu-den-tu-vi-khuan"
+      "crispr-cay-keo-phan-tu-den-tu-vi-khuan",
+      "vu-tru-khong-bao-gio-dung-yen-chuyen-dong-la-trang-thai-tu-nhien-cua-moi-thu"
     ]
   },
   {
@@ -1226,7 +1254,10 @@
     "notes": "Duyet accuracy gate dot 3 boi science-editor, 2026-09-21. Reviewer tu tai lai toan bo URL nguon trong cung ngay va doi chieu tung menh de Viet-Anh. CAT cau 'Con so ay nho hon nhieu so voi hinh dung thong thuong ve do phuc tap cua co the nguoi': khang dinh ve truc giac cua nguoi doc ma khong nguon nao noi, va no cham vao mot tranh luan co that (g-value paradox) ma nguon khong mo (quy tac 1). SUA 'lam phan lon cong viec trong CO THE' thanh 'trong TE BAO' - NHGRI Protein viet 'critical to most of the work done by CELLS', con 'within the body' la cum cua trang Gene noi ve chuc nang khac nhau; ban cu han hai cum tu hai trang thanh mot khang dinh khong trang nao phat bieu. DA XAC NHAN nguyen van NHGRI: 'approximately 20,000 protein-coding genes' - hedge 'khoang' giu dung.",
     "usedIn": [
       "cai-chet-duoi-goc-nhin-tien-hoa-vi-sao-tu-nhien-khong-thiet-ke-chung-ta-de-song-mai",
-      "he-mien-dich-nhan-dien-mot-virus-bang-cach-nao"
+      "crispr-cay-keo-phan-tu-den-tu-vi-khuan",
+      "he-mien-dich-nhan-dien-mot-virus-bang-cach-nao",
+      "he-vi-sinh-duong-ruot-hang-chuc-nghin-ti-cu-dan-va-anh-huong-cua-chung",
+      "nhung-su-gia-hoa-hoc-dieu-khien-hoat-dong-cua-nao-bo"
     ]
   },
   {
@@ -1259,8 +1290,11 @@
     "reviewedAt": "2026-09-21",
     "notes": "Duyet accuracy gate dot 3 boi science-editor, 2026-09-21. Reviewer tu tai lai toan bo URL nguon trong cung ngay va doi chieu tung menh de Viet-Anh. THEM '(moi chuoi goi la mot polypeptide)' vao shortDef - nguyen van NHGRI '(each called a polypeptide)' - de alias 'polypeptide' co cho tra loi; truoc do shortDef khong he chua tu ay nen alias truot phep thu dot 2. SUA 'lam nen mo co' thanh 'cac protein co rut nhu actin va myosin gay co co': OpenStax Bang 3.1 xep actin/myosin la protein CO RUT gay co co, khong o dau noi protein 'lam nen mo co'. SUA 'moi mo va co quan' thanh 'cac mo va co quan trong co the': NHGRI viet \"the body's tissues and organs\", khong viet 'every'. DA XAC NHAN nguyen van OpenStax 3.4 cho ca bon bac cau truc; them xoan alpha / phien gap beta vi nguon neu ro.",
     "usedIn": [
+      "crispr-cay-keo-phan-tu-den-tu-vi-khuan",
+      "dang-sau-tieng-bung-keu-dieu-gi-xay-ra-khi-chung-ta-doi",
       "giac-ngu-sau-lam-gi-voi-tri-nho-cua-ban",
-      "he-mien-dich-nhan-dien-mot-virus-bang-cach-nao"
+      "he-mien-dich-nhan-dien-mot-virus-bang-cach-nao",
+      "thieu-ngu-khoan-no-the-chap-bang-suc-khoe-va-tuong-lai"
     ]
   },
   {
@@ -1290,7 +1324,10 @@
     "verdict": "PASS",
     "reviewedBy": "science-editor",
     "reviewedAt": "2026-09-21",
-    "notes": "Duyet accuracy gate dot 3 boi science-editor, 2026-09-21. Reviewer tu tai lai toan bo URL nguon trong cung ngay va doi chieu tung menh de Viet-Anh. SUA loi pham vi: ban cu viet mach ben 'quyet dinh chuoi protein se gap the nao' - qua rong. OpenStax noi 'PRIMARILY, the interactions among R groups create the protein's complex three-dimensional TERTIARY structure'; cau truc bac hai (xoan alpha, phien gap beta) khong do nhom R quyet dinh, va chinh trang do dinh nghia bac hai rieng - tuc la ban cu mau thuan voi trang minh trich (quy tac 14). Nay thu hep ve bac ba va giu hedge 'chu yeu'. SUA 'mang dien hay trung hoa' thanh 'co tinh axit, bazo, phan cuc hay khong phan cuc' - dung bon pham tru cua nguon. THEM ten goi 'nhom R' vi nguon dat ten."
+    "notes": "Duyet accuracy gate dot 3 boi science-editor, 2026-09-21. Reviewer tu tai lai toan bo URL nguon trong cung ngay va doi chieu tung menh de Viet-Anh. SUA loi pham vi: ban cu viet mach ben 'quyet dinh chuoi protein se gap the nao' - qua rong. OpenStax noi 'PRIMARILY, the interactions among R groups create the protein's complex three-dimensional TERTIARY structure'; cau truc bac hai (xoan alpha, phien gap beta) khong do nhom R quyet dinh, va chinh trang do dinh nghia bac hai rieng - tuc la ban cu mau thuan voi trang minh trich (quy tac 14). Nay thu hep ve bac ba va giu hedge 'chu yeu'. SUA 'mang dien hay trung hoa' thanh 'co tinh axit, bazo, phan cuc hay khong phan cuc' - dung bon pham tru cua nguon. THEM ten goi 'nhom R' vi nguon dat ten.",
+    "usedIn": [
+      "ca-phe-va-tra-danh-thuc-nao-bo-nhu-the-nao"
+    ]
   },
   {
     "slug": "enzyme",
@@ -1322,6 +1359,7 @@
     "reviewedAt": "2026-09-21",
     "notes": "Duyet accuracy gate dot 3 boi science-editor, 2026-09-21. Reviewer tu tai lai toan bo URL nguon trong cung ngay va doi chieu tung menh de Viet-Anh. LOI QUY TAC 13 da sua. Hai nguon noi khac nhau ve tinh chuyen biet: NHGRI viet gon 'each specific to a particular chemical reaction'; OpenStax viet 'There is a specifically matched enzyme for each substrate and, thus, for each chemical reaction; HOWEVER, THERE IS FLEXIBILITY AS WELL.' Ban cu lay ve loose cua NHGRI va bo han menh de nhuong bo cua OpenStax - dung hinh dang quy tac 13 cong quy tac 3. Nay giu ca hai. DA XAC NHAN nguyen van NHGRI: 'almost always a protein' (hedge giu dung), 'not destroyed during the reaction and is used over and over', 'A cell contains thousands of different types of enzyme molecules'. Con so 'hang nghin' CO nguon, khong phai so tran.",
     "usedIn": [
+      "crispr-cay-keo-phan-tu-den-tu-vi-khuan",
       "he-vi-sinh-duong-ruot-hang-chuc-nghin-ti-cu-dan-va-anh-huong-cua-chung",
       "ruot-he-vi-sinh-vat-va-quyen-luc-cua-bo-nao-thu-hai"
     ]
