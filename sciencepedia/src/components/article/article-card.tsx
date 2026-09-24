@@ -148,8 +148,14 @@ export async function ArticleCard({
       >
         <h3
           className={cn(
-            "font-display leading-tight font-bold tracking-tight text-balance transition-colors group-hover:text-primary-strong",
-            isHero ? "text-2xl md:text-3xl" : "line-clamp-2 text-lg",
+            "font-display leading-tight font-bold tracking-tight transition-colors group-hover:text-primary-strong",
+            // `text-balance` chia đều các dòng, nên tiêu đề 2 dòng bị ngắt
+            // giữa cụm từ và chừa một khoảng trống lớn bên phải. Thẻ thường
+            // đã `line-clamp-2` nên để dòng chạy hết bề ngang; chỉ thẻ hero
+            // (tiêu đề to, không cắt) mới cần cân dòng.
+            isHero
+              ? "text-2xl text-balance md:text-3xl"
+              : "line-clamp-2 text-lg text-pretty",
           )}
         >
           {title}
