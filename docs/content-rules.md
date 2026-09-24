@@ -584,3 +584,50 @@ dặt — `fullDef` render thẳng lên trang.
 
 Bản vá nằm ở quy tắc 16 và 17 trong
 `.claude/skills/article-generator/SKILL.md`.
+
+## Bài dán từ công cụ AI: chỗ bịa nằm ở con số cụ thể nhất
+
+Chốt 2026-09-24, từ lượt bổ sung nguồn cho 17 bài tạo qua form quản trị (đều
+xuất bản thẳng, `factCheck = PENDING`, không đi qua `publish.ts`).
+
+Đọc nguồn cho từng câu thì phần lớn bài đứng vững. Bốn chỗ không đứng vững
+đều cùng một dạng: **chi tiết càng cụ thể càng dễ là bịa**, vì nó nghe như
+được lấy từ đâu đó.
+
+- **Tỉ số "x trong y"**: "14 trong 17 nghiên cứu". Không tổng quan nào ra con
+  số ấy; tổng quan có thật (Desai 2022) nói 74% số mẫu.
+- **Phần trăm gắn vào một nghiên cứu có thật**: "34% hiệu suất, 54% tỉnh táo"
+  gắn vào nghiên cứu buồng lái của NASA. Nghiên cứu có thật, 26 phút ngủ có
+  thật, hai con số thì báo cáo gốc không nêu.
+- **"Tổ chức X mô tả…"**: "Britannica mô tả câu nói năm 1926…". Không tìm được
+  trang nào của Britannica nói vậy.
+- **Con số đúng, lộ trình sai**: "NASA dùng 170.000 năm để đi từ lõi tới phía
+  trên vùng bức xạ" — con số là của NASA, đoạn đường thì không.
+
+**Luật:** con số, tỉ lệ, và lời gán cho một tổ chức chỉ được ở lại nếu mở nguồn
+ra đọc thấy. Không đọc thấy thì sửa theo điều nguồn THẬT SỰ nói, hoặc bỏ —
+không giữ vì "nghe hợp lý", vì nghe hợp lý chính là lý do nó lọt được tới đây.
+
+Cùng đợt còn thấy dấu trích dẫn nội bộ của công cụ soạn thảo (`【1-03d267】`)
+nằm giữa thân bài đã xuất bản, ở hai bài. Người đọc lướt coi nó như chú thích
+nên không ai báo. Đây là loại lỗi máy bắt được hết, nên nay máy bắt: mẫu định
+nghĩa ở `src/lib/draft-artifacts.ts`, chặn ở cả form quản trị (lúc lưu, kể cả
+bản nháp) lẫn `check-publish.ts`.
+
+## Ảnh bìa dựng đứng mất phần trên ở thẻ bài
+
+Thẻ bài cắt ảnh bìa quanh TÂM về khung 16/10 (lý do chọn `object-cover`: ghi
+chú trong `article-card.tsx`). Ảnh dựng đứng 2:3 thì chỉ còn dải giữa, cao
+khoảng 40% ảnh — mà chủ thể ảnh chụp thường nằm ở phần trên: đầu người, đỉnh
+núi. Gặp lần đầu 2026-09-24 với ảnh em bé đi xích đu, thẻ chỉ còn thân và ghế.
+
+**Sửa ở ảnh của chính bài đó, không đổi `object-fit` cho cả lưới:**
+`scripts/recrop-cover.ts --slug <s> --top <px>` cắt sẵn 16/10 tại mép trên
+chọn bằng mắt. Không tự dò chủ thể — dò sai thì lặng lẽ cắt sai, còn một con
+số người đã nhìn ảnh rồi chọn thì kiểm lại được.
+
+Cái giá có thật: trang bài dùng cùng ảnh bìa (và hiện bằng `object-scale-down`,
+tức vốn thấy trọn ảnh đứng), nên nay trang bài cũng chỉ còn bản đã cắt. Tệp gốc
+giữ nguyên trên R2 — script in URL cũ để hoàn nguyên được.
+
+Chọn ảnh bìa mới thì ưu tiên ảnh ngang ngay từ đầu.

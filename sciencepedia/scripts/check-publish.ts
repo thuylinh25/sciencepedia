@@ -2,6 +2,8 @@ import { pathToFileURL } from "node:url";
 
 import { PrismaClient } from "@prisma/client";
 
+import { findDraftArtifacts } from "../src/lib/draft-artifacts";
+
 /**
  * Kiểm tra điều kiện xuất bản — CHỈ ĐỌC.
  *
@@ -173,6 +175,7 @@ async function loadArticles(where: object) {
       title: true,
       status: true,
       content: true,
+      contentEn: true,
       readingTime: true,
       publishedAt: true,
       coverImage: true,
@@ -413,6 +416,17 @@ async function audit(
   if (Math.abs(article.readingTime - expected) > 1) {
     block(
       `readingTime = ${article.readingTime} nhưng nội dung đọc ~${expected} phút`,
+    );
+  }
+
+  /* Dấu trích dẫn của công cụ soạn thảo AI (`【1-03d267】`…) lọt lên trang.
+     CHẶN: không có bài nào mà các mẫu này là nội dung thật — xem
+     src/lib/draft-artifacts.ts. Kiểm cả bản tiếng Anh vì nó cũng lên trang. */
+  const artifacts = findDraftArtifacts(`${article.content}\n${article.contentEn ?? ""}`);
+  if (artifacts.length > 0) {
+    block(
+      `còn ${artifacts.length} dấu trích dẫn của công cụ soạn thảo trong bài: ` +
+        artifacts.slice(0, 3).join(" "),
     );
   }
 

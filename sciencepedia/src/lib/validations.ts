@@ -1,6 +1,18 @@
 import { z } from "zod";
 
+import { findDraftArtifacts } from "./draft-artifacts";
 import { isAllowedImageUrl } from "./utils";
+
+/** Chặn lúc lưu, cả bản nháp: không có trạng thái nào mà dấu này hợp lệ. */
+function noDraftArtifacts(text: string, ctx: z.RefinementCtx) {
+  const found = findDraftArtifacts(text);
+  if (found.length > 0) {
+    ctx.addIssue({
+      code: "custom",
+      message: `Còn sót dấu trích dẫn của công cụ soạn thảo: ${found.slice(0, 3).join(" ")} — xoá trước khi lưu`,
+    });
+  }
+}
 
 export const localeSchema = z.enum(["vi", "en"]);
 
@@ -37,8 +49,15 @@ export const articleSchema = z.object({
   titleEn: z.string().max(200).optional().or(z.literal("")),
   summary: z.string().min(20, "Tóm tắt tối thiểu 20 ký tự").max(500),
   summaryEn: z.string().max(500).optional().or(z.literal("")),
-  content: z.string().min(50, "Nội dung tối thiểu 50 ký tự"),
-  contentEn: z.string().optional().or(z.literal("")),
+  content: z
+    .string()
+    .min(50, "Nội dung tối thiểu 50 ký tự")
+    .superRefine(noDraftArtifacts),
+  contentEn: z
+    .string()
+    .superRefine(noDraftArtifacts)
+    .optional()
+    .or(z.literal("")),
   coverImage: imageUrl,
   /* Ghi công ảnh bìa. Markdown, để nhét được liên kết tới trang gốc.
 

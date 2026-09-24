@@ -24,6 +24,8 @@ npm run links:reading # bù mục "Đọc thêm" cho bài thiếu link ra (cần
 npm run slugs:redirect # ghi 301 cho slug cũ vào bảng (cần --write)
 npm run redirects:sync # đổ bảng redirect ra JSON cho next.config — PHẢI commit + deploy mới ăn
 npm run glossary:usedin # đồng bộ trường usedIn của glossary.json (cần --write)
+npx tsx --env-file-if-exists=.env scripts/recrop-cover.ts --slug <s> --top <px>  # ảnh bìa đứng mất đầu trên thẻ: cắt sẵn 16/10 (cần --write)
+npx tsx --env-file-if-exists=.env scripts/strip-draft-artifacts.ts  # gỡ dấu 【…】 của công cụ AI khỏi bài (cần --write)
 
 npm run publish:check # rà điều kiện xuất bản toàn kho (chỉ đọc)
 npm run publish       # đổi state sang PUBLISHED — đường ghi DUY NHẤT, có gate
