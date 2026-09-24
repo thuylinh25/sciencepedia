@@ -137,59 +137,34 @@ Chủ sản phẩm đã quyết giữ cả hai. Riêng phần tie-break thì v�
 
 ---
 
-## Độ dài bài: 2–3 phút đọc
+## Độ dài bài: không có trần
 
-Chốt 2026-09-06, thay cho trần 3–5 phút chốt ngày 2026-09-04. Quyết định của chủ
-sản phẩm.
+Chốt 2026-09-24. Quyết định của chủ sản phẩm: **bỏ hẳn gate độ dài**, thay cho
+trần 2–3 phút (chốt 2026-09-06) và trần 3–5 phút trước nó (2026-09-04).
 
-**400–600 từ văn xuôi**, tức khoảng 1.850–2.800 ký tự. `readingTime` phải khớp nội
-dung thật, không đặt tay.
+`check-publish.ts` không còn chặn theo số từ, và mốc miễn trừ cho bài cũ
+(`LENGTH_RULE_FROM`) cũng bỏ theo — không còn luật cũ/luật mới để phân biệt.
 
-**Gate đếm TỪ, không đếm ký tự.** Trần cũ ghi "3.000–5.000 ký tự" và gọi đó là "3–5
-phút". Hai con số ấy không khớp: đo 46 bài đã publish thì tiếng Việt ở kho này trung
-bình 4,65 ký tự mỗi từ, tức **930 ký tự mỗi phút** — nên băng ký tự cũ thật ra là
-3,2–5,4 phút. Quy tắc phát biểu bằng phút, mà `readingTime` thì tính từ số từ, nên
-để gate cũng đếm từ: hai phép kiểm độ dài rút ra từ cùng một đại lượng và không thể
-bất đồng. Ký tự chỉ còn là con số tham khảo lúc soạn bài.
+**Cái gì vẫn còn:**
 
-**Áp cho bài xuất bản từ 2026-09-07. Bài cũ KHÔNG viết lại.**
+- `readingTime` phải khớp nội dung thật, không đặt tay. Gate vẫn kiểm.
+- **Ngắn nhưng không cụt.** Bài phải trả lời trọn vẹn câu hỏi ở tiêu đề. Chủ đề
+  quá rộng cho một bài thì tách thành hai bài — lý do tách là phạm vi, không
+  phải số từ.
+- Mọi ràng buộc còn lại là ràng buộc nội dung: nguồn, dè dặt, link nội bộ, ghi
+  công. Xem các mục bên dưới.
 
-Đo lúc đổi luật: chỉ **6/46 bài** đã publish lọt băng mới — 30 bài dài hơn 3 phút,
-11 bài ngắn hơn 2 phút. Viết lại kho cũ cho vừa trần là viết lại gần như toàn bộ thư
-viện, và chủ sản phẩm quyết định không làm.
+**Vì sao bỏ.** Hai lần đặt trần, hai lần trần mô tả sai thứ nó muốn quản: 3–5
+phút lấy từ trung vị kho đang có, 2–3 phút lấy từ một hình dung về hành vi tra
+cứu. Không lần nào con số suy ra được từ bài cụ thể, mà chi phí thì đo được —
+mục dưới ghi lại hai lỗi sự thật do chính lượt rút cho vừa trần sinh ra. Độ dài
+đúng của một bài là độ dài trả lời xong câu hỏi của nó; đó là phán quyết của
+`science-editor` trên từng bài, không phải một hằng số cho cả kho.
 
-Vì vậy `check-publish.ts` miễn trần độ dài cho bài có `publishedAt` trước mốc, và
-gom nợ thành **một dòng tổng kết** thay vì một dòng CHẶN mỗi bài. Lý do là thứ đáng
-giữ hơn con số: một gate kêu ở chỗ không ai định sửa là gate người ta học cách bỏ
-qua, và lúc đó nó thôi chặn cả những chỗ cần chặn.
+## Rút gọn là một lượt viết, nên nó phải qua gate accuracy lần nữa
 
-Miễn trừ neo vào `publishedAt`, **không** vào `updatedAt` — sửa một lỗi sự thật trên
-bài cũ không được kéo theo yêu cầu cắt nửa bài, vì như thế là phạt đúng việc ta muốn
-khuyến khích.
-
-**Vì sao 2–3 phút.** Trần 3–5 phút đặt ngày 2026-09-04 dựa trên mức trung vị mà kho
-tự hội tụ về, tức mô tả kho đang có chứ không phải kho muốn có. 2–3 phút là lựa chọn
-về sản phẩm: một mục từ bách khoa được tra cứu chứ không được đọc từ đầu tới cuối,
-nên nó phải trả lời xong câu hỏi ở tiêu đề rồi dừng.
-
-**Rút gọn thì cắt gì.** Đoạn khai triển, ví dụ phụ, lịch sử phát triển dài dòng, câu
-chuyển ý, đoạn nhắc lại điều đã nói, bảng chỉ minh hoạ thêm cho điều thân bài đã nói
-rõ. Giữ mạch lập luận, cắt phần trang trí.
-
-**Rút gọn KHÔNG được đụng vào:**
-
-- **Nguồn tham khảo.** 7–21 nguồn mỗi bài là tài sản, không phải phần thừa. Bài
-  ngắn đi thì mật độ nguồn dày lên — đó là điều tốt. Khối dẫn nguồn cũng không tính
-  vào ngân sách độ dài; `prose()` cắt nó ra trước khi đo.
-- **Con số đã đối chiếu** và mốc thời gian đi kèm.
-- **Mức độ dè dặt.** Rút gọn mà biến "có thể" thành "là", hoặc bỏ mệnh đề điều
-  kiện ở cuối câu, là lỗi cấp từ chối. Đây là cách hỏng phổ biến nhất khi cắt
-  ngắn: câu ngắn hơn nghe chắc chắn hơn, và sự chắc chắn đó không có thật. Trần
-  càng chặt thì áp lực này càng lớn — 2–3 phút làm nó nguy hiểm hơn 3–5 phút.
-- **Dòng dẫn nguồn và ghi công ảnh** ở cuối bài.
-- **Tối thiểu 3 link nội bộ** resolve được.
-
-### Rút gọn là một lượt viết, nên nó phải qua gate accuracy lần nữa
+Không còn trần độ dài, nhưng rút gọn vẫn xảy ra — biên tập viên cắt phần thừa,
+hoặc tách một bài quá rộng. Mục này áp cho mọi lượt rút, bất kể vì lý do gì.
 
 Chốt 2026-09-12, sau khi mẫu lỗi này xảy ra **lần thứ hai**.
 
@@ -222,13 +197,27 @@ hai câu kề.
 3. Câu thay thế do `science-editor` viết nguyên văn, không phải bản diễn đạt
    lại. Cùng lý do đã chốt ở mục đính chính bên dưới.
 
-**Vì sao không nới trần thay vì thêm một vòng duyệt.** Trần 2–3 phút là quyết
-định về sản phẩm, còn đây là lỗi ở quy trình. Nới trần chữa triệu chứng và bỏ
-lại nguyên cơ chế — mọi lượt sửa độ dài về sau vẫn sinh lỗi y như vậy.
+**Rút gọn thì cắt gì.** Đoạn khai triển, ví dụ phụ, lịch sử phát triển dài dòng,
+câu chuyển ý, đoạn nhắc lại điều đã nói, bảng chỉ minh hoạ thêm cho điều thân bài
+đã nói rõ. Giữ mạch lập luận, cắt phần trang trí.
 
-**Ngắn nhưng không cụt.** Sau khi rút, bài vẫn phải trả lời trọn vẹn câu hỏi ở tiêu
-đề. Nếu 3 phút không đủ để trả lời tử tế thì chủ đề đó quá rộng cho một bài — tách
-thành hai bài, đừng viết một bài dài.
+**Rút gọn KHÔNG được đụng vào:**
+
+- **Nguồn tham khảo.** 7–21 nguồn mỗi bài là tài sản, không phải phần thừa.
+- **Con số đã đối chiếu** và mốc thời gian đi kèm.
+- **Mức độ dè dặt.** Rút gọn mà biến "có thể" thành "là", hoặc bỏ mệnh đề điều
+  kiện ở cuối câu, là lỗi cấp từ chối. Đây là cách hỏng phổ biến nhất khi cắt
+  ngắn: câu ngắn hơn nghe chắc chắn hơn, và sự chắc chắn đó không có thật.
+- **Dòng dẫn nguồn và ghi công ảnh** ở cuối bài.
+- **Tối thiểu 3 link nội bộ** resolve được.
+
+**Vì sao thêm một vòng duyệt chứ không nới tay.** Hai lỗi trên là lỗi ở quy
+trình, không phải ở con số trần — bỏ trần (2026-09-24) gỡ đi áp lực cắt cho vừa,
+nhưng không gỡ cơ chế: mọi lượt rút vẫn có thể xoá định ngữ hạn định, nên mọi
+lượt rút vẫn phải duyệt lại.
+
+**Ngắn nhưng không cụt.** Sau khi rút, bài vẫn phải trả lời trọn vẹn câu hỏi ở
+tiêu đề. Chủ đề quá rộng để trả lời tử tế thì tách thành hai bài.
 
 ## Ghi công ảnh: một chỗ duy nhất, ở cuối bài, lấy từ CSDL
 

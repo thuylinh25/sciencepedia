@@ -1,6 +1,6 @@
 import { PrismaClient } from "@prisma/client";
 
-import { MAX_WORDS, prose } from "./check-publish";
+import { prose } from "./check-publish";
 
 /**
  * Đính chính nội dung ĐÃ XUẤT BẢN sau lượt fact-check ngày 2026-09-13 (lô 1 + lô 2).
@@ -464,8 +464,7 @@ async function main() {
     }
     console.log(
       `   văn xuôi ${beforeProse.toLocaleString("vi-VN")} → ${afterProse.toLocaleString("vi-VN")} ký tự ` +
-        `(${afterWords} từ)` +
-        (afterWords > MAX_WORDS ? `  ⚠ trên trần ${MAX_WORDS} từ — bài cũ, được miễn` : ""),
+        `(${afterWords} từ)`,
     );
     if (readingTime !== article.readingTime) {
       console.log(`   readingTime ${article.readingTime} → ${readingTime}`);

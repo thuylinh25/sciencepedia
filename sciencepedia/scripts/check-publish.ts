@@ -42,8 +42,6 @@ import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 
 /** Ngưỡng lấy từ docs/content-rules.md — sửa ở đó trước, rồi sửa ở đây. */
-const MIN_MINUTES = 2;
-const MAX_MINUTES = 3;
 const MIN_INTERNAL_LINKS = 3;
 /** Bậc nguồn 1–2 (bình duyệt / cơ quan thẩm quyền) — xem chú thích Source.tier */
 const MIN_STRONG_SOURCES = 3;
@@ -51,46 +49,14 @@ const STRONG_TIER = 2;
 /** Người Việt đọc chừng 200 từ mỗi phút — cùng hằng số với src/lib/rewrite.ts */
 const WORDS_PER_MINUTE = 200;
 
-/* Đo TỪ, không đo ký tự.
-   Chốt 2026-09-06 cùng lúc với việc hạ trần xuống 2–3 phút.
+/* Không còn gate độ dài.
 
-   Băng cũ là 3.000–5.000 KÝ TỰ, và docs gọi nó là "3–5 phút". Hai con số đó
-   không khớp nhau: đo 46 bài đã publish thì tiếng Việt ở kho này trung bình
-   4,65 ký tự mỗi từ, tức 930 ký tự mỗi phút — nên băng ký tự cũ thật ra là
-   3,2–5,4 phút. Sai lệch nhỏ, nhưng nó nằm giữa quy tắc và phép đo kiểm quy
-   tắc, và nó chỉ lớn dần khi văn phong đổi.
+   Trần 2–3 phút (và trần 3–5 phút trước nó) bị bỏ ngày 2026-09-24 theo quyết
+   định của chủ sản phẩm: độ dài bài do nội dung quyết, không do một con số
+   chung cho cả kho. Cùng với trần thì mốc miễn trừ `LENGTH_RULE_FROM` cũng
+   hết việc — không còn luật cũ/luật mới để phân biệt.
 
-   Quy tắc phát biểu bằng PHÚT, còn `readingTime` thì tính từ SỐ TỪ. Nên gate
-   cũng đếm từ: cả hai phép kiểm độ dài giờ rút ra từ cùng một đại lượng và
-   không thể bất đồng với nhau. Ký tự vẫn được in ra trong thông báo vì đó là
-   con số người viết nhìn thấy khi soạn bài. */
-export const MIN_WORDS = MIN_MINUTES * WORDS_PER_MINUTE;
-export const MAX_WORDS = MAX_MINUTES * WORDS_PER_MINUTE;
-
-/* Trần 2–3 phút chỉ áp cho bài xuất bản TỪ ngày này.
-
-   Chốt 2026-09-06, cùng lượt hạ trần. Đo lúc đổi: chỉ 6/46 bài đã publish lọt
-   băng mới — 29 bài quá dài, 11 bài quá ngắn. Chủ sản phẩm quyết định không
-   viết lại kho cũ.
-
-   Nếu không có miễn trừ này thì gate sẽ in 40 dòng CHẶN vì độ dài, và 40 dòng
-   ấy nhấn chìm những phát hiện thật sự cần sửa. Một gate kêu ở chỗ không ai
-   định sửa là gate người ta học cách bỏ qua — hỏng đúng theo kiểu mà chính
-   `check-publish.ts` sinh ra để chống.
-
-   Miễn trừ neo vào `publishedAt`, KHÔNG vào `updatedAt`: bài cũ được sửa lỗi
-   sự thật (như tám bài đính chính ngày 2026-09-05) vẫn phải là bài cũ. Neo
-   vào `updatedAt` thì mỗi lần đính chính một câu lại kéo theo yêu cầu viết
-   lại nửa bài — tức phạt đúng việc ta muốn khuyến khích.
-
-   Viết lại một bài cũ cho vừa trần là việc có chủ đích, và khi làm thì bỏ
-   `publishedAt` cũ đi là sai — nên chỗ đó cứ để người quyết, đừng để gate ép.
-
-   Mốc là đầu ngày 07 chứ không phải nửa đêm ngày 06, dù luật chốt ngày 06:
-   `song-buoc-song-tan-so-bien-do` lên lúc 01:49Z ngày 06, tức trước khi đổi
-   luật vài giờ. Lấy nửa đêm làm mốc thì bài đó bị phạt vì một quy tắc chưa
-   tồn tại lúc nó được viết. Luật mới áp cho lượt pipeline kế tiếp. */
-const LENGTH_RULE_FROM = new Date("2026-09-07T00:00:00Z");
+   `WORDS_PER_MINUTE` ở lại vì `readingTime` vẫn phải khớp nội dung thật. */
 
 type Finding = { level: "CHẶN" | "CẢNH"; message: string };
 
@@ -120,7 +86,11 @@ const INLINE_CREDIT =
 /**
  * Bỏ khối dẫn nguồn ở cuối bài trước khi đo.
  *
- * Chốt 2026-09-05. Trần 3.000–5.000 ký tự là ngân sách cho VĂN XUÔI, mà
+ * Chốt 2026-09-05, hồi còn trần độ dài. Trần bỏ ngày 2026-09-24 nhưng `prose()`
+ * ở lại: `readingTime` và phép kiểm "bài có khép lại không" vẫn phải đo trên
+ * văn xuôi, vì người đọc không "đọc" danh sách nguồn.
+ *
+ * Lý do gốc: trần 3.000–5.000 ký tự là ngân sách cho VĂN XUÔI, mà
  * `content` thì gồm cả khối dẫn nguồn dán ở cuối — và docs/content-rules.md
  * cấm cắt khối đó khi rút gọn. Đo cả hai bằng một con số là bắt tác giả trả
  * giá cho phần họ không được phép động vào: bài càng dẫn nhiều nguồn càng bị
@@ -255,7 +225,7 @@ async function audit(
   publishedSlugs: Set<string>,
   corpus: { slug: string; content: string }[],
   checkLinks: boolean,
-): Promise<{ findings: Finding[]; lengthExempt: boolean }> {
+): Promise<{ findings: Finding[] }> {
   const findings: Finding[] = [];
   const block = (message: string) => findings.push({ level: "CHẶN", message });
   const warn = (message: string) => findings.push({ level: "CẢNH", message });
@@ -380,24 +350,6 @@ async function audit(
   const body = prose(article.content);
   const words = countWords(body);
 
-  /* Bài publish trước khi trần 2–3 phút được chốt thì viết dưới luật cũ —
-     xem chú thích của LENGTH_RULE_FROM. Bản nháp không được miễn: nó sắp
-     publish, tức sắp thành "bài mới". */
-  const lengthExempt =
-    article.status === "PUBLISHED" &&
-    article.publishedAt !== null &&
-    article.publishedAt < LENGTH_RULE_FROM;
-
-  if (!lengthExempt && (words < MIN_WORDS || words > MAX_WORDS)) {
-    block(
-      `độ dài ${words.toLocaleString("vi-VN")} từ văn xuôi ` +
-        `(~${(words / WORDS_PER_MINUTE).toFixed(1)} phút, ` +
-        `${body.length.toLocaleString("vi-VN")} ký tự), ngoài khoảng ` +
-        `${MIN_WORDS.toLocaleString("vi-VN")}–${MAX_WORDS.toLocaleString("vi-VN")} từ ` +
-        `(${MIN_MINUTES}–${MAX_MINUTES} phút)`,
-    );
-  }
-
   /* Bài có khép lại không, hay dừng giữa lúc đang trình bày.
 
      CẢNH chứ không CHẶN. Phép đo này nhận diện một ĐỘNG TÁC hình thức — tiêu
@@ -509,7 +461,7 @@ async function audit(
     });
   }
 
-  return { findings, lengthExempt };
+  return { findings };
 }
 
 async function main() {
@@ -557,13 +509,13 @@ async function main() {
 
   const results = [];
   for (const article of articles) {
-    const { findings, lengthExempt } = await audit(
+    const { findings } = await audit(
       article,
       publishedSlugs,
       corpus,
       checkLinks,
     );
-    results.push({ article, findings, lengthExempt });
+    results.push({ article, findings });
   }
 
   const failed = results.filter((r) =>
@@ -619,24 +571,6 @@ async function main() {
     `Qua gate:  ${results.length - failed.length} / ${results.length}`,
   );
   console.log(`Bị chặn:   ${failed.length}`);
-
-  /* Nợ độ dài gom thành MỘT dòng thay vì một dòng CHẶN mỗi bài.
-     Bài cũ được miễn trần (xem LENGTH_RULE_FROM), nhưng miễn không phải là
-     quên: con số này để người ta biết kho đang mang bao nhiêu bài viết dưới
-     luật cũ, mà không làm nhiễu danh sách những thứ thật sự cần sửa. */
-  const exempt = results.filter((r) => r.lengthExempt);
-  if (exempt.length > 0) {
-    const over = exempt.filter(
-      (r) => countWords(prose(r.article.content)) > MAX_WORDS,
-    ).length;
-    const under = exempt.filter(
-      (r) => countWords(prose(r.article.content)) < MIN_WORDS,
-    ).length;
-    console.log(
-      `Miễn trần độ dài (publish trước ${LENGTH_RULE_FROM.toISOString().slice(0, 10)}): ` +
-        `${exempt.length} bài — ${over} dài hơn ${MAX_MINUTES} phút, ${under} ngắn hơn ${MIN_MINUTES} phút`,
-    );
-  }
 
   if (failed.length > 0) {
     // Đếm lý do phổ biến nhất: một lỗi lặp trên phần lớn kho là lỗi hệ thống,

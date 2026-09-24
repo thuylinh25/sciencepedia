@@ -484,7 +484,9 @@ thật trong code, rồi tính ra con số mà cơ chế đó đang so sánh.
 
 ## Đổi ngưỡng là hai quyết định, không phải một
 
-Chốt 2026-09-06, khi hạ trần độ dài bài từ 3–5 phút xuống 2–3 phút.
+Chốt 2026-09-06, khi hạ trần độ dài bài từ 3–5 phút xuống 2–3 phút. Trần đã bỏ
+hẳn ngày 2026-09-24, nhưng bài học dưới đây là về *cách đổi ngưỡng*, không về
+con số — nó áp cho ngưỡng kế tiếp.
 
 Quyết định thứ nhất là con số mới. Quyết định thứ hai — dễ quên hơn và đắt hơn
 — là **số phận của dữ liệu đã có**. Đo lúc đổi: chỉ 6/46 bài lọt băng mới. Nếu

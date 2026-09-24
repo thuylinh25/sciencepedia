@@ -2,7 +2,7 @@ import { readFileSync } from "node:fs";
 import path from "node:path";
 import { PrismaClient } from "@prisma/client";
 
-import { MAX_WORDS, MIN_WORDS, prose } from "./check-publish";
+import { prose } from "./check-publish";
 import { readingTime } from "../src/lib/utils";
 
 /**
@@ -119,8 +119,8 @@ async function main() {
     return;
   }
 
-  // Gate độ dài đo trên cùng đại lượng với `check-publish.ts`, để script này
-  // không ghi ra thứ mà gate sẽ chặn ngay sau đó.
+  // Đếm từ trên cùng đại lượng với `check-publish.ts` — số này chỉ để báo
+  // cáo; gate độ dài đã bỏ ngày 2026-09-24.
   const gateWords = prose(vi).trim().split(/\s+/).length;
   const minutes = readingTime(vi);
 
@@ -131,13 +131,8 @@ async function main() {
   console.log(`  reviewedAt : ${article.reviewedAt?.toISOString().slice(0, 10) ?? "-"} → ${VERIFIED_AT.toISOString().slice(0, 10)}`);
   console.log(`  reviewedById: ${article.reviewedById ?? "-"} (không đổi)`);
   console.log();
-  console.log(`  từ theo gate: ${gateWords} (băng ${MIN_WORDS}–${MAX_WORDS})`);
+  console.log(`  từ văn xuôi: ${gateWords}`);
 
-  if (gateWords < MIN_WORDS || gateWords > MAX_WORDS) {
-    console.error("  → NGOÀI BĂNG. Sửa bản nháp trước, đừng ghi.");
-    process.exitCode = 1;
-    return;
-  }
   if (!article.reviewedById) {
     // Không tự điền: byline người duyệt là phán quyết, không phải hệ quả của
     // một phép thay chuỗi.
@@ -145,7 +140,6 @@ async function main() {
     process.exitCode = 1;
     return;
   }
-  console.log("  → trong băng");
   console.log();
 
   if (!write) {

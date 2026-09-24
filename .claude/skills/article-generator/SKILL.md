@@ -45,7 +45,7 @@ Step 3 of the article chain. Turns a validated source pack into a draft with ful
 
     Why this rule exists: it was missing, and the gap is measurable. A survey of all 58 articles (`scripts/check-closure.ts`) found nine — every one of them a planet or astronomy piece of 242–361 words — ending on a final section under 60 words, one of them on a bullet about Phobos and Deimos placed under a heading called "Extreme terrain". The step list above named every other part of an article and never named this one, so whether a draft got a closing move was left to chance. Roughly one draft in five lost the toss.
 
-    The length gate in `scripts/check-publish.ts` blocks anything under 400 words, so it catches the worst of this. It does not catch a 450-word article that stops mid-thought.
+    There is no length gate any more (the 2–3 minute cap was dropped on 2026-09-24), so nothing mechanical catches a stub. Closure is now checked only by the closure warning in `scripts/check-publish.ts` and by `science-editor` reading the draft.
 
 11. **Do not draw a boundary the source does not draw.** Sources name a category; drafts turn it into a two-sided line. If a source says radiation above some energy is *ionising* and can damage cells, that is a statement about one side. Writing "the boundary between the harmless part and the dangerous part" invents the other side — and gets it wrong, because non-ionising radiation is not harmless. Name what the source names; leave the complement unnamed.
 
