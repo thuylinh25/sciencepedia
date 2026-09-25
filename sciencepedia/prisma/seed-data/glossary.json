@@ -983,7 +983,8 @@
     "reviewedAt": "2026-09-21",
     "notes": "science-editor duyet 2026-09-21 (dot 2). Dinh nghia va shortDef khop NGUYEN VAN OpenStax 5.3. 'So do NGAN NHAT' dung: nguon viet 'It is the smallest possible measured time between two events'. Khang dinh '\"thoi gian chay cham lai\" la cach noi tat gay hieu nham' la DUNG va giu lai. Nhung ban cu don qua da ve phia kia: phu dinh cach noi pho thong roi dung lai o 'hai nguoi do khac nhau' se de nguoi doc voi mo hinh sai thu hai - rang gian no thoi gian chi la chuyen ghi chep, khong co gi that xay ra. Do la loi gian luoc lam hong mo hinh (quy tac 4), chi khac chieu. Da bo sung: (a) cau cua chinh nguon - moi dong ho chuyen dong so voi nguoi quan sat deu duoc thay chay cham hon; (b) hai bang chung thuc nghiem co san trong cung trang nguon - chu ky ban ra cua muon, va thi nghiem Hafele-Keating 1971. Bo alias 'thoi-gian-rieng': the hover chi hien shortDef (xem src/server/glossary.ts), ma shortDef muc nay khong dinh nghia thoi gian rieng - nguoi re chuot vao lien ket thuat ngu 'thoi gian rieng' se nhan dinh nghia cua mot dai luong khac. De nguyen thanh muc rieng cho dot sau; glossary:check bao thieu thi dung hon la tra ve nham. Hai nguon cung OpenStax: chap nhan - giao trinh vat ly co ban, claim khong tranh cai.",
     "usedIn": [
-      "thuyet-tuong-doi-hep-khi-thoi-gian-khong-con-tuyet-doi"
+      "thuyet-tuong-doi-hep-khi-thoi-gian-khong-con-tuyet-doi",
+      "vi-sao-cang-gan-toc-do-anh-sang-thoi-gian-troi-cang-cham"
     ]
   },
   {

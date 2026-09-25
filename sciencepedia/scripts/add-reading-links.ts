@@ -496,6 +496,86 @@ const PLANS: Plan[] = [
     to: ["nghich-ly-15-do-c-tai-sao-mot-thay-doi-nho-lai-quyet-dinh-so-phan-hanh-tinh"],
     why: "'Bài học' của Sao Kim là bài học cho Trái Đất; bài đích là phiên bản đo được của bài học ấy ở từng nửa độ.",
   },
+  // ---- Đợt 25/09: ba bài 24/09 chưa có link nào, và năm bài chưa có mục Đọc thêm ----
+  // Link giữa câu của ba bài mới nằm ở `add-backlinks.ts` — chạy nó TRƯỚC.
+  {
+    slug: "thoi-gian-duoi-goc-nhin-luong-tu-vu-tru-co-thuc-su-troi",
+    to: [
+      "thuyet-tuong-doi-hep-khi-thoi-gian-khong-con-tuyet-doi",
+      "vu-tru-khong-bao-gio-dung-yen-chuyen-dong-la-trang-thai-tu-nhien-cua-moi-thu",
+    ],
+    why: "Phần Einstein của bài chỉ tóm một đoạn — bài tương đối hẹp kể đủ; bài chuyển động nối với ý 'thời gian là quan hệ giữa các thay đổi'.",
+  },
+  {
+    slug: "vi-sao-cang-gan-toc-do-anh-sang-thoi-gian-troi-cang-cham",
+    to: ["thoi-gian-duoi-goc-nhin-luong-tu-vu-tru-co-thuc-su-troi"],
+    why: "Hai bài cùng đợt về thời gian: bài này là thời gian co giãn đo được, bài kia hỏi thời gian là gì ở tầng lượng tử.",
+  },
+  {
+    slug: "vi-sao-chung-ta-khong-the-nho-nhung-nam-thang-dau-doi",
+    to: [
+      "giac-ngu-sau-lam-gi-voi-tri-nho-cua-ban",
+      "nhung-su-gia-hoa-hoc-dieu-khien-hoat-dong-cua-nao-bo",
+      "y-thuc-mon-qua-vi-dai-hay-cai-gia-dat-cua-su-tien-hoa",
+    ],
+    why: "Bài xoay quanh hồi hải mã (bài giấc ngủ kể nó củng cố ký ức ra sao), neuron và mạch thần kinh (bài chất dẫn truyền), và 'cái tôi' (bài ý thức).",
+  },
+  {
+    slug: "thuyet-tuong-doi-hep-khi-thoi-gian-khong-con-tuyet-doi",
+    to: [
+      "vi-sao-cang-gan-toc-do-anh-sang-thoi-gian-troi-cang-cham",
+      "thoi-gian-duoi-goc-nhin-luong-tu-vu-tru-co-thuc-su-troi",
+    ],
+    why: "Bài nêu giãn nở thời gian trong một dòng; bài đích đầu dựng nó từ đồng hồ ánh sáng, bài đích sau hỏi tiếp thời gian là gì.",
+  },
+  {
+    slug: "co-hoc-luong-tu-the-gioi-ky-la-phia-sau-vat-chat",
+    to: ["thoi-gian-duoi-goc-nhin-luong-tu-vu-tru-co-thuc-su-troi"],
+    why: "Chỗ cơ học lượng tử chưa khép được với hấp dẫn — bài đích là một ví dụ cụ thể của vết nứt ấy.",
+  },
+  {
+    slug: "giac-ngu-sau-lam-gi-voi-tri-nho-cua-ban",
+    to: ["vi-sao-chung-ta-khong-the-nho-nhung-nam-thang-dau-doi"],
+    why: "Cùng nhân vật chính là hồi hải mã: bài này kể nó củng cố ký ức, bài đích kể vì sao ký ức đầu đời không giữ được.",
+  },
+  {
+    slug: "photon-hat-anh-sang-thuc-su-la-gi",
+    to: ["vi-sao-cang-gan-toc-do-anh-sang-thoi-gian-troi-cang-cham"],
+    why: "Bài nói photon không có khối lượng nghỉ và đi với tốc độ ánh sáng; bài đích giải thích vì sao không thể hỏi 'photon thấy thời gian thế nào'.",
+  },
+  {
+    slug: "trai-dat-hanh-tinh-duy-nhat-ta-biet-co-su-song",
+    to: [
+      "mat-trang",
+      "cau-truc-ben-trong-trai-dat",
+      "neu-phai-roi-trai-dat-con-nguoi-co-the-song-o-dau-trong-he-mat-troi",
+    ],
+    why: "Bài nhắc Mặt Trăng giữ trục nghiêng và lõi sắt tạo từ trường, mỗi thứ một câu; bài cuối đặt câu hỏi ngược lại: rời nơi này thì sống ở đâu.",
+  },
+  {
+    slug: "sao-moc-hanh-tinh-quay-nhanh-nhat-va-chiec-phanh-vo-hinh",
+    to: ["giai-ma-hanh-tinh-tu-quay-quanh-truc", "ba-dinh-luat-kepler-hanh-tinh-chuyen-dong-theo-quy-luat-nao"],
+    why: "Bài giải thích vòng quay của MỘT hành tinh; bài đầu là lời giải chung cho mọi hành tinh, bài sau là chuyển động quỹ đạo — vế còn lại của câu 'hành tinh chuyển động ra sao'.",
+  },
+  {
+    slug: "giai-ma-hanh-tinh-tu-quay-quanh-truc",
+    to: [
+      "sao-moc-hanh-tinh-quay-nhanh-nhat-va-chiec-phanh-vo-hinh",
+      "sao-kim-bai-hoc-ve-hieu-ung-nha-kinh-mat-kiem-soat",
+      "mat-trang",
+    ],
+    why: "Ba trường hợp riêng của bài: Sao Mộc quay nhanh nhất, Sao Kim quay ngược, và Mặt Trăng — sản phẩm của một cú va chạm lệch tâm như bài mô tả.",
+  },
+  {
+    slug: "mat-trang",
+    to: ["trai-dat-hanh-tinh-duy-nhat-ta-biet-co-su-song", "giai-ma-hanh-tinh-tu-quay-quanh-truc"],
+    why: "Bài kết bằng việc Mặt Trăng giữ trục Trái Đất; bài đầu kể vì sao trục ấy quan trọng cho sự sống, bài sau kể va chạm lớn định hình vòng quay hành tinh.",
+  },
+  {
+    slug: "cau-truc-ben-trong-trai-dat",
+    to: ["trai-dat-hanh-tinh-duy-nhat-ta-biet-co-su-song", "dai-tuyet-chung-permi-lan-su-song-suyt-bien-mat"],
+    why: "Bài dừng ở từ trường che chắn hành tinh; bài đầu đặt nó cạnh ba hệ thống khác giữ sự sống, bài sau là lúc magma từ bên dưới lớp vỏ phun trào đủ lớn để đổi cả sinh quyển (Siberian Traps).",
+  },
 ];
 
 /* Chỗ này từng có một danh sách chặn tay.

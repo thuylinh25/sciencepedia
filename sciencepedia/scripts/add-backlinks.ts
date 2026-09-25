@@ -60,6 +60,48 @@ const BACKLINKS: Backlink[] = [
     replace: "Khối lượng và [năng lượng](/articles/nang-luong-la-gi) là hai mặt",
     why: "Câu giải thích E = mc². Đây là chỗ khái niệm 'năng lượng' được dùng ở nghĩa chặt nhất trong toàn bài.",
   },
+  /* ---- Đợt 25/09: ba bài xuất bản 24/09 không có link nào -----------------
+   *
+   * Cả link ra lẫn link vào. Link ra đặt giữa câu ở đúng chỗ bài đích giải
+   * thích kỹ cái câu đang lướt qua; phần còn lại vào mục Đọc thêm
+   * (`add-reading-links.ts`). Chạy script NÀY trước: nó bỏ qua bài đã có link
+   * tới đích, nên chạy sau Đọc thêm thì link giữa câu không bao giờ vào.
+   */
+  {
+    from: "thoi-gian-duoi-goc-nhin-luong-tu-vu-tru-co-thuc-su-troi",
+    to: "vi-sao-cang-gan-toc-do-anh-sang-thoi-gian-troi-cang-cham",
+    find: "- Vật chuyển động với vận tốc rất lớn.",
+    replace: "- Vật [chuyển động với vận tốc rất lớn](/articles/vi-sao-cang-gan-toc-do-anh-sang-thoi-gian-troi-cang-cham).",
+    why: "Bài chỉ liệt kê điều kiện; bài đích giải thích đúng vế này bằng đồng hồ ánh sáng và hệ số Lorentz.",
+  },
+  {
+    from: "thoi-gian-duoi-goc-nhin-luong-tu-vu-tru-co-thuc-su-troi",
+    to: "co-hoc-luong-tu-the-gioi-ky-la-phia-sau-vat-chat",
+    find: "Trong cơ học lượng tử thông thường, thời gian",
+    replace: "Trong [cơ học lượng tử](/articles/co-hoc-luong-tu-the-gioi-ky-la-phia-sau-vat-chat) thông thường, thời gian",
+    why: "Mở đầu phần 'bài toán thời gian' — người đọc cần biết cơ học lượng tử là gì trước khi hiểu nó va với tương đối rộng ở đâu.",
+  },
+  {
+    from: "vi-sao-cang-gan-toc-do-anh-sang-thoi-gian-troi-cang-cham",
+    to: "thuyet-tuong-doi-hep-khi-thoi-gian-khong-con-tuyet-doi",
+    find: "Một trong những nền tảng của thuyết tương đối hẹp là",
+    replace: "Một trong những nền tảng của [thuyết tương đối hẹp](/articles/thuyet-tuong-doi-hep-khi-thoi-gian-khong-con-tuyet-doi) là",
+    why: "Câu nêu tiên đề thứ hai; bài đích trình bày cả hai tiên đề và mọi hệ quả, bài này chỉ đào sâu một hệ quả.",
+  },
+  {
+    from: "vi-sao-cang-gan-toc-do-anh-sang-thoi-gian-troi-cang-cham",
+    to: "photon-hat-anh-sang-thuc-su-la-gi",
+    find: "hai tấm gương và một photon liên tục phản xạ",
+    replace: "hai tấm gương và một [photon](/articles/photon-hat-anh-sang-thuc-su-la-gi) liên tục phản xạ",
+    why: "Lần đầu photon xuất hiện; cả mục cuối bài dựa vào việc photon không có khối lượng nghỉ, điều bài đích giải thích.",
+  },
+  {
+    from: "ung-dung-co-hoc-luong-tu-tu-nen-tang-cong-nghe-hien-tai-den-dot-pha-tuong-lai",
+    to: "thoi-gian-duoi-goc-nhin-luong-tu-vu-tru-co-thuc-su-troi",
+    find: "Đồng hồ nguyên tử là một ví dụ nổi bật",
+    replace: "[Đồng hồ nguyên tử](/articles/thoi-gian-duoi-goc-nhin-luong-tu-vu-tru-co-thuc-su-troi) là một ví dụ nổi bật",
+    why: "Bài chỉ nhắc một câu; bài đích có hẳn hai mục về đồng hồ caesium và đồng hồ quang học.",
+  },
 ];
 
 function flagValue(argv: string[], name: string): string | undefined {

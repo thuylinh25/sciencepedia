@@ -811,6 +811,41 @@ const LINKS: Link[] = [
     slug: "vu-tru-khong-bao-gio-dung-yen-chuyen-dong-la-trang-thai-tu-nhien-cua-moi-thu",
     vi: ["- DNA sao chép.", "- [[DNA]] sao chép."],
   },
+
+  /* ---- Đợt 25/09: ba bài 24/09 và câu Vega đã sửa ------------------------
+   *
+   * Vega: ghi chú "KHÔNG gắn" (17/09) chờ câu được sửa. Bản VI đã đúng từ
+   * trước; bản EN vừa sửa trong `add-sources-2026-09-25.ts` (12.000 năm trước
+   * → 14.000). Chạy script ấy TRƯỚC, không thì neo EN không khớp.
+   *
+   * `vi-sao-cang-gan…`: chỗ đầu tiên là "sự giãn thời gian" — nhãn giữ nguyên
+   * chữ gốc. Photon ở bài này đã là link bài, không lồng thuật ngữ vào link.
+   * "được gia tốc" là động từ, không gắn (cùng lý do đợt 24/09).
+   */
+  {
+    slug: "20-ngoi-sao-sang-nhat-bau-troi-dem",
+    vi: ["do hiện tượng tiến động của trục Trái Đất", "do hiện tượng [[tiến động]] của trục Trái Đất"],
+    en: ["the precession of Earth's axis", "the [[tien-dong|precession]] of Earth's axis"],
+  },
+  {
+    slug: "vi-sao-cang-gan-toc-do-anh-sang-thoi-gian-troi-cang-cham",
+    vi: ["tuân theo cùng sự giãn thời gian.", "tuân theo cùng sự [[giãn nở thời gian|giãn thời gian]]."],
+  },
+  /* Hai bài viết "mô-men động lượng" — alias đã có trong mục `dong-luong-goc`
+   * (ghi chú của mục từ nói rõ alias ấy thêm VÌ chính hai bài này), bản EN đã
+   * gắn, nhưng bản VI chưa bao giờ được gắn. Máy dò đợt trước chỉ tìm theo tên
+   * mục từ, không theo alias, nên bỏ sót. */
+  {
+    slug: "giai-ma-hanh-tinh-tu-quay-quanh-truc",
+    vi: ["đó là việc truyền **mô-men động lượng**.", "đó là việc truyền **[[mô-men động lượng]]**."],
+  },
+  {
+    slug: "sao-moc-hanh-tinh-quay-nhanh-nhat-va-chiec-phanh-vo-hinh",
+    vi: [
+      "mô-men động lượng phải được bảo toàn, nên tốc độ quay tăng vọt",
+      "[[mô-men động lượng]] phải được bảo toàn, nên tốc độ quay tăng vọt",
+    ],
+  },
 ];
 
 /** Khoá của mọi `[[...]]` trong một chuỗi thay thế. */
