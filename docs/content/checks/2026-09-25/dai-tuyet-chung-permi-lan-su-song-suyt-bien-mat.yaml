@@ -1,0 +1,206 @@
+slug: dai-tuyet-chung-permi-lan-su-song-suyt-bien-mat
+checkedAt: 2026-09-25
+checkedBy: science-editor
+sourceCount: 21
+sourceCountBefore: 4
+verdict: pass
+verdictCondition: "Pass chỉ đúng khi áp TOÀN BỘ fixes/dai-tuyet-chung-permi-lan-su-song-suyt-bien-mat.json, kể cả titleEdits (title, titleEn, seoTitle, seoDescription) — trường này nằm ngoài schema của apply-fixes-2026-09-17.ts. Không áp titleEdits thì verdict là revise."
+summary: "Duyệt lại toàn bài sau lượt vá S1/S2 ngày 17/09. Bản vi đã nhận bốn đính chính, nhưng contentEn và summaryEn thì CHƯA: bản tiếng Anh đang xuất bản vẫn ghi 252 triệu năm, 80%, 'lần duy nhất côn trùng', '540 triệu năm' (S1). Mở nguồn thật cho từng claim thì thêm sáu lỗi S2: tiêu đề và câu mở bài nói sự sống 'suýt biến mất' — đúng điều mà chính nguồn Stanley 2016 của bài bác bỏ; 'phun trào lịch sử hiếm khi vượt vài km³' sai; than + halogen phá tầng ozone được nói như sự thật trong khi nguồn đặt than làm phần nhỏ và Dal Corso 2024 trái chiều về ozone; 'nhiều phòng thí nghiệm độc lập không thấy tín hiệu' sai (một nhóm phân tích lại, và Onoue 2019 lại thấy tín hiệu ³He); 'nhanh hơn nhiều bậc' bị Cui 2021 bác (tốc độ cuối Permi cỡ một nửa hôm nay); 'động vật có vú chờ tới lượt sau vụ tuyệt chủng kế tiếp' sai (vụ kế tiếp là cuối Trias). Mười tám claim S3 thiếu nguồn hoặc dựng quan hệ nhân quả (mục Pangaea, 'bốn cơ chế nối tiếp', 8–10 °C, 1–4 triệu km³, 70% động vật có xương sống). Tất cả đã có bản sửa theo nguồn bậc 1 đã mở trong lượt này, hoặc bị cắt; thêm 17 nguồn bình duyệt. Sau khi áp kế hoạch sửa chỉ còn một ghi chú S4."
+severityCount:
+  before: { S1: 1, S2: 7, S3: 18, S4: 1 }
+  after: { S1: 0, S2: 0, S3: 0, S4: 1 }
+unpublish: false
+claims:
+  - id: C-0
+    claim: "Dòng cuối 'Biên tập lại từ bài ... của VACA' đứng một mình, ngụ ý số liệu của bài đến từ VACA"
+    verdict: partially-supported
+    severity: S3
+    evidence: "docs/content/checks/2026-09-17/dai-tuyet-chung-permi-lan-su-song-suyt-bien-mat.yaml (C-0: trang VACA ghi 95%, ~250 triệu năm, 1,5 triệu km³, fullerene 'khá thuyết phục')"
+    note: "VACA đã bị gỡ khỏi bảng nguồn ngày 17/09. Giữ ghi công và dòng bản quyền, thêm một câu nói số liệu đã đối chiếu lại theo nguồn bình duyệt. Quyền sử dụng vẫn là câu hỏi mở cho người quyết."
+  - id: C-1
+    claim: "Tuyệt chủng biển bắt đầu 251,941 ± 0,037 triệu năm; ranh giới Permi–Trias 251,902 ± 0,024 triệu năm (2σ) — Nature Communications 2020"
+    verdict: verified
+    severity: "—"
+    evidence: "https://pmc.ncbi.nlm.nih.gov/articles/PMC7080820/ (doi 10.1038/s41467-020-15243-7; Gastaldo et al. 2020)"
+    note: "Tóm tắt, mở qua Europe PMC: 'The marine event began at 251.941 ± 0.037 Ma, with the PTB placed at 251.902 ± 0.024 Ma (2σ)'. Khớp từng chữ số."
+  - id: C-1b
+    claim: "'Đại tuyệt chủng Permi — còn gọi là ranh giới Permi–Trias'"
+    verdict: partially-supported
+    severity: S3
+    evidence: "https://pmc.ncbi.nlm.nih.gov/articles/PMC7080820/"
+    note: "Ranh giới là mốc địa tầng, sự kiện là tuyệt chủng; nguồn phân biệt hai mốc riêng. Sửa thành 'đại tuyệt chủng Permi–Trias'."
+  - id: C-2
+    claim: "Khoảng 81% số loài sinh vật biển biến mất (Stanley 2016, rarefaction cấp chi), thấp hơn ước tính 88–96% của Raup"
+    verdict: verified
+    severity: "—"
+    evidence: "https://pmc.ncbi.nlm.nih.gov/articles/PMC5081622/ (doi 10.1073/pnas.1613094113)"
+    note: "Toàn văn: 'An estimate of ∼81% is made here for extinction of species in this event, based on rarefaction at the genus level ... much lower than the frequently cited estimate of 88–96% by Raup'."
+  - id: C-2b
+    claim: "Stanley cho rằng ước tính cao 'dựa trên một bộ dữ liệu không phù hợp'; 'nhiều tài liệu khác vẫn dùng mức trên 90%'"
+    verdict: partially-supported
+    severity: S3
+    evidence: "https://pmc.ncbi.nlm.nih.gov/articles/PMC5081622/; https://research-information.bris.ac.uk/en/publications/the-timing-and-pattern-of-biotic-recovery-following-the-end-permi/ (doi 10.1038/ngeo1475); https://pmc.ncbi.nlm.nih.gov/articles/PMC4643808/ (doi 10.1126/sciadv.1500470)"
+    note: "Stanley nói cụ thể: 'incorrectly based on combined data for the Middle and Late Permian mass extinctions', và 'About 90 orders and more than 220 families of marine animals survived'. Vế 'nhiều tài liệu khác' trước không nguồn; nay gắn Chen & Benton 2012 ('>90% species') và Burgess & Bowring 2015 ('more than 90% of marine')."
+  - id: C-3
+    claim: "Khoảng 70% số loài động vật có xương sống trên cạn biến mất"
+    verdict: unsupported
+    severity: S3
+    evidence: "https://pmc.ncbi.nlm.nih.gov/articles/PMC4643808/ (doi 10.1126/sciadv.1500470)"
+    note: "Không tìm được nguồn cho '70% động vật có xương sống'. Burgess & Bowring 2015: 'extinguishing more than 90% of marine and 75% of terrestrial species' — đối tượng là loài trên cạn nói chung. Sửa theo đúng đối tượng và con số, nói rõ là ước tính thuộc nhóm cao."
+  - id: C-4
+    claim: "Đợt tuyệt chủng côn trùng nặng nhất: 82,6% số chi; các đỉnh khác Roadian–Wordian 64,5% và Ladinian–Carnian 74,8%"
+    verdict: verified
+    severity: "—"
+    evidence: "https://pmc.ncbi.nlm.nih.gov/articles/PMC9726944/ (doi 10.1038/s41467-022-35284-4; Jouault et al. 2022)"
+    note: "Tóm tắt: 'Roadian/Wordian (≈266.9 Ma; extinction of 64.5% insect genera), the Permian/Triassic (≈252 Ma; ... 82.6%), and the Ladinian/Carnian (≈237 Ma; ... 74.8%)'."
+  - id: C-4b
+    claim: "'cùng nghiên cứu đó' — trỏ tới nghiên cứu chưa được nêu tên"
+    verdict: partially-supported
+    severity: S3
+    evidence: "https://pmc.ncbi.nlm.nih.gov/articles/PMC9726944/"
+    note: "Quy cho Jouault và cộng sự (2022)."
+  - id: C-4c
+    claim: "Ngầm định rằng việc Permi–Trias không phải đợt tuyệt chủng côn trùng duy nhất là đã thống nhất"
+    verdict: partially-supported
+    severity: S3
+    evidence: "https://pmc.ncbi.nlm.nih.gov/articles/PMC11368959/ (doi 10.1038/s41467-024-51671-5; Dal Corso et al. 2024)"
+    note: "Dal Corso 2024 viết 'the only known mass extinction among insects'. Hai nguồn bậc 1 dùng nhãn khác nhau — nêu như bất đồng, không phân xử (quy tắc 7)."
+  - id: C-5
+    claim: "Burgess, Bowring và Shen (2014): tổn thất sinh giới biển và trên cạn nặng nề nhất trong 542 triệu năm qua"
+    verdict: verified
+    severity: "—"
+    evidence: "https://pmc.ncbi.nlm.nih.gov/articles/PMC3948271/ (doi 10.1073/pnas.1317692111)"
+    note: "Tóm tắt: 'the most severe loss of marine and terrestrial biota in the last 542 My'. Lượt này mở được bản PMC; URL trong bảng nguồn nên đổi từ endpoint Crossref sang PMC."
+  - id: C-6
+    claim: "Hệ sinh thái biển phải mất khoảng 10 triệu năm mới hồi phục về mức đa dạng cũ"
+    verdict: partially-supported
+    severity: S3
+    evidence: "https://research-information.bris.ac.uk/en/publications/the-timing-and-pattern-of-biotic-recovery-following-the-end-permi/ (doi 10.1038/ngeo1475)"
+    note: "Chen & Benton 2012: 'Ammonoids and some other groups diversified rapidly, within 1-3 Myr ... a stable, complex ecosystem did not re-emerge until the beginning of the Middle Triassic, 8-9 Myr after the crisis'. Nguồn không cho '10 triệu năm' và không nói 'mức đa dạng cũ'."
+  - id: C-7
+    claim: "Siberian Traps 'được chấp nhận rộng rãi nhất hiện nay', phun trào 'trong khoảng vài trăm nghìn năm', trùng ranh giới 'ở độ chính xác vài chục nghìn năm'"
+    verdict: partially-supported
+    severity: S3
+    evidence: "https://pmc.ncbi.nlm.nih.gov/articles/PMC4643808/ (doi 10.1126/sciadv.1500470); https://pmc.ncbi.nlm.nih.gov/articles/PMC3948271/; https://doi.org/10.1186/s40645-019-0267-0"
+    note: "Burgess & Bowring 2015: 'about two-thirds of the total lava/pyroclastic volume was erupted over ~300 ky, before and concurrent with the end-Permian mass extinction; (ii) eruption of the balance of lavas continued for at least 500 ky after'. Burgess 2014: tuyệt chủng 'an interval of 60 ± 48 ka'. Onoue 2019: 'commonly favored cause, although the link between volcanism and extinction remains debated' — bài cũ bỏ vế dè dặt và thiếu mốc thời gian cho 'hiện nay'."
+  - id: C-8
+    claim: "Lượng dung nham khoảng 1–4 triệu km³; phun trào lớn nhất loài người ghi nhận 'hiếm khi vượt quá vài km³'"
+    verdict: contradicted
+    severity: S2
+    evidence: "https://pmc.ncbi.nlm.nih.gov/articles/PMC4643808/ (doi 10.1126/sciadv.1500470)"
+    note: "Burgess & Bowring 2015: 'Estimates of total magma volume range from ~1 × 10^6 km3 to more than 10 × 10^6 km3, with consensus settling somewhere between 2 × 10^6 and 5 × 10^6 km3'; 'Roughly 50% of this total volume is attributed to intrusive rocks'. Con số là tổng magma, không phải dung nham; khoảng 1–4 không nguồn nào cho. Câu so sánh 'vài km³' không nguồn và sai (Tambora 1815 lớn hơn nhiều) — cắt, không thay bằng số mới."
+  - id: C-9
+    claim: "Đồng vị oxy cho thấy nước biển nhiệt đới ấm lên khoảng 8–10 °C"
+    verdict: unverifiable
+    severity: S3
+    evidence: "https://pmc.ncbi.nlm.nih.gov/articles/PMC8449420/ (doi 10.1073/pnas.2014701118)"
+    note: "Joachimski 2012 (Geology) — abstract bị nhà xuất bản ẩn ở Crossref và Semantic Scholar, không mở được. Thay bằng số liệu của nguồn mở được, Cui 2021 (toàn văn PMC): '∼36,000 Gt C ... largely volcanic', 'This 13× increase in atmospheric CO2 causes global temperature to rise from 25 to 40 °C, in accordance with temperature proxy data based on well-preserved brachiopod shells', 'The degree of warming (>10 °C)'. Ghi rõ là kết quả mô hình."
+  - id: C-10
+    claim: "Axit hoá 'phá huỷ khả năng tạo vỏ canxi cacbonat của san hô, tay cuộn và nhiều nhóm khác'"
+    verdict: partially-supported
+    severity: S3
+    evidence: "https://pubmed.ncbi.nlm.nih.gov/25859043/ (doi 10.1126/science.aaa0193; Clarkson et al. 2015)"
+    note: "Clarkson 2015: pH 'remained stable' ở pha 1; ở pha 2 'a rapid and large injection of carbon caused an abrupt acidification event that drove the preferential loss of heavily calcified marine biota'; nguồn gọi axit hoá là 'a possible kill mechanism'. Không nguồn nào trong gói nêu tên san hô, tay cuộn."
+  - id: C-10b
+    claim: "Nước ấm giữ ít oxy hơn, tuần hoàn đại dương chậm lại; thiếu oxy trên diện rộng, nhiễm độc sunfua"
+    verdict: partially-supported
+    severity: S3
+    evidence: "https://pubmed.ncbi.nlm.nih.gov/30523082/ (doi 10.1126/science.aat1327); https://pubmed.ncbi.nlm.nih.gov/15661975/ (doi 10.1126/science.1104323)"
+    note: "Penn 2018: mô hình tái tạo 'the ocean warming and oxygen (O2) loss indicated by the geologic record', 'can account for more than half the magnitude of the Great Dying'. Grice 2005: euxinia ở Perth Basin và biển Nam Trung Quốc, 'sulfide toxicity was a driver of the extinction and a factor in the protracted recovery'. 'Tuần hoàn chậm lại' không nguồn — cắt."
+  - id: C-11
+    claim: "Magma đốt tầng than Tunguska, giải phóng thêm carbon cùng khí halogen phá huỷ tầng ozone"
+    verdict: contradicted
+    severity: S2
+    evidence: "https://pmc.ncbi.nlm.nih.gov/articles/PMC5537227/ (doi 10.1038/s41467-017-00083-9); https://pmc.ncbi.nlm.nih.gov/articles/PMC8449420/; https://pmc.ncbi.nlm.nih.gov/articles/PMC11368959/"
+    note: "Burgess 2017: sill xâm nhập 'the thick Tunguska basin, composed of evaporite, clastic, carbonate, and hydrocarbon-bearing rocks', 'likely liberating the massive greenhouse gas volumes'. Cui 2021: CO₂ 'largely volcanic (53 to 77%) with smaller contributions from coal combustion or thermogenic methane' — than chỉ là phần nhỏ. Tầng ozone: không mở được nguồn nào đỡ; Dal Corso 2024 'inconsistent with total ozone layer collapse'. Nói như sự thật là sai — cắt vế ozone, hạ vai trò than theo nguồn."
+  - id: C-12
+    claim: "Bốn cơ chế nối tiếp nhau, và đó là lý do cuộc tuyệt chủng kéo dài chứ không tức thời"
+    verdict: unsupported
+    severity: S3
+    evidence: "https://pmc.ncbi.nlm.nih.gov/articles/PMC3948271/"
+    note: "Nhân quả tự thêm; mâu thuẫn với khoảng 60 ± 48 nghìn năm của Burgess 2014. Cắt."
+  - id: C-13
+    claim: "Đầu những năm 2000, fullerene chứa heli-3 và argon-36 — 'đồng vị đặc trưng của vật chất ngoài Trái Đất'; giả thuyết 'được nhắc lại rộng rãi trong tài liệu phổ thông suốt hơn một thập niên'"
+    verdict: partially-supported
+    severity: S3
+    evidence: "https://pubmed.ncbi.nlm.nih.gov/11222855/ (doi 10.1126/science.1057243; Becker et al. 2001)"
+    note: "Becker 2001: 'trapped helium and argon with isotope ratios similar to the planetary component of carbonaceous chondrites', 'imply that an impact event (asteroidal or cometary) accompanied the extinction'. Nguồn nói tỉ lệ đồng vị, không nói ³He và ³⁶Ar tự thân là đặc trưng ngoài Trái Đất. Vế 'tài liệu phổ thông hơn một thập niên' không nguồn — cắt."
+  - id: C-14
+    claim: "Kết quả 'không lặp lại được'; 'nhiều phòng thí nghiệm độc lập phân tích cùng loại mẫu nhưng không tìm thấy tín hiệu tương tự'"
+    verdict: contradicted
+    severity: S2
+    evidence: "https://authors.library.caltech.edu/records/hj8xv-77674 (doi 10.1126/science.293.5539.2343a); https://authors.library.caltech.edu/records/gjzcq-3ha42 (doi 10.1016/j.epsl.2005.09.054); https://doi.org/10.1186/s40645-019-0267-0"
+    note: "Farley & Mukhopadhyay 2001: 'we are able to detect fullerene-hosted extraterrestrial 3He neither in aliquots of the same Meishan material analyzed by Becker et al., nor any in samples of a second Chinese PTB section'. Farley 2005: Opal Creek 'No extraterrestrial 3He was detected'; tín hiệu Graphite Peak — 'Recent contamination provides a plausible explanation'; và tự ghi 'contrasts sharply with reports ... at other sections'. Onoue 2019 TÌM THẤY '3He influx' ngoài Trái Đất tăng — diễn giải là bụi liên hành tinh, 'likely related to an asteroid shower', đỉnh 'during the final 500 kyr of the Permian'. Phân tích lại là của một nhóm, và có một nhóm thấy tín hiệu — câu cũ sai ở cả hai vế. Sửa thành mô tả đúng từng nghiên cứu."
+  - id: C-14b
+    claim: "'một kết quả gây tiếng vang vẫn có thể bị loại bỏ nếu không ai lặp lại được nó'"
+    verdict: partially-supported
+    severity: S3
+    evidence: "https://authors.library.caltech.edu/records/hj8xv-77674; https://doi.org/10.1186/s40645-019-0267-0"
+    note: "'Không ai' rộng hơn điều nguồn cho phép. Giữ bài học phương pháp, bỏ phủ định tuyệt đối."
+  - id: C-15
+    claim: "Hố Bedout 'không được cộng đồng địa chất công nhận'; ranh giới 'không có lớp iridium toàn cầu, không có thạch anh sốc, không có hố va chạm'"
+    verdict: unverifiable
+    severity: S3
+    evidence: "https://pubmed.ncbi.nlm.nih.gov/15143216/ (doi 10.1126/science.1093925); PMID 15498993, 15498994 (doi 10.1126/science.306.5696.610), 15498996; https://pubmed.ncbi.nlm.nih.gov/17732040/ (doi 10.1126/science.233.4767.984)"
+    note: "Không mở được tổng quan nào nói đúng ba phủ định tuyệt đối. Chỉ giữ điều kiểm được: Becker 2004 đề xuất Bedout; ba bình luận kỹ thuật cùng năm trên Science (Wignall et al., Renne et al. 'Is Bedout an impact crater?', Glikson) — chỉ đọc được metadata, nên bài chỉ viết 'bị chất vấn', không viết 'bị bác'; Clark 1986: iridium ở Nam Trung Quốc thấp, 'do not support the proposal of an extraterrestrial impact event at this boundary in China'. So sánh với bộ bằng chứng K–Pg bị cắt."
+  - id: C-16
+    claim: "Mục Pangaea: thềm lục địa nông giảm mạnh, khí hậu cực đoan, tuần hoàn đơn giản hoá; 'một hành tinh có đất liền gộp thành một khối là hành tinh có hệ sinh thái kém bền hơn'"
+    verdict: unsupported
+    severity: S3
+    evidence: "—"
+    note: "Không nguồn nào trong lượt này đỡ; câu kết là khái quát tự dựng. Cắt cả mục (quy tắc 8)."
+  - id: C-17
+    claim: "Bọ ba thuỳ tồn tại 270 triệu năm; therapsid 'đang trên đường tiến hoá thành động vật có vú'; archosaur rồi khủng long thống trị 165 triệu năm; động vật có vú 'chờ tới lượt mình sau vụ tuyệt chủng kế tiếp'"
+    verdict: contradicted
+    severity: S2
+    evidence: "https://pmc.ncbi.nlm.nih.gov/articles/PMC10584673/ (doi 10.1038/s41586-023-06567-7); https://pmc.ncbi.nlm.nih.gov/articles/PMC6015845/ (doi 10.1098/rspb.2018.0361); https://research-information.bris.ac.uk/en/publications/the-timing-and-pattern-of-biotic-recovery-following-the-end-permi/"
+    note: "Kraft 2023: 'their 270-million-year-long history from the early Cambrian period to the end Permian period' — giữ. Ezcurra & Butler 2018: 'the previously obscure archosauromorphs (which include crocodylians, dinosaurs and birds) become the dominant terrestrial vertebrates' — giữ theo đúng tên nhóm. 'Vụ tuyệt chủng kế tiếp' là cuối Trias, còn động vật có vú lên ngôi sau Creta–Paleogene — sai, cắt. 'Therapsid trên đường thành động vật có vú' (mục đích luận, không nguồn) và '165 triệu năm' (không nguồn) — cắt."
+  - id: C-18
+    claim: "Cơ chế chính là bơm carbon vào khí quyển — điều loài người đang làm, 'chỉ nhanh hơn nhiều bậc'"
+    verdict: contradicted
+    severity: S2
+    evidence: "https://pmc.ncbi.nlm.nih.gov/articles/PMC8449420/ (doi 10.1073/pnas.2014701118)"
+    note: "Cui 2021, toàn văn: 'a maximum emission rate of 4.5 Gt C yr−1 ..., roughly half the size of current carbon emission rate'. Tốc độ hôm nay cỡ gấp đôi, không phải 'nhiều bậc độ lớn'. Giữ phép so sánh theo đúng con số của nguồn; đổi 'cơ chế chính' thành 'một trong những cơ chế được ủng hộ nhiều nhất' vì Penn 2018 và Clarkson 2015 nêu cơ chế khác."
+  - id: C-19
+    claim: "Summary: 'Thủ phạm không phải một thiên thạch mà là một vùng núi lửa'"
+    verdict: partially-supported
+    severity: S3
+    evidence: "https://doi.org/10.1186/s40645-019-0267-0; https://pmc.ncbi.nlm.nih.gov/articles/PMC4643808/"
+    note: "Summary chắc hơn thân bài và bỏ vế 'vẫn còn tranh luận' của Onoue 2019. Thêm 'được nhiều nhà khoa học ủng hộ nhất' ở cả summary vi và en."
+  - id: C-19b
+    claim: "'Dung nham không phải thứ giết chóc. Thứ giết chóc là những gì đi kèm'"
+    verdict: partially-supported
+    severity: S3
+    evidence: "https://pmc.ncbi.nlm.nih.gov/articles/PMC4643808/"
+    note: "Burgess & Bowring 2015: 'Magmatism is hypothesized to have caused rapid injection of massive amounts of greenhouse gases'. Giữ ngữ thái giả thuyết."
+  - id: C-20
+    claim: "Mở bài: vụ Permi 'suýt xoá sạch sự sống phức tạp khỏi hành tinh này'"
+    verdict: contradicted
+    severity: S2
+    evidence: "https://pmc.ncbi.nlm.nih.gov/articles/PMC5081622/ (doi 10.1073/pnas.1613094113)"
+    note: "Chính nguồn của bài, Stanley 2016: 'About 90 orders and more than 220 families of marine animals survived ... Life did not nearly disappear at the end of the Permian, as has often been claimed'. Hình dạng 'hai nguồn đánh nhau, bài chọn câu tiện hơn' (content-rules) — ở đây là bài đánh nhau với chính nguồn của nó."
+  - id: C-21
+    claim: "Mở bài: vụ tuyệt chủng 66 triệu năm trước do một tiểu hành tinh chấm dứt triều đại khủng long"
+    verdict: partially-supported
+    severity: S4
+    evidence: "https://pubmed.ncbi.nlm.nih.gov/20203042/ (doi 10.1126/science.1177265; Schulte et al. 2010)"
+    note: "Schulte 2010: 'The Cretaceous-Paleogene boundary approximately 65.5 million years ago ...', 'the Chicxulub impact triggered the mass extinction'. Nguyên nhân đúng nguồn. Niên đại 66,0 của ICS hiện hành chưa trích được chữ trong lượt này; chênh 0,5 triệu năm nằm trong 'khoảng'. Không sửa."
+  - id: C-22
+    claim: "contentEn và summaryEn: '252 million years', 'about 80% of marine species', 'the only time in history that insects also suffered a mass extinction', 'No other event in the past 540 million years'"
+    verdict: contradicted
+    severity: S1
+    evidence: "https://pmc.ncbi.nlm.nih.gov/articles/PMC7080820/; https://pmc.ncbi.nlm.nih.gov/articles/PMC5081622/; https://pmc.ncbi.nlm.nih.gov/articles/PMC9726944/; https://pmc.ncbi.nlm.nih.gov/articles/PMC3948271/"
+    note: "Lượt vá 17/09 chỉ sửa bản vi (và summary vi). Bản tiếng Anh đang xuất bản vẫn mang bốn claim đã bị đính chính — trong đó 'only time' bị Jouault 2022 bác trực tiếp — và bảng nguồn hiện tại không đỡ chúng. Bản en phải mang cùng claim với bản vi: enEdits C-1, C-2, C-4, C-5 và summaryEnEdits C-1."
+  - id: C-23
+    claim: "Tiêu đề 'lần sự sống suýt biến mất' / 'when life nearly ended'; SEO description '252 triệu năm ... khoảng 80%'"
+    verdict: contradicted
+    severity: S2
+    evidence: "https://pmc.ncbi.nlm.nih.gov/articles/PMC5081622/; https://pmc.ncbi.nlm.nih.gov/articles/PMC3948271/"
+    note: "Cùng lỗi với C-20, ở vị trí nặng nhất. Đề xuất 'Đại tuyệt chủng Permi: cuộc khủng hoảng lớn nhất của sự sống' / 'The Permian extinction: life's greatest crisis' — đỡ bởi Burgess 2014 'the most severe loss ... in the last 542 My', không mang ước lượng điểm (content-rules, 'Ước lượng điểm không đặt vào tiêu đề'). SEO description chưa nhận đính chính 17/09. Nằm ở titleEdits — ngoài schema script áp."
+fixes:
+  - "Áp fixes/dai-tuyet-chung-permi-lan-su-song-suyt-bien-mat.json: 22 edit vi, 21 edit en, 1 summaryEdit, 1 summaryEnEdit, titleEdits (4 trường), thêm 17 nguồn bậc 1."
+  - "Đổi URL nguồn Burgess, Bowring & Shen 2014 từ endpoint Crossref sang https://pmc.ncbi.nlm.nih.gov/articles/PMC3948271/."
+  - "Ghi các dòng corrections vào docs/content/corrections.md; bản Revision chụp trước khi sửa, cùng transaction; cập nhật lastVerifiedAt; gán reviewer (tài khoản tổ chức) + reviewedAt sau khi áp."
+patternNotes:
+  - "Lượt vá theo find/replace chỉ chạm bản vi: cả bốn đính chính S1/S2 của 17/09 không tới contentEn/summaryEn, và bản en live vẫn mang claim đã bị bác. Script áp đính chính phải từ chối kế hoạch có edits mà không có enEdits tương ứng."
+  - "Bài mâu thuẫn với chính nguồn của nó (Stanley 2016 bác 'sự sống suýt biến mất' — nằm ở tiêu đề). Kiểm câu kết luận của mỗi nguồn đã gắn, không chỉ câu có con số."

@@ -1,0 +1,281 @@
+{
+  "slug": "he-mien-dich-nhan-dien-mot-virus-bang-cach-nao",
+  "edits": [
+    {
+      "claimId": "C-1",
+      "severity": "S4",
+      "find": "Giải pháp tiến hoá là hai hệ thống bổ sung cho nhau.",
+      "replace": "Cơ thể làm việc đó bằng hai tuyến phòng thủ bổ sung cho nhau: miễn dịch bẩm sinh và miễn dịch thích ứng.",
+      "why": "\"Giải pháp tiến hoá\" là khung nhân quả tiến hoá không nguồn nào trong bảng nguồn đưa ra (hình dạng 'nhân quả tự thêm'). Nguồn chỉ nói có hai tuyến phòng thủ cơ bản.",
+      "evidence": "Marshall và cộng sự 2018, Allergy Asthma Clin Immunol 14(Suppl 2):49, doi 10.1186/s13223-018-0278-1 (toàn văn PMC6156898), abstract: \"the immune system has two fundamental lines of defense: innate immunity and adaptive immunity\"."
+    },
+    {
+      "claimId": "C-4",
+      "severity": "S3",
+      "find": "ví dụ RNA sợi đôi, thứ hầu như chỉ xuất hiện khi virus đang nhân lên trong tế bào.",
+      "replace": "ví dụ RNA sợi đôi, thứ được tạo ra trong tế bào khi phần lớn các nhóm virus nhân lên — dù một nghiên cứu năm 2006 không phát hiện được RNA sợi đôi ở các virus RNA sợi âm được khảo sát.",
+      "why": "Khái quát quá mức: nghiên cứu hệ thống duy nhất về việc virus nào tạo dsRNA cho thấy đây là đặc điểm của phần lớn nhóm virus nhưng KHÔNG thấy ở virus RNA sợi âm — tức giả định 'mọi virus nhân lên đều tạo dsRNA' là sai.",
+      "evidence": "Weber và cộng sự 2006, J Virol 80:5059–5064, doi 10.1128/JVI.80.10.5059-5064.2006, abstract: \"It is widely assumed that the generation of dsRNA during genome replication is a trait shared by all viruses ... no dsRNA signals were detected for negative-strand RNA viruses ... dsRNA is indeed a general feature of most virus groups, but negative-strand RNA viruses appear to be an exception\". Bổ trợ: Marshall và cộng sự 2018, Allergy Asthma Clin Immunol 14(Suppl 2):49, doi 10.1186/s13223-018-0278-1 (toàn văn PMC6156898): \"double-stranded ribonucleic acid (RNA) produced during viral infection\"."
+    },
+    {
+      "claimId": "C-6",
+      "severity": "S3",
+      "find": "Chậm hơn — mất 5–10 ngày cho lần gặp đầu tiên — nhưng đặc hiệu và có trí nhớ.",
+      "replace": "Chậm hơn tuyến một — có độ trễ từ vài giờ tới vài ngày — nhưng đặc hiệu và có trí nhớ.",
+      "why": "Khoảng 5–10 ngày không có trong bất kỳ nguồn nào đã mở. Số không nguồn thì bỏ, không làm mềm; thay bằng đúng mô tả của tổng quan bình duyệt.",
+      "evidence": "Marshall và cộng sự 2018, Allergy Asthma Clin Immunol 14(Suppl 2):49, doi 10.1186/s13223-018-0278-1 (toàn văn PMC6156898), Bảng 4 \"Response time\": innate \"Immediate\"; adaptive \"Delayed by hours to days\"."
+    },
+    {
+      "claimId": "C-9",
+      "severity": "S2",
+      "find": "Mỗi tế bào B và T mang một thụ thể duy nhất, được tạo ra bằng cách tái tổ hợp ngẫu nhiên các đoạn [[gen]] (cơ chế V(D)J). Quá trình này sinh ra khoảng 10¹¹ biến thể khác nhau — đủ để, với gần như mọi phân tử lạ, tồn tại sẵn một tế bào có thụ thể khớp với nó.",
+      "replace": "Mỗi tế bào B và T mang một loại thụ thể riêng, được lắp ráp bằng cách tái tổ hợp các đoạn [[gen]] (cơ chế V(D)J). Kho thụ thể tạo ra theo cách này cực kỳ đa dạng: riêng với kháng thể, kho nguyên sơ ở người được ước tính có ít nhất 10¹² loại khác nhau, và một nghiên cứu năm 2019 ước tính độ đa dạng kháng thể có thể lên tới khoảng 10¹⁶–10¹⁸ — trong khi một người trưởng thành chỉ có cỡ 5 × 10⁹ tế bào B trong máu, nên các tế bào B lưu hành chỉ mang một phần nhỏ của sự đa dạng ấy. Nhờ kho lớn này mà về nguyên tắc, trong bối cảnh phù hợp, con người có thể tạo đáp ứng kháng thể với bất kỳ phân tử lạ nào.",
+      "why": "(1) Con số 10¹¹ không nguồn và đã lỗi thời: nguồn bình duyệt gần đây dẫn ít nhất 10¹² cho kho nguyên sơ và ước tính 10¹⁶–10¹⁸ — lệch 1 đến 7 bậc độ lớn; lại bị gán chung cho cả B và T trong khi các ước tính này là của kháng thể. (2) \"với gần như mọi phân tử lạ, tồn tại sẵn một tế bào khớp\" khẳng định mạnh hơn nguồn: nguồn nói 'về nguyên tắc ... trong bối cảnh phù hợp' và chính nguồn nhấn mạnh tế bào B lưu hành chỉ lấy mẫu một phần nhỏ kho tiềm năng. (3) Bỏ \"ngẫu nhiên\" vì nguồn đã mở không mô tả tái tổ hợp như vậy; giữ \"một loại thụ thể riêng\" theo đúng chữ 'unique antigen-binding receptor'.",
+      "evidence": "Briney và cộng sự 2019, Nature 566:393–397, doi 10.1038/s41586-019-0879-y (toàn văn PMC6411386): abstract \"In principle, humans can produce an antibody response to any non-self-antigen molecule in the appropriate context ... The diversity of the naive antibody repertoire in humans is estimated to be at least 10^12 unique antibodies ... the number of peripheral blood B cells in a healthy adult human is on the order of 5 × 10^9, the circulating B cell population samples only a small fraction of this diversity\"; toàn văn: \"the paired antibody diversity available to the circulating repertoire is very large, perhaps in the region of 10^16–10^18 unique antibody sequences\". Schatz & Ji 2011, Nat Rev Immunol 11:251–263, doi 10.1038/nri2941, abstract: V(D)J recombination khởi đầu bởi RAG1/RAG2 để lắp ráp gen thụ thể kháng nguyên. Marshall và cộng sự 2018, Allergy Asthma Clin Immunol 14(Suppl 2):49, doi 10.1186/s13223-018-0278-1 (toàn văn PMC6156898): B cells leave the marrow \"expressing a unique antigen-binding receptor\"; T cells \"express a series of unique antigen-binding receptors ... the T-cell receptor\"."
+    },
+    {
+      "claimId": "C-12",
+      "severity": "S4",
+      "find": "cơ thể không thiết kế kháng thể theo yêu cầu, nó chọn ra sẵn cái phù hợp rồi khuếch đại lên.",
+      "replace": "cơ thể không thiết kế kháng thể theo yêu cầu, nó chọn ra sẵn cái phù hợp rồi khuếch đại lên. Đây là cách nói giản lược: sau khi gặp kháng nguyên, kháng thể của tế bào B còn được đa dạng hoá thêm nhờ đột biến soma.",
+      "why": "Giản lược mất thông tin (quy tắc 'simplify without falsifying'): 'chọn sẵn rồi khuếch đại' bỏ qua bước đột biến soma sau khi tiếp xúc kháng nguyên. Nói rõ chỗ giản lược thay vì để người đọc hiểu kháng thể không đổi.",
+      "evidence": "Briney và cộng sự 2019, Nature 566:393–397, doi 10.1038/s41586-019-0879-y (toàn văn PMC6411386), abstract: \"a large repertoire of naive antibodies, the diversity of which is expanded by somatic hypermutation following antigen exposure\". Phần chọn lọc dòng: Marshall và cộng sự 2018, Allergy Asthma Clin Immunol 14(Suppl 2):49, doi 10.1186/s13223-018-0278-1 (toàn văn PMC6156898): \"When activated by foreign antigens to which they have an appropriate antigen specific receptor, B cells undergo proliferation\"; \"Clonal expansion of cytotoxic T cells produces effector cells\"."
+    },
+    {
+      "claimId": "C-13",
+      "severity": "S4",
+      "find": "Đây là số đo ở vaccine đậu mùa, không mặc nhiên đúng cho mọi mầm bệnh.",
+      "replace": "Đây là số đo ở vaccine đậu mùa, không mặc nhiên đúng cho mọi mầm bệnh. Độ bền cũng khác nhau theo kháng nguyên: trong một nghiên cứu theo dõi 45 người tới 26 năm, chu kỳ bán rã ước tính của kháng thể là khoảng 50 năm với virus thuỷ đậu–zona, trên 200 năm với sởi và quai bị, nhưng chỉ 11 năm với uốn ván và 19 năm với bạch hầu.",
+      "why": "Nguồn Amanna 2007 đã có trong bảng nguồn nhưng không câu nào trong bài dùng tới. Gắn nó vào đúng chỗ để câu dè dặt 'không mặc nhiên đúng cho mọi mầm bệnh' có số liệu đỡ, thay vì chỉ là lời rào.",
+      "evidence": "Amanna, Carlson & Slifka 2007, NEJM 357:1903–1915, doi 10.1056/NEJMoa066092, abstract: \"45 subjects for a period of up to 26 years ... half-lives ranging from an estimated 50 years for varicella-zoster virus to more than 200 years for other viruses such as measles and mumps. Antibody responses against tetanus and diphtheria antigens waned more quickly, with estimated half-lives of 11 years and 19 years\"."
+    },
+    {
+      "claimId": "C-14",
+      "severity": "S3",
+      "find": "Lần gặp thứ hai, phản ứng diễn ra trong 1–3 ngày thay vì 5–10 ngày và mạnh hơn nhiều.",
+      "replace": "Lần gặp thứ hai, phản ứng diễn ra nhanh hơn và hiệu quả hơn lần đầu.",
+      "why": "Hai khoảng 1–3 ngày và 5–10 ngày không có nguồn đã mở; 'mạnh hơn nhiều' nâng mức so với nguồn. Bỏ số, giữ đúng chữ của nguồn.",
+      "evidence": "Marshall và cộng sự 2018, Allergy Asthma Clin Immunol 14(Suppl 2):49, doi 10.1186/s13223-018-0278-1 (toàn văn PMC6156898): adaptive memory \"enables the host to mount a more rapid and efficient immune response upon subsequent exposure to the antigen\". Crotty và cộng sự 2003, J Immunol, doi 10.4049/jimmunol.171.10.4969: memory B cells \"able to mount a robust anamnestic Ab response upon revaccination\"."
+    },
+    {
+      "claimId": "C-15",
+      "severity": "S3",
+      "find": "Vaccine khai thác đúng cơ chế này: đưa vào một phần mầm bệnh không gây bệnh ([[protein]] bề mặt, virus bất hoạt, hoặc mRNA mã hoá protein đó) để hệ miễn dịch tạo trí nhớ mà không phải trải qua đợt bệnh thật.",
+      "replace": "Vaccine khai thác đúng cơ chế này: bắt chước một lần nhiễm trùng để hệ miễn dịch tạo trí nhớ mà không phải trải qua đợt bệnh thật. Vaccine có thể chứa mầm bệnh sống đã giảm độc lực, mầm bệnh bất hoạt, hoặc chỉ một số [[protein]] hay carbohydrate đặc hiệu của mầm bệnh; vaccine mRNA thì đưa vào chỉ dẫn để chính tế bào của cơ thể tạo ra protein kháng nguyên. Miễn dịch có thể mất vài tuần mới hình thành sau khi tiêm.",
+      "why": "Nội dung vaccine (lĩnh vực nhạy cảm) không có nguồn. Danh sách cũ bỏ sót vaccine sống giảm độc lực — đúng loại của vaccine sởi mà bài nhắc ngay đoạn sau — và gọi mRNA là 'một phần mầm bệnh' (sai: mRNA là chỉ dẫn để tế bào tự tạo protein). Viết lại theo nguồn bậc 1–2, thêm mốc 'vài tuần' của CDC để người đọc không hiểu là tiêm xong có miễn dịch ngay.",
+      "evidence": "CDC, \"Explaining How Vaccines Work\", https://www.cdc.gov/vaccines/basics/explaining-how-vaccines-work.html: \"Vaccines work by imitating an infection ... to engage the body's natural defenses\"; \"immunity can take weeks to develop after vaccination\". Marshall và cộng sự 2018, Allergy Asthma Clin Immunol 14(Suppl 2):49, doi 10.1186/s13223-018-0278-1 (toàn văn PMC6156898): immunity acquired via \"a vaccine that can consist of attenuated (weakened) pathogens, inactivated organisms or specific proteins or carbohydrates known to induce immunity\". Pardi và cộng sự 2018, Nat Rev Drug Discov 17:261–279, doi 10.1038/nrd.2017.243 (PMC5906799): \"Once the mRNA transits to the cytosol, the cellular translation machinery produces protein\"."
+    },
+    {
+      "claimId": "C-16",
+      "severity": "S4",
+      "find": "đó là lý do vaccine cúm được cập nhật hằng năm, khác với vaccine sởi vốn hiệu quả gần như trọn đời.",
+      "replace": "đó là lý do chính khiến thành phần vaccine cúm được xem xét lại hằng năm và cập nhật khi cần. Vaccine sởi thì khác: theo CDC, hai liều MMR hiệu quả 97% trong phòng sởi, và phần lớn người đã tiêm được bảo vệ suốt đời.",
+      "why": "Khớp đúng chữ của CDC: thành phần vaccine cúm 'reviewed annually and updated as needed', không phải 'cập nhật hằng năm' vô điều kiện. 'Gần như trọn đời' thay bằng con số và mức dè dặt của CDC ('most people ... protected for life').",
+      "evidence": "CDC, \"How Flu Viruses Can Change: 'Drift' and 'Shift'\", https://www.cdc.gov/flu/php/viruses/change.html: \"Antigenic drift is also a primary reason why the composition of flu vaccines ... is reviewed annually and updated as needed\"; \"a person's existing antibodies won't effectively recognize and neutralize the antigenically different flu viruses\". CDC, \"Measles Vaccination\", https://www.cdc.gov/measles/vaccines/index.html: two doses \"97% effective against measles\"; \"Most people who are vaccinated with MMR or MMRV will be protected for life\"."
+    }
+  ],
+  "enEdits": [
+    {
+      "claimId": "C-1",
+      "severity": "S4",
+      "find": "The evolutionary solution is two complementary systems.",
+      "replace": "The body does this with two complementary lines of defence: innate immunity and adaptive immunity.",
+      "why": "Mirror of vi C-1.",
+      "evidence": "Marshall và cộng sự 2018, Allergy Asthma Clin Immunol 14(Suppl 2):49, doi 10.1186/s13223-018-0278-1 (toàn văn PMC6156898), abstract: \"the immune system has two fundamental lines of defense: innate immunity and adaptive immunity\"."
+    },
+    {
+      "claimId": "C-4",
+      "severity": "S3",
+      "find": "for example, double-stranded RNA, which almost only appears when a virus is replicating inside a cell.",
+      "replace": "for example, double-stranded RNA, which is produced inside cells when most groups of viruses replicate—although a 2006 study detected no double-stranded RNA for the negative-strand RNA viruses it examined.",
+      "why": "Mirror of vi C-4.",
+      "evidence": "Weber và cộng sự 2006, J Virol 80:5059–5064, doi 10.1128/JVI.80.10.5059-5064.2006, abstract: \"It is widely assumed that the generation of dsRNA during genome replication is a trait shared by all viruses ... no dsRNA signals were detected for negative-strand RNA viruses ... dsRNA is indeed a general feature of most virus groups, but negative-strand RNA viruses appear to be an exception\". Bổ trợ: Marshall và cộng sự 2018, Allergy Asthma Clin Immunol 14(Suppl 2):49, doi 10.1186/s13223-018-0278-1 (toàn văn PMC6156898): \"double-stranded ribonucleic acid (RNA) produced during viral infection\"."
+    },
+    {
+      "claimId": "C-6",
+      "severity": "S3",
+      "find": "Slower—taking 5–10 days for the first encounter—but specific and possessing memory.",
+      "replace": "Slower than the first line—delayed by hours to days—but specific and possessing memory.",
+      "why": "Mirror of vi C-6.",
+      "evidence": "Marshall và cộng sự 2018, Allergy Asthma Clin Immunol 14(Suppl 2):49, doi 10.1186/s13223-018-0278-1 (toàn văn PMC6156898), Bảng 4 \"Response time\": innate \"Immediate\"; adaptive \"Delayed by hours to days\"."
+    },
+    {
+      "claimId": "C-9",
+      "severity": "S2",
+      "find": "Each B and T cell carries a unique receptor, created by the random recombination of gene segments (V(D)J mechanism). This process generates about 10¹¹ different variants—enough so that, for almost any foreign molecule, a cell with a matching receptor already exists.",
+      "replace": "Each B and T cell carries its own type of receptor, assembled by recombining gene segments (V(D)J mechanism). The resulting repertoire is enormously diverse: for antibodies alone, the naive human repertoire is estimated at no fewer than 10¹² distinct antibodies, and a 2019 study estimated that antibody diversity may reach around 10¹⁶–10¹⁸—while an adult has only about 5 × 10⁹ B cells in the blood, so circulating B cells carry only a small fraction of that diversity. Thanks to this large repertoire, humans can in principle, in the appropriate context, produce an antibody response to any foreign molecule.",
+      "why": "Mirror of vi C-9.",
+      "evidence": "Briney và cộng sự 2019, Nature 566:393–397, doi 10.1038/s41586-019-0879-y (toàn văn PMC6411386): abstract \"In principle, humans can produce an antibody response to any non-self-antigen molecule in the appropriate context ... The diversity of the naive antibody repertoire in humans is estimated to be at least 10^12 unique antibodies ... the number of peripheral blood B cells in a healthy adult human is on the order of 5 × 10^9, the circulating B cell population samples only a small fraction of this diversity\"; toàn văn: \"the paired antibody diversity available to the circulating repertoire is very large, perhaps in the region of 10^16–10^18 unique antibody sequences\". Schatz & Ji 2011, Nat Rev Immunol 11:251–263, doi 10.1038/nri2941, abstract: V(D)J recombination khởi đầu bởi RAG1/RAG2 để lắp ráp gen thụ thể kháng nguyên. Marshall và cộng sự 2018, Allergy Asthma Clin Immunol 14(Suppl 2):49, doi 10.1186/s13223-018-0278-1 (toàn văn PMC6156898): B cells leave the marrow \"expressing a unique antigen-binding receptor\"; T cells \"express a series of unique antigen-binding receptors ... the T-cell receptor\"."
+    },
+    {
+      "claimId": "C-12",
+      "severity": "S4",
+      "find": "it selects an existing suitable one and amplifies it.",
+      "replace": "it selects an existing suitable one and amplifies it. This is a simplification: after meeting the antigen, B-cell antibodies are further diversified by somatic hypermutation.",
+      "why": "Mirror of vi C-12.",
+      "evidence": "Briney và cộng sự 2019, Nature 566:393–397, doi 10.1038/s41586-019-0879-y (toàn văn PMC6411386), abstract: \"a large repertoire of naive antibodies, the diversity of which is expanded by somatic hypermutation following antigen exposure\". Phần chọn lọc dòng: Marshall và cộng sự 2018, Allergy Asthma Clin Immunol 14(Suppl 2):49, doi 10.1186/s13223-018-0278-1 (toàn văn PMC6156898): \"When activated by foreign antigens to which they have an appropriate antigen specific receptor, B cells undergo proliferation\"; \"Clonal expansion of cytotoxic T cells produces effector cells\"."
+    },
+    {
+      "claimId": "C-13",
+      "severity": "S3",
+      "find": "After an infection ends, most effector cells die off, but a group of memory B and T cells persists—potentially for decades. Upon a second encounter, the response occurs within 1–3 days instead of 5–10 days and is much stronger.",
+      "replace": "After an infection ends, most effector cells die off, but a group of memory B and T cells persists—potentially for decades. In people vaccinated against smallpox, virus-specific memory B cells were still detected more than 50 years later, while T-cell responses declined slowly with an estimated half-life of 8–15 years. These are measurements for smallpox vaccination and do not automatically apply to every pathogen. Durability also varies by antigen: in a study following 45 people for up to 26 years, estimated antibody half-lives were about 50 years for varicella-zoster virus and more than 200 years for measles and mumps, but only 11 years for tetanus and 19 years for diphtheria. Upon a second encounter, the response is faster and more efficient than the first time.",
+      "why": "The en body never received the 2026-09-17 S1 fix (smallpox sentences exist only in vi), so en still carried the 'decades' claim with no support. This one edit brings en in line with vi C-13 (17/09 fix + Amanna) and C-14 (numbers removed).",
+      "evidence": "Crotty và cộng sự 2003, J Immunol, doi 10.4049/jimmunol.171.10.4969: \"smallpox vaccine-specific memory B cells last for >50 years\". Hammarlund và cộng sự 2003, Nat Med, doi 10.1038/nm917: \"antiviral T-cell responses declined slowly, with a half-life of 8-15 years\". Amanna, Carlson & Slifka 2007, NEJM 357:1903–1915, doi 10.1056/NEJMoa066092, abstract: \"45 subjects for a period of up to 26 years ... half-lives ranging from an estimated 50 years for varicella-zoster virus to more than 200 years for other viruses such as measles and mumps. Antibody responses against tetanus and diphtheria antigens waned more quickly, with estimated half-lives of 11 years and 19 years\". Marshall và cộng sự 2018, Allergy Asthma Clin Immunol 14(Suppl 2):49, doi 10.1186/s13223-018-0278-1 (toàn văn PMC6156898): adaptive memory \"enables the host to mount a more rapid and efficient immune response upon subsequent exposure to the antigen\". Crotty và cộng sự 2003, J Immunol, doi 10.4049/jimmunol.171.10.4969: memory B cells \"able to mount a robust anamnestic Ab response upon revaccination\"."
+    },
+    {
+      "claimId": "C-15",
+      "severity": "S3",
+      "find": "Vaccines exploit this exact mechanism: introducing a non-pathogenic part of the pathogen (surface [[protein|proteins]], inactivated viruses, or mRNA encoding that protein) so the immune system creates memory without the person having to go through the actual illness.",
+      "replace": "Vaccines exploit this exact mechanism: they imitate an infection so the immune system creates memory without the person having to go through the actual illness. A vaccine may contain a weakened (attenuated) live pathogen, an inactivated pathogen, or only specific [[protein|proteins]] or carbohydrates from it; an mRNA vaccine instead delivers instructions for the body's own cells to make the antigen protein. Immunity can take weeks to develop after vaccination.",
+      "why": "Mirror of vi C-15.",
+      "evidence": "CDC, \"Explaining How Vaccines Work\", https://www.cdc.gov/vaccines/basics/explaining-how-vaccines-work.html: \"Vaccines work by imitating an infection ... to engage the body's natural defenses\"; \"immunity can take weeks to develop after vaccination\". Marshall và cộng sự 2018, Allergy Asthma Clin Immunol 14(Suppl 2):49, doi 10.1186/s13223-018-0278-1 (toàn văn PMC6156898): immunity acquired via \"a vaccine that can consist of attenuated (weakened) pathogens, inactivated organisms or specific proteins or carbohydrates known to induce immunity\". Pardi và cộng sự 2018, Nat Rev Drug Discov 17:261–279, doi 10.1038/nrd.2017.243 (PMC5906799): \"Once the mRNA transits to the cytosol, the cellular translation machinery produces protein\"."
+    },
+    {
+      "claimId": "C-16",
+      "severity": "S4",
+      "find": "this is why the flu vaccine is updated annually, unlike the measles vaccine which is effective for nearly a lifetime.",
+      "replace": "this is a primary reason why the composition of the flu vaccine is reviewed every year and updated as needed. The measles vaccine is different: according to the CDC, two doses of MMR are 97% effective against measles, and most people who are vaccinated are protected for life.",
+      "why": "Mirror of vi C-16.",
+      "evidence": "CDC, \"How Flu Viruses Can Change: 'Drift' and 'Shift'\", https://www.cdc.gov/flu/php/viruses/change.html: \"Antigenic drift is also a primary reason why the composition of flu vaccines ... is reviewed annually and updated as needed\"; \"a person's existing antibodies won't effectively recognize and neutralize the antigenically different flu viruses\". CDC, \"Measles Vaccination\", https://www.cdc.gov/measles/vaccines/index.html: two doses \"97% effective against measles\"; \"Most people who are vaccinated with MMR or MMRV will be protected for life\"."
+    }
+  ],
+  "summaryEdits": [
+    {
+      "claimId": "C-18",
+      "severity": "S3",
+      "find": "một tuyến phản ứng tức thì với mọi thứ lạ",
+      "replace": "một tuyến phản ứng nhanh với những đặc trưng chung của mầm bệnh",
+      "why": "'Tức thì' và 'mọi thứ lạ' đều vượt nguồn: miễn dịch bẩm sinh khởi động trong vài phút tới vài giờ và nhận diện khuôn mẫu phân tử chung của mầm bệnh (PAMP), không phải mọi thứ lạ. Summary còn mâu thuẫn với chính thân bài ('vài phút tới vài giờ').",
+      "evidence": "Marshall và cộng sự 2018, Allergy Asthma Clin Immunol 14(Suppl 2):49, doi 10.1186/s13223-018-0278-1 (toàn văn PMC6156898): innate response \"initiated within minutes or hours\"; PRRs detect \"pathogens that share common structures, known as pathogen associated molecular patterns\"."
+    }
+  ],
+  "summaryEnEdits": [
+    {
+      "claimId": "C-18",
+      "severity": "S3",
+      "find": "one reacts instantly to anything foreign",
+      "replace": "one reacts quickly to molecular features shared by many pathogens",
+      "why": "Mirror of vi C-18.",
+      "evidence": "Marshall và cộng sự 2018, Allergy Asthma Clin Immunol 14(Suppl 2):49, doi 10.1186/s13223-018-0278-1 (toàn văn PMC6156898): innate response \"initiated within minutes or hours\"; PRRs detect \"pathogens that share common structures, known as pathogen associated molecular patterns\"."
+    }
+  ],
+  "seoDescriptionEdits": [
+    {
+      "claimId": "C-18",
+      "severity": "S3",
+      "find": "một tuyến phản ứng tức thì với mọi thứ lạ",
+      "replace": "một tuyến phản ứng nhanh với những đặc trưng chung của mầm bệnh",
+      "why": "'Tức thì' và 'mọi thứ lạ' đều vượt nguồn: miễn dịch bẩm sinh khởi động trong vài phút tới vài giờ và nhận diện khuôn mẫu phân tử chung của mầm bệnh (PAMP), không phải mọi thứ lạ. Summary còn mâu thuẫn với chính thân bài ('vài phút tới vài giờ'). Trường seoDescription đang trùng nguyên văn summary nên mang cùng lỗi.",
+      "evidence": "Marshall và cộng sự 2018, Allergy Asthma Clin Immunol 14(Suppl 2):49, doi 10.1186/s13223-018-0278-1 (toàn văn PMC6156898): innate response \"initiated within minutes or hours\"; PRRs detect \"pathogens that share common structures, known as pathogen associated molecular patterns\"."
+    }
+  ],
+  "addSources": [
+    {
+      "title": "An introduction to immunology and immunopathology",
+      "url": "https://doi.org/10.1186/s13223-018-0278-1",
+      "doi": "10.1186/s13223-018-0278-1",
+      "publisher": "Allergy, Asthma & Clinical Immunology 14(Suppl 2):49 (Marshall JS, Warrington R, Watson W, Kim HL)",
+      "year": 2018,
+      "tier": 1,
+      "covers": "C-1, C-2, C-3, C-5, C-6, C-7, C-8, C-12, C-14, C-15, C-18 — hai tuyến phòng thủ; bẩm sinh khởi động trong vài phút–vài giờ; PRR/PAMP gồm dsRNA sinh ra khi nhiễm virus; interferon gây trạng thái kháng virus ở tế bào chưa nhiễm; cytokine gây viêm; thích ứng trễ vài giờ–vài ngày; vai trò B/Th/Tc; chọn lọc dòng; đáp ứng lần sau nhanh và hiệu quả hơn; các loại vaccine. Mở toàn văn 2026-09-25 qua Europe PMC (PMC6156898); Crossref resolve."
+    },
+    {
+      "title": "Double-stranded RNA is produced by positive-strand RNA viruses and DNA viruses but not in detectable amounts by negative-strand RNA viruses",
+      "url": "https://doi.org/10.1128/JVI.80.10.5059-5064.2006",
+      "doi": "10.1128/JVI.80.10.5059-5064.2006",
+      "publisher": "Journal of Virology 80(10):5059–5064 (Weber F, Wagner V, Rasmussen SB, Hartmann R, Paludan SR)",
+      "year": 2006,
+      "tier": 1,
+      "covers": "C-4 — dsRNA là đặc điểm của phần lớn nhóm virus nhưng không phát hiện được ở virus RNA sợi âm. Mở abstract 2026-09-25 qua Europe PMC (PMID 16641297); Crossref resolve, không có retraction/update."
+    },
+    {
+      "title": "Interferon-stimulated genes: a complex web of host defenses",
+      "url": "https://doi.org/10.1146/annurev-immunol-032713-120231",
+      "doi": "10.1146/annurev-immunol-032713-120231",
+      "publisher": "Annual Review of Immunology 32:513–545 (Schneider WM, Chevillotte MD, Rice CM)",
+      "year": 2014,
+      "tier": 1,
+      "covers": "C-5 — IFN được tế bào tiết ra sau khi PRR phát hiện PAMP; RIG-I-like receptors nhận diện dsRNA trong bào tương; IFN gắn thụ thể bề mặt, dẫn tới trạng thái kháng virus. Mở 2026-09-25 qua Europe PMC (abstract) và PMC4313732 (phần mở đầu)."
+    },
+    {
+      "title": "Commonality despite exceptional diversity in the baseline human antibody repertoire",
+      "url": "https://doi.org/10.1038/s41586-019-0879-y",
+      "doi": "10.1038/s41586-019-0879-y",
+      "publisher": "Nature 566:393–397 (Briney B, Inderbitzin A, Joyce C, Burton DR)",
+      "year": 2019,
+      "tier": 1,
+      "covers": "C-9, C-10, C-11, C-12 — kho kháng thể nguyên sơ ít nhất 10^12; độ đa dạng ghép cặp ước tính 10^16–10^18; ~5×10^9 tế bào B máu ngoại vi; 'in principle ... any non-self-antigen ... in the appropriate context'; đột biến soma mở rộng đa dạng sau tiếp xúc kháng nguyên. Mở abstract và toàn văn 2026-09-25 qua Europe PMC (PMC6411386)."
+    },
+    {
+      "title": "Recombination centres and the orchestration of V(D)J recombination",
+      "url": "https://doi.org/10.1038/nri2941",
+      "doi": "10.1038/nri2941",
+      "publisher": "Nature Reviews Immunology 11:251–263 (Schatz DG, Ji Y)",
+      "year": 2011,
+      "tier": 1,
+      "covers": "C-9 — V(D)J recombination do RAG1/RAG2 khởi đầu để lắp ráp gen thụ thể kháng nguyên. Mở abstract 2026-09-25 qua Europe PMC (PMID 21394103)."
+    },
+    {
+      "title": "mRNA vaccines — a new era in vaccinology",
+      "url": "https://doi.org/10.1038/nrd.2017.243",
+      "doi": "10.1038/nrd.2017.243",
+      "publisher": "Nature Reviews Drug Discovery 17:261–279 (Pardi N, Hogan MJ, Porter FW, Weissman D)",
+      "year": 2018,
+      "tier": 1,
+      "covers": "C-15 — mRNA vào bào tương được bộ máy dịch mã của tế bào dịch thành protein kháng nguyên. Mở 2026-09-25: abstract qua Europe PMC, toàn văn PMC5906799."
+    },
+    {
+      "title": "How Flu Viruses Can Change: \"Drift\" and \"Shift\"",
+      "url": "https://www.cdc.gov/flu/php/viruses/change.html",
+      "doi": "",
+      "publisher": "U.S. Centers for Disease Control and Prevention",
+      "year": "trang web, truy cập 2026-09-25",
+      "tier": 2,
+      "covers": "C-16 — drift là thay đổi nhỏ, liên tục ở HA/NA; kháng thể có sẵn có thể không nhận diện hiệu quả chủng mới; thành phần vaccine xem xét hằng năm, cập nhật khi cần. Mở 2026-09-25."
+    },
+    {
+      "title": "Measles Vaccination",
+      "url": "https://www.cdc.gov/measles/vaccines/index.html",
+      "doi": "",
+      "publisher": "U.S. Centers for Disease Control and Prevention",
+      "year": "trang web, truy cập 2026-09-25",
+      "tier": 2,
+      "covers": "C-17 — MMR 1 liều 93%, 2 liều 97% hiệu quả với sởi; phần lớn người tiêm được bảo vệ suốt đời. Mở 2026-09-25."
+    },
+    {
+      "title": "Explaining How Vaccines Work",
+      "url": "https://www.cdc.gov/vaccines/basics/explaining-how-vaccines-work.html",
+      "doi": "",
+      "publisher": "U.S. Centers for Disease Control and Prevention",
+      "year": "trang web, truy cập 2026-09-25",
+      "tier": 2,
+      "covers": "C-15 — vaccine bắt chước nhiễm trùng; miễn dịch có thể mất vài tuần để hình thành sau tiêm. Mở 2026-09-25."
+    }
+  ],
+  "dropSources": [],
+  "retierSources": [
+    {
+      "title": "Janeway's Immunobiology (Murphy KM, Weaver C, Berg LJ), 10th ed., ISBN 9780393884890",
+      "tier": 3,
+      "why": "Giáo trình đại học thuộc bậc 3 (tài liệu giáo dục), không phải bậc 2 (cơ quan thẩm quyền). Sau lượt này không claim nào còn chỉ dựa vào nó — giữ làm tài liệu nền. ISBN tái xác nhận 2026-09-25 qua Open Library (W. W. Norton & Company, 01/07/2022, 960 trang); trang wwnorton.com trả 200."
+    }
+  ],
+  "corrections": [
+    "Thẩm định lại 2026-09-25 (science-editor): bản tiếng Anh chưa từng nhận bản sửa S1 ngày 17/09 — câu 'memory B and T cells persists—potentially for decades' vẫn không nguồn. CŨ: en thiếu số đo đậu mùa → MỚI: en mang đúng claim như vi. Căn cứ: Crotty 2003 doi 10.4049/jimmunol.171.10.4969; Hammarlund 2003 doi 10.1038/nm917.",
+    "Đa dạng thụ thể: 'tái tổ hợp V(D)J sinh ra khoảng 10¹¹ biến thể — đủ để với gần như mọi phân tử lạ tồn tại sẵn một tế bào khớp' → 'kho kháng thể nguyên sơ ít nhất 10¹², ước tính tới 10¹⁶–10¹⁸; tế bào B lưu hành chỉ mang một phần nhỏ; về nguyên tắc có thể đáp ứng với bất kỳ phân tử lạ nào'. Căn cứ: Briney và cộng sự 2019, Nature, doi 10.1038/s41586-019-0879-y.",
+    "RNA sợi đôi: 'hầu như chỉ xuất hiện khi virus đang nhân lên' → 'được tạo ra khi phần lớn nhóm virus nhân lên; không phát hiện được ở các virus RNA sợi âm được khảo sát'. Căn cứ: Weber và cộng sự 2006, J Virol, doi 10.1128/JVI.80.10.5059-5064.2006.",
+    "Mốc thời gian: bỏ '5–10 ngày' (lần đầu) và '1–3 ngày' (lần sau) — không có nguồn → 'độ trễ từ vài giờ tới vài ngày' và 'nhanh hơn, hiệu quả hơn lần đầu'. Căn cứ: Marshall và cộng sự 2018, doi 10.1186/s13223-018-0278-1.",
+    "Cơ chế vaccine: 'đưa vào một phần mầm bệnh không gây bệnh (protein, virus bất hoạt, mRNA)' → 'bắt chước nhiễm trùng; có thể là mầm bệnh sống giảm độc lực, bất hoạt, hoặc protein/carbohydrate đặc hiệu; vaccine mRNA đưa chỉ dẫn để tế bào tự tạo protein; miễn dịch có thể mất vài tuần'. Căn cứ: CDC 'Explaining How Vaccines Work'; Marshall 2018; Pardi 2018 doi 10.1038/nrd.2017.243.",
+    "Cúm và sởi: 'vaccine cúm được cập nhật hằng năm ... vaccine sởi hiệu quả gần như trọn đời' → 'thành phần vaccine cúm xem xét hằng năm, cập nhật khi cần; hai liều MMR hiệu quả 97%, phần lớn người tiêm được bảo vệ suốt đời'. Căn cứ: CDC 'How Flu Viruses Can Change'; CDC 'Measles Vaccination'.",
+    "Summary và mô tả SEO: 'một tuyến phản ứng tức thì với mọi thứ lạ' → 'một tuyến phản ứng nhanh với những đặc trưng chung của mầm bệnh'. Căn cứ: Marshall 2018.",
+    "Bổ sung: độ bền kháng thể khác nhau theo kháng nguyên (thuỷ đậu–zona ~50 năm, sởi/quai bị >200 năm, uốn ván 11 năm, bạch hầu 19 năm) — Amanna 2007, NEJM, doi 10.1056/NEJMoa066092; nêu rõ 'chọn lọc dòng' là giản lược (đột biến soma) — Briney 2019; bỏ khung 'giải pháp tiến hoá' không nguồn.",
+    "Nguồn: thêm 9 nguồn (6 bình duyệt bậc 1, 3 trang CDC bậc 2); hạ Janeway's Immunobiology từ bậc 2 xuống bậc 3 (giáo trình)."
+  ],
+  "openQuestions": [
+    "seoDescription trùng nguyên văn summary và mang cùng lỗi C-18; sửa qua khoá seoDescriptionEdits (script áp đã đọc khoá này; neo khớp đúng 1 lần). Kiểm thêm có seoDescriptionEn riêng không (dump không có trường này).",
+    "Ba nguồn bậc 1 cũ (Crotty, Hammarlund, Amanna) có url=null trong CSDL. Đề nghị điền https://doi.org/<doi> tương ứng.",
+    "Bài chưa có reviewedBy/reviewedAt. Sau khi áp bản sửa, gán byline tài khoản tổ chức theo docs/content-rules.md mục 'Byline người duyệt'; không được suy từ ngày tạo.",
+    "Revision chụp nội dung trước khi sửa phải ghi cùng transaction với lệnh sửa, và cập nhật lastVerifiedAt (content-rules: 'Sửa bài đã publish là đính chính')."
+  ]
+}

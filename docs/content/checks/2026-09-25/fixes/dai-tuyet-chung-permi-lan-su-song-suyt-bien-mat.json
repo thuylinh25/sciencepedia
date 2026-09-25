@@ -1,0 +1,577 @@
+{
+  "slug": "dai-tuyet-chung-permi-lan-su-song-suyt-bien-mat",
+  "edits": [
+    {
+      "claimId": "C-20",
+      "severity": "S2",
+      "find": "Lớn nhất xảy ra trước đó gần 190 triệu năm, và nó suýt xoá sạch sự sống phức tạp khỏi hành tinh này.",
+      "replace": "Lớn nhất xảy ra trước đó gần 190 triệu năm — dù, như sẽ thấy dưới đây, sự sống chưa từng tiến gần tới chỗ biến mất hẳn.",
+      "why": "Chính nguồn Stanley 2016 mà bài dùng cho con số 81% viết: \"Life did not nearly disappear at the end of the Permian, as has often been claimed\" và nêu khoảng 90 bộ, hơn 220 họ động vật biển sống sót. Câu \"suýt xoá sạch sự sống phức tạp\" là đúng cái claim mà nguồn của bài bác bỏ.",
+      "evidence": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5081622/ (doi 10.1073/pnas.1613094113)"
+    },
+    {
+      "claimId": "C-1b",
+      "severity": "S3",
+      "find": "Đại tuyệt chủng Permi — còn gọi là ranh giới Permi–Trias — diễn ra",
+      "replace": "Đại tuyệt chủng Permi — còn gọi là đại tuyệt chủng Permi–Trias — diễn ra",
+      "why": "Ranh giới Permi–Trias là một mốc địa tầng, không phải tên khác của sự kiện tuyệt chủng; Gastaldo và cộng sự 2020 phân biệt rõ \"the marine event began at 251.941 ± 0.037 Ma\" với \"the PTB placed at 251.902 ± 0.024 Ma\".",
+      "evidence": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7080820/ (doi 10.1038/s41467-020-15243-7)"
+    },
+    {
+      "claimId": "C-2b",
+      "severity": "S3",
+      "find": "Stanley cho rằng ước tính cao đó dựa trên một bộ dữ liệu không phù hợp, trong khi nhiều tài liệu khác vẫn tiếp tục dùng mức trên 90%.",
+      "replace": "Stanley cho rằng ước tính cao đó được tính trên dữ liệu gộp của cả hai đợt tuyệt chủng giữa Permi và cuối Permi, và nhấn mạnh rằng khoảng 90 bộ cùng hơn 220 họ động vật biển đã sống sót qua khủng hoảng; trong khi đó nhiều tài liệu khác, chẳng hạn Chen và Benton (2012) hay Burgess và Bowring (2015), vẫn dùng mức trên 90%.",
+      "why": "Stanley nói cụ thể vì sao ước tính cao sai: \"Calculations of the latter numbers were incorrectly based on combined data for the Middle and Late Permian mass extinctions\". Vế \"nhiều tài liệu khác vẫn dùng mức trên 90%\" trước đây không gắn nguồn; nay gắn hai nguồn đã mở: Chen & Benton 2012 (\"loss of >90% species globally\") và Burgess & Bowring 2015 (\"more than 90% of marine\").",
+      "evidence": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5081622/ (doi 10.1073/pnas.1613094113); https://research-information.bris.ac.uk/en/publications/the-timing-and-pattern-of-biotic-recovery-following-the-end-permi/ (doi 10.1038/ngeo1475); https://pmc.ncbi.nlm.nih.gov/articles/PMC4643808/ (doi 10.1126/sciadv.1500470)"
+    },
+    {
+      "claimId": "C-3",
+      "severity": "S3",
+      "find": "- Khoảng **70% số loài động vật có xương sống trên cạn** biến mất",
+      "replace": "- Khoảng **75% số loài trên cạn** biến mất, theo con số Burgess và Bowring (2015) dẫn. Đây cũng là ước tính từ hồ sơ hoá thạch, và cùng câu đó bài báo dẫn mức trên 90% cho sinh vật biển — tức thuộc nhóm ước tính cao hơn con số của Stanley",
+      "why": "Con số 70% \"động vật có xương sống trên cạn\" không có nguồn nào trong lượt này. Nguồn bậc 1 mở được (Burgess & Bowring 2015, Science Advances) viết \"extinguishing more than 90% of marine and 75% of terrestrial species\" — đối tượng là loài trên cạn nói chung, không riêng động vật có xương sống. Ghi đúng đối tượng và con số của nguồn, và nói rõ nó thuộc nhóm ước tính cao.",
+      "evidence": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4643808/ (doi 10.1126/sciadv.1500470)"
+    },
+    {
+      "claimId": "C-4b",
+      "severity": "S3",
+      "find": "- Đây là đợt tuyệt chủng **côn trùng** nặng nhất được ghi nhận:",
+      "replace": "- Theo phân tích của Jouault và cộng sự (2022), đây là đợt tuyệt chủng **côn trùng** nặng nhất được ghi nhận:",
+      "why": "Câu \"cùng nghiên cứu đó\" ở phía sau trỏ tới một nghiên cứu chưa được nêu tên trong đoạn. Quy cho đúng tác giả.",
+      "evidence": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9726944/ (doi 10.1038/s41467-022-35284-4)"
+    },
+    {
+      "claimId": "C-4c",
+      "severity": "S3",
+      "find": "và Ladinian–Carnian (74,8% số chi)",
+      "replace": "và Ladinian–Carnian (74,8% số chi). Cách gọi vẫn khác nhau: một nghiên cứu năm 2024 (Dal Corso và cộng sự) vẫn gọi Permi–Trias là đợt tuyệt chủng hàng loạt duy nhất đã biết ở côn trùng",
+      "why": "Hai nguồn bậc 1 dùng nhãn khác nhau cho cùng dữ liệu: Jouault 2022 ghi ba đợt (64,5%, 82,6%, 74,8% số chi), Dal Corso 2024 (Nature Communications) viết \"the only known mass extinction among insects\". Đây là bất đồng thật về cách gọi — nêu cả hai, không tự phân xử (quy tắc 7).",
+      "evidence": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9726944/ (doi 10.1038/s41467-022-35284-4); https://pmc.ncbi.nlm.nih.gov/articles/PMC11368959/ (doi 10.1038/s41467-024-51671-5)"
+    },
+    {
+      "claimId": "C-6",
+      "severity": "S3",
+      "find": "Hệ sinh thái biển phải mất khoảng 10 triệu năm mới hồi phục về mức đa dạng cũ.",
+      "replace": "Một số nhóm như cúc đá đa dạng hoá trở lại khá nhanh, trong 1–3 triệu năm, nhưng theo Chen và Benton (2012), một hệ sinh thái ổn định và phức tạp chỉ xuất hiện lại vào đầu kỷ Trias giữa, khoảng 8–9 triệu năm sau khủng hoảng.",
+      "why": "Chen & Benton 2012: \"Ammonoids and some other groups diversified rapidly, within 1-3 Myr ... a stable, complex ecosystem did not re-emerge until the beginning of the Middle Triassic, 8-9 Myr after the crisis\". Nguồn nói về hệ sinh thái ổn định, phức tạp — không phải \"mức đa dạng cũ\" — và không cho con số 10 triệu năm.",
+      "evidence": "https://research-information.bris.ac.uk/en/publications/the-timing-and-pattern-of-biotic-recovery-following-the-end-permi/ (doi 10.1038/ngeo1475)"
+    },
+    {
+      "claimId": "C-7",
+      "severity": "S3",
+      "find": "Giải thích được chấp nhận rộng rãi nhất hiện nay là hoạt động của **Siberian Traps** — một tỉnh magma khổng lồ ở nơi ngày nay là Siberia, phun trào trong khoảng vài trăm nghìn năm và trùng khớp về thời gian với ranh giới tuyệt chủng ở độ chính xác vài chục nghìn năm.",
+      "replace": "Giải thích được ủng hộ rộng rãi nhất (theo các nghiên cứu 2015–2024) là hoạt động của **Siberian Traps** — một tỉnh magma khổng lồ ở nơi ngày nay là Siberia — dù mối liên hệ nhân quả giữa núi lửa và tuyệt chủng vẫn còn được tranh luận. Niên đại U–Pb của Burgess và Bowring (2015) cho thấy khoảng hai phần ba lượng dung nham và đá vụn núi lửa đã phun ra trong chừng 300 nghìn năm, trước và trong lúc tuyệt chủng; phần còn lại tiếp tục phun thêm ít nhất 500 nghìn năm sau đó. Bản thân đợt tuyệt chủng biển diễn ra trong khoảng 60 ± 48 nghìn năm (Burgess, Bowring và Shen 2014).",
+      "why": "\"Vài trăm nghìn năm\" chỉ đúng cho pha chính: Burgess & Bowring 2015 ghi \"about two-thirds of the total lava/pyroclastic volume was erupted over ~300 ky, before and concurrent with the end-Permian mass extinction; (ii) eruption of the balance of lavas continued for at least 500 ky after\". Khoảng tuyệt chủng: Burgess 2014 \"an interval of 60 ± 48 ka\". \"Chấp nhận rộng rãi nhất hiện nay\" thiếu mốc thời gian và bỏ vế dè dặt mà Onoue 2019 nêu (\"commonly favored cause, although the link between volcanism and extinction remains debated\").",
+      "evidence": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4643808/ (doi 10.1126/sciadv.1500470); https://pmc.ncbi.nlm.nih.gov/articles/PMC3948271/ (doi 10.1073/pnas.1317692111); https://doi.org/10.1186/s40645-019-0267-0 (tóm tắt đọc qua Semantic Scholar API)"
+    },
+    {
+      "claimId": "C-8",
+      "severity": "S2",
+      "find": "Quy mô của nó rất khó hình dung: lượng dung nham ước tính khoảng **1–4 triệu km³**, trong khi những vụ phun trào lớn nhất mà loài người từng ghi nhận hiếm khi vượt quá vài km³.",
+      "replace": "Quy mô của nó rất khó hình dung. Tổng thể tích magma — gồm dung nham, đá vụn núi lửa và các khối magma xâm nhập ngầm, trong đó phần ngầm chiếm khoảng một nửa — được ước tính từ khoảng 1 đến hơn 10 triệu km³, với phần đông ước tính nằm trong khoảng **2–5 triệu km³** (theo tổng hợp của Burgess và Bowring 2015). Thể tích ban đầu khó xác định và nhiều khả năng còn lớn hơn.",
+      "why": "Burgess & Bowring 2015: \"Estimates of total magma volume range from ~1 × 10^6 km3 to more than 10 × 10^6 km3, with consensus settling somewhere between 2 × 10^6 and 5 × 10^6 km3\"; \"Roughly 50% of this total volume is attributed to intrusive rocks\"; \"the original province volume is difficult to constrain and was likely much larger\". Bài cũ gọi đây là \"lượng dung nham\" (sai đối tượng: nửa là magma xâm nhập ngầm) và dùng khoảng 1–4 không nguồn nào cho. Vế so sánh \"phun trào lịch sử hiếm khi vượt vài km³\" không có nguồn và sai theo hiểu biết phổ thông (Tambora 1815 lớn hơn nhiều) — cắt, không thay.",
+      "evidence": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4643808/ (doi 10.1126/sciadv.1500470)"
+    },
+    {
+      "claimId": "C-19b",
+      "severity": "S3",
+      "find": "Nhưng dung nham không phải thứ giết chóc. Thứ giết chóc là những gì đi kèm:",
+      "replace": "Theo giả thuyết được ủng hộ rộng rãi, thứ gây hại không phải bản thân dung nham, mà là những gì đi kèm:",
+      "why": "Burgess & Bowring 2015 trình bày đây là giả thuyết: \"Magmatism is hypothesized to have caused rapid injection of massive amounts of greenhouse gases\". Giữ ngữ thái giả thuyết của nguồn.",
+      "evidence": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4643808/ (doi 10.1126/sciadv.1500470)"
+    },
+    {
+      "claimId": "C-9",
+      "severity": "S3",
+      "find": "Lượng carbon khổng lồ được giải phóng làm nhiệt độ toàn cầu tăng mạnh — các ước lượng [[đồng vị]] oxy cho thấy nước biển nhiệt đới ấm lên khoảng 8–10 °C.",
+      "replace": "Lượng carbon khổng lồ được giải phóng làm nhiệt độ toàn cầu tăng mạnh. Mô hình của Cui và cộng sự (2021) ước tính khoảng 36.000 Gt carbon đã được thải ra, phần lớn từ núi lửa, làm nồng độ CO₂ tăng khoảng 13 lần và nhiệt độ toàn cầu tăng hơn 10 °C — phù hợp với số đo [[đồng vị]] oxy trong vỏ tay cuộn.",
+      "why": "Không mở được nguồn nào cho khoảng \"8–10 °C nước biển nhiệt đới\" (Joachimski 2012, Geology: abstract bị nhà xuất bản ẩn). Nguồn bậc 1 mở được (Cui 2021, PNAS, toàn văn PMC): \"a massive (∼36,000 Gt C) ... of largely volcanic CO2\", \"This 13× increase in atmospheric CO2 causes global temperature to rise from 25 to 40 °C, in accordance with temperature proxy data based on well-preserved brachiopod shells\", \"The degree of warming (>10 °C)\". Ghi số theo nguồn này, nói rõ là kết quả mô hình.",
+      "evidence": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8449420/ (doi 10.1073/pnas.2014701118)"
+    },
+    {
+      "claimId": "C-10",
+      "severity": "S3",
+      "find": "CO₂ tan vào nước biển làm giảm pH, phá huỷ khả năng tạo vỏ canxi cacbonat của san hô, tay cuộn và nhiều nhóm sinh vật biển khác.",
+      "replace": "CO₂ tan vào nước biển làm giảm pH. Dữ liệu đồng vị bo của Clarkson và cộng sự (2015) cho thấy pH đại dương vẫn ổn định trong pha tuyệt chủng thứ nhất, nhưng tụt đột ngột ở pha thứ hai, khi carbon được bơm vào nhanh và nhiều; theo nhóm tác giả, chính đợt axit hoá này khiến các sinh vật biển có vỏ, xương vôi dày bị mất nhiều hơn hẳn các nhóm khác.",
+      "why": "Clarkson 2015 (Science): \"The first phase of extinction was coincident with a slow injection of carbon ... and ocean pH remained stable. During the second extinction pulse, however, a rapid and large injection of carbon caused an abrupt acidification event that drove the preferential loss of heavily calcified marine biota\"; nguồn gọi axit hoá là \"a possible kill mechanism\". Bài cũ nêu tên san hô và tay cuộn mà không nguồn nào trong gói nói tới, và bỏ mất chi tiết axit hoá chỉ ở pha thứ hai.",
+      "evidence": "https://pubmed.ncbi.nlm.nih.gov/25859043/ (doi 10.1126/science.aaa0193)"
+    },
+    {
+      "claimId": "C-10b",
+      "severity": "S3",
+      "find": "Nước ấm giữ được ít oxy hoà tan hơn, và tuần hoàn đại dương chậm lại. Trầm tích từ giai đoạn này mang dấu vết của đại dương thiếu oxy trên diện rộng, thậm chí nhiễm độc sunfua.",
+      "replace": "Đại dương vừa nóng lên vừa mất oxy. Mô hình của Penn và cộng sự (2018) cho thấy riêng hai áp lực này cộng lại có thể giải thích hơn một nửa mức độ tuyệt chủng biển. Trầm tích ở Tây Australia và Nam Trung Quốc còn mang dấu vết của tầng nước có ánh sáng bị nhiễm sunfua (euxinia), mà Grice và cộng sự (2005) cho là một tác nhân gây tuyệt chủng và làm hồi phục kéo dài.",
+      "why": "\"Tuần hoàn đại dương chậm lại\" không có nguồn — cắt. Penn 2018 (Science): \"The combined physiological stresses of ocean warming and O2 loss can account for more than half the magnitude of the 'Great Dying'\". Grice 2005 (Science): euxinia ở Perth Basin (Tây Australia), \"similar conditions prevailed in the contemporaneous seas off South China\", \"sulfide toxicity was a driver of the extinction and a factor in the protracted recovery\".",
+      "evidence": "https://pubmed.ncbi.nlm.nih.gov/30523082/ (doi 10.1126/science.aat1327); https://pubmed.ncbi.nlm.nih.gov/15661975/ (doi 10.1126/science.1104323)"
+    },
+    {
+      "claimId": "C-11",
+      "severity": "S2",
+      "find": "**Đốt cháy than.** Magma xuyên qua các tầng than và đá chứa hydrocarbon dày của lòng chảo Tunguska, đốt cháy chúng và giải phóng thêm carbon cùng khí halogen phá huỷ tầng ozone.",
+      "replace": "**Nung nóng đá trầm tích.** Burgess và cộng sự (2017) nhận thấy tuyệt chủng bắt đầu đúng lúc magma chuyển từ phun trào trên mặt sang xâm nhập thành các vỉa ngầm (sill) trong bồn trầm tích Tunguska — nơi có đá bốc hơi, đá cacbonat và đá chứa hydrocarbon. Nhiệt từ các vỉa này nhiều khả năng đã giải phóng thêm lượng lớn khí nhà kính. Dù vậy, theo ước tính của Cui và cộng sự (2021), phần lớn CO₂ (53–77%) vẫn có nguồn gốc núi lửa; phần nhỏ hơn đến từ than bị đốt hoặc methane sinh ra khi magma nung nóng trầm tích.",
+      "why": "Burgess 2017 (Nature Communications): tuyệt chủng trùng với chuyển đổi \"from dominantly flood lavas to sill intrusions\", sill xâm nhập \"the thick Tunguska basin, composed of evaporite, clastic, carbonate, and hydrocarbon-bearing rocks\", \"likely liberating the massive greenhouse gas volumes\". Cui 2021: \"a largely volcanic source (53 to 77%) with smaller contributions from coal combustion or thermogenic methane during sill intrusion\" — bài cũ đặt than làm cơ chế chính, trái với tỉ lệ này. Vế \"khí halogen phá huỷ tầng ozone\" không mở được nguồn nào đỡ, và Dal Corso 2024 viết số liệu đồng vị lưu huỳnh \"inconsistent with total ozone layer collapse\" — nói như sự thật đã xác lập là sai; cắt.",
+      "evidence": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5537227/ (doi 10.1038/s41467-017-00083-9); https://pmc.ncbi.nlm.nih.gov/articles/PMC8449420/ (doi 10.1073/pnas.2014701118); https://pmc.ncbi.nlm.nih.gov/articles/PMC11368959/ (doi 10.1038/s41467-024-51671-5)"
+    },
+    {
+      "claimId": "C-12",
+      "severity": "S3",
+      "find": "\n\nBốn cơ chế này nối tiếp nhau, và đó là lý do cuộc tuyệt chủng kéo dài chứ không tức thời.",
+      "replace": "",
+      "why": "Quan hệ nhân quả tự thêm (content-rules, hình dạng 3): không nguồn nào nói bốn cơ chế \"nối tiếp nhau\", và \"kéo dài chứ không tức thời\" mâu thuẫn với khoảng tuyệt chủng 60 ± 48 nghìn năm của Burgess 2014 ngay trong bài.",
+      "evidence": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3948271/ (doi 10.1073/pnas.1317692111)"
+    },
+    {
+      "claimId": "C-13",
+      "severity": "S3",
+      "find": "Đầu những năm 2000, một nhóm nghiên cứu công bố tìm thấy trong đá ranh giới Permi–Trias các phân tử **fullerene** chứa heli-3 và argon-36 — những đồng vị đặc trưng của vật chất ngoài Trái Đất. Kết luận rút ra khi đó là một tiểu hành tinh đã gây ra thảm hoạ, và giả thuyết này được nhắc lại rất rộng rãi trong tài liệu phổ thông suốt hơn một thập niên.",
+      "replace": "Năm 2001, nhóm của Becker công bố trên *Science* rằng các phân tử **fullerene** trong trầm tích ranh giới Permi–Trias nhốt bên trong heli và argon với tỉ lệ đồng vị giống thành phần khí trong thiên thạch chondrite carbon. Nhóm tác giả kết luận rằng một vụ va chạm tiểu hành tinh hoặc sao chổi đã đi kèm cuộc tuyệt chủng, như ở ranh giới Creta–Paleogene.",
+      "why": "Becker 2001 (Science 291:1530): \"Fullerenes ... contain trapped helium and argon with isotope ratios similar to the planetary component of carbonaceous chondrites. These data imply that an impact event (asteroidal or cometary) accompanied the extinction, as was the case for the Cretaceous-Tertiary\". Bài cũ nói \"chứa heli-3 và argon-36\" — nguồn nói tỉ lệ đồng vị, không nói hai đồng vị ấy là đặc trưng ngoài Trái Đất. Vế \"nhắc lại rộng rãi trong tài liệu phổ thông suốt hơn một thập niên\" không nguồn — cắt.",
+      "evidence": "https://pubmed.ncbi.nlm.nih.gov/11222855/ (doi 10.1126/science.1057243)"
+    },
+    {
+      "claimId": "C-14",
+      "severity": "S2",
+      "find": "Kết quả đó **không lặp lại được**. Nhiều phòng thí nghiệm độc lập phân tích cùng loại mẫu nhưng không tìm thấy tín hiệu tương tự. Cấu trúc \"hố va chạm Bedout\" ngoài khơi Australia từng được nêu làm ứng viên cũng không được cộng đồng địa chất công nhận. Đến nay, ranh giới Permi–Trias **không có** lớp iridium toàn cầu, không có thạch anh biến dạng do sốc, không có hố va chạm — tức là không có bộ bằng chứng mà ranh giới Creta–Paleogene của vụ khủng long có đầy đủ.",
+      "replace": "Kết quả đó **không được xác nhận**. Farley và Mukhopadhyay (2001) phân tích lại chính mẫu tro ở Meishan (Trung Quốc) mà nhóm Becker đã dùng, cùng một mặt cắt khác ở Trung Quốc, và không phát hiện heli-3 ngoài Trái Đất nào nằm trong fullerene. Một phân tích sau đó ở Canada (Farley và cộng sự 2005) cũng không thấy heli-3 ngoài Trái Đất, và cho rằng nhiễm bẩn gần đây là một cách giải thích hợp lý cho tín hiệu từng được báo cáo ở một mặt cắt tại Nam Cực. Năm 2004, nhóm Becker đề xuất cấu trúc Bedout ngoài khơi Tây Bắc Australia là hố va chạm cùng thời; đề xuất này lập tức bị chất vấn qua nhiều bình luận kỹ thuật đăng trên *Science* cùng năm. Còn các phép đo iridium ở lớp ranh giới tại Nam Trung Quốc từ năm 1986 chỉ cho nồng độ rất thấp, không ủng hộ giả thuyết va chạm ở đó.\n\nBức tranh chưa hoàn toàn khép lại: năm 2019, một nhóm Nhật Bản tìm thấy tín hiệu heli-3 ngoài Trái Đất tăng cao trong đá phiến silic biển sâu. Họ giải thích đó là lượng bụi liên hành tinh tăng mạnh, có lẽ liên quan tới một đợt \"mưa tiểu hành tinh\" trong Hệ Mặt Trời trong, đạt đỉnh trong 500 nghìn năm cuối kỷ Permi — trùng với lúc đa dạng trùng tia (radiolaria) suy giảm trước tuyệt chủng.",
+      "why": "\"Nhiều phòng thí nghiệm độc lập\" không đúng với nguồn: phép phân tích lại là của một nhóm (Farley, Caltech) — Farley & Mukhopadhyay 2001: \"we are able to detect fullerene-hosted extraterrestrial 3He neither in aliquots of the same Meishan material analyzed by Becker et al., nor any in samples of a second Chinese PTB section\"; Farley 2005 (Opal Creek, Canada): \"No extraterrestrial 3He was detected\", tín hiệu ở Graphite Peak (Nam Cực) — \"Recent contamination provides a plausible explanation\"; và Farley 2005 tự ghi kết quả của họ \"contrasts sharply with reports ... at other sections\". Onoue 2019 lại TÌM THẤY tín hiệu 3He ngoài Trái Đất tăng (bụi liên hành tinh, không phải va chạm) — nên câu \"không ai tìm thấy tín hiệu tương tự\" là sai. Ba khẳng định phủ định tuyệt đối (không iridium toàn cầu, không thạch anh sốc, không hố) không có nguồn tổng quan nào mở được; chỉ giữ điều nguồn đã mở nói: Clark 1986 đo iridium thấp ở Nam Trung Quốc, \"do not support the proposal of an extraterrestrial impact event at this boundary in China\". Bedout: chỉ khẳng định điều kiểm được từ metadata — đề xuất Becker 2004 và ba bình luận kỹ thuật cùng năm (Wignall et al., Renne et al. \"Is Bedout an impact crater?\", Glikson).",
+      "evidence": "https://authors.library.caltech.edu/records/hj8xv-77674 (doi 10.1126/science.293.5539.2343a); https://authors.library.caltech.edu/records/gjzcq-3ha42 (doi 10.1016/j.epsl.2005.09.054); https://doi.org/10.1186/s40645-019-0267-0 (tóm tắt đọc qua Semantic Scholar API); https://pubmed.ncbi.nlm.nih.gov/15143216/ (doi 10.1126/science.1093925); các bình luận: Wignall et al. 2004 PMID 15498993, Renne et al. 2004 PMID 15498994 (doi 10.1126/science.306.5696.610), Glikson 2004 PMID 15498996; https://pubmed.ncbi.nlm.nih.gov/17732040/ (doi 10.1126/science.233.4767.984)"
+    },
+    {
+      "claimId": "C-14b",
+      "severity": "S3",
+      "find": "một kết quả gây tiếng vang vẫn có thể bị loại bỏ nếu không ai lặp lại được nó.",
+      "replace": "một kết quả gây tiếng vang vẫn có thể bị gác lại khi phép phân tích lại trên chính mẫu vật ấy không cho kết quả tương tự.",
+      "why": "\"Không ai lặp lại được\" rộng hơn điều nguồn nói (một nhóm phân tích lại mẫu Meishan; một nhóm khác năm 2019 lại thấy tín hiệu 3He dù diễn giải khác). Giữ bài học phương pháp, bỏ phủ định tuyệt đối.",
+      "evidence": "https://authors.library.caltech.edu/records/hj8xv-77674 (doi 10.1126/science.293.5539.2343a); https://doi.org/10.1186/s40645-019-0267-0 (tóm tắt đọc qua Semantic Scholar API)"
+    },
+    {
+      "claimId": "C-16",
+      "severity": "S3",
+      "find": "## Pangaea đóng vai trò gì\n\nVào cuối kỷ Permi, toàn bộ đất liền đã gộp thành siêu lục địa **Pangaea**. Việc này không trực tiếp gây tuyệt chủng nhưng làm mọi thứ tệ hơn:\n\n- Diện tích thềm lục địa nông — nơi tập trung phần lớn đa dạng sinh học biển — giảm mạnh\n- Khí hậu lục địa trở nên cực đoan, phần trong lục địa thành sa mạc khô hạn\n- Tuần hoàn đại dương đơn giản hoá, làm tình trạng thiếu oxy dễ lan rộng hơn\n\nMột hành tinh có đất liền gộp thành một khối là một hành tinh có hệ sinh thái kém bền hơn.\n\n",
+      "replace": "",
+      "why": "Cả mục Pangaea không có nguồn nào trong lượt này; câu kết \"một hành tinh có đất liền gộp thành một khối là hành tinh có hệ sinh thái kém bền hơn\" là khái quát tự dựng. Thang biên tập: không nguồn thì cắt (quy tắc 8).",
+      "evidence": "— (không có nguồn; cắt)"
+    },
+    {
+      "claimId": "C-17",
+      "severity": "S2",
+      "find": "Trong số những nhóm bị xoá sổ có bọ ba thuỳ — nhóm đã tồn tại suốt 270 triệu năm trước đó — và phần lớn các nhóm bò sát giống thú (therapsid) đang trên đường tiến hoá thành động vật có vú.\n\nNhưng khoảng trống sinh thái mà cuộc tuyệt chủng để lại chính là thứ mở đường cho nhóm archosaur, và từ đó là khủng long, thống trị suốt 165 triệu năm tiếp theo. Tổ tiên động vật có vú sống sót qua khe cửa hẹp, nhỏ bé và lẩn tránh, chờ tới lượt mình sau vụ tuyệt chủng kế tiếp.",
+      "replace": "Trong số những nhóm bị xoá sổ có bọ ba thuỳ — nhóm đã tồn tại khoảng 270 triệu năm, từ đầu kỷ Cambri tới cuối kỷ Permi.\n\nNhưng khoảng trống sinh thái mà cuộc tuyệt chủng để lại cũng mở đường cho nhóm archosauromorph — nhóm gồm tổ tiên của cá sấu, khủng long và chim — từ chỗ ít tiếng tăm trở thành động vật có xương sống trên cạn chiếm ưu thế. Theo Ezcurra và Butler (2018), nhóm này đa dạng hoá qua nhiều pha, rồi tăng vọt về số loài, độ phong phú và độ đa dạng hình thái khi hệ sinh thái toàn cầu ổn định trở lại.",
+      "why": "Bọ ba thuỳ: Kraft 2023 (Nature) \"their 270-million-year-long history from the early Cambrian period to the end Permian period\" — con số đúng, nay có nguồn. Archosauromorph: Ezcurra & Butler 2018 \"the previously obscure archosauromorphs (which include crocodylians, dinosaurs and birds) become the dominant terrestrial vertebrates\"; Chen & Benton 2012 \"new tetrapods on land, including-eventually-dinosaurs\". Cắt: \"therapsid đang trên đường tiến hoá thành động vật có vú\" (không nguồn, diễn đạt theo mục đích luận), \"165 triệu năm thống trị\" (không nguồn), và câu động vật có vú \"chờ tới lượt mình sau vụ tuyệt chủng kế tiếp\" — SAI: vụ kế tiếp là cuối Trias (~201 triệu năm), còn động vật có vú lên ngôi sau vụ Creta–Paleogene (66 triệu năm), tức hai vụ sau. Không giữ mốc \"5 triệu năm\" của Ezcurra vì nó đo một thứ khác với mốc 8–9 triệu năm của Chen & Benton ở trên, đặt cạnh nhau sẽ đọc như mâu thuẫn.",
+      "evidence": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10584673/ (doi 10.1038/s41586-023-06567-7); https://pmc.ncbi.nlm.nih.gov/articles/PMC6015845/ (doi 10.1098/rspb.2018.0361); https://research-information.bris.ac.uk/en/publications/the-timing-and-pattern-of-biotic-recovery-following-the-end-permi/ (doi 10.1038/ngeo1475)"
+    },
+    {
+      "claimId": "C-18",
+      "severity": "S2",
+      "find": "cơ chế giết chóc chính của nó — bơm carbon vào khí quyển nhanh hơn tốc độ hệ thống Trái Đất kịp hấp thụ — là điều loài người đang làm, chỉ nhanh hơn nhiều bậc.",
+      "replace": "một trong những cơ chế giết chóc được ủng hộ nhiều nhất của nó là bơm một lượng carbon khổng lồ vào khí quyển trong thời gian ngắn. Theo Cui và cộng sự (2021), tốc độ phát thải tối đa trong một kịch bản của họ là khoảng 4,5 Gt carbon mỗi năm — mà chính nhóm tác giả so là chỉ cỡ một nửa tốc độ phát thải carbon hiện nay.",
+      "why": "\"Nhanh hơn nhiều bậc\" bị nguồn bậc 1 bác: Cui 2021 viết kịch bản của họ có \"a maximum emission rate of 4.5 Gt C yr−1 ..., roughly half the size of current carbon emission rate\" — tức phát thải hiện nay nhanh cỡ gấp đôi, không phải nhiều bậc độ lớn. Giữ phép so sánh (nó có nguồn), đổi con số theo nguồn, và giữ \"một trong những cơ chế\" vì Penn 2018 và Clarkson 2015 nêu các cơ chế khác.",
+      "evidence": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8449420/ (doi 10.1073/pnas.2014701118)"
+    },
+    {
+      "claimId": "C-0",
+      "severity": "S3",
+      "find": "của Đặng Vũ Tuấn Sơn, đăng trên Thiên văn Việt Nam (VACA). Bản quyền nội dung gốc thuộc về VACA.",
+      "replace": "của Đặng Vũ Tuấn Sơn, đăng trên Thiên văn Việt Nam (VACA). Bản quyền nội dung gốc thuộc về VACA. Số liệu và lập luận khoa học trong bản hiện tại đã được đối chiếu lại và thay theo các nguồn bình duyệt trong danh mục nguồn, nên nhiều chỗ khác với bài gốc.",
+      "why": "Bài gốc VACA ghi 95% loài biển, ~250 triệu năm, 1,5 triệu km³, coi giả thuyết fullerene \"khá thuyết phục\" (thẩm định 17/09). Dòng \"Biên tập lại từ bài...\" đứng một mình khiến người đọc hiểu số liệu đến từ VACA — sai nguồn gốc. Giữ nguyên ghi công và dòng bản quyền (quyền sử dụng là việc của người quyết), chỉ thêm một câu nói đúng nguồn gốc số liệu.",
+      "evidence": "docs/content/checks/2026-09-17/dai-tuyet-chung-permi-lan-su-song-suyt-bien-mat.yaml (C-0)"
+    }
+  ],
+  "enEdits": [
+    {
+      "claimId": "C-20",
+      "severity": "S2",
+      "find": "The largest occurred nearly 190 million years before that, and it almost wiped out complex life from this planet.",
+      "replace": "The largest occurred nearly 190 million years before that — although, as we will see, life never came close to disappearing altogether.",
+      "why": "Mirror of vi C-20. Stanley 2016: \"Life did not nearly disappear at the end of the Permian, as has often been claimed.\"",
+      "evidence": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5081622/ (doi 10.1073/pnas.1613094113)"
+    },
+    {
+      "claimId": "C-1",
+      "severity": "S1",
+      "find": "The Permian mass extinction—also known as the Permian–Triassic boundary—occurred about **252 million years ago**, marking",
+      "replace": "The Permian mass extinction—also known as the Permian–Triassic mass extinction—occurred about **251.9 million years ago**—the marine extinction began at 251.941 ± 0.037 million years ago, and the Permian–Triassic boundary is placed at 251.902 ± 0.024 million years ago (2σ), according to U–Pb dates published in *Nature Communications* (2020)—marking",
+      "why": "Bản en chưa từng nhận đính chính S1 ngày 17/09 (bản vi đã sửa). Cùng claim, cùng nguồn: Gastaldo 2020 \"The marine event began at 251.941 ± 0.037 Ma, with the PTB placed at 251.902 ± 0.024 Ma (2σ)\".",
+      "evidence": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7080820/ (doi 10.1038/s41467-020-15243-7)"
+    },
+    {
+      "claimId": "C-2",
+      "severity": "S1",
+      "find": "- About **80% of marine species** disappeared",
+      "replace": "- About **81% of marine species** disappeared, according to Stanley's (2016) estimate based on genus-level rarefaction. That is well below Raup's widely cited 88–96%; Stanley argues the higher figure was calculated from combined data for both the Middle and the Late Permian extinctions, and stresses that about 90 orders and more than 220 families of marine animals survived the crisis, while other work, such as Chen and Benton (2012) or Burgess and Bowring (2015), still uses figures above 90%. This is an unresolved methodological disagreement, not a single settled number",
+      "why": "Mirror of vi C-2 (S1 17/09) + C-2b. Stanley 2016: \"An estimate of ∼81% ... much lower than the frequently cited estimate of 88–96% by Raup\"; \"incorrectly based on combined data for the Middle and Late Permian mass extinctions\"; \"About 90 orders and more than 220 families ... survived\".",
+      "evidence": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5081622/ (doi 10.1073/pnas.1613094113); https://research-information.bris.ac.uk/en/publications/the-timing-and-pattern-of-biotic-recovery-following-the-end-permi/ (doi 10.1038/ngeo1475); https://pmc.ncbi.nlm.nih.gov/articles/PMC4643808/ (doi 10.1126/sciadv.1500470)"
+    },
+    {
+      "claimId": "C-3",
+      "severity": "S3",
+      "find": "- About **70% of terrestrial vertebrate species** disappeared",
+      "replace": "- About **75% of terrestrial species** disappeared, the figure quoted by Burgess and Bowring (2015). This too is a fossil-record estimate, and the same sentence of that paper gives more than 90% for marine life—that is, it belongs to the higher group of estimates, above Stanley's figure",
+      "why": "Mirror of vi C-3. Burgess & Bowring 2015: \"more than 90% of marine and 75% of terrestrial species\".",
+      "evidence": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4643808/ (doi 10.1126/sciadv.1500470)"
+    },
+    {
+      "claimId": "C-4",
+      "severity": "S2",
+      "find": "- This is the only time in history that **insects** also suffered a mass extinction",
+      "replace": "- According to Jouault and colleagues (2022), this was the most severe **insect** extinction on record: about 82.6% of insect genera disappeared at the Permian–Triassic boundary. But it was not the only one—the same study records other insect extinction peaks at the Roadian–Wordian (64.5% of genera) and Ladinian–Carnian (74.8% of genera) boundaries. The labels still differ: a 2024 study (Dal Corso and colleagues) still calls the Permian–Triassic event the only known mass extinction among insects",
+      "why": "Bản en còn nguyên câu \"only time\" đã bị bác (S2, 17/09). Mirror of vi C-4 + C-4b + C-4c.",
+      "evidence": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9726944/ (doi 10.1038/s41467-022-35284-4); https://pmc.ncbi.nlm.nih.gov/articles/PMC11368959/ (doi 10.1038/s41467-024-51671-5)"
+    },
+    {
+      "claimId": "C-5",
+      "severity": "S1",
+      "find": "No other event in the past 540 million years has come close to that level. Marine ecosystems took about 10 million years to recover to their previous levels of diversity.",
+      "replace": "Burgess, Bowring and Shen (2014) describe it as the most severe loss of marine and terrestrial life in the last 542 million years. Some groups, such as ammonoids, diversified again fairly quickly, within 1–3 million years, but according to Chen and Benton (2012) a stable, complex ecosystem did not re-emerge until the beginning of the Middle Triassic, about 8–9 million years after the crisis.",
+      "why": "Mirror of vi C-5 (S1 17/09, chưa áp cho en) + C-6.",
+      "evidence": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3948271/ (doi 10.1073/pnas.1317692111); https://research-information.bris.ac.uk/en/publications/the-timing-and-pattern-of-biotic-recovery-following-the-end-permi/ (doi 10.1038/ngeo1475)"
+    },
+    {
+      "claimId": "C-7",
+      "severity": "S3",
+      "find": "The most widely accepted explanation today is the activity of the **Siberian Traps**—a massive large igneous province in what is now Siberia, which erupted over several hundred thousand years and coincided in time with the extinction boundary to a precision of a few tens of thousands of years.",
+      "replace": "The most widely supported explanation (in studies from 2015–2024) is the activity of the **Siberian Traps**—a massive large igneous province in what is now Siberia—although the causal link between volcanism and extinction is still debated. U–Pb dates from Burgess and Bowring (2015) show that about two-thirds of the lava and pyroclastic volume erupted over roughly 300,000 years, before and during the extinction; the rest kept erupting for at least 500,000 years afterwards. The marine extinction itself took place within about 60 ± 48 thousand years (Burgess, Bowring and Shen 2014).",
+      "why": "Mirror of vi C-7.",
+      "evidence": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4643808/ (doi 10.1126/sciadv.1500470); https://pmc.ncbi.nlm.nih.gov/articles/PMC3948271/ (doi 10.1073/pnas.1317692111); https://doi.org/10.1186/s40645-019-0267-0 (tóm tắt đọc qua Semantic Scholar API)"
+    },
+    {
+      "claimId": "C-8",
+      "severity": "S2",
+      "find": "Its scale is difficult to fathom: the volume of lava is estimated at **1–4 million km³**, whereas the largest eruptions ever recorded by humans rarely exceeded a few km³.",
+      "replace": "Its scale is difficult to fathom. The total magma volume—lava, pyroclastic rock and intrusions emplaced underground, the latter making up roughly half—is estimated at anywhere from about 1 to more than 10 million km³, with most estimates falling between **2 and 5 million km³** (as compiled by Burgess and Bowring 2015). The original volume is hard to constrain and was probably larger still.",
+      "why": "Mirror of vi C-8.",
+      "evidence": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4643808/ (doi 10.1126/sciadv.1500470)"
+    },
+    {
+      "claimId": "C-19b",
+      "severity": "S3",
+      "find": "But lava was not the killer. What killed was what came with it:",
+      "replace": "According to the widely supported hypothesis, the harm came not from the lava itself but from what came with it:",
+      "why": "Mirror of vi C-19b.",
+      "evidence": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4643808/ (doi 10.1126/sciadv.1500470)"
+    },
+    {
+      "claimId": "C-9",
+      "severity": "S3",
+      "find": "The massive amount of carbon released caused global temperatures to rise sharply—oxygen [[dong-vi|isotope]] estimates indicate that tropical seawater warmed by about 8–10 °C.",
+      "replace": "The massive amount of carbon released caused global temperatures to rise sharply. A model by Cui and colleagues (2021) estimates that about 36,000 Gt of carbon was emitted, mostly from volcanoes, raising CO₂ levels roughly 13-fold and global temperature by more than 10 °C—consistent with oxygen [[dong-vi|isotope]] measurements from brachiopod shells.",
+      "why": "Mirror of vi C-9.",
+      "evidence": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8449420/ (doi 10.1073/pnas.2014701118)"
+    },
+    {
+      "claimId": "C-10",
+      "severity": "S3",
+      "find": "CO₂ dissolving in seawater lowered pH, destroying the ability of corals, brachiopods, and many other marine organism groups to build calcium carbonate shells.",
+      "replace": "CO₂ dissolving in seawater lowered pH. Boron isotope data from Clarkson and colleagues (2015) show that ocean pH stayed stable during the first extinction phase but dropped abruptly in the second, when carbon was injected rapidly and in large amounts; according to the authors, this acidification event drove the preferential loss of heavily calcified marine organisms.",
+      "why": "Mirror of vi C-10.",
+      "evidence": "https://pubmed.ncbi.nlm.nih.gov/25859043/ (doi 10.1126/science.aaa0193)"
+    },
+    {
+      "claimId": "C-10b",
+      "severity": "S3",
+      "find": "Warmer water holds less dissolved oxygen, and ocean circulation slowed down. Sediments from this period bear traces of widespread oceanic anoxia, and even sulfide toxicity.",
+      "replace": "The oceans both warmed and lost oxygen. A model by Penn and colleagues (2018) suggests that these two stresses combined can account for more than half the magnitude of the marine extinction. Sediments from Western Australia and South China also record sulfide-rich conditions in the sunlit upper water column (photic-zone euxinia), which Grice and colleagues (2005) consider a driver of the extinction and of the protracted recovery.",
+      "why": "Mirror of vi C-10b.",
+      "evidence": "https://pubmed.ncbi.nlm.nih.gov/30523082/ (doi 10.1126/science.aat1327); https://pubmed.ncbi.nlm.nih.gov/15661975/ (doi 10.1126/science.1104323)"
+    },
+    {
+      "claimId": "C-11",
+      "severity": "S2",
+      "find": "**Coal burning.** Magma intruded through thick coal beds and hydrocarbon-bearing rock strata in the Tunguska Basin, burning them and releasing additional carbon alongside halogen gases that destroyed the ozone layer.",
+      "replace": "**Heating of sedimentary rock.** Burgess and colleagues (2017) found that the extinction began just as the magma switched from surface lava flows to intrusions of underground sheets (sills) into the Tunguska sedimentary basin—a basin of evaporites, carbonates and hydrocarbon-bearing rocks. Heat from these sills likely released additional large volumes of greenhouse gases. Even so, Cui and colleagues (2021) estimate that most of the CO₂ (53–77%) was still volcanic in origin, with smaller contributions from burning coal or from methane generated as the magma heated the sediments.",
+      "why": "Mirror of vi C-11.",
+      "evidence": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5537227/ (doi 10.1038/s41467-017-00083-9); https://pmc.ncbi.nlm.nih.gov/articles/PMC8449420/ (doi 10.1073/pnas.2014701118); https://pmc.ncbi.nlm.nih.gov/articles/PMC11368959/ (doi 10.1038/s41467-024-51671-5)"
+    },
+    {
+      "claimId": "C-12",
+      "severity": "S3",
+      "find": "\n\nThese four mechanisms unfolded in succession, which is why the extinction was prolonged rather than instantaneous.",
+      "replace": "",
+      "why": "Mirror of vi C-12.",
+      "evidence": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3948271/ (doi 10.1073/pnas.1317692111)"
+    },
+    {
+      "claimId": "C-13",
+      "severity": "S3",
+      "find": "In the early 2000s, a research team published findings of **fullerene** molecules containing helium-3 and argon-36—isotopes characteristic of extraterrestrial material—in Permian–Triassic boundary rocks. The conclusion drawn at the time was that an asteroid had caused the disaster, and this hypothesis was widely cited in popular science literature for over a decade.",
+      "replace": "In 2001, Becker's team reported in *Science* that **fullerene** molecules in Permian–Triassic boundary sediments trapped helium and argon with isotope ratios similar to the gases in carbonaceous chondrite meteorites. The authors concluded that an asteroid or comet impact had accompanied the extinction, as at the Cretaceous–Paleogene boundary.",
+      "why": "Mirror of vi C-13.",
+      "evidence": "https://pubmed.ncbi.nlm.nih.gov/11222855/ (doi 10.1126/science.1057243)"
+    },
+    {
+      "claimId": "C-14",
+      "severity": "S2",
+      "find": "That result was **irreproducible**. Multiple independent laboratories analyzed the same types of samples but found no similar signal. The \"Bedout crater\" structure off the coast of Australia, once proposed as a candidate, was also not accepted by the geological community. To date, the Permian–Triassic boundary **lacks** a global iridium layer, lacks shocked quartz, and lacks an impact crater—meaning it lacks the complete suite of evidence that the Cretaceous–Paleogene boundary of the dinosaur extinction fully possesses.",
+      "replace": "That result was **not confirmed**. Farley and Mukhopadhyay (2001) re-analysed the very same Meishan (China) ash material Becker's team had used, plus a second Chinese section, and detected no fullerene-hosted extraterrestrial helium-3. A later analysis in Canada (Farley and colleagues 2005) also found no extraterrestrial helium-3, and suggested that recent contamination was a plausible explanation for the signal reported at a section in Antarctica. In 2004, Becker's team proposed the Bedout structure off northwestern Australia as a contemporaneous impact crater; the proposal was immediately challenged in several technical comments published in *Science* the same year. And iridium measurements at the boundary layer in South China, as early as 1986, found only very low concentrations that did not support an impact there.\n\nThe picture is not entirely closed: in 2019, a Japanese team found an elevated extraterrestrial helium-3 signal in deep-sea bedded cherts. They interpreted it as a sharp increase in interplanetary dust, probably linked to an asteroid shower in the inner Solar System, peaking during the last 500,000 years of the Permian—at the same time as a pre-extinction decline in radiolarian diversity.",
+      "why": "Mirror of vi C-14.",
+      "evidence": "https://authors.library.caltech.edu/records/hj8xv-77674 (doi 10.1126/science.293.5539.2343a); https://authors.library.caltech.edu/records/gjzcq-3ha42 (doi 10.1016/j.epsl.2005.09.054); https://doi.org/10.1186/s40645-019-0267-0 (tóm tắt đọc qua Semantic Scholar API); https://pubmed.ncbi.nlm.nih.gov/15143216/ (doi 10.1126/science.1093925); các bình luận: Wignall et al. 2004 PMID 15498993, Renne et al. 2004 PMID 15498994 (doi 10.1126/science.306.5696.610), Glikson 2004 PMID 15498996; https://pubmed.ncbi.nlm.nih.gov/17732040/ (doi 10.1126/science.233.4767.984)"
+    },
+    {
+      "claimId": "C-14b",
+      "severity": "S3",
+      "find": "a high-profile result can still be discarded if no one can replicate it.",
+      "replace": "a high-profile result can still be set aside when re-analysis of the very same samples fails to reproduce it.",
+      "why": "Mirror of vi C-14b.",
+      "evidence": "https://authors.library.caltech.edu/records/hj8xv-77674 (doi 10.1126/science.293.5539.2343a); https://doi.org/10.1186/s40645-019-0267-0 (tóm tắt đọc qua Semantic Scholar API)"
+    },
+    {
+      "claimId": "C-16",
+      "severity": "S3",
+      "find": "## What Role Did Pangaea Play?\n\nBy the end of the Permian Period, all landmasses had merged into the supercontinent **Pangaea**. This did not directly cause the extinction, but it made everything worse:\n\n- The area of shallow continental shelves—where most marine biodiversity was concentrated—shrank dramatically\n- The continental climate became extreme, turning the interior into arid deserts\n- Ocean circulation was simplified, making anoxic conditions spread more easily\n\nA planet with its landmasses merged into a single block is a planet with less resilient ecosystems.\n\n",
+      "replace": "",
+      "why": "Mirror of vi C-16.",
+      "evidence": "— (không có nguồn; cắt)"
+    },
+    {
+      "claimId": "C-17",
+      "severity": "S2",
+      "find": "Among the groups wiped out were the trilobites—a group that had existed for the preceding 270 million years—and most groups of mammal-like reptiles (therapsids) that were on the path to evolving into mammals.\n\nBut the ecological void left by the extinction was precisely what paved the way for archosaurs, and subsequently dinosaurs, to dominate for the next 165 million years. Mammalian ancestors survived through a narrow margin, remaining small and evasive, awaiting their turn after the next extinction.",
+      "replace": "Among the groups wiped out were the trilobites—a group that had existed for about 270 million years, from the early Cambrian to the end of the Permian.\n\nBut the ecological void left by the extinction also paved the way for the archosauromorphs—the group that includes the ancestors of crocodylians, dinosaurs and birds—to go from obscurity to become the dominant land vertebrates. According to Ezcurra and Butler (2018), the group diversified in several phases, then surged in species counts, abundance and disparity as global ecosystems stabilised.",
+      "why": "Mirror of vi C-17.",
+      "evidence": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10584673/ (doi 10.1038/s41586-023-06567-7); https://pmc.ncbi.nlm.nih.gov/articles/PMC6015845/ (doi 10.1098/rspb.2018.0361); https://research-information.bris.ac.uk/en/publications/the-timing-and-pattern-of-biotic-recovery-following-the-end-permi/ (doi 10.1038/ngeo1475)"
+    },
+    {
+      "claimId": "C-18",
+      "severity": "S2",
+      "find": "its primary killing mechanism—pumping carbon into the atmosphere faster than the Earth system could absorb it—is what humanity is doing today, only many times faster.",
+      "replace": "one of its most widely supported killing mechanisms was pumping a huge amount of carbon into the atmosphere in a short time. According to Cui and colleagues (2021), the maximum emission rate in one of their scenarios was about 4.5 Gt of carbon per year—which the authors themselves compare to roughly half of today's carbon emission rate.",
+      "why": "Mirror of vi C-18. Cui 2021: \"roughly half the size of current carbon emission rate\".",
+      "evidence": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8449420/ (doi 10.1073/pnas.2014701118)"
+    },
+    {
+      "claimId": "C-0",
+      "severity": "S3",
+      "find": "by Đặng Vũ Tuấn Sơn, published on Astronomy Vietnam (VACA). Original content copyright belongs to VACA.",
+      "replace": "by Đặng Vũ Tuấn Sơn, published on Astronomy Vietnam (VACA). Original content copyright belongs to VACA. The figures and scientific arguments in the current version have been re-checked and replaced according to the peer-reviewed sources listed, so many points differ from the original.",
+      "why": "Mirror of vi C-0.",
+      "evidence": "docs/content/checks/2026-09-17/dai-tuyet-chung-permi-lan-su-song-suyt-bien-mat.yaml (C-0)"
+    }
+  ],
+  "summaryEdits": [
+    {
+      "claimId": "C-19",
+      "severity": "S3",
+      "find": "Thủ phạm không phải một thiên thạch mà là một vùng núi lửa",
+      "replace": "Thủ phạm được nhiều nhà khoa học ủng hộ nhất không phải một thiên thạch mà là một vùng núi lửa",
+      "why": "Thân bài viết \"được ủng hộ rộng rãi nhất ... dù mối liên hệ nhân quả vẫn còn được tranh luận\" (Onoue 2019); summary khẳng định chắc hơn thân bài.",
+      "evidence": "https://doi.org/10.1186/s40645-019-0267-0 (tóm tắt đọc qua Semantic Scholar API); https://pmc.ncbi.nlm.nih.gov/articles/PMC4643808/ (doi 10.1126/sciadv.1500470)"
+    }
+  ],
+  "summaryEnEdits": [
+    {
+      "claimId": "C-1",
+      "severity": "S1",
+      "find": "252 million years ago, about 80% of marine species vanished within tens of thousands of years. The culprit was not an impact but a volcanic province",
+      "replace": "About 251.9 million years ago, roughly 81% of marine species vanished within tens of thousands of years—the estimate of Stanley (2016); older estimates put the figure at 88–96%. The culprit favoured by most researchers was not an impact but a volcanic province",
+      "why": "summaryEn chưa nhận đính chính 17/09 (summary vi đã sửa): còn 252 triệu năm và 80%. Mirror of summary vi + C-19.",
+      "evidence": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7080820/ (doi 10.1038/s41467-020-15243-7); https://pmc.ncbi.nlm.nih.gov/articles/PMC5081622/ (doi 10.1073/pnas.1613094113); https://doi.org/10.1186/s40645-019-0267-0 (tóm tắt đọc qua Semantic Scholar API)"
+    }
+  ],
+  "titleEdits": {
+    "note": "Trường ngoài schema của apply-fixes-2026-09-17.ts — phải áp tay hoặc mở rộng script. Lý do: Stanley 2016 (nguồn của chính bài) viết 'Life did not nearly disappear at the end of the Permian, as has often been claimed'; tiêu đề hiện tại khẳng định đúng điều bị bác. SEO description còn 252 triệu năm / 80% (chưa nhận đính chính 17/09).",
+    "title": {
+      "find": "Đại tuyệt chủng Permi: lần sự sống suýt biến mất",
+      "replace": "Đại tuyệt chủng Permi: cuộc khủng hoảng lớn nhất của sự sống"
+    },
+    "titleEn": {
+      "find": "The Permian extinction: when life nearly ended",
+      "replace": "The Permian extinction: life's greatest crisis"
+    },
+    "seoTitle": {
+      "find": "Đại tuyệt chủng Permi: lần sự sống suýt biến mất",
+      "replace": "Đại tuyệt chủng Permi: cuộc khủng hoảng lớn nhất của sự sống"
+    },
+    "seoDescription": {
+      "find": "252 triệu năm trước, khoảng 80% số loài sinh vật biển biến mất trong vài chục nghìn năm. Thủ phạm không phải một thiên thạch mà là một vùng núi lửa phun",
+      "replace": "Khoảng 251,9 triệu năm trước, phần lớn sinh vật biển biến mất trong vài chục nghìn năm — ước tính từ 81% tới hơn 90% số loài. Thủ phạm được ủng hộ nhiều nhất không phải thiên thạch mà là một vùng núi lửa phun"
+    },
+    "evidence": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5081622/ (doi 10.1073/pnas.1613094113); https://pmc.ncbi.nlm.nih.gov/articles/PMC3948271/ (doi 10.1073/pnas.1317692111: 'the most severe loss of marine and terrestrial biota in the last 542 My')"
+  },
+  "addSources": [
+    {
+      "title": "High-precision geochronology confirms voluminous magmatism before, during, and after Earth's most severe extinction",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4643808/",
+      "doi": "10.1126/sciadv.1500470",
+      "publisher": "Science Advances (Burgess & Bowring)",
+      "year": 2015,
+      "tier": 1,
+      "covers": "C-3 (75% loài trên cạn), C-7 (hai phần ba dung nham trong ~300 nghìn năm, phần còn lại ≥500 nghìn năm), C-8 (thể tích magma 1–>10 triệu km³, đồng thuận 2–5 triệu km³, ~50% xâm nhập), C-2b (mức >90% vẫn được dùng)"
+    },
+    {
+      "title": "Initial pulse of Siberian Traps sills as the trigger of the end-Permian mass extinction",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5537227/",
+      "doi": "10.1038/s41467-017-00083-9",
+      "publisher": "Nature Communications (Burgess, Muirhead & Bowring)",
+      "year": 2017,
+      "tier": 1,
+      "covers": "C-11 — sill xâm nhập bồn Tunguska (đá bốc hơi, cacbonat, chứa hydrocarbon), trùng với lúc bắt đầu tuyệt chủng"
+    },
+    {
+      "title": "Massive and rapid predominantly volcanic CO2 emission during the end-Permian mass extinction",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8449420/",
+      "doi": "10.1073/pnas.2014701118",
+      "publisher": "PNAS (Cui, Li, van Soelen, Peterse, Kürschner)",
+      "year": 2021,
+      "tier": 1,
+      "covers": "C-9 (~36.000 Gt C, CO₂ ×13, ấm lên >10 °C), C-11 (53–77% CO₂ núi lửa, phần nhỏ từ than/methane), C-18 (tốc độ tối đa 4,5 Gt C/năm ≈ một nửa tốc độ hiện nay)"
+    },
+    {
+      "title": "Ocean acidification and the Permo-Triassic mass extinction",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/25859043/",
+      "doi": "10.1126/science.aaa0193",
+      "publisher": "Science (Clarkson et al.)",
+      "year": 2015,
+      "tier": 1,
+      "covers": "C-10 — pH ổn định ở pha 1, axit hoá đột ngột ở pha 2, mất nhiều sinh vật vôi hoá dày"
+    },
+    {
+      "title": "Photic zone euxinia during the Permian-Triassic superanoxic event",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/15661975/",
+      "doi": "10.1126/science.1104323",
+      "publisher": "Science (Grice et al.)",
+      "year": 2005,
+      "tier": 1,
+      "covers": "C-10b — euxinia tầng có ánh sáng ở Perth Basin và Nam Trung Quốc; độc tính sunfua là tác nhân tuyệt chủng"
+    },
+    {
+      "title": "Temperature-dependent hypoxia explains biogeography and severity of end-Permian marine mass extinction",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30523082/",
+      "doi": "10.1126/science.aat1327",
+      "publisher": "Science (Penn, Deutsch, Payne, Sperling)",
+      "year": 2018,
+      "tier": 1,
+      "covers": "C-10b — nóng lên + mất oxy giải thích hơn một nửa mức độ tuyệt chủng biển"
+    },
+    {
+      "title": "The timing and pattern of biotic recovery following the end-Permian mass extinction",
+      "url": "https://research-information.bris.ac.uk/en/publications/the-timing-and-pattern-of-biotic-recovery-following-the-end-permi/",
+      "doi": "10.1038/ngeo1475",
+      "publisher": "Nature Geoscience (Chen & Benton)",
+      "year": 2012,
+      "tier": 1,
+      "covers": "C-6 (1–3 triệu năm cho cúc đá; hệ sinh thái ổn định sau 8–9 triệu năm), C-2b (>90% loài), C-17 (khủng long về sau)"
+    },
+    {
+      "title": "Impact event at the Permian-Triassic boundary: evidence from extraterrestrial noble gases in fullerenes",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/11222855/",
+      "doi": "10.1126/science.1057243",
+      "publisher": "Science (Becker, Poreda, Hunt, Bunch, Rampino)",
+      "year": 2001,
+      "tier": 1,
+      "covers": "C-13 — nội dung giả thuyết fullerene gốc"
+    },
+    {
+      "title": "An extraterrestrial impact at the Permian-Triassic boundary?",
+      "url": "https://authors.library.caltech.edu/records/hj8xv-77674",
+      "doi": "10.1126/science.293.5539.2343a",
+      "publisher": "Science, technical comment (Farley & Mukhopadhyay)",
+      "year": 2001,
+      "tier": 1,
+      "covers": "C-14 — phân tích lại chính mẫu Meishan, không thấy ³He ngoài Trái Đất trong fullerene"
+    },
+    {
+      "title": "Absence of extraterrestrial 3He in Permian–Triassic age sedimentary rocks",
+      "url": "https://authors.library.caltech.edu/records/gjzcq-3ha42",
+      "doi": "10.1016/j.epsl.2005.09.054",
+      "publisher": "Earth and Planetary Science Letters (Farley, Ward, Garrison, Mukhopadhyay)",
+      "year": 2005,
+      "tier": 1,
+      "covers": "C-14 — Opal Creek (Canada) không có ³He ngoài Trái Đất; nhiễm bẩn giải thích tín hiệu Graphite Peak (Nam Cực)"
+    },
+    {
+      "title": "Enhanced flux of extraterrestrial 3He across the Permian–Triassic boundary",
+      "url": "https://doi.org/10.1186/s40645-019-0267-0",
+      "doi": "10.1186/s40645-019-0267-0",
+      "publisher": "Progress in Earth and Planetary Science (Onoue et al.)",
+      "year": 2019,
+      "tier": 1,
+      "covers": "C-14 (tín hiệu ³He bụi liên hành tinh, đỉnh 500 nghìn năm cuối Permi), C-7/C-19 (Siberian Traps là nguyên nhân được ưa chuộng, liên hệ vẫn còn tranh luận)"
+    },
+    {
+      "title": "Bedout: a possible end-Permian impact crater offshore of northwestern Australia",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/15143216/",
+      "doi": "10.1126/science.1093925",
+      "publisher": "Science (Becker et al.)",
+      "year": 2004,
+      "tier": 1,
+      "covers": "C-14 — đề xuất hố Bedout (các bình luận phản biện cùng năm: PMID 15498993, 15498994, 15498996)"
+    },
+    {
+      "title": "Conodont survival and low iridium abundances across the Permian-Triassic boundary in South China",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/17732040/",
+      "doi": "10.1126/science.233.4767.984",
+      "publisher": "Science (Clark, Wang, Orth, Gilmore)",
+      "year": 1986,
+      "tier": 1,
+      "covers": "C-14 — iridium thấp ở ranh giới tại Nam Trung Quốc, không ủng hộ va chạm"
+    },
+    {
+      "title": "The rise of the ruling reptiles and ecosystem recovery from the Permo-Triassic mass extinction",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6015845/",
+      "doi": "10.1098/rspb.2018.0361",
+      "publisher": "Proceedings of the Royal Society B (Ezcurra & Butler)",
+      "year": 2018,
+      "tier": 1,
+      "covers": "C-17 — archosauromorph trở thành động vật có xương sống trên cạn chiếm ưu thế sau tuyệt chủng"
+    },
+    {
+      "title": "Uniquely preserved gut contents illuminate trilobite palaeophysiology",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10584673/",
+      "doi": "10.1038/s41586-023-06567-7",
+      "publisher": "Nature (Kraft et al.)",
+      "year": 2023,
+      "tier": 1,
+      "covers": "C-17 — bọ ba thuỳ: lịch sử ~270 triệu năm từ đầu Cambri tới cuối Permi"
+    },
+    {
+      "title": "Repeated pulses of volcanism drove the end-Permian terrestrial crisis in northwest China",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11368959/",
+      "doi": "10.1038/s41467-024-51671-5",
+      "publisher": "Nature Communications (Dal Corso et al.)",
+      "year": 2024,
+      "tier": 1,
+      "covers": "C-4c (\"only known mass extinction among insects\" — bất đồng về cách gọi), C-11 (số liệu S-isotope không phù hợp với tầng ozone sụp đổ hoàn toàn)"
+    },
+    {
+      "title": "The Chicxulub asteroid impact and mass extinction at the Cretaceous-Paleogene boundary",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/20203042/",
+      "doi": "10.1126/science.1177265",
+      "publisher": "Science (Schulte et al.)",
+      "year": 2010,
+      "tier": 1,
+      "covers": "C-21 — va chạm Chicxulub gây tuyệt chủng Creta–Paleogene (câu mở bài)"
+    }
+  ],
+  "dropSources": [],
+  "retierSources": [],
+  "corrections": [
+    "Bản tiếng Anh (contentEn, summaryEn) chưa từng nhận bốn đính chính S1/S2 ngày 17/09: vẫn ghi \"252 million years\", \"80% of marine species\", \"the only time ... insects\", \"No other event in the past 540 million years\" → nay mang cùng claim và cùng nguồn với bản vi (Gastaldo 2020, Stanley 2016, Jouault 2022, Burgess 2014).",
+    "Mở bài: \"nó suýt xoá sạch sự sống phức tạp khỏi hành tinh này\" → \"sự sống chưa từng tiến gần tới chỗ biến mất hẳn\" — căn cứ: Stanley 2016, PNAS, doi 10.1073/pnas.1613094113 (\"Life did not nearly disappear at the end of the Permian, as has often been claimed\"). Tiêu đề đề xuất đổi theo (xem titleEdits).",
+    "Động vật trên cạn: \"khoảng 70% số loài động vật có xương sống trên cạn\" (không nguồn) → \"khoảng 75% số loài trên cạn, theo con số Burgess và Bowring (2015) dẫn\" — căn cứ: doi 10.1126/sciadv.1500470.",
+    "Hồi phục: \"khoảng 10 triệu năm mới hồi phục về mức đa dạng cũ\" → \"cúc đá đa dạng hoá lại trong 1–3 triệu năm; hệ sinh thái ổn định, phức tạp xuất hiện lại sau khoảng 8–9 triệu năm\" — căn cứ: Chen & Benton 2012, Nature Geoscience, doi 10.1038/ngeo1475.",
+    "Siberian Traps: \"phun trào trong khoảng vài trăm nghìn năm, trùng với ranh giới ở độ chính xác vài chục nghìn năm\" → \"hai phần ba dung nham trong ~300 nghìn năm trước và trong lúc tuyệt chủng, phần còn lại thêm ít nhất 500 nghìn năm; tuyệt chủng biển kéo dài 60 ± 48 nghìn năm\"; thêm vế \"mối liên hệ nhân quả vẫn còn được tranh luận\" — căn cứ: doi 10.1126/sciadv.1500470, doi 10.1073/pnas.1317692111, doi 10.1186/s40645-019-0267-0.",
+    "Thể tích: \"lượng dung nham ước tính khoảng 1–4 triệu km³; phun trào lịch sử hiếm khi vượt vài km³\" → \"tổng thể tích magma (khoảng một nửa là xâm nhập ngầm) ước tính 1 đến hơn 10 triệu km³, phần đông ước tính 2–5 triệu km³\"; bỏ câu so sánh — căn cứ: Burgess & Bowring 2015, doi 10.1126/sciadv.1500470.",
+    "Nóng lên: \"đồng vị oxy cho thấy nước biển nhiệt đới ấm lên khoảng 8–10 °C\" (không nguồn mở được) → \"mô hình Cui và cộng sự 2021: ~36.000 Gt C, CO₂ tăng ~13 lần, nhiệt độ toàn cầu tăng hơn 10 °C, phù hợp số đo đồng vị oxy vỏ tay cuộn\" — căn cứ: doi 10.1073/pnas.2014701118.",
+    "Axit hoá: \"phá huỷ khả năng tạo vỏ của san hô, tay cuộn...\" → \"pH ổn định ở pha tuyệt chủng thứ nhất, tụt đột ngột ở pha thứ hai; sinh vật vôi hoá dày bị mất nhiều hơn\" — căn cứ: Clarkson et al. 2015, Science, doi 10.1126/science.aaa0193.",
+    "Thiếu oxy: bỏ \"tuần hoàn đại dương chậm lại\" (không nguồn); thêm \"nóng lên + mất oxy giải thích hơn một nửa mức tuyệt chủng biển\" và euxinia ở Tây Australia/Nam Trung Quốc — căn cứ: Penn et al. 2018, doi 10.1126/science.aat1327; Grice et al. 2005, doi 10.1126/science.1104323.",
+    "Than/ozone: \"Đốt cháy than ... giải phóng khí halogen phá huỷ tầng ozone\" → \"sill nung nóng đá trầm tích bồn Tunguska, nhiều khả năng giải phóng thêm khí nhà kính; 53–77% CO₂ vẫn là núi lửa, phần nhỏ từ than/methane\"; bỏ vế ozone (không nguồn, Dal Corso 2024 trái chiều) — căn cứ: doi 10.1038/s41467-017-00083-9, doi 10.1073/pnas.2014701118, doi 10.1038/s41467-024-51671-5.",
+    "Cắt câu \"Bốn cơ chế này nối tiếp nhau, và đó là lý do cuộc tuyệt chủng kéo dài chứ không tức thời\" — quan hệ nhân quả không nguồn, trái với khoảng 60 ± 48 nghìn năm (doi 10.1073/pnas.1317692111).",
+    "Fullerene: \"chứa heli-3 và argon-36 ... nhắc lại rộng rãi suốt hơn một thập niên\" → \"heli và argon với tỉ lệ đồng vị giống chondrite carbon (Becker 2001)\" — căn cứ: doi 10.1126/science.1057243.",
+    "Không lặp lại được: \"Nhiều phòng thí nghiệm độc lập ... không tìm thấy tín hiệu tương tự; không có lớp iridium toàn cầu, không thạch anh sốc, không hố va chạm\" → \"Farley và cộng sự phân tích lại chính mẫu Meishan và mẫu Canada, không thấy ³He ngoài Trái Đất; Bedout bị chất vấn trên Science 2004; iridium thấp ở Nam Trung Quốc (1986); năm 2019 một nhóm Nhật thấy ³He bụi liên hành tinh tăng, không diễn giải là va chạm\" — căn cứ: doi 10.1126/science.293.5539.2343a, 10.1016/j.epsl.2005.09.054, 10.1126/science.1093925, 10.1126/science.233.4767.984, 10.1186/s40645-019-0267-0.",
+    "Cắt cả mục \"Pangaea đóng vai trò gì\" — không nguồn nào đỡ, câu kết là khái quát tự dựng.",
+    "Hệ quả: bỏ \"therapsid đang trên đường tiến hoá thành động vật có vú\", \"khủng long thống trị 165 triệu năm\" (không nguồn) và \"tổ tiên động vật có vú chờ tới lượt sau vụ tuyệt chủng kế tiếp\" (sai: vụ kế tiếp là cuối Trias, động vật có vú lên ngôi sau Creta–Paleogene); giữ bọ ba thuỳ 270 triệu năm và thêm archosauromorph lên ngôi — căn cứ: Kraft et al. 2023, doi 10.1038/s41586-023-06567-7; Ezcurra & Butler 2018, doi 10.1098/rspb.2018.0361.",
+    "Lời kết: \"là điều loài người đang làm, chỉ nhanh hơn nhiều bậc\" → \"tốc độ tối đa ~4,5 Gt C/năm, theo chính nhóm tác giả cỡ một nửa tốc độ phát thải carbon hiện nay\" — căn cứ: Cui et al. 2021, doi 10.1073/pnas.2014701118.",
+    "Summary vi/en: \"Thủ phạm không phải một thiên thạch\" → \"Thủ phạm được nhiều nhà khoa học ủng hộ nhất không phải một thiên thạch\"; summaryEn đổi 252/80% theo bản vi.",
+    "Ghi công cuối bài: giữ nguyên dòng ghi công và bản quyền VACA, thêm câu nói số liệu đã được đối chiếu lại theo nguồn bình duyệt nên nhiều chỗ khác bài gốc.",
+    "Nguồn: thêm 17 nguồn bình duyệt bậc 1 (danh sách trong docs/content/checks/2026-09-25/fixes/dai-tuyet-chung-permi-lan-su-song-suyt-bien-mat.json); bảng nguồn từ 4 lên 21."
+  ],
+  "openQuestions": [
+    "titleEdits (title, titleEn, seoTitle, seoDescription) nằm ngoài schema mà apply-fixes-2026-09-17.ts đọc. Verdict 'pass' giả định bốn trường này được áp; không áp thì tiêu đề vẫn khẳng định điều mà nguồn của bài (Stanley 2016) bác, và SEO description vẫn ghi 252 triệu năm / 80% — khi đó phải coi là 'revise'.",
+    "Slug 'dai-tuyet-chung-permi-lan-su-song-suyt-bien-mat' mang đúng cụm 'suýt biến mất' vừa bị đổi ở tiêu đề. Đổi slug cần 301 (npm run slugs:redirect + redirects:sync + deploy) và sửa các link nội bộ trỏ tới nó — việc của seo-expert/backend; không chặn gate accuracy vì slug không phải claim hiển thị như một khẳng định.",
+    "Burgess, Bowring & Shen 2014: URL trong bảng nguồn vẫn là endpoint Crossref. Bản toàn văn công khai có ở https://pmc.ncbi.nlm.nih.gov/articles/PMC3948271/ (đã mở lượt này qua Europe PMC) — đề nghị đổi URL; schema fixes không có trường sửa URL nên không đưa vào edits.",
+    "Quyền sử dụng bài gốc VACA vẫn chưa ai quyết (mở từ 17/09). Lượt này chỉ thêm câu nói đúng nguồn gốc số liệu, không xoá ghi công và không đụng dòng bản quyền.",
+    "Mục 'Đọc thêm' bản en thiếu link thứ tư (bài về hành trình Hệ Mặt Trời trong Ngân Hà) so với bản vi — không phải claim khoa học, để content-curator/translation bù.",
+    "S4 để nguyên: câu mở bài ghi '66 triệu năm trước' cho Chicxulub, trong khi Schulte 2010 (nguồn mở được lượt này) ghi 'approximately 65.5 million years ago'; giá trị 66,0 của bảng ICS hiện hành chưa trích được chữ trong lượt này. Chênh lệch nằm trong mức làm tròn của 'khoảng'."
+  ]
+}

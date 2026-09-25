@@ -1,0 +1,243 @@
+{
+  "slug": "nhin-an-gian-doan-anh-huong-toi-he-vi-sinh-duong-ruot-nhu-the-nao",
+  "edits": [
+    {
+      "claimId": "C-1",
+      "severity": "S3",
+      "find": "Nhưng dao động đó không đến từ một \"đồng hồ riêng\" của vi khuẩn: nghiên cứu năm 2014 trên tạp chí *Cell* cho thấy nó **chịu ảnh hưởng của nhịp ăn** của vật chủ (Thaiss và cộng sự, 2014).",
+      "replace": "Nghiên cứu năm 2014 trên tạp chí *Cell* cho thấy dao động này **chịu ảnh hưởng của nhịp ăn** của vật chủ (Thaiss và cộng sự, 2014).",
+      "why": "Nguồn viết \"diurnal oscillations that are influenced by feeding rhythms\" — chịu ảnh hưởng, không nói vi khuẩn KHÔNG có đồng hồ riêng. Câu \"không đến từ một đồng hồ riêng\" là dựng ranh giới nguồn không dựng (content-rules, \"Ba hình dạng của câu bịa\", hình dạng 2). Giữ đúng động từ của nguồn.",
+      "evidence": "https://pubmed.ncbi.nlm.nih.gov/25417104 (doi 10.1016/j.cell.2014.09.048; tóm tắt qua Europe PMC)"
+    },
+    {
+      "claimId": "C-2",
+      "severity": "S3",
+      "find": "Chiều ngược lại thì chưa có: **không có bằng chứng cho thấy nhịn ăn gián đoạn \"thiết lập lại\" chu kỳ hệ vi sinh ở người.** Điều quan sát được mới dừng ở chỗ ăn uống theo khung giờ cố định đi kèm thay đổi thành phần hệ vi sinh — đi kèm, chưa phải gây ra.",
+      "replace": "Chiều ngược lại — nhịn ăn gián đoạn giúp nhịp của hệ vi sinh \"trở lại đúng\" ở người — thì chưa được nghiên cứu trực tiếp. Tổng quan hệ thống năm 2024 ghi rõ vẫn cần nghiên cứu trên người để biết việc giữ hay phá vỡ nhịp ngày đêm đóng vai trò gì trong các chế độ ăn giới hạn thời gian, và thay đổi hệ vi sinh có đến từ thay đổi nhịp ngày đêm hay không. Người tham gia các thử nghiệm nhịn ăn gián đoạn cũng thường giảm cân và đổi thành phần bữa ăn, nên chưa tách được phần thay đổi nào là do khung giờ ăn (Paukkonen và cộng sự, 2024).",
+      "why": "Bản hiện tại lập luận từ sự im lặng (\"không có bằng chứng cho thấy…\") — content-rules, mục \"lập luận từ sự im lặng\". Nó còn mô tả sai bản chất bằng chứng: các nghiên cứu trong tổng quan là thử nghiệm can thiệp, không phải quan sát, nên \"đi kèm, chưa phải gây ra\" không đúng chỗ. Giới hạn thật mà nguồn nêu là (1) chưa có nghiên cứu ở người về vai trò của nhịp ngày đêm — \"Future human studies are needed to investigate the role of either maintaining or disrupting daily circadian rhythms in TRF interventions, and whether changes in the gut microbiota may result from changes in circadian rhythms\"; (2) nhiễu bởi giảm cân/đổi khẩu phần — \"it cannot be said to which extent the latter may explain the former\".",
+      "evidence": "https://www.frontiersin.org/journals/nutrition/articles/10.3389/fnut.2024.1342787/full (doi 10.3389/fnut.2024.1342787; toàn văn PMC10894978 qua Europe PMC fullTextXML)"
+    },
+    {
+      "claimId": "C-3",
+      "severity": "S3",
+      "find": "Một số nghiên cứu cho thấy việc đồng bộ này có liên quan đến:\n\n- Cải thiện chuyển hóa năng lượng.\n- Giảm viêm mức thấp kéo dài.\n- Tăng tính đa dạng của hệ vi sinh.",
+      "replace": "Về độ đa dạng, tổng quan 2024 kết luận **có vẻ có thể** nhịn ăn gián đoạn làm tăng độ phong phú và độ đa dạng alpha của hệ vi sinh — nhưng kết quả giữa các nghiên cứu không đồng nhất, và vẫn chưa rõ những thay đổi thành phần đó có lợi cho sức khỏe người hay không (Paukkonen và cộng sự, 2024).",
+      "why": "Danh sách gán ba lợi ích cho một \"việc đồng bộ\" mà sau lượt sửa trước không còn được định nghĩa. \"Cải thiện chuyển hóa năng lượng\" và \"giảm viêm mức thấp kéo dài\" không có nguồn nào trong bảng đỡ (Thaiss 2014 chỉ cho thấy PHÁ VỠ nhịp gây rối loạn chuyển hóa — không cho thấy chiều cải thiện). Chỉ vế đa dạng có nguồn, và nguồn chỉ nói \"It seems possible that IF can improve richness and alpha diversity… more research is required to… clarify whether the compositional changes might be beneficial to human health.\"",
+      "evidence": "https://www.frontiersin.org/journals/nutrition/articles/10.3389/fnut.2024.1342787/full (doi 10.3389/fnut.2024.1342787; toàn văn PMC10894978 qua Europe PMC fullTextXML)"
+    },
+    {
+      "claimId": "C-4",
+      "severity": "S3",
+      "find": "Loài được nhắc nhiều nhất là:",
+      "replace": "Một ví dụ hay được nêu là:",
+      "why": "Mức so sánh nhất \"được nhắc nhiều nhất\" không có nguồn đếm. Tổng quan 2024 nêu A. muciniphila (theo Ozkul và cộng sự) cùng họ Lachnospiraceae (theo Su và cộng sự) làm ví dụ vi khuẩn phân giải mucin có thể có lợi thế khi nhịn ăn — hai ví dụ, không xếp hạng.",
+      "evidence": "https://www.frontiersin.org/journals/nutrition/articles/10.3389/fnut.2024.1342787/full (doi 10.3389/fnut.2024.1342787; toàn văn PMC10894978 qua Europe PMC fullTextXML)"
+    },
+    {
+      "claimId": "C-4b",
+      "severity": "S2",
+      "find": "Ở người, bằng chứng cho giả thuyết này còn mỏng. Tổng quan hệ thống năm 2024 rà 8 nghiên cứu trên người và chỉ **một** nghiên cứu ghi nhận *A. muciniphila* tăng lên (sau tháng nhịn ăn Ramadan); các nghiên cứu còn lại không báo cáo loài này, nên chưa thể coi đây là quy luật của nhịn ăn gián đoạn (Paukkonen và cộng sự, 2024). Cũng tổng quan đó ghi nhận thay đổi vi sinh giữa các nghiên cứu là **không đồng nhất**, và thay đổi nhất quán hơn cả lại là tăng ngành Proteobacteria — điều được xem là dấu hiệu loạn khuẩn chứ không phải cải thiện.",
+      "replace": "Ở người, bằng chứng cho giả thuyết này còn mỏng. Trong 8 nghiên cứu trên người mà tổng quan hệ thống năm 2024 rà, việc *A. muciniphila* tăng lên chỉ được nêu từ **một** nghiên cứu (sau tháng nhịn ăn Ramadan), nên chưa thể coi đây là quy luật của nhịn ăn gián đoạn (Paukkonen và cộng sự, 2024). Cũng tổng quan đó ghi nhận thay đổi thành phần vi sinh giữa các nghiên cứu là **không đồng nhất**: vi khuẩn bị ảnh hưởng khác nhau ở từng nghiên cứu, và có khi cùng một nhóm vi khuẩn tăng ở nghiên cứu này nhưng giảm ở nghiên cứu khác.",
+      "why": "Hai lỗi. (1) \"thay đổi nhất quán hơn cả lại là tăng ngành Proteobacteria\" là chọn một kể như tất cả (content-rules, quy tắc 15): theo tổng quan, các thay đổi lặp lại ở ba nhóm nhịn ăn trở lên gồm tăng Proteobacteria, Gammaproteobacteria, Clostridiales VÀ Faecalibacterium, giảm Negativicutes, Selenomonadales, Veillonellaceae — trong đó có cả thay đổi tác giả xem là có lợi; riêng Proteobacteria còn \"some discrepancy\" (tăng ở Ali và Su, giảm ở Ozkul). Viết Proteobacteria là thay đổi nhất quán nhất, và chỉ nó, là sai về nội dung nguồn — S2. Phần hai chiều được chuyển sang đoạn thay cho câu SCFA (C-6). (2) \"các nghiên cứu còn lại không báo cáo loài này\" là lập luận từ sự im lặng — tổng quan chỉ nêu Ozkul; không đọc được bảng phụ lục S1A để khẳng định các nghiên cứu khác không báo cáo. Bản sửa chỉ nói điều tổng quan nói.",
+      "evidence": "https://www.frontiersin.org/journals/nutrition/articles/10.3389/fnut.2024.1342787/full (doi 10.3389/fnut.2024.1342787; toàn văn PMC10894978 qua Europe PMC fullTextXML)"
+    },
+    {
+      "claimId": "C-5",
+      "severity": "S2",
+      "find": "Loài vi khuẩn này có liên quan đến:\n\n- Hàng rào niêm mạc ruột khỏe mạnh.\n- Chuyển hóa đường và chất béo tốt hơn.\n- Giảm nguy cơ béo phì và hội chứng chuyển hóa.",
+      "replace": "Ở người, các nghiên cứu quan sát ghi nhận mức *A. muciniphila* thấp hơn ở người thừa cân, béo phì, đái tháo đường type 2 chưa điều trị hoặc tăng huyết áp — đây là **tương quan**, chưa cho biết cái nào là nguyên nhân. Thử nghiệm đầu tiên cho người uống bổ sung vi khuẩn này là một nghiên cứu thăm dò nhỏ: 40 người thừa cân hoặc béo phì có kháng insulin tham gia, 32 người hoàn thành, trong ba tháng. So với giả dược, dạng vi khuẩn đã tiệt trùng Pasteur cải thiện độ nhạy insulin, giảm insulin máu và cholesterol toàn phần; mức giảm cân nặng nhỏ và **không có ý nghĩa thống kê** (Depommier và cộng sự, 2019). Đó là bổ sung vi khuẩn trực tiếp, không phải nhịn ăn — kết quả này không cho biết nhịn ăn gián đoạn có đem lại tác dụng tương tự hay không.",
+      "why": "\"Giảm nguy cơ béo phì và hội chứng chuyển hóa\" là một khẳng định về nguy cơ ở quần thể, không nguồn, đặt ngay dưới đoạn nhịn ăn — người đọc ghép thành \"nhịn ăn → tăng Akkermansia → giảm nguy cơ béo phì\", chuỗi nhân quả không nguồn nào đỡ. Nâng mức tự tin ở bài sức khỏe: S2. \"Hàng rào niêm mạc ruột khỏe mạnh\" không mở được nguồn ở người trong lượt này → bỏ. Thay bằng đúng điều Depommier 2019 nói: \"a negative correlation between Akkermansia muciniphila abundance and overweight, obesity, untreated type 2 diabetes mellitus or hypertension\"; \"40 were enrolled and 32 completed\"; pasteurized A. muciniphila \"improved insulin sensitivity (+28.62 ± 7.02%, P = 0.002), and reduced insulinemia (−34.08 ± 7.12%, P = 0.006) and plasma total cholesterol (−8.68 ± 2.38%, P = 0.02)\"; \"slightly decreased body weight (−2.27 ± 0.92 kg, P = 0.091)\"; \"proof-of-concept exploratory study\".",
+      "evidence": "https://pubmed.ncbi.nlm.nih.gov/31263284 (doi 10.1038/s41591-019-0495-2; tóm tắt qua Europe PMC, PMC6699990)"
+    },
+    {
+      "claimId": "C-6",
+      "severity": "S3",
+      "find": "Ngoài ra, một số vi khuẩn tạo **axit béo chuỗi ngắn (SCFA)** như butyrate cũng được ghi nhận có xu hướng tăng lên khi chế độ ăn phù hợp.",
+      "replace": "Nếu chỉ tính những thay đổi lặp lại ở từ ba nhóm nhịn ăn trở lên, tổng quan thấy **cả hai chiều**. Một số thay đổi tác giả xem là có thể có lợi: tăng chi *Faecalibacterium* — một trong những vi khuẩn tạo **butyrate** chính trong ruột, mà butyrate được báo cáo có tác dụng kháng viêm — và giảm họ Veillonellaceae, được xem là tiền viêm. Nhưng cũng có thay đổi có thể có hại: tăng ngành Proteobacteria và lớp Gammaproteobacteria, vốn được đề xuất là dấu hiệu loạn khuẩn. Tác giả kết luận cần thêm nghiên cứu để biết những thay đổi này có lợi cho sức khỏe người hay không (Paukkonen và cộng sự, 2024).",
+      "why": "\"Chế độ ăn phù hợp\" không xác định, không gắn với nhịn ăn gián đoạn, không nguồn. Tổng quan 2024 có đúng một điểm liên quan: Faecalibacterium tăng ở ≥3 nhóm nhịn ăn — \"Faecalibacterium is one of the major butyrate producers in the intestine… Butyrate has been reported to exert anti-inflammatory effects\". Viết kèm vế đối trọng mà nguồn đặt ngay cạnh: \"the IF-induced decrease in Veillonellaceae and Negativicutes, as well as the increase in anti-inflammatory Faecalibacterium, may therefore be considered as beneficial changes, the increase in proinflammatory Proteobacteria and Gammaproteobacteria, on the other hand, may be harmful.\" Đoạn này cũng mang phần Proteobacteria chuyển từ C-4b, để hai chiều đứng cạnh nhau.",
+      "evidence": "https://www.frontiersin.org/journals/nutrition/articles/10.3389/fnut.2024.1342787/full (doi 10.3389/fnut.2024.1342787; toàn văn PMC10894978 qua Europe PMC fullTextXML)"
+    },
+    {
+      "claimId": "C-7",
+      "severity": "S3",
+      "find": "### Kích hoạt cơ chế \"quét dọn\" của ruột\n\nKhi không có thức ăn mới đi xuống đường tiêu hóa trong vài giờ, ruột non xuất hiện các đợt co bóp mạnh gọi là:\n\n**Migrating Motor Complex (MMC)**\n\nCó thể hình dung MMC như một \"chế độ vệ sinh\" của đường tiêu hóa:\n\n- Đẩy cặn thức ăn còn sót lại xuống ruột già.\n- Hạn chế sự tích tụ vi khuẩn tại ruột non.\n- Được cho là có thể liên quan đến việc giảm đầy hơi và chướng bụng ở một số người.",
+      "replace": "### Nhịp co bóp của ruột lúc đói\n\nLúc đói, dạ dày và ruột non có một kiểu vận động lặp lại theo chu kỳ gọi là:\n\n**Migrating Motor Complex (MMC)**\n\nMMC bị bữa ăn ngắt quãng và chia thành bốn pha; pha III hoạt động mạnh nhất, với một loạt co bóp khởi phát từ hang vị hoặc tá tràng rồi lan dần xuống phía dưới. Vai trò sinh lý của MMC **chưa được hiểu đầy đủ**, nhưng việc thiếu MMC có liên quan đến liệt dạ dày, giả tắc ruột và tăng sinh vi khuẩn ở ruột non (Deloose và cộng sự, 2012).\n\nMMC xuất hiện mỗi khi đường tiêu hóa ở trạng thái đói, nên nó không phải cơ chế riêng của nhịn ăn gián đoạn.",
+      "why": "Deloose 2012 (tổng quan, Nat Rev Gastroenterol Hepatol): \"a cyclic, recurring motility pattern that occurs in the stomach and small bowel during fasting; it is interrupted by feeding… four phases, of which phase III is the most active… The physiological role of the MMC is incompletely understood, but its absence has been associated with gastroparesis, intestinal pseudo-obstruction and small intestinal bacterial overgrowth.\" Bản cũ: (a) tiêu đề \"Kích hoạt\" gán MMC cho nhịn ăn gián đoạn, trong khi MMC diễn ra ở mọi trạng thái đói; (b) \"vài giờ\" không có trong nguồn; (c) \"đẩy cặn xuống ruột già\" và \"chế độ vệ sinh\" không mở được nguồn — bỏ; (d) \"hạn chế tích tụ vi khuẩn ở ruột non\" nâng một liên hệ (\"absence… associated with\") thành chức năng — hạ về đúng mức nguồn; (e) C-8 \"giảm đầy hơi, chướng bụng\" không nguồn — cắt.",
+      "evidence": "https://pubmed.ncbi.nlm.nih.gov/22450306 (doi 10.1038/nrgastro.2012.57; tóm tắt qua Europe PMC)"
+    },
+    {
+      "claimId": "C-9",
+      "severity": "S3",
+      "find": "### Ảnh hưởng đến cảm giác đói và thèm ăn\n\nHệ vi sinh đường ruột có liên hệ với nhiều hormone điều hòa ăn uống như:\n\n- Ghrelin (hormone đói).\n- Leptin (hormone no).\n- GLP-1.\n- PYY.\n\nKhi chế độ ăn ổn định hơn và lượng đường đơn giảm, một số người nhận thấy:\n\n- Giảm cảm giác thèm đồ ngọt.\n- Ít ăn vặt hơn.\n- Cảm giác đói ổn định hơn.\n\nTuy nhiên, điều này không xảy ra giống nhau ở tất cả mọi người.\n\n## Ai không nên nhịn ăn gián đoạn",
+      "replace": "## Ai không nên nhịn ăn gián đoạn",
+      "why": "Cắt toàn mục. C-9 (hệ vi sinh liên hệ ghrelin, leptin, GLP-1, PYY) không nguồn và trùng bài ruot-he-vi-sinh-vat-…, nơi chính danh sách này đã bị cắt vì không nguồn (corrections.md, mục ruot-he-vi-sinh-vat, C-8). C-10 (\"một số người nhận thấy giảm thèm ngọt…\") là lời kể, không phải bằng chứng, và không nối được với hệ vi sinh; lại là câu dạng hành vi trên bài sức khỏe. Không có nguồn bậc 1–2 nào trong lượt này đỡ được mục này ở mức hiện tại. Bài \"Đằng sau tiếng bụng kêu\" vẫn nằm trong Đọc thêm cho người đọc muốn tìm về cảm giác đói.",
+      "evidence": "— (cắt vì không nguồn; không có nguồn nào để trỏ)"
+    },
+    {
+      "claimId": "C-11",
+      "severity": "S3",
+      "find": "**Nhịn ăn gián đoạn không phù hợp với tất cả mọi người.** Các hướng dẫn hiện hành khuyến cáo không áp dụng cho phụ nữ mang thai hoặc đang cho con bú và cho trẻ em, do chưa đủ dữ liệu an toàn. Người có tiền sử rối loạn ăn uống, tiền sử hạ đường huyết nặng, hoặc người cao tuổi có nguy cơ thiểu cơ cần cân nhắc thận trọng. Người đái tháo đường đang dùng thuốc ảnh hưởng đường huyết chỉ nên nhịn ăn gián đoạn dưới giám sát y tế. Bài viết này mô tả nghiên cứu, không phải lời khuyên điều trị.",
+      "replace": "**Nhịn ăn gián đoạn không phù hợp với tất cả mọi người.** Các tổng quan y khoa liệt kê những nhóm không nên nhịn ăn gián đoạn, hoặc có thể không phù hợp: phụ nữ mang thai hoặc đang cho con bú, trẻ nhỏ, người cao tuổi, người suy giảm miễn dịch (kể cả người ghép tạng đang dùng thuốc ức chế miễn dịch), người có rối loạn ăn uống, và người từng bị hạ đường huyết (Vasim và cộng sự, 2022; Albosta và Bakke, 2021). Nhịn ăn mà không bổ sung đủ đạm có thể gây mất cơ (Vasim và cộng sự, 2022). Người đái tháo đường đang dùng insulin hoặc sulfonylurea cần được bác sĩ theo dõi sát để tránh hạ đường huyết, và bác sĩ cần điều chỉnh thuốc — nhất là vào những ngày nhịn (Albosta và Bakke, 2021). Bài viết này mô tả nghiên cứu, không phải lời khuyên điều trị.",
+      "why": "\"Các hướng dẫn hiện hành khuyến cáo\" không nêu hướng dẫn nào; \"do chưa đủ dữ liệu an toàn\" là lý do không nguồn; \"trẻ em\" rộng hơn nguồn (\"young children\"); \"người cao tuổi có nguy cơ thiểu cơ cần cân nhắc thận trọng\" NHẸ hơn nguồn (nguồn xếp \"adults of advanced age\" vào nhóm không khuyến nghị). Gắn nguồn đã mở: Vasim 2022 — \"it is not recommended for individuals with hormonal imbalances, pregnant and breastfeeding women, young children, adults of advanced age, and individuals with immune deficiencies, including those with a history of solid organ transplant with subsequent medical immunosuppression… Individuals with eating disorders or those with dementia… should avoid intermittent fasting regimens\"; \"fasting without proper protein replacement is a well-known cause of muscle wasting\". Albosta & Bakke 2021 — \"populations in whom fasting may not be appropriate. These include pregnant/lactating women, adults of advanced age, individuals with immunodeficiencies, individuals with hypoglycemic events, and patients who suffer from eating disorders\"; \"Patients taking insulin or sulfonylurea medications should be closely monitored by their healthcare provider in order to prevent hypoglycemic events… Physicians should help patients make appropriate adjustments to their medications, especially on days of fasting.\" Không viết \"hướng dẫn\" vì cả hai là tổng quan, không phải hướng dẫn lâm sàng của một cơ quan.",
+      "evidence": "https://doi.org/10.3390/nu14030631 (toàn văn PMC8839325 qua Europe PMC, mục 11) ; https://doi.org/10.1186/s40842-020-00116-1 (toàn văn PMC7856758 qua Europe PMC, mục 'Prescribing intermittent fasting in practice: considerations')"
+    },
+    {
+      "claimId": "C-13",
+      "severity": "S3",
+      "find": "🦠 Hệ vi sinh đường ruột không phải là \"bộ não bí mật\" kiểm soát con người, nhưng nó là một hệ sinh thái khổng lồ có ảnh hưởng thực sự đến tiêu hóa, miễn dịch và chuyển hóa. Nhịn ăn gián đoạn có thể làm thay đổi môi trường sống của các vi sinh vật này, từ đó tác động đến sức khỏe đường ruột và một số chức năng sinh lý khác. Tuy nhiên, đây vẫn là lĩnh vực mà khoa học đang tiếp tục khám phá, và cần phân biệt rõ giữa những gì đã được chứng minh và những giả thuyết còn đang kiểm chứng.",
+      "replace": "🦠 Hệ vi sinh đường ruột dao động theo ngày, đi cùng nhịp ăn của vật chủ, và khi nhịp ăn bị phá vỡ — như lúc lệch múi giờ — dao động đó rối loạn, dẫn tới loạn khuẩn (Thaiss và cộng sự, 2014). Nhịn ăn gián đoạn có thể làm thay đổi thành phần hệ vi sinh ở người, nhưng bằng chứng mới đến từ ít nghiên cứu, kết quả không đồng nhất, và các thay đổi ghi nhận được có cả chiều được xem là có lợi lẫn chiều được xem là có hại (Paukkonen và cộng sự, 2024). Đây vẫn là lĩnh vực đang được nghiên cứu, và cần phân biệt rõ giữa những gì đã được chứng minh và những giả thuyết còn đang kiểm chứng.",
+      "why": "Bản cũ: \"có ảnh hưởng thực sự đến tiêu hóa, miễn dịch và chuyển hóa\" không nguồn; \"Nhịn ăn gián đoạn có thể làm thay đổi môi trường sống…, từ đó tác động đến sức khỏe đường ruột và một số chức năng sinh lý khác\" là chuỗi nhân quả tự thêm (\"từ đó\") — tổng quan nói rõ chưa biết các thay đổi có lợi cho sức khỏe hay không. Phần kết không được mạnh hơn thân bài (content-rules: đoạn kết không che được thân bài, và ngược lại cũng không được vượt nó). Bản sửa chỉ tóm lại những gì thân bài đã có nguồn.",
+      "evidence": "https://pubmed.ncbi.nlm.nih.gov/25417104 (doi 10.1016/j.cell.2014.09.048; tóm tắt qua Europe PMC) ; https://www.frontiersin.org/journals/nutrition/articles/10.3389/fnut.2024.1342787/full (doi 10.3389/fnut.2024.1342787; toàn văn PMC10894978 qua Europe PMC fullTextXML)"
+    },
+    {
+      "claimId": "C-14",
+      "severity": "S3",
+      "find": "### Đồng bộ hóa nhịp sinh học của hệ vi sinh",
+      "replace": "### Nhịp ngày đêm của hệ vi sinh",
+      "why": "Tiêu đề mục là một khẳng định: nhịn ăn gián đoạn \"đồng bộ hóa\" nhịp hệ vi sinh — đúng điều thân bài (C-2) nói là chưa được nghiên cứu ở người. Tiêu đề không được mạnh hơn thân bài; đổi sang tên mô tả chủ đề.",
+      "evidence": "https://pubmed.ncbi.nlm.nih.gov/25417104 (doi 10.1016/j.cell.2014.09.048; tóm tắt qua Europe PMC) ; https://www.frontiersin.org/journals/nutrition/articles/10.3389/fnut.2024.1342787/full (doi 10.3389/fnut.2024.1342787; toàn văn PMC10894978 qua Europe PMC fullTextXML)"
+    },
+    {
+      "claimId": "C-14",
+      "severity": "S3",
+      "find": "### Tăng một số vi khuẩn có lợi",
+      "replace": "### Vi khuẩn phân giải chất nhầy và những thay đổi khác",
+      "why": "Tiêu đề khẳng định nhịn ăn gián đoạn làm tăng vi khuẩn có lợi, trong khi thân mục (sau C-4b, C-6) nói bằng chứng ở người mỏng, không đồng nhất, và thay đổi có cả chiều có thể có hại (tăng Proteobacteria). Tiêu đề đang nói điều nguồn không nói.",
+      "evidence": "https://www.frontiersin.org/journals/nutrition/articles/10.3389/fnut.2024.1342787/full (doi 10.3389/fnut.2024.1342787; toàn văn PMC10894978 qua Europe PMC fullTextXML)"
+    }
+  ],
+  "enEdits": [
+    {
+      "claimId": "C-1/C-2/C-3",
+      "severity": "S2",
+      "find": "Like humans, gut bacteria also have their own [[nhip-sinh-hoc|circadian rhythms]].\n\nWhen eating is spread throughout the day and snacking is frequent, the environment in the gut remains in a near-constant state of \"being fed.\" In contrast, fasting periods create clear intervals, helping to reset the natural activity cycle of the microbiome.\n\nSome studies show that this synchronization is linked to:\n\n- Improved energy metabolism.\n- Reduction in chronic low-grade inflammation.\n- Increased microbiome diversity.",
+      "replace": "In both mice and humans, the composition and function of the gut microbiome **oscillate over the course of a day**. A 2014 study in *Cell* showed that these oscillations are **influenced by the host's feeding rhythms** (Thaiss et al., 2014).\n\nThe evidence runs in the direction of **disruption**: when feeding rhythms are disturbed — by jet lag, or in mice lacking components of the host's [[nhip-sinh-hoc|circadian]] clock — the oscillations become aberrant and lead to dysbiosis; in both mice and humans, jet-lag-induced dysbiosis promotes glucose intolerance and obesity, and this is transferable to germ-free mice by fecal transplantation.\n\nThe opposite direction — intermittent fasting putting the microbiome's rhythm \"back on track\" in humans — has not been studied directly. A 2024 systematic review states that human studies are still needed to establish what role maintaining or disrupting daily circadian rhythms plays in time-restricted eating, and whether changes in the microbiome result from changes in circadian rhythms. Participants in intermittent fasting trials also often lose weight and change what they eat, so it is not yet possible to separate which changes are due to meal timing (Paukkonen et al., 2024).\n\nOn diversity, the 2024 review concludes that intermittent fasting **seems possibly** able to increase microbial richness and alpha diversity — but results across studies are heterogeneous, and it remains unclear whether these compositional changes benefit human health (Paukkonen et al., 2024).",
+      "why": "Bản en chưa nhận lượt sửa S2 ngày 2026-09-17 (C-2) nên vẫn khẳng định nhịn ăn \"helping to reset the natural activity cycle of the microbiome\" và \"gut bacteria also have their own circadian rhythms\" — đúng những câu đã bị đính chính ở bản vi. Thay bằng bản dịch sát của đoạn vi sau khi áp C-1, C-2, C-3 ở lượt này, để hai bản mang cùng claim. Giữ cú pháp thuật ngữ [[nhip-sinh-hoc|…]].",
+      "evidence": "https://pubmed.ncbi.nlm.nih.gov/25417104 (doi 10.1016/j.cell.2014.09.048; tóm tắt qua Europe PMC) ; https://www.frontiersin.org/journals/nutrition/articles/10.3389/fnut.2024.1342787/full (doi 10.3389/fnut.2024.1342787; toàn văn PMC10894978 qua Europe PMC fullTextXML)"
+    },
+    {
+      "claimId": "C-4/C-4b/C-5/C-6",
+      "severity": "S2",
+      "find": "During periods of prolonged fasting, certain groups of bacteria capable of using the gut's protective mucus layer as a nutrient source tend to thrive.\n\nThe most studied species is:\n\n**Akkermansia muciniphila**\n\nThis bacterial species is associated with:\n\n- A healthy gut mucosal barrier.\n- Improved sugar and fat metabolism.\n- Reduced risk of obesity and metabolic syndrome.\n\nAdditionally, some **short-chain fatty acid (SCFA)**-producing bacteria, such as those producing butyrate, have also been noted to increase under appropriate dietary regimens.",
+      "replace": "A frequently cited hypothesis: when no food is coming down, bacteria that can use the gut's protective mucus layer as a nutrient source gain an advantage. One example often given is:\n\n**Akkermansia muciniphila**\n\nIn humans, the evidence for this hypothesis is thin. Among the 8 human studies reviewed in a 2024 systematic review, an increase in *A. muciniphila* is reported from **one** study (after the Ramadan fasting month), so it cannot be treated as a rule of intermittent fasting (Paukkonen et al., 2024). The same review found microbial compositional changes to be **heterogeneous** across studies: the bacteria affected differed from study to study, and sometimes the same group rose in one study and fell in another.\n\nIn humans, observational studies have found lower levels of *A. muciniphila* in people with overweight, obesity, untreated type 2 diabetes or hypertension — a **correlation**, which does not show which is the cause. The first trial giving people this bacterium as a supplement was a small exploratory study: 40 overweight or obese insulin-resistant volunteers were enrolled, 32 completed, over three months. Compared with placebo, the pasteurized form improved insulin sensitivity and reduced insulin levels and total cholesterol; the reduction in body weight was small and **not statistically significant** (Depommier et al., 2019). That was direct bacterial supplementation, not fasting — the result says nothing about whether intermittent fasting would have a similar effect.\n\nCounting only changes repeated in three or more fasting groups, the review found **both directions**. Some changes the authors consider possibly beneficial: an increase in the genus *Faecalibacterium* — one of the main **butyrate** producers in the gut, with butyrate reported to have anti-inflammatory effects — and a decrease in the family Veillonellaceae, considered pro-inflammatory. But there were also possibly harmful changes: increases in the phylum Proteobacteria and the class Gammaproteobacteria, which have been proposed as markers of dysbiosis. The authors conclude that more research is needed to know whether these changes benefit human health (Paukkonen et al., 2024).",
+      "why": "Bản en vẫn giữ nguyên câu S2 đã đính chính ở vi (\"certain groups of bacteria… tend to thrive\" khi nhịn ăn kéo dài), cùng \"The most studied species\", danh sách lợi ích Akkermansia có \"Reduced risk of obesity and metabolic syndrome\", và câu SCFA \"under appropriate dietary regimens\". Thay bằng bản dịch sát của các đoạn vi sau khi áp C-4, C-4b, C-5, C-6.",
+      "evidence": "https://www.frontiersin.org/journals/nutrition/articles/10.3389/fnut.2024.1342787/full (doi 10.3389/fnut.2024.1342787; toàn văn PMC10894978 qua Europe PMC fullTextXML) ; https://pubmed.ncbi.nlm.nih.gov/31263284 (doi 10.1038/s41591-019-0495-2; tóm tắt qua Europe PMC, PMC6699990)"
+    },
+    {
+      "claimId": "C-7/C-8",
+      "severity": "S3",
+      "find": "### Activating the gut's \"housekeeping\" mechanism\n\nWhen no new food enters the digestive tract for several hours, the small intestine initiates powerful contractions known as:\n\n**Migrating Motor Complex (MMC)**\n\nThe MMC can be thought of as the digestive tract's \"cleaning mode\":\n\n- Sweeping leftover food residue into the large intestine.\n- Limiting bacterial overgrowth in the small intestine.\n- Reducing the risk of bloating and abdominal distension in some individuals.",
+      "replace": "### The gut's contraction rhythm during fasting\n\nDuring fasting, the stomach and small intestine show a cyclic, recurring motility pattern known as:\n\n**Migrating Motor Complex (MMC)**\n\nThe MMC is interrupted by eating and is divided into four phases; phase III is the most active, with a burst of contractions starting in the antrum or duodenum and migrating downward. The physiological role of the MMC is **incompletely understood**, but its absence has been associated with gastroparesis, intestinal pseudo-obstruction and small intestinal bacterial overgrowth (Deloose et al., 2012).\n\nThe MMC appears whenever the digestive tract is in a fasted state, so it is not a mechanism specific to intermittent fasting.",
+      "why": "Cùng lý do C-7/C-8 ở bản vi. Bản en còn mạnh hơn vi: \"Reducing the risk of bloating\" không có cả lớp rào \"được cho là có thể\" của vi.",
+      "evidence": "https://pubmed.ncbi.nlm.nih.gov/22450306 (doi 10.1038/nrgastro.2012.57; tóm tắt qua Europe PMC)"
+    },
+    {
+      "claimId": "C-9/C-10/C-11",
+      "severity": "S1",
+      "find": "### Effects on hunger and appetite\n\nThe gut microbiome is linked to several appetite-regulating hormones, such as:\n\n- Ghrelin (hunger hormone).\n- Leptin (satiety hormone).\n- GLP-1.\n- PYY.\n\nAs dietary patterns stabilize and intake of simple sugars decreases, some people notice:\n\n- Reduced cravings for sweets.\n- Less snacking.\n- More stable hunger levels.\n\nHowever, this does not occur the same way for everyone.\n\n## Conclusion",
+      "replace": "## Who should not practice intermittent fasting\n\n**Intermittent fasting is not suitable for everyone.** Medical reviews list groups for whom intermittent fasting is not recommended or may not be appropriate: pregnant or breastfeeding women, young children, older adults, people with immune deficiencies (including organ transplant recipients on immunosuppressive drugs), people with eating disorders, and people who have had hypoglycemic events (Vasim et al., 2022; Albosta and Bakke, 2021). Fasting without adequate protein intake can cause muscle wasting (Vasim et al., 2022). People with diabetes taking insulin or sulfonylureas need close monitoring by their doctor to prevent hypoglycemia, and their doctor needs to adjust their medication — especially on fasting days (Albosta and Bakke, 2021). This article describes research; it is not medical advice.\n\n## Conclusion",
+      "why": "S1: bản en KHÔNG có mục chống chỉ định. Lượt S1 ngày 2026-09-11 chỉ chèn mục \"Ai không nên nhịn ăn gián đoạn\" vào bản vi (corrections.md, mục S1 của bài này — \"cái nó im lặng mới là thứ có thể gây hại\"); người đọc bản en vẫn gặp đúng sự im lặng đó. Cùng edit cắt mục \"Effects on hunger and appetite\" (C-9, C-10) như ở vi. Văn bản chống chỉ định là bản dịch sát của câu C-11 vi ở lượt này, cùng nguồn.",
+      "evidence": "https://doi.org/10.3390/nu14030631 (toàn văn PMC8839325 qua Europe PMC, mục 11) ; https://doi.org/10.1186/s40842-020-00116-1 (toàn văn PMC7856758 qua Europe PMC, mục 'Prescribing intermittent fasting in practice: considerations')"
+    },
+    {
+      "claimId": "C-13",
+      "severity": "S3",
+      "find": "🦠 The gut microbiome is not a \"secret brain\" controlling humans, but it is a massive ecosystem that exerts a real influence on digestion, immunity, and metabolism. Intermittent fasting can alter the habitat of these microorganisms, thereby impacting gut health and various physiological functions. Nevertheless, this remains a field that science is continuing to explore, and it is necessary to clearly distinguish between what has been proven and hypotheses that are still being tested.",
+      "replace": "🦠 The gut microbiome oscillates over the day in step with the host's feeding rhythm, and when that rhythm is disrupted — as with jet lag — the oscillations become aberrant and lead to dysbiosis (Thaiss et al., 2014). Intermittent fasting may alter the composition of the microbiome in humans, but the evidence comes from few studies, the results are heterogeneous, and the changes observed include some considered beneficial and some considered harmful (Paukkonen et al., 2024). This remains an active field of research, and it is necessary to clearly distinguish between what has been proven and hypotheses that are still being tested.",
+      "why": "Cùng lý do C-13 ở bản vi (\"thereby impacting gut health\" là nhân quả tự thêm; \"exerts a real influence on digestion, immunity, and metabolism\" không nguồn).",
+      "evidence": "https://pubmed.ncbi.nlm.nih.gov/25417104 (doi 10.1016/j.cell.2014.09.048; tóm tắt qua Europe PMC) ; https://www.frontiersin.org/journals/nutrition/articles/10.3389/fnut.2024.1342787/full (doi 10.3389/fnut.2024.1342787; toàn văn PMC10894978 qua Europe PMC fullTextXML)"
+    },
+    {
+      "claimId": "C-14",
+      "severity": "S3",
+      "find": "### Synchronizing the microbiome's circadian rhythm",
+      "replace": "### The microbiome's daily rhythm",
+      "why": "Cùng lý do C-14 ở bản vi.",
+      "evidence": "https://pubmed.ncbi.nlm.nih.gov/25417104 (doi 10.1016/j.cell.2014.09.048; tóm tắt qua Europe PMC) ; https://www.frontiersin.org/journals/nutrition/articles/10.3389/fnut.2024.1342787/full (doi 10.3389/fnut.2024.1342787; toàn văn PMC10894978 qua Europe PMC fullTextXML)"
+    },
+    {
+      "claimId": "C-14",
+      "severity": "S3",
+      "find": "### Increasing certain beneficial bacteria",
+      "replace": "### Mucus-degrading bacteria and other changes",
+      "why": "Cùng lý do C-14 ở bản vi.",
+      "evidence": "https://www.frontiersin.org/journals/nutrition/articles/10.3389/fnut.2024.1342787/full (doi 10.3389/fnut.2024.1342787; toàn văn PMC10894978 qua Europe PMC fullTextXML)"
+    }
+  ],
+  "summaryEnEdits": [
+    {
+      "claimId": "C-12",
+      "severity": "S3",
+      "find": "Intermittent fasting (IF) influences not only caloric intake but also the ecosystem of the gut microbiome. Research suggests that distinct windows of eating and fasting may alter the composition and metabolic activity of these trillions of microorganisms.",
+      "replace": "Intermittent fasting (IF) changes not only how many calories are eaten but also when — and the gut microbiome oscillates over the day in step with the host's feeding rhythm. But human evidence on how IF affects the microbiome is limited and inconsistent: a 2024 systematic review of 8 human studies concluded only that IF \"seems possibly\" able to increase richness and diversity, with changes differing between studies.",
+      "why": "Summary en chưa nhận lượt sửa C-12 ngày 2026-09-17 của bản vi: vẫn khung \"influences… the ecosystem\" và \"distinct windows of eating and fasting may alter…\", không nói bằng chứng ở người ít và không đồng nhất, nên lệch với summary vi và với thân bài. Thay bằng bản dịch sát của summary vi.",
+      "evidence": "https://www.frontiersin.org/journals/nutrition/articles/10.3389/fnut.2024.1342787/full (doi 10.3389/fnut.2024.1342787; toàn văn PMC10894978 qua Europe PMC fullTextXML) ; https://pubmed.ncbi.nlm.nih.gov/25417104 (doi 10.1016/j.cell.2014.09.048; tóm tắt qua Europe PMC)"
+    }
+  ],
+  "addSources": [
+    {
+      "title": "The migrating motor complex: control mechanisms and its role in health and disease",
+      "url": "https://doi.org/10.1038/nrgastro.2012.57",
+      "doi": "10.1038/nrgastro.2012.57",
+      "publisher": "Nature Reviews Gastroenterology & Hepatology",
+      "year": 2012,
+      "tier": 1,
+      "covers": "C-7 — MMC xảy ra lúc đói ở dạ dày và ruột non, bị bữa ăn ngắt; bốn pha, pha III mạnh nhất; vai trò sinh lý chưa hiểu đầy đủ; thiếu MMC liên quan liệt dạ dày, giả tắc ruột, tăng sinh vi khuẩn ruột non (Deloose E, Janssen P, Depoortere I, Tack J)"
+    },
+    {
+      "title": "Supplementation with Akkermansia muciniphila in overweight and obese human volunteers: a proof-of-concept exploratory study",
+      "url": "https://doi.org/10.1038/s41591-019-0495-2",
+      "doi": "10.1038/s41591-019-0495-2",
+      "publisher": "Nature Medicine",
+      "year": 2019,
+      "tier": 1,
+      "covers": "C-5 — tương quan nghịch giữa A. muciniphila và thừa cân/béo phì/T2DM chưa điều trị/tăng huyết áp ở người; thử nghiệm thăm dò 40 người tham gia, 32 hoàn thành, 3 tháng; cải thiện độ nhạy insulin, giảm insulin máu, cholesterol; cân nặng giảm không có ý nghĩa thống kê (Depommier C và cộng sự)"
+    },
+    {
+      "title": "Intermittent Fasting and Metabolic Health",
+      "url": "https://doi.org/10.3390/nu14030631",
+      "doi": "10.3390/nu14030631",
+      "publisher": "Nutrients",
+      "year": 2022,
+      "tier": 1,
+      "covers": "C-11 — nhóm không khuyến nghị nhịn ăn gián đoạn: mang thai, cho con bú, trẻ nhỏ, người cao tuổi, suy giảm miễn dịch/ghép tạng, rối loạn ăn uống; nhịn ăn thiếu đạm gây mất cơ (Vasim I, Majeed CN, DeBoer MD)"
+    },
+    {
+      "title": "Intermittent fasting: is there a role in the treatment of diabetes? A review of the literature and guide for primary care physicians",
+      "url": "https://doi.org/10.1186/s40842-020-00116-1",
+      "doi": "10.1186/s40842-020-00116-1",
+      "publisher": "Clinical Diabetes and Endocrinology",
+      "year": 2021,
+      "tier": 1,
+      "covers": "C-11 — nhóm có thể không phù hợp (mang thai/cho con bú, cao tuổi, suy giảm miễn dịch, từng hạ đường huyết, rối loạn ăn uống); người dùng insulin/sulfonylurea cần bác sĩ theo dõi sát và chỉnh thuốc (Albosta M, Bakke J)"
+    }
+  ],
+  "dropSources": [
+    {
+      "title": "Effects of Intermittent Fasting on Health, Aging, and Disease",
+      "why": "Không claim nào trong bài (vi lẫn en) trích hoặc truy về được nguồn này; toàn văn NEJM không mở được trong lượt này và bản ghi PubMed 31881139 không có tóm tắt, nên không kiểm được nó nói gì. Để một nguồn không đỡ claim nào trong bảng nguồn là tạo ấn tượng có nguồn mà không có — gỡ, và chỉ gắn lại khi có người đọc toàn văn và chỉ ra claim cụ thể nó đỡ."
+    }
+  ],
+  "corrections": [
+    "C-1: \"Nhưng dao động đó không đến từ một 'đồng hồ riêng' của vi khuẩn\" → \"dao động này chịu ảnh hưởng của nhịp ăn của vật chủ\" (nguồn nói influenced by, không loại trừ đồng hồ của vi khuẩn) → căn cứ: Thaiss và cộng sự 2014, Cell, doi 10.1016/j.cell.2014.09.048.",
+    "C-2: \"không có bằng chứng cho thấy nhịn ăn gián đoạn 'thiết lập lại' chu kỳ hệ vi sinh ở người … đi kèm, chưa phải gây ra\" → \"chưa được nghiên cứu trực tiếp; tổng quan 2024 nêu cần nghiên cứu ở người về vai trò của nhịp ngày đêm, và giảm cân/đổi khẩu phần làm nhiễu kết quả\" → căn cứ: Paukkonen và cộng sự 2024, doi 10.3389/fnut.2024.1342787.",
+    "C-3: danh sách \"cải thiện chuyển hóa năng lượng, giảm viêm mức thấp kéo dài, tăng tính đa dạng\" → chỉ giữ \"có vẻ có thể tăng độ phong phú và đa dạng alpha, kết quả không đồng nhất, chưa rõ có lợi cho sức khỏe\" → căn cứ: Paukkonen và cộng sự 2024, doi 10.3389/fnut.2024.1342787.",
+    "C-4b: \"thay đổi nhất quán hơn cả lại là tăng ngành Proteobacteria\" và \"các nghiên cứu còn lại không báo cáo loài này\" → thay đổi lặp lại có cả hai chiều (tăng Faecalibacterium, giảm Veillonellaceae; tăng Proteobacteria, Gammaproteobacteria); Proteobacteria còn tăng/giảm trái chiều giữa các nghiên cứu → căn cứ: Paukkonen và cộng sự 2024, doi 10.3389/fnut.2024.1342787.",
+    "C-5: Akkermansia \"liên quan đến hàng rào niêm mạc khỏe, chuyển hóa tốt hơn, giảm nguy cơ béo phì và hội chứng chuyển hóa\" → tương quan quan sát ở người; một thử nghiệm thăm dò 32 người hoàn thành, 3 tháng, cải thiện độ nhạy insulin/cholesterol, cân nặng không đổi có ý nghĩa; là bổ sung vi khuẩn, không phải nhịn ăn → căn cứ: Depommier và cộng sự 2019, Nature Medicine, doi 10.1038/s41591-019-0495-2.",
+    "C-6: \"vi khuẩn tạo SCFA như butyrate có xu hướng tăng khi chế độ ăn phù hợp\" → \"Faecalibacterium (tạo butyrate) tăng ở ≥3 nhóm nhịn ăn, cùng lúc với tăng Proteobacteria có thể có hại\" → căn cứ: Paukkonen và cộng sự 2024, doi 10.3389/fnut.2024.1342787.",
+    "C-7/C-8: \"Kích hoạt cơ chế quét dọn\" — MMC sau \"vài giờ\", đẩy cặn xuống ruột già, hạn chế vi khuẩn ruột non, giảm đầy hơi → MMC diễn ra mỗi khi đói, không riêng nhịn ăn gián đoạn; vai trò chưa hiểu đầy đủ; thiếu MMC liên quan tăng sinh vi khuẩn ruột non; bỏ claim đầy hơi → căn cứ: Deloose và cộng sự 2012, doi 10.1038/nrgastro.2012.57.",
+    "C-9/C-10: cắt mục \"Ảnh hưởng đến cảm giác đói và thèm ăn\" (danh sách hormone không nguồn; lời kể \"một số người nhận thấy\") → căn cứ: không có nguồn bậc 1–2 nào đỡ.",
+    "C-11: \"Các hướng dẫn hiện hành khuyến cáo…\" (không nêu hướng dẫn nào) → nêu đích danh hai tổng quan; thêm nhóm suy giảm miễn dịch; \"trẻ em\" → \"trẻ nhỏ\"; người cao tuổi từ \"cân nhắc thận trọng\" → nằm trong nhóm không khuyến nghị; người dùng insulin/sulfonylurea cần bác sĩ theo dõi và chỉnh thuốc → căn cứ: Vasim và cộng sự 2022, Nutrients, doi 10.3390/nu14030631; Albosta và Bakke 2021, Clin Diabetes Endocrinol, doi 10.1186/s40842-020-00116-1.",
+    "C-14: tiêu đề mục \"Đồng bộ hóa nhịp sinh học của hệ vi sinh\" và \"Tăng một số vi khuẩn có lợi\" (khẳng định mạnh hơn thân bài) → \"Nhịp ngày đêm của hệ vi sinh\" và \"Vi khuẩn phân giải chất nhầy và những thay đổi khác\"; bản en đổi tương ứng → căn cứ: Paukkonen 2024, doi 10.3389/fnut.2024.1342787.",
+    "C-13 (Kết luận): \"có ảnh hưởng thực sự đến tiêu hóa, miễn dịch và chuyển hóa… từ đó tác động đến sức khỏe đường ruột\" → tóm tắt đúng mức thân bài: có thể đổi thành phần, bằng chứng ít, không đồng nhất, có cả chiều lợi lẫn hại → căn cứ: Thaiss 2014, doi 10.1016/j.cell.2014.09.048; Paukkonen 2024, doi 10.3389/fnut.2024.1342787.",
+    "Bản en (contentEn): chưa từng nhận các lượt đính chính 2026-09-11 (S1 chống chỉ định) và 2026-09-17 (C-2, C-4, C-12) — vẫn nói nhịn ăn \"helping to reset\" hệ vi sinh, vi khuẩn ăn chất nhầy \"tend to thrive\", và KHÔNG có mục chống chỉ định → đồng bộ toàn bộ với bản vi sau lượt này, thêm mục \"Who should not practice intermittent fasting\" → căn cứ: như các dòng vi ở trên.",
+    "Nguồn: gỡ \"Effects of Intermittent Fasting on Health, Aging, and Disease\" (NEJM 2019) — không claim nào truy về được, không mở được toàn văn; thêm Deloose 2012, Depommier 2019, Vasim 2022, Albosta & Bakke 2021 (đều bậc 1, đã mở tóm tắt/toàn văn ngày 2026-09-25)."
+  ],
+  "openQuestions": [
+    "seoDescription vẫn là câu cũ \"…còn thay đổi môi trường sống của hàng chục nghìn tỉ vi sinh vật…\" — không có trường sửa cho nó trong schema này. Mức S4 (tổng quan có nói 'IF influences gut microbiota'), không chặn gate, nhưng nên đổi theo câu đầu của summary vi cho nhất quán.",
+    "Mục chống chỉ định (vi + en) nay có nguồn, nhưng vẫn nên có một người có chuyên môn y khoa đọc lại. Science-editor kiểm được nguồn nói gì, không thay được phán quyết lâm sàng. Hai nguồn là tổng quan tường thuật, không phải hướng dẫn lâm sàng của một cơ quan — nên bài viết 'các tổng quan y khoa', không viết 'hướng dẫn'.",
+    "Thaiss 2014: chỉ mở được tóm tắt (toàn văn Cell bị Cloudflare chặn, API Elsevier trả rỗng). Câu 'ở cả chuột và người, loạn khuẩn do lệch múi giờ thúc đẩy rối loạn dung nạp glucose và béo phì' sát nguyên văn tóm tắt, nhưng chưa kiểm được cỡ mẫu người và phần 'ở người' được đo trên chính người hay trên chuột nhận phân. Không chặn gate; nếu mở được toàn văn thì nên nêu cỡ mẫu.",
+    "Bản en thiếu mục thứ tư của 'Further reading' (bài 'Đằng sau tiếng bụng kêu') so với bản vi. Không phải claim nên không sửa ở đây; seo-expert/translation nên đồng bộ.",
+    "Bảng nguồn [s2] Thaiss dùng url trang Pure của Johns Hopkins (đã kiểm HTTP 200). Nên cân nhắc đổi sang https://doi.org/10.1016/j.cell.2014.09.048 để link bền hơn — không phải lỗi accuracy."
+  ]
+}

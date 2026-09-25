@@ -1,0 +1,920 @@
+{
+  "slug": "su-song-tren-trai-dat-4-ti-nam-trong-mot-dong-thoi-gian",
+  "edits": [
+    {
+      "claimId": "C-0b",
+      "severity": "S4",
+      "find": "Trái Đất bắt đầu như một quả cầu đá nóng chảy,",
+      "replace": "Trái Đất có lẽ đã bắt đầu như một quả cầu đá nóng chảy,",
+      "why": "Câu mở bài khẳng định chắc điều mà thân bài (C-4) và nguồn chỉ nêu ở mức \"có thể\": Elkins-Tanton 2012 — \"Theory and observations point to the occurrence of magma ponds or oceans\". Giữ đồng nhất mức dè dặt giữa mở bài và thân bài.",
+      "evidence": "https://doi.org/10.1146/annurev-earth-042711-105503"
+    },
+    {
+      "claimId": "C-1",
+      "severity": "S3",
+      "find": "sự sống đơn bào chiếm gần ba tỉ năm đầu, còn toàn bộ động vật, thực vật và con người chen chúc trong nửa tỉ năm cuối.",
+      "replace": "trong gần ba tỉ năm đầu, sự sống chủ yếu là vi sinh vật, còn toàn bộ động vật lớn, thực vật trên cạn và con người chen chúc trong chưa tới 600 triệu năm cuối.",
+      "why": "\"Đơn bào\" và \"nửa tỉ năm cuối\" không có nguồn. Bobrovskiy và cộng sự 2018 đặt quần sinh vật Ediacara (571–541 triệu năm) là \"the first macroscopic complex organisms in the geological record\"; Morris và cộng sự 2018 đặt hoá thạch thực vật trên cạn sớm nhất ở 469 triệu năm. Hai mốc ấy cho \"chưa tới 600 triệu năm\", không phải \"nửa tỉ\". \"Đơn bào\" hạ thành \"chủ yếu là vi sinh vật\" vì nguồn chỉ nói về sinh vật vĩ mô phức tạp.",
+      "evidence": "doi 10.1126/science.aat7228; doi 10.1073/pnas.1719588115 (PMC5877938)"
+    },
+    {
+      "claimId": "C-3",
+      "severity": "S3",
+      "find": "— theo USGS có tuổi tới 4,3 tỉ năm —",
+      "replace": "— có tuổi tới khoảng 4,4 tỉ năm (4,404 ± 0,008 tỉ năm theo Wilde và cộng sự, 2001) —",
+      "why": "Lượt 17/09 chọn câu cũ trên trang USGS (\"as much as 4.3 billion years\") mà bỏ qua ghi chú biên tập ngay trên cùng trang: \"mineral grains (zircon) with U-Pb ages of 4.4 Ga have recently been reported\". Nguồn bậc 1 gốc (Wilde và cộng sự 2001, Nature) ghi \"a detrital zircon with an age as old as 4,404+/-8 Myr\". Lấy câu tiện hơn trong hai câu của cùng một nguồn là hình dạng lỗi \"nguồn đánh nhau\" (content-rules).",
+      "evidence": "https://pubs.usgs.gov/gip/geotime/age.html; doi 10.1038/35051550"
+    },
+    {
+      "claimId": "C-4",
+      "severity": "S3",
+      "find": "Ban đầu nó là một hành tinh nóng chảy. Kim loại nặng chìm vào trong tạo thành lõi, vật chất nhẹ nổi lên tạo thành lớp phủ và vỏ.",
+      "replace": "Thời kỳ đầu, các va chạm lớn có thể đã làm nóng chảy lớp ngoài của hành tinh thành một hoặc nhiều \"đại dương magma\" (Elkins-Tanton, 2012). Kim loại — chủ yếu là sắt và niken — tách khỏi silicate và chìm vào trong tạo thành lõi, và phép đo đồng vị hafni–tungsten cho thấy quá trình này đã xong trong khoảng 30 triệu năm đầu của Hệ Mặt Trời (Kleine và cộng sự, 2002); vật chất silicate nhẹ hơn tạo thành lớp phủ và vỏ.",
+      "why": "Câu cũ không có nguồn và khẳng định chắc chắn \"một hành tinh nóng chảy\". Elkins-Tanton 2012 viết \"Theory and observations point to the occurrence of magma ponds or oceans\" và \"silicate and metallic material may be processed through multiple magma oceans\" — nên giữ mức dè dặt \"có thể\" và \"một hoặc nhiều\". Kleine 2002: \"core formation in the terrestrial planets and the formation of the Moon must have occurred during the first approximately 30 million years\". Thành phần sắt–niken của lõi: NASA (trang Magnetosphere).",
+      "evidence": "https://doi.org/10.1146/annurev-earth-042711-105503; doi 10.1038/nature00982; https://science.nasa.gov/science-research/earth-science/earths-magnetosphere-protecting-our-planet-from-harmful-space-energy/"
+    },
+    {
+      "claimId": "C-5",
+      "severity": "S4",
+      "find": "chính dòng chất lỏng dẫn điện trong lõi mới là thứ sinh ra từ trường bảo vệ khí quyển.",
+      "replace": "chính dòng sắt nóng chảy chuyển động trong lõi ngoài là nơi sinh ra gần như toàn bộ từ trường Trái Đất — thứ che chắn khí quyển khỏi bị gió Mặt Trời bào mòn (NASA).",
+      "why": "Thêm nguồn cho một claim trước nay không có nguồn, và giữ đúng chủ thể của NASA: \"Nearly all of Earth's geomagnetic field originates in the fluid outer core\"; \"our magnetosphere shields us from erosion of our atmosphere by the solar wind\".",
+      "evidence": "https://science.nasa.gov/science-research/earth-science/earths-magnetosphere-protecting-our-planet-from-harmful-space-energy/"
+    },
+    {
+      "claimId": "C-6",
+      "severity": "S2",
+      "find": "Một thiên thể cỡ Sao Hoả, thường được gọi là **[[Theia]]**, đâm vào Trái Đất non trẻ. Vật chất văng ra tụ lại thành Mặt Trăng.",
+      "replace": "Các giả thuyết về nguồn gốc Mặt Trăng vẫn cạnh tranh nhau, nhưng gần như tất cả có chung một điểm: khoảng 4,5 tỉ năm trước, một vật thể — có thể là một thiên thể cỡ Sao Hoả, thường được gọi là **[[Theia]]**, cũng có thể là một loạt thiên thể — đã đâm vào Trái Đất non trẻ, và vật chất văng ra tụ lại thành Mặt Trăng (NASA).",
+      "why": "Nâng mức tự tin so với nguồn — lỗi mức từ chối theo chuẩn biên tập. NASA: \"Several theories about our Moon's formation vie for dominance, but almost all share that point in common: ... about 4.5 billion years ago, something ― perhaps a single object the size of Mars, perhaps a series of objects ― crashed into the young Earth\". Bài viết như một sự kiện đã xác lập với đúng một vật thể. Giữ [[Theia]] (NASA dùng tên này).",
+      "evidence": "https://science.nasa.gov/moon/formation/"
+    },
+    {
+      "claimId": "C-7",
+      "severity": "S3",
+      "find": "Mặt Trăng ổn định độ nghiêng trục quay của Trái Đất, giữ cho khí hậu không dao động hỗn loạn qua các chu kỳ dài.",
+      "replace": "Lực hấp dẫn của Mặt Trăng giữ cho trục quay của Trái Đất không lắc quá nhiều, nhờ đó góp phần ổn định khí hậu (NASA).",
+      "why": "Không có nguồn; \"không dao động hỗn loạn qua các chu kỳ dài\" nói mạnh hơn nguồn cơ quan. NASA: \"The Moon's gravity keeps our planet from wobbling on its axis too much, which helps to stabilize our climate.\"",
+      "evidence": "https://science.nasa.gov/moon/top-moon-questions/"
+    },
+    {
+      "claimId": "C-8",
+      "severity": "S3",
+      "find": "Đồng thời thuỷ triều do nó gây ra hãm dần tốc độ tự quay: ngày trên Trái Đất sơ khai chỉ dài vài giờ, và nó đã giãn ra thành 24 giờ như hiện nay.",
+      "replace": "Đồng thời, ma sát thuỷ triều hãm dần tốc độ tự quay của Trái Đất: phân tích các lớp trầm tích 1,4 tỉ năm tuổi ở miền bắc Trung Quốc cho thấy một ngày khi đó chỉ dài khoảng 18,7 giờ (Meyers & Malinverno, 2018), so với 24 giờ như hiện nay.",
+      "why": "\"Vài giờ\" là con số không nguồn cho một thời điểm không nêu — theo chuẩn, số không nguồn thì bỏ, không làm mềm. Thay bằng số đo có nguồn: Meyers & Malinverno 2018 (PNAS) trên đá nhịp Xiamaling 1,4 tỉ năm: \"length of day of 18.68 ± 0.25 hours (2σ)\"; bài báo đặt kết quả trong bối cảnh lịch sử tiêu tán thuỷ triều của hệ Trái Đất–Mặt Trăng.",
+      "evidence": "doi 10.1073/pnas.1717689115 (PMC6016783)"
+    },
+    {
+      "claimId": "C-9",
+      "severity": "S3",
+      "find": "Hoá thạch vi khuẩn cổ nhất được chấp nhận rộng rãi có tuổi khoảng **3,5 tỉ năm**, và các dấu vết hoá học của hoạt động sống có thể còn sớm hơn.",
+      "replace": "Hồ sơ vi hoá thạch kéo dài tới khoảng **3,5 tỉ năm** trước; dấu vết hoá học của sự sống có thể tới khoảng 3,8 tỉ năm, và một mẩu graphit bị nhốt trong tinh thể zircon 4,1 tỉ năm tuổi có thành phần đồng vị carbon phù hợp với nguồn gốc sinh học — một gợi ý, chưa phải kết luận (Bell và cộng sự, 2015). Những hoá thạch cổ như vậy có thật sự do sinh vật tạo ra hay không vẫn là đề tài tranh luận (Allwood và cộng sự, 2006).",
+      "why": "\"Được chấp nhận rộng rãi\" là claim về mức đồng thuận, không nguồn nào đỡ. Bell 2015 (PNAS): \"the microfossil record only extends to ∼3.5 billion years (Ga), the chemofossil record arguably to ∼3.8 Ga\"; zircon 4,10 Ga có graphit \"consistent with a biogenic origin and may be evidence\". Allwood 2006 (Nature): \"Determining the biogenicity of such ancient fossils is the subject of ongoing debate\". Mốc sự sống sớm nhất là mốc còn tranh cãi — phải ghi bất định.",
+      "evidence": "doi 10.1073/pnas.1517557112 (PMC4664351); doi 10.1038/nature04764"
+    },
+    {
+      "claimId": "C-10",
+      "severity": "S3",
+      "find": "Nghĩa là sự sống xuất hiện khá nhanh sau khi hành tinh trở nên ở được — một trong những lý do nhiều nhà khoa học cho rằng sự sống có thể không hiếm trong vũ trụ.",
+      "replace": "Nếu các niên đại này đúng, sự sống đã xuất hiện khá sớm sau khi hành tinh trở nên ở được. Điều đó từng được coi là dấu hiệu sự sống dễ nảy sinh, nhưng phân tích thống kê của Spiegel và Turner (2012) cho thấy chỉ một trường hợp là chưa đủ để kết luận: bằng chứng này phù hợp cả với khả năng sự sống phổ biến lẫn khả năng nó rất hiếm.",
+      "why": "Chỉ kể một phía của một bất đồng thật. Spiegel & Turner 2012 (PNAS): \"The early emergence of life on Earth has been taken as evidence that the probability of abiogenesis is high\" nhưng \"the evidence is inconclusive and indeed is consistent with an arbitrarily low intrinsic probability of abiogenesis\". Quy tắc 7: bất đồng thật thì nói là bất đồng.",
+      "evidence": "doi 10.1073/pnas.1111694108 (PMC3258618)"
+    },
+    {
+      "claimId": "C-11",
+      "severity": "S4",
+      "find": "và chúng vẫn đang hình thành ở vịnh Shark, Australia.",
+      "replace": "và ở vũng Hamelin thuộc vịnh Shark, Tây Australia, vẫn còn những quần thể stromatolite sống.",
+      "why": "Gắn nguồn cơ quan quản lý di sản. Parks and Wildlife Service (DBCA, Tây Australia): \"Hamelin Pool is home to the most diverse and abundant examples of stromatolites in the world\"; \"stromatolites are living representatives of life before dinosaurs\". Nguồn nói \"living\", nên bài nói \"còn sống\".",
+      "evidence": "https://www.sharkbay.org/place/hamelin-pool/stromatolites/; https://www.sharkbay.org/place/hamelin-pool/"
+    },
+    {
+      "claimId": "C-12",
+      "severity": "S3",
+      "find": "— nguồn sắt mà phần lớn ngành thép hiện đại đang khai thác.",
+      "replace": "— theo CSIRO, phần lớn quặng sắt trên thế giới nằm trong loại đá này.",
+      "why": "\"Phần lớn ngành thép đang khai thác\" là claim kinh tế khoáng sản không nguồn. CSIRO (cơ quan khoa học quốc gia Australia) nói về trữ lượng, không nói về sản lượng khai thác: \"Most of the world's iron ore is found in rocks called banded iron formations or BIF\". CSIRO cũng đỡ chuỗi cơ chế của đoạn này: \"Oxygen then reacted with the soluble iron to form insoluble iron oxide\"; \"Once most of the minerals in the ocean were oxidised, the oxygen was finally able to make its way out of the ocean to create our atmosphere\".",
+      "evidence": "https://www.csiro.au/en/news/all/articles/2024/march/banded-iron-formations"
+    },
+    {
+      "claimId": "C-14",
+      "severity": "S3",
+      "find": " Với hầu hết sinh vật khi đó, oxy là **chất độc**, và sự kiện này có thể là cuộc tuyệt chủng hàng loạt lớn nhất từng xảy ra — chỉ là nạn nhân đều là vi sinh vật nên không để lại hoá thạch dễ nhận ra.",
+      "replace": "",
+      "why": "Suy đoán không nguồn, và bài tự thừa nhận không có hoá thạch làm bằng chứng. Không nguồn nào mở trong lượt này (Philippot 2018, Lyons 2014, CSIRO) nói GOE là cuộc tuyệt chủng lớn nhất. Nghi ngờ thì cắt.",
+      "evidence": "—"
+    },
+    {
+      "claimId": "C-15",
+      "severity": "S3",
+      "find": "Trong kỷ Cryogen, băng lan tới tận vùng nhiệt đới, có thể phủ gần kín hành tinh.",
+      "replace": "Kỷ Cryogen (khoảng 720–635 triệu năm trước theo thang ICS) có hai đợt băng hà kéo dài — đợt Sturtian khoảng 58 triệu năm và đợt Marinoan ít nhất 5 triệu năm — khi các khối băng lan xuống tới mực nước biển ở mọi vĩ độ, kể cả vùng nhiệt đới. Theo giả thuyết \"Trái Đất quả cầu tuyết\", băng khi đó có thể đã phủ gần kín hành tinh (Hoffman và cộng sự, 2017).",
+      "why": "Mốc 720–635 trước nay không có nguồn bậc 1–2; bảng ICS v2024/12 ghi \"~ 720\" và \"~ 635\" cho kỷ Cryogen. Câu cũ cùng tiêu đề mục dễ đọc thành một khối băng liên tục 85 triệu năm. Hoffman 2017 (Science Advances): \"grounded ice sheets reached sea level at all latitudes during two long-lived Cryogenian (58 and ≥5 My) glaciations\", CO₂ ở lúc tan băng \"consistent with a global ice cover\".",
+      "evidence": "https://stratigraphy.org/ICSchart/ChronostratChart2024-12.pdf; doi 10.1126/sciadv.1600983 (PMC5677351)"
+    },
+    {
+      "claimId": "C-16",
+      "severity": "S4",
+      "find": "Sau hàng triệu năm, [[hiệu ứng nhà kính]]",
+      "replace": "Sau hàng triệu tới hàng chục triệu năm, [[hiệu ứng nhà kính]]",
+      "why": "Cơ chế albedo và CO₂ núi lửa đúng với Hoffman 2017 (\"ice-albedo feedback\"; \"If a global glaciation were to occur, the rate of silicate weathering should fall very nearly to zero ... carbon dioxide should accumulate in the atmosphere at whatever rate it is released from volcanoes\"), nhưng nguồn cho khung thời gian \"over millions to tens of millions of years\". Giữ nguyên [[hiệu ứng nhà kính]].",
+      "evidence": "doi 10.1126/sciadv.1600983 (PMC5677351)"
+    },
+    {
+      "claimId": "C-17",
+      "severity": "S3",
+      "find": "## Bùng nổ Cambri: 538 triệu năm trước",
+      "replace": "## Bùng nổ Cambri: khoảng 540–520 triệu năm trước",
+      "why": "538 triệu năm là đáy kỷ Cambri (ICS: 538,8 ± 0,6), không phải thời điểm của \"bùng nổ\". Wood và cộng sự 2019 định nghĩa Bùng nổ Cambri là sự tăng vọt \"between ~540 and 520 million years ago\". Mốc ICS được đưa vào thân mục (C-18).",
+      "evidence": "https://stratigraphy.org/ICSchart/ChronostratChart2024-12.pdf; doi 10.1038/s41559-019-0821-6"
+    },
+    {
+      "claimId": "C-18",
+      "severity": "S2",
+      "find": "Trong khoảng 20–25 triệu năm, gần như toàn bộ các ngành động vật hiện đại xuất hiện trong hoá thạch. Đây là lần đầu tiên có bộ xương cứng, mắt, và **săn mồi chủ động** — kẻ săn và con mồi bắt đầu chạy đua vũ trang tiến hoá, một áp lực chọn lọc chưa từng có trước đó.",
+      "replace": "Kỷ Cambri bắt đầu 538,8 ± 0,6 triệu năm trước theo thang ICS. Trong khoảng 20 triệu năm sau đó, từ khoảng 540 đến 520 triệu năm trước, số lượng và sự đa dạng của động vật trong hoá thạch tăng vọt (Wood và cộng sự, 2019), và gần như mọi kiểu cấu tạo cơ thể — tức các ngành động vật — xuất hiện quanh khoảng chuyển tiếp từ Tiền Cambri sang Cambri (Sperling và cộng sự, 2013). Nhưng bùng nổ này không mọc lên từ hư không: quần sinh vật Ediacara — những sinh vật vĩ mô phức tạp đầu tiên, trong đó có động vật được xác nhận như *Dickinsonia* — đã có từ khoảng 571 triệu năm trước (Bobrovskiy và cộng sự, 2018), và bộ xương khoáng hoá lẫn dấu vết **săn mồi** đã xuất hiện từ cuối Tiền Cambri — ống vỏ của *Cloudina* mang những lỗ khoan được cho là do kẻ săn mồi (Bengtson & Zhao, 1992). Vì sao sự kiện xảy ra vẫn chưa ngã ngũ: \"cuộc chạy đua vũ trang\" giữa kẻ săn và con mồi giải thích được diễn biến nhưng không giải thích được thời điểm, và Sperling và cộng sự (2013) đề xuất rằng chính lượng oxy tăng lên mới cho phép lối sống ăn thịt trở nên phổ biến.",
+      "why": "Sai sự thật: \"lần đầu tiên có bộ xương cứng ... và săn mồi chủ động\" bị bác bởi Bengtson & Zhao 1992 (Science): Cloudina cuối Tiền Cambri là \"the earliest known animal to produce a mineralized exoskeleton\" và mang lỗ khoan cho thấy \"the attacking organism was a predator\". \"Mắt\" và \"chưa từng có trước đó\" không nguồn — cắt. \"20–25 triệu năm\" hạ thành \"khoảng 20 triệu năm\" theo Wood 2019 (\"between ~540 and 520 million years ago\", \"nested within a far more ancient record of macrofossils extending at least into the late Ediacaran at ~571 Ma\"). \"Gần như toàn bộ các ngành\": Sperling 2013 (PNAS) \"records the appearance of essentially all animal body plans (phyla)\"; cùng bài cho biết giả thuyết chạy đua vũ trang \"can explain the evolutionary pattern but not its timing\".",
+      "evidence": "https://stratigraphy.org/ICSchart/ChronostratChart2024-12.pdf; doi 10.1038/s41559-019-0821-6; doi 10.1073/pnas.1312778110 (PMC3746845); doi 10.1126/science.257.5068.367"
+    },
+    {
+      "claimId": "C-19",
+      "severity": "S2",
+      "find": "Bọ ba thuỳ là biểu tượng của giai đoạn này, còn *Anomalocaris* dài tới nửa mét là kẻ săn mồi đứng đầu.",
+      "replace": "Trong quần thể hoá thạch Burgess Shale ở Canada (khoảng 505 triệu năm trước), kẻ săn mồi lớn nhất là *Anomalocaris*, dài tới khoảng 1 m, dù mẫu vật đầy đủ nhất chỉ dài 25 cm (Bảo tàng Hoàng gia Ontario).",
+      "why": "Kích thước sai và chủ thể bị nới rộng. Bảo tàng Hoàng gia Ontario (cơ quan giữ bộ sưu tập Burgess Shale) ghi Maximum Size \"About 100 cm\", \"The most complete Anomalocaris specimen is 25 cm in length\", và gọi nó là \"The largest Burgess Shale predator\" — một quần thể ~505 triệu năm, không phải \"kẻ săn mồi đứng đầu\" của cả giai đoạn. Câu về bọ ba thuỳ không có nguồn nào mở được trong lượt này nên bỏ.",
+      "evidence": "https://burgess-shale.rom.on.ca/fossils/anomalocaris-canadensis/"
+    },
+    {
+      "claimId": "C-20",
+      "severity": "S3",
+      "find": "Thực vật lên cạn trước, khoảng 470 triệu năm trước, và phải mất rất lâu mới phát triển được mô dẫn để mọc cao. Động vật chân đốt theo sau.",
+      "replace": "Hoá thạch sớm nhất của thực vật trên cạn là những bào tử khoảng 469 triệu năm tuổi, giữa kỷ Ordovic; nhưng đồng hồ phân tử đặt nguồn gốc của nhóm này sớm hơn, nhiều khả năng từ kỷ Cambri, còn thực vật có mạch — nhóm có mô dẫn để mọc cao — xuất hiện muộn hơn, trong khoảng cuối kỷ Ordovic tới cuối kỷ Silur (Morris và cộng sự, 2018).",
+      "why": "Mốc 470 triệu năm không có nguồn và không nói dựa trên loại bằng chứng nào. Morris 2018 (PNAS): \"The earliest known fossils of embryophyte affinity are ... cryptospores ... from the Middle Ordovician [Dapingian; 469 Ma]\"; \"a Cambrian origin of Embryophyta is recovered with highest probability\"; \"crown tracheophytes range from Late Ordovician to late Silurian\". \"Động vật chân đốt theo sau\" không có nguồn nào mở được — cắt.",
+      "evidence": "doi 10.1073/pnas.1719588115 (PMC5877938)"
+    },
+    {
+      "claimId": "C-21",
+      "severity": "S3",
+      "find": "Động vật có xương sống bốn chân — **tetrapod** — xuất hiện vào cuối kỷ Devon, khoảng 375–360 triệu năm trước, tiến hoá từ nhóm cá vây thuỳ. *Tiktaalik* và *Ichthyostega* là những dạng chuyển tiếp nổi tiếng nhất.",
+      "replace": "Hoá thạch thân cổ nhất của động vật có xương sống bốn chi — **tetrapod** — có tuổi cuối kỷ Devon (kỷ Devon muộn kéo dài từ khoảng 382 tới 359 triệu năm trước theo thang ICS). Chúng tiến hoá từ nhóm cá vây thuỳ, qua những dạng trung gian như *Tiktaalik* — một loài cá còn vây nhưng đã có cổ cử động được và khớp cổ tay (Daeschler và cộng sự, 2006). Tuy vậy, dấu chân tetrapod ở Zachełmie, Ba Lan, có tuổi đầu kỷ Devon giữa, sớm hơn hoá thạch thân cổ nhất khoảng 18 triệu năm (Niedźwiedzki và cộng sự, 2010), nên thời điểm nhóm này xuất hiện vẫn đang được xem xét lại.",
+      "why": "Mốc tetrapod là mốc còn tranh cãi nhưng bài viết như đã xong. Niedźwiedzki 2010 (Nature): \"The earliest body fossils of tetrapods date to the Late Devonian period (late Frasnian stage) and are preceded by transitional elpistostegids such as Panderichthys and Tiktaalik that still have paired fins\"; dấu chân Ba Lan \"approximately 18 million years older than the earliest tetrapod body fossils\", \"force a radical reassessment of the timing\". Daeschler 2006: Tiktaalik là \"sarcopterygian fish ... intermediate between fish with fins and tetrapods with limbs\", có \"a mobile neck, a functional wrist joint\". Ranh giới Devon muộn: ICS 382,31 và 358,86 triệu năm. Ichthyostega không có nguồn mở được — bỏ.",
+      "evidence": "https://stratigraphy.org/ICSchart/ChronostratChart2024-12.pdf; doi 10.1038/nature08623; doi 10.1038/nature04639"
+    },
+    {
+      "claimId": "C-22",
+      "severity": "S3",
+      "find": "Kỷ Than đá tiếp theo để lại hai di sản: các mỏ than hiện đại, và **trứng có màng ối** — bước tiến cho phép bò sát đẻ trứng trên cạn mà không cần quay về nước.",
+      "replace": "Kỷ Than đá tiếp theo được đặt tên theo những vỉa than lớn, phân bố rộng hình thành trong kỷ này (Nelsen và cộng sự, 2016). Cũng trong kỷ này có những dấu vết sớm nhất của **động vật có màng ối** — nhánh gồm bò sát, chim và thú, nhóm động vật bốn chi duy nhất sinh sản hoàn toàn không phụ thuộc vào nước; dấu chân ở Victoria, Australia cho thấy nhánh này đã có mặt ngay từ đầu kỷ Than đá (Long và cộng sự, 2025).",
+      "why": "\"Các mỏ than hiện đại\" khái quát quá mức — Nelsen 2016 (PNAS) nói kỷ này \"is so named for massive, widespread coal deposits\" và \"high coal accumulation rates have continued to the present wherever environmental conditions permit\", tức than không chỉ đến từ kỷ Than đá. \"Cho phép bò sát\" thu hẹp chủ thể: màng ối là đặc điểm của cả nhánh amniote. Long 2025 (Nature): amniote là \"the only tetrapod clade to achieve complete reproductive independence of water\"; dấu chân ở Snowy Plains Formation \"securely dated to the early Tournaisian\" đẩy nguồn gốc nhánh sớm hơn \"at least 35-40 million years\".",
+      "evidence": "doi 10.1073/pnas.1517943113 (PMC4780611); doi 10.1038/s41586-025-08884-5 (PMC12119326)"
+    },
+    {
+      "claimId": "C-24",
+      "severity": "S4",
+      "find": "Sự kiện mở đường cho nhóm archosaur.",
+      "replace": "Sau sự kiện này, nhóm bò sát archosauromorph — gồm tổ tiên của cá sấu, khủng long và chim — từ chỗ ít ỏi đã trở thành nhóm động vật có xương sống chiếm ưu thế trên cạn (Ezcurra & Butler, 2018).",
+      "why": "Gắn nguồn và giữ đúng chủ thể. Ezcurra & Butler 2018 (Proc. R. Soc. B): \"after the Permo-Triassic mass extinction (ca 252.2 Ma), when the previously obscure archosauromorphs (which include crocodylians, dinosaurs and birds) become the dominant terrestrial vertebrates\". Nguồn nói archosauromorph, không phải archosaur.",
+      "evidence": "doi 10.1098/rspb.2018.0361 (PMC6015845)"
+    },
+    {
+      "claimId": "C-25",
+      "severity": "S4",
+      "find": "một tiểu hành tinh đường kính khoảng 10 km",
+      "replace": "một tiểu hành tinh rộng khoảng 10 km trở lên",
+      "why": "Gắn nguồn cơ quan. NOAA (Science On a Sphere): \"The 6+ miles wide asteroid that hit Earth 66 million years ago\" (6 dặm ≈ 9,7 km, \"6+\" = từ đó trở lên); cùng trang: hố Chicxulub dưới bán đảo Yucatán, \"including all non-avian dinosaurs\". Mốc 66 triệu năm khớp ICS v2024/12 (66,00).",
+      "evidence": "https://sos.noaa.gov/catalog/datasets/tsunami-asteroid-impact-66-million-years-ago/; https://stratigraphy.org/ICSchart/ChronostratChart2024-12.pdf"
+    },
+    {
+      "claimId": "C-26",
+      "severity": "S3",
+      "find": "Bụi và sulfat che khuất Mặt Trời trong nhiều năm, chuỗi thức ăn sụp đổ. Mọi loài khủng long không phải chim đều biến mất; hoạt động núi lửa Deccan Traps cùng thời có thể đã làm hệ sinh thái suy yếu sẵn từ trước.",
+      "replace": "Theo mô phỏng của Senel và cộng sự (2023), bụi silicate mịn bị hất lên khí quyển có thể làm nhiệt độ trung bình bề mặt toàn cầu giảm tới 15°C và khiến quang hợp gần như ngừng trong gần 2 năm; cộng thêm muội than từ cháy rừng và lưu huỳnh, điều đó phù hợp với sự sụp đổ của chuỗi thức ăn. Mọi loài khủng long không phải chim đều biến mất. Vai trò của đợt phun trào núi lửa Deccan Traps ở Ấn Độ cùng thời vẫn đang được tranh luận gay gắt; Hull và cộng sự (2020) cho rằng phần lớn khí núi lửa đã được thải ra trước vụ va chạm, và chỉ có vụ va chạm trùng với cuộc tuyệt chủng.",
+      "why": "Hai lỗi. (1) Cơ chế \"bụi và sulfat\" không nguồn và bỏ mất tác nhân mà nghiên cứu mới nhấn mạnh: Senel 2023 (Nature Geoscience) — \"a global-average surface temperature falling by as much as 15°C\", \"a dust-induced photosynthetic shut-down for almost 2 yr post-impact\", \"together with additional cooling contributions from soot and sulfur\". (2) Deccan Traps chỉ kể một phía: Hull 2020 (Science) mở đầu \"The cause of the end-Cretaceous mass extinction is vigorously debated\" và kết luận \"major outgassing beginning and ending distinctly before the impact, with only the impact coinciding with mass extinction\". Bất đồng thật thì trình bày là bất đồng, không phân xử.",
+      "evidence": "doi 10.1038/s41561-023-01290-4; doi 10.1126/science.aay5055; https://sos.noaa.gov/catalog/datasets/tsunami-asteroid-impact-66-million-years-ago/"
+    },
+    {
+      "claimId": "C-27",
+      "severity": "S3",
+      "find": "Động vật có vú sống sót nhờ nhỏ, ăn tạp và đào hang được.",
+      "replace": "Động vật có vú cũng chịu thiệt hại nặng: ở Bắc Mỹ, chỉ 4 trong 59 loài thú được ghi nhận vượt qua được ranh giới này, và những loài sống sót thường là loài phân bố rộng và phổ biến (Longrich và cộng sự, 2016).",
+      "why": "Nhân quả tự thêm, không nguồn (\"sống sót nhờ nhỏ, ăn tạp, đào hang\"), và câu ngụ ý thú nói chung sống sót. Longrich 2016 (J. Evol. Biol.) trên dữ liệu Bắc Mỹ: \"of 59 species, four survived (93% species extinction, 86% of genera)\"; \"Survival is correlated with geographic range size and abundance\". Giữ phạm vi Bắc Mỹ của nguồn (quy tắc 18).",
+      "evidence": "doi 10.1111/jeb.12882"
+    },
+    {
+      "claimId": "C-28",
+      "severity": "S3",
+      "find": "Sau vụ tuyệt chủng, động vật có vú toả ra chiếm mọi ổ sinh thái trống. Linh trưởng xuất hiện khoảng 55 triệu năm trước với những đặc điểm định hình cả nhánh: ngón cái đối diện để cầm nắm, mắt hướng về phía trước cho thị giác lập thể.",
+      "replace": "Sau vụ tuyệt chủng, động vật có vú phục hồi rất nhanh: ở Bắc Mỹ, chỉ trong 300.000 năm, đa dạng loài trong vùng đã tăng lên gấp đôi mức cuối kỷ Phấn trắng (Longrich và cộng sự, 2016). Bộ xương linh trưởng cổ nhất được biết, của *Archicebus* ở Trung Quốc, có tuổi khoảng 55 triệu năm; nó củng cố giả thuyết rằng những linh trưởng đầu tiên là những con thú nhỏ cỡ vượn cáo chuột lùn, sống trên cây, hoạt động ban ngày và chủ yếu ăn côn trùng (Ni và cộng sự, 2013).",
+      "why": "\"Chiếm mọi ổ sinh thái trống\" không nguồn. \"Linh trưởng xuất hiện khoảng 55 triệu năm\" đổi chủ thể: Ni 2013 (Nature) báo cáo \"The oldest known primate skeleton\", \"about 55 million years ago, the oldest fossil primate of this quality ever recovered\" — bộ xương cổ nhất, không phải thời điểm nhóm xuất hiện; cùng nguồn: \"the earliest primates were probably diurnal, arboreal and primarily insectivorous mammals the size of modern pygmy mouse lemurs\". Danh sách đặc điểm (ngón cái đối diện, thị giác lập thể) không có nguồn mở được — bỏ. Longrich 2016: \"Within 300 000 years, local diversity recovered and regional diversity rose to twice Cretaceous levels\".",
+      "evidence": "doi 10.1111/jeb.12882; doi 10.1038/nature12200"
+    },
+    {
+      "claimId": "C-29",
+      "severity": "S3",
+      "find": " Nguồn nói về dấu chân chứ không nói đây là bằng chứng sớm nhất về dáng đi hai chân nói chung — bằng chứng từ xương có thể còn cổ hơn.",
+      "replace": "",
+      "why": "Câu do lượt 17/09 thêm vào là câu nói với người duyệt về gói nguồn, không nói với người đọc về chủ đề (content-rules, đợt ba: \"lập luận từ sự im lặng\"), và vế \"bằng chứng từ xương có thể còn cổ hơn\" không có nguồn nào được mở. Câu trước đó đã nói đúng điều Masao 2016 nói (\"the earliest hominin footprints in the world\"), nên cắt câu này là đủ.",
+      "evidence": "https://elifesciences.org/articles/19568"
+    },
+    {
+      "claimId": "C-30",
+      "severity": "S2",
+      "find": "*Homo erectus* xuất hiện khoảng 1,9 triệu năm trước và là loài người đầu tiên rời châu Phi.",
+      "replace": "*Homo erectus* xuất hiện khoảng 1,9 triệu năm trước và thường được coi là loài người đầu tiên lan ra ngoài châu Phi.",
+      "why": "Nâng mức tự tin so với nguồn — lỗi mức từ chối theo chuẩn biên tập (lượt 17/09 đã ghi nhận nhưng để lại). Smithsonian: \"Between about 1.89 million and 110,000 years ago\"; \"Generally considered to have been the first species to have expanded beyond Africa\".",
+      "evidence": "https://humanorigins.si.edu/evidence/human-fossils/species/homo-erectus"
+    },
+    {
+      "claimId": "C-31",
+      "severity": "S3",
+      "find": "hoá thạch ở Jebel Irhoud, Maroc đã đẩy mốc này lùi xa hơn con số quen thuộc trước đó là khoảng 195.000 năm, vốn dựa trên hoá thạch Omo I ở Ethiopia.",
+      "replace": "hoá thạch ở Jebel Irhoud, Maroc, định tuổi 315.000 ± 34.000 năm (Hublin và cộng sự, 2017), đã đẩy mốc này lùi xa hơn con số quen thuộc trước đó là khoảng 195.000 năm, vốn dựa trên hoá thạch Omo I ở Ethiopia. Chính Omo I sau đó cũng được định tuổi lại, tối thiểu 233.000 ± 22.000 năm (Vidal và cộng sự, 2022).",
+      "why": "Con số 195.000 năm cho Omo I đã lỗi thời: Vidal 2022 (Nature) — \"The ages that are generally reported for these fossils are around 197 thousand years (kyr) for the Kibish Omo I\"; \"we obtain a new minimum age for the Omo fossils of 233 ± 22 kyr\". Trang Smithsonian (nguồn s1) vẫn ghi \"About 195,000 years old\" — đúng như một mốc lịch sử, nên câu lịch sử giữ, nhưng phải thêm niên đại mới. Ghi rõ niên đại Jebel Irhoud theo Hublin 2017: \"an age of 315 ± 34 thousand years (as determined by thermoluminescence dating)\".",
+      "evidence": "doi 10.1038/s41586-021-04275-8; https://kar.kent.ac.uk/62267/ (doi 10.1038/nature22336); https://humanorigins.si.edu/evidence/human-fossils/fossils/omo-i"
+    },
+    {
+      "claimId": "C-32",
+      "severity": "S3",
+      "find": "Nông nghiệp bắt đầu khoảng 12.000 năm trước, khi kỷ băng hà cuối cùng kết thúc. Toàn bộ lịch sử thành văn của loài người gói gọn trong khoảng 5.000 năm.",
+      "replace": "Những bước đầu tiên của việc thuần hoá cây trồng và vật nuôi ở phía đông Địa Trung Hải có từ khoảng 12.000–11.000 năm trước (Zeder, 2008), gần thời điểm bắt đầu thế Holocen, 11.700 năm trước theo thang ICS. Chữ viết sớm nhất — các bảng đất sét tiền hình nêm ở Uruk, Iraq ngày nay — có niên đại khoảng năm 3200 TCN (Đại học Chicago), nên toàn bộ lịch sử thành văn của loài người gói gọn trong khoảng 5.200 năm.",
+      "why": "Hai con số không nguồn, và \"nông nghiệp bắt đầu\" nới chủ thể từ một vùng ra toàn nhân loại. Zeder 2008 (PNAS): \"The initial steps toward plant and animal domestication in the Eastern Mediterranean can now be pushed back to the 12th millennium cal B.P.\" Đáy thế Holocen: ICS v2024/12 ghi 0,0117 triệu năm. \"Kỷ băng hà cuối cùng kết thúc\" không có trên bảng ICS nên đổi thành mốc Holocen. Chữ viết: Đại học Chicago (triển lãm Visible Language, ISAC) — \"the earliest cuneiform tablets from Mesopotamia (modern-day Iraq), dating to about 3200 BC\"; 3200 TCN ≈ 5.200 năm.",
+      "evidence": "doi 10.1073/pnas.0801317105 (PMC2575338); https://stratigraphy.org/ICSchart/ChronostratChart2024-12.pdf; https://news.uchicago.edu/story/origins-writing-make-engaging-new-exhibition-oriental-institute-museum"
+    },
+    {
+      "claimId": "C-33",
+      "severity": "S3",
+      "find": "| Tế bào đầu tiên | cuối tháng 2 |",
+      "replace": "| Vi hoá thạch sớm nhất (~3,5 tỉ năm) | 25 tháng 3 |",
+      "why": "Tự tính: 4,54 tỉ năm = 365 ngày. \"Cuối tháng 2\" ứng với ~3,8 tỉ năm — không có mốc \"tế bào đầu tiên\" nào có nguồn ở tuổi đó. Mốc có nguồn trong thân bài là vi hoá thạch ~3,5 tỉ năm (Bell 2015): (4,54 − 3,5)/4,54 × 365 = 83,6 ngày → 25/3.",
+      "evidence": "tự tính; doi 10.1073/pnas.1517557112"
+    },
+    {
+      "claimId": "C-33",
+      "severity": "S4",
+      "find": "| Oxy tích tụ trong khí quyển | 21 tháng 6 |",
+      "replace": "| Oxy bắt đầu tăng trong khí quyển (~2,45–2,4 tỉ năm) | 18–22 tháng 6 |",
+      "why": "Tự tính: 2,45 tỉ năm → 168,0 ngày → 18/6; 2,4 tỉ năm → 172,1 ngày → 22/6. Bảng phải khớp với khoảng mà thân bài nêu theo Philippot 2018.",
+      "evidence": "tự tính; doi 10.1038/s41467-018-04621-x"
+    },
+    {
+      "claimId": "C-33",
+      "severity": "S3",
+      "find": "| Động vật đa bào | giữa tháng 11 |",
+      "replace": "| Sinh vật vĩ mô phức tạp đầu tiên — quần sinh vật Ediacara (~571 triệu năm) | 16 tháng 11 |",
+      "why": "Dòng cũ không gắn mốc nào. Gắn mốc có nguồn: quần sinh vật Ediacara — \"the first macroscopic complex organisms in the geological record\" — bắt đầu 571 triệu năm (Bobrovskiy 2018; Wood 2019). Không gọi cả quần là \"động vật\": Bobrovskiy chỉ xác nhận Dickinsonia và họ hàng là động vật → (4540 − 571)/4540 × 365 = 319,1 ngày → 16/11.",
+      "evidence": "tự tính; doi 10.1126/science.aat7228"
+    },
+    {
+      "claimId": "C-33",
+      "severity": "S4",
+      "find": "| Bùng nổ Cambri | 19 tháng 11 |",
+      "replace": "| Bùng nổ Cambri (~540 triệu năm) | 18 tháng 11 |",
+      "why": "Tự tính: 540 triệu năm → 321,6 ngày → 18/11 (538,8 → 321,7 → cũng 18/11). \"19/11\" lệch một ngày.",
+      "evidence": "tự tính; doi 10.1038/s41559-019-0821-6"
+    },
+    {
+      "claimId": "C-33",
+      "severity": "S4",
+      "find": "| Toàn bộ lịch sử thành văn | 30 giây cuối cùng |",
+      "replace": "| Toàn bộ lịch sử thành văn (~5.200 năm) | khoảng 36 giây cuối cùng |",
+      "why": "Tự tính: 5.200 năm × (365 × 86.400 s / 4,54 tỉ năm) = 36,1 giây (5.000 năm → 34,7 giây). \"30 giây\" không khớp con số nào. Khủng long 66 triệu năm → 26/12 và Homo sapiens 300.000 năm → 23:25 đã kiểm lại, đúng.",
+      "evidence": "tự tính"
+    },
+    {
+      "claimId": "C-34",
+      "severity": "S3",
+      "find": "> Sự sống đơn bào chiếm gần ba tỉ năm đầu tiên. Nếu ở đâu đó ngoài kia có sự sống, khả năng cao nhất là ta sẽ tìm thấy nó ở dạng vi khuẩn, chứ không phải dạng có thể trả lời tín hiệu.",
+      "replace": "> Trong gần ba tỉ năm đầu, sự sống chủ yếu là vi sinh vật. Những gì ta nhìn thấy quanh mình — động vật lớn, cây cỏ trên cạn, con người — chen chúc trong chưa tới 600 triệu năm cuối.",
+      "why": "Câu thứ hai là suy đoán của người viết với mức tự tin \"khả năng cao nhất\", không nguồn — cắt. Câu thứ nhất lặp lỗi \"đơn bào\" của C-1 nên sửa cùng cách (Bobrovskiy 2018; Morris 2018).",
+      "evidence": "doi 10.1126/science.aat7228; doi 10.1073/pnas.1719588115"
+    }
+  ],
+  "enEdits": [
+    {
+      "claimId": "C-0b",
+      "severity": "S4",
+      "find": "Earth began as a sphere of molten rock,",
+      "replace": "Earth probably began as a sphere of molten rock,",
+      "why": "Đồng bộ với bản vi. Xem C-0b bản vi.",
+      "evidence": "https://doi.org/10.1146/annurev-earth-042711-105503"
+    },
+    {
+      "claimId": "C-1",
+      "severity": "S3",
+      "find": "single-celled life occupied nearly the first three billion years, while all animals, plants, and humans are crammed into the final half-billion.",
+      "replace": "for nearly the first three billion years life was mostly microbial, while all large animals, land plants, and humans are crammed into less than the final 600 million years.",
+      "why": "Đồng bộ với bản vi. Xem C-1 bản vi.",
+      "evidence": "doi 10.1126/science.aat7228; doi 10.1073/pnas.1719588115"
+    },
+    {
+      "claimId": "C-3",
+      "severity": "S1",
+      "find": "The oldest samples—meteorites and zircon crystals in Western Australia dating back 4.4 billion years—allow this age to be determined with fair certainty.",
+      "replace": "The 4.54-billion-year age comes from radiometric dating of meteorites, with an uncertainty of less than 1% (U.S. Geological Survey). Zircon crystals found in younger sedimentary rocks in Western Australia — as old as about 4.4 billion years (4.404 ± 0.008 billion years according to Wilde et al., 2001) — are the oldest material ever found on Earth, but they only give a minimum age for the crust and are not the basis of the 4.54-billion-year figure.",
+      "why": "Bản en chưa từng nhận bản sửa S1 ngày 17/09 (corrections.md ghi đã sửa, nhưng chỉ bản vi đổi): câu en vẫn gộp thiên thạch với zircon và ngụ ý zircon xác định tuổi Trái Đất. USGS: \"The best age for the Earth (4.54 Ga) is based on ... meteorites\"; \"the oldest materials to be found on Earth so far\"; \"The ages measured for Earth's oldest rocks and oldest crystals show that the Earth is at least 4.3 billion years in age but do not reveal the exact age\". Con số zircon theo C-3.",
+      "evidence": "https://pubs.usgs.gov/gip/geotime/age.html; doi 10.1038/35051550"
+    },
+    {
+      "claimId": "C-4",
+      "severity": "S3",
+      "find": "Initially, it was a molten planet. Heavy metals sank to the center to form the core, while lighter material rose to form the mantle and crust.",
+      "replace": "Early on, giant impacts may have melted the planet's outer layers into one or more \"magma oceans\" (Elkins-Tanton, 2012). Metal — mostly iron and nickel — separated from the silicates and sank to form the core, a process that hafnium–tungsten isotope measurements show was complete within about the first 30 million years of the Solar System (Kleine et al., 2002); the lighter silicate material formed the mantle and crust.",
+      "why": "Đồng bộ với bản vi. Xem C-4 bản vi.",
+      "evidence": "https://doi.org/10.1146/annurev-earth-042711-105503; doi 10.1038/nature00982"
+    },
+    {
+      "claimId": "C-5",
+      "severity": "S4",
+      "find": "it is the flow of electrically conductive liquid in the core that generates the magnetic field protecting our atmosphere.",
+      "replace": "it is the moving molten iron of the outer core that generates nearly all of Earth's magnetic field — which shields the atmosphere from erosion by the solar wind (NASA).",
+      "why": "Đồng bộ với bản vi. Xem C-5 bản vi.",
+      "evidence": "https://science.nasa.gov/science-research/earth-science/earths-magnetosphere-protecting-our-planet-from-harmful-space-energy/"
+    },
+    {
+      "claimId": "C-6",
+      "severity": "S2",
+      "find": "A Mars-sized celestial body, commonly referred to as **[[Theia]]**, collided with the young Earth. The ejected material coalesced to form the Moon.",
+      "replace": "Theories of the Moon's origin still compete, but almost all share one point: about 4.5 billion years ago, something — perhaps a single Mars-sized body, commonly referred to as **[[Theia]]**, perhaps a series of objects — crashed into the young Earth, and the ejected material coalesced to form the Moon (NASA).",
+      "why": "Đồng bộ với bản vi. Xem C-6 bản vi.",
+      "evidence": "https://science.nasa.gov/moon/formation/"
+    },
+    {
+      "claimId": "C-7",
+      "severity": "S3",
+      "find": "The Moon stabilizes Earth's axial tilt, preventing the climate from fluctuating chaotically over long cycles.",
+      "replace": "The Moon's gravity keeps Earth from wobbling on its axis too much, which helps to stabilize the climate (NASA).",
+      "why": "Đồng bộ với bản vi. Xem C-7 bản vi.",
+      "evidence": "https://science.nasa.gov/moon/top-moon-questions/"
+    },
+    {
+      "claimId": "C-8",
+      "severity": "S3",
+      "find": "Simultaneously, the tides it causes have gradually slowed the planet's rotation: the day on the early Earth lasted only a few hours, and it has since stretched to the 24 hours we have today.",
+      "replace": "At the same time, tidal friction has gradually slowed Earth's rotation: analysis of 1.4-billion-year-old sediments in northern China indicates that a day then lasted only about 18.7 hours (Meyers & Malinverno, 2018), compared with 24 hours today.",
+      "why": "Đồng bộ với bản vi. Xem C-8 bản vi.",
+      "evidence": "doi 10.1073/pnas.1717689115"
+    },
+    {
+      "claimId": "C-9",
+      "severity": "S3",
+      "find": "The oldest widely accepted bacterial fossils are approximately **3.5 billion years old**, and chemical traces of life may be even earlier. This means that life appeared quite rapidly after the planet became habitable—one of the reasons many scientists believe life may not be rare in the universe.",
+      "replace": "The microfossil record extends back to about **3.5 billion years** ago; chemical traces of life arguably reach about 3.8 billion years, and graphite trapped in a 4.1-billion-year-old zircon has a carbon isotope composition consistent with a biological origin — a hint, not a conclusion (Bell et al., 2015). Whether such ancient fossils were really made by living things remains debated (Allwood et al., 2006). If these dates hold, life appeared fairly soon after the planet became habitable. That has been taken as a sign that life arises easily, but a statistical analysis by Spiegel and Turner (2012) shows that a single case is not enough to decide: the evidence is consistent both with life being common and with it being very rare.",
+      "why": "Đồng bộ với bản vi. Gộp C-9 và C-10 bản vi (hai câu en liền nhau).",
+      "evidence": "doi 10.1073/pnas.1517557112; doi 10.1038/nature04764; doi 10.1073/pnas.1111694108"
+    },
+    {
+      "claimId": "C-11",
+      "severity": "S4",
+      "find": "and they are still forming in Shark Bay, Australia.",
+      "replace": "and living stromatolite communities still exist in Hamelin Pool, Shark Bay, Western Australia.",
+      "why": "Đồng bộ với bản vi. Xem C-11 bản vi.",
+      "evidence": "https://www.sharkbay.org/place/hamelin-pool/stromatolites/"
+    },
+    {
+      "claimId": "C-12",
+      "severity": "S3",
+      "find": "—the source of iron that most of the modern steel industry mines today.",
+      "replace": "—according to CSIRO, most of the world's iron ore is found in these rocks.",
+      "why": "Đồng bộ với bản vi. Xem C-12 bản vi.",
+      "evidence": "https://www.csiro.au/en/news/all/articles/2024/march/banded-iron-formations"
+    },
+    {
+      "claimId": "C-13",
+      "severity": "S1",
+      "find": "When the iron was depleted, oxygen began to accumulate in the atmosphere. For most organisms at that time, oxygen was **poisonous**, and this event may have been the largest mass extinction to ever occur—it is just that the victims were all microorganisms, so they left no easily recognizable fossils.",
+      "replace": "When the iron was depleted, oxygen began to accumulate in the atmosphere. This was not a sudden event: Philippot et al. (2018) found that atmospheric oxygen began to rise around 2.45 billion years ago or earlier, and proposed understanding the Great Oxidation Event as a transitional period lasting roughly 300 million years rather than a single global moment.",
+      "why": "Hai việc. (1) Bản sửa S1 ngày 17/09 cho mốc GOE chỉ áp vào bản vi; bản en vẫn không có nguồn cho mốc 2,4 tỉ năm. Philippot 2018: \"Before ~2.45 Ga ago, atmospheric oxygen was at pO2 < 10–5 PAL\", \"an early (younger than 2.45 Ga) rise of atmospheric oxygen\", GOE \"shown as a ~300 Myr interval\", \"the view of the GOE as a transitional period\". (2) Cắt câu \"có thể là cuộc tuyệt chủng lớn nhất\" như C-14 bản vi.",
+      "evidence": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5993798/ (doi 10.1038/s41467-018-04621-x)"
+    },
+    {
+      "claimId": "C-15",
+      "severity": "S3",
+      "find": "During the Cryogenian period, ice spread to the tropics, potentially covering almost the entire planet.",
+      "replace": "The Cryogenian period (about 720–635 million years ago on the ICS scale) saw two long glaciations — the Sturtian, about 58 million years, and the Marinoan, at least 5 million years — when ice sheets reached sea level at all latitudes, including the tropics. Under the \"Snowball Earth\" hypothesis, ice may then have covered almost the entire planet (Hoffman et al., 2017).",
+      "why": "Đồng bộ với bản vi. Xem C-15 bản vi.",
+      "evidence": "https://stratigraphy.org/ICSchart/ChronostratChart2024-12.pdf; doi 10.1126/sciadv.1600983"
+    },
+    {
+      "claimId": "C-16",
+      "severity": "S4",
+      "find": "After millions of years, the [[hieu-ung-nha-kinh|greenhouse effect]]",
+      "replace": "After millions to tens of millions of years, the [[hieu-ung-nha-kinh|greenhouse effect]]",
+      "why": "Đồng bộ với bản vi. Xem C-16 bản vi. Giữ nguyên cú pháp [[hieu-ung-nha-kinh|...]].",
+      "evidence": "doi 10.1126/sciadv.1600983"
+    },
+    {
+      "claimId": "C-17",
+      "severity": "S3",
+      "find": "## Cambrian Explosion: 538 million years ago",
+      "replace": "## Cambrian Explosion: about 540–520 million years ago",
+      "why": "Đồng bộ với bản vi. Xem C-17 bản vi.",
+      "evidence": "doi 10.1038/s41559-019-0821-6"
+    },
+    {
+      "claimId": "C-18",
+      "severity": "S2",
+      "find": "Over about 20–25 million years, almost all modern animal phyla appeared in the fossil record. This was the first time hard skeletons, eyes, and **active predation** existed—predator and prey began an evolutionary arms race, a selective pressure unlike any before.",
+      "replace": "The Cambrian period began 538.8 ± 0.6 million years ago on the ICS scale. Over the following 20 million years or so, from about 540 to 520 million years ago, the abundance and diversity of animals in the fossil record rose sharply (Wood et al., 2019), and essentially all basic animal body plans — the phyla — appeared around the Precambrian–Cambrian transition (Sperling et al., 2013). But the explosion did not come from nowhere: the Ediacara biota — the first macroscopic complex organisms, including confirmed animals such as *Dickinsonia* — goes back to about 571 million years ago (Bobrovskiy et al., 2018), and mineralized skeletons and traces of **predation** had already appeared in the late Precambrian — tubes of *Cloudina* bear bore holes attributed to a predator (Bengtson & Zhao, 1992). Why it happened is still unsettled: a predator–prey \"arms race\" can explain the pattern of the event but not its timing, and Sperling et al. (2013) propose that rising oxygen is what allowed carnivory to become widespread.",
+      "why": "Đồng bộ với bản vi. Xem C-18 bản vi.",
+      "evidence": "https://stratigraphy.org/ICSchart/ChronostratChart2024-12.pdf; doi 10.1038/s41559-019-0821-6; doi 10.1073/pnas.1312778110; doi 10.1126/science.257.5068.367"
+    },
+    {
+      "claimId": "C-19",
+      "severity": "S2",
+      "find": "Trilobites are the icon of this period, while the half-meter-long *Anomalocaris* was the apex predator.",
+      "replace": "In the Burgess Shale fossil community of Canada (about 505 million years ago), the largest predator was *Anomalocaris*, up to about 1 m long, although the most complete specimen is only 25 cm (Royal Ontario Museum).",
+      "why": "Đồng bộ với bản vi. Xem C-19 bản vi.",
+      "evidence": "https://burgess-shale.rom.on.ca/fossils/anomalocaris-canadensis/"
+    },
+    {
+      "claimId": "C-20",
+      "severity": "S3",
+      "find": "Plants moved onto land first, about 470 million years ago, and it took a long time for them to develop vascular tissue to grow tall. Arthropods followed.",
+      "replace": "The earliest fossils of land plants are spores about 469 million years old, from the Middle Ordovician; molecular clocks, however, place the group's origin earlier, most likely in the Cambrian, while vascular plants — the group with conducting tissue that lets them grow tall — appeared later, between the Late Ordovician and the late Silurian (Morris et al., 2018).",
+      "why": "Đồng bộ với bản vi. Xem C-20 bản vi.",
+      "evidence": "doi 10.1073/pnas.1719588115"
+    },
+    {
+      "claimId": "C-21",
+      "severity": "S3",
+      "find": "Four-limbed vertebrates—**tetrapods**—appeared at the end of the Devonian period, about 375–360 million years ago, evolving from lobe-finned fish. *Tiktaalik* and *Ichthyostega* are the most famous transitional forms.",
+      "replace": "The oldest body fossils of four-limbed vertebrates — **tetrapods** — date to the Late Devonian (which ran from about 382 to 359 million years ago on the ICS scale). They evolved from lobe-finned fish, through intermediate forms such as *Tiktaalik* — a fish that still had fins but already had a mobile neck and a functional wrist joint (Daeschler et al., 2006). Yet tetrapod trackways at Zachełmie, Poland, date to the early Middle Devonian, about 18 million years older than the earliest body fossils (Niedźwiedzki et al., 2010), so the timing of the group's appearance is still being reassessed.",
+      "why": "Đồng bộ với bản vi. Xem C-21 bản vi.",
+      "evidence": "https://stratigraphy.org/ICSchart/ChronostratChart2024-12.pdf; doi 10.1038/nature08623; doi 10.1038/nature04639"
+    },
+    {
+      "claimId": "C-22",
+      "severity": "S3",
+      "find": "The subsequent Carboniferous period left two legacies: modern coal deposits and the **amniotic egg**—the advancement that allowed reptiles to lay eggs on land without needing to return to the water.",
+      "replace": "The subsequent Carboniferous period is named for the massive, widespread coal deposits formed during it (Nelsen et al., 2016). It also holds the earliest traces of **amniotes** — the branch comprising reptiles, birds and mammals, the only tetrapod group to reproduce entirely independently of water; trackways in Victoria, Australia show this branch was already present at the very start of the Carboniferous (Long et al., 2025).",
+      "why": "Đồng bộ với bản vi. Xem C-22 bản vi.",
+      "evidence": "doi 10.1073/pnas.1517943113; doi 10.1038/s41586-025-08884-5"
+    },
+    {
+      "claimId": "C-23",
+      "severity": "S1",
+      "find": "**252 million years ago**, the [Permian mass extinction](/articles/dai-tuyet-chung-permi-lan-su-song-suyt-bien-mat) wiped out about 80% of marine species and paved the way for the archosaurs.",
+      "replace": "**About 251.9 million years ago** — the marine extinction began at 251.941 ± 0.037 million years — the [Permian mass extinction](/articles/dai-tuyet-chung-permi-lan-su-song-suyt-bien-mat) wiped out about 81% of marine species according to Stanley (2016); older estimates that are still widely cited put the figure at 88–96%, and the difference reflects an unresolved methodological disagreement. Afterwards, the archosauromorph reptiles — which include the ancestors of crocodylians, dinosaurs and birds — rose from obscurity to become the dominant land vertebrates (Ezcurra & Butler, 2018).",
+      "why": "Bản sửa S1 ngày 17/09 cho mốc Permi chỉ áp vào bản vi; bản en vẫn \"252 million / 80%\" không nguồn. Gastaldo 2020: \"The marine event began at 251.941 ± 0.037 Ma\"; Stanley 2016: \"only ∼81% of marine species died out ... whereas levels of 90–96% have frequently been quoted\", \"the frequently cited estimate of 88–96% by Raup\". Kèm câu archosauromorph như C-24 bản vi. Giữ nguyên link nội bộ.",
+      "evidence": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5081622/; https://pmc.ncbi.nlm.nih.gov/articles/PMC7080820/; doi 10.1098/rspb.2018.0361"
+    },
+    {
+      "claimId": "C-25",
+      "severity": "S4",
+      "find": "an asteroid approximately 10 km in diameter",
+      "replace": "an asteroid about 10 km or more across",
+      "why": "Đồng bộ với bản vi. Xem C-25 bản vi.",
+      "evidence": "https://sos.noaa.gov/catalog/datasets/tsunami-asteroid-impact-66-million-years-ago/"
+    },
+    {
+      "claimId": "C-26",
+      "severity": "S3",
+      "find": "Dust and sulfates blocked the Sun for years, and the food chain collapsed. Every non-avian dinosaur disappeared; volcanic activity from the Deccan Traps during the same period may have already weakened the ecosystem beforehand.",
+      "replace": "In simulations by Senel et al. (2023), fine silicate dust thrown into the atmosphere could have cooled the global-average surface by as much as 15°C and nearly shut down photosynthesis for almost 2 years; together with soot from wildfires and sulfur, this is consistent with the collapse of the food chain. Every non-avian dinosaur disappeared. The role of the contemporaneous Deccan Traps volcanism in India is still vigorously debated; Hull et al. (2020) argue that most of the volcanic outgassing happened before the impact, and that only the impact coincided with the extinction.",
+      "why": "Đồng bộ với bản vi. Xem C-26 bản vi.",
+      "evidence": "doi 10.1038/s41561-023-01290-4; doi 10.1126/science.aay5055"
+    },
+    {
+      "claimId": "C-27",
+      "severity": "S3",
+      "find": "Mammals survived by being small, omnivorous, and capable of burrowing.",
+      "replace": "Mammals were hit hard too: in North America, only 4 of 59 recorded mammal species made it across the boundary, and the survivors tended to be widespread, common species (Longrich et al., 2016).",
+      "why": "Đồng bộ với bản vi. Xem C-27 bản vi.",
+      "evidence": "doi 10.1111/jeb.12882"
+    },
+    {
+      "claimId": "C-28",
+      "severity": "S3",
+      "find": "After the extinction, mammals radiated to fill every empty ecological niche. Primates appeared about 55 million years ago with the characteristics that defined the entire branch: opposable thumbs for grasping and forward-facing eyes for stereoscopic vision.",
+      "replace": "After the extinction, mammals recovered remarkably fast: in North America, within 300,000 years regional diversity had risen to twice late-Cretaceous levels (Longrich et al., 2016). The oldest known primate skeleton, of *Archicebus* from China, is about 55 million years old; it strengthens the hypothesis that the earliest primates were small, tree-dwelling, day-active, mainly insect-eating mammals the size of a pygmy mouse lemur (Ni et al., 2013).",
+      "why": "Đồng bộ với bản vi. Xem C-28 bản vi.",
+      "evidence": "doi 10.1111/jeb.12882; doi 10.1038/nature12200"
+    },
+    {
+      "claimId": "C-29",
+      "severity": "S1",
+      "find": "The Laetoli footprints in Tanzania, approximately **3.66 million years old**, are the earliest direct evidence of bipedalism, belonging to the genus *Australopithecus*.",
+      "replace": "The Laetoli footprints in Tanzania, approximately **3.66 million years old**, are the earliest known hominin footprints in the world, attributed to *Australopithecus afarensis* (Masao et al., 2016).",
+      "why": "Bản sửa S1 ngày 17/09 chỉ áp vào bản vi; bản en vẫn nói \"earliest direct evidence of bipedalism\" — điều nguồn không nói. Masao 2016 (eLife): \"the earliest hominin footprints in the world (3.66 million years old), discovered in 1978 at Site G and attributed to Australopithecus afarensis\".",
+      "evidence": "https://elifesciences.org/articles/19568 (doi 10.7554/eLife.19568)"
+    },
+    {
+      "claimId": "C-30",
+      "severity": "S2",
+      "find": "*Homo erectus* appeared about 1.9 million years ago and was the first human species to leave Africa. *Homo sapiens* appeared about **300,000 years ago**—fossils at Jebel Irhoud, Morocco, have pushed this date much further back than the 100,000-year figure once commonly used.",
+      "replace": "*Homo erectus* appeared about 1.9 million years ago and is generally considered the first human species to have spread beyond Africa. *Homo sapiens* appeared about **300,000 years ago** — fossils at Jebel Irhoud, Morocco, dated to 315,000 ± 34,000 years (Hublin et al., 2017), pushed this date further back than the previously familiar figure of about 195,000 years, which was based on the Omo I fossil from Ethiopia. Omo I itself was later re-dated to a minimum of 233,000 ± 22,000 years (Vidal et al., 2022).",
+      "why": "Hai lỗi. (1) Như C-30 bản vi: nâng mức tự tin so với Smithsonian (\"Generally considered to have been the first species to have expanded beyond Africa\"). (2) Bản en mâu thuẫn với bản vi và với nguồn s1: en viết \"the 100,000-year figure\" (con số của bài VACA đã bị gỡ), vi viết 195.000 năm theo Omo I (Smithsonian: \"About 195,000 years old\"). Đồng bộ theo C-31 bản vi.",
+      "evidence": "https://humanorigins.si.edu/evidence/human-fossils/species/homo-erectus; https://humanorigins.si.edu/evidence/human-fossils/fossils/omo-i; https://kar.kent.ac.uk/62267/; doi 10.1038/s41586-021-04275-8"
+    },
+    {
+      "claimId": "C-32",
+      "severity": "S3",
+      "find": "Agriculture began about 12,000 years ago, when the last ice age ended. The entire written history of humanity is contained within about 5,000 years.",
+      "replace": "The first steps toward domesticating plants and animals in the Eastern Mediterranean date to about 12,000–11,000 years ago (Zeder, 2008), close to the start of the Holocene epoch, 11,700 years ago on the ICS scale. The earliest writing — proto-cuneiform clay tablets from Uruk, in today's Iraq — dates to about 3200 BC (University of Chicago), so the entire written history of humanity fits within about 5,200 years.",
+      "why": "Đồng bộ với bản vi. Xem C-32 bản vi.",
+      "evidence": "doi 10.1073/pnas.0801317105; https://stratigraphy.org/ICSchart/ChronostratChart2024-12.pdf; https://news.uchicago.edu/story/origins-writing-make-engaging-new-exhibition-oriental-institute-museum"
+    },
+    {
+      "claimId": "C-33",
+      "severity": "S3",
+      "find": "| First cells | End of February |",
+      "replace": "| Earliest microfossils (~3.5 billion years) | March 25 |",
+      "why": "Đồng bộ với bản vi. Xem C-33 bản vi (tự tính).",
+      "evidence": "tự tính"
+    },
+    {
+      "claimId": "C-33",
+      "severity": "S2",
+      "find": "| Oxygen accumulates in the atmosphere | End of July |",
+      "replace": "| Oxygen begins to rise in the atmosphere (~2.45–2.4 billion years) | June 18–22 |",
+      "why": "Bản en sai và lệch với bản vi: \"End of July\" ứng với ~1,9 tỉ năm. Tự tính theo 2,45–2,4 tỉ năm → 18–22/6.",
+      "evidence": "tự tính; doi 10.1038/s41467-018-04621-x"
+    },
+    {
+      "claimId": "C-33",
+      "severity": "S3",
+      "find": "| Multicellular animals | Mid-November |",
+      "replace": "| First macroscopic complex organisms — the Ediacara biota (~571 million years) | November 16 |",
+      "why": "Đồng bộ với bản vi. Xem C-33 bản vi (tự tính).",
+      "evidence": "tự tính; doi 10.1126/science.aat7228"
+    },
+    {
+      "claimId": "C-33",
+      "severity": "S4",
+      "find": "| Cambrian explosion | November 19 |",
+      "replace": "| Cambrian explosion (~540 million years) | November 18 |",
+      "why": "Đồng bộ với bản vi. Xem C-33 bản vi (tự tính).",
+      "evidence": "tự tính"
+    },
+    {
+      "claimId": "C-33",
+      "severity": "S2",
+      "find": "| *Homo sapiens* | 23:37, December 31 |",
+      "replace": "| *Homo sapiens* | 23:25, December 31 |",
+      "why": "Bản en sai và lệch với bản vi: 23:37 ứng với ~200.000 năm, trong khi thân bài nêu ~300.000 năm. Tự tính: 300.000/4,54 tỉ × 365 × 1440 = 34,7 phút trước nửa đêm → 23:25.",
+      "evidence": "tự tính"
+    },
+    {
+      "claimId": "C-33",
+      "severity": "S4",
+      "find": "| Entire written history | Last 30 seconds |",
+      "replace": "| Entire written history (~5,200 years) | About the last 36 seconds |",
+      "why": "Đồng bộ với bản vi. Xem C-33 bản vi (tự tính).",
+      "evidence": "tự tính"
+    },
+    {
+      "claimId": "C-34",
+      "severity": "S3",
+      "find": "> Single-celled life occupied nearly the first three billion years. If there is life out there, the highest probability is that we will find it in bacterial form, not as a form capable of responding to signals.",
+      "replace": "> For nearly the first three billion years, life was mostly microbial. Everything we see around us — large animals, land plants, humans — is crammed into less than the final 600 million years.",
+      "why": "Đồng bộ với bản vi. Xem C-34 bản vi.",
+      "evidence": "doi 10.1126/science.aat7228; doi 10.1073/pnas.1719588115"
+    }
+  ],
+  "summaryEdits": [],
+  "summaryEnEdits": [],
+  "addSources": [
+    {
+      "title": "International Chronostratigraphic Chart v2024/12",
+      "url": "https://stratigraphy.org/ICSchart/ChronostratChart2024-12.pdf",
+      "doi": "",
+      "publisher": "International Commission on Stratigraphy (IUGS)",
+      "year": 2024,
+      "tier": 2,
+      "covers": "C-15, C-17, C-18, C-21, C-25, C-32 — Cryogen ~720–635 Ma; đáy Cambri 538,8 ± 0,6 Ma; Devon muộn 382,31–358,86 Ma; ranh giới K–Pg 66,00 Ma; đáy Holocen 0,0117 Ma"
+    },
+    {
+      "title": "Evidence from detrital zircons for the existence of continental crust and oceans on the Earth 4.4 Gyr ago",
+      "url": "https://doi.org/10.1038/35051550",
+      "doi": "10.1038/35051550",
+      "publisher": "Nature (Wilde, Valley, Peck, Graham)",
+      "year": 2001,
+      "tier": 1,
+      "covers": "C-3 — zircon Jack Hills 4.404 ± 8 Myr; bằng chứng sớm nhất về vỏ lục địa và đại dương (đỡ tiêu đề mục 4,4 tỉ năm)"
+    },
+    {
+      "title": "Rapid accretion and early core formation on asteroids and the terrestrial planets from Hf–W chronometry",
+      "url": "https://doi.org/10.1038/nature00982",
+      "doi": "10.1038/nature00982",
+      "publisher": "Nature (Kleine, Münker, Mezger, Palme)",
+      "year": 2002,
+      "tier": 1,
+      "covers": "C-4 — lõi các hành tinh đá hình thành trong ~30 triệu năm đầu của Hệ Mặt Trời"
+    },
+    {
+      "title": "Magma Oceans in the Inner Solar System",
+      "url": "https://doi.org/10.1146/annurev-earth-042711-105503",
+      "doi": "10.1146/annurev-earth-042711-105503",
+      "publisher": "Annual Review of Earth and Planetary Sciences (Elkins-Tanton)",
+      "year": 2012,
+      "tier": 1,
+      "covers": "C-4 — đại dương magma, có thể nhiều lần, trong giai đoạn đầu của các hành tinh đá"
+    },
+    {
+      "title": "Earth's Magnetosphere: Protecting Our Planet from Harmful Space Energy",
+      "url": "https://science.nasa.gov/science-research/earth-science/earths-magnetosphere-protecting-our-planet-from-harmful-space-energy/",
+      "doi": "",
+      "publisher": "NASA",
+      "year": 2021,
+      "tier": 2,
+      "covers": "C-4, C-5 — lõi sắt–niken; từ trường sinh ra gần như hoàn toàn trong lõi ngoài lỏng; che chắn khí quyển khỏi bị gió Mặt Trời bào mòn"
+    },
+    {
+      "title": "How did the Moon form?",
+      "url": "https://science.nasa.gov/moon/formation/",
+      "doi": "",
+      "publisher": "NASA",
+      "year": null,
+      "tier": 2,
+      "covers": "C-6 — các giả thuyết cạnh tranh; va chạm ~4,5 tỉ năm; một vật thể cỡ Sao Hoả (Theia) hoặc một loạt vật thể. (Trang không hiển thị năm.)"
+    },
+    {
+      "title": "Top Moon Questions",
+      "url": "https://science.nasa.gov/moon/top-moon-questions/",
+      "doi": "",
+      "publisher": "NASA",
+      "year": null,
+      "tier": 2,
+      "covers": "C-7 — Mặt Trăng giữ trục Trái Đất không lắc quá nhiều, góp phần ổn định khí hậu. (Trang không hiển thị năm.)"
+    },
+    {
+      "title": "Proterozoic Milankovitch cycles and the history of the solar system",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6016783/",
+      "doi": "10.1073/pnas.1717689115",
+      "publisher": "PNAS (Meyers, Malinverno)",
+      "year": 2018,
+      "tier": 1,
+      "covers": "C-8 — độ dài ngày 18,68 ± 0,25 giờ ở 1,4 tỉ năm trước"
+    },
+    {
+      "title": "Earth's water may have been inherited from material similar to enstatite chondrite meteorites",
+      "url": "https://doi.org/10.1126/science.aba1948",
+      "doi": "10.1126/science.aba1948",
+      "publisher": "Science (Piani và cộng sự)",
+      "year": 2020,
+      "tier": 1,
+      "covers": "câu nguồn gốc nước — \"The origin of Earth's water remains unknown\"; đóng góp từ vật chất tạo hành tinh so với vật chất bổ sung muộn"
+    },
+    {
+      "title": "Potentially biogenic carbon preserved in a 4.1 billion-year-old zircon",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4664351/",
+      "doi": "10.1073/pnas.1517557112",
+      "publisher": "PNAS (Bell, Boehnke, Harrison, Mao)",
+      "year": 2015,
+      "tier": 1,
+      "covers": "C-9, C-33 — vi hoá thạch tới ~3,5 Ga, hoá thạch hoá học ~3,8 Ga, graphit trong zircon 4,10 Ga có thể có nguồn gốc sinh học"
+    },
+    {
+      "title": "Stromatolite reef from the Early Archaean era of Australia",
+      "url": "https://doi.org/10.1038/nature04764",
+      "doi": "10.1038/nature04764",
+      "publisher": "Nature (Allwood và cộng sự)",
+      "year": 2006,
+      "tier": 1,
+      "covers": "C-9 — stromatolite 3,43 Ga \"of probable biological origin\"; nguồn gốc sinh học của hoá thạch cổ như vậy còn tranh luận"
+    },
+    {
+      "title": "Bayesian analysis of the astrobiological implications of life's early emergence on Earth",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3258618/",
+      "doi": "10.1073/pnas.1111694108",
+      "publisher": "PNAS (Spiegel, Turner)",
+      "year": 2012,
+      "tier": 1,
+      "covers": "C-10 — sự sống xuất hiện sớm không đủ để kết luận sự sống phổ biến"
+    },
+    {
+      "title": "Stromatolites — Shark Bay World Heritage Area",
+      "url": "https://www.sharkbay.org/place/hamelin-pool/stromatolites/",
+      "doi": "",
+      "publisher": "Parks and Wildlife Service, Department of Biodiversity, Conservation and Attractions (Western Australia)",
+      "year": null,
+      "tier": 2,
+      "covers": "C-11 — stromatolite và thảm vi sinh còn sống ở vũng Hamelin, vịnh Shark. (Trang không hiển thị năm.)"
+    },
+    {
+      "title": "Banded iron formations: oceans, algae and iron oxide",
+      "url": "https://www.csiro.au/en/news/all/articles/2024/march/banded-iron-formations",
+      "doi": "",
+      "publisher": "CSIRO",
+      "year": 2024,
+      "tier": 2,
+      "covers": "C-12 — oxy từ vi khuẩn lam phản ứng với sắt hoà tan tạo BIF; oxy chỉ ra khí quyển khi khoáng trong đại dương đã bị oxy hoá gần hết; phần lớn quặng sắt thế giới nằm trong BIF"
+    },
+    {
+      "title": "Snowball Earth climate dynamics and Cryogenian geology-geobiology",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5677351/",
+      "doi": "10.1126/sciadv.1600983",
+      "publisher": "Science Advances (Hoffman và cộng sự)",
+      "year": 2017,
+      "tier": 1,
+      "covers": "C-15, C-16 — hai đợt băng hà Cryogen (58 và ≥5 triệu năm), băng tới mực nước biển ở mọi vĩ độ; phản hồi albedo; CO₂ núi lửa tích tụ khi phong hoá gần như dừng, trong hàng triệu tới hàng chục triệu năm"
+    },
+    {
+      "title": "Integrated records of environmental change and evolution challenge the Cambrian Explosion",
+      "url": "https://doi.org/10.1038/s41559-019-0821-6",
+      "doi": "10.1038/s41559-019-0821-6",
+      "publisher": "Nature Ecology & Evolution (Wood và cộng sự)",
+      "year": 2019,
+      "tier": 1,
+      "covers": "C-17, C-18 — Bùng nổ Cambri ~540–520 Ma; hoá thạch vĩ mô từ ~571 Ma"
+    },
+    {
+      "title": "Oxygen, ecology, and the Cambrian radiation of animals",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3746845/",
+      "doi": "10.1073/pnas.1312778110",
+      "publisher": "PNAS (Sperling và cộng sự)",
+      "year": 2013,
+      "tier": 1,
+      "covers": "C-18 — gần như mọi ngành động vật xuất hiện ở chuyển tiếp Proterozoi–Cambri; chạy đua vũ trang giải thích diễn biến chứ không giải thích thời điểm; oxy kiểm soát lối sống ăn thịt"
+    },
+    {
+      "title": "Predatorial Borings in Late Precambrian Mineralized Exoskeletons",
+      "url": "https://doi.org/10.1126/science.257.5068.367",
+      "doi": "10.1126/science.257.5068.367",
+      "publisher": "Science (Bengtson, Zhao)",
+      "year": 1992,
+      "tier": 1,
+      "covers": "C-18 — Cloudina: bộ xương khoáng hoá sớm nhất; lỗ khoan do kẻ săn mồi, trước kỷ Cambri"
+    },
+    {
+      "title": "Ancient steroids establish the Ediacaran fossil Dickinsonia as one of the earliest animals",
+      "url": "https://doi.org/10.1126/science.aat7228",
+      "doi": "10.1126/science.aat7228",
+      "publisher": "Science (Bobrovskiy và cộng sự)",
+      "year": 2018,
+      "tier": 1,
+      "covers": "C-1, C-33, C-34 — quần sinh vật Ediacara 571–541 Ma là sinh vật vĩ mô phức tạp đầu tiên; Dickinsonia là động vật"
+    },
+    {
+      "title": "Anomalocaris canadensis",
+      "url": "https://burgess-shale.rom.on.ca/fossils/anomalocaris-canadensis/",
+      "doi": "",
+      "publisher": "Royal Ontario Museum",
+      "year": null,
+      "tier": 3,
+      "covers": "C-19 — dài tới ~100 cm, mẫu đầy đủ nhất 25 cm; kẻ săn mồi lớn nhất Burgess Shale (~505 Ma). (Trang không hiển thị năm.)"
+    },
+    {
+      "title": "The timescale of early land plant evolution",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5877938/",
+      "doi": "10.1073/pnas.1719588115",
+      "publisher": "PNAS (Morris và cộng sự)",
+      "year": 2018,
+      "tier": 1,
+      "covers": "C-1, C-20 — bào tử thực vật trên cạn sớm nhất 469 Ma (Ordovic giữa); đồng hồ phân tử: nguồn gốc Cambri; thực vật có mạch cuối Ordovic–cuối Silur"
+    },
+    {
+      "title": "A Devonian tetrapod-like fish and the evolution of the tetrapod body plan",
+      "url": "https://doi.org/10.1038/nature04639",
+      "doi": "10.1038/nature04639",
+      "publisher": "Nature (Daeschler, Shubin, Jenkins)",
+      "year": 2006,
+      "tier": 1,
+      "covers": "C-21 — Tiktaalik: cá vây thuỳ trung gian, cổ cử động được, khớp cổ tay"
+    },
+    {
+      "title": "Tetrapod trackways from the early Middle Devonian period of Poland",
+      "url": "https://doi.org/10.1038/nature08623",
+      "doi": "10.1038/nature08623",
+      "publisher": "Nature (Niedźwiedzki và cộng sự)",
+      "year": 2010,
+      "tier": 1,
+      "covers": "C-21 — hoá thạch thân tetrapod sớm nhất cuối Frasnian; dấu chân Zachełmie sớm hơn ~18 triệu năm"
+    },
+    {
+      "title": "Delayed fungal evolution did not cause the Paleozoic peak in coal production",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4780611/",
+      "doi": "10.1073/pnas.1517943113",
+      "publisher": "PNAS (Nelsen, DiMichele, Peters, Boyce)",
+      "year": 2016,
+      "tier": 1,
+      "covers": "C-22 — kỷ Than đá đặt tên theo các vỉa than lớn, phân bố rộng; than tiếp tục hình thành tới nay ở nơi đủ điều kiện"
+    },
+    {
+      "title": "Earliest amniote tracks recalibrate the timeline of tetrapod evolution",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12119326/",
+      "doi": "10.1038/s41586-025-08884-5",
+      "publisher": "Nature (Long và cộng sự)",
+      "year": 2025,
+      "tier": 1,
+      "covers": "C-22 — amniote: nhánh tetrapod duy nhất sinh sản độc lập với nước; dấu chân đầu Tournaisian ở Victoria, Australia"
+    },
+    {
+      "title": "The rise of the ruling reptiles and ecosystem recovery from the Permo-Triassic mass extinction",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6015845/",
+      "doi": "10.1098/rspb.2018.0361",
+      "publisher": "Proceedings of the Royal Society B (Ezcurra, Butler)",
+      "year": 2018,
+      "tier": 1,
+      "covers": "C-24 — archosauromorph trở thành động vật có xương sống chiếm ưu thế trên cạn sau tuyệt chủng Permi–Trias"
+    },
+    {
+      "title": "Tsunami: Asteroid Impact - 66 Million Years Ago",
+      "url": "https://sos.noaa.gov/catalog/datasets/tsunami-asteroid-impact-66-million-years-ago/",
+      "doi": "",
+      "publisher": "NOAA Science On a Sphere",
+      "year": 2023,
+      "tier": 2,
+      "covers": "C-25, C-26 — tiểu hành tinh rộng 6+ dặm, 66 triệu năm; hố Chicxulub dưới Yucatán; mọi khủng long không phải chim bị xoá sổ"
+    },
+    {
+      "title": "Chicxulub impact winter sustained by fine silicate dust",
+      "url": "https://doi.org/10.1038/s41561-023-01290-4",
+      "doi": "10.1038/s41561-023-01290-4",
+      "publisher": "Nature Geoscience (Senel và cộng sự)",
+      "year": 2023,
+      "tier": 1,
+      "covers": "C-26 — bụi silicate mịn: giảm tới 15°C, quang hợp gần như ngừng gần 2 năm; cộng muội than và lưu huỳnh"
+    },
+    {
+      "title": "On impact and volcanism across the Cretaceous-Paleogene boundary",
+      "url": "https://doi.org/10.1126/science.aay5055",
+      "doi": "10.1126/science.aay5055",
+      "publisher": "Science (Hull và cộng sự)",
+      "year": 2020,
+      "tier": 1,
+      "covers": "C-26 — nguyên nhân tuyệt chủng K–Pg còn tranh luận; khí núi lửa Deccan phần lớn thải ra trước va chạm"
+    },
+    {
+      "title": "Severe extinction and rapid recovery of mammals across the Cretaceous–Palaeogene boundary, and the effects of rarity on patterns of extinction and recovery",
+      "url": "https://doi.org/10.1111/jeb.12882",
+      "doi": "10.1111/jeb.12882",
+      "publisher": "Journal of Evolutionary Biology (Longrich, Scriberas, Wills)",
+      "year": 2016,
+      "tier": 1,
+      "covers": "C-27, C-28 — Bắc Mỹ: 4/59 loài thú sống sót; sống sót tương quan với phạm vi phân bố và độ phổ biến; đa dạng vùng gấp đôi trong 300.000 năm"
+    },
+    {
+      "title": "The oldest known primate skeleton and early haplorhine evolution",
+      "url": "https://doi.org/10.1038/nature12200",
+      "doi": "10.1038/nature12200",
+      "publisher": "Nature (Ni và cộng sự)",
+      "year": 2013,
+      "tier": 1,
+      "covers": "C-28 — Archicebus ~55 Ma, bộ xương linh trưởng cổ nhất; linh trưởng sớm nhất nhỏ, sống trên cây, ăn côn trùng, hoạt động ban ngày"
+    },
+    {
+      "title": "Age of the oldest known Homo sapiens from eastern Africa",
+      "url": "https://doi.org/10.1038/s41586-021-04275-8",
+      "doi": "10.1038/s41586-021-04275-8",
+      "publisher": "Nature (Vidal và cộng sự)",
+      "year": 2022,
+      "tier": 1,
+      "covers": "C-31 — Omo I tối thiểu 233 ± 22 nghìn năm (thay con số ~197 nghìn năm thường dùng)"
+    },
+    {
+      "title": "Domestication and early agriculture in the Mediterranean Basin: Origins, diffusion, and impact",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2575338/",
+      "doi": "10.1073/pnas.0801317105",
+      "publisher": "PNAS (Zeder)",
+      "year": 2008,
+      "tier": 1,
+      "covers": "C-32 — thuần hoá bắt đầu ở Đông Địa Trung Hải từ thiên niên kỷ thứ 12 cal BP"
+    },
+    {
+      "title": "Origins of writing make for engaging new exhibition at Oriental Institute Museum",
+      "url": "https://news.uchicago.edu/story/origins-writing-make-engaging-new-exhibition-oriental-institute-museum",
+      "doi": "",
+      "publisher": "University of Chicago News",
+      "year": 2010,
+      "tier": 3,
+      "covers": "C-32 — bảng đất sét hình nêm sớm nhất ở Lưỡng Hà, khoảng 3200 TCN"
+    }
+  ],
+  "dropSources": [],
+  "retierSources": [],
+  "corrections": [
+    "Bản tiếng Anh chưa từng nhận bốn bản sửa S1 ngày 17/09 (niên đại Trái Đất/zircon, GOE theo Philippot 2018, Permi 251,9 triệu năm/81%, Laetoli) — corrections.md ghi đã sửa nhưng chỉ bản vi đổi. Lượt này áp cả bốn vào contentEn; bản en còn mâu thuẫn với bản vi ở Homo sapiens (\"100,000-year figure\" → 195.000 năm theo Omo I) và ở bảng lịch (oxy \"End of July\", Homo sapiens \"23:37\") — đã sửa theo bản vi.",
+    "Zircon: \"theo USGS có tuổi tới 4,3 tỉ năm\" → \"tới khoảng 4,4 tỉ năm (4,404 ± 0,008 tỉ năm)\" — căn cứ: ghi chú biên tập trên chính trang USGS Age of the Earth; Wilde và cộng sự 2001, doi 10.1038/35051550.",
+    "Sự hình thành lõi: \"Ban đầu nó là một hành tinh nóng chảy. Kim loại nặng chìm vào trong...\" → đại dương magma \"có thể\", \"một hoặc nhiều\"; lõi sắt–niken tách xong trong ~30 triệu năm đầu — căn cứ: Elkins-Tanton 2012, doi 10.1146/annurev-earth-042711-105503; Kleine và cộng sự 2002, doi 10.1038/nature00982. Từ trường: gắn nguồn NASA (lõi ngoài lỏng, chắn gió Mặt Trời).",
+    "Va chạm tạo Mặt Trăng: \"Một thiên thể cỡ Sao Hoả... đâm vào\" (viết như sự kiện đã xác lập) → \"các giả thuyết vẫn cạnh tranh, nhưng gần như tất cả chung ý: khoảng 4,5 tỉ năm trước, một thiên thể cỡ Sao Hoả hoặc một loạt thiên thể...\" — căn cứ: NASA, How did the Moon form?",
+    "Mặt Trăng và khí hậu: \"giữ cho khí hậu không dao động hỗn loạn qua các chu kỳ dài\" → \"giữ trục không lắc quá nhiều, góp phần ổn định khí hậu\" — căn cứ: NASA, Top Moon Questions. Độ dài ngày: \"ngày trên Trái Đất sơ khai chỉ dài vài giờ\" (không nguồn) → \"1,4 tỉ năm trước một ngày dài khoảng 18,7 giờ\" — căn cứ: Meyers & Malinverno 2018, doi 10.1073/pnas.1717689115.",
+    "Sự sống sớm nhất: \"Hoá thạch vi khuẩn cổ nhất được chấp nhận rộng rãi có tuổi khoảng 3,5 tỉ năm\" → vi hoá thạch tới ~3,5 tỉ năm, dấu vết hoá học có thể tới ~3,8 tỉ năm, graphit 4,1 tỉ năm là gợi ý; nguồn gốc sinh học còn tranh luận — căn cứ: Bell và cộng sự 2015, doi 10.1073/pnas.1517557112; Allwood và cộng sự 2006, doi 10.1038/nature04764.",
+    "\"Một trong những lý do nhiều nhà khoa học cho rằng sự sống có thể không hiếm\" (một phía) → trình bày cả hai phía — căn cứ: Spiegel & Turner 2012, doi 10.1073/pnas.1111694108.",
+    "Quặng sắt dải: \"nguồn sắt mà phần lớn ngành thép hiện đại đang khai thác\" → \"phần lớn quặng sắt trên thế giới nằm trong loại đá này\" — căn cứ: CSIRO, Banded iron formations (2024). Cắt câu \"sự kiện oxy hoá có thể là cuộc tuyệt chủng hàng loạt lớn nhất\" (không nguồn).",
+    "Quả cầu tuyết: \"băng lan tới tận vùng nhiệt đới\" trong cả kỷ Cryogen → hai đợt băng hà (Sturtian ~58 triệu năm, Marinoan ≥5 triệu năm), mốc 720–635 triệu năm theo ICS, trình bày là giả thuyết — căn cứ: ICS v2024/12; Hoffman và cộng sự 2017, doi 10.1126/sciadv.1600983.",
+    "Bùng nổ Cambri: \"538 triệu năm\", \"20–25 triệu năm\", \"lần đầu tiên có bộ xương cứng, mắt và săn mồi chủ động\" → đáy Cambri 538,8 ± 0,6 triệu năm (ICS), bùng nổ ~540–520 triệu năm; bộ xương khoáng hoá và săn mồi đã có từ cuối Tiền Cambri (Cloudina) — căn cứ: Wood và cộng sự 2019, doi 10.1038/s41559-019-0821-6; Sperling và cộng sự 2013, doi 10.1073/pnas.1312778110; Bengtson & Zhao 1992, doi 10.1126/science.257.5068.367.",
+    "Anomalocaris: \"dài tới nửa mét là kẻ săn mồi đứng đầu\" → \"kẻ săn mồi lớn nhất ở Burgess Shale (~505 triệu năm), dài tới khoảng 1 m, mẫu đầy đủ nhất 25 cm\" — căn cứ: Bảo tàng Hoàng gia Ontario.",
+    "Thực vật lên cạn: \"khoảng 470 triệu năm trước... Động vật chân đốt theo sau\" → bào tử sớm nhất 469 triệu năm, đồng hồ phân tử gợi ý nguồn gốc Cambri, thực vật có mạch cuối Ordovic–Silur; bỏ câu chân đốt — căn cứ: Morris và cộng sự 2018, doi 10.1073/pnas.1719588115.",
+    "Tetrapod: \"xuất hiện vào cuối kỷ Devon, khoảng 375–360 triệu năm\" → hoá thạch thân cổ nhất cuối Devon, dấu chân Zachełmie sớm hơn ~18 triệu năm, thời điểm còn được xem xét lại; bỏ Ichthyostega — căn cứ: Niedźwiedzki và cộng sự 2010, doi 10.1038/nature08623; Daeschler và cộng sự 2006, doi 10.1038/nature04639.",
+    "Kỷ Than đá: \"các mỏ than hiện đại\" và \"trứng có màng ối cho phép bò sát\" → kỷ đặt tên theo các vỉa than lớn; nhánh có màng ối (bò sát, chim, thú) có từ đầu kỷ — căn cứ: Nelsen và cộng sự 2016, doi 10.1073/pnas.1517943113; Long và cộng sự 2025, doi 10.1038/s41586-025-08884-5.",
+    "Permi: \"mở đường cho nhóm archosaur\" → archosauromorph trở thành nhóm chiếm ưu thế trên cạn — căn cứ: Ezcurra & Butler 2018, doi 10.1098/rspb.2018.0361.",
+    "K–Pg: \"bụi và sulfat che khuất Mặt Trời trong nhiều năm\" → bụi silicate mịn, muội than, lưu huỳnh; quang hợp gần như ngừng gần 2 năm (mô phỏng); vai trò Deccan Traps trình bày là tranh luận — căn cứ: Senel và cộng sự 2023, doi 10.1038/s41561-023-01290-4; Hull và cộng sự 2020, doi 10.1126/science.aay5055; kích thước tiểu hành tinh: NOAA.",
+    "Thú sau K–Pg: \"sống sót nhờ nhỏ, ăn tạp và đào hang\" (nhân quả không nguồn) → ở Bắc Mỹ chỉ 4/59 loài sống sót, phục hồi trong 300.000 năm; \"toả ra chiếm mọi ổ sinh thái\" bị bỏ — căn cứ: Longrich và cộng sự 2016, doi 10.1111/jeb.12882.",
+    "Linh trưởng: \"xuất hiện khoảng 55 triệu năm trước với... ngón cái đối diện, mắt hướng về phía trước\" → bộ xương linh trưởng cổ nhất được biết (Archicebus, ~55 triệu năm); bỏ danh sách đặc điểm không nguồn — căn cứ: Ni và cộng sự 2013, doi 10.1038/nature12200.",
+    "Homo erectus: \"là loài người đầu tiên rời châu Phi\" → \"thường được coi là loài người đầu tiên lan ra ngoài châu Phi\" (giữ mức dè dặt của nguồn) — căn cứ: Smithsonian, Homo erectus.",
+    "Homo sapiens: thêm niên đại Jebel Irhoud 315.000 ± 34.000 năm và niên đại mới của Omo I (tối thiểu 233.000 ± 22.000 năm) — căn cứ: Hublin và cộng sự 2017, doi 10.1038/nature22336; Vidal và cộng sự 2022, doi 10.1038/s41586-021-04275-8.",
+    "Nông nghiệp và chữ viết: \"Nông nghiệp bắt đầu khoảng 12.000 năm trước, khi kỷ băng hà cuối cùng kết thúc... khoảng 5.000 năm\" → thuần hoá bắt đầu ở Đông Địa Trung Hải khoảng 12.000–11.000 năm trước; chữ viết sớm nhất ~3200 TCN, tức ~5.200 năm — căn cứ: Zeder 2008, doi 10.1073/pnas.0801317105; ICS v2024/12; Đại học Chicago.",
+    "Bảng \"nén thành một năm\": tính lại theo mốc có nguồn — vi hoá thạch 3,5 tỉ năm → 25/3 (cũ: tế bào đầu tiên, cuối tháng 2); oxy 2,45–2,4 tỉ năm → 18–22/6; quần sinh vật Ediacara 571 triệu năm → 16/11; Bùng nổ Cambri → 18/11 (cũ 19/11); lịch sử thành văn → khoảng 36 giây (cũ 30 giây).",
+    "Câu kết \"khả năng cao nhất là ta sẽ tìm thấy [sự sống ngoài kia] ở dạng vi khuẩn\" (suy đoán không nguồn) → bỏ; \"Sự sống đơn bào chiếm gần ba tỉ năm đầu\" (cả phần mở bài) → \"chủ yếu là vi sinh vật\", động vật lớn và thực vật trên cạn trong \"chưa tới 600 triệu năm cuối\" — căn cứ: Bobrovskiy và cộng sự 2018, doi 10.1126/science.aat7228; Morris và cộng sự 2018.",
+    "Laetoli: cắt câu \"Nguồn nói về dấu chân chứ không nói ... bằng chứng từ xương có thể còn cổ hơn\" (do lượt 17/09 thêm, nói về gói nguồn và có vế không nguồn); giữ câu \"những dấu chân người cổ sớm nhất được biết trên thế giới\" — căn cứ: Masao và cộng sự 2016, doi 10.7554/eLife.19568.",
+    "Mở bài: \"Trái Đất bắt đầu như một quả cầu đá nóng chảy\" → \"có lẽ đã bắt đầu như...\" cho khớp mức dè dặt của thân bài — căn cứ: Elkins-Tanton 2012.",
+    "Nguồn: thêm 34 nguồn đã mở kiểm trong lượt này (25 bậc 1, 7 bậc 2, 2 bậc 3 — xem bảng); không bỏ, không đổi bậc nguồn nào trong 8 nguồn hiện có."
+  ],
+  "openQuestions": [
+    "Dòng ghi công cuối bài \"Biên tập lại từ bài ... của Đặng Vũ Tuấn Sơn ... Bản quyền nội dung gốc thuộc về VACA\" (cả vi lẫn en) — câu hỏi từ 17/09 vẫn chưa có người quyết. Sau lượt này hầu hết các đoạn đã viết lại theo nguồn khác. Đây là câu hỏi về quyền và provenance, không phải về độ chính xác, nên không chặn gate accuracy; nhưng editor không tự sửa dòng này.",
+    "Tiêu đề \"4 tỉ năm\" / \"four billion years\": dấu vết sự sống có nguồn trải từ ~3,5 tỉ năm (vi hoá thạch) tới 4,1 tỉ năm (gợi ý, chưa kết luận). \"4 tỉ năm\" nằm trong khoảng ấy như một bậc độ lớn nên editor giữ nguyên; ghi lại đây để không ai \"sửa cho đẹp\" thành một con số điểm.",
+    "Sau khi áp, factCheck chỉ nên chuyển sang PASSED khi người chạy script xác nhận cả 36 edit vi và 35 edit en đã khớp đúng một lần và đã ghi Revision trong cùng transaction."
+  ]
+}

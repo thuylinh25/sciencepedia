@@ -1,0 +1,138 @@
+slug: nhin-an-gian-doan-anh-huong-toi-he-vi-sinh-duong-ruot-nhu-the-nao
+checkedAt: 2026-09-25
+checkedBy: science-editor
+sourceCount: 6
+verdict: pass
+summary: "Trạng thái hiện tại KHÔNG qua gate. Bản vi đã nhận lượt S1 (2026-09-11) và S2 (2026-09-17), nhưng còn một lỗi S2 mới lộ ra khi đọc toàn văn tổng quan Paukkonen 2024: bài viết 'thay đổi nhất quán hơn cả là tăng Proteobacteria', trong khi các thay đổi lặp lại ở ≥3 nhóm nhịn ăn gồm cả tăng Faecalibacterium và giảm Veillonellaceae mà tác giả xem là có lợi (chọn một kể như tất cả). Còn S2 ở mục Akkermansia ('giảm nguy cơ béo phì và hội chứng chuyển hóa', không nguồn), cùng các S3: lập luận từ sự im lặng ở C-2, danh sách lợi ích không nguồn, SCFA, MMC, mục hormone/thèm ăn, chống chỉ định gán cho 'các hướng dẫn hiện hành' không tên, tiêu đề mục và kết luận mạnh hơn thân bài. Nặng nhất: bản en chưa từng nhận lượt đính chính nào — vẫn nói nhịn ăn 'helping to reset' hệ vi sinh, vi khuẩn ăn chất nhầy 'tend to thrive', và KHÔNG có mục chống chỉ định (S1 dạng im lặng, cùng loại lỗi đã sửa ở vi ngày 2026-09-11). Bảng nguồn có một nguồn (NEJM 2019) không claim nào truy về được. Verdict pass là cho trạng thái SAU KHI áp fixes/<slug>.json: 13 edit vi + 7 edit en + summaryEn, bỏ NEJM, thêm 4 nguồn bậc 1 đã mở (Deloose 2012, Depommier 2019, Vasim 2022, Albosta & Bakke 2021) — 6 nguồn bậc 1, mọi claim còn lại có evidence đã mở trong lượt này, không còn phát hiện S1–S3. Không cần gỡ bài nếu áp ngay; nếu không áp được trong 48h thì nên gỡ vì bản en đang thiếu chống chỉ định."
+claims:
+  - id: C-1
+    claim: "Hệ vi sinh ở chuột và người dao động theo ngày; dao động 'không đến từ một đồng hồ riêng của vi khuẩn' mà chịu ảnh hưởng của nhịp ăn"
+    verdict: partially-supported
+    severity: S3
+    evidence: "https://pubmed.ncbi.nlm.nih.gov/25417104 — Thaiss 2014, Cell 159:514-529, doi 10.1016/j.cell.2014.09.048 (Crossref xác nhận tên/năm/tác giả): 'the intestinal microbiota, in both mice and humans, exhibits diurnal oscillations that are influenced by feeding rhythms'"
+    note: "Vế dao động + nhịp ăn đúng nguyên văn. 'Không đến từ đồng hồ riêng' là dựng ranh giới nguồn không dựng — nguồn nói 'influenced by', không loại trừ. Sửa: bỏ vế phủ định."
+  - id: C-1b
+    claim: "Phá vỡ nhịp ăn (lệch múi giờ, chuột hỏng thành phần đồng hồ) gây dao động bất thường và loạn khuẩn; ở chuột và người, loạn khuẩn do lệch múi giờ thúc đẩy rối loạn dung nạp glucose và béo phì, truyền được sang chuột vô trùng qua cấy phân"
+    verdict: verified
+    severity: none
+    evidence: "https://pubmed.ncbi.nlm.nih.gov/25417104 — 'Ablation of host molecular clock components or induction of jet lag leads to aberrant microbiota diurnal fluctuations and dysbiosis, driven by impaired feeding rhythmicity. Consequently, jet-lag-induced dysbiosis in both mice and humans promotes glucose intolerance and obesity that are transferrable to germ-free mice upon fecal transplantation.'"
+    note: "Sát tóm tắt. Toàn văn Cell bị chặn (Cloudflare; API Elsevier trả rỗng) nên chưa kiểm được cỡ mẫu người — ghi ở openQuestions, không chặn gate."
+  - id: C-2
+    claim: "'Không có bằng chứng cho thấy nhịn ăn gián đoạn thiết lập lại chu kỳ hệ vi sinh ở người … đi kèm, chưa phải gây ra'"
+    verdict: partially-supported
+    severity: S3
+    evidence: "https://www.frontiersin.org/journals/nutrition/articles/10.3389/fnut.2024.1342787/full — toàn văn PMC10894978, mục 4.3: 'Future human studies are needed to investigate the role of either maintaining or disrupting daily circadian rhythms in TRF interventions, and whether changes in the gut microbiota may result from changes in circadian rhythms'; mục 4.2: 'it cannot be said to which extent the latter may explain the former' (giảm cân/đổi khẩu phần)"
+    note: "Hướng đúng nhưng là lập luận từ sự im lặng, và 'đi kèm, chưa phải gây ra' mô tả sai bằng chứng — các nghiên cứu là thử nghiệm can thiệp; giới hạn thật là nhiễu do giảm cân/đổi khẩu phần và chưa có nghiên cứu về vai trò nhịp ngày đêm. Sửa theo đúng hai câu nguồn."
+  - id: C-3
+    claim: "Việc đồng bộ liên quan đến cải thiện chuyển hóa năng lượng, giảm viêm mức thấp kéo dài, tăng tính đa dạng hệ vi sinh"
+    verdict: partially-supported
+    severity: S3
+    evidence: "PMC10894978, Kết luận tóm tắt: 'It seems possible that IF can improve richness and alpha diversity. Due to the substantial heterogeneity of the results, more research is required to validate these findings and clarify whether the compositional changes might be beneficial to human health.'"
+    note: "Chỉ vế đa dạng có nguồn, ở mức 'seems possible'. Chuyển hóa và viêm: không nguồn nào trong bảng đỡ (Thaiss chỉ cho chiều phá vỡ). Cắt hai vế đó, giữ vế đa dạng đúng mức rào."
+  - id: C-4
+    claim: "Giả thuyết vi khuẩn ăn chất nhầy có lợi thế khi nhịn; 'loài được nhắc nhiều nhất' là A. muciniphila; ở người chỉ một nghiên cứu (Ramadan) ghi nhận A. muciniphila tăng; 'các nghiên cứu còn lại không báo cáo loài này'"
+    verdict: partially-supported
+    severity: S3
+    evidence: "PMC10894978, mục 4.3: 'Hypothetically, this could favor the growth of certain bacteria. Ozkul et al. (20) found that the species Akkermansia muciniphila was enriched in the end of Ramadan fasting… as a mucin degrading bacterium, A. muciniphila strongly adheres to the mucus layer'; cùng đoạn nêu Lachnospiraceae (Su et al.) làm ví dụ thứ hai"
+    note: "Giả thuyết và 'một nghiên cứu' đúng. 'Được nhắc nhiều nhất' là so sánh nhất không nguồn (nguồn nêu hai ví dụ). 'Các nghiên cứu còn lại không báo cáo' là lập luận từ sự im lặng — không đọc được bảng phụ lục S1A. Sửa: 'một ví dụ hay được nêu', 'chỉ được nêu từ một nghiên cứu'."
+  - id: C-4b
+    claim: "Thay đổi vi sinh không đồng nhất, và 'thay đổi nhất quán hơn cả lại là tăng ngành Proteobacteria — dấu hiệu loạn khuẩn chứ không phải cải thiện'"
+    verdict: contradicted
+    severity: S2
+    evidence: "PMC10894978, mục 3.3.3 và 4.5.2: 'By considering only bacteria whose abundance significantly increased/decreased in three or more fasting groups, the abundance of Proteobacteria (at phylum level), Gammaproteobacteria (at class level), Clostridiales (at order level) and Faecalibacterium (at genus level) were increased. Meanwhile, Negativicutes…, Selenomonadales… and Veillonellaceae… were decreased'; 'there was some discrepancy concerning Proteobacteria, as they were increased in… Ali et al.… and… Su et al. but decreased in Ozkul et al.'; Kết luận: 'the IF-induced decrease in Veillonellaceae and Negativicutes, as well as the increase in anti-inflammatory Faecalibacterium, may therefore be considered as beneficial changes, the increase in proinflammatory Proteobacteria and Gammaproteobacteria, on the other hand, may be harmful.'"
+    note: "Chọn một kể như tất cả (quy tắc 15), theo chiều bất lợi. Proteobacteria không phải thay đổi nhất quán nhất — nó ngang hàng với Faecalibacterium, và còn trái chiều giữa các nghiên cứu. 'Được xem là dấu hiệu loạn khuẩn' cũng mạnh hơn nguồn ('has been proposed as a marker', 'may be harmful'). Sửa: nêu cả hai chiều cùng mức rào của nguồn (gộp vào đoạn C-6)."
+  - id: C-5
+    claim: "A. muciniphila liên quan đến hàng rào niêm mạc ruột khỏe mạnh, chuyển hóa đường và chất béo tốt hơn, giảm nguy cơ béo phì và hội chứng chuyển hóa"
+    verdict: unsupported
+    severity: S2
+    evidence: "https://pubmed.ncbi.nlm.nih.gov/31263284 — Depommier 2019, Nature Medicine, doi 10.1038/s41591-019-0495-2: 'In humans, studies have provided evidence for a negative correlation between Akkermansia muciniphila abundance and overweight, obesity, untreated type 2 diabetes mellitus or hypertension'; '40 were enrolled and 32 completed the trial'; pasteurized A. muciniphila 'improved insulin sensitivity (+28.62 ± 7.02%, P = 0.002), and reduced insulinemia (−34.08 ± 7.12%, P = 0.006) and plasma total cholesterol (−8.68 ± 2.38%, P = 0.02)'; 'slightly decreased body weight (−2.27 ± 0.92 kg, P = 0.091)'; 'proof-of-concept exploratory study'"
+    note: "Danh sách không nguồn; 'giảm nguy cơ béo phì và hội chứng chuyển hóa' là claim nguy cơ ở quần thể, đặt dưới đoạn nhịn ăn nên dựng chuỗi nhân quả nhịn ăn → Akkermansia → ít béo phì. Nâng mức tự tin trên bài sức khỏe → S2. Thay bằng tương quan quan sát + một thử nghiệm thăm dò nhỏ, nói rõ là bổ sung vi khuẩn chứ không phải nhịn ăn, cân nặng không đổi có ý nghĩa thống kê. 'Hàng rào niêm mạc' không có nguồn ở người đã mở → bỏ."
+  - id: C-6
+    claim: "Một số vi khuẩn tạo SCFA như butyrate có xu hướng tăng khi chế độ ăn phù hợp"
+    verdict: unsupported
+    severity: S3
+    evidence: "PMC10894978, mục 4.5.2.3: 'Faecalibacterium is one of the major butyrate producers in the intestine… Butyrate has been reported to exert anti-inflammatory effects'; Faecalibacterium tăng ở ≥3 nhóm nhịn ăn (xem C-4b)"
+    note: "'Chế độ ăn phù hợp' không xác định, không gắn IF. Thay bằng điểm Faecalibacterium của tổng quan, đứng cạnh vế đối trọng Proteobacteria/Gammaproteobacteria."
+  - id: C-7
+    claim: "Khi không có thức ăn mới 'vài giờ', ruột non có đợt co bóp mạnh (MMC) — 'chế độ vệ sinh' đẩy cặn xuống ruột già, hạn chế tích tụ vi khuẩn ở ruột non; tiêu đề 'Kích hoạt cơ chế quét dọn'"
+    verdict: partially-supported
+    severity: S3
+    evidence: "https://pubmed.ncbi.nlm.nih.gov/22450306 — Deloose 2012, Nat Rev Gastroenterol Hepatol, doi 10.1038/nrgastro.2012.57: 'a cyclic, recurring motility pattern that occurs in the stomach and small bowel during fasting; it is interrupted by feeding… four phases, of which phase III is the most active, with a burst of contractions originating from the antrum or duodenum and migrating distally… The physiological role of the MMC is incompletely understood, but its absence has been associated with gastroparesis, intestinal pseudo-obstruction and small intestinal bacterial overgrowth.'"
+    note: "Đã mở được tóm tắt (lượt 17/09 không mở được). MMC lúc đói, bị bữa ăn ngắt: đúng. 'Vài giờ', 'đẩy cặn xuống ruột già', 'chế độ vệ sinh': không có trong nguồn đã mở → bỏ. 'Hạn chế tích tụ vi khuẩn' nâng một liên hệ thành chức năng → hạ về 'thiếu MMC liên quan tăng sinh vi khuẩn ruột non'. Tiêu đề 'Kích hoạt' gán MMC cho IF trong khi MMC diễn ra ở mọi trạng thái đói → đổi tiêu đề, nói rõ không riêng IF."
+  - id: C-8
+    claim: "MMC được cho là có thể liên quan đến giảm đầy hơi và chướng bụng ở một số người"
+    verdict: unsupported
+    severity: S3
+    evidence: "Deloose 2012 (như C-7) không nhắc đầy hơi/chướng bụng"
+    note: "Có rào nhưng không nguồn. Cắt (bản en còn bỏ cả lớp rào: 'Reducing the risk of bloating')."
+  - id: C-9
+    claim: "Hệ vi sinh liên hệ với các hormone điều hòa ăn uống: ghrelin, leptin, GLP-1, PYY"
+    verdict: unverifiable
+    severity: S3
+    evidence: "— (không nguồn trong bảng; corrections.md mục ruot-he-vi-sinh-vat-… C-8 đã cắt đúng danh sách này ở bài kia vì không nguồn)"
+    note: "Kho tự mâu thuẫn: danh sách đã bị cắt ở bài lân cận. Cắt cả mục."
+  - id: C-10
+    claim: "Khi chế độ ăn ổn định và giảm đường đơn, một số người nhận thấy giảm thèm ngọt, ít ăn vặt, đói ổn định hơn"
+    verdict: unsupported
+    severity: S3
+    evidence: "—"
+    note: "Lời kể, không nối với hệ vi sinh, câu dạng hành vi trên bài sức khỏe. Cắt cùng mục C-9."
+  - id: C-11
+    claim: "'Các hướng dẫn hiện hành khuyến cáo' không áp dụng cho mang thai/cho con bú, trẻ em 'do chưa đủ dữ liệu an toàn'; tiền sử rối loạn ăn uống, hạ đường huyết nặng, người cao tuổi có nguy cơ thiểu cơ cần cân nhắc thận trọng; người đái tháo đường dùng thuốc chỉ nên làm dưới giám sát y tế"
+    verdict: partially-supported
+    severity: S3
+    evidence: "https://doi.org/10.3390/nu14030631 — Vasim, Majeed, DeBoer 2022, Nutrients 14:631 (toàn văn PMC8839325, mục 11): 'it is not recommended for individuals with hormonal imbalances, pregnant and breastfeeding women, young children, adults of advanced age, and individuals with immune deficiencies, including those with a history of solid organ transplant with subsequent medical immunosuppression… Individuals with eating disorders or those with dementia… should avoid intermittent fasting regimens'; 'fasting without proper protein replacement is a well-known cause of muscle wasting'. https://doi.org/10.1186/s40842-020-00116-1 — Albosta & Bakke 2021, Clin Diabetes Endocrinol 7 (toàn văn PMC7856758): 'populations in whom fasting may not be appropriate. These include pregnant/lactating women, adults of advanced age, individuals with immunodeficiencies, individuals with hypoglycemic events, and patients who suffer from eating disorders'; 'Patients taking insulin or sulfonylurea medications should be closely monitored by their healthcare provider in order to prevent hypoglycemic events… Physicians should help patients make appropriate adjustments to their medications, especially on days of fasting.'"
+    note: "Hướng đúng, nay có nguồn. Sai lệch so với nguồn: gán cho 'hướng dẫn hiện hành' không tên (hai nguồn là tổng quan, không phải hướng dẫn); lý do 'chưa đủ dữ liệu an toàn' không nguồn; 'trẻ em' rộng hơn 'young children'; người cao tuổi bị viết NHẸ hơn nguồn; thiếu nhóm suy giảm miễn dịch. Sửa theo nguyên văn hai nguồn. Vẫn khuyến nghị một người có chuyên môn y khoa đọc lại (openQuestions)."
+  - id: C-12
+    claim: "Summary vi: IF đổi cả khung giờ ăn; hệ vi sinh dao động theo nhịp ăn; tổng quan 2024 rà 8 nghiên cứu ở người, chỉ kết luận 'có thể' tăng phong phú và đa dạng, thay đổi khác nhau giữa các nghiên cứu. Summary en: 'IF influences… the ecosystem of the gut microbiome… distinct windows of eating and fasting may alter…'"
+    verdict: partially-supported
+    severity: S3
+    evidence: "PMC10894978, tóm tắt: 'a total of 8 studies were included'; 'It seems possible that IF can improve richness and alpha diversity'; 'bacteria which were found to be statistically significantly affected by IF varied widely depending on the study'. Thaiss 2014 (như C-1)."
+    note: "Summary vi: verified. Summary en chưa nhận lượt sửa 17/09, không nói bằng chứng ở người ít và không đồng nhất → lệch với vi. Sửa en theo bản dịch sát summary vi."
+  - id: C-13
+    claim: "Kết luận: hệ vi sinh 'có ảnh hưởng thực sự đến tiêu hóa, miễn dịch và chuyển hóa'; IF có thể thay đổi môi trường sống của vi sinh vật, 'từ đó tác động đến sức khỏe đường ruột và một số chức năng sinh lý khác'"
+    verdict: unsupported
+    severity: S3
+    evidence: "PMC10894978, kết luận: 'more research is required… to clarify whether the compositional changes might be beneficial to human health'"
+    note: "Nhân quả tự thêm ('từ đó'), mạnh hơn thân bài và mạnh hơn nguồn. Viết lại kết luận chỉ tóm những gì thân bài đã có nguồn (Thaiss 2014; Paukkonen 2024)."
+  - id: C-14
+    claim: "Tiêu đề mục 'Đồng bộ hóa nhịp sinh học của hệ vi sinh' và 'Tăng một số vi khuẩn có lợi'"
+    verdict: unsupported
+    severity: S3
+    evidence: "PMC10894978 (như C-2, C-4b)"
+    note: "Tiêu đề khẳng định IF đồng bộ nhịp và tăng vi khuẩn có lợi — đúng điều thân bài nói là chưa chứng minh ở người, hoặc có cả chiều có hại. Đổi thành tiêu đề mô tả chủ đề."
+  - id: C-15
+    claim: "Bản en (contentEn) mang cùng claim với bản vi"
+    verdict: contradicted
+    severity: S1
+    evidence: "Bản dump 2026-09-25: contentEn vẫn có 'Like humans, gut bacteria also have their own circadian rhythms', 'helping to reset the natural activity cycle of the microbiome', 'certain groups of bacteria… tend to thrive', 'Reduced risk of obesity and metabolic syndrome', và KHÔNG có mục chống chỉ định. corrections.md mục S1 (2026-09-11) và 2026-09-17 chỉ ghi sửa bản vi."
+    note: "Mọi lượt đính chính trước chỉ chạm bản vi. Người đọc en vẫn nhận đúng các claim S2 đã bị đính chính và đúng sự im lặng về chống chỉ định mà lượt 11/09 chấm S1. Sửa: đồng bộ toàn bộ en với vi sau lượt này, thêm mục 'Who should not practice intermittent fasting'. Bài học quy trình: pipeline đính chính phải áp cả hai locale trong cùng lượt — gửi translation/content-curator."
+  - id: C-16
+    claim: "Bảng nguồn [s3] 'Effects of Intermittent Fasting on Health, Aging, and Disease' (de Cabo & Mattson, NEJM 2019, bậc 1)"
+    verdict: unverifiable
+    severity: S3
+    evidence: "https://pubmed.ncbi.nlm.nih.gov/31881139 — bản ghi Europe PMC xác nhận tên/tác giả/năm/tạp chí, doi 10.1056/NEJMra1905136, không có tóm tắt; toàn văn NEJM không mở được"
+    note: "Nguồn có thật và đúng metadata, nhưng không claim nào trong bài trích nó và không kiểm được nó nói gì. Một dòng nguồn không đỡ claim nào tạo ấn tượng có nguồn → gỡ khỏi bảng."
+  - id: C-17
+    claim: "Bảng nguồn [s1] Paukkonen 2024 và [s2] Thaiss 2014 — tên, năm, tạp chí, tier"
+    verdict: verified
+    severity: none
+    evidence: "Europe PMC: Paukkonen I, Törrönen EN, Lok J, Schwab U, El-Nezami H, Front Nutr 2024, PMID 38410639, PMC10894978, không rút bài. Crossref 10.1016/j.cell.2014.09.048: Thaiss, Zeevi, Levy…, Cell 159:514-529, 10/2014. URL [s2] (Pure Johns Hopkins) trả HTTP 200."
+    note: "Cả hai đúng bậc 1. Gợi ý đổi url [s2] sang doi.org cho bền (không phải lỗi accuracy)."
+  - id: C-18
+    claim: "seoDescription: IF 'còn thay đổi môi trường sống của hàng chục nghìn tỉ vi sinh vật'"
+    verdict: partially-supported
+    severity: S4
+    evidence: "PMC10894978, kết luận: 'The findings in this systematic review suggest that IF influences gut microbiota.'"
+    note: "Không rào 'có thể' như nguồn ('suggest'). S4, không chặn gate; schema fixes không có trường cho seoDescription — ghi ở openQuestions."
+fixes:
+  - "Áp docs/content/checks/2026-09-25/fixes/nhin-an-gian-doan-anh-huong-toi-he-vi-sinh-duong-ruot-nhu-the-nao.json: 13 edit vi, 7 edit en, 1 summaryEnEdit, bỏ 1 nguồn, thêm 4 nguồn bậc 1. Mọi `find` đã tự kiểm khớp đúng một lần trên bản dump và áp tuần tự không chồng lấn."
+  - "Ghi 13 dòng corrections vào docs/content/corrections.md; chụp Revision trước khi sửa trong cùng transaction; cập nhật lastVerifiedAt; gán reviewer byline (tài khoản tổ chức) và reviewedAt 2026-09-25; factCheck → PASSED chỉ SAU khi áp đủ."
+  - "Hiển thị nhãn đính chính trên trang (quy tắc 9) — đây là lần đính chính thứ ba của bài, và là lần đầu chạm bản en."
+suggestedSources: []
+openQuestions:
+  - "Mục chống chỉ định (vi + en) nên có một người có chuyên môn y khoa đọc lại; science-editor kiểm nguồn, không thay phán quyết lâm sàng."
+  - "Thaiss 2014: chưa mở được toàn văn để kiểm cỡ mẫu người; câu trong bài sát tóm tắt nên không chặn gate."
+  - "seoDescription (S4) cần đổi theo summary vi — ngoài schema fixes."
+  - "Bản en thiếu mục Đọc thêm thứ tư ('Đằng sau tiếng bụng kêu') — việc của translation/seo-expert."
+  - "Mẫu lỗi quy trình: đính chính chỉ áp một locale. Cần kiểm các bài khác đã đính chính 2026-09-11/17 xem contentEn có bị bỏ lại tương tự không."

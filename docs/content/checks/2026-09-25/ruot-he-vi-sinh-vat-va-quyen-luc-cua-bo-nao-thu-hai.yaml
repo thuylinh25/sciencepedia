@@ -1,0 +1,130 @@
+slug: ruot-he-vi-sinh-vat-va-quyen-luc-cua-bo-nao-thu-hai
+checkedAt: 2026-09-25
+checkedBy: science-editor
+sourceCount: 13
+verdict: pass
+summary: "Duyệt lại toàn bài sau các lượt sửa S1 (2026-09-11) và S2 (2026-09-17). Phát hiện chính: bản EN chưa từng nhận đính chính nào — vẫn còn câu '95% serotonin được sản xuất ở ruột, chỉ 5% ở não' đã được xếp S1, chuỗi vi khuẩn → phế vị → cơn đói, và kết luận nhân quả về tâm trạng. Corrections.md ghi đã sửa, nhưng người đọc bản en vẫn thấy claim cũ. Ở bản vi, lượt S2 cũ tự đưa vào một lỗi S2 mới: gán cho sợi hướng tâm của phế vị vai trò định đoạt tốc độ hấp thu, trong khi Breit 2018 nói đó là việc của sợi ly tâm cùng cơ chế nội tiết. Ngoài ra còn bảy lỗi S3: đếm nơron 'trực tiếp', ENS 'tiết enzyme' và 'hấp thu', serotonin 'điều hòa hấp thu', 'Đó là lý do' căng thẳng → tiêu chảy, 'phần lớn cơ chế', phế vị là 'kênh chính', và mục 'lập trình lại' hệ vi sinh. Mọi claim còn lại đã mở nguồn trong lượt này. Sau khi áp fixes/2026-09-25: không còn S1–S3, có 13 nguồn bậc 1–2 (3 cũ + 10 mới, đều đã resolve qua Crossref/Europe PMC/trang gốc), vi và en mang cùng claim. PASS có điều kiện: fixes phải được áp đủ cả vi, en, summary, summaryEn và bảng nguồn trong cùng transaction với Revision; byline reviewedBy/reviewedAt đóng dấu ngay lúc áp."
+severityCounts:
+  before: { S1: 1, S2: 2, S3: 7, S4: 1 }
+  afterFixes: { S1: 0, S2: 0, S3: 0, S4: 0 }
+claims:
+  - id: C-1
+    claim: "Ước lượng thường trích 400–600 triệu nơron ENS; 'phép đếm trực tiếp toàn diện đầu tiên' (2022) cho ~168 triệu, tương đương tủy sống"
+    verdict: partially-supported
+    severity: S3
+    evidence: "https://doi.org/10.1111/nmo.14440 (Europe PMC PMID 35929768); https://doi.org/10.1155/2020/8024171 (PMC7495222)"
+    note: "Michel 2022, tóm tắt: '168 million for human', 'comparable to the number of neurons in the spinal cord', 'first comprehensive nerve cell count'. Nhưng 'For humans, we had to rely on literature data' cho kích thước ruột, tức là mật độ × kích thước, không phải 'đếm trực tiếp'. Fleming 2020: 'approximately 400-600 million neurons' (xác nhận đây là ước lượng thường trích). Sửa: bỏ 'trực tiếp', thêm tên tác giả, nói rõ cách tính."
+  - id: C-2
+    claim: "Khoảng 90–95% serotonin cơ thể nằm ở đường tiêu hóa, chủ yếu do tế bào ưa crôm ruột tiết ra"
+    verdict: verified
+    severity: none
+    evidence: "https://doi.org/10.3390/ijms26031160 (PMC11818468); https://doi.org/10.3390/ijms22094837 (PMC8124334)"
+    note: "Hwang 2025: 'Approximately 90% of the body's serotonin is synthesized in the gut, predominantly by enterochromaffin (EC) cells'. Kanova & Kohout 2021: 'Almost 95% of serotonin is synthetized by the EC'. Hai nguồn là hai đầu của khoảng 90–95%. Giữ nguyên."
+  - id: C-3
+    claim: "Serotonin ruột không qua hàng rào máu–não, không phải nguồn serotonin của não; 'điều hòa nhu động ruột, hấp thu và chuyển hóa'; ruột ảnh hưởng não qua phế vị, miễn dịch, nội tiết"
+    verdict: partially-supported
+    severity: S3
+    evidence: "https://doi.org/10.3390/ijms22094837 (PMC8124334); https://doi.org/10.3390/nu13062099 (PMC8234057); https://www.frontiersin.org/journals/psychiatry/articles/10.3389/fpsyt.2018.00044/full"
+    note: "Kanova 2021: 'Serotonin cannot cross the blood-brain barrier and, therefore, central and peripheral serotonin form two distinct pools'; ở ruột 'important for regulating motor and secretory functions'; 'energy metabolism is regulated by both central and peripheral serotonin signaling'. Chen 2021: serotonin 'do not penetrate the blood–brain barrier, they must be synthesized in the brain from local pools'. Ý chặn huyền thoại nay đã có nguồn bậc 1 (lượt 17/09 chưa tìm được). Riêng 'hấp thu' thì không nguồn nào nói, nên sửa thành 'nhu động và bài tiết của ruột, cùng một số chức năng chuyển hóa năng lượng'. Các đường ruột→não: Breit 2018 phần mở đầu (vagus, giao cảm, nội tiết, miễn dịch)."
+  - id: C-4
+    claim: "Dây thần kinh phế vị kết nối não và ruột, truyền tín hiệu theo cả hai chiều"
+    verdict: verified
+    severity: none
+    evidence: "https://www.frontiersin.org/journals/psychiatry/articles/10.3389/fpsyt.2018.00044/full"
+    note: "Breit 2018: efferent 'down' chiếm 10–20%, afferent 'up' chiếm 80–90% số sợi."
+  - id: C-5
+    claim: "Ruột tự kiểm soát nhu động, tiết [[enzyme]] tiêu hóa, hấp thu dinh dưỡng mà không cần não; Summary: ENS 'có khả năng hoạt động độc lập với não bộ'"
+    verdict: partially-supported
+    severity: S3
+    evidence: "https://www.frontiersin.org/journals/psychiatry/articles/10.3389/fpsyt.2018.00044/full; https://doi.org/10.1038/nrgastro.2012.32 (Europe PMC PMID 22392290)"
+    note: "Breit 2018: 'the ENS in the small and large bowel also is able to function quite independent of vagal control as it contains full reflex circuits ... They regulate muscle activity and motility, fluid fluxes, mucosal blood flow, and also mucosal barrier function'. Furness 2012: 'the extent to which the ENS or CNS controls digestion differs considerably along the digestive tract'. 'Tiết enzyme' và 'hấp thu dinh dưỡng' không có trong danh sách của nguồn; 'độc lập' thiếu giới hạn. Sửa danh sách theo nguồn, thêm giới hạn ở ruột non/ruột già và độ tự chủ thay đổi dọc ống tiêu hóa, sửa Summary vi+en. Gỡ [[enzyme]]."
+  - id: C-6
+    claim: "'Đó là lý do': căng thẳng có thể gây đau bụng/tiêu chảy; vấn đề đường ruột có thể ảnh hưởng tâm trạng và giấc ngủ"
+    verdict: unsupported
+    severity: S3
+    evidence: "https://www.niddk.nih.gov/health-information/digestive-diseases/irritable-bowel-syndrome/symptoms-causes"
+    note: "Không nguồn, và 'Đó là lý do' đặt quan hệ nhân quả. NIDDK (Last Reviewed 11/2017): IBS là 'problems with brain-gut interaction'; 'Doctors aren't sure what causes IBS'; stressful early life events, depression, anxiety 'more common in people with IBS. Experts think these problems may play a role'. Thay bằng ví dụ IBS, giữ đủ các lớp rào của nguồn. Ý 'giấc ngủ' không nguồn nào đã mở đỡ nên cắt. Tiêu đề 'Kết nối chặt chẽ với cảm xúc' đổi thành 'Liên lạc hai chiều với não'."
+  - id: C-7
+    claim: "Vi sinh sản xuất chất có hoạt tính thần kinh; trên gặm nhấm thay đổi hệ vi sinh gây thay đổi sinh lý não/hành vi, 'phần lớn cơ chế phân tử được phát hiện ở đây'; ở người chủ yếu tương quan, không nhất quán"
+    verdict: partially-supported
+    severity: S3
+    evidence: "https://pmc.ncbi.nlm.nih.gov/articles/PMC10917620/; https://doi.org/10.3390/nu13062099 (PMC8234057); https://doi.org/10.1038/nrn3346"
+    note: "Ou 2023: 'germ-free, antibiotic-treated, or gnotobiotic rodents show substantial changes in brain physiology and behavior'; 'mostly variable and inconsistent across observational studies'; 'It remains a great challenge to translate correlational findings into conclusive proofs of causality' — hai câu trích dịch đúng. Nhưng nguồn nói 'animal studies have served to discover several potential molecular mechanisms' — 'phần lớn' là nâng hạng, sửa thành 'nhiều cơ chế ... tiềm năng'. Chen 2021: chất chuyển hóa 'neurotransmitters ... produced by bacteria'. Cryan & Dinan 2012 đỡ phần gặm nhấm."
+  - id: C-8
+    claim: "Dây phế vị là 'kênh liên lạc chính' giữa ruột và não"
+    verdict: partially-supported
+    severity: S3
+    evidence: "https://www.frontiersin.org/journals/psychiatry/articles/10.3389/fpsyt.2018.00044/full"
+    note: "Breit 2018: 'It establishes one of the connections between the brain and the gastrointestinal tract'. Sửa thành 'một trong những kênh'."
+  - id: C-9
+    claim: "Mục 'lập trình lại' hệ vi sinh: danh sách thói quen có lợi (rau quả, chất xơ, lên men, hạn chế đồ uống có đường/siêu chế biến); 'có thể ảnh hưởng đến cảm giác thèm ăn'"
+    verdict: unsupported
+    severity: S3
+    evidence: "https://doi.org/10.1038/nature12820 (PMC3957428); https://doi.org/10.1016/j.cell.2021.06.019 (PMC9020749)"
+    note: "Danh sách không có nguồn. Câu 'ảnh hưởng thèm ăn' là cùng lỗi nhân quả đã sửa ở C-7/C-10 cũ. David 2014: 5 ngày, 10 tình nguyện viên, thay đổi 'a single day after the diet reached the distal gut', 'reverted ... 2 days after', chế độ động vật 'greater impact'. Wastyk 2021 (n=18/nhóm, can thiệp 10 tuần): lên men 'steadily increased microbiota diversity and decreased inflammatory markers'; chất xơ 'despite stable microbial community diversity'. Viết lại mục theo hai thử nghiệm này, giữ vế đối trọng (chất xơ không tăng đa dạng; chế độ thực vật tác động ít hơn), đổi tiêu đề."
+  - id: C-10
+    claim: "Kết luận (vi): điều đã vững là ENS và liên lạc hai chiều; vai trò vi khuẩn với tâm trạng/thèm ăn ở người còn đang nghiên cứu, bằng chứng cơ chế chủ yếu từ động vật"
+    verdict: verified
+    severity: none
+    evidence: "https://pmc.ncbi.nlm.nih.gov/articles/PMC10917620/"
+    note: "Khớp Ou 2023 và Breit 2018. Bản vi đã sửa đúng từ 17/09; bản en thì chưa (xem C-15)."
+  - id: C-11
+    claim: "Ruột được gọi là 'bộ não thứ hai' vì có mạng lưới thần kinh riêng (ENS)"
+    verdict: verified
+    severity: none
+    evidence: "https://www.frontiersin.org/journals/psychiatry/articles/10.3389/fpsyt.2018.00044/full"
+    note: "Breit 2018: 'Since the ENS is similar to the brain regarding structure, function, and chemical coding, it has been described as the second brain'. Bài đã nói rõ đây là ẩn dụ ('Ruột không thực sự suy nghĩ')."
+  - id: C-11b
+    claim: "Ruột chứa hàng chục nghìn tỉ vi sinh vật"
+    verdict: verified
+    severity: none
+    evidence: "https://doi.org/10.1371/journal.pbio.1002533 (PMC4991899)"
+    note: "Sender, Fuchs & Milo 2016: tổng số vi khuẩn ~3,8×10¹³. Bậc độ lớn 'hàng chục nghìn tỉ' đúng và khớp quy tắc 'ước lượng điểm không đặt vào tiêu đề'. Bản en viết 'trillions', sửa thành 'tens of trillions'."
+  - id: C-12
+    claim: "Sợi hướng tâm phế vị 'ghi nhận thức ăn ... và góp phần định đoạt tốc độ hấp thu, dự trữ và huy động chất dinh dưỡng. Theo nghĩa đó, ruột chủ yếu là một cơ quan cảm giác báo tin lên não'"
+    verdict: contradicted
+    severity: S2
+    evidence: "https://www.frontiersin.org/journals/psychiatry/articles/10.3389/fpsyt.2018.00044/full"
+    note: "Câu này do lượt sửa 2026-09-17 đưa vào, và gán sai chức năng: Breit 2018 viết 'vagal afferents ... provide a rapid and discrete account of digestible food ..., while vagal efferents together with the hormonal mechanisms codetermine the rate of nutrient absorption, storage, and mobilization'. Câu kết suy từ tỉ lệ sợi của một dây thần kinh ra bản chất của cả ruột, và bị chính mục ENS phía trên bác. Sửa: afferent báo tin; efferent cùng nội tiết định đoạt tốc độ; 'dây phế vị chủ yếu là đường báo tin lên'. Mẫu lỗi đáng ghi: một bản sửa để hạ mức khẳng định lại tự đưa vào một claim mới chưa đọc kỹ nguồn."
+  - id: C-13
+    claim: "'Vì vậy bài này không mô tả cơ chế đó như một điều đã biết.'"
+    verdict: n/a
+    severity: S4
+    evidence: "docs/content-rules.md — mục 'Hai hình dạng nữa: phạm vi nguồn, và lập luận từ sự im lặng'"
+    note: "Câu nói về bài viết chứ không nói về chủ đề, tức là nói với người duyệt. Xoá; hai câu trước đó đã nói đủ ý."
+  - id: C-14
+    claim: "Bản en: 'About 95% of the body's serotonin is produced in the digestive tract, with only about 5% created in the brain' và 'Approximately 500 million neurons'"
+    verdict: contradicted
+    severity: S1
+    evidence: "https://doi.org/10.3390/ijms22094837 (PMC8124334); https://doi.org/10.3390/ijms26031160; https://doi.org/10.1111/nmo.14440"
+    note: "Đây là đúng câu mà corrections.md ngày 2026-09-11 đã đính chính ở mức S1 (vì nó dựng mô hình 'serotonin tâm trạng nằm ở ruột'), nhưng chỉ bản vi được sửa. Người đọc bản /en vẫn thấy câu cũ. Theo quy tắc 9 (không sửa lặng lẽ), đây là một đính chính đã công bố mà chưa thực sự áp. Sửa: thay nguyên mục 'Notable figures' bằng bản dịch của mục vi sau khi sửa."
+  - id: C-15
+    claim: "Bản en: vi khuẩn ảnh hưởng thèm ăn/trao đổi chất/tâm trạng (không phân cấp bằng chứng); vi khuẩn → phế vị → trung tâm đói/no kèm danh sách hormone treo; kết luận 'significantly influential on ... mood'; danh sách ENS tự kiểm soát; 'Stress can cause...'; mục 'reprogrammed'"
+    verdict: contradicted
+    severity: S2
+    evidence: "https://pmc.ncbi.nlm.nih.gov/articles/PMC10917620/; https://www.frontiersin.org/journals/psychiatry/articles/10.3389/fpsyt.2018.00044/full"
+    note: "Ba sửa S2 ngày 17/09 (C-7, C-8, C-10) chưa từng được áp lên contentEn. enEdits đưa toàn bộ bản en về cùng claim với bản vi sau khi sửa, kèm các sửa S3 của lượt này."
+  - id: C-16
+    claim: "Chuỗi 'vi khuẩn → phế vị → trung tâm đói/no' chưa được chứng minh ở người; bằng chứng liên lạc vi sinh–não qua phế vị đến từ động vật"
+    verdict: verified
+    severity: none
+    evidence: "https://www.frontiersin.org/journals/psychiatry/articles/10.3389/fpsyt.2018.00044/full; https://pmc.ncbi.nlm.nih.gov/articles/PMC10917620/"
+    note: "Breit 2018: 'animal studies have provided evidence that microbiota communication with the brain involves the vagus nerve and this interaction can lead to mediating effects on the brain and subsequently, behavior'; tóm tắt chỉ nói 'preliminary evidence' cho tác động của vi khuẩn lên tâm trạng. Ou 2023: nhân quả ở người chưa xác lập."
+sources:
+  - title: "Methodological recommendations for human microbiota-gut-brain axis research"
+    doi: 10.20517/mrr.2023.33
+    tier: 1
+    status: "resolve đúng — Ou, Belzer, Smidt…; Microbiome Research Reports; online 2023-10-17 (số năm 2024). Năm 2023 chấp nhận được."
+  - title: "Vagus Nerve as Modulator of the Brain–Gut Axis in Psychiatric and Inflammatory Disorders"
+    doi: 10.3389/fpsyt.2018.00044
+    tier: 1
+    status: "resolve đúng — Breit, Kupferberg, Rogler…; Frontiers in Psychiatry 2018"
+  - title: "Mind-altering microorganisms: the impact of the gut microbiota on brain and behaviour"
+    doi: 10.1038/nrn3346
+    tier: 1
+    status: "resolve đúng — Cryan & Dinan; Nature Reviews Neuroscience 2012"
+  - note: "Thêm 10 nguồn bậc 1–2 (xem fixes.addSources), tất cả resolve qua Crossref và đã đọc tóm tắt/toàn văn trong lượt này. Không bỏ hay đổi bậc nguồn nào."
+fixes:
+  - "Áp docs/content/checks/2026-09-25/fixes/ruot-he-vi-sinh-vat-va-quyen-luc-cua-bo-nao-thu-hai.json: 9 edit vi, 7 edit en, 1 summary vi, 1 summary en, thêm 10 nguồn. Mọi find đã kiểm khớp đúng 1 lần trên bản dump; 4/4 link nội bộ vi và 3/3 link en còn nguyên."
+  - "Ghi các dòng corrections vào docs/content/corrections.md, kèm dòng riêng nói rõ đính chính S1 ngày 11/09 chưa từng áp lên bản en."
+  - "Sau khi áp: factCheck=PASSED, reviewedBy=tài khoản tổ chức, reviewedAt/lastVerifiedAt = ngày áp, Revision cùng transaction; chạy glossary:usedin (khô → --write) vì [[enzyme]] bị gỡ."

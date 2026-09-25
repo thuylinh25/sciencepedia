@@ -1,0 +1,276 @@
+slug: su-song-tren-trai-dat-4-ti-nam-trong-mot-dong-thoi-gian
+checkedAt: 2026-09-25
+checkedBy: science-editor
+sourceCount: 42   # 8 nguồn hiện có + 34 nguồn thêm trong fixes; 38 nguồn bậc 1–2
+verdict: pass
+summary: "Duyệt lại toàn bài sau lượt sửa S1 ngày 17/09. Hai phát hiện lớn. (1) Bốn bản sửa S1 ngày 17/09 chỉ được áp vào bản vi: contentEn vẫn mang nguyên các claim đã đính chính (zircon 4,4 tỉ năm gộp với thiên thạch, Permi 252 triệu năm/80%, Laetoli 'earliest direct evidence of bipedalism', không có Philippot), cộng thêm hai chỗ lệch với bản vi ('100,000-year figure', bảng lịch 'End of July' và '23:37'). (2) Sau khi gỡ VACA, phần lớn mốc S3/S4 còn lại trong bài vẫn là con số trần, và vài câu sai hoặc nâng mức tự tin so với nguồn: 'lần đầu tiên có bộ xương cứng ... và săn mồi chủ động' ở kỷ Cambri (bị Bengtson & Zhao 1992 bác), Anomalocaris 'dài tới nửa mét' (ROM: khoảng 100 cm), va chạm Theia viết như sự kiện đã xác lập (NASA: các giả thuyết còn cạnh tranh), H. erectus 'là loài đầu tiên rời châu Phi' (nguồn: 'generally considered'). Lượt này đã mở nguồn cho từng claim, không còn mốc nào dựa vào trí nhớ; các mốc tranh cãi (sự sống sớm nhất, tetrapod, nguyên nhân tuyệt chủng K–Pg, sự sống có phổ biến không) được ghi rõ mức bất định. Mọi mốc địa tầng gắn với bảng ICS v2024/12. Verdict 'pass' phản ánh trạng thái SAU khi áp 36 edit vi + 35 edit en và 34 nguồn thêm trong fixes/; nếu chưa áp thì bài vẫn không qua gate."
+claims:
+  - id: C-0
+    claim: "Bảng nguồn hiện có (8 nguồn) resolve đúng tên/năm/tác giả/tier"
+    verdict: verified
+    severity: S4
+    evidence: "Crossref: 10.1038/s41467-018-04621-x (Philippot 2018, Nat Commun); 10.1073/pnas.1613094113 (Stanley 2016, PNAS); 10.1038/s41467-020-15243-7 (Gastaldo 2020, Nat Commun); 10.7554/eLife.19568 (Masao 2016); 10.1038/nature22336 (Hublin 2017, Nature — Crossref có ghi 'correction', là bản đính chính nhỏ, không phải rút bài). Trang mở được lượt này: pubs.usgs.gov/gip/geotime/age.html; humanorigins.si.edu Omo I và Homo erectus; kar.kent.ac.uk/62267; elifesciences.org/articles/19568; PMC5993798, PMC7080820 (Europe PMC full text), PMC5081622 (pmc.ncbi)."
+    note: "Tier đúng: USGS bậc 2; năm bài báo bậc 1; hai trang Smithsonian bậc 3. Không bài nào bị rút. Nguồn s1 (Omo I, 'About 195,000 years old') còn đúng như một mốc lịch sử nhưng đã lỗi thời — xem C-31."
+
+  - id: C-0b
+    claim: "Mở bài: 'Trái Đất bắt đầu như một quả cầu đá nóng chảy'"
+    verdict: partially-supported
+    severity: S4
+    evidence: https://doi.org/10.1146/annurev-earth-042711-105503
+    note: "Elkins-Tanton 2012 (Crossref abstract): 'Theory and observations point to the occurrence of magma ponds or oceans'. Hạ thành 'có lẽ đã bắt đầu' cho khớp thân bài. Đã sửa (vi+en)."
+
+  - id: C-1
+    claim: "Sự sống đơn bào chiếm gần ba tỉ năm đầu; toàn bộ động vật, thực vật và con người chen chúc trong nửa tỉ năm cuối (mở bài và câu kết)"
+    verdict: partially-supported
+    severity: S3
+    evidence: "doi 10.1126/science.aat7228 (Bobrovskiy 2018: Ediacara 571–541 Ma 'the first macroscopic complex organisms in the geological record'); PMC5877938 (Morris 2018: bào tử thực vật trên cạn sớm nhất 469 Ma)"
+    note: "Hai mốc có nguồn cho 'chưa tới 600 triệu năm', không phải 'nửa tỉ'. 'Đơn bào' mạnh hơn nguồn (nguồn chỉ nói về sinh vật vĩ mô phức tạp) → 'chủ yếu là vi sinh vật'. Đã sửa (vi+en, cả C-34)."
+
+  - id: C-2
+    claim: "Niên đại 4,54 tỉ năm đến từ đo phóng xạ thiên thạch, sai số dưới 1%"
+    verdict: verified
+    severity: S4
+    evidence: https://pubs.usgs.gov/gip/geotime/age.html
+    note: "USGS: 'The best age for the Earth (4.54 Ga) is based on ... the Canyon Diablo meteorite'; 'uncertainty of less than 1 percent'. Bản en chưa có câu này (vẫn là câu gộp cũ) — xem C-3."
+
+  - id: C-3
+    claim: "Zircon Tây Australia 'theo USGS có tuổi tới 4,3 tỉ năm' là vật chất cổ nhất trên Trái Đất, chỉ cho tuổi tối thiểu của vỏ"
+    verdict: outdated
+    severity: S3
+    evidence: "https://pubs.usgs.gov/gip/geotime/age.html; doi 10.1038/35051550"
+    note: "Chính trang USGS có ghi chú biên tập: 'mineral grains (zircon) with U-Pb ages of 4.4 Ga have recently been reported'. Wilde 2001 (Europe PMC abstract): 'a detrital zircon with an age as old as 4,404+/-8 Myr'. Lượt 17/09 lấy câu tiện của hai câu trong cùng một nguồn. Bản en vẫn là câu S1 gốc (gộp thiên thạch + zircon 4,4 để 'xác định tuổi') — áp lại bản sửa S1 cho en. Đã sửa (vi+en)."
+
+  - id: C-4
+    claim: "Ban đầu là hành tinh nóng chảy; kim loại nặng chìm tạo lõi, vật chất nhẹ tạo lớp phủ và vỏ"
+    verdict: unsupported
+    severity: S3
+    evidence: "https://doi.org/10.1146/annurev-earth-042711-105503; doi 10.1038/nature00982; https://science.nasa.gov/science-research/earth-science/earths-magnetosphere-protecting-our-planet-from-harmful-space-energy/"
+    note: "Không nguồn. Elkins-Tanton 2012: đại dương magma, 'may be processed through multiple magma oceans'. Kleine 2002 (abstract): 'core formation in the terrestrial planets and the formation of the Moon must have occurred during the first approximately 30 million years'. NASA: lõi ngoài 'composed of molten iron and nickel'. Đã sửa (vi+en)."
+
+  - id: C-5
+    claim: "Dòng chất lỏng dẫn điện trong lõi sinh ra từ trường bảo vệ khí quyển"
+    verdict: verified
+    severity: S4
+    evidence: https://science.nasa.gov/science-research/earth-science/earths-magnetosphere-protecting-our-planet-from-harmful-space-energy/
+    note: "NASA: 'Nearly all of Earth's geomagnetic field originates in the fluid outer core'; 'our magnetosphere shields us from erosion of our atmosphere by the solar wind'. Gắn nguồn, nêu 'lõi ngoài'. Đã sửa (vi+en)."
+
+  - id: C-6
+    claim: "Một thiên thể cỡ Sao Hoả (Theia) đâm vào Trái Đất; vật chất văng ra thành Mặt Trăng; khoảng 4,5 tỉ năm trước"
+    verdict: partially-supported
+    severity: S2
+    evidence: https://science.nasa.gov/moon/formation/
+    note: "NASA: 'Several theories about our Moon's formation vie for dominance, but almost all share that point in common: ... about 4.5 billion years ago, something ― perhaps a single object the size of Mars, perhaps a series of objects ― crashed into the young Earth'. Bài bỏ cả hai lớp rào — nâng mức tự tin là lỗi mức từ chối. Đã sửa (vi+en), giữ [[Theia]]."
+
+  - id: C-7
+    claim: "Mặt Trăng ổn định độ nghiêng trục, giữ khí hậu không dao động hỗn loạn qua các chu kỳ dài"
+    verdict: partially-supported
+    severity: S3
+    evidence: https://science.nasa.gov/moon/top-moon-questions/
+    note: "NASA: 'The Moon's gravity keeps our planet from wobbling on its axis too much, which helps to stabilize our climate.' Viết theo đúng mức của NASA. Đã sửa (vi+en)."
+
+  - id: C-8
+    claim: "Thuỷ triều hãm tốc độ tự quay; ngày trên Trái Đất sơ khai chỉ dài vài giờ"
+    verdict: unsupported
+    severity: S3
+    evidence: "https://pmc.ncbi.nlm.nih.gov/articles/PMC6016783/ (doi 10.1073/pnas.1717689115)"
+    note: "'Vài giờ' là số không nguồn cho một thời điểm không nêu → bỏ. Thay bằng số đo có nguồn: Meyers & Malinverno 2018, đá nhịp Xiamaling 1,4 Ga, 'length of day of 18.68 ± 0.25 hours (2σ)', trong bối cảnh lịch sử tiêu tán thuỷ triều của hệ Trái Đất–Mặt Trăng. Đã sửa (vi+en)."
+
+  - id: C-8b
+    claim: "Đại dương hình thành khi bề mặt đủ nguội (tiêu đề 4,4 tỉ năm); nước đến từ vật chất tạo hành tinh cộng thiên thể va chạm, tỉ lệ còn tranh luận"
+    verdict: verified
+    severity: S4
+    evidence: "doi 10.1038/35051550; doi 10.1126/science.aba1948"
+    note: "Wilde 2001: zircon 4,4 Ga 'represents the earliest evidence for continental crust and oceans on the Earth'. Piani 2020 (Science): 'The origin of Earth's water remains unknown'; nước thường quy cho vật chất ngoài hệ bổ sung muộn, nhưng vật chất giống enstatite chondrite tạo hành tinh có thể đã mang đủ nước. Đúng mức 'còn tranh luận'. Không cần sửa chữ; thêm hai nguồn vào bảng."
+
+  - id: C-9
+    claim: "Hoá thạch vi khuẩn cổ nhất được chấp nhận rộng rãi ~3,5 tỉ năm; dấu vết hoá học có thể sớm hơn"
+    verdict: partially-supported
+    severity: S3
+    evidence: "https://pmc.ncbi.nlm.nih.gov/articles/PMC4664351/ (doi 10.1073/pnas.1517557112); doi 10.1038/nature04764"
+    note: "Mốc sự sống sớm nhất là mốc tranh cãi. Bell 2015: 'the microfossil record only extends to ∼3.5 billion years (Ga), the chemofossil record arguably to ∼3.8 Ga'; graphit trong zircon 4,10 Ga 'consistent with a biogenic origin and may be evidence'. Allwood 2006: 'Determining the biogenicity of such ancient fossils is the subject of ongoing debate'. Bỏ 'được chấp nhận rộng rãi' (claim về đồng thuận không nguồn); ghi rõ bất định. Đã sửa (vi+en)."
+
+  - id: C-10
+    claim: "Sự sống xuất hiện nhanh là lý do nhiều nhà khoa học cho rằng sự sống có thể không hiếm"
+    verdict: partially-supported
+    severity: S3
+    evidence: "https://pmc.ncbi.nlm.nih.gov/articles/PMC3258618/ (doi 10.1073/pnas.1111694108)"
+    note: "Chỉ kể một phía. Spiegel & Turner 2012: 'The early emergence of life on Earth has been taken as evidence that the probability of abiogenesis is high' nhưng 'the evidence is inconclusive and indeed is consistent with an arbitrarily low intrinsic probability'. Trình bày cả hai. Đã sửa (vi+en)."
+
+  - id: C-11
+    claim: "Stromatolite do thảm vi khuẩn tạo ra; vẫn đang hình thành ở vịnh Shark"
+    verdict: verified
+    severity: S4
+    evidence: "https://www.sharkbay.org/place/hamelin-pool/stromatolites/; https://www.sharkbay.org/place/hamelin-pool/"
+    note: "Parks and Wildlife Service (DBCA, Tây Australia): 'The microbial mats and stromatolites of Hamelin Pool are among the most diverse in the world'; 'stromatolites are living representatives'. Viết 'còn những quần thể sống' theo đúng chữ của nguồn. UNESCO (whc.unesco.org/en/list/578) trả 403 cả curl lẫn WebFetch nên không dùng. Đã sửa (vi+en)."
+
+  - id: C-12
+    claim: "Vi khuẩn lam thải oxy; oxy bị sắt hoà tan hấp thụ tạo quặng sắt dải — nguồn sắt mà phần lớn ngành thép hiện đại khai thác; khi sắt cạn oxy tích tụ trong khí quyển"
+    verdict: partially-supported
+    severity: S3
+    evidence: https://www.csiro.au/en/news/all/articles/2024/march/banded-iron-formations
+    note: "CSIRO đỡ chuỗi cơ chế ('Oxygen then reacted with the soluble iron to form insoluble iron oxide'; 'Once most of the minerals in the ocean were oxidised, the oxygen was finally able to make its way out of the ocean') và 'Most of the world's iron ore is found in rocks called banded iron formations' — về trữ lượng, không về sản lượng khai thác của ngành thép. Sửa vế kinh tế theo đúng nguồn. Đây là mô tả giản lược của một nguồn bậc 2; CSIRO cũng ghi BIF hình thành trong 3,5–1,8 tỉ năm, tức không chỉ quanh GOE — câu 'Ban đầu' giữ được. Đã sửa (vi+en)."
+
+  - id: C-13
+    claim: "Oxy khí quyển bắt đầu tăng khoảng 2,45 tỉ năm hoặc sớm hơn; GOE là giai đoạn chuyển tiếp ~300 triệu năm (Philippot 2018)"
+    verdict: verified
+    severity: S4
+    evidence: "https://pmc.ncbi.nlm.nih.gov/articles/PMC5993798/ (Europe PMC full text)"
+    note: "'Before ~2.45 Ga ago, atmospheric oxygen was at pO2 < 10–5 PAL'; 'an early (younger than 2.45 Ga) rise of atmospheric oxygen'; 'shown as a ~300 Myr interval'; 'the view of the GOE as a transitional period'. Bản vi đúng. Bản en CHƯA có câu này (bản sửa S1 17/09 chỉ áp vi) — áp lại cho en (enEdits C-13, S1)."
+
+  - id: C-14
+    claim: "Với hầu hết sinh vật khi đó oxy là chất độc; sự kiện này có thể là cuộc tuyệt chủng hàng loạt lớn nhất"
+    verdict: unsupported
+    severity: S3
+    evidence: "—"
+    note: "Không nguồn nào mở trong lượt này (Philippot 2018, Lyons 2014 abstract, CSIRO) đưa ra claim này; bài tự thừa nhận không có hoá thạch. Nghi ngờ thì cắt. Đã cắt (vi+en)."
+
+  - id: C-15
+    claim: "Trái Đất quả cầu tuyết 720–635 triệu năm; băng lan tới vùng nhiệt đới, có thể phủ gần kín hành tinh"
+    verdict: partially-supported
+    severity: S3
+    evidence: "https://stratigraphy.org/ICSchart/ChronostratChart2024-12.pdf; https://pmc.ncbi.nlm.nih.gov/articles/PMC5677351/ (doi 10.1126/sciadv.1600983)"
+    note: "ICS v2024/12 (trích chữ bằng pypdf): Cryogenian '~ 720', Ediacaran '~ 635'. Hoffman 2017: 'grounded ice sheets reached sea level at all latitudes during two long-lived Cryogenian (58 and ≥5 My) glaciations'; Sturtian 717–659 Ma, Marinoan ~645–635 Ma. Câu cũ đọc thành một khối băng liên tục 85 triệu năm và không nói đây là giả thuyết. Đã sửa (vi+en)."
+
+  - id: C-16
+    claim: "Vòng phản hồi albedo; núi lửa tiếp tục thải CO₂ khi phong hoá dừng; sau hàng triệu năm hiệu ứng nhà kính làm tan băng"
+    verdict: verified
+    severity: S4
+    evidence: "https://pmc.ncbi.nlm.nih.gov/articles/PMC5677351/"
+    note: "Hoffman 2017: 'ice-albedo feedback'; 'the rate of silicate weathering should fall very nearly to zero ... carbon dioxide should accumulate ... at whatever rate it is released from volcanoes'; 'over millions to tens of millions of years'. Chỉ nới khung thời gian theo nguồn. Đã sửa (vi+en)."
+
+  - id: C-17
+    claim: "Tiêu đề: Bùng nổ Cambri 538 triệu năm trước"
+    verdict: partially-supported
+    severity: S3
+    evidence: "https://stratigraphy.org/ICSchart/ChronostratChart2024-12.pdf; doi 10.1038/s41559-019-0821-6"
+    note: "ICS: đáy Cambri '538.8 ±0.6' — là ranh giới kỷ, không phải 'bùng nổ'. Wood 2019 (abstract): Bùng nổ Cambri 'between ~540 and 520 million years ago'. Tiêu đề đổi theo Wood; mốc ICS đưa vào thân mục. Đã sửa (vi+en)."
+
+  - id: C-18
+    claim: "Trong 20–25 triệu năm gần như toàn bộ các ngành động vật hiện đại xuất hiện; lần đầu tiên có bộ xương cứng, mắt, săn mồi chủ động; áp lực chọn lọc chưa từng có"
+    verdict: contradicted
+    severity: S2
+    evidence: "doi 10.1126/science.257.5068.367; doi 10.1073/pnas.1312778110 (PMC3746845); doi 10.1038/s41559-019-0821-6; doi 10.1126/science.aat7228"
+    note: "Bengtson & Zhao 1992 (abstract): Cloudina cuối Tiền Cambri là 'the earliest known animal to produce a mineralized exoskeleton', lỗ khoan cho thấy 'the attacking organism was a predator' → 'lần đầu tiên' sai. 'Mắt' và 'chưa từng có' không nguồn → cắt. Sperling 2013: 'the appearance of essentially all animal body plans (phyla)'; chạy đua vũ trang 'can explain the evolutionary pattern but not its timing'. Wood 2019: ~20 triệu năm, 'nested within a far more ancient record of macrofossils extending at least into the late Ediacaran at ~571 Ma'. Đã sửa (vi+en)."
+
+  - id: C-19
+    claim: "Bọ ba thuỳ là biểu tượng; Anomalocaris dài tới nửa mét là kẻ săn mồi đứng đầu"
+    verdict: contradicted
+    severity: S2
+    evidence: https://burgess-shale.rom.on.ca/fossils/anomalocaris-canadensis/
+    note: "ROM (qua WebFetch; curl bị 403): Maximum Size 'About 100 cm', 'The most complete Anomalocaris specimen is 25 cm in length', 'The largest Burgess Shale predator', Burgess Shale 'approximately 505 million years ago'. Kích thước sai; 'đứng đầu' nới chủ thể từ một quần thể ra cả giai đoạn. Câu bọ ba thuỳ không có nguồn mở được → bỏ. Đã sửa (vi+en)."
+
+  - id: C-20
+    claim: "Thực vật lên cạn trước, khoảng 470 triệu năm; mất rất lâu mới có mô dẫn; chân đốt theo sau"
+    verdict: partially-supported
+    severity: S3
+    evidence: "https://pmc.ncbi.nlm.nih.gov/articles/PMC5877938/ (doi 10.1073/pnas.1719588115)"
+    note: "Morris 2018: 'The earliest known fossils of embryophyte affinity are ... cryptospores ... from the Middle Ordovician [Dapingian; 469 Ma]'; 'a Cambrian origin of Embryophyta is recovered with highest probability'; thực vật có mạch 'Late Ordovician to late Silurian'. Ghi rõ loại bằng chứng và bất định giữa hoá thạch và đồng hồ phân tử. 'Chân đốt theo sau' không nguồn → cắt. Đã sửa (vi+en)."
+
+  - id: C-21
+    claim: "Tetrapod xuất hiện cuối kỷ Devon, 375–360 triệu năm; Tiktaalik và Ichthyostega là dạng chuyển tiếp"
+    verdict: partially-supported
+    severity: S3
+    evidence: "doi 10.1038/nature08623; doi 10.1038/nature04639; https://stratigraphy.org/ICSchart/ChronostratChart2024-12.pdf"
+    note: "Mốc còn tranh cãi. Niedźwiedzki 2010 (abstract): 'The earliest body fossils of tetrapods date to the Late Devonian period (late Frasnian stage) and are preceded by transitional elpistostegids such as Panderichthys and Tiktaalik that still have paired fins'; dấu chân Zachełmie 'approximately 18 million years older than the earliest tetrapod body fossils'. Daeschler 2006: Tiktaalik là cá vây thuỳ trung gian, 'a mobile neck, a functional wrist joint'. ICS: Devon muộn 382,31–358,86 Ma. Ichthyostega không có nguồn mở được → bỏ. Đã sửa (vi+en)."
+
+  - id: C-22
+    claim: "Kỷ Than đá để lại các mỏ than hiện đại và trứng có màng ối cho phép bò sát đẻ trứng trên cạn"
+    verdict: partially-supported
+    severity: S3
+    evidence: "https://pmc.ncbi.nlm.nih.gov/articles/PMC4780611/ (doi 10.1073/pnas.1517943113); https://pmc.ncbi.nlm.nih.gov/articles/PMC12119326/ (doi 10.1038/s41586-025-08884-5)"
+    note: "Nelsen 2016: kỷ này 'is so named for massive, widespread coal deposits' và than 'have continued to the present wherever environmental conditions permit' → 'các mỏ than hiện đại' khái quát quá mức. Long 2025 (full text): amniote là 'the only tetrapod clade to achieve complete reproductive independence of water', nhánh 'uniting the mammal and reptile–bird lineages'; dấu chân đầu Tournaisian ở Victoria. 'Cho phép bò sát' thu hẹp chủ thể. Đã sửa (vi+en)."
+
+  - id: C-23
+    claim: "Đại tuyệt chủng Permi khoảng 251,9 triệu năm (bắt đầu 251,941 ± 0,037), ~81% loài biển (Stanley), ước tính cũ 88–96%"
+    verdict: verified
+    severity: S4
+    evidence: "https://pmc.ncbi.nlm.nih.gov/articles/PMC5081622/; https://pmc.ncbi.nlm.nih.gov/articles/PMC7080820/; https://stratigraphy.org/ICSchart/ChronostratChart2024-12.pdf"
+    note: "Stanley 2016: 'only ∼81% of marine species died out'; 'the frequently cited estimate of 88–96% by Raup'. Gastaldo 2020: 'The marine event began at 251.941 ± 0.037 Ma, with the PTB placed at 251.902 ± 0.024 Ma'; ICS ghi 251,902 ± 0,024. Bản vi đúng. Bản en vẫn '252 million ... about 80%' không nguồn (bản sửa S1 17/09 chỉ áp vi) — áp lại cho en (enEdits C-23, S1)."
+
+  - id: C-24
+    claim: "Sự kiện Permi mở đường cho nhóm archosaur"
+    verdict: partially-supported
+    severity: S4
+    evidence: "https://pmc.ncbi.nlm.nih.gov/articles/PMC6015845/ (doi 10.1098/rspb.2018.0361)"
+    note: "Ezcurra & Butler 2018: 'the previously obscure archosauromorphs (which include crocodylians, dinosaurs and birds) become the dominant terrestrial vertebrates'. Nguồn nói archosauromorph. Đã sửa (vi+en)."
+
+  - id: C-25
+    claim: "66 triệu năm trước, tiểu hành tinh đường kính khoảng 10 km đâm xuống Yucatán, tạo hố Chicxulub; mọi khủng long không phải chim biến mất"
+    verdict: verified
+    severity: S4
+    evidence: "https://sos.noaa.gov/catalog/datasets/tsunami-asteroid-impact-66-million-years-ago/; https://stratigraphy.org/ICSchart/ChronostratChart2024-12.pdf"
+    note: "NOAA: 'The 6+ miles wide asteroid that hit Earth 66 million years ago'; hố Chicxulub dưới bán đảo Yucatán; 'including all non-avian dinosaurs'. ICS: ranh giới K–Pg 66,00 Ma. '6+ dặm' → 'khoảng 10 km trở lên'. Đã sửa (vi+en)."
+
+  - id: C-26
+    claim: "Bụi và sulfat che khuất Mặt Trời nhiều năm, chuỗi thức ăn sụp đổ; Deccan Traps có thể đã làm hệ sinh thái suy yếu sẵn"
+    verdict: partially-supported
+    severity: S3
+    evidence: "doi 10.1038/s41561-023-01290-4; doi 10.1126/science.aay5055"
+    note: "Senel 2023 (abstract trên nature.com): 'a global-average surface temperature falling by as much as 15°C', 'a dust-induced photosynthetic shut-down for almost 2 yr post-impact', 'together with additional cooling contributions from soot and sulfur'. Hull 2020 (abstract): 'vigorously debated'; 'major outgassing beginning and ending distinctly before the impact, with only the impact coinciding with mass extinction'. Câu Deccan chỉ kể một phía của tranh luận thật → trình bày là tranh luận, không phân xử. Đã sửa (vi+en)."
+
+  - id: C-27
+    claim: "Động vật có vú sống sót nhờ nhỏ, ăn tạp và đào hang"
+    verdict: unsupported
+    severity: S3
+    evidence: "doi 10.1111/jeb.12882"
+    note: "Nhân quả tự thêm. Longrich 2016 (abstract), dữ liệu Bắc Mỹ: 'of 59 species, four survived (93% species extinction)'; 'Survival is correlated with geographic range size and abundance'. Viết lại theo nguồn, giữ phạm vi Bắc Mỹ. Đã sửa (vi+en)."
+
+  - id: C-28
+    claim: "Thú toả ra chiếm mọi ổ sinh thái trống; linh trưởng xuất hiện ~55 triệu năm với ngón cái đối diện và thị giác lập thể"
+    verdict: partially-supported
+    severity: S3
+    evidence: "doi 10.1111/jeb.12882; doi 10.1038/nature12200"
+    note: "'Mọi ổ sinh thái' không nguồn; Longrich 2016: 'Within 300 000 years ... regional diversity rose to twice Cretaceous levels'. Ni 2013: 'The oldest known primate skeleton', 'about 55 million years ago, the oldest fossil primate of this quality ever recovered' — bộ xương cổ nhất, không phải thời điểm nhóm xuất hiện; linh trưởng sớm nhất 'diurnal, arboreal and primarily insectivorous mammals the size of modern pygmy mouse lemurs'. Danh sách đặc điểm không có nguồn mở được → bỏ. Đã sửa (vi+en)."
+
+  - id: C-29
+    claim: "Dấu chân Laetoli ~3,66 triệu năm là dấu chân người cổ sớm nhất, quy cho Australopithecus afarensis; 'bằng chứng từ xương có thể còn cổ hơn'"
+    verdict: partially-supported
+    severity: S3
+    evidence: https://elifesciences.org/articles/19568
+    note: "Masao 2016: 'the earliest hominin footprints in the world (3.66 million years old) ... attributed to Australopithecus afarensis' — câu chính đúng. Câu thứ hai (lượt 17/09 thêm) nói về gói nguồn chứ không nói về chủ đề, và vế 'bằng chứng từ xương có thể còn cổ hơn' không nguồn → cắt. Bản en vẫn là câu S1 gốc ('earliest direct evidence of bipedalism', 'genus Australopithecus') — áp lại (enEdits C-29, S1)."
+
+  - id: C-30
+    claim: "Homo erectus xuất hiện ~1,9 triệu năm và là loài người đầu tiên rời châu Phi"
+    verdict: partially-supported
+    severity: S2
+    evidence: https://humanorigins.si.edu/evidence/human-fossils/species/homo-erectus
+    note: "Smithsonian: 'Between about 1.89 million and 110,000 years ago'; 'Generally considered to have been the first species to have expanded beyond Africa'. Bỏ mất lớp rào = nâng mức tự tin, lỗi mức từ chối (17/09 chấm S4 và để lại; nâng lên S2). Đã sửa (vi+en)."
+
+  - id: C-31
+    claim: "Homo sapiens ~300.000 năm (Jebel Irhoud); con số quen thuộc trước đó ~195.000 năm dựa trên Omo I"
+    verdict: outdated
+    severity: S3
+    evidence: "https://kar.kent.ac.uk/62267/ (doi 10.1038/nature22336); doi 10.1038/s41586-021-04275-8; https://humanorigins.si.edu/evidence/human-fossils/fossils/omo-i"
+    note: "Hublin 2017: 'an age of 315 ± 34 thousand years (as determined by thermoluminescence dating)' — '~300.000' nằm trong sai số. Smithsonian Omo I: 'About 195,000 years old' (đúng như mốc lịch sử). Vidal 2022 (abstract trên nature.com): 'a new minimum age for the Omo fossils of 233 ± 22 kyr'. Thêm niên đại mới. Bản en viết 'the 100,000-year figure' — mâu thuẫn với bản vi và với nguồn s1; con số này là của bài VACA đã gỡ. Đã sửa (vi+en)."
+
+  - id: C-32
+    claim: "Nông nghiệp bắt đầu ~12.000 năm trước khi kỷ băng hà cuối kết thúc; lịch sử thành văn ~5.000 năm"
+    verdict: partially-supported
+    severity: S3
+    evidence: "https://pmc.ncbi.nlm.nih.gov/articles/PMC2575338/ (doi 10.1073/pnas.0801317105); https://stratigraphy.org/ICSchart/ChronostratChart2024-12.pdf; https://news.uchicago.edu/story/origins-writing-make-engaging-new-exhibition-oriental-institute-museum"
+    note: "Zeder 2008: 'The initial steps toward plant and animal domestication in the Eastern Mediterranean can now be pushed back to the 12th millennium cal B.P.' — một vùng, không phải toàn nhân loại (quy tắc 18). ICS: đáy Holocen 0,0117 Ma; 'kỷ băng hà kết thúc' không có trên bảng nên đổi thành mốc Holocen. Đại học Chicago (2010): 'the earliest cuneiform tablets from Mesopotamia (modern-day Iraq), dating to about 3200 BC' → ~5.200 năm. National Geographic Education (10.000–12.000 năm) đã đọc nhưng không dùng làm nguồn đỡ (bậc 4). Đã sửa (vi+en)."
+
+  - id: C-33
+    claim: "Bảng 'nén 4,54 tỉ năm thành một năm'"
+    verdict: partially-supported
+    severity: S3
+    evidence: "tự tính: 1 ngày = 4,54 tỉ / 365 ≈ 12,44 triệu năm; ngày = 1/1 + (4540 − t)/4540 × 365"
+    note: "Vi: 'tế bào đầu tiên cuối tháng 2' ứng ~3,8 Ga, không mốc nào có nguồn → vi hoá thạch 3,5 Ga = 83,6 ngày → 25/3. Oxy 2,45–2,4 Ga → 168,0–172,1 ngày → 18–22/6. 'Động vật đa bào giữa tháng 11' không gắn mốc → quần sinh vật Ediacara 571 Ma = 319,1 ngày → 16/11 (không gọi cả quần là động vật). Cambri 540 Ma = 321,6 ngày → 18/11 (cũ 19/11). K–Pg 66 Ma = 359,7 → 26/12 ✓. H. sapiens 300.000 năm = 34,7 phút trước nửa đêm → 23:25 ✓. Chữ viết 5.200 năm = 36,1 giây (cũ 30 giây). En còn lệch nặng hơn: oxy 'End of July' (~1,9 Ga) và H. sapiens '23:37' (~200.000 năm) — S2 ở bản en. Đã sửa (vi+en)."
+
+  - id: C-34
+    claim: "Câu kết: 'Nếu ngoài kia có sự sống, khả năng cao nhất là ta sẽ tìm thấy nó ở dạng vi khuẩn'"
+    verdict: unsupported
+    severity: S3
+    evidence: "—"
+    note: "Suy đoán của người viết với mức tự tin 'khả năng cao nhất', không nguồn → cắt. Câu đầu của khối trích sửa như C-1. Đã sửa (vi+en)."
+
+findingCounts:
+  before:   # phát hiện trên nội dung hiện tại (tính cả bản en); không tính C-0 và các claim verified
+    S1: 4   # chỉ ở bản en: bốn bản sửa S1 ngày 17/09 chưa từng áp vào contentEn (C-3, C-13, C-23, C-29)
+    S2: 5   # C-6, C-18, C-19, C-30, và bảng en (C-33)
+    S3: 22
+    S4: 6   # C-0b, C-24, và 4 claim đúng nhưng cần gắn nguồn/chỉnh chữ (C-5, C-11, C-16, C-25)
+  after: {S1: 0, S2: 0, S3: 0, S4: 0}
+openAfterFixes:
+  - "Không còn phát hiện S1–S3 sau khi áp đủ fixes. Hai câu hỏi không thuộc gate accuracy vẫn cần người quyết: quyền sử dụng và cách diễn đạt dòng ghi công VACA; và việc đăng đính chính công khai trên trang (quy tắc 9) — xem openQuestions trong fixes."
+  - "Pattern cho article-generator/pipeline sửa: bản sửa S1 được ghi vào corrections.md như đã xong trong khi chỉ một locale đổi. Script áp fixes nên từ chối khi claim đã sửa ở vi mà không có enEdit tương ứng."

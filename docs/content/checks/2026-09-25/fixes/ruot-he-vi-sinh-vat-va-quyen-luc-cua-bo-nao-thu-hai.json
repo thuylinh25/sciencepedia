@@ -1,0 +1,267 @@
+{
+  "slug": "ruot-he-vi-sinh-vat-va-quyen-luc-cua-bo-nao-thu-hai",
+  "edits": [
+    {
+      "claimId": "C-1",
+      "severity": "S3",
+      "find": "Phép đếm trực tiếp toàn diện đầu tiên, công bố năm 2022, cho con số thấp hơn nhiều — **khoảng 168 triệu** — và tương đương số nơron trong tủy sống.",
+      "replace": "Phép đếm toàn diện đầu tiên, công bố năm 2022 (Michel và cộng sự), cho con số thấp hơn nhiều — **khoảng 168 triệu** — và tương đương số nơron trong tủy sống. Với người, con số này được tính từ mật độ nơron đo trên mẫu mô nhân với kích thước ruột lấy từ tài liệu, chứ không phải đếm từng tế bào.",
+      "why": "Nguồn không phải một phép đếm 'trực tiếp' ở người: Michel 2022 đo mật độ nơron trên mẫu mô, còn kích thước ruột người thì 'we had to rely on literature data'. Chữ 'trực tiếp' nâng độ chắc chắn của con số. Giữ 168 triệu và so sánh với tủy sống (đúng nguyên văn tóm tắt), thêm tên tác giả, nói rõ cách tính. Con số 400–600 triệu 'thường được trích' có nguồn: Fleming và cộng sự 2020.",
+      "evidence": "https://doi.org/10.1111/nmo.14440 (abstract qua Europe PMC, PMID 35929768) — 'For humans, we had to rely on literature data' ; '168 million for human' ; 'The number of enteric neurons is comparable to the number of neurons in the spinal cord'. https://doi.org/10.1155/2020/8024171 (PMC7495222) — 'The human ENS contains approximately 400-600 million neurons'."
+    },
+    {
+      "claimId": "C-3",
+      "severity": "S3",
+      "find": "nó điều hòa nhu động ruột, hấp thu và chuyển hóa.",
+      "replace": "nó tham gia điều hòa nhu động và bài tiết của ruột, cùng một số chức năng chuyển hóa năng lượng.",
+      "why": "Nguồn nêu vai trò của serotonin ngoại vi với vận động và bài tiết của ruột và với chuyển hóa năng lượng; không nguồn nào đã mở nói serotonin ruột điều hòa 'hấp thu'. Ý 'không qua hàng rào máu–não' nay có nguồn bậc 1 và được giữ nguyên.",
+      "evidence": "https://doi.org/10.3390/ijms22094837 (PMC8124334) — 'Serotonin cannot cross the blood-brain barrier and, therefore, central and peripheral serotonin form two distinct pools' ; 'In the gastrointestinal tract it is important for regulating motor and secretory functions. Apart from intestinal motility, energy metabolism is regulated by both central and peripheral serotonin signaling'. https://doi.org/10.3390/nu13062099 (PMC8234057) — 'serotonin do not penetrate the blood–brain barrier, they must be synthesized in the brain from local pools of neurotransmitter precursors'."
+    },
+    {
+      "claimId": "C-5",
+      "severity": "S3",
+      "find": "Ruột có thể tự kiểm soát:\n\n- Nhu động ruột.\n- Tiết [[enzyme]] tiêu hóa.\n- Hấp thu dinh dưỡng.\n\nmà không cần não bộ liên tục ra lệnh.",
+      "replace": "Hệ thần kinh ruột chứa đủ các vòng phản xạ riêng, từ nơron cảm giác đến nơron vận động. Nhờ vậy, ở ruột non và ruột già, nó có thể tự điều khiển:\n\n- Nhu động ruột.\n- Dòng dịch qua niêm mạc ruột.\n- Lưu lượng máu ở niêm mạc.\n\nmà không cần não bộ liên tục ra lệnh. Mức độ tự chủ này khác nhau dọc ống tiêu hóa: ở một số đoạn, não và tủy sống giữ vai trò điều khiển lớn hơn.",
+      "why": "Nguồn liệt kê các chức năng ENS tự điều khiển là vận động, dòng dịch, lưu lượng máu niêm mạc và hàng rào niêm mạc — không phải 'tiết enzyme tiêu hóa' hay 'hấp thu dinh dưỡng'. Nguồn cũng giới hạn sự tự chủ ở ruột non và ruột già, và Furness 2012 nói mức ENS/CNS điều khiển 'khác nhau đáng kể dọc ống tiêu hóa'. Bỏ [[enzyme]] vì chính mệnh đề chứa nó sai.",
+      "evidence": "https://www.frontiersin.org/journals/psychiatry/articles/10.3389/fpsyt.2018.00044/full (doi 10.3389/fpsyt.2018.00044) — 'the ENS in the small and large bowel also is able to function quite independent of vagal control as it contains full reflex circuits, including sensory neurons and motor neurons. They regulate muscle activity and motility, fluid fluxes, mucosal blood flow, and also mucosal barrier function'. https://doi.org/10.1038/nrgastro.2012.32 (abstract qua Europe PMC, PMID 22392290) — 'the extent to which the ENS or CNS controls digestion differs considerably along the digestive tract'."
+    },
+    {
+      "claimId": "C-6",
+      "severity": "S3",
+      "find": "### Kết nối chặt chẽ với cảm xúc\n\nNão và ruột liên lạc liên tục thông qua **trục Não - Ruột (Gut-Brain Axis)**.\n\nĐó là lý do:\n\n- Căng thẳng có thể gây đau bụng hoặc tiêu chảy.\n- Các vấn đề đường ruột có thể ảnh hưởng tới tâm trạng và giấc ngủ.",
+      "replace": "### Liên lạc hai chiều với não\n\nNão và ruột liên lạc liên tục theo cả hai chiều thông qua **trục Não - Ruột (Gut-Brain Axis)** — gồm dây thần kinh phế vị, các đường thần kinh giao cảm, tín hiệu nội tiết và miễn dịch (Breit và cộng sự, 2018).\n\nMột ví dụ lâm sàng là hội chứng ruột kích thích (IBS), mà Viện Quốc gia về Đái tháo đường, Tiêu hóa và Bệnh thận Hoa Kỳ (NIDDK) xếp vào nhóm rối loạn tương tác não–ruột. Nguyên nhân IBS chưa rõ. Một số vấn đề gặp nhiều hơn ở người mắc IBS — sự kiện căng thẳng hoặc khó khăn thời thơ ấu, trầm cảm, lo âu — và giới chuyên môn cho rằng chúng có thể góp phần gây bệnh; đây là liên hệ, chưa phải cơ chế đã xác lập.",
+      "why": "Hai gạch đầu dòng cũ không nguồn, và 'Đó là lý do' biến một liên hệ thành quan hệ nhân quả; chiều 'vấn đề đường ruột → giấc ngủ' không nguồn nào đã mở đỡ nên bị cắt. Thay bằng điều NIDDK thật sự nói về IBS, giữ nguyên các lớp rào 'Doctors aren't sure', 'Experts think', 'may play a role'. Tiêu đề 'Kết nối chặt chẽ với cảm xúc' hứa nhiều hơn phần thân đỡ được nên đổi theo.",
+      "evidence": "https://www.frontiersin.org/journals/psychiatry/articles/10.3389/fpsyt.2018.00044/full (doi 10.3389/fpsyt.2018.00044) — 'The bidirectional communication between the brain and the gastrointestinal tract ... including the vagus nerve, but also sympathetic (e.g., via the prevertebral ganglia), endocrine, immune, and humoral links'. https://www.niddk.nih.gov/health-information/digestive-diseases/irritable-bowel-syndrome/symptoms-causes (Last Reviewed November 2017) — 'Doctors aren't sure what causes IBS' ; 'Functional gastrointestinal (GI) disorders such as IBS are problems with brain-gut interaction' ; 'Certain problems are more common in people with IBS. Experts think these problems may play a role in causing IBS. These problems include stressful or difficult early life events ... depression, anxiety'."
+    },
+    {
+      "claimId": "C-7",
+      "severity": "S3",
+      "find": "Phần lớn cơ chế phân tử được phát hiện ở đây.",
+      "replace": "Nhiều cơ chế phân tử tiềm năng được tìm ra từ các nghiên cứu động vật này.",
+      "why": "Nguồn nói 'animal studies have served to discover several potential molecular mechanisms' — 'một số cơ chế tiềm năng', không phải 'phần lớn cơ chế'. Mất chữ 'potential' là mất mức dè dặt (quy tắc 3).",
+      "evidence": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10917620/ (doi 10.20517/mrr.2023.33) — 'germ-free, antibiotic-treated, or gnotobiotic rodents show substantial changes in brain physiology and behavior' ; 'animal studies have served to discover several potential molecular mechanisms underlying observations'."
+    },
+    {
+      "claimId": "C-8",
+      "severity": "S3",
+      "find": "Dây thần kinh phế vị là kênh liên lạc chính, và nó nghiêng hẳn về một chiều:",
+      "replace": "Dây thần kinh phế vị là một trong những kênh liên lạc giữa não và ruột, và nó nghiêng hẳn về một chiều:",
+      "why": "Breit 2018 viết dây phế vị 'establishes one of the connections between the brain and the gastrointestinal tract' và liệt kê cả đường giao cảm, nội tiết, miễn dịch. 'Kênh chính' là nâng hạng không nguồn.",
+      "evidence": "https://www.frontiersin.org/journals/psychiatry/articles/10.3389/fpsyt.2018.00044/full (doi 10.3389/fpsyt.2018.00044) — 'It establishes one of the connections between the brain and the gastrointestinal tract'."
+    },
+    {
+      "claimId": "C-12",
+      "severity": "S2",
+      "find": "Các sợi hướng tâm này ghi nhận thức ăn đang tiêu hóa trong đường ruột và góp phần định đoạt tốc độ hấp thu, dự trữ và huy động chất dinh dưỡng. Theo nghĩa đó, ruột chủ yếu là một cơ quan cảm giác báo tin lên não.",
+      "replace": "Các sợi hướng tâm báo nhanh cho não về lượng thức ăn tiêu hóa được đang có trong ruột; còn tốc độ hấp thu, dự trữ và huy động chất dinh dưỡng thì do các sợi ly tâm của phế vị cùng các cơ chế nội tiết định đoạt. Theo nghĩa đó, dây phế vị chủ yếu là đường báo tin từ ruột lên não.",
+      "why": "Gán sai chức năng: trong Breit 2018, chính sợi LY TÂM (cùng cơ chế nội tiết) mới 'codetermine the rate of nutrient absorption, storage, and mobilization'; sợi hướng tâm chỉ báo tin. Câu kết 'ruột chủ yếu là một cơ quan cảm giác' là hệ quả tự rút từ tỉ lệ sợi của MỘT dây thần kinh và bị chính mục ENS phía trên bác (ruột tự điều khiển vận động, dòng dịch) — hạ về điều tỉ lệ sợi thật sự nói: dây phế vị chủ yếu truyền tin lên.",
+      "evidence": "https://www.frontiersin.org/journals/psychiatry/articles/10.3389/fpsyt.2018.00044/full (doi 10.3389/fpsyt.2018.00044) — 'vagal afferents innervating the gastrointestinal tract provide a rapid and discrete account of digestible food as well as circulating and stored fuels, while vagal efferents together with the hormonal mechanisms codetermine the rate of nutrient absorption, storage, and mobilization' ; efferents '10–20% of all fibers', afferents '80–90% of all fibers'."
+    },
+    {
+      "claimId": "C-13",
+      "severity": "S4",
+      "find": "\n\nVì vậy bài này không mô tả cơ chế đó như một điều đã biết.",
+      "replace": "",
+      "why": "Câu nói về bài viết/gói nguồn chứ không nói về chủ đề (content-rules, 'lập luận từ sự im lặng' — đoạn nói với người duyệt, không với người đọc). Hai câu ngay trước đã nói đủ ý.",
+      "evidence": "docs/content-rules.md, mục 'Hai hình dạng nữa: phạm vi nguồn, và lập luận từ sự im lặng'"
+    },
+    {
+      "claimId": "C-9",
+      "severity": "S3",
+      "find": "## Có thể \"lập trình lại\" hệ vi sinh đường ruột không?\n\nCó thể thay đổi thành phần hệ vi sinh thông qua chế độ ăn uống.\n\nNhững thói quen có lợi gồm:\n\n- Ăn nhiều rau củ và trái cây.\n- Tăng lượng chất xơ.\n- Sử dụng thực phẩm lên men như sữa chua, kim chi.\n- Hạn chế đồ uống có đường và thực phẩm siêu chế biến.\n\nSự thay đổi này có thể ảnh hưởng đến cảm giác thèm ăn và sức khỏe tiêu hóa theo thời gian.",
+      "replace": "## Ăn uống có thay đổi được hệ vi sinh đường ruột không?\n\nCó, và có thể rất nhanh. Trong một thử nghiệm trên 10 tình nguyện viên, năm ngày ăn chế độ gần như hoàn toàn từ động vật đã làm cấu trúc hệ vi sinh thay đổi chỉ một ngày sau khi thức ăn tới ruột, và hệ vi sinh trở lại cấu trúc ban đầu hai ngày sau khi ngừng; chế độ hoàn toàn từ thực vật tác động ít hơn (David và cộng sự, 2014).\n\nNhưng \"thay đổi\" không tự động là \"có lợi\", và mỗi chế độ ăn cho một kết quả khác. Trong một thử nghiệm ngẫu nhiên nhỏ trên người lớn khỏe mạnh (18 người mỗi nhóm, can thiệp 10 tuần), chế độ nhiều thực phẩm lên men làm tăng dần độ đa dạng của hệ vi sinh và giảm nhiều chỉ dấu viêm, còn chế độ nhiều chất xơ thì không làm thay đổi độ đa dạng (Wastyk và cộng sự, 2021).\n\nThay đổi thành phần hệ vi sinh cũng chưa đồng nghĩa với thay đổi tâm trạng hay cảm giác thèm ăn ở người — như đã nêu ở trên, đó vẫn là hướng nghiên cứu đang mở.",
+      "why": "Danh sách 'thói quen có lợi' không nguồn, và câu kết 'có thể ảnh hưởng đến cảm giác thèm ăn' là cùng lỗi nhân quả trên người đã sửa ở C-7/C-10 — dạng câu hành động cho người đọc. Thay bằng hai thử nghiệm trên người đã mở: David 2014 (ăn uống đổi hệ vi sinh rất nhanh, và đổi lại cũng nhanh; chế độ thực vật tác động ít hơn — giữ vế đối trọng) và Wastyk 2021 (thực phẩm lên men tăng đa dạng; chất xơ thì không — chính thử nghiệm này bác gạch đầu dòng 'tăng chất xơ' nếu đọc như cách tăng đa dạng). Tiêu đề 'lập trình lại' cường điệu nên đổi.",
+      "evidence": "https://doi.org/10.1038/nature12820 (PMC3957428) — 'Each diet was consumed ad libitum for five consecutive days by six male and four female American volunteers' ; changes 'occurred a single day after the diet reached the distal gut microbiota' ; 'reverted to their original structure 2 days after the animal-based diet ended' ; 'the animal-based diet had a greater impact on the gut microbiota'. https://doi.org/10.1016/j.cell.2021.06.019 (PMC9020749) — 'randomized, prospective study (n = 18/arm)', '10-week dietary intervention' ; 'The high-fiber diet increased ... CAZymes despite stable microbial community diversity' ; 'the high-fermented-food diet steadily increased microbiota diversity and decreased inflammatory markers'."
+    }
+  ],
+  "enEdits": [
+    {
+      "claimId": "C-1/C-2/C-3/C-4",
+      "severity": "S1",
+      "find": "- Approximately **500 million neurons** are located in the enteric nervous system.\n- About **95% of the body's serotonin** is produced in the digestive tract, with only about 5% created in the brain.\n- The *vagus nerve* connects the brain and the gut, with the majority of signals transmitted **from the gut to the brain**.",
+      "replace": "- The commonly cited estimate is **400–600 million** neurons in the enteric nervous system. The first comprehensive count, published in 2022 (Michel et al.), gave a much lower figure — **about 168 million** — comparable to the number of neurons in the spinal cord. For humans, this figure was calculated from neuronal densities measured in tissue samples multiplied by intestinal dimensions taken from the literature, not by counting every cell. The exact number is still being established.\n- About **90–95% of the body's serotonin** is found in the digestive tract, mostly released by enterochromaffin cells in the gut lining. This serotonin **does not cross the blood–brain barrier** and is not the serotonin the brain uses: it helps regulate gut motility and secretion, along with some aspects of energy metabolism. The gut does influence the brain, but through the vagus nerve, the immune system and endocrine signals — not by sending serotonin up to the brain.\n- The *vagus nerve* connects the brain and the gut and carries signals in **both directions**.",
+      "why": "Bản en chưa từng nhận đính chính S1 ngày 2026-09-11: vẫn nói '95% serotonin được sản xuất ở ruột, chỉ 5% ở não' — đúng mô hình sai mà corrections.md đã xếp S1 — và vẫn mang con số 500 triệu nơron không nguồn. Đưa về cùng claim với bản vi sau khi sửa (C-1, C-3).",
+      "evidence": "https://doi.org/10.1111/nmo.14440 (abstract qua Europe PMC, PMID 35929768) ; https://doi.org/10.1155/2020/8024171 (PMC7495222) ; https://doi.org/10.3390/ijms26031160 (PMC11818468) — 'Approximately 90% of the body's serotonin is synthesized in the gut, predominantly by enterochromaffin (EC) cells' ; https://doi.org/10.3390/ijms22094837 (PMC8124334) — 'Almost 95% of serotonin is synthetized by the EC' ; 'Serotonin cannot cross the blood-brain barrier' ; https://www.frontiersin.org/journals/psychiatry/articles/10.3389/fpsyt.2018.00044/full (doi 10.3389/fpsyt.2018.00044) ; https://doi.org/10.1038/nrn3346 (abstract qua Europe PMC, PMID 22968153)"
+    },
+    {
+      "claimId": "C-5",
+      "severity": "S3",
+      "find": "The gut can control itself through:\n\n- Peristalsis.\n- Secretion of digestive [[enzyme|enzymes]].\n- Nutrient absorption.\n\nall without constant commands from the brain.",
+      "replace": "The enteric nervous system contains complete reflex circuits of its own, from sensory neurons to motor neurons. As a result, in the small and large intestine it can control:\n\n- Peristalsis.\n- Fluid movement across the intestinal lining.\n- Blood flow in the intestinal lining.\n\nall without constant commands from the brain. This degree of autonomy varies along the digestive tract: in some regions, the brain and spinal cord play a larger role.",
+      "why": "Tương ứng edit C-5 bản vi.",
+      "evidence": "https://www.frontiersin.org/journals/psychiatry/articles/10.3389/fpsyt.2018.00044/full (doi 10.3389/fpsyt.2018.00044) ; https://doi.org/10.1038/nrgastro.2012.32 (abstract qua Europe PMC, PMID 22392290)"
+    },
+    {
+      "claimId": "C-6",
+      "severity": "S3",
+      "find": "### Close connection to emotions\n\nThe brain and gut communicate constantly via the **Gut-Brain Axis**.\n\nThis is why:\n\n- Stress can cause stomach pain or diarrhea.\n- Intestinal issues can affect mood and sleep.",
+      "replace": "### Two-way communication with the brain\n\nThe brain and gut communicate constantly in both directions via the **Gut-Brain Axis** — which includes the vagus nerve, sympathetic nerve pathways, and endocrine and immune signals (Breit et al., 2018).\n\nOne clinical example is irritable bowel syndrome (IBS), which the US National Institute of Diabetes and Digestive and Kidney Diseases (NIDDK) classes as a disorder of brain–gut interaction. The cause of IBS is not known. Some problems are more common in people with IBS — stressful or difficult early-life events, depression, anxiety — and experts think they may play a role in causing it; this is an association, not an established mechanism.",
+      "why": "Tương ứng edit C-6 bản vi.",
+      "evidence": "https://www.frontiersin.org/journals/psychiatry/articles/10.3389/fpsyt.2018.00044/full (doi 10.3389/fpsyt.2018.00044) ; https://www.niddk.nih.gov/health-information/digestive-diseases/irritable-bowel-syndrome/symptoms-causes"
+    },
+    {
+      "claimId": "C-7",
+      "severity": "S2",
+      "find": "The gut contains trillions of microorganisms that form the **Gut Microbiome**.\n\nThese microorganisms produce various chemicals that play a role in neural communication and influence:\n\n- Appetite.\n- Metabolism.\n- Mood.\n- Overall health.",
+      "replace": "The gut contains tens of trillions of microorganisms that form the **Gut Microbiome**.\n\nThese microorganisms produce many neuroactive chemicals. But the strength of evidence for each effect varies widely, and it is important to keep them apart:\n\n- **In rodents** (germ-free mice, antibiotic-treated mice): altering the microbiome produces substantial changes in brain physiology and behaviour. Several potential molecular mechanisms have been identified in these animal studies.\n- **In humans**: the evidence is still mostly **correlational**, from observational studies, and according to a 2023 methodological review these associations are \"mostly variable and inconsistent across observational studies\". Moving from correlation to causation along the microbiota–gut–brain axis remains \"a great challenge\" that has not yet been overcome (Ou et al., 2023).\n\nIn other words: the influence of the microbiome on mood, appetite and metabolism in humans is **an open line of research**, not an established mechanism.",
+      "why": "Bản en chưa nhận đính chính C-7 (S2) ngày 2026-09-17: vẫn nêu ảnh hưởng lên thèm ăn, trao đổi chất, tâm trạng như sự thật trên người. Đưa về cùng claim với bản vi (kèm sửa 'Phần lớn cơ chế' → 'một số cơ chế tiềm năng'). 'Trillions' đổi thành 'tens of trillions' cho khớp bản vi và Sender 2016 (3,8×10¹³ vi khuẩn).",
+      "evidence": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10917620/ (doi 10.20517/mrr.2023.33) ; https://doi.org/10.1371/journal.pbio.1002533 (PMC4991899) — 'We estimate the total number of bacteria in the 70 kg \"reference man\" to be 3.8·10^13' ; https://doi.org/10.3390/nu13062099 (PMC8234057)"
+    },
+    {
+      "claimId": "C-8/C-12",
+      "severity": "S2",
+      "find": "## How do gut bacteria influence appetite?\n\n### Impact on neural signaling\n\nGut bacteria can produce chemicals that influence vagus nerve activity, thereby affecting the centers that control feelings of hunger and satiety.\n\n- **Ghrelin** (the hunger hormone).\n- **Leptin** (the satiety hormone).\n- **PYY** and **GLP-1** (hormones that help reduce appetite).",
+      "replace": "## Gut bacteria and appetite: how far does the evidence go?\n\n### Signalling from the gut to the brain\n\nThe vagus nerve is one of the communication channels between the brain and the gut, and it is heavily weighted in one direction: **80–90% of its fibres are afferent**, running from the gut to the brain; only 10–20% run the other way (Breit et al., 2018). The afferent fibres give the brain a rapid account of the digestible food present in the gut; the rate of nutrient absorption, storage and mobilisation is set by the vagus nerve's efferent fibres together with hormonal mechanisms. In that sense, the vagus nerve is mainly a line that reports from the gut to the brain.\n\n### What about a \"bacteria → vagus → hunger/satiety centres\" chain?\n\nThis specific chain **has not been demonstrated in humans**. Evidence that the microbiome communicates with the brain via the vagus nerve, and thereby affects behaviour, comes from **animal studies** (Breit et al., 2018); in humans, causation along the microbiota–gut–brain axis has not been established (Ou et al., 2023).",
+      "why": "Bản en chưa nhận đính chính C-8 (S2) ngày 2026-09-17: vẫn nêu chuỗi vi khuẩn → phế vị → trung tâm đói/no như đã chứng minh, kèm danh sách hormone treo không nguồn. Đưa về cùng claim với bản vi sau khi sửa (C-8, C-12, C-13).",
+      "evidence": "https://www.frontiersin.org/journals/psychiatry/articles/10.3389/fpsyt.2018.00044/full (doi 10.3389/fpsyt.2018.00044) ; https://pmc.ncbi.nlm.nih.gov/articles/PMC10917620/ (doi 10.20517/mrr.2023.33)"
+    },
+    {
+      "claimId": "C-9",
+      "severity": "S3",
+      "find": "## Can the gut microbiome be \"reprogrammed\"?\n\nIt is possible to change the composition of the microbiome through diet.\n\nBeneficial habits include:\n\n- Eating plenty of vegetables and fruits.\n- Increasing fiber intake.\n- Consuming fermented foods such as yogurt and kimchi.\n- Limiting sugary drinks and ultra-processed foods.\n\nThese changes can influence appetite and digestive health over time.",
+      "replace": "## Can diet change the gut microbiome?\n\nYes, and it can happen very quickly. In a trial of 10 volunteers, five days on a nearly exclusively animal-based diet changed the structure of the microbiome just one day after the food reached the gut, and the microbiome returned to its original structure two days after the diet ended; an exclusively plant-based diet had a smaller effect (David et al., 2014).\n\nBut \"change\" does not automatically mean \"benefit\", and different diets produce different results. In a small randomised trial in healthy adults (18 people per group, 10-week intervention), a diet high in fermented foods steadily increased microbiome diversity and lowered many inflammatory markers, whereas a high-fibre diet did not change diversity (Wastyk et al., 2021).\n\nA change in microbiome composition also does not mean a change in mood or appetite in humans — as noted above, that remains an open line of research.",
+      "why": "Tương ứng edit C-9 bản vi.",
+      "evidence": "https://doi.org/10.1038/nature12820 (PMC3957428) ; https://doi.org/10.1016/j.cell.2021.06.019 (PMC9020749)"
+    },
+    {
+      "claimId": "C-10",
+      "severity": "S2",
+      "find": "It is this connection that makes gut health significantly influential on human digestion, appetite, mood, and overall health.",
+      "replace": "What is well established is that the gut has its own nervous system and communicates with the brain in both directions. What is not yet established is the rest: the role of gut bacteria in human mood and appetite is still being studied — mechanistic evidence comes mainly from animals, while in humans there are so far only correlations that are inconsistent across studies (Ou et al., 2023).",
+      "why": "Bản en chưa nhận đính chính C-10 (S2) ngày 2026-09-17: vẫn khẳng định nhân quả trên người ('significantly influential on ... mood'). Đưa về cùng claim với bản vi.",
+      "evidence": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10917620/ (doi 10.20517/mrr.2023.33)"
+    }
+  ],
+  "summaryEdits": [
+    {
+      "claimId": "C-5",
+      "severity": "S3",
+      "find": "có khả năng hoạt động độc lập với não bộ.",
+      "replace": "có thể tự điều khiển nhiều hoạt động của ruột mà không cần não bộ ra lệnh, dù mức độ tự chủ này khác nhau dọc ống tiêu hóa.",
+      "why": "Furness 2012: mức ENS hay CNS điều khiển tiêu hóa 'differs considerably along the digestive tract'; Breit 2018 giới hạn 'quite independent' ở ruột non và ruột già. 'Hoạt động độc lập' không kèm giới hạn là nói quá nguồn chặt hơn.",
+      "evidence": "https://doi.org/10.1038/nrgastro.2012.32 (abstract qua Europe PMC, PMID 22392290) ; https://www.frontiersin.org/journals/psychiatry/articles/10.3389/fpsyt.2018.00044/full (doi 10.3389/fpsyt.2018.00044)"
+    }
+  ],
+  "summaryEnEdits": [
+    {
+      "claimId": "C-5",
+      "severity": "S3",
+      "find": "which possesses the capacity to function independently of the central nervous system.",
+      "replace": "which can control many gut functions without commands from the brain, although the degree of this autonomy varies along the digestive tract.",
+      "why": "Tương ứng summaryEdits bản vi.",
+      "evidence": "https://doi.org/10.1038/nrgastro.2012.32 (abstract qua Europe PMC, PMID 22392290) ; https://www.frontiersin.org/journals/psychiatry/articles/10.3389/fpsyt.2018.00044/full (doi 10.3389/fpsyt.2018.00044)"
+    }
+  ],
+  "addSources": [
+    {
+      "title": "How big is the little brain in the gut? Neuronal numbers in the enteric nervous system of mice, Guinea pig, and human",
+      "url": "https://onlinelibrary.wiley.com/doi/10.1111/nmo.14440",
+      "doi": "10.1111/nmo.14440",
+      "publisher": "Neurogastroenterology & Motility",
+      "year": 2022,
+      "tier": 1,
+      "covers": "C-1 — ~168 triệu nơron ENS ở người, tương đương tủy sống; số liệu người tính từ mật độ × kích thước ruột lấy từ tài liệu"
+    },
+    {
+      "title": "The Enteric Nervous System and Its Emerging Role as a Therapeutic Target",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7495222/",
+      "doi": "10.1155/2020/8024171",
+      "publisher": "Gastroenterology Research and Practice",
+      "year": 2020,
+      "tier": 1,
+      "covers": "C-1 — ước lượng thường trích 400–600 triệu nơron ENS"
+    },
+    {
+      "title": "Serotonin—Its Synthesis and Roles in the Healthy and the Critically Ill",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8124334/",
+      "doi": "10.3390/ijms22094837",
+      "publisher": "International Journal of Molecular Sciences",
+      "year": 2021,
+      "tier": 1,
+      "covers": "C-2/C-3 — gần 95% serotonin do tế bào ưa crôm ruột tổng hợp; serotonin không qua hàng rào máu–não, hai kho trung ương/ngoại vi tách biệt; vai trò với vận động, bài tiết ruột và chuyển hóa năng lượng"
+    },
+    {
+      "title": "Interaction of the Vagus Nerve and Serotonin in the Gut–Brain Axis",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11818468/",
+      "doi": "10.3390/ijms26031160",
+      "publisher": "International Journal of Molecular Sciences",
+      "year": 2025,
+      "tier": 1,
+      "covers": "C-2 — khoảng 90% serotonin cơ thể tổng hợp ở ruột, chủ yếu bởi tế bào ưa crôm (căn cứ của đính chính S1 ngày 2026-09-11)"
+    },
+    {
+      "title": "Regulation of Neurotransmitters by the Gut Microbiota and Effects on Cognition in Neurological Disorders",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8234057/",
+      "doi": "10.3390/nu13062099",
+      "publisher": "Nutrients",
+      "year": 2021,
+      "tier": 1,
+      "covers": "C-3/C-7 — serotonin không qua hàng rào máu–não, não tự tổng hợp từ tiền chất; vi khuẩn ruột tạo chất chuyển hóa có hoạt tính thần kinh"
+    },
+    {
+      "title": "The enteric nervous system and neurogastroenterology",
+      "url": "https://doi.org/10.1038/nrgastro.2012.32",
+      "doi": "10.1038/nrgastro.2012.32",
+      "publisher": "Nature Reviews Gastroenterology & Hepatology",
+      "year": 2012,
+      "tier": 1,
+      "covers": "C-5 — mức ENS/CNS điều khiển tiêu hóa khác nhau đáng kể dọc ống tiêu hóa"
+    },
+    {
+      "title": "Symptoms & Causes of Irritable Bowel Syndrome",
+      "url": "https://www.niddk.nih.gov/health-information/digestive-diseases/irritable-bowel-syndrome/symptoms-causes",
+      "doi": null,
+      "publisher": "National Institute of Diabetes and Digestive and Kidney Diseases (NIDDK)",
+      "year": 2017,
+      "tier": 2,
+      "covers": "C-6 — IBS là rối loạn tương tác não–ruột; nguyên nhân chưa rõ; căng thẳng đầu đời, trầm cảm, lo âu gặp nhiều hơn và 'may play a role'"
+    },
+    {
+      "title": "Revised Estimates for the Number of Human and Bacteria Cells in the Body",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4991899/",
+      "doi": "10.1371/journal.pbio.1002533",
+      "publisher": "PLOS Biology",
+      "year": 2016,
+      "tier": 1,
+      "covers": "C-11b — ~3,8×10¹³ vi khuẩn trong cơ thể: 'hàng chục nghìn tỉ'"
+    },
+    {
+      "title": "Diet rapidly and reproducibly alters the human gut microbiome",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3957428/",
+      "doi": "10.1038/nature12820",
+      "publisher": "Nature",
+      "year": 2014,
+      "tier": 1,
+      "covers": "C-9 — 5 ngày ăn chế độ động vật đổi cấu trúc hệ vi sinh trong một ngày, trở lại sau 2 ngày; chế độ thực vật tác động ít hơn"
+    },
+    {
+      "title": "Gut-microbiota-targeted diets modulate human immune status",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9020749/",
+      "doi": "10.1016/j.cell.2021.06.019",
+      "publisher": "Cell",
+      "year": 2021,
+      "tier": 1,
+      "covers": "C-9 — thực phẩm lên men tăng đa dạng hệ vi sinh, giảm chỉ dấu viêm; chất xơ không đổi độ đa dạng (n=18/nhóm, 10 tuần)"
+    }
+  ],
+  "dropSources": [],
+  "retierSources": [],
+  "corrections": [
+    "EN (toàn bài): bản contentEn chưa nhận đính chính S1 ngày 2026-09-11 lẫn các sửa S2 ngày 2026-09-17 — vẫn nói \"About 95% of the body's serotonin is produced in the digestive tract, with only about 5% created in the brain\", \"500 million neurons\", chuỗi vi khuẩn → phế vị → trung tâm đói/no kèm danh sách hormone, và kết luận \"significantly influential on ... mood\" → đưa về cùng claim với bản vi → căn cứ: Hwang 2025 doi 10.3390/ijms26031160; Kanova & Kohout 2021 doi 10.3390/ijms22094837; Michel 2022 doi 10.1111/nmo.14440; Breit 2018 doi 10.3389/fpsyt.2018.00044; Ou 2023 doi 10.20517/mrr.2023.33.",
+    "C-1: \"Phép đếm trực tiếp toàn diện đầu tiên ... khoảng 168 triệu\" → \"Phép đếm toàn diện đầu tiên (Michel và cộng sự, 2022) ... số liệu người tính từ mật độ nơron × kích thước ruột lấy từ tài liệu\" → căn cứ: Michel 2022 doi 10.1111/nmo.14440; ước lượng 400–600 triệu: Fleming 2020 doi 10.1155/2020/8024171.",
+    "C-3: serotonin ruột \"điều hòa nhu động ruột, hấp thu và chuyển hóa\" → \"tham gia điều hòa nhu động và bài tiết của ruột, cùng một số chức năng chuyển hóa năng lượng\"; ý không qua hàng rào máu–não nay có nguồn → căn cứ: Kanova & Kohout 2021 doi 10.3390/ijms22094837; Chen 2021 doi 10.3390/nu13062099.",
+    "C-5: \"Ruột có thể tự kiểm soát: nhu động, tiết enzyme tiêu hóa, hấp thu dinh dưỡng\" (và Summary \"hoạt động độc lập với não bộ\") → \"ở ruột non và ruột già, ENS tự điều khiển nhu động, dòng dịch qua niêm mạc, lưu lượng máu niêm mạc; mức tự chủ khác nhau dọc ống tiêu hóa\" → căn cứ: Breit 2018 doi 10.3389/fpsyt.2018.00044; Furness 2012 doi 10.1038/nrgastro.2012.32.",
+    "C-6: \"Đó là lý do: căng thẳng có thể gây đau bụng hoặc tiêu chảy; các vấn đề đường ruột có thể ảnh hưởng tới tâm trạng và giấc ngủ\" → IBS là rối loạn tương tác não–ruột, nguyên nhân chưa rõ, căng thẳng đầu đời/trầm cảm/lo âu gặp nhiều hơn và có thể góp phần — là liên hệ, chưa phải cơ chế; bỏ ý \"giấc ngủ\" → căn cứ: NIDDK, Symptoms & Causes of Irritable Bowel Syndrome (2017).",
+    "C-7: \"Phần lớn cơ chế phân tử được phát hiện ở đây\" → \"Nhiều cơ chế phân tử tiềm năng được tìm ra từ các nghiên cứu động vật này\" → căn cứ: Ou 2023 doi 10.20517/mrr.2023.33 (\"several potential molecular mechanisms\").",
+    "C-8: \"Dây thần kinh phế vị là kênh liên lạc chính\" → \"một trong những kênh liên lạc giữa não và ruột\" → căn cứ: Breit 2018 doi 10.3389/fpsyt.2018.00044.",
+    "C-12: \"Các sợi hướng tâm ... góp phần định đoạt tốc độ hấp thu, dự trữ và huy động chất dinh dưỡng. Theo nghĩa đó, ruột chủ yếu là một cơ quan cảm giác\" → sợi hướng tâm báo tin; tốc độ hấp thu/dự trữ/huy động do sợi ly tâm cùng cơ chế nội tiết định đoạt; dây phế vị chủ yếu là đường báo tin lên → căn cứ: Breit 2018 doi 10.3389/fpsyt.2018.00044.",
+    "C-9: mục \"Có thể 'lập trình lại' hệ vi sinh đường ruột không?\" (danh sách thói quen có lợi không nguồn; \"có thể ảnh hưởng đến cảm giác thèm ăn\") → \"Ăn uống có thay đổi được hệ vi sinh đường ruột không?\": thay đổi nhanh và cũng hồi nhanh (David 2014); lên men tăng đa dạng, chất xơ không (Wastyk 2021); đổi thành phần chưa có nghĩa đổi tâm trạng/thèm ăn ở người → căn cứ: doi 10.1038/nature12820; doi 10.1016/j.cell.2021.06.019."
+  ],
+  "openQuestions": [
+    "Mục glossary: edit C-5 gỡ [[enzyme]] khỏi cả vi và en; sau khi áp cần chạy `npm run glossary:usedin` (chạy khô rồi --write) để trường usedIn của mục 'enzyme' không còn trỏ bài này. Không tự chạy trong lượt này.",
+    "Bản en thiếu mục thứ tư của 'Further reading' (link /articles/dang-sau-tieng-bung-keu-dieu-gi-xay-ra-khi-chung-ta-doi) so với bản vi. Không phải claim nên không đưa vào enEdits; seo-expert/translation bổ sung.",
+    "Tiêu đề 'Ruột, hệ vi sinh vật và quyền lực của bộ não thứ hai' / 'the Power of the Second Brain' và SEO_DESC không mang mệnh đề sai, nhưng chữ 'quyền lực' hứa nhiều hơn thân bài (nay nói phần lớn ảnh hưởng lên tâm trạng/thèm ăn ở người chưa xác lập). Schema fixes không có trường cho title/seoDescription — đề nghị seo-expert cân nhắc, không chặn gate.",
+    "Sau khi áp: đặt reviewedBy = tài khoản tổ chức 'Ban biên tập Sciencepedia', reviewedAt = ngày áp, lastVerifiedAt cập nhật, ghi Revision cùng transaction (content-rules, 'Sửa bài đã publish là đính chính'). Bản dump hiện reviewedBy=null.",
+    "Chồng lấn nội dung với 'he-vi-sinh-duong-ruot-...' và 'nhin-an-gian-doan-...' (đã nêu 2026-09-17) vẫn thuộc thẩm quyền knowledge-architect; không ảnh hưởng gate accuracy."
+  ]
+}

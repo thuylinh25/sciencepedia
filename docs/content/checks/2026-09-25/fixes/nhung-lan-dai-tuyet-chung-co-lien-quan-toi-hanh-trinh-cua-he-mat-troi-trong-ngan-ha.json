@@ -1,0 +1,249 @@
+{
+  "slug": "nhung-lan-dai-tuyet-chung-co-lien-quan-toi-hanh-trinh-cua-he-mat-troi-trong-ngan-ha",
+  "edits": [
+    {
+      "claimId": "C-1",
+      "severity": "S3",
+      "find": "> **225–250 triệu năm**",
+      "replace": "> **200–265 triệu năm**\n\nCon số này được suy ra từ khoảng cách của Mặt Trời tới tâm Ngân Hà và tốc độ quay giả định, nên phụ thuộc vào cả hai: với tốc độ quay hay được dùng là 220 km/s, chu kỳ vào khoảng 235 triệu năm.",
+      "why": "Khoảng 225–250 hẹp hơn điều nguồn nói và không có nguồn. Bailer-Jones 2009 (mục 6): với R0 = 8,2 kpc và 220 km/s thì chu kỳ ~235 Myr; tốc độ quay ước tính 195–255 km/s nên chu kỳ có thể từ 200–265 Myr. Ghi rõ đây là giá trị suy ra, phụ thuộc giả định.",
+      "evidence": "https://arxiv.org/abs/0905.3919 (doi 10.1017/S147355040999005X) — mục 6: \"this corresponds to a rotation period around the Galactic centre of 235 Myr ... the period could be anything from 200–265 Myr (assuming R0 = 8.2 kpc)\""
+    },
+    {
+      "claimId": "C-2",
+      "severity": "S3",
+      "find": "Các ước tính hiện nay cho thấy chu kỳ dao động này vào khoảng:",
+      "replace": "Theo mô hình thế hấp dẫn của đĩa thiên hà mà Bahcall & Bahcall (1985) xây dựng, chu kỳ dao động này vào khoảng:",
+      "why": "\"Các ước tính hiện nay\" không có nguồn và là cụm ràng buộc thời gian không mốc. Quy kết về mô hình gốc, như Bailer-Jones 2009 trình bày.",
+      "evidence": "https://arxiv.org/abs/0905.3919 (doi 10.1017/S147355040999005X) — mục 6.1: \"Bahcall & Bahcall (1985) derive a quasi-harmonic motion with a period ranging from 52–74 Myr\""
+    },
+    {
+      "claimId": "C-2",
+      "severity": "S3",
+      "find": "> **50–70 triệu năm cho một chu kỳ hoàn chỉnh**",
+      "replace": "> **52–74 triệu năm cho một chu kỳ hoàn chỉnh**",
+      "why": "Biên 50–70 không khớp nguồn; nguồn cho 52–74 Myr và nói rõ biên phản ánh bất định về vật chất tối và trạng thái hiện tại của Mặt Trời; Shuter & Klatt (qua Bailer-Jones) cho thấy chu kỳ đứng biến thiên theo chuyển động xuyên tâm — nên \"đừng kỳ vọng chu kỳ cố định\". Chi tiết này cần cho mục \"Chu kỳ không ổn định\" phía sau.",
+      "evidence": "https://arxiv.org/abs/0905.3919 (doi 10.1017/S147355040999005X) — mục 6.1: \"the range reflecting uncertainties in both the distribution of dark matter ... as well as the current vertical position and velocity of the Sun\"; mục 6: \"we should not expect those events to show a constant period\""
+    },
+    {
+      "claimId": "C-2",
+      "severity": "S3",
+      "find": "> **25–35 triệu năm giữa hai lần cắt qua mặt phẳng thiên hà**",
+      "replace": "> **26–37 triệu năm giữa hai lần cắt qua mặt phẳng thiên hà** (một nửa chu kỳ trên)\n\nKhoảng rộng này phản ánh việc chưa biết chắc lượng vật chất tối trong đĩa, cũng như vị trí và vận tốc thẳng đứng hiện tại của Hệ Mặt Trời. Chu kỳ cũng không cố định: nó thay đổi khi khoảng cách của Hệ Mặt Trời tới tâm Ngân Hà thay đổi.",
+      "why": "Khoảng cách giữa hai lần băng qua mặt phẳng bằng nửa chu kỳ dao động đứng (Bailer-Jones: \"twice the period of Galactic plane crossings\"); nửa của 52–74 là 26–37. Rampino & Haggerty 1996 dùng nửa chu kỳ ~30 ± 3 Myr, nằm trong khoảng này.",
+      "evidence": "https://arxiv.org/abs/0905.3919 (doi 10.1017/S147355040999005X) — mục 6.1 \"close to the period of the solar vertical oscillations ... and thus twice the period of Galactic plane crossings\"; https://doi.org/10.1007/BF00117548 (tóm tắt: \"half-cycle ~ 30±3 Myr\")"
+    },
+    {
+      "claimId": "C-4",
+      "severity": "S3",
+      "find": "Một ý tưởng nổi tiếng cho rằng mỗi lần Hệ Mặt Trời đi qua vùng đậm đặc vật chất của đĩa thiên hà, Trái Đất sẽ đối mặt với nhiều rủi ro hơn bình thường.",
+      "replace": "Một ý tưởng được đề xuất từ những năm 1980 (Rampino & Stothers, 1984) cho rằng mỗi lần Hệ Mặt Trời đi qua vùng đậm đặc vật chất của đĩa thiên hà, Trái Đất có thể đối mặt với nhiều rủi ro hơn bình thường.",
+      "why": "\"Nổi tiếng\" ngụ ý được chấp nhận rộng, còn \"sẽ\" biến một giả thuyết thành khẳng định; thay bằng quy kết có nguồn. Rampino & Stothers 1984 (s1) đề xuất chu kỳ tuyệt chủng 30 ± 1 Myr gắn với dao động qua mặt phẳng thiên hà và va chạm với các đám mây liên sao.",
+      "evidence": "https://www.nature.com/articles/308709a0 (doi 10.1038/308709a0) — tóm tắt: \"dominant cyclicity in major marine mass extinctions ... is 30 ± 1 Myr ... strongly correlated with the time needed for the Solar System to oscillate vertically about the plane of the Galaxy\""
+    },
+    {
+      "claimId": "C-4",
+      "severity": "S3",
+      "find": "> **Giả thuyết Shiva**",
+      "replace": "> **Giả thuyết Shiva**\n\n— tên do Rampino và Haggerty đặt trong một bài báo năm 1996.",
+      "why": "Tên gọi cần quy kết tác giả và năm. Rampino & Haggerty 1996 là nguồn đặt tên và mô tả giả thuyết.",
+      "evidence": "https://link.springer.com/article/10.1007/BF00117548 (doi 10.1007/BF00117548) — tóm tắt: \"The 'Shiva Hypothesis', in which recurrent, cyclical mass extinctions of life on Earth result from impacts of comets or asteroids\""
+    },
+    {
+      "claimId": "C-4",
+      "severity": "S2",
+      "find": "> Đây vẫn là một giả thuyết đang tranh luận và chưa được xác nhận.",
+      "replace": "> Đây vẫn là một giả thuyết đang tranh luận và chưa được xác nhận.\n\nTổng quan của Bailer-Jones (2009) kết luận có rất ít bằng chứng cho các chu kỳ thật sự trong đa dạng sinh học, hố va chạm hay khí hậu ở thang hàng chục tới hàng trăm triệu năm, và cho rằng việc băng qua mặt phẳng hay nhánh xoắn ốc của Ngân Hà nhiều khả năng ít tác động lên sinh quyển và khí hậu vượt mức nền. Ở phía bên kia, Melott và Bambach (2013) vẫn tìm thấy một tín hiệu khoảng 27 triệu năm trong tỉ lệ tuyệt chủng sinh vật biển sau khi cập nhật thang thời gian địa chất — nhưng chính họ viết rằng tín hiệu ấy gợi ý chứ không đòi hỏi một vai trò của thiên văn.",
+      "why": "Bài chỉ nói \"đang tranh luận\" mà không cho người đọc biết cán cân: tổng quan thống kê chính (Bailer-Jones 2009) nghiêng hẳn về phía không có bằng chứng, còn tín hiệu 27 Myr (Melott & Bambach 2013) là bất đồng thật nhưng không mang theo cơ chế thiên văn. Trình bày cả hai theo đúng tỉ trọng, giữ nguyên mức dè dặt \"suggest\", \"suggest but do not require\".",
+      "evidence": "https://arxiv.org/abs/0905.3919 (doi 10.1017/S147355040999005X) — tóm tắt: \"I conclude that there is little evidence for intrinsic periodicities in biodiversity, impact cratering or climate on timescales of tens to hundreds of Myr ... suggest that Galactic midplane and spiral arm crossings have little impact on biological or climate variation above background level\"; https://arxiv.org/abs/1307.1884 (doi 10.1088/0004-637X/773/1/6) — \"we re-examine our past finding of a 27 Myr periodicity ... The highly regular period ... suggest but do not require an astronomical role in terrestrial extinction events\""
+    },
+    {
+      "claimId": "C-5",
+      "severity": "S3",
+      "find": "Nơi đây được cho là chứa hàng tỷ thiên thể băng giá đang quay quanh Mặt Trời ở khoảng cách cực lớn.",
+      "replace": "Theo NASA, nơi đây có thể chứa hàng trăm tỷ, thậm chí hàng nghìn tỷ thiên thể băng giá, với rìa trong được cho là cách Mặt Trời khoảng 2.000–5.000 lần khoảng cách Trái Đất–Mặt Trời và rìa ngoài ở đâu đó trong khoảng 10.000–100.000 lần.",
+      "why": "\"Hàng tỷ\" không có nguồn và thấp hơn con số NASA nêu. NASA dùng các lớp rào \"may be\", \"is thought to be\"; giữ nguyên các lớp rào ấy (quy tắc 3 article-generator).",
+      "evidence": "https://science.nasa.gov/solar-system/oort-cloud/facts/ — \"There may be hundreds of billions, even trillions, of icy bodies in the Oort Cloud\"; \"The inner edge of the Oort Cloud, however, is thought to be located between 2,000 and 5,000 AU from the Sun, with the outer edge being located somewhere between 10,000 and 100,000 AU\""
+    },
+    {
+      "claimId": "C-6",
+      "severity": "S3",
+      "find": "Một số sao chổi bị \"đá văng\" vào vùng trong của Hệ Mặt Trời và trở thành các vật thể có khả năng va chạm với Trái Đất.",
+      "replace": "Một số sao chổi bị \"đá văng\" vào vùng trong của Hệ Mặt Trời và trở thành các vật thể có khả năng va chạm với Trái Đất.\n\nTuy vậy, chưa cơ chế nào được đề xuất giải thích được cả thời điểm lẫn cường độ của một chu kỳ như vậy: các đám mây phân tử phân bố quá rộng quanh mặt phẳng thiên hà để tạo ra nhịp đều đặn, còn vật chất thông thường trong đĩa không tập trung đủ sát mặt phẳng (Randall & Reece, 2014). Để cứu kịch bản này, Randall và Reece phải giả định thêm một đĩa vật chất tối mỏng — một giả thuyết riêng mà chính họ nói còn chờ quan sát kiểm chứng.",
+      "why": "Bỏ vế đối trọng (quy tắc 15): nguồn chính bàn cơ chế nhiễu loạn Đám mây Oort cũng nói cơ chế thông thường không đủ, và chỉ ra đám mây phân tử — đúng cơ chế Rampino & Stothers đề xuất — phân bố quá rộng. Không nêu điều này thì người đọc hiểu cơ chế đã đủ.",
+      "evidence": "https://arxiv.org/abs/1403.0576 (doi 10.1103/PhysRevLett.112.161301) — \"to date no suggested mechanism for the enhanced density is successful in explaining the timing and magnitude of the periodicity. Molecular clouds have been suggested but they have been shown to be spread too far from the plane ... conventional baryonic matter ... also does not have a large enough vertical density gradient\"; \"a particular model of dark matter that will be probed in the near future\""
+    },
+    {
+      "claimId": "C-8",
+      "severity": "S2",
+      "find": "Ý tưởng này hấp dẫn vì:\n\n> Một vụ va chạm thiên thạch lớn đã thực sự gây ra cuộc đại tuyệt chủng K-Pg cách đây khoảng 66 triệu năm, sự kiện kết thúc thời đại khủng long.",
+      "replace": "Dù vậy, ý tưởng này vẫn hấp dẫn vì:\n\n> Một vụ va chạm lớn từ không gian đã thực sự gây ra cuộc đại tuyệt chủng K-Pg cách đây khoảng 66 triệu năm, sự kiện kết thúc thời đại khủng long.\n\nNhưng cần tách bạch: vật thể va chạm ở Chicxulub được xác định là một tiểu hành tinh kiểu carbonaceous hình thành bên ngoài quỹ đạo Sao Mộc, không phải sao chổi từ Đám mây Oort (Fischer-Gödde và cộng sự, 2024). Vì vậy K-Pg cho thấy một va chạm có thể gây đại tuyệt chủng, nhưng không phải bằng chứng cho kịch bản mưa sao chổi do Ngân Hà kích hoạt.",
+      "why": "Đặt K-Pg ngay sau kịch bản mưa sao chổi Oort để lại mô hình nhận thức sai: vật thể Chicxulub là tiểu hành tinh. Giữ khẳng định va chạm gây tuyệt chủng (Schulte 2010: \"the Chicxulub impact triggered the mass extinction\"), sửa \"thiên thạch\" cho khỏi lẫn, thêm nguồn xác định bản chất vật thể.",
+      "evidence": "https://doi.org/10.1126/science.adk4868 (Europe PMC, tóm tắt) — \"An impact at Chicxulub, Mexico, occurred 66 million years ago ... Our data indicate that the Chicxulub impactor was a carbonaceous-type asteroid, which had formed beyond the orbit of Jupiter\"; https://doi.org/10.1126/science.1177265 — \"lead us to conclude that the Chicxulub impact triggered the mass extinction\""
+    },
+    {
+      "claimId": "C-9",
+      "severity": "S3",
+      "find": "Tuy nhiên hiện nay chưa có bằng chứng địa chất mạnh mẽ cho thấy đây từng là nguyên nhân chính của các kỳ tuyệt chủng lớn.",
+      "replace": "Kịch bản làm lạnh toàn cầu khi Hệ Mặt Trời gặp một đám mây liên sao đã được đề xuất trong tài liệu khoa học, nhưng tới nay nó vẫn chỉ là một cơ chế khả dĩ trên lý thuyết; chưa có bằng chứng cho thấy nó từng là nguyên nhân chính của một kỳ đại tuyệt chủng nào (Bailer-Jones, 2009).",
+      "why": "Câu gốc không có nguồn và có \"hiện nay\" không mốc. Bailer-Jones liệt kê cơ chế bụi đám mây liên sao là \"could produce global cooling\" (tức mới là khả năng), và kết luận chung rằng việc băng qua mặt phẳng/nhánh xoắn ốc ít tác động vượt mức nền. Gắn nguồn, giữ mức dè dặt.",
+      "evidence": "https://arxiv.org/abs/0905.3919 (doi 10.1017/S147355040999005X) — mục 5.6: \"Encounters of the solar system with interstellar clouds could produce global cooling as dust from the cloud lowers the solar irradiation\"; tóm tắt: \"Galactic midplane and spiral arm crossings have little impact on biological or climate variation above background level\""
+    },
+    {
+      "claimId": "C-10",
+      "severity": "S2",
+      "find": "Ngày nay nhiều nhà nghiên cứu cho rằng nếu Ngân Hà ảnh hưởng đến sự sống trên Trái Đất thì nguyên nhân có thể liên quan nhiều hơn tới:",
+      "replace": "Một hướng khác, được một số tác giả đề xuất, cho rằng nếu Ngân Hà có ảnh hưởng tới sự sống và khí hậu trên Trái Đất thì nguyên nhân có thể nằm ở việc đi qua:",
+      "why": "\"Ngày nay nhiều nhà nghiên cứu\" mô tả sai hiện trạng: kịch bản nhánh xoắn ốc là đề xuất của một số tác giả và đã bị kiểm định lại bác bỏ (Overholt et al. 2009). Bỏ khẳng định về đồng thuận không có nguồn.",
+      "evidence": "https://arxiv.org/abs/0906.2777 (doi 10.1088/0004-637X/705/2/L101) — \"We re-examine past suggestions of a close link between terrestrial climate change and the Sun's transit of spiral arms ... not only do the claimed correlations disappear, but also we find that they cannot be resurrected for any reasonable pattern speed\"; https://arxiv.org/abs/0905.3919 (doi 10.1017/S147355040999005X) — mục 6.2 \"Several studies have implicated passages of the Sun through spiral arms\""
+    },
+    {
+      "claimId": "C-16",
+      "severity": "S4",
+      "find": "- Nguồn phát tia vũ trụ năng lượng cao.",
+      "replace": "- Tàn dư siêu tân tinh, nơi được cho là sinh ra phần lớn tia vũ trụ của Ngân Hà.",
+      "why": "Sao khối lượng lớn không \"kết thúc bằng\" một nguồn tia vũ trụ; nguồn nói phần lớn tia vũ trụ thiên hà được cho là bắt nguồn từ sóng xung kích trong tàn dư siêu tân tinh. Giữ lớp rào \"is believed\".",
+      "evidence": "https://arxiv.org/abs/0905.3919 (doi 10.1017/S147355040999005X) — mục 5.2: \"a large portion of which is believed to originate in shock fronts in supernova remnants\"; \"The progenitors of core-collapse supernovae are short-lived, massive stars in star forming regions\""
+    },
+    {
+      "claimId": "C-10",
+      "severity": "S2",
+      "find": "Tuy nhiên việc xác định chính xác thời điểm Hệ Mặt Trời đi qua các nhánh này trong quá khứ vẫn rất khó.",
+      "replace": "Nhưng có mấy lý do để dè dặt. Mật độ sao bên trong nhánh xoắn ốc chỉ cao hơn bên ngoài khoảng 1,1 lần theo một ước tính (các ước tính khác cho 1,5–3 lần ở thiên hà khác), và sao khối lượng lớn cũng như siêu tân tinh vẫn xuất hiện cả ngoài nhánh. Cấu trúc xoắn ốc của chính Ngân Hà còn chưa rõ — hai hay bốn nhánh, quay nhanh cỡ nào — nên việc xác định thời điểm Hệ Mặt Trời đi qua các nhánh trong quá khứ rất khó (Bailer-Jones, 2009). Khi Overholt, Melott và Pohl (2009) đối chiếu lại các lần đi qua nhánh xoắn ốc với dữ liệu mới về cấu trúc Ngân Hà, các tương quan từng được công bố với biến đổi khí hậu trên Trái Đất biến mất, và không khôi phục được với bất kỳ tốc độ quay hợp lý nào của nhánh.",
+      "why": "Đoạn gốc chỉ nêu khó khăn về định thời mà bỏ kết quả phản bác trực tiếp (Overholt 2009) và giới hạn vật lý (mật độ trong nhánh chỉ cao hơn chút ít). Không có các vế này thì câu \"môi trường có thể nguy hiểm hơn\" đọc như một cơ chế đã được ủng hộ.",
+      "evidence": "https://arxiv.org/abs/0905.3919 (doi 10.1017/S147355040999005X) — mục 6.2: \"Torbett (1989) notes that the stellar density inside spiral arms is a factor of only about 1.1 higher ... Svensmark (2006) quotes values ... 1.5–1.8 and 1.5–3 for external galaxies\"; \"GMCs, star formation and supernovae also occur in the disk outside of spiral arms\"; \"there is still a debate over whether it has a four-arm or two-arm structure, and estimates of the pattern speed vary by a factor of three\"; https://arxiv.org/abs/0906.2777 — tóm tắt đã dẫn"
+    },
+    {
+      "claimId": "C-12",
+      "severity": "S3",
+      "find": "Sai số thời gian có thể lên tới hàng triệu năm.",
+      "replace": "Trong bộ dữ liệu mà Raup và Sepkoski dùng năm 1984, sai số định tuổi trung bình khoảng 6 triệu năm — gần một phần tư chu kỳ 26 triệu năm mà họ đề xuất; tuổi các hố va chạm cũng thường sai khoảng 5 triệu năm (Bailer-Jones, 2009). Với sai số cỡ đó, một chu kỳ thật có thể bị xoá nhoà, còn một chu kỳ giả thì có thể hiện ra từ cách chia các tầng địa chất.",
+      "why": "\"Hàng triệu năm\" không nguồn và khái quát cho mọi sự kiện. Thay bằng con số có nguồn, gắn đúng chủ thể (bộ dữ liệu 1984, hồ sơ hố va chạm — quy tắc 18). Câu sau tóm lại hai lập luận nguồn nêu: sai số xoá nhoà tín hiệu thật, và Stigler & Wagner chỉ ra chu kỳ ~26 Myr có thể là hệ quả độ dài tầng.",
+      "evidence": "https://arxiv.org/abs/0905.3919 (doi 10.1017/S147355040999005X) — mục 2.3.1: \"the uncertainty in the dating is at least 6 Myr, which is 23% of the 26 Myr period claimed by Raup & Sepkoski\"; \"(6 Myr, the average dating error)\"; \"The value of 26 Myr is a consequence of the typical duration of the stages\"; mục 2.4.1: \"the magnitude of dating errors in the cratering record (∼ 5 Myr)\""
+    },
+    {
+      "claimId": "C-11",
+      "severity": "S3",
+      "find": "Các nghiên cứu khác nhau cho ra:",
+      "replace": "Các nghiên cứu khác nhau, trên hồ sơ tuyệt chủng hoặc hồ sơ hố va chạm, cho ra:",
+      "why": "Danh sách trộn chu kỳ tìm trong hồ sơ tuyệt chủng (26, 30 Myr) với hồ sơ hố va chạm (~35 Myr, Randall & Reece). Nêu rõ hai loại dữ liệu để không gán nhầm chủ thể.",
+      "evidence": "https://www.nature.com/articles/308709a0 — \"cyclicity in major marine mass extinctions ... is 30 ± 1 Myr\"; https://arxiv.org/abs/1403.0576 — \"Recent analyses of the crater data usually find that a period of about 35 Myr is most consistent with the data\"; https://arxiv.org/abs/0905.3919 (doi 10.1017/S147355040999005X) — mục 2.3.1 \"a 26 Myr period in the extinction record\""
+    },
+    {
+      "claimId": "C-11",
+      "severity": "S3",
+      "find": "- Hoặc không phát hiện chu kỳ rõ ràng nào.",
+      "replace": "- Hoặc không phát hiện chu kỳ rõ ràng nào.\n\nNgay cả chu kỳ khoảng 35 triệu năm trong hồ sơ hố va chạm cũng chỉ có bằng chứng thống kê yếu, và biến mất hoàn toàn khi tính tới việc đã dò tìm trên rất nhiều chu kỳ khả dĩ (Randall & Reece, 2014).",
+      "why": "Nêu mức độ bằng chứng của chính con số 35 Myr, đúng như nguồn: \"statistical evidence is weak and disappears completely when the look elsewhere effect is taken into account\".",
+      "evidence": "https://arxiv.org/abs/1403.0576 — \"a period of about 35 Myr is most consistent with the data, although the statistical evidence is weak and disappears completely when the look elsewhere effect is taken into account\""
+    },
+    {
+      "claimId": "C-13",
+      "severity": "S3",
+      "find": "Hệ Mặt Trời hiện nằm khá gần mặt phẳng thiên hà.",
+      "replace": "Hệ Mặt Trời hiện nằm khá gần mặt phẳng thiên hà: khoảng 15 parsec về phía bắc theo một ước tính được Bailer-Jones (2009) dẫn lại (các ước tính dao động từ 8 đến 35 parsec), trong khi biên độ dao động vào khoảng 70 parsec. Nghĩa là Hệ Mặt Trời mới băng qua mặt phẳng chưa lâu.",
+      "why": "Gắn con số và nguồn cho claim ràng buộc thời gian; mốc là ước tính tổng hợp năm 2009. Nêu hệ quả mà nguồn rút ra (vừa băng qua gần đây) để câu kế tiếp có cơ sở.",
+      "evidence": "https://arxiv.org/abs/0905.3919 (doi 10.1017/S147355040999005X) — mục 6.1: \"there is a reasonable consensus that the Sun is currently near the midplane (z≃ 15 pc compared to a vertical oscillation amplitude of around 70 pc). The Sun therefore recently underwent a midplane passage\"; mục 6: \"Estimates for the current distance of the Sun from the midplane range from 8–35 pc\""
+    },
+    {
+      "claimId": "C-17",
+      "severity": "S3",
+      "find": "Nếu việc băng qua mặt phẳng luôn gây ra thảm họa lớn thì chúng ta có thể đang sống trong một giai đoạn nguy hiểm, điều mà các bằng chứng hiện nay chưa cho thấy.",
+      "replace": "Vậy mà không có đợt đại tuyệt chủng lớn nào trong khoảng 15 triệu năm gần đây, và một số tác giả dùng chính điều này làm lập luận chống lại giả thuyết. Có thể đáp rằng không phải lần băng qua nào cũng gây thảm hoạ; nhưng khi được tự chọn lần nào tính và lần nào không, thì gần như mô hình nào cũng khớp được với dữ liệu địa chất, và khi đó không còn gì là chu kỳ để kiểm chứng nữa.",
+      "why": "Lập luận gốc (\"chúng ta có thể đang sống trong giai đoạn nguy hiểm, điều bằng chứng chưa cho thấy\") lệch khỏi lập luận của nguồn và dựa vào \"hiện nay\" không mốc. Nguồn lập luận: vừa băng qua gần đây nhưng không có đại tuyệt chủng lớn trong 15 Myr; và việc chọn lọc lần băng qua làm hỏng mọi phép thử chu kỳ.",
+      "evidence": "https://arxiv.org/abs/0905.3919 (doi 10.1017/S147355040999005X) — mục 6.1: \"the lack of evidence for a major extinction within the past 15 Myr has led some to suggest that plane crossings cannot be the cause of mass extinctions (e.g. Leitch & Vasisht 1998). We could argue that not every midplane crossing will cause a mass extinction ... but when we permit ourselves to pick and choose we cannot look for periodic phenomena, and indeed could fit almost any model to the geological data\""
+    },
+    {
+      "claimId": "C-15",
+      "severity": "S4",
+      "find": "Trong suốt lịch sử 4,5 tỷ năm",
+      "replace": "Trong khoảng 4,6 tỷ năm kể từ khi các hành tinh hình thành",
+      "why": "Tuổi 4,5 tỷ năm không có nguồn trong bài; nguồn bậc 2 đã mở (NASA) ghi các hành tinh hình thành 4,6 tỷ năm trước.",
+      "evidence": "https://science.nasa.gov/solar-system/oort-cloud/facts/ — \"After the planets formed 4.6 billion years ago\""
+    },
+    {
+      "claimId": "C-18",
+      "severity": "S2",
+      "find": "Nhưng một điều đã rõ: số phận của hành tinh chúng ta không chỉ được quyết định bởi những gì xảy ra trên Trái Đất, mà còn bởi hành trình dài của Hệ Mặt Trời giữa đại dương sao của Ngân Hà.",
+      "replace": "Điều đã rõ là thảm hoạ có thể đến từ ngoài Trái Đất — va chạm Chicxulub là một ví dụ. Còn việc hành trình của Hệ Mặt Trời trong Ngân Hà có tạo ra nhịp điệu cho những thảm hoạ ấy hay không thì chưa được chứng minh; các va chạm ngẫu nhiên và những cơ chế trên chính Trái Đất như núi lửa, kiến tạo mảng, thay đổi mực nước biển vẫn là những nguyên nhân khả dĩ của nhiều thảm hoạ môi trường (Bailer-Jones, 2009).",
+      "why": "Câu kết khẳng định \"đã rõ\" rằng hành trình trong Ngân Hà quyết định số phận Trái Đất — nâng một giả thuyết bị tổng quan chính đánh giá là thiếu bằng chứng lên thành điều đã xác lập, và mâu thuẫn với chính câu trước (\"vẫn còn là câu hỏi bỏ ngỏ\"). Lỗi nâng mức tự tin, cỡ từ chối nếu giữ.",
+      "evidence": "https://arxiv.org/abs/0905.3919 (doi 10.1017/S147355040999005X) — tóm tắt: \"Non-periodic impacts and terrestrial mechanisms (volcanism, plate tectonics, sea level changes), possibly occurring simultaneously, remain likely causes of many environmental catastrophes\"; https://doi.org/10.1126/science.1177265 — \"the Chicxulub impact triggered the mass extinction\""
+    }
+  ],
+  "enEdits": [],
+  "addSources": [
+    {
+      "title": "Testing the Link Between Terrestrial Climate Change and Galactic Spiral Arm Transit",
+      "url": "https://doi.org/10.1088/0004-637X/705/2/L101",
+      "doi": "10.1088/0004-637X/705/2/L101",
+      "publisher": "The Astrophysical Journal Letters",
+      "year": 2009,
+      "tier": 1,
+      "covers": "C-10: kiểm định lại và bác tương quan giữa việc đi qua nhánh xoắn ốc và khí hậu Trái Đất"
+    },
+    {
+      "title": "Dark Matter as a Trigger for Periodic Comet Impacts",
+      "url": "https://doi.org/10.1103/PhysRevLett.112.161301",
+      "doi": "10.1103/PhysRevLett.112.161301",
+      "publisher": "Physical Review Letters",
+      "year": 2014,
+      "tier": 1,
+      "covers": "C-6, C-11: cơ chế nhiễu loạn Đám mây Oort không đủ nếu chỉ có vật chất thông thường; chu kỳ ~35 Myr trong hồ sơ hố va chạm và độ yếu của bằng chứng"
+    },
+    {
+      "title": "Do Periodicities in Extinction—With Possible Astronomical Connections—Survive a Revision of the Geological Timescale?",
+      "url": "https://doi.org/10.1088/0004-637X/773/1/6",
+      "doi": "10.1088/0004-637X/773/1/6",
+      "publisher": "The Astrophysical Journal",
+      "year": 2013,
+      "tier": 1,
+      "covers": "C-4: tín hiệu ~27 Myr trong tỉ lệ tuyệt chủng biển, \"gợi ý chứ không đòi hỏi\" vai trò thiên văn"
+    },
+    {
+      "title": "The 'Shiva Hypothesis': Impacts, Mass Extinctions, and the Galaxy",
+      "url": "https://doi.org/10.1007/BF00117548",
+      "doi": "10.1007/BF00117548",
+      "publisher": "Earth, Moon, and Planets",
+      "year": 1996,
+      "tier": 1,
+      "covers": "C-4, C-2: tên gọi và nội dung giả thuyết Shiva; nửa chu kỳ dao động ~30 ± 3 Myr"
+    },
+    {
+      "title": "Ruthenium isotopes show the Chicxulub impactor was a carbonaceous-type asteroid",
+      "url": "https://doi.org/10.1126/science.adk4868",
+      "doi": "10.1126/science.adk4868",
+      "publisher": "Science",
+      "year": 2024,
+      "tier": 1,
+      "covers": "C-7, C-8: va chạm Chicxulub 66 triệu năm trước do tiểu hành tinh kiểu carbonaceous, không phải sao chổi"
+    },
+    {
+      "title": "Oort Cloud: Facts",
+      "url": "https://science.nasa.gov/solar-system/oort-cloud/facts/",
+      "doi": null,
+      "publisher": "NASA Science",
+      "year": 2026,
+      "tier": 2,
+      "covers": "C-5, C-15: số thiên thể và khoảng cách giả định của Đám mây Oort; các hành tinh hình thành 4,6 tỷ năm trước"
+    }
+  ],
+  "dropSources": [],
+  "retierSources": [],
+  "corrections": [
+    "2026-09-25 | nhung-lan-dai-tuyet-chung-co-lien-quan-toi-hanh-trinh-cua-he-mat-troi-trong-ngan-ha | Nhánh xoắn ốc: \"Ngày nay nhiều nhà nghiên cứu cho rằng...\" → \"một số tác giả đề xuất\", thêm kết quả phản bác của Overholt et al. 2009 và giới hạn mật độ trong nhánh | Overholt, Melott & Pohl 2009 (doi 10.1088/0004-637X/705/2/L101); Bailer-Jones 2009 mục 6.2",
+    "2026-09-25 | nhung-lan-dai-tuyet-chung-co-lien-quan-toi-hanh-trinh-cua-he-mat-troi-trong-ngan-ha | K-Pg: \"va chạm thiên thạch\" đặt như minh hoạ cho mưa sao chổi Oort → nêu rõ vật thể Chicxulub là tiểu hành tinh kiểu carbonaceous, nên K-Pg không đỡ kịch bản sao chổi thiên hà | Fischer-Gödde et al. 2024 (doi 10.1126/science.adk4868)",
+    "2026-09-25 | nhung-lan-dai-tuyet-chung-co-lien-quan-toi-hanh-trinh-cua-he-mat-troi-trong-ngan-ha | Kết luận: \"một điều đã rõ: số phận hành tinh... được quyết định bởi hành trình trong Ngân Hà\" → nhịp điệu thiên hà chưa được chứng minh; va chạm ngẫu nhiên và cơ chế trên Trái Đất vẫn là nguyên nhân khả dĩ | Bailer-Jones 2009 (doi 10.1017/S147355040999005X)",
+    "2026-09-25 | nhung-lan-dai-tuyet-chung-co-lien-quan-toi-hanh-trinh-cua-he-mat-troi-trong-ngan-ha | Giả thuyết Shiva: thêm quy kết (Rampino & Stothers 1984; Rampino & Haggerty 1996) và cán cân bằng chứng (Bailer-Jones 2009: ít bằng chứng; Melott & Bambach 2013: tín hiệu 27 Myr, không đòi hỏi vai trò thiên văn)",
+    "2026-09-25 | nhung-lan-dai-tuyet-chung-co-lien-quan-toi-hanh-trinh-cua-he-mat-troi-trong-ngan-ha | Chu kỳ quay quanh tâm Ngân Hà: 225–250 → khoảng 200–265 triệu năm (~235 với 220 km/s); dao động qua mặt phẳng: 50–70 → 52–74 triệu năm, giữa hai lần băng qua 25–35 → khoảng 26–37 triệu năm | Bailer-Jones 2009 mục 6, 6.1 (Bahcall & Bahcall 1985)",
+    "2026-09-25 | nhung-lan-dai-tuyet-chung-co-lien-quan-toi-hanh-trinh-cua-he-mat-troi-trong-ngan-ha | Đám mây Oort: \"hàng tỷ thiên thể\" → \"có thể hàng trăm tỷ, thậm chí hàng nghìn tỷ\" kèm khoảng cách giả định; tuổi 4,5 → 4,6 tỷ năm | NASA Oort Cloud Facts",
+    "2026-09-25 | nhung-lan-dai-tuyet-chung-co-lien-quan-toi-hanh-trinh-cua-he-mat-troi-trong-ngan-ha | \"Sai số thời gian có thể lên tới hàng triệu năm\" → sai số trung bình ~6 triệu năm (dữ liệu Raup & Sepkoski 1984) và ~5 triệu năm (hố va chạm) | Bailer-Jones 2009 mục 2.3.1, 2.4.1",
+    "2026-09-25 | nhung-lan-dai-tuyet-chung-co-lien-quan-toi-hanh-trinh-cua-he-mat-troi-trong-ngan-ha | Vị trí hiện tại: \"khá gần mặt phẳng\" → ~15 pc (ước tính 8–35 pc), biên độ ~70 pc; thay lập luận \"giai đoạn nguy hiểm\" bằng lập luận của nguồn (không có đại tuyệt chủng lớn trong 15 triệu năm) | Bailer-Jones 2009 mục 6.1",
+    "2026-09-25 | nhung-lan-dai-tuyet-chung-co-lien-quan-toi-hanh-trinh-cua-he-mat-troi-trong-ngan-ha | Thêm giới hạn cơ chế mưa sao chổi (đám mây phân tử quá phân tán, vật chất thông thường không đủ) và độ yếu thống kê của chu kỳ 35 triệu năm | Randall & Reece 2014 (doi 10.1103/PhysRevLett.112.161301)",
+    "2026-09-25 | nhung-lan-dai-tuyet-chung-co-lien-quan-toi-hanh-trinh-cua-he-mat-troi-trong-ngan-ha | Bụi liên sao: câu phủ định không nguồn → cơ chế khả dĩ trên lý thuyết, chưa có bằng chứng là nguyên nhân chính | Bailer-Jones 2009 mục 5.6; tia vũ trụ: \"nguồn phát tia vũ trụ\" → tàn dư siêu tân tinh, nơi được cho là sinh ra phần lớn tia vũ trụ thiên hà"
+  ],
+  "openQuestions": [
+    "Tiêu đề \"Những lần đại tuyệt chủng có liên quan tới hành trình của Hệ Mặt Trời trong Ngân Hà?\" mang tiền giả định: dù có dấu hỏi, cụm \"Những lần đại tuyệt chủng có liên quan\" đọc như có một tập sự kiện đã được gắn với Ngân Hà. Đề xuất: \"Đại tuyệt chủng có theo nhịp hành trình của Hệ Mặt Trời trong Ngân Hà? Một giả thuyết còn tranh cãi\" (hoặc ngắn: \"Đại tuyệt chủng và hành trình của Hệ Mặt Trời: giả thuyết còn tranh cãi\"). Đổi title/slug là quyết định riêng; nếu đổi slug thì cần 301 (npm run slugs:redirect).",
+    "contentEn, titleEn, summaryEn đều null — không có bản en để sửa song song. Khi dịch, bản en phải dịch từ bản vi SAU khi áp các edit này, không từ bản cũ.",
+    "Sau khi áp edit, bảng nguồn có 9 nguồn (8 bậc 1, 1 bậc 2). Người áp phải ghi Revision trước khi sửa, dòng corrections.md, cập nhật lastVerifiedAt, đặt reviewer (tài khoản tổ chức) — và chỉ đặt factCheck=PASSED sau khi soát lại chuỗi đã áp."
+  ]
+}

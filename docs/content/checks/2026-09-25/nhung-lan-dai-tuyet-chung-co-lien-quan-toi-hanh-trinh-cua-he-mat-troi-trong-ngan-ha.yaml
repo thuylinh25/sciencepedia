@@ -1,0 +1,165 @@
+slug: nhung-lan-dai-tuyet-chung-co-lien-quan-toi-hanh-trinh-cua-he-mat-troi-trong-ngan-ha
+checkedAt: 2026-09-25
+checkedBy: science-editor
+# 3 nguồn hiện có (đều bậc 1, đã resolve qua Crossref) + 6 nguồn thêm trong fixes (5 bậc 1, 1 bậc 2)
+sourceCount: 9
+verdict: pass
+summary: >-
+  Bản hiện tại đã có 3 nguồn bậc 1 và đã bỏ mục "Điều đã được chứng minh" của bản 17/09, nhưng
+  vẫn còn 4 lỗi S2: câu "Ngày nay nhiều nhà nghiên cứu" về nhánh xoắn ốc (bị Overholt et al. 2009 bác),
+  K-Pg đặt làm minh hoạ cho mưa sao chổi Oort trong khi vật thể Chicxulub là tiểu hành tinh,
+  câu kết "một điều đã rõ" nâng giả thuyết thành điều đã xác lập, và mục Shiva không cho người đọc
+  biết cán cân bằng chứng. Thêm 9 lỗi S3 (con số chu kỳ lệch nguồn, "hàng tỷ" thiên thể Oort, sai số
+  định tuổi không nguồn, cơ chế thiếu vế đối trọng). Mọi claim được đối chiếu với nguồn mở trong lượt
+  này — chủ yếu toàn văn Bailer-Jones 2009, cùng toàn văn arXiv của Overholt 2009, Randall & Reece 2014,
+  Melott & Bambach 2013, tóm tắt Rampino & Stothers 1984, Rampino & Haggerty 1996, Schulte 2010,
+  Fischer-Gödde 2024 và trang NASA. Sau khi áp 21 edit trong fixes, không còn phát hiện S1–S3.
+  Bài không có bản en (contentEn = null) nên không có enEdits. Tiêu đề mang tiền giả định nhẹ, đề xuất
+  đổi ở openQuestions (không chặn gate).
+claims:
+  - id: C-1
+    claim: "Hệ Mặt Trời hoàn thành một vòng quay quanh tâm Ngân Hà trong khoảng 225–250 triệu năm."
+    verdict: partially-supported
+    severity: S3
+    evidence: "https://arxiv.org/abs/0905.3919 (doi 10.1017/S147355040999005X), mục 6: 'rotation period around the Galactic centre of 235 Myr ... could be anything from 200–265 Myr (assuming R0 = 8.2 kpc)'"
+    note: >-
+      Khoảng bài nêu hẹp hơn khoảng nguồn và không ghi là giá trị suy ra từ R0 và tốc độ quay. Sửa thành
+      200–265 triệu năm, ~235 với 220 km/s.
+  - id: C-2
+    claim: "Chu kỳ dao động qua mặt phẳng Ngân Hà 50–70 triệu năm; 25–35 triệu năm giữa hai lần cắt mặt phẳng; 'các ước tính hiện nay'."
+    verdict: partially-supported
+    severity: S3
+    evidence: "https://arxiv.org/abs/0905.3919, mục 6.1: 'Bahcall & Bahcall (1985) derive a quasi-harmonic motion with a period ranging from 52–74 Myr'; https://doi.org/10.1007/BF00117548 (tóm tắt): 'half-cycle ~ 30±3 Myr'"
+    note: >-
+      Nguồn cho 52–74 Myr (biên phản ánh bất định vật chất tối và trạng thái hiện tại của Mặt Trời), nên
+      nửa chu kỳ là 26–37 Myr. Bailer-Jones (dẫn Shuter & Klatt 1986) nói chu kỳ đứng thay đổi theo chuyển
+      động xuyên tâm. Đã mở toàn văn bài tổng quan, chưa mở bản gốc Bahcall & Bahcall 1985 — con số được
+      quy kết đúng như tổng quan dẫn.
+  - id: C-3
+    claim: "Khoảng thời gian giữa hai lần cắt mặt phẳng từng khiến nhiều nhà nghiên cứu chú ý vì gần với một số chu kỳ tuyệt chủng được đề xuất."
+    verdict: verified
+    severity: none
+    evidence: "https://arxiv.org/abs/0905.3919, mục 6.1: 'Many other papers have invoked plane crossings to explain mass extinctions or climate variations with periods around 25–33 Myr'; https://www.nature.com/articles/308709a0 (tóm tắt)"
+    note: "Giữ đúng mức \"được đề xuất\"."
+  - id: C-4
+    claim: "Giả thuyết Shiva: 'một ý tưởng nổi tiếng', mỗi lần đi qua vùng đậm đặc Trái Đất 'sẽ' đối mặt rủi ro cao hơn; chỉ ghi 'đang tranh luận'."
+    verdict: partially-supported
+    severity: S2
+    evidence: "https://link.springer.com/article/10.1007/BF00117548 (tóm tắt Rampino & Haggerty 1996); https://www.nature.com/articles/308709a0 (Rampino & Stothers 1984: chu kỳ 30 ± 1 Myr); https://arxiv.org/abs/0905.3919 (tóm tắt: 'little evidence for intrinsic periodicities'); https://arxiv.org/abs/1307.1884 ('suggest but do not require an astronomical role')"
+    note: >-
+      Giả thuyết và tên gọi có thật, nhưng bài không quy kết, dùng "sẽ", và không nói cán cân bằng chứng:
+      tổng quan thống kê chính nghiêng về phía không có bằng chứng; tín hiệu 27 Myr của Melott & Bambach
+      là bất đồng thật nhưng chính tác giả nói không đòi hỏi vai trò thiên văn. Thiếu cán cân là false
+      balance ngược chiều (để người đọc tưởng hai phía ngang nhau) — S2. Sửa: quy kết, đổi "sẽ" → "có thể",
+      thêm đoạn nêu cả hai phía đúng tỉ trọng.
+  - id: C-5
+    claim: "Đám mây Oort được cho là chứa hàng tỷ thiên thể băng giá."
+    verdict: contradicted
+    severity: S3
+    evidence: "https://science.nasa.gov/solar-system/oort-cloud/facts/: 'There may be hundreds of billions, even trillions, of icy bodies in the Oort Cloud'"
+    note: "Con số trong bài thấp hơn con số NASA cả bậc. Thay bằng con số NASA, giữ lớp rào \"may be\", \"is thought to be\"."
+  - id: C-6
+    claim: "Đám mây khí liên sao, sao đi ngang, trường hấp dẫn thiên hà có thể xáo trộn Đám mây Oort và đẩy sao chổi vào trong."
+    verdict: partially-supported
+    severity: S3
+    evidence: "https://arxiv.org/abs/1403.0576: 'to date no suggested mechanism for the enhanced density is successful in explaining the timing and magnitude of the periodicity. Molecular clouds ... spread too far from the plane'"
+    note: >-
+      Cơ chế có trong tài liệu (Rampino & Stothers 1984; Rampino & Haggerty 1996), nhưng bài bỏ vế đối trọng
+      (quy tắc 15): nguồn nói cơ chế thông thường không đủ để tạo chu kỳ. Thêm đoạn giới hạn.
+  - id: C-7
+    claim: "Một vụ va chạm lớn đã gây ra đại tuyệt chủng K-Pg cách đây khoảng 66 triệu năm."
+    verdict: verified
+    severity: none
+    evidence: "https://doi.org/10.1126/science.1177265 (Schulte 2010, tóm tắt: 'the Chicxulub impact triggered the mass extinction'); https://doi.org/10.1126/science.adk4868 (Fischer-Gödde 2024: 'occurred 66 million years ago')"
+    note: "Schulte 2010 ghi ~65,5 Ma theo thang cũ; Fischer-Gödde 2024 ghi 66 Ma. Đổi \"thiên thạch\" → \"va chạm lớn từ không gian\" trong cùng edit C-8."
+  - id: C-8
+    claim: "K-Pg được dùng làm lý do khiến kịch bản mưa sao chổi từ Đám mây Oort hấp dẫn."
+    verdict: contradicted
+    severity: S2
+    evidence: "https://doi.org/10.1126/science.adk4868 (Europe PMC, tóm tắt): 'the Chicxulub impactor was a carbonaceous-type asteroid, which had formed beyond the orbit of Jupiter'"
+    note: "Vật thể là tiểu hành tinh, không phải sao chổi Oort. Thêm câu tách bạch; K-Pg không phải bằng chứng cho kịch bản thiên hà."
+  - id: C-9
+    claim: "Bụi liên sao có thể giảm ánh sáng, đổi khí hậu; 'hiện nay chưa có bằng chứng địa chất mạnh mẽ' là nguyên nhân chính."
+    verdict: unsupported
+    severity: S3
+    evidence: "https://arxiv.org/abs/0905.3919, mục 5.6: 'Encounters of the solar system with interstellar clouds could produce global cooling as dust from the cloud lowers the solar irradiation'; tóm tắt: 'little impact on biological or climate variation above background level'"
+    note: "Cơ chế có nguồn ở mức \"could\"; câu phủ định cuối không nguồn và \"hiện nay\" không mốc. Viết lại có nguồn, giữ mức dè dặt."
+  - id: C-10
+    claim: "Ngày nay nhiều nhà nghiên cứu cho rằng nếu Ngân Hà ảnh hưởng đến sự sống thì nguyên nhân liên quan nhiều hơn tới nhánh xoắn ốc."
+    verdict: contradicted
+    severity: S2
+    evidence: "https://arxiv.org/abs/0906.2777 (doi 10.1088/0004-637X/705/2/L101): 'not only do the claimed correlations disappear, but also we find that they cannot be resurrected for any reasonable pattern speed'; https://arxiv.org/abs/0905.3919 mục 6.2: 'It is premature to draw a connection'"
+    note: >-
+      Mô tả sai hiện trạng đồng thuận. Sửa thành "một số tác giả đề xuất" và thêm: mật độ sao trong nhánh chỉ
+      cao hơn ~1,1 lần (Torbett, qua Bailer-Jones), siêu tân tinh vẫn có ngoài nhánh, cấu trúc nhánh chưa rõ,
+      và kết quả kiểm định lại của Overholt et al. 2009.
+  - id: C-11
+    claim: "Các nghiên cứu khác nhau cho ra chu kỳ 26, 30, 35 triệu năm, hoặc không thấy chu kỳ."
+    verdict: partially-supported
+    severity: S3
+    evidence: "26 Myr: https://arxiv.org/abs/0905.3919 mục 2.3.1 (Raup & Sepkoski 1984); 30 Myr: https://www.nature.com/articles/308709a0 ('30 ± 1 Myr'); 35 Myr: https://arxiv.org/abs/1403.0576 (hồ sơ hố va chạm, 'statistical evidence is weak and disappears completely when the look elsewhere effect is taken into account'); không chu kỳ: Bailer-Jones 2009 tóm tắt"
+    note: "Mọi con số nay có nguồn. Danh sách trộn hồ sơ tuyệt chủng và hồ sơ hố va chạm — nêu rõ, và nêu độ yếu thống kê của 35 Myr."
+  - id: C-12
+    claim: "Sai số thời gian có thể lên tới hàng triệu năm."
+    verdict: partially-supported
+    severity: S3
+    evidence: "https://arxiv.org/abs/0905.3919 mục 2.3.1: 'the uncertainty in the dating is at least 6 Myr, which is 23% of the 26 Myr period'; mục 2.4.1: 'dating errors in the cratering record (∼ 5 Myr)'"
+    note: "Khái quát không nguồn cho mọi sự kiện. Thay bằng con số có nguồn, gắn đúng chủ thể (bộ dữ liệu 1984, hồ sơ hố va chạm — quy tắc 18)."
+  - id: C-13
+    claim: "Hệ Mặt Trời hiện nằm khá gần mặt phẳng thiên hà."
+    verdict: verified
+    severity: S3
+    evidence: "https://arxiv.org/abs/0905.3919 mục 6.1: 'the Sun is currently near the midplane (z≃ 15 pc compared to a vertical oscillation amplitude of around 70 pc)'; mục 6: 'range from 8–35 pc'"
+    note: "Đúng nhưng là claim ràng buộc thời gian không số, không nguồn. Thêm con số, khoảng ước tính và quy kết (mốc: tổng hợp 2009)."
+  - id: C-14
+    claim: "Nhánh xoắn ốc tập trung khí, bụi, sao trẻ, sao khối lượng lớn; sao khổng lồ tuổi thọ ngắn, kết thúc bằng siêu tân tinh."
+    verdict: verified
+    severity: none
+    evidence: "https://arxiv.org/abs/0905.3919 mục 6.2: 'sites of increased star formation ... excess of massive young blue stars and giant molecular clouds'; mục 5.2: 'progenitors of core-collapse supernovae are short-lived, massive stars'"
+    note: "—"
+  - id: C-15
+    claim: "Lịch sử 4,5 tỷ năm."
+    verdict: partially-supported
+    severity: S4
+    evidence: "https://science.nasa.gov/solar-system/oort-cloud/facts/: 'After the planets formed 4.6 billion years ago'"
+    note: "Không có nguồn trong bài; thay bằng con số của nguồn bậc 2 đã mở."
+  - id: C-16
+    claim: "Sao khổng lồ kết thúc bằng '- Nguồn phát tia vũ trụ năng lượng cao'."
+    verdict: partially-supported
+    severity: S4
+    evidence: "https://arxiv.org/abs/0905.3919 mục 5.2: 'a large portion of which is believed to originate in shock fronts in supernova remnants'"
+    note: "Nguồn tia vũ trụ là tàn dư siêu tân tinh (được cho là), không phải một kiểu kết thúc riêng. Sửa gạch đầu dòng."
+  - id: C-17
+    claim: "Nếu băng qua mặt phẳng luôn gây thảm hoạ thì chúng ta có thể đang sống trong giai đoạn nguy hiểm, điều mà bằng chứng hiện nay chưa cho thấy."
+    verdict: partially-supported
+    severity: S3
+    evidence: "https://arxiv.org/abs/0905.3919 mục 6.1: 'the lack of evidence for a major extinction within the past 15 Myr has led some to suggest that plane crossings cannot be the cause of mass extinctions ... when we permit ourselves to pick and choose we cannot look for periodic phenomena'"
+    note: "Lập luận lệch khỏi lập luận của nguồn và dùng \"hiện nay\" không mốc. Thay bằng lập luận nguồn nêu."
+  - id: C-18
+    claim: "Kết luận: 'một điều đã rõ: số phận hành tinh... được quyết định... bởi hành trình dài của Hệ Mặt Trời giữa Ngân Hà'."
+    verdict: contradicted
+    severity: S2
+    evidence: "https://arxiv.org/abs/0905.3919 tóm tắt: 'Non-periodic impacts and terrestrial mechanisms (volcanism, plate tectonics, sea level changes) ... remain likely causes of many environmental catastrophes'"
+    note: >-
+      Nâng mức tự tin (quy tắc 3) và mâu thuẫn với câu liền trước ("câu hỏi bỏ ngỏ"). Thay bằng điều thật sự
+      đã rõ (va chạm từ ngoài có thể gây thảm hoạ) và điều chưa được chứng minh (nhịp điệu thiên hà).
+  - id: C-19
+    claim: "Đám mây Oort là một vùng giả định."
+    verdict: verified
+    severity: none
+    evidence: "https://science.nasa.gov/solar-system/oort-cloud/facts/: 'a theorized group of icy objects'"
+    note: "Giữ nguyên."
+  - id: C-20
+    claim: "Summary: một số nghiên cứu từng đề xuất các đợt tuyệt chủng có thể xuất hiện theo chu kỳ hàng chục triệu năm."
+    verdict: verified
+    severity: none
+    evidence: "https://www.nature.com/articles/308709a0; https://arxiv.org/abs/0905.3919 mục 2.3.1"
+    note: "Summary giữ đúng mức \"từng đề xuất\", \"có thể\"; không cần sửa."
+sources:
+  - title: "Terrestrial mass extinctions, cometary impacts and the Sun's motion perpendicular to the galactic plane"
+    check: "Crossref: Rampino & Stothers, Nature, 1984-04 — khớp tên/năm; tier 1 đúng. Là nguồn phía ủng hộ; Bailer-Jones 2009 nhận xét Bảng 1 của họ 'hardly supports' mối trùng pha."
+  - title: "The evidence for and against astronomical impacts on climate change and mass extinctions: a review"
+    check: "Crossref: Bailer-Jones, International Journal of Astrobiology, 2009-07 — khớp; tier 1 đúng. Đã đọc toàn văn arXiv 0905.3919."
+  - title: "The Chicxulub Asteroid Impact and Mass Extinction at the Cretaceous-Paleogene Boundary"
+    check: "Crossref: Schulte et al., Science, 2010-03 — khớp; tier 1 đúng."
+  - note: "Không nguồn nào bị rút hay cần đổi bậc. Sáu nguồn thêm đều đã resolve qua Crossref (trừ trang NASA, mở trực tiếp)."

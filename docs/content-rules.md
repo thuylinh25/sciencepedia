@@ -350,6 +350,16 @@ con số mới không nguồn không phải đính chính, chỉ là đổi phi�
 **Sửa chuỗi xong không có nghĩa là qua gate.** `factCheck` là việc của người duyệt,
 không phải hệ quả của một phép thay chuỗi.
 
+**Đính chính chỉ xong khi CẢ HAI bản ngôn ngữ đã đổi.** Chốt 2026-09-25, khi duyệt
+lại 6 bài `FAILED`. Các lượt đính chính 11/09 và 17/09 chỉ sửa `content` (vi). Ở
+5/6 bài có `contentEn`, bản en vẫn mang nguyên claim đã bị bác — bốn bài còn S1
+("95% serotonin ở ruột", thiếu mục chống chỉ định của nhịn ăn, 252 triệu năm/80%
+của Permi) — trong khi `corrections.md` ghi là đã sửa. Nhật ký nói "đã sửa" mà
+người đọc một nửa kho vẫn thấy bản cũ là tệ hơn không sửa: nó tắt luôn việc tìm
+lại. Nên kế hoạch sửa phải có `enEdits` đi cùng `edits` (và `summaryEn`,
+`seoDescription`, tiêu đề khi chúng mang cùng claim), và không ghi dòng nhật ký
+cho lượt chưa chạm tới bản en. Script mẫu: `scripts/apply-review-2026-09-25.ts`.
+
 ### Kho tự mâu thuẫn là máy dò lỗi rẻ nhất
 
 Hai trong năm lỗi S2 của lượt audit 2026-09-05 lộ ra không nhờ tra nguồn ngoài, mà

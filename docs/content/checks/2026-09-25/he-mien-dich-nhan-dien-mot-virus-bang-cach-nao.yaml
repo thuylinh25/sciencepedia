@@ -1,0 +1,130 @@
+slug: he-mien-dich-nhan-dien-mot-virus-bang-cach-nao
+checkedAt: 2026-09-25
+checkedBy: science-editor
+sourceCount: 13
+verdict: pass
+summary: "Thẩm định lại toàn bài sau bản vá S1 ngày 17/09. Trước sửa: thân bài vi còn một lỗi S2 (con số 10¹¹ không nguồn, lỗi thời so với ước tính ≥10¹²–10¹⁸, lại gán chung cho cả B và T) và các lỗi S3 (dsRNA khái quát quá mức; 5–10 ngày và 1–3 ngày không nguồn; đoạn cơ chế vaccine không nguồn và bỏ sót vaccine sống giảm độc lực; summary/seoDescription 'phản ứng tức thì với mọi thứ lạ'); bản en chưa từng nhận bản vá 17/09. Kế hoạch sửa kèm theo (9 edit vi, 8 edit en, summary vi/en, seoDescription) xử lý hết, mỗi edit có nguồn đã mở trong lượt này; thêm 9 nguồn (6 bậc 1, 3 bậc 2), hạ Janeway xuống bậc 3 → 12 nguồn bậc 1–2. Sau khi áp toàn bộ kế hoạch: không còn S1–S3, mọi claim có evidence đã mở. Còn lại chỉ là việc hậu kỳ không phải lỗi claim: điền url doi.org cho ba nguồn bậc 1 cũ, gán byline người duyệt, ghi Revision + lastVerifiedAt. Không khuyến nghị gỡ bài."
+unpublish: false
+claims:
+  - id: C-1
+    claim: "Cơ thể phân biệt 'của mình' với 'không phải của mình'; 'giải pháp tiến hoá là hai hệ thống bổ sung cho nhau'"
+    verdict: partially-supported
+    severity: S4
+    evidence: "doi:10.1186/s13223-018-0278-1 — abstract: 'the immune system has two fundamental lines of defense: innate immunity and adaptive immunity'; toàn văn: adaptive immunity 'recognition of specific “non-self” antigens, distinguishing them from “self” antigens'."
+    note: "Hai tuyến và self/non-self có nguồn. Khung 'giải pháp tiến hoá' là nhân quả không nguồn nào nêu → bỏ (edit C-1). Sau sửa: verified."
+  - id: C-2
+    claim: "Miễn dịch bẩm sinh phản ứng trong vài phút tới vài giờ, không cần biết trước kẻ xâm nhập"
+    verdict: verified
+    severity: none
+    evidence: "doi:10.1186/s13223-018-0278-1 — abstract: 'a rapid immune response, initiated within minutes or hours after aggression, that has no immunologic memory'."
+    note: "Khớp nguyên văn. Giữ."
+  - id: C-3
+    claim: "Đại thực bào và tế bào tua mang thụ thể nhận dạng khuôn mẫu (PRR), nhận diện đặc trưng phân tử chung của mầm bệnh chứ không nhận diện từng virus"
+    verdict: verified
+    severity: none
+    evidence: "doi:10.1186/s13223-018-0278-1 — 'Innate immunity to pathogens relies on pattern recognition receptors (PRRs) which allow a limited range of immune cells to detect ... pathogens that share common structures, known as pathogen associated molecular patterns'; macrophages và dendritic cells được liệt kê là tế bào miễn dịch bẩm sinh. doi:10.1146/annurev-immunol-032713-120231 — 'cellular detection of pathogen-associated molecular patterns ... by pattern-recognition receptors (PRRs)'."
+    note: "Câu mở bằng 'Các tế bào như', không khẳng định chỉ hai loại tế bào này — giữ."
+  - id: C-4
+    claim: "RNA sợi đôi 'hầu như chỉ xuất hiện khi virus đang nhân lên trong tế bào'"
+    verdict: partially-supported
+    severity: S3
+    evidence: "doi:10.1128/JVI.80.10.5059-5064.2006 — abstract: 'It is widely assumed that the generation of dsRNA during genome replication is a trait shared by all viruses ... no dsRNA signals were detected for negative-strand RNA viruses ... dsRNA is indeed a general feature of most virus groups, but negative-strand RNA viruses appear to be an exception'. doi:10.1186/s13223-018-0278-1 — 'double-stranded ribonucleic acid (RNA) produced during viral infection'."
+    note: "Câu cũ ngụ ý mọi virus nhân lên đều tạo dsRNA — đúng giả định mà nghiên cứu hệ thống duy nhất bác bỏ. Sửa theo Weber 2006, giữ chủ thể 'các virus RNA sợi âm được khảo sát' (quy tắc 18). Sau sửa: verified."
+  - id: C-5
+    claim: "PRR kích hoạt → tế bào tiết interferon và cytokine, gây viêm cục bộ, báo động tế bào lân cận chuyển sang trạng thái kháng virus"
+    verdict: verified
+    severity: none
+    evidence: "doi:10.1146/annurev-immunol-032713-120231 (PMC4313732) — IFN 'produced and secreted by cells ... following cellular detection of pathogen-associated molecular patterns ... by pattern-recognition receptors (PRRs)'; IFN signalling 'leads to a remarkable antiviral state'. doi:10.1186/s13223-018-0278-1 — Bảng 1: 'Interferon induces antiviral defenses in uninfected cells'; 'production of cytokines and chemokines' tuyển mộ tế bào tới ổ nhiễm trùng và viêm."
+    note: "Giữ."
+  - id: C-6
+    claim: "Miễn dịch thích ứng mất 5–10 ngày cho lần gặp đầu tiên"
+    verdict: unsupported
+    severity: S3
+    evidence: "doi:10.1186/s13223-018-0278-1 — Bảng 4 'Response time': innate 'Immediate', adaptive 'Delayed by hours to days'. Không nguồn nào mở trong lượt này nêu 5–10 ngày (CDC 'Explaining How Vaccines Work' cũng không có mốc này; NCBI Bookshelf trả trang chặn)."
+    note: "Số không nguồn thì bỏ, không làm mềm. Thay bằng đúng mô tả của Marshall 2018 (edit C-6). Sau sửa: verified."
+  - id: C-7
+    claim: "Tế bào B sản xuất kháng thể gắn epitope trên virus, trung hoà hoặc đánh dấu để tế bào khác tiêu diệt"
+    verdict: verified
+    severity: none
+    evidence: "doi:10.1186/s13223-018-0278-1 — B cells differentiate into 'antibody-secreting plasma cells'; Bảng 2 IgG: 'Neutralization of toxins and viruses • Opsonizing (coating) antigen for destruction'."
+    note: "Giữ."
+  - id: C-8
+    claim: "T hỗ trợ điều phối phản ứng; T gây độc tiêu diệt tế bào đã nhiễm"
+    verdict: verified
+    severity: none
+    evidence: "doi:10.1186/s13223-018-0278-1 — 'CD8+ cytotoxic T cells are primarily involved in the destruction of cells infected by foreign agents, such as viruses'; Th cells 'have no cytotoxic or phagocytic activity' và điều hoà đáp ứng qua cytokine (Th1 'enhances anti-viral immunity')."
+    note: "'Hai vai chính' là giản lược chấp nhận được (bài không nói chỉ có hai loại; nguồn nhắc thêm T reg). Giữ."
+  - id: C-9
+    claim: "Mỗi tế bào B và T mang một thụ thể duy nhất, tạo bằng tái tổ hợp ngẫu nhiên các đoạn gen (V(D)J), sinh ra khoảng 10¹¹ biến thể"
+    verdict: contradicted
+    severity: S2
+    evidence: "doi:10.1038/s41586-019-0879-y — abstract: 'The diversity of the naive antibody repertoire in humans is estimated to be at least 10^12 unique antibodies'; toàn văn (PMC6411386): 'the paired antibody diversity available to the circulating repertoire is very large, perhaps in the region of 10^16-10^18 unique antibody sequences'. doi:10.1038/nri2941 — V(D)J recombination khởi đầu bởi RAG1/RAG2 để lắp ráp gen thụ thể kháng nguyên. doi:10.1186/s13223-018-0278-1 — B cell 'expressing a unique antigen-binding receptor'."
+    note: "10¹¹ không nguồn, lỗi thời, thấp hơn ước tính hiện hành 1–7 bậc độ lớn, và bị gán chung cho B và T trong khi ước tính là của kháng thể. 'Ngẫu nhiên' không có trong nguồn đã mở — bỏ. Sửa theo Briney 2019 (edit C-9). Sau sửa: verified."
+  - id: C-10
+    claim: "Đa dạng đủ để 'với gần như mọi phân tử lạ, tồn tại sẵn một tế bào có thụ thể khớp với nó'"
+    verdict: partially-supported
+    severity: S3
+    evidence: "doi:10.1038/s41586-019-0879-y — 'In principle, humans can produce an antibody response to any non-self-antigen molecule in the appropriate context'; 'the circulating B cell population samples only a small fraction of this diversity'."
+    note: "Mất hai lớp rào của nguồn ('in principle', 'in the appropriate context') và bỏ vế đối trọng (tế bào lưu hành chỉ mang một phần nhỏ kho tiềm năng) — hình dạng 1 và quy tắc 15. Gộp vào edit C-9. Sau sửa: verified."
+  - id: C-11
+    claim: "Chọn lọc dòng: gặp đúng mục tiêu thì tế bào nhân lên; cơ thể chọn sẵn cái phù hợp rồi khuếch đại"
+    verdict: verified
+    severity: none
+    evidence: "doi:10.1186/s13223-018-0278-1 — 'When activated by foreign antigens to which they have an appropriate antigen specific receptor, B cells undergo proliferation'; 'Clonal expansion of cytotoxic T cells produces effector cells'."
+    note: "Cơ chế đúng; phần giản lược xử lý ở C-12."
+  - id: C-12
+    claim: "'Nó chọn ra sẵn cái phù hợp rồi khuếch đại lên' — ngụ ý kháng thể không đổi sau khi được chọn"
+    verdict: partially-supported
+    severity: S4
+    evidence: "doi:10.1038/s41586-019-0879-y — 'a large repertoire of naive antibodies, the diversity of which is expanded by somatic hypermutation following antigen exposure'."
+    note: "Giản lược mất thông tin; theo luật 'nói khi giản lược là lossy', thêm một câu về đột biến soma (edit C-12). Sau sửa: verified."
+  - id: C-13
+    claim: "Tế bào B và T nhớ tồn tại có thể hàng chục năm; ở người tiêm vaccine đậu mùa, B nhớ còn sau >50 năm, đáp ứng T có chu kỳ bán rã 8–15 năm; không mặc nhiên đúng cho mọi mầm bệnh"
+    verdict: verified
+    severity: S3
+    evidence: "doi:10.4049/jimmunol.171.10.4969 — abstract: 'smallpox vaccine-specific memory B cells last for >50 years in immunized individuals ... virus-specific CD4(+) T cells were detected decades after vaccination'. doi:10.1038/nm917 — 'antiviral T-cell responses declined slowly, with a half-life of 8-15 years'. doi:10.1056/NEJMoa066092 — half-lives '50 years for varicella-zoster virus to more than 200 years for ... measles and mumps ... tetanus and diphtheria ... 11 years and 19 years'. doi:10.1186/s13223-018-0278-1 — 'most Th cells will die upon resolution of infection, with a few remaining as Th memory cells'."
+    note: "Bản vi đúng nguồn (bản vá 17/09). S3 là của bản EN: contentEn chưa từng nhận bản vá, vẫn khẳng định 'for decades' không kèm số đo lẫn phạm vi đậu mùa. EnEdit C-13 đưa en về cùng claim. Đồng thời dùng Amanna 2007 — có trong bảng nguồn nhưng chưa được câu nào dùng — để đỡ câu 'không mặc nhiên đúng cho mọi mầm bệnh' (edit C-13, S4). Sau sửa: verified ở cả hai bản."
+  - id: C-14
+    claim: "Lần gặp thứ hai phản ứng trong 1–3 ngày thay vì 5–10 ngày và mạnh hơn nhiều"
+    verdict: unsupported
+    severity: S3
+    evidence: "doi:10.1186/s13223-018-0278-1 — 'enables the host to mount a more rapid and efficient immune response upon subsequent exposure to the antigen'. doi:10.4049/jimmunol.171.10.4969 — 'robust anamnestic Ab response upon revaccination'."
+    note: "Hai khoảng số không nguồn; 'mạnh hơn nhiều' nâng mức. Bỏ số, giữ 'nhanh hơn và hiệu quả hơn' (edit C-14). Sau sửa: verified."
+  - id: C-15
+    claim: "Vaccine đưa vào 'một phần mầm bệnh không gây bệnh (protein bề mặt, virus bất hoạt, hoặc mRNA mã hoá protein đó)' để tạo trí nhớ mà không phải trải qua đợt bệnh thật"
+    verdict: partially-supported
+    severity: S3
+    evidence: "https://www.cdc.gov/vaccines/basics/explaining-how-vaccines-work.html — 'Vaccines work by imitating an infection ... to engage the body's natural defenses'; 'immunity can take weeks to develop after vaccination'. doi:10.1186/s13223-018-0278-1 — vaccine 'can consist of attenuated (weakened) pathogens, inactivated organisms or specific proteins or carbohydrates known to induce immunity'. doi:10.1038/nrd.2017.243 (PMC5906799) — 'Once the mRNA transits to the cytosol, the cellular translation machinery produces protein'."
+    note: "Lĩnh vực nhạy cảm, không nguồn. Danh sách bỏ sót vaccine sống giảm độc lực (đúng loại vaccine sởi bài nhắc ngay sau) và gọi mRNA là 'một phần mầm bệnh'. Viết lại theo CDC + Marshall + Pardi (edit C-15). Sau sửa: verified."
+  - id: C-16
+    claim: "Virus cúm biến đổi liên tục protein bề mặt (kháng nguyên trôi dạt); kháng thể năm ngoái có thể không khớp chủng năm nay; vaccine cúm được cập nhật hằng năm"
+    verdict: partially-supported
+    severity: S4
+    evidence: "https://www.cdc.gov/flu/php/viruses/change.html ('How Flu Viruses Can Change: \"Drift\" and \"Shift\"') — 'changes associated with antigenic drift happen continually over time'; 'a person's existing antibodies won't effectively recognize and neutralize the antigenically different flu viruses'; 'composition of flu vaccines ... is reviewed annually and updated as needed'."
+    note: "Đúng trừ 'cập nhật hằng năm' — CDC nói 'xem xét hằng năm, cập nhật khi cần' (edit C-16). Sau sửa: verified."
+  - id: C-17
+    claim: "Vaccine sởi hiệu quả gần như trọn đời"
+    verdict: verified
+    severity: S4
+    evidence: "https://www.cdc.gov/measles/vaccines/index.html ('Measles Vaccination') — two doses '97% effective against measles'; 'Most people who are vaccinated with MMR or MMRV will be protected for life'."
+    note: "Thay 'gần như trọn đời' bằng con số và mức dè dặt của CDC (gộp trong edit C-16)."
+  - id: C-18
+    claim: "Summary/seoDescription: 'một tuyến phản ứng tức thì với mọi thứ lạ ... Vaccine hoạt động nhờ tuyến thứ hai'"
+    verdict: contradicted
+    severity: S3
+    evidence: "doi:10.1186/s13223-018-0278-1 — innate response 'initiated within minutes or hours'; PRRs detect 'pathogens that share common structures'. doi:10.1038/nrd.2017.243 — kháng nguyên do vaccine tạo ra kích hoạt miễn dịch thích ứng (đỡ vế 'nhờ tuyến thứ hai')."
+    note: "'Tức thì' và 'mọi thứ lạ' vượt nguồn và mâu thuẫn với chính thân bài. summaryEdits/summaryEnEdits sửa summary; seoDescription (trùng nguyên văn) sửa qua seoDescriptionEdits, neo khớp đúng 1 lần với SEO_DESC trong dump (kiểm 2026-09-25)."
+  - id: C-19
+    claim: "Bảng nguồn: Crotty 2003 (J Immunol), Hammarlund 2003 (Nat Med), Amanna 2007 (NEJM) bậc 1; Janeway's Immunobiology 10th ed. bậc 2"
+    verdict: partially-supported
+    severity: S4
+    evidence: "Europe PMC mở 2026-09-25: PMID 14607890 (Crotty S ... Ahmed R, J Immunol 2003), PMID 12925846 (Hammarlund E ..., Nat Med 2003), PMID 17989383 (Amanna IJ, Carlson NE, Slifka MK, NEJM 2007) — tên, năm, tác giả, tạp chí khớp; không có retraction. Janeway: https://openlibrary.org/isbn/9780393884890.json — 'Janeway's Immunobiology', W. W. Norton & Company, 01/07/2022, 960 trang; wwnorton.com/books/9780393884890 trả 200."
+    note: "Ba nguồn bậc 1 đúng. Janeway là giáo trình → bậc 3, không phải bậc 2 (retierSources). Sau lượt này không claim nào chỉ dựa vào Janeway. Ba nguồn bậc 1 có url=null — đề nghị điền doi.org."
+fixes:
+  - "Áp docs/content/checks/2026-09-25/fixes/he-mien-dich-nhan-dien-mot-virus-bang-cach-nao.json: 9 edit vi, 8 edit en, summary vi/en, seoDescription, thêm 9 nguồn, hạ Janeway xuống bậc 3."
+  - "Ghi Revision chụp nội dung trước sửa trong cùng transaction; cập nhật lastVerifiedAt; thêm các dòng corrections vào corrections.md."
+  - "Gán reviewedBy/reviewedAt tài khoản tổ chức sau khi áp xong (content-rules, mục 'Byline người duyệt')."
+errorPatterns:
+  - "Bản sửa chỉ áp cho vi, bỏ quên en: bản vá S1 ngày 17/09 không có enEdits. Quy trình áp fixes phải từ chối kế hoạch sửa bài song ngữ nếu thiếu enEdits."
+  - "Con số trích lại từ giáo trình cũ không kèm năm (10¹¹ 'ít nhất' → 'khoảng 10¹¹'): cùng họ với lỗi 10¹⁴ vi khuẩn đường ruột — con số tách khỏi năm đo và mất chữ 'ít nhất'."
+  - "Mốc thời gian 'trông như giáo trình' (5–10 ngày, 1–3 ngày) không có nguồn — chi tiết cụ thể nhất là chỗ dễ bịa nhất."
