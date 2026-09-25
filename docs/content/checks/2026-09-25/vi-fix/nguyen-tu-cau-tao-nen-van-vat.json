@@ -1,0 +1,128 @@
+{
+  "slug": "nguyen-tu-cau-tao-nen-van-vat",
+  "edits": [
+    {
+      "claimId": "C-2",
+      "severity": "S4",
+      "find": "Khối lượng của proton và neutron lớn hơn electron khoảng 2.000 lần, vì vậy",
+      "replace": "Khối lượng của một proton hay một neutron lớn hơn electron khoảng 1.840 lần, vì vậy",
+      "why": "CODATA 2022: m_p/m_e = 1836,152673426(32), m_n/m_e = 1838,68366200(74). 'Khoảng 2.000' lệch ~9% và khác con số en (~1,840); đưa vi về cùng số với en.",
+      "evidence": "https://physics.nist.gov/cgi-bin/cuu/Value?mpsme ; https://physics.nist.gov/cgi-bin/cuu/Value?mnsme (CODATA 2022, mở 25/09)"
+    },
+    {
+      "claimId": "C-5",
+      "severity": "S3",
+      "find": "Các electron sắp xếp thành những lớp năng lượng khác nhau:\n\n- Lớp s\n- Lớp p\n- Lớp d\n- Lớp f\n\nChính cách sắp xếp này quyết định tính chất hóa học của mỗi nguyên tố.",
+      "replace": "Các electron sắp xếp theo các lớp năng lượng, và mỗi lớp lại chia thành các phân lớp, ký hiệu:\n\n- s\n- p\n- d\n- f\n\nCách sắp xếp này quyết định nhiều tính chất hóa học của mỗi nguyên tố.",
+      "why": "NIST [s4]: electron cùng n thuộc một lớp (shell); cùng n và l thuộc một phân lớp (subshell), l = 0, 1, 2, 3 ký hiệu s, p, d, f. Gọi s/p/d/f là 'lớp' dựng mô hình sai. Vế sau: OpenStax viết 'determines MANY of the chemical properties' — 'quyết định tính chất hóa học' bỏ mất lượng từ (quy tắc 3).",
+      "evidence": "https://www.nist.gov/pml/atomic-spectroscopy-compendium-basic-ideas-notation-data-and-formulas/atomic-spectroscopy-10 (mở 25/09); https://chem.libretexts.org/Bookshelves/General_Chemistry/Chemistry_1e_(OpenSTAX)/06%3A_Electronic_Structure_and_Periodic_Properties_of_Elements/6.4%3A_Electronic_Structure_of_Atoms_(Electron_Configurations) (mở 25/09)"
+    },
+    {
+      "claimId": "C-12",
+      "severity": "S3",
+      "find": "Phần khối lượng mất đi đã được chuyển hóa thành **[[năng lượng liên kết hạt nhân]]**, giúp giữ các proton và neutron gắn chặt với nhau.",
+      "replace": "Phần khối lượng thiếu ấy tương ứng với **[[năng lượng liên kết hạt nhân]]** — năng lượng đã toả ra khi các proton và neutron kết hợp lại, và cũng là năng lượng phải cấp vào để tách chúng ra.",
+      "why": "NRC định nghĩa năng lượng liên kết là 'the minimum energy required to separate the nucleus ... into its component neutrons and protons' — năng lượng phải cấp vào, không phải thứ được cất trong hạt nhân để 'giữ' nucleon. Câu cũ dựng mô hình sai (khối lượng biến thành một kho năng lượng bên trong). Đưa vi về cùng claim với en.",
+      "evidence": "https://www.nrc.gov/reading-rm/basic-ref/glossary/binding-energy.html (mở 25/09); tự tính từ CODATA 2022: 6 × (1,0072764666 + 1,0086649161 + 0,0005485799) u = 12,098940 u > 12 u"
+    },
+    {
+      "claimId": "C-13",
+      "severity": "S3",
+      "find": "Mỗi hạt nhân đều chứa một lượng năng lượng liên kết nhất định.",
+      "replace": "Mỗi hạt nhân có một năng lượng liên kết xác định.",
+      "why": "Cùng mô hình sai với C-12 ('chứa' năng lượng liên kết). en: 'Every nucleus has a definite binding energy.'",
+      "evidence": "https://www.nrc.gov/reading-rm/basic-ref/glossary/binding-energy.html (mở 25/09)"
+    },
+    {
+      "claimId": "C-14",
+      "severity": "S3",
+      "find": "hoặc hạt nhân nặng bị tách ra trong quá trình **phân hạch**, một phần năng lượng liên kết được giải phóng.",
+      "replace": "hoặc hạt nhân nặng bị tách ra trong quá trình **phân hạch**, các hạt nhân tạo thành liên kết chặt hơn các hạt nhân ban đầu, và phần chênh lệch được giải phóng dưới dạng năng lượng.",
+      "why": "Năng lượng liên kết trên mỗi nucleon (IAEA): ⁴He 7,074 MeV, ¹²C 7,680 MeV, ⁵⁶Fe 8,790 MeV, ²³⁵U 7,591 MeV — tăng khi nhẹ ghép lại, tăng khi nặng tách về phía sắt. Năng lượng toả ra là phần chênh lệch liên kết, không phải 'năng lượng liên kết được giải phóng' (điều ngược lại: tách hạt nhân thành nucleon thì phải CẤP năng lượng liên kết).",
+      "evidence": "https://nds.iaea.org/relnsd/v1/data?fields=ground_states&nuclides=4he|12c|56fe|235u (IAEA Live Chart [s7], mở 25/09)"
+    },
+    {
+      "claimId": "C-17",
+      "severity": "S3",
+      "find": "- Vận hành các nhà máy điện hạt nhân.\n- Tạo nên những vụ nổ hạt nhân mạnh nhất từng được con người tạo ra.",
+      "replace": "- Vận hành các nhà máy điện hạt nhân.",
+      "why": "Claim so sánh nhất ('mạnh nhất từng được con người tạo ra') không nguồn nào trong bảng đỡ; nguồn định mở (CTBTO, NRC) trả 403 trong lượt này. Quy tắc 8: cắt, đồng thời cắt ở en.",
+      "evidence": "Không mở được nguồn đỡ (ctbto.org 403, nrc.gov/fission 403) — cắt theo quy tắc 'khi nghi thì cắt'."
+    },
+    {
+      "claimId": "C-18",
+      "severity": "S3",
+      "find": "chính chúng đã tạo nên mọi vật chất trong vũ trụ. Từ các nguyên tử đơn giản nhất cho đến những ngôi sao khổng lồ, tất cả đều được xây dựng từ những hạt cơ bản này.",
+      "replace": "chính chúng đã tạo nên mọi vật chất thông thường trong vũ trụ. Từ các nguyên tử đơn giản nhất cho đến những ngôi sao khổng lồ, tất cả đều được xây dựng từ những hạt này.",
+      "why": "NASA: vật chất thông thường chỉ khoảng 5% vũ trụ, vật chất tối khoảng 27% và không phải proton/neutron/electron; kho có bài vật chất tối nói cùng điều. 'Hạt cơ bản' trong vật lý là hạt không có cấu trúc con — proton và neutron không phải hạt cơ bản.",
+      "evidence": "https://science.nasa.gov/dark-matter/ (mở 25/09); nội bộ: vat-chat-toi-va-nang-luong-toi"
+    }
+  ],
+  "enEdits": [
+    {
+      "claimId": "C-5",
+      "severity": "S3",
+      "find": "This arrangement is what determines the chemical properties of each element.",
+      "replace": "This arrangement determines many of the chemical properties of each element.",
+      "why": "Giữ lượng từ 'many' của OpenStax; khớp vi.",
+      "evidence": "OpenStax Chemistry §6.4 qua LibreTexts (mở 25/09)"
+    },
+    {
+      "claimId": "C-17",
+      "severity": "S3",
+      "find": "- Runs nuclear power plants.\n- Drives nuclear weapons, the most powerful explosions humans have ever produced.",
+      "replace": "- Runs nuclear power plants.",
+      "why": "Cắt cùng vi (C-17): claim so sánh nhất không có nguồn mở được.",
+      "evidence": "Như edits C-17."
+    }
+  ],
+  "addSources": [
+    {
+      "title": "Binding energy — NRC Glossary",
+      "url": "https://www.nrc.gov/reading-rm/basic-ref/glossary/binding-energy.html",
+      "publisher": "U.S. Nuclear Regulatory Commission",
+      "year": 2026,
+      "tier": 2,
+      "covers": "Định nghĩa năng lượng liên kết: năng lượng tối thiểu để tách hạt nhân thành proton và neutron (C-12, C-13)"
+    },
+    {
+      "title": "Carbon — Standard atomic weight and isotopic composition",
+      "url": "https://ciaaw.org/carbon.htm",
+      "publisher": "IUPAC Commission on Isotopic Abundances and Atomic Weights (CIAAW)",
+      "tier": 2,
+      "covers": "¹²C và ¹³C là hai đồng vị bền của carbon; ¹⁴C phóng xạ, dùng trong định tuổi (C-9, C-10)"
+    },
+    {
+      "title": "Nuclear explained",
+      "url": "https://www.eia.gov/energyexplained/nuclear/",
+      "publisher": "U.S. Energy Information Administration",
+      "tier": 2,
+      "covers": "Mọi nhà máy điện hạt nhân dùng phân hạch; nhiệt hạch là nguồn năng lượng của Mặt Trời (C-15, C-16)"
+    },
+    {
+      "title": "Dark Matter",
+      "url": "https://science.nasa.gov/dark-matter/",
+      "publisher": "NASA Science",
+      "tier": 2,
+      "covers": "Vật chất thông thường chỉ ~5% vũ trụ, vật chất tối ~27% (C-18)"
+    },
+    {
+      "title": "Electronic Structure of Atoms (Electron Configurations) — Chemistry (OpenStax), §6.4",
+      "url": "https://chem.libretexts.org/Bookshelves/General_Chemistry/Chemistry_1e_(OpenSTAX)/06%3A_Electronic_Structure_and_Periodic_Properties_of_Elements/6.4%3A_Electronic_Structure_of_Atoms_(Electron_Configurations)",
+      "publisher": "OpenStax (Rice University), qua LibreTexts",
+      "tier": 3,
+      "covers": "Cấu hình electron quyết định nhiều tính chất hóa học (C-5)"
+    }
+  ],
+  "corrections": [
+    "- 2026-09-25 | nguyen-tu-cau-tao-nen-van-vat | (vi) 'lớn hơn electron khoảng 2.000 lần' → 'khoảng 1.840 lần' | CODATA 2022 m_p/m_e = 1836,15, m_n/m_e = 1838,68 (physics.nist.gov, mở 25/09)",
+    "- 2026-09-25 | nguyen-tu-cau-tao-nen-van-vat | (vi) 'Lớp s, p, d, f' → lớp chia thành các phân lớp s, p, d, f; 'quyết định tính chất hóa học' → 'quyết định nhiều tính chất hóa học' (vi + en) | NIST Atomic Spectroscopy [s4]; OpenStax Chemistry §6.4",
+    "- 2026-09-25 | nguyen-tu-cau-tao-nen-van-vat | (vi) 'khối lượng mất đi đã được chuyển hóa thành năng lượng liên kết, giúp giữ...', 'mỗi hạt nhân chứa năng lượng liên kết', 'một phần năng lượng liên kết được giải phóng' → hụt khối tương ứng năng lượng liên kết (toả ra khi hình thành, phải cấp vào để tách); nhiệt hạch/phân hạch toả năng lượng vì sản phẩm liên kết chặt hơn | NRC Glossary 'Binding energy'; IAEA Live Chart B/A ⁴He, ¹²C, ⁵⁶Fe, ²³⁵U",
+    "- 2026-09-25 | nguyen-tu-cau-tao-nen-van-vat | (vi + en) cắt 'vụ nổ hạt nhân mạnh nhất từng được con người tạo ra' — không mở được nguồn đỡ | quy tắc 'khi nghi thì cắt'",
+    "- 2026-09-25 | nguyen-tu-cau-tao-nen-van-vat | (vi) 'tạo nên mọi vật chất trong vũ trụ ... những hạt cơ bản này' → 'mọi vật chất thông thường ... những hạt này' | NASA Dark Matter; proton/neutron không phải hạt cơ bản"
+  ],
+  "openQuestions": [
+    "Bảng nguồn còn các mục không đỡ claim nào trong bản rút gọn (s1, s2 cột mô tả NIST, s3 năng lượng ion hoá, s6 NUBASE2020, s8 bán kính điện tích). Giữ lại vì còn hiệu lực và có thể dùng khi mở rộng bài; không gỡ ở lượt đính chính này.",
+    "Nếu muốn giữ ý 'vũ khí hạt nhân' thì cần một nguồn bậc 2 mở được (vd CTBTO về vụ thử 1961) rồi thêm lại ở CẢ HAI bản."
+  ]
+}

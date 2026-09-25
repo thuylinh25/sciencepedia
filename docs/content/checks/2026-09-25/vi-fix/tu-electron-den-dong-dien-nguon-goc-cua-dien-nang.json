@@ -1,0 +1,108 @@
+{
+  "slug": "tu-electron-den-dong-dien-nguon-goc-cua-dien-nang",
+  "edits": [
+    {
+      "claimId": "C-1",
+      "severity": "S3",
+      "find": "Mọi vật chất đều được cấu tạo từ các hạt mang điện.",
+      "replace": "Vật chất thông thường được cấu tạo từ nguyên tử, và nguyên tử chứa các hạt mang điện:",
+      "why": "'Mọi vật chất được cấu tạo từ các hạt mang điện' sai hai chỗ: neutron trong hạt nhân không mang điện (EIA), và vật chất tối không cấu tạo từ các hạt này (NASA; bài nguyen-tu của kho cùng lượt đổi thành 'vật chất thông thường').",
+      "evidence": "https://www.eia.gov/energyexplained/nuclear/ ('Neutrons do not have an electrical charge', mở 25/09); https://science.nasa.gov/dark-matter/ (mở 25/09)"
+    },
+    {
+      "claimId": "C-3",
+      "severity": "S4",
+      "find": "Giá trị điện tích nhỏ nhất tồn tại độc lập trong tự nhiên được gọi là **điện tích nguyên tố** (*e*):",
+      "replace": "Độ lớn điện tích của một electron (hay một proton) được gọi là **điện tích nguyên tố** (*e*):",
+      "why": "Mệnh đề 'nhỏ nhất tồn tại độc lập trong tự nhiên' không nguồn nào trong bảng phát biểu; NIST [s2] định nghĩa e là 'the amount of electric charge in a single electron (negative) or proton (positive)'. Viết theo điều nguồn nói.",
+      "evidence": "https://www.nist.gov/si-redefinition/ampere-introduction [s2] (mở 25/09)"
+    },
+    {
+      "claimId": "C-6",
+      "severity": "S3",
+      "find": "Nói cách khác, chỉ một lượng điện tích rất nhỏ của electron đã đủ tạo nên những dòng điện quen thuộc trong đời sống hằng ngày.",
+      "replace": "Nói cách khác, điện tích của một electron rất nhỏ: những dòng điện quen thuộc hằng ngày là chuyển động của một số cực lớn electron.",
+      "why": "Câu cũ ngược với chính con số ngay trên nó: 1 C ≈ 6,24 × 10¹⁸ e, nên dòng 1 A là khoảng 6,24 × 10¹⁸ electron đi qua mỗi giây. Đưa vi về cùng claim với en.",
+      "evidence": "https://physics.nist.gov/cgi-bin/cuu/Value?e [s3] (e = 1,602176634 × 10⁻¹⁹ C, exact; mở 25/09); 1/e = 6,2415 × 10¹⁸"
+    },
+    {
+      "claimId": "C-7",
+      "severity": "S4",
+      "find": "Một ampere được định nghĩa là dòng điện vận chuyển:",
+      "replace": "Một ampere là dòng điện vận chuyển:",
+      "why": "Từ 2019 ampere được ĐỊNH NGHĨA qua giá trị cố định của e (và giây qua Δν_Cs) — BIPM [s1]; 1 A = 1 C/s là hệ thức, không phải định nghĩa. en đã viết 'One ampere is a current that carries'.",
+      "evidence": "https://www.bipm.org/en/si-base-units/ampere [s1] (mở 25/09)"
+    },
+    {
+      "claimId": "C-15",
+      "severity": "S4",
+      "find": "Khi những hạt này va chạm với từ trường và khí quyển Trái Đất tại vùng cực, chúng tạo nên hiện tượng **cực quang** đầy màu sắc.",
+      "replace": "Khi những hạt này được từ trường Trái Đất dẫn vào thượng tầng khí quyển gần vùng cực và va chạm với các chất khí ở đó, chúng tạo nên hiện tượng **cực quang** đầy màu sắc.",
+      "why": "Hạt không 'va chạm với từ trường': NASA [s7] viết hạt 'following Earth's magnetic field lines toward the north and south poles, where they enter our atmosphere' và 'interact with atoms and molecules in Earth's atmosphere to create the aurora'. Đơn giản hoá có mất mát: NASA Auroras mô tả năng lượng tích luỹ trong từ quyển rồi mới trút xuống — bài không đi tới mức đó.",
+      "evidence": "https://science.nasa.gov/sun/solar-storms-and-flares/ [s7]; https://science.nasa.gov/sun/auroras/ (mở 25/09)"
+    }
+  ],
+  "enEdits": [
+    {
+      "claimId": "C-1",
+      "severity": "S3",
+      "find": "All matter is made of particles that carry electric charge.",
+      "replace": "Ordinary matter is made of atoms, and atoms contain particles that carry electric charge:",
+      "why": "Khớp vi C-1.",
+      "evidence": "EIA Nuclear explained; NASA Dark Matter"
+    },
+    {
+      "claimId": "C-3",
+      "severity": "S4",
+      "find": "The smallest charge that exists freely in nature is called the **elementary charge** (*e*):",
+      "replace": "The size of the charge on a single electron (or proton) is called the **elementary charge** (*e*):",
+      "why": "Khớp vi C-3.",
+      "evidence": "[s2]"
+    }
+  ],
+  "addSources": [
+    {
+      "title": "Auroras",
+      "url": "https://science.nasa.gov/sun/auroras/",
+      "publisher": "NASA Science",
+      "tier": 2,
+      "covers": "Gió Mặt Trời là dòng hạt tích điện liên tục; tương tác với từ trường và khí quyển Trái Đất tạo cực quang (C-14, C-15)"
+    },
+    {
+      "title": "Dark Matter",
+      "url": "https://science.nasa.gov/dark-matter/",
+      "publisher": "NASA Science",
+      "tier": 2,
+      "covers": "Vật chất thông thường chỉ ~5% vũ trụ (C-1)"
+    },
+    {
+      "title": "Dynamic clamp constructed phase diagram for the Hodgkin and Huxley model of excitability",
+      "url": "https://doi.org/10.1073/pnas.1916514117",
+      "doi": "10.1073/pnas.1916514117",
+      "publisher": "H. Ori, H. Hazan, E. Marder, S. Marom — PNAS 117(7), 3575–3582",
+      "year": 2020,
+      "tier": 1,
+      "covers": "Tính kích thích của tế bào thần kinh là hệ quả của kênh natri và kali phụ thuộc điện thế (C-16)"
+    },
+    {
+      "title": "Calcium Control of Neurotransmitter Release",
+      "url": "https://doi.org/10.1101/cshperspect.a011353",
+      "doi": "10.1101/cshperspect.a011353",
+      "publisher": "T. C. Südhof — Cold Spring Harbor Perspectives in Biology 4(1), a011353",
+      "year": 2012,
+      "tier": 1,
+      "covers": "Điện thế hoạt động mở kênh Ca²⁺ ở đầu tận cùng; Ca²⁺ kích hoạt giải phóng chất dẫn truyền (C-16)"
+    }
+  ],
+  "corrections": [
+    "- 2026-09-25 | tu-electron-den-dong-dien-nguon-goc-cua-dien-nang | (vi + en) 'Mọi vật chất đều được cấu tạo từ các hạt mang điện' → 'Vật chất thông thường được cấu tạo từ nguyên tử, và nguyên tử chứa các hạt mang điện' | EIA Nuclear explained (neutron không mang điện); NASA Dark Matter",
+    "- 2026-09-25 | tu-electron-den-dong-dien-nguon-goc-cua-dien-nang | (vi + en) 'điện tích nhỏ nhất tồn tại độc lập trong tự nhiên' → 'độ lớn điện tích của một electron (hay một proton)' | NIST Ampere: Introduction [s2]",
+    "- 2026-09-25 | tu-electron-den-dong-dien-nguon-goc-cua-dien-nang | (vi) 'chỉ một lượng điện tích rất nhỏ của electron đã đủ tạo nên những dòng điện quen thuộc' → 'điện tích của một electron rất nhỏ: dòng điện hằng ngày là chuyển động của một số cực lớn electron' | NIST CODATA e [s3]; 1 C ≈ 6,24 × 10¹⁸ e",
+    "- 2026-09-25 | tu-electron-den-dong-dien-nguon-goc-cua-dien-nang | (vi) cực quang: hạt 'va chạm với từ trường và khí quyển' → 'được từ trường dẫn vào thượng tầng khí quyển gần vùng cực và va chạm với các chất khí ở đó'; 'ampere được định nghĩa là dòng vận chuyển 1 C/s' → 'ampere là dòng vận chuyển 1 C/s' | NASA Solar Storms and Flares [s7]; NASA Auroras; BIPM ampere [s1]",
+    "- 2026-09-25 | tu-electron-den-dong-dien-nguon-goc-cua-dien-nang | thêm nguồn bậc 1 cho đoạn thần kinh (Na⁺, K⁺, Ca²⁺): Ori và cs. 2020, doi 10.1073/pnas.1916514117; Südhof 2012, doi 10.1101/cshperspect.a011353 | tóm tắt qua Europe PMC (mở 25/09)"
+  ],
+  "openQuestions": [
+    "Sét: NWS [s5] ghi tia sét điển hình 'about 30,000 Amps'; chú thích ảnh trên trang NIST [s2] ghi 'Typical lightning bolts can carry 100,000 amps or more'. Bài theo NWS (cơ quan chuyên trách, câu chính văn chứ không phải chú thích ảnh). Nếu muốn nêu khoảng dao động dòng đỉnh thì cần nguồn bậc 1 về phân bố dòng sét.",
+    "[s8] Purves NBK10879 (NCBI Bookshelf) bị reCAPTCHA trong lượt này nên không đọc lại; đoạn Na⁺/K⁺/Ca²⁺ nay dựa vào hai nguồn bậc 1 mới thêm."
+  ]
+}

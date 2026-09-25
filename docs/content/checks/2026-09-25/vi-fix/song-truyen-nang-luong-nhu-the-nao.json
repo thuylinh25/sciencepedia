@@ -1,0 +1,72 @@
+{
+  "slug": "song-truyen-nang-luong-nhu-the-nao",
+  "edits": [
+    {
+      "claimId": "W5",
+      "severity": "S3",
+      "find": "Biên độ càng lớn, sóng mang càng nhiều năng lượng.",
+      "replace": "Với cùng một loại sóng ở cùng tần số, biên độ càng lớn thì sóng mang càng nhiều năng lượng. Năng lượng còn phụ thuộc vào tần số: với ánh sáng, bước sóng càng ngắn thì năng lượng càng lớn.",
+      "why": "Câu cũ nêu một yếu tố như thể là tất cả (quy tắc 15): nguồn nói năng lượng của sóng điện từ tăng khi bước sóng ngắn lại, độc lập với biên độ. Thêm điều kiện và vế tần số.",
+      "evidence": "NASA Anatomy of an Electromagnetic Wave (s4, mở 25/09): 'Moving along the spectrum from long to short wavelengths, energy increases as the wavelength shortens.' NASA Basics of Space Flight ch.6 (s7, mở 25/09): 'The strength, or intensity of the wave (analogous to a sound wave's loudness) is known as its amplitude.' NASA Cosmicopia Q&A (s8, mở 25/09): biên độ trường giảm theo khoảng cách thì 'the light gets dimmer'."
+    },
+    {
+      "claimId": "W11",
+      "severity": "S4",
+      "find": "Động đất tạo ra hai loại sóng chính:",
+      "replace": "Trong lòng Trái Đất, động đất truyền đi hai loại sóng chính:",
+      "why": "P và S là hai loại sóng truyền xuyên lòng đất; động đất còn tạo sóng mặt. Khớp phạm vi với nguồn USGS (đường đi của P và S xuyên Trái Đất) và với bản en ('body wave').",
+      "evidence": "USGS P-wave and S-wave paths through the earth (s12) + The Science of Earthquakes (s10) — trả 202/chặn bot, đọc bản Wayback 2026-09-21 / 2026-09-10 ngày 25/09: 'P-wave and S-wave paths through the earth'."
+    },
+    {
+      "claimId": "W14",
+      "severity": "S3",
+      "find": "Đây là nguyên nhân tạo nên cầu vồng và hiện tượng lăng kính tách ánh sáng trắng thành nhiều màu sắc.",
+      "replace": "Các bước sóng ánh sáng khác nhau bị làm chậm ở mức khác nhau nên lệch những góc khác nhau — đó là cách lăng kính tách ánh sáng trắng thành các màu, và là một phần cơ chế tạo nên cầu vồng.",
+      "why": "Câu cũ quy cầu vồng và lăng kính cho khúc xạ nói chung, bỏ mất tán sắc — phần nguồn dùng để giải thích; cầu vồng còn cần phản xạ trong giọt nước nên chỉ là 'một phần cơ chế'. Khớp bản en.",
+      "evidence": "NASA Wave Behaviors (s5, mở 25/09): 'Different wavelengths of light are slowed at different rates, which causes them to bend at different angles. For example, when the full spectrum of visible light travels through the glass of a prism, the wavelengths are separated into the colors of the rainbow.'"
+    },
+    {
+      "claimId": "W16",
+      "severity": "S4",
+      "find": "Từ âm thanh, ánh sáng đến động đất, mọi loại sóng đều được mô tả bằng bốn đại lượng đơn giản",
+      "replace": "Từ âm thanh, ánh sáng đến động đất, mọi sóng tuần hoàn đều được mô tả bằng bốn đại lượng đơn giản",
+      "why": "Bước sóng và chu kỳ không xác định cho một xung đơn; chính bài đã viết 'mối liên hệ cơ bản của mọi sóng tuần hoàn'. Khớp bản en ('periodic waves').",
+      "evidence": "NASA Basics of Space Flight ch.6 (s7, mở 25/09): 'Waves are described in terms of frequency, wavelength, and amplitude'; bước sóng định nghĩa qua 'the time required for one oscillation'."
+    }
+  ],
+  "enEdits": [
+    {
+      "claimId": "W5",
+      "severity": "S3",
+      "find": "The larger the amplitude, the more energy the wave carries.",
+      "replace": "For the same kind of wave at the same frequency, the larger the amplitude, the more energy the wave carries. Energy also depends on frequency: for light, the shorter the wavelength, the higher the energy.",
+      "why": "Khớp W5 vi.",
+      "evidence": "Như W5."
+    },
+    {
+      "claimId": "W11",
+      "severity": "S4",
+      "find": "An earthquake produces two main kinds of body wave:",
+      "replace": "Through the Earth's interior, an earthquake sends out two main kinds of wave:",
+      "why": "Khớp W11 vi.",
+      "evidence": "Như W11."
+    }
+  ],
+  "addSources": [
+    {
+      "title": "Forms of energy — Energy Kids",
+      "url": "https://www.eia.gov/kids/what-is-energy/forms-of-energy.php",
+      "publisher": "U.S. Energy Information Administration",
+      "tier": 2,
+      "covers": "W9, W10: năng lượng bức xạ truyền bằng sóng ngang; âm thanh truyền bằng sóng dọc"
+    }
+  ],
+  "corrections": [
+    "- 2026-09-25 | song-truyen-nang-luong-nhu-the-nao | vi: \"Khúc xạ … là nguyên nhân tạo nên cầu vồng và lăng kính\" → các bước sóng bị làm chậm khác nhau nên lệch góc khác nhau: lăng kính tách màu, và là một phần cơ chế cầu vồng; \"mọi loại sóng\" → \"mọi sóng tuần hoàn\" | NASA Wave Behaviors (s5), Basics of Space Flight ch.6 (s7), mở 25/09",
+    "- 2026-09-25 | song-truyen-nang-luong-nhu-the-nao | vi+en: \"Biên độ càng lớn, sóng mang càng nhiều năng lượng\" (không điều kiện) → với cùng loại sóng, cùng tần số; thêm vế năng lượng còn phụ thuộc tần số (ánh sáng bước sóng ngắn năng lượng lớn); \"động đất tạo ra hai loại sóng chính\" → hai loại sóng chính truyền trong lòng Trái Đất | NASA Anatomy of an EM Wave (s4), USGS P/S paths (s12, qua Wayback), mở 25/09"
+  ],
+  "openQuestions": [
+    "Bảng 15 nguồn nay có nhiều mục không còn đỡ claim nào ở cả hai bản (s1–s3 định nghĩa SI, s6 ánh sáng khả kiến, s9 tốc độ âm, s11 vùng bóng, s14 LIGO, s15 thính giác) — di sản của bản dài cũ. Không sai, nhưng làm bảng nguồn nói nhiều hơn bài; để content-curator quyết giữ hay gỡ.",
+    "Trang USGS (s10, s12) trả 202 kèm trang chặn bot với curl; isAlive() có thể báo chết giả."
+  ]
+}

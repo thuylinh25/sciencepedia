@@ -1,0 +1,125 @@
+{
+  "slug": "bi-mat-dang-sau-cam-giac-nang-va-nhe",
+  "edits": [
+    {
+      "claimId": "C-9",
+      "severity": "S4",
+      "find": "> Một người nặng 60 kg trên Trái Đất vẫn có khối lượng 60 kg trên Mặt Trăng.",
+      "replace": "> Một người có khối lượng 60 kg trên Trái Đất vẫn có khối lượng 60 kg trên Mặt Trăng.",
+      "why": "Bài dạy phân biệt khối lượng với trọng lượng; 'nặng 60 kg' chính là cách nói lẫn lộn bài đang gỡ. en đã viết 'with a mass of 60 kg'.",
+      "evidence": "https://www.nist.gov/pml/owm/si-units-mass [s6] (mở 25/09): mass vs weight"
+    },
+    {
+      "claimId": "C-10",
+      "severity": "S4",
+      "find": "Đây là một trong những hiểu lầm phổ biến nhất về vũ trụ.",
+      "replace": "Đây là một hiểu lầm phổ biến về vũ trụ.",
+      "why": "NASA [s11] viết 'Many people mistakenly think that gravity does not exist in space' — phổ biến, không phải 'phổ biến nhất'. Bỏ so sánh nhất không nguồn.",
+      "evidence": "https://www.nasa.gov/centers-and-facilities/glenn/what-is-microgravity/ [s11] (mở 25/09)"
+    },
+    {
+      "claimId": "C-13",
+      "severity": "S4",
+      "find": "ISS đang chuyển động quanh Trái Đất với vận tốc khoảng 7,7 km/s.",
+      "replace": "ISS đang chuyển động quanh Trái Đất với tốc độ khoảng 28.000 km/h (gần 7,8 km/s).",
+      "why": "NASA [s11]: '17,500 miles per hour (28,000 km per hour)' = 7,78 km/s; 7,7 không phải làm tròn của số nguồn. Dùng số của nguồn, kèm quy đổi.",
+      "evidence": "https://www.nasa.gov/centers-and-facilities/glenn/what-is-microgravity/ [s11] (mở 25/09)"
+    },
+    {
+      "claimId": "C-16",
+      "severity": "S3",
+      "find": "Nhưng mọi thí nghiệm chính xác nhất từng thực hiện đều cho thấy:\n\n> Khối lượng quán tính = Khối lượng hấp dẫn\n\nvới độ chính xác cực cao.",
+      "replace": "Nhưng đến nay, các thí nghiệm chính xác nhất chưa tìm thấy khác biệt nào giữa chúng:\n\n> Khối lượng quán tính = Khối lượng hấp dẫn\n\ntrong giới hạn cực kỳ chặt: vệ tinh MICROSCOPE (kết quả công bố năm 2022) không phát hiện vi phạm nào, ở độ chính xác cỡ 10⁻¹⁵.",
+      "why": "MICROSCOPE [s13]: 'We found no violation of the WEP', η(Ti, Pt) = [−1,5 ± 2,3 (stat) ± 1,5 (syst)] × 10⁻¹⁵. Thực nghiệm đặt giới hạn trên cho độ lệch, không 'cho thấy' hai đại lượng bằng nhau — câu cũ nâng mức chắc chắn.",
+      "evidence": "https://doi.org/10.1103/PhysRevLett.129.121102 — tóm tắt qua Europe PMC và toàn văn arXiv:2209.15487 (mở 25/09)"
+    },
+    {
+      "claimId": "C-18",
+      "severity": "S3",
+      "find": "Tuy nhiên:\n\n> Vì sao hai đại lượng tưởng như không liên quan lại luôn bằng nhau vẫn là một trong những câu hỏi sâu sắc nhất của vật lý hiện đại.",
+      "replace": "Dù vậy, câu chuyện chưa khép lại:\n\n> Thuyết tương đối rộng lấy sự bằng nhau này làm nguyên lý nền tảng, nhưng chưa được coi là lý thuyết hoàn chỉnh vì chưa hợp nhất được với cơ học lượng tử. Một số lý thuyết mở rộng dự đoán sự bằng nhau có thể bị vi phạm ở mức cực nhỏ, nên các nhà vật lý vẫn tiếp tục kiểm nghiệm nó ngày càng chính xác hơn.",
+      "why": "'Một trong những câu hỏi sâu sắc nhất' là đánh giá không nguồn nào trong bảng nêu. MICROSCOPE nói điều cụ thể hơn: nguyên lý tương đương là 'cornerstone of general relativity'; 'one does not know how to cast GR into a consistent quantum theory'; 'GR cannot be considered as a complete theory'; tương tác mới 'could lead to very small apparent violations of the EP'.",
+      "evidence": "https://doi.org/10.1103/PhysRevLett.129.121102 — tóm tắt qua Europe PMC và toàn văn arXiv:2209.15487 (mở 25/09), trang 1–2"
+    },
+    {
+      "claimId": "C-19",
+      "severity": "S4",
+      "find": "## Ví dụ thú vị: thiết bị nặng hàng tấn ngoài không gian",
+      "replace": "## Ví dụ thú vị: thiết bị hàng tấn ngoài không gian",
+      "why": "Cùng lý do C-9: bỏ chữ 'nặng' trong ngữ cảnh không trọng lượng.",
+      "evidence": "[s6] NIST mass vs weight"
+    },
+    {
+      "claimId": "C-19",
+      "severity": "S3",
+      "find": "Thiết bị đó có thể trôi đi khá dễ dàng vì gần như không có ma sát và không có trọng lượng cảm nhận được.",
+      "replace": "Một cú đẩy có thể làm nó trôi đi, vì gần như không có ma sát và nó không có trọng lượng cảm nhận được — nhưng vì khối lượng lớn, nó chỉ tăng tốc chậm.",
+      "why": "Câu cũ dựng mô hình sai ngay trong bài về quán tính: với cùng lực, vật khối lượng lớn tăng tốc chậm (F = m × a) — ở quỹ đạo cũng vậy; NASA [s11]: 'The object's mass is the same, but it would register 0 on a scale'. Đưa vi về cùng claim với en.",
+      "evidence": "https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/newtons-laws-of-motion/ [s8]; [s11] (mở 25/09)"
+    },
+    {
+      "claimId": "C-20",
+      "severity": "S4",
+      "find": "Một vật nặng vài tấn vẫn có thể gây ra lực va chạm cực lớn.",
+      "replace": "Một vật có khối lượng vài tấn vẫn có thể gây ra lực va chạm cực lớn.",
+      "why": "Như C-9; en đã viết 'An object of several tonnes'.",
+      "evidence": "[s6]"
+    }
+  ],
+  "enEdits": [
+    {
+      "claimId": "C-10",
+      "severity": "S4",
+      "find": "This is one of the most common misconceptions about space.",
+      "replace": "This is a common misconception about space.",
+      "why": "Khớp vi C-10.",
+      "evidence": "[s11]"
+    },
+    {
+      "claimId": "C-13",
+      "severity": "S4",
+      "find": "The ISS moves around the Earth at about 7.7 km/s.",
+      "replace": "The ISS moves around the Earth at about 28,000 km/h (nearly 7.8 km/s).",
+      "why": "Khớp vi C-13 và số của NASA [s11].",
+      "evidence": "[s11]"
+    },
+    {
+      "claimId": "C-16",
+      "severity": "S3",
+      "find": "to within extremely tight limits.",
+      "replace": "to within extremely tight limits: the MICROSCOPE satellite (results published in 2022) found no violation, at a precision of about 10⁻¹⁵.",
+      "why": "Khớp vi C-16.",
+      "evidence": "https://doi.org/10.1103/PhysRevLett.129.121102 — tóm tắt qua Europe PMC và toàn văn arXiv:2209.15487 (mở 25/09)"
+    },
+    {
+      "claimId": "C-18",
+      "severity": "S3",
+      "find": "However:\n\n> Why two seemingly unrelated quantities should always be equal remains one of the deepest questions in modern physics.",
+      "replace": "The story is not closed, though:\n\n> General Relativity is not regarded as a complete theory, because it has not been unified with quantum mechanics. Some extended theories predict that the equality could be violated at an extremely small level, so physicists keep testing it with ever greater precision.",
+      "why": "Khớp vi C-18.",
+      "evidence": "https://doi.org/10.1103/PhysRevLett.129.121102 — tóm tắt qua Europe PMC và toàn văn arXiv:2209.15487 (mở 25/09), trang 1–2"
+    },
+    {
+      "claimId": "C-19",
+      "severity": "S4",
+      "find": "## A striking example: equipment weighing several tonnes in space",
+      "replace": "## A striking example: several tonnes of equipment in space",
+      "why": "Khớp vi C-19 (bỏ 'weighing').",
+      "evidence": "[s6]"
+    }
+  ],
+  "addSources": [
+    {
+      "title": "Moon Fact Sheet",
+      "url": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/moonfact.html",
+      "publisher": "NASA Space Science Data Coordinated Archive (NSSDCA)",
+      "tier": 2,
+      "covers": "Gia tốc trọng trường bề mặt Mặt Trăng 1,62 m/s² (C-8)"
+    }
+  ],
+  "corrections": [
+    "- 2026-09-25 | bi-mat-dang-sau-cam-giac-nang-va-nhe | (vi) thiết bị vài tấn ở ISS 'có thể trôi đi khá dễ dàng' → 'một cú đẩy có thể làm nó trôi đi ... nhưng vì khối lượng lớn, nó chỉ tăng tốc chậm'; 'nặng 60 kg' / 'nặng vài tấn' / 'thiết bị nặng hàng tấn' → 'có khối lượng ...' (tiêu đề mục đổi ở cả en) | NASA Glenn Newton's laws [s8]; NASA What is Microgravity [s11]",
+    "- 2026-09-25 | bi-mat-dang-sau-cam-giac-nang-va-nhe | (vi + en) 'mọi thí nghiệm ... đều cho thấy khối lượng quán tính = khối lượng hấp dẫn' → 'chưa tìm thấy khác biệt nào, trong giới hạn cực kỳ chặt: MICROSCOPE 2022 không phát hiện vi phạm ở độ chính xác cỡ 10⁻¹⁵'; 'vì sao bằng nhau là một trong những câu hỏi sâu sắc nhất' → Thuyết Tương đối Tổng quát chưa được coi là hoàn chỉnh (chưa hợp nhất với cơ học lượng tử); một số lý thuyết mở rộng dự đoán vi phạm cực nhỏ | MICROSCOPE, PRL 129, 121102 (2022), doi 10.1103/PhysRevLett.129.121102",
+    "- 2026-09-25 | bi-mat-dang-sau-cam-giac-nang-va-nhe | (vi + en) 'một trong những hiểu lầm phổ biến nhất' → 'một hiểu lầm phổ biến'; tốc độ ISS 'khoảng 7,7 km/s' → 'khoảng 28.000 km/h (gần 7,8 km/s)'; thêm nguồn NSSDC Moon Fact Sheet cho g Mặt Trăng 1,62 m/s² | NASA What is Microgravity [s11]; NSSDC Moon Fact Sheet (mở 25/09)"
+  ]
+}

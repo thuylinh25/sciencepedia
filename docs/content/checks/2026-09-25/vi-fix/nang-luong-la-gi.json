@@ -1,0 +1,123 @@
+{
+  "slug": "nang-luong-la-gi",
+  "edits": [
+    {
+      "claimId": "N1",
+      "severity": "S3",
+      "find": "Trong vật lý, năng lượng là một **đại lượng đo khả năng gây ra sự biến đổi hoặc thực hiện công**.",
+      "replace": "Trong vật lý, năng lượng thường được mô tả là **đại lượng đo khả năng gây ra sự biến đổi hoặc thực hiện công** — một mô tả dễ dùng, không phải định nghĩa chặt chẽ.",
+      "why": "Quy tắc 4: đơn giản hoá mất mát thì phải nói ra. EIA gọi đây là cách 'scientists define'; NASA Glenn s7 cho thấy năng lượng được bảo toàn cả trong những quá trình không tự xảy ra theo chiều ngược lại — không phải mọi năng lượng đều dùng được để sinh công. Khớp bản en.",
+      "evidence": "EIA, What is energy? (s4, mở 25/09): 'Scientists define energy as the ability to do work.' NASA Glenn, Second Law of Thermodynamics and Entropy (s7, mở 25/09): 'we can imagine thermodynamic processes which would conserve energy but which never occur in nature' — định luật 2 đặt thêm giới hạn mà 'khả năng sinh công' không nói."
+    },
+    {
+      "claimId": "N2",
+      "severity": "S3",
+      "find": "> Năng lượng không tự sinh ra cũng không tự mất đi, mà chỉ chuyển từ dạng này sang dạng khác.",
+      "replace": "> Trong một hệ cô lập, năng lượng không tự sinh ra cũng không tự mất đi, mà chỉ chuyển từ dạng này sang dạng khác.",
+      "why": "Nguồn đặt phạm vi cho định luật bảo toàn ('within some problem domain'); bản vi bỏ phạm vi (mất dè dặt). Khớp bản en ('In an isolated system').",
+      "evidence": "NASA Glenn, Conservation of Energy (s6, mở 25/09): 'Within some problem domain, the amount of energy remains constant, and energy is neither created nor destroyed. Energy can be converted from one form to another ... but the total energy within the domain remains fixed.'"
+    },
+    {
+      "claimId": "N9",
+      "severity": "S3",
+      "find": "Điện năng vận hành hầu hết các thiết bị hiện đại.",
+      "replace": "Trong dây dẫn, điện năng được mang bởi các electron chuyển động; tia sét là một ví dụ điện năng trong tự nhiên.",
+      "why": "'Hầu hết các thiết bị hiện đại' là khẳng định định lượng không nguồn nào trong bảng nêu. Thay bằng ví dụ nguồn đưa ra.",
+      "evidence": "EIA Energy Kids, Forms of energy (s5, mở 25/09): 'Electrical energy is delivered by tiny charged particles called electrons, that typically move through a wire. Lightning is an example of electrical energy in nature.'"
+    },
+    {
+      "claimId": "N10",
+      "severity": "S3",
+      "find": "Đây là nguồn năng lượng của Mặt Trời và các nhà máy điện hạt nhân.",
+      "replace": "Mặt Trời phát năng lượng nhờ phản ứng tổng hợp hạt nhân; các nhà máy điện hạt nhân dùng phản ứng phân hạch.",
+      "why": "Câu cũ đúng nhưng không nguồn nào trong bảng đỡ, và gộp hai quá trình khác nhau (tổng hợp ở Mặt Trời, phân hạch ở nhà máy) thành một. Thêm nguồn EIA Nuclear explained.",
+      "evidence": "EIA, Nuclear explained (mở 25/09): 'Fusion is the source of energy in the sun and stars'; 'All nuclear power plants use nuclear fission'. EIA Energy Kids, Forms of energy (s5, mở 25/09): 'Nuclear energy is energy stored in the nucleus of an atom ... Large amounts of energy can be released when the nuclei are combined or split apart.'"
+    },
+    {
+      "claimId": "N11",
+      "severity": "S3",
+      "find": "- Ánh sáng Mặt Trời → hóa năng trong cây xanh.\n- Hóa năng trong thức ăn → động năng của cơ bắp.\n- Động năng → nhiệt năng do ma sát.",
+      "replace": "- Hóa năng trong thức ăn → động năng khi cơ thể vận động.\n- Hóa năng trong xăng → nhiệt năng khi xăng cháy trong động cơ ô tô.\n- Thế năng hấp dẫn → động năng khi xe đạp lao xuống dốc.",
+      "why": "Hai trong ba ví dụ (quang hợp, ma sát) không có trong nguồn nào của bảng; đã tìm trên trang biomass của EIA, không thấy câu tương ứng. Quy tắc 8: thay bằng ba ví dụ nguồn nêu nguyên văn.",
+      "evidence": "EIA, What is energy? (s4, mở 25/09): 'the food you eat contains chemical energy, and your body stores this energy until you use it as kinetic energy during work or play'. EIA Energy Kids, Forms of energy (s5, mở 25/09): 'chemical energy is converted to thermal energy when people ... burn gasoline in a car's engine'; 'When a person rides a bicycle down a steep hill and picks up speed, the gravitational energy is converting to motion energy.'"
+    },
+    {
+      "claimId": "N13",
+      "severity": "S3",
+      "find": "Phương trình này cho thấy khối lượng và năng lượng thực chất là hai biểu hiện của cùng một đại lượng vật lý.\n\nMột lượng khối lượng rất nhỏ có thể chuyển hóa thành năng lượng cực lớn, chính là nguyên nhân khiến các phản ứng hạt nhân giải phóng nhiều năng lượng đến vậy.",
+      "replace": "Phương trình này nói rằng khi năng lượng của một vật thay đổi một lượng E, khối lượng của nó thay đổi một lượng E/c².\n\nVì c² rất lớn, một lượng khối lượng rất nhỏ tương ứng với một lượng năng lượng rất lớn — đó là lý do các phản ứng hạt nhân giải phóng nhiều năng lượng đến vậy.",
+      "why": "'Hai biểu hiện của cùng một đại lượng' không có trong nguồn s8 và dễ dựng mô hình sai. Viết theo phát biểu của NRC; vế thứ hai giữ ý của NRC ('releasing enormous amounts of energy'), nêu vai trò của c² như nguồn ('conversion factor'). Khớp bản en.",
+      "evidence": "NRC glossary, Mass-energy equation (s8; trang trả 403 với curl, đọc bản Wayback 2025-04-29 ngày 25/09): 'when the energy of a body changes by an amount E (no matter what form the energy takes), the mass (m) of the body will change by an amount equal to E/c². The factor c squared ... may be regarded as the conversion factor relating units of mass and energy. The equation predicted the possibility of releasing enormous amounts of energy by the conversion of mass to energy.'"
+    }
+  ],
+  "enEdits": [
+    {
+      "claimId": "N11",
+      "severity": "S3",
+      "find": "- Sunlight → chemical energy in green plants.\n- Chemical energy in food → kinetic energy of muscles.\n- Kinetic energy → thermal energy through friction.",
+      "replace": "- Chemical energy in food → kinetic energy when the body moves.\n- Chemical energy in petrol → thermal energy when it burns in a car engine.\n- Gravitational potential energy → kinetic energy when a bicycle speeds down a hill.",
+      "why": "Khớp N11 vi.",
+      "evidence": "Như N11."
+    },
+    {
+      "claimId": "N9",
+      "severity": "S3",
+      "find": "Electrical energy runs most modern devices.",
+      "replace": "In a wire, electrical energy is carried by moving electrons; lightning is an example of electrical energy in nature.",
+      "why": "Khớp N9 vi.",
+      "evidence": "Như N9."
+    },
+    {
+      "claimId": "N10",
+      "severity": "S3",
+      "find": "It is the energy source of the Sun and of nuclear power plants.",
+      "replace": "The Sun releases energy through nuclear fusion; nuclear power plants use nuclear fission.",
+      "why": "Khớp N10 vi.",
+      "evidence": "Như N10."
+    },
+    {
+      "claimId": "N13",
+      "severity": "S3",
+      "find": "The equation expresses mass–energy equivalence: a change in a body's energy comes with a corresponding change in its mass, and the reverse.",
+      "replace": "The equation says that when a body's energy changes by an amount E, its mass changes by an amount E/c².",
+      "why": "Khớp N13 vi (vế 'and the reverse' không có trong câu nguồn).",
+      "evidence": "Như N13."
+    }
+  ],
+  "summaryEdits": [
+    {
+      "claimId": "N2",
+      "severity": "S3",
+      "find": "năng lượng luôn tuân theo một quy luật cơ bản: không tự sinh ra, không tự mất đi, chỉ chuyển từ dạng này sang dạng khác.",
+      "replace": "năng lượng luôn tuân theo một quy luật cơ bản: trong một hệ cô lập, nó không tự sinh ra, không tự mất đi, chỉ chuyển từ dạng này sang dạng khác.",
+      "why": "Như N2; summaryEn đã có 'in an isolated system'.",
+      "evidence": "Như N2."
+    }
+  ],
+  "addSources": [
+    {
+      "title": "Nuclear explained — Nuclear power and fission/fusion",
+      "url": "https://www.eia.gov/energyexplained/nuclear/",
+      "publisher": "U.S. Energy Information Administration",
+      "tier": 2,
+      "covers": "N10: tổng hợp hạt nhân là nguồn năng lượng của Mặt Trời; nhà máy điện hạt nhân dùng phân hạch"
+    },
+    {
+      "title": "Measuring electricity",
+      "url": "https://www.eia.gov/energyexplained/electricity/measuring-electricity.php",
+      "publisher": "U.S. Energy Information Administration",
+      "tier": 2,
+      "covers": "N4: kilowatt-giờ là đơn vị điện năng mà các công ty điện dùng"
+    }
+  ],
+  "corrections": [
+    "- 2026-09-25 | nang-luong-la-gi | vi: \"Năng lượng không tự sinh ra cũng không tự mất đi\" (không phạm vi) → \"Trong một hệ cô lập, …\" (cả summary); định nghĩa \"đại lượng đo khả năng … thực hiện công\" → nói rõ là mô tả dễ dùng, không phải định nghĩa chặt | NASA Glenn Conservation of Energy, Second Law (s6, s7); EIA What is energy (s4), mở 25/09",
+    "- 2026-09-25 | nang-luong-la-gi | vi+en: E = mc² \"khối lượng và năng lượng là hai biểu hiện của cùng một đại lượng\" → \"năng lượng đổi E thì khối lượng đổi E/c²\"; vì c² rất lớn nên khối lượng rất nhỏ tương ứng năng lượng rất lớn | NRC glossary Mass-energy equation (s8, đọc qua Wayback 2025-04-29 vì trang trả 403)",
+    "- 2026-09-25 | nang-luong-la-gi | vi+en: \"Điện năng vận hành hầu hết thiết bị hiện đại\", \"nguồn năng lượng của Mặt Trời và nhà máy điện hạt nhân\", ví dụ quang hợp và ma sát (không nguồn) → electron mang điện năng trong dây dẫn, tia sét; Mặt Trời dùng tổng hợp, nhà máy dùng phân hạch; ba ví dụ chuyển hoá của EIA (thức ăn → vận động, xăng → nhiệt, xe đạp xuống dốc) | EIA Forms of energy (s5), EIA Nuclear explained (thêm mới)"
+  ],
+  "openQuestions": [
+    "Ví dụ quang hợp (ánh sáng Mặt Trời → hoá năng trong cây) và ma sát (động năng → nhiệt năng) đúng nhưng đã bị thay vì không mở được nguồn trong bảng nói ra. Muốn đưa lại thì thêm một nguồn bậc 1–2 (vd. trang photosynthesis của NASA/EIA đọc được) trước.",
+    "s8 (NRC) trả 403 với mọi yêu cầu không phải trình duyệt; isAlive() có thể báo chết giả. Nội dung đọc qua Wayback ngày 2025-04-29.",
+    "Câu hỏi của lượt đối chiếu song ngữ về dòng dẫn nguồn cuối bài và về dòng nhật ký cho lần rút gọn bản vi trước đây vẫn thuộc content-curator, không phải claim."
+  ]
+}

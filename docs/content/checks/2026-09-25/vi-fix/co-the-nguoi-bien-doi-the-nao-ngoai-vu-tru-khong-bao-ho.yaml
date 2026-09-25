@@ -1,0 +1,106 @@
+slug: co-the-nguoi-bien-doi-the-nao-ngoai-vu-tru-khong-bao-ho
+checkedAt: 2026-09-25
+checkedBy: science-editor
+priorFactCheck: REVISE
+verdict: pass
+summary: "Bài sức khoẻ/sinh tồn: mọi mốc thời gian và mức chắc chắn nay theo đúng NASA SP-3006 và NASA Imagine, kèm \"có lẽ\", \"giới hạn chưa được biết rõ\", \"không có gì bảo đảm\" và ghi rõ dữ liệu cứu sống là của động vật. Đã cắt 46°C (S2), \"gần như chắc chắn tử vong\" + thuyên tắc khí (S2), +120/−150°C gán \"vỏ tàu\", nước mắt, tầng ozone, tia X; sửa 10–15 → 9–11 giây, cơ chế thiếu oxy, cửa sổ cứu sống 60–90 giây. Hai bản vi/en cùng claim. Đọc lại toàn bài vi: không còn S1–S3; 5 nguồn bậc 1–2."
+claims:
+  - id: C-1
+    claim: "Có lẽ còn giữ phần nào ý thức khoảng 9–11 giây; rất khó có quá 5–10 giây để tự cứu"
+    verdict: verified
+    severity: none
+    evidence: "https://ntrs.nasa.gov/citations/19730006364 ; https://archive.org/stream/bioastronautics_data_book/bioastronautics_data_book_djvu.txt"
+    note: "SP-3006: \"Some degree of consciousness will probably be retained for 9 to 11 seconds\"; \"very unlikely … more than 5 to 10 seconds to help himself\". Giữ \"có lẽ\"."
+  - id: C-2
+    claim: "Máu qua phổi không còn nhận oxy (phổi còn rút oxy ra khỏi máu), máu nghèo oxy đi lên não; não nhanh chóng thiếu oxy"
+    verdict: verified
+    severity: none
+    evidence: "https://imagine.gsfc.nasa.gov/ask_astro/space_travel.html"
+    note: "Imagine: \"your lungs are now exchanging oxygen out of the blood\"; \"the time it takes for O2 deprived blood to go from the lungs to the brain\"; \"Loss of consciousness occurs only after the body has depleted the supply of oxygen in the blood\"."
+  - id: C-3
+    claim: "Tai nạn buồng chân không ở Manned Spacecraft Center (Houston) giữa thập niên 1960: còn tỉnh khoảng 14 giây, tỉnh lại sau khi tăng áp; nhớ cảm giác nước trên lưỡi bắt đầu sôi"
+    verdict: verified
+    severity: S4
+    evidence: "https://imagine.gsfc.nasa.gov/ask_astro/space_travel.html"
+    note: "Imagine: \"back in '65\", \"remained conscious for about 14 seconds\", \"regained consciousness at around 15,000 feet equivalent altitude\", \"water on his tongue beginning to boil\". Bài để \"giữa thập niên 1960\", không ghi năm/tên người — xem openQuestions. S4 vì chỉ một nguồn (trang tổng hợp)."
+  - id: C-4
+    claim: "Nín thở khi giảm áp: không khí trong phổi giãn nở, có thể rách mô phổi, gây tổn thương phổi nặng hoặc tử vong"
+    verdict: verified
+    severity: none
+    evidence: "https://ntrs.nasa.gov/citations/19730006364 ; https://imagine.gsfc.nasa.gov/ask_astro/space_travel.html"
+    note: "SP-3006: phổi có thể rách khi chênh áp >~80 mmHg; \"Severe lung injury or death can result from a rapid decompression while the glottis is closed\". Imagine: \"Holding your breath is likely to damage your lungs\". Đã hạ từ \"gần như chắc chắn tử vong\", cắt thuyên tắc khí."
+  - id: C-5
+    claim: "Ebullism: nước trong mô hoá hơi ở thân nhiệt khi áp suất ≤~47 mmHg; cơ thể sưng, có lẽ tới gấp đôi thể tích; không nổ nhờ đối áp của da, mô liên kết, thành mạch"
+    verdict: verified
+    severity: none
+    evidence: "https://doi.org/10.3357/ASEM.3468.2013 ; https://ntrs.nasa.gov/citations/19730006364 ; https://imagine.gsfc.nasa.gov/ask_astro/space_travel.html"
+    note: "Murray 2013: định nghĩa ≤47 mmHg. SP-3006: \"perhaps as much as twice its normal volume\"; \"counterpressure exerted by the skin and connective tissues and blood vessels\". Imagine: \"containing effect of your skin and circulatory system\"; sưng bắt đầu \"after ten seconds or so\" (đỡ tiêu đề mục)."
+  - id: C-6
+    claim: "Nước bọt trên lưỡi có thể sôi; nước trong mô mềm hoá hơi"
+    verdict: verified
+    severity: none
+    evidence: "https://imagine.gsfc.nasa.gov/ask_astro/space_travel.html ; https://ntrs.nasa.gov/citations/19730006364"
+    note: "Imagine: \"The saliva on your tongue might boil\". SP-3006: \"water vapor will form rapidly in the soft tissues\". Đã cắt \"nước mắt bốc hơi nhanh\" (không nguồn)."
+  - id: C-7
+    claim: "Máu được bảo vệ lâu hơn nhưng không vô hạn: huyết áp giữ máu không sôi lúc đầu (trên ~47 mmHg); hơi nước vẫn hình thành chậm hơn trong máu tĩnh mạch; huyết áp động mạch tụt trong 30–60 giây, áp tĩnh mạch bằng áp động mạch trong ~1 phút, tuần hoàn gần như ngừng"
+    verdict: verified
+    severity: none
+    evidence: "https://ntrs.nasa.gov/citations/19730006364 ; https://imagine.gsfc.nasa.gov/ask_astro/space_travel.html"
+    note: "Nêu cả hai nguồn NASA thay vì chọn một (openQuestion 17/09). Con số 46°C đã cắt."
+  - id: C-8
+    claim: "Không gian thường rất lạnh nhưng nhiệt không thoát khỏi cơ thể nhanh nên không đóng băng ngay; mất nhiệt chủ yếu do bay hơi qua đường thở — miệng, mũi lạnh gần mức đóng băng, phần còn lại nguội chậm hơn"
+    verdict: verified
+    severity: none
+    evidence: "https://imagine.gsfc.nasa.gov/ask_astro/space_travel.html ; https://ntrs.nasa.gov/citations/19730006364"
+    note: "Imagine: \"although the space environment is typically very cold, heat does not transfer away from a body quickly\". SP-3006: bay hơi qua đường thở \"will cool the mouth and nose to near-freezing temperatures; the remainder of the body will also become cooled, but more slowly\"."
+  - id: C-9
+    claim: "Theo NASA, nhiệt độ khi đi bộ ngoài không gian khoảng −157°C đến 121°C dưới nắng — điều kiện môi trường, không phải nhiệt độ cơ thể"
+    verdict: verified
+    severity: none
+    evidence: "https://www.nasa.gov/centers-and-facilities/johnson/spacewalk-spacesuit-basics/"
+    note: "NASA: \"from as cold as minus 250 degrees Fahrenheit to as hot as 250 degrees in the sunlight\" (≈ −157°C; 121°C)."
+  - id: C-15
+    claim: "Da phơi nắng không có gì chắn tia cực tím có thể cháy nắng rất nặng"
+    verdict: verified
+    severity: none
+    evidence: "https://imagine.gsfc.nasa.gov/ask_astro/space_travel.html"
+    note: "Imagine: \"If your skin is exposed to direct sunlight without any protection from its intense ultraviolet radiation, you can get a very bad sunburn\"."
+  - id: C-10
+    claim: "Khí quyển và từ trường che chắn phần lớn bức xạ; lên cao lớp che mỏng dần; bức xạ ion hoá gồm proton năng lượng cao và ion nặng (tia vũ trụ thiên hà), hạt từ bùng phát Mặt Trời, hạt trong vành đai bức xạ; với phi hành gia ngoài quỹ đạo thấp NASA nêu nguy cơ bệnh phóng xạ, tăng nguy cơ ung thư, tổn thương thần kinh trung ương, bệnh thoái hoá"
+    verdict: verified
+    severity: none
+    evidence: "https://www.nasa.gov/missions/analog-field-testing/why-space-radiation-matters/"
+    note: "Khớp nguyên văn NASA (ba nhóm bức xạ, \"protected … by the magnetic fields … and by the Earth's atmosphere\", \"Beyond Low Earth Orbit … radiation sickness … cancer, central nervous system effects, and degenerative diseases\"). Đã bỏ tầng ozone và \"tia X xuyên qua cơ thể\"."
+  - id: C-16
+    claim: "Trong thang vài phút của bài, mối nguy quyết định là chân không và thiếu oxy, không phải bức xạ"
+    verdict: verified
+    severity: S4
+    evidence: "https://imagine.gsfc.nasa.gov/ask_astro/space_travel.html ; https://ntrs.nasa.gov/citations/19730006364"
+    note: "Imagine và SP-3006 mô tả tử vong trong 1–2 phút do thiếu oxy và tuần hoàn ngừng; nguy cơ bức xạ NASA nêu là nguy cơ phơi nhiễm dài hạn. Là suy luận nối hai nguồn, không phải câu nguồn nói nguyên văn — S4."
+  - id: C-11
+    claim: "Sau khoảng 1–2 phút: tuần hoàn gần như ngừng, thiếu oxy hoàn toàn; tim có thể ngừng, ở động vật một khi tim ngừng thì không cứu được; NASA: áp suất dưới nhiều so với 50 mmHg gây tử vong nếu kéo dài quá 60–90 giây; nguồn NASA khác: có lẽ sau 1–2 phút đang chết dần, giới hạn chưa biết rõ"
+    verdict: verified
+    severity: none
+    evidence: "https://ntrs.nasa.gov/citations/19730006364 ; https://imagine.gsfc.nasa.gov/ask_astro/space_travel.html"
+    note: "SP-3006: \"lethal if sustained for more than 60 to 90 seconds\"; \"Once heart action ceased, death was inevitable\". Imagine: \"After perhaps one or two minutes, you're dying. The limits are not really known\". Đã bỏ \"thường\" và \"não tổn thương không hồi phục\"."
+  - id: C-12
+    claim: "Có thể cứu nếu rất nhanh nhưng không bảo đảm: dữ liệu động vật (chó, khỉ sóc, khỉ đầu chó) — sống sót thường gặp nếu tăng áp trong ~90 giây; NASA: với người, tăng áp trong 60–90 giây có thể giúp sống sót; có con chết trong vài giây, vài con tổn thương thần kinh trung ương lâu dài, rối loạn thị lực thường gặp nhưng thường hết nhanh; tổng quan 2013: nhiều ca có thể sống sót"
+    verdict: verified
+    severity: none
+    evidence: "https://ntrs.nasa.gov/citations/19730006364 ; https://doi.org/10.3357/ASEM.3468.2013"
+    note: "Khớp SP-3006 và Murray 2013 (\"many exposures may be survivable\"). Đã bỏ \"dưới 1 phút\" và \"không để lại tổn thương nghiêm trọng\"."
+  - id: C-13
+    claim: "Kết bài: bất tỉnh sau khoảng chục giây, có lẽ tử vong sau khoảng 1–2 phút nếu không được cứu"
+    verdict: verified
+    severity: none
+    evidence: "https://ntrs.nasa.gov/citations/19730006364 ; https://imagine.gsfc.nasa.gov/ask_astro/space_travel.html"
+    note: "Khớp C-1 và C-13; đã bỏ \"vài phút\" và emoji."
+  - id: C-14
+    claim: "Summary: không có không khí để thở, áp suất gần bằng 0, nhiệt độ cực đoan và bức xạ khiến con người không thể sống sót lâu ngoài không gian nếu không có đồ bảo hộ"
+    verdict: verified
+    severity: none
+    evidence: "https://www.nasa.gov/centers-and-facilities/johnson/spacewalk-spacesuit-basics/"
+    note: "NASA: người đi bộ ngoài không gian \"face radiation, dust, debris, and extreme temperatures\"; bộ đồ \"provide the proper pressure for the body and supply … oxygen to breathe\"."
+openQuestions:
+  - "Năm sự cố buồng chân không: NASA Imagine ghi '65, các nguồn phổ thông (chưa mở, bậc 4) ghi 12/1966. Bài giữ \"giữa thập niên 1960\" — cần hồ sơ gốc NASA JSC trước khi ghi năm hay tên người."
+  - "NASA Imagine tự ghi là tổng hợp từ một trang y khoa JSC đã gỡ và thư bạn đọc. Trong bài nó chỉ là nguồn duy nhất cho sự cố Houston và câu nước bọt; mọi mốc sinh lý khác có SP-3006 đỡ."

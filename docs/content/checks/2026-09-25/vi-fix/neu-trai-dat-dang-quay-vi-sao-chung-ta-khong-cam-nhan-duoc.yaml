@@ -1,0 +1,55 @@
+slug: neu-trai-dat-dang-quay-vi-sao-chung-ta-khong-cam-nhan-duoc
+checkedAt: 2026-09-25
+checkedBy: science-editor
+priorFactCheck: REVISE
+verdict: pass
+summary: "Sau sửa, bài giải thích đúng cơ chế ở cả hai bản: người trên Trái Đất luôn có gia tốc hướng tâm (≈0,034 m/s², 0,35% g), nhưng nó nhỏ và không đổi nên hoà vào cảm giác trọng lượng — thay cho mô hình sai \"cơ thể không nhận ra vận tốc đều\" (S2). Hai con số chính tính lại được từ NASA Fact Sheet và phép tính được ghi trong bài; vai trò ống bán khuyên/sỏi tai gắn NIDCD; số 900 km/h và phép so với máy bay chở khách bị cắt. Đọc lại toàn bài vi: không còn claim S1–S3; 4 nguồn bậc 1–2."
+claims:
+  - id: C-1
+    claim: "Ở xích đạo, bề mặt Trái Đất di chuyển khoảng 1.670 km/h; Mặt Trời \"mọc\" vì Trái Đất quay đưa nơi ta đứng vào vùng được chiếu sáng (summary + đoạn phép tính)"
+    verdict: verified
+    severity: none
+    evidence: "https://nssdc.gsfc.nasa.gov/planetary/factsheet/earthfact.html"
+    note: "Bán kính xích đạo 6378,137 km, chu kỳ quay thiên văn 23,9345 h → 2π·R/T ≈ 1.674 km/h. Phép tính nay được ghi trong bài."
+  - id: C-2
+    claim: "Ở xích đạo, hiệu ứng ly tâm chỉ triệt tiêu khoảng 0,35% lực hấp dẫn; gia tốc hướng tâm ≈0,034 m/s²"
+    verdict: verified
+    severity: none
+    evidence: "https://nssdc.gsfc.nasa.gov/planetary/factsheet/earthfact.html ; https://coolcosmos.ipac.caltech.edu/ask/60-Why-don-t-we-feel-Earth-move-"
+    note: "ω²R ≈ 0,0339 m/s²; chia cho gia tốc bề mặt ở xích đạo 9,780 m/s² ≈ 0,347%. Cool Cosmos: \"about 0.03 m/s² due to Earth's spin at the Equator\". Cách nói thống nhất \"triệt tiêu … lực hấp dẫn\" ở thân bài và kết luận, khớp en \"offsets\"."
+  - id: C-3
+    claim: "Người đứng trên Trái Đất luôn có gia tốc (chuyển động tròn), nhưng gia tốc ấy nhỏ và không đổi nên hoà vào cảm giác trọng lượng; vì thế ta không cảm nhận Trái Đất quay"
+    verdict: verified
+    severity: none
+    evidence: "https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/newtons-laws-of-motion/ ; https://coolcosmos.ipac.caltech.edu/ask/60-Why-don-t-we-feel-Earth-move-"
+    note: "NASA Glenn: không gia tốc = \"constant speed and in a straight line\". Cool Cosmos: \"we only feel motion when there is an acceleration involved\"; gia tốc do quay \"very small\"; hiệu ứng ly tâm làm ta nhẹ đi một chút nhưng \"will be constant since the Earth's rotation is constant, so … nothing that we would immediately feel\". Đã sửa ở mục 3 và kết luận (trước đây S2 contradicted)."
+  - id: C-4
+    claim: "Hệ tiền đình phản ứng với gia tốc và cả trọng lực; ống bán khuyên báo đầu xoay, cơ quan sỏi tai báo vị trí đầu so với trọng lực và chuyển động thẳng"
+    verdict: verified
+    severity: none
+    evidence: "https://www.nidcd.nih.gov/health/balance-disorders ; https://doi.org/10.1016/j.tins.2011.12.001"
+    note: "NIDCD nêu đúng hai vai trò và \"your vestibular system detects mechanical forces, including gravity\". Cullen 2012 (tóm tắt): hệ tiền đình mã hoá self-motion — đỡ phần khung chung."
+  - id: C-5
+    claim: "Khí quyển, đại dương và mọi vật trên Trái Đất về cơ bản cùng quay với hành tinh; vì mọi thứ quanh ta chuyển động như nhau nên không có gì báo rằng ta đang di chuyển"
+    verdict: verified
+    severity: none
+    evidence: "https://coolcosmos.ipac.caltech.edu/ask/60-Why-don-t-we-feel-Earth-move-"
+    note: "Cool Cosmos: \"most things around us move at the same velocities and accelerations with us\". Giữ \"về cơ bản\" vì gió và hải lưu vẫn chuyển động tương đối với mặt đất. Bỏ câu nhân quả tự thêm \"chuyển động từ khi sinh ra nên không cảm nhận\"."
+  - id: C-6
+    claim: "Hành khách trên máy bay bay ổn định cảm thấy gần như đứng yên nếu không có rung lắc hay đổi tốc độ đột ngột"
+    verdict: verified
+    severity: none
+    evidence: "https://coolcosmos.ipac.caltech.edu/ask/60-Why-don-t-we-feel-Earth-move- ; https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/newtons-laws-of-motion/"
+    note: "Cùng nguyên lý nguồn minh hoạ bằng ô tô (\"quiet car … perfectly smooth road\"; ta cảm thấy khi \"hit the brakes … or suddenly swerve\"). Con số 900 km/h đã cắt (không nguồn)."
+  - id: C-7
+    claim: "Summary: \"nhanh hơn nhiều máy bay chở khách\""
+    verdict: verified
+    severity: none
+    evidence: "https://nssdc.gsfc.nasa.gov/planetary/factsheet/earthfact.html"
+    note: "Đã cắt khỏi summary vi và en — phép so dựa trên tốc độ máy bay không có nguồn. Phần còn lại của câu (1.670 km/h) xem C-1."
+  - id: C-8
+    claim: "Lực hấp dẫn luôn thắng; hiệu ứng ly tâm quá nhỏ để hất văng người hay vật khỏi bề mặt"
+    verdict: verified
+    severity: none
+    evidence: "https://nssdc.gsfc.nasa.gov/planetary/factsheet/earthfact.html"
+    note: "Hệ quả trực tiếp của C-2: 0,35% g."

@@ -1,0 +1,101 @@
+# Đính chính bản vi — science-editor, lượt 2026-09-25
+slug: nang-luong-la-gi
+checkedAt: 2026-09-25
+checkedBy: science-editor
+priorFactCheck: PASSED
+verdict: pass
+summary: >
+  Ba openQuestions của lượt đối chiếu song ngữ đều đóng: định nghĩa nay nói rõ là
+  mô tả dễ dùng; định luật bảo toàn mang phạm vi "hệ cô lập" (cả summary);
+  E = mc² viết theo phát biểu của NRC thay cho "hai biểu hiện của cùng một đại
+  lượng". Đọc lại toàn bài với nguồn mở trong lượt còn thấy bốn câu không nguồn
+  (điện năng "vận hành hầu hết thiết bị", Mặt Trời và nhà máy điện dùng chung
+  một "năng lượng hạt nhân", ví dụ quang hợp, ví dụ ma sát) — thay bằng điều EIA
+  nói nguyên văn, cả ở vi lẫn en. 6 sửa vi, 4 sửa en (N1, N2 en đã đúng từ
+  a1cccd5), 1 sửa summary, thêm 2 nguồn EIA bậc 2. Sau sửa không còn S1–S3;
+  10 nguồn bậc 2. Giữ dấu duyệt.
+claims:
+  - id: N1
+    claim: "Năng lượng thường được mô tả là đại lượng đo khả năng gây biến đổi hoặc thực hiện công — mô tả dễ dùng, không phải định nghĩa chặt."
+    verdict: verified
+    severity: none
+    evidence: "EIA What is energy (s4): 'Scientists define energy as the ability to do work.' NASA Glenn Second Law (s7): 'we can imagine thermodynamic processes which would conserve energy but which never occur in nature'."
+    note: "Đã sửa (S3, quy tắc 4)."
+  - id: N2
+    claim: "Trong một hệ cô lập, năng lượng không tự sinh ra, không tự mất đi, chỉ chuyển dạng; tổng năng lượng được bảo toàn."
+    verdict: verified
+    severity: none
+    evidence: "NASA Glenn Conservation of Energy (s6): 'Within some problem domain, the amount of energy remains constant, and energy is neither created nor destroyed ... the total energy within the domain remains fixed.'"
+    note: "Đã sửa (S3, mất phạm vi) ở content và summary."
+  - id: N3
+    claim: "Đơn vị SI của năng lượng là joule; 1 J là công của lực 1 N đẩy vật đi 1 m."
+    verdict: verified
+    severity: none
+    evidence: "NIST Guide to the SI ch.4 (s1), bảng đơn vị dẫn xuất: 'energy, work, amount of heat — joule — J — N · m — m² · kg · s⁻²'."
+    note: ""
+  - id: N4
+    claim: "Ngoài joule còn gặp electronvolt (vật lý hạt) và kilowatt-giờ (hoá đơn điện)."
+    verdict: verified
+    severity: none
+    evidence: "NIST/CODATA (s2): trang 'electron volt-joule relationship' (mở 25/09, trả 200). NASA Anatomy of an EM Wave: 'x-rays and gamma rays in terms of energy (electron volts)'. EIA Measuring electricity (thêm mới): 'Electric utilities and power plants generally measure electricity in kilowatthours (kWh)'."
+    note: "Ngữ cảnh 'vật lý hạt' là ví dụ dùng, mức S4 nếu cần chặt hơn."
+  - id: N5
+    claim: "Động năng là năng lượng của vật chuyển động (xe chạy, bóng bay, Trái Đất quay)."
+    verdict: verified
+    severity: none
+    evidence: "EIA Forms of energy (s5): 'Kinetic energy is the motion of waves, electrons, atoms, molecules, substances, and objects'; 'Motion energy is energy stored in moving objects'."
+    note: "Ví dụ minh hoạ."
+  - id: N6
+    claim: "Thế năng là năng lượng lưu trữ do vị trí (vật trên cao, nước trong hồ thuỷ điện)."
+    verdict: verified
+    severity: none
+    evidence: "EIA Forms of energy: 'Potential energy is stored energy and the energy of position'; 'Gravitational energy is energy stored in an object's height'; 'Hydropower is another example of gravitational energy'."
+    note: ""
+  - id: N7
+    claim: "Nhiệt năng liên quan chuyển động của nguyên tử, phân tử; vật càng nóng các hạt chuyển động càng mạnh."
+    verdict: verified
+    severity: none
+    evidence: "EIA Forms of energy: 'Thermal energy, or heat, is the energy that comes from atoms and molecules moving in a substance. Heat increases when these particles move faster.'"
+    note: ""
+  - id: N8
+    claim: "Hoá năng chứa trong liên kết hoá học (thức ăn, pin, xăng dầu)."
+    verdict: verified
+    severity: none
+    evidence: "EIA Forms of energy: 'Chemical energy is energy stored in the bonds of atoms and molecules. Batteries, biomass, petroleum, natural gas, and coal are examples'. EIA What is energy: 'the food you eat contains chemical energy'."
+    note: ""
+  - id: N9
+    claim: "Điện năng liên quan chuyển động của điện tích; trong dây dẫn do electron mang; tia sét là ví dụ tự nhiên."
+    verdict: verified
+    severity: none
+    evidence: "EIA Forms of energy: 'Electrical energy is delivered by tiny charged particles called electrons, that typically move through a wire. Lightning is an example of electrical energy in nature.'"
+    note: "Đã sửa (S3): 'vận hành hầu hết thiết bị hiện đại' không nguồn."
+  - id: N10
+    claim: "Năng lượng hạt nhân lưu trong hạt nhân; Mặt Trời phát năng lượng nhờ tổng hợp, nhà máy điện hạt nhân dùng phân hạch."
+    verdict: verified
+    severity: none
+    evidence: "EIA Forms of energy: 'Nuclear energy is energy stored in the nucleus of an atom'. EIA Nuclear explained (thêm mới): 'Fusion is the source of energy in the sun and stars'; 'All nuclear power plants use nuclear fission'."
+    note: "Đã sửa (S3): câu cũ không nguồn và gộp hai quá trình."
+  - id: N11
+    claim: "Ví dụ chuyển hoá: thức ăn → vận động; xăng cháy → nhiệt; xe đạp xuống dốc: thế năng → động năng."
+    verdict: verified
+    severity: none
+    evidence: "EIA What is energy: 'your body stores this energy until you use it as kinetic energy during work or play'. EIA Forms of energy: 'chemical energy is converted to thermal energy when people ... burn gasoline in a car's engine'; 'rides a bicycle down a steep hill ... gravitational energy is converting to motion energy'."
+    note: "Đã sửa (S3): ví dụ quang hợp và ma sát không có nguồn trong bảng."
+  - id: N12
+    claim: "E = mc² thuộc thuyết tương đối hẹp của Einstein."
+    verdict: verified
+    severity: none
+    evidence: "NRC glossary (s8, Wayback 2025-04-29): 'The equation developed by Albert Einstein, which is usually given as E = mc²'."
+    note: "'Hẹp' là bối cảnh; bài liên kết sang thuyet-tuong-doi-hep."
+  - id: N13
+    claim: "Năng lượng của vật đổi E thì khối lượng đổi E/c²; vì c² rất lớn, khối lượng rất nhỏ tương ứng năng lượng rất lớn — lý do phản ứng hạt nhân toả nhiều năng lượng."
+    verdict: verified
+    severity: none
+    evidence: "NRC glossary: 'when the energy of a body changes by an amount E ... the mass (m) of the body will change by an amount equal to E/c². The factor c squared ... may be regarded as the conversion factor'; 'predicted the possibility of releasing enormous amounts of energy by the conversion of mass to energy'."
+    note: "Đã sửa (S3): bỏ 'hai biểu hiện của cùng một đại lượng'."
+  - id: SUM
+    claim: "summary: năng lượng có trong mọi hiện tượng, nhiều dạng, trong hệ cô lập không tự sinh/mất, chỉ chuyển dạng."
+    verdict: verified
+    severity: none
+    evidence: "Như N2."
+    note: "Đã sửa (S3). summaryEn đã đúng."

@@ -1,0 +1,73 @@
+slug: thuyet-tuong-doi-hep-khi-thoi-gian-khong-con-tuyet-doi
+checkedAt: 2026-09-25
+checkedBy: science-editor
+priorFactCheck: REVISE
+verdict: pass
+summary: "Việc còn mở từ check 17/09 là đoạn muon (C-6 cũ, unverifiable: chưa mở được thí nghiệm). Lượt này mở được tóm tắt Frisch & Smith 1963 [s3] qua Crossref: viết lại đoạn theo đúng thí nghiệm (muon ~0,995 c từ đỉnh núi Washington tới mực nước biển; hệ số giãn nở đo được 8,8 ± 0,8 so với 8,4 ± 2 dự đoán), sửa cả vi lẫn en. Sửa định dạng 10−10 → 10⁻¹⁰ và chữ 'Net:' sót trong bản vi. Hai bài Einstein 1905 đọc qua bản chép Wikisource (đỉnh bài có ngày nhận 30/6 và 27/9/1905, khớp bài). Ashby 2003 mở qua Springer, pt. (35). Không còn S1–S3; 4 nguồn bậc 1. Đóng gate."
+claims:
+  - id: C-1
+    claim: "Năm 1905 Einstein công bố bài báo xây dựng lại động học của chuyển động từ hai giả định: định luật vật lý như nhau trong mọi hệ quán tính; tốc độ ánh sáng trong chân không như nhau với mọi quan sát viên."
+    verdict: verified
+    severity: S4
+    evidence: "https://doi.org/10.1002/andp.19053221004 [s1] (Crossref, mở 25/09); bản chép https://de.wikisource.org/wiki/Zur_Elektrodynamik_bewegter_K%C3%B6rper §2: 'Relativitätsprinzip' và 'Prinzip der Konstanz der Lichtgeschwindigkeit'"
+    note: "Einstein phát biểu tiên đề 2 là độc lập với chuyển động của NGUỒN; độc lập với người quan sát là hệ quả khi ghép với tiên đề 1. Cách phát biểu phổ thông của bài chấp nhận được (S4)."
+  - id: C-2
+    claim: "Chạy theo chùm sáng vẫn đo được tốc độ c so với mình."
+    verdict: verified
+    severity: null
+    evidence: "Hệ quả trực tiếp của hai tiên đề [s1]"
+  - id: C-3
+    claim: "Đồng hồ chuyển động chạy chậm hơn theo hệ số Lorentz γ = 1/√(1 − v²/c²)."
+    verdict: verified
+    severity: null
+    evidence: "[s1] §4 'bewegte starre Körper und bewegte Uhren betreffend' (bản chép Wikisource, mở 25/09)"
+  - id: C-4
+    claim: "Vật chuyển động co lại theo phương chuyển động, cùng hệ số."
+    verdict: verified
+    severity: null
+    evidence: "[s1] §2 'Über die Relativität von Längen und Zeiten', §4"
+  - id: C-5
+    claim: "Tính đồng thời là tương đối."
+    verdict: verified
+    severity: null
+    evidence: "[s1] §1 'Definition der Gleichzeitigkeit', §2"
+  - id: C-6
+    claim: "E = mc² không nằm trong bài tháng 6; Einstein nêu nó trong bài thứ hai cùng năm, Annalen der Physik 323, tháng 9/1905."
+    verdict: verified
+    severity: null
+    evidence: "https://doi.org/10.1002/andp.19053231314 [s4] (Crossref: Ann. Phys. 323(13), 639–641, mở 25/09); bản chép Wikisource: 'Bern, September 1905. (Eingegangen 27. September 1905.)'; bài đầu: 'Bern, Juni 1905. (Eingegangen 30. Juni 1905.)'"
+  - id: C-7
+    claim: "GPS: đồng hồ vệ tinh chậm ~7 μs/ngày do tương đối hẹp, nhanh ~45 μs/ngày do tương đối rộng; cách tách này là cách trình bày trong tài liệu giảng dạy (Pogge), không phải cách Ashby phân rã."
+    verdict: verified
+    severity: null
+    evidence: "https://www.astronomy.ohio-state.edu/pogge.1/Ast162/Unit5/gps.html [s5] (mở 25/09): 'fall behind ... by about 7 microseconds per day', 'get ahead ... by 45 microseconds per day'; Ashby [s2] pt. (35) gộp số hạng thành 2,5046 × 10⁻¹⁰ − 6,9693 × 10⁻¹⁰"
+  - id: C-8
+    claim: "Cộng lại, đồng hồ vệ tinh chạy nhanh hơn mặt đất ~38 μs/ngày, là mức phải hiệu chỉnh."
+    verdict: verified
+    severity: null
+    evidence: "[s5] Pogge: 'tick faster ... by about 38 microseconds per day'; [s2] Ashby: 'the satellite clocks are adjusted lower in frequency' trước khi phóng"
+    note: "Sửa chữ 'Net:' (tiếng Anh sót) → 'Cộng lại:'; không đổi claim."
+  - id: C-9
+    claim: "Ashby (2003) cho độ lệch tần số danh định 4,4647 × 10⁻¹⁰, tức ≈ 38,6 μs/ngày."
+    verdict: verified
+    severity: null
+    evidence: "https://link.springer.com/article/10.12942/lrr-2003-1 [s2] pt. (35): '= −4.4647 × 10⁻¹⁰'; 'the standard clock in orbit is beating too fast' (mở 25/09); tự tính 4,4647 × 10⁻¹⁰ × 86 400 s = 38,58 μs"
+    note: "Sửa định dạng '10−10' → '10⁻¹⁰'."
+  - id: C-10
+    claim: "Bỏ qua 38 μs/ngày thì sai số tích luỹ tương đương ~11 km quãng đường ánh sáng mỗi ngày, đủ làm hệ thống mất tác dụng."
+    verdict: verified
+    severity: null
+    evidence: "Tự tính 38 × 10⁻⁶ s × 299 792 458 m/s = 11,4 km; [s5] Pogge: 'The whole system would be utterly worthless for navigation in a very short time'"
+    note: "Đã sửa ở lượt 17/09 (không còn '10 km sai số định vị')."
+  - id: C-11
+    claim: "Frisch & Smith 1963 đếm muon ~0,995 c qua đỉnh núi Washington và ở mực nước biển; không có giãn nở thời gian thì số tới mực nước biển phải ít hơn nhiều; hệ số giãn nở đo được 8,8 ± 0,8 khớp với 8,4 ± 2 dự đoán — đồng hồ của muon chạy chậm trong hệ quy chiếu của ta."
+    verdict: verified
+    severity: null
+    evidence: "https://api.crossref.org/works/10.1119/1.1969508 [s3] tóm tắt (mở 25/09): 'μ-mesons incident on top of Mt. Washington ... speeds in the range between 0.9950 c and 0.9954 c. The number of these which survived to reach sea level was measured ... The observed time dilation factor is 8.8±0.8 to be compared with ... 8.4 ± 2'"
+    note: "Sau sửa. Bản cũ ('sinh ra ở tầng cao khí quyển ... phần lớn sẽ phân rã') không gắn nguồn trong câu và check 17/09 để unverifiable; nay viết theo đúng thí nghiệm, bỏ mệnh đề độ cao sinh ra (tóm tắt không nêu)."
+  - id: C-12
+    claim: "Summary/SEO: từ hai tiên đề Einstein suy ra đồng hồ chậm lại, độ dài co lại, khối lượng là một dạng năng lượng."
+    verdict: verified
+    severity: S4
+    evidence: "[s1], [s4]"
+    note: "Bài tháng 9 còn dùng điện động lực học Maxwell ngoài hai tiên đề; 'chỉ từ hai tiên đề' là đơn giản hoá phổ biến — S4, để nguyên."

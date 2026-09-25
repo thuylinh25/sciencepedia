@@ -1,0 +1,93 @@
+# Đính chính bản vi — science-editor, lượt 2026-09-25
+slug: newton-da-giai-ma-the-gioi-nhu-the-nao
+checkedAt: 2026-09-25
+checkedBy: science-editor
+priorFactCheck: PASSED
+verdict: pass
+summary: >
+  Bài mang dấu PASSED nhưng lượt thẩm định nguồn 12/09 (checks/ba-dinh-luat-newton.yaml,
+  findings_on_existing_article E1–E6, F2–F4) đã ghi hai S2 và bốn S3 trên chính bài
+  này và chưa lượt nào áp. Lượt này mở lại năm nguồn NASA và Royal Society, áp đủ:
+  Kepler–Newton viết trong phạm vi NASA nói (thuyết hấp dẫn giải thích lực còn thiếu
+  sau định luật thứ ba, dạng tổng quát dùng đo khối lượng); giới hạn áp dụng bỏ
+  "gần lỗ đen" (không nguồn), thêm việc GPS/quỹ đạo tàu vũ trụ đã cần hiệu chỉnh
+  tương đối; thêm "tổng hợp" ở định luật I và II (câu "không cần lực để duy trì
+  chuyển động" dựng mô hình sai — chính ví dụ máy bay của NASA cần lực đẩy để bay
+  đều); F = ma là trường hợp khối lượng không đổi của dạng động lượng; định luật III
+  nêu hai vật khác nhau; danh sách ứng dụng thay bằng ứng dụng có nguồn; câu kết và
+  summary bỏ "mọi vật thể … toàn bộ nền vật lý hiện đại". 9 sửa vi, 9 sửa en,
+  summary + summaryEn. Không thêm nguồn. Sau sửa không còn S1–S3; 7 nguồn bậc 2.
+  Giữ dấu duyệt.
+claims:
+  - id: L1
+    claim: "Định luật I: vật giữ trạng thái đứng yên hoặc chuyển động thẳng đều nếu không có lực tổng hợp tác dụng."
+    verdict: verified
+    severity: none
+    evidence: "NASA BSF ch.3 (s1): 'Every body continues in a state of rest, or of uniform motion in a straight line, unless it is compelled to change that state by forces impressed upon it.' NASA Glenn (s2): 'if there is no net force ... the object maintains a constant velocity'."
+    note: ""
+  - id: L1b
+    claim: "Không cần lực tổng hợp để duy trì chuyển động; máy bay bay đều vẫn cần lực đẩy để cân bằng lực cản; vận tốc chỉ đổi khi lực tổng hợp khác không."
+    verdict: verified
+    severity: none
+    evidence: "NASA Glenn (s2): 'A cruising aircraft flies at a constant airspeed and the thrust exactly balances the drag ... there is no net force on the airplane'; 'a net external force changes the velocity of the object'."
+    note: "Đã sửa (S3, quy tắc 4)."
+  - id: L2
+    claim: "Định luật II viết gọn F = ma; lực tổng hợp lớn thì tăng tốc nhanh; khối lượng lớn thì khó đổi chuyển động (xe đạp so với ô tô)."
+    verdict: verified
+    severity: none
+    evidence: "NASA BSF ch.3 (s1): 'The standard unit of force is the newton, which is the force required to accelerate a 1-kg mass 1 m/sec²'; 'the velocity can be changed (acceleration)'. NASA Glenn (s2): 'net external force'."
+    note: "Đã sửa (S3): bỏ 'nổi tiếng nhất' (không nguồn), thêm 'tổng hợp'."
+  - id: L2c
+    claim: "F = ma đúng khi khối lượng không đổi; Newton phát biểu bằng động lượng; động lượng đổi do vận tốc, khối lượng hoặc cả hai, như tên lửa nhẹ dần khi phụt khí."
+    verdict: verified
+    severity: none
+    evidence: "NASA BSF ch.3 (s1): 'The change of motion (linear momentum) is proportional to the force impressed'; 'There are three ways to modify the momentum of a body. The mass can be changed, the velocity can be changed (acceleration), or both'; 'a rocket creates thrust by expelling mass'."
+    note: "Thêm mới (S3 cũ E5/P-2 — F = ma trình bày như chính định luật)."
+  - id: L3
+    claim: "Định luật III: mọi lực có phản lực cùng độ lớn, ngược chiều, đặt lên hai vật khác nhau; ví dụ chân–mặt đất, tên lửa–khí."
+    verdict: verified
+    severity: none
+    evidence: "NASA Glenn (s3): 'if object A exerts a force on object B, then object B also exerts an equal and opposite force on object A. Notice that the forces are exerted on different objects.' NASA BSF ch.3: 'a rocket creates thrust by expelling mass to take advantage of Sir Isaac Newton's third law'."
+    note: "Đã sửa (S3, E4 12/09): thêm hai vật khác nhau."
+  - id: K1
+    claim: "Kepler phát hiện hành tinh chuyển động theo quỹ đạo elip quanh Mặt Trời."
+    verdict: verified
+    severity: none
+    evidence: "NASA Orbits and Kepler's Laws (s6): 'planets move in elliptical orbits with the Sun as a focus'."
+    note: ""
+  - id: K1b
+    claim: "Newton đề xuất mọi vật có khối lượng đều hút nhau bằng lực hấp dẫn."
+    verdict: verified
+    severity: none
+    evidence: "NASA (s6): 'theory of universal gravitation'; 'the orbits of objects in space depend on their masses, which led him to discover gravity'."
+    note: ""
+  - id: K2
+    claim: "Lực làm quả táo rơi cũng giữ hành tinh 'rơi' quanh Mặt Trời, yếu theo bình phương khoảng cách; thuyết hấp dẫn giải thích lực còn thiếu sau định luật thứ ba của Kepler và cho dạng tổng quát dùng đo khối lượng thiên thể; Kepler mô tả khi chưa biết hấp dẫn, Newton chỉ ra lực."
+    verdict: verified
+    severity: none
+    evidence: "NASA BSF ch.3 (s1): 'the force that makes apples fall to the ground is the same force that makes the planets \"fall\" around the Sun'; 'becomes weaker in proportion to the square of the distance'. NASA (s6): 'Kepler didn't know about gravity'; 'explained the unknown force behind Kepler's third law'; 'Newton's generalized version of Kepler's third law is the basis of most measurements we can make of the masses of distant objects'."
+    note: "Đã sửa (S2, E1/F2 12/09): 'chứng minh được vì sao các hành tinh phải chuyển động đúng như Kepler đã quan sát' rộng hơn nguồn."
+  - id: A1
+    claim: "Trong phạm vi rất rộng, các định luật vẫn dùng để điều hướng tàu vũ trụ trong Hệ Mặt Trời, giải thích chuyển động máy bay, tính khối lượng thiên thể."
+    verdict: verified
+    severity: none
+    evidence: "NASA BSF ch.3 (s1): 'Newtonian physics serves well for operating and navigating throughout the solar system'. NASA Glenn (s2, s3): máy bay; 'Both the lift and thrust of the Wright 1903 Flyer can be explained by the third law'. NASA (s6): 'allows us to calculate the masses of any two objects in space'."
+    note: "Đã sửa (S3, E6 12/09): danh sách cũ không nguồn."
+  - id: A2
+    claim: "Ở vận tốc cỡ một phần đáng kể tốc độ ánh sáng phải dùng thuyết tương đối; ngay ở vận tốc thấp, GPS và quỹ đạo tàu vũ trụ đã phải tính hiệu ứng tương đối nhỏ."
+    verdict: verified
+    severity: none
+    evidence: "NASA BSF ch.3 (s1): 'Since spacecraft velocities do not approach a significant fraction of the speed of light, Newtonian physics serves well'; 'GPS ... spacecraft do require special-relativity calculations'; 'accounting for tiny relativistic effects'; 'Einsteinian physics will be indispensable'. NASA (s6): 'In planning trajectories ... They account for factors related to Albert Einstein's theory of relativity'."
+    note: "Đã sửa (S2, E2 12/09): bỏ 'gần lỗ đen' (không nguồn). Giới hạn cỡ phân tử (F3) chưa đưa — xem openQuestions trong json."
+  - id: C1
+    claim: "Quả táo và hành tinh tuân theo cùng những quy luật; Principia in năm 1687 thay đổi hẳn cách con người nhìn thế giới."
+    verdict: verified
+    severity: none
+    evidence: "NASA BSF ch.3 (s1): apple/planets cùng một lực. Royal Society 2012 (s7): 'Newton's book was finally published in 1687, changing the way we view the world forever.'"
+    note: "Đã sửa (S3): bỏ 'chi phối mọi vật thể … toàn bộ nền vật lý hiện đại'."
+  - id: S1
+    claim: "summary: Kepler mô tả 'như thế nào' chưa trả lời 'vì sao'; năm 1687 Newton công bố Principia với ba định luật và thuyết hấp dẫn; cùng bộ quy luật cho quả táo và hành tinh, vẫn đủ chính xác cho nhiều ứng dụng."
+    verdict: verified
+    severity: none
+    evidence: "NASA BSF ch.3: 'Newton had been asked to address the question of why planets move as they do'. NASA (s6): 'Kepler didn't know about gravity'; 'Newton's laws are still accurate enough for many applications'. Royal Society (s7): 1687."
+    note: "Đã sửa (S3): 'ba định luật … mô tả cách mọi vật thể có khối lượng chuyển động trong vũ trụ' — quá phạm vi và bỏ thuyết hấp dẫn."

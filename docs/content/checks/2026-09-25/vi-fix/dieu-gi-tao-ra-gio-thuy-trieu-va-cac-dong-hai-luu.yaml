@@ -1,0 +1,75 @@
+slug: dieu-gi-tao-ra-gio-thuy-trieu-va-cac-dong-hai-luu
+checkedAt: 2026-09-25
+checkedBy: science-editor
+priorFactCheck: REVISE
+verdict: pass
+summary: "Bài không có lỗi nặng; lượt này đóng hết các fix còn mở của check 17/09 ở cả hai bản: thủy triều viết theo đúng NOAA (hấp dẫn thắng ở phía gần, quán tính ở phía xa) và nói rõ là mô hình giản lược; thêm bán nhật triều hỗn hợp; gió gọi tên Coriolis và thêm vế ma sát gần mặt đất; thu hẹp \"gió là động lực quan trọng nhất\" về hải lưu MẶT, bỏ gió mùa, tách hoàn lưu nhiệt muối; summary/SEO bỏ lời hứa về khí hậu và hệ sinh thái không có trong bài. Đọc lại toàn bài vi: không còn S1–S3; 11 nguồn bậc 2 (NOAA)."
+claims:
+  - id: C-1
+    claim: "Nguyên nhân chính của thủy triều là lực hấp dẫn của Mặt Trăng và Mặt Trời tác động lên nước đại dương"
+    verdict: verified
+    severity: none
+    evidence: "https://oceanservice.noaa.gov/education/tutorial_tides/tides02_cause.html"
+    note: "\"ocean tides result from the gravitational attraction of the sun and moon on the oceans of the earth\"."
+  - id: C-2
+    claim: "Mặt Trời ở xa hơn ~390 lần nên lực tạo triều chỉ bằng ~½ của Mặt Trăng; phía gần: lực hút Mặt Trăng kéo nước phình; phía xa: quán tính thắng, phình thứ hai; đây là mô hình giản lược"
+    verdict: verified
+    severity: none
+    evidence: "https://oceanservice.noaa.gov/education/tutorial_tides/tides02_cause.html ; https://oceanservice.noaa.gov/education/tutorial_tides/tides03_gravity.html ; https://oceanservice.noaa.gov/education/tutorial_tides/tides07_cycles.html"
+    note: "NOAA: \"390 times further\", \"about half that of the moon\"; \"inertia dominates, creating a second bulge\"; \"can be quite complex\"; lục địa chắn chỗ phình tạo \"complex patterns\". Đã bỏ cách nói \"chuyển động quay của hệ tạo lực quán tính\"."
+  - id: C-3
+    claim: "Hai chỗ phình; phần lớn vùng ven biển có hai lần lên, hai lần xuống mỗi ngày mặt trăng (~24 giờ 50 phút); bán nhật triều, bán nhật triều hỗn hợp; nhật triều ở một số vùng như vịnh Mexico"
+    verdict: verified
+    severity: none
+    evidence: "https://oceanservice.noaa.gov/education/tutorial_tides/tides05_lunarday.html ; https://oceanservice.noaa.gov/education/tutorial_tides/tides07_cycles.html"
+    note: "\"Most coastal areas, with some exceptions\"; \"a lunar day is 24 hours and 50 minutes\"; ba loại triều nguyên văn NOAA."
+  - id: C-4
+    claim: "Gió là chuyển động của không khí; đốt nóng không đều → không khí nóng bốc lên tạo áp thấp, lạnh chìm tạo áp cao; gradien áp đẩy không khí từ cao về thấp, Coriolis làm lệch (phải ở Bắc, trái ở Nam bán cầu); chỉ hai lực này thì gió song song đẳng áp; gần mặt đất ma sát làm gió chậm và chéo qua đẳng áp"
+    verdict: verified
+    severity: none
+    evidence: "https://www.noaa.gov/jetstream/synoptic/origin-of-wind ; https://www.noaa.gov/jetstream/global/global-atmospheric-circulations ; https://forecast.weather.gov/glossary.php?word=geostrophic+wind"
+    note: "JetStream Origin of Wind: \"Wind is simply air in motion\", lực gradien áp, Coriolis, \"parallel to straight isobars\", friction. Global Atmospheric Circulations: đốt nóng không đều → áp thấp/áp cao. Lưu ý giản lược: JG trình bày chuỗi nóng→áp thấp trên mô hình toàn cầu đơn giản; bài dùng ở mức khái quát."
+  - id: C-10
+    claim: "Chênh lệch áp suất càng lớn gió càng mạnh"
+    verdict: verified
+    severity: none
+    evidence: "https://www.noaa.gov/jetstream/synoptic/origin-of-wind ; https://forecast.weather.gov/glossary.php?word=geostrophic+wind"
+    note: "\"The speed of the wind is directly proportional to the pressure gradient\"."
+  - id: C-5
+    claim: "Gần bờ, lên xuống của thủy triều tạo dòng triều chảy vào–ra, thường ở sông ven biển và cửa sông; dòng ven bờ chịu ảnh hưởng gió địa phương"
+    verdict: verified
+    severity: none
+    evidence: "https://oceanservice.noaa.gov/education/tutorial_currents/02tidal1.html ; https://oceanservice.noaa.gov/education/tutorial_currents/04currents1.html"
+    note: "\"The vertical motion of the tides near the shore causes the water to move horizontally\"; \"typically are found in coastal rivers and estuaries\"; \"Coastal currents are affected by local winds\". Bỏ chữ \"chính\"."
+  - id: C-6
+    claim: "Ngoài khơi, hải lưu mặt do hệ thống gió toàn cầu (có gió Tín phong, gió Tây ôn đới) thúc đẩy, tác động lên ~100 m nước trên cùng; hướng bị Coriolis làm lệch"
+    verdict: verified
+    severity: none
+    evidence: "https://oceanservice.noaa.gov/education/tutorial_currents/04currents1.html ; https://oceanservice.noaa.gov/education/tutorial_currents/04currents2.html ; https://oceanservice.noaa.gov/education/tutorial_currents/05conveyor1.html"
+    note: "\"Surface ocean currents … are driven by a complex global wind system\"; trade winds, westerlies; \"Winds drive ocean currents in the upper 100 meters\"; Coriolis và xoắn Ekman phải xét khi nói gió tác động lên hải lưu. Bỏ gió mùa (không có trong nguồn đã mở)."
+  - id: C-7
+    claim: "Dòng hải lưu sâu (hàng nghìn mét) do chênh lệch mật độ nước — nhiệt độ và độ mặn — gọi là hoàn lưu nhiệt muối; ở vùng cực nước đóng băng để lại muối, nước mặn đặc hơn chìm xuống, nước mặt tràn vào thay"
+    verdict: verified
+    severity: none
+    evidence: "https://oceanservice.noaa.gov/education/tutorial_currents/05conveyor1.html"
+    note: "Khớp nguyên văn NOAA Thermohaline Circulation."
+  - id: C-8
+    claim: "Đoạn tóm lại cuối bài"
+    verdict: verified
+    severity: none
+    evidence: "https://oceanservice.noaa.gov/education/tutorial_tides/tides03_gravity.html ; https://www.noaa.gov/jetstream/synoptic/origin-of-wind ; https://oceanservice.noaa.gov/education/tutorial_currents/05conveyor1.html"
+    note: "Chỉ tóm tắt C-1…C-7, không thêm claim mới. Thay câu chung chung cũ."
+  - id: C-11
+    claim: "Summary/SEO: gió, thủy triều, hải lưu là hiện tượng quen thuộc; điều gì tạo nên chúng?"
+    verdict: verified
+    severity: none
+    evidence: "—"
+    note: "Tách từ C-8 của check 17/09. Không còn claim thực chất; đã bỏ \"tác động mạnh mẽ đến khí hậu, thời tiết và hệ sinh thái biển\" (không nguồn, thân bài không nói tới)."
+  - id: C-9
+    claim: "Các dòng hải lưu là những dòng nước biển chuyển động trên quy mô lớn"
+    verdict: verified
+    severity: S4
+    evidence: "https://oceanservice.noaa.gov/education/tutorial_currents/04currents1.html ; https://oceanservice.noaa.gov/education/tutorial_currents/05conveyor1.html"
+    note: "Định nghĩa khái quát, phù hợp cách NOAA mô tả hải lưu mặt và sâu; không có câu định nghĩa nguyên văn."
+openQuestions:
+  - "Check 17/09 đề nghị bổ sung nguồn tại chỗ, không gỡ bài; lượt này làm đúng thế. Các trang giáo dục NOAA NOS không hiển thị năm — bảng nguồn để trống year."

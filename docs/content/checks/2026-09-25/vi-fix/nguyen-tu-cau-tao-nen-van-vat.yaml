@@ -1,0 +1,111 @@
+slug: nguyen-tu-cau-tao-nen-van-vat
+checkedAt: 2026-09-25
+checkedBy: science-editor
+priorFactCheck: PASSED
+verdict: pass
+summary: "Đóng cả năm lỗi vi mà lượt đối chiếu song ngữ để lại: tỉ số khối lượng 2.000 → 1.840 (CODATA 2022); s/p/d/f là phân lớp, không phải lớp; hụt khối 'tương ứng' năng lượng liên kết thay vì 'chuyển hoá thành' một kho năng lượng; 'mọi vật chất' → 'mọi vật chất thông thường', 'hạt cơ bản' → 'hạt'. Cắt ý vũ khí hạt nhân 'mạnh nhất' vì không mở được nguồn, cắt ở cả hai bản. Thêm 5 nguồn (NRC, CIAAW carbon, EIA, NASA, OpenStax). Đọc lại toàn bài sau sửa: không còn S1–S3; hai bản nói cùng claim."
+claims:
+  - id: C-1
+    claim: "Hạt nhân gồm proton mang điện dương và neutron không mang điện."
+    verdict: verified
+    severity: null
+    evidence: "https://www.eia.gov/energyexplained/nuclear/ (mở 25/09): 'Protons carry a positive electrical charge ... Neutrons do not have an electrical charge'"
+  - id: C-2
+    claim: "Khối lượng của một proton hay một neutron lớn hơn electron khoảng 1.840 lần, nên gần như toàn bộ khối lượng nguyên tử nằm trong hạt nhân."
+    verdict: verified
+    severity: null
+    evidence: "https://physics.nist.gov/cgi-bin/cuu/Value?mpsme ; https://physics.nist.gov/cgi-bin/cuu/Value?mnsme (CODATA 2022, mở 25/09)"
+    note: "Sau sửa. m_p/m_e = 1836,152673426(32); m_n/m_e = 1838,68366200(74). Bản cũ 'khoảng 2.000' (S4) đã đổi."
+  - id: C-3
+    claim: "Hạt nhân vô cùng nhỏ so với kích thước tổng thể của nguyên tử."
+    verdict: verified
+    severity: null
+    evidence: "https://physics.nist.gov/cgi-bin/cuu/Value?bohrrada0 ; https://physics.nist.gov/cgi-bin/cuu/Value?rp (CODATA 2022 [s5], mở 25/09)"
+    note: "Bán kính Bohr 5,29 × 10⁻¹¹ m, bán kính điện tích proton 8,41 × 10⁻¹⁶ m — tỉ số khoảng 63.000 với hydro."
+  - id: C-4
+    claim: "Electron không chạy trên quỹ đạo cố định mà ở những vùng không gian do cơ học lượng tử mô tả, gọi là orbital."
+    verdict: verified
+    severity: S4
+    evidence: "OpenStax Chemistry §6.4 qua LibreTexts (mở 25/09)"
+    note: "Đơn giản hoá chấp nhận được ở mức phổ thông."
+  - id: C-5
+    claim: "Electron sắp xếp theo lớp năng lượng; mỗi lớp chia thành các phân lớp ký hiệu s, p, d, f; cách sắp xếp quyết định nhiều tính chất hóa học."
+    verdict: verified
+    severity: null
+    evidence: "https://www.nist.gov/pml/atomic-spectroscopy-compendium-basic-ideas-notation-data-and-formulas/atomic-spectroscopy-10 [s4]; OpenStax Chemistry §6.4 ('determines many of the chemical properties'), mở 25/09"
+    note: "Sau sửa. Bản cũ gọi s/p/d/f là 'lớp' (S3, mô hình sai) và bỏ lượng từ 'many' (S3). NIST còn liệt kê g, h… cho l ≥ 4; bài dừng ở f — đủ cho các nguyên tố đã biết ở trạng thái cơ bản."
+  - id: C-6
+    claim: "Z là số proton, quyết định nguyên tố; H: Z = 1, C: Z = 6, O: Z = 8; đổi số proton thì đổi nguyên tố."
+    verdict: verified
+    severity: null
+    evidence: "https://iupac.org/what-we-do/periodic-table-of-elements/ [s10]"
+  - id: C-7
+    claim: "Số khối A = proton + neutron; số neutron = A − Z."
+    verdict: verified
+    severity: null
+    evidence: "[s1] NIST Atomic Weights and Isotopic Compositions — Column Descriptions"
+  - id: C-8
+    claim: "Cùng Z khác số neutron gọi là đồng vị; carbon có ¹²C (6 n), ¹³C (7 n), ¹⁴C (8 n)."
+    verdict: verified
+    severity: null
+    evidence: "[s2] NIST SRD 144; https://ciaaw.org/carbon.htm (mở 25/09)"
+  - id: C-9
+    claim: "¹²C và ¹³C là đồng vị bền."
+    verdict: verified
+    severity: null
+    evidence: "https://ciaaw.org/carbon.htm (bảng thành phần đồng vị chỉ gồm ¹²C, ¹³C); https://nds.iaea.org/relnsd/v1/data?fields=ground_states&nuclides=12c ('STABLE'), mở 25/09"
+  - id: C-10
+    claim: "¹⁴C là đồng vị phóng xạ, dùng để xác định tuổi mẫu vật cổ."
+    verdict: verified
+    severity: null
+    evidence: "https://ciaaw.org/carbon.htm (mở 25/09): 'The radioactive 14C isotope has a half-life of 5730 a ... of great interest for prehistoric dating'"
+  - id: C-11
+    claim: "Cộng khối lượng riêng của proton, neutron, electron trong ¹²C được số lớn hơn khối lượng thực của nguyên tử; phần thiếu gọi là độ hụt khối."
+    verdict: verified
+    severity: null
+    evidence: "CODATA 2022 [s5]: m_p = 1,0072764666 u, m_n = 1,0086649161 u, m_e = 5,4857991 × 10⁻⁴ u (mở 25/09); tự tính 6 × tổng = 12,098940 u > 12 u (định nghĩa)"
+  - id: C-12
+    claim: "Theo E = mc², phần khối lượng thiếu tương ứng với năng lượng liên kết hạt nhân — năng lượng toả ra khi nucleon kết hợp, và phải cấp vào để tách chúng."
+    verdict: verified
+    severity: null
+    evidence: "https://www.nrc.gov/reading-rm/basic-ref/glossary/binding-energy.html (mở 25/09): 'The minimum energy required to separate the nucleus of an atom into its component neutrons and protons'"
+    note: "Sau sửa. Bản cũ 'khối lượng đã được chuyển hóa thành năng lượng liên kết, giúp giữ…' (S3) đã đổi."
+  - id: C-13
+    claim: "Mỗi hạt nhân có một năng lượng liên kết xác định."
+    verdict: verified
+    severity: null
+    evidence: "https://nds.iaea.org/relnsd/v1/data?fields=ground_states&nuclides=12c (trường 'binding', IAEA Live Chart [s7], mở 25/09)"
+    note: "Sau sửa (bản cũ: 'chứa một lượng năng lượng liên kết', S3)."
+  - id: C-14
+    claim: "Nhiệt hạch (nhẹ ghép lại) và phân hạch (nặng tách ra) toả năng lượng vì hạt nhân tạo thành liên kết chặt hơn hạt nhân ban đầu."
+    verdict: verified
+    severity: null
+    evidence: "IAEA Live Chart [s7], năng lượng liên kết/nucleon: ⁴He 7073,9 keV, ¹²C 7680,1 keV, ⁵⁶Fe 8790,4 keV, ²³⁵U 7590,9 keV (mở 25/09)"
+    note: "Sau sửa (bản cũ: 'một phần năng lượng liên kết được giải phóng', S3)."
+  - id: C-15
+    claim: "Năng lượng hạt nhân cung cấp ánh sáng và nhiệt cho Mặt Trời."
+    verdict: verified
+    severity: null
+    evidence: "https://www.eia.gov/energyexplained/nuclear/ (mở 25/09): 'Fusion is the source of energy in the sun and stars'"
+  - id: C-16
+    claim: "Năng lượng hạt nhân vận hành các nhà máy điện hạt nhân."
+    verdict: verified
+    severity: null
+    evidence: "https://www.eia.gov/energyexplained/nuclear/ (mở 25/09): 'All nuclear power plants use nuclear fission'"
+  - id: C-17
+    claim: "(ĐÃ CẮT) Năng lượng hạt nhân tạo nên những vụ nổ hạt nhân mạnh nhất từng được con người tạo ra."
+    verdict: unverifiable
+    severity: S3
+    evidence: "—"
+    note: "Cắt ở cả vi và en. Nguồn định mở (CTBTO, NRC fission) trả 403 trong lượt này; không còn trong bài sau sửa."
+  - id: C-18
+    claim: "Proton, neutron và electron tạo nên mọi vật chất thông thường trong vũ trụ."
+    verdict: verified
+    severity: null
+    evidence: "https://science.nasa.gov/dark-matter/ (mở 25/09): vật chất thông thường ~5%, vật chất tối ~27%"
+    note: "Sau sửa (bản cũ: 'mọi vật chất', và gọi proton/neutron là 'hạt cơ bản', S3). Tiêu đề 'kiến tạo nên vạn vật' là tu từ về vật quanh ta, không phải mệnh đề vũ trụ học — để nguyên (S4)."
+  - id: C-19
+    claim: "Summary: mọi vật quanh ta cấu tạo từ nguyên tử; hạt nhân ở tâm, electron chuyển động xung quanh; khối lượng ở hạt nhân, phần lớn thể tích thuộc vùng electron."
+    verdict: verified
+    severity: null
+    evidence: "Như C-2, C-3"

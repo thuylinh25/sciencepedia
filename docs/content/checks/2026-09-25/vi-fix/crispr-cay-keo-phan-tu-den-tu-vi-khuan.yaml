@@ -1,0 +1,97 @@
+slug: crispr-cay-keo-phan-tu-den-tu-vi-khuan
+checkedAt: 2026-09-25
+checkedBy: science-editor
+priorFactCheck: REVISE
+verdict: pass
+summary: "Lỗi S2 \"chỉ cần tổng hợp RNA 20 nucleotide là cắt được chỗ muốn\" đã sửa ở cả hai bản: Cas9 chỉ cắt khi cạnh đích có PAM (NGG với SpCas9), theo đúng Jinek 2012. Mọi claim còn lại nay có nguồn bậc 1–2 đã mở: spacer (Barrangou 2007), NHEJ/HDR (Ran 2013, kèm vế đối trọng của HDR), Nobel (NobelPrize.org), Casgevy với điều kiện chỉ định và mốc FDA 16/01/2024, He Jiankui (hai bài bình duyệt thay báo chí), khung pháp lý dòng mầm có mốc năm 2020 (Baylis). Nguồn Jinek 2012 bổ sung doi đã resolve Crossref. Đọc lại toàn bài vi: không còn S1–S3; 10 nguồn bậc 1–2."
+claims:
+  - id: C-1
+    claim: "CRISPR là hệ miễn dịch thích ứng của vi khuẩn và vi khuẩn cổ; sau khi bị virus tấn công, vi khuẩn chèn đoạn DNA ngắn của virus vào vùng CRISPR, các đoạn này quyết định tính kháng"
+    verdict: verified
+    severity: none
+    evidence: "https://doi.org/10.1126/science.1225829 ; https://doi.org/10.1126/science.1138140"
+    note: "Jinek (tóm tắt): \"provide bacteria and archaea with adaptive immunity\". Barrangou: \"bacteria integrated new spacers derived from phage genomic sequences … resistance specificity is determined by spacer-phage sequence similarity\"."
+  - id: C-2
+    claim: "RNA dẫn đường ~20 nucleotide khớp bổ sung với đích; Cas9 cắt cả hai mạch"
+    verdict: verified
+    severity: none
+    evidence: "https://pmc.ncbi.nlm.nih.gov/articles/PMC6286148/"
+    note: "\"the 5′-terminal 20 nucleotides of the crRNA … are available for target DNA binding\"; HNH cắt mạch bổ sung, RuvC cắt mạch không bổ sung."
+  - id: C-3
+    claim: "Cas9 lập trình được bằng một RNA thiết kế sẵn; nhưng chỉ cắt khi cạnh đích có PAM (NGG với SpCas9, cả hai G đều cần); về nguyên tắc nhắm được gần như mọi trình tự có PAM bên cạnh"
+    verdict: verified
+    severity: none
+    evidence: "https://pmc.ncbi.nlm.nih.gov/articles/PMC6286148/"
+    note: "\"a short motif (… PAM) juxtaposed to the complementary region\"; \"the PAM conforms to an NGG consensus sequence\"; \"both G nucleotides of the PAM were required\"; \"could in principle enable targeting of any DNA sequence of interest with few constraints beyond the presence of a GG dinucleotide adjacent\". Trước đây contradicted S2."
+  - id: C-4
+    claim: "Đột phá 2012 là của nhóm do Doudna và Charpentier dẫn dắt (Jinek và cộng sự)"
+    verdict: verified
+    severity: none
+    evidence: "https://doi.org/10.1126/science.1225829"
+    note: "Crossref: tác giả Jinek, Chylinski, Fonfara, Hauer, Doudna, Charpentier; Science 337:816–821."
+  - id: C-5
+    claim: "Charpentier và Doudna nhận Nobel Hoá học 2020 \"vì đã phát triển một phương pháp chỉnh sửa hệ gene\""
+    verdict: verified
+    severity: none
+    evidence: "https://www.nobelprize.org/prizes/chemistry/2020/press-release/"
+    note: "\"The Royal Swedish Academy of Sciences has decided to award the Nobel Prize in Chemistry 2020 to Emmanuelle Charpentier … Jennifer A. Doudna … for the development of a method for genome editing\"."
+  - id: C-6
+    claim: "NHEJ dễ sai, để lại indel có thể làm hỏng gene, dùng để tắt gene; HDR chính xác khi có khuôn, nhưng tần suất thấp và thất thường hơn, chủ yếu ở tế bào phân chia"
+    verdict: verified
+    severity: none
+    evidence: "https://doi.org/10.1038/nprot.2013.143"
+    note: "Ran 2013: \"error-prone NHEJ … high-fidelity HDR\"; indel; \"NHEJ can be harnessed to mediate gene knockouts\"; \"HDR typically occurs at lower and substantially more variable frequencies\"; \"generally active only in dividing cells\". Bỏ \"nhanh\" (không nguồn)."
+  - id: C-7
+    claim: "Casgevy là liệu pháp dùng CRISPR đầu tiên được cơ quan quản lý chấp thuận"
+    verdict: verified
+    severity: none
+    evidence: "https://www.gov.uk/government/news/mhra-authorises-world-first-gene-therapy-that-aims-to-cure-sickle-cell-disease-and-transfusion-dependent-thalassemia ; https://www.fda.gov/news-events/press-announcements/fda-approves-first-gene-therapies-treat-patients-sickle-cell-disease"
+    note: "MHRA: \"the first medicine to be licensed that uses … CRISPR\"; FDA: \"the first FDA-approved therapy utilizing CRISPR/Cas9\". Mốc lịch sử gắn với tháng 11/2023 ngay câu sau."
+  - id: C-8
+    claim: "MHRA phê duyệt tháng 11/2023 cho bệnh nhân từ 12 tuổi mắc hồng cầu hình liềm hoặc beta-thalassemia phụ thuộc truyền máu"
+    verdict: verified
+    severity: none
+    evidence: "https://www.gov.uk/government/news/mhra-authorises-world-first-gene-therapy-that-aims-to-cure-sickle-cell-disease-and-transfusion-dependent-thalassemia"
+    note: "Ngày công bố 16/11/2023 (thông cáo ghi chỉ định cấp 15/11), \"patients aged 12 and over\"."
+  - id: C-9
+    claim: "FDA phê duyệt 08/12/2023, ban đầu chỉ cho hồng cầu hình liềm ở bệnh nhân từ 12 tuổi có cơn tắc mạch tái diễn"
+    verdict: verified
+    severity: none
+    evidence: "https://www.fda.gov/news-events/press-announcements/fda-approves-first-gene-therapies-treat-patients-sickle-cell-disease"
+    note: "\"approved for the treatment of sickle cell disease in patients 12 years of age and older with recurrent vaso-occlusive crises\"."
+  - id: C-10
+    claim: "FDA phê duyệt chỉ định beta-thalassemia phụ thuộc truyền máu ngày 16/01/2024"
+    verdict: verified
+    severity: none
+    evidence: "https://www.fda.gov/vaccines-blood-biologics/casgevy"
+    note: "Trang sản phẩm FDA: \"January 16, 2024 Approval Letter - CASGEVY (STN 125785)\", STN 125785 gồm TDT từ 12 tuổi. Trang cũng liệt kê các phê duyệt 2026 (STN 125787, từ 2 tuổi) — bài chỉ nêu mốc lịch sử và dùng \"ban đầu\", nên không sai; nếu muốn nêu chỉ định hiện hành thì phải kèm mốc \"tính đến\"."
+  - id: C-11
+    claim: "Cuối 2018 He Jiankui tuyên bố cặp song sinh có CCR5 chỉnh sửa khi còn là phôi (nhằm ngăn HIV từ cha), thai kỳ thứ ba đang tiến triển, em bé thứ ba ra đời 2019; bị lên án trong và ngoài nước; 12/2019 bị kết tội hành nghề y trái phép, 3 năm tù"
+    verdict: verified
+    severity: none
+    evidence: "https://doi.org/10.1111/bioe.12878 ; https://doi.org/10.1093/jlb/lsaf007"
+    note: "Alonso & Savulescu 2021 (Bioethics): Lulu và Nana, \"a third pregnancy underway\", \"birth of a third gene-edited baby during 2019\". Zou 2025 (J Law Biosci): CCR5 \"to prevent the inheritance of HIV from an infected father\", \"widely condemned domestically and globally\", \"In December 2019 … convicted of illegal medical practices and sentenced to prison for 3 years\". Hai nguồn bình duyệt thay cho báo chí (check 17/09)."
+  - id: C-12
+    claim: "Khảo sát 106 nước (2020): 75 nước cấm dùng phôi chỉnh sửa để mang thai (5 có ngoại lệ), không nước nào cho phép rõ ràng chỉnh sửa di truyền được; nghiên cứu dòng mầm trong phòng thí nghiệm: đa số chưa có quy định riêng, 23 cấm, 11 cho phép"
+    verdict: verified
+    severity: none
+    evidence: "https://doi.org/10.1089/crispr.2020.0082"
+    note: "Khớp tóm tắt Baylis 2020. Claim có mốc năm; ghi chú kiểm lại: khảo sát mới hơn có thể đổi số. Zou 2025 dẫn cùng khảo sát với con số 70 nước — lệch do cách đếm của bài thứ cấp; dùng số của bài gốc."
+  - id: C-13
+    claim: "Bảng nguồn"
+    verdict: verified
+    severity: none
+    evidence: "https://doi.org/10.1126/science.1225829"
+    note: "Nguồn Jinek 2012 có doi 10.1126/science.1225829 (Crossref resolve 25/09) và url; đổi bậc 2→1 (nghiên cứu gốc có bình duyệt). 10 nguồn bậc 1–2."
+  - id: C-14
+    claim: "Summary: CRISPR thành công cụ chỉnh sửa gene lập trình được, đơn giản và linh hoạt — nền tảng của một liệu pháp được phê duyệt"
+    verdict: verified
+    severity: none
+    evidence: "https://pmc.ncbi.nlm.nih.gov/articles/PMC6286148/ ; https://www.fda.gov/news-events/press-announcements/fda-approves-first-gene-therapies-treat-patients-sickle-cell-disease"
+    note: "Jinek: \"a simple and versatile RNA-directed system\", \"efficient, versatile and programmable\". Đã bỏ \"rẻ và nhanh\" (không nguồn) ở summary vi/en và seoDescription."
+  - id: C-15
+    claim: "Chỉnh sửa tế bào soma (vd tế bào gốc máu trong Casgevy) chỉ nhắm vào người được điều trị; chỉnh sửa dòng mầm dùng để mang thai sinh ra đứa trẻ mang bộ gene đã chỉnh sửa, nên có thể di truyền"
+    verdict: verified
+    severity: none
+    evidence: "https://doi.org/10.1089/crispr.2020.0082 ; https://doi.org/10.1093/jlb/lsaf007 ; https://www.fda.gov/news-events/press-announcements/fda-approves-first-gene-therapies-treat-patients-sickle-cell-disease"
+    note: "Baylis định nghĩa dòng mầm (phôi, giao tử, tế bào tiền thân) và di truyền được (dùng để mang thai); Zou: \"birth of a child with a modified genome\"; FDA: tế bào gốc máu của bệnh nhân được chỉnh sửa."

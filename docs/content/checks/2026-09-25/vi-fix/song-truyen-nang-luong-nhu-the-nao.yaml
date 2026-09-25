@@ -1,0 +1,113 @@
+# Đính chính bản vi — science-editor, lượt 2026-09-25
+slug: song-truyen-nang-luong-nhu-the-nao
+checkedAt: 2026-09-25
+checkedBy: science-editor
+priorFactCheck: PASSED
+verdict: pass
+summary: >
+  Ba openQuestions của lượt đối chiếu song ngữ về claim đều đóng: câu cầu vồng/lăng
+  kính nay nêu tán sắc (NASA s5) và gọi cầu vồng là "một phần cơ chế"; đoạn khép
+  viết "mọi sóng tuần hoàn". Đọc lại toàn bài còn thấy "biên độ càng lớn, sóng
+  mang càng nhiều năng lượng" không điều kiện — nguồn NASA s4 nói năng lượng sóng
+  điện từ tăng khi bước sóng ngắn lại (chọn một kể như tất cả, S3) — và "động đất
+  tạo ra hai loại sóng chính" (bỏ sóng mặt, S4). 4 sửa vi, 2 sửa en (hai sửa kia
+  en đã đúng từ a1cccd5), thêm EIA Forms of energy cho sóng ngang/sóng dọc. Sau sửa
+  không còn S1–S3; 15 nguồn bậc 1–2 (và 1 nguồn bậc 3), phần lớn không còn đỡ claim
+  nào — ghi ở openQuestions, không chặn. Giữ dấu duyệt.
+claims:
+  - id: W1
+    claim: "summary: sóng xuất hiện khắp nơi; truyền năng lượng, không truyền vật chất; phao nhấp nhô tại chỗ, thứ di chuyển là năng lượng."
+    verdict: verified
+    severity: none
+    evidence: "NASA Anatomy (s4): 'Classical waves transfer energy without transporting matter through the medium ... much like a bug bobbing on top of ripples in water.' NOAA (s13): 'Waves transmit energy, not water'."
+    note: "'Lên xuống tại chỗ' là đơn giản hoá của chuyển động tròn mà NOAA mô tả — mức S4, không đổi."
+  - id: W2
+    claim: "Bước sóng là khoảng cách giữa hai đỉnh sóng liên tiếp."
+    verdict: verified
+    severity: none
+    evidence: "NASA Anatomy (s4): 'The distance between crests is the wavelength.'"
+    note: ""
+  - id: W3
+    claim: "Tần số là số dao động mỗi giây, đơn vị hertz."
+    verdict: verified
+    severity: none
+    evidence: "NASA Anatomy (s4): 'The number of crests that pass a given point within one second is described as the frequency ... One wave—or cycle—per second is called a Hertz (Hz)'."
+    note: ""
+  - id: W4
+    claim: "Chu kỳ là thời gian một dao động; T = 1/f."
+    verdict: verified
+    severity: none
+    evidence: "NASA Basics of Space Flight ch.6 (s7): 'the time required for one oscillation'; 'Hertz (Hz), which represents cycles per second' — T = 1/f suy trực tiếp."
+    note: ""
+  - id: W5
+    claim: "Biên độ là độ lệch lớn nhất khỏi vị trí cân bằng; cùng loại sóng, cùng tần số thì biên độ lớn hơn mang nhiều năng lượng hơn; năng lượng còn phụ thuộc tần số (ánh sáng bước sóng ngắn năng lượng lớn)."
+    verdict: verified
+    severity: none
+    evidence: "NASA BSF ch.6 (s7): 'The strength, or intensity of the wave ... is known as its amplitude.' NASA Anatomy (s4): 'energy increases as the wavelength shortens'. Cosmicopia (s8): biên độ trường giảm thì 'the light gets dimmer'."
+    note: "Đã sửa (S3): vế năng lượng không điều kiện."
+  - id: W6
+    claim: "v = λf; với ánh sáng trong chân không c = λf; mối liên hệ cơ bản của mọi sóng tuần hoàn."
+    verdict: verified
+    severity: none
+    evidence: "NASA BSF ch.6 (s7): 'Wavelength ... is equal to the speed of light (c) divided by frequency (f)'; bước sóng là quãng sóng đi trong một chu kỳ."
+    note: ""
+  - id: W7
+    claim: "Sóng cơ cần môi trường (âm thanh, sóng nước, sóng địa chấn); âm không truyền trong chân không."
+    verdict: verified
+    severity: none
+    evidence: "NASA Anatomy (s4): 'Waves in water and sound waves in air are two examples of mechanical waves'; 'Sound waves cannot travel in the vacuum of space because there is no medium'. USGS (s10): sóng địa chấn 'shake the earth as they move through it'."
+    note: ""
+  - id: W8
+    claim: "Sóng điện từ không cần môi trường (ánh sáng, vô tuyến, tia X, gamma); nhờ đó ánh sáng Mặt Trời vượt khoảng không tới Trái Đất."
+    verdict: verified
+    severity: none
+    evidence: "NASA Anatomy (s4): 'Electromagnetic waves differ from mechanical waves in that they do not require a medium ... can travel ... through the vacuum of space.' NASA BSF ch.6: phổ gồm radio, visible, X-rays, gamma rays."
+    note: ""
+  - id: W9
+    claim: "Sóng ngang: dao động vuông góc hướng truyền (ánh sáng, sóng trên dây)."
+    verdict: verified
+    severity: none
+    evidence: "Cosmicopia (s8): dây phơi 'a transverse wave -- the disturbance swings at a right angle to the direction of its propagation'; 'light is also a transverse wave'."
+    note: ""
+  - id: W10
+    claim: "Sóng dọc: dao động song song hướng truyền (âm trong không khí, sóng P)."
+    verdict: verified
+    severity: none
+    evidence: "EIA Forms of energy (thêm mới): 'Sound is energy moving through substances in longitudinal (compression or rarefaction) waves.' USGS (s10): 'P Waves alternately compress and stretch the crustal material parallel to the direction they are propagating.'"
+    note: ""
+  - id: W11
+    claim: "Trong lòng Trái Đất động đất truyền hai loại sóng chính: P (qua rắn và lỏng, đến trước) và S (chỉ qua rắn)."
+    verdict: verified
+    severity: none
+    evidence: "USGS (s12, Wayback 2026-09-21): 'P waves travel through solid and liquid, but S waves do not travel through liquid.' USGS (s10): 'The P waves travel faster and shake the ground where you are first.'"
+    note: "Đã sửa (S4): thêm phạm vi 'trong lòng Trái Đất' (sóng mặt không thuộc hai loại này)."
+  - id: W12
+    claim: "Sóng S không qua được lõi ngoài giúp xác định lõi ngoài lỏng."
+    verdict: verified
+    severity: none
+    evidence: "USGS (s12): 'Scientists discovered that Earth's outer core is liquid by observing seismic waves.'"
+    note: ""
+  - id: W13
+    claim: "Phản xạ: sóng dội ngược lại môi trường cũ."
+    verdict: verified
+    severity: none
+    evidence: "NASA Wave Behaviors (s5): 'Reflection is when incident light ... hits an object and bounces off.'"
+    note: ""
+  - id: W14
+    claim: "Khúc xạ: sóng đổi hướng khi qua môi trường khác; bước sóng khác nhau lệch góc khác nhau → lăng kính tách màu, một phần cơ chế cầu vồng."
+    verdict: verified
+    severity: none
+    evidence: "NASA Wave Behaviors (s5): 'Refraction is when light waves change direction as they pass from one medium to another'; 'Different wavelengths of light are slowed at different rates, which causes them to bend at different angles'."
+    note: "Đã sửa (S3): bỏ mất tán sắc."
+  - id: W15
+    claim: "Nhiễu xạ: sóng uốn cong và lan rộng qua khe hẹp hoặc quanh vật cản."
+    verdict: verified
+    severity: none
+    evidence: "NASA Wave Behaviors (s5): 'Diffraction is the bending and spreading of waves around an obstacle'; spectrometer dùng 'diffraction ... of light from slits'."
+    note: ""
+  - id: W16
+    claim: "Đoạn khép: mọi sóng tuần hoàn được mô tả bằng bước sóng, tần số, chu kỳ, biên độ."
+    verdict: verified
+    severity: none
+    evidence: "NASA BSF ch.6 (s7): 'Waves are described in terms of frequency, wavelength, and amplitude.'"
+    note: "Đã sửa (S4): 'mọi loại sóng' → 'mọi sóng tuần hoàn'."

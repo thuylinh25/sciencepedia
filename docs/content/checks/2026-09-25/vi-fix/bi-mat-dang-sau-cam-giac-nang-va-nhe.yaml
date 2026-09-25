@@ -1,0 +1,126 @@
+slug: bi-mat-dang-sau-cam-giac-nang-va-nhe
+checkedAt: 2026-09-25
+checkedBy: science-editor
+priorFactCheck: PASSED
+verdict: pass
+summary: "Đóng ba lỗi vi còn nợ: thiết bị vài tấn 'trôi khá dễ dàng' (mô hình sai ngay trong bài về quán tính) → 'bị đẩy thì trôi, nhưng tăng tốc chậm'; 'thí nghiệm cho thấy khối lượng quán tính = hấp dẫn' → 'chưa tìm thấy khác biệt', kèm giới hạn MICROSCOPE cỡ 10⁻¹⁵; thêm NSSDC cho g Mặt Trăng 1,62 m/s². Đọc lại toàn bài còn bắt thêm: 'một trong những câu hỏi sâu sắc nhất' và 'hiểu lầm phổ biến nhất' (so sánh nhất không nguồn), tốc độ ISS 7,7 km/s không khớp nguồn (28.000 km/h ≈ 7,8), và ba chỗ 'nặng … kg' trong bài dạy phân biệt khối lượng với trọng lượng. Sửa vi, en theo cùng lượt. Không còn S1–S3."
+claims:
+  - id: C-1
+    claim: "Khối lượng là thước đo quán tính: khả năng chống lại thay đổi trạng thái chuyển động."
+    verdict: verified
+    severity: null
+    evidence: "https://www.nist.gov/pml/owm/si-units-mass [s6] (mở 25/09): 'The mass of a body is a measure of its inertial property or how much matter it contains'"
+  - id: C-2
+    claim: "Định luật II Newton F = m × a; cùng lực, vật khối lượng nhỏ tăng tốc nhanh hơn."
+    verdict: verified
+    severity: null
+    evidence: "https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/newtons-laws-of-motion/ [s8] (mở 25/09): 'The acceleration of an object depends on the mass of the object and the amount of force applied'"
+  - id: C-3
+    claim: "Xe đạp dễ đẩy, ô tô khó hơn vì khối lượng quán tính lớn hơn, không vì bị Trái Đất hút mạnh hơn."
+    verdict: verified
+    severity: S4
+    evidence: "Hệ quả trực tiếp của C-2"
+    note: "Ví dụ minh hoạ; bỏ qua ma sát lăn — chấp nhận ở mức phổ thông."
+  - id: C-4
+    claim: "Trọng lượng là một lực, W = m × g."
+    verdict: verified
+    severity: null
+    evidence: "https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/weight-equation/ [s10] (mở 25/09): 'The weight W, or gravitational force, is then just the mass of an object times the gravitational acceleration. W = m * g'"
+  - id: C-5
+    claim: "Khối lượng gần như không đổi khi đổi vị trí; trọng lượng đổi theo lực hấp dẫn nơi đứng."
+    verdict: verified
+    severity: null
+    evidence: "[s6]; [s11] NASA: 'The object's mass is the same, but it would register 0 on a scale'"
+  - id: C-6
+    claim: "Trên Trái Đất g ≈ 9,81 m/s²."
+    verdict: verified
+    severity: null
+    evidence: "https://www.nist.gov/pml/special-publication-811/nist-guide-si-footnotes [s5] (mở 25/09): gₙ = 9,806 65 m/s² (giá trị chuẩn)"
+  - id: C-7
+    claim: "Trên Mặt Trăng trọng lượng chỉ còn khoảng 1/6."
+    verdict: verified
+    severity: null
+    evidence: "https://science.nasa.gov/moon/facts/ [s12] (mở 25/09): 'the gravity on the surface of the Moon is one-sixth of Earth's'"
+  - id: C-8
+    claim: "Trên Mặt Trăng g ≈ 1,62 m/s²."
+    verdict: verified
+    severity: null
+    evidence: "https://nssdc.gsfc.nasa.gov/planetary/factsheet/moonfact.html (mở 25/09): 'Surface gravity (m/s²) 1.62'"
+    note: "Nguồn thêm vào bảng ở lượt này (trước đó không có nguồn trong bảng)."
+  - id: C-9
+    claim: "Người có khối lượng 60 kg trên Trái Đất vẫn có khối lượng 60 kg trên Mặt Trăng; vì trọng lực nhỏ, phi hành gia bật nhảy cao trên Mặt Trăng."
+    verdict: verified
+    severity: S4
+    evidence: "[s6]; [s12] NASA: 'which is why in footage of moonwalks, astronauts appear to almost bounce across the surface'"
+    note: "Sau sửa 'nặng 60 kg' → 'có khối lượng 60 kg'. 'Bật nhảy rất cao' hơi mạnh hơn 'bounce across' của NASA — S4, để nguyên."
+  - id: C-10
+    claim: "Nghĩ rằng ISS không có trọng lực là một hiểu lầm phổ biến."
+    verdict: verified
+    severity: null
+    evidence: "https://www.nasa.gov/centers-and-facilities/glenn/what-is-microgravity/ [s11] (mở 25/09): 'Many people mistakenly think that gravity does not exist in space'"
+    note: "Sau sửa (bản cũ 'một trong những hiểu lầm phổ biến nhất', so sánh nhất không nguồn — S4)."
+  - id: C-11
+    claim: "Ở độ cao ISS, hấp dẫn Trái Đất còn khoảng 90% so với mặt đất."
+    verdict: verified
+    severity: null
+    evidence: "[s11] NASA (mở 25/09): 'Earth's gravitational field at about 250 miles above the surface is 88.8 percent of its strength at the surface'"
+  - id: C-12
+    claim: "ISS liên tục rơi tự do nhưng lao ngang đủ nhanh để luôn 'trượt khỏi' bề mặt cong; trạm, người và mọi vật bên trong cùng rơi với cùng gia tốc."
+    verdict: verified
+    severity: null
+    evidence: "[s11] NASA: 'The condition of microgravity comes about whenever an object is in free fall ... accelerating with exactly the acceleration due to gravity'; 'kept in orbit around Earth by gravity'"
+  - id: C-13
+    claim: "ISS chuyển động quanh Trái Đất với tốc độ khoảng 28.000 km/h (gần 7,8 km/s)."
+    verdict: verified
+    severity: null
+    evidence: "[s11] NASA (mở 25/09): '17,500 miles per hour (28,000 km per hour)'"
+    note: "Sau sửa (bản cũ 7,7 km/s, không khớp số nguồn — S4)."
+  - id: C-14
+    claim: "Không có lực đỡ từ sàn nên không cảm thấy bị 'đè xuống'; vẫn chịu hấp dẫn; gọi là vi trọng lực, không phải không có trọng lực."
+    verdict: verified
+    severity: null
+    evidence: "[s11] NASA: 'weightlessness ... or more accurately microgravity'"
+  - id: C-15
+    claim: "Phân biệt khối lượng quán tính (trong F = m × a) và khối lượng hấp dẫn (trong công thức hấp dẫn)."
+    verdict: verified
+    severity: S4
+    evidence: "https://doi.org/10.1103/PhysRevLett.129.121102 [s13] (tóm tắt qua Europe PMC, mở 25/09): 'the equality between the inertial and the gravitational masses'"
+    note: "Mô tả khối lượng hấp dẫn gộp khối lượng hấp dẫn chủ động (hút) và thụ động (bị hút) — đơn giản hoá chấp nhận ở mức phổ thông."
+  - id: C-16
+    claim: "Các thí nghiệm chính xác nhất chưa tìm thấy khác biệt giữa khối lượng quán tính và khối lượng hấp dẫn; MICROSCOPE (2022) không phát hiện vi phạm ở độ chính xác cỡ 10⁻¹⁵."
+    verdict: verified
+    severity: null
+    evidence: "[s13] Touboul và cs., PRL 129, 121102 (2022), tóm tắt Europe PMC + toàn văn arXiv:2209.15487 (mở 25/09): 'We found no violation of the WEP', η(Ti, Pt) = [−1,5 ± 2,3 (stat) ± 1,5 (syst)] × 10⁻¹⁵"
+    note: "Sau sửa (bản cũ 'mọi thí nghiệm ... đều cho thấy = ... với độ chính xác cực cao' — nâng mức chắc chắn, S3)."
+  - id: C-17
+    claim: "Sự tương đương này dẫn Einstein tới Nguyên lý Tương đương, nền tảng của Thuyết Tương đối Tổng quát."
+    verdict: verified
+    severity: null
+    evidence: "[s13] arXiv:2209.15487 tr. 1: 'the universality of free fall was elevated to a principle by Einstein, the weak equivalence principle (WEP), taken as a cornerstone of general relativity'"
+  - id: C-18
+    claim: "Thuyết Tương đối Tổng quát chưa được coi là hoàn chỉnh vì chưa hợp nhất với cơ học lượng tử; một số lý thuyết mở rộng dự đoán vi phạm cực nhỏ, nên nguyên lý vẫn được kiểm nghiệm ngày càng chính xác."
+    verdict: verified
+    severity: null
+    evidence: "[s13] arXiv:2209.15487 tr. 2: 'one does not know how to cast GR into a consistent quantum theory'; 'As GR cannot be considered as a complete theory ... it is important to test as precisely as possible the EP'; 'new long-ranged interactions ... could lead to very small apparent violations of the EP'"
+    note: "Thay câu cũ 'vì sao bằng nhau vẫn là một trong những câu hỏi sâu sắc nhất của vật lý hiện đại' (đánh giá không nguồn, S3)."
+  - id: C-19
+    claim: "Ở ISS, một cú đẩy có thể làm thiết bị vài tấn trôi đi vì gần như không ma sát và không có trọng lượng cảm nhận được, nhưng vì khối lượng lớn nó chỉ tăng tốc chậm."
+    verdict: verified
+    severity: null
+    evidence: "[s8] F = m × a; [s11] 'The object's mass is the same'"
+    note: "Sau sửa (bản cũ 'có thể trôi đi khá dễ dàng', S3 — mô hình sai về quán tính)."
+  - id: C-20
+    claim: "Vật vài tấn va vào người vẫn có thể gây lực va chạm cực lớn; 'không trọng lượng' không có nghĩa 'không khối lượng'."
+    verdict: verified
+    severity: null
+    evidence: "[s8]; [s11]"
+  - id: C-21
+    claim: "Kết luận: khối lượng đo lượng vật chất và quán tính; quán tính là xu hướng chống thay đổi chuyển động; trọng lượng là lực hấp dẫn tác dụng lên vật."
+    verdict: verified
+    severity: null
+    evidence: "[s6] NIST; [s10] NASA Weight Equation"
+  - id: C-22
+    claim: "Summary: 'nặng' đời thường liên quan tới hai đại lượng khối lượng và trọng lượng; giải thích cảm giác nhẹ trên Mặt Trăng và 'không trọng lượng' của phi hành gia."
+    verdict: verified
+    severity: null
+    evidence: "Như C-4, C-7, C-14"

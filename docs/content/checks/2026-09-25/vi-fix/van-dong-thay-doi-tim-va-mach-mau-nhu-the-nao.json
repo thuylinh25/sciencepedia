@@ -1,0 +1,290 @@
+{
+  "slug": "van-dong-thay-doi-tim-va-mach-mau-nhu-the-nao",
+  "edits": [
+    {
+      "claimId": "C2",
+      "severity": "S3",
+      "find": "Ở người tập bền bỉ đều đặn, tâm thất trái giãn rộng hơn và thành cơ dày lên vừa phải. Kết quả là **thể tích tống máu** — lượng máu bơm ra mỗi nhịp — tăng lên đáng kể.",
+      "replace": "Ở người tập bền bỉ đều đặn, buồng tâm thất trái thường giãn rộng hơn và khối cơ tim tăng lên. Thành tim có thể dày thêm, nhưng kiểu thay đổi hay gặp ở người tập bền bỉ là buồng tim lớn ra trong khi độ dày thành gần như bình thường. Mức thay đổi khác nhau nhiều giữa từng người — tuỳ tuổi, giới, di truyền, loại hình và khối lượng tập. Buồng thất lớn hơn nạp được nhiều máu hơn, nên **thể tích tống máu** — lượng máu bơm ra mỗi nhịp — tăng lên, rõ nhất khi gắng sức.",
+      "why": "Lavie 2015 nêu cả giãn buồng lẫn tăng độ dày thành, và nói mức độ thích nghi không đoán trước được cho từng người; Flanagan 2023: phì đại lệch tâm của người tập bền bỉ là tăng khối cơ và thể tích cuối tâm trương với độ dày thành bình thường. 'Dày lên vừa phải' không có trong nguồn nào; 'tăng đáng kể' không nêu điều kiện (Lavie: thể tích tống máu tăng chủ yếu khi gắng sức).",
+      "evidence": "Lavie et al. 2015, Circ Res 117:207-219, doi 10.1161/CIRCRESAHA.117.305205 (toàn văn PMC4493772, mở 25/09): 'LV dilation (i.e., increased end-diastolic diameter) and hypertrophy (i.e., increased wall thickness)'; 'influenced by ... age, sex, genetics, prior training status, mode of ET and ET volume'; 'SV ... is augmented during aerobic exertion by ... increase in end diastolic volume'. Flanagan et al. 2023, Echo Res Pract 10:15, doi 10.1186/s44156-023-00027-8 (toàn văn PMC10583359, mở 25/09): 'Eccentric hypertrophy is characterised by increased LV mass and end-diastolic volume (LVEDV) and normal wall thickness'; 'Endurance athletes often present with physiological eccentric hypertrophy of the LV'."
+    },
+    {
+      "claimId": "C3",
+      "severity": "S2",
+      "find": "Vì cơ thể cần một lưu lượng máu nhất định lúc nghỉ, tim bơm nhiều hơn mỗi nhịp thì cần ít nhịp hơn. Đó là lý do nhịp tim nghỉ của vận động viên bền bỉ thường ở mức 40–50 lần/phút, so với 60–80 ở người ít vận động.",
+      "replace": "Lúc nghỉ, cung lượng tim của hầu hết mọi người đều quanh 5 lít mỗi phút. Tim bơm được nhiều hơn mỗi nhịp thì cần ít nhịp hơn để đạt cùng lưu lượng ấy — một lý do khiến nhịp tim nghỉ của người tập bền bỉ thường chậm hơn người ít vận động.",
+      "why": "Hai khoảng 40–50 và 60–80 lần/phút không có trong nguồn nào của bảng (phát hiện E3 ngày 12/09 đã hẹn 'gắn Lavie hoặc gỡ'). Đã đọc toàn văn Lavie 2015: có cung lượng tim nghỉ ~5 L/phút và 'reduced resting pulse', không có hai khoảng số. Quy tắc 6: số không nguồn thì gỡ. Giữ cơ chế và hướng thay đổi, hạ 'đó là lý do' thành 'một lý do'.",
+      "evidence": "Lavie et al. 2015, Circ Res 117:207-219, doi 10.1161/CIRCRESAHA.117.305205 (toàn văn PMC4493772, mở 25/09): 'At rest, CO is homogenous at ~5 L/min'; 'CO is the product of stroke volume (SV) and heart rate (HR)'; bảng lợi ích thể lực tim phổi: 'Reduced resting pulse'. Flanagan et al. 2023, Echo Res Pract 10:15, doi 10.1186/s44156-023-00027-8 (toàn văn PMC10583359, mở 25/09): nhắc 'bradycardia in the athlete'."
+    },
+    {
+      "claimId": "C4",
+      "severity": "S3",
+      "find": "Cần phân biệt thích nghi sinh lý này với **phì đại bệnh lý** do [[tăng huyết áp]]: hình thái, chức năng tâm trương và khả năng hồi phục khác hẳn nhau.",
+      "replace": "Cần phân biệt thích nghi sinh lý này với **phì đại bệnh lý**. Khi tim phải làm việc nặng hơn trong nhiều năm vì [[tăng huyết áp]], cơ tim dày lên để thích nghi và trở nên cứng hơn, khó giãn ra để nạp đủ máu giữa hai nhịp. Ở người tập bền bỉ thì khác: chức năng tâm trương thường bình thường hoặc tốt hơn người ít vận động, kiểu thành tim dày mà buồng tim không lớn thì hiếm gặp đến mức khi thấy nó bác sĩ sẽ cho khám thêm, và phần cơ tim tăng lên do tập có xu hướng giảm đi khi ngừng tập.",
+      "why": "Câu cũ nêu ba khác biệt mà không nguồn nào trong bảng đỡ. Viết lại theo đúng điều hai nguồn nói: cơ chế phì đại do tăng huyết áp (NHLBI) và dấu hiệu phân biệt tim vận động viên (Flanagan 2023). Giữ [[tăng huyết áp]].",
+      "evidence": "NHLBI, Heart Failure — Causes and Risk Factors (mở 25/09): 'High blood pressure and other conditions that make your heart work harder ... Over time, your heart muscle thickens to adapt, which makes it stiffer'; 'too stiff to fully relax between heartbeats. That means it can't fill up with enough blood'. Flanagan et al. 2023, Echo Res Pract 10:15, doi 10.1186/s44156-023-00027-8 (toàn văn PMC10583359, mở 25/09): 'Endurance athletes typically present ... normal or superior diastolic function compared with the sedentary population'; 'as concentric remodelling in any athlete is rare, further investigation is warranted'; 'reduction in RV and LV cavity dimensions, mass and WT ... suggestive of a reversibility of any hypertrophy that is induced by athletic training'."
+    },
+    {
+      "claimId": "C5",
+      "severity": "S3",
+      "find": "Dòng máu chảy nhanh khi vận động tạo lực trượt lên thành mạch, kích thích chính quá trình này.",
+      "replace": "Dòng máu chảy nhanh khi vận động tạo lực trượt lên thành mạch, và lực này là một trong những tín hiệu kích thích nội mô tạo nitric oxide.",
+      "why": "Cơ chế lực trượt → NO chưa có nguồn trong bảng; thêm Green 2017. Nguồn nêu nhiều tín hiệu huyết động (lưu lượng, lực trượt, áp lực, sức căng thành), nên không được viết lực trượt là 'chính' tác nhân (quy tắc 15: chọn một kể như tất cả).",
+      "evidence": "Green et al. 2017, Physiol Rev 97:495-528, doi 10.1152/physrev.00014.2016 (toàn văn PMC5539408, mở 25/09): 'Exercise modifies blood flow, luminal shear stress, arterial pressure, and tangential wall stress, all of which can transduce changes in arterial function'; 'shear stress-induced NO production'. Lavie et al. 2015, Circ Res 117:207-219, doi 10.1161/CIRCRESAHA.117.305205 (toàn văn PMC4493772, mở 25/09): 'Enhanced endothelium-dependent vasodilation through increased production of nitric oxide (NO) is also a clear aerobic ET benefit'."
+    },
+    {
+      "claimId": "C7",
+      "severity": "S2",
+      "find": "Ở người huyết áp bình thường, mức giảm nhỏ hơn hẳn — 3,5 mmHg tâm thu.",
+      "replace": "Ở người huyết áp bình thường, mức giảm nhỏ hơn hẳn — khoảng 0,75 mmHg tâm thu, với khoảng tin cậy chứa cả số 0.",
+      "why": "3,5 mmHg là hiệu ứng GỘP của tập bền bỉ trên mọi người tham gia, không phải của nhóm huyết áp bình thường. Số của nhóm này là −0,75 [−2,2; +0,69]. Khớp bản en đã sửa (a1cccd5).",
+      "evidence": "Cornelissen & Smart 2013, JAHA 2:e004473, doi 10.1161/JAHA.112.004473 (tóm tắt Europe PMC PMID 23525435, mở 25/09): 'Systolic BP (SBP) was reduced after endurance (-3.5 mm Hg [confidence limits -4.6 to -2.3])'; '29 groups of subjects with normal BP levels (-0.75 [-2.2 to +0.69]/-1.1 [-2.2 to -0.068])'."
+    },
+    {
+      "claimId": "C8",
+      "severity": "S3",
+      "find": "VO₂max là lượng oxy tối đa cơ thể sử dụng được mỗi phút. Trong các nghiên cứu đoàn hệ lớn, đây là một trong những yếu tố dự báo tử vong do mọi nguyên nhân mạnh nhất — mạnh hơn cả hút thuốc, tăng huyết áp hay đái tháo đường trong một số phân tích.",
+      "replace": "VO₂max là lượng oxy tối đa cơ thể sử dụng được mỗi phút — thước đo của thể lực tim phổi. Trong các nghiên cứu đoàn hệ, thể lực tim phổi thấp gắn với nguy cơ tử vong do mọi nguyên nhân cao hơn. Ở đoàn hệ hơn 122.000 người làm nghiệm pháp gắng sức trên thảm chạy của Mandsager và cộng sự (2018), nguy cơ tử vong của nhóm thể lực kém nhất cao gấp khoảng **5 lần** nhóm thể lực đỉnh cao, còn hút thuốc và đái tháo đường mỗi thứ gắn với mức tăng khoảng 1,4 lần. Hai con số này không so thẳng được với nhau: 5 lần là khoảng cách giữa hai **cực** của thang thể lực, còn 1,4 lần là chênh lệch giữa **có và không có** một yếu tố nguy cơ. Kết luận của chính các tác giả dè dặt hơn: thể lực kém gắn với mức tăng nguy cơ tương đương hoặc lớn hơn các yếu tố nguy cơ kinh điển. Đây là nghiên cứu quan sát — nó cho thấy mối liên quan, không chứng minh quan hệ nhân quả.",
+      "why": "Phát hiện E4 (12/09, S3) chưa từng được áp: 'mạnh hơn cả hút thuốc, tăng huyết áp hay đái tháo đường' là phép so lệch loại (HR 5,04 hai cực so với HR ~1,4 nhị phân), và nguồn không so với tăng huyết áp (so với bệnh động mạch vành 1,29). Viết theo kết luận nguyên văn của nguồn, thêm nhãn nghiên cứu quan sát.",
+      "evidence": "Mandsager et al. 2018, JAMA Netw Open 1:e183605, doi 10.1001/jamanetworkopen.2018.3605 (tóm tắt Europe PMC PMID 30646252, mở 25/09): 'low vs elite: adjusted hazard ratio [HR], 5.04; 95% CI, 4.10-6.20'; 'smoking: adjusted HR, 1.41'; 'diabetes: adjusted HR, 1.40'; 'coronary artery disease: adjusted HR, 1.29'; 'was comparable to or greater than traditional clinical risk factors'; 'retrospective cohort study'; '122 007 patients'."
+    },
+    {
+      "claimId": "C9",
+      "severity": "S2",
+      "find": "Điều đáng mừng: mức cải thiện lớn nhất về nguy cơ nằm ở đoạn từ \"hoàn toàn không vận động\" lên \"vận động một chút\". Đi từ 0 lên 90 phút mỗi tuần đã giảm nguy cơ đáng kể; đi từ 300 lên 400 phút thì lợi ích thêm nhỏ hơn nhiều.",
+      "replace": "Điều đáng mừng: bước đầu tiên có vẻ đáng giá nhất. Trong đoàn hệ hơn 416.000 người ở Đài Loan của Wen và cộng sự (2011), người tập trung bình khoảng 90 phút mỗi tuần — 15 phút mỗi ngày — có nguy cơ tử vong do mọi nguyên nhân thấp hơn 14% so với người không vận động; mỗi 15 phút tập thêm mỗi ngày gắn với mức giảm thêm khoảng 4%. WHO tóm lại cùng hướng: vận động một ít vẫn hơn không vận động, và vận động nhiều hơn thì tốt hơn.",
+      "why": "Mốc 90 phút có nguồn (Wen 2011) nhưng câu cũ viết thành nhân quả ('đã giảm nguy cơ') từ một đoàn hệ quan sát; mốc '300 lên 400 phút' không có trong Wen hay nguồn nào khác của bảng — gỡ (quy tắc 6). Viết theo số của nguồn, động từ tương quan ('gắn với', 'thấp hơn').",
+      "evidence": "Wen et al. 2011, Lancet 378:1244-1253, doi 10.1016/S0140-6736(11)60749-6 (tóm tắt Europe PMC PMID 21846575, mở 25/09): 'those in the low-volume activity group, who exercised for an average of 92 min per week ... or 15 min a day ..., had a 14% reduced risk of all-cause mortality (0·86, 0·81-0·91)'; 'Every additional 15 min of daily exercise beyond the minimum amount of 15 min a day further reduced all-cause mortality by 4%'; '416,175 individuals'. WHO 2020 guidelines — bản tóm tắt Bull et al. 2020, BJSM, PMC7719906 (toàn văn, mở 25/09): 'They reaffirm messages that some physical activity is better than none, that more physical activity is better for optimal health outcomes'."
+    },
+    {
+      "claimId": "C11",
+      "severity": "S3",
+      "find": "- Giảm thời gian ngồi liên tục — ngắt quãng bằng vài phút đứng dậy đi lại",
+      "replace": "- Hạn chế thời gian ngồi; thay thời gian ngồi bằng vận động ở bất kỳ cường độ nào, kể cả nhẹ, cũng có lợi cho sức khoẻ",
+      "why": "WHO khuyến nghị hạn chế thời gian tĩnh tại và nói thay bằng vận động mọi cường độ đều có lợi; 'ngồi liên tục' và 'vài phút đứng dậy' là chi tiết WHO không nêu (WHO nói bằng chứng chưa đủ để định lượng ngưỡng).",
+      "evidence": "WHO 2020 guidelines — bản tóm tắt Bull et al. 2020, BJSM, PMC7719906 (toàn văn, mở 25/09): 'Adults should limit the amount of time spent being sedentary. Replacing sedentary time with physical activity of any intensity (including light intensity) provides health benefits'; 'evidence was insufficient to quantify a sedentary behaviour threshold'."
+    },
+    {
+      "claimId": "C10",
+      "severity": "S4",
+      "find": "WHO khuyến nghị người trưởng thành:",
+      "replace": "Hướng dẫn năm 2020 của WHO khuyến nghị người trưởng thành:",
+      "why": "Khuyến nghị có tính thời điểm phải mang mốc (quy tắc 5); 'hiện hành' ở tiêu đề mục đúng tới lượt kiểm 25/09/2026.",
+      "evidence": "WHO 2020 guidelines — bản tóm tắt Bull et al. 2020, BJSM, PMC7719906 (toàn văn, mở 25/09): 'All adults should undertake 150-300 min of moderate-intensity, or 75-150 min of vigorous-intensity physical activity'; 'muscle-strengthening activities at moderate or greater intensity that involve all major muscle groups on 2 or more days a week'."
+    },
+    {
+      "claimId": "C12",
+      "severity": "S1",
+      "find": "Mức hạ huyết áp nhờ tập luyện có thể sánh với một thuốc hạ áp đơn trị, và chính điều đó khiến một số người nghĩ tới chuyện bỏ thuốc. **Đừng tự bỏ.** Các khuyến cáo điều trị xếp vận động là biện pháp *đi kèm* thuốc, không phải biện pháp thay thế; ngừng thuốc hạ áp đột ngột có thể làm huyết áp bật lên cao hơn trước và làm tăng nguy cơ đột quỵ. Nếu tập luyện đã đưa huyết áp của bạn xuống, đó là lý do để bác sĩ cân nhắc chỉnh liều — và việc chỉnh liều là của bác sĩ.",
+      "replace": "Vì tập luyện đều đặn có thể hạ huyết áp, một số người nghĩ tới chuyện bỏ thuốc. **Đừng tự bỏ.** Viện Tim, Phổi và Máu Hoa Kỳ (NHLBI) khuyên người đã được chẩn đoán tăng huyết áp tiếp tục kế hoạch điều trị, và duy trì lối sống lành mạnh *trong khi* dùng thuốc — hai thứ đi cùng nhau, không thay cho nhau. Nếu tập luyện đã đưa huyết áp của bạn xuống, hãy báo bác sĩ: đổi liều hay đổi thuốc là việc bác sĩ quyết định.",
+      "why": "(1) Phép so với 'một thuốc hạ áp đơn trị' đã bị bác ở đính chính S1 13/09 nhưng quay lại trong chính mục an toàn; không nguồn nào trong bảng so vận động với thuốc → bỏ (khớp en). (2) 'Các khuyến cáo điều trị' và 'bật lại, tăng nguy cơ đột quỵ' không có nguồn trong bảng; lượt này không mở được một hướng dẫn nói điều đó → lời khuyên an toàn gắn vào nguồn hướng dẫn chính thức đã mở (NHLBI), vế bật lại/đột quỵ bị cắt (quy tắc 8).",
+      "evidence": "NHLBI, High Blood Pressure — Treatment + Living With (mở 25/09): 'Keep up your healthy lifestyle changes while taking these medicines. The combination of medicines and heart-healthy lifestyle changes can help control and lower your high blood pressure'; 'Your provider may change the dose or give you a new medicine'; Living With: 'If you have been diagnosed with high blood pressure, it is important that you continue your treatment plan'; 'Your healthcare provider may need to change or add medicines to your treatment plan over time'."
+    },
+    {
+      "claimId": "C13",
+      "severity": "S3",
+      "find": "Hãy đi khám trước khi bắt đầu nếu bạn có bệnh tim mạch đã biết, tăng huyết áp chưa kiểm soát, đái tháo đường, hoặc đã lâu không vận động.",
+      "replace": "Nếu bạn có bệnh tim, đái tháo đường, tăng huyết áp hay một bệnh mạn tính khác, hãy hỏi bác sĩ loại và mức vận động nào an toàn cho mình trước khi bắt đầu. Người đã lâu không vận động nên tăng dần: người thể lực kém có nguy cơ gặp biến cố tim khi gắng sức mạnh cao hơn người khoẻ.",
+      "why": "Câu cũ chưa có nguồn và thu hẹp nhóm tăng huyết áp thành 'chưa kiểm soát'; NHLBI nói mọi người tăng huyết áp nên hỏi bác sĩ. Gắn vào nguồn hướng dẫn chính thức, không đổi hướng lời khuyên.",
+      "evidence": "NHLBI, Physical Activity and Your Heart — Risks (mở 25/09): 'If you have a heart problem or chronic (ongoing) disease — such as heart disease, diabetes, or high blood pressure — ask your doctor what types of physical activity are safe for you'; 'someone who isn't physically fit is at higher risk for a heart attack during vigorous activity than a person who is physically fit'; 'discuss ways to slowly and safely build physical activity into your daily routine'. NHLBI, High Blood Pressure — Treatment + Living With (mở 25/09): 'Before starting any exercise program, ask your provider what level of activity is right for you'."
+    },
+    {
+      "claimId": "C14",
+      "severity": "S3",
+      "find": "**Ngừng tập và đi khám ngay nếu khi gắng sức bạn thấy:** đau hoặc tức ngực, khó thở nhiều hơn hẳn so với mức gắng sức đang làm, choáng váng hoặc ngất, tim đập không đều, hoặc đau lan lên hàm, cổ hay cánh tay.",
+      "replace": "**Nếu khi gắng sức bạn thấy đau hoặc tức ngực, hay choáng váng, hãy dừng lại và báo bác sĩ.** Nếu kèm theo đau lan ra cánh tay, lưng, vai, cổ hoặc hàm, khó thở dù chỉ gắng sức nhẹ, hoặc tim đập nhanh hay không đều — những dấu hiệu NHLBI liệt kê cho cơn đau tim — hãy gọi cấp cứu ngay, kể cả khi không chắc.",
+      "why": "Danh sách cũ không có nguồn. Viết lại theo đúng danh sách của NHLBI; bỏ 'ngất' (không có trong trang NHLBI đã mở); tách hai mức hành động đúng như nguồn: báo bác sĩ khi đau ngực/chóng mặt lúc vận động, gọi cấp cứu khi nghi cơn đau tim.",
+      "evidence": "NHLBI, Physical Activity and Your Heart — Risks (mở 25/09): 'Talk with your doctor if you have symptoms such as chest pain or dizziness during physical activity'. NHLBI, Heart Attack — Symptoms (mở 25/09): 'Chest pain, heaviness, or discomfort'; 'Pain or discomfort in one or both arms, your back, shoulders, neck, jaw'; 'Shortness of breath when resting or doing a little bit of physical activity'; 'Light-headedness or sudden dizziness'; 'Rapid or irregular heartbeat'; 'Call 9-1-1 for emergency medical care, even if you are not sure that you're having a heart attack'."
+    }
+  ],
+  "enEdits": [
+    {
+      "claimId": "C2",
+      "severity": "S3",
+      "find": "In people who do regular endurance training, the left ventricle becomes larger and its muscular wall thickens moderately. As a result, **stroke volume** — the amount of blood pumped with each beat — rises considerably.",
+      "replace": "In people who do regular endurance training, the chamber of the left ventricle usually becomes larger and the heart muscle gains mass. The wall may thicken, but the pattern most often seen in endurance athletes is a larger chamber with a wall of roughly normal thickness. How much the heart changes varies a great deal from person to person — with age, sex, genetics, and the type and volume of training. A larger ventricle fills with more blood, so **stroke volume** — the amount of blood pumped with each beat — rises, most clearly during exertion.",
+      "why": "Khớp C2 vi.",
+      "evidence": "Như C2."
+    },
+    {
+      "claimId": "C3",
+      "severity": "S2",
+      "find": "Because the body needs a certain blood flow at rest, a heart that pumps more per beat needs fewer beats. This is why the resting heart rate of endurance athletes is often 40–50 beats per minute, compared with 60–80 in inactive people.",
+      "replace": "At rest, cardiac output is about 5 litres a minute in almost everyone. A heart that pumps more per beat needs fewer beats to deliver that flow — one reason the resting heart rate of endurance-trained people tends to be lower than that of inactive people.",
+      "why": "Khớp C3 vi.",
+      "evidence": "Như C3."
+    },
+    {
+      "claimId": "C4",
+      "severity": "S3",
+      "find": "This physiological adaptation must be distinguished from **pathological hypertrophy** caused by [[tang-huyet-ap|hypertension]]: the shape of the heart, its diastolic function and its capacity to recover are quite different.",
+      "replace": "This physiological adaptation must be distinguished from **pathological hypertrophy**. When the heart has to work harder for years because of [[tang-huyet-ap|hypertension]], its muscle thickens to adapt and becomes stiffer, so it struggles to relax and fill with enough blood between beats. Endurance athletes are different: their diastolic function is usually normal or better than that of inactive people, a thick wall around a chamber that has not grown is rare enough that doctors investigate further when they see it, and the extra muscle built by training tends to regress when training stops.",
+      "why": "Khớp C4 vi.",
+      "evidence": "Như C4."
+    },
+    {
+      "claimId": "C5",
+      "severity": "S3",
+      "find": "Faster blood flow during exercise creates shear stress on the vessel wall, and that stress is what stimulates this process.",
+      "replace": "Faster blood flow during exercise creates shear stress on the vessel wall, and that stress is one of the signals that prompt the endothelium to produce nitric oxide.",
+      "why": "Khớp C5 vi.",
+      "evidence": "Như C5."
+    },
+    {
+      "claimId": "C8",
+      "severity": "S3",
+      "find": "VO₂max is the maximum amount of oxygen the body can use per minute. In large cohort studies it is one of the strongest predictors of death from all causes — stronger than smoking, hypertension or diabetes in some analyses.",
+      "replace": "VO₂max is the maximum amount of oxygen the body can use per minute — a measure of cardiorespiratory fitness. In cohort studies, low cardiorespiratory fitness is associated with a higher risk of death from all causes. In the cohort of more than 122,000 people who underwent treadmill exercise testing studied by Mandsager and colleagues (2018), the least fit group had about **5 times** the risk of death of the elite-fitness group, while smoking and diabetes were each associated with about a 1.4-fold increase. These two numbers cannot be compared directly: 5 times is the gap between the two **extremes** of the fitness scale, while 1.4 times is the difference between **having and not having** a risk factor. The authors' own conclusion is more cautious: low fitness is associated with an increase in risk comparable to or greater than that of traditional risk factors. This is an observational study — it shows an association, not cause and effect.",
+      "why": "Khớp C8 vi; bản en cũng mang câu 'stronger than smoking, hypertension or diabetes' (E4 chưa áp ở cả hai bản).",
+      "evidence": "Như C8."
+    },
+    {
+      "claimId": "C9",
+      "severity": "S2",
+      "find": "The good news: the largest improvement in risk comes from moving from \"completely inactive\" to \"a little active\". Going from 0 to 90 minutes a week already lowers risk considerably; going from 300 to 400 minutes adds a much smaller benefit.",
+      "replace": "The good news: the first step appears to be the most valuable. In the cohort of more than 416,000 people in Taiwan studied by Wen and colleagues (2011), people who exercised about 90 minutes a week — 15 minutes a day — had a 14% lower risk of death from all causes than inactive people, and each additional 15 minutes a day was associated with a further reduction of about 4%. The WHO sums it up in the same direction: some physical activity is better than none, and more is better.",
+      "why": "Khớp C9 vi.",
+      "evidence": "Như C9."
+    },
+    {
+      "claimId": "C11",
+      "severity": "S3",
+      "find": "- Less continuous sitting — break it up with a few minutes of standing and walking",
+      "replace": "- Limit time spent sitting; replacing sitting time with activity of any intensity, including light activity, benefits health",
+      "why": "Khớp C11 vi.",
+      "evidence": "Như C11."
+    },
+    {
+      "claimId": "C10",
+      "severity": "S4",
+      "find": "The WHO recommends that adults do:",
+      "replace": "The WHO's 2020 guidelines recommend that adults do:",
+      "why": "Khớp C10 vi.",
+      "evidence": "Như C10."
+    },
+    {
+      "claimId": "C12",
+      "severity": "S1",
+      "find": "Treatment guidelines place exercise as a measure *alongside* medication, not as a replacement for it; stopping blood-pressure medication abruptly can make blood pressure rebound higher than before and raise the risk of stroke. If training has brought your blood pressure down, that is a reason for your doctor to consider adjusting the dose — and adjusting the dose is your doctor's decision.",
+      "replace": "The US National Heart, Lung, and Blood Institute (NHLBI) advises people diagnosed with high blood pressure to continue their treatment plan and to keep up a healthy lifestyle *while* taking their medicines — the two go together; one does not replace the other. If training has brought your blood pressure down, tell your doctor: changing the dose or the medicine is your doctor's decision.",
+      "why": "Khớp C12 vi (vế đầu của đoạn en đã đúng từ a1cccd5).",
+      "evidence": "Như C12."
+    },
+    {
+      "claimId": "C13",
+      "severity": "S3",
+      "find": "See a doctor before you start if you have known cardiovascular disease, uncontrolled hypertension or diabetes, or if you have not been active for a long time.",
+      "replace": "If you have heart disease, diabetes, high blood pressure or another chronic condition, ask your doctor what types and levels of activity are safe for you before you start. If you have not been active for a long time, build up gradually: people who are not physically fit have a higher risk of heart problems during vigorous exertion than fit people.",
+      "why": "Khớp C13 vi.",
+      "evidence": "Như C13."
+    },
+    {
+      "claimId": "C14",
+      "severity": "S3",
+      "find": "**Stop exercising and seek medical care immediately if during exertion you notice:** chest pain or tightness, shortness of breath far greater than the effort you are making, dizziness or fainting, an irregular heartbeat, or pain spreading to the jaw, neck or arm.",
+      "replace": "**If you feel chest pain or tightness, or dizziness, during exertion, stop and tell your doctor.** If it comes with pain spreading to the arms, back, shoulders, neck or jaw, shortness of breath with only light effort, or a rapid or irregular heartbeat — signs the NHLBI lists for a heart attack — call emergency services immediately, even if you are not sure.",
+      "why": "Khớp C14 vi.",
+      "evidence": "Như C14."
+    }
+  ],
+  "summaryEdits": [
+    {
+      "claimId": "S-1",
+      "severity": "S3",
+      "find": "Tập luyện đều đặn làm dày thành tâm thất, tăng thể tích tống máu, cải thiện chức năng nội mô và hạ huyết áp nghỉ.",
+      "replace": "Tập luyện bền bỉ đều đặn làm buồng tâm thất trái giãn rộng, tăng thể tích tống máu, cải thiện chức năng nội mô và có thể hạ huyết áp lúc nghỉ — rõ nhất ở người đã tăng huyết áp.",
+      "why": "E5 (12/09, S3) chưa áp: tóm tắt giữ đúng vế dễ nhầm với phì đại bệnh lý ('làm dày thành') và bỏ vế giãn buồng; 'hạ huyết áp nghỉ' không nêu rằng ở người huyết áp bình thường mức giảm gần như bằng 0.",
+      "evidence": "Lavie et al. 2015, Circ Res 117:207-219, doi 10.1161/CIRCRESAHA.117.305205 (toàn văn PMC4493772, mở 25/09); Flanagan et al. 2023, Echo Res Pract 10:15, doi 10.1186/s44156-023-00027-8 (toàn văn PMC10583359, mở 25/09); Cornelissen & Smart 2013, JAHA 2:e004473, doi 10.1161/JAHA.112.004473 (tóm tắt Europe PMC PMID 23525435, mở 25/09)"
+    }
+  ],
+  "summaryEnEdits": [
+    {
+      "claimId": "S-1",
+      "severity": "S3",
+      "find": "Regular training thickens ventricular walls, raises stroke volume, improves endothelial function and lowers resting blood pressure.",
+      "replace": "Regular endurance training enlarges the left ventricle, raises stroke volume, improves endothelial function and can lower resting blood pressure — most clearly in people who already have hypertension.",
+      "why": "Khớp S-1 vi.",
+      "evidence": "Như S-1."
+    }
+  ],
+  "seoDescriptionEdits": [
+    {
+      "claimId": "S-1",
+      "severity": "S3",
+      "find": "Tập luyện đều đặn làm dày thành tâm thất, tăng thể tích tống máu, cải thiện chức năng nội",
+      "replace": "Tập luyện bền bỉ đều đặn làm buồng tâm thất trái giãn rộng, tăng thể tích tống máu, cải thiện chức năng nội",
+      "why": "seoDescription chép summary, mang cùng claim S-1.",
+      "evidence": "Như S-1."
+    }
+  ],
+  "addSources": [
+    {
+      "title": "Vascular Adaptation to Exercise in Humans: Role of Hemodynamic Stimuli",
+      "url": "https://doi.org/10.1152/physrev.00014.2016",
+      "doi": "10.1152/physrev.00014.2016",
+      "publisher": "Physiological Reviews 97:495-528 — Green, Hopman, Padilla, Laughlin, Thijssen",
+      "year": 2017,
+      "tier": 1,
+      "covers": "C5: lực trượt và các tín hiệu huyết động kích thích nội mô tạo NO"
+    },
+    {
+      "title": "The athlete's heart: insights from echocardiography",
+      "url": "https://doi.org/10.1186/s44156-023-00027-8",
+      "doi": "10.1186/s44156-023-00027-8",
+      "publisher": "Echo Research and Practice 10:15 — Flanagan, Cooper, George, Oxborough et al.",
+      "year": 2023,
+      "tier": 1,
+      "covers": "C2, C4: phì đại lệch tâm với độ dày thành bình thường; chức năng tâm trương; hiếm gặp tái cấu trúc đồng tâm; thoái lui khi ngừng tập"
+    },
+    {
+      "title": "High Blood Pressure — Treatment",
+      "url": "https://www.nhlbi.nih.gov/health/high-blood-pressure/treatment",
+      "publisher": "National Heart, Lung, and Blood Institute (NIH)",
+      "tier": 2,
+      "covers": "C12, C13: duy trì lối sống song song với thuốc; bác sĩ đổi liều; hỏi bác sĩ trước khi bắt đầu tập"
+    },
+    {
+      "title": "High Blood Pressure — Living With",
+      "url": "https://www.nhlbi.nih.gov/health/high-blood-pressure/living-with",
+      "publisher": "National Heart, Lung, and Blood Institute (NIH)",
+      "tier": 2,
+      "covers": "C12: tiếp tục kế hoạch điều trị"
+    },
+    {
+      "title": "Physical Activity and Your Heart — Risks",
+      "url": "https://www.nhlbi.nih.gov/health/heart/physical-activity/risks",
+      "publisher": "National Heart, Lung, and Blood Institute (NIH)",
+      "year": 2022,
+      "tier": 2,
+      "covers": "C13, C14: ai nên hỏi bác sĩ; báo bác sĩ khi đau ngực/chóng mặt lúc vận động"
+    },
+    {
+      "title": "Heart Attack — Symptoms",
+      "url": "https://www.nhlbi.nih.gov/health/heart-attack/symptoms",
+      "publisher": "National Heart, Lung, and Blood Institute (NIH)",
+      "year": 2022,
+      "tier": 2,
+      "covers": "C14: dấu hiệu cơn đau tim, gọi cấp cứu kể cả khi không chắc"
+    },
+    {
+      "title": "Heart Failure — Causes and Risk Factors",
+      "url": "https://www.nhlbi.nih.gov/health/heart-failure/causes",
+      "publisher": "National Heart, Lung, and Blood Institute (NIH)",
+      "tier": 2,
+      "covers": "C4: tăng huyết áp làm cơ tim dày và cứng, khó giãn để nạp máu"
+    }
+  ],
+  "corrections": [
+    "- 2026-09-25 | van-dong-thay-doi-tim-va-mach-mau-nhu-the-nao | vi+en: \"Ở người huyết áp bình thường … 3,5 mmHg tâm thu\" (vi) → khoảng 0,75 mmHg, khoảng tin cậy chứa 0; 3,5 là hiệu ứng gộp trên mọi người tham gia | Cornelissen & Smart 2013, doi 10.1161/JAHA.112.004473 (tóm tắt Europe PMC)",
+    "- 2026-09-25 | van-dong-thay-doi-tim-va-mach-mau-nhu-the-nao | vi: mục \"Vận động không thay thế thuốc\" mở bằng \"có thể sánh với một thuốc hạ áp đơn trị\" (phép so đã bị bác 13/09) và dẫn \"các khuyến cáo điều trị\", \"bật lại, tăng nguy cơ đột quỵ\" không nguồn → bỏ phép so; lời khuyên không tự bỏ thuốc gắn vào NHLBI (tiếp tục kế hoạch điều trị, lối sống đi cùng thuốc, bác sĩ đổi liều); vế bật lại/đột quỵ cắt ở cả vi lẫn en | NHLBI High Blood Pressure — Treatment, Living With (mở 25/09)",
+    "- 2026-09-25 | van-dong-thay-doi-tim-va-mach-mau-nhu-the-nao | vi+en: \"VO₂max … mạnh hơn cả hút thuốc, tăng huyết áp hay đái tháo đường\" (E4 12/09, chưa từng áp) → HR ~5 (thể lực kém nhất so với đỉnh) cạnh HR ~1,4 (hút thuốc, đái tháo đường), nói rõ hai phép so khác loại, kết luận \"tương đương hoặc lớn hơn\", nhãn nghiên cứu quan sát | Mandsager et al. 2018, doi 10.1001/jamanetworkopen.2018.3605",
+    "- 2026-09-25 | van-dong-thay-doi-tim-va-mach-mau-nhu-the-nao | vi+en: nhịp tim nghỉ \"40–50 so với 60–80 lần/phút\" và \"từ 300 lên 400 phút lợi ích thêm nhỏ hơn nhiều\" không có nguồn → gỡ số; giữ hướng (nhịp nghỉ chậm hơn, cung lượng nghỉ ~5 L/phút) và số của Wen 2011 (≈90 phút/tuần: tử vong thấp hơn 14%; +15 phút/ngày: thêm ~4%), viết dạng tương quan | Lavie et al. 2015, doi 10.1161/CIRCRESAHA.117.305205; Wen et al. 2011, doi 10.1016/S0140-6736(11)60749-6",
+    "- 2026-09-25 | van-dong-thay-doi-tim-va-mach-mau-nhu-the-nao | vi+en+summary+seoDescription: \"thành cơ dày lên vừa phải\" / \"làm dày thành tâm thất\" → buồng thất giãn, khối cơ tăng, độ dày thành thường gần bình thường, mức độ khác nhau giữa từng người; phân biệt với phì đại do tăng huyết áp theo nguồn (cơ tim dày và cứng, khó nạp máu vs chức năng tâm trương bình thường/tốt hơn, thoái lui khi ngừng tập) | Flanagan et al. 2023, doi 10.1186/s44156-023-00027-8; NHLBI Heart Failure — Causes",
+    "- 2026-09-25 | van-dong-thay-doi-tim-va-mach-mau-nhu-the-nao | vi+en: dấu hiệu cảnh báo và đối tượng cần hỏi bác sĩ viết lại theo NHLBI (bỏ \"ngất\", thêm lưng/vai; báo bác sĩ khi đau ngực/chóng mặt, gọi cấp cứu khi nghi đau tim); \"ngắt quãng bằng vài phút đứng dậy\" → câu của WHO; lực trượt là \"một trong những tín hiệu\", không phải tác nhân chính | NHLBI Physical Activity — Risks, Heart Attack — Symptoms; WHO 2020 (Bull et al., PMC7719906); Green et al. 2017, doi 10.1152/physrev.00014.2016"
+  ],
+  "openQuestions": [
+    "Nhận định ngừng thuốc hạ áp đột ngột có thể gây huyết áp bật lại (đúng với một số nhóm thuốc) đã bị cắt vì lượt này không mở được nguồn hướng dẫn nói điều đó. Nếu muốn đưa lại, cần một hướng dẫn điều trị (ESC/ESH 2023 hoặc ACC/AHA 2017) đọc toàn văn, và nói rõ nhóm thuốc.",
+    "Trang NHLBI là nguồn Hoa Kỳ: lời khuyên 'gọi cấp cứu' giữ chung, không ghi số 9-1-1. Bản vi nên cân nhắc thêm số cấp cứu 115 của Việt Nam — việc biên tập, không phải claim khoa học."
+  ]
+}

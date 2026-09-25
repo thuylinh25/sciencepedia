@@ -1,0 +1,43 @@
+{
+  "slug": "thuyet-tuong-doi-hep-khi-thoi-gian-khong-con-tuyet-doi",
+  "edits": [
+    {
+      "claimId": "C-9",
+      "severity": "S4",
+      "find": "4,4647 × 10−10",
+      "replace": "4,4647 × 10⁻¹⁰",
+      "why": "Lỗi định dạng: dấu trừ thường, không mũ, đọc thành '10 trừ 10'. en đã viết 10⁻¹⁰.",
+      "evidence": "https://link.springer.com/article/10.12942/lrr-2003-1 [s2], phương trình (35): −4,4647 × 10⁻¹⁰ (mở 25/09)"
+    },
+    {
+      "claimId": "C-8",
+      "severity": "S4",
+      "find": "(tương đối rộng). Net: đồng hồ vệ tinh",
+      "replace": "(tương đối rộng). Cộng lại: đồng hồ vệ tinh",
+      "why": "Chữ tiếng Anh 'Net:' sót trong bản vi; không đổi claim.",
+      "evidence": "—"
+    },
+    {
+      "claimId": "C-11",
+      "severity": "S3",
+      "find": "Các hạt muon sinh ra ở tầng cao khí quyển cũng là bằng chứng trực tiếp: thời gian sống trung bình của chúng ngắn đến mức phần lớn sẽ phân rã trước khi tới mặt đất, vậy mà chúng vẫn tới — vì với hệ quy chiếu của chúng ta, đồng hồ của chúng chạy chậm.",
+      "replace": "Hạt muon cũng là bằng chứng trực tiếp. Năm 1963, Frisch và Smith đếm các muon bay xuống qua đỉnh núi Washington (bang New Hampshire, Mỹ) với tốc độ khoảng 0,995 c, rồi đếm số muon còn tới được mực nước biển. Thời gian sống trung bình của muon ngắn đến mức, nếu không có giãn nở thời gian, số tới được mực nước biển phải ít hơn nhiều. Số đếm được cho hệ số giãn nở thời gian 8,8 ± 0,8, khớp với giá trị 8,4 ± 2 tính theo tương đối hẹp cho muon ở tốc độ ấy — tức là, với hệ quy chiếu của chúng ta, đồng hồ của muon chạy chậm.",
+      "why": "Check 17/09 C-6 để đoạn muon 'unverifiable' vì không mở được thí nghiệm. Lượt này mở được tóm tắt Frisch & Smith 1963 [s3]: muon 'incident on top of Mt. Washington' ở 0,9950–0,9954 c; số sống sót tới mực nước biển so với số tính khi không có giãn nở; 'observed time dilation factor is 8.8±0.8' so với '8.4 ± 2'. Viết lại đoạn theo đúng thí nghiệm có nguồn và bỏ mệnh đề 'sinh ra ở tầng cao khí quyển' (tóm tắt không nêu độ cao sinh ra).",
+      "evidence": "https://api.crossref.org/works/10.1119/1.1969508 (tóm tắt Frisch & Smith 1963 [s3], mở 25/09)"
+    }
+  ],
+  "enEdits": [
+    {
+      "claimId": "C-11",
+      "severity": "S3",
+      "find": "Muons produced in the upper atmosphere are also direct evidence: their mean lifetime is so short that most of them should decay before reaching the ground, yet they still arrive — because from our frame of reference, their clocks run slow.",
+      "replace": "Muons are also direct evidence. In 1963, Frisch and Smith counted muons passing down through the summit of Mount Washington (New Hampshire, USA) at about 0.995 c, then counted how many still reached sea level. A muon's mean lifetime is so short that, without time dilation, far fewer should have reached sea level. Their counts gave a time dilation factor of 8.8 ± 0.8, consistent with the 8.4 ± 2 that special relativity predicts for muons at that speed — in other words, from our frame of reference, the muons' clocks run slow.",
+      "why": "Khớp vi C-11.",
+      "evidence": "https://api.crossref.org/works/10.1119/1.1969508 (tóm tắt Frisch & Smith 1963 [s3], mở 25/09)"
+    }
+  ],
+  "corrections": [
+    "- 2026-09-25 | thuyet-tuong-doi-hep-khi-thoi-gian-khong-con-tuyet-doi | (vi) '4,4647 × 10−10' → '4,4647 × 10⁻¹⁰' (lỗi định dạng) | Ashby 2003, Living Reviews in Relativity 6:1, pt. (35)",
+    "- 2026-09-25 | thuyet-tuong-doi-hep-khi-thoi-gian-khong-con-tuyet-doi | (vi + en) đoạn muon 'sinh ra ở tầng cao khí quyển ... phần lớn sẽ phân rã trước khi tới mặt đất, vậy mà vẫn tới' (không trích nguồn) → mô tả thí nghiệm Frisch & Smith 1963: muon ~0,995 c từ đỉnh núi Washington tới mực nước biển, hệ số giãn nở đo được 8,8 ± 0,8 so với 8,4 ± 2 dự đoán | Frisch & Smith, Am. J. Phys. 31, 342 (1963), doi 10.1119/1.1969508 (tóm tắt qua Crossref, mở 25/09)"
+  ]
+}

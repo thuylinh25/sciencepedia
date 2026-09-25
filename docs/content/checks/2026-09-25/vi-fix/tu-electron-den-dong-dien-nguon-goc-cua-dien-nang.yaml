@@ -1,0 +1,111 @@
+slug: tu-electron-den-dong-dien-nguon-goc-cua-dien-nang
+checkedAt: 2026-09-25
+checkedBy: science-editor
+priorFactCheck: PASSED
+verdict: pass
+summary: "Đóng hai lỗi vi còn nợ ('một lượng điện tích rất nhỏ đã đủ tạo dòng điện' ngược với chính con số 6,24 × 10¹⁸; cực quang 'va chạm với từ trường'). Đọc lại toàn bài bắt thêm câu mở đầu 'mọi vật chất được cấu tạo từ các hạt mang điện' (neutron không mang điện, vật chất tối không cấu tạo từ các hạt này — S3) và 'điện tích nhỏ nhất tồn tại độc lập' (không nguồn nào trong bảng phát biểu) — sửa cả vi lẫn en. Đoạn thần kinh trước dựa vào NCBI Bookshelf (không mở được lượt này), nay có thêm hai nguồn bậc 1 đã đọc tóm tắt. Không còn S1–S3."
+claims:
+  - id: C-1
+    claim: "Vật chất thông thường được cấu tạo từ nguyên tử, và nguyên tử chứa các hạt mang điện."
+    verdict: verified
+    severity: null
+    evidence: "https://www.eia.gov/energyexplained/nuclear/ (mở 25/09); https://science.nasa.gov/dark-matter/ (mở 25/09)"
+    note: "Sau sửa (bản cũ 'Mọi vật chất đều được cấu tạo từ các hạt mang điện', S3)."
+  - id: C-2
+    claim: "Electron mang điện âm, proton mang điện dương; độ lớn bằng nhau, trái dấu."
+    verdict: verified
+    severity: null
+    evidence: "https://www.nist.gov/si-redefinition/ampere-introduction [s2] (mở 25/09): 'the amount of electric charge in a single electron (negative) or proton (positive)'"
+  - id: C-3
+    claim: "Độ lớn điện tích của một electron (hay proton) gọi là điện tích nguyên tố e."
+    verdict: verified
+    severity: null
+    evidence: "[s2] như C-2"
+    note: "Sau sửa (bản cũ 'giá trị điện tích nhỏ nhất tồn tại độc lập trong tự nhiên' — không nguồn trong bảng, S4)."
+  - id: C-4
+    claim: "e = 1,602176634 × 10⁻¹⁹ C; đơn vị điện tích là coulomb."
+    verdict: verified
+    severity: null
+    evidence: "https://physics.nist.gov/cgi-bin/cuu/Value?e [s3] (mở 25/09): 1.602 176 634 × 10⁻¹⁹ C, '(exact)'"
+  - id: C-5
+    claim: "Một coulomb tương đương khoảng 6,24 × 10¹⁸ điện tích nguyên tố."
+    verdict: verified
+    severity: null
+    evidence: "Tự tính từ [s3]: 1 / 1,602176634 × 10⁻¹⁹ = 6,2415 × 10¹⁸"
+  - id: C-6
+    claim: "Điện tích của một electron rất nhỏ: dòng điện hằng ngày là chuyển động của một số cực lớn electron."
+    verdict: verified
+    severity: null
+    evidence: "Hệ quả của C-5: 1 A ≈ 6,24 × 10¹⁸ electron đi qua mỗi giây"
+    note: "Sau sửa (bản cũ 'chỉ một lượng điện tích rất nhỏ của electron đã đủ tạo nên những dòng điện quen thuộc', S3 — ngược với chính con số)."
+  - id: C-7
+    claim: "Đơn vị cường độ dòng điện là ampere; 1 A là dòng vận chuyển 1 C mỗi giây (1 A = 1 C/s)."
+    verdict: verified
+    severity: null
+    evidence: "https://www.bipm.org/en/si-base-units/ampere [s1] (mở 25/09): 'expressed in the unit C, which is equal to A s'"
+    note: "Sau sửa bỏ chữ 'được định nghĩa là' — từ 2019 ampere định nghĩa qua e."
+  - id: C-8
+    claim: "Định nghĩa cũ của ampere dựa trên lực giữa hai dây dẫn song song đặt cách nhau 1 m trong chân không; lực rất nhỏ."
+    verdict: verified
+    severity: null
+    evidence: "[s2] NIST (mở 25/09): 'two straight parallel conductors of infinite length ... placed 1 meter apart in vacuum, would produce ... a force equal to 2 x 10⁻⁷ newton per meter of length'"
+  - id: C-9
+    claim: "Định nghĩa cũ khó thực hiện vì không thể tạo dây dài vô hạn."
+    verdict: verified
+    severity: null
+    evidence: "[s2] NIST: 'Because infinitely long wires and vacuum chambers were generally unavailable, the ampere could not be physically realized'"
+  - id: C-10
+    claim: "Từ năm 2019, SI định nghĩa ampere dựa trực tiếp trên điện tích nguyên tố."
+    verdict: verified
+    severity: null
+    evidence: "[s1] BIPM; [s2] NIST: 'Starting on May 20, 2019, the ampere is based on ... the elementary charge (e)'"
+  - id: C-11
+    claim: "Định nghĩa mới làm đơn vị điện ổn định hơn, không còn phụ thuộc phép đo cơ học."
+    verdict: verified
+    severity: null
+    evidence: "[s2] NIST: 'the amp, though an electrical quantity, was defined in mechanical terms ... the kilogram ... drifted over time and thus limited the accuracy of its derived units'"
+  - id: C-12
+    claim: "Chiều dòng điện quy ước từ dương sang âm, electron chạy ngược lại; quy ước đặt ra trước khi biết electron và được giữ để thống nhất."
+    verdict: verified
+    severity: null
+    evidence: "[s10] LibreTexts/Fiore (mở 25/09): 'the modern concept of an atomic model with electrons and protons did not exist ... Franklin surmised that the \"electrical flow\" moved from positive to negative'; 'both forms will achieve the desired results, we just have to be consistent'"
+  - id: C-13
+    claim: "Sét là dòng điện lớn phóng qua không khí khi khả năng cách điện của khí quyển bị phá vỡ; tia sét điển hình khoảng 300 triệu volt và 30.000 ampere, mạnh hơn nhiều điện sinh hoạt."
+    verdict: verified
+    severity: S4
+    evidence: "https://www.weather.gov/safety/lightning-science [s6]: 'this insulating capacity of the air breaks down'; https://www.weather.gov/safety/lightning-power [s5]: 'A typical lightning flash is about 300 million Volts and about 30,000 Amps. In comparison, household current is 120 Volts and 15 Amps' (mở 25/09)"
+    note: "Chú thích ảnh trên trang NIST [s2] ghi 'typical lightning bolts can carry 100,000 amps or more'. Bài theo NWS (câu chính văn của cơ quan chuyên trách). Ghi thành openQuestion."
+  - id: C-14
+    claim: "Mặt Trời liên tục phóng ra các dòng hạt tích điện gồm electron và proton."
+    verdict: verified
+    severity: S4
+    evidence: "https://science.nasa.gov/sun/auroras/: 'The Sun continuously produces an outflow of charged particles ... known as the solar wind'; https://science.nasa.gov/sun/solar-storms-and-flares/ [s7]: 'charged particles — electrons and protons' (mở 25/09)"
+    note: "Thành phần electron–proton trong nguồn gắn với các đợt phun trào; gió Mặt Trời chủ yếu cũng là proton và electron. Chấp nhận ở mức phổ thông."
+  - id: C-15
+    claim: "Hạt được từ trường Trái Đất dẫn vào thượng tầng khí quyển gần vùng cực, va chạm với các chất khí ở đó và tạo cực quang."
+    verdict: verified
+    severity: S4
+    evidence: "[s7] NASA: 'following Earth's magnetic field lines toward the north and south poles, where they enter our atmosphere'; 'interact with atoms and molecules in Earth's atmosphere to create the aurora'"
+    note: "Sau sửa (bản cũ 'va chạm với từ trường'). Đơn giản hoá có mất mát: NASA Auroras mô tả năng lượng tích luỹ trong từ quyển rồi mới trút xuống."
+  - id: C-16
+    claim: "Tế bào thần kinh truyền tín hiệu bằng cách kiểm soát dòng ion Na⁺, K⁺, Ca²⁺; dòng ion cho não giao tiếp với cơ và cơ quan."
+    verdict: verified
+    severity: null
+    evidence: "Ori và cs. 2020, doi 10.1073/pnas.1916514117 (tóm tắt Europe PMC, mở 25/09): tính kích thích 'as the consequence of the properties of voltage-gated sodium and potassium channels', điều khiển 'heart, endocrine, muscles, and neuronal tissues'; Südhof 2012, doi 10.1101/cshperspect.a011353: 'an action potential opens Ca(2+) channels ... Ca(2+) then triggers neurotransmitter release'"
+  - id: C-17
+    claim: "Điện tích đứng yên chỉ tạo điện trường; chuyển động thì tạo dòng điện và sinh từ trường."
+    verdict: verified
+    severity: S4
+    evidence: "[s1] BIPM ampere; nội bộ: tu-truong-va-luc-hap-dan-hai-luc-vo-hinh-hai-co-che-khac-nhau"
+    note: "Kiến thức điện từ học chuẩn; đã được check 2026-09-06 (dien-tich-va-dong-dien.yaml) chấp nhận với cùng căn cứ."
+  - id: C-18
+    claim: "Mối liên hệ này là nền tảng của công nghệ điện hiện đại; đơn vị chung cho phép đo và so sánh dòng điện chính xác trên toàn thế giới."
+    verdict: verified
+    severity: S4
+    evidence: "—"
+    note: "Câu khái quát, không mang số liệu."
+  - id: C-19
+    claim: "Summary: dòng điện có ở sét, tín hiệu thần kinh, thiết bị điện tử; là chuyển động có hướng của điện tích; điện tích chuyển động sinh từ trường."
+    verdict: verified
+    severity: null
+    evidence: "Như C-13, C-16, C-17"

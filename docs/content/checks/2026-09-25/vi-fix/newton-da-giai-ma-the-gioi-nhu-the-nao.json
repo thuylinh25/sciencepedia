@@ -1,0 +1,181 @@
+{
+  "slug": "newton-da-giai-ma-the-gioi-nhu-the-nao",
+  "edits": [
+    {
+      "claimId": "L1b",
+      "severity": "S3",
+      "find": "Điều này có nghĩa là không cần lực để duy trì chuyển động, chỉ cần lực khi muốn thay đổi vận tốc hoặc hướng chuyển động.",
+      "replace": "Điều này có nghĩa là không cần lực **tổng hợp** để duy trì chuyển động. Một chiếc máy bay bay bằng ở vận tốc không đổi vẫn cần lực đẩy của động cơ, nhưng chỉ để cân bằng lực cản, nên lực tổng hợp bằng không. Chỉ khi lực tổng hợp khác không, vận tốc — độ lớn hoặc hướng — mới thay đổi.",
+      "why": "'Không cần lực để duy trì chuyển động' bỏ chữ 'tổng hợp' và dựng mô hình sai với mọi chuyển động có ma sát/lực cản — chính ví dụ nguồn dùng (máy bay cần lực đẩy để bay đều). Quy tắc 4.",
+      "evidence": "NASA Glenn, Aircraft Motion — Newton's First Law (s2, mở 25/09): 'if there is no net force resulting from unbalanced forces acting on an object ... then the object maintains a constant velocity'; 'A cruising aircraft flies at a constant airspeed and the thrust exactly balances the drag ... there is no net force on the airplane'; 'a net external force changes the velocity of the object'."
+    },
+    {
+      "claimId": "L2a",
+      "severity": "S3",
+      "find": "Định luật nổi tiếng nhất của Newton:",
+      "replace": "Định luật II thường được viết gọn:",
+      "why": "Không nguồn nào xếp hạng mức nổi tiếng (E5 ngày 12/09).",
+      "evidence": "NASA Basics of Space Flight ch.3 (s1, mở 25/09): định luật II được Newton phát biểu bằng động lượng, không có xếp hạng nào."
+    },
+    {
+      "claimId": "L2b",
+      "severity": "S3",
+      "find": "- Lực càng lớn, vật càng tăng tốc nhanh.",
+      "replace": "- Lực tổng hợp càng lớn, vật càng tăng tốc nhanh.",
+      "why": "Thiếu chữ 'tổng hợp' thì hai lực cân bằng cũng thành 'có lực nên phải tăng tốc' (F4 ngày 12/09).",
+      "evidence": "NASA Glenn, Aircraft Motion — Newton's First Law (s2, mở 25/09): 'a net external force changes the velocity of the object'."
+    },
+    {
+      "claimId": "L2c",
+      "severity": "S3",
+      "find": "Ví dụ, đẩy một chiếc xe đạp dễ hơn đẩy một chiếc ô tô.",
+      "replace": "Ví dụ, đẩy một chiếc xe đạp dễ hơn đẩy một chiếc ô tô.\n\nDạng F = ma đúng khi khối lượng của vật không đổi. Newton phát biểu tổng quát hơn bằng **động lượng** (khối lượng nhân vận tốc): sự thay đổi động lượng tỉ lệ với lực tác dụng. Động lượng có thể đổi vì vận tốc đổi, vì khối lượng đổi, hoặc cả hai — như ở tên lửa, vốn nhẹ dần khi phụt khối khí ra phía sau.",
+      "why": "Trình bày F = ma như chính định luật mà không nói đó là trường hợp khối lượng không đổi là đơn giản hoá mất mát (quy tắc 4; E5 12/09; openQuestion của lượt đối chiếu).",
+      "evidence": "NASA Basics of Space Flight ch.3 (s1, mở 25/09): 'The change of motion (linear momentum) is proportional to the force impressed'; 'There are three ways to modify the momentum of a body. The mass can be changed, the velocity can be changed (acceleration), or both'; 'a rocket creates thrust by expelling mass'."
+    },
+    {
+      "claimId": "L3",
+      "severity": "S3",
+      "find": "> Với mọi lực tác dụng luôn tồn tại một lực phản tác dụng có cùng độ lớn và ngược chiều.",
+      "replace": "> Với mọi lực tác dụng luôn tồn tại một lực phản tác dụng có cùng độ lớn và ngược chiều.\n\nHai lực này luôn đặt lên **hai vật khác nhau**: vật A đẩy vật B thì vật B đẩy ngược lại vật A.",
+      "why": "Thiếu mệnh đề mang giá trị của định luật III — hai lực đặt lên hai vật khác nhau (E4 ngày 12/09); không có nó người đọc dễ cho rằng hai lực triệt tiêu nhau.",
+      "evidence": "NASA Glenn, Newton's Third Law (s3, mở 25/09): 'if object A exerts a force on object B, then object B also exerts an equal and opposite force on object A. Notice that the forces are exerted on different objects.'"
+    },
+    {
+      "claimId": "K2",
+      "severity": "S2",
+      "find": "Khi kết hợp lực hấp dẫn với các định luật chuyển động, Newton chứng minh được vì sao các hành tinh phải chuyển động đúng như Kepler đã quan sát.\n\n- **Kepler mô tả hiện tượng.**\n- **Newton giải thích nguyên nhân.**",
+      "replace": "Newton nhận ra lực làm quả táo rơi xuống đất cũng là lực giữ các hành tinh \"rơi\" quanh Mặt Trời, và lực hút ấy yếu đi theo bình phương khoảng cách. Thuyết hấp dẫn của ông giải thích được lực còn thiếu đằng sau định luật thứ ba của Kepler, và cho ra một dạng tổng quát của định luật ấy — dạng mà ngày nay vẫn dùng để đo khối lượng của các thiên thể.\n\n- **Kepler mô tả hành tinh chuyển động thế nào, khi chưa biết tới lực hấp dẫn.**\n- **Newton chỉ ra lực đứng sau chuyển động ấy.**",
+      "why": "'Chứng minh được vì sao các hành tinh phải chuyển động đúng như Kepler đã quan sát' rộng hơn điều nguồn nói (E1/F2 ngày 12/09): NASA chỉ nói thuyết hấp dẫn giải thích lực chưa biết đằng sau định luật thứ ba, và Newton đưa ra dạng tổng quát của nó. Viết đúng phạm vi ấy.",
+      "evidence": "NASA Basics of Space Flight ch.3 (s1, mở 25/09): 'Newton realized that the force that makes apples fall to the ground is the same force that makes the planets \"fall\" around the Sun'; 'a force of attraction toward the Sun becomes weaker in proportion to the square of the distance'. NASA Science, Orbits and Kepler's Laws (s6, mở 25/09): 'Kepler didn't know about gravity ... when he came up with his three laws'; 'Newton's development of his theory of universal gravitation, which explained the unknown force behind Kepler's third law'; 'Newton's generalized version of Kepler's third law is the basis of most measurements we can make of the masses of distant objects'."
+    },
+    {
+      "claimId": "A1",
+      "severity": "S3",
+      "find": "Có. Chúng vẫn được sử dụng để:\n\n- Thiết kế cầu đường và phương tiện giao thông.\n- Tính toán quỹ đạo vệ tinh và tên lửa.\n- Mô phỏng chuyển động trong kỹ thuật.",
+      "replace": "Trong một phạm vi rất rộng thì có. Chúng vẫn được dùng để:\n\n- Vận hành và điều hướng tàu vũ trụ khắp Hệ Mặt Trời.\n- Giải thích lực đẩy, lực nâng và chuyển động của máy bay.\n- Tính khối lượng của các thiên thể từ quỹ đạo của chúng.",
+      "why": "Danh sách ứng dụng cũ không truy về nguồn nào trong bảng (E6 ngày 12/09). Thay bằng ứng dụng mà chính các nguồn trong bảng nêu.",
+      "evidence": "NASA Basics of Space Flight ch.3 (s1, mở 25/09): 'Newtonian physics serves well for operating and navigating throughout the solar system'. NASA Glenn, Aircraft Motion — Newton's First Law (s2, mở 25/09) và NASA Glenn, Newton's Third Law (s3, mở 25/09): máy bay là ví dụ của định luật I và III ('Both the lift and thrust of the Wright 1903 Flyer can be explained by the third law'). NASA Science, Orbits and Kepler's Laws (s6, mở 25/09): 'Newton's version of Kepler's third law allows us to calculate the masses of any two objects in space'."
+    },
+    {
+      "claimId": "A2",
+      "severity": "S2",
+      "find": "Tuy nhiên, ở những điều kiện cực đoan như vận tốc gần bằng tốc độ ánh sáng hoặc gần lỗ đen, vật lý Newton phải được thay thế bằng thuyết tương đối của Einstein.",
+      "replace": "Tuy nhiên, khi vận tốc đạt tới một phần đáng kể của tốc độ ánh sáng, vật lý Newton không còn đủ và phải dùng thuyết tương đối của Einstein. Ngay cả ở vận tốc thấp, những việc đòi hỏi độ chính xác cao — như định vị bằng vệ tinh GPS hay lập quỹ đạo tàu vũ trụ — cũng phải tính thêm các hiệu ứng tương đối nhỏ.",
+      "why": "Vế 'gần lỗ đen' không có trong nguồn nào của bảng (E2 ngày 12/09); câu cũ cũng ngụ ý ngoài 'điều kiện cực đoan' thì Newton luôn đủ, trong khi nguồn nói GPS và quỹ đạo tàu vũ trụ đã cần hiệu chỉnh tương đối. Viết theo phạm vi của nguồn.",
+      "evidence": "NASA Basics of Space Flight ch.3 (s1, mở 25/09): 'Since spacecraft velocities do not approach a significant fraction of the speed of light, Newtonian physics serves well'; 'GPS ... spacecraft do require special-relativity calculations'; 'accuracies are routinely enhanced by accounting for tiny relativistic effects'; 'velocities may be large enough fractions of light speed that Einsteinian physics will be indispensable'. NASA Science, Orbits and Kepler's Laws (s6, mở 25/09): 'In planning trajectories ... modern scientists often go a step beyond Newton. They account for factors related to Albert Einstein's theory of relativity'."
+    },
+    {
+      "claimId": "C1",
+      "severity": "S3",
+      "find": "Ông đã tìm ra những quy luật chung chi phối mọi vật thể có khối lượng trong vũ trụ, đặt nền móng cho toàn bộ nền vật lý hiện đại.",
+      "replace": "Ông cho thấy cả hai tuân theo cùng những quy luật, và cuốn Principia in năm 1687 đã thay đổi hẳn cách con người nhìn thế giới.",
+      "why": "'Chi phối mọi vật thể' mâu thuẫn với chính phạm vi áp dụng bài vừa nêu; 'toàn bộ nền vật lý hiện đại' là nói quá (bản en đã bỏ 'toàn bộ'). Viết theo điều nguồn nói.",
+      "evidence": "NASA Basics of Space Flight ch.3 (s1, mở 25/09): 'the force that makes apples fall to the ground is the same force that makes the planets \"fall\" around the Sun'. Royal Society 2012, The fishy blunder… (s7, mở 25/09): 'Newton's book was finally published in 1687, changing the way we view the world forever.'"
+    }
+  ],
+  "enEdits": [
+    {
+      "claimId": "L1b",
+      "severity": "S3",
+      "find": "This means no force is needed to keep something moving; a force is needed only to change its speed or its direction of motion.",
+      "replace": "This means no **net** force is needed to keep something moving. An aircraft cruising at constant speed still needs engine thrust, but only to balance drag, so the net force is zero. Only when the net force is not zero does the velocity — its speed or its direction — change.",
+      "why": "Khớp L1b vi.",
+      "evidence": "Như L1b."
+    },
+    {
+      "claimId": "L2a",
+      "severity": "S3",
+      "find": "Newton's best-known law:",
+      "replace": "The second law is usually written in short form as:",
+      "why": "Khớp L2a vi.",
+      "evidence": "Như L2a."
+    },
+    {
+      "claimId": "L2b",
+      "severity": "S3",
+      "find": "- The larger the force, the faster the object speeds up.",
+      "replace": "- The larger the net force, the faster the object speeds up.",
+      "why": "Khớp L2b vi.",
+      "evidence": "Như L2b."
+    },
+    {
+      "claimId": "L2c",
+      "severity": "S3",
+      "find": "Pushing a bicycle, for example, is easier than pushing a car.",
+      "replace": "Pushing a bicycle, for example, is easier than pushing a car.\n\nThe form F = ma holds when the object's mass does not change. Newton stated the law more generally in terms of **momentum** (mass times velocity): the change in momentum is proportional to the force applied. Momentum can change because the velocity changes, because the mass changes, or both — as with a rocket, which gets lighter as it expels gas behind it.",
+      "why": "Khớp L2c vi.",
+      "evidence": "Như L2c."
+    },
+    {
+      "claimId": "L3",
+      "severity": "S3",
+      "find": "> For every force there is always a reaction force of equal magnitude in the opposite direction.",
+      "replace": "> For every force there is always a reaction force of equal magnitude in the opposite direction.\n\nThe two forces always act on **two different objects**: if object A pushes on object B, object B pushes back on object A.",
+      "why": "Khớp L3 vi.",
+      "evidence": "Như L3."
+    },
+    {
+      "claimId": "K2",
+      "severity": "S2",
+      "find": "By combining gravity with the laws of motion, Newton showed why the planets must move exactly as Kepler had observed.\n\n- **Kepler described what happens.**\n- **Newton explained why.**",
+      "replace": "Newton realised that the force that makes an apple fall to the ground is the same force that keeps the planets \"falling\" around the Sun, and that this attraction weakens with the square of the distance. His theory of gravitation explained the missing force behind Kepler's third law and produced a generalised form of that law — the form still used today to measure the masses of objects in space.\n\n- **Kepler described how the planets move, without knowing about gravity.**\n- **Newton identified the force behind that motion.**",
+      "why": "Khớp K2 vi.",
+      "evidence": "Như K2."
+    },
+    {
+      "claimId": "A1",
+      "severity": "S3",
+      "find": "Yes. They are still used to:\n\n- Design bridges, roads and vehicles.\n- Calculate the orbits of satellites and rockets.\n- Simulate motion in engineering.",
+      "replace": "Over a very wide range, yes. They are still used to:\n\n- Operate and navigate spacecraft throughout the Solar System.\n- Explain the thrust, lift and motion of aircraft.\n- Work out the masses of objects in space from their orbits.",
+      "why": "Khớp A1 vi.",
+      "evidence": "Như A1."
+    },
+    {
+      "claimId": "A2",
+      "severity": "S2",
+      "find": "Under extreme conditions, however — at speeds close to the speed of light, or near a black hole — Newtonian physics has to give way to Einstein's theory of relativity.",
+      "replace": "However, once speeds reach a significant fraction of the speed of light, Newtonian physics is no longer enough and Einstein's theory of relativity is needed. Even at low speeds, work that demands high precision — such as GPS positioning or planning spacecraft trajectories — has to account for small relativistic effects.",
+      "why": "Khớp A2 vi.",
+      "evidence": "Như A2."
+    },
+    {
+      "claimId": "C1",
+      "severity": "S3",
+      "find": "He found general laws that govern every object with mass in the universe, laying the foundations of modern physics.",
+      "replace": "He showed that both obey the same laws, and the Principia, printed in 1687, changed the way people see the world.",
+      "why": "Khớp C1 vi.",
+      "evidence": "Như C1."
+    }
+  ],
+  "summaryEdits": [
+    {
+      "claimId": "S1",
+      "severity": "S3",
+      "find": "Câu trả lời xuất hiện vào năm 1687, khi Isaac Newton công bố ba định luật chuyển động, ba định luật này không chỉ giải thích chuyển động của các hành tinh mà còn mô tả cách mọi vật thể có khối lượng chuyển động trong vũ trụ.",
+      "replace": "Câu trả lời xuất hiện vào năm 1687, khi Isaac Newton công bố cuốn Principia với ba định luật chuyển động và thuyết hấp dẫn. Cùng một bộ quy luật giải thích được cả quả táo rơi lẫn hành tinh quay quanh Mặt Trời, và đến nay vẫn đủ chính xác cho rất nhiều ứng dụng.",
+      "why": "Ba định luật chuyển động một mình không giải thích quỹ đạo hành tinh (cần thêm thuyết hấp dẫn); 'mọi vật thể … trong vũ trụ' mâu thuẫn với phạm vi áp dụng trong thân bài.",
+      "evidence": "NASA Basics of Space Flight ch.3 (s1, mở 25/09): apple/planets cùng một lực; NASA Science, Orbits and Kepler's Laws (s6, mở 25/09): 'Newton's laws are still accurate enough for many applications'; Royal Society 2012, The fishy blunder… (s7, mở 25/09): 'published in 1687'."
+    }
+  ],
+  "summaryEnEdits": [
+    {
+      "claimId": "S1",
+      "severity": "S3",
+      "find": "The answer came in 1687, when Isaac Newton published his three laws of motion. These laws explain not only the motion of the planets but also how every object with mass moves in the universe.",
+      "replace": "The answer came in 1687, when Isaac Newton published the Principia, with his three laws of motion and his theory of gravitation. The same set of laws explains both a falling apple and a planet circling the Sun, and it is still accurate enough for a great many applications today.",
+      "why": "Khớp S1 vi.",
+      "evidence": "Như S1."
+    }
+  ],
+  "corrections": [
+    "- 2026-09-25 | newton-da-giai-ma-the-gioi-nhu-the-nao | vi+en: \"Newton chứng minh được vì sao các hành tinh phải chuyển động đúng như Kepler đã quan sát\" → thuyết hấp dẫn giải thích lực còn thiếu sau định luật thứ ba của Kepler và cho dạng tổng quát của nó (dùng đo khối lượng thiên thể); \"gần lỗ đen\" (không nguồn) → vận tốc cỡ một phần đáng kể tốc độ ánh sáng, và GPS/quỹ đạo tàu vũ trụ đã cần hiệu chỉnh tương đối | NASA Orbits and Kepler's Laws (s6), NASA Basics of Space Flight ch.3 (s1), mở 25/09",
+    "- 2026-09-25 | newton-da-giai-ma-the-gioi-nhu-the-nao | vi+en: định luật I \"không cần lực để duy trì chuyển động\" → không cần lực TỔNG HỢP (máy bay bay đều vẫn cần lực đẩy để cân bằng lực cản); định luật II thêm \"tổng hợp\", bỏ \"nổi tiếng nhất\", nói rõ F = ma là trường hợp khối lượng không đổi của dạng động lượng; định luật III thêm hai lực đặt lên hai vật khác nhau | NASA Glenn First Law (s2), Third Law (s3); NASA Basics of Space Flight ch.3 (s1)",
+    "- 2026-09-25 | newton-da-giai-ma-the-gioi-nhu-the-nao | vi+en+summary: danh sách ứng dụng không nguồn (cầu đường, mô phỏng kỹ thuật) → điều hướng tàu vũ trụ, máy bay, đo khối lượng thiên thể; câu kết \"chi phối mọi vật thể … toàn bộ nền vật lý hiện đại\" và summary \"mọi vật thể có khối lượng trong vũ trụ\" → cùng một bộ quy luật cho quả táo và hành tinh, Principia 1687 | NASA (s1, s2, s3, s6); Royal Society 2012 (s7)"
+  ],
+  "openQuestions": [
+    "Nguồn s1 (NASA Basics of Space Flight ch.3) ghi Principia 'published in 1685', NASA Glenn s2/s3 ghi 'presented ... in 1686'; Royal Society s7 ghi in năm 1687. Bài dùng 1687 theo Royal Society (nơi giữ bản thảo) — đúng. Không trích năm từ s1/s2/s3.",
+    "Giới hạn áp dụng thứ hai (vật phải lớn hơn cỡ phân tử, ~10⁻⁹ m — F3 ngày 12/09) chưa đưa vào vì nguồn đỡ nó (OpenStax) không nằm trong bảng của bài; muốn thêm thì thêm nguồn trước.",
+    "s5 (NIST SP 330, đơn vị newton) không còn đỡ claim nào ở cả hai bản."
+  ]
+}

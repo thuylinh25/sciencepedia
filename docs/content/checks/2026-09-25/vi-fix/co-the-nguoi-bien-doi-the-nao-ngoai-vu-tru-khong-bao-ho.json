@@ -1,0 +1,215 @@
+{
+  "slug": "co-the-nguoi-bien-doi-the-nao-ngoai-vu-tru-khong-bao-ho",
+  "edits": [
+    {
+      "claimId": "C-1",
+      "severity": "S3",
+      "find": "- Oxy trong máu nhanh chóng bị tiêu thụ.\n- Não bắt đầu thiếu oxy nghiêm trọng.\n- Sau khoảng **10–15 giây**, con người sẽ bất tỉnh.",
+      "replace": "- Máu đi qua phổi không còn nhận được oxy — phổi thậm chí còn rút bớt oxy ra khỏi máu — và dòng máu nghèo oxy ấy đi lên não.\n- Não nhanh chóng bị thiếu oxy nghiêm trọng.\n- Theo dữ liệu NASA tổng hợp, người gặp nạn có lẽ chỉ còn giữ được phần nào ý thức trong khoảng **9–11 giây**, và rất khó có quá 5–10 giây để tự cứu mình.",
+      "why": "C-1: khoảng \"10–15 giây\" không khớp nguồn nào (SP-3006: 9–11 giây, kèm \"probably\"; sự cố Houston: khoảng 14 giây, đã nêu riêng ở câu sau). C-2: cơ chế \"oxy bị tiêu thụ\" lệch nguồn — NASA giải thích là máu nghèo oxy đi từ phổi lên não, phổi trao đổi oxy RA khỏi máu.",
+      "evidence": "NASA SP-3006, Bioastronautics Data Book 2nd ed. (1973), ch.1 Barometric Pressure, mục Survival Under Near-Vacuum Conditions (NTRS 19730006364; toàn văn qua archive.org, mở 25/09): \"Some degree of consciousness will probably be retained for 9 to 11 seconds\"; \"very unlikely that a human suddenly exposed to a vacuum will have more than 5 to 10 seconds to help himself\". NASA Goddard Imagine the Universe, Ask an Astrophysicist — Space Travel (s2, mở 25/09): \"about the time it takes for O2 deprived blood to go from the lungs to the brain\"; \"your lungs are now exchanging oxygen out of the blood\"."
+    },
+    {
+      "claimId": "C-4",
+      "severity": "S2",
+      "find": "Hậu quả không dừng ở tổn thương: mô phổi và mao mạch có thể rách, khí lọt thẳng vào tuần hoàn thành thuyên tắc khí tới tim và não — gần như chắc chắn gây tử vong.",
+      "replace": "Điều này có thể làm rách mô phổi, gây tổn thương phổi nặng hoặc tử vong.",
+      "why": "Nâng mức chắc chắn: nguồn nói \"có thể\" tổn thương nặng HOẶC tử vong; bài viết \"gần như chắc chắn tử vong\". Chuỗi thuyên tắc khí tới tim và não không có trong nguồn nào đã mở — cắt. Khớp bản en.",
+      "evidence": "NASA SP-3006, Bioastronautics Data Book 2nd ed. (1973), ch.1 Barometric Pressure, mục Survival Under Near-Vacuum Conditions (NTRS 19730006364; toàn văn qua archive.org, mở 25/09): phổi động vật có vú \"may rupture when distended by a differential pressure above about 80 mm Hg\"; \"Severe lung injury or death can result from a rapid decompression while the glottis is closed\". NASA Goddard Imagine the Universe, Ask an Astrophysicist — Space Travel (s2, mở 25/09): \"Holding your breath is likely to damage your lungs\"."
+    },
+    {
+      "claimId": "C-5",
+      "severity": "S3",
+      "find": "- Chất lỏng trong mô bắt đầu tạo bọt khí.\n\nHiện tượng này được gọi là **ebullism** (sôi do giảm áp suất).",
+      "replace": "- Nước trong các mô bắt đầu hóa hơi.\n\nHiện tượng này được gọi là **ebullism** (sôi do giảm áp suất): ở thân nhiệt, nước trong mô bắt đầu hóa hơi khi áp suất môi trường xuống khoảng 47 mmHg trở xuống.",
+      "why": "Gắn định nghĩa ebullism đúng nguồn (hóa hơi của nước trong mô ở thân nhiệt, ngưỡng 47 mmHg).",
+      "evidence": "Murray và cộng sự 2013, Aviat Space Environ Med, doi 10.3357/ASEM.3468.2013 (s1; tóm tắt Europe PMC, Crossref resolve, mở 25/09): \"Ebullism is the spontaneous evolution of liquid water in tissues to water vapor at body temperature when the ambient pressure is 47 mmHg or less\"."
+    },
+    {
+      "claimId": "C-5",
+      "severity": "S3",
+      "find": "- Tăng thể tích đáng kể.\n\nTuy nhiên, cơ thể **không phát nổ** như nhiều bộ phim mô tả vì làn da đủ đàn hồi để giữ các mô bên trong.",
+      "replace": "- Phình to, có lẽ tới khoảng gấp đôi thể tích bình thường.\n\nTuy nhiên, cơ thể **không phát nổ** như nhiều bộ phim mô tả, vì da, mô liên kết và thành mạch máu tạo ra một phần đối áp giữ các mô bên trong.",
+      "why": "\"Tăng thể tích đáng kể\" → mức nguồn nêu (có lẽ tới gấp đôi, kèm \"perhaps\"); cơ chế không nổ là đối áp của da, mô liên kết và mạch máu, không riêng \"độ đàn hồi của da\".",
+      "evidence": "NASA SP-3006, Bioastronautics Data Book 2nd ed. (1973), ch.1 Barometric Pressure, mục Survival Under Near-Vacuum Conditions (NTRS 19730006364; toàn văn qua archive.org, mở 25/09): \"marked swelling of the body to perhaps as much as twice its normal volume unless it is restrained by a pressure suit\"; ebullism không xảy ra đúng ở 47 mmHg \"due to some degree of counterpressure exerted by the skin and connective tissues and blood vessels\". NASA Goddard Imagine the Universe, Ask an Astrophysicist — Space Travel (s2, mở 25/09): \"You do not explode and your blood does not boil because of the containing effect of your skin and circulatory system\"."
+    },
+    {
+      "claimId": "C-6",
+      "severity": "S4",
+      "find": "- Nước bọt sủi bọt.\n- Nước mắt bốc hơi nhanh.\n- Chất lỏng trong các mô bắt đầu tạo hơi nước.",
+      "replace": "- Nước bọt trên lưỡi có thể sôi: người thử nghiệm trong tai nạn ở Houston nhớ lại cảm giác nước trên lưỡi bắt đầu sôi.\n- Nước trong các mô mềm bắt đầu hóa hơi.",
+      "why": "Nước mắt không có trong nguồn nào đã mở — cắt; nước bọt giữ kèm \"có thể\" theo nguồn.",
+      "evidence": "NASA Goddard Imagine the Universe, Ask an Astrophysicist — Space Travel (s2, mở 25/09): \"The saliva on your tongue might boil\"; người thử nghiệm năm 1965 \"his last conscious memory was of the water on his tongue beginning to boil\". NASA SP-3006, Bioastronautics Data Book 2nd ed. (1973), ch.1 Barometric Pressure, mục Survival Under Near-Vacuum Conditions (NTRS 19730006364; toàn văn qua archive.org, mở 25/09): \"water vapor will form rapidly in the soft tissues\"."
+    },
+    {
+      "claimId": "C-7",
+      "severity": "S2",
+      "find": "Máu trong các mạch lớn **không sôi** chừng nào tim còn đập: áp suất của hệ tuần hoàn đẩy điểm sôi của nước lên khoảng 46°C, trên thân nhiệt 37°C. Thứ hóa hơi là nước trong mô mềm, và các bọt khí hình thành ở đó gây tổn thương nghiêm trọng cho cơ thể.",
+      "replace": "Máu được bảo vệ lâu hơn, nhưng không vô hạn. Lúc đầu, huyết áp giữ cho máu không sôi, chừng nào huyết áp còn cao hơn khoảng 47 mmHg — áp suất hơi của nước ở thân nhiệt 37°C. Nhưng hơi nước vẫn hình thành: nhanh trong các mô mềm và chậm hơn một chút trong máu tĩnh mạch. Huyết áp động mạch tụt dần trong 30–60 giây, còn áp suất tĩnh mạch tăng lên vì tĩnh mạch căng phồng khí và hơi; trong vòng khoảng 1 phút, hai áp suất ngang nhau và máu gần như không còn lưu thông hiệu quả.",
+      "why": "46°C không có trong nguồn nào đã mở → cắt. \"Không sôi chừng nào tim còn đập\" trái SP-3006 (hơi nước vẫn hình thành trong máu tĩnh mạch; tuần hoàn gần như ngừng trong ~1 phút). Hai nguồn NASA khác nhau về máu nên nêu cả hai: huyết áp giữ máu lúc đầu (Imagine), hơi nước vẫn hình thành chậm hơn trong máu tĩnh mạch (SP-3006). Khớp bản en về claim, chi tiết hơn — bản en sửa theo cùng câu.",
+      "evidence": "NASA SP-3006, Bioastronautics Data Book 2nd ed. (1973), ch.1 Barometric Pressure, mục Survival Under Near-Vacuum Conditions (NTRS 19730006364; toàn văn qua archive.org, mở 25/09): \"water vapor will form rapidly in the soft tissues and somewhat less rapidly in the venous blood\"; \"Arterial blood pressure will also fall over a period of 30 to 60 seconds, while venous pressure rises due to distension of the venous system by gas and vapor. Venous pressure will meet or exceed arterial pressure within 1 minute. There will be virtually no effective circulation of blood\". NASA Goddard Imagine the Universe, Ask an Astrophysicist — Space Travel (s2, mở 25/09): \"the vapor pressure of water at 37 C is 47 mm Hg. As long as you keep your blood-pressure above that ... your blood will not boil\"."
+    },
+    {
+      "claimId": "C-8",
+      "severity": "S3",
+      "find": "- Chân không truyền nhiệt rất kém.\n- Không có không khí để lấy nhiệt khỏi cơ thể nhanh chóng.",
+      "replace": "- Môi trường không gian thường rất lạnh, nhưng nhiệt không thoát khỏi cơ thể nhanh.",
+      "why": "Giữ đúng mệnh đề nguồn nêu; bỏ phần cơ chế truyền nhiệt không có trong nguồn đã mở.",
+      "evidence": "NASA Goddard Imagine the Universe, Ask an Astrophysicist — Space Travel (s2, mở 25/09): \"You do not instantly freeze because, although the space environment is typically very cold, heat does not transfer away from a body quickly\"."
+    },
+    {
+      "claimId": "C-9",
+      "severity": "S3",
+      "find": "Ngược lại, nếu tiếp xúc trực tiếp với ánh nắng Mặt Trời:\n\n- Hai con số thường gặp — bề mặt được chiếu nắng trên **120°C**, vùng khuất dưới **−150°C** — là biên độ nhiệt của **vỏ tàu vũ trụ** ở quỹ đạo thấp, không phải của cơ thể người.\n- Cơ thể mất nhiệt chủ yếu do nước bay hơi qua đường thở và qua da, nên da sẽ thấy hơi mát chứ không nóng lên hay đóng băng trong khoảng thời gian đang nói tới.",
+      "replace": "Về nhiệt độ:\n\n- Theo NASA, nhiệt độ khi đi bộ ngoài không gian có thể dao động từ khoảng **−157°C** đến khoảng **121°C** dưới nắng. Đó là điều kiện của môi trường, không phải nhiệt độ mà cơ thể người sẽ đạt tới.\n- Trong khoảng thời gian đang nói tới, cơ thể mất nhiệt chủ yếu vì nước liên tục bay hơi theo đường thở: miệng và mũi có thể lạnh tới gần mức đóng băng, còn phần còn lại của cơ thể nguội đi chậm hơn.\n- Da phơi thẳng dưới nắng, không có gì chắn tia cực tím, có thể bị cháy nắng rất nặng.",
+      "why": "C-9: NASA gắn biên độ −250°F…250°F (≈ −157°C…121°C) với môi trường đi bộ ngoài không gian, không phải \"vỏ tàu\"; +120/−150°C là số làm tròn không nguồn → dùng số NASA. C-8: \"da thấy hơi mát\" nói nhẹ hơn nguồn — SP-3006: miệng và mũi lạnh gần mức đóng băng. Cháy nắng thay cho câu dẫn \"nếu tiếp xúc trực tiếp với ánh nắng\" vốn không dẫn tới ý nào.",
+      "evidence": "NASA JSC, Spacewalk Spacesuit Basics (https://www.nasa.gov/centers-and-facilities/johnson/spacewalk-spacesuit-basics/, mở 25/09): \"Temperatures on spacewalks may vary from as cold as minus 250 degrees Fahrenheit to as hot as 250 degrees in the sunlight\". NASA SP-3006, Bioastronautics Data Book 2nd ed. (1973), ch.1 Barometric Pressure, mục Survival Under Near-Vacuum Conditions (NTRS 19730006364; toàn văn qua archive.org, mở 25/09): \"gas and water vapor will continue to flow outward through the airways. This continual evaporation of water will cool the mouth and nose to near-freezing temperatures; the remainder of the body will also become cooled, but more slowly\". NASA Goddard Imagine the Universe, Ask an Astrophysicist — Space Travel (s2, mở 25/09): \"If your skin is exposed to direct sunlight without any protection from its intense ultraviolet radiation, you can get a very bad sunburn\"."
+    },
+    {
+      "claimId": "C-10",
+      "severity": "S3",
+      "find": "Trên Trái Đất, chúng ta được bảo vệ bởi:\n\n- Khí quyển.\n- Tầng ozone.\n- Từ trường Trái Đất.\n\nNgoài không gian:\n\n- Tia cực tím chiếu trực tiếp lên da.\n- Tia X, [[proton]] năng lượng cao và tia vũ trụ có thể xuyên qua cơ thể.\n\nNếu tiếp xúc lâu, các tế bào sẽ bị tổn thương nặng bởi bức xạ.",
+      "replace": "Trên Trái Đất, chúng ta được che chắn khỏi phần lớn bức xạ từ Mặt Trời và từ vũ trụ bởi:\n\n- Khí quyển.\n- Từ trường Trái Đất.\n\nCàng lên cao, lớp che chắn ấy càng mỏng. Ngoài không gian:\n\n- Tia cực tím của Mặt Trời chiếu thẳng lên da.\n- Bức xạ ion hóa gồm [[proton]] năng lượng cao và ion nặng trong tia vũ trụ thiên hà, các dòng hạt Mặt Trời phóng ra trong những đợt bùng phát, và các hạt bị giữ trong vành đai bức xạ quanh Trái Đất.\n\nBức xạ là mối nguy của phơi nhiễm kéo dài: với phi hành gia bay xa hơn quỹ đạo thấp, NASA nêu nguy cơ bệnh phóng xạ và tăng nguy cơ ung thư, tổn thương hệ thần kinh trung ương và bệnh thoái hóa trong suốt cuộc đời. Trong vài phút mà bài này nói tới, mối nguy quyết định là chân không và thiếu oxy.",
+      "why": "C-10 (unsupported): bỏ tầng ozone và \"tia X xuyên qua cơ thể\" (không có trong nguồn đã mở); liệt kê đúng ba nhóm bức xạ ion hóa NASA nêu; thay \"tế bào tổn thương nặng\" bằng đúng các nguy cơ NASA nêu, giữ phạm vi \"phi hành gia ngoài quỹ đạo thấp\" và \"phơi nhiễm kéo dài\". Nói rõ bức xạ không phải yếu tố quyết định trong thang vài phút (check 17/09).",
+      "evidence": "NASA, Why Space Radiation Matters (s3, mở 25/09): \"Space radiation is made up of three kinds of radiation: particles trapped in the Earth's magnetic field; particles shot into space during solar flares (solar particle events); and galactic cosmic rays, which are high-energy protons and heavy ions\"; \"Life on Earth is protected from the full impact of solar and cosmic radiation by the magnetic fields that surround the Earth and by the Earth's atmosphere\"; \"at higher altitudes the Earth's atmospheric protection is no longer present and the magnetic field is weaker\"; \"Beyond Low Earth Orbit, space radiation may place astronauts at significant risk for radiation sickness, and increased lifetime risk for cancer, central nervous system effects, and degenerative diseases\". NASA Goddard Imagine the Universe, Ask an Astrophysicist — Space Travel (s2, mở 25/09): tia cực tím gây cháy nắng; \"After perhaps one or two minutes, you're dying\" do thiếu oxy."
+    },
+    {
+      "claimId": "C-11",
+      "severity": "S3",
+      "find": "## Sau 1 - 2 phút: tử vong\n\nNếu không được đưa trở lại môi trường có áp suất và oxy:\n\n- Não bị tổn thương không hồi phục.\n- Hệ tuần hoàn suy sụp.\n- Thiếu oxy hoàn toàn.\n\nTử vong thường xảy ra trong khoảng **1–2 phút**.",
+      "replace": "## Sau khoảng 1–2 phút: tử vong\n\nNếu không được đưa trở lại môi trường có áp suất và oxy:\n\n- Tuần hoàn gần như ngừng hẳn và cơ thể thiếu oxy hoàn toàn.\n- Tim có thể ngừng đập; trong các thí nghiệm trên động vật, một khi tim đã ngừng thì không cứu được nữa.\n\nNASA đánh giá áp suất thấp hơn nhiều so với 50 mmHg phải được coi là gây tử vong nếu kéo dài quá **60–90 giây**. Một nguồn khác của NASA viết rằng sau có lẽ **một hoặc hai phút** người gặp nạn đã đang chết dần, và giới hạn thật sự chưa được biết rõ.",
+      "why": "Bỏ \"thường\" (không có thống kê ở người); giữ \"có lẽ\" và \"giới hạn chưa được biết rõ\" của nguồn; thêm mốc 60–90 giây của SP-3006. \"Não tổn thương không hồi phục\" không có ở mức khẳng định này trong nguồn — thay bằng điều nguồn nêu (tuần hoàn ngừng, thiếu oxy hoàn toàn, tim ngừng ở động vật là không cứu được).",
+      "evidence": "NASA SP-3006, Bioastronautics Data Book 2nd ed. (1973), ch.1 Barometric Pressure, mục Survival Under Near-Vacuum Conditions (NTRS 19730006364; toàn văn qua archive.org, mở 25/09): \"Pressures much below 50 mm Hg cause almost immediate failure of the circulation and total anoxia and must be considered lethal if sustained for more than 60 to 90 seconds\"; \"Once heart action ceased, death was inevitable, despite attempts at resuscitation\" (động vật). NASA Goddard Imagine the Universe, Ask an Astrophysicist — Space Travel (s2, mở 25/09): \"After perhaps one or two minutes, you're dying. The limits are not really known\"."
+    },
+    {
+      "claimId": "C-12",
+      "severity": "S3",
+      "find": "Có.\n\nNếu người gặp nạn được đưa trở lại nơi có áp suất và oxy đầy đủ trong vòng **dưới khoảng 1 phút**, cơ hội hồi phục vẫn tồn tại và có thể không để lại tổn thương nghiêm trọng.",
+      "replace": "Có thể, nếu được cứu rất nhanh — nhưng không có gì bảo đảm.\n\nDữ liệu chủ yếu đến từ thí nghiệm trên động vật (chó, khỉ sóc, khỉ đầu chó): sống sót là chuyện thường gặp nếu được tăng áp trở lại trong vòng khoảng **90 giây**. Từ đó NASA cho rằng với người, được đưa về một áp suất chịu được trong vòng **60–90 giây** có thể giúp sống sót, thậm chí hồi phục khá nhanh. Nhưng một số con vật đã chết chỉ sau vài giây, vài con bị tổn thương thần kinh trung ương nặng và lâu dài, còn rối loạn thị lực thì thường gặp dù thường hết khá nhanh. Một tổng quan năm 2013 về ebullism cũng kết luận rằng nhiều ca phơi nhiễm có thể sống sót được.",
+      "why": "Mốc \"dưới khoảng 1 phút\" và \"có thể không để lại tổn thương nghiêm trọng\" không khớp nguồn: SP-3006 nêu 60–90 giây, \"no guarantee\", có con chết trong vài giây và có con tổn thương thần kinh lâu dài; dữ liệu là của động vật. Ghi rõ cả hai điều.",
+      "evidence": "NASA SP-3006, Bioastronautics Data Book 2nd ed. (1973), ch.1 Barometric Pressure, mục Survival Under Near-Vacuum Conditions (NTRS 19730006364; toàn văn qua archive.org, mở 25/09): \"Recent studies of dogs, squirrel monkeys, and baboons\"; \"survival was the rule if recompression occurred within about 90 seconds\"; \"recompression to a tolerable pressure (200 mm Hg, 3.8 psia) within 60 to 90 seconds could result in survival, and possibly in rather rapid recovery. There is, of course, no guarantee of a successful outcome; some animals have died within seconds of decompression and a few others have had severe, lasting central nervous system damage\"; \"Neurological problems, including blindness and other defects in vision, were common after exposures ... but usually disappeared fairly rapidly\". Murray và cộng sự 2013, Aviat Space Environ Med, doi 10.3357/ASEM.3468.2013 (s1; tóm tắt Europe PMC, Crossref resolve, mở 25/09): \"many exposures may be survivable\"."
+    },
+    {
+      "claimId": "C-13",
+      "severity": "S4",
+      "find": "🌌 Không gian không giết con người bằng cái lạnh tức thì như phim ảnh thường mô tả. Mối nguy lớn nhất là **chân không và thiếu oxy**, khiến con người bất tỉnh chỉ sau vài giây và tử vong trong vòng vài phút nếu không được cứu hộ kịp thời.",
+      "replace": "Không gian không giết con người bằng cái lạnh tức thì như phim ảnh thường mô tả. Mối nguy lớn nhất là **chân không và thiếu oxy**, khiến con người bất tỉnh sau khoảng chục giây và có lẽ tử vong sau khoảng một đến hai phút nếu không được cứu hộ kịp thời.",
+      "why": "\"Vài phút\" mâu thuẫn mục 1–2 phút của chính bài và rộng hơn nguồn; bỏ emoji (check 17/09 C-13). Khớp bản en.",
+      "evidence": "NASA SP-3006, Bioastronautics Data Book 2nd ed. (1973), ch.1 Barometric Pressure, mục Survival Under Near-Vacuum Conditions (NTRS 19730006364; toàn văn qua archive.org, mở 25/09): ý thức 9–11 giây; gây tử vong nếu kéo dài quá 60–90 giây. NASA Goddard Imagine the Universe, Ask an Astrophysicist — Space Travel (s2, mở 25/09): \"After perhaps one or two minutes, you're dying\"."
+    }
+  ],
+  "enEdits": [
+    {
+      "claimId": "C-1",
+      "severity": "S3",
+      "find": "- Oxygen in the blood is rapidly used up.\n- The brain quickly becomes severely starved of oxygen.\n- After about **10–15 seconds**, a person loses consciousness.",
+      "replace": "- Blood passing through the lungs can no longer pick up oxygen (the lungs even draw oxygen out of it), and this oxygen-poor blood travels on to the brain.\n- The brain quickly becomes severely starved of oxygen.\n- According to data compiled by NASA, a person would probably keep some degree of consciousness for only about **9–11 seconds**, and is very unlikely to have more than 5–10 seconds to help themselves.",
+      "why": "Lỗi ở cả hai bản (C-1, C-2): 10–15 giây không khớp nguồn; cơ chế \"oxy bị tiêu thụ\" lệch nguồn.",
+      "evidence": "NASA SP-3006, Bioastronautics Data Book 2nd ed. (1973), ch.1 Barometric Pressure, mục Survival Under Near-Vacuum Conditions (NTRS 19730006364; toàn văn qua archive.org, mở 25/09): 9–11 giây, 5–10 giây. NASA Goddard Imagine the Universe, Ask an Astrophysicist — Space Travel (s2, mở 25/09): \"O2 deprived blood to go from the lungs to the brain\"."
+    },
+    {
+      "claimId": "C-5",
+      "severity": "S3",
+      "find": "- Fluids in the tissues begin to form gas bubbles.\n\nThis phenomenon is known as **ebullism** (boiling caused by a drop in pressure).",
+      "replace": "- Water in the tissues begins to turn into vapor.\n\nThis phenomenon is known as **ebullism** (boiling caused by a drop in pressure): at body temperature, water in the tissues starts to vaporize once the surrounding pressure falls to about 47 mmHg or less.",
+      "why": "Khớp bản vi: định nghĩa ebullism theo nguồn.",
+      "evidence": "Murray và cộng sự 2013, Aviat Space Environ Med, doi 10.3357/ASEM.3468.2013 (s1; tóm tắt Europe PMC, Crossref resolve, mở 25/09)"
+    },
+    {
+      "claimId": "C-5",
+      "severity": "S3",
+      "find": "- Increase significantly in volume.\n\nHowever, the body **does not explode** as many movies depict, because the skin is elastic enough to hold the internal tissues in.",
+      "replace": "- Increase in volume, perhaps to as much as twice its normal size.\n\nHowever, the body **does not explode** as many movies depict, because the skin, connective tissue and blood vessel walls exert some counterpressure that holds the tissues in.",
+      "why": "Lỗi ở cả hai bản (C-5).",
+      "evidence": "NASA SP-3006, Bioastronautics Data Book 2nd ed. (1973), ch.1 Barometric Pressure, mục Survival Under Near-Vacuum Conditions (NTRS 19730006364; toàn văn qua archive.org, mở 25/09): \"perhaps as much as twice its normal volume\"; \"counterpressure exerted by the skin and connective tissues and blood vessels\"."
+    },
+    {
+      "claimId": "C-6",
+      "severity": "S4",
+      "find": "- Saliva bubbles.\n- Tears evaporate rapidly.\n- Fluids in the tissues begin to turn into water vapor.",
+      "replace": "- The saliva on the tongue may boil: the test subject in the Houston accident remembered the water on his tongue beginning to boil.\n- Water in the soft tissues begins to vaporize.",
+      "why": "Lỗi ở cả hai bản (C-6): nước mắt không có nguồn.",
+      "evidence": "NASA Goddard Imagine the Universe, Ask an Astrophysicist — Space Travel (s2, mở 25/09)"
+    },
+    {
+      "claimId": "C-7",
+      "severity": "S3",
+      "find": "Blood in the large vessels boils more slowly than other body fluids because the circulatory system keeps it under pressure, but it is not protected indefinitely: water vapor forms fastest in the soft tissues and somewhat more slowly in the venous blood. The bubbles that form cause severe damage to the body.",
+      "replace": "Blood is protected for longer, but not indefinitely. At first, blood pressure keeps the blood from boiling, as long as it stays above about 47 mmHg, the vapor pressure of water at a body temperature of 37°C. But water vapor still forms: rapidly in the soft tissues and somewhat less rapidly in the venous blood. Arterial blood pressure falls over 30 to 60 seconds while venous pressure rises as the veins swell with gas and vapor; within about a minute the two pressures meet and there is virtually no effective circulation.",
+      "why": "Đưa hai bản về cùng claim (C-7). Bỏ \"The bubbles that form cause severe damage\" — không có ở mức này trong nguồn đã mở.",
+      "evidence": "NASA SP-3006, Bioastronautics Data Book 2nd ed. (1973), ch.1 Barometric Pressure, mục Survival Under Near-Vacuum Conditions (NTRS 19730006364; toàn văn qua archive.org, mở 25/09) và NASA Goddard Imagine the Universe, Ask an Astrophysicist — Space Travel (s2, mở 25/09) (xem sửa vi C-7)."
+    },
+    {
+      "claimId": "C-8",
+      "severity": "S3",
+      "find": "- A vacuum conducts heat very poorly.\n- There is no air to draw heat away from the body quickly.",
+      "replace": "- Space is typically very cold, but heat does not leave the body quickly.",
+      "why": "Khớp bản vi (C-8).",
+      "evidence": "NASA Goddard Imagine the Universe, Ask an Astrophysicist — Space Travel (s2, mở 25/09)"
+    },
+    {
+      "claimId": "C-9",
+      "severity": "S3",
+      "find": "As for direct sunlight:\n\n- The two figures often quoted, above **120°C** in sunlight and below **−150°C** in shade, describe the conditions that spacewalks take place in, not the temperature a human body would reach.\n- The body loses heat mainly through water evaporating from the airways and the skin, so the skin would feel slightly cool rather than heating up or freezing over the time span discussed here.",
+      "replace": "As for temperature:\n\n- According to NASA, temperatures on spacewalks can range from about **−157°C** to about **121°C** in sunlight. These are the conditions of the surroundings, not the temperature a human body would reach.\n- Over the time span discussed here, the body loses heat mainly because water keeps evaporating out through the airways: the mouth and nose can cool to near-freezing temperatures, while the rest of the body cools more slowly.\n- Skin exposed to direct sunlight, with nothing to block the ultraviolet, can suffer a very bad sunburn.",
+      "why": "Lỗi ở cả hai bản (C-8, C-9): số +120/−150°C không nguồn; \"hơi mát\" nói nhẹ hơn nguồn.",
+      "evidence": "NASA JSC, Spacewalk Spacesuit Basics (https://www.nasa.gov/centers-and-facilities/johnson/spacewalk-spacesuit-basics/, mở 25/09); NASA SP-3006, Bioastronautics Data Book 2nd ed. (1973), ch.1 Barometric Pressure, mục Survival Under Near-Vacuum Conditions (NTRS 19730006364; toàn văn qua archive.org, mở 25/09); NASA Goddard Imagine the Universe, Ask an Astrophysicist — Space Travel (s2, mở 25/09)"
+    },
+    {
+      "claimId": "C-10",
+      "severity": "S3",
+      "find": "On Earth, we are protected by:\n\n- The atmosphere.\n- The ozone layer.\n- Earth's magnetic field.\n\nIn outer space:\n\n- Ultraviolet radiation strikes the skin directly.\n- X-rays, high-energy [[proton|protons]] and cosmic rays can pass through the body.\n\nWith prolonged exposure, cells suffer severe radiation damage.",
+      "replace": "On Earth, we are shielded from most solar and cosmic radiation by:\n\n- The atmosphere.\n- Earth's magnetic field.\n\nThe higher you go, the thinner that shield becomes. In outer space:\n\n- Ultraviolet radiation from the Sun strikes the skin directly.\n- Ionizing radiation includes high-energy [[proton|protons]] and heavy ions in galactic cosmic rays, streams of particles thrown out by the Sun during solar flares, and particles trapped in the radiation belts around Earth.\n\nRadiation is a hazard of prolonged exposure: for astronauts travelling beyond low Earth orbit, NASA cites a risk of radiation sickness and an increased lifetime risk of cancer, central nervous system effects and degenerative diseases. Over the few minutes this article is about, the deciding dangers are vacuum and lack of oxygen.",
+      "why": "Lỗi ở cả hai bản (C-10).",
+      "evidence": "NASA, Why Space Radiation Matters (s3, mở 25/09)"
+    },
+    {
+      "claimId": "C-11",
+      "severity": "S3",
+      "find": "## After 1–2 Minutes: Death\n\nIf the person is not returned to a pressurized, oxygenated environment:\n\n- Brain damage becomes irreversible.\n- The circulatory system collapses.\n- Oxygen deprivation becomes total.\n\nDeath usually occurs within **1–2 minutes**.",
+      "replace": "## After About 1–2 Minutes: Death\n\nIf the person is not returned to a pressurized, oxygenated environment:\n\n- Circulation all but stops and the body is totally deprived of oxygen.\n- The heart may stop; in animal experiments, once the heart had stopped, the animal could not be saved.\n\nNASA assessed that pressures much below 50 mmHg must be considered lethal if sustained for more than **60–90 seconds**. Another NASA source says that after perhaps **one or two minutes** the person is dying, and that the real limits are not well known.",
+      "why": "Lỗi ở cả hai bản (C-11).",
+      "evidence": "NASA SP-3006, Bioastronautics Data Book 2nd ed. (1973), ch.1 Barometric Pressure, mục Survival Under Near-Vacuum Conditions (NTRS 19730006364; toàn văn qua archive.org, mở 25/09); NASA Goddard Imagine the Universe, Ask an Astrophysicist — Space Travel (s2, mở 25/09)"
+    },
+    {
+      "claimId": "C-12",
+      "severity": "S3",
+      "find": "Yes.\n\nIf the victim is returned to an environment with adequate pressure and oxygen in **less than about 1 minute**, recovery is still possible and may leave no severe lasting damage.",
+      "replace": "Possibly, if help comes very quickly, but there is no guarantee.\n\nMost of the data come from animal experiments (dogs, squirrel monkeys and baboons): survival was the rule if they were recompressed within about **90 seconds**. From this, NASA judged that bringing a person back to a tolerable pressure within **60–90 seconds** could result in survival, and possibly a fairly rapid recovery. But some animals died within seconds, a few had severe, lasting damage to the central nervous system, and vision problems were common, though they usually cleared up fairly quickly. A 2013 review of ebullism likewise concluded that many exposures may be survivable.",
+      "why": "Lỗi ở cả hai bản (C-12).",
+      "evidence": "NASA SP-3006, Bioastronautics Data Book 2nd ed. (1973), ch.1 Barometric Pressure, mục Survival Under Near-Vacuum Conditions (NTRS 19730006364; toàn văn qua archive.org, mở 25/09); Murray và cộng sự 2013, Aviat Space Environ Med, doi 10.3357/ASEM.3468.2013 (s1; tóm tắt Europe PMC, Crossref resolve, mở 25/09)"
+    },
+    {
+      "claimId": "C-13",
+      "severity": "S4",
+      "find": "🌌 Space does not kill with instant cold, as movies often show. The greatest hazards are **vacuum and oxygen deprivation**, which cause unconsciousness within seconds and death within one to two minutes unless the person is rescued in time.",
+      "replace": "Space does not kill with instant cold, as movies often show. The greatest hazards are **vacuum and oxygen deprivation**, which cause unconsciousness within about ten seconds and probably death within one to two minutes unless the person is rescued in time.",
+      "why": "Khớp bản vi; giữ \"probably\" của nguồn; bỏ emoji.",
+      "evidence": "NASA SP-3006, Bioastronautics Data Book 2nd ed. (1973), ch.1 Barometric Pressure, mục Survival Under Near-Vacuum Conditions (NTRS 19730006364; toàn văn qua archive.org, mở 25/09); NASA Goddard Imagine the Universe, Ask an Astrophysicist — Space Travel (s2, mở 25/09)"
+    }
+  ],
+  "addSources": [
+    {
+      "title": "Bioastronautics Data Book, Second Edition (NASA SP-3006) — ch. 1 Barometric Pressure, Survival Under Near-Vacuum Conditions",
+      "url": "https://ntrs.nasa.gov/citations/19730006364",
+      "publisher": "NASA",
+      "year": 1973,
+      "tier": 2,
+      "covers": "Ý thức 9–11 giây; hơi nước ở mô mềm và chậm hơn ở máu tĩnh mạch; sưng tới ~gấp đôi; đối áp của da/mô liên kết/mạch; tuần hoàn ngừng trong ~1 phút; lạnh do bay hơi ở miệng, mũi; vỡ phổi khi thanh môn đóng; tăng áp trong 60–90 giây, không bảo đảm; dữ liệu động vật"
+    },
+    {
+      "title": "Spacewalk Spacesuit Basics",
+      "url": "https://www.nasa.gov/centers-and-facilities/johnson/spacewalk-spacesuit-basics/",
+      "publisher": "NASA Johnson Space Center",
+      "tier": 2,
+      "covers": "Nhiệt độ khi đi bộ ngoài không gian −250°F đến 250°F dưới nắng; đồ bảo hộ cấp áp suất và oxy"
+    }
+  ],
+  "corrections": [
+    "2026-09-25 · `co-the-nguoi-bien-doi-the-nao-ngoai-vu-tru` (vi + en) — cắt \"điểm sôi ~46°C, máu không sôi chừng nào tim còn đập\" (vi) → huyết áp giữ máu lúc đầu nhưng hơi nước vẫn hình thành chậm hơn trong máu tĩnh mạch, tuần hoàn gần như ngừng trong ~1 phút; \"gần như chắc chắn tử vong\" + thuyên tắc khí (vi) → \"có thể tổn thương phổi nặng hoặc tử vong\"; 10–15 giây → có lẽ 9–11 giây (cả hai bản); +120/−150°C \"vỏ tàu\" → −157…121°C là môi trường đi bộ ngoài không gian; \"da hơi mát\" → miệng, mũi lạnh gần đóng băng; bỏ nước mắt, tầng ozone, tia X; mốc cứu sống \"dưới 1 phút, không tổn thương nghiêm trọng\" → 60–90 giây, dữ liệu động vật, không bảo đảm; \"tử vong thường trong 1–2 phút\"/\"vài phút\" → có lẽ 1–2 phút, NASA: gây tử vong nếu quá 60–90 giây. Căn cứ: NASA SP-3006 (NTRS 19730006364), NASA Imagine, Murray 2013 (doi 10.3357/ASEM.3468.2013), NASA Spacewalk Spacesuit Basics, NASA Why Space Radiation Matters."
+  ],
+  "openQuestions": [
+    "Năm sự cố buồng chân không: NASA Imagine ghi '65; bài giữ \"giữa thập niên 1960\" — không ghi năm hay tên người cho tới khi có hồ sơ gốc NASA JSC.",
+    "Trang NASA Imagine tự ghi là tổng hợp từ một trang y khoa JSC đã gỡ và thư bạn đọc; trong bài chỉ dùng kèm SP-3006, không làm nguồn duy nhất cho claim nào ngoài sự cố Houston và câu nước bọt."
+  ]
+}

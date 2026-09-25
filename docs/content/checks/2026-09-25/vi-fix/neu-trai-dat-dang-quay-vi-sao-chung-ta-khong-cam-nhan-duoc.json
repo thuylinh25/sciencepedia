@@ -1,0 +1,152 @@
+{
+  "slug": "neu-trai-dat-dang-quay-vi-sao-chung-ta-khong-cam-nhan-duoc",
+  "edits": [
+    {
+      "claimId": "C-2",
+      "severity": "S3",
+      "find": "Ngay tại xích đạo, nơi tốc độ quay lớn nhất, lực ly tâm chỉ làm giảm trọng lượng của chúng ta khoảng **0,35%**. Con số này quá nhỏ để có thể khiến con người hay bất kỳ vật thể nào bị hất văng khỏi bề mặt hành tinh.",
+      "replace": "Ngay tại xích đạo, nơi tốc độ quay lớn nhất, hiệu ứng ly tâm này chỉ triệt tiêu khoảng **0,35%** lực hấp dẫn. Con số này quá nhỏ để có thể khiến con người hay bất kỳ vật thể nào bị hất văng khỏi bề mặt hành tinh.\n\nHai con số trong bài được tính từ số liệu của NASA: Trái Đất có bán kính xích đạo khoảng 6.378 km và tự quay một vòng trong khoảng 23,93 giờ. Từ đó, một điểm trên xích đạo di chuyển khoảng 1.670 km/h và có gia tốc hướng tâm khoảng 0,034 m/s² — khoảng 0,35% gia tốc trọng trường ở xích đạo (9,78 m/s²).",
+      "why": "Check 17/09 C-2: \"giảm trọng lượng\" và \"triệt tiêu lực hấp dẫn\" là hai cách nói cho cùng một con số trong bài — thống nhất về cách nói ở kết luận và ở bản en (\"offsets 0.35% of gravity\"); và ghi phép tính cho 1.670 km/h và 0,35% vì nguồn không in sẵn hai con số này.",
+      "evidence": "NASA NSSDC Earth Fact Sheet (s1, https://nssdc.gsfc.nasa.gov/planetary/factsheet/earthfact.html, mở 25/09): \"Equatorial radius (km) 6378.137\", \"Sidereal rotation period (hrs) 23.9345\", \"Surface acceleration (eq) (m/s2) 9.780\". Tính: v = 2π·6378,137/23,9345 ≈ 1.674 km/h; ω²R ≈ 0,0339 m/s²; 0,0339/9,780 ≈ 0,347%."
+    },
+    {
+      "claimId": "C-5",
+      "severity": "S3",
+      "find": "Không chỉ mặt đất mà bầu khí quyển, đại dương và mọi vật thể trên Trái Đất đều cùng quay với hành tinh. Chúng ta đã chuyển động với tốc độ này ngay từ khi sinh ra nên không cảm nhận được nó.",
+      "replace": "Không chỉ mặt đất mà bầu khí quyển, đại dương và mọi vật thể trên Trái Đất về cơ bản đều cùng quay với hành tinh. Vì ta và mọi thứ xung quanh chuyển động như nhau, không có gì lướt qua ta để báo rằng ta đang di chuyển.",
+      "why": "\"Về cơ bản\" (check 17/09 C-5: gió và hải lưu vẫn chuyển động tương đối với mặt đất). Câu \"đã chuyển động từ khi sinh ra nên không cảm nhận\" là nhân quả tự thêm — nguồn nói lý do là mọi thứ xung quanh cùng chuyển động với ta và gia tốc rất nhỏ.",
+      "evidence": "Caltech IPAC Cool Cosmos, \"Why don't we feel Earth move?\" (https://coolcosmos.ipac.caltech.edu/ask/60-Why-don-t-we-feel-Earth-move-, mở 25/09): \"we only feel motion when there is an acceleration involved\"; \"about 0.03 m/s² due to Earth's spin at the Equator\"; \"as most things around us move at the same velocities and accelerations with us, we cannot sense these low accelerations\"; \"this effect will be constant since the Earth's rotation is constant, so again there is nothing that we would immediately feel\"."
+    },
+    {
+      "claimId": "C-6",
+      "severity": "S4",
+      "find": "Dù máy bay có thể bay ở khoảng 900 km/h, hành khách bên trong vẫn cảm thấy gần như đứng yên",
+      "replace": "Dù máy bay đang lao đi rất nhanh, hành khách bên trong vẫn cảm thấy gần như đứng yên",
+      "why": "\"Khoảng 900 km/h\" không nguồn (check 17/09 C-6) — số không nguồn thì bỏ, không làm mềm. Ví dụ không cần con số để đúng.",
+      "evidence": "Caltech IPAC Cool Cosmos, \"Why don't we feel Earth move?\" (https://coolcosmos.ipac.caltech.edu/ask/60-Why-don-t-we-feel-Earth-move-, mở 25/09): \"we only feel motion when there is an acceleration involved\"; \"about 0.03 m/s² due to Earth's spin at the Equator\"; \"as most things around us move at the same velocities and accelerations with us, we cannot sense these low accelerations\"; \"this effect will be constant since the Earth's rotation is constant, so again there is nothing that we would immediately feel\". (ví dụ tương tự bằng ô tô: \"sitting in a quiet car with good suspension driving across a perfectly smooth road\"). NASA Glenn, Newton's Laws of Motion (s2, mở 25/09): \"an object in motion remains in motion at constant speed and in a straight line unless acted on by an unbalanced force\"."
+    },
+    {
+      "claimId": "C-3",
+      "severity": "S2",
+      "find": "### Cơ thể chỉ cảm nhận được sự thay đổi vận tốc\n\nHệ thần kinh và hệ tiền đình trong tai trong chủ yếu cảm nhận **[[gia tốc]]**, tức sự thay đổi về tốc độ hoặc hướng chuyển động.\n\nTrái Đất quay rất đều đặn, gần như không có những thay đổi đột ngột mà cơ thể có thể nhận ra. Vì vậy, chúng ta không cảm thấy mình đang lao đi trong không gian dù thực tế đang chuyển động cùng Trái Đất.",
+      "replace": "### Cơ thể thực sự cảm nhận được gì\n\nHệ thần kinh và hệ tiền đình trong tai trong phản ứng với **[[gia tốc]]**, tức sự thay đổi về tốc độ hoặc hướng chuyển động, và với cả lực kéo của trọng lực. Trong tai trong, các ống bán khuyên báo cho não khi đầu xoay, còn các cơ quan sỏi tai báo vị trí của đầu so với trọng lực và những chuyển động thẳng của đầu.\n\nNói cho chặt thì người đứng trên Trái Đất đang quay luôn có gia tốc, vì chuyển động theo đường tròn nghĩa là hướng chuyển động liên tục thay đổi. Nhưng gia tốc ấy rất nhỏ (chính là con số 0,35% trọng lực ở trên) và không thay đổi: Trái Đất quay với tốc độ gần như hoàn toàn đều. Một gia tốc nhỏ và không đổi hoà lẫn vào cảm giác về trọng lượng và về hướng \"xuống dưới\", nên giác quan không có tín hiệu mới nào để ghi nhận.",
+      "why": "Check 17/09 C-3 (contradicted, S2): \"cơ thể chỉ cảm nhận sự thay đổi vận tốc\" + \"Trái Đất quay đều\" để lại mô hình sai — chuyển động tròn luôn có gia tốc hướng tâm (chính bài tính 0,35%). Lý do đúng: gia tốc nhỏ và không đổi. C-4: cơ quan sỏi tai cảm nhận cả trọng lực (một gia tốc KHÔNG đổi), nên \"chỉ cảm nhận thay đổi\" sai về phía sỏi tai. Viết theo cùng claim với bản en.",
+      "evidence": "NASA Glenn, Newton's Laws of Motion (s2, mở 25/09): \"an object in motion remains in motion at constant speed and in a straight line unless acted on by an unbalanced force\". Caltech IPAC Cool Cosmos, \"Why don't we feel Earth move?\" (https://coolcosmos.ipac.caltech.edu/ask/60-Why-don-t-we-feel-Earth-move-, mở 25/09): \"we only feel motion when there is an acceleration involved\"; \"about 0.03 m/s² due to Earth's spin at the Equator\"; \"as most things around us move at the same velocities and accelerations with us, we cannot sense these low accelerations\"; \"this effect will be constant since the Earth's rotation is constant, so again there is nothing that we would immediately feel\". NIDCD (NIH), Balance Disorders (https://www.nidcd.nih.gov/health/balance-disorders, mở 25/09): ống bán khuyên \"tell your brain when your head rotates\"; cơ quan sỏi tai \"tell your brain the position of your head with respect to gravity ... as well as any direction your head might be moving\"; \"your vestibular system detects mechanical forces, including gravity\". Cullen 2012 (s3, doi 10.1016/j.tins.2011.12.001, tóm tắt Europe PMC): hệ tiền đình mã hoá chuyển động của chính cơ thể (self-motion)."
+    },
+    {
+      "claimId": "C-3",
+      "severity": "S2",
+      "find": "🌍 Chúng ta không cảm nhận được chuyển động quay của Trái Đất vì cơ thể chỉ nhận ra **sự thay đổi** vận tốc, chứ không nhận ra vận tốc đều. Trái Đất quay với tốc độ gần như không đổi, và khí quyển cùng mọi thứ trên bề mặt đều chuyển động cùng nó. Lực ly tâm sinh ra từ chuyển động ấy có thật, nhưng ở xích đạo nó chỉ triệt tiêu khoảng **0,35%** lực hấp dẫn — quá nhỏ để giác quan nào của con người ghi nhận được.",
+      "replace": "Chúng ta không cảm nhận được chuyển động quay của Trái Đất vì gia tốc mà nó tạo ra cho ta rất nhỏ và không bao giờ thay đổi, chứ không phải vì ta hoàn toàn không có gia tốc. Trái Đất quay với tốc độ gần như không đổi, và khí quyển cùng mọi thứ trên bề mặt về cơ bản đều chuyển động cùng nó. Hiệu ứng ly tâm của chuyển động ấy có thật, nhưng ở xích đạo nó chỉ triệt tiêu khoảng **0,35%** lực hấp dẫn, và vì không đổi nên nó không khác gì một lực hấp dẫn yếu đi rất ít.",
+      "why": "Kết luận lặp lại lỗi C-3 (\"không nhận ra vận tốc đều\"). Viết lại theo cơ chế đúng, khớp bản en; bỏ emoji (fix 17/09).",
+      "evidence": "Caltech IPAC Cool Cosmos, \"Why don't we feel Earth move?\" (https://coolcosmos.ipac.caltech.edu/ask/60-Why-don-t-we-feel-Earth-move-, mở 25/09): \"we only feel motion when there is an acceleration involved\"; \"about 0.03 m/s² due to Earth's spin at the Equator\"; \"as most things around us move at the same velocities and accelerations with us, we cannot sense these low accelerations\"; \"this effect will be constant since the Earth's rotation is constant, so again there is nothing that we would immediately feel\". NASA NSSDC Earth Fact Sheet (s1, https://nssdc.gsfc.nasa.gov/planetary/factsheet/earthfact.html, mở 25/09): \"Equatorial radius (km) 6378.137\", \"Sidereal rotation period (hrs) 23.9345\", \"Surface acceleration (eq) (m/s2) 9.780\". Tính: v = 2π·6378,137/23,9345 ≈ 1.674 km/h; ω²R ≈ 0,0339 m/s²; 0,0339/9,780 ≈ 0,347%."
+    }
+  ],
+  "enEdits": [
+    {
+      "claimId": "C-2",
+      "severity": "S4",
+      "find": "Right at the equator, where the rotational speed is highest, this effect offsets only about **0.35%** of gravity. That is far too little to fling people, or anything else, off the surface of the planet.",
+      "replace": "Right at the equator, where the rotational speed is highest, this effect offsets only about **0.35%** of gravity. That is far too little to fling people, or anything else, off the surface of the planet.\n\nBoth figures in this article are worked out from NASA data: Earth has an equatorial radius of about 6,378 km and turns once every 23.93 hours or so. That means a point on the equator moves at about 1,670 km/h and has a centripetal acceleration of about 0.034 m/s², roughly 0.35% of the gravitational acceleration at the equator (9.78 m/s²).",
+      "why": "Giữ hai bản cùng claim: thêm phép tính như bản vi (check 17/09 C-1, C-2).",
+      "evidence": "NASA NSSDC Earth Fact Sheet (s1, https://nssdc.gsfc.nasa.gov/planetary/factsheet/earthfact.html, mở 25/09): \"Equatorial radius (km) 6378.137\", \"Sidereal rotation period (hrs) 23.9345\", \"Surface acceleration (eq) (m/s2) 9.780\". Tính: v = 2π·6378,137/23,9345 ≈ 1.674 km/h; ω²R ≈ 0,0339 m/s²; 0,0339/9,780 ≈ 0,347%."
+    },
+    {
+      "claimId": "C-5",
+      "severity": "S4",
+      "find": "Not only the ground but also the atmosphere, the oceans and every object on Earth essentially rotate along with the planet. We have been moving this way since birth, so we do not feel it.",
+      "replace": "Not only the ground but also the atmosphere, the oceans and every object on Earth essentially rotate along with the planet. Because we and everything around us move in the same way, nothing streams past us to signal that we are moving.",
+      "why": "Lỗi ở cả hai bản: \"moving since birth, so we do not feel it\" là nhân quả tự thêm.",
+      "evidence": "Caltech IPAC Cool Cosmos, \"Why don't we feel Earth move?\" (https://coolcosmos.ipac.caltech.edu/ask/60-Why-don-t-we-feel-Earth-move-, mở 25/09): \"we only feel motion when there is an acceleration involved\"; \"about 0.03 m/s² due to Earth's spin at the Equator\"; \"as most things around us move at the same velocities and accelerations with us, we cannot sense these low accelerations\"; \"this effect will be constant since the Earth's rotation is constant, so again there is nothing that we would immediately feel\"."
+    },
+    {
+      "claimId": "C-6",
+      "severity": "S4",
+      "find": "Even though the plane is flying at hundreds of km/h, passengers feel almost stationary",
+      "replace": "Even though the plane is moving very fast, passengers feel almost stationary",
+      "why": "Khớp bản vi: bỏ ước lượng tốc độ máy bay không nguồn.",
+      "evidence": "Caltech IPAC Cool Cosmos, \"Why don't we feel Earth move?\" (https://coolcosmos.ipac.caltech.edu/ask/60-Why-don-t-we-feel-Earth-move-, mở 25/09): \"we only feel motion when there is an acceleration involved\"; \"about 0.03 m/s² due to Earth's spin at the Equator\"; \"as most things around us move at the same velocities and accelerations with us, we cannot sense these low accelerations\"; \"this effect will be constant since the Earth's rotation is constant, so again there is nothing that we would immediately feel\". NASA Glenn, Newton's Laws of Motion (s2, mở 25/09): \"an object in motion remains in motion at constant speed and in a straight line unless acted on by an unbalanced force\"."
+    },
+    {
+      "claimId": "C-4",
+      "severity": "S3",
+      "find": "respond to **[[gia-toc|acceleration]]**, that is, a change in speed or direction of motion, as well as to the pull of gravity itself.",
+      "replace": "respond to **[[gia-toc|acceleration]]**, that is, a change in speed or direction of motion, as well as to the pull of gravity itself. In the inner ear, the semicircular canals tell the brain when the head rotates, while the otolith organs signal the position of the head relative to gravity and its straight-line movements.",
+      "why": "Check 17/09 C-4: tách vai trò hai nhóm cảm biến theo NIDCD — thêm cho cả hai bản.",
+      "evidence": "NIDCD (NIH), Balance Disorders (https://www.nidcd.nih.gov/health/balance-disorders, mở 25/09): ống bán khuyên \"tell your brain when your head rotates\"; cơ quan sỏi tai \"tell your brain the position of your head with respect to gravity ... as well as any direction your head might be moving\"; \"your vestibular system detects mechanical forces, including gravity\"."
+    },
+    {
+      "claimId": "C-5",
+      "severity": "S4",
+      "find": "and the atmosphere and everything on the surface move along with it.",
+      "replace": "and the atmosphere and everything on the surface essentially move along with it.",
+      "why": "Khớp bản vi (\"về cơ bản\") ở kết luận.",
+      "evidence": "Caltech IPAC Cool Cosmos, \"Why don't we feel Earth move?\" (https://coolcosmos.ipac.caltech.edu/ask/60-Why-don-t-we-feel-Earth-move-, mở 25/09): \"we only feel motion when there is an acceleration involved\"; \"about 0.03 m/s² due to Earth's spin at the Equator\"; \"as most things around us move at the same velocities and accelerations with us, we cannot sense these low accelerations\"; \"this effect will be constant since the Earth's rotation is constant, so again there is nothing that we would immediately feel\"."
+    },
+    {
+      "claimId": "C-3",
+      "severity": "S4",
+      "find": "🌍 We do not feel Earth's rotation",
+      "replace": "We do not feel Earth's rotation",
+      "why": "Bỏ emoji ở kết luận (fix 17/09), khớp bản vi.",
+      "evidence": "—"
+    }
+  ],
+  "summaryEdits": [
+    {
+      "claimId": "C-1",
+      "severity": "S4",
+      "find": "☀️ Mỗi buổi sáng",
+      "replace": "Mỗi buổi sáng",
+      "why": "Bỏ emoji (fix 17/09).",
+      "evidence": "—"
+    },
+    {
+      "claimId": "C-7",
+      "severity": "S4",
+      "find": "khoảng 1.670 km/h, nhanh hơn nhiều máy bay chở khách.",
+      "replace": "khoảng 1.670 km/h.",
+      "why": "Phép so với máy bay chở khách dựa vào tốc độ máy bay không có nguồn trong bài (cùng con số 900 km/h đã cắt) — cắt.",
+      "evidence": "NASA NSSDC Earth Fact Sheet (s1, https://nssdc.gsfc.nasa.gov/planetary/factsheet/earthfact.html, mở 25/09): \"Equatorial radius (km) 6378.137\", \"Sidereal rotation period (hrs) 23.9345\", \"Surface acceleration (eq) (m/s2) 9.780\". Tính: v = 2π·6378,137/23,9345 ≈ 1.674 km/h; ω²R ≈ 0,0339 m/s²; 0,0339/9,780 ≈ 0,347%."
+    }
+  ],
+  "summaryEnEdits": [
+    {
+      "claimId": "C-7",
+      "severity": "S4",
+      "find": "approximately 1,670 km/h, faster than most commercial aircraft.",
+      "replace": "approximately 1,670 km/h.",
+      "why": "Khớp bản vi: bỏ phép so không nguồn.",
+      "evidence": "NASA NSSDC Earth Fact Sheet (s1, https://nssdc.gsfc.nasa.gov/planetary/factsheet/earthfact.html, mở 25/09): \"Equatorial radius (km) 6378.137\", \"Sidereal rotation period (hrs) 23.9345\", \"Surface acceleration (eq) (m/s2) 9.780\". Tính: v = 2π·6378,137/23,9345 ≈ 1.674 km/h; ω²R ≈ 0,0339 m/s²; 0,0339/9,780 ≈ 0,347%."
+    }
+  ],
+  "seoDescriptionEdits": [
+    {
+      "claimId": "C-1",
+      "severity": "S4",
+      "find": "☀️ Mỗi buổi sáng",
+      "replace": "Mỗi buổi sáng",
+      "why": "seoDescription chép summary — bỏ emoji theo summary.",
+      "evidence": "—"
+    }
+  ],
+  "addSources": [
+    {
+      "title": "Balance Disorders",
+      "url": "https://www.nidcd.nih.gov/health/balance-disorders",
+      "publisher": "National Institute on Deafness and Other Communication Disorders (NIH)",
+      "tier": 2,
+      "covers": "Ống bán khuyên cảm nhận đầu xoay; cơ quan sỏi tai cảm nhận vị trí đầu so với trọng lực và chuyển động thẳng; hệ tiền đình cảm nhận cả trọng lực"
+    },
+    {
+      "title": "Why don't we feel Earth move?",
+      "url": "https://coolcosmos.ipac.caltech.edu/ask/60-Why-don-t-we-feel-Earth-move-",
+      "publisher": "Caltech IPAC — Cool Cosmos",
+      "tier": 3,
+      "covers": "Ta chỉ cảm nhận chuyển động khi có gia tốc; gia tốc do Trái Đất quay ở xích đạo ≈0,03 m/s², không đổi; mọi thứ xung quanh cùng chuyển động với ta"
+    }
+  ],
+  "corrections": [
+    "2026-09-25 · `neu-trai-dat-dang-quay` (vi + en) — \"cơ thể chỉ nhận ra sự thay đổi vận tốc, không nhận ra vận tốc đều\" (vi) → người đứng trên Trái Đất luôn có gia tốc hướng tâm, nhưng nó nhỏ (≈0,034 m/s², 0,35% g) và không đổi nên hoà vào cảm giác trọng lượng; tách vai trò ống bán khuyên/sỏi tai; cắt \"900 km/h\" (vi) và phép so \"nhanh hơn máy bay chở khách\" ở summary (vi+en); bỏ \"đã chuyển động từ khi sinh ra nên không cảm nhận\" (cả hai bản); ghi phép tính 1.670 km/h và 0,35%. Căn cứ: NASA NSSDC Earth Fact Sheet, NASA Glenn, NIDCD Balance Disorders, Caltech IPAC Cool Cosmos."
+  ]
+}

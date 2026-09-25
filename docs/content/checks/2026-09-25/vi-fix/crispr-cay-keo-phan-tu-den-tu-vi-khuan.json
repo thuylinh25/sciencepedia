@@ -1,0 +1,229 @@
+{
+  "slug": "crispr-cay-keo-phan-tu-den-tu-vi-khuan",
+  "edits": [
+    {
+      "claimId": "C-1",
+      "severity": "S4",
+      "find": "Đó là hệ miễn dịch thích ứng của vi khuẩn: khi bị virus tấn công, vi khuẩn lưu một đoạn [[DNA]] của kẻ tấn công vào bộ [[gene]] của mình để nhận diện lần sau.",
+      "replace": "Đó là hệ miễn dịch thích ứng của vi khuẩn và vi khuẩn cổ: sau khi bị virus tấn công, vi khuẩn có thể chèn những đoạn [[DNA]] ngắn lấy từ bộ gene của virus vào vùng CRISPR trong bộ [[gene]] của chính mình, và các đoạn này quyết định chúng kháng được loại virus nào ở những lần sau.",
+      "why": "Check 17/09 C-1: thêm \"vi khuẩn cổ\"; gắn nguồn cho bước lưu đoạn DNA của virus (spacer).",
+      "evidence": "Jinek và cộng sự 2012, Science 337:816–821, doi 10.1126/science.1225829 (Crossref resolve 25/09; toàn văn PMC6286148, mở 25/09), tóm tắt: \"CRISPR/Cas systems provide bacteria and archaea with adaptive immunity against viruses and plasmids\". Barrangou và cộng sự 2007, Science 315:1709–1712, doi 10.1126/science.1138140 (tóm tắt Europe PMC, Crossref resolve, mở 25/09): \"after viral challenge, bacteria integrated new spacers derived from phage genomic sequences ... resistance specificity is determined by spacer-phage sequence similarity\"."
+    },
+    {
+      "claimId": "C-3",
+      "severity": "S2",
+      "find": "Điểm đột phá năm 2012 của Jennifer Doudna và Emmanuelle Charpentier là chứng minh có thể lập trình lại RNA dẫn đường tuỳ ý. Muốn cắt ở đâu, chỉ cần tổng hợp một đoạn RNA 20 nucleotide tương ứng. Hai người nhận giải Nobel Hoá học năm 2020.",
+      "replace": "Điểm đột phá năm 2012 của nhóm nghiên cứu do Jennifer Doudna và Emmanuelle Charpentier dẫn dắt (Jinek và cộng sự) là chứng minh Cas9 có thể được lập trình bằng một phân tử RNA thiết kế sẵn: đổi đoạn trình tự dẫn đường là đổi vị trí cắt. Tuy vậy, RNA khớp thôi chưa đủ. Cas9 chỉ cắt khi ngay cạnh vị trí đích có một đoạn DNA rất ngắn gọi là PAM; với Cas9 của vi khuẩn *Streptococcus pyogenes*, PAM có dạng NGG và cả hai chữ G đều cần thiết. Vì vậy, về nguyên tắc có thể nhắm gần như mọi trình tự DNA có PAM nằm ngay bên cạnh. Năm 2020, Charpentier và Doudna nhận giải Nobel Hoá học \"vì đã phát triển một phương pháp chỉnh sửa hệ gene\".",
+      "why": "C-3 (contradicted, S2): \"chỉ cần tổng hợp RNA 20 nucleotide là cắt được chỗ muốn\" bỏ điều kiện PAM — không có PAM thì Cas9 không cắt dù RNA khớp. C-4: bài 2012 là của nhóm Jinek, Doudna và Charpentier chủ trì. C-5: gắn nguồn Nobel.",
+      "evidence": "Jinek và cộng sự 2012, Science 337:816–821, doi 10.1126/science.1225829 (Crossref resolve 25/09; toàn văn PMC6286148, mở 25/09): \"Site-specific cleavage occurs at locations determined by both base-pairing complementarity between the crRNA and the target protospacer DNA and a short motif (referred to as the protospacer adjacent motif, or PAM)\"; \"In the S. pyogenes Type II system, the PAM conforms to an NGG consensus sequence\"; \"both G nucleotides of the PAM were required for efficient Cas9-catalyzed DNA cleavage\"; \"A PAM is required to license target DNA cleavage\"; \"could in principle enable targeting of any DNA sequence of interest with few constraints beyond the presence of a GG dinucleotide adjacent to the targeted sequence\"; \"Cas9 can be programmed with a single chimeric RNA\"; tác giả (Crossref): Jinek, Chylinski, Fonfara, Hauer, Doudna, Charpentier. NobelPrize.org, Press release: The Nobel Prize in Chemistry 2020 (mở 25/09): giải Hoá học 2020 cho Emmanuelle Charpentier và Jennifer A. Doudna \"for the development of a method for genome editing\"."
+    },
+    {
+      "claimId": "C-6",
+      "severity": "S3",
+      "find": "- **Nối đầu không tương đồng (NHEJ)** — nhanh nhưng hay sai sót, thường tạo ra [[đột biến]] làm hỏng gene. Dùng khi mục tiêu là *tắt* một gene.\n- **Sửa chữa theo khuôn (HDR)** — chính xác hơn, cho phép *chèn* một trình tự mới nếu cung cấp khuôn mẫu.",
+      "replace": "- **Nối đầu không tương đồng (NHEJ)** — dễ sai sót, thường để lại [[đột biến]] chèn hoặc mất nucleotide (indel) ở chỗ nối, có thể làm hỏng gene. Dùng khi mục tiêu là *tắt* một gene.\n- **Sửa chữa theo khuôn (HDR)** — chính xác hơn, cho phép tạo một thay đổi xác định, ví dụ *chèn* một trình tự mới, nếu cung cấp khuôn mẫu. Nhưng HDR xảy ra với tần suất thấp hơn và thất thường hơn NHEJ, và nhìn chung chỉ hoạt động ở tế bào đang phân chia.",
+      "why": "C-6 (unsupported): gắn nguồn peer-review cho hai con đường sửa chữa. \"Nhanh\" không có trong nguồn — bỏ. Thêm vế đối trọng của HDR mà nguồn nêu cùng chỗ (tần suất thấp, chỉ ở tế bào phân chia) để không để lại ấn tượng HDR là lựa chọn mặc định.",
+      "evidence": "Ran và cộng sự 2013, Nature Protocols 8:2281–2308, doi 10.1038/nprot.2013.143 (toàn văn PMC3969860, mở 25/09): \"the error-prone NHEJ or the high-fidelity HDR pathway\"; \"In the absence of a repair template, DSBs are re-ligated through the NHEJ process, which leaves scars in the form of insertion/deletion (indel) mutations\"; \"NHEJ can be harnessed to mediate gene knockouts\"; \"a repair template ... can be supplied to leverage the HDR pathway, which allows high fidelity and precise editing\"; \"HDR typically occurs at lower and substantially more variable frequencies than NHEJ\"; \"Unlike NHEJ, HDR is generally active only in dividing cells\"."
+    },
+    {
+      "claimId": "C-8",
+      "severity": "S3",
+      "find": "MHRA của Anh phê duyệt tháng 11/2023 cho cả bệnh hồng cầu hình liềm lẫn beta-thalassemia. FDA của Mỹ phê duyệt ngày 08/12/2023, nhưng ban đầu chỉ cho hồng cầu hình liềm; chỉ định beta-thalassemia được bổ sung ngày 16/01/2024.",
+      "replace": "MHRA của Anh phê duyệt tháng 11/2023 cho bệnh nhân từ 12 tuổi mắc bệnh hồng cầu hình liềm hoặc beta-thalassemia phụ thuộc truyền máu. FDA của Mỹ phê duyệt ngày 08/12/2023, nhưng ban đầu chỉ cho bệnh hồng cầu hình liềm ở bệnh nhân từ 12 tuổi có các cơn tắc mạch tái diễn; chỉ định beta-thalassemia phụ thuộc truyền máu được FDA phê duyệt ngày 16/01/2024.",
+      "why": "C-8, C-9: \"beta-thalassemia\" trơn rộng hơn chỉ định (thalassemia PHỤ THUỘC TRUYỀN MÁU), thiếu điều kiện tuổi và cơn tắc mạch. C-10: gắn tài liệu FDA cho mốc 16/01/2024.",
+      "evidence": "MHRA (s2, mở 25/09): 16/11/2023, \"for patients aged 12 and over\", \"sickle-cell disease and transfusion-dependent β-thalassemia\". FDA, thông cáo 08/12/2023 (s3, mở 25/09): \"approved for the treatment of sickle cell disease in patients 12 years of age and older with recurrent vaso-occlusive crises\". FDA, trang sản phẩm CASGEVY (https://www.fda.gov/vaccines-blood-biologics/casgevy, mở 25/09): \"January 16, 2024 Approval Letter - CASGEVY (STN 125785)\"; STN 125785 \"Indicated for the treatment of patients aged 12 years and older with sickle cell disease (SCD) with recurrent vaso occlusive crises (VOCs) and transfusion-dependent ß-thalassemia (TDT)\"."
+    },
+    {
+      "claimId": "C-11",
+      "severity": "S3",
+      "find": "Năm 2018, He Jiankui công bố đã chỉnh sửa phôi người và tạo ra hai em bé — hành động bị cộng đồng khoa học lên án rộng rãi và dẫn tới án tù.",
+      "replace": "Cuối năm 2018, nhà nghiên cứu Trung Quốc He Jiankui tuyên bố đã góp phần tạo ra những em bé đầu tiên có bộ gene được chỉnh sửa: một cặp song sinh mà gene CCR5 đã bị chỉnh sửa khi còn là phôi, nhằm ngăn HIV truyền từ người cha nhiễm bệnh; một thai kỳ thứ ba khi ấy đang tiến triển, và em bé thứ ba ra đời năm 2019. Ông bị lên án rộng rãi trong và ngoài Trung Quốc, và tháng 12/2019 bị kết tội hành nghề y trái phép, lĩnh 3 năm tù.",
+      "why": "C-11: \"hai em bé\" chỉ đúng với công bố 2018 — thí nghiệm dẫn tới ba trẻ; án tù cần mốc và tội danh. Gắn hai nguồn peer-review thay cho báo chí.",
+      "evidence": "Alonso & Savulescu 2021, Bioethics 35:563–573, doi 10.1111/bioe.12878 (toàn văn PMC8524470, mở 25/09): \"in the last months of 2018 ... He Jiankui shocked the world when he claimed to have helped in the birth of the first genetically modified human babies, Lulu and Nana, with a third pregnancy underway\"; \"He Jiankui's experiments resulted in the birth of a third gene-edited baby during 2019\". Zou, Li & Tao 2025, Journal of Law and the Biosciences 12, doi 10.1093/jlb/lsaf007 (toàn văn PMC12069028, mở 25/09): \"He genetically modified the CCR5 gene to prevent the inheritance of HIV from an infected father to his children\"; \"He was widely condemned domestically and globally\"; \"In December 2019, He was ultimately convicted of illegal medical practices and sentenced to prison for 3 years\"."
+    },
+    {
+      "claimId": "C-15",
+      "severity": "S4",
+      "find": "Khác biệt then chốt: chỉnh sửa **tế bào soma** chỉ ảnh hưởng bệnh nhân, còn chỉnh sửa **dòng mầm** truyền cho các thế hệ sau.",
+      "replace": "Khác biệt then chốt: chỉnh sửa **tế bào soma**, như tế bào gốc máu của bệnh nhân trong liệu pháp Casgevy, chỉ nhắm vào cơ thể người được điều trị; còn chỉnh sửa **dòng mầm** (phôi, giao tử hoặc tế bào tiền thân của chúng), nếu được dùng để mang thai, sẽ sinh ra một đứa trẻ mang bộ gene đã chỉnh sửa, nên thay đổi ấy có thể di truyền cho các thế hệ sau.",
+      "why": "Gắn định nghĩa theo nguồn: điểm phân biệt là chỉnh sửa dòng mầm dùng để mang thai (\"heritable\"), không phải mọi chỉnh sửa dòng mầm — chính khảo sát Baylis tách hai trường hợp này, và đoạn ngay sau dùng sự phân biệt ấy.",
+      "evidence": "Baylis và cộng sự 2020, The CRISPR Journal 3:365–377, doi 10.1089/crispr.2020.0082 (tóm tắt Europe PMC, Crossref resolve, mở 25/09): germline = \"early-stage human embryos, gametes, or their precursor cells\"; heritable = dùng phôi đã chỉnh sửa \"to initiate a pregnancy\". Zou, Li & Tao 2025, Journal of Law and the Biosciences 12, doi 10.1093/jlb/lsaf007 (toàn văn PMC12069028, mở 25/09): \"Heritable genome editing involves the transfer of genetically modified embryos to a uterus to initiate a pregnancy that would result in the birth of a child with a modified genome\". FDA, thông cáo 08/12/2023 (s3, mở 25/09): \"Patients' hematopoietic (blood) stem cells are modified by genome editing\"."
+    },
+    {
+      "claimId": "C-12",
+      "severity": "S3",
+      "find": "Hiện nay việc chỉnh sửa dòng mầm ở người bị cấm hoặc hạn chế nghiêm ngặt ở hầu hết các nước.",
+      "replace": "Một khảo sát chính sách ở 106 quốc gia, công bố năm 2020, cho thấy 75 nước cấm dùng phôi đã chỉnh sửa gene để mang thai (5 nước trong số đó có ngoại lệ) và không nước nào cho phép rõ ràng việc chỉnh sửa gene di truyền được ở người. Với nghiên cứu chỉnh sửa dòng mầm trong phòng thí nghiệm, không cấy phôi để mang thai, phần lớn các nước chưa có quy định riêng; trong số nước có quy định, 23 nước cấm và 11 nước cho phép.",
+      "why": "C-12 (unsupported, ràng buộc thời gian): thay bằng số liệu khảo sát có mốc năm. Câu cũ gộp hai chuyện mà nguồn tách riêng: chỉnh sửa di truyền được (để mang thai) gần như bị cấm khắp nơi, còn nghiên cứu dòng mầm trong phòng thí nghiệm thì nhiều nước cho phép hoặc chưa quy định.",
+      "evidence": "Baylis và cộng sự 2020, The CRISPR Journal 3:365–377, doi 10.1089/crispr.2020.0082 (tóm tắt Europe PMC, Crossref resolve, mở 25/09): \"This policy survey of 106 countries\"; \"of those that do, 23 prohibit this research and 11 explicitly permit it\"; \"Seventy-five of the 96 countries prohibit the use of genetically modified in vitro embryos to initiate a pregnancy (heritable genome editing). Five of these 75 countries provide exceptions to their prohibitions. No country explicitly permits heritable human genome editing\"."
+    }
+  ],
+  "enEdits": [
+    {
+      "claimId": "C-1",
+      "severity": "S4",
+      "find": "It is an adaptive immune system of bacteria: when attacked by a virus, bacteria store a segment of the attacker's [[DNA]] in their genome to recognize it the next time.",
+      "replace": "It is an adaptive immune system of bacteria and archaea: after a viral attack, bacteria can insert short pieces of [[DNA]] taken from the virus's genome into the CRISPR region of their own genome, and these pieces determine which viruses they can resist the next time.",
+      "why": "Khớp bản vi (C-1).",
+      "evidence": "Jinek và cộng sự 2012, Science 337:816–821, doi 10.1126/science.1225829 (Crossref resolve 25/09; toàn văn PMC6286148, mở 25/09); Barrangou và cộng sự 2007, Science 315:1709–1712, doi 10.1126/science.1138140 (tóm tắt Europe PMC, Crossref resolve, mở 25/09)"
+    },
+    {
+      "claimId": "C-3",
+      "severity": "S2",
+      "find": "The 2012 breakthrough by Jennifer Doudna and Emmanuelle Charpentier was demonstrating that the guide RNA could be reprogrammed at will. To cut anywhere, one only needs to synthesize a corresponding 20-nucleotide RNA segment. The two received the Nobel Prize in Chemistry in 2020.",
+      "replace": "The 2012 breakthrough by the team led by Jennifer Doudna and Emmanuelle Charpentier (Jinek et al.) was demonstrating that Cas9 can be programmed with a single designed RNA molecule: change the guide sequence and you change where it cuts. A matching RNA is not enough on its own, though. Cas9 only cuts if a very short DNA sequence called a PAM sits right next to the target; for the Cas9 of the bacterium *Streptococcus pyogenes*, the PAM has the form NGG, and both Gs are needed. So in principle almost any DNA sequence with a PAM right beside it can be targeted. In 2020, Charpentier and Doudna received the Nobel Prize in Chemistry \"for the development of a method for genome editing\".",
+      "why": "Lỗi ở cả hai bản (C-3 S2, C-4, C-5).",
+      "evidence": "Jinek và cộng sự 2012, Science 337:816–821, doi 10.1126/science.1225829 (Crossref resolve 25/09; toàn văn PMC6286148, mở 25/09); NobelPrize.org, Press release: The Nobel Prize in Chemistry 2020 (mở 25/09)"
+    },
+    {
+      "claimId": "C-6",
+      "severity": "S3",
+      "find": "- **Non-homologous end joining (NHEJ)** — fast but error-prone, often creating [[dot-bien|mutations]] that disrupt the [[gen|gene]]. Used when the goal is to *turn off* a gene.\n- **Homology-directed repair (HDR)** — more precise, allowing the *insertion* of a new sequence if a template is provided.",
+      "replace": "- **Non-homologous end joining (NHEJ)** — error-prone, often leaving insertion or deletion (indel) [[dot-bien|mutations]] at the join that can disrupt the [[gen|gene]]. Used when the goal is to *turn off* a gene.\n- **Homology-directed repair (HDR)** — more precise, allowing a defined change, such as the *insertion* of a new sequence, if a template is provided. But HDR happens at lower and more variable rates than NHEJ, and is generally active only in dividing cells.",
+      "why": "Lỗi ở cả hai bản (C-6).",
+      "evidence": "Ran và cộng sự 2013, Nature Protocols 8:2281–2308, doi 10.1038/nprot.2013.143 (toàn văn PMC3969860, mở 25/09)"
+    },
+    {
+      "claimId": "C-8",
+      "severity": "S3",
+      "find": "The UK's MHRA approved it in November 2023 for both sickle cell disease and beta-thalassemia. The US FDA approved it on December 8, 2023, but initially only for sickle cell disease; the indication for beta-thalassemia was added on January 16, 2024.",
+      "replace": "The UK's MHRA approved it in November 2023 for patients aged 12 and over with sickle cell disease or transfusion-dependent beta-thalassemia. The US FDA approved it on December 8, 2023, but initially only for sickle cell disease in patients aged 12 and over with recurrent vaso-occlusive crises; the FDA approved it for transfusion-dependent beta-thalassemia on January 16, 2024.",
+      "why": "Lỗi ở cả hai bản (C-8, C-9, C-10).",
+      "evidence": "MHRA (s2, mở 25/09); FDA, thông cáo 08/12/2023 (s3, mở 25/09); FDA, trang sản phẩm CASGEVY (https://www.fda.gov/vaccines-blood-biologics/casgevy, mở 25/09)"
+    },
+    {
+      "claimId": "C-11",
+      "severity": "S3",
+      "find": "In 2018, He Jiankui announced he had edited human embryos and created two babies—an act widely condemned by the scientific community that resulted in a prison sentence.",
+      "replace": "In late 2018, the Chinese researcher He Jiankui claimed to have helped bring about the first babies with edited genomes: twins whose CCR5 gene had been edited at the embryo stage, with the aim of preventing HIV transmission from their infected father. A third pregnancy was then under way, and a third baby was born in 2019. He was widely condemned in China and abroad, and in December 2019 he was convicted of illegal medical practice and sentenced to 3 years in prison.",
+      "why": "Lỗi ở cả hai bản (C-11).",
+      "evidence": "Alonso & Savulescu 2021, Bioethics 35:563–573, doi 10.1111/bioe.12878 (toàn văn PMC8524470, mở 25/09); Zou, Li & Tao 2025, Journal of Law and the Biosciences 12, doi 10.1093/jlb/lsaf007 (toàn văn PMC12069028, mở 25/09)"
+    },
+    {
+      "claimId": "C-15",
+      "severity": "S4",
+      "find": "The key distinction: editing **somatic cells** affects only the patient, whereas editing the **germline** is passed down to future generations.",
+      "replace": "The key distinction: editing **somatic cells**, such as the patient's blood stem cells in the Casgevy therapy, targets only the body of the person being treated, whereas editing the **germline** (embryos, gametes or their precursor cells), if used to start a pregnancy, produces a child with an edited genome, so the change can be passed on to future generations.",
+      "why": "Khớp bản vi (C-15).",
+      "evidence": "Baylis và cộng sự 2020, The CRISPR Journal 3:365–377, doi 10.1089/crispr.2020.0082 (tóm tắt Europe PMC, Crossref resolve, mở 25/09); Zou, Li & Tao 2025, Journal of Law and the Biosciences 12, doi 10.1093/jlb/lsaf007 (toàn văn PMC12069028, mở 25/09); FDA, thông cáo 08/12/2023 (s3, mở 25/09)"
+    },
+    {
+      "claimId": "C-12",
+      "severity": "S3",
+      "find": "Currently, human germline editing is banned or strictly restricted in most countries.",
+      "replace": "A policy survey of 106 countries published in 2020 found that 75 countries prohibit using genetically modified embryos to start a pregnancy (five of them with exceptions), and that no country explicitly permits heritable human genome editing. For laboratory research on germline editing, with no embryo transferred for pregnancy, most countries had no specific policy; of those that did, 23 prohibited it and 11 permitted it.",
+      "why": "Lỗi ở cả hai bản (C-12).",
+      "evidence": "Baylis và cộng sự 2020, The CRISPR Journal 3:365–377, doi 10.1089/crispr.2020.0082 (tóm tắt Europe PMC, Crossref resolve, mở 25/09)"
+    }
+  ],
+  "summaryEdits": [
+    {
+      "claimId": "C-14",
+      "severity": "S3",
+      "find": "công cụ chỉnh sửa gene chính xác, rẻ và nhanh — đã trở thành liệu pháp được phê duyệt.",
+      "replace": "công cụ chỉnh sửa gene lập trình được, đơn giản và linh hoạt — và đã trở thành nền tảng của một liệu pháp được phê duyệt.",
+      "why": "\"Rẻ và nhanh\" không có trong nguồn nào đã mở; dùng đúng tính từ của bài gốc 2012 (\"simple and versatile\", \"programmable\"). \"Đã trở thành liệu pháp\" → CRISPR là công cụ dùng để tạo liệu pháp (Casgevy), không phải bản thân liệu pháp.",
+      "evidence": "Jinek và cộng sự 2012, Science 337:816–821, doi 10.1126/science.1225829 (Crossref resolve 25/09; toàn văn PMC6286148, mở 25/09): \"a simple and versatile RNA-directed system\"; \"The system is efficient, versatile and programmable\". FDA, thông cáo 08/12/2023 (s3, mở 25/09): Casgevy \"is the first FDA-approved therapy utilizing CRISPR/Cas9\"."
+    }
+  ],
+  "summaryEnEdits": [
+    {
+      "claimId": "C-14",
+      "severity": "S3",
+      "find": "a precise, cheap and fast gene-editing tool - now an approved therapy.",
+      "replace": "a programmable, simple and versatile gene-editing tool - now the basis of an approved therapy.",
+      "why": "Khớp bản vi (C-14).",
+      "evidence": "Jinek và cộng sự 2012, Science 337:816–821, doi 10.1126/science.1225829 (Crossref resolve 25/09; toàn văn PMC6286148, mở 25/09); FDA, thông cáo 08/12/2023 (s3, mở 25/09)"
+    }
+  ],
+  "seoDescriptionEdits": [
+    {
+      "claimId": "C-14",
+      "severity": "S3",
+      "find": "chính xác, rẻ và nhanh — đã trở thành...",
+      "replace": "lập trình được, đơn giản và linh hoạt...",
+      "why": "seoDescription chép summary nên mang cùng claim \"rẻ và nhanh\".",
+      "evidence": "Jinek và cộng sự 2012, Science 337:816–821, doi 10.1126/science.1225829 (Crossref resolve 25/09; toàn văn PMC6286148, mở 25/09)"
+    }
+  ],
+  "sourceFixes": [
+    {
+      "title": "A Programmable Dual-RNA-Guided DNA Endonuclease in Adaptive Bacterial Immunity",
+      "doi": "10.1126/science.1225829",
+      "url": "https://doi.org/10.1126/science.1225829",
+      "why": "Nguồn thiếu cả url lẫn doi (lỗ hổng 'nguồn không định danh' ghi ở corrections.md 13/09). Crossref 25/09: 10.1126/science.1225829 → \"A Programmable Dual-RNA–Guided DNA Endonuclease in Adaptive Bacterial Immunity\", Science 337:816–821, 17/08/2012, Jinek, Chylinski, Fonfara, Hauer, Doudna, Charpentier."
+    }
+  ],
+  "retierSources": [
+    {
+      "title": "A Programmable Dual-RNA-Guided DNA Endonuclease in Adaptive Bacterial Immunity",
+      "tier": 1,
+      "why": "Bài nghiên cứu gốc có bình duyệt (Science 2012) — bậc 1 theo hệ thống nguồn, không phải bậc 2."
+    }
+  ],
+  "addSources": [
+    {
+      "title": "CRISPR provides acquired resistance against viruses in prokaryotes",
+      "url": "https://doi.org/10.1126/science.1138140",
+      "doi": "10.1126/science.1138140",
+      "publisher": "Science",
+      "year": 2007,
+      "tier": 1,
+      "covers": "Vi khuẩn chèn spacer lấy từ bộ gene phage sau khi bị tấn công; spacer quyết định tính đặc hiệu kháng virus"
+    },
+    {
+      "title": "Genome engineering using the CRISPR-Cas9 system",
+      "url": "https://doi.org/10.1038/nprot.2013.143",
+      "doi": "10.1038/nprot.2013.143",
+      "publisher": "Nature Protocols",
+      "year": 2013,
+      "tier": 1,
+      "covers": "NHEJ dễ sai, để lại indel, dùng để knockout; HDR chính xác khi có khuôn, tần suất thấp hơn, chủ yếu ở tế bào phân chia"
+    },
+    {
+      "title": "Press release: The Nobel Prize in Chemistry 2020",
+      "url": "https://www.nobelprize.org/prizes/chemistry/2020/press-release/",
+      "publisher": "The Royal Swedish Academy of Sciences (NobelPrize.org)",
+      "year": 2020,
+      "tier": 2,
+      "covers": "Giải Nobel Hoá học 2020 cho Emmanuelle Charpentier và Jennifer A. Doudna \"for the development of a method for genome editing\""
+    },
+    {
+      "title": "CASGEVY",
+      "url": "https://www.fda.gov/vaccines-blood-biologics/casgevy",
+      "publisher": "U.S. Food and Drug Administration",
+      "tier": 2,
+      "covers": "Thư phê duyệt 16/01/2024 (STN 125785) — chỉ định thalassemia phụ thuộc truyền máu từ 12 tuổi"
+    },
+    {
+      "title": "Human Germline and Heritable Genome Editing: The Global Policy Landscape",
+      "url": "https://doi.org/10.1089/crispr.2020.0082",
+      "doi": "10.1089/crispr.2020.0082",
+      "publisher": "The CRISPR Journal",
+      "year": 2020,
+      "tier": 1,
+      "covers": "Khảo sát 106 nước: 75 cấm chỉnh sửa di truyền được (5 có ngoại lệ), không nước nào cho phép rõ ràng; nghiên cứu dòng mầm: 23 cấm, 11 cho phép"
+    },
+    {
+      "title": "He Jiankui´s gene-editing experiment and the non-identity problem",
+      "url": "https://doi.org/10.1111/bioe.12878",
+      "doi": "10.1111/bioe.12878",
+      "publisher": "Bioethics",
+      "year": 2021,
+      "tier": 1,
+      "covers": "Công bố cuối 2018 cặp song sinh Lulu và Nana, thai kỳ thứ ba; em bé thứ ba ra đời năm 2019"
+    },
+    {
+      "title": "Regulatory framework of human germline and heritable genome editing in China: a comparison with the United States and the United Kingdom",
+      "url": "https://doi.org/10.1093/jlb/lsaf007",
+      "doi": "10.1093/jlb/lsaf007",
+      "publisher": "Journal of Law and the Biosciences",
+      "year": 2025,
+      "tier": 1,
+      "covers": "He Jiankui chỉnh sửa gene CCR5 nhằm ngăn HIV truyền từ cha; bị lên án trong và ngoài nước; 12/2019 bị kết tội hành nghề y trái phép, 3 năm tù"
+    }
+  ],
+  "corrections": [
+    "2026-09-25 · `crispr-cay-keo-phan-tu-den-tu-vi-khuan` (vi + en) — \"muốn cắt ở đâu chỉ cần tổng hợp RNA 20 nucleotide\" → Cas9 chỉ cắt khi cạnh đích có PAM (NGG với SpCas9); đột phá 2012 quy về nhóm Jinek do Doudna và Charpentier dẫn dắt; NHEJ bỏ \"nhanh\", HDR thêm tần suất thấp, chỉ ở tế bào phân chia; Casgevy thêm điều kiện chỉ định (≥12 tuổi, thalassemia phụ thuộc truyền máu, cơn tắc mạch tái diễn); He Jiankui: ba trẻ, án 3 năm tù tháng 12/2019; \"cấm hoặc hạn chế ở hầu hết các nước\" → khảo sát 106 nước năm 2020 (75 cấm chỉnh sửa di truyền được, không nước nào cho phép); summary bỏ \"rẻ và nhanh\"; nguồn Jinek 2012 bổ sung doi 10.1126/science.1225829. Căn cứ: Jinek 2012, Barrangou 2007, Ran 2013, NobelPrize.org, MHRA, FDA, Baylis 2020, Alonso & Savulescu 2021, Zou 2025."
+  ]
+}

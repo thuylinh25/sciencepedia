@@ -1,0 +1,129 @@
+# Đính chính bản vi — science-editor, lượt 2026-09-25
+# Verdict phán trên TOÀN BỘ bài ở trạng thái SAU khi áp kế hoạch trong
+# van-dong-thay-doi-tim-va-mach-mau-nhu-the-nao.json (vi + en khớp claim).
+slug: van-dong-thay-doi-tim-va-mach-mau-nhu-the-nao
+checkedAt: 2026-09-25
+checkedBy: science-editor
+priorFactCheck: PASSED
+verdict: pass
+summary: >
+  Bài mang dấu PASSED nhưng bản vi còn hai lỗi S2 và một S1 tái phát: số 3,5 mmHg
+  gán sai cho nhóm huyết áp bình thường (thật ra là hiệu ứng gộp; nhóm này
+  −0,75 mmHg, khoảng tin cậy chứa 0); phép so "sánh với một thuốc hạ áp đơn trị"
+  đã bị bác 13/09 quay lại ngay trong mục an toàn; và hai khoảng số không nguồn
+  (nhịp tim nghỉ 40–50/60–80; "300 lên 400 phút"). Ngoài ra ba phát hiện S3 từ
+  lượt 12/09 chưa từng được áp ở cả hai bản: VO₂max "mạnh hơn hút thuốc" (E4),
+  tóm tắt "làm dày thành tâm thất" (E5), và mục an toàn dẫn "các khuyến cáo điều
+  trị" / "bật lại, đột quỵ" không nguồn. Lượt này mở lại cả 5 nguồn cũ, thêm 2
+  nguồn bậc 1 (Green 2017, Flanagan 2023) và 5 trang NHLBI bậc 2, sửa 12 chỗ ở
+  vi và 11 chỗ tương ứng ở en (C7 en đã đúng từ a1cccd5), cùng summary/summaryEn/
+  seoDescription. Đọc lại toàn bài sau sửa: không còn S1–S3; mọi claim có
+  evidence mở trong lượt; 12 nguồn bậc 1–2. Giữ dấu duyệt.
+claims:
+  - id: C1
+    claim: "Tim là một cơ và thích nghi với tải trọng lặp lại."
+    verdict: verified
+    severity: none
+    evidence: "Lavie et al. 2015 (PMC4493772): 'Participation in a chronic aerobic ET program produces a host of positive morphologic and physiologic CV adaptations'."
+    note: "Câu dẫn nhập, không định lượng."
+  - id: C2
+    claim: "Tập bền bỉ đều đặn: buồng thất trái thường giãn, khối cơ tăng; thành có thể dày thêm nhưng kiểu hay gặp là buồng lớn với độ dày thành gần bình thường; mức độ khác nhau giữa từng người; thể tích tống máu tăng, rõ nhất khi gắng sức."
+    verdict: verified
+    severity: none
+    evidence: "Lavie 2015: 'LV dilation ... and hypertrophy (i.e., increased wall thickness)'; 'influenced by ... age, sex, genetics, prior training status, mode of ET and ET volume'; SV 'augmented during aerobic exertion by ... increase in end diastolic volume'. Flanagan et al. 2023 (PMC10583359): 'Eccentric hypertrophy is characterised by increased LV mass and end-diastolic volume (LVEDV) and normal wall thickness'; 'Endurance athletes often present with physiological eccentric hypertrophy'."
+    note: "Đã sửa (S3): 'dày lên vừa phải' và 'tăng đáng kể' không có trong nguồn."
+  - id: C3
+    claim: "Cung lượng tim lúc nghỉ ~5 L/phút ở hầu hết mọi người; tim bơm nhiều hơn mỗi nhịp thì cần ít nhịp hơn — một lý do nhịp nghỉ của người tập bền bỉ thường chậm hơn."
+    verdict: verified
+    severity: none
+    evidence: "Lavie 2015: 'At rest, CO is homogenous at ~5 L/min'; 'CO is the product of stroke volume (SV) and heart rate (HR)'; bảng lợi ích: 'Reduced resting pulse'. Flanagan 2023 nhắc 'bradycardia in the athlete'."
+    note: "Đã sửa (S2): gỡ hai khoảng 40–50 và 60–80 lần/phút — không nguồn nào trong bảng nêu (đã đọc toàn văn Lavie). 'Đó là lý do' hạ thành 'một lý do'."
+  - id: C4
+    claim: "Phân biệt với phì đại bệnh lý: tăng huyết áp lâu năm làm cơ tim dày và cứng, khó giãn để nạp máu; người tập bền bỉ có chức năng tâm trương bình thường hoặc tốt hơn, tái cấu trúc đồng tâm hiếm gặp (gặp thì khám thêm), cơ tim tăng do tập có xu hướng giảm khi ngừng tập."
+    verdict: verified
+    severity: none
+    evidence: "NHLBI Heart Failure — Causes: 'High blood pressure and other conditions that make your heart work harder ... Over time, your heart muscle thickens to adapt, which makes it stiffer'; 'too stiff to fully relax between heartbeats'. Flanagan 2023: 'normal or superior diastolic function compared with the sedentary population'; 'concentric remodelling in any athlete is rare, further investigation is warranted'; 'suggestive of a reversibility of any hypertrophy that is induced by athletic training'."
+    note: "Đã sửa (S3): ba khác biệt của câu cũ không có nguồn trong bảng. Giữ [[tăng huyết áp]]."
+  - id: C5
+    claim: "Nội mô tiết nitric oxide làm giãn mạch; lực trượt do dòng máu nhanh là một trong những tín hiệu kích thích nội mô tạo NO."
+    verdict: verified
+    severity: none
+    evidence: "Green et al. 2017 (Physiol Rev, PMC5539408): 'Exercise modifies blood flow, luminal shear stress, arterial pressure, and tangential wall stress'; 'shear stress-induced NO production'. Lavie 2015: 'Enhanced endothelium-dependent vasodilation through increased production of nitric oxide (NO)'."
+    note: "Đã sửa (S3): 'kích thích chính' → 'một trong những tín hiệu' (nguồn nêu bốn tín hiệu huyết động)."
+  - id: C6
+    claim: "Tập luyện đều đặn cải thiện chức năng nội mô, được xem là một trong những cơ chế giải thích vì sao vận động hạ huyết áp; Cornelissen & Smart 2013 (93 thử nghiệm): ở người đã tăng huyết áp, tập bền bỉ hạ tâm thu 8,3 mmHg (6,0–10,7), tâm trương 5,2 mmHg."
+    verdict: verified
+    severity: none
+    evidence: "Cornelissen & Smart 2013 (tóm tắt Europe PMC, PMID 23525435): 'We included 93 trials'; '26 study groups of hypertensive subjects (-8.3 [-10.7 to -6.0]/-5.2 [-6.8 to -3.4] mm Hg)'. Green 2017: thích nghi mạch máu có hệ quả cho 'the control of blood pressure in resistance vessels'. Lavie 2015 bảng: 'Improved endothelial function', 'Reduced blood pressure'."
+    note: "Mức 'được xem là một trong những cơ chế' đúng với mức nguồn."
+  - id: C7
+    claim: "Ở người huyết áp bình thường mức giảm nhỏ hơn hẳn — khoảng 0,75 mmHg tâm thu, khoảng tin cậy chứa 0."
+    verdict: verified
+    severity: none
+    evidence: "Cornelissen & Smart 2013: '29 groups of subjects with normal BP levels (-0.75 [-2.2 to +0.69]/-1.1 [-2.2 to -0.068])'; −3,5 mmHg [−4,6; −2,3] là hiệu ứng gộp của tập bền bỉ."
+    note: "Đã sửa (S2): '3,5 mmHg' gán sai phân nhóm — lỗi do chính lượt đính chính 13/09 đưa vào. Bản en đã đúng."
+  - id: C8
+    claim: "VO₂max đo thể lực tim phổi; thể lực thấp gắn với nguy cơ tử vong cao hơn; Mandsager 2018 (>122.000 người): HR ~5 (kém nhất so với đỉnh) cạnh HR ~1,4 (hút thuốc, đái tháo đường), hai phép so khác loại; kết luận 'tương đương hoặc lớn hơn'; nghiên cứu quan sát."
+    verdict: verified
+    severity: none
+    evidence: "Mandsager et al. 2018 (tóm tắt Europe PMC, PMID 30646252): '122 007 patients'; 'low vs elite: adjusted hazard ratio [HR], 5.04'; 'smoking: adjusted HR, 1.41'; 'diabetes: adjusted HR, 1.40'; 'comparable to or greater than traditional clinical risk factors'; 'retrospective cohort study'. Lavie 2015: CRF đánh giá qua 'peak VO2'."
+    note: "Đã sửa (S3, E4 12/09 chưa từng áp ở cả vi lẫn en): bỏ 'mạnh hơn cả hút thuốc, tăng huyết áp hay đái tháo đường' — so lệch loại, và nguồn không so với tăng huyết áp."
+  - id: C9
+    claim: "Wen 2011 (>416.000 người, Đài Loan): ~90 phút/tuần gắn với tử vong thấp hơn 14% so với không vận động; mỗi 15 phút/ngày thêm gắn với giảm thêm ~4%. WHO: một ít hơn không, nhiều hơn tốt hơn."
+    verdict: verified
+    severity: none
+    evidence: "Wen et al. 2011 (tóm tắt Europe PMC, PMID 21846575): '416,175 individuals'; '92 min per week ... or 15 min a day ... had a 14% reduced risk of all-cause mortality (0·86, 0·81-0·91)'; 'Every additional 15 min of daily exercise ... further reduced all-cause mortality by 4%'. WHO 2020 (Bull et al., PMC7719906): 'some physical activity is better than none, that more physical activity is better'."
+    note: "Đã sửa (S2): gỡ '300 lên 400 phút' (không nguồn); đổi 'đã giảm nguy cơ' (nhân quả) sang dạng tương quan của đoàn hệ quan sát."
+  - id: C10
+    claim: "Hướng dẫn WHO 2020: 150–300 phút cường độ vừa hoặc 75–150 phút cường độ cao mỗi tuần; tập sức mạnh các nhóm cơ lớn từ 2 ngày/tuần."
+    verdict: verified
+    severity: none
+    evidence: "WHO 2020 (Bull et al., PMC7719906): 'All adults should undertake 150-300 min of moderate-intensity, or 75-150 min of vigorous-intensity physical activity'; 'muscle-strengthening activities at moderate or greater intensity that involve all major muscle groups on 2 or more days a week'."
+    note: "Thêm mốc năm 2020 (S4, quy tắc 5)."
+  - id: C11
+    claim: "Hạn chế thời gian ngồi; thay bằng vận động mọi cường độ, kể cả nhẹ, đều có lợi."
+    verdict: verified
+    severity: none
+    evidence: "WHO 2020: 'Adults should limit the amount of time spent being sedentary. Replacing sedentary time with physical activity of any intensity (including light intensity) provides health benefits'."
+    note: "Đã sửa (S3): 'ngắt quãng bằng vài phút đứng dậy' là chi tiết WHO không nêu (WHO nói bằng chứng chưa đủ để định lượng ngưỡng)."
+  - id: C12
+    claim: "Đừng tự bỏ thuốc; NHLBI khuyên tiếp tục kế hoạch điều trị và duy trì lối sống lành mạnh trong khi dùng thuốc; huyết áp xuống thì báo bác sĩ, đổi liều/đổi thuốc do bác sĩ quyết định."
+    verdict: verified
+    severity: none
+    evidence: "NHLBI High Blood Pressure — Treatment: 'Keep up your healthy lifestyle changes while taking these medicines. The combination of medicines and heart-healthy lifestyle changes can help control and lower your high blood pressure'; 'Your provider may change the dose or give you a new medicine'. Living With: 'it is important that you continue your treatment plan'; 'Your healthcare provider may need to change or add medicines'."
+    note: "Đã sửa (S1 tái phát): bỏ phép so 'sánh với một thuốc hạ áp đơn trị'; cắt 'bật lại, tăng nguy cơ đột quỵ' và 'các khuyến cáo điều trị' (không mở được nguồn trong lượt) — lời khuyên an toàn nay gắn vào hướng dẫn chính thức đã mở."
+  - id: C13
+    claim: "Người có bệnh tim, đái tháo đường, tăng huyết áp hay bệnh mạn tính khác hỏi bác sĩ loại/mức vận động an toàn trước khi bắt đầu; người lâu không vận động tăng dần vì thể lực kém có nguy cơ biến cố tim khi gắng sức mạnh cao hơn."
+    verdict: verified
+    severity: none
+    evidence: "NHLBI Physical Activity — Risks: 'If you have a heart problem or chronic (ongoing) disease — such as heart disease, diabetes, or high blood pressure — ask your doctor what types of physical activity are safe for you'; 'someone who isn't physically fit is at higher risk for a heart attack during vigorous activity'; 'slowly and safely build physical activity'. NHLBI Treatment: 'Before starting any exercise program, ask your provider what level of activity is right for you'."
+    note: "Đã sửa (S3): câu cũ không nguồn và thu hẹp thành 'tăng huyết áp chưa kiểm soát'."
+  - id: C14
+    claim: "Đau/tức ngực hoặc choáng váng khi gắng sức: dừng lại và báo bác sĩ; kèm đau lan cánh tay/lưng/vai/cổ/hàm, khó thở khi gắng sức nhẹ, tim nhanh hoặc không đều (dấu hiệu đau tim theo NHLBI): gọi cấp cứu ngay, kể cả khi không chắc."
+    verdict: verified
+    severity: none
+    evidence: "NHLBI Physical Activity — Risks: 'Talk with your doctor if you have symptoms such as chest pain or dizziness during physical activity'. NHLBI Heart Attack — Symptoms: 'Chest pain, heaviness, or discomfort'; 'Pain or discomfort in one or both arms, your back, shoulders, neck, jaw'; 'Shortness of breath when resting or doing a little bit of physical activity'; 'Light-headedness or sudden dizziness'; 'Rapid or irregular heartbeat'; 'Call 9-1-1 ... even if you are not sure'."
+    note: "Đã sửa (S3): danh sách cũ không nguồn; bỏ 'ngất' (NHLBI không liệt kê). 'Dừng lại' là hệ quả trực tiếp của lời khuyên gọi cấp cứu/báo bác sĩ, không phải claim riêng — ghi để lượt sau biết."
+  - id: C15
+    claim: "Miễn trừ y tế: bài tham khảo, không thay tư vấn, chẩn đoán, điều trị."
+    verdict: verified
+    severity: none
+    evidence: "Không phải claim khoa học; đúng yêu cầu nội dung sức khoẻ."
+    note: ""
+  - id: S-1
+    claim: "summary/summaryEn/seoDescription: tập bền bỉ làm buồng thất trái giãn, tăng thể tích tống máu, cải thiện nội mô, có thể hạ huyết áp lúc nghỉ — rõ nhất ở người đã tăng huyết áp."
+    verdict: verified
+    severity: none
+    evidence: "Như C2, C5, C6, C7."
+    note: "Đã sửa (S3, E5 12/09 chưa từng áp)."
+sources:
+  strongAfterFix: 12
+  openedThisPass:
+    - "10.1161/JAHA.112.004473 — tóm tắt Europe PMC (số phân nhóm nguyên văn)"
+    - "10.1001/jamanetworkopen.2018.3605 — Crossref + tóm tắt Europe PMC"
+    - "10.1161/CIRCRESAHA.117.305205 — Crossref + toàn văn PMC4493772"
+    - "10.1016/S0140-6736(11)60749-6 — Crossref + tóm tắt Europe PMC"
+    - "WHO 2020 — toàn văn bản tóm tắt BJSM PMC7719906 (trang NCBI Bookshelf chặn curl)"
+    - "10.1152/physrev.00014.2016 — Crossref + toàn văn PMC5539408 (MỚI)"
+    - "10.1186/s44156-023-00027-8 — Crossref + toàn văn PMC10583359 (MỚI)"
+    - "5 trang NHLBI (MỚI), đều trả 200"
