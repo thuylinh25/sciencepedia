@@ -585,6 +585,27 @@ dặt — `fullDef` render thẳng lên trang.
 Bản vá nằm ở quy tắc 16 và 17 trong
 `.claude/skills/article-generator/SKILL.md`.
 
+## Đợt bốn: bỏ vế đối trọng, và kết quả trên chuột nói thành chuyện của người
+
+Chốt 2026-09-25, từ lượt `science-editor` duyệt mười mục từ đợt 4.
+
+**1. Bỏ vế đối trọng trong cùng một câu nguồn — 4/10 mục.** Nguồn nói hai vế
+("giữ nhiệt mạnh, *nhưng* thải ra lượng nhỏ hơn"; "hành tinh mất động lượng *một
+lượng rất nhỏ*"; "kim loại chìm xuống *và* silicate nổi lên"), bản nháp giữ vế
+gây ấn tượng. Đây là quy tắc 15 ("chọn một kể như tất cả") ở cấp mệnh đề thay vì
+cấp danh sách. Lặp bốn lần trong một đợt nên sửa prompt: quy tắc 15 thêm một câu.
+
+**2. Kết quả đo trên loài này nói như của loài khác — 2/10 mục, đang theo dõi.**
+Mục hồi hải mã viết "ở trẻ nhỏ" cho một kết quả trên chuột; mục nhịp sinh học
+gán cho mọi động vật có xương sống điều NIGMS chỉ nói về đồng hồ chủ của NGƯỜI.
+Chưa tới ngưỡng ba lần nên chưa thành quy tắc, nhưng là lỗi nặng nhất đợt: nó
+đổi đối tượng của khẳng định mà không đổi một chữ nào của con số.
+
+**Ghi chú quy trình:** cả mười ghi chú của người soạn cùng một khuôn "mọi mệnh đề
+đã đối chiếu", và một trong số đó (trợ giúp hấp dẫn) mô tả sai chính nguồn nó
+trích. Khuôn ghi chú không phải bằng chứng đã đọc — người duyệt đọc lại nguồn,
+không đọc ghi chú.
+
 ## Bài dán từ công cụ AI: chỗ bịa nằm ở con số cụ thể nhất
 
 Chốt 2026-09-24, từ lượt bổ sung nguồn cho 17 bài tạo qua form quản trị (đều

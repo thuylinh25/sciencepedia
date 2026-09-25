@@ -57,7 +57,7 @@ Step 3 of the article chain. Turns a validated source pack into a draft with ful
 
 14. **A consequence you derive must be checked against the whole source page, not just the sentence it came from.** Taking a true statement and stating its implication is how a draft earns its keep — and it is also where a draft can contradict the very page it cites, two paragraphs further down.
 
-15. **Picking one item from a list and presenting it as the whole is a fabrication, even though every word came from the source.** If the source gives three mechanisms and the draft gives one, the draft has told the reader the wrong thing about how the world works — and it did so without adding a single unsourced word.
+15. **Picking one item from a list and presenting it as the whole is a fabrication, even though every word came from the source.** If the source gives three mechanisms and the draft gives one, the draft has told the reader the wrong thing about how the world works — and it did so without adding a single unsourced word. **The same holds inside one sentence: a *but* / *and* / *by a tiny amount* clause in the source is part of the claim.** "Potent, *but* emitted in smaller quantities" is one statement; keeping "potent" alone is a different, false one.
 
     Why rules 13–15 exist: they come from the SECOND glossary batch (2026-09-21), reviewed after rules 3, 11 and 12 were already in force. Those three worked — the old shapes recurred only twice, both minor. The three worst errors in the batch were shapes no rule covered, because 3, 11 and 12 all police the relation between *a sentence in the draft* and *a sentence in the source*. These three are about the relation between the draft and the source **as a whole**:
 
@@ -73,6 +73,10 @@ Step 3 of the article chain. Turns a validated source pack into a draft with ful
 
     - **16** — An entry defined genetic engineering using OpenStax's wording, which ties it to recombinant DNA technology. NHGRI, the agency that owns the field, defines it without that tie. The draft took the narrower definition from the lower-tier source, and then that narrow definition **leaked into the CRISPR entry**, where it produced a claim that is simply wrong: CRISPR editing is not recombinant DNA technology in the plasmid sense OpenStax means. One scope error, two entries damaged. It was also a rule-14 failure in the second entry: the cited OpenStax page never mentions CRISPR at all.
     - **17** — A placebo entry closed by saying the source claims no mechanism beyond anticipation and does not suggest placebos replace evidence-based treatment. Both statements are accurate descriptions of the page. Neither is something the page says, and the reader takes them as conclusions. Replaced with the placebo-controlled trial material that was on the page all along.
+
+    Why rule 15 gained its last sentence: the FOURTH glossary batch (2026-09-25) dropped the counterweight half of a two-part source sentence in four of ten entries — greenhouse gases "potent" without "emitted in smaller quantities"; a gravity-assist planet losing momentum without "by a tiny amount"; differentiation with metals sinking but not silicates rising; El Niño without "generally". Same shape as the original rule 15, one level down: not an item dropped from a list, a clause dropped from a sentence.
+
+    **Watching, not yet a rule — species and population scope.** The same batch stated a mouse result about human infants (hippocampal neurogenesis) and applied a finding NIGMS states for the *human* master clock to all vertebrates. Two entries, below the three-repeat threshold, but it was the worst error in the batch. If the next batch repeats it, it becomes rule 18: *a finding keeps the organism and population it was measured in.*
 
 ## Fails when
 The source pack is insufficient, or a section required by the template cannot be sourced. Return a gap report rather than a padded article.

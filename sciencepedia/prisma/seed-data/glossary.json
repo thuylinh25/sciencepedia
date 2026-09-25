@@ -1529,5 +1529,368 @@
     "usedIn": [
       "huyet-dao-va-cham-cuu-khi-cua-dong-y-co-lien-he-gi-voi-khoa-hoc-hien-dai"
     ]
+  },
+  {
+    "slug": "hoang-dao",
+    "term": "Hoàng đạo",
+    "termEn": "Ecliptic",
+    "shortDef": "Đường tròn lớn trên thiên cầu mà Mặt Trời và các hành tinh có vẻ đi dọc theo. Nó là giao tuyến giữa thiên cầu và mặt phẳng quỹ đạo của Trái Đất quanh Mặt Trời.",
+    "shortDefEn": "The great circle on the celestial sphere along which the Sun and planets appear to travel. It is where the plane of Earth's orbit around the Sun intersects the celestial sphere.",
+    "fullDef": "Mặt phẳng hoàng đạo là mặt phẳng chứa quỹ đạo của Trái Đất quanh Mặt Trời, nghiêng 23,4° so với xích đạo trời. Đường tròn nó vạch trên thiên cầu là nơi Mặt Trời và các hành tinh có vẻ di chuyển trên nền sao, và cũng là nơi Mặt Trời và Mặt Trăng gặp nhau khi xảy ra thiên thực — tên tiếng Anh *ecliptic* bắt nguồn từ chữ *eclipse*.\n\nHoàng đạo cắt xích đạo trời tại hai điểm. Một trong hai là điểm xuân phân, nơi Mặt Trời đi sang bán cầu bắc vào đầu mùa xuân; điểm này được chọn làm gốc của xích kinh trong hệ toạ độ thiên văn.\n\nMười hai chòm sao hoàng đạo cổ điển nằm dọc hoàng đạo, nhưng hoàng đạo còn đi qua Xà Phu (Ophiuchus), được thừa nhận là \"chòm sao thứ 13\" trên đường đi biểu kiến của Mặt Trời. Ranh giới hiện đại của các chòm sao có kích thước không đều, nên Mặt Trời nằm trước mỗi chòm trong những khoảng thời gian dài ngắn khác nhau, còn mỗi cung chiêm tinh luôn chiếm đúng 30° (12 cung trong 360°). Ngoài ra, vì tiến động — trục Trái Đất lắc một vòng trong khoảng 26.000 năm — Mặt Trời ngày nay không còn nằm trong những chòm sao mà các cung chiêm tinh truyền thống gán cho từng thời điểm trong năm; các \"cung\" đã lệch khoảng một chòm sao về phía tây. Vì vậy cung chiêm tinh và chòm sao thiên văn không phải là một.",
+    "fullDefEn": "The ecliptic plane is the plane of Earth's orbit around the Sun, tilted 23.4° from the celestial equator. The great circle it traces on the celestial sphere is where the Sun and planets appear to move against the background stars, and where the Sun and Moon converge during eclipses — hence the name *ecliptic*.\n\nThe ecliptic crosses the celestial equator at two points. One of them is the vernal equinox, where the Sun crosses into the northern hemisphere at the beginning of spring; it is the zero point of right ascension in the celestial coordinate system.\n\nThe twelve classical zodiac constellations lie along the ecliptic, but the ecliptic also passes through Ophiuchus, acknowledged as the \"13th constellation\" along the Sun's apparent path. The modern constellation boundaries vary in size, so the Sun spends different lengths of time in front of each one, whereas every astrological sign covers exactly 30° (12 signs in 360°). In addition, because of precession — a wobble of Earth's axis lasting about 26,000 years — the Sun no longer occupies the constellations traditionally assigned to the astrological signs at each time of year; the \"signs\" have shifted about one constellation to the west. Astrological signs and astronomical constellations are therefore not the same thing.",
+    "aliases": [
+      "ecliptic",
+      "mat-phang-hoang-dao",
+      "duong-hoang-dao"
+    ],
+    "category": "Thiên văn học",
+    "sources": [
+      {
+        "title": "Basics of Space Flight, Chapter 2: Reference Systems",
+        "publisher": "NASA Jet Propulsion Laboratory",
+        "url": "https://science.nasa.gov/learn/basics-of-space-flight/chapter2-2/"
+      },
+      {
+        "title": "Where are the Planets? (Solar System Star Maps, background: Constellations of the Zodiac)",
+        "publisher": "NASA JPL Night Sky Network / Astronomical Society of the Pacific",
+        "url": "https://nightsky.jpl.nasa.gov/media/documents/resources/SolSysStarMaps2.pdf"
+      }
+    ],
+    "verdict": "PASS",
+    "reviewedBy": "science-editor",
+    "reviewedAt": "2026-09-25",
+    "notes": "Duyet accuracy gate dot 4 boi science-editor, 2026-09-25. Reviewer tu tai lai toan bo URL nguon trong cung ngay (curl, UA trinh duyet; tat ca 200) va doi chieu tung menh de Viet-Anh. DA XAC NHAN nguyen van JPL Basics of Space Flight ch.2: '23.4 deg from the celestial equator', 'where the Sun and planets appear to travel', 'where the Sun and Moon converge during their eclipses (hence the name)', diem xuan phan la goc xich kinh, 'crosses into the northern hemisphere beginning spring'. DA XAC NHAN PDF Night Sky Network (ASP 2008, pypdf): 'a 26,000-year wobble', 'carried about one constellation to the west'.\nSUA doan 3 (quy tac 14, suy dien lech voi chinh trang nguon). Ban cu viet 'Cac chom sao nam doc hoang dao GOI LA cac chom sao hoang dao' roi 'hoang dao di qua 13 chom, ke ca Xa Phu' - tuc ngam noi Xa Phu la mot chom sao hoang dao. PDF noi nguoc lai: 'Most people think of the 12 classical astronomical constellations of the Zodiac. It is acknowledged that Ophiuchus is the 13th constellation along the ecliptic' - Xa Phu nam tren hoang dao nhung KHONG thuoc 12 chom hoang dao co dien. Ban cu cung noi so 13 voi 'ranh gioi hien dai' bang mot quan he nguon khong dat: PDF dung 'modern boundaries... of varying sizes' de giai thich vi sao Mat Troi o truoc moi chom trong khoang thoi gian KHAC NHAU, doi lap voi moi cung chiem tinh deu 30 do. Nay viet dung hai menh de ay o dung cho nguon dat. Them cau ket 'cung chiem tinh va chom sao thien van khong phai la mot' - nguyen van 'do not confuse astrological signs with astronomical constellations'. '26.000 nam' giu chu 'khoang' (nguon viet tron so, them rao la ha muc chac chan, khong phai nang). Khong co so lieu nao can moc ngay.",
+    "usedIn": [
+      "cac-chom-sao-hoang-dao",
+      "giai-ma-hanh-tinh-tu-quay-quanh-truc",
+      "tai-sao-pluto-khong-con-la-hanh-tinh",
+      "tuyet-ky-di-ke-hanh-tinh-cach-tau-vu-tru-bay-hang-ty-kilomet-ma-khong-ton-them-nhien-lieu",
+      "vi-sao-chiem-tinh-hoc-khong-phai-khoa-hoc",
+      "vi-sao-tau-khong-gian-khong-the-bay-thang-dung"
+    ]
+  },
+  {
+    "slug": "tro-giup-hap-dan",
+    "term": "Trợ giúp hấp dẫn",
+    "termEn": "Gravity assist",
+    "shortDef": "Kỹ thuật cho tàu vũ trụ bay ngang sát một hành tinh để hấp dẫn của hành tinh thay đổi vận tốc và hướng bay của tàu so với Mặt Trời. Cú bay ngang có thể cộng thêm hoặc lấy bớt động lượng của tàu, giúp giảm lượng nhiên liệu tên lửa cần mang theo.",
+    "shortDefEn": "A technique in which a spacecraft flies close past a planet so that the planet's gravity changes the spacecraft's velocity and direction relative to the Sun. A flyby can add or subtract momentum, reducing the rocket propellant the mission needs.",
+    "fullDef": "Nhìn từ hành tinh, con tàu rơi vào vùng hấp dẫn, nhanh dần tới cực đại ở điểm gần nhất rồi chậm lại khi đi ra. Lúc rời đi, tốc độ của tàu so với hành tinh đúng bằng lúc tới — chỉ có hướng là đổi, giống người đạp xe lao xuống thung lũng rồi leo lên dốc bên kia.\n\nĐiều then chốt là hành tinh cũng đang chuyển động quanh Mặt Trời. Khi tàu được canh giờ để bay qua phía sau hành tinh trên quỹ đạo của nó, thì nhìn từ Mặt Trời, vận tốc quỹ đạo của hành tinh được cộng vào vận tốc của tàu, nên tàu rời đi mang theo thêm động lượng góc quỹ đạo lấy từ hành tinh. Đổi lại, hành tinh mất đi một phần năng lượng quỹ đạo: động lượng quỹ đạo của nó giảm một lượng rất nhỏ, còn phần động lượng con tàu nhận được thì đáng kể so với động lượng nó vốn có.\n\nCú bay ngang cũng có thể lấy bớt năng lượng, khi tàu bay qua phía trước một thiên thể trên quỹ đạo của nó: tàu Galileo đã giảm năng lượng so với Sao Mộc bằng một cú bay ngang trước mặt vệ tinh Io, nhờ đó cần ít nhiên liệu hơn để vào quỹ đạo Sao Mộc. Voyager 2 dùng kỹ thuật này lần lượt ở Sao Mộc, Sao Thổ và Sao Thiên Vương; Cassini nhận hai cú đẩy từ Sao Kim, một từ Trái Đất và một từ Sao Mộc để tới được Sao Thổ.",
+    "fullDefEn": "Seen from the planet, the spacecraft falls into its gravity well, speeding up to a maximum at closest approach and slowing again on the way out. It leaves with the same speed relative to the planet as it arrived with — only its direction has changed, like a cyclist coasting down into a valley and climbing the far side.\n\nThe key is that the planet is itself moving around the Sun. When the spacecraft is timed to pass behind the planet in its orbit, then seen from the Sun the planet's orbital velocity is added to the spacecraft's, so the spacecraft departs carrying extra orbital angular momentum taken from the planet. In exchange, the planet loses some of its orbital energy: its orbital momentum decreases by a tiny amount, while the momentum the spacecraft gains is significant compared with what it already had.\n\nA flyby can also remove energy, when the spacecraft passes in front of a body in its orbit: the Galileo spacecraft decreased its energy relative to Jupiter with a flyby in front of the moon Io, which reduced the propellant needed for Jupiter orbit insertion. Voyager 2 used the technique at Jupiter, Saturn and Uranus in turn; Cassini took two boosts from Venus, one from Earth and one from Jupiter to reach Saturn.",
+    "aliases": [
+      "gravity-assist",
+      "tro-luc-hap-dan",
+      "slingshot",
+      "hieu-ung-na-bat"
+    ],
+    "category": "Thiên văn học",
+    "sources": [
+      {
+        "title": "Basics of Space Flight, Chapter 4: Trajectories",
+        "publisher": "NASA Jet Propulsion Laboratory",
+        "url": "https://science.nasa.gov/learn/basics-of-space-flight/chapter4-1/"
+      },
+      {
+        "title": "A Gravity Assist Primer",
+        "publisher": "NASA Jet Propulsion Laboratory",
+        "url": "https://science.nasa.gov/learn/basics-of-space-flight/primer/"
+      }
+    ],
+    "verdict": "PASS",
+    "reviewedBy": "science-editor",
+    "reviewedAt": "2026-09-25",
+    "notes": "Duyet accuracy gate dot 4 boi science-editor, 2026-09-25. Reviewer tu tai lai toan bo URL nguon trong cung ngay (curl, UA trinh duyet; tat ca 200) va doi chieu tung menh de Viet-Anh. DA XAC NHAN nguyen van JPL ch.4: 'increasing its speed toward maximum at closest approach', 'The speed component of its Jupiter-relative velocity outbound dropped to the same as that on its inbound leg', 'carrying additional orbital angular momentum stolen from Jupiter', 'repeated at Saturn and Uranus', 'Jupiter's Sun-relative orbital velocity is added to the spacecraft's velocity'. DA XAC NHAN Primer: vi du nguoi dap xe xuong thung lung, 'add or subtract momentum', Galileo giam nang luong so voi Sao Moc nho bay truoc Io, 'Cassini took two boosts from Venus, one from Earth, and another from Jupiter'.\nGHI CHU CUA NGUOI SOAN BI BAC. Ban soan noi co y khong viet thay doi cua hanh tinh la khong dang ke 'vi JPL chi noi hanh tinh mat mot phan nang luong'. Sai: chinh Primer - nguon thu hai cua muc nay - viet 'decrease the planet's orbital momentum BY A TINY AMOUNT. In the exchange, the spacecraft acquires momentum from Jupiter - a significant amount, compared to the momentum the spacecraft already had.' Than trong la dung huong, nhung o day no bo mat ve chat hon cua cap nguon (quy tac 13) va de nguoi doc hinh dung hanh tinh bi hut mat mot luong dang ke. Nay them dung chu cua Primer, giu dong luong la dong luong va nang luong la nang luong nhu hai trang dat.\nTHEM DIEU KIEN HINH HOC (quy tac 15). Ban cu noi 'van toc quy dao cua hanh tinh duoc cong vao' vo dieu kien, roi doan sau lai noi cu bay ngang 'cung co the lay bot' - doc lien hai doan thi mau thuan. Ch.4 dat ca hai ve: tang toc khi 'approaching from behind the planet in its progress about the sun', giam toc 'by flying in front of a body in its orbit'. Nay ghi ca hai ve. Galileo tiet kiem 90 kg nhien lieu (ch.4) khong dua vao: so dung, nhung khong can cho muc tu.",
+    "usedIn": [
+      "tuyet-ky-di-ke-hanh-tinh-cach-tau-vu-tru-bay-hang-ty-kilomet-ma-khong-ton-them-nhien-lieu",
+      "vi-sao-tau-khong-gian-khong-the-bay-thang-dung"
+    ]
+  },
+  {
+    "slug": "gio-mat-troi",
+    "term": "Gió Mặt Trời",
+    "termEn": "Solar wind",
+    "shortDef": "Dòng hạt mang điện liên tục thổi ra từ Mặt Trời, chủ yếu là proton và electron ở trạng thái plasma, mang theo từ trường của Mặt Trời.",
+    "shortDefEn": "A continuous outflow of charged particles from the Sun, mainly protons and electrons in the plasma state, carrying the Sun's magnetic field with it.",
+    "fullDef": "Các vùng khác nhau trên Mặt Trời sinh ra gió có tốc độ và mật độ khác nhau. Các lỗ nhật hoa phát gió nhanh, từ 500 tới 800 km/s; hai cực Mặt Trời có những lỗ nhật hoa lớn và bền, nên vùng vĩ độ cao đầy gió nhanh. Trong mặt phẳng xích đạo, nơi Trái Đất và các hành tinh quay quanh, trạng thái phổ biến nhất là gió chậm, khoảng 400 km/s. Vì Mặt Trời tự quay mỗi 27 ngày, gió Mặt Trời xoắn thành một cấu trúc phức tạp gồm các dòng nhanh và chậm, đặc và loãng xen nhau.\n\nTới Trái Đất, gió Mặt Trời làm biến dạng từ trường của hành tinh thành hình giọt nước trong không gian. Khi hạt mang điện của gió bị bẫy trong từ trường, chúng va chạm với phân tử không khí phía trên hai cực từ, làm các phân tử ấy phát sáng — đó là cực quang.",
+    "fullDefEn": "Different regions of the Sun produce solar wind of different speeds and densities. Coronal holes produce fast wind, ranging from 500 to 800 km/s; the Sun's poles have large, persistent coronal holes, so high latitudes are filled with fast wind. In the equatorial plane, where Earth and the other planets orbit, the most common state is slow wind of about 400 km/s. Because the Sun rotates every 27 days, the solar wind winds into a complex spiral of fast and slow, dense and sparse streams.\n\nAt Earth, the solar wind distorts the planet's magnetic field into a teardrop shape in space. When charged particles from the wind become trapped in the field, they collide with air molecules above the magnetic poles and make them glow — the aurorae.",
+    "aliases": [
+      "solar-wind"
+    ],
+    "category": "Thiên văn học",
+    "sources": [
+      {
+        "title": "Solar Wind",
+        "publisher": "NOAA Space Weather Prediction Center",
+        "url": "https://www.swpc.noaa.gov/phenomena/solar-wind"
+      },
+      {
+        "title": "Earth: Facts",
+        "publisher": "NASA Science",
+        "url": "https://science.nasa.gov/earth/facts/"
+      }
+    ],
+    "verdict": "PASS",
+    "reviewedBy": "science-editor",
+    "reviewedAt": "2026-09-25",
+    "notes": "Duyet accuracy gate dot 4 boi science-editor, 2026-09-25. Reviewer tu tai lai toan bo URL nguon trong cung ngay (curl, UA trinh duyet; tat ca 200) va doi chieu tung menh de Viet-Anh. DA XAC NHAN nguyen van NOAA SWPC: 'continuously flows outward from the Sun and consists mainly of protons and electrons in a state known as a plasma. Solar magnetic field is embedded in the plasma and flows outward', '500 to 800 kilometers per second', 'large, persistent coronal holes', 'most common state... slow speed wind... about 400 kilometers per second', 'Because the Sun rotates every 27 days, the solar wind becomes a complex spiral of high and low speeds and high and low densities'. DA XAC NHAN NASA Earth Facts: 'distorts into a teardrop shape', hat bi bay trong tu truong va cham phan tu khong khi phia tren cac cuc tu, phat sang thanh cuc quang.\nHAI SUA NHO VE CHU. (1) 'khoang 500-800 km/s' -> 'tu 500 toi 800 km/s': nguon viet 'ranging from', la mot khoang chu khong phai mot uoc luong quanh mot khoang; bo chu 'khoang' o ca hai ban. (2) 'ep tu truong' -> 'lam bien dang tu truong': NASA viet 'distorts'; 'ep' la mot co che (nen) ma nguon khong noi, du hinh anh giot nuoc la dung. Khong co menh de nao ngoai pham vi nguon; so lieu toc do la dac trung ben vung, khong can moc ngay.",
+    "usedIn": [
+      "cuc-quang-anh-sang-do-chinh-khi-quyen-trai-dat-phat-ra",
+      "sao-hoa-hanh-tinh-do-va-cau-hoi-ve-nuoc",
+      "sao-thuy-the-gioi-da-bi-nung-va-dong-bang-cung-luc",
+      "trai-dat-hanh-tinh-duy-nhat-ta-biet-co-su-song"
+    ]
+  },
+  {
+    "slug": "boi-tu",
+    "term": "Bồi tụ",
+    "termEn": "Accretion",
+    "shortDef": "Quá trình một vật thể lớn dần nhờ lực hấp dẫn của nó hút và gom vật chất xung quanh. Trong mô hình hình thành Hệ Mặt Trời, các vi hành tinh đủ lớn để hút các vi hành tinh lân cận đã lớn thành tiền hành tinh rồi thành hành tinh theo cách này.",
+    "shortDefEn": "The process by which a body grows by gravitationally attracting and gathering surrounding material. In the model of Solar System formation, planetesimals large enough to attract their neighbours grew this way into protoplanets and then planets.",
+    "fullDef": "Trong tinh vân Mặt Trời, các hạt bụi ngưng tụ nhanh chóng kết lại thành những khối ngày càng lớn, cho tới khi phần lớn vật chất rắn nằm trong các vi hành tinh cỡ vài tới vài chục kilomet. Từ vi hành tinh lên hành tinh cần một bước nhảy lớn về kích thước: một số vi hành tinh đủ lớn để hút các vi hành tinh lân cận bằng hấp dẫn và lớn dần lên — đó là bồi tụ. Các bước trung gian chưa được hiểu rõ, nhưng rốt cuộc dường như vài chục tâm bồi tụ đã hình thành ở vùng trong Hệ Mặt Trời, mỗi tâm hút các vi hành tinh xung quanh cho tới khi đạt khối lượng cỡ Sao Thuỷ hay Sao Hoả: các tiền hành tinh.\n\nQuá trình ấy dữ dội. Mỗi vi hành tinh lao tới được hấp dẫn của tiền hành tinh gia tốc, va vào với năng lượng đủ làm nóng chảy cả vật lao tới lẫn một phần vùng bị va. Chẳng bao lâu cả tiền hành tinh bị nung quá nhiệt độ nóng chảy của đá, dẫn tới sự phân dị: kim loại nặng chìm dần về lõi, còn silicat nhẹ hơn nổi lên phía bề mặt.",
+    "fullDefEn": "In the solar nebula, condensed grains quickly joined into larger and larger chunks, until most of the solid material was in planetesimals a few to a few tens of kilometres across. Going from planetesimal to planet takes a substantial step up in size: some planetesimals were large enough to attract their neighbours gravitationally and grow — this is accretion. The intermediate steps are not well understood, but ultimately several dozen centres of accretion seem to have grown in the inner Solar System, each attracting surrounding planetesimals until it reached a mass similar to that of Mercury or Mars: the protoplanets.\n\nThe process was violent. Each incoming planetesimal was accelerated by the protoplanet's gravity and struck with enough energy to melt both itself and part of the impact area. Soon the whole protoplanet was heated above the melting temperature of rock. The result was differentiation: heavier metals sank toward the core and lighter silicates rose toward the surface.",
+    "aliases": [
+      "accretion",
+      "boi-tu-hap-dan"
+    ],
+    "category": "Thiên văn học",
+    "sources": [
+      {
+        "title": "Astronomy 2e, §14.3 Formation of the Solar System",
+        "publisher": "OpenStax, Rice University",
+        "url": "https://openstax.org/books/astronomy-2e/pages/14-3-formation-of-the-solar-system"
+      },
+      {
+        "title": "Our Solar System: Facts",
+        "publisher": "NASA Science",
+        "url": "https://science.nasa.gov/solar-system/solar-system-facts/"
+      }
+    ],
+    "verdict": "PASS",
+    "reviewedBy": "science-editor",
+    "reviewedAt": "2026-09-25",
+    "notes": "Duyet accuracy gate dot 4 boi science-editor, 2026-09-25. Reviewer tu tai lai toan bo URL nguon trong cung ngay (curl, UA trinh duyet; tat ca 200) va doi chieu tung menh de Viet-Anh. DA XAC NHAN nguyen van OpenStax Astronomy 2e 14.3: 'rather quickly joined into larger and larger chunks', 'a few kilometers to a few tens of kilometers in diameter', 'A substantial step up in size is required', 'large enough to attract their neighbors gravitationally and thus to grow by the process called accretion', 'While the intermediate steps are not well understood, ultimately several dozen centers of accretion SEEM to have grown in the inner solar system' - ca hai rao ('not well understood', 'seem') deu duoc giu o ban Viet lan Anh. 'striking with enough energy to melt both the projectile and a part of the impact area' khop. NASA Solar System Facts khop o muc tong quat ('clumps smashed into one another, forming larger and larger objects').\nBA SUA. (1) Lech Viet-Anh va lech nguon: ban Viet viet tien hanh tinh 'lon toi co' Sao Thuy/Sao Hoa (kich thuoc), ban Anh va nguon viet 'a MASS similar to'. Nay ca hai noi khoi luong. (2) Quy tac 15, dang nhe: nguon viet phan di la 'heavier metals sinking toward the core AND lighter silicates rising toward the surface'; ban cu giu ve kim loai, bo ve silicat, va doi chu thanh 'hanh tinh phan di thanh loi va cac lop ben ngoai' - chu 'hanh tinh' cung lech, nguon noi TIEN hanh tinh. Nay giu du hai ve. (3) shortDef ban Viet thieu menh de 'du lon de hut cac vi hanh tinh lan can' ma ban Anh co; them cho khop.",
+    "usedIn": [
+      "giai-ma-hanh-tinh-tu-quay-quanh-truc",
+      "sao-moc-hanh-tinh-quay-nhanh-nhat-va-chiec-phanh-vo-hinh",
+      "su-ra-doi-cua-he-mat-troi"
+    ]
+  },
+  {
+    "slug": "lop-phu",
+    "term": "Lớp phủ",
+    "termEn": "Mantle",
+    "shortDef": "Lớp nằm giữa vỏ và lõi của một hành tinh đá. Ở Trái Đất, đây là phần lớn nhất của phần rắn Trái Đất, kéo dài từ đáy vỏ xuống độ sâu khoảng 2.900 km.",
+    "shortDefEn": "The layer between the crust and the core of a rocky planet. On Earth it is the largest part of the solid planet, stretching from the base of the crust down to a depth of about 2,900 km.",
+    "fullDef": "Lớp phủ của Trái Đất ít nhiều ở thể rắn, nhưng ở nhiệt độ và áp suất dưới đó, đá lớp phủ có thể biến dạng và chảy rất chậm. Mật độ tăng dần theo chiều sâu, từ khoảng 3,5 g/cm³ lên hơn 5 g/cm³, do sức nén của khối vật chất phía trên. Thỉnh thoảng núi lửa phun lên những mẫu đá của lớp phủ trên, cho phép phân tích chi tiết thành phần hoá học của nó.\n\nDưới lớp phủ, bắt đầu từ độ sâu 2.900 km, là lõi kim loại đặc của Trái Đất. Các hành tinh đá khác cũng có cấu trúc tương tự: một lõi ở tâm, một lớp phủ đá và một lớp vỏ rắn. Trong tiếng Việt, lớp này còn được gọi là manti.",
+    "fullDefEn": "Earth's mantle is more or less solid, but at the temperatures and pressures found there, mantle rock can deform and flow slowly. Its density increases with depth from about 3.5 g/cm³ to more than 5 g/cm³, compressed by the weight of the material above. Samples of upper-mantle material are occasionally ejected by volcanoes, allowing its chemistry to be analysed in detail.\n\nBelow the mantle, from a depth of 2,900 km, lies Earth's dense metallic core. The other terrestrial planets share the same pattern: a central core, a rocky mantle and a solid crust.",
+    "aliases": [
+      "mantle",
+      "manti",
+      "lop-man-ti"
+    ],
+    "category": "Khoa học Trái Đất",
+    "sources": [
+      {
+        "title": "Astronomy 2e, §8.1 The Global Perspective",
+        "publisher": "OpenStax, Rice University",
+        "url": "https://openstax.org/books/astronomy-2e/pages/8-1-the-global-perspective"
+      },
+      {
+        "title": "Earth: Facts",
+        "publisher": "NASA Science",
+        "url": "https://science.nasa.gov/earth/facts/"
+      }
+    ],
+    "verdict": "PASS",
+    "reviewedBy": "science-editor",
+    "reviewedAt": "2026-09-25",
+    "notes": "Duyet accuracy gate dot 4 boi science-editor, 2026-09-25. Reviewer tu tai lai toan bo URL nguon trong cung ngay (curl, UA trinh duyet; tat ca 200) va doi chieu tung menh de Viet-Anh. DA XAC NHAN nguyen van OpenStax Astronomy 2e 8.1: 'The largest part of the solid Earth, called the mantle, stretches from the base of the crust downward to a depth of 2900 kilometers. The mantle is more or less solid, but at the temperatures and pressures found there, mantle rock can deform and flow slowly. The density in the mantle increases downward from about 3.5 g/cm3 to more than 5 g/cm3 as a result of the compression produced by the weight of overlying material.' 'Beginning at a depth of 2900 kilometers, we encounter the dense metallic core'.\nLUA CHON QUY TAC 13 CUA NGUOI SOAN: XAC NHAN. NASA Earth Facts viet lop phu la 'hot, viscous mixture of molten rock... consistency of caramel'. Day la cau long va, doc theo nghia den, sai: no dung hinh anh 'da nong chay' cho mot lop ma OpenStax noi 'more or less solid'. Lop phu chay duoc la chay deo o trang thai ran trong thoi gian dia chat, khong phai mot chat long. OpenStax la cau chat va la cau dung; NASA chi duoc dung cho menh de 'Like its fellow terrestrial planets, Earth has a central core, a rocky mantle, and a solid crust', ma no noi dung nguyen van. Hai nguon cung khop ve 2.900 km (NASA: day 'about 2,900 km', OpenStax: toi do sau 2.900 km).\nHAI SUA NHO. (1) 'phan tich TRUC TIEP' -> 'phan tich CHI TIET': nguon viet 'permitting a detailed analysis'; 'truc tiep' la mot nhan xet ve phuong phap ma nguon khong dat (va o doan tren nguon nhan manh nguoc lai: cau truc ben trong 'must be determined indirectly'). (2) shortDef 'khoi dat ran' -> 'phan ran Trai Dat': 'the solid Earth' la toan bo phan ran cua hanh tinh, 'khoi dat' doc nhu luc dia. Cau 'con goi la manti' chi co o ban Viet vi la ghi chu thuat ngu tieng Viet, khong phai menh de khoa hoc - chap nhan lech Viet-Anh o cho nay.",
+    "usedIn": [
+      "cau-truc-ben-trong-trai-dat",
+      "giai-ma-hanh-tinh-tu-quay-quanh-truc",
+      "sao-thuy-the-gioi-da-bi-nung-va-dong-bang-cung-luc",
+      "trai-dat-hanh-tinh-duy-nhat-ta-biet-co-su-song"
+    ]
+  },
+  {
+    "slug": "hoi-hai-ma",
+    "term": "Hồi hải mã",
+    "termEn": "Hippocampus",
+    "shortDef": "Một cấu trúc nhỏ trong não, hoạt động như bộ \"lập chỉ mục\" cho trí nhớ: gửi ký ức tới những vùng thích hợp của đại não để lưu trữ lâu dài và truy xuất chúng khi cần.",
+    "shortDefEn": "A small structure in the brain that acts as a memory indexer: it sends memories to the appropriate parts of the cerebral hemispheres for long-term storage and retrieves them when needed.",
+    "fullDef": "Hồi hải mã nằm ở cuối một bó tế bào thần kinh hình vòng cung đi ra từ vùng dưới đồi và đồi thị.\n\nỞ chuột, neuron mới liên tục được bổ sung suốt đời vào một vùng của hồi hải mã gọi là hồi răng (dentate gyrus), và sự bổ sung ấy tái tổ chức các mạch thần kinh sẵn có. Thí nghiệm trên chuột trưởng thành cho thấy tăng tạo neuron mới sau khi một ký ức hình thành là đủ để gây quên ký ức ấy. Ở chuột non, khi mức tạo neuron mới còn cao và ký ức mới hình thành thường bị quên nhanh, giảm tạo neuron mới sau khi ký ức hình thành lại làm ký ức bị quên ít hơn. Ở chuột lang và degu — những loài mà phần lớn tế bào hạt được tạo ra từ trước khi sinh — con non không quên như vậy, nhưng tăng tạo neuron mới thì gây ra hiện tượng quên ấy.\n\nNhững ký ức về sự kiện phụ thuộc hồi hải mã, hình thành rất sớm trong đời, bị quên nhanh ở cả người lẫn động vật — hiện tượng gọi là chứng quên thời thơ ấu (infantile amnesia). Dựa trên các thí nghiệm ở động vật nói trên, mức tạo neuron mới cao ở hồi hải mã được đề xuất là một yếu tố góp phần. Một nghiên cứu tiếp theo trên chuột cho thấy những ký ức \"đã mất\" từ thời còn non có thể được gọi lại ở tuổi trưởng thành, tới 3 tháng sau khi huấn luyện, bằng cách dùng quang di truyền kích hoạt lại đúng những neuron hồi răng từng hoạt động lúc ký ức được mã hoá.",
+    "fullDefEn": "The hippocampus sits at the end of an arching tract of nerve cells leading from the hypothalamus and thalamus.\n\nIn mice, new neurons are continuously added throughout life to one part of the hippocampus, the dentate gyrus, and this continuous addition remodels existing circuits. Experiments in adult mice show that increasing neurogenesis after a memory forms is sufficient to induce forgetting of that memory. In infant mice, when neurogenesis is high and fresh memories tend to be forgotten quickly, decreasing neurogenesis after memory formation mitigated forgetting. In guinea pigs and degus — species in which most granule cells are generated before birth — infants did not show this forgetting, but increasing neurogenesis induced it.\n\nHippocampus-dependent, event-related memories formed in early infancy are rapidly forgotten in both humans and other animals — a phenomenon called infantile amnesia. On the basis of these animal experiments, high hippocampal neurogenesis has been proposed as a contributing factor. A follow-up study in mice showed that \"lost\" infant memories could be recovered in adulthood, up to three months after training, by optogenetically reactivating the dentate gyrus neurons that had been active when the memory was encoded.",
+    "aliases": [
+      "hippocampus",
+      "hai-ma",
+      "thuy-hai-ma"
+    ],
+    "category": "Sinh học",
+    "sources": [
+      {
+        "title": "Brain Basics: Know Your Brain",
+        "publisher": "National Institute of Neurological Disorders and Stroke (NIH)",
+        "url": "https://www.ninds.nih.gov/health-information/public-education/brain-basics/brain-basics-know-your-brain"
+      },
+      {
+        "title": "Hippocampal Neurogenesis Regulates Forgetting During Adulthood and Infancy",
+        "publisher": "Science",
+        "url": "https://doi.org/10.1126/science.1248903"
+      },
+      {
+        "title": "Recovery of “Lost” Infant Memories in Mice",
+        "publisher": "Current Biology",
+        "url": "https://doi.org/10.1016/j.cub.2018.05.059"
+      }
+    ],
+    "verdict": "PASS",
+    "reviewedBy": "science-editor",
+    "reviewedAt": "2026-09-25",
+    "notes": "Duyet accuracy gate dot 4 boi science-editor, 2026-09-25. Reviewer tu tai lai toan bo URL nguon trong cung ngay (curl, UA trinh duyet; tat ca 200) va doi chieu tung menh de Viet-Anh. NINDS Know Your Brain: DA XAC NHAN nguyen van 'An arching tract of nerve cells leads from the hypothalamus and the thalamus to the hippocampus. This tiny nub acts as a memory indexer - sending memories out to the appropriate part of the cerebral hemisphere for long-term storage and retrieving them when necessary.' shortDef khop, giu nguyen. Hai bai bao: doi.org bi chan, nen doc tom tat qua Europe PMC va xac nhan metadata qua Crossref (Akers et al., Science 2014; Guskjolen et al., Current Biology 2018 - tieu de khop dung tung chu). Moi menh de moi viet lai deu lay tu hai tom tat ay.\nLOI NANG NHAT CUA DOT: KET QUA TREN CHUOT DUOC TRINH BAY NHU SU THAT VE NGUOI. Ban cu viet 'O TRE NHO, muc tao neuron moi nay rat cao' / 'In INFANTS this neurogenesis is high'. Akers noi 'during infancy, when hippocampal neurogenesis levels are high' trong mot bai bao ve CHUOT - 'tre nho' va 'infants' (khong kem loai) doc la tre em. Cau truoc do ('neuron moi tiep tuc duoc bo sung suot doi') dat ngay sau doan NINDS ve nao nguoi, nen nguoi doc cung nhan no ve nguoi; tao neuron o hoi rang nguoi truong thanh la van de con tranh luan va KHONG nguon nao trong goi noi ve nguoi. Nay moi menh de co che deu mang ten loai ('O chuot', 'chuot truong thanh', 'chuot non', 'chuot lang va degu').\nHEDGE 'mot co che duoc de xuat': chu thi du manh, nhung no dat sai cho - no treo tren mot cau da mat ten loai. Nay rao nam o dung buoc suy rong: chung quen thoi tho au co o CA nguoi lan dong vat (nguyen van Guskjolen: 'in human and non-human animals'), con vai tro cua neuron moi thi 'duoc de xuat la MOT yeu to GOP PHAN' 'dua tren cac thi nghiem o dong vat' - khop 'contribute to' cua Guskjolen, khong nang len thanh 'nguyen nhan'.\nHAI LOI KHAC. (1) Ban cu gop hai ket qua o hai do tuoi thanh mot cau khong tuoi: 'giam tao neuron lam quen cham hon, con tang no thi lam quen'. Akers: TANG gay quen o chuot TRUONG THANH; GIAM lam quen it hon o chuot NON. Nay tach ra dung do tuoi. (2) Quy tac 15: ban cu bo ket qua o chuot lang va degu - loai sinh ra voi phan lon te bao hat da hinh thanh, con non khong quen, tang neuron thi gay quen - day la phan thi nghiem manh nhat vi no dao chieu du doan o mot loai khac; nay dua vao. Cau 'Nhung ky uc gan voi su kien phu thuoc vao no' o doan 1 cu khong co trong NINDS; nay thay bang cum nguyen van Guskjolen 'Hippocampus-dependent, event-related memories' dat o doan 3.\nGUSKJOLEN 2018 truoc day duoc trich ma KHONG chong do menh de nao trong bai (citation trang tri). Nay no chong do cau chung quen o nguoi va dong vat, va cau ky uc 'da mat' goi lai duoc bang quang di truyen toi 3 thang - mot doi trong can co, vi no cho thay 'quen' o day khong dong nghia voi 'bi xoa'. Khong viet ket luan 'loi truy xuat chu khong phai loi luu tru' vi tom tat chi dat cau hoi ay chu khong phat bieu ket luan.",
+    "usedIn": [
+      "giac-ngu-sau-lam-gi-voi-tri-nho-cua-ban",
+      "vi-sao-chung-ta-khong-the-nho-nhung-nam-thang-dau-doi"
+    ]
+  },
+  {
+    "slug": "entropy",
+    "term": "Entropy",
+    "termEn": "Entropy",
+    "shortDef": "Một đại lượng nhiệt động lực học, ký hiệu S, là hàm trạng thái của hệ; ở góc nhìn thống kê, nó có thể được liên hệ với mức độ hỗn loạn của hệ: hệ càng hỗn loạn, entropy càng cao. Định luật II nhiệt động lực học phát biểu rằng entropy của một hệ cô lập và của toàn vũ trụ không bao giờ giảm.",
+    "shortDefEn": "A thermodynamic quantity, symbol S, that is a state function of a system; from a statistical viewpoint it can be related to how disordered the system is: the more disordered, the higher the entropy. The second law of thermodynamics states that the entropy of an isolated system and of the entire universe never decreases.",
+    "fullDef": "Entropy, giống nội năng, là một hàm trạng thái: khi hệ chuyển từ trạng thái này sang trạng thái khác, độ biến thiên entropy không phụ thuộc đường đi mà chỉ phụ thuộc hai trạng thái đầu và cuối. Với một quá trình thuận nghịch ở nhiệt độ không đổi, ΔS = Q/T, trong đó Q là nhiệt hệ trao đổi và T là nhiệt độ tính bằng kelvin; hệ hấp thụ nhiệt thì entropy của nó tăng. Một vật toả nhiệt có thể mất entropy, nhưng khi tính cả phần nhận nhiệt từ nó, entropy của vũ trụ trong một quá trình không thuận nghịch vẫn tăng.\n\nMối liên hệ giữa entropy và mức độ hỗn loạn là một cách hình dung giản lược; lập luận đầy đủ thuộc về vật lý thống kê. Ví dụ minh hoạ quen thuộc: một bộ bài mới xếp theo chất và số là rất \"trật tự\"; xáo bài làm thứ tự ngẫu nhiên hơn, nên entropy tăng. Theo cách nói này, định luật II trở thành: trong mọi quá trình không thuận nghịch, vũ trụ trở nên hỗn loạn hơn. Một chất khí giãn nở tự do vào thể tích lớn hơn có nhiều cách sắp xếp nguyên tử hơn, nên entropy của nó tăng.",
+    "fullDefEn": "Entropy, like internal energy, is a state function: when a system goes from one state to another, the change in entropy does not depend on the path, only on the initial and final states. For a reversible process at constant temperature, ΔS = Q/T, where Q is the heat exchanged and T is the temperature in kelvin; a system that absorbs heat gains entropy. An object that gives off heat can lose entropy, but once whatever receives that heat is counted, the entropy of the universe still increases in an irreversible process.\n\nThe link between entropy and disorder is a simplified picture; the full argument belongs to statistical physics. The familiar illustration: a new deck of cards arranged by suit and number is highly ordered; shuffling randomizes it and increases its entropy. Put this way, the second law says that in any irreversible process the universe becomes more disordered. A gas expanding freely into a larger volume has more possible arrangements of its atoms, so its entropy goes up.",
+    "aliases": [
+      "entropi"
+    ],
+    "category": "Vật lý",
+    "sources": [
+      {
+        "title": "University Physics Volume 2, §4.6 Entropy",
+        "publisher": "OpenStax, Rice University",
+        "url": "https://openstax.org/books/university-physics-volume-2/pages/4-6-entropy"
+      },
+      {
+        "title": "University Physics Volume 2, §4.7 Entropy on a Microscopic Scale",
+        "publisher": "OpenStax, Rice University",
+        "url": "https://openstax.org/books/university-physics-volume-2/pages/4-7-entropy-on-a-microscopic-scale"
+      }
+    ],
+    "verdict": "PASS",
+    "reviewedBy": "science-editor",
+    "reviewedAt": "2026-09-25",
+    "notes": "Duyet accuracy gate dot 4 boi science-editor, 2026-09-25. Reviewer tu tai lai toan bo URL nguon trong cung ngay (curl, UA trinh duyet; tat ca 200) va doi chieu tung menh de Viet-Anh. DA XAC NHAN nguyen van OpenStax UP2 4.6: 'Entropy, like internal energy, is a state function... independent of path', 'Q is the heat exchanged by the system kept at a temperature T (in kelvin). If the system absorbs heat... the entropy of the system increases', 'The entropy of a closed system and the entire universe never decreases.' 4.7: bo bai, 'In any irreversible process, the universe becomes more disordered', khi gian no tu do 'more possible arrangements for the same number of atoms'.\nSUA 'HE KIN' -> 'HE CO LAP' (quy tac 13, trung thanh voi nguon khong mien tru dung). OpenStax viet 'closed system', va ban soan chep dung. Nhung chinh hai trang ay cho thay 'closed' o day nghia la CO LAP: 4.6 dien giai 'a closed system, or the system and its environment (the universe)', va vi du 4.7 goi khi trong 'a box whose walls are thermally insulating' la 'a closed system'. Theo thuat ngu chuan, he kin (closed) van trao doi nhiet voi moi truong va entropy cua no CO THE giam - chinh 4.6 co vi du vat toa nhiet 'has lost some entropy'. Doc 'he kin' (va trong tieng Viet 'he kin' con bi dung lan) nguoi doc se nhan mot phat bieu sai cua dinh luat II. Them mot cau lay tu chinh vi du ay de noi ro vi sao phai tinh ca moi truong.\nGIU RAO (quy tac 3 + 'noi ro khi don gian hoa lam mat thong tin'). 4.7 viet 'Although the details of the argument are beyond the scope of this textbook, it turns out that entropy CAN BE RELATED to how disordered or randomized a system is'. Ban cu dung 'hon loan' lam dinh nghia chinh trong shortDef va bo chu 'can be'. Nay shortDef dan bang dinh nghia nhiet dong (ham trang thai) cua 4.6, hinh anh hon loan dat sau voi rao 'co the duoc lien he', va fullDef noi thang day la cach hinh dung gian luoc - diem ban goc tu nhan ma ban nhap bo mat. Cau lap luan day du 'thuoc ve vat ly thong ke' la dien giai cho 'statistical viewpoint' cua 4.7.",
+    "usedIn": [
+      "lo-trang-va-lo-sau-hai-nghiem-toan-hoc-chua-ai-nhin-thay",
+      "thoi-gian-duoi-goc-nhin-luong-tu-vu-tru-co-thuc-su-troi"
+    ]
+  },
+  {
+    "slug": "nhip-sinh-hoc",
+    "term": "Nhịp sinh học",
+    "termEn": "Circadian rhythm",
+    "shortDef": "Một số thay đổi về thể chất, tinh thần và hành vi mà sinh vật trải qua theo chu kỳ 24 giờ. Sáng và tối ảnh hưởng mạnh nhất, nhưng ăn uống, stress, vận động, môi trường xã hội và nhiệt độ cũng tác động tới nó.",
+    "shortDefEn": "Some of the physical, mental and behavioural changes an organism goes through over a 24-hour cycle. Light and dark have the biggest influence, but food intake, stress, physical activity, social environment and temperature also affect it.",
+    "fullDef": "Hệ thống điều khiển nhịp sinh học gọi là đồng hồ sinh học, cấu thành từ các protein do hàng nghìn gen mã hoá, bật và tắt theo một trình tự nhất định; một đồng hồ chủ điều phối mọi đồng hồ sinh học trong cơ thể. Ở động vật có xương sống, kể cả người, đồng hồ chủ nằm trong não. Ở người, đó là nhân trên chéo (SCN), một nhóm lớn tế bào thần kinh nhận thông tin về ánh sáng trực tiếp từ mắt. SCN điều khiển việc tiết hormone melatonin theo lượng ánh sáng mắt nhận được — buổi tối, đồng hồ chủ bảo não tiết nhiều melatonin hơn và ta thấy buồn ngủ — đồng thời đồng bộ nhịp của các cơ quan và mô khắp cơ thể.\n\nNhịp sinh học chi phối nhiều chức năng, từ độ tỉnh táo thay đổi trong ngày tới thân nhiệt, trao đổi chất và việc tiết hormone. Cùng với cơ chế cân bằng nội môi của giấc ngủ, nó điều hoà khi nào ta thức và khi nào ta ngủ.",
+    "fullDefEn": "The system that controls circadian rhythms is the biological clock, made of proteins encoded by thousands of genes that switch on and off in a specific order; a master clock coordinates all the biological clocks in an organism. In vertebrates, including humans, the master clock is in the brain. In humans it is the suprachiasmatic nucleus (SCN), a large group of nerve cells that receives information about light directly from the eyes. The SCN controls production of the hormone melatonin according to how much light the eyes receive — in the evening the master clock tells the brain to make more melatonin, and we feel sleepy — and synchronizes the rhythms of organs and tissues throughout the body.\n\nCircadian rhythms direct many functions, from daily changes in wakefulness to body temperature, metabolism and hormone release. Together with sleep homeostasis, they regulate when we are awake and when we sleep.",
+    "aliases": [
+      "circadian-rhythm",
+      "nhip-circadian",
+      "nhip-ngay-dem",
+      "dong-ho-sinh-hoc"
+    ],
+    "category": "Sinh học",
+    "sources": [
+      {
+        "title": "Circadian Rhythms",
+        "publisher": "National Institute of General Medical Sciences (NIH)",
+        "url": "https://www.nigms.nih.gov/education/fact-sheets/Pages/circadian-rhythms.aspx"
+      },
+      {
+        "title": "Brain Basics: Understanding Sleep",
+        "publisher": "National Institute of Neurological Disorders and Stroke (NIH)",
+        "url": "https://www.ninds.nih.gov/health-information/public-education/brain-basics/brain-basics-understanding-sleep"
+      }
+    ],
+    "verdict": "PASS",
+    "reviewedBy": "science-editor",
+    "reviewedAt": "2026-09-25",
+    "notes": "Duyet accuracy gate dot 4 boi science-editor, 2026-09-25. Reviewer tu tai lai toan bo URL nguon trong cung ngay (curl, UA trinh duyet; tat ca 200) va doi chieu tung menh de Viet-Anh. DA XAC NHAN nguyen van NIGMS: 'Circadian rhythms include SOME OF the physical, mental, and behavioral changes an organism experiences over a 24-hour cycle' (shortDef giu dung chu 'mot so'), 'Light and dark have the biggest influence... but food intake, stress, physical activity, social environment, and temperature also affect them', 'proteins encoded by thousands of genes that switch on and off in a specific order', melatonin buoi toi gay buon ngu, 'synchronizes the circadian rhythms in different organs and tissues'. NINDS Understanding Sleep: SCN 'receive information about light exposure directly from the eyes'; 'direct a wide variety of functions from daily changes in wakefulness to body temperature, metabolism, and the release of hormones'; 'circadian rhythm and homeostasis... work together to regulate when you are awake and when you are asleep'.\nSUA PHAM VI LOAI. NIGMS viet 'In vertebrate animals, including humans, the master clock exists in the brain. THE HUMAN master clock is a large group of nerve cells... (SCN)'. Ban cu gan SCN cho moi dong vat co xuong song. Nguon chi gan SCN cho NGUOI; menh de ve dong vat co xuong song dung o muc 'nam trong nao'. Nay tach dung hai buoc nhu nguon. Them cau 'mot dong ho chu dieu phoi moi dong ho sinh hoc' - nguyen van NIGMS - vi khong co no thi chu 'dong ho chu' khong co nghia.\nSUA LECH VIET-ANH VE MUC CHAC CHAN (quy tac 3). Ban Anh viet 'regulate', ban Viet viet 'QUYET DINH khi nao ta thuc'. NINDS viet 'work together to regulate'. Nay ban Viet 'dieu hoa'. Cung dang voi loi 'co the' cua muc gia-duoc dot 3.",
+    "usedIn": [
+      "giac-ngu-sau-lam-gi-voi-tri-nho-cua-ban",
+      "nhin-an-gian-doan-anh-huong-toi-he-vi-sinh-duong-ruot-nhu-the-nao",
+      "suc-manh-cua-giac-ngu-trua-ngan-vi-sao-20-phut-co-the-giup-nao-tinh-tao-hon",
+      "thieu-ngu-khoan-no-the-chap-bang-suc-khoe-va-tuong-lai"
+    ]
+  },
+  {
+    "slug": "khi-nha-kinh",
+    "term": "Khí nhà kính",
+    "termEn": "Greenhouse gas",
+    "shortDef": "Những chất khí giữ nhiệt trong khí quyển. Hơi nước là khí nhà kính dồi dào nhất; trong phát thải của con người, các khí nhà kính chính là carbon dioxide, methane, nitrous oxide và các khí fluor hoá.",
+    "shortDefEn": "Gases that trap heat in the atmosphere. Water vapour is the most abundant greenhouse gas; among human emissions, the main greenhouse gases are carbon dioxide, methane, nitrous oxide and fluorinated gases.",
+    "fullDef": "Khoảng một nửa năng lượng ánh sáng tới khí quyển Trái Đất đi qua không khí và mây xuống bề mặt, được bề mặt hấp thụ rồi phát lại dưới dạng nhiệt hồng ngoại. Khoảng 90% lượng nhiệt này được khí nhà kính hấp thụ và phát xạ trở lại, làm chậm việc nhiệt thoát ra không gian. Hiệu ứng nhà kính ấy là điều kiện thiết yếu cho sự sống trên Trái Đất; nhưng khí nhà kính do con người thải thêm đang giữ lại nhiều nhiệt hơn, và các nhà khoa học quy xu hướng ấm lên toàn cầu quan sát được từ giữa thế kỷ 20 cho sự mở rộng hiệu ứng nhà kính do con người gây ra.\n\nCarbon dioxide vào khí quyển qua các quá trình tự nhiên như núi lửa phun trào và qua hoạt động của con người như đốt nhiên liệu hoá thạch và phá rừng; thực vật lấy bớt nó ra khi hấp thụ trong chu trình carbon. Methane đến từ cả nguồn tự nhiên, như thực vật phân huỷ ở đất ngập nước, lẫn nguồn nhân tạo, như khai thác và vận chuyển than, khí, dầu, chăn nuôi và rác hữu cơ phân huỷ. Các khí fluor hoá là khí tổng hợp, thường được thải ra với lượng nhỏ hơn các khí nhà kính khác, nhưng tính trên cùng một khối lượng thì chúng giữ nhiệt mạnh hơn carbon dioxide đáng kể. Chlorofluorocarbon (CFC) — những hợp chất hoàn toàn có nguồn gốc công nghiệp, từng được dùng làm chất làm lạnh, dung môi và chất đẩy trong bình xịt — cũng là một trong các khí nhà kính chủ chốt; một số khí fluor hoá đôi khi được dùng thay cho CFC và các chất khác làm suy giảm tầng ozone.\n\nHơi nước là khí nhà kính dồi dào nhất. Nhưng lượng hơi nước tăng lên khi đại dương ấm dần, nên nó không phải nguyên nhân trực tiếp của biến đổi khí hậu mà là một vòng phản hồi: Trái Đất ấm lên thì hơi nước tăng, và hơi nước tăng lại làm Trái Đất ấm thêm.",
+    "fullDefEn": "About half the light energy reaching Earth's atmosphere passes through the air and clouds to the surface, where it is absorbed and re-emitted as infrared heat. About 90% of this heat is absorbed by greenhouse gases and re-radiated, slowing its loss to space. This greenhouse effect is essential to life on Earth; but human-made emissions are trapping more heat, and scientists attribute the global warming trend observed since the mid-20th century to the human expansion of the greenhouse effect.\n\nCarbon dioxide enters the atmosphere through natural processes such as volcanic eruptions and through human activities such as burning fossil fuels and deforestation; plants remove it as part of the carbon cycle. Methane comes from both natural sources, such as plant matter breaking down in wetlands, and human sources, such as producing and transporting coal, gas and oil, livestock, and decaying organic waste. Fluorinated gases are synthetic and are typically emitted in smaller quantities than other greenhouse gases, but for a given mass they trap substantially more heat than carbon dioxide. Chlorofluorocarbons (CFCs) — compounds entirely of industrial origin, once used as refrigerants, solvents and spray-can propellants — are also among the key greenhouse gases; some fluorinated gases are sometimes used as substitutes for CFCs and other ozone-depleting substances.\n\nWater vapour is the most abundant greenhouse gas. But because a warming ocean increases the amount of it in the atmosphere, it is not a direct cause of climate change but a feedback: as Earth warms, water vapour increases, which leads to further warming.",
+    "aliases": [
+      "greenhouse-gas",
+      "greenhouse-gases",
+      "khi-gay-hieu-ung-nha-kinh"
+    ],
+    "category": "Khoa học Trái Đất",
+    "sources": [
+      {
+        "title": "Overview of Greenhouse Gases",
+        "publisher": "U.S. Environmental Protection Agency",
+        "url": "https://www.epa.gov/ghgemissions/overview-greenhouse-gases"
+      },
+      {
+        "title": "The Causes of Climate Change",
+        "publisher": "NASA Science",
+        "url": "https://science.nasa.gov/climate-change/causes/"
+      }
+    ],
+    "verdict": "PASS",
+    "reviewedBy": "science-editor",
+    "reviewedAt": "2026-09-25",
+    "notes": "Duyet accuracy gate dot 4 boi science-editor, 2026-09-25. Reviewer tu tai lai toan bo URL nguon trong cung ngay (curl, UA trinh duyet; tat ca 200) va doi chieu tung menh de Viet-Anh. DA XAC NHAN nguyen van EPA: 'Gases that trap heat in the atmosphere are called greenhouse gases', nguon/bon CO2, methane, 'synthetic, powerful greenhouse gases', 'for a given amount of mass, they trap substantially more heat than CO2', hoi nuoc la 'other greenhouse gases'. DA XAC NHAN nguyen van NASA Causes: 'About 90% of this heat is then absorbed by greenhouse gases and re-radiated, slowing heat loss to space' (con so 90% co nguon, dung trang), 'The greenhouse effect is essential to life on Earth', 'Scientists attribute the global warming trend observed since the mid-20th century to the human expansion of the greenhouse effect', 'most abundant greenhouse gas... not a direct cause of climate change', vong phan hoi.\nHOA GIAI DANH SACH KHI (quy tac 16): CHUA DAT o ban nhap. EPA va NASA cung bac nguon, nhung ve PHAM VI khac nhau: trang EPA noi ve 'emissions and removals of the main greenhouse gases' - danh sach cua EPA la danh sach PHAT THAI; NASA liet ke 'Five key greenhouse gases' gom ca CFC va hoi nuoc. Ban nhap lay khung EPA ('cac khi chinh gom...') lam dinh nghia chung roi them 'hoi nuoc CUNG la khi nha kinh' - tuc xep khi nha kinh doi dao nhat vao hang phu. Nay shortDef noi dung pham vi cua moi nguon: hoi nuoc doi dao nhat (NASA), bon nhom chinh TRONG PHAT THAI (EPA). Va ban nhap bo han CFC du NASA xep no vao nam khi chu chot (quy tac 15) - CFC khong thuoc nhom 'fluorinated gases' theo dinh nghia EPA (HFC, PFC, SF6, NF3; EPA goi CFC la chat lam suy giam ozone ma khi fluor hoa thay the). Nay them CFC voi dung mo ta cua NASA va quan he thay the cua EPA ('sometimes used as substitutes').\nHAI SUA NUA. (1) Quy tac 15, nua cau bi bo: EPA viet khi fluor hoa 'are typically emitted in SMALLER QUANTITIES than other greenhouse gases, but they are potent'; ban nhap giu ve 'manh' bo ve 'it', de nguoi doc tuong day la nhom anh huong lon nhat. (2) 'Be mat hap thu anh sang Mat Troi' -> 'khoang mot nua nang luong anh sang toi khi quyen... xuong be mat': NASA noi ro chi khoang mot nua.",
+    "usedIn": [
+      "dai-tuyet-chung-permi-lan-su-song-suyt-bien-mat",
+      "nghich-ly-15-do-c-tai-sao-mot-thay-doi-nho-lai-quyet-dinh-so-phan-hanh-tinh",
+      "sao-kim-bai-hoc-ve-hieu-ung-nha-kinh-mat-kiem-soat"
+    ]
+  },
+  {
+    "slug": "el-nino",
+    "term": "El Niño",
+    "termEn": "El Niño",
+    "shortDef": "Pha ấm của hiện tượng El Niño – Dao động phương Nam (ENSO): bề mặt đại dương ở vùng trung tâm và đông Thái Bình Dương nhiệt đới ấm hơn trung bình, còn gió mậu dịch yếu đi, có khi đổi chiều. Nó có thể ảnh hưởng tới thời tiết khắp thế giới.",
+    "shortDefEn": "The warm phase of the El Niño–Southern Oscillation (ENSO): the ocean surface in the central and eastern tropical Pacific is warmer than average, and the trade winds weaken or sometimes reverse. It can affect weather worldwide.",
+    "fullDef": "Trong điều kiện bình thường, gió mậu dịch thổi về phía tây dọc xích đạo, đẩy nước ấm từ Nam Mỹ sang châu Á; nước lạnh từ dưới sâu trồi lên thế chỗ. Khi El Niño xảy ra, gió mậu dịch yếu đi và nước ấm bị đẩy ngược về phía đông, về phía bờ tây châu Mỹ. Pha ngược lại là La Niña: gió mạnh hơn thường lệ, đẩy thêm nước ấm sang châu Á, và nước trồi ở bờ tây châu Mỹ tăng lên. Giữa hai pha là trạng thái trung tính. Vì ENSO đòi hỏi thay đổi ở cả đại dương lẫn khí quyển, nó là một hiện tượng khí hậu liên kết giữa hai hệ.\n\nMỗi đợt El Niño hay La Niña thường kéo dài 9–12 tháng, đôi khi nhiều năm, và xảy ra trung bình 2–7 năm một lần nhưng không theo lịch cố định; nhìn chung El Niño xảy ra thường hơn La Niña. Tên gọi (tiếng Tây Ban Nha: \"cậu bé\") đến từ ngư dân Nam Mỹ, những người từ thế kỷ 17 đã nhận ra các đợt nước ấm bất thường ở Thái Bình Dương. Tên đầy đủ họ dùng là El Niño de Navidad (Navidad là Giáng sinh), vì El Niño thường đạt đỉnh quanh tháng 12.",
+    "fullDefEn": "Under normal conditions, the trade winds blow west along the equator, carrying warm water from South America toward Asia; cold water rises from the depths to replace it. During El Niño, the trade winds weaken and warm water is pushed back east, toward the west coast of the Americas. The opposite phase is La Niña: the winds are stronger than usual, pushing more warm water toward Asia, and upwelling increases off the west coast of the Americas. Between the two is a neutral state. Because ENSO requires changes in both the ocean and the atmosphere, it is a coupled climate phenomenon.\n\nEpisodes of El Niño or La Niña typically last nine to twelve months, sometimes years, and occur every two to seven years on average but not on a regular schedule; generally, El Niño occurs more often than La Niña. The name (Spanish for \"the boy\") comes from South American fishermen, who first noticed periods of unusually warm Pacific water in the 1600s. The full name they used was El Niño de Navidad (Navidad is Christmas), because El Niño typically peaks around December.",
+    "aliases": [
+      "enso",
+      "el-nino-southern-oscillation",
+      "el-nino-dao-dong-phuong-nam"
+    ],
+    "category": "Khoa học Trái Đất",
+    "sources": [
+      {
+        "title": "What are El Niño and La Niña?",
+        "publisher": "NOAA National Ocean Service",
+        "url": "https://oceanservice.noaa.gov/facts/ninonina.html"
+      },
+      {
+        "title": "What is the El Niño–Southern Oscillation (ENSO) in a nutshell?",
+        "publisher": "NOAA Climate.gov",
+        "url": "https://www.climate.gov/news-features/blogs/enso/what-el-ni%C3%B1o%E2%80%93southern-oscillation-enso-nutshell"
+      }
+    ],
+    "verdict": "PASS",
+    "reviewedBy": "science-editor",
+    "reviewedAt": "2026-09-25",
+    "notes": "Duyet accuracy gate dot 4 boi science-editor, 2026-09-25. Reviewer tu tai lai toan bo URL nguon trong cung ngay (curl, UA trinh duyet; tat ca 200) va doi chieu tung menh de Viet-Anh. DA XAC NHAN nguyen van NOAA NOS: gio mau dich thoi ve phia tay mang nuoc am tu Nam My sang chau A, nuoc lanh troi len thay the (upwelling); 'During El Nino, trade winds weaken. Warm water is pushed back east, toward the west coast of the Americas'; La Nina 'trade winds are even stronger than usual, pushing more warm water toward Asia... upwelling increases'; 'typically last nine to 12 months, but can sometimes last for years'; 'every two to seven years, on average, but they don't occur on a regular schedule'. DA XAC NHAN nguyen van Climate.gov: 'above-average sea surface temperatures... in the central and eastern tropical Pacific', gio 'weaken or, in some cases, start blowing the other direction', ba pha, 'ENSO is a coupled climate phenomenon'.\nHAI SUA. (1) Quy tac 3, rao rot: NOS viet 'GENERALLY, El Nino occurs more frequently than La Nina'; ban nhap bo chu 'Generally' o ca hai ban. Nay tra lai 'nhin chung'/'generally'. (2) Lai hai menh de thanh mot: ban nhap viet ngu dan the ky 17 'nhan ra cac dot nuoc am thuong len dinh quanh Giang sinh'. NOS noi hai dieu rieng: ngu dan 'first noticed periods of unusually warm water in the Pacific Ocean in the 1600s', va ten day du 'El Nino de Navidad, because El Nino typically peaks around December'. Viec EL NINO len dinh quanh thang 12 la phat bieu cua NOAA ve hien tuong, khong phai quan sat ma nguon gan cho ngu dan the ky 17. Nay tach dung. Chu thich 'Navidad la Giang sinh' la dich nghia tu, khong phai menh de khoa hoc. So lieu 9-12 thang, 2-7 nam la dac trung khi hau hoc ben vung, khong can moc ngay.",
+    "usedIn": [
+      "hien-tuong-el-nino-khi-dai-duong-noi-gian-va-dao-lon-khi-hau-toan-cau"
+    ]
   }
 ]

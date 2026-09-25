@@ -846,6 +846,162 @@ const LINKS: Link[] = [
       "[[mô-men động lượng]] phải được bảo toàn, nên tốc độ quay tăng vọt",
     ],
   },
+
+  /* ---- Đợt 25/09 (2): gắn 10 mục từ đợt 4 vừa qua gate accuracy ---------
+   *
+   * Không gắn:
+   * - "lớp phủ" ở `sao-thien-vuong…`: lớp băng siêu tới hạn của người khổng
+   *   lồ băng. Mục `lop-phu` định nghĩa lớp giữa vỏ và lõi của hành tinh ĐÁ —
+   *   gắn vào đây là để tooltip nói sai về chính câu nó nằm trong.
+   * - "đĩa bồi tụ" ở `ho-den…`: bồi tụ vào lỗ đen. Mục `boi-tu` chỉ kể bồi tụ
+   *   trong hình thành hành tinh; không phải sai, nhưng tooltip không giúp
+   *   người đang đọc về lỗ đen.
+   * - `sao-hoa…` [boi-tu]: cụm ấy nằm trong đoạn về Phobos/Deimos, không nói
+   *   về quá trình bồi tụ.
+   */
+  {
+    slug: "tuyet-ky-di-ke-hanh-tinh-cach-tau-vu-tru-bay-hang-ty-kilomet-ma-khong-ton-them-nhien-lieu",
+    vi: ["nơi đường Hoàng Đạo nằm trên thiên cầu", "nơi đường [[Hoàng Đạo]] nằm trên thiên cầu"],
+  },
+  {
+    slug: "tuyet-ky-di-ke-hanh-tinh-cach-tau-vu-tru-bay-hang-ty-kilomet-ma-khong-ton-them-nhien-lieu",
+    vi: ["Nếu không có trợ giúp hấp dẫn:", "Nếu không có [[trợ giúp hấp dẫn]]:"],
+  },
+  {
+    slug: "vi-sao-tau-khong-gian-khong-the-bay-thang-dung",
+    vi: ["vuông góc với mặt phẳng Hoàng Đạo, tàu phải:", "vuông góc với mặt phẳng [[Hoàng Đạo]], tàu phải:"],
+  },
+  {
+    slug: "vi-sao-tau-khong-gian-khong-the-bay-thang-dung",
+    vi: ["> **Trợ giúp hấp dẫn (Gravity Assist / Slingshot)**", "> **[[Trợ giúp hấp dẫn]] (Gravity Assist / Slingshot)**"],
+  },
+  {
+    slug: "cac-chom-sao-hoang-dao",
+    vi: ["được gọi là **Hoàng Đạo**.", "được gọi là **[[Hoàng Đạo]]**."],
+    en: ["is called the **ecliptic**.", "is called the **[[hoang-dao|ecliptic]]**."],
+  },
+  {
+    slug: "vi-sao-chiem-tinh-hoc-khong-phai-khoa-hoc",
+    vi: ["phương Tây chia hoàng đạo thành 12 cung", "phương Tây chia [[hoàng đạo]] thành 12 cung"],
+  },
+  {
+    slug: "giai-ma-hanh-tinh-tu-quay-quanh-truc",
+    vi: ["nhìn từ phía bắc hoàng đạo", "nhìn từ phía bắc [[hoàng đạo]]"],
+    en: ["viewed from the north of the ecliptic", "viewed from the north of the [[hoang-dao|ecliptic]]"],
+  },
+  {
+    slug: "giai-ma-hanh-tinh-tu-quay-quanh-truc",
+    vi: ["Theo mô hình bồi tụ lõi,", "Theo mô hình [[bồi tụ]] lõi,"],
+    en: ["According to the core accretion model,", "According to the core [[boi-tu|accretion]] model,"],
+  },
+  {
+    slug: "giai-ma-hanh-tinh-tu-quay-quanh-truc",
+    vi: ["ma sát giữa lõi và lớp phủ", "ma sát giữa lõi và [[lớp phủ]]"],
+    en: ["friction between the core and the mantle", "friction between the core and the [[lop-phu|mantle]]"],
+  },
+  {
+    slug: "tai-sao-pluto-khong-con-la-hanh-tinh",
+    vi: ["nghiêng 17 độ so với mặt phẳng hoàng đạo", "nghiêng 17 độ so với mặt phẳng [[hoàng đạo]]"],
+    en: ["tilted 17 degrees relative to the ecliptic plane", "tilted 17 degrees relative to the [[hoang-dao|ecliptic]] plane"],
+  },
+  {
+    slug: "su-ra-doi-cua-he-mat-troi",
+    vi: ["gọi là **bồi tụ (accretion)**.", "gọi là **[[bồi tụ]] (accretion)**."],
+    en: ["**Accretion, not ring separation.**", "**[[boi-tu|Accretion]], not ring separation.**"],
+  },
+  {
+    slug: "sao-moc-hanh-tinh-quay-nhanh-nhat-va-chiec-phanh-vo-hinh",
+    vi: ["giai đoạn **bồi tụ khí mất kiểm soát**", "giai đoạn **[[bồi tụ]] khí mất kiểm soát**"],
+    en: ["a phase of **runaway gas accretion**", "a phase of **runaway gas [[boi-tu|accretion]]**"],
+  },
+  {
+    slug: "cuc-quang-anh-sang-do-chinh-khi-quyen-trai-dat-phat-ra",
+    vi: ["gọi là **gió Mặt Trời**.", "gọi là **[[gió Mặt Trời]]**."],
+    en: ["called the **solar wind**.", "called the **[[gio-mat-troi|solar wind]]**."],
+  },
+  {
+    slug: "sao-thuy-the-gioi-da-bi-nung-va-dong-bang-cung-luc",
+    vi: ["nguyên tử bị gió mặt trời và va chạm thiên thạch", "nguyên tử bị [[gió mặt trời]] và va chạm thiên thạch"],
+    en: ["stripped from its surface by solar wind", "stripped from its surface by [[gio-mat-troi|solar wind]]"],
+  },
+  {
+    slug: "sao-thuy-the-gioi-da-bi-nung-va-dong-bang-cung-luc",
+    vi: ["đã bóc đi phần lớn lớp phủ đá", "đã bóc đi phần lớn [[lớp phủ]] đá"],
+    en: ["stripped away most of its rocky mantle", "stripped away most of its rocky [[lop-phu|mantle]]"],
+  },
+  {
+    slug: "sao-hoa-hanh-tinh-do-va-cau-hoi-ve-nuoc",
+    vi: ["Không còn lá chắn, gió mặt trời bào mòn", "Không còn lá chắn, [[gió mặt trời]] bào mòn"],
+    en: ["Without this shield, solar wind eroded", "Without this shield, [[gio-mat-troi|solar wind]] eroded"],
+  },
+  {
+    slug: "trai-dat-hanh-tinh-duy-nhat-ta-biet-co-su-song",
+    vi: ["Từ trường này bẻ hướng gió mặt trời", "Từ trường này bẻ hướng [[gió mặt trời]]"],
+  },
+  {
+    slug: "trai-dat-hanh-tinh-duy-nhat-ta-biet-co-su-song",
+    vi: ["các mảng trượt trên lớp phủ.", "các mảng trượt trên [[lớp phủ]]."],
+    en: ["plates that slide over the mantle.", "plates that slide over the [[lop-phu|mantle]]."],
+  },
+  {
+    slug: "cau-truc-ben-trong-trai-dat",
+    vi: ["xuyên qua nổi ranh giới vỏ–manti.", "xuyên qua nổi ranh giới vỏ–[[manti]]."],
+    en: ["pierced the crust–mantle boundary.", "pierced the crust–[[lop-phu|mantle]] boundary."],
+  },
+  {
+    slug: "vi-sao-chung-ta-khong-the-nho-nhung-nam-thang-dau-doi",
+    vi: ["là **hồi hải mã (Hippocampus)**.", "là **[[hồi hải mã]] (Hippocampus)**."],
+  },
+  {
+    slug: "giac-ngu-sau-lam-gi-voi-tri-nho-cua-ban",
+    vi: ["1. Ban ngày, hải mã ghi nhận", "1. Ban ngày, [[hồi hải mã|hải mã]] ghi nhận"],
+    en: ["1. During the day, the hippocampus records", "1. During the day, the [[hoi-hai-ma|hippocampus]] records"],
+  },
+  {
+    slug: "thoi-gian-duoi-goc-nhin-luong-tu-vu-tru-co-thuc-su-troi",
+    vi: ["Một lời giải quan trọng đến từ **entropy**.", "Một lời giải quan trọng đến từ **[[entropy]]**."],
+  },
+  {
+    slug: "lo-trang-va-lo-sau-hai-nghiem-toan-hoc-chua-ai-nhin-thay",
+    vi: ["đi ngược chiều tăng entropy của tự nhiên", "đi ngược chiều tăng [[entropy]] của tự nhiên"],
+    en: ["the direction of increasing entropy in nature", "the direction of increasing [[entropy]] in nature"],
+  },
+  {
+    slug: "suc-manh-cua-giac-ngu-trua-ngan-vi-sao-20-phut-co-the-giup-nao-tinh-tao-hon",
+    vi: ["- **Nhịp sinh học** khiến mức tỉnh táo", "- **[[Nhịp sinh học]]** khiến mức tỉnh táo"],
+  },
+  {
+    slug: "giac-ngu-sau-lam-gi-voi-tri-nho-cua-ban",
+    vi: ["làm lệch nhịp sinh học, tương tự lệch múi giờ", "làm lệch [[nhịp sinh học]], tương tự lệch múi giờ"],
+    en: ["disrupt the circadian rhythm, similar to jet lag", "disrupt the [[nhip-sinh-hoc|circadian rhythm]], similar to jet lag"],
+  },
+  {
+    slug: "thieu-ngu-khoan-no-the-chap-bang-suc-khoe-va-tuong-lai",
+    vi: ["thay đổi theo nhịp sinh học.", "thay đổi theo [[nhịp sinh học]]."],
+  },
+  {
+    slug: "nhin-an-gian-doan-anh-huong-toi-he-vi-sinh-duong-ruot-nhu-the-nao",
+    vi: ["các thành phần đồng hồ sinh học", "các thành phần [[đồng hồ sinh học]]"],
+    en: ["also have their own circadian rhythms.", "also have their own [[nhip-sinh-hoc|circadian rhythms]]."],
+  },
+  {
+    slug: "sao-kim-bai-hoc-ve-hieu-ung-nha-kinh-mat-kiem-soat",
+    vi: ["hơi nước lại là khí nhà kính mạnh", "hơi nước lại là [[khí nhà kính]] mạnh"],
+    en: ["water vapor is itself a potent greenhouse gas", "water vapor is itself a potent [[khi-nha-kinh|greenhouse gas]]"],
+  },
+  {
+    slug: "nghich-ly-15-do-c-tai-sao-mot-thay-doi-nho-lai-quyet-dinh-so-phan-hanh-tinh",
+    vi: ["Cả hai đều là khí nhà kính.", "Cả hai đều là [[khí nhà kính]]."],
+  },
+  {
+    slug: "dai-tuyet-chung-permi-lan-su-song-suyt-bien-mat",
+    vi: ["**CO₂ và khí nhà kính.**", "**CO₂ và [[khí nhà kính]].**"],
+    en: ["**CO₂ and greenhouse gases.**", "**CO₂ and [[khi-nha-kinh|greenhouse gases]].**"],
+  },
+  {
+    slug: "hien-tuong-el-nino-khi-dai-duong-noi-gian-va-dao-lon-khi-hau-toan-cau",
+    vi: ["Trong một sự kiện El Niño, gió mậu dịch", "Trong một sự kiện [[El Niño]], gió mậu dịch"],
+  },
 ];
 
 /** Khoá của mọi `[[...]]` trong một chuỗi thay thế. */
