@@ -1,0 +1,71 @@
+{
+  "slug": "sao-hoa-hanh-tinh-do-va-cau-hoi-ve-nuoc",
+  "verdict": "fix",
+  "findings": [
+    {
+      "id": "P-1",
+      "kind": "contradiction",
+      "severity": "S3",
+      "en": "\"a 22 km high volcano, nearly three times the height of Mount Everest\"",
+      "vi": "\"cao khoảng 21,9 km so với mốc chuẩn của Sao Hoả, tức gấp khoảng hai lần rưỡi đỉnh Everest\" (21,9/8,849 = 2,47; nguồn s2 THEMIS/ASU)",
+      "action": "Thay theo vi."
+    },
+    {
+      "id": "P-2",
+      "kind": "hedge-lost",
+      "severity": "S2",
+      "en": "\"Two small moons, Phobos and Deimos, likely captured asteroids\"",
+      "vi": "Nguồn gốc chưa ngã ngũ: quang phổ gợi ý bị bắt giữ, quỹ đạo gợi ý bồi tụ sau va chạm lớn; JAXA lập MMX để phân xử (s3, s4).",
+      "action": "en chọn một phe của tranh luận còn mở — sai về đồng thuận. Dịch lại đoạn vi."
+    },
+    {
+      "id": "P-3",
+      "kind": "contradiction",
+      "severity": "S3",
+      "en": "\"Valles Marineris — a canyon system 4,000 km long and up to 7 km deep\"",
+      "vi": "Giống en.",
+      "action": "CẢ HAI sai. Evidence mở 2026-09-25: NASA Mars Facts (science.nasa.gov/mars/facts): \"extends about 2,400 miles (3,870 kilometers) in length … descends about 5.8 miles (9.3 kilometers) at its deepest\". en dùng số NASA."
+    },
+    {
+      "id": "P-4",
+      "kind": "vi-only",
+      "severity": "S4",
+      "en": "Read more 3 link",
+      "vi": "Đọc thêm 4 link",
+      "action": "Thêm link neu-phai-roi-trai-dat-…"
+    }
+  ],
+  "enEdits": [
+    {
+      "id": "E-1",
+      "find": "a 22 km high volcano, nearly three times the height of Mount Everest",
+      "replace": "a volcano about 21.9 km high relative to the Martian datum, roughly two and a half times the height of Mount Everest",
+      "why": "P-1."
+    },
+    {
+      "id": "E-2",
+      "find": "a canyon system 4,000 km long and up to 7 km deep",
+      "replace": "a canyon system about 3,870 km long and up to about 9.3 km deep",
+      "why": "P-3 — theo NASA Mars Facts; không chép số sai của vi."
+    },
+    {
+      "id": "E-3",
+      "find": "- Two small moons, Phobos and Deimos, likely captured asteroids",
+      "replace": "- Two small moons, Phobos and Deimos, whose origin is still unsettled. Their spectra resemble those of primitive asteroids, suggesting Mars captured them; but their nearly circular orbits, lying almost in the equatorial plane, fit better with a scenario in which they accreted from a debris disk thrown up by a giant impact. JAXA counts this among the unsolved problems of Solar System formation, and launched the MMX mission to bring back a sample of Phobos and settle the question",
+      "why": "P-2."
+    },
+    {
+      "id": "E-4",
+      "find": "- [Jupiter: the fastest-spinning planet and the invisible brake](/articles/sao-moc-hanh-tinh-quay-nhanh-nhat-va-chiec-phanh-vo-hinh)",
+      "replace": "- [Jupiter: the fastest-spinning planet and the invisible brake](/articles/sao-moc-hanh-tinh-quay-nhanh-nhat-va-chiec-phanh-vo-hinh)\n- [If we had to leave Earth, where in the Solar System could humans live?](/articles/neu-phai-roi-trai-dat-con-nguoi-co-the-song-o-dau-trong-he-mat-troi)",
+      "why": "P-4."
+    }
+  ],
+  "corrections": [
+    "2026-09-25 · `sao-hoa-hanh-tinh-do-va-cau-hoi-ve-nuoc` (en) — bản en còn \"22 km, gần gấp ba Everest\" → 21,9 km so với mốc chuẩn, khoảng 2,5 lần (s2); \"Phobos, Deimos likely captured asteroids\" → nguồn gốc chưa ngã ngũ, MMX phân xử (s3, s4); Valles Marineris 4.000 km/7 km → 3.870 km/9,3 km (NASA Mars Facts, vi còn sai)."
+  ],
+  "openQuestions": [
+    "Bản vi còn Valles Marineris \"dài 4.000 km, sâu tới 7 km\" — NASA Mars Facts (đã mở lượt này) ghi 3.870 km, sâu 9,3 km (check 17/09 đã nêu). Cần sửa vi và thêm NASA Mars Facts vào bảng nguồn.",
+    "Check 17/09 còn nợ nguồn cho MAVEN, băng ở vĩ độ trung bình, đất sét/sulfat — chung cho cả hai bản, ngoài phạm vi đối chiếu."
+  ]
+}

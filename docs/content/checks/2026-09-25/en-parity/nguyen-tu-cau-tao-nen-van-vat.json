@@ -1,0 +1,105 @@
+{
+  "slug": "nguyen-tu-cau-tao-nen-van-vat",
+  "verdict": "fix",
+  "findings": [
+    {
+      "id": "P-1",
+      "en": "Hằng số CODATA 2022 / NIST / IAEA: bán kính Bohr 5,291 772 105 44(82)×10⁻¹¹ m, bán kính proton 8,4075(64)×10⁻¹⁶ m, tỉ số ≈63.000; khối lượng p/n/e theo u; bán kính điện tích ¹²C, ²³⁸U; năng lượng ion hoá Ne 21,564541 eV, Li 5,391714996 eV; cấu hình 1s…2p⁶",
+      "vi": "Không có",
+      "kind": "en-only",
+      "severity": "S4",
+      "action": "Bỏ (vi đã rút gọn; lượt này không mở lại từng bảng nguồn)."
+    },
+    {
+      "id": "P-2",
+      "en": "Độ phổ biến ¹²C 0,9893(8) / ¹³C 0,0107(8); ¹⁴C bán rã 5700(30) năm; độ phổ biến và bán rã ²³⁸U/²³⁵U; NUBASE2020 3.340 nuclide; CIAAW Tc (43), Pm (61); khoảng khối lượng nguyên tử C [12,0096; 12,0116], H [1,00784; 1,00811]; dalton neo trên ¹²C từ 1960",
+      "vi": "Không có",
+      "kind": "en-only",
+      "severity": "S4",
+      "action": "Bỏ."
+    },
+    {
+      "id": "P-3",
+      "en": "'figures such as tropical seawater warmed by about 8–10 °C in the Permian extinction' + link",
+      "vi": "Không có",
+      "kind": "en-only",
+      "severity": "S3",
+      "action": "Bỏ. Đây là claim của bài khác, bảng nguồn bài này không đỡ; bài Permi vừa được duyệt lại 25/09."
+    },
+    {
+      "id": "P-4",
+      "en": "Tổng p+n+e = 12,098940 u, hụt 0,098940 u ≈ 0,82%; năng lượng liên kết/nucleon ⁴He 7073,9156, ¹²C 7680,1446, ⁵⁶Fe 8790,3563 keV; 'chain stops at iron'",
+      "vi": "Mô tả định tính độ hụt khối, không có số",
+      "kind": "en-only",
+      "severity": "S4",
+      "action": "Bỏ số; giữ phần định tính theo vi."
+    },
+    {
+      "id": "P-5",
+      "en": "'The ratio of proton mass to electron mass is 1836.152 673 426(32)'",
+      "vi": "'Khối lượng của proton và neutron lớn hơn electron khoảng 2.000 lần'",
+      "kind": "contradiction",
+      "severity": "S4",
+      "action": "en viết 'about 1,840 times'. CODATA 2022, mở 25/09: m_p/m_e = 1836,152673426(32), m_n/m_e = 1838,68366200(74). 'khoảng 2.000' lệch ~9%; không chép số làm tròn của vi. Xem openQuestions."
+    },
+    {
+      "id": "P-6",
+      "en": "'Electrons sharing n belong to the same shell; ... n and l ... subshell. l = 0, 1, 2, 3 are written s, p, d, f' (NIST s4)",
+      "vi": "'Các electron sắp xếp thành những lớp năng lượng khác nhau: Lớp s, Lớp p, Lớp d, Lớp f'",
+      "kind": "contradiction",
+      "severity": "S3",
+      "action": "vi sai: s/p/d/f là phân lớp, không phải lớp. en giữ cách phân biệt đúng: 'shells, each divided into subshells labelled s, p, d, f'. Xem openQuestions."
+    },
+    {
+      "id": "P-7",
+      "en": "'that shortfall corresponds to the binding energy'",
+      "vi": "'Phần khối lượng mất đi đã được chuyển hóa thành năng lượng liên kết hạt nhân, giúp giữ các proton và neutron'; 'Mỗi hạt nhân đều chứa một lượng năng lượng liên kết'; 'một phần năng lượng liên kết được giải phóng'",
+      "kind": "contradiction",
+      "severity": "S3",
+      "action": "en không chép mô hình 'khối lượng biến thành năng lượng liên kết cất trong hạt nhân'. Viết: hụt khối tương ứng năng lượng liên kết, tức năng lượng toả ra khi hạt nhân hình thành và năng lượng phải cấp vào để tách nó ra; nhiệt hạch/phân hạch toả năng lượng vì hạt nhân sản phẩm liên kết chặt hơn (định tính, đúng như bảng liên kết/nucleon IAEA trong en cũ)."
+    },
+    {
+      "id": "P-8",
+      "en": "—",
+      "vi": "'chính chúng đã tạo nên mọi vật chất trong vũ trụ'",
+      "kind": "vi-only",
+      "severity": "S3",
+      "action": "en viết 'all the ordinary matter in the universe'. Vật chất tối không cấu tạo từ proton, neutron và electron (xem bài vat-chat-toi-va-nang-luong-toi của kho). Xem openQuestions."
+    },
+    {
+      "id": "P-9",
+      "en": "Không có",
+      "vi": "Z của H/C/O; ¹⁴C dùng định tuổi mẫu vật cổ; năng lượng hạt nhân nuôi Mặt Trời, nhà máy điện, vũ khí hạt nhân; phân hạch; orbital",
+      "kind": "vi-only",
+      "severity": "S4",
+      "action": "Thêm vào en theo vi."
+    },
+    {
+      "id": "P-10",
+      "en": "summaryEn: 'three numbers ... the mass missing from ¹²C — using CODATA 2022, NIST and IAEA data'",
+      "vi": "summary: mọi vật cấu tạo từ nguyên tử; hạt nhân + electron; khối lượng ở hạt nhân, thể tích ở vùng electron",
+      "kind": "en-only",
+      "severity": "S4",
+      "action": "Dịch lại summaryEn từ vi."
+    }
+  ],
+  "contentEnFile": "nguyen-tu-cau-tao-nen-van-vat.en.md",
+  "summaryEnEdits": [
+    {
+      "id": "SE-1",
+      "find": "The nucleus holds almost all of an atom's mass; the electrons hold almost all of its volume. This article works through the three numbers behind that structure — the proton count Z that fixes the element, the mass number A that separates the isotopes, and the mass missing from ¹²C — using CODATA 2022, NIST and IAEA data.",
+      "replace": "Everything around us, from the air to the human body, is made of tiny units called **atoms**. Each atom has a nucleus at its centre, with electrons moving around it.\n\nRemarkably, almost all of an atom's mass is in the nucleus, while most of its volume belongs to the region of space occupied by the electrons.",
+      "why": "P-10: khớp summary vi."
+    }
+  ],
+  "corrections": [
+    "- 2026-09-25 | nguyen-tu-cau-tao-nen-van-vat | contentEn/summaryEn là bản dài cũ (hằng số CODATA, độ phổ biến và bán rã đồng vị, NUBASE 3.340 nuclide, 12,098940 u / 0,82%, năng lượng liên kết/nucleon, claim Permi 8–10 °C), lệch cấu trúc với vi đã rút gọn → en dịch lại từ vi hiện tại, không chép bốn chỗ vi sai hoặc mất mát: s/p/d/f là phân lớp (vi: 'lớp'); tỉ số khối lượng ~1.840 (vi: 'khoảng 2.000'); 'mọi vật chất thông thường' (vi: 'mọi vật chất'); hụt khối 'tương ứng' năng lượng liên kết (vi: 'chuyển hoá thành') | CODATA 2022 m_p/m_e, m_n/m_e (physics.nist.gov, mở 25/09); NIST Atomic Spectroscopy (s4)"
+  ],
+  "openQuestions": [
+    "vi 'Lớp s, p, d, f' sai thuật ngữ: s/p/d/f là phân lớp (subshell); lớp (shell) đánh theo n (NIST s4, như en cũ). Mức S3 vì để lại mô hình sai. Đề nghị đính chính vi: 'Các electron sắp xếp theo lớp, mỗi lớp chia thành các phân lớp s, p, d, f'.",
+    "vi 'lớn hơn electron khoảng 2.000 lần': CODATA 2022 (mở 25/09) cho 1836,15 (proton) và 1838,68 (neutron). Đề nghị vi viết 'khoảng 1.840 lần' để hai bản cùng con số.",
+    "vi 'khối lượng mất đi đã được chuyển hóa thành năng lượng liên kết ..., giúp giữ' và 'mỗi hạt nhân đều chứa một lượng năng lượng liên kết' gợi ý năng lượng liên kết là thứ được cất trong hạt nhân; thật ra đó là năng lượng đã toả ra khi hạt nhân hình thành. Đề nghị vi viết lại như en mới.",
+    "vi 'tạo nên mọi vật chất trong vũ trụ' mâu thuẫn với bài vật chất tối của kho. Đề nghị 'mọi vật chất thông thường'.",
+    "vi rút gọn mất toàn bộ số liệu có nguồn và mọi trích dẫn trong thân bài; corrections.md không có dòng cho lần rút gọn này. Bảng nguồn 10 mục (NUBASE2020, CIAAW, bán kính điện tích…) giờ hầu như không đỡ claim nào trong cả hai bản."
+  ]
+}

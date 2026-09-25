@@ -1,0 +1,81 @@
+{
+  "slug": "big-bang-vu-tru-da-dien-ra-the-nao-trong-138-ti-nam",
+  "verdict": "fix",
+  "findings": [
+    {
+      "id": "F-1",
+      "kind": "contradiction",
+      "severity": "S2",
+      "en": "### Around 1 Billion Years — The first galaxies appeared.",
+      "vi": "### Khoảng 300 triệu năm — Những thiên hà đầu tiên đã hình thành. Thiên hà xa nhất được xác nhận … JADES-GS-z14-0, z = 14,32, khoảng 290 triệu năm sau Big Bang (số liệu tháng 5/2024 …)",
+      "action": "Đổi en: mốc 300 triệu năm + câu JADES-GS-z14-0 có mốc thời gian. \"1 tỉ năm\" sai theo chính nguồn s3 của bài (NASA, 30/05/2024: JADES-GS-z14-0 ở z = 14,32, \"less than 300 million years after the Big Bang\" — đã mở trong lượt này). En viết \"As of May 2024 … was\" thay vì \"cho tới nay\" (xem openQuestions)."
+    },
+    {
+      "id": "F-2",
+      "kind": "contradiction",
+      "severity": "S2",
+      "en": "In about 8 billion years: The Sun becomes a white dwarf.",
+      "vi": "Khoảng 8 tỷ năm nữa: Mặt Trời trở thành sao lùn trắng.",
+      "action": "CẢ HAI SAI. Không chép sang en: gỡ dòng này khỏi en. NASA Science, Sun: Facts (mở trong lượt này): \"will last another 5 billion years or so before it becomes a white dwarf\". Không thay bằng 5 tỉ năm vì NASA Sun: Facts chưa có trong bảng nguồn của bài (đổi claim phải đổi cả bảng nguồn). Xem openQuestions."
+    },
+    {
+      "id": "F-3",
+      "kind": "vi-only",
+      "severity": "S4",
+      "en": "Further Reading: 3 link",
+      "vi": "Đọc thêm: 5 link",
+      "action": "Thêm 2 link còn thiếu vào en."
+    },
+    {
+      "id": "F-4",
+      "kind": "en-only",
+      "severity": "S4",
+      "en": "SUMMARY_EN: \"… The timeline from 10⁻⁴³ seconds to today, the three pillars of evidence, and why the universe's fate was rewritten in 1998.\"",
+      "vi": "SUMMARY: \"… Khi các thiên hà ngày càng xa nhau, điều đang giãn ra là khoảng không gian giữa chúng.\"",
+      "action": "Không sai, nhưng là một bản tóm tắt khác. Dịch lại summaryEn từ summary vi."
+    }
+  ],
+  "enEdits": [
+    {
+      "id": "E-1",
+      "find": "### Around 1 Billion Years",
+      "replace": "### Around 300 Million Years",
+      "why": "F-1"
+    },
+    {
+      "id": "E-2",
+      "find": "The first galaxies appeared.",
+      "replace": "The first galaxies had formed. As of May 2024, the most distant confirmed galaxy was JADES-GS-z14-0, at a redshift of 14.32 — about 290 million years after the Big Bang (this milestone keeps moving back each time JWST finds a more distant galaxy).",
+      "why": "F-1"
+    },
+    {
+      "id": "E-3",
+      "find": "- In about 8 billion years: The Sun becomes a white dwarf.\n",
+      "replace": "",
+      "why": "F-2"
+    },
+    {
+      "id": "E-4",
+      "find": "- [Dark stars may have left echoes in the form of gravitational waves across the universe](/articles/cac-sao-toi-co-the-da-de-lai-tieng-vong-duoi-dang-song-hap-dan-khap-vu-tru)",
+      "replace": "- [Dark stars may have left echoes in the form of gravitational waves across the universe](/articles/cac-sao-toi-co-the-da-de-lai-tieng-vong-duoi-dang-song-hap-dan-khap-vu-tru)\n- [The universe never stands still: motion is the natural state of everything](/articles/vu-tru-khong-bao-gio-dung-yen-chuyen-dong-la-trang-thai-tu-nhien-cua-moi-thu)\n- [Decoding cosmic voids: one of the most mysterious structures in the universe](/articles/giai-ma-nhung-khoang-trong-rong-voids-trong-vu-tru)",
+      "why": "F-3"
+    }
+  ],
+  "summaryEnEdits": [
+    {
+      "id": "S-1",
+      "find": "Not an explosion in space but the expansion of space itself. The timeline from 10⁻⁴³ seconds to today, the three pillars of evidence, and why the universe's fate was rewritten in 1998.",
+      "replace": "The Big Bang was not an explosion in space. In the modern model, it is the expansion of space itself, happening everywhere at once. As galaxies move ever farther apart, what is stretching is the space between them.",
+      "why": "F-4"
+    }
+  ],
+  "corrections": [
+    "(en) \"Around 1 Billion Years — The first galaxies appeared\" → \"Around 300 Million Years — the first galaxies had formed\" + JADES-GS-z14-0 (z = 14,32, khoảng 290 triệu năm) ghi mốc \"As of May 2024\" — căn cứ: NASA Science, 30/05/2024 (nguồn s3 của bài).",
+    "(en) gỡ dòng \"In about 8 billion years: The Sun becomes a white dwarf\" — căn cứ: NASA Science, Sun: Facts: \"another 5 billion years or so before it becomes a white dwarf\" (check 2026-09-17, C-11). Bản vi CHƯA sửa dòng tương ứng."
+  ],
+  "openQuestions": [
+    "Bản vi còn \"Khoảng 8 tỷ năm nữa: Mặt Trời trở thành sao lùn trắng\" — sai (S2, check 2026-09-17 C-11). NASA Science, Sun: Facts, mở ngày 25/09/2026: \"will last another 5 billion years or so before it becomes a white dwarf\". Cần lượt đính chính vi: sửa thành ~5 tỉ năm và thêm NASA Sun: Facts vào bảng nguồn, rồi thêm lại dòng tương ứng vào en.",
+    "Bản vi viết JADES-GS-z14-0 là \"thiên hà xa nhất được xác nhận cho tới nay\" — đã lỗi thời (check 2026-09-17 C-9: MoM-z14, z = 14,44, Naidu và cs. 2025). En chỉ nói \"as of May 2024\", nên không sai; vi cần sửa ở lượt đính chính riêng. Nguồn s3 (NASA) ghi \"less than 300 million years\"; con số 290 của cả hai bản khớp với mức đó nhưng không phải nguyên văn nguồn.",
+    "Các phát hiện S3 khác của check 2026-09-17 vẫn còn ở CẢ HAI bản và lượt đối chiếu này không đóng chúng: 27% vật chất tối (Planck 2018 ≈ 26,4%), 75/25% thiếu chữ \"theo khối lượng\" và lithi gộp vào \"dự đoán chính xác\", lạm phát viết như sự kiện đã xác lập, \"cái chết nhiệt được ủng hộ nhiều nhất\", mốc 200 triệu năm và 100 nghìn tỉ / 10¹⁰⁰ năm không nguồn, thiếu căng thẳng Hubble. factCheck=REVISE là đúng."
+  ]
+}

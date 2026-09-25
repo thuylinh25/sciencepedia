@@ -1,0 +1,89 @@
+{
+  "slug": "neu-roi-he-mat-troi-proxima-centauri-se-la-diem-dung-dau-tien",
+  "verdict": "fix",
+  "findings": [
+    {
+      "id": "P-1",
+      "kind": "vi-only",
+      "severity": "S2",
+      "en": "\"- **Parker Solar Probe**: about 6,700 years.\"",
+      "vi": "Kèm chú thích: chỉ là phép quy đổi từ tốc độ kỷ lục tại cận nhật; tàu ở quỹ đạo đóng, không thể rời Hệ Mặt Trời (đính chính 11/09).",
+      "action": "Thêm chú thích vào en — đúng claim đã bị bác (con số đúng gắn vào kết luận sai)."
+    },
+    {
+      "id": "P-2",
+      "kind": "contradiction",
+      "severity": "S2",
+      "en": "\"**Proxima Centauri d**: located very close to the host star and too hot for liquid water.\"",
+      "vi": "\"khoảng 0,26 lần khối lượng Trái Đất … chu kỳ 5,1 ngày. Nhiệt độ cân bằng ước tính khoảng 282 K, nhưng khối lượng quá nhỏ khiến nó khó giữ được khí quyển.\"",
+      "action": "CẢ HAI sai. Evidence mở 2026-09-25: Faria et al. 2022 (s2, aanda.org full text): \"minimum mass of 0.26 ± 0.05 M⊕\", \"orbits closer to the star (at 0.02885 au) than to the inner edge of the HZ\", \"Its equilibrium temperature may reach 360 K, assuming a Bond albedo of 0.3\". Không có \"too hot for liquid water\" (360 K < 373 K), không có 282 K, không có kết luận về khí quyển. en viết theo nguồn."
+    },
+    {
+      "id": "P-3",
+      "kind": "contradiction",
+      "severity": "S3",
+      "en": "\"**Proxima Centauri c**: a larger planet, still under further study.\"",
+      "vi": "\"một tín hiệu được đề xuất năm 2020, chưa được xác nhận và hiện không nằm trong danh mục … của NASA\"",
+      "action": "en gọi c là hành tinh — nâng mức chắc chắn. Viết theo vi phần \"tín hiệu 2020, chưa xác nhận\" (NIRPS 2025 qua check 17/09 C-14); BỎ vế \"không nằm trong danh mục NASA\" vì check 17/09 chưa kiểm được."
+    },
+    {
+      "id": "P-4",
+      "kind": "hedge-lost",
+      "severity": "S3",
+      "en": "\"**Proxima Centauri b**: a rocky planet located in the habitable zone.\"",
+      "vi": "\"hành tinh đá nằm trong vùng có thể sinh sống\" — cùng lỗi.",
+      "action": "CẢ HAI nâng mức chắc chắn (check 17/09 C-13): chỉ biết khối lượng tối thiểu, chưa đo được bán kính. en: \"minimum mass of about one Earth mass … may be rocky\"."
+    },
+    {
+      "id": "P-5",
+      "kind": "contradiction",
+      "severity": "S3",
+      "en": "\"If a speed of about **20% of the speed of light** is achieved, the travel time to Proxima Centauri could be reduced to only about **20 years**.\"",
+      "vi": "Giống en (20%, 20 năm tới Proxima).",
+      "action": "CẢ HAI sai. Evidence mở 2026-09-25: breakthroughinitiatives.org/initiative/3: \"speeds of up to 100 million miles an hour\" (≈15% c), \"a flyby mission to reach Alpha Centauri in just over 20 years from launch\". en: ~15%, bay ngang hệ Alpha Centauri sau hơn 20 năm."
+    },
+    {
+      "id": "P-6",
+      "kind": "hedge-lost",
+      "severity": "S3",
+      "en": "Voyager 1 75,000 năm / New Horizons 90,000 năm, không nêu giả định.",
+      "vi": "Giống en.",
+      "action": "Thêm giả định (giữ vận tốc, bay thẳng; không phải quỹ đạo thật). Evidence mở 2026-09-25: NASA Voyager 1: \"moving at a velocity of 38,026.79 mph (17.0 km/second) relative to the Sun\" (21/8/2024) → 4,02×10^13 km / 17 km/s ≈ 75.000 năm."
+    },
+    {
+      "id": "P-7",
+      "kind": "hedge-lost",
+      "severity": "S4",
+      "en": "\"Proxima Centauri will almost certainly be humanity's first destination\"",
+      "vi": "\"gần như chắc chắn sẽ là điểm đến … đầu tiên\"",
+      "action": "Hạ thành \"the obvious first candidate destination\" (check 17/09 C-18)."
+    },
+    {
+      "id": "P-8",
+      "kind": "contradiction",
+      "severity": "S4",
+      "en": "summaryEn: \"the closest individual star to Earth\"",
+      "vi": "summary: \"ngôi sao gần Trái Đất nhất\"",
+      "action": "CẢ HAI sai (Mặt Trời là sao gần nhất; check 17/09 C-20). summaryEn → \"the nearest star beyond the Sun\"."
+    }
+  ],
+  "contentEnFile": "neu-roi-he-mat-troi-proxima-centauri-se-la-diem-dung-dau-tien.en.md",
+  "summaryEnEdits": [
+    {
+      "id": "S-1",
+      "find": "is the closest individual star to Earth, situated about 4.25 light-years away",
+      "replace": "is the nearest star beyond the Sun, about 4.25 light-years away",
+      "why": "P-8."
+    }
+  ],
+  "corrections": [
+    "2026-09-25 · `neu-roi-he-mat-troi-proxima-centauri` (en) — đính chính 11/09 chưa tới bản en: thêm chú thích Parker Solar Probe ở quỹ đạo đóng cho con số 6.700 năm. Kèm sửa en (vi còn sai): Proxima d \"too hot for liquid water\" → nhiệt độ cân bằng có thể tới ~360 K (albedo 0,3), nằm trong mép trong vùng sinh sống, khối lượng tối thiểu 0,26 (Faria 2022, s2); Proxima c là tín hiệu chưa xác nhận; b \"rocky\" → \"may be rocky\"; Starshot 20% → ~15% c, bay ngang Alpha Centauri sau hơn 20 năm (breakthroughinitiatives.org); thêm giả định cho thời gian bay; summaryEn bỏ \"closest star to Earth\"."
+  ],
+  "openQuestions": [
+    "Bản vi SAI, không phải chuẩn, ở: nhiệt độ cân bằng Proxima d 282 K (Faria 2022 ghi 360 K — đã mở full text lượt này), \"khó giữ khí quyển\" (không nguồn), \"0,26 lần khối lượng\" thiếu chữ \"tối thiểu\", b \"hành tinh đá\", Starshot 20% c tới Proxima (trang dự án: ≤100 triệu dặm/giờ ≈15% c, bay ngang Alpha Centauri). Cần sửa vi và ghi corrections.md cho vi.",
+    "Hai nguồn đã dùng cho en chưa có trong bảng nguồn: trang NASA Voyager 1 (17,0 km/s) và breakthroughinitiatives.org/initiative/3 (tier 3, chỉ mô tả dự án). Cần thêm vào bảng nguồn khi áp lượt sửa.",
+    "New Horizons 90.000 năm vẫn không nguồn ở cả hai bản (check 17/09 C-10). Giữ ở en vì cùng mức với vi và đã kèm giả định; nếu không tìm được vận tốc từ NASA thì cắt ở cả hai.",
+    "Vế \"không nằm trong danh mục NASA\" của Proxima c chưa kiểm được (check 17/09) — đã bỏ khỏi en; vi vẫn giữ.",
+    "Summary vi \"ngôi sao gần Trái Đất nhất\" sai (Mặt Trời). Tiêu đề en/vi \"First Stop\"/\"điểm dừng\" vẫn là câu hỏi mở từ 17/09 (dự án duy nhất là bay ngang)."
+  ]
+}

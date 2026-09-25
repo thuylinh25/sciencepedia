@@ -1,0 +1,96 @@
+{
+  "slug": "thuyet-tuong-doi-hep-khi-thoi-gian-khong-con-tuyet-doi",
+  "verdict": "fix",
+  "findings": [
+    {
+      "id": "F-1",
+      "kind": "contradiction",
+      "severity": "S3",
+      "en": "published a paper that reconstructed all of mechanics from two postulates",
+      "vi": "công bố một bài báo xây dựng lại động học của chuyển động từ hai giả định",
+      "action": "Đổi en theo vi. Lượt 17/09 (C-1) đã sửa cụm \"toàn bộ cơ học\" vì phóng đại; bản en chưa nhận."
+    },
+    {
+      "id": "F-2",
+      "kind": "vi-only",
+      "severity": "S3",
+      "en": "E = mc². Mass and energy are two sides of the same quantity. (hết)",
+      "vi": "… Hệ quả này không nằm trong bài tháng 6: Einstein nêu nó trong bài thứ hai cùng năm, \"Ist die Trägheit …\" (Annalen der Physik 323, tháng 9/1905).",
+      "action": "Thêm câu đính chính vào en. Nguồn s4 (DOI 10.1002/andp.19053231314) đã có trong bảng nguồn."
+    },
+    {
+      "id": "F-3",
+      "kind": "contradiction",
+      "severity": "S3",
+      "en": "if ignored, positioning errors would accumulate by about 10 km per day",
+      "vi": "sai số khoảng cách tích luỹ tương đương 11 km quãng đường ánh sáng mỗi ngày — đủ làm hệ thống mất tác dụng",
+      "action": "Đổi en theo vi. Lượt 17/09 (C-5): 38 μs × c ≈ 11 km là quãng đường ánh sáng, không phải sai số vị trí đo được; \"10 km\" chỉ có ở nguồn bậc 3."
+    },
+    {
+      "id": "F-4",
+      "kind": "vi-only",
+      "severity": "S3",
+      "en": "(không có)",
+      "vi": "Ashby (2003) cho độ lệch tần số danh định 4,4647 × 10−10, tức ≈ 38,6 μs/ngày … Cách tách 7 / 45 μs … là cách trình bày chuẩn trong tài liệu giảng dạy (Pogge, Ohio State); không phải cách Ashby phân rã",
+      "action": "Dịch vào en. Nguồn s2 (Ashby 2003) và s5 (Pogge) có trong bảng; số học tự kiểm: 4,4647e−10 × 86 400 s = 38,58 μs."
+    },
+    {
+      "id": "F-5",
+      "kind": "hedge-lost",
+      "severity": "S3",
+      "en": "their average lifespan is too short to reach the ground, yet they still do",
+      "vi": "thời gian sống trung bình của chúng ngắn đến mức phần lớn sẽ phân rã trước khi tới mặt đất, vậy mà chúng vẫn tới",
+      "action": "Đổi en theo vi (lượt 17/09, C-6: \"phần lớn sẽ phân rã\")."
+    },
+    {
+      "id": "F-6",
+      "kind": "vi-only",
+      "severity": "S4",
+      "en": "Further reading: 2 link",
+      "vi": "Đọc thêm: 5 link",
+      "action": "Thêm 3 link còn thiếu vào en — không phải claim, nhưng giữ tập link nội bộ hai bản bằng nhau."
+    }
+  ],
+  "enEdits": [
+    {
+      "id": "E-1",
+      "find": "published a paper that reconstructed all of mechanics from two postulates:",
+      "replace": "published a paper that rebuilt the kinematics of motion from two postulates:",
+      "why": "F-1"
+    },
+    {
+      "id": "E-2",
+      "find": "**E = mc².** Mass and [energy](/articles/nang-luong-la-gi) are two sides of the same quantity.",
+      "replace": "**E = mc².** Mass and [energy](/articles/nang-luong-la-gi) are two sides of the same quantity. This consequence is not in the June paper: Einstein stated it in a second paper the same year, \"Ist die Trägheit eines Körpers von seinem Energieinhalt abhängig?\" (Annalen der Physik 323, September 1905).",
+      "why": "F-2"
+    },
+    {
+      "id": "E-3",
+      "find": "GPS systems must calibrate for both special relativity effects (satellites move fast, so clocks run slow by about 7 μs/day) and general relativity effects (being further from Earth, the gravitational field is weaker, so clocks run fast by about 45 μs/day). The total is about 38 μs/day — if ignored, positioning errors would accumulate by about 10 km per day.",
+      "replace": "The GPS system has to correct for both effects. The satellites move fast, so their atomic clocks run slow by about 7 μs/day (special relativity); being far from Earth, where gravity is weaker, they run fast by about 45 μs/day (general relativity). Net: the satellite clocks run fast relative to ground clocks by about 38 μs/day, and that is the amount that has to be corrected. Ashby (2003) gives a nominal fractional frequency offset of 4.4647 × 10⁻¹⁰, i.e. ≈ 38.6 μs/day — consistent with the 38 μs figure. The 7 / 45 μs split above is the standard presentation in teaching materials (Pogge, Ohio State); it is not how Ashby breaks it down, since he works directly with the frequency offset. Ignoring that 38 μs/day would build up a timing error equivalent to about 11 km of light-travel distance every day — enough to make the system useless.",
+      "why": "F-3, F-4"
+    },
+    {
+      "id": "E-4",
+      "find": "their average lifespan is too short to reach the ground, yet they still do",
+      "replace": "their mean lifetime is so short that most of them should decay before reaching the ground, yet they still arrive",
+      "why": "F-5"
+    },
+    {
+      "id": "E-5",
+      "find": "- [The Sun: the reactor that holds the entire planetary system](/articles/mat-troi-lo-phan-ung-giu-ca-he-hanh-tinh)",
+      "replace": "- [The Sun: the reactor that holds the entire planetary system](/articles/mat-troi-lo-phan-ung-giu-ca-he-hanh-tinh)\n- [Why did Einstein say \"God does not play dice\"?](/articles/vi-sao-einstein-noi-chua-khong-choi-tro-xuc-xac)\n- [Why does time run slower the closer you get to the speed of light?](/articles/vi-sao-cang-gan-toc-do-anh-sang-thoi-gian-troi-cang-cham)\n- [Time through a quantum lens: does the universe really \"flow\"?](/articles/thoi-gian-duoi-goc-nhin-luong-tu-vu-tru-co-thuc-su-troi)",
+      "why": "F-6"
+    }
+  ],
+  "corrections": [
+    "(en) \"reconstructed all of mechanics from two postulates\" → \"rebuilt the kinematics of motion\" — căn cứ: bản vi đã đính chính (check 2026-09-17, C-1).",
+    "(en) E = mc² không ghi nguồn gốc → thêm câu: hệ quả này nằm ở bài thứ hai tháng 9/1905, Annalen der Physik 323 — căn cứ: doi 10.1002/andp.19053231314 (check 2026-09-17, C-2).",
+    "(en) \"positioning errors would accumulate by about 10 km per day\" → \"a timing error equivalent to about 11 km of light-travel distance every day\"; thêm độ lệch tần số 4,4647 × 10⁻¹⁰ ≈ 38,6 μs/ngày của Ashby và ghi rõ cách tách 7/45 μs là của tài liệu giảng dạy (Pogge) — căn cứ: Ashby 2003, doi 10.12942/lrr-2003-1; Pogge, Ohio State (check 2026-09-17, C-4, C-5).",
+    "(en) muon \"lifespan is too short to reach the ground\" → \"most of them should decay before reaching the ground\" — căn cứ: bản vi đã đính chính (check 2026-09-17, C-6)."
+  ],
+  "openQuestions": [
+    "Bản vi viết \"4,4647 × 10−10\" (dấu trừ thường, không mũ) — nên là 4,4647 × 10⁻¹⁰. Lỗi định dạng, không đổi nghĩa; bản en đã viết đúng. Sửa ở lượt đính chính vi.",
+    "Đoạn muon ở cả hai bản vẫn chưa trích nguồn thực nghiệm trong câu dù s3 (Frisch & Smith 1963) đã có trong bảng nguồn — check 2026-09-17 C-6 ghi là chưa mở được trang AIP/OSTI. Lượt đối chiếu này không mở lại."
+  ]
+}

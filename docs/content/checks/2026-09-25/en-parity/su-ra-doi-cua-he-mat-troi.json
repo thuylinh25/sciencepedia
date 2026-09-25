@@ -1,0 +1,146 @@
+{
+  "slug": "su-ra-doi-cua-he-mat-troi",
+  "verdict": "fix",
+  "findings": [
+    {
+      "id": "P-1",
+      "en": "'the Sun accounts for 99.86% of the system's mass but retains only about 1% of its angular momentum' (thân bài và summaryEn).",
+      "vi": "Giống en (99,86%, khoảng 1%).",
+      "kind": "contradiction",
+      "severity": "S3",
+      "action": "Cả hai sai theo check 2026-09-17 C-2/C-3: NASA Solar System Facts (mở hôm nay) chỉ viết 'more than 99% of the available matter'; 1% không có nguồn bậc 1–2. en → 'more than 99% of the system's mass', 'only a very small fraction of its angular momentum'. Không chép lỗi sang en; vi ghi openQuestion."
+    },
+    {
+      "id": "P-2",
+      "en": "Ba cơ chế giải bài toán động lượng góc: phanh từ tính, gió Mặt Trời, di cư hành tinh; 'The current model solves this with three concurrent mechanisms'.",
+      "vi": "Giống en: 'Mô hình hiện nay giải thích bằng ba cơ chế', gồm di cư hành tinh.",
+      "kind": "contradiction",
+      "severity": "S2",
+      "action": "Cả hai sai theo check 09-17 C-11: di cư chỉ chuyển động lượng góc giữa hành tinh và đĩa, không làm Mặt Trời quay chậm. en: phanh từ tính + gió Mặt Trời là cơ chế 'được đề xuất'; di cư tách mục riêng kèm câu nói rõ nó không giải bài toán."
+    },
+    {
+      "id": "P-3",
+      "en": "'In reality, Jupiter alone holds more angular momentum than the Sun.'",
+      "vi": "'phần lớn động lượng góc lại nằm ở các hành tinh, đặc biệt là Sao Mộc'.",
+      "kind": "contradiction",
+      "severity": "S3",
+      "action": "Không nguồn bậc 1–2 (check 09-17 C-3). en giữ 'most of the angular momentum is in the planets', bỏ cả 'Jupiter alone' lẫn 'đặc biệt là Sao Mộc'."
+    },
+    {
+      "id": "P-4",
+      "en": "Mục 'Discarded theories': Kant 1755, Laplace 1796; Chamberlin–Moulton; Jeans–Jeffreys 1918; khí kéo ra khỏi sao sẽ tán ra; hệ hành tinh phải hiếm.",
+      "vi": "Chỉ một câu: hành tinh không tách từ 'vành vật chất' như mô hình cổ điển.",
+      "kind": "en-only",
+      "severity": "S3",
+      "action": "Bỏ khỏi en: không nguồn nào trong bảng đỡ các niên đại/tên này; VACA [s1] đã chết (DNS 17/09) và không đạt bậc 2."
+    },
+    {
+      "id": "P-5",
+      "en": "'the ALMA and James Webb telescopes have imaged such disks ..., including empty gaps swept clean by forming planets'.",
+      "vi": "'ALMA và James Webb đã quan sát được nhiều đĩa tiền hành tinh tương tự'.",
+      "kind": "hedge-lost",
+      "severity": "S3",
+      "action": "en giữ ALMA với HL Tau theo [s3] (tóm tắt arXiv 1503.02649 mở hôm nay: 'a pattern of bright and dark rings', 'Additional clues that the rings arise from planet formation') → 'rings that may be linked to planet formation'. Bỏ James Webb (không nguồn) và 'empty gaps swept clean' (nguồn: 'The dark rings are not devoid of emission')."
+    },
+    {
+      "id": "P-6",
+      "en": "Vi thể hành tinh cỡ kilômét hợp nhất 'over millions of years'.",
+      "vi": "'Sau hàng triệu năm tạo nên các hành tinh.'",
+      "kind": "contradiction",
+      "severity": "S3",
+      "action": "Cả hai: thang thời gian không nguồn và mất thông tin (check 09-17 C-7). en bỏ thang thời gian: 'Repeated over time, this built up the planets.'"
+    },
+    {
+      "id": "P-7",
+      "en": "Đường tuyết 'located somewhere within the current asteroid belt'; nước, methane, amoniac chung một đường.",
+      "vi": "Nước đá, amoniac, methane chung một 'đường tuyết'; không vị trí.",
+      "kind": "contradiction",
+      "severity": "S3",
+      "action": "Bỏ vị trí vành tiểu hành tinh (en-only, không nguồn). Cả hai gộp ba chất (check 09-17 C-9): en viết 'the water snow line; ammonia and methane freeze out only much farther from the Sun'."
+    },
+    {
+      "id": "P-8",
+      "en": "Lõi vượt ngưỡng 'about 10 times the mass of the Earth'; bên trong đường tuyết khí đĩa bị gió Mặt Trời thổi sạch trước khi lõi đủ lớn.",
+      "vi": "Không có con số; bồi tụ lõi viết như sự thật đã chốt.",
+      "kind": "en-only",
+      "severity": "S3",
+      "action": "Bỏ '10 lần khối lượng Trái Đất' và câu gió Mặt Trời thổi khí (không nguồn). en gọi tên 'core accretion' là mô hình chủ đạo (check 09-17 C-10)."
+    },
+    {
+      "id": "P-9",
+      "en": "'Jupiter may have migrated inward as close as the orbit of Mars before moving back out'; 'some having been ejected entirely'.",
+      "vi": "'Sao Mộc và Sao Thổ có thể đã dịch chuyển đáng kể'; 'một số hành tinh sơ khai thậm chí có thể đã bị hất ra khỏi hệ'.",
+      "kind": "contradiction",
+      "severity": "S3",
+      "action": "Giữ 'Jupiter and Saturn may have shifted their orbits significantly' — [s4] Tsiganis et al. 2005 (mô hình Nice) đỡ. Bỏ Grand Tack (en-only, không nguồn) và câu hành tinh bị hất ra (cả hai bản, không nguồn trong bảng; check 09-17 C-12)."
+    },
+    {
+      "id": "P-10",
+      "en": "'over 6,000 exoplanets have been confirmed' không mốc thời gian; 'super-Earths — the most common type of planet in the galaxy'.",
+      "vi": "'hơn 6.000 ngoại hành tinh', không mốc; siêu Trái Đất 'lớn hơn Trái Đất nhưng nhỏ hơn Sao Hải Vương'.",
+      "kind": "contradiction",
+      "severity": "S4",
+      "action": "en thêm '(NASA count, as of September 2026)' — trang NASA Exoplanets [s5] mở hôm nay: 'more than 6,000'. Bỏ 'most common type in the galaxy' (en-only, không nguồn); dùng định nghĩa của vi."
+    },
+    {
+      "id": "P-11",
+      "en": "Kết mục ngoại hành tinh: 'while the general mechanisms are correct'; khối trích 'Thirty years of exoplanet observation...'.",
+      "vi": "'các quy luật hình thành hành tinh là phổ quát'.",
+      "kind": "contradiction",
+      "severity": "S3",
+      "action": "Cả hai vượt bằng chứng (check 09-17 C-15). en: 'This suggests that the same physical processes can produce very different outcomes'. Bỏ khối trích en-only."
+    },
+    {
+      "id": "P-12",
+      "en": "Link thân bài tới bài Sao Mộc 'phanh vô hình'; 'Further reading' có 'Why planets spin on their axes' thay cho bài 8 hành tinh.",
+      "vi": "'Đọc thêm': 8 hành tinh, Mặt Trời, Kepler.",
+      "kind": "vi-only",
+      "severity": "S4",
+      "action": "en dùng đúng 3 link của vi."
+    },
+    {
+      "id": "P-13",
+      "en": "Khối ghi công 'Adapted from ... VACA' cuối bài.",
+      "vi": "Không có khối ghi công.",
+      "kind": "en-only",
+      "severity": "S4",
+      "action": "Giữ ở en: ghi công tác phẩm phái sinh không phải claim, check 2026-09-05 yêu cầu không gỡ ghi công. openQuestion vì vi đã mất khối này."
+    },
+    {
+      "id": "P-14",
+      "en": "summaryEn: 'the Sun holds 99.86% of the mass yet only 1% of the angular momentum'.",
+      "vi": "summary: 4,57 tỷ năm; cùng một đám mây sinh ra Mặt Trời, hành tinh... và mọi nguyên tố tạo nên Trái Đất và cơ thể.",
+      "kind": "contradiction",
+      "severity": "S3",
+      "action": "Thay summaryEn bằng bản dịch summary vi, bỏ 99,86%/1%; 'mọi nguyên tố' dịch thành 'all the matter' (nguyên tố nặng sinh ra trong các sao thế hệ trước, không phải trong đám mây)."
+    },
+    {
+      "id": "P-15",
+      "en": "Không có emoji.",
+      "vi": "'☀️' ở Kết luận.",
+      "kind": "vi-only",
+      "severity": "S4",
+      "action": "Không đưa emoji vào en (check 09-17 C-17)."
+    }
+  ],
+  "contentEnFile": "docs/content/checks/2026-09-25/en-parity/su-ra-doi-cua-he-mat-troi.en.md",
+  "summaryEnEdits": [
+    {
+      "id": "SUM-1",
+      "find": "It all began with a collapsing cloud of gas and dust 4.57 billion years ago. The hardest question is not how planets formed, but why the Sun holds 99.86% of the mass yet only 1% of the angular momentum.",
+      "replace": "The Solar System formed about 4.57 billion years ago from a giant cloud of gas and dust in the Milky Way. That same cloud gave rise to the Sun, the planets, moons, asteroids and comets, and supplied all the matter that makes up the Earth and our own bodies.",
+      "why": "summaryEn mô tả nội dung chỉ có ở bản en cũ hoặc mang claim đã bị bác; thay bằng bản dịch summary vi hiện tại (khớp nguyên chuỗi summaryEn hiện tại, một lần)."
+    }
+  ],
+  "corrections": [
+    "- 2026-09-25 | su-ra-doi-cua-he-mat-troi | Bản en: 'Sun holds 99.86% of the mass but about 1% of the angular momentum' (thân bài + summaryEn) → 'more than 99% of the mass', 'a very small fraction of its angular momentum' | NASA Solar System Facts ('more than 99%'); 1% không có nguồn bậc 1–2 (check 2026-09-17 C-2, C-3)",
+    "- 2026-09-25 | su-ra-doi-cua-he-mat-troi | Bản en: di cư hành tinh xếp là cơ chế thứ ba giải bài toán động lượng góc, 'the current model solves this' → phanh từ tính và gió Mặt Trời là cơ chế 'được đề xuất'; di cư tách mục riêng, nói rõ không làm Mặt Trời quay chậm | check 2026-09-17 C-11",
+    "- 2026-09-25 | su-ra-doi-cua-he-mat-troi | Bản en: gỡ claim không nguồn — Kant 1755/Laplace 1796/Chamberlin–Moulton/Jeans–Jeffreys 1918, James Webb, 'gaps swept clean', đường tuyết trong vành tiểu hành tinh, ngưỡng lõi ~10 M⊕, 'Jupiter alone', Grand Tack, hành tinh bị hất ra, 'super-Earths most common', 'over millions of years' | Bảng nguồn không đỡ; ALMA/HL Tau giữ theo ALMA Partnership 2015 ('bright and dark rings')",
+    "- 2026-09-25 | su-ra-doi-cua-he-mat-troi | Bản en: 'over 6,000 exoplanets' → thêm '(NASA count, as of September 2026)'; 'the general mechanisms are correct' → 'the same physical processes can produce very different outcomes'; đường tuyết → đường tuyết của nước | NASA Exoplanets; check 2026-09-17 C-9, C-13, C-15"
+  ],
+  "openQuestions": [
+    "Bản vi hiện tại VẪN mang các lỗi check 2026-09-17 đã chỉ ra: 99,86%, 'khoảng 1%', 'đặc biệt là Sao Mộc', di cư hành tinh là cơ chế thứ ba (S2), 'quy luật hình thành hành tinh là phổ quát', James Webb không nguồn, 'hàng triệu năm', 'một số hành tinh sơ khai bị hất ra', thiếu mốc thời gian cho 6.000, emoji. factCheck=REVISE là đúng. Bản en giờ đi TRƯỚC vi — lượt sửa vi nên chép theo en này, không ngược lại.",
+    "Bản vi đã mất khối ghi công VACA mà en còn giữ. Check 2026-09-05 yêu cầu không gỡ ghi công; cần khôi phục ở vi (nếu vi vẫn là tác phẩm phái sinh của VACA).",
+    "C-11 (di cư không giải bài toán động lượng góc) vẫn dựa trên lập luận vật lý, chưa mở được review bậc 1 — như check 09-17 đã ghi. en đã viết theo hướng an toàn; cần đóng câu hỏi khi sửa vi."
+  ]
+}

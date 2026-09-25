@@ -1,0 +1,78 @@
+{
+  "slug": "toan-canh-dac-diem-8-hanh-tinh-he-mat-troi",
+  "verdict": "fix",
+  "findings": [
+    {
+      "id": "P-1",
+      "en": "Bảng: Jupiter 95, Saturn 146, Uranus 28; \"the numbers in the table are those officially named as of 2024\"",
+      "vi": "115 / 293 / 29, \"số vệ tinh đã được xác nhận, theo NASA tính tới tháng 8/2026 — không phải số đã được đặt tên\"",
+      "kind": "contradiction",
+      "severity": "S2",
+      "action": "Số cũ và tiêu chí đếm sai ('named' — số đã đặt tên còn ít hơn nhiều). Đổi bảng và câu chú thích theo vi (nguồn s3–s5; check 17/09 đã đối chiếu cả ba trang NASA 'as of August 2026')."
+    },
+    {
+      "id": "P-2",
+      "en": "\"the mythological order follows the distance from the Sun, consistent with the order in which they were discovered\"",
+      "vi": "Trùng hợp về tên gọi, không phải lịch sử khám phá — Mộc, Thổ biết từ cổ đại; Thiên Vương là hành tinh đầu tiên tìm bằng kính thiên văn (Herschel 1781).",
+      "kind": "contradiction",
+      "severity": "S2",
+      "action": "Claim sai (check 17/09 'contradicted'). Viết theo vi."
+    },
+    {
+      "id": "P-3",
+      "en": "\"derived from Roman mythology, and each name is tied to an observable characteristic\"; Neptune \"the planet has a sea-blue color\"",
+      "vi": "Sự khớp là trùng hợp trong cách chọn thần, không phải quy tắc; màu xanh của Neptune đến từ methane, không liên quan tới biển.",
+      "kind": "contradiction",
+      "severity": "S3",
+      "action": "en gợi quan hệ nhân quả tên ← đặc điểm (unsupported). Viết theo vi."
+    },
+    {
+      "id": "P-4",
+      "en": "Hành tinh thứ chín: \"two astronomers at Caltech\"; không nêu tranh cãi",
+      "vi": "Batygin & Brown (2016); \"ngay cả phần suy luận cũng còn tranh cãi: một số nghiên cứu cho rằng chính cấu trúc vành đai Kuiper … đủ giải thích\"",
+      "kind": "hedge-lost",
+      "severity": "S3",
+      "action": "Thêm tên tác giả và câu tranh cãi (quy tắc 7)."
+    },
+    {
+      "id": "P-5",
+      "en": "Điều kiện 3: \"meaning it has cleared other objects from its orbital path, except for its own satellites\"",
+      "vi": "\"(nghị quyết IAU 2006, điều kiện c)\" + diễn giải tách riêng, có ngoại lệ vệ tinh VÀ thiên thể bị khoá cộng hưởng",
+      "kind": "vi-only",
+      "severity": "S4",
+      "action": "Đồng bộ theo vi: nêu văn bản điều kiện c, rồi diễn giải tách bạch."
+    },
+    {
+      "id": "P-6",
+      "en": "\"This group currently has five recognized members\"",
+      "vi": "\"hiện có năm thành viên được công nhận (tính tới 9/2026)\"",
+      "kind": "vi-only",
+      "severity": "S4",
+      "action": "Thêm mốc as-of (quy tắc 5)."
+    },
+    {
+      "id": "P-7",
+      "en": "(không có)",
+      "vi": "Chú thích cột khoảng cách: trục bán lớn trung bình J2000 theo NASA Fact Sheet, không phải khoảng cách tức thời; Sao Thổ nhảy vọt sau 128 vệ tinh được MPC công nhận tháng 3/2025.",
+      "kind": "vi-only",
+      "severity": "S4",
+      "action": "Thêm vào en. Sao Thổ 9,54 AU: đã đối chiếu saturnfact.html ngày 25/09 — semimajor axis J2000 = 9,53707 AU, nên 9,54 đúng với chú thích J2000 (khác đề xuất 9,57 của check 17/09 vốn quy từ 1.432,0 triệu km)."
+    },
+    {
+      "id": "P-8",
+      "en": "Đọc thêm: ba tiêu đề link còn để tiếng Việt (Sao Thổ, Sao Mộc, Sao Hoả)",
+      "vi": "—",
+      "kind": "vi-only",
+      "severity": "S4",
+      "action": "Dịch tiêu đề link, giữ nguyên slug."
+    }
+  ],
+  "contentEnFile": "toan-canh-dac-diem-8-hanh-tinh-he-mat-troi.en.md",
+  "corrections": [
+    "- 2026-09-25 | toan-canh-dac-diem-8-hanh-tinh-he-mat-troi | EN chưa từng nhận các sửa 17/09: số vệ tinh 95/146/28 \"officially named as of 2024\", \"mythological order … consistent with the order in which they were discovered\", \"each name is tied to an observable characteristic\", Hành tinh thứ chín không nêu tranh cãi → en mang cùng claim với vi: 115/293/29/16 vệ tinh xác nhận theo NASA 8/2026; phả hệ thần thoại là trùng hợp tên gọi, Thiên Vương là hành tinh đầu tiên tìm bằng kính thiên văn (1781); giả thuyết Batygin & Brown 2016 còn tranh cãi; hành tinh lùn có mốc 9/2026 | NASA Jupiter/Saturn/Uranus Moons (8/2026); NASA Planetary Fact Sheet; IAU Resolution 5A 2006; Batygin & Brown 2016 doi 10.3847/0004-6256/151/2/22"
+  ],
+  "openQuestions": [
+    "Câu \"128 vệ tinh … tháng 3/2025\" (vi, nay cả en) vẫn chưa có nguồn trong bảng nguồn (check 17/09: partially-supported). Nên gắn thông báo MPC hoặc NASA về đợt công bố; nếu không gắn được thì cắt ở cả hai bản cùng lượt.",
+    "Câu tranh cãi về Hành tinh thứ chín và câu 'đường tuyết … không phải trùng hợp' (vi, nay cả en) chưa có nguồn bậc 1–2 trong bảng; check 17/09 đề nghị hạ mức khẳng định về đường tuyết. Ngoài phạm vi đồng bộ; nếu sửa vi thì sửa en cùng lượt."
+  ]
+}

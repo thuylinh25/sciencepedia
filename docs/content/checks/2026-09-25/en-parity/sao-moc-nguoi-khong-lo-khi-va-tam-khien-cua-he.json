@@ -1,0 +1,104 @@
+{
+  "slug": "sao-moc-nguoi-khong-lo-khi-va-tam-khien-cua-he",
+  "verdict": "fix",
+  "findings": [
+    {
+      "id": "P-1",
+      "en": "summaryEn: \"with a Great Red Spot storm at least 350 years old\"",
+      "vi": "summary: \"đã được theo dõi liên tục từ khoảng năm 1831\"",
+      "kind": "contradiction",
+      "severity": "S2",
+      "action": "summaryEn nối Vết Đỏ Lớn với Vết Vĩnh cửu của Cassini — bị Sánchez-Lavega 2024 và chính thân bài bác (C-2, check 17/09). Thay bằng mốc 1831."
+    },
+    {
+      "id": "P-2",
+      "en": "\"generating the strongest magnetic field among the planets, approximately 20,000 times that of Earth\"",
+      "vi": "MÔMEN từ ~20.000 lần; CƯỜNG ĐỘ trường ~16–54 lần; nói \"từ trường gấp 20.000 lần\" sai cỡ nghìn lần. Có \"được cho là\".",
+      "kind": "contradiction",
+      "severity": "S2",
+      "action": "en giữ đúng mô hình sai mà vi đã sửa (sai ~1000 lần), và mất mức dè dặt 'thought to'. Viết lại theo vi."
+    },
+    {
+      "id": "P-3",
+      "en": "\"at a depth of only about 150 km\"",
+      "vi": "\"ở độ sâu khoảng 200 km\"",
+      "kind": "contradiction",
+      "severity": "S3",
+      "action": "Sửa thành about 200 km (NASA Galileo mission page, C-6)."
+    },
+    {
+      "id": "P-4",
+      "en": "\"astronomers consider these to be two different vortices\"",
+      "vi": "Sánchez-Lavega và cs. (2024) kết luận \"rất khó có khả năng\" là cùng một vết — kết luận của một nghiên cứu, không phải đồng thuận.",
+      "kind": "hedge-lost",
+      "severity": "S3",
+      "action": "en nâng một nghiên cứu thành đồng thuận của giới thiên văn. Viết lại theo vi."
+    },
+    {
+      "id": "P-5",
+      "en": "\"Winds at the periphery reach about 430 km/h.\"",
+      "vi": "\"vượt 640 km/h (đo Hubble giai đoạn 2009–2020)\"",
+      "kind": "contradiction",
+      "severity": "S2",
+      "action": "430 km/h không khớp nguồn nào (C-8). Thay bằng 640 km/h kèm mốc đo."
+    },
+    {
+      "id": "P-6",
+      "en": "\"from about 40,000 km in width in the late 19th century to about 14,000 km today\"",
+      "vi": "\"từ 39.000 km theo trục dài nhất đo năm 1879 xuống khoảng 14.000 km theo số đo công bố năm 2024\"; thêm \"tròn hơn\"",
+      "kind": "contradiction",
+      "severity": "S3",
+      "action": "Sửa số và gắn mốc ngày cho claim 'today' (quy tắc 5)."
+    },
+    {
+      "id": "P-7",
+      "en": "\"an observation that directly refuted the geocentric model\"",
+      "vi": "\"quan sát cho thấy rõ không phải mọi thiên thể đều quay quanh Trái Đất\"",
+      "kind": "contradiction",
+      "severity": "S3",
+      "action": "Nói quá, để lại mô hình sai (không loại được mô hình Tycho; C-11). Viết theo vi."
+    },
+    {
+      "id": "P-8",
+      "en": "Europa: \"an ice shell covering a saltwater ocean\"",
+      "vi": "\"nhiều bằng chứng cho thấy có một đại dương nước mặn dưới lớp vỏ băng\"",
+      "kind": "hedge-lost",
+      "severity": "S3",
+      "action": "Khôi phục mức dè dặt của NASA."
+    },
+    {
+      "id": "P-9",
+      "en": "Ganymede: \"the only moon with its own magnetic field\"",
+      "vi": "\"là vệ tinh được biết tới là có từ trường riêng\"",
+      "kind": "hedge-lost",
+      "severity": "S4",
+      "action": "en viết theo nguồn s9 (đã mở 25/09): \"the only moon known to have its own magnetic field\". Giữ 'only' vì nguồn đỡ; thêm 'known'. Xem openQuestions về bản vi."
+    },
+    {
+      "id": "P-10",
+      "en": "\"often mentioned, though recent simulations suggest a more complex picture\"",
+      "vi": "Giả thuyết lâu đời, vẫn tranh cãi; Horner & Jones (2008): bức tranh \"không rõ ràng chút nào\", Sao Mộc có thể \"làm tăng đáng kể\" tốc độ va chạm.",
+      "kind": "vi-only",
+      "severity": "S3",
+      "action": "en thiếu nguồn và dùng 'recent' không mốc cho một nghiên cứu 2008. Viết theo vi, có nêu Horner & Jones 2008."
+    }
+  ],
+  "contentEnFile": "sao-moc-nguoi-khong-lo-khi-va-tam-khien-cua-he.en.md",
+  "summaryEnEdits": [
+    {
+      "id": "SE-1",
+      "find": "More massive than every other planet combined times 2.5, with a Great Red Spot storm at least 350 years old.",
+      "replace": "About 2.5 times as massive as all the other planets combined, with a Great Red Spot storm that has been tracked continuously since about 1831.",
+      "why": "P-1: bỏ 'at least 350 years' (bị Sánchez-Lavega 2024 bác), khớp summary vi."
+    }
+  ],
+  "corrections": [
+    "- 2026-09-25 | sao-moc-nguoi-khong-lo-khi-va-tam-khien-cua-he | EN chưa từng nhận các sửa 17/09: summaryEn \"at least 350 years old\", \"magnetic field … 20,000 times that of Earth\", Galileo \"about 150 km\", gió \"about 430 km/h\", \"40,000 km … today\", \"directly refuted the geocentric model\", \"astronomers consider these two different vortices\", Europa không dè dặt → en mang cùng claim với vi: theo dõi từ ~1831; mômen từ ~20.000 lần / cường độ ~16–54 lần; ~200 km; >640 km/h (Hubble 2009–2020); 39.000 km (1879) → ~14.000 km (công bố 2024); Horner & Jones 2008 | Sánchez-Lavega 2024 doi 10.1029/2024GL108993; NASA Jupiter Facts; NASA Galileo; ESA/Hubble heic2110; Horner & Jones 2008 doi 10.1017/s1473550408004187; NASA Ganymede"
+  ],
+  "openQuestions": [
+    "BẢN VI: seoDescription vẫn ghi \"với cơn bão Vết Đỏ Lớn đã tồn tại ít nhất 350 năm\" — đúng claim S2 đã bị bác ở summary 17/09. Ngoài phạm vi en; cần sửa vi seoDescription và ghi corrections.md.",
+    "BẢN VI (S4): câu Ganymede \"là vệ tinh được biết tới là có từ trường riêng\" đã rơi mất \"duy nhất\" khi áp fix 17/09 (fix yêu cầu THÊM 'được biết tới', không bỏ 'duy nhất'). NASA Ganymede (mở 25/09): \"the only moon known to have its own magnetic field\". Đề nghị vi: \"và là vệ tinh duy nhất được biết tới có từ trường riêng\".",
+    "Tiêu đề vi/en vẫn khẳng định \"tấm khiên\" / \"shields the system\" trong khi thân bài nói giả thuyết còn tranh cãi (C-16, 17/09, chưa có người quyết). titleEn giữ nguyên vì phản ánh đúng tiêu đề vi; đổi tiêu đề thì đổi cả hai cùng lượt.",
+    "\"16–54 lần\" là số của NASA Jupiter Facts (không phân biệt 'ở bề mặt'); bản vi thêm 'ở bề mặt'. Fact Sheet: 4–13 G bề mặt so với ~0,25–0,65 G của Trái Đất — cùng cỡ. En theo vi; không coi là lỗi."
+  ]
+}

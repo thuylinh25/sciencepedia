@@ -1,0 +1,9 @@
+{
+  "slug": "kinh-james-webb-nhin-nguoc-ve-thuo-vu-tru-so-sinh",
+  "verdict": "in-sync",
+  "findings": [],
+  "corrections": [],
+  "openQuestions": [
+    "Hai bản khớp claim từng câu (khác duy nhất: vị trí đánh dấu [[ánh sáng khả kiến]] — không phải claim). Nhưng khớp nhau không có nghĩa là đúng: các fix của check 2026-09-17 vẫn chưa áp ở CẢ HAI bản — \"thiên hà hình thành chỉ 300 triệu năm sau Big Bang\" thiếu mốc và lỗi thời, \"trưởng thành hơn nhiều mô hình\", \"hơn 300 điểm hỏng đơn lẻ trong quá trình triển khai\", CO₂/nước/methane không gắn hành tinh, \"không tên lửa nào chứa nổi\", \"thiết kế cho hồng ngoại\" (0,6–28,5 µm). lastVerifiedAt=null, factCheck=REVISE — đúng trạng thái."
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "slug": "tai-sao-pluto-khong-con-la-hanh-tinh",
+  "verdict": "fix",
+  "findings": [
+    {
+      "id": "F-1",
+      "kind": "contradiction",
+      "severity": "S3",
+      "en": "2. has enough mass for its gravity to pull it into a nearly spherical shape,",
+      "vi": "2. đủ khối lượng để lực tự hấp dẫn thắng lực vật rắn, đưa nó về trạng thái cân bằng thuỷ tĩnh (gần tròn),",
+      "action": "Đổi en theo vi — sát văn bản IAU B5 (nguồn s2; check 2026-09-17)."
+    },
+    {
+      "id": "F-2",
+      "kind": "en-only",
+      "severity": "S2",
+      "en": "Earth is 1.7 million times more massive than the sum of all other bodies in its orbital zone, whereas Pluto accounts for only a tiny fraction of the mass of the Kuiper belt.",
+      "vi": "theo chỉ số \"dọn sạch quỹ đạo\" mà Steven Soter (2006) đề xuất, Trái Đất vượt trội tuyệt đối so với mọi thiên thể khác trong vùng quỹ đạo của mình, còn Pluto thì không.",
+      "action": "Bỏ con số khỏi en. Số 1,7 triệu không có nguồn trong bảng nguồn (check 2026-09-17: chưa kiểm được Bảng 1 của Soter) và bản vi đã cắt."
+    },
+    {
+      "id": "F-3",
+      "kind": "contradiction",
+      "severity": "S2",
+      "en": "established the dwarf planet category for bodies that satisfy the first two conditions",
+      "vi": "thiên thể (a) quay quanh Mặt Trời, (b) … cân bằng thuỷ tĩnh, (c) CHƯA dọn sạch vùng lân cận quỹ đạo, và (d) không phải là vệ tinh …",
+      "action": "Đổi en theo vi. Định nghĩa en sai theo IAU B5(2): theo cách viết đó cả tám hành tinh cũng \"thoả mãn hai điều đầu\"."
+    },
+    {
+      "id": "F-4",
+      "kind": "hedge-lost",
+      "severity": "S3",
+      "en": "The third condition depends on location: Earth itself, if placed in Pluto's orbit, would not be able to clear its neighborhood.",
+      "vi": "theo lập luận của phía phản đối, nếu đặt Trái Đất vào quỹ đạo của Pluto thì chính nó cũng không dọn sạch nổi vùng lân cận …",
+      "action": "Đổi en theo vi: quy kết cho phía phản đối, không viết như sự thật."
+    },
+    {
+      "id": "F-5",
+      "kind": "contradiction",
+      "severity": "S2",
+      "en": "nearly 5 billion km from the Sun",
+      "vi": "ở cách Mặt Trời trung bình khoảng 5,9 tỉ km",
+      "action": "Đổi en theo vi. NASA Pluto: Facts (nguồn s3): khoảng cách trung bình ~5,9 tỉ km; \"gần 5 tỉ km\" chỉ đúng gần cận điểm (check 2026-09-17)."
+    }
+  ],
+  "enEdits": [
+    {
+      "id": "E-1",
+      "find": "2. has enough mass for its gravity to pull it into a nearly spherical shape,",
+      "replace": "2. has sufficient mass for its self-gravity to overcome rigid-body forces, so that it assumes hydrostatic equilibrium (a nearly round shape),",
+      "why": "F-1"
+    },
+    {
+      "id": "E-2",
+      "find": "The difference is not slight: Earth is 1.7 million times more massive than the sum of all other bodies in its orbital zone, whereas Pluto accounts for only a tiny fraction of the mass of the Kuiper belt.",
+      "replace": "The margin is not close: by the \"orbital clearing\" measure proposed by Steven Soter (2006), Earth overwhelmingly dominates every other body in its orbital zone, whereas Pluto does not.",
+      "why": "F-2"
+    },
+    {
+      "id": "E-3",
+      "find": "The assembly simultaneously established the **[[hanh-tinh-lun|dwarf planet]]** category for bodies that satisfy the first two conditions.",
+      "replace": "The assembly also created the **[[hanh-tinh-lun|dwarf planet]]** category: a body that (a) orbits the Sun, (b) has enough mass to reach hydrostatic equilibrium (a nearly round shape), (c) has NOT cleared the neighborhood around its orbit, and (d) is not a satellite. Note condition (c): a dwarf planet is defined precisely by FAILING the third condition for planets — not merely by \"satisfying the first two\".",
+      "why": "F-3"
+    },
+    {
+      "id": "E-4",
+      "find": "The third condition depends on location: Earth itself, if placed in Pluto's orbit, would not be able to clear its neighborhood.",
+      "replace": "The third condition depends on location: opponents argue that if Earth were placed in Pluto's orbit, it could not clear its neighborhood either — a way of saying that the \"clearing\" criterion depends on where a body sits rather than on the body itself.",
+      "why": "F-4"
+    },
+    {
+      "id": "E-5",
+      "find": "nearly 5 billion km from the Sun",
+      "replace": "at an average distance of about 5.9 billion km from the Sun",
+      "why": "F-5"
+    }
+  ],
+  "corrections": [
+    "(en) điều kiện 2 \"enough mass for its gravity to pull it into a nearly spherical shape\" → \"self-gravity to overcome rigid-body forces … hydrostatic equilibrium (a nearly round shape)\" — căn cứ: IAU 2006 Resolution B5 (nguồn s2).",
+    "(en) \"Earth is 1.7 million times more massive than the sum of all other bodies in its orbital zone\" → bỏ số, giữ ý định tính theo chỉ số của Soter (2006) — căn cứ: số không có nguồn đã kiểm (check 2026-09-17), bản vi đã cắt.",
+    "(en) hành tinh lùn \"bodies that satisfy the first two conditions\" → đủ bốn điều kiện (a)–(d) của IAU B5(2) — căn cứ: IAU 2006 (nguồn s2).",
+    "(en) \"Earth itself, if placed in Pluto's orbit, would not be able to clear its neighborhood\" (viết như sự thật) → quy kết cho lập luận của phía phản đối — căn cứ: check 2026-09-17.",
+    "(en) \"nearly 5 billion km from the Sun\" → \"an average distance of about 5.9 billion km\" — căn cứ: NASA Science, Pluto: Facts (nguồn s3)."
+  ],
+  "openQuestions": [
+    "Cả hai bản vẫn gọi Eris là \"thiên thể vành đai Kuiper\" (check 2026-09-17: Eris thuộc đĩa phân tán, nên viết \"thiên thể ngoài Sao Hải Vương\") và vẫn chưa ghi mốc \"(tính tới 9/2026)\" cho năm hành tinh lùn. Không phải lệch song ngữ; để lượt đính chính vi rồi đồng bộ sang en.",
+    "Bản en để nguyên tiêu đề tiếng Việt cho 2/3 link Đọc thêm (Sao Thổ, Sao Mộc) — không phải claim, chuyển translation/seo-expert."
+  ]
+}

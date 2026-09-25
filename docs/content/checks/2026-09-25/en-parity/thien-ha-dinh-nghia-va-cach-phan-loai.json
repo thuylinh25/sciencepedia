@@ -1,0 +1,77 @@
+{
+  "slug": "thien-ha-dinh-nghia-va-cach-phan-loai",
+  "verdict": "fix",
+  "findings": [
+    {
+      "id": "P-1",
+      "en": "\"Millions to hundreds of billions of stars.\"",
+      "vi": "\"Từ vài nghìn đến hàng nghìn tỷ ngôi sao (NASA)\"",
+      "kind": "contradiction",
+      "severity": "S2",
+      "action": "Sai ~3 bậc ở đầu dưới, 1 bậc ở đầu trên (C-1, 17/09). Viết theo vi."
+    },
+    {
+      "id": "P-2",
+      "en": "\"Dwarf galaxies: only a few thousand light-years\" / \"Giant galaxies: can be hundreds of thousands of light-years wide\"",
+      "vi": "Nhỏ nhất vài trăm năm ánh sáng; lớn nhất hơn một triệu năm ánh sáng (NASA)",
+      "kind": "contradiction",
+      "severity": "S3",
+      "action": "Viết theo vi (C-3)."
+    },
+    {
+      "id": "P-3",
+      "en": "\"Milky Way: approximately 105,000 light-years across\"",
+      "vi": "\"đĩa sao trải dài hơn 100.000 năm ánh sáng\"",
+      "kind": "contradiction",
+      "severity": "S3",
+      "action": "Số chính xác giả không nguồn (C-2). Viết theo vi."
+    },
+    {
+      "id": "P-4",
+      "en": "\"Andromeda (M31) is the most famous example\"",
+      "vi": "\"là thiên hà lớn gần chúng ta nhất, cách khoảng 2,5 triệu năm ánh sáng (NASA/Hubble)\"",
+      "kind": "vi-only",
+      "severity": "S4",
+      "action": "Đồng bộ theo vi."
+    },
+    {
+      "id": "P-5",
+      "en": "\"Recent studies suggest the probability … merging in the future is about 50%, most likely occurring in 7 to 8 billion years\"",
+      "vi": "Hai kết quả bất đồng: Sawala 2025 (~50% trong 10 tỷ năm) và Wu 2026 (90%, trung vị 6,5 +1,3/−1,5 tỷ năm; 2σ 64,7–100%, chưa kết luận).",
+      "kind": "contradiction",
+      "severity": "S2",
+      "action": "en mang đúng claim đã sửa 17/09: 50% không khung thời gian, trình bày như kết luận thống nhất, bỏ qua Wu 2026. Viết lại mục theo vi (số Wu 2026 đã đối chiếu với tóm tắt arXiv 2603.22863 ngày 25/09)."
+    },
+    {
+      "id": "P-6",
+      "en": "\"the result could be a new giant elliptical galaxy\" (không nguồn)",
+      "vi": "Có nguồn Cox & Loeb (2008): hồ sơ mật độ \"giống các thiên hà elip\"",
+      "kind": "vi-only",
+      "severity": "S3",
+      "action": "Viết theo vi, trích nguyên văn tóm tắt Cox & Loeb (đã mở arXiv 0705.1170 ngày 25/09)."
+    },
+    {
+      "id": "P-7",
+      "en": "summaryEn: \"Beyond it lie hundreds of billions more, and their shapes record their collision histories.\"",
+      "vi": "summary: định nghĩa thiên hà + dải Ngân Hà là đĩa của chính thiên hà ta đang ở trong",
+      "kind": "en-only",
+      "severity": "S3",
+      "action": "\"hundreds of billions more\" (số thiên hà) không có trong bài lẫn nguồn đã mở. Bỏ; dịch lại summary từ vi."
+    }
+  ],
+  "contentEnFile": "thien-ha-dinh-nghia-va-cach-phan-loai.en.md",
+  "summaryEnEdits": [
+    {
+      "id": "SE-1",
+      "find": "The band of light across the night sky is our own galaxy's disk, seen from inside it. Beyond it lie hundreds of billions more, and their shapes record their collision histories.",
+      "replace": "Galaxies are vast systems of stars, gas, dust and dark matter held together by gravity. The band of light we call the Milky Way in the night sky is actually the disk of the very galaxy the Solar System sits inside.",
+      "why": "P-7: bỏ claim chỉ có ở en ('hundreds of billions more'), khớp summary vi."
+    }
+  ],
+  "corrections": [
+    "- 2026-09-25 | thien-ha-dinh-nghia-va-cach-phan-loai | EN chưa từng nhận các sửa 17/09: \"millions to hundreds of billions of stars\", \"approximately 105,000 light-years\", dwarf \"few thousand\"/giant \"hundreds of thousands\" ly, và \"about 50% … in 7 to 8 billion years\" trình bày như kết luận; summaryEn \"hundreds of billions more\" không nguồn → en mang cùng claim với vi: vài nghìn–nghìn tỷ sao; >100.000 ly; vài trăm ly–>1 triệu ly; Sawala 2025 (~50% trong 10 tỷ năm) và Wu 2026 (90%, 6,5 +1,3/−1,5 tỷ năm, 2σ 64,7–100%) đặt cạnh nhau | NASA Galaxies; Sawala 2025 doi 10.1038/s41550-025-02563-1; Wu 2026 doi 10.3847/2041-8213/ae5799; Cox & Loeb 2008 doi 10.1111/j.1365-2966.2008.13048.x"
+  ],
+  "openQuestions": [
+    "Cả vi lẫn en vẫn xếp Mây Magellan Lớn là thiên hà không định hình — câu hỏi mở từ 17/09 (có thể là xoắn ốc Magellan, SBm) chưa được đóng. Không đổi ở lượt đồng bộ này."
+  ]
+}

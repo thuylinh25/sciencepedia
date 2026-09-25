@@ -1,0 +1,10 @@
+{
+  "slug": "crispr-cay-keo-phan-tu-den-tu-vi-khuan",
+  "verdict": "in-sync",
+  "findings": [],
+  "corrections": [],
+  "openQuestions": [
+    "Không lệch claim: đính chính Casgevy (MHRA 11/2023 cả hai chỉ định; FDA 08/12/2023 chỉ hồng cầu hình liềm, beta-thalassemia 16/01/2024) có đủ ở cả vi và en; mọi con số (20 nucleotide, 2012, Nobel 2020, 2018) khớp. Khác biệt chỉ ở nhãn thuật ngữ: vi gắn [[gene]] ở câu đầu (\"bộ gene\" = genome), en gắn [[gen|gene]] ở mục NHEJ — cả hai trỏ cùng mục từ 'gen' (alias 'gene'); không sửa.",
+    "Nguồn s1 (Jinek et al. 2012, Science) không có url lẫn doi — đúng lỗ hổng 'nguồn không định danh đi lọt mọi phép kiểm' ghi ở corrections.md 13/09. Nên bổ sung doi 10.1126/science.1225829 (đối chiếu Crossref trước khi ghi). Ngoài phạm vi đồng bộ song ngữ."
+  ]
+}

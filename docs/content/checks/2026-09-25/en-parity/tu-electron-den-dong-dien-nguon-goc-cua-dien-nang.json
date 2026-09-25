@@ -1,0 +1,102 @@
+{
+  "slug": "tu-electron-den-dong-dien-nguon-goc-cua-dien-nang",
+  "verdict": "fix",
+  "findings": [
+    {
+      "id": "P-1",
+      "en": "'Since 20 May 2019, e = 1.602176634 × 10⁻¹⁹ C ... (exact)'; 'about 6.241 × 10¹⁸'.",
+      "vi": "e = 1,602176634 × 10⁻¹⁹ C; 'khoảng 6,24 × 10¹⁸'.",
+      "kind": "contradiction",
+      "severity": "S4",
+      "action": "Không mâu thuẫn: 6,241 và 6,24 cùng là làm tròn 1/e. en theo vi; mốc 2019 giữ ở phần ampere như vi."
+    },
+    {
+      "id": "P-2",
+      "en": "Không có.",
+      "vi": "'Nói cách khác, chỉ một lượng điện tích rất nhỏ của electron đã đủ tạo nên những dòng điện quen thuộc'.",
+      "kind": "vi-only",
+      "severity": "S3",
+      "action": "Câu vi dựng mô hình sai: 1 A cần ~6,24 × 10¹⁸ electron đi qua mỗi giây — số rất lớn, không phải 'lượng nhỏ'. Không chép sang en; en: 'the charge on a single electron is tiny: the currents we use every day are made of enormous numbers of moving electrons'. openQuestion cho vi."
+    },
+    {
+      "id": "P-3",
+      "en": "Định nghĩa cũ trích NIST: dây thẳng song song dài vô hạn cách 1 m, lực 2 × 10⁻⁷ N trên mỗi mét; buộc ampere vào chuẩn khối lượng.",
+      "vi": "'xuất hiện một lực rất nhỏ giữa chúng'; khó thực hiện vì không có dây dài vô hạn.",
+      "kind": "en-only",
+      "severity": "S4",
+      "action": "en theo vi (không con số). [s2] NIST đỡ 2 × 10⁻⁷ N/m; có thể bổ sung vào vi sau."
+    },
+    {
+      "id": "P-4",
+      "en": "Cân Kibble; kilogram nay thực hiện bằng phép đo điện; giây neo vào tần số chuyển tiếp caesium.",
+      "vi": "Không có.",
+      "kind": "en-only",
+      "severity": "S4",
+      "action": "Bỏ khỏi en."
+    },
+    {
+      "id": "P-5",
+      "en": "Chiều quy ước 'from higher potential to lower potential'; 'Franklin guessed wrong'.",
+      "vi": "'từ cực dương sang cực âm'; electron ngược lại; quy ước đặt trước khi biết electron.",
+      "kind": "en-only",
+      "severity": "S4",
+      "action": "en theo vi; bỏ câu trích Franklin (vi không có)."
+    },
+    {
+      "id": "P-6",
+      "en": "Điện sinh hoạt Mỹ '120 Volts and 15 Amps'.",
+      "vi": "'Mạnh hơn rất nhiều so với điện sinh hoạt thông thường'.",
+      "kind": "en-only",
+      "severity": "S4",
+      "action": "en theo vi; bỏ số 120 V/15 A."
+    },
+    {
+      "id": "P-7",
+      "en": "Hạt bão Mặt Trời 'falling into the two polar regions' tạo cực quang.",
+      "vi": "Hạt 'va chạm với từ trường và khí quyển Trái Đất tại vùng cực'.",
+      "kind": "contradiction",
+      "severity": "S4",
+      "action": "'va chạm với từ trường' là cách nói sai (hạt bị từ trường dẫn hướng, va chạm với khí). en: 'channelled by Earth's magnetic field into the upper atmosphere near the poles and collide with the gases there'. openQuestion nhỏ cho vi."
+    },
+    {
+      "id": "P-8",
+      "en": "Dòng vào tế bào = cation vào/anion ra; tăng thấm Na⁺ khởi phát điện thế hoạt động; Hodgkin & Huxley 1952.",
+      "vi": "Na⁺, K⁺, Ca²⁺; dòng ion cho não giao tiếp với cơ và cơ quan.",
+      "kind": "en-only",
+      "severity": "S4",
+      "action": "en theo vi; bỏ trích Neuroscience/Hodgkin–Huxley (vi không có)."
+    },
+    {
+      "id": "P-9",
+      "en": "Không có mục 'mối liên hệ cốt lõi', không 'Further reading'; link nội bộ trong thân bài (từ trường, nguyên tử, sóng, nặng-nhẹ, cực quang).",
+      "vi": "Có mục liên hệ cốt lõi và 'Đọc thêm' 3 link.",
+      "kind": "vi-only",
+      "severity": "S4",
+      "action": "Thêm vào en theo vi; 'Further reading' dùng đúng 3 link của vi."
+    },
+    {
+      "id": "P-10",
+      "en": "summaryEn: 'defines the elementary charge and the coulomb, retraces how the ampere moved ... following BIPM, NIST, NWS and NASA'.",
+      "vi": "summary: dòng điện ở khắp nơi (sét, thần kinh, thiết bị); là chuyển động có hướng của điện tích; chuyển động sinh từ trường.",
+      "kind": "contradiction",
+      "severity": "S4",
+      "action": "Thay summaryEn bằng bản dịch summary vi."
+    }
+  ],
+  "contentEnFile": "docs/content/checks/2026-09-25/en-parity/tu-electron-den-dong-dien-nguon-goc-cua-dien-nang.en.md",
+  "summaryEnEdits": [
+    {
+      "id": "SUM-1",
+      "find": "An electric current is charge in motion. This article defines the elementary charge and the coulomb, retraces how the ampere moved from a force between two wires to a fixed constant, and separates conventional current direction from the direction electrons actually travel, following BIPM, NIST, NWS and NASA.",
+      "replace": "Electric current is everywhere, from lightning in the sky and the signals in our nerves to the electronic devices we use every day. At its core, **an electric current is the directed motion of electric charge**. Charges give rise to electric forces. When charges start to move, they form an electric current and at the same time produce a magnetic field.",
+      "why": "summaryEn mô tả nội dung chỉ có ở bản en cũ hoặc mang claim đã bị bác; thay bằng bản dịch summary vi hiện tại (khớp nguyên chuỗi summaryEn hiện tại, một lần)."
+    }
+  ],
+  "corrections": [
+    "- 2026-09-25 | tu-electron-den-dong-dien-nguon-goc-cua-dien-nang | Bản en: dịch lại toàn bài từ vi hiện tại — gỡ phần không có ở vi (lực 2 × 10⁻⁷ N/m, cân Kibble, 'Franklin guessed wrong', 120 V/15 A, trích Neuroscience/Hodgkin–Huxley); 'một lượng điện tích rất nhỏ đã đủ tạo dòng điện' → 'mỗi electron mang điện tích rất nhỏ, dòng điện hằng ngày gồm số rất lớn electron'; cực quang: hạt được từ trường dẫn vào thượng tầng khí quyển rồi va chạm với khí | Đối chiếu song ngữ 25/09; 1 C ≈ 6,24 × 10¹⁸ e (NIST CODATA [s3])"
+  ],
+  "openQuestions": [
+    "Vi 'chỉ một lượng điện tích rất nhỏ của electron đã đủ tạo nên những dòng điện quen thuộc' ngược với chính con số ngay trên nó (1 C ≈ 6,24 × 10¹⁸ e): dòng 1 A cần hàng tỉ tỉ electron mỗi giây. Nên sửa vi theo en mới.",
+    "Vi 'va chạm với từ trường và khí quyển' — nên đổi thành 'được từ trường dẫn xuống vùng cực và va chạm với khí quyển'."
+  ]
+}

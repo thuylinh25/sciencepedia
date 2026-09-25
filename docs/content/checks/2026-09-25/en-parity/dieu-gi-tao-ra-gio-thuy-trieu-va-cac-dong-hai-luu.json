@@ -1,0 +1,84 @@
+{
+  "slug": "dieu-gi-tao-ra-gio-thuy-trieu-va-cac-dong-hai-luu",
+  "verdict": "fix",
+  "findings": [
+    {
+      "id": "P-1",
+      "kind": "vi-only",
+      "severity": "S3",
+      "en": "\"creating the phenomenon of tides rising and falling on a daily cycle\"",
+      "vi": "Hai lần lên, hai lần xuống mỗi ngày mặt trăng (khoảng 24 giờ 50 phút); một số vùng chỉ một lần (s2 NOAA).",
+      "action": "Thay theo vi."
+    },
+    {
+      "id": "P-2",
+      "kind": "contradiction",
+      "severity": "S3",
+      "en": "\"Air always moves from areas of high pressure to areas of low pressure, creating wind.\"",
+      "vi": "Bắt đầu đi từ áp cao về áp thấp nhưng bị chuyển động quay làm lệch; ở quy mô lớn gió gần song song đường đẳng áp (s3 NOAA).",
+      "action": "en để lại mô hình tư duy sai (gió cắt thẳng đường đẳng áp). Thay theo vi."
+    },
+    {
+      "id": "P-3",
+      "kind": "contradiction",
+      "severity": "S3",
+      "en": "\"The greater the temperature difference, the stronger the wind.\"",
+      "vi": "\"Sự chênh lệch áp suất càng lớn thì gió càng mạnh.\"",
+      "action": "Thay theo vi."
+    },
+    {
+      "id": "P-4",
+      "kind": "vi-only",
+      "severity": "S4",
+      "en": "(không có)",
+      "vi": "\"Thủy triều là một trong những động lực chính của dòng nước ven bờ.\"",
+      "action": "Thêm vào en."
+    },
+    {
+      "id": "P-5",
+      "kind": "vi-only",
+      "severity": "S4",
+      "en": "Further reading 3 link",
+      "vi": "Đọc thêm 4 link (El Niño)",
+      "action": "Thêm link El Niño."
+    }
+  ],
+  "enEdits": [
+    {
+      "id": "E-1",
+      "find": "Therefore, two regions of rising water always exist on Earth, creating the phenomenon of tides rising and falling on a daily cycle.",
+      "replace": "Therefore, there are always two bulges of high water on Earth. Most places in the world have two high tides and two low tides each lunar day (about 24 hours 50 minutes); some places have only one high tide and one low tide.",
+      "why": "P-1."
+    },
+    {
+      "id": "E-2",
+      "find": "Air always moves from areas of high pressure to areas of low pressure, creating wind.",
+      "replace": "Air starts to move from high-pressure areas toward low-pressure areas, but Earth's rotation deflects it, so on large scales the wind blows almost parallel to the isobars rather than across them.",
+      "why": "P-2."
+    },
+    {
+      "id": "E-3",
+      "find": "The greater the temperature difference, the stronger the wind.",
+      "replace": "The greater the pressure difference, the stronger the wind.",
+      "why": "P-3."
+    },
+    {
+      "id": "E-4",
+      "find": "The most important driving force behind them is the prevailing wind systems",
+      "replace": "Tides are one of the main drivers of currents near the coast. On an ocean-wide scale, the most important driving force is the prevailing wind systems",
+      "why": "P-4."
+    },
+    {
+      "id": "E-5",
+      "find": "- [Life on Earth: 4 billion years in one timeline](/articles/su-song-tren-trai-dat-4-ti-nam-trong-mot-dong-thoi-gian)",
+      "replace": "- [Life on Earth: 4 billion years in one timeline](/articles/su-song-tren-trai-dat-4-ti-nam-trong-mot-dong-thoi-gian)\n- [El Niño: when the ocean \"rages\" and upends the global climate](/articles/hien-tuong-el-nino-khi-dai-duong-noi-gian-va-dao-lon-khi-hau-toan-cau)",
+      "why": "P-5."
+    }
+  ],
+  "corrections": [
+    "2026-09-25 · `dieu-gi-tao-ra-gio-thuy-trieu-va-cac-dong-hai-luu` (en) — bản en chưa nhận lượt sửa của vi: \"air always moves from high to low pressure\" → bị lệch do Trái Đất quay, gần song song đường đẳng áp; \"temperature difference\" → \"pressure difference\"; \"daily cycle\" → hai lần mỗi ngày mặt trăng 24 giờ 50 phút, có nơi một lần. Căn cứ: NOAA NOS (s2, s3)."
+  ],
+  "openQuestions": [
+    "Check 17/09 lưu ý lời giải thích chỗ phình phía đối diện bằng \"lực quán tính\" là cách đơn giản hoá có mất mát — cả hai bản chưa ghi điều đó; ngoài phạm vi đối chiếu."
+  ]
+}

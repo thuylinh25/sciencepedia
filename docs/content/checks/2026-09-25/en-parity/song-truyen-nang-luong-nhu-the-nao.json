@@ -1,0 +1,87 @@
+{
+  "slug": "song-truyen-nang-luong-nhu-the-nao",
+  "verdict": "fix",
+  "findings": [
+    {
+      "id": "P-1",
+      "en": "Mục 'The measurement system rests on a frequency': giây định nghĩa qua ΔνCs = 9 192 631 770 Hz (BIPM), mét qua c = 299 792 458 m/s (NIST)",
+      "vi": "Không có",
+      "kind": "en-only",
+      "severity": "S4",
+      "action": "Bỏ (lượt này không mở lại BIPM/NIST)."
+    },
+    {
+      "id": "P-2",
+      "en": "Ví dụ tính: FM 100 MHz ≈ 3,0 m; 550 nm ≈ 5,45×10¹⁴ Hz; tốc độ âm 'about 761 mph' ≈ 340 m/s, a = √(γRT); nốt A 440 Hz ≈ 77 cm; c / tốc độ âm ≈ 880.000; ánh sáng khả kiến 380–700 nm",
+      "vi": "Không có con số nào",
+      "kind": "en-only",
+      "severity": "S4",
+      "action": "Bỏ. Đã tính lại, số học không sai; bỏ vì vi đã rút gọn."
+    },
+    {
+      "id": "P-3",
+      "en": "Vùng bóng USGS 104–140°; GW150914 quét 35→250 Hz, strain 1,0×10⁻²¹ (Abbott 2016); tai người 20 Hz–20 kHz; sóng hấp dẫn không cần môi trường",
+      "vi": "Không có",
+      "kind": "en-only",
+      "severity": "S4",
+      "action": "Bỏ, kèm các link nội bộ trong thân en cũ (nang-luong-la-gi, thuyet-tuong-doi-hep, nguyen-tu, song-hap-dan). en mới theo 4 link Đọc thêm của vi."
+    },
+    {
+      "id": "P-4",
+      "en": "Mục 'Amplitude says nothing about frequency'",
+      "vi": "'Biên độ càng lớn, sóng mang càng nhiều năng lượng'",
+      "kind": "vi-only",
+      "severity": "S4",
+      "action": "Thêm câu của vi; bỏ mục en."
+    },
+    {
+      "id": "P-5",
+      "en": "Không có",
+      "vi": "Phản xạ; nhiễu xạ qua khe hẹp; ví dụ sóng ngang (ánh sáng, sóng trên dây) và sóng dọc (âm trong không khí, sóng P); sóng cơ gồm âm, sóng nước, sóng địa chấn; sóng điện từ gồm vô tuyến, tia X, gamma; đoạn khép",
+      "kind": "vi-only",
+      "severity": "S4",
+      "action": "Thêm vào en theo vi."
+    },
+    {
+      "id": "P-6",
+      "en": "'different wavelengths of light are slowed at different rates ... That is the mechanism behind a rainbow, and behind a prism'",
+      "vi": "'Đây [khúc xạ] là nguyên nhân tạo nên cầu vồng và hiện tượng lăng kính tách ánh sáng trắng'",
+      "kind": "en-only",
+      "severity": "S4",
+      "action": "Giữ trong en một câu: các bước sóng khác nhau lệch góc khác nhau. vi quy cầu vồng cho khúc xạ mà không nêu tán sắc, là đơn giản hoá mất mát. s5 NASA Wave Behaviors, mở 25/09: 'slowed at different rates, which causes them to bend at different angles ... prism ... colors of the rainbow'. Cầu vồng viết 'part of how', vì còn có phản xạ trong giọt nước."
+    },
+    {
+      "id": "P-7",
+      "en": "—",
+      "vi": "Đoạn khép 'mọi loại sóng đều được mô tả bằng bốn đại lượng'",
+      "kind": "hedge-lost",
+      "severity": "S4",
+      "action": "en viết 'periodic waves', khớp câu 'mọi sóng tuần hoàn' ở phần trên của chính bản vi; bước sóng và chu kỳ không xác định cho một xung đơn."
+    },
+    {
+      "id": "P-8",
+      "en": "summaryEn: 'defines the four quantities ... following BIPM, NASA and USGS'",
+      "vi": "summary: sóng truyền năng lượng, không truyền vật chất; ví dụ chiếc phao",
+      "kind": "en-only",
+      "severity": "S4",
+      "action": "Dịch lại summaryEn từ vi, vì bài en mới không dùng BIPM."
+    }
+  ],
+  "contentEnFile": "song-truyen-nang-luong-nhu-the-nao.en.md",
+  "summaryEnEdits": [
+    {
+      "id": "SE-1",
+      "find": "A wave carries energy, not matter. This article defines the four quantities behind every periodic wave — wavelength, frequency, period and amplitude — then uses them to separate mechanical waves from electromagnetic ones, and transverse waves from longitudinal ones, following BIPM, NASA and USGS.",
+      "replace": "Waves are everywhere, from sound and light to ocean swell and earthquakes. What every wave has in common is that it **carries energy but not matter**.\nWhen an ocean wave passes, for example, a buoy only bobs up and down in place. What actually travels is the wave's energy, not the body of water.",
+      "why": "P-8: khớp summary vi."
+    }
+  ],
+  "corrections": [
+    "- 2026-09-25 | song-truyen-nang-luong-nhu-the-nao | contentEn/summaryEn là bản dài cũ (định nghĩa SI qua tần số Cs và c; ví dụ số FM / 550 nm / 340 m/s; vùng bóng 104–140°; GW150914), lệch cấu trúc với vi đã rút gọn → en dịch lại từ vi hiện tại; giữ ý tán sắc (bước sóng khác nhau lệch góc khác nhau) trong câu cầu vồng/lăng kính | NASA Wave Behaviors (s5, mở 25/09)"
+  ],
+  "openQuestions": [
+    "vi 'Khúc xạ ... là nguyên nhân tạo nên cầu vồng và lăng kính' bỏ mất tán sắc. s5 NASA: các bước sóng bị làm chậm khác nhau nên lệch góc khác nhau. en mới giữ ý này. Đề nghị vi thêm một câu tương ứng.",
+    "vi đã rút gọn mạnh: mất mọi trích dẫn trong thân bài, dù bảng có 15 nguồn. corrections.md không có dòng nào cho bài này. Cần xác nhận lần rút gọn là biên tập có chủ ý. Nhiều mục trong bảng nguồn giờ không còn đỡ claim nào trong cả hai bản (s1–s3, s8, s9, s11, s14, s15).",
+    "Đoạn khép của vi ('mọi loại sóng') mâu thuẫn nhẹ với câu 'mối liên hệ cơ bản của mọi sóng tuần hoàn' trong chính bài. Đề nghị vi viết 'mọi sóng tuần hoàn'."
+  ]
+}

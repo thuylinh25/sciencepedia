@@ -1,0 +1,112 @@
+{
+  "slug": "bi-mat-dang-sau-cam-giac-nang-va-nhe",
+  "verdict": "fix",
+  "findings": [
+    {
+      "id": "P-1",
+      "en": "g bề mặt Trái Đất 'about 9.8 m/s²' (NASA); gₙ = 9.806 65 m/s² quy ước CGPM 1901; quả cầu đồng 10 kg nặng ~98 N (NIST).",
+      "vi": "'Trên Trái Đất: g ≈ 9,81 m/s²'.",
+      "kind": "contradiction",
+      "severity": "S4",
+      "action": "Không mâu thuẫn thật: 9,81 là làm tròn hợp lệ của gₙ = 9,80665 ([s5] NIST); NSSDC Moon Fact Sheet (mở hôm nay) cho Trái Đất 9,80. en theo vi 9.81; bỏ ví dụ 98 N và gₙ (en-only)."
+    },
+    {
+      "id": "P-2",
+      "en": "Không có g Mặt Trăng dạng số; chỉ 'one-sixth of Earth's'.",
+      "vi": "'Trên Mặt Trăng: g ≈ 1,62 m/s²' và 'khoảng 1/6'.",
+      "kind": "vi-only",
+      "severity": "S4",
+      "action": "Thêm vào en. 1/6 có [s12] NASA Moon Facts (mở hôm nay: 'one-sixth of Earth's'). 1,62 đúng theo NSSDC Moon Fact Sheet ('Surface gravity 1.62 m/s²') nhưng nguồn này không có trong bảng — openQuestion thêm nguồn."
+    },
+    {
+      "id": "P-3",
+      "en": "'At an altitude of about 250 miles (roughly 400 km) ... 88.8%'.",
+      "vi": "'Ở độ cao của ISS, lực hấp dẫn Trái Đất vẫn còn khoảng 90%'.",
+      "kind": "contradiction",
+      "severity": "S4",
+      "action": "Nhất quán: [s11] NASA 'What is Microgravity?' (mở hôm nay) '88.8 percent' ở ~250 dặm; 'khoảng 90%' là làm tròn. en theo vi 'about 90%'."
+    },
+    {
+      "id": "P-4",
+      "en": "Không có tốc độ ISS.",
+      "vi": "'ISS đang chuyển động ... khoảng 7,7 km/s'.",
+      "kind": "vi-only",
+      "severity": "S4",
+      "action": "Thêm vào en. [s11] NASA: '17,500 miles per hour (28,000 km per hour)' ≈ 7,8 km/s; 7,7 nằm trong sai số làm tròn."
+    },
+    {
+      "id": "P-5",
+      "en": "Tuyên bố CGPM 1901 về chữ 'weight'; NIST: dùng thương mại 'weight' = khối lượng.",
+      "vi": "Không có.",
+      "kind": "en-only",
+      "severity": "S4",
+      "action": "Bỏ khỏi en ([s2], [s4] đỡ nhưng vi không có)."
+    },
+    {
+      "id": "P-6",
+      "en": "Kilogram: trụ platin–iridi 1879, khối lượng chuẩn 'drifted'; SI mới từ 20/05/2019 cố định h = 6.626 070 15 × 10⁻³⁴ J·s.",
+      "vi": "Không có.",
+      "kind": "en-only",
+      "severity": "S4",
+      "action": "Bỏ khỏi en ([s1], [s3], [s7] đỡ nhưng vi không có)."
+    },
+    {
+      "id": "P-7",
+      "en": "MICROSCOPE 2022: η(Ti, Pt) = [−1.5 ± 2.3 (stat) ± 1.5 (syst)] × 10⁻¹⁵; 'upper bound ..., not a proof'; thuyết tương đối rộng lấy sự bằng nhau làm tiên đề.",
+      "vi": "'mọi thí nghiệm chính xác nhất từng thực hiện đều cho thấy: Khối lượng quán tính = Khối lượng hấp dẫn với độ chính xác cực cao.'",
+      "kind": "hedge-lost",
+      "severity": "S3",
+      "action": "Bỏ số MICROSCOPE khỏi en (vi không có). Vi đọc như thực nghiệm chứng minh bằng nhau; en viết 'have found no difference between them ... to within extremely tight limits' để giữ mức dè dặt của [s13]. openQuestion cho vi."
+    },
+    {
+      "id": "P-8",
+      "en": "'in orbit, where the scale reads zero, they are exactly as hard to push'.",
+      "vi": "Thiết bị vài tấn ở ISS 'có thể trôi đi khá dễ dàng vì gần như không có ma sát và không có trọng lượng cảm nhận được'.",
+      "kind": "contradiction",
+      "severity": "S3",
+      "action": "en đúng, vi dựng mô hình sai (vật nhiều tấn vẫn khó làm tăng tốc y như ở Trái Đất). Không chép 'khá dễ dàng' sang en: 'A push can set it drifting ... but, having a large mass, it gains speed only slowly.' openQuestion cho vi."
+    },
+    {
+      "id": "P-9",
+      "en": "Máy bay: trọng lượng giảm theo độ cao (NASA).",
+      "vi": "Không có.",
+      "kind": "en-only",
+      "severity": "S4",
+      "action": "Bỏ khỏi en."
+    },
+    {
+      "id": "P-10",
+      "en": "Không có ví dụ 60 kg, nhảy cao trên Mặt Trăng, ví dụ thiết bị vài tấn, Kết luận, 'Further reading'.",
+      "vi": "Có tất cả.",
+      "kind": "vi-only",
+      "severity": "S4",
+      "action": "Thêm vào en theo vi; 'Further reading' dùng đúng 3 link của vi."
+    },
+    {
+      "id": "P-11",
+      "en": "summaryEn: 'sets the three quantities side by side as NIST and BIPM define them ... why the equality ... remains an open question'.",
+      "vi": "summary: 'nặng' ứng với hai đại lượng khối lượng và trọng lượng; Mặt Trăng; phi hành gia 'không trọng lượng'.",
+      "kind": "contradiction",
+      "severity": "S4",
+      "action": "Thay summaryEn bằng bản dịch summary vi."
+    }
+  ],
+  "contentEnFile": "docs/content/checks/2026-09-25/en-parity/bi-mat-dang-sau-cam-giac-nang-va-nhe.en.md",
+  "summaryEnEdits": [
+    {
+      "id": "SUM-1",
+      "find": "Mass and inertia are two ways of describing one property; weight is a force, measured in newtons, that changes with where you stand. This article sets the three quantities side by side as NIST and BIPM define them, explains why \"weightless\" does not mean gravity is gone, and why the equality of inertial and gravitational mass remains an open question.",
+      "replace": "In everyday life we use the word \"heavy\" for an object with a large mass. In physics, though, the idea actually involves two entirely different quantities: mass and weight. Telling them apart explains many interesting phenomena, from feeling light as a feather on the Moon to the \"weightless\" state of astronauts.",
+      "why": "summaryEn mô tả nội dung chỉ có ở bản en cũ hoặc mang claim đã bị bác; thay bằng bản dịch summary vi hiện tại (khớp nguyên chuỗi summaryEn hiện tại, một lần)."
+    }
+  ],
+  "corrections": [
+    "- 2026-09-25 | bi-mat-dang-sau-cam-giac-nang-va-nhe | Bản en: dịch lại toàn bài từ vi hiện tại — gỡ phần không có ở vi (CGPM 1901, định nghĩa kilogram 2019, số MICROSCOPE, ví dụ 98 N, máy bay nhẹ đi theo độ cao); thêm g Mặt Trăng 1,62 m/s², tốc độ ISS ~7,7 km/s, ví dụ thiết bị vài tấn; 'thí nghiệm cho thấy bằng nhau' → 'chưa tìm thấy khác biệt, trong giới hạn rất chặt'; thiết bị vài tấn 'trôi khá dễ dàng' → 'bị đẩy thì trôi, nhưng tăng tốc chậm' | Đối chiếu song ngữ 25/09; NASA What is Microgravity (88,8%, 28.000 km/h), NASA Moon Facts (1/6), NSSDC Moon Fact Sheet (1,62), MICROSCOPE 2022"
+  ],
+  "openQuestions": [
+    "Vi, ví dụ thiết bị vài tấn: 'có thể trôi đi khá dễ dàng' dựng mô hình sai — khối lượng lớn vẫn khó làm tăng tốc như ở Trái Đất (chính là ý của bài). en đã viết lại; vi nên sửa tương ứng.",
+    "Vi 'mọi thí nghiệm ... đều cho thấy khối lượng quán tính = khối lượng hấp dẫn' nâng mức chắc chắn: thực nghiệm (MICROSCOPE [s13]) chỉ đặt giới hạn trên cho độ lệch. Nên viết 'chưa tìm thấy khác biệt nào, tới độ chính xác ~10⁻¹⁵'.",
+    "Vi 'g ≈ 1,62 m/s²' trên Mặt Trăng không có nguồn trong bảng (Moon Facts [s12] chỉ nói 1/6). Con số đúng theo NSSDC Moon Fact Sheet (https://nssdc.gsfc.nasa.gov/planetary/factsheet/moonfact.html); cần thêm nguồn này vào bảng.",
+    "Bản en cũ có phần có nguồn bậc 1–2 (CGPM 1901, kilogram 2019, MICROSCOPE) sâu hơn vi; muốn giữ thì đưa vào vi trước."
+  ]
+}

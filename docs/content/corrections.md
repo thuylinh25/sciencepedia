@@ -740,3 +740,169 @@ sửa của cả hai được chụp vào `Revision` trong cùng transaction.
 - **Còn nợ:** Dòng ghi công cuối bài "Biên tập lại từ bài ... của Đặng Vũ Tuấn Sơn ... Bản quyền nội dung gốc thuộc về VACA" (cả vi lẫn en) — câu hỏi từ 17/09 vẫn chưa có người quyết. Sau lượt này hầu hết các đoạn đã viết lại theo nguồn khác. Đây là câu hỏi về quyền và provenance, không phải về độ chính xác, nên không chặn gate accuracy; nhưng editor không tự sửa dòng này.
 - **Còn nợ:** Tiêu đề "4 tỉ năm" / "four billion years": dấu vết sự sống có nguồn trải từ ~3,5 tỉ năm (vi hoá thạch) tới 4,1 tỉ năm (gợi ý, chưa kết luận). "4 tỉ năm" nằm trong khoảng ấy như một bậc độ lớn nên editor giữ nguyên; ghi lại đây để không ai "sửa cho đẹp" thành một con số điểm.
 - **Còn nợ:** Sau khi áp, factCheck chỉ nên chuyển sang PASSED khi người chạy script xác nhận cả 36 edit vi và 35 edit en đã khớp đúng một lần và đã ghi Revision trong cùng transaction.
+
+## 2026-09-25 — đồng bộ bản en với bản vi đã đính chính
+
+Đối chiếu: `docs/content/checks/2026-09-25/en-parity/`. Script:
+`scripts/apply-en-parity-2026-09-25.ts` — chỉ sửa contentEn/summaryEn/titleEn;
+bản en trước khi sửa được chụp vào `Revision` trong cùng transaction.
+
+### bi-mat-dang-sau-cam-giac-nang-va-nhe
+
+- - 2026-09-25 | bi-mat-dang-sau-cam-giac-nang-va-nhe | Bản en: dịch lại toàn bài từ vi hiện tại — gỡ phần không có ở vi (CGPM 1901, định nghĩa kilogram 2019, số MICROSCOPE, ví dụ 98 N, máy bay nhẹ đi theo độ cao); thêm g Mặt Trăng 1,62 m/s², tốc độ ISS ~7,7 km/s, ví dụ thiết bị vài tấn; 'thí nghiệm cho thấy bằng nhau' → 'chưa tìm thấy khác biệt, trong giới hạn rất chặt'; thiết bị vài tấn 'trôi khá dễ dàng' → 'bị đẩy thì trôi, nhưng tăng tốc chậm' | Đối chiếu song ngữ 25/09; NASA What is Microgravity (88,8%, 28.000 km/h), NASA Moon Facts (1/6), NSSDC Moon Fact Sheet (1,62), MICROSCOPE 2022
+- **Còn nợ:** Vi, ví dụ thiết bị vài tấn: 'có thể trôi đi khá dễ dàng' dựng mô hình sai — khối lượng lớn vẫn khó làm tăng tốc như ở Trái Đất (chính là ý của bài). en đã viết lại; vi nên sửa tương ứng.
+- **Còn nợ:** Vi 'mọi thí nghiệm ... đều cho thấy khối lượng quán tính = khối lượng hấp dẫn' nâng mức chắc chắn: thực nghiệm (MICROSCOPE [s13]) chỉ đặt giới hạn trên cho độ lệch. Nên viết 'chưa tìm thấy khác biệt nào, tới độ chính xác ~10⁻¹⁵'.
+- **Còn nợ:** Vi 'g ≈ 1,62 m/s²' trên Mặt Trăng không có nguồn trong bảng (Moon Facts [s12] chỉ nói 1/6). Con số đúng theo NSSDC Moon Fact Sheet (https://nssdc.gsfc.nasa.gov/planetary/factsheet/moonfact.html); cần thêm nguồn này vào bảng.
+- **Còn nợ:** Bản en cũ có phần có nguồn bậc 1–2 (CGPM 1901, kilogram 2019, MICROSCOPE) sâu hơn vi; muốn giữ thì đưa vào vi trước.
+
+### big-bang-vu-tru-da-dien-ra-the-nao-trong-138-ti-nam
+
+- (en) "Around 1 Billion Years — The first galaxies appeared" → "Around 300 Million Years — the first galaxies had formed" + JADES-GS-z14-0 (z = 14,32, khoảng 290 triệu năm) ghi mốc "As of May 2024" — căn cứ: NASA Science, 30/05/2024 (nguồn s3 của bài).
+- (en) gỡ dòng "In about 8 billion years: The Sun becomes a white dwarf" — căn cứ: NASA Science, Sun: Facts: "another 5 billion years or so before it becomes a white dwarf" (check 2026-09-17, C-11). Bản vi CHƯA sửa dòng tương ứng.
+- **Còn nợ:** Bản vi còn "Khoảng 8 tỷ năm nữa: Mặt Trời trở thành sao lùn trắng" — sai (S2, check 2026-09-17 C-11). NASA Science, Sun: Facts, mở ngày 25/09/2026: "will last another 5 billion years or so before it becomes a white dwarf". Cần lượt đính chính vi: sửa thành ~5 tỉ năm và thêm NASA Sun: Facts vào bảng nguồn, rồi thêm lại dòng tương ứng vào en.
+- **Còn nợ:** Bản vi viết JADES-GS-z14-0 là "thiên hà xa nhất được xác nhận cho tới nay" — đã lỗi thời (check 2026-09-17 C-9: MoM-z14, z = 14,44, Naidu và cs. 2025). En chỉ nói "as of May 2024", nên không sai; vi cần sửa ở lượt đính chính riêng. Nguồn s3 (NASA) ghi "less than 300 million years"; con số 290 của cả hai bản khớp với mức đó nhưng không phải nguyên văn nguồn.
+- **Còn nợ:** Các phát hiện S3 khác của check 2026-09-17 vẫn còn ở CẢ HAI bản và lượt đối chiếu này không đóng chúng: 27% vật chất tối (Planck 2018 ≈ 26,4%), 75/25% thiếu chữ "theo khối lượng" và lithi gộp vào "dự đoán chính xác", lạm phát viết như sự kiện đã xác lập, "cái chết nhiệt được ủng hộ nhiều nhất", mốc 200 triệu năm và 100 nghìn tỉ / 10¹⁰⁰ năm không nguồn, thiếu căng thẳng Hubble. factCheck=REVISE là đúng.
+
+### cac-sao-toi-co-the-da-de-lai-tieng-vong-duoi-dang-song-hap-dan-khap-vu-tru
+
+- (en) "astronomers have detected a nanohertz gravitational wave background" → "found evidence for …", kèm mức ý nghĩa ~3,5–4σ, chưa tới 5σ — căn cứ: NANOGrav 15 năm, doi 10.3847/2041-8213/acdac6 (nguồn s1).
+- (en) sao tối lớn tới "hundreds of thousands or millions" lần khối lượng Mặt Trời → "about 10⁴–10⁷" — căn cứ: bản vi đã đính chính (check 2026-09-17, C-5).
+- (en) "New simulations suggest" → "Ghodla and Ilie (2026, Physical Review D) calculate" — căn cứ: doi 10.1103/hvfd-8fkr; arXiv:2507.06163.
+- (en, summaryEn) "recently detected … not only from merging SMBH binaries, but also signatures of dark stars that existed over 13 billion years ago" → "In 2023 … reported evidence … may come mainly from SMBH pairs whose seeds were collapsed dark stars" — căn cứ: arXiv:2507.06163 ("Dark Star seeded SMBHs … can be the dominant contributor"); NANOGrav 15 năm.
+- **Còn nợ:** summary và seoDescription bản vi vẫn mang ba lỗi đã sửa ở summaryEn: "gần đây đã phát hiện" (NANOGrav 2023 là bằng chứng ~3,5–4σ), "không chỉ đến từ các cặp lỗ đen … mà còn chứa dấu vết của sao tối" (sai cơ chế — check 2026-09-17 C-2; arXiv:2507.06163v2 mở ngày 25/09/2026: "Dark Star seeded SMBHs … can be the dominant contributor to the PTA signal"), và "hơn 13 tỷ năm trước" (tóm tắt chỉ nói high-z). Cần lượt đính chính vi.
+- **Còn nợ:** Khoảng 10⁴–10⁷ M☉ (cả hai bản) dựa trên arXiv:2511.08578 — tiền ấn phẩm, KHÔNG có trong bảng nguồn của bài. Gắn nguồn hoặc hạ thành "theo một số mô hình" không kèm số.
+- **Còn nợ:** Các fix còn mở của check 2026-09-17 ở cả hai bản: chưa nêu cách giải thích thiên lệch quan sát cho lỗ đen JWST, chưa ghi sao tối "chưa được quan sát xác nhận", chưa nêu điều kiện mật độ hạt giống ~10⁻³ Mpc⁻³, vế "nếu quá ít thì cần cơ chế khác" chưa kiểm, câu "mắt xích còn thiếu" chưa gắn nhãn suy diễn.
+- **Còn nợ:** titleEn có dấu chấm cuối ("… across the universe.") — định dạng, chuyển seo-expert.
+
+### co-the-nguoi-bien-doi-the-nao-ngoai-vu-tru-khong-bao-ho
+
+- 2026-09-25 · `co-the-nguoi-bien-doi-the-nao-ngoai-vu-tru` (en) — đính chính 11/09 chưa tới bản en: bỏ "+120°C/−150°C" gán cho thân người (đó là điều kiện môi trường khi đi bộ ngoài không gian), thêm cơ chế mất nhiệt do bay hơi; không chép 46°C và "gần như chắc chắn tử vong" của vi (check 17/09); thêm sự cố Houston 14 giây; đồng bộ kết bài với mốc 1–2 phút. Căn cứ: NASA Imagine (s2), NASA SP-3006 qua check 17/09.
+- **Còn nợ:** Bản vi vẫn có "điểm sôi … khoảng 46°C" — check 17/09: không nguồn, trái NASA SP-3006. Cần cắt ở vi.
+- **Còn nợ:** Bản vi vẫn có "gần như chắc chắn gây tử vong" và câu thuyên tắc khí tới tim và não — check 17/09 yêu cầu hạ mức; bản en đã hạ.
+- **Còn nợ:** Bản vi ghi +120/−150°C là của "vỏ tàu vũ trụ"; check 17/09 dẫn NASA gắn con số với môi trường đi bộ ngoài không gian (−157°C đến 121°C). Cần một nguồn NASA trong bảng nguồn cho con số này; hiện không có.
+- **Còn nợ:** Kết bài vi "trong vòng vài phút" mâu thuẫn mục 1–2 phút. NASA SP-3006 (khuyến nghị gắn nguồn ở check 17/09) chưa có trong bảng nguồn.
+- **Còn nợ:** Tôi chưa mở lại s1 (Murray 2013) và SP-3006 ở lượt này; đoạn máu/ebullism của en dựa trên trích dẫn nguyên văn trong check 17/09.
+
+### dieu-gi-tao-ra-gio-thuy-trieu-va-cac-dong-hai-luu
+
+- 2026-09-25 · `dieu-gi-tao-ra-gio-thuy-trieu-va-cac-dong-hai-luu` (en) — bản en chưa nhận lượt sửa của vi: "air always moves from high to low pressure" → bị lệch do Trái Đất quay, gần song song đường đẳng áp; "temperature difference" → "pressure difference"; "daily cycle" → hai lần mỗi ngày mặt trăng 24 giờ 50 phút, có nơi một lần. Căn cứ: NOAA NOS (s2, s3).
+- **Còn nợ:** Check 17/09 lưu ý lời giải thích chỗ phình phía đối diện bằng "lực quán tính" là cách đơn giản hoá có mất mát — cả hai bản chưa ghi điều đó; ngoài phạm vi đối chiếu.
+
+### mat-troi-lo-phan-ung-giu-ca-he-hanh-tinh
+
+- **Còn nợ:** Không có claim khoa học nào lệch giữa vi và en; chỉ thiếu cấu trúc/link. Không cần dòng corrections.md (không phải đính chính claim). Tỉ lệ độ dài thấp do en thiếu câu trích và mục Đọc thêm.
+
+### nang-luong-la-gi
+
+- - 2026-09-25 | nang-luong-la-gi | contentEn/summaryEn là bản dài cũ, lệch cấu trúc với vi đã rút gọn (định nghĩa 'where it falls short', quy đổi eV/kWh, năng lượng bức xạ, năng lượng tối) → en dịch lại từ vi hiện tại; giữ phạm vi bảo toàn 'isolated system' (en cũ ghi 'closed system'); E=mc² viết là 'tương ứng', không phải 'khối lượng chuyển hoá thành năng lượng' | NASA Glenn Conservation of Energy (s6, mở 25/09)
+- **Còn nợ:** vi trình bày 'đại lượng đo khả năng gây ra sự biến đổi hoặc thực hiện công' như định nghĩa vật lý. Bản en cũ và EIA (s4) coi đây là mô tả làm việc, không chặt. en mới nói rõ 'a working description rather than a rigorous definition'. Đề nghị vi thêm mệnh đề tương đương.
+- **Còn nợ:** vi 'Năng lượng không tự sinh ra cũng không tự mất đi' không nêu phạm vi; NASA s6 viết 'within some problem domain'. Đề nghị vi thêm 'trong một hệ cô lập' (en và summaryEn đã có).
+- **Còn nợ:** vi 'khối lượng và năng lượng thực chất là hai biểu hiện của cùng một đại lượng' và 'khối lượng ... chuyển hóa thành năng lượng' là đơn giản hoá gây mô hình sai (quy tắc 4). NRC s8 (bản en cũ trích: 'when the energy of a body changes by an amount E ... the mass changes by E/c²'). Lượt này không mở lại được NRC (curl trả Access Denied). Đề nghị vi viết 'tương ứng với'.
+- **Còn nợ:** vi mất dòng dẫn nguồn cuối bài; en cũ có dòng này, dẫn đủ 8 nguồn. Nếu trang bài chỉ hiện nguồn qua dòng này thì sau khi apply, cả hai bản đều không dẫn nguồn trong thân bài. Cần kiểm cách trang render bảng Source trước khi apply.
+- **Còn nợ:** vi đã được rút gọn nhưng corrections.md không có dòng nào cho bài này. Lần rút gọn là đính chính hay biên tập? Nếu là đính chính trên bài đã publish thì còn nợ dòng nhật ký (content-rules, mục 'Sửa bài đã publish là đính chính').
+
+### neu-roi-he-mat-troi-proxima-centauri-se-la-diem-dung-dau-tien
+
+- 2026-09-25 · `neu-roi-he-mat-troi-proxima-centauri` (en) — đính chính 11/09 chưa tới bản en: thêm chú thích Parker Solar Probe ở quỹ đạo đóng cho con số 6.700 năm. Kèm sửa en (vi còn sai): Proxima d "too hot for liquid water" → nhiệt độ cân bằng có thể tới ~360 K (albedo 0,3), nằm trong mép trong vùng sinh sống, khối lượng tối thiểu 0,26 (Faria 2022, s2); Proxima c là tín hiệu chưa xác nhận; b "rocky" → "may be rocky"; Starshot 20% → ~15% c, bay ngang Alpha Centauri sau hơn 20 năm (breakthroughinitiatives.org); thêm giả định cho thời gian bay; summaryEn bỏ "closest star to Earth".
+- **Còn nợ:** Bản vi SAI, không phải chuẩn, ở: nhiệt độ cân bằng Proxima d 282 K (Faria 2022 ghi 360 K — đã mở full text lượt này), "khó giữ khí quyển" (không nguồn), "0,26 lần khối lượng" thiếu chữ "tối thiểu", b "hành tinh đá", Starshot 20% c tới Proxima (trang dự án: ≤100 triệu dặm/giờ ≈15% c, bay ngang Alpha Centauri). Cần sửa vi và ghi corrections.md cho vi.
+- **Còn nợ:** Hai nguồn đã dùng cho en chưa có trong bảng nguồn: trang NASA Voyager 1 (17,0 km/s) và breakthroughinitiatives.org/initiative/3 (tier 3, chỉ mô tả dự án). Cần thêm vào bảng nguồn khi áp lượt sửa.
+- **Còn nợ:** New Horizons 90.000 năm vẫn không nguồn ở cả hai bản (check 17/09 C-10). Giữ ở en vì cùng mức với vi và đã kèm giả định; nếu không tìm được vận tốc từ NASA thì cắt ở cả hai.
+- **Còn nợ:** Vế "không nằm trong danh mục NASA" của Proxima c chưa kiểm được (check 17/09) — đã bỏ khỏi en; vi vẫn giữ.
+- **Còn nợ:** Summary vi "ngôi sao gần Trái Đất nhất" sai (Mặt Trời). Tiêu đề en/vi "First Stop"/"điểm dừng" vẫn là câu hỏi mở từ 17/09 (dự án duy nhất là bay ngang).
+
+### neu-trai-dat-dang-quay-vi-sao-chung-ta-khong-cam-nhan-duoc
+
+- 2026-09-25 · `neu-trai-dat-dang-quay` (en) — đính chính 11/09 chưa tới bản en: bỏ mục "twice as fast" (1,2%) còn sót, 0,3% → 0,35%, thêm phần kết; mục cơ chế viết lại theo check 17/09 C-3 (gia tốc hướng tâm nhỏ và không đổi, không phải "vận tốc đều"). Căn cứ: NASA NSSDC Earth Fact Sheet (s1), NASA Glenn (s2).
+- **Còn nợ:** Bản vi vẫn mang lỗi S2 của check 17/09 C-3: "cơ thể chỉ nhận ra sự thay đổi vận tốc, chứ không nhận ra vận tốc đều" (ở mục thứ ba và câu kết). Chuyển động tròn luôn có gia tốc hướng tâm — chính bài tính 0,35%. Bản en mới đã viết đúng; vi cần sửa theo cùng hướng.
+- **Còn nợ:** Bản vi còn "khoảng 900 km/h" không nguồn (check 17/09 yêu cầu cắt). Bản en không có con số.
+- **Còn nợ:** Vai trò cơ quan sỏi tai (cảm nhận trọng lực — gia tốc không đổi) vẫn chưa có nguồn sinh lý trong bảng nguồn (check 17/09 gợi ý NIDCD); s3 (Cullen 2012) chưa được mở để đỡ đoạn tiền đình.
+
+### newton-da-giai-ma-the-gioi-nhu-the-nao
+
+- - 2026-09-25 | newton-da-giai-ma-the-gioi-nhu-the-nao | Bản en: gỡ các đoạn không có ở vi (Halley trả tiền in Principia, dạng động lượng của định luật II và ví dụ tên lửa, đơn vị newton/joule, cánh máy bay, Sao Hải Vương 1846, 'GPS cần tính tương đối hẹp') → dịch lại toàn bài từ vi hiện tại; câu kết bỏ 'toàn bộ' nền vật lý hiện đại | Đối chiếu song ngữ 25/09; Sao Hải Vương không có nguồn trong bảng; câu GPS thiếu tương đối rộng
+- **Còn nợ:** Vi trình bày F = ma như chính định luật II, không nói đó là trường hợp khối lượng không đổi (dạng chặt: lực = tốc độ biến thiên động lượng, NASA [s1]). Theo quy tắc 4 nên thêm một câu nói rõ phép đơn giản này mất thông tin; bản en cũ có sẵn nội dung có nguồn để chuyển sang vi qua lượt duyệt riêng.
+- **Còn nợ:** Vi câu kết 'đặt nền móng cho toàn bộ nền vật lý hiện đại' là nói quá; en đã bỏ 'toàn bộ'. Vi nên sửa tương ứng (ngoài phạm vi việc này).
+- **Còn nợ:** Bản en cũ có nhiều nội dung có nguồn bậc 2 (Royal Society/Halley [s7], NIST newton [s5], NASA Glenn định luật III [s3]) mà vi đã rút gọn mất. Muốn giữ độ sâu này thì đưa vào vi trước rồi dịch — không để en đi trước vi.
+
+### nguyen-tu-cau-tao-nen-van-vat
+
+- - 2026-09-25 | nguyen-tu-cau-tao-nen-van-vat | contentEn/summaryEn là bản dài cũ (hằng số CODATA, độ phổ biến và bán rã đồng vị, NUBASE 3.340 nuclide, 12,098940 u / 0,82%, năng lượng liên kết/nucleon, claim Permi 8–10 °C), lệch cấu trúc với vi đã rút gọn → en dịch lại từ vi hiện tại, không chép bốn chỗ vi sai hoặc mất mát: s/p/d/f là phân lớp (vi: 'lớp'); tỉ số khối lượng ~1.840 (vi: 'khoảng 2.000'); 'mọi vật chất thông thường' (vi: 'mọi vật chất'); hụt khối 'tương ứng' năng lượng liên kết (vi: 'chuyển hoá thành') | CODATA 2022 m_p/m_e, m_n/m_e (physics.nist.gov, mở 25/09); NIST Atomic Spectroscopy (s4)
+- **Còn nợ:** vi 'Lớp s, p, d, f' sai thuật ngữ: s/p/d/f là phân lớp (subshell); lớp (shell) đánh theo n (NIST s4, như en cũ). Mức S3 vì để lại mô hình sai. Đề nghị đính chính vi: 'Các electron sắp xếp theo lớp, mỗi lớp chia thành các phân lớp s, p, d, f'.
+- **Còn nợ:** vi 'lớn hơn electron khoảng 2.000 lần': CODATA 2022 (mở 25/09) cho 1836,15 (proton) và 1838,68 (neutron). Đề nghị vi viết 'khoảng 1.840 lần' để hai bản cùng con số.
+- **Còn nợ:** vi 'khối lượng mất đi đã được chuyển hóa thành năng lượng liên kết ..., giúp giữ' và 'mỗi hạt nhân đều chứa một lượng năng lượng liên kết' gợi ý năng lượng liên kết là thứ được cất trong hạt nhân; thật ra đó là năng lượng đã toả ra khi hạt nhân hình thành. Đề nghị vi viết lại như en mới.
+- **Còn nợ:** vi 'tạo nên mọi vật chất trong vũ trụ' mâu thuẫn với bài vật chất tối của kho. Đề nghị 'mọi vật chất thông thường'.
+- **Còn nợ:** vi rút gọn mất toàn bộ số liệu có nguồn và mọi trích dẫn trong thân bài; corrections.md không có dòng cho lần rút gọn này. Bảng nguồn 10 mục (NUBASE2020, CIAAW, bán kính điện tích…) giờ hầu như không đỡ claim nào trong cả hai bản.
+
+### sao-hoa-hanh-tinh-do-va-cau-hoi-ve-nuoc
+
+- 2026-09-25 · `sao-hoa-hanh-tinh-do-va-cau-hoi-ve-nuoc` (en) — bản en còn "22 km, gần gấp ba Everest" → 21,9 km so với mốc chuẩn, khoảng 2,5 lần (s2); "Phobos, Deimos likely captured asteroids" → nguồn gốc chưa ngã ngũ, MMX phân xử (s3, s4); Valles Marineris 4.000 km/7 km → 3.870 km/9,3 km (NASA Mars Facts, vi còn sai).
+- **Còn nợ:** Bản vi còn Valles Marineris "dài 4.000 km, sâu tới 7 km" — NASA Mars Facts (đã mở lượt này) ghi 3.870 km, sâu 9,3 km (check 17/09 đã nêu). Cần sửa vi và thêm NASA Mars Facts vào bảng nguồn.
+- **Còn nợ:** Check 17/09 còn nợ nguồn cho MAVEN, băng ở vĩ độ trung bình, đất sét/sulfat — chung cho cả hai bản, ngoài phạm vi đối chiếu.
+
+### sao-moc-nguoi-khong-lo-khi-va-tam-khien-cua-he
+
+- - 2026-09-25 | sao-moc-nguoi-khong-lo-khi-va-tam-khien-cua-he | EN chưa từng nhận các sửa 17/09: summaryEn "at least 350 years old", "magnetic field … 20,000 times that of Earth", Galileo "about 150 km", gió "about 430 km/h", "40,000 km … today", "directly refuted the geocentric model", "astronomers consider these two different vortices", Europa không dè dặt → en mang cùng claim với vi: theo dõi từ ~1831; mômen từ ~20.000 lần / cường độ ~16–54 lần; ~200 km; >640 km/h (Hubble 2009–2020); 39.000 km (1879) → ~14.000 km (công bố 2024); Horner & Jones 2008 | Sánchez-Lavega 2024 doi 10.1029/2024GL108993; NASA Jupiter Facts; NASA Galileo; ESA/Hubble heic2110; Horner & Jones 2008 doi 10.1017/s1473550408004187; NASA Ganymede
+- **Còn nợ:** BẢN VI: seoDescription vẫn ghi "với cơn bão Vết Đỏ Lớn đã tồn tại ít nhất 350 năm" — đúng claim S2 đã bị bác ở summary 17/09. Ngoài phạm vi en; cần sửa vi seoDescription và ghi corrections.md.
+- **Còn nợ:** BẢN VI (S4): câu Ganymede "là vệ tinh được biết tới là có từ trường riêng" đã rơi mất "duy nhất" khi áp fix 17/09 (fix yêu cầu THÊM 'được biết tới', không bỏ 'duy nhất'). NASA Ganymede (mở 25/09): "the only moon known to have its own magnetic field". Đề nghị vi: "và là vệ tinh duy nhất được biết tới có từ trường riêng".
+- **Còn nợ:** Tiêu đề vi/en vẫn khẳng định "tấm khiên" / "shields the system" trong khi thân bài nói giả thuyết còn tranh cãi (C-16, 17/09, chưa có người quyết). titleEn giữ nguyên vì phản ánh đúng tiêu đề vi; đổi tiêu đề thì đổi cả hai cùng lượt.
+- **Còn nợ:** "16–54 lần" là số của NASA Jupiter Facts (không phân biệt 'ở bề mặt'); bản vi thêm 'ở bề mặt'. Fact Sheet: 4–13 G bề mặt so với ~0,25–0,65 G của Trái Đất — cùng cỡ. En theo vi; không coi là lỗi.
+
+### song-truyen-nang-luong-nhu-the-nao
+
+- - 2026-09-25 | song-truyen-nang-luong-nhu-the-nao | contentEn/summaryEn là bản dài cũ (định nghĩa SI qua tần số Cs và c; ví dụ số FM / 550 nm / 340 m/s; vùng bóng 104–140°; GW150914), lệch cấu trúc với vi đã rút gọn → en dịch lại từ vi hiện tại; giữ ý tán sắc (bước sóng khác nhau lệch góc khác nhau) trong câu cầu vồng/lăng kính | NASA Wave Behaviors (s5, mở 25/09)
+- **Còn nợ:** vi 'Khúc xạ ... là nguyên nhân tạo nên cầu vồng và lăng kính' bỏ mất tán sắc. s5 NASA: các bước sóng bị làm chậm khác nhau nên lệch góc khác nhau. en mới giữ ý này. Đề nghị vi thêm một câu tương ứng.
+- **Còn nợ:** vi đã rút gọn mạnh: mất mọi trích dẫn trong thân bài, dù bảng có 15 nguồn. corrections.md không có dòng nào cho bài này. Cần xác nhận lần rút gọn là biên tập có chủ ý. Nhiều mục trong bảng nguồn giờ không còn đỡ claim nào trong cả hai bản (s1–s3, s8, s9, s11, s14, s15).
+- **Còn nợ:** Đoạn khép của vi ('mọi loại sóng') mâu thuẫn nhẹ với câu 'mối liên hệ cơ bản của mọi sóng tuần hoàn' trong chính bài. Đề nghị vi viết 'mọi sóng tuần hoàn'.
+
+### su-ra-doi-cua-he-mat-troi
+
+- - 2026-09-25 | su-ra-doi-cua-he-mat-troi | Bản en: 'Sun holds 99.86% of the mass but about 1% of the angular momentum' (thân bài + summaryEn) → 'more than 99% of the mass', 'a very small fraction of its angular momentum' | NASA Solar System Facts ('more than 99%'); 1% không có nguồn bậc 1–2 (check 2026-09-17 C-2, C-3)
+- - 2026-09-25 | su-ra-doi-cua-he-mat-troi | Bản en: di cư hành tinh xếp là cơ chế thứ ba giải bài toán động lượng góc, 'the current model solves this' → phanh từ tính và gió Mặt Trời là cơ chế 'được đề xuất'; di cư tách mục riêng, nói rõ không làm Mặt Trời quay chậm | check 2026-09-17 C-11
+- - 2026-09-25 | su-ra-doi-cua-he-mat-troi | Bản en: gỡ claim không nguồn — Kant 1755/Laplace 1796/Chamberlin–Moulton/Jeans–Jeffreys 1918, James Webb, 'gaps swept clean', đường tuyết trong vành tiểu hành tinh, ngưỡng lõi ~10 M⊕, 'Jupiter alone', Grand Tack, hành tinh bị hất ra, 'super-Earths most common', 'over millions of years' | Bảng nguồn không đỡ; ALMA/HL Tau giữ theo ALMA Partnership 2015 ('bright and dark rings')
+- - 2026-09-25 | su-ra-doi-cua-he-mat-troi | Bản en: 'over 6,000 exoplanets' → thêm '(NASA count, as of September 2026)'; 'the general mechanisms are correct' → 'the same physical processes can produce very different outcomes'; đường tuyết → đường tuyết của nước | NASA Exoplanets; check 2026-09-17 C-9, C-13, C-15
+- **Còn nợ:** Bản vi hiện tại VẪN mang các lỗi check 2026-09-17 đã chỉ ra: 99,86%, 'khoảng 1%', 'đặc biệt là Sao Mộc', di cư hành tinh là cơ chế thứ ba (S2), 'quy luật hình thành hành tinh là phổ quát', James Webb không nguồn, 'hàng triệu năm', 'một số hành tinh sơ khai bị hất ra', thiếu mốc thời gian cho 6.000, emoji. factCheck=REVISE là đúng. Bản en giờ đi TRƯỚC vi — lượt sửa vi nên chép theo en này, không ngược lại.
+- **Còn nợ:** Bản vi đã mất khối ghi công VACA mà en còn giữ. Check 2026-09-05 yêu cầu không gỡ ghi công; cần khôi phục ở vi (nếu vi vẫn là tác phẩm phái sinh của VACA).
+- **Còn nợ:** C-11 (di cư không giải bài toán động lượng góc) vẫn dựa trên lập luận vật lý, chưa mở được review bậc 1 — như check 09-17 đã ghi. en đã viết theo hướng an toàn; cần đóng câu hỏi khi sửa vi.
+
+### tai-sao-pluto-khong-con-la-hanh-tinh
+
+- (en) điều kiện 2 "enough mass for its gravity to pull it into a nearly spherical shape" → "self-gravity to overcome rigid-body forces … hydrostatic equilibrium (a nearly round shape)" — căn cứ: IAU 2006 Resolution B5 (nguồn s2).
+- (en) "Earth is 1.7 million times more massive than the sum of all other bodies in its orbital zone" → bỏ số, giữ ý định tính theo chỉ số của Soter (2006) — căn cứ: số không có nguồn đã kiểm (check 2026-09-17), bản vi đã cắt.
+- (en) hành tinh lùn "bodies that satisfy the first two conditions" → đủ bốn điều kiện (a)–(d) của IAU B5(2) — căn cứ: IAU 2006 (nguồn s2).
+- (en) "Earth itself, if placed in Pluto's orbit, would not be able to clear its neighborhood" (viết như sự thật) → quy kết cho lập luận của phía phản đối — căn cứ: check 2026-09-17.
+- (en) "nearly 5 billion km from the Sun" → "an average distance of about 5.9 billion km" — căn cứ: NASA Science, Pluto: Facts (nguồn s3).
+- **Còn nợ:** Cả hai bản vẫn gọi Eris là "thiên thể vành đai Kuiper" (check 2026-09-17: Eris thuộc đĩa phân tán, nên viết "thiên thể ngoài Sao Hải Vương") và vẫn chưa ghi mốc "(tính tới 9/2026)" cho năm hành tinh lùn. Không phải lệch song ngữ; để lượt đính chính vi rồi đồng bộ sang en.
+- **Còn nợ:** Bản en để nguyên tiêu đề tiếng Việt cho 2/3 link Đọc thêm (Sao Thổ, Sao Mộc) — không phải claim, chuyển translation/seo-expert.
+
+### thien-ha-dinh-nghia-va-cach-phan-loai
+
+- - 2026-09-25 | thien-ha-dinh-nghia-va-cach-phan-loai | EN chưa từng nhận các sửa 17/09: "millions to hundreds of billions of stars", "approximately 105,000 light-years", dwarf "few thousand"/giant "hundreds of thousands" ly, và "about 50% … in 7 to 8 billion years" trình bày như kết luận; summaryEn "hundreds of billions more" không nguồn → en mang cùng claim với vi: vài nghìn–nghìn tỷ sao; >100.000 ly; vài trăm ly–>1 triệu ly; Sawala 2025 (~50% trong 10 tỷ năm) và Wu 2026 (90%, 6,5 +1,3/−1,5 tỷ năm, 2σ 64,7–100%) đặt cạnh nhau | NASA Galaxies; Sawala 2025 doi 10.1038/s41550-025-02563-1; Wu 2026 doi 10.3847/2041-8213/ae5799; Cox & Loeb 2008 doi 10.1111/j.1365-2966.2008.13048.x
+- **Còn nợ:** Cả vi lẫn en vẫn xếp Mây Magellan Lớn là thiên hà không định hình — câu hỏi mở từ 17/09 (có thể là xoắn ốc Magellan, SBm) chưa được đóng. Không đổi ở lượt đồng bộ này.
+
+### thuyet-tuong-doi-hep-khi-thoi-gian-khong-con-tuyet-doi
+
+- (en) "reconstructed all of mechanics from two postulates" → "rebuilt the kinematics of motion" — căn cứ: bản vi đã đính chính (check 2026-09-17, C-1).
+- (en) E = mc² không ghi nguồn gốc → thêm câu: hệ quả này nằm ở bài thứ hai tháng 9/1905, Annalen der Physik 323 — căn cứ: doi 10.1002/andp.19053231314 (check 2026-09-17, C-2).
+- (en) "positioning errors would accumulate by about 10 km per day" → "a timing error equivalent to about 11 km of light-travel distance every day"; thêm độ lệch tần số 4,4647 × 10⁻¹⁰ ≈ 38,6 μs/ngày của Ashby và ghi rõ cách tách 7/45 μs là của tài liệu giảng dạy (Pogge) — căn cứ: Ashby 2003, doi 10.12942/lrr-2003-1; Pogge, Ohio State (check 2026-09-17, C-4, C-5).
+- (en) muon "lifespan is too short to reach the ground" → "most of them should decay before reaching the ground" — căn cứ: bản vi đã đính chính (check 2026-09-17, C-6).
+- **Còn nợ:** Bản vi viết "4,4647 × 10−10" (dấu trừ thường, không mũ) — nên là 4,4647 × 10⁻¹⁰. Lỗi định dạng, không đổi nghĩa; bản en đã viết đúng. Sửa ở lượt đính chính vi.
+- **Còn nợ:** Đoạn muon ở cả hai bản vẫn chưa trích nguồn thực nghiệm trong câu dù s3 (Frisch & Smith 1963) đã có trong bảng nguồn — check 2026-09-17 C-6 ghi là chưa mở được trang AIP/OSTI. Lượt đối chiếu này không mở lại.
+
+### toan-canh-dac-diem-8-hanh-tinh-he-mat-troi
+
+- - 2026-09-25 | toan-canh-dac-diem-8-hanh-tinh-he-mat-troi | EN chưa từng nhận các sửa 17/09: số vệ tinh 95/146/28 "officially named as of 2024", "mythological order … consistent with the order in which they were discovered", "each name is tied to an observable characteristic", Hành tinh thứ chín không nêu tranh cãi → en mang cùng claim với vi: 115/293/29/16 vệ tinh xác nhận theo NASA 8/2026; phả hệ thần thoại là trùng hợp tên gọi, Thiên Vương là hành tinh đầu tiên tìm bằng kính thiên văn (1781); giả thuyết Batygin & Brown 2016 còn tranh cãi; hành tinh lùn có mốc 9/2026 | NASA Jupiter/Saturn/Uranus Moons (8/2026); NASA Planetary Fact Sheet; IAU Resolution 5A 2006; Batygin & Brown 2016 doi 10.3847/0004-6256/151/2/22
+- **Còn nợ:** Câu "128 vệ tinh … tháng 3/2025" (vi, nay cả en) vẫn chưa có nguồn trong bảng nguồn (check 17/09: partially-supported). Nên gắn thông báo MPC hoặc NASA về đợt công bố; nếu không gắn được thì cắt ở cả hai bản cùng lượt.
+- **Còn nợ:** Câu tranh cãi về Hành tinh thứ chín và câu 'đường tuyết … không phải trùng hợp' (vi, nay cả en) chưa có nguồn bậc 1–2 trong bảng; check 17/09 đề nghị hạ mức khẳng định về đường tuyết. Ngoài phạm vi đồng bộ; nếu sửa vi thì sửa en cùng lượt.
+
+### tu-electron-den-dong-dien-nguon-goc-cua-dien-nang
+
+- - 2026-09-25 | tu-electron-den-dong-dien-nguon-goc-cua-dien-nang | Bản en: dịch lại toàn bài từ vi hiện tại — gỡ phần không có ở vi (lực 2 × 10⁻⁷ N/m, cân Kibble, 'Franklin guessed wrong', 120 V/15 A, trích Neuroscience/Hodgkin–Huxley); 'một lượng điện tích rất nhỏ đã đủ tạo dòng điện' → 'mỗi electron mang điện tích rất nhỏ, dòng điện hằng ngày gồm số rất lớn electron'; cực quang: hạt được từ trường dẫn vào thượng tầng khí quyển rồi va chạm với khí | Đối chiếu song ngữ 25/09; 1 C ≈ 6,24 × 10¹⁸ e (NIST CODATA [s3])
+- **Còn nợ:** Vi 'chỉ một lượng điện tích rất nhỏ của electron đã đủ tạo nên những dòng điện quen thuộc' ngược với chính con số ngay trên nó (1 C ≈ 6,24 × 10¹⁸ e): dòng 1 A cần hàng tỉ tỉ electron mỗi giây. Nên sửa vi theo en mới.
+- **Còn nợ:** Vi 'va chạm với từ trường và khí quyển' — nên đổi thành 'được từ trường dẫn xuống vùng cực và va chạm với khí quyển'.
+
+### van-dong-thay-doi-tim-va-mach-mau-nhu-the-nao
+
+- - 2026-09-25 | van-dong-thay-doi-tim-va-mach-mau-nhu-the-nao | EN chưa từng nhận đính chính S1 13/09: vẫn ghi "about 5–8 mmHg … equivalent to some monotherapies" và không có mục không-bỏ-thuốc/dấu hiệu cảnh báo → en mang số theo phân nhóm của nguồn (8,3 [6,0–10,7]/5,2 mmHg ở người tăng huyết áp; ~0,75 mmHg, CI chứa 0, ở người huyết áp bình thường), bỏ phép so với thuốc, thêm mục "Exercise does not replace the medication you take" và danh sách dấu hiệu cần ngừng tập | Cornelissen & Smart 2013, doi 10.1161/JAHA.112.004473 (tóm tắt đọc qua Europe PMC, PMC3603230)
+- **Còn nợ:** BẢN VI SAI (S2, do chính lượt đính chính 13/09 đưa vào): "Ở người huyết áp bình thường, mức giảm nhỏ hơn hẳn — 3,5 mmHg tâm thu." Tóm tắt Cornelissen & Smart 2013 (Europe PMC, PMID 23525435): −3,5 mmHg [−4,6; −2,3] là hiệu ứng GỘP của tập bền bỉ trên mọi người tham gia; nhóm huyết áp bình thường là −0,75 [−2,2; +0,69] mmHg (khoảng tin cậy chứa 0), nhóm tiền tăng huyết áp −2,1 [−3,3; −0,83]. Đề nghị sửa vi thành "khoảng 0,75 mmHg tâm thu, khoảng tin cậy chứa 0" (đúng như en mới), ghi corrections.md. En đã được viết theo số đúng.
+- **Còn nợ:** BẢN VI tự mâu thuẫn với đính chính 13/09: corrections.md ghi "bỏ hẳn phép so với thuốc", nhưng mục mới lại mở bằng "Mức hạ huyết áp nhờ tập luyện có thể sánh với một thuốc hạ áp đơn trị" — không nguồn nào trong bảng đỡ phép so này. En mới không chép phép so ("Because regular training can lower blood pressure, some people start thinking about stopping their medication"). Đề nghị sửa vi tương tự.
+- **Còn nợ:** Câu "ngừng thuốc hạ áp đột ngột có thể làm huyết áp bật lên… tăng nguy cơ đột quỵ" và "các khuyến cáo điều trị xếp vận động là biện pháp đi kèm thuốc" không có nguồn trong bảng 5 nguồn (cả vi lẫn en). Nội dung an toàn, giữ; nên gắn một hướng dẫn điều trị tăng huyết áp (ESC/ESH 2023 hoặc ACC/AHA 2017) ở lượt sau.

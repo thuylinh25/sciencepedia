@@ -1,0 +1,78 @@
+{
+  "slug": "cac-sao-toi-co-the-da-de-lai-tieng-vong-duoi-dang-song-hap-dan-khap-vu-tru",
+  "verdict": "fix",
+  "findings": [
+    {
+      "id": "F-1",
+      "kind": "hedge-lost",
+      "severity": "S2",
+      "en": "astronomers have detected a nanohertz gravitational wave background spanning the universe.",
+      "vi": "đã tìm thấy bằng chứng về một nền sóng hấp dẫn nanohertz … NANOGrav 15 năm báo cáo mức ý nghĩa khoảng 3,5–4σ — chưa đạt ngưỡng 5σ …",
+      "action": "Đổi en theo vi. NANOGrav 15 năm (nguồn s1) là \"Evidence for\", không phải phát hiện 5σ (check 2026-09-17, C-4)."
+    },
+    {
+      "id": "F-2",
+      "kind": "contradiction",
+      "severity": "S3",
+      "en": "they could grow to hundreds of thousands or millions of times the mass of the Sun",
+      "vi": "chúng có thể phát triển tới khoảng 10⁴–10⁷ lần khối lượng Mặt Trời",
+      "action": "Đổi en theo vi (khoảng đã kiểm ở check 2026-09-17, C-5)."
+    },
+    {
+      "id": "F-3",
+      "kind": "en-only",
+      "severity": "S3",
+      "en": "New simulations suggest that if dark stars were once common …",
+      "vi": "Ghodla và Ilie (2026, Physical Review D) tính toán rằng nếu sao tối từng phổ biến …",
+      "action": "Đổi en theo vi. Tóm tắt bài gốc (arXiv:2507.06163v2, mở trong lượt này) viết \"we calculate\", không nói mô phỏng; \"New\" thiếu mốc năm."
+    },
+    {
+      "id": "F-4",
+      "kind": "contradiction",
+      "severity": "S2",
+      "en": "SUMMARY_EN: \"PTAs recently detected … may originate not only from merging supermassive black hole binaries, but could also contain signatures of giant 'dark stars' that existed over 13 billion years ago.\"",
+      "vi": "SUMMARY: cùng nội dung (\"gần đây đã phát hiện\", \"không chỉ … mà còn\", \"hơn 13 tỷ năm trước\")",
+      "action": "CẢ HAI SAI. Không chép sang en. Tóm tắt Ghodla & Ilie (arXiv:2507.06163v2): \"Dark Star seeded SMBHs … can be the dominant contributor to the PTA signal\" — tín hiệu vẫn từ các cặp lỗ đen siêu nặng, sao tối là HẠT GIỐNG, không phải nguồn thứ hai; tóm tắt chỉ nói \"high-z\", không có \"13 tỉ năm\"; NANOGrav 2023 là \"evidence\". Viết lại summaryEn khớp thân bài vi."
+    }
+  ],
+  "enEdits": [
+    {
+      "id": "E-1",
+      "find": "astronomers have detected a **nanohertz gravitational wave background** spanning the universe.",
+      "replace": "astronomers have found **evidence** for a **nanohertz gravitational wave background** spanning the universe. The NANOGrav 15-year data release reported a significance of about 3.5–4σ — short of the 5σ threshold the field uses for the word \"detection\".",
+      "why": "F-1"
+    },
+    {
+      "id": "E-2",
+      "find": "they could grow to hundreds of thousands or millions of times the mass of the Sun",
+      "replace": "they could grow to about 10⁴–10⁷ times the mass of the Sun",
+      "why": "F-2"
+    },
+    {
+      "id": "E-3",
+      "find": "New simulations suggest that if dark stars were once common",
+      "replace": "Ghodla and Ilie (2026, *Physical Review D*) calculate that if dark stars were once common",
+      "why": "F-3"
+    }
+  ],
+  "summaryEnEdits": [
+    {
+      "id": "S-1",
+      "find": "Pulsar timing arrays (PTAs) recently detected an ultra-low-frequency gravitational-wave background permeating the universe. A 2026 study suggests this signal may originate not only from merging supermassive black hole binaries, but could also contain signatures of giant \"dark stars\" that existed over 13 billion years ago. If confirmed, these gravitational waves could help reveal the origins of the universe's earliest supermassive black holes.",
+      "replace": "In 2023, pulsar timing arrays (PTAs) reported evidence for an ultra-low-frequency gravitational-wave background permeating the universe. A 2026 study suggests this signal may come mainly from pairs of supermassive black holes whose original seeds were collapsed \"dark stars\" — hypothetical giant stars of the early universe. If confirmed, these gravitational waves could help reveal the origins of the universe's earliest supermassive black holes.",
+      "why": "F-4"
+    }
+  ],
+  "corrections": [
+    "(en) \"astronomers have detected a nanohertz gravitational wave background\" → \"found evidence for …\", kèm mức ý nghĩa ~3,5–4σ, chưa tới 5σ — căn cứ: NANOGrav 15 năm, doi 10.3847/2041-8213/acdac6 (nguồn s1).",
+    "(en) sao tối lớn tới \"hundreds of thousands or millions\" lần khối lượng Mặt Trời → \"about 10⁴–10⁷\" — căn cứ: bản vi đã đính chính (check 2026-09-17, C-5).",
+    "(en) \"New simulations suggest\" → \"Ghodla and Ilie (2026, Physical Review D) calculate\" — căn cứ: doi 10.1103/hvfd-8fkr; arXiv:2507.06163.",
+    "(en, summaryEn) \"recently detected … not only from merging SMBH binaries, but also signatures of dark stars that existed over 13 billion years ago\" → \"In 2023 … reported evidence … may come mainly from SMBH pairs whose seeds were collapsed dark stars\" — căn cứ: arXiv:2507.06163 (\"Dark Star seeded SMBHs … can be the dominant contributor\"); NANOGrav 15 năm."
+  ],
+  "openQuestions": [
+    "summary và seoDescription bản vi vẫn mang ba lỗi đã sửa ở summaryEn: \"gần đây đã phát hiện\" (NANOGrav 2023 là bằng chứng ~3,5–4σ), \"không chỉ đến từ các cặp lỗ đen … mà còn chứa dấu vết của sao tối\" (sai cơ chế — check 2026-09-17 C-2; arXiv:2507.06163v2 mở ngày 25/09/2026: \"Dark Star seeded SMBHs … can be the dominant contributor to the PTA signal\"), và \"hơn 13 tỷ năm trước\" (tóm tắt chỉ nói high-z). Cần lượt đính chính vi.",
+    "Khoảng 10⁴–10⁷ M☉ (cả hai bản) dựa trên arXiv:2511.08578 — tiền ấn phẩm, KHÔNG có trong bảng nguồn của bài. Gắn nguồn hoặc hạ thành \"theo một số mô hình\" không kèm số.",
+    "Các fix còn mở của check 2026-09-17 ở cả hai bản: chưa nêu cách giải thích thiên lệch quan sát cho lỗ đen JWST, chưa ghi sao tối \"chưa được quan sát xác nhận\", chưa nêu điều kiện mật độ hạt giống ~10⁻³ Mpc⁻³, vế \"nếu quá ít thì cần cơ chế khác\" chưa kiểm, câu \"mắt xích còn thiếu\" chưa gắn nhãn suy diễn.",
+    "titleEn có dấu chấm cuối (\"… across the universe.\") — định dạng, chuyển seo-expert."
+  ]
+}

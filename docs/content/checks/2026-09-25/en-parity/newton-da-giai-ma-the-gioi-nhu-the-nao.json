@@ -1,0 +1,111 @@
+{
+  "slug": "newton-da-giai-ma-the-gioi-nhu-the-nao",
+  "verdict": "fix",
+  "findings": [
+    {
+      "id": "P-1",
+      "en": "Mở bài: Royal Society hứa in Principia nhưng không có tiền; sách ra năm 1687 phần lớn nhờ Edmond Halley tự bỏ tiền.",
+      "vi": "Không có (vi chỉ nêu năm 1687 ở summary).",
+      "kind": "en-only",
+      "severity": "S4",
+      "action": "Bỏ khỏi en. [s7] Royal Society 2012 đỡ, nhưng vi không có; muốn giữ thì đưa vào vi qua lượt duyệt riêng."
+    },
+    {
+      "id": "P-2",
+      "en": "Ba phát biểu trích bản NASA dịch từ Principia; định luật II ở dạng 'change of motion (linear momentum)'; 'The rigorous form of the second law is not F = ma'.",
+      "vi": "Phát biểu diễn giải; định luật II chỉ ở dạng F = ma.",
+      "kind": "contradiction",
+      "severity": "S3",
+      "action": "en theo vi (F = ma). openQuestion: vi trình bày F = ma như chính định luật mà không nói đó là trường hợp khối lượng không đổi — đơn giản hoá mất thông tin (quy tắc 4)."
+    },
+    {
+      "id": "P-3",
+      "en": "'NASA calls the first law the definition of inertia'; 'đứng yên' và 'thẳng đều' là cùng một trạng thái động lực học; câu hỏi 'cái gì giữ hành tinh bay' là sai.",
+      "vi": "Chỉ: không cần lực để duy trì chuyển động, chỉ cần lực khi đổi vận tốc/hướng.",
+      "kind": "en-only",
+      "severity": "S4",
+      "action": "Bỏ khỏi en."
+    },
+    {
+      "id": "P-4",
+      "en": "Tên lửa mất khối lượng nên phải giải bằng động lượng; áp F = ma với m cố định là dùng sai dạng định luật.",
+      "vi": "Không có.",
+      "kind": "en-only",
+      "severity": "S4",
+      "action": "Bỏ khỏi en (đi cùng P-2)."
+    },
+    {
+      "id": "P-5",
+      "en": "NIST: newton (N) = kg·m·s⁻²; N·m = joule.",
+      "vi": "Không có.",
+      "kind": "en-only",
+      "severity": "S4",
+      "action": "Bỏ khỏi en; [s5] NIST đỡ nhưng vi không có."
+    },
+    {
+      "id": "P-6",
+      "en": "Định luật III: hai lực tác dụng lên hai vật khác nhau (trích NASA Glenn); ví dụ cánh máy bay; hấp dẫn luôn hai chiều.",
+      "vi": "Ví dụ chân đẩy đất, tên lửa đẩy khí.",
+      "kind": "en-only",
+      "severity": "S4",
+      "action": "en theo vi (ví dụ chân/tên lửa)."
+    },
+    {
+      "id": "P-7",
+      "en": "Sao Hải Vương được tìm ra năm 1846 gần vị trí tính từ nhiễu loạn quỹ đạo Sao Thiên Vương.",
+      "vi": "Không có.",
+      "kind": "en-only",
+      "severity": "S3",
+      "action": "Bỏ khỏi en: không nguồn nào trong bảng nguồn của bài đỡ claim này."
+    },
+    {
+      "id": "P-8",
+      "en": "'the GPS satellite fleet does require special-relativity calculations'; vật lý Newton đủ cho điều hướng trong Hệ Mặt Trời.",
+      "vi": "Điều kiện cực đoan (gần tốc độ ánh sáng, gần lỗ đen) phải dùng thuyết tương đối của Einstein.",
+      "kind": "contradiction",
+      "severity": "S3",
+      "action": "en theo vi. Câu GPS ở en thiếu một nửa: GPS cần cả hiệu chỉnh tương đối hẹp lẫn rộng (phần rộng lớn hơn); đoạn 'Non-Newtonian Physics' của [s1] NASA Basics of Space Flight ch.3 mở hôm nay không đỡ câu GPS ở dạng en viết."
+    },
+    {
+      "id": "P-9",
+      "en": "Không có câu kết.",
+      "vi": "'Newton ... tìm ra những quy luật chung ... đặt nền móng cho toàn bộ nền vật lý hiện đại.'",
+      "kind": "vi-only",
+      "severity": "S4",
+      "action": "Thêm vào en, bỏ chữ 'toàn bộ' (lượng tử và tương đối không dựng trên nền Newton) → 'laying the foundations of modern physics'. openQuestion cho vi."
+    },
+    {
+      "id": "P-10",
+      "en": "Không có 'Further reading'; link nội bộ trong thân bài tới Kepler, năng lượng, hấp dẫn, Sao Hải Vương, tương đối hẹp.",
+      "vi": "'Đọc thêm' 3 link (hụt hẫng, nặng-nhẹ, sóng).",
+      "kind": "vi-only",
+      "severity": "S4",
+      "action": "en dùng đúng 3 link của vi."
+    },
+    {
+      "id": "P-11",
+      "en": "summaryEn mô tả nội dung chỉ en có (dạng NASA, dạng chặt định luật II, chỗ đọc sai định luật III, phạm vi áp dụng).",
+      "vi": "summary: Kepler mô tả 'như thế nào', Newton 1687 giải thích 'vì sao'.",
+      "kind": "contradiction",
+      "severity": "S4",
+      "action": "Thay summaryEn bằng bản dịch summary vi."
+    }
+  ],
+  "contentEnFile": "docs/content/checks/2026-09-25/en-parity/newton-da-giai-ma-the-gioi-nhu-the-nao.en.md",
+  "summaryEnEdits": [
+    {
+      "id": "SUM-1",
+      "find": "Kepler said how the planets move; Newton said why. This article gives the three laws as NASA renders them from the Principia, the rigorous form of the second law (force as the rate of change of momentum), the point where the third law is most often misread, and the range over which the three laws still hold.",
+      "replace": "Johannes Kepler described precisely how the planets move around the Sun. But his laws answered only the question \"how do they move?\", not \"why do they move that way?\".\nThe answer came in 1687, when Isaac Newton published his three laws of motion. These laws explain not only the motion of the planets but also how every object with mass moves in the universe.",
+      "why": "summaryEn mô tả nội dung chỉ có ở bản en cũ hoặc mang claim đã bị bác; thay bằng bản dịch summary vi hiện tại (khớp nguyên chuỗi summaryEn hiện tại, một lần)."
+    }
+  ],
+  "corrections": [
+    "- 2026-09-25 | newton-da-giai-ma-the-gioi-nhu-the-nao | Bản en: gỡ các đoạn không có ở vi (Halley trả tiền in Principia, dạng động lượng của định luật II và ví dụ tên lửa, đơn vị newton/joule, cánh máy bay, Sao Hải Vương 1846, 'GPS cần tính tương đối hẹp') → dịch lại toàn bài từ vi hiện tại; câu kết bỏ 'toàn bộ' nền vật lý hiện đại | Đối chiếu song ngữ 25/09; Sao Hải Vương không có nguồn trong bảng; câu GPS thiếu tương đối rộng"
+  ],
+  "openQuestions": [
+    "Vi trình bày F = ma như chính định luật II, không nói đó là trường hợp khối lượng không đổi (dạng chặt: lực = tốc độ biến thiên động lượng, NASA [s1]). Theo quy tắc 4 nên thêm một câu nói rõ phép đơn giản này mất thông tin; bản en cũ có sẵn nội dung có nguồn để chuyển sang vi qua lượt duyệt riêng.",
+    "Vi câu kết 'đặt nền móng cho toàn bộ nền vật lý hiện đại' là nói quá; en đã bỏ 'toàn bộ'. Vi nên sửa tương ứng (ngoài phạm vi việc này).",
+    "Bản en cũ có nhiều nội dung có nguồn bậc 2 (Royal Society/Halley [s7], NIST newton [s5], NASA Glenn định luật III [s3]) mà vi đã rút gọn mất. Muốn giữ độ sâu này thì đưa vào vi trước rồi dịch — không để en đi trước vi."
+  ]
+}

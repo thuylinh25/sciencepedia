@@ -1,0 +1,55 @@
+{
+  "slug": "neu-trai-dat-dang-quay-vi-sao-chung-ta-khong-cam-nhan-duoc",
+  "verdict": "fix",
+  "findings": [
+    {
+      "id": "P-1",
+      "kind": "vi-only",
+      "severity": "S2",
+      "en": "\"## What would happen if Earth rotated twice as fast?\" … \"At the equator, this force would counteract about **1,2%** of gravity.\" (bài dừng ở đây, không có phần kết)",
+      "vi": "Mục \"nếu quay nhanh gấp đôi\" đã bị CẮT hẳn ở lượt đính chính 11/09 (1,2% là 0,3% làm tròn × 4; giá trị thật 1,38%), thay bằng mục \"Kết luận\".",
+      "action": "Bỏ toàn bộ mục \"twice as fast\" khỏi en, thêm phần Conclusion tương ứng."
+    },
+    {
+      "id": "P-2",
+      "kind": "contradiction",
+      "severity": "S3",
+      "en": "\"centrifugal force only reduces our weight by about **0,3%**\"",
+      "vi": "\"khoảng **0,35%**\" (đính chính 11/09; ω²R ≈ 0,0339 m/s² / 9,78 ≈ 0,347%, check 17/09 C-2).",
+      "action": "Đổi thành 0.35% (dấu thập phân kiểu Anh) và dùng cách nói \"offsets 0.35% of gravity\" như check 17/09 khuyến nghị."
+    },
+    {
+      "id": "P-3",
+      "kind": "contradiction",
+      "severity": "S2",
+      "en": "\"The body only senses changes in velocity\" / \"Earth rotates very steadily … Therefore, we do not feel ourselves hurtling\"",
+      "vi": "\"cơ thể chỉ nhận ra sự thay đổi vận tốc, chứ không nhận ra vận tốc đều\" — CẢ HAI bản sai cùng một chỗ.",
+      "action": "Check 17/09 C-3 (contradicted, S2): người đứng trên Trái Đất luôn có gia tốc hướng tâm (≈0,034 m/s², chính là 0,35%); lý do đúng là gia tốc đó rất nhỏ và không đổi nên hoà vào cảm nhận trọng lượng. Không chép lỗi sang en: viết lại mục này và phần kết theo cơ chế đúng. Ghi openQuestion cho bản vi."
+    },
+    {
+      "id": "P-4",
+      "kind": "vi-only",
+      "severity": "S4",
+      "en": "\"an airplane can reach speeds of hundreds of km/h\"",
+      "vi": "\"máy bay có thể bay ở khoảng 900 km/h\"",
+      "action": "Giữ en KHÔNG có con số: check 17/09 (C máy bay, S4) yêu cầu cắt 900 km/h vì không nguồn. Đây là chỗ en đúng hơn vi → openQuestion."
+    },
+    {
+      "id": "P-5",
+      "kind": "vi-only",
+      "severity": "S4",
+      "en": "(không có)",
+      "vi": "Mục \"Kết luận\" (thêm 11/09).",
+      "action": "Thêm Conclusion, viết theo cơ chế đúng ở P-3."
+    }
+  ],
+  "contentEnFile": "neu-trai-dat-dang-quay-vi-sao-chung-ta-khong-cam-nhan-duoc.en.md",
+  "corrections": [
+    "2026-09-25 · `neu-trai-dat-dang-quay` (en) — đính chính 11/09 chưa tới bản en: bỏ mục \"twice as fast\" (1,2%) còn sót, 0,3% → 0,35%, thêm phần kết; mục cơ chế viết lại theo check 17/09 C-3 (gia tốc hướng tâm nhỏ và không đổi, không phải \"vận tốc đều\"). Căn cứ: NASA NSSDC Earth Fact Sheet (s1), NASA Glenn (s2)."
+  ],
+  "openQuestions": [
+    "Bản vi vẫn mang lỗi S2 của check 17/09 C-3: \"cơ thể chỉ nhận ra sự thay đổi vận tốc, chứ không nhận ra vận tốc đều\" (ở mục thứ ba và câu kết). Chuyển động tròn luôn có gia tốc hướng tâm — chính bài tính 0,35%. Bản en mới đã viết đúng; vi cần sửa theo cùng hướng.",
+    "Bản vi còn \"khoảng 900 km/h\" không nguồn (check 17/09 yêu cầu cắt). Bản en không có con số.",
+    "Vai trò cơ quan sỏi tai (cảm nhận trọng lực — gia tốc không đổi) vẫn chưa có nguồn sinh lý trong bảng nguồn (check 17/09 gợi ý NIDCD); s3 (Cullen 2012) chưa được mở để đỡ đoạn tiền đình."
+  ]
+}

@@ -1,0 +1,97 @@
+{
+  "slug": "nang-luong-la-gi",
+  "verdict": "fix",
+  "findings": [
+    {
+      "id": "P-1",
+      "en": "Mục 'A working definition, and where it falls short': 'ability to do work' không chặt (khí ở cân bằng nhiệt, định luật 2 theo NASA); định nghĩa 'scalar quantity ... measured in joules'; 'physics does not answer what energy is made of'",
+      "vi": "Không có. vi trình bày 'đại lượng đo khả năng gây ra sự biến đổi hoặc thực hiện công' như định nghĩa",
+      "kind": "en-only",
+      "severity": "S4",
+      "action": "Bỏ khỏi en (dịch lại từ vi). Giữ một mệnh đề nói rõ đây là mô tả làm việc, không phải định nghĩa chặt (quy tắc 4: nói ra khi đơn giản hoá bị mất mát). Xem openQuestions."
+    },
+    {
+      "id": "P-2",
+      "en": "Số liệu: 1 J = 1 N·m = 1 kg·m²·s⁻²; táo 100 g nâng 1 m ≈ 0,98 J; 1 eV = 1,602176634×10⁻¹⁹ J, chính xác từ 2019; 1 kWh = 3,6 triệu J; K = ½mv²",
+      "vi": "Không có con số nào ngoài định nghĩa joule",
+      "kind": "en-only",
+      "severity": "S4",
+      "action": "Bỏ khỏi en để khớp vi. Số đúng và có nguồn (s1–s3, s6), nhưng vi đã rút gọn; lượt này không mở lại nguồn."
+    },
+    {
+      "id": "P-3",
+      "en": "Năng lượng bức xạ + link cực quang; nhóm 'stored / motion / in transit'; 'thermal energy is largely kinetic energy of particles'",
+      "vi": "Không có năng lượng bức xạ; 6 dạng: động, thế, nhiệt, hoá, điện, hạt nhân",
+      "kind": "en-only",
+      "severity": "S4",
+      "action": "Bỏ; en theo cấu trúc 6 dạng của vi."
+    },
+    {
+      "id": "P-4",
+      "en": "Mục 'A note on naming' (năng lượng tối + link vat-chat-toi); chuỗi Mặt Trời→cây→thức ăn→cơ bắp; 'needs an article of its own'",
+      "vi": "Không có. vi có ví dụ chuyển hoá riêng: ánh sáng→hoá năng cây, thức ăn→động năng cơ, động năng→nhiệt do ma sát",
+      "kind": "en-only",
+      "severity": "S4",
+      "action": "Bỏ; dịch ví dụ của vi."
+    },
+    {
+      "id": "P-5",
+      "en": "'when the energy of a body changes by E ... the mass changes by E/c²' (NRC); 'a very small amount of mass corresponds to a very large amount of energy'",
+      "vi": "'khối lượng và năng lượng thực chất là hai biểu hiện của cùng một đại lượng vật lý'; 'một lượng khối lượng rất nhỏ có thể chuyển hóa thành năng lượng cực lớn'",
+      "kind": "contradiction",
+      "severity": "S3",
+      "action": "en không chép 'chuyển hoá' / 'cùng một đại lượng'. Viết: 'a change in a body's energy comes with a corresponding change in its mass' và 'mass corresponds to energy'. Giữ cùng hệ quả như vi (vì sao phản ứng hạt nhân toả nhiều năng lượng), không mang mô hình 'khối lượng biến thành năng lượng'. Xem openQuestions."
+    },
+    {
+      "id": "P-6",
+      "en": "'in a closed system, that number does not change'",
+      "vi": "'Năng lượng không tự sinh ra cũng không tự mất đi', không nêu phạm vi",
+      "kind": "hedge-lost",
+      "severity": "S3",
+      "action": "en giữ phạm vi và sửa 'closed' thành 'isolated': trong nhiệt động học, hệ kín vẫn trao đổi nhiệt và công. NASA Glenn s6, mở 25/09: 'Within some problem domain, the amount of energy remains constant, and energy is neither created nor destroyed.' Áp cả vào summaryEn."
+    },
+    {
+      "id": "P-7",
+      "en": "Không có",
+      "vi": "Ví dụ động năng (xe, bóng, Trái Đất quay), thế năng (vật trên cao, hồ thuỷ điện); 'điện năng vận hành hầu hết thiết bị hiện đại'; 'nguồn năng lượng của Mặt Trời và nhà máy điện hạt nhân'",
+      "kind": "vi-only",
+      "severity": "S4",
+      "action": "Thêm vào en theo vi."
+    },
+    {
+      "id": "P-8",
+      "en": "summaryEn: 'covers the working definition and where it falls short, the SI unit, the main forms of energy, and why the total stays the same'",
+      "vi": "summary: năng lượng có trong mọi hiện tượng; không tự sinh ra, không tự mất đi, chỉ chuyển dạng",
+      "kind": "en-only",
+      "severity": "S4",
+      "action": "Dịch lại summaryEn từ vi, vì bài en mới không còn mục 'where it falls short'."
+    },
+    {
+      "id": "P-9",
+      "en": "Dòng 'Sources: … Accessed 2026-09-05' cuối bài",
+      "vi": "Không có dòng dẫn nguồn cuối bài",
+      "kind": "en-only",
+      "severity": "S4",
+      "action": "Bỏ để khớp vi; bảng nguồn 8 mục vẫn nguyên trong CSDL. Xem openQuestions."
+    }
+  ],
+  "contentEnFile": "nang-luong-la-gi.en.md",
+  "summaryEnEdits": [
+    {
+      "id": "SE-1",
+      "find": "Energy is a scalar quantity measured in joules, and in a closed system that number does not change. This article covers the working definition and where it falls short, the SI unit, the main forms of energy, and why the total stays the same through every conversion.",
+      "replace": "From the light of the stars and the current in our homes to every beat of the body, every physical phenomenon involves energy. Energy takes many forms, but it always obeys one basic rule: in an isolated system it is neither created nor destroyed, only converted from one form to another.",
+      "why": "P-8, P-6: khớp summary vi, giữ phạm vi 'isolated system'."
+    }
+  ],
+  "corrections": [
+    "- 2026-09-25 | nang-luong-la-gi | contentEn/summaryEn là bản dài cũ, lệch cấu trúc với vi đã rút gọn (định nghĩa 'where it falls short', quy đổi eV/kWh, năng lượng bức xạ, năng lượng tối) → en dịch lại từ vi hiện tại; giữ phạm vi bảo toàn 'isolated system' (en cũ ghi 'closed system'); E=mc² viết là 'tương ứng', không phải 'khối lượng chuyển hoá thành năng lượng' | NASA Glenn Conservation of Energy (s6, mở 25/09)"
+  ],
+  "openQuestions": [
+    "vi trình bày 'đại lượng đo khả năng gây ra sự biến đổi hoặc thực hiện công' như định nghĩa vật lý. Bản en cũ và EIA (s4) coi đây là mô tả làm việc, không chặt. en mới nói rõ 'a working description rather than a rigorous definition'. Đề nghị vi thêm mệnh đề tương đương.",
+    "vi 'Năng lượng không tự sinh ra cũng không tự mất đi' không nêu phạm vi; NASA s6 viết 'within some problem domain'. Đề nghị vi thêm 'trong một hệ cô lập' (en và summaryEn đã có).",
+    "vi 'khối lượng và năng lượng thực chất là hai biểu hiện của cùng một đại lượng' và 'khối lượng ... chuyển hóa thành năng lượng' là đơn giản hoá gây mô hình sai (quy tắc 4). NRC s8 (bản en cũ trích: 'when the energy of a body changes by an amount E ... the mass changes by E/c²'). Lượt này không mở lại được NRC (curl trả Access Denied). Đề nghị vi viết 'tương ứng với'.",
+    "vi mất dòng dẫn nguồn cuối bài; en cũ có dòng này, dẫn đủ 8 nguồn. Nếu trang bài chỉ hiện nguồn qua dòng này thì sau khi apply, cả hai bản đều không dẫn nguồn trong thân bài. Cần kiểm cách trang render bảng Source trước khi apply.",
+    "vi đã được rút gọn nhưng corrections.md không có dòng nào cho bài này. Lần rút gọn là đính chính hay biên tập? Nếu là đính chính trên bài đã publish thì còn nợ dòng nhật ký (content-rules, mục 'Sửa bài đã publish là đính chính')."
+  ]
+}

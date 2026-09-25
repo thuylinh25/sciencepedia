@@ -1,0 +1,46 @@
+{
+  "slug": "mat-troi-lo-phan-ung-giu-ca-he-hanh-tinh",
+  "verdict": "fix",
+  "findings": [
+    {
+      "id": "P-1",
+      "kind": "vi-only",
+      "severity": "S4",
+      "en": "(không có)",
+      "vi": "Câu trích kết \"> Mặt Trời không vĩnh cửu — …\" và mục \"Đọc thêm\" (1 link).",
+      "action": "Thêm câu trích và Further reading vào cuối en."
+    },
+    {
+      "id": "P-2",
+      "kind": "vi-only",
+      "severity": "S4",
+      "en": "\"into energy every second\" / \"the corona is hundreds of times hotter\" (không link)",
+      "vi": "Link nội bộ tới /articles/nang-luong-la-gi và /articles/nhat-thuc-va-nguyet-thuc-…",
+      "action": "Bọc hai cụm tương ứng thành link nội bộ như vi."
+    }
+  ],
+  "enEdits": [
+    {
+      "id": "E-1",
+      "find": "converts roughly 4 million tonnes of matter into energy every second",
+      "replace": "converts roughly 4 million tonnes of matter into [energy](/articles/nang-luong-la-gi) every second",
+      "why": "P-2: link nội bộ có ở vi."
+    },
+    {
+      "id": "E-2",
+      "find": "the corona is hundreds of times hotter than the surface below it",
+      "replace": "the [corona](/articles/nhat-thuc-va-nguyet-thuc-hai-hien-tuong-che-khuat-khong-doi-xung) is hundreds of times hotter than the surface below it",
+      "why": "P-2: link nội bộ có ở vi."
+    },
+    {
+      "id": "E-3",
+      "find": "leaving a slowly cooling white dwarf behind.",
+      "replace": "leaving a slowly cooling white dwarf behind.\n\n> The Sun is not eternal. It is simply stable for long enough for a complex biosphere to have had time to form.\n\n## Further reading\n\n- [The Photon's Journey: A 100,000-Year Trip from the Sun's Core to Earth](/articles/hanh-trinh-cua-photon-chuyen-di-100000-nam-tu-loi-mat-troi-den-trai-dat)",
+      "why": "P-1: phần cuối có ở vi."
+    }
+  ],
+  "corrections": [],
+  "openQuestions": [
+    "Không có claim khoa học nào lệch giữa vi và en; chỉ thiếu cấu trúc/link. Không cần dòng corrections.md (không phải đính chính claim). Tỉ lệ độ dài thấp do en thiếu câu trích và mục Đọc thêm."
+  ]
+}

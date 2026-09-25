@@ -1,0 +1,65 @@
+{
+  "slug": "co-the-nguoi-bien-doi-the-nao-ngoai-vu-tru-khong-bao-ho",
+  "verdict": "fix",
+  "findings": [
+    {
+      "id": "P-1",
+      "kind": "vi-only",
+      "severity": "S2",
+      "en": "\"- The sunlit side can reach temperatures above **120°C**.\\n- The side in shadow can drop below **−150°C**.\"",
+      "vi": "Hai con số là biên độ nhiệt môi trường/vỏ tàu, KHÔNG phải của cơ thể; cơ thể mất nhiệt do bay hơi nên da thấy hơi mát (đính chính 11/09).",
+      "action": "en vẫn gán +120/−150°C cho thân người — đúng claim đã bị bác. Thay bằng đoạn tương ứng; theo check 17/09, NASA gắn số này với môi trường đi bộ ngoài không gian chứ không phải \"vỏ tàu\", nên en viết \"the conditions that spacewalks take place in\"."
+    },
+    {
+      "id": "P-2",
+      "kind": "contradiction",
+      "severity": "S3",
+      "en": "\"Blood in major vessels does not boil immediately because it remains pressurized …\"",
+      "vi": "\"Máu trong các mạch lớn không sôi chừng nào tim còn đập: áp suất … đẩy điểm sôi lên khoảng 46°C\"",
+      "action": "Không chép 46°C: check 17/09 xác định con số không nguồn và trái NASA SP-3006 (hơi nước vẫn hình thành trong máu tĩnh mạch, chậm hơn mô mềm). en viết theo SP-3006: máu sôi chậm hơn nhưng không được bảo vệ vô hạn."
+    },
+    {
+      "id": "P-3",
+      "kind": "vi-only",
+      "severity": "S3",
+      "en": "\"…which can cause lung tissue damage.\"",
+      "vi": "\"mô phổi và mao mạch có thể rách, khí lọt vào tuần hoàn thành thuyên tắc khí tới tim và não — gần như chắc chắn gây tử vong\"",
+      "action": "en nhẹ hơn vi, nhưng vi đã nâng mức chắc chắn (check 17/09: đổi thành \"có thể gây tổn thương phổi nặng hoặc tử vong\"). en dùng đúng câu đã hạ mức đó, không chép \"almost certainly fatal\"."
+    },
+    {
+      "id": "P-4",
+      "kind": "vi-only",
+      "severity": "S4",
+      "en": "(không có)",
+      "vi": "Sự cố buồng chân không NASA Houston giữa thập niên 1960: còn tỉnh khoảng 14 giây, tỉnh lại sau khi tăng áp.",
+      "action": "Thêm vào en; nguồn s2 (NASA Imagine) trong bảng nguồn."
+    },
+    {
+      "id": "P-5",
+      "kind": "contradiction",
+      "severity": "S4",
+      "en": "\"…and die within minutes if not rescued in time.\"",
+      "vi": "\"…tử vong trong vòng vài phút\" — mâu thuẫn với mục \"Sau 1–2 phút\" của chính bài.",
+      "action": "en viết \"within one to two minutes\" cho khớp thân bài (check 17/09 C kết bài)."
+    },
+    {
+      "id": "P-6",
+      "kind": "vi-only",
+      "severity": "S4",
+      "en": "Read More chỉ có 2 link",
+      "vi": "Đọc thêm 5 link",
+      "action": "Thêm 3 link còn thiếu."
+    }
+  ],
+  "contentEnFile": "co-the-nguoi-bien-doi-the-nao-ngoai-vu-tru-khong-bao-ho.en.md",
+  "corrections": [
+    "2026-09-25 · `co-the-nguoi-bien-doi-the-nao-ngoai-vu-tru` (en) — đính chính 11/09 chưa tới bản en: bỏ \"+120°C/−150°C\" gán cho thân người (đó là điều kiện môi trường khi đi bộ ngoài không gian), thêm cơ chế mất nhiệt do bay hơi; không chép 46°C và \"gần như chắc chắn tử vong\" của vi (check 17/09); thêm sự cố Houston 14 giây; đồng bộ kết bài với mốc 1–2 phút. Căn cứ: NASA Imagine (s2), NASA SP-3006 qua check 17/09."
+  ],
+  "openQuestions": [
+    "Bản vi vẫn có \"điểm sôi … khoảng 46°C\" — check 17/09: không nguồn, trái NASA SP-3006. Cần cắt ở vi.",
+    "Bản vi vẫn có \"gần như chắc chắn gây tử vong\" và câu thuyên tắc khí tới tim và não — check 17/09 yêu cầu hạ mức; bản en đã hạ.",
+    "Bản vi ghi +120/−150°C là của \"vỏ tàu vũ trụ\"; check 17/09 dẫn NASA gắn con số với môi trường đi bộ ngoài không gian (−157°C đến 121°C). Cần một nguồn NASA trong bảng nguồn cho con số này; hiện không có.",
+    "Kết bài vi \"trong vòng vài phút\" mâu thuẫn mục 1–2 phút. NASA SP-3006 (khuyến nghị gắn nguồn ở check 17/09) chưa có trong bảng nguồn.",
+    "Tôi chưa mở lại s1 (Murray 2013) và SP-3006 ở lượt này; đoạn máu/ebullism của en dựa trên trích dẫn nguyên văn trong check 17/09."
+  ]
+}

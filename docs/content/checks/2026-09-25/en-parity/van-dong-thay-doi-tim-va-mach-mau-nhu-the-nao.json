@@ -1,0 +1,71 @@
+{
+  "slug": "van-dong-thay-doi-tim-va-mach-mau-nhu-the-nao",
+  "verdict": "fix",
+  "findings": [
+    {
+      "id": "P-1",
+      "en": "\"meta-analyses show a reduction of about 5–8 mmHg in systolic blood pressure in people with hypertension — equivalent to some monotherapies.\"",
+      "vi": "Cornelissen & Smart 2013: 8,3 mmHg (6,0–10,7) tâm thu / 5,2 tâm trương ở người đã tăng huyết áp; bỏ phép so với thuốc (đính chính S1 13/09).",
+      "kind": "vi-only",
+      "severity": "S1",
+      "action": "Bản en vẫn mang nguyên câu S1 đã bị bác 13/09 (đặt vận động ngang thuốc đơn trị). Thay bằng số theo phân nhóm của nguồn, bỏ phép so với thuốc."
+    },
+    {
+      "id": "P-2",
+      "en": "(không có) — en chỉ có 1 câu chống chỉ định ở cuối mục khuyến nghị, không tiêu đề",
+      "vi": "Mục riêng \"Vận động không thay thế thuốc đang dùng\": đừng tự bỏ thuốc, ngừng đột ngột có thể gây huyết áp bật lại, chỉnh liều là việc của bác sĩ.",
+      "kind": "vi-only",
+      "severity": "S1",
+      "action": "Thêm mục có tiêu đề \"Exercise does not replace the medication you take\", đặt trước dòng miễn trừ y tế, như bản vi."
+    },
+    {
+      "id": "P-3",
+      "en": "(không có)",
+      "vi": "\"Ngừng tập và đi khám ngay nếu khi gắng sức bạn thấy: đau hoặc tức ngực, khó thở…, choáng váng hoặc ngất, tim đập không đều, đau lan lên hàm, cổ hay cánh tay.\"",
+      "kind": "vi-only",
+      "severity": "S1",
+      "action": "Thêm đoạn dấu hiệu cảnh báo khi gắng sức vào en."
+    },
+    {
+      "id": "P-4",
+      "en": "\"People with cardiovascular disease, uncontrolled hypertension, or those who have been sedentary … should consult their doctor before starting a high-intensity program.\"",
+      "vi": "Đi khám trước khi bắt đầu (mọi mức, không chỉ cường độ cao) nếu có bệnh tim mạch, tăng huyết áp chưa kiểm soát, ĐÁI THÁO ĐƯỜNG, hoặc lâu không vận động.",
+      "kind": "vi-only",
+      "severity": "S2",
+      "action": "en thu hẹp phạm vi chống chỉ định (chỉ 'high-intensity') và thiếu đái tháo đường. Viết lại theo vi."
+    },
+    {
+      "id": "P-5",
+      "en": "\"this is considered one of the central mechanisms explaining why physical activity lowers blood pressure\"",
+      "vi": "\"đây được xem là một trong những cơ chế giải thích\"",
+      "kind": "hedge-lost",
+      "severity": "S3",
+      "action": "Bỏ 'central'."
+    },
+    {
+      "id": "P-6",
+      "en": "(không có)",
+      "vi": "Mức giảm ở người huyết áp bình thường: 3,5 mmHg tâm thu",
+      "kind": "contradiction",
+      "severity": "S2",
+      "action": "KHÔNG chép số 3,5 sang en — sai theo toàn văn tóm tắt nguồn (xem openQuestions). en ghi đúng số của nguồn: khoảng 0,75 mmHg, khoảng tin cậy chứa 0."
+    },
+    {
+      "id": "P-7",
+      "en": "Thiếu link đọc thêm Runner's High; thiếu [[...]] cho hypertension",
+      "vi": "Có link /articles/runners-high-vi-sao-chay-bo-co-the-khien-ban-hung-phan và [[tăng huyết áp]]",
+      "kind": "vi-only",
+      "severity": "S4",
+      "action": "Thêm cả hai vào en (không phải claim, đồng bộ cấu trúc)."
+    }
+  ],
+  "contentEnFile": "van-dong-thay-doi-tim-va-mach-mau-nhu-the-nao.en.md",
+  "corrections": [
+    "- 2026-09-25 | van-dong-thay-doi-tim-va-mach-mau-nhu-the-nao | EN chưa từng nhận đính chính S1 13/09: vẫn ghi \"about 5–8 mmHg … equivalent to some monotherapies\" và không có mục không-bỏ-thuốc/dấu hiệu cảnh báo → en mang số theo phân nhóm của nguồn (8,3 [6,0–10,7]/5,2 mmHg ở người tăng huyết áp; ~0,75 mmHg, CI chứa 0, ở người huyết áp bình thường), bỏ phép so với thuốc, thêm mục \"Exercise does not replace the medication you take\" và danh sách dấu hiệu cần ngừng tập | Cornelissen & Smart 2013, doi 10.1161/JAHA.112.004473 (tóm tắt đọc qua Europe PMC, PMC3603230)"
+  ],
+  "openQuestions": [
+    "BẢN VI SAI (S2, do chính lượt đính chính 13/09 đưa vào): \"Ở người huyết áp bình thường, mức giảm nhỏ hơn hẳn — 3,5 mmHg tâm thu.\" Tóm tắt Cornelissen & Smart 2013 (Europe PMC, PMID 23525435): −3,5 mmHg [−4,6; −2,3] là hiệu ứng GỘP của tập bền bỉ trên mọi người tham gia; nhóm huyết áp bình thường là −0,75 [−2,2; +0,69] mmHg (khoảng tin cậy chứa 0), nhóm tiền tăng huyết áp −2,1 [−3,3; −0,83]. Đề nghị sửa vi thành \"khoảng 0,75 mmHg tâm thu, khoảng tin cậy chứa 0\" (đúng như en mới), ghi corrections.md. En đã được viết theo số đúng.",
+    "BẢN VI tự mâu thuẫn với đính chính 13/09: corrections.md ghi \"bỏ hẳn phép so với thuốc\", nhưng mục mới lại mở bằng \"Mức hạ huyết áp nhờ tập luyện có thể sánh với một thuốc hạ áp đơn trị\" — không nguồn nào trong bảng đỡ phép so này. En mới không chép phép so (\"Because regular training can lower blood pressure, some people start thinking about stopping their medication\"). Đề nghị sửa vi tương tự.",
+    "Câu \"ngừng thuốc hạ áp đột ngột có thể làm huyết áp bật lên… tăng nguy cơ đột quỵ\" và \"các khuyến cáo điều trị xếp vận động là biện pháp đi kèm thuốc\" không có nguồn trong bảng 5 nguồn (cả vi lẫn en). Nội dung an toàn, giữ; nên gắn một hướng dẫn điều trị tăng huyết áp (ESC/ESH 2023 hoặc ACC/AHA 2017) ở lượt sau."
+  ]
+}
