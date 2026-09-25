@@ -1,0 +1,91 @@
+slug: thien-ha-dinh-nghia-va-cach-phan-loai
+checkedAt: 2026-09-25
+checkedBy: science-editor
+priorFactCheck: REVISE
+verdict: pass
+summary: "Các sửa 17/09 (số sao, kích thước, Sawala/Wu, Cox & Loeb) đã có ở vi và en. Lượt này đóng phần còn lại ở cả hai bản: phần phân loại trước chỉ dựa vào nguồn bậc 4 nay gắn NASA Galaxy Types và bỏ các chi tiết nguồn không nói; câu hỏi mở về Mây Magellan Lớn đóng bằng SIMBAD (SB(s)m, không phải không định hình thuần); 'hai nhóm đọc cùng số liệu' sửa theo Wu 2026; lỗ đen siêu khối lượng giới hạn ở thiên hà lớn. Mọi claim có evidence mở lượt này; sau sửa có 9 nguồn bậc 1–2."
+claims:
+  - id: C-1
+    claim: "Summary: thiên hà là hệ sao, khí, bụi và vật chất tối liên kết bởi hấp dẫn; dải Ngân Hà trên trời là đĩa của chính thiên hà ta ở trong."
+    verdict: verified
+    severity: none
+    evidence: "https://science.nasa.gov/universe/galaxies/ — 'Galaxies consist of stars, planets, and vast clouds of gas and dust, all bound together by gravity'; 'This feature marks the central disk of our home galaxy seen edge on'; https://science.nasa.gov/universe/galaxies/types/ — halo gồm 'dark matter'"
+    note: ""
+  - id: C-2
+    claim: "Một thiên hà chứa từ vài nghìn đến hàng nghìn tỷ sao; khí và bụi; một lượng lớn vật chất tối bao quanh."
+    verdict: verified
+    severity: S4
+    evidence: "NASA Galaxies — 'The largest contain trillions of stars ... The smallest can contain a few thousand stars'; NASA Galaxy Types — 'Spiral galaxies are surrounded by halos, mixtures of old stars, star clusters, and dark matter'"
+    note: "Vế vật chất tối NASA nêu cho thiên hà xoắn ốc; áp cho thiên hà nói chung là khái quát nhẹ (S4)."
+  - id: C-3
+    claim: "Hầu hết thiên hà lớn có lỗ đen siêu khối lượng ở trung tâm."
+    verdict: verified
+    severity: none
+    evidence: "NASA Galaxies — 'Most large galaxies have supermassive black holes at their centers'"
+    note: "Sửa từ 'thường có' (mọi thiên hà), cả hai bản."
+  - id: C-4
+    claim: "Nhỏ nhất vài trăm năm ánh sáng; đĩa Ngân Hà hơn 100.000 năm ánh sáng; lớn nhất hơn một triệu năm ánh sáng."
+    verdict: verified
+    severity: none
+    evidence: "NASA Galaxies — 'can be more than a million light-years across ... span just a few hundred light-years'; 'a disk of stars spanning more than 100,000 light-years'"
+    note: ""
+  - id: C-5
+    claim: "Thiên hà xoắn ốc: đĩa sao quay và vùng lồi trung tâm; nhánh xoắn giàu khí, bụi, nơi sao trẻ nhất hình thành."
+    verdict: verified
+    severity: none
+    evidence: "NASA Galaxy Types — 'a pancake-like disk of stars and a central bulge'; 'The youngest stars form in gas-rich arms'"
+    note: "Bỏ 'hình thành sao mạnh mẽ'."
+  - id: C-6
+    claim: "Ngân Hà và Andromeda là xoắn ốc có thanh chắn; loại này ~2/3 thiên hà xoắn ốc."
+    verdict: verified
+    severity: none
+    evidence: "NASA Galaxy Types — 'Both the Milky Way and the Andromeda galaxies belong to a subtype known as barred spirals, which make up two-thirds of the group'"
+    note: ""
+  - id: C-7
+    claim: "Andromeda (M31) là thiên hà lớn gần nhất, cách ~2,5 triệu năm ánh sáng."
+    verdict: verified
+    severity: none
+    evidence: "https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-messier-catalog/messier-31/ — 'the nearest major galaxy to our own ... Distance 2.5 million light-years'"
+    note: ""
+  - id: C-8
+    claim: "Thiên hà elip: cầu hoặc bầu dục, chủ yếu sao già, ít khí bụi, hầu như không tạo sao mới; được cho là hình thành từ va chạm, sáp nhập các thiên hà xoắn ốc."
+    verdict: verified
+    severity: none
+    evidence: "NASA Galaxy Types — 'shapes that range from completely round to oval ... usually contain little gas and dust ... generally older ... since little of the gas needed to form new stars remains. Scientists think elliptical galaxies originate from collisions and mergers with spirals'"
+    note: ""
+  - id: C-9
+    claim: "Thiên hà thấu kính: trung gian xoắn ốc–elip; có vùng lồi và đĩa, không có nhánh; chủ yếu sao già, rất ít sao mới."
+    verdict: verified
+    severity: none
+    evidence: "NASA Galaxy Types — 'a kind of cross between spirals and ellipticals. They have the central bulge and disk ... but no arms ... older stellar populations and little ongoing star formation'"
+    note: "Bỏ nhân quả 'ít khí nên tạo sao thấp'."
+  - id: C-10
+    claim: "Thiên hà không định hình: không đối xứng rõ; hình dạng đôi khi do va chạm hoặc tác động hấp dẫn của thiên hà lân cận."
+    verdict: verified
+    severity: none
+    evidence: "NASA Galaxy Types — 'Irregular galaxies have unusual shapes ... sometimes the result of interactions with others'"
+    note: "Sửa 'thường do' → 'đôi khi'."
+  - id: C-11
+    claim: "Mây Magellan Nhỏ là thiên hà lùn không định hình; Mây Magellan Lớn hay được gọi không định hình nhưng được xếp SB(s)m; cả hai quay quanh Ngân Hà."
+    verdict: verified
+    severity: none
+    evidence: "SIMBAD SMC — 'Morphological type: dIrr'; SIMBAD LMC — 'Morphological type: SB(s)m'; https://doi.org/10.1088/0004-637X/764/2/161 — 'Orbit calculations for the Clouds around the Milky Way'"
+    note: "Đóng câu hỏi mở 17/09."
+  - id: C-12
+    claim: "Hình dạng thiên hà mang dấu vết lịch sử (va chạm, nuốt thiên hà nhỏ, lượng khí còn lại); thiên hà liên tục tiến hóa."
+    verdict: verified
+    severity: S4
+    evidence: "NASA Galaxy Types — elip từ sáp nhập; thấu kính có thể là xoắn ốc già hoặc từ sáp nhập; không định hình do tương tác"
+    note: "Hạ từ 'phản ánh lịch sử' kèm liệt kê định lượng."
+  - id: C-13
+    claim: "Sawala và cs. 2025 (gồm LMC và M33): xác suất KHÔNG sáp nhập trong 10 tỷ năm gần 50%; Wu và cs. 2026 (cùng khung, chuyển động riêng Gaia mới đã hiệu chỉnh): 90%, trung vị 6,5 (+1,3/−1,5) tỷ năm; 2σ 64,7–100%, cần đo ≲2 µas/năm."
+    verdict: verified
+    severity: none
+    evidence: "https://doi.org/10.1038/s41550-025-02563-1 (arXiv:2408.00064) — 'a probability of close to 50% that there is no Milky Way - Andromeda merger during the next 10 billion years'; https://doi.org/10.3847/2041-8213/ae5799 (arXiv:2603.22863) — 'Adopting their semi-analytic framework ... latest and most precise Gaia-based PMs ... corrected for systematic offsets ... 90%, with a median merger time of 6.5 (+1.3/−1.5) Gyr ... spanning from 64.7% to 100% across the 2σ PM region ... ≲2 µas/yr'"
+    note: "Sửa câu dẫn 'đọc cùng số liệu'."
+  - id: C-14
+    claim: "Nếu sáp nhập, sản phẩm nhiều khả năng là thiên hà elip (Cox & Loeb)."
+    verdict: verified
+    severity: none
+    evidence: "https://doi.org/10.1111/j.1365-2966.2008.13048.x (arXiv:0705.1170) — 'The density profiles of the stars, gas and dark matter in the merger product resemble those of elliptical galaxies ... a prototype progenitor of late-forming elliptical galaxies'"
+    note: ""

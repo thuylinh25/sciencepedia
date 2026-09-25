@@ -1,0 +1,173 @@
+{
+  "slug": "cac-sao-toi-co-the-da-de-lai-tieng-vong-duoi-dang-song-hap-dan-khap-vu-tru",
+  "edits": [
+    {
+      "claimId": "C-4",
+      "severity": "S4",
+      "find": "Công bố NANOGrav 15 năm báo cáo mức ý nghĩa khoảng 3,5–4σ",
+      "replace": "Công bố NANOGrav 15 năm (2023) báo cáo mức ý nghĩa khoảng 3,5–4σ",
+      "why": "Thêm mốc năm cho kết quả (quy tắc 5).",
+      "evidence": "https://doi.org/10.3847/2041-8213/acdac6 (NANOGrav 15 năm; arXiv:2306.16213) — \"yields p = 5 × 10^-5 − 1.9 × 10^-4 (approx. 3.5 − 4σ)\"; Crossref: ApJL 951, L8, 29/06/2023"
+    },
+    {
+      "claimId": "C-7",
+      "severity": "S3",
+      "find": "Kính thiên văn James Webb đã phát hiện nhiều lỗ đen siêu nặng tồn tại khi vũ trụ còn rất trẻ.\n\nĐiều này gây khó khăn cho các mô hình hiện nay vì những lỗ đen như vậy đáng lẽ cần rất nhiều thời gian để phát triển. Một khả năng là chúng được hình thành từ các **hạt giống lỗ đen khối lượng lớn** ngay trong giai đoạn đầu của lịch sử vũ trụ.",
+      "replace": "Kính thiên văn James Webb đã phát hiện các lỗ đen đang bồi tụ khi vũ trụ còn rất trẻ, chẳng hạn trong thiên hà GN-z11 ở độ dịch chuyển đỏ 10,6. Cùng với những quasar rất nặng đã biết ở thời kỳ đầu, chúng đặt ra câu hỏi lỗ đen đã lớn nhanh đến vậy bằng cách nào. Một khả năng là chúng được hình thành từ các **hạt giống lỗ đen khối lượng lớn** ngay trong giai đoạn đầu của lịch sử vũ trụ.\n\nMức độ \"quá sớm, quá nặng\" vẫn đang được tranh luận: một số nghiên cứu cho rằng các lỗ đen Webb tìm thấy nặng hơn nhiều so với thiên hà chủ, trong khi phân tích của Li và cộng sự (2025) cho thấy phần lớn chênh lệch đó có thể do thiên lệch chọn mẫu và sai số đo.",
+      "why": "Bài trình bày bài toán lỗ đen sớm như đã chốt; phải nêu cả cách giải thích bằng thiên lệch quan sát (check 17/09 C-7). Gắn nguồn bình duyệt thay cho AAS Nova.",
+      "evidence": "https://doi.org/10.1038/s41586-024-07052-5 (Maiolino và cs., Nature 2024; arXiv:2305.12492) — \"GN-z11, an exceptionally luminous galaxy at z=10.6 ... hosts an accreting black hole\"; \"to explain the emergence of very massive black holes observed in the first billion years\"; \"consistent with both heavy seeds scenarios, or ... light seeds experiencing episodic super-Eddington phases\"; https://doi.org/10.1103/hvfd-8fkr (Ghodla & Ilie, PRD 114, L041303, 2026; arXiv:2507.06163, toàn văn HTML) — \"high redshift quasar observations revealing unexpectedly massive SMBHs\"; https://doi.org/10.3847/1538-4357/ada603 (Li và cs., ApJ 2025; arXiv:2403.00074) — \"Latest results claim SMBHs ... significantly more massive than expected ... the coupled effects of selection biases ... and measurement uncertainties ... can in fact largely account for the reported offset\""
+    },
+    {
+      "claimId": "C-6",
+      "severity": "S3",
+      "find": "Sao tối là một loại sao giả thuyết được nuôi dưỡng bởi sự tương tác của **[[vật chất tối]]** thay vì chủ yếu dựa vào [[phản ứng nhiệt hạch]].\n\nTheo một số mô hình, chúng có thể phát triển tới khoảng 10⁴–10⁷ lần khối lượng Mặt Trời trước khi sụp đổ thành các lỗ đen khổng lồ.",
+      "replace": "Sao tối là một loại sao giả thuyết của vũ trụ sơ khai, được cấp năng lượng bởi nhiệt từ sự hủy cặp các hạt **[[vật chất tối]]** thay vì chủ yếu dựa vào [[phản ứng nhiệt hạch]]. Chưa sao tối nào được xác nhận bằng quan sát: năm 2023, một nhóm nghiên cứu mới đề xuất ba thiên thể do JWST chụp được là những ứng viên đầu tiên.\n\nTheo các mô hình của nhóm này, sao tối có thể lớn tới cỡ một triệu lần khối lượng Mặt Trời; một tiền ấn phẩm năm 2025 (chưa qua bình duyệt) của cùng nhóm tính rằng chúng có thể bồi tụ tới khoảng 10⁴–10⁷ lần khối lượng Mặt Trời trước khi sụp đổ thành lỗ đen.",
+      "why": "\"Nuôi dưỡng bởi sự tương tác\" mơ hồ — nguồn nói nhiệt từ hủy cặp; bài không nói sao tối chưa được quan sát xác nhận; khoảng 10⁴–10⁷ chỉ có trong tiền ấn phẩm không có trong bảng nguồn — gắn nguồn và nói rõ trạng thái bình duyệt (check 17/09 C-5, C-6).",
+      "evidence": "https://doi.org/10.1103/PhysRevLett.100.051101 (Spolyar, Freese, Gondolo 2008; arXiv:0705.0521) — \"Heat from neutralino DM annihilation ... A 'dark star' may result: a giant ... hydrogen-helium star powered by DM annihilation instead of nuclear fusion\"; https://doi.org/10.1073/pnas.2305762120 (Freese và cs., PNAS 2023) — \"The first generation of stars in the universe is yet to be observed ... can grow to become supermassive (M ∼ 10^6 M⊙) ... JADES-GS-z13-0, JADES-GS-z12-0, and JADES-GS-z11-0 ... consistent with a Supermassive Dark Star interpretation, thus identifying the first Dark Star candidates\"; https://arxiv.org/abs/2511.08578 (Freese, Fuller, Ghodla, Ilie và cs., tiền ấn phẩm 11/2025) — \"can grow by accretion to masses in the range O(10^4)−O(10^7) M⊙ before the general-relativistic Feynman-Chandrasekhar instability causes their dynamical collapse to black holes\" (trang arXiv không có journal reference)"
+    },
+    {
+      "claimId": "C-1",
+      "severity": "S3",
+      "find": "tính toán rằng nếu sao tối từng phổ biến trong vũ trụ sơ khai, hậu duệ của chúng có thể đóng góp đáng kể vào nền sóng hấp dẫn mà các PTA đang quan sát.\n\nNếu giả thuyết này đúng, sóng hấp dẫn không chỉ ghi lại các vụ hợp nhất lỗ đen hiện đại mà còn lưu giữ thông tin về những vật thể đã tồn tại từ thuở sơ khai của vũ trụ.",
+      "replace": "tính toán rằng nếu sao tối từng đủ phổ biến trong vũ trụ sơ khai — mật độ hạt giống cỡ một hạt giống trong mỗi 1.000 megaparsec khối — thì các cặp lỗ đen siêu nặng lớn lên từ hạt giống sao tối có thể là nguồn đóng góp chính vào nền sóng hấp dẫn mà các PTA đang quan sát.\n\nNếu giả thuyết này đúng, nền sóng hấp dẫn — phát ra từ các cặp lỗ đen siêu nặng đang xoắn vào nhau — còn mang dấu vết gián tiếp về nguồn gốc của chúng từ thuở sơ khai của vũ trụ.",
+      "why": "Nêu điều kiện mật độ hạt giống (check 17/09 C-1); nói rõ sóng vẫn đến từ các cặp lỗ đen siêu nặng, sao tối chỉ là hạt giống (C-2); \"vụ hợp nhất hiện đại\" không đúng với nguồn tín hiệu PTA (các cặp đang xoắn vào nhau).",
+      "evidence": "https://doi.org/10.1103/hvfd-8fkr (Ghodla & Ilie, PRD 114, L041303, 2026; arXiv:2507.06163, toàn văn HTML) — \"Dark Star seeded SMBHs, with comoving seed number density of O(10^-3) Mpc^-3 can be the dominant contributor to the PTA signal\"; https://doi.org/10.3847/2041-8213/acdac6 (NANOGrav 15 năm; arXiv:2306.16213) — \"as appropriate for an ensemble of binary supermassive black-hole inspirals\""
+    },
+    {
+      "claimId": "C-8",
+      "severity": "S3",
+      "find": "Các nhà nghiên cứu cho rằng số lượng hạt giống lỗ đen từ sao tối không thể quá nhiều, nếu không nền sóng hấp dẫn sẽ mạnh hơn mức quan sát được. Ngược lại, nếu quá ít, cần có những cơ chế khác để giải thích sự xuất hiện sớm của các lỗ đen siêu nặng.\n\nThay vì tìm kiếm trực tiếp các sao tối đã biến mất từ lâu, các nhà thiên văn đang sử dụng sóng hấp dẫn như một \"hóa thạch vũ trụ\", giúp khám phá những chương đầu tiên trong lịch sử hình thành của vũ trụ.",
+      "replace": "Các tác giả cũng chỉ ra cận trên cho số hạt giống: nếu mật độ hạt giống từ sao tối lớn gấp 10–100 lần mức trên, nền sóng hấp dẫn dự đoán sẽ mạnh hơn mức quan sát được.\n\nTheo cách tiếp cận này, thay vì chỉ tìm trực tiếp các sao tối đã biến mất từ lâu, có thể dùng nền sóng hấp dẫn như một \"hóa thạch vũ trụ\" để kiểm tra các kịch bản hình thành những lỗ đen đầu tiên.",
+      "why": "Vế \"quá nhiều thì nền sóng mạnh hơn quan sát\" có trong toàn văn; vế \"nếu quá ít thì cần cơ chế khác\" không có — cắt. \"Các nhà thiên văn đang sử dụng\" nới chủ thể từ một bài báo thành cả ngành (quy tắc 18) — thu về đúng phạm vi.",
+      "evidence": "arXiv:2507.06163 toàn văn — \"a comoving number density of O(10^-3) Mpc^-3 allows SMBHs seeded by SMDSs to significantly contribute to the PTA signal, while O(10^-2 − 10^-1) Mpc^-3 would overproduce the observed SGWB energy density\"; tóm tắt: \"We also suggest ways to place an upper bound on the seed number density\""
+    },
+    {
+      "claimId": "C-9",
+      "severity": "S4",
+      "find": "🌌 Nếu được xác nhận, sao tối có thể trở thành mắt xích còn thiếu giữa vật chất tối, các lỗ đen đầu tiên và nền sóng hấp dẫn đang vang vọng khắp vũ trụ ngày nay.",
+      "replace": "🌌 Đây là suy diễn của người viết, không phải kết luận của các bài báo: nếu được xác nhận, sao tối có thể nối vật chất tối, các lỗ đen đầu tiên và nền sóng hấp dẫn ngày nay thành một câu chuyện liền mạch.",
+      "why": "Lời bình của người viết, bài gốc không nói — gắn nhãn suy diễn (check 17/09 C-9).",
+      "evidence": "https://doi.org/10.1103/hvfd-8fkr (Ghodla & Ilie, PRD 114, L041303, 2026; arXiv:2507.06163, toàn văn HTML) — tóm tắt không có kết luận \"mắt xích còn thiếu\""
+    }
+  ],
+  "enEdits": [
+    {
+      "claimId": "C-4",
+      "severity": "S4",
+      "find": "The NANOGrav 15-year data release reported a significance",
+      "replace": "The NANOGrav 15-year data release (2023) reported a significance",
+      "why": "Như edits C-4.",
+      "evidence": "https://doi.org/10.3847/2041-8213/acdac6 (NANOGrav 15 năm; arXiv:2306.16213)"
+    },
+    {
+      "claimId": "C-7",
+      "severity": "S3",
+      "find": "The James Webb Space Telescope has detected numerous supermassive black holes that existed when the universe was still very young.\n\nThis poses a challenge to current models, as such black holes should have required a vast amount of time to grow. One possibility is that they formed from **massive black hole seeds** early in cosmic history.",
+      "replace": "The James Webb Space Telescope has detected accreting black holes when the universe was still very young, for example in the galaxy GN-z11 at redshift 10.6. Together with the very massive quasars already known from early times, they raise the question of how black holes grew so fast. One possibility is that they formed from **massive black hole seeds** early in cosmic history.\n\nHow \"too early, too massive\" they really are is still debated: some studies find that the black holes Webb sees are far more massive than their host galaxies would suggest, while an analysis by Li and colleagues (2025) shows that selection bias and measurement uncertainties could largely account for that offset.",
+      "why": "Như edits C-7.",
+      "evidence": "https://doi.org/10.1038/s41586-024-07052-5 (Maiolino và cs., Nature 2024; arXiv:2305.12492) ; https://doi.org/10.3847/1538-4357/ada603 (Li và cs., ApJ 2025; arXiv:2403.00074)"
+    },
+    {
+      "claimId": "C-6",
+      "severity": "S3",
+      "find": "Dark stars are a hypothetical type of star powered by the interaction of **[[vat-chat-toi|dark matter]]** rather than relying primarily on [[phan-ung-nhiet-hach|nuclear fusion]].\n\nAccording to some models, they could grow to about 10⁴–10⁷ times the mass of the Sun before collapsing into giant black holes.",
+      "replace": "Dark stars are a hypothetical type of star in the early universe, powered by heat from the annihilation of **[[vat-chat-toi|dark matter]]** particles rather than relying primarily on [[phan-ung-nhiet-hach|nuclear fusion]]. No dark star has been confirmed by observation: in 2023, one research group proposed three objects imaged by JWST as the first candidates.\n\nIn that group's models, dark stars could grow to around a million times the mass of the Sun; a 2025 preprint (not yet peer-reviewed) by the same group calculates that they could accrete up to about 10⁴–10⁷ solar masses before collapsing into black holes.",
+      "why": "Như edits C-6.",
+      "evidence": "https://doi.org/10.1103/PhysRevLett.100.051101 (Spolyar, Freese, Gondolo 2008; arXiv:0705.0521) ; https://doi.org/10.1073/pnas.2305762120 (Freese và cs., PNAS 2023) ; https://arxiv.org/abs/2511.08578 (Freese, Fuller, Ghodla, Ilie và cs., tiền ấn phẩm 11/2025)"
+    },
+    {
+      "claimId": "C-1",
+      "severity": "S3",
+      "find": "calculate that if dark stars were once common in the early universe, their descendants could contribute significantly to the gravitational wave background currently observed by PTAs.\n\nIf this hypothesis is correct, gravitational waves not only record modern black hole mergers but also preserve information about objects that existed at the dawn of the universe.",
+      "replace": "calculate that if dark stars were common enough in the early universe — a seed density of about one seed per 1,000 cubic megaparsecs — then supermassive black hole pairs grown from dark-star seeds could be the dominant contributor to the gravitational wave background currently observed by PTAs.\n\nIf this hypothesis is correct, the gravitational wave background, emitted by pairs of supermassive black holes spiralling toward each other, also carries indirect traces of their origins at the dawn of the universe.",
+      "why": "Như edits C-1.",
+      "evidence": "https://doi.org/10.1103/hvfd-8fkr (Ghodla & Ilie, PRD 114, L041303, 2026; arXiv:2507.06163, toàn văn HTML) ; https://doi.org/10.3847/2041-8213/acdac6 (NANOGrav 15 năm; arXiv:2306.16213)"
+    },
+    {
+      "claimId": "C-8",
+      "severity": "S3",
+      "find": "Researchers suggest that the number of black hole seeds originating from dark stars cannot be excessively high, or the gravitational wave background would be stronger than observed. Conversely, if there are too few, other mechanisms would be needed to explain the early emergence of supermassive black holes.\n\nInstead of directly searching for long-vanished dark stars, astronomers are using gravitational waves as a \"cosmic fossil\" to help explore the earliest chapters in the formation history of the universe.",
+      "replace": "The authors also point to an upper bound on the number of seeds: if the density of dark-star seeds were 10–100 times higher than that level, the predicted gravitational wave background would be stronger than observed.\n\nIn this approach, instead of only searching directly for long-vanished dark stars, the gravitational wave background can be used as a \"cosmic fossil\" to test scenarios for how the first black holes formed.",
+      "why": "Như edits C-8.",
+      "evidence": "arXiv:2507.06163 toàn văn"
+    },
+    {
+      "claimId": "C-9",
+      "severity": "S4",
+      "find": "🌌 If confirmed, dark stars could become the missing link between dark matter, the earliest black holes, and the gravitational wave background echoing across the universe today.",
+      "replace": "🌌 This is the writer's speculation, not a conclusion of the papers: if confirmed, dark stars could tie dark matter, the earliest black holes and today's gravitational wave background into one continuous story.",
+      "why": "Như edits C-9.",
+      "evidence": "https://doi.org/10.1103/hvfd-8fkr (Ghodla & Ilie, PRD 114, L041303, 2026; arXiv:2507.06163, toàn văn HTML)"
+    }
+  ],
+  "summaryEdits": [
+    {
+      "claimId": "C-2",
+      "severity": "S2",
+      "find": "Các mảng định thời pulsar (PTA) gần đây đã phát hiện một nền sóng hấp dẫn tần số cực thấp lan khắp vũ trụ. Một nghiên cứu năm 2026 cho thấy tín hiệu này có thể không chỉ đến từ các cặp lỗ đen siêu nặng đang hợp nhất, mà còn chứa dấu vết của những \"sao tối\" khổng lồ từng tồn tại hơn 13 tỷ năm trước.",
+      "replace": "Năm 2023, các mảng định thời pulsar (PTA) công bố bằng chứng về một nền sóng hấp dẫn tần số cực thấp lan khắp vũ trụ. Một nghiên cứu năm 2026 cho thấy tín hiệu này có thể chủ yếu đến từ các cặp lỗ đen siêu nặng mà hạt giống ban đầu là những \"sao tối\" đã sụp đổ — loại sao khổng lồ giả thuyết của vũ trụ sơ khai.",
+      "why": "Ba lỗi đã sửa ở summaryEn: \"đã phát hiện\" (NANOGrav là bằng chứng ~3,5–4σ), \"không chỉ… mà còn\" (sai cơ chế: sao tối là hạt giống, không phải nguồn sóng thứ hai), \"hơn 13 tỷ năm trước\" (nguồn chỉ nói high-z). Khớp summaryEn.",
+      "evidence": "https://doi.org/10.3847/2041-8213/acdac6 (NANOGrav 15 năm; arXiv:2306.16213) — tiêu đề \"Evidence for a Gravitational-wave Background\"; https://doi.org/10.1103/hvfd-8fkr (Ghodla & Ilie, PRD 114, L041303, 2026; arXiv:2507.06163, toàn văn HTML) — \"Dark Star seeded SMBHs ... can be the dominant contributor to the PTA signal\"; tóm tắt chỉ nói \"high-z\""
+    }
+  ],
+  "seoDescriptionEdits": [
+    {
+      "claimId": "C-2",
+      "severity": "S3",
+      "find": "gần đây đã phát hiện một nền sóng",
+      "replace": "năm 2023 đã công bố bằng chứng về một nền sóng",
+      "why": "Như summaryEdits: NANOGrav 2023 là bằng chứng, chưa đạt 5σ.",
+      "evidence": "https://doi.org/10.3847/2041-8213/acdac6 (NANOGrav 15 năm; arXiv:2306.16213)"
+    }
+  ],
+  "titleEdits": {
+    "titleEn": {
+      "find": "across the universe.",
+      "replace": "across the universe"
+    }
+  },
+  "addSources": [
+    {
+      "title": "Supermassive Dark Star candidates seen by JWST",
+      "url": "https://doi.org/10.1073/pnas.2305762120",
+      "doi": "10.1073/pnas.2305762120",
+      "publisher": "PNAS (Freese et al.)",
+      "year": 2023,
+      "tier": 1,
+      "covers": "Thế hệ sao đầu tiên chưa được quan sát; sao tối siêu nặng ~10^6 M☉; ba ứng viên JWST"
+    },
+    {
+      "title": "Early Formation of Supermassive Black Holes via Dark Star Gravitational Instability",
+      "url": "https://arxiv.org/abs/2511.08578",
+      "doi": "",
+      "publisher": "arXiv — tiền ấn phẩm, chưa bình duyệt (Freese, Fuller, Ghodla, Ilie et al.)",
+      "year": 2025,
+      "tier": 3,
+      "covers": "Sao tối bồi tụ tới O(10^4)–O(10^7) M☉ trước khi sụp thành lỗ đen — chỉ dùng kèm nhãn 'tiền ấn phẩm'"
+    },
+    {
+      "title": "A small and vigorous black hole in the early Universe",
+      "url": "https://doi.org/10.1038/s41586-024-07052-5",
+      "doi": "10.1038/s41586-024-07052-5",
+      "publisher": "Nature (Maiolino et al.)",
+      "year": 2024,
+      "tier": 1,
+      "covers": "JWST phát hiện lỗ đen đang bồi tụ trong GN-z11 (z = 10,6); phù hợp cả kịch bản hạt giống nặng lẫn hạt giống nhẹ"
+    },
+    {
+      "title": "Tip of the Iceberg: Overmassive Black Holes at 4 < z < 7 Found by JWST Are Not Inconsistent with the Local MBH–M⋆ Relation",
+      "url": "https://doi.org/10.3847/1538-4357/ada603",
+      "doi": "10.3847/1538-4357/ada603",
+      "publisher": "The Astrophysical Journal (Li et al.)",
+      "year": 2025,
+      "tier": 1,
+      "covers": "Thiên lệch chọn mẫu và sai số đo có thể giải thích phần lớn việc lỗ đen JWST có vẻ 'quá nặng'"
+    }
+  ],
+  "corrections": [
+    "2026-09-25 · `cac-sao-toi-co-the-da-de-lai-tieng-vong-duoi-dang-song-hap-dan-khap-vu-tru` (vi + en) — summary/seoDescription vi \"PTA gần đây đã phát hiện… tín hiệu không chỉ từ các cặp lỗ đen mà còn chứa dấu vết sao tối tồn tại hơn 13 tỷ năm trước\" → năm 2023 công bố bằng chứng; tín hiệu có thể chủ yếu từ các cặp lỗ đen siêu nặng có hạt giống là sao tối (NANOGrav 2023; Ghodla & Ilie 2026); cả hai bản: nêu điều kiện mật độ hạt giống ~10⁻³ Mpc⁻³; lỗ đen JWST sớm kèm cách giải thích bằng thiên lệch chọn mẫu (Maiolino 2024; Li 2025); sao tối ghi rõ cơ chế hủy cặp vật chất tối, chưa được xác nhận quan sát, ứng viên 2023 (Spolyar 2008; Freese 2023); 10⁴–10⁷ M☉ gắn tiền ấn phẩm arXiv:2511.08578 kèm nhãn; cắt vế \"nếu quá ít thì cần cơ chế khác\" (không có trong nguồn); câu \"mắt xích còn thiếu\" gắn nhãn suy diễn; titleEn bỏ dấu chấm cuối."
+  ],
+  "openQuestions": [
+    "arXiv:2511.08578 vẫn là tiền ấn phẩm (tier 3); khi có bản bình duyệt thì cập nhật nguồn và bỏ nhãn."
+  ]
+}

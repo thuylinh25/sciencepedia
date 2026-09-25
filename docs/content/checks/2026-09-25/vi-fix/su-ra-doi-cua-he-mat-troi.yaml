@@ -1,0 +1,121 @@
+slug: su-ra-doi-cua-he-mat-troi
+checkedAt: 2026-09-25
+checkedBy: science-editor
+priorFactCheck: REVISE
+verdict: pass
+summary: "Đưa bản vi về cùng claim với bản en đã sửa: bỏ 99,86%/1%/'đặc biệt là Sao Mộc', tách di cư hành tinh khỏi lời giải bài toán động lượng góc (S2), bỏ James Webb, 'hàng triệu năm', 'hành tinh bị hất ra', 'quy luật phổ quát', thêm mốc 9/2026, khôi phục ghi công VACA. Lỗi chung cả hai bản (đường tuyết gộp ba chất, câu 'mô hình cổ điển', định nghĩa siêu Trái Đất) sửa cả vi và en. Mọi claim còn lại có nguồn bậc 1–2 mở trong lượt; không còn S1–S3."
+claims:
+  - id: C-1
+    claim: "Hệ Mặt Trời hình thành cách đây khoảng 4,57 tỷ năm."
+    verdict: "verified"
+    severity: "none"
+    evidence: "https://doi.org/10.1126/science.1226919 (PubMed 23118187) ; https://science.nasa.gov/solar-system/solar-system-facts/"
+    note: "Connelly et al. 2012: tuổi CAI 4567,30 ± 0,16 triệu năm (tóm tắt PubMed mở 25/09); NASA: about 4.6 billion years."
+  - id: C-2
+    claim: "Mặt Trời chứa hơn 99% khối lượng của cả hệ nhưng chỉ giữ một phần rất nhỏ động lượng góc."
+    verdict: "verified"
+    severity: "none"
+    evidence: "https://science.nasa.gov/solar-system/solar-system-facts/ ; https://nssdc.gsfc.nasa.gov/planetary/factsheet/ ; https://nssdc.gsfc.nasa.gov/planetary/factsheet/sunfact.html"
+    note: "Đã sửa từ 99,86% / 'khoảng 1%'. Tính từ Fact Sheet: khối lượng Mặt Trời ~99,87% (Mặt Trời + 8 hành tinh); động lượng góc tự quay ~0,6% (xấp xỉ quay đều, I/MR²=0,070)."
+  - id: C-4
+    claim: "Đám mây phân tử sụp đổ, có thể do sóng xung kích của siêu tân tinh gần đó."
+    verdict: "verified"
+    severity: "none"
+    evidence: "https://science.nasa.gov/solar-system/solar-system-facts/"
+    note: "NASA: 'possibly due to the shockwave of a nearby exploding star, called a supernova'."
+  - id: C-5
+    claim: "Đám mây quay nhanh dần, dẹt thành đĩa tiền hành tinh; phần lớn vật chất tập trung ở tâm thành Mặt Trời."
+    verdict: "verified"
+    severity: "none"
+    evidence: "https://science.nasa.gov/solar-system/solar-system-facts/"
+    note: "NASA: 'a spinning, swirling disk of material. At the center, gravity pulled more and more material in'."
+  - id: C-6
+    claim: "ALMA đã chụp chi tiết đĩa quanh HL Tau, cho thấy vành sáng và tối có thể liên quan tới hình thành hành tinh."
+    verdict: "verified"
+    severity: "none"
+    evidence: "https://doi.org/10.1088/2041-8205/808/1/L3 (arXiv 1503.02649)"
+    note: "Đã sửa: bỏ James Webb không nguồn; giữ 'có thể' theo 'Additional clues that the rings arise from planet formation'."
+  - id: C-7
+    claim: "Bụi va chạm, kết dính, thành vật thể cỡ mét tới kilômét, rồi hợp nhất dần thành hành tinh."
+    verdict: "verified"
+    severity: "none"
+    evidence: "https://doi.org/10.2458/azu_uapress_9780816531240-ch024 (Johansen et al. 2014, arXiv 1402.1344) ; https://science.nasa.gov/solar-system/solar-system-facts/"
+    note: "Johansen 2014: hạt mm tới 10 m, vi thể hành tinh 1–1000 km. Đã bỏ thang 'hàng triệu năm'."
+  - id: C-8
+    claim: "(Đã cắt) Hành tinh không tách từ 'vành vật chất' như mô hình cổ điển."
+    verdict: "removed"
+    severity: "none"
+    evidence: "—"
+    note: "Cắt ở cả vi và en: không nguồn."
+  - id: C-9
+    claim: "Đường tuyết của nước; bên trong quá nóng để nước đá ngưng tụ; chất dễ bay hơi hơn như CO đóng băng xa hơn nhiều; chỉ đá và kim loại ở dạng rắn phía trong."
+    verdict: "verified"
+    severity: "none"
+    evidence: "https://doi.org/10.1088/0031-8949/90/6/068001 (Pfalzner et al. 2015, arXiv 1501.03101) ; https://science.nasa.gov/solar-system/solar-system-facts/"
+    note: "Pfalzner: CO snowline ~20 K, H2O ~150 K. NASA: gần Mặt Trời chỉ vật liệu đá chịu được nhiệt."
+  - id: C-10
+    claim: "Theo mô hình bồi tụ lõi (chủ đạo), vật liệu rắn nhiều hơn ngoài đường tuyết giúp lõi đủ nặng để hút khí, tạo 4 hành tinh khổng lồ."
+    verdict: "verified"
+    severity: "none"
+    evidence: "https://doi.org/10.1088/0031-8949/90/6/068001 (Pfalzner et al. 2015, arXiv 1501.03101) ; https://doi.org/10.2458/azu_uapress_9780816531240-ch024 (Johansen et al. 2014, arXiv 1402.1344)"
+    note: "Nêu rõ là mô hình."
+  - id: C-3
+    claim: "Mặt Trời giữ gần như toàn bộ khối lượng nhưng phần lớn động lượng góc nằm ở các hành tinh."
+    verdict: "verified"
+    severity: "none"
+    evidence: "https://nssdc.gsfc.nasa.gov/planetary/factsheet/ ; https://nssdc.gsfc.nasa.gov/planetary/factsheet/sunfact.html"
+    note: "Tính từ Fact Sheet: hành tinh ~99,4% động lượng góc. Bỏ 'đặc biệt là Sao Mộc' cho khớp en (dù phép tính cho Sao Mộc ~61%)."
+  - id: C-11
+    claim: "Các nhà nghiên cứu đề xuất phanh từ tính và gió Mặt Trời là cơ chế lấy bớt động lượng góc khỏi Mặt Trời trẻ."
+    verdict: "verified"
+    severity: "none"
+    evidence: "https://doi.org/10.2458/azu_uapress_9780816531240-ch019 (Bouvier et al. 2014, arXiv 1309.7851)"
+    note: "Review PPVI: star-disk interaction, stellar winds; 'critical open issues remain' — đã hạ từ 'mô hình hiện nay giải thích'."
+  - id: C-12
+    claim: "Các hành tinh không hình thành đúng vị trí hiện nay; Sao Mộc và Sao Thổ có thể đã dịch chuyển quỹ đạo đáng kể; di cư không tự giải thích việc Mặt Trời quay chậm."
+    verdict: "verified"
+    severity: "S4"
+    evidence: "https://doi.org/10.1038/nature03539 (PubMed 15917800) ; https://doi.org/10.2458/azu_uapress_9780816531240-ch019 (Bouvier et al. 2014, arXiv 1309.7851)"
+    note: "Tsiganis 2005: di cư do tương tác với đĩa vi thể hành tinh, vượt cộng hưởng 1:2. Vế phủ định là suy luận vật lý — xem openQuestions. Đã cắt 'hành tinh sơ khai bị hất ra'."
+  - id: C-13
+    claim: "Hơn 6.000 ngoại hành tinh (NASA, tính tới 9/2026) cho thấy Hệ Mặt Trời không phải khuôn mẫu duy nhất."
+    verdict: "verified"
+    severity: "none"
+    evidence: "https://science.nasa.gov/exoplanets/"
+    note: "Mốc thời gian đã thêm; kiểm lại 9/2027."
+  - id: C-14
+    claim: "Đã tìm thấy Sao Mộc nóng, siêu Trái Đất (nặng hơn Trái Đất, nhẹ hơn Sao Hải Vương), nhiều hệ có quỹ đạo rất khác."
+    verdict: "verified"
+    severity: "none"
+    evidence: "https://science.nasa.gov/exoplanets/planet-types/"
+    note: "NASA: hot Jupiters 'orbiting so closely to their stars'; super-Earths 'more massive than Earth, but lighter than Neptune'; hệ có thể quay quanh hai sao."
+  - id: C-15
+    claim: "Điều đó gợi ý cùng những quá trình vật lý có thể cho ra kết cục rất khác nhau, tuỳ điều kiện ban đầu và lịch sử từng hệ."
+    verdict: "verified"
+    severity: "none"
+    evidence: "https://science.nasa.gov/exoplanets/planet-types/"
+    note: "Đã hạ từ 'quy luật phổ quát'; câu diễn giải ở mức gợi ý."
+  - id: C-16
+    claim: "Ba đặc điểm cần giải thích: hành tinh gần cùng mặt phẳng và cùng chiều quay; hành tinh đá ở trong, khổng lồ ở ngoài."
+    verdict: "verified"
+    severity: "none"
+    evidence: "https://science.nasa.gov/solar-system/solar-system-facts/ ; https://nssdc.gsfc.nasa.gov/planetary/factsheet/"
+    note: "Fact Sheet: độ nghiêng quỹ đạo 0–7°; NASA: 4 hành tinh đá gần Mặt Trời. Chiều quay chung là hệ quả của đĩa quay (NASA)."
+  - id: C-17
+    claim: "Trình bày: emoji, chính tả Thuỷ/Hoả."
+    verdict: "verified"
+    severity: "none"
+    evidence: "—"
+    note: "Đã bỏ emoji, thống nhất chính tả."
+  - id: C-18
+    claim: "Kết luận: nhiệt độ trong đĩa phần lớn quyết định hành tinh đá hay khí; đĩa quanh sao trẻ gợi ý quá trình này vẫn diễn ra."
+    verdict: "verified"
+    severity: "none"
+    evidence: "https://doi.org/10.1088/2041-8205/808/1/L3 (arXiv 1503.02649) ; https://science.nasa.gov/solar-system/solar-system-facts/"
+    note: "Hạ mức cho khớp en."
+  - id: C-19
+    claim: "Nguồn VACA (bậc 4) và khối ghi công."
+    verdict: "verified"
+    severity: "none"
+    evidence: "—"
+    note: "VACA giữ bậc 4, không đỡ claim nào. Khối ghi công khôi phục theo check 2026-09-05. Nguồn bậc 1–2 còn hiệu lực: Connelly 2012, ALMA 2015, Tsiganis 2005, NASA Exoplanets + 7 nguồn thêm lượt này."

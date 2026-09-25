@@ -1,0 +1,259 @@
+{
+  "slug": "sao-hoa-hanh-tinh-do-va-cau-hoi-ve-nuoc",
+  "edits": [
+    {
+      "claimId": "C-1",
+      "severity": "S3",
+      "find": "Bề mặt Sao Hoả phủ bụi giàu oxit sắt — về bản chất là gỉ sét. Lớp bụi mịn này bị gió thổi khắp hành tinh, tạo nên màu sắc đặc trưng nhìn thấy từ Trái Đất bằng mắt thường.",
+      "replace": "Sắt trong đá, đất và bụi trên bề mặt Sao Hoả bị oxy hoá — về bản chất là gỉ sét. Bụi bị gió cuốn lên khí quyển khiến hành tinh nhìn từ xa có màu đỏ đặc trưng, thấy được cả từ Trái Đất bằng mắt thường.",
+      "why": "NASA Mars Facts: 'oxidization — or rusting — of iron in the rocks, regolith (Martian “soil”), and dust of Mars. This dust gets kicked up into the atmosphere and from a distance makes the planet appear mostly red'. Bản cũ chỉ nói bụi, và không có nguồn trong bảng (check 17/09 C-1).",
+      "evidence": "https://science.nasa.gov/mars/facts/"
+    },
+    {
+      "claimId": "C-2",
+      "severity": "S3",
+      "find": "- Mạng lưới thung lũng và châu thổ cổ, rõ nhất ở hố Jezero nơi Perseverance đang hoạt động",
+      "replace": "- Dấu vết sông, hồ và châu thổ cổ — chẳng hạn hệ thống sông, châu thổ và hồ từng tồn tại ở hố Jezero, nơi Perseverance hạ cánh năm 2021",
+      "why": "'Rõ nhất' là đánh giá chủ quan không nguồn; 'đang hoạt động' là claim ràng buộc thời gian không mốc (check 17/09 C-2). NASA Perseverance: hạ cánh 18/02/2021 tại Jezero; 'discovered a habitable, stable lake, delta, and river system in Jezero Crater's history'.",
+      "evidence": "https://science.nasa.gov/mission/mars-2020-perseverance/ ; https://science.nasa.gov/mars/facts/"
+    },
+    {
+      "claimId": "C-3",
+      "severity": "S3",
+      "find": "- Khoáng vật chỉ hình thành khi có nước như đất sét và sulfat",
+      "replace": "- Khoáng vật hình thành nhờ nước, như khoáng sét (phyllosilicate) và sulfat",
+      "why": "Bibring et al. 2006: 'Phyllosilicates formed by aqueous alteration very early'; 'sulfates were formed in a second era … in an acidic environment'. 'Chỉ hình thành khi có nước' nói quá so với nguồn; đổi thành 'hình thành nhờ nước'.",
+      "evidence": "https://doi.org/10.1126/science.1122659 (Bibring et al. 2006, PubMed 16627738)"
+    },
+    {
+      "claimId": "C-4",
+      "severity": "S3",
+      "find": "- Băng nước lộ thiên ở hai cực và băng ngầm ở vĩ độ trung bình",
+      "replace": "- Chỏm băng ở hai cực, băng nước ngay dưới bề mặt vùng cực, và những lớp băng ngầm dày hơn 100 m ở vĩ độ trung bình, có nơi lộ ra ở các vách xói",
+      "why": "Check 17/09 C-4: không nguồn. NASA Mars Facts: 'polar ice caps', 'water-ice just under the surface in the polar regions'; Dundas et al. 2018: băng nước ở vĩ độ trung bình 'can be >100 meters thick', lộ ra ở các vách đang lùi. Bản cũ 'băng lộ thiên ở hai cực' không khớp nguồn đã mở.",
+      "evidence": "https://science.nasa.gov/mars/facts/ ; https://doi.org/10.1126/science.aao1619 (Dundas et al. 2018, PubMed 29326269)"
+    },
+    {
+      "claimId": "C-5",
+      "severity": "S3",
+      "find": "Bức tranh hiện nay: khoảng 3,5–4 tỉ năm trước Sao Hoả ấm và ẩm hơn nhiều.",
+      "replace": "Bức tranh hiện nay: hàng tỉ năm trước, Sao Hoả ẩm ướt và ấm hơn nhiều, với khí quyển dày hơn; các khoáng vật hình thành nhờ nước chủ yếu có tuổi trên 3,5 tỉ năm.",
+      "why": "NASA Mars Facts: 'Mars was much wetter and warmer, with a thicker atmosphere, billions of years ago'; Bibring 2006: kỷ nguyên khô 'beginning about 3.5 billion years ago'. Khoảng '3,5–4 tỉ năm' cụ thể hơn nguồn cho phép — thay bằng mốc có nguồn.",
+      "evidence": "https://science.nasa.gov/mars/facts/ ; https://doi.org/10.1126/science.1122659 (Bibring et al. 2006, PubMed 16627738)"
+    },
+    {
+      "claimId": "C-6",
+      "severity": "S3",
+      "find": "Sao Hoả nhỏ, nên lõi nguội nhanh và từ trường toàn cầu tắt từ sớm. Không còn lá chắn, [[gió mặt trời]] bào mòn khí quyển suốt hàng tỉ năm. Sứ mệnh MAVEN đo được quá trình mất khí này vẫn đang tiếp diễn ngày nay.",
+      "replace": "Sao Hoả ngày nay không có từ trường toàn cầu, dù vỏ ở bán cầu nam còn dấu vết từ hoá của một từ trường có từ khoảng 4 tỉ năm trước. Việc khí quyển bị [[gió mặt trời]] và các đợt bùng phát từ Mặt Trời bóc dần ra không gian, nhất là trong giai đoạn đầu, có thể đã góp phần lớn khiến khí quyển Sao Hoả mỏng, lạnh và khô như ngày nay. Sứ mệnh MAVEN đã đo trực tiếp sự mất khí vẫn đang diễn ra này, và thấy nó tăng lên khi một đợt phun trào vật chất từ Mặt Trời ập tới vào tháng 3/2015.",
+      "why": "Chuỗi nhân quả 'nhỏ → lõi nguội nhanh → từ trường tắt' không có nguồn đã mở (check 17/09 C-6); 'không còn lá chắn' ngụ ý từ trường là lá chắn — còn tranh luận (C-7). NASA Mars Facts: 'no global magnetic field today, but … traces of a magnetic field from 4 billion years ago'. Jakosky et al. 2015 (MAVEN): mất khí lên không gian 'likely contributed to the thin, cold, dry atmosphere of modern Mars', 'Ion loss during solar events early in Mars history may have been a major contributor'; đo 'ongoing ion loss' và tốc độ thoát tăng khi ICME tháng 3/2015 ập tới. Giữ mức 'có thể'.",
+      "evidence": "https://science.nasa.gov/mars/facts/ ; https://doi.org/10.1126/science.aad0210 (Jakosky et al. 2015, PubMed 26542576)"
+    },
+    {
+      "claimId": "C-8",
+      "severity": "S3",
+      "find": "Áp suất giảm khiến nước lỏng không còn ổn định trên bề mặt: phần thoát vào không gian, phần đóng băng dưới đất.",
+      "replace": "Ngày nay nước trên Sao Hoả tồn tại chủ yếu dưới dạng băng. Lượng nước cổ đã đi theo nhiều ngả: một phần thoát vào không gian, một phần còn lại dưới dạng băng, và theo một mô hình công bố năm 2021, khoảng 30–99% bị khoá vào khoáng vật của lớp vỏ.",
+      "why": "Check 17/09 C-8: không nguồn, và bỏ sót hướng thứ ba. Scheller et al. 2021: 'Between 30 and 99% of martian water was sequestered through crustal hydration'. NASA Mars Facts: nước ngày nay 'in the form of water-ice just under the surface in the polar regions as well as in briny (salty) water' — nên 'nước lỏng không còn ổn định' viết tuyệt đối là sai; đổi thành 'chủ yếu dưới dạng băng'.",
+      "evidence": "https://doi.org/10.1126/science.abc7717 (Scheller et al. 2021, PubMed 33727251) ; https://science.nasa.gov/mars/facts/"
+    },
+    {
+      "claimId": "C-9",
+      "severity": "S3",
+      "find": "- **Olympus Mons** — núi lửa cao khoảng 21,9 km so với mốc chuẩn của Sao Hoả, tức gấp khoảng hai lần rưỡi đỉnh Everest",
+      "replace": "- **Olympus Mons** — núi lửa lớn nhất Hệ Mặt Trời, cao khoảng 21,9 km theo nhóm THEMIS của Đại học Bang Arizona, tức gấp khoảng hai lần rưỡi đỉnh Everest (8.848 m). Con số tuỳ mốc đo: tính từ chân tới đỉnh, NASA ghi hơn 40 km",
+      "why": "'So với mốc chuẩn' do bài tự thêm; nguồn THEMIS/ASU (bậc 3) chỉ ghi 'Olympus Mons is 21.9km … tall'. NASA Mars Facts ghi 'more than 25 miles (… 40 kilometers) tall from base to summit' và Everest '8,848 meters' — hai số khác nhau vì khác mốc đo (check 17/09 C-9). Ghi rõ cả hai, quy kết cho từng nguồn.",
+      "evidence": "https://themis.asu.edu/zoom-20230811a ; https://science.nasa.gov/mars/facts/"
+    },
+    {
+      "claimId": "C-11",
+      "severity": "S2",
+      "find": "- **Valles Marineris** — hệ hẻm vực dài 4.000 km, sâu tới 7 km",
+      "replace": "- **Valles Marineris** — hệ hẻm vực lớn nhất Hệ Mặt Trời, dài khoảng 3.870 km và sâu tới khoảng 9,3 km",
+      "why": "NASA Mars Facts: 'extends about 2,400 miles (3,870 kilometers) in length … descends about 5.8 miles (9.3 kilometers) at its deepest'; 'the largest in the solar system'. Bản vi còn 4.000 km/7 km (S2 theo check 17/09 C-11; en đã sửa).",
+      "evidence": "https://science.nasa.gov/mars/facts/"
+    },
+    {
+      "claimId": "C-12",
+      "severity": "S3",
+      "find": "- Hai vệ tinh nhỏ Phobos và Deimos, nguồn gốc vẫn chưa ngã ngũ. Quang phổ của chúng giống các tiểu hành tinh nguyên thuỷ,",
+      "replace": "\n## Hai vệ tinh nhỏ\n\nSao Hoả có hai vệ tinh nhỏ, Phobos và Deimos (theo NASA, tính tới 9/2026), và nguồn gốc của chúng vẫn chưa ngã ngũ. Quang phổ của chúng giống các tiểu hành tinh loại D,",
+      "why": "Số vệ tinh cần mốc (C-12). Lập luận quang phổ/quỹ đạo chưa có nguồn bậc 1 (C-13): Hyodo et al. 2017 — 'believed that they were captured asteroids due to their spectral properties sharing a resemblance with D-type asteroids. However, the captured scenario is confronted with the difficulty of explaining their almost circular equatorial orbits … accretion within an impact-generated disk may naturally explain their orbital configurations'. 'Tiểu hành tinh nguyên thuỷ' → 'loại D' đúng như nguồn. Tách khỏi mục 'Địa hình' (vệ tinh không phải địa hình).",
+      "evidence": "https://science.nasa.gov/mars/moons/ ; https://doi.org/10.3847/1538-4357/aa81c4 (Hyodo et al. 2017, arXiv 1707.06282)"
+    },
+    {
+      "claimId": "C-14",
+      "severity": "S3",
+      "find": "lập sứ mệnh MMX để lấy mẫu Phobos đem về phân xử",
+      "replace": "lập sứ mệnh MMX để lấy mẫu Phobos đem về phân xử; theo JAXA, MMX dự kiến phóng ngày 20/10/2026.",
+      "why": "Thiếu mốc (C-14); bản en 'launched' dễ hiểu là đã phóng. JAXA (mở 25/09/2026): 'The launch of MMX is scheduled for October 20, 2026 at 04:41:03 JST'. Cần kiểm lại sau 20/10/2026.",
+      "evidence": "https://www.mmx.jaxa.jp/en/"
+    }
+  ],
+  "enEdits": [
+    {
+      "claimId": "C-1",
+      "severity": "S3",
+      "find": "The surface of Mars is covered in dust rich in iron oxide — essentially rust. This fine dust is blown across the planet by winds, creating the characteristic color visible from Earth with the naked eye.",
+      "replace": "Iron in the rocks, soil and dust of Mars has oxidized — essentially rusted. Dust lifted into the atmosphere by the wind makes the planet look red from a distance, a color visible even from Earth with the naked eye.",
+      "why": "NASA Mars Facts: 'oxidization — or rusting — of iron in the rocks, regolith (Martian “soil”), and dust of Mars. This dust gets kicked up into the atmosphere and from a distance makes the planet appear mostly red'. Bản cũ chỉ nói bụi, và không có nguồn trong bảng (check 17/09 C-1).",
+      "evidence": "https://science.nasa.gov/mars/facts/"
+    },
+    {
+      "claimId": "C-2",
+      "severity": "S3",
+      "find": "- Ancient valley networks and deltas, most clearly at Jezero crater where Perseverance is currently operating",
+      "replace": "- Traces of ancient rivers, lakes and deltas — for example the river, delta and lake system that once existed in Jezero crater, where Perseverance landed in 2021",
+      "why": "'Rõ nhất' là đánh giá chủ quan không nguồn; 'đang hoạt động' là claim ràng buộc thời gian không mốc (check 17/09 C-2). NASA Perseverance: hạ cánh 18/02/2021 tại Jezero; 'discovered a habitable, stable lake, delta, and river system in Jezero Crater's history'.",
+      "evidence": "https://science.nasa.gov/mission/mars-2020-perseverance/"
+    },
+    {
+      "claimId": "C-3",
+      "severity": "S3",
+      "find": "- Minerals that only form in the presence of water, such as clays and sulfates",
+      "replace": "- Minerals formed through the action of water, such as clay minerals (phyllosilicates) and sulfates",
+      "why": "Bibring et al. 2006: 'Phyllosilicates formed by aqueous alteration very early'; 'sulfates were formed in a second era … in an acidic environment'. 'Chỉ hình thành khi có nước' nói quá so với nguồn; đổi thành 'hình thành nhờ nước'.",
+      "evidence": "https://doi.org/10.1126/science.1122659 (Bibring et al. 2006, PubMed 16627738)"
+    },
+    {
+      "claimId": "C-4",
+      "severity": "S3",
+      "find": "- Exposed water ice at the poles and subsurface ice at mid-latitudes",
+      "replace": "- Polar ice caps, water ice just below the surface in the polar regions, and subsurface ice sheets more than 100 m thick at mid-latitudes, exposed in places along eroding scarps",
+      "why": "Check 17/09 C-4: không nguồn. NASA Mars Facts: 'polar ice caps', 'water-ice just under the surface in the polar regions'; Dundas et al. 2018: băng nước ở vĩ độ trung bình 'can be >100 meters thick', lộ ra ở các vách đang lùi. Bản cũ 'băng lộ thiên ở hai cực' không khớp nguồn đã mở.",
+      "evidence": "https://science.nasa.gov/mars/facts/ ; https://doi.org/10.1126/science.aao1619 (Dundas et al. 2018, PubMed 29326269)"
+    },
+    {
+      "claimId": "C-5",
+      "severity": "S3",
+      "find": "The current picture: about 3.5–4 billion years ago, Mars was much warmer and wetter.",
+      "replace": "The current picture: billions of years ago Mars was much wetter and warmer, with a thicker atmosphere; the minerals formed by water are mostly more than 3.5 billion years old.",
+      "why": "NASA Mars Facts: 'Mars was much wetter and warmer, with a thicker atmosphere, billions of years ago'; Bibring 2006: kỷ nguyên khô 'beginning about 3.5 billion years ago'. Khoảng '3,5–4 tỉ năm' cụ thể hơn nguồn cho phép — thay bằng mốc có nguồn.",
+      "evidence": "https://science.nasa.gov/mars/facts/ ; https://doi.org/10.1126/science.1122659 (Bibring et al. 2006, PubMed 16627738)"
+    },
+    {
+      "claimId": "C-6",
+      "severity": "S3",
+      "find": "Mars is small, so its core cooled quickly and its global magnetic field shut down early. Without this shield, [[gio-mat-troi|solar wind]] eroded the atmosphere over billions of years. The MAVEN mission has measured this atmospheric loss, which continues to this day.",
+      "replace": "Mars has no global magnetic field today, although its southern crust still carries magnetization from a field that existed about 4 billion years ago. The stripping of the atmosphere to space by the [[gio-mat-troi|solar wind]] and solar outbursts, especially early on, may have contributed greatly to the thin, cold, dry atmosphere of modern Mars. The MAVEN mission has directly measured this ongoing loss, and saw it increase when a solar coronal mass ejection struck in March 2015.",
+      "why": "Chuỗi nhân quả 'nhỏ → lõi nguội nhanh → từ trường tắt' không có nguồn đã mở (check 17/09 C-6); 'không còn lá chắn' ngụ ý từ trường là lá chắn — còn tranh luận (C-7). NASA Mars Facts: 'no global magnetic field today, but … traces of a magnetic field from 4 billion years ago'. Jakosky et al. 2015 (MAVEN): mất khí lên không gian 'likely contributed to the thin, cold, dry atmosphere of modern Mars', 'Ion loss during solar events early in Mars history may have been a major contributor'; đo 'ongoing ion loss' và tốc độ thoát tăng khi ICME tháng 3/2015 ập tới. Giữ mức 'có thể'.",
+      "evidence": "https://science.nasa.gov/mars/facts/ ; https://doi.org/10.1126/science.aad0210 (Jakosky et al. 2015, PubMed 26542576)"
+    },
+    {
+      "claimId": "C-8",
+      "severity": "S3",
+      "find": "The drop in pressure means liquid water is no longer stable on the surface: some escaped into space, while some froze underground.",
+      "replace": "Today the water on Mars exists mostly as ice. The ancient water went several ways: some escaped into space, some remains as ice, and according to a model published in 2021, roughly 30–99% was locked into minerals in the crust.",
+      "why": "Check 17/09 C-8: không nguồn, và bỏ sót hướng thứ ba. Scheller et al. 2021: 'Between 30 and 99% of martian water was sequestered through crustal hydration'. NASA Mars Facts: nước ngày nay 'in the form of water-ice just under the surface in the polar regions as well as in briny (salty) water' — nên 'nước lỏng không còn ổn định' viết tuyệt đối là sai; đổi thành 'chủ yếu dưới dạng băng'.",
+      "evidence": "https://doi.org/10.1126/science.abc7717 (Scheller et al. 2021, PubMed 33727251) ; https://science.nasa.gov/mars/facts/"
+    },
+    {
+      "claimId": "C-9",
+      "severity": "S3",
+      "find": "- **Olympus Mons** — a volcano about 21.9 km high relative to the Martian datum, roughly two and a half times the height of Mount Everest",
+      "replace": "- **Olympus Mons** — the largest volcano in the Solar System, about 21.9 km high according to Arizona State University's THEMIS team, roughly two and a half times the height of Mount Everest (8,848 m). The figure depends on the reference level: measured from base to summit, NASA gives more than 40 km",
+      "why": "'So với mốc chuẩn' do bài tự thêm; nguồn THEMIS/ASU (bậc 3) chỉ ghi 'Olympus Mons is 21.9km … tall'. NASA Mars Facts ghi 'more than 25 miles (… 40 kilometers) tall from base to summit' và Everest '8,848 meters' — hai số khác nhau vì khác mốc đo (check 17/09 C-9). Ghi rõ cả hai, quy kết cho từng nguồn.",
+      "evidence": "https://themis.asu.edu/zoom-20230811a ; https://science.nasa.gov/mars/facts/"
+    },
+    {
+      "claimId": "C-11",
+      "severity": "S4",
+      "find": "- **Valles Marineris** — a canyon system about 3,870 km long",
+      "replace": "- **Valles Marineris** — the largest canyon system in the Solar System, about 3,870 km long",
+      "why": "NASA Mars Facts: 'extends about 2,400 miles (3,870 kilometers) in length … descends about 5.8 miles (9.3 kilometers) at its deepest'; 'the largest in the solar system'. Bản vi còn 4.000 km/7 km (S2 theo check 17/09 C-11; en đã sửa).",
+      "evidence": "https://science.nasa.gov/mars/facts/"
+    },
+    {
+      "claimId": "C-12",
+      "severity": "S3",
+      "find": "- Two small moons, Phobos and Deimos, whose origin is still unsettled. Their spectra resemble those of primitive asteroids,",
+      "replace": "\n## Two small moons\n\nMars has two small moons, Phobos and Deimos (per NASA, as of September 2026), and their origin is still unsettled. Their spectra resemble those of D-type asteroids,",
+      "why": "Số vệ tinh cần mốc (C-12). Lập luận quang phổ/quỹ đạo chưa có nguồn bậc 1 (C-13): Hyodo et al. 2017 — 'believed that they were captured asteroids due to their spectral properties sharing a resemblance with D-type asteroids. However, the captured scenario is confronted with the difficulty of explaining their almost circular equatorial orbits … accretion within an impact-generated disk may naturally explain their orbital configurations'. 'Tiểu hành tinh nguyên thuỷ' → 'loại D' đúng như nguồn. Tách khỏi mục 'Địa hình' (vệ tinh không phải địa hình).",
+      "evidence": "https://science.nasa.gov/mars/moons/ ; https://doi.org/10.3847/1538-4357/aa81c4 (Hyodo et al. 2017, arXiv 1707.06282)"
+    },
+    {
+      "claimId": "C-14",
+      "severity": "S3",
+      "find": "and launched the MMX mission to bring back a sample of Phobos and settle the question",
+      "replace": "and set up the MMX mission to bring back a sample of Phobos and settle the question; according to JAXA, MMX is scheduled to launch on 20 October 2026.",
+      "why": "Thiếu mốc (C-14); bản en 'launched' dễ hiểu là đã phóng. JAXA (mở 25/09/2026): 'The launch of MMX is scheduled for October 20, 2026 at 04:41:03 JST'. Cần kiểm lại sau 20/10/2026.",
+      "evidence": "https://www.mmx.jaxa.jp/en/"
+    }
+  ],
+  "addSources": [
+    {
+      "title": "Mars Facts",
+      "url": "https://science.nasa.gov/mars/facts/",
+      "doi": "",
+      "publisher": "NASA Science",
+      "year": 2026,
+      "tier": 2,
+      "covers": "Màu đỏ do sắt bị oxy hoá; ẩm và ấm hơn hàng tỉ năm trước; chỏm băng, băng dưới bề mặt vùng cực; không có từ trường toàn cầu, dấu vết từ 4 tỉ năm; Olympus Mons >40 km từ chân; Valles Marineris 3.870 km, sâu 9,3 km"
+    },
+    {
+      "title": "Mars 2020: Perseverance Rover",
+      "url": "https://science.nasa.gov/mission/mars-2020-perseverance/",
+      "doi": "",
+      "publisher": "NASA Science",
+      "year": 2026,
+      "tier": 2,
+      "covers": "Hạ cánh 18/02/2021 ở hố Jezero; hệ hồ, châu thổ, sông cổ"
+    },
+    {
+      "title": "Global Mineralogical and Aqueous Mars History Derived from OMEGA/Mars Express Data",
+      "url": "https://doi.org/10.1126/science.1122659",
+      "doi": "10.1126/science.1122659",
+      "publisher": "Science",
+      "year": 2006,
+      "tier": 1,
+      "covers": "Phyllosilicate hình thành do biến đổi trong nước, sulfat ở kỷ sau; kỷ khô bắt đầu khoảng 3,5 tỉ năm trước"
+    },
+    {
+      "title": "Exposed subsurface ice sheets in the Martian mid-latitudes",
+      "url": "https://doi.org/10.1126/science.aao1619",
+      "doi": "10.1126/science.aao1619",
+      "publisher": "Science",
+      "year": 2018,
+      "tier": 1,
+      "covers": "Băng nước ở vĩ độ trung bình dày >100 m, lộ ở vách xói"
+    },
+    {
+      "title": "MAVEN observations of the response of Mars to an interplanetary coronal mass ejection",
+      "url": "https://doi.org/10.1126/science.aad0210",
+      "doi": "10.1126/science.aad0210",
+      "publisher": "Science",
+      "year": 2015,
+      "tier": 1,
+      "covers": "MAVEN đo mất ion đang diễn ra, tăng khi ICME tháng 3/2015; mất khí có thể là yếu tố chính làm khí quyển mỏng, lạnh, khô"
+    },
+    {
+      "title": "Long-term drying of Mars by sequestration of ocean-scale volumes of water in the crust",
+      "url": "https://doi.org/10.1126/science.abc7717",
+      "doi": "10.1126/science.abc7717",
+      "publisher": "Science",
+      "year": 2021,
+      "tier": 1,
+      "covers": "30–99% nước Sao Hoả bị khoá vào khoáng vật vỏ; lượng nước cổ tương đương lớp 100–1500 m"
+    },
+    {
+      "title": "On the Impact Origin of Phobos and Deimos. I. Thermodynamic and Physical Aspects",
+      "url": "https://doi.org/10.3847/1538-4357/aa81c4",
+      "doi": "10.3847/1538-4357/aa81c4",
+      "publisher": "The Astrophysical Journal",
+      "year": 2017,
+      "tier": 1,
+      "covers": "Nguồn gốc còn tranh luận: quang phổ giống tiểu hành tinh loại D gợi ý bắt giữ; quỹ đạo gần tròn, xích đạo hợp với bồi tụ từ đĩa sau va chạm"
+    }
+  ],
+  "corrections": [
+    "- 2026-09-25 | sao-hoa-hanh-tinh-do-va-cau-hoi-ve-nuoc | Bản vi: Valles Marineris 'dài 4.000 km, sâu tới 7 km' → 'khoảng 3.870 km, sâu tới khoảng 9,3 km' (en đã sửa trong lượt en-parity) | NASA Mars Facts",
+    "- 2026-09-25 | sao-hoa-hanh-tinh-do-va-cau-hoi-ve-nuoc | Cả hai bản: 'nhỏ → lõi nguội nhanh → từ trường tắt; không còn lá chắn, gió mặt trời bào mòn' → không có từ trường toàn cầu nay, dấu vết từ 4 tỉ năm; mất khí lên không gian 'có thể' góp phần lớn; MAVEN đo mất khí đang diễn ra (ICME 3/2015); 'nước lỏng không còn ổn định … phần thoát, phần đóng băng' → nước nay chủ yếu là băng, thêm hướng 30–99% bị khoá trong khoáng vật vỏ | NASA Mars Facts; Jakosky et al. 2015 doi 10.1126/science.aad0210; Scheller et al. 2021 doi 10.1126/science.abc7717",
+    "- 2026-09-25 | sao-hoa-hanh-tinh-do-va-cau-hoi-ve-nuoc | Cả hai bản: 'khoảng 3,5–4 tỉ năm trước ấm và ẩm' → 'hàng tỉ năm trước ẩm và ấm hơn, khoáng vật do nước chủ yếu trên 3,5 tỉ năm tuổi'; 'châu thổ rõ nhất ở Jezero nơi Perseverance đang hoạt động' → 'nơi Perseverance hạ cánh năm 2021'; 'khoáng vật chỉ hình thành khi có nước' → 'hình thành nhờ nước'; 'băng lộ thiên ở hai cực' → chỏm băng, băng dưới bề mặt vùng cực, băng ngầm >100 m ở vĩ độ trung bình | NASA Mars Facts; NASA Perseverance; Bibring et al. 2006 doi 10.1126/science.1122659; Dundas et al. 2018 doi 10.1126/science.aao1619",
+    "- 2026-09-25 | sao-hoa-hanh-tinh-do-va-cau-hoi-ve-nuoc | Cả hai bản: Olympus Mons '21,9 km so với mốc chuẩn' → '21,9 km theo THEMIS/ASU; tính từ chân tới đỉnh NASA ghi hơn 40 km'; Phobos/Deimos 'tiểu hành tinh nguyên thuỷ' → 'loại D', thêm mốc số vệ tinh 9/2026, tách mục riêng; MMX 'launched' (en) → 'dự kiến phóng 20/10/2026 theo JAXA' | THEMIS/ASU; NASA Mars Facts; Hyodo et al. 2017 doi 10.3847/1538-4357/aa81c4; JAXA MMX"
+  ],
+  "openQuestions": [
+    "MMX dự kiến phóng 20/10/2026: kiểm lại bài ngay sau ngày đó (câu 'dự kiến phóng' sẽ lỗi thời).",
+    "Olympus Mons: số 21,9 km là nguồn bậc 3 (ASU/THEMIS); chưa mở được nguồn bậc 1 (dữ liệu MOLA) nêu rõ mốc đo. Số 'hơn 40 km từ chân tới đỉnh' của NASA lớn bất thường so với các ước tính thường gặp — bài chỉ quy kết, không tự khẳng định.",
+    "Tranh luận Sao Hoả cổ 'ấm và ẩm' hay 'lạnh, băng giá với các đợt tan chảy' (check 17/09 C-5) chưa được trình bày; bài theo NASA ('wetter and warmer')."
+  ]
+}

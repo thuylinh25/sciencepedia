@@ -1,0 +1,103 @@
+slug: sao-moc-nguoi-khong-lo-khi-va-tam-khien-cua-he
+checkedAt: 2026-09-25
+checkedBy: science-editor
+priorFactCheck: REVISE
+verdict: revise
+summary: "Đóng các lỗi vi còn lại sau lượt en-parity: seoDescription còn 'ít nhất 350 năm' (S2, sót từ 17/09), Ganymede mất chữ 'duy nhất'. Lượt đọc lại phát hiện thêm lỗi ở cả hai bản: hai số 39.000/14.000 km của Vết Đỏ Lớn không có nguồn bậc 1–2 (thay bằng tốc độ co ~200 km/năm của Sánchez-Lavega 2024) và 'bề mặt cổ' của Callisto chưa có nguồn. Mọi claim thân bài có nguồn, thân bài không còn S1–S3. Còn đúng một mục S3: tiêu đề 'tấm khiên' (C-18) — ngoài phạm vi lượt này, chờ người quyết; đổi xong tiêu đề thì bài qua gate."
+claims:
+  - id: C-1
+    claim: "Khối lượng Sao Mộc gấp 2,5 lần tất cả hành tinh còn lại cộng lại."
+    verdict: "verified"
+    severity: "none"
+    evidence: "https://nssdc.gsfc.nasa.gov/planetary/factsheet/ ; https://science.nasa.gov/jupiter/jupiter-facts/"
+    note: "Fact Sheet: 1898 / 768,6 = 2,47. NASA: 'more than twice the combined material of the other bodies'."
+  - id: C-3
+    claim: "Sao Mộc chủ yếu hydro và heli; sâu xuống, hydro thành kim loại lỏng, được cho là dẫn điện và sinh từ trường."
+    verdict: "verified"
+    severity: "none"
+    evidence: "https://science.nasa.gov/jupiter/jupiter-facts/"
+    note: "NASA: 'mostly hydrogen and helium', 'thought to drive electrical currents … generating the planet's powerful magnetic field'. Mức 'được cho là' giữ đúng."
+  - id: C-4
+    claim: "Từ trường mạnh nhất trong các hành tinh; mômen từ ~20.000 lần Trái Đất; cường độ bề mặt ~16–54 lần."
+    verdict: "verified"
+    severity: "none"
+    evidence: "https://science.nasa.gov/jupiter/jupiter-facts/ ; https://nssdc.gsfc.nasa.gov/planetary/factsheet/jupiterfact.html ; https://nssdc.gsfc.nasa.gov/planetary/factsheet/earthfact.html ; https://nssdc.gsfc.nasa.gov/planetary/factsheet/saturnfact.html"
+    note: "Tính từ Fact Sheet: (4,30/0,306)×(71.492/6.378)³ ≈ 19.800; Sao Thổ 0,215 G·Rs³ nhỏ hơn nhiều. NASA: '16 to 54 times as powerful'."
+  - id: C-5
+    claim: "Không có ranh giới rõ giữa khí quyển và bề mặt; tàu thăm dò Galileo thả năm 1995 ngừng sau 58 phút, ở độ sâu khoảng 200 km."
+    verdict: "verified"
+    severity: "none"
+    evidence: "https://science.nasa.gov/mission/galileo/ ; https://science.nasa.gov/jupiter/jupiter-facts/"
+    note: "NASA (mở lại 25/09): 'floated down about 200 kilometers', 'Fifty-eight minutes into its descent'; 'doesn't have a true surface'."
+  - id: C-7
+    claim: "Vết Đỏ Lớn là xoáy nghịch rộng hơn Trái Đất, theo dõi liên tục từ khoảng 1831; Vết Vĩnh cửu 1665–1713 đã tan; Sánchez-Lavega 2024 kết luận 'rất khó có khả năng' là cùng một vết — kết luận của một nghiên cứu."
+    verdict: "verified"
+    severity: "none"
+    evidence: "https://doi.org/10.1029/2024GL108993 (toàn văn arXiv 2406.13222) ; https://science.nasa.gov/jupiter/jupiter-facts/"
+    note: "Toàn văn: 'highly unlikely that the current GRS to be the former Cassini's PS'; đo đạc 1831–2023 từ hình vẽ, ảnh chụp, ảnh số. NASA: 'bigger than Earth'."
+  - id: C-8
+    claim: "Gió vòng ngoài vượt 640 km/h (Hubble 2009–2020)."
+    verdict: "verified"
+    severity: "none"
+    evidence: "https://esahubble.org/news/heic2110/"
+    note: "ESA/Hubble (mở lại 25/09): 'speeds that exceed 640 kilometres per hour'."
+  - id: C-9
+    claim: "Vết Đỏ Lớn đang co lại và tròn hơn; từ 1879 chiều dài giảm trung bình ~200 km/năm, tốc độ tăng gần đây."
+    verdict: "verified"
+    severity: "none"
+    evidence: "https://doi.org/10.1029/2024GL108993 (toàn văn arXiv 2406.13222)"
+    note: "Đã thay hai số 39.000/14.000 km không nguồn bậc 1–2 bằng tốc độ co của chính bài báo (207 km/năm)."
+  - id: C-10
+    claim: "Bốn vệ tinh Galilei được Galileo Galilei phát hiện năm 1610."
+    verdict: "verified"
+    severity: "none"
+    evidence: "https://science.nasa.gov/jupiter/jupiter-moons/"
+    note: "NASA: 'first observed by the astronomer Galileo Galilei in 1610'."
+  - id: C-11
+    claim: "Quan sát cho thấy không phải mọi thiên thể đều quay quanh Trái Đất."
+    verdict: "verified"
+    severity: "none"
+    evidence: "https://science.nasa.gov/jupiter/jupiter-moons/"
+    note: "NASA: 'the first moons discovered beyond Earth' — vệ tinh quay quanh Sao Mộc. Không nói quá thành 'bác bỏ mô hình địa tâm'."
+  - id: C-12
+    claim: "Io — hoạt động núi lửa mạnh nhất Hệ Mặt Trời."
+    verdict: "verified"
+    severity: "none"
+    evidence: "https://science.nasa.gov/jupiter/moons/io/"
+    note: "'the most volcanically active world in the solar system'."
+  - id: C-13
+    claim: "Europa — nhiều bằng chứng về đại dương nước mặn dưới vỏ băng; một trong những nơi đáng tìm kiếm sự sống nhất."
+    verdict: "verified"
+    severity: "none"
+    evidence: "https://science.nasa.gov/jupiter/moons/europa/"
+    note: "NASA: 'strong evidence', 'may be one of the most promising places'."
+  - id: C-14
+    claim: "Ganymede — vệ tinh lớn nhất hệ, lớn hơn Sao Thuỷ, vệ tinh duy nhất được biết tới có từ trường riêng."
+    verdict: "verified"
+    severity: "none"
+    evidence: "https://science.nasa.gov/jupiter/moons/ganymede/"
+    note: "Đã khôi phục 'duy nhất'."
+  - id: C-15
+    claim: "Callisto — thiên thể nhiều hố va chạm nhất Hệ Mặt Trời."
+    verdict: "verified"
+    severity: "none"
+    evidence: "https://science.nasa.gov/jupiter/moons/callisto/"
+    note: "Đã thay 'bề mặt cổ'."
+  - id: C-16
+    claim: "Hấp dẫn Sao Mộc định hình vành đai tiểu hành tinh, ảnh hưởng quỹ đạo sao chổi; 'tấm khiên' là giả thuyết còn tranh cãi — Horner & Jones 2008: có thể làm tăng đáng kể tốc độ va chạm."
+    verdict: "verified"
+    severity: "S4"
+    evidence: "https://science.nasa.gov/solar-system/asteroids/facts/ ; https://doi.org/10.1017/s1473550408004187 ; https://doi.org/10.1017/s1473550408004357"
+    note: "Thân bài đúng mức dè dặt."
+  - id: C-18
+    claim: "Tiêu đề / titleEn / seoTitle / đầu seoDescription: 'tấm khiên của hệ' / 'shields the system'."
+    verdict: "partially-supported"
+    severity: "S3"
+    evidence: "https://doi.org/10.1017/s1473550408004187 ; https://doi.org/10.1017/s1473550408004357"
+    note: "Tiêu đề khẳng định vai trò khiên chắn như sự thật, trong khi nguồn của chính bài cho thấy Sao Mộc có thể làm TĂNG va chạm. Không sửa trong lượt này theo chỉ đạo — việc duy nhất còn mở."
+  - id: C-17
+    claim: "Summary và seoDescription: khối lượng 2,5 lần; Vết Đỏ Lớn theo dõi từ khoảng 1831."
+    verdict: "verified"
+    severity: "none"
+    evidence: "https://doi.org/10.1029/2024GL108993 (toàn văn arXiv 2406.13222)"
+    note: "seoDescription đã bỏ '350 năm'."

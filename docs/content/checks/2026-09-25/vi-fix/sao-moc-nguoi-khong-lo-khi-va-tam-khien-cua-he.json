@@ -1,0 +1,114 @@
+{
+  "slug": "sao-moc-nguoi-khong-lo-khi-va-tam-khien-cua-he",
+  "edits": [
+    {
+      "claimId": "C-9",
+      "severity": "S3",
+      "find": "Đáng chú ý là nó đang co lại và đồng thời tròn hơn: từ 39.000 km theo trục dài nhất đo năm 1879 xuống khoảng 14.000 km theo số đo công bố năm 2024.",
+      "replace": "Đáng chú ý là nó đang co lại và đồng thời tròn hơn: từ năm 1879, chiều dài đông–tây của nó giảm trung bình khoảng 200 km mỗi năm, và tốc độ co còn tăng lên trong những năm gần đây (Sánchez-Lavega và cộng sự, 2024).",
+      "why": "Hai số 39.000 km và 14.000 km không có trong nguồn bậc 1–2 nào mở được lượt này (check 17/09 lấy từ bản tin ScienceDaily, bậc 4; trang tin nay không tải được). Toàn văn Sánchez-Lavega 2024 (arXiv 2406.13222) đỡ phần định tính và tốc độ: 'The length of the GRS decreased over time at an average rate of -0.18°/year (207 km/year) (increasing in last years to -0.3°/year)', 'forming the current rounder vortex'. Theo quy tắc 6, số không nguồn bị bỏ, không làm mềm. Sửa cả en.",
+      "evidence": "https://doi.org/10.1029/2024GL108993 (toàn văn arXiv 2406.13222)"
+    },
+    {
+      "claimId": "C-14",
+      "severity": "S4",
+      "find": "và là vệ tinh được biết tới là có từ trường riêng",
+      "replace": "và là vệ tinh duy nhất được biết tới có từ trường riêng",
+      "why": "Fix 17/09 yêu cầu THÊM 'được biết tới', không bỏ 'duy nhất'. NASA Ganymede (mở 25/09): 'the only moon known to have its own magnetic field'. Khớp en.",
+      "evidence": "https://science.nasa.gov/jupiter/moons/ganymede/"
+    },
+    {
+      "claimId": "C-15",
+      "severity": "S4",
+      "find": "- **Callisto** — bề mặt cổ, dày đặc hố va chạm",
+      "replace": "- **Callisto** — thiên thể nhiều hố va chạm nhất Hệ Mặt Trời",
+      "why": "'Bề mặt cổ' chưa có nguồn đã mở. NASA Callisto (mở 25/09): 'the most heavily cratered object in our solar system'. Sửa cả en.",
+      "evidence": "https://science.nasa.gov/jupiter/moons/callisto/"
+    }
+  ],
+  "enEdits": [
+    {
+      "claimId": "C-9",
+      "severity": "S3",
+      "find": "Notably, the spot is shrinking and becoming rounder at the same time: from 39,000 km along its longest axis, measured in 1879, to about 14,000 km according to measurements published in 2024.",
+      "replace": "Notably, the spot is shrinking and becoming rounder at the same time: since 1879 its east–west length has decreased by about 200 km per year on average, and the rate has increased in recent years (Sánchez-Lavega and colleagues, 2024).",
+      "why": "Đồng bộ với vi; bỏ số không nguồn bậc 1–2.",
+      "evidence": "https://doi.org/10.1029/2024GL108993 (toàn văn arXiv 2406.13222)"
+    },
+    {
+      "claimId": "C-15",
+      "severity": "S4",
+      "find": "- **Callisto** — an ancient surface, densely covered with impact craters",
+      "replace": "- **Callisto** — the most heavily cratered object in the Solar System",
+      "why": "Đồng bộ với vi.",
+      "evidence": "https://science.nasa.gov/jupiter/moons/callisto/"
+    }
+  ],
+  "seoDescriptionEdits": [
+    {
+      "claimId": "C-2",
+      "severity": "S2",
+      "find": "với cơn bão Vết Đỏ Lớn đã tồn tại ít nhất 350 năm",
+      "replace": "với cơn bão Vết Đỏ Lớn được theo dõi liên tục từ khoảng năm 1831",
+      "why": "seoDescription còn mang đúng claim S2 đã bị bác ở summary ngày 17/09: 350 năm ngầm nối Vết Đỏ Lớn với Vết Vĩnh cửu của Cassini. Sánchez-Lavega 2024: 'PS is unlikely to correspond to the current GRS, that was first observed in 1831'. Khớp summary vi/en.",
+      "evidence": "https://doi.org/10.1029/2024GL108993 (toàn văn arXiv 2406.13222)"
+    }
+  ],
+  "addSources": [
+    {
+      "title": "Jupiter Fact Sheet",
+      "url": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/jupiterfact.html",
+      "doi": "",
+      "publisher": "NASA NSSDCA",
+      "year": 2026,
+      "tier": 2,
+      "covers": "Mômen lưỡng cực 4,30 G·Rj³ (so với Trái Đất 0,306 G·Re³ → ~20.000 lần); cường độ bề mặt 4–13 G; mạnh hơn Sao Thổ 0,215 G·Rs³"
+    },
+    {
+      "title": "Jupiter Moons",
+      "url": "https://science.nasa.gov/jupiter/jupiter-moons/",
+      "doi": "",
+      "publisher": "NASA Science",
+      "year": 2026,
+      "tier": 2,
+      "covers": "Bốn vệ tinh Galilei do Galileo Galilei phát hiện năm 1610; là các vệ tinh đầu tiên tìm được ngoài Trái Đất"
+    },
+    {
+      "title": "Callisto",
+      "url": "https://science.nasa.gov/jupiter/moons/callisto/",
+      "doi": "",
+      "publisher": "NASA Science",
+      "year": 2026,
+      "tier": 2,
+      "covers": "Thiên thể nhiều hố va chạm nhất Hệ Mặt Trời"
+    },
+    {
+      "title": "Asteroids: Facts",
+      "url": "https://science.nasa.gov/solar-system/asteroids/facts/",
+      "doi": "",
+      "publisher": "NASA Science",
+      "year": 2026,
+      "tier": 2,
+      "covers": "Hấp dẫn Sao Mộc chấm dứt sự hình thành hành tinh trong vành đai, thay đổi quỹ đạo tiểu hành tinh, hất chúng ra khỏi vành đai"
+    },
+    {
+      "title": "Jupiter – friend or foe? II: the Centaurs",
+      "url": "https://doi.org/10.1017/s1473550408004357",
+      "doi": "10.1017/s1473550408004357",
+      "publisher": "International Journal of Astrobiology",
+      "year": 2008,
+      "tier": 1,
+      "covers": "Các hành tinh khổng lồ nhiễu loạn Centaur, đẩy chúng vào trong thành sao chổi chu kỳ ngắn; có thể làm tăng tốc độ va chạm sao chổi lên Trái Đất"
+    }
+  ],
+  "corrections": [
+    "- 2026-09-25 | sao-moc-nguoi-khong-lo-khi-va-tam-khien-cua-he | seoDescription (vi): 'Vết Đỏ Lớn đã tồn tại ít nhất 350 năm' → 'được theo dõi liên tục từ khoảng năm 1831' (sót từ lượt 17/09, summary đã sửa) | Sánchez-Lavega et al. 2024 doi 10.1029/2024GL108993",
+    "- 2026-09-25 | sao-moc-nguoi-khong-lo-khi-va-tam-khien-cua-he | Cả hai bản: Vết Đỏ Lớn 'từ 39.000 km (1879) xuống khoảng 14.000 km (công bố 2024)' → 'từ 1879 chiều dài đông–tây giảm trung bình ~200 km/năm, tốc độ co tăng gần đây' (hai số không có nguồn bậc 1–2); Callisto 'bề mặt cổ' → 'thiên thể nhiều hố va chạm nhất Hệ Mặt Trời' | Sánchez-Lavega et al. 2024 (arXiv 2406.13222); NASA Callisto",
+    "- 2026-09-25 | sao-moc-nguoi-khong-lo-khi-va-tam-khien-cua-he | Bản vi: Ganymede 'là vệ tinh được biết tới là có từ trường riêng' → 'là vệ tinh duy nhất được biết tới có từ trường riêng' | NASA Ganymede"
+  ],
+  "openQuestions": [
+    "Tiêu đề vi/en và seoTitle/seoDescription vẫn khẳng định 'tấm khiên' / 'shields the system' trong khi thân bài nói giả thuyết còn tranh cãi (Horner & Jones 2008). Không đổi trong lượt này theo chỉ đạo; cần người quyết — nếu đổi thì đổi cả title, titleEn, seoTitle, phần đầu seoDescription cùng lượt (không đổi slug, hoặc đổi kèm 301).",
+    "NASA Jupiter Facts vẫn ghi Vết Đỏ Lớn 'observed for more than 300 years' — mâu thuẫn bài peer-review; bài ưu tiên Sánchez-Lavega 2024 (bậc 1).",
+    "Nguồn s2 (trang Wiley) trả 403 với truy cập tự động; toàn văn tương đương ở arXiv 2406.13222 — cân nhắc thêm URL phụ."
+  ]
+}

@@ -1,0 +1,189 @@
+{
+  "slug": "kinh-james-webb-nhin-nguoc-ve-thuo-vu-tru-so-sinh",
+  "edits": [
+    {
+      "claimId": "C-3",
+      "severity": "S4",
+      "find": "Hubble mạnh ở [[ánh sáng khả kiến]] và tử ngoại, còn Webb được thiết kế cho hồng ngoại.",
+      "replace": "Hubble được tối ưu cho [[ánh sáng khả kiến]] và tử ngoại, còn Webb được thiết kế chủ yếu cho hồng ngoại (bước sóng 0,6–28,5 micromet, bắt đầu từ ánh sáng khả kiến màu cam).",
+      "why": "Dải bước sóng của Webb bắt đầu từ 0,6 µm (khả kiến); \"mạnh ở\" thay bằng lời NASA \"optimized\".",
+      "evidence": "https://science.nasa.gov/mission/webb/fact-sheet/ — \"Wavelength Coverage 0.6 - 28.5 microns\"; https://webb.nasa.gov/content/about/comparisonWebbVsHubble.html — \"Hubble can see some infrared wavelengths, but it was optimized to see shorter ultraviolet and visible light\""
+    },
+    {
+      "claimId": "C-5",
+      "severity": "S4",
+      "find": "cách Trái Đất 1,5 triệu km, nơi Mặt Trời, Trái Đất và Mặt Trăng luôn nằm cùng một phía",
+      "replace": "cách Trái Đất 1,5 triệu km, nơi tấm chắn nắng có thể che cùng lúc ánh sáng và nhiệt từ Mặt Trời, Trái Đất và Mặt Trăng",
+      "why": "Viết theo đúng điều trang NASA nói về L2, không suy thêm hình học.",
+      "evidence": "https://science.nasa.gov/mission/webb/orbit/ — \"allows the satellite's large sunshield to protect the telescope from the light and heat of the Sun and Earth (and Moon). Webb orbits the sun 1.5 million kilometers (1 million miles) away from the Earth at ... L2\""
+    },
+    {
+      "claimId": "C-8",
+      "severity": "S3",
+      "find": "Không tên lửa nào chứa nổi một gương 6,5 m nguyên khối. Webb dùng 18 mảnh lục giác mạ vàng, gấp lại khi phóng rồi mở ra và căn chỉnh trong không gian với độ chính xác cỡ nanomet.",
+      "replace": "Gương chính rộng khoảng 6,5 m, lớn hơn đường kính chụp mũi của tên lửa Ariane 5 đã phóng Webb (khoảng 5,4 m), nên kính được thiết kế để gấp gọn khi phóng. Gương gồm 18 mảnh lục giác bằng beryllium phủ vàng, gấp lại khi phóng rồi mở ra và được căn chỉnh trong không gian.",
+      "why": "\"Không tên lửa nào\" là khẳng định tuyệt đối không nguồn; thay bằng so sánh cụ thể với chụp mũi Ariane 5. Cắt \"độ chính xác cỡ nanomet\" — không nguồn nào đã mở nêu độ chính xác căn chỉnh (fix 17/09).",
+      "evidence": "https://science.nasa.gov/mission/webb/deployment/ — \"The Ariane 5 launch vehicle's rocket fairing has a diameter of approximately 18 ft (5.4 m) ... Webb was designed to fold compactly to fit into the fairing\"; https://science.nasa.gov/mission/webb/fact-sheet/ — \"Diameter of Primary Mirror 6.5 m (21.3 ft) approximately\", \"Number of Primary Mirror Segments 18\", \"beryllium coated with gold\"; https://webb.nasa.gov/content/about/comparisonWebbVsHubble.html — \"comprised of 18 hexagonal segments\""
+    },
+    {
+      "claimId": "C-10",
+      "severity": "S3",
+      "find": "- Những thiên hà hình thành chỉ 300 triệu năm sau Big Bang, sáng và trưởng thành hơn nhiều mô hình dự đoán",
+      "replace": "- Những thiên hà rất sớm: tính đến tháng 9/2026, theo NASA, thiên hà xa nhất được xác nhận bằng quang phổ là MoM-z14 (z = 14,44, xác nhận năm 2025), mà ta thấy như nó ở khoảng 280 triệu năm sau Big Bang. Nhóm phát hiện MoM-z14 ước tính số thiên hà sáng ở thời kỳ này nhiều hơn trên 100 lần so với các mô hình đồng thuận trước khi có JWST",
+      "why": "Câu cũ thiếu mốc thời gian, lẫn thời điểm quan sát với thời điểm \"hình thành\", và \"trưởng thành hơn nhiều mô hình\" không có nguồn. Thay bằng kỷ lục có mốc và so sánh đúng như nguồn (với mô hình TRƯỚC JWST).",
+      "evidence": "https://science.nasa.gov/mission/webb/early-universe/ — \"JADES-GS-z14-0, which was the record holder at a redshift of 14.32 until June of 2025, when MoM-z14 was confirmed to have a redshift of z = 14.44 placing the galaxy as existing about 280 million years after the big bang\"; https://doi.org/10.33232/001c.156033 (arXiv:2505.11263) — \"The number density of bright z_spec∼14−15 sources implied by our 'Mirage or Miracle' survey ... is >100× larger (182 +329/−105 ×) than pre-JWST consensus models\""
+    },
+    {
+      "claimId": "C-11",
+      "severity": "S3",
+      "find": "- Phân tích khí quyển ngoại hành tinh bằng quang phổ truyền qua, phát hiện CO₂, nước và methane",
+      "replace": "- Phân tích khí quyển ngoại hành tinh bằng quang phổ truyền qua: bằng chứng rõ đầu tiên về CO₂ trong khí quyển một hành tinh ngoài Hệ Mặt Trời (WASP-39 b, 2022), dấu hiệu rõ của nước ở WASP-96 b, methane và CO₂ ở K2-18 b",
+      "why": "Mỗi phân tử phải gắn với hành tinh và công bố cụ thể (fix 17/09).",
+      "evidence": "https://doi.org/10.1038/s41586-022-05269-w (s6); https://science.nasa.gov/missions/webb/nasas-webb-detects-carbon-dioxide-in-exoplanet-atmosphere/ — \"the first clear evidence for carbon dioxide in the atmosphere of a planet outside the solar system\" (25/8/2022); https://science.nasa.gov/missions/webb/nasas-webb-reveals-steamy-atmosphere-of-distant-planet-in-detail/ — \"captured the distinct signature of water\" (WASP-96 b); https://science.nasa.gov/universe/exoplanets/webb-discovers-methane-carbon-dioxide-in-atmosphere-of-k2-18-b/ — \"revealed the presence of carbon-bearing molecules including methane and carbon dioxide\""
+    },
+    {
+      "claimId": "C-12",
+      "severity": "S4",
+      "find": "- Ảnh chi tiết chưa từng có về các \"cột trụ sáng tạo\" và vùng sinh sao",
+      "replace": "- Ảnh hồng ngoại của \"Cột trụ Sáng tạo\" và các vùng sinh sao khác",
+      "why": "\"Chưa từng có\" không có trong nguồn; giữ điều nguồn nói.",
+      "evidence": "https://science.nasa.gov/asset/webb/pillars-of-creation-nircam-image/ — \"The Pillars of Creation are set off in a kaleidoscope of color in NASA’s James Webb Space Telescope’s near-infrared-light view\""
+    }
+  ],
+  "enEdits": [
+    {
+      "claimId": "C-3",
+      "severity": "S4",
+      "find": "Hubble is powerful in visible and ultraviolet light, while Webb is designed for infrared.",
+      "replace": "Hubble is optimized for visible and ultraviolet light, while Webb is designed mainly for infrared (wavelengths of 0.6–28.5 micrometers, starting from orange visible light).",
+      "why": "Như edits C-3.",
+      "evidence": "https://science.nasa.gov/mission/webb/fact-sheet/ ; https://webb.nasa.gov/content/about/comparisonWebbVsHubble.html"
+    },
+    {
+      "claimId": "C-5",
+      "severity": "S4",
+      "find": "1.5 million km from Earth, where the Sun, Earth, and Moon are always on the same side",
+      "replace": "1.5 million km from Earth, where the sunshield can block light and heat from the Sun, Earth, and Moon at once",
+      "why": "Như edits C-5.",
+      "evidence": "https://science.nasa.gov/mission/webb/orbit/"
+    },
+    {
+      "claimId": "C-8",
+      "severity": "S3",
+      "find": "No rocket could fit a monolithic 6.5 m mirror. Webb uses 18 gold-plated hexagonal segments, folded for launch and then unfolded and aligned in space with nanometer-level precision.",
+      "replace": "The primary mirror is about 6.5 m across, wider than the fairing of the Ariane 5 rocket that launched Webb (about 5.4 m), so the telescope was designed to fold for launch. The mirror is made of 18 hexagonal beryllium segments coated with gold, folded for launch and then unfolded and aligned in space.",
+      "why": "Như edits C-8.",
+      "evidence": "https://science.nasa.gov/mission/webb/deployment/ ; https://science.nasa.gov/mission/webb/fact-sheet/ ; https://webb.nasa.gov/content/about/comparisonWebbVsHubble.html"
+    },
+    {
+      "claimId": "C-10",
+      "severity": "S3",
+      "find": "- Galaxies formed just 300 million years after the Big Bang, which are brighter and more mature than many models predicted",
+      "replace": "- Very early galaxies: as of September 2026, according to NASA, the most distant spectroscopically confirmed galaxy is MoM-z14 (z = 14.44, confirmed in 2025), which we see as it was about 280 million years after the Big Bang. The team that found MoM-z14 estimates that bright galaxies at this epoch are more than 100 times more numerous than pre-JWST consensus models predicted",
+      "why": "Như edits C-10.",
+      "evidence": "https://science.nasa.gov/mission/webb/early-universe/ ; https://doi.org/10.33232/001c.156033 (arXiv:2505.11263)"
+    },
+    {
+      "claimId": "C-11",
+      "severity": "S3",
+      "find": "- Exoplanet atmospheric analysis using transmission spectroscopy, detecting CO₂, water, and methane",
+      "replace": "- Exoplanet atmospheric analysis using transmission spectroscopy: the first clear evidence of CO₂ in the atmosphere of a planet outside the Solar System (WASP-39 b, 2022), a distinct signature of water on WASP-96 b, and methane and CO₂ on K2-18 b",
+      "why": "Như edits C-11.",
+      "evidence": "s6; NASA WASP-39 b, WASP-96 b, K2-18 b releases"
+    },
+    {
+      "claimId": "C-12",
+      "severity": "S4",
+      "find": "- Unprecedentedly detailed images of the \"Pillars of Creation\" and star-forming regions",
+      "replace": "- Infrared images of the \"Pillars of Creation\" and other star-forming regions",
+      "why": "Như edits C-12.",
+      "evidence": "https://science.nasa.gov/asset/webb/pillars-of-creation-nircam-image/"
+    }
+  ],
+  "addSources": [
+    {
+      "title": "Webb and the Early Universe",
+      "url": "https://science.nasa.gov/mission/webb/early-universe/",
+      "doi": "",
+      "publisher": "NASA Science",
+      "tier": 2,
+      "covers": "Dịch chuyển đỏ kéo ánh sáng khả kiến/tử ngoại sang hồng ngoại; kỷ lục thiên hà xa nhất: JADES-GS-z14-0 (z = 14,32) tới 6/2025, rồi MoM-z14 (z = 14,44, ~280 triệu năm sau Big Bang)"
+    },
+    {
+      "title": "A Cosmic Miracle: A Remarkably Luminous Galaxy at z_spec = 14.44 Confirmed with JWST",
+      "url": "https://doi.org/10.33232/001c.156033",
+      "doi": "10.33232/001c.156033",
+      "publisher": "The Open Journal of Astrophysics (Naidu, Oesch, Brammer et al.)",
+      "year": 2026,
+      "tier": 1,
+      "covers": "MoM-z14, z = 14,44, 280 triệu năm sau Big Bang; mật độ thiên hà sáng z ~ 14–15 lớn hơn >100 lần so với mô hình đồng thuận trước JWST"
+    },
+    {
+      "title": "Comparison: Webb vs Hubble Telescope",
+      "url": "https://webb.nasa.gov/content/about/comparisonWebbVsHubble.html",
+      "doi": "",
+      "publisher": "NASA Goddard",
+      "tier": 2,
+      "covers": "Hubble tối ưu cho tử ngoại và khả kiến; gương Webb 18 mảnh lục giác beryllium phủ vàng"
+    },
+    {
+      "title": "Webb's Orbit",
+      "url": "https://science.nasa.gov/mission/webb/orbit/",
+      "doi": "",
+      "publisher": "NASA Science",
+      "tier": 2,
+      "covers": "Quỹ đạo quanh L2, cách Trái Đất 1,5 triệu km; tấm chắn nắng che ánh sáng và nhiệt từ Mặt Trời, Trái Đất và Mặt Trăng"
+    },
+    {
+      "title": "James Webb Space Telescope Frequently Asked Questions",
+      "url": "https://webb.nasa.gov/content/about/faqs/faq.html",
+      "doi": "",
+      "publisher": "NASA Goddard",
+      "tier": 2,
+      "covers": "Bước sóng dài giúp Webb nhìn xa về quá khứ và nhìn vào bên trong các đám mây bụi nơi sao và hệ hành tinh đang hình thành; dịch chuyển đỏ đưa ánh sáng tử ngoại/khả kiến sang hồng ngoại"
+    },
+    {
+      "title": "NASA's Webb Detects Carbon Dioxide in Exoplanet Atmosphere",
+      "url": "https://science.nasa.gov/missions/webb/nasas-webb-detects-carbon-dioxide-in-exoplanet-atmosphere/",
+      "doi": "",
+      "publisher": "NASA Science",
+      "year": 2022,
+      "tier": 2,
+      "covers": "Bằng chứng rõ đầu tiên về CO₂ trong khí quyển ngoại hành tinh (WASP-39 b), quang phổ truyền qua"
+    },
+    {
+      "title": "NASA's Webb Reveals Steamy Atmosphere of Distant Planet in Detail",
+      "url": "https://science.nasa.gov/missions/webb/nasas-webb-reveals-steamy-atmosphere-of-distant-planet-in-detail/",
+      "doi": "",
+      "publisher": "NASA Science",
+      "year": 2022,
+      "tier": 2,
+      "covers": "Dấu hiệu rõ của nước trong khí quyển WASP-96 b (phổ truyền qua NIRISS)"
+    },
+    {
+      "title": "Webb Discovers Methane, Carbon Dioxide in Atmosphere of K2-18 b",
+      "url": "https://science.nasa.gov/universe/exoplanets/webb-discovers-methane-carbon-dioxide-in-atmosphere-of-k2-18-b/",
+      "doi": "",
+      "publisher": "NASA Science",
+      "year": 2023,
+      "tier": 2,
+      "covers": "Methane và CO₂ trong khí quyển K2-18 b (hành tinh đi qua đĩa sao)"
+    },
+    {
+      "title": "Pillars of Creation (NIRCam Image)",
+      "url": "https://science.nasa.gov/asset/webb/pillars-of-creation-nircam-image/",
+      "doi": "",
+      "publisher": "NASA Science",
+      "year": 2022,
+      "tier": 2,
+      "covers": "Ảnh hồng ngoại gần của Cột trụ Sáng tạo do Webb chụp"
+    }
+  ],
+  "corrections": [
+    "2026-09-25 · `kinh-james-webb-nhin-nguoc-ve-thuo-vu-tru-so-sinh` (vi + en, cả hai bản đều sai) — \"thiên hà hình thành chỉ 300 triệu năm sau Big Bang, sáng và trưởng thành hơn nhiều mô hình\" → tính đến 09/2026 thiên hà xa nhất được xác nhận là MoM-z14 (z = 14,44, ~280 triệu năm sau Big Bang; NASA Webb Early Universe; Naidu 2026), số thiên hà sáng nhiều hơn >100 lần mô hình TRƯỚC JWST; \"không tên lửa nào chứa nổi gương 6,5 m\" → gương rộng hơn chụp mũi Ariane 5 (~5,4 m), cắt \"căn chỉnh độ chính xác cỡ nanomet\" (không nguồn); CO₂/nước/methane gắn với WASP-39 b/WASP-96 b/K2-18 b; L2 \"Mặt Trời, Trái Đất, Mặt Trăng luôn cùng một phía\" → tấm chắn che cùng lúc cả ba (NASA Webb Orbit); Webb \"thiết kế cho hồng ngoại\" → chủ yếu hồng ngoại, 0,6–28,5 µm; bỏ \"chưa từng có\" ở ảnh Cột trụ Sáng tạo."
+  ],
+  "openQuestions": [
+    "Claim kỷ lục \"thiên hà xa nhất được xác nhận\" có mốc 09/2026 — đặt lịch kiểm lại mỗi 6 tháng (lần tới 03/2027).",
+    "lastVerifiedAt đang null — script áp phải đặt ngày 2026-09-25."
+  ]
+}

@@ -1,0 +1,157 @@
+slug: tai-sao-pluto-khong-con-la-hanh-tinh
+checkedAt: 2026-09-25
+checkedBy: science-editor
+priorFactCheck: REVISE
+verdict: pass
+summary: "Bản vi đã khớp en ở các lỗi en-parity (định nghĩa IAU, hành tinh lùn, 5,9 tỉ km); lượt này đóng mọi fix còn mở của check 17/09 ở CẢ HAI bản và một lỗi mới: núi 3.500 m sai theo NASA (2–3 km). Cắt/sửa các claim không nguồn (1.000 km, 'hàng chục lớp mù', ví dụ Trái Đất ở quỹ đạo Pluto — ngược với tiêu chí Margot 2015, 'danh sách vô hạn định', chi tiết so ảnh, 'ở đúng vùng trời'), Eris không còn gọi là thiên thể vành đai Kuiper, thêm mốc 9/2026, gắn nguồn bậc 1 cho mọi claim. Không còn S1–S3."
+claims:
+  - id: C-0
+    claim: "Tới giữa 2006 sách dạy chín hành tinh; từ 8/2006 là tám; Hệ Mặt Trời không mất thiên thể nào, chỉ định nghĩa thay đổi."
+    verdict: "verified"
+    severity: "none"
+    evidence: "https://iauarchive.eso.org/news/pressreleases/detail/iau0603/ ; https://science.nasa.gov/dwarf-planets/pluto/facts/"
+    note: "IAU 24/8/2006 Praha: 'the Solar System consists of eight planets'; NASA: 'long considered our solar system's ninth planet'."
+  - id: C-1
+    claim: "Pluto đi hết một vòng quanh Mặt Trời trong 248 năm."
+    verdict: "verified"
+    severity: "none"
+    evidence: "https://science.nasa.gov/dwarf-planets/pluto/facts/"
+    note: "'248-year-long, oval-shaped orbit'."
+  - id: C-2
+    claim: "Tombaugh phát hiện Pluto năm 1930 tại đài Lowell, Arizona."
+    verdict: "verified"
+    severity: "S4"
+    evidence: "https://science.nasa.gov/dwarf-planets/ ; https://science.nasa.gov/dwarf-planets/pluto/facts/ ; https://doi.org/10.1126/science.aad1815 (Stern et al. 2015, PubMed 26472913)"
+    note: "Năm và người: NASA. Địa điểm: NASA (tên chuyển tới Lowell Observatory) + địa chỉ Lowell Observatory, Flagstaff, AZ trong Stern 2015. Đã cắt chi tiết so ảnh."
+  - id: C-3
+    claim: "Lowell tin có Hành tinh X gây nhiễu loạn Thiên Vương/Hải Vương; sai lệch không có thật, do khối lượng Sao Hải Vương không chính xác; Pluto rất nhẹ (~1/6 Mặt Trăng); tìm ra là tình cờ."
+    verdict: "verified"
+    severity: "none"
+    evidence: "https://doi.org/10.1086/116575 (Standish 1993, bản quét ADS 1993AJ....105.2000S) ; https://science.nasa.gov/solar-system/planet-x/ ; https://doi.org/10.1086/508861 (Soter 2006, arXiv astro-ph/0608359) ; https://science.nasa.gov/dwarf-planets/pluto/facts/"
+    note: "Standish: 'anomalies … disappear when one properly accounts for the correct value of the mass of Neptune'."
+  - id: C-4
+    claim: "Tên Pluto do Venetia Burney, cô bé 11 tuổi ở Oxford, đề xuất; thần âm phủ La Mã."
+    verdict: "verified"
+    severity: "none"
+    evidence: "https://science.nasa.gov/dwarf-planets/pluto/facts/"
+    note: "NASA: 'named by an 11-year-old girl … Venetia Burney of Oxford, England … Roman god of the underworld'."
+  - id: C-5
+    claim: "Pluto nhỏ hơn Mặt Trăng."
+    verdict: "verified"
+    severity: "none"
+    evidence: "https://nssdc.gsfc.nasa.gov/planetary/factsheet/ ; https://science.nasa.gov/dwarf-planets/pluto/facts/"
+    note: "2.376 km so với 3.475 km."
+  - id: C-6
+    claim: "Quỹ đạo elip, nghiêng 17° so với hoàng đạo."
+    verdict: "verified"
+    severity: "none"
+    evidence: "https://nssdc.gsfc.nasa.gov/planetary/factsheet/plutofact.html ; https://science.nasa.gov/dwarf-planets/pluto/facts/"
+    note: "Inclination 17,14°; e = 0,249."
+  - id: C-7
+    claim: "Khoảng cách 30–49 AU; có đoạn gần Mặt Trời hơn Sao Hải Vương."
+    verdict: "verified"
+    severity: "none"
+    evidence: "https://science.nasa.gov/dwarf-planets/pluto/facts/"
+    note: "30 và 49,3 AU; 1979–1999 gần hơn Sao Hải Vương."
+  - id: C-8
+    claim: "Từ thập niên 1990 phát hiện hàng loạt thiên thể vành đai Kuiper, trải từ quỹ đạo Sao Hải Vương ra ~50 AU; Pluto là một trong số đó."
+    verdict: "verified"
+    severity: "none"
+    evidence: "https://science.nasa.gov/solar-system/kuiper-belt/facts/ ; https://doi.org/10.1086/508861 (Soter 2006, arXiv astro-ph/0608359)"
+    note: "NASA: 30 AU tới ~50 AU; Soter: 'beginning in 1992 … Pluto actually belongs to a vast population'."
+  - id: C-9
+    claim: "Năm 2005 nhóm Mike Brown tìm ra Eris, ở xa ngoài quỹ đạo Sao Hải Vương, nặng hơn Pluto ~27%."
+    verdict: "verified"
+    severity: "none"
+    evidence: "https://science.nasa.gov/dwarf-planets/eris/ ; https://doi.org/10.1126/science.1139415 (Brown & Schaller 2007, PubMed 17569855)"
+    note: "Đã bỏ 'thiên thể vành đai Kuiper'."
+  - id: C-25
+    claim: "Nếu Pluto là hành tinh thì Eris cũng vậy; danh sách có thể thêm hàng chục, thậm chí hơn một trăm."
+    verdict: "verified"
+    severity: "none"
+    evidence: "https://science.nasa.gov/dwarf-planets/"
+    note: "Đã bỏ 'vô hạn định'."
+  - id: C-10
+    claim: "Định nghĩa hành tinh IAU 8/2006 tại Praha, ba điều kiện (dịch sát văn bản)."
+    verdict: "verified"
+    severity: "none"
+    evidence: "https://iauarchive.eso.org/news/pressreleases/detail/iau0603/"
+    note: "Khớp văn bản 5A."
+  - id: C-13
+    claim: "Pluto trượt điều kiện ba với chênh lệch lớn: Margot Π Trái Đất ~800, Pluto ~0,03, ngưỡng 1; Soter 2006."
+    verdict: "verified"
+    severity: "none"
+    evidence: "https://doi.org/10.1088/0004-6256/150/6/185 (Margot 2015, arXiv 1507.06300) ; https://doi.org/10.1086/508861 (Soter 2006, arXiv astro-ph/0608359)"
+    note: "Số từ Bảng 1 Margot 2015."
+  - id: C-11
+    claim: "Hành tinh lùn: (a) quay quanh Mặt Trời, (b) cân bằng thuỷ tĩnh, (c) chưa dọn sạch, (d) không phải vệ tinh."
+    verdict: "verified"
+    severity: "none"
+    evidence: "https://iauarchive.eso.org/news/pressreleases/detail/iau0603/"
+    note: "Khớp văn bản 5A(2)."
+  - id: C-12
+    claim: "Năm hành tinh lùn được IAU công nhận (tính tới 9/2026)."
+    verdict: "verified"
+    severity: "none"
+    evidence: "https://science.nasa.gov/dwarf-planets/"
+    note: "Mốc đã thêm."
+  - id: C-14
+    claim: "Tiêu chí dọn sạch phụ thuộc khoảng cách (Margot 2015); phía phản đối gồm Alan Stern, PI New Horizons (Metzger et al. 2019)."
+    verdict: "verified"
+    severity: "none"
+    evidence: "https://doi.org/10.1088/0004-6256/150/6/185 (Margot 2015, arXiv 1507.06300) ; https://doi.org/10.1016/j.icarus.2018.08.026 (Metzger, Sykes, Stern, Runyon 2019, arXiv 1805.04115) ; https://science.nasa.gov/mission/new-horizons/"
+    note: "Đã cắt ví dụ 'Trái Đất ở quỹ đạo Pluto' — không nguồn, ngược với tiêu chí Margot."
+  - id: C-16
+    claim: "New Horizons bay ngang Pluto ngày 14/7/2015."
+    verdict: "verified"
+    severity: "none"
+    evidence: "https://doi.org/10.1126/science.aad1815 (Stern et al. 2015, PubMed 26472913) ; https://science.nasa.gov/mission/new-horizons/"
+    note: ""
+  - id: C-17
+    claim: "Sputnik Planitia: bồn trũng băng nitơ, ô đa giác 10–40 km do đối lưu, gần như không hố; tuổi theo hố va chạm ≤ ~10 triệu năm."
+    verdict: "verified"
+    severity: "none"
+    evidence: "https://doi.org/10.1038/nature18289 (McKinnon et al. 2016, PubMed 27251279) ; https://doi.org/10.1126/science.aad7055 (Moore et al. 2016, PubMed 26989245)"
+    note: ""
+  - id: C-19
+    claim: "Núi cao tới 2–3 km, là khối băng nước; nhiệt độ trung bình −232 °C."
+    verdict: "verified"
+    severity: "none"
+    evidence: "https://science.nasa.gov/dwarf-planets/pluto/facts/"
+    note: "Đã sửa từ 3.500 m."
+  - id: C-20
+    claim: "Khí quyển mỏng, chủ yếu nitơ, lớp mù rộng từ hydrocarbon."
+    verdict: "verified"
+    severity: "none"
+    evidence: "https://doi.org/10.1126/science.aad8866 (Gladstone et al. 2016, PubMed 26989258) ; https://doi.org/10.1126/science.aad1815 (Stern et al. 2015, PubMed 26472913)"
+    note: "Đã bỏ 'hàng chục lớp'."
+  - id: C-21
+    claim: "Dấu hiệu gợi ý đại dương nước lỏng dưới vỏ băng."
+    verdict: "verified"
+    severity: "none"
+    evidence: "https://science.nasa.gov/dwarf-planets/pluto/facts/"
+    note: "NASA: 'some think there could even be an ocean deep inside'; mức 'gợi ý' giữ đúng."
+  - id: C-22
+    claim: "Năm vệ tinh; tâm khối chung Pluto–Charon nằm ngoài Pluto."
+    verdict: "verified"
+    severity: "none"
+    evidence: "https://science.nasa.gov/dwarf-planets/pluto/facts/ ; https://nssdc.gsfc.nasa.gov/planetary/factsheet/plutofact.html"
+    note: "Tính từ Fact Sheet: 19.596 × 1,586/(13,03+1,586) ≈ 2.130 km > bán kính 1.188 km."
+  - id: C-23
+    claim: "Cách Mặt Trời trung bình ~5,9 tỉ km."
+    verdict: "verified"
+    severity: "none"
+    evidence: "https://science.nasa.gov/dwarf-planets/pluto/facts/"
+    note: ""
+  - id: C-26
+    claim: "Hộp quy ước gọi tên 'Pluto'."
+    verdict: "verified"
+    severity: "none"
+    evidence: "—"
+    note: "Quy ước biên tập, không phải claim khoa học — openQuestions."
+  - id: C-24
+    claim: "Nguồn VACA (bậc 4) và khối ghi công."
+    verdict: "verified"
+    severity: "none"
+    evidence: "—"
+    note: "Không đỡ claim nào. Nguồn bậc 1–2 còn hiệu lực: IAU, NASA Pluto Facts, Stern 2015 + 14 thêm lượt này."

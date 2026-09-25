@@ -1,0 +1,115 @@
+slug: big-bang-vu-tru-da-dien-ra-the-nao-trong-138-ti-nam
+checkedAt: 2026-09-25
+checkedBy: science-editor
+priorFactCheck: REVISE
+verdict: pass
+summary: "Đóng hai S2 (Mặt Trời thành sao lùn trắng sau ~5 chứ không phải 8 tỷ năm; kỷ lục thiên hà xa nhất lỗi thời) và toàn bộ S3 còn mở của check 17/09 ở cả hai bản bằng edits + enEdits cùng claim: 75/25% theo khối lượng + lithi lệch, lạm phát là giả thuyết, sao đầu tiên 150–200 triệu năm (CERN), tuổi vũ trụ có sai số và phụ thuộc ΛCDM, thêm căng thẳng Hubble không chọn bên, thành phần vũ trụ theo Planck 2018, hai mốc xa gắn Adams & Laughlin, 'cái chết nhiệt' thành kịch bản có điều kiện. Gỡ nguồn Andromeda không đỡ claim nào; thêm 13 nguồn, sau sửa có 15 nguồn bậc 1–2. Mọi claim có evidence mở trong lượt này."
+claims:
+  - id: C-0
+    claim: "Summary/SEO: Big Bang không phải vụ nổ trong không gian mà là sự giãn nở của chính không gian; khi thiên hà rời xa nhau, cái giãn ra là không gian giữa chúng."
+    verdict: verified
+    severity: S4
+    evidence: "https://science.nasa.gov/mission/webb/early-universe/ — 'the expansion of the universe means it is the space between objects that actually stretches, causing objects (galaxies) to move away from each other'"
+    note: "Vế 'mọi nơi cùng lúc' là hệ quả trực tiếp của mô tả này; không đổi."
+  - id: C-1
+    claim: "Tuổi vũ trụ khoảng 13,8 tỷ năm (13,797 ± 0,023 theo Planck 2018, suy từ ΛCDM)."
+    verdict: verified
+    severity: none
+    evidence: "https://www.aanda.org/articles/aa/full_html/2020/09/aa33910-18/T2.html — 'Age [Gyr] ... 13.797 ± 0.023' (TT,TE,EE+lowE+lensing)"
+    note: "Thêm sai số và ghi phụ thuộc mô hình, cả hai bản."
+  - id: C-2
+    claim: "Thành phần: năng lượng tối ~68,5%, vật chất tối ~26,4%, vật chất thường ~4,9% (Planck 2018, ΛCDM)."
+    verdict: verified
+    severity: none
+    evidence: "Planck 2018 Bảng 2 — ΩΛ = 0,6847 ± 0,0073; Ωc h² = 0,1200 ± 0,0012; Ωb h² = 0,02237 ± 0,00015; H0 = 67,36 → Ωc = 0,264, Ωb = 0,049"
+    note: "Sửa 27% và câu dẫn đọc như năng lượng tối chiếm cả ba phần."
+  - id: C-3
+    claim: "Căng thẳng Hubble: Planck (ΛCDM) H0 = 67,4 ± 0,5; SH0ES 2022 H0 = 73,0 ± 1,0 km/s/Mpc, lệch ~5σ, nguyên nhân chưa rõ."
+    verdict: verified
+    severity: none
+    evidence: "arXiv:1807.06209 tóm tắt — 'H0 = (67.4 ± 0.5) km/s/Mpc'; https://doi.org/10.3847/2041-8213/ac5c5b (arXiv:2112.04510) — 'H0=73.04+-1.04 ... a 5-sigma difference with H0 predicted by Planck+LCDM ... remains unknown'"
+    note: "Thêm mới ở cả hai bản; trình bày là bất đồng chưa giải quyết."
+  - id: C-4
+    claim: "Bức xạ nền vi sóng là bức xạ nhiệt khoảng 2,7 K."
+    verdict: verified
+    severity: none
+    evidence: "https://doi.org/10.1088/0004-637X/707/2/916 (arXiv:0911.1955) — '2.72548 +/- 0.00057 K'"
+    note: ""
+  - id: C-5
+    claim: "Theo khối lượng, vật chất thường ban đầu ~75% hydro, ~25% heli, chút deuteri và lithi; heli và deuteri khớp quan sát, lithi-7 lệch."
+    verdict: verified
+    severity: none
+    evidence: "https://doi.org/10.1103/RevModPhys.88.015004 (arXiv:1505.01076) — 'the He4 mass fraction, Yp ... ≈ 0.25'; 'Yp = 0.24709 ± 0.00025'; 'Yp = 0.2449 ± 0.0040'; 'li7 predictions continue to disagree with observations, perhaps pointing to new physics'"
+    note: ""
+  - id: C-6
+    claim: "Thiên hà xa đều có dịch chuyển đỏ, cho thấy chúng rời xa nhau."
+    verdict: verified
+    severity: none
+    evidence: "https://home.cern/science/physics/early-universe — 'distances to far-away galaxies were proportional to their redshifts ... distant galaxies were moving away from us'"
+    note: ""
+  - id: C-7
+    claim: "Kỷ nguyên Planck (~10⁻⁴³ s đầu) — vật lý hiện nay chưa mô tả được."
+    verdict: verified
+    severity: S4
+    evidence: "https://physics.nist.gov/cgi-bin/cuu/Value?plkt — thời gian Planck 5,391247 × 10^-44 s (CODATA 2022); CERN — 'the Big Bang theory cannot describe what the conditions were at the very beginning of the universe'"
+    note: "10⁻⁴³ s là bậc độ lớn của thời gian Planck; giữ nguyên."
+  - id: C-8
+    claim: "Lạm phát: giãn nở cực nhanh trong phần nhỏ của giây đầu — giả thuyết, dữ liệu Planck phù hợp với mô hình đơn giản, chưa xác nhận trực tiếp."
+    verdict: verified
+    severity: none
+    evidence: "https://doi.org/10.1051/0004-6361/201833887 (arXiv:1807.06211) — 'In the framework of single-field inflationary models ... slow-roll models ... are increasingly favoured by the data'; chỉ có cận trên r < 0,056"
+    note: "Sửa từ cách viết như sự kiện đã xác lập."
+  - id: C-9
+    claim: "Quark kết hợp thành proton và neutron khi vũ trụ nguội; trong vài phút đầu hình thành hạt nhân hydro, heli, chút lithi; 380.000 năm sau electron bị bắt tạo nguyên tử, ánh sáng truyền tự do tạo bức xạ nền."
+    verdict: verified
+    severity: none
+    evidence: "https://home.cern/science/physics/early-universe — 'A few millionths of a second later, quarks aggregated to produce protons and neutrons. Within minutes, these protons and neutrons combined into nuclei ... It took 380,000 years for electrons to be trapped in orbits around nuclei, forming the first atoms'; Cyburt 2016 (BBN tạo nuclit nhẹ tới li7)"
+    note: ""
+  - id: C-10
+    claim: "Sao đầu tiên hình thành khoảng 150–200 triệu năm sau Big Bang (quan sát hiện nay gợi ý)."
+    verdict: verified
+    severity: none
+    evidence: "https://home.cern/science/physics/early-universe — 'Present observations suggest that the first stars formed ... around 150–200 million years after the Big Bang'"
+    note: "Sửa từ '200 triệu năm' không nguồn, cả hai bản."
+  - id: C-11
+    claim: "Tính đến 09/2026, theo NASA, thiên hà xa nhất xác nhận là MoM-z14 (z = 14,44, 2025, ~280 triệu năm); trước đó JADES-GS-z14-0 (z = 14,32, 5/2024)."
+    verdict: verified
+    severity: none
+    evidence: "https://science.nasa.gov/mission/webb/early-universe/ — 'JADES-GS-z14-0, which was the record holder at a redshift of 14.32 until June of 2025, when MoM-z14 was confirmed ... about 280 million years after the big bang'; s3 NASA 30/05/2024; https://doi.org/10.33232/001c.156033"
+    note: "Sửa S2 lỗi thời; bỏ 'thiên hà đầu tiên ở 300 triệu năm' (tự mâu thuẫn). Kiểm lại 03/2027."
+  - id: C-12
+    claim: "Trước 1998 nhiều nhà khoa học cho rằng hấp dẫn làm giãn nở chậm dần; năm 1998 hai nhóm độc lập quan sát siêu tân tinh Ia cho thấy giãn nở tăng tốc."
+    verdict: verified
+    severity: none
+    evidence: "https://doi.org/10.1086/300499 — 'a current acceleration of the expansion (i.e., q_0 < 0)'; https://doi.org/10.1086/307221 (Perlmutter 1999); CERN — 'In 1998 two teams of astronomers working independently ... Physicists had assumed that matter in the universe would slow its rate of expansion'"
+    note: ""
+  - id: C-13
+    claim: "Năng lượng tối là tên cho thành phần chưa rõ bản chất gây giãn nở tăng tốc."
+    verdict: verified
+    severity: none
+    evidence: "https://science.nasa.gov/dark-energy/ — 'But what exactly is dark energy? The short answer is: We don't know'"
+    note: ""
+  - id: C-14
+    claim: "Khoảng 5 tỷ năm nữa Mặt Trời thành sao lùn trắng."
+    verdict: verified
+    severity: none
+    evidence: "https://science.nasa.gov/sun/facts/ — 'will last another 5 billion years or so before it becomes a white dwarf'"
+    note: "Sửa S2 (8 tỷ năm) ở vi; đưa dòng này lại vào en."
+  - id: C-15
+    claim: "Theo Adams & Laughlin (1997), ~100 nghìn tỷ năm nữa sao cuối cùng tắt; ~10¹⁰⁰ năm lỗ đen cuối cùng bốc hơi; phụ thuộc giả định."
+    verdict: verified
+    severity: none
+    evidence: "https://doi.org/10.1103/RevModPhys.69.337 (toàn văn arXiv:astro-ph/9701131) — sao tồn tại trong '5.5 < η < 14' (t = 10^η năm); 'The Black Hole Era. 38 < η < 100 ... black holes ... actively evaporating during this era'"
+    note: ""
+  - id: C-16
+    claim: "Sau các mốc đó vũ trụ có thể lạnh, loãng, gần như hết năng lượng hữu ích ('cái chết nhiệt'); kết cục phụ thuộc bản chất năng lượng tối, chưa biết."
+    verdict: verified
+    severity: none
+    evidence: "Adams & Laughlin 1997 §D — 'After that time, however, it remains possible in principle for the universe to become nearly adiabatic and hence dull and lifeless'; NASA Dark Energy — 'We don't know'"
+    note: "Hạ từ 'kịch bản được ủng hộ nhiều nhất hiện nay'."
+  - id: C-17
+    claim: "Điểm mạnh của mô hình: tiên đoán định lượng (bức xạ nền phổ nhiệt, heli, deuteri nguyên thủy) khớp đo đạc; lithi còn lệch."
+    verdict: verified
+    severity: none
+    evidence: "Fixsen 2009; Cyburt 2016 (xem C-4, C-5)"
+    note: "Bỏ câu lịch sử giản lược 'đi tìm thì thấy'."

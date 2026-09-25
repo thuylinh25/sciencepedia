@@ -1,0 +1,97 @@
+slug: neu-roi-he-mat-troi-proxima-centauri-se-la-diem-dung-dau-tien
+checkedAt: 2026-09-25
+checkedBy: science-editor
+priorFactCheck: REVISE
+verdict: pass
+summary: "Sau lượt sửa, mọi lỗi mở của check 17/09 và openQuestions en-parity đã đóng ở cả hai bản: Proxima d về đúng Faria 2022 (khối lượng tối thiểu 0,26; ~360 K với albedo 0,3; bỏ câu khí quyển), b 'có thể là đá', c 'tín hiệu 2020 chưa xác nhận', Starshot ~15% c bay ngang, thời gian bay có giả định, New Horizons bị cắt, sao lùn đỏ theo NASA Star Types. Mọi claim có evidence đã mở trong lượt này; bảng nguồn sau sửa có 11 nguồn bậc 1–2. Còn một S4 (tiêu đề 'điểm dừng') để người quyết."
+claims:
+  - id: C-1
+    claim: "Summary: hệ Alpha Centauri là hệ sao gần Hệ Mặt Trời nhất, cách khoảng 4,37 năm ánh sáng."
+    verdict: verified
+    severity: none
+    evidence: "https://doi.org/10.1051/0004-6361/201629201 — Kervella 2016, mục 1: 'The triple star α Centauri ... is our closest stellar neighbor ... d = 1.338 ± 0.001 pc (π = 747.17 ± 0.61 mas)' → 1/0,74717 = 1,3384 pc × 3,2616 = 4,365 năm ánh sáng ≈ 4,37"
+    note: "Mở PDF arXiv:1610.06079 lượt này."
+  - id: C-2
+    claim: "Summary: hệ gồm ba sao A, B và C (Proxima); Proxima ở quỹ đạo ngoài cùng."
+    verdict: verified
+    severity: none
+    evidence: "https://doi.org/10.1051/0004-6361/201629930 — Kervella 2017: 'Proxima and Alpha Cen are gravitationally bound with a high degree of confidence. The orbital period of Proxima is approximately 550 000 years ... currently close to apastron (13.0 kau)'"
+    note: "Cặp A–B có bán trục biểu kiến 17,6″ (Kervella 2016), Proxima quay quanh cả cặp ở hàng nghìn AU — 'ngoài cùng' đúng."
+  - id: C-3
+    claim: "Summary: Proxima là sao lùn đỏ, ngôi sao gần nhất ngoài Mặt Trời, cách khoảng 4,25 năm ánh sáng."
+    verdict: verified
+    severity: none
+    evidence: "https://www.eso.org/public/news/eso1629/ — 'the closest star to Earth apart from the Sun'; SIMBAD Proxima Centauri — thị sai 768,0665 ± 0,0499 mas (Gaia EDR3), loại phổ M5.5Ve → 1,3020 pc = 4,2465 năm ánh sáng"
+    note: "Sửa lượt này: 'ngôi sao gần Trái Đất nhất' → 'gần nhất ngoài Mặt Trời' (summary vi; summaryEn đã đúng)."
+  - id: C-4
+    claim: "Sao lùn đỏ là loại sao phổ biến nhất, chiếm khoảng 75% số sao Ngân Hà."
+    verdict: verified
+    severity: none
+    evidence: "https://science.nasa.gov/universe/stars/types/ — 'red dwarfs make up around 75% of the Milky Way galaxy’s stellar population'"
+    note: "Sửa lượt này từ dải 70–75% không nguồn, cả hai bản."
+  - id: C-5
+    claim: "So với Mặt Trời, sao lùn đỏ nhỏ hơn về khối lượng, lạnh hơn, mờ hơn; đốt hydro trong hàng nghìn tỷ năm, một số được cho là sống tới ~14 nghìn tỷ năm."
+    verdict: verified
+    severity: none
+    evidence: "https://science.nasa.gov/universe/stars/types/ — 'just a fraction of the Sun’s size and mass. They’re also the coolest'; 'too faint to see with the unaided eye'; 'over trillions of years'; 'Scientists think some low-mass red dwarfs ... up to about 14 trillion years'"
+    note: "Sửa lượt này: bỏ đầu dưới 'hàng trăm tỷ năm' không nguồn, cả hai bản."
+  - id: C-6
+    claim: "Vùng có nước lỏng nằm rất gần sao; hành tinh dễ bị khoá thuỷ triều; bùng phát UV/tia X có thể ảnh hưởng mạnh tới bề mặt, khí quyển có thể đang bốc hơi dần."
+    verdict: verified
+    severity: none
+    evidence: "https://www.eso.org/public/news/eso1629/ — 'Proxima b orbits much closer to its star than Mercury does to the Sun ... the star itself is far fainter than the Sun. As a result Proxima b lies well within the habitable zone'; 'gravitational forces probably lock the same side of the planet in perpetual daylight'; 'may be strongly affected by the ultraviolet and X-ray flares'; 'The planet's atmosphere might also slowly be evaporating'"
+    note: "Câu bùng phát viết lại lượt này theo nguồn, cả hai bản."
+  - id: C-7
+    claim: "Theo ESO, Proxima b có thể là nơi gần nhất ngoài Hệ Mặt Trời có khả năng có sự sống."
+    verdict: verified
+    severity: none
+    evidence: "https://www.eso.org/public/news/eso1629/ — 'it may also be the closest possible abode for life outside the Solar System'"
+    note: "Thay nhận định 'một trong những ứng viên đáng chú ý nhất' không nguồn, cả hai bản."
+  - id: C-8
+    claim: "Khoảng cách tới Proxima khoảng 40 nghìn tỷ km."
+    verdict: verified
+    severity: none
+    evidence: "SIMBAD (Gaia EDR3) 4,2465 năm ánh sáng × 9,4607×10^12 km = 4,02×10^13 km"
+    note: "Phép tính."
+  - id: C-9
+    claim: "Quy đổi với giả định giữ nguyên tốc độ, bay thẳng: Voyager 1 (~17 km/s) khoảng 75.000 năm; Voyager 1 thực tế bay về phía chòm Xà Phu."
+    verdict: verified
+    severity: none
+    evidence: "https://science.nasa.gov/mission/voyager/voyager-1/ — '38,026.79 mph (17.0 km/second) relative to the Sun' → 4,02×10^13 km / 17 km/s = 2,36×10^12 s ≈ 74.900 năm; https://science.nasa.gov/mission/voyager/frequently-asked-questions/ — 'Voyager 1 will leave the solar system aiming toward the constellation Ophiuchus'"
+    note: "Giả định thêm vào vi lượt này (en đã có); New Horizons 90.000 năm bị cắt ở cả hai bản vì không mở được vận tốc hiện tại trên trang NASA."
+  - id: C-10
+    claim: "Parker Solar Probe khoảng 6.600 năm — chỉ là quy đổi từ tốc độ kỷ lục tại cận nhật; tàu ở quỹ đạo đóng, không rời Hệ Mặt Trời."
+    verdict: verified
+    severity: none
+    evidence: "https://science.nasa.gov/science-research/heliophysics/nasas-parker-solar-probe-makes-history-with-closest-pass-to-sun/ — '430,000 miles per hour' (24/12/2024) = 192,2 km/s → 4,02×10^13 / 192,2 = 2,09×10^11 s ≈ 6.620 năm"
+    note: "Sửa 6.700 → 6.600 ở cả hai bản. Vế quỹ đạo đóng giữ từ đính chính 11/09."
+  - id: C-11
+    claim: "Breakthrough Starshot đề xuất tàu siêu nhẹ gắn buồm ánh sáng, đẩy bằng laser mặt đất, tới khoảng 15% c, bay ngang hệ Alpha Centauri sau hơn 20 năm."
+    verdict: verified
+    severity: none
+    evidence: "https://breakthroughinitiatives.org/initiative/3 — 'ground-based light beamer pushing ultra-light nanocrafts ... attached to lightsails – to speeds of up to 100 million miles an hour ... a flyby mission to reach Alpha Centauri in just over 20 years from launch' (100 triệu dặm/giờ ≈ 44.700 km/s ≈ 14,9% c)"
+    note: "Nguồn bậc 3, chỉ dùng mô tả mục tiêu của dự án — không phải claim khoa học. Sửa từ 20% c/'tới Proxima trong 20 năm'."
+  - id: C-12
+    claim: "Tính đến 2025: Proxima b có khối lượng tối thiểu khoảng một Trái Đất, trong vùng sinh sống, có thể là đá nhưng chưa đo kích thước/thành phần."
+    verdict: verified
+    severity: none
+    evidence: "https://doi.org/10.1051/0004-6361/202553728 (arXiv:2507.21751) — 'minimum masses of 1.055 ± 0.055 Me'; https://science.nasa.gov/exoplanet-catalog/proxima-centauri-b/ — 'Discovery Method: Radial Velocity'; ESO eso1629 — 'well within the habitable zone'"
+    note: "Sửa từ 'hành tinh đá' (vi)."
+  - id: C-13
+    claim: "Proxima c: tín hiệu đề xuất năm 2020, chưa được xác nhận; dữ liệu NIRPS 2025 không cho kết luận."
+    verdict: verified
+    severity: none
+    evidence: "https://doi.org/10.1126/sciadv.aax7467 — Damasso và cs. 2020, 'A low-mass planet candidate ...'; arXiv:2507.21751 — 'inconclusive evidence of the signal attributed to Proxima c (P = 1900 d)'"
+    note: "Bỏ vế 'không nằm trong danh mục NASA' chưa kiểm được."
+  - id: C-14
+    claim: "Proxima d: khối lượng tối thiểu ~0,26 Trái Đất, chu kỳ 5,1 ngày, gần sao hơn mép trong vùng sinh sống, nhiệt độ cân bằng có thể tới ~360 K (albedo Bond 0,3)."
+    verdict: verified
+    severity: none
+    evidence: "https://www.aanda.org/articles/aa/full_html/2022/02/aa42337-21/aa42337-21.html — 'minimum mass of 0.26 ± 0.05 M⊕'; 'orbits closer to the star (at 0.02885 au) than to the inner edge of the HZ'; 'Its equilibrium temperature may reach 360 K, assuming a Bond albedo of 0.3'; https://science.nasa.gov/exoplanet-catalog/proxima-centauri-d/ — 'Orbital Period: 5.1 days'"
+    note: "Sửa 282 K (S2) và cắt câu 'khó giữ khí quyển' (nhân quả tự thêm)."
+  - id: C-15
+    claim: "Câu kết: Proxima, sao gần nhất ngoài Mặt Trời, là ứng viên hiển nhiên cho điểm đến đầu tiên."
+    verdict: verified
+    severity: S4
+    evidence: "https://www.eso.org/public/news/eso1629/"
+    note: "Hạ từ 'gần như chắc chắn'. Tiêu đề 'điểm dừng đầu tiên' vẫn mang hàm ý dừng lại, trong khi thân bài nói rõ Starshot là bay ngang — S4, để người quyết vì kéo theo slug/SEO."

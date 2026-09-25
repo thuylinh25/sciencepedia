@@ -1,0 +1,176 @@
+{
+  "slug": "thien-ha-dinh-nghia-va-cach-phan-loai",
+  "edits": [
+    {
+      "claimId": "C-4",
+      "severity": "S3",
+      "find": "- Thường có lỗ đen siêu khối lượng ở vùng trung tâm.",
+      "replace": "- Hầu hết thiên hà lớn có lỗ đen siêu khối lượng ở trung tâm.",
+      "why": "Nguồn giới hạn ở thiên hà LỚN; \"thường\" áp cho mọi thiên hà là nới phạm vi.",
+      "evidence": "https://science.nasa.gov/universe/galaxies/ — \"Most large galaxies have supermassive black holes at their centers\""
+    },
+    {
+      "claimId": "C-7",
+      "severity": "S3",
+      "find": "- Một đĩa sao quay quanh tâm.\n- Các nhánh xoắn chứa nhiều khí và bụi.\n- Nơi diễn ra quá trình hình thành sao mạnh mẽ.",
+      "replace": "- Một đĩa sao quay quanh tâm, cùng một vùng lồi trung tâm.\n- Các nhánh xoắn giàu khí và bụi, nơi những ngôi sao trẻ nhất hình thành.",
+      "why": "\"Hình thành sao mạnh mẽ\" không có nguồn; phần phân loại chỉ có nguồn bậc 4 (VACA) — gắn NASA Galaxy Types và viết theo nguồn.",
+      "evidence": "https://science.nasa.gov/universe/galaxies/types/ — \"a pancake-like disk of stars and a central bulge\"; \"The youngest stars form in gas-rich arms\""
+    },
+    {
+      "claimId": "C-8",
+      "severity": "S4",
+      "find": "Ngân Hà thuộc nhóm **xoắn ốc có thanh chắn** (*barred spiral galaxy*).",
+      "replace": "Ngân Hà thuộc nhóm **xoắn ốc có thanh chắn** (*barred spiral galaxy*), cùng với Andromeda; theo NASA, loại này chiếm khoảng hai phần ba số thiên hà xoắn ốc.",
+      "why": "Gắn claim vào nguồn bậc 2 thay cho VACA.",
+      "evidence": "https://science.nasa.gov/universe/galaxies/types/ — \"Both the Milky Way and the Andromeda galaxies belong to a subtype known as barred spirals, which make up two-thirds of the group\""
+    },
+    {
+      "claimId": "C-10",
+      "severity": "S3",
+      "find": "Nhiều thiên hà elip được cho là kết quả của các vụ sáp nhập giữa các thiên hà lớn.",
+      "replace": "Các nhà khoa học cho rằng thiên hà elip hình thành từ những vụ va chạm và sáp nhập giữa các thiên hà xoắn ốc.",
+      "why": "Viết theo nguồn bậc 2.",
+      "evidence": "https://science.nasa.gov/universe/galaxies/types/ — \"Unlike spirals, elliptical galaxies usually contain little gas and dust ... generally older ... Scientists think elliptical galaxies originate from collisions and mergers with spirals\""
+    },
+    {
+      "claimId": "C-11",
+      "severity": "S3",
+      "find": "- Có đĩa sao rõ ràng.\n- Gần như không còn nhánh xoắn.\n- Ít khí và bụi nên tốc độ hình thành sao thấp.",
+      "replace": "- Có vùng lồi trung tâm và đĩa sao như thiên hà xoắn ốc.\n- Không có nhánh xoắn.\n- Như thiên hà elip, chủ yếu gồm sao già và rất ít sao mới đang hình thành.",
+      "why": "Quan hệ nhân quả \"ít khí nên tạo sao thấp\" không có trong nguồn; viết theo NASA.",
+      "evidence": "https://science.nasa.gov/universe/galaxies/types/ — \"They have the central bulge and disk common to spiral galaxies but no arms. But like ellipticals, lenticular galaxies have older stellar populations and little ongoing star formation\""
+    },
+    {
+      "claimId": "C-12",
+      "severity": "S3",
+      "find": "Nguyên nhân thường do:\n\n- Va chạm thiên hà.\n- Tác động hấp dẫn từ các thiên hà lân cận.\n\nHai ví dụ nổi tiếng là **Mây Magellan Lớn** và **Mây Magellan Nhỏ**, những thiên hà vệ tinh của Ngân Hà.",
+      "replace": "Các nhà thiên văn cho rằng hình dạng này đôi khi là kết quả của:\n\n- Va chạm thiên hà.\n- Tác động hấp dẫn từ các thiên hà lân cận.\n\nMột ví dụ gần là **Mây Magellan Nhỏ**, được xếp là thiên hà lùn không định hình. **Mây Magellan Lớn** cũng hay được gọi là không định hình, nhưng trong hệ phân loại chi tiết nó được xếp là xoắn ốc kiểu Magellan có thanh chắn (SB(s)m). Cả hai đang chuyển động trên quỹ đạo quanh Ngân Hà.",
+      "why": "\"Thường do\" nâng mức so với nguồn (\"sometimes\"). Đóng câu hỏi mở từ 17/09: SIMBAD xếp LMC là SB(s)m, SMC là dIrr — không được gọi LMC là thiên hà không định hình như điều đã chốt.",
+      "evidence": "https://science.nasa.gov/universe/galaxies/types/ — \"Astronomers think these galaxies’ odd shapes are sometimes the result of interactions with others\"; SIMBAD LMC — \"Morphological type: SB(s)m\"; SIMBAD SMC — \"Morphological type: dIrr\"; https://doi.org/10.1088/0004-637X/764/2/161 (Kallivayalil và cs. 2013) — \"Orbit calculations for the Clouds around the Milky Way allow a range of orbital periods\""
+    },
+    {
+      "claimId": "C-13",
+      "severity": "S4",
+      "find": "Hình dạng hiện tại của một thiên hà phản ánh lịch sử của nó:",
+      "replace": "Hình dạng hiện tại của một thiên hà mang dấu vết lịch sử của nó, chẳng hạn:",
+      "why": "Hình dạng không cho đếm được \"bao nhiêu\" va chạm; hạ về mức nguồn đỡ (các cơ chế hình thành elip/thấu kính/không định hình trên NASA Galaxy Types).",
+      "evidence": "https://science.nasa.gov/universe/galaxies/types/"
+    },
+    {
+      "claimId": "C-14",
+      "severity": "S3",
+      "find": "hai nhóm nghiên cứu gần đây đọc cùng số liệu theo hai chiều ngược nhau:",
+      "replace": "hai nhóm nghiên cứu gần đây dùng cùng một khung mô hình nhưng số liệu đo khác nhau, và đi tới hai kết luận khác nhau:",
+      "why": "Wu và cs. dùng số liệu chuyển động riêng Gaia MỚI HƠN, đã hiệu chỉnh sai số hệ thống — không phải \"cùng số liệu\".",
+      "evidence": "https://doi.org/10.3847/2041-8213/ae5799 (Wu và cs. 2026; arXiv:2603.22863) — \"Adopting their semi-analytic framework, we revisit this problem with the latest and most precise Gaia-based PMs for M31 and M33, corrected for systematic offsets\""
+    }
+  ],
+  "enEdits": [
+    {
+      "claimId": "C-4",
+      "severity": "S3",
+      "find": "- Often a supermassive black hole at the center.",
+      "replace": "- Most large galaxies have a supermassive black hole at the center.",
+      "why": "Như edits C-4.",
+      "evidence": "https://science.nasa.gov/universe/galaxies/"
+    },
+    {
+      "claimId": "C-7",
+      "severity": "S3",
+      "find": "- A disk of stars rotating around the center.\n- Spiral arms rich in gas and dust.\n- Sites of vigorous star formation.",
+      "replace": "- A disk of stars rotating around the center, with a central bulge.\n- Spiral arms rich in gas and dust, where the youngest stars form.",
+      "why": "Như edits C-7.",
+      "evidence": "https://science.nasa.gov/universe/galaxies/types/"
+    },
+    {
+      "claimId": "C-8",
+      "severity": "S4",
+      "find": "The Milky Way belongs to the **barred spiral** group.",
+      "replace": "The Milky Way belongs to the **barred spiral** group, as does Andromeda; according to NASA, barred spirals make up about two-thirds of spiral galaxies.",
+      "why": "Như edits C-8.",
+      "evidence": "https://science.nasa.gov/universe/galaxies/types/"
+    },
+    {
+      "claimId": "C-10",
+      "severity": "S3",
+      "find": "Many elliptical galaxies are thought to be the result of mergers between large galaxies.",
+      "replace": "Scientists think elliptical galaxies originate from collisions and mergers of spiral galaxies.",
+      "why": "Như edits C-10.",
+      "evidence": "https://science.nasa.gov/universe/galaxies/types/"
+    },
+    {
+      "claimId": "C-11",
+      "severity": "S3",
+      "find": "- A distinct stellar disk.\n- Almost no spiral arms.\n- Little gas and dust, so a low rate of star formation.",
+      "replace": "- A central bulge and stellar disk like a spiral galaxy.\n- No spiral arms.\n- Like ellipticals, mostly old stars and very little ongoing star formation.",
+      "why": "Như edits C-11.",
+      "evidence": "https://science.nasa.gov/universe/galaxies/types/"
+    },
+    {
+      "claimId": "C-12",
+      "severity": "S3",
+      "find": "The usual causes:\n\n- Galaxy collisions.\n- Gravitational influence from neighboring galaxies.\n\nTwo well-known examples are the **Large Magellanic Cloud** and the **Small Magellanic Cloud**, satellite galaxies of the Milky Way.",
+      "replace": "Astronomers think these shapes are sometimes the result of:\n\n- Galaxy collisions.\n- Gravitational influence from neighboring galaxies.\n\nA nearby example is the **Small Magellanic Cloud**, classified as a dwarf irregular galaxy. The **Large Magellanic Cloud** is also often called irregular, but in detailed classification it is a barred Magellanic spiral (SB(s)m). Both are moving on orbits around the Milky Way.",
+      "why": "Như edits C-12.",
+      "evidence": "https://science.nasa.gov/universe/galaxies/types/ ; SIMBAD LMC/SMC ; https://doi.org/10.1088/0004-637X/764/2/161"
+    },
+    {
+      "claimId": "C-13",
+      "severity": "S4",
+      "find": "A galaxy's current shape reflects its history:",
+      "replace": "A galaxy's current shape carries traces of its history, for example:",
+      "why": "Như edits C-13.",
+      "evidence": "https://science.nasa.gov/universe/galaxies/types/"
+    },
+    {
+      "claimId": "C-14",
+      "severity": "S3",
+      "find": "two recent research groups read the same kind of data in opposite directions:",
+      "replace": "two recent research groups used the same modeling framework but different measurements, and reached different conclusions:",
+      "why": "Như edits C-14.",
+      "evidence": "https://doi.org/10.3847/2041-8213/ae5799 (Wu và cs. 2026; arXiv:2603.22863)"
+    }
+  ],
+  "addSources": [
+    {
+      "title": "Galaxy Types",
+      "url": "https://science.nasa.gov/universe/galaxies/types/",
+      "doi": "",
+      "publisher": "NASA Science",
+      "tier": 2,
+      "covers": "Đặc điểm và giả thuyết hình thành của thiên hà xoắn ốc (có thanh chắn ~2/3), elip, thấu kính, không định hình; quầng vật chất tối quanh thiên hà xoắn ốc"
+    },
+    {
+      "title": "SIMBAD: Large Magellanic Cloud",
+      "url": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=LMC",
+      "doi": "",
+      "publisher": "CDS, Université de Strasbourg",
+      "tier": 2,
+      "covers": "Kiểu hình thái LMC: SB(s)m"
+    },
+    {
+      "title": "SIMBAD: Small Magellanic Cloud",
+      "url": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=SMC",
+      "doi": "",
+      "publisher": "CDS, Université de Strasbourg",
+      "tier": 2,
+      "covers": "Kiểu hình thái SMC: dIrr"
+    },
+    {
+      "title": "Third-Epoch Magellanic Cloud Proper Motions. I. Hubble Space Telescope/WFC3 Data and Orbit Implications",
+      "url": "https://doi.org/10.1088/0004-637X/764/2/161",
+      "doi": "10.1088/0004-637X/764/2/161",
+      "publisher": "The Astrophysical Journal (Kallivayalil et al.)",
+      "year": 2013,
+      "tier": 1,
+      "covers": "Quỹ đạo của hai Mây Magellan quanh Ngân Hà"
+    }
+  ],
+  "corrections": [
+    "2026-09-25 · `thien-ha-dinh-nghia-va-cach-phan-loai` (vi + en) — Mây Magellan Lớn không còn được gọi thẳng là thiên hà không định hình: SMC là dIrr, LMC là xoắn ốc kiểu Magellan có thanh chắn SB(s)m (SIMBAD), cả hai quay quanh Ngân Hà (Kallivayalil 2013); \"hai nhóm đọc cùng số liệu\" → cùng khung mô hình, số liệu khác (Wu 2026 dùng chuyển động riêng Gaia mới, đã hiệu chỉnh); lỗ đen siêu khối lượng \"thường có\" → hầu hết thiên hà lớn; phần phân loại chuyển sang nguồn NASA Galaxy Types: bỏ \"hình thành sao mạnh mẽ\", elip từ sáp nhập các thiên hà xoắn ốc, thấu kính không có nhánh và bỏ nhân quả \"ít khí nên tạo sao thấp\", hình dạng không định hình \"thường do\" → \"đôi khi do\"."
+  ],
+  "openQuestions": [
+    "Nguồn s1 (thienvanvietnam.org, bậc 4) nay không còn là chỗ dựa duy nhất cho claim nào; giữ làm tham khảo tiếng Việt."
+  ]
+}

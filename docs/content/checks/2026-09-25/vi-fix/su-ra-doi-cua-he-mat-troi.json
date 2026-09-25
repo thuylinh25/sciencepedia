@@ -1,0 +1,288 @@
+{
+  "slug": "su-ra-doi-cua-he-mat-troi",
+  "edits": [
+    {
+      "claimId": "C-2",
+      "severity": "S3",
+      "find": "3. Vì sao Mặt Trời chứa **99,86% khối lượng** của cả hệ nhưng chỉ giữ khoảng **1% [[động lượng góc]]**",
+      "replace": "3. Vì sao Mặt Trời chứa **hơn 99% khối lượng** của cả hệ nhưng chỉ giữ một phần rất nhỏ **[[động lượng góc]]** của hệ",
+      "why": "NASA chỉ viết Mặt Trời gom 'more than 99% of the available matter'; 99,86% và 'khoảng 1%' không có nguồn bậc 1–2. Tính lại từ NASA Sun Fact Sheet (I/MR² = 0,070, chu kỳ 609,12 h) và Planetary Fact Sheet (khối lượng, bán trục, vận tốc quỹ đạo): Mặt Trời ~0,6% động lượng góc (xấp xỉ quay đều) — đỡ 'một phần rất nhỏ', khớp bản en.",
+      "evidence": "https://science.nasa.gov/solar-system/solar-system-facts/ ; https://nssdc.gsfc.nasa.gov/planetary/factsheet/ ; https://nssdc.gsfc.nasa.gov/planetary/factsheet/sunfact.html"
+    },
+    {
+      "claimId": "C-6",
+      "severity": "S3",
+      "find": "Ngày nay, các kính thiên văn như ALMA và James Webb đã quan sát được nhiều đĩa tiền hành tinh tương tự quanh các ngôi sao trẻ.",
+      "replace": "Ngày nay có thể quan sát những đĩa như vậy quanh các ngôi sao trẻ khác. Chẳng hạn, ALMA đã chụp chi tiết đĩa quanh ngôi sao trẻ HL Tau, cho thấy một chuỗi vành sáng và tối có thể liên quan tới quá trình hình thành hành tinh.",
+      "why": "James Webb không có nguồn. ALMA Partnership 2015 (nguồn s3): 'a pattern of bright and dark rings', 'Additional clues that the rings arise from planet formation' — giữ mức 'có thể'. Khớp bản en.",
+      "evidence": "https://doi.org/10.1088/2041-8205/808/1/L3 (arXiv 1503.02649)"
+    },
+    {
+      "claimId": "C-8",
+      "severity": "S4",
+      "find": "Các hành tinh không tách ra từ những \"vành vật chất\" như các mô hình cổ điển từng đề xuất.\n\nThay vào đó:",
+      "replace": "Theo mô hình hiện nay, các hành tinh lớn lên dần qua nhiều bước:",
+      "why": "Câu về 'mô hình cổ điển' không có nguồn ở cả hai bản (check 09-17 C-8). Cắt ở cả vi và en; giữ phần mô tả bồi tụ đã có nguồn.",
+      "evidence": "https://doi.org/10.2458/azu_uapress_9780816531240-ch024 (Johansen et al. 2014, arXiv 1402.1344)"
+    },
+    {
+      "claimId": "C-7",
+      "severity": "S3",
+      "find": "4. Sau hàng triệu năm tạo nên các hành tinh.",
+      "replace": "4. Lặp lại theo thời gian, quá trình này dựng nên các hành tinh.",
+      "why": "Thang 'hàng triệu năm' không nguồn và mất thông tin (check 09-17 C-7). Đưa về đúng câu của bản en.",
+      "evidence": "https://science.nasa.gov/solar-system/solar-system-facts/"
+    },
+    {
+      "claimId": "C-9",
+      "severity": "S3",
+      "find": "Câu trả lời nằm ở **đường tuyết (snow line)**.",
+      "replace": "Câu trả lời nằm ở **đường tuyết (snow line)** — chính xác hơn là đường tuyết của nước. Mỗi loại băng có đường tuyết riêng; những chất dễ bay hơi hơn, như carbon monoxide, chỉ đóng băng ở xa Mặt Trời hơn nhiều.",
+      "why": "Gộp nước, amoniac, methane chung một đường tuyết là đơn giản hoá mất thông tin. Pfalzner et al. 2015: 'the CO snowline at ∼20K and the H2O one at ∼150K'. Dùng CO (có nguồn) thay cho amoniac/methane (chưa có nguồn). Sửa cả en.",
+      "evidence": "https://doi.org/10.1088/0031-8949/90/6/068001 (Pfalzner et al. 2015, arXiv 1501.03101)"
+    },
+    {
+      "claimId": "C-9",
+      "severity": "S3",
+      "find": "Nhiệt độ quá cao nên:\n\n- Nước đá.\n- Amoniac.\n- Methane.\n\nkhông thể ngưng tụ.",
+      "replace": "Quá nóng để nước đá ngưng tụ, càng không thể với các loại băng dễ bay hơi hơn.",
+      "why": "Cùng lý do trên; đồng bộ với en.",
+      "evidence": "https://doi.org/10.1088/0031-8949/90/6/068001 (Pfalzner et al. 2015, arXiv 1501.03101)"
+    },
+    {
+      "claimId": "C-10",
+      "severity": "S3",
+      "find": "Lượng vật liệu rắn tăng mạnh giúp các lõi hành tinh phát triển nhanh và đủ lớn để hút lượng khí khổng lồ từ đĩa tiền hành tinh.",
+      "replace": "Theo mô hình chủ đạo, gọi là **bồi tụ lõi (core accretion)**, lượng vật liệu rắn lớn hơn nhiều giúp các lõi hành tinh lớn nhanh và đủ nặng để hút lượng khí khổng lồ từ đĩa tiền hành tinh.",
+      "why": "Viết như sự thật đã chốt. Pfalzner 2015: 'In the core accretion scenario giant planets form as gas from the protoplanetary disc collapses onto a core'; Johansen 2014: giant planets 'forming by core accretion'. Gọi tên mô hình, khớp en.",
+      "evidence": "https://doi.org/10.1088/0031-8949/90/6/068001 (Pfalzner et al. 2015, arXiv 1501.03101) ; https://doi.org/10.2458/azu_uapress_9780816531240-ch024 (Johansen et al. 2014, arXiv 1402.1344)"
+    },
+    {
+      "claimId": "C-17",
+      "severity": "S4",
+      "find": "- Sao Thủy.",
+      "replace": "- Sao Thuỷ.",
+      "why": "Thống nhất chính tả tên hành tinh với chuyên mục (check 09-17 C-17).",
+      "evidence": "—"
+    },
+    {
+      "claimId": "C-17",
+      "severity": "S4",
+      "find": "- Sao Hỏa.",
+      "replace": "- Sao Hoả.",
+      "why": "Thống nhất chính tả tên hành tinh với chuyên mục (check 09-17 C-17).",
+      "evidence": "—"
+    },
+    {
+      "claimId": "C-3",
+      "severity": "S3",
+      "find": "- Nhưng phần lớn động lượng góc lại nằm ở các hành tinh, đặc biệt là Sao Mộc.",
+      "replace": "- Nhưng phần lớn động lượng góc lại nằm ở các hành tinh.",
+      "why": "Bản en đã bỏ 'đặc biệt là Sao Mộc'. Vế 'phần lớn ở các hành tinh' được đỡ bằng phép tính từ Fact Sheet (hành tinh ~99,4%).",
+      "evidence": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/ ; https://nssdc.gsfc.nasa.gov/planetary/factsheet/sunfact.html"
+    },
+    {
+      "claimId": "C-11",
+      "severity": "S2",
+      "find": "Mô hình hiện nay giải thích bằng ba cơ chế:",
+      "replace": "Các nhà nghiên cứu đã đề xuất những cơ chế lấy bớt động lượng góc khỏi Mặt Trời trẻ, làm nó quay chậm lại. Hai cơ chế chính:",
+      "why": "Di cư hành tinh không lấy động lượng góc khỏi Mặt Trời (check 09-17 C-11, S2) và 'mô hình hiện nay giải thích' nâng mức chắc chắn. Bouvier et al. 2014 (review PPVI) đặt bài toán quay chậm của sao trẻ vào 'the physics of the star-disk interaction' và 'stellar winds', đồng thời nêu 'a number of critical open issues remain'. Khớp en.",
+      "evidence": "https://doi.org/10.2458/azu_uapress_9780816531240-ch019 (Bouvier et al. 2014, arXiv 1309.7851)"
+    },
+    {
+      "claimId": "C-12",
+      "severity": "S2",
+      "find": "### Sự di cư của hành tinh\n\nCác hành tinh không hình thành đúng vị trí hiện nay.\n\nTrong giai đoạn đầu:\n\n- Sao Mộc và Sao Thổ có thể đã dịch chuyển đáng kể.\n- Một số hành tinh sơ khai thậm chí có thể đã bị hất ra khỏi hệ.",
+      "replace": "## Sự di cư của hành tinh\n\nMột phát hiện khác là các hành tinh không hình thành đúng vị trí hiện nay. Sự di cư chuyển động lượng góc qua lại giữa các hành tinh và đĩa; tự nó không giải thích vì sao Mặt Trời quay chậm.\n\nTrong giai đoạn đầu:\n\n- Sao Mộc và Sao Thổ có thể đã dịch chuyển quỹ đạo đáng kể.",
+      "why": "Tách di cư khỏi danh sách lời giải (C-11). Tsiganis et al. 2005 (s4): các hành tinh khổng lồ 'migrated owing to their interaction with a disk of planetesimals', Mộc–Thổ vượt cộng hưởng 1:2 — đỡ vế Mộc/Thổ dịch chuyển. Câu 'hành tinh sơ khai bị hất ra' không có nguồn trong bảng: cắt (cả en đã cắt).",
+      "evidence": "https://doi.org/10.1038/nature03539 (PubMed 15917800)"
+    },
+    {
+      "claimId": "C-13",
+      "severity": "S4",
+      "find": "Việc phát hiện hơn 6.000 ngoại hành tinh cho thấy",
+      "replace": "Việc phát hiện hơn 6.000 ngoại hành tinh (theo số đếm của NASA, tính tới tháng 9/2026) cho thấy",
+      "why": "Số liệu thay đổi theo thời gian cần mốc. NASA Exoplanets (mở 25/09/2026): 'We've confirmed more than 6,000 exoplanets'.",
+      "evidence": "https://science.nasa.gov/exoplanets/"
+    },
+    {
+      "claimId": "C-14",
+      "severity": "S4",
+      "find": "Các \"siêu Trái Đất\" lớn hơn Trái Đất nhưng nhỏ hơn Sao Hải Vương.",
+      "replace": "Các \"siêu Trái Đất\", nặng hơn Trái Đất nhưng nhẹ hơn Sao Hải Vương.",
+      "why": "NASA Planet Types: super-Earths 'are more massive than Earth, but lighter than Neptune'. Dùng đúng tiêu chí khối lượng của nguồn; sửa cả en.",
+      "evidence": "https://science.nasa.gov/exoplanets/planet-types/"
+    },
+    {
+      "claimId": "C-15",
+      "severity": "S3",
+      "find": "Điều đó cho thấy các quy luật hình thành hành tinh là phổ quát, nhưng kết quả cuối cùng phụ thuộc mạnh vào điều kiện ban đầu và lịch sử tiến hóa của từng hệ sao.",
+      "replace": "Điều đó gợi ý rằng cùng những quá trình vật lý có thể cho ra những kết cục rất khác nhau, tuỳ mạnh vào điều kiện ban đầu và lịch sử của từng hệ sao.",
+      "why": "'Quy luật phổ quát' vượt bằng chứng (check 09-17 C-15). Hạ mức, đúng câu của en.",
+      "evidence": "https://science.nasa.gov/exoplanets/planet-types/"
+    },
+    {
+      "claimId": "C-17",
+      "severity": "S4",
+      "find": "☀️ Hệ Mặt Trời ra đời",
+      "replace": "Hệ Mặt Trời ra đời",
+      "why": "Bỏ emoji (check 09-17 C-17).",
+      "evidence": "—"
+    },
+    {
+      "claimId": "C-18",
+      "severity": "S4",
+      "find": "còn sự phân bố nhiệt độ trong đĩa tiền hành tinh quyết định",
+      "replace": "còn sự phân bố nhiệt độ trong đĩa tiền hành tinh phần lớn quyết định",
+      "why": "Giữ mức dè dặt như bản en ('largely decided'): vị trí đường tuyết không phải yếu tố duy nhất.",
+      "evidence": "https://science.nasa.gov/solar-system/solar-system-facts/"
+    },
+    {
+      "claimId": "C-18",
+      "severity": "S4",
+      "find": "cho thấy quá trình từng tạo nên Hệ Mặt Trời vẫn đang diễn ra khắp Ngân Hà",
+      "replace": "gợi ý rằng quá trình từng tạo nên Hệ Mặt Trời vẫn đang diễn ra khắp Ngân Hà",
+      "why": "Hạ mức 'cho thấy' → 'gợi ý' như en ('suggest'); ALMA chỉ nói vành 'có thể' do hành tinh.",
+      "evidence": "https://doi.org/10.1088/2041-8205/808/1/L3 (arXiv 1503.02649)"
+    },
+    {
+      "claimId": "ATTR",
+      "severity": "S4",
+      "find": "\n\n## Đọc thêm",
+      "replace": "\n\n---\n\nBiên tập lại từ bài **[Sự ra đời của Hệ Mặt Trời](http://www.thienvanvietnam.org/index.php?option=com_content&view=article&id=50:su-ra-doi-cua-he-mat-troi&catid=18&Itemid=146)** của Đặng Vũ Tuấn Sơn, đăng trên Thiên văn Việt Nam (VACA). Bản quyền nội dung gốc thuộc về VACA.\n\n## Đọc thêm",
+      "why": "Khôi phục khối ghi công VACA đã mất ở bản vi (bản en còn giữ; check 2026-09-05 cấm gỡ ghi công). Đây là ghi công tác phẩm phái sinh, không phải trích dẫn cấp claim — theo đúng dạng các bài VACA khác trong kho.",
+      "evidence": "Bản en hiện tại của chính bài; docs/content/checks/su-ra-doi-cua-he-mat-troi.yaml (2026-09-05)"
+    }
+  ],
+  "enEdits": [
+    {
+      "claimId": "C-8",
+      "severity": "S4",
+      "find": "The planets did not separate out of \"rings of material\", as classical models once proposed.\n\nInstead:",
+      "replace": "In the current picture, the planets grew step by step:",
+      "why": "Câu 'classical models' không có nguồn ở cả hai bản; cắt cùng lượt với vi.",
+      "evidence": "https://doi.org/10.2458/azu_uapress_9780816531240-ch024 (Johansen et al. 2014, arXiv 1402.1344)"
+    },
+    {
+      "claimId": "C-9",
+      "severity": "S3",
+      "find": "The key is the **snow line** — more precisely the water snow line; ammonia and methane freeze out only much farther from the Sun.",
+      "replace": "The key is the **snow line** — more precisely the water snow line. Each kind of ice has its own snow line; more volatile substances, such as carbon monoxide, freeze out only much farther from the Sun.",
+      "why": "Amoniac/methane không có nguồn đã mở; Pfalzner 2015 đỡ CO (~20 K) so với H2O (~150 K). Đồng bộ với vi.",
+      "evidence": "https://doi.org/10.1088/0031-8949/90/6/068001 (Pfalzner et al. 2015, arXiv 1501.03101)"
+    },
+    {
+      "claimId": "C-9",
+      "severity": "S3",
+      "find": "It is too hot for water ice to condense, and hotter still for ammonia and methane ice.",
+      "replace": "It is too hot for water ice to condense, let alone more volatile ices.",
+      "why": "'hotter still for ammonia and methane ice' là cách nói sai logic (cùng một nhiệt độ) và không nguồn. Đồng bộ với vi.",
+      "evidence": "https://doi.org/10.1088/0031-8949/90/6/068001 (Pfalzner et al. 2015, arXiv 1501.03101)"
+    },
+    {
+      "claimId": "C-14",
+      "severity": "S4",
+      "find": "\"Super-Earths\", larger than Earth but smaller than Neptune.",
+      "replace": "\"Super-Earths\", more massive than Earth but lighter than Neptune.",
+      "why": "Theo đúng định nghĩa NASA Planet Types (khối lượng).",
+      "evidence": "https://science.nasa.gov/exoplanets/planet-types/"
+    }
+  ],
+  "summaryEdits": [
+    {
+      "claimId": "SUM",
+      "severity": "S4",
+      "find": "và mọi nguyên tố tạo nên Trái Đất cũng như cơ thể chúng ta",
+      "replace": "và toàn bộ vật chất tạo nên Trái Đất cũng như cơ thể chúng ta",
+      "why": "Đồng bộ với summaryEn đã sửa ('all the matter'); tránh ngụ ý các nguyên tố được tạo ra trong chính đám mây.",
+      "evidence": "https://science.nasa.gov/solar-system/solar-system-facts/"
+    }
+  ],
+  "seoDescriptionEdits": [
+    {
+      "claimId": "C-2",
+      "severity": "S3",
+      "find": "vì sao Mặt Trời giữ 99,86% khối",
+      "replace": "vì sao Mặt Trời giữ hơn 99% khối",
+      "why": "seoDescription mang cùng con số 99,86% không nguồn như thân bài (C-2).",
+      "evidence": "https://science.nasa.gov/solar-system/solar-system-facts/"
+    }
+  ],
+  "addSources": [
+    {
+      "title": "Solar System Facts",
+      "url": "https://science.nasa.gov/solar-system/solar-system-facts/",
+      "doi": "",
+      "publisher": "NASA Science",
+      "year": 2026,
+      "tier": 2,
+      "covers": "Tuổi ~4,6 tỉ năm; sụp đổ có thể do siêu tân tinh; tinh vân quay; Mặt Trời gom hơn 99% vật chất; các khối va chạm lớn dần; hành tinh đá gần Mặt Trời"
+    },
+    {
+      "title": "Sun Fact Sheet",
+      "url": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/sunfact.html",
+      "doi": "",
+      "publisher": "NASA NSSDCA",
+      "year": 2026,
+      "tier": 2,
+      "covers": "Khối lượng, bán kính, I/MR² = 0,070, chu kỳ tự quay 609,12 h — tính động lượng góc của Mặt Trời"
+    },
+    {
+      "title": "Planetary Fact Sheet - Metric",
+      "url": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/",
+      "doi": "",
+      "publisher": "NASA NSSDCA",
+      "year": 2026,
+      "tier": 2,
+      "covers": "Khối lượng, khoảng cách, vận tốc quỹ đạo các hành tinh — phần lớn động lượng góc nằm ở hành tinh"
+    },
+    {
+      "title": "The formation of the solar system",
+      "url": "https://doi.org/10.1088/0031-8949/90/6/068001",
+      "doi": "10.1088/0031-8949/90/6/068001",
+      "publisher": "Physica Scripta",
+      "year": 2015,
+      "tier": 1,
+      "covers": "Review: bồi tụ lõi (lõi ~10 M⊕ hút khí), đường tuyết H2O (~150 K) và CO (~20 K), vi thể hành tinh là viên gạch của hành tinh"
+    },
+    {
+      "title": "Angular Momentum Evolution of Young Low-Mass Stars and Brown Dwarfs: Observations and Theory",
+      "url": "https://doi.org/10.2458/azu_uapress_9780816531240-ch019",
+      "doi": "10.2458/azu_uapress_9780816531240-ch019",
+      "publisher": "Protostars and Planets VI (University of Arizona Press)",
+      "year": 2014,
+      "tier": 1,
+      "covers": "Tương tác sao–đĩa và gió sao làm sao trẻ mất động lượng góc; vẫn còn vấn đề mở"
+    },
+    {
+      "title": "The Multifaceted Planetesimal Formation Process",
+      "url": "https://doi.org/10.2458/azu_uapress_9780816531240-ch024",
+      "doi": "10.2458/azu_uapress_9780816531240-ch024",
+      "publisher": "Protostars and Planets VI (University of Arizona Press)",
+      "year": 2014,
+      "tier": 1,
+      "covers": "Bụi và băng kết thành vi thể hành tinh 1–1000 km; hạt mm tới 10 m; vi thể hành tinh là hạt giống của hành tinh đá và lõi hành tinh khổng lồ (bồi tụ lõi)"
+    },
+    {
+      "title": "What is an Exoplanet? — Planet types",
+      "url": "https://science.nasa.gov/exoplanets/planet-types/",
+      "doi": "",
+      "publisher": "NASA Science",
+      "year": 2026,
+      "tier": 2,
+      "covers": "Sao Mộc nóng; siêu Trái Đất nặng hơn Trái Đất, nhẹ hơn Sao Hải Vương; đa dạng hệ ngoại hành tinh"
+    }
+  ],
+  "corrections": [
+    "- 2026-09-25 | su-ra-doi-cua-he-mat-troi | Bản vi: 'Mặt Trời chứa 99,86% khối lượng nhưng chỉ giữ khoảng 1% động lượng góc … đặc biệt là Sao Mộc' (thân bài + seoDescription) → 'hơn 99% khối lượng', 'một phần rất nhỏ động lượng góc', bỏ 'đặc biệt là Sao Mộc' | NASA Solar System Facts; phép tính từ NASA Sun + Planetary Fact Sheet (Mặt Trời ~0,6%)",
+    "- 2026-09-25 | su-ra-doi-cua-he-mat-troi | Bản vi: 'Mô hình hiện nay giải thích bằng ba cơ chế' gồm di cư hành tinh → phanh từ tính và gió Mặt Trời là cơ chế 'được đề xuất'; di cư tách mục riêng, nói rõ không làm Mặt Trời quay chậm; bỏ 'hành tinh sơ khai bị hất ra' | Bouvier et al. 2014 doi 10.2458/azu_uapress_9780816531240-ch019; Tsiganis et al. 2005 doi 10.1038/nature03539",
+    "- 2026-09-25 | su-ra-doi-cua-he-mat-troi | Bản vi: 'ALMA và James Webb đã quan sát nhiều đĩa' → ALMA chụp đĩa HL Tau với vành sáng–tối 'có thể' liên quan hình thành hành tinh; 'sau hàng triệu năm' → bỏ thang thời gian; 'quy luật hình thành hành tinh là phổ quát' → 'gợi ý cùng quá trình vật lý cho ra kết cục rất khác nhau'; 6.000 ngoại hành tinh thêm mốc 9/2026 | ALMA Partnership 2015 doi 10.1088/2041-8205/808/1/L3; NASA Exoplanets",
+    "- 2026-09-25 | su-ra-doi-cua-he-mat-troi | Cả hai bản: đường tuyết gộp nước/amoniac/methane → 'đường tuyết của nước; chất dễ bay hơi hơn như CO đóng băng xa hơn nhiều'; bồi tụ lõi gọi đúng là 'mô hình chủ đạo'; bỏ câu 'mô hình cổ điển vành vật chất' không nguồn; siêu Trái Đất theo tiêu chí khối lượng của NASA | Pfalzner et al. 2015 doi 10.1088/0031-8949/90/6/068001; Johansen et al. 2014; NASA Planet Types",
+    "- 2026-09-25 | su-ra-doi-cua-he-mat-troi | Bản vi: khôi phục khối ghi công VACA (bản en còn giữ) — không phải đổi claim | check 2026-09-05"
+  ],
+  "openQuestions": [
+    "C-11: câu 'sự di cư … tự nó không giải thích vì sao Mặt Trời quay chậm' dựa trên lập luận vật lý (di cư trao đổi động lượng góc giữa hành tinh và đĩa) cộng review Bouvier 2014 (cơ chế quay chậm là tương tác sao–đĩa và gió sao); chưa có nguồn nói thẳng câu phủ định này. Chấp nhận ở mức S4.",
+    "Số ngoại hành tinh (NASA, 9/2026) cần kiểm lại sau 12 tháng.",
+    "Quyền sử dụng nội dung phái sinh VACA (nguồn đã chết từ 17/09) vẫn chờ người quyết — lượt này chỉ khôi phục ghi công cho khớp bản en."
+  ]
+}

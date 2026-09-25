@@ -1,0 +1,133 @@
+slug: toan-canh-dac-diem-8-hanh-tinh-he-mat-troi
+checkedAt: 2026-09-25
+checkedBy: science-editor
+priorFactCheck: REVISE
+verdict: pass
+summary: "Bản vi vốn đã đi trước en ở các lỗi 17/09; lượt này đóng các mục còn mở ở CẢ HAI bản: phát hiện mới S3 — phả hệ Saturn–Uranus không phải 'trùng hợp' (Bode chọn tên năm 1782), Uranus là thần Hy Lạp; sự khớp tên–đặc điểm của Mars/Jupiter/Mercury là có chủ ý theo NASA; bỏ 'thiên thể dưới cấp sao', diễn giải điều kiện c không nguồn, 'không phải trùng hợp' về đường tuyết; thêm mốc và nguồn cho tranh cãi Hành tinh thứ chín; xác nhận 128 vệ tinh Sao Thổ (MPEC 2025-E) qua bảng NASA. Không còn S1–S3."
+claims:
+  - id: C-1
+    claim: "Đường kính 8 hành tinh (4.879 … 49.528 km)."
+    verdict: "verified"
+    severity: "none"
+    evidence: "https://nssdc.gsfc.nasa.gov/planetary/factsheet/"
+    note: "Khớp Fact Sheet (mở 25/09 cho bài su-ra-doi, cùng trang)."
+  - id: C-2
+    claim: "Khoảng cách trung bình (J2000) 0,39 … 30,1 AU; 1 AU ≈ 149,6 triệu km."
+    verdict: "verified"
+    severity: "none"
+    evidence: "https://nssdc.gsfc.nasa.gov/planetary/factsheet/"
+    note: "Chú thích trục bán lớn trung bình đúng."
+  - id: C-3
+    claim: "Sao Thổ 9,54 AU."
+    verdict: "verified"
+    severity: "none"
+    evidence: "https://nssdc.gsfc.nasa.gov/planetary/factsheet/saturnfact.html"
+    note: "Semimajor axis J2000 9,537 AU (en-parity 25/09)."
+  - id: C-4
+    claim: "Chu kỳ quỹ đạo; Thiên Vương 84 năm."
+    verdict: "verified"
+    severity: "none"
+    evidence: "https://nssdc.gsfc.nasa.gov/planetary/factsheet/ ; https://science.nasa.gov/uranus/facts/"
+    note: "Đã sửa '84,0' thành '84'."
+  - id: C-5
+    claim: "Chu kỳ tự quay, Kim và Thiên Vương quay ngược."
+    verdict: "verified"
+    severity: "none"
+    evidence: "https://nssdc.gsfc.nasa.gov/planetary/factsheet/ ; https://science.nasa.gov/uranus/facts/"
+    note: "NASA Uranus: 'one of just two planets that rotate in the opposite direction … Venus is the other'."
+  - id: C-6
+    claim: "Ngày mặt trời trên Sao Kim ~117 ngày, ngắn hơn một năm."
+    verdict: "verified"
+    severity: "none"
+    evidence: "https://nssdc.gsfc.nasa.gov/planetary/factsheet/"
+    note: "Length of day 2.802 h."
+  - id: C-7
+    claim: "Vệ tinh xác nhận theo NASA 8/2026: 115/293/29/16."
+    verdict: "verified"
+    severity: "S4"
+    evidence: "https://science.nasa.gov/jupiter/jupiter-moons/ ; https://science.nasa.gov/saturn/moons/ ; https://science.nasa.gov/uranus/moons/ ; https://science.nasa.gov/neptune/neptune-facts/"
+    note: "Mở lại Jupiter Moons (115) và Saturn Moons (293, as of August 2026) ngày 25/09; Neptune Facts: 16 known moons. Ba tiêu chí đếm — xem openQuestions."
+  - id: C-8
+    claim: "Sao Thổ nhảy vọt sau khi MPC công nhận thêm 128 vệ tinh trong một lần công bố tháng 3/2025."
+    verdict: "verified"
+    severity: "none"
+    evidence: "https://science.nasa.gov/saturn/moons/"
+    note: "Bảng trên trang NASA Saturn Moons: đúng 128 vệ tinh ghi nguồn 'MPEC 2025-E…' (MPEC 2025-E155, nửa đầu tháng 3/2025). Đóng open question của en-parity."
+  - id: C-9
+    claim: "Điều kiện c 'đã dọn sạch vùng lân cận quanh quỹ đạo'; diễn giải: áp đảo về khối lượng trong vùng quỹ đạo (Soter 2006)."
+    verdict: "verified"
+    severity: "none"
+    evidence: "https://iauarchive.eso.org/news/pressreleases/detail/iau0603/ ; https://doi.org/10.1086/508861 (Soter 2006, arXiv astro-ph/0608359)"
+    note: "Diễn giải đã đổi sang dạng có nguồn."
+  - id: C-10
+    claim: "IAU 8/2006: (a) quỹ đạo quanh Mặt Trời, (b) cân bằng thuỷ tĩnh; chỉ chốt tám hành tinh từ 2006."
+    verdict: "verified"
+    severity: "none"
+    evidence: "https://iauarchive.eso.org/news/pressreleases/detail/iau0603/"
+    note: "Văn bản 5A mở 25/09: 'This means that the Solar System consists of eight planets'."
+  - id: C-11
+    claim: "Năm hành tinh lùn được công nhận (tính tới 9/2026) và các ứng viên."
+    verdict: "verified"
+    severity: "none"
+    evidence: "https://science.nasa.gov/dwarf-planets/ ; https://iauarchive.eso.org/news/pressreleases/detail/iau0603/"
+    note: "NASA: 'So far, the IAU has only recognized five'; 'perhaps more than a hundred'."
+  - id: C-19
+    claim: "Pluto tròn, quay quanh Mặt Trời nhưng chia sẻ vùng quỹ đạo với vô số thiên thể vành đai Kuiper; Ceres là thiên thể lớn nhất vành đai tiểu hành tinh."
+    verdict: "verified"
+    severity: "none"
+    evidence: "https://science.nasa.gov/dwarf-planets/ ; https://science.nasa.gov/dwarf-planets/pluto/facts/"
+    note: "NASA: Ceres 'the largest object in the asteroid belt'; Pluto 'located in the distant Kuiper Belt'."
+  - id: C-12
+    claim: "Băng khổng lồ: dưới lớp khí là nước, methane, amoniac ở áp suất cực lớn, không phải hydro kim loại như Mộc, Thổ."
+    verdict: "verified"
+    severity: "none"
+    evidence: "https://science.nasa.gov/uranus/facts/ ; https://science.nasa.gov/neptune/neptune-facts/ ; https://science.nasa.gov/jupiter/jupiter-facts/ ; https://science.nasa.gov/saturn/facts/"
+    note: "NASA: 80% khối lượng là chất lỏng 'icy' (water, methane, ammonia); Mộc/Thổ có hydro kim loại lỏng."
+  - id: C-20
+    claim: "Nhóm trong: đá, bề mặt rắn, nhỏ, ít/không vệ tinh; nhóm ngoài: khổng lồ, không bề mặt rắn, nhiều vệ tinh."
+    verdict: "verified"
+    severity: "none"
+    evidence: "https://nssdc.gsfc.nasa.gov/planetary/factsheet/ ; https://science.nasa.gov/jupiter/jupiter-facts/ ; https://science.nasa.gov/uranus/facts/"
+    note: "Fact Sheet: số vệ tinh 0/0/1/2; NASA: khổng lồ khí/băng không có bề mặt thật."
+  - id: C-13
+    claim: "Theo mô hình chủ đạo (bồi tụ lõi), ranh giới hai nhóm gắn với đường tuyết."
+    verdict: "verified"
+    severity: "none"
+    evidence: "https://doi.org/10.1088/2041-8205/743/1/L16 (Öberg et al. 2011, arXiv 1110.5567) ; https://doi.org/10.1088/0031-8949/90/6/068001 (Pfalzner et al. 2015)"
+    note: "Đã hạ từ 'không phải trùng hợp'."
+  - id: C-14
+    claim: "Hành tinh không đủ khối lượng để châm ngòi hợp hạch như sao, không tự phát sáng, phản chiếu ánh sáng sao mẹ; có hành tinh trôi tự do."
+    verdict: "verified"
+    severity: "none"
+    evidence: "https://science.nasa.gov/jupiter/jupiter-facts/ ; https://science.nasa.gov/uranus/facts/ ; https://science.nasa.gov/exoplanets/"
+    note: "Bỏ 'thiên thể dưới cấp sao'."
+  - id: C-16
+    claim: "Tên từ thần thoại La Mã (Uranus từ Hy Lạp); Mars, Jupiter, Mercury được chọn vì đặc điểm; Venus nữ thần sắc đẹp, sáng nhất sau Mặt Trăng, sao mai/sao hôm; Mars đỏ vì oxit sắt; Neptune thần biển, màu xanh do methane."
+    verdict: "verified"
+    severity: "none"
+    evidence: "https://science.nasa.gov/mars/facts/ ; https://science.nasa.gov/jupiter/jupiter-facts/ ; https://science.nasa.gov/mercury/facts/ ; https://science.nasa.gov/venus/venus-facts/ ; https://science.nasa.gov/neptune/neptune-facts/ ; https://science.nasa.gov/uranus/facts/"
+    note: "Mọi vế khớp trang NASA đã mở 25/09."
+  - id: C-15
+    claim: "Saturn cha Jupiter, Uranus (Caelus) cha Saturn; tên Uranus do Bode đề xuất năm 1782 cho khớp lối đặt tên; Mộc, Thổ biết từ cổ đại; Thiên Vương là hành tinh đầu tiên tìm bằng kính thiên văn (Herschel 1781)."
+    verdict: "verified"
+    severity: "none"
+    evidence: "https://www.rmg.co.uk/stories/space-astronomy/astronomy/discovery-uranus ; https://science.nasa.gov/saturn/facts/ ; https://science.nasa.gov/uranus/facts/"
+    note: "Sửa 'trùng hợp về tên gọi' — sai theo Royal Observatory Greenwich (bậc 3) và NASA StarChild."
+  - id: C-21
+    claim: "Năm hành tinh thấy bằng mắt thường mang tên ngũ hành Thuỷ, Kim, Hoả, Mộc, Thổ."
+    verdict: "verified"
+    severity: "S4"
+    evidence: "https://science.nasa.gov/venus/venus-facts/"
+    note: "Năm hành tinh sáng: NASA. Tên ngũ hành là tên Hán-Việt tự kiểm được. Đã cắt lý do đặt tên không nguồn."
+  - id: C-18
+    claim: "Batygin & Brown 2016 công bố bằng chứng gián tiếp; tính tới 9/2026 chưa phát hiện; còn tranh cãi (thiên lệch khảo sát; đĩa TNO tự hấp dẫn)."
+    verdict: "verified"
+    severity: "none"
+    evidence: "https://doi.org/10.3847/0004-6256/151/2/22 ; https://science.nasa.gov/solar-system/planet-x/ ; https://doi.org/10.3847/PSJ/abe53e (Napier et al. 2021, arXiv 2102.05601) ; https://doi.org/10.3847/1538-3881/aaf0fc (Sefilian & Touma 2019, arXiv 1804.06859)"
+    note: "Có mốc và nguồn cho cả hai hướng phản biện."
+  - id: C-22
+    claim: "Nguồn VACA (bậc 4) và khối ghi công."
+    verdict: "verified"
+    severity: "none"
+    evidence: "—"
+    note: "VACA không đỡ claim nào; ghi công giữ nguyên ở cả hai bản. Nguồn bậc 1–2 còn hiệu lực: 8 trong bảng + 13 thêm lượt này."

@@ -1,0 +1,321 @@
+{
+  "slug": "tai-sao-pluto-khong-con-la-hanh-tinh",
+  "edits": [
+    {
+      "claimId": "C-2",
+      "severity": "S3",
+      "find": "Clyde Tombaugh phát hiện Pluto năm 1930 tại đài quan sát Lowell, Arizona, sau nhiều tháng so sánh từng cặp ảnh chụp bầu trời để tìm một chấm sáng dịch chuyển.",
+      "replace": "Clyde Tombaugh phát hiện Pluto năm 1930 tại đài quan sát Lowell, Arizona.",
+      "why": "Chi tiết 'nhiều tháng so sánh từng cặp ảnh' chưa mở được nguồn bậc 1–3 (check 17/09 C-2; trang Lowell Observatory không tải được) — cắt. Giữ phần có nguồn: NASA Dwarf Planets 'Discovered by Clyde Tombaugh in 1930'; NASA Pluto Facts: tên được chuyển tới Lowell Observatory.",
+      "evidence": "https://science.nasa.gov/dwarf-planets/ ; https://science.nasa.gov/dwarf-planets/pluto/facts/"
+    },
+    {
+      "claimId": "C-3",
+      "severity": "S3",
+      "find": "Pluto quá nhỏ để gây ra bất kỳ nhiễu loạn nào đo được. Nói cách khác, Tombaugh tìm ra Pluto khi đang tìm một thứ không tồn tại, ở đúng vùng trời mà tính toán sai đã chỉ tới.",
+      "replace": "Bản thân Pluto rất nhẹ — khối lượng chỉ khoảng một phần sáu Mặt Trăng — và việc tìm ra nó là một may mắn tình cờ. Nói cách khác, Tombaugh tìm ra Pluto khi đang tìm một thứ không tồn tại.",
+      "why": "'Pluto quá nhỏ để gây nhiễu loạn đo được' và 'ở đúng vùng trời mà tính toán sai đã chỉ tới' không có nguồn đã mở. Thay bằng phần có nguồn: NASA Pluto Facts 'Pluto's mass is about one-sixth that of Earth's Moon'; Soter 2006 'those perturbations proved to be illusory, and the discovery of Pluto was fortuitous'. Standish 1993 đỡ vế sai lệch biến mất khi dùng đúng khối lượng Sao Hải Vương.",
+      "evidence": "https://science.nasa.gov/dwarf-planets/pluto/facts/ ; https://doi.org/10.1086/508861 (Soter 2006, arXiv astro-ph/0608359) ; https://doi.org/10.1086/116575 (Standish 1993, bản quét ADS 1993AJ....105.2000S)"
+    },
+    {
+      "claimId": "C-9",
+      "severity": "S4",
+      "find": "**Eris** — một thiên thể vành đai Kuiper nặng hơn Pluto khoảng 27%.",
+      "replace": "**Eris** — một thiên thể ở rất xa bên ngoài quỹ đạo Sao Hải Vương, nặng hơn Pluto khoảng 27%.",
+      "why": "Eris không thuộc vành đai Kuiper cổ điển (check 17/09 C-9). NASA Eris: phát hiện ngày 5/1/2005 bởi nhóm Mike Brown, 'billions of miles beyond the orbit of Neptune'; Brown & Schaller 2007: khối lượng '1.27 ± 0.02 that of Pluto'.",
+      "evidence": "https://science.nasa.gov/dwarf-planets/eris/ ; https://doi.org/10.1126/science.1139415 (Brown & Schaller 2007, PubMed 17569855)"
+    },
+    {
+      "claimId": "C-25",
+      "severity": "S3",
+      "find": "danh sách hành tinh sẽ dài ra vô hạn định và mất hết ý nghĩa.",
+      "replace": "danh sách hành tinh có thể dài thêm hàng chục, thậm chí hơn một trăm thành viên.",
+      "why": "'Dài ra vô hạn định và mất hết ý nghĩa' là phóng đại không nguồn. NASA Dwarf Planets: 'the IAU says there may be many more dwarf planets – perhaps more than a hundred – waiting to be discovered'.",
+      "evidence": "https://science.nasa.gov/dwarf-planets/"
+    },
+    {
+      "claimId": "C-13",
+      "severity": "S3",
+      "find": "Mức chênh lệch không hề sát sao: theo chỉ số \"dọn sạch quỹ đạo\" mà Steven Soter (2006) đề xuất, Trái Đất vượt trội tuyệt đối so với mọi thiên thể khác trong vùng quỹ đạo của mình, còn Pluto thì không.",
+      "replace": "Mức chênh lệch không hề sát sao. Theo các thước đo \"dọn sạch quỹ đạo\" của Steven Soter (2006) và Jean-Luc Margot (2015), tám hành tinh cách biệt hẳn với phần còn lại: với thước đo của Margot, ngưỡng là 1, chỉ số của Trái Đất khoảng 800, còn của Pluto chỉ khoảng 0,03.",
+      "why": "Check 17/09 C-13: câu định tính cần số liệu kiểm được. Margot 2015 Bảng 1 (mở 25/09): chỉ số Π của Trái Đất 8,1×10², Pluto 2,8×10⁻², 'All 8 planets … Π ≥ 1'; Soter 2006: khoảng cách 4–5 bậc độ lớn giữa tám hành tinh và phần còn lại.",
+      "evidence": "https://doi.org/10.1088/0004-6256/150/6/185 (Margot 2015, arXiv 1507.06300) ; https://doi.org/10.1086/508861 (Soter 2006, arXiv astro-ph/0608359)"
+    },
+    {
+      "claimId": "C-12",
+      "severity": "S4",
+      "find": "Nhóm này hiện có năm thành viên được IAU công nhận: Pluto, Eris, Ceres, Haumea và Makemake.",
+      "replace": "Nhóm này hiện có năm thành viên được IAU công nhận (tính tới 9/2026): Pluto, Eris, Ceres, Haumea và Makemake.",
+      "why": "Số hành tinh lùn thay đổi theo thời gian — cần mốc (C-12). NASA Dwarf Planets (mở 25/09/2026): 'So far, the IAU has only recognized five dwarf planets'.",
+      "evidence": "https://science.nasa.gov/dwarf-planets/"
+    },
+    {
+      "claimId": "C-14",
+      "severity": "S3",
+      "find": "Điều kiện thứ ba phụ thuộc vào vị trí: theo lập luận của phía phản đối, nếu đặt Trái Đất vào quỹ đạo của Pluto thì chính nó cũng không dọn sạch nổi vùng lân cận — một cách nói rằng tiêu chí \"dọn sạch\" phụ thuộc nơi thiên thể nằm chứ không phải bản thân nó. Đó là lý do một số nhà khoa học hành tinh, trong đó có trưởng nhóm sứ mệnh New Horizons, vẫn không chấp nhận cách phân loại này.",
+      "replace": "Điều kiện thứ ba phụ thuộc vào vị trí: càng xa Mặt Trời, một thiên thể càng phải nặng hơn mới dọn sạch được vùng quỹ đạo của mình (Margot, 2015). Một số nhà khoa học hành tinh — trong đó có Alan Stern, trưởng nhóm sứ mệnh New Horizons — cho rằng lịch sử khoa học không ủng hộ việc lấy chuyện chia sẻ quỹ đạo làm tiêu chí phân loại, và rằng phân loại hành tinh không nên quyết bằng bỏ phiếu (Metzger và cộng sự, 2019).",
+      "why": "Ví dụ 'Trái Đất đặt ở quỹ đạo Pluto cũng không dọn sạch nổi' không có nguồn đã mở, và theo tiêu chí định lượng của Margot 2015 thì ngược lại (chỉ số Trái Đất ~810 giảm theo a^(-9/8), ở 39,5 AU vẫn ~13 > 1) — cắt. Giữ ý tiêu chí phụ thuộc vị trí: Margot 2015 Hình 1 'Mass required to clear an orbital zone as a function of semi-major axis'. Quy kết phía phản đối có nguồn: Metzger, Sykes, Stern, Runyon 2019 (Stern đồng tác giả; NASA New Horizons gọi Stern là 'Principal Investigator') — 'asteroids' sharing of orbits is the reason they were re-classified … is factually incorrect', 'not rely on the non-scientific process of voting'.",
+      "evidence": "https://doi.org/10.1088/0004-6256/150/6/185 (Margot 2015, arXiv 1507.06300) ; https://doi.org/10.1016/j.icarus.2018.08.026 (Metzger, Sykes, Stern, Runyon 2019, arXiv 1805.04115) ; https://science.nasa.gov/mission/new-horizons/"
+    },
+    {
+      "claimId": "C-17",
+      "severity": "S3",
+      "find": "- **Sputnik Planitia** — một đồng bằng băng nitơ rộng khoảng 1.000 km, bề mặt chia thành các ô đa giác do đối lưu, và gần như không có hố va chạm nào. Đó là dấu hiệu của một bề mặt còn đang được làm mới, tuổi có thể chỉ dưới 10 triệu năm.",
+      "replace": "- **Sputnik Planitia** — một bồn trũng rộng lớn chứa đầy băng, chủ yếu là băng nitơ, bề mặt chia thành các ô đa giác rộng khoảng 10–40 km, được giải thích là do đối lưu, và gần như không có hố va chạm nào. Đó là dấu hiệu của một bề mặt còn đang được làm mới: tuổi tính theo hố va chạm không quá khoảng 10 triệu năm.",
+      "why": "Check 17/09 C-17/C-18: '1.000 km' và 'dưới 10 triệu năm' chưa có nguồn đã mở. McKinnon et al. 2016: 'The vast, deep, volatile-ice-filled basin … dominated by nitrogen ice … organized into cells or polygons, typically about 10 to 40 kilometres across, that resemble the surface manifestation of solid-state convection'; Moore et al. 2016: 'crater retention age no greater than ~10 million years'. Bỏ số 1.000 km (không nguồn), giữ 'tuổi không quá 10 triệu năm' đúng như nguồn.",
+      "evidence": "https://doi.org/10.1038/nature18289 (McKinnon et al. 2016, PubMed 27251279) ; https://doi.org/10.1126/science.aad7055 (Moore et al. 2016, PubMed 26989245)"
+    },
+    {
+      "claimId": "C-19",
+      "severity": "S3",
+      "find": "- **Dãy núi băng nước** cao tới 3.500 m, đủ cứng để đứng vững ở nhiệt độ khoảng −230 °C.",
+      "replace": "- **Những ngọn núi** cao tới 2–3 km, là những khối băng nước khổng lồ, trên một thế giới có nhiệt độ bề mặt trung bình khoảng −232 °C.",
+      "why": "NASA Pluto Facts: 'Pluto's tallest mountains are 6,500 to 9,800 feet (2 to 3 kilometers) in height. The mountains are big blocks of water ice'; nhiệt độ trung bình −232 °C. Con số 3.500 m không khớp nguồn; 'đủ cứng để đứng vững' là quan hệ nhân quả không nguồn.",
+      "evidence": "https://science.nasa.gov/dwarf-planets/pluto/facts/"
+    },
+    {
+      "claimId": "C-20",
+      "severity": "S3",
+      "find": "- **Khí quyển nhiều lớp** mỏng gồm chủ yếu nitơ, với hàng chục lớp mù quang hoá xếp chồng lên nhau.",
+      "replace": "- **Khí quyển mỏng**, chủ yếu là nitơ, với một lớp mù rộng bao trùm hành tinh, được cho là sinh ra từ các hydrocarbon như methane, acetylene, ethylene và ethane.",
+      "why": "'Hàng chục lớp mù' không có nguồn đã mở (C-20). Gladstone et al. 2016: 'Molecular nitrogen (N2) dominates the atmosphere', các hydrocarbon 'likely feed the production of an extensive haze that encompasses Pluto'; Stern 2015: 'a global haze layer'.",
+      "evidence": "https://doi.org/10.1126/science.aad8866 (Gladstone et al. 2016, PubMed 26989258) ; https://doi.org/10.1126/science.aad1815 (Stern et al. 2015, PubMed 26472913)"
+    },
+    {
+      "claimId": "C-20",
+      "severity": "S4",
+      "find": "Một thiên thể có địa chất hoạt động, khí quyển phân lớp và có thể có đại dương ngầm",
+      "replace": "Một thiên thể có địa chất hoạt động, khí quyển phủ mù và có thể có đại dương ngầm",
+      "why": "Đồng bộ với câu khí quyển đã sửa.",
+      "evidence": "https://doi.org/10.1126/science.aad8866 (Gladstone et al. 2016, PubMed 26989258)"
+    }
+  ],
+  "enEdits": [
+    {
+      "claimId": "C-2",
+      "severity": "S3",
+      "find": "Clyde Tombaugh discovered Pluto in 1930 at the Lowell Observatory in Arizona, after months of comparing pairs of photographs of the night sky to find a point of light that shifted position.",
+      "replace": "Clyde Tombaugh discovered Pluto in 1930 at the Lowell Observatory in Arizona.",
+      "why": "Chi tiết 'nhiều tháng so sánh từng cặp ảnh' chưa mở được nguồn bậc 1–3 (check 17/09 C-2; trang Lowell Observatory không tải được) — cắt. Giữ phần có nguồn: NASA Dwarf Planets 'Discovered by Clyde Tombaugh in 1930'; NASA Pluto Facts: tên được chuyển tới Lowell Observatory.",
+      "evidence": "https://science.nasa.gov/dwarf-planets/"
+    },
+    {
+      "claimId": "C-3",
+      "severity": "S3",
+      "find": "Pluto is too small to cause any measurable disturbance. In other words, Tombaugh found Pluto while searching for something that did not exist, in the exact region of the sky that the incorrect calculation had pointed toward.",
+      "replace": "Pluto itself is very light — about one-sixth the mass of Earth's Moon — and finding it was a stroke of luck. In other words, Tombaugh found Pluto while searching for something that did not exist.",
+      "why": "'Pluto quá nhỏ để gây nhiễu loạn đo được' và 'ở đúng vùng trời mà tính toán sai đã chỉ tới' không có nguồn đã mở. Thay bằng phần có nguồn: NASA Pluto Facts 'Pluto's mass is about one-sixth that of Earth's Moon'; Soter 2006 'those perturbations proved to be illusory, and the discovery of Pluto was fortuitous'. Standish 1993 đỡ vế sai lệch biến mất khi dùng đúng khối lượng Sao Hải Vương.",
+      "evidence": "https://science.nasa.gov/dwarf-planets/pluto/facts/ ; https://doi.org/10.1086/508861 (Soter 2006, arXiv astro-ph/0608359)"
+    },
+    {
+      "claimId": "C-9",
+      "severity": "S4",
+      "find": "**Eris**—a Kuiper belt object about 27% more massive than Pluto.",
+      "replace": "**Eris**—an object far beyond the orbit of Neptune, about 27% more massive than Pluto.",
+      "why": "Eris không thuộc vành đai Kuiper cổ điển (check 17/09 C-9). NASA Eris: phát hiện ngày 5/1/2005 bởi nhóm Mike Brown, 'billions of miles beyond the orbit of Neptune'; Brown & Schaller 2007: khối lượng '1.27 ± 0.02 that of Pluto'.",
+      "evidence": "https://science.nasa.gov/dwarf-planets/eris/ ; https://doi.org/10.1126/science.1139415 (Brown & Schaller 2007, PubMed 17569855)"
+    },
+    {
+      "claimId": "C-25",
+      "severity": "S3",
+      "find": "the list of planets would grow indefinitely and lose all meaning.",
+      "replace": "the list of planets could grow by dozens, perhaps by more than a hundred, members.",
+      "why": "'Dài ra vô hạn định và mất hết ý nghĩa' là phóng đại không nguồn. NASA Dwarf Planets: 'the IAU says there may be many more dwarf planets – perhaps more than a hundred – waiting to be discovered'.",
+      "evidence": "https://science.nasa.gov/dwarf-planets/"
+    },
+    {
+      "claimId": "C-13",
+      "severity": "S3",
+      "find": "The margin is not close: by the \"orbital clearing\" measure proposed by Steven Soter (2006), Earth overwhelmingly dominates every other body in its orbital zone, whereas Pluto does not.",
+      "replace": "The margin is not close. By the \"orbital clearing\" measures of Steven Soter (2006) and Jean-Luc Margot (2015), the eight planets stand well apart from everything else: on Margot's measure, where the threshold is 1, Earth scores about 800 and Pluto only about 0.03.",
+      "why": "Check 17/09 C-13: câu định tính cần số liệu kiểm được. Margot 2015 Bảng 1 (mở 25/09): chỉ số Π của Trái Đất 8,1×10², Pluto 2,8×10⁻², 'All 8 planets … Π ≥ 1'; Soter 2006: khoảng cách 4–5 bậc độ lớn giữa tám hành tinh và phần còn lại.",
+      "evidence": "https://doi.org/10.1088/0004-6256/150/6/185 (Margot 2015, arXiv 1507.06300) ; https://doi.org/10.1086/508861 (Soter 2006, arXiv astro-ph/0608359)"
+    },
+    {
+      "claimId": "C-12",
+      "severity": "S4",
+      "find": "This group currently has five members recognized by the IAU: Pluto, Eris, Ceres, Haumea, and Makemake.",
+      "replace": "This group currently has five members recognized by the IAU (as of September 2026): Pluto, Eris, Ceres, Haumea, and Makemake.",
+      "why": "Số hành tinh lùn thay đổi theo thời gian — cần mốc (C-12). NASA Dwarf Planets (mở 25/09/2026): 'So far, the IAU has only recognized five dwarf planets'.",
+      "evidence": "https://science.nasa.gov/dwarf-planets/"
+    },
+    {
+      "claimId": "C-14",
+      "severity": "S3",
+      "find": "The third condition depends on location: opponents argue that if Earth were placed in Pluto's orbit, it could not clear its neighborhood either — a way of saying that the \"clearing\" criterion depends on where a body sits rather than on the body itself. This is why some planetary scientists, including the principal investigator of the New Horizons mission, still do not accept this classification.",
+      "replace": "The third condition depends on location: the farther a body is from the Sun, the more massive it must be to clear its orbital zone (Margot, 2015). Some planetary scientists — including Alan Stern, principal investigator of the New Horizons mission — argue that the history of science does not support using orbit-sharing as a classification criterion, and that planetary taxonomy should not be settled by a vote (Metzger and colleagues, 2019).",
+      "why": "Ví dụ 'Trái Đất đặt ở quỹ đạo Pluto cũng không dọn sạch nổi' không có nguồn đã mở, và theo tiêu chí định lượng của Margot 2015 thì ngược lại (chỉ số Trái Đất ~810 giảm theo a^(-9/8), ở 39,5 AU vẫn ~13 > 1) — cắt. Giữ ý tiêu chí phụ thuộc vị trí: Margot 2015 Hình 1 'Mass required to clear an orbital zone as a function of semi-major axis'. Quy kết phía phản đối có nguồn: Metzger, Sykes, Stern, Runyon 2019 (Stern đồng tác giả; NASA New Horizons gọi Stern là 'Principal Investigator') — 'asteroids' sharing of orbits is the reason they were re-classified … is factually incorrect', 'not rely on the non-scientific process of voting'.",
+      "evidence": "https://doi.org/10.1088/0004-6256/150/6/185 (Margot 2015, arXiv 1507.06300) ; https://doi.org/10.1016/j.icarus.2018.08.026 (Metzger, Sykes, Stern, Runyon 2019, arXiv 1805.04115) ; https://science.nasa.gov/mission/new-horizons/"
+    },
+    {
+      "claimId": "C-17",
+      "severity": "S3",
+      "find": "- **Sputnik Planitia** — a nitrogen ice plain about 1,000 km wide, with a surface divided into polygonal cells caused by convection, and almost entirely free of impact craters. This is a sign of a surface that is still being renewed, potentially less than 10 million years old.",
+      "replace": "- **Sputnik Planitia** — a vast basin filled with ice, mostly nitrogen ice, whose surface is divided into polygonal cells about 10–40 km across that are explained by convection, and almost entirely free of impact craters. This is a sign of a surface that is still being renewed: its crater-retention age is no more than about 10 million years.",
+      "why": "Check 17/09 C-17/C-18: '1.000 km' và 'dưới 10 triệu năm' chưa có nguồn đã mở. McKinnon et al. 2016: 'The vast, deep, volatile-ice-filled basin … dominated by nitrogen ice … organized into cells or polygons, typically about 10 to 40 kilometres across, that resemble the surface manifestation of solid-state convection'; Moore et al. 2016: 'crater retention age no greater than ~10 million years'. Bỏ số 1.000 km (không nguồn), giữ 'tuổi không quá 10 triệu năm' đúng như nguồn.",
+      "evidence": "https://doi.org/10.1038/nature18289 (McKinnon et al. 2016, PubMed 27251279) ; https://doi.org/10.1126/science.aad7055 (Moore et al. 2016, PubMed 26989245)"
+    },
+    {
+      "claimId": "C-19",
+      "severity": "S3",
+      "find": "- **Water-ice mountains** as high as 3,500 m, hard enough to stand firm at temperatures around −230 °C.",
+      "replace": "- **Mountains** up to 2–3 km high, made of huge blocks of water ice, on a world whose average surface temperature is about −232 °C.",
+      "why": "NASA Pluto Facts: 'Pluto's tallest mountains are 6,500 to 9,800 feet (2 to 3 kilometers) in height. The mountains are big blocks of water ice'; nhiệt độ trung bình −232 °C. Con số 3.500 m không khớp nguồn; 'đủ cứng để đứng vững' là quan hệ nhân quả không nguồn.",
+      "evidence": "https://science.nasa.gov/dwarf-planets/pluto/facts/"
+    },
+    {
+      "claimId": "C-20",
+      "severity": "S3",
+      "find": "- A **multi-layered, thin atmosphere** consisting mainly of nitrogen, with dozens of photochemical haze layers stacked on top of one another.",
+      "replace": "- A **thin atmosphere**, mainly nitrogen, with an extensive haze enveloping the planet, probably produced from hydrocarbons such as methane, acetylene, ethylene and ethane.",
+      "why": "'Hàng chục lớp mù' không có nguồn đã mở (C-20). Gladstone et al. 2016: 'Molecular nitrogen (N2) dominates the atmosphere', các hydrocarbon 'likely feed the production of an extensive haze that encompasses Pluto'; Stern 2015: 'a global haze layer'.",
+      "evidence": "https://doi.org/10.1126/science.aad8866 (Gladstone et al. 2016, PubMed 26989258)"
+    },
+    {
+      "claimId": "C-20",
+      "severity": "S4",
+      "find": "An object with geological activity, a layered atmosphere, and possibly an underground ocean",
+      "replace": "An object with geological activity, a hazy atmosphere, and possibly an underground ocean",
+      "why": "Đồng bộ với vi.",
+      "evidence": "https://doi.org/10.1126/science.aad8866 (Gladstone et al. 2016, PubMed 26989258)"
+    }
+  ],
+  "addSources": [
+    {
+      "title": "Pluto Fact Sheet",
+      "url": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/plutofact.html",
+      "doi": "",
+      "publisher": "NASA NSSDCA",
+      "year": 2026,
+      "tier": 2,
+      "covers": "Độ nghiêng quỹ đạo 17,14°; bán kính 1.188 km; khối lượng Pluto và Charon, khoảng cách 19.596 km (tâm khối chung cách tâm Pluto ~2.100 km, ngoài bán kính)"
+    },
+    {
+      "title": "Planetary Fact Sheet - Metric",
+      "url": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/",
+      "doi": "",
+      "publisher": "NASA NSSDCA",
+      "year": 2026,
+      "tier": 2,
+      "covers": "Đường kính Mặt Trăng 3.475 km so với Pluto 2.376 km"
+    },
+    {
+      "title": "Dwarf Planets",
+      "url": "https://science.nasa.gov/dwarf-planets/",
+      "doi": "",
+      "publisher": "NASA Science",
+      "year": 2026,
+      "tier": 2,
+      "covers": "Tombaugh phát hiện Pluto 1930; 5 hành tinh lùn được IAU công nhận (9/2026); có thể hơn một trăm chưa tìm ra"
+    },
+    {
+      "title": "Eris",
+      "url": "https://science.nasa.gov/dwarf-planets/eris/",
+      "doi": "",
+      "publisher": "NASA Science",
+      "year": 2026,
+      "tier": 2,
+      "covers": "Phát hiện 5/1/2005 bởi nhóm Mike Brown; ở xa ngoài quỹ đạo Sao Hải Vương; khơi lại tranh luận dẫn tới quyết định IAU 2006"
+    },
+    {
+      "title": "Kuiper Belt: Facts",
+      "url": "https://science.nasa.gov/solar-system/kuiper-belt/facts/",
+      "doi": "",
+      "publisher": "NASA Science",
+      "year": 2026,
+      "tier": 2,
+      "covers": "Vành đai Kuiper từ ~30 AU tới ~50 AU"
+    },
+    {
+      "title": "New Horizons",
+      "url": "https://science.nasa.gov/mission/new-horizons/",
+      "doi": "",
+      "publisher": "NASA Science",
+      "year": 2026,
+      "tier": 2,
+      "covers": "Bay qua Pluto 14/7/2015; Alan Stern là Principal Investigator"
+    },
+    {
+      "title": "Planet X: No dynamical evidence in the optical observations",
+      "url": "https://doi.org/10.1086/116575",
+      "doi": "10.1086/116575",
+      "publisher": "The Astronomical Journal",
+      "year": 1993,
+      "tier": 1,
+      "covers": "Sai lệch quỹ đạo Thiên Vương biến mất khi dùng đúng khối lượng Sao Hải Vương; không cần Hành tinh X"
+    },
+    {
+      "title": "What Is a Planet?",
+      "url": "https://doi.org/10.1086/508861",
+      "doi": "10.1086/508861",
+      "publisher": "The Astronomical Journal",
+      "year": 2006,
+      "tier": 1,
+      "covers": "Thước đo thống trị động lực học; nhiễu loạn 'Hành tinh X' là ảo, việc tìm ra Pluto là tình cờ; Pluto thuộc quần thể vành đai Kuiper phát hiện từ 1992"
+    },
+    {
+      "title": "A Quantitative Criterion for Defining Planets",
+      "url": "https://doi.org/10.1088/0004-6256/150/6/185",
+      "doi": "10.1088/0004-6256/150/6/185",
+      "publisher": "The Astronomical Journal",
+      "year": 2015,
+      "tier": 1,
+      "covers": "Chỉ số Π: Trái Đất 8,1×10², Pluto 2,8×10⁻², ngưỡng 1; khối lượng cần để dọn quỹ đạo tăng theo khoảng cách"
+    },
+    {
+      "title": "The reclassification of asteroids from planets to non-planets",
+      "url": "https://doi.org/10.1016/j.icarus.2018.08.026",
+      "doi": "10.1016/j.icarus.2018.08.026",
+      "publisher": "Icarus",
+      "year": 2019,
+      "tier": 1,
+      "covers": "Phía phản đối (có Alan Stern): chia sẻ quỹ đạo không phải lý do lịch sử để phân loại; không nên phân loại bằng bỏ phiếu"
+    },
+    {
+      "title": "The mass of dwarf planet Eris",
+      "url": "https://doi.org/10.1126/science.1139415",
+      "doi": "10.1126/science.1139415",
+      "publisher": "Science",
+      "year": 2007,
+      "tier": 1,
+      "covers": "Khối lượng Eris = 1,27 ± 0,02 lần Pluto"
+    },
+    {
+      "title": "The geology of Pluto and Charon through the eyes of New Horizons",
+      "url": "https://doi.org/10.1126/science.aad7055",
+      "doi": "10.1126/science.aad7055",
+      "publisher": "Science",
+      "year": 2016,
+      "tier": 1,
+      "covers": "Bồn trũng băng đối lưu, tuổi lưu giữ hố va chạm không quá ~10 triệu năm; khối băng nước"
+    },
+    {
+      "title": "Convection in a volatile nitrogen-ice-rich layer drives Pluto's geological vigour",
+      "url": "https://doi.org/10.1038/nature18289",
+      "doi": "10.1038/nature18289",
+      "publisher": "Nature",
+      "year": 2016,
+      "tier": 1,
+      "covers": "Sputnik Planum: băng nitơ, ô đa giác 10–40 km do đối lưu"
+    },
+    {
+      "title": "The atmosphere of Pluto as observed by New Horizons",
+      "url": "https://doi.org/10.1126/science.aad8866",
+      "doi": "10.1126/science.aad8866",
+      "publisher": "Science",
+      "year": 2016,
+      "tier": 1,
+      "covers": "Nitơ chiếm ưu thế; hydrocarbon sinh lớp mù rộng bao trùm Pluto"
+    }
+  ],
+  "corrections": [
+    "- 2026-09-25 | tai-sao-pluto-khong-con-la-hanh-tinh | Cả hai bản: núi băng nước 'cao tới 3.500 m, đủ cứng để đứng vững ở −230 °C' → 'cao tới 2–3 km, là khối băng nước, nhiệt độ trung bình −232 °C'; Sputnik Planitia 'rộng khoảng 1.000 km … tuổi có thể dưới 10 triệu năm' → 'bồn trũng băng nitơ, ô đa giác 10–40 km do đối lưu, tuổi theo hố va chạm không quá ~10 triệu năm'; khí quyển 'nhiều lớp, hàng chục lớp mù' → 'mỏng, chủ yếu nitơ, một lớp mù rộng bao trùm' | NASA Pluto Facts; McKinnon et al. 2016 doi 10.1038/nature18289; Moore et al. 2016 doi 10.1126/science.aad7055; Gladstone et al. 2016 doi 10.1126/science.aad8866",
+    "- 2026-09-25 | tai-sao-pluto-khong-con-la-hanh-tinh | Cả hai bản: 'nếu đặt Trái Đất vào quỹ đạo Pluto cũng không dọn sạch nổi' (lập luận không nguồn, ngược với tiêu chí Margot 2015) → 'càng xa Mặt Trời càng cần nặng hơn mới dọn sạch quỹ đạo'; phía phản đối gắn nguồn Metzger, Sykes, Stern, Runyon 2019; 'Trái Đất vượt trội tuyệt đối' → chỉ số Π Trái Đất ~800, Pluto ~0,03, ngưỡng 1 | Margot 2015 doi 10.1088/0004-6256/150/6/185; Metzger et al. 2019 doi 10.1016/j.icarus.2018.08.026; NASA New Horizons",
+    "- 2026-09-25 | tai-sao-pluto-khong-con-la-hanh-tinh | Cả hai bản: Eris 'thiên thể vành đai Kuiper' → 'ở rất xa ngoài quỹ đạo Sao Hải Vương'; 'danh sách hành tinh dài ra vô hạn định' → 'có thể thêm hàng chục, thậm chí hơn một trăm'; năm hành tinh lùn thêm mốc 9/2026; bỏ 'Pluto quá nhỏ để gây nhiễu loạn đo được', 'ở đúng vùng trời tính toán sai chỉ tới', 'nhiều tháng so sánh từng cặp ảnh' (không nguồn) → 'Pluto rất nhẹ, khoảng 1/6 Mặt Trăng; tìm ra là tình cờ' | NASA Eris, Dwarf Planets, Pluto Facts; Brown & Schaller 2007 doi 10.1126/science.1139415; Soter 2006 doi 10.1086/508861; Standish 1993 doi 10.1086/116575"
+  ],
+  "openQuestions": [
+    "Hộp khuyên dùng 'Pluto' thay 'Sao Diêm Vương' là quy ước biên tập, không phải claim khoa học — cần xác nhận là quy ước chính thức của kho (check 17/09).",
+    "Quyền sử dụng nội dung phái sinh VACA (nguồn đã chết) vẫn chờ người quyết.",
+    "Chi tiết Tombaugh dùng máy so ảnh (blink comparator) có thể khôi phục nếu mở được trang Lowell Observatory."
+  ]
+}

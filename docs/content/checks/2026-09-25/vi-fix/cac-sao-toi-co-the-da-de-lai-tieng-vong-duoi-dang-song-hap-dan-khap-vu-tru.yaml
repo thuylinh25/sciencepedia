@@ -1,0 +1,85 @@
+slug: cac-sao-toi-co-the-da-de-lai-tieng-vong-duoi-dang-song-hap-dan-khap-vu-tru
+checkedAt: 2026-09-25
+checkedBy: science-editor
+priorFactCheck: REVISE
+verdict: pass
+summary: "Đóng S2 ở summary/seoDescription vi (sai cơ chế 'không chỉ… mà còn', 'đã phát hiện', '13 tỷ năm') và toàn bộ fix mở của check 17/09 ở cả hai bản: điều kiện mật độ hạt giống, thiên lệch chọn mẫu cho lỗ đen JWST, sao tối chưa được xác nhận quan sát, khoảng 10⁴–10⁷ M☉ gắn tiền ấn phẩm kèm nhãn, cắt vế không nguồn, gắn nhãn suy diễn. Mọi claim có evidence mở lượt này (có toàn văn Ghodla & Ilie); sau sửa có 6 nguồn bậc 1."
+claims:
+  - id: C-1
+    claim: "Pulsar là sao neutron quay nhanh phát tín hiệu vô tuyến đều; sóng hấp dẫn làm lệch rất nhỏ thời điểm tín hiệu tới; theo dõi nhiều pulsar lâu dài cho bằng chứng về nền sóng hấp dẫn nanohertz."
+    verdict: verified
+    severity: none
+    evidence: "https://doi.org/10.3847/2041-8213/acdac6 (arXiv:2306.16213) — 'evidence for a stochastic signal that is correlated among 67 pulsars from the 15-year pulsar-timing data set ... Hellings-Downs pattern expected for a stochastic gravitational-wave background'"
+    note: ""
+  - id: C-2
+    claim: "NANOGrav 15 năm (2023): mức ý nghĩa ~3,5–4σ, chưa đạt 5σ."
+    verdict: verified
+    severity: none
+    evidence: "arXiv:2306.16213 — 'p = 5 × 10^-5 − 1.9 × 10^-4 (approx. 3.5 − 4σ)'; Crossref ApJL 951, L8 (29/06/2023)"
+    note: ""
+  - id: C-3
+    claim: "JWST phát hiện lỗ đen đang bồi tụ rất sớm (vd GN-z11, z = 10,6); cùng các quasar rất nặng thời kỳ đầu, đặt câu hỏi lỗ đen lớn nhanh thế nào; một khả năng là hạt giống khối lượng lớn."
+    verdict: verified
+    severity: none
+    evidence: "https://doi.org/10.1038/s41586-024-07052-5 — 'GN-z11, an exceptionally luminous galaxy at z=10.6 ... hosts an accreting black hole'; 'consistent with both heavy seeds scenarios, or ... light seeds experiencing episodic super-Eddington phases'; Ghodla & Ilie — 'high redshift quasar observations revealing unexpectedly massive SMBHs'"
+    note: "Viết lại từ 'nhiều lỗ đen siêu nặng … gây khó cho các mô hình' (trình bày như đã chốt)."
+  - id: C-4
+    claim: "Mức 'quá sớm, quá nặng' còn tranh luận; Li và cs. (2025): thiên lệch chọn mẫu và sai số đo có thể giải thích phần lớn chênh lệch."
+    verdict: verified
+    severity: none
+    evidence: "https://doi.org/10.3847/1538-4357/ada603 (arXiv:2403.00074) — 'the coupled effects of selection biases ... and measurement uncertainties ... can in fact largely account for the reported offset'"
+    note: "Nêu cả hai phía, không phân xử."
+  - id: C-5
+    claim: "Sao tối: sao giả thuyết của vũ trụ sơ khai, cấp năng lượng bằng nhiệt từ hủy cặp vật chất tối thay vì chủ yếu nhiệt hạch."
+    verdict: verified
+    severity: none
+    evidence: "https://doi.org/10.1103/PhysRevLett.100.051101 (arXiv:0705.0521) — 'Heat from neutralino DM annihilation ... a giant ... hydrogen-helium star powered by DM annihilation instead of nuclear fusion'"
+    note: ""
+  - id: C-6
+    claim: "Chưa sao tối nào được xác nhận quan sát; năm 2023 một nhóm đề xuất ba thiên thể JWST là ứng viên đầu tiên."
+    verdict: verified
+    severity: none
+    evidence: "https://doi.org/10.1073/pnas.2305762120 — 'The first generation of stars in the universe is yet to be observed ... JADES-GS-z13-0, JADES-GS-z12-0, and JADES-GS-z11-0 ... consistent with a Supermassive Dark Star interpretation, thus identifying the first Dark Star candidates'"
+    note: ""
+  - id: C-7
+    claim: "Theo mô hình của nhóm này, sao tối có thể lớn tới ~10⁶ M☉; tiền ấn phẩm 2025 (chưa bình duyệt) tính 10⁴–10⁷ M☉ trước khi sụp thành lỗ đen, có thể làm hạt giống."
+    verdict: verified
+    severity: S4
+    evidence: "Freese 2023 PNAS — 'can grow to become supermassive (M⋆ ∼ 10^6 M⊙)'; https://arxiv.org/abs/2511.08578 — 'O(10^4)−O(10^7) M⊙ before the general-relativistic Feynman-Chandrasekhar instability causes their dynamical collapse to black holes ... can serve as seeds'"
+    note: "Khoảng 10⁴–10⁷ chỉ có ở tiền ấn phẩm (tier 3); bài ghi rõ nhãn."
+  - id: C-8
+    claim: "Ghodla & Ilie (2026, PRD): với mật độ hạt giống ~10⁻³ Mpc⁻³, cặp lỗ đen siêu nặng có hạt giống sao tối có thể là nguồn đóng góp chính vào nền sóng PTA."
+    verdict: verified
+    severity: none
+    evidence: "https://doi.org/10.1103/hvfd-8fkr (arXiv:2507.06163) — 'Dark Star seeded SMBHs, with comoving seed number density of O(10^-3) Mpc^-3 can be the dominant contributor to the PTA signal'"
+    note: "10⁻³ Mpc⁻³ = một hạt giống / 1.000 Mpc³."
+  - id: C-9
+    claim: "Nền sóng phát ra từ các cặp lỗ đen siêu nặng đang xoắn vào nhau, nếu giả thuyết đúng thì mang dấu vết gián tiếp về nguồn gốc sơ khai của chúng."
+    verdict: verified
+    severity: none
+    evidence: "arXiv:2306.16213 — 'an ensemble of binary supermassive black-hole inspirals'; Ghodla & Ilie tóm tắt"
+    note: "Câu có điều kiện; sửa 'vụ hợp nhất hiện đại'."
+  - id: C-10
+    claim: "Cận trên: mật độ hạt giống gấp 10–100 lần mức trên sẽ làm nền sóng dự đoán mạnh hơn quan sát."
+    verdict: verified
+    severity: none
+    evidence: "arXiv:2507.06163 toàn văn — 'O(10^-2 − 10^-1) Mpc^-3 would overproduce the observed SGWB energy density'"
+    note: "Cắt vế 'nếu quá ít thì cần cơ chế khác' (không có trong nguồn)."
+  - id: C-11
+    claim: "Cách tiếp cận này có thể dùng nền sóng hấp dẫn như 'hóa thạch' để kiểm tra kịch bản hình thành lỗ đen đầu tiên."
+    verdict: verified
+    severity: none
+    evidence: "Ghodla & Ilie — 'we calculate the implications of early seeded SMBHs for the PTA signal'; 'suggest ways to place an upper bound on the seed number density'"
+    note: "Thu chủ thể về đúng một bài báo (quy tắc 18)."
+  - id: C-12
+    claim: "Câu kết 'mắt xích' — ghi rõ là suy diễn của người viết."
+    verdict: verified
+    severity: S4
+    evidence: "Không phải claim của nguồn; đã gắn nhãn."
+    note: ""
+  - id: C-13
+    claim: "Summary/SEO: năm 2023 PTA công bố bằng chứng; nghiên cứu 2026 cho rằng tín hiệu có thể chủ yếu từ các cặp lỗ đen siêu nặng có hạt giống là sao tối."
+    verdict: verified
+    severity: none
+    evidence: "NANOGrav 2023 (tiêu đề 'Evidence for ...'); Ghodla & Ilie 2026 ('dominant contributor')"
+    note: "Sửa S2 ở summary và seoDescription vi."

@@ -1,0 +1,289 @@
+{
+  "slug": "toan-canh-dac-diem-8-hanh-tinh-he-mat-troi",
+  "edits": [
+    {
+      "claimId": "C-14",
+      "severity": "S3",
+      "find": "Hành tinh là thiên thể dưới cấp sao. Khối lượng của nó không đủ để châm ngòi phản ứng hợp hạch trong lõi, nên hành tinh không tự phát sáng — thứ ta nhìn thấy chỉ là ánh sáng của sao mẹ phản chiếu lại. Phần lớn hành tinh chuyển động quanh một ngôi sao hoặc một hệ sao, tuy vẫn có những hành tinh trôi tự do giữa các vì sao.",
+      "replace": "Hành tinh không đủ khối lượng để châm ngòi phản ứng hợp hạch trong lõi như một ngôi sao, nên không tự phát sáng — thứ ta nhìn thấy là ánh sáng của sao mẹ phản chiếu lại. Phần lớn hành tinh chuyển động quanh một ngôi sao hoặc một hệ sao, tuy vẫn có những hành tinh trôi tự do giữa các vì sao.",
+      "why": "'Thiên thể dưới cấp sao' gộp cả sao lùn nâu — đơn giản hoá mất thông tin (check 09-17 C-14). Giữ phần có nguồn: NASA Jupiter Facts 'has the same ingredients as a star, but it did not grow massive enough to ignite'; NASA Uranus Facts: ánh sáng Mặt Trời 'reflected back out by Uranus' cloud tops'; NASA Exoplanets: 'some free-floating exoplanets, called rogue planets, are untethered to any star'. Sửa cả en.",
+      "evidence": "https://science.nasa.gov/jupiter/jupiter-facts/ ; https://science.nasa.gov/uranus/facts/ ; https://science.nasa.gov/exoplanets/"
+    },
+    {
+      "claimId": "C-9",
+      "severity": "S3",
+      "find": "Nói ngắn gọn: không còn thiên thể nào cỡ tương đương chia sẻ quỹ đạo, ngoài vệ tinh của chính nó và các thiên thể bị khoá cộng hưởng.",
+      "replace": "Nói ngắn gọn: thiên thể đó phải áp đảo về khối lượng so với mọi thiên thể khác cùng chia sẻ vùng quỹ đạo của nó. Theo thước đo mà Steven Soter đề xuất năm 2006, tám hành tinh cách biệt với các tiểu hành tinh và sao chổi tới bốn–năm bậc độ lớn.",
+      "why": "Phần diễn giải 'trừ vệ tinh và thiên thể khoá cộng hưởng' không có trong văn bản IAU và không nguồn (check 09-17 C-9). Thay bằng diễn giải có nguồn: Soter 2006 định lượng định nghĩa 'by the degree to which a body dominates the other masses that share its orbital zone' và thấy 'a gap of four to five orders of magnitude'. Sửa cả en.",
+      "evidence": "https://doi.org/10.1086/508861 (Soter 2006, arXiv astro-ph/0608359)"
+    },
+    {
+      "claimId": "C-13",
+      "severity": "S3",
+      "find": "Ranh giới giữa hai nhóm là vành đai tiểu hành tinh, và đó không phải trùng hợp: trong đĩa tiền hành tinh, chỉ ở khoảng cách đủ xa Mặt Trời thì nước và các chất dễ bay hơi mới đóng băng được, cho phép lõi hành tinh tích tụ đủ nhanh và đủ nặng để giữ lấy khí.",
+      "replace": "Ranh giới giữa hai nhóm là vành đai tiểu hành tinh. Theo mô hình chủ đạo (bồi tụ lõi), sự phân chia này gắn với đường tuyết: chỉ ở khoảng cách đủ xa Mặt Trời thì nước và các chất dễ bay hơi mới đóng băng được, cho lõi hành tinh thêm vật liệu rắn để lớn đủ nhanh và đủ nặng mà giữ lấy khí.",
+      "why": "'Không phải trùng hợp' khẳng định mạnh hơn mức một mô hình cho phép (check 09-17 C-13). Hạ về 'theo mô hình chủ đạo' kèm nguồn: Öberg 2011 — hạt băng ngoài đường tuyết nước là 'the building blocks of planetary cores in the core accretion model', vùng giữa các đường tuyết 'coincidental with the giant-planet forming zone'; Pfalzner 2015 mô tả bồi tụ lõi. Sửa cả en.",
+      "evidence": "https://doi.org/10.1088/2041-8205/743/1/L16 (Öberg et al. 2011, arXiv 1110.5567) ; https://doi.org/10.1088/0031-8949/90/6/068001 (Pfalzner et al. 2015)"
+    },
+    {
+      "claimId": "C-4",
+      "severity": "S4",
+      "find": "| Sao Thiên Vương | 19,2 | 84,0 năm |",
+      "replace": "| Sao Thiên Vương | 19,2 | 84 năm |",
+      "why": "Fact Sheet: 30.589 ngày = 83,75 năm, nên '84,0' giả độ chính xác một chữ số thập phân sai; NASA Uranus Facts ghi 'about 84 Earth years'. Sửa cả en.",
+      "evidence": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/ ; https://science.nasa.gov/uranus/facts/"
+    },
+    {
+      "claimId": "C-16",
+      "severity": "S3",
+      "find": "Tên quốc tế của các hành tinh lấy từ thần thoại La Mã. Nhiều cái tên khớp với một đặc điểm quan sát được — nhưng đó là sự trùng hợp về cách người đặt tên chọn thần, không phải quy tắc: có tên gắn với màu (Mars, Neptune), có tên gắn với tốc độ (Mercury), và có tên chỉ đơn giản là thần cấp cao (Jupiter).",
+      "replace": "Tên quốc tế của các hành tinh lấy từ thần thoại La Mã (riêng Uranus lấy từ thần thoại Hy Lạp). Một số tên được chọn vì khớp với đặc điểm quan sát được — Mars vì màu đỏ gợi màu máu, Jupiter vì là hành tinh lớn nhất, Mercury vì chạy nhanh nhất — nhưng đó không phải quy tắc chung.",
+      "why": "Câu cũ gọi sự khớp là 'trùng hợp' trong khi NASA ghi rõ Mars 'was named by the ancient Romans for their god of war because its reddish color was reminiscent of blood', Jupiter 'being the biggest planet, gets its name from the king of the ancient Roman gods', Mercury 'appropriately named for the swiftest'. Uranus là thần Hy Lạp (NASA Uranus Facts: 'the Greek god of the sky'). Không nguồn nào nói Neptune được đặt tên vì màu — bỏ Neptune khỏi nhóm 'gắn với màu'. Sửa cả en.",
+      "evidence": "https://science.nasa.gov/mars/facts/ ; https://science.nasa.gov/jupiter/jupiter-facts/ ; https://science.nasa.gov/mercury/facts/ ; https://science.nasa.gov/uranus/facts/"
+    },
+    {
+      "claimId": "C-16",
+      "severity": "S4",
+      "find": "- **Mercury** là vị thần đưa tin bay nhanh như gió — Sao Thuỷ có chu kỳ quỹ đạo ngắn nhất, nhanh chóng trở lại vị trí cũ so với Mặt Trời.",
+      "replace": "- **Mercury** là vị thần nhanh nhất của La Mã — Sao Thuỷ là hành tinh nhanh nhất, đi hết một vòng quanh Mặt Trời chỉ trong 88 ngày.",
+      "why": "NASA Mercury Facts: 'named for the swiftest of the ancient Roman gods', 'Mercury is the fastest planet, zipping around the Sun every 88 Earth days'. 'Thần đưa tin' không có trong nguồn đã mở. Sửa cả en.",
+      "evidence": "https://science.nasa.gov/mercury/facts/"
+    },
+    {
+      "claimId": "C-15",
+      "severity": "S3",
+      "find": "- **Saturn** là cha của Jupiter, **Uranus** là cha của Saturn: phả hệ thần thoại chạy ngược chiều ra xa dần Mặt Trời. Đây là trùng hợp về tên gọi, không phải về lịch sử khám phá — Mộc và Thổ đã được biết từ thời cổ đại, còn Sao Thiên Vương là hành tinh ĐẦU TIÊN tìm được nhờ kính thiên văn (William Herschel, 1781).",
+      "replace": "- **Saturn** là cha của Jupiter, và **Uranus** — thần bầu trời Hy Lạp, tương ứng với Caelus của La Mã — là cha của Saturn: phả hệ thần thoại chạy ngược khi đi ra xa Mặt Trời. Đó không phải trùng hợp: tên Uranus do Johann Bode đề xuất năm 1782 để khớp với lối đặt tên của các hành tinh có trước. Nó cũng không phản ánh thứ tự khám phá — Mộc và Thổ đã được biết từ thời cổ đại, còn Sao Thiên Vương là hành tinh ĐẦU TIÊN tìm được nhờ kính thiên văn (William Herschel, 1781).",
+      "why": "Gọi phả hệ là 'trùng hợp về tên gọi' là sai: Royal Observatory Greenwich — Bode đề xuất Uranus năm 1782 vì 'Georgium didn't follow the pattern of the other planet names'; 'Uranus' counterpart in Roman mythology, Caelus, is the father of Saturn, and Saturn in turn the father of Jupiter'. NASA StarChild: Bode đề xuất 'in order for it to be in conformity with the other planetary names'. NASA Saturn Facts: Saturn 'father of Jupiter', 'known since ancient times'. NASA Uranus Facts: Herschel 1781, hành tinh đầu tiên tìm bằng kính thiên văn. Sửa cả en.",
+      "evidence": "https://www.rmg.co.uk/stories/space-astronomy/astronomy/discovery-uranus ; https://starchild.gsfc.nasa.gov/docs/StarChild/questions/question42.html ; https://science.nasa.gov/saturn/facts/ ; https://science.nasa.gov/uranus/facts/"
+    },
+    {
+      "claimId": "C-21",
+      "severity": "S3",
+      "find": "Trong văn hoá phương Đông, năm hành tinh nhìn được bằng mắt thường mang tên ngũ hành — Thuỷ, Kim, Hoả, Mộc, Thổ — dựa trên màu sắc và tính chất mà người xưa gán cho chúng.",
+      "replace": "Trong văn hoá phương Đông, năm hành tinh nhìn được bằng mắt thường mang tên ngũ hành — Thuỷ, Kim, Hoả, Mộc, Thổ.",
+      "why": "Lý do đặt tên ('dựa trên màu sắc và tính chất') chỉ tìm thấy ở nguồn không đạt chuẩn (blog, trang tử vi) — cắt. Giữ phần tự kiểm được: năm hành tinh thấy bằng mắt thường (NASA Venus Facts: 'the five brightest planets: Mercury, Venus, Mars, Jupiter, and Saturn') và chính các tên Hán-Việt. Sửa cả en.",
+      "evidence": "https://science.nasa.gov/venus/venus-facts/"
+    },
+    {
+      "claimId": "C-18",
+      "severity": "S3",
+      "find": "Tới nay thiên thể đó vẫn chưa từng được quan sát trực tiếp, nên nó chưa nằm trong danh sách chính thức — và ngay cả phần suy luận cũng còn tranh cãi: một số nghiên cứu cho rằng chính cấu trúc của vành đai Kuiper, chứ không phải một hành tinh ẩn, đủ giải thích sự gom cụm ấy.",
+      "replace": "Tới nay (tính tới 9/2026) thiên thể đó vẫn chưa được phát hiện, nên nó chưa nằm trong danh sách chính thức — và ngay cả phần suy luận cũng còn tranh cãi: có nghiên cứu cho rằng sự gom cụm có thể chỉ là thiên lệch do cách các cuộc khảo sát chọn vùng trời (Napier và cộng sự, 2021), có nghiên cứu cho rằng lực hấp dẫn của chính một đĩa thiên thể đủ nặng ngoài Sao Hải Vương có thể tạo ra nó mà không cần hành tinh ẩn (Sefilian và Touma, 2019).",
+      "why": "Thêm mốc thời gian và nguồn cho câu tranh cãi (open question của en-parity). NASA Planet X (mở 25/09/2026): 'has not yet been discovered, and there is debate in the scientific community about whether it exists'. Napier 2021: mẫu ETNO 'provides no evidence for angular clustering' khi tính thiên lệch chọn mẫu. Sefilian & Touma 2019: đĩa TNO tự hấp dẫn 'could obviate the need for it altogether'. Câu cũ gộp hai hướng thành một ('cấu trúc vành đai') — tách đúng theo nguồn. Sửa cả en.",
+      "evidence": "https://science.nasa.gov/solar-system/planet-x/ ; https://doi.org/10.3847/PSJ/abe53e (Napier et al. 2021, arXiv 2102.05601) ; https://doi.org/10.3847/1538-3881/aaf0fc (Sefilian & Touma 2019, arXiv 1804.06859)"
+    }
+  ],
+  "enEdits": [
+    {
+      "claimId": "C-14",
+      "severity": "S3",
+      "find": "A planet is a sub-stellar body. Its mass is not enough to ignite [[phan-ung-nhiet-hach|nuclear fusion]] in its core, so a planet does not shine by itself — what we see is only light from its parent star reflected back.",
+      "replace": "A planet does not have enough mass to ignite [[phan-ung-nhiet-hach|nuclear fusion]] in its core the way a star does, so it does not shine by itself — what we see is light from its parent star reflected back.",
+      "why": "Đồng bộ với vi; bỏ 'sub-stellar body' (gộp sao lùn nâu).",
+      "evidence": "https://science.nasa.gov/jupiter/jupiter-facts/ ; https://science.nasa.gov/uranus/facts/"
+    },
+    {
+      "claimId": "C-9",
+      "severity": "S3",
+      "find": "Put briefly: no other body of comparable size shares its orbit, apart from its own moons and bodies locked in resonance.",
+      "replace": "Put briefly: the body must dominate, by mass, every other body that shares its orbital zone. By the measure Steven Soter proposed in 2006, the eight planets stand four to five orders of magnitude apart from the asteroids and comets.",
+      "why": "Đồng bộ với vi; diễn giải cũ không nguồn.",
+      "evidence": "https://doi.org/10.1086/508861 (Soter 2006, arXiv astro-ph/0608359)"
+    },
+    {
+      "claimId": "C-13",
+      "severity": "S3",
+      "find": "The boundary between the two groups is the asteroid belt, and that is no coincidence: in the protoplanetary disk, only far enough from the Sun could water and other volatiles freeze, allowing planetary cores to grow fast enough and heavy enough to hold on to gas.",
+      "replace": "The boundary between the two groups is the asteroid belt. In the leading model (core accretion), the split is tied to the snow line: only far enough from the Sun could water and other volatiles freeze, giving planetary cores extra solid material to grow fast enough and heavy enough to hold on to gas.",
+      "why": "Đồng bộ với vi; hạ mức khẳng định.",
+      "evidence": "https://doi.org/10.1088/2041-8205/743/1/L16 (Öberg et al. 2011, arXiv 1110.5567) ; https://doi.org/10.1088/0031-8949/90/6/068001 (Pfalzner et al. 2015)"
+    },
+    {
+      "claimId": "C-4",
+      "severity": "S4",
+      "find": "| Uranus | 19.2 | 84.0 years |",
+      "replace": "| Uranus | 19.2 | 84 years |",
+      "why": "Đồng bộ với vi.",
+      "evidence": "https://science.nasa.gov/uranus/facts/"
+    },
+    {
+      "claimId": "C-16",
+      "severity": "S3",
+      "find": "The international names of the planets come from Roman mythology. Many of the names match an observable feature — but that reflects how the namers chose their gods, not a rule: some names relate to colour (Mars, Neptune), some to speed (Mercury), and some simply to a high-ranking god (Jupiter).",
+      "replace": "The international names of the planets come from Roman mythology (Uranus alone comes from Greek mythology). Some names were chosen because they fit an observable feature — Mars for its red colour, reminiscent of blood; Jupiter because it is the largest planet; Mercury because it moves fastest — but that is not a general rule.",
+      "why": "Đồng bộ với vi.",
+      "evidence": "https://science.nasa.gov/mars/facts/ ; https://science.nasa.gov/jupiter/jupiter-facts/ ; https://science.nasa.gov/mercury/facts/ ; https://science.nasa.gov/uranus/facts/"
+    },
+    {
+      "claimId": "C-16",
+      "severity": "S4",
+      "find": "- **Mercury** is the messenger god, swift as the wind — Mercury has the shortest orbital period and quickly returns to the same position relative to the Sun.",
+      "replace": "- **Mercury** is the swiftest of the Roman gods — Mercury is the fastest planet, going once around the Sun in just 88 days.",
+      "why": "Đồng bộ với vi.",
+      "evidence": "https://science.nasa.gov/mercury/facts/"
+    },
+    {
+      "claimId": "C-15",
+      "severity": "S3",
+      "find": "- **Saturn** is the father of Jupiter, and **Uranus** is the father of Saturn: the mythological lineage runs backwards as you move outward from the Sun. This is a coincidence of naming, not of discovery history — Jupiter and Saturn have been known since antiquity, while Uranus was the FIRST planet found with a telescope (William Herschel, 1781).",
+      "replace": "- **Saturn** is the father of Jupiter, and **Uranus** — the Greek sky god, counterpart of the Roman Caelus — is the father of Saturn: the mythological lineage runs backwards as you move outward from the Sun. That is no accident: Johann Bode proposed the name Uranus in 1782 to fit the pattern of the existing planet names. Nor does it reflect the order of discovery — Jupiter and Saturn have been known since antiquity, while Uranus was the FIRST planet found with a telescope (William Herschel, 1781).",
+      "why": "Đồng bộ với vi.",
+      "evidence": "https://www.rmg.co.uk/stories/space-astronomy/astronomy/discovery-uranus ; https://science.nasa.gov/saturn/facts/ ; https://science.nasa.gov/uranus/facts/"
+    },
+    {
+      "claimId": "C-21",
+      "severity": "S3",
+      "find": "are named after the five elements — Water, Metal, Fire, Wood, Earth — based on the colours and qualities the ancients assigned to them.",
+      "replace": "are named after the five elements — Water, Metal, Fire, Wood, Earth.",
+      "why": "Đồng bộ với vi; lý do đặt tên không có nguồn đạt chuẩn.",
+      "evidence": "https://science.nasa.gov/venus/venus-facts/"
+    },
+    {
+      "claimId": "C-18",
+      "severity": "S3",
+      "find": "To date that body has never been observed directly, so it is not on the official list — and even the inference is disputed: some studies argue that the structure of the Kuiper belt itself, rather than a hidden planet, is enough to explain the clustering.",
+      "replace": "To date (as of September 2026) that body has not been discovered, so it is not on the official list — and even the inference is disputed: one study argues that the clustering may simply be a bias in how surveys chose where to look (Napier and colleagues, 2021), another that the gravity of a sufficiently massive disc of objects beyond Neptune could produce it without any hidden planet (Sefilian and Touma, 2019).",
+      "why": "Đồng bộ với vi.",
+      "evidence": "https://science.nasa.gov/solar-system/planet-x/ ; https://doi.org/10.3847/PSJ/abe53e (Napier et al. 2021, arXiv 2102.05601) ; https://doi.org/10.3847/1538-3881/aaf0fc (Sefilian & Touma 2019, arXiv 1804.06859)"
+    }
+  ],
+  "addSources": [
+    {
+      "title": "Is Planet X Real?",
+      "url": "https://science.nasa.gov/solar-system/planet-x/",
+      "doi": "",
+      "publisher": "NASA Science",
+      "year": 2026,
+      "tier": 2,
+      "covers": "Batygin & Brown 2016; Hành tinh thứ chín chưa được phát hiện, còn tranh cãi (9/2026)"
+    },
+    {
+      "title": "No Evidence for Orbital Clustering in the Extreme Trans-Neptunian Objects",
+      "url": "https://doi.org/10.3847/PSJ/abe53e",
+      "doi": "10.3847/PSJ/abe53e",
+      "publisher": "The Planetary Science Journal",
+      "year": 2021,
+      "tier": 1,
+      "covers": "Gom cụm ETNO có thể là thiên lệch chọn mẫu"
+    },
+    {
+      "title": "Shepherding in a Self-gravitating Disk of Trans-Neptunian Objects",
+      "url": "https://doi.org/10.3847/1538-3881/aaf0fc",
+      "doi": "10.3847/1538-3881/aaf0fc",
+      "publisher": "The Astronomical Journal",
+      "year": 2019,
+      "tier": 1,
+      "covers": "Đĩa TNO tự hấp dẫn có thể thay cho Hành tinh thứ chín"
+    },
+    {
+      "title": "What Is a Planet?",
+      "url": "https://doi.org/10.1086/508861",
+      "doi": "10.1086/508861",
+      "publisher": "The Astronomical Journal",
+      "year": 2006,
+      "tier": 1,
+      "covers": "Định lượng 'dọn sạch quỹ đạo': khoảng cách 4–5 bậc độ lớn giữa 8 hành tinh và tiểu hành tinh/sao chổi"
+    },
+    {
+      "title": "The effects of snowlines on C/O in planetary atmospheres",
+      "url": "https://doi.org/10.1088/2041-8205/743/1/L16",
+      "doi": "10.1088/2041-8205/743/1/L16",
+      "publisher": "The Astrophysical Journal Letters",
+      "year": 2011,
+      "tier": 1,
+      "covers": "Hạt băng ngoài đường tuyết nước là viên gạch của lõi trong mô hình bồi tụ lõi; vùng hình thành hành tinh khổng lồ"
+    },
+    {
+      "title": "The formation of the solar system",
+      "url": "https://doi.org/10.1088/0031-8949/90/6/068001",
+      "doi": "10.1088/0031-8949/90/6/068001",
+      "publisher": "Physica Scripta",
+      "year": 2015,
+      "tier": 1,
+      "covers": "Mô hình bồi tụ lõi; đường tuyết H2O/CO"
+    },
+    {
+      "title": "Jupiter Facts",
+      "url": "https://science.nasa.gov/jupiter/jupiter-facts/",
+      "doi": "",
+      "publisher": "NASA Science",
+      "year": 2026,
+      "tier": 2,
+      "covers": "Không đủ khối lượng để châm ngòi như sao; hydro kim loại; tên theo vua các thần La Mã vì là hành tinh lớn nhất"
+    },
+    {
+      "title": "Saturn Facts",
+      "url": "https://science.nasa.gov/saturn/facts/",
+      "doi": "",
+      "publisher": "NASA Science",
+      "year": 2026,
+      "tier": 2,
+      "covers": "Saturn là cha của Jupiter, biết từ thời cổ đại; hydro kim loại lỏng trong lõi"
+    },
+    {
+      "title": "Neptune Facts",
+      "url": "https://science.nasa.gov/neptune/neptune-facts/",
+      "doi": "",
+      "publisher": "NASA Science",
+      "year": 2026,
+      "tier": 2,
+      "covers": "Băng khổng lồ (nước, methane, amoniac); 16 vệ tinh; thần biển La Mã; methane cho màu xanh"
+    },
+    {
+      "title": "Mars Facts",
+      "url": "https://science.nasa.gov/mars/facts/",
+      "doi": "",
+      "publisher": "NASA Science",
+      "year": 2026,
+      "tier": 2,
+      "covers": "Tên theo thần chiến tranh vì màu đỏ gợi máu; sắt bị oxy hoá"
+    },
+    {
+      "title": "Mercury Facts",
+      "url": "https://science.nasa.gov/mercury/facts/",
+      "doi": "",
+      "publisher": "NASA Science",
+      "year": 2026,
+      "tier": 2,
+      "covers": "Tên theo vị thần nhanh nhất; hành tinh nhanh nhất, 88 ngày"
+    },
+    {
+      "title": "Exoplanets",
+      "url": "https://science.nasa.gov/exoplanets/",
+      "doi": "",
+      "publisher": "NASA Science",
+      "year": 2026,
+      "tier": 2,
+      "covers": "Hành tinh trôi tự do (rogue planets)"
+    },
+    {
+      "title": "Dwarf Planets",
+      "url": "https://science.nasa.gov/dwarf-planets/",
+      "doi": "",
+      "publisher": "NASA Science",
+      "year": 2026,
+      "tier": 2,
+      "covers": "Năm hành tinh lùn được IAU công nhận (9/2026); có thể còn hơn một trăm chưa được tìm ra"
+    },
+    {
+      "title": "The discovery of Uranus",
+      "url": "https://www.rmg.co.uk/stories/space-astronomy/astronomy/discovery-uranus",
+      "doi": "",
+      "publisher": "Royal Museums Greenwich (Royal Observatory)",
+      "year": 2026,
+      "tier": 3,
+      "covers": "Bode đề xuất tên Uranus năm 1782 cho khớp lối đặt tên; Caelus/Uranus là cha của Saturn"
+    }
+  ],
+  "corrections": [
+    "- 2026-09-25 | toan-canh-dac-diem-8-hanh-tinh-he-mat-troi | Cả hai bản: 'phả hệ Saturn–Uranus là trùng hợp về tên gọi' → không phải trùng hợp: Bode đề xuất tên Uranus năm 1782 để khớp lối đặt tên; 'tên hành tinh lấy từ thần thoại La Mã' → thêm 'riêng Uranus từ thần thoại Hy Lạp'; 'sự khớp tên–đặc điểm là trùng hợp; Neptune gắn với màu' → Mars, Jupiter, Mercury được chọn vì đặc điểm (NASA), bỏ Neptune; Mercury 'thần đưa tin' → 'vị thần nhanh nhất' | Royal Museums Greenwich; NASA StarChild; NASA Mars/Jupiter/Mercury/Uranus/Saturn Facts",
+    "- 2026-09-25 | toan-canh-dac-diem-8-hanh-tinh-he-mat-troi | Cả hai bản: 'hành tinh là thiên thể dưới cấp sao' → bỏ (gộp sao lùn nâu); diễn giải điều kiện c 'trừ vệ tinh và thiên thể khoá cộng hưởng' → 'áp đảo về khối lượng trong vùng quỹ đạo' theo Soter 2006; 'ranh giới vành đai tiểu hành tinh không phải trùng hợp' → 'theo mô hình chủ đạo (bồi tụ lõi)' | Soter 2006 doi 10.1086/508861; Öberg et al. 2011 doi 10.1088/2041-8205/743/1/L16; Pfalzner et al. 2015",
+    "- 2026-09-25 | toan-canh-dac-diem-8-hanh-tinh-he-mat-troi | Cả hai bản: Hành tinh thứ chín 'chưa từng được quan sát trực tiếp' → 'chưa được phát hiện (tính tới 9/2026)'; tranh cãi 'cấu trúc vành đai Kuiper đủ giải thích' → hai hướng có nguồn: thiên lệch khảo sát (Napier 2021) và đĩa TNO tự hấp dẫn (Sefilian & Touma 2019); chu kỳ Thiên Vương '84,0 năm' → '84 năm'; bỏ lý do đặt tên ngũ hành không nguồn | NASA Planet X; doi 10.3847/PSJ/abe53e; doi 10.3847/1538-3881/aaf0fc; NASA Uranus Facts"
+  ],
+  "openQuestions": [
+    "Quyền sử dụng nội dung phái sinh VACA (nguồn đã chết từ 17/09) vẫn chờ người quyết.",
+    "Số vệ tinh (NASA 8/2026) và số hành tinh lùn (9/2026): kiểm lại sau 6 tháng; cột vệ tinh vẫn gộp ba tiêu chí đếm của NASA (IAU công nhận / confirmed / known) — chưa chuẩn hoá.",
+    "Tên Sao Mai/Sao Hôm là tên tiếng Việt; nguồn NASA chỉ đỡ ý 'người xưa tưởng là hai thiên thể, sao mai và sao hôm'."
+  ]
+}

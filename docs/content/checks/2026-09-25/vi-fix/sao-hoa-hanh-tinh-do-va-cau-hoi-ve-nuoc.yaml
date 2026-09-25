@@ -1,0 +1,85 @@
+slug: sao-hoa-hanh-tinh-do-va-cau-hoi-ve-nuoc
+checkedAt: 2026-09-25
+checkedBy: science-editor
+priorFactCheck: REVISE
+verdict: pass
+summary: "Sửa lỗi vi duy nhất còn sót sau en-parity (Valles Marineris 4.000 km/7 km, S2) và đóng mọi mục còn nợ của check 17/09 ở CẢ HAI bản: màu đỏ, Jezero, khoáng vật, băng, mốc 'ấm và ẩm', chuỗi nhân quả từ trường và MAVEN, số phận của nước (thêm 30–99% khoá trong vỏ), mốc đo Olympus Mons, lập luận nguồn gốc Phobos/Deimos (Hyodo 2017), mốc phóng MMX. Mọi claim có nguồn mở trong lượt; không còn S1–S3."
+claims:
+  - id: C-1
+    claim: "Màu đỏ do sắt trong đá, đất, bụi bị oxy hoá; bụi trong khí quyển làm hành tinh nhìn từ xa có màu đỏ."
+    verdict: "verified"
+    severity: "none"
+    evidence: "https://science.nasa.gov/mars/facts/"
+    note: "Đã sửa theo NASA."
+  - id: C-2
+    claim: "Dấu vết sông, hồ, châu thổ cổ; ví dụ hệ sông–châu thổ–hồ ở Jezero, nơi Perseverance hạ cánh 2021."
+    verdict: "verified"
+    severity: "none"
+    evidence: "https://science.nasa.gov/mission/mars-2020-perseverance/ ; https://science.nasa.gov/mars/facts/"
+    note: "Bỏ 'rõ nhất' và 'đang hoạt động'."
+  - id: C-3
+    claim: "Khoáng vật hình thành nhờ nước: khoáng sét (phyllosilicate) và sulfat."
+    verdict: "verified"
+    severity: "none"
+    evidence: "https://doi.org/10.1126/science.1122659 (Bibring et al. 2006, PubMed 16627738)"
+    note: ""
+  - id: C-4
+    claim: "Chỏm băng hai cực, băng dưới bề mặt vùng cực, băng ngầm >100 m ở vĩ độ trung bình."
+    verdict: "verified"
+    severity: "none"
+    evidence: "https://science.nasa.gov/mars/facts/ ; https://doi.org/10.1126/science.aao1619 (Dundas et al. 2018, PubMed 29326269)"
+    note: ""
+  - id: C-5
+    claim: "Hàng tỉ năm trước Sao Hoả ẩm và ấm hơn, khí quyển dày hơn; khoáng vật do nước chủ yếu >3,5 tỉ năm tuổi."
+    verdict: "verified"
+    severity: "S4"
+    evidence: "https://science.nasa.gov/mars/facts/ ; https://doi.org/10.1126/science.1122659 (Bibring et al. 2006, PubMed 16627738)"
+    note: "Chữ 'ấm' theo NASA; tranh luận ấm/lạnh chưa nêu — openQuestions."
+  - id: C-6
+    claim: "Không có từ trường toàn cầu nay; vỏ nam còn dấu vết từ 4 tỉ năm; mất khí do gió mặt trời và bùng phát có thể góp phần lớn; MAVEN đo mất khí đang diễn ra (ICME 3/2015)."
+    verdict: "verified"
+    severity: "none"
+    evidence: "https://science.nasa.gov/mars/facts/ ; https://doi.org/10.1126/science.aad0210 (Jakosky et al. 2015, PubMed 26542576)"
+    note: "Bỏ chuỗi nhân quả và 'lá chắn' không nguồn; giữ 'có thể'."
+  - id: C-8
+    claim: "Nước nay chủ yếu dạng băng; nước cổ một phần thoát vào không gian, một phần còn là băng, 30–99% bị khoá trong khoáng vật vỏ (mô hình 2021)."
+    verdict: "verified"
+    severity: "none"
+    evidence: "https://doi.org/10.1126/science.abc7717 (Scheller et al. 2021, PubMed 33727251) ; https://science.nasa.gov/mars/facts/"
+    note: "Quy kết cho mô hình, không viết như sự thật."
+  - id: C-9
+    claim: "Olympus Mons lớn nhất Hệ Mặt Trời, ~21,9 km theo THEMIS/ASU (~2,5 lần Everest 8.848 m); NASA ghi >40 km từ chân tới đỉnh."
+    verdict: "verified"
+    severity: "S4"
+    evidence: "https://themis.asu.edu/zoom-20230811a ; https://science.nasa.gov/mars/facts/"
+    note: "21,9/8,848 = 2,47. Nguồn con số chính là bậc 3 — openQuestions."
+  - id: C-11
+    claim: "Valles Marineris lớn nhất Hệ Mặt Trời, ~3.870 km, sâu tới ~9,3 km."
+    verdict: "verified"
+    severity: "none"
+    evidence: "https://science.nasa.gov/mars/facts/"
+    note: "Đã sửa từ 4.000 km / 7 km."
+  - id: C-12
+    claim: "Hai vệ tinh nhỏ Phobos và Deimos (NASA, 9/2026); nguồn gốc chưa ngã ngũ — quang phổ giống tiểu hành tinh loại D gợi ý bắt giữ, quỹ đạo gần tròn xích đạo hợp với bồi tụ sau va chạm."
+    verdict: "verified"
+    severity: "none"
+    evidence: "https://science.nasa.gov/mars/moons/ ; https://doi.org/10.3847/1538-4357/aa81c4 (Hyodo et al. 2017, arXiv 1707.06282) ; https://science.nasa.gov/mars/facts/"
+    note: "NASA: 'two small moons … that may be captured asteroids'. Hyodo 2017 nêu đúng hai phía."
+  - id: C-14
+    claim: "JAXA xếp đây vào bài toán chưa giải của thuyết hình thành Hệ Mặt Trời; MMX lấy mẫu Phobos, dự kiến phóng 20/10/2026."
+    verdict: "verified"
+    severity: "none"
+    evidence: "https://www.mmx.jaxa.jp/en/"
+    note: "Kiểm lại sau 20/10/2026."
+  - id: C-15
+    claim: "Summary/seo: từng có sông, hồ và có thể cả đại dương."
+    verdict: "verified"
+    severity: "none"
+    evidence: "https://science.nasa.gov/mars/facts/ ; https://doi.org/10.1126/science.abc7717 (Scheller et al. 2021, PubMed 33727251)"
+    note: "NASA: 'hosted rivers, lakes, and floods'; Scheller: 'ocean-scale volumes'. Giữ 'có thể'."
+  - id: C-16
+    claim: "Bảng nguồn."
+    verdict: "verified"
+    severity: "none"
+    evidence: "—"
+    note: "Nguồn bậc 1–2 còn hiệu lực: Fact Sheet, JAXA, NASA Moons + 7 thêm (NASA Mars Facts, Perseverance, Bibring, Dundas, Jakosky, Scheller, Hyodo). THEMIS bậc 3."

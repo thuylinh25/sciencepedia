@@ -1,0 +1,256 @@
+{
+  "slug": "neu-roi-he-mat-troi-proxima-centauri-se-la-diem-dung-dau-tien",
+  "edits": [
+    {
+      "claimId": "C-4",
+      "severity": "S3",
+      "find": "chiếm khoảng **70% đến 75% tổng số sao**.",
+      "replace": "chiếm khoảng **75% tổng số sao** (NASA).",
+      "why": "Dải 70–75% không có nguồn; NASA nêu một con số: khoảng 75%.",
+      "evidence": "https://science.nasa.gov/universe/stars/types/ — \"red dwarfs make up around 75% of the Milky Way galaxy’s stellar population\""
+    },
+    {
+      "claimId": "C-5",
+      "severity": "S3",
+      "find": "- Có tuổi thọ cực dài, từ hàng trăm tỷ đến hàng nghìn tỷ năm.",
+      "replace": "- Có tuổi thọ cực dài: chúng đốt dần toàn bộ hydro trong hàng nghìn tỷ năm, và một số sao lùn đỏ khối lượng thấp được cho là sống tới khoảng 14 nghìn tỷ năm, lâu hơn tuổi hiện nay của vũ trụ.",
+      "why": "Đầu dưới \"hàng trăm tỷ năm\" không có nguồn; viết theo NASA, giữ mức dè dặt \"được cho là\" (\"Scientists think\").",
+      "evidence": "https://science.nasa.gov/universe/stars/types/ — \"red dwarfs can steadily burn through their entire supply of hydrogen over trillions of years\"; \"Scientists think some low-mass red dwarfs ... have life spans longer than the current age of the universe, up to about 14 trillion years\""
+    },
+    {
+      "claimId": "C-6",
+      "severity": "S3",
+      "find": "- Các đợt bùng phát năng lượng mạnh từ ngôi sao có thể làm suy giảm khí quyển của hành tinh.",
+      "replace": "- Các đợt bùng phát tia cực tím và tia X từ ngôi sao, mạnh hơn nhiều so với những gì Trái Đất nhận từ Mặt Trời, có thể ảnh hưởng mạnh tới điều kiện bề mặt; khí quyển của hành tinh có thể đang bốc hơi dần.",
+      "why": "Gắn claim vào nguồn ESO và giữ mức dè dặt của nguồn (\"may\", \"might\").",
+      "evidence": "https://www.eso.org/public/news/eso1629/ — \"the conditions on the surface may be strongly affected by the ultraviolet and X-ray flares from the star — far more intense than the Earth experiences from the Sun\"; \"The planet's atmosphere might also slowly be evaporating\""
+    },
+    {
+      "claimId": "C-7",
+      "severity": "S4",
+      "find": "Tuy nhiên, **Proxima Centauri b** vẫn được xem là một trong những ứng viên đáng chú ý nhất trong cuộc tìm kiếm sự sống ngoài Hệ Mặt Trời.",
+      "replace": "Dù vậy, **Proxima Centauri b** vẫn được chú ý đặc biệt: theo ESO, nó có thể là nơi gần nhất ngoài Hệ Mặt Trời có khả năng có sự sống.",
+      "why": "Nhận định \"đáng chú ý nhất\" không có nguồn; quy kết về ESO và giữ \"có thể\".",
+      "evidence": "https://www.eso.org/public/news/eso1629/ — \"it may also be the closest possible abode for life outside the Solar System\""
+    },
+    {
+      "claimId": "C-9",
+      "severity": "S3",
+      "find": "Với công nghệ hiện nay:\n\n- **Voyager 1**: khoảng 75.000 năm.\n- **New Horizons**: khoảng 90.000 năm.\n- **Parker Solar Probe**: khoảng 6.700 năm",
+      "replace": "Các con số dưới đây chỉ là phép quy đổi đơn giản: giả định tàu giữ nguyên tốc độ hiện tại và bay thẳng về phía Proxima. Đó không phải quỹ đạo thật; chẳng hạn, Voyager 1 đang bay về phía chòm Xà Phu, không phải về phía Proxima.\n\n- **Voyager 1** (khoảng 17 km/s so với Mặt Trời): khoảng 75.000 năm.\n- **Parker Solar Probe**: khoảng 6.600 năm",
+      "why": "Thêm giả định (C-9); cắt New Horizons vì không tìm được vận tốc hiện tại trên trang NASA (C-10, fix 17/09: không có nguồn thì cắt); Parker tính lại từ tốc độ NASA: 430.000 dặm/giờ ≈ 192 km/s; 4,02×10^13 km / 192 km/s ≈ 6.600 năm (C-11).",
+      "evidence": "https://science.nasa.gov/mission/voyager/voyager-1/ — \"38,026.79 mph (17.0 km/second) relative to the Sun\" → 4,02×10^13 km / 17 km/s ≈ 75.000 năm; https://science.nasa.gov/mission/voyager/frequently-asked-questions/ — \"Voyager 1 will leave the solar system aiming toward the constellation Ophiuchus\"; https://science.nasa.gov/science-research/heliophysics/nasas-parker-solar-probe-makes-history-with-closest-pass-to-sun/ — \"430,000 miles per hour\"; https://science.nasa.gov/mission/new-horizons/ chỉ có vận tốc lúc phóng (58.536 km/h so với Trái Đất), không có vận tốc hiện tại"
+    },
+    {
+      "claimId": "C-12",
+      "severity": "S3",
+      "find": "Dự án **Breakthrough Starshot** đề xuất sử dụng các tàu thăm dò siêu nhỏ được đẩy bằng laser công suất lớn.\n\nNếu đạt được tốc độ khoảng **20% tốc độ ánh sáng**, thời gian hành trình tới Proxima Centauri có thể giảm xuống chỉ còn khoảng **20 năm**.",
+      "replace": "Dự án **Breakthrough Starshot** đề xuất các tàu thăm dò siêu nhẹ gắn buồm ánh sáng, được đẩy bằng một dàn laser công suất lớn đặt trên mặt đất.\n\nMục tiêu dự án nêu là tốc độ lên tới khoảng **15% tốc độ ánh sáng**, đủ để tàu **bay ngang** hệ Alpha Centauri sau hơn **20 năm** kể từ khi phóng. Đó là bay ngang, không phải dừng lại.",
+      "why": "Nguồn không có 20% c; 100 triệu dặm/giờ ≈ 44.700 km/s ≈ 15% c. Đích là bay ngang hệ Alpha Centauri, không dừng ở Proxima. Khớp bản en.",
+      "evidence": "https://breakthroughinitiatives.org/initiative/3 — \"ultra-light nanocrafts – miniature space probes attached to lightsails – to speeds of up to 100 million miles an hour. Such a system would allow a flyby mission to reach Alpha Centauri in just over 20 years from launch\""
+    },
+    {
+      "claimId": "C-13",
+      "severity": "S3",
+      "find": "Các hành tinh đã được phát hiện gồm:\n\n- **Proxima Centauri b**: hành tinh đá nằm trong vùng có thể sinh sống.",
+      "replace": "Tính đến năm 2025, các hành tinh được báo cáo gồm:\n\n- **Proxima Centauri b**: hành tinh có khối lượng tối thiểu khoảng một lần Trái Đất, quay trong vùng có thể sinh sống của sao. Nó có thể là hành tinh đá, nhưng kích thước và thành phần chưa được đo.",
+      "why": "\"Hành tinh đá\" nâng mức chắc chắn: phương pháp vận tốc xuyên tâm chỉ cho khối lượng tối thiểu, chưa đo bán kính. Thêm mốc thời gian cho danh sách.",
+      "evidence": "https://doi.org/10.1051/0004-6361/202553728 (NIRPS, A&A 700, A11, 2025; arXiv:2507.21751) — \"We measure Proxima b and d to have minimum masses of 1.055 ± 0.055 Me, and 0.260 ± 0.038 Me\"; https://www.eso.org/public/news/eso1629/ — \"Proxima b lies well within the habitable zone\"; https://science.nasa.gov/exoplanet-catalog/proxima-centauri-b/ — \"Discovery Method: Radial Velocity\""
+    },
+    {
+      "claimId": "C-14",
+      "severity": "S3",
+      "find": "một tín hiệu được đề xuất năm 2020, **chưa được xác nhận** và hiện không nằm trong danh mục hành tinh ngoài hệ Mặt Trời của NASA.",
+      "replace": "một tín hiệu được đề xuất năm 2020, **chưa được xác nhận**; dữ liệu NIRPS năm 2025 không cho kết luận về tín hiệu này.",
+      "why": "Bỏ vế danh mục NASA (chưa kiểm được, en đã bỏ); gắn căn cứ cho \"chưa xác nhận\".",
+      "evidence": "https://doi.org/10.1126/sciadv.aax7467 (Damasso và cs., Science Advances, 17/01/2020: \"A low-mass planet candidate orbiting Proxima Centauri at a distance of 1.5 AU\"); NIRPS 2025 (arXiv:2507.21751) — \"inconclusive evidence of the signal attributed to Proxima c (P = 1900 d)\""
+    },
+    {
+      "claimId": "C-15",
+      "severity": "S2",
+      "find": "hành tinh rất nhẹ (khoảng 0,26 lần khối lượng Trái Đất) quay sát sao chủ với chu kỳ chỉ 5,1 ngày. Nhiệt độ cân bằng ước tính khoảng 282 K, nhưng khối lượng quá nhỏ khiến nó khó giữ được khí quyển.",
+      "replace": "hành tinh rất nhẹ (khối lượng tối thiểu khoảng 0,26 lần Trái Đất) quay sát sao chủ với chu kỳ chỉ 5,1 ngày, gần sao hơn cả mép trong của vùng có thể sinh sống. Nhiệt độ cân bằng của nó có thể lên tới khoảng 360 K, với giả định albedo Bond bằng 0,3.",
+      "why": "282 K trái nguồn (360 K); 0,26 là khối lượng tối thiểu; câu \"khó giữ khí quyển\" là nhân quả tự thêm, bài gốc không nói — cắt (C-16, C-17).",
+      "evidence": "https://www.aanda.org/articles/aa/full_html/2022/02/aa42337-21/aa42337-21.html (Faria và cs. 2022, doi 10.1051/0004-6361/202142337) — \"minimum mass of 0.26 ± 0.05 M⊕\"; \"This planet orbits closer to the star (at 0.02885 au) than to the inner edge of the HZ\"; \"Its equilibrium temperature may reach 360 K, assuming a Bond albedo of 0.3\""
+    },
+    {
+      "claimId": "C-18",
+      "severity": "S3",
+      "find": "Proxima Centauri gần như chắc chắn sẽ là điểm đến ngoài Hệ Mặt Trời đầu tiên của nhân loại.",
+      "replace": "Proxima Centauri, ngôi sao gần nhất ngoài Mặt Trời, là ứng viên hiển nhiên cho điểm đến đầu tiên.",
+      "why": "Suy đoán viết với mức \"gần như chắc chắn\"; hạ về điều nguồn đỡ được (sao gần nhất). Khớp en.",
+      "evidence": "https://www.eso.org/public/news/eso1629/ — \"Proxima Centauri as it is the closest star to Earth apart from the Sun\""
+    }
+  ],
+  "enEdits": [
+    {
+      "claimId": "C-4",
+      "severity": "S3",
+      "find": "accounting for roughly **70% to 75% of all stars**.",
+      "replace": "accounting for around **75% of all stars** (NASA).",
+      "why": "Như edits C-4.",
+      "evidence": "https://science.nasa.gov/universe/stars/types/ — \"red dwarfs make up around 75% of the Milky Way galaxy’s stellar population\""
+    },
+    {
+      "claimId": "C-5",
+      "severity": "S3",
+      "find": "- Have extremely long lifespans, ranging from hundreds of billions to trillions of years.",
+      "replace": "- Have extremely long lifespans: they steadily burn through their hydrogen over trillions of years, and some low-mass red dwarfs are thought to last up to about 14 trillion years, longer than the current age of the universe.",
+      "why": "Như edits C-5.",
+      "evidence": "https://science.nasa.gov/universe/stars/types/"
+    },
+    {
+      "claimId": "C-6",
+      "severity": "S3",
+      "find": "- Powerful flares from the star can strip away part of a planet's atmosphere.",
+      "replace": "- Ultraviolet and X-ray flares from the star, far more intense than what Earth receives from the Sun, may strongly affect surface conditions, and a planet's atmosphere might slowly be evaporating.",
+      "why": "Như edits C-6: \"can strip away\" mạnh hơn nguồn.",
+      "evidence": "https://www.eso.org/public/news/eso1629/"
+    },
+    {
+      "claimId": "C-7",
+      "severity": "S4",
+      "find": "Even so, **Proxima Centauri b** is still considered one of the most notable candidates in the search for life beyond the Solar System.",
+      "replace": "Even so, **Proxima Centauri b** draws particular attention: according to ESO, it may be the closest possible abode for life outside the Solar System.",
+      "why": "Như edits C-7.",
+      "evidence": "https://www.eso.org/public/news/eso1629/"
+    },
+    {
+      "claimId": "C-9",
+      "severity": "S3",
+      "find": "They are not real trajectories; Voyager 1, for instance, is not headed that way.\n\n- **Voyager 1** (about 17 km/s relative to the Sun): about 75,000 years.\n- **New Horizons**: about 90,000 years.\n- **Parker Solar Probe**: about 6,700 years",
+      "replace": "They are not real trajectories; Voyager 1, for instance, is heading toward the constellation Ophiuchus, not toward Proxima.\n\n- **Voyager 1** (about 17 km/s relative to the Sun): about 75,000 years.\n- **Parker Solar Probe**: about 6,600 years",
+      "why": "Như edits C-9: cắt New Horizons (không nguồn vận tốc), Parker tính lại 6.600 năm, nêu hướng bay thật của Voyager 1.",
+      "evidence": "https://science.nasa.gov/mission/voyager/frequently-asked-questions/ ; https://science.nasa.gov/science-research/heliophysics/nasas-parker-solar-probe-makes-history-with-closest-pass-to-sun/"
+    },
+    {
+      "claimId": "C-13",
+      "severity": "S4",
+      "find": "The planets reported so far are:",
+      "replace": "As of 2025, the planets reported are:",
+      "why": "Mốc thời gian cho danh sách; khớp vi.",
+      "evidence": "https://doi.org/10.1051/0004-6361/202553728"
+    },
+    {
+      "claimId": "C-14",
+      "severity": "S4",
+      "find": "a signal proposed in 2020 that has **not been confirmed**.",
+      "replace": "a signal proposed in 2020 that has **not been confirmed**; 2025 NIRPS data were inconclusive about it.",
+      "why": "Như edits C-14.",
+      "evidence": "https://arxiv.org/abs/2507.21751"
+    }
+  ],
+  "summaryEdits": [
+    {
+      "claimId": "C-20",
+      "severity": "S4",
+      "find": "cũng là ngôi sao gần Trái Đất nhất, cách chúng ta khoảng 4,25 năm ánh sáng.",
+      "replace": "cũng là ngôi sao gần nhất ngoài Mặt Trời, cách chúng ta khoảng 4,25 năm ánh sáng.",
+      "why": "Ngôi sao gần Trái Đất nhất là Mặt Trời. Khớp summaryEn.",
+      "evidence": "https://www.eso.org/public/news/eso1629/ — \"the closest star to Earth apart from the Sun\"; SIMBAD Proxima Centauri: thị sai 768,0665 mas (Gaia EDR3) → 1,302 pc ≈ 4,25 năm ánh sáng"
+    }
+  ],
+  "addSources": [
+    {
+      "title": "Planet Found in Habitable Zone Around Nearest Star (eso1629)",
+      "url": "https://www.eso.org/public/news/eso1629/",
+      "doi": "",
+      "publisher": "European Southern Observatory",
+      "year": 2016,
+      "tier": 2,
+      "covers": "Proxima là sao gần nhất ngoài Mặt Trời, hơn 4 năm ánh sáng; b trong vùng sinh sống; khoá thuỷ triều có lẽ xảy ra; bùng phát UV/tia X; khí quyển có thể bốc hơi; 'closest possible abode for life'"
+    },
+    {
+      "title": "Star Types",
+      "url": "https://science.nasa.gov/universe/stars/types/",
+      "doi": "",
+      "publisher": "NASA Science",
+      "tier": 2,
+      "covers": "Sao lùn đỏ: nhỏ, lạnh, mờ; khoảng 75% số sao Ngân Hà; đốt hydro trong hàng nghìn tỷ năm, tới khoảng 14 nghìn tỷ năm"
+    },
+    {
+      "title": "Proxima's orbit around α Centauri",
+      "url": "https://doi.org/10.1051/0004-6361/201629930",
+      "doi": "10.1051/0004-6361/201629930",
+      "publisher": "Astronomy & Astrophysics (Kervella, Thévenin, Lovis)",
+      "year": 2017,
+      "tier": 1,
+      "covers": "Proxima liên kết hấp dẫn với Alpha Cen AB thành hệ ba sao, chu kỳ quỹ đạo ~550.000 năm, hiện gần viễn điểm ~13.000 AU"
+    },
+    {
+      "title": "Close stellar conjunctions of α Centauri A and B until 2050",
+      "url": "https://doi.org/10.1051/0004-6361/201629201",
+      "doi": "10.1051/0004-6361/201629201",
+      "publisher": "Astronomy & Astrophysics (Kervella, Mignard, Mérand et al.)",
+      "year": 2016,
+      "tier": 1,
+      "covers": "Alpha Cen là láng giềng sao gần nhất; thị sai 747,17 ± 0,61 mas → khoảng 4,37 năm ánh sáng"
+    },
+    {
+      "title": "SIMBAD: Proxima Centauri",
+      "url": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=Proxima+Centauri",
+      "doi": "",
+      "publisher": "CDS, Université de Strasbourg",
+      "tier": 2,
+      "covers": "Thị sai 768,0665 ± 0,0499 mas (Gaia EDR3) → khoảng 4,25 năm ánh sáng; loại phổ M5.5Ve"
+    },
+    {
+      "title": "Diving into the planetary system of Proxima with NIRPS",
+      "url": "https://doi.org/10.1051/0004-6361/202553728",
+      "doi": "10.1051/0004-6361/202553728",
+      "publisher": "Astronomy & Astrophysics (Suárez Mascareño et al.)",
+      "year": 2025,
+      "tier": 1,
+      "covers": "Xác nhận Proxima d; khối lượng tối thiểu b 1,055 và d 0,260 Trái Đất; bằng chứng cho Proxima c không kết luận được"
+    },
+    {
+      "title": "A low-mass planet candidate orbiting Proxima Centauri at a distance of 1.5 AU",
+      "url": "https://doi.org/10.1126/sciadv.aax7467",
+      "doi": "10.1126/sciadv.aax7467",
+      "publisher": "Science Advances (Damasso et al.)",
+      "year": 2020,
+      "tier": 1,
+      "covers": "Ứng viên Proxima c được đề xuất năm 2020"
+    },
+    {
+      "title": "Voyager 1",
+      "url": "https://science.nasa.gov/mission/voyager/voyager-1/",
+      "doi": "",
+      "publisher": "NASA Science",
+      "tier": 2,
+      "covers": "Vận tốc 17,0 km/s so với Mặt Trời — đầu vào cho phép quy đổi 75.000 năm"
+    },
+    {
+      "title": "Voyager Frequently Asked Questions",
+      "url": "https://science.nasa.gov/mission/voyager/frequently-asked-questions/",
+      "doi": "",
+      "publisher": "NASA Science",
+      "tier": 2,
+      "covers": "Voyager 1 rời Hệ Mặt Trời về phía chòm Xà Phu (Ophiuchus), không hướng về Proxima"
+    },
+    {
+      "title": "NASA's Parker Solar Probe Makes History With Closest Pass to Sun",
+      "url": "https://science.nasa.gov/science-research/heliophysics/nasas-parker-solar-probe-makes-history-with-closest-pass-to-sun/",
+      "doi": "",
+      "publisher": "NASA Science",
+      "year": 2024,
+      "tier": 2,
+      "covers": "Tốc độ kỷ lục 430.000 dặm/giờ ngày 24/12/2024 — đầu vào cho phép quy đổi 6.600 năm"
+    },
+    {
+      "title": "Breakthrough Starshot",
+      "url": "https://breakthroughinitiatives.org/initiative/3",
+      "doi": "",
+      "publisher": "Breakthrough Initiatives",
+      "tier": 3,
+      "covers": "Chỉ mô tả dự án: tàu buồm ánh sáng, tới 100 triệu dặm/giờ, bay ngang Alpha Centauri sau hơn 20 năm"
+    }
+  ],
+  "corrections": [
+    "2026-09-25 · `neu-roi-he-mat-troi-proxima-centauri` (vi, kèm en) — Proxima d \"0,26 lần khối lượng Trái Đất… nhiệt độ cân bằng 282 K… khó giữ khí quyển\" → khối lượng tối thiểu 0,26, gần sao hơn mép trong vùng sinh sống, nhiệt độ cân bằng có thể tới ~360 K (albedo 0,3), bỏ câu khí quyển (Faria 2022); b \"hành tinh đá\" → khối lượng tối thiểu ~1 Trái Đất, có thể là đá (NIRPS 2025); c bỏ vế \"không nằm trong danh mục NASA\"; Starshot 20% c tới Proxima trong 20 năm → ~15% c, bay ngang Alpha Centauri sau hơn 20 năm (breakthroughinitiatives.org); thêm giả định cho thời gian bay; cả hai bản: cắt New Horizons 90.000 năm (không nguồn), Parker 6.700 → 6.600 năm (NASA 430.000 dặm/giờ), sao lùn đỏ 70–75% → ~75% và tuổi thọ \"hàng trăm tỷ–nghìn tỷ năm\" → hàng nghìn tỷ, tới ~14 nghìn tỷ năm (NASA Star Types), bùng phát \"làm suy giảm khí quyển\" → theo lời ESO; \"gần như chắc chắn là điểm đến đầu tiên\" → ứng viên hiển nhiên; summary \"ngôi sao gần Trái Đất nhất\" → gần nhất ngoài Mặt Trời (ESO eso1629)."
+  ],
+  "openQuestions": [
+    "Tiêu đề vi \"… Proxima Centauri sẽ là điểm dừng đầu tiên\" / en \"The First Stop Beyond the Solar System\": dự án thật duy nhất (Starshot) là bay ngang, không dừng. Thân bài nay đã nói rõ; đổi tiêu đề kéo theo slug/SEO nên để người quyết (S4).",
+    "Emoji ⭐ ở câu kết (cả hai bản) — quy ước trình bày, không phải claim; chuyển content-curator."
+  ]
+}

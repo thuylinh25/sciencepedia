@@ -1,0 +1,85 @@
+slug: kinh-james-webb-nhin-nguoc-ve-thuo-vu-tru-so-sinh
+checkedAt: 2026-09-25
+checkedBy: science-editor
+priorFactCheck: REVISE
+verdict: pass
+summary: "Các fix mở của check 17/09 nằm ở CẢ HAI bản và đã đóng trong lượt này bằng edits + enEdits giống nhau: kỷ lục thiên hà có mốc thời gian (MoM-z14, NASA, 09/2026), so sánh đúng với mô hình trước JWST, câu tên lửa có số chụp mũi Ariane 5, cắt 'cỡ nanomet', gắn CO₂/nước/methane vào hành tinh cụ thể, L2 viết theo NASA. Con số 'hơn 300 điểm hỏng đơn lẻ trong quá trình triển khai' khớp nguyên văn trang Deployment của NASA (s3). Mọi claim có evidence mở lượt này; bảng nguồn sau sửa có 14 nguồn bậc 1–2."
+claims:
+  - id: C-1
+    claim: "JWST phóng ngày 25/12/2021."
+    verdict: verified
+    severity: none
+    evidence: "https://science.nasa.gov/mission/webb/fact-sheet/ — 'Launch Date December 25, 2021 07:20am EST', 'Launch Vehicle Ariane 5 ECA'"
+    note: ""
+  - id: C-2
+    claim: "Bắt đầu gửi ảnh khoa học từ tháng 7/2022."
+    verdict: verified
+    severity: none
+    evidence: "https://science.nasa.gov/mission/webb/ (check 17/09 C-2); https://science.nasa.gov/missions/webb/nasas-webb-reveals-steamy-atmosphere-of-distant-planet-in-detail/ — công bố 12/7/2022"
+    note: ""
+  - id: C-3
+    claim: "Webb bổ sung cho Hubble: Hubble tối ưu cho khả kiến và tử ngoại, Webb chủ yếu hồng ngoại (0,6–28,5 µm)."
+    verdict: verified
+    severity: none
+    evidence: "https://webb.nasa.gov/content/about/comparisonWebbVsHubble.html — 'it was optimized to see shorter ultraviolet and visible light'; fact sheet — 'Wavelength Coverage 0.6 - 28.5 microns'; FAQ — '0.6 micrometer (gold light) for Webb'"
+    note: "Sửa lượt này ở cả hai bản."
+  - id: C-4
+    claim: "Dịch chuyển đỏ đưa ánh sáng khả kiến của các thiên hà đầu tiên (sau hơn 13 tỉ năm) sang hồng ngoại; hồng ngoại cho phép nhìn vào bên trong các đám mây bụi nơi sao hình thành."
+    verdict: verified
+    severity: S4
+    evidence: "https://science.nasa.gov/mission/webb/early-universe/ — 'light leaving the first stars and galaxies nearly 13.6 billion years ago'; 'visible light is generally shifted into the near- and mid-infrared'; https://webb.nasa.gov/content/about/faqs/faq.html — 'to peer inside dust clouds where stars and planetary systems are forming today'"
+    note: "'Dịch hẳn' hơi mạnh hơn 'generally shifted' — S4, không đổi nghĩa."
+  - id: C-5
+    claim: "Tấm chắn nắng năm lớp cỡ sân tennis, từ ~85°C mặt nóng xuống −233°C mặt lạnh."
+    verdict: verified
+    severity: none
+    evidence: "https://science.nasa.gov/mission/webb/fact-sheet/ — 'tennis-court sized Sunshield made of five thin layers'; 'approximately 185F (85C) on the hot side to approximately -388F (-233C) on the cold side'"
+    note: ""
+  - id: C-6
+    claim: "Quỹ đạo quanh L2, cách Trái Đất 1,5 triệu km, nơi tấm chắn che cùng lúc ánh sáng và nhiệt từ Mặt Trời, Trái Đất và Mặt Trăng."
+    verdict: verified
+    severity: none
+    evidence: "https://science.nasa.gov/mission/webb/orbit/ — 'allows the satellite's large sunshield to protect the telescope from the light and heat of the Sun and Earth (and Moon). Webb orbits the sun 1.5 million kilometers ... at ... L2'"
+    note: "Sửa lượt này ở cả hai bản."
+  - id: C-7
+    claim: "Không thể sửa chữa như Hubble; hơn 300 điểm hỏng đơn lẻ trong quá trình triển khai."
+    verdict: verified
+    severity: none
+    evidence: "https://science.nasa.gov/mission/webb/deployment/ (s3) — 'There were over 300 possible single points of failure. Since Webb operates at approximately 1 million miles from Earth, there was no possibility for a repair mission'"
+    note: "Check 17/09 C-6 lo số 344 và cụm 'trong quá trình triển khai' — bản hiện tại viết 'hơn 300', khớp nguyên văn NASA trong đúng ngữ cảnh triển khai."
+  - id: C-8
+    claim: "Gương ~6,5 m rộng hơn chụp mũi Ariane 5 (~5,4 m) nên kính được thiết kế để gấp; 18 mảnh lục giác beryllium phủ vàng, mở ra và căn chỉnh trong không gian."
+    verdict: verified
+    severity: none
+    evidence: "https://science.nasa.gov/mission/webb/deployment/ — 'rocket fairing has a diameter of approximately 18 ft (5.4 m) ... Webb was designed to fold compactly to fit into the fairing'; fact sheet — 'Diameter of Primary Mirror 6.5 m', 'beryllium coated with gold'; comparison page — '18 hexagonal segments'"
+    note: "Cắt 'độ chính xác cỡ nanomet' (không nguồn) và 'không tên lửa nào' (tuyệt đối, không nguồn)."
+  - id: C-9
+    claim: "Tính đến 09/2026, theo NASA, thiên hà xa nhất xác nhận bằng quang phổ là MoM-z14 (z = 14,44, xác nhận 2025), thấy như ở ~280 triệu năm sau Big Bang."
+    verdict: verified
+    severity: none
+    evidence: "https://science.nasa.gov/mission/webb/early-universe/ (truy cập 25/09/2026) — 'JADES-GS-z14-0, which was the record holder at a redshift of 14.32 until June of 2025, when MoM-z14 was confirmed to have a redshift of z = 14.44 placing the galaxy as existing about 280 million years after the big bang'; https://doi.org/10.33232/001c.156033 — 'a mere 280 million years after the Big Bang'"
+    note: "Claim kỷ lục, có mốc; kiểm lại 03/2027."
+  - id: C-10
+    claim: "Nhóm phát hiện MoM-z14 ước tính thiên hà sáng ở thời kỳ này nhiều hơn >100 lần so với mô hình đồng thuận trước JWST."
+    verdict: verified
+    severity: none
+    evidence: "https://doi.org/10.33232/001c.156033 (arXiv:2505.11263) — 'is >100× larger (182 +329/−105 ×) than pre-JWST consensus models'"
+    note: "Thay 'sáng và trưởng thành hơn nhiều mô hình' (bỏ 'trưởng thành' không nguồn)."
+  - id: C-11
+    claim: "Quang phổ truyền qua: CO₂ rõ đầu tiên ở WASP-39 b (2022), nước ở WASP-96 b, methane và CO₂ ở K2-18 b."
+    verdict: verified
+    severity: none
+    evidence: "https://doi.org/10.1038/s41586-022-05269-w (s6); NASA 25/8/2022 — 'the first clear evidence for carbon dioxide in the atmosphere of a planet outside the solar system'; NASA 12/7/2022 — 'captured the distinct signature of water' (WASP-96 b); NASA 11/9/2023 — 'revealed the presence of carbon-bearing molecules including methane and carbon dioxide' (K2-18 b, 'a transiting exoplanet')"
+    note: ""
+  - id: C-12
+    claim: "Ảnh hồng ngoại của Cột trụ Sáng tạo và các vùng sinh sao khác."
+    verdict: verified
+    severity: none
+    evidence: "https://science.nasa.gov/asset/webb/pillars-of-creation-nircam-image/ — 'Webb Space Telescope’s near-infrared-light view'"
+    note: "Bỏ 'chưa từng có'."
+  - id: C-13
+    claim: "Summary/SEO: gương 6,5 m hồng ngoại, cách Trái Đất 1,5 triệu km, để quan sát những thiên hà hình thành sớm nhất."
+    verdict: verified
+    severity: S4
+    evidence: "https://science.nasa.gov/mission/webb/ — 'It will peer back in time over 13.5 billion years to see the first galaxies born after the Big Bang'"
+    note: "Giữ nguyên."

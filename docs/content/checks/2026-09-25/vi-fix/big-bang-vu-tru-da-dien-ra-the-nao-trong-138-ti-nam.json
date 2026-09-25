@@ -1,0 +1,294 @@
+{
+  "slug": "big-bang-vu-tru-da-dien-ra-the-nao-trong-138-ti-nam",
+  "edits": [
+    {
+      "claimId": "C-5",
+      "severity": "S3",
+      "find": "Mô hình Big Bang dự đoán chính xác rằng vũ trụ ban đầu chứa khoảng:\n\n- 75% hydro\n- 25% heli\n\ncùng một lượng rất nhỏ deuteri và lithi.",
+      "replace": "Mô hình Big Bang dự đoán rằng, tính theo khối lượng, vật chất thông thường lúc ban đầu gồm khoảng:\n\n- 75% hydro\n- 25% heli\n\ncùng một lượng rất nhỏ deuteri và lithi. Dự đoán cho heli và deuteri khớp tốt với quan sát; riêng lithi-7 vẫn lệch, có thể là dấu hiệu của vật lý mới.",
+      "why": "Tỉ lệ 75/25 là theo KHỐI LƯỢNG (Yp là tỉ lệ khối lượng heli-4); thiếu chữ này người đọc hiểu thành theo số hạt (heli chỉ ~8% số hạt nhân). Lithi-7 không thuộc nhóm \"dự đoán chính xác\".",
+      "evidence": "https://doi.org/10.1103/RevModPhys.88.015004 (Cyburt, Fields, Olive, Yeh 2016; arXiv:1505.01076) — \"the He4 mass fraction, Yp = 2(n/p)/(1+(n/p)) ≈ 0.25\"; dự đoán \"Yp = 0.24709 ± 0.00025\", quan sát \"Yp = 0.2449 ± 0.0040\"; tóm tắt: \"In contrast with D/H and he4, li7 predictions continue to disagree with observations, perhaps pointing to new physics\""
+    },
+    {
+      "claimId": "C-7",
+      "severity": "S3",
+      "find": "Trong một phần cực nhỏ của giây đầu tiên, không gian giãn nở cực nhanh, biến một vùng rất nhỏ thành quy mô vũ trụ.",
+      "replace": "Theo thuyết lạm phát, trong một phần cực nhỏ của giây đầu tiên, không gian giãn nở cực nhanh, biến một vùng rất nhỏ thành quy mô vũ trụ. Dữ liệu bức xạ nền của Planck phù hợp với các mô hình lạm phát đơn giản, nhưng lạm phát vẫn là giả thuyết, chưa được xác nhận trực tiếp.",
+      "why": "Lạm phát được viết như sự kiện đã xác lập (check 17/09 C-7). Planck chỉ ràng buộc các mô hình lạm phát và đặt cận trên cho sóng hấp dẫn nguyên thuỷ — chưa có phát hiện trực tiếp.",
+      "evidence": "https://doi.org/10.1051/0004-6361/201833887 (Planck 2018 X, arXiv:1807.06211) — \"In the framework of single-field inflationary models with Einstein gravity, these results imply that: (a) slow-roll models with a concave potential ... are increasingly favoured by the data\"; chỉ có cận trên \"r_0.002 < 0.056\""
+    },
+    {
+      "claimId": "C-8",
+      "severity": "S3",
+      "find": "### Khoảng 200 triệu năm\n\nNhững ngôi sao đầu tiên bắt đầu hình thành.",
+      "replace": "### Khoảng 150–200 triệu năm\n\nCác quan sát hiện nay gợi ý những ngôi sao đầu tiên hình thành trong giai đoạn này.",
+      "why": "Mốc 200 triệu năm không nguồn; CERN nêu khoảng 150–200 triệu năm với mức \"present observations suggest\".",
+      "evidence": "https://home.cern/science/physics/early-universe — \"Present observations suggest that the first stars formed from clouds of gas around 150–200 million years after the Big Bang\""
+    },
+    {
+      "claimId": "C-9",
+      "severity": "S2",
+      "find": "### Khoảng 300 triệu năm\n\nNhững thiên hà đầu tiên đã hình thành. Thiên hà xa nhất được xác nhận cho tới nay là JADES-GS-z14-0, ở độ dịch chuyển đỏ 14,32 — tức đã tồn tại chỉ khoảng 290 triệu năm sau Big Bang (số liệu tháng 5/2024; mốc này còn lùi tiếp mỗi lần JWST tìm được thiên hà xa hơn).",
+      "replace": "### Chưa tới 300 triệu năm\n\nĐã có những thiên hà sáng. Tính đến tháng 9/2026, theo NASA, thiên hà xa nhất được xác nhận bằng quang phổ là MoM-z14 (độ dịch chuyển đỏ 14,44, xác nhận năm 2025), mà ta thấy như nó ở khoảng 280 triệu năm sau Big Bang; kỷ lục trước đó là JADES-GS-z14-0 (độ dịch chuyển đỏ 14,32, công bố tháng 5/2024). Mốc này còn lùi tiếp mỗi lần JWST tìm được thiên hà xa hơn.",
+      "why": "\"Cho tới nay\" đã sai: từ 6/2025 kỷ lục là MoM-z14. Bỏ \"thiên hà đầu tiên hình thành ở 300 triệu năm\" vì tự mâu thuẫn với chính thiên hà 280–290 triệu năm (check 17/09 C-8). Đổi \"290 triệu năm\" (không nguyên văn nguồn) thành đúng lời NASA.",
+      "evidence": "https://science.nasa.gov/mission/webb/early-universe/ (truy cập 25/09/2026) — \"JADES-GS-z14-0, which was the record holder at a redshift of 14.32 until June of 2025, when MoM-z14 was confirmed to have a redshift of z = 14.44 placing the galaxy as existing about 280 million years after the big bang\"; https://doi.org/10.33232/001c.156033 (Naidu và cs.); s3 NASA 30/05/2024 — JADES-GS-z14-0, z = 14,32"
+    },
+    {
+      "claimId": "C-1",
+      "severity": "S3",
+      "find": "Vũ trụ có tuổi khoảng **13,8 tỷ năm** và vẫn đang tiếp tục giãn nở.",
+      "replace": "Vũ trụ có tuổi khoảng **13,8 tỷ năm** (13,797 ± 0,023 tỷ năm theo Planck 2018 — con số suy ra từ mô hình ΛCDM khớp với bức xạ nền, không phải phép đo trực tiếp) và vẫn đang tiếp tục giãn nở.\n\nTốc độ giãn nở hiện nay thì vẫn đang bị tranh cãi. Từ bức xạ nền và mô hình ΛCDM, Planck suy ra hằng số Hubble H₀ = 67,4 ± 0,5 km/s/Mpc; phép đo trực tiếp bằng sao Cepheid và siêu tân tinh của nhóm SH0ES (2022) cho 73,0 ± 1,0 km/s/Mpc. Hai kết quả lệch nhau khoảng 5σ và nguyên nhân đến nay chưa rõ — vấn đề này được gọi là \"căng thẳng Hubble\".",
+      "why": "Gắn nguồn và sai số cho tuổi vũ trụ, nói rõ nó phụ thuộc mô hình; thêm căng thẳng Hubble như một bất đồng chưa giải quyết, không chọn bên (check 17/09 C-1, C-3; quy tắc 7).",
+      "evidence": "https://doi.org/10.1051/0004-6361/201833910 (Planck 2018 VI, Bảng 2, cột TT,TE,EE+lowE+lensing: https://www.aanda.org/articles/aa/full_html/2020/09/aa33910-18/T2.html) — \"Age [Gyr] ... 13.797 ± 0.023\"; tóm tắt arXiv:1807.06209: \"Assuming the base-ΛCDM cosmology ... Hubble constant H0 = (67.4 ± 0.5) km/s/Mpc\"; https://doi.org/10.3847/2041-8213/ac5c5b (Riess và cs. 2022, arXiv:2112.04510) — \"H0=73.04+-1.04 km/s/Mpc ... We find a 5-sigma difference with H0 predicted by Planck+LCDM ... The source of this now long-standing discrepancy ... remains unknown\""
+    },
+    {
+      "claimId": "C-10",
+      "severity": "S3",
+      "find": "Tuy nhiên, các quan sát [[siêu tân tinh]] loại Ia năm 1998 cho thấy điều ngược lại:",
+      "replace": "Tuy nhiên, năm 1998, hai nhóm nghiên cứu độc lập quan sát [[siêu tân tinh]] loại Ia (High-z Supernova Search Team và Supernova Cosmology Project) cho thấy điều ngược lại:",
+      "why": "Gắn claim vào hai công bố gốc.",
+      "evidence": "https://doi.org/10.1086/300499 (Riess và cs. 1998) — \"a current acceleration of the expansion (i.e., q_0 < 0)\"; https://doi.org/10.1086/307221 (Perlmutter và cs. 1999, 42 siêu tân tinh); https://home.cern/science/physics/early-universe — \"In 1998 two teams of astronomers working independently ... Physicists had assumed that matter in the universe would slow its rate of expansion\""
+    },
+    {
+      "claimId": "C-2",
+      "severity": "S3",
+      "find": "Khám phá này dẫn tới giả thuyết về **[[năng lượng tối]]**, thành phần được cho là chiếm khoảng:\n\n- 68% năng lượng của vũ trụ\n- 27% [[vật chất tối]]\n- 5% vật chất thông thường",
+      "replace": "Khám phá này dẫn tới khái niệm **[[năng lượng tối]]** — tên gọi cho thành phần chưa rõ bản chất đang làm vũ trụ giãn nở nhanh dần. Theo mô hình ΛCDM khớp với dữ liệu Planck 2018, năng lượng của vũ trụ hiện nay gồm khoảng:\n\n- 68,5% năng lượng tối\n- 26,4% [[vật chất tối]]\n- 4,9% vật chất thông thường",
+      "why": "Câu dẫn cũ đọc như năng lượng tối chiếm cả ba phần; 27% vật chất tối lệch Planck 2018 (≈26,4%). Tính từ Bảng 2: ΩΛ = 0,6847; Ωc = 0,1200/0,6736² = 0,264; Ωb = 0,02237/0,6736² = 0,049.",
+      "evidence": "https://doi.org/10.1051/0004-6361/201833910 (Planck 2018 VI, Bảng 2, cột TT,TE,EE+lowE+lensing: https://www.aanda.org/articles/aa/full_html/2020/09/aa33910-18/T2.html) — \"ΩΛ 0.6847 ± 0.0073\", \"Ωc h² 0.1200 ± 0.0012\", \"Ωb h² 0.02237 ± 0.00015\", \"H0 67.36 ± 0.54\"; https://science.nasa.gov/dark-energy/ — \"But what exactly is dark energy? The short answer is: We don't know\""
+    },
+    {
+      "claimId": "C-11",
+      "severity": "S2",
+      "find": "Một số mốc đáng chú ý:\n\n- Khoảng 8 tỷ năm nữa: Mặt Trời trở thành sao lùn trắng.",
+      "replace": "Một số mốc đáng chú ý (hai mốc xa lấy theo ước tính của Adams và Laughlin, 1997, và phụ thuộc vào các giả định vật lý):\n\n- Khoảng 5 tỷ năm nữa: Mặt Trời trở thành sao lùn trắng.",
+      "why": "8 tỷ năm trái NASA (khoảng 5 tỷ năm). Gắn nguồn cho hai mốc xa.",
+      "evidence": "https://science.nasa.gov/sun/facts/ — \"will last another 5 billion years or so before it becomes a white dwarf\"; https://doi.org/10.1103/RevModPhys.69.337 (Adams & Laughlin 1997; arXiv:astro-ph/9701131, toàn văn) — sao chỉ tồn tại trong khoảng \"5.5 < η < 14\" (t = 10^η năm), \"The Black Hole Era. 38 < η < 100 ... black holes ... actively evaporating during this era\""
+    },
+    {
+      "claimId": "C-13",
+      "severity": "S3",
+      "find": "Kịch bản được ủng hộ nhiều nhất hiện nay là **cái chết nhiệt**, khi vũ trụ trở nên ngày càng lạnh, loãng và không còn nguồn năng lượng hữu ích để duy trì các quá trình vật lý quy mô lớn.",
+      "replace": "Sau các mốc đó, vũ trụ có thể trở nên ngày càng lạnh, loãng và gần như không còn nguồn năng lượng hữu ích để duy trì các quá trình vật lý quy mô lớn — trạng thái thường được gọi là **cái chết nhiệt**. Kết cục thật sự còn phụ thuộc vào bản chất của năng lượng tối, điều mà đến nay chưa ai biết.",
+      "why": "\"Được ủng hộ nhiều nhất hiện nay\" không nguồn, không mốc; hạ thành kịch bản có điều kiện, giữ đúng mức dè dặt của nguồn.",
+      "evidence": "https://doi.org/10.1103/RevModPhys.69.337 (Adams & Laughlin 1997; arXiv:astro-ph/9701131, toàn văn) — \"cosmological heat death is postponed until after that epoch, i.e., until the Dark Era. After that time, however, it remains possible in principle for the universe to become nearly adiabatic and hence dull and lifeless\"; https://science.nasa.gov/dark-energy/ — \"We don't know\""
+    },
+    {
+      "claimId": "C-16",
+      "severity": "S4",
+      "find": "mà là nó đã tiên đoán trước những hiện tượng như bức xạ nền vi sóng và tỷ lệ các nguyên tố nhẹ. Khi các nhà khoa học đi tìm, họ thực sự quan sát được chúng.",
+      "replace": "mà là các tiên đoán định lượng của nó — như bức xạ nền vi sóng có phổ nhiệt và lượng heli, deuteri nguyên thủy — khớp với các phép đo ngày càng chính xác, dù lithi vẫn còn là điểm lệch.",
+      "why": "\"Khi các nhà khoa học đi tìm, họ quan sát được\" là một lịch sử giản lược không nguồn (bức xạ nền được phát hiện không nhờ một cuộc tìm có chủ đích). Giữ ý chính, viết theo điều nguồn đỡ được.",
+      "evidence": "https://doi.org/10.1088/0004-637X/707/2/916 (Fixsen 2009) — \"cosmic microwave background temperature of 2.72548 +/- 0.00057 K\"; https://doi.org/10.1103/RevModPhys.88.015004 (Cyburt, Fields, Olive, Yeh 2016; arXiv:1505.01076) — D/H và He4 khớp, \"li7 predictions continue to disagree with observations\""
+    }
+  ],
+  "enEdits": [
+    {
+      "claimId": "C-5",
+      "severity": "S3",
+      "find": "The Big Bang model accurately predicts that the early universe contained approximately:\n\n- 75% hydrogen\n- 25% helium\n\nalong with tiny amounts of deuterium and lithium.",
+      "replace": "The Big Bang model predicts that, by mass, ordinary matter in the early universe was approximately:\n\n- 75% hydrogen\n- 25% helium\n\nalong with tiny amounts of deuterium and lithium. The predictions for helium and deuterium agree well with observations; lithium-7 still disagrees, possibly a sign of new physics.",
+      "why": "Như edits C-5.",
+      "evidence": "https://doi.org/10.1103/RevModPhys.88.015004 (Cyburt, Fields, Olive, Yeh 2016; arXiv:1505.01076)"
+    },
+    {
+      "claimId": "C-7",
+      "severity": "S3",
+      "find": "In a tiny fraction of the first second, space expanded extremely rapidly, transforming a microscopic region into cosmic scale.",
+      "replace": "According to the theory of inflation, in a tiny fraction of the first second, space expanded extremely rapidly, transforming a microscopic region into cosmic scale. Planck's microwave background data are consistent with simple inflation models, but inflation remains a hypothesis that has not been directly confirmed.",
+      "why": "Như edits C-7.",
+      "evidence": "https://doi.org/10.1051/0004-6361/201833887"
+    },
+    {
+      "claimId": "C-8",
+      "severity": "S3",
+      "find": "### Around 200 Million Years\n\nThe first stars began to form.",
+      "replace": "### Around 150–200 Million Years\n\nPresent observations suggest the first stars formed during this period.",
+      "why": "Như edits C-8.",
+      "evidence": "https://home.cern/science/physics/early-universe"
+    },
+    {
+      "claimId": "C-9",
+      "severity": "S2",
+      "find": "### Around 300 Million Years\n\nThe first galaxies had formed. As of May 2024, the most distant confirmed galaxy was JADES-GS-z14-0, at a redshift of 14.32 — about 290 million years after the Big Bang (this milestone keeps moving back each time JWST finds a more distant galaxy).",
+      "replace": "### Less Than 300 Million Years\n\nBright galaxies already existed. As of September 2026, according to NASA, the most distant spectroscopically confirmed galaxy is MoM-z14 (redshift 14.44, confirmed in 2025), which we see as it was about 280 million years after the Big Bang; the previous record holder was JADES-GS-z14-0 (redshift 14.32, announced in May 2024). This milestone keeps moving back each time JWST finds a more distant galaxy.",
+      "why": "Như edits C-9: khớp claim với vi và bỏ \"first galaxies had formed\" ở 300 triệu năm (tự mâu thuẫn).",
+      "evidence": "https://science.nasa.gov/mission/webb/early-universe/"
+    },
+    {
+      "claimId": "C-1",
+      "severity": "S3",
+      "find": "The universe is approximately **13.8 billion years** old and continues to expand.",
+      "replace": "The universe is approximately **13.8 billion years** old (13.797 ± 0.023 billion years according to Planck 2018, a figure inferred from the ΛCDM model fitted to the microwave background rather than measured directly) and continues to expand.\n\nThe current expansion rate, however, is still disputed. From the microwave background and the ΛCDM model, Planck infers a Hubble constant of H₀ = 67.4 ± 0.5 km/s/Mpc; direct measurements using Cepheid stars and supernovae by the SH0ES team (2022) give 73.0 ± 1.0 km/s/Mpc. The two results differ by about 5σ and the cause is still unknown — a problem known as the \"Hubble tension\".",
+      "why": "Như edits C-1.",
+      "evidence": "https://doi.org/10.1051/0004-6361/201833910 (Planck 2018 VI, Bảng 2, cột TT,TE,EE+lowE+lensing: https://www.aanda.org/articles/aa/full_html/2020/09/aa33910-18/T2.html) ; https://doi.org/10.3847/2041-8213/ac5c5b"
+    },
+    {
+      "claimId": "C-10",
+      "severity": "S3",
+      "find": "However, observations of Type Ia [[sieu-tan-tinh|supernovae]] in 1998 revealed the opposite:",
+      "replace": "However, in 1998, two independent teams observing Type Ia [[sieu-tan-tinh|supernovae]] (the High-z Supernova Search Team and the Supernova Cosmology Project) revealed the opposite:",
+      "why": "Như edits C-10.",
+      "evidence": "https://doi.org/10.1086/300499 ; https://doi.org/10.1086/307221"
+    },
+    {
+      "claimId": "C-2",
+      "severity": "S3",
+      "find": "This discovery led to the hypothesis of **[[nang-luong-toi|dark energy]]**, a component believed to account for approximately:\n\n- 68% of the energy of the universe\n- 27% [[vat-chat-toi|dark matter]]\n- 5% ordinary matter",
+      "replace": "This discovery led to the concept of **[[nang-luong-toi|dark energy]]**, the name for the still-unexplained component making the expansion speed up. According to the ΛCDM model fitted to Planck 2018 data, the universe's energy content today is approximately:\n\n- 68.5% dark energy\n- 26.4% [[vat-chat-toi|dark matter]]\n- 4.9% ordinary matter",
+      "why": "Như edits C-2.",
+      "evidence": "https://doi.org/10.1051/0004-6361/201833910 (Planck 2018 VI, Bảng 2, cột TT,TE,EE+lowE+lensing: https://www.aanda.org/articles/aa/full_html/2020/09/aa33910-18/T2.html)"
+    },
+    {
+      "claimId": "C-11",
+      "severity": "S2",
+      "find": "Some notable milestones:\n\n- In about 100 trillion years: The last star burns out.",
+      "replace": "Some notable milestones (the two distant ones follow estimates by Adams and Laughlin, 1997, and depend on physical assumptions):\n\n- In about 5 billion years: The Sun becomes a white dwarf.\n- In about 100 trillion years: The last star burns out.",
+      "why": "Đưa lại dòng Mặt Trời (en-parity đã gỡ vì chưa có nguồn trong bảng) với số đúng 5 tỷ năm, nay NASA Sun: Facts vào bảng nguồn; gắn nguồn cho hai mốc xa.",
+      "evidence": "https://science.nasa.gov/sun/facts/ ; https://doi.org/10.1103/RevModPhys.69.337 (Adams & Laughlin 1997; arXiv:astro-ph/9701131, toàn văn)"
+    },
+    {
+      "claimId": "C-13",
+      "severity": "S3",
+      "find": "The most widely supported scenario today is the **heat death**, as the universe becomes increasingly cold, diffuse, and devoid of usable energy to sustain large-scale physical processes.",
+      "replace": "After those milestones, the universe may become increasingly cold, diffuse, and nearly devoid of usable energy to sustain large-scale physical processes — a state often called the **heat death**. The actual outcome also depends on the nature of dark energy, which is still unknown.",
+      "why": "Như edits C-13.",
+      "evidence": "https://doi.org/10.1103/RevModPhys.69.337 (Adams & Laughlin 1997; arXiv:astro-ph/9701131, toàn văn) ; https://science.nasa.gov/dark-energy/"
+    },
+    {
+      "claimId": "C-16",
+      "severity": "S4",
+      "find": "but that it predicted phenomena such as the microwave background radiation and the proportions of light elements in advance. When scientists went looking for them, they actually observed them.",
+      "replace": "but that its quantitative predictions, such as a microwave background with a thermal spectrum and the primordial amounts of helium and deuterium, match increasingly precise measurements, even though lithium remains a discrepancy.",
+      "why": "Như edits C-16.",
+      "evidence": "https://doi.org/10.1088/0004-637X/707/2/916 ; https://doi.org/10.1103/RevModPhys.88.015004 (Cyburt, Fields, Olive, Yeh 2016; arXiv:1505.01076)"
+    }
+  ],
+  "dropSources": [
+    {
+      "title": "Apocalypse When? No Certainty of a Milky Way–Andromeda Collision",
+      "why": "Thân bài (cả vi lẫn en) không có câu nào về Andromeda hay va chạm thiên hà; nguồn không đỡ claim nào mà vẫn được tính vào số nguồn (check 17/09 C-14)."
+    }
+  ],
+  "addSources": [
+    {
+      "title": "Sun: Facts",
+      "url": "https://science.nasa.gov/sun/facts/",
+      "doi": "",
+      "publisher": "NASA Science",
+      "tier": 2,
+      "covers": "Mặt Trời còn khoảng 5 tỷ năm nữa trước khi thành sao lùn trắng"
+    },
+    {
+      "title": "The early universe",
+      "url": "https://home.cern/science/physics/early-universe",
+      "doi": "",
+      "publisher": "CERN",
+      "tier": 2,
+      "covers": "Quark → proton/neutron sau vài phần triệu giây; hạt nhân trong vài phút; nguyên tử sau 380.000 năm; sao đầu tiên ~150–200 triệu năm; 1998 hai nhóm độc lập phát hiện giãn nở tăng tốc; dịch chuyển đỏ của thiên hà xa (Hubble 1929)"
+    },
+    {
+      "title": "The Temperature of the Cosmic Microwave Background",
+      "url": "https://doi.org/10.1088/0004-637X/707/2/916",
+      "doi": "10.1088/0004-637X/707/2/916",
+      "publisher": "The Astrophysical Journal (Fixsen)",
+      "year": 2009,
+      "tier": 1,
+      "covers": "Nhiệt độ bức xạ nền 2,72548 ± 0,00057 K"
+    },
+    {
+      "title": "Big bang nucleosynthesis: Present status",
+      "url": "https://doi.org/10.1103/RevModPhys.88.015004",
+      "doi": "10.1103/RevModPhys.88.015004",
+      "publisher": "Reviews of Modern Physics (Cyburt, Fields, Olive, Yeh)",
+      "year": 2016,
+      "tier": 1,
+      "covers": "Yp là tỉ lệ khối lượng heli-4 (~0,25); dự đoán 0,24709 ± 0,00025, quan sát 0,2449 ± 0,0040; D/H khớp; lithi-7 lệch"
+    },
+    {
+      "title": "Planck 2018 results. X. Constraints on inflation",
+      "url": "https://doi.org/10.1051/0004-6361/201833887",
+      "doi": "10.1051/0004-6361/201833887",
+      "publisher": "Astronomy & Astrophysics (Planck Collaboration)",
+      "year": 2020,
+      "tier": 1,
+      "covers": "Dữ liệu Planck ràng buộc và phù hợp với mô hình lạm phát đơn trường slow-roll; chỉ có cận trên cho tỉ số tensor/vô hướng"
+    },
+    {
+      "title": "Observational Evidence from Supernovae for an Accelerating Universe and a Cosmological Constant",
+      "url": "https://doi.org/10.1086/300499",
+      "doi": "10.1086/300499",
+      "publisher": "The Astronomical Journal (Riess et al.)",
+      "year": 1998,
+      "tier": 1,
+      "covers": "Phát hiện giãn nở tăng tốc từ siêu tân tinh Ia (High-z Supernova Search Team)"
+    },
+    {
+      "title": "Measurements of Ω and Λ from 42 High-Redshift Supernovae",
+      "url": "https://doi.org/10.1086/307221",
+      "doi": "10.1086/307221",
+      "publisher": "The Astrophysical Journal (Perlmutter et al.)",
+      "year": 1999,
+      "tier": 1,
+      "covers": "Kết quả độc lập của Supernova Cosmology Project"
+    },
+    {
+      "title": "A Comprehensive Measurement of the Local Value of the Hubble Constant with 1 km/s/Mpc Uncertainty from the Hubble Space Telescope and the SH0ES Team",
+      "url": "https://doi.org/10.3847/2041-8213/ac5c5b",
+      "doi": "10.3847/2041-8213/ac5c5b",
+      "publisher": "The Astrophysical Journal Letters (Riess et al.)",
+      "year": 2022,
+      "tier": 1,
+      "covers": "H0 = 73,04 ± 1,04 km/s/Mpc, lệch 5σ so với Planck+ΛCDM, nguyên nhân chưa rõ"
+    },
+    {
+      "title": "A dying universe: the long-term fate and evolution of astrophysical objects",
+      "url": "https://doi.org/10.1103/RevModPhys.69.337",
+      "doi": "10.1103/RevModPhys.69.337",
+      "publisher": "Reviews of Modern Physics (Adams & Laughlin)",
+      "year": 1997,
+      "tier": 1,
+      "covers": "Sao tồn tại tới ~10^14 năm; kỷ nguyên lỗ đen bốc hơi tới ~10^100 năm; khả năng 'cái chết nhiệt' sau Kỷ nguyên Tối"
+    },
+    {
+      "title": "Webb and the Early Universe",
+      "url": "https://science.nasa.gov/mission/webb/early-universe/",
+      "doi": "",
+      "publisher": "NASA Science",
+      "tier": 2,
+      "covers": "Kỷ lục thiên hà xa nhất: MoM-z14 (z = 14,44, ~280 triệu năm sau Big Bang) từ 6/2025, trước đó JADES-GS-z14-0; giãn nở là không gian giữa các vật giãn ra"
+    },
+    {
+      "title": "A Cosmic Miracle: A Remarkably Luminous Galaxy at z_spec = 14.44 Confirmed with JWST",
+      "url": "https://doi.org/10.33232/001c.156033",
+      "doi": "10.33232/001c.156033",
+      "publisher": "The Open Journal of Astrophysics (Naidu, Oesch, Brammer et al.)",
+      "year": 2026,
+      "tier": 1,
+      "covers": "MoM-z14, z = 14,44, 280 triệu năm sau Big Bang"
+    },
+    {
+      "title": "Dark Energy",
+      "url": "https://science.nasa.gov/dark-energy/",
+      "doi": "",
+      "publisher": "NASA Science",
+      "tier": 2,
+      "covers": "Năng lượng tối làm giãn nở tăng tốc; bản chất chưa biết"
+    },
+    {
+      "title": "Planck time",
+      "url": "https://physics.nist.gov/cgi-bin/cuu/Value?plkt",
+      "doi": "",
+      "publisher": "NIST (CODATA 2022)",
+      "tier": 2,
+      "covers": "Thời gian Planck 5,391247 × 10^-44 s — thang của kỷ nguyên Planck"
+    }
+  ],
+  "corrections": [
+    "2026-09-25 · `big-bang-vu-tru-da-dien-ra-the-nao-trong-138-ti-nam` (vi + en) — vi \"Khoảng 8 tỷ năm nữa Mặt Trời thành sao lùn trắng\" → khoảng 5 tỷ năm (NASA Sun: Facts), dòng tương ứng đưa lại vào en; \"thiên hà xa nhất cho tới nay là JADES-GS-z14-0\" → tính đến 09/2026 là MoM-z14 (z = 14,44, ~280 triệu năm; NASA Webb Early Universe, Naidu 2026), bỏ \"thiên hà đầu tiên hình thành ở 300 triệu năm\"; cả hai bản: 75/25% ghi \"theo khối lượng\", lithi-7 lệch (Cyburt 2016); lạm phát ghi là giả thuyết (Planck 2018 X); sao đầu tiên 200 → 150–200 triệu năm (CERN); tuổi 13,797 ± 0,023 tỷ năm theo ΛCDM (Planck 2018) + thêm căng thẳng Hubble 67,4 vs 73,0 km/s/Mpc, ~5σ (Planck 2018; Riess 2022); thành phần 68/27/5 → 68,5/26,4/4,9% (Planck 2018 Bảng 2); 1998 gắn hai nhóm (Riess 1998; Perlmutter 1999); hai mốc xa gắn Adams & Laughlin 1997; \"cái chết nhiệt được ủng hộ nhiều nhất\" → kịch bản có điều kiện; gỡ nguồn Andromeda không đỡ claim nào."
+  ],
+  "openQuestions": [
+    "Claim kỷ lục thiên hà xa nhất có mốc 09/2026 — kiểm lại 03/2027.",
+    "Nguồn s1 (thienvanvietnam.org, bậc 4) giữ làm tham khảo tiếng Việt; không claim nào dựa riêng vào nó."
+  ]
+}
