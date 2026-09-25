@@ -1,0 +1,173 @@
+{
+  "meta": {
+    "generatedAt": "2026-09-25",
+    "scope": "3 bài PUBLISHED bị publish:check chặn vì entityId rỗng. CHỈ ĐỌC CSDL khi soạn — file này là kế hoạch, không phải bản ghi.",
+    "existingEntities": [
+      "he-vi-sinh-duong-ruot",
+      "he-mat-troi",
+      "thien-ha",
+      "lich-su-su-song-trai-dat",
+      "dai-tuyet-chung-permi"
+    ],
+    "note": "Các entity trên ĐÃ có trong DB, chỉ được tham chiếu trong `relationships`, không nằm trong `entities`. he-vi-sinh-duong-ruot đã gắn bài he-vi-sinh-duong-ruot-hang-chuc-nghin-ti-cu-dan-va-anh-huong-cua-chung nên không tái dùng làm entity chính cho bài 1 hay bài 3.",
+    "qidVerification": "Mọi QID dưới đây tra ngày 2026-09-25 bằng wbsearchentities rồi mở bằng wbgetentities để xác nhận nhãn + sitelink enwiki: Q1666254 'intermittent fasting' (P31 diet, viwiki 'Nhịn ăn gián đoạn'); Q586582 'enteric nervous system'; Q17077315 'gut–brain axis'; Q3801649 'Shiva Hypothesis' (P31 hypothesis Q41719); Q55814 'extinction event' (viwiki 'Sự kiện tuyệt chủng').",
+    "backlinks": "Không cần: cả ba bài đều đã có link vào (bài 1: 4 bài, bài 2: dai-tuyet-chung-permi, bài 3: 3 bài).",
+    "counts": {
+      "entitiesNew": 5,
+      "entitiesWithQid": 5,
+      "articlesAttached": 3,
+      "relationships": 11,
+      "backlinks": 0
+    }
+  },
+  "entities": [
+    {
+      "slug": "nhin-an-gian-doan",
+      "canonicalName": "Nhịn ăn gián đoạn",
+      "canonicalNameEn": "Intermittent fasting",
+      "entityType": "METHOD",
+      "aliases": [
+        "nhịn ăn gián đoạn",
+        "nhịn ăn ngắt quãng",
+        "intermittent fasting",
+        "IF",
+        "ăn giới hạn thời gian",
+        "time-restricted eating"
+      ],
+      "wikidataQid": "Q1666254",
+      "description": "Chế độ ăn luân phiên giữa các khoảng nhịn và các khoảng được ăn, ví dụ giới hạn bữa ăn trong một khung giờ mỗi ngày hoặc nhịn xen kẽ theo ngày.",
+      "articleSlug": "nhin-an-gian-doan-anh-huong-toi-he-vi-sinh-duong-ruot-nhu-the-nao"
+    },
+    {
+      "slug": "he-than-kinh-ruot",
+      "canonicalName": "Hệ thần kinh ruột",
+      "canonicalNameEn": "Enteric nervous system",
+      "entityType": "CONCEPT",
+      "aliases": [
+        "hệ thần kinh ruột",
+        "enteric nervous system",
+        "ENS",
+        "bộ não thứ hai",
+        "second brain"
+      ],
+      "wikidataQid": "Q586582",
+      "description": "Mạng lưới nơron nằm trong thành ống tiêu hoá, có đủ vòng phản xạ riêng để tự điều khiển nhu động, dòng dịch và lưu lượng máu niêm mạc ở ruột non và ruột già; thường được gọi là \"bộ não thứ hai\".",
+      "articleSlug": "ruot-he-vi-sinh-vat-va-quyen-luc-cua-bo-nao-thu-hai"
+    },
+    {
+      "slug": "truc-ruot-nao",
+      "canonicalName": "Trục ruột–não",
+      "canonicalNameEn": "Gut–brain axis",
+      "entityType": "CONCEPT",
+      "aliases": [
+        "trục ruột-não",
+        "trục não-ruột",
+        "trục não–ruột",
+        "gut-brain axis",
+        "gut–brain axis"
+      ],
+      "wikidataQid": "Q17077315",
+      "description": "Đường liên lạc hai chiều giữa ống tiêu hoá và hệ thần kinh trung ương, qua dây thần kinh phế vị, các đường giao cảm, tín hiệu nội tiết và miễn dịch.",
+      "articleSlug": null
+    },
+    {
+      "slug": "gia-thuyet-shiva",
+      "canonicalName": "Giả thuyết Shiva",
+      "canonicalNameEn": "Shiva hypothesis",
+      "entityType": "THEORY",
+      "aliases": [
+        "giả thuyết shiva",
+        "shiva hypothesis"
+      ],
+      "wikidataQid": "Q3801649",
+      "description": "Giả thuyết còn tranh cãi: dao động của Hệ Mặt Trời qua mặt phẳng Ngân Hà làm tăng theo chu kỳ số sao chổi va chạm Trái Đất, và qua đó tạo nhịp cho các đợt tuyệt chủng hàng loạt. Bằng chứng thống kê chưa ngã ngũ — Bailer-Jones (2009) thấy rất ít bằng chứng cho một chu kỳ, còn Melott & Bambach (2013) vẫn thấy tín hiệu khoảng 27 triệu năm.",
+      "articleSlug": "nhung-lan-dai-tuyet-chung-co-lien-quan-toi-hanh-trinh-cua-he-mat-troi-trong-ngan-ha"
+    },
+    {
+      "slug": "tuyet-chung-hang-loat",
+      "canonicalName": "Tuyệt chủng hàng loạt",
+      "canonicalNameEn": "Extinction event",
+      "entityType": "CONCEPT",
+      "aliases": [
+        "tuyệt chủng hàng loạt",
+        "đại tuyệt chủng",
+        "sự kiện tuyệt chủng",
+        "mass extinction",
+        "extinction event"
+      ],
+      "wikidataQid": "Q55814",
+      "description": "Sự suy giảm đa dạng sinh học trên diện rộng và nhanh theo thang thời gian địa chất, khi tỉ lệ tuyệt chủng vượt xa mức nền.",
+      "articleSlug": null
+    }
+  ],
+  "relationships": [
+    {
+      "from": "nhin-an-gian-doan",
+      "to": "he-vi-sinh-duong-ruot",
+      "relType": "APPLIES_TO",
+      "weight": 0.6,
+      "why": "Bài 1 xét nhịn ăn gián đoạn trên đối tượng là hệ vi sinh đường ruột. Cố ý KHÔNG dùng CAUSES: tổng quan 2024 (8 nghiên cứu trên người) chỉ kết luận 'có thể', thay đổi không đồng nhất. Weight thấp vì bằng chứng mỏng."
+    },
+    {
+      "from": "he-vi-sinh-duong-ruot",
+      "to": "nhin-an-gian-doan",
+      "relType": "PREREQUISITE_OF",
+      "why": "Bài 1 giả định người đọc đã biết hệ vi sinh, độ đa dạng alpha, loạn khuẩn — những thứ bài hệ vi sinh giải thích. Không tạo chu trình: he-vi-sinh-duong-ruot chỉ có cạnh prerequisite đi vào từ he-mien-dich."
+    },
+    {
+      "from": "he-than-kinh-ruot",
+      "to": "truc-ruot-nao",
+      "relType": "PART_OF",
+      "why": "Bài 3: trục não–ruột gồm dây phế vị, đường giao cảm, tín hiệu nội tiết và miễn dịch nối não với hệ thần kinh ruột (Breit và cộng sự, 2018). ENS là một đầu của trục."
+    },
+    {
+      "from": "he-than-kinh-ruot",
+      "to": "truc-ruot-nao",
+      "relType": "PREREQUISITE_OF",
+      "why": "Phải biết ruột có hệ thần kinh riêng rồi mới hiểu được liên lạc hai chiều giữa nó với não. Thứ tự học, tách khỏi quan hệ thành phần ở cạnh PART_OF."
+    },
+    {
+      "from": "he-vi-sinh-duong-ruot",
+      "to": "truc-ruot-nao",
+      "relType": "PREREQUISITE_OF",
+      "why": "Phần 'trục vi sinh–ruột–não' của bài 3 cần biết hệ vi sinh là gì trước. Cố ý KHÔNG dùng CAUSES hay PART_OF: bài nói rõ ở người mới là tương quan, nhân quả chưa xác lập (Ou và cộng sự, 2023)."
+    },
+    {
+      "from": "tuyet-chung-hang-loat",
+      "to": "gia-thuyet-shiva",
+      "relType": "PREREQUISITE_OF",
+      "why": "Giả thuyết là một đề xuất về nhịp của các đợt tuyệt chủng hàng loạt; phải biết tuyệt chủng hàng loạt là gì trước."
+    },
+    {
+      "from": "gia-thuyet-shiva",
+      "to": "tuyet-chung-hang-loat",
+      "relType": "APPLIES_TO",
+      "weight": 0.5,
+      "why": "Lĩnh vực mà giả thuyết tìm cách giải thích. APPLIES_TO (lý thuyết → lĩnh vực), cố ý KHÔNG dùng CAUSES: Bailer-Jones (2009) thấy rất ít bằng chứng thống kê cho chu kỳ; Melott & Bambach (2013) vẫn thấy tín hiệu ~27 triệu năm — chưa ngã ngũ."
+    },
+    {
+      "from": "he-mat-troi",
+      "to": "gia-thuyet-shiva",
+      "relType": "PREREQUISITE_OF",
+      "why": "Giả thuyết dựa trên chuyển động của Hệ Mặt Trời quanh tâm và qua mặt phẳng Ngân Hà."
+    },
+    {
+      "from": "thien-ha",
+      "to": "gia-thuyet-shiva",
+      "relType": "PREREQUISITE_OF",
+      "why": "Cần biết cấu trúc thiên hà (đĩa, mặt phẳng, nhánh xoắn ốc) để theo được lập luận của bài 2. Bài 2 đã link sang bài thiên hà ở mục Đọc thêm."
+    },
+    {
+      "from": "dai-tuyet-chung-permi",
+      "to": "tuyet-chung-hang-loat",
+      "relType": "IS_A",
+      "why": "Đại tuyệt chủng Permi–Trias là một sự kiện tuyệt chủng hàng loạt. Nối entity mới vào nhánh đã có."
+    },
+    {
+      "from": "lich-su-su-song-trai-dat",
+      "to": "tuyet-chung-hang-loat",
+      "relType": "PREREQUISITE_OF",
+      "why": "Tuyệt chủng hàng loạt chỉ đọc được trên dòng thời gian của sự sống. Cùng hướng với cạnh có sẵn lich-su-su-song-trai-dat → dai-tuyet-chung-permi, không tạo chu trình."
+    }
+  ]
+}
