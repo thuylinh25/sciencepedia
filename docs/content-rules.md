@@ -606,6 +606,20 @@ Chưa tới ngưỡng ba lần nên chưa thành quy tắc, nhưng là lỗi n�
 trích. Khuôn ghi chú không phải bằng chứng đã đọc — người duyệt đọc lại nguồn,
 không đọc ghi chú.
 
+### Đợt năm: chủ thể bị nới rộng — thành quy tắc 18
+
+Chốt 2026-09-25, từ lượt duyệt đợt 5. Dạng "đổi loài" không lặp, nhưng dạng
+tổng quát của nó xuất hiện ở 5/10 mục: điều NASA nói về Sao Thiên Vương thành
+điều của cả hai người khổng lồ băng; "phía bắc chí tuyến Bắc" thành "Bắc bán
+cầu"; nhiệt độ mô phỏng ở MỘT hố trên Mặt Trăng thành tính chất của ống dung
+nham nói chung. Cộng hai ca đợt 4 là bảy — quá ngưỡng, nên thành quy tắc 18
+trong `.claude/skills/article-generator/SKILL.md`: **khẳng định giữ nguyên chủ
+thể mà nguồn nói tới.**
+
+Vế đối trọng (quy tắc 15) vẫn rơi ở 5/10 mục dù câu bổ sung đã có hiệu lực.
+Nghĩa là quy tắc được đọc nhưng không được áp; lớp chặn thật vẫn là người duyệt
+đọc lại nguồn.
+
 ## Bài dán từ công cụ AI: chỗ bịa nằm ở con số cụ thể nhất
 
 Chốt 2026-09-24, từ lượt bổ sung nguồn cho 17 bài tạo qua form quản trị (đều

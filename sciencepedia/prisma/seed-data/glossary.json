@@ -1892,5 +1892,353 @@
     "usedIn": [
       "hien-tuong-el-nino-khi-dai-duong-noi-gian-va-dao-lon-khi-hau-toan-cau"
     ]
+  },
+  {
+    "slug": "luc-hap-dan",
+    "term": "Lực hấp dẫn",
+    "termEn": "Gravity",
+    "shortDef": "Lực hút giữa mọi vật có khối lượng. Theo định luật vạn vật hấp dẫn của Newton, độ lớn của lực tỉ lệ với tích hai khối lượng và tỉ lệ nghịch với bình phương khoảng cách giữa chúng.",
+    "shortDefEn": "The attractive force between any two objects with mass. By Newton's law of universal gravitation, its magnitude is proportional to the product of the two masses and inversely proportional to the square of the distance between them.",
+    "fullDef": "Định luật được viết dưới dạng F = G·m₁·m₂/r². Nói chặt chẽ, công thức áp cho chất điểm; với vật đối xứng cầu nó vẫn đúng, khi r là khoảng cách giữa hai tâm. Khoảng một thế kỷ sau Newton, Cavendish đo được hằng số G, bằng khoảng 6,67 × 10⁻¹¹ N·m²/kg²; chữ \"vạn vật\" nói rằng các nhà khoa học cho hằng số này đúng với mọi loại vật chất và như nhau ở mọi nơi trong vũ trụ. G cực nhỏ, cho thấy lực hấp dẫn rất yếu: lực hút giữa những vật cỡ cơ thể người, thậm chí cỡ một toà nhà chọc trời, là vô cùng nhỏ — hai vật 1 kg đặt cách nhau 1 m hút nhau với lực chừng bằng trọng lượng một hạt phấn hoa. Lực luôn đi thành cặp: vật 1 hút vật 2 bao nhiêu thì vật 2 hút vật 1 bấy nhiêu, theo hướng ngược lại.\n\nDù là lực yếu nhất trong bốn lực cơ bản của tự nhiên, hấp dẫn giữ các hành tinh trên quỹ đạo quanh Mặt Trời và Mặt Trăng quanh Trái Đất; lực hút của Mặt Trăng kéo nước biển về phía nó, gây ra thuỷ triều. Einstein mô tả hấp dẫn từ một góc nhìn khác hẳn: như biểu hiện của việc khối lượng làm cong không gian và thời gian. Ông cũng phát hiện rằng hấp dẫn không chỉ kéo vật có khối lượng mà kéo cả ánh sáng.",
+    "fullDefEn": "The law is written as F = G·m₁·m₂/r². Strictly, it applies to point masses; it holds equally for spherically symmetric objects, with r the distance between their centres. About a century after Newton, Cavendish measured the constant G, about 6.67 × 10⁻¹¹ N·m²/kg²; the word \"universal\" means scientists think it applies to masses of any composition and is the same throughout the Universe. G is incredibly small, showing that gravity is very weak: the attraction between masses as small as our bodies, or even objects the size of skyscrapers, is incredibly small — two 1-kg masses 1 m apart pull on each other with about the weight of a grain of pollen. The forces come in pairs: object 1 pulls on object 2 exactly as hard as object 2 pulls on object 1, in the opposite direction.\n\nAlthough it is the weakest of the four fundamental forces of nature, gravity keeps the planets in orbit around the Sun and the Moon in orbit around Earth; the Moon's pull draws the seas toward it, causing the ocean tides. Einstein described gravity from a very different perspective, as a manifestation of mass warping space and time. He also discovered that gravity pulls not only on mass but on light too.",
+    "aliases": [
+      "gravity",
+      "gravitation",
+      "hap-dan",
+      "luc-van-vat-hap-dan",
+      "dinh-luat-van-vat-hap-dan"
+    ],
+    "category": "Vật lý",
+    "sources": [
+      {
+        "title": "University Physics Volume 1, §13.1 Newton's Law of Universal Gravitation",
+        "publisher": "OpenStax, Rice University",
+        "url": "https://openstax.org/books/university-physics-volume-1/pages/13-1-newtons-law-of-universal-gravitation"
+      },
+      {
+        "title": "What Is Gravity?",
+        "publisher": "NASA Space Place",
+        "url": "https://spaceplace.nasa.gov/what-is-gravity/en/"
+      }
+    ],
+    "verdict": "PASS",
+    "reviewedBy": "science-editor",
+    "reviewedAt": "2026-09-25",
+    "notes": "Duyet accuracy gate dot 5 boi science-editor, 2026-09-25. Reviewer tu tai lai toan bo URL nguon trong cung ngay (curl, UA trinh duyet; tat ca 200) va doi chieu tung menh de Viet-Anh. DA XAC NHAN nguyen van OpenStax UP1 13.1: 'a force exists between any two objects, whose magnitude is given by the product of the two masses divided by the square of the distance', 'The equal but opposite force... Newton's third law', 'A century after Newton... Cavendish determined... G = 6.67 x 10^-11', 'The word universal indicates that scientists think...' (rao giu o ca hai ban), 'Although gravity is the weakest of the four fundamental forces...'. NASA Space Place: quy dao, thuy trieu 'pulls the seas towards it', 'curve in space', 'Gravity not only pulls on mass but also on light. Albert Einstein discovered this principle'.\nCAU BI CAT CUA NGUOI SOAN DA DOC NGUYEN VAN: 'The attraction between masses as small as our bodies, or even objects the size of skyscrapers, is incredibly small. For example, two 1.0-kg masses located 1.0 meter apart exert a force of 6.7 x 10^-11 N... the weight of a typical grain of pollen.' Ban nhap 'kho ma cam nhan duoc' la menh de ve CAM NHAN, nguon noi ve DO LON; nay viet dung 'vo cung nho', them ve 'ca toa nha choc troi' va vi du hat phan hoa (quy tac 15: ve 'or even' la mot phan cua menh de).\nBA SUA KHAC. (1) 'Newton viet dinh luat duoi dang F = G...' -> 'Dinh luat duoc viet duoi dang': nguon noi 'can be expressed as', va chinh trang noi G chi duoc xac dinh mot the ky sau Newton - gan cong thuc co G cho Newton la tu mau thuan voi trang (quy tac 14). (2) Them dieu kien chat diem / vat doi xung cau, r giua hai tam - nguon dat ngay sau cong thuc ('strictly speaking... point masses'); shortDef 'khoang cach giua chung' giu nguyen vi fullDef da noi ro phan gian luoc. (3) Einstein: Space Place viet 'curve in space', OpenStax viet chat hon 'mass warping space and time' - quy tac 13, lay cau chat. Cau cu 'theo cach mo ta ay, hap dan keo ca anh sang' gan anh sang vao hinh anh do cong, nguon chi noi Einstein phat hien nguyen ly; nay viet dung. Hang so G la hang so vat ly, khong can moc ngay.",
+    "usedIn": [
+      "dieu-gi-tao-ra-gio-thuy-trieu-va-cac-dong-hai-luu",
+      "newton-da-giai-ma-the-gioi-nhu-the-nao",
+      "sao-moc-nguoi-khong-lo-khi-va-tam-khien-cua-he"
+    ]
+  },
+  {
+    "slug": "tien-hoa",
+    "term": "Tiến hoá",
+    "termEn": "Evolution",
+    "shortDef": "Sự thay đổi thành phần di truyền của một quần thể sinh vật theo thời gian, cụ thể là qua các thế hệ, bắt nguồn từ những thay đổi trong bộ gen. Qua nhiều thế hệ — có khi kéo dài hàng triệu năm — một loài có thể mang những chức năng hay đặc điểm cơ thể khác đi, thậm chí tiến hoá thành một loài khác.",
+    "shortDefEn": "The change in the genetic composition of a population of organisms over time — specifically over generations — arising from changes in the genome. Over successive generations, in some cases spanning millions of years, a species may take on divergent functions or physical traits, or may even evolve into a different species.",
+    "fullDef": "Cá thể không tiến hoá: những thay đổi trong đời một cá thể là sự phát triển. Tiến hoá thấy được ở quần thể, như sự dịch chuyển giá trị trung bình của một đặc điểm qua các thế hệ. Biến dị di truyền mà tiến hoá dựa vào có hai nguồn chính: đột biến — nguồn gốc sau cùng của mọi alen mới — và sinh sản hữu tính, vốn tổ hợp alen của bố mẹ thành kiểu gen mới ở mỗi con.\n\nCơ chế chọn lọc tự nhiên do Charles Darwin và Alfred Russel Wallace độc lập mô tả; năm 1858 hai ông cùng trình bày công trình tại Hội Linnean ở London. Cá thể mang đặc điểm có lợi sinh sản nhiều hơn, và vì đặc điểm được di truyền nên chúng xuất hiện nhiều hơn ở thế hệ sau; qua nhiều thế hệ, quần thể thay đổi — quá trình Darwin gọi là \"hậu duệ có biến đổi\". Chọn lọc tự nhiên là cơ chế duy nhất được biết cho tiến hoá thích nghi, nhưng không phải lực tiến hoá duy nhất: ngoài nó còn có thể có phiêu bạt di truyền (những thay đổi ngẫu nhiên trong vốn gen của quần thể), dòng gen, đột biến, giao phối không ngẫu nhiên và biến động môi trường.",
+    "fullDefEn": "Individuals do not evolve: the changes in an individual's lifetime are development. Evolution shows up in populations, as a shift in the average value of a trait over generations. The genetic variation evolution works on has two main sources: mutation — the ultimate source of new alleles — and sexual reproduction, which assembles the parents' alleles into new genotypes in each offspring.\n\nThe mechanism of natural selection was described independently by Charles Darwin and Alfred Russel Wallace, who presented their papers together at the Linnean Society in London in 1858. Individuals with favourable traits reproduce more, and because traits are inherited, those traits are better represented in the next generation; over generations the population changes — a process Darwin called descent with modification. Natural selection is the only known mechanism for adaptive evolution, but not the only evolutionary force: in addition to it, genetic drift (chance changes in a population's gene pool), gene flow, mutation, nonrandom mating and environmental variation could be in play.",
+    "aliases": [
+      "evolution",
+      "tien-hoa-sinh-hoc",
+      "thuyet-tien-hoa"
+    ],
+    "category": "Sinh học",
+    "sources": [
+      {
+        "title": "Evolution — Talking Glossary of Genomic and Genetic Terms",
+        "publisher": "National Human Genome Research Institute (NIH)",
+        "url": "https://www.genome.gov/genetics-glossary/Evolution"
+      },
+      {
+        "title": "Biology 2e, §18.1 Understanding Evolution",
+        "publisher": "OpenStax, Rice University",
+        "url": "https://openstax.org/books/biology-2e/pages/18-1-understanding-evolution"
+      },
+      {
+        "title": "Biology 2e, §19.2 Population Genetics",
+        "publisher": "OpenStax, Rice University",
+        "url": "https://openstax.org/books/biology-2e/pages/19-2-population-genetics"
+      }
+    ],
+    "verdict": "PASS",
+    "reviewedBy": "science-editor",
+    "reviewedAt": "2026-09-25",
+    "notes": "Duyet accuracy gate dot 5 boi science-editor, 2026-09-25. Reviewer tu tai lai toan bo URL nguon trong cung ngay (curl, UA trinh duyet; tat ca 200) va doi chieu tung menh de Viet-Anh. DA XAC NHAN nguyen van NHGRI: 'the process by which living organisms change over time through changes in the genome... result from mutations... Those individuals who are best at adapting... leave behind more offspring... over successive generations (in some cases spanning millions of years), one species may evolve to take on divergent functions or physical characteristics or may even evolve into a different species' - cau nguoi soan noi bi cat da doc du; 'thay doi' -> 'mang chuc nang/dac diem khac di, THAM CHI thanh loai khac' cho dung ve 'or may even'. OpenStax Biology 2e 18.1: Darwin va Wallace 'independently conceived', 1858 Linnean Society, 'descent with modification', 'the only mechanism known for adaptive evolution', 'Evolution is the change in a population's genetic composition over time, specifically over generations', 'Individuals do change over their lifetime, obviously, but this is development', 'Mutation... is the ultimate source of new alleles' + sinh san huu tinh.\nSUA DINH NGHIA (quy tac 13, pham vi quan the/ca the). shortDef cu 'qua trinh cac SINH VAT thay doi' theo NHGRI de nguoi doc hinh dung ca the tien hoa - mo hinh sai ma chinh OpenStax 18.1 phu nhan. Nay shortDef dan bang dinh nghia chat cua OpenStax (thanh phan di truyen QUAN THE qua cac the he), giu ve 'thay doi trong bo gen' va trieu nam cua NHGRI; fullDef mo bang cau ca the khong tien hoa. Cung ho voi hinh dang 'pham vi loai/quan the' dang theo doi, nhung o cap to chuc (ca the vs quan the) chu khong phai loai.\nMENH DE DOT BIEN/PHIEU BAT CUA NGUOI SOAN: KHONG DAT o dang cu. Cau 'mutation, selection, or drift' o 18.1 chi noi ve ban sao gen sau nhan doi - nang no thanh menh de chung la suy dien tu mot boi canh hep (quy tac 14), va giu 2 luc tu mot danh sach 5 (quy tac 15). Reviewer tai them OpenStax 19.2 (them vao sources): 'In addition to natural selection, there are other evolutionary forces that could be in play: genetic drift, gene flow, mutation, nonrandom mating, and environmental variation.' Nay ghi du 5, giu rao 'could be in play' ('con co the co'). Dinh nghia phieu bat giu tu 18.1 ('changes in a population's gene pool resulting from chance'). Nguon goc bien di bo sung sinh san huu tinh (18.1 'two main mechanisms: mutation and sexual reproduction') - ban cu chi noi dot bien.",
+    "usedIn": [
+      "y-thuc-mon-qua-vi-dai-hay-cai-gia-dat-cua-su-tien-hoa"
+    ]
+  },
+  {
+    "slug": "huyet-ap",
+    "term": "Huyết áp",
+    "termEn": "Blood pressure",
+    "shortDef": "Lực máu đẩy vào thành động mạch. Chỉ số huyết áp gồm hai số: huyết áp tâm thu, mức cao nhất, khi tim co bóp đẩy máu đi; và huyết áp tâm trương, khi tim nghỉ giữa hai nhịp đập và huyết áp hạ xuống.",
+    "shortDefEn": "The force of blood pushing against the walls of the arteries. A reading has two numbers: systolic pressure, the highest, when the heart beats and pumps blood out; and diastolic pressure, when the heart rests between beats and the pressure falls.",
+    "fullDef": "Huyết áp được viết thành hai số cách nhau bởi dấu gạch chéo, như 120/80 mmHg — số tâm thu đứng trước. Huyết áp thay đổi trong ngày theo hoạt động. Theo các mức mà NHLBI (trang cập nhật tháng 4/2024) và MedlinePlus nêu cho người lớn: bình thường là tâm thu dưới 120 và tâm trương dưới 80; tâm thu 120–129 kèm tâm trương dưới 80 là huyết áp cao hơn bình thường; tăng huyết áp giai đoạn 1 là tâm thu 130–139 hoặc tâm trương 80–89, giai đoạn 2 là tâm thu từ 140 hoặc tâm trương từ 90 trở lên. Tâm thu trên 180 hoặc tâm trương trên 120 là cơn tăng huyết áp, cần liên hệ bác sĩ ngay. NHLBI nói huyết áp là cao khi các lần đo đều ở mức ấy; bác sĩ thường đo hai lần trở lên ở những lần khám khác nhau trước khi chẩn đoán. Với trẻ em và thiếu niên, bác sĩ so với mức bình thường theo tuổi, giới và chiều cao chứ không dùng các ngưỡng này.\n\nTăng huyết áp thường không có triệu chứng cho tới khi nó đã gây ra vấn đề sức khoẻ nghiêm trọng, nên cách duy nhất để biết là đo huyết áp định kỳ; NHLBI khuyên đo ít nhất mỗi năm một lần.",
+    "fullDefEn": "Blood pressure is written as two numbers separated by a slash, such as 120/80 mm Hg, with the systolic number first. It changes during the day with your activities. Under the levels NHLBI (page updated April 2024) and MedlinePlus give for adults: normal is systolic below 120 and diastolic below 80; systolic 120–129 with diastolic below 80 is elevated; stage 1 high blood pressure is systolic 130–139 or diastolic 80–89, and stage 2 is systolic 140 or higher or diastolic 90 or higher. Systolic above 180 or diastolic above 120 is a hypertensive crisis: contact a provider right away. NHLBI says blood pressure is high when readings are consistently at those levels; a provider will usually take two or more readings at separate appointments before making a diagnosis. For children and teens, the provider compares the reading with what is normal for their age, sex and height rather than using these cut-offs.\n\nHigh blood pressure usually has no symptoms until it has caused serious health problems, so the only way to find out is regular checks; NHLBI advises having it checked at least once a year.",
+    "aliases": [
+      "blood-pressure",
+      "tang-huyet-ap",
+      "cao-huyet-ap",
+      "hypertension"
+    ],
+    "category": "Y học",
+    "sources": [
+      {
+        "title": "High Blood Pressure — What Is High Blood Pressure?",
+        "publisher": "National Heart, Lung, and Blood Institute (NIH)",
+        "url": "https://www.nhlbi.nih.gov/health/high-blood-pressure"
+      },
+      {
+        "title": "High Blood Pressure",
+        "publisher": "MedlinePlus, National Library of Medicine (NIH)",
+        "url": "https://medlineplus.gov/highbloodpressure.html"
+      }
+    ],
+    "verdict": "PASS",
+    "reviewedBy": "science-editor",
+    "reviewedAt": "2026-09-25",
+    "notes": "Duyet accuracy gate dot 5 boi science-editor, 2026-09-25. Reviewer tu tai lai toan bo URL nguon trong cung ngay (curl, UA trinh duyet; tat ca 200) va doi chieu tung menh de Viet-Anh. DA XAC NHAN nguyen van NHLBI (What Is High Blood Pressure?, 'Last updated on April 25, 2024'): '120/80 mm Hg', 'The first number is your systolic', 'changes throughout the day based on your activities', bang 5 muc (Normal / Elevated / Stage 1 / Stage 2 / Hypertensive Crisis 'Higher than 180... OR Higher than 120... Contact your provider immediately'), 'high when you have CONSISTENT systolic readings of 130...', 'Symptoms... don't usually occur until it causes serious health problems', 'checked at least once a year'. MedlinePlus: 'highest when your heart beats... between beats, your blood pressure falls', 'usually has no symptoms. So the only way to find out...', 'two or more readings at separate appointments', tre em so theo tuoi/chieu cao/gioi, 'seek medical care right away' o muc khung hoang. Bang muc khop giua hai nguon.\nLUA CHON BO 'HYPERTENSIVE CRISIS' CUA NGUOI SOAN: BAC (quy tac 15). Ca hai nguon dat 5 muc; muc tu ghi 4 muc nhu the do la ca bang. Muc thu 5 cung la muc duy nhat mang loi dan an toan co nguon ('lien he bac si ngay') - bo no khong lam muc tu than trong hon. Nay them dung chu nguon.\nHAI SUA NUA. (1) Quy tac 15, ve doi trong: 'thuong khong co trieu chung' (MedlinePlus) duoc NHLBI noi chat hon 'cho toi khi no gay ra van de suc khoe nghiem trong' (quy tac 13); ban cu bo ve ay. (2) Tu 'consistent' cua NHLBI bi bo; nay ghi. shortDef them 'muc cao nhat' / 'huyet ap ha xuong' cua MedlinePlus de hai so co nghia. Nguong la quy uoc lam sang co the doi, nen ghi moc ngay trang NHLBI (4/2024) ngay trong fullDef; lich kiem lai: khi NHLBI cap nhat trang. Alias tang-huyet-ap/cao-huyet-ap/hypertension: giu - fullDef dinh nghia day du cac muc tang huyet ap.",
+    "usedIn": [
+      "van-dong-thay-doi-tim-va-mach-mau-nhu-the-nao"
+    ]
+  },
+  {
+    "slug": "joule",
+    "term": "Joule",
+    "termEn": "Joule",
+    "shortDef": "Đơn vị SI của công và năng lượng, ký hiệu J. Một joule bằng một newton nhân một mét (N·m): công của lực 1 newton làm vật dời đi 1 mét theo hướng của lực.",
+    "shortDefEn": "The SI unit of work and energy, symbol J. One joule equals one newton times one metre (N·m): the work done by a force of 1 newton moving an object 1 metre in the direction of the force.",
+    "fullDef": "Đơn vị của công là đơn vị lực nhân đơn vị độ dài, trong hệ SI là newton nhân mét; tổ hợp ấy được gọi là joule. Động năng có đơn vị khối lượng nhân bình phương tốc độ, kg·m²/s², cũng chính là joule — vì công và động năng là hai dạng của cùng một đại lượng vật lý tổng quát hơn.\n\nỞ hai đầu thang đo, người ta thường dùng đơn vị khác: sức nổ của thuốc nổ TNT và vũ khí hạt nhân được tính bằng megaton, 1 megaton ≈ 4,18 × 10¹⁵ J; ở đầu kia, năng lượng của hạt hạ nguyên tử được tính bằng electron-volt, 1 eV ≈ 1,6 × 10⁻¹⁹ J.",
+    "fullDefEn": "The unit of work is a unit of force times a unit of length, in SI newtons times metres; that combination is called a joule. Kinetic energy has units of mass times speed squared, kg·m²/s², which is also the joule — because work and kinetic energy are forms of the same, more general physical property.\n\nAt the two ends of the scale, other units are common: the explosive yield of TNT and nuclear explosions is expressed in megatons, 1 megaton ≈ 4.18 × 10¹⁵ J; at the other extreme, the energy of subatomic particles is expressed in electron-volts, 1 eV ≈ 1.6 × 10⁻¹⁹ J.",
+    "aliases": [
+      "jun"
+    ],
+    "category": "Vật lý",
+    "sources": [
+      {
+        "title": "University Physics Volume 1, §7.1 Work",
+        "publisher": "OpenStax, Rice University",
+        "url": "https://openstax.org/books/university-physics-volume-1/pages/7-1-work"
+      },
+      {
+        "title": "University Physics Volume 1, §7.2 Kinetic Energy",
+        "publisher": "OpenStax, Rice University",
+        "url": "https://openstax.org/books/university-physics-volume-1/pages/7-2-kinetic-energy"
+      }
+    ],
+    "verdict": "PASS",
+    "reviewedBy": "science-editor",
+    "reviewedAt": "2026-09-25",
+    "notes": "Duyet accuracy gate dot 5 boi science-editor, 2026-09-25. Reviewer tu tai lai toan bo URL nguon trong cung ngay (curl, UA trinh duyet; tat ca 200) va doi chieu tung menh de Viet-Anh. DA XAC NHAN nguyen van OpenStax UP1 7.1: 'The units of work are units of force multiplied by units of length, which in the SI system is newtons times meters, N·m. This combination is called a joule... abbreviated as J'; 'The maximum work is done by a given force when it is along the direction of the displacement'. 7.2: 'units of kinetic energy are mass times the square of speed... also the units of force times distance, which are the units of work, or joules', 'work and kinetic energy have the same units, because they are different forms of the same, more general, physical property', 'explosive yield of TNT and nuclear explosions, 1 megaton = 4.18 x 10^15 J', 'At the other extreme, the energy of subatomic particle is expressed in electron-volts, 1 eV = 1.6 x 10^-19 J'.\nCAU DIEN GIAI 'THEO HUONG CUA LUC' CUA NGUOI SOAN: XAC NHAN. W = F.d.cos(theta), dat cuc dai khi luc cung huong do doi (7.1 noi nguyen van), nen 1 N doi 1 m theo huong luc cho dung 1 J; khong mau thuan phan nao cua trang (quy tac 14).\nMOT SUA. 'nang luong cua cac vu no lon tinh bang megaton' -> 'suc no cua thuoc no TNT va vu khi hat nhan': nguon gioi han o hai loai no ay, 'vu no lon' mo rong pham vi (quy tac 11/16). Doi '=' sang '≈' o ca hai quy doi vi 4,18 va 1,6 la so da lam tron. ALIAS 'j' BO: mot chu cai trung voi ky hieu va chu viet tat trong van ban khac (vd. J/psi, J trong cong thuc); 'jun' giu.",
+    "usedIn": [
+      "nang-luong-la-gi"
+    ]
+  },
+  {
+    "slug": "he-endocannabinoid",
+    "term": "Hệ endocannabinoid",
+    "termEn": "Endocannabinoid system",
+    "shortDef": "Một hệ điều biến thần kinh phân bố rộng, gồm các thụ thể cannabinoid, các cannabinoid do cơ thể tự tạo (endocannabinoid) và các enzyme tổng hợp, phân huỷ chúng. Nó có vai trò quan trọng trong sự phát triển hệ thần kinh trung ương, tính dẻo của synapse và phản ứng của cơ thể trước các tác nhân gây hại từ bên trong lẫn từ môi trường.",
+    "shortDefEn": "A widespread neuromodulatory system made up of cannabinoid receptors, the body's own cannabinoids (endocannabinoids), and the enzymes that make and break them down. It plays important roles in central nervous system development, synaptic plasticity, and the response to endogenous and environmental insults.",
+    "fullDef": "Thụ thể cannabinoid phổ biến nhất là CB1; một số cannabinoid còn tác động lên thụ thể CB2, các kênh TRP và thụ thể PPAR. Các cannabinoid từ bên ngoài, như THC (tetrahydrocannabinol), tạo tác dụng sinh học qua tương tác với các thụ thể cannabinoid. Hai endocannabinoid được nghiên cứu nhiều nhất là 2-AG và anandamide; dù cấu trúc hoá học tương tự, chúng được tổng hợp và phân huỷ theo những con đường enzyme khác nhau, khiến vai trò sinh lý và bệnh lý của chúng khác nhau về căn bản.\n\nNgười chạy đường dài mô tả \"phê khi chạy\" (runner's high) là một cảm giác dễ chịu đột ngột, gồm hưng phấn, bớt lo âu, an thần và giảm đau. Người ta từng tin rằng endorphin là trung gian cho các tác dụng này, nhưng chạy bộ làm tăng nồng độ trong máu của cả β-endorphin lẫn anandamide. Trên chuột, Fuss và cộng sự (2015) cho thấy thụ thể cannabinoid là trung gian cho việc giảm lo âu và giảm đau tức thời sau khi chạy; còn tác dụng an thần thì không đổi khi chặn thụ thể cannabinoid hay opioid, và cảm giác hưng phấn thì không nghiên cứu được trên chuột.",
+    "fullDefEn": "The most abundant cannabinoid receptors are CB1; CB2 receptors, TRP channels and PPAR receptors are also engaged by some cannabinoids. Exogenous cannabinoids such as THC (tetrahydrocannabinol) produce their biological effects through interactions with cannabinoid receptors. The two best-studied endocannabinoids are 2-AG and anandamide; despite similarities in chemical structure, they are made and broken down by distinct enzymatic pathways, which give them fundamentally different physiological and pathophysiological roles.\n\nLong-distance runners describe the runner's high as a sudden pleasant feeling of euphoria, reduced anxiety, sedation and pain relief. A popular belief has been that endorphins mediate these effects, but running raises blood levels of both β-endorphin and anandamide. In mice, Fuss and colleagues (2015) showed that cannabinoid receptors mediate the acute reduction in anxiety and pain after running; sedation, by contrast, was not affected by blocking cannabinoid or opioid receptors, and euphoria cannot be studied in mice.",
+    "aliases": [
+      "endocannabinoid",
+      "endocannabinoid-system",
+      "he-thong-endocannabinoid"
+    ],
+    "category": "Sinh học",
+    "sources": [
+      {
+        "title": "An Introduction to the Endogenous Cannabinoid System",
+        "publisher": "Biological Psychiatry",
+        "url": "https://doi.org/10.1016/j.biopsych.2015.07.028"
+      },
+      {
+        "title": "A runner's high depends on cannabinoid receptors in mice",
+        "publisher": "Proceedings of the National Academy of Sciences",
+        "url": "https://doi.org/10.1073/pnas.1514996112"
+      }
+    ],
+    "verdict": "PASS",
+    "reviewedBy": "science-editor",
+    "reviewedAt": "2026-09-25",
+    "notes": "Duyet accuracy gate dot 5 boi science-editor, 2026-09-25. Reviewer tu tai lai toan bo URL nguon trong cung ngay (curl, UA trinh duyet; tat ca 200) va doi chieu tung menh de Viet-Anh. Hai bai bao doc qua tom tat Europe PMC (NCBI bi chan): Lu & Mackie, Biological Psychiatry 2016 (online 2015); Fuss et al., PNAS 2015 - tieu de va tac gia khop. DA XAC NHAN nguyen van Lu & Mackie: 'widespread neuromodulatory system that plays important roles in central nervous system development, synaptic plasticity, AND THE RESPONSE TO ENDOGENOUS AND ENVIRONMENTAL INSULTS', thanh phan he, CB1 'most abundant', 'CB2..., transient receptor potential channels, and peroxisome proliferator activated receptors are also engaged by some cannabinoids', THC, 2-AG/anandamide 'Despite SIMILARITIES in chemical structure... distinct enzymatic pathways... fundamentally different physiologic and pathophysiologic roles'. Fuss: dinh nghia runner's high 4 thanh phan, 'popular belief... endorphins', 'running exercise increases blood levels of both', 'in mice... cannabinoid receptors mediate acute anxiolysis and analgesia', 'Sedation, in contrast, was not influenced by cannabinoid or opioid receptor blockage, and euphoria cannot be studied in mouse models'.\nPHAM VI LOAI: GIU DUNG. Ket qua Fuss mang ten chuot o ca hai ban, dung nhu ghi chu nguoi soan. Nhung ghi chu 'giu ve doi trong' chi dung mot nua.\nHAI LOI QUY TAC 15 (bo ve / bo muc). (1) Cau Fuss co HAI ve doi trong sau 'in contrast': an than KHONG phu thuoc thu the cannabinoid, va hung phan khong nghien cuu duoc. Ban nhap giu ve sau, bo ve an than - nguoi doc hieu la ECS giai thich moi thu tru hung phan, trong khi nguon noi mot thanh phan da duoc thu va KHONG phu thuoc ECS. Nay them ve an than, va dua dinh nghia 4 thanh phan cua runner's high tu Fuss de thay ro ECS giai thich 2 trong 4. (2) shortDef giu 2 trong 3 vai tro Lu & Mackie liet ke; bo 'phan ung truoc tac nhan gay hai'. Nay du 3.\nSUA NHO. 'cau truc giong nhau' -> 'tuong tu' ('similarities'); 'thu the pho bien nhat' -> 'thu the CANNABINOID pho bien nhat'; ten cu the TRP/PPAR thay 'mot so loai khac'; bo 'trong can sa' sau THC - tom tat khong noi THC nam trong can sa, chi noi ve viec dung can sa; 'He nay duoc nghien cuu nhu mot ung vien giai thich' (khong co trong nguon) thay bang khung cua chinh Fuss (niem tin endorphin roi du kien anandamide). ALIAS 'ecs' BO: viet tat ba chu trung nhieu nghia khac, va khoa [[ECS]] se tro nham.",
+    "usedIn": [
+      "runners-high-vi-sao-chay-bo-co-the-khien-ban-hung-phan"
+    ]
+  },
+  {
+    "slug": "nguoi-khong-lo-bang",
+    "term": "Người khổng lồ băng",
+    "termEn": "Ice giant",
+    "shortDef": "Tên thường gọi của Sao Thiên Vương và Sao Hải Vương. Chúng thường được mô tả là chủ yếu gồm các chất tạo băng như nước, methane và amoniac, thay vì bị hydro và heli chi phối như Sao Mộc và Sao Thổ — dù dữ liệu hiện có chưa chứng minh trực tiếp rằng chúng giàu nước.",
+    "shortDefEn": "The name often given to Uranus and Neptune. They are usually described as made mostly of ice-forming materials such as water, methane and ammonia, rather than being dominated by hydrogen and helium like Jupiter and Saturn — though current data do not directly show that they are water-rich.",
+    "fullDef": "Với Sao Thiên Vương, NASA ghi rằng từ 80% khối lượng trở lên là một chất lỏng nóng, đặc gồm các vật chất \"băng\" — nước, methane, amoniac — nằm trên một lõi đá nhỏ; gần lõi, nhiệt độ lên tới khoảng 5.000 °C (9.000 °F). Chữ \"băng\" ở đây chỉ nhóm chất tạo băng, không phải băng lạnh thông thường; còn khí quyển của Sao Thiên Vương thì chủ yếu là hydro và heli. Một bài tổng quan năm 2020 (Helled và cộng sự) lưu ý rằng mô hình giàu nước không phải lời giải duy nhất: mọi thông số quan sát được cũng có thể tái tạo nếu phần trong cùng gồm khoảng 82% đá theo khối lượng, còn lại là hydro và heli. Nhóm tác giả coi trường hợp cực đoan ấy là khó xảy ra, vì nước hẳn cũng có mặt, nhưng nó cho thấy dữ liệu chưa buộc hai hành tinh phải là những thế giới \"băng\".\n\nHai hành tinh này có khối lượng khoảng 14,5 và 17 lần Trái Đất — nặng hơn nhiều so với các hành tinh đất đá — kích thước khoảng bốn lần Trái Đất, nằm cách Mặt Trời khoảng 20 và 30 AU, và có khí quyển lạnh hơn nhiều; so với Sao Mộc và Sao Thổ thì chúng nhỏ hơn đáng kể. Dù khối lượng và bán kính gần nhau, chúng khác nhau rõ về thành phần khí quyển, độ nghiêng trục quay và bức xạ nhiệt: nhiệt lượng đo được từ Sao Hải Vương cho thấy nó vẫn đang nguội đi, còn Sao Thiên Vương gần như cân bằng với năng lượng nhận từ Mặt Trời.",
+    "fullDefEn": "For Uranus, NASA states that 80% or more of the mass is a hot, dense fluid of \"icy\" materials — water, methane and ammonia — above a small rocky core; near the core it heats up to about 5,000 °C (9,000 °F). \"Icy\" here refers to ice-forming materials, not frozen ice in the everyday sense; Uranus's atmosphere, by contrast, is mostly hydrogen and helium. A 2020 review (Helled and colleagues) notes that water-rich models are not a unique solution: all the observed parameters can also be reproduced if the innermost regions are about 82% rock by mass, with the rest hydrogen and helium. The authors consider that extreme case implausible, since water is also expected to be present, but it shows that the data do not require the two planets to be \"icy\" worlds.\n\nThe two planets have masses of about 14.5 and 17 Earth masses — far more massive than the terrestrial planets — sizes about four times that of Earth, sit at about 20 and 30 AU from the Sun, and have much colder atmospheres; compared with Jupiter and Saturn they are significantly smaller. Despite similar masses and radii, they differ noticeably in atmospheric composition, axial tilt and thermal emission: Neptune's measured heat flux implies that it is still cooling, while Uranus is near equilibrium with the sunlight it receives.",
+    "aliases": [
+      "ice-giant",
+      "ice-giants",
+      "khong-lo-bang",
+      "hanh-tinh-khong-lo-bang"
+    ],
+    "category": "Thiên văn học",
+    "sources": [
+      {
+        "title": "Uranus: Facts",
+        "publisher": "NASA Science",
+        "url": "https://science.nasa.gov/uranus/facts/"
+      },
+      {
+        "title": "Uranus and Neptune: Origin, Evolution and Internal Structure",
+        "publisher": "Space Science Reviews",
+        "url": "https://doi.org/10.1007/s11214-020-00660-3"
+      }
+    ],
+    "verdict": "PASS",
+    "reviewedBy": "science-editor",
+    "reviewedAt": "2026-09-25",
+    "notes": "Duyet accuracy gate dot 5 boi science-editor, 2026-09-25. Reviewer tu tai lai toan bo URL nguon trong cung ngay (curl, UA trinh duyet; tat ca 200) va doi chieu tung menh de Viet-Anh. Helled, Nettelmann & Guillot 2020 (Space Sci Rev): OpenAlex chi co tom tat, nen doc TOAN VAN tren link.springer.com. DA XAC NHAN nguyen van phan mo dau: 'masses of about 14.5 and 17 M_Earth', 'sizes are about four times that of the Earth... 20 and 30 AU', 'often referred as the ice giants', 'significantly more massive, consist mostly of volatile materials (ice-forming elements such as oxygen and carbon), and have much colder atmospheres', 'significantly smaller and their compositions are not dominated by hydrogen-helium', 'atmospheric enrichment, obliquity, and thermal emission', 'Neptune's measured heat flux implies that it is still cooling, while Uranus is near equilibrium with solar insolation'. NASA Uranus Facts: '80% or more... hot dense fluid of icy materials - water, methane, and ammonia - above a small rocky core', '9,000 F (4,982 C)', 'atmosphere is mostly hydrogen and helium'.\nLOI NANG NHAT CUA MUC (quy tac 13 + 14 + 'dai dien dung muc dong thuan'). shortDef cu noi nhu su that 'Phan lon khoi luong cua chung la vat chat bang' cho CA HAI hanh tinh. NASA chi noi dieu do ve Sao Thien Vuong. Va chinh nguon bac cao hon trong goi - bai tong quan binh duyet - co ca muc 2 tieu de 'Are Uranus & Neptune Really Icy Planets?': 'there are reasons to question whether they are truly icy worlds... all the observed parameters can be reproduced if the innermost regions... consist of ~82% rock by mass... Of course this is an extreme case, which is rather implausible... but it clearly demonstrates that the available data do not directly imply that Uranus and Neptune have high water-to-rock ratios.' Nguoi soan trich cau mo dau 'consist mostly of volatile materials' ma khong doc toi muc 2 cua cung bai. Nay shortDef noi 'thuong duoc mo ta' + ve 'du lieu chua chung minh truc tiep'; fullDef dat ca lap luan va ca ve 'kho xay ra' cua tac gia (khong de ve doi trong thanh ket luan nguoc).\nHAI DIEM GHI CHU NGUOI SOAN. (1) 'toa nhiet tu ben trong' dien giai 'still cooling': nay viet gan chu nguon hon 'nhiet luong do duoc cho thay no van dang nguoi di'. (2) So sanh Sao Moc/Sao Tho: cau goc 'not dominated by hydrogen-helium' - ban cu 'chu khong phai hydro va heli' de doc thanh 'khong co hydro-heli', mau thuan voi NASA (khi quyen chu yeu H-He); nay 'thay vi bi hydro va heli chi phoi', va them cau khi quyen. SUA NHO: '4.982 °C' la do chinh xac gia tu quy doi 9.000 F -> 'khoang 5.000 °C (9.000 °F)'; 'lon hon nhieu' -> 'nang hon nhieu' ('more massive'). Menh de 82% da mang nam 2020; lich kiem lai khi co tong quan moi hoac su menh toi Sao Thien Vuong.",
+    "usedIn": [
+      "sao-thien-vuong-hanh-tinh-lan-nghieng-tren-quy-dao"
+    ]
+  },
+  {
+    "slug": "dong-tia",
+    "term": "Dòng tia",
+    "termEn": "Jet stream",
+    "shortDef": "Dải gió mạnh, tương đối hẹp ở tầng cao của khí quyển. Trên Trái Đất, các dòng tia thường nằm quanh độ cao 9.100 m (30.000 ft); gió trong đó thổi từ tây sang đông.",
+    "shortDefEn": "A relatively narrow band of strong wind in the upper atmosphere. On Earth, jet streams typically occur around 9,100 m (30,000 ft) up, with winds blowing from west to east.",
+    "fullDef": "Gió thổi từ tây sang đông vì Trái Đất quay: mặt đất ở xích đạo chuyển động về phía đông nhanh nhất, rồi chậm dần tới bằng không ở hai cực. Không khí đi từ xích đạo về phía cực vẫn giữ động lượng hướng đông trong khi mặt đất bên dưới chậm lại, nên nó chạy về phía đông nhanh hơn mặt đất — đó là hiệu ứng Coriolis. Dòng tia bám theo ranh giới giữa khối khí nóng và khối khí lạnh, nên dải gió thường xê dịch lên phía bắc hoặc xuống phía nam; vì ranh giới ấy rõ nhất vào mùa đông, dòng tia mạnh nhất vào mùa đông của cả hai bán cầu. Trái Đất có một số dòng tia khác nhau: dòng tia cực nằm giữa vĩ độ 50° và 60° ở cả hai bán cầu, dòng tia cận nhiệt đới quanh vĩ độ 30°. Độ cao của chúng từ khoảng 6 tới 13 km (4–8 dặm), và tốc độ có thể vượt 442 km/h (275 dặm/giờ).\n\nCác hành tinh khác cũng có dòng tia. Khí quyển Sao Thổ phủ những dải mây mờ, dòng tia và bão; ở cực bắc, một dòng tia gợn sóng với gió khoảng 322 km/h tạo thành hình lục giác rộng khoảng 30.000 km, bao quanh một cơn bão xoáy khổng lồ ở giữa.",
+    "fullDefEn": "The winds blow from west to east because Earth rotates: the surface moves east fastest at the equator, slowing to zero at the poles. Air moving from the equator toward the poles keeps its eastward momentum while the surface beneath it slows, so it moves east faster than the ground — the Coriolis effect. Jet streams follow the boundaries between hot and cold air, so the band often shifts north and south; because those boundaries are most pronounced in winter, jet streams are strongest during the winters of both hemispheres. Earth has several different jet streams: the polar jet lies between 50° and 60° latitude in both hemispheres, and the subtropical jet around 30°. They vary in height from about 6 to 13 km (four to eight miles) and can reach speeds of more than 442 km/h (275 mph).\n\nOther planets have jet streams too. Saturn is blanketed with clouds that appear as faint stripes, jet streams and storms; at the north pole a wavy jet stream with winds of about 322 km/h forms a hexagon some 30,000 km across, with a massive rotating storm at its centre.",
+    "aliases": [
+      "jet-stream",
+      "dong-khi-xiet",
+      "luong-gio-tay-tren-cao"
+    ],
+    "category": "Khoa học Trái Đất",
+    "sources": [
+      {
+        "title": "The Jet Stream",
+        "publisher": "NOAA / National Weather Service JetStream",
+        "url": "https://www.noaa.gov/jetstream/global/jet-stream"
+      },
+      {
+        "title": "Saturn: Facts",
+        "publisher": "NASA Science",
+        "url": "https://science.nasa.gov/saturn/facts/"
+      }
+    ],
+    "verdict": "PASS",
+    "reviewedBy": "science-editor",
+    "reviewedAt": "2026-09-25",
+    "notes": "Duyet accuracy gate dot 5 boi science-editor, 2026-09-25. Reviewer tu tai lai toan bo URL nguon trong cung ngay (curl, UA trinh duyet; tat ca 200) va doi chieu tung menh de Viet-Anh. DA XAC NHAN nguyen van NOAA JetStream: 'relatively narrow bands of strong wind in the upper levels of the atmosphere, typically occurring around 30,000 feet (9,100 meters)', 'winds blow from west to east, but the band often shifts north and south because jet streams follow the boundaries between hot and cold air', 'most pronounced in winter... strongest during both the northern and southern hemisphere winters', 'There are several different jet streams', 'polar jet... between the 50-60 latitude lines in both', 'subtropical jet... around the 30 latitude line', 'vary in height of four to eight miles and can reach speeds of more than 275 mph (239 kts / 442 km/h)', va doan Coriolis ('over 1,000 mph at the equator to zero at the poles... the air itself retains its eastward momentum... This is the Coriolis effect'). NASA Saturn Facts: 'faint stripes, jet streams, and storms', 'about 20,000 miles (30,000 kilometers) across... wavy jet stream of 200-mile-per-hour winds (about 322 kilometers per hour) with a massive, rotating storm at the center'.\nQUY DOI DAM -> KM CUA NGUOI SOAN: XAC NHAN. 4 dam = 6,44 km, 8 dam = 12,87 km; 'khoang 6 toi 13 km' lam tron dung huong, khong hep hon nguon. Ban EN cu de nguyen dam trong khi ban VI de km - nay ca hai ghi km kem dam trong ngoac. Toc do 442 km/h la con so NOAA tu doi, giu nguyen.\nHAI SUA. (1) Quy tac 4: ban cu noi gio thoi tu tay sang dong ma khong noi vi sao, trong khi trang NOAA co ca doan co che (Trai Dat quay, Coriolis); nay them, dung cac buoc cua nguon. (2) 'Trai Dat co NHIEU dong tia' -> 'mot so dong tia khac nhau' ('several'). Cac so do cao, vi do, toc do la dac trung khi hau hoc ben vung; hinh luc giac Sao Tho la cau truc quan sat tu thap nien 1980, khong can moc ngay.",
+    "usedIn": [
+      "sao-tho-vanh-dai-mong-manh-va-ve-tinh-co-dai-duong"
+    ]
+  },
+  {
+    "slug": "vung-bong-toi",
+    "term": "Vùng bóng tối",
+    "termEn": "Umbra",
+    "shortDef": "Phần trong, tối nhất của cái bóng mà Trái Đất hay Mặt Trăng tạo ra, nơi Mặt Trời bị che hoàn toàn. Bao quanh nó là vùng nửa tối (penumbra), phần ngoài mờ hơn của bóng, nơi Mặt Trời chỉ bị che một phần.",
+    "shortDefEn": "The inner, darkest part of the shadow cast by Earth or the Moon, where the Sun is completely blocked. Around it is the penumbra, the faint outer part of the shadow, where the Sun is only partly obscured.",
+    "fullDef": "Trong nguyệt thực toàn phần, Mặt Trăng đi vào vùng bóng tối của Trái Đất. Một phần ánh sáng Mặt Trời đi xuyên qua khí quyển Trái Đất vẫn tới được bề mặt Mặt Trăng và chiếu sáng nó lờ mờ. Các màu bước sóng ngắn như lam và tím bị tán xạ dễ hơn, còn đỏ và cam đi xuyên qua được, nên Mặt Trăng có màu đỏ cam — hiện tượng hay gọi là \"Trăng Máu\"; khí quyển càng nhiều bụi hay mây thì Mặt Trăng càng đỏ. Nếu Mặt Trăng chỉ đi qua một phần vùng bóng tối thì đó là nguyệt thực một phần; nếu chỉ đi qua vùng nửa tối, Mặt Trăng tối đi rất ít, khó nhận ra.\n\nTrong nhật thực, bóng của Mặt Trăng trên mặt đất chỉ rộng khoảng 480 km. Người đứng trong vùng bóng tối thấy nhật thực toàn phần, còn người ở vùng nửa tối thấy nhật thực một phần.",
+    "fullDefEn": "In a total lunar eclipse, the Moon moves into Earth's umbra. Some sunlight passing through Earth's atmosphere still reaches the Moon's surface and lights it dimly. Shorter wavelengths such as blue and violet scatter more easily, while red and orange make it through, so the Moon turns reddish-orange — the \"Blood Moon\"; the more dust or clouds in the atmosphere, the redder the Moon appears. If the Moon passes through only part of the umbra, the eclipse is partial; if it passes only through the penumbra, it dims so slightly that it can be hard to notice.\n\nDuring a solar eclipse, the Moon's shadow on Earth's surface is only about 480 km wide. People in the umbra see a total eclipse, while people in the penumbra see a partial one.",
+    "aliases": [
+      "umbra"
+    ],
+    "category": "Thiên văn học",
+    "sources": [
+      {
+        "title": "Lunar Eclipses",
+        "publisher": "NASA Science",
+        "url": "https://science.nasa.gov/moon/eclipses/"
+      },
+      {
+        "title": "Types of Solar Eclipses",
+        "publisher": "NASA Science",
+        "url": "https://science.nasa.gov/eclipses/types/"
+      }
+    ],
+    "verdict": "PASS",
+    "reviewedBy": "science-editor",
+    "reviewedAt": "2026-09-25",
+    "notes": "Duyet accuracy gate dot 5 boi science-editor, 2026-09-25. Reviewer tu tai lai toan bo URL nguon trong cung ngay (curl, UA trinh duyet; tat ca 200) va doi chieu tung menh de Viet-Anh. DA XAC NHAN nguyen van NASA Lunar Eclipses: 'The Moon moves into the inner part of Earth's shadow, or the umbra', 'Some of the sunlight passing through Earth's atmosphere reaches the Moon's surface, lighting it dimly', 'Colors with shorter wavelengths - the blues and violets - scatter more easily', 'The more dust or clouds... the redder', muc 'Blood Moon', 'passing through only part of Earth's umbra', 'The Moon travels through Earth's penumbra, or the faint outer part of its shadow... dims so slightly that it can be difficult to notice'.\nGHI CHU NGUOI SOAN SAI VE NGUON. Nguoi soan noi phan 'noi nguon sang bi che hoan toan / mot phan' la dien giai hinh hoc cua minh, khong co trong NASA. Co, nguyen van, tren CHINH trang Lunar Eclipses (doan nhat thuc): 'The shadow consists of two parts, the umbra, where the Sun is completely blocked, and the penumbra, where the Sun is partially obscured. People in the umbra will see a total eclipse, while people in the penumbra will see a partial eclipse.' Menh de dat nguon; nhung nguon noi 'Mat Troi', ban nhap noi 'nguon sang' va 'mot thien the' - pham vi rong hon nguon (quy tac 16). Nay shortDef noi bong cua Trai Dat hay Mat Trang va Mat Troi, dung pham vi goi nguon. Doan nhat thuc cu dung cum 'vung giua bong' cua trang Types; nay dung cau chat hon ('people in the umbra... total') va so '300 miles (480 km)' cua trang Lunar Eclipses (quy tac 13). Trang Types of Solar Eclipses xac nhan khop ('center of the Moon's shadow... total', 'outside the area covered by the Moon's inner shadow see a partial').\nALIAS: BO 5, GIU 'umbra'. 'bong-toi' va 'vung-toi' trong van tieng Viet thuong nghia la 'bong toi/cho toi' noi chung (vd. mat khuat Mat Trang 'chim trong bong toi') - khoa se tro nham. 'penumbra', 'vung-nua-toi', 'bong-nua-toi' dan nguoi doc re chuot vao VUNG NUA TOI toi tieu de 'Vung bong toi' va cau dau 'phan trong, toi nhat' - dung nguoc voi thu ho dang doc. Vung nua toi nen co muc rieng neu can.",
+    "usedIn": [
+      "nhat-thuc-va-nguyet-thuc-hai-hien-tuong-che-khuat-khong-doi-xung"
+    ]
+  },
+  {
+    "slug": "ong-dung-nham",
+    "term": "Ống dung nham",
+    "termEn": "Lava tube",
+    "shortDef": "Đường hầm dài và rỗng, hình thành khi dung nham nóng chảy chảy bên dưới một lớp dung nham đã nguội, khi một lớp vỏ cứng phủ lên trên dòng dung nham, hoặc khi dung nham nứt mở đường đi dưới lòng đất. Khi núi lửa ngừng hoạt động, đường hầm còn lại thành những hang lớn nhỏ khác nhau.",
+    "shortDefEn": "A long, hollow tunnel that forms when molten lava flows beneath a field of cooled lava, when a crust forms over a river of lava, or when lava cracks its way through the underground. After the volcanic activity stops, the tunnel remains as caves of different sizes.",
+    "fullDef": "Ống dung nham có trên Trái Đất, và nhiều khả năng có cả trên Mặt Trăng và Sao Hoả. Nếu trần của một ống đã nguội sập xuống, nó mở ra một hố có thể dẫn vào phần còn lại của đường hầm. Hố trên Mặt Trăng được phát hiện lần đầu năm 2009; theo một nhóm nghiên cứu dùng dữ liệu tàu LRO của NASA (2022), khoảng 16 trong hơn 200 hố ấy có lẽ là ống dung nham đã sập. Trên Trái Đất, đường kính ống dung nham thường 10–30 m; một nghiên cứu so sánh năm 2020 thấy ống trên Mặt Trăng và Sao Hoả lớn hơn 100 đến 1.000 lần, và cho rằng trọng lực thấp giải thích kích thước khổng lồ ấy. Trên Sao Hoả, nơi trọng lực khoảng một phần ba Trái Đất, ống dung nham có vẻ nhỏ hơn trên Mặt Trăng — dù vẫn lớn hơn trên Trái Đất — và dễ sập hơn.\n\nTừ khi phát hiện các hố, các nhà khoa học tự hỏi liệu chúng có dẫn vào những hang có thể thám hiểm hay dùng làm nơi trú: hố hay hang sẽ phần nào che chắn khỏi tia vũ trụ, bức xạ Mặt Trời và thiên thạch nhỏ. Dữ liệu LRO kết hợp mô hình máy tính cho thấy ở những chỗ luôn khuất bóng trong một hố tại Biển Tĩnh Lặng (Mare Tranquillitatis), nhiệt độ chỉ dao động nhẹ quanh 17 °C, trong khi bề mặt nóng tới khoảng 127 °C ban ngày và lạnh tới khoảng −173 °C ban đêm; nếu có hang nối từ đáy hố, trong hang cũng sẽ có nhiệt độ ấy.",
+    "fullDefEn": "Lava tubes are found on Earth and very probably on the Moon and Mars. If the ceiling of a solidified tube collapses, it opens a pit that can lead into the rest of the tunnel. Pits were first discovered on the Moon in 2009; according to a research team using data from NASA's LRO (2022), about 16 of the more than 200 pits are probably collapsed lava tubes. On Earth, lava tunnels are typically 10–30 m across; a 2020 comparative study found those on the Moon and Mars to be 100 to 1,000 times larger, and holds that low gravity explains their enormous size. On Mars, where gravity is about a third of Earth's, lava tubes seem to be smaller than on the Moon — though still bigger than on Earth — and collapse more often.\n\nSince the pits were found, scientists have wondered whether they lead to caves that could be explored or used as shelters: the pits or caves would offer some protection from cosmic rays, solar radiation and micrometeorites. LRO data combined with computer modelling show that in the permanently shadowed reaches of one pit in Mare Tranquillitatis, the temperature fluctuates only slightly, around 17 °C, while the surface heats to about 127 °C by day and cools to about −173 °C at night; if a cave extends from the bottom of the pit, it would have that temperature too.",
+    "aliases": [
+      "lava-tube",
+      "ong-nham-thach",
+      "hang-dung-nham"
+    ],
+    "category": "Khoa học Trái Đất",
+    "sources": [
+      {
+        "title": "NASA's LRO Finds Lunar Pits Harbor Comfortable Temperatures",
+        "publisher": "NASA",
+        "url": "https://www.nasa.gov/solar-system/nasas-lro-finds-lunar-pits-harbor-comfortable-temperatures/"
+      },
+      {
+        "title": "Take refuge in a cave – on the Moon",
+        "publisher": "European Space Agency (ESA Exploration blog)",
+        "url": "https://blogs.esa.int/exploration/take-refuge-in-a-cave-on-the-moon/"
+      }
+    ],
+    "verdict": "PASS",
+    "reviewedBy": "science-editor",
+    "reviewedAt": "2026-09-25",
+    "notes": "Duyet accuracy gate dot 5 boi science-editor, 2026-09-25. Reviewer tu tai lai toan bo URL nguon trong cung ngay (curl, UA trinh duyet; tat ca 200) va doi chieu tung menh de Viet-Anh. DA XAC NHAN nguyen van NASA (LRO, 26/7/2022): 'Pits were first discovered on the Moon in 2009, and since then, scientists have wondered if they led to caves that could be explored or used as shelters. The pits or caves would also offer SOME protection from cosmic rays, solar radiation and micrometeorites', 'About 16 of the more than 200 pits are probably collapsed lava tubes' (Horvath), 'Lava tubes... form when molten lava flows beneath a field of cooled lava or a crust forms over a river of lava', 'using... LRO... and COMPUTER MODELING', 'permanently shadowed reaches of the pit fluctuate only slightly... around 63 F or 17 C', be mat 127 C / -173 C, 'If a cave extends... it too would have this relatively comfortable temperature'. ESA Exploration blog (20/8/2020): 10-30 m, 'turned out to be 100 to 1000 times larger', 'The low gravity explains their enormous dimensions', 'or when lava cracks its way through the underground', 'After the volcanic activity stops, the tunnels remain empty, leaving different-sized caves', Sao Hoa 'seem to be smaller - though still bigger than on our planet - and suffer more from collapses'.\n'MOT PHAN VI TRONG LUC' CUA NGUOI SOAN: BAC. Ha 'explains' xuong 'mot phan' la doi menh de cua nguon theo chieu nguoc lai - quy tac 3 cam nang muc chac chan, nhung tu y ha cung la viet dieu nguon khong noi. Nay quy menh de ve dung chu the: 'nghien cuu... cho rang trong luc thap giai thich' - khop 'a recent study suggests' o dau bai ESA. 'Nhieu kha nang co tren Mat Trang va Sao Hoa': chap nhan, dung rao 'probably' cua LRO.\nBA LOI QUY TAC 15 / QUY TAC 3. (1) Ve doi trong bi bo: ESA noi ong tren Sao Hoa NHO HON tren Mat Trang va de sap hon; ban nhap gop Mat Trang va Sao Hoa lam mot. Nay tach. (2) Rao rot: 'SOME protection' thanh 'che chan'; nay 'phan nao che chan'. Nhiet do 17 C la ket qua du lieu + MO HINH may tinh, o MOT ho cu the; ban cu viet nhu do dac chung cho ong dung nham - nay ghi du, kem be mat 127/-173 C de 'on dinh' co nghia, va giu dieu kien 'neu co hang'. (3) shortDef liet 2 trong 3 cach hinh thanh (NASA 2 + ESA 1); nay du 3. SUA NHO: 'hon 200 ho ma tau LRO chup duoc' - nguon khong noi LRO chup ca 200; nay 'hon 200 ho ay'. So 16/200 mang nam 2022, ty le 100-1000 mang nam 2020 - lich kiem lai khi co danh muc ho moi. ESA la blog chinh thuc cua co quan (bac 2), duoc dung cho menh de co gan nghien cuu; ban goc Sauro et al. 2020 (Earth-Science Reviews, 10.1016/j.earscirev.2020.103288) khong co tom tat mo tren OpenAlex nen khong them vao sources.",
+    "usedIn": [
+      "neu-phai-roi-trai-dat-con-nguoi-co-the-song-o-dau-trong-he-mat-troi"
+    ]
+  },
+  {
+    "slug": "diem-chi",
+    "term": "Điểm chí",
+    "termEn": "Solstice",
+    "shortDef": "Hai thời điểm trong năm khi độ nghiêng của trục Trái Đất về phía hoặc ra xa Mặt Trời đạt cực đại: hạ chí và đông chí. Với mọi nơi ở phía bắc chí tuyến Bắc, ngày hạ chí là ngày Mặt Trời lên cao nhất trên bầu trời và là ngày dài nhất trong năm.",
+    "shortDefEn": "The two moments in the year when Earth's axis is tilted furthest toward or away from the Sun: the summer and winter solstices. For every place north of the Tropic of Cancer, the summer solstice is the day the Sun is highest in the sky and the longest day of the year.",
+    "fullDef": "Trục Trái Đất nghiêng khoảng 23,5° và hướng nghiêng không đổi so với không gian trong suốt năm, nên Bắc bán cầu ngả về phía Mặt Trời vào tháng 6 và ngả ra xa vào tháng 12; chính độ nghiêng này gây ra các mùa. Ngày hạ chí của Bắc bán cầu, Mặt Trời ở thẳng trên chí tuyến Bắc (23,5° Bắc), và vị trí giữa trưa của nó gần như không đổi trong vài ngày trước và sau đó. Đông chí đánh dấu ngày ngắn nhất và đêm dài nhất trong năm; ở Bắc bán cầu, nó xảy ra khi Mặt Trời ở thẳng trên chí tuyến Nam (23,5° Nam).\n\nHai thời điểm ở giữa là điểm phân: khi trục không nghiêng về phía Mặt Trời cũng không nghiêng ra xa, ngày và đêm dài gần bằng nhau ở mọi vĩ độ. Ngày dài nhất cũng không phải lúc nóng nhất: ở phần lớn các nơi thuộc vĩ độ trung bình và cao, nhiệt độ trung bình cao nhất đến trễ hơn hạ chí, vì đất và nước cần thời gian để nóng lên.",
+    "fullDefEn": "Earth's axis is tilted about 23.5°, and the tilt's orientation in space does not change through the year, so the Northern Hemisphere leans toward the Sun in June and away from it in December; this tilt is what causes the seasons. On the Northern Hemisphere's summer solstice the Sun is directly over the Tropic of Cancer (23.5° N), and its noon position changes very little for several days before and after. The winter solstice marks the shortest day and longest night of the year; in the Northern Hemisphere it occurs when the Sun is directly over the Tropic of Capricorn (23.5° S).\n\nThe two moments in between are the equinoxes: when the axis is tilted neither toward nor away from the Sun, day and night are nearly equal at all latitudes. The longest day is not the warmest either: for most mid- and high-latitude locations, the highest average temperatures arrive after the solstice, because ground and water take time to heat up.",
+    "aliases": [
+      "solstice",
+      "ha-chi",
+      "dong-chi",
+      "chi-diem"
+    ],
+    "category": "Thiên văn học",
+    "sources": [
+      {
+        "title": "The Seasons, the Equinox, and the Solstices",
+        "publisher": "NOAA National Weather Service, Cleveland Forecast Office",
+        "url": "https://www.weather.gov/cle/seasons"
+      },
+      {
+        "title": "What Causes the Seasons?",
+        "publisher": "NASA Space Place",
+        "url": "https://spaceplace.nasa.gov/seasons/en/"
+      }
+    ],
+    "verdict": "PASS",
+    "reviewedBy": "science-editor",
+    "reviewedAt": "2026-09-25",
+    "notes": "Duyet accuracy gate dot 5 boi science-editor, 2026-09-25. Reviewer tu tai lai toan bo URL nguon trong cung ngay (curl, UA trinh duyet; tat ca 200) va doi chieu tung menh de Viet-Anh. DA XAC NHAN nguyen van NWS Cleveland: 'The summer solstice occurs at the moment the earth's tilt toward/from the sun is at a maximum', 'noontime position that changes very little for several days before and after', 'directly over the Tropic of Cancer... 23.5 latitude North', 'For every place north of the Tropic of Cancer, the sun is at its highest point in the sky and this is the longest day of the year', 'The winter solstice marks the shortest day and longest night of the year. In the Northern Hemisphere, it occurs when the sun is directly over the Tropic of Capricorn... 23.5 south', equinox 'nearly equal... at all latitudes', 'Seasons are caused by the fact that the Earth is tilted on its axis by 23.5. The tilt's orientation with respect to space does not change', 'lag between the longest day of the year and the warmest average temperatures FOR MOST MID AND HIGH-LATITUDE LOCATIONS', 'This lag is due to the time required for ground and water to heat up'. NASA Space Place: truc 'always points in the same direction', Bac cuc nghieng ve Mat Troi 'around June', Nam cuc 'around December'.\nDONG CHI (diem nguoi soan de reviewer doc): NWS CO doan Winter Solstice, nay dua vao fullDef nguyen van - ban cu nhac dong chi o shortDef ma khong noi mot chu nao ve no.\nHAI LOI PHAM VI (quy tac 15, ve dieu kien bi bo). (1) shortDef cu: 'Vao ha chi o BAC BAN CAU, Mat Troi len cao nhat'. NWS gioi han 'for every place north of the Tropic of Cancer' - giua xich dao va chi tuyen Bac, Mat Troi dat do cao giua trua lon nhat vao ngay khac. Nay giu dung dieu kien. (2) Do tre nhiet do: NWS noi 'for most mid and high-latitude locations', ban cu noi vo dieu kien; nay giu ve ay va them co che nguon neu (dat va nuoc can thoi gian nong len - quy tac 4). 23,5 la so NWS lam tron; bai 'nguyen nhan cua mua' ghi 23,44 - khong mau thuan, giu chu 'khoang'.",
+    "usedIn": [
+      "nguyen-nhan-cua-mua-do-nghieng-truc-khong-phai-khoang-cach"
+    ]
   }
 ]

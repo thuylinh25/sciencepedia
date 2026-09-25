@@ -1002,8 +1002,74 @@ const LINKS: Link[] = [
     slug: "hien-tuong-el-nino-khi-dai-duong-noi-gian-va-dao-lon-khi-hau-toan-cau",
     vi: ["Trong một sự kiện El Niño, gió mậu dịch", "Trong một sự kiện [[El Niño]], gió mậu dịch"],
   },
+  /* ---- Đợt 25/09 (3): gắn 10 mục từ đợt 5 cho 12 bài chưa có tooltip ----
+   *
+   * Chỉ gắn vào đúng 12 bài ấy — mục `luc-hap-dan` xuất hiện ở hơn 30 bài,
+   * gắn đại trà thuộc một lượt quét riêng, không thuộc lượt phủ bài trống.
+   *
+   * Không gắn:
+   * - "hấp dẫn" ở `neu-phai-roi…`: mọi chỗ đều là tính từ ("ứng viên hấp dẫn").
+   * - Bản EN của `nhat-thuc…`: "the shadow area is very narrow" không nói
+   *   umbra; bản VI viết "vùng bóng tối" nên gắn được.
+   * - Bài `nguyen-nhan-cua-mua…` là bài VỀ độ nghiêng trục, nên gắn điểm chí
+   *   chứ không gắn thứ bài đang giải thích.
+   */
+  {
+    slug: "newton-da-giai-ma-the-gioi-nhu-the-nao",
+    vi: ["> Mọi vật có khối lượng đều hút nhau bằng lực hấp dẫn.", "> Mọi vật có khối lượng đều hút nhau bằng [[lực hấp dẫn]]."],
+    en: ["his theory of universal gravitation", "his theory of [[luc-hap-dan|universal gravitation]]"],
+  },
+  {
+    slug: "runners-high-vi-sao-chay-bo-co-the-khien-ban-hung-phan",
+    vi: ["sở hữu **hệ endocannabinoid (ECS)**", "sở hữu **[[hệ endocannabinoid]] (ECS)**"],
+  },
+  {
+    slug: "neu-phai-roi-trai-dat-con-nguoi-co-the-song-o-dau-trong-he-mat-troi",
+    vi: ["Các hang và **ống dung nham** dưới bề mặt", "Các hang và **[[ống dung nham]]** dưới bề mặt"],
+  },
+  {
+    slug: "y-thuc-mon-qua-vi-dai-hay-cai-gia-dat-cua-su-tien-hoa",
+    vi: ["Nhưng ở đâu đó trên hành trình tiến hóa,", "Nhưng ở đâu đó trên hành trình [[tiến hóa]],"],
+  },
+  {
+    slug: "dieu-gi-tao-ra-gio-thuy-trieu-va-cac-dong-hai-luu",
+    vi: ["Nguyên nhân chính của thủy triều là lực hấp dẫn của", "Nguyên nhân chính của thủy triều là [[lực hấp dẫn]] của"],
+    en: ["The primary cause of tides is the gravitational pull of", "The primary cause of tides is the [[luc-hap-dan|gravitational pull]] of"],
+  },
+  {
+    slug: "sao-thien-vuong-hanh-tinh-lan-nghieng-tren-quy-dao",
+    vi: ['được xếp riêng là "người khổng lồ băng".', 'được xếp riêng là "[[người khổng lồ băng]]".'],
+    en: ['classified separately as "ice giants."', 'classified separately as "[[nguoi-khong-lo-bang|ice giants]]."'],
+  },
+  {
+    slug: "nang-luong-la-gi",
+    vi: ["Đơn vị SI của năng lượng là **joule (J)**.", "Đơn vị SI của năng lượng là **[[joule]] (J)**."],
+    en: ["The SI unit of energy is the **joule** (symbol J).", "The SI unit of energy is the **[[joule]]** (symbol J)."],
+  },
+  {
+    slug: "nguyen-nhan-cua-mua-do-nghieng-truc-khong-phai-khoang-cach",
+    vi: ["Ngày hạ chí là thời điểm Bắc bán cầu", "Ngày [[hạ chí]] là thời điểm Bắc bán cầu"],
+    en: ["The summer solstice is the time when", "The summer [[diem-chi|solstice]] is the time when"],
+  },
+  {
+    slug: "van-dong-thay-doi-tim-va-mach-mau-nhu-the-nao",
+    vi: ["**phì đại bệnh lý** do tăng huyết áp:", "**phì đại bệnh lý** do [[tăng huyết áp]]:"],
+  },
+  {
+    slug: "nhat-thuc-va-nguyet-thuc-hai-hien-tuong-che-khuat-khong-doi-xung",
+    vi: ["nên vùng bóng tối rất hẹp.", "nên [[vùng bóng tối]] rất hẹp."],
+  },
+  {
+    slug: "sao-tho-vanh-dai-mong-manh-va-ve-tinh-co-dai-duong",
+    vi: ["Một dòng tia khí quyển ổn định", "Một [[dòng tia]] khí quyển ổn định"],
+    en: ["A stable atmospheric jet stream", "A stable atmospheric [[dong-tia|jet stream]]"],
+  },
+  {
+    slug: "sao-moc-nguoi-khong-lo-khi-va-tam-khien-cua-he",
+    vi: ["Lực hấp dẫn của Sao Mộc định hình", "[[Lực hấp dẫn]] của Sao Mộc định hình"],
+    en: ["Jupiter's gravity shapes", "Jupiter's [[luc-hap-dan|gravity]] shapes"],
+  },
 ];
-
 /** Khoá của mọi `[[...]]` trong một chuỗi thay thế. */
 const keysIn = (text: string) =>
   [...text.matchAll(/\[\[([^\]|]+)/g)].map((match) => glossaryKey(match[1]));

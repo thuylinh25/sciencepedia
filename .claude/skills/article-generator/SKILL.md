@@ -78,5 +78,11 @@ Step 3 of the article chain. Turns a validated source pack into a draft with ful
 
     **Watching, not yet a rule — species and population scope.** The same batch stated a mouse result about human infants (hippocampal neurogenesis) and applied a finding NIGMS states for the *human* master clock to all vertebrates. Two entries, below the three-repeat threshold, but it was the worst error in the batch. If the next batch repeats it, it becomes rule 18: *a finding keeps the organism and population it was measured in.*
 
+18. **A finding keeps the subject it was stated for — organism, population, region, object.** If NASA says it of Uranus, the draft does not say it of the ice giants. If the source says "north of the Tropic of Cancer", the draft does not say "the Northern Hemisphere". If one shadowed pit was modelled at 17 °C, lava tubes are not 17 °C. Widening the subject changes what is claimed without changing a single number, which is why it survives a numbers check.
+
+    Why rule 18 exists: batch 4 stated a mouse result about human infants and a human-only finding about all vertebrates (2 entries). The FIFTH glossary batch (2026-09-25), with the watch note already written, did not repeat the species form — and widened the subject in 5 of 10 entries in other ways: Uranus → both ice giants; north of the Tropic → Northern Hemisphere; the Sun → any light source; TNT and nuclear → "large explosions"; one pit → all lava tubes. A species-only rule would have caught none of them; the general form catches all seven.
+
+    Rule 15's clause-level sentence did not stop its shape in batch 5 either: the counterweight clause was dropped in 5 of 10 entries again. A rule the drafter has read is not a rule the drafter applies — batch 5's notes showed two sources misdescribed. Until that changes, the reviewer reads the source, not the drafter's notes.
+
 ## Fails when
 The source pack is insufficient, or a section required by the template cannot be sourced. Return a gap report rather than a padded article.
