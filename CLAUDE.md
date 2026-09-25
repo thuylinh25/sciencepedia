@@ -28,7 +28,7 @@ npx tsx --env-file-if-exists=.env scripts/recrop-cover.ts --slug <s> --top <px> 
 npx tsx --env-file-if-exists=.env scripts/strip-draft-artifacts.ts  # gỡ dấu 【…】 của công cụ AI khỏi bài (cần --write)
 
 npm run publish:check # rà điều kiện xuất bản toàn kho (chỉ đọc)
-npm run publish       # đổi state sang PUBLISHED — đường ghi DUY NHẤT, có gate
+npm run publish       # đổi state sang PUBLISHED — đường ghi DUY NHẤT của máy, có gate (form /admin đi thẳng, có chủ ý — docs/architecture.md)
 npm run pipeline      # chạy liên tục tới khi hết hạn mức (cần CLAUDE_CODE_OAUTH_TOKEN)
 npm run pipeline -- --count 1   # chỉ làm 1 bài rồi dừng
 ```

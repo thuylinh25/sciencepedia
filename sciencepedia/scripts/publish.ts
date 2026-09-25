@@ -3,7 +3,11 @@ import { execFileSync } from "node:child_process";
 import { PrismaClient } from "@prisma/client";
 
 /**
- * Đường DUY NHẤT để đưa một bài sang PUBLISHED.
+ * Đường DUY NHẤT để MÁY (pipeline, script) đưa một bài sang PUBLISHED.
+ *
+ * Form `/admin` là đường thứ hai, của con người, và cố ý KHÔNG đi qua đây —
+ * quyết định của chủ sản phẩm 2026-09-25, lý do ở docs/architecture.md mục
+ * "Form quản trị KHÔNG đi qua khoá". Đừng "vá" form bằng cách gọi file này.
  *
  *   npm run publish -- --slug <slug>
  *   npm run publish -- --slug <slug> --note "lý do"

@@ -11,6 +11,13 @@ import { readingTime, slugify } from "@/lib/utils";
 import { removeArticle, syncArticle } from "@/lib/meili";
 import type { ActionResult } from "@/server/actions/types";
 
+/* Các action ở đây ghi thẳng `status: PUBLISHED`, KHÔNG gọi `check-publish`.
+   Có chủ ý: form quản trị là đường xuất bản tay của chủ sản phẩm (quyết định
+   2026-09-25, docs/architecture.md mục "Form quản trị KHÔNG đi qua khoá").
+   Bài xuất bản ở đây vẫn hiện CHẶN trong `npm run publish:check` — đó là trạng
+   thái thật, dọn sau bằng script, đừng nới gate. Chặn duy nhất còn lại là dấu
+   trích dẫn của công cụ AI, nằm trong `articleSchema`. */
+
 /** Quan hệ cần có để đẩy một bài viết lên Meilisearch. */
 const syncInclude = {
   category: { select: { slug: true, name: true, nameEn: true } },

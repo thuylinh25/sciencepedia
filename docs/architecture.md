@@ -628,6 +628,28 @@ vào đó:
 Hàng rào **không kín** — agent viết được một file rồi chạy file đó. Nó tồn tại
 để chặn lối đi thẳng và nâng chi phí đường vòng; thứ thật sự giữ là lớp khoá.
 
+### Form quản trị KHÔNG đi qua khoá — có chủ ý
+
+Chốt 2026-09-25, quyết định của chủ sản phẩm. Ba lớp trên giữ đường ghi của
+**máy** (pipeline, script). Form ở `/admin` (`src/server/actions/articles.ts`)
+ghi thẳng `PUBLISHED`, không gọi `check-publish`, và được giữ như vậy: đó là
+đường xuất bản tay của chủ sản phẩm, người chịu trách nhiệm bài đó.
+
+Phát hiện ra vì 25 bài tạo qua form từ 21/09 lên trang với `factCheck =
+PENDING`, không người duyệt, 17 bài 0 nguồn và 0 link — gate không hỏng, nó
+chỉ chưa bao giờ chạy trên chúng. Đã cân ba hướng (chặn cứng / cảnh báo / giữ
+nguyên) và chọn giữ nguyên.
+
+Hệ quả phải biết trước khi đọc số liệu gate:
+
+- `npm run publish:check` rà kho sẽ báo CHẶN ở các bài này. Đó là trạng thái
+  thật của bài, không phải gate hỏng; đừng nới gate cho xanh.
+- Việc dọn sau (nguồn, link vào/ra, thuật ngữ) là việc đi sau form — ví dụ
+  `scripts/add-sources-2026-09-24.ts`, `npm run links:reading`.
+- Ngoại lệ duy nhất form VẪN chặn: dấu trích dẫn của công cụ AI
+  (`src/lib/draft-artifacts.ts`), vì nó không bao giờ là nội dung hợp lệ nên
+  chặn không cản được bài nào đáng lên.
+
 ### Nhịp chạy: liên tục tới khi hết hạn mức
 
 Sửa 2026-09-05, đảo quyết định của chính ngày hôm đó.
