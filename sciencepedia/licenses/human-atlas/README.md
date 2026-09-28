@@ -1,0 +1,15 @@
+# Human Atlas — giấy phép và ghi công
+
+Bản đồ cơ thể người (`/[locale]/human-atlas`) dựa trên hai nguồn, mỗi nguồn một giấy phép:
+
+| Phần | Nguồn | Giấy phép | Tệp |
+|---|---|---|---|
+| Mã trình xem (`src/components/human-atlas/anatomy-scene.tsx`, `src/lib/human-atlas/{explosion-layout,pointer-tap,model-download}.ts`, bảng màu và mô tả hệ) | Human Atlas — https://github.com/ashemag/human-atlas | MIT, © 2026 ashemag | `LICENSE` |
+| Dữ liệu giải phẫu (hình học + tên, trên R2 dưới `human-atlas/<phiên bản>/`) | BodyParts3D 4.0, © The Database Center for Life Science | CC BY 4.0 | `ATTRIBUTION.md` |
+
+Hai tệp chép nguyên văn từ repo gốc, không sửa. Bản `ATTRIBUTION.md` cũng được đẩy lên R2 cạnh
+dữ liệu (`scripts/upload-human-atlas.ts`) — CC BY 4.0 đòi ghi công đi theo bản phân phối lại.
+Trên trang, ghi công hiển thị ở mục "Nguồn dữ liệu giải phẫu" và bảng "Nguồn & ghi công".
+
+Sciencepedia không tạo ra bộ dữ liệu giải phẫu. Phần Sciencepedia thêm vào: tên tiếng Việt
+(`src/lib/human-atlas/names-vi.ts`), bản dịch mô tả, liên kết tới bài viết.

@@ -12,6 +12,7 @@ import {
   Globe,
   Menu,
   Orbit,
+  PersonStanding,
   Scaling,
   Search,
   Sparkles,
@@ -69,6 +70,10 @@ const MODELS = [
   // chụp vài giờ trước. Vẫn cùng menu vì nó trả lời cùng một câu hỏi — nhìn
   // thấy cái gì và nó trông thế nào.
   { href: "/earth-live", key: "earthLive" as const, icon: Globe },
+  // Không thuộc nhóm "nhìn vũ trụ", nhưng cùng loại: mô hình 3D xoay được,
+  // dựng từ dữ liệu khoa học thật. Tách thành menu riêng khi có mô hình thứ
+  // hai ngoài thiên văn.
+  { href: "/human-atlas", key: "humanAtlas" as const, icon: PersonStanding },
 ];
 
 /**

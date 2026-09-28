@@ -362,6 +362,60 @@ trang vừa được deploy.
 
 ---
 
+## Bản đồ cơ thể người — Human Atlas thành module, không thành app
+
+`/[locale]/human-atlas` port từ Human Atlas (github.com/ashemag/human-atlas, MIT) —
+không iframe, không deploy riêng. Dữ liệu là BodyParts3D 4.0 (CC BY 4.0); giấy phép và
+ghi công chép nguyên văn ở `sciencepedia/licenses/human-atlas/`.
+
+### three.js thuần, không viết lại bằng R3F
+
+Repo có React Three Fiber, nhưng thứ làm atlas chạy nổi là cách vẽ của bản gốc: 2.234
+mảnh gộp thành một lượt vẽ mỗi hệ mỗi khối, còn dịch/ẩn/tô sáng từng mảnh đi qua hai
+texture trạng thái đọc trong vertex shader. Viết lại theo lối khai báo là đổi đúng phần
+đã tối ưu lấy phần không cần. `anatomy-scene.tsx` giữ nguyên pipeline; chỉ đổi URL dữ
+liệu, mã lỗi (chữ do giao diện dịch), nền theo theme và thêm `focus`.
+
+### Dữ liệu trên R2, prefix có dấu vân — và bucket PHẢI có CORS
+
+~33 MB nén mỗi lượt xem: phát từ Vercel là tính băng thông, R2 thì không. Khoá là
+`human-atlas/<phiên bản>-<sha256>/…`, đệm `immutable` một năm; dữ liệu đổi thì chạy lại
+`scripts/upload-human-atlas.ts` rồi sửa `HUMAN_ATLAS_DATA_VERSION` — tệp trước, hằng số sau.
+
+Viewer đọc bằng `fetch()`, không phải `<img>`, nên cần CORS — thứ mà mọi ảnh của site chưa
+từng cần. Luật GET/HEAD mọi origin được đặt trên bucket ngày 2026-09-28. Gỡ nó thì atlas
+báo "Không thể tải mô hình 3D" trong khi ảnh vẫn hiện bình thường: kiểm header
+`Access-Control-Allow-Origin` trước khi đọc code.
+
+### Tên tiếng Việt khoá theo mã FMA, và cố ý chưa đủ
+
+Mã FMA là định danh chung của khái niệm lẫn từng mảnh, nên một mục dịch được cả kết quả
+tìm kiếm lẫn mảnh bị chạm. Mã nội bộ không bao giờ thay bằng chữ. ~100/3.432 khái niệm có
+tên Việt; phần còn lại hiện tên gốc tiếng Anh. Dịch máy hàng loạt thuật ngữ giải phẫu là
+cách nhanh nhất để in ra tên sai với giọng chắc chắn — bổ sung tay trong `names-vi.ts`.
+
+### CTA "Đọc thêm" chỉ hiện khi bài còn PUBLISHED
+
+`structure-links.ts` ghi FMA → slug; trang lọc qua CSDL lúc render (ISR). Slug nháp hay
+đã đổi chỉ làm CTA biến mất, không dẫn vào 404. Không có bài thì không ghi, không viết bài
+để lấp.
+
+### Deep link đọc ở client, mở sẵn chế độ "xem riêng"
+
+`?structure=` (slug tiếng Anh, slug tiếng Việt hoặc mã FMA) không đọc trong page —
+`searchParams` ép route thành dynamic (cùng lý do `/solar-system`). Mở từ link thì cấu trúc
+được tách riêng luôn: phần lớn cơ quan nằm sau lớp cơ, tô sáng mà không tách là tô sáng thứ
+không ai thấy.
+
+### Ba bố cục loại trừ nhau: `atlas-phone` / `atlas-short` / `atlas-wide`
+
+Bảng nổi quanh mô hình cần biết cả bề ngang lẫn chiều cao: điện thoại xoay ngang rộng như
+tablet nhưng thấp hơn điện thoại dựng. Ghép `md:` với biến thể chiều cao thì hai luật cùng
+khớp và thứ tự sinh CSS quyết định bên thắng; ba biến thể không chồng nhau (`globals.css`)
+thì không có câu hỏi đó. Thanh dưới trên điện thoại chừa 5rem bên phải cho nút trợ lý AI.
+
+---
+
 ## Triển khai
 
 Vercel, project `sciencepedia`, region `icn1` (Seoul — gần Supabase `ap-northeast-2`;

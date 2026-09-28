@@ -2,6 +2,7 @@ import {
   Aperture,
   Disc3,
   Orbit,
+  PersonStanding,
   Scaling,
   Sparkles,
   Telescope,
@@ -25,6 +26,7 @@ export const SITE_TOOLS = [
   { href: "/universe", navKey: "universe", icon: Aperture },
   { href: "/space-map", navKey: "spaceMap", icon: Telescope },
   { href: "/zoom", navKey: "zoom", icon: Scaling },
+  { href: "/human-atlas", navKey: "humanAtlas", icon: PersonStanding },
   { href: "/assistant", navKey: "assistant", icon: Sparkles },
 ] as const;
 

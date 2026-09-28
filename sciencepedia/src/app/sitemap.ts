@@ -50,6 +50,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...entry("/milky-way", { changeFrequency: "monthly", priority: 0.7 }),
     ...entry("/universe", { changeFrequency: "monthly", priority: 0.7 }),
     ...entry("/zoom", { changeFrequency: "monthly", priority: 0.7 }),
+    ...entry("/human-atlas", { changeFrequency: "monthly", priority: 0.7 }),
     ...entry("/models", { changeFrequency: "monthly", priority: 0.6 }),
 
     /* Liên hệ: ưu tiên thấp, gần như không đổi, nhưng phải có mặt vì nó là

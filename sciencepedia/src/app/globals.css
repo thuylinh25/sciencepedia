@@ -18,6 +18,18 @@
 @custom-variant short (@media (max-height: 820px));
 @custom-variant shorter (@media (max-height: 700px));
 
+/* Ba bố cục của Bản đồ cơ thể người (`/human-atlas`), LOẠI TRỪ NHAU.
+
+   Khung atlas đặt bảng nổi quanh một mô hình 3D, nên nó cần biết cả bề ngang
+   lẫn chiều cao cùng lúc: điện thoại xoay ngang (844×390) rộng như máy tính
+   bảng nhưng thấp hơn cả điện thoại dựng đứng. Ghép `md:` với `short:` thì
+   hai luật cùng khớp và bên nào thắng phụ thuộc thứ tự sinh CSS — ba biến
+   thể không chồng lên nhau thì không có câu hỏi đó. 520px: dưới mức ấy không
+   còn chỗ cho cột hệ + thanh dưới + bảng chi tiết cùng hiện. */
+@custom-variant atlas-phone (@media (max-width: 767px) and (min-height: 521px));
+@custom-variant atlas-short (@media (max-height: 520px));
+@custom-variant atlas-wide (@media (min-width: 768px) and (min-height: 521px));
+
 /* ------------------------------------------------------------------ */
 /*  Bảng màu                                                           */
 /*  National Geographic (viền vàng, ảnh tràn khung)                     */

@@ -636,6 +636,28 @@ export const filterPublishedSlugs = cache(
 );
 
 /**
+ * Như `filterPublishedSlugs` nhưng kèm tiêu đề — cho chỗ in hẳn tên bài làm
+ * chữ của link (bảng chi tiết ở Bản đồ cơ thể người). Cùng lối nuốt lỗi: mất
+ * CSDL thì không link nào hiện, trang vẫn dựng được.
+ */
+export const getPublishedArticleTitles = cache(
+  async (
+    slugs: string[],
+  ): Promise<{ slug: string; title: string; titleEn: string | null }[]> => {
+    if (slugs.length === 0) return [];
+    try {
+      return await prisma.article.findMany({
+        where: { ...PUBLISHED, slug: { in: slugs } },
+        select: { slug: true, title: true, titleEn: true },
+      });
+    } catch (error) {
+      console.error("[getPublishedArticleTitles] không truy vấn được:", error);
+      return [];
+    }
+  },
+);
+
+/**
  * Múi giờ dùng để cắt ngày. Vercel chạy UTC, nên nếu không ghim múi giờ thì
  * "bài hôm nay" sẽ đổi lúc 7 giờ sáng giờ Việt Nam.
  */

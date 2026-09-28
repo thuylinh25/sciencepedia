@@ -27,6 +27,8 @@ npm run glossary:usedin # đồng bộ trường usedIn của glossary.json (c�
 npx tsx --env-file-if-exists=.env scripts/recrop-cover.ts --slug <s> --top <px>  # ảnh bìa đứng mất đầu trên thẻ: cắt sẵn 16/10 (cần --write)
 npx tsx --env-file-if-exists=.env scripts/strip-draft-artifacts.ts  # gỡ dấu 【…】 của công cụ AI khỏi bài (cần --write)
 
+npx tsx --env-file-if-exists=.env scripts/upload-human-atlas.ts --source <human-atlas/public/models>  # dữ liệu giải phẫu lên R2 (cần --write), rồi sửa HUMAN_ATLAS_DATA_VERSION
+
 npm run publish:check # rà điều kiện xuất bản toàn kho (chỉ đọc)
 npm run publish       # đổi state sang PUBLISHED — đường ghi DUY NHẤT của máy, có gate (form /admin đi thẳng, có chủ ý — docs/architecture.md)
 npm run pipeline      # chạy liên tục tới khi hết hạn mức (cần CLAUDE_CODE_OAUTH_TOKEN)
