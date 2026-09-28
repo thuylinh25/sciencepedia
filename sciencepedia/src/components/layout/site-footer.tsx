@@ -1,6 +1,5 @@
 import { getLocale, getTranslations } from "next-intl/server";
 import {
-  ArrowRight,
   BookOpen,
   FileText,
   FlaskConical,
@@ -93,27 +92,12 @@ export async function SiteFooter() {
     { href: "/contact", label: t("contact") },
   ] as const;
 
-  /* Mỗi liên kết là một HÀNG có mũi tên đẩy về mép phải, không còn là một
-     dòng chữ trần.
-
-     Mũi tên hiện sẵn ở độ mờ thấp chứ không chỉ hiện khi rê chuột: trên điện
-     thoại không có trạng thái rê, nên một dấu hiệu "bấm được" chỉ xuất hiện
-     lúc hover là dấu hiệu không tồn tại với quá nửa người dùng. Khi rê thì nó
-     đậm lên và trượt sang phải một chút — đủ để xác nhận, không đủ để làm
-     hàng chữ nhảy.
-
-     Bỏ gạch chân khi hover: bốn cột liên kết nay đã có mũi tên làm dấu hiệu,
-     thêm gạch chân nữa là hai tín hiệu cho cùng một việc, và gạch chân kéo
-     chiều cao dòng lệch khỏi lưới. */
+  /* Không có mũi tên cuối hàng (đã bỏ theo yêu cầu, 2026-09-28): bốn cột
+     nằm trong footer, vốn đã được đọc là danh sách liên kết; mũi tên lặp lại
+     ở mọi hàng thành nhiễu thị giác. Dấu hiệu hover là đổi màu chữ. Không
+     thêm gạch chân — nó kéo chiều cao dòng lệch khỏi lưới. */
   const linkClass =
-    "group flex items-center justify-between gap-4 text-sm leading-7 text-muted-foreground transition-colors hover:text-primary-strong";
-
-  const linkArrow = (
-    <ArrowRight
-      aria-hidden
-      className="size-3.5 shrink-0 text-muted-foreground/35 transition-all group-hover:translate-x-0.5 group-hover:text-primary-strong"
-    />
-  );
+    "flex items-center gap-4 text-sm leading-7 text-muted-foreground transition-colors hover:text-primary-strong";
 
   /* Icon đứng trước tiêu đề cột.
 
@@ -226,7 +210,6 @@ export async function SiteFooter() {
                 <li key={item.href}>
                   <Link href={item.href} className={linkClass}>
                     <span>{item.label}</span>
-                    {linkArrow}
                   </Link>
                 </li>
               ))}
@@ -250,7 +233,6 @@ export async function SiteFooter() {
                   <li key={item.href}>
                     <Link href={item.href} className={linkClass}>
                       <span>{item.label}</span>
-                      {linkArrow}
                     </Link>
                   </li>
                 ))}
@@ -267,9 +249,6 @@ export async function SiteFooter() {
               {tools.map((item) => (
                 <li key={item.href}>
                   <Link href={item.href} className={linkClass}>
-                    {/* Cột này có icon riêng từng mục, nên nhãn phải bọc
-                        chung với icon trong MỘT khối — để `justify-between`
-                        đẩy mũi tên ra mép chứ không xé icon khỏi chữ. */}
                     <span className="flex min-w-0 items-center gap-2.5">
                       <item.icon
                         className="size-4 shrink-0 text-primary-strong/70"
@@ -277,7 +256,6 @@ export async function SiteFooter() {
                       />
                       {item.label}
                     </span>
-                    {linkArrow}
                   </Link>
                 </li>
               ))}
@@ -294,7 +272,6 @@ export async function SiteFooter() {
                 <li key={item.href}>
                   <Link href={item.href} className={linkClass}>
                     <span>{item.label}</span>
-                    {linkArrow}
                   </Link>
                 </li>
               ))}
