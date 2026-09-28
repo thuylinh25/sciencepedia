@@ -42,6 +42,13 @@ export type SystemId = (typeof SYSTEM_IDS)[number];
 export const PIECE_COUNT = 2234;
 
 /**
+ * Số khái niệm có tên (`concepts` của `atlas.json`) — lớn hơn số mảnh vì
+ * BodyParts3D còn có khái niệm nhóm ("vascular tree") gom nhiều mảnh. Kiểm
+ * 2026-09-28 trên tệp đang phát; dựng lại dữ liệu thì sửa cùng PIECE_COUNT.
+ */
+export const CONCEPT_COUNT = 3432;
+
+/**
  * Màu vật liệu của từng hệ, giữ nguyên bảng màu của bản gốc.
  *
  * Đây là màu của MÔ HÌNH, không phải màu giao diện, nên không đi qua token

@@ -5,7 +5,15 @@
 // khung và thông báo "đang tải" có trong HTML đầu tiên. Chỉ cảnh WebGL là
 // `ssr: false`, nạp động bên dưới.
 
-import { useCallback, useEffect, useMemo, useRef, useState, type ComponentProps } from "react";
+import {
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+  type ComponentProps,
+  type ReactNode,
+} from "react";
 import dynamic from "next/dynamic";
 import { useLocale, useTranslations } from "next-intl";
 import { useTheme } from "next-themes";
@@ -25,6 +33,7 @@ import { cn } from "@/lib/utils";
 import {
   DEFAULT_VISIBLE,
   ORGAN_PRESET,
+  CONCEPT_COUNT,
   PIECE_COUNT,
   SYSTEM_IDS,
   atlasSchema,
@@ -37,11 +46,11 @@ import {
 } from "@/lib/human-atlas/anatomy";
 import { ANATOMY_DATA_FILE, anatomyDataUrl, atlasDataUrl } from "@/lib/human-atlas/assets";
 import {
-  ANATOMY_SOURCES,
   anatomyDataSchema,
   type AnatomyData,
 } from "@/lib/human-atlas/structures";
 import { decodeModelResponse } from "@/lib/human-atlas/model-download";
+import { ATLAS_PROVENANCE } from "@/lib/human-atlas/provenance";
 import { displayName } from "@/lib/human-atlas/names-vi";
 import {
   buildSearchIndex,
@@ -770,61 +779,110 @@ function ToolButton({
   );
 }
 
-/** Nội dung ghi công — dùng chung cho bảng "Nguồn & ghi công" và phần dưới trang. */
+/**
+ * Nguồn dữ liệu giải phẫu — dùng chung cho bảng "Nguồn & ghi công" trong viewer
+ * và cột bên của trang giới thiệu.
+ *
+ * Bốn khối theo VAI TRÒ, không theo loại giấy tờ: mô hình 3D (BodyParts3D),
+ * thuật ngữ (FMA), phần Sciencepedia tự làm, trình xem (Human Atlas). Bản trước
+ * gộp "tên tiếng Anh, Latin, đồng nghĩa, cha, TA98 lấy từ FMA" — sai một vế:
+ * tên tiếng Anh hiển thị là tên của BodyParts3D (header OBJ), FMA chỉ cho
+ * Latin, đồng nghĩa, cha và TA98. Mọi URL/giấy phép đọc từ `ATLAS_PROVENANCE`;
+ * số mảnh/khái niệm từ hằng số, không viết trong chuỗi dịch.
+ */
 export function AboutCopy() {
   const t = useTranslations("humanAtlas.aboutSheet");
-  const links = [
-    ["license", "https://dbarchive.biosciencedbc.jp/en/bodyparts3d/lic.html"],
-    ["dataset", "https://dbarchive.biosciencedbc.jp/en/bodyparts3d/download.html"],
-    ["publication", "https://doi.org/10.1093/nar/gkn613"],
-  ] as const;
+  const { model, terminology, descriptions, viewer } = ATLAS_PROVENANCE;
   return (
-    <div className="space-y-4 text-sm leading-relaxed text-muted-foreground">
-      <p>{t("scope")}</p>
-      <p>{t("limits")}</p>
-      <p>{t("purpose")}</p>
-      <h3 className="pt-2 text-sm font-semibold text-foreground">{t("sourceHeading")}</h3>
-      <p>{t("sourceText")}</p>
-      <ul className="space-y-1.5">
-        {links.map(([key, href]) => (
-          <li key={key}>
-            <a
-              href={href}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-1 text-accent underline-offset-4 hover:underline"
-            >
-              {t(key)}
-              <ArrowUpRight aria-hidden className="size-3.5" />
-            </a>
-          </li>
-        ))}
-      </ul>
-      {/* FMA: nguồn của tên Latin, "thuộc", mã TA98 trong bảng chi tiết. CC BY
-          4.0 như BodyParts3D, nên cũng phải có ghi công ở đây. */}
-      <h3 className="pt-2 text-sm font-semibold text-foreground">{t("fmaHeading")}</h3>
-      <p>{t("fmaText")}</p>
-      <a
-        href={ANATOMY_SOURCES.fma.url}
-        target="_blank"
-        rel="noreferrer"
-        className="inline-flex items-center gap-1 text-accent underline-offset-4 hover:underline"
+    <div className="space-y-5 text-sm leading-relaxed text-muted-foreground">
+      <SourceBlock
+        heading={t("modelHeading")}
+        name={`${model.name} ${model.version}`}
+        credit={`© ${model.holder} · ${model.license}`}
+        links={[
+          [t("licenseLink"), model.licenseUrl],
+          [t("sourceLink", { release: model.release }), model.sourceUrl],
+          [t("publicationLink", { label: model.publication.label }), model.publication.url],
+        ]}
       >
-        {t("fmaLink")}
-        <ArrowUpRight aria-hidden className="size-3.5" />
-      </a>
-      <h3 className="pt-2 text-sm font-semibold text-foreground">{t("appHeading")}</h3>
-      <p>{t("appText")}</p>
-      <a
-        href="https://github.com/ashemag/human-atlas"
-        target="_blank"
-        rel="noreferrer"
-        className="inline-flex items-center gap-1 text-accent underline-offset-4 hover:underline"
+        {t("modelText", { pieces: PIECE_COUNT, concepts: CONCEPT_COUNT })}
+      </SourceBlock>
+
+      <SourceBlock
+        heading={t("termsHeading")}
+        name={`Foundational Model of Anatomy (FMA) ${terminology.version}`}
+        credit={`© ${terminology.publisher} · ${terminology.license}`}
+        links={[
+          [t("releaseLink"), terminology.url],
+          [t("licenseLink"), terminology.licenseFileUrl],
+        ]}
       >
-        {t("appLink")}
-        <ArrowUpRight aria-hidden className="size-3.5" />
-      </a>
-      <p className="text-xs">{t("translation")}</p>
+        {t("termsText")}
+      </SourceBlock>
+
+      <SourceBlock heading="Sciencepedia">
+        <ul className="list-disc space-y-1 pl-4">
+          <li>{t("sciencepediaNames")}</li>
+          <li>{t("sciencepediaDescriptions", { source: descriptions.title, license: descriptions.license })}</li>
+          <li>{t("sciencepediaSystems")}</li>
+        </ul>
+      </SourceBlock>
+
+      <SourceBlock
+        heading={t("viewerHeading")}
+        name={viewer.name}
+        credit={`${viewer.author} · ${viewer.license}`}
+        links={[[t("viewerLink"), viewer.sourceUrl]]}
+      >
+        {t("viewerText")}
+      </SourceBlock>
+
+      <p className="text-xs">{t("disclaimer")}</p>
     </div>
+  );
+}
+
+function SourceBlock({
+  heading,
+  name,
+  credit,
+  links = [],
+  children,
+}: {
+  heading: string;
+  name?: string;
+  credit?: string;
+  links?: (readonly [string, string])[];
+  children: ReactNode;
+}) {
+  return (
+    <section>
+      <h3 className="text-[11px] font-semibold tracking-[0.14em] text-muted-foreground uppercase">
+        {heading}
+      </h3>
+      {name && <p className="mt-1 font-medium text-foreground">{name}</p>}
+      <div className="mt-1">{children}</div>
+      {credit && <p className="mt-1 text-xs">{credit}</p>}
+      {links.length > 0 && (
+        <ul className="mt-1.5 flex flex-wrap gap-x-4 gap-y-1">
+          {links.map(([label, href]) => (
+            <li key={href}>
+              <a
+                href={href}
+                target="_blank"
+                rel="noreferrer"
+                // Hai link cùng chữ "Giấy phép" (BodyParts3D, FMA): tên nguồn vào
+                // nhãn truy cập. Nhãn vẫn chứa chữ hiển thị (WCAG 2.5.3).
+                aria-label={name ? `${label}: ${name}` : undefined}
+                className="inline-flex items-center gap-1 text-accent underline-offset-4 hover:underline"
+              >
+                {label}
+                <ArrowUpRight aria-hidden className="size-3.5" />
+              </a>
+            </li>
+          ))}
+        </ul>
+      )}
+    </section>
   );
 }

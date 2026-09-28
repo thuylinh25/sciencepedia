@@ -26,11 +26,15 @@ import {
   type Bilingual,
   type StructureContent,
 } from "@/lib/human-atlas/structures";
+import { ATLAS_PROVENANCE } from "@/lib/human-atlas/provenance";
 import { Button } from "@/components/ui/button";
 import { PANEL } from "@/components/human-atlas/panel";
 
-/** Trang dữ liệu gốc của BodyParts3D — nguồn của HÌNH, không phải của thông tin giải phẫu. */
-const MODEL_SOURCE_URL = "https://lifesciencedb.jp/bp3d/";
+/**
+ * Trang tải dữ liệu chính thức của BodyParts3D — nguồn của HÌNH. Trước đây trỏ
+ * `lifesciencedb.jp/bp3d/`, tức công cụ Anatomography chứ không phải bộ dữ liệu.
+ */
+const MODEL_SOURCE_URL = ATLAS_PROVENANCE.model.sourceUrl;
 
 /**
  * Bảng chi tiết của cấu trúc đang chọn.

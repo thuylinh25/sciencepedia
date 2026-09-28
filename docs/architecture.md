@@ -431,6 +431,21 @@ tablet nhưng thấp hơn điện thoại dựng. Ghép `md:` với biến thể
 khớp và thứ tự sinh CSS quyết định bên thắng; ba biến thể không chồng nhau (`globals.css`)
 thì không có câu hỏi đó. Thanh dưới trên điện thoại chừa 5rem bên phải cho nút trợ lý AI.
 
+### Provenance: một sổ (`provenance.ts`), bốn vai, kiểm bằng tệp thật
+
+Bảng "Nguồn dữ liệu giải phẫu" đọc URL/giấy phép từ `ATLAS_PROVENANCE`, không viết cứng
+trong JSX. Kiểm 2026-09-28 bằng chính tệp: `isa_BP3D_4.0_obj_99.zip` tải từ archive chính
+thức có đúng 2.234 OBJ, trùng 2.234/2.234 mã mảnh của `atlas.json` — dù dữ liệu đến qua
+repo Human Atlas chứ không tải thẳng. Hai điều bản cũ nói sai, đừng viết lại:
+
+- **Tên tiếng Anh hiển thị là của BodyParts3D** (header OBJ, bảng concept), không phải
+  FMA. FMA 5.1.0 chỉ cho Latin, đồng nghĩa, cha, TA98. BodyParts3D dựng trên FMA 3.0.
+- **Chuyển đổi hình học (đổi trục, đơn giản hoá, đóng gói) và cách gom 15 hệ là của Human
+  Atlas**, không phải Sciencepedia. Sciencepedia: tên Việt, dịch mô tả hệ, mô tả Level 2,
+  sửa 5 cấu trúc não thất.
+- Chú thích trong OBJ còn ghi CC BY-SA 2.1 JP; trang giấy phép chính thức (cập nhật
+  2025-02-27) ghi CC BY 4.0 — trang của bên cấp phép là căn cứ.
+
 ### Dữ liệu cấu trúc: FMA làm giàu ngoại tuyến, viewer chỉ đọc bản đã kiểm
 
 `scripts/anatomy-enrich.ts`: `atlas.json` → mã FMA duy nhất (3.432 khái niệm, không phải
