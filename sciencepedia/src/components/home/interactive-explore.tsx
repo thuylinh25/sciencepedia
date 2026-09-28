@@ -78,6 +78,11 @@ type ExploreCard = {
    * để phá.
    */
   feature?: boolean;
+  /**
+   * Thẻ đứng cột phải, cạnh thẻ chủ lực, ở lưới `xl`: rộng 4/12 thay vì 3/12
+   * của hàng dưới. Đúng hai thẻ mang cờ này — hai ô cao bằng thẻ chủ lực.
+   */
+  besideFeature?: boolean;
   /** `object-position` của ảnh khi khung cắt ngang — giữ phần đầu/ngực thay vì bụng. */
   imagePosition?: string;
   /**
@@ -154,6 +159,7 @@ const CARDS: ExploreCard[] = [
   },
   {
     id: "humanAtlas",
+    besideFeature: true,
     href: "/human-atlas",
     /*
      * Ảnh bìa v2 (2026-09-28), chụp từ CHÍNH viewer `/human-atlas` (theme tối,
@@ -184,6 +190,7 @@ const CARDS: ExploreCard[] = [
   },
   {
     id: "zoom",
+    besideFeature: true,
     href: "/zoom",
     image: assetUrl("explore/zoom.jpg"),
     emoji: "🔍",
@@ -233,15 +240,16 @@ const CARDS: ExploreCard[] = [
 ];
 
 /*
- * Từ `xl` lưới 4 cột: thẻ chủ lực 3x2, cột phải là Cơ thể người + Hành trình
- * thu phóng, hàng dưới bốn thẻ Vũ trụ → Ngân Hà → Hệ Mặt Trời → Trái Đất L1 —
- * dải thang quy mô đi tiếp xuống tận Trái Đất. 6 + 2 + 4 = 12 ô, kín.
+ * Từ `xl` lưới 12 cột: thẻ chủ lực 8/12 x 2 hàng, cột phải 4/12 là Cơ thể
+ * người + Hành trình thu phóng, hàng dưới bốn thẻ 3/12 Vũ trụ → Ngân Hà → Hệ
+ * Mặt Trời → Trái Đất L1 — dải thang quy mô đi tiếp xuống tận Trái Đất. Kín.
  *
- * Vì sao 4 cột (chốt 2026-09-28, chủ sản phẩm chọn): bảy thẻ với thẻ chủ lực
- * 2x2 trên lưới 3 cột là 10 ô — hàng cuối một thẻ trơ trọi cạnh hai ô trống.
- * Ba cách lấp đã cân: nới thẻ cuối thành dải ngang (tạo thêm một hạng thẻ, đã
- * bỏ một lần — xem dưới), cho thẻ chủ lực cao 3 hàng (quá lấn), hay 4 cột với
- * thẻ chủ lực rộng 3/4. Chọn cách cuối vì nó giữ mọi thẻ thường cùng một cỡ.
+ * Vì sao (chốt 2026-09-28, chủ sản phẩm chọn): bảy thẻ với thẻ chủ lực 2x2
+ * trên lưới 3 cột là 10 ô — hàng cuối một thẻ trơ trọi cạnh hai ô trống. Lượt
+ * đầu lấp bằng 4 cột với thẻ chủ lực 3/4, nhưng thẻ chủ lực rộng gấp ba hai
+ * thẻ bên cạnh thì lệch quá — chủ sản phẩm yêu cầu thu hẹp. 8/12 giữ đúng tỷ
+ * lệ 2/3 của lưới `lg`, nên bố cục không đổi dáng khi qua mốc 1280 px. Hai thẻ
+ * cột phải rộng hơn hàng dưới một chút; đó là giá của việc kín lưới.
  *
  * `lg` (1024–1279) vẫn 3 cột và vẫn thừa một thẻ ở hàng cuối: ở bề rộng đó 4
  * cột chỉ còn ~230 px mỗi thẻ, tiêu đề gãy ba dòng. Ở lưới 2 cột (sm):
@@ -320,12 +328,16 @@ export async function InteractiveExplore() {
         </p>
       </div>
 
-      <StaggerGroup className="mt-8 grid auto-rows-fr gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+      <StaggerGroup className="mt-8 grid auto-rows-fr gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-12">
         {CARDS.map((card) => (
           <StaggerItem
             key={card.id}
             className={cn(
-              card.feature && "sm:col-span-2 lg:row-span-2 xl:col-span-3",
+              card.feature
+                ? "sm:col-span-2 lg:row-span-2 xl:col-span-8"
+                : card.besideFeature
+                  ? "xl:col-span-4"
+                  : "xl:col-span-3",
             )}
           >
             <CardLink
@@ -359,7 +371,9 @@ export async function InteractiveExplore() {
                 sizes={
                   card.feature
                     ? "(min-width: 1024px) 40vw, (min-width: 640px) 50vw, 100vw"
-                    : "(min-width: 1280px) 25vw, (min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                    : card.besideFeature
+                      ? "(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                      : "(min-width: 1280px) 25vw, (min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                 }
                 className={cn(
                   "object-cover brightness-110 transition-[transform,opacity] duration-300 ease-out group-hover:scale-[1.05]",
