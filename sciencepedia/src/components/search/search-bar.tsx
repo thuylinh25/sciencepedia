@@ -50,7 +50,7 @@ export function SearchBar({
   }
 
   return (
-    <form action={action} method="get" onSubmit={submit} role="search" className="relative">
+    <form action={action} method="get" onSubmit={submit} role="search" aria-label={t("title")} className="relative">
       {category && <input type="hidden" name="category" value={category} />}
       {sort && <input type="hidden" name="sort" value={sort} />}
       <Search className="pointer-events-none absolute top-1/2 start-5 size-5 -translate-y-1/2 text-muted-foreground" />

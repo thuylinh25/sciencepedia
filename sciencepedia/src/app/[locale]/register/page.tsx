@@ -36,7 +36,8 @@ export default async function RegisterPage({
   return (
     <AuthShell
       title={t.rich("registerTitleRich", {
-        hl: (chunks) => <span className="text-primary">{chunks}</span>,
+        // `primary` là màu NỀN (vàng) — làm chữ trên nền sáng chỉ đạt 1,5:1.
+        hl: (chunks) => <span className="text-primary-strong">{chunks}</span>,
       })} subtitle={t("registerSubtitle")}>
       <RegisterForm />
     </AuthShell>

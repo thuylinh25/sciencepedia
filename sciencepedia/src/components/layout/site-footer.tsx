@@ -335,7 +335,8 @@ export async function SiteFooter() {
             dấu phân cách là việc của giao diện chứ không phải của bản dịch, và
             trình đọc màn hình gặp một chuỗi đầy "•" sẽ đọc ra sáu lần "bullet"
             — nên dấu chấm mang `aria-hidden` và danh sách là `<ul>` thật. */}
-        <div className="space-y-2 text-xs leading-relaxed text-muted-foreground/85">
+        {/* Không hạ opacity: `muted-foreground` ở 12px vừa đủ 4.5:1, bớt 15% là rơi xuống 3.9:1. */}
+        <div className="space-y-2 text-xs leading-relaxed text-muted-foreground">
           <p>{t("copyright", { year })}</p>
 
           <div className="max-w-3xl">

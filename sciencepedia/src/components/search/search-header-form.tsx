@@ -65,6 +65,9 @@ export async function SearchHeaderForm({ locale }: { locale: Locale }) {
       action={getPathname({ href: "/search", locale })}
       method="get"
       role="search"
+      /* Trang /search có hai vùng tìm kiếm (ô này + ô lớn của trang); không
+         tên riêng thì trình đọc màn hình liệt kê hai mốc "tìm kiếm" giống hệt. */
+      aria-label={ts("quickSearch")}
       /* max-w-xl (36rem) → max-w-[32rem] (512px), ngắn chừng 11%.
 
          Ô tìm kiếm phải nổi bật, nhưng ở 36rem nó chiếm gần nửa bề ngang
@@ -87,7 +90,10 @@ export async function SearchHeaderForm({ locale }: { locale: Locale }) {
           autoComplete="off"
           enterKeyHint="search"
           placeholder={t("searchPlaceholder")}
-          className="h-11 w-full rounded-full border bg-background ps-11 pe-32 text-sm shadow-[0_6px_20px_-8px_rgb(0_0_0/0.45)] outline-none transition-[border-color,box-shadow] duration-200 placeholder:text-muted-foreground focus-visible:border-accent focus-visible:shadow-[0_0_0_4px_var(--color-ring)]"
+          /* `text-foreground` tường minh: header trên hero đặt `text-white` và
+             input kế thừa màu (preflight `color: inherit`) — chữ gõ vào thành
+             trắng trên nền trắng. */
+          className="h-11 w-full rounded-full border bg-background text-foreground ps-11 pe-32 text-sm shadow-[0_6px_20px_-8px_rgb(0_0_0/0.45)] outline-none transition-[border-color,box-shadow] duration-200 placeholder:text-muted-foreground focus-visible:border-accent focus-visible:shadow-[0_0_0_4px_var(--color-ring)]"
         />
         {/* `variant="secondary"` chứ không phải nút vàng mặc định.
 

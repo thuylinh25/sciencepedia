@@ -16,6 +16,9 @@ type Props = {
   variant?: "default" | "hero" | "compact";
   priority?: boolean;
   className?: string;
+  /** Cấp tiêu đề thẻ. 3 khi thẻ nằm dưới một h2 (trang chủ); 2 khi nằm ngay
+   *  dưới h1 của trang danh sách — nhảy h1 → h3 làm lệch dàn ý cho trình đọc màn hình. */
+  headingLevel?: 2 | 3;
 };
 
 export async function ArticleCard({
@@ -24,7 +27,9 @@ export async function ArticleCard({
   variant = "default",
   priority = false,
   className,
+  headingLevel = 3,
 }: Props) {
+  const Heading = headingLevel === 2 ? "h2" : "h3";
   const t = await getTranslations("article");
 
   const title = pick(locale, article.title, article.titleEn);
@@ -54,9 +59,9 @@ export async function ArticleCard({
           <p className="text-xs font-medium text-muted-foreground">
             {category}
           </p>
-          <h3 className="mt-0.5 line-clamp-2 text-sm leading-snug font-semibold group-hover:text-primary-strong">
+          <Heading className="mt-0.5 line-clamp-2 text-sm leading-snug font-semibold group-hover:text-primary-strong">
             {title}
-          </h3>
+          </Heading>
           <p className="mt-1 flex items-center gap-1 text-xs text-muted-foreground">
             <Clock className="size-3" />
             {t("readingTime", { minutes: article.readingTime })}
@@ -146,7 +151,7 @@ export async function ArticleCard({
           isHero && "justify-center md:p-8",
         )}
       >
-        <h3
+        <Heading
           className={cn(
             "font-display leading-tight font-bold tracking-tight transition-colors group-hover:text-primary-strong",
             // `text-balance` chia đều các dòng, nên tiêu đề 2 dòng bị ngắt
@@ -159,7 +164,7 @@ export async function ArticleCard({
           )}
         >
           {title}
-        </h3>
+        </Heading>
 
         <p
           className={cn(

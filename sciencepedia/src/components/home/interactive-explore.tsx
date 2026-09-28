@@ -235,7 +235,7 @@ export async function InteractiveExplore() {
         {/* Nhãn phân loại trên tiêu đề: ba từ nói ngay đây là loại nội dung
             KHÁC với danh sách bài viết bên dưới. Cỡ chữ nhỏ và giãn ký tự rộng
             để nó đọc ra như một nhãn chứ không như một dòng chữ bị lạc. */}
-        <p className="mb-2 text-xs font-medium tracking-[0.18em] text-primary-strong/80 uppercase">
+        <p className="mb-2 text-xs font-medium tracking-[0.18em] text-primary-strong uppercase">
           {t("eyebrow")}
         </p>
         <h2 className="font-display text-3xl font-bold tracking-tight sm:text-4xl">

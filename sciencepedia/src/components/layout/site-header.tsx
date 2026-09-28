@@ -166,8 +166,19 @@ export function SiteHeader({
         data-site-header
         className={cn(
           "sticky top-0 z-50 w-full transition-[background-color,border-color,box-shadow,color] duration-300",
+          /* Nền `space-900` ở giao diện SÁNG, trong suốt ở giao diện tối.
+
+             Header là `sticky` nên nó chiếm chỗ trong luồng: hero bắt đầu
+             DƯỚI header, không tràn lên sau nó. Trong suốt thì thứ lộ ra là nền
+             body — tối ở dark theme nên liền mạch, nhưng TRẮNG ở light theme,
+             và chữ trắng của `onDark` trên nền trắng làm logo, menu và nút
+             ngôn ngữ biến mất hẳn. `space-900` là màu gốc gradient của
+             `.bg-cosmos`, nên header nối vào hero.
+
+             Không sửa bằng cách kéo hero lên dưới header: dải thiên hà neo
+             `top-[49%]` theo chiều cao hero, thêm đệm là lệch hàng chip. */
           onDark
-            ? "nav-on-dark border-b border-transparent bg-transparent text-white"
+            ? "nav-on-dark border-b border-transparent bg-space-900 text-white dark:bg-transparent"
             : "glass-bar shadow-sm",
         )}
       >
@@ -323,7 +334,12 @@ export function SiteHeader({
 
           {/* variant="ghost" mang theo hover:bg-muted hover:text-foreground —
               hỏng hoàn toàn trên nền tối. Vá một chỗ ở container thay vì sửa
-              từng nút, để nút thêm sau này tự đúng. */}
+              từng nút, để nút thêm sau này tự đúng.
+
+              Chỉ quét nút GHOST (`data-variant`). Bản cũ quét mọi nút và đã
+              cắn hai lần: nút "Đăng nhập" nền vàng bị ép chữ trắng (~1.6:1),
+              rồi nút "Tìm" nền `secondary` của ô tìm kiếm cũng thế (1.09:1).
+              Nút có nền riêng thì đã tự mang màu chữ đúng — đừng đè. */}
           {/* `flex-1` chứ không `ml-auto`: ô tìm kiếm bên trong cần bề ngang
               thật để trông ra một ô nhập, mà `ml-auto` thì cụm này chỉ rộng
               bằng nội dung và ô sẽ co lại bằng chữ bên trong. `min-w-0` cho
@@ -332,7 +348,7 @@ export function SiteHeader({
             className={cn(
               "flex min-w-0 flex-1 items-center justify-end gap-1.5",
               onDark &&
-                "[&_[data-slot=button]]:text-white/80 [&_[data-slot=button]:hover]:bg-white/12 [&_[data-slot=button]:hover]:text-white",
+                "[&_[data-variant=ghost]]:text-white/80 [&_[data-variant=ghost]:hover]:bg-white/12 [&_[data-variant=ghost]:hover]:text-white",
             )}
           >
             {/* Nút tìm kiếm hiện ở MỌI trạng thái, kể cả khi ô tìm kiếm lớn
@@ -387,6 +403,11 @@ export function SiteHeader({
               className={cn(
                 "items-center gap-1.5",
                 focused ? "flex" : "hidden lg:flex",
+                /* Nút ngôn ngữ mang `bg-card/50` + viền token: ở light theme
+                   đó là nửa lớp TRẮNG đè lên nền tối, và chữ trắng của `onDark`
+                   trên đó gần như mất. Trên nền tối nó phải là kính tối. */
+                onDark &&
+                  "[&_[data-variant=ghost]]:border-white/20 [&_[data-variant=ghost]]:bg-white/8",
               )}
             >
               <LocaleSwitcher />

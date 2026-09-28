@@ -179,6 +179,12 @@ vàng bị ép chữ trắng — khoảng 1,6:1. Một quy tắc quét `*` hay q
 sẽ trúng cả những thứ không định trúng; khi thêm loại nút mới, kiểm lại các quy
 tắc quét đang có.
 
+Nó cắn lần hai (2026-09-28): nút "Tìm" nền `secondary` của ô tìm kiếm header,
+chữ gần trắng trên nền xám nhạt (1,09:1). Nay quy tắc chỉ quét
+`[data-variant=ghost]` — `Button` tự gắn `data-variant` — và nút có nền riêng
+giữ màu chữ của chính nó. Vá bằng `!` từng nút là chữa triệu chứng; thu hẹp
+selector mới là chữa gốc.
+
 **3. `visible={false}` làm raycaster bỏ qua vật thể.**
 Muốn một vùng chạm vô hình trong cảnh 3D thì dùng `opacity={0}` với
 `depthWrite={false}`, không dùng `visible={false}` — ẩn đi là mất luôn vùng chạm.
@@ -564,3 +570,45 @@ gần đúng cỡ gốc và gần kín khung. Ảnh ĐỨNG (903×986) vẽ ra 4
 còn 860px nền. Đó là bố cục "ảnh lơ lửng" đã gỡ ngày 13/09; lần này giữ, vì nó
 là hệ quả trực tiếp của yêu cầu. Nếu sau này muốn bớt vệt nền thì chỗ sửa là
 ảnh bìa của các bài ĐỨNG, không phải `object-fit`.
+
+## Audit UI/UX 2026-09-28 — những gì đã chốt
+
+Chạy checklist của skill ui-ux-pro-max + axe (WCAG 2.2 AA) trên 17 trang × 3
+tổ hợp (sáng desktop, sáng 390px, tối desktop).
+
+**Header trên hero ở giao diện SÁNG có nền `space-900`.** Header là `sticky`,
+tức chiếm chỗ trong luồng — hero bắt đầu DƯỚI nó, không tràn lên sau nó. Trong
+suốt thì lộ nền body: tối ở dark theme nên liền mạch, TRẮNG ở light theme, và
+chữ trắng của `onDark` làm logo, menu, nút ngôn ngữ biến mất. Đừng chữa bằng
+cách kéo hero lên dưới header: dải thiên hà neo `top-[49%]` theo chiều cao
+hero, thêm đệm là lệch hàng chip lĩnh vực. Kiểm header thì phải kiểm ở CẢ HAI
+theme — người viết code thường chỉ nhìn một.
+
+**Input kế thừa màu chữ.** Preflight đặt `color: inherit` cho input, nên một ô
+nhập nằm trong vùng `text-white` sẽ có chữ trắng dù nền nó trắng. Ô nhập đặt
+trong vùng đổi màu chữ phải khai `text-foreground` tường minh.
+
+**`primary` là màu NỀN.** Vàng làm chữ trên nền sáng chỉ đạt 1,5:1 — dùng
+`text-primary-strong` (tự đổi sáng ở dark theme). Đã gặp ở tiêu đề và link
+trang đăng nhập/đăng ký.
+
+**Không hạ opacity của `muted-foreground`.** Token này ở 12px vừa đủ 4.5:1;
+`/85` là rơi xuống 3.9:1. Muốn chữ chìm hơn thì hạ cỡ hoặc độ đậm, không hạ
+độ đục.
+
+**Mỗi trang đúng một h1, cấp heading không nhảy.** Trang danh sách dùng
+`<SectionHeading as="h1">`, và lưới bài ngay dưới nó truyền
+`headingLevel={2}` cho thẻ. Trang chủ giữ mặc định (h2 section → h3 thẻ).
+
+**404 phải nằm trong layout locale.** `[locale]/[...rest]` gọi `notFound()`;
+thiếu nó thì đường dẫn lạ rơi ra 404 mặc định của Next — không `lang`, không
+header, không lối đi tiếp.
+
+**Cố ý KHÔNG đổi, dù checklist của skill đánh dấu:**
+- Emoji lĩnh vực ở hero — lý do ghi trong `hero-fields.tsx`.
+- Chữ 10–11px: nhãn trong cảnh 3D và eyebrow trang trí, không phải thân bài;
+  footer trang đăng nhập giữ 11px vì bề ngang 390px (xem `auth-shell.tsx`).
+- Vùng chạm 20px của menu header và breadcrumb: đạt ngoại lệ khoảng cách của
+  WCAG 2.5.8; nút icon header vẫn theo ngoại lệ 40px đã chốt ở trên.
+- Contrast báo lỗi ở thẻ bài đang fade-in: đo lúc animation chưa xong, token
+  thật đạt ~5.5:1. Audit lại thì chờ animation xong rồi mới chạy axe.

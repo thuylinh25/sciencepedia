@@ -56,7 +56,7 @@ export default async function ProfilePage({
 
   return (
     <div className="container-page py-16">
-      <SectionHeading title={t("profile")} />
+      <SectionHeading as="h1" title={t("profile")} />
 
       {/* Thẻ hồ sơ chia làm hai nửa, ngăn bằng một đường kẻ.
 

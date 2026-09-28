@@ -53,7 +53,7 @@ export function SearchFilters({
         value={currentCategory}
         onValueChange={(value) => update("category", value)}
       >
-        <SelectTrigger size="sm" className="w-56">
+        <SelectTrigger size="sm" className="w-56" aria-label={t("filters")}>
           <SelectValue placeholder={t("allCategories")} />
         </SelectTrigger>
         <SelectContent>
@@ -70,7 +70,7 @@ export function SearchFilters({
         value={currentSort}
         onValueChange={(value) => update("sort", value)}
       >
-        <SelectTrigger size="sm" className="w-48">
+        <SelectTrigger size="sm" className="w-48" aria-label={t("sortBy")}>
           <SelectValue placeholder={t("sortBy")} />
         </SelectTrigger>
         <SelectContent>

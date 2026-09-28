@@ -59,9 +59,9 @@ export async function CategoryCard({
         <CategoryIcon name={category.icon} className="size-6" />
       </span>
 
-      <h3 className="mt-5 font-display text-xl font-bold tracking-tight">
+      <h2 className="mt-5 font-display text-xl font-bold tracking-tight">
         {name}
-      </h3>
+      </h2>
 
       {description && (
         <p className="mt-2 line-clamp-3 text-sm leading-relaxed text-muted-foreground">

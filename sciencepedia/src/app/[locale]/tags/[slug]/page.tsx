@@ -77,10 +77,11 @@ export default async function TagPage({
   return (
     <div className="container-page page-pad">
       <SectionHeading
+        as="h1"
         title={t("taggedWith", { tag: name })}
         subtitle={tCategory("articleCount", { count: tag._count.articles })}
       />
-      <ArticleGrid articles={items} locale={loc} />
+      <ArticleGrid articles={items} locale={loc} headingLevel={2} />
       <Pagination
         page={page}
         totalPages={totalPages}

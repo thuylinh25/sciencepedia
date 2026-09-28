@@ -12,6 +12,7 @@ export function SectionHeading({
   align = "left",
   className,
   children,
+  as: Tag = "h2",
 }: {
   title: string;
   subtitle?: string;
@@ -20,6 +21,10 @@ export function SectionHeading({
   align?: "left" | "center";
   className?: string;
   children?: ReactNode;
+  /** `h1` khi đây là tiêu đề của cả trang (trang danh sách, trang thẻ…).
+   *  Mỗi trang cần đúng một h1 — trình đọc màn hình và công cụ tìm kiếm dựa
+   *  vào nó để biết trang nói về gì. Cỡ chữ không đổi theo cấp. */
+  as?: "h1" | "h2";
 }) {
   return (
     /* Dưới `sm` phải xếp DỌC, không phải `flex-wrap`.
@@ -72,9 +77,9 @@ export function SectionHeading({
 
             Bậc giữa `sm:text-3xl` giữ nhịp: 640px không cần tới 36px, và nhảy
             thẳng 24 → 36 làm chữ giật một nấc thấy rõ ở đúng ngưỡng đó. */}
-        <h2 className="font-display text-2xl font-bold tracking-tight text-balance sm:text-3xl lg:text-4xl">
+        <Tag className="font-display text-2xl font-bold tracking-tight text-balance sm:text-3xl lg:text-4xl">
           {title}
-        </h2>
+        </Tag>
         {subtitle && (
           <p className="mt-2 max-w-2xl text-base text-pretty text-muted-foreground">
             {subtitle}

@@ -64,7 +64,8 @@ export default async function LoginPage({
   return (
     <AuthShell
       title={t.rich("loginTitleRich", {
-        hl: (chunks) => <span className="text-primary">{chunks}</span>,
+        // `primary` là màu NỀN (vàng) — làm chữ trên nền sáng chỉ đạt 1,5:1.
+        hl: (chunks) => <span className="text-primary-strong">{chunks}</span>,
       })} subtitle={t("loginSubtitle")}>
       {/* Cờ suy từ `oauthProviders()`, tức đúng điều kiện `auth.ts` dùng để
           đăng ký nhà cung cấp (id VÀ secret). Chỉ kiểm id là cách cũ, và nó vẽ

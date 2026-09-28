@@ -42,7 +42,7 @@ export default async function TagsPage({
 
   return (
     <div className="container-page py-16">
-      <SectionHeading title={t("allTags")} />
+      <SectionHeading as="h1" title={t("allTags")} />
 
       <div className="flex flex-wrap gap-3">
         {tags.map((tag) => {

@@ -48,7 +48,7 @@ export default async function ModelsPage({
 
   return (
     <div className="container-page py-16">
-      <SectionHeading title={t("title")} subtitle={t("subtitle")} />
+      <SectionHeading as="h1" title={t("title")} subtitle={t("subtitle")} />
 
       {/* Tiêu đề nhóm, mới có từ khi trang này gom cả năm công cụ.
 

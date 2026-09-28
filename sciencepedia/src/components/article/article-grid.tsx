@@ -16,6 +16,7 @@ export async function ArticleGrid({
   columns = 3,
   className,
   empty,
+  headingLevel,
 }: {
   articles: ArticleCardData[];
   locale: Locale;
@@ -23,6 +24,8 @@ export async function ArticleGrid({
   className?: string;
   /** Thay khối rỗng mặc định khi lý do rỗng khác nhau (ví dụ: chưa lưu bài nào). */
   empty?: ReactNode;
+  /** Truyền 2 khi lưới nằm ngay dưới h1 của trang — xem `ArticleCard`. */
+  headingLevel?: 2 | 3;
 }) {
   const t = await getTranslations("article");
 
@@ -61,6 +64,7 @@ export async function ArticleGrid({
             article={article}
             locale={locale}
             priority={index < 3}
+            headingLevel={headingLevel}
             className="h-full"
           />
         </StaggerItem>

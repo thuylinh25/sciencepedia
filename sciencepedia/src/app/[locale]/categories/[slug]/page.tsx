@@ -218,7 +218,7 @@ export default async function CategoryPage({
       </header>
 
       <div className="container-page page-pad">
-        <ArticleGrid articles={items} locale={loc} />
+        <ArticleGrid articles={items} locale={loc} headingLevel={2} />
         <Pagination
           page={page}
           totalPages={totalPages}

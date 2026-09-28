@@ -35,10 +35,11 @@ export default async function BookmarksPage({
 
   return (
     <div className="container-page page-pad">
-      <SectionHeading title={t("myBookmarks")} />
+      <SectionHeading as="h1" title={t("myBookmarks")} />
       <ArticleGrid
         articles={bookmarks.map((bookmark) => bookmark.article)}
         locale={locale as Locale}
+        headingLevel={2}
         // Danh sách rỗng ở đây KHÔNG có nghĩa là kho chưa có bài — mặc định
         // "Chưa có bài viết nào ở đây" nói sai chuyện đang xảy ra.
         empty={

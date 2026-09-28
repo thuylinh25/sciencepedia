@@ -124,7 +124,7 @@ export async function AuthShell({
             `whitespace-nowrap` giữ ở mọi bề rộng để từng phần không tự vỡ giữa
             chừng, và để lần sau ai nới chữ dài ra thì
             nó tràn thấy được ngay, chứ không âm thầm gãy dòng lại. */}
-        <footer className="mx-auto mt-10 w-full max-w-sm border-t pt-5 text-[11px] text-muted-foreground/70 short:mt-6 short:pt-3.5 shorter:mt-2.5 shorter:pt-2.5">
+        <footer className="mx-auto mt-10 w-full max-w-sm border-t pt-5 text-[11px] text-muted-foreground short:mt-6 short:pt-3.5 shorter:mt-2.5 shorter:pt-2.5">
           <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 whitespace-nowrap sm:flex-nowrap">
             {/* Tên thương hiệu chỉ hiện từ sm.
 

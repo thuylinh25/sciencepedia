@@ -401,7 +401,7 @@ export function LoginForm({
         {t("noAccount")}{" "}
         <Link
           href="/register"
-          className="font-semibold text-primary underline-offset-4 transition-colors hover:text-primary-strong hover:underline"
+          className="font-semibold text-primary-strong underline-offset-4 hover:underline"
         >
           {t("register")}
         </Link>

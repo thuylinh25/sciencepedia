@@ -42,7 +42,7 @@ export default async function CategoriesPage({
 
   return (
     <div className="container-page page-pad">
-      <SectionHeading title={t("title")} subtitle={t("subtitle")} />
+      <SectionHeading as="h1" title={t("title")} subtitle={t("subtitle")} />
 
       <StaggerGroup className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {categories.map((category) => (

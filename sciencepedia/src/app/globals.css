@@ -699,9 +699,12 @@
     display: none;
   }
 
-  /* Kết quả tìm kiếm được Meilisearch bọc trong <mark> */
+  /* Kết quả tìm kiếm được Meilisearch bọc trong <mark>.
+     Chữ `foreground`, không `inherit`: tóm tắt mang `text-muted-foreground`,
+     và chữ mờ trên nền xanh 40% chỉ còn 2.85:1. Nền hạ về 20% cho cặp
+     foreground/nền còn dư contrast ở cả hai giao diện. */
   .search-highlight mark {
-    @apply rounded bg-accent/40 px-0.5 text-inherit;
+    @apply rounded bg-accent/20 px-0.5 text-foreground;
   }
 }
 
