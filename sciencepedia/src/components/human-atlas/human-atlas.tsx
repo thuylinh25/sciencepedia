@@ -5,7 +5,7 @@
 // khung và thông báo "đang tải" có trong HTML đầu tiên. Chỉ cảnh WebGL là
 // `ssr: false`, nạp động bên dưới.
 
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState, type ComponentProps } from "react";
 import dynamic from "next/dynamic";
 import { useLocale, useTranslations } from "next-intl";
 import { useTheme } from "next-themes";
@@ -25,8 +25,10 @@ import { cn } from "@/lib/utils";
 import {
   DEFAULT_VISIBLE,
   ORGAN_PRESET,
+  PIECE_COUNT,
   SYSTEM_IDS,
   atlasSchema,
+  correctSystems,
   type Atlas,
   type Concept,
   type SceneState,
@@ -55,6 +57,7 @@ import { PANEL } from "@/components/human-atlas/panel";
 import { StructureDetail } from "@/components/human-atlas/structure-detail";
 import { StructureSearch } from "@/components/human-atlas/structure-search";
 import { SystemsPanel } from "@/components/human-atlas/systems-panel";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import type { SceneError } from "@/components/human-atlas/anatomy-scene";
 
 /**
@@ -65,9 +68,6 @@ import type { SceneError } from "@/components/human-atlas/anatomy-scene";
 const AnatomyScene = dynamic(() => import("@/components/human-atlas/anatomy-scene"), {
   ssr: false,
 });
-
-/** Số mảnh của bộ dữ liệu, để tiêu đề có số ngay trong HTML đầu tiên. */
-const PIECE_COUNT = 2234;
 
 const VIEWS: { id: View; key: "threeQuarter" | "front" | "side" | "back" }[] = [
   { id: "three-quarter", key: "threeQuarter" },
@@ -99,7 +99,7 @@ async function loadCatalog(signal: AbortSignal): Promise<Atlas> {
   const buffer = await decodeModelResponse(response, null, compressed);
   const parsed = atlasSchema.safeParse(JSON.parse(new TextDecoder().decode(buffer)));
   if (!parsed.success) throw new Error(`atlas.json sai cấu trúc: ${parsed.error.message}`);
-  return parsed.data;
+  return correctSystems(parsed.data);
 }
 
 /** `?structure=` trỏ tới khái niệm; dùng slug tiếng Anh, trùng tên thì dùng mã FMA. */
@@ -139,6 +139,8 @@ export function HumanAtlas({
   const [about, setAbout] = useState(false);
   const [chosen, setChosen] = useState<Concept | null>(null);
   const [focusDetail, setFocusDetail] = useState(false);
+  /** Người đọc đã chạm/kéo lần nào chưa — để hạ độ nổi của dòng gợi ý thao tác. */
+  const [interacted, setInteracted] = useState(false);
   const deepLinked = useRef(false);
 
   // --------------------------------------------------------- tải danh mục
@@ -341,7 +343,12 @@ export function HumanAtlas({
   );
 
   return (
-    <div className="relative isolate size-full overflow-hidden bg-[#f2f3f3] text-foreground dark:bg-[#131b29]">
+    <TooltipProvider>
+    <div
+      className="relative isolate size-full overflow-hidden bg-[#f2f3f3] text-foreground dark:bg-[#131b29]"
+      onPointerDownCapture={interacted ? undefined : () => setInteracted(true)}
+      onWheelCapture={interacted ? undefined : () => setInteracted(true)}
+    >
       <AtlasErrorBoundary fallback={crashed}>
         {atlas && !failure && (
           <AnatomyScene
@@ -365,7 +372,7 @@ export function HumanAtlas({
       />
 
       {/* ---------------------------------------------------- tiêu đề */}
-      <header className="pointer-events-none absolute top-3 left-4 z-10 max-w-[calc(100%-8rem)] sm:top-5 lg:left-6">
+      <header data-atlas-avoid="top" className="pointer-events-none absolute top-3 left-4 z-10 max-w-[calc(100%-8rem)] sm:top-5 lg:left-6">
         <p className="flex items-center gap-2 text-[10px] font-semibold tracking-[0.14em] text-muted-foreground uppercase">
           <span aria-hidden className="size-1.5 rounded-full bg-success" />
           {t("eyebrow")}
@@ -379,6 +386,7 @@ export function HumanAtlas({
       </header>
 
       <nav
+        data-atlas-avoid="top"
         aria-label={t("search")}
         className="absolute top-3 right-3 z-20 flex items-center gap-2 sm:top-5 lg:right-6"
       >
@@ -390,7 +398,9 @@ export function HumanAtlas({
           aria-expanded={panel === "search"}
         >
           <Search aria-hidden />
-          <span className="hidden sm:inline">{t("search")}</span>
+          {/* Nói rõ tìm GÌ — để không lẫn với ô tìm bài viết trên header. Chỉ
+              hiện từ `sm`; điện thoại chỉ còn icon, tên đầy đủ ở aria-label. */}
+          <span className="hidden sm:inline">{t("searchButton")}</span>
           <kbd className="hidden rounded border px-1.5 text-[10px] text-muted-foreground lg:inline">
             /
           </kbd>
@@ -417,6 +427,7 @@ export function HumanAtlas({
         counts={counts}
         visible={state.visible}
         visibleCount={visibleCount}
+        totalCount={atlas?.parts.length ?? PIECE_COUNT}
         locale={locale}
         presets={{ all: activeSystems, skeleton: ["skeletal"], organs: ORGAN_PRESET }}
         onClose={() => setPanel(null)}
@@ -450,6 +461,7 @@ export function HumanAtlas({
 
       {/* ------------------------------------------ điều khiển camera */}
       <nav
+        data-atlas-avoid="right"
         aria-label={t("cameraControls")}
         className={cn(
           PANEL,
@@ -465,45 +477,31 @@ export function HumanAtlas({
         )}
       >
         {VIEWS.map((v) => (
-          <Button
+          <ToolButton
             key={v.id}
-            variant="ghost"
-            size="icon"
-            className={cn("rounded-xl text-sm atlas-short:hidden", state.view === v.id && "bg-muted")}
-            aria-pressed={state.view === v.id}
+            label={t(`views.${v.key}`)}
+            active={state.view === v.id}
+            className="text-[11px] font-semibold atlas-short:hidden"
             disabled={state.explode > 0.8 && v.id !== "front"}
-            aria-label={t(`views.${v.key}`)}
-            title={t(`views.${v.key}`)}
             onClick={() =>
               setState((s) => ({ ...s, view: v.id, reset: s.reset + 1, rotate: false }))
             }
           >
             <span aria-hidden>{t(`viewsShort.${v.key}`)}</span>
-          </Button>
+          </ToolButton>
         ))}
         <span aria-hidden className="mx-2 my-1 h-px bg-border atlas-short:hidden" />
-        <Button
-          variant="ghost"
-          size="icon"
-          className={cn("rounded-xl", state.rotate && "bg-muted")}
+        <ToolButton
+          label={state.rotate ? t("pauseRotate") : t("rotate")}
+          active={state.rotate}
           disabled={state.explode >= 0.4}
-          aria-pressed={state.rotate}
-          aria-label={state.rotate ? t("pauseRotate") : t("rotate")}
-          title={state.rotate ? t("pauseRotate") : t("rotate")}
           onClick={() => setState((s) => ({ ...s, rotate: !s.rotate }))}
         >
           {state.rotate ? <Pause aria-hidden /> : <RotateCw aria-hidden />}
-        </Button>
-        <Button
-          variant="ghost"
-          size="icon"
-          className="rounded-xl"
-          aria-label={t("resetLabel")}
-          title={t("resetLabel")}
-          onClick={reset}
-        >
+        </ToolButton>
+        <ToolButton label={t("resetLabel")} onClick={reset}>
           <RotateCcw aria-hidden />
-        </Button>
+        </ToolButton>
       </nav>
 
       <p
@@ -519,6 +517,7 @@ export function HumanAtlas({
           Điện thoại: chừa 5rem bên phải cho nút trợ lý AI (position: fixed
           của layout) — không có khoảng này thì nút đó đè lên nút "Đặt lại". */}
       <div
+        data-atlas-avoid="bottom"
         className={cn(
           PANEL,
           "absolute z-20 flex items-center gap-3 p-3",
@@ -541,7 +540,9 @@ export function HumanAtlas({
         <div className="min-w-0 flex-1">
           <div className="mb-1.5 flex items-center justify-between gap-2 text-xs whitespace-nowrap">
             <label htmlFor="atlas-explode" className="truncate font-medium">
-              {t("explode")}
+              {/* Điện thoại: thanh này chung hàng với hai nút, chỉ đủ chỗ cho nhãn ngắn. */}
+              <span className="atlas-phone:hidden atlas-short:hidden">{t("explode")}</span>
+              <span className="hidden atlas-phone:inline atlas-short:inline">{t("explodeShort")}</span>
             </label>
             <output htmlFor="atlas-explode" className="text-muted-foreground tabular-nums">
               {Math.round(state.explode * 100)}%
@@ -581,9 +582,18 @@ export function HumanAtlas({
         </Button>
       </div>
 
-      <div className="absolute bottom-3 left-6 z-10 hidden items-center gap-4 text-[11px] text-muted-foreground atlas-wide:flex">
+      <div
+        className={cn(
+          "absolute bottom-3 left-6 z-10 hidden items-center gap-4 text-xs atlas-wide:flex",
+          // Chưa thao tác lần nào: đậm hơn một bậc để người mới thấy cách dùng;
+          // sau cú chạm đầu tiên thì lùi về màu phụ — vẫn đọc được, không tranh
+          // chỗ với mô hình.
+          "transition-colors duration-700",
+          interacted ? "text-muted-foreground" : "text-foreground/85",
+        )}
+      >
         <span>
-          {state.explode > 0.8 ? t("hintPan") : t("hintOrbit")} · {t("hintZoom")} · {t("hintTap")}
+          {state.explode > 0.8 ? t("hintPan") : t("hintOrbit")} • {t("hintZoom")} • {t("hintTap")}
         </span>
         <button
           type="button"
@@ -598,6 +608,20 @@ export function HumanAtlas({
           <ArrowUpRight aria-hidden className="size-3" />
         </button>
       </div>
+
+      {/* Điện thoại: không có dòng gợi ý ở đáy (thanh điều khiển chiếm chỗ), nên
+          hiện một viên gợi ý phía trên thanh cho tới lần chạm đầu tiên rồi ẩn.
+          `pointer-events-none`: không bao giờ chặn cú chạm vào mô hình. */}
+      {!interacted && progress >= 100 && !failure && (
+        <p
+          aria-hidden
+          className="pointer-events-none absolute inset-x-3 bottom-[calc(6.75rem+env(safe-area-inset-bottom))] z-10 hidden justify-center atlas-phone:flex"
+        >
+          <span className="rounded-full bg-background/85 px-3 py-1.5 text-center text-xs text-foreground/85 shadow-sm backdrop-blur">
+            {t("hintTouch")}
+          </span>
+        </p>
+      )}
 
       {/* -------------------------------------------- đang tải / lỗi */}
       {!failure && progress < 100 && (
@@ -664,6 +688,43 @@ export function HumanAtlas({
         </SheetContent>
       </Sheet>
     </div>
+    </TooltipProvider>
+  );
+}
+
+/**
+ * Nút của cột điều khiển camera: chỉ có icon/chữ tắt, nên tên đầy đủ nằm ở
+ * `aria-label` (cho trình đọc màn hình và màn cảm ứng) VÀ ở tooltip (cho chuột
+ * và bàn phím — Radix mở tooltip cả khi focus bằng Tab). Không dùng `title`:
+ * nó chồng thêm một tooltip thứ hai của trình duyệt.
+ */
+function ToolButton({
+  label,
+  active,
+  className,
+  children,
+  ...props
+}: ComponentProps<typeof Button> & { label: string; active?: boolean }) {
+  return (
+    <Tooltip>
+      <TooltipTrigger asChild>
+        <Button
+          variant="ghost"
+          size="icon"
+          aria-label={label}
+          aria-pressed={active}
+          className={cn(
+            "rounded-xl",
+            active && "bg-primary/15 text-primary-strong ring-1 ring-primary/40 ring-inset hover:bg-primary/20",
+            className,
+          )}
+          {...props}
+        >
+          {children}
+        </Button>
+      </TooltipTrigger>
+      <TooltipContent side="left">{label}</TooltipContent>
+    </Tooltip>
   );
 }
 

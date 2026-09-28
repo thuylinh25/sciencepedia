@@ -13,6 +13,9 @@ import {
   type StructureArticle,
 } from "@/lib/human-atlas/structure-links";
 import { getPublishedArticleTitles } from "@/server/queries";
+import { ArrowRight } from "lucide-react";
+
+import { Button } from "@/components/ui/button";
 import { JsonLd } from "@/components/json-ld";
 import { AboutCopy, HumanAtlas } from "@/components/human-atlas/human-atlas";
 
@@ -102,7 +105,13 @@ export default async function HumanAtlasPage({
       />
 
       {/* Khung chiếm trọn phần màn hình dưới header dính (h-16 / lg:h-20). */}
-      <section className="relative h-[calc(100dvh-4rem)] min-h-[18rem] lg:h-[calc(100dvh-5rem)]">
+      {/* `scroll-mt` = chiều cao header dính: CTA "Khám phá bản đồ" ở phần giới
+          thiệu cuộn về đúng khung này, không để header che mép trên. */}
+      <section
+        id="atlas-viewer"
+        aria-label={t("title")}
+        className="relative h-[calc(100dvh-4rem)] min-h-[18rem] scroll-mt-16 lg:h-[calc(100dvh-5rem)] lg:scroll-mt-20"
+      >
         <HumanAtlas articles={articles} />
       </section>
 
@@ -111,6 +120,14 @@ export default async function HumanAtlasPage({
           <div>
             <h2 className="font-display text-2xl font-bold tracking-tight">{t("page.heading")}</h2>
             <p className="mt-3 max-w-3xl leading-relaxed text-muted-foreground">{t("page.intro")}</p>
+            {/* Viewer ở ngay trên cùng route, nên CTA là neo trong trang chứ không
+                phải một route mới. Ai đọc tới đây là đã cuộn qua khung 3D. */}
+            <Button asChild className="mt-5 h-11 max-sm:w-full">
+              <a href="#atlas-viewer">
+                {t("page.cta")}
+                <ArrowRight aria-hidden />
+              </a>
+            </Button>
 
             <h3 className="mt-8 text-sm font-semibold">{t("page.systemsHeading")}</h3>
             <ul className="mt-3 grid gap-x-6 gap-y-3 sm:grid-cols-2">

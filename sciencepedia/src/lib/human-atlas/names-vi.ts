@@ -14,14 +14,19 @@
  *
  *   mã FMA → tên tiếng Việt nếu có ở đây → tên tiếng Anh gốc
  *
- * ## Vì sao chưa đủ 3.432 mục
+ * ## Hai lớp: bảng duyệt tay này, rồi bảng ghép thuật ngữ
  *
- * Bộ dữ liệu có 3.432 khái niệm. Dịch máy hàng loạt thuật ngữ giải phẫu là
- * cách nhanh nhất để in ra tên sai với giọng rất chắc chắn — trái đúng điều
- * `docs/content-rules.md` cấm. Danh sách này chỉ gồm thuật ngữ chuẩn, thông
- * dụng; mục nào chưa có thì hiện tên tiếng Anh gốc. Bổ sung dần: thêm một
- * dòng `FMAxxxx: "…"`, không cần sửa gì khác.
+ * Bảng dưới đây là thuật ngữ chuẩn, thông dụng, đã đối chiếu tay — luôn thắng.
+ * Mọi khái niệm còn lại đi qua `translateAnatomy()` (`terms-vi.ts`): dịch từng
+ * cụm gốc rồi ghép, có hỗ trợ của AI và CHƯA qua duyệt chuyên môn. Dịch máy
+ * thuật ngữ giải phẫu dễ in ra tên sai với giọng rất chắc chắn — trái điều
+ * `docs/content-rules.md` cấm — nên cái giá phải trả là: UI luôn hiện tên
+ * tiếng Anh gốc ngay dưới tên Việt, và phần ghi công nói rõ nguồn gốc bản
+ * dịch. Sửa một tên sai: thêm `FMAxxxx: "…"` ở đây (một khái niệm) hoặc sửa
+ * cụm trong `terms-vi.ts` (mọi tên chứa cụm đó).
  */
+import { translateAnatomy } from "./terms-vi";
+
 export const VI_NAMES: Record<string, string> = {
   // Tim và mạch lớn
   FMA7088: "Tim",
@@ -138,6 +143,11 @@ export const VI_NAMES: Record<string, string> = {
   FMA13407: "Cơ ức đòn chũm",
 };
 
+/** Tên tiếng Việt: bảng duyệt tay trước, rồi bảng ghép thuật ngữ; không có thì `null`. */
+export function viName(conceptId: string, englishName: string): string | null {
+  return VI_NAMES[conceptId] ?? translateAnatomy(englishName);
+}
+
 /** Tên hiển thị theo locale; thiếu bản tiếng Việt thì trả tên tiếng Anh gốc. */
 export function displayName(
   locale: string,
@@ -145,14 +155,14 @@ export function displayName(
   englishName: string,
 ): string {
   if (locale === "vi") {
-    const vi = VI_NAMES[conceptId];
-    if (vi) return vi;
+    const vi = viName(conceptId, englishName);
+    if (vi) return vi.charAt(0).toUpperCase() + vi.slice(1);
   }
   // Bộ dữ liệu có tên viết thường ("vascular tree") lẫn viết hoa ("Left kidney").
   return englishName.charAt(0).toUpperCase() + englishName.slice(1);
 }
 
 /** Có tên tiếng Việt thật hay không — để hiện kèm tên gốc cho người học. */
-export function hasViName(conceptId: string): boolean {
-  return conceptId in VI_NAMES;
+export function hasViName(conceptId: string, englishName: string): boolean {
+  return viName(conceptId, englishName) !== null;
 }

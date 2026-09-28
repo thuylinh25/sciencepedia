@@ -624,9 +624,16 @@
   },
   "explore": {
     "title": "Khám phá tương tác",
-    "subtitle": "Trải nghiệm khoa học bằng mô hình 3D, bản đồ sao và hành trình khám phá từ quy mô vũ trụ xuống tới hành tinh của chúng ta.",
+    "subtitle": "Trải nghiệm khoa học qua mô hình 3D và dữ liệu tương tác — từ quy mô vũ trụ, xuống hành tinh của chúng ta, tới bên trong cơ thể người.",
     "credit": "Ảnh",
     "cards": {
+      "humanAtlas": {
+        "title": "Bản đồ cơ thể người 3D",
+        "body": "Khám phá giải phẫu cơ thể người qua mô hình 3D tương tác.",
+        "cta": "Khám phá",
+        "metaA": "{pieces, number} mảnh mô hình",
+        "metaB": "{systems} hệ cơ thể"
+      },
       "solarSystem": {
         "title": "Hệ Mặt Trời 3D",
         "body": "Quan sát các hành tinh chuyển động theo quỹ đạo thực trong không gian ba chiều.",
@@ -730,15 +737,16 @@
     "presetOrgans": "Cơ quan",
     "showOnly": "Chỉ hiện {name}",
     "toggleSystem": "Hiện {name}",
-    "visibleCount": "{count} mảnh đang hiện",
+    "visibleCount": "{count} / {total} mảnh đang hiển thị",
     "hideAll": "Ẩn tất cả",
     "openSystems": "Mở danh sách hệ cơ thể",
     "closeSystems": "Đóng danh sách hệ cơ thể",
     "search": "Tìm cấu trúc",
+    "searchButton": "Tìm xương, cơ, cơ quan…",
     "searchLabel": "Tìm cấu trúc giải phẫu theo tên",
-    "searchPlaceholder": "Tim, xương đùi, phổi trái…",
+    "searchPlaceholder": "Tìm xương, cơ, cơ quan…",
     "searchEmpty": "Không có cấu trúc nào khớp.",
-    "searchNoteQuery": "Hiện tối đa 80 kết quả. Gõ cụ thể hơn để tìm cấu trúc nhỏ. Phần lớn tên cấu trúc hiện chỉ có bản tiếng Anh.",
+    "searchNoteQuery": "Hiện tối đa 80 kết quả. Gõ cụ thể hơn để tìm cấu trúc nhỏ.",
     "searchNoteEmpty": "Bắt đầu với một cơ quan lớn, hoặc tìm bất kỳ cấu trúc có tên nào — tiếng Việt, tiếng Anh, có dấu hay không dấu đều được.",
     "closeSearch": "Đóng tìm kiếm",
     "pieces": "{count, plural, other {# mảnh}}",
@@ -752,17 +760,18 @@
     },
     "viewsShort": {
       "threeQuarter": "¾",
-      "front": "T",
-      "side": "B",
-      "back": "S"
+      "front": "Trước",
+      "side": "Bên",
+      "back": "Sau"
     },
-    "rotate": "Tự xoay",
-    "pauseRotate": "Dừng xoay",
+    "rotate": "Tự xoay mô hình",
+    "pauseRotate": "Dừng tự xoay",
     "reset": "Đặt lại",
     "resetLabel": "Đặt lại góc nhìn và các hệ",
-    "explode": "Tách cấu trúc",
+    "explode": "Tách các lớp cơ thể",
+    "explodeShort": "Tách lớp",
     "assembled": "Nguyên khối",
-    "everyPiece": "Từng mảnh",
+    "everyPiece": "Tách hoàn toàn",
     "caption": {
       "assembled": "Người trưởng thành · Nam",
       "separated": "Các cấu trúc tách rời",
@@ -771,8 +780,9 @@
     },
     "hintOrbit": "Kéo để xoay",
     "hintPan": "Kéo để di chuyển",
-    "hintZoom": "Chụm hoặc cuộn để phóng to",
-    "hintTap": "Chạm để xem",
+    "hintZoom": "Cuộn hoặc chụm để phóng to",
+    "hintTap": "Chạm để xem cấu trúc",
+    "hintTouch": "Kéo xoay • Chụm phóng to • Chạm xem cấu trúc",
     "credits": "Nguồn & ghi công",
     "catalogLoading": "Đang tải danh mục giải phẫu…",
     "loading": "Đang tải mô hình cơ thể 3D…",
@@ -857,10 +867,11 @@
       "appHeading": "Trình xem",
       "appText": "Trình xem 3D được chuyển thể từ Human Atlas của ashemag, phát hành theo giấy phép MIT.",
       "appLink": "Mã nguồn Human Atlas",
-      "translation": "Tên tiếng Việt do Sciencepedia bổ sung dần; cấu trúc chưa có bản dịch hiển thị tên tiếng Anh gốc."
+      "translation": "Tên tiếng Việt được dịch có hỗ trợ của AI theo danh pháp giải phẫu và chưa qua duyệt chuyên môn; tên tiếng Anh gốc luôn hiện kèm để đối chiếu."
     },
     "page": {
       "heading": "Về Bản đồ cơ thể người",
+      "cta": "Khám phá bản đồ cơ thể 3D",
       "intro": "Bản đồ này tách mô hình giải phẫu tham chiếu BodyParts3D thành 2.234 mảnh chọn được riêng lẻ, gom theo 15 hệ. Bạn có thể xoay, phóng to, bật tắt từng hệ, tìm một cấu trúc theo tên, xem riêng nó, hoặc tách toàn bộ cơ thể ra thành từng mảnh.",
       "systemsHeading": "Các hệ trong mô hình",
       "linkHint": "Có thể dẫn thẳng tới một cấu trúc bằng đường dẫn, ví dụ",

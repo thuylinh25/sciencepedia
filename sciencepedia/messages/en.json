@@ -624,9 +624,16 @@
   },
   "explore": {
     "title": "Interactive exploration",
-    "subtitle": "Experience science through 3D models, sky maps and a journey across scales, from the observable universe down to our own planet.",
-    "credit": "Images",
+    "subtitle": "Experience science through 3D models and interactive data — from the scale of the universe, down to our own planet, and into the human body.",
+    "credit": "Image",
     "cards": {
+      "humanAtlas": {
+        "title": "3D Human Body Atlas",
+        "body": "Explore human anatomy through an interactive 3D model.",
+        "cta": "Explore",
+        "metaA": "{pieces, number} model pieces",
+        "metaB": "{systems} body systems"
+      },
       "solarSystem": {
         "title": "The Solar System in 3D",
         "body": "Watch the planets move along their real orbits in three dimensions.",
@@ -730,13 +737,14 @@
     "presetOrgans": "Organs",
     "showOnly": "Show only {name}",
     "toggleSystem": "Show {name}",
-    "visibleCount": "{count} pieces visible",
+    "visibleCount": "{count} / {total} pieces visible",
     "hideAll": "Hide all",
     "openSystems": "Open system layers",
     "closeSystems": "Close system layers",
     "search": "Find a structure",
+    "searchButton": "Find bones, muscles, organs…",
     "searchLabel": "Search named anatomical structures",
-    "searchPlaceholder": "Heart, femur, cranial nerve…",
+    "searchPlaceholder": "Find bones, muscles, organs…",
     "searchEmpty": "No structures match your search.",
     "searchNoteQuery": "Showing up to 80 matches. Refine your search to find smaller structures.",
     "searchNoteEmpty": "Start with a major organ, or search every named structure.",
@@ -752,17 +760,18 @@
     },
     "viewsShort": {
       "threeQuarter": "¾",
-      "front": "F",
-      "side": "S",
-      "back": "B"
+      "front": "Front",
+      "side": "Side",
+      "back": "Back"
     },
-    "rotate": "Rotate body",
-    "pauseRotate": "Pause rotation",
+    "rotate": "Auto-rotate model",
+    "pauseRotate": "Stop auto-rotate",
     "reset": "Reset",
     "resetLabel": "Reset view and layers",
-    "explode": "Explode anatomy",
+    "explode": "Separate body layers",
+    "explodeShort": "Separate",
     "assembled": "Assembled",
-    "everyPiece": "Every piece",
+    "everyPiece": "Fully separated",
     "caption": {
       "assembled": "Adult human · Male",
       "separated": "Separated structures",
@@ -771,8 +780,9 @@
     },
     "hintOrbit": "Drag to orbit",
     "hintPan": "Drag to pan",
-    "hintZoom": "Pinch or scroll to zoom",
-    "hintTap": "Tap to inspect",
+    "hintZoom": "Scroll or pinch to zoom",
+    "hintTap": "Tap to inspect a structure",
+    "hintTouch": "Drag to orbit • Pinch to zoom • Tap a structure",
     "credits": "Source & credits",
     "catalogLoading": "Loading the anatomy catalogue…",
     "loading": "Loading the 3D body model…",
@@ -857,10 +867,11 @@
       "appHeading": "Viewer",
       "appText": "The 3D viewer is adapted from Human Atlas by ashemag, released under the MIT License.",
       "appLink": "Human Atlas source code",
-      "translation": "Vietnamese names are being added gradually; structures without a translation show the original English name."
+      "translation": "Vietnamese names are AI-assisted translations following anatomical nomenclature and have not been expert-reviewed; the original English name is always shown alongside."
     },
     "page": {
       "heading": "About the Human Body Atlas",
+      "cta": "Explore the 3D body atlas",
       "intro": "This atlas takes the BodyParts3D reference anatomy apart into 2,234 individually selectable pieces grouped into 15 systems. Orbit, zoom, toggle systems, search a structure by name, isolate it, or explode the whole body into its parts.",
       "systemsHeading": "Systems in the model",
       "linkHint": "You can link straight to a structure, for example",

@@ -387,12 +387,29 @@ từng cần. Luật GET/HEAD mọi origin được đặt trên bucket ngày 20
 báo "Không thể tải mô hình 3D" trong khi ảnh vẫn hiện bình thường: kiểm header
 `Access-Control-Allow-Origin` trước khi đọc code.
 
-### Tên tiếng Việt khoá theo mã FMA, và cố ý chưa đủ
+### Tên tiếng Việt: bảng duyệt tay trước, bảng ghép thuật ngữ sau
 
-Mã FMA là định danh chung của khái niệm lẫn từng mảnh, nên một mục dịch được cả kết quả
-tìm kiếm lẫn mảnh bị chạm. Mã nội bộ không bao giờ thay bằng chữ. ~100/3.432 khái niệm có
-tên Việt; phần còn lại hiện tên gốc tiếng Anh. Dịch máy hàng loạt thuật ngữ giải phẫu là
-cách nhanh nhất để in ra tên sai với giọng chắc chắn — bổ sung tay trong `names-vi.ts`.
+Mã FMA là định danh chung của khái niệm lẫn từng mảnh; mã nội bộ không bao giờ thay bằng
+chữ. Hai lớp: `VI_NAMES` (`names-vi.ts`, ~100 mục duyệt tay, luôn thắng) rồi
+`translateAnatomy()` (`terms-vi.ts`) — dịch ~1.400 cụm gốc một lần rồi ghép theo khuôn
+"X of Y", left/right, số thứ tự, phủ đủ 3.432 tên. Ghép chứ không dịch từng tên: sửa một
+cụm là đúng ở mọi tên chứa nó, và cụm nào thiếu thì trả tên gốc chứ không ghép dở.
+Bảng ghép do AI dịch, CHƯA duyệt chuyên môn — cái giá là UI luôn hiện tên tiếng Anh ngay
+dưới tên Việt, và phần ghi công nói rõ. Đừng bỏ dòng tên gốc "cho gọn".
+
+### Camera khung theo hộp bao hệ đang bật, trong vùng không bị bảng che
+
+Khoảng cách cố định (4 m) làm hệ nhỏ (tiêu hoá, tim) còn một góc khung. `fit()` lấy
+Box3 các hệ đang bật, chiếu lên trục màn hình của camera, giải khoảng cách từ FOV sao
+cho hộp chiếm ~72% chiều cao VÙNG TRỐNG — đo từ DOM các bảng `data-atlas-avoid`, lệch
+tâm thì bù bằng view offset. Chỉ khung lại khi tập hệ đổi, đặt lại, đổi góc nhìn,
+resize — không khung lại khi chọn mảnh (lúc đó người đọc vừa tự zoom).
+
+### Sửa phân loại hệ lúc nạp, không sửa tệp trên R2
+
+`atlas.json` xếp 5 khoang não thất vào hệ Tim (khớp chữ "ventricle"). `correctSystems()`
+(`anatomy.ts`) trả chúng về hệ thần kinh theo mã FMA. Không dựng lại dữ liệu trên R2:
+tệp có dấu phiên bản, dựng lại là 33 MB tải lại cho mọi người.
 
 ### CTA "Đọc thêm" chỉ hiện khi bài còn PUBLISHED
 

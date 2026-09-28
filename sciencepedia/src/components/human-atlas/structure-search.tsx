@@ -135,7 +135,7 @@ export function StructureSearch({
         )}
         {results.map((concept, i) => {
           const name = displayName(locale, concept.id, concept.name);
-          const translated = locale === "vi" && hasViName(concept.id);
+          const translated = locale === "vi" && hasViName(concept.id, concept.name);
           return (
             <li
               key={concept.id}
@@ -154,7 +154,7 @@ export function StructureSearch({
               <span className="min-w-0 flex-1">
                 <span className="block truncate">{name}</span>
                 {translated && (
-                  <span className="block truncate text-xs text-muted-foreground">
+                  <span lang="en" className="block truncate text-xs text-muted-foreground">
                     {concept.name}
                   </span>
                 )}

@@ -17,6 +17,8 @@ type Props = {
   counts: Record<SystemId, number>;
   visible: SystemId[];
   visibleCount: number;
+  /** Số mảnh của bộ dữ liệu đang nạp — mẫu số của bộ đếm. */
+  totalCount: number;
   locale: string;
   presets: { all: SystemId[]; skeleton: SystemId[]; organs: SystemId[] };
   onClose: () => void;
@@ -42,6 +44,7 @@ export function SystemsPanel({
   counts,
   visible,
   visibleCount,
+  totalCount,
   locale,
   presets,
   onClose,
@@ -53,6 +56,8 @@ export function SystemsPanel({
   return (
     <section
       id="atlas-systems"
+      // Cảnh 3D đo bảng này để đặt mô hình vào phần khung còn trống bên phải nó.
+      data-atlas-avoid="left"
       aria-label={t("systems")}
       className={cn(
         PANEL,
@@ -137,8 +142,12 @@ export function SystemsPanel({
       </ul>
 
       <div className="flex min-h-11 items-center justify-between gap-2 border-t text-xs text-muted-foreground">
-        <span className="tabular-nums">
-          {t("visibleCount", { count: visibleCount.toLocaleString(locale) })}
+        {/* aria-live: bật tắt một hệ thì trình đọc màn hình đọc lại con số. */}
+        <span className="tabular-nums" aria-live="polite">
+          {t("visibleCount", {
+            count: visibleCount.toLocaleString(locale),
+            total: totalCount.toLocaleString(locale),
+          })}
         </span>
         <Button variant="ghost" size="sm" onClick={() => onShowOnly([])}>
           {t("hideAll")}

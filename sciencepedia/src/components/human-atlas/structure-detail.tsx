@@ -62,7 +62,9 @@ export function StructureDetail({
   const system = first?.system;
   const explainedKey = EXPLAINED[concept.name.toLowerCase()];
   const name = displayName(locale, concept.id, concept.name);
-  const translated = locale === "vi" && hasViName(concept.id);
+  // Tên gốc chỉ hiện khi tên chính thật sự là bản dịch — không lặp cùng một chữ hai lần.
+  const english = concept.name.charAt(0).toUpperCase() + concept.name.slice(1);
+  const translated = locale === "vi" && hasViName(concept.id, concept.name) && name !== english;
 
   useEffect(() => {
     // Không cướp focus khi bảng mở từ deep link lúc tải trang.
@@ -109,8 +111,9 @@ export function StructureDetail({
             {name}
           </h2>
           {translated && (
-            <p className="mt-0.5 text-xs text-muted-foreground">
-              {t("detail.englishName")}: {concept.name}
+            <p lang="en" className="mt-1 text-sm leading-snug text-muted-foreground">
+              <span className="sr-only">{t("detail.englishName")}: </span>
+              {english}
             </p>
           )}
         </div>
@@ -138,6 +141,19 @@ export function StructureDetail({
             {t("detail.systemNote")}
           </p>
         )}
+
+        {/* "Xem riêng" ngay dưới mô tả, trên phần mã tham chiếu: đó là việc
+            người đọc muốn làm tiếp sau khi biết mình vừa chạm vào gì. Ở đáy
+            bảng nó bị đọc như nút phụ và ít ai tìm thấy. */}
+        <Button
+          className="h-auto min-h-10 w-full shrink-0 py-2 whitespace-normal"
+          variant={isolate ? "secondary" : "outline"}
+          onClick={onIsolate}
+          aria-pressed={isolate}
+        >
+          <Focus aria-hidden />
+          {isolate ? t("detail.showSurrounding") : t("detail.isolate")}
+        </Button>
 
         {articles.length > 0 && (
           <div className="rounded-xl border border-accent/25 bg-accent/[0.06] p-3">
@@ -211,13 +227,7 @@ export function StructureDetail({
         </a>
       </div>
 
-      <div className="flex shrink-0 flex-col gap-1 border-t pt-3 atlas-phone:flex-row atlas-phone:gap-2">
-        <Button
-          className="atlas-phone:h-auto atlas-phone:min-h-10 atlas-phone:min-w-0 atlas-phone:flex-1 atlas-phone:py-2 atlas-phone:whitespace-normal"
-          variant={isolate ? "secondary" : "outline"} onClick={onIsolate} aria-pressed={isolate}>
-          <Focus aria-hidden />
-          {isolate ? t("detail.showSurrounding") : t("detail.isolate")}
-        </Button>
+      <div className="flex shrink-0 justify-center border-t pt-2">
         <Button variant="ghost" size="sm" className="atlas-phone:h-10" onClick={onClear}>
           {t("detail.clear")}
         </Button>

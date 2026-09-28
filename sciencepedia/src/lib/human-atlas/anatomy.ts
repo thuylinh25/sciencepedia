@@ -35,6 +35,13 @@ export const SYSTEM_IDS = [
 export type SystemId = (typeof SYSTEM_IDS)[number];
 
 /**
+ * Số mảnh của bộ dữ liệu đang phát (`HUMAN_ATLAS_DATA_VERSION`), để chữ có
+ * số ngay trong HTML đầu tiên — trước khi `atlas.json` tải về. Dựng lại dữ
+ * liệu thì sửa cả con số này.
+ */
+export const PIECE_COUNT = 2234;
+
+/**
  * Màu vật liệu của từng hệ, giữ nguyên bảng màu của bản gốc.
  *
  * Đây là màu của MÔ HÌNH, không phải màu giao diện, nên không đi qua token
@@ -163,4 +170,30 @@ export interface SceneState {
   reset: number;
   /** Tăng lên để camera bay tới cấu trúc đang chọn (deep link, chọn từ tìm kiếm). */
   focus: number;
+}
+
+/**
+ * Mảnh bị bộ dữ liệu gốc xếp nhầm hệ, khoá theo mã FMA → hệ đúng.
+ *
+ * Năm khoang não thất nằm trong hệ "cardiac" của `atlas.json` — bộ phân loại
+ * gốc khớp chữ "ventricle" mà không phân biệt não thất với tâm thất. Hậu quả
+ * không chỉ là sai tên hệ: bật riêng "Tim" thì hiện thêm mấy mảnh lơ lửng
+ * trong hộp sọ, và camera khung theo hộp bao từ ngực tới đỉnh đầu nên quả tim
+ * còn bằng một góc nhỏ. Sửa ở đây (lúc nạp) chứ không sửa tệp trên R2: tệp đó
+ * có dấu phiên bản, dựng lại là phải tải lại 33 MB cho mọi người.
+ */
+const SYSTEM_CORRECTIONS: Record<string, SystemId> = {
+  FMA78454: "nervous", // Third ventricle
+  FMA78469: "nervous", // Fourth ventricle
+  FMA75351: "nervous", // Interventricular foramen
+  FMA78450: "nervous", // Left lateral ventricle
+  FMA78449: "nervous", // Right lateral ventricle
+};
+
+export function correctSystems(atlas: Atlas): Atlas {
+  for (const part of atlas.parts) {
+    const fixed = SYSTEM_CORRECTIONS[part.conceptId];
+    if (fixed) part.system = fixed;
+  }
+  return atlas;
 }

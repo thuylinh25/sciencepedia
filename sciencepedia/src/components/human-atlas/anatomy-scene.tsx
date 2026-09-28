@@ -105,6 +105,7 @@ export default function AnatomyScene({
     // lượt ấy là bị ghi đè ngay. Chờ khung có kích thước thật rồi mới bay.
     let sized = false;
     let lastIsolate = "";
+    let lastVisibleKey = "";
     let layoutKey = "";
     let amount = 0;
     let lastState: SceneState | null = null;
@@ -407,13 +408,232 @@ export default function AnatomyScene({
 
     // ------------------------------------------------------------ camera
     const fovTan = () => 2 * Math.tan(T.MathUtils.degToRad(camera.fov / 2));
-    const fit = (view: string, extent = 0) => {
+
+    const viewDirection = (view: string) =>
+      view === "front"
+        ? new T.Vector3(0, 0.02, 1).normalize()
+        : view === "back"
+          ? new T.Vector3(0, 0.02, -1).normalize()
+          : view === "side"
+            ? new T.Vector3(1, 0.02, 0).normalize()
+            : new T.Vector3(0.35, 0.06, 1).normalize();
+
+    /**
+     * Phần khung còn nhìn thấy mô hình: cả khung trừ các bảng nổi đánh dấu
+     * `data-atlas-avoid="top|bottom|left|right"` (tiêu đề, ô tìm, danh sách hệ,
+     * cột camera, thanh tách lớp). Đo DOM thật thay vì trừ số cứng, để bảng đổi
+     * cỡ theo breakpoint thì khung tự theo.
+     */
+    const usableRect = () => {
       const w = el.clientWidth;
       const h = el.clientHeight;
+      const host = el.getBoundingClientRect();
+      let left = 0;
+      let right = w;
+      let top = 0;
+      let bottom = h;
+      root.querySelectorAll<HTMLElement>("[data-atlas-avoid]").forEach((node) => {
+        const r = node.getBoundingClientRect();
+        if (r.width === 0 || r.height === 0) return; // đang ẩn (display: none)
+        const side = node.dataset.atlasAvoid;
+        if (side === "top") top = Math.max(top, r.bottom - host.top);
+        else if (side === "bottom") bottom = Math.min(bottom, r.top - host.top);
+        // Bảng dọc rộng quá nửa khung là lớp nổi tạm (danh sách hệ trên điện
+        // thoại) — né nó thì mô hình co lại mỗi lần mở danh sách.
+        else if (r.width > w * 0.5) return;
+        else if (side === "left") left = Math.max(left, r.right - host.left);
+        else if (side === "right") right = Math.min(right, r.left - host.left);
+      });
+      // Khung quá chật (điện thoại xoay ngang): bỏ né theo chiều đó, dùng cả khung.
+      if (right - left < w * 0.35) [left, right] = [0, w];
+      if (bottom - top < h * 0.35) [top, bottom] = [0, h];
+      return { w, h, left, right, top, bottom };
+    };
+
+    /** Hộp bao (vị trí nguyên khối) của các hệ đang bật; không hệ nào thì cả cơ thể. */
+    const visibleBox = () => {
+      const on = new Set(latest.current.visible);
+      const box = new T.Box3();
+      parts.forEach((p, i) => {
+        if (on.has(p.system)) box.union(bounds[i]);
+      });
+      if (box.isEmpty()) bounds.forEach((b) => box.union(b));
+      return box;
+    };
+
+    /** Đệm mỗi phía của vùng trống: hộp bao chiếm ~72% chiều cao vùng đó. */
+    const FRAME_PADDING = 0.14;
+    const corner = new T.Vector3();
+
+    /**
+     * Đặt `box` vào giữa vùng trống, nhìn theo `direction`. Chiếu 8 góc hộp lên
+     * hai trục màn hình của camera để lấy bề rộng/cao THẬT theo góc nhìn (hộp
+     * nhìn nghiêng rộng hơn nhìn thẳng), rồi giải khoảng cách từ FOV dọc và tỉ
+     * lệ khung. Tâm vùng trống lệch khỏi tâm canvas thì bù bằng view offset
+     * của camera — xoay vẫn quanh cấu trúc, không quanh tâm canvas.
+     */
+    const frameBox = (box: T.Box3, direction: T.Vector3, rect: ReturnType<typeof usableRect>) => {
+      const worldUp =
+        Math.abs(direction.y) > 0.99 ? new T.Vector3(0, 0, 1) : new T.Vector3(0, 1, 0);
+      const right = new T.Vector3().crossVectors(worldUp, direction).normalize();
+      const up = new T.Vector3().crossVectors(direction, right).normalize();
+      const center = box.getCenter(new T.Vector3());
+      let minR = Infinity;
+      let maxR = -Infinity;
+      let minU = Infinity;
+      let maxU = -Infinity;
+      let nearest = -Infinity;
+      for (let c = 0; c < 8; c++) {
+        corner
+          .set(
+            c & 1 ? box.max.x : box.min.x,
+            c & 2 ? box.max.y : box.min.y,
+            c & 4 ? box.max.z : box.min.z,
+          )
+          .sub(center);
+        const r = corner.dot(right);
+        const u = corner.dot(up);
+        minR = Math.min(minR, r);
+        maxR = Math.max(maxR, r);
+        minU = Math.min(minU, u);
+        maxU = Math.max(maxU, u);
+        nearest = Math.max(nearest, corner.dot(direction));
+      }
+      const target = center
+        .clone()
+        .addScaledVector(right, (minR + maxR) / 2)
+        .addScaledVector(up, (minU + maxU) / 2);
+      const tanHalf = fovTan() / 2;
+      const fillY = ((rect.bottom - rect.top) * (1 - 2 * FRAME_PADDING)) / rect.h;
+      const fillX = ((rect.right - rect.left) * (1 - 2 * FRAME_PADDING)) / rect.w;
+      // Tính tới MẶT GẦN của hộp (+ nearest): mặt ấy hiện to nhất trên màn.
+      const distance =
+        Math.max(
+          (maxU - minU) / 2 / (tanHalf * fillY),
+          (maxR - minR) / 2 / (tanHalf * camera.aspect * fillX),
+          0.12,
+        ) + Math.max(0, nearest);
+      return {
+        target,
+        distance,
+        offsetX: rect.w / 2 - (rect.left + rect.right) / 2,
+        offsetY: rect.h / 2 - (rect.top + rect.bottom) / 2,
+      };
+    };
+
+    // View offset hiện tại — tween nội suy nó cùng vị trí camera.
+    let offsetX = 0;
+    let offsetY = 0;
+    const applyOffset = (x: number, y: number) => {
+      offsetX = x;
+      offsetY = y;
+      const w = el.clientWidth;
+      const h = el.clientHeight;
+      if (Math.abs(x) < 0.5 && Math.abs(y) < 0.5) camera.clearViewOffset();
+      else camera.setViewOffset(w, h, x, y, w, h);
+    };
+
+    /**
+     * Chuyển camera ngắn (320 ms, ease-out) giữa hai khung. Nội suy HƯỚNG nhìn
+     * bằng quaternion chứ không nội suy thẳng vị trí: đi từ nhìn trước sang
+     * nhìn sau theo đường thẳng sẽ xuyên qua tâm mô hình.
+     */
+    type Tween = {
+      start: number;
+      fromTarget: T.Vector3;
+      toTarget: T.Vector3;
+      fromDir: T.Vector3;
+      turn: T.Quaternion;
+      fromDistance: number;
+      toDistance: number;
+      fromOffset: [number, number];
+      toOffset: [number, number];
+    };
+    let tween: Tween | null = null;
+    const TWEEN_MS = 320;
+    const identity = new T.Quaternion();
+    const step = new T.Quaternion();
+
+    const place = (
+      target: T.Vector3,
+      direction: T.Vector3,
+      distance: number,
+      offset: [number, number],
+      animate: boolean,
+    ) => {
+      if (!animate) {
+        tween = null;
+        applyOffset(offset[0], offset[1]);
+        controls.target.copy(target);
+        camera.position.copy(target).addScaledVector(direction, distance);
+        controls.update();
+        dirty = true;
+        return;
+      }
+      const fromDir = camera.position.clone().sub(controls.target);
+      const fromDistance = fromDir.length();
+      fromDir.normalize();
+      tween = {
+        start: performance.now(),
+        fromTarget: controls.target.clone(),
+        toTarget: target.clone(),
+        fromDir,
+        turn: new T.Quaternion().setFromUnitVectors(fromDir, direction.clone().normalize()),
+        fromDistance,
+        toDistance: distance,
+        fromOffset: [offsetX, offsetY],
+        toOffset: offset,
+      };
+      dirty = true;
+    };
+
+    const runTween = (now: number) => {
+      if (!tween) return;
+      const raw = Math.min(1, (now - tween.start) / TWEEN_MS);
+      const k = 1 - (1 - raw) ** 3;
+      step.slerpQuaternions(identity, tween.turn, k);
+      controls.target.lerpVectors(tween.fromTarget, tween.toTarget, k);
+      camera.position
+        .copy(tween.fromDir)
+        .applyQuaternion(step)
+        .multiplyScalar(T.MathUtils.lerp(tween.fromDistance, tween.toDistance, k))
+        .add(controls.target);
+      applyOffset(
+        T.MathUtils.lerp(tween.fromOffset[0], tween.toOffset[0], k),
+        T.MathUtils.lerp(tween.fromOffset[1], tween.toOffset[1], k),
+      );
+      if (raw >= 1) tween = null;
+      dirty = true;
+    };
+    // Người đọc tự kéo/cuộn thì dừng tween ngay — không giằng camera với họ.
+    controls.addEventListener("start", () => {
+      tween = null;
+    });
+
+    /**
+     * Khung cho trạng thái hiện tại. Nguyên khối (`extent` 0): vừa hộp bao các
+     * hệ đang bật trong vùng trống. Tách hẳn (`extent` 1): khoảng cách của lưới
+     * xếp mảnh như bản gốc. Ở giữa thì nội suy — thanh "Tách các lớp" kéo tới
+     * đâu camera lùi tới đó, không nhảy.
+     *
+     * KHÔNG dùng khoảng cách cố định: bản cũ đặt 4 m cho mọi tập hệ, nên chỉ
+     * bật hệ tiêu hoá (cao ~0,6 m) thì mô hình còn bằng một phần ba khung.
+     *
+     * `keepDirection`: giữ góc người đọc đang xoay tới (khi bật/tắt hệ), chỉ
+     * đổi tâm và khoảng cách. Nút góc nhìn và "Đặt lại" thì về hướng chuẩn.
+     */
+    const fit = (view: string, extent = 0, animate = false, keepDirection = false) => {
+      const w = el.clientWidth;
+      const h = el.clientHeight;
+      if (w === 0 || h === 0) return;
       const mobile = w < 768;
-      const normalDistance = mobile
-        ? Math.max(4.5, (1.8 * h) / Math.max(160, h - 350) / fovTan())
-        : 4;
+      if (extent > 0.8) view = "front";
+      const direction =
+        keepDirection && extent < 0.05
+          ? camera.position.clone().sub(controls.target).normalize()
+          : viewDirection(view);
+      const frame = frameBox(visibleBox(), direction, usableRect());
+
       const reservedHeight = mobile ? 350 : 270;
       const availableAspect = Math.max(
         0.35,
@@ -423,24 +643,19 @@ export default function AnatomyScene({
         (Math.max(packingHeight, packingWidth / availableAspect) / fovTan()) *
         (h / Math.max(160, h - reservedHeight)) *
         1.08;
-      const distance = T.MathUtils.lerp(normalDistance, Math.max(0.2, atlasDistance), extent);
-      if (extent > 0.8) view = "front";
-      const direction =
-        view === "front"
-          ? new T.Vector3(0, 0.02, 1)
-          : view === "back"
-            ? new T.Vector3(0, 0.02, -1)
-            : view === "side"
-              ? new T.Vector3(1, 0.02, 0)
-              : new T.Vector3(0.35, 0.06, 1).normalize();
-      controls.target.set(
-        extent > 0.1 && w > 767 ? -packingWidth * 0.12 : 0,
-        extent > 0.1 || mobile ? 0.85 : 0.68,
-        0,
+      const explodedTarget = new T.Vector3(w > 767 ? -packingWidth * 0.12 : 0, 0.85, 0);
+
+      const distance = T.MathUtils.lerp(frame.distance, Math.max(0.2, atlasDistance), extent);
+      // Trần zoom ra: lùi được gấp 4 khung vừa — đủ để thấy toàn cảnh, chưa tới
+      // mức mô hình thành một chấm giữa màn.
+      controls.maxDistance = Math.max(6, distance * 4);
+      place(
+        frame.target.clone().lerp(explodedTarget, extent),
+        direction,
+        distance,
+        [frame.offsetX * (1 - extent), frame.offsetY * (1 - extent)],
+        animate,
       );
-      camera.position.copy(controls.target).addScaledVector(direction, distance);
-      controls.update();
-      dirty = true;
     };
 
     /** Bay tới hộp bao của những mảnh đang chọn, giữ nguyên phần còn lại của cơ thể. */
@@ -462,6 +677,7 @@ export default function AnatomyScene({
         Math.max(0.35, (Math.max(size.x, size.y, size.z) / fovTan()) * 2.6),
       );
       const direction = camera.position.clone().sub(controls.target).normalize();
+      tween = null;
       controls.target.copy(center);
       camera.position.copy(center).addScaledVector(direction, distance);
       controls.update();
@@ -650,10 +866,24 @@ export default function AnatomyScene({
       }
 
       if (s.view !== lastView || s.reset !== lastReset) {
-        fit(s.view, amount);
+        // Lượt đầu (chưa có góc nhìn nào) đặt thẳng; về sau thì chuyển mượt.
+        fit(s.view, amount, sized && lastView !== "");
         lastView = s.view;
         lastReset = s.reset;
+        lastVisibleKey = s.visible.join(",");
       }
+      // Tập hệ đang bật đổi (chọn một hệ, bật/tắt, "Tất cả") → khung lại theo hộp
+      // bao mới, giữ góc xoay hiện tại. Chỉ ở nguyên khối, ngoài "xem riêng".
+      // Không khung lại khi chỉ chọn một mảnh hay mở bảng chi tiết: đó là lúc
+      // người đọc vừa tự zoom tới chỗ mình muốn.
+      const visibleKey = s.visible.join(",");
+      if (visibleKey !== lastVisibleKey) {
+        lastVisibleKey = visibleKey;
+        if (sized && !s.isolate && amount < 0.05 && s.visible.length > 0) {
+          fit(s.view, amount, true, true);
+        }
+      }
+      runTween(performance.now());
       if (moving && !s.isolate) fit(amount > 0.5 ? "front" : s.view, Math.max(0, (amount - 0.3) / 0.7));
 
       if (sized && s.focus !== lastFocus) {
@@ -683,28 +913,26 @@ export default function AnatomyScene({
             const h = el.clientHeight;
             const mobile = w < 768;
             const landscape = w > h && h <= 600;
-            let left = 20;
-            let right = w - 20;
-            let top = mobile ? 120 : 90;
-            let bottom = h - 150;
+            // Cùng vùng trống với khung toàn thân (đã trừ tiêu đề, danh sách hệ,
+            // cột camera, thanh dưới), rồi trừ thêm bảng chi tiết. Bản cũ viết
+            // cứng `left = 25` cho màn ≤ 1100 px, nên ở 1024 px cấu trúc "xem
+            // riêng" nằm ngay sau danh sách hệ.
+            const rect = usableRect();
+            const top = rect.top;
+            let { left, right, bottom } = rect;
             if (s.inspectorOpen) {
               const hostRect = el.getBoundingClientRect();
               const sheet = root.querySelector("[data-atlas-sheet]")?.getBoundingClientRect();
-              if (landscape) {
-                right = sheet ? sheet.left - hostRect.left - 16 : w - 335;
-                top = 70;
-                bottom = h - 110;
-              } else if (mobile) {
-                top = 110;
-                bottom = (sheet ? sheet.top - hostRect.top : h * 0.55) - 16;
+              if (mobile && !landscape) {
+                bottom = Math.min(bottom, (sheet ? sheet.top - hostRect.top : h * 0.55) - 16);
               } else {
-                right = sheet ? sheet.left - hostRect.left - 16 : w - 370;
-                left = w > 1100 ? 285 : 25;
+                right = Math.min(right, (sheet ? sheet.left - hostRect.left : w - 370) - 16);
               }
+              // Hai bảng kẹp quá chặt (màn hẹp): bỏ né danh sách hệ, giữ né bảng chi tiết.
+              if (right - left < 200) left = 16;
             }
             const availableWidth = Math.max(150, right - left);
             const availableHeight = Math.max(40, bottom - top);
-            camera.setViewOffset(w, h, w / 2 - (left + right) / 2, h / 2 - (top + bottom) / 2, w, h);
             const distance = Math.max(
               0.07,
               (Math.max(
@@ -716,16 +944,16 @@ export default function AnatomyScene({
                 1.35,
             );
             controls.maxDistance = Math.max(40, distance * 2);
-            controls.target.copy(center);
-            camera.position
-              .copy(center)
-              .add(new T.Vector3(0.2, 0.1, 1).normalize().multiplyScalar(distance));
-            controls.update();
-            dirty = true;
+            place(
+              center,
+              new T.Vector3(0.2, 0.1, 1).normalize(),
+              distance,
+              [w / 2 - (left + right) / 2, h / 2 - (top + bottom) / 2],
+              sized && !moving,
+            );
           }
         } else if (lastIsolate) {
-          camera.clearViewOffset();
-          fit(s.view, amount);
+          fit(s.view, amount, true);
         }
         lastIsolate = isolateKey;
       }

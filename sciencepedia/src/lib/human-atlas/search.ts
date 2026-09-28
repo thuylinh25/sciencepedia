@@ -1,6 +1,6 @@
 import type { Atlas, Concept } from "./anatomy";
 import { SUGGESTED } from "./anatomy";
-import { VI_NAMES } from "./names-vi";
+import { viName } from "./names-vi";
 
 /**
  * Tìm kiếm và deep link trên danh mục khái niệm của atlas.
@@ -42,7 +42,7 @@ export function buildSearchIndex(atlas: Atlas): SearchIndex {
 
   for (const concept of atlas.concepts) {
     byId.set(concept.id.toLowerCase(), concept);
-    const vi = VI_NAMES[concept.id];
+    const vi = viName(concept.id, concept.name);
     haystack.push(fold(`${concept.name} ${vi ?? ""} ${concept.id}`));
   }
 
@@ -60,7 +60,7 @@ export function buildSearchIndex(atlas: Atlas): SearchIndex {
     }
   }
   for (const concept of atlas.concepts) {
-    const vi = VI_NAMES[concept.id];
+    const vi = viName(concept.id, concept.name);
     if (!vi) continue;
     const slug = structureSlug(vi);
     if (!bySlug.has(slug)) bySlug.set(slug, concept);
