@@ -28,6 +28,7 @@ npx tsx --env-file-if-exists=.env scripts/recrop-cover.ts --slug <s> --top <px> 
 npx tsx --env-file-if-exists=.env scripts/strip-draft-artifacts.ts  # gỡ dấu 【…】 của công cụ AI khỏi bài (cần --write)
 
 npx tsx --env-file-if-exists=.env scripts/upload-human-atlas.ts --source <human-atlas/public/models>  # dữ liệu giải phẫu lên R2 (cần --write), rồi sửa HUMAN_ATLAS_DATA_VERSION
+npx tsx --env-file-if-exists=.env scripts/anatomy-enrich.ts  # FMA → data/anatomy/fma-structures.json (chạy khô; --write ghi, --upload đẩy R2 rồi sửa ANATOMY_DATA_FILE)
 
 npm run publish:check # rà điều kiện xuất bản toàn kho (chỉ đọc)
 npm run publish       # đổi state sang PUBLISHED — đường ghi DUY NHẤT của máy, có gate (form /admin đi thẳng, có chủ ý — docs/architecture.md)

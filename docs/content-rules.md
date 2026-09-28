@@ -676,3 +676,32 @@ tức vốn thấy trọn ảnh đứng), nên nay trang bài cũng chỉ còn b
 giữ nguyên trên R2 — script in URL cũ để hoàn nguyên được.
 
 Chọn ảnh bìa mới thì ưu tiên ảnh ngang ngay từ đầu.
+
+## Bản đồ cơ thể người: mỗi cấu trúc chỉ nói điều nguồn nói
+
+Chốt 2026-09-28, khi thêm dữ liệu FMA cho 3.432 khái niệm của `/human-atlas`.
+
+**Mức làm giàu, không chặn xuất bản.** 0: mã FMA, tên Anh, hệ. 1: tên Latin, đồng nghĩa,
+cha, TA98 — chép từ FMA, không một chữ do AI viết. 2+: tóm tắt, vị trí, chức năng, quan
+hệ, cấp máu, thần kinh, lâm sàng — CHƯA có. Cấu trúc ở mức 0 vẫn hiện; thiếu mức cao
+không phải lỗi.
+
+**Mức 2+ đi qua gate accuracy như bài viết.** AI được chuyển dữ kiện đã có nguồn thành
+câu tiếng Việt, không được thêm dữ kiện. Nguồn không nói thì để trống — không lấp bằng
+"thường", "có thể", "có lẽ". Trường của mức 2+ chưa khai báo trong schema
+(`structures.ts`) cho tới khi có pipeline biên tập của chúng: một ô trống trong schema là
+lời mời điền bừa.
+
+**Mô tả của hệ không được trông như mô tả của cấu trúc.** Cấu trúc chưa có mô tả riêng
+thì hiện mô tả hệ trong khung riêng, tiêu đề "Tổng quan · <hệ>", kèm câu "chưa có mô tả
+riêng". Đặt thẳng đoạn "cơ xương tạo ra cử động…" dưới tên "Phần ức sườn cơ ngực lớn
+trái" là để người đọc tưởng đó là mô tả của đúng phần cơ ấy — cùng họ với trích dẫn
+resolve đúng bài mà không nói điều đang viết.
+
+**Tên Việt dịch ghép mang nhãn.** Tên duyệt tay (`VI_NAMES`) và tên ghép từ cụm
+(`translateAnatomy`) không được trông giống nhau: loại sau hiện "Tên Việt dịch ghép,
+chưa qua duyệt chuyên môn", tên Anh gốc luôn đi kèm. Duyệt một tên = thêm nó vào
+`VI_NAMES`; nhãn tự biến mất.
+
+**Mã nào chưa có nguồn ánh xạ thì `null`.** TA2, UMLS: chưa. Không suy TA2 từ TA98,
+không đoán mã FMA mới cho chín mã BodyParts3D đã biến mất khỏi FMA 5.1.0.

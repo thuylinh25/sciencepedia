@@ -6,6 +6,7 @@ Bản đồ cơ thể người (`/[locale]/human-atlas`) dựa trên hai nguồn
 |---|---|---|---|
 | Mã trình xem (`src/components/human-atlas/anatomy-scene.tsx`, `src/lib/human-atlas/{explosion-layout,pointer-tap,model-download}.ts`, bảng màu và mô tả hệ) | Human Atlas — https://github.com/ashemag/human-atlas | MIT, © 2026 ashemag | `LICENSE` |
 | Dữ liệu giải phẫu (hình học + tên, trên R2 dưới `human-atlas/<phiên bản>/`) | BodyParts3D 4.0, © The Database Center for Life Science | CC BY 4.0 | `ATTRIBUTION.md` |
+| Thuật ngữ và phân loại (tên Latin, đồng nghĩa, cha is-a/part-of, mã TA98 — `data/anatomy/fma-structures.json`, trên R2 dưới `human-atlas/anatomy/`) | Foundational Model of Anatomy 5.1.0, © Structural Informatics Group, University of Washington | CC BY 4.0 | `FMA-ATTRIBUTION.md` |
 
 Hai tệp chép nguyên văn từ repo gốc, không sửa. Bản `ATTRIBUTION.md` cũng được đẩy lên R2 cạnh
 dữ liệu (`scripts/upload-human-atlas.ts`) — CC BY 4.0 đòi ghi công đi theo bản phân phối lại.

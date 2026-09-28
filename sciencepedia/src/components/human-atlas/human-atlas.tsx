@@ -35,7 +35,12 @@ import {
   type SystemId,
   type View,
 } from "@/lib/human-atlas/anatomy";
-import { atlasDataUrl } from "@/lib/human-atlas/assets";
+import { ANATOMY_DATA_FILE, anatomyDataUrl, atlasDataUrl } from "@/lib/human-atlas/assets";
+import {
+  ANATOMY_SOURCES,
+  anatomyDataSchema,
+  type AnatomyData,
+} from "@/lib/human-atlas/structures";
 import { decodeModelResponse } from "@/lib/human-atlas/model-download";
 import { displayName } from "@/lib/human-atlas/names-vi";
 import {
@@ -102,6 +107,25 @@ async function loadCatalog(signal: AbortSignal): Promise<Atlas> {
   return correctSystems(parsed.data);
 }
 
+/**
+ * Dữ liệu FMA (tên Latin, đồng nghĩa, cha, TA98) — lớp làm giàu, không bắt
+ * buộc. Tải SAU danh mục và không chặn gì: hỏng hay chưa phát hành
+ * (`ANATOMY_DATA_FILE` null) thì atlas chạy y như trước, chỉ thiếu các dòng ấy.
+ */
+async function loadAnatomy(signal: AbortSignal): Promise<AnatomyData | null> {
+  if (!ANATOMY_DATA_FILE) return null;
+  // Cùng cách với `loadCatalog`: bản gzip 123 KB thay vì 1,5 MB thô.
+  const compressed = typeof DecompressionStream !== "undefined";
+  const response = await fetch(
+    anatomyDataUrl(compressed ? `${ANATOMY_DATA_FILE}.gz` : ANATOMY_DATA_FILE),
+    { signal },
+  );
+  const buffer = await decodeModelResponse(response, null, compressed);
+  const parsed = anatomyDataSchema.safeParse(JSON.parse(new TextDecoder().decode(buffer)));
+  if (!parsed.success) throw new Error(`dữ liệu FMA sai cấu trúc: ${parsed.error.message}`);
+  return parsed.data;
+}
+
 /** `?structure=` trỏ tới khái niệm; dùng slug tiếng Anh, trùng tên thì dùng mã FMA. */
 function linkValue(index: SearchIndex, concept: Concept): string {
   const slug = structureSlug(concept.name);
@@ -131,6 +155,7 @@ export function HumanAtlas({
 
   const [attempt, setAttempt] = useState(0);
   const [atlas, setAtlas] = useState<Atlas | null>(null);
+  const [anatomy, setAnatomy] = useState<AnatomyData | null>(null);
   const [failure, setFailure] = useState<Failure | null>(null);
   const [progress, setProgress] = useState(0);
   const [state, setState] = useState(initial);
@@ -158,7 +183,23 @@ export function HumanAtlas({
     return () => abort.abort();
   }, [attempt]);
 
-  const index = useMemo(() => (atlas ? buildSearchIndex(atlas) : null), [atlas]);
+  const loaded = atlas !== null;
+  useEffect(() => {
+    if (!loaded) return;
+    const abort = new AbortController();
+    loadAnatomy(abort.signal)
+      .then(setAnatomy)
+      .catch((error: unknown) => {
+        if (error instanceof DOMException && error.name === "AbortError") return;
+        console.error("[human-atlas] không tải được dữ liệu FMA:", error);
+      });
+    return () => abort.abort();
+  }, [loaded]);
+
+  const index = useMemo(
+    () => (atlas ? buildSearchIndex(atlas, anatomy) : null),
+    [atlas, anatomy],
+  );
   const parts = useMemo(() => new Map(atlas?.parts.map((p) => [p.id, p])), [atlas]);
   const counts = useMemo(() => {
     const out = Object.fromEntries(SYSTEM_IDS.map((id) => [id, 0])) as Record<SystemId, number>;
@@ -451,6 +492,7 @@ export function HumanAtlas({
           isolate={state.isolate}
           locale={locale}
           articles={articles[chosen.id] ?? []}
+          anatomy={anatomy}
           focusOnOpen={focusDetail}
           onIsolate={() => setState((s) => ({ ...s, isolate: !s.isolate, explode: 0 }))}
           onChoosePart={choosePart}
@@ -758,6 +800,19 @@ export function AboutCopy() {
           </li>
         ))}
       </ul>
+      {/* FMA: nguồn của tên Latin, "thuộc", mã TA98 trong bảng chi tiết. CC BY
+          4.0 như BodyParts3D, nên cũng phải có ghi công ở đây. */}
+      <h3 className="pt-2 text-sm font-semibold text-foreground">{t("fmaHeading")}</h3>
+      <p>{t("fmaText")}</p>
+      <a
+        href={ANATOMY_SOURCES.fma.url}
+        target="_blank"
+        rel="noreferrer"
+        className="inline-flex items-center gap-1 text-accent underline-offset-4 hover:underline"
+      >
+        {t("fmaLink")}
+        <ArrowUpRight aria-hidden className="size-3.5" />
+      </a>
       <h3 className="pt-2 text-sm font-semibold text-foreground">{t("appHeading")}</h3>
       <p>{t("appText")}</p>
       <a

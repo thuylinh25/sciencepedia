@@ -36,3 +36,6 @@ scripts/tmp-*
 # sống trên Cloudflare R2 (src/lib/asset.ts); đây chỉ là bản dựng ra chờ tải lên,
 # không phải nguồn — dựng lại được bất cứ lúc nào từ chính các script ấy.
 /assets
+
+# Phản hồi thô của nguồn ngoài (scripts/anatomy-enrich.ts) — dựng lại được, không phải nguồn
+/.cache

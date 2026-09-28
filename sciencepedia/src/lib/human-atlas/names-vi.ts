@@ -166,3 +166,17 @@ export function displayName(
 export function hasViName(conceptId: string, englishName: string): boolean {
   return viName(conceptId, englishName) !== null;
 }
+
+/**
+ * Tên Việt đang hiện là thuật ngữ đã duyệt, hay bản dịch ghép chưa duyệt.
+ *
+ * Hai loại không được trông giống nhau trên màn hình: dịch ghép thuật ngữ
+ * giải phẫu dễ ra một tên sai với giọng rất chắc chắn. Bảng chi tiết dán nhãn
+ * cho loại thứ hai; tên tiếng Anh gốc luôn hiện kèm.
+ */
+export type ViNameStatus = "reviewed" | "machine-translated";
+
+export function viNameStatus(conceptId: string, englishName: string): ViNameStatus | null {
+  if (VI_NAMES[conceptId]) return "reviewed";
+  return translateAnatomy(englishName) ? "machine-translated" : null;
+}

@@ -431,6 +431,35 @@ tablet nhưng thấp hơn điện thoại dựng. Ghép `md:` với biến thể
 khớp và thứ tự sinh CSS quyết định bên thắng; ba biến thể không chồng nhau (`globals.css`)
 thì không có câu hỏi đó. Thanh dưới trên điện thoại chừa 5rem bên phải cho nút trợ lý AI.
 
+### Dữ liệu cấu trúc: FMA làm giàu ngoại tuyến, viewer chỉ đọc bản đã kiểm
+
+`scripts/anatomy-enrich.ts`: `atlas.json` → mã FMA duy nhất (3.432 khái niệm, không phải
+2.234 mảnh — một khái niệm gom nhiều mảnh) → FMA 5.1.0 qua EBI OLS → tên Latin, đồng nghĩa,
+cha is-a/part-of, TA98 → Zod → `data/anatomy/fma-structures.json` (nguồn thật, commit, diff
+được) → `--upload` đẩy bản gọn + `.gz` lên R2 có dấu vân → sửa `ANATOMY_DATA_FILE`. Viewer
+tải lười SAU danh mục, không chặn gì; không có lượt gọi API y sinh nào khi người đọc bấm.
+
+- **Khoá là mã FMA**, kể cả `EXPLAINED` (trước đó khoá theo tên Anh viết thường). Tên đổi
+  khi bộ dữ liệu dựng lại; mã thì không.
+- **OLS chứ không `fma.owl`**: tệp OWL 198 MB; OLS phục vụ đúng bản 5.1.0 dưới dạng JSON kèm
+  nhãn mọi lớp được trỏ tới, một lượt gọi mỗi khái niệm là đủ. Script dừng nếu OLS đổi
+  phiên bản — bản mới phải kiểm lại giấy phép trước.
+- **Giấy phép kiểm ở tệp `LICENSE` của bản phát hành** (CC BY 4.0), không ở registry: OBO
+  Foundry và OLS ghi "CUSTOM" kèm link chết. Ghi công ở `licenses/human-atlas/FMA-ATTRIBUTION.md`
+  và bảng "Nguồn & ghi công".
+- **Latin chỉ nhận giá trị FMA gắn `language: Latin`**: danh sách non-English equivalent trộn
+  Pháp/Đức/Tây Ban Nha; đoán theo mặt chữ ("Cor" hay "Coeur") là bịa. Phải dùng API v2 của
+  OLS — v1 làm phẳng mất nhãn ngôn ngữ.
+- **`TA_ID` của FMA là TA98, không phải TA2.** Lưu `ta98`; `ta2` để `null` cho tới khi có
+  nguồn ánh xạ thật. Đừng "nâng cấp" TA98 thành TA2 — hai bảng mã khác nhau.
+- **9 mã BodyParts3D không còn trong FMA 5.1.0** (dựng trên FMA cũ hơn) nằm ở `unresolved`,
+  không đoán mã thay thế theo tên.
+- **"Thuộc" chọn cha có mặt trong atlas** (`primaryPartOf`): FMA cho tim tám cha part-of
+  (hệ tim mạch nam, nữ, chung, trung thất…); lấy mục đầu là lấy ngẫu nhiên. Cha is-a không
+  hiện — nó là lớp ontology ("Organ with cavitated organ parts"), đúng mà vô nghĩa với người đọc.
+- **Cache thô `.cache/anatomy/` gitignored** và giữ cả cấp máu, thần kinh chi phối… (Level 3)
+  — lượt sau đọc lại cache chứ không tải lại.
+
 ---
 
 ## Triển khai

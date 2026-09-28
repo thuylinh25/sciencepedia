@@ -31,3 +31,20 @@ export function atlasDataUrl(file: string): string {
   const name = file.split("/").pop() ?? file;
   return `${BASE}/${HUMAN_ATLAS_DATA_VERSION}/${name}`;
 }
+
+/**
+ * Dữ liệu cấu trúc giải phẫu đã làm giàu từ FMA (`scripts/anatomy-enrich.ts`).
+ *
+ * Nằm NGOÀI thư mục phiên bản BodyParts3D vì nó có vòng đời riêng: sửa một
+ * tên Latin không phải dựng lại 33 MB hình học. Tên tệp mang dấu vân nội
+ * dung nên đệm một năm; script in ra đúng giá trị để dán vào đây — đẩy tệp
+ * TRƯỚC, đổi hằng số SAU.
+ *
+ * Nguồn thật là `data/anatomy/fma-structures.json` trong repo; tệp trên R2 chỉ
+ * là bản phát hành của nó.
+ */
+export const ANATOMY_DATA_FILE: string | null = "fma-structures.38e705ad4c.json";
+
+export function anatomyDataUrl(file: string): string {
+  return `${BASE}/anatomy/${file}`;
+}

@@ -82,20 +82,24 @@ export const ORGAN_PRESET: SystemId[] = [
 
 /**
  * Cấu trúc có lời giải thích riêng (khoá `humanAtlas.explanations.<key>`).
- * Cấu trúc khác dùng mô tả của hệ mà nó thuộc về, kèm ghi chú nói rõ điều đó.
- * Khoá là tên tiếng Anh gốc, viết thường, bỏ dấu cách — next-intl không nhận
- * dấu cách trong khoá.
+ * Cấu trúc khác dùng mô tả của hệ mà nó thuộc về, dưới nhãn "tổng quan về hệ"
+ * để người đọc không tưởng đó là mô tả của đúng cấu trúc đang chọn.
+ *
+ * Khoá là mã FMA, như `names-vi.ts` và `structure-links.ts` (đổi 2026-09-28;
+ * trước đó khoá theo tên tiếng Anh viết thường — tên đổi khi bộ dữ liệu dựng
+ * lại, mã thì không). Giá trị là khoá tin nhắn, không phải mã: next-intl không
+ * nhận dấu cách trong khoá.
  */
 export const EXPLAINED: Record<string, string> = {
-  heart: "heart",
-  liver: "liver",
-  brain: "brain",
-  stomach: "stomach",
-  spleen: "spleen",
-  pancreas: "pancreas",
-  "urinary bladder": "urinaryBladder",
-  trachea: "trachea",
-  diaphragm: "diaphragm",
+  FMA7088: "heart",
+  FMA7197: "liver",
+  FMA50801: "brain",
+  FMA7148: "stomach",
+  FMA7196: "spleen",
+  FMA7198: "pancreas",
+  FMA15900: "urinaryBladder",
+  FMA7394: "trachea",
+  FMA13295: "diaphragm",
 };
 
 /** Gợi ý khi ô tìm kiếm còn trống — giữ đúng danh sách của bản gốc. */

@@ -14,13 +14,19 @@ import {
   type Concept,
   type Part,
 } from "@/lib/human-atlas/anatomy";
-import { displayName, hasViName } from "@/lib/human-atlas/names-vi";
+import { displayName, hasViName, viNameStatus } from "@/lib/human-atlas/names-vi";
 import type { StructureArticle } from "@/lib/human-atlas/structure-links";
+import {
+  fmaName,
+  fmaSourceUrl,
+  primaryPartOf,
+  type AnatomyData,
+} from "@/lib/human-atlas/structures";
 import { Button } from "@/components/ui/button";
 import { PANEL } from "@/components/human-atlas/panel";
 
-/** Trang dữ liệu gốc của BodyParts3D — giữ đúng liên kết bản gốc dùng. */
-const SOURCE_URL = "https://lifesciencedb.jp/bp3d/";
+/** Trang dữ liệu gốc của BodyParts3D — nguồn của HÌNH, không phải của thông tin giải phẫu. */
+const MODEL_SOURCE_URL = "https://lifesciencedb.jp/bp3d/";
 
 /**
  * Bảng chi tiết của cấu trúc đang chọn.
@@ -38,6 +44,7 @@ export function StructureDetail({
   isolate,
   locale,
   articles,
+  anatomy,
   focusOnOpen,
   onIsolate,
   onChoosePart,
@@ -49,6 +56,8 @@ export function StructureDetail({
   isolate: boolean;
   locale: string;
   articles: StructureArticle[];
+  /** Dữ liệu FMA (Level 0–1); `null` khi chưa tải xong hoặc chưa phát hành — bảng vẫn đủ dùng. */
+  anatomy: AnatomyData | null;
   focusOnOpen: boolean;
   onIsolate: () => void;
   onChoosePart: (id: string) => void;
@@ -60,11 +69,23 @@ export function StructureDetail({
   const titleId = useId();
   const first = parts[0];
   const system = first?.system;
-  const explainedKey = EXPLAINED[concept.name.toLowerCase()];
+  const explainedKey = EXPLAINED[concept.id];
+  const structure = anatomy?.structures[concept.id] ?? null;
   const name = displayName(locale, concept.id, concept.name);
   // Tên gốc chỉ hiện khi tên chính thật sự là bản dịch — không lặp cùng một chữ hai lần.
   const english = concept.name.charAt(0).toUpperCase() + concept.name.slice(1);
   const translated = locale === "vi" && hasViName(concept.id, concept.name) && name !== english;
+  const unreviewed =
+    translated && viNameStatus(concept.id, concept.name) === "machine-translated";
+
+  /*
+   * Chỉ hiện "Thuộc", không hiện cha is-a: is-a của FMA là lớp ontology
+   * ("Organ with cavitated organ parts" cho tim) — đúng, nhưng với người đọc
+   * nó là tiếng lóng. Dữ liệu vẫn giữ is-a cho tìm kiếm và các mức sau.
+   */
+  const partOfId = anatomy && structure ? primaryPartOf(anatomy, structure) : null;
+  const partOfEn = anatomy && partOfId ? fmaName(anatomy, partOfId) : null;
+  const partOf = partOfId && partOfEn ? displayName(locale, partOfId, partOfEn) : null;
 
   useEffect(() => {
     // Không cướp focus khi bảng mở từ deep link lúc tải trang.
@@ -116,6 +137,17 @@ export function StructureDetail({
               {english}
             </p>
           )}
+          {structure?.names.la && (
+            <p lang="la" className="mt-0.5 text-sm leading-snug text-muted-foreground italic">
+              <span className="sr-only">{t("detail.latinName")}: </span>
+              {structure.names.la}
+            </p>
+          )}
+          {unreviewed && (
+            <p className="mt-1.5 text-[11px] leading-snug text-muted-foreground">
+              {t("detail.nameMachine")}
+            </p>
+          )}
         </div>
       </header>
       <Button
@@ -129,17 +161,35 @@ export function StructureDetail({
       </Button>
 
       <div className="flex min-h-0 flex-1 flex-col gap-3 overflow-y-auto overscroll-contain">
-        <p className="text-sm leading-relaxed text-muted-foreground">
-          {explainedKey
-            ? t(`explanations.${explainedKey}`)
-            : system
-              ? t(`systemDescriptions.${system}`)
-              : ""}
-        </p>
-        {!explainedKey && (
-          <p className="-mt-1 text-[11px] leading-snug text-muted-foreground">
-            {t("detail.systemNote")}
+        {/* Mô tả riêng nếu có. Không có thì mô tả của HỆ — nhưng dưới tiêu
+            đề riêng, trong khung riêng: đặt thẳng đoạn "cơ xương tạo ra cử
+            động…" dưới tên "Phần ức sườn cơ ngực lớn trái" là để người đọc
+            tưởng đó là mô tả của đúng cấu trúc ấy. */}
+        {explainedKey ? (
+          <p className="text-sm leading-relaxed text-muted-foreground">
+            {t(`explanations.${explainedKey}`)}
           </p>
+        ) : (
+          system && (
+            <div className="rounded-xl border border-dashed p-3">
+              <h3 className="text-[11px] font-semibold tracking-[0.1em] text-muted-foreground uppercase">
+                {t("detail.systemOverview", { system: t(`systemNames.${system}`) })}
+              </h3>
+              <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">
+                {t(`systemDescriptions.${system}`)}
+              </p>
+              <p className="mt-2 text-[11px] leading-snug text-muted-foreground/80">
+                {t("detail.systemNote")}
+              </p>
+            </div>
+          )
+        )}
+
+        {partOf && (
+          <dl className="grid shrink-0 grid-cols-[auto_1fr] gap-x-3 text-sm">
+            <dt className="text-muted-foreground">{t("detail.partOf")}</dt>
+            <dd className="min-w-0 font-medium">{partOf}</dd>
+          </dl>
         )}
 
         {/* "Xem riêng" ngay dưới mô tả, trên phần mã tham chiếu: đó là việc
@@ -176,11 +226,19 @@ export function StructureDetail({
           </div>
         )}
 
-        <dl className="flex shrink-0 gap-6 border-y py-3 text-xs text-muted-foreground">
+        <dl className="flex shrink-0 flex-wrap gap-x-6 gap-y-2 border-y py-3 text-xs text-muted-foreground">
           <div>
             <dt>{t("detail.reference")}</dt>
             <dd className="mt-0.5 font-medium text-foreground tabular-nums">{concept.id}</dd>
           </div>
+          {structure?.identifiers.ta98 && (
+            <div>
+              <dt>TA98</dt>
+              <dd className="mt-0.5 font-medium text-foreground tabular-nums">
+                {structure.identifiers.ta98}
+              </dd>
+            </div>
+          )}
           <div>
             <dt>{t("detail.selectedPieces")}</dt>
             <dd className="mt-0.5 font-medium text-foreground tabular-nums">
@@ -216,15 +274,29 @@ export function StructureDetail({
           </div>
         )}
 
-        <a
-          href={SOURCE_URL}
-          target="_blank"
-          rel="noreferrer"
-          className="inline-flex items-center gap-1 text-xs text-muted-foreground underline-offset-4 hover:underline"
-        >
-          {t("detail.source")}
-          <ArrowUpRight aria-hidden className="size-3.5" />
-        </a>
+        {/* Hai nguồn, hai vai: FMA cho thông tin giải phẫu của ĐÚNG cấu trúc
+            này, BodyParts3D cho hình. Trước đây chỉ có một link chung tới trang
+            chủ BodyParts3D, giống hệt nhau cho mọi cấu trúc. */}
+        <div className="flex flex-col items-start gap-1">
+          <a
+            href={fmaSourceUrl(concept.id)}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-1 text-xs text-muted-foreground underline-offset-4 hover:underline"
+          >
+            {t("detail.source")}
+            <ArrowUpRight aria-hidden className="size-3.5" />
+          </a>
+          <a
+            href={MODEL_SOURCE_URL}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-1 text-xs text-muted-foreground underline-offset-4 hover:underline"
+          >
+            {t("detail.modelSource")}
+            <ArrowUpRight aria-hidden className="size-3.5" />
+          </a>
+        </div>
       </div>
 
       <div className="flex shrink-0 justify-center border-t pt-2">

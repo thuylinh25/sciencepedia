@@ -1,6 +1,7 @@
 import type { Atlas, Concept } from "./anatomy";
 import { SUGGESTED } from "./anatomy";
 import { viName } from "./names-vi";
+import type { AnatomyData } from "./structures";
 
 /**
  * Tìm kiếm và deep link trên danh mục khái niệm của atlas.
@@ -35,7 +36,13 @@ export type SearchIndex = {
   bySlug: Map<string, Concept>;
 };
 
-export function buildSearchIndex(atlas: Atlas): SearchIndex {
+/**
+ * `anatomy` (dữ liệu FMA, có thể chưa tải) thêm tên Latin, đồng nghĩa và mã
+ * TA98 vào chuỗi so khớp — "cor" hay "A12.1.00.001" cũng ra tim. Chỉ mở rộng
+ * cái được TÌM, không đổi slug: link `?structure=` phải giống nhau dù dữ liệu
+ * FMA đã tải hay chưa.
+ */
+export function buildSearchIndex(atlas: Atlas, anatomy: AnatomyData | null = null): SearchIndex {
   const byId = new Map<string, Concept>();
   const bySlug = new Map<string, Concept>();
   const haystack: string[] = [];
@@ -43,7 +50,13 @@ export function buildSearchIndex(atlas: Atlas): SearchIndex {
   for (const concept of atlas.concepts) {
     byId.set(concept.id.toLowerCase(), concept);
     const vi = viName(concept.id, concept.name);
-    haystack.push(fold(`${concept.name} ${vi ?? ""} ${concept.id}`));
+    const fma = anatomy?.structures[concept.id];
+    const extra = fma
+      ? [fma.names.la, ...fma.synonyms.en, ...fma.synonyms.la, fma.identifiers.ta98]
+          .filter(Boolean)
+          .join(" ")
+      : "";
+    haystack.push(fold(`${concept.name} ${vi ?? ""} ${concept.id} ${extra}`));
   }
 
   /*
