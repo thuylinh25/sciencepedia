@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 import { getTranslations } from "next-intl/server";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight, PersonStanding, Sparkles, type LucideIcon } from "lucide-react";
 
 import { Link } from "@/i18n/navigation";
 import { assetUrl } from "@/lib/asset";
@@ -53,6 +53,13 @@ type ExploreCard = {
   /** Ảnh nền, đã cắt sẵn 16:10 — xem `scripts` trong ghi chú commit */
   image: string;
   emoji: string;
+  /**
+   * Icon lucide thay cho `emoji`. Dùng khi emoji gần nhất đọc sai chủ đề:
+   * 🫀 là trái tim, không phải "giải phẫu cơ thể" — thẻ trông như một công cụ
+   * tim mạch. `PersonStanding` là icon mà menu Công cụ đã dùng cho chính
+   * trang này (`site-tools.ts`), nên hai lối vào nhận ra nhau.
+   */
+  icon?: LucideIcon;
   /** Màu nhận dạng, trùng với màu chủ đạo của chính mô hình đó */
   accent: string;
   /**
@@ -71,13 +78,14 @@ type ExploreCard = {
    * để phá.
    */
   feature?: boolean;
-  /**
-   * Thẻ đứng: chiếm cả cột phải 1x3 ô trên lưới lớn. Cho chủ thể dáng đứng
-   * (cơ thể người) thay vì cắt nó vào khung ngang. Ở lưới 2 cột thẻ về 1x1.
-   */
-  tall?: boolean;
   /** `object-position` của ảnh khi khung cắt ngang — giữ phần đầu/ngực thay vì bụng. */
   imagePosition?: string;
+  /**
+   * Lớp phủ nhẹ ở nửa trên, ảnh đậm hơn. Cho ảnh chụp MÔ HÌNH trên nền tối
+   * phẳng: ảnh thiên văn tối sẵn nên lớp phủ chuẩn vừa, còn mô hình sáng màu
+   * bị lớp phủ chuẩn dìm thành một khối mờ. Đáy vẫn đặc như mọi thẻ — chữ ở đó.
+   */
+  lightScrim?: boolean;
   /** Dòng ghi nguồn bắt buộc theo giấy phép ảnh (CC BY). Không có = phạm vi công cộng. */
   credit?: string;
 };
@@ -85,10 +93,15 @@ type ExploreCard = {
 /*
  * Thứ tự là thứ tự ưu tiên giới thiệu, không phải thứ tự quy mô.
  *
- * Bản đồ cơ thể người (thêm 2026-09-28) đứng ngay sau thẻ chủ lực, dạng thẻ
- * đứng ở cột phải của khối trên cùng: khối này là thứ người vào lần đầu thấy,
- * và có một thẻ không phải thiên văn ở đó thì mục này đọc ra là "khám phá khoa
- * học", không phải "thư viện thiên văn". Ở cuối lưới nó sẽ bị đọc như món phụ.
+ * Bản đồ cơ thể người (thêm 2026-09-28) đứng ngay sau thẻ chủ lực, ô đầu cột
+ * phải: khối này là thứ người vào lần đầu thấy, và có một thẻ không phải thiên
+ * văn ở đó thì mục này đọc ra là "khám phá khoa học", không phải "thư viện
+ * thiên văn". Ở cuối lưới nó sẽ bị đọc như món phụ.
+ *
+ * Nó là thẻ THƯỜNG, không phải thẻ đứng (đổi 2026-09-28). Bản đầu cho nó cả
+ * cột phải 1x3 ô, và một thẻ cao gần bằng thẻ chủ lực thì tranh vai chủ lực:
+ * người xem thấy hai cửa vào ngang nhau — đúng thứ cờ `feature` sinh ra để
+ * phá. Độ nổi của nó đến từ vị trí, không từ kích thước.
  *
  * Hành trình thu phóng đứng đầu vì nó là thứ duy nhất giải thích được cả năm
  * cái kia: đi qua nó một lượt là hiểu các mô hình kia đang ở bậc nào. Hệ
@@ -142,11 +155,31 @@ const CARDS: ExploreCard[] = [
   {
     id: "humanAtlas",
     href: "/human-atlas",
-    image: assetUrl("explore/human-atlas.jpg"),
+    /*
+     * Ảnh bìa v2 (2026-09-28), chụp từ CHÍNH viewer `/human-atlas` (theme tối,
+     * camera mặc định xoay nhẹ và hạ thấp để đường chân trời xuống dưới đùi),
+     * khung đầu → đùi trên. Hai lượt chụp cùng một camera ghép dọc đường
+     * giữa: nửa phải người là mặc định của viewer (hệ cơ phủ ngoài), nửa trái
+     * là xương + tim + hô hấp + tiêu hoá + động/tĩnh mạch + thần kinh.
+     *
+     * Vì sao ghép chứ không một hệ: chỉ hệ cơ thì đọc ra "mô hình người",
+     * chỉ tuần hoàn thì đọc ra "bản đồ mạch máu". Một ảnh phải nói "nhiều
+     * lớp, nhiều hệ", và nửa cơ/nửa trong là cách atlas giải phẫu nói điều
+     * đó từ trước khi có 3D. Mọi điểm ảnh vẫn là thứ viewer thật sự vẽ.
+     *
+     * Bản v1 (`human-atlas.jpg`, toàn thân) còn trên R2, không xoá — ảnh cũ
+     * trỏ tới khoá cũ cho tới khi bản triển khai này lên.
+     */
+    image: assetUrl("explore/human-atlas-v2.jpg"),
     emoji: "🫀",
+    icon: PersonStanding,
     accent: "#fb7185",
-    tall: true,
-    imagePosition: "50% 18%",
+    /* Ảnh 16:10, người đứng ở ~68% bề ngang — lệch phải để khối chữ canh trái
+       không đè đầu/ngực. `0%` dọc: khung nào cao hơn 16:10 (lưới 3 cột ở
+       laptop) thì cắt hai bên, đầu vẫn ở mép trên; khung nào dẹt hơn thì cắt
+       đáy, tức phần đùi vốn chìm sau lớp phủ. */
+    imagePosition: "70% 0%",
+    lightScrim: true,
     credit: "BodyParts3D © DBCLS, CC BY 4.0",
   },
   {
@@ -155,26 +188,6 @@ const CARDS: ExploreCard[] = [
     image: assetUrl("explore/zoom.jpg"),
     emoji: "🔍",
     accent: "#38bdf8",
-  },
-  {
-    id: "earthLive",
-    /*
-     * Trỏ lại route `/earth-live` — trang ảnh EPIC/DSCOVR nhìn từ điểm L1.
-     *
-     * Trang này từng bị gỡ một lượt, và trong quãng đó thẻ trỏ sang tệp tĩnh
-     * `/tools/earth-live.html` (bản đồ ảnh vệ tinh NASA GIBS). Nay trang L1
-     * quay lại và công cụ GIBS đã xoá hẳn, nên thẻ trỏ về route như ban đầu
-     * và KHÔNG còn cần cờ `external`.
-     *
-     * Hai thứ đó khác nhau thật chứ không phải hai bản của cùng một công cụ:
-     * L1 cho toàn đĩa Trái Đất mỗi ngày một vòng, GIBS cho tile phóng to
-     * được mười phút một lần. Ai muốn lắp lại GIBS thì lắp thành thẻ RIÊNG,
-     * đừng đổi đích của thẻ này — chữ trên thẻ nói về DSCOVR.
-     */
-    href: "/earth-live",
-    image: assetUrl("explore/earth-live.jpg"),
-    emoji: "🌍",
-    accent: "#34d399",
   },
   {
     id: "universe",
@@ -197,14 +210,42 @@ const CARDS: ExploreCard[] = [
     emoji: "☀️",
     accent: "#f59e0b",
   },
+  {
+    id: "earthLive",
+    /*
+     * Trỏ lại route `/earth-live` — trang ảnh EPIC/DSCOVR nhìn từ điểm L1.
+     *
+     * Trang này từng bị gỡ một lượt, và trong quãng đó thẻ trỏ sang tệp tĩnh
+     * `/tools/earth-live.html` (bản đồ ảnh vệ tinh NASA GIBS). Nay trang L1
+     * quay lại và công cụ GIBS đã xoá hẳn, nên thẻ trỏ về route như ban đầu
+     * và KHÔNG còn cần cờ `external`.
+     *
+     * Hai thứ đó khác nhau thật chứ không phải hai bản của cùng một công cụ:
+     * L1 cho toàn đĩa Trái Đất mỗi ngày một vòng, GIBS cho tile phóng to
+     * được mười phút một lần. Ai muốn lắp lại GIBS thì lắp thành thẻ RIÊNG,
+     * đừng đổi đích của thẻ này — chữ trên thẻ nói về DSCOVR.
+     */
+    href: "/earth-live",
+    image: assetUrl("explore/earth-live.jpg"),
+    emoji: "🌍",
+    accent: "#34d399",
+  },
 ];
 
 /*
- * Lưới 3 cột, bảy card lấp kín 12 ô: thẻ chủ lực 2x2, thẻ đứng 1x3 ở cột
- * phải, hàng thứ ba là Hành trình thu phóng + Trái Đất L1, hàng cuối là ba
- * mô hình 3D (Vũ trụ → Ngân Hà → Hệ Mặt Trời) — dải thang quy mô giữ nguyên.
- * Thẻ đứng 1x2 thì chỉ được 11 ô, thừa một lỗ ở cuối lưới. Ở lưới 2 cột (sm)
- * thẻ đứng về 1x1: 2 + 6 = 8 ô, chẵn.
+ * Từ `xl` lưới 4 cột: thẻ chủ lực 3x2, cột phải là Cơ thể người + Hành trình
+ * thu phóng, hàng dưới bốn thẻ Vũ trụ → Ngân Hà → Hệ Mặt Trời → Trái Đất L1 —
+ * dải thang quy mô đi tiếp xuống tận Trái Đất. 6 + 2 + 4 = 12 ô, kín.
+ *
+ * Vì sao 4 cột (chốt 2026-09-28, chủ sản phẩm chọn): bảy thẻ với thẻ chủ lực
+ * 2x2 trên lưới 3 cột là 10 ô — hàng cuối một thẻ trơ trọi cạnh hai ô trống.
+ * Ba cách lấp đã cân: nới thẻ cuối thành dải ngang (tạo thêm một hạng thẻ, đã
+ * bỏ một lần — xem dưới), cho thẻ chủ lực cao 3 hàng (quá lấn), hay 4 cột với
+ * thẻ chủ lực rộng 3/4. Chọn cách cuối vì nó giữ mọi thẻ thường cùng một cỡ.
+ *
+ * `lg` (1024–1279) vẫn 3 cột và vẫn thừa một thẻ ở hàng cuối: ở bề rộng đó 4
+ * cột chỉ còn ~230 px mỗi thẻ, tiêu đề gãy ba dòng. Ở lưới 2 cột (sm):
+ * 2 + 6 = 8 ô, chẵn.
  *
  * Số card đã dao động 6 → 5 → 6 trong cùng một ngày, nên đừng gắn bố cục vào
  * một con số cụ thể. Quy tắc: chia đều `lg:grid-cols-3` và để hàng cuối thiếu
@@ -279,13 +320,12 @@ export async function InteractiveExplore() {
         </p>
       </div>
 
-      <StaggerGroup className="mt-8 grid auto-rows-fr gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <StaggerGroup className="mt-8 grid auto-rows-fr gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {CARDS.map((card) => (
           <StaggerItem
             key={card.id}
             className={cn(
-              card.feature && "sm:col-span-2 lg:row-span-2",
-              card.tall && "lg:row-span-3",
+              card.feature && "sm:col-span-2 lg:row-span-2 xl:col-span-3",
             )}
           >
             <CardLink
@@ -316,8 +356,17 @@ export async function InteractiveExplore() {
               <AssetImage
                 src={card.image}
                 alt=""
-                sizes="(min-width: 1024px) 40vw, (min-width: 640px) 50vw, 100vw"
-                className="object-cover opacity-[0.72] brightness-110 transition-[transform,opacity] duration-300 ease-out group-hover:scale-[1.05] group-hover:opacity-90"
+                sizes={
+                  card.feature
+                    ? "(min-width: 1024px) 40vw, (min-width: 640px) 50vw, 100vw"
+                    : "(min-width: 1280px) 25vw, (min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                }
+                className={cn(
+                  "object-cover brightness-110 transition-[transform,opacity] duration-300 ease-out group-hover:scale-[1.05]",
+                  card.lightScrim
+                    ? "opacity-90 group-hover:opacity-100"
+                    : "opacity-[0.72] group-hover:opacity-90",
+                )}
                 style={card.imagePosition ? { objectPosition: card.imagePosition } : undefined}
               />
 
@@ -327,10 +376,17 @@ export async function InteractiveExplore() {
 
                   Lớp dọc giữ `from-[#05070f]` đặc ở đáy — đó là thứ bảo đảm
                   tương phản chữ, và nó KHÔNG được nới. Phần nới là khúc giữa
-                  và trên: /75 → /55 và /15 → /0, để chủ thể trong ảnh lộ ra. */}
+                  và trên: /75 → /55 và /15 → /0, để chủ thể trong ảnh lộ ra.
+
+                  `lightScrim` dời điểm giữa xuống thấp hơn và hết phủ sớm hơn:
+                  nửa trên gần như trong, đáy đặc y hệt — chữ không mất tương
+                  phản, chỉ mô hình phía trên hiện rõ. */}
               <div
                 aria-hidden
-                className="absolute inset-0 bg-gradient-to-t from-[#05070f] via-[#05070f]/55 to-transparent"
+                className={cn(
+                  "absolute inset-0 bg-gradient-to-t from-[#05070f] via-[#05070f]/55 to-transparent",
+                  card.lightScrim && "from-15% via-45% to-80%",
+                )}
               />
               <div
                 aria-hidden
@@ -370,7 +426,7 @@ export async function InteractiveExplore() {
                   aria-hidden
                   className="inline-flex size-11 items-center justify-center rounded-2xl border border-white/15 bg-white/10 text-xl backdrop-blur-md transition-[transform,border-color] duration-300 ease-out group-hover:-translate-y-0.5 group-hover:border-white/35"
                 >
-                  {card.emoji}
+                  {card.icon ? <card.icon className="size-5 text-white/90" /> : card.emoji}
                 </span>
 
                 <h3 className="mt-3 font-display text-xl font-bold text-white">

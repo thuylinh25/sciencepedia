@@ -630,7 +630,7 @@
       "humanAtlas": {
         "title": "3D Human Body Atlas",
         "body": "Explore human anatomy through an interactive 3D model.",
-        "cta": "Explore",
+        "cta": "Open 3D atlas",
         "metaA": "{pieces, number} model pieces",
         "metaB": "{systems} body systems"
       },

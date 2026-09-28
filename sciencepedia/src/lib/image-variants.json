@@ -1032,6 +1032,17 @@
       1000
     ]
   },
+  "explore/human-atlas-v2.jpg": {
+    "hash": "84264aba",
+    "widths": [
+      128,
+      384,
+      640,
+      828,
+      1200,
+      1600
+    ]
+  },
   "explore/human-atlas.jpg": {
     "hash": "55dd81a2",
     "widths": [
