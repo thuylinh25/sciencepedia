@@ -5,6 +5,7 @@ import { ArrowRight, Sparkles } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { assetUrl } from "@/lib/asset";
 import { StaggerGroup, StaggerItem } from "@/components/motion/reveal";
+import { PIECE_COUNT, SYSTEM_IDS } from "@/lib/human-atlas/anatomy";
 import { SKY_TARGETS } from "@/lib/sky-data";
 import { PLANETS } from "@/lib/solar-data";
 import { cn } from "@/lib/utils";
@@ -27,13 +28,17 @@ import { AssetImage } from "@/components/ui/asset-image";
  * này; hiệu ứng xuất hiện khi cuộn do `StaggerGroup` lo, và nó vốn đã nằm
  * trong bundle của trang chủ.
  *
- * ## Vì sao không có dòng ghi nguồn
+ * ## Ghi nguồn ảnh
  *
- * Cả sáu ảnh đều thuộc phạm vi công cộng của NASA, ESA hoặc JWST, và phạm
- * vi công cộng không đòi hỏi ghi nguồn. Hai ảnh ESO dùng lúc đầu là CC BY
- * 4.0 — giấy phép đó BẮT BUỘC ghi nguồn, nên chúng đã được thay chứ không
- * phải chỉ xoá dòng chữ đi. Thêm ảnh mới vào đây thì phải kiểm lại điều kiện
- * này trước.
+ * Sáu ảnh thiên văn thuộc phạm vi công cộng của NASA, ESA hoặc JWST — không
+ * đòi ghi nguồn. Hai ảnh ESO dùng lúc đầu là CC BY 4.0 nên đã được THAY, chứ
+ * không chỉ xoá dòng chữ.
+ *
+ * Ảnh thẻ Bản đồ cơ thể người là ngoại lệ không thay được: đó là ảnh chụp
+ * chính mô hình BodyParts3D (CC BY 4.0) trên trang `/human-atlas`, và không có
+ * ảnh giải phẫu 3D phạm vi công cộng nào nói đúng về công cụ ấy bằng nó. Nên
+ * nó mang `credit`, và dưới lưới có dòng ghi nguồn. Thêm ảnh mới vào đây thì
+ * phải kiểm giấy phép trước — ảnh CC BY thì bắt buộc có `credit`.
  *
  * ## Vì sao ảnh nằm trong /public
  *
@@ -66,10 +71,24 @@ type ExploreCard = {
    * để phá.
    */
   feature?: boolean;
+  /**
+   * Thẻ đứng: chiếm cả cột phải 1x3 ô trên lưới lớn. Cho chủ thể dáng đứng
+   * (cơ thể người) thay vì cắt nó vào khung ngang. Ở lưới 2 cột thẻ về 1x1.
+   */
+  tall?: boolean;
+  /** `object-position` của ảnh khi khung cắt ngang — giữ phần đầu/ngực thay vì bụng. */
+  imagePosition?: string;
+  /** Dòng ghi nguồn bắt buộc theo giấy phép ảnh (CC BY). Không có = phạm vi công cộng. */
+  credit?: string;
 };
 
 /*
  * Thứ tự là thứ tự ưu tiên giới thiệu, không phải thứ tự quy mô.
+ *
+ * Bản đồ cơ thể người (thêm 2026-09-28) đứng ngay sau thẻ chủ lực, dạng thẻ
+ * đứng ở cột phải của khối trên cùng: khối này là thứ người vào lần đầu thấy,
+ * và có một thẻ không phải thiên văn ở đó thì mục này đọc ra là "khám phá khoa
+ * học", không phải "thư viện thiên văn". Ở cuối lưới nó sẽ bị đọc như món phụ.
  *
  * Hành trình thu phóng đứng đầu vì nó là thứ duy nhất giải thích được cả năm
  * cái kia: đi qua nó một lượt là hiểu các mô hình kia đang ở bậc nào. Hệ
@@ -119,6 +138,16 @@ const CARDS: ExploreCard[] = [
     emoji: "⭐",
     accent: "#2dd4bf",
     feature: true,
+  },
+  {
+    id: "humanAtlas",
+    href: "/human-atlas",
+    image: assetUrl("explore/human-atlas.jpg"),
+    emoji: "🫀",
+    accent: "#fb7185",
+    tall: true,
+    imagePosition: "50% 18%",
+    credit: "BodyParts3D © DBCLS, CC BY 4.0",
   },
   {
     id: "zoom",
@@ -171,7 +200,11 @@ const CARDS: ExploreCard[] = [
 ];
 
 /*
- * Lưới 3 cột, sáu card chia ba–ba trên màn hình lớn.
+ * Lưới 3 cột, bảy card lấp kín 12 ô: thẻ chủ lực 2x2, thẻ đứng 1x3 ở cột
+ * phải, hàng thứ ba là Hành trình thu phóng + Trái Đất L1, hàng cuối là ba
+ * mô hình 3D (Vũ trụ → Ngân Hà → Hệ Mặt Trời) — dải thang quy mô giữ nguyên.
+ * Thẻ đứng 1x2 thì chỉ được 11 ô, thừa một lỗ ở cuối lưới. Ở lưới 2 cột (sm)
+ * thẻ đứng về 1x1: 2 + 6 = 8 ô, chẵn.
  *
  * Số card đã dao động 6 → 5 → 6 trong cùng một ngày, nên đừng gắn bố cục vào
  * một con số cụ thể. Quy tắc: chia đều `lg:grid-cols-3` và để hàng cuối thiếu
@@ -250,7 +283,10 @@ export async function InteractiveExplore() {
         {CARDS.map((card) => (
           <StaggerItem
             key={card.id}
-            className={card.feature ? "sm:col-span-2 lg:row-span-2" : undefined}
+            className={cn(
+              card.feature && "sm:col-span-2 lg:row-span-2",
+              card.tall && "lg:row-span-3",
+            )}
           >
             <CardLink
               card={card}
@@ -282,6 +318,7 @@ export async function InteractiveExplore() {
                 alt=""
                 sizes="(min-width: 1024px) 40vw, (min-width: 640px) 50vw, 100vw"
                 className="object-cover opacity-[0.72] brightness-110 transition-[transform,opacity] duration-300 ease-out group-hover:scale-[1.05] group-hover:opacity-90"
+                style={card.imagePosition ? { objectPosition: card.imagePosition } : undefined}
               />
 
               {/* Hai lớp phủ chồng nhau: một lớp dọc cho chữ ở đáy luôn đọc
@@ -360,6 +397,8 @@ export async function InteractiveExplore() {
                       )}
                       {t(`cards.${card.id}.${key}`, {
                         count: SKY_MAP_DESTINATIONS,
+                        pieces: PIECE_COUNT,
+                        systems: SYSTEM_IDS.length,
                       })}
                     </li>
                   ))}
@@ -377,6 +416,15 @@ export async function InteractiveExplore() {
           </StaggerItem>
         ))}
       </StaggerGroup>
+
+      {/* Chỉ ảnh CC BY mới cần dòng này — xem "Ghi nguồn ảnh" ở đầu tệp. */}
+      {CARDS.some((card) => card.credit) && (
+        <p className="mt-3 text-xs text-muted-foreground">
+          {CARDS.filter((card) => card.credit)
+            .map((card) => `${t("credit")} — ${t(`cards.${card.id}.title`)}: ${card.credit}`)
+            .join(" · ")}
+        </p>
+      )}
 
       {/* KHÔNG có CTA "xem tất cả" ở cuối mục.
 

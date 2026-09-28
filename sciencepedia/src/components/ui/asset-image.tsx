@@ -1,3 +1,5 @@
+import type { CSSProperties } from "react";
+
 import { assetSrcSet } from "@/lib/image-variants";
 import { cn } from "@/lib/utils";
 
@@ -42,9 +44,11 @@ type Props = {
    * dùng cho đúng ảnh trong vùng đo LCP, không rắc đại trà.
    */
   priority?: boolean;
+  /** Chủ yếu cho `objectPosition` khi khung cắt ảnh lệch khỏi chủ thể. */
+  style?: CSSProperties;
 };
 
-export function AssetImage({ src, alt, sizes, className, priority }: Props) {
+export function AssetImage({ src, alt, sizes, className, priority, style }: Props) {
   /*
    * Không có bản kê thì trả về chính ảnh gốc, không `srcset`.
    *
@@ -65,6 +69,7 @@ export function AssetImage({ src, alt, sizes, className, priority }: Props) {
       fetchPriority={priority ? "high" : undefined}
       decoding="async"
       className={cn("absolute inset-0 size-full", className)}
+      style={style}
     />
   );
 }
