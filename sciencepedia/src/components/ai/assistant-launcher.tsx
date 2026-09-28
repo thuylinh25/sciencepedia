@@ -31,7 +31,17 @@ export function AssistantLauncher() {
    */
   const [showLabel, setShowLabel] = useState(false);
 
+  /*
+   * Trang không bung nhãn: công cụ toàn màn hình có thanh điều khiển dưới
+   * chừa đúng chỗ cho nút TRÒN 48px. Bản đồ cơ thể người chừa 5rem bên phải
+   * thanh dưới trên điện thoại; nhãn bung ra thành viên thuốc ~110px thì đè
+   * lên nút "Đặt lại" (đo ở 390px). Không đánh dấu "đã thấy" ở đây, để trang
+   * kế tiếp vẫn bung nhãn một lần như thường.
+   */
+  const noLabel = pathname.startsWith("/human-atlas");
+
   useEffect(() => {
+    if (noLabel) return;
     let seen = false;
     try {
       seen = sessionStorage.getItem(LABEL_SEEN_KEY) === "1";
@@ -57,7 +67,7 @@ export function AssistantLauncher() {
       clearTimeout(show);
       clearTimeout(hide);
     };
-  }, []);
+  }, [noLabel]);
 
   // Bảng này là một hộp thoại: Esc phải đóng được nó. Trước đây người dùng bàn
   // phím mở ra rồi chỉ còn cách tab ngược lại nút để đóng.
@@ -167,7 +177,7 @@ export function AssistantLauncher() {
         )}
         <span
           className={`overflow-hidden ps-2 text-sm font-semibold whitespace-nowrap transition-[max-width,opacity] duration-300 ease-out ${
-            showLabel && !open ? "max-w-40 opacity-100" : "max-w-0 opacity-0"
+            showLabel && !open && !noLabel ? "max-w-40 opacity-100" : "max-w-0 opacity-0"
           }`}
         >
           {t("askLabel")}
