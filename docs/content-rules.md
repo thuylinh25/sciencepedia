@@ -711,6 +711,11 @@ không đoán mã FMA mới cho chín mã BodyParts3D đã biến mất khỏi F
 là nguồn DỮ KIỆN: câu Sciencepedia tự viết, không chép, không phỏng sát câu, không dùng
 hình. Dòng nguồn ghi "biên soạn từ dữ kiện trong…", không "trích từ…".
 
+**Tiếng Việt dịch sát câu nguồn: chấp nhận** (chủ sản phẩm chốt 2026-09-28). science-editor
+nêu rằng bản tiếng Việt của Level 2 bám cấu trúc câu OpenStax, có thể bị coi là phái sinh
+dưới NC-SA. Chủ sản phẩm chấp nhận như hiện tại. Luật chặn ≥10 từ trùng chỉ áp cho tiếng
+Anh — đừng mở rộng sang tiếng Việt hay bắt viết lại tiếng Việt khi chưa có quyết định mới.
+
 **Bảng bị làm phẳng thành chữ thì đọc lại bảng gốc.** Bản nháp đầu tưởng OpenStax tự
 mâu thuẫn về cơ ức đòn chũm (văn bản: hai bên cùng co thì *gấp* đầu; "bảng": *duỗi*) và
 định bỏ vế đó. Sai: bản văn bản thường đẩy ô "extension" của HÀNG DƯỚI (cơ bán gai đầu…)
