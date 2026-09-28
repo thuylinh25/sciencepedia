@@ -705,3 +705,22 @@ chưa qua duyệt chuyên môn", tên Anh gốc luôn đi kèm. Duyệt một t�
 
 **Mã nào chưa có nguồn ánh xạ thì `null`.** TA2, UMLS: chưa. Không suy TA2 từ TA98,
 không đoán mã FMA mới cho chín mã BodyParts3D đã biến mất khỏi FMA 5.1.0.
+
+**Miễn phí đọc ≠ được chép.** OpenStax Anatomy & Physiology 2e mang CC BY-NC-SA 4.0
+(kiểm trên chính trang sách 2026-09-28) — nhiều người đinh ninh OpenStax là CC BY. Nó chỉ
+là nguồn DỮ KIỆN: câu Sciencepedia tự viết, không chép, không phỏng sát câu, không dùng
+hình. Dòng nguồn ghi "biên soạn từ dữ kiện trong…", không "trích từ…".
+
+**Bảng bị làm phẳng thành chữ thì đọc lại bảng gốc.** Bản nháp đầu tưởng OpenStax tự
+mâu thuẫn về cơ ức đòn chũm (văn bản: hai bên cùng co thì *gấp* đầu; "bảng": *duỗi*) và
+định bỏ vế đó. Sai: bản văn bản thường đẩy ô "extension" của HÀNG DƯỚI (cơ bán gai đầu…)
+lên ngay sau ô bám tận của cơ ức đòn chũm. Bảng HTML ghi đúng "bilaterally: flexion", khớp
+văn bản. Trước khi tuyên bố "nguồn đánh nhau", mở bảng gốc — mâu thuẫn do công cụ đọc
+sinh ra trông y hệt mâu thuẫn thật.
+
+**Máy bắt được hình thức, không bắt được nghĩa.** Lô đầu (32 mục) qua sạch bộ kiểm máy,
+rồi science-editor vẫn sửa 31: tiếng Anh phỏng sát câu sách (~25 mục — nay máy chặn khi trùng
+≥10 từ liên tiếp), "chọn một kể như tất cả" (6 mục giữ một trong nhiều chức năng nguồn liệt
+kê), rơi từ hạn định ("sometimes", "largely", "main" — nay máy cảnh báo), nới chủ thể
+("đầu" thành "sọ"), đặt sai trường, và thuật ngữ Việt (đại tràng → kết tràng; vòm sọ là
+calvaria, không phải sọ não). Viết lại một trường đã duyệt thì gỡ dấu duyệt của mục đó.

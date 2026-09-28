@@ -6,6 +6,7 @@ import pLimit from "p-limit";
 
 import { atlasSchema } from "../src/lib/human-atlas/anatomy";
 import { anatomyDataUrl, atlasDataUrl } from "../src/lib/human-atlas/assets";
+import { buildContent } from "./anatomy-content";
 import {
   ANATOMY_SOURCES,
   anatomyDataSchema,
@@ -287,7 +288,7 @@ async function main() {
     if (label) terms[id] = label;
   }
 
-  const data: AnatomyData = anatomyDataSchema.parse({
+  const base: AnatomyData = anatomyDataSchema.parse({
     schema: 1,
     atlas: atlas.version,
     sources: Object.values(ANATOMY_SOURCES),
@@ -295,6 +296,18 @@ async function main() {
     terms,
     unresolved: missing,
   });
+
+  // Level 2: nội dung viết tay, kiểm từng mục (scripts/anatomy-content.ts).
+  const level2 = await buildContent(base);
+  const data: AnatomyData = anatomyDataSchema.parse({ ...base, content: level2.content });
+  console.log(
+    `\nLevel 2: ${Object.keys(level2.content).length} mục phát hành · ${level2.drafts.length} bản nháp chờ duyệt` +
+      (level2.drafts.length ? ` (${level2.drafts.join(", ")})` : "") +
+      ` · ${level2.errors.length} lỗi`,
+  );
+  for (const error of level2.errors) console.log(`  ✗ ${error}`);
+  for (const warning of level2.warnings) console.log(`  ! ${warning}`);
+  if (level2.errors.length > 0) process.exitCode = 1;
 
   // 10. Kiểm.
   const values = Object.values(data.structures);

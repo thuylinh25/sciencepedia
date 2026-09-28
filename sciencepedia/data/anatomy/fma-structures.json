@@ -14,6 +14,19 @@
    "via": "https://www.ebi.ac.uk/ols4/ontologies/fma",
    "urlTemplate": "https://www.ebi.ac.uk/ols4/ontologies/fma/classes?obo_id={id}",
    "accessedAt": "2026-09-28"
+  },
+  {
+   "id": "openstax-ap2e",
+   "type": "textbook",
+   "title": "Anatomy and Physiology 2e",
+   "publisher": "OpenStax, Rice University",
+   "version": "2e",
+   "url": "https://openstax.org/details/books/anatomy-and-physiology-2e",
+   "license": "CC BY-NC-SA 4.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+   "usage": "facts-only",
+   "urlTemplate": "https://openstax.org/books/anatomy-and-physiology-2e/pages/{section}",
+   "accessedAt": "2026-09-28"
   }
  ],
  "structures": {
@@ -148239,5 +148252,1014 @@
   "FMA72952",
   "FMA72953",
   "FMA72979"
- ]
+ ],
+ "content": {
+  "FMA7088": {
+   "summary": {
+    "vi": "Tim có bốn buồng: mỗi bên trái và phải có một tâm nhĩ và một tâm thất. Tim to cỡ một nắm tay, rộng ở phần đáy phía trên và thuôn dần xuống mỏm tim.",
+    "en": "Four chambers make up the heart, an atrium and a ventricle on each of its two sides, left and right. Roughly fist-sized, it is widest at the top (the base) and narrows toward the apex."
+   },
+   "location": {
+    "vi": "Trong khoang ngực, ở trung thất giữa hai phổi, được bọc trong túi màng ngoài tim. Mặt trước tim nằm sau xương ức và các sụn sườn.",
+    "en": "In the chest cavity, in the mediastinum between the lungs, enclosed in the pericardial sac. Its front surface lies behind the sternum and costal cartilages."
+   },
+   "function": {
+    "vi": "Đẩy máu qua hai vòng tuần hoàn: vòng phổi đưa máu tới phổi để nhận oxy và thải carbon dioxide; vòng hệ thống đưa máu giàu oxy tới gần như mọi mô của cơ thể.",
+    "en": "Pumps blood around two circuits. The pulmonary circuit takes blood to the lungs, where it gains oxygen and gives up carbon dioxide; the systemic circuit sends oxygen-rich blood to virtually every tissue of the body."
+   },
+   "sources": [
+    {
+     "ref": "openstax-ap2e",
+     "section": "19-1-heart-anatomy",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/19-1-heart-anatomy",
+     "supports": [
+      "summary",
+      "location",
+      "function"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-09-28"
+   }
+  },
+  "FMA7197": {
+   "summary": {
+    "vi": "Gan là tuyến lớn nhất của cơ thể, chia thành hai thuỳ chính: thuỳ phải lớn và thuỳ trái nhỏ hơn nhiều.",
+    "en": "The liver is the biggest gland in the body. Of its two primary lobes, the right is large and the left much smaller."
+   },
+   "location": {
+    "vi": "Nằm dưới cơ hoành, ở góc phần tư trên bên phải của ổ bụng, được các xương sườn xung quanh che chắn.",
+    "en": "Found below the diaphragm, in the abdominal cavity's upper right quadrant, with the surrounding ribs protecting it."
+   },
+   "function": {
+    "vi": "Trong tiêu hoá, gan tạo mật và đưa mật xuống tá tràng. Ngoài vai trò tiêu hoá, gan còn đảm nhận nhiều vai trò trong chuyển hoá và điều hoà.",
+    "en": "In digestion, it makes bile and passes it on to the duodenum. Beyond digestion, it also has a number of roles in metabolism and regulation."
+   },
+   "sources": [
+    {
+     "ref": "openstax-ap2e",
+     "section": "23-6-accessory-organs-in-digestion-the-liver-pancreas-and-gallbladder",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/23-6-accessory-organs-in-digestion-the-liver-pancreas-and-gallbladder",
+     "supports": [
+      "summary",
+      "location",
+      "function"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-09-28"
+   }
+  },
+  "FMA7198": {
+   "summary": {
+    "vi": "Tuỵ là một tuyến mềm, thuôn dài, gồm đầu, thân và đuôi. Tuỵ vừa ngoại tiết (tiết enzyme tiêu hoá) vừa nội tiết (tiết hormone vào máu).",
+    "en": "A soft, elongated gland, the pancreas is made up of a head, a body and a tail. It works in two ways: as an exocrine gland it secretes digestive enzymes, and as an endocrine gland it releases hormones into the blood."
+   },
+   "location": {
+    "vi": "Nằm ngang trong khoang sau phúc mạc, phía sau dạ dày.",
+    "en": "Lying crosswise in the retroperitoneum, behind the stomach."
+   },
+   "function": {
+    "vi": "Mỗi ngày tuỵ tiết hơn một lít dịch tuỵ chứa enzyme tiêu hoá và ion bicarbonate, đổ vào tá tràng qua ống tuỵ. Bicarbonate làm dịch tuỵ hơi kiềm, nhờ đó đệm độ axit của dịch vị trong dưỡng chấp, bất hoạt pepsin từ dạ dày và tạo môi trường tối ưu cho các enzyme tiêu hoá nhạy pH ở ruột non.",
+    "en": "Each day it makes more than a liter of pancreatic juice, containing digestive enzymes and bicarbonate ions, and sends it into the duodenum through the pancreatic duct. The bicarbonate makes the juice slightly alkaline, which buffers the acidic gastric juice in chyme, inactivates pepsin from the stomach and gives the small intestine's pH-sensitive enzymes optimal conditions to work."
+   },
+   "sources": [
+    {
+     "ref": "openstax-ap2e",
+     "section": "23-6-accessory-organs-in-digestion-the-liver-pancreas-and-gallbladder",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/23-6-accessory-organs-in-digestion-the-liver-pancreas-and-gallbladder",
+     "supports": [
+      "summary",
+      "location",
+      "function"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-09-28"
+   }
+  },
+  "FMA7148": {
+   "summary": {
+    "vi": "Dạ dày có bốn vùng chính: tâm vị, đáy vị, thân vị và môn vị. Bờ ngoài lồi gọi là bờ cong lớn, bờ trong lõm là bờ cong nhỏ.",
+    "en": "The stomach has four main regions: the cardia, fundus, body and pylorus. Its convex outer edge is the greater curvature; the concave inner edge is the lesser curvature."
+   },
+   "location": {
+    "vi": "Được giữ tại chỗ bởi mạc nối nhỏ, căng từ gan tới bờ cong nhỏ, và mạc nối lớn, từ bờ cong lớn tới thành bụng sau.",
+    "en": "It is held in position by two omenta: the lesser, stretching between the liver and the lesser curvature, and the greater, stretching from the greater curvature to the back wall of the abdomen."
+   },
+   "function": {
+    "vi": "Một chức năng quan trọng là làm nơi chứa tạm: ta ăn nhanh hơn nhiều so với tốc độ ruột non tiêu hoá và hấp thu, nên dạ dày trộn thức ăn với dịch tiêu hoá cho tới khi thành dưỡng chấp rồi mới chuyển xuống ruột non. Dạ dày cũng tham gia tiêu hoá hoá học: tiếp tục tiêu hoá carbohydrate và bắt đầu tiêu hoá protein và triglyceride.",
+    "en": "One of its key jobs is to hold food for a while: a meal can be eaten far faster than the small intestine can digest and absorb it, so the stomach mixes food with digestive juices until it becomes chyme, which then passes into the small intestine. It also takes part in chemical digestion, continuing the breakdown of carbohydrates and beginning that of proteins and triglycerides."
+   },
+   "sources": [
+    {
+     "ref": "openstax-ap2e",
+     "section": "23-4-the-stomach",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/23-4-the-stomach",
+     "supports": [
+      "summary",
+      "location",
+      "function"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-09-28"
+   }
+  },
+  "FMA7196": {
+   "summary": {
+    "vi": "Lách là một cơ quan lympho thứ cấp lớn, mỏng manh, không có vỏ bao chắc, màu đỏ sẫm vì có rất nhiều mạch máu. Bên trong có tuỷ đỏ, chủ yếu là hồng cầu, và tuỷ trắng giống các nang lympho của hạch bạch huyết.",
+    "en": "A major secondary lymphoid organ, the spleen is delicate, has no strong capsule and is dark red from its dense blood supply. Its tissue holds two kinds of pulp: red pulp, made up mostly of red blood cells, and white pulp, which looks like the lymphoid follicles found in lymph nodes."
+   },
+   "location": {
+    "vi": "Gắn vào bờ ngoài của dạ dày qua dây chằng vị–lách.",
+    "en": "Attached to the lateral (outer) border of the stomach by the gastrosplenic ligament."
+   },
+   "function": {
+    "vi": "Lách đôi khi được gọi là \"bộ lọc máu\", vì có rất nhiều mạch máu và chứa đại thực bào cùng tế bào tua loại bỏ vi sinh vật và các chất khác khỏi máu, kể cả hồng cầu sắp chết. Lách cũng là nơi diễn ra đáp ứng miễn dịch với mầm bệnh lưu hành trong máu.",
+    "en": "It is sometimes called the \"filter of the blood\" because it is richly supplied with blood vessels and holds macrophages and dendritic cells that clear microbes and other material from the blood, dying red blood cells included. Immune responses to blood-borne pathogens also take place in the spleen."
+   },
+   "sources": [
+    {
+     "ref": "openstax-ap2e",
+     "section": "21-1-anatomy-of-the-lymphatic-and-immune-systems",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/21-1-anatomy-of-the-lymphatic-and-immune-systems",
+     "supports": [
+      "summary",
+      "function",
+      "location"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-09-28"
+   }
+  },
+  "FMA15900": {
+   "summary": {
+    "vi": "Bàng quang là cơ quan giãn được rất nhiều; thành của nó gồm các bó cơ trơn đan chéo không đều, gọi chung là cơ bức niệu (detrusor).",
+    "en": "The urinary bladder can stretch a great deal. Its wall consists of irregular, crisscrossing bands of smooth muscle, known together as the detrusor muscle."
+   },
+   "location": {
+    "vi": "Sau xương mu và trước trực tràng; ở nữ, bàng quang nằm trước tử cung. Đây là cơ quan sau phúc mạc, chỉ phần vòm có phúc mạc phủ.",
+    "en": "Behind the pubic bone and in front of the rectum; in females it lies in front of the uterus. It is retroperitoneal, with a peritoneal covering only over its dome."
+   },
+   "function": {
+    "vi": "Nhận nước tiểu từ cả hai niệu quản; khi đầy dần, phần vòm căng phồng lên phía trên.",
+    "en": "Collects urine from both ureters; as it fills, its dome expands upward."
+   },
+   "sources": [
+    {
+     "ref": "openstax-ap2e",
+     "section": "25-2-gross-anatomy-of-urine-transport",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/25-2-gross-anatomy-of-urine-transport",
+     "supports": [
+      "summary",
+      "location",
+      "function"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-09-28"
+   }
+  },
+  "FMA7394": {
+   "summary": {
+    "vi": "Khí quản được tạo bởi 16 đến 20 mảnh sụn trong (sụn hyalin) hình chữ C xếp chồng, nối với nhau bằng mô liên kết đặc. Mặt sau khép lại bằng một màng xơ đàn hồi có cơ khí quản.",
+    "en": "Between 16 and 20 C-shaped pieces of hyaline cartilage, stacked and linked by dense connective tissue, form the trachea. At the back, a flexible fibroelastic membrane containing the trachealis muscle closes the gap between them."
+   },
+   "location": {
+    "vi": "Chạy từ thanh quản xuống phía hai phổi.",
+    "en": "Runs from the larynx toward the lungs."
+   },
+   "function": {
+    "vi": "Khí quản thuộc vùng dẫn khí — phần hệ hô hấp không trực tiếp trao đổi khí; cả vùng này dẫn không khí ra vào, loại bụi bẩn và mầm bệnh khỏi luồng khí hít vào, đồng thời làm ấm và làm ẩm nó. Ở chính khí quản, các vòng sụn nâng đỡ và giữ cho ống không xẹp, còn màng xơ đàn hồi cho phép khí quản giãn nhẹ khi hít vào và thở ra; khi thở ra, cơ khí quản có thể co để đẩy khí qua khí quản.",
+    "en": "The trachea belongs to the conducting zone, the part of the respiratory system not directly involved in gas exchange; that zone as a whole carries air in and out, clears debris and pathogens from incoming air, and warms and humidifies it. In the trachea itself, the cartilage rings give structural support and keep it from collapsing, while the fibroelastic membrane lets it stretch and expand slightly as we breathe in and out; during exhalation the trachealis muscle can contract to force air through."
+   },
+   "sources": [
+    {
+     "ref": "openstax-ap2e",
+     "section": "22-1-organs-and-structures-of-the-respiratory-system",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/22-1-organs-and-structures-of-the-respiratory-system",
+     "supports": [
+      "summary",
+      "location",
+      "function"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-09-28"
+   }
+  },
+  "FMA13295": {
+   "summary": {
+    "vi": "Cơ hoành là một cơ hình vòm; mặt trên lồi lên, làm thành sàn của khoang ngực. Cơ có ba lỗ để các cấu trúc đi qua giữa ngực và bụng.",
+    "en": "Shaped like a dome, the diaphragm bulges upward on its top side, forming the raised floor of the thoracic cavity. Three openings in it let structures pass between the chest and the abdomen."
+   },
+   "location": {
+    "vi": "Ở đáy hai phổi, ngăn cách khoang ngực với khoang bụng.",
+    "en": "At the base of the lungs, separating the thoracic and abdominal cavities."
+   },
+   "function": {
+    "vi": "Khi hít vào bình thường, nhìn chung có hai nhóm cơ tham gia: cơ hoành và các cơ gian sườn ngoài. Khi co, cơ hoành hạ xuống về phía ổ bụng, làm khoang ngực rộng ra và tạo thêm chỗ cho phổi. Thở ra bình thường là quá trình thụ động: khi cơ hoành và các cơ gian sườn giãn ra sau thì hít vào, mô phổi đàn hồi co lại.",
+    "en": "In normal inhalation, two muscle groups are generally at work: the diaphragm and the external intercostals. When the diaphragm contracts it descends toward the abdomen, enlarging the chest cavity and giving the lungs more room. Normal exhalation is passive: as the diaphragm and intercostals relax after inhaling, the elastic lung tissue recoils."
+   },
+   "sources": [
+    {
+     "ref": "openstax-ap2e",
+     "section": "22-2-the-lungs",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/22-2-the-lungs",
+     "supports": [
+      "summary",
+      "location"
+     ]
+    },
+    {
+     "ref": "openstax-ap2e",
+     "section": "11-4-axial-muscles-of-the-abdominal-wall-and-thorax",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/11-4-axial-muscles-of-the-abdominal-wall-and-thorax",
+     "supports": [
+      "summary",
+      "location"
+     ]
+    },
+    {
+     "ref": "openstax-ap2e",
+     "section": "22-3-the-process-of-breathing",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/22-3-the-process-of-breathing",
+     "supports": [
+      "function"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-09-28"
+   }
+  },
+  "FMA7195": {
+   "summary": {
+    "vi": "Phổi là cặp cơ quan hình tháp, nối với khí quản qua phế quản phải và trái. Phổi phải ngắn và rộng hơn, có ba thuỳ; phổi trái có hai thuỳ và chiếm thể tích nhỏ hơn.",
+    "en": "The paired, pyramid-shaped lungs connect to the trachea through the right and left bronchi. The right lung, with three lobes, is shorter and broader; the left has two lobes and holds less volume."
+   },
+   "location": {
+    "vi": "Trong khoang ngực, hai bên trung thất; mỗi phổi được bọc trong màng phổi, và mặt dưới giáp cơ hoành.",
+    "en": "In the chest, on either side of the mediastinum; each lung is enclosed by a pleura, and its lower surface borders the diaphragm."
+   },
+   "function": {
+    "vi": "Chức năng chính của phổi là trao đổi oxy và carbon dioxide với không khí lấy từ bên ngoài.",
+    "en": "Their main job is to exchange oxygen and carbon dioxide with air drawn in from the atmosphere."
+   },
+   "sources": [
+    {
+     "ref": "openstax-ap2e",
+     "section": "22-2-the-lungs",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/22-2-the-lungs",
+     "supports": [
+      "summary",
+      "location",
+      "function"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-09-28"
+   }
+  },
+  "FMA7203": {
+   "summary": {
+    "vi": "Thận là cặp cơ quan to cỡ nắm tay, được cấp máu dồi dào: lúc nghỉ nhận khoảng 25% cung lượng tim. Đơn vị chức năng của thận là nephron.",
+    "en": "The kidneys are a pair of organs, each roughly fist-sized, with a rich blood supply: at rest they take about 25 percent of the heart's output. Nephrons are their functional units."
+   },
+   "location": {
+    "vi": "Nằm sau phúc mạc, được mạc thận — và ở mức ít hơn là lá phúc mạc phủ bên trên — giữ chắc vào thành bụng sau. Thận trái ở khoảng ngang đốt sống T12 đến L3; thận phải thấp hơn vì bị gan đẩy lệch nhẹ. Phần trên của hai thận được xương sườn thứ mười một và mười hai che chắn phần nào; tuyến thượng thận nằm ở cực trên mỗi thận.",
+    "en": "Retroperitoneal, held firmly to the posterior abdominal wall by the renal fascia and, to a lesser degree, the peritoneum over it. The left kidney sits at about the T12 to L3 vertebrae; the right sits lower, pushed slightly out of place by the liver. The eleventh and twelfth ribs give their upper parts some protection, and an adrenal gland sits on top of each kidney."
+   },
+   "function": {
+    "vi": "Các nephron lọc sạch máu và giữ cân bằng thành phần của máu; nước tiểu do nephron tạo ra được các ống góp — tập hợp thành nhú thận — dẫn tới đài thận để thải ra ngoài.",
+    "en": "Nephrons clean the blood and keep its make-up in balance; the urine they produce is carried by collecting ducts, bundled into the renal papillae, to the calyces for excretion."
+   },
+   "sources": [
+    {
+     "ref": "openstax-ap2e",
+     "section": "25-3-gross-anatomy-of-the-kidney",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/25-3-gross-anatomy-of-the-kidney",
+     "supports": [
+      "summary",
+      "function",
+      "location"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-09-28"
+   }
+  },
+  "FMA7131": {
+   "summary": {
+    "vi": "Thực quản là một ống cơ nối hầu với dạ dày.",
+    "en": "The esophagus is a muscular tube connecting the pharynx to the stomach."
+   },
+   "location": {
+    "vi": "Chạy gần như thẳng qua trung thất của lồng ngực.",
+    "en": "In the chest it passes through the mediastinum on a largely straight path."
+   },
+   "function": {
+    "vi": "Đưa thức ăn xuống dạ dày: cơ thắt thực quản trên điều khiển thức ăn đi từ hầu vào, rồi các làn sóng nhu động bắt đầu ở phần trên thực quản đẩy viên thức ăn đi tiếp.",
+    "en": "Moves food to the stomach: the upper esophageal sphincter controls entry from the pharynx, and waves of peristalsis starting in the upper esophagus push the bolus onward."
+   },
+   "sources": [
+    {
+     "ref": "openstax-ap2e",
+     "section": "23-3-the-mouth-pharynx-and-esophagus",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/23-3-the-mouth-pharynx-and-esophagus",
+     "supports": [
+      "summary",
+      "location",
+      "function"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-09-28"
+   }
+  },
+  "FMA7200": {
+   "summary": {
+    "vi": "Ruột non là đoạn dài nhất của ống tiêu hoá, khoảng 3,05 m ở người sống. Từ dạ dày trở xuống, nó gồm ba đoạn: tá tràng, hỗng tràng và hồi tràng.",
+    "en": "The small intestine is the longest part of the alimentary canal, about 3.05 m in a living person. From the stomach onward it has three regions: the duodenum, jejunum and ileum."
+   },
+   "location": {
+    "vi": "Bắt đầu ở cơ thắt môn vị; tá tràng uốn thành đường cong hình chữ C quanh đầu tuỵ.",
+    "en": "Begins at the pyloric sphincter; the duodenum curves in a C shape around the head of the pancreas."
+   },
+   "function": {
+    "vi": "Là cơ quan tiêu hoá chính: phần lớn quá trình tiêu hoá và gần như toàn bộ sự hấp thu diễn ra ở đây.",
+    "en": "The body's chief digestive organ: most digestion happens here, and practically all absorption."
+   },
+   "sources": [
+    {
+     "ref": "openstax-ap2e",
+     "section": "23-5-the-small-and-large-intestines",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/23-5-the-small-and-large-intestines",
+     "supports": [
+      "summary",
+      "location",
+      "function"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-09-28"
+   }
+  },
+  "FMA7201": {
+   "summary": {
+    "vi": "Ruột già là đoạn cuối của ống tiêu hoá, gồm bốn vùng chính: manh tràng, kết tràng, trực tràng và hậu môn.",
+    "en": "The large intestine is the last part of the alimentary canal, with four main regions: the cecum, colon, rectum and anus."
+   },
+   "location": {
+    "vi": "Bắt đầu ở manh tràng — nơi hồi tràng đổ vào qua cơ thắt (van) hồi manh tràng — và kết thúc ở hậu môn; ruột già bao quanh ruột non ở ba phía.",
+    "en": "Begins at the cecum, where the ileum joins it at the ileocecal sphincter (valve), and ends at the anus; along the way it frames the small intestine on three sides."
+   },
+   "function": {
+    "vi": "Nhiệm vụ chính là hoàn tất hấp thu chất dinh dưỡng và nước, tổng hợp một số vitamin, tạo phân và thải phân ra ngoài. Phần lớn lượng nước còn lại trong bã dưỡng chấp được hấp thu ở đây, biến bã lỏng thành phân bán rắn.",
+    "en": "Its primary tasks are to finish absorbing nutrients and water, synthesize certain vitamins, and form and eliminate feces. Most of the water still left in the chyme residue is absorbed here, turning it from a liquid into semisolid feces."
+   },
+   "sources": [
+    {
+     "ref": "openstax-ap2e",
+     "section": "23-5-the-small-and-large-intestines",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/23-5-the-small-and-large-intestines",
+     "supports": [
+      "summary",
+      "location",
+      "function"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-09-28"
+   }
+  },
+  "FMA50801": {
+   "summary": {
+    "vi": "Não người trưởng thành gồm bốn vùng chính: đại não, gian não, thân não và tiểu não. Khe dọc chia đại não thành bán cầu trái và phải; chất trắng của thể chai là đường liên lạc chính giữa hai bán cầu.",
+    "en": "The adult brain has four major regions: the cerebrum, diencephalon, brain stem and cerebellum. The longitudinal fissure splits the cerebrum into left and right hemispheres; the white matter of the corpus callosum is the main pathway between them."
+   },
+   "location": {
+    "vi": "Nằm trong sọ, được sọ não — phần sọ tròn bao lấy não — bao quanh và bảo vệ.",
+    "en": "Inside the skull, surrounded and protected by the brain case."
+   },
+   "function": {
+    "vi": "Trải nghiệm có ý thức của con người dựa trên hoạt động thần kinh trong não. Vỏ đại não — một lớp chất xám mỏng, nhiều nếp nhăn — chịu trách nhiệm cho các chức năng cao cấp của hệ thần kinh, và một vùng chuyên biệt của não điều hoà cân bằng nội môi.",
+    "en": "Neural activity in the brain underlies a person's conscious experience. The cerebral cortex, a thin, wrinkled sheet of gray matter, is responsible for the nervous system's higher functions, and one specialized region of the brain governs homeostasis."
+   },
+   "sources": [
+    {
+     "ref": "openstax-ap2e",
+     "section": "13-2-the-central-nervous-system",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/13-2-the-central-nervous-system",
+     "supports": [
+      "summary",
+      "function"
+     ]
+    },
+    {
+     "ref": "openstax-ap2e",
+     "section": "7-2-the-skull",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/7-2-the-skull",
+     "supports": [
+      "location"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-09-28"
+   }
+  },
+  "FMA67944": {
+   "summary": {
+    "vi": "Tiểu não — \"não nhỏ\" — có các hồi và rãnh như đại não, trông như một bản thu nhỏ của đại não. Tiểu não gắn với thân não nhưng được xem là một vùng riêng của não người trưởng thành.",
+    "en": "Its name means \"little brain\": ridged with gyri and sulci, it resembles a scaled-down cerebrum. Although it is attached to the brain stem, it is treated as a region of the adult brain in its own right."
+   },
+   "location": {
+    "vi": "Ở mặt sau thân não; cầu não là đường nối chính giữa tiểu não và thân não.",
+    "en": "On the back of the brain stem; the pons is its main connection to the brain stem."
+   },
+   "function": {
+    "vi": "Chủ yếu đảm nhận việc so sánh thông tin từ đại não với phản hồi cảm giác từ ngoại vi truyền lên qua tuỷ sống — từ cơ và khớp, từ cử động khi đi, và cảm giác thăng bằng. Tín hiệu ra của tiểu não đi tới não giữa; não giữa gửi tín hiệu xuống tuỷ sống để hiệu chỉnh các lệnh tới cơ xương.",
+    "en": "It is largely charged with checking the cerebrum's information against sensory feedback that reaches it from the periphery via the spinal cord — from muscles and joints, from the movements of walking, and from the sense of balance. Its output goes to the midbrain, which sends a descending signal to the spinal cord that corrects the messages reaching skeletal muscles."
+   },
+   "sources": [
+    {
+     "ref": "openstax-ap2e",
+     "section": "13-2-the-central-nervous-system",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/13-2-the-central-nervous-system",
+     "supports": [
+      "summary",
+      "location",
+      "function"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-09-28"
+   }
+  },
+  "FMA7647": {
+   "summary": {
+    "vi": "Tuỷ sống là một cơ quan chính của hệ thần kinh trung ương, bên cạnh não. Chiều dài của nó chia thành các vùng tương ứng với các vùng của cột sống.",
+    "en": "The spinal cord is a major organ of the central nervous system alongside the brain. Its length is divided into regions matching those of the vertebral column."
+   },
+   "location": {
+    "vi": "Chạy dọc lưng trong các lỗ của đốt sống, nhưng không dài hết cột sống: sau một hai năm đầu đời tuỷ gần như không dài thêm, trong khi bộ xương vẫn tiếp tục lớn.",
+    "en": "Lies within the vertebral column, threading through the openings of the vertebrae, but stops short of the column's full length: after the first year or two it grows little longer, while the skeleton keeps growing."
+   },
+   "function": {
+    "vi": "Việc phối hợp phản xạ dựa trên sự tích hợp các đường cảm giác và vận động trong tuỷ sống. Các đường dẫn truyền lên và xuống chính nối tuỷ sống với não — cụ thể là đại não — đi qua thân não.",
+    "en": "Coordinating reflexes depends on integrating sensory and motor pathways within the spinal cord. The major ascending and descending pathways linking it with the brain, specifically the cerebrum, run through the brain stem."
+   },
+   "sources": [
+    {
+     "ref": "openstax-ap2e",
+     "section": "13-2-the-central-nervous-system",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/13-2-the-central-nervous-system",
+     "supports": [
+      "summary",
+      "location",
+      "function"
+     ]
+    },
+    {
+     "ref": "openstax-ap2e",
+     "section": "7-3-the-vertebral-column",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/7-3-the-vertebral-column",
+     "supports": [
+      "location"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-09-28"
+   }
+  },
+  "FMA12513": {
+   "summary": {
+    "vi": "Nhãn cầu là cơ quan của thị giác. Võng mạc chứa tế bào cảm quang — loại thụ thể chuyên biệt đáp ứng với kích thích ánh sáng.",
+    "en": "The eyeball is the organ of sight. Its retina holds photoreceptors, specialized receptor cells that respond to light."
+   },
+   "location": {
+    "vi": "Nằm trong một trong hai ổ mắt của hộp sọ. Thành xương ổ mắt bao quanh nhãn cầu, bảo vệ nó và neo giữ các mô mềm của mắt; sáu cơ ngoài nhãn cầu đi từ xương ổ mắt tới bề mặt nhãn cầu và làm nhãn cầu chuyển động trong ổ mắt.",
+    "en": "Sits in one of the two orbits of the skull. The bony orbit wraps around the eyeball, shielding it and anchoring the eye's soft tissues; six extraocular muscles run from the orbit's bones to the eyeball's surface and move it within the orbit."
+   },
+   "function": {
+    "vi": "Thị giác — giác quan đặc biệt để nhìn — dựa trên việc chuyển đổi các kích thích ánh sáng mà mắt nhận được.",
+    "en": "Vision, the special sense of sight, depends on transducing the light stimuli the eyes receive."
+   },
+   "sources": [
+    {
+     "ref": "openstax-ap2e",
+     "section": "14-1-sensory-perception",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/14-1-sensory-perception",
+     "supports": [
+      "summary",
+      "function",
+      "location"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-09-28"
+   }
+  },
+  "FMA3734": {
+   "summary": {
+    "vi": "Động mạch chủ là động mạch lớn nhất cơ thể, gồm động mạch chủ lên, cung động mạch chủ và động mạch chủ xuống. Đoạn xuống đi qua cơ hoành — mốc chia nó thành phần ngực ở trên và phần bụng ở dưới.",
+    "en": "The largest artery in the body, the aorta has three parts: ascending aorta, aortic arch, descending aorta. The point where the descending part passes through the diaphragm marks the boundary between its upper, thoracic section and its lower, abdominal one."
+   },
+   "location": {
+    "vi": "Xuất phát từ tâm thất trái; ở gốc có van bán nguyệt động mạch chủ. Ra khỏi tim, đoạn lên đi lên khoảng 5 cm rồi kết thúc ở góc ức.",
+    "en": "It arises from the left ventricle, with the aortic semilunar valve at its base. After leaving the heart, the ascending aorta climbs about 5 cm and ends at the sternal angle."
+   },
+   "function": {
+    "vi": "Nhận máu do tâm thất trái bơm ra; van bán nguyệt ở gốc động mạch chủ ngăn máu chảy ngược về tâm thất khi tim giãn. Cùng các nhánh của nó — các động mạch hệ thống — động mạch chủ đưa máu tới gần như mọi cơ quan.",
+    "en": "Takes the blood the left ventricle pumps out; the aortic semilunar valve at its base stops blood flowing back into the ventricle while the heart relaxes. Together with its branches, the systemic arteries, it delivers blood to virtually every organ."
+   },
+   "sources": [
+    {
+     "ref": "openstax-ap2e",
+     "section": "20-5-circulatory-pathways",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/20-5-circulatory-pathways",
+     "supports": [
+      "summary",
+      "location",
+      "function"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-09-28"
+   }
+  },
+  "FMA9611": {
+   "summary": {
+    "vi": "Xương đùi là xương duy nhất của vùng đùi, dài và khoẻ nhất cơ thể, chiếm khoảng một phần tư chiều cao của một người.",
+    "en": "The single bone of the thigh, the femur is the longest and strongest bone in the body; its length is roughly a quarter of a person's total height."
+   },
+   "location": {
+    "vi": "Ở đùi, từ khớp hông ở trên tới khớp gối ở dưới; mặt trước đầu dưới có diện bánh chè để khớp với xương bánh chè.",
+    "en": "In the thigh, spanning from the hip joint above to the knee joint below; the front of its lower end carries the patellar surface, where the patella articulates."
+   },
+   "function": {
+    "vi": "Tham gia hai khớp lớn: chỏm xương đùi khớp với ổ cối của xương chậu tạo khớp hông; lồi cầu trong và lồi cầu ngoài ở đầu dưới khớp với xương chày tạo khớp gối.",
+    "en": "It takes part in two major joints: its rounded head sits in the acetabulum of the hip bone at the hip joint, and its medial and lateral condyles meet the tibia at the knee joint."
+   },
+   "sources": [
+    {
+     "ref": "openstax-ap2e",
+     "section": "8-4-bones-of-the-lower-limb",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/8-4-bones-of-the-lower-limb",
+     "supports": [
+      "summary",
+      "location",
+      "function"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-09-28"
+   }
+  },
+  "FMA13303": {
+   "summary": {
+    "vi": "Xương cánh tay là xương duy nhất của vùng cánh tay.",
+    "en": "The humerus is the only bone of the upper arm."
+   },
+   "location": {
+    "vi": "Ở cánh tay — vùng giữa khớp vai và khớp khuỷu; dưới khuỷu là hai xương cẳng tay, xương trụ ở phía trong và xương quay ở phía ngoài.",
+    "en": "In the arm, the region between the shoulder and elbow joints; below the elbow lie the paired forearm bones, the ulna medially and the radius laterally."
+   },
+   "function": {
+    "vi": "Đầu dưới có hai diện khớp nối với xương trụ và xương quay, tạo nên khớp khuỷu.",
+    "en": "Its lower end has two articular areas that join the ulna and radius to form the elbow joint."
+   },
+   "sources": [
+    {
+     "ref": "openstax-ap2e",
+     "section": "8-2-bones-of-the-upper-limb",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/8-2-bones-of-the-upper-limb",
+     "supports": [
+      "summary",
+      "location",
+      "function"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-09-28"
+   }
+  },
+  "FMA7485": {
+   "summary": {
+    "vi": "Xương ức là một cấu trúc xương thuôn dài, gồm ba phần: cán ức ở trên và rộng hơn, thân ức thuôn dài ở giữa, và mỏm mũi kiếm.",
+    "en": "The sternum is an elongated bone in three parts: the broader manubrium on top, the long central body, and the xiphoid process."
+   },
+   "location": {
+    "vi": "Ở mặt trước lồng ngực.",
+    "en": "At the front of the rib cage."
+   },
+   "function": {
+    "vi": "Là chỗ neo phía trước của lồng ngực; đôi xương sườn thứ nhất gắn vào cán ức.",
+    "en": "Anchors the front of the rib cage; the first ribs attach to the manubrium."
+   },
+   "sources": [
+    {
+     "ref": "openstax-ap2e",
+     "section": "7-4-the-thoracic-cage",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/7-4-the-thoracic-cage",
+     "supports": [
+      "summary",
+      "location",
+      "function"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-09-28"
+   }
+  },
+  "FMA46565": {
+   "summary": {
+    "vi": "Sọ người trưởng thành gồm 22 xương, trong đó 21 xương bất động và gắn liền thành một khối; xương thứ 22 là xương hàm dưới, xương duy nhất cử động được. Sọ chia làm hai phần: sọ não (khối xương bao bọc não) và các xương mặt.",
+    "en": "The adult skull has 22 bones; 21 are immobile and united into a single unit, while the 22nd, the mandible (lower jaw), is its only movable bone. It divides into the brain case, or cranial vault, and the facial bones."
+   },
+   "location": {
+    "vi": "Là bộ khung xương của đầu; đầu gắn trên đỉnh cột sống.",
+    "en": "It is the skeletal structure of the head, and the head sits on top of the vertebral column."
+   },
+   "function": {
+    "vi": "Sọ não bao quanh và bảo vệ não, đồng thời chứa các cấu trúc tai giữa và tai trong. Các xương mặt nâng đỡ các cấu trúc của mặt, tạo khoang mũi, bao quanh nhãn cầu và đỡ răng của hàm trên, hàm dưới.",
+    "en": "The brain case encloses and protects the brain and contains the structures of the middle and inner ear. The facial bones underpin the face, form the nasal cavity, surround the eyeballs and hold the teeth of both jaws."
+   },
+   "sources": [
+    {
+     "ref": "openstax-ap2e",
+     "section": "7-2-the-skull",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/7-2-the-skull",
+     "supports": [
+      "summary",
+      "function",
+      "location"
+     ]
+    },
+    {
+     "ref": "openstax-ap2e",
+     "section": "11-3-axial-muscles-of-the-head-neck-and-back",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/11-3-axial-muscles-of-the-head-neck-and-back",
+     "supports": [
+      "location"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-09-28"
+   }
+  },
+  "FMA13478": {
+   "summary": {
+    "vi": "Cột sống người trưởng thành gồm 24 đốt sống cùng xương cùng và xương cụt; các đốt được ngăn cách và nối với nhau bằng đĩa gian đốt sống. Cột sống có bốn đoạn cong: hai cong nguyên phát (ngực, cùng–cụt) và hai cong thứ phát (cổ, thắt lưng).",
+    "en": "The adult vertebral column has 24 vertebrae plus the sacrum and coccyx, each vertebra separated from and joined to the next by an intervertebral disc. It has two primary curves (thoracic and sacrococcygeal) and two secondary curves (cervical and lumbar)."
+   },
+   "location": {
+    "vi": "Đốt sống trên cùng, C1, khớp với lồi cầu chẩm của xương sọ. Bên dưới, bảy đốt sống cổ nằm ở cổ, tiếp theo là 12 đốt sống ngực (T1–T12), rồi các đốt sống thắt lưng L1–L5 ở vùng thắt lưng; cuối cùng là xương cùng — cũng là một phần của khung chậu — và xương cụt.",
+    "en": "At the top, its first vertebra, C1, articulates with the skull's occipital condyles. Below it, the seven cervical vertebrae sit in the neck, the 12 thoracic vertebrae (T1–T12) follow, and the lumbar vertebrae L1–L5 occupy the lower back; the sacrum, part of the pelvis as well, and the coccyx complete the column."
+   },
+   "function": {
+    "vi": "Là một cột linh hoạt, nâng đỡ đầu, cổ và thân mình đồng thời cho phép chúng cử động, và bảo vệ tuỷ sống chạy qua các lỗ của đốt sống. Các đoạn cong làm cột sống chắc hơn, linh hoạt hơn và chịu lực va đập tốt hơn.",
+    "en": "A flexible column, it holds up the head, neck and body while letting them move, and shields the spinal cord that passes through openings in the vertebrae. Its curves add strength and flexibility and help it absorb shock."
+   },
+   "sources": [
+    {
+     "ref": "openstax-ap2e",
+     "section": "7-3-the-vertebral-column",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/7-3-the-vertebral-column",
+     "supports": [
+      "summary",
+      "function",
+      "location"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-09-28"
+   }
+  },
+  "FMA7480": {
+   "summary": {
+    "vi": "Lồng ngực gồm 12 đôi xương sườn cùng các sụn sườn và xương ức. Xương sườn 1–7 là xương sườn thật, 8–12 là xương sườn giả; hai đôi cuối (11–12) còn gọi là xương sườn cụt.",
+    "en": "The rib cage is made of 12 pairs of ribs with their costal cartilages, plus the sternum. Ribs 1–7 are true ribs and 8–12 false ribs; the last two pairs (11–12) are also called floating ribs."
+   },
+   "location": {
+    "vi": "Tạo nên phần ngực của cơ thể; phía sau, các xương sườn bám vào 12 đốt sống ngực (T1–T12).",
+    "en": "Forms the chest portion of the body; at the back, the ribs are anchored to the 12 thoracic vertebrae (T1–T12)."
+   },
+   "function": {
+    "vi": "Bảo vệ tim và phổi.",
+    "en": "Protects the heart and lungs."
+   },
+   "sources": [
+    {
+     "ref": "openstax-ap2e",
+     "section": "7-4-the-thoracic-cage",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/7-4-the-thoracic-cage",
+     "supports": [
+      "summary",
+      "location",
+      "function"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-09-28"
+   }
+  },
+  "FMA24485": {
+   "summary": {
+    "vi": "Xương bánh chè là xương vừng lớn nhất cơ thể, nằm trong gân của cơ tứ đầu đùi. Gân chung của bốn cơ tứ đầu bám vào xương bánh chè rồi đi tiếp xuống dưới thành dây chằng bánh chè, bám vào lồi củ xương chày.",
+    "en": "The kneecap, or patella, is the body's largest sesamoid bone, set within the tendon of the quadriceps femoris. That tendon, shared by all four quadriceps muscles, inserts on the patella and carries on below it as the patellar ligament, which attaches to the tibial tuberosity."
+   },
+   "location": {
+    "vi": "Ở mặt trước gối, nằm trong gân cơ tứ đầu đùi nơi gân này bắt qua gối; chỉ khớp với đầu dưới xương đùi, không khớp với xương chày.",
+    "en": "At the front of the knee, within the quadriceps tendon where it crosses the joint; it articulates only with the lower end of the femur, never with the tibia."
+   },
+   "function": {
+    "vi": "Khớp với diện bánh chè của xương đùi, xương bánh chè ngăn gân cơ tứ đầu cọ xát vào đầu dưới xương đùi; nó cũng nâng gân ra xa khớp gối, làm tăng lực đòn bẩy của cơ tứ đầu đùi khi tác động qua gối.",
+    "en": "By articulating with the femur's patellar surface, it keeps the quadriceps tendon from rubbing against the lower femur; by lifting the tendon away from the knee joint, it increases the quadriceps' leverage across the knee."
+   },
+   "sources": [
+    {
+     "ref": "openstax-ap2e",
+     "section": "8-4-bones-of-the-lower-limb",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/8-4-bones-of-the-lower-limb",
+     "supports": [
+      "summary",
+      "location",
+      "function"
+     ]
+    },
+    {
+     "ref": "openstax-ap2e",
+     "section": "11-6-appendicular-muscles-of-the-pelvic-girdle-and-lower-limbs",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/11-6-appendicular-muscles-of-the-pelvic-girdle-and-lower-limbs",
+     "supports": [
+      "summary"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-09-28"
+   }
+  },
+  "FMA13394": {
+   "summary": {
+    "vi": "Xương bả vai là xương dẹt hình tam giác, mặt sau có một gờ nổi chạy ngang.",
+    "en": "A flat bone shaped like a triangle, the scapula has a prominent ridge running across its posterior face."
+   },
+   "location": {
+    "vi": "Ở mặt sau của vai.",
+    "en": "On the back of the shoulder."
+   },
+   "function": {
+    "vi": "Là một phần của đai vai nên giữ vai trò quan trọng trong việc neo chi trên vào thân; xương bả vai được xương đòn nâng đỡ và khớp với xương cánh tay tạo nên khớp vai.",
+    "en": "Being part of the pectoral girdle, it has an important part in fixing the upper limb to the body; the clavicle braces it, and it meets the humerus to form the shoulder joint."
+   },
+   "sources": [
+    {
+     "ref": "openstax-ap2e",
+     "section": "8-1-the-pectoral-girdle",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/8-1-the-pectoral-girdle",
+     "supports": [
+      "summary",
+      "location",
+      "function"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-09-28"
+   }
+  },
+  "FMA13321": {
+   "summary": {
+    "vi": "Xương đòn là xương hình chữ S và là xương dài duy nhất nằm ngang trong cơ thể. Đây cũng là xương bị gãy thường gặp nhất.",
+    "en": "The clavicle is an S-shaped bone and the only long bone lying horizontally in the body. It is also the most commonly fractured bone."
+   },
+   "location": {
+    "vi": "Ở mặt trước của vai.",
+    "en": "On the front of the shoulder."
+   },
+   "function": {
+    "vi": "Các chức năng quan trọng gồm: làm thanh chống — được các cơ từ phía trên giữ — vươn sang bên để đỡ xương bả vai, nhờ đó giữ khớp vai ở cao và xa thân mình, cho chi trên cử động tự do tối đa; truyền lực tác động lên chi trên tới xương ức và khung xương trục; và bảo vệ các dây thần kinh, mạch máu bên dưới khi chúng đi giữa thân và chi trên.",
+    "en": "Its important functions include acting as a strut, braced by muscles from above, that reaches sideways to support the scapula and so holds the shoulder joint up and away from the trunk, giving the upper limb maximal freedom of motion; relaying forces from the upper limb to the sternum and the rest of the axial skeleton; and shielding the nerves and blood vessels beneath it where they travel between the trunk and the upper limb."
+   },
+   "sources": [
+    {
+     "ref": "openstax-ap2e",
+     "section": "8-1-the-pectoral-girdle",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/8-1-the-pectoral-girdle",
+     "supports": [
+      "summary",
+      "location",
+      "function"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-09-28"
+   }
+  },
+  "FMA24476": {
+   "summary": {
+    "vi": "Xương chày là xương lớn hơn trong cặp xương cẳng chân và là xương dài thứ hai của cơ thể, sau xương đùi.",
+    "en": "The tibia is the larger of the two lower-leg bones and the second longest bone in the body, after the femur."
+   },
+   "location": {
+    "vi": "Ở phía trong cẳng chân; mặt trong nằm ngay dưới da nên dễ sờ thấy suốt chiều dài.",
+    "en": "On the medial (inner) side of the lower leg. Its medial surface lies directly beneath the skin, so the bone can be felt all the way down the inner leg."
+   },
+   "function": {
+    "vi": "Là xương chịu trọng lượng chính của cẳng chân.",
+    "en": "The main weight-bearing bone of the lower leg."
+   },
+   "sources": [
+    {
+     "ref": "openstax-ap2e",
+     "section": "8-4-bones-of-the-lower-limb",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/8-4-bones-of-the-lower-limb",
+     "supports": [
+      "summary",
+      "location",
+      "function"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-09-28"
+   }
+  },
+  "FMA9627": {
+   "summary": {
+    "vi": "Cơ ngực lớn là cơ dày, hình quạt, phủ phần lớn nửa trên mặt trước lồng ngực.",
+    "en": "A thick muscle shaped like a fan, the pectoralis major spreads over much of the upper part of the front of the chest."
+   },
+   "location": {
+    "vi": "Ở mặt trước ngực; là một trong những cơ có nguyên uỷ ở xương ức.",
+    "en": "On the front of the chest; it is among the muscles with an origin on the sternum."
+   },
+   "function": {
+    "vi": "Là một trong hai cơ trục bắt qua khớp vai và vận động xương cánh tay.",
+    "en": "One of the two axial muscles that act on the humerus, the arm bone, across the shoulder joint."
+   },
+   "sources": [
+    {
+     "ref": "openstax-ap2e",
+     "section": "11-5-muscles-of-the-pectoral-girdle-and-upper-limbs",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/11-5-muscles-of-the-pectoral-girdle-and-upper-limbs",
+     "supports": [
+      "summary",
+      "location",
+      "function"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-09-28"
+   }
+  },
+  "FMA22314": {
+   "summary": {
+    "vi": "Cơ mông lớn là cơ lớn nhất trong ba cơ mông — nhóm cơ thuộc hàng lớn và khoẻ nhất cơ thể. Nằm sâu dưới nó là cơ mông nhỡ, rồi tới cơ mông bé, cơ nhỏ nhất trong ba cơ.",
+    "en": "The largest of the three gluteal muscles, a group that ranks among the largest and most powerful muscles in the body. Beneath it lies the gluteus medius, and beneath that the smallest of the three, the gluteus minimus."
+   },
+   "location": {
+    "vi": "Ở vùng mông, là lớp nông nhất của nhóm cơ mông.",
+    "en": "In the buttock, the most superficial of the gluteal muscles."
+   },
+   "function": {
+    "vi": "Thuộc nhóm cơ vùng mông vận động xương đùi; các cơ hông loại này nhìn chung xuất phát từ đai chậu và bám vào xương đùi.",
+    "en": "One of the gluteal-region muscles that move the femur; hip muscles of this kind generally arise on the pelvic girdle and insert on the femur."
+   },
+   "sources": [
+    {
+     "ref": "openstax-ap2e",
+     "section": "11-6-appendicular-muscles-of-the-pelvic-girdle-and-lower-limbs",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/11-6-appendicular-muscles-of-the-pelvic-girdle-and-lower-limbs",
+     "supports": [
+      "summary",
+      "location",
+      "function"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-09-28"
+   }
+  },
+  "FMA22353": {
+   "summary": {
+    "vi": "Cơ may là một cơ dạng dải ở khoang trước của đùi.",
+    "en": "The sartorius is a band-like muscle of the anterior compartment of the thigh."
+   },
+   "location": {
+    "vi": "Chạy từ gai chậu trước trên tới mặt trong đầu trên xương chày.",
+    "en": "Runs from the anterior superior iliac spine to the inner side of the upper tibia."
+   },
+   "function": {
+    "vi": "Ở gối, cơ gấp cẳng chân; ở hông, cơ gấp, dạng và xoay ngoài chi dưới. Cơ may giúp ta ngồi xếp bằng được.",
+    "en": "At the knee it flexes the leg; at the hip it flexes, abducts and laterally rotates it. It allows us to sit cross-legged."
+   },
+   "sources": [
+    {
+     "ref": "openstax-ap2e",
+     "section": "11-6-appendicular-muscles-of-the-pelvic-girdle-and-lower-limbs",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/11-6-appendicular-muscles-of-the-pelvic-girdle-and-lower-limbs",
+     "supports": [
+      "summary",
+      "location",
+      "function"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-09-28"
+   }
+  },
+  "FMA13407": {
+   "summary": {
+    "vi": "Nhìn từ bên, cơ ức đòn chũm chia vùng cổ thành tam giác trước và tam giác sau.",
+    "en": "Seen from the side, the sternocleidomastoid divides the neck into anterior and posterior triangles."
+   },
+   "location": {
+    "vi": "Đi từ xương ức và xương đòn tới mỏm chũm của xương thái dương và xương chẩm.",
+    "en": "Runs from the sternum and clavicle to the mastoid process of the temporal bone and the occipital bone."
+   },
+   "function": {
+    "vi": "Là cơ chính làm nghiêng đầu sang bên và xoay đầu; khi co một bên, cơ xoay đầu về phía đối diện, còn khi hai bên cùng co thì gấp đầu, làm đầu cúi ra trước.",
+    "en": "The main muscle that tilts the head to the side and rotates it; acting on one side it turns the head toward the opposite side, and when both sides contract together they flex the head, tilting it forward."
+   },
+   "sources": [
+    {
+     "ref": "openstax-ap2e",
+     "section": "11-3-axial-muscles-of-the-head-neck-and-back",
+     "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/11-3-axial-muscles-of-the-head-neck-and-back",
+     "supports": [
+      "summary",
+      "location",
+      "function"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-09-28"
+   }
+  }
+ }
 }

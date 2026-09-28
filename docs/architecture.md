@@ -460,6 +460,25 @@ tải lười SAU danh mục, không chặn gì; không có lượt gọi API y 
 - **Cache thô `.cache/anatomy/` gitignored** và giữ cả cấp máu, thần kinh chi phối… (Level 3)
   — lượt sau đọc lại cache chứ không tải lại.
 
+### Level 2: viết tay có bằng chứng, máy kiểm hình thức, science-editor kiểm nghĩa
+
+`data/anatomy/content-l2.json`: tóm tắt / vị trí / chức năng song ngữ, mỗi trường kèm câu trích
+NGUYÊN VĂN từ OpenStax A&P 2e. `scripts/anatomy-content.ts` (gọi từ `anatomy-enrich.ts`) loại
+mục nếu: câu trích không có nguyên văn trong mục sách đã tải, một con số trong câu không có
+trong câu trích chống lưng, trường không có bằng chứng, hoặc câu rào đón khi nguồn không rào
+đón. Chỉ mục có `review` (science-editor) vào bản phát hành; câu trích ở lại repo, không lên R2.
+Bộ kiểm còn chặn tiếng Anh trùng ≥10 từ liên tiếp với câu trích (giấy phép) và cảnh báo khi rơi
+từ hạn định của nguồn. Lượt đầu nó bắt ngay một câu trích bị tự điền nốt phần cuối — đó là lý do nó so nguyên
+văn chứ không tin người viết.
+
+- **OpenStax A&P 2e là CC BY-NC-SA 4.0**, không phải CC BY. Chỉ dùng làm nguồn dữ kiện, câu
+  chữ tự viết; chép hay phỏng sát câu thì trang kế thừa phi thương mại + share-alike.
+- **Viết cho khái niệm chung, cấu trúc con kế thừa** (`resolveContent`): "Xương đùi trái" is-a
+  "Xương đùi"; mảnh không có is-a mang nội dung thì thử cha part-of. Khoá nội dung được là mã
+  không có mảnh (Phổi FMA7195, Nhãn cầu FMA12513, Cơ ngực lớn FMA9627). Kế thừa luôn hiện
+  trong khung "Về <cha>" — không bao giờ như mô tả của chính mảnh đang chọn.
+- **Nội dung có nguồn thắng `EXPLAINED`** (lời giải thích port từ bản gốc, không nguồn).
+
 ---
 
 ## Triển khai

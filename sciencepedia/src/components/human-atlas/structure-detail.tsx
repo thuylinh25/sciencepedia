@@ -17,10 +17,14 @@ import {
 import { displayName, hasViName, viNameStatus } from "@/lib/human-atlas/names-vi";
 import type { StructureArticle } from "@/lib/human-atlas/structure-links";
 import {
+  ANATOMY_SOURCES,
   fmaName,
   fmaSourceUrl,
   primaryPartOf,
+  resolveContent,
   type AnatomyData,
+  type Bilingual,
+  type StructureContent,
 } from "@/lib/human-atlas/structures";
 import { Button } from "@/components/ui/button";
 import { PANEL } from "@/components/human-atlas/panel";
@@ -86,6 +90,13 @@ export function StructureDetail({
   const partOfId = anatomy && structure ? primaryPartOf(anatomy, structure) : null;
   const partOfEn = anatomy && partOfId ? fmaName(anatomy, partOfId) : null;
   const partOf = partOfId && partOfEn ? displayName(locale, partOfId, partOfEn) : null;
+
+  // Level 2: của chính nó, hoặc kế thừa (is-a, rồi cha part-of) — `about` nói là của ai.
+  const resolved = anatomy ? resolveContent(anatomy, concept.id) : null;
+  const aboutName =
+    resolved && resolved.about !== concept.id && anatomy
+      ? displayName(locale, resolved.about, fmaName(anatomy, resolved.about) ?? resolved.about)
+      : null;
 
   useEffect(() => {
     // Không cướp focus khi bảng mở từ deep link lúc tải trang.
@@ -165,7 +176,24 @@ export function StructureDetail({
             đề riêng, trong khung riêng: đặt thẳng đoạn "cơ xương tạo ra cử
             động…" dưới tên "Phần ức sườn cơ ngực lớn trái" là để người đọc
             tưởng đó là mô tả của đúng cấu trúc ấy. */}
-        {explainedKey ? (
+        {resolved && !aboutName ? (
+          <StructureText content={resolved.content} locale={locale} />
+        ) : resolved && aboutName ? (
+          <div className="rounded-xl border border-dashed p-3">
+            <h3 className="text-[11px] font-semibold tracking-[0.1em] text-muted-foreground uppercase">
+              {t("detail.aboutParent", { name: aboutName })}
+            </h3>
+            <div className="mt-1.5">
+              <StructureText content={resolved.content} locale={locale} />
+            </div>
+            <p className="mt-2 text-[11px] leading-snug text-muted-foreground/80">
+              {t("detail.parentNote", {
+                // Giữa câu: "…nói về cơ ngực lớn", không "…nói về Cơ ngực lớn".
+                name: aboutName.charAt(0).toLocaleLowerCase(locale) + aboutName.slice(1),
+              })}
+            </p>
+          </div>
+        ) : explainedKey ? (
           <p className="text-sm leading-relaxed text-muted-foreground">
             {t(`explanations.${explainedKey}`)}
           </p>
@@ -305,5 +333,62 @@ export function StructureDetail({
         </Button>
       </div>
     </section>
+  );
+}
+
+/** "19-1-heart-anatomy" → "19.1": số mục như người đọc thấy trong sách. */
+function sectionNumber(slug: string): string {
+  const match = /^(\d+)-(\d+)-/.exec(slug);
+  return match ? `${match[1]}.${match[2]}` : slug;
+}
+
+/**
+ * Tóm tắt, vị trí, chức năng — NGUYÊN VĂN đã duyệt, không cắt, không
+ * line-clamp (docs/content-rules.md, "Không cắt chuỗi đã duyệt"). Dòng nguồn
+ * đặt ngay dưới, link mở thẳng đúng mục sách; ghi "biên soạn từ" chứ không
+ * "trích từ" — câu chữ là của Sciencepedia, sách chỉ là nguồn dữ kiện.
+ */
+function StructureText({ content, locale }: { content: StructureContent; locale: string }) {
+  const t = useTranslations("humanAtlas.detail");
+  const pick = (value: Bilingual) => (locale === "vi" ? value.vi : value.en);
+  const openstax = ANATOMY_SOURCES["openstax-ap2e"];
+  return (
+    <div className="space-y-2.5 text-sm leading-relaxed">
+      <p className="text-muted-foreground">{pick(content.summary)}</p>
+      {(content.location || content.function) && (
+        <dl className="space-y-2">
+          {content.location && (
+            <div>
+              <dt className="text-xs font-semibold">{t("location")}</dt>
+              <dd className="text-muted-foreground">{pick(content.location)}</dd>
+            </div>
+          )}
+          {content.function && (
+            <div>
+              <dt className="text-xs font-semibold">{t("function")}</dt>
+              <dd className="text-muted-foreground">{pick(content.function)}</dd>
+            </div>
+          )}
+        </dl>
+      )}
+      <p className="text-[11px] leading-snug text-muted-foreground">
+        {t("compiledFrom", { source: openstax.title })}{" "}
+        {content.sources.map((source, index) => (
+          <span key={source.url}>
+            {index > 0 && ", "}
+            <a
+              href={source.url}
+              target="_blank"
+              rel="noreferrer"
+              className="underline underline-offset-2 hover:text-foreground"
+            >
+              {t("section", { number: sectionNumber(source.section) })}
+            </a>
+          </span>
+        ))}
+        {" · "}
+        {t("reviewedBy")}
+      </p>
+    </div>
   );
 }

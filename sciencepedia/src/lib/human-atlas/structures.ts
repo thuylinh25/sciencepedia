@@ -17,9 +17,14 @@ import { z } from "zod";
  *
  * 0 — mã FMA, tên Anh, hệ (hệ lấy từ `atlas.json`, không lặp ở đây)
  * 1 — thêm tên Latin, đồng nghĩa, cha is-a / part-of, mã TA98
- * 2+ — tóm tắt, vị trí, chức năng, quan hệ, cấp máu, thần kinh… CHƯA có. Các
- *      trường ấy chưa khai báo trong schema cho tới khi có pipeline biên tập
- *      của chúng: một trường rỗng trong schema là lời mời điền bừa.
+ * 2 — tóm tắt, vị trí, chức năng (khối `content`), song ngữ. Viết tay trong
+ *     `data/anatomy/content-l2.json`, mỗi trường kèm trích dẫn nguyên văn làm
+ *     bằng chứng; script kiểm rồi mới phát hành, và CHỈ mục đã qua
+ *     science-editor (`review`) được phát hành. Bằng chứng (câu trích) ở lại
+ *     trong repo để kiểm, không lên R2.
+ * 3+ — quan hệ, cấp máu, thần kinh, lâm sàng… CHƯA có. Chưa khai báo trong
+ *      schema cho tới khi có pipeline biên tập của chúng: một trường rỗng
+ *      trong schema là lời mời điền bừa.
  *
  * ## Nguồn
  *
@@ -46,6 +51,25 @@ export const ANATOMY_SOURCES = {
     /** Lấy qua EBI OLS, bản FMA 5.1.0 ấy dưới dạng JSON. */
     via: "https://www.ebi.ac.uk/ols4/ontologies/fma",
     urlTemplate: "https://www.ebi.ac.uk/ols4/ontologies/fma/classes?obo_id={id}",
+    accessedAt: "2026-09-28",
+  },
+  "openstax-ap2e": {
+    id: "openstax-ap2e",
+    type: "textbook",
+    title: "Anatomy and Physiology 2e",
+    publisher: "OpenStax, Rice University",
+    version: "2e",
+    url: "https://openstax.org/details/books/anatomy-and-physiology-2e",
+    /**
+     * CC BY-NC-SA 4.0, KHÔNG phải CC BY (kiểm 2026-09-28 trên chính trang sách).
+     * Dùng làm nguồn DỮ KIỆN: câu chữ Sciencepedia tự viết, không chép, không
+     * phỏng theo câu, không dùng hình — nếu không, trang kế thừa ràng buộc phi
+     * thương mại + share-alike. Xem docs/content-rules.md.
+     */
+    license: "CC BY-NC-SA 4.0",
+    licenseUrl: "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+    usage: "facts-only",
+    urlTemplate: "https://openstax.org/books/anatomy-and-physiology-2e/pages/{section}",
     accessedAt: "2026-09-28",
   },
 } as const;
@@ -96,6 +120,76 @@ const structureSchema = z.object({
 
 export type AnatomyStructure = z.infer<typeof structureSchema>;
 
+// ------------------------------------------------------------- Level 2
+
+const bilingual = z.object({ vi: z.string().min(1), en: z.string().min(1) });
+export type Bilingual = z.infer<typeof bilingual>;
+
+export const CONTENT_FIELDS = ["summary", "location", "function"] as const;
+export type ContentField = (typeof CONTENT_FIELDS)[number];
+
+const contentFieldsSchema = {
+  summary: bilingual,
+  location: bilingual.nullable(),
+  function: bilingual.nullable(),
+};
+
+/** Tệp viết tay `data/anatomy/content-l2.json` — có bằng chứng, có trạng thái duyệt. */
+export const contentFileSchema = z.object({
+  schema: z.literal(1),
+  sources: z.record(z.string(), z.object({ id: z.string() }).passthrough()),
+  entries: z.record(
+    fmaIdSchema,
+    z.object({
+      ...contentFieldsSchema,
+      evidence: z
+        .array(
+          z.object({
+            source: z.string(),
+            /** Slug mục trong nguồn, dựng URL bằng `urlTemplate`. */
+            section: z.string(),
+            /** Nguyên văn, ngắn — để kiểm; không phát hành. */
+            quote: z.string().min(10).max(400),
+            supports: z.array(z.enum(CONTENT_FIELDS)).min(1),
+          }),
+        )
+        .min(1),
+      /** Điều nguồn nói mà cố ý không viết, và vì sao. */
+      omitted: z.string().optional(),
+      review: z
+        .object({
+          by: z.literal("science-editor"),
+          at: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
+          verdict: z.enum(["approved", "approved-with-edits"]),
+          notes: z.string().optional(),
+        })
+        .optional(),
+    }),
+  ),
+});
+
+export type ContentFile = z.infer<typeof contentFileSchema>;
+
+function releasedContentSchema() {
+  return z.object({
+    ...contentFieldsSchema,
+    /** Một mục mỗi (nguồn, mục) — URL mở thẳng đúng mục sách, kèm trường nó chống lưng. */
+    sources: z
+      .array(
+        z.object({
+          ref: z.string(),
+          section: z.string(),
+          url: z.string().url(),
+          supports: z.array(z.enum(CONTENT_FIELDS)),
+        }),
+      )
+      .min(1),
+    review: z.object({ by: z.literal("science-editor"), at: z.string() }),
+  });
+}
+
+export type StructureContent = z.infer<ReturnType<typeof releasedContentSchema>>;
+
 export const anatomyDataSchema = z.object({
   schema: z.literal(1),
   /** Phiên bản `atlas.json` mà dữ liệu này được dựng cho. */
@@ -110,7 +204,9 @@ export const anatomyDataSchema = z.object({
       url: z.string().url(),
       license: z.string(),
       licenseUrl: z.string().url(),
-      via: z.string().url(),
+      via: z.string().url().optional(),
+      /** `facts-only`: nguồn chỉ cho dữ kiện, câu chữ là của Sciencepedia. */
+      usage: z.literal("facts-only").optional(),
       urlTemplate: z.string(),
       accessedAt: z.string(),
     }),
@@ -124,6 +220,8 @@ export const anatomyDataSchema = z.object({
    * trúc này vẫn chạy ở Level 0 với tên của chính BodyParts3D.
    */
   unresolved: z.array(fmaIdSchema),
+  /** Level 2, chỉ mục đã duyệt. Khoá có thể là mã không có mảnh (Phổi, Nhãn cầu) — cấu trúc con kế thừa qua is-a. */
+  content: z.record(fmaIdSchema, releasedContentSchema()).default({}),
 });
 
 export type AnatomyData = z.infer<typeof anatomyDataSchema>;
@@ -144,6 +242,35 @@ export function fmaSourceUrl(id: string): string {
 export function primaryPartOf(data: AnatomyData, structure: AnatomyStructure): string | null {
   const candidates = structure.classification.partOf;
   return (candidates.find((p) => data.structures[p.id]) ?? candidates[0])?.id ?? null;
+}
+
+/**
+ * Nội dung Level 2 để hiện cho một cấu trúc, và nó nói về cấu trúc nào.
+ *
+ * Của chính nó trước. Không có thì đi lên theo is-a ("Xương đùi trái" là một
+ * "Xương đùi"), rồi thử cha part-of chính ("Phần ức sườn cơ ngực lớn trái"
+ * thuộc "Cơ ngực lớn trái", là một "Cơ ngực lớn"). `about` khác `id` thì bảng
+ * chi tiết PHẢI nói rõ đoạn văn đang tả cấu trúc nào — cùng lý do với nhãn
+ * "Tổng quan · hệ": không để người đọc tưởng đó là mô tả của đúng mảnh đang chọn.
+ */
+export function resolveContent(
+  data: AnatomyData,
+  id: string,
+): { about: string; content: StructureContent } | null {
+  const viaIsA = (start: string): { about: string; content: StructureContent } | null => {
+    let current: string | undefined = start;
+    for (let hop = 0; current && hop < 4; hop++) {
+      const content = data.content[current];
+      if (content) return { about: current, content };
+      current = data.structures[current]?.classification.isA[0];
+    }
+    return null;
+  };
+  const own = viaIsA(id);
+  if (own) return own;
+  const structure = data.structures[id];
+  const parent = structure ? primaryPartOf(data, structure) : null;
+  return parent ? viaIsA(parent) : null;
 }
 
 /** Tên Anh của một mã FMA bất kỳ trong dữ liệu (cấu trúc hoặc cha được trỏ tới). */
