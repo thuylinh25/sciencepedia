@@ -473,6 +473,29 @@ liệu DoubleSide như vật liệu vẽ.
 khỏi bảng hệ bên trái), nên cơ thể không nằm giữa canvas. Bấm vào tâm canvas là bấm vào khoảng
 trống — từng kết luận nhầm "click không chọn được". Lấy toạ độ từ ảnh chụp (điểm ảnh màu xương).
 
+### Góc nhìn theo vùng (2026-09-29)
+
+Lưới "Góc nhìn theo vùng" (nút "Góc nhìn" cạnh ô tìm), theo lối Regional Views của các atlas
+giải phẫu. Chọn một góc nhìn = hiện MỌI hệ trừ da (chủ sản phẩm chốt), camera nhìn theo hướng
+của góc nhìn và tự khung theo hộp bao của tập `focus`; `hide` ẩn thêm thứ che mất vùng cần xem
+(cơ phủ lồng ngực; vòm sọ + não che nền sọ). Bản đầu có trạng thái "làm mờ" (dither) nhưng bị
+bỏ khi chuyển sang hiện mọi hệ — đừng thêm lại nếu không có yêu cầu.
+
+**Mã mảnh không viết tay.** Quy tắc tên nằm trong `views.ts`; `scripts/atlas-views.ts` đối chiếu
+với `atlas.json` thật, ghi `view-parts.generated.json`, và báo lỗi khi một quy tắc không khớp mảnh
+nào. Sửa quy tắc là phải chạy lại script với `--write`. Hai góc nhìn chưa dựng được (có `missing`):
+"Răng và mạch máu" (không có động mạch hàm trên / huyệt răng dưới / mặt trong BodyParts3D 4.0) và
+"Mặt cắt vùng chậu" (cần clipping plane; dữ liệu cũng thiếu xương cụt). Thẻ vẫn hiện, không bấm được.
+
+**Ảnh thu nhỏ chụp từ chính mô hình**, không phải ảnh tĩnh: sau khi tải xong, mỗi khung vẽ MỘT
+góc nhìn vào góc canvas (scissor), chép sang canvas 2D ngay trong cùng tác vụ (bộ đệm WebGL còn
+nguyên tới lúc ghép khung), rồi vẽ đè cảnh thật. Mượn camera chính vì đèn gắn vào nó. Trên
+SwiftShader (test headless) mỗi khung như vậy mất ~7 s — chờ ~100 s trước khi mở lưới trong test.
+
+`?view=<id>` ghi bằng replaceState như `?structure=`; đụng tới hệ (bật/tắt, preset, thẻ hệ,
+"Đặt lại", chip ×) là rời góc nhìn. Đổi hướng bằng Trước/Bên/Sau trong góc nhìn thắng hướng của
+góc nhìn.
+
 ### Khung mặc định và thanh cuộn dọc
 
 Chiều cao hộp trên màn = min(FILL × khung xem, 88% vùng quan sát); FILL 74% desktop, 70%
@@ -488,6 +511,10 @@ nào kéo khung nhỏ lại (xương 0,01–1,71 m), nên không có bước l�
 "Vừa khung" đẩy mô hình lên mất nửa trên. Đổi hệ đưa slider về 0 (nguyên khối). "Đặt lại"
 giữ các hệ đang bật và GIỮ bộ đếm zoom — đưa bộ đếm về 0 là cảnh đọc thành một lượt thu nhỏ,
 tween đó đè mất tween về khung vừa.
+
+Căn ngang: tâm vùng quan sát (giữa mép phải danh sách hệ và mép trái cột camera) bằng view
+offset — đo 2026-09-29 lệch ≤ 0,5 px ở 1909/1440/1024/800 px. Bảng đổi cỡ mà canvas không đổi
+(ResizeObserver trên các `data-atlas-avoid`) chỉ dời view offset, không đụng camera.
 
 Khi phóng to vượt khung, thanh
 cuộn dọc dời target + camera theo Y trong giới hạn hộp bao các hệ đang bật (có đệm: đỉnh đầu

@@ -31,6 +31,7 @@ import { atlasDataUrl } from "@/lib/human-atlas/assets";
 import { createExplosionLayout } from "@/lib/human-atlas/explosion-layout";
 import { decodeModelResponse } from "@/lib/human-atlas/model-download";
 import { PointerTap } from "@/lib/human-atlas/pointer-tap";
+import { ATLAS_VIEWS, viewById, viewParts, type ViewDirection } from "@/lib/human-atlas/views";
 
 /**
  * Cảnh giải phẫu 3D — port từ `app/scene.tsx` của Human Atlas
@@ -70,6 +71,8 @@ type Props = {
   onSelect: (partId: string) => void;
   onProgress: (percent: number) => void;
   onError: (code: SceneError) => void;
+  /** Ảnh thu nhỏ của một góc nhìn, chụp từ chính mô hình sau khi tải xong. */
+  onThumbnail?: (viewId: string, dataUrl: string) => void;
 };
 
 /**
@@ -92,13 +95,14 @@ export default function AnatomyScene({
   onSelect,
   onProgress,
   onError,
+  onThumbnail,
 }: Props) {
   const host = useRef<HTMLDivElement>(null);
   const latest = useRef(state);
-  const callbacks = useRef({ onSelect, onProgress, onError, labelFor });
+  const callbacks = useRef({ onSelect, onProgress, onError, labelFor, onThumbnail });
   const themeRef = useRef<(dark: boolean) => void>(() => {});
   latest.current = state;
-  callbacks.current = { onSelect, onProgress, onError, labelFor };
+  callbacks.current = { onSelect, onProgress, onError, labelFor, onThumbnail };
 
   useEffect(() => {
     themeRef.current(dark);
@@ -412,6 +416,21 @@ export default function AnatomyScene({
     };
     const alphaOf = (i: number) => alphaBySystem.get(parts[i].system) ?? 1;
 
+    /** Góc nhìn → chỉ số mảnh (tính một lần mỗi góc nhìn, không mỗi khung). */
+    const viewSets = new Map<string, { focus: Set<number>; hide: Set<number> } | null>();
+    const viewSet = (id: string | null | undefined) => {
+      if (!id) return null;
+      if (!viewSets.has(id)) {
+        const ids = viewParts(id);
+        const toIndex = (list: string[]) =>
+          new Set(list.map((pid) => partIndexById.get(pid)).filter((i): i is number => i !== undefined));
+        viewSets.set(id, ids ? { focus: toIndex(ids.focus), hide: toIndex(ids.hide) } : null);
+      }
+      return viewSets.get(id) ?? null;
+    };
+    const inView = (view: { hide: Set<number> }, system: SystemId, i: number) =>
+      system !== "integumentary" && !view.hide.has(i);
+
     /*
      * ## AO (ambient occlusion) — chỉ desktop, chỉ khi đứng yên
      *
@@ -550,8 +569,10 @@ export default function AnatomyScene({
     // ------------------------------------------------------------ camera
     const fovTan = () => 2 * Math.tan(T.MathUtils.degToRad(camera.fov / 2));
 
-    const viewDirection = (view: string) =>
-      view === "front"
+    const viewDirection = (view: string | ViewDirection): T.Vector3 =>
+      typeof view !== "string"
+        ? new T.Vector3(...view).normalize()
+        : view === "front"
         ? new T.Vector3(0, 0.02, 1).normalize()
         : view === "back"
           ? new T.Vector3(0, 0.02, -1).normalize()
@@ -611,6 +632,14 @@ export default function AnatomyScene({
       const on = new Set(latest.current.visible);
       const box = new T.Box3();
       const displaced = amount > 0.001;
+      // Góc nhìn: khung theo tập NỔI BẬT; mảnh làm mờ chỉ là bối cảnh.
+      const view = viewSet(latest.current.viewId);
+      if (view) {
+        view.focus.forEach((i) =>
+          box.union(shifted.copy(bounds[i]).translate(new T.Vector3(data[i * 4], data[i * 4 + 1], data[i * 4 + 2]))),
+        );
+        if (!box.isEmpty()) return box;
+      }
       parts.forEach((p, i) => {
         if (!displaced) {
           if (on.has(p.system)) box.union(bounds[i]);
@@ -648,7 +677,12 @@ export default function AnatomyScene({
      * lệ khung. Tâm vùng trống lệch khỏi tâm canvas thì bù bằng view offset
      * của camera — xoay vẫn quanh cấu trúc, không quanh tâm canvas.
      */
-    const frameBox = (box: T.Box3, direction: T.Vector3, rect: ReturnType<typeof usableRect>) => {
+    const frameBox = (
+      box: T.Box3,
+      direction: T.Vector3,
+      rect: ReturnType<typeof usableRect>,
+      aspect = camera.aspect,
+    ) => {
       const worldUp =
         Math.abs(direction.y) > 0.99 ? new T.Vector3(0, 0, 1) : new T.Vector3(0, 1, 0);
       const right = new T.Vector3().crossVectors(worldUp, direction).normalize();
@@ -687,7 +721,7 @@ export default function AnatomyScene({
       const distance =
         Math.max(
           (maxU - minU) / 2 / (tanHalf * fillY),
-          (maxR - minR) / 2 / (tanHalf * camera.aspect * fillX),
+          (maxR - minR) / 2 / (tanHalf * aspect * fillX),
           0.12,
         ) + Math.max(0, nearest);
       return {
@@ -717,6 +751,7 @@ export default function AnatomyScene({
      */
     type Tween = {
       start: number;
+      ms: number;
       fromTarget: T.Vector3;
       toTarget: T.Vector3;
       fromDir: T.Vector3;
@@ -728,6 +763,9 @@ export default function AnatomyScene({
     };
     let tween: Tween | null = null;
     const TWEEN_MS = 320;
+    /** Chuyển sang một góc nhìn: dài hơn đổi hướng thường, để mắt theo kịp chỗ mới. */
+    const VIEW_TWEEN_MS = 650;
+    const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)");
     const identity = new T.Quaternion();
     const step = new T.Quaternion();
 
@@ -737,8 +775,9 @@ export default function AnatomyScene({
       distance: number,
       offset: [number, number],
       animate: boolean,
+      ms = TWEEN_MS,
     ) => {
-      if (!animate) {
+      if (!animate || reducedMotion.matches) {
         tween = null;
         applyOffset(offset[0], offset[1]);
         controls.target.copy(target);
@@ -752,6 +791,7 @@ export default function AnatomyScene({
       fromDir.normalize();
       tween = {
         start: performance.now(),
+        ms,
         fromTarget: controls.target.clone(),
         toTarget: target.clone(),
         fromDir,
@@ -766,7 +806,7 @@ export default function AnatomyScene({
 
     const runTween = (now: number) => {
       if (!tween) return;
-      const raw = Math.min(1, (now - tween.start) / TWEEN_MS);
+      const raw = Math.min(1, (now - tween.start) / tween.ms);
       const k = 1 - (1 - raw) ** 3;
       step.slerpQuaternions(identity, tween.turn, k);
       controls.target.lerpVectors(tween.fromTarget, tween.toTarget, k);
@@ -803,27 +843,29 @@ export default function AnatomyScene({
      * `keepDirection`: giữ góc người đọc đang xoay tới (khi bật/tắt hệ), chỉ
      * đổi tâm và khoảng cách. Nút góc nhìn và "Đặt lại" thì về hướng chuẩn.
      */
-    const fit = (view: string, animate = false, keepDirection = false) => {
+    const fit = (view: string, animate = false, keepDirection = false, ms = TWEEN_MS) => {
       if (el.clientWidth === 0 || el.clientHeight === 0) return;
+      const preset = viewSet(latest.current.viewId) ? viewById(latest.current.viewId) : null;
+      // Hướng của góc nhìn áp tới khi người đọc tự bấm một hướng (Trước/Bên/Sau).
       // Lưới tách hẳn chỉ đọc được khi nhìn thẳng (xoay cũng tắt từ mốc này).
-      if (amount > 0.8) view = "front";
+      const heading: string | ViewDirection = amount > 0.8 ? "front" : (preset && viewHeading ? preset.direction : view);
       const direction =
         keepDirection && amount < 0.05
           ? camera.position.clone().sub(controls.target).normalize()
-          : viewDirection(view);
+          : viewDirection(heading);
       const rect = usableRect();
       const frame = frameBox(visibleBox(), direction, rect);
       // Hệ cục bộ (não, tim, tiêu hoá) không phóng tới đủ 74%: tối đa gấp
       // MAX_MAGNIFY lần cỡ toàn thân, để não 17 cm không lấp cả màn. Chỉ ở
       // nguyên khối — lưới tách thì khung theo lưới.
-      if (amount < 0.05) {
+      if (amount < 0.05 && !preset) {
         const whole = frameBox(fullBox, direction, rect);
         frame.distance = Math.max(frame.distance, whole.distance / MAX_MAGNIFY);
       }
       // Trần zoom ra: lùi được gấp 4 khung vừa — đủ để thấy toàn cảnh, chưa tới
       // mức mô hình thành một chấm giữa màn.
       controls.maxDistance = Math.max(6, frame.distance * 4);
-      place(frame.target, direction, frame.distance, [frame.offsetX, frame.offsetY], animate);
+      place(frame.target, direction, frame.distance, [frame.offsetX, frame.offsetY], animate, ms);
     };
 
     /** Bay tới hộp bao của những mảnh đang chọn, giữ nguyên phần còn lại của cơ thể. */
@@ -866,7 +908,7 @@ export default function AnatomyScene({
     let boxKey = "";
     let cachedBox = new T.Box3();
     const currentBox = () => {
-      const key = latest.current.visible.join(",");
+      const key = `${latest.current.viewId ?? ""}|${latest.current.visible.join(",")}`;
       if (key !== boxKey) {
         cachedBox = visibleBox();
         boxKey = key;
@@ -997,6 +1039,105 @@ export default function AnatomyScene({
     const observer = new ResizeObserver(resize);
     observer.observe(el);
 
+    /*
+     * Bảng quanh mô hình đổi cỡ / ẩn hiện mà khung canvas KHÔNG đổi (danh sách
+     * hệ mở ra trên điện thoại xoay ngang) → căn lại tâm vùng quan sát. Chỉ dời
+     * view offset — không đụng target, khoảng cách hay góc người đọc đang xem.
+     */
+    const recenter = () => {
+      if (!sized || latest.current.isolate || tween) return;
+      const rect = usableRect();
+      applyOffset(rect.w / 2 - (rect.left + rect.right) / 2, rect.h / 2 - (rect.top + rect.bottom) / 2);
+      dirty = true;
+    };
+    const panels = new ResizeObserver(recenter);
+    root.querySelectorAll<HTMLElement>("[data-atlas-avoid]").forEach((node) => panels.observe(node));
+
+    /*
+     * ## Ảnh thu nhỏ của góc nhìn (2026-09-29)
+     *
+     * Chụp từ chính mô hình, không ảnh tĩnh: vẽ góc nhìn vào một góc của canvas
+     * (scissor), chép ra canvas 2D NGAY trong cùng tác vụ (bộ đệm vẽ WebGL còn
+     * nguyên tới lúc trình duyệt ghép khung), rồi vẽ đè cảnh thật lên — người
+     * đọc không thấy khung nào lạ. Mỗi khung chỉ chụp một góc nhìn để không
+     * giật; camera chính mượn tạm rồi trả lại (đèn gắn vào nó).
+     */
+    const THUMB_W = 240;
+    const THUMB_H = 300;
+    const thumbQueue = ATLAS_VIEWS.filter((v) => !v.missing && viewParts(v.id)).map((v) => v.id);
+    const thumbBox = new T.Box3();
+    const renderThumbnail = (id: string) => {
+      const view = viewSet(id);
+      const def = viewById(id);
+      const pixelRatio = renderer.getPixelRatio();
+      if (!view || !def || el.clientWidth < THUMB_W || el.clientHeight < THUMB_H) return;
+      const savedData = data.slice();
+      const savedSelected = selectedData.slice();
+      parts.forEach((p, i) => {
+        data[i * 4] = data[i * 4 + 1] = data[i * 4 + 2] = 0;
+        data[i * 4 + 3] = inView(view, p.system, i) ? 1 : 0;
+        selectedData[i * 4] = selectedData[i * 4 + 1] = selectedData[i * 4 + 2] = 0;
+      });
+      partTexture.needsUpdate = true;
+      selectionTexture.needsUpdate = true;
+      thumbBox.makeEmpty();
+      view.focus.forEach((i) => thumbBox.union(bounds[i]));
+      const direction = viewDirection(def.direction);
+      const rect = { w: THUMB_W, h: THUMB_H, left: 0, right: THUMB_W, top: 0, bottom: THUMB_H };
+      const frame = frameBox(thumbBox, direction, rect, THUMB_W / THUMB_H);
+
+      const savedPosition = camera.position.clone();
+      const savedQuaternion = camera.quaternion.clone();
+      const savedAspect = camera.aspect;
+      const markersShown = markers.visible;
+      markers.visible = false;
+      camera.clearViewOffset();
+      camera.aspect = THUMB_W / THUMB_H;
+      camera.updateProjectionMatrix();
+      camera.position.copy(frame.target).addScaledVector(direction, frame.distance);
+      camera.lookAt(frame.target);
+      camera.updateMatrixWorld(true);
+
+      renderer.setScissorTest(true);
+      renderer.setViewport(0, 0, THUMB_W, THUMB_H);
+      renderer.setScissor(0, 0, THUMB_W, THUMB_H);
+      renderer.clear();
+      renderer.render(scene, camera);
+      const out = document.createElement("canvas");
+      out.width = THUMB_W;
+      out.height = THUMB_H;
+      const drawn = renderer.domElement;
+      out
+        .getContext("2d")
+        ?.drawImage(
+          drawn,
+          0,
+          drawn.height - THUMB_H * pixelRatio,
+          THUMB_W * pixelRatio,
+          THUMB_H * pixelRatio,
+          0,
+          0,
+          THUMB_W,
+          THUMB_H,
+        );
+      renderer.setScissorTest(false);
+      renderer.setViewport(0, 0, el.clientWidth, el.clientHeight);
+
+      camera.position.copy(savedPosition);
+      camera.quaternion.copy(savedQuaternion);
+      camera.aspect = savedAspect;
+      applyOffset(offsetX, offsetY);
+      camera.updateProjectionMatrix();
+      camera.updateMatrixWorld(true);
+      markers.visible = markersShown;
+      data.set(savedData);
+      selectedData.set(savedSelected);
+      partTexture.needsUpdate = true;
+      selectionTexture.needsUpdate = true;
+      dirty = true;
+      callbacks.current.onThumbnail?.(id, out.toDataURL("image/webp", 0.85));
+    };
+
     // ------------------------------------------------------------ chọn mảnh
     const raycaster = new T.Raycaster();
     const pointer = new T.Vector2();
@@ -1110,6 +1251,9 @@ export default function AnatomyScene({
     const clock = new T.Clock();
     let lastZoomSteps = 0;
     let lastFitFrame = 0;
+    let lastViewId: string | null = null;
+    /** true từ lúc vào góc nhìn tới lúc người đọc tự đổi hướng. */
+    let viewHeading = false;
     let lastExtent = -1;
     const animate = () => {
       if (disposed) return;
@@ -1120,7 +1264,8 @@ export default function AnatomyScene({
       const changed =
         lastState?.visible !== s.visible ||
         lastState?.selected !== s.selected ||
-        lastState?.isolate !== s.isolate;
+        lastState?.isolate !== s.isolate ||
+        lastState?.viewId !== s.viewId;
       const moving = Math.abs(peel - s.explode) > 0.0001;
       if (moving) {
         peel = T.MathUtils.damp(peel, s.explode, 8, dt);
@@ -1135,12 +1280,15 @@ export default function AnatomyScene({
         applyLayers(s.selected);
         const visible = new Set(s.visible);
         const selection = new Set(s.selected);
+        const view = viewSet(s.viewId);
+        // Góc nhìn: mọi hệ trừ da, trừ những mảnh góc nhìn ẩn thêm (`views.ts`).
+        const inScope = (p: (typeof parts)[number], i: number) =>
+          view ? inView(view, p.system, i) : visible.has(p.system);
         // Lớp đã mờ hẳn (da sau 20%) không chiếm ô trong lưới tách.
-        const visibleParts = parts.filter(
-          (p, i) =>
-            (s.isolate ? selection.has(p.id) : visible.has(p.system) || selection.has(p.id)) &&
-            (s.isolate || selection.has(p.id) || alphaOf(i) > 0.01),
-        );
+        const isShown = (p: (typeof parts)[number], i: number) =>
+          (s.isolate ? selection.has(p.id) : inScope(p, i) || selection.has(p.id)) &&
+          (s.isolate || selection.has(p.id) || alphaOf(i) > 0.01);
+        const visibleParts = parts.filter(isShown);
         const nextLayoutKey =
           visibleParts.map((p) => p.id).join(",") + ":" + camera.aspect.toFixed(3);
         if (nextLayoutKey !== layoutKey) {
@@ -1172,9 +1320,7 @@ export default function AnatomyScene({
             dz = T.MathUtils.lerp(Math.cos(angle) * 0.48, -c.z, t);
           }
           const selected = selection.has(p.id);
-          const shown =
-            (s.isolate ? selected : visible.has(p.system) || selected) &&
-            (s.isolate || selected || alphaOf(i) > 0.01);
+          const shown = isShown(p, i);
           data[i * 4] = dx;
           data[i * 4 + 1] = dy;
           data[i * 4 + 2] = dz;
@@ -1205,11 +1351,20 @@ export default function AnatomyScene({
       }
 
       if (s.view !== lastView || s.reset !== lastReset) {
+        if (s.view !== lastView && lastView !== "") viewHeading = false;
         // Lượt đầu (chưa có góc nhìn nào) đặt thẳng; về sau thì chuyển mượt.
         fit(s.view, sized && lastView !== "");
         lastView = s.view;
         lastReset = s.reset;
         lastVisibleKey = s.visible.join(",");
+      }
+      // Đổi góc nhìn → bay tới nó. Tập hệ đổi cùng lượt, nên đồng bộ khoá để khối
+      // dưới không khung lại lần hai theo hướng cũ.
+      if ((s.viewId ?? null) !== lastViewId) {
+        lastViewId = s.viewId ?? null;
+        viewHeading = !!s.viewId;
+        lastVisibleKey = s.visible.join(",");
+        if (!s.isolate) fit(s.view, sized, false, VIEW_TWEEN_MS);
       }
       // Tập hệ đang bật đổi (chọn một hệ, bật/tắt, "Tất cả") → khung lại theo hộp
       // bao mới, giữ góc xoay hiện tại. Chỉ ở nguyên khối, ngoài "xem riêng".
@@ -1341,6 +1496,9 @@ export default function AnatomyScene({
       controls.autoRotateSpeed = 0.65;
       controls.update();
       if (controls.autoRotate) dirty = true;
+      // Một ảnh thu nhỏ mỗi khung, sau khi tải xong và lúc camera đứng yên.
+      const nextThumb = ready && sized && !tween && callbacks.current.onThumbnail ? thumbQueue.shift() : undefined;
+      if (nextThumb) renderThumbnail(nextThumb);
       if (dirty) updateScroll();
 
       const now = performance.now();
@@ -1414,6 +1572,7 @@ export default function AnatomyScene({
       abort.abort();
       cancelAnimationFrame(frame);
       observer.disconnect();
+      panels.disconnect();
       controls.dispose();
       canvas.removeEventListener("pointerdown", down);
       canvas.removeEventListener("pointermove", move);

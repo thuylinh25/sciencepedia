@@ -753,6 +753,16 @@
     "pieces": "{count, plural, other {# mảnh}}",
     "about": "Về bản đồ này",
     "cameraControls": "Điều khiển góc nhìn",
+    "atlasViews": {
+      "open": "Góc nhìn",
+      "openLabel": "Mở góc nhìn theo vùng",
+      "title": "Góc nhìn theo vùng",
+      "close": "Đóng góc nhìn theo vùng",
+      "rendering": "Đang dựng ảnh…",
+      "missing": "Chưa đủ dữ liệu",
+      "chip": "Góc nhìn: {name}",
+      "clear": "Thoát góc nhìn {name}"
+    },
     "views": {
       "threeQuarter": "Góc ba phần tư",
       "front": "Nhìn từ trước",

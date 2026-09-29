@@ -23,12 +23,14 @@ import {
   AlertTriangle,
   ArrowUpRight,
   Info,
+  LayoutGrid,
   Layers3,
   Pause,
   RotateCcw,
   RotateCw,
   Scan,
   Search,
+  X,
   ZoomIn,
   ZoomOut,
 } from "lucide-react";
@@ -77,6 +79,8 @@ import { PANEL } from "@/components/human-atlas/panel";
 import { StructureDetail } from "@/components/human-atlas/structure-detail";
 import { StructureSearch } from "@/components/human-atlas/structure-search";
 import { SystemsPanel } from "@/components/human-atlas/systems-panel";
+import { ViewsGallery } from "@/components/human-atlas/views-gallery";
+import { isUsableView, viewById, viewParts } from "@/lib/human-atlas/views";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import type { SceneError } from "@/components/human-atlas/anatomy-scene";
 
@@ -158,6 +162,14 @@ function writeStructureParam(value: string | null) {
   window.history.replaceState(window.history.state, "", url);
 }
 
+/** `?view=` theo cùng lối `?structure=`: đổi URL để chia sẻ, không thêm mục lịch sử. */
+function writeViewParam(value: string | null) {
+  const url = new URL(window.location.href);
+  if (value) url.searchParams.set("view", value);
+  else url.searchParams.delete("view");
+  window.history.replaceState(window.history.state, "", url);
+}
+
 export function HumanAtlas({
   articles,
 }: {
@@ -177,6 +189,12 @@ export function HumanAtlas({
   const [progress, setProgress] = useState(0);
   const [state, setState] = useState(initial);
   const [panel, setPanel] = useState<"layers" | "search" | null>(null);
+  const [gallery, setGallery] = useState(false);
+  const [thumbnails, setThumbnails] = useState<Record<string, string>>({});
+  const onThumbnail = useCallback(
+    (id: string, url: string) => setThumbnails((m) => ({ ...m, [id]: url })),
+    [],
+  );
   const [details, setDetails] = useState(false);
   const [about, setAbout] = useState(false);
   const [chosen, setChosen] = useState<Concept | null>(null);
@@ -233,11 +251,15 @@ export function HumanAtlas({
   const selectedParts = state.selected
     .map((id) => parts.get(id))
     .filter((p): p is NonNullable<typeof p> => !!p);
+  const activeView = viewParts(state.viewId);
+  const viewHidden = useMemo(() => (activeView ? new Set(activeView.hide) : null), [activeView]);
   const visibleCount =
     atlas?.parts.filter((p) =>
       state.isolate
         ? state.selected.includes(p.id)
-        : state.visible.includes(p.system) || state.selected.includes(p.id),
+        : (viewHidden
+            ? p.system !== "integumentary" && !viewHidden.has(p.id)
+            : state.visible.includes(p.system)) || state.selected.includes(p.id),
     ).length ?? 0;
   const detailOpen = details && selectedParts.length > 0 && !!chosen;
 
@@ -286,18 +308,23 @@ export function HumanAtlas({
 
   // Đổi hệ luôn về nguyên khối: độ tách đang kéo dở của hệ trước không có
   // nghĩa gì với hệ mới, và người đọc cần thấy hệ ấy ở đúng chỗ trong cơ thể trước.
+  // Đụng tới tập hệ là rời góc nhìn: góc nhìn là một tập mảnh cố định, bật thêm
+  // một hệ vào nó thì không còn là góc nhìn ấy nữa.
   const showOnly = (ids: SystemId[]) => {
     setDetails(false);
-    setState((s) => ({ ...s, visible: ids, selected: [], isolate: false, explode: 0 }));
+    leaveViewParam();
+    setState((s) => ({ ...s, visible: ids, selected: [], isolate: false, explode: 0, viewId: null }));
   };
 
   const toggle = (id: SystemId) => {
     setDetails(false);
+    leaveViewParam();
     setState((s) => ({
       ...s,
       selected: [],
       isolate: false,
       explode: 0,
+      viewId: null,
       visible: s.visible.includes(id) ? s.visible.filter((x) => x !== id) : [...s.visible, id],
     }));
   };
@@ -320,6 +347,7 @@ export function HumanAtlas({
     setDetails(false);
     setPanel(null);
     writeStructureParam(null);
+    leaveViewParam();
   };
 
   const openPanel = (next: "layers" | "search") => {
@@ -348,8 +376,13 @@ export function HumanAtlas({
   const showSystem = useCallback((id: SystemId) => {
     setChosen(null);
     setDetails(false);
+    if (lastViewParam.current !== null) {
+      lastViewParam.current = null;
+      writeViewParam(null);
+    }
     setState((s) => ({
       ...s,
+      viewId: null,
       visible: [id],
       selected: [],
       isolate: false,
@@ -377,6 +410,60 @@ export function HumanAtlas({
       setState((s) => ({ ...s, visible: DEFAULT_VISIBLE, explode: 0, reset: s.reset + 1 }));
     }
   }, [systemParam, showSystem]);
+
+  // ------------------------------------------------ góc nhìn ?view=
+  /*
+   * Chọn góc nhìn: mọi hệ trừ da (cảnh đọc `viewId` để ẩn thêm và khung
+   * camera), danh sách hệ bật tương ứng, về nguyên khối. `?view=` ghi bằng
+   * replaceState; mở link có `?view=` thì áp lại — kể cả khi có `?system=`,
+   * vì góc nhìn cụ thể hơn.
+   */
+  const lastViewParam = useRef<string | null>(null);
+  function leaveViewParam() {
+    if (lastViewParam.current === null) return;
+    lastViewParam.current = null;
+    writeViewParam(null);
+  }
+  const selectView = useCallback(
+    (id: string, writeUrl: boolean) => {
+      if (!isUsableView(id)) return;
+      setChosen(null);
+      setDetails(false);
+      setState((s) => ({
+        ...s,
+        viewId: id,
+        visible: activeSystems.filter((x) => x !== "integumentary"),
+        selected: [],
+        isolate: false,
+        explode: 0,
+        rotate: false,
+      }));
+      if (writeUrl) {
+        lastViewParam.current = id;
+        writeViewParam(id);
+      }
+    },
+    [activeSystems],
+  );
+  const viewParam = useSearchParams().get("view");
+  useEffect(() => {
+    if (viewParam === lastViewParam.current) return;
+    lastViewParam.current = viewParam;
+    if (viewParam && isUsableView(viewParam)) selectView(viewParam, false);
+  }, [viewParam, selectView]);
+  // Tập hệ của góc nhìn đọc từ bản đồ mảnh — link mở trước khi danh mục tải xong
+  // thì tính lại một lần khi có dữ liệu.
+  useEffect(() => {
+    if (atlas && state.viewId) selectView(state.viewId, false);
+    // Chỉ chạy khi danh mục vừa về, không mỗi lần đổi góc nhìn.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [atlas]);
+  const closeGallery = useCallback(() => setGallery(false), []);
+  const clearView = () => {
+    const def = viewById(state.viewId);
+    leaveViewParam();
+    setState((s) => ({ ...s, viewId: null, visible: def ? [def.systemId] : s.visible, reset: s.reset + 1 }));
+  };
 
   // ---------------------------------------------------------- deep link
   useEffect(() => {
@@ -431,7 +518,11 @@ export function HumanAtlas({
     [activeSystems],
   );
 
-  const caption = state.isolate
+  const viewDef = viewById(state.viewId);
+  const viewName = viewDef ? (locale === "vi" ? viewDef.name.vi : viewDef.name.en) : null;
+  const caption = viewName && !state.isolate && spread < 0.05
+    ? viewName
+    : state.isolate
     ? chosen
       ? displayName(locale, chosen.id, chosen.name)
       : t("caption.isolated")
@@ -486,6 +577,7 @@ export function HumanAtlas({
             onSelect={choosePart}
             onProgress={onProgress}
             onError={onError}
+            onThumbnail={onThumbnail}
           />
         )}
       </AtlasErrorBoundary>
@@ -515,6 +607,20 @@ export function HumanAtlas({
         aria-label={t("search")}
         className="absolute top-3 right-3 z-20 flex items-center gap-2 sm:top-5 lg:right-6"
       >
+        <Button
+          variant="outline"
+          className="bg-background/85 backdrop-blur"
+          onClick={() => {
+            setDetails(false);
+            setPanel(null);
+            setGallery(true);
+          }}
+          aria-label={t("atlasViews.openLabel")}
+          aria-haspopup="dialog"
+        >
+          <LayoutGrid aria-hidden />
+          <span className="hidden sm:inline">{t("atlasViews.open")}</span>
+        </Button>
         <Button
           variant="outline"
           className={cn("bg-background/85 backdrop-blur", panel === "search" && "bg-muted")}
@@ -559,6 +665,44 @@ export function HumanAtlas({
         onToggle={toggle}
         onShowOnly={showOnly}
       />
+
+      {gallery && (
+        <ViewsGallery
+          locale={locale}
+          activeViewId={state.viewId ?? null}
+          thumbnails={thumbnails}
+          onChoose={(id) => {
+            selectView(id, true);
+            setGallery(false);
+            setPanel(null);
+          }}
+          onClose={closeGallery}
+        />
+      )}
+
+      {viewName && (
+        <div
+          data-atlas-avoid="top"
+          className={cn(
+            PANEL,
+            "absolute z-20 flex items-center gap-1 rounded-full py-1 pr-1 pl-3 text-xs font-medium",
+            "atlas-wide:top-5 atlas-wide:left-1/2 atlas-wide:-translate-x-1/2",
+            "atlas-phone:top-[5.75rem] atlas-phone:left-4",
+            "atlas-short:top-3 atlas-short:left-1/2 atlas-short:-translate-x-1/2",
+          )}
+        >
+          <span>{t("atlasViews.chip", { name: viewName })}</span>
+          <Button
+            variant="ghost"
+            size="icon-sm"
+            className="size-7 rounded-full"
+            onClick={clearView}
+            aria-label={t("atlasViews.clear", { name: viewName })}
+          >
+            <X aria-hidden />
+          </Button>
+        </div>
+      )}
 
       {panel === "search" && (
         <StructureSearch

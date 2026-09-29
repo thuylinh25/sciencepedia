@@ -753,6 +753,16 @@
     "pieces": "{count, plural, one {# piece} other {# pieces}}",
     "about": "About this atlas",
     "cameraControls": "Camera controls",
+    "atlasViews": {
+      "open": "Views",
+      "openLabel": "Open regional views",
+      "title": "Regional views",
+      "close": "Close regional views",
+      "rendering": "Rendering…",
+      "missing": "Not enough data",
+      "chip": "View: {name}",
+      "clear": "Leave view {name}"
+    },
     "views": {
       "threeQuarter": "Three-quarter view",
       "front": "Front view",

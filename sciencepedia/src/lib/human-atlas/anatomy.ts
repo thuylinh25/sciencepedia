@@ -252,6 +252,8 @@ export interface SceneState {
   zoomIn?: number;
   zoomOut?: number;
   fitFrame?: number;
+  /** Góc nhìn đang áp (`views.ts`) — thay tập hệ bằng tập mảnh của góc nhìn. */
+  viewId?: string | null;
 }
 
 /**
