@@ -58,6 +58,7 @@
  "FJ1752": "nervous.ventricles",
  "FJ1753": "nervous.brain",
  "FJ1754": "nervous.brain",
+ "FJ1755": "nervous.ventricles",
  "FJ1756": "nervous.brain",
  "FJ1757": "nervous.brain",
  "FJ1758": "nervous.brain",
@@ -102,6 +103,7 @@
  "FJ1800": "nervous.brain",
  "FJ1801": "nervous.brain",
  "FJ1802": "nervous.brain",
+ "FJ1803": "nervous.ventricles",
  "FJ1804": "nervous.brain",
  "FJ1805": "nervous.brain",
  "FJ1806": "nervous.brain",
@@ -148,6 +150,7 @@
  "FJ1895": "digestive.pancreas",
  "FJ1896": "digestive.pancreas",
  "FJ2409": "digestive.liver",
+ "FJ2561": "lymphatic.spleen",
  "FJ2563": "digestive.esophagus",
  "FJ2564": "digestive.stomach",
  "FJ2565": "digestive.large_intestine",
@@ -245,5 +248,7 @@
  "FJ3108": "digestive.biliary",
  "FJ3109": "digestive.biliary",
  "FJ3110": "digestive.biliary",
- "FJ3123": "digestive.biliary"
+ "FJ3123": "digestive.biliary",
+ "FJ3150": "lymphatic.thymus",
+ "FJ3151": "lymphatic.thymus"
 }

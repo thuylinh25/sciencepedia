@@ -461,6 +461,26 @@ dải chậu chày sang mô liên kết — nó là mạc (phần dày của m�
   "Ileocecal junction". Răng và lợi nằm trong hệ xương (đã ghi trong mô tả hệ).
 Muốn đầy đủ hơn phải thêm asset hợp pháp khác, đăng ký cùng hệ toạ độ — không vẽ bù.
 
+**Audit 2026-09-29 (`scripts/anatomy-audit.ts` — bảng mọi mảnh + tổ tiên FMA, chỉ đọc).**
+So với các atlas thương mại, ba hệ trông "thiếu" là do DỮ LIỆU, không phải phân loại hay
+rendering — đừng sửa camera/màu để bù:
+- Bạch huyết: đúng 3 mảnh trong cả 2.234 (lách FJ2561, hai thuỳ tuyến ức FJ3150/FJ3151). Không
+  mạch bạch huyết, hạch, ống ngực, bể dưỡng chấp, amiđan — tìm cả theo tên lẫn tổ tiên FMA.
+- Thần kinh: 146 mảnh, mọi mảnh ở đầu (thấp nhất y = 1,54 m). Tuỷ sống chỉ có ống trung tâm
+  3,5 cm; không rễ/dây thần kinh sống, đám rối, dây thần kinh chi. Dây sọ chỉ nhóm ổ mắt (II,
+  III, IV, V1). Sửa được: hai đám rối mạch mạc từ "giác quan" về thần kinh.
+- Tĩnh mạch: 395 (atlas.json gốc 404 — 9 "Hepatovenous segment" là nhu mô gan). Cao nhất là
+  tĩnh mạch cảnh trong (1,46 m): không tĩnh mạch nội sọ, mặt, da đầu, xoang tĩnh mạch màng cứng.
+  Mảnh lớn ở ngực là "Set of anterior intercostal veins" (FMA70839) — đúng là tĩnh mạch.
+
+**Nhập asset ngoài (chưa làm — hợp đồng cho lần đầu có asset hợp pháp).** Asset bổ sung phải
+đi vào CÙNG đường dữ liệu với BodyParts3D, không thành một khối riêng: mỗi cấu trúc một mảnh
+có mã riêng + mã FMA + hệ, để tìm kiếm, chọn, ẩn/xem riêng, góc nhìn đều dùng lại được. Không
+gộp cả mạng lưới thành một mesh. Trước khi nhận: đăng ký hệ toạ độ bằng mốc giải phẫu đo
+được trên cả hai bộ (đỉnh đầu, mỏm cùng vai, ụ nhô, gai chậu trước trên, mắt cá) — sai số
+ghi lại; không đặt bằng mắt, không biến đổi viết tay cho khớp ảnh nhìn thẳng. Giấy phép ghi
+vào `provenance.ts` như BodyParts3D.
+
 **Nhóm cơ quan → màu:** `scripts/anatomy-groups.ts` suy nhóm (gan, tuỵ, ruột non…; não, thân
 não, dây thần kinh…) từ tên + tổ tiên is-a FMA, ghi `part-groups.generated.json`; viewer tạo
 một vật liệu mỗi nhóm (`GROUP_COLORS`). Chạy lại script khi đổi phân loại.

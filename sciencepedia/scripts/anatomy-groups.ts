@@ -41,9 +41,13 @@ const RULES: Record<string, [string, RegExp][]> = {
     ["large_intestine", /large intestine|colon|taenia|append|cecum|rectum/i],
     ["oral", /tongue|salivary|sublingual|submandibular|parotid/i],
   ],
+  lymphatic: [
+    ["spleen", /spleen/i],
+    ["thymus", /thymus/i],
+  ],
   nervous: [
     ["nerve", /\bnerve\b|ganglion|optic chiasm|optic tract/i],
-    ["ventricles", /ventricle|aqueduct|central canal|interventricular foramen/i],
+    ["ventricles", /ventricle|aqueduct|central canal|interventricular foramen|choroid plexus/i],
     ["meninges", /tentorium|dura mater|meninx/i],
     ["brainstem", /medulla oblongata|\bpons\b|midbrain|colliculus|interpeduncular/i],
     ["cerebellum", /cerebellum/i],

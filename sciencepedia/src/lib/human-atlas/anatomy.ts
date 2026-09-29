@@ -62,7 +62,8 @@ export const SYSTEM_COLORS: Record<SystemId, string> = {
   sensory: "#b0c8ce",
   arterial: "#c05245",
   // Xanh rõ hơn trên nền gần đen (#527c9f cũ chìm thành xám); vẫn trầm, không cyan.
-  venous: "#4a86c5",
+  // Xanh bão hoà hơn bản cũ (#4a86c5): qua ACES trên nền gần đen, bản cũ ngả xám.
+  venous: "#3c83d6",
   nervous: "#d8b565",
   respiratory: "#b98991",
   digestive: "#b8916b",
@@ -320,6 +321,9 @@ const SYSTEM_CORRECTIONS: Record<string, SystemId> = {
   // màng với mạc treo ở trên.
   FMA58776: "connective", // Right iliotibial tract
   FMA58777: "connective", // Left iliotibial tract
+  // Đám rối mạch mạc: tổ tiên FMA "Region of wall of ventricular system of
+  // neuraxis" — thành não thất, thuộc thần kinh trung ương, không phải giác quan.
+  FMA61934: "nervous", // Choroid plexus of cerebral hemisphere (2 mảnh)
 };
 
 // ------------------------------------------------------------ nhóm cơ quan
@@ -345,6 +349,9 @@ export const GROUP_COLORS: Record<string, string> = {
   "nervous.ventricles": "#8fa9bd",
   "nervous.meninges": "#b5acae",
   "nervous.nerve": "#d9b25c",
+  // Bạch huyết: cơ quan dạng lympho mỗi thứ một màu, không cùng một màu hệ.
+  "lymphatic.spleen": "#8a4d5c",
+  "lymphatic.thymus": "#c8a88f",
 };
 
 export function correctSystems(atlas: Atlas): Atlas {

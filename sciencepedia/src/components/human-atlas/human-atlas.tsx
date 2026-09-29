@@ -190,6 +190,9 @@ export function HumanAtlas({
   const [state, setState] = useState(initial);
   const [panel, setPanel] = useState<"layers" | "search" | null>(null);
   const [gallery, setGallery] = useState(false);
+  // Ảnh thu nhỏ chỉ chụp sau lần mở lưới đầu tiên: mỗi ảnh là một lượt vẽ cả mô
+  // hình, chụp ngay khi tải là giật khung trên máy yếu cho người không mở lưới.
+  const [galleryOpened, setGalleryOpened] = useState(false);
   const [thumbnails, setThumbnails] = useState<Record<string, string>>({});
   const onThumbnail = useCallback(
     (id: string, url: string) => setThumbnails((m) => ({ ...m, [id]: url })),
@@ -577,7 +580,7 @@ export function HumanAtlas({
             onSelect={choosePart}
             onProgress={onProgress}
             onError={onError}
-            onThumbnail={onThumbnail}
+            onThumbnail={galleryOpened ? onThumbnail : undefined}
           />
         )}
       </AtlasErrorBoundary>
@@ -614,6 +617,7 @@ export function HumanAtlas({
             setDetails(false);
             setPanel(null);
             setGallery(true);
+            setGalleryOpened(true);
           }}
           aria-label={t("atlasViews.openLabel")}
           aria-haspopup="dialog"
