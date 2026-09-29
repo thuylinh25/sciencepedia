@@ -26,7 +26,10 @@ import {
   Pause,
   RotateCcw,
   RotateCw,
+  Scan,
   Search,
+  ZoomIn,
+  ZoomOut,
 } from "lucide-react";
 
 import { cn } from "@/lib/utils";
@@ -562,6 +565,17 @@ export function HumanAtlas({
         </ToolButton>
         <ToolButton label={t("resetLabel")} onClick={reset}>
           <RotateCcw aria-hidden />
+        </ToolButton>
+        <span aria-hidden className="mx-2 my-1 h-px bg-border atlas-short:hidden" />
+        {/* Zoom bằng nút: không phải ai cũng có con lăn hay biết chụm hai ngón. */}
+        <ToolButton label={t("zoomInLabel")} onClick={() => setState((s) => ({ ...s, zoomIn: (s.zoomIn ?? 0) + 1 }))}>
+          <ZoomIn aria-hidden />
+        </ToolButton>
+        <ToolButton label={t("zoomOutLabel")} onClick={() => setState((s) => ({ ...s, zoomOut: (s.zoomOut ?? 0) + 1 }))}>
+          <ZoomOut aria-hidden />
+        </ToolButton>
+        <ToolButton label={t("fitLabel")} onClick={() => setState((s) => ({ ...s, fitFrame: (s.fitFrame ?? 0) + 1 }))}>
+          <Scan aria-hidden />
         </ToolButton>
       </nav>
 

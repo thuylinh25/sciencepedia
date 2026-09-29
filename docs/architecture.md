@@ -463,6 +463,16 @@ Muốn đầy đủ hơn phải thêm asset hợp pháp khác, đăng ký cùng 
 não, dây thần kinh…) từ tên + tổ tiên is-a FMA, ghi `part-groups.generated.json`; viewer tạo
 một vật liệu mỗi nhóm (`GROUP_COLORS`). Chạy lại script khi đổi phân loại.
 
+### Rê chuột ở nguyên khối; test click phải bấm vào CƠ THỂ, không vào giữa canvas
+
+Mảnh dưới con trỏ sáng viền (kênh B của texture chọn) và hiện tên. pointermove chỉ ghi toạ
+độ; raycast tối đa một lần mỗi khung trong vòng vẽ, lọc hộp bao trước. Mesh raycast dùng vật
+liệu DoubleSide như vật liệu vẽ.
+
+**Bẫy khi test tự động:** camera có view offset để canh cơ thể vào giữa VÙNG QUAN SÁT (lệch
+khỏi bảng hệ bên trái), nên cơ thể không nằm giữa canvas. Bấm vào tâm canvas là bấm vào khoảng
+trống — từng kết luận nhầm "click không chọn được". Lấy toạ độ từ ảnh chụp (điểm ảnh màu xương).
+
 ### Khung mặc định và thanh cuộn dọc
 
 Khung ~70% chiều cao vùng quan sát (67% tablet, 64% điện thoại). Tiêu đề và ô tìm là mẩu ở

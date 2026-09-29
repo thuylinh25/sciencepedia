@@ -229,6 +229,13 @@ export default function AnatomyScene({
     selectionTexture.needsUpdate = true;
 
     const materials: T.Material[] = [];
+    /*
+     * Vật liệu của mesh dùng để RAYCAST (không bao giờ vẽ): DoubleSide, khớp với
+     * vật liệu vẽ. Mesh mặc định là FrontSide — mảnh hở hay nhìn từ phía sau thì
+     * thứ người đọc THẤY được lại không bấm trúng được.
+     */
+    const pickMaterial = new T.MeshBasicMaterial({ side: T.DoubleSide });
+    materials.push(pickMaterial);
     const geometries: T.BufferGeometry[] = [];
     const pickers: (T.Mesh | undefined)[] = [];
     const centers = parts.map((p) =>
@@ -320,14 +327,14 @@ export default function AnatomyScene({
         shader.uniforms.selectionState = { value: selectionTexture };
         shader.uniforms.stateWidth = { value: width };
         shader.vertexShader =
-          "attribute float partIndex; uniform sampler2D partState; uniform sampler2D selectionState; uniform float stateWidth; varying float partVisible; varying float partSelected;\n" +
+          "attribute float partIndex; uniform sampler2D partState; uniform sampler2D selectionState; uniform float stateWidth; varying float partVisible; varying float partSelected; varying float partHovered;\n" +
           shader.vertexShader;
         shader.vertexShader = shader.vertexShader.replace(
           "#include <begin_vertex>",
-          "#include <begin_vertex>\nvec2 stateUv = vec2((partIndex + 0.5) / stateWidth, 0.5); vec4 state = texture2D(partState, stateUv); transformed += state.xyz; partVisible = state.w; partSelected = texture2D(selectionState, stateUv).r;",
+          "#include <begin_vertex>\nvec2 stateUv = vec2((partIndex + 0.5) / stateWidth, 0.5); vec4 state = texture2D(partState, stateUv); transformed += state.xyz; partVisible = state.w; vec4 pick = texture2D(selectionState, stateUv); partSelected = pick.r; partHovered = pick.b;",
         );
         shader.fragmentShader =
-          "varying float partVisible; varying float partSelected;\n" + shader.fragmentShader;
+          "varying float partVisible; varying float partSelected; varying float partHovered;\n" + shader.fragmentShader;
         shader.fragmentShader = shader.fragmentShader.replace(
           "#include <clipping_planes_fragment>",
           "#include <clipping_planes_fragment>\nif (partVisible < 0.5) discard;",
@@ -343,7 +350,7 @@ export default function AnatomyScene({
         );
         shader.fragmentShader = shader.fragmentShader.replace(
           "#include <emissivemap_fragment>",
-          "#include <emissivemap_fragment>\nfloat selectRim = pow(1.0 - abs(dot(normal, normalize(vViewPosition))), 2.5);\ntotalEmissiveRadiance += vec3(0.30, 0.72, 1.0) * partSelected * (0.06 + 0.55 * selectRim);",
+          "#include <emissivemap_fragment>\nfloat selectRim = pow(1.0 - abs(dot(normal, normalize(vViewPosition))), 2.5);\ntotalEmissiveRadiance += vec3(0.30, 0.72, 1.0) * partSelected * (0.06 + 0.55 * selectRim);\n// Rê chuột: viền sáng trắng ngà, yếu hơn viền chọn — gợi ý bấm được, không giành vai chọn.\ntotalEmissiveRadiance += vec3(0.95, 0.92, 0.85) * partHovered * (1.0 - partSelected) * (0.03 + 0.3 * selectRim);",
         );
       };
       materials.push(m);
@@ -490,7 +497,7 @@ export default function AnatomyScene({
         g.setIndex(new T.BufferAttribute(new Uint32Array(buffer, p.indices, p.indexCount), 1));
         g.boundingBox = bounds[i].clone();
         g.computeBoundingSphere();
-        const pick = new T.Mesh(g);
+        const pick = new T.Mesh(g, pickMaterial);
         pick.matrixAutoUpdate = false;
         pickers[i] = pick;
         geometries.push(g);
@@ -589,12 +596,23 @@ export default function AnatomyScene({
       return { w, h, left, right, top, bottom };
     };
 
-    /** Hộp bao (vị trí nguyên khối) của các hệ đang bật; không hệ nào thì cả cơ thể. */
+    /**
+     * Hộp bao của các hệ đang bật; không hệ nào thì cả cơ thể.
+     *
+     * Đang tách thì tính theo vị trí HIỆN TẠI của mảnh (đã cộng độ dời), không
+     * theo vị trí nguyên khối. Ở pha toả ra mỗi hệ trượt theo một hướng riêng;
+     * bật một hệ duy nhất (vd. thần kinh) là cả khối dời lệch lên phải — khung
+     * theo hộp nguyên khối thì mô hình trôi ra góc màn hình.
+     */
+    const shifted = new T.Box3();
     const visibleBox = () => {
       const on = new Set(latest.current.visible);
       const box = new T.Box3();
+      const displaced = amount > 0.001;
       parts.forEach((p, i) => {
-        if (on.has(p.system)) box.union(bounds[i]);
+        if (!on.has(p.system)) return;
+        if (!displaced) box.union(bounds[i]);
+        else box.union(shifted.copy(bounds[i]).translate(new T.Vector3(data[i * 4], data[i * 4 + 1], data[i * 4 + 2])));
       });
       if (box.isEmpty()) bounds.forEach((b) => box.union(b));
       return box;
@@ -985,14 +1003,66 @@ export default function AnatomyScene({
     /** Mảnh bấm được: đang hiện và lớp của nó đủ đậm (lớp mờ để bấm xuyên qua). */
     const pickable = (i: number) => data[i * 4 + 3] > 0.5 && alphaOf(i) >= 0.5;
 
+    /** Mảnh gần nhất dưới một điểm màn hình, hoặc -1. Lọc bằng hộp bao trước khi xét tam giác. */
+    const pickAt = (clientX: number, clientY: number) => {
+      const rect = canvas.getBoundingClientRect();
+      pointer.set(((clientX - rect.left) / rect.width) * 2 - 1, -((clientY - rect.top) / rect.height) * 2 + 1);
+      raycaster.setFromCamera(pointer, camera);
+      let nearest = Infinity;
+      let found = -1;
+      pickers.forEach((mesh, i) => {
+        if (!mesh || !pickable(i)) return;
+        worldBox.copy(bounds[i]).translate(mesh.position);
+        if (!raycaster.ray.intersectBox(worldBox, hitPoint)) return;
+        // Hộp bao đã xa hơn mảnh trúng gần nhất thì khỏi xét tam giác.
+        if (raycaster.ray.origin.distanceTo(hitPoint) > nearest) return;
+        const hits = raycaster.intersectObject(mesh, false);
+        if (hits[0] && hits[0].distance < nearest) {
+          nearest = hits[0].distance;
+          found = i;
+        }
+      });
+      return found;
+    };
+
+    /*
+     * ## Rê chuột ở nguyên khối (2026-09-29)
+     *
+     * Trước đây chỉ chế độ tách mới có phản hồi khi rê chuột; nguyên khối thì
+     * mô hình "chết" cho tới lúc bấm. Nay mảnh dưới con trỏ sáng viền nhẹ và
+     * hiện tên. pointermove chỉ ghi toạ độ; raycast chạy TỐI ĐA một lần mỗi
+     * khung trong vòng vẽ — di chuột nhanh không nhân số lần raycast. Không
+     * chạy khi đang kéo, với cảm ứng, hay trước khi tải xong.
+     */
+    let hoverQueued: { x: number; y: number } | null = null;
+    let hovered = -1;
+    const setHovered = (index: number) => {
+      if (index === hovered) return;
+      if (hovered >= 0) selectedData[hovered * 4 + 2] = 0;
+      if (index >= 0) selectedData[index * 4 + 2] = 255;
+      hovered = index;
+      selectionTexture.needsUpdate = true;
+      dirty = true;
+    };
+    const leave = () => {
+      hoverQueued = null;
+      setHovered(-1);
+      hover.hidden = true;
+    };
+
     const down = (e: PointerEvent) => {
       hover.hidden = true;
+      setHovered(-1);
       tap.down(e.pointerId, e.clientX, e.clientY, e.pointerType === "touch" ? 12 : 5);
     };
     const move = (e: PointerEvent) => {
       tap.move(e.pointerId, e.clientX, e.clientY);
-      if (e.buttons || amount < 0.5 || e.pointerType === "touch") {
-        hover.hidden = true;
+      if (e.buttons || e.pointerType === "touch") {
+        leave();
+        return;
+      }
+      if (amount < 0.5) {
+        hoverQueued = { x: e.clientX, y: e.clientY };
         return;
       }
       const rect = el.getBoundingClientRect();
@@ -1012,23 +1082,7 @@ export default function AnatomyScene({
       const validTap = tap.up(e.pointerId, e.clientX, e.clientY);
       if (!validTap || !ready) return;
       const rect = canvas.getBoundingClientRect();
-      pointer.set(
-        ((e.clientX - rect.left) / rect.width) * 2 - 1,
-        -((e.clientY - rect.top) / rect.height) * 2 + 1,
-      );
-      raycaster.setFromCamera(pointer, camera);
-      let nearest = Infinity;
-      let found = -1;
-      pickers.forEach((mesh, i) => {
-        if (!mesh || !pickable(i)) return;
-        worldBox.copy(bounds[i]).translate(mesh.position);
-        if (!raycaster.ray.intersectBox(worldBox, hitPoint)) return;
-        const hits = raycaster.intersectObject(mesh, false);
-        if (hits[0] && hits[0].distance < nearest) {
-          nearest = hits[0].distance;
-          found = i;
-        }
-      });
+      let found = pickAt(e.clientX, e.clientY);
       if (found < 0 && amount > 0.45) {
         found = findTarget(
           e.clientX - rect.left,
@@ -1045,9 +1099,12 @@ export default function AnatomyScene({
     canvas.addEventListener("pointermove", move);
     canvas.addEventListener("pointerup", up);
     canvas.addEventListener("pointercancel", cancel);
+    canvas.addEventListener("pointerleave", leave);
 
     // ------------------------------------------------------------ vòng vẽ
     const clock = new T.Clock();
+    let lastZoomSteps = 0;
+    let lastFitFrame = 0;
     let lastExtent = -1;
     const animate = () => {
       if (disposed) return;
@@ -1233,6 +1290,42 @@ export default function AnatomyScene({
         lastIsolate = isolateKey;
       }
 
+      // Rê chuột: một raycast mỗi khung, chỉ khi con trỏ vừa đổi chỗ.
+      if (hoverQueued && ready && amount < 0.5) {
+        const { x, y } = hoverQueued;
+        hoverQueued = null;
+        const index = pickAt(x, y);
+        setHovered(index);
+        canvas.style.cursor = index < 0 ? "grab" : "pointer";
+        const rect = el.getBoundingClientRect();
+        hover.hidden = index < 0;
+        if (index >= 0) {
+          hover.textContent = callbacks.current.labelFor(index);
+          hover.style.left = `${Math.max(8, Math.min(x - rect.left + 14, el.clientWidth - 260))}px`;
+          hover.style.top = `${Math.max(8, Math.min(y - rect.top + 18, el.clientHeight - 55))}px`;
+        }
+      } else if (amount >= 0.5 && hovered >= 0) {
+        setHovered(-1);
+      }
+
+      // Nút phóng to / thu nhỏ / vừa khung: bộ đếm như `reset`, chuyển mượt.
+      const zoomSteps = (s.zoomIn ?? 0) - (s.zoomOut ?? 0);
+      if (zoomSteps !== lastZoomSteps) {
+        const factor = zoomSteps > lastZoomSteps ? 0.78 : 1 / 0.78;
+        lastZoomSteps = zoomSteps;
+        const direction = camera.position.clone().sub(controls.target).normalize();
+        const distance = T.MathUtils.clamp(
+          camera.position.distanceTo(controls.target) * factor,
+          controls.minDistance,
+          controls.maxDistance,
+        );
+        place(controls.target.clone(), direction, distance, [offsetX, offsetY], true);
+      }
+      if ((s.fitFrame ?? 0) !== lastFitFrame) {
+        lastFitFrame = s.fitFrame ?? 0;
+        fit(s.view, amount, true, true);
+      }
+
       controls.enableRotate = amount < 0.8;
       controls.mouseButtons.LEFT = amount < 0.8 ? T.MOUSE.ROTATE : T.MOUSE.PAN;
       controls.touches.ONE = amount < 0.8 ? T.TOUCH.ROTATE : T.TOUCH.PAN;
@@ -1319,6 +1412,7 @@ export default function AnatomyScene({
       canvas.removeEventListener("pointermove", move);
       canvas.removeEventListener("pointerup", up);
       canvas.removeEventListener("pointercancel", cancel);
+      canvas.removeEventListener("pointerleave", leave);
       canvas.removeEventListener("webglcontextlost", contextLost);
       geometries.forEach((g) => g.dispose());
       materials.forEach((m) => m.dispose());

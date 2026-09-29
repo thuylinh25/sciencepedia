@@ -248,6 +248,10 @@ export interface SceneState {
   reset: number;
   /** Tăng lên để camera bay tới cấu trúc đang chọn (deep link, chọn từ tìm kiếm). */
   focus: number;
+  /** Bộ đếm nút phóng to / thu nhỏ / vừa khung — cảnh so với lần trước để biết bấm nút nào. */
+  zoomIn?: number;
+  zoomOut?: number;
+  fitFrame?: number;
 }
 
 /**
