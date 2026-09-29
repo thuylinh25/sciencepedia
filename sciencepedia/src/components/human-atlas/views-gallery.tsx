@@ -3,7 +3,8 @@
 // Client: chọn góc nhìn đổi state của trình xem, và ảnh thu nhỏ do cảnh 3D
 // chụp ở client sau khi tải mô hình.
 
-import { useEffect, useRef } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import { useTranslations } from "next-intl";
 import { X } from "lucide-react";
 
@@ -27,11 +28,35 @@ type Props = {
  *
  * Thẻ thiếu dữ liệu vẫn hiện (có trong kế hoạch) nhưng không bấm được, và nói
  * rõ thiếu gì.
+ *
+ * ## Vì sao gắn vào <body> chứ không phủ trong khung xem
+ *
+ * Bản đầu là một vùng cuộn riêng (`inset-0 overflow-y-auto`) trong khung xem.
+ * Trên điện thoại khung xem chiếm cả màn hình, nên vuốt đâu cũng chỉ cuộn lưới:
+ * thanh cuộn của trang biến mất và không xuống được phần dưới trang. Nay lưới
+ * nằm trong luồng cuộn của trang — bắt đầu từ mép trên khung xem, cao theo nội
+ * dung, không tự cuộn — nên chỉ còn MỘT thanh cuộn là của trang.
  */
 export function ViewsGallery({ locale, activeViewId, thumbnails, onChoose, onClose }: Props) {
   const t = useTranslations("humanAtlas.atlasViews");
   const close = useRef<HTMLButtonElement>(null);
   const pick = (v: { vi: string; en: string }) => (locale === "vi" ? v.vi : v.en);
+  /** Vị trí khung xem trong trang (toạ độ tài liệu) — lưới phủ đúng từ đó xuống. */
+  const [frame, setFrame] = useState<{ top: number; height: number } | null>(null);
+
+  useLayoutEffect(() => {
+    const section = document.getElementById("atlas-viewer");
+    if (!section) return;
+    const measure = () => {
+      const r = section.getBoundingClientRect();
+      setFrame({ top: r.top + window.scrollY, height: r.height });
+    };
+    measure();
+    // Mở lưới thì đưa mép trên khung xem lên đầu màn (scroll-mt chừa header dính).
+    section.scrollIntoView({ block: "start", behavior: "instant" });
+    window.addEventListener("resize", measure);
+    return () => window.removeEventListener("resize", measure);
+  }, []);
 
   useEffect(() => {
     close.current?.focus();
@@ -42,12 +67,14 @@ export function ViewsGallery({ locale, activeViewId, thumbnails, onChoose, onClo
     return () => window.removeEventListener("keydown", onKey);
   }, [onClose]);
 
-  return (
+  if (!frame) return null;
+  return createPortal(
     <div
       role="dialog"
       aria-modal="true"
       aria-labelledby="atlas-views-title"
-      className="absolute inset-0 z-40 overflow-y-auto overscroll-contain bg-[#05070a]/80 px-4 pt-5 pb-8 backdrop-blur-sm sm:px-8"
+      style={{ top: frame.top, minHeight: frame.height }}
+      className="absolute inset-x-0 z-40 bg-[#05070a]/90 px-4 pt-5 pb-10 backdrop-blur-sm sm:px-8"
     >
       <div className="relative mx-auto max-w-6xl">
         <h2 id="atlas-views-title" className="text-center font-display text-xl text-white/90 sm:text-2xl">
@@ -113,6 +140,7 @@ export function ViewsGallery({ locale, activeViewId, thumbnails, onChoose, onClo
           })}
         </ul>
       </div>
-    </div>
+    </div>,
+    document.body,
   );
 }

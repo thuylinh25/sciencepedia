@@ -505,9 +505,15 @@ bỏ khi chuyển sang hiện mọi hệ — đừng thêm lại nếu không c�
 
 **Mã mảnh không viết tay.** Quy tắc tên nằm trong `views.ts`; `scripts/atlas-views.ts` đối chiếu
 với `atlas.json` thật, ghi `view-parts.generated.json`, và báo lỗi khi một quy tắc không khớp mảnh
-nào. Sửa quy tắc là phải chạy lại script với `--write`. Hai góc nhìn chưa dựng được (có `missing`):
-"Răng và mạch máu" (không có động mạch hàm trên / huyệt răng dưới / mặt trong BodyParts3D 4.0) và
-"Mặt cắt vùng chậu" (cần clipping plane; dữ liệu cũng thiếu xương cụt). Thẻ vẫn hiện, không bấm được.
+nào. Sửa quy tắc là phải chạy lại script với `--write`. "Răng và mạch máu" đổi tên thành "Răng và
+hàm" (id giữ `teeth-vessels`): BodyParts3D 4.0 không có động mạch hàm trên / huyệt răng dưới / mặt,
+đừng đặt lại tên hứa "mạch máu". "Mặt cắt vùng chậu" dùng `clip` (mặt phẳng cắt theo vật liệu,
+`renderer.localClippingEnabled`); gắn/gỡ `clippingPlanes` đổi shader nên chỉ đụng vật liệu khi trạng
+thái THỰC SỰ đổi, và raycast phải tự bỏ điểm trúng ở nửa đã cắt. Mặt cắt để hở (mảnh là bề mặt).
+
+Lưới gắn vào `<body>` (portal) từ mép trên khung xem, cao theo nội dung — KHÔNG làm vùng cuộn
+riêng: trên điện thoại khung xem chiếm cả màn, vùng cuộn riêng nuốt mọi cú vuốt và thanh cuộn
+của trang biến mất.
 
 **Ảnh thu nhỏ chụp từ chính mô hình**, không phải ảnh tĩnh: sau khi tải xong, mỗi khung vẽ MỘT
 góc nhìn vào góc canvas (scissor), chép sang canvas 2D ngay trong cùng tác vụ (bộ đệm WebGL còn

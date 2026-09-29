@@ -153,6 +153,8 @@ export default function AnatomyScene({
     renderer.outputColorSpace = T.SRGBColorSpace;
     renderer.toneMapping = T.ACESFilmicToneMapping;
     renderer.toneMappingExposure = 1.0;
+    // Mặt phẳng cắt theo vật liệu (góc nhìn "Mặt cắt …") — tắt thì không tốn gì.
+    renderer.localClippingEnabled = true;
     renderer.domElement.className = "block size-full touch-none";
     renderer.domElement.setAttribute("role", "img");
     renderer.domElement.setAttribute("aria-label", ariaLabel);
@@ -430,6 +432,32 @@ export default function AnatomyScene({
     };
     const inView = (view: { hide: Set<number> }, system: SystemId, i: number) =>
       system !== "integumentary" && !view.hide.has(i);
+
+    /*
+     * Mặt phẳng cắt của góc nhìn (`clip` trong views.ts). Gắn/gỡ `clippingPlanes`
+     * đổi shader (NUM_CLIPPING_PLANES) nên chỉ đụng vật liệu khi trạng thái bật/tắt
+     * THỰC SỰ đổi. Vật liệu thay thế của AO cũng phải cắt, không thì nửa đã bỏ
+     * vẫn đổ bóng lên mặt cắt.
+     */
+    const clipPlane = new T.Plane();
+    const clipList = [clipPlane];
+    let clipOn = false;
+    const applyClip = (id: string | null | undefined) => {
+      const clip = viewSet(id) ? viewById(id)?.clip : undefined;
+      if (clip) {
+        clipPlane.normal.set(...clip.normal).normalize();
+        clipPlane.constant = clip.constant;
+      }
+      if (!!clip === clipOn) return;
+      clipOn = !!clip;
+      const targets: T.Material[] = [...materials];
+      if (aoPass) targets.push(aoPass.normalMaterial);
+      for (const m of targets) {
+        m.clippingPlanes = clipOn ? clipList : null;
+        m.needsUpdate = true;
+      }
+      dirty = true;
+    };
 
     /*
      * ## AO (ambient occlusion) — chỉ desktop, chỉ khi đứng yên
@@ -1098,6 +1126,7 @@ export default function AnatomyScene({
       camera.lookAt(frame.target);
       camera.updateMatrixWorld(true);
 
+      applyClip(id);
       renderer.setScissorTest(true);
       renderer.setViewport(0, 0, THUMB_W, THUMB_H);
       renderer.setScissor(0, 0, THUMB_W, THUMB_H);
@@ -1121,6 +1150,7 @@ export default function AnatomyScene({
           THUMB_H,
         );
       renderer.setScissorTest(false);
+      applyClip(latest.current.viewId);
       renderer.setViewport(0, 0, el.clientWidth, el.clientHeight);
 
       camera.position.copy(savedPosition);
@@ -1163,8 +1193,10 @@ export default function AnatomyScene({
         // Hộp bao đã xa hơn mảnh trúng gần nhất thì khỏi xét tam giác.
         if (raycaster.ray.origin.distanceTo(hitPoint) > nearest) return;
         const hits = raycaster.intersectObject(mesh, false);
-        if (hits[0] && hits[0].distance < nearest) {
-          nearest = hits[0].distance;
+        // Đang cắt: bỏ các điểm trúng nằm ở nửa đã bị cắt đi (raycast không biết clipping).
+        const hit = clipOn ? hits.find((h) => clipPlane.distanceToPoint(h.point) >= 0) : hits[0];
+        if (hit && hit.distance < nearest) {
+          nearest = hit.distance;
           found = i;
         }
       });
@@ -1351,7 +1383,10 @@ export default function AnatomyScene({
       }
 
       if (s.view !== lastView || s.reset !== lastReset) {
-        if (s.view !== lastView && lastView !== "") viewHeading = false;
+        // Trong góc nhìn, `reset` chỉ tăng khi người đọc bấm một nút hướng (kể cả
+        // nút đang sáng) — "Đặt lại" và thẻ hệ đều rời góc nhìn trước. Bấm là trả
+        // quyền chọn hướng cho người đọc.
+        if (lastView !== "" && (s.view !== lastView || (s.viewId && s.reset !== lastReset))) viewHeading = false;
         // Lượt đầu (chưa có góc nhìn nào) đặt thẳng; về sau thì chuyển mượt.
         fit(s.view, sized && lastView !== "");
         lastView = s.view;
@@ -1361,6 +1396,7 @@ export default function AnatomyScene({
       // Đổi góc nhìn → bay tới nó. Tập hệ đổi cùng lượt, nên đồng bộ khoá để khối
       // dưới không khung lại lần hai theo hướng cũ.
       if ((s.viewId ?? null) !== lastViewId) {
+        applyClip(s.viewId);
         lastViewId = s.viewId ?? null;
         viewHeading = !!s.viewId;
         lastVisibleKey = s.visible.join(",");

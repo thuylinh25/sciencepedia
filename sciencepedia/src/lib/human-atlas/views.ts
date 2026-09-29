@@ -42,6 +42,11 @@ export type AtlasViewDef = {
   focus?: readonly PartRule[];
   /** Mảnh ẩn thêm (ngoài da). */
   hide?: readonly PartRule[];
+  /**
+   * Mặt phẳng cắt (hệ toạ độ thế giới): giữ phần có `normal · p + constant ≥ 0`,
+   * bỏ phần còn lại. Mặt cắt để hở — mảnh là bề mặt, không có ruột để lấp.
+   */
+  clip?: { normal: readonly [number, number, number]; constant: number };
   /** Có mặt = không dựng được với dữ liệu hiện có; nói thiếu gì. */
   missing?: { vi: string; en: string };
 };
@@ -89,14 +94,15 @@ export const ATLAS_VIEWS: readonly AtlasViewDef[] = [
     ],
   },
   {
+    // Id giữ nguyên để link cũ còn chạy. Tên KHÔNG hứa "mạch máu": BodyParts3D 4.0
+    // không có động mạch hàm trên, huyệt răng dưới hay động mạch mặt — mạch gần
+    // nhất có trong dữ liệu là động mạch cảnh, vẫn hiện như mọi hệ khác.
     id: "teeth-vessels",
     systemId: "skeletal",
-    name: { vi: "Răng và mạch máu", en: "Teeth and blood supply" },
-    direction: "front",
-    missing: {
-      vi: "BodyParts3D 4.0 không có động mạch hàm trên, động mạch huyệt răng dưới hay động mạch mặt — chỉ có động mạch cảnh chung/trong.",
-      en: "BodyParts3D 4.0 has no maxillary, inferior alveolar or facial arteries — only the common and internal carotids.",
-    },
+    name: { vi: "Răng và hàm", en: "Teeth and jaws" },
+    direction: [0.45, 0.05, 1],
+    focus: [{ systems: SKELETAL, name: /tooth|gingiva|maxilla|mandible/i }],
+    hide: MUSCLES,
   },
   {
     id: "cervical-spine",
@@ -222,14 +228,19 @@ export const ATLAS_VIEWS: readonly AtlasViewDef[] = [
     hide: MUSCLES,
   },
   {
+    // Mặt cắt dọc giữa: bỏ nửa trái (x > 0), nhìn từ bên trái vào mặt cắt. Bộ dữ
+    // liệu không có xương cụt — mặt cắt dừng ở đỉnh xương cùng.
     id: "pelvis-section",
     systemId: "skeletal",
     name: { vi: "Mặt cắt vùng chậu", en: "Pelvic section" },
-    direction: "side",
-    missing: {
-      vi: "Cần mặt phẳng cắt (clipping) để bổ đôi xương chậu — trình xem chưa có. Bộ dữ liệu cũng thiếu xương cụt.",
-      en: "Needs a clipping plane to section the pelvis — not in the viewer yet. The dataset also lacks the coccyx.",
-    },
+    direction: [1, 0.05, 0.12],
+    clip: { normal: [-1, 0, 0], constant: 0 },
+    focus: [
+      { systems: SKELETAL, name: /^right hip bone$|^sacrum$|fifth lumbar vertebra/i },
+      { systems: ["urinary"], name: /urinary bladder|urethra/i },
+      { systems: ["digestive"], name: /^rectum$/i },
+      { systems: ["reproductive"], name: /prostate|seminal vesicle|corpus|glans/i },
+    ],
   },
   {
     id: "hip",
