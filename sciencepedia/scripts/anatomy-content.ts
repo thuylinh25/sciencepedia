@@ -1,11 +1,16 @@
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
 
+import { z } from "zod";
+
+import { SYSTEM_IDS, type Atlas } from "../src/lib/human-atlas/anatomy";
+import type { SystemDescriptions } from "../src/lib/human-atlas/system-descriptions";
 import {
   ANATOMY_SOURCES,
   CONTENT_FIELDS,
   contentFileSchema,
   type AnatomyData,
+  type Bilingual,
   type ContentField,
   type StructureContent,
 } from "../src/lib/human-atlas/structures";
@@ -34,6 +39,7 @@ import {
 
 const ROOT = path.resolve(__dirname, "..");
 const CONTENT_FILE = path.join(ROOT, "data/anatomy/content-l2.json");
+const SYSTEMS_FILE = path.join(ROOT, "data/anatomy/systems-l2.json");
 
 function normalize(text: string): string {
   return text
@@ -49,7 +55,7 @@ function numbers(text: string): string[] {
 }
 
 const BANNED = [/có lẽ/i, /\bmight\b/i, /\bperhaps\b/i, /\bprobably\b/i];
-const HEDGE_VI = /(^|[^\p{L}])(có thể|nhìn chung|(?<!bình )thường)([^\p{L}]|$)/iu;
+const HEDGE_VI = /(^|[^\p{L}])(có thể|nhìn chung|(?<!bình |bất )thường)([^\p{L}]|$)/iu;
 // "can" không nằm ở đây: "can stretch", "can be felt" là khả năng, không phải rào đón.
 // "thường gặp" (tần suất) khớp "commonly" của nguồn.
 const HEDGE_EN = /\b(may|usually|generally|typically|often|in general)\b/i;
@@ -120,6 +126,68 @@ async function sectionText(template: string, cacheDir: string, section: string):
   return text;
 }
 
+/** Điều 4 và 5, cộng kiểm trùng câu và từ hạn định — chung cho mục cấu trúc và mục hệ. */
+function checkText(
+  id: string,
+  field: string,
+  value: Bilingual,
+  rawQuotes: string[],
+  say: (message: string) => void,
+  warnings: string[],
+) {
+  const quotes = rawQuotes.map(normalize);
+  // 4.
+  const available = new Set(quotes.flatMap(numbers));
+  for (const [lang, text] of Object.entries(value)) {
+    for (const n of numbers(text)) {
+      if (!available.has(n)) say(`${field}.${lang}: số "${n}" không có trong câu trích nào chống lưng`);
+    }
+    // 5.
+    for (const banned of BANNED) if (banned.test(text)) say(`${field}.${lang}: từ rào đón bị cấm (${banned.source})`);
+    if (lang === "en") {
+      for (const quote of quotes) {
+        const run = longestSharedRun(text, quote);
+        if (run >= MAX_SHARED_WORDS) {
+          say(`${field}.en: trùng ${run} từ liên tiếp với câu trích — viết lại bằng câu của mình (CC BY-NC-SA)`);
+        } else if (run >= WARN_SHARED_WORDS) {
+          warnings.push(`${id}: ${field}.en: trùng ${run} từ liên tiếp với câu trích — kiểm xem là thuật ngữ hay là câu chép`);
+        }
+      }
+      for (const word of QUALIFIERS) {
+        const pattern = new RegExp(`\\b${word}\\b`, "i");
+        if (quotes.some((q) => pattern.test(q)) && !pattern.test(text)) {
+          warnings.push(`${id}: ${field}.en: nguồn có "${word}", câu viết không có — kiểm xem có đánh rơi không`);
+        }
+      }
+    }
+    const hedge = lang === "vi" ? HEDGE_VI : HEDGE_EN;
+    if (hedge.test(text) && !quotes.some((q) => HEDGE_SOURCE.test(q))) {
+      say(`${field}.${lang}: câu rào đón mà nguồn không rào đón`);
+    }
+  }
+}
+
+/** Câu trích có nguyên văn trong mục sách không — điều 3, chung cho hai loại mục. */
+async function checkQuote(
+  evidence: { source: string; section: string; quote: string },
+  texts: Map<string, string>,
+  say: (message: string) => void,
+) {
+  const source = ANATOMY_SOURCES[evidence.source as keyof typeof ANATOMY_SOURCES];
+  if (!source) {
+    say(`nguồn chưa đăng ký: ${evidence.source}`);
+    return;
+  }
+  const key = `${evidence.source}/${evidence.section}`;
+  if (!texts.has(key)) {
+    const cacheDir = path.join(ROOT, ".cache/anatomy", evidence.source);
+    texts.set(key, normalize(await sectionText(source.urlTemplate, cacheDir, evidence.section)));
+  }
+  if (!texts.get(key)!.includes(normalize(evidence.quote))) {
+    say(`trích dẫn không có nguyên văn trong ${evidence.section}: "${evidence.quote.slice(0, 70)}…"`);
+  }
+}
+
 export async function buildContent(data: AnatomyData): Promise<{
   content: Record<string, StructureContent>;
   drafts: string[];
@@ -143,21 +211,7 @@ export async function buildContent(data: AnatomyData): Promise<{
 
     // 3. Trích dẫn nguyên văn.
     const texts = new Map<string, string>();
-    for (const evidence of entry.evidence) {
-      const source = ANATOMY_SOURCES[evidence.source as keyof typeof ANATOMY_SOURCES];
-      if (!source) {
-        say(`nguồn chưa đăng ký: ${evidence.source}`);
-        continue;
-      }
-      const key = `${evidence.source}/${evidence.section}`;
-      if (!texts.has(key)) {
-        const cacheDir = path.join(ROOT, ".cache/anatomy", evidence.source);
-        texts.set(key, normalize(await sectionText(source.urlTemplate, cacheDir, evidence.section)));
-      }
-      if (!texts.get(key)!.includes(normalize(evidence.quote))) {
-        say(`trích dẫn không có nguyên văn trong ${evidence.section}: "${evidence.quote.slice(0, 70)}…"`);
-      }
-    }
+    for (const evidence of entry.evidence) await checkQuote(evidence, texts, say);
 
     for (const field of CONTENT_FIELDS) {
       const value = entry[field];
@@ -168,36 +222,7 @@ export async function buildContent(data: AnatomyData): Promise<{
         say(`${field}: không có bằng chứng`);
         continue;
       }
-      const quotes = support.map((e) => normalize(e.quote));
-      // 4.
-      const available = new Set(quotes.flatMap(numbers));
-      for (const [lang, text] of Object.entries(value)) {
-        for (const n of numbers(text)) {
-          if (!available.has(n)) say(`${field}.${lang}: số "${n}" không có trong câu trích nào chống lưng`);
-        }
-        // 5.
-        for (const banned of BANNED) if (banned.test(text)) say(`${field}.${lang}: từ rào đón bị cấm (${banned.source})`);
-        if (lang === "en") {
-          for (const quote of quotes) {
-            const run = longestSharedRun(text, quote);
-            if (run >= MAX_SHARED_WORDS) {
-              say(`${field}.en: trùng ${run} từ liên tiếp với câu trích — viết lại bằng câu của mình (CC BY-NC-SA)`);
-            } else if (run >= WARN_SHARED_WORDS) {
-              warnings.push(`${id}: ${field}.en: trùng ${run} từ liên tiếp với câu trích — kiểm xem là thuật ngữ hay là câu chép`);
-            }
-          }
-          for (const word of QUALIFIERS) {
-            const pattern = new RegExp(`\\b${word}\\b`, "i");
-            if (quotes.some((q) => pattern.test(q)) && !pattern.test(text)) {
-              warnings.push(`${id}: ${field}.en: nguồn có "${word}", câu viết không có — kiểm xem có đánh rơi không`);
-            }
-          }
-        }
-        const hedge = lang === "vi" ? HEDGE_VI : HEDGE_EN;
-        if (hedge.test(text) && !quotes.some((q) => HEDGE_SOURCE.test(q))) {
-          say(`${field}.${lang}: câu rào đón mà nguồn không rào đón`);
-        }
-      }
+      checkText(id, field, value, support.map((e) => e.quote), say, warnings);
     }
 
     if (problems.length > 0) {
@@ -233,4 +258,129 @@ export async function buildContent(data: AnatomyData): Promise<{
   }
 
   return { content, drafts, errors, warnings };
+}
+
+// ------------------------------------------------------------ mô tả 15 hệ
+
+/**
+ * Mô tả hệ (`data/anatomy/systems-l2.json`) có hai loại bằng chứng, vì nó
+ * khẳng định hai loại điều:
+ *
+ * - dữ kiện sinh học ("động mạch dẫn máu rời khỏi tim") — câu trích OpenStax,
+ *   kiểm như mục cấu trúc;
+ * - điều về CHÍNH MÔ HÌNH ("mô hình chỉ có tuyến ức và lách", "không có hạch
+ *   bạch huyết") — kiểm thẳng trên `atlas.json`: tên trong `present` phải là
+ *   mảnh thuộc đúng hệ đó, chuỗi trong `absent` không được khớp mảnh nào.
+ *
+ * Loại thứ hai sinh ra vì bản mô tả cũ nói về mạch và hạch bạch huyết trong
+ * khi mô hình không có cái nào — đúng về sinh học, sai về thứ người đọc đang
+ * nhìn.
+ */
+const systemsFileSchema = z.object({
+  schema: z.literal(1),
+  entries: z.record(
+    z.enum(SYSTEM_IDS),
+    z.object({
+      summary: z.object({ vi: z.string().min(1), en: z.string().min(1) }),
+      evidence: z
+        .array(
+          z.union([
+            z.object({
+              source: z.literal("openstax-ap2e"),
+              section: z.string(),
+              quote: z.string().min(10).max(400),
+              supports: z.array(z.literal("summary")).min(1),
+            }),
+            z.object({
+              source: z.literal("atlas"),
+              present: z.array(z.string()).min(1),
+              absent: z.array(z.string()).optional(),
+              supports: z.array(z.literal("summary")).min(1),
+            }),
+          ]),
+        )
+        .min(1),
+      review: z
+        .object({
+          by: z.literal("science-editor"),
+          at: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
+          verdict: z.enum(["approved", "approved-with-edits"]),
+          notes: z.string().optional(),
+        })
+        .optional(),
+    }),
+  ),
+});
+
+/** "Left lacrimal gland", "optic part of left retina" → "lacrimal gland", "optic part of retina". */
+function partKey(name: string): string {
+  return name
+    .toLowerCase()
+    .replace(/^(left|right) /, "")
+    .replace(/ of (left|right) /, " of ")
+    .trim();
+}
+
+/** `atlas` phải đã qua `correctSystems()` — cùng phân loại người đọc thấy. */
+export async function buildSystems(atlas: Atlas): Promise<{
+  systems: SystemDescriptions;
+  drafts: string[];
+  errors: string[];
+  warnings: string[];
+}> {
+  const systems: SystemDescriptions = {};
+  const drafts: string[] = [];
+  const errors: string[] = [];
+  const warnings: string[] = [];
+  if (!existsSync(SYSTEMS_FILE)) return { systems, drafts, errors, warnings };
+  const file = systemsFileSchema.parse(JSON.parse(readFileSync(SYSTEMS_FILE, "utf8")));
+
+  const bySystem = new Map<string, Set<string>>();
+  for (const part of atlas.parts) {
+    if (!bySystem.has(part.system)) bySystem.set(part.system, new Set());
+    bySystem.get(part.system)!.add(partKey(part.name));
+  }
+  const allNames = atlas.parts.map((p) => p.name.toLowerCase());
+
+  for (const [id, entry] of Object.entries(file.entries)) {
+    const problems: string[] = [];
+    const say = (message: string) => problems.push(`hệ ${id}: ${message}`);
+    const texts = new Map<string, string>();
+    const quotes: string[] = [];
+    const sections = new Set<string>();
+
+    for (const evidence of entry.evidence) {
+      if (evidence.source === "atlas") {
+        const names = bySystem.get(id) ?? new Set<string>();
+        for (const name of evidence.present) {
+          if (!names.has(name.toLowerCase())) say(`mô hình không có mảnh "${name}" trong hệ này`);
+        }
+        for (const pattern of evidence.absent ?? []) {
+          const hit = allNames.find((n) => n.includes(pattern.toLowerCase()));
+          if (hit) say(`nói "không có ${pattern}" nhưng mô hình có "${hit}"`);
+        }
+        continue;
+      }
+      await checkQuote(evidence, texts, say);
+      quotes.push(evidence.quote);
+      sections.add(evidence.section);
+    }
+    checkText(`hệ ${id}`, "summary", entry.summary, quotes, say, warnings);
+
+    if (problems.length > 0) {
+      errors.push(...problems);
+      continue;
+    }
+    if (!entry.review) {
+      drafts.push(id);
+      continue;
+    }
+    const template = ANATOMY_SOURCES["openstax-ap2e"].urlTemplate;
+    systems[id as keyof SystemDescriptions] = {
+      summary: entry.summary,
+      sources: [...sections].map((section) => ({ section, url: template.replace("{section}", section) })),
+      review: { by: entry.review.by, at: entry.review.at },
+    };
+  }
+  return { systems, drafts, errors, warnings };
 }

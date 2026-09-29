@@ -7,6 +7,8 @@ import { absoluteUrl } from "@/lib/utils";
 import { ASSET_BASE_URL } from "@/lib/asset";
 import { pick } from "@/lib/i18n-content";
 import { SYSTEM_COLORS, SYSTEM_IDS } from "@/lib/human-atlas/anatomy";
+import { ATLAS_PROVENANCE } from "@/lib/human-atlas/provenance";
+import { SYSTEM_DESCRIPTIONS, sectionNumber } from "@/lib/human-atlas/system-descriptions";
 import {
   STRUCTURE_ARTICLES,
   STRUCTURE_ARTICLE_SLUGS,
@@ -140,11 +142,43 @@ export default async function HumanAtlasPage({
                   />
                   <span>
                     <strong className="font-semibold">{t(`systemNames.${id}`)}</strong>
-                    <span className="text-muted-foreground"> — {t(`systemDescriptions.${id}`)}</span>
+                    {SYSTEM_DESCRIPTIONS[id] && (
+                      <span className="text-muted-foreground">
+                        {" — "}
+                        {locale === "vi" ? SYSTEM_DESCRIPTIONS[id].summary.vi : SYSTEM_DESCRIPTIONS[id].summary.en}
+                      </span>
+                    )}
                   </span>
                 </li>
               ))}
             </ul>
+            {/* Nguồn ngay dưới danh sách (docs/content-rules.md, "Provenance"):
+                mọi mục OpenStax được dẫn, mỗi mục một link. Phần "trong mô hình
+                này" kiểm trên chính dữ liệu BodyParts3D. */}
+            <p className="mt-4 text-xs leading-relaxed text-muted-foreground">
+              {t("page.systemsSource", { source: ATLAS_PROVENANCE.descriptions.title })}{" "}
+              {[...new Map(
+                Object.values(SYSTEM_DESCRIPTIONS)
+                  .flatMap((d) => d?.sources ?? [])
+                  .map((s) => [s.url, s] as const),
+              ).values()]
+                .sort((a, b) => a.section.localeCompare(b.section, "en", { numeric: true }))
+                .map((source, index) => (
+                  <span key={source.url}>
+                    {index > 0 && ", "}
+                    <a
+                      href={source.url}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="underline underline-offset-2 hover:text-foreground"
+                    >
+                      {sectionNumber(source.section)}
+                    </a>
+                  </span>
+                ))}
+              {" · "}
+              {t("detail.reviewedBy")}
+            </p>
 
             <p className="mt-8 text-sm text-muted-foreground">
               {t("page.linkHint")}{" "}

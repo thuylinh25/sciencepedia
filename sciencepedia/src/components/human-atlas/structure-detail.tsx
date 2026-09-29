@@ -27,6 +27,7 @@ import {
   type StructureContent,
 } from "@/lib/human-atlas/structures";
 import { ATLAS_PROVENANCE } from "@/lib/human-atlas/provenance";
+import { SYSTEM_DESCRIPTIONS, sectionNumber } from "@/lib/human-atlas/system-descriptions";
 import { Button } from "@/components/ui/button";
 import { PANEL } from "@/components/human-atlas/panel";
 
@@ -202,13 +203,15 @@ export function StructureDetail({
             {t(`explanations.${explainedKey}`)}
           </p>
         ) : (
-          system && (
+          system && SYSTEM_DESCRIPTIONS[system] && (
             <div className="rounded-xl border border-dashed p-3">
               <h3 className="text-[11px] font-semibold tracking-[0.1em] text-muted-foreground uppercase">
                 {t("detail.systemOverview", { system: t(`systemNames.${system}`) })}
               </h3>
               <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">
-                {t(`systemDescriptions.${system}`)}
+                {locale === "vi"
+                  ? SYSTEM_DESCRIPTIONS[system].summary.vi
+                  : SYSTEM_DESCRIPTIONS[system].summary.en}
               </p>
               <p className="mt-2 text-[11px] leading-snug text-muted-foreground/80">
                 {t("detail.systemNote")}
@@ -338,12 +341,6 @@ export function StructureDetail({
       </div>
     </section>
   );
-}
-
-/** "19-1-heart-anatomy" → "19.1": số mục như người đọc thấy trong sách. */
-function sectionNumber(slug: string): string {
-  const match = /^(\d+)-(\d+)-/.exec(slug);
-  return match ? `${match[1]}.${match[2]}` : slug;
 }
 
 /**

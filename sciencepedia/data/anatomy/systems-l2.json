@@ -1,0 +1,813 @@
+{
+ "schema": 1,
+ "entries": {
+  "skeletal": {
+   "summary": {
+    "vi": "Xương nâng đỡ cơ thể, giúp cơ thể cử động và che chở các cơ quan; khi cơ co bắc qua một khớp, xương hoạt động như đòn bẩy. Chất nền xương là kho dự trữ khoáng chất, nhất là canxi và phospho; tuỷ đỏ là nơi sinh ra các tế bào máu, còn mỡ trong tuỷ vàng có thể làm nguồn năng lượng dự trữ. Trong mô hình này, nhóm hệ xương gồm cả răng và lợi.",
+    "en": "Bones hold the body up, help it move and shield its organs; when a muscle contracts across a joint, the bone works as a lever. The bone matrix is a store of minerals, notably calcium and phosphorus; red marrow is where blood cells are made, and the fat held in yellow marrow can serve as an energy reserve. In this model the skeletal group also includes the teeth and gums."
+   },
+   "evidence": [
+    {
+     "source": "openstax-ap2e",
+     "section": "6-1-the-functions-of-the-skeletal-system",
+     "quote": "Simply by looking at a person, you can see how the bones support, facilitate movement, and protect the human body.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "6-1-the-functions-of-the-skeletal-system",
+     "quote": "Bones act as levers when muscles span a joint and contract.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "6-1-the-functions-of-the-skeletal-system",
+     "quote": "the bone matrix acts as a reservoir for a number of minerals important to the functioning of the body, especially calcium, and phosphorus.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "6-1-the-functions-of-the-skeletal-system",
+     "quote": "Red marrow is where hematopoiesis—the production of blood cells—takes place.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "6-1-the-functions-of-the-skeletal-system",
+     "quote": "Yellow marrow contains adipose tissue; the triglycerides stored in the adipocytes of the tissue can serve as a source of energy.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "atlas",
+     "present": [
+      "upper central secondary incisor tooth",
+      "gingiva of upper jaw"
+     ],
+     "supports": [
+      "summary"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-09-29",
+    "verdict": "approved-with-edits"
+   }
+  },
+  "muscular": {
+   "summary": {
+    "vi": "Cơ xương không chỉ tạo ra cử động mà còn hãm cử động — như chống lại trọng lực để giữ tư thế — và ngăn xương, khớp chuyển động quá mức. Khi co, cơ sinh nhiệt, và bằng cách đó góp phần giữ cân bằng nội môi.",
+    "en": "Skeletal muscles do more than create motion: they also stop it, for instance by working against gravity to hold a posture, and they keep bones and joints from moving too far. The heat they give off as they contract is one of their contributions to homeostasis."
+   },
+   "evidence": [
+    {
+     "source": "openstax-ap2e",
+     "section": "10-2-skeletal-muscle",
+     "quote": "Skeletal muscles act not only to produce movement but also to stop movement, such as resisting gravity to maintain posture.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "10-2-skeletal-muscle",
+     "quote": "Muscles also prevent excess movement of the bones and joints, maintaining skeletal stability and preventing skeletal structure damage or deformation.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "10-2-skeletal-muscle",
+     "quote": "Skeletal muscles contribute to the maintenance of homeostasis in the body by generating heat.",
+     "supports": [
+      "summary"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-09-29",
+    "verdict": "approved"
+   }
+  },
+  "cardiac": {
+   "summary": {
+    "vi": "Tim có bốn buồng; hai tâm thất là buồng bơm chính, đẩy máu lên phổi hoặc đi khắp phần còn lại của cơ thể. Các van tim giữ cho máu chảy qua tim theo một chiều. Trong mô hình này, tim được thể hiện chủ yếu qua khoang các buồng tim và các lá van.",
+    "en": "The heart has four chambers, and its two ventricles do the main pumping, driving blood either to the lungs or around the rest of the body. Its valves keep blood moving through it in a single direction. In this model the heart appears mainly as the cavities of its chambers and the cusps and leaflets of its valves."
+   },
+   "evidence": [
+    {
+     "source": "openstax-ap2e",
+     "section": "19-1-heart-anatomy",
+     "quote": "The human heart consists of four chambers: The left side and the right side each have one atrium and one ventricle.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "19-1-heart-anatomy",
+     "quote": "The ventricles serve as the primary pumping chambers of the heart, propelling blood to the lungs or to the rest of the body.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "19-1-heart-anatomy",
+     "quote": "The valves ensure unidirectional blood flow through the heart.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "atlas",
+     "present": [
+      "cavity of ventricle",
+      "cavity of atrium",
+      "anterior leaflet of mitral valve",
+      "posterior cusp of aortic valve"
+     ],
+     "supports": [
+      "summary"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-09-29",
+    "verdict": "approved-with-edits"
+   }
+  },
+  "sensory": {
+   "summary": {
+    "vi": "Cảm giác bắt đầu khi một kích thích hoạt hoá các tế bào thụ thể chuyên biệt. Trong mô hình này, nhóm cơ quan cảm giác chủ yếu là nhãn cầu cùng các phần của nó (giác mạc, mống mắt, thể thuỷ tinh, võng mạc), bộ lệ, và tai ngoài; mô hình không có tai giữa và tai trong.",
+    "en": "Sensation starts when a stimulus activates specialized receptor cells. In this model the sensory group is mostly the eyeball and its parts (cornea, iris, lens, retina), the tear apparatus, and the external ear; the middle and inner ear are not included."
+   },
+   "evidence": [
+    {
+     "source": "openstax-ap2e",
+     "section": "14-1-sensory-perception",
+     "quote": "Sensation is the activation of sensory receptor cells at the level of the stimulus.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "14-1-sensory-perception",
+     "quote": "Stimuli in the environment activate specialized receptor cells in the peripheral nervous system.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "atlas",
+     "present": [
+      "cornea",
+      "iris",
+      "lens",
+      "optic part of retina",
+      "lacrimal gland",
+      "nasolacrimal duct",
+      "external ear"
+     ],
+     "absent": [
+      "cochlea",
+      "tympan",
+      "malleus",
+      "incus",
+      "stapes",
+      "semicircular"
+     ],
+     "supports": [
+      "summary"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-09-29",
+    "verdict": "approved"
+   }
+  },
+  "arterial": {
+   "summary": {
+    "vi": "Động mạch dẫn máu rời khỏi tim rồi chia nhánh thành những mạch ngày càng nhỏ — tiểu động mạch, rồi mao mạch, nơi chất dinh dưỡng và chất thải được trao đổi. Động mạch hệ thống đưa máu giàu oxy tới các mô; ngược lại, trong vòng tuần hoàn phổi, động mạch dẫn máu nghèo oxy, và chỉ tới phổi, để trao đổi khí. Thành động mạch dày hơn thành tĩnh mạch vì chúng ở gần tim và nhận máu với áp lực cao hơn nhiều.",
+    "en": "Arteries take blood away from the heart and divide into smaller and smaller vessels: arterioles, then capillaries, where nutrients and wastes are exchanged. Systemic arteries deliver oxygen-rich blood to the body's tissues; in the pulmonary circuit, by contrast, arteries carry oxygen-poor blood, and only to the lungs, for gas exchange. Their walls are thicker than those of veins, since they lie closer to the heart and take blood surging at much higher pressure."
+   },
+   "evidence": [
+    {
+     "source": "openstax-ap2e",
+     "section": "20-1-structure-and-function-of-blood-vessels",
+     "quote": "An artery is a blood vessel that carries blood away from the heart, where it branches into ever-smaller vessels.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "20-1-structure-and-function-of-blood-vessels",
+     "quote": "Eventually, the smallest arteries, vessels called arterioles, further branch into tiny capillaries, where nutrients and wastes are exchanged",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "20-1-structure-and-function-of-blood-vessels",
+     "quote": "In contrast, in the pulmonary circuit, arteries carry blood low in oxygen exclusively to the lungs for gas exchange.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "20-1-structure-and-function-of-blood-vessels",
+     "quote": "Arteries and arterioles have thicker walls than veins and venules because they are closer to the heart and receive blood that is surging at a far greater pressure",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "20-1-structure-and-function-of-blood-vessels",
+     "quote": "Systemic arteries provide blood rich in oxygen to the body’s tissues.",
+     "supports": [
+      "summary"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-09-29",
+    "verdict": "approved-with-edits"
+   }
+  },
+  "venous": {
+   "summary": {
+    "vi": "Tĩnh mạch dẫn máu về tim. Vì là mạch áp lực thấp, nhiều tĩnh mạch — nhất là ở tay chân — có van giúp máu đi một chiều về tim và ngăn máu chảy ngược. Tĩnh mạch phổi đưa máu vừa được nhận oxy ở phổi về tim.",
+    "en": "Veins bring blood back toward the heart. Because they are low-pressure vessels, many of them, especially in the limbs, have valves that help blood flow one way, toward the heart, and prevent it from flowing backward. The pulmonary veins carry blood that has just taken up oxygen in the lungs back to the heart."
+   },
+   "evidence": [
+    {
+     "source": "openstax-ap2e",
+     "section": "20-1-structure-and-function-of-blood-vessels",
+     "quote": "A vein is a blood vessel that conducts blood toward the heart.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "20-1-structure-and-function-of-blood-vessels",
+     "quote": "In addition, many veins of the body, particularly those of the limbs, contain valves that assist the unidirectional flow of blood toward the heart.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "20-1-structure-and-function-of-blood-vessels",
+     "quote": "Because they are low-pressure vessels, larger veins are commonly equipped with valves that promote the unidirectional flow of blood toward the heart and prevent backflow toward the capillaries",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "20-1-structure-and-function-of-blood-vessels",
+     "quote": "Pulmonary veins then return freshly oxygenated blood from the lungs to the heart to be pumped back out into systemic circulation.",
+     "supports": [
+      "summary"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-09-29",
+    "verdict": "approved-with-edits"
+   }
+  },
+  "nervous": {
+   "summary": {
+    "vi": "Não và tuỷ sống tạo thành hệ thần kinh trung ương; mọi phần còn lại — các dây thần kinh và hạch thần kinh — là hệ thần kinh ngoại biên, dù ranh giới giữa hai phần có thể khác nhau tuỳ khía cạnh được xét. Các chức năng cơ bản của hệ thần kinh là cảm giác, tích hợp và đáp ứng: tiếp nhận thông tin về môi trường xung quanh, tích hợp thông tin ấy và tạo ra phản ứng.",
+    "en": "The brain and spinal cord make up the central nervous system; everything else, the nerves and ganglia, forms the peripheral nervous system, although where the line between the two falls can depend on which aspect of the system is being considered. Its basic functions are sensation, integration and response: it takes in information about our surroundings, integrates it, and produces responses."
+   },
+   "evidence": [
+    {
+     "source": "openstax-ap2e",
+     "section": "12-1-basic-structure-and-function-of-the-nervous-system",
+     "quote": "The central nervous system (CNS) is the brain and spinal cord, and the peripheral nervous system (PNS) is everything else",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "12-1-basic-structure-and-function-of-the-nervous-system",
+     "quote": "The structures of the PNS are referred to as ganglia and nerves, which can be seen as distinct structures.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "12-1-basic-structure-and-function-of-the-nervous-system",
+     "quote": "First, the basic functions of the nervous system are sensation, integration, and response.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "12-1-basic-structure-and-function-of-the-nervous-system",
+     "quote": "The nervous system is involved in receiving information about the environment around us (sensation) and generating responses to that information (motor responses).",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "12-1-basic-structure-and-function-of-the-nervous-system",
+     "quote": "Depending on different aspects of the nervous system, the dividing line between central and peripheral is not necessarily universal.",
+     "supports": [
+      "summary"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-09-29",
+    "verdict": "approved-with-edits"
+   }
+  },
+  "respiratory": {
+   "summary": {
+    "vi": "Hệ hô hấp chia làm hai vùng: vùng dẫn khí, gồm các cơ quan không trực tiếp trao đổi khí, và vùng hô hấp, nơi trao đổi khí diễn ra tại các túi phế nang. Chức năng chính của phổi là trao đổi oxy và carbon dioxide với không khí từ bên ngoài.",
+    "en": "The respiratory system has two zones: a conducting zone of organs not directly involved in gas exchange, and a respiratory zone, where gas exchange takes place in alveolar sacs. The main job of the lungs is to swap oxygen and carbon dioxide with outside air."
+   },
+   "evidence": [
+    {
+     "source": "openstax-ap2e",
+     "section": "22-1-organs-and-structures-of-the-respiratory-system",
+     "quote": "The conducting zone of the respiratory system includes the organs and structures not directly involved in gas exchange.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "22-1-organs-and-structures-of-the-respiratory-system",
+     "quote": "Bronchioles lead to alveolar sacs in the respiratory zone, where gas exchange occurs.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "22-2-the-lungs",
+     "quote": "The main function of the lungs is to perform the exchange of oxygen and carbon dioxide with air from the atmosphere.",
+     "supports": [
+      "summary"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-09-29",
+    "verdict": "approved"
+   }
+  },
+  "digestive": {
+   "summary": {
+    "vi": "Các cơ quan tiêu hoá chia làm hai nhóm: ống tiêu hoá — một ống một chiều mà chức năng chính là nuôi dưỡng cơ thể — và các cơ quan tiêu hoá phụ, đóng vai trò then chốt trong việc phân giải thức ăn và đưa chất dinh dưỡng của nó vào cơ thể. Chỉ qua quá trình hấp thu, chất dinh dưỡng mới thực sự đi vào cơ thể.",
+    "en": "The digestive organs fall into two groups: the alimentary canal, a one-way tube whose main role is to nourish the body, and the accessory digestive organs, which are critical to breaking food down and to bringing its nutrients into the body. Nutrients only truly enter the body once they are absorbed."
+   },
+   "evidence": [
+    {
+     "source": "openstax-ap2e",
+     "section": "23-1-overview-of-the-digestive-system",
+     "quote": "The first group is the organs that make up the alimentary canal.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "23-1-overview-of-the-digestive-system",
+     "quote": "Accessory digestive organs comprise the second group and are critical for orchestrating the breakdown of food and the assimilation of its nutrients into the body.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "23-1-overview-of-the-digestive-system",
+     "quote": "is a one-way tube",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "23-1-overview-of-the-digestive-system",
+     "quote": "The main function of the organs of the alimentary canal is to nourish the body.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "23-1-overview-of-the-digestive-system",
+     "quote": "Only through the process of absorption do the nutrients in food enter into and nourish the body’s “inner space.”",
+     "supports": [
+      "summary"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-09-29",
+    "verdict": "approved-with-edits"
+   }
+  },
+  "urinary": {
+   "summary": {
+    "vi": "Các nephron của thận lọc sạch máu và cân bằng thành phần của máu. Nước tiểu được các làn sóng nhu động đẩy qua niệu quản xuống bàng quang, rồi niệu đạo dẫn nó ra ngoài cơ thể. Thận còn là nơi vitamin D phải được hydroxyl hoá để trở thành dạng hoạt động, và tạo ra phần lớn EPO lưu hành trong máu — một protein kích thích tuỷ xương sinh hồng cầu.",
+    "en": "The kidneys' nephrons clean the blood and keep its make-up balanced. Waves of peristalsis push urine down the ureters into the bladder, and the urethra then takes it out of the body. The kidneys are also where vitamin D must be hydroxylated to become active, and they make most of the circulating EPO, a protein that stimulates red blood cell formation in the bone marrow."
+   },
+   "evidence": [
+    {
+     "source": "openstax-ap2e",
+     "section": "25-3-gross-anatomy-of-the-kidney",
+     "quote": "Nephrons are the “functional units” of the kidney; they cleanse the blood and balance the constituents of the circulation.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "25-2-gross-anatomy-of-urine-transport",
+     "quote": "As urine passes through the ureter, it does not passively drain into the bladder but rather is propelled by waves of peristalsis.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "25-2-gross-anatomy-of-urine-transport",
+     "quote": "The urethra transports urine from the bladder to the outside of the body for disposal.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "25-10-the-urinary-system-and-homeostasis",
+     "quote": "In order for vitamin D to become active, it must undergo a hydroxylation reaction in the kidney",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "25-10-the-urinary-system-and-homeostasis",
+     "quote": "EPO is a 193-amino acid protein that stimulates the formation of red blood cells in the bone marrow.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "25-10-the-urinary-system-and-homeostasis",
+     "quote": "The kidney produces 85 percent of circulating EPO; the liver, the remainder.",
+     "supports": [
+      "summary"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-09-29",
+    "verdict": "approved-with-edits"
+   }
+  },
+  "lymphatic": {
+   "summary": {
+    "vi": "Hệ bạch huyết — gồm mạch, tế bào và cơ quan — đưa dịch thừa về dòng máu và lọc mầm bệnh khỏi máu. Mô hình này chỉ có hai cơ quan của hệ: tuyến ức, nơi tế bào T trải qua phần lớn quá trình trưởng thành, và lách, một cơ quan lympho thứ cấp chính; mạch bạch huyết và hạch bạch huyết không có trong mô hình.",
+    "en": "The lymphatic system, made of vessels, cells and organs, returns excess fluid to the bloodstream and filters pathogens out of the blood. This model contains just two of its organs: the thymus, where T cells do most of their maturing, and the spleen, a major secondary lymphoid organ. Lymph vessels and lymph nodes are not part of the model."
+   },
+   "evidence": [
+    {
+     "source": "openstax-ap2e",
+     "section": "21-1-anatomy-of-the-lymphatic-and-immune-systems",
+     "quote": "The lymphatic system is the system of vessels, cells, and organs that carries excess fluids to the bloodstream and filters pathogens from the blood.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "21-1-anatomy-of-the-lymphatic-and-immune-systems",
+     "quote": "the immature T cell, called a thymocyte, leaves the bone marrow and matures largely in the thymus gland.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "21-1-anatomy-of-the-lymphatic-and-immune-systems",
+     "quote": "the spleen is a major secondary lymphoid organ",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "atlas",
+     "present": [
+      "spleen",
+      "lobe of thymus"
+     ],
+     "absent": [
+      "lymph node",
+      "lymphatic vessel",
+      "thoracic duct"
+     ],
+     "supports": [
+      "summary"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-09-29",
+    "verdict": "approved-with-edits"
+   }
+  },
+  "endocrine": {
+   "summary": {
+    "vi": "Tuyến nội tiết không có ống dẫn: chúng tiết hormone vào dịch xung quanh, rồi hormone chủ yếu theo dòng máu tới các tế bào đích khắp cơ thể. Trong mô hình này, nhóm nội tiết chỉ có ba tuyến: tuyến yên, nằm trong hố yên của xương bướm; tuyến tùng, tiết melatonin; và hai tuyến thượng thận nằm trên thận, một trong những chức năng chính là đáp ứng với stress.",
+    "en": "Endocrine glands have no ducts: they release hormones into the surrounding fluid, and the bloodstream is the main route that takes them to target cells throughout the body. In this model the endocrine group holds only three: the pituitary, cradled in the sella turcica of the sphenoid bone; the pineal gland, which secretes melatonin; and the two adrenal glands on top of the kidneys, one of whose major jobs is responding to stress."
+   },
+   "evidence": [
+    {
+     "source": "openstax-ap2e",
+     "section": "17-1-an-overview-of-the-endocrine-system",
+     "quote": "The primary function of these ductless glands is to secrete their hormones directly into the surrounding fluid.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "17-1-an-overview-of-the-endocrine-system",
+     "quote": "Hormones are transported primarily via the bloodstream throughout the body, where they bind to receptors on target cells, inducing a characteristic response.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "17-3-the-pituitary-gland-and-hypothalamus",
+     "quote": "The pituitary gland is cradled within the sellaturcica of the sphenoid bone of the skull.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "17-7-the-pineal-gland",
+     "quote": "The pinealocyte cells that make up the pineal gland are known to produce and secrete the amine hormone melatonin, which is derived from serotonin.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "17-6-the-adrenal-glands",
+     "quote": "Both adrenal glands sit atop the kidneys",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "17-6-the-adrenal-glands",
+     "quote": "One of the major functions of the adrenal gland is to respond to stress.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "atlas",
+     "present": [
+      "pituitary gland",
+      "pineal body",
+      "adrenal gland"
+     ],
+     "absent": [
+      "thyroid gland",
+      "parathyroid"
+     ],
+     "supports": [
+      "summary"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-09-29",
+    "verdict": "approved-with-edits"
+   }
+  },
+  "reproductive": {
+   "summary": {
+    "vi": "Mô hình là cơ thể nam, nên chỉ có cơ quan sinh dục nam. Hệ này tạo ra tinh trùng và đưa chúng tới đường sinh dục nữ. Hai tinh hoàn sản xuất cả tinh trùng lẫn androgen; tinh trùng trưởng thành ở mào tinh, đi ra qua ống dẫn tinh, và túi tinh cùng tuyến tiền liệt bổ sung dịch để tạo thành tinh dịch.",
+    "en": "The model is male, so only male reproductive organs are present. This system makes sperm and transfers them to the female reproductive tract. The paired testes produce both sperm and androgens; sperm mature in the epididymis and exit through the ductus deferens, while the seminal vesicles and prostate contribute fluids that form semen."
+   },
+   "evidence": [
+    {
+     "source": "openstax-ap2e",
+     "section": "27-1-anatomy-and-physiology-of-the-testicular-reproductive-system",
+     "quote": "The function of the male, or testicular, reproductive system (Figure 27.2) is to produce sperm and transfer them to the female reproductive tract.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "27-1-anatomy-and-physiology-of-the-testicular-reproductive-system",
+     "quote": "The paired testes are a crucial component in this process, as they produce both sperm and androgens, the hormones that support male reproductive physiology.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "27-1-anatomy-and-physiology-of-the-testicular-reproductive-system",
+     "quote": "Formed sperm are transferred to the epididymis, where they mature.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "27-1-anatomy-and-physiology-of-the-testicular-reproductive-system",
+     "quote": "They leave the epididymis during an ejaculation via the ductus deferens.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "27-1-anatomy-and-physiology-of-the-testicular-reproductive-system",
+     "quote": "The seminal vesicles and prostate gland add fluids to the sperm to create semen.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "atlas",
+     "present": [
+      "testis",
+      "epididymis",
+      "deferent duct",
+      "seminal vesicle",
+      "prostate"
+     ],
+     "absent": [
+      "ovary",
+      "uterus"
+     ],
+     "supports": [
+      "summary"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-09-29",
+    "verdict": "approved"
+   }
+  },
+  "integumentary": {
+   "summary": {
+    "vi": "Da che chắn cơ thể trước gió, nước và tia UV, đồng thời là hàng rào ngăn mất nước. Da, nhất là các sợi lông mọc từ nang lông, còn cảm nhận được thay đổi của môi trường. Da và các cấu trúc phụ của da cũng tham gia điều hoà thân nhiệt và cân bằng điện giải, và tổng hợp vitamin D. Trong mô hình này, nhóm bề mặt cơ thể gồm da, tóc, lông mày, môi và lông mu.",
+    "en": "Skin guards the body against wind, water and UV sunlight and forms a barrier against water loss. Skin, and especially the hairs growing from its follicles, can also sense changes in the surroundings. The skin and its accessory structures also help regulate body temperature and electrolyte balance, and they make vitamin D. In this model the body-surface group consists of the skin, scalp hair, eyebrows, lips and pubic hair."
+   },
+   "evidence": [
+    {
+     "source": "openstax-ap2e",
+     "section": "5-3-functions-of-the-integumentary-system",
+     "quote": "The skin protects the rest of the body from the basic elements of nature such as wind, water, and UV sunlight.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "5-3-functions-of-the-integumentary-system",
+     "quote": "It acts as a protective barrier against water loss",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "5-3-functions-of-the-integumentary-system",
+     "quote": "the skin, and especially the hairs projecting from hair follicles in the skin, can sense changes in the environment.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "5-3-functions-of-the-integumentary-system",
+     "quote": "The skin and accessory structures perform a variety of essential functions, such as protecting the body from invasion by microorganisms, chemicals, and other environmental factors; preventing dehydration; acting as a sensory organ; modulating body temperature and electrolyte balance; and synthesizing vitamin D.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "atlas",
+     "present": [
+      "skin",
+      "hair of head",
+      "eyebrow",
+      "lip",
+      "pubic hair"
+     ],
+     "supports": [
+      "summary"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-09-29",
+    "verdict": "approved-with-edits"
+   }
+  },
+  "connective": {
+   "summary": {
+    "vi": "Mô liên kết có nhiều chức năng, nhưng quan trọng nhất là nâng đỡ và nối các mô khác — chẳng hạn gân nối cơ với xương. Dây chằng là những dải mô liên kết sợi chắc, giữ các xương với nhau ở khớp; chúng cho phép khớp cử động bình thường nhưng giới hạn biên độ, nhờ đó ngăn những cử động quá mức hay bất thường. Trong mô hình này, nhóm mô liên kết gồm chủ yếu dây chằng, gân và các màng như màng gian cốt cẳng tay, cẳng chân.",
+    "en": "Connective tissues have many roles, but above all they support and connect other tissues; tendons, for example, attach muscles to bones. Ligaments, tough bands of fibrous connective tissue, bind bones together at joints; they permit normal joint movement but restrict its range, which prevents excessive or abnormal motion. In this model the connective group is mainly ligaments, tendons and membranes such as the interosseous membranes of the forearm and leg."
+   },
+   "evidence": [
+    {
+     "source": "openstax-ap2e",
+     "section": "4-3-connective-tissue-supports-and-protects",
+     "quote": "Connective tissues perform many functions in the body, but most importantly, they support and connect other tissues; from the connective tissue sheath that surrounds muscle cells, to the tendons that attach muscles to bones, and to the skeleton that supports the positions of the body.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "9-4-synovial-joints",
+     "quote": "Outside of their articulating surfaces, the bones are connected together by ligaments, which are strong bands of fibrous connective tissue.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "9-4-synovial-joints",
+     "quote": "Ligaments allow for normal movements at a joint, but limit the range of these motions, thus preventing excessive or abnormal joint movements.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "atlas",
+     "present": [
+      "long plantar ligament",
+      "calcaneal tendon",
+      "interosseous membrane of leg",
+      "interosseous membrane of forearm"
+     ],
+     "supports": [
+      "summary"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-09-29",
+    "verdict": "approved-with-edits"
+   }
+  }
+ }
+}

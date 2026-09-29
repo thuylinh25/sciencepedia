@@ -1,0 +1,270 @@
+{
+ "skeletal": {
+  "summary": {
+   "vi": "Xương nâng đỡ cơ thể, giúp cơ thể cử động và che chở các cơ quan; khi cơ co bắc qua một khớp, xương hoạt động như đòn bẩy. Chất nền xương là kho dự trữ khoáng chất, nhất là canxi và phospho; tuỷ đỏ là nơi sinh ra các tế bào máu, còn mỡ trong tuỷ vàng có thể làm nguồn năng lượng dự trữ. Trong mô hình này, nhóm hệ xương gồm cả răng và lợi.",
+   "en": "Bones hold the body up, help it move and shield its organs; when a muscle contracts across a joint, the bone works as a lever. The bone matrix is a store of minerals, notably calcium and phosphorus; red marrow is where blood cells are made, and the fat held in yellow marrow can serve as an energy reserve. In this model the skeletal group also includes the teeth and gums."
+  },
+  "sources": [
+   {
+    "section": "6-1-the-functions-of-the-skeletal-system",
+    "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/6-1-the-functions-of-the-skeletal-system"
+   }
+  ],
+  "review": {
+   "by": "science-editor",
+   "at": "2026-09-29"
+  }
+ },
+ "muscular": {
+  "summary": {
+   "vi": "Cơ xương không chỉ tạo ra cử động mà còn hãm cử động — như chống lại trọng lực để giữ tư thế — và ngăn xương, khớp chuyển động quá mức. Khi co, cơ sinh nhiệt, và bằng cách đó góp phần giữ cân bằng nội môi.",
+   "en": "Skeletal muscles do more than create motion: they also stop it, for instance by working against gravity to hold a posture, and they keep bones and joints from moving too far. The heat they give off as they contract is one of their contributions to homeostasis."
+  },
+  "sources": [
+   {
+    "section": "10-2-skeletal-muscle",
+    "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/10-2-skeletal-muscle"
+   }
+  ],
+  "review": {
+   "by": "science-editor",
+   "at": "2026-09-29"
+  }
+ },
+ "cardiac": {
+  "summary": {
+   "vi": "Tim có bốn buồng; hai tâm thất là buồng bơm chính, đẩy máu lên phổi hoặc đi khắp phần còn lại của cơ thể. Các van tim giữ cho máu chảy qua tim theo một chiều. Trong mô hình này, tim được thể hiện chủ yếu qua khoang các buồng tim và các lá van.",
+   "en": "The heart has four chambers, and its two ventricles do the main pumping, driving blood either to the lungs or around the rest of the body. Its valves keep blood moving through it in a single direction. In this model the heart appears mainly as the cavities of its chambers and the cusps and leaflets of its valves."
+  },
+  "sources": [
+   {
+    "section": "19-1-heart-anatomy",
+    "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/19-1-heart-anatomy"
+   }
+  ],
+  "review": {
+   "by": "science-editor",
+   "at": "2026-09-29"
+  }
+ },
+ "sensory": {
+  "summary": {
+   "vi": "Cảm giác bắt đầu khi một kích thích hoạt hoá các tế bào thụ thể chuyên biệt. Trong mô hình này, nhóm cơ quan cảm giác chủ yếu là nhãn cầu cùng các phần của nó (giác mạc, mống mắt, thể thuỷ tinh, võng mạc), bộ lệ, và tai ngoài; mô hình không có tai giữa và tai trong.",
+   "en": "Sensation starts when a stimulus activates specialized receptor cells. In this model the sensory group is mostly the eyeball and its parts (cornea, iris, lens, retina), the tear apparatus, and the external ear; the middle and inner ear are not included."
+  },
+  "sources": [
+   {
+    "section": "14-1-sensory-perception",
+    "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/14-1-sensory-perception"
+   }
+  ],
+  "review": {
+   "by": "science-editor",
+   "at": "2026-09-29"
+  }
+ },
+ "arterial": {
+  "summary": {
+   "vi": "Động mạch dẫn máu rời khỏi tim rồi chia nhánh thành những mạch ngày càng nhỏ — tiểu động mạch, rồi mao mạch, nơi chất dinh dưỡng và chất thải được trao đổi. Động mạch hệ thống đưa máu giàu oxy tới các mô; ngược lại, trong vòng tuần hoàn phổi, động mạch dẫn máu nghèo oxy, và chỉ tới phổi, để trao đổi khí. Thành động mạch dày hơn thành tĩnh mạch vì chúng ở gần tim và nhận máu với áp lực cao hơn nhiều.",
+   "en": "Arteries take blood away from the heart and divide into smaller and smaller vessels: arterioles, then capillaries, where nutrients and wastes are exchanged. Systemic arteries deliver oxygen-rich blood to the body's tissues; in the pulmonary circuit, by contrast, arteries carry oxygen-poor blood, and only to the lungs, for gas exchange. Their walls are thicker than those of veins, since they lie closer to the heart and take blood surging at much higher pressure."
+  },
+  "sources": [
+   {
+    "section": "20-1-structure-and-function-of-blood-vessels",
+    "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/20-1-structure-and-function-of-blood-vessels"
+   }
+  ],
+  "review": {
+   "by": "science-editor",
+   "at": "2026-09-29"
+  }
+ },
+ "venous": {
+  "summary": {
+   "vi": "Tĩnh mạch dẫn máu về tim. Vì là mạch áp lực thấp, nhiều tĩnh mạch — nhất là ở tay chân — có van giúp máu đi một chiều về tim và ngăn máu chảy ngược. Tĩnh mạch phổi đưa máu vừa được nhận oxy ở phổi về tim.",
+   "en": "Veins bring blood back toward the heart. Because they are low-pressure vessels, many of them, especially in the limbs, have valves that help blood flow one way, toward the heart, and prevent it from flowing backward. The pulmonary veins carry blood that has just taken up oxygen in the lungs back to the heart."
+  },
+  "sources": [
+   {
+    "section": "20-1-structure-and-function-of-blood-vessels",
+    "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/20-1-structure-and-function-of-blood-vessels"
+   }
+  ],
+  "review": {
+   "by": "science-editor",
+   "at": "2026-09-29"
+  }
+ },
+ "nervous": {
+  "summary": {
+   "vi": "Não và tuỷ sống tạo thành hệ thần kinh trung ương; mọi phần còn lại — các dây thần kinh và hạch thần kinh — là hệ thần kinh ngoại biên, dù ranh giới giữa hai phần có thể khác nhau tuỳ khía cạnh được xét. Các chức năng cơ bản của hệ thần kinh là cảm giác, tích hợp và đáp ứng: tiếp nhận thông tin về môi trường xung quanh, tích hợp thông tin ấy và tạo ra phản ứng.",
+   "en": "The brain and spinal cord make up the central nervous system; everything else, the nerves and ganglia, forms the peripheral nervous system, although where the line between the two falls can depend on which aspect of the system is being considered. Its basic functions are sensation, integration and response: it takes in information about our surroundings, integrates it, and produces responses."
+  },
+  "sources": [
+   {
+    "section": "12-1-basic-structure-and-function-of-the-nervous-system",
+    "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/12-1-basic-structure-and-function-of-the-nervous-system"
+   }
+  ],
+  "review": {
+   "by": "science-editor",
+   "at": "2026-09-29"
+  }
+ },
+ "respiratory": {
+  "summary": {
+   "vi": "Hệ hô hấp chia làm hai vùng: vùng dẫn khí, gồm các cơ quan không trực tiếp trao đổi khí, và vùng hô hấp, nơi trao đổi khí diễn ra tại các túi phế nang. Chức năng chính của phổi là trao đổi oxy và carbon dioxide với không khí từ bên ngoài.",
+   "en": "The respiratory system has two zones: a conducting zone of organs not directly involved in gas exchange, and a respiratory zone, where gas exchange takes place in alveolar sacs. The main job of the lungs is to swap oxygen and carbon dioxide with outside air."
+  },
+  "sources": [
+   {
+    "section": "22-1-organs-and-structures-of-the-respiratory-system",
+    "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/22-1-organs-and-structures-of-the-respiratory-system"
+   },
+   {
+    "section": "22-2-the-lungs",
+    "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/22-2-the-lungs"
+   }
+  ],
+  "review": {
+   "by": "science-editor",
+   "at": "2026-09-29"
+  }
+ },
+ "digestive": {
+  "summary": {
+   "vi": "Các cơ quan tiêu hoá chia làm hai nhóm: ống tiêu hoá — một ống một chiều mà chức năng chính là nuôi dưỡng cơ thể — và các cơ quan tiêu hoá phụ, đóng vai trò then chốt trong việc phân giải thức ăn và đưa chất dinh dưỡng của nó vào cơ thể. Chỉ qua quá trình hấp thu, chất dinh dưỡng mới thực sự đi vào cơ thể.",
+   "en": "The digestive organs fall into two groups: the alimentary canal, a one-way tube whose main role is to nourish the body, and the accessory digestive organs, which are critical to breaking food down and to bringing its nutrients into the body. Nutrients only truly enter the body once they are absorbed."
+  },
+  "sources": [
+   {
+    "section": "23-1-overview-of-the-digestive-system",
+    "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/23-1-overview-of-the-digestive-system"
+   }
+  ],
+  "review": {
+   "by": "science-editor",
+   "at": "2026-09-29"
+  }
+ },
+ "urinary": {
+  "summary": {
+   "vi": "Các nephron của thận lọc sạch máu và cân bằng thành phần của máu. Nước tiểu được các làn sóng nhu động đẩy qua niệu quản xuống bàng quang, rồi niệu đạo dẫn nó ra ngoài cơ thể. Thận còn là nơi vitamin D phải được hydroxyl hoá để trở thành dạng hoạt động, và tạo ra phần lớn EPO lưu hành trong máu — một protein kích thích tuỷ xương sinh hồng cầu.",
+   "en": "The kidneys' nephrons clean the blood and keep its make-up balanced. Waves of peristalsis push urine down the ureters into the bladder, and the urethra then takes it out of the body. The kidneys are also where vitamin D must be hydroxylated to become active, and they make most of the circulating EPO, a protein that stimulates red blood cell formation in the bone marrow."
+  },
+  "sources": [
+   {
+    "section": "25-3-gross-anatomy-of-the-kidney",
+    "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/25-3-gross-anatomy-of-the-kidney"
+   },
+   {
+    "section": "25-2-gross-anatomy-of-urine-transport",
+    "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/25-2-gross-anatomy-of-urine-transport"
+   },
+   {
+    "section": "25-10-the-urinary-system-and-homeostasis",
+    "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/25-10-the-urinary-system-and-homeostasis"
+   }
+  ],
+  "review": {
+   "by": "science-editor",
+   "at": "2026-09-29"
+  }
+ },
+ "lymphatic": {
+  "summary": {
+   "vi": "Hệ bạch huyết — gồm mạch, tế bào và cơ quan — đưa dịch thừa về dòng máu và lọc mầm bệnh khỏi máu. Mô hình này chỉ có hai cơ quan của hệ: tuyến ức, nơi tế bào T trải qua phần lớn quá trình trưởng thành, và lách, một cơ quan lympho thứ cấp chính; mạch bạch huyết và hạch bạch huyết không có trong mô hình.",
+   "en": "The lymphatic system, made of vessels, cells and organs, returns excess fluid to the bloodstream and filters pathogens out of the blood. This model contains just two of its organs: the thymus, where T cells do most of their maturing, and the spleen, a major secondary lymphoid organ. Lymph vessels and lymph nodes are not part of the model."
+  },
+  "sources": [
+   {
+    "section": "21-1-anatomy-of-the-lymphatic-and-immune-systems",
+    "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/21-1-anatomy-of-the-lymphatic-and-immune-systems"
+   }
+  ],
+  "review": {
+   "by": "science-editor",
+   "at": "2026-09-29"
+  }
+ },
+ "endocrine": {
+  "summary": {
+   "vi": "Tuyến nội tiết không có ống dẫn: chúng tiết hormone vào dịch xung quanh, rồi hormone chủ yếu theo dòng máu tới các tế bào đích khắp cơ thể. Trong mô hình này, nhóm nội tiết chỉ có ba tuyến: tuyến yên, nằm trong hố yên của xương bướm; tuyến tùng, tiết melatonin; và hai tuyến thượng thận nằm trên thận, một trong những chức năng chính là đáp ứng với stress.",
+   "en": "Endocrine glands have no ducts: they release hormones into the surrounding fluid, and the bloodstream is the main route that takes them to target cells throughout the body. In this model the endocrine group holds only three: the pituitary, cradled in the sella turcica of the sphenoid bone; the pineal gland, which secretes melatonin; and the two adrenal glands on top of the kidneys, one of whose major jobs is responding to stress."
+  },
+  "sources": [
+   {
+    "section": "17-1-an-overview-of-the-endocrine-system",
+    "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/17-1-an-overview-of-the-endocrine-system"
+   },
+   {
+    "section": "17-3-the-pituitary-gland-and-hypothalamus",
+    "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/17-3-the-pituitary-gland-and-hypothalamus"
+   },
+   {
+    "section": "17-7-the-pineal-gland",
+    "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/17-7-the-pineal-gland"
+   },
+   {
+    "section": "17-6-the-adrenal-glands",
+    "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/17-6-the-adrenal-glands"
+   }
+  ],
+  "review": {
+   "by": "science-editor",
+   "at": "2026-09-29"
+  }
+ },
+ "reproductive": {
+  "summary": {
+   "vi": "Mô hình là cơ thể nam, nên chỉ có cơ quan sinh dục nam. Hệ này tạo ra tinh trùng và đưa chúng tới đường sinh dục nữ. Hai tinh hoàn sản xuất cả tinh trùng lẫn androgen; tinh trùng trưởng thành ở mào tinh, đi ra qua ống dẫn tinh, và túi tinh cùng tuyến tiền liệt bổ sung dịch để tạo thành tinh dịch.",
+   "en": "The model is male, so only male reproductive organs are present. This system makes sperm and transfers them to the female reproductive tract. The paired testes produce both sperm and androgens; sperm mature in the epididymis and exit through the ductus deferens, while the seminal vesicles and prostate contribute fluids that form semen."
+  },
+  "sources": [
+   {
+    "section": "27-1-anatomy-and-physiology-of-the-testicular-reproductive-system",
+    "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/27-1-anatomy-and-physiology-of-the-testicular-reproductive-system"
+   }
+  ],
+  "review": {
+   "by": "science-editor",
+   "at": "2026-09-29"
+  }
+ },
+ "integumentary": {
+  "summary": {
+   "vi": "Da che chắn cơ thể trước gió, nước và tia UV, đồng thời là hàng rào ngăn mất nước. Da, nhất là các sợi lông mọc từ nang lông, còn cảm nhận được thay đổi của môi trường. Da và các cấu trúc phụ của da cũng tham gia điều hoà thân nhiệt và cân bằng điện giải, và tổng hợp vitamin D. Trong mô hình này, nhóm bề mặt cơ thể gồm da, tóc, lông mày, môi và lông mu.",
+   "en": "Skin guards the body against wind, water and UV sunlight and forms a barrier against water loss. Skin, and especially the hairs growing from its follicles, can also sense changes in the surroundings. The skin and its accessory structures also help regulate body temperature and electrolyte balance, and they make vitamin D. In this model the body-surface group consists of the skin, scalp hair, eyebrows, lips and pubic hair."
+  },
+  "sources": [
+   {
+    "section": "5-3-functions-of-the-integumentary-system",
+    "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/5-3-functions-of-the-integumentary-system"
+   }
+  ],
+  "review": {
+   "by": "science-editor",
+   "at": "2026-09-29"
+  }
+ },
+ "connective": {
+  "summary": {
+   "vi": "Mô liên kết có nhiều chức năng, nhưng quan trọng nhất là nâng đỡ và nối các mô khác — chẳng hạn gân nối cơ với xương. Dây chằng là những dải mô liên kết sợi chắc, giữ các xương với nhau ở khớp; chúng cho phép khớp cử động bình thường nhưng giới hạn biên độ, nhờ đó ngăn những cử động quá mức hay bất thường. Trong mô hình này, nhóm mô liên kết gồm chủ yếu dây chằng, gân và các màng như màng gian cốt cẳng tay, cẳng chân.",
+   "en": "Connective tissues have many roles, but above all they support and connect other tissues; tendons, for example, attach muscles to bones. Ligaments, tough bands of fibrous connective tissue, bind bones together at joints; they permit normal joint movement but restrict its range, which prevents excessive or abnormal motion. In this model the connective group is mainly ligaments, tendons and membranes such as the interosseous membranes of the forearm and leg."
+  },
+  "sources": [
+   {
+    "section": "4-3-connective-tissue-supports-and-protects",
+    "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/4-3-connective-tissue-supports-and-protects"
+   },
+   {
+    "section": "9-4-synovial-joints",
+    "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/9-4-synovial-joints"
+   }
+  ],
+  "review": {
+   "by": "science-editor",
+   "at": "2026-09-29"
+  }
+ }
+}

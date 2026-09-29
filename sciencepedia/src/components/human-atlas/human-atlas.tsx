@@ -395,7 +395,7 @@ export function HumanAtlas({
   return (
     <TooltipProvider>
     <div
-      className="relative isolate size-full overflow-hidden bg-[#f2f3f3] text-foreground dark:bg-[#131b29]"
+      className="relative isolate size-full overflow-hidden bg-[#eef0f1] text-foreground dark:bg-[#05070a]"
       onPointerDownCapture={interacted ? undefined : () => setInteracted(true)}
       onWheelCapture={interacted ? undefined : () => setInteracted(true)}
     >
@@ -783,8 +783,11 @@ function ToolButton({
  * Nguồn dữ liệu giải phẫu — dùng chung cho bảng "Nguồn & ghi công" trong viewer
  * và cột bên của trang giới thiệu.
  *
- * Bốn khối theo VAI TRÒ, không theo loại giấy tờ: mô hình 3D (BodyParts3D),
- * thuật ngữ (FMA), phần Sciencepedia tự làm, trình xem (Human Atlas). Bản trước
+ * Ba khối theo VAI TRÒ, không theo loại giấy tờ: mô hình 3D (BodyParts3D),
+ * thuật ngữ (FMA), trình xem (Human Atlas). Khối "Sciencepedia" đã bỏ theo yêu
+ * cầu chủ sản phẩm (2026-09-29): nguồn phần Sciencepedia viết nằm ngay dưới
+ * chính nội dung ấy (danh sách hệ, bảng chi tiết), nhãn tên dịch ghép nằm ở
+ * từng cấu trúc. Bản trước
  * gộp "tên tiếng Anh, Latin, đồng nghĩa, cha, TA98 lấy từ FMA" — sai một vế:
  * tên tiếng Anh hiển thị là tên của BodyParts3D (header OBJ), FMA chỉ cho
  * Latin, đồng nghĩa, cha và TA98. Mọi URL/giấy phép đọc từ `ATLAS_PROVENANCE`;
@@ -792,7 +795,7 @@ function ToolButton({
  */
 export function AboutCopy() {
   const t = useTranslations("humanAtlas.aboutSheet");
-  const { model, terminology, descriptions, viewer } = ATLAS_PROVENANCE;
+  const { model, terminology, viewer } = ATLAS_PROVENANCE;
   return (
     <div className="space-y-5 text-sm leading-relaxed text-muted-foreground">
       <SourceBlock
@@ -818,14 +821,6 @@ export function AboutCopy() {
         ]}
       >
         {t("termsText")}
-      </SourceBlock>
-
-      <SourceBlock heading="Sciencepedia">
-        <ul className="list-disc space-y-1 pl-4">
-          <li>{t("sciencepediaNames")}</li>
-          <li>{t("sciencepediaDescriptions", { source: descriptions.title, license: descriptions.license })}</li>
-          <li>{t("sciencepediaSystems")}</li>
-        </ul>
       </SourceBlock>
 
       <SourceBlock

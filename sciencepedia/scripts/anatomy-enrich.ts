@@ -4,9 +4,9 @@ import path from "node:path";
 
 import pLimit from "p-limit";
 
-import { atlasSchema } from "../src/lib/human-atlas/anatomy";
+import { atlasSchema, correctSystems } from "../src/lib/human-atlas/anatomy";
 import { anatomyDataUrl, atlasDataUrl } from "../src/lib/human-atlas/assets";
-import { buildContent } from "./anatomy-content";
+import { buildContent, buildSystems } from "./anatomy-content";
 import {
   ANATOMY_SOURCES,
   anatomyDataSchema,
@@ -307,6 +307,23 @@ async function main() {
   );
   for (const error of level2.errors) console.log(`  ✗ ${error}`);
   for (const warning of level2.warnings) console.log(`  ! ${warning}`);
+
+  // Mô tả 15 hệ: kiểm trên CÙNG phân loại người đọc thấy (đã qua correctSystems).
+  const systems = await buildSystems(correctSystems(structuredClone(atlas)));
+  console.log(
+    `Mô tả hệ: ${Object.keys(systems.systems).length} phát hành · ${systems.drafts.length} nháp` +
+      (systems.drafts.length ? ` (${systems.drafts.join(", ")})` : "") +
+      ` · ${systems.errors.length} lỗi`,
+  );
+  for (const error of systems.errors) console.log(`  ✗ ${error}`);
+  for (const warning of systems.warnings) console.log(`  ! ${warning}`);
+  if (systems.errors.length > 0) process.exitCode = 1;
+  if (process.argv.includes("--write")) {
+    const out = path.join(ROOT, "src/lib/human-atlas/system-descriptions.generated.json");
+    writeFileSync(out, `${JSON.stringify(systems.systems, null, 1)}
+`);
+    console.log(`Đã ghi ${path.relative(ROOT, out)}`);
+  }
   if (level2.errors.length > 0) process.exitCode = 1;
 
   // 10. Kiểm.
