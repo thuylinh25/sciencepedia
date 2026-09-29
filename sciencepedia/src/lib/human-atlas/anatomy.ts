@@ -61,7 +61,8 @@ export const SYSTEM_COLORS: Record<SystemId, string> = {
   cardiac: "#b96760",
   sensory: "#b0c8ce",
   arterial: "#c05245",
-  venous: "#527c9f",
+  // Xanh rõ hơn trên nền gần đen (#527c9f cũ chìm thành xám); vẫn trầm, không cyan.
+  venous: "#4a86c5",
   nervous: "#d8b565",
   respiratory: "#b98991",
   digestive: "#b8916b",
@@ -265,6 +266,56 @@ const SYSTEM_CORRECTIONS: Record<string, SystemId> = {
   FMA75351: "nervous", // Interventricular foramen
   FMA78450: "nervous", // Left lateral ventricle
   FMA78449: "nervous", // Right lateral ventricle
+  /*
+   * Audit 2026-09-29 (chuỗi is-a FMA, không theo tên): chín "Hepatovenous
+   * segment II–IX" là PHÂN THUỲ NHU MÔ GAN (FMA: Organ segment), tám trong số
+   * đó nằm trong chính khái niệm Gan FMA7197 của BodyParts3D — bộ phân loại gốc
+   * khớp chữ "venous". Hậu quả kép: "chỉ tĩnh mạch" hiện một khối gan xanh ở bụng
+   * trên, còn "chỉ tiêu hoá" thì gan gần như không có nhu mô.
+   */
+  FMA15739: "digestive", // Hepatovenous segment II
+  FMA15741: "digestive", // III
+  FMA15742: "digestive", // IV
+  FMA15743: "digestive", // V
+  FMA15744: "digestive", // VI
+  FMA15745: "digestive", // VII
+  FMA15746: "digestive", // VIII
+  FMA15747: "digestive", // IX
+  /*
+   * Mạc treo là PHÚC MẠC (FMA: Region of peritoneum), không phải ống tiêu hoá.
+   * Mạc treo ruột non (45.140 đỉnh — mảnh lớn nhất hệ) phủ kín ~55 quai hỗng
+   * tràng/hồi tràng có sẵn, thành "một mảng lớn" giữa khung đại tràng. Chuyển
+   * sang nhóm mô liên kết (màng) — vẫn bật được, chỉ không che ruột khi xem
+   * riêng hệ tiêu hoá.
+   */
+  FMA14643: "connective", // Mesentery of small intestine
+  FMA14647: "connective", // Transverse mesocolon
+  FMA16549: "connective", // Mesoappendix
+};
+
+// ------------------------------------------------------------ nhóm cơ quan
+
+/**
+ * Màu theo NHÓM cơ quan trong một hệ (`part-groups.generated.json`, sinh bởi
+ * `scripts/anatomy-groups.ts` từ chuỗi is-a FMA). Hệ không có nhóm dùng màu
+ * hệ. Bảng màu y khoa trầm, không neon: đủ để tách gan khỏi ruột, não khỏi
+ * dây thần kinh, trên nền gần đen.
+ */
+export const GROUP_COLORS: Record<string, string> = {
+  "digestive.esophagus": "#b9726c",
+  "digestive.stomach": "#cc8b86",
+  "digestive.small_intestine": "#dca596",
+  "digestive.large_intestine": "#b77f78",
+  "digestive.liver": "#7c3b33",
+  "digestive.biliary": "#7f8b4b",
+  "digestive.pancreas": "#c9a86a",
+  "digestive.oral": "#c7867e",
+  "nervous.brain": "#caa1a9",
+  "nervous.brainstem": "#d6b3ad",
+  "nervous.cerebellum": "#bf98a3",
+  "nervous.ventricles": "#8fa9bd",
+  "nervous.meninges": "#b5acae",
+  "nervous.nerve": "#d9b25c",
 };
 
 export function correctSystems(atlas: Atlas): Atlas {

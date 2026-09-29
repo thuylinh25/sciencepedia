@@ -14,7 +14,9 @@ import { OutputPass } from "three/examples/jsm/postprocessing/OutputPass.js";
 import { RenderPass } from "three/examples/jsm/postprocessing/RenderPass.js";
 import { mergeGeometries } from "three/examples/jsm/utils/BufferGeometryUtils.js";
 
+import partGroups from "@/lib/human-atlas/part-groups.generated.json";
 import {
+  GROUP_COLORS,
   LAYERS,
   SYSTEM_COLORS,
   SYSTEM_IDS,
@@ -302,9 +304,9 @@ export default function AnatomyScene({
       return best;
     };
 
-    const materialFor = (system: SystemId) => {
+    const materialFor = (system: SystemId, color: string) => {
       const m = new T.MeshStandardMaterial({
-        color: SYSTEM_COLORS[system] ?? "#aebbb8",
+        color,
         metalness: 0,
         // Xương mờ như xương thật; da mờ nhất (không bóng như sáp); mô mềm ẩm hơn.
         roughness: system === "skeletal" ? 0.74 : system === "integumentary" ? 0.68 : 0.6,
@@ -347,7 +349,25 @@ export default function AnatomyScene({
       materials.push(m);
       return m;
     };
-    const mats = new Map(SYSTEM_IDS.map((id) => [id, materialFor(id)]));
+    /*
+     * Một vật liệu mỗi NHÓM cơ quan (gan, tuỵ, não, dây thần kinh… —
+     * `part-groups.generated.json`), còn lại một vật liệu mỗi hệ. Mảnh cùng nhóm
+     * vẫn gộp chung một lượt vẽ; bảng nhóm tra một lần lúc dựng, không mỗi khung.
+     */
+    const groupOf = partGroups as Record<string, string>;
+    const keyOf = (p: (typeof parts)[number]) => groupOf[p.id] ?? p.system;
+    const mats = new Map<string, T.MeshStandardMaterial>();
+    const matsBySystem = new Map<SystemId, T.MeshStandardMaterial[]>();
+    const materialForKey = (key: string, system: SystemId) => {
+      let m = mats.get(key);
+      if (!m) {
+        m = materialFor(system, GROUP_COLORS[key] ?? SYSTEM_COLORS[system] ?? "#aebbb8");
+        mats.set(key, m);
+        matsBySystem.set(system, [...(matsBySystem.get(system) ?? []), m]);
+      }
+      return m;
+    };
+    parts.forEach((p) => materialForKey(keyOf(p), p.system));
     /*
      * ## Các lớp (2026-09-29)
      *
@@ -377,11 +397,12 @@ export default function AnatomyScene({
         let alpha = layerOpacity(SYSTEM_LAYER[system], peel);
         if (layerIndex(system) < deepest) alpha = Math.min(alpha, DIMMED);
         alphaBySystem.set(system, alpha);
-        const m = mats.get(system)!;
         const solid = alpha > 0.999;
-        m.opacity = solid ? 1 : alpha;
-        m.transparent = !solid;
-        m.depthWrite = solid;
+        for (const m of matsBySystem.get(system) ?? []) {
+          m.opacity = solid ? 1 : alpha;
+          m.transparent = !solid;
+          m.depthWrite = solid;
+        }
       }
     };
     const alphaOf = (i: number) => alphaBySystem.get(parts[i].system) ?? 1;
@@ -453,7 +474,7 @@ export default function AnatomyScene({
       const buffer = await decodeModelResponse(response, chunk.bytes, compressed);
       if (disposed) return;
 
-      const groups = new Map<SystemId, T.BufferGeometry[]>();
+      const groups = new Map<string, { system: SystemId; list: T.BufferGeometry[] }>();
       parts.forEach((p, i) => {
         if (p.chunk !== ci) return;
         const g = new T.BufferGeometry();
@@ -477,15 +498,16 @@ export default function AnatomyScene({
           "partIndex",
           new T.BufferAttribute(new Float32Array(p.vertexCount).fill(i), 1),
         );
-        const list = groups.get(p.system) ?? [];
-        list.push(g);
-        groups.set(p.system, list);
+        const key = keyOf(p);
+        const entry = groups.get(key) ?? { system: p.system, list: [] };
+        entry.list.push(g);
+        groups.set(key, entry);
       });
-      groups.forEach((gs, system) => {
+      groups.forEach(({ system, list: gs }, key) => {
         const geometry = mergeGeometries(gs, false);
         if (!geometry) throw new Error("merge");
         geometries.push(geometry);
-        const mesh = new T.Mesh(geometry, mats.get(system));
+        const mesh = new T.Mesh(geometry, materialForKey(key, system));
         mesh.frustumCulled = false;
         // Ngoài cùng vẽ cuối: lớp mờ phải vẽ sau những gì nó phủ lên.
         mesh.renderOrder = LAYERS.length - LAYERS.indexOf(SYSTEM_LAYER[system]);

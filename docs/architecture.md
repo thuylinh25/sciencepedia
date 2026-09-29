@@ -442,6 +442,27 @@ sẵn một vật liệu mỗi hệ) — không nhân bản vật liệu. Chọn
 Mọi ngưỡng cũ của giao diện (khoá góc nhìn, tắt tự xoay) đọc qua `peelToExplode`, đừng đọc
 thẳng `state.explode`.
 
+### Audit phân loại hệ theo FMA, không theo tên (2026-09-29)
+
+`SYSTEM_CORRECTIONS` (anatomy.ts) sửa lúc nạp, có lý do từng dòng. Căn cứ: chuỗi is-a FMA
+trong cache OLS. Đã sửa: 8 "Hepatovenous segment" (nhu mô gan, trong chính khái niệm Gan) từ
+tĩnh mạch sang tiêu hoá — chúng là "khối xanh" ở bụng trên; 3 mạc treo (phúc mạc) sang mô
+liên kết — mạc treo ruột non 45k đỉnh phủ kín ~55 quai ruột non có sẵn.
+
+**Giới hạn của BodyParts3D 4.0, đừng tìm lỗi phân loại ở đây:**
+- Thần kinh: 144/144 mảnh ở đầu — não + 20 dây thần kinh vùng ổ mắt. Không có thân tuỷ sống
+  (chỉ 3,5 cm ống trung tâm ở nền sọ), dây thần kinh sống, đám rối, dây thần kinh chi.
+- Tĩnh mạch: không có tĩnh mạch nội sọ/mặt; cao nhất là tĩnh mạch cảnh trong (1,46 m).
+  Động mạch đầu thì có (151 mảnh).
+- Bạch huyết: đúng 3 mảnh (lách + 2 thuỳ tuyến ức); không hạch, mạch, ống ngực nào.
+- Tiêu hoá: không có đại tràng sigma riêng, ống hậu môn, niêm mạc hầu; manh tràng chỉ có
+  "Ileocecal junction". Răng và lợi nằm trong hệ xương (đã ghi trong mô tả hệ).
+Muốn đầy đủ hơn phải thêm asset hợp pháp khác, đăng ký cùng hệ toạ độ — không vẽ bù.
+
+**Nhóm cơ quan → màu:** `scripts/anatomy-groups.ts` suy nhóm (gan, tuỵ, ruột non…; não, thân
+não, dây thần kinh…) từ tên + tổ tiên is-a FMA, ghi `part-groups.generated.json`; viewer tạo
+một vật liệu mỗi nhóm (`GROUP_COLORS`). Chạy lại script khi đổi phân loại.
+
 ### Khung mặc định và thanh cuộn dọc
 
 Khung ~70% chiều cao vùng quan sát (67% tablet, 64% điện thoại). Tiêu đề và ô tìm là mẩu ở
