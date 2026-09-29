@@ -1,0 +1,17 @@
+{
+ "skeletal": 296,
+ "sensory": 45,
+ "nervous": 144,
+ "connective": 43,
+ "muscular": 402,
+ "arterial": 639,
+ "endocrine": 4,
+ "venous": 395,
+ "digestive": 103,
+ "cardiac": 18,
+ "respiratory": 119,
+ "lymphatic": 3,
+ "integumentary": 5,
+ "reproductive": 12,
+ "urinary": 6
+}

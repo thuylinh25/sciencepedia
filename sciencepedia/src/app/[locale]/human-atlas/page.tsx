@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 
 import type { Locale } from "@/i18n/routing";
@@ -6,7 +7,9 @@ import { buildMetadata } from "@/lib/seo";
 import { absoluteUrl } from "@/lib/utils";
 import { ASSET_BASE_URL } from "@/lib/asset";
 import { pick } from "@/lib/i18n-content";
-import { SYSTEM_COLORS, SYSTEM_IDS } from "@/lib/human-atlas/anatomy";
+import { SYSTEM_COLORS } from "@/lib/human-atlas/anatomy";
+import { FALLBACK_ICON, SYSTEM_COUNTS, SYSTEM_ICON, SYSTEM_ORDER } from "@/lib/human-atlas/systems";
+import { Link } from "@/i18n/navigation";
 import { ATLAS_PROVENANCE } from "@/lib/human-atlas/provenance";
 import { SYSTEM_DESCRIPTIONS, sectionNumber } from "@/lib/human-atlas/system-descriptions";
 import {
@@ -114,7 +117,11 @@ export default async function HumanAtlasPage({
         aria-label={t("title")}
         className="relative h-[calc(100dvh-4rem)] min-h-[18rem] scroll-mt-16 lg:h-[calc(100dvh-5rem)] lg:scroll-mt-20"
       >
-        <HumanAtlas articles={articles} />
+        {/* Suspense: viewer đọc `?system=` bằng useSearchParams — route vẫn tĩnh,
+            chỉ khung viewer dựng ở client (nó vốn là canvas, không có chữ để SEO). */}
+        <Suspense fallback={<div className="size-full bg-[#eef0f1] dark:bg-[#05070a]" />}>
+          <HumanAtlas articles={articles} />
+        </Suspense>
       </section>
 
       <div className="container-page py-12">
@@ -124,33 +131,79 @@ export default async function HumanAtlasPage({
             <p className="mt-3 max-w-3xl leading-relaxed text-muted-foreground">{t("page.intro")}</p>
             {/* Viewer ở ngay trên cùng route, nên CTA là neo trong trang chứ không
                 phải một route mới. Ai đọc tới đây là đã cuộn qua khung 3D. */}
-            <Button asChild className="mt-5 h-11 max-sm:w-full">
+            <Button asChild size="lg" className="mt-5 h-12 px-6 text-base max-sm:w-full">
               <a href="#atlas-viewer">
                 {t("page.cta")}
                 <ArrowRight aria-hidden />
               </a>
             </Button>
 
-            <h3 className="mt-8 text-sm font-semibold">{t("page.systemsHeading")}</h3>
-            <ul className="mt-3 grid gap-x-6 gap-y-3 sm:grid-cols-2">
-              {SYSTEM_IDS.map((id) => (
-                <li key={id} className="flex gap-3 text-sm leading-relaxed">
-                  <span
-                    aria-hidden
-                    className="mt-1.5 size-2.5 shrink-0 rounded-full"
-                    style={{ background: SYSTEM_COLORS[id] }}
-                  />
-                  <span>
-                    <strong className="font-semibold">{t(`systemNames.${id}`)}</strong>
-                    {SYSTEM_DESCRIPTIONS[id] && (
-                      <span className="text-muted-foreground">
-                        {" — "}
-                        {locale === "vi" ? SYSTEM_DESCRIPTIONS[id].summary.vi : SYSTEM_DESCRIPTIONS[id].summary.en}
+            <h3 className="mt-10 text-base font-semibold">{t("page.systemsHeading")}</h3>
+            {/*
+              Thẻ hệ: tên + số cấu trúc + một câu (đã duyệt riêng, `short`) + "Khám
+              phá". Cả thẻ bấm được bằng mẫu "stretched link" — link thật ở tên
+              hệ, `after:inset-0` phủ cả thẻ; khối "Mô tả đầy đủ" nằm trên lớp đó
+              (z-10) nên vẫn mở được. Không lồng <details> trong <a>.
+              Số, màu, thứ tự, icon đều từ `systems.ts` — chung với viewer.
+            */}
+            <ul className="mt-4 grid gap-3 md:grid-cols-2">
+              {SYSTEM_ORDER.map((id) => {
+                const Icon = SYSTEM_ICON[id] ?? FALLBACK_ICON;
+                const description = SYSTEM_DESCRIPTIONS[id];
+                const pickText = (v: { vi: string; en: string }) => (locale === "vi" ? v.vi : v.en);
+                return (
+                  <li
+                    key={id}
+                    className="group relative flex flex-col rounded-xl border bg-card/60 p-4 transition-colors hover:border-foreground/25 hover:bg-card focus-within:ring-[3px] focus-within:ring-ring/50"
+                  >
+                    <div className="flex items-start gap-3">
+                      <span
+                        aria-hidden
+                        className="mt-0.5 inline-flex size-8 shrink-0 items-center justify-center rounded-lg bg-foreground/[0.04]"
+                      >
+                        <Icon className="size-4.5" style={{ color: SYSTEM_COLORS[id] }} />
                       </span>
+                      <div className="min-w-0 flex-1">
+                        <h4 className="font-semibold leading-snug">
+                          <Link
+                            href={`/human-atlas?system=${id}#atlas-viewer`}
+                            className="outline-none after:absolute after:inset-0 after:rounded-xl"
+                          >
+                            {t(`systemNames.${id}`)}
+                          </Link>
+                        </h4>
+                        <p className="text-xs text-muted-foreground tabular-nums">
+                          {t("page.systemCount", { count: SYSTEM_COUNTS[id] ?? 0 })}
+                        </p>
+                      </div>
+                    </div>
+                    {description?.short && (
+                      <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                        {pickText(description.short)}
+                      </p>
                     )}
-                  </span>
-                </li>
-              ))}
+                    <div className="mt-auto flex items-center justify-between gap-3 pt-3">
+                      {description && (
+                        <details className="relative z-10 text-sm">
+                          <summary className="cursor-pointer text-xs text-muted-foreground hover:text-foreground">
+                            {t("page.systemDetails")}
+                          </summary>
+                          <p className="mt-2 leading-relaxed text-muted-foreground">
+                            {pickText(description.summary)}
+                          </p>
+                        </details>
+                      )}
+                      <span
+                        aria-hidden
+                        className="ml-auto inline-flex items-center gap-1 text-sm font-medium text-accent transition-transform group-hover:translate-x-0.5"
+                      >
+                        {t("page.systemExplore")}
+                        <ArrowRight className="size-4" />
+                      </span>
+                    </div>
+                  </li>
+                );
+              })}
             </ul>
             {/* Nguồn ngay dưới danh sách (docs/content-rules.md, "Provenance"):
                 mọi mục OpenStax được dẫn, mỗi mục một link. Phần "trong mô hình

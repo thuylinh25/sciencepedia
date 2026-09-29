@@ -16,6 +16,7 @@ import {
 } from "react";
 import dynamic from "next/dynamic";
 import { useLocale, useTranslations } from "next-intl";
+import { useSearchParams } from "next/navigation";
 import { useTheme } from "next-themes";
 import {
   Activity,
@@ -55,6 +56,7 @@ import {
 } from "@/lib/human-atlas/structures";
 import { decodeModelResponse } from "@/lib/human-atlas/model-download";
 import { ATLAS_PROVENANCE } from "@/lib/human-atlas/provenance";
+import { SYSTEM_ORDER, isSystemId } from "@/lib/human-atlas/systems";
 import { displayName } from "@/lib/human-atlas/names-vi";
 import {
   buildSearchIndex,
@@ -317,6 +319,36 @@ export function HumanAtlas({
     setAttempt((n) => n + 1);
   };
 
+  // ------------------------------------------------ deep link ?system=
+  /*
+   * `?system=nervous` mở viewer với đúng một hệ (thẻ hệ ở trang giới thiệu,
+   * link từ bài viết — `systemHref()` trong systems.ts). Đọc bằng
+   * useSearchParams nên Back/Forward của trình duyệt áp lại đúng hệ: rời một
+   * `?system=` về trang trơn thì trả lại mọi hệ như mặc định.
+   */
+  const systemParam = useSearchParams().get("system");
+  const lastSystemParam = useRef<string | null>(null);
+  useEffect(() => {
+    const previous = lastSystemParam.current;
+    if (systemParam === previous) return;
+    lastSystemParam.current = systemParam;
+    if (isSystemId(systemParam)) {
+      setChosen(null);
+      setDetails(false);
+      setState((s) => ({
+        ...s,
+        visible: [systemParam],
+        selected: [],
+        isolate: false,
+        explode: 0,
+        view: "front",
+        reset: s.reset + 1,
+      }));
+    } else if (isSystemId(previous)) {
+      setState((s) => ({ ...s, visible: DEFAULT_VISIBLE, explode: 0, reset: s.reset + 1 }));
+    }
+  }, [systemParam]);
+
   // ---------------------------------------------------------- deep link
   useEffect(() => {
     if (!index || deepLinked.current) return;
@@ -363,9 +395,10 @@ export function HumanAtlas({
 
   /** Độ tách KHÔNG GIAN (nửa đầu slider là bóc lớp, cảnh vẫn nguyên khối). */
   const spread = peelToExplode(state.explode);
-  // Bề mặt cơ thể đứng đầu danh sách: nó là lớp ngoài cùng, thứ người đọc thấy trước.
+  // Thứ tự hiển thị chung với trang giới thiệu (`SYSTEM_ORDER`): bề mặt cơ thể
+  // đứng đầu — lớp ngoài cùng, thứ người đọc thấy trước.
   const panelSystems = useMemo(
-    () => [...activeSystems].sort((a, b) => Number(b === "integumentary") - Number(a === "integumentary")),
+    () => SYSTEM_ORDER.filter((id) => activeSystems.includes(id)),
     [activeSystems],
   );
 

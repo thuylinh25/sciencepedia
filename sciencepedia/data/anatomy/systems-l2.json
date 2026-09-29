@@ -62,6 +62,14 @@
     "by": "science-editor",
     "at": "2026-09-29",
     "verdict": "approved-with-edits"
+   },
+   "short": {
+    "vi": "Nâng đỡ cơ thể, giúp cử động, che chở cơ quan, dự trữ khoáng chất và sinh tế bào máu; mô hình gộp cả răng và lợi vào nhóm này.",
+    "en": "Holds the body up, helps it move, shields organs, stores minerals and makes blood cells; the model also files the teeth and gums here."
+   },
+   "shortReview": {
+    "by": "science-editor",
+    "at": "2026-09-29"
    }
   },
   "muscular": {
@@ -99,6 +107,14 @@
     "by": "science-editor",
     "at": "2026-09-29",
     "verdict": "approved"
+   },
+   "short": {
+    "vi": "Cơ xương tạo ra và hãm cử động, giữ tư thế, ngăn khớp chuyển động quá mức, và sinh nhiệt khi co.",
+    "en": "Skeletal muscles create and stop movement, hold posture, keep joints from overmoving, and give off heat as they contract."
+   },
+   "shortReview": {
+    "by": "science-editor",
+    "at": "2026-09-29"
    }
   },
   "cardiac": {
@@ -148,6 +164,14 @@
     "by": "science-editor",
     "at": "2026-09-29",
     "verdict": "approved-with-edits"
+   },
+   "short": {
+    "vi": "Hai tâm thất là buồng bơm chính, đẩy máu lên phổi và đi khắp cơ thể; các van giữ cho máu chảy qua tim một chiều.",
+    "en": "The heart's two ventricles do the main pumping, sending blood to the lungs and around the body, while valves keep the flow one-way."
+   },
+   "shortReview": {
+    "by": "science-editor",
+    "at": "2026-09-29"
    }
   },
   "sensory": {
@@ -200,6 +224,14 @@
     "by": "science-editor",
     "at": "2026-09-29",
     "verdict": "approved"
+   },
+   "short": {
+    "vi": "Thụ thể chuyên biệt tiếp nhận kích thích; mô hình có nhãn cầu, bộ lệ và tai ngoài, không có tai giữa, tai trong.",
+    "en": "Specialized receptors pick up stimuli; the model has the eyeball, tear apparatus and external ear, but no middle or inner ear."
+   },
+   "shortReview": {
+    "by": "science-editor",
+    "at": "2026-09-29"
    }
   },
   "arterial": {
@@ -253,6 +285,14 @@
     "by": "science-editor",
     "at": "2026-09-29",
     "verdict": "approved-with-edits"
+   },
+   "short": {
+    "vi": "Động mạch dẫn máu rời khỏi tim và chia nhánh dần tới mao mạch, nơi chất dinh dưỡng và chất thải được trao đổi.",
+    "en": "Arteries carry blood away from the heart, branching down to capillaries where nutrients and wastes change places."
+   },
+   "shortReview": {
+    "by": "science-editor",
+    "at": "2026-09-29"
    }
   },
   "venous": {
@@ -298,6 +338,14 @@
     "by": "science-editor",
     "at": "2026-09-29",
     "verdict": "approved-with-edits"
+   },
+   "short": {
+    "vi": "Tĩnh mạch đưa máu về tim; nhiều tĩnh mạch, nhất là ở tay chân, có van ngăn máu chảy ngược.",
+    "en": "Veins bring blood back to the heart; many, especially in the limbs, have valves that stop it flowing backward."
+   },
+   "shortReview": {
+    "by": "science-editor",
+    "at": "2026-09-29"
    }
   },
   "nervous": {
@@ -345,12 +393,40 @@
      "supports": [
       "summary"
      ]
+    },
+    {
+     "source": "atlas",
+     "present": [
+      "cerebellum",
+      "pons",
+      "optic nerve"
+     ],
+     "absent": [
+      "sciatic nerve",
+      "femoral nerve",
+      "median nerve",
+      "ulnar nerve",
+      "brachial plexus",
+      "spinal nerve",
+      "intercostal nerve"
+     ],
+     "supports": [
+      "summary"
+     ]
     }
    ],
    "review": {
     "by": "science-editor",
     "at": "2026-09-29",
     "verdict": "approved-with-edits"
+   },
+   "short": {
+    "vi": "Tiếp nhận, tích hợp và phản ứng với thông tin. Mô hình có tiểu não, cầu não và dây thần kinh thị giác, nhưng không có thần kinh toạ, giữa, trụ hay gian sườn.",
+    "en": "Takes in, integrates and responds to information. The model includes the cerebellum, pons and optic nerve, but no sciatic, median, ulnar or intercostal nerves."
+   },
+   "shortReview": {
+    "by": "science-editor",
+    "at": "2026-09-29"
    }
   },
   "respiratory": {
@@ -388,6 +464,14 @@
     "by": "science-editor",
     "at": "2026-09-29",
     "verdict": "approved"
+   },
+   "short": {
+    "vi": "Đường dẫn khí đưa không khí tới phổi, nơi các túi phế nang trao đổi oxy và carbon dioxide.",
+    "en": "Airways carry air to the lungs, where alveolar sacs swap oxygen and carbon dioxide."
+   },
+   "shortReview": {
+    "by": "science-editor",
+    "at": "2026-09-29"
    }
   },
   "digestive": {
@@ -441,6 +525,14 @@
     "by": "science-editor",
     "at": "2026-09-29",
     "verdict": "approved-with-edits"
+   },
+   "short": {
+    "vi": "Ống tiêu hoá một chiều cùng các cơ quan phụ phân giải thức ăn; chất dinh dưỡng vào cơ thể qua hấp thu.",
+    "en": "A one-way digestive tube and its accessory organs break food down; nutrients enter the body by being absorbed."
+   },
+   "shortReview": {
+    "by": "science-editor",
+    "at": "2026-09-29"
    }
   },
   "urinary": {
@@ -502,6 +594,14 @@
     "by": "science-editor",
     "at": "2026-09-29",
     "verdict": "approved-with-edits"
+   },
+   "short": {
+    "vi": "Nephron của thận lọc sạch máu; nước tiểu theo niệu quản xuống bàng quang rồi ra ngoài qua niệu đạo.",
+    "en": "Kidney nephrons clean the blood; urine runs down the ureters to the bladder and leaves through the urethra."
+   },
+   "shortReview": {
+    "by": "science-editor",
+    "at": "2026-09-29"
    }
   },
   "lymphatic": {
@@ -554,6 +654,14 @@
     "by": "science-editor",
     "at": "2026-09-29",
     "verdict": "approved-with-edits"
+   },
+   "short": {
+    "vi": "Đưa dịch thừa về máu và lọc mầm bệnh; mô hình chỉ có tuyến ức và lách, không có mạch và hạch bạch huyết.",
+    "en": "Returns excess fluid to the blood and filters out pathogens; the model has only the thymus and spleen, with no lymph vessels or nodes."
+   },
+   "shortReview": {
+    "by": "science-editor",
+    "at": "2026-09-29"
    }
   },
   "endocrine": {
@@ -630,6 +738,14 @@
     "by": "science-editor",
     "at": "2026-09-29",
     "verdict": "approved-with-edits"
+   },
+   "short": {
+    "vi": "Tuyến không ống dẫn tiết hormone, rồi hormone chủ yếu theo dòng máu đi khắp cơ thể; nhóm này trong mô hình chỉ có tuyến yên, tuyến tùng và tuyến thượng thận.",
+    "en": "Ductless glands release hormones, which travel mainly in the blood; in this model the group holds only the pituitary, pineal and adrenal glands."
+   },
+   "shortReview": {
+    "by": "science-editor",
+    "at": "2026-09-29"
    }
   },
   "reproductive": {
@@ -700,6 +816,14 @@
     "by": "science-editor",
     "at": "2026-09-29",
     "verdict": "approved"
+   },
+   "short": {
+    "vi": "Mô hình là cơ thể nam: tinh hoàn tạo tinh trùng và androgen, các ống và tuyến phụ dẫn tinh trùng đi và tạo tinh dịch.",
+    "en": "The model is male: the testes make sperm and androgens, and ducts and glands carry the sperm on and form semen."
+   },
+   "shortReview": {
+    "by": "science-editor",
+    "at": "2026-09-29"
    }
   },
   "integumentary": {
@@ -758,6 +882,14 @@
     "by": "science-editor",
     "at": "2026-09-29",
     "verdict": "approved-with-edits"
+   },
+   "short": {
+    "vi": "Trong nhiều vai trò, da che chắn cơ thể, ngăn mất nước và cảm nhận môi trường; nhóm có da, tóc, lông mày, môi và lông mu.",
+    "en": "Among other roles, skin shields the body, limits water loss and senses its surroundings; the group includes skin, scalp hair, eyebrows, lips and pubic hair."
+   },
+   "shortReview": {
+    "by": "science-editor",
+    "at": "2026-09-29"
    }
   },
   "connective": {
@@ -807,6 +939,14 @@
     "by": "science-editor",
     "at": "2026-09-29",
     "verdict": "approved-with-edits"
+   },
+   "short": {
+    "vi": "Mô liên kết nâng đỡ và nối các mô khác; dây chằng giữ xương ở khớp. Nhóm chủ yếu là dây chằng, gân và màng.",
+    "en": "Connective tissue supports and joins other tissues, and ligaments hold bones together at joints. The group is mainly ligaments, tendons and membranes."
+   },
+   "shortReview": {
+    "by": "science-editor",
+    "at": "2026-09-29"
    }
   }
  }

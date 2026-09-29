@@ -26,6 +26,8 @@ import { ANATOMY_SOURCES } from "../src/lib/human-atlas/structures";
 const ROOT = path.resolve(__dirname, "..");
 const CACHE = path.join(ROOT, ".cache/anatomy", `ols-fma-${ANATOMY_SOURCES.fma.version}`);
 const OUT = path.join(ROOT, "src/lib/human-atlas/part-groups.generated.json");
+/** Số mảnh mỗi hệ sau correctSystems — trang giới thiệu đọc nó, viewer tự đếm lại cùng dữ liệu. */
+const COUNTS_OUT = path.join(ROOT, "src/lib/human-atlas/system-counts.generated.json");
 
 /** Thứ tự là ưu tiên: luật đầu tiên khớp thắng (ống mật trước gan, v.v.). */
 const RULES: Record<string, [string, RegExp][]> = {
@@ -81,7 +83,11 @@ async function main() {
     counts[group] = (counts[group] ?? 0) + 1;
   }
   console.log(Object.entries(counts).sort().map(([g, n]) => `${g}: ${n}`).join("\n"));
+  const systemCounts: Record<string, number> = {};
+  for (const part of atlas.parts) systemCounts[part.system] = (systemCounts[part.system] ?? 0) + 1;
+  console.log("hệ:", JSON.stringify(systemCounts));
   if (process.argv.includes("--write")) {
+    writeFileSync(COUNTS_OUT, `${JSON.stringify(systemCounts, null, 1)}\n`);
     writeFileSync(OUT, `${JSON.stringify(groups, null, 1)}\n`);
     console.log(`Đã ghi ${path.relative(ROOT, OUT)} (${Object.keys(groups).length} mảnh)`);
   }

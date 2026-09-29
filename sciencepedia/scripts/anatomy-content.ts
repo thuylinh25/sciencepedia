@@ -282,6 +282,15 @@ const systemsFileSchema = z.object({
     z.enum(SYSTEM_IDS),
     z.object({
       summary: z.object({ vi: z.string().min(1), en: z.string().min(1) }),
+      /** Câu ngắn cho thẻ hệ ở trang giới thiệu — viết mới từ cùng bằng chứng, qua cùng bộ kiểm. */
+      short: z.object({ vi: z.string().min(1), en: z.string().min(1) }).optional(),
+      /**
+       * Dấu duyệt RIÊNG cho câu ngắn. `review` của đoạn đầy đủ không bao được câu
+       * viết sau nó — thiếu dấu này thì câu ngắn không phát hành (thẻ không có câu).
+       */
+      shortReview: z
+        .object({ by: z.literal("science-editor"), at: z.string().regex(/^\d{4}-\d{2}-\d{2}$/) })
+        .optional(),
       evidence: z
         .array(
           z.union([
@@ -366,6 +375,17 @@ export async function buildSystems(atlas: Atlas): Promise<{
       sections.add(evidence.section);
     }
     checkText(`hệ ${id}`, "summary", entry.summary, quotes, say, warnings);
+    if (entry.short && !entry.shortReview) warnings.push(`hệ ${id}: câu ngắn chưa duyệt — chưa phát hành`);
+    if (entry.short) {
+      checkText(`hệ ${id}`, "short", entry.short, quotes, say, warnings);
+      for (const [lang, text] of Object.entries(entry.short)) {
+        // Tiếng Việt tách theo ÂM TIẾT (mỗi âm tiết một khoảng trắng, một từ
+        // thường 2 âm tiết), nên trần cao hơn tiếng Anh cho cùng một độ dài câu.
+        const limit = lang === "vi" ? 45 : 32;
+        const words = text.split(/\s+/).length;
+        if (words > limit) say(`short.${lang}: ${words} tiếng — thẻ cần câu ngắn (≤ ${limit})`);
+      }
+    }
 
     if (problems.length > 0) {
       errors.push(...problems);
@@ -378,6 +398,7 @@ export async function buildSystems(atlas: Atlas): Promise<{
     const template = ANATOMY_SOURCES["openstax-ap2e"].urlTemplate;
     systems[id as keyof SystemDescriptions] = {
       summary: entry.summary,
+      ...(entry.short && entry.shortReview ? { short: entry.short } : {}),
       sources: [...sections].map((section) => ({ section, url: template.replace("{section}", section) })),
       review: { by: entry.review.by, at: entry.review.at },
     };

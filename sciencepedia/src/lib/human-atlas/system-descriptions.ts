@@ -20,6 +20,8 @@ import generated from "./system-descriptions.generated.json";
  */
 const entrySchema = z.object({
   summary: z.object({ vi: z.string(), en: z.string() }),
+  /** Một câu cho thẻ hệ ở trang giới thiệu (15–25 từ). */
+  short: z.object({ vi: z.string(), en: z.string() }).optional(),
   sources: z.array(z.object({ section: z.string(), url: z.string().url() })).min(1),
   review: z.object({ by: z.literal("science-editor"), at: z.string() }),
 });

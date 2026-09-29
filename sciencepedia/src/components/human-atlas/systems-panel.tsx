@@ -7,6 +7,7 @@ import { X } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import { SYSTEM_COLORS, type SystemId } from "@/lib/human-atlas/anatomy";
+import { FALLBACK_ICON, SYSTEM_ICON } from "@/lib/human-atlas/systems";
 import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
 import { PANEL } from "@/components/human-atlas/panel";
@@ -107,6 +108,7 @@ export function SystemsPanel({
       <ul className="-mx-1 min-h-0 flex-1 overflow-y-auto overscroll-contain px-1 py-1.5">
         {systems.map((id) => {
           const name = t(`systemNames.${id}`);
+          const Icon = SYSTEM_ICON[id] ?? FALLBACK_ICON;
           const on = visible.includes(id);
           const only = t("showOnly", { name: name.toLowerCase() });
           return (
@@ -121,11 +123,9 @@ export function SystemsPanel({
                 aria-label={only}
                 onClick={() => onShowOnly([id])}
               >
-                <span
-                  aria-hidden
-                  className="size-2 shrink-0 rounded-full"
-                  style={{ background: SYSTEM_COLORS[id] }}
-                />
+                {/* Icon cùng màu vật liệu 3D của hệ — màu không phải dấu hiệu duy
+                    nhất: tên hệ luôn đi kèm (WCAG 1.4.1). */}
+                <Icon aria-hidden className="size-4 shrink-0" style={{ color: SYSTEM_COLORS[id] }} />
                 <span className="truncate">{name}</span>
                 <span className="ml-auto text-xs text-muted-foreground tabular-nums">
                   {counts[id].toLocaleString(locale)}
