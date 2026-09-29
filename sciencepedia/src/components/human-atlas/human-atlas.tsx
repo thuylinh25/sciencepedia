@@ -56,7 +56,7 @@ import {
 } from "@/lib/human-atlas/structures";
 import { decodeModelResponse } from "@/lib/human-atlas/model-download";
 import { ATLAS_PROVENANCE } from "@/lib/human-atlas/provenance";
-import { SYSTEM_ORDER, isSystemId } from "@/lib/human-atlas/systems";
+import { SYSTEM_ORDER, SYSTEM_REAPPLY_EVENT, isSystemId } from "@/lib/human-atlas/systems";
 import { displayName } from "@/lib/human-atlas/names-vi";
 import {
   buildSearchIndex,
@@ -345,26 +345,38 @@ export function HumanAtlas({
    */
   const systemParam = useSearchParams().get("system");
   const lastSystemParam = useRef<string | null>(null);
+  const showSystem = useCallback((id: SystemId) => {
+    setChosen(null);
+    setDetails(false);
+    setState((s) => ({
+      ...s,
+      visible: [id],
+      selected: [],
+      isolate: false,
+      explode: 0,
+      view: "front",
+      reset: s.reset + 1,
+    }));
+  }, []);
+  // Bấm lại thẻ của hệ đang có trong URL — xem SYSTEM_REAPPLY_EVENT.
+  useEffect(() => {
+    const onReapply = (event: Event) => {
+      const id = (event as CustomEvent<unknown>).detail;
+      if (typeof id === "string" && isSystemId(id)) showSystem(id);
+    };
+    window.addEventListener(SYSTEM_REAPPLY_EVENT, onReapply);
+    return () => window.removeEventListener(SYSTEM_REAPPLY_EVENT, onReapply);
+  }, [showSystem]);
   useEffect(() => {
     const previous = lastSystemParam.current;
     if (systemParam === previous) return;
     lastSystemParam.current = systemParam;
     if (isSystemId(systemParam)) {
-      setChosen(null);
-      setDetails(false);
-      setState((s) => ({
-        ...s,
-        visible: [systemParam],
-        selected: [],
-        isolate: false,
-        explode: 0,
-        view: "front",
-        reset: s.reset + 1,
-      }));
+      showSystem(systemParam);
     } else if (isSystemId(previous)) {
       setState((s) => ({ ...s, visible: DEFAULT_VISIBLE, explode: 0, reset: s.reset + 1 }));
     }
-  }, [systemParam]);
+  }, [systemParam, showSystem]);
 
   // ---------------------------------------------------------- deep link
   useEffect(() => {

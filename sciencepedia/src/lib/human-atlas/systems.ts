@@ -98,3 +98,10 @@ export function isSystemId(value: string | null | undefined): value is SystemId 
 export function systemHref(locale: string, id: SystemId): string {
   return `/${locale}/human-atlas?system=${id}#atlas-viewer`;
 }
+
+/**
+ * Bấm lại thẻ của hệ ĐANG có trong URL: link không đổi URL, nên `useSearchParams`
+ * không báo gì và viewer không áp lại hệ (người đọc đã tự bật thêm hệ khác).
+ * Thẻ phát sự kiện này, viewer nghe và áp lại như lúc URL đổi.
+ */
+export const SYSTEM_REAPPLY_EVENT = "human-atlas:system";

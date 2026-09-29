@@ -9,7 +9,6 @@ import { ASSET_BASE_URL } from "@/lib/asset";
 import { pick } from "@/lib/i18n-content";
 import { SYSTEM_COLORS } from "@/lib/human-atlas/anatomy";
 import { FALLBACK_ICON, SYSTEM_COUNTS, SYSTEM_ICON, SYSTEM_ORDER } from "@/lib/human-atlas/systems";
-import { Link } from "@/i18n/navigation";
 import { ATLAS_PROVENANCE } from "@/lib/human-atlas/provenance";
 import { SYSTEM_DESCRIPTIONS, sectionNumber } from "@/lib/human-atlas/system-descriptions";
 import {
@@ -23,6 +22,7 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { JsonLd } from "@/components/json-ld";
 import { AboutCopy, HumanAtlas } from "@/components/human-atlas/human-atlas";
+import { SystemCardLink } from "@/components/human-atlas/system-card-link";
 
 /**
  * Bản đồ cơ thể người — `/vi/human-atlas`, `/en/human-atlas`.
@@ -165,12 +165,13 @@ export default async function HumanAtlasPage({
                       </span>
                       <div className="min-w-0 flex-1">
                         <h4 className="font-semibold leading-snug">
-                          <Link
+                          <SystemCardLink
+                            system={id}
                             href={`/human-atlas?system=${id}#atlas-viewer`}
                             className="outline-none after:absolute after:inset-0 after:rounded-xl"
                           >
                             {t(`systemNames.${id}`)}
-                          </Link>
+                          </SystemCardLink>
                         </h4>
                         <p className="text-xs text-muted-foreground tabular-nums">
                           {t("page.systemCount", { count: SYSTEM_COUNTS[id] ?? 0 })}
