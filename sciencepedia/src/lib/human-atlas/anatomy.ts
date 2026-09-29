@@ -212,6 +212,8 @@ export const atlasSchema = z.object({
       vertexCount: z.number().int().positive(),
       indexCount: z.number().int().positive(),
       bounds: z.tuple([vec3, vec3]),
+      /** Nhóm màu định sẵn (mảnh bổ sung); mảnh BodyParts3D tra `part-groups.generated.json`. */
+      group: z.string().optional(),
     }),
   ),
   concepts: z.array(
@@ -350,8 +352,17 @@ export const GROUP_COLORS: Record<string, string> = {
   "nervous.meninges": "#b5acae",
   "nervous.nerve": "#d9b25c",
   // Bạch huyết: cơ quan dạng lympho mỗi thứ một màu, không cùng một màu hệ.
+  // Bề mặt: da ấm, tóc/lông nâu sẫm, môi hồng trầm — trước đây cả năm mảnh
+  // cùng một màu, tóc trông như da đầu trọc.
+  "integumentary.skin": "#c49a80",
+  "integumentary.hair": "#3f2c20",
+  "integumentary.lip": "#a86d62",
   "lymphatic.spleen": "#8a4d5c",
   "lymphatic.thymus": "#c8a88f",
+  // Mạng UMCG: mạch xanh lục vừa, hạch sáng hơn một bậc — đọc được trên nền gần
+  // đen mà không neon, và tách hạch khỏi mạch bằng độ sáng lẫn hình dạng.
+  "lymphatic.vessel": "#5f9440",
+  "lymphatic.node": "#8cc163",
 };
 
 export function correctSystems(atlas: Atlas): Atlas {

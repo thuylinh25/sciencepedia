@@ -31,6 +31,7 @@ npx tsx --env-file-if-exists=.env scripts/upload-human-atlas.ts --source <human-
 npx tsx --env-file-if-exists=.env scripts/anatomy-enrich.ts  # FMA → data/anatomy/fma-structures.json (chạy khô; --write ghi, --upload đẩy R2 rồi sửa ANATOMY_DATA_FILE)
 npx tsx scripts/atlas-views.ts  # góc nhìn: quy tắc tên → mã mảnh thật (chạy khô; --write ghi view-parts.generated.json)
 npx tsx scripts/anatomy-audit.ts  # bảng audit mọi mảnh giải phẫu + tổ tiên FMA → .cache/anatomy/audit.json (chỉ đọc)
+npx tsx --env-file-if-exists=.env scripts/import-umcg-lymphatic.ts  # mạng bạch huyết UMCG (CC BY-NC-SA) → R2 + manifest (chạy khô; --write --upload)
 
 npm run publish:check # rà điều kiện xuất bản toàn kho (chỉ đọc)
 npm run publish       # đổi state sang PUBLISHED — đường ghi DUY NHẤT của máy, có gate (form /admin đi thẳng, có chủ ý — docs/architecture.md)

@@ -81,6 +81,7 @@ import { StructureSearch } from "@/components/human-atlas/structure-search";
 import { SystemsPanel } from "@/components/human-atlas/systems-panel";
 import { ViewsGallery } from "@/components/human-atlas/views-gallery";
 import { isUsableView, viewById, viewParts } from "@/lib/human-atlas/views";
+import { withSupplements } from "@/lib/human-atlas/supplements";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import type { SceneError } from "@/components/human-atlas/anatomy-scene";
 
@@ -125,7 +126,7 @@ async function loadCatalog(signal: AbortSignal): Promise<Atlas> {
   const buffer = await decodeModelResponse(response, null, compressed);
   const parsed = atlasSchema.safeParse(JSON.parse(new TextDecoder().decode(buffer)));
   if (!parsed.success) throw new Error(`atlas.json sai cấu trúc: ${parsed.error.message}`);
-  return correctSystems(parsed.data);
+  return withSupplements(correctSystems(parsed.data));
 }
 
 /**
@@ -601,7 +602,8 @@ export function HumanAtlas({
           {t("title")}
         </h1>
         <p className="mt-1 text-xs text-muted-foreground atlas-short:hidden">
-          {t("meta", { count: (atlas?.parts.length ?? PIECE_COUNT).toLocaleString(locale) })}
+          {/* Chỉ mảnh BodyParts3D — dòng này ghi nguồn đó; mảnh bổ sung có ghi công riêng. */}
+          {t("meta", { count: PIECE_COUNT.toLocaleString(locale) })}
         </p>
       </header>
 
@@ -1029,7 +1031,7 @@ function ToolButton({
  */
 export function AboutCopy() {
   const t = useTranslations("humanAtlas.aboutSheet");
-  const { model, terminology, viewer } = ATLAS_PROVENANCE;
+  const { model, terminology, viewer, lymphatic } = ATLAS_PROVENANCE;
   return (
     <div className="space-y-5 text-sm leading-relaxed text-muted-foreground">
       <SourceBlock
@@ -1055,6 +1057,19 @@ export function AboutCopy() {
         ]}
       >
         {t("termsText")}
+      </SourceBlock>
+
+      <SourceBlock
+        heading={t("lymphHeading")}
+        name={lymphatic.name}
+        credit={`© ${lymphatic.holder} · ${lymphatic.license}`}
+        links={[
+          [t("licenseLink"), lymphatic.licenseUrl],
+          [t("lymphSourceLink"), lymphatic.sourceUrl],
+          [t("lymphOriginalLink"), lymphatic.originalUrl],
+        ]}
+      >
+        {t("lymphText")}
       </SourceBlock>
 
       <SourceBlock

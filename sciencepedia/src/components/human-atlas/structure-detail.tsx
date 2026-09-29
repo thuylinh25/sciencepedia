@@ -28,6 +28,7 @@ import {
 } from "@/lib/human-atlas/structures";
 import { ATLAS_PROVENANCE } from "@/lib/human-atlas/provenance";
 import { SYSTEM_DESCRIPTIONS, sectionNumber } from "@/lib/human-atlas/system-descriptions";
+import { SUPPLEMENT_SOURCE } from "@/lib/human-atlas/supplements";
 import { Button } from "@/components/ui/button";
 import { PANEL } from "@/components/human-atlas/panel";
 
@@ -36,6 +37,7 @@ import { PANEL } from "@/components/human-atlas/panel";
  * `lifesciencedb.jp/bp3d/`, tức công cụ Anatomography chứ không phải bộ dữ liệu.
  */
 const MODEL_SOURCE_URL = ATLAS_PROVENANCE.model.sourceUrl;
+const LYMPH_SOURCE_URL = ATLAS_PROVENANCE.lymphatic.sourceUrl;
 
 /**
  * Bảng chi tiết của cấu trúc đang chọn.
@@ -74,6 +76,8 @@ export function StructureDetail({
   onClose: () => void;
 }) {
   const t = useTranslations("humanAtlas");
+  const fromUmcg = parts.some((p) => SUPPLEMENT_SOURCE[p.id] === "umcg-lymphatic");
+  const fromBp3d = parts.length === 0 || parts.some((p) => !SUPPLEMENT_SOURCE[p.id]);
   const title = useRef<HTMLHeadingElement>(null);
   const titleId = useId();
   const first = parts[0];
@@ -322,15 +326,22 @@ export function StructureDetail({
             {t("detail.source")}
             <ArrowUpRight aria-hidden className="size-3.5" />
           </a>
-          <a
-            href={MODEL_SOURCE_URL}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center gap-1 text-xs text-muted-foreground underline-offset-4 hover:underline"
-          >
-            {t("detail.modelSource")}
-            <ArrowUpRight aria-hidden className="size-3.5" />
-          </a>
+          {/* Nguồn HÌNH theo đúng mảnh đang chọn: mạng bạch huyết không phải
+              BodyParts3D (giấy phép khác, phải ghi công UMCG). */}
+          {(fromUmcg ? [[LYMPH_SOURCE_URL, t("detail.modelSourceLymph")]] : []).concat(
+            fromBp3d ? [[MODEL_SOURCE_URL, t("detail.modelSource")]] : [],
+          ).map(([href, label]) => (
+            <a
+              key={href}
+              href={href}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-1 text-xs text-muted-foreground underline-offset-4 hover:underline"
+            >
+              {label}
+              <ArrowUpRight aria-hidden className="size-3.5" />
+            </a>
+          ))}
         </div>
       </div>
 

@@ -50,6 +50,21 @@ export const ATLAS_PROVENANCE = {
     licenseFileUrl: "http://sig.biostr.washington.edu/share/downloads/fma/release/latest/LICENSE",
   },
   descriptions: ANATOMY_SOURCES["openstax-ap2e"],
+  /**
+   * Mạng mạch + hạch bạch huyết (BodyParts3D không có). Kiểm 2026-09-29: trang
+   * Sketchfab ghi giấy phép `by-nc-sa`; `license.txt` trong gói tải về có câu ghi
+   * công bên dưới. Chủ sản phẩm xác nhận Sciencepedia phi thương mại. Bản chuyển
+   * đổi (`scripts/import-umcg-lymphatic.ts`) phát hành cùng giấy phép, có
+   * LICENSE.txt cạnh khối hình học trên R2.
+   */
+  lymphatic: {
+    name: "Lymphatic System: an overview",
+    holder: "E-learning UMCG; Anna Sieben, University of Dundee (CAHID)",
+    license: "CC BY-NC-SA 4.0",
+    licenseUrl: "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+    sourceUrl: "https://sketchfab.com/3d-models/lymphatic-system-an-overview-00d877fa9fbc44218237dbc0a4cc96e1",
+    originalUrl: "https://anatomytool.org/content/dundee-3d-model-lymphatic-system",
+  },
   viewer: {
     name: "Human Atlas",
     author: "ashemag",

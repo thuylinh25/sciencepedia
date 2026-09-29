@@ -43,6 +43,7 @@ export function ViewsGallery({ locale, activeViewId, thumbnails, onChoose, onClo
   const pick = (v: { vi: string; en: string }) => (locale === "vi" ? v.vi : v.en);
   /** Vị trí khung xem trong trang (toạ độ tài liệu) — lưới phủ đúng từ đó xuống. */
   const [frame, setFrame] = useState<{ top: number; height: number } | null>(null);
+  const overlay = useRef<HTMLDivElement>(null);
 
   useLayoutEffect(() => {
     const section = document.getElementById("atlas-viewer");
@@ -58,6 +59,24 @@ export function ViewsGallery({ locale, activeViewId, thumbnails, onChoose, onClo
     return () => window.removeEventListener("resize", measure);
   }, []);
 
+  // Lưới cao hơn khung xem thì phần thừa phủ lên nội dung bên dưới (thẻ hệ,
+  // bảng ghi công) — đẩy nội dung xuống đúng bằng phần thừa, gỡ khi đóng.
+  useLayoutEffect(() => {
+    const node = overlay.current;
+    const section = document.getElementById("atlas-viewer");
+    if (!node || !section || !frame) return;
+    const sync = () => {
+      section.style.marginBottom = `${Math.max(0, node.offsetHeight - frame.height)}px`;
+    };
+    sync();
+    const observer = new ResizeObserver(sync);
+    observer.observe(node);
+    return () => {
+      observer.disconnect();
+      section.style.marginBottom = "";
+    };
+  }, [frame]);
+
   useEffect(() => {
     close.current?.focus();
     const onKey = (e: KeyboardEvent) => {
@@ -70,6 +89,7 @@ export function ViewsGallery({ locale, activeViewId, thumbnails, onChoose, onClo
   if (!frame) return null;
   return createPortal(
     <div
+      ref={overlay}
       role="dialog"
       aria-modal="true"
       aria-labelledby="atlas-views-title"

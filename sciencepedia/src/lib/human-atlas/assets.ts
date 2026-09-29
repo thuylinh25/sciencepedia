@@ -27,6 +27,8 @@ const BASE = (
 
 /** `atlasDataUrl("body-3.bin.gz")` → `<R2>/human-atlas/<phiên bản>/body-3.bin.gz` */
 export function atlasDataUrl(file: string): string {
+  // Khối của phần bổ sung (`supplements.ts`) mang URL tuyệt đối riêng.
+  if (/^https?:\/\//.test(file)) return file;
   // `atlas.json` ghi đường dẫn kiểu `/models/body-0.bin` của repo gốc; chỉ giữ tên tệp.
   const name = file.split("/").pop() ?? file;
   return `${BASE}/${HUMAN_ATLAS_DATA_VERSION}/${name}`;

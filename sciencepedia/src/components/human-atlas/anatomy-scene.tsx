@@ -366,7 +366,7 @@ export default function AnatomyScene({
      * vẫn gộp chung một lượt vẽ; bảng nhóm tra một lần lúc dựng, không mỗi khung.
      */
     const groupOf = partGroups as Record<string, string>;
-    const keyOf = (p: (typeof parts)[number]) => groupOf[p.id] ?? p.system;
+    const keyOf = (p: (typeof parts)[number]) => p.group ?? groupOf[p.id] ?? p.system;
     const mats = new Map<string, T.MeshStandardMaterial>();
     const matsBySystem = new Map<SystemId, T.MeshStandardMaterial[]>();
     const materialForKey = (key: string, system: SystemId) => {
@@ -1316,10 +1316,19 @@ export default function AnatomyScene({
         // Góc nhìn: mọi hệ trừ da, trừ những mảnh góc nhìn ẩn thêm (`views.ts`).
         const inScope = (p: (typeof parts)[number], i: number) =>
           view ? inView(view, p.system, i) : visible.has(p.system);
+        // Da còn đục hoàn toàn thì lớp trong không thấy được — trừ những chỗ mạch
+        // và cơ nông của BodyParts3D lòi qua da vài mm (vệt đỏ/xanh ở cổ, cẳng
+        // chân). Không vẽ chúng lúc ấy: hết vệt, và bớt ~2 triệu tam giác. Mắt
+        // (giác quan) giữ lại vì nằm sau khe mi hở. Kéo slider hay chọn cấu trúc
+        // sâu là da mờ đi, lớp trong hiện lại.
+        const skinSolid =
+          !s.isolate && !view && visible.has("integumentary") && (alphaBySystem.get("integumentary") ?? 0) >= 0.999;
+        const underSkin = (p: (typeof parts)[number]) =>
+          skinSolid && p.system !== "integumentary" && p.system !== "sensory";
         // Lớp đã mờ hẳn (da sau 20%) không chiếm ô trong lưới tách.
         const isShown = (p: (typeof parts)[number], i: number) =>
           (s.isolate ? selection.has(p.id) : inScope(p, i) || selection.has(p.id)) &&
-          (s.isolate || selection.has(p.id) || alphaOf(i) > 0.01);
+          (s.isolate || selection.has(p.id) || (alphaOf(i) > 0.01 && !underSkin(p)));
         const visibleParts = parts.filter(isShown);
         const nextLayoutKey =
           visibleParts.map((p) => p.id).join(",") + ":" + camera.aspect.toFixed(3);

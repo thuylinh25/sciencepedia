@@ -1,0 +1,520 @@
+{
+ "source": "umcg-lymphatic",
+ "license": "CC BY-NC-SA 4.0",
+ "chunk": {
+  "url": "https://pub-2f39abf8661142edaf3c3c48f755ffa8.r2.dev/human-atlas/supplements/umcg-lymphatic-5d52a111fa/umcg-lymphatic.bin",
+  "bytes": 3222628,
+  "gzip": "https://pub-2f39abf8661142edaf3c3c48f755ffa8.r2.dev/human-atlas/supplements/umcg-lymphatic-5d52a111fa/umcg-lymphatic.bin.gz",
+  "gzipBytes": 2101473
+ },
+ "parts": [
+  {
+   "id": "UMCG-LYM-node-abdomen",
+   "name": "Lymph nodes of abdomen",
+   "nameVi": "Hạch bạch huyết vùng bụng",
+   "conceptId": "FMA5034",
+   "system": "lymphatic",
+   "group": "lymphatic.node",
+   "positions": 0,
+   "normals": 7692,
+   "indices": 11540,
+   "vertexCount": 641,
+   "indexCount": 3570,
+   "bounds": [
+    [
+     -0.06357,
+     0.93373,
+     -0.04652
+    ],
+    [
+     0.03835,
+     1.09927,
+     0.03212
+    ]
+   ]
+  },
+  {
+   "id": "UMCG-LYM-node-axilla-left",
+   "name": "Lymph nodes of left axilla",
+   "nameVi": "Hạch bạch huyết vùng nách trái",
+   "conceptId": "FMA5034",
+   "system": "lymphatic",
+   "group": "lymphatic.node",
+   "positions": 25820,
+   "normals": 33032,
+   "indices": 36640,
+   "vertexCount": 601,
+   "indexCount": 3396,
+   "bounds": [
+    [
+     0.08018,
+     1.22643,
+     -0.0317
+    ],
+    [
+     0.13012,
+     1.37824,
+     0.09379
+    ]
+   ]
+  },
+  {
+   "id": "UMCG-LYM-node-axilla-right",
+   "name": "Lymph nodes of right axilla",
+   "nameVi": "Hạch bạch huyết vùng nách phải",
+   "conceptId": "FMA5034",
+   "system": "lymphatic",
+   "group": "lymphatic.node",
+   "positions": 50224,
+   "normals": 59068,
+   "indices": 63492,
+   "vertexCount": 737,
+   "indexCount": 3843,
+   "bounds": [
+    [
+     -0.15072,
+     1.22294,
+     -0.03206
+    ],
+    [
+     -0.07858,
+     1.40099,
+     0.1081
+    ]
+   ]
+  },
+  {
+   "id": "UMCG-LYM-node-head-neck",
+   "name": "Lymph nodes of head and neck",
+   "nameVi": "Hạch bạch huyết vùng đầu và cổ",
+   "conceptId": "FMA5034",
+   "system": "lymphatic",
+   "group": "lymphatic.node",
+   "positions": 78864,
+   "normals": 83208,
+   "indices": 85380,
+   "vertexCount": 362,
+   "indexCount": 2088,
+   "bounds": [
+    [
+     -0.02976,
+     1.42882,
+     -0.0793
+    ],
+    [
+     0.0552,
+     1.58279,
+     0.02188
+    ]
+   ]
+  },
+  {
+   "id": "UMCG-LYM-node-inguinal-left",
+   "name": "Lymph nodes of left inguinal region",
+   "nameVi": "Hạch bạch huyết vùng bẹn trái",
+   "conceptId": "FMA5034",
+   "system": "lymphatic",
+   "group": "lymphatic.node",
+   "positions": 93732,
+   "normals": 95952,
+   "indices": 97064,
+   "vertexCount": 185,
+   "indexCount": 1044,
+   "bounds": [
+    [
+     0.04453,
+     0.84891,
+     0.0291
+    ],
+    [
+     0.12513,
+     0.9166,
+     0.05145
+    ]
+   ]
+  },
+  {
+   "id": "UMCG-LYM-node-lower-limb-left",
+   "name": "Lymph nodes of left lower limb",
+   "nameVi": "Hạch bạch huyết vùng chi dưới trái",
+   "conceptId": "FMA5034",
+   "system": "lymphatic",
+   "group": "lymphatic.node",
+   "positions": 101240,
+   "normals": 107672,
+   "indices": 110888,
+   "vertexCount": 536,
+   "indexCount": 2985,
+   "bounds": [
+    [
+     0.06949,
+     0.01369,
+     -0.09894
+    ],
+    [
+     0.16349,
+     0.75004,
+     0.07669
+    ]
+   ]
+  },
+  {
+   "id": "UMCG-LYM-node-lower-limb-right",
+   "name": "Lymph nodes of right lower limb",
+   "nameVi": "Hạch bạch huyết vùng chi dưới phải",
+   "conceptId": "FMA5034",
+   "system": "lymphatic",
+   "group": "lymphatic.node",
+   "positions": 122828,
+   "normals": 124748,
+   "indices": 125708,
+   "vertexCount": 160,
+   "indexCount": 879,
+   "bounds": [
+    [
+     -0.08885,
+     0.48847,
+     -0.0385
+    ],
+    [
+     -0.0579,
+     0.5615,
+     -0.02489
+    ]
+   ]
+  },
+  {
+   "id": "UMCG-LYM-node-pelvis",
+   "name": "Lymph nodes of pelvis",
+   "nameVi": "Hạch bạch huyết vùng chậu",
+   "conceptId": "FMA5034",
+   "system": "lymphatic",
+   "group": "lymphatic.node",
+   "positions": 129224,
+   "normals": 142424,
+   "indices": 149024,
+   "vertexCount": 1100,
+   "indexCount": 6276,
+   "bounds": [
+    [
+     -0.05448,
+     0.79069,
+     -0.01874
+    ],
+    [
+     0.05116,
+     0.93317,
+     0.06021
+    ]
+   ]
+  },
+  {
+   "id": "UMCG-LYM-node-thorax",
+   "name": "Lymph nodes of thorax",
+   "nameVi": "Hạch bạch huyết vùng ngực",
+   "conceptId": "FMA5034",
+   "system": "lymphatic",
+   "group": "lymphatic.node",
+   "positions": 174128,
+   "normals": 206240,
+   "indices": 222296,
+   "vertexCount": 2676,
+   "indexCount": 14982,
+   "bounds": [
+    [
+     -0.18539,
+     1.10089,
+     -0.09501
+    ],
+    [
+     0.09578,
+     1.42725,
+     0.12066
+    ]
+   ]
+  },
+  {
+   "id": "UMCG-LYM-vessel-abdomen",
+   "name": "Lymphatic vessels of abdomen",
+   "nameVi": "Mạch bạch huyết vùng bụng",
+   "conceptId": "FMA30315",
+   "system": "lymphatic",
+   "group": "lymphatic.vessel",
+   "positions": 282224,
+   "normals": 296096,
+   "indices": 303032,
+   "vertexCount": 1156,
+   "indexCount": 6690,
+   "bounds": [
+    [
+     -0.03543,
+     0.91311,
+     -0.04879
+    ],
+    [
+     0.05404,
+     1.06613,
+     0.03347
+    ]
+   ]
+  },
+  {
+   "id": "UMCG-LYM-vessel-axilla-left",
+   "name": "Lymphatic vessels of left axilla",
+   "nameVi": "Mạch bạch huyết vùng nách trái",
+   "conceptId": "FMA30315",
+   "system": "lymphatic",
+   "group": "lymphatic.vessel",
+   "positions": 329792,
+   "normals": 351692,
+   "indices": 362644,
+   "vertexCount": 1825,
+   "indexCount": 10671,
+   "bounds": [
+    [
+     0.08146,
+     1.19623,
+     -0.03726
+    ],
+    [
+     0.16918,
+     1.34732,
+     0.10172
+    ]
+   ]
+  },
+  {
+   "id": "UMCG-LYM-vessel-axilla-right",
+   "name": "Lymphatic vessels of right axilla",
+   "nameVi": "Mạch bạch huyết vùng nách phải",
+   "conceptId": "FMA30315",
+   "system": "lymphatic",
+   "group": "lymphatic.vessel",
+   "positions": 405328,
+   "normals": 439924,
+   "indices": 457224,
+   "vertexCount": 2883,
+   "indexCount": 16734,
+   "bounds": [
+    [
+     -0.17968,
+     1.17281,
+     -0.04526
+    ],
+    [
+     -0.01902,
+     1.36941,
+     0.12144
+    ]
+   ]
+  },
+  {
+   "id": "UMCG-LYM-vessel-head-neck",
+   "name": "Lymphatic vessels of head and neck",
+   "nameVi": "Mạch bạch huyết vùng đầu và cổ",
+   "conceptId": "FMA30315",
+   "system": "lymphatic",
+   "group": "lymphatic.vessel",
+   "positions": 524160,
+   "normals": 533976,
+   "indices": 538884,
+   "vertexCount": 818,
+   "indexCount": 4845,
+   "bounds": [
+    [
+     -0.08678,
+     1.39414,
+     -0.04045
+    ],
+    [
+     -0.00893,
+     1.51552,
+     0.02533
+    ]
+   ]
+  },
+  {
+   "id": "UMCG-LYM-vessel-lower-limb-left",
+   "name": "Lymphatic vessels of left lower limb",
+   "nameVi": "Mạch bạch huyết vùng chi dưới trái",
+   "conceptId": "FMA30315",
+   "system": "lymphatic",
+   "group": "lymphatic.vessel",
+   "positions": 558264,
+   "normals": 688836,
+   "indices": 754124,
+   "vertexCount": 10881,
+   "indexCount": 64674,
+   "bounds": [
+    [
+     0.01234,
+     0.01277,
+     -0.09093
+    ],
+    [
+     0.15674,
+     0.79437,
+     0.12238
+    ]
+   ]
+  },
+  {
+   "id": "UMCG-LYM-vessel-lower-limb-right",
+   "name": "Lymphatic vessels of right lower limb",
+   "nameVi": "Mạch bạch huyết vùng chi dưới phải",
+   "conceptId": "FMA30315",
+   "system": "lymphatic",
+   "group": "lymphatic.vessel",
+   "positions": 1012820,
+   "normals": 1163744,
+   "indices": 1239208,
+   "vertexCount": 12577,
+   "indexCount": 74391,
+   "bounds": [
+    [
+     -0.16406,
+     0.00984,
+     -0.09358
+    ],
+    [
+     -0.01204,
+     0.88798,
+     0.11758
+    ]
+   ]
+  },
+  {
+   "id": "UMCG-LYM-vessel-pelvis",
+   "name": "Lymphatic vessels of pelvis",
+   "nameVi": "Mạch bạch huyết vùng chậu",
+   "conceptId": "FMA30315",
+   "system": "lymphatic",
+   "group": "lymphatic.vessel",
+   "positions": 1536772,
+   "normals": 1565932,
+   "indices": 1580512,
+   "vertexCount": 2430,
+   "indexCount": 14214,
+   "bounds": [
+    [
+     -0.15641,
+     0.73727,
+     -0.01287
+    ],
+    [
+     0.15539,
+     0.96812,
+     0.05446
+    ]
+   ]
+  },
+  {
+   "id": "UMCG-LYM-vessel-thorax",
+   "name": "Lymphatic vessels of thorax",
+   "nameVi": "Mạch bạch huyết vùng ngực",
+   "conceptId": "FMA30315",
+   "system": "lymphatic",
+   "group": "lymphatic.vessel",
+   "positions": 1637368,
+   "normals": 1860736,
+   "indices": 1972420,
+   "vertexCount": 18614,
+   "indexCount": 110385,
+   "bounds": [
+    [
+     -0.18023,
+     0.98165,
+     -0.08982
+    ],
+    [
+     0.13317,
+     1.58484,
+     0.12378
+    ]
+   ]
+  },
+  {
+   "id": "UMCG-LYM-vessel-upper-limb-left",
+   "name": "Lymphatic vessels of left upper limb",
+   "nameVi": "Mạch bạch huyết vùng chi trên trái",
+   "conceptId": "FMA30315",
+   "system": "lymphatic",
+   "group": "lymphatic.vessel",
+   "positions": 2413960,
+   "normals": 2532784,
+   "indices": 2592196,
+   "vertexCount": 9902,
+   "indexCount": 59973,
+   "bounds": [
+    [
+     0.07464,
+     0.72378,
+     -0.0365
+    ],
+    [
+     0.32646,
+     1.4272,
+     0.09679
+    ]
+   ]
+  },
+  {
+   "id": "UMCG-LYM-vessel-upper-limb-right",
+   "name": "Lymphatic vessels of right upper limb",
+   "nameVi": "Mạch bạch huyết vùng chi trên phải",
+   "conceptId": "FMA30315",
+   "system": "lymphatic",
+   "group": "lymphatic.vessel",
+   "positions": 2832088,
+   "normals": 2942944,
+   "indices": 2998372,
+   "vertexCount": 9238,
+   "indexCount": 56064,
+   "bounds": [
+    [
+     -0.32704,
+     0.73227,
+     -0.03405
+    ],
+    [
+     -0.10055,
+     1.40936,
+     0.09609
+    ]
+   ]
+  }
+ ],
+ "concepts": [
+  {
+   "id": "FMA5034",
+   "name": "Lymph node",
+   "elements": [
+    "UMCG-LYM-node-abdomen",
+    "UMCG-LYM-node-axilla-left",
+    "UMCG-LYM-node-axilla-right",
+    "UMCG-LYM-node-head-neck",
+    "UMCG-LYM-node-inguinal-left",
+    "UMCG-LYM-node-lower-limb-left",
+    "UMCG-LYM-node-lower-limb-right",
+    "UMCG-LYM-node-pelvis",
+    "UMCG-LYM-node-thorax"
+   ]
+  },
+  {
+   "id": "FMA30315",
+   "name": "Lymphatic vessel",
+   "elements": [
+    "UMCG-LYM-vessel-abdomen",
+    "UMCG-LYM-vessel-axilla-left",
+    "UMCG-LYM-vessel-axilla-right",
+    "UMCG-LYM-vessel-head-neck",
+    "UMCG-LYM-vessel-lower-limb-left",
+    "UMCG-LYM-vessel-lower-limb-right",
+    "UMCG-LYM-vessel-pelvis",
+    "UMCG-LYM-vessel-thorax",
+    "UMCG-LYM-vessel-upper-limb-left",
+    "UMCG-LYM-vessel-upper-limb-right"
+   ]
+  }
+ ]
+}

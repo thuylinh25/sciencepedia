@@ -3,6 +3,7 @@ import path from "node:path";
 
 import { atlasSchema, correctSystems } from "../src/lib/human-atlas/anatomy";
 import { atlasDataUrl } from "../src/lib/human-atlas/assets";
+import { withSupplements } from "../src/lib/human-atlas/supplements";
 import { ANATOMY_SOURCES } from "../src/lib/human-atlas/structures";
 
 /**
@@ -40,6 +41,11 @@ const RULES: Record<string, [string, RegExp][]> = {
     ["small_intestine", /small intestine|jejun|\bileum\b|\bileal\b|duoden|ileocecal/i],
     ["large_intestine", /large intestine|colon|taenia|append|cecum|rectum/i],
     ["oral", /tongue|salivary|sublingual|submandibular|parotid/i],
+  ],
+  integumentary: [
+    ["hair", /hair|eyebrow/i],
+    ["lip", /^lip$/i],
+    ["skin", /skin/i],
   ],
   lymphatic: [
     ["spleen", /spleen/i],
@@ -88,7 +94,8 @@ async function main() {
   }
   console.log(Object.entries(counts).sort().map(([g, n]) => `${g}: ${n}`).join("\n"));
   const systemCounts: Record<string, number> = {};
-  for (const part of atlas.parts) systemCounts[part.system] = (systemCounts[part.system] ?? 0) + 1;
+  // Đếm cả phần bổ sung (mạng bạch huyết UMCG): viewer đếm trên danh mục đã nối.
+  for (const part of withSupplements(atlas).parts) systemCounts[part.system] = (systemCounts[part.system] ?? 0) + 1;
   console.log("hệ:", JSON.stringify(systemCounts));
   if (process.argv.includes("--write")) {
     writeFileSync(COUNTS_OUT, `${JSON.stringify(systemCounts, null, 1)}\n`);

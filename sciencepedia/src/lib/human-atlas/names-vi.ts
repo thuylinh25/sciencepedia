@@ -25,7 +25,8 @@
  * dịch. Sửa một tên sai: thêm `FMAxxxx: "…"` ở đây (một khái niệm) hoặc sửa
  * cụm trong `terms-vi.ts` (mọi tên chứa cụm đó).
  */
-import { translateAnatomy } from "./terms-vi";
+import { translateAnatomy } from "./terms-vi";
+import { SUPPLEMENT_NAMES_VI } from "./supplements";
 
 export const VI_NAMES: Record<string, string> = {
   // Tim và mạch lớn
@@ -95,6 +96,8 @@ export const VI_NAMES: Record<string, string> = {
   FMA9604: "Tuyến thượng thận",
   FMA9607: "Tuyến ức",
   FMA7196: "Lách",
+  FMA5034: "Hạch bạch huyết",
+  FMA30315: "Mạch bạch huyết",
 
   // Giác quan, bề mặt
   FMA12515: "Nhãn cầu trái",
@@ -145,7 +148,9 @@ export const VI_NAMES: Record<string, string> = {
 
 /** Tên tiếng Việt: bảng duyệt tay trước, rồi bảng ghép thuật ngữ; không có thì `null`. */
 export function viName(conceptId: string, englishName: string): string | null {
-  return VI_NAMES[conceptId] ?? translateAnatomy(englishName);
+  // Mảnh bổ sung mang tên NHÓM riêng ("hạch bạch huyết vùng nách phải") nhưng
+  // chung khái niệm FMA ("Lymph node") — tên nhóm phải thắng tên khái niệm.
+  return SUPPLEMENT_NAMES_VI[englishName] ?? VI_NAMES[conceptId] ?? translateAnatomy(englishName);
 }
 
 /** Tên hiển thị theo locale; thiếu bản tiếng Việt thì trả tên tiếng Anh gốc. */

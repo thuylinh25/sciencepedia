@@ -473,7 +473,17 @@ rendering — đừng sửa camera/màu để bù:
   tĩnh mạch cảnh trong (1,46 m): không tĩnh mạch nội sọ, mặt, da đầu, xoang tĩnh mạch màng cứng.
   Mảnh lớn ở ngực là "Set of anterior intercostal veins" (FMA70839) — đúng là tĩnh mạch.
 
-**Nhập asset ngoài (chưa làm — hợp đồng cho lần đầu có asset hợp pháp).** Asset bổ sung phải
+**Mạng bạch huyết UMCG (đã nhập 2026-09-29, CC BY-NC-SA 4.0 — Sciencepedia phi thương mại).**
+`scripts/import-umcg-lymphatic.ts`: FBX (tải từ Sketchfab, cần đăng nhập; để trong `.cache`, không
+commit) → chỉ giữ khối bạch huyết → căn toạ độ bằng ICP bộ xương UMCG ↔ bộ xương BodyParts3D (trung
+vị 1,95 mm; kiểm chéo khí quản 0,93 mm, động mạch chủ 2,94 mm) → 19 nhóm theo loại (hạch/mạch, suy
+từ hình dạng thành phần liên thông) × vùng → một khối trên R2 (`human-atlas/supplements/…`, có
+LICENSE.txt) + manifest `supplements/umcg-lymphatic.json`. `withSupplements()` nối vào CÙNG danh mục
+sau `correctSystems`, nên tìm/chọn/ẩn/góc nhìn chạy như mảnh gốc. Tệp gốc KHÔNG có tên hạch: tên là
+tên vùng, mã FMA là khái niệm chung (FMA5034, FMA30315). Bỏ 235 mảnh vụn < 12 đỉnh (cạnh trung vị
+2 mm — dư sculpt). Nguồn hình trong bảng chi tiết theo đúng mảnh đang chọn.
+
+**Nhập asset ngoài khác (hợp đồng).** Asset bổ sung phải
 đi vào CÙNG đường dữ liệu với BodyParts3D, không thành một khối riêng: mỗi cấu trúc một mảnh
 có mã riêng + mã FMA + hệ, để tìm kiếm, chọn, ẩn/xem riêng, góc nhìn đều dùng lại được. Không
 gộp cả mạng lưới thành một mesh. Trước khi nhận: đăng ký hệ toạ độ bằng mốc giải phẫu đo
@@ -523,6 +533,13 @@ SwiftShader (test headless) mỗi khung như vậy mất ~7 s — chờ ~100 s t
 `?view=<id>` ghi bằng replaceState như `?structure=`; đụng tới hệ (bật/tắt, preset, thẻ hệ,
 "Đặt lại", chip ×) là rời góc nhìn. Đổi hướng bằng Trước/Bên/Sau trong góc nhìn thắng hướng của
 góc nhìn.
+
+### Da đục thì không vẽ lớp trong
+
+Mạch và cơ nông của BodyParts3D lòi qua da vài mm (vệt đỏ/xanh ở cổ, cẳng chân). Khi da còn đục
+hoàn toàn (slider 0, không chọn cấu trúc sâu, không góc nhìn) thì mọi hệ trừ bề mặt và giác quan
+(mắt sau khe mi) không vẽ — hết vệt và bớt ~2 triệu tam giác. Năm mảnh bề mặt có nhóm màu riêng:
+da / tóc–lông / môi (trước đây cùng một màu, tóc trông như da đầu).
 
 ### Khung mặc định và thanh cuộn dọc
 
