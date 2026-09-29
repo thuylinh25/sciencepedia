@@ -297,6 +297,29 @@ const SYSTEM_CORRECTIONS: Record<string, SystemId> = {
   FMA14643: "connective", // Mesentery of small intestine
   FMA14647: "connective", // Transverse mesocolon
   FMA16549: "connective", // Mesoappendix
+  /*
+   * Audit 2026-09-29: 14 CƠ nằm trong hệ xương của atlas.json — bật riêng "Hệ
+   * xương" là hiện cơ chày trước/sau, ba cơ mác ở cẳng chân, cơ dưới vai và cơ
+   * nâng vai ở vai.
+   */
+  FMA22554: "muscular", // Right fibularis brevis
+  FMA22555: "muscular", // Left fibularis brevis
+  FMA22552: "muscular", // Right fibularis longus
+  FMA22553: "muscular", // Left fibularis longus
+  FMA22550: "muscular", // Right fibularis tertius
+  FMA22551: "muscular", // Left fibularis tertius
+  FMA22544: "muscular", // Right tibialis anterior
+  FMA22545: "muscular", // Left tibialis anterior
+  FMA65018: "muscular", // Right tibialis posterior
+  FMA65019: "muscular", // Left tibialis posterior
+  FMA13414: "muscular", // Right subscapularis
+  FMA13415: "muscular", // Left subscapularis
+  FMA32540: "muscular", // Right levator scapulae
+  FMA32541: "muscular", // Left levator scapulae
+  // Dải chậu chày là MẠC (chỗ dày lên của mạc đùi), không phải cơ — cùng nhóm
+  // màng với mạc treo ở trên.
+  FMA58776: "connective", // Right iliotibial tract
+  FMA58777: "connective", // Left iliotibial tract
 };
 
 // ------------------------------------------------------------ nhóm cơ quan

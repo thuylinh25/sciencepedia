@@ -4,6 +4,8 @@ import resolved from "./view-parts.generated.json";
 /*
  * ## Góc nhìn (Views) — dữ liệu, không JSX riêng mỗi góc
  *
+ * Thứ tự trong mảng = thứ tự và số thứ tự trên lưới: từ đầu xuống chân.
+ *
  * Góc nhìn theo vùng như "Regional Views" của các atlas giải phẫu: hiện MỌI
  * hệ trừ da (chủ sản phẩm chốt 2026-09-29 — góc nhìn là để thấy các hệ nằm
  * cạnh nhau ở một vùng), camera nhìn theo `direction` rồi tự khung theo hộp
@@ -44,17 +46,11 @@ export type AtlasViewDef = {
   missing?: { vi: string; en: string };
 };
 
-/** Cơ BodyParts3D xếp nhầm vào hệ xương — không cho vào tập xương. */
-const NOT_BONE = /tibialis|fibularis|iliotibial|subscapularis|levator scapulae/i;
 const SKELETAL = ["skeletal"] as const;
 const VERTEBRAE = /vertebra|^atlas$|^axis$|intervertebral disk|^sacrum$/i;
 const SKULL = /frontal bone|parietal bone|occipital bone|temporal bone|sphenoid|ethmoid|zygomatic|maxilla|nasal bone|palatine bone|vomer|mandible|tooth|gingiva/i;
 const RIB_CAGE = /\brib\b|costal cartilage|manubrium|body of sternum|xiphoid|thoracic vertebra/i;
-/** Mọi cơ — kể cả mấy cơ bị xếp nhầm sang hệ xương. */
-const MUSCLES: readonly PartRule[] = [
-  { systems: ["muscular"], name: /./ },
-  { systems: SKELETAL, name: NOT_BONE },
-];
+const MUSCLES: readonly PartRule[] = [{ systems: ["muscular"], name: /./ }];
 
 export const ATLAS_VIEWS: readonly AtlasViewDef[] = [
   {
@@ -62,7 +58,14 @@ export const ATLAS_VIEWS: readonly AtlasViewDef[] = [
     systemId: "skeletal",
     name: { vi: "Toàn bộ", en: "Full body" },
     direction: "front",
-    focus: [{ systems: SKELETAL, name: /./, exclude: NOT_BONE }],
+    focus: [{ systems: SKELETAL, name: /./ }],
+  },
+  {
+    id: "head-neck",
+    systemId: "muscular",
+    name: { vi: "Đầu và cổ", en: "Head and neck" },
+    direction: "three-quarter",
+    focus: [{ systems: SKELETAL, name: /^atlas$|^axis$|cervical vertebra|hyoid/i }, { systems: SKELETAL, name: SKULL }],
   },
   {
     id: "skull",
@@ -96,6 +99,41 @@ export const ATLAS_VIEWS: readonly AtlasViewDef[] = [
     },
   },
   {
+    id: "cervical-spine",
+    systemId: "skeletal",
+    name: { vi: "Cột sống cổ", en: "Cervical spine" },
+    direction: "side",
+    focus: [{ systems: SKELETAL, name: /^atlas$|^axis$|cervical vertebra/i }],
+    hide: MUSCLES,
+  },
+  {
+    id: "shoulder-girdle",
+    systemId: "skeletal",
+    name: { vi: "Đai vai", en: "Shoulder girdle" },
+    direction: "three-quarter",
+    focus: [{ systems: SKELETAL, name: /(clavicle|scapula)$/i }],
+    hide: MUSCLES,
+  },
+  {
+    id: "axilla",
+    systemId: "skeletal",
+    name: { vi: "Vùng nách", en: "Axilla" },
+    // Nách phải (x âm), nhìn chếch từ trước-ngoài.
+    direction: [-0.75, 0.12, 0.65],
+    focus: [
+      {
+        systems: ["arterial", "venous"],
+        name: /^right (axillary|subclavian|lateral thoracic|subscapular|circumflex scapular|(anterior|posterior) circumflex humeral) (artery|vein)$/i,
+      },
+      {
+        systems: ["muscular"],
+        name: /^right (pectoralis minor|subscapularis|serratus anterior|teres major|coracobrachialis)$/i,
+      },
+    ],
+    // Cơ ngực lớn phủ kín hố nách từ phía trước.
+    hide: [{ systems: ["muscular"], name: /pectoralis major/i }],
+  },
+  {
     id: "thoracic-cage",
     systemId: "skeletal",
     name: { vi: "Lồng ngực", en: "Thoracic cage" },
@@ -121,22 +159,29 @@ export const ATLAS_VIEWS: readonly AtlasViewDef[] = [
     hide: [{ systems: SKELETAL, name: /costal cartilage|manubrium|body of sternum|xiphoid/i }, ...MUSCLES],
   },
   {
-    id: "pelvic-girdle",
-    systemId: "skeletal",
-    name: { vi: "Đai chậu", en: "Pelvic girdle" },
-    direction: "front",
-    focus: [{ systems: SKELETAL, name: /hip bone|^sacrum$/i }],
-    hide: MUSCLES,
+    id: "cubital-fossa",
+    systemId: "arterial",
+    name: { vi: "Hố khuỷu", en: "Cubital fossa" },
+    // Khuỷu phải (x âm) ở tư thế giải phẫu: mặt trước quay ra trước.
+    direction: [-0.25, 0.05, 1],
+    focus: [
+      { systems: ["muscular"], name: /head of right pronator teres/i },
+      { systems: ["venous"], name: /^right median cubital vein$/i },
+    ],
   },
   {
-    id: "pelvis-section",
-    systemId: "skeletal",
-    name: { vi: "Mặt cắt vùng chậu", en: "Pelvic section" },
-    direction: "side",
-    missing: {
-      vi: "Cần mặt phẳng cắt (clipping) để bổ đôi xương chậu — trình xem chưa có. Bộ dữ liệu cũng thiếu xương cụt.",
-      en: "Needs a clipping plane to section the pelvis — not in the viewer yet. The dataset also lacks the coccyx.",
-    },
+    id: "abdomen",
+    systemId: "digestive",
+    name: { vi: "Bụng", en: "Abdomen" },
+    direction: "front",
+    focus: [
+      {
+        systems: ["digestive"],
+        name: /stomach|duodenum|jejunum|ileum|colon|caudate lobe of liver|hepatovenous segment|pancreas|gallbladder|appendix/i,
+      },
+      { systems: ["lymphatic"], name: /^spleen$/i },
+      { systems: ["urinary"], name: /kidney/i },
+    ],
   },
   {
     id: "spine-lateral",
@@ -160,31 +205,66 @@ export const ATLAS_VIEWS: readonly AtlasViewDef[] = [
     ],
   },
   {
-    id: "shoulder-girdle",
+    id: "lumbar-spine",
     systemId: "skeletal",
-    name: { vi: "Đai vai", en: "Shoulder girdle" },
-    direction: "three-quarter",
-    focus: [{ systems: SKELETAL, name: /(clavicle|scapula)$/i }],
+    name: { vi: "Cột sống thắt lưng", en: "Lumbar spine" },
+    // Chếch sau-bên: tạng ở phía trước không che thân đốt sống.
+    direction: [0.8, 0.1, -0.6],
+    focus: [{ systems: SKELETAL, name: /lumbar vertebra|^sacrum$/i }],
     hide: MUSCLES,
   },
   {
-    id: "axilla",
+    id: "pelvic-girdle",
     systemId: "skeletal",
-    name: { vi: "Vùng nách", en: "Axilla" },
-    // Nách phải (x âm), nhìn chếch từ trước-ngoài.
-    direction: [-0.75, 0.12, 0.65],
+    name: { vi: "Đai chậu", en: "Pelvic girdle" },
+    direction: "front",
+    focus: [{ systems: SKELETAL, name: /hip bone|^sacrum$/i }],
+    hide: MUSCLES,
+  },
+  {
+    id: "pelvis-section",
+    systemId: "skeletal",
+    name: { vi: "Mặt cắt vùng chậu", en: "Pelvic section" },
+    direction: "side",
+    missing: {
+      vi: "Cần mặt phẳng cắt (clipping) để bổ đôi xương chậu — trình xem chưa có. Bộ dữ liệu cũng thiếu xương cụt.",
+      en: "Needs a clipping plane to section the pelvis — not in the viewer yet. The dataset also lacks the coccyx.",
+    },
+  },
+  {
+    id: "hip",
+    systemId: "skeletal",
+    name: { vi: "Hông", en: "Hip" },
+    // Hông phải (x âm), chếch trước-ngoài.
+    direction: [-0.7, 0.1, 0.7],
+    focus: [
+      { systems: SKELETAL, name: /^right hip bone$/i },
+      { systems: ["muscular"], name: /^right gluteus (medius|minimus)$/i },
+    ],
+  },
+  {
+    id: "knee",
+    systemId: "skeletal",
+    name: { vi: "Gối", en: "Knee" },
+    // Bộ dữ liệu không có sụn chêm, dây chằng chéo: khung theo bánh chè và mạch khoeo.
+    direction: [-0.35, 0.05, 1],
+    focus: [
+      { systems: SKELETAL, name: /^right patella$/i },
+      { systems: ["arterial", "venous"], name: /^right popliteal (artery|vein)$/i },
+    ],
+  },
+  {
+    id: "foot",
+    systemId: "skeletal",
+    name: { vi: "Bàn chân", en: "Foot" },
+    // Bàn chân phải, nhìn từ trên-trước-ngoài như ảnh mu bàn chân.
+    direction: [-0.6, 0.55, 0.6],
     focus: [
       {
-        systems: ["arterial", "venous"],
-        name: /^right (axillary|subclavian|lateral thoracic|subscapular|circumflex scapular|(anterior|posterior) circumflex humeral) (artery|vein)$/i,
-      },
-      {
-        systems: ["muscular", "skeletal"],
-        name: /^right (pectoralis minor|subscapularis|serratus anterior|teres major|coracobrachialis)$/i,
+        systems: SKELETAL,
+        name: /^right (talus|calcaneus|cuboid bone|(medial|intermediate|lateral) cuneiform bone|\w+ metatarsal bone)$|navicular bone of right foot|phalanx of right .* toe|sesamoid bone of right foot/i,
       },
     ],
-    // Cơ ngực lớn phủ kín hố nách từ phía trước.
-    hide: [{ systems: ["muscular"], name: /pectoralis major/i }],
   },
 ];
 

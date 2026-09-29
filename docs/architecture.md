@@ -448,6 +448,8 @@ thẳng `state.explode`.
 trong cache OLS. Đã sửa: 8 "Hepatovenous segment" (nhu mô gan, trong chính khái niệm Gan) từ
 tĩnh mạch sang tiêu hoá — chúng là "khối xanh" ở bụng trên; 3 mạc treo (phúc mạc) sang mô
 liên kết — mạc treo ruột non 45k đỉnh phủ kín ~55 quai ruột non có sẵn.
+Thêm 2026-09-29: 14 cơ (chày trước/sau, ba cơ mác, dưới vai, nâng vai) từ hệ xương sang hệ cơ;
+dải chậu chày sang mô liên kết — nó là mạc (phần dày của mạc đùi), không phải cơ.
 
 **Giới hạn của BodyParts3D 4.0, đừng tìm lỗi phân loại ở đây:**
 - Thần kinh: 144/144 mảnh ở đầu — não + 20 dây thần kinh vùng ổ mắt. Không có thân tuỷ sống
