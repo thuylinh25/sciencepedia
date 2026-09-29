@@ -34,6 +34,7 @@ import {
   DEFAULT_VISIBLE,
   ORGAN_PRESET,
   CONCEPT_COUNT,
+  peelToExplode,
   PIECE_COUNT,
   SYSTEM_IDS,
   atlasSchema,
@@ -357,13 +358,21 @@ export function HumanAtlas({
   const onProgress = useCallback((n: number) => setProgress(n), []);
   const onError = useCallback((code: SceneError) => setFailure(code), []);
 
+  /** Độ tách KHÔNG GIAN (nửa đầu slider là bóc lớp, cảnh vẫn nguyên khối). */
+  const spread = peelToExplode(state.explode);
+  // Bề mặt cơ thể đứng đầu danh sách: nó là lớp ngoài cùng, thứ người đọc thấy trước.
+  const panelSystems = useMemo(
+    () => [...activeSystems].sort((a, b) => Number(b === "integumentary") - Number(a === "integumentary")),
+    [activeSystems],
+  );
+
   const caption = state.isolate
     ? chosen
       ? displayName(locale, chosen.id, chosen.name)
       : t("caption.isolated")
-    : state.explode > 0.95
+    : spread > 0.95
       ? t("caption.inventory")
-      : state.explode > 0.05
+      : spread > 0.05
         ? t("caption.separated")
         : t("caption.assembled");
 
@@ -407,6 +416,7 @@ export function HumanAtlas({
             state={{ ...state, inspectorOpen: detailOpen }}
             dark={dark}
             ariaLabel={t("canvasLabel")}
+            scrollLabel={t("scrollBody")}
             labelFor={labelFor}
             onSelect={choosePart}
             onProgress={onProgress}
@@ -473,7 +483,7 @@ export function HumanAtlas({
       {/* ------------------------------------------------------ bảng */}
       <SystemsPanel
         open={panel === "layers"}
-        systems={activeSystems}
+        systems={panelSystems}
         counts={counts}
         visible={state.visible}
         visibleCount={visibleCount}
@@ -533,7 +543,7 @@ export function HumanAtlas({
             label={t(`views.${v.key}`)}
             active={state.view === v.id}
             className="text-[11px] font-semibold atlas-short:hidden"
-            disabled={state.explode > 0.8 && v.id !== "front"}
+            disabled={spread > 0.8 && v.id !== "front"}
             onClick={() =>
               setState((s) => ({ ...s, view: v.id, reset: s.reset + 1, rotate: false }))
             }
@@ -545,7 +555,7 @@ export function HumanAtlas({
         <ToolButton
           label={state.rotate ? t("pauseRotate") : t("rotate")}
           active={state.rotate}
-          disabled={state.explode >= 0.4}
+          disabled={spread >= 0.4}
           onClick={() => setState((s) => ({ ...s, rotate: !s.rotate }))}
         >
           {state.rotate ? <Pause aria-hidden /> : <RotateCw aria-hidden />}
@@ -644,7 +654,7 @@ export function HumanAtlas({
         )}
       >
         <span>
-          {state.explode > 0.8 ? t("hintPan") : t("hintOrbit")} • {t("hintZoom")} • {t("hintTap")}
+          {spread > 0.8 ? t("hintPan") : t("hintOrbit")} • {t("hintZoom")} • {t("hintTap")}
         </span>
         <button
           type="button"

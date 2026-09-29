@@ -73,10 +73,76 @@ export const SYSTEM_COLORS: Record<SystemId, string> = {
   connective: "#aec3bb",
 };
 
-/** Bề mặt cơ thể là lớp kính mờ, mặc định tắt — bật lên là che hết bên trong. */
-export const DEFAULT_VISIBLE: SystemId[] = SYSTEM_IDS.filter(
-  (id) => id !== "integumentary",
-);
+/**
+ * Mọi hệ bật khi mở trang — KỂ CẢ bề mặt cơ thể (đổi 2026-09-29).
+ *
+ * Bản gốc tắt da và vẽ nó như kính mờ 10%, nên slider ở 0% ("Nguyên khối")
+ * lại cho thấy thẳng cơ và xương. Nay da là lớp ngoài cùng, đục: mở trang là
+ * một cơ thể nguyên vẹn; kéo slider mới bóc dần vào trong (`layerOpacity`).
+ */
+export const DEFAULT_VISIBLE: SystemId[] = [...SYSTEM_IDS];
+
+// ---------------------------------------------------------------- các lớp
+
+/**
+ * Lớp giải phẫu, từ ngoài vào trong. Slider "Tách các lớp" bóc theo thứ tự
+ * này; bật/tắt từng HỆ vẫn độc lập với nó (tắt một hệ là ẩn hẳn, slider chỉ
+ * điều chỉnh độ đậm của những hệ đang bật).
+ */
+export const LAYERS = ["surface", "muscle", "skeleton", "organs", "vascular", "nervous"] as const;
+export type AnatomyLayer = (typeof LAYERS)[number];
+
+export const SYSTEM_LAYER: Record<SystemId, AnatomyLayer> = {
+  integumentary: "surface",
+  muscular: "muscle",
+  // Gân, dây chằng, màng đi cùng cơ — bóc cùng lượt với cơ.
+  connective: "muscle",
+  skeletal: "skeleton",
+  cardiac: "organs",
+  sensory: "organs",
+  respiratory: "organs",
+  digestive: "organs",
+  urinary: "organs",
+  lymphatic: "organs",
+  endocrine: "organs",
+  reproductive: "organs",
+  arterial: "vascular",
+  venous: "vascular",
+  nervous: "nervous",
+};
+
+const smooth = (a: number, b: number, x: number) => {
+  const t = Math.min(1, Math.max(0, (x - a) / (b - a)));
+  return t * t * (3 - 2 * t);
+};
+
+/**
+ * Độ đậm của một lớp theo vị trí slider `s` (0–1):
+ *
+ *   0–20%   bề mặt cơ thể mờ dần
+ *   20–45%  lộ hệ cơ
+ *   45–65%  cơ mờ dần, lộ xương và các cấu trúc sâu
+ *   65–85%  nội tạng, mạch, thần kinh tách nhẹ ra khỏi nhau (`peelToExplode`)
+ *   85–100% tách hẳn thành lưới; cơ hiện lại để lưới đủ mọi hệ đang bật
+ *
+ * Mượt, không bật/tắt: mọi mốc đi qua smoothstep.
+ */
+export function layerOpacity(layer: AnatomyLayer, s: number): number {
+  if (layer === "surface") return 1 - smooth(0, 0.2, s);
+  if (layer === "muscle") return Math.max(1 - smooth(0.45, 0.65, s), smooth(0.85, 0.92, s));
+  return 1;
+}
+
+/**
+ * Slider → độ tách KHÔNG GIAN mà cảnh vẫn dùng (0 nguyên khối … 0,45 toả ra …
+ * 1 lưới). Nguyên khối suốt nửa đầu slider — phần đó là bóc lớp, không tách.
+ * Mọi ngưỡng cũ của giao diện (khoá góc nhìn, tắt tự xoay) đọc qua hàm này.
+ */
+export function peelToExplode(s: number): number {
+  if (s <= 0.65) return 0;
+  if (s <= 0.85) return ((s - 0.65) / 0.2) * 0.45;
+  return 0.45 + ((s - 0.85) / 0.15) * 0.55;
+}
 
 export const ORGAN_PRESET: SystemId[] = [
   "cardiac",

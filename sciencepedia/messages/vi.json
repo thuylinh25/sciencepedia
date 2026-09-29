@@ -730,6 +730,7 @@
     "description": "Khám phá cơ thể người qua mô hình giải phẫu 3D tương tác. Xem các hệ cơ quan, cấu trúc giải phẫu và tìm hiểu cơ thể trực quan trên Sciencepedia.",
     "eyebrow": "Giải phẫu tương tác",
     "meta": "{count} mảnh mô hình · BodyParts3D",
+    "scrollBody": "Di chuyển dọc cơ thể",
     "canvasLabel": "Mô hình giải phẫu người tương tác. Kéo để xoay, chụm hoặc cuộn để phóng to, chạm vào một cấu trúc để xem thông tin. Ô tìm kiếm và danh sách hệ cơ thể làm được mọi việc mà không cần thao tác trên mô hình.",
     "systems": "Hệ cơ thể",
     "all": "Tất cả",

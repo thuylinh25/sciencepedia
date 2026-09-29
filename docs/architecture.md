@@ -431,6 +431,25 @@ tablet nhưng thấp hơn điện thoại dựng. Ghép `md:` với biến thể
 khớp và thứ tự sinh CSS quyết định bên thắng; ba biến thể không chồng nhau (`globals.css`)
 thì không có câu hỏi đó. Thanh dưới trên điện thoại chừa 5rem bên phải cho nút trợ lý AI.
 
+### Slider = bóc lớp rồi mới tách; da là lớp ngoài cùng, mặc định bật
+
+BodyParts3D CÓ da: `FJ2810 Skin` (FMA7163) là một mesh liền toàn thân (~44.700 tam giác —
+thô ở mặt và ngón tay, giới hạn của asset), kèm tóc, lông mày, môi, lông mu. Bản gốc tắt nó
+và vẽ như kính 10%, nên slider 0% "Nguyên khối" lại cho thấy thẳng cơ. Nay `LAYERS` +
+`SYSTEM_LAYER` + `layerOpacity()` (anatomy.ts): 0–20% da mờ dần, 20–45% cơ, 45–65% cơ mờ,
+65–100% mới tách không gian (`peelToExplode`). Độ đậm đặt trên vật liệu của từng HỆ (đã có
+sẵn một vật liệu mỗi hệ) — không nhân bản vật liệu. Chọn cấu trúc sâu thì lớp ngoài mờ 18%.
+Mọi ngưỡng cũ của giao diện (khoá góc nhìn, tắt tự xoay) đọc qua `peelToExplode`, đừng đọc
+thẳng `state.explode`.
+
+### Khung mặc định và thanh cuộn dọc
+
+Khung ~70% chiều cao vùng quan sát (67% tablet, 64% điện thoại). Tiêu đề và ô tìm là mẩu ở
+góc: KHÔNG trừ như dải ngang — bản cũ trừ, bộ xương ra ~50%. Khi phóng to vượt khung, thanh
+cuộn dọc dời target + camera theo Y trong giới hạn hộp bao các hệ đang bật (có đệm: đỉnh đầu
+và bàn chân không bị cắt ở hai đầu thanh). Vừa khung thì target được kéo dần về giữa — không
+nhảy. `zoomToCursor` giữ điểm đang nhìn đứng yên khi zoom.
+
 ### Provenance: một sổ (`provenance.ts`), bốn vai, kiểm bằng tệp thật
 
 Bảng "Nguồn dữ liệu giải phẫu" đọc URL/giấy phép từ `ATLAS_PROVENANCE`, không viết cứng

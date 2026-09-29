@@ -730,6 +730,7 @@
     "description": "Explore the human body through an interactive 3D anatomical model. View organ systems and anatomical structures, and learn how the body fits together on Sciencepedia.",
     "eyebrow": "Interactive anatomy",
     "meta": "{count} modeled pieces · BodyParts3D",
+    "scrollBody": "Move along the body",
     "canvasLabel": "Interactive human anatomy. Drag to orbit, pinch or scroll to zoom, and tap a structure to inspect it. The search box and system list do everything without touching the model.",
     "systems": "Systems",
     "all": "All",

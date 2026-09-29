@@ -15,8 +15,12 @@ import { RenderPass } from "three/examples/jsm/postprocessing/RenderPass.js";
 import { mergeGeometries } from "three/examples/jsm/utils/BufferGeometryUtils.js";
 
 import {
+  LAYERS,
   SYSTEM_COLORS,
   SYSTEM_IDS,
+  SYSTEM_LAYER,
+  layerOpacity,
+  peelToExplode,
   type Atlas,
   type SceneState,
   type SystemId,
@@ -58,6 +62,8 @@ type Props = {
   state: SceneState;
   dark: boolean;
   ariaLabel: string;
+  /** Nhãn truy cập của thanh cuộn dọc ("Di chuyển dọc cơ thể"). */
+  scrollLabel: string;
   labelFor: (partIndex: number) => string;
   onSelect: (partId: string) => void;
   onProgress: (percent: number) => void;
@@ -79,6 +85,7 @@ export default function AnatomyScene({
   state,
   dark,
   ariaLabel,
+  scrollLabel,
   labelFor,
   onSelect,
   onProgress,
@@ -115,6 +122,8 @@ export default function AnatomyScene({
     let lastIsolate = "";
     let lastVisibleKey = "";
     let layoutKey = "";
+    /** Vị trí slider đã làm mượt (0–1). `amount` là độ tách không gian suy ra từ nó. */
+    let peel = 0;
     let amount = 0;
     let lastState: SceneState | null = null;
     const abort = new AbortController();
@@ -153,6 +162,9 @@ export default function AnatomyScene({
     controls.minDistance = 0.07;
     controls.maxDistance = 40;
     controls.maxPolarAngle = Math.PI * 0.96;
+    // Zoom về phía con trỏ: điểm giải phẫu đang nhìn đứng yên khi phóng to,
+    // thay vì cơ thể trượt ra khỏi khung quanh tâm cố định.
+    controls.zoomToCursor = true;
     controls.addEventListener("change", () => {
       dirty = true;
     });
@@ -291,16 +303,15 @@ export default function AnatomyScene({
     };
 
     const materialFor = (system: SystemId) => {
-      const glass = system === "integumentary";
       const m = new T.MeshStandardMaterial({
         color: SYSTEM_COLORS[system] ?? "#aebbb8",
         metalness: 0,
-        // Xương mờ như xương thật; mô mềm ẩm hơn một chút.
-        roughness: system === "skeletal" ? 0.74 : 0.6,
+        // Xương mờ như xương thật; da mờ nhất (không bóng như sáp); mô mềm ẩm hơn.
+        roughness: system === "skeletal" ? 0.74 : system === "integumentary" ? 0.68 : 0.6,
         side: T.DoubleSide,
-        transparent: glass,
-        opacity: glass ? 0.1 : 1,
-        depthWrite: !glass,
+        // Độ đậm do `applyLayers()` đặt theo slider — bắt đầu đục.
+        transparent: false,
+        opacity: 1,
       });
       m.onBeforeCompile = (shader) => {
         shader.uniforms.partState = { value: partTexture };
@@ -337,11 +348,43 @@ export default function AnatomyScene({
       return m;
     };
     const mats = new Map(SYSTEM_IDS.map((id) => [id, materialFor(id)]));
-    // Kênh G của texture chọn = mảnh "kính" (bề mặt cơ thể): pass AO bỏ qua nó,
-    // nếu không lớp da trong suốt sẽ đổ bóng AO lên mọi thứ bên trong.
-    parts.forEach((p, i) => {
-      if (p.system === "integumentary") selectedData[i * 4 + 1] = 255;
-    });
+    /*
+     * ## Các lớp (2026-09-29)
+     *
+     * Slider "Tách các lớp" bóc từ ngoài vào: da → cơ → xương… (`layerOpacity`
+     * trong anatomy.ts), rồi mới tách không gian (`peelToExplode`). Độ đậm đặt
+     * trên VẬT LIỆU của từng hệ — một vật liệu mỗi hệ đã có sẵn, không nhân bản
+     * cho 2.234 mảnh. Lớp đang mờ: `transparent`, không ghi depth (lớp trong
+     * hiện qua), vẽ sau lớp đục (`renderOrder` theo độ sâu, ngoài cùng vẽ cuối).
+     *
+     * Chọn một cấu trúc ở SÂU (tim) khi các lớp ngoài còn đục: mọi lớp nằm
+     * ngoài nó mờ xuống 18%, để lớp ngoài không che mất thứ người đọc vừa chọn.
+     *
+     * Kênh G của texture chọn = mảnh thuộc lớp đang mờ: pass AO bỏ qua nó
+     * (lớp trong suốt mà đổ bóng AO là tối sầm cả cơ thể).
+     */
+    const DIMMED = 0.18;
+    const alphaBySystem = new Map<SystemId, number>(SYSTEM_IDS.map((id) => [id, 1]));
+    const layerIndex = (system: SystemId) => LAYERS.indexOf(SYSTEM_LAYER[system]);
+    const partIndexById = new Map(parts.map((p, i) => [p.id, i]));
+    const applyLayers = (selected: string[]) => {
+      let deepest = -1;
+      for (const id of selected) {
+        const i = partIndexById.get(id);
+        if (i !== undefined) deepest = Math.max(deepest, layerIndex(parts[i].system));
+      }
+      for (const system of SYSTEM_IDS) {
+        let alpha = layerOpacity(SYSTEM_LAYER[system], peel);
+        if (layerIndex(system) < deepest) alpha = Math.min(alpha, DIMMED);
+        alphaBySystem.set(system, alpha);
+        const m = mats.get(system)!;
+        const solid = alpha > 0.999;
+        m.opacity = solid ? 1 : alpha;
+        m.transparent = !solid;
+        m.depthWrite = solid;
+      }
+    };
+    const alphaOf = (i: number) => alphaBySystem.get(parts[i].system) ?? 1;
 
     /*
      * ## AO (ambient occlusion) — chỉ desktop, chỉ khi đứng yên
@@ -444,6 +487,8 @@ export default function AnatomyScene({
         geometries.push(geometry);
         const mesh = new T.Mesh(geometry, mats.get(system));
         mesh.frustumCulled = false;
+        // Ngoài cùng vẽ cuối: lớp mờ phải vẽ sau những gì nó phủ lên.
+        mesh.renderOrder = LAYERS.length - LAYERS.indexOf(SYSTEM_LAYER[system]);
         scene.add(mesh);
       });
       lastState = null;
@@ -505,7 +550,10 @@ export default function AnatomyScene({
         const r = node.getBoundingClientRect();
         if (r.width === 0 || r.height === 0) return; // đang ẩn (display: none)
         const side = node.dataset.atlasAvoid;
-        if (side === "top") top = Math.max(top, r.bottom - host.top);
+        // Mẩu ở góc (tiêu đề, ô tìm) không phải dải ngang: trừ cả chiều cao cho
+        // chúng là thu cơ thể xuống ~50% khung dù đầu không hề chạm chúng.
+        const corner = r.width < w * 0.4;
+        if (side === "top") top = corner ? top : Math.max(top, r.bottom - host.top);
         else if (side === "bottom") bottom = Math.min(bottom, r.top - host.top);
         // Bảng dọc rộng quá nửa khung là lớp nổi tạm (danh sách hệ trên điện
         // thoại) — né nó thì mô hình co lại mỗi lần mở danh sách.
@@ -530,8 +578,13 @@ export default function AnatomyScene({
       return box;
     };
 
-    /** Đệm mỗi phía của vùng trống: hộp bao chiếm ~72% chiều cao vùng đó. */
-    const FRAME_PADDING = 0.14;
+    /**
+     * Hộp bao chiếm bao nhiêu chiều cao VÙNG QUAN SÁT: 70% desktop, 67% tablet,
+     * 64% điện thoại. Vùng quan sát đã trừ thanh "Tách các lớp" và bảng dọc hai
+     * bên; mẩu ở góc không tính (xem `usableRect`). Bản cũ tính 72% nhưng trừ
+     * cả tiêu đề góc trái như một dải ngang — bộ xương ra ~50% màn hình.
+     */
+    const frameFill = (w: number) => (w < 768 ? 0.64 : w < 1024 ? 0.67 : 0.7);
     const corner = new T.Vector3();
 
     /**
@@ -573,8 +626,9 @@ export default function AnatomyScene({
         .addScaledVector(right, (minR + maxR) / 2)
         .addScaledVector(up, (minU + maxU) / 2);
       const tanHalf = fovTan() / 2;
-      const fillY = ((rect.bottom - rect.top) * (1 - 2 * FRAME_PADDING)) / rect.h;
-      const fillX = ((rect.right - rect.left) * (1 - 2 * FRAME_PADDING)) / rect.w;
+      const fill = frameFill(rect.w);
+      const fillY = ((rect.bottom - rect.top) * fill) / rect.h;
+      const fillX = ((rect.right - rect.left) * fill) / rect.w;
       // Tính tới MẶT GẦN của hộp (+ nearest): mặt ấy hiện to nhất trên màn.
       const distance =
         Math.max(
@@ -753,6 +807,129 @@ export default function AnatomyScene({
       dirty = true;
     };
 
+    /*
+     * ## Di chuyển dọc khi phóng to (2026-09-29)
+     *
+     * Zoom = độ phóng; thanh cuộn dọc = vị trí xem dọc cơ thể; kéo = góc nhìn.
+     * Ba thứ độc lập. Thanh cuộn KHÔNG cuộn DOM: nó dời target của camera (và
+     * camera theo cùng một đoạn) theo trục Y. Giới hạn tính từ hộp bao các hệ
+     * đang bật, cộng đệm: ở đầu thanh thấy trọn đỉnh đầu, ở cuối thấy trọn bàn
+     * chân. Cơ thể còn vừa khung thì không có phạm vi, thanh ẩn, và target bị
+     * kéo dần về giữa — zoom ra tới lúc vừa là cơ thể tự căn giữa, không nhảy.
+     * Chỉ ở nguyên khối, ngoài "xem riêng" và ngoài lúc camera đang chuyển.
+     */
+    let boxKey = "";
+    let cachedBox = new T.Box3();
+    const currentBox = () => {
+      const key = latest.current.visible.join(",");
+      if (key !== boxKey) {
+        cachedBox = visibleBox();
+        boxKey = key;
+      }
+      return cachedBox;
+    };
+    const scrollRange = () => {
+      const box = currentBox();
+      const rect = usableRect();
+      const distance = camera.position.distanceTo(controls.target);
+      // Chiều cao thế giới mà vùng quan sát chứa được, ở mặt phẳng của target.
+      const viewHeight = fovTan() * distance * ((rect.bottom - rect.top) / Math.max(1, rect.h));
+      const pad = viewHeight * 0.05;
+      const lo = box.min.y - pad + viewHeight / 2;
+      const hi = box.max.y + pad - viewHeight / 2;
+      const center = (box.min.y + box.max.y) / 2;
+      return lo < hi ? { lo, hi, center, overflow: true, viewHeight, total: box.max.y - box.min.y + 2 * pad } : { lo: center, hi: center, center, overflow: false, viewHeight, total: 1 };
+    };
+    const shiftY = (dy: number) => {
+      controls.target.y += dy;
+      camera.position.y += dy;
+      dirty = true;
+    };
+    const navActive = () => amount < 0.05 && !latest.current.isolate && !tween;
+
+    const track = document.createElement("div");
+    track.className = "absolute top-[18%] right-1.5 bottom-[18%] z-20 w-2 rounded-full bg-white/[0.06] touch-none";
+    track.setAttribute("role", "scrollbar");
+    track.setAttribute("aria-orientation", "vertical");
+    track.setAttribute("aria-label", scrollLabel);
+    track.setAttribute("aria-valuemin", "0");
+    track.setAttribute("aria-valuemax", "100");
+    track.tabIndex = 0;
+    track.hidden = true;
+    const thumb = document.createElement("div");
+    thumb.className = "absolute inset-x-0 rounded-full bg-white/35 hover:bg-white/55";
+    track.appendChild(thumb);
+    root.appendChild(track);
+
+    /** 0 = đỉnh đầu, 1 = bàn chân. */
+    const scrollTo = (fraction: number) => {
+      const range = scrollRange();
+      if (!range.overflow) return;
+      const f = Math.min(1, Math.max(0, fraction));
+      shiftY(range.hi - f * (range.hi - range.lo) - controls.target.y);
+    };
+    let dragOffset: number | null = null;
+    const trackFraction = (clientY: number) => {
+      const r = track.getBoundingClientRect();
+      const thumbH = thumb.getBoundingClientRect().height;
+      return (clientY - r.top - (dragOffset ?? thumbH / 2)) / Math.max(1, r.height - thumbH);
+    };
+    const trackDown = (e: PointerEvent) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const t = thumb.getBoundingClientRect();
+      dragOffset = e.target === thumb ? e.clientY - t.top : t.height / 2;
+      track.setPointerCapture(e.pointerId);
+      scrollTo(trackFraction(e.clientY));
+    };
+    const trackMove = (e: PointerEvent) => {
+      if (dragOffset === null) return;
+      scrollTo(trackFraction(e.clientY));
+    };
+    const trackUp = () => {
+      dragOffset = null;
+    };
+    const trackKey = (e: KeyboardEvent) => {
+      const range = scrollRange();
+      if (!range.overflow) return;
+      const stepY = range.viewHeight * (e.key === "PageUp" || e.key === "PageDown" ? 0.8 : 0.1);
+      const dy = { ArrowUp: stepY, PageUp: stepY, ArrowDown: -stepY, PageDown: -stepY }[e.key];
+      if (e.key === "Home") shiftY(range.hi - controls.target.y);
+      else if (e.key === "End") shiftY(range.lo - controls.target.y);
+      else if (dy) shiftY(dy);
+      else return;
+      e.preventDefault();
+    };
+    track.addEventListener("pointerdown", trackDown);
+    track.addEventListener("pointermove", trackMove);
+    track.addEventListener("pointerup", trackUp);
+    track.addEventListener("pointercancel", trackUp);
+    track.addEventListener("keydown", trackKey);
+
+    /** Giữ target trong phạm vi hợp lệ và vẽ thanh theo vị trí hiện tại. */
+    const updateScroll = () => {
+      if (!navActive()) {
+        track.hidden = true;
+        return;
+      }
+      const range = scrollRange();
+      const y = controls.target.y;
+      if (!range.overflow) {
+        // Vừa khung: kéo dần về giữa (không nhảy), thanh ẩn.
+        if (Math.abs(y - range.center) > 1e-4) shiftY((range.center - y) * 0.25);
+        track.hidden = true;
+        return;
+      }
+      if (y > range.hi) shiftY(range.hi - y);
+      else if (y < range.lo) shiftY(range.lo - y);
+      const fraction = (range.hi - controls.target.y) / (range.hi - range.lo);
+      const size = Math.max(0.08, Math.min(1, range.viewHeight / range.total));
+      thumb.style.height = `${size * 100}%`;
+      thumb.style.top = `${fraction * (1 - size) * 100}%`;
+      track.setAttribute("aria-valuenow", String(Math.round(fraction * 100)));
+      track.hidden = false;
+    };
+
     const resize = () => {
       layoutKey = "";
       lastState = null;
@@ -783,8 +960,8 @@ export default function AnatomyScene({
     const hitPoint = new T.Vector3();
     const canvas = renderer.domElement;
 
-    const hasSolidVisible = () =>
-      parts.some((p, i) => p.system !== "integumentary" && data[i * 4 + 3] > 0.5);
+    /** Mảnh bấm được: đang hiện và lớp của nó đủ đậm (lớp mờ để bấm xuyên qua). */
+    const pickable = (i: number) => data[i * 4 + 3] > 0.5 && alphaOf(i) >= 0.5;
 
     const down = (e: PointerEvent) => {
       hover.hidden = true;
@@ -820,11 +997,8 @@ export default function AnatomyScene({
       raycaster.setFromCamera(pointer, camera);
       let nearest = Infinity;
       let found = -1;
-      const hasSolid = hasSolidVisible();
       pickers.forEach((mesh, i) => {
-        if (!mesh || data[i * 4 + 3] < 0.5 || (hasSolid && parts[i].system === "integumentary")) {
-          return;
-        }
+        if (!mesh || !pickable(i)) return;
         worldBox.copy(bounds[i]).translate(mesh.position);
         if (!raycaster.ray.intersectBox(worldBox, hitPoint)) return;
         const hits = raycaster.intersectObject(mesh, false);
@@ -863,17 +1037,22 @@ export default function AnatomyScene({
         lastState?.visible !== s.visible ||
         lastState?.selected !== s.selected ||
         lastState?.isolate !== s.isolate;
-      const moving = Math.abs(amount - s.explode) > 0.0001;
+      const moving = Math.abs(peel - s.explode) > 0.0001;
       if (moving) {
-        amount = T.MathUtils.damp(amount, s.explode, 8, dt);
+        peel = T.MathUtils.damp(peel, s.explode, 8, dt);
+        amount = peelToExplode(peel);
         dirty = true;
       }
 
       if (changed || moving || lastExtent < 0) {
+        applyLayers(s.selected);
         const visible = new Set(s.visible);
         const selection = new Set(s.selected);
-        const visibleParts = parts.filter((p) =>
-          s.isolate ? selection.has(p.id) : visible.has(p.system) || selection.has(p.id),
+        // Lớp đã mờ hẳn (da sau 20%) không chiếm ô trong lưới tách.
+        const visibleParts = parts.filter(
+          (p, i) =>
+            (s.isolate ? selection.has(p.id) : visible.has(p.system) || selection.has(p.id)) &&
+            (s.isolate || selection.has(p.id) || alphaOf(i) > 0.01),
         );
         const nextLayoutKey =
           visibleParts.map((p) => p.id).join(",") + ":" + camera.aspect.toFixed(3);
@@ -908,12 +1087,15 @@ export default function AnatomyScene({
             dz = T.MathUtils.lerp(Math.cos(angle) * 0.48, -c.z, t);
           }
           const selected = selection.has(p.id);
-          const shown = s.isolate ? selected : visible.has(p.system) || selected;
+          const shown =
+            (s.isolate ? selected : visible.has(p.system) || selected) &&
+            (s.isolate || selected || alphaOf(i) > 0.01);
           data[i * 4] = dx;
           data[i * 4 + 1] = dy;
           data[i * 4 + 2] = dz;
           data[i * 4 + 3] = shown ? 1 : 0;
           selectedData[i * 4] = selected ? 255 : 0;
+          selectedData[i * 4 + 1] = alphaOf(i) < 0.999 ? 255 : 0;
           if (shown) {
             markerPositions[i * 3] = c.x + dx;
             markerPositions[i * 3 + 1] = c.y + dy;
@@ -1037,6 +1219,7 @@ export default function AnatomyScene({
       controls.autoRotateSpeed = 0.65;
       controls.update();
       if (controls.autoRotate) dirty = true;
+      if (dirty) updateScroll();
 
       const now = performance.now();
       if (dirty) {
@@ -1054,11 +1237,10 @@ export default function AnatomyScene({
         renderer.render(scene, camera);
         targets = [];
         if (amount > 0.45) {
-          const hasSolid = hasSolidVisible();
           const cw = el.clientWidth;
           const ch = el.clientHeight;
           parts.forEach((p, i) => {
-            if (data[i * 4 + 3] < 0.5 || (hasSolid && p.system === "integumentary")) return;
+            if (!pickable(i)) return;
             let left = Infinity;
             let right = -Infinity;
             let top = Infinity;
@@ -1133,6 +1315,7 @@ export default function AnatomyScene({
       markerGeometry.dispose();
       markerMaterial.dispose();
       hover.remove();
+      track.remove();
       renderer.dispose();
       canvas.remove();
       themeRef.current = () => {};
