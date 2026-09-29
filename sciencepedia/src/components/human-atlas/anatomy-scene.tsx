@@ -8,6 +8,10 @@ import { useEffect, useRef } from "react";
 import * as T from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import { RoomEnvironment } from "three/examples/jsm/environments/RoomEnvironment.js";
+import { EffectComposer } from "three/examples/jsm/postprocessing/EffectComposer.js";
+import { GTAOPass } from "three/examples/jsm/postprocessing/GTAOPass.js";
+import { OutputPass } from "three/examples/jsm/postprocessing/OutputPass.js";
+import { RenderPass } from "three/examples/jsm/postprocessing/RenderPass.js";
 import { mergeGeometries } from "three/examples/jsm/utils/BufferGeometryUtils.js";
 
 import {
@@ -39,7 +43,9 @@ import { PointerTap } from "@/lib/human-atlas/pointer-tap";
  * - URL dữ liệu dựng bằng `atlasDataUrl` (R2, có dấu vân) thay vì `/models/`.
  * - Lỗi báo bằng MÃ, chữ do giao diện dịch — bản gốc ghi cứng tiếng Anh.
  * - Nhãn khi rê chuột lấy từ `labelFor` để hiện tên tiếng Việt.
- * - Nền và bệ đổi theo theme sáng/tối của site. Vật liệu mô hình giữ nguyên.
+ * - Nền đổi theo theme sáng/tối của site.
+ * - Rendering kiểu "medical visualization" (2026-09-29) — xem khối ghi chú
+ *   "Ánh sáng & vật liệu" bên dưới.
  * - Thêm `state.focus`: camera bay tới cấu trúc đang chọn (deep link).
  * - Tìm bảng chi tiết bằng `data-atlas-*` trong chính khung, không
  *   `document.querySelector` theo tên lớp toàn cục.
@@ -58,10 +64,12 @@ type Props = {
   onError: (code: SceneError) => void;
 };
 
-const THEMES = {
-  light: { clear: "#f2f3f3", ground: 0xd5d9dc, platform: 0xeeeeec, ring: 0x8c969f },
-  dark: { clear: "#131b29", ground: 0x0a0f18, platform: 0x1a2230, ring: 0x6b7a8c },
-};
+/**
+ * Nền. Tối là gần đen (#05070a) chứ không navy #131b29 như bản gốc: giải phẫu
+ * là thứ duy nhất trong khung, nền không được có màu riêng. Khớp với nền của
+ * khung trong `human-atlas.tsx` để không loé khi canvas chưa vẽ.
+ */
+export const SCENE_BACKGROUND = { light: "#eef0f1", dark: "#05070a" } as const;
 
 /** Số khối tải song song — giữ như bản gốc: đủ lấp băng thông, không nghẽn kết nối. */
 const PARALLEL_CHUNKS = 3;
@@ -115,7 +123,11 @@ export default function AnatomyScene({
     try {
       renderer = new T.WebGLRenderer({
         antialias: true,
-        alpha: false,
+        // Canvas trong suốt, nền do khung DOM (`human-atlas.tsx`) tô. Lý do: đường
+        // vẽ có AO (EffectComposer) xoá render target bằng giá trị sRGB rồi
+        // OutputPass áp ACES + sRGB LẦN NỮA lên nó — #05070a thành navy
+        // (20,29,39) chỉ ở những khung có AO. Không vẽ nền thì không lệch được.
+        alpha: true,
         powerPreference: "high-performance",
       });
     } catch {
@@ -125,7 +137,7 @@ export default function AnatomyScene({
     renderer.setPixelRatio(Math.min(devicePixelRatio, innerWidth < 768 ? 1.5 : 2));
     renderer.outputColorSpace = T.SRGBColorSpace;
     renderer.toneMapping = T.ACESFilmicToneMapping;
-    renderer.toneMappingExposure = 1.12;
+    renderer.toneMappingExposure = 1.0;
     renderer.domElement.className = "block size-full touch-none";
     renderer.domElement.setAttribute("role", "img");
     renderer.domElement.setAttribute("aria-label", ariaLabel);
@@ -145,63 +157,49 @@ export default function AnatomyScene({
       dirty = true;
     });
 
+    /*
+     * ## Ánh sáng & vật liệu (2026-09-29)
+     *
+     * Bản gốc chiếu kiểu phòng trưng bày: đèn bán cầu 1.05 + RoomEnvironment
+     * cường độ đầy đủ tắm đều mọi mặt, nên xương trắng và PHẲNG — hốc mắt, kẽ
+     * sườn, thân đốt sống không có vùng tối để mắt đọc ra hình khối. Đèn lại
+     * cố định trong không gian: xoay ra sau là nhìn vào mặt tối.
+     *
+     * Nay: ba đèn định hướng GẮN VÀO CAMERA (key trên-trái-trước mạnh, fill
+     * phải yếu, rim từ sau để tách viền khỏi nền) — góc nào cũng được chiếu như
+     * nhau, như đèn chụp ảnh y khoa đi theo máy. Môi trường và đèn bán cầu chỉ
+     * còn đủ để mặt khuất không đen kịt. Vật liệu `metalness` 0: mô không phải
+     * kim loại, và 0.08 của bản gốc chính là thứ cho cảm giác nhựa.
+     *
+     * Không có texture nào để "giữ": dữ liệu chỉ có vị trí, pháp tuyến, chỉ số
+     * — không UV. Màu mỗi hệ là màu phẳng trong `SYSTEM_COLORS`.
+     */
     const pmrem = new T.PMREMGenerator(renderer);
     const room = new RoomEnvironment();
     const env = pmrem.fromScene(room, 0.04);
     scene.environment = env.texture;
+    scene.environmentIntensity = 0.28;
     room.dispose();
     pmrem.dispose();
 
-    scene.add(new T.HemisphereLight(0xffffff, 0xa7acb2, 1.05));
-    const key = new T.DirectionalLight(0xfffaf4, 2.3);
-    key.position.set(-2, 4, 3);
-    scene.add(key);
-    const rim = new T.DirectionalLight(0xe9f0ff, 1.8);
-    rim.position.set(2, 2, -3);
-    scene.add(rim);
+    const hemisphere = new T.HemisphereLight(0xf2eee6, 0x14161a, 0.32);
+    scene.add(hemisphere);
+    scene.add(camera);
+    const cameraLight = (color: number, intensity: number, x: number, y: number, z: number) => {
+      // Đèn định hướng chỉ cần HƯỚNG: vị trí so với đích, cả hai theo camera.
+      const light = new T.DirectionalLight(color, intensity);
+      light.position.set(x, y, z);
+      light.target.position.set(0, 0, 0);
+      camera.add(light, light.target);
+      return light;
+    };
+    cameraLight(0xfff4e6, 2.5, -1.3, 1.7, 1.2); // key
+    cameraLight(0xe6edfb, 0.55, 1.7, 0.1, 0.8); // fill
+    cameraLight(0xdfe7ff, 1.35, 0.7, 1.1, -2.4); // rim, từ sau mô hình về phía camera
 
-    const groundMaterial = new T.MeshStandardMaterial({ color: 0xd5d9dc, roughness: 1 });
-    const ground = new T.Mesh(new T.CircleGeometry(30, 96), groundMaterial);
-    ground.rotation.x = -Math.PI / 2;
-    ground.position.y = -0.019;
-    scene.add(ground);
-    const platformMaterial = new T.MeshStandardMaterial({
-      color: 0xeeeeec,
-      metalness: 0.12,
-      roughness: 0.67,
-    });
-    const platform = new T.Mesh(new T.CylinderGeometry(0.68, 0.7, 0.028, 100), platformMaterial);
-    platform.position.y = -0.016;
-    scene.add(platform);
-    const ringMaterial = new T.MeshBasicMaterial({
-      color: 0x8c969f,
-      transparent: true,
-      opacity: 0.4,
-      side: T.DoubleSide,
-    });
-    const ring = new T.Mesh(new T.RingGeometry(0.63, 0.632, 128), ringMaterial);
-    ring.rotation.x = -Math.PI / 2;
-    ring.position.y = 0.001;
-    scene.add(ring);
-    const innerRing = new T.Mesh(
-      new T.RingGeometry(0.55, 0.551, 128),
-      new T.MeshBasicMaterial({
-        color: 0xa4aeb8,
-        transparent: true,
-        opacity: 0.16,
-        side: T.DoubleSide,
-      }),
-    );
-    innerRing.rotation.x = -Math.PI / 2;
-    innerRing.position.y = 0.001;
-    scene.add(innerRing);
-
-    themeRef.current = (isDark: boolean) => {
-      const theme = isDark ? THEMES.dark : THEMES.light;
-      renderer.setClearColor(theme.clear);
-      groundMaterial.color.set(theme.ground);
-      platformMaterial.color.set(theme.platform);
-      ringMaterial.color.set(theme.ring);
+    // Nền do khung DOM tô (xem `alpha: true`); theme đổi thì vẽ lại cho chắc.
+    renderer.setClearColor(0x000000, 0);
+    themeRef.current = () => {
       dirty = true;
     };
     themeRef.current(dark);
@@ -296,8 +294,9 @@ export default function AnatomyScene({
       const glass = system === "integumentary";
       const m = new T.MeshStandardMaterial({
         color: SYSTEM_COLORS[system] ?? "#aebbb8",
-        metalness: 0.08,
-        roughness: 0.53,
+        metalness: 0,
+        // Xương mờ như xương thật; mô mềm ẩm hơn một chút.
+        roughness: system === "skeletal" ? 0.74 : 0.6,
         side: T.DoubleSide,
         transparent: glass,
         opacity: glass ? 0.1 : 1,
@@ -320,15 +319,85 @@ export default function AnatomyScene({
           "#include <clipping_planes_fragment>",
           "#include <clipping_planes_fragment>\nif (partVisible < 0.5) discard;",
         );
+        /*
+         * Mảnh đang chọn GIỮ màu và bề mặt của nó: chỉ ám cyan 12%, cộng viền
+         * sáng cyan ở rìa (fresnel) và phát sáng rất khẽ. Bản gốc trộn 75% sang
+         * xanh ngọc — mảnh chọn thành một khối neon, mất luôn hình khối.
+         */
         shader.fragmentShader = shader.fragmentShader.replace(
           "#include <color_fragment>",
-          "#include <color_fragment>\ndiffuseColor.rgb = mix(diffuseColor.rgb, vec3(0.42, 0.85, 0.78), partSelected * 0.75);",
+          "#include <color_fragment>\ndiffuseColor.rgb = mix(diffuseColor.rgb, vec3(0.45, 0.82, 0.95), partSelected * 0.12);",
+        );
+        shader.fragmentShader = shader.fragmentShader.replace(
+          "#include <emissivemap_fragment>",
+          "#include <emissivemap_fragment>\nfloat selectRim = pow(1.0 - abs(dot(normal, normalize(vViewPosition))), 2.5);\ntotalEmissiveRadiance += vec3(0.30, 0.72, 1.0) * partSelected * (0.06 + 0.55 * selectRim);",
         );
       };
       materials.push(m);
       return m;
     };
     const mats = new Map(SYSTEM_IDS.map((id) => [id, materialFor(id)]));
+    // Kênh G của texture chọn = mảnh "kính" (bề mặt cơ thể): pass AO bỏ qua nó,
+    // nếu không lớp da trong suốt sẽ đổ bóng AO lên mọi thứ bên trong.
+    parts.forEach((p, i) => {
+      if (p.system === "integumentary") selectedData[i * 4 + 1] = 255;
+    });
+
+    /*
+     * ## AO (ambient occlusion) — chỉ desktop, chỉ khi đứng yên
+     *
+     * GTAO của three.js vẽ lại cảnh bằng MeshNormalMaterial thay thế — vật liệu
+     * ấy không biết shader dịch chuyển/ẩn mảnh ở trên, nên dùng nguyên bản thì
+     * mảnh đã tắt vẫn đổ bóng và mảnh đã tách đổ bóng ở chỗ cũ. Vá chính vật
+     * liệu thay thế đó bằng cùng đoạn shader.
+     *
+     * Giá: thêm một lượt vẽ ~2,3 triệu tam giác + một pass toàn màn. Để không
+     * trả giá ấy lúc xoay, AO chỉ vẽ khi cảnh đứng yên ~140 ms: xoay/zoom vẽ
+     * thường, dừng tay thì một khung có AO thay vào. Máy yếu / màn cảm ứng /
+     * khung hẹp không bật (`wantsAO`).
+     */
+    const wantsAO =
+      matchMedia("(pointer: fine)").matches &&
+      el.clientWidth >= 900 &&
+      (navigator.hardwareConcurrency ?? 4) >= 4;
+    let composer: EffectComposer | null = null;
+    let aoPass: GTAOPass | null = null;
+    if (wantsAO) {
+      try {
+        composer = new EffectComposer(renderer);
+        composer.addPass(new RenderPass(scene, camera));
+        aoPass = new GTAOPass(scene, camera, el.clientWidth, el.clientHeight);
+        aoPass.updateGtaoMaterial({ radius: 0.06, distanceExponent: 1.4, thickness: 1.2, scale: 1.1, samples: 12 });
+        aoPass.updatePdMaterial({ lumaPhi: 10, depthPhi: 2, normalPhi: 3, radius: 6, rings: 2, samples: 12 });
+        aoPass.blendIntensity = 0.85;
+        aoPass.normalMaterial.onBeforeCompile = (shader) => {
+          shader.uniforms.partState = { value: partTexture };
+          shader.uniforms.selectionState = { value: selectionTexture };
+          shader.uniforms.stateWidth = { value: width };
+          shader.vertexShader =
+            "attribute float partIndex; uniform sampler2D partState; uniform sampler2D selectionState; uniform float stateWidth; varying float partVisible;\n" +
+            shader.vertexShader.replace(
+              "#include <begin_vertex>",
+              "#include <begin_vertex>\nvec2 stateUv = vec2((partIndex + 0.5) / stateWidth, 0.5); vec4 state = texture2D(partState, stateUv); transformed += state.xyz; partVisible = state.w * (1.0 - texture2D(selectionState, stateUv).g);",
+            );
+          shader.fragmentShader =
+            "varying float partVisible;\n" +
+            shader.fragmentShader.replace(
+              "#include <clipping_planes_fragment>",
+              "#include <clipping_planes_fragment>\nif (partVisible < 0.5) discard;",
+            );
+        };
+        composer.addPass(aoPass);
+        composer.addPass(new OutputPass());
+      } catch (error) {
+        console.warn("[human-atlas] AO tắt:", error);
+        composer?.dispose();
+        composer = null;
+        aoPass = null;
+      }
+    }
+    let lastChange = performance.now();
+    let aoFresh = false;
 
     // ------------------------------------------------------ tải hình học
     let loaded = 0;
@@ -698,6 +767,8 @@ export default function AnatomyScene({
       camera.aspect = el.clientWidth / Math.max(1, el.clientHeight);
       camera.updateProjectionMatrix();
       renderer.setSize(el.clientWidth, el.clientHeight, false);
+      composer?.setPixelRatio(renderer.getPixelRatio());
+      composer?.setSize(el.clientWidth, el.clientHeight);
       fit(latest.current.view, amount);
       sized = true;
     };
@@ -961,15 +1032,25 @@ export default function AnatomyScene({
       controls.enableRotate = amount < 0.8;
       controls.mouseButtons.LEFT = amount < 0.8 ? T.MOUSE.ROTATE : T.MOUSE.PAN;
       controls.touches.ONE = amount < 0.8 ? T.TOUCH.ROTATE : T.TOUCH.PAN;
-      ground.visible = platform.visible = ring.visible = innerRing.visible =
-        amount < 0.5 && !s.isolate;
       markers.visible = amount > 0.75;
       controls.autoRotate = s.rotate && !s.isolate && amount < 0.4;
       controls.autoRotateSpeed = 0.65;
       controls.update();
       if (controls.autoRotate) dirty = true;
 
+      const now = performance.now();
       if (dirty) {
+        lastChange = now;
+        aoFresh = false;
+      } else if (composer && !aoFresh && !tween && now - lastChange > 140) {
+        // Đứng yên đủ lâu: một khung có AO thay cho khung thường.
+        composer.render();
+        // GTAOPass khôi phục clear color qua get/set — giữ chắc alpha 0.
+        renderer.setClearColor(0x000000, 0);
+        aoFresh = true;
+      }
+      if (dirty) {
+        // Đang thay đổi (xoay, zoom, tách lớp) → vẽ thường, không AO.
         renderer.render(scene, camera);
         targets = [];
         if (amount > 0.45) {
@@ -1045,6 +1126,8 @@ export default function AnatomyScene({
         }
       });
       env.dispose();
+      aoPass?.dispose();
+      composer?.dispose();
       partTexture.dispose();
       selectionTexture.dispose();
       markerGeometry.dispose();
