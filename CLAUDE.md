@@ -32,6 +32,8 @@ npx tsx --env-file-if-exists=.env scripts/anatomy-enrich.ts  # FMA → data/anat
 npx tsx scripts/atlas-views.ts  # góc nhìn: quy tắc tên → mã mảnh thật (chạy khô; --write ghi view-parts.generated.json)
 npx tsx scripts/anatomy-audit.ts  # bảng audit mọi mảnh giải phẫu + tổ tiên FMA → .cache/anatomy/audit.json (chỉ đọc)
 npx tsx --env-file-if-exists=.env scripts/import-umcg-lymphatic.ts  # mạng bạch huyết UMCG (CC BY-NC-SA) → R2 + manifest (chạy khô; --write --upload)
+npx tsx --env-file-if-exists=.env scripts/import-z-anatomy.ts  # thần kinh/tĩnh mạch/hạch Z-Anatomy (CC BY-SA); cần chạy scripts/blender/z-anatomy-dump.py bằng python có gói bpy trước
+npx tsx --env-file-if-exists=.env scripts/import-smooth-skin.ts  # da chia nhỏ; chạy scripts/smooth-skin.py (python có bpy) trước
 
 npm run publish:check # rà điều kiện xuất bản toàn kho (chỉ đọc)
 npm run publish       # đổi state sang PUBLISHED — đường ghi DUY NHẤT của máy, có gate (form /admin đi thẳng, có chủ ý — docs/architecture.md)

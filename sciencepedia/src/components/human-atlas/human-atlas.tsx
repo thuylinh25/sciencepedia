@@ -1032,7 +1032,7 @@ function ToolButton({
  */
 export function AboutCopy() {
   const t = useTranslations("humanAtlas.aboutSheet");
-  const { model, terminology, viewer, lymphatic } = ATLAS_PROVENANCE;
+  const { model, terminology, viewer, lymphatic, zAnatomy } = ATLAS_PROVENANCE;
   return (
     <div className="space-y-5 text-sm leading-relaxed text-muted-foreground">
       <SourceBlock
@@ -1071,6 +1071,18 @@ export function AboutCopy() {
         ]}
       >
         {t("lymphText")}
+      </SourceBlock>
+
+      <SourceBlock
+        heading={t("zaHeading")}
+        name={zAnatomy.name}
+        credit={`© ${zAnatomy.holder} · ${zAnatomy.license}`}
+        links={[
+          [t("licenseLink"), zAnatomy.licenseUrl],
+          [t("zaSourceLink"), zAnatomy.sourceUrl],
+        ]}
+      >
+        {t("zaText")}
       </SourceBlock>
 
       <SourceBlock

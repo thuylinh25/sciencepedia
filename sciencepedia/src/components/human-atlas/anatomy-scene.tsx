@@ -317,16 +317,20 @@ export default function AnatomyScene({
       return best;
     };
 
-    const materialFor = (system: SystemId, color: string) => {
-      const m = new T.MeshStandardMaterial({
+    const materialFor = (system: SystemId, color: string, key = "") => {
+      const skin = key === "integumentary.skin";
+      // Da: vật liệu "physical" để có sheen — lớp ánh mềm ở mép như lông tơ trên
+      // da thật, thứ làm da ảnh atlas trông ấm và có khối. Còn lại giữ Standard.
+      const m = new (skin ? T.MeshPhysicalMaterial : T.MeshStandardMaterial)({
         color,
         metalness: 0,
-        // Xương mờ như xương thật; da mờ nhất (không bóng như sáp); mô mềm ẩm hơn.
-        roughness: system === "skeletal" ? 0.74 : system === "integumentary" ? 0.68 : 0.6,
+        // Xương mờ như xương thật; mô mềm ẩm hơn; da có vùng sáng dịu (0,52).
+        roughness: system === "skeletal" ? 0.74 : skin ? 0.52 : system === "integumentary" ? 0.68 : 0.6,
         side: T.DoubleSide,
         // Độ đậm do `applyLayers()` đặt theo slider — bắt đầu đục.
         transparent: false,
         opacity: 1,
+        ...(skin ? { sheen: 0.45, sheenColor: new T.Color("#f0b9a3"), sheenRoughness: 0.55 } : {}),
       });
       m.onBeforeCompile = (shader) => {
         shader.uniforms.partState = { value: partTexture };
@@ -374,7 +378,7 @@ export default function AnatomyScene({
     const materialForKey = (key: string, system: SystemId) => {
       let m = mats.get(key);
       if (!m) {
-        m = materialFor(system, GROUP_COLORS[key] ?? SYSTEM_COLORS[system] ?? "#aebbb8");
+        m = materialFor(system, GROUP_COLORS[key] ?? SYSTEM_COLORS[system] ?? "#aebbb8", key);
         mats.set(key, m);
         matsBySystem.set(system, [...(matsBySystem.get(system) ?? []), m]);
       }

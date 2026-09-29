@@ -38,6 +38,7 @@ import { PANEL } from "@/components/human-atlas/panel";
  */
 const MODEL_SOURCE_URL = ATLAS_PROVENANCE.model.sourceUrl;
 const LYMPH_SOURCE_URL = ATLAS_PROVENANCE.lymphatic.sourceUrl;
+const ZA_SOURCE_URL = ATLAS_PROVENANCE.zAnatomy.sourceUrl;
 
 /**
  * Bảng chi tiết của cấu trúc đang chọn.
@@ -77,6 +78,7 @@ export function StructureDetail({
 }) {
   const t = useTranslations("humanAtlas");
   const fromUmcg = parts.some((p) => SUPPLEMENT_SOURCE[p.id] === "umcg-lymphatic");
+  const fromZa = parts.some((p) => SUPPLEMENT_SOURCE[p.id] === "z-anatomy");
   const fromBp3d = parts.length === 0 || parts.some((p) => !SUPPLEMENT_SOURCE[p.id]);
   const title = useRef<HTMLHeadingElement>(null);
   const titleId = useId();
@@ -317,6 +319,8 @@ export function StructureDetail({
             này, BodyParts3D cho hình. Trước đây chỉ có một link chung tới trang
             chủ BodyParts3D, giống hệt nhau cho mọi cấu trúc. */}
         <div className="flex flex-col items-start gap-1">
+          {/* Khái niệm Z-Anatomy mang mã nội bộ `ZA-…`, không phải mã FMA. */}
+          {concept.id.startsWith("FMA") && (
           <a
             href={fmaSourceUrl(concept.id)}
             target="_blank"
@@ -326,9 +330,12 @@ export function StructureDetail({
             {t("detail.source")}
             <ArrowUpRight aria-hidden className="size-3.5" />
           </a>
+          )}
           {/* Nguồn HÌNH theo đúng mảnh đang chọn: mạng bạch huyết không phải
               BodyParts3D (giấy phép khác, phải ghi công UMCG). */}
-          {(fromUmcg ? [[LYMPH_SOURCE_URL, t("detail.modelSourceLymph")]] : []).concat(
+          {(fromUmcg ? [[LYMPH_SOURCE_URL, t("detail.modelSourceLymph")]] : [])
+            .concat(fromZa ? [[ZA_SOURCE_URL, t("detail.modelSourceZa")]] : [])
+            .concat(
             fromBp3d ? [[MODEL_SOURCE_URL, t("detail.modelSource")]] : [],
           ).map(([href, label]) => (
             <a

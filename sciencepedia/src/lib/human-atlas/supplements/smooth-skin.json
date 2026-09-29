@@ -1,0 +1,36 @@
+{
+ "source": "smooth-skin",
+ "license": "CC BY 4.0",
+ "chunk": {
+  "url": "https://pub-2f39abf8661142edaf3c3c48f755ffa8.r2.dev/human-atlas/supplements/smooth-skin-d278369ba4/skin.bin",
+  "bytes": 5637728,
+  "gzip": "https://pub-2f39abf8661142edaf3c3c48f755ffa8.r2.dev/human-atlas/supplements/smooth-skin-d278369ba4/skin.bin.gz",
+  "gzipBytes": 3508977
+ },
+ "parts": [
+  {
+   "id": "FJ2810",
+   "name": "Skin",
+   "conceptId": "FMA7163",
+   "system": "integumentary",
+   "positions": 0,
+   "normals": 1610772,
+   "indices": 2416160,
+   "vertexCount": 134231,
+   "indexCount": 805392,
+   "bounds": [
+    [
+     -0.33367,
+     0.00025,
+     -0.14494
+    ],
+    [
+     0.33223,
+     1.71923,
+     0.14649
+    ]
+   ]
+  }
+ ],
+ "concepts": []
+}

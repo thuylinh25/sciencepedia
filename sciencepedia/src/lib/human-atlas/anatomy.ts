@@ -368,10 +368,13 @@ export const GROUP_COLORS: Record<string, string> = {
   "nervous.ventricles": "#8fa9bd",
   "nervous.meninges": "#b5acae",
   "nervous.nerve": "#d9b25c",
+  // Tuỷ sống (Z-Anatomy): hồng nhạt cùng họ với não — trung ương khác ngoại biên.
+  "nervous.spinal_cord": "#d8aeb0",
   // Bạch huyết: cơ quan dạng lympho mỗi thứ một màu, không cùng một màu hệ.
   // Bề mặt: da ấm, tóc/lông nâu sẫm, môi hồng trầm — trước đây cả năm mảnh
   // cùng một màu, tóc trông như da đầu trọc.
-  "integumentary.skin": "#c49a80",
+  // Hồng ấm theo ảnh atlas tham chiếu (bản trước #c49a80 qua ACES ngả vàng nhạt).
+  "integumentary.skin": "#c08672",
   "integumentary.hair": "#3f2c20",
   "integumentary.lip": "#a86d62",
   // Tai ngoài là da + sụn: cùng tông da, không lấy màu xanh xám của hệ giác quan.

@@ -483,6 +483,22 @@ sau `correctSystems`, nên tìm/chọn/ẩn/góc nhìn chạy như mảnh gốc.
 tên vùng, mã FMA là khái niệm chung (FMA5034, FMA30315). Bỏ 235 mảnh vụn < 12 đỉnh (cạnh trung vị
 2 mm — dư sculpt). Nguồn hình trong bảng chi tiết theo đúng mảnh đang chọn.
 
+**Z-Anatomy (đã nhập 2026-09-29, CC BY-SA 4.0).** Dây thần kinh ngoại biên, tuỷ sống, tĩnh mạch
+đầu–cổ + những tĩnh mạch BodyParts3D không có, 158 hạch bạch huyết CÓ TÊN. Quy trình: `bpy` (Blender
+trên PyPI — blender.org bị chặn 403 từ mạng này) chạy `scripts/blender/z-anatomy-dump.py` → curve thành mesh
+(tiết diện 8 cạnh; mặc định của tệp gấp 5 lần đỉnh) → `scripts/import-z-anatomy.ts`. Căn: trục
+(x, z, −y), dời (−0,5; 7,2; −1,6) mm; lệch còn lại trung vị ~4,7 mm vì Z-Anatomy dựng lại lưới xương
+(căn theo vùng không đỡ hơn) — chấp nhận. Mạch/dây thần kinh Z-Anatomy là đường cong VẼ LẠI, không
+trùng BodyParts3D: không lấy động mạch, não; ứng viên bị loại nếu > 50% điểm nằm trong 7 mm hình học
+gốc CÙNG loại (dây thần kinh so dây thần kinh, không so thân não — so thân não là loại nhầm dây VI).
+Hạch không tên của UMCG bị bỏ khi có hạch Z-Anatomy; mạch bạch huyết UMCG giữ. Khái niệm mang mã
+`ZA-…` (không phải FMA) → bảng chi tiết ẩn link FMA.
+
+**Da chia nhỏ.** `scripts/smooth-skin.py` (Catmull-Clark một bậc, 44.744 → 268.464 tam giác) +
+`scripts/import-smooth-skin.ts`. Mảnh mang cùng mã FJ2810: `withSupplements()` thấy trùng mã thì THAY
+mảnh gốc. Da dùng MeshPhysicalMaterial có sheen (lớp ánh mềm ở mép) — không có ảnh bề mặt da hợp
+pháp để dùng, nên không có lỗ chân lông/đốm như atlas thương mại.
+
 **Nhập asset ngoài khác (hợp đồng).** Asset bổ sung phải
 đi vào CÙNG đường dữ liệu với BodyParts3D, không thành một khối riêng: mỗi cấu trúc một mảnh
 có mã riêng + mã FMA + hệ, để tìm kiếm, chọn, ẩn/xem riêng, góc nhìn đều dùng lại được. Không

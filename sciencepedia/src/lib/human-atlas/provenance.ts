@@ -65,6 +65,18 @@ export const ATLAS_PROVENANCE = {
     sourceUrl: "https://sketchfab.com/3d-models/lymphatic-system-an-overview-00d877fa9fbc44218237dbc0a4cc96e1",
     originalUrl: "https://anatomytool.org/content/dundee-3d-model-lymphatic-system",
   },
+  /**
+   * Dây thần kinh ngoại biên, tuỷ sống, tĩnh mạch đầu–cổ, hạch bạch huyết có tên.
+   * Kiểm 2026-09-29: License.txt trong repo ghi CC BY-SA 4.0 và yêu cầu ghi công
+   * cả BodyParts3D lẫn Z-Anatomy. Chuyển đổi: `scripts/import-z-anatomy.ts`.
+   */
+  zAnatomy: {
+    name: "Z-Anatomy",
+    holder: "Z-Anatomy; BodyParts3D, The Database Center for Life Science",
+    license: "CC BY-SA 4.0",
+    licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/",
+    sourceUrl: "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+  },
   viewer: {
     name: "Human Atlas",
     author: "ashemag",
