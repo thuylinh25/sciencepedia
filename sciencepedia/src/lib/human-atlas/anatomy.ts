@@ -146,6 +146,23 @@ export function peelToExplode(s: number): number {
   return 0.45 + ((s - 0.85) / 0.15) * 0.55;
 }
 
+/**
+ * Vị trí slider người đọc kéo → vị trí trên thang bóc lớp ở trên, theo các lớp
+ * ĐANG BẬT. Thang đầy đủ dành 65% đầu cho da và cơ; chỉ bật hệ xương mà dùng
+ * thang ấy thì kéo tới 64% không có gì xảy ra (báo lỗi 2026-09-29). Nên:
+ *   có cơ (hoặc mô liên kết)  → thang đầy đủ
+ *   chỉ có da, không có cơ    → 0–20% bóc da, 20–100% tách
+ *   không da, không cơ        → cả slider là tách
+ * Mọi chỗ đọc thang (độ đậm, độ tách, ngưỡng giao diện) phải đi qua hàm này.
+ */
+export function effectivePeel(s: number, visible: readonly SystemId[]): number {
+  const muscle = visible.some((id) => SYSTEM_LAYER[id] === "muscle");
+  if (muscle) return s;
+  const surface = visible.includes("integumentary");
+  if (surface) return s <= 0.2 ? s : 0.65 + ((s - 0.2) / 0.8) * 0.35;
+  return 0.65 + s * 0.35;
+}
+
 export const ORGAN_PRESET: SystemId[] = [
   "cardiac",
   "respiratory",
@@ -357,6 +374,10 @@ export const GROUP_COLORS: Record<string, string> = {
   "integumentary.skin": "#c49a80",
   "integumentary.hair": "#3f2c20",
   "integumentary.lip": "#a86d62",
+  // Tai ngoài là da + sụn: cùng tông da, không lấy màu xanh xám của hệ giác quan.
+  "sensory.ear": "#c49a80",
+  "sensory.sclera": "#e6e0d6",
+  "sensory.iris": "#5b3e2b",
   "lymphatic.spleen": "#8a4d5c",
   "lymphatic.thymus": "#c8a88f",
   // Mạng UMCG: mạch xanh lục vừa, hạch sáng hơn một bậc — đọc được trên nền gần
@@ -365,7 +386,21 @@ export const GROUP_COLORS: Record<string, string> = {
   "lymphatic.node": "#8cc163",
 };
 
+/**
+ * Mảnh không đưa lên trình xem. Lông mu (FMA54319): khối lởm chởm của lượt dựng
+ * gốc, không mang thông tin giải phẫu gì cho người học — chủ sản phẩm yêu cầu bỏ
+ * (2026-09-29). Bỏ khỏi cả danh mục lẫn khái niệm, nên không tìm ra, không đếm.
+ */
+const DROPPED_CONCEPTS = new Set(["FMA54319"]);
+
 export function correctSystems(atlas: Atlas): Atlas {
+  const dropped = new Set(atlas.parts.filter((p) => DROPPED_CONCEPTS.has(p.conceptId)).map((p) => p.id));
+  if (dropped.size) {
+    atlas.parts = atlas.parts.filter((p) => !dropped.has(p.id));
+    atlas.concepts = atlas.concepts
+      .map((c) => ({ ...c, elements: c.elements.filter((id) => !dropped.has(id)) }))
+      .filter((c) => c.elements.length > 0);
+  }
   for (const part of atlas.parts) {
     const fixed = SYSTEM_CORRECTIONS[part.conceptId];
     if (fixed) part.system = fixed;

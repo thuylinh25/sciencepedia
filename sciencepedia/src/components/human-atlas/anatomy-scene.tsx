@@ -21,6 +21,7 @@ import {
   SYSTEM_COLORS,
   SYSTEM_IDS,
   SYSTEM_LAYER,
+  effectivePeel,
   layerOpacity,
   peelToExplode,
   type Atlas,
@@ -170,9 +171,10 @@ export default function AnatomyScene({
     controls.minDistance = 0.07;
     controls.maxDistance = 40;
     controls.maxPolarAngle = Math.PI * 0.96;
-    // Zoom về phía con trỏ: điểm giải phẫu đang nhìn đứng yên khi phóng to,
-    // thay vì cơ thể trượt ra khỏi khung quanh tâm cố định.
-    controls.zoomToCursor = true;
+    // Zoom quanh TÂM, không theo con trỏ (đổi 2026-09-29): zoomToCursor dời tâm
+    // nhìn theo chuột — phóng to lệch trái, thu nhỏ lệch phải, bị báo hai lần.
+    // Xem dọc cơ thể khi đã phóng to là việc của thanh cuộn dọc.
+    controls.zoomToCursor = false;
     controls.addEventListener("change", () => {
       dirty = true;
     });
@@ -405,7 +407,7 @@ export default function AnatomyScene({
         if (i !== undefined) deepest = Math.max(deepest, layerIndex(parts[i].system));
       }
       for (const system of SYSTEM_IDS) {
-        let alpha = layerOpacity(SYSTEM_LAYER[system], peel);
+        let alpha = layerOpacity(SYSTEM_LAYER[system], effectivePeel(peel, latest.current.visible));
         if (layerIndex(system) < deepest) alpha = Math.min(alpha, DIMMED);
         alphaBySystem.set(system, alpha);
         const solid = alpha > 0.999;
@@ -417,6 +419,8 @@ export default function AnatomyScene({
       }
     };
     const alphaOf = (i: number) => alphaBySystem.get(parts[i].system) ?? 1;
+    /** Nhóm vẫn vẽ khi da còn đục (xem `underSkin`). */
+    const SKIN_VISIBLE = new Set(["sensory.ear", "sensory.sclera", "sensory.iris"]);
 
     /** Góc nhìn → chỉ số mảnh (tính một lần mỗi góc nhìn, không mỗi khung). */
     const viewSets = new Map<string, { focus: Set<number>; hide: Set<number> } | null>();
@@ -1021,6 +1025,8 @@ export default function AnatomyScene({
     track.addEventListener("pointercancel", trackUp);
     track.addEventListener("keydown", trackKey);
 
+    const recenterDir = new T.Vector3();
+    const recenterDelta = new T.Vector3();
     /** Giữ target trong phạm vi hợp lệ và vẽ thanh theo vị trí hiện tại. */
     const updateScroll = () => {
       if (!navActive()) {
@@ -1030,8 +1036,20 @@ export default function AnatomyScene({
       const range = scrollRange();
       const y = controls.target.y;
       if (!range.overflow) {
-        // Vừa khung: kéo dần về giữa (không nhảy), thanh ẩn.
-        if (Math.abs(y - range.center) > 1e-4) shiftY((range.center - y) * 0.25);
+        // Vừa khung: kéo dần về giữa (không nhảy), thanh ẩn — theo CẢ HAI trục màn
+        // hình. Trước chỉ kéo trục dọc; zoom theo con trỏ dời tâm sang ngang, thu
+        // nhỏ lại là mô hình nằm lệch hẳn một bên. Chỉ dời vuông góc hướng nhìn:
+        // khoảng cách và góc xoay giữ nguyên.
+        const dir = recenterDir.copy(camera.position).sub(controls.target).normalize();
+        const want = frameBox(currentBox(), dir, usableRect()).target;
+        const delta = recenterDelta.copy(want).sub(controls.target);
+        delta.addScaledVector(dir, -delta.dot(dir));
+        if (delta.lengthSq() > 1e-8) {
+          delta.multiplyScalar(0.25);
+          controls.target.add(delta);
+          camera.position.add(delta);
+          dirty = true;
+        }
         track.hidden = true;
         return;
       }
@@ -1298,10 +1316,12 @@ export default function AnatomyScene({
         lastState?.selected !== s.selected ||
         lastState?.isolate !== s.isolate ||
         lastState?.viewId !== s.viewId;
+      // Bật/tắt lớp da hay cơ đổi thang slider (`effectivePeel`) — tính lại độ tách.
+      if (changed) amount = peelToExplode(effectivePeel(peel, s.visible));
       const moving = Math.abs(peel - s.explode) > 0.0001;
       if (moving) {
         peel = T.MathUtils.damp(peel, s.explode, 8, dt);
-        amount = peelToExplode(peel);
+        amount = peelToExplode(effectivePeel(peel, s.visible));
         dirty = true;
       }
 
@@ -1323,8 +1343,10 @@ export default function AnatomyScene({
         // sâu là da mờ đi, lớp trong hiện lại.
         const skinSolid =
           !s.isolate && !view && visible.has("integumentary") && (alphaBySystem.get("integumentary") ?? 0) >= 0.999;
+        // Qua khe mi chỉ thấy lòng trắng + mống mắt; giác mạc, thể thuỷ tinh… che
+        // mất chúng. Tai ngoài nằm NGOÀI da nên luôn vẽ.
         const underSkin = (p: (typeof parts)[number]) =>
-          skinSolid && p.system !== "integumentary" && p.system !== "sensory";
+          skinSolid && p.system !== "integumentary" && !SKIN_VISIBLE.has(keyOf(p));
         // Lớp đã mờ hẳn (da sau 20%) không chiếm ô trong lưới tách.
         const isShown = (p: (typeof parts)[number], i: number) =>
           (s.isolate ? selection.has(p.id) : inScope(p, i) || selection.has(p.id)) &&

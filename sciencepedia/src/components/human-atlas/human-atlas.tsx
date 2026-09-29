@@ -40,6 +40,7 @@ import {
   DEFAULT_VISIBLE,
   ORGAN_PRESET,
   CONCEPT_COUNT,
+  effectivePeel,
   peelToExplode,
   PIECE_COUNT,
   SYSTEM_IDS,
@@ -514,7 +515,7 @@ export function HumanAtlas({
   const onError = useCallback((code: SceneError) => setFailure(code), []);
 
   /** Độ tách KHÔNG GIAN (nửa đầu slider là bóc lớp, cảnh vẫn nguyên khối). */
-  const spread = peelToExplode(state.explode);
+  const spread = peelToExplode(effectivePeel(state.explode, state.visible));
   // Thứ tự hiển thị chung với trang giới thiệu (`SYSTEM_ORDER`): bề mặt cơ thể
   // đứng đầu — lớp ngoài cùng, thứ người đọc thấy trước.
   const panelSystems = useMemo(
@@ -847,7 +848,7 @@ export function HumanAtlas({
               setState((s) => ({
                 ...s,
                 explode: v / 100,
-                view: v > 80 ? "front" : s.view,
+                view: peelToExplode(effectivePeel(v / 100, s.visible)) > 0.6 ? "front" : s.view,
                 rotate: false,
               }));
             }}

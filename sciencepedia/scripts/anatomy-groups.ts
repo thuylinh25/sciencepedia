@@ -42,6 +42,11 @@ const RULES: Record<string, [string, RegExp][]> = {
     ["large_intestine", /large intestine|colon|taenia|append|cecum|rectum/i],
     ["oral", /tongue|salivary|sublingual|submandibular|parotid/i],
   ],
+  sensory: [
+    ["ear", /^external ear$/i],
+    ["sclera", /sclera/i],
+    ["iris", /^(left|right) iris$/i],
+  ],
   integumentary: [
     ["hair", /hair|eyebrow/i],
     ["lip", /^lip$/i],

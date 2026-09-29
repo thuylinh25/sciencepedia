@@ -564,7 +564,7 @@ offset — đo 2026-09-29 lệch ≤ 0,5 px ở 1909/1440/1024/800 px. Bảng đ
 Khi phóng to vượt khung, thanh
 cuộn dọc dời target + camera theo Y trong giới hạn hộp bao các hệ đang bật (có đệm: đỉnh đầu
 và bàn chân không bị cắt ở hai đầu thanh). Vừa khung thì target được kéo dần về giữa — không
-nhảy. `zoomToCursor` giữ điểm đang nhìn đứng yên khi zoom.
+nhảy. Zoom quanh tâm (`zoomToCursor` TẮT — theo con trỏ thì phóng to lệch trái, thu nhỏ lệch phải); vừa khung thì tâm tự kéo về giữa theo cả hai trục.
 
 ### Provenance: một sổ (`provenance.ts`), bốn vai, kiểm bằng tệp thật
 
