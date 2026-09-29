@@ -101,7 +101,9 @@ const initial: SceneState = {
   visible: DEFAULT_VISIBLE,
   selected: [],
   isolate: false,
-  view: "three-quarter",
+  // Nhìn thẳng: hộp bao chiếu lên màn đúng bằng chiều cao cơ thể, nên khung
+  // mặc định to nhất có thể mà không cắt đầu/chân. Nhìn ¾ vẫn có ở cột camera.
+  view: "front",
   rotate: false,
   reset: 0,
   focus: 0,
@@ -282,9 +284,11 @@ export function HumanAtlas({
     writeStructureParam(null);
   };
 
+  // Đổi hệ luôn về nguyên khối: độ tách đang kéo dở của hệ trước không có
+  // nghĩa gì với hệ mới, và người đọc cần thấy hệ ấy ở đúng chỗ trong cơ thể trước.
   const showOnly = (ids: SystemId[]) => {
     setDetails(false);
-    setState((s) => ({ ...s, visible: ids, selected: [], isolate: false }));
+    setState((s) => ({ ...s, visible: ids, selected: [], isolate: false, explode: 0 }));
   };
 
   const toggle = (id: SystemId) => {
@@ -293,12 +297,25 @@ export function HumanAtlas({
       ...s,
       selected: [],
       isolate: false,
+      explode: 0,
       visible: s.visible.includes(id) ? s.visible.filter((x) => x !== id) : [...s.visible, id],
     }));
   };
 
   const reset = () => {
-    setState((s) => ({ ...initial, reset: s.reset + 1, focus: s.focus }));
+    // Giữ các hệ đang bật: "Đặt lại" là đặt lại CAMERA và độ tách cho thứ người
+    // đọc đang xem, không phải bỏ lựa chọn hệ của họ.
+    // Bộ đếm là "số lần bấm", không phải trạng thái: đưa zoomIn/zoomOut về 0 là
+    // cảnh đọc thành một lượt thu nhỏ, và tween đó đè mất tween về khung vừa.
+    setState((s) => ({
+      ...initial,
+      visible: s.visible,
+      reset: s.reset + 1,
+      focus: s.focus,
+      zoomIn: s.zoomIn,
+      zoomOut: s.zoomOut,
+      fitFrame: s.fitFrame,
+    }));
     setChosen(null);
     setDetails(false);
     setPanel(null);

@@ -771,7 +771,7 @@
     "zoomInLabel": "Zoom in",
     "zoomOutLabel": "Zoom out",
     "fitLabel": "Fit to view",
-    "resetLabel": "Reset view and layers",
+    "resetLabel": "Reset view and layer separation",
     "explode": "Separate body layers",
     "explodeShort": "Separate",
     "assembled": "Assembled",

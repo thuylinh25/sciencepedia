@@ -401,7 +401,7 @@ dưới tên Việt, và phần ghi công nói rõ. Đừng bỏ dòng tên gố
 
 Khoảng cách cố định (4 m) làm hệ nhỏ (tiêu hoá, tim) còn một góc khung. `fit()` lấy
 Box3 các hệ đang bật, chiếu lên trục màn hình của camera, giải khoảng cách từ FOV sao
-cho hộp chiếm ~72% chiều cao VÙNG TRỐNG — đo từ DOM các bảng `data-atlas-avoid`, lệch
+cho hộp vừa khung (tỉ lệ ở mục "Khung mặc định" bên dưới) — vùng trống đo từ DOM các bảng `data-atlas-avoid`, lệch
 tâm thì bù bằng view offset. Chỉ khung lại khi tập hệ đổi, đặt lại, đổi góc nhìn,
 resize — không khung lại khi chọn mảnh (lúc đó người đọc vừa tự zoom).
 
@@ -475,8 +475,21 @@ trống — từng kết luận nhầm "click không chọn được". Lấy to�
 
 ### Khung mặc định và thanh cuộn dọc
 
-Khung ~70% chiều cao vùng quan sát (67% tablet, 64% điện thoại). Tiêu đề và ô tìm là mẩu ở
-góc: KHÔNG trừ như dải ngang — bản cũ trừ, bộ xương ra ~50%. Khi phóng to vượt khung, thanh
+Chiều cao hộp trên màn = min(FILL × khung xem, 88% vùng quan sát); FILL 74% desktop, 70%
+tablet, 68% điện thoại. Đo thật (chỉ bật xương, nhìn thẳng — góc mặc định): 71% / 69% / 64%
+khung xem. FILL tính trên CẢ khung xem: lấy 70% của vùng ĐÃ trừ thanh "Tách các lớp" là phần
+trăm của phần trăm — bộ xương ~50% màn hình, bị báo hai lần. Vế 88% giữ bàn chân khỏi chui sau
+thanh trượt. Tiêu đề và ô tìm là mẩu ở góc: KHÔNG trừ như dải ngang. Hệ cục bộ (não 17 cm, tim)
+không phóng quá 3,5 lần cỡ toàn thân (`MAX_MAGNIFY`). Hộp bao các hệ đã rà: không mảnh lạc chỗ
+nào kéo khung nhỏ lại (xương 0,01–1,71 m), nên không có bước lọc outlier.
+
+Đang tách thì khung theo hộp bao THẬT của mảnh đang hiện (đã cộng độ dời) — đừng nội suy về
+"khung lưới" giả định: ở 91% slider mảnh mới đi 40% đường tới ô lưới, tâm nội suy lệch và
+"Vừa khung" đẩy mô hình lên mất nửa trên. Đổi hệ đưa slider về 0 (nguyên khối). "Đặt lại"
+giữ các hệ đang bật và GIỮ bộ đếm zoom — đưa bộ đếm về 0 là cảnh đọc thành một lượt thu nhỏ,
+tween đó đè mất tween về khung vừa.
+
+Khi phóng to vượt khung, thanh
 cuộn dọc dời target + camera theo Y trong giới hạn hộp bao các hệ đang bật (có đệm: đỉnh đầu
 và bàn chân không bị cắt ở hai đầu thanh). Vừa khung thì target được kéo dần về giữa — không
 nhảy. `zoomToCursor` giữ điểm đang nhìn đứng yên khi zoom.

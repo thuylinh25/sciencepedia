@@ -193,9 +193,12 @@ export default async function HumanAtlasPage({
                           </p>
                         </details>
                       )}
+                      {/* pointer-events-none BẮT BUỘC: `translate` lúc rê chuột
+                          tạo lớp vẽ riêng, nằm TRÊN `::after` của link — không có
+                          dòng này, bấm đúng chữ "Khám phá" là bấm vào span trơn. */}
                       <span
                         aria-hidden
-                        className="ml-auto inline-flex items-center gap-1 text-sm font-medium text-accent transition-transform group-hover:translate-x-0.5"
+                        className="pointer-events-none ml-auto inline-flex items-center gap-1 text-sm font-medium text-accent transition-transform group-hover:translate-x-0.5"
                       >
                         {t("page.systemExplore")}
                         <ArrowRight className="size-4" />

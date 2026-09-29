@@ -249,8 +249,6 @@ export default function AnatomyScene({
       (p) => new T.Box3(new T.Vector3().fromArray(p.bounds[0]), new T.Vector3().fromArray(p.bounds[1])),
     );
     const systemIndex = parts.map((p) => SYSTEM_IDS.indexOf(p.system));
-    let packingWidth = 1;
-    let packingHeight = 1;
 
     const markerPositions = new Float32Array(parts.length * 3);
     const markerGeometry = new T.BufferGeometry();
@@ -605,26 +603,42 @@ export default function AnatomyScene({
      * theo hộp nguyên khối thì mô hình trôi ra góc màn hình.
      */
     const shifted = new T.Box3();
+    /** Toàn thân ở nguyên khối — mốc cho trần phóng to của hệ cục bộ. */
+    const fullBox = new T.Box3();
+    bounds.forEach((b) => fullBox.union(b));
+    const MAX_MAGNIFY = 3.5;
     const visibleBox = () => {
       const on = new Set(latest.current.visible);
       const box = new T.Box3();
       const displaced = amount > 0.001;
       parts.forEach((p, i) => {
-        if (!on.has(p.system)) return;
-        if (!displaced) box.union(bounds[i]);
-        else box.union(shifted.copy(bounds[i]).translate(new T.Vector3(data[i * 4], data[i * 4 + 1], data[i * 4 + 2])));
+        if (!displaced) {
+          if (on.has(p.system)) box.union(bounds[i]);
+          return;
+        }
+        // Đang tách: chỉ mảnh đang hiện (lớp đã mờ hẳn bị ẩn và nằm lại chỗ cũ).
+        if (data[i * 4 + 3] > 0) box.union(shifted.copy(bounds[i]).translate(new T.Vector3(data[i * 4], data[i * 4 + 1], data[i * 4 + 2])));
       });
       if (box.isEmpty()) bounds.forEach((b) => box.union(b));
       return box;
     };
 
-    /**
-     * Hộp bao chiếm bao nhiêu chiều cao VÙNG QUAN SÁT: 70% desktop, 67% tablet,
-     * 64% điện thoại. Vùng quan sát đã trừ thanh "Tách các lớp" và bảng dọc hai
-     * bên; mẩu ở góc không tính (xem `usableRect`). Bản cũ tính 72% nhưng trừ
-     * cả tiêu đề góc trái như một dải ngang — bộ xương ra ~50% màn hình.
+    /*
+     * ## Cỡ khung mặc định (2026-09-29)
+     *
+     * Chiều cao hộp bao trên màn = min(FILL × chiều cao khung xem,
+     * (1 − 2 × PAD) × chiều cao vùng quan sát). FILL 74% desktop, 70% tablet,
+     * 68% điện thoại; PAD 6% mỗi đầu. Đo thật (bộ xương, nhìn thẳng): 71% / 69% /
+     * 64% khung xem — thấp hơn FILL vì khoảng cách tính tới MẶT GẦN của hộp.
+     *
+     * FILL tính trên CẢ khung xem (dưới thanh điều hướng của site), không trên
+     * vùng quan sát: bản trước lấy 70% của vùng đã trừ thanh "Tách các lớp" —
+     * một phần trăm của một phần trăm — nên bộ xương chỉ ~50% màn hình. Vế thứ
+     * hai giữ đầu và bàn chân cách mép trên và thanh trượt, vì cơ thể căn giữa
+     * trong VÙNG QUAN SÁT: to hơn nữa là bàn chân chui sau thanh trượt.
      */
-    const frameFill = (w: number) => (w < 768 ? 0.64 : w < 1024 ? 0.67 : 0.7);
+    const frameFill = (w: number) => (w < 768 ? 0.68 : w < 1024 ? 0.7 : 0.74);
+    const FRAME_PAD = 0.06;
     const corner = new T.Vector3();
 
     /**
@@ -666,9 +680,9 @@ export default function AnatomyScene({
         .addScaledVector(right, (minR + maxR) / 2)
         .addScaledVector(up, (minU + maxU) / 2);
       const tanHalf = fovTan() / 2;
-      const fill = frameFill(rect.w);
-      const fillY = ((rect.bottom - rect.top) * fill) / rect.h;
-      const fillX = ((rect.right - rect.left) * fill) / rect.w;
+      const fillY =
+        Math.min(frameFill(rect.w) * rect.h, (rect.bottom - rect.top) * (1 - 2 * FRAME_PAD)) / rect.h;
+      const fillX = ((rect.right - rect.left) * (1 - 2 * FRAME_PAD)) / rect.w;
       // Tính tới MẶT GẦN của hộp (+ nearest): mặt ấy hiện to nhất trên màn.
       const distance =
         Math.max(
@@ -774,10 +788,14 @@ export default function AnatomyScene({
     });
 
     /**
-     * Khung cho trạng thái hiện tại. Nguyên khối (`extent` 0): vừa hộp bao các
-     * hệ đang bật trong vùng trống. Tách hẳn (`extent` 1): khoảng cách của lưới
-     * xếp mảnh như bản gốc. Ở giữa thì nội suy — thanh "Tách các lớp" kéo tới
-     * đâu camera lùi tới đó, không nhảy.
+     * Khung cho trạng thái hiện tại: vừa hộp bao THẬT của các mảnh đang hiện
+     * (đã cộng độ dời) trong vùng trống. Thanh "Tách các lớp" kéo tới đâu hộp
+     * bao nở tới đó, camera lùi theo — không nhảy.
+     *
+     * KHÔNG nội suy giữa khung nguyên khối và khung lưới giả định (bản cũ: tâm
+     * y = 0,85, khoảng cách của lưới đầy đủ). Ở 91% slider mảnh mới đi 40%
+     * đường tới ô lưới, nên tâm nội suy thấp hơn tâm thật của đám mảnh — bấm
+     * "Vừa khung" là mô hình trôi lên, mất nửa trên.
      *
      * KHÔNG dùng khoảng cách cố định: bản cũ đặt 4 m cho mọi tập hệ, nên chỉ
      * bật hệ tiêu hoá (cao ~0,6 m) thì mô hình còn bằng một phần ba khung.
@@ -785,40 +803,27 @@ export default function AnatomyScene({
      * `keepDirection`: giữ góc người đọc đang xoay tới (khi bật/tắt hệ), chỉ
      * đổi tâm và khoảng cách. Nút góc nhìn và "Đặt lại" thì về hướng chuẩn.
      */
-    const fit = (view: string, extent = 0, animate = false, keepDirection = false) => {
-      const w = el.clientWidth;
-      const h = el.clientHeight;
-      if (w === 0 || h === 0) return;
-      const mobile = w < 768;
-      if (extent > 0.8) view = "front";
+    const fit = (view: string, animate = false, keepDirection = false) => {
+      if (el.clientWidth === 0 || el.clientHeight === 0) return;
+      // Lưới tách hẳn chỉ đọc được khi nhìn thẳng (xoay cũng tắt từ mốc này).
+      if (amount > 0.8) view = "front";
       const direction =
-        keepDirection && extent < 0.05
+        keepDirection && amount < 0.05
           ? camera.position.clone().sub(controls.target).normalize()
           : viewDirection(view);
-      const frame = frameBox(visibleBox(), direction, usableRect());
-
-      const reservedHeight = mobile ? 350 : 270;
-      const availableAspect = Math.max(
-        0.35,
-        (w - (mobile ? 40 : 340)) / Math.max(160, h - reservedHeight),
-      );
-      const atlasDistance =
-        (Math.max(packingHeight, packingWidth / availableAspect) / fovTan()) *
-        (h / Math.max(160, h - reservedHeight)) *
-        1.08;
-      const explodedTarget = new T.Vector3(w > 767 ? -packingWidth * 0.12 : 0, 0.85, 0);
-
-      const distance = T.MathUtils.lerp(frame.distance, Math.max(0.2, atlasDistance), extent);
+      const rect = usableRect();
+      const frame = frameBox(visibleBox(), direction, rect);
+      // Hệ cục bộ (não, tim, tiêu hoá) không phóng tới đủ 74%: tối đa gấp
+      // MAX_MAGNIFY lần cỡ toàn thân, để não 17 cm không lấp cả màn. Chỉ ở
+      // nguyên khối — lưới tách thì khung theo lưới.
+      if (amount < 0.05) {
+        const whole = frameBox(fullBox, direction, rect);
+        frame.distance = Math.max(frame.distance, whole.distance / MAX_MAGNIFY);
+      }
       // Trần zoom ra: lùi được gấp 4 khung vừa — đủ để thấy toàn cảnh, chưa tới
       // mức mô hình thành một chấm giữa màn.
-      controls.maxDistance = Math.max(6, distance * 4);
-      place(
-        frame.target.clone().lerp(explodedTarget, extent),
-        direction,
-        distance,
-        [frame.offsetX * (1 - extent), frame.offsetY * (1 - extent)],
-        animate,
-      );
+      controls.maxDistance = Math.max(6, frame.distance * 4);
+      place(frame.target, direction, frame.distance, [frame.offsetX, frame.offsetY], animate);
     };
 
     /** Bay tới hộp bao của những mảnh đang chọn, giữ nguyên phần còn lại của cơ thể. */
@@ -986,7 +991,7 @@ export default function AnatomyScene({
       renderer.setSize(el.clientWidth, el.clientHeight, false);
       composer?.setPixelRatio(renderer.getPixelRatio());
       composer?.setSize(el.clientWidth, el.clientHeight);
-      fit(latest.current.view, amount);
+      fit(latest.current.view);
       sized = true;
     };
     const observer = new ResizeObserver(resize);
@@ -1124,6 +1129,9 @@ export default function AnatomyScene({
       }
 
       if (changed || moving || lastExtent < 0) {
+        // Lưới xếp lại (bật/tắt hệ lúc đang tách) thì khung lại — SAU khi mảnh đã
+        // dời tới ô mới, vì `fit()` đo hộp bao theo vị trí hiện tại của mảnh.
+        let refit = false;
         applyLayers(s.selected);
         const visible = new Set(s.visible);
         const selection = new Set(s.selected);
@@ -1137,14 +1145,12 @@ export default function AnatomyScene({
           visibleParts.map((p) => p.id).join(",") + ":" + camera.aspect.toFixed(3);
         if (nextLayoutKey !== layoutKey) {
           const layout = createExplosionLayout(visibleParts, camera.aspect);
-          packingWidth = layout.width;
-          packingHeight = layout.height;
           parts.forEach((p, i) => {
             const cell = layout.cells.get(p.id);
             offsets[i] = cell ? new T.Vector3(cell.x, cell.y + 0.85, 0) : centers[i].clone();
           });
           layoutKey = nextLayoutKey;
-          if (amount > 0.05 && !s.isolate) fit(s.view, Math.max(0, (amount - 0.3) / 0.7));
+          refit = amount > 0.05 && !s.isolate;
         }
 
         parts.forEach((p, i) => {
@@ -1189,6 +1195,7 @@ export default function AnatomyScene({
             mesh.updateMatrixWorld(true);
           }
         });
+        if (refit) fit(s.view);
         partTexture.needsUpdate = true;
         selectionTexture.needsUpdate = true;
         markerGeometry.attributes.position.needsUpdate = true;
@@ -1199,7 +1206,7 @@ export default function AnatomyScene({
 
       if (s.view !== lastView || s.reset !== lastReset) {
         // Lượt đầu (chưa có góc nhìn nào) đặt thẳng; về sau thì chuyển mượt.
-        fit(s.view, amount, sized && lastView !== "");
+        fit(s.view, sized && lastView !== "");
         lastView = s.view;
         lastReset = s.reset;
         lastVisibleKey = s.visible.join(",");
@@ -1212,11 +1219,11 @@ export default function AnatomyScene({
       if (visibleKey !== lastVisibleKey) {
         lastVisibleKey = visibleKey;
         if (sized && !s.isolate && amount < 0.05 && s.visible.length > 0) {
-          fit(s.view, amount, true, true);
+          fit(s.view, true, true);
         }
       }
       runTween(performance.now());
-      if (moving && !s.isolate) fit(amount > 0.5 ? "front" : s.view, Math.max(0, (amount - 0.3) / 0.7));
+      if (moving && !s.isolate) fit(amount > 0.5 ? "front" : s.view);
 
       if (sized && s.focus !== lastFocus) {
         lastFocus = s.focus;
@@ -1285,7 +1292,7 @@ export default function AnatomyScene({
             );
           }
         } else if (lastIsolate) {
-          fit(s.view, amount, true);
+          fit(s.view, true);
         }
         lastIsolate = isolateKey;
       }
@@ -1323,7 +1330,7 @@ export default function AnatomyScene({
       }
       if ((s.fitFrame ?? 0) !== lastFitFrame) {
         lastFitFrame = s.fitFrame ?? 0;
-        fit(s.view, amount, true, true);
+        fit(s.view, true, true);
       }
 
       controls.enableRotate = amount < 0.8;
