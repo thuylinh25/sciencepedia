@@ -347,14 +347,11 @@ export default function AnatomyScene({
           "varying float partVisible; varying float partSelected; varying float partHovered; varying float partContext;\n" + shader.fragmentShader;
         shader.fragmentShader = shader.fragmentShader.replace(
           "#include <clipping_planes_fragment>",
-          "#include <clipping_planes_fragment>\nif (partVisible < 0.5) discard;\nif (partContext > 0.5 && mod(floor(gl_FragCoord.x) + floor(gl_FragCoord.y), 2.0) < 0.5) discard;",
+          "#include <clipping_planes_fragment>\nif (partVisible < 0.5) discard;\nif (partContext > 0.5 && partSelected < 0.5) discard;",
         );
         /*
-         * Mảnh BỐI CẢNH của góc nhìn theo hệ (kênh A của texture chọn): trong suốt
-         * kiểu "screen-door" — bỏ một nửa điểm ảnh theo ô cờ — và nhạt về xám.
-         * Không dùng alpha thật: mảnh bối cảnh chung vật liệu (và chung lượt vẽ)
-         * với mảnh nổi bật; bật `transparent` cho cả vật liệu là phá thứ tự vẽ và
-         * độ sâu của chính cấu trúc đang xem. Ô cờ giữ depth test, khỏi sắp xếp.
+         * Mảnh BỐI CẢNH của góc nhìn theo hệ (kênh A của texture chọn) không vẽ ở
+         * lượt này — `ghostMaterial` vẽ nó ở lượt thứ hai (xem dưới).
          *
          * Mảnh đang chọn GIỮ màu và bề mặt của nó: chỉ ám cyan 12%, cộng viền
          * sáng cyan ở rìa (fresnel) và phát sáng rất khẽ. Bản gốc trộn 75% sang
@@ -362,7 +359,7 @@ export default function AnatomyScene({
          */
         shader.fragmentShader = shader.fragmentShader.replace(
           "#include <color_fragment>",
-          "#include <color_fragment>\ndiffuseColor.rgb = mix(diffuseColor.rgb, vec3(0.45, 0.82, 0.95), partSelected * 0.12);\ndiffuseColor.rgb = mix(diffuseColor.rgb, vec3(dot(diffuseColor.rgb, vec3(0.3, 0.59, 0.11))) * 0.75, partContext * (1.0 - partSelected) * 0.7);",
+          "#include <color_fragment>\ndiffuseColor.rgb = mix(diffuseColor.rgb, vec3(0.45, 0.82, 0.95), partSelected * 0.12);",
         );
         shader.fragmentShader = shader.fragmentShader.replace(
           "#include <emissivemap_fragment>",
@@ -371,6 +368,68 @@ export default function AnatomyScene({
       };
       materials.push(m);
       return m;
+    };
+
+    /*
+     * ## Bối cảnh = lượt vẽ bóng mờ (2026-09-30)
+     *
+     * Mảnh bối cảnh của góc nhìn theo hệ (xem khí quản mà vẫn thấy thanh quản,
+     * phế quản) vẽ thành lớp xám xanh trong suốt, như atlas tham chiếu. Bản đầu
+     * dùng ô cờ (bỏ nửa điểm ảnh) để khỏi đụng thứ tự vẽ; trên màn DPR 1 nó thành
+     * lưới sọc, thu nhỏ thì moiré — chủ sản phẩm chê "chưa đẹp".
+     *
+     * Không bật `transparent` trên vật liệu thường: mảnh bối cảnh chung vật liệu và
+     * lượt vẽ với mảnh nổi bật. Thay vào đó: lượt chính bỏ mảnh bối cảnh; lượt hai
+     * vẽ LẠI cảnh với `scene.overrideMaterial = ghostMaterial`, không xoá bộ đệm,
+     * không ghi depth — nên cấu trúc chính vẫn che phần bối cảnh nằm sau nó. Đỉnh
+     * không phải bối cảnh bị đẩy ra ngoài clip space, khỏi tô điểm ảnh.
+     */
+    const ghostMaterial = new T.MeshStandardMaterial({
+      color: "#9fb1c4",
+      metalness: 0,
+      roughness: 0.55,
+      transparent: true,
+      opacity: 0.2,
+      depthWrite: false,
+      // Chỉ mặt trước: hai mặt cộng dồn thành một khối xám gần đục.
+      side: T.FrontSide,
+    });
+    ghostMaterial.onBeforeCompile = (shader) => {
+      shader.uniforms.partState = { value: partTexture };
+      shader.uniforms.selectionState = { value: selectionTexture };
+      shader.uniforms.stateWidth = { value: width };
+      shader.vertexShader =
+        "attribute float partIndex; uniform sampler2D partState; uniform sampler2D selectionState; uniform float stateWidth; varying float ghostOn;\n" +
+        shader.vertexShader
+          .replace(
+            "#include <begin_vertex>",
+            "#include <begin_vertex>\nvec2 stateUv = vec2((partIndex + 0.5) / stateWidth, 0.5); vec4 state = texture2D(partState, stateUv); transformed += state.xyz; vec4 pick = texture2D(selectionState, stateUv); ghostOn = step(0.5, state.w) * step(0.5, pick.a) * (1.0 - step(0.5, pick.r));",
+          )
+          .replace(
+            "#include <project_vertex>",
+            "#include <project_vertex>\nif (ghostOn < 0.5) gl_Position = vec4(0.0, 0.0, 2.0, 1.0);",
+          );
+      shader.fragmentShader =
+        "varying float ghostOn;\n" +
+        shader.fragmentShader.replace(
+          "#include <clipping_planes_fragment>",
+          "#include <clipping_planes_fragment>\nif (ghostOn < 0.5) discard;",
+        );
+    };
+    materials.push(ghostMaterial);
+    /** Góc nhìn đang có mảnh bối cảnh hiện — khi đó mới cần lượt bóng mờ. */
+    let ghostActive = false;
+    const drawGhost = () => {
+      if (!ghostActive) return;
+      const autoClear = renderer.autoClear;
+      const markersShown = markers.visible;
+      renderer.autoClear = false;
+      markers.visible = false;
+      scene.overrideMaterial = ghostMaterial;
+      renderer.render(scene, camera);
+      scene.overrideMaterial = null;
+      markers.visible = markersShown;
+      renderer.autoClear = autoClear;
     };
     /*
      * Một vật liệu mỗi NHÓM cơ quan (gan, tuỵ, não, dây thần kinh… —
@@ -772,6 +831,8 @@ export default function AnatomyScene({
        * theo vùng trống (xem `fillY`).
        */
       systemView = false,
+      /** Tỉ lệ lấp vùng trống của góc nhìn theo hệ (ảnh thu nhỏ lấp nhiều hơn khung xem). */
+      systemFill = SYSTEM_VIEW_FILL,
     ) => {
       const floor = systemView ? controls.minDistance : 0.12;
       const worldUp =
@@ -810,7 +871,7 @@ export default function AnatomyScene({
       // và thanh "Tách các lớp" (~93% vùng trống, đo 2026-09-29).
       const fillY =
         systemView
-          ? ((rect.bottom - rect.top) * SYSTEM_VIEW_FILL) / rect.h
+          ? ((rect.bottom - rect.top) * systemFill) / rect.h
           : Math.min(frameFill(rect.w) * rect.h, (rect.bottom - rect.top) * (1 - 2 * FRAME_PAD)) / rect.h;
       const fillX = ((rect.right - rect.left) * (1 - 2 * FRAME_PAD)) / rect.w;
       // Tính tới MẶT GẦN của hộp (+ nearest): mặt ấy hiện to nhất trên màn.
@@ -1197,25 +1258,23 @@ export default function AnatomyScene({
       if (!view || !def || el.clientWidth < THUMB_W || el.clientHeight < THUMB_H) return;
       const savedData = data.slice();
       const savedSelected = selectedData.slice();
+      // Ảnh thu nhỏ theo lối atlas: CHỈ cấu trúc của thẻ, không bối cảnh. Ô cờ của
+      // mảnh bối cảnh thu nhỏ 240 px thành sọc xám (moiré) lấp nửa thẻ — báo
+      // 2026-09-30 "hình ảnh chưa đẹp". Bối cảnh vẫn có trong khung xem thật.
       parts.forEach((p, i) => {
         data[i * 4] = data[i * 4 + 1] = data[i * 4 + 2] = 0;
-        data[i * 4 + 3] = inView(view, p.system, i) ? 1 : 0;
-        selectedData[i * 4] = selectedData[i * 4 + 2] = 0;
-        selectedData[i * 4 + 1] = selectedData[i * 4 + 3] = isContext(view, i) ? 255 : 0;
+        data[i * 4 + 3] = inView(view, p.system, i) && !isContext(view, i) ? 1 : 0;
+        selectedData[i * 4] = selectedData[i * 4 + 1] = selectedData[i * 4 + 2] = selectedData[i * 4 + 3] = 0;
       });
       partTexture.needsUpdate = true;
       selectionTexture.needsUpdate = true;
       thumbBox.makeEmpty();
       view.focus.forEach((i) => thumbBox.union(bounds[i]));
       const direction = viewDirection(def.direction);
-      const rect = { w: THUMB_W, h: THUMB_H, left: 0, right: THUMB_W, top: 0, bottom: THUMB_H };
-      const frame = frameBox(
-        thumbBox,
-        direction,
-        rect,
-        THUMB_W / THUMB_H,
-        isSystemView(def),
-      );
+      // Nhãn phủ ~20% đáy thẻ (dải gradient): khung cấu trúc trong phần trên, chừa lề
+      // như ảnh atlas — trước đây lấp cả thẻ, chân cấu trúc chui dưới nhãn.
+      const rect = { w: THUMB_W, h: THUMB_H, left: 0, right: THUMB_W, top: THUMB_H * 0.05, bottom: THUMB_H * 0.8 };
+      const frame = frameBox(thumbBox, direction, rect, THUMB_W / THUMB_H, isSystemView(def), 0.86);
 
       const savedPosition = camera.position.clone();
       const savedQuaternion = camera.quaternion.clone();
@@ -1224,6 +1283,8 @@ export default function AnatomyScene({
       markers.visible = false;
       camera.clearViewOffset();
       camera.aspect = THUMB_W / THUMB_H;
+      // Tâm vùng trên nhãn lệch khỏi tâm thẻ — bù bằng view offset, như khung xem chính.
+      camera.setViewOffset(THUMB_W, THUMB_H, frame.offsetX, frame.offsetY, THUMB_W, THUMB_H);
       camera.updateProjectionMatrix();
       camera.position.copy(frame.target).addScaledVector(direction, frame.distance);
       camera.lookAt(frame.target);
@@ -1449,6 +1510,7 @@ export default function AnatomyScene({
           refit = amount > 0.05 && !s.isolate;
         }
 
+        let ghostNext = false;
         parts.forEach((p, i) => {
           const c = centers[i];
           const destination = offsets[i];
@@ -1474,6 +1536,7 @@ export default function AnatomyScene({
           data[i * 4 + 2] = dz;
           data[i * 4 + 3] = shown ? 1 : 0;
           const context = isContext(view, i);
+          if (context && shown) ghostNext = true;
           selectedData[i * 4] = selected ? 255 : 0;
           // Bối cảnh ô cờ không đổ bóng AO: nửa điểm ảnh đã bỏ mà AO vẫn tô tối cả mảng.
           selectedData[i * 4 + 1] = alphaOf(i) < 0.999 || context ? 255 : 0;
@@ -1493,6 +1556,7 @@ export default function AnatomyScene({
           }
         });
         if (refit) fit(s.view);
+        ghostActive = ghostNext;
         partTexture.needsUpdate = true;
         selectionTexture.needsUpdate = true;
         markerGeometry.attributes.position.needsUpdate = true;
@@ -1660,7 +1724,7 @@ export default function AnatomyScene({
       if (dirty) {
         lastChange = now;
         aoFresh = false;
-      } else if (composer && !aoFresh && !tween && now - lastChange > 140) {
+      } else if (composer && !ghostActive && !aoFresh && !tween && now - lastChange > 140) {
         // Đứng yên đủ lâu: một khung có AO thay cho khung thường.
         composer.render();
         // GTAOPass khôi phục clear color qua get/set — giữ chắc alpha 0.
@@ -1670,6 +1734,7 @@ export default function AnatomyScene({
       if (dirty) {
         // Đang thay đổi (xoay, zoom, tách lớp) → vẽ thường, không AO.
         renderer.render(scene, camera);
+        drawGhost();
         targets = [];
         if (amount > 0.45) {
           const cw = el.clientWidth;

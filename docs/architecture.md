@@ -598,11 +598,17 @@ thì RỚT khỏi bản phát hành khi `--write` — sửa nguồn + science-ed
 **Tập hệ đang bật của góc nhìn theo hệ = các hệ có mảnh trong nó**, không phải `[systemId]`: thiếu
 hệ cơ là `effectivePeel` coi cơ như đã bóc, cơ thanh quản biến mất ở 0%.
 
-**Bối cảnh làm mờ = ô cờ (screen-door) + nhạt về xám**, qua kênh A còn trống của texture chọn,
-không bằng alpha thật: mảnh bối cảnh chung vật liệu và lượt vẽ với mảnh nổi bật, bật
-`transparent` cho vật liệu là hỏng thứ tự vẽ của chính cấu trúc đang xem. Mảnh bối cảnh không đổ
-AO (kênh G). Sàn khoảng cách camera hạ từ 0,12 m xuống `controls.minDistance` cho góc nhìn theo
-hệ — nắp thanh môn ~3,5 cm ở sàn cũ chỉ chiếm nửa khung.
+**Bối cảnh = lượt vẽ bóng mờ thứ hai** (đổi 2026-09-30): lượt chính bỏ mảnh bối cảnh (kênh A
+của texture chọn); lượt hai vẽ lại cảnh với `scene.overrideMaterial` xám xanh 20%, mặt trước, không
+ghi depth, không xoá bộ đệm — cấu trúc chính vẫn che bối cảnh nằm sau. Bản đầu dùng ô cờ để khỏi
+đụng thứ tự vẽ: trên màn DPR 1 thành lưới sọc, thu nhỏ thì moiré — chủ sản phẩm chê. KHÔNG bật
+`transparent` trên vật liệu thường (mảnh bối cảnh chung vật liệu/lượt vẽ với mảnh nổi bật). Có bối
+cảnh thì không AO: composer vẽ vào render target, depth màn hình trống, bóng mờ sẽ đè lên tất cả.
+
+**Ảnh thu nhỏ theo lối atlas:** chỉ cấu trúc của thẻ (không bối cảnh), khung trong 5–80% chiều cao
+thẻ (nhãn phủ phần đáy), lấp 86%. Sàn khoảng cách camera hạ từ 0,12 m xuống `controls.minDistance`
+cho góc nhìn theo hệ — nắp thanh môn ~3,5 cm ở sàn cũ chỉ chiếm nửa khung. Trên SwiftShader, trang
+crash sau ~40 ảnh (bộ nhớ tiến trình GPU, heap JS đứng yên ~200 MB) — chưa thấy trên GPU thật.
 
 ### Da đục thì không vẽ lớp trong
 
