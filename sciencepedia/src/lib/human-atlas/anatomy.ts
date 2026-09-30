@@ -56,7 +56,8 @@ export const CONCEPT_COUNT = 3432;
  * của cảnh, và đổi theo theme thì cùng một cơ quan mang hai màu.
  */
 export const SYSTEM_COLORS: Record<SystemId, string> = {
-  skeletal: "#e2d9ba",
+  // Xám be như xương atlas (vân hạt/lỗ xốp ở `SURFACES`, anatomy-scene.tsx); bản cũ #e2d9ba ngả vàng kem.
+  skeletal: "#d3c9b3",
   muscular: "#a85b50",
   cardiac: "#b96760",
   sensory: "#b0c8ce",
@@ -72,7 +73,8 @@ export const SYSTEM_COLORS: Record<SystemId, string> = {
   endocrine: "#c5a09a",
   reproductive: "#bda098",
   integumentary: "#ba9b7d",
-  connective: "#aec3bb",
+  // Dây chằng/gân trắng bạc ám xanh như atlas; bản cũ #aec3bb ngả xanh rêu.
+  connective: "#c4ced3",
 };
 
 /**
@@ -397,10 +399,10 @@ export const GROUP_COLORS: Record<string, string> = {
    * tách được sụn khỏi xương ngà ngay cạnh nó (sụn sườn nối xương sườn, sụn giáp
    * trên khí quản). Trước đó sụn mũi hồng, nắp thanh môn đỏ, còn lại cùng màu xương.
    */
-  "respiratory.cartilage": "#c9d6d8",
-  "skeletal.cartilage": "#c9d6d8",
+  "respiratory.cartilage": "#bcc9cc",
+  "skeletal.cartilage": "#bcc9cc",
   // Xoăn mũi dưới là xương: màu xương.
-  "respiratory.concha": "#e2d9ba",
+  "respiratory.concha": "#d3c9b3",
   // Tiết niệu: thận đỏ nâu, niệu quản vàng nhạt, bàng quang hồng.
   "urinary.kidney": "#8f3f36",
   "urinary.ureter": "#d8c79c",

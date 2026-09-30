@@ -820,8 +820,6 @@
     "resetLabel": "Reset view and layer separation",
     "explode": "Separate body layers",
     "explodeShort": "Separate",
-    "assembled": "Assembled",
-    "everyPiece": "Fully separated",
     "caption": {
       "assembled": "Adult human · Male",
       "separated": "Separated structures",

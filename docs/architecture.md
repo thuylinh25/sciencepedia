@@ -584,7 +584,7 @@ Tổng quan tim loại "Right anterior segmental artery" (FMA8620): FMA gọi l�
 
 **Màu theo cơ quan cho hô hấp/tiết niệu/nội tiết** (`anatomy-groups.ts` + `GROUP_COLORS`): cả hệ
 một màu thì thận lẫn niệu quản, khí quản lẫn phổi. Sụn khí–phế quản trắng ngà, phổi hồng tím,
-thận đỏ nâu, niệu quản vàng nhạt, giáp đỏ sẫm, thượng thận vàng — theo ảnh tham chiếu. Phổi thêm vân lốm đốm + clearcoat (2026-09-30): một màu trơn trông như nhựa; mesh Z-Anatomy không có UV nên vân là nhiễu 3D theo toạ độ mô TRƯỚC khi tách (`position`) — dính vào mô khi kéo slider. Chỉ màu + độ nhám, không bump/texture.
+thận đỏ nâu, niệu quản vàng nhạt, giáp đỏ sẫm, thượng thận vàng — theo ảnh tham chiếu. Bề mặt mô theo lối atlas (`SURFACES` trong anatomy-scene.tsx, 2026-09-30): phổi lốm đốm + bóng ướt, xương xám be có hạt/lỗ xốp, sụn xanh xám bóng nhẹ, dây chằng trắng bạc có thớ. Một màu trơn trông như nhựa; mesh không có UV nên vân là nhiễu 3D theo toạ độ mô TRƯỚC khi tách (`position`) — dính vào mô khi kéo slider. Chỉ màu + độ nhám, không bump/texture. Mỗi bề mặt cần `customProgramCacheKey` riêng: three.js mặc định gom shader theo mã nguồn `onBeforeCompile` (giống nhau ở mọi vật liệu), nên xương từng dùng lại shader trơn — vân không hiện mà không báo lỗi.
 
 **Góc nhìn theo hệ lấp 74% chiều cao VÙNG TRỐNG**, không của cả khung như theo vùng: cơ quan cao
 như khí quản lấp theo cả khung là ~93% vùng trống, đè chip và thanh trượt.
@@ -604,6 +604,8 @@ ghi depth, không xoá bộ đệm — cấu trúc chính vẫn che bối cảnh
 đụng thứ tự vẽ: trên màn DPR 1 thành lưới sọc, thu nhỏ thì moiré — chủ sản phẩm chê. KHÔNG bật
 `transparent` trên vật liệu thường (mảnh bối cảnh chung vật liệu/lượt vẽ với mảnh nổi bật). Có bối
 cảnh thì không AO: composer vẽ vào render target, depth màn hình trống, bóng mờ sẽ đè lên tất cả.
+
+**Ảnh thu nhỏ chụp mọi lớp ĐỤC**, không theo độ đậm đang có ở khung xem: độ đậm theo lớp bóc tính từ tập hệ đang bật, nên chụp khi đang ở "Phổi" (không hệ cơ) thì cơ opacity 0 — ảnh bìa "Cơ hít vào" chỉ còn bóng xương sườn. Mở góc nhìn luôn về nguyên khối, ảnh bìa phải khớp thế.
 
 **Ảnh thu nhỏ theo lối atlas:** chỉ cấu trúc của thẻ (không bối cảnh), khung trong 6–94% chiều cao
 vùng vẽ, lấp 86%. Nhãn nằm DƯỚI vùng vẽ, không phủ lên ảnh (2026-09-30) — bản trước chừa 20% đáy cho dải nhãn gradient. Sàn khoảng cách camera hạ từ 0,12 m xuống `controls.minDistance`

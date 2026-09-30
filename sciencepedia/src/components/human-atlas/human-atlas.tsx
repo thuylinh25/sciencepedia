@@ -855,7 +855,10 @@ export function HumanAtlas({
         <StructureSearch
           index={index}
           locale={locale}
-          onChoose={(c) => choose(c)}
+          // Tìm một cấu trúc là muốn thấy ĐÚNG nó: mở ở "Xem riêng" như link sâu
+          // `?structure=` — đốt L1 nằm sau ruột, tô sáng tại chỗ là tô sáng thứ
+          // không ai thấy. "Hiện giải phẫu xung quanh" trả lại toàn cảnh.
+          onChoose={(c) => choose(c, { isolate: true })}
           onChooseView={(id) => {
             selectView(id, true);
             setPanel(null);
@@ -938,7 +941,7 @@ export function HumanAtlas({
 
       <p
         aria-hidden
-        className="pointer-events-none absolute bottom-[9.5rem] left-1/2 hidden -translate-x-1/2 items-center gap-3 text-[11px] tracking-[0.15em] whitespace-nowrap text-muted-foreground uppercase atlas-wide:flex"
+        className="pointer-events-none absolute bottom-[6.75rem] left-1/2 hidden -translate-x-1/2 items-center gap-3 text-[11px] tracking-[0.15em] whitespace-nowrap text-muted-foreground uppercase atlas-wide:flex"
       >
         <span className="h-px w-6 bg-border" />
         {caption}
@@ -947,7 +950,10 @@ export function HumanAtlas({
 
       {/* ---------------------------------------------------- thanh dưới
           Điện thoại: chừa 5rem bên phải cho nút trợ lý AI (position: fixed
-          của layout) — không có khoảng này thì nút đó đè lên nút "Đặt lại". */}
+          của layout) — không có khoảng này thì nút đó đè lên nút "Đặt lại".
+          Màn rộng: MỘT hàng (nhãn · thanh · % · đặt lại), ~48px. Bản ba hàng cao
+          ~95px cộng dòng chú thích che mất ngực/bụng khi phóng to (2026-09-30);
+          cảnh đo thanh này (`data-atlas-avoid`) nên mô hình được thêm chỗ. */}
       <div
         data-atlas-avoid="bottom"
         className={cn(
@@ -955,7 +961,7 @@ export function HumanAtlas({
           "absolute z-20 flex items-center gap-3 p-3",
           "atlas-phone:right-20 atlas-phone:bottom-[max(1rem,env(safe-area-inset-bottom))] atlas-phone:left-3",
           "atlas-short:bottom-3 atlas-short:left-3 atlas-short:w-[16rem]",
-          "atlas-wide:bottom-12 atlas-wide:left-1/2 atlas-wide:w-[28rem] atlas-wide:-translate-x-1/2 atlas-wide:gap-5 atlas-wide:px-5",
+          "atlas-wide:bottom-12 atlas-wide:left-1/2 atlas-wide:w-[34rem] atlas-wide:-translate-x-1/2 atlas-wide:gap-4 atlas-wide:px-4 atlas-wide:py-1.5",
         )}
       >
         <Button
@@ -971,14 +977,14 @@ export function HumanAtlas({
             {structures.length > 0 ? t("atlasViews.structures.open") : t("systems")}
           </span>
         </Button>
-        <div className="min-w-0 flex-1">
-          <div className="mb-1.5 flex items-center justify-between gap-2 text-xs whitespace-nowrap">
-            <label htmlFor="atlas-explode" className="truncate font-medium">
+        <div className="min-w-0 flex-1 atlas-wide:flex atlas-wide:items-center atlas-wide:gap-3">
+          <div className="mb-1.5 flex items-center justify-between gap-2 text-xs whitespace-nowrap atlas-wide:contents">
+            <label htmlFor="atlas-explode" className="truncate font-medium atlas-wide:order-1 atlas-wide:shrink-0">
               {/* Điện thoại: thanh này chung hàng với hai nút, chỉ đủ chỗ cho nhãn ngắn. */}
               <span className="atlas-phone:hidden atlas-short:hidden">{t("explode")}</span>
               <span className="hidden atlas-phone:inline atlas-short:inline">{t("explodeShort")}</span>
             </label>
-            <output htmlFor="atlas-explode" className="text-muted-foreground tabular-nums">
+            <output htmlFor="atlas-explode" className="text-muted-foreground tabular-nums atlas-wide:order-3 atlas-wide:w-9 atlas-wide:text-right">
               {Math.round(state.explode * 100)}%
             </output>
           </div>
@@ -998,16 +1004,12 @@ export function HumanAtlas({
                 rotate: false,
               }));
             }}
-            className="block h-6 w-full cursor-pointer accent-[var(--accent)]"
+            className="block h-6 w-full cursor-pointer accent-[var(--accent)] atlas-wide:order-2 atlas-wide:min-w-0 atlas-wide:flex-1"
           />
-          <div className="flex justify-between text-[10px] text-muted-foreground atlas-phone:hidden atlas-short:hidden">
-            <span>{t("assembled")}</span>
-            <span>{t("everyPiece")}</span>
-          </div>
         </div>
         <Button
           variant="ghost"
-          className="h-auto flex-col gap-1 border-l px-3 py-1.5 text-[11px]"
+          className="h-auto flex-col gap-1 border-l px-3 py-1.5 text-[11px] atlas-wide:flex-row atlas-wide:gap-1.5 atlas-wide:py-1 atlas-wide:text-xs"
           onClick={reset}
           aria-label={t("resetLabel")}
         >
