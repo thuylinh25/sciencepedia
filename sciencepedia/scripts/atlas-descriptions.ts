@@ -244,9 +244,34 @@ type Entry = {
   enName: string;
   system: string;
   status: "vi" | "en-untranslated" | "none";
+  /** Tên bài Wikipedia tiếng Anh đã khớp — để KIỂM MAPPING (so với enName). */
+  enTitle: string | null;
+  /** Cờ nghi map lệch (tên FMA ≠ tên bài); cần soát tay. */
+  mismatch?: boolean;
   description: { lang: "vi" | "en"; text: string; translated: false } | null;
   source: { title: string; url: string; license: "CC BY-SA 4.0" } | null;
 };
+
+// So khớp tên FMA ↔ tên bài Wikipedia: tách từ, bỏ từ đệm, tính Jaccard.
+const STOP = new Set(["of", "the", "a", "muscle", "bone", "left", "right", "human", "gland", "artery", "vein", "nerve"]);
+const words = (s: string) =>
+  new Set(
+    s
+      .toLowerCase()
+      .replace(/[()]/g, " ")
+      .split(/[\s-]+/)
+      .filter((w) => w && !STOP.has(w)),
+  );
+function mismatched(enName: string, enTitle: string | null): boolean {
+  if (!enTitle) return false;
+  const a = words(stripSideRaw(enName));
+  const b = words(enTitle);
+  if (a.size === 0 || b.size === 0) return false;
+  let inter = 0;
+  for (const w of a) if (b.has(w)) inter++;
+  const jac = inter / (a.size + b.size - inter);
+  return jac < 0.5;
+}
 
 async function run() {
   const write = process.argv.includes("--write");
@@ -279,9 +304,16 @@ async function run() {
   //    ("eleventh thoracic vertebra" → "thoracic vertebra", về bài chung).
   const stripOrdinal = (n: string) =>
     n.replace(/^(first|second|third|fourth|fifth|sixth|seventh|eighth|ninth|tenth|eleventh|twelfth)\s+/i, "").trim();
+  // Vài trường hợp tên chung dẫn tới bài SAI loại — ép về bài đúng.
+  // "fifth rib" bỏ số → "rib" lại redirect sang "Rib cage" (cả lồng ngực). Ép "Rib".
+  const override = (base: string): string | null => {
+    if (/^(\w+\s+)?rib$/i.test(base)) return "Rib";
+    return null;
+  };
   const enTitlesOf = (g: Group) => {
     const base = stripSideRaw(g.rep.name);
-    return [...new Set([linkOf(g)?.en, base, stripOrdinal(base)].filter(Boolean) as string[])];
+    const ov = override(base) ?? override(stripOrdinal(base));
+    return [...new Set([ov, linkOf(g)?.en, base, stripOrdinal(base)].filter(Boolean) as string[])];
   };
   console.log(`Tra Wikipedia (en) cho ${groups.length} nhóm…`);
   const enSummaries = await pool(groups, 4, async (g) => {
@@ -308,14 +340,19 @@ async function run() {
   }));
   const viByKey = new Map(viSummaries.map((x) => [x.key, x.s]));
 
-  // 4) Chọn: vi nếu có, else en.
+  // 4) Chọn: vi nếu có, else en. Giữ riêng tên bài EN để kiểm mapping.
   const byKey = new Map<string, Summary | null>();
-  for (const x of enSummaries) byKey.set(x.g.key, viByKey.get(x.g.key) ?? x.s);
+  const enTitleByKey = new Map<string, string | null>();
+  for (const x of enSummaries) {
+    byKey.set(x.g.key, viByKey.get(x.g.key) ?? x.s);
+    enTitleByKey.set(x.g.key, x.s ? x.s.title.replace(/_/g, " ") : null);
+  }
 
   // 4) Dựng entries.
   const entries: Entry[] = groups.map((g) => {
     const s = byKey.get(g.key) ?? null;
     const status: Entry["status"] = !s ? "none" : s.lang === "vi" ? "vi" : "en-untranslated";
+    const enTitle = enTitleByKey.get(g.key) ?? null;
     return {
       fma: g.rep.conceptId,
       fmaAll: g.fmaAll,
@@ -323,6 +360,8 @@ async function run() {
       enName: g.rep.name,
       system: g.system,
       status,
+      enTitle,
+      ...(s && mismatched(g.rep.name, enTitle) ? { mismatch: true } : {}),
       description: s ? { lang: s.lang, text: s.extract, translated: false } : null,
       source: s ? { title: s.title.replace(/_/g, " "), url: s.url, license: "CC BY-SA 4.0" } : null,
     };
@@ -343,6 +382,10 @@ async function run() {
   console.log(`\n=== Theo hệ (vi / en / trống) ===`);
   for (const [sys, t] of [...sysTally].sort((a, b) => b[1][0] + b[1][1] + b[1][2] - (a[1][0] + a[1][1] + a[1][2])))
     console.log(`  ${sys.padEnd(14)} ${t[0]} / ${t[1]} / ${t[2]}`);
+
+  const flags = entries.filter((e) => e.mismatch);
+  console.log(`\n=== Nghi map lệch (soát tay): ${flags.length} ===`);
+  for (const e of flags) console.log(`  ${e.fma} "${e.enName}" -> bài "${e.enTitle}"`);
 
   console.log(`\n=== 12 mẫu ===`);
   for (const e of entries.filter((e) => e.description).slice(0, 12))

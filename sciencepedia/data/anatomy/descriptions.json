@@ -12,6 +12,7 @@
    "enName": "Pulmonary trunk",
    "system": "arterial",
    "status": "vi",
+   "enTitle": "Pulmonary artery",
    "description": {
     "lang": "vi",
     "text": "Động mạch phổi là một động mạch trong tuần hoàn phổi mang máu đã khử oxy từ bên phải của tim đến phổi. Động mạch phổi lớn nhất là động mạch phổi chính hoặc thân động mạch phổi từ tim, và những động mạch nhỏ nhất là các tiểu động mạch, dẫn đến các mao mạch bao quanh phế nang phổi.",
@@ -33,6 +34,8 @@
    "enName": "Right calcaneal tendon",
    "system": "connective",
    "status": "vi",
+   "enTitle": "Achilles tendon",
+   "mismatch": true,
    "description": {
     "lang": "vi",
     "text": "Gân Achilles là gân gót chân, loại gân dài và dày nhất của người, nằm ở cuối cơ bắp chân và gót chân. Đây là một thuật ngữ trong Giải phẫu học người dùng để chỉ loại gân liên kết chủ yếu với các cơ bắp chân, gân khoeo chân và xương gót (calcaneus), nhờ đó mới có được hoạt động của cẳng chân và nhất là của cả bàn chân.",
@@ -53,6 +56,8 @@
    "enName": "Hyo-epiglottic ligament",
    "system": "connective",
    "status": "en-untranslated",
+   "enTitle": "Hyoepiglottic ligament",
+   "mismatch": true,
    "description": {
     "lang": "en",
     "text": "The hyoepiglottic ligament is an extrinsic ligament of the larynx connecting the epiglottis and the hyoid bone.",
@@ -74,6 +79,7 @@
    "enName": "Interosseous membrane of right forearm",
    "system": "connective",
    "status": "en-untranslated",
+   "enTitle": "Interosseous membrane of forearm",
    "description": {
     "lang": "en",
     "text": "The interosseous membrane of the forearm is a fibrous sheet that connects the interosseous margins of the radius and the ulna. It is the main part of the radio-ulnar syndesmosis, a fibrous joint between the two bones.",
@@ -95,6 +101,7 @@
    "enName": "Interosseous membrane of left leg",
    "system": "connective",
    "status": "en-untranslated",
+   "enTitle": "Interosseous membrane of leg",
    "description": {
     "lang": "en",
     "text": "The interosseous membrane of the leg is a fibrous membrane which extends between the interosseous crests of the tibia and fibula that helps stabilize the bones’ relationship and separates the muscles on the front from those on the back.",
@@ -116,6 +123,7 @@
    "enName": "Right lateral thyrohyoid ligament",
    "system": "connective",
    "status": "en-untranslated",
+   "enTitle": "Lateral thyrohyoid ligament",
    "description": {
     "lang": "en",
     "text": "The lateral thyrohyoid ligament is a round elastic cord, which forms the posterior border of the thyrohyoid membrane and passes between the tip of the superior cornu of the thyroid cartilage and the extremity of the greater cornu of the hyoid bone. The internal branch of the superior laryngeal nerve typical lies lateral to this ligament.",
@@ -137,6 +145,7 @@
    "enName": "Left long plantar ligament",
    "system": "connective",
    "status": "en-untranslated",
+   "enTitle": "Long plantar ligament",
    "description": {
     "lang": "en",
     "text": "The long plantar ligament is a long ligament on the underside of the foot that connects the calcaneus with the 2nd to 5th metatarsal.",
@@ -157,6 +166,7 @@
    "enName": "Median thyrohyoid ligament",
    "system": "connective",
    "status": "en-untranslated",
+   "enTitle": "Median thyrohyoid ligament",
    "description": {
     "lang": "en",
     "text": "The median thyrohyoid ligament is the thicker, middle part of the thyrohyoid membrane. Its lateral thinner portions are pierced by the superior laryngeal vessels and the internal branch of the superior laryngeal nerve.",
@@ -178,6 +188,7 @@
    "enName": "Left stylohyoid ligament",
    "system": "connective",
    "status": "en-untranslated",
+   "enTitle": "Stylohyoid ligament",
    "description": {
     "lang": "en",
     "text": "The stylohyoid ligament is a ligament that extends between the hyoid bone, and the temporal styloid process.",
@@ -199,6 +210,7 @@
    "enName": "Left tensor fasciae latae",
    "system": "connective",
    "status": "en-untranslated",
+   "enTitle": "Tensor fasciae latae muscle",
    "description": {
     "lang": "en",
     "text": "The tensor fasciae latae is a muscle of the thigh. Together with the gluteus maximus, it acts on and is continuous with the iliotibial band, which attaches to the tibia.",
@@ -219,6 +231,8 @@
    "enName": "Thyro-epiglottic ligament",
    "system": "connective",
    "status": "en-untranslated",
+   "enTitle": "Thyroepiglottic ligament",
+   "mismatch": true,
    "description": {
     "lang": "en",
     "text": "The thyroepiglottic ligament is an intrinsic ligament of the larynx that connects the epiglottis and the thyroid cartilage.",
@@ -240,6 +254,7 @@
    "enName": "Left thyrohyoid membrane",
    "system": "connective",
    "status": "en-untranslated",
+   "enTitle": "Thyrohyoid membrane",
    "description": {
     "lang": "en",
     "text": "The thyrohyoid membrane is a broad, fibro-elastic sheet of the larynx. It connects the upper border of the thyroid cartilage to the hyoid bone.",
@@ -261,6 +276,7 @@
    "enName": "Trochlea of left superior oblique",
    "system": "connective",
    "status": "en-untranslated",
+   "enTitle": "Trochlea of superior oblique",
    "description": {
     "lang": "en",
     "text": "The trochlea of superior oblique is a pulley-like structure in the eye. The tendon of the superior oblique muscle passes through it.",
@@ -281,6 +297,7 @@
    "enName": "Appendix",
    "system": "digestive",
    "status": "vi",
+   "enTitle": "Appendix (anatomy)",
    "description": {
     "lang": "vi",
     "text": "Ruột thừa là một thành phần bên trong cơ thể, có hình con giun dài từ 3 – 13 cm, mở vào manh tràng qua lỗ ruột thừa được đậy bởi một van. Ruột thừa do phần đầu của manh tràng bị thoái hóa.",
@@ -301,6 +318,7 @@
    "enName": "Duodenum",
    "system": "digestive",
    "status": "vi",
+   "enTitle": "Duodenum",
    "description": {
     "lang": "vi",
     "text": "Tá tràng (Duodenum) là phần đầu của ruột non, kéo dài từ môn vị của dạ dày đến góc tá tràng - hỗng tràng. Tá tràng là một thành phần quan trọng trong hệ tiêu hóa vì là nơi dịch tụy và dịch mật đổ vào tại nhú tá lớn và nhú tá bé trên tá tràng.",
@@ -321,6 +339,7 @@
    "enName": "Esophagus",
    "system": "digestive",
    "status": "vi",
+   "enTitle": "Esophagus",
    "description": {
     "lang": "vi",
     "text": "Thực quản là cơ quan ở động vật có xương sống có chức năng đưa thức ăn từ hầu xuống dạ dày nhờ nhu động. Thực quản hình ống, ở người lớn dài 25 cm (10 in), ở phía sau khí quản và tim, đi qua cơ hoành và đổ vào vùng trên cùng của dạ dày.",
@@ -341,6 +360,7 @@
    "enName": "Gallbladder",
    "system": "digestive",
    "status": "vi",
+   "enTitle": "Gallbladder",
    "description": {
     "lang": "vi",
     "text": "Trong động vật có xương sống túi mật (gallbladder) là một cơ quan nhỏ lưu giữ mật trước khi mật được đổ vào ruột non. Con người có thể sống mà không có túi mật.",
@@ -361,6 +381,7 @@
    "enName": "Pancreas",
    "system": "digestive",
    "status": "vi",
+   "enTitle": "Pancreas",
    "description": {
     "lang": "vi",
     "text": "Tụy là một cơ quan trong cơ thể động vật, nằm sau phúc mạc và đảm trách hai chức năng chính:Chức năng ngoại tiết: Tụy sản xuất và bài tiết các dịch tụy chứa các men tiêu hóa, hay enzyme tiêu hóa.",
@@ -381,6 +402,7 @@
    "enName": "Rectum",
    "system": "digestive",
    "status": "vi",
+   "enTitle": "Rectum",
    "description": {
     "lang": "vi",
     "text": "Trực tràng tiếng Latin rectum intestinum, có nghĩa là đoạn ruột thẳng) là đoạn cuối của ruột già gần như thẳng ở các động vật có vú, và ruột ở một số loài khác, nằm ngay trước hậu môn. Trực tràng ở người dài khoảng 11 cm đến 15 cm.",
@@ -401,6 +423,7 @@
    "enName": "Stomach",
    "system": "digestive",
    "status": "vi",
+   "enTitle": "Stomach",
    "description": {
     "lang": "vi",
     "text": "Dạ dày hay bao tử là một trong những cơ quan trực thuộc hệ tiêu hóa ở người và động vật. Ở người, dạ dày là cơ quan có dạng túi chữ J nằm trong hoàn toàn trong khoang ổ bụng, nối bởi thực quản (Oesophagus) và tá tràng (Duodenum), đoạn đầu của ruột non.",
@@ -422,6 +445,7 @@
    "enName": "Left sublingual gland",
    "system": "digestive",
    "status": "en-untranslated",
+   "enTitle": "Sublingual gland",
    "description": {
     "lang": "en",
     "text": "The sublingual gland is a seromucous polystomatic exocrine gland. Located underneath the oral diaphragm, the sublingual gland is the smallest and most diffuse of the three major salivary glands of the oral cavity, with the other two being the submandibular and parotid.",
@@ -443,6 +467,7 @@
    "enName": "Left submandibular gland",
    "system": "digestive",
    "status": "vi",
+   "enTitle": "Submandibular gland",
    "description": {
     "lang": "vi",
     "text": "Cặp tuyến nước bọt dưới hàm  là hai tuyến nước bọt chính nằm ở sàn miệng. Mỗi tuyến nặng khoảng 15 gram và đóng góp khoảng 60–67% thể tích nước bọt lúc không bị kích thích; khi được kích thích phần trăm thể tích đóng góp của tuyến nước bọt dưới hàm giảm xuống và phần trăm đóng góp của tuyến nước bọt mang tai tăng lên đến 50%.",
@@ -463,6 +488,7 @@
    "enName": "Tongue",
    "system": "digestive",
    "status": "vi",
+   "enTitle": "Tongue",
    "description": {
     "lang": "vi",
     "text": "Lưỡi là cơ quan vị giác nằm trong khoang miệng của động vật có xương sống. Ở động vật có vú, lưỡi là khối cơ vân chắc, phủ ngoài bằng lớp biểu bì phân lớp, phía dưới là lớp mô liên kết.",
@@ -484,6 +510,7 @@
    "enName": "Left adrenal gland",
    "system": "endocrine",
    "status": "vi",
+   "enTitle": "Adrenal gland",
    "description": {
     "lang": "vi",
     "text": "Trong hệ nội tiết, tuyến thượng thận là các tuyến nội tiết màu da cam ở phía trên cả hai quả thận.",
@@ -504,6 +531,7 @@
    "enName": "Pituitary gland",
    "system": "endocrine",
    "status": "vi",
+   "enTitle": "Pituitary gland",
    "description": {
     "lang": "vi",
     "text": "5g nằm ở sàn não thất ba, trong hố yên của thân xương bướm. Đây là một tuyến quan trọng giữ vai trò chỉ đạo hoạt động của hầu hết các tuyến nội tiết khác.",
@@ -524,6 +552,7 @@
    "enName": "Skin",
    "system": "integumentary",
    "status": "vi",
+   "enTitle": "Human skin",
    "description": {
     "lang": "vi",
     "text": "Da người là lớp vỏ bọc bên ngoài của cơ thể và là cơ quan lớn nhất của hệ thống vỏ bọc. Da có tới bảy lớp mô ngoài da và bảo vệ các cơ, xương, dây chằng và các cơ quan nội tạng bên dưới.",
@@ -544,6 +573,7 @@
    "enName": "Spleen",
    "system": "lymphatic",
    "status": "vi",
+   "enTitle": "Spleen",
    "description": {
     "lang": "vi",
     "text": "Lách hay lá lách, theo đông y gọi là tỳ là một cơ quan có ở hầu như tất cả các động vật có xương sống. Có cấu trúc gần giống như một hạch bạch huyết lớn, nó hoạt động chủ yếu như là một bộ lọc máu.",
@@ -565,6 +595,7 @@
    "enName": "Abductor digiti minimi of right foot",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Abductor digiti minimi muscle of foot",
    "description": {
     "lang": "en",
     "text": "The abductor digiti minimi is a muscle which lies along the lateral (outer) border of the foot, and is in relation by its medial margin with the lateral plantar artery, vein and nerves.",
@@ -586,6 +617,7 @@
    "enName": "Abductor digiti minimi of right hand",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Abductor digiti minimi muscle of the hand",
    "description": {
     "lang": "en",
     "text": "In human anatomy, the abductor digiti minimi is a skeletal muscle situated on the ulnar border of the palm of the hand. It forms the ulnar border of the palm and its spindle-like shape defines the hypothenar eminence of the palm together with the skin, connective tissue, and fat surrounding it.",
@@ -607,6 +639,7 @@
    "enName": "Right abductor hallucis",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Abductor hallucis muscle",
    "description": {
     "lang": "en",
     "text": "The abductor hallucis muscle is an intrinsic muscle of the foot. It participates in the abduction and flexion of the great toe.",
@@ -628,6 +661,7 @@
    "enName": "Right abductor pollicis brevis",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Abductor pollicis brevis muscle",
    "description": {
     "lang": "en",
     "text": "The abductor pollicis brevis is a muscle in the hand that functions as an abductor of the thumb.",
@@ -649,6 +683,7 @@
    "enName": "Left abductor pollicis longus",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Abductor pollicis longus muscle",
    "description": {
     "lang": "en",
     "text": "In human anatomy, the abductor pollicis longus (APL) is one of the extrinsic muscles of the hand. Its major function is to abduct the thumb at the wrist.",
@@ -670,6 +705,7 @@
    "enName": "Left adductor brevis",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Adductor brevis muscle",
    "description": {
     "lang": "en",
     "text": "The adductor brevis is a muscle in the thigh situated immediately deep to the pectineus and adductor longus. It belongs to the adductor muscle group.",
@@ -691,6 +727,7 @@
    "enName": "Left adductor longus",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Adductor longus muscle",
    "description": {
     "lang": "en",
     "text": "In the human body, the adductor longus is a skeletal muscle located in the thigh. One of the adductor muscles of the hip, its main function is to adduct the thigh and it is innervated by the obturator nerve.",
@@ -712,6 +749,7 @@
    "enName": "Left adductor magnus",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Adductor magnus muscle",
    "description": {
     "lang": "en",
     "text": "The adductor magnus is a large triangular muscle, situated on the medial side of the thigh.",
@@ -733,6 +771,7 @@
    "enName": "Right anconeus",
    "system": "muscular",
    "status": "vi",
+   "enTitle": "Anconeus muscle",
    "description": {
     "lang": "vi",
     "text": "Cơ khuỷu là cơ nhỏ ở mặt sau của khớp khuỷu tay.",
@@ -754,6 +793,7 @@
    "enName": "Right brachialis",
    "system": "muscular",
    "status": "vi",
+   "enTitle": "Brachialis muscle",
    "description": {
     "lang": "vi",
     "text": "Cơ cánh tay là cơ nằm ở cánh tay trên có chức năng gấp khớp khuỷu. Cơ ở phía sau cơ nhị đầu cánh tay và tạo nên một phần hố trụ.",
@@ -775,6 +815,7 @@
    "enName": "Right brachioradialis",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Brachioradialis",
    "description": {
     "lang": "en",
     "text": "The brachioradialis, also historically known as the supinator longus, is a muscle of the forearm that flexes the forearm at the elbow. It is also capable of both pronation and supination, depending on the position of the forearm.",
@@ -796,6 +837,7 @@
    "enName": "Right cervical rotator",
    "system": "muscular",
    "status": "none",
+   "enTitle": null,
    "description": null,
    "source": null
   },
@@ -809,6 +851,7 @@
    "enName": "Left coccygeus",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Coccygeus muscle",
    "description": {
     "lang": "en",
     "text": "The coccygeus muscle or ischiococcygeus is a muscle of the pelvic floor located posterior to levator ani and anterior to the sacrospinous ligament.",
@@ -830,6 +873,7 @@
    "enName": "Right coracobrachialis",
    "system": "muscular",
    "status": "vi",
+   "enTitle": "Coracobrachialis muscle",
    "description": {
     "lang": "vi",
     "text": "Cơ quạ - cánh tay là cơ nhỏ nhất trong ba cơ gắn vào mỏm quạ của xương vai.. Cơ nằm ở phần trên và giữa của cánh tay.",
@@ -850,6 +894,7 @@
    "enName": "Diaphragm",
    "system": "muscular",
    "status": "vi",
+   "enTitle": "Thoracic diaphragm",
    "description": {
     "lang": "vi",
     "text": "Cơ hoành là một vân cơ dẹt, rộng, hình vòm, làm thành một vách gân – cơ ngăn giữa lồng ngực và ổ bụng. Cơ hoành có vai trò quan trọng trong sinh lý hô hấp.",
@@ -871,6 +916,7 @@
    "enName": "Right digastric",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Digastric muscle",
    "description": {
     "lang": "en",
     "text": "The digastric muscle is a bilaterally paired suprahyoid muscle located under the jaw. Its posterior belly is attached to the mastoid notch of temporal bone, and its anterior belly is attached to the digastric fossa of mandible; the two bellies are united by an intermediate tendon which is held in a loop that attaches to the hyoid bone.",
@@ -892,6 +938,7 @@
    "enName": "Right extensor carpi radialis brevis",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Extensor carpi radialis brevis muscle",
    "description": {
     "lang": "en",
     "text": "In human anatomy, extensor carpi radialis brevis is a muscle in the forearm that acts to extend and abduct the wrist. It is shorter and thicker than its namesake extensor carpi radialis longus which can be found above the proximal end of the extensor carpi radialis brevis.",
@@ -913,6 +960,7 @@
    "enName": "Left extensor carpi radialis longus",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Extensor carpi radialis longus muscle",
    "description": {
     "lang": "en",
     "text": "The extensor carpi radialis longus is one of the five main muscles that control movements at the wrist. This muscle is quite long, starting on the lateral side of the humerus, and attaching to the base of the second metacarpal bone.",
@@ -934,6 +982,7 @@
    "enName": "Left extensor carpi ulnaris",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Extensor carpi ulnaris muscle",
    "description": {
     "lang": "en",
     "text": "In human anatomy, the extensor carpi ulnaris is a skeletal muscle located on the ulnar side of the forearm. The extensor carpi ulnaris acts to extend and adduct at the carpus/wrist from anatomical position.",
@@ -955,6 +1004,7 @@
    "enName": "Left extensor digiti minimi",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Extensor digiti minimi muscle",
    "description": {
     "lang": "en",
     "text": "The extensor digiti minimi  is a slender muscle of the forearm, placed on the ulnar side of the extensor digitorum communis, with which it is generally connected.",
@@ -976,6 +1026,7 @@
    "enName": "Right extensor digitorum",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Extensor digitorum muscle",
    "description": {
     "lang": "en",
     "text": "The extensor digitorum muscle is a muscle of the posterior forearm present in humans and other animals. It extends the medial four digits of the hand.",
@@ -997,6 +1048,7 @@
    "enName": "Right extensor digitorum longus",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Extensor digitorum longus muscle",
    "description": {
     "lang": "en",
     "text": "The extensor digitorum longus is a pennate muscle, situated at the lateral part of the front of the leg.",
@@ -1018,6 +1070,7 @@
    "enName": "Left extensor hallucis brevis",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Extensor hallucis brevis muscle",
    "description": {
     "lang": "en",
     "text": "The extensor hallucis brevis is a muscle on the top of the foot that helps to extend the big toe.",
@@ -1039,6 +1092,7 @@
    "enName": "Left extensor hallucis longus",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Extensor hallucis longus muscle",
    "description": {
     "lang": "en",
     "text": "The extensor hallucis longus muscle is a thin skeletal muscle, situated between the tibialis anterior and the extensor digitorum longus. It extends the big toe and causes dorsiflexion of the foot.",
@@ -1060,6 +1114,7 @@
    "enName": "Left extensor indicis",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Extensor indicis muscle",
    "description": {
     "lang": "en",
     "text": "In human anatomy, the extensor indicis (proprius) is a narrow, elongated skeletal muscle in the deep layer of the dorsal forearm, placed medial to, and parallel with, the extensor pollicis longus. Its tendon goes to the index finger, which it extends.",
@@ -1081,6 +1136,7 @@
    "enName": "Right extensor pollicis brevis",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Extensor pollicis brevis muscle",
    "description": {
     "lang": "en",
     "text": "In human anatomy, the extensor pollicis brevis (EPB) is a skeletal muscle on the dorsal side of the forearm. It lies on the medial side of, and is closely connected with, the abductor pollicis longus.",
@@ -1102,6 +1158,7 @@
    "enName": "Left extensor pollicis longus",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Extensor pollicis longus muscle",
    "description": {
     "lang": "en",
     "text": "In human anatomy, the extensor pollicis longus muscle (EPL) is a skeletal muscle located dorsally on the forearm. It is much larger than the extensor pollicis brevis, the origin of which it partly covers and acts to stretch the thumb together with this muscle.",
@@ -1122,6 +1179,7 @@
    "enName": "External anal sphincter",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "External anal sphincter",
    "description": {
     "lang": "en",
     "text": "The external anal sphincter is an oval tube of skeletal muscle fibers. Distally, it is adherent to the skin surrounding the margin of the anus.",
@@ -1142,6 +1200,7 @@
    "enName": "external intercostal muscle",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "External intercostal muscles",
    "description": {
     "lang": "en",
     "text": "The external intercostal muscles or external intercostals are eleven in number on both sides.",
@@ -1163,6 +1222,7 @@
    "enName": "Right external oblique",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Abdominal external oblique muscle",
    "description": {
     "lang": "en",
     "text": "The abdominal external oblique muscle is the largest and outermost of the three flat abdominal muscles of the lateral anterior abdomen.",
@@ -1184,6 +1244,7 @@
    "enName": "Right fibularis brevis",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Fibularis brevis",
    "description": {
     "lang": "en",
     "text": "In human anatomy, the fibularis brevis is a muscle that lies underneath the fibularis longus within the lateral compartment of the leg. It acts to tilt the sole of the foot away from the midline of the body (eversion) and to extend the foot downward away from the body at the ankle.",
@@ -1205,6 +1266,7 @@
    "enName": "Right fibularis longus",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Fibularis longus",
    "description": {
     "lang": "en",
     "text": "In human anatomy, the fibularis longus is a superficial muscle in the lateral compartment of the leg. It acts to tilt the sole away from the midline of the body (eversion) and to extend the foot downward away from the body at the ankle.",
@@ -1226,6 +1288,7 @@
    "enName": "Right fibularis tertius",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Fibularis tertius",
    "description": {
     "lang": "en",
     "text": "In human anatomy, the fibularis tertius is a muscle in the anterior compartment of the leg. It acts to tilt the sole of the foot away from the midline of the body (eversion) and to pull the foot upward toward the body (dorsiflexion).",
@@ -1247,6 +1310,7 @@
    "enName": "First lumbrical of right foot",
    "system": "muscular",
    "status": "none",
+   "enTitle": null,
    "description": null,
    "source": null
   },
@@ -1260,6 +1324,7 @@
    "enName": "First plantar interosseous of left foot",
    "system": "muscular",
    "status": "none",
+   "enTitle": null,
    "description": null,
    "source": null
   },
@@ -1273,6 +1338,8 @@
    "enName": "Right flexor accessorius",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Quadratus plantae muscle",
+   "mismatch": true,
    "description": {
     "lang": "en",
     "text": "The quadratus plantae is separated from the muscles of the first layer by the lateral plantar vessels and nerve. It acts to aid in flexing the 2nd to 5th toes and is one of the few muscles in the foot with no homolog in the hand.",
@@ -1294,6 +1361,7 @@
    "enName": "Left flexor carpi radialis",
    "system": "muscular",
    "status": "vi",
+   "enTitle": "Flexor carpi radialis muscle",
    "description": {
     "lang": "vi",
     "text": "Trong giải phẫu học, cơ gấp cổ tay quay là cơ thuộc phần cẳng tay người, thực hiện động tác gấp cổ tay và gập về xương quay của bàn tay. Tiếng Latin carpus nghĩa là cổ tay; do đó theo danh pháp giải phẫu tiếng Anh, flexor carpi có nghĩa là cổ tay thực hiện động tác gấp.",
@@ -1315,6 +1383,7 @@
    "enName": "Flexor digiti minimi brevis of right foot",
    "system": "muscular",
    "status": "none",
+   "enTitle": null,
    "description": null,
    "source": null
   },
@@ -1328,6 +1397,7 @@
    "enName": "Flexor digiti minimi brevis of left hand",
    "system": "muscular",
    "status": "none",
+   "enTitle": null,
    "description": null,
    "source": null
   },
@@ -1341,6 +1411,7 @@
    "enName": "Left flexor digitorum brevis",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Flexor digitorum brevis muscle",
    "description": {
     "lang": "en",
     "text": "The flexor digitorum brevis or flexor digitorum communis brevis is a muscle which lies in the middle of the sole of the foot, immediately above the central part of the plantar aponeurosis, with which it is firmly united.",
@@ -1362,6 +1433,7 @@
    "enName": "Left flexor digitorum longus",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Flexor digitorum longus muscle",
    "description": {
     "lang": "en",
     "text": "The flexor digitorum longus muscle or flexor digitorum communis longus is situated on the tibial side of the leg. At its origin it is thin and pointed, but it gradually increases in size as it descends.",
@@ -1383,6 +1455,7 @@
    "enName": "Left flexor digitorum profundus",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Flexor digitorum profundus muscle",
    "description": {
     "lang": "en",
     "text": "The flexor digitorum profundus or flexor digitorum communis profundus is a muscle in the forearm of humans that flexes the fingers. It is considered an extrinsic hand muscle because it acts on the hand while its muscle belly is located in the forearm.",
@@ -1404,6 +1477,7 @@
    "enName": "Right flexor digitorum superficialis",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Flexor digitorum superficialis muscle",
    "description": {
     "lang": "en",
     "text": "Flexor digitorum superficialis or flexor digitorum communis sublimis is an extrinsic flexor muscle of the fingers at the proximal interphalangeal joints.",
@@ -1425,6 +1499,7 @@
    "enName": "Right flexor hallucis longus",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Flexor hallucis longus muscle",
    "description": {
     "lang": "en",
     "text": "The flexor hallucis longus muscle (FHL) attaches to the plantar surface of phalanx of the great toe and is responsible for flexing that toe. The FHL is one of the three deep muscles of the posterior compartment of the leg, the others being the flexor digitorum longus and the tibialis posterior.",
@@ -1446,6 +1521,7 @@
    "enName": "Right flexor pollicis brevis",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Flexor pollicis brevis muscle",
    "description": {
     "lang": "en",
     "text": "The flexor pollicis brevis is a muscle in the hand that flexes the thumb. It is one of three thenar muscles.",
@@ -1467,6 +1543,7 @@
    "enName": "Left flexor pollicis longus",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Flexor pollicis longus muscle",
    "description": {
     "lang": "en",
     "text": "The flexor pollicis longus is a muscle in the forearm and hand that flexes the thumb. It lies in the same plane as the flexor digitorum profundus.",
@@ -1488,6 +1565,7 @@
    "enName": "Fourth lumbrical of left foot",
    "system": "muscular",
    "status": "none",
+   "enTitle": null,
    "description": null,
    "source": null
   },
@@ -1501,6 +1579,8 @@
    "enName": "Right gemellus inferior",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Gemelli muscles",
+   "mismatch": true,
    "description": {
     "lang": "en",
     "text": "The gemelli muscles are the inferior gemellus muscle\nand the superior gemellus muscle, two small accessory fasciculi to the tendon of the internal obturator muscle. The gemelli muscles belong to the lateral rotator group of six muscles of the hip that rotate the femur in the hip joint.",
@@ -1522,6 +1602,8 @@
    "enName": "Left gemellus superior",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Gemelli muscles",
+   "mismatch": true,
    "description": {
     "lang": "en",
     "text": "The gemelli muscles are the inferior gemellus muscle\nand the superior gemellus muscle, two small accessory fasciculi to the tendon of the internal obturator muscle. The gemelli muscles belong to the lateral rotator group of six muscles of the hip that rotate the femur in the hip joint.",
@@ -1543,6 +1625,7 @@
    "enName": "Left genioglossus",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Genioglossus",
    "description": {
     "lang": "en",
     "text": "The genioglossus is one of the paired extrinsic muscles of the tongue. It is a fan-shaped muscle that comprises the bulk of the body of the tongue.",
@@ -1564,6 +1647,7 @@
    "enName": "Left geniohyoid",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Geniohyoid muscle",
    "description": {
     "lang": "en",
     "text": "The geniohyoid muscle is a narrow paired muscle situated superior to the medial border of the mylohyoid muscle. It is named for its passage from the chin to the hyoid bone.",
@@ -1585,6 +1669,7 @@
    "enName": "Left gluteus maximus",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Gluteus maximus",
    "description": {
     "lang": "en",
     "text": "The gluteus maximus is the main extensor muscle of the hip in humans. It is the largest and outermost of the three gluteal muscles and makes up a large part of the shape and appearance of each side of the hips.",
@@ -1606,6 +1691,7 @@
    "enName": "Right gluteus medius",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Gluteus medius",
    "description": {
     "lang": "en",
     "text": "The gluteus medius, one of the three gluteal muscles, is a broad, thick, radiating muscle. It is situated on the outer surface of the pelvis.",
@@ -1627,6 +1713,7 @@
    "enName": "Left gluteus minimus",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Gluteus minimus",
    "description": {
     "lang": "en",
     "text": "The gluteus minimus, or glutæus minimus, the smallest of the three gluteal muscles, is situated immediately beneath the gluteus medius.",
@@ -1648,6 +1735,7 @@
    "enName": "Left gracilis",
    "system": "muscular",
    "status": "none",
+   "enTitle": null,
    "description": null,
    "source": null
   },
@@ -1661,6 +1749,7 @@
    "enName": "Left hyoglossus",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Hyoglossus",
    "description": {
     "lang": "en",
     "text": "The hyoglossus is a thin and quadrilateral extrinsic muscle of the tongue. It originates from the hyoid bone; it inserts onto the side of the tongue.",
@@ -1682,6 +1771,7 @@
    "enName": "Left iliacus",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Iliacus muscle",
    "description": {
     "lang": "en",
     "text": "The iliacus is a flat, triangular muscle which fills the iliac fossa. It forms the lateral portion of iliopsoas, providing flexion of the thigh and lower limb at the acetabulofemoral joint.",
@@ -1703,6 +1793,7 @@
    "enName": "Right iliocostalis cervicis",
    "system": "muscular",
    "status": "vi",
+   "enTitle": "Iliocostalis",
    "description": {
     "lang": "vi",
     "text": "Cơ chậu sườn là cơ nằm ngay phía ngoài cơ gai gần nếp ngăn tách cơ trên trục và cơ dưới trục. Nó nằm rất sâu so với cơ răng sau.",
@@ -1724,6 +1815,7 @@
    "enName": "Left iliocostalis lumborum",
    "system": "muscular",
    "status": "vi",
+   "enTitle": "Iliocostalis",
    "description": {
     "lang": "vi",
     "text": "Cơ chậu sườn là cơ nằm ngay phía ngoài cơ gai gần nếp ngăn tách cơ trên trục và cơ dưới trục. Nó nằm rất sâu so với cơ răng sau.",
@@ -1745,6 +1837,7 @@
    "enName": "Left iliocostalis thoracis",
    "system": "muscular",
    "status": "vi",
+   "enTitle": "Iliocostalis",
    "description": {
     "lang": "vi",
     "text": "Cơ chậu sườn là cơ nằm ngay phía ngoài cơ gai gần nếp ngăn tách cơ trên trục và cơ dưới trục. Nó nằm rất sâu so với cơ răng sau.",
@@ -1766,6 +1859,7 @@
    "enName": "Right inferior oblique",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Inferior oblique muscle",
    "description": {
     "lang": "en",
     "text": "The inferior oblique muscle or obliquus oculi inferior is a thin, narrow muscle placed near the anterior margin of the floor of the orbit. The inferior oblique is one of the extraocular muscles, and is attached to the maxillary bone (origin) and the posterior, inferior, lateral surface of the eye (insertion).",
@@ -1787,6 +1881,7 @@
    "enName": "Left inferior rectus",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Inferior rectus muscle",
    "description": {
     "lang": "en",
     "text": "The inferior rectus muscle is a muscle in the orbit near the eye. It is one of the four recti muscles in the group of extraocular muscles.",
@@ -1808,6 +1903,7 @@
    "enName": "Right infraspinatus muscle",
    "system": "muscular",
    "status": "vi",
+   "enTitle": "Infraspinatus muscle",
    "description": {
     "lang": "vi",
     "text": "Trong giải phẫu người, Cơ dưới gai là cơ dày, hình tam giác, chiếm phần lớn nhất diện tích của hố dưới gai. Là một trong bốn cơ chóp xoay, chức năng chính của cơ dưới gai là xoay ngoài xương cánh tay và làm ổn định khớp ổ chảo - cánh tay.",
@@ -1828,6 +1924,7 @@
    "enName": "innermost intercostal muscle",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Innermost intercostal muscle",
    "description": {
     "lang": "en",
     "text": "The innermost intercostal muscle is a layer of intercostal muscles. It may also be called the intima of the internal intercostal muscles.",
@@ -1848,6 +1945,7 @@
    "enName": "internal intercostal muscle",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Internal intercostal muscles",
    "description": {
     "lang": "en",
     "text": "The internal intercostal muscles are a group of skeletal muscles located between the ribs. They are eleven in number on either side.",
@@ -1869,6 +1967,7 @@
    "enName": "Right interspinalis thoracis",
    "system": "muscular",
    "status": "none",
+   "enTitle": null,
    "description": null,
    "source": null
   },
@@ -1882,6 +1981,7 @@
    "enName": "Left lateral crico-arytenoid",
    "system": "muscular",
    "status": "none",
+   "enTitle": null,
    "description": null,
    "source": null
   },
@@ -1894,6 +1994,7 @@
    "enName": "lateral lumbar intertransversarius",
    "system": "muscular",
    "status": "none",
+   "enTitle": null,
    "description": null,
    "source": null
   },
@@ -1907,6 +2008,7 @@
    "enName": "Left lateral rectus",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Lateral rectus muscle",
    "description": {
     "lang": "en",
     "text": "The lateral rectus muscle is a muscle on the lateral side of the eye in the orbit. It is one of six extraocular muscles that control the movements of the eye.",
@@ -1928,6 +2030,7 @@
    "enName": "Right levator palpebrae superioris",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Levator palpebrae superioris muscle",
    "description": {
     "lang": "en",
     "text": "The levator palpebrae superioris is the muscle in the orbit that elevates the upper eyelid.",
@@ -1949,6 +2052,7 @@
    "enName": "Left levator scapulae",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Levator scapulae muscle",
    "description": {
     "lang": "en",
     "text": "The levator scapulae is a slender skeletal muscle situated at the back and side of the neck. It originates from the transverse processes of the four uppermost cervical vertebrae; it inserts onto the upper portion of the medial border of the scapula.",
@@ -1970,6 +2074,7 @@
    "enName": "Right levator veli palatini",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Levator veli palatini",
    "description": {
     "lang": "en",
     "text": "The levator veli palatini is a muscle of the soft palate and pharynx. It is innervated by the vagus nerve via its pharyngeal plexus.",
@@ -1991,6 +2096,7 @@
    "enName": "Left longissimus capitis",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Longissimus",
    "description": {
     "lang": "en",
     "text": "The longissimus is the muscle lateral to the semispinalis muscles. It is the longest subdivision of the erector spinae muscles that extends forward into the transverse processes of the posterior cervical vertebrae.",
@@ -2012,6 +2118,7 @@
    "enName": "Right longissimus cervicis",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Longissimus",
    "description": {
     "lang": "en",
     "text": "The longissimus is the muscle lateral to the semispinalis muscles. It is the longest subdivision of the erector spinae muscles that extends forward into the transverse processes of the posterior cervical vertebrae.",
@@ -2033,6 +2140,7 @@
    "enName": "Left longissimus thoracis",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Longissimus",
    "description": {
     "lang": "en",
     "text": "The longissimus is the muscle lateral to the semispinalis muscles. It is the longest subdivision of the erector spinae muscles that extends forward into the transverse processes of the posterior cervical vertebrae.",
@@ -2054,6 +2162,7 @@
    "enName": "Right longus capitis",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Longus capitis muscle",
    "description": {
     "lang": "en",
     "text": "The longus capitis muscle is broad and thick above, narrow below, and arises by four tendinous slips, from the anterior tubercles of the transverse processes of the third, fourth, fifth, and sixth cervical vertebræ, and ascends, converging toward its fellow of the opposite side, to be inserted into the inferior surface of the basilar part of the occipital bone.",
@@ -2075,6 +2184,7 @@
    "enName": "Right lumbar rotator",
    "system": "muscular",
    "status": "none",
+   "enTitle": null,
    "description": null,
    "source": null
   },
@@ -2087,6 +2197,7 @@
    "enName": "medial lumbar intertransversarius",
    "system": "muscular",
    "status": "none",
+   "enTitle": null,
    "description": null,
    "source": null
   },
@@ -2100,6 +2211,7 @@
    "enName": "Right medial rectus",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Medial rectus muscle",
    "description": {
     "lang": "en",
     "text": "The medial rectus muscle is a muscle in the orbit near the eye. It is one of the extraocular muscles.",
@@ -2121,6 +2233,7 @@
    "enName": "Right mylohyoid",
    "system": "muscular",
    "status": "none",
+   "enTitle": null,
    "description": null,
    "source": null
   },
@@ -2134,6 +2247,7 @@
    "enName": "Left oblique arytenoid",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Oblique arytenoid",
    "description": {
     "lang": "en",
     "text": "The oblique arytenoid is bilaterally paired intrinsic muscle of the larynx. It is superficial to the transverse arytenoid; the oblique and transverse arytenoids are often considered two parts of a single muscle - the interarytenoid muscle.",
@@ -2155,6 +2269,7 @@
    "enName": "Right obliquus capitis inferior",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Obliquus capitis inferior muscle",
    "description": {
     "lang": "en",
     "text": "The obliquus capitis inferior muscle is a muscle in the upper back of the neck. It is one of the suboccipital muscles.",
@@ -2176,6 +2291,7 @@
    "enName": "Right obliquus capitis superior",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Obliquus capitis superior muscle",
    "description": {
     "lang": "en",
     "text": "The obliquus capitis superior muscle is a small muscle in the upper back part of the neck. It is one of the suboccipital muscles.",
@@ -2197,6 +2313,8 @@
    "enName": "Left obturator externus",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "External obturator muscle",
+   "mismatch": true,
    "description": {
     "lang": "en",
     "text": "The external obturator muscle or obturator externus muscle is a flat, triangular muscle, which covers the outer surface of the anterior wall of the pelvis.",
@@ -2218,6 +2336,8 @@
    "enName": "Left obturator internus",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Internal obturator muscle",
+   "mismatch": true,
    "description": {
     "lang": "en",
     "text": "The internal obturator muscle or obturator internus muscle originates on the medial surface of the obturator membrane, the ischium near the membrane, and the rim of the pubis.",
@@ -2239,6 +2359,7 @@
    "enName": "Right omohyoid",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Omohyoid muscle",
    "description": {
     "lang": "en",
     "text": "The omohyoid muscle is a muscle in the neck. It is one of the infrahyoid muscles.",
@@ -2260,6 +2381,7 @@
    "enName": "Opponens digiti minimi of right foot",
    "system": "muscular",
    "status": "none",
+   "enTitle": null,
    "description": null,
    "source": null
   },
@@ -2273,6 +2395,7 @@
    "enName": "Opponens digiti minimi of right hand",
    "system": "muscular",
    "status": "none",
+   "enTitle": null,
    "description": null,
    "source": null
   },
@@ -2286,6 +2409,7 @@
    "enName": "Right opponens pollicis",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Opponens pollicis muscle",
    "description": {
     "lang": "en",
     "text": "The opponens pollicis is a small, triangular muscle in the hand, which functions to oppose the thumb. It is one of the three thenar muscles.",
@@ -2307,6 +2431,7 @@
    "enName": "Left palmaris longus",
    "system": "muscular",
    "status": "vi",
+   "enTitle": "Palmaris longus muscle",
    "description": {
     "lang": "vi",
     "text": "Cơ gan tay dài là cơ thuộc vùng cẳng tay trước. Cơ thuộc lớp nông và có thể nhìn thấy gân của nó dưới da, nằm giữa cơ gấp cổ tay quay và cơ gấp cổ tay trụ, một số người không có gân này.",
@@ -2328,6 +2453,7 @@
    "enName": "Left pectineus",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Pectineus muscle",
    "description": {
     "lang": "en",
     "text": "The pectineus muscle is a flat, quadrangular muscle, situated at the anterior (front) part of the upper and medial (inner) aspect of the thigh. The pectineus muscle is the most anterior adductor of the hip.",
@@ -2349,6 +2475,7 @@
    "enName": "Left pectoralis minor",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Pectoralis minor",
    "description": {
     "lang": "en",
     "text": "Pectoralis minor muscle is a thin, triangular muscle, situated at the upper part of the chest, beneath the pectoralis major in the human body. It arises from ribs III-V; it inserts onto the coracoid process of the scapula.",
@@ -2370,6 +2497,7 @@
    "enName": "Right piriformis",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Piriformis muscle",
    "description": {
     "lang": "en",
     "text": "The piriformis muscle is a flat, pyramidally-shaped muscle in the gluteal region of the lower limbs. It is one of the six muscles in the lateral rotator group.",
@@ -2391,6 +2519,7 @@
    "enName": "Left plantaris",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Plantaris muscle",
    "description": {
     "lang": "en",
     "text": "The plantaris is one of the superficial muscles of the superficial posterior compartment of the leg, one of the fascial compartments of the leg.",
@@ -2412,6 +2541,7 @@
    "enName": "Right platysma",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Platysma muscle",
    "description": {
     "lang": "en",
     "text": "The platysma muscle or platysma is a superficial muscle of the human neck that overlaps the sternocleidomastoid muscle. It covers the anterior surface of the neck superficially.",
@@ -2433,6 +2563,7 @@
    "enName": "Right popliteus",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Popliteus muscle",
    "description": {
     "lang": "en",
     "text": "The popliteus muscle in the leg is used for unlocking the knees when walking, by laterally rotating the femur on the tibia during the closed chain portion of the gait cycle. In open chain movements, the popliteus muscle medially rotates the tibia on the femur.",
@@ -2454,6 +2585,7 @@
    "enName": "Left posterior crico-arytenoid",
    "system": "muscular",
    "status": "none",
+   "enTitle": null,
    "description": null,
    "source": null
   },
@@ -2467,6 +2599,7 @@
    "enName": "Left pronator quadratus",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Pronator quadratus muscle",
    "description": {
     "lang": "en",
     "text": "Pronator quadratus is a square-shaped muscle on the distal forearm that acts to pronate the hand.",
@@ -2488,6 +2621,7 @@
    "enName": "Right psoas major",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Psoas major muscle",
    "description": {
     "lang": "en",
     "text": "The psoas major is a long fusiform muscle located in the lateral lumbar region between the vertebral column and the brim of the lesser pelvis. It joins the iliacus muscle to form the iliopsoas.",
@@ -2509,6 +2643,7 @@
    "enName": "Right quadratus femoris",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Quadratus femoris muscle",
    "description": {
     "lang": "en",
     "text": "The quadratus femoris is a flat, quadrilateral skeletal muscle. Located on the posterior side of the hip joint, it is a strong external rotator and adductor of the thigh, but also acts to stabilize the femoral head in the acetabulum.",
@@ -2530,6 +2665,7 @@
    "enName": "Right rectus capitis anterior",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Rectus capitis anterior muscle",
    "description": {
     "lang": "en",
     "text": "The rectus capitis anterior is a short, flat muscle, situated immediately behind the upper part of the Longus capitis.",
@@ -2551,6 +2687,7 @@
    "enName": "Left rectus capitis lateralis",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Rectus capitis lateralis muscle",
    "description": {
     "lang": "en",
     "text": "The rectus capitis lateralis, a short, flat muscle, arises from the upper surface of the transverse process of the atlas, and is inserted into the under surface of the jugular process of the occipital bone.",
@@ -2572,6 +2709,7 @@
    "enName": "Right rectus capitis posterior major",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Rectus capitis posterior major muscle",
    "description": {
     "lang": "en",
     "text": "The rectus capitis posterior major is a muscle in the upper back part of the neck. It is one of the suboccipital muscles.",
@@ -2593,6 +2731,7 @@
    "enName": "Right rectus capitis posterior minor",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Rectus capitis posterior minor muscle",
    "description": {
     "lang": "en",
     "text": "The rectus capitis posterior minor is a muscle in the upper back part of the neck. It is one of the suboccipital muscles.",
@@ -2614,6 +2753,7 @@
    "enName": "Left rectus femoris",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Rectus femoris muscle",
    "description": {
     "lang": "en",
     "text": "The rectus femoris muscle is one of the four quadriceps muscles of the human body. The others are the vastus medialis, the vastus intermedius, and the vastus lateralis.",
@@ -2635,6 +2775,7 @@
    "enName": "Right rhomboid major",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Rhomboid major muscle",
    "description": {
     "lang": "en",
     "text": "The rhomboid major is a skeletal muscle of the back that connects the scapula with the vertebrae of the spinal column. It originates from the spinous processes of the thoracic vertebrae T2–T5 and supraspinous ligament; it inserts onto the lower portion of the medial border of the scapula.",
@@ -2656,6 +2797,7 @@
    "enName": "Right rhomboid minor",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Rhomboid minor muscle",
    "description": {
     "lang": "en",
     "text": "In human anatomy, the rhomboid minor is a small skeletal muscle of the back that connects the scapula to the vertebrae of the spinal column. It arises from the nuchal ligament, the 7th cervical and 1st thoracic vertebrae and intervening supraspinous ligaments; it inserts onto the medial border of the scapula, and is innervated by the dorsal scapular nerve.",
@@ -2677,6 +2819,7 @@
    "enName": "Right sartorius",
    "system": "muscular",
    "status": "none",
+   "enTitle": null,
    "description": null,
    "source": null
   },
@@ -2690,6 +2833,8 @@
    "enName": "Right scalenus anterior",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Scalene muscles",
+   "mismatch": true,
    "description": {
     "lang": "en",
     "text": "The scalene muscles are a group of three muscles on each side of the neck, identified as the anterior, the middle, and the posterior. They are innervated by the third to the eighth cervical spinal nerves (C3-C8).",
@@ -2711,6 +2856,8 @@
    "enName": "Right scalenus medius",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Scalene muscles",
+   "mismatch": true,
    "description": {
     "lang": "en",
     "text": "The scalene muscles are a group of three muscles on each side of the neck, identified as the anterior, the middle, and the posterior. They are innervated by the third to the eighth cervical spinal nerves (C3-C8).",
@@ -2732,6 +2879,8 @@
    "enName": "Right scalenus posterior",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Scalene muscles",
+   "mismatch": true,
    "description": {
     "lang": "en",
     "text": "The scalene muscles are a group of three muscles on each side of the neck, identified as the anterior, the middle, and the posterior. They are innervated by the third to the eighth cervical spinal nerves (C3-C8).",
@@ -2753,6 +2902,7 @@
    "enName": "Second lumbrical of right foot",
    "system": "muscular",
    "status": "none",
+   "enTitle": null,
    "description": null,
    "source": null
   },
@@ -2766,6 +2916,7 @@
    "enName": "Second plantar interosseous of left foot",
    "system": "muscular",
    "status": "none",
+   "enTitle": null,
    "description": null,
    "source": null
   },
@@ -2779,6 +2930,7 @@
    "enName": "Right semimembranosus",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Semimembranosus muscle",
    "description": {
     "lang": "en",
     "text": "The semimembranosus muscle is the most medial of the three hamstring muscles in the thigh. It is so named because it has a flat tendon of origin.",
@@ -2800,6 +2952,8 @@
    "enName": "Left semispinalis capitis",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Semispinalis muscles",
+   "mismatch": true,
    "description": {
     "lang": "en",
     "text": "The semispinalis muscles are a group of three muscles belonging to the transversospinales. These are the semispinalis capitis, the semispinalis cervicis and the semispinalis thoracis.",
@@ -2821,6 +2975,8 @@
    "enName": "Right semispinalis cervicis",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Semispinalis muscles",
+   "mismatch": true,
    "description": {
     "lang": "en",
     "text": "The semispinalis muscles are a group of three muscles belonging to the transversospinales. These are the semispinalis capitis, the semispinalis cervicis and the semispinalis thoracis.",
@@ -2842,6 +2998,8 @@
    "enName": "Left semispinalis thoracis",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Semispinalis muscles",
+   "mismatch": true,
    "description": {
     "lang": "en",
     "text": "The semispinalis muscles are a group of three muscles belonging to the transversospinales. These are the semispinalis capitis, the semispinalis cervicis and the semispinalis thoracis.",
@@ -2863,6 +3021,7 @@
    "enName": "Right semitendinosus",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Semitendinosus muscle",
    "description": {
     "lang": "en",
     "text": "The semitendinosus is a long superficial muscle in the back of the thigh. It is so named because it has a very long tendon of insertion.",
@@ -2884,6 +3043,7 @@
    "enName": "Right serratus anterior",
    "system": "muscular",
    "status": "vi",
+   "enTitle": "Serratus anterior muscle",
    "description": {
     "lang": "vi",
     "text": "Cơ răng trước là cơ có nguyên ủy từ mặt ngoài của 8 đến 9 xương sườn trên, nằm giữa mặt trong xương vai và các xương sườn. Động tác của cơ là kéo xương vai ra trước, xoay và giữa nó áp vào thành ngực.",
@@ -2905,6 +3065,7 @@
    "enName": "Right serratus posterior inferior",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Serratus posterior inferior muscle",
    "description": {
     "lang": "en",
     "text": "The serratus posterior inferior muscle, also known as the posterior serratus muscle, is a muscle of the human body.",
@@ -2926,6 +3087,7 @@
    "enName": "Right serratus posterior superior",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Serratus posterior superior muscle",
    "description": {
     "lang": "en",
     "text": "The serratus posterior superior muscle is a thin, quadrilateral muscle. It is situated at the upper back part of the thorax, deep to the rhomboid muscles.",
@@ -2947,6 +3109,7 @@
    "enName": "Right soleus",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Soleus muscle",
    "description": {
     "lang": "en",
     "text": "In humans and some other mammals, the soleus is a powerful muscle in the back part of the lower leg. It runs from just below the knee to the heel and is involved in standing and walking.",
@@ -2967,6 +3130,7 @@
    "enName": "spinalis",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Spinalis",
    "description": {
     "lang": "en",
     "text": "The spinalis is one of the erector spinae muscles, a bundle of skeletal muscles, located nearest to the spine. It is divided into three parts: Spinalis dorsi, spinalis cervicis, and spinalis capitis.",
@@ -2988,6 +3152,7 @@
    "enName": "Right spinalis thoracis",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Spinalis",
    "description": {
     "lang": "en",
     "text": "The spinalis is one of the erector spinae muscles, a bundle of skeletal muscles, located nearest to the spine. It is divided into three parts: Spinalis dorsi, spinalis cervicis, and spinalis capitis.",
@@ -3009,6 +3174,7 @@
    "enName": "Right splenius capitis",
    "system": "muscular",
    "status": "vi",
+   "enTitle": "Splenius capitis muscle",
    "description": {
     "lang": "vi",
     "text": "Cơ gối đầu. Nguyên ủy của cơ từ dây chằng gáy, mỏm gai đốt sống C7 đến T3 và bám tận tại mặt dưới xương chũm, đường cong chẩm trên.",
@@ -3030,6 +3196,7 @@
    "enName": "Right splenius cervicis",
    "system": "muscular",
    "status": "vi",
+   "enTitle": "Splenius cervicis muscle",
    "description": {
     "lang": "vi",
     "text": "Cơ gối cổ là cơ nằm ở vùng gáy. Nó có nguyên ủy từ mỏm gai đốt sống ngực T3 đến T6 và bám tận tại mỏm ngang đốt sống cổ C1 đến C3.",
@@ -3051,6 +3218,7 @@
    "enName": "Right sternocleidomastoid",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Sternocleidomastoid muscle",
    "description": {
     "lang": "en",
     "text": "The sternocleidomastoid muscle is one of the largest and most superficial cervical muscles. The primary actions of the muscle are rotation of the head to the opposite side and flexion of the neck.",
@@ -3072,6 +3240,7 @@
    "enName": "Right sternohyoid",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Sternohyoid muscle",
    "description": {
     "lang": "en",
     "text": "The sternohyoid muscle is a bilaterally paired, long, thin, narrow strap muscle of the anterior neck. It is one of the infrahyoid muscles.",
@@ -3093,6 +3262,7 @@
    "enName": "Right sternothyroid",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Sternothyroid muscle",
    "description": {
     "lang": "en",
     "text": "The sternothyroid muscle is an infrahyoid muscle of the neck. It acts to depress the hyoid bone.",
@@ -3114,6 +3284,7 @@
    "enName": "Left stylohyoid",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Stylohyoid muscle",
    "description": {
     "lang": "en",
     "text": "The stylohyoid muscle is one of the suprahyoid muscles. Its originates from the styloid process of the temporal bone; it inserts onto hyoid bone.",
@@ -3135,6 +3306,7 @@
    "enName": "Left subclavius",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Subclavius muscle",
    "description": {
     "lang": "en",
     "text": "The subclavius is a small triangular muscle, placed between the clavicle and the first rib. Along with the pectoralis major and pectoralis minor muscles, the subclavius muscle makes up the anterior axioappendicular muscles, also known as anterior wall of the axilla.",
@@ -3156,6 +3328,7 @@
    "enName": "Right subscapularis",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Subscapularis muscle",
    "description": {
     "lang": "en",
     "text": "The subscapularis is a large triangular muscle which fills the subscapular fossa and inserts into the lesser tubercle of the humerus and the front of the capsule of the shoulder-joint.",
@@ -3176,6 +3349,7 @@
    "enName": "superficial perineal muscle",
    "system": "muscular",
    "status": "none",
+   "enTitle": null,
    "description": null,
    "source": null
   },
@@ -3189,6 +3363,7 @@
    "enName": "Right superior oblique",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Superior oblique muscle",
    "description": {
     "lang": "en",
     "text": "The superior oblique muscle or obliquus oculi superior is a fusiform muscle originating in the upper, medial side of the orbit which abducts, depresses and internally rotates the eye. It is the only extraocular muscle innervated by the trochlear nerve.",
@@ -3210,6 +3385,7 @@
    "enName": "Right superior rectus",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Superior rectus muscle",
    "description": {
     "lang": "en",
     "text": "The superior rectus muscle is one of the extraocular muscles located in the orbit. It is innervated by the superior division of the oculomotor nerve (III).",
@@ -3231,6 +3407,7 @@
    "enName": "Left supinator",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Supinator muscle",
    "description": {
     "lang": "en",
     "text": "In human anatomy, the supinator is a broad muscle in the posterior compartment of the forearm, curved around the upper third of the radius. Its function is to supinate the forearm.",
@@ -3252,6 +3429,7 @@
    "enName": "Left supraspinatus",
    "system": "muscular",
    "status": "vi",
+   "enTitle": "Supraspinatus muscle",
    "description": {
     "lang": "vi",
     "text": "Cơ trên gai là một cơ tương đối nhỏ của lưng trên. Cơ chạy từ hố trên gai tới củ lớn của xương cánh tay.",
@@ -3273,6 +3451,7 @@
    "enName": "Left tensor veli palatini",
    "system": "muscular",
    "status": "vi",
+   "enTitle": "Tensor veli palatini muscle",
    "description": {
     "lang": "vi",
     "text": "Cơ căng màn hầu là một cơ rộng, mỏng, giống như ruy băng trong đầu làm căng vòm miệng mềm.",
@@ -3294,6 +3473,7 @@
    "enName": "Left teres major",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Teres major muscle",
    "description": {
     "lang": "en",
     "text": "The teres major muscle is a muscle of the upper limb. It attaches to the scapula and the humerus and is one of the seven scapulohumeral muscles.",
@@ -3315,6 +3495,7 @@
    "enName": "Right teres minor",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Teres minor muscle",
    "description": {
     "lang": "en",
     "text": "The teres minor is a narrow, elongated muscle of the rotator cuff. The muscle originates from the lateral border and adjacent posterior surface of the corresponding right or left scapula and inserts at both the greater tubercle of the humerus and the posterior surface of the joint capsule.",
@@ -3336,6 +3517,7 @@
    "enName": "Third lumbrical of left foot",
    "system": "muscular",
    "status": "none",
+   "enTitle": null,
    "description": null,
    "source": null
   },
@@ -3349,6 +3531,7 @@
    "enName": "Third plantar interosseous of left foot",
    "system": "muscular",
    "status": "none",
+   "enTitle": null,
    "description": null,
    "source": null
   },
@@ -3361,6 +3544,7 @@
    "enName": "thoracic rotator",
    "system": "muscular",
    "status": "none",
+   "enTitle": null,
    "description": null,
    "source": null
   },
@@ -3374,6 +3558,8 @@
    "enName": "Right thyro-arytenoid",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Thyroarytenoid muscle",
+   "mismatch": true,
    "description": {
     "lang": "en",
     "text": "The thyroarytenoid muscle is a broad, thin muscle that forms the body of the vocal fold and that supports the wall of the ventricle and its appendix. It functions to shorten the vocal folds.",
@@ -3395,6 +3581,7 @@
    "enName": "Right thyrohyoid",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Thyrohyoid muscle",
    "description": {
     "lang": "en",
     "text": "The thyrohyoid muscle is a small skeletal muscle of the neck. Above, it attaches onto the greater cornu of the hyoid bone; below, it attaches onto the oblique line of the thyroid cartilage.",
@@ -3416,6 +3603,7 @@
    "enName": "Right tibialis anterior",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Tibialis anterior muscle",
    "description": {
     "lang": "en",
     "text": "The tibialis anterior muscle is a muscle of the anterior compartment of the lower leg. It originates from the upper portion of the tibia; it inserts into the medial cuneiform and first metatarsal bones of the foot.",
@@ -3437,6 +3625,7 @@
    "enName": "Right tibialis posterior",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Tibialis posterior muscle",
    "description": {
     "lang": "en",
     "text": "The tibialis posterior muscle is the most central of all the leg muscles, and is located in the deep posterior compartment of the leg. It is the key stabilizing muscle of the lower leg.",
@@ -3457,6 +3646,7 @@
    "enName": "Transverse arytenoid",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Transverse arytenoid",
    "description": {
     "lang": "en",
     "text": "The transverse arytenoid is an unpaired intrinsic muscle of the larynx. It is situated deep to the two oblique arytenoids; the oblique and transverse arytenoids are often considered two parts of a single muscle - the interarytenoid (arytenoid) muscle.",
@@ -3478,6 +3668,7 @@
    "enName": "Right transversus thoracis",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Transversus thoracis muscle",
    "description": {
     "lang": "en",
     "text": "The transversus thoracis muscle, also known as triangularis sterni, lies internal to the thoracic cage, anteriorly. It is usually a thin plane of muscular and tendinous fibers, however on athletic individuals it can be a thick 'slab of meat', situated upon the inner surface of the front wall of the chest.",
@@ -3498,6 +3689,8 @@
    "enName": "Uvular muscle",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Musculus uvulae",
+   "mismatch": true,
    "description": {
     "lang": "en",
     "text": "The musculus uvulae is a bilaterally muscle of the soft palate that acts to shorten the uvula when both muscles contract. It forms most of the mass of the uvula.",
@@ -3519,6 +3712,7 @@
    "enName": "Right vastus intermedius",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Vastus intermedius muscle",
    "description": {
     "lang": "en",
     "text": "The vastus intermedius (Cruraeus) arises from the front and lateral surfaces of the body of the femur in its upper two-thirds, sitting under the rectus femoris muscle and from the lower part of the lateral intermuscular septum. Its fibers end in a superficial aponeurosis, which forms the deep part of the quadriceps femoris tendon.",
@@ -3540,6 +3734,7 @@
    "enName": "Right vastus lateralis",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Vastus lateralis muscle",
    "description": {
     "lang": "en",
     "text": "The vastus lateralis, also called the vastus externus, is the largest and most powerful part of the quadriceps femoris, a muscle in the thigh. Together with other muscles of the quadriceps group, it serves to extend the knee joint, moving the lower leg forward.",
@@ -3561,6 +3756,7 @@
    "enName": "Right vastus medialis",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Vastus medialis",
    "description": {
     "lang": "en",
     "text": "The vastus medialis is an extensor muscle located medially in the thigh that extends the knee. The vastus medialis is part of the quadriceps muscle group.",
@@ -3582,6 +3778,8 @@
    "enName": "Left vocalis",
    "system": "muscular",
    "status": "en-untranslated",
+   "enTitle": "Thyroarytenoid muscle",
+   "mismatch": true,
    "description": {
     "lang": "en",
     "text": "The thyroarytenoid muscle is a broad, thin muscle that forms the body of the vocal fold and that supports the wall of the ventricle and its appendix. It functions to shorten the vocal folds.",
@@ -3602,6 +3800,7 @@
    "enName": "Cerebellum",
    "system": "nervous",
    "status": "vi",
+   "enTitle": "Cerebellum",
    "description": {
     "lang": "vi",
     "text": "Tiểu não là cấu trúc giải phẫu lớn nhất của não sau của tất cả các loài động vật có xương sống. Mặc dù tiểu não thường nhỏ hơn đại não, ở một số loài động vật như cá thuộc Họ Cá mũi voi, tiểu não có kích thước bằng hoặc thậm chí lớn hơn đại não.",
@@ -3623,6 +3822,7 @@
    "enName": "Left trochlear nerve",
    "system": "nervous",
    "status": "en-untranslated",
+   "enTitle": "Trochlear nerve",
    "description": {
     "lang": "en",
     "text": "The trochlear nerve, also known as the fourth cranial nerve, cranial nerve IV, or CN IV, is a cranial nerve that innervates a single muscle - the superior oblique muscle of the eye. Unlike most other cranial nerves, the trochlear nerve is exclusively a motor nerve.",
@@ -3643,6 +3843,7 @@
    "enName": "Corpus spongiosum of penis",
    "system": "reproductive",
    "status": "en-untranslated",
+   "enTitle": "Corpus spongiosum",
    "description": {
     "lang": "en",
     "text": "The corpus spongiosum is the mass of spongy tissue surrounding the male urethra within the penis. It is also called the corpus cavernosum urethrae in older texts.",
@@ -3663,6 +3864,7 @@
    "enName": "Prostate",
    "system": "reproductive",
    "status": "vi",
+   "enTitle": "Prostate",
    "description": {
     "lang": "vi",
     "text": "Tuyến tiền liệt là một tuyến tiết sinh dục giống đực, nằm dưới đáy bàng quang và vây quanh đoạn đầu niệu đạo của động vật có vú. Có chức năng chính là tiết ra một chất dịch được hoà với tinh dịch, giúp bảo vệ tinh dịch chống lại các tác nhân gây bệnh giúp cho tinh trùng hoạt động thuận lợi và tạo điều kiện cho sự thụ thai dễ dàng.",
@@ -3684,6 +3886,8 @@
    "enName": "Right testis",
    "system": "reproductive",
    "status": "vi",
+   "enTitle": "Testicle",
+   "mismatch": true,
    "description": {
     "lang": "vi",
     "text": "Tinh hoàn hay dịch hoàn, còn gọi thông tục là trứng dái, là một cơ quan sản xuất ra tinh trùng, đồng thời là tuyến nội tiết làm cho cơ thể phát triển nam tính để thành động vật giống đực.",
@@ -3705,6 +3909,7 @@
    "enName": "Right inferior nasal concha",
    "system": "respiratory",
    "status": "en-untranslated",
+   "enTitle": "Inferior nasal concha",
    "description": {
     "lang": "en",
     "text": "The inferior nasal concha is one of the three paired nasal conchae in the nose. It extends horizontally along the lateral wall of the nasal cavity and consists of a lamina of spongy bone, curled upon itself like a scroll,.",
@@ -3726,6 +3931,7 @@
    "enName": "Right inferior pharyngeal constrictor",
    "system": "respiratory",
    "status": "en-untranslated",
+   "enTitle": "Inferior pharyngeal constrictor muscle",
    "description": {
     "lang": "en",
     "text": "The inferior pharyngeal constrictor muscle is a skeletal muscle of the neck. It is the thickest of the three outer pharyngeal muscles.",
@@ -3747,6 +3953,7 @@
    "enName": "Right lateral nasal cartilage",
    "system": "respiratory",
    "status": "en-untranslated",
+   "enTitle": "Lateral nasal cartilage",
    "description": {
     "lang": "en",
     "text": "The lateral nasal cartilage is situated below the inferior margin of the nasal bone, and is flattened, and triangular in shape.",
@@ -3767,6 +3974,7 @@
    "enName": "Left main bronchus",
    "system": "respiratory",
    "status": "vi",
+   "enTitle": "Bronchus",
    "description": {
     "lang": "vi",
     "text": "Phế quản tứ cuống phổi là một phần của hệ hô hấp, có nhiệm vụ dẫn khí vào phổi. Nó được chia thành phế quản chính phải và phế quản chính trái, bắt đầu từ nơi phân chia của khí quản đến rốn phổi, ở ngang mức đốt sống ngực 4, 5; Hai phế quản tạo với nhau một góc 70độ.",
@@ -3788,6 +3996,7 @@
    "enName": "Right middle pharyngeal constrictor",
    "system": "respiratory",
    "status": "en-untranslated",
+   "enTitle": "Middle pharyngeal constrictor muscle",
    "description": {
     "lang": "en",
     "text": "The middle pharyngeal constrictor is a fan-shaped muscle located in the neck. It is one of three pharyngeal constrictor muscles.",
@@ -3809,6 +4018,7 @@
    "enName": "Left palatopharyngeus",
    "system": "respiratory",
    "status": "en-untranslated",
+   "enTitle": "Palatopharyngeus muscle",
    "description": {
     "lang": "en",
     "text": "The palatopharyngeus muscle is a small muscle in the roof of the mouth.",
@@ -3830,6 +4040,7 @@
    "enName": "Right salpingopharyngeus",
    "system": "respiratory",
    "status": "en-untranslated",
+   "enTitle": "Salpingopharyngeus muscle",
    "description": {
     "lang": "en",
     "text": "The salpingopharyngeus muscle is a muscle of the pharynx. It arises from the lower part of the cartilage of the Eustachian tube, and inserts into the palatopharyngeus muscle by blending with its posterior fasciculus.",
@@ -3850,6 +4061,7 @@
    "enName": "Septal nasal cartilage",
    "system": "respiratory",
    "status": "en-untranslated",
+   "enTitle": "Septal nasal cartilage",
    "description": {
     "lang": "en",
     "text": "The septal nasal cartilage is composed of hyaline cartilage. It is somewhat quadrilateral in form, thicker at its margins than at its center, and completes the separation between the nasal cavities in front.",
@@ -3871,6 +4083,7 @@
    "enName": "Right stylopharyngeus",
    "system": "respiratory",
    "status": "en-untranslated",
+   "enTitle": "Stylopharyngeus muscle",
    "description": {
     "lang": "en",
     "text": "The stylopharyngeus muscle is a muscle in the head. It originates from the temporal styloid process.",
@@ -3892,6 +4105,7 @@
    "enName": "Right superior pharyngeal constrictor",
    "system": "respiratory",
    "status": "en-untranslated",
+   "enTitle": "Superior pharyngeal constrictor muscle",
    "description": {
     "lang": "en",
     "text": "The superior pharyngeal constrictor muscle is a quadrilateral muscle of the pharynx. It is the uppermost and thinnest of the three pharyngeal constrictors.",
@@ -3912,6 +4126,7 @@
    "enName": "Trachea",
    "system": "respiratory",
    "status": "vi",
+   "enTitle": "Trachea",
    "description": {
     "lang": "vi",
     "text": "Khí quản là một ống dẫn khí hình lăng trụ, nối tiếp từ dưới thanh quản (larynx) ngang mức đốt sống cổ 6, với hệ phế quản của phổi (lungs). Ở đoạn cuối nó phân chia làm 2 đoạn nối với 2 phế quản chính : phải và trái, ở ngang mức đốt sống ngực 4 hoặc 5.",
@@ -3933,6 +4148,7 @@
    "enName": "Right lacrimal bone",
    "system": "sensory",
    "status": "vi",
+   "enTitle": "Lacrimal bone",
    "description": {
     "lang": "vi",
     "text": "Xương tuyến nước mắt là phần xương nhỏ nhất và dễ vỡ nhất trên khuôn mặt, có kích thước chỉ bằng một móng tay. Nó nằm ở trước hốc mắt.",
@@ -3954,6 +4170,7 @@
    "enName": "Right lacrimal gland",
    "system": "sensory",
    "status": "vi",
+   "enTitle": "Lacrimal gland",
    "description": {
     "lang": "vi",
     "text": "Trong sinh lý cơ thể người, các tuyến lệ là các tuyến ngoại tiết hình quả hạnh, với mỗi tuyến cho mỗi mắt, tiết ra lớp nước của màng nước mắt. Chúng nằm ở khu vực phía trên của hốc mắt, trong hố lệ hình thành bởi xương phía trước.",
@@ -3975,6 +4192,7 @@
    "enName": "Tarsal plate of left lower eyelid",
    "system": "sensory",
    "status": "none",
+   "enTitle": null,
    "description": null,
    "source": null
   },
@@ -3988,6 +4206,7 @@
    "enName": "Tarsal plate of right upper eyelid",
    "system": "sensory",
    "status": "none",
+   "enTitle": null,
    "description": null,
    "source": null
   },
@@ -4001,6 +4220,7 @@
    "enName": "Left arytenoid cartilage",
    "system": "skeletal",
    "status": "en-untranslated",
+   "enTitle": "Arytenoid cartilage",
    "description": {
     "lang": "en",
     "text": "The arytenoid cartilages are a pair of small three-sided pyramids which form part of the larynx. They are the site of attachment of the vocal cords.",
@@ -4021,6 +4241,7 @@
    "enName": "Atlas",
    "system": "skeletal",
    "status": "en-untranslated",
+   "enTitle": "Atlas (anatomy)",
    "description": {
     "lang": "en",
     "text": "In anatomy, the atlas (C1) is the most superior (first) cervical vertebra of the spine and is located in the neck.",
@@ -4041,6 +4262,7 @@
    "enName": "Axis",
    "system": "skeletal",
    "status": "en-untranslated",
+   "enTitle": "Axis (anatomy)",
    "description": {
     "lang": "en",
     "text": "In anatomy, the axis is the second cervical vertebra (C2) of the spine, immediately inferior to the atlas, upon which the head rests. The spinal cord passes through the axis.",
@@ -4062,6 +4284,7 @@
    "enName": "Right calcaneus",
    "system": "skeletal",
    "status": "en-untranslated",
+   "enTitle": "Calcaneus",
    "description": {
     "lang": "en",
     "text": "The calcaneus or heel bone is a bone of the tarsus of the foot which constitutes the heel. In humans, it attaches several muscles and the plantar fascia.",
@@ -4083,6 +4306,7 @@
    "enName": "Right capitate",
    "system": "skeletal",
    "status": "en-untranslated",
+   "enTitle": "Capitate bone",
    "description": {
     "lang": "en",
     "text": "The capitate bone, also known as os magnum, is a bone in the human wrist found in the center of the carpal bone region, located at the distal end of the radius and ulna bones. It articulates with the third metacarpal bone and forms the third carpometacarpal joint.",
@@ -4104,6 +4328,7 @@
    "enName": "Left clavicle",
    "system": "skeletal",
    "status": "vi",
+   "enTitle": "Clavicle",
    "description": {
     "lang": "vi",
     "text": "Xương đòn là một xương dài, tạo đên phần trụ của đai vai. Xương năm ngang phía trước và trên của ngực.",
@@ -4125,6 +4350,8 @@
    "enName": "Left corniculate cartilage",
    "system": "skeletal",
    "status": "en-untranslated",
+   "enTitle": "Corniculate cartilages",
+   "mismatch": true,
    "description": {
     "lang": "en",
     "text": "The corniculate cartilages are two small conical nodules in the larynx, consisting of elastic cartilage, which articulate with the summits of the arytenoid cartilages and serve to prolong them posteriorly and medially.",
@@ -4145,6 +4372,7 @@
    "enName": "Cricoid cartilage",
    "system": "skeletal",
    "status": "en-untranslated",
+   "enTitle": "Cricoid cartilage",
    "description": {
     "lang": "en",
     "text": "The cricoid cartilage, or simply cricoid or cricoid ring, is the only complete ring of cartilage around the trachea. It forms the back part of the voice box and functions as an attachment site for muscles, cartilages, and ligaments involved in opening and closing the airway and in producing speech.",
@@ -4166,6 +4394,7 @@
    "enName": "Right cuboid bone",
    "system": "skeletal",
    "status": "en-untranslated",
+   "enTitle": "Cuboid bone",
    "description": {
     "lang": "en",
     "text": "In the human body, the cuboid bone is one of the seven tarsal bones of the foot.",
@@ -4187,6 +4416,8 @@
    "enName": "Left cuneiform cartilage",
    "system": "skeletal",
    "status": "en-untranslated",
+   "enTitle": "Cuneiform cartilages",
+   "mismatch": true,
    "description": {
     "lang": "en",
     "text": "In the human larynx, the cuneiform cartilages are two small, elongated pieces of yellow elastic cartilage, placed one on either side, in the aryepiglottic fold.",
@@ -4208,6 +4439,7 @@
    "enName": "Distal phalanx of right big toe",
    "system": "skeletal",
    "status": "none",
+   "enTitle": null,
    "description": null,
    "source": null
   },
@@ -4221,6 +4453,7 @@
    "enName": "Distal phalanx of left fourth toe",
    "system": "skeletal",
    "status": "none",
+   "enTitle": null,
    "description": null,
    "source": null
   },
@@ -4234,6 +4467,7 @@
    "enName": "Distal phalanx of left index finger",
    "system": "skeletal",
    "status": "none",
+   "enTitle": null,
    "description": null,
    "source": null
   },
@@ -4247,6 +4481,7 @@
    "enName": "Distal phalanx of left little finger",
    "system": "skeletal",
    "status": "none",
+   "enTitle": null,
    "description": null,
    "source": null
   },
@@ -4260,6 +4495,7 @@
    "enName": "Distal phalanx of right little toe",
    "system": "skeletal",
    "status": "none",
+   "enTitle": null,
    "description": null,
    "source": null
   },
@@ -4273,6 +4509,7 @@
    "enName": "Distal phalanx of left middle finger",
    "system": "skeletal",
    "status": "none",
+   "enTitle": null,
    "description": null,
    "source": null
   },
@@ -4286,6 +4523,7 @@
    "enName": "Distal phalanx of left ring finger",
    "system": "skeletal",
    "status": "none",
+   "enTitle": null,
    "description": null,
    "source": null
   },
@@ -4299,6 +4537,7 @@
    "enName": "Distal phalanx of left second toe",
    "system": "skeletal",
    "status": "none",
+   "enTitle": null,
    "description": null,
    "source": null
   },
@@ -4312,6 +4551,7 @@
    "enName": "Distal phalanx of left third toe",
    "system": "skeletal",
    "status": "none",
+   "enTitle": null,
    "description": null,
    "source": null
   },
@@ -4325,6 +4565,7 @@
    "enName": "Distal phalanx of left thumb",
    "system": "skeletal",
    "status": "none",
+   "enTitle": null,
    "description": null,
    "source": null
   },
@@ -4338,14 +4579,15 @@
    "enName": "Left eighth rib",
    "system": "skeletal",
    "status": "vi",
+   "enTitle": "Rib",
    "description": {
     "lang": "vi",
-    "text": "Lồng ngực, hay Lồng xương sườn là một phần sắp xếp xương trong ngực của tất cả các động vật có xương sống ngoại trừ cá mút đá và ếch. Nó được hình thành bởi cột sống, xương sườn và xương ức, bao quanh tim và phổi.",
+    "text": "Trong giải phẫu động vật có xương sống, xương sườn là những xương dài cong tạo thành lồng. Ở đa số động vật có xương sống, các xương sườn bao quanh ngực, cho phép phổi có thể giãn nở và hít thờ bằng sự giãn nở của ngực.",
     "translated": false
    },
    "source": {
-    "title": "Lồng ngực",
-    "url": "https://vi.wikipedia.org/wiki/L%E1%BB%93ng_ng%E1%BB%B1c",
+    "title": "Xương sườn",
+    "url": "https://vi.wikipedia.org/wiki/X%C6%B0%C6%A1ng_s%C6%B0%E1%BB%9Dn",
     "license": "CC BY-SA 4.0"
    }
   },
@@ -4358,6 +4600,8 @@
    "enName": "Eighth thoracic vertebra",
    "system": "skeletal",
    "status": "vi",
+   "enTitle": "Thoracic vertebrae",
+   "mismatch": true,
    "description": {
     "lang": "vi",
     "text": "Ở động vật có xương sống, đốt sống ngực tạo thành đốt giữa của cột sống, giữa đốt sống cổ và đốt sống thắt lưng. Ở người, có mười hai đốt sống ngực và chúng có kích thước trung gian giữa đốt sống cổ và thắt lưng; chúng phát triển kích thước về phía đốt sống thắt lưng, với những cái ở dưới lớn hơn rất nhiều so với những cái trên.",
@@ -4379,14 +4623,15 @@
    "enName": "Right eleventh rib",
    "system": "skeletal",
    "status": "vi",
+   "enTitle": "Rib",
    "description": {
     "lang": "vi",
-    "text": "Lồng ngực, hay Lồng xương sườn là một phần sắp xếp xương trong ngực của tất cả các động vật có xương sống ngoại trừ cá mút đá và ếch. Nó được hình thành bởi cột sống, xương sườn và xương ức, bao quanh tim và phổi.",
+    "text": "Trong giải phẫu động vật có xương sống, xương sườn là những xương dài cong tạo thành lồng. Ở đa số động vật có xương sống, các xương sườn bao quanh ngực, cho phép phổi có thể giãn nở và hít thờ bằng sự giãn nở của ngực.",
     "translated": false
    },
    "source": {
-    "title": "Lồng ngực",
-    "url": "https://vi.wikipedia.org/wiki/L%E1%BB%93ng_ng%E1%BB%B1c",
+    "title": "Xương sườn",
+    "url": "https://vi.wikipedia.org/wiki/X%C6%B0%C6%A1ng_s%C6%B0%E1%BB%9Dn",
     "license": "CC BY-SA 4.0"
    }
   },
@@ -4399,6 +4644,8 @@
    "enName": "Eleventh thoracic vertebra",
    "system": "skeletal",
    "status": "vi",
+   "enTitle": "Thoracic vertebrae",
+   "mismatch": true,
    "description": {
     "lang": "vi",
     "text": "Ở động vật có xương sống, đốt sống ngực tạo thành đốt giữa của cột sống, giữa đốt sống cổ và đốt sống thắt lưng. Ở người, có mười hai đốt sống ngực và chúng có kích thước trung gian giữa đốt sống cổ và thắt lưng; chúng phát triển kích thước về phía đốt sống thắt lưng, với những cái ở dưới lớn hơn rất nhiều so với những cái trên.",
@@ -4419,6 +4666,7 @@
    "enName": "Ethmoid",
    "system": "skeletal",
    "status": "vi",
+   "enTitle": "Ethmoid bone",
    "description": {
     "lang": "vi",
     "text": "Xương sàng là một xương lẻ thuộc khối xương sọ ngăn cách khoang mũi và não. Xương này nằm tại trần của ổ mũi, giữa hai ổ mắt.",
@@ -4440,6 +4688,7 @@
    "enName": "Right femur",
    "system": "skeletal",
    "status": "en-untranslated",
+   "enTitle": "Femur",
    "description": {
     "lang": "en",
     "text": "The femur, or thigh bone is the only bone in the thigh — the region of the lower limb between the hip and the knee. In many four-legged animals, the femur is the upper bone of the hindleg.",
@@ -4461,6 +4710,7 @@
    "enName": "Right fibula",
    "system": "skeletal",
    "status": "en-untranslated",
+   "enTitle": "Fibula",
    "description": {
     "lang": "en",
     "text": "The fibula or calf bone is a leg bone on the lateral side of the tibia, to which it is connected above and below. It is the smaller of the two bones and, in proportion to its length, the most slender of all the long bones.",
@@ -4481,6 +4731,8 @@
    "enName": "Fifth cervical vertebra",
    "system": "skeletal",
    "status": "vi",
+   "enTitle": "Cervical vertebrae",
+   "mismatch": true,
    "description": {
     "lang": "vi",
     "text": "Ở động vật có xương sống, đốt sống cổ là đốt sống của cổ, ngay dưới xương sọ.",
@@ -4502,6 +4754,7 @@
    "enName": "Left fifth costal cartilage",
    "system": "skeletal",
    "status": "vi",
+   "enTitle": "Costal cartilage",
    "description": {
     "lang": "vi",
     "text": "Sụn sườn là các thanh sụn trong giúp kéo dài xương sườn về phía trước và góp phần làm co giãn các vách của ngực. Sụn sườn chỉ có thể thấy ở đuôi trước của xương sườn, tạo nên phần mở rộng ở giữa.",
@@ -4522,6 +4775,8 @@
    "enName": "Fifth lumbar vertebra",
    "system": "skeletal",
    "status": "vi",
+   "enTitle": "Lumbar vertebrae",
+   "mismatch": true,
    "description": {
     "lang": "vi",
     "text": "Các đốt sống thắt lưng, trong giải phẫu người, năm đốt sống giữa lồng xương sườn và xương chậu. Chúng là những đoạn lớn nhất của cột sống và được đặc trưng bởi sự thiếu vắng của lỗ trên ổ mắt trong phạm vi các mấu ngang và do sự thiếu vắng ở hai bên của cơ thể.",
@@ -4543,6 +4798,7 @@
    "enName": "Left fifth metacarpal bone",
    "system": "skeletal",
    "status": "en-untranslated",
+   "enTitle": "Fifth metacarpal bone",
    "description": {
     "lang": "en",
     "text": "The fifth metacarpal bone is the most medial and second-shortest of the metacarpal bones.",
@@ -4564,6 +4820,7 @@
    "enName": "Right fifth metatarsal bone",
    "system": "skeletal",
    "status": "en-untranslated",
+   "enTitle": "Fifth metatarsal bone",
    "description": {
     "lang": "en",
     "text": "The fifth metatarsal bone is a long bone in the foot, and is palpable along the distal outer edges of the feet. It is the second smallest of the five metatarsal bones.",
@@ -4585,14 +4842,15 @@
    "enName": "Left fifth rib",
    "system": "skeletal",
    "status": "vi",
+   "enTitle": "Rib",
    "description": {
     "lang": "vi",
-    "text": "Lồng ngực, hay Lồng xương sườn là một phần sắp xếp xương trong ngực của tất cả các động vật có xương sống ngoại trừ cá mút đá và ếch. Nó được hình thành bởi cột sống, xương sườn và xương ức, bao quanh tim và phổi.",
+    "text": "Trong giải phẫu động vật có xương sống, xương sườn là những xương dài cong tạo thành lồng. Ở đa số động vật có xương sống, các xương sườn bao quanh ngực, cho phép phổi có thể giãn nở và hít thờ bằng sự giãn nở của ngực.",
     "translated": false
    },
    "source": {
-    "title": "Lồng ngực",
-    "url": "https://vi.wikipedia.org/wiki/L%E1%BB%93ng_ng%E1%BB%B1c",
+    "title": "Xương sườn",
+    "url": "https://vi.wikipedia.org/wiki/X%C6%B0%C6%A1ng_s%C6%B0%E1%BB%9Dn",
     "license": "CC BY-SA 4.0"
    }
   },
@@ -4605,6 +4863,8 @@
    "enName": "Fifth thoracic vertebra",
    "system": "skeletal",
    "status": "vi",
+   "enTitle": "Thoracic vertebrae",
+   "mismatch": true,
    "description": {
     "lang": "vi",
     "text": "Ở động vật có xương sống, đốt sống ngực tạo thành đốt giữa của cột sống, giữa đốt sống cổ và đốt sống thắt lưng. Ở người, có mười hai đốt sống ngực và chúng có kích thước trung gian giữa đốt sống cổ và thắt lưng; chúng phát triển kích thước về phía đốt sống thắt lưng, với những cái ở dưới lớn hơn rất nhiều so với những cái trên.",
@@ -4626,6 +4886,7 @@
    "enName": "Right first costal cartilage",
    "system": "skeletal",
    "status": "vi",
+   "enTitle": "Costal cartilage",
    "description": {
     "lang": "vi",
     "text": "Sụn sườn là các thanh sụn trong giúp kéo dài xương sườn về phía trước và góp phần làm co giãn các vách của ngực. Sụn sườn chỉ có thể thấy ở đuôi trước của xương sườn, tạo nên phần mở rộng ở giữa.",
@@ -4646,6 +4907,8 @@
    "enName": "First lumbar vertebra",
    "system": "skeletal",
    "status": "vi",
+   "enTitle": "Lumbar vertebrae",
+   "mismatch": true,
    "description": {
     "lang": "vi",
     "text": "Các đốt sống thắt lưng, trong giải phẫu người, năm đốt sống giữa lồng xương sườn và xương chậu. Chúng là những đoạn lớn nhất của cột sống và được đặc trưng bởi sự thiếu vắng của lỗ trên ổ mắt trong phạm vi các mấu ngang và do sự thiếu vắng ở hai bên của cơ thể.",
@@ -4667,6 +4930,7 @@
    "enName": "Left first metacarpal bone",
    "system": "skeletal",
    "status": "en-untranslated",
+   "enTitle": "First metacarpal bone",
    "description": {
     "lang": "en",
     "text": "The first metacarpal bone or the metacarpal bone of the thumb is the first bone proximal to the thumb. It is connected to the trapezium of the carpus at the first carpometacarpal joint and to the proximal thumb phalanx at the first metacarpophalangeal joint.",
@@ -4688,6 +4952,7 @@
    "enName": "Left first metatarsal bone",
    "system": "skeletal",
    "status": "en-untranslated",
+   "enTitle": "First metatarsal bone",
    "description": {
     "lang": "en",
     "text": "The first metatarsal bone is the bone in the foot just behind the big toe. The first metatarsal bone is the shortest of the metatarsal bones and by far the thickest and strongest of them.",
@@ -4709,14 +4974,15 @@
    "enName": "Right first rib",
    "system": "skeletal",
    "status": "vi",
+   "enTitle": "Rib",
    "description": {
     "lang": "vi",
-    "text": "Lồng ngực, hay Lồng xương sườn là một phần sắp xếp xương trong ngực của tất cả các động vật có xương sống ngoại trừ cá mút đá và ếch. Nó được hình thành bởi cột sống, xương sườn và xương ức, bao quanh tim và phổi.",
+    "text": "Trong giải phẫu động vật có xương sống, xương sườn là những xương dài cong tạo thành lồng. Ở đa số động vật có xương sống, các xương sườn bao quanh ngực, cho phép phổi có thể giãn nở và hít thờ bằng sự giãn nở của ngực.",
     "translated": false
    },
    "source": {
-    "title": "Lồng ngực",
-    "url": "https://vi.wikipedia.org/wiki/L%E1%BB%93ng_ng%E1%BB%B1c",
+    "title": "Xương sườn",
+    "url": "https://vi.wikipedia.org/wiki/X%C6%B0%C6%A1ng_s%C6%B0%E1%BB%9Dn",
     "license": "CC BY-SA 4.0"
    }
   },
@@ -4729,6 +4995,8 @@
    "enName": "First thoracic vertebra",
    "system": "skeletal",
    "status": "vi",
+   "enTitle": "Thoracic vertebrae",
+   "mismatch": true,
    "description": {
     "lang": "vi",
     "text": "Ở động vật có xương sống, đốt sống ngực tạo thành đốt giữa của cột sống, giữa đốt sống cổ và đốt sống thắt lưng. Ở người, có mười hai đốt sống ngực và chúng có kích thước trung gian giữa đốt sống cổ và thắt lưng; chúng phát triển kích thước về phía đốt sống thắt lưng, với những cái ở dưới lớn hơn rất nhiều so với những cái trên.",
@@ -4749,6 +5017,8 @@
    "enName": "Fourth cervical vertebra",
    "system": "skeletal",
    "status": "vi",
+   "enTitle": "Cervical vertebrae",
+   "mismatch": true,
    "description": {
     "lang": "vi",
     "text": "Ở động vật có xương sống, đốt sống cổ là đốt sống của cổ, ngay dưới xương sọ.",
@@ -4770,6 +5040,7 @@
    "enName": "Right fourth costal cartilage",
    "system": "skeletal",
    "status": "vi",
+   "enTitle": "Costal cartilage",
    "description": {
     "lang": "vi",
     "text": "Sụn sườn là các thanh sụn trong giúp kéo dài xương sườn về phía trước và góp phần làm co giãn các vách của ngực. Sụn sườn chỉ có thể thấy ở đuôi trước của xương sườn, tạo nên phần mở rộng ở giữa.",
@@ -4790,6 +5061,8 @@
    "enName": "Fourth lumbar vertebra",
    "system": "skeletal",
    "status": "vi",
+   "enTitle": "Lumbar vertebrae",
+   "mismatch": true,
    "description": {
     "lang": "vi",
     "text": "Các đốt sống thắt lưng, trong giải phẫu người, năm đốt sống giữa lồng xương sườn và xương chậu. Chúng là những đoạn lớn nhất của cột sống và được đặc trưng bởi sự thiếu vắng của lỗ trên ổ mắt trong phạm vi các mấu ngang và do sự thiếu vắng ở hai bên của cơ thể.",
@@ -4811,6 +5084,7 @@
    "enName": "Right fourth metacarpal bone",
    "system": "skeletal",
    "status": "en-untranslated",
+   "enTitle": "Fourth metacarpal bone",
    "description": {
     "lang": "en",
     "text": "The fourth metacarpal bone is shorter and smaller than the third.",
@@ -4832,6 +5106,7 @@
    "enName": "Left fourth metatarsal bone",
    "system": "skeletal",
    "status": "en-untranslated",
+   "enTitle": "Fourth metatarsal bone",
    "description": {
     "lang": "en",
     "text": "The fourth metatarsal bone is a long bone in the foot. It is smaller in size than the third metatarsal bone and is the third longest of the five metatarsal bones.",
@@ -4853,14 +5128,15 @@
    "enName": "Left fourth rib",
    "system": "skeletal",
    "status": "vi",
+   "enTitle": "Rib",
    "description": {
     "lang": "vi",
-    "text": "Lồng ngực, hay Lồng xương sườn là một phần sắp xếp xương trong ngực của tất cả các động vật có xương sống ngoại trừ cá mút đá và ếch. Nó được hình thành bởi cột sống, xương sườn và xương ức, bao quanh tim và phổi.",
+    "text": "Trong giải phẫu động vật có xương sống, xương sườn là những xương dài cong tạo thành lồng. Ở đa số động vật có xương sống, các xương sườn bao quanh ngực, cho phép phổi có thể giãn nở và hít thờ bằng sự giãn nở của ngực.",
     "translated": false
    },
    "source": {
-    "title": "Lồng ngực",
-    "url": "https://vi.wikipedia.org/wiki/L%E1%BB%93ng_ng%E1%BB%B1c",
+    "title": "Xương sườn",
+    "url": "https://vi.wikipedia.org/wiki/X%C6%B0%C6%A1ng_s%C6%B0%E1%BB%9Dn",
     "license": "CC BY-SA 4.0"
    }
   },
@@ -4873,6 +5149,8 @@
    "enName": "Fourth thoracic vertebra",
    "system": "skeletal",
    "status": "vi",
+   "enTitle": "Thoracic vertebrae",
+   "mismatch": true,
    "description": {
     "lang": "vi",
     "text": "Ở động vật có xương sống, đốt sống ngực tạo thành đốt giữa của cột sống, giữa đốt sống cổ và đốt sống thắt lưng. Ở người, có mười hai đốt sống ngực và chúng có kích thước trung gian giữa đốt sống cổ và thắt lưng; chúng phát triển kích thước về phía đốt sống thắt lưng, với những cái ở dưới lớn hơn rất nhiều so với những cái trên.",
@@ -4893,6 +5171,7 @@
    "enName": "Frontal bone",
    "system": "skeletal",
    "status": "en-untranslated",
+   "enTitle": "Frontal bone",
    "description": {
     "lang": "en",
     "text": "In the human skull, the frontal bone or sincipital bone is an unpaired bone which consists of two portions. These are the vertically oriented squamous part, and the horizontally oriented orbital part, making up the bony part of the forehead, part of the bony orbital cavity holding the eye, and part of the bony part of the nose respectively.",
@@ -4914,6 +5193,7 @@
    "enName": "Right hamate",
    "system": "skeletal",
    "status": "vi",
+   "enTitle": "Hamate bone",
    "description": {
     "lang": "vi",
     "text": "Xương móc là một xương thuộc bàn tay người có thể dễ dàng nhận diện qua hình dạng góc cạnh của nó, và đặc điểm có móc giống như mỏm. Xương này nằm về phía trong và ở góc thấp của khối xương bàn tay.",
@@ -4935,6 +5215,7 @@
    "enName": "Right hip bone",
    "system": "skeletal",
    "status": "vi",
+   "enTitle": "Hip bone",
    "description": {
     "lang": "vi",
     "text": "Xương chậu là xương dẹt, do 3 xương nhỏ tạo thành xương cánh chậu ở trên, xương mu ở trước dưới, xương ngồi ở sau dưới. Xương chậu có hình cánh quạt, có 2 mặt, 4 bờ, 4 góc và là xương có diện tích lớn nhất trong cơ thể.",
@@ -4956,6 +5237,7 @@
    "enName": "Right humerus",
    "system": "skeletal",
    "status": "vi",
+   "enTitle": "Humerus",
    "description": {
     "lang": "vi",
     "text": "Xương cánh tay là một xương dài ở cánh tay hay chi trên bắt đầu từ vai cho đến khuỷu tay.",
@@ -4976,6 +5258,7 @@
    "enName": "Hyoid bone",
    "system": "skeletal",
    "status": "vi",
+   "enTitle": "Hyoid bone",
    "description": {
     "lang": "vi",
     "text": "Xương móng là một khúc xương hình móng ngựa nằm trên đường giữa mặt trước cổ ở giữa cằm và sụn giáp. Ở tư thế nghỉ, xương móng nhằm tại mức nền, xương hàm dưới ở phía trước và đốt sống cổ thứ ba ở phía sau.",
@@ -4997,6 +5280,8 @@
    "enName": "Left intermediate cuneiform bone",
    "system": "skeletal",
    "status": "en-untranslated",
+   "enTitle": "Cuneiform bones",
+   "mismatch": true,
    "description": {
     "lang": "en",
     "text": "There are three cuneiform (\"wedge-shaped\") bones in the human foot:the first or medial cuneiform\nthe second or intermediate cuneiform, also known as the middle cuneiform\nthe third or lateral cuneiform",
@@ -5017,6 +5302,8 @@
    "enName": "Intervertebral disk",
    "system": "skeletal",
    "status": "en-untranslated",
+   "enTitle": "Intervertebral disc",
+   "mismatch": true,
    "description": {
     "lang": "en",
     "text": "An intervertebral disc, also spelled intervertebral disk, lies between adjacent vertebrae in the vertebral column. Each disc forms a fibrocartilaginous joint, to allow slight movement of the vertebrae, to act as a ligament to hold the vertebrae together, and to function as a shock absorber for the spine.",
@@ -5037,6 +5324,7 @@
    "enName": "Intervertebral disk of axis",
    "system": "skeletal",
    "status": "none",
+   "enTitle": null,
    "description": null,
    "source": null
   },
@@ -5049,6 +5337,7 @@
    "enName": "Intervertebral disk of eighth thoracic vertebra",
    "system": "skeletal",
    "status": "none",
+   "enTitle": null,
    "description": null,
    "source": null
   },
@@ -5061,6 +5350,7 @@
    "enName": "Intervertebral disk of eleventh thoracic vertebra",
    "system": "skeletal",
    "status": "none",
+   "enTitle": null,
    "description": null,
    "source": null
   },
@@ -5073,6 +5363,7 @@
    "enName": "Intervertebral disk of fifth cervical vertebra",
    "system": "skeletal",
    "status": "none",
+   "enTitle": null,
    "description": null,
    "source": null
   },
@@ -5085,6 +5376,7 @@
    "enName": "Intervertebral disk of fifth lumbar vertebra",
    "system": "skeletal",
    "status": "none",
+   "enTitle": null,
    "description": null,
    "source": null
   },
@@ -5097,6 +5389,7 @@
    "enName": "Intervertebral disk of fifth thoracic vertebra",
    "system": "skeletal",
    "status": "none",
+   "enTitle": null,
    "description": null,
    "source": null
   },
@@ -5109,6 +5402,7 @@
    "enName": "Intervertebral disk of first lumbar vertebra",
    "system": "skeletal",
    "status": "none",
+   "enTitle": null,
    "description": null,
    "source": null
   },
@@ -5121,6 +5415,7 @@
    "enName": "Intervertebral disk of first thoracic vertebra",
    "system": "skeletal",
    "status": "none",
+   "enTitle": null,
    "description": null,
    "source": null
   },
@@ -5133,6 +5428,7 @@
    "enName": "Intervertebral disk of fourth cervical vertebra",
    "system": "skeletal",
    "status": "none",
+   "enTitle": null,
    "description": null,
    "source": null
   },
@@ -5145,6 +5441,7 @@
    "enName": "Intervertebral disk of fourth lumbar vertebra",
    "system": "skeletal",
    "status": "none",
+   "enTitle": null,
    "description": null,
    "source": null
   },
@@ -5157,6 +5454,7 @@
    "enName": "Intervertebral disk of fourth thoracic vertebra",
    "system": "skeletal",
    "status": "none",
+   "enTitle": null,
    "description": null,
    "source": null
   },
@@ -5169,6 +5467,7 @@
    "enName": "Intervertebral disk of ninth thoracic vertebra",
    "system": "skeletal",
    "status": "none",
+   "enTitle": null,
    "description": null,
    "source": null
   },
@@ -5181,6 +5480,7 @@
    "enName": "Intervertebral disk of second lumbar vertebra",
    "system": "skeletal",
    "status": "none",
+   "enTitle": null,
    "description": null,
    "source": null
   },
@@ -5193,6 +5493,7 @@
    "enName": "Intervertebral disk of second thoracic vertebra",
    "system": "skeletal",
    "status": "none",
+   "enTitle": null,
    "description": null,
    "source": null
   },
@@ -5205,6 +5506,7 @@
    "enName": "Intervertebral disk of seventh cervical vertebra",
    "system": "skeletal",
    "status": "none",
+   "enTitle": null,
    "description": null,
    "source": null
   },
@@ -5217,6 +5519,7 @@
    "enName": "Intervertebral disk of seventh thoracic vertebra",
    "system": "skeletal",
    "status": "none",
+   "enTitle": null,
    "description": null,
    "source": null
   },
@@ -5229,6 +5532,7 @@
    "enName": "Intervertebral disk of sixth cervical vertebra",
    "system": "skeletal",
    "status": "none",
+   "enTitle": null,
    "description": null,
    "source": null
   },
@@ -5241,6 +5545,7 @@
    "enName": "Intervertebral disk of sixth thoracic vertebra",
    "system": "skeletal",
    "status": "none",
+   "enTitle": null,
    "description": null,
    "source": null
   },
@@ -5253,6 +5558,7 @@
    "enName": "Intervertebral disk of tenth thoracic vertebra",
    "system": "skeletal",
    "status": "none",
+   "enTitle": null,
    "description": null,
    "source": null
   },
@@ -5265,6 +5571,7 @@
    "enName": "Intervertebral disk of third cervical vertebra",
    "system": "skeletal",
    "status": "none",
+   "enTitle": null,
    "description": null,
    "source": null
   },
@@ -5277,6 +5584,7 @@
    "enName": "Intervertebral disk of third lumbar vertebra",
    "system": "skeletal",
    "status": "none",
+   "enTitle": null,
    "description": null,
    "source": null
   },
@@ -5289,6 +5597,7 @@
    "enName": "Intervertebral disk of third thoracic vertebra",
    "system": "skeletal",
    "status": "none",
+   "enTitle": null,
    "description": null,
    "source": null
   },
@@ -5302,6 +5611,8 @@
    "enName": "Left lateral cuneiform bone",
    "system": "skeletal",
    "status": "en-untranslated",
+   "enTitle": "Cuneiform bones",
+   "mismatch": true,
    "description": {
     "lang": "en",
     "text": "There are three cuneiform (\"wedge-shaped\") bones in the human foot:the first or medial cuneiform\nthe second or intermediate cuneiform, also known as the middle cuneiform\nthe third or lateral cuneiform",
@@ -5323,6 +5634,7 @@
    "enName": "Right lower central secondary incisor tooth",
    "system": "skeletal",
    "status": "none",
+   "enTitle": null,
    "description": null,
    "source": null
   },
@@ -5336,6 +5648,7 @@
    "enName": "Left lower first secondary molar tooth",
    "system": "skeletal",
    "status": "none",
+   "enTitle": null,
    "description": null,
    "source": null
   },
@@ -5349,6 +5662,7 @@
    "enName": "Right lower first secondary premolar tooth",
    "system": "skeletal",
    "status": "none",
+   "enTitle": null,
    "description": null,
    "source": null
   },
@@ -5362,6 +5676,7 @@
    "enName": "Left lower lateral secondary incisor tooth",
    "system": "skeletal",
    "status": "none",
+   "enTitle": null,
    "description": null,
    "source": null
   },
@@ -5375,6 +5690,7 @@
    "enName": "Left lower second secondary molar tooth",
    "system": "skeletal",
    "status": "none",
+   "enTitle": null,
    "description": null,
    "source": null
   },
@@ -5388,6 +5704,7 @@
    "enName": "Right lower second secondary premolar tooth",
    "system": "skeletal",
    "status": "none",
+   "enTitle": null,
    "description": null,
    "source": null
   },
@@ -5401,6 +5718,7 @@
    "enName": "Right lower secondary canine tooth",
    "system": "skeletal",
    "status": "none",
+   "enTitle": null,
    "description": null,
    "source": null
   },
@@ -5414,6 +5732,7 @@
    "enName": "Right lunate",
    "system": "skeletal",
    "status": "none",
+   "enTitle": null,
    "description": null,
    "source": null
   },
@@ -5427,6 +5746,7 @@
    "enName": "Left major alar cartilage",
    "system": "skeletal",
    "status": "en-untranslated",
+   "enTitle": "Major alar cartilage",
    "description": {
     "lang": "en",
     "text": "The major alar cartilage is a thin, flexible plate, situated immediately below the lateral nasal cartilage, and bent upon itself in such a manner as to form the medial wall and lateral wall of the nostril of its own side.",
@@ -5447,6 +5767,7 @@
    "enName": "Mandible",
    "system": "skeletal",
    "status": "vi",
+   "enTitle": "Mandible",
    "description": {
     "lang": "vi",
     "text": "Xương hàm dưới là xương thấp nhất, lớn nhất, khỏe nhất ở mặt. Xương hàm dưới có thể cử động được, và là xương duy nhất của hộp sọ có thể cử động được.",
@@ -5468,6 +5789,7 @@
    "enName": "Left maxilla",
    "system": "skeletal",
    "status": "vi",
+   "enTitle": "Maxilla",
    "description": {
     "lang": "vi",
     "text": "Hàm trên ) là một trong 2 xương tạo thành phần trên của miệng.",
@@ -5489,6 +5811,8 @@
    "enName": "Right medial cuneiform bone",
    "system": "skeletal",
    "status": "en-untranslated",
+   "enTitle": "Cuneiform bones",
+   "mismatch": true,
    "description": {
     "lang": "en",
     "text": "There are three cuneiform (\"wedge-shaped\") bones in the human foot:the first or medial cuneiform\nthe second or intermediate cuneiform, also known as the middle cuneiform\nthe third or lateral cuneiform",
@@ -5510,6 +5834,7 @@
    "enName": "Middle phalanx of right fourth toe",
    "system": "skeletal",
    "status": "none",
+   "enTitle": null,
    "description": null,
    "source": null
   },
@@ -5523,6 +5848,7 @@
    "enName": "Middle phalanx of right index finger",
    "system": "skeletal",
    "status": "none",
+   "enTitle": null,
    "description": null,
    "source": null
   },
@@ -5536,6 +5862,7 @@
    "enName": "Middle phalanx of left little finger",
    "system": "skeletal",
    "status": "none",
+   "enTitle": null,
    "description": null,
    "source": null
   },
@@ -5549,6 +5876,7 @@
    "enName": "Middle phalanx of left little toe",
    "system": "skeletal",
    "status": "none",
+   "enTitle": null,
    "description": null,
    "source": null
   },
@@ -5562,6 +5890,7 @@
    "enName": "Middle phalanx of right middle finger",
    "system": "skeletal",
    "status": "none",
+   "enTitle": null,
    "description": null,
    "source": null
   },
@@ -5575,6 +5904,7 @@
    "enName": "Middle phalanx of right ring finger",
    "system": "skeletal",
    "status": "none",
+   "enTitle": null,
    "description": null,
    "source": null
   },
@@ -5588,6 +5918,7 @@
    "enName": "Middle phalanx of left second toe",
    "system": "skeletal",
    "status": "none",
+   "enTitle": null,
    "description": null,
    "source": null
   },
@@ -5601,6 +5932,7 @@
    "enName": "Middle phalanx of right third toe",
    "system": "skeletal",
    "status": "none",
+   "enTitle": null,
    "description": null,
    "source": null
   },
@@ -5614,6 +5946,7 @@
    "enName": "Right nasal bone",
    "system": "skeletal",
    "status": "vi",
+   "enTitle": "Nasal bone",
    "description": {
     "lang": "vi",
     "text": "Xương mũi là hai xương thuôn nhỏ, có kích thước và hình dạng khác nhau ở từng cá thể. Chúng được đặt cạnh nhau ở phần giữa và phần trên của khuôn mặt và tại điểm nối của chúng, tạo thành sống mũi của 1/3 trên của mũi.",
@@ -5635,6 +5968,7 @@
    "enName": "Navicular bone of right foot",
    "system": "skeletal",
    "status": "none",
+   "enTitle": null,
    "description": null,
    "source": null
   },
@@ -5648,14 +5982,15 @@
    "enName": "Left ninth rib",
    "system": "skeletal",
    "status": "vi",
+   "enTitle": "Rib",
    "description": {
     "lang": "vi",
-    "text": "Lồng ngực, hay Lồng xương sườn là một phần sắp xếp xương trong ngực của tất cả các động vật có xương sống ngoại trừ cá mút đá và ếch. Nó được hình thành bởi cột sống, xương sườn và xương ức, bao quanh tim và phổi.",
+    "text": "Trong giải phẫu động vật có xương sống, xương sườn là những xương dài cong tạo thành lồng. Ở đa số động vật có xương sống, các xương sườn bao quanh ngực, cho phép phổi có thể giãn nở và hít thờ bằng sự giãn nở của ngực.",
     "translated": false
    },
    "source": {
-    "title": "Lồng ngực",
-    "url": "https://vi.wikipedia.org/wiki/L%E1%BB%93ng_ng%E1%BB%B1c",
+    "title": "Xương sườn",
+    "url": "https://vi.wikipedia.org/wiki/X%C6%B0%C6%A1ng_s%C6%B0%E1%BB%9Dn",
     "license": "CC BY-SA 4.0"
    }
   },
@@ -5668,6 +6003,8 @@
    "enName": "Ninth thoracic vertebra",
    "system": "skeletal",
    "status": "vi",
+   "enTitle": "Thoracic vertebrae",
+   "mismatch": true,
    "description": {
     "lang": "vi",
     "text": "Ở động vật có xương sống, đốt sống ngực tạo thành đốt giữa của cột sống, giữa đốt sống cổ và đốt sống thắt lưng. Ở người, có mười hai đốt sống ngực và chúng có kích thước trung gian giữa đốt sống cổ và thắt lưng; chúng phát triển kích thước về phía đốt sống thắt lưng, với những cái ở dưới lớn hơn rất nhiều so với những cái trên.",
@@ -5688,6 +6025,7 @@
    "enName": "Occipital bone",
    "system": "skeletal",
    "status": "vi",
+   "enTitle": "Occipital bone",
    "description": {
     "lang": "vi",
     "text": "Xương chẩm là một xương sọ, phủ lên thùy chẩm của đại não. Tại nền sọ trong xương chẩm có một lỗ lớn hình chữ nhật gọi là lỗ lớn xương chẩm cho phép tủy sống đi qua.",
@@ -5709,6 +6047,7 @@
    "enName": "Right palatine bone",
    "system": "skeletal",
    "status": "en-untranslated",
+   "enTitle": "Palatine bone",
    "description": {
     "lang": "en",
     "text": "In anatomy, the palatine bones are two irregular bones of the facial skeleton in many animal species, located above the uvula in the throat. Together with the maxilla, they comprise the hard palate.",
@@ -5730,6 +6069,7 @@
    "enName": "Left parietal bone",
    "system": "skeletal",
    "status": "vi",
+   "enTitle": "Parietal bone",
    "description": {
     "lang": "vi",
     "text": "Xương đỉnh là hai xương ở sọ người, nối với nhau tại một khớp xơ, tạo thành mặt và vòm của xương sọ. Mỗi xương có dạng hình tứ giác lồi lõm, có hai bề mặt, bốn đường tiếp giáp và bốn góc.",
@@ -5751,6 +6091,7 @@
    "enName": "Left patella",
    "system": "skeletal",
    "status": "en-untranslated",
+   "enTitle": "Patella",
    "description": {
     "lang": "en",
     "text": "The patella, also known as the kneecap, is a flat, rounded triangular bone which articulates with the femur and covers and protects the anterior articular surface of the knee joint. The patella is found in many tetrapods, such as mice, cats, birds, humans, and dogs, but not in whales, or most reptiles.",
@@ -5772,6 +6113,7 @@
    "enName": "Left pisiform",
    "system": "skeletal",
    "status": "en-untranslated",
+   "enTitle": "Pisiform bone",
    "description": {
     "lang": "en",
     "text": "The pisiform bone, also spelled pisiforme, is a small knobbly, sesamoid bone that is found in the wrist. It forms the ulnar border of the carpal tunnel.",
@@ -5793,6 +6135,7 @@
    "enName": "Proximal phalanx of left big toe",
    "system": "skeletal",
    "status": "none",
+   "enTitle": null,
    "description": null,
    "source": null
   },
@@ -5806,6 +6149,7 @@
    "enName": "Proximal phalanx of left fourth toe",
    "system": "skeletal",
    "status": "none",
+   "enTitle": null,
    "description": null,
    "source": null
   },
@@ -5819,6 +6163,7 @@
    "enName": "Proximal phalanx of left index finger",
    "system": "skeletal",
    "status": "none",
+   "enTitle": null,
    "description": null,
    "source": null
   },
@@ -5832,6 +6177,7 @@
    "enName": "Proximal phalanx of right little finger",
    "system": "skeletal",
    "status": "none",
+   "enTitle": null,
    "description": null,
    "source": null
   },
@@ -5845,6 +6191,7 @@
    "enName": "Proximal phalanx of right little toe",
    "system": "skeletal",
    "status": "none",
+   "enTitle": null,
    "description": null,
    "source": null
   },
@@ -5858,6 +6205,7 @@
    "enName": "Proximal phalanx of right middle finger",
    "system": "skeletal",
    "status": "none",
+   "enTitle": null,
    "description": null,
    "source": null
   },
@@ -5871,6 +6219,7 @@
    "enName": "Proximal phalanx of right ring finger",
    "system": "skeletal",
    "status": "none",
+   "enTitle": null,
    "description": null,
    "source": null
   },
@@ -5884,6 +6233,7 @@
    "enName": "Proximal phalanx of left second toe",
    "system": "skeletal",
    "status": "none",
+   "enTitle": null,
    "description": null,
    "source": null
   },
@@ -5897,6 +6247,7 @@
    "enName": "Proximal phalanx of right third toe",
    "system": "skeletal",
    "status": "none",
+   "enTitle": null,
    "description": null,
    "source": null
   },
@@ -5910,6 +6261,7 @@
    "enName": "Proximal phalanx of left thumb",
    "system": "skeletal",
    "status": "none",
+   "enTitle": null,
    "description": null,
    "source": null
   },
@@ -5923,6 +6275,7 @@
    "enName": "Left radius",
    "system": "skeletal",
    "status": "vi",
+   "enTitle": "Radius",
    "description": {
     "lang": "vi",
     "text": "Trong hình học cổ điển, bán kính của một đường tròn hay của mặt cầu là khoảng cách từ một điểm bất kỳ của đường tròn/mặt cầu đến tâm của nó. Từ bán kính được sử dụng lần đầu tiên trong tiếng La Tinh là radius với nghĩa tia hoặc cũng có thể là nan hoa của bánh xe ngựa.",
@@ -5943,6 +6296,7 @@
    "enName": "Sacrum",
    "system": "skeletal",
    "status": "en-untranslated",
+   "enTitle": "Sacrum",
    "description": {
     "lang": "en",
     "text": "The sacrum, in human anatomy, is a triangular bone at the base of the spine that forms by the fusing of the sacral vertebrae (S1–S5) between ages 18 and 30.",
@@ -5964,6 +6318,7 @@
    "enName": "Right scaphoid",
    "system": "skeletal",
    "status": "en-untranslated",
+   "enTitle": "Scaphoid bone",
    "description": {
     "lang": "en",
     "text": "The scaphoid bone is one of the carpal bones of the wrist. It is situated between the hand and forearm on the thumb side of the wrist.",
@@ -5985,6 +6340,7 @@
    "enName": "Left scapula",
    "system": "skeletal",
    "status": "vi",
+   "enTitle": "Scapula",
    "description": {
     "lang": "vi",
     "text": "Trong giải phẫu học, xương vai là xương nối giữa xương cánh tay với xương đòn.",
@@ -6006,6 +6362,7 @@
    "enName": "Right second costal cartilage",
    "system": "skeletal",
    "status": "vi",
+   "enTitle": "Costal cartilage",
    "description": {
     "lang": "vi",
     "text": "Sụn sườn là các thanh sụn trong giúp kéo dài xương sườn về phía trước và góp phần làm co giãn các vách của ngực. Sụn sườn chỉ có thể thấy ở đuôi trước của xương sườn, tạo nên phần mở rộng ở giữa.",
@@ -6026,6 +6383,8 @@
    "enName": "Second lumbar vertebra",
    "system": "skeletal",
    "status": "vi",
+   "enTitle": "Lumbar vertebrae",
+   "mismatch": true,
    "description": {
     "lang": "vi",
     "text": "Các đốt sống thắt lưng, trong giải phẫu người, năm đốt sống giữa lồng xương sườn và xương chậu. Chúng là những đoạn lớn nhất của cột sống và được đặc trưng bởi sự thiếu vắng của lỗ trên ổ mắt trong phạm vi các mấu ngang và do sự thiếu vắng ở hai bên của cơ thể.",
@@ -6047,6 +6406,7 @@
    "enName": "Right second metacarpal bone",
    "system": "skeletal",
    "status": "en-untranslated",
+   "enTitle": "Second metacarpal bone",
    "description": {
     "lang": "en",
     "text": "The second metacarpal bone is the longest, and its base the largest, of all the metacarpal bones.",
@@ -6068,6 +6428,7 @@
    "enName": "Right second metatarsal bone",
    "system": "skeletal",
    "status": "en-untranslated",
+   "enTitle": "Second metatarsal bone",
    "description": {
     "lang": "en",
     "text": "The second metatarsal bone is a long bone in the foot. It is the longest of the metatarsal bones, being prolonged backward and held firmly into the recess formed by the three cuneiform bones.",
@@ -6089,14 +6450,15 @@
    "enName": "Left second rib",
    "system": "skeletal",
    "status": "vi",
+   "enTitle": "Rib",
    "description": {
     "lang": "vi",
-    "text": "Lồng ngực, hay Lồng xương sườn là một phần sắp xếp xương trong ngực của tất cả các động vật có xương sống ngoại trừ cá mút đá và ếch. Nó được hình thành bởi cột sống, xương sườn và xương ức, bao quanh tim và phổi.",
+    "text": "Trong giải phẫu động vật có xương sống, xương sườn là những xương dài cong tạo thành lồng. Ở đa số động vật có xương sống, các xương sườn bao quanh ngực, cho phép phổi có thể giãn nở và hít thờ bằng sự giãn nở của ngực.",
     "translated": false
    },
    "source": {
-    "title": "Lồng ngực",
-    "url": "https://vi.wikipedia.org/wiki/L%E1%BB%93ng_ng%E1%BB%B1c",
+    "title": "Xương sườn",
+    "url": "https://vi.wikipedia.org/wiki/X%C6%B0%C6%A1ng_s%C6%B0%E1%BB%9Dn",
     "license": "CC BY-SA 4.0"
    }
   },
@@ -6109,6 +6471,8 @@
    "enName": "Second thoracic vertebra",
    "system": "skeletal",
    "status": "vi",
+   "enTitle": "Thoracic vertebrae",
+   "mismatch": true,
    "description": {
     "lang": "vi",
     "text": "Ở động vật có xương sống, đốt sống ngực tạo thành đốt giữa của cột sống, giữa đốt sống cổ và đốt sống thắt lưng. Ở người, có mười hai đốt sống ngực và chúng có kích thước trung gian giữa đốt sống cổ và thắt lưng; chúng phát triển kích thước về phía đốt sống thắt lưng, với những cái ở dưới lớn hơn rất nhiều so với những cái trên.",
@@ -6130,6 +6494,7 @@
    "enName": "Sesamoid bone of left foot",
    "system": "skeletal",
    "status": "none",
+   "enTitle": null,
    "description": null,
    "source": null
   },
@@ -6142,6 +6507,8 @@
    "enName": "Seventh cervical vertebra",
    "system": "skeletal",
    "status": "vi",
+   "enTitle": "Cervical vertebrae",
+   "mismatch": true,
    "description": {
     "lang": "vi",
     "text": "Ở động vật có xương sống, đốt sống cổ là đốt sống của cổ, ngay dưới xương sọ.",
@@ -6163,6 +6530,7 @@
    "enName": "Left seventh costal cartilage",
    "system": "skeletal",
    "status": "vi",
+   "enTitle": "Costal cartilage",
    "description": {
     "lang": "vi",
     "text": "Sụn sườn là các thanh sụn trong giúp kéo dài xương sườn về phía trước và góp phần làm co giãn các vách của ngực. Sụn sườn chỉ có thể thấy ở đuôi trước của xương sườn, tạo nên phần mở rộng ở giữa.",
@@ -6184,14 +6552,15 @@
    "enName": "Left seventh rib",
    "system": "skeletal",
    "status": "vi",
+   "enTitle": "Rib",
    "description": {
     "lang": "vi",
-    "text": "Lồng ngực, hay Lồng xương sườn là một phần sắp xếp xương trong ngực của tất cả các động vật có xương sống ngoại trừ cá mút đá và ếch. Nó được hình thành bởi cột sống, xương sườn và xương ức, bao quanh tim và phổi.",
+    "text": "Trong giải phẫu động vật có xương sống, xương sườn là những xương dài cong tạo thành lồng. Ở đa số động vật có xương sống, các xương sườn bao quanh ngực, cho phép phổi có thể giãn nở và hít thờ bằng sự giãn nở của ngực.",
     "translated": false
    },
    "source": {
-    "title": "Lồng ngực",
-    "url": "https://vi.wikipedia.org/wiki/L%E1%BB%93ng_ng%E1%BB%B1c",
+    "title": "Xương sườn",
+    "url": "https://vi.wikipedia.org/wiki/X%C6%B0%C6%A1ng_s%C6%B0%E1%BB%9Dn",
     "license": "CC BY-SA 4.0"
    }
   },
@@ -6204,6 +6573,8 @@
    "enName": "Seventh thoracic vertebra",
    "system": "skeletal",
    "status": "vi",
+   "enTitle": "Thoracic vertebrae",
+   "mismatch": true,
    "description": {
     "lang": "vi",
     "text": "Ở động vật có xương sống, đốt sống ngực tạo thành đốt giữa của cột sống, giữa đốt sống cổ và đốt sống thắt lưng. Ở người, có mười hai đốt sống ngực và chúng có kích thước trung gian giữa đốt sống cổ và thắt lưng; chúng phát triển kích thước về phía đốt sống thắt lưng, với những cái ở dưới lớn hơn rất nhiều so với những cái trên.",
@@ -6224,6 +6595,8 @@
    "enName": "Sixth cervical vertebra",
    "system": "skeletal",
    "status": "vi",
+   "enTitle": "Cervical vertebrae",
+   "mismatch": true,
    "description": {
     "lang": "vi",
     "text": "Ở động vật có xương sống, đốt sống cổ là đốt sống của cổ, ngay dưới xương sọ.",
@@ -6245,6 +6618,7 @@
    "enName": "Right sixth costal cartilage",
    "system": "skeletal",
    "status": "vi",
+   "enTitle": "Costal cartilage",
    "description": {
     "lang": "vi",
     "text": "Sụn sườn là các thanh sụn trong giúp kéo dài xương sườn về phía trước và góp phần làm co giãn các vách của ngực. Sụn sườn chỉ có thể thấy ở đuôi trước của xương sườn, tạo nên phần mở rộng ở giữa.",
@@ -6266,14 +6640,15 @@
    "enName": "Left sixth rib",
    "system": "skeletal",
    "status": "vi",
+   "enTitle": "Rib",
    "description": {
     "lang": "vi",
-    "text": "Lồng ngực, hay Lồng xương sườn là một phần sắp xếp xương trong ngực của tất cả các động vật có xương sống ngoại trừ cá mút đá và ếch. Nó được hình thành bởi cột sống, xương sườn và xương ức, bao quanh tim và phổi.",
+    "text": "Trong giải phẫu động vật có xương sống, xương sườn là những xương dài cong tạo thành lồng. Ở đa số động vật có xương sống, các xương sườn bao quanh ngực, cho phép phổi có thể giãn nở và hít thờ bằng sự giãn nở của ngực.",
     "translated": false
    },
    "source": {
-    "title": "Lồng ngực",
-    "url": "https://vi.wikipedia.org/wiki/L%E1%BB%93ng_ng%E1%BB%B1c",
+    "title": "Xương sườn",
+    "url": "https://vi.wikipedia.org/wiki/X%C6%B0%C6%A1ng_s%C6%B0%E1%BB%9Dn",
     "license": "CC BY-SA 4.0"
    }
   },
@@ -6286,6 +6661,8 @@
    "enName": "Sixth thoracic vertebra",
    "system": "skeletal",
    "status": "vi",
+   "enTitle": "Thoracic vertebrae",
+   "mismatch": true,
    "description": {
     "lang": "vi",
     "text": "Ở động vật có xương sống, đốt sống ngực tạo thành đốt giữa của cột sống, giữa đốt sống cổ và đốt sống thắt lưng. Ở người, có mười hai đốt sống ngực và chúng có kích thước trung gian giữa đốt sống cổ và thắt lưng; chúng phát triển kích thước về phía đốt sống thắt lưng, với những cái ở dưới lớn hơn rất nhiều so với những cái trên.",
@@ -6306,6 +6683,7 @@
    "enName": "Sphenoid bone",
    "system": "skeletal",
    "status": "en-untranslated",
+   "enTitle": "Sphenoid bone",
    "description": {
     "lang": "en",
     "text": "The sphenoid bone is an unpaired bone of the neurocranium in mammals. It is situated in the middle of the skull towards the front, in front of the basilar part of the occipital bone.",
@@ -6327,6 +6705,7 @@
    "enName": "Right talus",
    "system": "skeletal",
    "status": "none",
+   "enTitle": null,
    "description": null,
    "source": null
   },
@@ -6340,6 +6719,7 @@
    "enName": "Right temporal bone",
    "system": "skeletal",
    "status": "en-untranslated",
+   "enTitle": "Temporal bone",
    "description": {
     "lang": "en",
     "text": "The temporal bone is a paired bone situated at the sides and base of the skull, lateral to the temporal lobe of the cerebral cortex.",
@@ -6361,14 +6741,15 @@
    "enName": "Left tenth rib",
    "system": "skeletal",
    "status": "vi",
+   "enTitle": "Rib",
    "description": {
     "lang": "vi",
-    "text": "Lồng ngực, hay Lồng xương sườn là một phần sắp xếp xương trong ngực của tất cả các động vật có xương sống ngoại trừ cá mút đá và ếch. Nó được hình thành bởi cột sống, xương sườn và xương ức, bao quanh tim và phổi.",
+    "text": "Trong giải phẫu động vật có xương sống, xương sườn là những xương dài cong tạo thành lồng. Ở đa số động vật có xương sống, các xương sườn bao quanh ngực, cho phép phổi có thể giãn nở và hít thờ bằng sự giãn nở của ngực.",
     "translated": false
    },
    "source": {
-    "title": "Lồng ngực",
-    "url": "https://vi.wikipedia.org/wiki/L%E1%BB%93ng_ng%E1%BB%B1c",
+    "title": "Xương sườn",
+    "url": "https://vi.wikipedia.org/wiki/X%C6%B0%C6%A1ng_s%C6%B0%E1%BB%9Dn",
     "license": "CC BY-SA 4.0"
    }
   },
@@ -6381,6 +6762,8 @@
    "enName": "Tenth thoracic vertebra",
    "system": "skeletal",
    "status": "vi",
+   "enTitle": "Thoracic vertebrae",
+   "mismatch": true,
    "description": {
     "lang": "vi",
     "text": "Ở động vật có xương sống, đốt sống ngực tạo thành đốt giữa của cột sống, giữa đốt sống cổ và đốt sống thắt lưng. Ở người, có mười hai đốt sống ngực và chúng có kích thước trung gian giữa đốt sống cổ và thắt lưng; chúng phát triển kích thước về phía đốt sống thắt lưng, với những cái ở dưới lớn hơn rất nhiều so với những cái trên.",
@@ -6401,6 +6784,8 @@
    "enName": "Third cervical vertebra",
    "system": "skeletal",
    "status": "vi",
+   "enTitle": "Cervical vertebrae",
+   "mismatch": true,
    "description": {
     "lang": "vi",
     "text": "Ở động vật có xương sống, đốt sống cổ là đốt sống của cổ, ngay dưới xương sọ.",
@@ -6422,6 +6807,7 @@
    "enName": "Right third costal cartilage",
    "system": "skeletal",
    "status": "vi",
+   "enTitle": "Costal cartilage",
    "description": {
     "lang": "vi",
     "text": "Sụn sườn là các thanh sụn trong giúp kéo dài xương sườn về phía trước và góp phần làm co giãn các vách của ngực. Sụn sườn chỉ có thể thấy ở đuôi trước của xương sườn, tạo nên phần mở rộng ở giữa.",
@@ -6442,6 +6828,8 @@
    "enName": "Third lumbar vertebra",
    "system": "skeletal",
    "status": "vi",
+   "enTitle": "Lumbar vertebrae",
+   "mismatch": true,
    "description": {
     "lang": "vi",
     "text": "Các đốt sống thắt lưng, trong giải phẫu người, năm đốt sống giữa lồng xương sườn và xương chậu. Chúng là những đoạn lớn nhất của cột sống và được đặc trưng bởi sự thiếu vắng của lỗ trên ổ mắt trong phạm vi các mấu ngang và do sự thiếu vắng ở hai bên của cơ thể.",
@@ -6463,6 +6851,7 @@
    "enName": "Right third metacarpal bone",
    "system": "skeletal",
    "status": "en-untranslated",
+   "enTitle": "Third metacarpal bone",
    "description": {
     "lang": "en",
     "text": "The third metacarpal bone is a little smaller than the second.",
@@ -6484,6 +6873,7 @@
    "enName": "Right third metatarsal bone",
    "system": "skeletal",
    "status": "en-untranslated",
+   "enTitle": "Third metatarsal bone",
    "description": {
     "lang": "en",
     "text": "The third metatarsal bone is a long bone in the foot. It is the second longest metatarsal, the longest being the second metatarsal.",
@@ -6505,14 +6895,15 @@
    "enName": "Left third rib",
    "system": "skeletal",
    "status": "vi",
+   "enTitle": "Rib",
    "description": {
     "lang": "vi",
-    "text": "Lồng ngực, hay Lồng xương sườn là một phần sắp xếp xương trong ngực của tất cả các động vật có xương sống ngoại trừ cá mút đá và ếch. Nó được hình thành bởi cột sống, xương sườn và xương ức, bao quanh tim và phổi.",
+    "text": "Trong giải phẫu động vật có xương sống, xương sườn là những xương dài cong tạo thành lồng. Ở đa số động vật có xương sống, các xương sườn bao quanh ngực, cho phép phổi có thể giãn nở và hít thờ bằng sự giãn nở của ngực.",
     "translated": false
    },
    "source": {
-    "title": "Lồng ngực",
-    "url": "https://vi.wikipedia.org/wiki/L%E1%BB%93ng_ng%E1%BB%B1c",
+    "title": "Xương sườn",
+    "url": "https://vi.wikipedia.org/wiki/X%C6%B0%C6%A1ng_s%C6%B0%E1%BB%9Dn",
     "license": "CC BY-SA 4.0"
    }
   },
@@ -6525,6 +6916,8 @@
    "enName": "Third thoracic vertebra",
    "system": "skeletal",
    "status": "vi",
+   "enTitle": "Thoracic vertebrae",
+   "mismatch": true,
    "description": {
     "lang": "vi",
     "text": "Ở động vật có xương sống, đốt sống ngực tạo thành đốt giữa của cột sống, giữa đốt sống cổ và đốt sống thắt lưng. Ở người, có mười hai đốt sống ngực và chúng có kích thước trung gian giữa đốt sống cổ và thắt lưng; chúng phát triển kích thước về phía đốt sống thắt lưng, với những cái ở dưới lớn hơn rất nhiều so với những cái trên.",
@@ -6545,6 +6938,7 @@
    "enName": "Thyroid cartilage",
    "system": "skeletal",
    "status": "en-untranslated",
+   "enTitle": "Thyroid cartilage",
    "description": {
     "lang": "en",
     "text": "The thyroid cartilage is the largest of the nine cartilages that make up the laryngeal skeleton, the cartilage structure in and around the trachea that contains the larynx. It does not completely encircle the larynx.",
@@ -6566,6 +6960,7 @@
    "enName": "Right tibia",
    "system": "skeletal",
    "status": "en-untranslated",
+   "enTitle": "Tibia",
    "description": {
     "lang": "en",
     "text": "The tibia, also known as the shinbone, shankbone or simply the shin, is the larger, stronger, and anterior (frontal) of the two bones in the leg below the knee in vertebrates ; it connects the knee with the ankle. The tibia is found on the medial side of the leg next to the fibula and closer to the median plane.",
@@ -6587,6 +6982,7 @@
    "enName": "Right trapezium",
    "system": "skeletal",
    "status": "none",
+   "enTitle": null,
    "description": null,
    "source": null
   },
@@ -6600,6 +6996,7 @@
    "enName": "Left trapezoid",
    "system": "skeletal",
    "status": "vi",
+   "enTitle": "Trapezoid",
    "description": {
     "lang": "vi",
     "text": "Trong hình học Euclid, hình thang là một tứ giác lồi có hai cạnh đối song song. Hai cạnh song song này được gọi là các cạnh đáy của hình thang.",
@@ -6621,6 +7018,7 @@
    "enName": "Left triquetral",
    "system": "skeletal",
    "status": "en-untranslated",
+   "enTitle": "Triquetral bone",
    "description": {
     "lang": "en",
     "text": "The triquetral bone is located in the wrist on the medial side of the proximal row of the carpus between the lunate and pisiform bones. It is on the ulnar side of the hand, but does not directly articulate with the ulna.",
@@ -6642,14 +7040,15 @@
    "enName": "Right twelfth rib",
    "system": "skeletal",
    "status": "vi",
+   "enTitle": "Rib",
    "description": {
     "lang": "vi",
-    "text": "Lồng ngực, hay Lồng xương sườn là một phần sắp xếp xương trong ngực của tất cả các động vật có xương sống ngoại trừ cá mút đá và ếch. Nó được hình thành bởi cột sống, xương sườn và xương ức, bao quanh tim và phổi.",
+    "text": "Trong giải phẫu động vật có xương sống, xương sườn là những xương dài cong tạo thành lồng. Ở đa số động vật có xương sống, các xương sườn bao quanh ngực, cho phép phổi có thể giãn nở và hít thờ bằng sự giãn nở của ngực.",
     "translated": false
    },
    "source": {
-    "title": "Lồng ngực",
-    "url": "https://vi.wikipedia.org/wiki/L%E1%BB%93ng_ng%E1%BB%B1c",
+    "title": "Xương sườn",
+    "url": "https://vi.wikipedia.org/wiki/X%C6%B0%C6%A1ng_s%C6%B0%E1%BB%9Dn",
     "license": "CC BY-SA 4.0"
    }
   },
@@ -6662,6 +7061,8 @@
    "enName": "Twelfth thoracic vertebra",
    "system": "skeletal",
    "status": "vi",
+   "enTitle": "Thoracic vertebrae",
+   "mismatch": true,
    "description": {
     "lang": "vi",
     "text": "Ở động vật có xương sống, đốt sống ngực tạo thành đốt giữa của cột sống, giữa đốt sống cổ và đốt sống thắt lưng. Ở người, có mười hai đốt sống ngực và chúng có kích thước trung gian giữa đốt sống cổ và thắt lưng; chúng phát triển kích thước về phía đốt sống thắt lưng, với những cái ở dưới lớn hơn rất nhiều so với những cái trên.",
@@ -6683,6 +7084,7 @@
    "enName": "Right ulna",
    "system": "skeletal",
    "status": "vi",
+   "enTitle": "Ulna",
    "description": {
     "lang": "vi",
     "text": "Xương trụ là một trong hai xương dài của cẳng tay, có dạng hình lăng trụ. Theo vị trí giải phẫu xương trụ nằm về phía trong của cẳng tay gần cơ thể, song song với xương quay ở cả hai tay, gồm 1 thân, 2 đầu.",
@@ -6704,6 +7106,7 @@
    "enName": "Right upper central secondary incisor tooth",
    "system": "skeletal",
    "status": "none",
+   "enTitle": null,
    "description": null,
    "source": null
   },
@@ -6717,6 +7120,7 @@
    "enName": "Right upper first secondary molar tooth",
    "system": "skeletal",
    "status": "none",
+   "enTitle": null,
    "description": null,
    "source": null
   },
@@ -6730,6 +7134,7 @@
    "enName": "Left upper first secondary premolar tooth",
    "system": "skeletal",
    "status": "none",
+   "enTitle": null,
    "description": null,
    "source": null
   },
@@ -6743,6 +7148,7 @@
    "enName": "Left upper lateral secondary incisor tooth",
    "system": "skeletal",
    "status": "none",
+   "enTitle": null,
    "description": null,
    "source": null
   },
@@ -6756,6 +7162,7 @@
    "enName": "Right upper second secondary molar tooth",
    "system": "skeletal",
    "status": "none",
+   "enTitle": null,
    "description": null,
    "source": null
   },
@@ -6769,6 +7176,7 @@
    "enName": "Right upper second secondary premolar tooth",
    "system": "skeletal",
    "status": "none",
+   "enTitle": null,
    "description": null,
    "source": null
   },
@@ -6782,6 +7190,7 @@
    "enName": "Left upper secondary canine tooth",
    "system": "skeletal",
    "status": "none",
+   "enTitle": null,
    "description": null,
    "source": null
   },
@@ -6794,6 +7203,7 @@
    "enName": "Vomer",
    "system": "skeletal",
    "status": "en-untranslated",
+   "enTitle": "Vomer",
    "description": {
     "lang": "en",
     "text": "The vomer is one of the unpaired facial bones of the skull. It is located in the midsagittal line, and articulates with the sphenoid, the ethmoid, the left and right palatine bones, and the left and right maxillary bones.",
@@ -6815,6 +7225,7 @@
    "enName": "Left zygomatic bone",
    "system": "skeletal",
    "status": "en-untranslated",
+   "enTitle": "Zygomatic bone",
    "description": {
     "lang": "en",
     "text": "In the human skull, the zygomatic bone, also called cheekbone or malar bone, is a paired irregular bone, situated at the upper and lateral part of the face and forming part of the lateral wall and floor of the orbit, of the temporal fossa and the infratemporal fossa. It presents a malar and a temporal surface; four processes, and four borders.",
@@ -6836,6 +7247,7 @@
    "enName": "Left kidney",
    "system": "urinary",
    "status": "en-untranslated",
+   "enTitle": "Kidney",
    "description": {
     "lang": "en",
     "text": "In humans, the kidneys are two reddish-brown bean-shaped blood-filtering organs that are a multilobar, multipapillary form of mammalian kidneys, usually without signs of external lobulation. They are located on the left and right in the retroperitoneal space, and in adult humans are about 12 centimetres in length.",
@@ -6857,6 +7269,7 @@
    "enName": "Right ureter",
    "system": "urinary",
    "status": "vi",
+   "enTitle": "Ureter",
    "description": {
     "lang": "vi",
     "text": "Niệu quản, một bộ phận thuộc hệ tiết niệu của con người, là một ống cơ dài khoảng 25 cm, dẫn nước tiểu từ bể thận xuống bàng quang.",
@@ -6877,6 +7290,7 @@
    "enName": "Urethra",
    "system": "urinary",
    "status": "vi",
+   "enTitle": "Urethra",
    "description": {
     "lang": "vi",
     "text": "Niệu đạo là một bộ phận của hệ tiết niệu, nó là một ống dài nối từ bàng quang ra lỗ sáo để đưa nước tiểu ra ngoài. Ngoài ra ở đàn ông và động vật giống đực, nó còn có vai trò trong việc dẫn tinh dịch ra ngoài.",
@@ -6897,6 +7311,7 @@
    "enName": "Urinary bladder",
    "system": "urinary",
    "status": "vi",
+   "enTitle": "Bladder",
    "description": {
     "lang": "vi",
     "text": "Bàng quang hay bóng đái là cơ quan chứa nước tiểu do thận tiết ra trước khi thoát ra ngoài cơ thể theo quá trình đi tiểu. Bàng quang là một cơ rỗng.",
@@ -6917,6 +7332,7 @@
    "enName": "Hepatic portal vein",
    "system": "venous",
    "status": "en-untranslated",
+   "enTitle": "Portal vein",
    "description": {
     "lang": "en",
     "text": "The portal vein or hepatic portal vein (HPV) is a blood vessel that carries blood from the gastrointestinal tract, gallbladder, pancreas and spleen to the liver. This blood contains nutrients and toxins extracted from digested contents.",
@@ -6938,6 +7354,7 @@
    "enName": "Left inferior pulmonary vein",
    "system": "venous",
    "status": "en-untranslated",
+   "enTitle": "Pulmonary vein",
    "description": {
     "lang": "en",
     "text": "The pulmonary veins are the veins that transfer oxygenated blood from the lungs to the heart. The largest pulmonary veins are the four main pulmonary veins, two from each lung that drain into the left atrium of the heart.",
@@ -6958,6 +7375,7 @@
    "enName": "Inferior vena cava",
    "system": "venous",
    "status": "en-untranslated",
+   "enTitle": "Inferior vena cava",
    "description": {
     "lang": "en",
     "text": "The inferior vena cava is a large vein that carries the deoxygenated blood from the lower and middle body into the right atrium of the heart. It is formed by the joining of the right and the left common iliac veins, usually at the level of the fifth lumbar vertebra.",
@@ -6979,6 +7397,7 @@
    "enName": "Left superior pulmonary vein",
    "system": "venous",
    "status": "en-untranslated",
+   "enTitle": "Pulmonary vein",
    "description": {
     "lang": "en",
     "text": "The pulmonary veins are the veins that transfer oxygenated blood from the lungs to the heart. The largest pulmonary veins are the four main pulmonary veins, two from each lung that drain into the left atrium of the heart.",
@@ -6999,6 +7418,7 @@
    "enName": "Superior vena cava",
    "system": "venous",
    "status": "en-untranslated",
+   "enTitle": "Superior vena cava",
    "description": {
     "lang": "en",
     "text": "The superior vena cava (SVC) is the superior of the two venae cavae, the great venous trunks that return deoxygenated blood from the systemic circulation to the right atrium of the heart. It is a large-diameter (24 mm) short length (~7 cm) vein that receives venous return from the upper half of the body, above the diaphragm.",
