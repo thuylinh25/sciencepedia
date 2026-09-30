@@ -327,6 +327,11 @@ function mergeViBatches() {
       const e = byFma.get(r.fma);
       if (!e || !e.description) continue;
       if (!r.vi || (r.verdict && r.verdict.toUpperCase() !== "PASS")) {
+        // REWORK = science-editor không tin nguồn (sai vùng/sai loại). KHÔNG giữ
+        // câu tiếng Anh sai — xoá về trống, thà thiếu còn hơn hiện sai.
+        e.description = null;
+        e.source = null;
+        e.status = "none";
         skipped++;
         continue;
       }
@@ -407,16 +412,51 @@ async function run() {
   //    ("eleventh thoracic vertebra" → "thoracic vertebra", về bài chung).
   const stripOrdinal = (n: string) =>
     n.replace(/^(first|second|third|fourth|fifth|sixth|seventh|eighth|ninth|tenth|eleventh|twelfth)\s+/i, "").trim();
-  // Vài trường hợp tên chung dẫn tới bài SAI loại — ép về bài đúng.
-  // "fifth rib" bỏ số → "rib" lại redirect sang "Rib cage" (cả lồng ngực). Ép "Rib".
-  const override = (base: string): string | null => {
-    if (/^(\w+\s+)?rib$/i.test(base)) return "Rib";
-    return null;
-  };
+  // Ép tên chung về bài đúng cho các HỌ cấu trúc mà tên đặc chỉ (Nth, of foot…)
+  // không có bài riêng nhưng có bài chung. Thử theo thứ tự, dừng ở cái khớp.
+  const FAMILY: Array<[RegExp, string]> = [
+    [/\brib$/i, "Rib"],
+    [/\bphalanx\b/i, "Phalanx bone"],
+    [/intervertebral dis[kc]/i, "Intervertebral disc"],
+    [/incisor tooth/i, "Incisor"],
+    [/molar tooth/i, "Molar (tooth)"],
+    [/premolar/i, "Premolar"],
+    [/canine tooth/i, "Canine tooth"],
+    [/\blumbrical\b/i, "Lumbricals of the hand"],
+    [/plantar interosseous/i, "Plantar interossei"],
+    [/flexor digiti minimi brevis/i, "Flexor digiti minimi brevis muscle"],
+    [/opponens digiti minimi/i, "Opponens digiti minimi muscle"],
+    [/\brotator\b/i, "Rotatores muscles"],
+    [/intertransversarius/i, "Intertransversarii"],
+    [/interspinalis/i, "Interspinales"],
+    [/crico-?arytenoid/i, "Cricoarytenoid muscle"],
+    [/tarsal plate/i, "Tarsus (eyelids)"],
+    [/sesamoid/i, "Sesamoid bone"],
+    [/\bnavicular\b/i, "Navicular bone"],
+    [/\blunate\b/i, "Lunate bone"],
+    [/\btalus\b/i, "Talus bone"],
+    [/\btrapezium\b/i, "Trapezium bone"],
+  ];
+  const family = (name: string) => FAMILY.find(([re]) => re.test(name))?.[1] ?? null;
+  const noTail = (s: string) => s.replace(/\s+of\s+.*/i, "").trim(); // bỏ "of right foot", "of axis"
   const enTitlesOf = (g: Group) => {
     const base = stripSideRaw(g.rep.name);
-    const ov = override(base) ?? override(stripOrdinal(base));
-    return [...new Set([ov, linkOf(g)?.en, base, stripOrdinal(base)].filter(Boolean) as string[])];
+    const bare = noTail(base);
+    const fam = family(g.rep.name);
+    return [
+      ...new Set(
+        [
+          fam,
+          linkOf(g)?.en,
+          base,
+          stripOrdinal(base),
+          bare,
+          stripOrdinal(bare),
+          `${bare} muscle`,
+          `${bare} bone`,
+        ].filter(Boolean) as string[],
+      ),
+    ];
   };
   console.log(`Tra Wikipedia (en) cho ${groups.length} nhóm…`);
   const enSummaries = await pool(groups, 4, async (g) => {
@@ -451,11 +491,22 @@ async function run() {
     enTitleByKey.set(x.g.key, x.s ? x.s.title.replace(/_/g, " ") : null);
   }
 
+  // GIỮ bản dịch đã duyệt: chạy lại KHÔNG được xoá công của science-editor.
+  // Mọi mục có description.reviewed=true trong tệp cũ được bê nguyên sang.
+  const kept = new Map<string, Entry>();
+  if (existsSync(OUT)) {
+    const old = JSON.parse(readFileSync(OUT, "utf8")) as Doc;
+    for (const e of old.entries) if (e.description?.reviewed) kept.set(e.fma, e);
+  }
+  if (kept.size) console.log(`Giữ ${kept.size} mô tả đã duyệt từ tệp cũ.`);
+
   // 4) Dựng entries.
   const entries: Entry[] = groups.map((g) => {
+    const keep = kept.get(g.rep.conceptId);
+    const enTitle = enTitleByKey.get(g.key) ?? null;
+    if (keep) return { ...keep, fmaAll: g.fmaAll, system: g.system, enTitle };
     const s = byKey.get(g.key) ?? null;
     const status: Entry["status"] = !s ? "none" : s.lang === "vi" ? "vi" : "en-untranslated";
-    const enTitle = enTitleByKey.get(g.key) ?? null;
     return {
       fma: g.rep.conceptId,
       fmaAll: g.fmaAll,

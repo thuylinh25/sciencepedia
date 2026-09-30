@@ -857,10 +857,20 @@
    "viName": null,
    "enName": "Right cervical rotator",
    "system": "muscular",
-   "status": "none",
-   "enTitle": null,
-   "description": null,
-   "source": null
+   "status": "vi",
+   "enTitle": "Rotatores muscles",
+   "mismatch": true,
+   "description": {
+    "lang": "vi",
+    "text": "Các cơ xoay (rotatores) nằm bên dưới cơ nhiều đầu (multifidus), có mặt ở mọi đoạn cột sống nhưng rõ nhất ở đoạn ngực.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Rotatores muscles",
+    "url": "https://en.wikipedia.org/wiki/Rotatores_muscles",
+    "license": "CC BY-SA 4.0"
+   }
   },
   {
    "fma": "FMA46444",
@@ -1350,7 +1360,8 @@
    "enName": "First lumbrical of right foot",
    "system": "muscular",
    "status": "none",
-   "enTitle": null,
+   "enTitle": "Lumbricals of the hand",
+   "mismatch": true,
    "description": null,
    "source": null
   },
@@ -1363,10 +1374,20 @@
    "viName": null,
    "enName": "First plantar interosseous of left foot",
    "system": "muscular",
-   "status": "none",
-   "enTitle": null,
-   "description": null,
-   "source": null
+   "status": "vi",
+   "enTitle": "Plantar interossei muscles",
+   "mismatch": true,
+   "description": {
+    "lang": "vi",
+    "text": "Các cơ gian cốt gan chân là ba cơ nằm giữa các xương đốt bàn chân ở bàn chân.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Plantar interossei muscles",
+    "url": "https://en.wikipedia.org/wiki/Plantar_interossei_muscles",
+    "license": "CC BY-SA 4.0"
+   }
   },
   {
    "fma": "FMA37465",
@@ -1613,7 +1634,8 @@
    "enName": "Fourth lumbrical of left foot",
    "system": "muscular",
    "status": "none",
-   "enTitle": null,
+   "enTitle": "Lumbricals of the hand",
+   "mismatch": true,
    "description": null,
    "source": null
   },
@@ -1626,13 +1648,14 @@
    "viName": null,
    "enName": "Right gemellus inferior",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Gemelli muscles",
    "mismatch": true,
    "description": {
-    "lang": "en",
-    "text": "The gemelli muscles are the inferior gemellus muscle\nand the superior gemellus muscle, two small accessory fasciculi to the tendon of the internal obturator muscle. The gemelli muscles belong to the lateral rotator group of six muscles of the hip that rotate the femur in the hip joint.",
-    "translated": false
+    "lang": "vi",
+    "text": "Các cơ sinh đôi gồm cơ sinh đôi dưới và cơ sinh đôi trên, hai bó phụ nhỏ bám vào gân cơ bịt trong. Chúng thuộc nhóm sáu cơ xoay ngoài của hông, có tác dụng xoay xương đùi tại khớp hông.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Gemelli muscles",
@@ -1649,13 +1672,14 @@
    "viName": null,
    "enName": "Left gemellus superior",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Gemelli muscles",
    "mismatch": true,
    "description": {
-    "lang": "en",
-    "text": "The gemelli muscles are the inferior gemellus muscle\nand the superior gemellus muscle, two small accessory fasciculi to the tendon of the internal obturator muscle. The gemelli muscles belong to the lateral rotator group of six muscles of the hip that rotate the femur in the hip joint.",
-    "translated": false
+    "lang": "vi",
+    "text": "Các cơ sinh đôi gồm cơ sinh đôi dưới và cơ sinh đôi trên, hai bó phụ nhỏ bám vào gân cơ bịt trong. Chúng thuộc nhóm sáu cơ xoay ngoài của hông, có tác dụng xoay xương đùi tại khớp hông.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Gemelli muscles",
@@ -1787,10 +1811,19 @@
    "viName": null,
    "enName": "Left gracilis",
    "system": "muscular",
-   "status": "none",
-   "enTitle": null,
-   "description": null,
-   "source": null
+   "status": "vi",
+   "enTitle": "Gracilis muscle",
+   "description": {
+    "lang": "vi",
+    "text": "Cơ thon là cơ nông nhất ở mặt trong của đùi. Nó mỏng, dẹt và rộng ở phía trên (gần), thu hẹp và thuôn nhỏ ở phía dưới (xa).",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Gracilis muscle",
+    "url": "https://en.wikipedia.org/wiki/Gracilis_muscle",
+    "license": "CC BY-SA 4.0"
+   }
   },
   {
    "fma": "FMA46704",
@@ -2025,10 +2058,20 @@
    "viName": null,
    "enName": "Right interspinalis thoracis",
    "system": "muscular",
-   "status": "none",
-   "enTitle": null,
-   "description": null,
-   "source": null
+   "status": "vi",
+   "enTitle": "Interspinales muscles",
+   "mismatch": true,
+   "description": {
+    "lang": "vi",
+    "text": "Ở vùng cổ, các cơ gian gai cổ rõ rệt nhất, gồm sáu đôi: đôi đầu tiên nằm giữa đốt trục và đốt sống cổ thứ ba, đôi cuối nằm giữa đốt sống cổ thứ bảy và đốt sống ngực thứ nhất. Chúng là những bó nhỏ hẹp, bám ở trên và dưới vào đỉnh các mỏm gai.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Interspinales muscles",
+    "url": "https://en.wikipedia.org/wiki/Interspinales_muscles",
+    "license": "CC BY-SA 4.0"
+   }
   },
   {
    "fma": "FMA46581",
@@ -2039,10 +2082,20 @@
    "viName": null,
    "enName": "Left lateral crico-arytenoid",
    "system": "muscular",
-   "status": "none",
-   "enTitle": null,
-   "description": null,
-   "source": null
+   "status": "vi",
+   "enTitle": "Cricoarytenoid muscle",
+   "mismatch": true,
+   "description": {
+    "lang": "vi",
+    "text": "Các cơ nhẫn phễu là những cơ nối sụn nhẫn với sụn phễu.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Cricoarytenoid muscle",
+    "url": "https://en.wikipedia.org/wiki/Cricoarytenoid_muscle",
+    "license": "CC BY-SA 4.0"
+   }
   },
   {
    "fma": "FMA22850",
@@ -2052,10 +2105,20 @@
    "viName": null,
    "enName": "lateral lumbar intertransversarius",
    "system": "muscular",
-   "status": "none",
-   "enTitle": null,
-   "description": null,
-   "source": null
+   "status": "vi",
+   "enTitle": "Intertransversarii",
+   "mismatch": true,
+   "description": {
+    "lang": "vi",
+    "text": "Các cơ gian ngang là những cơ nhỏ nằm giữa các mỏm ngang của đốt sống.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Intertransversarii",
+    "url": "https://en.wikipedia.org/wiki/Intertransversarii",
+    "license": "CC BY-SA 4.0"
+   }
   },
   {
    "fma": "FMA49055",
@@ -2158,12 +2221,13 @@
    "viName": null,
    "enName": "Left longissimus capitis",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Longissimus",
    "description": {
-    "lang": "en",
-    "text": "The longissimus is the muscle lateral to the semispinalis muscles. It is the longest subdivision of the erector spinae muscles that extends forward into the transverse processes of the posterior cervical vertebrae.",
-    "translated": false
+    "lang": "vi",
+    "text": "Cơ dài nhất (longissimus) nằm ở ngoài các cơ bán gai. Đây là phần dài nhất của khối cơ dựng sống, kéo dài về trước tới các mỏm ngang của các đốt sống cổ phía sau.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Longissimus",
@@ -2180,12 +2244,13 @@
    "viName": null,
    "enName": "Right longissimus cervicis",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Longissimus",
    "description": {
-    "lang": "en",
-    "text": "The longissimus is the muscle lateral to the semispinalis muscles. It is the longest subdivision of the erector spinae muscles that extends forward into the transverse processes of the posterior cervical vertebrae.",
-    "translated": false
+    "lang": "vi",
+    "text": "Cơ dài nhất (longissimus) nằm ở ngoài các cơ bán gai. Đây là phần dài nhất của khối cơ dựng sống, kéo dài về trước tới các mỏm ngang của các đốt sống cổ phía sau.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Longissimus",
@@ -2202,12 +2267,13 @@
    "viName": null,
    "enName": "Left longissimus thoracis",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Longissimus",
    "description": {
-    "lang": "en",
-    "text": "The longissimus is the muscle lateral to the semispinalis muscles. It is the longest subdivision of the erector spinae muscles that extends forward into the transverse processes of the posterior cervical vertebrae.",
-    "translated": false
+    "lang": "vi",
+    "text": "Cơ dài nhất (longissimus) nằm ở ngoài các cơ bán gai. Đây là phần dài nhất của khối cơ dựng sống, kéo dài về trước tới các mỏm ngang của các đốt sống cổ phía sau.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Longissimus",
@@ -2247,10 +2313,20 @@
    "viName": null,
    "enName": "Right lumbar rotator",
    "system": "muscular",
-   "status": "none",
-   "enTitle": null,
-   "description": null,
-   "source": null
+   "status": "vi",
+   "enTitle": "Rotatores muscles",
+   "mismatch": true,
+   "description": {
+    "lang": "vi",
+    "text": "Các cơ xoay (rotatores) nằm bên dưới cơ nhiều đầu (multifidus), có mặt ở mọi đoạn cột sống nhưng rõ nhất ở đoạn ngực.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Rotatores muscles",
+    "url": "https://en.wikipedia.org/wiki/Rotatores_muscles",
+    "license": "CC BY-SA 4.0"
+   }
   },
   {
    "fma": "FMA22851",
@@ -2260,10 +2336,20 @@
    "viName": null,
    "enName": "medial lumbar intertransversarius",
    "system": "muscular",
-   "status": "none",
-   "enTitle": null,
-   "description": null,
-   "source": null
+   "status": "vi",
+   "enTitle": "Intertransversarii",
+   "mismatch": true,
+   "description": {
+    "lang": "vi",
+    "text": "Các cơ gian ngang là những cơ nhỏ nằm giữa các mỏm ngang của đốt sống.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Intertransversarii",
+    "url": "https://en.wikipedia.org/wiki/Intertransversarii",
+    "license": "CC BY-SA 4.0"
+   }
   },
   {
    "fma": "FMA49056",
@@ -2297,10 +2383,19 @@
    "viName": null,
    "enName": "Right mylohyoid",
    "system": "muscular",
-   "status": "none",
-   "enTitle": null,
-   "description": null,
-   "source": null
+   "status": "vi",
+   "enTitle": "Mylohyoid muscle",
+   "description": {
+    "lang": "vi",
+    "text": "Cơ hàm móng (mylohyoid), còn gọi là hoành miệng, là một cơ đôi ở vùng cổ. Nó chạy từ xương hàm dưới tới xương móng, tạo nên nền của khoang miệng.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Mylohyoid muscle",
+    "url": "https://en.wikipedia.org/wiki/Mylohyoid_muscle",
+    "license": "CC BY-SA 4.0"
+   }
   },
   {
    "fma": "FMA46585",
@@ -2452,7 +2547,7 @@
    "enName": "Opponens digiti minimi of right foot",
    "system": "muscular",
    "status": "none",
-   "enTitle": null,
+   "enTitle": "Opponens digiti minimi muscle of hand",
    "description": null,
    "source": null
   },
@@ -2465,10 +2560,19 @@
    "viName": null,
    "enName": "Opponens digiti minimi of right hand",
    "system": "muscular",
-   "status": "none",
-   "enTitle": null,
-   "description": null,
-   "source": null
+   "status": "vi",
+   "enTitle": "Opponens digiti minimi muscle of hand",
+   "description": {
+    "lang": "vi",
+    "text": "Cơ đối ngón út là một cơ nằm ở bàn tay. Nó có hình tam giác, nằm ngay dưới cơ gan tay ngắn, cơ dạng ngón út và cơ gấp ngón út ngắn.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Opponens digiti minimi muscle of hand",
+    "url": "https://en.wikipedia.org/wiki/Opponens_digiti_minimi_muscle_of_hand",
+    "license": "CC BY-SA 4.0"
+   }
   },
   {
    "fma": "FMA37390",
@@ -2662,10 +2766,20 @@
    "viName": null,
    "enName": "Left posterior crico-arytenoid",
    "system": "muscular",
-   "status": "none",
-   "enTitle": null,
-   "description": null,
-   "source": null
+   "status": "vi",
+   "enTitle": "Cricoarytenoid muscle",
+   "mismatch": true,
+   "description": {
+    "lang": "vi",
+    "text": "Các cơ nhẫn phễu là những cơ nối sụn nhẫn với sụn phễu.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Cricoarytenoid muscle",
+    "url": "https://en.wikipedia.org/wiki/Cricoarytenoid_muscle",
+    "license": "CC BY-SA 4.0"
+   }
   },
   {
    "fma": "FMA38455",
@@ -2906,10 +3020,19 @@
    "viName": null,
    "enName": "Right sartorius",
    "system": "muscular",
-   "status": "none",
-   "enTitle": null,
-   "description": null,
-   "source": null
+   "status": "vi",
+   "enTitle": "Sartorius muscle",
+   "description": {
+    "lang": "vi",
+    "text": "Cơ may (sartorius), xưa còn gọi là 'cơ thợ may', là cơ dài nhất trong cơ thể người. Đây là một cơ dài, mảnh, nằm nông, chạy dọc theo chiều dài đùi ở khoang trước.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Sartorius muscle",
+    "url": "https://en.wikipedia.org/wiki/Sartorius_muscle",
+    "license": "CC BY-SA 4.0"
+   }
   },
   {
    "fma": "FMA13392",
@@ -2993,7 +3116,8 @@
    "enName": "Second lumbrical of right foot",
    "system": "muscular",
    "status": "none",
-   "enTitle": null,
+   "enTitle": "Lumbricals of the hand",
+   "mismatch": true,
    "description": null,
    "source": null
   },
@@ -3006,10 +3130,20 @@
    "viName": null,
    "enName": "Second plantar interosseous of left foot",
    "system": "muscular",
-   "status": "none",
-   "enTitle": null,
-   "description": null,
-   "source": null
+   "status": "vi",
+   "enTitle": "Plantar interossei muscles",
+   "mismatch": true,
+   "description": {
+    "lang": "vi",
+    "text": "Các cơ gian cốt gan chân là ba cơ nằm giữa các xương đốt bàn chân ở bàn chân.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Plantar interossei muscles",
+    "url": "https://en.wikipedia.org/wiki/Plantar_interossei_muscles",
+    "license": "CC BY-SA 4.0"
+   }
   },
   {
    "fma": "FMA22448",
@@ -3629,7 +3763,8 @@
    "enName": "Third lumbrical of left foot",
    "system": "muscular",
    "status": "none",
-   "enTitle": null,
+   "enTitle": "Lumbricals of the hand",
+   "mismatch": true,
    "description": null,
    "source": null
   },
@@ -3642,10 +3777,20 @@
    "viName": null,
    "enName": "Third plantar interosseous of left foot",
    "system": "muscular",
-   "status": "none",
-   "enTitle": null,
-   "description": null,
-   "source": null
+   "status": "vi",
+   "enTitle": "Plantar interossei muscles",
+   "mismatch": true,
+   "description": {
+    "lang": "vi",
+    "text": "Các cơ gian cốt gan chân là ba cơ nằm giữa các xương đốt bàn chân; đây là cơ gian cốt gan chân thứ ba của bàn chân trái.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Plantar interossei muscles",
+    "url": "https://en.wikipedia.org/wiki/Plantar_interossei_muscles",
+    "license": "CC BY-SA 4.0"
+   }
   },
   {
    "fma": "FMA23083",
@@ -3655,10 +3800,20 @@
    "viName": null,
    "enName": "thoracic rotator",
    "system": "muscular",
-   "status": "none",
-   "enTitle": null,
-   "description": null,
-   "source": null
+   "status": "vi",
+   "enTitle": "Rotatores muscles",
+   "mismatch": true,
+   "description": {
+    "lang": "vi",
+    "text": "Các cơ xoay (rotatores) nằm sâu dưới cơ nhiều đầu, hiện diện ở mọi đoạn cột sống nhưng rõ nhất ở đoạn ngực; đây là cơ xoay ở đoạn ngực.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Rotatores muscles",
+    "url": "https://en.wikipedia.org/wiki/Rotatores_muscles",
+    "license": "CC BY-SA 4.0"
+   }
   },
   {
    "fma": "FMA46589",
@@ -3899,13 +4054,14 @@
    "viName": null,
    "enName": "Left vocalis",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Thyroarytenoid muscle",
    "mismatch": true,
    "description": {
-    "lang": "en",
-    "text": "The thyroarytenoid muscle is a broad, thin muscle that forms the body of the vocal fold and that supports the wall of the ventricle and its appendix. It functions to shorten the vocal folds.",
-    "translated": false
+    "lang": "vi",
+    "text": "Cơ giáp phễu là một cơ rộng và mỏng tạo nên thân của nếp thanh âm, nâng đỡ thành của thất thanh quản và túi thừa của nó; nó có chức năng làm ngắn nếp thanh âm. Cơ thanh âm là phần trong của cơ này.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Thyroarytenoid muscle",
@@ -4324,10 +4480,20 @@
    "viName": null,
    "enName": "Tarsal plate of left lower eyelid",
    "system": "sensory",
-   "status": "none",
-   "enTitle": null,
-   "description": null,
-   "source": null
+   "status": "vi",
+   "enTitle": "Tarsus (eyelids)",
+   "mismatch": true,
+   "description": {
+    "lang": "vi",
+    "text": "Sụn mi cao khoảng 5 mm ở mi dưới; mỗi mi mắt có một tấm, góp phần tạo hình và nâng đỡ mi mắt. Chúng nằm ngay trên bờ mi.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Tarsus (eyelids)",
+    "url": "https://en.wikipedia.org/wiki/Tarsus_(eyelids)",
+    "license": "CC BY-SA 4.0"
+   }
   },
   {
    "fma": "FMA59091",
@@ -4338,10 +4504,20 @@
    "viName": null,
    "enName": "Tarsal plate of right upper eyelid",
    "system": "sensory",
-   "status": "none",
-   "enTitle": null,
-   "description": null,
-   "source": null
+   "status": "vi",
+   "enTitle": "Tarsus (eyelids)",
+   "mismatch": true,
+   "description": {
+    "lang": "vi",
+    "text": "Sụn mi cao khoảng 10 mm ở mi trên; mỗi mi mắt có một tấm, góp phần tạo hình và nâng đỡ mi mắt. Chúng nằm ngay trên bờ mi.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Tarsus (eyelids)",
+    "url": "https://en.wikipedia.org/wiki/Tarsus_(eyelids)",
+    "license": "CC BY-SA 4.0"
+   }
   },
   {
    "fma": "FMA55114",
@@ -4580,10 +4756,20 @@
    "viName": null,
    "enName": "Distal phalanx of right big toe",
    "system": "skeletal",
-   "status": "none",
-   "enTitle": null,
-   "description": null,
-   "source": null
+   "status": "vi",
+   "enTitle": "Phalanx bone",
+   "mismatch": true,
+   "description": {
+    "lang": "vi",
+    "text": "Các đốt ngón là những xương ngón ở bàn tay và bàn chân của phần lớn động vật có xương sống. Ở linh trưởng, ngón cái và ngón chân cái mỗi ngón có hai đốt; đây là đốt xa của ngón chân cái phải.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Phalanx bone",
+    "url": "https://en.wikipedia.org/wiki/Phalanx_bone",
+    "license": "CC BY-SA 4.0"
+   }
   },
   {
    "fma": "FMA32657",
@@ -4594,10 +4780,20 @@
    "viName": null,
    "enName": "Distal phalanx of left fourth toe",
    "system": "skeletal",
-   "status": "none",
-   "enTitle": null,
-   "description": null,
-   "source": null
+   "status": "vi",
+   "enTitle": "Phalanx bone",
+   "mismatch": true,
+   "description": {
+    "lang": "vi",
+    "text": "Các đốt ngón là những xương ngón ở bàn tay và bàn chân của phần lớn động vật có xương sống. Ở linh trưởng, các ngón chân (trừ ngón cái) mỗi ngón có ba đốt; đây là đốt xa của ngón chân thứ tư trái.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Phalanx bone",
+    "url": "https://en.wikipedia.org/wiki/Phalanx_bone",
+    "license": "CC BY-SA 4.0"
+   }
   },
   {
    "fma": "FMA23953",
@@ -4608,10 +4804,20 @@
    "viName": null,
    "enName": "Distal phalanx of left index finger",
    "system": "skeletal",
-   "status": "none",
-   "enTitle": null,
-   "description": null,
-   "source": null
+   "status": "vi",
+   "enTitle": "Phalanx bone",
+   "mismatch": true,
+   "description": {
+    "lang": "vi",
+    "text": "Các đốt ngón là những xương ngón ở bàn tay và bàn chân của phần lớn động vật có xương sống. Ở linh trưởng, các ngón tay (trừ ngón cái) mỗi ngón có ba đốt; đây là đốt xa của ngón trỏ trái.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Phalanx bone",
+    "url": "https://en.wikipedia.org/wiki/Phalanx_bone",
+    "license": "CC BY-SA 4.0"
+   }
   },
   {
    "fma": "FMA23959",
@@ -4622,10 +4828,20 @@
    "viName": null,
    "enName": "Distal phalanx of left little finger",
    "system": "skeletal",
-   "status": "none",
-   "enTitle": null,
-   "description": null,
-   "source": null
+   "status": "vi",
+   "enTitle": "Phalanx bone",
+   "mismatch": true,
+   "description": {
+    "lang": "vi",
+    "text": "Các đốt ngón là những xương ngón ở bàn tay và bàn chân của phần lớn động vật có xương sống. Ở linh trưởng, các ngón tay (trừ ngón cái) mỗi ngón có ba đốt; đây là đốt xa của ngón út trái.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Phalanx bone",
+    "url": "https://en.wikipedia.org/wiki/Phalanx_bone",
+    "license": "CC BY-SA 4.0"
+   }
   },
   {
    "fma": "FMA32658",
@@ -4636,10 +4852,20 @@
    "viName": null,
    "enName": "Distal phalanx of right little toe",
    "system": "skeletal",
-   "status": "none",
-   "enTitle": null,
-   "description": null,
-   "source": null
+   "status": "vi",
+   "enTitle": "Phalanx bone",
+   "mismatch": true,
+   "description": {
+    "lang": "vi",
+    "text": "Các đốt ngón là những xương ngón ở bàn tay và bàn chân của phần lớn động vật có xương sống. Ở linh trưởng, các ngón chân (trừ ngón cái) mỗi ngón có ba đốt; đây là đốt xa của ngón chân út phải.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Phalanx bone",
+    "url": "https://en.wikipedia.org/wiki/Phalanx_bone",
+    "license": "CC BY-SA 4.0"
+   }
   },
   {
    "fma": "FMA23955",
@@ -4650,10 +4876,20 @@
    "viName": null,
    "enName": "Distal phalanx of left middle finger",
    "system": "skeletal",
-   "status": "none",
-   "enTitle": null,
-   "description": null,
-   "source": null
+   "status": "vi",
+   "enTitle": "Phalanx bone",
+   "mismatch": true,
+   "description": {
+    "lang": "vi",
+    "text": "Các đốt ngón là những xương ngón ở bàn tay và bàn chân của phần lớn động vật có xương sống. Ở linh trưởng, các ngón tay (trừ ngón cái) mỗi ngón có ba đốt; đây là đốt xa của ngón giữa trái.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Phalanx bone",
+    "url": "https://en.wikipedia.org/wiki/Phalanx_bone",
+    "license": "CC BY-SA 4.0"
+   }
   },
   {
    "fma": "FMA23957",
@@ -4664,10 +4900,20 @@
    "viName": null,
    "enName": "Distal phalanx of left ring finger",
    "system": "skeletal",
-   "status": "none",
-   "enTitle": null,
-   "description": null,
-   "source": null
+   "status": "vi",
+   "enTitle": "Phalanx bone",
+   "mismatch": true,
+   "description": {
+    "lang": "vi",
+    "text": "Các đốt ngón là những xương ngón ở bàn tay và bàn chân của phần lớn động vật có xương sống. Ở linh trưởng, các ngón tay (trừ ngón cái) mỗi ngón có ba đốt; đây là đốt xa của ngón áp út (ngón nhẫn) trái.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Phalanx bone",
+    "url": "https://en.wikipedia.org/wiki/Phalanx_bone",
+    "license": "CC BY-SA 4.0"
+   }
   },
   {
    "fma": "FMA32653",
@@ -4678,10 +4924,20 @@
    "viName": null,
    "enName": "Distal phalanx of left second toe",
    "system": "skeletal",
-   "status": "none",
-   "enTitle": null,
-   "description": null,
-   "source": null
+   "status": "vi",
+   "enTitle": "Phalanx bone",
+   "mismatch": true,
+   "description": {
+    "lang": "vi",
+    "text": "Các đốt ngón là những xương ngón ở bàn tay và bàn chân của phần lớn động vật có xương sống. Ở linh trưởng, các ngón chân (trừ ngón cái) mỗi ngón có ba đốt; đây là đốt xa của ngón chân thứ hai trái.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Phalanx bone",
+    "url": "https://en.wikipedia.org/wiki/Phalanx_bone",
+    "license": "CC BY-SA 4.0"
+   }
   },
   {
    "fma": "FMA32655",
@@ -4692,10 +4948,20 @@
    "viName": null,
    "enName": "Distal phalanx of left third toe",
    "system": "skeletal",
-   "status": "none",
-   "enTitle": null,
-   "description": null,
-   "source": null
+   "status": "vi",
+   "enTitle": "Phalanx bone",
+   "mismatch": true,
+   "description": {
+    "lang": "vi",
+    "text": "Các đốt ngón là những xương ngón ở bàn tay và bàn chân của phần lớn động vật có xương sống. Ở linh trưởng, các ngón chân (trừ ngón cái) mỗi ngón có ba đốt; đây là đốt xa của ngón chân thứ ba trái.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Phalanx bone",
+    "url": "https://en.wikipedia.org/wiki/Phalanx_bone",
+    "license": "CC BY-SA 4.0"
+   }
   },
   {
    "fma": "FMA23951",
@@ -4706,10 +4972,20 @@
    "viName": null,
    "enName": "Distal phalanx of left thumb",
    "system": "skeletal",
-   "status": "none",
-   "enTitle": null,
-   "description": null,
-   "source": null
+   "status": "vi",
+   "enTitle": "Phalanx bone",
+   "mismatch": true,
+   "description": {
+    "lang": "vi",
+    "text": "Các đốt ngón là những xương ngón ở bàn tay và bàn chân của phần lớn động vật có xương sống. Ở linh trưởng, ngón cái và ngón chân cái mỗi ngón có hai đốt; đây là đốt xa của ngón tay cái trái.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Phalanx bone",
+    "url": "https://en.wikipedia.org/wiki/Phalanx_bone",
+    "license": "CC BY-SA 4.0"
+   }
   },
   {
    "fma": "FMA8310",
@@ -5476,10 +5752,20 @@
    "viName": null,
    "enName": "Intervertebral disk of axis",
    "system": "skeletal",
-   "status": "none",
-   "enTitle": null,
-   "description": null,
-   "source": null
+   "status": "vi",
+   "enTitle": "Intervertebral disc",
+   "mismatch": true,
+   "description": {
+    "lang": "vi",
+    "text": "Đĩa gian đốt sống nằm giữa hai đốt sống kề nhau trong cột sống. Mỗi đĩa tạo thành một khớp sụn xơ cho phép các đốt sống cử động nhẹ, giữ các đốt sống liền nhau như một dây chằng và làm bộ giảm chấn cho cột sống; đây là đĩa gian đốt sống của đốt trục.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Intervertebral disc",
+    "url": "https://en.wikipedia.org/wiki/Intervertebral_disc",
+    "license": "CC BY-SA 4.0"
+   }
   },
   {
    "fma": "FMA13505",
@@ -5489,10 +5775,20 @@
    "viName": null,
    "enName": "Intervertebral disk of eighth thoracic vertebra",
    "system": "skeletal",
-   "status": "none",
-   "enTitle": null,
-   "description": null,
-   "source": null
+   "status": "vi",
+   "enTitle": "Intervertebral disc",
+   "mismatch": true,
+   "description": {
+    "lang": "vi",
+    "text": "Đĩa gian đốt sống nằm giữa hai đốt sống kề nhau trong cột sống. Mỗi đĩa tạo thành một khớp sụn xơ cho phép các đốt sống cử động nhẹ, giữ các đốt sống liền nhau như một dây chằng và làm bộ giảm chấn cho cột sống; đây là đĩa gian đốt sống của đốt sống ngực thứ tám.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Intervertebral disc",
+    "url": "https://en.wikipedia.org/wiki/Intervertebral_disc",
+    "license": "CC BY-SA 4.0"
+   }
   },
   {
    "fma": "FMA13508",
@@ -5502,10 +5798,20 @@
    "viName": null,
    "enName": "Intervertebral disk of eleventh thoracic vertebra",
    "system": "skeletal",
-   "status": "none",
-   "enTitle": null,
-   "description": null,
-   "source": null
+   "status": "vi",
+   "enTitle": "Intervertebral disc",
+   "mismatch": true,
+   "description": {
+    "lang": "vi",
+    "text": "Đĩa gian đốt sống nằm giữa hai đốt sống kề nhau trong cột sống. Mỗi đĩa tạo thành một khớp sụn xơ cho phép các đốt sống cử động nhẹ, giữ các đốt sống liền nhau như một dây chằng và làm bộ giảm chấn cho cột sống; đây là đĩa gian đốt sống của đốt sống ngực thứ mười một.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Intervertebral disc",
+    "url": "https://en.wikipedia.org/wiki/Intervertebral_disc",
+    "license": "CC BY-SA 4.0"
+   }
   },
   {
    "fma": "FMA13898",
@@ -5515,10 +5821,20 @@
    "viName": null,
    "enName": "Intervertebral disk of fifth cervical vertebra",
    "system": "skeletal",
-   "status": "none",
-   "enTitle": null,
-   "description": null,
-   "source": null
+   "status": "vi",
+   "enTitle": "Intervertebral disc",
+   "mismatch": true,
+   "description": {
+    "lang": "vi",
+    "text": "Đĩa gian đốt sống nằm giữa hai đốt sống kề nhau trong cột sống. Mỗi đĩa tạo thành một khớp sụn xơ cho phép các đốt sống cử động nhẹ, giữ các đốt sống liền nhau như một dây chằng và làm bộ giảm chấn cho cột sống; đây là đĩa gian đốt sống của đốt sống cổ thứ năm.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Intervertebral disc",
+    "url": "https://en.wikipedia.org/wiki/Intervertebral_disc",
+    "license": "CC BY-SA 4.0"
+   }
   },
   {
    "fma": "FMA16037",
@@ -5528,10 +5844,20 @@
    "viName": null,
    "enName": "Intervertebral disk of fifth lumbar vertebra",
    "system": "skeletal",
-   "status": "none",
-   "enTitle": null,
-   "description": null,
-   "source": null
+   "status": "vi",
+   "enTitle": "Intervertebral disc",
+   "mismatch": true,
+   "description": {
+    "lang": "vi",
+    "text": "Đĩa gian đốt sống nằm giữa hai đốt sống kề nhau trong cột sống. Mỗi đĩa tạo thành một khớp sụn xơ cho phép các đốt sống cử động nhẹ, giữ các đốt sống liền nhau như một dây chằng và làm bộ giảm chấn cho cột sống; đây là đĩa gian đốt sống của đốt sống thắt lưng thứ năm.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Intervertebral disc",
+    "url": "https://en.wikipedia.org/wiki/Intervertebral_disc",
+    "license": "CC BY-SA 4.0"
+   }
   },
   {
    "fma": "FMA13502",
@@ -5541,10 +5867,20 @@
    "viName": null,
    "enName": "Intervertebral disk of fifth thoracic vertebra",
    "system": "skeletal",
-   "status": "none",
-   "enTitle": null,
-   "description": null,
-   "source": null
+   "status": "vi",
+   "enTitle": "Intervertebral disc",
+   "mismatch": true,
+   "description": {
+    "lang": "vi",
+    "text": "Đĩa gian đốt sống nằm giữa hai đốt sống kề nhau trong cột sống. Mỗi đĩa tạo thành một khớp sụn xơ cho phép các đốt sống cử động nhẹ, giữ các đốt sống liền nhau như một dây chằng và làm bộ giảm chấn cho cột sống; đây là đĩa gian đốt sống của đốt sống ngực thứ năm.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Intervertebral disc",
+    "url": "https://en.wikipedia.org/wiki/Intervertebral_disc",
+    "license": "CC BY-SA 4.0"
+   }
   },
   {
    "fma": "FMA16033",
@@ -5554,10 +5890,20 @@
    "viName": null,
    "enName": "Intervertebral disk of first lumbar vertebra",
    "system": "skeletal",
-   "status": "none",
-   "enTitle": null,
-   "description": null,
-   "source": null
+   "status": "vi",
+   "enTitle": "Intervertebral disc",
+   "mismatch": true,
+   "description": {
+    "lang": "vi",
+    "text": "Đĩa gian đốt sống nằm giữa hai đốt sống kề nhau trong cột sống. Mỗi đĩa tạo thành một khớp sụn xơ cho phép các đốt sống cử động nhẹ, giữ các đốt sống liền nhau như một dây chằng và làm bộ giảm chấn cho cột sống; đây là đĩa gian đốt sống của đốt sống thắt lưng thứ nhất.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Intervertebral disc",
+    "url": "https://en.wikipedia.org/wiki/Intervertebral_disc",
+    "license": "CC BY-SA 4.0"
+   }
   },
   {
    "fma": "FMA10458",
@@ -5567,10 +5913,20 @@
    "viName": null,
    "enName": "Intervertebral disk of first thoracic vertebra",
    "system": "skeletal",
-   "status": "none",
-   "enTitle": null,
-   "description": null,
-   "source": null
+   "status": "vi",
+   "enTitle": "Intervertebral disc",
+   "mismatch": true,
+   "description": {
+    "lang": "vi",
+    "text": "Đĩa gian đốt sống nằm giữa hai đốt sống kề nhau trong cột sống. Mỗi đĩa tạo thành một khớp sụn xơ cho phép các đốt sống cử động nhẹ, giữ các đốt sống liền nhau như một dây chằng và làm bộ giảm chấn cho cột sống; đây là đĩa gian đốt sống của đốt sống ngực thứ nhất.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Intervertebral disc",
+    "url": "https://en.wikipedia.org/wiki/Intervertebral_disc",
+    "license": "CC BY-SA 4.0"
+   }
   },
   {
    "fma": "FMA13897",
@@ -5580,10 +5936,20 @@
    "viName": null,
    "enName": "Intervertebral disk of fourth cervical vertebra",
    "system": "skeletal",
-   "status": "none",
-   "enTitle": null,
-   "description": null,
-   "source": null
+   "status": "vi",
+   "enTitle": "Intervertebral disc",
+   "mismatch": true,
+   "description": {
+    "lang": "vi",
+    "text": "Đĩa gian đốt sống nằm giữa hai đốt sống kề nhau trong cột sống; đây là đĩa gian đốt sống ở đốt sống cổ thứ tư. Mỗi đĩa tạo thành một khớp sụn sợi cho phép các đốt sống cử động nhẹ, giữ các đốt sống với nhau như một dây chằng và hoạt động như bộ giảm chấn cho cột sống.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Intervertebral disc",
+    "url": "https://en.wikipedia.org/wiki/Intervertebral_disc",
+    "license": "CC BY-SA 4.0"
+   }
   },
   {
    "fma": "FMA16036",
@@ -5593,10 +5959,20 @@
    "viName": null,
    "enName": "Intervertebral disk of fourth lumbar vertebra",
    "system": "skeletal",
-   "status": "none",
-   "enTitle": null,
-   "description": null,
-   "source": null
+   "status": "vi",
+   "enTitle": "Intervertebral disc",
+   "mismatch": true,
+   "description": {
+    "lang": "vi",
+    "text": "Đĩa gian đốt sống nằm giữa hai đốt sống kề nhau trong cột sống; đây là đĩa gian đốt sống ở đốt sống thắt lưng thứ tư. Mỗi đĩa tạo thành một khớp sụn sợi cho phép các đốt sống cử động nhẹ, giữ các đốt sống với nhau như một dây chằng và hoạt động như bộ giảm chấn cho cột sống.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Intervertebral disc",
+    "url": "https://en.wikipedia.org/wiki/Intervertebral_disc",
+    "license": "CC BY-SA 4.0"
+   }
   },
   {
    "fma": "FMA13501",
@@ -5606,10 +5982,20 @@
    "viName": null,
    "enName": "Intervertebral disk of fourth thoracic vertebra",
    "system": "skeletal",
-   "status": "none",
-   "enTitle": null,
-   "description": null,
-   "source": null
+   "status": "vi",
+   "enTitle": "Intervertebral disc",
+   "mismatch": true,
+   "description": {
+    "lang": "vi",
+    "text": "Đĩa gian đốt sống nằm giữa hai đốt sống kề nhau trong cột sống; đây là đĩa gian đốt sống ở đốt sống ngực thứ tư. Mỗi đĩa tạo thành một khớp sụn sợi cho phép các đốt sống cử động nhẹ, giữ các đốt sống với nhau như một dây chằng và hoạt động như bộ giảm chấn cho cột sống.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Intervertebral disc",
+    "url": "https://en.wikipedia.org/wiki/Intervertebral_disc",
+    "license": "CC BY-SA 4.0"
+   }
   },
   {
    "fma": "FMA13506",
@@ -5619,10 +6005,20 @@
    "viName": null,
    "enName": "Intervertebral disk of ninth thoracic vertebra",
    "system": "skeletal",
-   "status": "none",
-   "enTitle": null,
-   "description": null,
-   "source": null
+   "status": "vi",
+   "enTitle": "Intervertebral disc",
+   "mismatch": true,
+   "description": {
+    "lang": "vi",
+    "text": "Đĩa gian đốt sống nằm giữa hai đốt sống kề nhau trong cột sống; đây là đĩa gian đốt sống ở đốt sống ngực thứ chín. Mỗi đĩa tạo thành một khớp sụn sợi cho phép các đốt sống cử động nhẹ, giữ các đốt sống với nhau như một dây chằng và hoạt động như bộ giảm chấn cho cột sống.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Intervertebral disc",
+    "url": "https://en.wikipedia.org/wiki/Intervertebral_disc",
+    "license": "CC BY-SA 4.0"
+   }
   },
   {
    "fma": "FMA16034",
@@ -5632,10 +6028,20 @@
    "viName": null,
    "enName": "Intervertebral disk of second lumbar vertebra",
    "system": "skeletal",
-   "status": "none",
-   "enTitle": null,
-   "description": null,
-   "source": null
+   "status": "vi",
+   "enTitle": "Intervertebral disc",
+   "mismatch": true,
+   "description": {
+    "lang": "vi",
+    "text": "Đĩa gian đốt sống nằm giữa hai đốt sống kề nhau trong cột sống; đây là đĩa gian đốt sống ở đốt sống thắt lưng thứ hai. Mỗi đĩa tạo thành một khớp sụn sợi cho phép các đốt sống cử động nhẹ, giữ các đốt sống với nhau như một dây chằng và hoạt động như bộ giảm chấn cho cột sống.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Intervertebral disc",
+    "url": "https://en.wikipedia.org/wiki/Intervertebral_disc",
+    "license": "CC BY-SA 4.0"
+   }
   },
   {
    "fma": "FMA13495",
@@ -5645,10 +6051,20 @@
    "viName": null,
    "enName": "Intervertebral disk of second thoracic vertebra",
    "system": "skeletal",
-   "status": "none",
-   "enTitle": null,
-   "description": null,
-   "source": null
+   "status": "vi",
+   "enTitle": "Intervertebral disc",
+   "mismatch": true,
+   "description": {
+    "lang": "vi",
+    "text": "Đĩa gian đốt sống nằm giữa hai đốt sống kề nhau trong cột sống; đây là đĩa gian đốt sống ở đốt sống ngực thứ hai. Mỗi đĩa tạo thành một khớp sụn sợi cho phép các đốt sống cử động nhẹ, giữ các đốt sống với nhau như một dây chằng và hoạt động như bộ giảm chấn cho cột sống.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Intervertebral disc",
+    "url": "https://en.wikipedia.org/wiki/Intervertebral_disc",
+    "license": "CC BY-SA 4.0"
+   }
   },
   {
    "fma": "FMA13900",
@@ -5658,10 +6074,20 @@
    "viName": null,
    "enName": "Intervertebral disk of seventh cervical vertebra",
    "system": "skeletal",
-   "status": "none",
-   "enTitle": null,
-   "description": null,
-   "source": null
+   "status": "vi",
+   "enTitle": "Intervertebral disc",
+   "mismatch": true,
+   "description": {
+    "lang": "vi",
+    "text": "Đĩa gian đốt sống nằm giữa hai đốt sống kề nhau trong cột sống; đây là đĩa gian đốt sống ở đốt sống cổ thứ bảy. Mỗi đĩa tạo thành một khớp sụn sợi cho phép các đốt sống cử động nhẹ, giữ các đốt sống với nhau như một dây chằng và hoạt động như bộ giảm chấn cho cột sống.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Intervertebral disc",
+    "url": "https://en.wikipedia.org/wiki/Intervertebral_disc",
+    "license": "CC BY-SA 4.0"
+   }
   },
   {
    "fma": "FMA13504",
@@ -5671,10 +6097,20 @@
    "viName": null,
    "enName": "Intervertebral disk of seventh thoracic vertebra",
    "system": "skeletal",
-   "status": "none",
-   "enTitle": null,
-   "description": null,
-   "source": null
+   "status": "vi",
+   "enTitle": "Intervertebral disc",
+   "mismatch": true,
+   "description": {
+    "lang": "vi",
+    "text": "Đĩa gian đốt sống nằm giữa hai đốt sống kề nhau trong cột sống; đây là đĩa gian đốt sống ở đốt sống ngực thứ bảy. Mỗi đĩa tạo thành một khớp sụn sợi cho phép các đốt sống cử động nhẹ, giữ các đốt sống với nhau như một dây chằng và hoạt động như bộ giảm chấn cho cột sống.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Intervertebral disc",
+    "url": "https://en.wikipedia.org/wiki/Intervertebral_disc",
+    "license": "CC BY-SA 4.0"
+   }
   },
   {
    "fma": "FMA13899",
@@ -5684,10 +6120,20 @@
    "viName": null,
    "enName": "Intervertebral disk of sixth cervical vertebra",
    "system": "skeletal",
-   "status": "none",
-   "enTitle": null,
-   "description": null,
-   "source": null
+   "status": "vi",
+   "enTitle": "Intervertebral disc",
+   "mismatch": true,
+   "description": {
+    "lang": "vi",
+    "text": "Đĩa gian đốt sống nằm giữa hai đốt sống kề nhau trong cột sống; đây là đĩa gian đốt sống ở đốt sống cổ thứ sáu. Mỗi đĩa tạo thành một khớp sụn sợi cho phép các đốt sống cử động nhẹ, giữ các đốt sống với nhau như một dây chằng và hoạt động như bộ giảm chấn cho cột sống.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Intervertebral disc",
+    "url": "https://en.wikipedia.org/wiki/Intervertebral_disc",
+    "license": "CC BY-SA 4.0"
+   }
   },
   {
    "fma": "FMA13503",
@@ -5697,10 +6143,20 @@
    "viName": null,
    "enName": "Intervertebral disk of sixth thoracic vertebra",
    "system": "skeletal",
-   "status": "none",
-   "enTitle": null,
-   "description": null,
-   "source": null
+   "status": "vi",
+   "enTitle": "Intervertebral disc",
+   "mismatch": true,
+   "description": {
+    "lang": "vi",
+    "text": "Đĩa gian đốt sống nằm giữa hai đốt sống kề nhau trong cột sống; đây là đĩa gian đốt sống ở đốt sống ngực thứ sáu. Mỗi đĩa tạo thành một khớp sụn sợi cho phép các đốt sống cử động nhẹ, giữ các đốt sống với nhau như một dây chằng và hoạt động như bộ giảm chấn cho cột sống.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Intervertebral disc",
+    "url": "https://en.wikipedia.org/wiki/Intervertebral_disc",
+    "license": "CC BY-SA 4.0"
+   }
   },
   {
    "fma": "FMA13507",
@@ -5710,10 +6166,20 @@
    "viName": null,
    "enName": "Intervertebral disk of tenth thoracic vertebra",
    "system": "skeletal",
-   "status": "none",
-   "enTitle": null,
-   "description": null,
-   "source": null
+   "status": "vi",
+   "enTitle": "Intervertebral disc",
+   "mismatch": true,
+   "description": {
+    "lang": "vi",
+    "text": "Đĩa gian đốt sống nằm giữa hai đốt sống kề nhau trong cột sống; đây là đĩa gian đốt sống ở đốt sống ngực thứ mười. Mỗi đĩa tạo thành một khớp sụn sợi cho phép các đốt sống cử động nhẹ, giữ các đốt sống với nhau như một dây chằng và hoạt động như bộ giảm chấn cho cột sống.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Intervertebral disc",
+    "url": "https://en.wikipedia.org/wiki/Intervertebral_disc",
+    "license": "CC BY-SA 4.0"
+   }
   },
   {
    "fma": "FMA13896",
@@ -5723,10 +6189,20 @@
    "viName": null,
    "enName": "Intervertebral disk of third cervical vertebra",
    "system": "skeletal",
-   "status": "none",
-   "enTitle": null,
-   "description": null,
-   "source": null
+   "status": "vi",
+   "enTitle": "Intervertebral disc",
+   "mismatch": true,
+   "description": {
+    "lang": "vi",
+    "text": "Đĩa gian đốt sống nằm giữa hai đốt sống kề nhau trong cột sống; đây là đĩa gian đốt sống ở đốt sống cổ thứ ba. Mỗi đĩa tạo thành một khớp sụn sợi cho phép các đốt sống cử động nhẹ, giữ các đốt sống với nhau như một dây chằng và hoạt động như bộ giảm chấn cho cột sống.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Intervertebral disc",
+    "url": "https://en.wikipedia.org/wiki/Intervertebral_disc",
+    "license": "CC BY-SA 4.0"
+   }
   },
   {
    "fma": "FMA16035",
@@ -5736,10 +6212,20 @@
    "viName": null,
    "enName": "Intervertebral disk of third lumbar vertebra",
    "system": "skeletal",
-   "status": "none",
-   "enTitle": null,
-   "description": null,
-   "source": null
+   "status": "vi",
+   "enTitle": "Intervertebral disc",
+   "mismatch": true,
+   "description": {
+    "lang": "vi",
+    "text": "Đĩa gian đốt sống nằm giữa hai đốt sống kề nhau trong cột sống; đây là đĩa gian đốt sống ở đốt sống thắt lưng thứ ba. Mỗi đĩa tạo thành một khớp sụn sợi cho phép các đốt sống cử động nhẹ, giữ các đốt sống với nhau như một dây chằng và hoạt động như bộ giảm chấn cho cột sống.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Intervertebral disc",
+    "url": "https://en.wikipedia.org/wiki/Intervertebral_disc",
+    "license": "CC BY-SA 4.0"
+   }
   },
   {
    "fma": "FMA13500",
@@ -5749,10 +6235,20 @@
    "viName": null,
    "enName": "Intervertebral disk of third thoracic vertebra",
    "system": "skeletal",
-   "status": "none",
-   "enTitle": null,
-   "description": null,
-   "source": null
+   "status": "vi",
+   "enTitle": "Intervertebral disc",
+   "mismatch": true,
+   "description": {
+    "lang": "vi",
+    "text": "Đĩa gian đốt sống nằm giữa hai đốt sống kề nhau trong cột sống; đây là đĩa gian đốt sống ở đốt sống ngực thứ ba. Mỗi đĩa tạo thành một khớp sụn sợi cho phép các đốt sống cử động nhẹ, giữ các đốt sống với nhau như một dây chằng và hoạt động như bộ giảm chấn cho cột sống.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Intervertebral disc",
+    "url": "https://en.wikipedia.org/wiki/Intervertebral_disc",
+    "license": "CC BY-SA 4.0"
+   }
   },
   {
    "fma": "FMA24526",
@@ -5787,10 +6283,19 @@
    "viName": null,
    "enName": "Right lower central secondary incisor tooth",
    "system": "skeletal",
-   "status": "none",
-   "enTitle": null,
-   "description": null,
-   "source": null
+   "status": "vi",
+   "enTitle": "Incisor",
+   "mismatch": true,
+   "description": {
+    "lang": "vi",
+    "text": "Răng cửa là răng phía trước xuất hiện ở hầu hết động vật có vú có nhóm răng khác. Chúng tọa lạc trên mảnh trước hàm và bên dưới xương hàm dưới.",
+    "translated": false
+   },
+   "source": {
+    "title": "Răng cửa",
+    "url": "https://vi.wikipedia.org/wiki/R%C4%83ng_c%E1%BB%ADa",
+    "license": "CC BY-SA 4.0"
+   }
   },
   {
    "fma": "FMA55704",
@@ -5801,10 +6306,19 @@
    "viName": null,
    "enName": "Left lower first secondary molar tooth",
    "system": "skeletal",
-   "status": "none",
-   "enTitle": null,
-   "description": null,
-   "source": null
+   "status": "vi",
+   "enTitle": "Molar (tooth)",
+   "mismatch": true,
+   "description": {
+    "lang": "vi",
+    "text": "Răng hàm là răng phẳng ở mặt sau vòm miệng. Răng phát triển ở động vật có vú.",
+    "translated": false
+   },
+   "source": {
+    "title": "Răng hàm",
+    "url": "https://vi.wikipedia.org/wiki/R%C4%83ng_h%C3%A0m",
+    "license": "CC BY-SA 4.0"
+   }
   },
   {
    "fma": "FMA55694",
@@ -5815,10 +6329,19 @@
    "viName": null,
    "enName": "Right lower first secondary premolar tooth",
    "system": "skeletal",
-   "status": "none",
-   "enTitle": null,
-   "description": null,
-   "source": null
+   "status": "vi",
+   "enTitle": "Molar (tooth)",
+   "mismatch": true,
+   "description": {
+    "lang": "vi",
+    "text": "Răng hàm là răng phẳng ở mặt sau vòm miệng. Răng phát triển ở động vật có vú.",
+    "translated": false
+   },
+   "source": {
+    "title": "Răng hàm",
+    "url": "https://vi.wikipedia.org/wiki/R%C4%83ng_h%C3%A0m",
+    "license": "CC BY-SA 4.0"
+   }
   },
   {
    "fma": "FMA57141",
@@ -5829,10 +6352,19 @@
    "viName": null,
    "enName": "Left lower lateral secondary incisor tooth",
    "system": "skeletal",
-   "status": "none",
-   "enTitle": null,
-   "description": null,
-   "source": null
+   "status": "vi",
+   "enTitle": "Incisor",
+   "mismatch": true,
+   "description": {
+    "lang": "vi",
+    "text": "Răng cửa là răng phía trước xuất hiện ở hầu hết động vật có vú có nhóm răng khác. Chúng tọa lạc trên mảnh trước hàm và bên dưới xương hàm dưới.",
+    "translated": false
+   },
+   "source": {
+    "title": "Răng cửa",
+    "url": "https://vi.wikipedia.org/wiki/R%C4%83ng_c%E1%BB%ADa",
+    "license": "CC BY-SA 4.0"
+   }
   },
   {
    "fma": "FMA55703",
@@ -5843,10 +6375,19 @@
    "viName": null,
    "enName": "Left lower second secondary molar tooth",
    "system": "skeletal",
-   "status": "none",
-   "enTitle": null,
-   "description": null,
-   "source": null
+   "status": "vi",
+   "enTitle": "Molar (tooth)",
+   "mismatch": true,
+   "description": {
+    "lang": "vi",
+    "text": "Răng hàm là răng phẳng ở mặt sau vòm miệng. Răng phát triển ở động vật có vú.",
+    "translated": false
+   },
+   "source": {
+    "title": "Răng hàm",
+    "url": "https://vi.wikipedia.org/wiki/R%C4%83ng_h%C3%A0m",
+    "license": "CC BY-SA 4.0"
+   }
   },
   {
    "fma": "FMA55695",
@@ -5857,10 +6398,19 @@
    "viName": null,
    "enName": "Right lower second secondary premolar tooth",
    "system": "skeletal",
-   "status": "none",
-   "enTitle": null,
-   "description": null,
-   "source": null
+   "status": "vi",
+   "enTitle": "Molar (tooth)",
+   "mismatch": true,
+   "description": {
+    "lang": "vi",
+    "text": "Răng hàm là răng phẳng ở mặt sau vòm miệng. Răng phát triển ở động vật có vú.",
+    "translated": false
+   },
+   "source": {
+    "title": "Răng hàm",
+    "url": "https://vi.wikipedia.org/wiki/R%C4%83ng_h%C3%A0m",
+    "license": "CC BY-SA 4.0"
+   }
   },
   {
    "fma": "FMA55686",
@@ -5871,10 +6421,18 @@
    "viName": null,
    "enName": "Right lower secondary canine tooth",
    "system": "skeletal",
-   "status": "none",
-   "enTitle": null,
-   "description": null,
-   "source": null
+   "status": "vi",
+   "enTitle": "Canine tooth",
+   "description": {
+    "lang": "vi",
+    "text": "Răng nanh là những chiếc răng dài và nhọn có tác dụng cắn xé thức ăn hoặc dùng trong việc săn mồi ở một số loài động vật. Thường sẽ có 4 răng nanh ở người là hai răng ở hàm trên và hai răng ở hàm dưới.",
+    "translated": false
+   },
+   "source": {
+    "title": "Răng nanh",
+    "url": "https://vi.wikipedia.org/wiki/R%C4%83ng_nanh",
+    "license": "CC BY-SA 4.0"
+   }
   },
   {
    "fma": "FMA24437",
@@ -5885,10 +6443,19 @@
    "viName": null,
    "enName": "Right lunate",
    "system": "skeletal",
-   "status": "none",
-   "enTitle": null,
-   "description": null,
-   "source": null
+   "status": "vi",
+   "enTitle": "Lunate bone",
+   "description": {
+    "lang": "vi",
+    "text": "Xương nguyệt là một xương cổ tay ở bàn tay người. Nó nổi bật với mặt lõm sâu và đường viền hình lưỡi liềm.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Lunate bone",
+    "url": "https://en.wikipedia.org/wiki/Lunate_bone",
+    "license": "CC BY-SA 4.0"
+   }
   },
   {
    "fma": "FMA59506",
@@ -5989,10 +6556,20 @@
    "viName": null,
    "enName": "Middle phalanx of right fourth toe",
    "system": "skeletal",
-   "status": "none",
-   "enTitle": null,
-   "description": null,
-   "source": null
+   "status": "vi",
+   "enTitle": "Phalanx bone",
+   "mismatch": true,
+   "description": {
+    "lang": "vi",
+    "text": "Các đốt ngón là những xương của ngón ở bàn tay và bàn chân của hầu hết động vật có xương sống; đây là đốt giữa ngón chân thứ tư bên phải. Ở linh trưởng, ngón cái và ngón chân cái mỗi ngón có hai đốt, còn các ngón khác mỗi ngón có ba đốt.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Phalanx bone",
+    "url": "https://en.wikipedia.org/wiki/Phalanx_bone",
+    "license": "CC BY-SA 4.0"
+   }
   },
   {
    "fma": "FMA24455",
@@ -6003,10 +6580,20 @@
    "viName": null,
    "enName": "Middle phalanx of right index finger",
    "system": "skeletal",
-   "status": "none",
-   "enTitle": null,
-   "description": null,
-   "source": null
+   "status": "vi",
+   "enTitle": "Phalanx bone",
+   "mismatch": true,
+   "description": {
+    "lang": "vi",
+    "text": "Các đốt ngón là những xương của ngón ở bàn tay và bàn chân của hầu hết động vật có xương sống; đây là đốt giữa ngón trỏ bên phải. Ở linh trưởng, ngón cái và ngón chân cái mỗi ngón có hai đốt, còn các ngón khác mỗi ngón có ba đốt.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Phalanx bone",
+    "url": "https://en.wikipedia.org/wiki/Phalanx_bone",
+    "license": "CC BY-SA 4.0"
+   }
   },
   {
    "fma": "FMA23944",
@@ -6017,10 +6604,20 @@
    "viName": null,
    "enName": "Middle phalanx of left little finger",
    "system": "skeletal",
-   "status": "none",
-   "enTitle": null,
-   "description": null,
-   "source": null
+   "status": "vi",
+   "enTitle": "Phalanx bone",
+   "mismatch": true,
+   "description": {
+    "lang": "vi",
+    "text": "Các đốt ngón là những xương của ngón ở bàn tay và bàn chân của hầu hết động vật có xương sống; đây là đốt giữa ngón út bên trái. Ở linh trưởng, ngón cái và ngón chân cái mỗi ngón có hai đốt, còn các ngón khác mỗi ngón có ba đốt.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Phalanx bone",
+    "url": "https://en.wikipedia.org/wiki/Phalanx_bone",
+    "license": "CC BY-SA 4.0"
+   }
   },
   {
    "fma": "FMA230988",
@@ -6031,10 +6628,20 @@
    "viName": null,
    "enName": "Middle phalanx of left little toe",
    "system": "skeletal",
-   "status": "none",
-   "enTitle": null,
-   "description": null,
-   "source": null
+   "status": "vi",
+   "enTitle": "Phalanx bone",
+   "mismatch": true,
+   "description": {
+    "lang": "vi",
+    "text": "Các đốt ngón là những xương của ngón ở bàn tay và bàn chân của hầu hết động vật có xương sống; đây là đốt giữa ngón chân út bên trái. Ở linh trưởng, ngón cái và ngón chân cái mỗi ngón có hai đốt, còn các ngón khác mỗi ngón có ba đốt.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Phalanx bone",
+    "url": "https://en.wikipedia.org/wiki/Phalanx_bone",
+    "license": "CC BY-SA 4.0"
+   }
   },
   {
    "fma": "FMA24456",
@@ -6045,10 +6652,20 @@
    "viName": null,
    "enName": "Middle phalanx of right middle finger",
    "system": "skeletal",
-   "status": "none",
-   "enTitle": null,
-   "description": null,
-   "source": null
+   "status": "vi",
+   "enTitle": "Phalanx bone",
+   "mismatch": true,
+   "description": {
+    "lang": "vi",
+    "text": "Các đốt ngón là những xương của ngón ở bàn tay và bàn chân của hầu hết động vật có xương sống; đây là đốt giữa ngón giữa bên phải. Ở linh trưởng, ngón cái và ngón chân cái mỗi ngón có hai đốt, còn các ngón khác mỗi ngón có ba đốt.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Phalanx bone",
+    "url": "https://en.wikipedia.org/wiki/Phalanx_bone",
+    "license": "CC BY-SA 4.0"
+   }
   },
   {
    "fma": "FMA24457",
@@ -6059,10 +6676,20 @@
    "viName": null,
    "enName": "Middle phalanx of right ring finger",
    "system": "skeletal",
-   "status": "none",
-   "enTitle": null,
-   "description": null,
-   "source": null
+   "status": "vi",
+   "enTitle": "Phalanx bone",
+   "mismatch": true,
+   "description": {
+    "lang": "vi",
+    "text": "Các đốt ngón là những xương của ngón ở bàn tay và bàn chân của hầu hết động vật có xương sống; đây là đốt giữa ngón nhẫn bên phải. Ở linh trưởng, ngón cái và ngón chân cái mỗi ngón có hai đốt, còn các ngón khác mỗi ngón có ba đốt.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Phalanx bone",
+    "url": "https://en.wikipedia.org/wiki/Phalanx_bone",
+    "license": "CC BY-SA 4.0"
+   }
   },
   {
    "fma": "FMA32643",
@@ -6073,10 +6700,20 @@
    "viName": null,
    "enName": "Middle phalanx of left second toe",
    "system": "skeletal",
-   "status": "none",
-   "enTitle": null,
-   "description": null,
-   "source": null
+   "status": "vi",
+   "enTitle": "Phalanx bone",
+   "mismatch": true,
+   "description": {
+    "lang": "vi",
+    "text": "Các đốt ngón là những xương của ngón ở bàn tay và bàn chân của hầu hết động vật có xương sống; đây là đốt giữa ngón chân thứ hai bên trái. Ở linh trưởng, ngón cái và ngón chân cái mỗi ngón có hai đốt, còn các ngón khác mỗi ngón có ba đốt.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Phalanx bone",
+    "url": "https://en.wikipedia.org/wiki/Phalanx_bone",
+    "license": "CC BY-SA 4.0"
+   }
   },
   {
    "fma": "FMA32644",
@@ -6087,10 +6724,20 @@
    "viName": null,
    "enName": "Middle phalanx of right third toe",
    "system": "skeletal",
-   "status": "none",
-   "enTitle": null,
-   "description": null,
-   "source": null
+   "status": "vi",
+   "enTitle": "Phalanx bone",
+   "mismatch": true,
+   "description": {
+    "lang": "vi",
+    "text": "Các đốt ngón là những xương của ngón ở bàn tay và bàn chân của hầu hết động vật có xương sống; đây là đốt giữa ngón chân thứ ba bên phải. Ở linh trưởng, ngón cái và ngón chân cái mỗi ngón có hai đốt, còn các ngón khác mỗi ngón có ba đốt.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Phalanx bone",
+    "url": "https://en.wikipedia.org/wiki/Phalanx_bone",
+    "license": "CC BY-SA 4.0"
+   }
   },
   {
    "fma": "FMA53647",
@@ -6123,10 +6770,19 @@
    "viName": null,
    "enName": "Navicular bone of right foot",
    "system": "skeletal",
-   "status": "none",
-   "enTitle": null,
-   "description": null,
-   "source": null
+   "status": "vi",
+   "enTitle": "Navicular bone",
+   "description": {
+    "lang": "vi",
+    "text": "Xương ghe là một xương nhỏ có ở bàn chân của hầu hết các loài động vật có vú.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Navicular bone",
+    "url": "https://en.wikipedia.org/wiki/Navicular_bone",
+    "license": "CC BY-SA 4.0"
+   }
   },
   {
    "fma": "FMA8391",
@@ -6293,10 +6949,20 @@
    "viName": null,
    "enName": "Proximal phalanx of left big toe",
    "system": "skeletal",
-   "status": "none",
-   "enTitle": null,
-   "description": null,
-   "source": null
+   "status": "vi",
+   "enTitle": "Phalanx bone",
+   "mismatch": true,
+   "description": {
+    "lang": "vi",
+    "text": "Các đốt ngón là những xương của ngón ở bàn tay và bàn chân của hầu hết động vật có xương sống. Ở linh trưởng, ngón cái và ngón chân cái mỗi ngón có hai đốt, còn các ngón khác mỗi ngón có ba đốt; đốt gần là đốt nằm sát bàn chân nhất.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Phalanx bone",
+    "url": "https://en.wikipedia.org/wiki/Phalanx_bone",
+    "license": "CC BY-SA 4.0"
+   }
   },
   {
    "fma": "FMA32639",
@@ -6307,10 +6973,20 @@
    "viName": null,
    "enName": "Proximal phalanx of left fourth toe",
    "system": "skeletal",
-   "status": "none",
-   "enTitle": null,
-   "description": null,
-   "source": null
+   "status": "vi",
+   "enTitle": "Phalanx bone",
+   "mismatch": true,
+   "description": {
+    "lang": "vi",
+    "text": "Các đốt ngón là những xương của ngón ở bàn tay và bàn chân của hầu hết động vật có xương sống. Ở linh trưởng, ngón cái và ngón chân cái mỗi ngón có hai đốt, còn các ngón khác mỗi ngón có ba đốt; đốt gần là đốt nằm sát bàn chân nhất.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Phalanx bone",
+    "url": "https://en.wikipedia.org/wiki/Phalanx_bone",
+    "license": "CC BY-SA 4.0"
+   }
   },
   {
    "fma": "FMA71915",
@@ -6321,10 +6997,20 @@
    "viName": null,
    "enName": "Proximal phalanx of left index finger",
    "system": "skeletal",
-   "status": "none",
-   "enTitle": null,
-   "description": null,
-   "source": null
+   "status": "vi",
+   "enTitle": "Phalanx bone",
+   "mismatch": true,
+   "description": {
+    "lang": "vi",
+    "text": "Các đốt ngón là những xương của ngón ở bàn tay và bàn chân của hầu hết động vật có xương sống. Ở linh trưởng, ngón cái và ngón chân cái mỗi ngón có hai đốt, còn các ngón khác mỗi ngón có ba đốt; đốt gần là đốt nằm sát bàn tay nhất.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Phalanx bone",
+    "url": "https://en.wikipedia.org/wiki/Phalanx_bone",
+    "license": "CC BY-SA 4.0"
+   }
   },
   {
    "fma": "FMA24454",
@@ -6335,10 +7021,20 @@
    "viName": null,
    "enName": "Proximal phalanx of right little finger",
    "system": "skeletal",
-   "status": "none",
-   "enTitle": null,
-   "description": null,
-   "source": null
+   "status": "vi",
+   "enTitle": "Phalanx bone",
+   "mismatch": true,
+   "description": {
+    "lang": "vi",
+    "text": "Các đốt ngón là những xương của ngón ở bàn tay và bàn chân của hầu hết động vật có xương sống. Ở linh trưởng, ngón cái và ngón chân cái mỗi ngón có hai đốt, còn các ngón khác mỗi ngón có ba đốt; đốt gần là đốt nằm sát bàn tay nhất.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Phalanx bone",
+    "url": "https://en.wikipedia.org/wiki/Phalanx_bone",
+    "license": "CC BY-SA 4.0"
+   }
   },
   {
    "fma": "FMA32640",
@@ -6349,10 +7045,20 @@
    "viName": null,
    "enName": "Proximal phalanx of right little toe",
    "system": "skeletal",
-   "status": "none",
-   "enTitle": null,
-   "description": null,
-   "source": null
+   "status": "vi",
+   "enTitle": "Phalanx bone",
+   "mismatch": true,
+   "description": {
+    "lang": "vi",
+    "text": "Các đốt ngón là những xương của ngón ở bàn tay và bàn chân của hầu hết động vật có xương sống. Ở linh trưởng, ngón cái và ngón chân cái mỗi ngón có hai đốt, còn các ngón khác mỗi ngón có ba đốt; đốt gần là đốt nằm sát bàn chân nhất.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Phalanx bone",
+    "url": "https://en.wikipedia.org/wiki/Phalanx_bone",
+    "license": "CC BY-SA 4.0"
+   }
   },
   {
    "fma": "FMA24452",
@@ -6363,10 +7069,20 @@
    "viName": null,
    "enName": "Proximal phalanx of right middle finger",
    "system": "skeletal",
-   "status": "none",
-   "enTitle": null,
-   "description": null,
-   "source": null
+   "status": "vi",
+   "enTitle": "Phalanx bone",
+   "mismatch": true,
+   "description": {
+    "lang": "vi",
+    "text": "Các đốt ngón là những xương của ngón ở bàn tay và bàn chân của hầu hết động vật có xương sống. Ở linh trưởng, ngón cái và ngón chân cái mỗi ngón có hai đốt, còn các ngón khác mỗi ngón có ba đốt; đốt gần là đốt nằm sát bàn tay nhất.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Phalanx bone",
+    "url": "https://en.wikipedia.org/wiki/Phalanx_bone",
+    "license": "CC BY-SA 4.0"
+   }
   },
   {
    "fma": "FMA24453",
@@ -6377,10 +7093,20 @@
    "viName": null,
    "enName": "Proximal phalanx of right ring finger",
    "system": "skeletal",
-   "status": "none",
-   "enTitle": null,
-   "description": null,
-   "source": null
+   "status": "vi",
+   "enTitle": "Phalanx bone",
+   "mismatch": true,
+   "description": {
+    "lang": "vi",
+    "text": "Các đốt ngón là những xương của ngón ở bàn tay và bàn chân của hầu hết động vật có xương sống. Ở linh trưởng, ngón cái và ngón chân cái mỗi ngón có hai đốt, còn các ngón khác mỗi ngón có ba đốt; đốt gần là đốt nằm sát bàn tay nhất.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Phalanx bone",
+    "url": "https://en.wikipedia.org/wiki/Phalanx_bone",
+    "license": "CC BY-SA 4.0"
+   }
   },
   {
    "fma": "FMA32635",
@@ -6391,10 +7117,20 @@
    "viName": null,
    "enName": "Proximal phalanx of left second toe",
    "system": "skeletal",
-   "status": "none",
-   "enTitle": null,
-   "description": null,
-   "source": null
+   "status": "vi",
+   "enTitle": "Phalanx bone",
+   "mismatch": true,
+   "description": {
+    "lang": "vi",
+    "text": "Các đốt ngón là những xương của ngón ở bàn tay và bàn chân của hầu hết động vật có xương sống. Ở linh trưởng, ngón cái và ngón chân cái mỗi ngón có hai đốt, còn các ngón khác mỗi ngón có ba đốt; đốt gần là đốt nằm sát bàn chân nhất.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Phalanx bone",
+    "url": "https://en.wikipedia.org/wiki/Phalanx_bone",
+    "license": "CC BY-SA 4.0"
+   }
   },
   {
    "fma": "FMA32636",
@@ -6405,10 +7141,20 @@
    "viName": null,
    "enName": "Proximal phalanx of right third toe",
    "system": "skeletal",
-   "status": "none",
-   "enTitle": null,
-   "description": null,
-   "source": null
+   "status": "vi",
+   "enTitle": "Phalanx bone",
+   "mismatch": true,
+   "description": {
+    "lang": "vi",
+    "text": "Các đốt ngón là những xương của ngón ở bàn tay và bàn chân của hầu hết động vật có xương sống. Ở linh trưởng, ngón cái và ngón chân cái mỗi ngón có hai đốt, còn các ngón khác mỗi ngón có ba đốt; đốt gần là đốt nằm sát bàn chân nhất.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Phalanx bone",
+    "url": "https://en.wikipedia.org/wiki/Phalanx_bone",
+    "license": "CC BY-SA 4.0"
+   }
   },
   {
    "fma": "FMA65470",
@@ -6419,10 +7165,20 @@
    "viName": null,
    "enName": "Proximal phalanx of left thumb",
    "system": "skeletal",
-   "status": "none",
-   "enTitle": null,
-   "description": null,
-   "source": null
+   "status": "vi",
+   "enTitle": "Phalanx bone",
+   "mismatch": true,
+   "description": {
+    "lang": "vi",
+    "text": "Các đốt ngón là những xương của ngón ở bàn tay và bàn chân của hầu hết động vật có xương sống. Ở linh trưởng, ngón cái và ngón chân cái mỗi ngón có hai đốt, còn các ngón khác mỗi ngón có ba đốt; đốt gần là đốt nằm sát bàn tay nhất.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Phalanx bone",
+    "url": "https://en.wikipedia.org/wiki/Phalanx_bone",
+    "license": "CC BY-SA 4.0"
+   }
   },
   {
    "fma": "FMA23465",
@@ -6656,10 +7412,19 @@
    "viName": null,
    "enName": "Sesamoid bone of left foot",
    "system": "skeletal",
-   "status": "none",
-   "enTitle": null,
-   "description": null,
-   "source": null
+   "status": "vi",
+   "enTitle": "Sesamoid bone",
+   "description": {
+    "lang": "vi",
+    "text": "Trong giải phẫu, xương vừng là xương nằm vùi trong một gân hoặc một cơ. Tên gọi bắt nguồn từ tiếng Hy Lạp chỉ \"hạt vừng\", ám chỉ kích thước nhỏ bé của hầu hết các xương vừng.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Sesamoid bone",
+    "url": "https://en.wikipedia.org/wiki/Sesamoid_bone",
+    "license": "CC BY-SA 4.0"
+   }
   },
   {
    "fma": "FMA12525",
@@ -6868,10 +7633,19 @@
    "viName": null,
    "enName": "Right talus",
    "system": "skeletal",
-   "status": "none",
-   "enTitle": null,
-   "description": null,
-   "source": null
+   "status": "vi",
+   "enTitle": "Talus bone",
+   "description": {
+    "lang": "vi",
+    "text": "Xương sên (còn gọi là xương mắt cá) là một trong nhóm xương bàn chân gọi là các xương cổ chân. Nhóm xương cổ chân tạo nên phần dưới của khớp cổ chân.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Talus bone",
+    "url": "https://en.wikipedia.org/wiki/Talus_bone",
+    "license": "CC BY-SA 4.0"
+   }
   },
   {
    "fma": "FMA52738",
@@ -7150,10 +7924,19 @@
    "viName": null,
    "enName": "Right trapezium",
    "system": "skeletal",
-   "status": "none",
-   "enTitle": null,
-   "description": null,
-   "source": null
+   "status": "vi",
+   "enTitle": "Trapezium (bone)",
+   "description": {
+    "lang": "vi",
+    "text": "Xương thang là một xương cổ tay ở bàn tay. Nó tạo nên bờ phía quay của ống cổ tay.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Trapezium (bone)",
+    "url": "https://en.wikipedia.org/wiki/Trapezium_(bone)",
+    "license": "CC BY-SA 4.0"
+   }
   },
   {
    "fma": "FMA24445",
@@ -7275,10 +8058,19 @@
    "viName": null,
    "enName": "Right upper central secondary incisor tooth",
    "system": "skeletal",
-   "status": "none",
-   "enTitle": null,
-   "description": null,
-   "source": null
+   "status": "vi",
+   "enTitle": "Incisor",
+   "mismatch": true,
+   "description": {
+    "lang": "vi",
+    "text": "Răng cửa là răng phía trước xuất hiện ở hầu hết động vật có vú có nhóm răng khác. Chúng tọa lạc trên mảnh trước hàm và bên dưới xương hàm dưới.",
+    "translated": false
+   },
+   "source": {
+    "title": "Răng cửa",
+    "url": "https://vi.wikipedia.org/wiki/R%C4%83ng_c%E1%BB%ADa",
+    "license": "CC BY-SA 4.0"
+   }
   },
   {
    "fma": "FMA55698",
@@ -7289,10 +8081,19 @@
    "viName": null,
    "enName": "Right upper first secondary molar tooth",
    "system": "skeletal",
-   "status": "none",
-   "enTitle": null,
-   "description": null,
-   "source": null
+   "status": "vi",
+   "enTitle": "Molar (tooth)",
+   "mismatch": true,
+   "description": {
+    "lang": "vi",
+    "text": "Răng hàm là răng phẳng ở mặt sau vòm miệng. Răng phát triển ở động vật có vú.",
+    "translated": false
+   },
+   "source": {
+    "title": "Răng hàm",
+    "url": "https://vi.wikipedia.org/wiki/R%C4%83ng_h%C3%A0m",
+    "license": "CC BY-SA 4.0"
+   }
   },
   {
    "fma": "FMA55690",
@@ -7303,10 +8104,19 @@
    "viName": null,
    "enName": "Left upper first secondary premolar tooth",
    "system": "skeletal",
-   "status": "none",
-   "enTitle": null,
-   "description": null,
-   "source": null
+   "status": "vi",
+   "enTitle": "Molar (tooth)",
+   "mismatch": true,
+   "description": {
+    "lang": "vi",
+    "text": "Răng hàm là răng phẳng ở mặt sau vòm miệng. Răng phát triển ở động vật có vú.",
+    "translated": false
+   },
+   "source": {
+    "title": "Răng hàm",
+    "url": "https://vi.wikipedia.org/wiki/R%C4%83ng_h%C3%A0m",
+    "license": "CC BY-SA 4.0"
+   }
   },
   {
    "fma": "FMA55683",
@@ -7317,10 +8127,19 @@
    "viName": null,
    "enName": "Left upper lateral secondary incisor tooth",
    "system": "skeletal",
-   "status": "none",
-   "enTitle": null,
-   "description": null,
-   "source": null
+   "status": "vi",
+   "enTitle": "Incisor",
+   "mismatch": true,
+   "description": {
+    "lang": "vi",
+    "text": "Răng cửa là răng phía trước xuất hiện ở hầu hết động vật có vú có nhóm răng khác. Chúng tọa lạc trên mảnh trước hàm và bên dưới xương hàm dưới.",
+    "translated": false
+   },
+   "source": {
+    "title": "Răng cửa",
+    "url": "https://vi.wikipedia.org/wiki/R%C4%83ng_c%E1%BB%ADa",
+    "license": "CC BY-SA 4.0"
+   }
   },
   {
    "fma": "FMA55697",
@@ -7331,10 +8150,19 @@
    "viName": null,
    "enName": "Right upper second secondary molar tooth",
    "system": "skeletal",
-   "status": "none",
-   "enTitle": null,
-   "description": null,
-   "source": null
+   "status": "vi",
+   "enTitle": "Molar (tooth)",
+   "mismatch": true,
+   "description": {
+    "lang": "vi",
+    "text": "Răng hàm là răng phẳng ở mặt sau vòm miệng. Răng phát triển ở động vật có vú.",
+    "translated": false
+   },
+   "source": {
+    "title": "Răng hàm",
+    "url": "https://vi.wikipedia.org/wiki/R%C4%83ng_h%C3%A0m",
+    "license": "CC BY-SA 4.0"
+   }
   },
   {
    "fma": "FMA55688",
@@ -7345,10 +8173,19 @@
    "viName": null,
    "enName": "Right upper second secondary premolar tooth",
    "system": "skeletal",
-   "status": "none",
-   "enTitle": null,
-   "description": null,
-   "source": null
+   "status": "vi",
+   "enTitle": "Molar (tooth)",
+   "mismatch": true,
+   "description": {
+    "lang": "vi",
+    "text": "Răng hàm là răng phẳng ở mặt sau vòm miệng. Răng phát triển ở động vật có vú.",
+    "translated": false
+   },
+   "source": {
+    "title": "Răng hàm",
+    "url": "https://vi.wikipedia.org/wiki/R%C4%83ng_h%C3%A0m",
+    "license": "CC BY-SA 4.0"
+   }
   },
   {
    "fma": "FMA55799",
@@ -7359,10 +8196,18 @@
    "viName": null,
    "enName": "Left upper secondary canine tooth",
    "system": "skeletal",
-   "status": "none",
-   "enTitle": null,
-   "description": null,
-   "source": null
+   "status": "vi",
+   "enTitle": "Canine tooth",
+   "description": {
+    "lang": "vi",
+    "text": "Răng nanh là những chiếc răng dài và nhọn có tác dụng cắn xé thức ăn hoặc dùng trong việc săn mồi ở một số loài động vật. Thường sẽ có 4 răng nanh ở người là hai răng ở hàm trên và hai răng ở hàm dưới.",
+    "translated": false
+   },
+   "source": {
+    "title": "Răng nanh",
+    "url": "https://vi.wikipedia.org/wiki/R%C4%83ng_nanh",
+    "license": "CC BY-SA 4.0"
+   }
   },
   {
    "fma": "FMA9710",
