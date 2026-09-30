@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import { test } from "node:test";
 
 import { anatomicalSystem, viewStructures } from "./atlas-model";
-import { SYSTEM_VIEWS, hasCard, viewById, viewKind, viewParts } from "./views";
+import { SYSTEM_VIEWS, hasCard, viewById, viewKind, viewParts, viewStatus } from "./views";
 
 // Chạy: npx tsx --test src/lib/human-atlas/atlas-model.test.ts
 
@@ -17,11 +17,38 @@ test("hệ hô hấp: một tổng quan + góc nhìn giải phẫu, không thẻ
   }
 });
 
-test("góc nhìn thiếu dữ liệu vẫn có thẻ nhưng không dùng được, và nói thiếu gì", () => {
+test("góc nhìn thiếu dữ liệu (missing) là unavailable — không lên lưới", () => {
+  const def = { ...viewById("respiratory-lungs")!, id: "x-missing", missing: { vi: "thiếu", en: "missing" } };
+  assert.equal(viewStatus(def), "unavailable");
+  const system = anatomicalSystem("respiratory")!;
+  assert.ok(system.views.every((v) => v.usable && v.status !== "unavailable"));
+});
+
+test("dựng một phần thì là partial, có thẻ và nói rõ phần thiếu", () => {
   const views = anatomicalSystem("respiratory")!.views;
-  for (const id of ["respiratory-expiration-muscles", "respiratory-innervation"]) {
+  const expect = {
+    "respiratory-nose": "khoang mũi",
+    "respiratory-expiration-muscles": "cơ thẳng bụng",
+    "respiratory-innervation": "thần kinh hoành",
+  };
+  for (const [id, gap] of Object.entries(expect)) {
     const v = views.find((x) => x.def.id === id);
-    assert.ok(v && !v.usable && v.def.missing, id);
+    assert.equal(v?.status, "partial", id);
+    assert.ok(v?.def.partial?.vi.includes(gap), id);
+  }
+});
+
+test("mọi góc nhìn theo hệ có đánh giá chất lượng nội bộ", () => {
+  for (const v of SYSTEM_VIEWS.filter((x) => x.systemId === "respiratory" && viewKind(x) === "group" && !x.missing)) {
+    assert.ok(v.quality, v.id);
+  }
+});
+
+test("phổi mờ làm bối cảnh cho cây phế quản, khí quản, cơ hít vào", () => {
+  const lungs = new Set(viewParts("respiratory-lungs")!.focus);
+  for (const id of ["respiratory-bronchial-tree", "respiratory-trachea-bronchi", "respiratory-inspiration-muscles"]) {
+    const context = new Set(viewParts(id)!.context ?? []);
+    assert.ok([...lungs].every((p) => context.has(p)), id);
   }
 });
 

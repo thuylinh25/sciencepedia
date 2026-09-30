@@ -390,9 +390,17 @@ export const GROUP_COLORS: Record<string, string> = {
   // Hô hấp: nhu mô phổi hồng tím, sụn khí–phế quản trắng ngà như ảnh atlas; hầu là cơ.
   "respiratory.lung": "#b98b93",
   "respiratory.airway": "#dcd8d2",
-  "respiratory.larynx": "#c98a80",
-  "respiratory.nose": "#cfb2a8",
   "respiratory.pharynx": "#a85b50",
+  /*
+   * Sụn (2026-09-30, audit asset): MỘT màu trắng ám xanh cho mọi sụn — thanh quản,
+   * sụn sườn, sụn mũi, nắp thanh môn, đĩa gian đốt (sợi sụn) — như quy ước atlas,
+   * tách được sụn khỏi xương ngà ngay cạnh nó (sụn sườn nối xương sườn, sụn giáp
+   * trên khí quản). Trước đó sụn mũi hồng, nắp thanh môn đỏ, còn lại cùng màu xương.
+   */
+  "respiratory.cartilage": "#c9d6d8",
+  "skeletal.cartilage": "#c9d6d8",
+  // Xoăn mũi dưới là xương: màu xương.
+  "respiratory.concha": "#e2d9ba",
   // Tiết niệu: thận đỏ nâu, niệu quản vàng nhạt, bàng quang hồng.
   "urinary.kidney": "#8f3f36",
   "urinary.ureter": "#d8c79c",
@@ -419,8 +427,32 @@ export const GROUP_COLORS: Record<string, string> = {
  */
 const DROPPED_CONCEPTS = new Set(["FMA54319"]);
 
+/**
+ * Khoá hình học của một mảnh: cùng khái niệm + cùng số đỉnh/chỉ số + cùng hộp bao.
+ *
+ * Audit 2026-09-30 (`scripts/atlas-asset-audit.ts`): BodyParts3D chép NGUYÊN mảnh
+ * (vị trí và chỉ số giống từng byte) sang một khối khác cho bốn khái niệm — sụn
+ * nhẫn, xương móng, động mạch thân tạng, hai nhánh động mạch gan phải. Hai bản
+ * chồng khít nhau: z-fighting (bề mặt lấm tấm khi xoay), đếm đôi, và "ẩn" một
+ * bản thì bản kia vẫn hiện. Chỉ bỏ bản sao CÙNG khái niệm; cùng hình khác khái
+ * niệm (cơ đáy chậu nông / cơ thắt hậu môn ngoài) là câu hỏi giải phẫu, để nguyên.
+ */
+const geometryKey = (p: Atlas["parts"][number]) =>
+  `${p.conceptId}|${p.vertexCount}|${p.indexCount}|${p.bounds.flat().map((x) => x.toFixed(5)).join(",")}`;
+
 export function correctSystems(atlas: Atlas): Atlas {
-  const dropped = new Set(atlas.parts.filter((p) => DROPPED_CONCEPTS.has(p.conceptId)).map((p) => p.id));
+  const seen = new Set<string>();
+  const dropped = new Set(
+    atlas.parts
+      .filter((p) => {
+        if (DROPPED_CONCEPTS.has(p.conceptId)) return true;
+        const key = geometryKey(p);
+        if (seen.has(key)) return true;
+        seen.add(key);
+        return false;
+      })
+      .map((p) => p.id),
+  );
   if (dropped.size) {
     atlas.parts = atlas.parts.filter((p) => !dropped.has(p.id));
     atlas.concepts = atlas.concepts

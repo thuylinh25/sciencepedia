@@ -47,6 +47,8 @@ const RULES: Record<string, [string, RegExp][]> = {
     ["sclera", /sclera/i],
     ["iris", /^(left|right) iris$/i],
   ],
+  // Sụn khớp theo tên mảnh rồi theo tổ tiên FMA ("Cartilage organ", "Laryngeal cartilage").
+  skeletal: [["cartilage", /cartilage/i]],
   integumentary: [
     ["hair", /hair|eyebrow/i],
     ["lip", /^lip$/i],
@@ -57,8 +59,11 @@ const RULES: Record<string, [string, RegExp][]> = {
   // Nhu mô phổi, tuyến giáp, cận giáp đến từ Z-Anatomy và mang nhóm sẵn.
   respiratory: [
     ["airway", /trachea|bronch/i],
-    ["larynx", /epiglottis/i],
-    ["nose", /nasal|concha/i],
+    // Sụn (2026-09-30, audit asset): một màu trắng xanh nhạt cho MỌI sụn ở mọi hệ —
+    // trước đó sụn mũi hồng, nắp thanh môn đỏ, sụn thanh quản/sụn sườn cùng màu xương.
+    ["cartilage", /cartilage|epiglottis/i],
+    // Xoăn mũi dưới là XƯƠNG (FMA: bone organ) — màu xương, không màu "mũi".
+    ["concha", /concha/i],
     ["pharynx", /pharyn/i],
   ],
   urinary: [

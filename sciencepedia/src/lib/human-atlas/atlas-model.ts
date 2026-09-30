@@ -1,5 +1,15 @@
 import type { SystemId } from "./anatomy";
-import { SYSTEM_VIEWS, isSystemView, isUsableView, viewById, viewKind, viewParts, type AtlasViewDef } from "./views";
+import {
+  SYSTEM_VIEWS,
+  isSystemView,
+  isUsableView,
+  viewById,
+  viewKind,
+  viewParts,
+  viewStatus,
+  type AtlasViewDef,
+  type ViewStatus,
+} from "./views";
 
 /*
  * ## Hệ → Góc nhìn giải phẫu → Cấu trúc (2026-09-30)
@@ -35,25 +45,34 @@ export type AnatomicalStructure = {
 export type AnatomicalView = {
   def: AtlasViewDef;
   usable: boolean;
+  status: ViewStatus;
 };
 
 export type AnatomicalSystem = {
   systemId: SystemId;
   overview: AnatomicalView | null;
+  /** Góc nhìn có thẻ trên lưới: available + partial. */
   views: AnatomicalView[];
+  /**
+   * Góc nhìn trong kế hoạch nhưng dữ liệu không dựng được — KHÔNG có thẻ (thẻ
+   * không bấm được giữa lưới là "thẻ trống"); lưới chỉ ghi một dòng tên + thiếu gì.
+   */
+  unavailable: AnatomicalView[];
 };
 
-const asView = (def: AtlasViewDef): AnatomicalView => ({ def, usable: isUsableView(def.id) });
+const asView = (def: AtlasViewDef): AnatomicalView => ({ def, usable: isUsableView(def.id), status: viewStatus(def) });
 
 /** Hệ có góc nhìn giải phẫu (theo thứ tự registry), dạng đã chuẩn hoá. */
 export function anatomicalSystem(systemId: SystemId): AnatomicalSystem | null {
   const defs = SYSTEM_VIEWS.filter((v) => v.systemId === systemId);
   if (defs.length === 0) return null;
   const overview = defs.find((v) => viewKind(v) === "overview");
+  const groups = defs.filter((v) => viewKind(v) === "group").map(asView);
   return {
     systemId,
-    overview: overview ? asView(overview) : null,
-    views: defs.filter((v) => viewKind(v) === "group").map(asView),
+    overview: overview && viewStatus(overview) !== "unavailable" ? asView(overview) : null,
+    views: groups.filter((v) => v.status !== "unavailable"),
+    unavailable: groups.filter((v) => v.status === "unavailable"),
   };
 }
 

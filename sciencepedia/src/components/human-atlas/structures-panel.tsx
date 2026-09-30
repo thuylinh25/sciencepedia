@@ -13,6 +13,8 @@ import { PANEL } from "@/components/human-atlas/panel";
 type Props = {
   open: boolean;
   viewName: string;
+  /** Góc nhìn `partial`: thiếu gì (views.ts). */
+  note?: string | null;
   locale: string;
   structures: readonly AnatomicalStructure[];
   hidden: ReadonlySet<string>;
@@ -41,6 +43,7 @@ type Props = {
 export function StructuresPanel({
   open,
   viewName,
+  note,
   locale,
   structures,
   hidden,
@@ -78,6 +81,7 @@ export function StructuresPanel({
         <div className="min-w-0">
           <h2 className="text-sm font-semibold">{t("title")}</h2>
           <p className="truncate text-xs text-muted-foreground">{viewName}</p>
+          {note && <p className="mt-1 text-[11px] leading-snug text-warning">{note}</p>}
         </div>
         <Button variant="ghost" size="icon-sm" className="atlas-wide:hidden" onClick={onClose} aria-label={t("close")}>
           <X />

@@ -777,6 +777,7 @@ export function HumanAtlas({
         <StructuresPanel
           open={panel === "layers"}
           viewName={viewName}
+          note={viewDef?.partial ? (locale === "vi" ? viewDef.partial.vi : viewDef.partial.en) : null}
           locale={locale}
           structures={structures}
           hidden={hiddenParts}

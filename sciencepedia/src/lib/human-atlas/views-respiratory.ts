@@ -55,6 +55,8 @@ const LEFT_MAIN = rule("FMA7396");
 const NASAL_CARTILAGES = rule("FMA59503", "FMA59512", "FMA59513", "FMA59505", "FMA59506");
 const CONCHAE = rule("FMA54737", "FMA54738");
 const NASAL_BONES = rule("FMA53647", "FMA53648");
+/** Thành xương khoang mũi có trong dữ liệu: xương sàng (gồm xoăn giữa/trên), lá mía, khẩu cái. */
+const NASAL_WALLS = rule("FMA52740", "FMA9710", "FMA53655", "FMA53656");
 
 /** Cơ hầu (FMA "Muscle of pharynx") + đường đan hầu nơi các cơ khít bám. */
 const PHARYNX = rule(
@@ -103,6 +105,16 @@ const EXTERNAL_INTERCOSTAL = rule("FMA9756");
 const STERNOCLEIDOMASTOID = rule("FMA13408", "FMA13409");
 const SCALENES = rule("FMA13388", "FMA13389", "FMA13390", "FMA13391", "FMA13392", "FMA13393");
 const PECTORALIS_MINOR = rule("FMA13375", "FMA13376");
+// Cơ thở ra gắng sức có trong BodyParts3D 4.0 (mỗi mã hai mảnh phải/trái).
+const INTERNAL_INTERCOSTAL = rule("FMA9757");
+const INNERMOST_INTERCOSTAL = rule("FMA9758");
+const TRANSVERSUS_THORACIS = rule("FMA9761", "FMA9762");
+const EXTERNAL_OBLIQUE = rule("FMA13336", "FMA13337");
+
+// Thần kinh (Z-Anatomy, CC BY-SA — mã `ZA-…`, khớp bằng tên). Không có thần kinh hoành.
+const VAGUS: PartRule = { systems: ["nervous"], name: /^(left|right) vagus nerve \(x\)$/i };
+const SYMPATHETIC_TRUNKS: PartRule = { systems: ["nervous"], name: /^(left|right) sympathetic trunk$/i };
+const INTERCOSTAL_NERVES: PartRule = { systems: ["nervous"], name: /^(left|right) intercostal nerves$/i };
 
 // Mạch phổi. "Right anterior segmental artery" (FMA8620) bị loại như ở tổng quan
 // tim: hai mảnh nằm ngang thận — lỗi vị trí của BodyParts3D (views-overviews.ts).
@@ -129,6 +141,7 @@ export const RESPIRATORY_VIEWS: readonly AtlasViewDef[] = [
     // bảng "Cấu trúc" có đủ hàng "Sụn mũi" và "Hầu" thay vì "Phần còn lại".
     focus: [{ systems: ["respiratory"] }, NASAL_CARTILAGES, PHARYNX, ...LARYNX],
     terms: ["hệ hô hấp", "respiratory system", "phổi", "lungs", "đường thở", "airway"],
+    quality: "good",
   },
 
   // ------------------------------------------------------------ nhóm / vùng
@@ -139,8 +152,12 @@ export const RESPIRATORY_VIEWS: readonly AtlasViewDef[] = [
     name: { vi: "Đường hô hấp trên", en: "Upper respiratory tract" },
     direction: "left",
     focus: [NASAL_CARTILAGES, CONCHAE, PHARYNX, ...LARYNX],
-    context: [NASAL_BONES, HYOID, TRACHEA],
+    // Audit 2026-09-30: giữa sụn mũi (z 6,5–10,8 cm) và hầu (z −1,6–2,8 cm) là khoảng
+    // trống — khoang mũi không có trong dữ liệu. Thành xương của nó (sàng, lá mía,
+    // khẩu cái) làm bối cảnh để thấy đường đi mũi → hầu → thanh quản → khí quản.
+    context: [NASAL_BONES, NASAL_WALLS, HYOID, TRACHEA],
     terms: ["upper airway", "mũi", "hầu", "thanh quản"],
+    quality: "acceptable",
   },
   {
     id: "respiratory-nose",
@@ -149,8 +166,14 @@ export const RESPIRATORY_VIEWS: readonly AtlasViewDef[] = [
     name: { vi: "Mũi", en: "Nose" },
     direction: "anterolateral",
     focus: [NASAL_CARTILAGES, CONCHAE],
-    context: [NASAL_BONES],
+    context: [NASAL_BONES, NASAL_WALLS],
+    partial: {
+      // Xoăn giữa/trên là một phần của xương sàng — có trong bối cảnh, không nói "không có".
+      vi: "Chỉ có sụn và xương; thiếu mô mềm (da mũi, niêm mạc khoang mũi)",
+      en: "Cartilage and bone only; soft tissue (skin, nasal mucosa) is missing",
+    },
     terms: ["nasal", "đường hô hấp trên", "upper airway"],
+    quality: "needs-improvement",
   },
   {
     id: "respiratory-pharynx-larynx",
@@ -161,6 +184,7 @@ export const RESPIRATORY_VIEWS: readonly AtlasViewDef[] = [
     focus: [PHARYNX, ...LARYNX],
     context: [HYOID, TRACHEA],
     terms: ["đường hô hấp trên", "upper airway"],
+    quality: "good",
   },
   {
     id: "respiratory-laryngeal-muscles",
@@ -171,6 +195,7 @@ export const RESPIRATORY_VIEWS: readonly AtlasViewDef[] = [
     focus: [LARYNX_MUSCLES],
     context: [LARYNX_CARTILAGES, EPIGLOTTIS, HYOID],
     terms: ["cơ nội thanh quản", "intrinsic muscles of larynx", "dây thanh", "vocal"],
+    quality: "acceptable",
   },
   {
     id: "respiratory-trachea-bronchi",
@@ -179,8 +204,13 @@ export const RESPIRATORY_VIEWS: readonly AtlasViewDef[] = [
     name: { vi: "Khí quản & phế quản gốc", en: "Trachea & main bronchi" },
     direction: "front",
     focus: [TRACHEA, RIGHT_MAIN, LEFT_MAIN],
-    context: [LARYNX_CARTILAGES, ...RIGHT_TREE, ...LEFT_TREE],
+    // Phổi mờ quanh cây phế quản mờ: thấy phế quản gốc đi vào đâu.
+    context: [LARYNX_CARTILAGES, ...RIGHT_TREE, ...LEFT_TREE, ...RIGHT_LUNG, ...LEFT_LUNG],
+    // Khung theo khí quản (19 cm) mà phổi mờ rộng 26 cm: ảnh thu nhỏ lấp ít hơn để
+    // phổi không bị cắt hai mép.
+    camera: { thumbnailFill: 0.62 },
     terms: ["đường hô hấp dưới", "lower airway", "bronchus", "phế quản"],
+    quality: "good",
   },
   {
     id: "respiratory-lungs",
@@ -191,16 +221,19 @@ export const RESPIRATORY_VIEWS: readonly AtlasViewDef[] = [
     focus: [...RIGHT_LUNG, ...LEFT_LUNG],
     context: [TRACHEA, RIGHT_MAIN, LEFT_MAIN],
     terms: ["lung", "thùy phổi", "lobe"],
+    quality: "good",
   },
   {
     id: "respiratory-bronchial-tree",
     systemId: "respiratory",
     kind: "group",
-    name: { vi: "Cây phế quản", en: "Bronchial tree" },
+    // Id giữ nguyên (link cũ). Tên nói "trong phổi" vì nhu mô phổi nay là bối cảnh mờ.
+    name: { vi: "Cây phế quản trong phổi", en: "Bronchial tree within the lungs" },
     direction: "front",
     focus: [...RIGHT_TREE, ...LEFT_TREE],
-    context: [TRACHEA, RIGHT_MAIN, LEFT_MAIN],
-    terms: ["phổi", "lung", "phế quản", "bronchi"],
+    context: [TRACHEA, RIGHT_MAIN, LEFT_MAIN, ...RIGHT_LUNG, ...LEFT_LUNG],
+    terms: ["phổi", "lung", "phế quản", "bronchi", "cây phế quản"],
+    quality: "good",
   },
   {
     // Phổi trong khung xương: xương sườn, xương ức và cơ hoành hiện đặc như ảnh atlas;
@@ -213,6 +246,7 @@ export const RESPIRATORY_VIEWS: readonly AtlasViewDef[] = [
     focus: [...RIGHT_LUNG, ...LEFT_LUNG, TRACHEA, RIGHT_MAIN, LEFT_MAIN, RIBS_STERNUM, DIAPHRAGM],
     context: [THORACIC_SPINE, CLAVICLES],
     terms: ["lồng ngực", "thoracic cage", "cơ hoành", "diaphragm", "phổi", "lung"],
+    quality: "good",
   },
   {
     // Mặt trong (trung thất) của phổi phải: camera đặt ở phía trái người mẫu (+x)
@@ -225,6 +259,7 @@ export const RESPIRATORY_VIEWS: readonly AtlasViewDef[] = [
     focus: [...RIGHT_LUNG, RIGHT_MAIN, ...RIGHT_TREE, RIGHT_PA, RIGHT_PV],
     context: [TRACHEA],
     terms: ["rốn phổi", "hilum", "cuống phổi", "lung root", "mặt trung thất"],
+    quality: "acceptable",
   },
   {
     // Cơ chính (cơ hoành, gian sườn ngoài) + cơ phụ khi hít vào gắng sức (bậc thang: OpenStax
@@ -235,34 +270,47 @@ export const RESPIRATORY_VIEWS: readonly AtlasViewDef[] = [
     name: { vi: "Cơ hít vào", en: "Muscles of inspiration" },
     direction: "front",
     focus: [DIAPHRAGM, EXTERNAL_INTERCOSTAL, STERNOCLEIDOMASTOID, SCALENES, PECTORALIS_MINOR],
-    context: [RIBS_STERNUM, CLAVICLES, THORACIC_SPINE],
+    // Phổi mờ trong lồng ngực mờ: thấy cơ kéo khung sườn và cơ hoành quanh thứ gì.
+    context: [RIBS_STERNUM, CLAVICLES, THORACIC_SPINE, ...RIGHT_LUNG, ...LEFT_LUNG],
+    quality: "acceptable",
     terms: ["cơ hô hấp", "respiratory muscles", "hít vào", "inhalation", "cơ hoành", "diaphragm"],
   },
   {
     // Thở ra yên tĩnh là thụ động; thở ra gắng sức dùng cơ gian sườn trong và cơ thành bụng
-    // (OpenStax A&P 2e 22.3, 11.4). BodyParts3D 4.0 chỉ có cơ chéo bụng ngoài trong nhóm cơ thành bụng.
+    // (OpenStax A&P 2e 22.3, 11.4). BodyParts3D 4.0 chỉ có cơ chéo bụng ngoài trong nhóm cơ
+    // thành bụng — dựng với những gì có, nhãn "chưa đầy đủ" nói phần thiếu.
     id: "respiratory-expiration-muscles",
     systemId: "respiratory",
     kind: "group",
     name: { vi: "Cơ thở ra", en: "Muscles of expiration" },
+    // Nhìn chếch thì cơ chéo bụng ngoài che kín; nhìn thẳng còn thấy cơ gian sườn trong
+    // giữa các sụn sườn phía trên.
     direction: "front",
-    missing: {
-      vi: "Bộ dữ liệu thiếu cơ thẳng bụng, cơ chéo bụng trong và cơ ngang bụng",
-      en: "The dataset lacks rectus abdominis, internal oblique and transversus abdominis",
+    focus: [INTERNAL_INTERCOSTAL, INNERMOST_INTERCOSTAL, TRANSVERSUS_THORACIS, EXTERNAL_OBLIQUE],
+    context: [RIBS_STERNUM, THORACIC_SPINE, DIAPHRAGM, ...RIGHT_LUNG, ...LEFT_LUNG],
+    partial: {
+      vi: "Thiếu cơ thẳng bụng, cơ chéo bụng trong và cơ ngang bụng",
+      en: "Rectus abdominis, internal oblique and transversus abdominis are missing",
     },
     terms: ["thở ra", "exhalation", "cơ hô hấp", "respiratory muscles"],
+    quality: "needs-improvement",
   },
   {
+    // Phế vị (đối giao cảm tới phổi, nhánh thanh quản), thân giao cảm, thần kinh gian
+    // sườn (vận động cơ gian sườn). Thần kinh hoành — dây chính của cơ hoành — không có.
     id: "respiratory-innervation",
     systemId: "respiratory",
     kind: "group",
     name: { vi: "Thần kinh hệ hô hấp", en: "Respiratory innervation" },
-    direction: "front",
-    missing: {
-      vi: "Bộ dữ liệu không có dây thần kinh hoành",
-      en: "The dataset has no phrenic nerve",
+    direction: "anterolateral",
+    focus: [VAGUS, INTERCOSTAL_NERVES],
+    context: [SYMPATHETIC_TRUNKS, LARYNX_CARTILAGES, TRACHEA, RIGHT_MAIN, LEFT_MAIN, ...RIGHT_LUNG, ...LEFT_LUNG, DIAPHRAGM, THORACIC_SPINE],
+    partial: {
+      vi: "Thiếu dây thần kinh hoành (chi phối cơ hoành)",
+      en: "The phrenic nerves (which supply the diaphragm) are missing",
     },
     terms: ["thần kinh", "nerve", "phế vị", "vagus", "thần kinh hoành", "phrenic"],
+    quality: "needs-improvement",
   },
   {
     // Tim và phổi làm bối cảnh: máu đi từ thất phải qua phổi về nhĩ trái.
@@ -274,6 +322,7 @@ export const RESPIRATORY_VIEWS: readonly AtlasViewDef[] = [
     focus: [PULMONARY_TRUNK, PULMONARY_ARTERIES, PULMONARY_VEINS],
     context: [HEART, ...RIGHT_LUNG, ...LEFT_LUNG],
     terms: ["động mạch phổi", "pulmonary artery", "tĩnh mạch phổi", "pulmonary vein", "tiểu tuần hoàn"],
+    quality: "good",
   },
 
   // ------------------------------------------------------------ cấu trúc
@@ -568,6 +617,61 @@ export const RESPIRATORY_VIEWS: readonly AtlasViewDef[] = [
     name: { vi: "Cơ ngực bé", en: "Pectoralis minor" },
     direction: "front",
     focus: [PECTORALIS_MINOR],
+    context: [RIBS_STERNUM],
+  },
+  {
+    id: "internal-intercostals",
+    systemId: "respiratory",
+    kind: "structure",
+    name: { vi: "Cơ gian sườn trong", en: "Internal intercostal muscles" },
+    direction: "front",
+    focus: [INTERNAL_INTERCOSTAL],
+    context: [RIBS_STERNUM],
+  },
+  {
+    id: "innermost-intercostals",
+    systemId: "respiratory",
+    kind: "structure",
+    name: { vi: "Cơ gian sườn trong cùng", en: "Innermost intercostal muscles" },
+    direction: "front",
+    focus: [INNERMOST_INTERCOSTAL],
+    context: [RIBS_STERNUM],
+  },
+  {
+    id: "transversus-thoracis",
+    systemId: "respiratory",
+    kind: "structure",
+    name: { vi: "Cơ ngang ngực", en: "Transversus thoracis" },
+    direction: "back",
+    focus: [TRANSVERSUS_THORACIS],
+    context: [RIBS_STERNUM],
+  },
+  {
+    id: "external-oblique",
+    systemId: "respiratory",
+    kind: "structure",
+    name: { vi: "Cơ chéo bụng ngoài", en: "External oblique" },
+    direction: "anterolateral",
+    focus: [EXTERNAL_OBLIQUE],
+    context: [RIBS_STERNUM],
+  },
+  {
+    id: "vagus-nerves",
+    systemId: "respiratory",
+    kind: "structure",
+    name: { vi: "Dây thần kinh phế vị (X)", en: "Vagus nerves (X)" },
+    direction: "anterolateral",
+    focus: [VAGUS],
+    context: [TRACHEA, ...RIGHT_LUNG, ...LEFT_LUNG],
+    terms: ["dây X", "cranial nerve X", "đối giao cảm", "parasympathetic"],
+  },
+  {
+    id: "intercostal-nerves",
+    systemId: "respiratory",
+    kind: "structure",
+    name: { vi: "Các dây thần kinh gian sườn", en: "Intercostal nerves" },
+    direction: "anterolateral",
+    focus: [INTERCOSTAL_NERVES],
     context: [RIBS_STERNUM],
   },
   {

@@ -224,6 +224,14 @@ export function ViewsGallery({ locale, activeViewId, thumbnails, onChoose, onClo
                         />
                       </section>
                     )}
+                    {model.unavailable.length > 0 && (
+                      <p className="mx-auto mt-5 max-w-2xl text-center text-xs leading-relaxed text-white/55">
+                        {t("unavailable")}{" "}
+                        {model.unavailable
+                          .map((v) => `${pick(v.def.name)} (${v.def.missing ? pick(v.def.missing).toLowerCase() : t("missing").toLowerCase()})`)
+                          .join("; ")}
+                      </p>
+                    )}
                   </>
                 )}
                 {system === "respiratory" && (
@@ -271,7 +279,9 @@ function ViewGrid({
               onClick={usable ? () => onChoose(view.id) : undefined}
               aria-pressed={usable ? active : undefined}
               aria-disabled={!usable || undefined}
-              aria-label={usable ? label : `${label} — ${t("missing")}`}
+              aria-label={
+                !usable ? `${label} — ${t("missing")}` : view.partial ? `${label} — ${t("partial")}: ${pick(view.partial)}` : label
+              }
               title={view.missing ? pick(view.missing) : undefined}
               className={cn(
                 "group relative block aspect-[4/5] w-full overflow-hidden rounded-lg bg-white/[0.04] text-left outline-none ring-offset-2 ring-offset-[#05070a] transition focus-visible:ring-[3px] focus-visible:ring-ring",
@@ -306,6 +316,14 @@ function ViewGrid({
                   </span>
                 )}
               </span>
+              {usable && view.partial && (
+                <span
+                  title={pick(view.partial)}
+                  className="absolute top-2 left-2 rounded-full bg-black/60 px-2 py-0.5 text-[10px] font-medium text-white/85"
+                >
+                  {t("partial")}
+                </span>
+              )}
             </button>
           </li>
         );

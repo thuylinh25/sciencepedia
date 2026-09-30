@@ -635,11 +635,42 @@ lực, không phải nhớ xoá ở từng lối ra; mở lại góc nhìn thì 
 **Cấp cấu trúc không có ảnh thu nhỏ** (`hasCard`): bớt ~25 lượt vẽ (~7 s/ảnh trên SwiftShader) và
 giữ hàng đợi dưới ngưỡng ~40 ảnh làm tab headless crash.
 
-**Góc nhìn thiếu dữ liệu để `missing`, không dựng thiếu:** "Cơ thở ra" (BodyParts3D 4.0 chỉ có cơ chéo
-bụng ngoài — thiếu cơ thẳng bụng, chéo bụng trong, ngang bụng) và "Thần kinh hệ hô hấp" (không có
-dây thần kinh hoành). Thẻ nói luôn thiếu gì — điện thoại không hover được để đọc `title`. "Khoang mũi"
-KHÔNG đặt: không có niêm mạc/khoang, thẻ vẫn tên "Mũi". "Rốn phổi" chỉ dựng phổi phải (camera nhìn mặt
-trung thất từ +x; vẽ cả hai phổi thì phổi trái che).
+**Ba trạng thái, không dựng bù** (`viewStatus`): `missing` → unavailable, không có thẻ, chỉ một dòng
+dưới lưới nói thiếu gì (điện thoại không hover được để đọc `title`); `partial` → có thẻ, nhãn "Dữ liệu
+chưa đầy đủ", bảng Cấu trúc nhắc lại phần thiếu. `partial` khi phần có được TỰ NÓ đúng và hữu ích:
+"Cơ thở ra" có gian sườn trong/trong cùng, ngang ngực, chéo bụng ngoài (thiếu cơ thẳng bụng, chéo bụng
+trong, ngang bụng); "Thần kinh hệ hô hấp" có phế vị, thần kinh gian sườn, thân giao cảm của Z-Anatomy
+(thiếu thần kinh hoành). Hai góc nhìn này từng là `missing` vì audit đầu chỉ tìm trong BodyParts3D.
+"Khoang mũi" KHÔNG đặt: không có niêm mạc/khoang, thẻ vẫn tên "Mũi". "Rốn phổi" chỉ dựng phổi phải
+(camera nhìn mặt trung thất từ +x; vẽ cả hai phổi thì phổi trái che). `quality` là đánh giá nội bộ,
+không hiện cho người đọc.
+
+### Chất lượng hình: audit trước, chỉnh cảnh sau (2026-09-30)
+
+`scripts/atlas-asset-audit.ts` đo từng mảnh (tam giác, pháp tuyến, tam giác suy biến, số mảnh rời,
+bản trùng) trên đúng các khối viewer tải. Kết quả chốt những việc KHÔNG làm:
+
+- **Không chuẩn hoá scale/hướng:** BodyParts3D, Z-Anatomy, UMCG chung một hệ toạ độ (cây phế quản nằm
+  trọn trong phổi Z-Anatomy, khí quản nối đúng). Một lớp biến đổi mỗi nguồn chỉ thêm chỗ sai.
+- **Không texture/GLB mới:** dữ liệu không có UV; "bớt nhựa" là việc của vật liệu (metalness 0, độ
+  nhám theo mô) và đèn theo camera — đã có, xem "Ánh sáng & vật liệu" trong `anatomy-scene.tsx`.
+- **Pháp tuyến:** 0 hỏng trên mọi mảnh đo — không tính lại.
+
+Những việc ĐÃ làm, kèm lý do:
+
+- **Bỏ bản trùng cùng khái niệm** (`correctSystems`, khoá = khái niệm + số đỉnh + số chỉ số + hộp bao):
+  4 cặp giống nhau từng byte (sụn nhẫn, xương móng, ĐM thân tạng, 2 nhánh ĐM gan phải) vẽ chồng →
+  z-fighting và hai hàng trùng khi tìm. Cùng hình KHÁC khái niệm (cơ đáy chậu nông / cơ thắt hậu môn
+  ngoài) giữ nguyên: đó là lỗi nguồn cần báo, không phải bản sao.
+- **Sụn một màu** (`*.cartilage`): trước đây sụn thanh quản đỏ như cơ, sụn mũi hồng như da, sụn sườn
+  trắng như xương — cùng một mô ba màu, và sụn thanh quản lẫn vào cơ quanh nó. Nhóm xếp theo tên FMA
+  trong `anatomy-groups.ts`; xoăn mũi dưới là XƯƠNG nên về màu xương.
+- **Ảnh thu nhỏ có bối cảnh:** bản trước bỏ bối cảnh vì ô cờ thu nhỏ thành moiré; bối cảnh nay là lượt
+  trong suốt nên ảnh thẻ cho thấy cấu trúc nằm ở đâu (cây phế quản trong phổi, mạch phổi quanh tim).
+  `camera.thumbnailFill` hạ riêng cho góc nhìn có bối cảnh rộng hơn tập nổi bật (khí quản trong phổi).
+- **Góc nhìn mở đầu tải trước:** khối chứa mảnh của góc nhìn theo hệ đi đầu hàng; đủ nhóm đó là bấm
+  được. Không tải lười hẳn từng góc nhìn: 18 khối dùng chung cho mọi góc nhìn, ảnh thu nhỏ/tìm kiếm/
+  "Tách các lớp" cần cả cơ thể, nên phần còn lại vẫn tải ở nền.
 
 ### Da đục thì không vẽ lớp trong
 

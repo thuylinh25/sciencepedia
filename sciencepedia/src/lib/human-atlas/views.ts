@@ -96,7 +96,33 @@ export type AtlasViewDef = {
   clip?: { normal: readonly [number, number, number]; constant: number };
   /** Có mặt = không dựng được với dữ liệu hiện có; nói thiếu gì. */
   missing?: { vi: string; en: string };
+  /**
+   * Dựng được và vẫn có ích để học, nhưng thiếu một phần giải phẫu đáng kể — nói
+   * thiếu gì. Thẻ hiện kèm nhãn "Dữ liệu chưa đầy đủ".
+   */
+  partial?: { vi: string; en: string };
+  /**
+   * Đánh giá nội bộ từ audit asset (`scripts/atlas-asset-audit.ts`,
+   * docs/audits/atlas-assets.md). KHÔNG hiện ra UI — chỉ để biết góc nhìn nào cần
+   * làm tiếp.
+   */
+  quality?: "good" | "acceptable" | "needs-improvement";
+  /**
+   * Chỉnh khung camera: `fill` = phần vùng trống chiều cao mà tập nổi bật lấp
+   * (mặc định 0,74 ở trình xem, 0,86 ở ảnh thu nhỏ). Hướng vẫn là `direction`,
+   * tâm và khoảng cách vẫn tính từ hộp bao — không toạ độ camera viết tay, để
+   * dữ liệu đổi (nhập lại asset) thì khung đổi theo.
+   */
+  camera?: { fill?: number; thumbnailFill?: number };
 };
+
+export type ViewStatus = "available" | "partial" | "unavailable";
+
+/** unavailable → không có thẻ trên lưới chính; partial → thẻ có nhãn. */
+export function viewStatus(view: AtlasViewDef): ViewStatus {
+  if (view.missing || !viewParts(view.id)) return "unavailable";
+  return view.partial ? "partial" : "available";
+}
 
 const SKELETAL = ["skeletal"] as const;
 const VERTEBRAE = /vertebra|^atlas$|^axis$|intervertebral disk|^sacrum$/i;

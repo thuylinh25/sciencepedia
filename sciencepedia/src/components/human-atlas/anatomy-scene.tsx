@@ -607,6 +607,24 @@ export default function AnatomyScene({
     let aoFresh = false;
 
     // ------------------------------------------------------ tải hình học
+    /*
+     * ## Góc nhìn mở đầu tải trước (2026-09-30)
+     *
+     * Hình học là 18 khối dùng chung cho mọi góc nhìn (một cấu trúc nằm ở đúng
+     * một khối, góc nhìn nào cũng trỏ về nó — không có "model riêng mỗi thẻ").
+     * Mở thẳng một góc nhìn theo hệ (?view=respiratory-lungs) thì khối chứa mảnh
+     * của nó tải trước; xong nhóm đó là thanh tải về 100% và bấm được. Các khối
+     * còn lại tải tiếp ở nền: ảnh thu nhỏ, tìm kiếm, "Tách các lớp" cần cả cơ thể,
+     * nên `ready` (ảnh thu nhỏ) vẫn chờ đủ. Góc nhìn theo vùng dùng gần hết các hệ
+     * — thứ tự giữ nguyên.
+     */
+    const opening = viewSet(latest.current.viewId);
+    const needed = new Set<number>();
+    if (opening?.only) [...opening.focus, ...opening.context].forEach((i) => needed.add(parts[i].chunk));
+    const order = [...atlas.chunks.keys()].sort((a, b) => Number(needed.has(b)) - Number(needed.has(a)));
+    const firstBatch = needed.size || atlas.chunks.length;
+    /** Khối của góc nhìn mở đầu đã đủ: bấm/rê chuột được dù phần còn lại chưa về. */
+    let interactive = false;
     let loaded = 0;
     const loadChunk = async (ci: number) => {
       const chunk = atlas.chunks[ci];
@@ -657,8 +675,11 @@ export default function AnatomyScene({
         scene.add(mesh);
       });
       lastState = null;
-      loaded += 1;
-      callbacks.current.onProgress(Math.round((loaded / atlas.chunks.length) * 100));
+      if (needed.size === 0 || needed.has(ci)) {
+        loaded += 1;
+        callbacks.current.onProgress(Math.round((loaded / firstBatch) * 100));
+        if (loaded >= firstBatch) interactive = true;
+      }
       dirty = true;
     };
 
@@ -667,8 +688,8 @@ export default function AnatomyScene({
         let cursor = 0;
         await Promise.all(
           Array.from({ length: PARALLEL_CHUNKS }, async () => {
-            while (cursor < atlas.chunks.length) {
-              const i = cursor++;
+            while (cursor < order.length) {
+              const i = order[cursor++];
               await loadChunk(i);
             }
           }),
@@ -1025,6 +1046,7 @@ export default function AnatomyScene({
         rect,
         camera.aspect,
         isSystemView(preset),
+        preset?.camera?.fill,
       );
       const fittedDistance = frame.distance;
       // Hệ cục bộ (não, tim, tiêu hoá) không phóng tới đủ 74%: tối đa gấp
@@ -1262,13 +1284,18 @@ export default function AnatomyScene({
       if (!view || !def || el.clientWidth < THUMB_W || el.clientHeight < THUMB_H) return;
       const savedData = data.slice();
       const savedSelected = selectedData.slice();
-      // Ảnh thu nhỏ theo lối atlas: CHỈ cấu trúc của thẻ, không bối cảnh. Ô cờ của
-      // mảnh bối cảnh thu nhỏ 240 px thành sọc xám (moiré) lấp nửa thẻ — báo
-      // 2026-09-30 "hình ảnh chưa đẹp". Bối cảnh vẫn có trong khung xem thật.
+      // Ảnh thu nhỏ có bối cảnh như khung xem: cây phế quản trong phổi mờ, mạch phổi
+      // quanh tim mờ — thẻ nói cấu trúc nằm ở ĐÂU. Bản 2026-09-30 bỏ bối cảnh vì ô cờ
+      // thu nhỏ 240 px thành moiré; bối cảnh nay là lượt trong suốt (`drawGhost`),
+      // không còn ô cờ.
+      let hasContext = false;
       parts.forEach((p, i) => {
         data[i * 4] = data[i * 4 + 1] = data[i * 4 + 2] = 0;
-        data[i * 4 + 3] = inView(view, p.system, i) && !isContext(view, i) ? 1 : 0;
-        selectedData[i * 4] = selectedData[i * 4 + 1] = selectedData[i * 4 + 2] = selectedData[i * 4 + 3] = 0;
+        data[i * 4 + 3] = inView(view, p.system, i) ? 1 : 0;
+        selectedData[i * 4] = selectedData[i * 4 + 1] = selectedData[i * 4 + 2] = 0;
+        const context = data[i * 4 + 3] > 0 && isContext(view, i);
+        selectedData[i * 4 + 3] = context ? 255 : 0;
+        hasContext ||= context;
       });
       partTexture.needsUpdate = true;
       selectionTexture.needsUpdate = true;
@@ -1278,7 +1305,7 @@ export default function AnatomyScene({
       // Nhãn phủ ~20% đáy thẻ (dải gradient): khung cấu trúc trong phần trên, chừa lề
       // như ảnh atlas — trước đây lấp cả thẻ, chân cấu trúc chui dưới nhãn.
       const rect = { w: THUMB_W, h: THUMB_H, left: 0, right: THUMB_W, top: THUMB_H * 0.05, bottom: THUMB_H * 0.8 };
-      const frame = frameBox(thumbBox, direction, rect, THUMB_W / THUMB_H, isSystemView(def), 0.86);
+      const frame = frameBox(thumbBox, direction, rect, THUMB_W / THUMB_H, isSystemView(def), def.camera?.thumbnailFill ?? 0.86);
 
       const savedPosition = camera.position.clone();
       const savedQuaternion = camera.quaternion.clone();
@@ -1300,6 +1327,10 @@ export default function AnatomyScene({
       renderer.setScissor(0, 0, THUMB_W, THUMB_H);
       renderer.clear();
       renderer.render(scene, camera);
+      const ghostWas = ghostActive;
+      ghostActive = hasContext;
+      drawGhost();
+      ghostActive = ghostWas;
       const out = document.createElement("canvas");
       out.width = THUMB_W;
       out.height = THUMB_H;
@@ -1426,7 +1457,7 @@ export default function AnatomyScene({
     const cancel = (e: PointerEvent) => tap.cancel(e.pointerId);
     const up = (e: PointerEvent) => {
       const validTap = tap.up(e.pointerId, e.clientX, e.clientY);
-      if (!validTap || !ready) return;
+      if (!validTap || !interactive) return;
       const rect = canvas.getBoundingClientRect();
       let found = pickAt(e.clientX, e.clientY);
       if (found < 0 && amount > 0.45) {
@@ -1682,7 +1713,7 @@ export default function AnatomyScene({
       }
 
       // Rê chuột: một raycast mỗi khung, chỉ khi con trỏ vừa đổi chỗ.
-      if (hoverQueued && ready && amount < 0.5) {
+      if (hoverQueued && interactive && amount < 0.5) {
         const { x, y } = hoverQueued;
         hoverQueued = null;
         const index = pickAt(x, y);
