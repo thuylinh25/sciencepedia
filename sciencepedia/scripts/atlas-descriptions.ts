@@ -342,12 +342,40 @@ function mergeViBatches() {
   console.log(`Coverage: vi ${by("vi")} / en ${by("en-untranslated")} / trống ${by("none")}`);
 }
 
+const CLIENT_OUT = path.join(__dirname, "..", "src/lib/human-atlas/descriptions.generated.json");
+
+/**
+ * Bản gọn cho client: map phẳng mã FMA → mô tả, TRẢI theo fmaAll để cả hai
+ * bên trái/phải và từng mảnh cùng khái niệm đều tra được. Bỏ metadata kiểm
+ * (mismatch, enTitle) — chỉ giữ thứ hiển thị.
+ */
+function emitClient() {
+  const doc = JSON.parse(readFileSync(OUT, "utf8")) as Doc;
+  const map: Record<string, { text: string; lang: "vi" | "en"; reviewed: boolean; title: string; url: string }> = {};
+  let n = 0;
+  for (const e of doc.entries) {
+    if (!e.description || !e.source) continue;
+    const val = {
+      text: e.description.text,
+      lang: e.description.lang,
+      reviewed: e.description.reviewed === true,
+      title: e.source.title,
+      url: e.source.url,
+    };
+    for (const fma of e.fmaAll) map[fma] = val;
+    n++;
+  }
+  writeFileSync(CLIENT_OUT, JSON.stringify(map));
+  console.log(`Đã ghi ${path.relative(process.cwd(), CLIENT_OUT)}: ${n} mô tả, ${Object.keys(map).length} mã FMA.`);
+}
+
 async function run() {
   if (process.argv.includes("--emit-en")) {
     const sz = process.argv.indexOf("--size");
     return emitEnBatches(sz >= 0 ? Number(process.argv[sz + 1]) : 23);
   }
   if (process.argv.includes("--merge-vi")) return mergeViBatches();
+  if (process.argv.includes("--emit-client")) return emitClient();
 
   const write = process.argv.includes("--write");
   const limArg = process.argv.indexOf("--limit");

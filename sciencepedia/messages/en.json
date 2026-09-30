@@ -780,6 +780,8 @@
       },
       "rendering": "Rendering…",
       "missing": "Not enough data",
+      "partial": "Incomplete data",
+      "unavailable": "Not available yet — missing data:",
       "chip": "View: {name}",
       "clear": "Leave view {name}",
       "structures": {
@@ -859,6 +861,8 @@
       "latinName": "Latin name",
       "partOf": "Part of",
       "nameMachine": "Vietnamese name machine-assembled, not yet reviewed",
+      "descSource": "Source:",
+      "descEnOnly": "No Vietnamese version yet — the English source is shown.",
       "modelSourceLymph": "3D model: UMCG (lymphatics)",
       "modelSourceZa": "3D model: Z-Anatomy",
       "modelSource": "3D model: BodyParts3D",

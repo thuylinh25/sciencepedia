@@ -780,6 +780,8 @@
       },
       "rendering": "Đang dựng ảnh…",
       "missing": "Chưa đủ dữ liệu",
+      "partial": "Dữ liệu chưa đầy đủ",
+      "unavailable": "Chưa dựng được vì thiếu dữ liệu:",
       "chip": "Góc nhìn: {name}",
       "clear": "Thoát góc nhìn {name}",
       "structures": {
@@ -859,6 +861,8 @@
       "latinName": "Tên Latin",
       "partOf": "Thuộc",
       "nameMachine": "Tên Việt dịch ghép, chưa qua duyệt chuyên môn",
+      "descSource": "Nguồn:",
+      "descEnOnly": "Chưa có bản tiếng Việt — hiện câu nguồn tiếng Anh.",
       "modelSourceLymph": "Mô hình 3D: UMCG (bạch huyết)",
       "modelSourceZa": "Mô hình 3D: Z-Anatomy",
       "modelSource": "Mô hình 3D: BodyParts3D",

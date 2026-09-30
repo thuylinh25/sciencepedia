@@ -15,6 +15,7 @@ import {
   type Part,
 } from "@/lib/human-atlas/anatomy";
 import { displayName, hasViName, viNameStatus } from "@/lib/human-atlas/names-vi";
+import { structureDescription } from "@/lib/human-atlas/descriptions";
 import type { StructureArticle } from "@/lib/human-atlas/structure-links";
 import {
   ANATOMY_SOURCES,
@@ -104,6 +105,9 @@ export function StructureDetail({
 
   // Level 2: của chính nó, hoặc kế thừa (is-a, rồi cha part-of) — `about` nói là của ai.
   const resolved = anatomy ? resolveContent(anatomy, concept.id) : null;
+  // Gloss Wikipedia (đã duyệt) — chỉ dùng khi không có nội dung L2 riêng/kế thừa
+  // và không có lời giải riêng, để không đè mô tả biên soạn kỹ hơn.
+  const wiki = structureDescription(concept.id, ...parts.map((p) => p.conceptId));
   const aboutName =
     resolved && resolved.about !== concept.id && anatomy
       ? displayName(locale, resolved.about, fmaName(anatomy, resolved.about) ?? resolved.about)
@@ -208,6 +212,8 @@ export function StructureDetail({
           <p className="text-sm leading-relaxed text-muted-foreground">
             {t(`explanations.${explainedKey}`)}
           </p>
+        ) : wiki ? (
+          <WikipediaText desc={wiki} locale={locale} />
         ) : (
           system && SYSTEM_DESCRIPTIONS[system] && (
             <div className="rounded-xl border border-dashed p-3">
@@ -367,6 +373,42 @@ export function StructureDetail({
  * đặt ngay dưới, link mở thẳng đúng mục sách; ghi "biên soạn từ" chứ không
  * "trích từ" — câu chữ là của Sciencepedia, sách chỉ là nguồn dữ kiện.
  */
+/**
+ * Gloss ngắn từ Wikipedia. Bản Việt đã duyệt hiện thẳng, không nhãn "do AI".
+ * Số ít mục nguồn chưa dịch (reviewed=false) là câu tiếng Anh — dán nhãn rõ.
+ * Dòng nguồn luôn có: câu chữ mang giấy phép CC BY-SA, phải ghi công.
+ */
+function WikipediaText({
+  desc,
+  locale,
+}: {
+  desc: { text: string; lang: "vi" | "en"; reviewed: boolean; title: string; url: string };
+  locale: string;
+}) {
+  const t = useTranslations("humanAtlas.detail");
+  const enOnly = desc.lang === "en" && locale === "vi";
+  return (
+    <div className="space-y-2 text-sm leading-relaxed">
+      <p className="text-muted-foreground" lang={desc.lang}>
+        {desc.text}
+      </p>
+      {enOnly && <p className="text-[11px] leading-snug text-muted-foreground/80">{t("descEnOnly")}</p>}
+      <p className="text-[11px] leading-snug text-muted-foreground">
+        {t("descSource")}{" "}
+        <a
+          href={desc.url}
+          target="_blank"
+          rel="noreferrer"
+          className="underline underline-offset-2 hover:text-foreground"
+        >
+          {desc.title} · Wikipedia
+        </a>{" "}
+        (CC BY-SA)
+      </p>
+    </div>
+  );
+}
+
 function StructureText({ content, locale }: { content: StructureContent; locale: string }) {
   const t = useTranslations("humanAtlas.detail");
   const pick = (value: Bilingual) => (locale === "vi" ? value.vi : value.en);
