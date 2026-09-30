@@ -28,6 +28,30 @@ export function structureSlug(name: string): string {
     .replace(/^-+|-+$/g, "");
 }
 
+const ORDINALS = [
+  "first", "second", "third", "fourth", "fifth", "sixth",
+  "seventh", "eighth", "ninth", "tenth", "eleventh", "twelfth",
+];
+const SPINE_LETTERS: Record<string, string[]> = {
+  cervical: ["c"],
+  // Việt Nam gọi đốt ngực là D (dorsal) lẫn T: "D12", "T12".
+  thoracic: ["t", "d"],
+  lumbar: ["l"],
+};
+
+/**
+ * Ký hiệu lâm sàng của đốt sống ("L1", "C7", "T12"/"D12") — tên BodyParts3D chỉ có
+ * "first lumbar vertebra", nên "đốt L1" không ra gì (chủ sản phẩm, 2026-09-30).
+ * Đĩa gian đốt "of first lumbar vertebra" cũng mang ký hiệu: "đĩa L1" phải ra đĩa.
+ */
+export function spineAliases(name: string): string[] {
+  if (/^atlas$/i.test(name)) return ["c1"];
+  if (/^axis$/i.test(name)) return ["c2"];
+  const m = /\b(\w+) (cervical|thoracic|lumbar) vertebra$/i.exec(name);
+  const n = m ? ORDINALS.indexOf(m[1].toLowerCase()) + 1 : 0;
+  return n ? SPINE_LETTERS[m![2].toLowerCase()].map((letter) => `${letter}${n}`) : [];
+}
+
 export type SearchIndex = {
   concepts: Concept[];
   /** Chuỗi đã bỏ dấu để so khớp, song song với `concepts`. */
@@ -56,7 +80,7 @@ export function buildSearchIndex(atlas: Atlas, anatomy: AnatomyData | null = nul
           .filter(Boolean)
           .join(" ")
       : "";
-    haystack.push(fold(`${concept.name} ${vi ?? ""} ${concept.id} ${extra}`));
+    haystack.push(fold(`${concept.name} ${vi ?? ""} ${concept.id} ${extra} ${spineAliases(concept.name).join(" ")}`));
   }
 
   /*
@@ -89,12 +113,27 @@ export function searchConcepts(index: SearchIndex, query: string, limit = 80) {
       (c): c is Concept => !!c,
     );
   }
-  const out: Concept[] = [];
+  /*
+   * Khớp THEO TỪ, không theo cả chuỗi: "đốt L1" là "đốt" + "L1", không nằm liền
+   * trong "đốt sống thắt lưng 1 … l1". Từ có số ("l1", "c7", "1") phải khớp
+   * nguyên từ — không thì "l1" ăn vào "l12", "1" ăn vào mọi mã FMA.
+   */
+  const matchers = term.split(/\s+/).map((word) =>
+    /^[a-z]{0,2}\d+$/.test(word)
+      ? (text: string) => new RegExp(`(^|[^a-z0-9])${word}($|[^a-z0-9])`).test(text)
+      : (text: string) => text.includes(word),
+  );
+  const phrase: Concept[] = [];
+  const words: Concept[] = [];
   index.haystack.forEach((text, i) => {
-    if (text.includes(term)) out.push(index.concepts[i]);
+    if (!matchers.every((m) => m(text))) return;
+    (text.includes(term) ? phrase : words).push(index.concepts[i]);
   });
-  // Tên ngắn trước — giữ cách xếp của bản gốc: "heart" đứng trên "heart valve".
-  return out.sort((a, b) => a.name.length - b.name.length).slice(0, limit);
+  // Có kết quả khớp liền cả cụm thì chỉ lấy chúng: "dạ dày" không kéo theo "dây
+  // chằng", "đáy chậu" (cũng có "da", "day"). Khớp từng từ chỉ để cứu câu như
+  // "đốt L1". Tên ngắn trước như bản gốc: "heart" đứng trên "heart valve".
+  const byLength = (a: Concept, b: Concept) => a.name.length - b.name.length;
+  return (phrase.length ? phrase : words).sort(byLength).slice(0, limit);
 }
 
 /** `?structure=` nhận mã FMA, slug tiếng Anh hoặc slug tiếng Việt. */
