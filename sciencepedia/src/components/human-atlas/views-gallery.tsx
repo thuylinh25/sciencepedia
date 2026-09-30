@@ -126,17 +126,17 @@ export function ViewsGallery({ locale, activeViewId, thumbnails, onChoose, onClo
       aria-modal="true"
       aria-labelledby="atlas-views-title"
       style={{ top: frame.top, minHeight: frame.height }}
-      className="absolute inset-x-0 z-40 bg-[#05070a]/90 px-4 pt-5 pb-10 backdrop-blur-sm sm:px-8"
+      className="atlas-gallery absolute inset-x-0 z-40 bg-(--gallery-page)/95 px-4 pt-5 pb-10 backdrop-blur-sm sm:px-8"
     >
       <div className="relative mx-auto max-w-6xl">
-        <h2 id="atlas-views-title" className="text-center font-display text-xl text-white/90 sm:text-2xl">
+        <h2 id="atlas-views-title" className="text-center font-display text-xl text-(--gallery-fg) sm:text-2xl">
           {t("title")}
         </h2>
         <Button
           ref={close}
           variant="ghost"
           size="icon"
-          className="absolute top-0 right-0 text-white/80 hover:bg-white/10 hover:text-white"
+          className="absolute top-0 right-0 text-(--gallery-muted) hover:bg-(--gallery-card-hover) hover:text-(--gallery-fg)"
           onClick={onClose}
           aria-label={t("close")}
         >
@@ -152,8 +152,8 @@ export function ViewsGallery({ locale, activeViewId, thumbnails, onChoose, onClo
               aria-selected={tab === key}
               onClick={() => setTab(key)}
               className={cn(
-                "rounded-full px-4 py-1.5 text-sm font-medium text-white/70 outline-none transition hover:text-white focus-visible:ring-[3px] focus-visible:ring-ring",
-                tab === key && "bg-white/15 text-white",
+                "rounded-full px-4 py-1.5 text-sm font-medium text-(--gallery-muted) outline-none transition hover:text-(--gallery-fg) focus-visible:ring-[3px] focus-visible:ring-ring",
+                tab === key && "bg-(--gallery-card-hover) text-(--gallery-fg) ring-1 ring-(--gallery-border)",
               )}
             >
               {t(key === "regional" ? "tabRegional" : "tabSystem")}
@@ -176,8 +176,8 @@ export function ViewsGallery({ locale, activeViewId, thumbnails, onChoose, onClo
                     aria-pressed={system === id}
                     onClick={() => setSystem(id)}
                     className={cn(
-                      "rounded-full border border-white/20 px-3 py-1 text-xs text-white/80 outline-none hover:bg-white/10 focus-visible:ring-[3px] focus-visible:ring-ring",
-                      system === id && "border-accent bg-white/10 text-white",
+                      "rounded-full border border-(--gallery-border) px-3 py-1 text-xs text-(--gallery-muted) outline-none hover:bg-(--gallery-card-hover) hover:text-(--gallery-fg) focus-visible:ring-[3px] focus-visible:ring-ring",
+                      system === id && "border-(--gallery-selected) bg-(--gallery-card-hover) text-(--gallery-fg)",
                     )}
                   >
                     {tSystems(id)}
@@ -187,9 +187,9 @@ export function ViewsGallery({ locale, activeViewId, thumbnails, onChoose, onClo
             )}
             {system && (
               <>
-                <h3 className="mt-2 text-center font-display text-lg text-white sm:text-xl">{tSystems(system)}</h3>
+                <h3 className="mt-2 text-center font-display text-lg text-(--gallery-fg) sm:text-xl">{tSystems(system)}</h3>
                 {!model || (!model.overview && model.views.length === 0) ? (
-                  <p className="mt-6 text-center text-sm text-white/60">{t("emptySystem")}</p>
+                  <p className="mt-6 text-center text-sm text-(--gallery-muted)">{t("emptySystem")}</p>
                 ) : (
                   <>
                     {model.overview && (
@@ -213,7 +213,7 @@ export function ViewsGallery({ locale, activeViewId, thumbnails, onChoose, onClo
                       <section aria-labelledby="atlas-views-group" className="mt-6">
                         <h4
                           id="atlas-views-group"
-                          className="text-[11px] font-semibold tracking-[0.14em] text-white/60 uppercase"
+                          className="text-[11px] font-semibold tracking-[0.14em] text-(--gallery-muted) uppercase"
                         >
                           {t("section.group")}
                         </h4>
@@ -225,7 +225,7 @@ export function ViewsGallery({ locale, activeViewId, thumbnails, onChoose, onClo
                       </section>
                     )}
                     {model.unavailable.length > 0 && (
-                      <p className="mx-auto mt-5 max-w-2xl text-center text-xs leading-relaxed text-white/55">
+                      <p className="mx-auto mt-5 max-w-2xl text-center text-xs leading-relaxed text-(--gallery-muted)">
                         {t("unavailable")}{" "}
                         {model.unavailable
                           .map((v) => `${pick(v.def.name)} (${v.def.missing ? pick(v.def.missing).toLowerCase() : t("missing").toLowerCase()})`)
@@ -235,7 +235,7 @@ export function ViewsGallery({ locale, activeViewId, thumbnails, onChoose, onClo
                   </>
                 )}
                 {system === "respiratory" && (
-                  <p className="mx-auto mt-6 max-w-2xl text-center text-xs leading-relaxed text-white/55">
+                  <p className="mx-auto mt-6 max-w-2xl text-center text-xs leading-relaxed text-(--gallery-muted)">
                     {t("dataNote.respiratory")}
                   </p>
                 )}
@@ -248,6 +248,45 @@ export function ViewsGallery({ locale, activeViewId, thumbnails, onChoose, onClo
     document.body,
   );
 }
+
+/**
+ * Vùng vẽ mô hình của thẻ: ảnh thu nhỏ (nền trong suốt) trên quầng sáng
+ * `--gallery-stage` — mô hình tối và bối cảnh mờ nổi lên nhờ nền, không nhờ
+ * đổi vật liệu. Tách hẳn khỏi nhãn: nhãn không phủ lên mô hình.
+ */
+function Stage({ src, usable, className }: { src: string | undefined; usable: boolean; className?: string }) {
+  const t = useTranslations("humanAtlas.atlasViews");
+  return (
+    <span
+      className={cn(
+        "relative block aspect-[4/5] w-full bg-[radial-gradient(ellipse_at_50%_45%,var(--gallery-stage)_0%,transparent_72%)]",
+        className,
+      )}
+    >
+      {src ? (
+        // Data URL do cảnh 3D chụp ở client — next/image không tối ưu được nó.
+        // eslint-disable-next-line @next/next/no-img-element
+        <img src={src} alt="" width={240} height={300} className="absolute inset-0 size-full object-contain" />
+      ) : (
+        <span
+          aria-hidden
+          className={cn(
+            "absolute inset-0 grid place-items-center text-[11px] text-(--gallery-muted)",
+            usable && "animate-pulse",
+          )}
+        >
+          {usable ? t("rendering") : ""}
+        </span>
+      )}
+    </span>
+  );
+}
+
+/** Thẻ: chọn = viền xanh 2px (không glow); focus bàn phím = outline sáng, tách khỏi viền chọn. */
+const CARD = cn(
+  "group overflow-hidden border border-(--gallery-border) bg-(--gallery-card) text-left outline-none transition-colors",
+  "focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--gallery-fg)",
+);
 
 function ViewGrid({
   views,
@@ -270,10 +309,9 @@ function ViewGrid({
       {views.map((view, index) => {
         const usable = isUsableView(view.id);
         const active = view.id === activeViewId;
-        const src = thumbnails[view.id];
         const label = numbered ? `${index + 1}. ${pick(view.name)}` : pick(view.name);
         return (
-          <li key={view.id}>
+          <li key={view.id} className="flex">
             <button
               type="button"
               onClick={usable ? () => onChoose(view.id) : undefined}
@@ -284,46 +322,33 @@ function ViewGrid({
               }
               title={view.missing ? pick(view.missing) : undefined}
               className={cn(
-                "group relative block aspect-[4/5] w-full overflow-hidden rounded-lg bg-white/[0.04] text-left outline-none ring-offset-2 ring-offset-[#05070a] transition focus-visible:ring-[3px] focus-visible:ring-ring",
-                usable ? "hover:bg-white/[0.08]" : "cursor-not-allowed",
-                active && "ring-2 ring-accent",
+                CARD,
+                "flex w-full flex-col rounded-lg",
+                usable ? "hover:bg-(--gallery-card-hover)" : "cursor-not-allowed",
+                active && "border-(--gallery-selected) ring-1 ring-(--gallery-selected)",
               )}
             >
-              {src ? (
-                // Data URL do cảnh 3D chụp ở client — next/image không tối ưu được nó.
-                // eslint-disable-next-line @next/next/no-img-element
-                <img
-                  src={src}
-                  alt=""
-                  width={240}
-                  height={300}
-                  className="size-full object-contain transition-transform duration-300 group-hover:scale-[1.03]"
-                />
-              ) : (
-                <span
-                  aria-hidden
-                  className={cn("absolute inset-0 grid place-items-center text-[11px] text-white/40", usable && "animate-pulse")}
-                >
-                  {usable ? t("rendering") : ""}
-                </span>
-              )}
-              <span className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 via-black/55 to-transparent px-2 pt-6 pb-2 text-center text-[13px] font-medium text-white">
-                {label}
+              <span className="relative block w-full">
+                <Stage src={thumbnails[view.id]} usable={usable} />
+                {usable && view.partial && (
+                  <span
+                    title={pick(view.partial)}
+                    className="absolute top-2 left-2 rounded-full bg-(--gallery-badge) px-1.5 py-0.5 text-[10px] leading-none font-medium text-(--gallery-badge-fg)"
+                  >
+                    {t("partial")}
+                  </span>
+                )}
+              </span>
+              {/* Nhãn dưới vùng vẽ, cao tối thiểu hai dòng: thẻ cùng hàng cao bằng nhau. */}
+              <span className="flex min-h-[3.25rem] flex-1 flex-col justify-center border-t border-(--gallery-border) px-2 py-2 text-center">
+                <span className="line-clamp-2 text-[13px] leading-snug font-medium text-(--gallery-fg)">{label}</span>
                 {/* Điện thoại không có hover để đọc `title`: nói luôn thiếu gì. */}
                 {!usable && (
-                  <span className="block text-[10px] leading-snug font-normal text-white/60">
+                  <span className="mt-0.5 line-clamp-2 text-[10px] leading-snug text-(--gallery-muted)">
                     {view.missing ? pick(view.missing) : t("missing")}
                   </span>
                 )}
               </span>
-              {usable && view.partial && (
-                <span
-                  title={pick(view.partial)}
-                  className="absolute top-2 left-2 rounded-full bg-black/60 px-2 py-0.5 text-[10px] font-medium text-white/85"
-                >
-                  {t("partial")}
-                </span>
-              )}
             </button>
           </li>
         );
@@ -363,38 +388,24 @@ function OverviewCard({
       aria-pressed={usable ? active : undefined}
       aria-disabled={!usable || undefined}
       className={cn(
-        "group mx-auto flex w-full max-w-2xl items-stretch gap-4 overflow-hidden rounded-xl bg-white/[0.06] p-3 text-left outline-none ring-offset-2 ring-offset-[#05070a] transition focus-visible:ring-[3px] focus-visible:ring-ring sm:gap-6 sm:p-4",
-        usable ? "hover:bg-white/[0.1]" : "cursor-not-allowed",
-        active && "ring-2 ring-accent",
+        CARD,
+        "mx-auto flex w-full max-w-2xl items-stretch gap-4 rounded-xl p-3 sm:gap-6 sm:p-4",
+        usable ? "hover:bg-(--gallery-card-hover)" : "cursor-not-allowed",
+        active && "border-(--gallery-selected) ring-1 ring-(--gallery-selected)",
       )}
     >
-      <span className="relative block aspect-[4/5] w-28 shrink-0 overflow-hidden rounded-lg bg-white/[0.04] sm:w-44">
-        {src ? (
-          // Data URL do cảnh 3D chụp ở client — next/image không tối ưu được nó.
-          // eslint-disable-next-line @next/next/no-img-element
-          <img
-            src={src}
-            alt=""
-            width={240}
-            height={300}
-            className="size-full object-contain transition-transform duration-300 group-hover:scale-[1.03]"
-          />
-        ) : (
-          <span
-            aria-hidden
-            className={cn("absolute inset-0 grid place-items-center text-[11px] text-white/40", usable && "animate-pulse")}
-          >
-            {usable ? t("rendering") : ""}
-          </span>
-        )}
-      </span>
+      <Stage src={src} usable={usable} className="w-28 shrink-0 rounded-lg sm:w-44" />
       <span className="flex min-w-0 flex-col justify-center gap-1.5">
-        <span className="text-[11px] font-semibold tracking-[0.14em] text-white/60 uppercase">{t("section.overview")}</span>
-        <span className="font-display text-lg leading-tight text-white sm:text-2xl">{pick(view.name)}</span>
-        {summary && <span className="line-clamp-3 text-xs leading-relaxed text-white/70 sm:text-sm">{summary}</span>}
-        <span className="text-xs text-white/55">{t("viewCount", { count })}</span>
+        <span className="text-[11px] font-semibold tracking-[0.14em] text-(--gallery-muted) uppercase">
+          {t("section.overview")}
+        </span>
+        <span className="font-display text-lg leading-tight text-(--gallery-fg) sm:text-2xl">{pick(view.name)}</span>
+        {summary && (
+          <span className="line-clamp-3 text-xs leading-relaxed text-(--gallery-muted) sm:text-sm">{summary}</span>
+        )}
+        <span className="text-xs text-(--gallery-muted)">{t("viewCount", { count })}</span>
         {usable && (
-          <span className="mt-1 inline-flex w-fit rounded-full bg-white/15 px-3 py-1 text-xs font-medium text-white group-hover:bg-white/25">
+          <span className="mt-1 inline-flex w-fit rounded-full border border-(--gallery-border) bg-(--gallery-card-hover) px-3 py-1 text-xs font-medium text-(--gallery-fg)">
             {t("openOverview")}
           </span>
         )}

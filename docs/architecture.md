@@ -605,10 +605,15 @@ ghi depth, không xoá bộ đệm — cấu trúc chính vẫn che bối cảnh
 `transparent` trên vật liệu thường (mảnh bối cảnh chung vật liệu/lượt vẽ với mảnh nổi bật). Có bối
 cảnh thì không AO: composer vẽ vào render target, depth màn hình trống, bóng mờ sẽ đè lên tất cả.
 
-**Ảnh thu nhỏ theo lối atlas:** chỉ cấu trúc của thẻ (không bối cảnh), khung trong 5–80% chiều cao
-thẻ (nhãn phủ phần đáy), lấp 86%. Sàn khoảng cách camera hạ từ 0,12 m xuống `controls.minDistance`
+**Ảnh thu nhỏ theo lối atlas:** chỉ cấu trúc của thẻ (không bối cảnh), khung trong 6–94% chiều cao
+vùng vẽ, lấp 86%. Nhãn nằm DƯỚI vùng vẽ, không phủ lên ảnh (2026-09-30) — bản trước chừa 20% đáy cho dải nhãn gradient. Sàn khoảng cách camera hạ từ 0,12 m xuống `controls.minDistance`
 cho góc nhìn theo hệ — nắp thanh môn ~3,5 cm ở sàn cũ chỉ chiếm nửa khung. Trên SwiftShader, trang
 crash sau ~40 ảnh (bộ nhớ tiến trình GPU, heap JS đứng yên ~200 MB) — chưa thấy trên GPU thật.
+
+**Lưới Góc nhìn không nền gần đen** (2026-09-30): token `--gallery-*` trong `.atlas-gallery` (globals.css),
+navy #090c14 đồng bộ header, thẻ #121620. Ảnh thu nhỏ nền trong suốt nên mô hình tối và bối cảnh mờ
+chìm vào nền đen của cảnh; tương phản lấy từ quầng `--gallery-stage` sau mô hình, KHÔNG từ đổi vật
+liệu/đèn — cảnh 3D chính vẫn #05070a (lý do ở `SCENE_BACKGROUND`).
 
 ### Hệ → Góc nhìn giải phẫu → Cấu trúc (2026-09-30)
 
@@ -636,8 +641,7 @@ lực, không phải nhớ xoá ở từng lối ra; mở lại góc nhìn thì 
 giữ hàng đợi dưới ngưỡng ~40 ảnh làm tab headless crash.
 
 **Ba trạng thái, không dựng bù** (`viewStatus`): `missing` → unavailable, không có thẻ, chỉ một dòng
-dưới lưới nói thiếu gì (điện thoại không hover được để đọc `title`); `partial` → có thẻ, nhãn "Dữ liệu
-chưa đầy đủ", bảng Cấu trúc nhắc lại phần thiếu. `partial` khi phần có được TỰ NÓ đúng và hữu ích:
+dưới lưới nói thiếu gì (điện thoại không hover được để đọc `title`); `partial` → có thẻ, nhãn "Đang hoàn thiện", bảng Cấu trúc nhắc lại phần thiếu. `partial` khi phần có được TỰ NÓ đúng và hữu ích:
 "Cơ thở ra" có gian sườn trong/trong cùng, ngang ngực, chéo bụng ngoài (thiếu cơ thẳng bụng, chéo bụng
 trong, ngang bụng); "Thần kinh hệ hô hấp" có phế vị, thần kinh gian sườn, thân giao cảm của Z-Anatomy
 (thiếu thần kinh hoành). Hai góc nhìn này từng là `missing` vì audit đầu chỉ tìm trong BodyParts3D.

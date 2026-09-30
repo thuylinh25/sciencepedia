@@ -1302,9 +1302,10 @@ export default function AnatomyScene({
       thumbBox.makeEmpty();
       view.focus.forEach((i) => thumbBox.union(bounds[i]));
       const direction = viewDirection(def.direction);
-      // Nhãn phủ ~20% đáy thẻ (dải gradient): khung cấu trúc trong phần trên, chừa lề
-      // như ảnh atlas — trước đây lấp cả thẻ, chân cấu trúc chui dưới nhãn.
-      const rect = { w: THUMB_W, h: THUMB_H, left: 0, right: THUMB_W, top: THUMB_H * 0.05, bottom: THUMB_H * 0.8 };
+      // Nhãn nằm DƯỚI vùng vẽ của thẻ (2026-09-30), không phủ lên ảnh nữa: khung
+      // cấu trúc giữa thẻ, chừa lề đều trên dưới như ảnh atlas. Bản trước chừa 20%
+      // đáy cho dải nhãn gradient.
+      const rect = { w: THUMB_W, h: THUMB_H, left: 0, right: THUMB_W, top: THUMB_H * 0.06, bottom: THUMB_H * 0.94 };
       const frame = frameBox(thumbBox, direction, rect, THUMB_W / THUMB_H, isSystemView(def), def.camera?.thumbnailFill ?? 0.86);
 
       const savedPosition = camera.position.clone();

@@ -780,7 +780,7 @@
       },
       "rendering": "Đang dựng ảnh…",
       "missing": "Chưa đủ dữ liệu",
-      "partial": "Dữ liệu chưa đầy đủ",
+      "partial": "Đang hoàn thiện",
       "unavailable": "Chưa dựng được vì thiếu dữ liệu:",
       "chip": "Góc nhìn: {name}",
       "clear": "Thoát góc nhìn {name}",

@@ -30,6 +30,24 @@
 @custom-variant atlas-short (@media (max-height: 520px));
 @custom-variant atlas-wide (@media (min-width: 768px) and (min-height: 521px));
 
+/* Lưới "Góc nhìn" của atlas — luôn tối (phủ lên khung xem tối), không theo
+   theme trang. Navy đậm đồng bộ header, KHÔNG gần đen như cảnh 3D (#05070a):
+   ảnh thu nhỏ nền trong suốt, mô hình tối và bối cảnh mờ chìm vào nền đen.
+   `--gallery-stage` là quầng sáng sau mô hình — tăng tương phản bằng nền,
+   không đụng vật liệu. Chỉ khai báo trong `.atlas-gallery`. */
+.atlas-gallery {
+  --gallery-page: #090c14;
+  --gallery-card: #121620;
+  --gallery-card-hover: #181d29;
+  --gallery-stage: #1f2636;
+  --gallery-border: #242a38;
+  --gallery-selected: #5b9cff;
+  --gallery-badge: #252a34;
+  --gallery-badge-fg: #b8bec9;
+  --gallery-fg: #f4f6fa;
+  --gallery-muted: #9ca3b2;
+}
+
 /* ------------------------------------------------------------------ */
 /*  Bảng màu                                                           */
 /*  National Geographic (viền vàng, ảnh tràn khung)                     */

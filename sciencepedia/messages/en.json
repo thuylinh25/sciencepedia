@@ -780,7 +780,7 @@
       },
       "rendering": "Rendering…",
       "missing": "Not enough data",
-      "partial": "Incomplete data",
+      "partial": "In progress",
       "unavailable": "Not available yet — missing data:",
       "chip": "View: {name}",
       "clear": "Leave view {name}",
