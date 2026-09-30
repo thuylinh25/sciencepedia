@@ -762,23 +762,40 @@
       "tabSystem": "Theo hệ",
       "section": {
         "overview": "Tổng quan",
-        "group": "Nhóm / vùng",
+        "group": "Góc nhìn giải phẫu",
         "structure": "Cấu trúc"
       },
+      "viewCount": "{count} góc nhìn giải phẫu",
+      "openOverview": "Mở tổng quan",
+      "emptySystem": "Hệ này chưa có góc nhìn giải phẫu.",
       "dataNote": {
         "respiratory": "Nhu mô phổi lấy từ Z-Anatomy (CC BY-SA 4.0); phần còn lại từ BodyParts3D. Mô hình không có màng phổi hay niêm mạc khoang mũi. Sụn, cơ và dây chằng thanh quản được gom theo phân loại FMA."
       },
       "searchHeading": "Góc nhìn",
       "searchKind": {
         "overview": "Tổng quan hệ",
-        "group": "Nhóm / vùng",
+        "group": "Góc nhìn giải phẫu",
         "structure": "Cấu trúc",
         "regional": "Theo vùng"
       },
       "rendering": "Đang dựng ảnh…",
       "missing": "Chưa đủ dữ liệu",
       "chip": "Góc nhìn: {name}",
-      "clear": "Thoát góc nhìn {name}"
+      "clear": "Thoát góc nhìn {name}",
+      "structures": {
+        "title": "Cấu trúc",
+        "open": "Cấu trúc",
+        "openLabel": "Mở bảng cấu trúc của góc nhìn",
+        "close": "Đóng bảng cấu trúc",
+        "rest": "Phần còn lại",
+        "select": "Chọn {name}",
+        "hide": "Ẩn {name}",
+        "show": "Hiện {name}",
+        "isolate": "Xem riêng {name}",
+        "showAll": "Hiện tất cả",
+        "count": "Đang hiện {shown}/{total} cấu trúc",
+        "backToSystems": "Về các hệ"
+      }
     },
     "views": {
       "threeQuarter": "Góc ba phần tư",

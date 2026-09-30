@@ -610,6 +610,37 @@ thẻ (nhãn phủ phần đáy), lấp 86%. Sàn khoảng cách camera hạ t�
 cho góc nhìn theo hệ — nắp thanh môn ~3,5 cm ở sàn cũ chỉ chiếm nửa khung. Trên SwiftShader, trang
 crash sau ~40 ảnh (bộ nhớ tiến trình GPU, heap JS đứng yên ~200 MB) — chưa thấy trên GPU thật.
 
+### Hệ → Góc nhìn giải phẫu → Cấu trúc (2026-09-30)
+
+Tab "Theo hệ" bản đầu bày ba cấp thẻ ngang hàng (Tổng quan / Nhóm / 20 thẻ cấu trúc) — chủ sản
+phẩm chê giống thư viện mô hình hơn atlas để học. Nay lưới chỉ có **Tổng quan (một thẻ lớn) + góc
+nhìn giải phẫu** (`kind: "group"`, đánh số); cấu trúc là lớp dưới, nằm trong **bảng "Cấu trúc"** của
+trình xem sau khi mở một góc nhìn.
+
+**Không đổi dữ liệu, chỉ thêm lớp đọc** (`atlas-model.ts`): `kind` cũ giữ nguyên nên mọi `?view=`
+đã phát hành (kể cả `?view=trachea`) vẫn mở được; cấu trúc vẫn tìm được qua ô tìm.
+
+**Cấu trúc của góc nhìn rút từ tập mảnh, không khai báo tay:** mọi `kind: "structure"` có mảnh nằm
+trọn trong tập nổi bật, giữ cái lớn nhất (phổi phải thắng ba thuỳ). Nhờ vậy "Cơ hoành" hiện ở cả "Vị
+trí của phổi" lẫn "Cơ hít vào" mà không chép danh sách. Mảnh không thuộc cấu trúc nào gom vào "Phần
+còn lại" — test đòi mọi góc nhìn hô hấp không có hàng đó (sụn cánh mũi, đường đan hầu nằm hệ khác
+nên phải thêm thẳng vào tổng quan). Góc nhìn không cấu trúc nào khớp (tổng quan tim, nội tiết) thì
+không có bảng — chưa có preset cấu trúc cho chúng.
+
+**Bảng thay chỗ danh sách hệ**, không đứng cạnh: trong góc nhìn theo hệ, bật/tắt hệ là rời góc nhìn,
+nên danh sách hệ không còn việc. Chỉ ba thao tác cảnh làm được thật: chọn (tô sáng + bay tới), ẩn/hiện
+(`hiddenIn`), xem riêng (`isolate` sẵn có). `hiddenIn` mang `viewId`: rời/đổi góc nhìn là tự hết hiệu
+lực, không phải nhớ xoá ở từng lối ra; mở lại góc nhìn thì xoá. Mảnh đã ẩn không tính vào "Vừa khung".
+
+**Cấp cấu trúc không có ảnh thu nhỏ** (`hasCard`): bớt ~25 lượt vẽ (~7 s/ảnh trên SwiftShader) và
+giữ hàng đợi dưới ngưỡng ~40 ảnh làm tab headless crash.
+
+**Góc nhìn thiếu dữ liệu để `missing`, không dựng thiếu:** "Cơ thở ra" (BodyParts3D 4.0 chỉ có cơ chéo
+bụng ngoài — thiếu cơ thẳng bụng, chéo bụng trong, ngang bụng) và "Thần kinh hệ hô hấp" (không có
+dây thần kinh hoành). Thẻ nói luôn thiếu gì — điện thoại không hover được để đọc `title`. "Khoang mũi"
+KHÔNG đặt: không có niêm mạc/khoang, thẻ vẫn tên "Mũi". "Rốn phổi" chỉ dựng phổi phải (camera nhìn mặt
+trung thất từ +x; vẽ cả hai phổi thì phổi trái che).
+
 ### Da đục thì không vẽ lớp trong
 
 Mạch và cơ nông của BodyParts3D lòi qua da vài mm (vệt đỏ/xanh ở cổ, cẳng chân). Khi da còn đục

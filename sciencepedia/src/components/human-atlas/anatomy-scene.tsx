@@ -32,7 +32,7 @@ import { atlasDataUrl } from "@/lib/human-atlas/assets";
 import { createExplosionLayout } from "@/lib/human-atlas/explosion-layout";
 import { decodeModelResponse } from "@/lib/human-atlas/model-download";
 import { PointerTap } from "@/lib/human-atlas/pointer-tap";
-import { ATLAS_VIEWS, isSystemView, viewById, viewParts, type ViewDirection } from "@/lib/human-atlas/views";
+import { ATLAS_VIEWS, hasCard, isSystemView, viewById, viewParts, type ViewDirection } from "@/lib/human-atlas/views";
 
 /**
  * Cảnh giải phẫu 3D — port từ `app/scene.tsx` của Human Atlas
@@ -521,6 +521,8 @@ export default function AnatomyScene({
     const inView = (view: ViewSet, system: SystemId, i: number) =>
       view.only ? view.focus.has(i) || view.context.has(i) : system !== "integumentary" && !view.hide.has(i);
     const isContext = (view: ViewSet | null, i: number) => !!view?.only && view.context.has(i);
+    /** Mảnh người đọc ẩn trong góc nhìn đang mở (`hiddenIn`) — tính lại khi state đổi. */
+    let userHidden = new Set<number>();
 
     /*
      * Mặt phẳng cắt của góc nhìn (`clip` trong views.ts). Gắn/gỡ `clippingPlanes`
@@ -757,9 +759,11 @@ export default function AnatomyScene({
       // Góc nhìn: khung theo tập NỔI BẬT; mảnh làm mờ chỉ là bối cảnh.
       const view = viewSet(latest.current.viewId);
       if (view) {
-        view.focus.forEach((i) =>
-          box.union(shifted.copy(bounds[i]).translate(new T.Vector3(data[i * 4], data[i * 4 + 1], data[i * 4 + 2]))),
-        );
+        // Cấu trúc đã ẩn không giữ chỗ trong khung ("Vừa khung" sau khi ẩn lồng ngực).
+        view.focus.forEach((i) => {
+          if (userHidden.has(i)) return;
+          box.union(shifted.copy(bounds[i]).translate(new T.Vector3(data[i * 4], data[i * 4 + 1], data[i * 4 + 2])));
+        });
         if (!box.isEmpty()) return box;
       }
       parts.forEach((p, i) => {
@@ -1249,7 +1253,7 @@ export default function AnatomyScene({
      */
     const THUMB_W = 240;
     const THUMB_H = 300;
-    const thumbQueue = ATLAS_VIEWS.filter((v) => !v.missing && viewParts(v.id)).map((v) => v.id);
+    const thumbQueue = ATLAS_VIEWS.filter((v) => hasCard(v) && !v.missing && viewParts(v.id)).map((v) => v.id);
     const thumbBox = new T.Box3();
     const renderThumbnail = (id: string) => {
       const view = viewSet(id);
@@ -1461,7 +1465,8 @@ export default function AnatomyScene({
         lastState?.visible !== s.visible ||
         lastState?.selected !== s.selected ||
         lastState?.isolate !== s.isolate ||
-        lastState?.viewId !== s.viewId;
+        lastState?.viewId !== s.viewId ||
+        lastState?.hiddenIn !== s.hiddenIn;
       // Bật/tắt lớp da hay cơ đổi thang slider (`effectivePeel`) — tính lại độ tách.
       if (changed) amount = peelToExplode(effectivePeel(peel, s.visible));
       const moving = Math.abs(peel - s.explode) > 0.0001;
@@ -1479,6 +1484,10 @@ export default function AnatomyScene({
         const visible = new Set(s.visible);
         const selection = new Set(s.selected);
         const view = viewSet(s.viewId);
+        userHidden =
+          view && s.viewId && s.hiddenIn?.viewId === s.viewId
+            ? new Set(s.hiddenIn.parts.map((id) => partIndexById.get(id)).filter((i): i is number => i !== undefined))
+            : new Set();
         // Góc nhìn: mọi hệ trừ da, trừ những mảnh góc nhìn ẩn thêm (`views.ts`).
         const inScope = (p: (typeof parts)[number], i: number) =>
           view ? inView(view, p.system, i) : visible.has(p.system);
@@ -1495,6 +1504,7 @@ export default function AnatomyScene({
           skinSolid && p.system !== "integumentary" && !SKIN_VISIBLE.has(keyOf(p));
         // Lớp đã mờ hẳn (da sau 20%) không chiếm ô trong lưới tách.
         const isShown = (p: (typeof parts)[number], i: number) =>
+          !userHidden.has(i) &&
           (s.isolate ? selection.has(p.id) : inScope(p, i) || selection.has(p.id)) &&
           (s.isolate || selection.has(p.id) || (alphaOf(i) > 0.01 && !underSkin(p)));
         const visibleParts = parts.filter(isShown);

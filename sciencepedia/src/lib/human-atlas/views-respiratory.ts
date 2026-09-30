@@ -82,6 +82,41 @@ const LARYNX_LIGAMENTS = rule(
 const LARYNX = [LARYNX_CARTILAGES, EPIGLOTTIS, LARYNX_LIGAMENTS, LARYNX_MUSCLES];
 const HYOID = rule("FMA52749");
 
+// Từng cơ nội thanh quản (cặp phải/trái cùng một cấu trúc) — hàng của bảng "Cấu trúc".
+const POST_CRICOARYTENOID = rule("FMA46577", "FMA46578");
+const LAT_CRICOARYTENOID = rule("FMA46580", "FMA46581");
+const ARYTENOID = rule("FMA46582", "FMA46584", "FMA46585");
+const THYROARYTENOID = rule("FMA46589", "FMA46590");
+const VOCALIS = rule("FMA46592", "FMA46593");
+const ARYEPIGLOTTIC = rule("FMA46604", "FMA46605");
+const CRICOTHYROID = rule("FMA46611", "FMA46612", "FMA46613", "FMA46614");
+
+// Thành ngực và cơ hô hấp (hệ xương/cơ của BodyParts3D).
+const RIBS_STERNUM: PartRule = {
+  systems: ["skeletal"],
+  name: /\brib\b|costal cartilage|^manubrium$|^body of sternum$|^xiphoid process$/i,
+};
+const THORACIC_SPINE: PartRule = { systems: ["skeletal"], name: /thoracic vertebra$/i };
+const CLAVICLES = rule("FMA13322", "FMA13323");
+const DIAPHRAGM = rule("FMA13295");
+const EXTERNAL_INTERCOSTAL = rule("FMA9756");
+const STERNOCLEIDOMASTOID = rule("FMA13408", "FMA13409");
+const SCALENES = rule("FMA13388", "FMA13389", "FMA13390", "FMA13391", "FMA13392", "FMA13393");
+const PECTORALIS_MINOR = rule("FMA13375", "FMA13376");
+
+// Mạch phổi. "Right anterior segmental artery" (FMA8620) bị loại như ở tổng quan
+// tim: hai mảnh nằm ngang thận — lỗi vị trí của BodyParts3D (views-overviews.ts).
+const PULMONARY_TRUNK = rule("FMA8612");
+const RIGHT_PA = rule("FMA50872");
+const PULMONARY_ARTERIES: PartRule = {
+  systems: ["arterial"],
+  name: /^(right|left) pulmonary artery$|segmental artery|lobar artery/i,
+  exclude: /^right anterior segmental artery$/i,
+};
+const RIGHT_PV = rule("FMA49911", "FMA49914");
+const PULMONARY_VEINS: PartRule = { systems: ["venous"], name: /pulmonary vein$|segmental vein$/i };
+const HEART: PartRule = { systems: ["cardiac"] };
+
 export const RESPIRATORY_VIEWS: readonly AtlasViewDef[] = [
   // ------------------------------------------------------------ tổng quan
   {
@@ -90,11 +125,23 @@ export const RESPIRATORY_VIEWS: readonly AtlasViewDef[] = [
     kind: "overview",
     name: { vi: "Toàn bộ hệ hô hấp", en: "Whole respiratory system" },
     direction: "front",
-    focus: [{ systems: ["respiratory"] }, ...LARYNX],
+    // Sụn cánh mũi lớn và đường đan hầu nằm ở hệ khác của BodyParts3D; thêm vào để
+    // bảng "Cấu trúc" có đủ hàng "Sụn mũi" và "Hầu" thay vì "Phần còn lại".
+    focus: [{ systems: ["respiratory"] }, NASAL_CARTILAGES, PHARYNX, ...LARYNX],
     terms: ["hệ hô hấp", "respiratory system", "phổi", "lungs", "đường thở", "airway"],
   },
 
   // ------------------------------------------------------------ nhóm / vùng
+  {
+    id: "respiratory-upper-airway",
+    systemId: "respiratory",
+    kind: "group",
+    name: { vi: "Đường hô hấp trên", en: "Upper respiratory tract" },
+    direction: "left",
+    focus: [NASAL_CARTILAGES, CONCHAE, PHARYNX, ...LARYNX],
+    context: [NASAL_BONES, HYOID, TRACHEA],
+    terms: ["upper airway", "mũi", "hầu", "thanh quản"],
+  },
   {
     id: "respiratory-nose",
     systemId: "respiratory",
@@ -114,6 +161,16 @@ export const RESPIRATORY_VIEWS: readonly AtlasViewDef[] = [
     focus: [PHARYNX, ...LARYNX],
     context: [HYOID, TRACHEA],
     terms: ["đường hô hấp trên", "upper airway"],
+  },
+  {
+    id: "respiratory-laryngeal-muscles",
+    systemId: "respiratory",
+    kind: "group",
+    name: { vi: "Cơ thanh quản", en: "Laryngeal muscles" },
+    direction: "posterolateral",
+    focus: [LARYNX_MUSCLES],
+    context: [LARYNX_CARTILAGES, EPIGLOTTIS, HYOID],
+    terms: ["cơ nội thanh quản", "intrinsic muscles of larynx", "dây thanh", "vocal"],
   },
   {
     id: "respiratory-trachea-bronchi",
@@ -144,6 +201,79 @@ export const RESPIRATORY_VIEWS: readonly AtlasViewDef[] = [
     focus: [...RIGHT_TREE, ...LEFT_TREE],
     context: [TRACHEA, RIGHT_MAIN, LEFT_MAIN],
     terms: ["phổi", "lung", "phế quản", "bronchi"],
+  },
+  {
+    // Phổi trong khung xương: xương sườn, xương ức và cơ hoành hiện đặc như ảnh atlas;
+    // cột sống ngực và xương đòn chỉ làm bối cảnh.
+    id: "respiratory-lung-position",
+    systemId: "respiratory",
+    kind: "group",
+    name: { vi: "Vị trí của phổi", en: "Location of the lungs" },
+    direction: "front",
+    focus: [...RIGHT_LUNG, ...LEFT_LUNG, TRACHEA, RIGHT_MAIN, LEFT_MAIN, RIBS_STERNUM, DIAPHRAGM],
+    context: [THORACIC_SPINE, CLAVICLES],
+    terms: ["lồng ngực", "thoracic cage", "cơ hoành", "diaphragm", "phổi", "lung"],
+  },
+  {
+    // Mặt trong (trung thất) của phổi phải: camera đặt ở phía trái người mẫu (+x)
+    // nhìn sang. Chỉ phổi phải được vẽ nên phổi trái không che.
+    id: "respiratory-right-hilum",
+    systemId: "respiratory",
+    kind: "group",
+    name: { vi: "Rốn phổi phải", en: "Hilum of the right lung" },
+    direction: [1, 0.05, -0.1],
+    focus: [...RIGHT_LUNG, RIGHT_MAIN, ...RIGHT_TREE, RIGHT_PA, RIGHT_PV],
+    context: [TRACHEA],
+    terms: ["rốn phổi", "hilum", "cuống phổi", "lung root", "mặt trung thất"],
+  },
+  {
+    // Cơ chính (cơ hoành, gian sườn ngoài) + cơ phụ khi hít vào gắng sức (bậc thang: OpenStax
+    // 22.3; ức đòn chũm, ngực bé: StatPearls "Anatomy, Thorax, Muscles", NBK538321).
+    id: "respiratory-inspiration-muscles",
+    systemId: "respiratory",
+    kind: "group",
+    name: { vi: "Cơ hít vào", en: "Muscles of inspiration" },
+    direction: "front",
+    focus: [DIAPHRAGM, EXTERNAL_INTERCOSTAL, STERNOCLEIDOMASTOID, SCALENES, PECTORALIS_MINOR],
+    context: [RIBS_STERNUM, CLAVICLES, THORACIC_SPINE],
+    terms: ["cơ hô hấp", "respiratory muscles", "hít vào", "inhalation", "cơ hoành", "diaphragm"],
+  },
+  {
+    // Thở ra yên tĩnh là thụ động; thở ra gắng sức dùng cơ gian sườn trong và cơ thành bụng
+    // (OpenStax A&P 2e 22.3, 11.4). BodyParts3D 4.0 chỉ có cơ chéo bụng ngoài trong nhóm cơ thành bụng.
+    id: "respiratory-expiration-muscles",
+    systemId: "respiratory",
+    kind: "group",
+    name: { vi: "Cơ thở ra", en: "Muscles of expiration" },
+    direction: "front",
+    missing: {
+      vi: "Bộ dữ liệu thiếu cơ thẳng bụng, cơ chéo bụng trong và cơ ngang bụng",
+      en: "The dataset lacks rectus abdominis, internal oblique and transversus abdominis",
+    },
+    terms: ["thở ra", "exhalation", "cơ hô hấp", "respiratory muscles"],
+  },
+  {
+    id: "respiratory-innervation",
+    systemId: "respiratory",
+    kind: "group",
+    name: { vi: "Thần kinh hệ hô hấp", en: "Respiratory innervation" },
+    direction: "front",
+    missing: {
+      vi: "Bộ dữ liệu không có dây thần kinh hoành",
+      en: "The dataset has no phrenic nerve",
+    },
+    terms: ["thần kinh", "nerve", "phế vị", "vagus", "thần kinh hoành", "phrenic"],
+  },
+  {
+    // Tim và phổi làm bối cảnh: máu đi từ thất phải qua phổi về nhĩ trái.
+    id: "respiratory-pulmonary-circulation",
+    systemId: "respiratory",
+    kind: "group",
+    name: { vi: "Tuần hoàn phổi", en: "Pulmonary circulation" },
+    direction: "front",
+    focus: [PULMONARY_TRUNK, PULMONARY_ARTERIES, PULMONARY_VEINS],
+    context: [HEART, ...RIGHT_LUNG, ...LEFT_LUNG],
+    terms: ["động mạch phổi", "pulmonary artery", "tĩnh mạch phổi", "pulmonary vein", "tiểu tuần hoàn"],
   },
 
   // ------------------------------------------------------------ cấu trúc
@@ -316,5 +446,173 @@ export const RESPIRATORY_VIEWS: readonly AtlasViewDef[] = [
     focus: LEFT_TREE,
     context: [TRACHEA, LEFT_MAIN],
     terms: ["phổi trái", "left lung", "phế quản phân thùy", "segmental bronchus"],
+  },
+
+  // ---------------------------------------------- cấu trúc của các góc nhìn mới
+  // Cơ thanh quản, thành ngực, cơ hô hấp, mạch phổi. Mỗi cấu trúc dùng lại được ở
+  // nhiều góc nhìn (bảng "Cấu trúc" rút theo tập mảnh — xem atlas-model.ts).
+  {
+    id: "posterior-cricoarytenoid",
+    systemId: "respiratory",
+    kind: "structure",
+    name: { vi: "Cơ nhẫn phễu sau", en: "Posterior cricoarytenoid" },
+    direction: "back",
+    focus: [POST_CRICOARYTENOID],
+    context: [LARYNX_CARTILAGES],
+  },
+  {
+    id: "lateral-cricoarytenoid",
+    systemId: "respiratory",
+    kind: "structure",
+    name: { vi: "Cơ nhẫn phễu bên", en: "Lateral cricoarytenoid" },
+    direction: "posterolateral",
+    focus: [LAT_CRICOARYTENOID],
+    context: [LARYNX_CARTILAGES],
+  },
+  {
+    id: "arytenoid-muscle",
+    systemId: "respiratory",
+    kind: "structure",
+    name: { vi: "Cơ liên phễu", en: "Arytenoid muscle" },
+    direction: "back",
+    focus: [ARYTENOID],
+    context: [LARYNX_CARTILAGES],
+    terms: ["cơ phễu ngang", "cơ phễu chéo", "transverse arytenoid", "oblique arytenoid"],
+  },
+  {
+    id: "thyroarytenoid",
+    systemId: "respiratory",
+    kind: "structure",
+    name: { vi: "Cơ giáp phễu", en: "Thyroarytenoid" },
+    direction: "posterolateral",
+    focus: [THYROARYTENOID],
+    context: [LARYNX_CARTILAGES],
+  },
+  {
+    id: "vocalis",
+    systemId: "respiratory",
+    kind: "structure",
+    name: { vi: "Cơ thanh âm", en: "Vocalis" },
+    direction: "posterolateral",
+    focus: [VOCALIS],
+    context: [LARYNX_CARTILAGES],
+    terms: ["dây thanh", "vocal"],
+  },
+  {
+    id: "aryepiglottic-muscle",
+    systemId: "respiratory",
+    kind: "structure",
+    name: { vi: "Cơ phễu nắp thanh môn", en: "Aryepiglottic muscle" },
+    direction: "back",
+    focus: [ARYEPIGLOTTIC],
+    context: [LARYNX_CARTILAGES, EPIGLOTTIS],
+  },
+  {
+    id: "cricothyroid",
+    systemId: "respiratory",
+    kind: "structure",
+    name: { vi: "Cơ nhẫn giáp", en: "Cricothyroid" },
+    direction: "anterolateral",
+    focus: [CRICOTHYROID],
+    context: [LARYNX_CARTILAGES],
+  },
+  {
+    id: "ribs-sternum",
+    systemId: "respiratory",
+    kind: "structure",
+    name: { vi: "Xương sườn, sụn sườn và xương ức", en: "Ribs, costal cartilages and sternum" },
+    direction: "front",
+    focus: [RIBS_STERNUM],
+    terms: ["lồng ngực", "thoracic cage", "sụn sườn", "costal cartilage"],
+  },
+  {
+    id: "diaphragm",
+    systemId: "respiratory",
+    kind: "structure",
+    name: { vi: "Cơ hoành", en: "Diaphragm" },
+    direction: "front",
+    focus: [DIAPHRAGM],
+    context: [RIBS_STERNUM],
+  },
+  {
+    id: "external-intercostals",
+    systemId: "respiratory",
+    kind: "structure",
+    name: { vi: "Cơ gian sườn ngoài", en: "External intercostal muscles" },
+    direction: "front",
+    focus: [EXTERNAL_INTERCOSTAL],
+    context: [RIBS_STERNUM],
+  },
+  {
+    id: "sternocleidomastoid",
+    systemId: "respiratory",
+    kind: "structure",
+    name: { vi: "Cơ ức đòn chũm", en: "Sternocleidomastoid" },
+    direction: "anterolateral",
+    focus: [STERNOCLEIDOMASTOID],
+    context: [CLAVICLES],
+  },
+  {
+    id: "scalenes",
+    systemId: "respiratory",
+    kind: "structure",
+    name: { vi: "Cơ bậc thang", en: "Scalene muscles" },
+    direction: "anterolateral",
+    focus: [SCALENES],
+    terms: ["scalenus"],
+  },
+  {
+    id: "pectoralis-minor",
+    systemId: "respiratory",
+    kind: "structure",
+    name: { vi: "Cơ ngực bé", en: "Pectoralis minor" },
+    direction: "front",
+    focus: [PECTORALIS_MINOR],
+    context: [RIBS_STERNUM],
+  },
+  {
+    id: "pulmonary-trunk",
+    systemId: "respiratory",
+    kind: "structure",
+    name: { vi: "Thân động mạch phổi", en: "Pulmonary trunk" },
+    direction: "front",
+    focus: [PULMONARY_TRUNK],
+    context: [HEART],
+  },
+  {
+    id: "pulmonary-arteries",
+    systemId: "respiratory",
+    kind: "structure",
+    name: { vi: "Động mạch phổi", en: "Pulmonary arteries" },
+    direction: "front",
+    focus: [PULMONARY_ARTERIES],
+    context: [PULMONARY_TRUNK],
+  },
+  {
+    id: "right-pulmonary-artery",
+    systemId: "respiratory",
+    kind: "structure",
+    name: { vi: "Động mạch phổi phải", en: "Right pulmonary artery" },
+    direction: "front",
+    focus: [RIGHT_PA],
+    context: [PULMONARY_TRUNK],
+  },
+  {
+    id: "pulmonary-veins",
+    systemId: "respiratory",
+    kind: "structure",
+    name: { vi: "Tĩnh mạch phổi", en: "Pulmonary veins" },
+    direction: "front",
+    focus: [PULMONARY_VEINS],
+    context: [HEART],
+  },
+  {
+    id: "right-pulmonary-veins",
+    systemId: "respiratory",
+    kind: "structure",
+    name: { vi: "Tĩnh mạch phổi phải", en: "Right pulmonary veins" },
+    direction: "front",
+    focus: [RIGHT_PV],
+    context: [HEART],
   },
 ];

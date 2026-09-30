@@ -24,7 +24,9 @@ import { RESPIRATORY_VIEWS } from "./views-respiratory";
  *
  * Góc nhìn theo HỆ (`kind` overview/group/structure, preset ở `views-<hệ>.ts`)
  * dùng chung registry này nhưng chỉ hiện `focus` + `context` — xem
- * docs/architecture.md, mục "Góc nhìn theo hệ".
+ * docs/architecture.md, mục "Góc nhìn theo hệ". Lưới chỉ bày overview + group
+ * (góc nhìn giải phẫu); structure là lớp dưới, hiện trong bảng "Cấu trúc" của
+ * trình xem (`atlas-model.ts`) và qua ô tìm / `?view=`.
  *
  * Góc nhìn thiếu dữ liệu để dựng đúng thì mang `missing` (nói thiếu gì) và
  * không có quy tắc: thẻ hiện nhưng không bấm được. Không dựng bù bằng mảnh
@@ -332,6 +334,11 @@ export const ATLAS_VIEWS: readonly AtlasViewDef[] = [...REGIONAL_VIEWS, ...SYSTE
 
 export const viewKind = (view: AtlasViewDef): ViewKind => view.kind ?? "regional";
 export const isSystemView = (view: AtlasViewDef | null | undefined) => !!view && viewKind(view) !== "regional";
+/**
+ * Góc nhìn có thẻ trên lưới (cần ảnh thu nhỏ). Cấp cấu trúc không có thẻ: chụp
+ * ảnh cho chúng là ~7 s/ảnh trên SwiftShader cho thứ không ai thấy.
+ */
+export const hasCard = (view: AtlasViewDef) => viewKind(view) !== "structure";
 
 /** Hệ có góc nhìn theo hệ, theo thứ tự xuất hiện trong registry. */
 export function systemsWithViews(): SystemId[] {

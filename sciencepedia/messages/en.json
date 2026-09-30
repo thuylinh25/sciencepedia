@@ -762,23 +762,40 @@
       "tabSystem": "By system",
       "section": {
         "overview": "Overview",
-        "group": "Groups / regions",
+        "group": "Anatomical views",
         "structure": "Structures"
       },
+      "viewCount": "{count} anatomical views",
+      "openOverview": "Open overview",
+      "emptySystem": "This system has no anatomical views yet.",
       "dataNote": {
         "respiratory": "Lung parenchyma comes from Z-Anatomy (CC BY-SA 4.0); everything else from BodyParts3D. The model has no pleura or nasal mucosa. Laryngeal cartilages, muscles and ligaments are grouped by their FMA classification."
       },
       "searchHeading": "Views",
       "searchKind": {
         "overview": "System overview",
-        "group": "Group / region",
+        "group": "Anatomical view",
         "structure": "Structure",
         "regional": "Regional view"
       },
       "rendering": "Rendering…",
       "missing": "Not enough data",
       "chip": "View: {name}",
-      "clear": "Leave view {name}"
+      "clear": "Leave view {name}",
+      "structures": {
+        "title": "Structures",
+        "open": "Structures",
+        "openLabel": "Open the structures of this view",
+        "close": "Close structures",
+        "rest": "Other parts",
+        "select": "Select {name}",
+        "hide": "Hide {name}",
+        "show": "Show {name}",
+        "isolate": "Isolate {name}",
+        "showAll": "Show all",
+        "count": "Showing {shown} of {total} structures",
+        "backToSystems": "Back to systems"
+      }
     },
     "views": {
       "threeQuarter": "Three-quarter view",

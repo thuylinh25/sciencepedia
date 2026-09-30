@@ -274,6 +274,12 @@ export interface SceneState {
   fitFrame?: number;
   /** Góc nhìn đang áp (`views.ts`) — thay tập hệ bằng tập mảnh của góc nhìn. */
   viewId?: string | null;
+  /**
+   * Mảnh người đọc ẩn bằng bảng "Cấu trúc" của góc nhìn `viewId`. Gắn với góc
+   * nhìn chứ không đứng riêng: rời hay đổi góc nhìn là tự hết hiệu lực, không
+   * phải nhớ xoá ở từng lối ra.
+   */
+  hiddenIn?: { viewId: string; parts: readonly string[] } | null;
 }
 
 /**

@@ -14,11 +14,12 @@ import {
   REGIONAL_VIEWS,
   isSystemView,
   isUsableView,
-  systemViewSections,
   systemsWithViews,
   viewById,
   type AtlasViewDef,
 } from "@/lib/human-atlas/views";
+import { anatomicalSystem } from "@/lib/human-atlas/atlas-model";
+import { SYSTEM_DESCRIPTIONS } from "@/lib/human-atlas/system-descriptions";
 import { Button } from "@/components/ui/button";
 
 type Props = {
@@ -36,9 +37,12 @@ type Tab = "regional" | "system";
  * Lưới góc nhìn, hai tab:
  *
  * - "Theo vùng": một vùng cơ thể với mọi hệ nằm cạnh nhau (bên dưới).
- * - "Theo hệ": chọn một hệ, rồi ba khu Tổng quan → Nhóm/vùng → Cấu trúc. Thẻ
- *   dựng từ registry (`systemViewSections`), không viết tay từng thẻ; hệ chỉ
- *   hiện ở tab này khi đã có preset (hiện: hệ hô hấp).
+ * - "Theo hệ": chọn một hệ, rồi Tổng quan (một thẻ lớn) → các góc nhìn giải
+ *   phẫu (lưới đánh số). Cấu trúc KHÔNG có thẻ ở đây: chúng là lớp dưới, nằm
+ *   trong bảng "Cấu trúc" của trình xem sau khi mở một góc nhìn — lưới hai chục
+ *   thẻ "Sụn mũi", "Thuỳ dưới phổi trái"… là thư viện mô hình, không phải atlas
+ *   để học. Thẻ dựng từ `anatomicalSystem()`, không viết tay; hệ chỉ hiện ở
+ *   tab này khi đã có preset.
  *
  * Lưới phủ lên khung xem — theo lối Regional Views của
  * các atlas giải phẫu: thẻ lớn, ảnh chụp từ chính mô hình, nhãn đánh số ở chân
@@ -70,6 +74,8 @@ export function ViewsGallery({ locale, activeViewId, thumbnails, onChoose, onClo
     current && isSystemView(current) ? current.systemId : systems[0],
   );
   const tSystems = useTranslations("humanAtlas.systemNames");
+  const model = system ? anatomicalSystem(system) : null;
+  const summary = system ? SYSTEM_DESCRIPTIONS[system]?.short : undefined;
 
   useLayoutEffect(() => {
     const section = document.getElementById("atlas-viewer");
@@ -181,20 +187,44 @@ export function ViewsGallery({ locale, activeViewId, thumbnails, onChoose, onClo
             )}
             {system && (
               <>
-                <h3 className="text-center text-sm text-white/75">{tSystems(system)}</h3>
-                {systemViewSections(system).map(
-                  (section) =>
-                    section.views.length > 0 && (
-                      <section key={section.kind} aria-labelledby={`atlas-views-${section.kind}`} className="mt-5">
+                <h3 className="mt-2 text-center font-display text-lg text-white sm:text-xl">{tSystems(system)}</h3>
+                {!model || (!model.overview && model.views.length === 0) ? (
+                  <p className="mt-6 text-center text-sm text-white/60">{t("emptySystem")}</p>
+                ) : (
+                  <>
+                    {model.overview && (
+                      <section aria-labelledby="atlas-views-overview" className="mt-4">
+                        <h4 id="atlas-views-overview" className="sr-only">
+                          {t("section.overview")}
+                        </h4>
+                        <OverviewCard
+                          view={model.overview.def}
+                          usable={model.overview.usable}
+                          active={model.overview.def.id === activeViewId}
+                          src={thumbnails[model.overview.def.id]}
+                          summary={summary ? pick(summary) : null}
+                          count={model.views.length}
+                          onChoose={onChoose}
+                          pick={pick}
+                        />
+                      </section>
+                    )}
+                    {model.views.length > 0 && (
+                      <section aria-labelledby="atlas-views-group" className="mt-6">
                         <h4
-                          id={`atlas-views-${section.kind}`}
+                          id="atlas-views-group"
                           className="text-[11px] font-semibold tracking-[0.14em] text-white/60 uppercase"
                         >
-                          {t(`section.${section.kind}`)}
+                          {t("section.group")}
                         </h4>
-                        <ViewGrid views={section.views} {...{ activeViewId, thumbnails, onChoose, pick }} />
+                        <ViewGrid
+                          views={model.views.map((v) => v.def)}
+                          numbered
+                          {...{ activeViewId, thumbnails, onChoose, pick }}
+                        />
                       </section>
-                    ),
+                    )}
+                  </>
                 )}
                 {system === "respiratory" && (
                   <p className="mx-auto mt-6 max-w-2xl text-center text-xs leading-relaxed text-white/55">
@@ -269,12 +299,88 @@ function ViewGrid({
               )}
               <span className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 via-black/55 to-transparent px-2 pt-6 pb-2 text-center text-[13px] font-medium text-white">
                 {label}
-                {!usable && <span className="block text-[10px] font-normal text-white/60">{t("missing")}</span>}
+                {/* Điện thoại không có hover để đọc `title`: nói luôn thiếu gì. */}
+                {!usable && (
+                  <span className="block text-[10px] leading-snug font-normal text-white/60">
+                    {view.missing ? pick(view.missing) : t("missing")}
+                  </span>
+                )}
               </span>
             </button>
           </li>
         );
       })}
     </ul>
+  );
+}
+
+/**
+ * Thẻ "Tổng quan" của một hệ: to hơn thẻ lưới, kèm câu ngắn đã duyệt của hệ
+ * (`system-descriptions`) và số góc nhìn giải phẫu — điểm vào mặc định của hệ.
+ */
+function OverviewCard({
+  view,
+  usable,
+  active,
+  src,
+  summary,
+  count,
+  onChoose,
+  pick,
+}: {
+  view: AtlasViewDef;
+  usable: boolean;
+  active: boolean;
+  src: string | undefined;
+  summary: string | null;
+  count: number;
+  onChoose: (id: string) => void;
+  pick: (v: { vi: string; en: string }) => string;
+}) {
+  const t = useTranslations("humanAtlas.atlasViews");
+  return (
+    <button
+      type="button"
+      onClick={usable ? () => onChoose(view.id) : undefined}
+      aria-pressed={usable ? active : undefined}
+      aria-disabled={!usable || undefined}
+      className={cn(
+        "group mx-auto flex w-full max-w-2xl items-stretch gap-4 overflow-hidden rounded-xl bg-white/[0.06] p-3 text-left outline-none ring-offset-2 ring-offset-[#05070a] transition focus-visible:ring-[3px] focus-visible:ring-ring sm:gap-6 sm:p-4",
+        usable ? "hover:bg-white/[0.1]" : "cursor-not-allowed",
+        active && "ring-2 ring-accent",
+      )}
+    >
+      <span className="relative block aspect-[4/5] w-28 shrink-0 overflow-hidden rounded-lg bg-white/[0.04] sm:w-44">
+        {src ? (
+          // Data URL do cảnh 3D chụp ở client — next/image không tối ưu được nó.
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
+            src={src}
+            alt=""
+            width={240}
+            height={300}
+            className="size-full object-contain transition-transform duration-300 group-hover:scale-[1.03]"
+          />
+        ) : (
+          <span
+            aria-hidden
+            className={cn("absolute inset-0 grid place-items-center text-[11px] text-white/40", usable && "animate-pulse")}
+          >
+            {usable ? t("rendering") : ""}
+          </span>
+        )}
+      </span>
+      <span className="flex min-w-0 flex-col justify-center gap-1.5">
+        <span className="text-[11px] font-semibold tracking-[0.14em] text-white/60 uppercase">{t("section.overview")}</span>
+        <span className="font-display text-lg leading-tight text-white sm:text-2xl">{pick(view.name)}</span>
+        {summary && <span className="line-clamp-3 text-xs leading-relaxed text-white/70 sm:text-sm">{summary}</span>}
+        <span className="text-xs text-white/55">{t("viewCount", { count })}</span>
+        {usable && (
+          <span className="mt-1 inline-flex w-fit rounded-full bg-white/15 px-3 py-1 text-xs font-medium text-white group-hover:bg-white/25">
+            {t("openOverview")}
+          </span>
+        )}
+      </span>
+    </button>
   );
 }

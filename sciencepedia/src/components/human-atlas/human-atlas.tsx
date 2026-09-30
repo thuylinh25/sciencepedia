@@ -79,9 +79,11 @@ import { AtlasErrorBoundary } from "@/components/human-atlas/atlas-error-boundar
 import { PANEL } from "@/components/human-atlas/panel";
 import { StructureDetail } from "@/components/human-atlas/structure-detail";
 import { StructureSearch } from "@/components/human-atlas/structure-search";
+import { StructuresPanel } from "@/components/human-atlas/structures-panel";
 import { SystemsPanel } from "@/components/human-atlas/systems-panel";
 import { ViewsGallery } from "@/components/human-atlas/views-gallery";
 import { isSystemView, isUsableView, overviewFor, viewById, viewParts } from "@/lib/human-atlas/views";
+import { viewStructures, type AnatomicalStructure } from "@/lib/human-atlas/atlas-model";
 import { withSupplements } from "@/lib/human-atlas/supplements";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import type { SceneError } from "@/components/human-atlas/anatomy-scene";
@@ -271,15 +273,74 @@ export function HumanAtlas({
     () => (activeView && systemView ? new Set([...activeView.focus, ...(activeView.context ?? [])]) : null),
     [activeView, systemView],
   );
+  // ------------------------------------------ cấu trúc của góc nhìn đang mở
+  const structures = useMemo(() => viewStructures(state.viewId), [state.viewId]);
+  const hiddenParts = useMemo(
+    () => new Set(state.viewId && state.hiddenIn?.viewId === state.viewId ? state.hiddenIn.parts : []),
+    [state.viewId, state.hiddenIn],
+  );
+  /**
+   * Cấu trúc đang chọn từ bảng. Suy từ tập mảnh đang chọn chứ không tin riêng id:
+   * bấm một mảnh trên mô hình, tìm kiếm hay "Đặt lại" đổi `selected` mà không phải
+   * nhớ xoá id ở từng lối ấy.
+   */
+  const [structureId, setStructureId] = useState<string | null>(null);
+  const selectedStructure =
+    structures.find(
+      (s) =>
+        s.id === structureId &&
+        s.parts.length === state.selected.length &&
+        s.parts.every((id) => state.selected.includes(id)),
+    ) ?? null;
+  const setHidden = (parts: string[]) =>
+    setState((s) => (s.viewId ? { ...s, hiddenIn: parts.length ? { viewId: s.viewId, parts } : null } : s));
+  const selectStructure = (item: AnatomicalStructure) => {
+    setDetails(false);
+    if (selectedStructure?.id === item.id) {
+      setStructureId(null);
+      setState((s) => ({ ...s, selected: [], isolate: false }));
+      return;
+    }
+    setStructureId(item.id);
+    setState((s) => ({ ...s, selected: [...item.parts], isolate: false, rotate: false, focus: s.focus + 1 }));
+  };
+  const toggleStructure = (item: AnatomicalStructure) => {
+    const off = item.parts.every((id) => hiddenParts.has(id));
+    const next = new Set(hiddenParts);
+    item.parts.forEach((id) => (off ? next.delete(id) : next.add(id)));
+    setHidden([...next]);
+    // Ẩn đúng cấu trúc đang chọn / xem riêng: bỏ chọn, không để "xem riêng" một thứ vô hình.
+    if (!off && selectedStructure?.id === item.id) {
+      setStructureId(null);
+      setState((s) => ({ ...s, selected: [], isolate: false }));
+    }
+  };
+  const isolateStructure = (item: AnatomicalStructure) => {
+    setDetails(false);
+    if (selectedStructure?.id === item.id && state.isolate) {
+      setState((s) => ({ ...s, isolate: false }));
+      return;
+    }
+    setStructureId(item.id);
+    setHidden([...hiddenParts].filter((id) => !item.parts.includes(id)));
+    setState((s) => ({ ...s, selected: [...item.parts], isolate: true, explode: 0, rotate: false }));
+  };
+  const showAllStructures = () => {
+    setStructureId(null);
+    setDetails(false);
+    setState((s) => ({ ...s, hiddenIn: null, selected: [], isolate: false, fitFrame: (s.fitFrame ?? 0) + 1 }));
+  };
+
   const visibleCount =
     atlas?.parts.filter((p) =>
-      state.isolate
+      !hiddenParts.has(p.id) &&
+      (state.isolate
         ? state.selected.includes(p.id)
         : (viewOnly
             ? viewOnly.has(p.id)
             : viewHidden
               ? p.system !== "integumentary" && !viewHidden.has(p.id)
-              : state.visible.includes(p.system)) || state.selected.includes(p.id),
+              : state.visible.includes(p.system)) || state.selected.includes(p.id)),
     ).length ?? 0;
   const detailOpen = details && selectedParts.length > 0 && !!chosen;
 
@@ -472,6 +533,8 @@ export function HumanAtlas({
       setState((s) => ({
         ...s,
         viewId: id,
+        // Mở (lại) một góc nhìn là mở nó nguyên vẹn — cấu trúc ẩn lần trước không theo về.
+        hiddenIn: null,
         visible: own ?? activeSystems.filter((x) => x !== "integumentary"),
         selected: [],
         isolate: false,
@@ -708,7 +771,30 @@ export function HumanAtlas({
         </Button>
       </nav>
 
-      {/* ------------------------------------------------------ bảng */}
+      {/* ------------------------------------------------------ bảng
+          Góc nhìn theo hệ có cấu trúc: bảng "Cấu trúc" thay chỗ danh sách hệ. */}
+      {structures.length > 0 && viewName ? (
+        <StructuresPanel
+          open={panel === "layers"}
+          viewName={viewName}
+          locale={locale}
+          structures={structures}
+          hidden={hiddenParts}
+          selectedId={selectedStructure?.id ?? null}
+          isolated={state.isolate}
+          onSelect={selectStructure}
+          onToggle={toggleStructure}
+          onIsolate={isolateStructure}
+          onShowAll={showAllStructures}
+          onBack={() => {
+            setPanel(null);
+            setStructureId(null);
+            setDetails(false);
+            clearView();
+          }}
+          onClose={() => setPanel(null)}
+        />
+      ) : (
       <SystemsPanel
         open={panel === "layers"}
         systems={panelSystems}
@@ -722,6 +808,7 @@ export function HumanAtlas({
         onToggle={toggle}
         onShowOnly={showOnly}
       />
+      )}
 
       {gallery && (
         <ViewsGallery
@@ -872,12 +959,14 @@ export function HumanAtlas({
           variant="ghost"
           className="h-auto flex-col gap-1 px-2 py-1.5 text-[11px] atlas-wide:hidden"
           onClick={() => openPanel("layers")}
-          aria-label={t("openSystems")}
+          aria-label={structures.length > 0 ? t("atlasViews.structures.openLabel") : t("openSystems")}
           aria-expanded={panel === "layers"}
           aria-controls="atlas-systems"
         >
           <Layers3 aria-hidden className="size-5" />
-          <span className="max-[379px]:sr-only atlas-short:sr-only">{t("systems")}</span>
+          <span className="max-[379px]:sr-only atlas-short:sr-only">
+            {structures.length > 0 ? t("atlasViews.structures.open") : t("systems")}
+          </span>
         </Button>
         <div className="min-w-0 flex-1">
           <div className="mb-1.5 flex items-center justify-between gap-2 text-xs whitespace-nowrap">
