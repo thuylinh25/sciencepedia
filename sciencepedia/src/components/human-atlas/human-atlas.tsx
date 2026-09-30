@@ -777,6 +777,7 @@ export function HumanAtlas({
         <StructuresPanel
           open={panel === "layers"}
           viewName={viewName}
+          systemName={viewDef ? t(`systemNames.${viewDef.systemId}`) : ""}
           note={viewDef?.partial ? (locale === "vi" ? viewDef.partial.vi : viewDef.partial.en) : null}
           locale={locale}
           structures={structures}
@@ -787,11 +788,13 @@ export function HumanAtlas({
           onToggle={toggleStructure}
           onIsolate={isolateStructure}
           onShowAll={showAllStructures}
+          // Về trang của hệ: lưới Góc nhìn tự mở tab "Theo hệ" đúng hệ của góc nhìn
+          // đang xem. Giữ nguyên góc nhìn — đóng lưới là về lại chỗ cũ.
           onBack={() => {
             setPanel(null);
-            setStructureId(null);
             setDetails(false);
-            clearView();
+            setGallery(true);
+            setGalleryOpened(true);
           }}
           onClose={() => setPanel(null)}
         />

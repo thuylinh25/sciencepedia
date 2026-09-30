@@ -796,7 +796,7 @@
         "isolate": "Xem riêng {name}",
         "showAll": "Hiện tất cả",
         "count": "Đang hiện {shown}/{total} cấu trúc",
-        "backToSystems": "Về các hệ"
+        "backToSystem": "Về {system}"
       }
     },
     "views": {

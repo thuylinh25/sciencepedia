@@ -796,7 +796,7 @@
         "isolate": "Isolate {name}",
         "showAll": "Show all",
         "count": "Showing {shown} of {total} structures",
-        "backToSystems": "Back to systems"
+        "backToSystem": "Back to {system}"
       }
     },
     "views": {
