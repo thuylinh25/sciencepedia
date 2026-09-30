@@ -278,11 +278,15 @@ export default function AnatomyScene({
     const room = new RoomEnvironment();
     const env = pmrem.fromScene(room, 0.04);
     scene.environment = env.texture;
-    scene.environmentIntensity = 0.28;
+    // Fill gián tiếp (2026-09-30): môi trường 0,28 + đèn bán cầu có mặt đất gần đen
+    // (0x14161a) để mặt khuất của cơ, sụn sẫm màu gần như chỉ còn key light — những
+    // mảng đen trên thẻ góc nhìn. Nâng vừa đủ để mặt khuất có màu; không tăng key,
+    // để phổi, xương sáng không cháy (ACES vẫn nén vùng sáng).
+    scene.environmentIntensity = 0.36;
     room.dispose();
     pmrem.dispose();
 
-    const hemisphere = new T.HemisphereLight(0xf2eee6, 0x14161a, 0.32);
+    const hemisphere = new T.HemisphereLight(0xf2eee6, 0x363a42, 0.42);
     scene.add(hemisphere);
     scene.add(camera);
     const cameraLight = (color: number, intensity: number, x: number, y: number, z: number) => {
@@ -509,11 +513,22 @@ export default function AnatomyScene({
           );
       shader.fragmentShader =
         "varying float ghostOn;\n" +
-        shader.fragmentShader.replace(
-          "#include <clipping_planes_fragment>",
-          "#include <clipping_planes_fragment>\nif (ghostOn < 0.5) discard;",
-        );
+        shader.fragmentShader
+          .replace("#include <clipping_planes_fragment>", "#include <clipping_planes_fragment>\nif (ghostOn < 0.5) discard;")
+          /*
+           * Kiểu X-quang (2026-09-30): bối cảnh TỰ SÁNG theo viền (fresnel), không theo
+           * đèn. Bản trước chiếu sáng như mô thật ở độ đục 0,2: mặt quay khỏi key light
+           * gần đen, và 20% của gần-đen chồng lên nền tối là những mảng xám đen — phổi
+           * mờ quanh cây phế quản, thành xương khoang mũi, lồng ngực quanh dây thần kinh
+           * "chìm" (chủ sản phẩm báo). Độ đục dời từ lõi ra viền (lõi ~0,09, viền ~0,35),
+           * trung bình giữ quanh 0,2 — không tăng độ đục để làm sáng.
+           */
+          .replace(
+            "#include <emissivemap_fragment>",
+            "#include <emissivemap_fragment>\nfloat ghostRim = pow(1.0 - abs(dot(normal, normalize(vViewPosition))), 2.0);\ntotalEmissiveRadiance += diffuseColor.rgb * (0.22 + 0.6 * ghostRim);\ndiffuseColor.a *= 0.45 + 1.3 * ghostRim;",
+          );
     };
+    ghostMaterial.customProgramCacheKey = () => "ghost";
     materials.push(ghostMaterial);
     /** Góc nhìn đang có mảnh bối cảnh hiện — khi đó mới cần lượt bóng mờ. */
     let ghostActive = false;
@@ -1380,6 +1395,10 @@ export default function AnatomyScene({
       const def = viewById(id);
       const pixelRatio = renderer.getPixelRatio();
       if (!view || !def || el.clientWidth < THUMB_W || el.clientHeight < THUMB_H) return;
+      // Vẽ gấp đôi rồi thu nhỏ (khi khung đủ chỗ): dây thần kinh 1–2 mm hẹp hơn một điểm
+      // ảnh ở 240 px, khử răng cưa trộn nó với bối cảnh thành xám — thẻ "Thần kinh hệ hô
+      // hấp" trông như lưới đen (2026-09-30). Gấp đôi giữ được màu của nét mảnh.
+      const ss = el.clientWidth >= THUMB_W * 2 && el.clientHeight >= THUMB_H * 2 ? 2 : 1;
       const savedData = data.slice();
       const savedSelected = selectedData.slice();
       // Ảnh thu nhỏ có bối cảnh như khung xem: cây phế quản trong phổi mờ, mạch phổi
@@ -1434,8 +1453,8 @@ export default function AnatomyScene({
         }),
       );
       renderer.setScissorTest(true);
-      renderer.setViewport(0, 0, THUMB_W, THUMB_H);
-      renderer.setScissor(0, 0, THUMB_W, THUMB_H);
+      renderer.setViewport(0, 0, THUMB_W * ss, THUMB_H * ss);
+      renderer.setScissor(0, 0, THUMB_W * ss, THUMB_H * ss);
       renderer.clear();
       renderer.render(scene, camera);
       const ghostWas = ghostActive;
@@ -1446,14 +1465,15 @@ export default function AnatomyScene({
       out.width = THUMB_W;
       out.height = THUMB_H;
       const drawn = renderer.domElement;
-      out
-        .getContext("2d")
+      const ctx2d = out.getContext("2d");
+      if (ctx2d) ctx2d.imageSmoothingQuality = "high";
+      ctx2d
         ?.drawImage(
           drawn,
           0,
-          drawn.height - THUMB_H * pixelRatio,
-          THUMB_W * pixelRatio,
-          THUMB_H * pixelRatio,
+          drawn.height - THUMB_H * ss * pixelRatio,
+          THUMB_W * ss * pixelRatio,
+          THUMB_H * ss * pixelRatio,
           0,
           0,
           THUMB_W,

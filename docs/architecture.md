@@ -604,6 +604,13 @@ ghi depth, không xoá bộ đệm — cấu trúc chính vẫn che bối cảnh
 đụng thứ tự vẽ: trên màn DPR 1 thành lưới sọc, thu nhỏ thì moiré — chủ sản phẩm chê. KHÔNG bật
 `transparent` trên vật liệu thường (mảnh bối cảnh chung vật liệu/lượt vẽ với mảnh nổi bật). Có bối
 cảnh thì không AO: composer vẽ vào render target, depth màn hình trống, bóng mờ sẽ đè lên tất cả.
+**Bối cảnh tự sáng theo viền, không theo đèn** (2026-09-30): bản chiếu sáng như mô thật ở độ đục 0,2 cho
+mặt quay khỏi key light gần đen — 20% của gần-đen trên nền tối là mảng xám đen (thẻ Mũi, Cây phế quản, Thần
+kinh hệ hô hấp "chìm"). Nay fresnel: tự phát sáng + đục ở viền (~0,35), trong ở lõi (~0,09) — trung bình vẫn
+~0,2, KHÔNG tăng độ đục để làm sáng. Kèm fill gián tiếp nâng vừa (môi trường 0,36, mặt đất đèn bán cầu
+0x363a42 thay 0x14161a); key giữ nguyên để phổi/xương không cháy. Không có texture/GLB trong đường vẽ này
+(mesh nhị phân: vị trí, pháp tuyến, chỉ số — không UV), nên không có lỗi colorSpace texture để sửa. Ảnh thu
+nhỏ vẽ 2× rồi thu nhỏ: dây thần kinh 1–2 mm hẹp hơn một điểm ảnh ở 240 px, khử răng cưa trộn nó thành xám.
 
 **Ảnh thu nhỏ chụp mọi lớp ĐỤC**, không theo độ đậm đang có ở khung xem: độ đậm theo lớp bóc tính từ tập hệ đang bật, nên chụp khi đang ở "Phổi" (không hệ cơ) thì cơ opacity 0 — ảnh bìa "Cơ hít vào" chỉ còn bóng xương sườn. Mở góc nhìn luôn về nguyên khối, ảnh bìa phải khớp thế.
 
