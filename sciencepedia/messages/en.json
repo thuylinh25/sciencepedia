@@ -751,6 +751,11 @@
     "searchNoteEmpty": "Start with a major organ, or search every named structure.",
     "closeSearch": "Close search",
     "pieces": "{count, plural, one {# piece} other {# pieces}}",
+    "searchPick": "Add {name} to the selection",
+    "searchUnpick": "Remove {name} from the selection",
+    "searchPicked": "Selected",
+    "searchClearPicked": "Clear all",
+    "searchPickHint": "Press ＋ (or Shift+Enter) to select several structures at once.",
     "about": "About this atlas",
     "cameraControls": "Camera controls",
     "atlasViews": {
@@ -824,7 +829,8 @@
       "assembled": "Adult human · Male",
       "separated": "Separated structures",
       "inventory": "Anatomical inventory",
-      "isolated": "Isolated structure"
+      "isolated": "Isolated structure",
+      "picked": "{count} isolated structures"
     },
     "hintOrbit": "Drag to orbit",
     "hintPan": "Drag to pan",

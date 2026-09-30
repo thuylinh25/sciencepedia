@@ -751,6 +751,11 @@
     "searchNoteEmpty": "Bắt đầu với một cơ quan lớn, hoặc tìm bất kỳ cấu trúc có tên nào — tiếng Việt, tiếng Anh, có dấu hay không dấu đều được.",
     "closeSearch": "Đóng tìm kiếm",
     "pieces": "{count, plural, other {# mảnh}}",
+    "searchPick": "Thêm {name} vào vùng chọn",
+    "searchUnpick": "Bỏ {name} khỏi vùng chọn",
+    "searchPicked": "Đang chọn",
+    "searchClearPicked": "Bỏ chọn tất cả",
+    "searchPickHint": "Bấm ＋ (hoặc Shift+Enter) để chọn cùng lúc nhiều cấu trúc.",
     "about": "Về bản đồ này",
     "cameraControls": "Điều khiển góc nhìn",
     "atlasViews": {
@@ -824,7 +829,8 @@
       "assembled": "Người trưởng thành · Nam",
       "separated": "Các cấu trúc tách rời",
       "inventory": "Toàn bộ các mảnh",
-      "isolated": "Cấu trúc đang xem riêng"
+      "isolated": "Cấu trúc đang xem riêng",
+      "picked": "{count} cấu trúc đang xem riêng"
     },
     "hintOrbit": "Kéo để xoay",
     "hintPan": "Kéo để di chuyển",

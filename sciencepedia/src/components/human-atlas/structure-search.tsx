@@ -4,7 +4,7 @@
 
 import { useEffect, useId, useMemo, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
-import { Search, X } from "lucide-react";
+import { Check, Plus, Search, X } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import type { Concept } from "@/lib/human-atlas/anatomy";
@@ -27,17 +27,28 @@ import { PANEL } from "@/components/human-atlas/panel";
  * Góc nhìn (tổng quan hệ, nhóm, cấu trúc — `searchViews`) đứng đầu danh sách,
  * cùng một listbox: gõ "phổi" ra Hệ hô hấp, Phổi, Phổi phải, Phổi trái trước,
  * rồi mới tới các khái niệm FMA mang chữ ấy.
+ *
+ * Chọn NHIỀU cấu trúc cùng lúc (2026-09-30): nút ＋ ở mỗi hàng hoặc Shift+Enter thêm/bỏ
+ * cấu trúc khỏi tập chọn mà KHÔNG đóng ô tìm — tìm "xương đùi", ＋, tìm "xương chày",
+ * ＋. Bấm vào tên vẫn là thay cả vùng chọn và đóng. Nút ＋ `tabIndex -1`: phím Tab
+ * không lọt vào từng hàng của listbox; bàn phím dùng Shift+Enter.
  */
 export function StructureSearch({
   index,
   locale,
   onChoose,
+  picked,
+  onTogglePicked,
+  onClearPicked,
   onChooseView,
   onClose,
 }: {
   index: SearchIndex | null;
   locale: string;
   onChoose: (concept: Concept) => void;
+  picked: readonly Concept[];
+  onTogglePicked: (concept: Concept) => void;
+  onClearPicked: () => void;
   onChooseView: (viewId: string) => void;
   onClose: () => void;
 }) {
@@ -82,6 +93,10 @@ export function StructureSearch({
     } else if (e.key === "ArrowUp") {
       e.preventDefault();
       setActive((i) => Math.max(0, i - 1));
+    } else if (e.key === "Enter" && e.shiftKey) {
+      e.preventDefault();
+      const concept = results[active - views.length];
+      if (concept) onTogglePicked(concept);
     } else if (e.key === "Enter") {
       e.preventDefault();
       pickItem(active);
@@ -134,6 +149,32 @@ export function StructureSearch({
         />
       </div>
 
+      {picked.length > 0 && (
+        <div className="mt-2 flex flex-wrap items-center gap-1.5 px-1" aria-live="polite">
+          <span className="text-xs text-muted-foreground">{t("searchPicked")}</span>
+          {picked.map((c) => {
+            const name = displayName(locale, c.id, c.name);
+            return (
+              <button
+                key={c.id}
+                type="button"
+                onClick={() => onTogglePicked(c)}
+                aria-label={t("searchUnpick", { name })}
+                className="inline-flex max-w-full items-center gap-1 rounded-full bg-muted px-2.5 py-1 text-xs outline-none hover:bg-muted/70 focus-visible:ring-[3px] focus-visible:ring-ring/50"
+              >
+                <span className="truncate">{name}</span>
+                <X aria-hidden className="size-3 shrink-0" />
+              </button>
+            );
+          })}
+          {picked.length > 1 && (
+            <Button variant="ghost" size="sm" className="h-7 px-2 text-xs" onClick={onClearPicked}>
+              {t("searchClearPicked")}
+            </Button>
+          )}
+        </div>
+      )}
+
       <ul
         ref={list}
         id={listId}
@@ -177,6 +218,7 @@ export function StructureSearch({
           const i = n + views.length;
           const name = displayName(locale, concept.id, concept.name);
           const translated = locale === "vi" && hasViName(concept.id, concept.name);
+          const isPicked = picked.some((c) => c.id === concept.id);
           return (
             <li
               key={concept.id}
@@ -203,13 +245,30 @@ export function StructureSearch({
               <span className="shrink-0 text-xs text-muted-foreground tabular-nums">
                 {t("pieces", { count: concept.elements.length })}
               </span>
+              <button
+                type="button"
+                tabIndex={-1}
+                aria-pressed={isPicked}
+                aria-label={isPicked ? t("searchUnpick", { name }) : t("searchPick", { name })}
+                title={isPicked ? t("searchUnpick", { name }) : t("searchPick", { name })}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  onTogglePicked(concept);
+                }}
+                className={cn(
+                  "grid size-7 shrink-0 place-items-center self-center rounded-md border text-muted-foreground outline-none hover:bg-background hover:text-foreground",
+                  isPicked && "border-accent bg-accent/15 text-foreground",
+                )}
+              >
+                {isPicked ? <Check aria-hidden className="size-4" /> : <Plus aria-hidden className="size-4" />}
+              </button>
             </li>
           );
         })}
       </ul>
 
       <p className="mt-2 px-1 text-xs leading-relaxed text-muted-foreground">
-        {query ? t("searchNoteQuery") : t("searchNoteEmpty")}
+        {query ? t("searchNoteQuery") : t("searchNoteEmpty")} {t("searchPickHint")}
       </p>
     </section>
   );

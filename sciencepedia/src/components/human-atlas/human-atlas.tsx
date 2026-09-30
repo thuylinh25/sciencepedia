@@ -212,6 +212,12 @@ export function HumanAtlas({
   const [details, setDetails] = useState(false);
   const [about, setAbout] = useState(false);
   const [chosen, setChosen] = useState<Concept | null>(null);
+  /**
+   * Các cấu trúc chọn CÙNG LÚC từ ô tìm (nút ＋ / Shift+Enter) — xương đùi và xương
+   * chày, tim và phổi… Một phần tử = chọn thường. Nhiều phần tử: `chosen` null (bảng
+   * chi tiết nói về MỘT cấu trúc, không gộp được), mô hình xem riêng hợp của chúng.
+   */
+  const [picked, setPicked] = useState<Concept[]>([]);
   const [focusDetail, setFocusDetail] = useState(false);
   /** Người đọc đã chạm/kéo lần nào chưa — để hạ độ nổi của dòng gợi ý thao tác. */
   const [interacted, setInteracted] = useState(false);
@@ -351,6 +357,7 @@ export function HumanAtlas({
       { focus = true, userInitiated = true, isolate = false } = {},
     ) => {
       setChosen(concept);
+      setPicked([concept]);
       setState((s) => ({
         ...s,
         selected: concept.elements,
@@ -371,6 +378,7 @@ export function HumanAtlas({
       const p = parts.get(id);
       if (!p) return;
       setChosen({ id: p.conceptId, name: p.name, elements: [id] });
+      setPicked([]);
       setState((s) => ({ ...s, selected: [id], isolate: false, rotate: false }));
       setDetails(true);
       setFocusDetail(true);
@@ -383,9 +391,40 @@ export function HumanAtlas({
 
   const clearSelection = () => {
     setState((s) => ({ ...s, selected: [], isolate: false }));
+    setPicked([]);
     setDetails(false);
     writeStructureParam(null);
   };
+
+  /** Áp một tập cấu trúc chọn cùng lúc: xem riêng hợp mảnh của chúng, link `?structure=a,b`. */
+  const applyPicked = (next: Concept[], { writeUrl = true } = {}) => {
+    if (next.length === 0) {
+      clearSelection();
+      return;
+    }
+    setPicked(next);
+    setChosen(next.length === 1 ? next[0] : null);
+    setState((s) => ({
+      ...s,
+      selected: [...new Set(next.flatMap((c) => c.elements))],
+      isolate: true,
+      rotate: false,
+      focus: s.focus + 1,
+    }));
+    setDetails(next.length === 1);
+    setFocusDetail(false);
+    if (index && writeUrl) writeStructureParam(next.map((c) => linkValue(index, c)).join(","));
+  };
+  const togglePicked = (concept: Concept) => {
+    // Đang có một lựa chọn thường (chạm vào mô hình) thì ＋ bắt đầu tập mới từ đó.
+    const current = chosen ? index?.byId.get(chosen.id.toLowerCase()) : undefined;
+    const base = picked.length > 0 ? picked : current ? [current] : [];
+    applyPicked(base.some((c) => c.id === concept.id) ? base.filter((c) => c.id !== concept.id) : [...base, concept]);
+  };
+  // Lối nào khác xoá vùng chọn (đổi hệ, góc nhìn, Đặt lại…) thì tập chọn cùng lúc cũng hết.
+  useEffect(() => {
+    if (state.selected.length === 0) setPicked((p) => (p.length ? [] : p));
+  }, [state.selected]);
 
   // Đổi hệ luôn về nguyên khối: độ tách đang kéo dở của hệ trước không có
   // nghĩa gì với hệ mới, và người đọc cần thấy hệ ấy ở đúng chỗ trong cơ thể trước.
@@ -587,15 +626,19 @@ export function HumanAtlas({
   useEffect(() => {
     if (!index || deepLinked.current) return;
     deepLinked.current = true;
-    const concept = resolveStructure(
-      index,
-      new URLSearchParams(window.location.search).get("structure"),
-    );
+    // `?structure=femur,tibia`: nhiều cấu trúc cùng lúc (tập chọn từ ô tìm).
+    const concepts = (new URLSearchParams(window.location.search).get("structure") ?? "")
+      .split(",")
+      .map((v) => resolveStructure(index, v))
+      .filter((c, i, all): c is Concept => !!c && all.findIndex((x) => x?.id === c.id) === i);
     // Mở sẵn ở chế độ "Xem riêng": phần lớn cơ quan nằm sau lớp cơ và xương, nên
     // tô sáng mà không tách ra là tô sáng một thứ không ai thấy. Người đến từ
     // một link "xem tim" muốn thấy tim; nút "Hiện giải phẫu xung quanh" trả lại
     // toàn cảnh.
-    if (concept) choose(concept, { focus: true, userInitiated: false, isolate: true });
+    if (concepts.length === 1) choose(concepts[0], { focus: true, userInitiated: false, isolate: true });
+    else if (concepts.length > 1) applyPicked(concepts, { writeUrl: false });
+    // `applyPicked` đọc state mới nhất qua setState; chỉ chạy một lần khi index về.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [index, choose]);
 
   // "/" mở tìm kiếm — giữ phím tắt của bản gốc, trừ khi đang gõ ở ô nhập khác.
@@ -637,12 +680,15 @@ export function HumanAtlas({
   );
 
   const viewDef = viewById(state.viewId);
-  const viewName = viewDef ? (locale === "vi" ? viewDef.name.vi : viewDef.name.en) : null;  const caption = viewName && !state.isolate && spread < 0.05
+  const viewName = viewDef ? (locale === "vi" ? viewDef.name.vi : viewDef.name.en) : null;
+  const caption = viewName && !state.isolate && spread < 0.05
     ? viewName
     : state.isolate
     ? chosen
       ? displayName(locale, chosen.id, chosen.name)
-      : t("caption.isolated")
+      : picked.length > 1
+        ? t("caption.picked", { count: picked.length })
+        : t("caption.isolated")
     : spread > 0.95
       ? t("caption.inventory")
       : spread > 0.05
@@ -859,6 +905,9 @@ export function HumanAtlas({
           // `?structure=` — đốt L1 nằm sau ruột, tô sáng tại chỗ là tô sáng thứ
           // không ai thấy. "Hiện giải phẫu xung quanh" trả lại toàn cảnh.
           onChoose={(c) => choose(c, { isolate: true })}
+          picked={picked}
+          onTogglePicked={togglePicked}
+          onClearPicked={clearSelection}
           onChooseView={(id) => {
             selectView(id, true);
             setPanel(null);

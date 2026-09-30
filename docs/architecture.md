@@ -643,6 +643,10 @@ liệu/đèn — cảnh 3D chính vẫn #05070a (lý do ở `SCENE_BACKGROUND`).
   + liệt kê tiền tố (supra/sub/retro-pyloric…). Phế vị và gian sườn dùng lại cấu trúc của hô hấp — khai báo
   trùng tập mảnh là hai hàng chồng nhau. Không ghi "thiếu ống ngực": lưới mạch ngực có thể đã chứa nó.
 
+**Chọn nhiều cấu trúc từ ô tìm** (2026-09-30): ＋ / Shift+Enter thêm-bỏ mà không đóng ô tìm; bấm tên vẫn thay cả
+vùng chọn. Nhiều cấu trúc thì `chosen` = null — bảng chi tiết nói về MỘT cấu trúc, gộp là sai — mô hình xem riêng
+hợp mảnh, link `?structure=a,b` (slug/mã FMA không chứa dấu phẩy). Tập chọn tự hết khi vùng chọn bị xoá ở lối khác.
+
 ### Hệ → Góc nhìn giải phẫu → Cấu trúc (2026-09-30)
 
 Tab "Theo hệ" bản đầu bày ba cấp thẻ ngang hàng (Tổng quan / Nhóm / 20 thẻ cấu trúc) — chủ sản
