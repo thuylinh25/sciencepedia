@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "note": "Mô tả cấu trúc chính; nguồn Wikipedia (CC BY-SA) map qua FMA→Wikidata P1402. en = chờ dịch máy.",
+ "note": "Mô tả cấu trúc chính; nguồn Wikipedia (CC BY-SA). vi dịch từ en đã qua science-editor (không nhãn AI).",
  "count": 374,
  "entries": [
   {
@@ -55,13 +55,14 @@
    "viName": null,
    "enName": "Hyo-epiglottic ligament",
    "system": "connective",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Hyoepiglottic ligament",
    "mismatch": true,
    "description": {
-    "lang": "en",
-    "text": "The hyoepiglottic ligament is an extrinsic ligament of the larynx connecting the epiglottis and the hyoid bone.",
-    "translated": false
+    "lang": "vi",
+    "text": "Dây chằng móng nắp thanh môn là một dây chằng ngoại lai của thanh quản, nối nắp thanh môn với xương móng.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Hyoepiglottic ligament",
@@ -78,12 +79,13 @@
    "viName": null,
    "enName": "Interosseous membrane of right forearm",
    "system": "connective",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Interosseous membrane of forearm",
    "description": {
-    "lang": "en",
-    "text": "The interosseous membrane of the forearm is a fibrous sheet that connects the interosseous margins of the radius and the ulna. It is the main part of the radio-ulnar syndesmosis, a fibrous joint between the two bones.",
-    "translated": false
+    "lang": "vi",
+    "text": "Màng gian cốt cẳng tay là một tấm xơ nối bờ gian cốt của xương quay với xương trụ. Nó là phần chính của khớp sợi quay–trụ, một khớp sợi giữa hai xương này.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Interosseous membrane of forearm",
@@ -100,12 +102,13 @@
    "viName": null,
    "enName": "Interosseous membrane of left leg",
    "system": "connective",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Interosseous membrane of leg",
    "description": {
-    "lang": "en",
-    "text": "The interosseous membrane of the leg is a fibrous membrane which extends between the interosseous crests of the tibia and fibula that helps stabilize the bones’ relationship and separates the muscles on the front from those on the back.",
-    "translated": false
+    "lang": "vi",
+    "text": "Màng gian cốt cẳng chân là một màng xơ căng giữa mào gian cốt của xương chày và xương mác, giúp giữ vững tương quan giữa hai xương và ngăn cách nhóm cơ mặt trước với nhóm cơ mặt sau.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Interosseous membrane of leg",
@@ -122,12 +125,13 @@
    "viName": null,
    "enName": "Right lateral thyrohyoid ligament",
    "system": "connective",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Lateral thyrohyoid ligament",
    "description": {
-    "lang": "en",
-    "text": "The lateral thyrohyoid ligament is a round elastic cord, which forms the posterior border of the thyrohyoid membrane and passes between the tip of the superior cornu of the thyroid cartilage and the extremity of the greater cornu of the hyoid bone. The internal branch of the superior laryngeal nerve typical lies lateral to this ligament.",
-    "translated": false
+    "lang": "vi",
+    "text": "Dây chằng giáp móng bên là một dải đàn hồi hình trụ, tạo nên bờ sau của màng giáp móng và căng giữa đỉnh sừng trên của sụn giáp với đầu sừng lớn của xương móng. Nhánh trong của thần kinh thanh quản trên thường nằm ở phía ngoài dây chằng này.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Lateral thyrohyoid ligament",
@@ -144,12 +148,13 @@
    "viName": null,
    "enName": "Left long plantar ligament",
    "system": "connective",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Long plantar ligament",
    "description": {
-    "lang": "en",
-    "text": "The long plantar ligament is a long ligament on the underside of the foot that connects the calcaneus with the 2nd to 5th metatarsal.",
-    "translated": false
+    "lang": "vi",
+    "text": "Dây chằng gan chân dài là một dây chằng dài ở mặt dưới bàn chân, nối xương gót với các xương đốt bàn chân thứ 2 đến thứ 5.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Long plantar ligament",
@@ -165,12 +170,13 @@
    "viName": null,
    "enName": "Median thyrohyoid ligament",
    "system": "connective",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Median thyrohyoid ligament",
    "description": {
-    "lang": "en",
-    "text": "The median thyrohyoid ligament is the thicker, middle part of the thyrohyoid membrane. Its lateral thinner portions are pierced by the superior laryngeal vessels and the internal branch of the superior laryngeal nerve.",
-    "translated": false
+    "lang": "vi",
+    "text": "Dây chằng giáp móng giữa là phần giữa dày hơn của màng giáp móng. Hai phần bên mỏng hơn của nó có mạch máu thanh quản trên và nhánh trong của thần kinh thanh quản trên xuyên qua.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Median thyrohyoid ligament",
@@ -187,12 +193,13 @@
    "viName": null,
    "enName": "Left stylohyoid ligament",
    "system": "connective",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Stylohyoid ligament",
    "description": {
-    "lang": "en",
-    "text": "The stylohyoid ligament is a ligament that extends between the hyoid bone, and the temporal styloid process.",
-    "translated": false
+    "lang": "vi",
+    "text": "Dây chằng trâm móng là một dây chằng căng giữa xương móng và mỏm trâm của xương thái dương.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Stylohyoid ligament",
@@ -209,12 +216,13 @@
    "viName": null,
    "enName": "Left tensor fasciae latae",
    "system": "connective",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Tensor fasciae latae muscle",
    "description": {
-    "lang": "en",
-    "text": "The tensor fasciae latae is a muscle of the thigh. Together with the gluteus maximus, it acts on and is continuous with the iliotibial band, which attaches to the tibia.",
-    "translated": false
+    "lang": "vi",
+    "text": "Cơ căng mạc đùi là một cơ ở đùi. Cùng với cơ mông lớn, nó tác động lên và liên tục với dải chậu chày, dải này bám vào xương chày.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Tensor fasciae latae muscle",
@@ -230,13 +238,14 @@
    "viName": null,
    "enName": "Thyro-epiglottic ligament",
    "system": "connective",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Thyroepiglottic ligament",
    "mismatch": true,
    "description": {
-    "lang": "en",
-    "text": "The thyroepiglottic ligament is an intrinsic ligament of the larynx that connects the epiglottis and the thyroid cartilage.",
-    "translated": false
+    "lang": "vi",
+    "text": "Dây chằng giáp nắp thanh môn là một dây chằng nội tại của thanh quản, nối nắp thanh môn với sụn giáp.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Thyroepiglottic ligament",
@@ -253,12 +262,13 @@
    "viName": null,
    "enName": "Left thyrohyoid membrane",
    "system": "connective",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Thyrohyoid membrane",
    "description": {
-    "lang": "en",
-    "text": "The thyrohyoid membrane is a broad, fibro-elastic sheet of the larynx. It connects the upper border of the thyroid cartilage to the hyoid bone.",
-    "translated": false
+    "lang": "vi",
+    "text": "Màng giáp móng là một tấm xơ đàn hồi rộng của thanh quản. Nó nối bờ trên của sụn giáp với xương móng.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Thyrohyoid membrane",
@@ -275,12 +285,13 @@
    "viName": null,
    "enName": "Trochlea of left superior oblique",
    "system": "connective",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Trochlea of superior oblique",
    "description": {
-    "lang": "en",
-    "text": "The trochlea of superior oblique is a pulley-like structure in the eye. The tendon of the superior oblique muscle passes through it.",
-    "translated": false
+    "lang": "vi",
+    "text": "Ròng rọc của cơ chéo trên là một cấu trúc dạng ròng rọc trong ổ mắt. Gân của cơ chéo trên đi qua nó.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Trochlea of superior oblique",
@@ -444,12 +455,13 @@
    "viName": null,
    "enName": "Left sublingual gland",
    "system": "digestive",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Sublingual gland",
    "description": {
-    "lang": "en",
-    "text": "The sublingual gland is a seromucous polystomatic exocrine gland. Located underneath the oral diaphragm, the sublingual gland is the smallest and most diffuse of the three major salivary glands of the oral cavity, with the other two being the submandibular and parotid.",
-    "translated": false
+    "lang": "vi",
+    "text": "Tuyến dưới lưỡi là một tuyến ngoại tiết dạng thanh dịch–nhầy có nhiều ống tiết. Nằm dưới hoành miệng, tuyến dưới lưỡi là tuyến nhỏ nhất và lan toả nhất trong ba tuyến nước bọt chính của khoang miệng; hai tuyến còn lại là tuyến dưới hàm và tuyến mang tai.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Sublingual gland",
@@ -594,12 +606,13 @@
    "viName": null,
    "enName": "Abductor digiti minimi of right foot",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Abductor digiti minimi muscle of foot",
    "description": {
-    "lang": "en",
-    "text": "The abductor digiti minimi is a muscle which lies along the lateral (outer) border of the foot, and is in relation by its medial margin with the lateral plantar artery, vein and nerves.",
-    "translated": false
+    "lang": "vi",
+    "text": "Cơ dạng ngón út (bàn chân) là một cơ nằm dọc theo bờ ngoài của bàn chân; bờ trong của nó liên quan với động mạch, tĩnh mạch và các thần kinh gan chân ngoài.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Abductor digiti minimi muscle of foot",
@@ -616,12 +629,13 @@
    "viName": null,
    "enName": "Abductor digiti minimi of right hand",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Abductor digiti minimi muscle of the hand",
    "description": {
-    "lang": "en",
-    "text": "In human anatomy, the abductor digiti minimi is a skeletal muscle situated on the ulnar border of the palm of the hand. It forms the ulnar border of the palm and its spindle-like shape defines the hypothenar eminence of the palm together with the skin, connective tissue, and fat surrounding it.",
-    "translated": false
+    "lang": "vi",
+    "text": "Ở người, cơ dạng ngón út (bàn tay) là một cơ vân nằm ở bờ trụ của gan bàn tay. Nó tạo nên bờ trụ của gan tay và với hình thoi đặc trưng, cùng với da, mô liên kết và mỡ bao quanh, nó tạo nên mô út của gan bàn tay.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Abductor digiti minimi muscle of the hand",
@@ -638,12 +652,13 @@
    "viName": null,
    "enName": "Right abductor hallucis",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Abductor hallucis muscle",
    "description": {
-    "lang": "en",
-    "text": "The abductor hallucis muscle is an intrinsic muscle of the foot. It participates in the abduction and flexion of the great toe.",
-    "translated": false
+    "lang": "vi",
+    "text": "Cơ dạng ngón chân cái là một cơ nội tại của bàn chân. Nó tham gia dạng và gấp ngón chân cái.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Abductor hallucis muscle",
@@ -660,12 +675,13 @@
    "viName": null,
    "enName": "Right abductor pollicis brevis",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Abductor pollicis brevis muscle",
    "description": {
-    "lang": "en",
-    "text": "The abductor pollicis brevis is a muscle in the hand that functions as an abductor of the thumb.",
-    "translated": false
+    "lang": "vi",
+    "text": "Cơ dạng ngón cái ngắn là một cơ ở bàn tay, có chức năng dạng ngón cái.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Abductor pollicis brevis muscle",
@@ -682,12 +698,13 @@
    "viName": null,
    "enName": "Left abductor pollicis longus",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Abductor pollicis longus muscle",
    "description": {
-    "lang": "en",
-    "text": "In human anatomy, the abductor pollicis longus (APL) is one of the extrinsic muscles of the hand. Its major function is to abduct the thumb at the wrist.",
-    "translated": false
+    "lang": "vi",
+    "text": "Ở người, cơ dạng ngón cái dài là một trong các cơ ngoại lai của bàn tay. Chức năng chính của nó là dạng ngón cái ở cổ tay.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Abductor pollicis longus muscle",
@@ -704,12 +721,13 @@
    "viName": null,
    "enName": "Left adductor brevis",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Adductor brevis muscle",
    "description": {
-    "lang": "en",
-    "text": "The adductor brevis is a muscle in the thigh situated immediately deep to the pectineus and adductor longus. It belongs to the adductor muscle group.",
-    "translated": false
+    "lang": "vi",
+    "text": "Cơ khép ngắn là một cơ ở đùi, nằm ngay sâu dưới cơ lược và cơ khép dài. Nó thuộc nhóm cơ khép.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Adductor brevis muscle",
@@ -726,12 +744,13 @@
    "viName": null,
    "enName": "Left adductor longus",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Adductor longus muscle",
    "description": {
-    "lang": "en",
-    "text": "In the human body, the adductor longus is a skeletal muscle located in the thigh. One of the adductor muscles of the hip, its main function is to adduct the thigh and it is innervated by the obturator nerve.",
-    "translated": false
+    "lang": "vi",
+    "text": "Ở cơ thể người, cơ khép dài là một cơ vân nằm ở đùi. Là một trong các cơ khép của khớp háng, chức năng chính của nó là khép đùi và nó được chi phối bởi thần kinh bịt.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Adductor longus muscle",
@@ -748,12 +767,13 @@
    "viName": null,
    "enName": "Left adductor magnus",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Adductor magnus muscle",
    "description": {
-    "lang": "en",
-    "text": "The adductor magnus is a large triangular muscle, situated on the medial side of the thigh.",
-    "translated": false
+    "lang": "vi",
+    "text": "Cơ khép lớn là một cơ lớn hình tam giác, nằm ở mặt trong của đùi.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Adductor magnus muscle",
@@ -814,12 +834,13 @@
    "viName": null,
    "enName": "Right brachioradialis",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Brachioradialis",
    "description": {
-    "lang": "en",
-    "text": "The brachioradialis, also historically known as the supinator longus, is a muscle of the forearm that flexes the forearm at the elbow. It is also capable of both pronation and supination, depending on the position of the forearm.",
-    "translated": false
+    "lang": "vi",
+    "text": "Cơ cánh tay quay, trước đây còn gọi là cơ ngửa dài, là một cơ của cẳng tay có tác dụng gấp cẳng tay tại khuỷu. Nó cũng có thể gây sấp hoặc ngửa, tuỳ theo tư thế của cẳng tay.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Brachioradialis",
@@ -850,12 +871,13 @@
    "viName": null,
    "enName": "Left coccygeus",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Coccygeus muscle",
    "description": {
-    "lang": "en",
-    "text": "The coccygeus muscle or ischiococcygeus is a muscle of the pelvic floor located posterior to levator ani and anterior to the sacrospinous ligament.",
-    "translated": false
+    "lang": "vi",
+    "text": "Cơ cụt (cơ ngồi cụt) là một cơ của sàn chậu, nằm phía sau cơ nâng hậu môn và phía trước dây chằng cùng gai.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Coccygeus muscle",
@@ -915,12 +937,13 @@
    "viName": null,
    "enName": "Right digastric",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Digastric muscle",
    "description": {
-    "lang": "en",
-    "text": "The digastric muscle is a bilaterally paired suprahyoid muscle located under the jaw. Its posterior belly is attached to the mastoid notch of temporal bone, and its anterior belly is attached to the digastric fossa of mandible; the two bellies are united by an intermediate tendon which is held in a loop that attaches to the hyoid bone.",
-    "translated": false
+    "lang": "vi",
+    "text": "Cơ hai bụng là một cơ trên móng ghép đôi hai bên, nằm dưới hàm. Bụng sau bám vào khuyết chũm của xương thái dương, bụng trước bám vào hố cơ hai bụng của xương hàm dưới; hai bụng nối với nhau bằng một gân trung gian được giữ trong một vòng bám vào xương móng.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Digastric muscle",
@@ -937,12 +960,13 @@
    "viName": null,
    "enName": "Right extensor carpi radialis brevis",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Extensor carpi radialis brevis muscle",
    "description": {
-    "lang": "en",
-    "text": "In human anatomy, extensor carpi radialis brevis is a muscle in the forearm that acts to extend and abduct the wrist. It is shorter and thicker than its namesake extensor carpi radialis longus which can be found above the proximal end of the extensor carpi radialis brevis.",
-    "translated": false
+    "lang": "vi",
+    "text": "Cơ duỗi cổ tay quay ngắn là một cơ ở cẳng tay, có tác dụng duỗi và dạng cổ tay. Cơ này ngắn và dày hơn cơ cùng tên là cơ duỗi cổ tay quay dài nằm ngay phía trên đầu gần của nó.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Extensor carpi radialis brevis muscle",
@@ -959,12 +983,13 @@
    "viName": null,
    "enName": "Left extensor carpi radialis longus",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Extensor carpi radialis longus muscle",
    "description": {
-    "lang": "en",
-    "text": "The extensor carpi radialis longus is one of the five main muscles that control movements at the wrist. This muscle is quite long, starting on the lateral side of the humerus, and attaching to the base of the second metacarpal bone.",
-    "translated": false
+    "lang": "vi",
+    "text": "Cơ duỗi cổ tay quay dài là một trong năm cơ chính điều khiển vận động ở cổ tay. Cơ khá dài, bắt đầu từ mặt ngoài xương cánh tay và bám vào nền xương đốt bàn tay thứ hai.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Extensor carpi radialis longus muscle",
@@ -981,12 +1006,13 @@
    "viName": null,
    "enName": "Left extensor carpi ulnaris",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Extensor carpi ulnaris muscle",
    "description": {
-    "lang": "en",
-    "text": "In human anatomy, the extensor carpi ulnaris is a skeletal muscle located on the ulnar side of the forearm. The extensor carpi ulnaris acts to extend and adduct at the carpus/wrist from anatomical position.",
-    "translated": false
+    "lang": "vi",
+    "text": "Cơ duỗi cổ tay trụ là một cơ vân nằm ở phía trụ của cẳng tay. Từ tư thế giải phẫu, cơ có tác dụng duỗi và khép cổ tay.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Extensor carpi ulnaris muscle",
@@ -1003,12 +1029,13 @@
    "viName": null,
    "enName": "Left extensor digiti minimi",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Extensor digiti minimi muscle",
    "description": {
-    "lang": "en",
-    "text": "The extensor digiti minimi  is a slender muscle of the forearm, placed on the ulnar side of the extensor digitorum communis, with which it is generally connected.",
-    "translated": false
+    "lang": "vi",
+    "text": "Cơ duỗi ngón út là một cơ mảnh ở cẳng tay, nằm về phía trụ của cơ duỗi các ngón chung, và thường gắn liền với cơ này.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Extensor digiti minimi muscle",
@@ -1025,12 +1052,13 @@
    "viName": null,
    "enName": "Right extensor digitorum",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Extensor digitorum muscle",
    "description": {
-    "lang": "en",
-    "text": "The extensor digitorum muscle is a muscle of the posterior forearm present in humans and other animals. It extends the medial four digits of the hand.",
-    "translated": false
+    "lang": "vi",
+    "text": "Cơ duỗi các ngón là một cơ ở mặt sau cẳng tay, có ở người và nhiều loài động vật khác. Cơ duỗi bốn ngón trong của bàn tay.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Extensor digitorum muscle",
@@ -1047,12 +1075,13 @@
    "viName": null,
    "enName": "Right extensor digitorum longus",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Extensor digitorum longus muscle",
    "description": {
-    "lang": "en",
-    "text": "The extensor digitorum longus is a pennate muscle, situated at the lateral part of the front of the leg.",
-    "translated": false
+    "lang": "vi",
+    "text": "Cơ duỗi các ngón chân dài là một cơ dạng lông chim, nằm ở phần ngoài mặt trước cẳng chân.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Extensor digitorum longus muscle",
@@ -1069,12 +1098,13 @@
    "viName": null,
    "enName": "Left extensor hallucis brevis",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Extensor hallucis brevis muscle",
    "description": {
-    "lang": "en",
-    "text": "The extensor hallucis brevis is a muscle on the top of the foot that helps to extend the big toe.",
-    "translated": false
+    "lang": "vi",
+    "text": "Cơ duỗi ngón chân cái ngắn là một cơ nằm ở mu bàn chân, giúp duỗi ngón chân cái.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Extensor hallucis brevis muscle",
@@ -1091,12 +1121,13 @@
    "viName": null,
    "enName": "Left extensor hallucis longus",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Extensor hallucis longus muscle",
    "description": {
-    "lang": "en",
-    "text": "The extensor hallucis longus muscle is a thin skeletal muscle, situated between the tibialis anterior and the extensor digitorum longus. It extends the big toe and causes dorsiflexion of the foot.",
-    "translated": false
+    "lang": "vi",
+    "text": "Cơ duỗi ngón chân cái dài là một cơ vân mảnh, nằm giữa cơ chày trước và cơ duỗi các ngón chân dài. Cơ duỗi ngón chân cái và gấp mu bàn chân.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Extensor hallucis longus muscle",
@@ -1113,12 +1144,13 @@
    "viName": null,
    "enName": "Left extensor indicis",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Extensor indicis muscle",
    "description": {
-    "lang": "en",
-    "text": "In human anatomy, the extensor indicis (proprius) is a narrow, elongated skeletal muscle in the deep layer of the dorsal forearm, placed medial to, and parallel with, the extensor pollicis longus. Its tendon goes to the index finger, which it extends.",
-    "translated": false
+    "lang": "vi",
+    "text": "Cơ duỗi ngón trỏ là một cơ vân hẹp và dài nằm ở lớp sâu mặt sau cẳng tay, nằm phía trong và song song với cơ duỗi ngón cái dài. Gân của cơ đi tới ngón trỏ và duỗi ngón này.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Extensor indicis muscle",
@@ -1135,12 +1167,13 @@
    "viName": null,
    "enName": "Right extensor pollicis brevis",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Extensor pollicis brevis muscle",
    "description": {
-    "lang": "en",
-    "text": "In human anatomy, the extensor pollicis brevis (EPB) is a skeletal muscle on the dorsal side of the forearm. It lies on the medial side of, and is closely connected with, the abductor pollicis longus.",
-    "translated": false
+    "lang": "vi",
+    "text": "Cơ duỗi ngón cái ngắn là một cơ vân nằm ở mặt sau cẳng tay. Cơ nằm về phía trong và gắn liền với cơ dạng ngón cái dài.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Extensor pollicis brevis muscle",
@@ -1157,12 +1190,13 @@
    "viName": null,
    "enName": "Left extensor pollicis longus",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Extensor pollicis longus muscle",
    "description": {
-    "lang": "en",
-    "text": "In human anatomy, the extensor pollicis longus muscle (EPL) is a skeletal muscle located dorsally on the forearm. It is much larger than the extensor pollicis brevis, the origin of which it partly covers and acts to stretch the thumb together with this muscle.",
-    "translated": false
+    "lang": "vi",
+    "text": "Cơ duỗi ngón cái dài là một cơ vân nằm ở mặt sau cẳng tay. Cơ lớn hơn nhiều so với cơ duỗi ngón cái ngắn, che phủ một phần nguyên ủy của cơ này, và cùng với nó có tác dụng duỗi ngón cái.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Extensor pollicis longus muscle",
@@ -1178,12 +1212,13 @@
    "viName": null,
    "enName": "External anal sphincter",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "External anal sphincter",
    "description": {
-    "lang": "en",
-    "text": "The external anal sphincter is an oval tube of skeletal muscle fibers. Distally, it is adherent to the skin surrounding the margin of the anus.",
-    "translated": false
+    "lang": "vi",
+    "text": "Cơ thắt hậu môn ngoài là một ống hình bầu dục gồm các sợi cơ vân. Ở phía xa, cơ dính vào da bao quanh bờ hậu môn.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "External anal sphincter",
@@ -1199,12 +1234,13 @@
    "viName": null,
    "enName": "external intercostal muscle",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "External intercostal muscles",
    "description": {
-    "lang": "en",
-    "text": "The external intercostal muscles or external intercostals are eleven in number on both sides.",
-    "translated": false
+    "lang": "vi",
+    "text": "Các cơ gian sườn ngoài có mười một cơ ở mỗi bên.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "External intercostal muscles",
@@ -1221,12 +1257,13 @@
    "viName": null,
    "enName": "Right external oblique",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Abdominal external oblique muscle",
    "description": {
-    "lang": "en",
-    "text": "The abdominal external oblique muscle is the largest and outermost of the three flat abdominal muscles of the lateral anterior abdomen.",
-    "translated": false
+    "lang": "vi",
+    "text": "Cơ chéo bụng ngoài là cơ lớn nhất và nằm ngoài cùng trong ba cơ dẹt của thành bụng, ở phần trước bên của bụng.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Abdominal external oblique muscle",
@@ -1243,12 +1280,13 @@
    "viName": null,
    "enName": "Right fibularis brevis",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Fibularis brevis",
    "description": {
-    "lang": "en",
-    "text": "In human anatomy, the fibularis brevis is a muscle that lies underneath the fibularis longus within the lateral compartment of the leg. It acts to tilt the sole of the foot away from the midline of the body (eversion) and to extend the foot downward away from the body at the ankle.",
-    "translated": false
+    "lang": "vi",
+    "text": "Cơ mác ngắn là một cơ nằm dưới cơ mác dài, trong khoang ngoài của cẳng chân. Cơ có tác dụng nghiêng lòng bàn chân ra xa đường giữa cơ thể (lật sấp) và duỗi bàn chân xuống dưới tại khớp cổ chân.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Fibularis brevis",
@@ -1265,12 +1303,13 @@
    "viName": null,
    "enName": "Right fibularis longus",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Fibularis longus",
    "description": {
-    "lang": "en",
-    "text": "In human anatomy, the fibularis longus is a superficial muscle in the lateral compartment of the leg. It acts to tilt the sole away from the midline of the body (eversion) and to extend the foot downward away from the body at the ankle.",
-    "translated": false
+    "lang": "vi",
+    "text": "Cơ mác dài là một cơ nông nằm trong khoang ngoài của cẳng chân. Cơ có tác dụng nghiêng lòng bàn chân ra xa đường giữa cơ thể (lật sấp) và duỗi bàn chân xuống dưới tại khớp cổ chân.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Fibularis longus",
@@ -1287,12 +1326,13 @@
    "viName": null,
    "enName": "Right fibularis tertius",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Fibularis tertius",
    "description": {
-    "lang": "en",
-    "text": "In human anatomy, the fibularis tertius is a muscle in the anterior compartment of the leg. It acts to tilt the sole of the foot away from the midline of the body (eversion) and to pull the foot upward toward the body (dorsiflexion).",
-    "translated": false
+    "lang": "vi",
+    "text": "Cơ mác ba là một cơ nằm trong khoang trước của cẳng chân. Cơ có tác dụng nghiêng lòng bàn chân ra xa đường giữa cơ thể (lật sấp) và kéo bàn chân lên phía trên (gấp mu bàn chân).",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Fibularis tertius",
@@ -1337,13 +1377,14 @@
    "viName": null,
    "enName": "Right flexor accessorius",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Quadratus plantae muscle",
    "mismatch": true,
    "description": {
-    "lang": "en",
-    "text": "The quadratus plantae is separated from the muscles of the first layer by the lateral plantar vessels and nerve. It acts to aid in flexing the 2nd to 5th toes and is one of the few muscles in the foot with no homolog in the hand.",
-    "translated": false
+    "lang": "vi",
+    "text": "Cơ vuông gan chân được tách khỏi các cơ lớp thứ nhất bởi bó mạch và thần kinh gan chân ngoài. Cơ hỗ trợ gấp các ngón chân thứ hai đến thứ năm và là một trong số ít cơ ở bàn chân không có cơ tương đồng ở bàn tay.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Quadratus plantae muscle",
@@ -1410,12 +1451,13 @@
    "viName": null,
    "enName": "Left flexor digitorum brevis",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Flexor digitorum brevis muscle",
    "description": {
-    "lang": "en",
-    "text": "The flexor digitorum brevis or flexor digitorum communis brevis is a muscle which lies in the middle of the sole of the foot, immediately above the central part of the plantar aponeurosis, with which it is firmly united.",
-    "translated": false
+    "lang": "vi",
+    "text": "Cơ gấp các ngón chân ngắn là một cơ nằm ở giữa lòng bàn chân, ngay trên phần trung tâm của cân gan chân, và dính chặt vào cân này.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Flexor digitorum brevis muscle",
@@ -1432,12 +1474,13 @@
    "viName": null,
    "enName": "Left flexor digitorum longus",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Flexor digitorum longus muscle",
    "description": {
-    "lang": "en",
-    "text": "The flexor digitorum longus muscle or flexor digitorum communis longus is situated on the tibial side of the leg. At its origin it is thin and pointed, but it gradually increases in size as it descends.",
-    "translated": false
+    "lang": "vi",
+    "text": "Cơ gấp các ngón chân dài nằm ở phía xương chày của cẳng chân. Ở nguyên ủy cơ mỏng và nhọn, nhưng lớn dần khi đi xuống dưới.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Flexor digitorum longus muscle",
@@ -1454,12 +1497,13 @@
    "viName": null,
    "enName": "Left flexor digitorum profundus",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Flexor digitorum profundus muscle",
    "description": {
-    "lang": "en",
-    "text": "The flexor digitorum profundus or flexor digitorum communis profundus is a muscle in the forearm of humans that flexes the fingers. It is considered an extrinsic hand muscle because it acts on the hand while its muscle belly is located in the forearm.",
-    "translated": false
+    "lang": "vi",
+    "text": "Cơ gấp các ngón sâu là một cơ ở cẳng tay người, có tác dụng gấp các ngón tay. Cơ được xem là cơ ngoại lai của bàn tay vì tác động lên bàn tay trong khi thân cơ nằm ở cẳng tay.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Flexor digitorum profundus muscle",
@@ -1476,12 +1520,13 @@
    "viName": null,
    "enName": "Right flexor digitorum superficialis",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Flexor digitorum superficialis muscle",
    "description": {
-    "lang": "en",
-    "text": "Flexor digitorum superficialis or flexor digitorum communis sublimis is an extrinsic flexor muscle of the fingers at the proximal interphalangeal joints.",
-    "translated": false
+    "lang": "vi",
+    "text": "Cơ gấp các ngón nông là cơ gấp ngoại lai của các ngón tay tại khớp gian đốt gần.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Flexor digitorum superficialis muscle",
@@ -1498,12 +1543,13 @@
    "viName": null,
    "enName": "Right flexor hallucis longus",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Flexor hallucis longus muscle",
    "description": {
-    "lang": "en",
-    "text": "The flexor hallucis longus muscle (FHL) attaches to the plantar surface of phalanx of the great toe and is responsible for flexing that toe. The FHL is one of the three deep muscles of the posterior compartment of the leg, the others being the flexor digitorum longus and the tibialis posterior.",
-    "translated": false
+    "lang": "vi",
+    "text": "Cơ gấp ngón chân cái dài bám vào mặt gan chân của đốt ngón chân cái và đảm nhận việc gấp ngón chân này. Đây là một trong ba cơ sâu của khoang sau cẳng chân, hai cơ còn lại là cơ gấp các ngón chân dài và cơ chày sau.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Flexor hallucis longus muscle",
@@ -1520,12 +1566,13 @@
    "viName": null,
    "enName": "Right flexor pollicis brevis",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Flexor pollicis brevis muscle",
    "description": {
-    "lang": "en",
-    "text": "The flexor pollicis brevis is a muscle in the hand that flexes the thumb. It is one of three thenar muscles.",
-    "translated": false
+    "lang": "vi",
+    "text": "Cơ gấp ngón cái ngắn là một cơ ở bàn tay có chức năng gấp ngón cái. Đây là một trong ba cơ của mô cái (ô mô cái).",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Flexor pollicis brevis muscle",
@@ -1542,12 +1589,13 @@
    "viName": null,
    "enName": "Left flexor pollicis longus",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Flexor pollicis longus muscle",
    "description": {
-    "lang": "en",
-    "text": "The flexor pollicis longus is a muscle in the forearm and hand that flexes the thumb. It lies in the same plane as the flexor digitorum profundus.",
-    "translated": false
+    "lang": "vi",
+    "text": "Cơ gấp ngón cái dài là một cơ nằm ở cẳng tay và bàn tay có chức năng gấp ngón cái. Nó nằm cùng mặt phẳng với cơ gấp các ngón sâu.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Flexor pollicis longus muscle",
@@ -1624,12 +1672,13 @@
    "viName": null,
    "enName": "Left genioglossus",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Genioglossus",
    "description": {
-    "lang": "en",
-    "text": "The genioglossus is one of the paired extrinsic muscles of the tongue. It is a fan-shaped muscle that comprises the bulk of the body of the tongue.",
-    "translated": false
+    "lang": "vi",
+    "text": "Cơ cằm lưỡi là một trong các cơ ngoại lai thành đôi của lưỡi. Đây là cơ hình quạt tạo nên phần lớn khối thân lưỡi.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Genioglossus",
@@ -1646,12 +1695,13 @@
    "viName": null,
    "enName": "Left geniohyoid",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Geniohyoid muscle",
    "description": {
-    "lang": "en",
-    "text": "The geniohyoid muscle is a narrow paired muscle situated superior to the medial border of the mylohyoid muscle. It is named for its passage from the chin to the hyoid bone.",
-    "translated": false
+    "lang": "vi",
+    "text": "Cơ cằm móng là một cơ hẹp, thành đôi, nằm ngay trên bờ trong của cơ hàm móng. Tên gọi của nó phản ánh đường đi từ cằm đến xương móng.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Geniohyoid muscle",
@@ -1668,12 +1718,13 @@
    "viName": null,
    "enName": "Left gluteus maximus",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Gluteus maximus",
    "description": {
-    "lang": "en",
-    "text": "The gluteus maximus is the main extensor muscle of the hip in humans. It is the largest and outermost of the three gluteal muscles and makes up a large part of the shape and appearance of each side of the hips.",
-    "translated": false
+    "lang": "vi",
+    "text": "Cơ mông lớn là cơ duỗi chính của khớp hông ở người. Đây là cơ lớn nhất và nằm ngoài cùng trong ba cơ mông, tạo nên phần lớn hình dáng và diện mạo mỗi bên hông.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Gluteus maximus",
@@ -1690,12 +1741,13 @@
    "viName": null,
    "enName": "Right gluteus medius",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Gluteus medius",
    "description": {
-    "lang": "en",
-    "text": "The gluteus medius, one of the three gluteal muscles, is a broad, thick, radiating muscle. It is situated on the outer surface of the pelvis.",
-    "translated": false
+    "lang": "vi",
+    "text": "Cơ mông nhỡ, một trong ba cơ mông, là một cơ rộng, dày, hình rẻ quạt. Nó nằm ở mặt ngoài của khung chậu.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Gluteus medius",
@@ -1712,12 +1764,13 @@
    "viName": null,
    "enName": "Left gluteus minimus",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Gluteus minimus",
    "description": {
-    "lang": "en",
-    "text": "The gluteus minimus, or glutæus minimus, the smallest of the three gluteal muscles, is situated immediately beneath the gluteus medius.",
-    "translated": false
+    "lang": "vi",
+    "text": "Cơ mông bé, cơ nhỏ nhất trong ba cơ mông, nằm ngay bên dưới cơ mông nhỡ.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Gluteus minimus",
@@ -1748,12 +1801,13 @@
    "viName": null,
    "enName": "Left hyoglossus",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Hyoglossus",
    "description": {
-    "lang": "en",
-    "text": "The hyoglossus is a thin and quadrilateral extrinsic muscle of the tongue. It originates from the hyoid bone; it inserts onto the side of the tongue.",
-    "translated": false
+    "lang": "vi",
+    "text": "Cơ móng lưỡi là một cơ ngoại lai của lưỡi, mỏng và có hình tứ giác. Nó bám gốc từ xương móng và bám tận vào bờ bên của lưỡi.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Hyoglossus",
@@ -1770,12 +1824,13 @@
    "viName": null,
    "enName": "Left iliacus",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Iliacus muscle",
    "description": {
-    "lang": "en",
-    "text": "The iliacus is a flat, triangular muscle which fills the iliac fossa. It forms the lateral portion of iliopsoas, providing flexion of the thigh and lower limb at the acetabulofemoral joint.",
-    "translated": false
+    "lang": "vi",
+    "text": "Cơ chậu là một cơ dẹt, hình tam giác, lấp đầy hố chậu. Nó tạo nên phần ngoài của cơ thắt lưng chậu, giúp gấp đùi và chi dưới tại khớp ổ cối - đùi.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Iliacus muscle",
@@ -1858,12 +1913,13 @@
    "viName": null,
    "enName": "Right inferior oblique",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Inferior oblique muscle",
    "description": {
-    "lang": "en",
-    "text": "The inferior oblique muscle or obliquus oculi inferior is a thin, narrow muscle placed near the anterior margin of the floor of the orbit. The inferior oblique is one of the extraocular muscles, and is attached to the maxillary bone (origin) and the posterior, inferior, lateral surface of the eye (insertion).",
-    "translated": false
+    "lang": "vi",
+    "text": "Cơ chéo dưới là một cơ mỏng, hẹp nằm gần bờ trước của nền ổ mắt. Đây là một trong các cơ vận nhãn, bám gốc vào xương hàm trên và bám tận vào mặt sau - dưới - ngoài của nhãn cầu.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Inferior oblique muscle",
@@ -1880,12 +1936,13 @@
    "viName": null,
    "enName": "Left inferior rectus",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Inferior rectus muscle",
    "description": {
-    "lang": "en",
-    "text": "The inferior rectus muscle is a muscle in the orbit near the eye. It is one of the four recti muscles in the group of extraocular muscles.",
-    "translated": false
+    "lang": "vi",
+    "text": "Cơ thẳng dưới là một cơ trong ổ mắt, nằm gần nhãn cầu. Đây là một trong bốn cơ thẳng thuộc nhóm cơ vận nhãn.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Inferior rectus muscle",
@@ -1923,12 +1980,13 @@
    "viName": null,
    "enName": "innermost intercostal muscle",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Innermost intercostal muscle",
    "description": {
-    "lang": "en",
-    "text": "The innermost intercostal muscle is a layer of intercostal muscles. It may also be called the intima of the internal intercostal muscles.",
-    "translated": false
+    "lang": "vi",
+    "text": "Cơ gian sườn trong cùng là một lớp trong các cơ gian sườn. Nó còn được gọi là lớp trong cùng của các cơ gian sườn trong.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Innermost intercostal muscle",
@@ -1944,12 +2002,13 @@
    "viName": null,
    "enName": "internal intercostal muscle",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Internal intercostal muscles",
    "description": {
-    "lang": "en",
-    "text": "The internal intercostal muscles are a group of skeletal muscles located between the ribs. They are eleven in number on either side.",
-    "translated": false
+    "lang": "vi",
+    "text": "Các cơ gian sườn trong là một nhóm cơ vân nằm giữa các xương sườn. Mỗi bên có mười một cơ.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Internal intercostal muscles",
@@ -2007,12 +2066,13 @@
    "viName": null,
    "enName": "Left lateral rectus",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Lateral rectus muscle",
    "description": {
-    "lang": "en",
-    "text": "The lateral rectus muscle is a muscle on the lateral side of the eye in the orbit. It is one of six extraocular muscles that control the movements of the eye.",
-    "translated": false
+    "lang": "vi",
+    "text": "Cơ thẳng ngoài là một cơ nằm ở mặt ngoài của mắt trong ổ mắt. Đây là một trong sáu cơ vận nhãn điều khiển vận động của mắt.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Lateral rectus muscle",
@@ -2029,12 +2089,13 @@
    "viName": null,
    "enName": "Right levator palpebrae superioris",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Levator palpebrae superioris muscle",
    "description": {
-    "lang": "en",
-    "text": "The levator palpebrae superioris is the muscle in the orbit that elevates the upper eyelid.",
-    "translated": false
+    "lang": "vi",
+    "text": "Cơ nâng mi trên là cơ trong ổ mắt có chức năng nâng mi mắt trên.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Levator palpebrae superioris muscle",
@@ -2051,12 +2112,13 @@
    "viName": null,
    "enName": "Left levator scapulae",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Levator scapulae muscle",
    "description": {
-    "lang": "en",
-    "text": "The levator scapulae is a slender skeletal muscle situated at the back and side of the neck. It originates from the transverse processes of the four uppermost cervical vertebrae; it inserts onto the upper portion of the medial border of the scapula.",
-    "translated": false
+    "lang": "vi",
+    "text": "Cơ nâng vai là một cơ vân mảnh nằm ở mặt sau - bên của cổ. Nó bám gốc từ mỏm ngang của bốn đốt sống cổ trên cùng và bám tận vào phần trên của bờ trong xương vai.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Levator scapulae muscle",
@@ -2073,12 +2135,13 @@
    "viName": null,
    "enName": "Right levator veli palatini",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Levator veli palatini",
    "description": {
-    "lang": "en",
-    "text": "The levator veli palatini is a muscle of the soft palate and pharynx. It is innervated by the vagus nerve via its pharyngeal plexus.",
-    "translated": false
+    "lang": "vi",
+    "text": "Cơ nâng màn khẩu cái là một cơ của khẩu cái mềm và hầu. Nó được chi phối bởi thần kinh lang thang qua đám rối hầu.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Levator veli palatini",
@@ -2161,12 +2224,13 @@
    "viName": null,
    "enName": "Right longus capitis",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Longus capitis muscle",
    "description": {
-    "lang": "en",
-    "text": "The longus capitis muscle is broad and thick above, narrow below, and arises by four tendinous slips, from the anterior tubercles of the transverse processes of the third, fourth, fifth, and sixth cervical vertebræ, and ascends, converging toward its fellow of the opposite side, to be inserted into the inferior surface of the basilar part of the occipital bone.",
-    "translated": false
+    "lang": "vi",
+    "text": "Cơ dài đầu rộng và dày ở phía trên, hẹp ở phía dưới, xuất phát bằng bốn dải gân từ củ trước của mỏm ngang các đốt sống cổ thứ ba, tư, năm và sáu, rồi đi lên hội tụ về phía cơ bên đối diện để bám tận vào mặt dưới của phần nền xương chẩm.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Longus capitis muscle",
@@ -2210,12 +2274,13 @@
    "viName": null,
    "enName": "Right medial rectus",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Medial rectus muscle",
    "description": {
-    "lang": "en",
-    "text": "The medial rectus muscle is a muscle in the orbit near the eye. It is one of the extraocular muscles.",
-    "translated": false
+    "lang": "vi",
+    "text": "Cơ thẳng trong là một cơ nằm trong ổ mắt, gần nhãn cầu. Đây là một trong các cơ ngoài nhãn cầu.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Medial rectus muscle",
@@ -2246,12 +2311,13 @@
    "viName": null,
    "enName": "Left oblique arytenoid",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Oblique arytenoid",
    "description": {
-    "lang": "en",
-    "text": "The oblique arytenoid is bilaterally paired intrinsic muscle of the larynx. It is superficial to the transverse arytenoid; the oblique and transverse arytenoids are often considered two parts of a single muscle - the interarytenoid muscle.",
-    "translated": false
+    "lang": "vi",
+    "text": "Cơ phễu chéo là cơ nội tại của thanh quản, có ở cả hai bên. Nó nằm nông hơn cơ phễu ngang; cơ phễu chéo và cơ phễu ngang thường được coi là hai phần của một cơ duy nhất — cơ gian phễu.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Oblique arytenoid",
@@ -2268,12 +2334,13 @@
    "viName": null,
    "enName": "Right obliquus capitis inferior",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Obliquus capitis inferior muscle",
    "description": {
-    "lang": "en",
-    "text": "The obliquus capitis inferior muscle is a muscle in the upper back of the neck. It is one of the suboccipital muscles.",
-    "translated": false
+    "lang": "vi",
+    "text": "Cơ chéo đầu dưới là một cơ nằm ở phần trên phía sau của cổ. Đây là một trong các cơ dưới chẩm.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Obliquus capitis inferior muscle",
@@ -2290,12 +2357,13 @@
    "viName": null,
    "enName": "Right obliquus capitis superior",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Obliquus capitis superior muscle",
    "description": {
-    "lang": "en",
-    "text": "The obliquus capitis superior muscle is a small muscle in the upper back part of the neck. It is one of the suboccipital muscles.",
-    "translated": false
+    "lang": "vi",
+    "text": "Cơ chéo đầu trên là một cơ nhỏ nằm ở phần trên phía sau của cổ. Đây là một trong các cơ dưới chẩm.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Obliquus capitis superior muscle",
@@ -2312,13 +2380,14 @@
    "viName": null,
    "enName": "Left obturator externus",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "External obturator muscle",
    "mismatch": true,
    "description": {
-    "lang": "en",
-    "text": "The external obturator muscle or obturator externus muscle is a flat, triangular muscle, which covers the outer surface of the anterior wall of the pelvis.",
-    "translated": false
+    "lang": "vi",
+    "text": "Cơ bịt ngoài là một cơ dẹt, hình tam giác, phủ mặt ngoài của thành trước khung chậu.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "External obturator muscle",
@@ -2335,13 +2404,14 @@
    "viName": null,
    "enName": "Left obturator internus",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Internal obturator muscle",
    "mismatch": true,
    "description": {
-    "lang": "en",
-    "text": "The internal obturator muscle or obturator internus muscle originates on the medial surface of the obturator membrane, the ischium near the membrane, and the rim of the pubis.",
-    "translated": false
+    "lang": "vi",
+    "text": "Cơ bịt trong bám gốc ở mặt trong màng bịt, phần xương ngồi gần màng và bờ xương mu.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Internal obturator muscle",
@@ -2358,12 +2428,13 @@
    "viName": null,
    "enName": "Right omohyoid",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Omohyoid muscle",
    "description": {
-    "lang": "en",
-    "text": "The omohyoid muscle is a muscle in the neck. It is one of the infrahyoid muscles.",
-    "translated": false
+    "lang": "vi",
+    "text": "Cơ vai móng là một cơ ở vùng cổ. Đây là một trong các cơ dưới móng.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Omohyoid muscle",
@@ -2408,12 +2479,13 @@
    "viName": null,
    "enName": "Right opponens pollicis",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Opponens pollicis muscle",
    "description": {
-    "lang": "en",
-    "text": "The opponens pollicis is a small, triangular muscle in the hand, which functions to oppose the thumb. It is one of the three thenar muscles.",
-    "translated": false
+    "lang": "vi",
+    "text": "Cơ đối ngón cái là một cơ nhỏ, hình tam giác ở bàn tay, có chức năng đối chiếu ngón cái. Đây là một trong ba cơ mô cái.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Opponens pollicis muscle",
@@ -2452,12 +2524,13 @@
    "viName": null,
    "enName": "Left pectineus",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Pectineus muscle",
    "description": {
-    "lang": "en",
-    "text": "The pectineus muscle is a flat, quadrangular muscle, situated at the anterior (front) part of the upper and medial (inner) aspect of the thigh. The pectineus muscle is the most anterior adductor of the hip.",
-    "translated": false
+    "lang": "vi",
+    "text": "Cơ lược là một cơ dẹt, hình tứ giác, nằm ở phần trước và mặt trong phía trên của đùi. Cơ lược là cơ khép trước nhất của khớp háng.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Pectineus muscle",
@@ -2474,12 +2547,13 @@
    "viName": null,
    "enName": "Left pectoralis minor",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Pectoralis minor",
    "description": {
-    "lang": "en",
-    "text": "Pectoralis minor muscle is a thin, triangular muscle, situated at the upper part of the chest, beneath the pectoralis major in the human body. It arises from ribs III-V; it inserts onto the coracoid process of the scapula.",
-    "translated": false
+    "lang": "vi",
+    "text": "Cơ ngực bé là một cơ mỏng, hình tam giác, nằm ở phần trên của ngực, bên dưới cơ ngực lớn. Nó bám gốc từ các xương sườn III–V và bám tận vào mỏm quạ của xương vai.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Pectoralis minor",
@@ -2496,12 +2570,13 @@
    "viName": null,
    "enName": "Right piriformis",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Piriformis muscle",
    "description": {
-    "lang": "en",
-    "text": "The piriformis muscle is a flat, pyramidally-shaped muscle in the gluteal region of the lower limbs. It is one of the six muscles in the lateral rotator group.",
-    "translated": false
+    "lang": "vi",
+    "text": "Cơ hình lê là một cơ dẹt, hình tháp nằm ở vùng mông của chi dưới. Đây là một trong sáu cơ thuộc nhóm cơ xoay ngoài.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Piriformis muscle",
@@ -2518,12 +2593,13 @@
    "viName": null,
    "enName": "Left plantaris",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Plantaris muscle",
    "description": {
-    "lang": "en",
-    "text": "The plantaris is one of the superficial muscles of the superficial posterior compartment of the leg, one of the fascial compartments of the leg.",
-    "translated": false
+    "lang": "vi",
+    "text": "Cơ gan chân là một trong các cơ nông thuộc khoang sau nông của cẳng chân, một trong các khoang mạc của cẳng chân.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Plantaris muscle",
@@ -2540,12 +2616,13 @@
    "viName": null,
    "enName": "Right platysma",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Platysma muscle",
    "description": {
-    "lang": "en",
-    "text": "The platysma muscle or platysma is a superficial muscle of the human neck that overlaps the sternocleidomastoid muscle. It covers the anterior surface of the neck superficially.",
-    "translated": false
+    "lang": "vi",
+    "text": "Cơ bám da cổ là một cơ nông ở cổ người, phủ lên cơ ức đòn chũm. Nó bao phủ nông mặt trước của cổ.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Platysma muscle",
@@ -2562,12 +2639,13 @@
    "viName": null,
    "enName": "Right popliteus",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Popliteus muscle",
    "description": {
-    "lang": "en",
-    "text": "The popliteus muscle in the leg is used for unlocking the knees when walking, by laterally rotating the femur on the tibia during the closed chain portion of the gait cycle. In open chain movements, the popliteus muscle medially rotates the tibia on the femur.",
-    "translated": false
+    "lang": "vi",
+    "text": "Cơ khoeo ở cẳng chân có vai trò \"mở khoá\" đầu gối khi đi, bằng cách xoay ngoài xương đùi trên xương chày trong pha chuỗi động đóng của chu kỳ dáng đi. Trong các động tác chuỗi động mở, cơ khoeo xoay trong xương chày trên xương đùi.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Popliteus muscle",
@@ -2598,12 +2676,13 @@
    "viName": null,
    "enName": "Left pronator quadratus",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Pronator quadratus muscle",
    "description": {
-    "lang": "en",
-    "text": "Pronator quadratus is a square-shaped muscle on the distal forearm that acts to pronate the hand.",
-    "translated": false
+    "lang": "vi",
+    "text": "Cơ sấp vuông là một cơ hình vuông ở phần xa cẳng tay, có tác dụng sấp bàn tay.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Pronator quadratus muscle",
@@ -2620,12 +2699,13 @@
    "viName": null,
    "enName": "Right psoas major",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Psoas major muscle",
    "description": {
-    "lang": "en",
-    "text": "The psoas major is a long fusiform muscle located in the lateral lumbar region between the vertebral column and the brim of the lesser pelvis. It joins the iliacus muscle to form the iliopsoas.",
-    "translated": false
+    "lang": "vi",
+    "text": "Cơ thắt lưng lớn là một cơ dài hình thoi nằm ở vùng thắt lưng bên, giữa cột sống và bờ trên của tiểu khung. Nó hợp với cơ chậu tạo thành cơ thắt lưng chậu.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Psoas major muscle",
@@ -2642,12 +2722,13 @@
    "viName": null,
    "enName": "Right quadratus femoris",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Quadratus femoris muscle",
    "description": {
-    "lang": "en",
-    "text": "The quadratus femoris is a flat, quadrilateral skeletal muscle. Located on the posterior side of the hip joint, it is a strong external rotator and adductor of the thigh, but also acts to stabilize the femoral head in the acetabulum.",
-    "translated": false
+    "lang": "vi",
+    "text": "Cơ vuông đùi là một cơ vân dẹt, hình tứ giác. Nằm ở mặt sau khớp háng, nó là cơ xoay ngoài và khép đùi khoẻ, đồng thời còn giúp giữ vững chỏm xương đùi trong ổ cối.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Quadratus femoris muscle",
@@ -2664,12 +2745,13 @@
    "viName": null,
    "enName": "Right rectus capitis anterior",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Rectus capitis anterior muscle",
    "description": {
-    "lang": "en",
-    "text": "The rectus capitis anterior is a short, flat muscle, situated immediately behind the upper part of the Longus capitis.",
-    "translated": false
+    "lang": "vi",
+    "text": "Cơ thẳng đầu trước là một cơ ngắn, dẹt, nằm ngay sau phần trên của cơ dài đầu.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Rectus capitis anterior muscle",
@@ -2686,12 +2768,13 @@
    "viName": null,
    "enName": "Left rectus capitis lateralis",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Rectus capitis lateralis muscle",
    "description": {
-    "lang": "en",
-    "text": "The rectus capitis lateralis, a short, flat muscle, arises from the upper surface of the transverse process of the atlas, and is inserted into the under surface of the jugular process of the occipital bone.",
-    "translated": false
+    "lang": "vi",
+    "text": "Cơ thẳng đầu ngoài là một cơ ngắn, dẹt, bám gốc từ mặt trên mỏm ngang của đốt đội và bám tận vào mặt dưới mỏm cảnh của xương chẩm.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Rectus capitis lateralis muscle",
@@ -2708,12 +2791,13 @@
    "viName": null,
    "enName": "Right rectus capitis posterior major",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Rectus capitis posterior major muscle",
    "description": {
-    "lang": "en",
-    "text": "The rectus capitis posterior major is a muscle in the upper back part of the neck. It is one of the suboccipital muscles.",
-    "translated": false
+    "lang": "vi",
+    "text": "Cơ thẳng đầu sau lớn là một cơ nằm ở phần trên phía sau của cổ. Đây là một trong các cơ dưới chẩm.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Rectus capitis posterior major muscle",
@@ -2730,12 +2814,13 @@
    "viName": null,
    "enName": "Right rectus capitis posterior minor",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Rectus capitis posterior minor muscle",
    "description": {
-    "lang": "en",
-    "text": "The rectus capitis posterior minor is a muscle in the upper back part of the neck. It is one of the suboccipital muscles.",
-    "translated": false
+    "lang": "vi",
+    "text": "Cơ thẳng đầu sau bé là một cơ nằm ở phần trên phía sau của cổ. Đây là một trong các cơ dưới chẩm.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Rectus capitis posterior minor muscle",
@@ -2752,12 +2837,13 @@
    "viName": null,
    "enName": "Left rectus femoris",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Rectus femoris muscle",
    "description": {
-    "lang": "en",
-    "text": "The rectus femoris muscle is one of the four quadriceps muscles of the human body. The others are the vastus medialis, the vastus intermedius, and the vastus lateralis.",
-    "translated": false
+    "lang": "vi",
+    "text": "Cơ thẳng đùi là một trong bốn cơ tứ đầu đùi của cơ thể người. Ba cơ còn lại là cơ rộng trong, cơ rộng giữa và cơ rộng ngoài.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Rectus femoris muscle",
@@ -2774,12 +2860,13 @@
    "viName": null,
    "enName": "Right rhomboid major",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Rhomboid major muscle",
    "description": {
-    "lang": "en",
-    "text": "The rhomboid major is a skeletal muscle of the back that connects the scapula with the vertebrae of the spinal column. It originates from the spinous processes of the thoracic vertebrae T2–T5 and supraspinous ligament; it inserts onto the lower portion of the medial border of the scapula.",
-    "translated": false
+    "lang": "vi",
+    "text": "Cơ trám lớn là một cơ vân ở lưng, nối xương vai với các đốt sống. Nó bám gốc từ mỏm gai của các đốt sống ngực T2–T5 và dây chằng trên gai, bám tận vào phần dưới của bờ trong xương vai.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Rhomboid major muscle",
@@ -2796,12 +2883,13 @@
    "viName": null,
    "enName": "Right rhomboid minor",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Rhomboid minor muscle",
    "description": {
-    "lang": "en",
-    "text": "In human anatomy, the rhomboid minor is a small skeletal muscle of the back that connects the scapula to the vertebrae of the spinal column. It arises from the nuchal ligament, the 7th cervical and 1st thoracic vertebrae and intervening supraspinous ligaments; it inserts onto the medial border of the scapula, and is innervated by the dorsal scapular nerve.",
-    "translated": false
+    "lang": "vi",
+    "text": "Cơ trám bé là một cơ vân nhỏ ở lưng, nối xương bả vai với các đốt sống của cột sống. Nó bám gốc từ dây chằng gáy, đốt sống cổ VII và đốt sống ngực I cùng các dây chằng trên gai xen giữa; bám tận vào bờ trong xương bả vai và được chi phối bởi thần kinh lưng vai.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Rhomboid minor muscle",
@@ -2832,13 +2920,14 @@
    "viName": null,
    "enName": "Right scalenus anterior",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Scalene muscles",
    "mismatch": true,
    "description": {
-    "lang": "en",
-    "text": "The scalene muscles are a group of three muscles on each side of the neck, identified as the anterior, the middle, and the posterior. They are innervated by the third to the eighth cervical spinal nerves (C3-C8).",
-    "translated": false
+    "lang": "vi",
+    "text": "Các cơ bậc thang là một nhóm gồm ba cơ ở mỗi bên cổ, gồm cơ bậc thang trước, giữa và sau. Chúng được chi phối bởi các dây thần kinh sống cổ từ đốt thứ ba đến đốt thứ tám (C3–C8).",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Scalene muscles",
@@ -2855,13 +2944,14 @@
    "viName": null,
    "enName": "Right scalenus medius",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Scalene muscles",
    "mismatch": true,
    "description": {
-    "lang": "en",
-    "text": "The scalene muscles are a group of three muscles on each side of the neck, identified as the anterior, the middle, and the posterior. They are innervated by the third to the eighth cervical spinal nerves (C3-C8).",
-    "translated": false
+    "lang": "vi",
+    "text": "Các cơ bậc thang là một nhóm gồm ba cơ ở mỗi bên cổ, gồm cơ bậc thang trước, giữa và sau. Chúng được chi phối bởi các dây thần kinh sống cổ từ đốt thứ ba đến đốt thứ tám (C3–C8).",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Scalene muscles",
@@ -2878,13 +2968,14 @@
    "viName": null,
    "enName": "Right scalenus posterior",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Scalene muscles",
    "mismatch": true,
    "description": {
-    "lang": "en",
-    "text": "The scalene muscles are a group of three muscles on each side of the neck, identified as the anterior, the middle, and the posterior. They are innervated by the third to the eighth cervical spinal nerves (C3-C8).",
-    "translated": false
+    "lang": "vi",
+    "text": "Các cơ bậc thang là một nhóm gồm ba cơ ở mỗi bên cổ, gồm cơ bậc thang trước, giữa và sau. Chúng được chi phối bởi các dây thần kinh sống cổ từ đốt thứ ba đến đốt thứ tám (C3–C8).",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Scalene muscles",
@@ -2929,12 +3020,13 @@
    "viName": null,
    "enName": "Right semimembranosus",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Semimembranosus muscle",
    "description": {
-    "lang": "en",
-    "text": "The semimembranosus muscle is the most medial of the three hamstring muscles in the thigh. It is so named because it has a flat tendon of origin.",
-    "translated": false
+    "lang": "vi",
+    "text": "Cơ bán màng là cơ nằm trong nhất trong ba cơ ụ ngồi–cẳng chân (gân kheo) ở đùi. Tên gọi của nó bắt nguồn từ việc có một gân nguyên ủy dẹt.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Semimembranosus muscle",
@@ -2951,13 +3043,14 @@
    "viName": null,
    "enName": "Left semispinalis capitis",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Semispinalis muscles",
    "mismatch": true,
    "description": {
-    "lang": "en",
-    "text": "The semispinalis muscles are a group of three muscles belonging to the transversospinales. These are the semispinalis capitis, the semispinalis cervicis and the semispinalis thoracis.",
-    "translated": false
+    "lang": "vi",
+    "text": "Các cơ bán gai là một nhóm gồm ba cơ thuộc nhóm cơ ngang gai. Đó là cơ bán gai đầu, cơ bán gai cổ và cơ bán gai ngực.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Semispinalis muscles",
@@ -2974,13 +3067,14 @@
    "viName": null,
    "enName": "Right semispinalis cervicis",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Semispinalis muscles",
    "mismatch": true,
    "description": {
-    "lang": "en",
-    "text": "The semispinalis muscles are a group of three muscles belonging to the transversospinales. These are the semispinalis capitis, the semispinalis cervicis and the semispinalis thoracis.",
-    "translated": false
+    "lang": "vi",
+    "text": "Các cơ bán gai là một nhóm gồm ba cơ thuộc nhóm cơ ngang gai. Đó là cơ bán gai đầu, cơ bán gai cổ và cơ bán gai ngực.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Semispinalis muscles",
@@ -2997,13 +3091,14 @@
    "viName": null,
    "enName": "Left semispinalis thoracis",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Semispinalis muscles",
    "mismatch": true,
    "description": {
-    "lang": "en",
-    "text": "The semispinalis muscles are a group of three muscles belonging to the transversospinales. These are the semispinalis capitis, the semispinalis cervicis and the semispinalis thoracis.",
-    "translated": false
+    "lang": "vi",
+    "text": "Các cơ bán gai là một nhóm gồm ba cơ thuộc nhóm cơ ngang gai. Đó là cơ bán gai đầu, cơ bán gai cổ và cơ bán gai ngực.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Semispinalis muscles",
@@ -3020,12 +3115,13 @@
    "viName": null,
    "enName": "Right semitendinosus",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Semitendinosus muscle",
    "description": {
-    "lang": "en",
-    "text": "The semitendinosus is a long superficial muscle in the back of the thigh. It is so named because it has a very long tendon of insertion.",
-    "translated": false
+    "lang": "vi",
+    "text": "Cơ bán gân là một cơ nông dài ở mặt sau đùi. Tên gọi của nó bắt nguồn từ việc có một gân bám tận rất dài.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Semitendinosus muscle",
@@ -3064,12 +3160,13 @@
    "viName": null,
    "enName": "Right serratus posterior inferior",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Serratus posterior inferior muscle",
    "description": {
-    "lang": "en",
-    "text": "The serratus posterior inferior muscle, also known as the posterior serratus muscle, is a muscle of the human body.",
-    "translated": false
+    "lang": "vi",
+    "text": "Cơ răng sau dưới, còn gọi là cơ răng sau, là một cơ của cơ thể người.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Serratus posterior inferior muscle",
@@ -3086,12 +3183,13 @@
    "viName": null,
    "enName": "Right serratus posterior superior",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Serratus posterior superior muscle",
    "description": {
-    "lang": "en",
-    "text": "The serratus posterior superior muscle is a thin, quadrilateral muscle. It is situated at the upper back part of the thorax, deep to the rhomboid muscles.",
-    "translated": false
+    "lang": "vi",
+    "text": "Cơ răng sau trên là một cơ mỏng, hình tứ giác. Nó nằm ở phần trên sau của lồng ngực, sâu dưới các cơ trám.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Serratus posterior superior muscle",
@@ -3108,12 +3206,13 @@
    "viName": null,
    "enName": "Right soleus",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Soleus muscle",
    "description": {
-    "lang": "en",
-    "text": "In humans and some other mammals, the soleus is a powerful muscle in the back part of the lower leg. It runs from just below the knee to the heel and is involved in standing and walking.",
-    "translated": false
+    "lang": "vi",
+    "text": "Ở người và một số động vật có vú khác, cơ dép là một cơ khỏe ở phần sau của cẳng chân. Nó chạy từ ngay dưới gối đến gót chân và tham gia vào việc đứng và đi.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Soleus muscle",
@@ -3129,12 +3228,13 @@
    "viName": null,
    "enName": "spinalis",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Spinalis",
    "description": {
-    "lang": "en",
-    "text": "The spinalis is one of the erector spinae muscles, a bundle of skeletal muscles, located nearest to the spine. It is divided into three parts: Spinalis dorsi, spinalis cervicis, and spinalis capitis.",
-    "translated": false
+    "lang": "vi",
+    "text": "Cơ gai là một trong các cơ dựng sống — một bó cơ vân nằm gần cột sống nhất. Nó được chia làm ba phần: cơ gai lưng, cơ gai cổ và cơ gai đầu.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Spinalis",
@@ -3151,12 +3251,13 @@
    "viName": null,
    "enName": "Right spinalis thoracis",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Spinalis",
    "description": {
-    "lang": "en",
-    "text": "The spinalis is one of the erector spinae muscles, a bundle of skeletal muscles, located nearest to the spine. It is divided into three parts: Spinalis dorsi, spinalis cervicis, and spinalis capitis.",
-    "translated": false
+    "lang": "vi",
+    "text": "Cơ gai là một trong các cơ dựng sống — một bó cơ vân nằm gần cột sống nhất. Nó được chia làm ba phần: cơ gai lưng, cơ gai cổ và cơ gai đầu.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Spinalis",
@@ -3217,12 +3318,13 @@
    "viName": null,
    "enName": "Right sternocleidomastoid",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Sternocleidomastoid muscle",
    "description": {
-    "lang": "en",
-    "text": "The sternocleidomastoid muscle is one of the largest and most superficial cervical muscles. The primary actions of the muscle are rotation of the head to the opposite side and flexion of the neck.",
-    "translated": false
+    "lang": "vi",
+    "text": "Cơ ức đòn chũm là một trong những cơ vùng cổ lớn và nông nhất. Tác dụng chính của cơ là xoay đầu sang bên đối diện và gấp cổ.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Sternocleidomastoid muscle",
@@ -3239,12 +3341,13 @@
    "viName": null,
    "enName": "Right sternohyoid",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Sternohyoid muscle",
    "description": {
-    "lang": "en",
-    "text": "The sternohyoid muscle is a bilaterally paired, long, thin, narrow strap muscle of the anterior neck. It is one of the infrahyoid muscles.",
-    "translated": false
+    "lang": "vi",
+    "text": "Cơ ức móng là một cơ dạng dải dài, mảnh, hẹp, đối xứng hai bên ở phần trước cổ. Nó là một trong các cơ dưới móng.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Sternohyoid muscle",
@@ -3261,12 +3364,13 @@
    "viName": null,
    "enName": "Right sternothyroid",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Sternothyroid muscle",
    "description": {
-    "lang": "en",
-    "text": "The sternothyroid muscle is an infrahyoid muscle of the neck. It acts to depress the hyoid bone.",
-    "translated": false
+    "lang": "vi",
+    "text": "Cơ ức giáp là một cơ dưới móng ở cổ. Nó có tác dụng hạ xương móng.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Sternothyroid muscle",
@@ -3283,12 +3387,13 @@
    "viName": null,
    "enName": "Left stylohyoid",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Stylohyoid muscle",
    "description": {
-    "lang": "en",
-    "text": "The stylohyoid muscle is one of the suprahyoid muscles. Its originates from the styloid process of the temporal bone; it inserts onto hyoid bone.",
-    "translated": false
+    "lang": "vi",
+    "text": "Cơ trâm móng là một trong các cơ trên móng. Nó bám gốc từ mỏm trâm của xương thái dương và bám tận vào xương móng.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Stylohyoid muscle",
@@ -3305,12 +3410,13 @@
    "viName": null,
    "enName": "Left subclavius",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Subclavius muscle",
    "description": {
-    "lang": "en",
-    "text": "The subclavius is a small triangular muscle, placed between the clavicle and the first rib. Along with the pectoralis major and pectoralis minor muscles, the subclavius muscle makes up the anterior axioappendicular muscles, also known as anterior wall of the axilla.",
-    "translated": false
+    "lang": "vi",
+    "text": "Cơ dưới đòn là một cơ nhỏ hình tam giác, nằm giữa xương đòn và xương sườn thứ nhất. Cùng với cơ ngực lớn và cơ ngực bé, cơ dưới đòn tạo thành nhóm cơ trục–chi trước, còn gọi là thành trước của hố nách.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Subclavius muscle",
@@ -3327,12 +3433,13 @@
    "viName": null,
    "enName": "Right subscapularis",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Subscapularis muscle",
    "description": {
-    "lang": "en",
-    "text": "The subscapularis is a large triangular muscle which fills the subscapular fossa and inserts into the lesser tubercle of the humerus and the front of the capsule of the shoulder-joint.",
-    "translated": false
+    "lang": "vi",
+    "text": "Cơ dưới vai là một cơ lớn hình tam giác lấp đầy hố dưới vai, bám tận vào củ bé của xương cánh tay và mặt trước bao khớp vai.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Subscapularis muscle",
@@ -3362,12 +3469,13 @@
    "viName": null,
    "enName": "Right superior oblique",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Superior oblique muscle",
    "description": {
-    "lang": "en",
-    "text": "The superior oblique muscle or obliquus oculi superior is a fusiform muscle originating in the upper, medial side of the orbit which abducts, depresses and internally rotates the eye. It is the only extraocular muscle innervated by the trochlear nerve.",
-    "translated": false
+    "lang": "vi",
+    "text": "Cơ chéo trên (cơ chéo mắt trên) là một cơ hình thoi bám gốc ở phía trên, phía trong ổ mắt; nó dạng, hạ và xoay trong nhãn cầu. Đây là cơ ngoài nhãn cầu duy nhất do thần kinh ròng rọc chi phối.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Superior oblique muscle",
@@ -3384,12 +3492,13 @@
    "viName": null,
    "enName": "Right superior rectus",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Superior rectus muscle",
    "description": {
-    "lang": "en",
-    "text": "The superior rectus muscle is one of the extraocular muscles located in the orbit. It is innervated by the superior division of the oculomotor nerve (III).",
-    "translated": false
+    "lang": "vi",
+    "text": "Cơ thẳng trên là một trong các cơ ngoài nhãn cầu nằm trong ổ mắt. Nó được chi phối bởi ngành trên của thần kinh vận nhãn (III).",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Superior rectus muscle",
@@ -3406,12 +3515,13 @@
    "viName": null,
    "enName": "Left supinator",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Supinator muscle",
    "description": {
-    "lang": "en",
-    "text": "In human anatomy, the supinator is a broad muscle in the posterior compartment of the forearm, curved around the upper third of the radius. Its function is to supinate the forearm.",
-    "translated": false
+    "lang": "vi",
+    "text": "Ở giải phẫu người, cơ ngửa là một cơ rộng thuộc khoang sau của cẳng tay, vòng quanh một phần ba trên của xương quay. Chức năng của nó là ngửa cẳng tay.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Supinator muscle",
@@ -3472,12 +3582,13 @@
    "viName": null,
    "enName": "Left teres major",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Teres major muscle",
    "description": {
-    "lang": "en",
-    "text": "The teres major muscle is a muscle of the upper limb. It attaches to the scapula and the humerus and is one of the seven scapulohumeral muscles.",
-    "translated": false
+    "lang": "vi",
+    "text": "Cơ tròn lớn là một cơ của chi trên. Nó bám vào xương bả vai và xương cánh tay, là một trong bảy cơ vai–cánh tay.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Teres major muscle",
@@ -3494,12 +3605,13 @@
    "viName": null,
    "enName": "Right teres minor",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Teres minor muscle",
    "description": {
-    "lang": "en",
-    "text": "The teres minor is a narrow, elongated muscle of the rotator cuff. The muscle originates from the lateral border and adjacent posterior surface of the corresponding right or left scapula and inserts at both the greater tubercle of the humerus and the posterior surface of the joint capsule.",
-    "translated": false
+    "lang": "vi",
+    "text": "Cơ tròn bé là một cơ hẹp, thuôn dài thuộc chóp xoay. Cơ khởi nguyên từ bờ ngoài và mặt sau lân cận của xương bả vai cùng bên, bám tận vào củ lớn xương cánh tay và mặt sau của bao khớp.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Teres minor muscle",
@@ -3557,13 +3669,14 @@
    "viName": null,
    "enName": "Right thyro-arytenoid",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Thyroarytenoid muscle",
    "mismatch": true,
    "description": {
-    "lang": "en",
-    "text": "The thyroarytenoid muscle is a broad, thin muscle that forms the body of the vocal fold and that supports the wall of the ventricle and its appendix. It functions to shorten the vocal folds.",
-    "translated": false
+    "lang": "vi",
+    "text": "Cơ giáp phễu là một cơ rộng, mỏng tạo nên thân của nếp thanh âm và nâng đỡ thành của thất thanh quản cùng túi thất. Nó có chức năng làm ngắn nếp thanh âm.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Thyroarytenoid muscle",
@@ -3580,12 +3693,13 @@
    "viName": null,
    "enName": "Right thyrohyoid",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Thyrohyoid muscle",
    "description": {
-    "lang": "en",
-    "text": "The thyrohyoid muscle is a small skeletal muscle of the neck. Above, it attaches onto the greater cornu of the hyoid bone; below, it attaches onto the oblique line of the thyroid cartilage.",
-    "translated": false
+    "lang": "vi",
+    "text": "Cơ giáp móng là một cơ vân nhỏ ở cổ. Phía trên, nó bám vào sừng lớn của xương móng; phía dưới, bám vào đường chéo của sụn giáp.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Thyrohyoid muscle",
@@ -3602,12 +3716,13 @@
    "viName": null,
    "enName": "Right tibialis anterior",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Tibialis anterior muscle",
    "description": {
-    "lang": "en",
-    "text": "The tibialis anterior muscle is a muscle of the anterior compartment of the lower leg. It originates from the upper portion of the tibia; it inserts into the medial cuneiform and first metatarsal bones of the foot.",
-    "translated": false
+    "lang": "vi",
+    "text": "Cơ chày trước là một cơ thuộc khoang trước của cẳng chân. Nó khởi nguyên từ phần trên của xương chày và bám tận vào xương chêm trong cùng xương đốt bàn chân thứ nhất.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Tibialis anterior muscle",
@@ -3624,12 +3739,13 @@
    "viName": null,
    "enName": "Right tibialis posterior",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Tibialis posterior muscle",
    "description": {
-    "lang": "en",
-    "text": "The tibialis posterior muscle is the most central of all the leg muscles, and is located in the deep posterior compartment of the leg. It is the key stabilizing muscle of the lower leg.",
-    "translated": false
+    "lang": "vi",
+    "text": "Cơ chày sau là cơ nằm ở vị trí trung tâm nhất trong các cơ cẳng chân, thuộc khoang sau sâu của cẳng chân. Đây là cơ giữ vững chủ chốt của cẳng chân.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Tibialis posterior muscle",
@@ -3645,12 +3761,13 @@
    "viName": null,
    "enName": "Transverse arytenoid",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Transverse arytenoid",
    "description": {
-    "lang": "en",
-    "text": "The transverse arytenoid is an unpaired intrinsic muscle of the larynx. It is situated deep to the two oblique arytenoids; the oblique and transverse arytenoids are often considered two parts of a single muscle - the interarytenoid (arytenoid) muscle.",
-    "translated": false
+    "lang": "vi",
+    "text": "Cơ phễu ngang là một cơ nội tại đơn lẻ (không thành đôi) của thanh quản. Nó nằm sâu hơn hai cơ phễu chéo; cơ phễu chéo và cơ phễu ngang thường được coi là hai phần của một cơ duy nhất — cơ gian phễu.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Transverse arytenoid",
@@ -3667,12 +3784,13 @@
    "viName": null,
    "enName": "Right transversus thoracis",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Transversus thoracis muscle",
    "description": {
-    "lang": "en",
-    "text": "The transversus thoracis muscle, also known as triangularis sterni, lies internal to the thoracic cage, anteriorly. It is usually a thin plane of muscular and tendinous fibers, however on athletic individuals it can be a thick 'slab of meat', situated upon the inner surface of the front wall of the chest.",
-    "translated": false
+    "lang": "vi",
+    "text": "Cơ ngang ngực, còn gọi là cơ tam giác ức, nằm ở mặt trong của lồng ngực, phía trước. Nó thường là một lớp mỏng gồm các sợi cơ và sợi gân nằm áp trên mặt trong của thành trước ngực.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Transversus thoracis muscle",
@@ -3688,13 +3806,14 @@
    "viName": null,
    "enName": "Uvular muscle",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Musculus uvulae",
    "mismatch": true,
    "description": {
-    "lang": "en",
-    "text": "The musculus uvulae is a bilaterally muscle of the soft palate that acts to shorten the uvula when both muscles contract. It forms most of the mass of the uvula.",
-    "translated": false
+    "lang": "vi",
+    "text": "Cơ lưỡi gà là một cơ đôi của khẩu cái mềm, có tác dụng làm ngắn lưỡi gà khi cả hai cơ co lại. Nó tạo nên phần lớn khối lượng của lưỡi gà.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Musculus uvulae",
@@ -3711,12 +3830,13 @@
    "viName": null,
    "enName": "Right vastus intermedius",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Vastus intermedius muscle",
    "description": {
-    "lang": "en",
-    "text": "The vastus intermedius (Cruraeus) arises from the front and lateral surfaces of the body of the femur in its upper two-thirds, sitting under the rectus femoris muscle and from the lower part of the lateral intermuscular septum. Its fibers end in a superficial aponeurosis, which forms the deep part of the quadriceps femoris tendon.",
-    "translated": false
+    "lang": "vi",
+    "text": "Cơ rộng giữa khởi nguyên từ mặt trước và mặt ngoài của thân xương đùi ở hai phần ba trên, nằm dưới cơ thẳng đùi, và từ phần dưới của vách gian cơ ngoài. Các sợi của nó tận cùng ở một cân nông tạo nên phần sâu của gân cơ tứ đầu đùi.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Vastus intermedius muscle",
@@ -3733,12 +3853,13 @@
    "viName": null,
    "enName": "Right vastus lateralis",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Vastus lateralis muscle",
    "description": {
-    "lang": "en",
-    "text": "The vastus lateralis, also called the vastus externus, is the largest and most powerful part of the quadriceps femoris, a muscle in the thigh. Together with other muscles of the quadriceps group, it serves to extend the knee joint, moving the lower leg forward.",
-    "translated": false
+    "lang": "vi",
+    "text": "Cơ rộng ngoài là phần lớn nhất và khỏe nhất của cơ tứ đầu đùi ở đùi. Cùng với các cơ khác trong nhóm tứ đầu, nó có nhiệm vụ duỗi khớp gối, đưa cẳng chân ra trước.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Vastus lateralis muscle",
@@ -3755,12 +3876,13 @@
    "viName": null,
    "enName": "Right vastus medialis",
    "system": "muscular",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Vastus medialis",
    "description": {
-    "lang": "en",
-    "text": "The vastus medialis is an extensor muscle located medially in the thigh that extends the knee. The vastus medialis is part of the quadriceps muscle group.",
-    "translated": false
+    "lang": "vi",
+    "text": "Cơ rộng trong là một cơ duỗi nằm ở phía trong đùi, có tác dụng duỗi khớp gối. Cơ rộng trong thuộc nhóm cơ tứ đầu đùi.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Vastus medialis",
@@ -3821,12 +3943,13 @@
    "viName": null,
    "enName": "Left trochlear nerve",
    "system": "nervous",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Trochlear nerve",
    "description": {
-    "lang": "en",
-    "text": "The trochlear nerve, also known as the fourth cranial nerve, cranial nerve IV, or CN IV, is a cranial nerve that innervates a single muscle - the superior oblique muscle of the eye. Unlike most other cranial nerves, the trochlear nerve is exclusively a motor nerve.",
-    "translated": false
+    "lang": "vi",
+    "text": "Thần kinh ròng rọc, còn gọi là dây thần kinh sọ số IV, là một dây thần kinh sọ chi phối một cơ duy nhất — cơ chéo trên của mắt. Khác với hầu hết các dây thần kinh sọ khác, thần kinh ròng rọc là dây thuần vận động.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Trochlear nerve",
@@ -3842,12 +3965,13 @@
    "viName": null,
    "enName": "Corpus spongiosum of penis",
    "system": "reproductive",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Corpus spongiosum",
    "description": {
-    "lang": "en",
-    "text": "The corpus spongiosum is the mass of spongy tissue surrounding the male urethra within the penis. It is also called the corpus cavernosum urethrae in older texts.",
-    "translated": false
+    "lang": "vi",
+    "text": "Vật xốp là khối mô xốp bao quanh niệu đạo nam trong dương vật. Trong các sách cũ, nó còn được gọi là vật hang niệu đạo.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Corpus spongiosum",
@@ -3908,12 +4032,13 @@
    "viName": null,
    "enName": "Right inferior nasal concha",
    "system": "respiratory",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Inferior nasal concha",
    "description": {
-    "lang": "en",
-    "text": "The inferior nasal concha is one of the three paired nasal conchae in the nose. It extends horizontally along the lateral wall of the nasal cavity and consists of a lamina of spongy bone, curled upon itself like a scroll,.",
-    "translated": false
+    "lang": "vi",
+    "text": "Xương xoăn mũi dưới là một trong ba đôi xương xoăn mũi trong mũi. Nó chạy ngang dọc theo thành ngoài của ổ mũi và gồm một lá xương xốp cuộn lại như hình cuộn giấy.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Inferior nasal concha",
@@ -3930,12 +4055,13 @@
    "viName": null,
    "enName": "Right inferior pharyngeal constrictor",
    "system": "respiratory",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Inferior pharyngeal constrictor muscle",
    "description": {
-    "lang": "en",
-    "text": "The inferior pharyngeal constrictor muscle is a skeletal muscle of the neck. It is the thickest of the three outer pharyngeal muscles.",
-    "translated": false
+    "lang": "vi",
+    "text": "Cơ khít hầu dưới là một cơ vân ở cổ. Đây là cơ dày nhất trong ba cơ khít hầu bên ngoài.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Inferior pharyngeal constrictor muscle",
@@ -3952,12 +4078,13 @@
    "viName": null,
    "enName": "Right lateral nasal cartilage",
    "system": "respiratory",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Lateral nasal cartilage",
    "description": {
-    "lang": "en",
-    "text": "The lateral nasal cartilage is situated below the inferior margin of the nasal bone, and is flattened, and triangular in shape.",
-    "translated": false
+    "lang": "vi",
+    "text": "Sụn mũi bên nằm dưới bờ dưới của xương mũi, dẹt và có hình tam giác.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Lateral nasal cartilage",
@@ -3995,12 +4122,13 @@
    "viName": null,
    "enName": "Right middle pharyngeal constrictor",
    "system": "respiratory",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Middle pharyngeal constrictor muscle",
    "description": {
-    "lang": "en",
-    "text": "The middle pharyngeal constrictor is a fan-shaped muscle located in the neck. It is one of three pharyngeal constrictor muscles.",
-    "translated": false
+    "lang": "vi",
+    "text": "Cơ khít hầu giữa là một cơ hình quạt nằm ở cổ. Đây là một trong ba cơ khít hầu.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Middle pharyngeal constrictor muscle",
@@ -4017,12 +4145,13 @@
    "viName": null,
    "enName": "Left palatopharyngeus",
    "system": "respiratory",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Palatopharyngeus muscle",
    "description": {
-    "lang": "en",
-    "text": "The palatopharyngeus muscle is a small muscle in the roof of the mouth.",
-    "translated": false
+    "lang": "vi",
+    "text": "Cơ khẩu cái hầu là một cơ nhỏ ở vòm miệng.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Palatopharyngeus muscle",
@@ -4039,12 +4168,13 @@
    "viName": null,
    "enName": "Right salpingopharyngeus",
    "system": "respiratory",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Salpingopharyngeus muscle",
    "description": {
-    "lang": "en",
-    "text": "The salpingopharyngeus muscle is a muscle of the pharynx. It arises from the lower part of the cartilage of the Eustachian tube, and inserts into the palatopharyngeus muscle by blending with its posterior fasciculus.",
-    "translated": false
+    "lang": "vi",
+    "text": "Cơ vòi hầu là một cơ của hầu. Nó khởi nguyên từ phần dưới của sụn vòi tai (vòi Eustachi) và bám tận vào cơ khẩu cái hầu bằng cách hòa vào bó sau của cơ này.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Salpingopharyngeus muscle",
@@ -4060,12 +4190,13 @@
    "viName": null,
    "enName": "Septal nasal cartilage",
    "system": "respiratory",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Septal nasal cartilage",
    "description": {
-    "lang": "en",
-    "text": "The septal nasal cartilage is composed of hyaline cartilage. It is somewhat quadrilateral in form, thicker at its margins than at its center, and completes the separation between the nasal cavities in front.",
-    "translated": false
+    "lang": "vi",
+    "text": "Sụn vách mũi được tạo bởi sụn trong. Nó có hình gần tứ giác, dày ở bờ hơn ở giữa, và hoàn tất sự ngăn cách giữa hai ổ mũi ở phía trước.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Septal nasal cartilage",
@@ -4082,12 +4213,13 @@
    "viName": null,
    "enName": "Right stylopharyngeus",
    "system": "respiratory",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Stylopharyngeus muscle",
    "description": {
-    "lang": "en",
-    "text": "The stylopharyngeus muscle is a muscle in the head. It originates from the temporal styloid process.",
-    "translated": false
+    "lang": "vi",
+    "text": "Cơ trâm hầu là một cơ ở đầu. Nó khởi nguyên từ mỏm trâm của xương thái dương.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Stylopharyngeus muscle",
@@ -4104,12 +4236,13 @@
    "viName": null,
    "enName": "Right superior pharyngeal constrictor",
    "system": "respiratory",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Superior pharyngeal constrictor muscle",
    "description": {
-    "lang": "en",
-    "text": "The superior pharyngeal constrictor muscle is a quadrilateral muscle of the pharynx. It is the uppermost and thinnest of the three pharyngeal constrictors.",
-    "translated": false
+    "lang": "vi",
+    "text": "Cơ khít hầu trên là một cơ hình tứ giác của hầu. Đây là cơ cao nhất và mỏng nhất trong ba cơ khít hầu.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Superior pharyngeal constrictor muscle",
@@ -4219,12 +4352,13 @@
    "viName": null,
    "enName": "Left arytenoid cartilage",
    "system": "skeletal",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Arytenoid cartilage",
    "description": {
-    "lang": "en",
-    "text": "The arytenoid cartilages are a pair of small three-sided pyramids which form part of the larynx. They are the site of attachment of the vocal cords.",
-    "translated": false
+    "lang": "vi",
+    "text": "Các sụn phễu là một cặp hình tháp nhỏ ba mặt tạo nên một phần của thanh quản. Chúng là nơi bám của các dây thanh âm.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Arytenoid cartilage",
@@ -4240,12 +4374,13 @@
    "viName": "Đốt đội",
    "enName": "Atlas",
    "system": "skeletal",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Atlas (anatomy)",
    "description": {
-    "lang": "en",
-    "text": "In anatomy, the atlas (C1) is the most superior (first) cervical vertebra of the spine and is located in the neck.",
-    "translated": false
+    "lang": "vi",
+    "text": "Trong giải phẫu học, đốt đội (C1) là đốt sống cổ cao nhất (đầu tiên) của cột sống, nằm ở vùng cổ.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Atlas (anatomy)",
@@ -4261,12 +4396,13 @@
    "viName": "Đốt trục",
    "enName": "Axis",
    "system": "skeletal",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Axis (anatomy)",
    "description": {
-    "lang": "en",
-    "text": "In anatomy, the axis is the second cervical vertebra (C2) of the spine, immediately inferior to the atlas, upon which the head rests. The spinal cord passes through the axis.",
-    "translated": false
+    "lang": "vi",
+    "text": "Trong giải phẫu học, đốt trục là đốt sống cổ thứ hai (C2) của cột sống, nằm ngay dưới đốt đội, nơi đầu tựa lên. Tủy sống đi xuyên qua đốt trục.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Axis (anatomy)",
@@ -4283,12 +4419,13 @@
    "viName": null,
    "enName": "Right calcaneus",
    "system": "skeletal",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Calcaneus",
    "description": {
-    "lang": "en",
-    "text": "The calcaneus or heel bone is a bone of the tarsus of the foot which constitutes the heel. In humans, it attaches several muscles and the plantar fascia.",
-    "translated": false
+    "lang": "vi",
+    "text": "Xương gót là một xương thuộc khối xương cổ chân, tạo nên gót chân. Ở người, nó là nơi bám của một số cơ và của cân gan chân.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Calcaneus",
@@ -4305,12 +4442,13 @@
    "viName": null,
    "enName": "Right capitate",
    "system": "skeletal",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Capitate bone",
    "description": {
-    "lang": "en",
-    "text": "The capitate bone, also known as os magnum, is a bone in the human wrist found in the center of the carpal bone region, located at the distal end of the radius and ulna bones. It articulates with the third metacarpal bone and forms the third carpometacarpal joint.",
-    "translated": false
+    "lang": "vi",
+    "text": "Xương cả (còn gọi là os magnum) là một xương ở cổ tay, nằm ở trung tâm vùng các xương cổ tay, phía đầu xa của xương quay và xương trụ. Nó tiếp khớp với xương đốt bàn tay thứ ba và tạo thành khớp cổ tay - đốt bàn tay thứ ba.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Capitate bone",
@@ -4349,13 +4487,14 @@
    "viName": null,
    "enName": "Left corniculate cartilage",
    "system": "skeletal",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Corniculate cartilages",
    "mismatch": true,
    "description": {
-    "lang": "en",
-    "text": "The corniculate cartilages are two small conical nodules in the larynx, consisting of elastic cartilage, which articulate with the summits of the arytenoid cartilages and serve to prolong them posteriorly and medially.",
-    "translated": false
+    "lang": "vi",
+    "text": "Các sụn sừng là hai nốt nhỏ hình nón trong thanh quản, cấu tạo bằng sụn đàn hồi, tiếp khớp với đỉnh của các sụn phễu và có vai trò kéo dài chúng ra phía sau và vào trong.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Corniculate cartilages",
@@ -4371,12 +4510,13 @@
    "viName": null,
    "enName": "Cricoid cartilage",
    "system": "skeletal",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Cricoid cartilage",
    "description": {
-    "lang": "en",
-    "text": "The cricoid cartilage, or simply cricoid or cricoid ring, is the only complete ring of cartilage around the trachea. It forms the back part of the voice box and functions as an attachment site for muscles, cartilages, and ligaments involved in opening and closing the airway and in producing speech.",
-    "translated": false
+    "lang": "vi",
+    "text": "Sụn nhẫn (hay vòng sụn nhẫn) là vòng sụn hoàn chỉnh duy nhất bao quanh khí quản. Nó tạo nên phần sau của thanh quản và là nơi bám của các cơ, sụn và dây chằng tham gia mở, đóng đường thở và tạo tiếng nói.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Cricoid cartilage",
@@ -4393,12 +4533,13 @@
    "viName": null,
    "enName": "Right cuboid bone",
    "system": "skeletal",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Cuboid bone",
    "description": {
-    "lang": "en",
-    "text": "In the human body, the cuboid bone is one of the seven tarsal bones of the foot.",
-    "translated": false
+    "lang": "vi",
+    "text": "Ở cơ thể người, xương hộp là một trong bảy xương cổ chân của bàn chân.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Cuboid bone",
@@ -4415,13 +4556,14 @@
    "viName": null,
    "enName": "Left cuneiform cartilage",
    "system": "skeletal",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Cuneiform cartilages",
    "mismatch": true,
    "description": {
-    "lang": "en",
-    "text": "In the human larynx, the cuneiform cartilages are two small, elongated pieces of yellow elastic cartilage, placed one on either side, in the aryepiglottic fold.",
-    "translated": false
+    "lang": "vi",
+    "text": "Trong thanh quản người, các sụn chêm là hai mảnh sụn đàn hồi màu vàng nhỏ và thuôn dài, nằm ở mỗi bên trong nếp phễu nắp thanh môn.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Cuneiform cartilages",
@@ -4687,12 +4829,13 @@
    "viName": "Xương đùi phải",
    "enName": "Right femur",
    "system": "skeletal",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Femur",
    "description": {
-    "lang": "en",
-    "text": "The femur, or thigh bone is the only bone in the thigh — the region of the lower limb between the hip and the knee. In many four-legged animals, the femur is the upper bone of the hindleg.",
-    "translated": false
+    "lang": "vi",
+    "text": "Xương đùi là xương duy nhất ở đùi — vùng chi dưới nằm giữa hông và gối. Ở nhiều loài bốn chân, xương đùi là xương phía trên của chân sau.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Femur",
@@ -4709,12 +4852,13 @@
    "viName": null,
    "enName": "Right fibula",
    "system": "skeletal",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Fibula",
    "description": {
-    "lang": "en",
-    "text": "The fibula or calf bone is a leg bone on the lateral side of the tibia, to which it is connected above and below. It is the smaller of the two bones and, in proportion to its length, the most slender of all the long bones.",
-    "translated": false
+    "lang": "vi",
+    "text": "Xương mác là xương cẳng chân nằm ở phía ngoài xương chày, được nối với xương chày ở cả trên và dưới. Đây là xương nhỏ hơn trong hai xương, và so với chiều dài của nó thì mảnh nhất trong tất cả các xương dài.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Fibula",
@@ -4797,12 +4941,13 @@
    "viName": null,
    "enName": "Left fifth metacarpal bone",
    "system": "skeletal",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Fifth metacarpal bone",
    "description": {
-    "lang": "en",
-    "text": "The fifth metacarpal bone is the most medial and second-shortest of the metacarpal bones.",
-    "translated": false
+    "lang": "vi",
+    "text": "Xương đốt bàn tay thứ năm là xương nằm trong nhất và ngắn thứ hai trong các xương đốt bàn tay.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Fifth metacarpal bone",
@@ -4819,12 +4964,13 @@
    "viName": null,
    "enName": "Right fifth metatarsal bone",
    "system": "skeletal",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Fifth metatarsal bone",
    "description": {
-    "lang": "en",
-    "text": "The fifth metatarsal bone is a long bone in the foot, and is palpable along the distal outer edges of the feet. It is the second smallest of the five metatarsal bones.",
-    "translated": false
+    "lang": "vi",
+    "text": "Xương đốt bàn chân thứ năm là một xương dài ở bàn chân, có thể sờ thấy dọc theo bờ ngoài phía xa của bàn chân. Đây là xương nhỏ thứ hai trong năm xương đốt bàn chân.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Fifth metatarsal bone",
@@ -4929,12 +5075,13 @@
    "viName": null,
    "enName": "Left first metacarpal bone",
    "system": "skeletal",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "First metacarpal bone",
    "description": {
-    "lang": "en",
-    "text": "The first metacarpal bone or the metacarpal bone of the thumb is the first bone proximal to the thumb. It is connected to the trapezium of the carpus at the first carpometacarpal joint and to the proximal thumb phalanx at the first metacarpophalangeal joint.",
-    "translated": false
+    "lang": "vi",
+    "text": "Xương đốt bàn tay thứ nhất, hay xương đốt bàn tay của ngón cái, là xương đầu tiên phía gần ngón cái. Nó nối với xương thang của khối xương cổ tay tại khớp cổ tay - đốt bàn tay thứ nhất, và nối với đốt gần của ngón cái tại khớp đốt bàn tay - đốt ngón tay thứ nhất.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "First metacarpal bone",
@@ -4951,12 +5098,13 @@
    "viName": null,
    "enName": "Left first metatarsal bone",
    "system": "skeletal",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "First metatarsal bone",
    "description": {
-    "lang": "en",
-    "text": "The first metatarsal bone is the bone in the foot just behind the big toe. The first metatarsal bone is the shortest of the metatarsal bones and by far the thickest and strongest of them.",
-    "translated": false
+    "lang": "vi",
+    "text": "Xương đốt bàn chân thứ nhất là xương ở bàn chân nằm ngay sau ngón chân cái. Đây là xương ngắn nhất trong các xương đốt bàn chân nhưng lại dày và khỏe hơn hẳn các xương còn lại.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "First metatarsal bone",
@@ -5083,12 +5231,13 @@
    "viName": null,
    "enName": "Right fourth metacarpal bone",
    "system": "skeletal",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Fourth metacarpal bone",
    "description": {
-    "lang": "en",
-    "text": "The fourth metacarpal bone is shorter and smaller than the third.",
-    "translated": false
+    "lang": "vi",
+    "text": "Xương đốt bàn tay thứ tư ngắn và nhỏ hơn xương đốt bàn tay thứ ba.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Fourth metacarpal bone",
@@ -5105,12 +5254,13 @@
    "viName": null,
    "enName": "Left fourth metatarsal bone",
    "system": "skeletal",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Fourth metatarsal bone",
    "description": {
-    "lang": "en",
-    "text": "The fourth metatarsal bone is a long bone in the foot. It is smaller in size than the third metatarsal bone and is the third longest of the five metatarsal bones.",
-    "translated": false
+    "lang": "vi",
+    "text": "Xương đốt bàn chân thứ tư là một xương dài ở bàn chân. Nó nhỏ hơn xương đốt bàn chân thứ ba và là xương dài thứ ba trong năm xương đốt bàn chân.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Fourth metatarsal bone",
@@ -5170,12 +5320,13 @@
    "viName": "Xương trán",
    "enName": "Frontal bone",
    "system": "skeletal",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Frontal bone",
    "description": {
-    "lang": "en",
-    "text": "In the human skull, the frontal bone or sincipital bone is an unpaired bone which consists of two portions. These are the vertically oriented squamous part, and the horizontally oriented orbital part, making up the bony part of the forehead, part of the bony orbital cavity holding the eye, and part of the bony part of the nose respectively.",
-    "translated": false
+    "lang": "vi",
+    "text": "Trong sọ người, xương trán là một xương đơn gồm hai phần: phần trai định hướng thẳng đứng và phần ổ mắt định hướng nằm ngang. Chúng lần lượt tạo nên phần xương của trán, một phần ổ mắt chứa nhãn cầu, và một phần khung xương của mũi.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Frontal bone",
@@ -5279,13 +5430,14 @@
    "viName": null,
    "enName": "Left intermediate cuneiform bone",
    "system": "skeletal",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Cuneiform bones",
    "mismatch": true,
    "description": {
-    "lang": "en",
-    "text": "There are three cuneiform (\"wedge-shaped\") bones in the human foot:the first or medial cuneiform\nthe second or intermediate cuneiform, also known as the middle cuneiform\nthe third or lateral cuneiform",
-    "translated": false
+    "lang": "vi",
+    "text": "Bàn chân người có ba xương chêm (hình \"nêm\"): xương chêm thứ nhất hay chêm trong; xương chêm thứ hai hay chêm giữa; và xương chêm thứ ba hay chêm ngoài. Xương chêm giữa là xương chêm thứ hai.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Cuneiform bones",
@@ -5301,13 +5453,14 @@
    "viName": null,
    "enName": "Intervertebral disk",
    "system": "skeletal",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Intervertebral disc",
    "mismatch": true,
    "description": {
-    "lang": "en",
-    "text": "An intervertebral disc, also spelled intervertebral disk, lies between adjacent vertebrae in the vertebral column. Each disc forms a fibrocartilaginous joint, to allow slight movement of the vertebrae, to act as a ligament to hold the vertebrae together, and to function as a shock absorber for the spine.",
-    "translated": false
+    "lang": "vi",
+    "text": "Đĩa gian đốt sống nằm giữa hai đốt sống kề nhau trong cột sống. Mỗi đĩa tạo thành một khớp sụn - xơ, cho phép các đốt sống cử động nhẹ, giữ các đốt sống với nhau như một dây chằng, và hoạt động như bộ giảm chấn cho cột sống.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Intervertebral disc",
@@ -5610,13 +5763,14 @@
    "viName": null,
    "enName": "Left lateral cuneiform bone",
    "system": "skeletal",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Cuneiform bones",
    "mismatch": true,
    "description": {
-    "lang": "en",
-    "text": "There are three cuneiform (\"wedge-shaped\") bones in the human foot:the first or medial cuneiform\nthe second or intermediate cuneiform, also known as the middle cuneiform\nthe third or lateral cuneiform",
-    "translated": false
+    "lang": "vi",
+    "text": "Bàn chân người có ba xương chêm (hình \"nêm\"): xương chêm thứ nhất hay chêm trong; xương chêm thứ hai hay chêm giữa; và xương chêm thứ ba hay chêm ngoài. Xương chêm ngoài là xương chêm thứ ba.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Cuneiform bones",
@@ -5745,12 +5899,13 @@
    "viName": null,
    "enName": "Left major alar cartilage",
    "system": "skeletal",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Major alar cartilage",
    "description": {
-    "lang": "en",
-    "text": "The major alar cartilage is a thin, flexible plate, situated immediately below the lateral nasal cartilage, and bent upon itself in such a manner as to form the medial wall and lateral wall of the nostril of its own side.",
-    "translated": false
+    "lang": "vi",
+    "text": "Sụn cánh mũi lớn là một mảnh mỏng, linh hoạt, nằm ngay dưới sụn mũi bên, gập vào chính nó theo cách tạo nên thành trong và thành ngoài của lỗ mũi cùng bên.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Major alar cartilage",
@@ -5810,13 +5965,14 @@
    "viName": null,
    "enName": "Right medial cuneiform bone",
    "system": "skeletal",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Cuneiform bones",
    "mismatch": true,
    "description": {
-    "lang": "en",
-    "text": "There are three cuneiform (\"wedge-shaped\") bones in the human foot:the first or medial cuneiform\nthe second or intermediate cuneiform, also known as the middle cuneiform\nthe third or lateral cuneiform",
-    "translated": false
+    "lang": "vi",
+    "text": "Bàn chân người có ba xương chêm hình nêm: xương chêm thứ nhất hay xương chêm trong, xương chêm thứ hai hay xương chêm giữa, và xương chêm thứ ba hay xương chêm ngoài.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Cuneiform bones",
@@ -6046,12 +6202,13 @@
    "viName": null,
    "enName": "Right palatine bone",
    "system": "skeletal",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Palatine bone",
    "description": {
-    "lang": "en",
-    "text": "In anatomy, the palatine bones are two irregular bones of the facial skeleton in many animal species, located above the uvula in the throat. Together with the maxilla, they comprise the hard palate.",
-    "translated": false
+    "lang": "vi",
+    "text": "Xương khẩu cái là hai xương không đều thuộc khối xương mặt, nằm phía trên lưỡi gà ở vùng họng. Cùng với xương hàm trên, chúng tạo nên khẩu cái cứng.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Palatine bone",
@@ -6090,12 +6247,13 @@
    "viName": null,
    "enName": "Left patella",
    "system": "skeletal",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Patella",
    "description": {
-    "lang": "en",
-    "text": "The patella, also known as the kneecap, is a flat, rounded triangular bone which articulates with the femur and covers and protects the anterior articular surface of the knee joint. The patella is found in many tetrapods, such as mice, cats, birds, humans, and dogs, but not in whales, or most reptiles.",
-    "translated": false
+    "lang": "vi",
+    "text": "Xương bánh chè, hay xương đầu gối, là một xương dẹt, tròn, hình tam giác, khớp với xương đùi và che chắn mặt khớp trước của khớp gối.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Patella",
@@ -6112,12 +6270,13 @@
    "viName": null,
    "enName": "Left pisiform",
    "system": "skeletal",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Pisiform bone",
    "description": {
-    "lang": "en",
-    "text": "The pisiform bone, also spelled pisiforme, is a small knobbly, sesamoid bone that is found in the wrist. It forms the ulnar border of the carpal tunnel.",
-    "translated": false
+    "lang": "vi",
+    "text": "Xương đậu là một xương nhỏ, có nốt lồi, thuộc loại xương vừng, nằm ở cổ tay. Nó tạo nên bờ trụ của ống cổ tay.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Pisiform bone",
@@ -6295,12 +6454,13 @@
    "viName": "Xương cùng",
    "enName": "Sacrum",
    "system": "skeletal",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Sacrum",
    "description": {
-    "lang": "en",
-    "text": "The sacrum, in human anatomy, is a triangular bone at the base of the spine that forms by the fusing of the sacral vertebrae (S1–S5) between ages 18 and 30.",
-    "translated": false
+    "lang": "vi",
+    "text": "Xương cùng là một xương hình tam giác nằm ở nền cột sống, được tạo thành do các đốt sống cùng (S1–S5) hợp nhất lại trong khoảng từ 18 đến 30 tuổi.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Sacrum",
@@ -6317,12 +6477,13 @@
    "viName": null,
    "enName": "Right scaphoid",
    "system": "skeletal",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Scaphoid bone",
    "description": {
-    "lang": "en",
-    "text": "The scaphoid bone is one of the carpal bones of the wrist. It is situated between the hand and forearm on the thumb side of the wrist.",
-    "translated": false
+    "lang": "vi",
+    "text": "Xương thuyền là một trong các xương cổ tay, nằm giữa bàn tay và cẳng tay về phía ngón cái của cổ tay.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Scaphoid bone",
@@ -6405,12 +6566,13 @@
    "viName": null,
    "enName": "Right second metacarpal bone",
    "system": "skeletal",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Second metacarpal bone",
    "description": {
-    "lang": "en",
-    "text": "The second metacarpal bone is the longest, and its base the largest, of all the metacarpal bones.",
-    "translated": false
+    "lang": "vi",
+    "text": "Xương đốt bàn tay thứ hai là xương dài nhất trong các xương đốt bàn tay, và có nền lớn nhất.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Second metacarpal bone",
@@ -6427,12 +6589,13 @@
    "viName": null,
    "enName": "Right second metatarsal bone",
    "system": "skeletal",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Second metatarsal bone",
    "description": {
-    "lang": "en",
-    "text": "The second metatarsal bone is a long bone in the foot. It is the longest of the metatarsal bones, being prolonged backward and held firmly into the recess formed by the three cuneiform bones.",
-    "translated": false
+    "lang": "vi",
+    "text": "Xương đốt bàn chân thứ hai là một xương dài ở bàn chân. Đây là xương dài nhất trong các xương đốt bàn chân, kéo dài ra sau và gắn chặt vào hõm do ba xương chêm tạo nên.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Second metatarsal bone",
@@ -6682,12 +6845,13 @@
    "viName": "Xương bướm",
    "enName": "Sphenoid bone",
    "system": "skeletal",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Sphenoid bone",
    "description": {
-    "lang": "en",
-    "text": "The sphenoid bone is an unpaired bone of the neurocranium in mammals. It is situated in the middle of the skull towards the front, in front of the basilar part of the occipital bone.",
-    "translated": false
+    "lang": "vi",
+    "text": "Xương bướm là một xương đơn của sọ não ở động vật có vú. Nó nằm ở giữa sọ, hơi lệch về phía trước, phía trước phần nền của xương chẩm.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Sphenoid bone",
@@ -6718,12 +6882,13 @@
    "viName": null,
    "enName": "Right temporal bone",
    "system": "skeletal",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Temporal bone",
    "description": {
-    "lang": "en",
-    "text": "The temporal bone is a paired bone situated at the sides and base of the skull, lateral to the temporal lobe of the cerebral cortex.",
-    "translated": false
+    "lang": "vi",
+    "text": "Xương thái dương là một xương chẵn nằm ở hai bên và nền sọ, phía ngoài thùy thái dương của vỏ đại não.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Temporal bone",
@@ -6850,12 +7015,13 @@
    "viName": null,
    "enName": "Right third metacarpal bone",
    "system": "skeletal",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Third metacarpal bone",
    "description": {
-    "lang": "en",
-    "text": "The third metacarpal bone is a little smaller than the second.",
-    "translated": false
+    "lang": "vi",
+    "text": "Xương đốt bàn tay thứ ba nhỏ hơn một chút so với xương đốt bàn tay thứ hai.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Third metacarpal bone",
@@ -6872,12 +7038,13 @@
    "viName": null,
    "enName": "Right third metatarsal bone",
    "system": "skeletal",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Third metatarsal bone",
    "description": {
-    "lang": "en",
-    "text": "The third metatarsal bone is a long bone in the foot. It is the second longest metatarsal, the longest being the second metatarsal.",
-    "translated": false
+    "lang": "vi",
+    "text": "Xương đốt bàn chân thứ ba là một xương dài ở bàn chân. Đây là xương đốt bàn chân dài thứ nhì, dài nhất là xương đốt bàn chân thứ hai.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Third metatarsal bone",
@@ -6937,12 +7104,13 @@
    "viName": null,
    "enName": "Thyroid cartilage",
    "system": "skeletal",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Thyroid cartilage",
    "description": {
-    "lang": "en",
-    "text": "The thyroid cartilage is the largest of the nine cartilages that make up the laryngeal skeleton, the cartilage structure in and around the trachea that contains the larynx. It does not completely encircle the larynx.",
-    "translated": false
+    "lang": "vi",
+    "text": "Sụn giáp là sụn lớn nhất trong chín sụn tạo nên khung thanh quản, cấu trúc sụn nằm trong và quanh khí quản. Nó không bao kín hoàn toàn thanh quản.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Thyroid cartilage",
@@ -6959,12 +7127,13 @@
    "viName": null,
    "enName": "Right tibia",
    "system": "skeletal",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Tibia",
    "description": {
-    "lang": "en",
-    "text": "The tibia, also known as the shinbone, shankbone or simply the shin, is the larger, stronger, and anterior (frontal) of the two bones in the leg below the knee in vertebrates ; it connects the knee with the ankle. The tibia is found on the medial side of the leg next to the fibula and closer to the median plane.",
-    "translated": false
+    "lang": "vi",
+    "text": "Xương chày, còn gọi là xương ống chân, là xương lớn hơn, khỏe hơn và nằm phía trước trong hai xương của cẳng chân dưới gối; nó nối gối với cổ chân. Xương chày nằm ở phía trong của cẳng chân, cạnh xương mác và gần mặt phẳng giữa hơn.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Tibia",
@@ -7017,12 +7186,13 @@
    "viName": null,
    "enName": "Left triquetral",
    "system": "skeletal",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Triquetral bone",
    "description": {
-    "lang": "en",
-    "text": "The triquetral bone is located in the wrist on the medial side of the proximal row of the carpus between the lunate and pisiform bones. It is on the ulnar side of the hand, but does not directly articulate with the ulna.",
-    "translated": false
+    "lang": "vi",
+    "text": "Xương tháp nằm ở cổ tay, về phía trong của hàng gần khối xương cổ tay, giữa xương nguyệt và xương đậu. Nó ở phía trụ của bàn tay nhưng không khớp trực tiếp với xương trụ.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Triquetral bone",
@@ -7202,12 +7372,13 @@
    "viName": null,
    "enName": "Vomer",
    "system": "skeletal",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Vomer",
    "description": {
-    "lang": "en",
-    "text": "The vomer is one of the unpaired facial bones of the skull. It is located in the midsagittal line, and articulates with the sphenoid, the ethmoid, the left and right palatine bones, and the left and right maxillary bones.",
-    "translated": false
+    "lang": "vi",
+    "text": "Xương lá mía là một trong các xương mặt đơn của sọ. Nó nằm trên đường giữa dọc và khớp với xương bướm, xương sàng, hai xương khẩu cái và hai xương hàm trên.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Vomer",
@@ -7224,12 +7395,13 @@
    "viName": null,
    "enName": "Left zygomatic bone",
    "system": "skeletal",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Zygomatic bone",
    "description": {
-    "lang": "en",
-    "text": "In the human skull, the zygomatic bone, also called cheekbone or malar bone, is a paired irregular bone, situated at the upper and lateral part of the face and forming part of the lateral wall and floor of the orbit, of the temporal fossa and the infratemporal fossa. It presents a malar and a temporal surface; four processes, and four borders.",
-    "translated": false
+    "lang": "vi",
+    "text": "Ở sọ người, xương gò má, còn gọi là xương má, là một xương chẵn không đều nằm ở phần trên và ngoài của mặt, tạo nên một phần thành bên và sàn ổ mắt, hố thái dương và hố dưới thái dương.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Zygomatic bone",
@@ -7246,12 +7418,13 @@
    "viName": "Thận trái",
    "enName": "Left kidney",
    "system": "urinary",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Kidney",
    "description": {
-    "lang": "en",
-    "text": "In humans, the kidneys are two reddish-brown bean-shaped blood-filtering organs that are a multilobar, multipapillary form of mammalian kidneys, usually without signs of external lobulation. They are located on the left and right in the retroperitoneal space, and in adult humans are about 12 centimetres in length.",
-    "translated": false
+    "lang": "vi",
+    "text": "Ở người, thận là hai cơ quan lọc máu hình hạt đậu màu nâu đỏ, nằm hai bên trái và phải trong khoang sau phúc mạc; ở người trưởng thành, thận dài khoảng 12 centimét.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Kidney",
@@ -7331,12 +7504,13 @@
    "viName": "Tĩnh mạch cửa gan",
    "enName": "Hepatic portal vein",
    "system": "venous",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Portal vein",
    "description": {
-    "lang": "en",
-    "text": "The portal vein or hepatic portal vein (HPV) is a blood vessel that carries blood from the gastrointestinal tract, gallbladder, pancreas and spleen to the liver. This blood contains nutrients and toxins extracted from digested contents.",
-    "translated": false
+    "lang": "vi",
+    "text": "Tĩnh mạch cửa, hay tĩnh mạch cửa gan, là mạch máu đưa máu từ ống tiêu hóa, túi mật, tụy và lách về gan. Máu này chứa các chất dinh dưỡng và độc tố hấp thu từ thức ăn đã tiêu hóa.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Portal vein",
@@ -7353,12 +7527,13 @@
    "viName": null,
    "enName": "Left inferior pulmonary vein",
    "system": "venous",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Pulmonary vein",
    "description": {
-    "lang": "en",
-    "text": "The pulmonary veins are the veins that transfer oxygenated blood from the lungs to the heart. The largest pulmonary veins are the four main pulmonary veins, two from each lung that drain into the left atrium of the heart.",
-    "translated": false
+    "lang": "vi",
+    "text": "Các tĩnh mạch phổi là những tĩnh mạch đưa máu giàu oxy từ phổi về tim. Lớn nhất là bốn tĩnh mạch phổi chính, mỗi bên phổi hai tĩnh mạch, đổ vào tâm nhĩ trái của tim.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Pulmonary vein",
@@ -7374,12 +7549,13 @@
    "viName": "Tĩnh mạch chủ dưới",
    "enName": "Inferior vena cava",
    "system": "venous",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Inferior vena cava",
    "description": {
-    "lang": "en",
-    "text": "The inferior vena cava is a large vein that carries the deoxygenated blood from the lower and middle body into the right atrium of the heart. It is formed by the joining of the right and the left common iliac veins, usually at the level of the fifth lumbar vertebra.",
-    "translated": false
+    "lang": "vi",
+    "text": "Tĩnh mạch chủ dưới là một tĩnh mạch lớn đưa máu khử oxy từ phần dưới và phần giữa cơ thể về tâm nhĩ phải của tim. Nó được tạo thành do tĩnh mạch chậu chung phải và trái hợp lại, thường ở ngang mức đốt sống thắt lưng thứ năm.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Inferior vena cava",
@@ -7396,12 +7572,13 @@
    "viName": null,
    "enName": "Left superior pulmonary vein",
    "system": "venous",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Pulmonary vein",
    "description": {
-    "lang": "en",
-    "text": "The pulmonary veins are the veins that transfer oxygenated blood from the lungs to the heart. The largest pulmonary veins are the four main pulmonary veins, two from each lung that drain into the left atrium of the heart.",
-    "translated": false
+    "lang": "vi",
+    "text": "Các tĩnh mạch phổi là những tĩnh mạch đưa máu giàu oxy từ phổi về tim. Lớn nhất là bốn tĩnh mạch phổi chính, mỗi bên phổi hai tĩnh mạch, đổ vào tâm nhĩ trái của tim.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Pulmonary vein",
@@ -7417,12 +7594,13 @@
    "viName": "Tĩnh mạch chủ trên",
    "enName": "Superior vena cava",
    "system": "venous",
-   "status": "en-untranslated",
+   "status": "vi",
    "enTitle": "Superior vena cava",
    "description": {
-    "lang": "en",
-    "text": "The superior vena cava (SVC) is the superior of the two venae cavae, the great venous trunks that return deoxygenated blood from the systemic circulation to the right atrium of the heart. It is a large-diameter (24 mm) short length (~7 cm) vein that receives venous return from the upper half of the body, above the diaphragm.",
-    "translated": false
+    "lang": "vi",
+    "text": "Tĩnh mạch chủ trên là tĩnh mạch nằm trên trong hai tĩnh mạch chủ, những thân tĩnh mạch lớn đưa máu khử oxy từ tuần hoàn hệ thống về tâm nhĩ phải của tim. Đây là một tĩnh mạch ngắn, đường kính lớn, nhận máu tĩnh mạch từ nửa trên cơ thể, phía trên cơ hoành.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
     "title": "Superior vena cava",

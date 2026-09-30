@@ -25,7 +25,7 @@
  * `data/anatomy/descriptions.json`. Cần `.cache/anatomy/audit.json`
  * (chạy `npx tsx scripts/anatomy-audit.ts` trước).
  */
-import { readFileSync, writeFileSync, existsSync } from "node:fs";
+import { readFileSync, writeFileSync, existsSync, mkdirSync, readdirSync } from "node:fs";
 import path from "node:path";
 
 import { VI_NAMES } from "../src/lib/human-atlas/names-vi";
@@ -248,7 +248,14 @@ type Entry = {
   enTitle: string | null;
   /** Cờ nghi map lệch (tên FMA ≠ tên bài); cần soát tay. */
   mismatch?: boolean;
-  description: { lang: "vi" | "en"; text: string; translated: false } | null;
+  description: {
+    lang: "vi" | "en";
+    text: string;
+    /** true = dịch từ bản gốc (en) sang vi; vi nguyên văn Wikipedia thì false. */
+    translated: boolean;
+    /** true = đã qua science-editor → KHÔNG hiện nhãn "do AI". */
+    reviewed?: boolean;
+  } | null;
   source: { title: string; url: string; license: "CC BY-SA 4.0" } | null;
 };
 
@@ -273,7 +280,75 @@ function mismatched(enName: string, enTitle: string | null): boolean {
   return jac < 0.5;
 }
 
+// ------------------------------------------------- emit / merge (bước 2)
+
+const EN_DIR = path.join(__dirname, "..", ".cache/anatomy/desc-en-batches");
+const VI_DIR = path.join(__dirname, "..", ".cache/anatomy/desc-vi-batches");
+
+type Doc = { schema: number; note: string; count: number; entries: Entry[] };
+
+/** Chia các mục status=en-untranslated thành lô để science-editor dịch+thẩm. */
+function emitEnBatches(size: number) {
+  const doc = JSON.parse(readFileSync(OUT, "utf8")) as Doc;
+  const en = doc.entries.filter((e) => e.status === "en-untranslated" && e.description);
+  mkdirSync(EN_DIR, { recursive: true });
+  let n = 0;
+  for (let i = 0; i < en.length; i += size) {
+    const batch = en.slice(i, i + size).map((e) => ({
+      fma: e.fma,
+      enName: e.enName,
+      system: e.system,
+      en: e.description!.text,
+      url: e.source?.url,
+    }));
+    writeFileSync(path.join(EN_DIR, `batch-${++n}.json`), JSON.stringify(batch, null, 1));
+  }
+  console.log(`Đã ghi ${n} lô (${en.length} mục) vào ${path.relative(process.cwd(), EN_DIR)}`);
+  console.log(`science-editor: đọc mỗi batch-N.json, dịch + thẩm định, ghi ${path.relative(process.cwd(), VI_DIR)}/batch-N.json`);
+}
+
+/** Gộp bản dịch đã duyệt (từ VI_DIR) vào descriptions.json. */
+function mergeViBatches() {
+  const doc = JSON.parse(readFileSync(OUT, "utf8")) as Doc;
+  const byFma = new Map(doc.entries.map((e) => [e.fma, e]));
+  if (!existsSync(VI_DIR)) {
+    console.error(`Thiếu ${VI_DIR}`);
+    process.exit(1);
+  }
+  let merged = 0,
+    skipped = 0;
+  for (const f of readdirSync(VI_DIR).filter((f) => f.endsWith(".json"))) {
+    const rows = JSON.parse(readFileSync(path.join(VI_DIR, f), "utf8")) as Array<{
+      fma: string;
+      vi?: string;
+      verdict?: string;
+    }>;
+    for (const r of rows) {
+      const e = byFma.get(r.fma);
+      if (!e || !e.description) continue;
+      if (!r.vi || (r.verdict && r.verdict.toUpperCase() !== "PASS")) {
+        skipped++;
+        continue;
+      }
+      e.description = { lang: "vi", text: r.vi.trim(), translated: true, reviewed: true };
+      e.status = "vi";
+      merged++;
+    }
+  }
+  doc.note = "Mô tả cấu trúc chính; nguồn Wikipedia (CC BY-SA). vi dịch từ en đã qua science-editor (không nhãn AI).";
+  writeFileSync(OUT, JSON.stringify(doc, null, 1));
+  const by = (st: Entry["status"]) => doc.entries.filter((e) => e.status === st).length;
+  console.log(`Gộp: ${merged} bản dịch đã duyệt, bỏ ${skipped}.`);
+  console.log(`Coverage: vi ${by("vi")} / en ${by("en-untranslated")} / trống ${by("none")}`);
+}
+
 async function run() {
+  if (process.argv.includes("--emit-en")) {
+    const sz = process.argv.indexOf("--size");
+    return emitEnBatches(sz >= 0 ? Number(process.argv[sz + 1]) : 23);
+  }
+  if (process.argv.includes("--merge-vi")) return mergeViBatches();
+
   const write = process.argv.includes("--write");
   const limArg = process.argv.indexOf("--limit");
   const limit = limArg >= 0 ? Number(process.argv[limArg + 1]) : Infinity;
