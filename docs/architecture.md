@@ -630,6 +630,11 @@ liệu/đèn — cảnh 3D chính vẫn #05070a (lý do ở `SCENE_BACKGROUND`).
   động mạch mạc treo tràng"), không "động mạch nuôi ống tiêu hoá" — tập có cả ĐM gan/lách, thiếu ĐM thực quản.
 - Tim: khoang nhĩ là cấu trúc riêng — "Các buồng tim" chỉ hiện khoang, "Tâm nhĩ" (thành + khoang) không nằm
   trọn trong đó nên bảng sẽ có "Phần còn lại".
+- Giác quan, bạch huyết, thần kinh (cùng ngày): lớp nhãn cầu lấy MẮT PHẢI (góc nhìn một mắt), hai mắt ở tổng quan
+  là "Nhãn cầu phải/trái". Bạch huyết không một hàng mỗi nhóm hạch (~110): gom theo vùng (nông/sâu, thành/tạng).
+  Tên hạch là đuôi của từ khác ("submandibular" ⊃ "mandibular", "epigastric" ⊃ "gastric") → regex phải ``
+  + liệt kê tiền tố (supra/sub/retro-pyloric…). Phế vị và gian sườn dùng lại cấu trúc của hô hấp — khai báo
+  trùng tập mảnh là hai hàng chồng nhau. Không ghi "thiếu ống ngực": lưới mạch ngực có thể đã chứa nó.
 
 ### Hệ → Góc nhìn giải phẫu → Cấu trúc (2026-09-30)
 

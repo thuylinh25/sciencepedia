@@ -4,9 +4,12 @@ import resolved from "./view-parts.generated.json";
 import { CARDIAC_VIEWS } from "./views-cardiac";
 import { DIGESTIVE_VIEWS } from "./views-digestive";
 import { ENDOCRINE_VIEWS } from "./views-endocrine";
+import { LYMPHATIC_VIEWS } from "./views-lymphatic";
+import { NERVOUS_VIEWS } from "./views-nervous";
 import { OVERVIEW_VIEWS } from "./views-overviews";
 import { REPRODUCTIVE_VIEWS } from "./views-reproductive";
 import { RESPIRATORY_VIEWS } from "./views-respiratory";
+import { SENSORY_VIEWS } from "./views-sensory";
 import { URINARY_VIEWS } from "./views-urinary";
 
 /*
@@ -366,6 +369,9 @@ export const SYSTEM_VIEWS: readonly AtlasViewDef[] = [
   ...DIGESTIVE_VIEWS,
   ...URINARY_VIEWS,
   ...REPRODUCTIVE_VIEWS,
+  ...SENSORY_VIEWS,
+  ...LYMPHATIC_VIEWS,
+  ...NERVOUS_VIEWS,
 ];
 
 /** Registry chung: lưới, deep link, ảnh thu nhỏ và tìm kiếm đều đọc từ đây. */

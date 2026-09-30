@@ -69,6 +69,9 @@ export const URINARY_VIEWS: readonly AtlasViewDef[] = [
     direction: "back",
     focus: KIDNEYS,
     context: [LUMBAR_SPINE, LOWER_RIBS, HIP_BONES],
+    // Bối cảnh (sườn XI–XII, mào chậu) là điều góc nhìn muốn dạy — khung theo thận ở
+    // mức mặc định thì cắt mất chúng.
+    camera: { fill: 0.45, thumbnailFill: 0.55 },
     terms: ["sau phúc mạc", "retroperitoneal", "thận", "kidney"],
     quality: "acceptable",
   },
