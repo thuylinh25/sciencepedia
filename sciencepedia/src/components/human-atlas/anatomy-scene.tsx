@@ -32,7 +32,7 @@ import { atlasDataUrl } from "@/lib/human-atlas/assets";
 import { createExplosionLayout } from "@/lib/human-atlas/explosion-layout";
 import { decodeModelResponse } from "@/lib/human-atlas/model-download";
 import { PointerTap } from "@/lib/human-atlas/pointer-tap";
-import { ATLAS_VIEWS, viewById, viewParts, type ViewDirection } from "@/lib/human-atlas/views";
+import { ATLAS_VIEWS, isSystemView, viewById, viewParts, type ViewDirection } from "@/lib/human-atlas/views";
 
 /**
  * Cảnh giải phẫu 3D — port từ `app/scene.tsx` của Human Atlas
@@ -337,26 +337,32 @@ export default function AnatomyScene({
         shader.uniforms.selectionState = { value: selectionTexture };
         shader.uniforms.stateWidth = { value: width };
         shader.vertexShader =
-          "attribute float partIndex; uniform sampler2D partState; uniform sampler2D selectionState; uniform float stateWidth; varying float partVisible; varying float partSelected; varying float partHovered;\n" +
+          "attribute float partIndex; uniform sampler2D partState; uniform sampler2D selectionState; uniform float stateWidth; varying float partVisible; varying float partSelected; varying float partHovered; varying float partContext;\n" +
           shader.vertexShader;
         shader.vertexShader = shader.vertexShader.replace(
           "#include <begin_vertex>",
-          "#include <begin_vertex>\nvec2 stateUv = vec2((partIndex + 0.5) / stateWidth, 0.5); vec4 state = texture2D(partState, stateUv); transformed += state.xyz; partVisible = state.w; vec4 pick = texture2D(selectionState, stateUv); partSelected = pick.r; partHovered = pick.b;",
+          "#include <begin_vertex>\nvec2 stateUv = vec2((partIndex + 0.5) / stateWidth, 0.5); vec4 state = texture2D(partState, stateUv); transformed += state.xyz; partVisible = state.w; vec4 pick = texture2D(selectionState, stateUv); partSelected = pick.r; partHovered = pick.b; partContext = pick.a;",
         );
         shader.fragmentShader =
-          "varying float partVisible; varying float partSelected; varying float partHovered;\n" + shader.fragmentShader;
+          "varying float partVisible; varying float partSelected; varying float partHovered; varying float partContext;\n" + shader.fragmentShader;
         shader.fragmentShader = shader.fragmentShader.replace(
           "#include <clipping_planes_fragment>",
-          "#include <clipping_planes_fragment>\nif (partVisible < 0.5) discard;",
+          "#include <clipping_planes_fragment>\nif (partVisible < 0.5) discard;\nif (partContext > 0.5 && mod(floor(gl_FragCoord.x) + floor(gl_FragCoord.y), 2.0) < 0.5) discard;",
         );
         /*
+         * Mảnh BỐI CẢNH của góc nhìn theo hệ (kênh A của texture chọn): trong suốt
+         * kiểu "screen-door" — bỏ một nửa điểm ảnh theo ô cờ — và nhạt về xám.
+         * Không dùng alpha thật: mảnh bối cảnh chung vật liệu (và chung lượt vẽ)
+         * với mảnh nổi bật; bật `transparent` cho cả vật liệu là phá thứ tự vẽ và
+         * độ sâu của chính cấu trúc đang xem. Ô cờ giữ depth test, khỏi sắp xếp.
+         *
          * Mảnh đang chọn GIỮ màu và bề mặt của nó: chỉ ám cyan 12%, cộng viền
          * sáng cyan ở rìa (fresnel) và phát sáng rất khẽ. Bản gốc trộn 75% sang
          * xanh ngọc — mảnh chọn thành một khối neon, mất luôn hình khối.
          */
         shader.fragmentShader = shader.fragmentShader.replace(
           "#include <color_fragment>",
-          "#include <color_fragment>\ndiffuseColor.rgb = mix(diffuseColor.rgb, vec3(0.45, 0.82, 0.95), partSelected * 0.12);",
+          "#include <color_fragment>\ndiffuseColor.rgb = mix(diffuseColor.rgb, vec3(0.45, 0.82, 0.95), partSelected * 0.12);\ndiffuseColor.rgb = mix(diffuseColor.rgb, vec3(dot(diffuseColor.rgb, vec3(0.3, 0.59, 0.11))) * 0.75, partContext * (1.0 - partSelected) * 0.7);",
         );
         shader.fragmentShader = shader.fragmentShader.replace(
           "#include <emissivemap_fragment>",
@@ -427,19 +433,35 @@ export default function AnatomyScene({
     const SKIN_VISIBLE = new Set(["sensory.ear", "sensory.sclera", "sensory.iris"]);
 
     /** Góc nhìn → chỉ số mảnh (tính một lần mỗi góc nhìn, không mỗi khung). */
-    const viewSets = new Map<string, { focus: Set<number>; hide: Set<number> } | null>();
+    type ViewSet = { focus: Set<number>; hide: Set<number>; context: Set<number>; only: boolean };
+    const viewSets = new Map<string, ViewSet | null>();
     const viewSet = (id: string | null | undefined) => {
       if (!id) return null;
       if (!viewSets.has(id)) {
         const ids = viewParts(id);
-        const toIndex = (list: string[]) =>
+        const toIndex = (list: string[] = []) =>
           new Set(list.map((pid) => partIndexById.get(pid)).filter((i): i is number => i !== undefined));
-        viewSets.set(id, ids ? { focus: toIndex(ids.focus), hide: toIndex(ids.hide) } : null);
+        viewSets.set(
+          id,
+          ids
+            ? {
+                focus: toIndex(ids.focus),
+                hide: toIndex(ids.hide),
+                context: toIndex(ids.context),
+                only: isSystemView(viewById(id)),
+              }
+            : null,
+        );
       }
       return viewSets.get(id) ?? null;
     };
-    const inView = (view: { hide: Set<number> }, system: SystemId, i: number) =>
-      system !== "integumentary" && !view.hide.has(i);
+    /**
+     * Mảnh có trong góc nhìn không. Theo vùng: mọi hệ trừ da, trừ `hide`. Theo
+     * hệ: CHỈ tập nổi bật + bối cảnh — tách riêng cấu trúc, không dời mảnh.
+     */
+    const inView = (view: ViewSet, system: SystemId, i: number) =>
+      view.only ? view.focus.has(i) || view.context.has(i) : system !== "integumentary" && !view.hide.has(i);
+    const isContext = (view: ViewSet | null, i: number) => !!view?.only && view.context.has(i);
 
     /*
      * Mặt phẳng cắt của góc nhìn (`clip` trong views.ts). Gắn/gỡ `clippingPlanes`
@@ -605,16 +627,21 @@ export default function AnatomyScene({
     // ------------------------------------------------------------ camera
     const fovTan = () => 2 * Math.tan(T.MathUtils.degToRad(camera.fov / 2));
 
+    /** Hướng NHÌN TỪ — +x là bên trái người mẫu (xem `ViewDirection`). */
+    const NAMED_DIRECTIONS: Record<string, readonly [number, number, number]> = {
+      front: [0, 0.02, 1],
+      back: [0, 0.02, -1],
+      side: [1, 0.02, 0],
+      left: [1, 0.02, 0],
+      right: [-1, 0.02, 0],
+      anterolateral: [0.7, 0.08, 0.7],
+      posterolateral: [0.7, 0.08, -0.7],
+      // Không thẳng đứng hẳn: `frameBox` cần trục "lên" không trùng hướng nhìn.
+      superior: [0, 1, 0.3],
+      inferior: [0, -1, 0.3],
+    };
     const viewDirection = (view: string | ViewDirection): T.Vector3 =>
-      typeof view !== "string"
-        ? new T.Vector3(...view).normalize()
-        : view === "front"
-        ? new T.Vector3(0, 0.02, 1).normalize()
-        : view === "back"
-          ? new T.Vector3(0, 0.02, -1).normalize()
-          : view === "side"
-            ? new T.Vector3(1, 0.02, 0).normalize()
-            : new T.Vector3(0.35, 0.06, 1).normalize();
+      new T.Vector3(...(typeof view !== "string" ? view : (NAMED_DIRECTIONS[view] ?? [0.35, 0.06, 1]))).normalize();
 
     /**
      * Phần khung còn nhìn thấy mô hình: cả khung trừ các bảng nổi đánh dấu
@@ -703,7 +730,28 @@ export default function AnatomyScene({
      * trong VÙNG QUAN SÁT: to hơn nữa là bàn chân chui sau thanh trượt.
      */
     const frameFill = (w: number) => (w < 768 ? 0.68 : w < 1024 ? 0.7 : 0.74);
+
+    /*
+     * ## Tâm ngang (2026-09-29)
+     *
+     * Căn giữa CANVAS, không giữa vùng trống: bản trước đặt mô hình giữa danh
+     * sách hệ (trái) và cột camera (phải), nên mô hình lệch phải ~100 px so với
+     * thanh "Tách các lớp" và dòng chú thích — vốn canh giữa trang (báo lỗi
+     * 2026-09-29). Nay chỉ né bảng khi mô hình THẬT SỰ chạm bảng: dời vừa đủ để
+     * mép mô hình cách bảng `EDGE` px; hẹp tới mức không né được thì mới về giữa
+     * vùng trống như cũ. Chiều dọc giữ căn theo vùng trống (tiêu đề, thanh dưới).
+     */
+    const EDGE = 16;
+    /** Nửa bề ngang (px) mô hình ở khung vừa gần nhất — `recenter` dùng lại. */
+    let frameHalfPx = 0;
+    const centerOffsetX = (rect: ReturnType<typeof usableRect>, halfPx: number) => {
+      const lo = rect.left + halfPx + EDGE;
+      const hi = rect.right - halfPx - EDGE;
+      const cx = lo <= hi ? Math.min(hi, Math.max(lo, rect.w / 2)) : (rect.left + rect.right) / 2;
+      return rect.w / 2 - cx;
+    };
     const FRAME_PAD = 0.06;
+    const SYSTEM_VIEW_FILL = 0.74;
     const corner = new T.Vector3();
 
     /**
@@ -718,7 +766,14 @@ export default function AnatomyScene({
       direction: T.Vector3,
       rect: ReturnType<typeof usableRect>,
       aspect = camera.aspect,
+      /**
+       * Góc nhìn theo hệ: sàn khoảng cách hạ từ 0,12 m xuống trần zoom của
+       * OrbitControls (nắp thanh môn 3–4 cm ở sàn cũ chỉ còn nửa khung), và lấp
+       * theo vùng trống (xem `fillY`).
+       */
+      systemView = false,
     ) => {
+      const floor = systemView ? controls.minDistance : 0.12;
       const worldUp =
         Math.abs(direction.y) > 0.99 ? new T.Vector3(0, 0, 1) : new T.Vector3(0, 1, 0);
       const right = new T.Vector3().crossVectors(worldUp, direction).normalize();
@@ -750,20 +805,29 @@ export default function AnatomyScene({
         .addScaledVector(right, (minR + maxR) / 2)
         .addScaledVector(up, (minU + maxU) / 2);
       const tanHalf = fovTan() / 2;
+      // Góc nhìn theo hệ (có `floor` riêng): lấp 74% chiều cao VÙNG TRỐNG, không của cả
+      // khung — cơ quan cao như khí quản mà lấp theo cả khung là đè lên chip góc nhìn
+      // và thanh "Tách các lớp" (~93% vùng trống, đo 2026-09-29).
       const fillY =
-        Math.min(frameFill(rect.w) * rect.h, (rect.bottom - rect.top) * (1 - 2 * FRAME_PAD)) / rect.h;
+        systemView
+          ? ((rect.bottom - rect.top) * SYSTEM_VIEW_FILL) / rect.h
+          : Math.min(frameFill(rect.w) * rect.h, (rect.bottom - rect.top) * (1 - 2 * FRAME_PAD)) / rect.h;
       const fillX = ((rect.right - rect.left) * (1 - 2 * FRAME_PAD)) / rect.w;
       // Tính tới MẶT GẦN của hộp (+ nearest): mặt ấy hiện to nhất trên màn.
       const distance =
         Math.max(
           (maxU - minU) / 2 / (tanHalf * fillY),
           (maxR - minR) / 2 / (tanHalf * aspect * fillX),
-          0.12,
+          floor,
         ) + Math.max(0, nearest);
+      // Bề ngang trên màn tính ở MẶT GẦN (mặt hiện to nhất), như khoảng cách.
+      const halfPx =
+        (((maxR - minR) / 2) * (rect.w / 2)) / (tanHalf * aspect * Math.max(1e-3, distance - Math.max(0, nearest)));
       return {
         target,
         distance,
-        offsetX: rect.w / 2 - (rect.left + rect.right) / 2,
+        halfPx,
+        offsetX: centerOffsetX(rect, halfPx),
         offsetY: rect.h / 2 - (rect.top + rect.bottom) / 2,
       };
     };
@@ -890,7 +954,14 @@ export default function AnatomyScene({
           ? camera.position.clone().sub(controls.target).normalize()
           : viewDirection(heading);
       const rect = usableRect();
-      const frame = frameBox(visibleBox(), direction, rect);
+      const frame = frameBox(
+        visibleBox(),
+        direction,
+        rect,
+        camera.aspect,
+        isSystemView(preset),
+      );
+      const fittedDistance = frame.distance;
       // Hệ cục bộ (não, tim, tiêu hoá) không phóng tới đủ 74%: tối đa gấp
       // MAX_MAGNIFY lần cỡ toàn thân, để não 17 cm không lấp cả màn. Chỉ ở
       // nguyên khối — lưới tách thì khung theo lưới.
@@ -901,6 +972,9 @@ export default function AnatomyScene({
       // Trần zoom ra: lùi được gấp 4 khung vừa — đủ để thấy toàn cảnh, chưa tới
       // mức mô hình thành một chấm giữa màn.
       controls.maxDistance = Math.max(6, frame.distance * 4);
+      // Khoảng cách vừa bị nâng (trần phóng to) thì mô hình nhỏ lại theo cùng tỉ lệ.
+      frameHalfPx = frame.halfPx * (fittedDistance / Math.max(1e-3, frame.distance));
+      frame.offsetX = centerOffsetX(rect, frameHalfPx);
       place(frame.target, direction, frame.distance, [frame.offsetX, frame.offsetY], animate, ms);
     };
 
@@ -1097,7 +1171,7 @@ export default function AnatomyScene({
     const recenter = () => {
       if (!sized || latest.current.isolate || tween) return;
       const rect = usableRect();
-      applyOffset(rect.w / 2 - (rect.left + rect.right) / 2, rect.h / 2 - (rect.top + rect.bottom) / 2);
+      applyOffset(centerOffsetX(rect, frameHalfPx), rect.h / 2 - (rect.top + rect.bottom) / 2);
       dirty = true;
     };
     const panels = new ResizeObserver(recenter);
@@ -1126,7 +1200,8 @@ export default function AnatomyScene({
       parts.forEach((p, i) => {
         data[i * 4] = data[i * 4 + 1] = data[i * 4 + 2] = 0;
         data[i * 4 + 3] = inView(view, p.system, i) ? 1 : 0;
-        selectedData[i * 4] = selectedData[i * 4 + 1] = selectedData[i * 4 + 2] = 0;
+        selectedData[i * 4] = selectedData[i * 4 + 2] = 0;
+        selectedData[i * 4 + 1] = selectedData[i * 4 + 3] = isContext(view, i) ? 255 : 0;
       });
       partTexture.needsUpdate = true;
       selectionTexture.needsUpdate = true;
@@ -1134,7 +1209,13 @@ export default function AnatomyScene({
       view.focus.forEach((i) => thumbBox.union(bounds[i]));
       const direction = viewDirection(def.direction);
       const rect = { w: THUMB_W, h: THUMB_H, left: 0, right: THUMB_W, top: 0, bottom: THUMB_H };
-      const frame = frameBox(thumbBox, direction, rect, THUMB_W / THUMB_H);
+      const frame = frameBox(
+        thumbBox,
+        direction,
+        rect,
+        THUMB_W / THUMB_H,
+        isSystemView(def),
+      );
 
       const savedPosition = camera.position.clone();
       const savedQuaternion = camera.quaternion.clone();
@@ -1392,8 +1473,11 @@ export default function AnatomyScene({
           data[i * 4 + 1] = dy;
           data[i * 4 + 2] = dz;
           data[i * 4 + 3] = shown ? 1 : 0;
+          const context = isContext(view, i);
           selectedData[i * 4] = selected ? 255 : 0;
-          selectedData[i * 4 + 1] = alphaOf(i) < 0.999 ? 255 : 0;
+          // Bối cảnh ô cờ không đổ bóng AO: nửa điểm ảnh đã bỏ mà AO vẫn tô tối cả mảng.
+          selectedData[i * 4 + 1] = alphaOf(i) < 0.999 || context ? 255 : 0;
+          selectedData[i * 4 + 3] = context ? 255 : 0;
           if (shown) {
             markerPositions[i * 3] = c.x + dx;
             markerPositions[i * 3 + 1] = c.y + dy;

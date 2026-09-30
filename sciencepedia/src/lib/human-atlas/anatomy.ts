@@ -381,6 +381,23 @@ export const GROUP_COLORS: Record<string, string> = {
   "sensory.ear": "#c49a80",
   "sensory.sclera": "#e6e0d6",
   "sensory.iris": "#5b3e2b",
+  // Hô hấp: nhu mô phổi hồng tím, sụn khí–phế quản trắng ngà như ảnh atlas; hầu là cơ.
+  "respiratory.lung": "#b98b93",
+  "respiratory.airway": "#dcd8d2",
+  "respiratory.larynx": "#c98a80",
+  "respiratory.nose": "#cfb2a8",
+  "respiratory.pharynx": "#a85b50",
+  // Tiết niệu: thận đỏ nâu, niệu quản vàng nhạt, bàng quang hồng.
+  "urinary.kidney": "#8f3f36",
+  "urinary.ureter": "#d8c79c",
+  "urinary.bladder": "#c98d85",
+  "urinary.urethra": "#b86d63",
+  // Nội tiết: giáp đỏ sẫm, thượng thận và cận giáp vàng, tuyến yên/tùng hồng nhạt.
+  "endocrine.thyroid": "#a3483f",
+  "endocrine.parathyroid": "#cfa75a",
+  "endocrine.adrenal": "#cfa65c",
+  "endocrine.pituitary": "#c99a92",
+  "endocrine.pineal": "#bb9a8a",
   "lymphatic.spleen": "#8a4d5c",
   "lymphatic.thymus": "#c8a88f",
   // Mạng UMCG: mạch xanh lục vừa, hạch sáng hơn một bậc — đọc được trên nền gần

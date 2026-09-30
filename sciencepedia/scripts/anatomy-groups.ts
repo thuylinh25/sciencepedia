@@ -52,6 +52,26 @@ const RULES: Record<string, [string, RegExp][]> = {
     ["lip", /^lip$/i],
     ["skin", /skin/i],
   ],
+  // Hô hấp / tiết niệu / nội tiết (2026-09-29): mỗi cơ quan một màu như ảnh atlas
+  // tham chiếu — trước đó cả hệ một màu, thận lẫn vào niệu quản, khí quản vào phổi.
+  // Nhu mô phổi, tuyến giáp, cận giáp đến từ Z-Anatomy và mang nhóm sẵn.
+  respiratory: [
+    ["airway", /trachea|bronch/i],
+    ["larynx", /epiglottis/i],
+    ["nose", /nasal|concha/i],
+    ["pharynx", /pharyn/i],
+  ],
+  urinary: [
+    ["kidney", /kidney/i],
+    ["ureter", /ureter/i],
+    ["bladder", /bladder/i],
+    ["urethra", /urethra/i],
+  ],
+  endocrine: [
+    ["adrenal", /adrenal|suprarenal/i],
+    ["pituitary", /pituitary|hypophysis/i],
+    ["pineal", /pineal/i],
+  ],
   lymphatic: [
     ["spleen", /spleen/i],
     ["thymus", /thymus/i],

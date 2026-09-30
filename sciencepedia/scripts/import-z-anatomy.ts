@@ -13,7 +13,7 @@ import { BUCKET, missingEnv, put } from "./r2-client";
 /**
  * Z-Anatomy → phần bổ sung của Bản đồ cơ thể người: dây thần kinh ngoại biên,
  * tuỷ sống, tĩnh mạch vùng đầu–cổ và các tĩnh mạch BodyParts3D không có, hạch
- * bạch huyết có tên.
+ * bạch huyết có tên, nhu mô 5 thuỳ phổi, tuyến giáp và tuyến cận giáp.
  *
  *   # 1. Blender (gói `bpy` trên PyPI) xuất hình học đã đánh giá ra .cache/z-anatomy/dump/
  *   <python có bpy> scripts/blender/z-anatomy-dump.py
@@ -59,8 +59,8 @@ https://github.com/Z-Anatomy/Models-of-human-anatomy
 which is based on BodyParts3D, The Database Center for Life Science
 (https://dbarchive.biosciencedbc.jp/en/bodyparts3d/).
 
-Changes by Sciencepedia: selected peripheral nerves, spinal cord, veins and lymph nodes
-absent from BodyParts3D 4.0; curves evaluated to meshes in Blender; registered to the
+Changes by Sciencepedia: selected peripheral nerves, spinal cord, veins, lymph nodes,
+lung lobes, thyroid and parathyroid glands absent from BodyParts3D 4.0; curves evaluated to meshes in Blender; registered to the
 BodyParts3D 4.0 frame (axes x,z,-y; offset -0.5/7.2/-1.6 mm, median residual ~4.7 mm).
 Distributed under the same licence, CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/).
 `;
@@ -94,6 +94,15 @@ function pick(r: Row): Pick | null {
   }
   if (top.startsWith("6:")) {
     if (/\bnodes?\b/.test(n)) return { system: "lymphatic", group: "lymphatic.node" };
+    return null;
+  }
+  // Tạng (2026-09-29): nhu mô phổi theo thuỳ, tuyến giáp, tuyến cận giáp — ba thứ
+  // BodyParts3D 4.0 không có (phổi chỉ có cây phế quản; hệ nội tiết không có tuyến
+  // giáp). Không lấy màng phổi: một khối 56k đỉnh bọc kín phổi và cây phế quản.
+  if (top.startsWith("8:")) {
+    if (/^(superior|middle|inferior) lobe of (left|right) lung$/.test(n)) return { system: "respiratory", group: "respiratory.lung" };
+    if (/^thyroid gland$/.test(n)) return { system: "endocrine", group: "endocrine.thyroid" };
+    if (/parathyroid gland/.test(n)) return { system: "endocrine", group: "endocrine.parathyroid" };
     return null;
   }
   return null;

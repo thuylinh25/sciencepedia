@@ -365,7 +365,9 @@ export async function buildSystems(atlas: Atlas): Promise<{
           if (!names.has(name.toLowerCase())) say(`mô hình không có mảnh "${name}" trong hệ này`);
         }
         for (const pattern of evidence.absent ?? []) {
-          const hit = allNames.find((n) => n.includes(pattern.toLowerCase()));
+          // Nguyên từ, không chuỗi con: "cochlea" không được khớp "cochlear nerve".
+          const word = new RegExp(`\\b${pattern.toLowerCase().replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\b`);
+          const hit = allNames.find((n) => word.test(n));
           if (hit) say(`nói "không có ${pattern}" nhưng mô hình có "${hit}"`);
         }
         continue;

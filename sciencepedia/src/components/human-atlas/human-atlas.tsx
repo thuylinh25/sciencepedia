@@ -81,7 +81,7 @@ import { StructureDetail } from "@/components/human-atlas/structure-detail";
 import { StructureSearch } from "@/components/human-atlas/structure-search";
 import { SystemsPanel } from "@/components/human-atlas/systems-panel";
 import { ViewsGallery } from "@/components/human-atlas/views-gallery";
-import { isUsableView, viewById, viewParts } from "@/lib/human-atlas/views";
+import { isSystemView, isUsableView, overviewFor, viewById, viewParts } from "@/lib/human-atlas/views";
 import { withSupplements } from "@/lib/human-atlas/supplements";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import type { SceneError } from "@/components/human-atlas/anatomy-scene";
@@ -164,12 +164,19 @@ function writeStructureParam(value: string | null) {
   window.history.replaceState(window.history.state, "", url);
 }
 
-/** `?view=` theo cùng lối `?structure=`: đổi URL để chia sẻ, không thêm mục lịch sử. */
-function writeViewParam(value: string | null) {
+/**
+ * `?view=`: người đọc CHỌN một góc nhìn thì thêm một mục lịch sử (`push`) — đi
+ * từ "Phổi" sang "Phổi phải" rồi bấm Back phải về "Phổi". Rời góc nhìn vì đụng
+ * tới tập hệ thì chỉ thay URL, như `?structure=`. Next đồng bộ
+ * `useSearchParams` với pushState/replaceState gốc, nên Back/Forward chạy qua
+ * cùng hiệu ứng đọc `?view=` bên dưới.
+ */
+function writeViewParam(value: string | null, push = false) {
   const url = new URL(window.location.href);
   if (value) url.searchParams.set("view", value);
   else url.searchParams.delete("view");
-  window.history.replaceState(window.history.state, "", url);
+  if (push) window.history.pushState(null, "", url);
+  else window.history.replaceState(window.history.state, "", url);
 }
 
 export function HumanAtlas({
@@ -257,14 +264,22 @@ export function HumanAtlas({
     .map((id) => parts.get(id))
     .filter((p): p is NonNullable<typeof p> => !!p);
   const activeView = viewParts(state.viewId);
+  const systemView = isSystemView(viewById(state.viewId));
   const viewHidden = useMemo(() => (activeView ? new Set(activeView.hide) : null), [activeView]);
+  /** Góc nhìn theo hệ: chỉ tập nổi bật + bối cảnh được vẽ. */
+  const viewOnly = useMemo(
+    () => (activeView && systemView ? new Set([...activeView.focus, ...(activeView.context ?? [])]) : null),
+    [activeView, systemView],
+  );
   const visibleCount =
     atlas?.parts.filter((p) =>
       state.isolate
         ? state.selected.includes(p.id)
-        : (viewHidden
-            ? p.system !== "integumentary" && !viewHidden.has(p.id)
-            : state.visible.includes(p.system)) || state.selected.includes(p.id),
+        : (viewOnly
+            ? viewOnly.has(p.id)
+            : viewHidden
+              ? p.system !== "integumentary" && !viewHidden.has(p.id)
+              : state.visible.includes(p.system)) || state.selected.includes(p.id),
     ).length ?? 0;
   const detailOpen = details && selectedParts.length > 0 && !!chosen;
 
@@ -378,12 +393,23 @@ export function HumanAtlas({
    */
   const systemParam = useSearchParams().get("system");
   const lastSystemParam = useRef<string | null>(null);
+  /** `selectView` khai báo bên dưới (cần `parts`); hệ có góc nhìn tổng quan gọi qua đây. */
+  const selectViewRef = useRef<((id: string, writeUrl: boolean) => void) | null>(null);
   const showSystem = useCallback((id: SystemId) => {
     setChosen(null);
     setDetails(false);
     if (lastViewParam.current !== null) {
       lastViewParam.current = null;
       writeViewParam(null);
+    }
+    // Hệ có "Tổng quan" (views-*.ts) mở tổng quan ấy thay cho hệ trơn: tim là
+    // tim + mạch vành + mạch lớn + mạch phổi như atlas tham chiếu, không phải
+    // 18 mảnh thành/van đứng một mình. URL vẫn là `?system=`.
+    const overview = overviewFor(id);
+    if (overview && selectViewRef.current) {
+      selectViewRef.current(overview, false);
+      setState((s) => ({ ...s, view: "front", reset: s.reset + 1 }));
+      return;
     }
     setState((s) => ({
       ...s,
@@ -434,10 +460,19 @@ export function HumanAtlas({
       if (!isUsableView(id)) return;
       setChosen(null);
       setDetails(false);
+      // Góc nhìn theo hệ: "hệ đang bật" là các hệ có mảnh trong góc nhìn (thanh
+      // quản lấy sụn từ hệ xương, cơ từ hệ cơ). Thiếu hệ cơ trong danh sách là
+      // thang bóc lớp coi cơ như đã bóc — cơ thanh quản biến mất ở 0%.
+      const ids = viewParts(id);
+      const own = isSystemView(viewById(id)) && ids
+        ? [...new Set([...ids.focus, ...(ids.context ?? [])].map((pid) => parts.get(pid)?.system))].filter(
+            (x): x is SystemId => !!x,
+          )
+        : null;
       setState((s) => ({
         ...s,
         viewId: id,
-        visible: activeSystems.filter((x) => x !== "integumentary"),
+        visible: own ?? activeSystems.filter((x) => x !== "integumentary"),
         selected: [],
         isolate: false,
         explode: 0,
@@ -445,16 +480,31 @@ export function HumanAtlas({
       }));
       if (writeUrl) {
         lastViewParam.current = id;
-        writeViewParam(id);
+        writeViewParam(id, true);
       }
     },
-    [activeSystems],
+    [activeSystems, parts],
   );
+  selectViewRef.current = selectView;
   const viewParam = useSearchParams().get("view");
   useEffect(() => {
-    if (viewParam === lastViewParam.current) return;
+    const previous = lastViewParam.current;
+    if (viewParam === previous) return;
     lastViewParam.current = viewParam;
-    if (viewParam && isUsableView(viewParam)) selectView(viewParam, false);
+    if (viewParam && isUsableView(viewParam)) {
+      selectView(viewParam, false);
+    } else if (previous) {
+      // Back/Forward ra khỏi mọi góc nhìn: về tập hệ của URL ấy.
+      setState((s) => ({
+        ...s,
+        viewId: null,
+        visible: isSystemId(systemParam) ? [systemParam] : DEFAULT_VISIBLE,
+        explode: 0,
+        reset: s.reset + 1,
+      }));
+    }
+    // `systemParam` chỉ đọc lúc rời góc nhìn — đổi riêng nó đã có hiệu ứng ?system=.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [viewParam, selectView]);
   // Tập hệ của góc nhìn đọc từ bản đồ mảnh — link mở trước khi danh mục tải xong
   // thì tính lại một lần khi có dữ liệu.
@@ -716,6 +766,10 @@ export function HumanAtlas({
           index={index}
           locale={locale}
           onChoose={(c) => choose(c)}
+          onChooseView={(id) => {
+            selectView(id, true);
+            setPanel(null);
+          }}
           onClose={() => setPanel(null)}
         />
       )}

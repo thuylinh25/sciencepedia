@@ -755,9 +755,26 @@
     "cameraControls": "Camera controls",
     "atlasViews": {
       "open": "Views",
-      "openLabel": "Open regional views",
-      "title": "Regional views",
-      "close": "Close regional views",
+      "openLabel": "Open regional and system views",
+      "title": "Views",
+      "close": "Close views",
+      "tabRegional": "By region",
+      "tabSystem": "By system",
+      "section": {
+        "overview": "Overview",
+        "group": "Groups / regions",
+        "structure": "Structures"
+      },
+      "dataNote": {
+        "respiratory": "Lung parenchyma comes from Z-Anatomy (CC BY-SA 4.0); everything else from BodyParts3D. The model has no pleura or nasal mucosa. Laryngeal cartilages, muscles and ligaments are grouped by their FMA classification."
+      },
+      "searchHeading": "Views",
+      "searchKind": {
+        "overview": "System overview",
+        "group": "Group / region",
+        "structure": "Structure",
+        "regional": "Regional view"
+      },
       "rendering": "Rendering…",
       "missing": "Not enough data",
       "chip": "View: {name}",
@@ -880,7 +897,7 @@
       "lymphSourceLink": "Model on Sketchfab",
       "lymphOriginalLink": "Original (Dundee)",
       "zaHeading": "Additional nerves, veins, nodes",
-      "zaText": "Peripheral nerves, spinal cord, head and neck veins and named lymph nodes absent from BodyParts3D. Registered to the BodyParts3D frame by measurement (median offset ~5 mm); only structures missing from the base model were imported.",
+      "zaText": "Peripheral nerves, spinal cord, head and neck veins, named lymph nodes, lung parenchyma, thyroid and parathyroid glands absent from BodyParts3D. Registered to the BodyParts3D frame by measurement (median offset ~5 mm); only structures missing from the base model were imported.",
       "zaSourceLink": "Z-Anatomy repository",
       "viewerHeading": "Viewer",
       "viewerText": "Viewer code, the grouping into 15 systems and their colors, and the lightweight browser conversion of the geometry.",

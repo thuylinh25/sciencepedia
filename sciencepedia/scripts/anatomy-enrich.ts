@@ -7,6 +7,7 @@ import pLimit from "p-limit";
 import { atlasSchema, correctSystems } from "../src/lib/human-atlas/anatomy";
 import { anatomyDataUrl, atlasDataUrl } from "../src/lib/human-atlas/assets";
 import { buildContent, buildSystems } from "./anatomy-content";
+import { withSupplements } from "../src/lib/human-atlas/supplements";
 import {
   ANATOMY_SOURCES,
   anatomyDataSchema,
@@ -308,8 +309,10 @@ async function main() {
   for (const error of level2.errors) console.log(`  ✗ ${error}`);
   for (const warning of level2.warnings) console.log(`  ! ${warning}`);
 
-  // Mô tả 15 hệ: kiểm trên CÙNG phân loại người đọc thấy (đã qua correctSystems).
-  const systems = await buildSystems(correctSystems(structuredClone(atlas)));
+  // Mô tả 15 hệ: kiểm trên CÙNG danh mục người đọc thấy — đã qua correctSystems VÀ
+  // có phần bổ sung (UMCG, Z-Anatomy). Thiếu phần bổ sung, câu "mô hình không có
+  // hạch/tuyến giáp" đã lỗi thời vẫn qua kiểm (bạch huyết sau khi nhập UMCG).
+  const systems = await buildSystems(withSupplements(correctSystems(structuredClone(atlas))));
   console.log(
     `Mô tả hệ: ${Object.keys(systems.systems).length} phát hành · ${systems.drafts.length} nháp` +
       (systems.drafts.length ? ` (${systems.drafts.join(", ")})` : "") +

@@ -9,7 +9,16 @@ import { useTranslations } from "next-intl";
 import { X } from "lucide-react";
 
 import { cn } from "@/lib/utils";
-import { ATLAS_VIEWS, isUsableView } from "@/lib/human-atlas/views";
+import type { SystemId } from "@/lib/human-atlas/anatomy";
+import {
+  REGIONAL_VIEWS,
+  isSystemView,
+  isUsableView,
+  systemViewSections,
+  systemsWithViews,
+  viewById,
+  type AtlasViewDef,
+} from "@/lib/human-atlas/views";
 import { Button } from "@/components/ui/button";
 
 type Props = {
@@ -21,8 +30,17 @@ type Props = {
   onClose: () => void;
 };
 
+type Tab = "regional" | "system";
+
 /**
- * Lưới "Góc nhìn theo vùng" phủ lên khung xem — theo lối Regional Views của
+ * Lưới góc nhìn, hai tab:
+ *
+ * - "Theo vùng": một vùng cơ thể với mọi hệ nằm cạnh nhau (bên dưới).
+ * - "Theo hệ": chọn một hệ, rồi ba khu Tổng quan → Nhóm/vùng → Cấu trúc. Thẻ
+ *   dựng từ registry (`systemViewSections`), không viết tay từng thẻ; hệ chỉ
+ *   hiện ở tab này khi đã có preset (hiện: hệ hô hấp).
+ *
+ * Lưới phủ lên khung xem — theo lối Regional Views của
  * các atlas giải phẫu: thẻ lớn, ảnh chụp từ chính mô hình, nhãn đánh số ở chân
  * thẻ. Mô hình vẫn mờ phía sau (nền bán trong suốt) để người đọc không mất chỗ.
  *
@@ -44,6 +62,14 @@ export function ViewsGallery({ locale, activeViewId, thumbnails, onChoose, onClo
   /** Vị trí khung xem trong trang (toạ độ tài liệu) — lưới phủ đúng từ đó xuống. */
   const [frame, setFrame] = useState<{ top: number; height: number } | null>(null);
   const overlay = useRef<HTMLDivElement>(null);
+  const systems = systemsWithViews();
+  const current = viewById(activeViewId);
+  // Mở lại lưới khi đang ở một góc nhìn theo hệ thì mở đúng tab và hệ ấy.
+  const [tab, setTab] = useState<Tab>(isSystemView(current) ? "system" : "regional");
+  const [system, setSystem] = useState<SystemId | undefined>(
+    current && isSystemView(current) ? current.systemId : systems[0],
+  );
+  const tSystems = useTranslations("humanAtlas.systemNames");
 
   useLayoutEffect(() => {
     const section = document.getElementById("atlas-viewer");
@@ -111,56 +137,144 @@ export function ViewsGallery({ locale, activeViewId, thumbnails, onChoose, onClo
           <X aria-hidden />
         </Button>
 
-        <ul className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6">
-          {ATLAS_VIEWS.map((view, index) => {
-            const usable = isUsableView(view.id);
-            const active = view.id === activeViewId;
-            const src = thumbnails[view.id];
-            const label = `${index + 1}. ${pick(view.name)}`;
-            return (
-              <li key={view.id}>
-                <button
-                  type="button"
-                  onClick={usable ? () => onChoose(view.id) : undefined}
-                  aria-pressed={usable ? active : undefined}
-                  aria-disabled={!usable || undefined}
-                  aria-label={usable ? label : `${label} — ${t("missing")}`}
-                  title={view.missing ? pick(view.missing) : undefined}
-                  className={cn(
-                    "group relative block aspect-[4/5] w-full overflow-hidden rounded-lg bg-white/[0.04] text-left outline-none ring-offset-2 ring-offset-[#05070a] transition focus-visible:ring-[3px] focus-visible:ring-ring",
-                    usable ? "hover:bg-white/[0.08]" : "cursor-not-allowed",
-                    active && "ring-2 ring-accent",
-                  )}
-                >
-                  {src ? (
-                    // Data URL do cảnh 3D chụp ở client — next/image không tối ưu được nó.
-                    // eslint-disable-next-line @next/next/no-img-element
-                    <img
-                      src={src}
-                      alt=""
-                      width={240}
-                      height={300}
-                      className="size-full object-contain transition-transform duration-300 group-hover:scale-[1.03]"
-                    />
-                  ) : (
-                    <span
-                      aria-hidden
-                      className={cn("absolute inset-0 grid place-items-center text-[11px] text-white/40", usable && "animate-pulse")}
-                    >
-                      {usable ? t("rendering") : ""}
-                    </span>
-                  )}
-                  <span className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 via-black/55 to-transparent px-2 pt-6 pb-2 text-center text-[13px] font-medium text-white">
-                    {label}
-                    {!usable && <span className="block text-[10px] font-normal text-white/60">{t("missing")}</span>}
-                  </span>
-                </button>
-              </li>
-            );
-          })}
-        </ul>
+        <div role="tablist" aria-label={t("title")} className="mt-4 flex justify-center gap-1">
+          {(["regional", "system"] as const).map((key) => (
+            <button
+              key={key}
+              type="button"
+              role="tab"
+              aria-selected={tab === key}
+              onClick={() => setTab(key)}
+              className={cn(
+                "rounded-full px-4 py-1.5 text-sm font-medium text-white/70 outline-none transition hover:text-white focus-visible:ring-[3px] focus-visible:ring-ring",
+                tab === key && "bg-white/15 text-white",
+              )}
+            >
+              {t(key === "regional" ? "tabRegional" : "tabSystem")}
+            </button>
+          ))}
+        </div>
+
+        {tab === "regional" ? (
+          <div role="tabpanel" className="mt-3">
+            <ViewGrid views={REGIONAL_VIEWS} numbered {...{ activeViewId, thumbnails, onChoose, pick }} />
+          </div>
+        ) : (
+          <div role="tabpanel" className="mt-3">
+            {systems.length > 1 && (
+              <div className="mb-2 flex flex-wrap justify-center gap-2">
+                {systems.map((id) => (
+                  <button
+                    key={id}
+                    type="button"
+                    aria-pressed={system === id}
+                    onClick={() => setSystem(id)}
+                    className={cn(
+                      "rounded-full border border-white/20 px-3 py-1 text-xs text-white/80 outline-none hover:bg-white/10 focus-visible:ring-[3px] focus-visible:ring-ring",
+                      system === id && "border-accent bg-white/10 text-white",
+                    )}
+                  >
+                    {tSystems(id)}
+                  </button>
+                ))}
+              </div>
+            )}
+            {system && (
+              <>
+                <h3 className="text-center text-sm text-white/75">{tSystems(system)}</h3>
+                {systemViewSections(system).map(
+                  (section) =>
+                    section.views.length > 0 && (
+                      <section key={section.kind} aria-labelledby={`atlas-views-${section.kind}`} className="mt-5">
+                        <h4
+                          id={`atlas-views-${section.kind}`}
+                          className="text-[11px] font-semibold tracking-[0.14em] text-white/60 uppercase"
+                        >
+                          {t(`section.${section.kind}`)}
+                        </h4>
+                        <ViewGrid views={section.views} {...{ activeViewId, thumbnails, onChoose, pick }} />
+                      </section>
+                    ),
+                )}
+                {system === "respiratory" && (
+                  <p className="mx-auto mt-6 max-w-2xl text-center text-xs leading-relaxed text-white/55">
+                    {t("dataNote.respiratory")}
+                  </p>
+                )}
+              </>
+            )}
+          </div>
+        )}
       </div>
     </div>,
     document.body,
+  );
+}
+
+function ViewGrid({
+  views,
+  numbered = false,
+  activeViewId,
+  thumbnails,
+  onChoose,
+  pick,
+}: {
+  views: readonly AtlasViewDef[];
+  numbered?: boolean;
+  activeViewId: string | null;
+  thumbnails: Record<string, string>;
+  onChoose: (id: string) => void;
+  pick: (v: { vi: string; en: string }) => string;
+}) {
+  const t = useTranslations("humanAtlas.atlasViews");
+  return (
+    <ul className="mt-3 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6">
+      {views.map((view, index) => {
+        const usable = isUsableView(view.id);
+        const active = view.id === activeViewId;
+        const src = thumbnails[view.id];
+        const label = numbered ? `${index + 1}. ${pick(view.name)}` : pick(view.name);
+        return (
+          <li key={view.id}>
+            <button
+              type="button"
+              onClick={usable ? () => onChoose(view.id) : undefined}
+              aria-pressed={usable ? active : undefined}
+              aria-disabled={!usable || undefined}
+              aria-label={usable ? label : `${label} — ${t("missing")}`}
+              title={view.missing ? pick(view.missing) : undefined}
+              className={cn(
+                "group relative block aspect-[4/5] w-full overflow-hidden rounded-lg bg-white/[0.04] text-left outline-none ring-offset-2 ring-offset-[#05070a] transition focus-visible:ring-[3px] focus-visible:ring-ring",
+                usable ? "hover:bg-white/[0.08]" : "cursor-not-allowed",
+                active && "ring-2 ring-accent",
+              )}
+            >
+              {src ? (
+                // Data URL do cảnh 3D chụp ở client — next/image không tối ưu được nó.
+                // eslint-disable-next-line @next/next/no-img-element
+                <img
+                  src={src}
+                  alt=""
+                  width={240}
+                  height={300}
+                  className="size-full object-contain transition-transform duration-300 group-hover:scale-[1.03]"
+                />
+              ) : (
+                <span
+                  aria-hidden
+                  className={cn("absolute inset-0 grid place-items-center text-[11px] text-white/40", usable && "animate-pulse")}
+                >
+                  {usable ? t("rendering") : ""}
+                </span>
+              )}
+              <span className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 via-black/55 to-transparent px-2 pt-6 pb-2 text-center text-[13px] font-medium text-white">
+                {label}
+                {!usable && <span className="block text-[10px] font-normal text-white/60">{t("missing")}</span>}
+              </span>
+            </button>
+          </li>
+        );
+      })}
+    </ul>
   );
 }

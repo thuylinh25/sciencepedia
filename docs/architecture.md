@@ -483,7 +483,8 @@ sau `correctSystems`, nên tìm/chọn/ẩn/góc nhìn chạy như mảnh gốc.
 tên vùng, mã FMA là khái niệm chung (FMA5034, FMA30315). Bỏ 235 mảnh vụn < 12 đỉnh (cạnh trung vị
 2 mm — dư sculpt). Nguồn hình trong bảng chi tiết theo đúng mảnh đang chọn.
 
-**Z-Anatomy (đã nhập 2026-09-29, CC BY-SA 4.0).** Dây thần kinh ngoại biên, tuỷ sống, tĩnh mạch
+**Z-Anatomy (đã nhập 2026-09-29, CC BY-SA 4.0; thêm 2026-09-30: nhu mô 5 thuỳ phổi, tuyến giáp, 4 tuyến
+cận giáp — không lấy màng phổi, khối 56k đỉnh bọc kín phổi).** Dây thần kinh ngoại biên, tuỷ sống, tĩnh mạch
 đầu–cổ + những tĩnh mạch BodyParts3D không có, 158 hạch bạch huyết CÓ TÊN. Quy trình: `bpy` (Blender
 trên PyPI — blender.org bị chặn 403 từ mạng này) chạy `scripts/blender/z-anatomy-dump.py` → curve thành mesh
 (tiết diện 8 cạnh; mặc định của tệp gấp 5 lần đỉnh) → `scripts/import-z-anatomy.ts`. Căn: trục
@@ -517,8 +518,14 @@ Mảnh dưới con trỏ sáng viền (kênh B của texture chọn) và hiện 
 độ; raycast tối đa một lần mỗi khung trong vòng vẽ, lọc hộp bao trước. Mesh raycast dùng vật
 liệu DoubleSide như vật liệu vẽ.
 
-**Bẫy khi test tự động:** camera có view offset để canh cơ thể vào giữa VÙNG QUAN SÁT (lệch
-khỏi bảng hệ bên trái), nên cơ thể không nằm giữa canvas. Bấm vào tâm canvas là bấm vào khoảng
+**Tâm ngang = giữa canvas, không giữa vùng trống (đổi 2026-09-29).** Bản trước canh cơ thể
+vào giữa vùng quan sát (giữa bảng hệ bên trái và cột camera) nên lệch phải ~100 px so với thanh
+"Tách các lớp" và dòng chú thích — chủ sản phẩm báo "mô hình lệch phải". Nay `centerOffsetX` chỉ
+dời ngang khi mô hình THẬT SỰ chạm bảng (cách mép 16 px); không né nổi mới về giữa vùng trống.
+Chiều dọc vẫn canh theo vùng trống.
+
+**Bẫy khi test tự động:** camera vẫn có view offset khi mô hình to hoặc bảng rộng, nên cơ thể
+không chắc nằm giữa canvas. Bấm vào tâm canvas là bấm vào khoảng
 trống — từng kết luận nhầm "click không chọn được". Lấy toạ độ từ ảnh chụp (điểm ảnh màu xương).
 
 ### Góc nhìn theo vùng (2026-09-29)
@@ -527,7 +534,8 @@ Lưới "Góc nhìn theo vùng" (nút "Góc nhìn" cạnh ô tìm), theo lối R
 giải phẫu. Chọn một góc nhìn = hiện MỌI hệ trừ da (chủ sản phẩm chốt), camera nhìn theo hướng
 của góc nhìn và tự khung theo hộp bao của tập `focus`; `hide` ẩn thêm thứ che mất vùng cần xem
 (cơ phủ lồng ngực; vòm sọ + não che nền sọ). Bản đầu có trạng thái "làm mờ" (dither) nhưng bị
-bỏ khi chuyển sang hiện mọi hệ — đừng thêm lại nếu không có yêu cầu.
+bỏ khi chuyển sang hiện mọi hệ — ở góc nhìn THEO VÙNG, đừng thêm lại. (Góc nhìn theo hệ có
+bối cảnh làm mờ — mục dưới.)
 
 **Mã mảnh không viết tay.** Quy tắc tên nằm trong `views.ts`; `scripts/atlas-views.ts` đối chiếu
 với `atlas.json` thật, ghi `view-parts.generated.json`, và báo lỗi khi một quy tắc không khớp mảnh
@@ -546,9 +554,55 @@ góc nhìn vào góc canvas (scissor), chép sang canvas 2D ngay trong cùng tá
 nguyên tới lúc ghép khung), rồi vẽ đè cảnh thật. Mượn camera chính vì đèn gắn vào nó. Trên
 SwiftShader (test headless) mỗi khung như vậy mất ~7 s — chờ ~100 s trước khi mở lưới trong test.
 
-`?view=<id>` ghi bằng replaceState như `?structure=`; đụng tới hệ (bật/tắt, preset, thẻ hệ,
+`?view=<id>`: chọn góc nhìn (lưới, ô tìm) ghi bằng **pushState** để Back/Forward đi qua từng góc
+nhìn (Next đồng bộ `useSearchParams` với pushState gốc); Back ra khỏi mọi góc nhìn trả về tập hệ
+của URL ấy. Rời góc nhìn vì đụng tới hệ (bật/tắt, preset, thẻ hệ,
 "Đặt lại", chip ×) là rời góc nhìn. Đổi hướng bằng Trước/Bên/Sau trong góc nhìn thắng hướng của
 góc nhìn.
+
+### Góc nhìn theo hệ (2026-09-29, pilot: hệ hô hấp)
+
+Tab "Theo hệ" của cùng lưới: mỗi hệ có ba cấp Tổng quan → Nhóm/vùng → Cấu trúc. **Cùng một
+registry** với góc nhìn theo vùng (`ATLAS_VIEWS` = `REGIONAL_VIEWS` + `SYSTEM_VIEWS`), phân biệt
+bằng `kind`; lưới, deep link, ảnh thu nhỏ và ô tìm đều đọc từ đó — thêm hệ là thêm một mảng
+preset (`views-<hệ>.ts`), không thêm JSX. Một "mô hình riêng" chỉ là tập mảnh sẵn có: không GLB
+mới, không dời mảnh; cảnh ẩn mọi mảnh ngoài `focus` + `context` rồi khung theo hộp bao `focus`.
+
+**Danh sách cấu trúc rút từ dữ liệu, không từ atlas thương mại.** Quy tắc viết bằng mã FMA
+(`fma` trong `PartRule`), không bằng tên; script báo lỗi từng mã không khớp mảnh nào, và
+`--audit respiratory` in mảnh của hệ chưa thuộc cấu trúc nào (hiện 119/119 đã thuộc). Thuỳ phổi
+lấy theo `regional_part_of` của FMA; thanh quản lấy sụn/cơ/dây chằng từ hệ xương/cơ/mô liên kết
+theo is-a FMA ("Laryngeal cartilage", "Intrinsic muscle of larynx"). Nhu mô 5 thuỳ phổi,
+tuyến giáp, tuyến cận giáp KHÔNG có trong BodyParts3D — nhập từ Z-Anatomy (mục "Z-Anatomy" ở trên), mã `ZA-…`
+nên preset khớp chúng bằng tên. Vẫn không có màng phổi, niêm mạc mũi; lưới có dòng nói rõ.
+
+**Thẻ hệ và `?system=` mở "Tổng quan" của hệ nếu hệ có** (`overviewFor`). Lý do: chủ sản phẩm so
+với ảnh Human Anatomy Atlas (chỉ tham chiếu, không lấy hình) — tim của BodyParts3D là 18 mảnh
+thành/van; tim "như atlas" là tim + mạch vành + mạch lớn + cây mạch phổi, nằm ở hệ động/tĩnh mạch.
+Tổng quan tim loại "Right anterior segmental artery" (FMA8620): FMA gọi là động mạch phổi nhưng
+2 mảnh nằm ngang thận — lỗi vị trí dữ liệu, để lại là một đoạn mạch lơ lửng dưới tim.
+
+**Màu theo cơ quan cho hô hấp/tiết niệu/nội tiết** (`anatomy-groups.ts` + `GROUP_COLORS`): cả hệ
+một màu thì thận lẫn niệu quản, khí quản lẫn phổi. Sụn khí–phế quản trắng ngà, phổi hồng tím,
+thận đỏ nâu, niệu quản vàng nhạt, giáp đỏ sẫm, thượng thận vàng — theo ảnh tham chiếu.
+
+**Góc nhìn theo hệ lấp 74% chiều cao VÙNG TRỐNG**, không của cả khung như theo vùng: cơ quan cao
+như khí quản lấp theo cả khung là ~93% vùng trống, đè chip và thanh trượt.
+
+**Mô tả hệ kiểm trên danh mục CÓ phần bổ sung** (`anatomy-enrich.ts` → `buildSystems`). Trước đó
+kiểm trên BodyParts3D trơn nên câu kiểm kê lỗi thời vẫn qua: "không có hạch/mạch bạch huyết" sau khi
+nhập UMCG, "không có thần kinh toạ" sau Z-Anatomy, "có lông mu" sau khi bỏ lông mu. Mục bị lỗi kiểm
+thì RỚT khỏi bản phát hành khi `--write` — sửa nguồn + science-editor duyệt lại TRƯỚC khi ghi. Khớp
+`absent` theo nguyên từ ("cochlea" không khớp "cochlear nerve").
+
+**Tập hệ đang bật của góc nhìn theo hệ = các hệ có mảnh trong nó**, không phải `[systemId]`: thiếu
+hệ cơ là `effectivePeel` coi cơ như đã bóc, cơ thanh quản biến mất ở 0%.
+
+**Bối cảnh làm mờ = ô cờ (screen-door) + nhạt về xám**, qua kênh A còn trống của texture chọn,
+không bằng alpha thật: mảnh bối cảnh chung vật liệu và lượt vẽ với mảnh nổi bật, bật
+`transparent` cho vật liệu là hỏng thứ tự vẽ của chính cấu trúc đang xem. Mảnh bối cảnh không đổ
+AO (kênh G). Sàn khoảng cách camera hạ từ 0,12 m xuống `controls.minDistance` cho góc nhìn theo
+hệ — nắp thanh môn ~3,5 cm ở sàn cũ chỉ chiếm nửa khung.
 
 ### Da đục thì không vẽ lớp trong
 

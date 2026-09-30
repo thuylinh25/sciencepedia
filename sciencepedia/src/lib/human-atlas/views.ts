@@ -1,5 +1,8 @@
 import type { SystemId } from "./anatomy";
+import { fold } from "./search";
 import resolved from "./view-parts.generated.json";
+import { OVERVIEW_VIEWS } from "./views-overviews";
+import { RESPIRATORY_VIEWS } from "./views-respiratory";
 
 /*
  * ## Góc nhìn (Views) — dữ liệu, không JSX riêng mỗi góc
@@ -19,29 +22,71 @@ import resolved from "./view-parts.generated.json";
  * không khớp mảnh nào thì script báo lỗi — không có mã mảnh nào được bịa.
  * Sửa quy tắc là PHẢI chạy lại script (`--write`).
  *
+ * Góc nhìn theo HỆ (`kind` overview/group/structure, preset ở `views-<hệ>.ts`)
+ * dùng chung registry này nhưng chỉ hiện `focus` + `context` — xem
+ * docs/architecture.md, mục "Góc nhìn theo hệ".
+ *
  * Góc nhìn thiếu dữ liệu để dựng đúng thì mang `missing` (nói thiếu gì) và
  * không có quy tắc: thẻ hiện nhưng không bấm được. Không dựng bù bằng mảnh
  * gần giống.
  */
 
-export type ViewDirection = "front" | "back" | "side" | "three-quarter" | readonly [number, number, number];
+/**
+ * Hướng camera NHÌN TỪ đâu, theo tư thế giải phẫu. Trục thế giới: +x là bên
+ * TRÁI người mẫu (nửa phải cơ thể nằm ở x âm), +y lên, +z ra trước. "side" giữ
+ * cho góc nhìn cũ, bằng "left".
+ */
+export type ViewDirection =
+  | "front"
+  | "back"
+  | "side"
+  | "left"
+  | "right"
+  | "three-quarter"
+  | "anterolateral"
+  | "posterolateral"
+  | "superior"
+  | "inferior"
+  | readonly [number, number, number];
 
 export type PartRule = {
   /** Giới hạn trong các hệ này (sau `correctSystems`). Bỏ trống = mọi hệ. */
   systems?: readonly SystemId[];
-  name: RegExp;
+  /** Khớp theo tên (tiếng Anh của BodyParts3D). Cần `name` hoặc `fma`. */
+  name?: RegExp;
   exclude?: RegExp;
+  /**
+   * Khớp theo mã FMA của khái niệm (`conceptId`) — dùng cho góc nhìn theo hệ,
+   * nơi danh sách cấu trúc rút từ FMA chứ không từ chữ trong tên mảnh.
+   */
+  fma?: readonly string[];
 };
+
+/**
+ * - `regional`: góc nhìn theo vùng — mọi hệ trừ da, ẩn thêm `hide`.
+ * - `overview` / `group` / `structure`: góc nhìn theo HỆ — CHỈ hiện `focus`
+ *   (nổi bật) và `context` (làm mờ), mọi mảnh khác ẩn.
+ */
+export type ViewKind = "regional" | "overview" | "group" | "structure";
 
 export type AtlasViewDef = {
   id: string;
   systemId: SystemId;
+  /** Bỏ trống = `regional`. */
+  kind?: ViewKind;
   name: { vi: string; en: string };
   direction: ViewDirection;
-  /** Mảnh camera khung vào. */
+  /** Mảnh camera khung vào (góc nhìn theo hệ: mảnh nổi bật). */
   focus?: readonly PartRule[];
-  /** Mảnh ẩn thêm (ngoài da). */
+  /** Mảnh ẩn thêm (ngoài da) — chỉ góc nhìn theo vùng. */
   hide?: readonly PartRule[];
+  /**
+   * Góc nhìn theo hệ: mảnh hiện mờ để thấy vị trí tương quan (xem khí quản mà
+   * vẫn thấy thanh quản ở trên, phế quản ở dưới). Không tính vào khung camera.
+   */
+  context?: readonly PartRule[];
+  /** Từ khoá tìm kiếm thêm ngoài tên (bỏ dấu khi so). */
+  terms?: readonly string[];
   /**
    * Mặt phẳng cắt (hệ toạ độ thế giới): giữ phần có `normal · p + constant ≥ 0`,
    * bỏ phần còn lại. Mặt cắt để hở — mảnh là bề mặt, không có ruột để lấp.
@@ -57,7 +102,7 @@ const SKULL = /frontal bone|parietal bone|occipital bone|temporal bone|sphenoid|
 const RIB_CAGE = /\brib\b|costal cartilage|manubrium|body of sternum|xiphoid|thoracic vertebra/i;
 const MUSCLES: readonly PartRule[] = [{ systems: ["muscular"], name: /./ }];
 
-export const ATLAS_VIEWS: readonly AtlasViewDef[] = [
+export const REGIONAL_VIEWS: readonly AtlasViewDef[] = [
   {
     id: "skeleton-full",
     systemId: "skeletal",
@@ -279,7 +324,36 @@ export const ATLAS_VIEWS: readonly AtlasViewDef[] = [
   },
 ];
 
-export type ViewParts = { focus: string[]; hide: string[] };
+/** Góc nhìn theo hệ — thêm hệ nào là thêm mảng của hệ đó vào đây. */
+export const SYSTEM_VIEWS: readonly AtlasViewDef[] = [...RESPIRATORY_VIEWS, ...OVERVIEW_VIEWS];
+
+/** Registry chung: lưới, deep link, ảnh thu nhỏ và tìm kiếm đều đọc từ đây. */
+export const ATLAS_VIEWS: readonly AtlasViewDef[] = [...REGIONAL_VIEWS, ...SYSTEM_VIEWS];
+
+export const viewKind = (view: AtlasViewDef): ViewKind => view.kind ?? "regional";
+export const isSystemView = (view: AtlasViewDef | null | undefined) => !!view && viewKind(view) !== "regional";
+
+/** Hệ có góc nhìn theo hệ, theo thứ tự xuất hiện trong registry. */
+export function systemsWithViews(): SystemId[] {
+  return [...new Set(SYSTEM_VIEWS.map((v) => v.systemId))];
+}
+
+/** Góc nhìn của một hệ, chia theo cấp: tổng quan → nhóm/vùng → cấu trúc. */
+export function systemViewSections(systemId: SystemId) {
+  const views = SYSTEM_VIEWS.filter((v) => v.systemId === systemId);
+  return (["overview", "group", "structure"] as const).map((kind) => ({
+    kind,
+    views: views.filter((v) => viewKind(v) === kind),
+  }));
+}
+
+/** Góc nhìn tổng quan của một hệ (thẻ hệ, `?system=` mở nó thay cho hệ trơn), hoặc null. */
+export function overviewFor(systemId: string | null | undefined): string | null {
+  const view = SYSTEM_VIEWS.find((v) => v.systemId === systemId && viewKind(v) === "overview");
+  return view && isUsableView(view.id) ? view.id : null;
+}
+
+export type ViewParts = { focus: string[]; hide: string[]; context?: string[] };
 const PARTS = resolved as Record<string, ViewParts>;
 
 /** Mã mảnh của một góc nhìn dựng được, hoặc null. */
@@ -295,4 +369,22 @@ export function viewById(id: string | null | undefined): AtlasViewDef | null {
 export function isUsableView(id: string | null | undefined): boolean {
   const view = viewById(id);
   return !!view && !view.missing && !!viewParts(id);
+}
+
+/**
+ * Góc nhìn khớp một chuỗi tìm (bỏ dấu, không phân biệt hoa thường) trên tên
+ * Việt, tên Anh, id và `terms`. Chỉ góc nhìn dựng được. Tổng quan → nhóm → cấu
+ * trúc, rồi mới tới góc nhìn theo vùng.
+ */
+export function searchViews(query: string, limit = 8): AtlasViewDef[] {
+  const term = fold(query);
+  if (!term) return [];
+  const rank: Record<ViewKind, number> = { overview: 0, group: 1, structure: 2, regional: 3 };
+  return ATLAS_VIEWS.filter(
+    (v) =>
+      isUsableView(v.id) &&
+      fold([v.name.vi, v.name.en, v.id.replace(/-/g, " "), ...(v.terms ?? [])].join(" ")).includes(term),
+  )
+    .sort((a, b) => rank[viewKind(a)] - rank[viewKind(b)])
+    .slice(0, limit);
 }

@@ -755,9 +755,26 @@
     "cameraControls": "Điều khiển góc nhìn",
     "atlasViews": {
       "open": "Góc nhìn",
-      "openLabel": "Mở góc nhìn theo vùng",
-      "title": "Góc nhìn theo vùng",
-      "close": "Đóng góc nhìn theo vùng",
+      "openLabel": "Mở góc nhìn theo vùng và theo hệ",
+      "title": "Góc nhìn",
+      "close": "Đóng góc nhìn",
+      "tabRegional": "Theo vùng",
+      "tabSystem": "Theo hệ",
+      "section": {
+        "overview": "Tổng quan",
+        "group": "Nhóm / vùng",
+        "structure": "Cấu trúc"
+      },
+      "dataNote": {
+        "respiratory": "Nhu mô phổi lấy từ Z-Anatomy (CC BY-SA 4.0); phần còn lại từ BodyParts3D. Mô hình không có màng phổi hay niêm mạc khoang mũi. Sụn, cơ và dây chằng thanh quản được gom theo phân loại FMA."
+      },
+      "searchHeading": "Góc nhìn",
+      "searchKind": {
+        "overview": "Tổng quan hệ",
+        "group": "Nhóm / vùng",
+        "structure": "Cấu trúc",
+        "regional": "Theo vùng"
+      },
       "rendering": "Đang dựng ảnh…",
       "missing": "Chưa đủ dữ liệu",
       "chip": "Góc nhìn: {name}",
@@ -880,7 +897,7 @@
       "lymphSourceLink": "Mô hình trên Sketchfab",
       "lymphOriginalLink": "Bản gốc (Dundee)",
       "zaHeading": "Thần kinh, tĩnh mạch, hạch bổ sung",
-      "zaText": "Dây thần kinh ngoại biên, tuỷ sống, tĩnh mạch đầu–cổ và hạch bạch huyết có tên mà BodyParts3D không có. Căn về hệ toạ độ BodyParts3D bằng đo đạc (lệch trung vị ~5 mm); chỉ nhập cấu trúc chưa có trong mô hình gốc.",
+      "zaText": "Dây thần kinh ngoại biên, tuỷ sống, tĩnh mạch đầu–cổ, hạch bạch huyết có tên, nhu mô phổi, tuyến giáp và tuyến cận giáp mà BodyParts3D không có. Căn về hệ toạ độ BodyParts3D bằng đo đạc (lệch trung vị ~5 mm); chỉ nhập cấu trúc chưa có trong mô hình gốc.",
       "zaSourceLink": "Kho Z-Anatomy",
       "viewerHeading": "Trình xem",
       "viewerText": "Mã trình xem, cách gom 15 hệ và màu, cùng bản chuyển hình học sang dạng nhẹ cho trình duyệt.",

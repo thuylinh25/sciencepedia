@@ -209,7 +209,7 @@
      ],
      "absent": [
       "cochlea",
-      "tympan",
+      "tympanic membrane",
       "malleus",
       "incus",
       "stapes",
@@ -399,17 +399,14 @@
      "present": [
       "cerebellum",
       "pons",
-      "optic nerve"
-     ],
-     "absent": [
+      "optic nerve",
       "sciatic nerve",
-      "femoral nerve",
       "median nerve",
       "ulnar nerve",
-      "brachial plexus",
-      "spinal nerve",
-      "intercostal nerve"
+      "thalamus",
+      "white matter of spinal cord"
      ],
+     "absent": [],
      "supports": [
       "summary"
      ]
@@ -421,12 +418,12 @@
     "verdict": "approved-with-edits"
    },
    "short": {
-    "vi": "Tiếp nhận, tích hợp và phản ứng với thông tin. Mô hình có tiểu não, cầu não và dây thần kinh thị giác, nhưng không có thần kinh toạ, giữa, trụ hay gian sườn.",
-    "en": "Takes in, integrates and responds to information. The model includes the cerebellum, pons and optic nerve, but no sciatic, median, ulnar or intercostal nerves."
+    "vi": "Tiếp nhận, tích hợp và phản ứng với thông tin. Mô hình có não, tuỷ sống và dây thần kinh ngoại biên như thần kinh toạ, giữa và trụ.",
+    "en": "Takes in, integrates and responds to information. The model includes the brain, spinal cord and peripheral nerves such as the sciatic, median and ulnar nerves."
    },
    "shortReview": {
     "by": "science-editor",
-    "at": "2026-09-29"
+    "at": "2026-09-30"
    }
   },
   "respiratory": {
@@ -606,8 +603,8 @@
   },
   "lymphatic": {
    "summary": {
-    "vi": "Hệ bạch huyết — gồm mạch, tế bào và cơ quan — đưa dịch thừa về dòng máu và lọc mầm bệnh khỏi máu. Mô hình này chỉ có hai cơ quan của hệ: tuyến ức, nơi tế bào T trải qua phần lớn quá trình trưởng thành, và lách, một cơ quan lympho thứ cấp chính; mạch bạch huyết và hạch bạch huyết không có trong mô hình.",
-    "en": "The lymphatic system, made of vessels, cells and organs, returns excess fluid to the bloodstream and filters pathogens out of the blood. This model contains just two of its organs: the thymus, where T cells do most of their maturing, and the spleen, a major secondary lymphoid organ. Lymph vessels and lymph nodes are not part of the model."
+    "vi": "Hệ bạch huyết — gồm mạch, tế bào và cơ quan — đưa dịch thừa về dòng máu và lọc mầm bệnh khỏi máu. Ngoài mạch và hạch bạch huyết, mô hình còn có tuyến ức, nơi tế bào T trải qua phần lớn quá trình trưởng thành, và lách, một cơ quan lympho thứ cấp chính.",
+    "en": "The lymphatic system, made of vessels, cells and organs, returns excess fluid to the bloodstream and filters pathogens out of the blood. Besides lymph vessels and nodes, the model contains the thymus, where T cells do most of their maturing, and the spleen, a major secondary lymphoid organ."
    },
    "evidence": [
     {
@@ -638,11 +635,11 @@
      "source": "atlas",
      "present": [
       "spleen",
-      "lobe of thymus"
+      "lobe of thymus",
+      "lymphatic vessels of abdomen",
+      "anterior tibial node"
      ],
      "absent": [
-      "lymph node",
-      "lymphatic vessel",
       "thoracic duct"
      ],
      "supports": [
@@ -652,22 +649,22 @@
    ],
    "review": {
     "by": "science-editor",
-    "at": "2026-09-29",
+    "at": "2026-09-30",
     "verdict": "approved-with-edits"
    },
    "short": {
-    "vi": "Đưa dịch thừa về máu và lọc mầm bệnh; mô hình chỉ có tuyến ức và lách, không có mạch và hạch bạch huyết.",
-    "en": "Returns excess fluid to the blood and filters out pathogens; the model has only the thymus and spleen, with no lymph vessels or nodes."
+    "vi": "Đưa dịch thừa về máu và lọc mầm bệnh; mô hình có mạch và hạch bạch huyết, tuyến ức và lách.",
+    "en": "Returns excess fluid to the blood and filters out pathogens; the model has lymph vessels and nodes, the thymus and the spleen."
    },
    "shortReview": {
     "by": "science-editor",
-    "at": "2026-09-29"
+    "at": "2026-09-30"
    }
   },
   "endocrine": {
    "summary": {
-    "vi": "Tuyến nội tiết không có ống dẫn: chúng tiết hormone vào dịch xung quanh, rồi hormone chủ yếu theo dòng máu tới các tế bào đích khắp cơ thể. Trong mô hình này, nhóm nội tiết chỉ có ba tuyến: tuyến yên, nằm trong hố yên của xương bướm; tuyến tùng, tiết melatonin; và hai tuyến thượng thận nằm trên thận, một trong những chức năng chính là đáp ứng với stress.",
-    "en": "Endocrine glands have no ducts: they release hormones into the surrounding fluid, and the bloodstream is the main route that takes them to target cells throughout the body. In this model the endocrine group holds only three: the pituitary, cradled in the sella turcica of the sphenoid bone; the pineal gland, which secretes melatonin; and the two adrenal glands on top of the kidneys, one of whose major jobs is responding to stress."
+    "vi": "Tuyến nội tiết không có ống dẫn: chúng tiết hormone vào dịch xung quanh, rồi hormone chủ yếu theo dòng máu tới các tế bào đích khắp cơ thể. Trong mô hình này, nhóm nội tiết gồm tuyến yên, nằm trong hố yên của xương bướm; tuyến tùng, tiết melatonin; hai tuyến thượng thận nằm trên thận, một trong những chức năng chính là đáp ứng với stress; cùng tuyến giáp và các tuyến cận giáp.",
+    "en": "Endocrine glands have no ducts: they release hormones into the surrounding fluid, and the bloodstream is the main route that takes them to target cells throughout the body. In this model the endocrine group holds the pituitary, cradled in the sella turcica of the sphenoid bone; the pineal gland, which secretes melatonin; the two adrenal glands on top of the kidneys, one of whose major jobs is responding to stress; and the thyroid and parathyroid glands."
    },
    "evidence": [
     {
@@ -723,12 +720,12 @@
      "present": [
       "pituitary gland",
       "pineal body",
-      "adrenal gland"
-     ],
-     "absent": [
+      "adrenal gland",
       "thyroid gland",
-      "parathyroid"
+      "superior parathyroid gland",
+      "inferior parathyroid gland"
      ],
+     "absent": [],
      "supports": [
       "summary"
      ]
@@ -736,16 +733,16 @@
    ],
    "review": {
     "by": "science-editor",
-    "at": "2026-09-29",
-    "verdict": "approved-with-edits"
+    "at": "2026-09-30",
+    "verdict": "approved"
    },
    "short": {
-    "vi": "Tuyến không ống dẫn tiết hormone, rồi hormone chủ yếu theo dòng máu đi khắp cơ thể; nhóm này trong mô hình chỉ có tuyến yên, tuyến tùng và tuyến thượng thận.",
-    "en": "Ductless glands release hormones, which travel mainly in the blood; in this model the group holds only the pituitary, pineal and adrenal glands."
+    "vi": "Tuyến không ống dẫn tiết hormone, rồi hormone chủ yếu theo dòng máu đi khắp cơ thể; mô hình có tuyến yên, tuyến tùng, tuyến giáp, cận giáp và thượng thận.",
+    "en": "Ductless glands release hormones, which travel mainly in the blood; the model has the pituitary, pineal, thyroid, parathyroid and adrenal glands."
    },
    "shortReview": {
     "by": "science-editor",
-    "at": "2026-09-29"
+    "at": "2026-09-30"
    }
   },
   "reproductive": {
@@ -828,8 +825,8 @@
   },
   "integumentary": {
    "summary": {
-    "vi": "Da che chắn cơ thể trước gió, nước và tia UV, đồng thời là hàng rào ngăn mất nước. Da, nhất là các sợi lông mọc từ nang lông, còn cảm nhận được thay đổi của môi trường. Da và các cấu trúc phụ của da cũng tham gia điều hoà thân nhiệt và cân bằng điện giải, và tổng hợp vitamin D. Trong mô hình này, nhóm bề mặt cơ thể gồm da, tóc, lông mày, môi và lông mu.",
-    "en": "Skin guards the body against wind, water and UV sunlight and forms a barrier against water loss. Skin, and especially the hairs growing from its follicles, can also sense changes in the surroundings. The skin and its accessory structures also help regulate body temperature and electrolyte balance, and they make vitamin D. In this model the body-surface group consists of the skin, scalp hair, eyebrows, lips and pubic hair."
+    "vi": "Da che chắn cơ thể trước gió, nước và tia UV, đồng thời là hàng rào ngăn mất nước. Da, nhất là các sợi lông mọc từ nang lông, còn cảm nhận được thay đổi của môi trường. Da và các cấu trúc phụ của da cũng tham gia điều hoà thân nhiệt và cân bằng điện giải, và tổng hợp vitamin D. Trong mô hình này, nhóm bề mặt cơ thể gồm da, tóc, lông mày và môi.",
+    "en": "Skin guards the body against wind, water and UV sunlight and forms a barrier against water loss. Skin, and especially the hairs growing from its follicles, can also sense changes in the surroundings. The skin and its accessory structures also help regulate body temperature and electrolyte balance, and they make vitamin D. In this model the body-surface group consists of the skin, scalp hair, eyebrows and lips."
    },
    "evidence": [
     {
@@ -870,8 +867,7 @@
       "skin",
       "hair of head",
       "eyebrow",
-      "lip",
-      "pubic hair"
+      "lip"
      ],
      "supports": [
       "summary"
@@ -880,16 +876,16 @@
    ],
    "review": {
     "by": "science-editor",
-    "at": "2026-09-29",
-    "verdict": "approved-with-edits"
+    "at": "2026-09-30",
+    "verdict": "approved"
    },
    "short": {
-    "vi": "Trong nhiều vai trò, da che chắn cơ thể, ngăn mất nước và cảm nhận môi trường; nhóm có da, tóc, lông mày, môi và lông mu.",
-    "en": "Among other roles, skin shields the body, limits water loss and senses its surroundings; the group includes skin, scalp hair, eyebrows, lips and pubic hair."
+    "vi": "Trong nhiều vai trò, da che chắn cơ thể, ngăn mất nước và cảm nhận môi trường; nhóm có da, tóc, lông mày và môi.",
+    "en": "Among other roles, skin shields the body, limits water loss and senses its surroundings; the group includes skin, scalp hair, eyebrows and lips."
    },
    "shortReview": {
     "by": "science-editor",
-    "at": "2026-09-29"
+    "at": "2026-09-30"
    }
   },
   "connective": {
