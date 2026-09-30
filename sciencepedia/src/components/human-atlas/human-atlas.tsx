@@ -637,11 +637,7 @@ export function HumanAtlas({
   );
 
   const viewDef = viewById(state.viewId);
-  const viewName = viewDef ? (locale === "vi" ? viewDef.name.vi : viewDef.name.en) : null;
-  /** Tổng quan của hệ mà nút "Về [hệ]" mở — null khi đang ở chính nó hoặc hệ không có. */
-  const overviewId = overviewFor(viewDef?.systemId);
-  const backOverview = overviewId && overviewId !== state.viewId ? overviewId : null;
-  const caption = viewName && !state.isolate && spread < 0.05
+  const viewName = viewDef ? (locale === "vi" ? viewDef.name.vi : viewDef.name.en) : null;  const caption = viewName && !state.isolate && spread < 0.05
     ? viewName
     : state.isolate
     ? chosen
@@ -780,7 +776,7 @@ export function HumanAtlas({
         <StructuresPanel
           open={panel === "layers"}
           viewName={viewName}
-          systemName={backOverview && viewDef ? t(`systemNames.${viewDef.systemId}`) : null}
+          systemName={viewDef ? t(`systemNames.${viewDef.systemId}`) : ""}
           note={viewDef?.partial ? (locale === "vi" ? viewDef.partial.vi : viewDef.partial.en) : null}
           locale={locale}
           structures={structures}
@@ -791,18 +787,13 @@ export function HumanAtlas({
           onToggle={toggleStructure}
           onIsolate={isolateStructure}
           onShowAll={showAllStructures}
-          // Về tổng quan của hệ (như thẻ "Toàn bộ hệ …" trong lưới); đang ở chính
-          // tổng quan thì rời góc nhìn, trả lại danh sách hệ.
+          // Về trang của hệ = lưới Góc nhìn, tab "Theo hệ", đúng hệ (lưới tự chọn theo
+          // góc nhìn đang mở). Giữ nguyên góc nhìn: đóng lưới là về lại chỗ cũ.
           onBack={() => {
             setPanel(null);
-            setStructureId(null);
             setDetails(false);
-            if (backOverview) {
-              selectView(backOverview, true);
-              setState((s) => ({ ...s, view: "front", reset: s.reset + 1 }));
-            } else {
-              clearView();
-            }
+            setGallery(true);
+            setGalleryOpened(true);
           }}
           onClose={() => setPanel(null)}
         />
