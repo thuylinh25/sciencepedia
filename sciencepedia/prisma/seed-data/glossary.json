@@ -1087,6 +1087,7 @@
     "usedIn": [
       "dopamine-va-chiec-bay-khien-ban-khong-the-roi-dien-thoai",
       "gaba-bo-phanh-cua-nao-co-khien-ban-lo-do-ue-oai",
+      "khi-tim-ngung-dap-dieu-gi-thuc-su-xay-ra-voi-co-the-khi-chung-ta-chet",
       "nhung-su-gia-hoa-hoc-dieu-khien-hoat-dong-cua-nao-bo",
       "thuoc-gay-me-da-tat-y-thuc-cua-ban-nhu-the-nao"
     ]
@@ -1362,6 +1363,7 @@
     "usedIn": [
       "crispr-cay-keo-phan-tu-den-tu-vi-khuan",
       "he-vi-sinh-duong-ruot-hang-chuc-nghin-ti-cu-dan-va-anh-huong-cua-chung",
+      "khi-tim-ngung-dap-dieu-gi-thuc-su-xay-ra-voi-co-the-khi-chung-ta-chet",
       "ruot-he-vi-sinh-vat-va-quyen-luc-cua-bo-nao-thu-hai"
     ]
   },
@@ -2002,6 +2004,7 @@
     "reviewedAt": "2026-09-25",
     "notes": "Duyet accuracy gate dot 5 boi science-editor, 2026-09-25. Reviewer tu tai lai toan bo URL nguon trong cung ngay (curl, UA trinh duyet; tat ca 200) va doi chieu tung menh de Viet-Anh. DA XAC NHAN nguyen van NHLBI (What Is High Blood Pressure?, 'Last updated on April 25, 2024'): '120/80 mm Hg', 'The first number is your systolic', 'changes throughout the day based on your activities', bang 5 muc (Normal / Elevated / Stage 1 / Stage 2 / Hypertensive Crisis 'Higher than 180... OR Higher than 120... Contact your provider immediately'), 'high when you have CONSISTENT systolic readings of 130...', 'Symptoms... don't usually occur until it causes serious health problems', 'checked at least once a year'. MedlinePlus: 'highest when your heart beats... between beats, your blood pressure falls', 'usually has no symptoms. So the only way to find out...', 'two or more readings at separate appointments', tre em so theo tuoi/chieu cao/gioi, 'seek medical care right away' o muc khung hoang. Bang muc khop giua hai nguon.\nLUA CHON BO 'HYPERTENSIVE CRISIS' CUA NGUOI SOAN: BAC (quy tac 15). Ca hai nguon dat 5 muc; muc tu ghi 4 muc nhu the do la ca bang. Muc thu 5 cung la muc duy nhat mang loi dan an toan co nguon ('lien he bac si ngay') - bo no khong lam muc tu than trong hon. Nay them dung chu nguon.\nHAI SUA NUA. (1) Quy tac 15, ve doi trong: 'thuong khong co trieu chung' (MedlinePlus) duoc NHLBI noi chat hon 'cho toi khi no gay ra van de suc khoe nghiem trong' (quy tac 13); ban cu bo ve ay. (2) Tu 'consistent' cua NHLBI bi bo; nay ghi. shortDef them 'muc cao nhat' / 'huyet ap ha xuong' cua MedlinePlus de hai so co nghia. Nguong la quy uoc lam sang co the doi, nen ghi moc ngay trang NHLBI (4/2024) ngay trong fullDef; lich kiem lai: khi NHLBI cap nhat trang. Alias tang-huyet-ap/cao-huyet-ap/hypertension: giu - fullDef dinh nghia day du cac muc tang huyet ap.",
     "usedIn": [
+      "stress-tac-dong-len-co-the-nhu-the-nao-va-vi-sao-van-dong-giup-chung-ta-giai-toa",
       "van-dong-thay-doi-tim-va-mach-mau-nhu-the-nao"
     ]
   },
@@ -2068,7 +2071,8 @@
     "reviewedAt": "2026-09-25",
     "notes": "Duyet accuracy gate dot 5 boi science-editor, 2026-09-25. Reviewer tu tai lai toan bo URL nguon trong cung ngay (curl, UA trinh duyet; tat ca 200) va doi chieu tung menh de Viet-Anh. Hai bai bao doc qua tom tat Europe PMC (NCBI bi chan): Lu & Mackie, Biological Psychiatry 2016 (online 2015); Fuss et al., PNAS 2015 - tieu de va tac gia khop. DA XAC NHAN nguyen van Lu & Mackie: 'widespread neuromodulatory system that plays important roles in central nervous system development, synaptic plasticity, AND THE RESPONSE TO ENDOGENOUS AND ENVIRONMENTAL INSULTS', thanh phan he, CB1 'most abundant', 'CB2..., transient receptor potential channels, and peroxisome proliferator activated receptors are also engaged by some cannabinoids', THC, 2-AG/anandamide 'Despite SIMILARITIES in chemical structure... distinct enzymatic pathways... fundamentally different physiologic and pathophysiologic roles'. Fuss: dinh nghia runner's high 4 thanh phan, 'popular belief... endorphins', 'running exercise increases blood levels of both', 'in mice... cannabinoid receptors mediate acute anxiolysis and analgesia', 'Sedation, in contrast, was not influenced by cannabinoid or opioid receptor blockage, and euphoria cannot be studied in mouse models'.\nPHAM VI LOAI: GIU DUNG. Ket qua Fuss mang ten chuot o ca hai ban, dung nhu ghi chu nguoi soan. Nhung ghi chu 'giu ve doi trong' chi dung mot nua.\nHAI LOI QUY TAC 15 (bo ve / bo muc). (1) Cau Fuss co HAI ve doi trong sau 'in contrast': an than KHONG phu thuoc thu the cannabinoid, va hung phan khong nghien cuu duoc. Ban nhap giu ve sau, bo ve an than - nguoi doc hieu la ECS giai thich moi thu tru hung phan, trong khi nguon noi mot thanh phan da duoc thu va KHONG phu thuoc ECS. Nay them ve an than, va dua dinh nghia 4 thanh phan cua runner's high tu Fuss de thay ro ECS giai thich 2 trong 4. (2) shortDef giu 2 trong 3 vai tro Lu & Mackie liet ke; bo 'phan ung truoc tac nhan gay hai'. Nay du 3.\nSUA NHO. 'cau truc giong nhau' -> 'tuong tu' ('similarities'); 'thu the pho bien nhat' -> 'thu the CANNABINOID pho bien nhat'; ten cu the TRP/PPAR thay 'mot so loai khac'; bo 'trong can sa' sau THC - tom tat khong noi THC nam trong can sa, chi noi ve viec dung can sa; 'He nay duoc nghien cuu nhu mot ung vien giai thich' (khong co trong nguon) thay bang khung cua chinh Fuss (niem tin endorphin roi du kien anandamide). ALIAS 'ecs' BO: viet tat ba chu trung nhieu nghia khac, va khoa [[ECS]] se tro nham.",
     "usedIn": [
-      "runners-high-vi-sao-chay-bo-co-the-khien-ban-hung-phan"
+      "runners-high-vi-sao-chay-bo-co-the-khien-ban-hung-phan",
+      "stress-tac-dong-len-co-the-nhu-the-nao-va-vi-sao-van-dong-giup-chung-ta-giai-toa"
     ]
   },
   {
@@ -2239,6 +2243,222 @@
     "notes": "Duyet accuracy gate dot 5 boi science-editor, 2026-09-25. Reviewer tu tai lai toan bo URL nguon trong cung ngay (curl, UA trinh duyet; tat ca 200) va doi chieu tung menh de Viet-Anh. DA XAC NHAN nguyen van NWS Cleveland: 'The summer solstice occurs at the moment the earth's tilt toward/from the sun is at a maximum', 'noontime position that changes very little for several days before and after', 'directly over the Tropic of Cancer... 23.5 latitude North', 'For every place north of the Tropic of Cancer, the sun is at its highest point in the sky and this is the longest day of the year', 'The winter solstice marks the shortest day and longest night of the year. In the Northern Hemisphere, it occurs when the sun is directly over the Tropic of Capricorn... 23.5 south', equinox 'nearly equal... at all latitudes', 'Seasons are caused by the fact that the Earth is tilted on its axis by 23.5. The tilt's orientation with respect to space does not change', 'lag between the longest day of the year and the warmest average temperatures FOR MOST MID AND HIGH-LATITUDE LOCATIONS', 'This lag is due to the time required for ground and water to heat up'. NASA Space Place: truc 'always points in the same direction', Bac cuc nghieng ve Mat Troi 'around June', Nam cuc 'around December'.\nDONG CHI (diem nguoi soan de reviewer doc): NWS CO doan Winter Solstice, nay dua vao fullDef nguyen van - ban cu nhac dong chi o shortDef ma khong noi mot chu nao ve no.\nHAI LOI PHAM VI (quy tac 15, ve dieu kien bi bo). (1) shortDef cu: 'Vao ha chi o BAC BAN CAU, Mat Troi len cao nhat'. NWS gioi han 'for every place north of the Tropic of Cancer' - giua xich dao va chi tuyen Bac, Mat Troi dat do cao giua trua lon nhat vao ngay khac. Nay giu dung dieu kien. (2) Do tre nhiet do: NWS noi 'for most mid and high-latitude locations', ban cu noi vo dieu kien; nay giu ve ay va them co che nguon neu (dat va nuoc can thoi gian nong len - quy tac 4). 23,5 la so NWS lam tron; bai 'nguyen nhan cua mua' ghi 23,44 - khong mau thuan, giu chu 'khoang'.",
     "usedIn": [
       "nguyen-nhan-cua-mua-do-nghieng-truc-khong-phai-khoang-cach"
+    ]
+  },
+  {
+    "slug": "serotonin",
+    "term": "Serotonin",
+    "termEn": "Serotonin",
+    "shortDef": "Một chất hoá học tín hiệu (5-hydroxytryptamine, 5-HT) hoạt động vừa như chất dẫn truyền thần kinh trong não vừa như phân tử tín hiệu ở ngoại vi. Trong não, mức serotonin thấp có liên hệ với rối loạn giấc ngủ và trầm cảm; nhưng phần lớn serotonin của cơ thể lại không nằm trong não.",
+    "shortDefEn": "A signalling chemical (5-hydroxytryptamine, 5-HT) that acts both as a neurotransmitter in the brain and as a signalling molecule in the periphery. In the brain, low serotonin is linked to sleep problems and depression; but most of the body's serotonin is not in the brain at all.",
+    "fullDef": "Trong hệ thần kinh trung ương, serotonin là một chất dẫn truyền thần kinh. Theo NINDS, nó làm co mạch máu và gây buồn ngủ, đồng thời tham gia điều hoà thân nhiệt; mức serotonin thấp có thể gây rối loạn giấc ngủ và trầm cảm, còn quá nhiều lại có thể dẫn tới co giật.\n\nNhưng phần lớn serotonin của cơ thể không ở trong não. Bài tổng quan của Terry và Margolis (2017) nêu rằng 95% serotonin của cơ thể được sản xuất ở ruột, nơi nó có các vai trò kiểu hormone, tự tiết, cận tiết và nội tiết. Serotonin ở ruột do tế bào ưa crôm ruột (enterochromaffin) tạo ra và tham gia điều hoà nhu động ruột.\n\nHai kho serotonin — trong não và ở ngoại vi — được tạo ra riêng và điều hoà riêng. Yano và cộng sự (2015) cho thấy chính hệ vi sinh đường ruột điều hoà việc sinh tổng hợp serotonin từ tế bào ưa crôm ruột ở chuột, một minh hoạ cho cách vi khuẩn đường ruột tác động lên hoá học tín hiệu của vật chủ.",
+    "fullDefEn": "In the central nervous system, serotonin is a neurotransmitter. According to NINDS, it constricts blood vessels and brings on sleep, and is also involved in temperature regulation; low serotonin can cause sleep problems and depression, while too much can lead to seizures.\n\nBut most of the body's serotonin is not in the brain. The review by Terry and Margolis (2017) states that 95% of the body's serotonin is produced in the intestine, where it has hormonal, autocrine, paracrine and endocrine actions. Gut serotonin is made by enterochromaffin cells and helps regulate gut motility.\n\nThe two serotonin pools — in the brain and in the periphery — are made and regulated separately. Yano et al. (2015) showed that the gut microbiota regulates the biosynthesis of serotonin from enterochromaffin cells in mice, an illustration of how gut bacteria act on the host's signalling chemistry.",
+    "aliases": [
+      "5-ht",
+      "5-hydroxytryptamine",
+      "5-hydroxytryptamin"
+    ],
+    "category": "Y học",
+    "sources": [
+      {
+        "title": "Brain Basics: Know Your Brain",
+        "publisher": "National Institute of Neurological Disorders and Stroke (NIH)",
+        "url": "https://www.ninds.nih.gov/health-information/public-education/brain-basics/brain-basics-know-your-brain"
+      },
+      {
+        "title": "Serotonergic Mechanisms Regulating the GI Tract: Experimental Evidence and Therapeutic Relevance (Terry & Margolis, Handbook of Experimental Pharmacology, 2017)",
+        "publisher": "NCBI / Springer (PMC5526216)",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5526216/"
+      },
+      {
+        "title": "Indigenous Bacteria from the Gut Microbiota Regulate Host Serotonin Biosynthesis (Yano et al., Cell, 2015)",
+        "publisher": "Cell (Elsevier)",
+        "url": "https://doi.org/10.1016/j.cell.2015.02.047"
+      }
+    ],
+    "verdict": "PASS",
+    "notes": "science-editor duyet 2026-09-30. Reviewer tu mo va doc tung nguon (curl UA trinh duyet; NINDS 200, PMC5526216 200, doi.org Cell 200), doi chieu tung menh de.\nMENH DE 1 (nao / chat dan truyen than kinh): NINDS Know Your Brain, nguyen van 'Serotonin is a neurotransmitter that constricts blood vessels and brings on sleep. It is also involved in temperature regulation. Low levels of serotonin may cause sleep problems and depression, while too much serotonin can lead to seizures.' KHOP nguyen van, giu nguyen ca muc do ('may cause' -> 'co the gay').\nMENH DE 2 (95% o ruot): Terry & Margolis 2017, abstract nguyen van '95% of the body's serotonin, however, is produced in the intestine where it has been increasingly recognized for its hormonal, autocrine, paracrine, and endocrine actions.' Con so 95% lay TRUC TIEP tu nguon binh duyet nay, KHONG lam tron, KHONG viet '90-95%'. GHI CHU UNG VIEN: brief ban dau ghi '~90-95%' va 'khong qua hang rao mau-nao'. Da CAT ca hai cach noi ay va thay bang dung con so co nguon (95%). Ly do: (a) khong tim duoc nguon bac 1-2 nao doc duoc verbatim khang dinh khoang '90-95%'; quy tac 6 (so lieu khong nguon thi go, khong lam mem). (b) Menh de 'serotonin khong qua hang rao mau-nao' tuy la kien thuc sach giao khoa nhung reviewer KHONG mo duoc nguon bac 1-2 noi verbatim trong dot nay -> quy tac 8 (nghi ngo thi cat). Thay bang menh de MANH HON va co nguon: hai kho serotonin duoc tao/dieu hoa RIENG (Terry&Margolis: san xuat o ruot; Yano: vi sinh dieu hoa sinh tong hop o ruot) - dat dung cai y bai tuy but can (serotonin ruot khong phai serotonin nao) ma khong phai vien dan co che BBB.\nMENH DE 3 (vi sinh dieu hoa): Yano 2015 abstract nguyen van 'Indigenous spore-forming bacteria (Sp) from the mouse and human microbiota promote 5-HT biosynthesis from colonic enterochromaffin cells (ECs)'. GIU TEN LOAI: thi nghiem chinh o CHUOT, da viet 'o chuot' (quy tac 15/khong suy rong sang nguoi). Yano cung xac nhan 'the gastrointestinal (GI) tract contains much of the body's serotonin' - trung khop dinh tinh voi con so 95% cua Terry&Margolis.\nAlias chi de dang slug (5-ht, 5-hydroxytryptamine); khong dat alias 'hormone-hanh-phuc' vi do la cach goi pho thong sai ma bai dang muon dinh chinh.",
+    "usedIn": [
+      "ca-phe-va-tra-danh-thuc-nao-bo-nhu-the-nao",
+      "dang-sau-tieng-bung-keu-dieu-gi-xay-ra-khi-chung-ta-doi",
+      "giac-ngu-sau-lam-gi-voi-tri-nho-cua-ban",
+      "nhung-su-gia-hoa-hoc-dieu-khien-hoat-dong-cua-nao-bo",
+      "ruot-he-vi-sinh-vat-va-quyen-luc-cua-bo-nao-thu-hai"
+    ]
+  },
+  {
+    "slug": "dopamine",
+    "term": "Dopamine",
+    "termEn": "Dopamine",
+    "shortDef": "Một chất dẫn truyền thần kinh tham gia vào tâm trạng và điều khiển các cử động phức tạp. Nó thường bị gọi tắt là \"chất hạnh phúc\", nhưng vai trò được nghiên cứu kỹ nhất của nó là mã hoá sai số dự đoán phần thưởng — tín hiệu cho thấy kết quả tốt hơn hay tệ hơn mong đợi — chứ không đơn thuần là tạo khoái cảm.",
+    "shortDefEn": "A neurotransmitter involved in mood and the control of complex movements. It is popularly reduced to a \"pleasure chemical\", but its best-studied role is encoding a reward prediction error — a signal that an outcome was better or worse than expected — rather than simply producing pleasure.",
+    "fullDef": "Theo NINDS, dopamine có thể có tác dụng kích thích hoặc ức chế, tham gia vào tâm trạng và điều khiển các cử động phức tạp; mất hoạt động của dopamine ở một số vùng não dẫn tới cứng cơ trong bệnh Parkinson. Đó là lý do dopamine không thể quy gọn thành \"chất hạnh phúc\": nó nằm ngay ở trung tâm của hệ vận động.\n\nTrong khoa học thần kinh về học tập và phần thưởng, giả thuyết được ủng hộ nhiều là dopamine mã hoá một sai số dự đoán phần thưởng: tín hiệu dopamine bật lên khi kết quả TỐT HƠN mong đợi và giảm xuống khi kết quả TỆ HƠN mong đợi, nhờ đó não học được hành động nào đáng lặp lại. Đây là cách nhìn được nêu trong các bài tổng quan của Glimcher (2011) và của Watabe-Uchida cùng cộng sự (2021).\n\nCác nghiên cứu gần đây bổ sung sắc thái cho bức tranh này: dopamine còn tham gia vào vận động, động lực và việc lập kế hoạch hướng đích, nên vai trò của nó rộng hơn — chứ không hẹp hơn — so với ý niệm \"khoái cảm\" thường gặp.",
+    "fullDefEn": "According to NINDS, dopamine can be excitatory or inhibitory and is involved in mood and the control of complex movements; the loss of dopamine activity in some parts of the brain leads to the muscular rigidity of Parkinson's disease. That is why dopamine cannot be reduced to a \"pleasure chemical\": it sits at the centre of the motor system.\n\nIn the neuroscience of learning and reward, the well-supported view is that dopamine encodes a reward prediction error: the dopamine signal rises when an outcome is BETTER than expected and dips when it is WORSE than expected, so the brain learns which actions are worth repeating. This is the picture set out in the reviews by Glimcher (2011) and by Watabe-Uchida and colleagues (2021).\n\nRecent work adds nuance: dopamine is also involved in movement, motivation and goal-directed planning, so its role is broader — not narrower — than the everyday notion of \"pleasure\".",
+    "aliases": [
+      "dopamin",
+      "reward-prediction-error",
+      "sai-so-du-doan-phan-thuong"
+    ],
+    "category": "Y học",
+    "sources": [
+      {
+        "title": "Brain Basics: Know Your Brain",
+        "publisher": "National Institute of Neurological Disorders and Stroke (NIH)",
+        "url": "https://www.ninds.nih.gov/health-information/public-education/brain-basics/brain-basics-know-your-brain"
+      },
+      {
+        "title": "Understanding dopamine and reinforcement learning: The dopamine reward prediction error hypothesis (Glimcher, PNAS, 2011)",
+        "publisher": "Proceedings of the National Academy of Sciences (PMC3176615)",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3176615/"
+      },
+      {
+        "title": "Dopamine, Updated: Reward Prediction Error and Beyond (Watabe-Uchida & Uchida, Current Opinion in Neurobiology, 2021)",
+        "publisher": "Current Opinion in Neurobiology (PMC8116345)",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8116345/"
+      }
+    ],
+    "verdict": "PASS",
+    "notes": "science-editor duyet 2026-09-30. Reviewer mo va doc tung nguon (NINDS 200; PMC3176615 200; PMC8116345 200).\nMENH DE 1 (kich thich/uc che, tam trang, cu dong phuc tap, Parkinson): NINDS Know Your Brain nguyen van 'Dopamine can be excitatory or inhibitory and is involved in mood and the control of complex movements. The loss of dopamine activity in some portions of the brain leads to the muscular rigidity of Parkinson's disease.' KHOP nguyen van.\nMENH DE 2 (sai so du doan phan thuong): Glimcher 2011 la bai dat ten chinh cho 'dopamine reward prediction error hypothesis' (tieu de Crossref xac nhan). Watabe-Uchida & Uchida 2021 abstract nguyen van 'the leading hypothesis is that phasic responses of midbrain dopamine neurons signal reward prediction error... Recent advances... have added nuance to... account for dopamine's role in movement, motivation, and goal-directed planning.' Cau 'bat len khi tot hon, giam khi te hon mong doi' la dinh nghia chuan cua RPE, khop ca hai bai.\nHEDGE: dung 'gia thuyet duoc ung ho nhieu' / 'well-supported view' chu KHONG viet 'da chung minh' - Watabe-Uchida goi la 'leading hypothesis'. Giu dung muc do.\nDIEM BAI TUY BUT/CHONG NGO NHAN: brief yeu cau nhan 'khong phai hormone hanh phuc'. Da lam nhung KHONG bia mot phu dinh khong nguon: NINDS cho co so vat dong (Parkinson) de noi dopamine khong the la 'chat hanh phuc' don thuan, va Watabe-Uchida cho cau 'rong hon chu khong hep hon'. Alias chi dang slug.",
+    "usedIn": [
+      "ca-phe-va-tra-danh-thuc-nao-bo-nhu-the-nao",
+      "dopamine-va-chiec-bay-khien-ban-khong-the-roi-dien-thoai",
+      "nhung-su-gia-hoa-hoc-dieu-khien-hoat-dong-cua-nao-bo"
+    ]
+  },
+  {
+    "slug": "cortisol",
+    "term": "Cortisol",
+    "termEn": "Cortisol",
+    "shortDef": "Hormone steroid được xem là hormone căng thẳng chính của cơ thể. Nó là glucocorticoid chủ yếu, do lớp bó (zona fasciculata) của vỏ tuyến thượng thận tiết ra, và việc sản xuất nó được điều khiển bởi trục hạ đồi – tuyến yên – thượng thận (trục HPA).",
+    "shortDefEn": "A steroid hormone regarded as the body's principal stress hormone. It is the primary glucocorticoid, released by the zona fasciculata of the adrenal cortex, and its production is governed by the hypothalamic-pituitary-adrenal (HPA) axis.",
+    "fullDef": "Theo StatPearls (\"Physiology, Cortisol\"), cortisol là hormone căng thẳng chính và tác động rộng lên nhiều quá trình sinh lý khắp cơ thể. Nó là glucocorticoid chủ yếu, được tổng hợp và giải phóng bởi lớp bó của vỏ tuyến thượng thận.\n\nTrục hạ đồi – tuyến yên – thượng thận điều khiển việc sản xuất và bài tiết cortisol. Đây là một chuỗi tín hiệu nội tiết: vùng hạ đồi và tuyến yên ra tín hiệu cho tuyến thượng thận tiết cortisol, và rối loạn hệ điều hoà này dẫn tới các bệnh thừa cortisol (như hội chứng Cushing) hoặc thiếu cortisol (như bệnh Addison).\n\nCortisol ảnh hưởng tới chuyển hoá, hoạt động miễn dịch, trương lực tim mạch và phản ứng căng thẳng, thông qua việc điều chỉnh lượng glucose sẵn có, quá trình dị hoá protein, phân giải mỡ và tín hiệu viêm.",
+    "fullDefEn": "According to StatPearls (\"Physiology, Cortisol\"), cortisol is the principal stress hormone and exerts extensive influence over many physiological processes throughout the body. It is the primary glucocorticoid, synthesised and released by the zona fasciculata of the adrenal cortex.\n\nThe hypothalamic-pituitary-adrenal axis governs cortisol production and secretion. This is an endocrine signalling chain: the hypothalamus and pituitary signal the adrenal gland to release cortisol, and disruption of this regulatory system results in cortisol excess disorders (such as Cushing syndrome) or deficiency states (such as Addison disease).\n\nCortisol influences metabolism, immune activity, cardiovascular tone and the stress response by modulating glucose availability, protein catabolism, lipolysis and inflammatory signalling.",
+    "aliases": [
+      "hydrocortisone",
+      "hydrocortison",
+      "truc-hpa",
+      "hpa-axis"
+    ],
+    "category": "Y học",
+    "sources": [
+      {
+        "title": "Physiology, Cortisol (StatPearls)",
+        "publisher": "StatPearls / NCBI Bookshelf (NBK538239)",
+        "url": "https://www.ncbi.nlm.nih.gov/books/NBK538239/"
+      },
+      {
+        "title": "Brain Basics: Know Your Brain (hypothalamus and the endocrine control chain)",
+        "publisher": "National Institute of Neurological Disorders and Stroke (NIH)",
+        "url": "https://www.ninds.nih.gov/health-information/public-education/brain-basics/brain-basics-know-your-brain"
+      }
+    ],
+    "verdict": "PASS",
+    "notes": "science-editor duyet 2026-09-30. StatPearls 'Physiology, Cortisol' (NBK538239) tra 200; noi dung abstract doc qua Europe PMC (EXT_ID 30855827) vi trang NCBI dung reCAPTCHA cho than trang - metadata + abstract khop tieu de.\nMOI MENH DE tu abstract StatPearls nguyen van: 'Cortisol, widely recognized as the principal stress hormone, exerts extensive influence over numerous physiological processes throughout the body. This hormone functions as the primary glucocorticoid synthesized and released by the zona fasciculata of the adrenal cortex. The hypothalamic-pituitary-adrenal (HPA) axis governs cortisol production and secretion, and disruption of this regulatory system results in cortisol excess disorders such as Cushing syndrome or deficiency states such as Addison disease... Cortisol influences metabolism, immune activity, cardiovascular tone, and the stress response by modulating glucose availability, protein catabolism, lipolysis, and inflammatory signaling.' -> shortDef va ca ba doan fullDef deu truy ve day, giu nguyen 'principal/chinh', khong nang 'chinh' thanh 'duy nhat'.\nNguon 2 (NINDS) chi de do menh de phu 'ha doi/tuyen yen ra tin hieu cho thuong than' (chuoi noi tiet) cho du 2 nguon theo gate; khong dat con so nao. KHONG viet con so ve muc cortisol theo nhip ngay hay 'tang khi stress' cu the vi khong co nguon verbatim trong dot (quy tac 6). Alias dang slug.",
+    "usedIn": [
+      "stress-tac-dong-len-co-the-nhu-the-nao-va-vi-sao-van-dong-giup-chung-ta-giai-toa"
+    ]
+  },
+  {
+    "slug": "he-vi-sinh-duong-ruot",
+    "term": "Hệ vi sinh đường ruột",
+    "termEn": "Gut microbiota",
+    "shortDef": "Cộng đồng vi sinh vật — chủ yếu là vi khuẩn — sống trong đường tiêu hoá của người. Ước tính được xem lại năm 2016 cho thấy số tế bào vi khuẩn trong cơ thể người xấp xỉ ngang với số tế bào của chính người đó, chứ không phải gấp mười lần như con số cũ hay được nhắc.",
+    "shortDefEn": "The community of microorganisms — chiefly bacteria — living in the human digestive tract. A 2016 re-estimate found that the number of bacterial cells in the human body is roughly the same as the number of the body's own cells, not ten times as many as the older, often-quoted figure.",
+    "fullDef": "Đường tiêu hoá của người là nơi cư trú của một cộng đồng vi sinh vật đông đúc, đông nhất ở ruột già.\n\nCon số hay bị nhắc sai là vi khuẩn nhiều gấp mười lần tế bào người. Sender, Fuchs và Milo (2016) tính lại và đưa ra ước tính khác: với một người tham chiếu, số tế bào vi khuẩn vào khoảng 3,8×10¹³ và số tế bào người vào khoảng 3,0×10¹³, tức tỉ lệ gần 1:1 chứ không phải 10:1. Đây là một chỉnh sửa số liệu quan trọng: con số \"gấp mười lần\" cũ không có cơ sở tính toán vững.\n\nHệ vi sinh này không thụ động. Yano và cộng sự (2015) cho thấy ở chuột, vi khuẩn đường ruột điều hoà việc sinh tổng hợp serotonin từ tế bào ưa crôm ruột — một ví dụ cụ thể cho cách hệ vi sinh tác động lên hoá học tín hiệu của vật chủ.",
+    "fullDefEn": "The human digestive tract is home to a dense community of microorganisms, most abundant in the large intestine.\n\nThe figure that is often misquoted is that bacteria outnumber human cells ten to one. Sender, Fuchs and Milo (2016) recalculated this and reached a different estimate: for a reference person, bacterial cells number about 3.8×10¹³ and the body's own cells about 3.0×10¹³, a ratio close to 1:1 rather than 10:1. This is an important numerical correction: the old \"ten times\" figure had no solid basis.\n\nThis microbiota is not passive. Yano et al. (2015) showed that in mice, gut bacteria regulate the biosynthesis of serotonin from enterochromaffin cells — a concrete example of how the microbiota acts on the host's signalling chemistry.",
+    "aliases": [
+      "gut-microbiota",
+      "he-vi-sinh-vat-duong-ruot",
+      "microbiome-duong-ruot",
+      "khu-he-vi-sinh-duong-ruot"
+    ],
+    "category": "Y học",
+    "sources": [
+      {
+        "title": "Revised Estimates for the Number of Human and Bacteria Cells in the Body (Sender, Fuchs & Milo, PLOS Biology, 2016)",
+        "publisher": "PLOS Biology",
+        "url": "https://doi.org/10.1371/journal.pbio.1002533"
+      },
+      {
+        "title": "Indigenous Bacteria from the Gut Microbiota Regulate Host Serotonin Biosynthesis (Yano et al., Cell, 2015)",
+        "publisher": "Cell (Elsevier)",
+        "url": "https://doi.org/10.1016/j.cell.2015.02.047"
+      }
+    ],
+    "verdict": "PASS",
+    "notes": "science-editor duyet 2026-09-30. Ca hai DOI xac minh qua Crossref: Sender/Fuchs/Milo, 'Revised Estimates for the Number of Human and Bacteria Cells in the Body', PLOS Biology 2016-08-19 (doi 10.1371/journal.pbio.1002533, 200); Yano et al., Cell 2015 (doi 10.1016/j.cell.2015.02.047, 200).\nMENH DE 'gan 1:1 chu khong phai 10:1': day la ket qua trung tam cua Sender 2016. Con so 3,8x10^13 vi khuan va 3,0x10^13 te bao nguoi la so 'reference man' trong bai (quy tac: so lieu deu tu chinh bai binh duyet, khong lam tron sai). Da neu ro day la 'reference person' bang cach viet 'voi mot nguoi tham chieu'. KHONG khang dinh 'gap muoi lan' la dung; nguoc lai, dan dung bai nay de DINH CHINH con so cu - dung tinh than muc tu dung chung cho nhieu bai (brief liet ke 4 bai dung).\nMENH DE vi sinh dieu hoa serotonin: Yano 2015, GIU TEN LOAI 'o chuot' (thi nghiem tren chuot; quy tac 15).\nTaxonomy: dat 'Y hoc' cho khop cac muc anh em trong dot nay (serotonin, vagus, ENS). Entity slug he-vi-sinh-duong-ruot da co san (Q739734 theo brief) nen slug muc tu nay trung khop co y - the [[he-vi-sinh-duong-ruot]] se tra dung muc nay. Alias dang slug het.",
+    "usedIn": [
+      "dang-sau-tieng-bung-keu-dieu-gi-xay-ra-khi-chung-ta-doi",
+      "he-vi-sinh-duong-ruot-hang-chuc-nghin-ti-cu-dan-va-anh-huong-cua-chung",
+      "nhin-an-gian-doan-anh-huong-toi-he-vi-sinh-duong-ruot-nhu-the-nao",
+      "ruot-he-vi-sinh-vat-va-quyen-luc-cua-bo-nao-thu-hai"
+    ]
+  },
+  {
+    "slug": "day-than-kinh-phe-vi",
+    "term": "Dây thần kinh phế vị",
+    "termEn": "Vagus nerve",
+    "shortDef": "Thành phần chính của hệ thần kinh phó giao cảm, giám sát nhiều chức năng thiết yếu của cơ thể như tâm trạng, đáp ứng miễn dịch, tiêu hoá và nhịp tim. Nó là một trong những đường nối giữa não và đường tiêu hoá, gửi thông tin về trạng thái các cơ quan bên trong lên não qua các sợi hướng tâm.",
+    "shortDefEn": "The main component of the parasympathetic nervous system, overseeing many essential bodily functions including mood, immune response, digestion and heart rate. It is one of the connections between the brain and the gastrointestinal tract, sending information about the state of the inner organs to the brain via afferent fibres.",
+    "fullDef": "Theo bài tổng quan của Breit và cộng sự (2018), dây thần kinh phế vị là thành phần chính của hệ thần kinh phó giao cảm, giám sát hàng loạt chức năng quan trọng gồm điều hoà tâm trạng, đáp ứng miễn dịch, tiêu hoá và nhịp tim.\n\nNó thiết lập một trong những đường nối giữa não và đường tiêu hoá, và gửi thông tin về trạng thái các cơ quan bên trong lên não thông qua các sợi hướng tâm (sợi cảm giác đi từ cơ quan về hệ thần kinh trung ương). Các sợi hướng tâm ở bụng gồm những thụ thể cơ học, thụ thể hoá học và thụ thể căng ở thực quản, dạ dày và phần đầu ruột non; thân tế bào cảm giác của chúng nằm ở hạch nút và gửi tín hiệu tới nhân bó đơn độc (NTS) ở thân não.\n\nTheo Breit và cộng sự, việc kích thích các sợi hướng tâm phế vị ở ruột ảnh hưởng tới các hệ đơn amin trong thân não — những hệ có vai trò quan trọng trong các rối loạn tâm thần như rối loạn khí sắc và lo âu. Cùng bài này cũng nêu bằng chứng SƠ BỘ rằng vi khuẩn đường ruột có thể có lợi cho tâm trạng và lo âu, một phần thông qua tác động lên hoạt động của dây thần kinh phế vị.",
+    "fullDefEn": "According to the review by Breit et al. (2018), the vagus nerve is the main component of the parasympathetic nervous system, overseeing a vast array of crucial functions including control of mood, immune response, digestion and heart rate.\n\nIt establishes one of the connections between the brain and the gastrointestinal tract, and sends information about the state of the inner organs to the brain via afferent fibres (sensory fibres running from the organs to the central nervous system). The abdominal vagal afferents include mechanoreceptors, chemoreceptors and tension receptors in the oesophagus, stomach and proximal small intestine; their sensory cell bodies lie in the nodose ganglia and send information to the nucleus tractus solitarii (NTS) in the brainstem.\n\nBreit et al. report that stimulating vagal afferent fibres in the gut influences monoaminergic systems in the brainstem — systems that play important roles in psychiatric conditions such as mood and anxiety disorders. The same review notes PRELIMINARY evidence that gut bacteria may benefit mood and anxiety, partly by affecting the activity of the vagus nerve.",
+    "aliases": [
+      "vagus-nerve",
+      "than-kinh-phe-vi",
+      "day-phe-vi",
+      "than-kinh-so-x",
+      "vagus"
+    ],
+    "category": "Y học",
+    "sources": [
+      {
+        "title": "Vagus Nerve as Modulator of the Brain-Gut Axis in Psychiatric and Inflammatory Disorders (Breit et al., Frontiers in Psychiatry, 2018)",
+        "publisher": "Frontiers in Psychiatry",
+        "url": "https://doi.org/10.3389/fpsyt.2018.00044"
+      },
+      {
+        "title": "Vagus Nerve as Modulator of the Brain-Gut Axis (full text, PMC)",
+        "publisher": "NCBI PubMed Central (PMC5859128)",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5859128/"
+      }
+    ],
+    "verdict": "PASS",
+    "notes": "science-editor duyet 2026-09-30. DOI 10.3389/fpsyt.2018.00044 xac minh Crossref (Breit, Kupferberg, Rogler, Hasler; Front Psychiatry 2018-03-13). Full text doc qua Europe PMC PMC5859128 (fullTextXML).\nMENH DE 1 (thanh phan chinh pho giao cam; tam trang/mien dich/tieu hoa/nhip tim; duong noi nao-ruot; gui thong tin qua soi huong tam): abstract Breit nguyen van 'The vagus nerve represents the main component of the parasympathetic nervous system, which oversees a vast array of crucial bodily functions, including control of mood, immune response, digestion, and heart rate. It establishes one of the connections between the brain and the gastrointestinal tract and sends information about the state of the inner organs to the brain via afferent fibers.' KHOP nguyen van.\nMENH DE 2 (thu the co hoc/hoa hoc/cang; hach nut; NTS): full text nguyen van 'The abdominal vagal afferents, include mucosal mechanoreceptors, chemoreceptors, and tension receptors in the esophagus, stomach, and proximal small intestine... The sensory afferent cell bodies are located in nodose ganglia and send information to the nucleus tractus solitarii (NTS)'. KHOP.\nMENH DE 3 (kich thich huong tam anh huong he don amin; vi khuan co the co loi): abstract nguyen van 'The stimulation of vagal afferent fibers in the gut influences monoaminergic brain systems in the brain stem... there is preliminary evidence for gut bacteria to have beneficial effect on mood and anxiety, partly by affecting the activity of the vagus nerve.' GIU HEDGE 'preliminary'/'so bo' va 'may/co the' - khong nang thanh khang dinh (quy tac 3).\nCAT SO LIEU '~80-90% soi huong tam' trong brief: reviewer KHONG tim thay con so nay verbatim trong Breit (da grep full text: khong co). Khong co nguon bac 1-2 doc duoc khang dinh ty le nay trong dot -> quy tac 6 (so khong nguon thi go) + quy tac 8 (nghi ngo thi cat). Da thay bang menh de dinh tinh co nguon: vagus 'gui thong tin ... len nao qua soi huong tam'. Neu dot sau tim duoc nguon bac 1-2 (vd Berthoud & Neuhuber 2000, Auton Neurosci) noi verbatim ty le, moi bo con so vao. Alias dang slug.",
+    "usedIn": [
+      "ruot-he-vi-sinh-vat-va-quyen-luc-cua-bo-nao-thu-hai"
+    ]
+  },
+  {
+    "slug": "he-than-kinh-ruot",
+    "term": "Hệ thần kinh ruột",
+    "termEn": "Enteric nervous system",
+    "shortDef": "Mạng thần kinh nằm trong thành ống tiêu hoá, điều khiển hoạt động của đường tiêu hoá. Ở người, nó chứa khoảng 200–600 triệu nơ-ron, đủ nhiều để đôi khi được gọi là \"bộ não thứ hai\"; nó phối hợp với hệ thần kinh trung ương nhưng có thể điều khiển nhiều quá trình tiêu hoá một cách khá độc lập.",
+    "shortDefEn": "The network of neurons within the wall of the digestive tract that controls gastrointestinal activity. In humans it contains roughly 200–600 million neurons, enough to be sometimes called a \"second brain\"; it works with the central nervous system but can control many digestive processes fairly independently.",
+    "fullDef": "Hệ tiêu hoá được chi phối vừa qua các kết nối với hệ thần kinh trung ương, vừa bởi hệ thần kinh ruột nằm trong thành ống tiêu hoá. Theo Furness (2014), hệ thần kinh ruột phối hợp với các trung khu phản xạ và điều khiển của hệ thần kinh trung ương, và với các đường thần kinh đi qua hạch giao cảm để điều khiển chức năng tiêu hoá; thông tin truyền theo cả hai chiều giữa hệ thần kinh ruột và hệ thần kinh trung ương.\n\nỞ người, hệ thần kinh ruột chứa 200–600 triệu nơ-ron, phân bố trong hàng nghìn hạch nhỏ, phần lớn tập trung ở hai đám rối: đám rối cơ ruột (myenteric) và đám rối dưới niêm mạc (submucosal). Đám rối cơ ruột tạo thành một mạng liên tục chạy dài từ thực quản trên.\n\nSố lượng nơ-ron lớn và các mạch tích hợp cho phép hệ này điều hoà nhiều quá trình trong ruột một cách khá tự chủ, nên nó đôi khi được gọi là \"bộ não thứ hai\". Tuy vậy, mức độ mà hệ thần kinh ruột hay hệ thần kinh trung ương chi phối tiêu hoá thay đổi đáng kể dọc theo ống tiêu hoá.",
+    "fullDefEn": "The digestive system is innervated both through its connections with the central nervous system and by the enteric nervous system within the wall of the gastrointestinal tract. According to Furness (2014), the enteric nervous system works in concert with the reflex and command centres of the central nervous system, and with neural pathways passing through sympathetic ganglia, to control digestive function; information flows in both directions between the enteric and central nervous systems.\n\nIn humans, the enteric nervous system contains 200–600 million neurons, distributed across many thousands of small ganglia, most of which are found in two plexuses: the myenteric and the submucosal. The myenteric plexus forms a continuous network running from the upper oesophagus downward.\n\nIts large neuron count and integrated circuits let it regulate many gut processes fairly autonomously, which is why it is sometimes called a \"second brain\". Even so, the extent to which the enteric or the central nervous system controls digestion varies considerably along the digestive tract.",
+    "aliases": [
+      "enteric-nervous-system",
+      "ens",
+      "bo-nao-thu-hai",
+      "he-than-kinh-duong-ruot"
+    ],
+    "category": "Y học",
+    "sources": [
+      {
+        "title": "The Enteric Nervous System and Gastrointestinal Innervation: Integrated Local and Central Control (Furness, Advances in Experimental Medicine and Biology, 2014)",
+        "publisher": "Springer (Adv Exp Med Biol 817)",
+        "url": "https://doi.org/10.1007/978-1-4939-0897-4_3"
+      },
+      {
+        "title": "The enteric nervous system and neurogastroenterology (Furness, Nature Reviews Gastroenterology & Hepatology, 2012)",
+        "publisher": "Nature Reviews Gastroenterology & Hepatology",
+        "url": "https://doi.org/10.1038/nrgastro.2012.32"
+      }
+    ],
+    "verdict": "PASS",
+    "notes": "science-editor duyet 2026-09-30. Ca hai DOI xac minh Crossref: Furness 2014 'The Enteric Nervous System and Gastrointestinal Innervation: Integrated Local and Central Control' (Adv Exp Med Biol; doi 10.1007/978-1-4939-0897-4_3, 200); Furness 2012 'The enteric nervous system and neurogastroenterology' (Nat Rev Gastroenterol Hepatol; doi 10.1038/nrgastro.2012.32). Abstract doc qua Europe PMC (EXT_ID 24997029 va 22392290).\nMENH DE 'khoang 200-600 trieu no-ron / hai dam roi myenteric+submucosal / dam roi co ruot lien tuc tu thuc quan tren': Furness 2014 abstract NGUYEN VAN 'The ENS in human contains 200-600 million neurons, distributed in many thousands of small ganglia, the great majority of which are found in two plexuses, the myenteric and submucosal plexuses. The myenteric plexus forms a continuous network that extends from the upper esophagus...'. Con so 200-600 trieu lay TRUC TIEP tu bai binh duyet nay (quy tac 6: so co nguon).\nMENH DE 'phoi hop CNS, qua hach giao cam, thong tin hai chieu' + 'muc do CNS/ENS chi phoi thay doi doc ong tieu hoa': Furness 2014 abstract ('works in concert with CNS reflex and command centers and with neural pathways that pass through sympathetic ganglia', 'bidirectional information flow') va Furness 2012 abstract ('the extent to which the ENS or CNS controls digestion differs considerably along the digestive tract'). KHOP.\n'BO NAO THU HAI': dat nhu BIET DANH ('doi khi duoc goi la'), KHONG nhu tuyen bo rang no la mot bo nao; neo vao chinh so no-ron lon + mach tich hop, la co so Furness dua ra. Quy tac 4 (don gian hoa khong lam sai mo hinh): da noi ro 'kha doc lap'/'fairly autonomously' chu khong 'doc lap hoan toan'. Entity he-than-kinh-ruot da co san (brief) nen slug trung khop co y. Alias dang slug.",
+    "usedIn": [
+      "ruot-he-vi-sinh-vat-va-quyen-luc-cua-bo-nao-thu-hai"
     ]
   }
 ]
