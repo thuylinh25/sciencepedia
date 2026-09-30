@@ -13,8 +13,8 @@ import { PANEL } from "@/components/human-atlas/panel";
 type Props = {
   open: boolean;
   viewName: string;
-  /** Tên hệ của góc nhìn — nhãn nút quay về trang của hệ ấy. */
-  systemName: string;
+  /** Tên hệ để quay về tổng quan của nó; null = đang ở tổng quan, nút về danh sách hệ. */
+  systemName: string | null;
   /** Góc nhìn `partial`: thiếu gì (views.ts). */
   note?: string | null;
   locale: string;
@@ -36,8 +36,9 @@ type Props = {
  *
  * Nằm ĐÚNG chỗ danh sách hệ (cùng `id`, cùng nút mở trên điện thoại): trong một
  * góc nhìn theo hệ, bật/tắt cả hệ là rời góc nhìn, nên danh sách hệ không còn
- * việc gì để làm ở đó. "Về [tên hệ]" mở lưới Góc nhìn ở trang của hệ ấy (tab
- * "Theo hệ") — lối lên một cấp của Hệ → Góc nhìn → Cấu trúc.
+ * việc gì để làm ở đó. "Về [tên hệ]" mở góc nhìn tổng quan của hệ ấy — lối lên
+ * một cấp của Tổng quan → Góc nhìn. Ở chính tổng quan, nút là "Về các hệ": rời
+ * góc nhìn và trả lại danh sách hệ.
  *
  * Chỉ ba thao tác mà cảnh làm được thật: chọn (tô sáng + bay tới), ẩn/hiện (tập
  * `hiddenIn` của cảnh), xem riêng (chế độ `isolate` sẵn có). Không có "khoá",
@@ -150,7 +151,7 @@ export function StructuresPanel({
       <div className="border-t py-1.5">
         <Button variant="ghost" size="sm" className="w-full justify-start" onClick={onBack}>
           <ArrowLeft aria-hidden />
-          {t("backToSystem", { system: systemName })}
+          {systemName ? t("backToSystem", { system: systemName }) : t("backToSystems")}
         </Button>
       </div>
     </section>
