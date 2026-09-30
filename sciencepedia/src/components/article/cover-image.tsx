@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 
 import { assetSrcSet } from "@/lib/image-variants";
 import { cn } from "@/lib/utils";
@@ -62,9 +61,12 @@ export function CoverImage({
    * `/_next/image` — hạn mức Image Optimization của Vercel đã cạn (HTTP 402).
    * Xem `docs/architecture.md`, mục "Ảnh tĩnh KHÔNG đi qua `/_next/image`".
    *
-   * Nhánh `next/image` phía dưới không phải mã chết: bài mới do pipeline sinh
-   * ra có thể mang URL ảnh ngoài cho tới lượt `covers:mirror` kế tiếp. Nó vẫn
-   * dính 402, nhưng vẫn còn `onError` để lui về dải màu thay vì ô đen.
+   * Nhánh cuối không phải mã chết: bài mới do pipeline sinh ra có thể mang URL
+   * ảnh ngoài cho tới lượt `covers:mirror` kế tiếp. Trước đây nhánh này dùng
+   * `next/image` — tức vẫn qua `/_next/image` và dính 402 khi hạn mức cạn, rồi
+   * lui về dải màu: bài có ảnh mà hiện như bài không ảnh. Nay tải thẳng tệp gốc
+   * (không `srcset`, nặng hơn một chút cho tới khi được chép về R2) — ảnh HIỆN
+   * thay vì hỏng. `onError` vẫn giữ cho URL chết thật.
    */
   const variants = assetSrcSet(src);
 
@@ -86,14 +88,15 @@ export function CoverImage({
   }
 
   return (
-    <Image
+    // eslint-disable-next-line @next/next/no-img-element -- cố ý không qua /_next/image (hạn mức Vercel)
+    <img
       src={src}
       alt=""
-      fill
-      priority={priority}
-      sizes={sizes}
+      loading={priority ? "eager" : "lazy"}
+      fetchPriority={priority ? "high" : undefined}
+      decoding="async"
       onError={() => setFailed(true)}
-      className={className}
+      className={cn("absolute inset-0 size-full", className)}
     />
   );
 }
