@@ -584,7 +584,7 @@ Tổng quan tim loại "Right anterior segmental artery" (FMA8620): FMA gọi l�
 
 **Màu theo cơ quan cho hô hấp/tiết niệu/nội tiết** (`anatomy-groups.ts` + `GROUP_COLORS`): cả hệ
 một màu thì thận lẫn niệu quản, khí quản lẫn phổi. Sụn khí–phế quản trắng ngà, phổi hồng tím,
-thận đỏ nâu, niệu quản vàng nhạt, giáp đỏ sẫm, thượng thận vàng — theo ảnh tham chiếu.
+thận đỏ nâu, niệu quản vàng nhạt, giáp đỏ sẫm, thượng thận vàng — theo ảnh tham chiếu. Phổi thêm vân lốm đốm + clearcoat (2026-09-30): một màu trơn trông như nhựa; mesh Z-Anatomy không có UV nên vân là nhiễu 3D theo toạ độ mô TRƯỚC khi tách (`position`) — dính vào mô khi kéo slider. Chỉ màu + độ nhám, không bump/texture.
 
 **Góc nhìn theo hệ lấp 74% chiều cao VÙNG TRỐNG**, không của cả khung như theo vùng: cơ quan cao
 như khí quản lấp theo cả khung là ~93% vùng trống, đè chip và thanh trượt.

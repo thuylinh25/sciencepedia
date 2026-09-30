@@ -83,6 +83,31 @@ type Props = {
  */
 export const SCENE_BACKGROUND = { light: "#eef0f1", dark: "#05070a" } as const;
 
+/*
+ * Bề mặt phổi theo lối atlas (2026-09-30): chủ sản phẩm so với Human Anatomy
+ * Atlas (chỉ tham chiếu, không lấy hình) — phổi ở đó hồng cá hồi, lốm đốm, bóng
+ * ướt; phổi Z-Anatomy vẽ một màu hồng nhạt trông như nhựa. Mesh không có UV nên
+ * vân dựng bằng nhiễu 3D theo toạ độ mô (mét): mảng ~1,5 cm, hạt ~5 mm, chấm
+ * sẫm thưa ~2 mm. Chỉ đổi màu và độ nhám — không bump, không texture tải thêm.
+ */
+const TISSUE_NOISE = `
+float tissueHash(vec3 p) { p = fract(p * 0.3183099 + 0.1); p *= 17.0; return fract(p.x * p.y * p.z * (p.x + p.y + p.z)); }
+float tissueNoise(vec3 x) {
+  vec3 i = floor(x); vec3 f = fract(x); f = f * f * (3.0 - 2.0 * f);
+  return mix(
+    mix(mix(tissueHash(i), tissueHash(i + vec3(1, 0, 0)), f.x), mix(tissueHash(i + vec3(0, 1, 0)), tissueHash(i + vec3(1, 1, 0)), f.x), f.y),
+    mix(mix(tissueHash(i + vec3(0, 0, 1)), tissueHash(i + vec3(1, 0, 1)), f.x), mix(tissueHash(i + vec3(0, 1, 1)), tissueHash(i + vec3(1, 1, 1)), f.x), f.y),
+    f.z);
+}
+`;
+const LUNG_MOTTLE = `
+float tissueCoarse = tissueNoise(vTissue * 65.0);
+float tissueFine = tissueNoise(vTissue * 210.0 + 7.3);
+float tissueSpeck = smoothstep(0.8, 0.93, tissueNoise(vTissue * 520.0 + 3.1));
+diffuseColor.rgb *= mix(0.72, 1.1, smoothstep(0.2, 0.85, tissueCoarse * 0.65 + tissueFine * 0.35));
+diffuseColor.rgb = mix(diffuseColor.rgb, vec3(0.36, 0.2, 0.24), tissueSpeck * 0.6);
+`;
+
 /** Số khối tải song song — giữ như bản gốc: đủ lấp băng thông, không nghẽn kết nối. */
 const PARALLEL_CHUNKS = 3;
 
@@ -319,9 +344,11 @@ export default function AnatomyScene({
 
     const materialFor = (system: SystemId, color: string, key = "") => {
       const skin = key === "integumentary.skin";
+      const lung = key === "respiratory.lung";
       // Da: vật liệu "physical" để có sheen — lớp ánh mềm ở mép như lông tơ trên
-      // da thật, thứ làm da ảnh atlas trông ấm và có khối. Còn lại giữ Standard.
-      const m = new (skin ? T.MeshPhysicalMaterial : T.MeshStandardMaterial)({
+      // da thật, thứ làm da ảnh atlas trông ấm và có khối. Phổi: "physical" để có
+      // clearcoat — màng phổi ướt bóng như ảnh atlas. Còn lại giữ Standard.
+      const m = new (skin || lung ? T.MeshPhysicalMaterial : T.MeshStandardMaterial)({
         color,
         metalness: 0,
         // Xương mờ như xương thật; mô mềm ẩm hơn; da có vùng sáng dịu (0,52).
@@ -331,6 +358,7 @@ export default function AnatomyScene({
         transparent: false,
         opacity: 1,
         ...(skin ? { sheen: 0.45, sheenColor: new T.Color("#f0b9a3"), sheenRoughness: 0.55 } : {}),
+        ...(lung ? { clearcoat: 0.35, clearcoatRoughness: 0.38 } : {}),
       });
       m.onBeforeCompile = (shader) => {
         shader.uniforms.partState = { value: partTexture };
@@ -338,10 +366,13 @@ export default function AnatomyScene({
         shader.uniforms.stateWidth = { value: width };
         shader.vertexShader =
           "attribute float partIndex; uniform sampler2D partState; uniform sampler2D selectionState; uniform float stateWidth; varying float partVisible; varying float partSelected; varying float partHovered; varying float partContext;\n" +
+          (lung ? "varying vec3 vTissue;\n" : "") +
           shader.vertexShader;
         shader.vertexShader = shader.vertexShader.replace(
           "#include <begin_vertex>",
-          "#include <begin_vertex>\nvec2 stateUv = vec2((partIndex + 0.5) / stateWidth, 0.5); vec4 state = texture2D(partState, stateUv); transformed += state.xyz; partVisible = state.w; vec4 pick = texture2D(selectionState, stateUv); partSelected = pick.r; partHovered = pick.b; partContext = pick.a;",
+          "#include <begin_vertex>\nvec2 stateUv = vec2((partIndex + 0.5) / stateWidth, 0.5); vec4 state = texture2D(partState, stateUv); transformed += state.xyz; partVisible = state.w; vec4 pick = texture2D(selectionState, stateUv); partSelected = pick.r; partHovered = pick.b; partContext = pick.a;" +
+            // Toạ độ TRƯỚC khi tách (`position`, không `transformed`): vân dính vào mô khi kéo slider.
+            (lung ? " vTissue = position;" : ""),
         );
         shader.fragmentShader =
           "varying float partVisible; varying float partSelected; varying float partHovered; varying float partContext;\n" + shader.fragmentShader;
@@ -357,10 +388,20 @@ export default function AnatomyScene({
          * sáng cyan ở rìa (fresnel) và phát sáng rất khẽ. Bản gốc trộn 75% sang
          * xanh ngọc — mảnh chọn thành một khối neon, mất luôn hình khối.
          */
+        if (lung) shader.fragmentShader = "varying vec3 vTissue;\n" + TISSUE_NOISE + shader.fragmentShader;
         shader.fragmentShader = shader.fragmentShader.replace(
           "#include <color_fragment>",
-          "#include <color_fragment>\ndiffuseColor.rgb = mix(diffuseColor.rgb, vec3(0.45, 0.82, 0.95), partSelected * 0.12);",
+          "#include <color_fragment>\n" +
+            (lung ? LUNG_MOTTLE : "") +
+            "diffuseColor.rgb = mix(diffuseColor.rgb, vec3(0.45, 0.82, 0.95), partSelected * 0.12);",
         );
+        if (lung) {
+          // Bóng không đều: chỗ lốm đốm mờ hơn, như màng phổi ướt phủ nhu mô xốp.
+          shader.fragmentShader = shader.fragmentShader.replace(
+            "#include <roughnessmap_fragment>",
+            "#include <roughnessmap_fragment>\nroughnessFactor = clamp(roughnessFactor * (0.8 + 0.45 * tissueFine), 0.0, 1.0);",
+          );
+        }
         shader.fragmentShader = shader.fragmentShader.replace(
           "#include <emissivemap_fragment>",
           "#include <emissivemap_fragment>\nfloat selectRim = pow(1.0 - abs(dot(normal, normalize(vViewPosition))), 2.5);\ntotalEmissiveRadiance += vec3(0.30, 0.72, 1.0) * partSelected * (0.06 + 0.55 * selectRim);\n// Rê chuột: viền sáng trắng ngà, yếu hơn viền chọn — gợi ý bấm được, không giành vai chọn.\ntotalEmissiveRadiance += vec3(0.95, 0.92, 0.85) * partHovered * (1.0 - partSelected) * (0.03 + 0.3 * selectRim);",

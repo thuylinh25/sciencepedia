@@ -387,8 +387,8 @@ export const GROUP_COLORS: Record<string, string> = {
   "sensory.ear": "#c49a80",
   "sensory.sclera": "#e6e0d6",
   "sensory.iris": "#5b3e2b",
-  // Hô hấp: nhu mô phổi hồng tím, sụn khí–phế quản trắng ngà như ảnh atlas; hầu là cơ.
-  "respiratory.lung": "#b98b93",
+  // Hô hấp: nhu mô phổi hồng cá hồi (vân lốm đốm ở anatomy-scene.tsx), sụn khí–phế quản trắng ngà như ảnh atlas; hầu là cơ.
+  "respiratory.lung": "#c0737d",
   "respiratory.airway": "#dcd8d2",
   "respiratory.pharynx": "#a85b50",
   /*
