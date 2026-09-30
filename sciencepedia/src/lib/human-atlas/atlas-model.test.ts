@@ -53,11 +53,11 @@ test("phổi mờ làm bối cảnh cho cây phế quản, khí quản, cơ hít
 });
 
 test("hệ chưa có preset thì không có mô hình", () => {
-  assert.equal(anatomicalSystem("urinary"), null);
+  assert.equal(anatomicalSystem("skeletal"), null);
 });
 
-test("cấu trúc của mỗi góc nhìn hô hấp phủ đủ tập nổi bật, không chồng nhau", () => {
-  const views = SYSTEM_VIEWS.filter((v) => v.systemId === "respiratory" && viewKind(v) !== "structure" && !v.missing);
+test("cấu trúc của mỗi góc nhìn theo hệ phủ đủ tập nổi bật, không chồng nhau", () => {
+  const views = SYSTEM_VIEWS.filter((v) => viewKind(v) !== "structure" && !v.missing);
   for (const view of views) {
     const list = viewStructures(view.id);
     assert.ok(list.length > 0, `${view.id}: không có cấu trúc`);
@@ -83,7 +83,6 @@ test("cấu trúc lớn thắng cấu trúc con; cấu trúc dùng lại ở nhi
 });
 
 test("góc nhìn không cấu trúc nào khớp thì không có bảng", () => {
-  assert.deepEqual(viewStructures("endocrine-overview"), []);
   assert.deepEqual(viewStructures("skull"), []);
   assert.deepEqual(viewStructures(null), []);
 });

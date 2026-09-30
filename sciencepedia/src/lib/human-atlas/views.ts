@@ -1,8 +1,13 @@
 import type { SystemId } from "./anatomy";
 import { fold } from "./search";
 import resolved from "./view-parts.generated.json";
+import { CARDIAC_VIEWS } from "./views-cardiac";
+import { DIGESTIVE_VIEWS } from "./views-digestive";
+import { ENDOCRINE_VIEWS } from "./views-endocrine";
 import { OVERVIEW_VIEWS } from "./views-overviews";
+import { REPRODUCTIVE_VIEWS } from "./views-reproductive";
 import { RESPIRATORY_VIEWS } from "./views-respiratory";
+import { URINARY_VIEWS } from "./views-urinary";
 
 /*
  * ## Góc nhìn (Views) — dữ liệu, không JSX riêng mỗi góc
@@ -353,7 +358,15 @@ export const REGIONAL_VIEWS: readonly AtlasViewDef[] = [
 ];
 
 /** Góc nhìn theo hệ — thêm hệ nào là thêm mảng của hệ đó vào đây. */
-export const SYSTEM_VIEWS: readonly AtlasViewDef[] = [...RESPIRATORY_VIEWS, ...OVERVIEW_VIEWS];
+export const SYSTEM_VIEWS: readonly AtlasViewDef[] = [
+  ...RESPIRATORY_VIEWS,
+  ...OVERVIEW_VIEWS,
+  ...CARDIAC_VIEWS,
+  ...ENDOCRINE_VIEWS,
+  ...DIGESTIVE_VIEWS,
+  ...URINARY_VIEWS,
+  ...REPRODUCTIVE_VIEWS,
+];
 
 /** Registry chung: lưới, deep link, ảnh thu nhỏ và tìm kiếm đều đọc từ đây. */
 export const ATLAS_VIEWS: readonly AtlasViewDef[] = [...REGIONAL_VIEWS, ...SYSTEM_VIEWS];

@@ -617,6 +617,20 @@ navy #090c14 đồng bộ header, thẻ #121620. Ảnh thu nhỏ nền trong su�
 chìm vào nền đen của cảnh; tương phản lấy từ quầng `--gallery-stage` sau mô hình, KHÔNG từ đổi vật
 liệu/đèn — cảnh 3D chính vẫn #05070a (lý do ở `SCENE_BACKGROUND`).
 
+**Mở rộng ra tim, nội tiết, tiêu hoá, tiết niệu, sinh dục (2026-09-30)** — `views-<hệ>.ts`, cùng quy trình hô hấp
+(audit → mã FMA → `atlas-views.ts` → science-editor). Test "cấu trúc phủ đủ tập nổi bật" nay chạy cho MỌI hệ.
+Đánh đổi dễ bị "sửa lại cho đẹp":
+- Sinh dục: dữ liệu là MỘT người nam → tên "Hệ sinh dục nam". Không ghi "thiếu bìu/da dương vật": da là một
+  mesh toàn thân, có thể đã gồm vùng đó — chỉ ghi thứ đếm được là thiếu (tuyến hành niệu đạo, ống phóng tinh).
+- "Mạch máu lớn của tim": TM chủ dưới là bối cảnh mờ, không nổi bật — một mảnh dài tới chậu, nổi bật thì khung
+  kéo xuống bụng (lý do như tổng quan tim).
+- Mạch thận: `renal artery$` cũng khớp "…suprarenal artery" — phải `exclude: /suprarenal/`.
+- Tiêu hoá: không có manh tràng, đại tràng sigma, ống hậu môn, tuyến mang tai (đã grep bảng mảnh gộp). Hầu nằm ở
+  hệ hô hấp của dữ liệu → bối cảnh mờ ở tổng quan tiêu hoá. Tên nhóm mạch theo đúng tập mảnh ("Thân tạng và
+  động mạch mạc treo tràng"), không "động mạch nuôi ống tiêu hoá" — tập có cả ĐM gan/lách, thiếu ĐM thực quản.
+- Tim: khoang nhĩ là cấu trúc riêng — "Các buồng tim" chỉ hiện khoang, "Tâm nhĩ" (thành + khoang) không nằm
+  trọn trong đó nên bảng sẽ có "Phần còn lại".
+
 ### Hệ → Góc nhìn giải phẫu → Cấu trúc (2026-09-30)
 
 Tab "Theo hệ" bản đầu bày ba cấp thẻ ngang hàng (Tổng quan / Nhóm / 20 thẻ cấu trúc) — chủ sản
