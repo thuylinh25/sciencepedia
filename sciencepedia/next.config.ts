@@ -29,6 +29,17 @@ const nextConfig: NextConfig = {
   output:
     process.env.NEXT_OUTPUT_STANDALONE === "true" ? "standalone" : undefined,
   images: {
+    /*
+     * Tắt HẲN bộ tối ưu ảnh (`/_next/image`). Hạn mức Image Optimization của
+     * Vercel đã cạn từ 2026-09-16 (HTTP 402) — xem docs/architecture.md, mục
+     * "Ảnh tĩnh KHÔNG đi qua `/_next/image`". Mọi chỗ hiện có đã tránh nó
+     * (`<AssetImage>`, `unoptimized` từng chỗ); cờ này để một `next/image` thêm
+     * về sau cũng không thể gọi tới bộ tối ưu. Đánh đổi: `next/image` mới sẽ
+     * không có `srcset` — ảnh nhiều cỡ thì dùng `<AssetImage>`.
+     *
+     * `remotePatterns` giữ lại: bỏ cờ này là cổng host vẫn đúng như cũ.
+     */
+    unoptimized: true,
     formats: ["image/avif", "image/webp"],
     remotePatterns: [
       // Cloudflare R2 — ảnh tĩnh của giao diện (hero, bìa thiên thể, ô khám
