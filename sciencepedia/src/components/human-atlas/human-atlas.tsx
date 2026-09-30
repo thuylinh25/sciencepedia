@@ -988,6 +988,32 @@ export function HumanAtlas({
         </ToolButton>
       </nav>
 
+      {/* Chọn nhiều cấu trúc thì không có bảng chi tiết (nó nói về MỘT cấu trúc) — hai
+          nút của bảng ấy đặt ở đây để còn lối ra khỏi "Xem riêng" khi ô tìm đã đóng. */}
+      {picked.length > 1 && !detailOpen && (
+        <div
+          className={cn(
+            PANEL,
+            "absolute left-1/2 z-20 flex -translate-x-1/2 items-center gap-1 p-1",
+            "atlas-wide:bottom-[8.75rem] atlas-phone:bottom-[calc(6.5rem+env(safe-area-inset-bottom))] atlas-short:bottom-20",
+          )}
+        >
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={() => setState((s) => ({ ...s, isolate: !s.isolate, explode: 0 }))}
+            aria-pressed={!state.isolate}
+          >
+            <Scan aria-hidden />
+            {state.isolate ? t("detail.showSurrounding") : t("detail.isolate")}
+          </Button>
+          <Button variant="ghost" size="sm" onClick={clearSelection}>
+            <X aria-hidden />
+            {t("detail.clear")}
+          </Button>
+        </div>
+      )}
+
       <p
         aria-hidden
         className="pointer-events-none absolute bottom-[6.75rem] left-1/2 hidden -translate-x-1/2 items-center gap-3 text-[11px] tracking-[0.15em] whitespace-nowrap text-muted-foreground uppercase atlas-wide:flex"
