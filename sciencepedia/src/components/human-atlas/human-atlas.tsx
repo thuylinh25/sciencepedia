@@ -199,6 +199,11 @@ export function HumanAtlas({
   const [failure, setFailure] = useState<Failure | null>(null);
   const [progress, setProgress] = useState(0);
   const [state, setState] = useState(initial);
+  /** State mới nhất cho handler ổn định (chạm vào cảnh) — không phải gắn lại handler mỗi lần đổi. */
+  const isolateRef = useRef(state);
+  useEffect(() => {
+    isolateRef.current = state;
+  }, [state]);
   const [panel, setPanel] = useState<"layers" | "search" | null>(null);
   const [gallery, setGallery] = useState(false);
   // Ảnh thu nhỏ chỉ chụp sau lần mở lưới đầu tiên: mỗi ảnh là một lượt vẽ cả mô
@@ -377,6 +382,15 @@ export function HumanAtlas({
     (id: string) => {
       const p = parts.get(id);
       if (!p) return;
+      // Đang "Xem riêng" thì cái chạm được chỉ có thể là mảnh trong vùng chọn: chạm vào
+      // nó KHÔNG phải chọn lại — bản trước đặt isolate false và vùng chọn một mảnh, nên
+      // chạm vào đốt sống đang xem riêng là bật về toàn cơ thể (chủ sản phẩm báo
+      // 2026-10-01). Giữ nguyên, chỉ mở lại bảng chi tiết.
+      if (isolateRef.current.isolate && isolateRef.current.selected.includes(id)) {
+        setDetails(true);
+        setPanel(null);
+        return;
+      }
       setChosen({ id: p.conceptId, name: p.name, elements: [id] });
       setPicked([]);
       setState((s) => ({ ...s, selected: [id], isolate: false, rotate: false }));
