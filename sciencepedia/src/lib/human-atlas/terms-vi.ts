@@ -795,8 +795,8 @@ const T: Record<string, string> = {
   lung: "phổi",
 
   // ------------------------------------------------------------- M
-  "main bronchus": "phế quản chính",
-  "main bronchus proper": "phế quản chính (phần chính)",
+  "main bronchus": "phế quản gốc",
+  "main bronchus proper": "phế quản gốc (phần chính)",
   "major alar cartilage": "sụn cánh mũi lớn",
   "major salivary gland": "tuyến nước bọt chính",
   "mammillary body": "thể vú",

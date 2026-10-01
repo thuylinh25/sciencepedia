@@ -34,12 +34,19 @@
    "viName": null,
    "enName": "Right calcaneal tendon",
    "system": "connective",
-   "status": "none",
+   "status": "vi",
    "enTitle": "Achilles tendon",
-   "mismatch": true,
-   "description": null,
-   "source": null,
-   "dropped": "'dài nhất' sai (gân cơ gan chân dài hơn; gân gót là dày và khoẻ nhất); câu 2 sai: gân gót không nối với 'gân khoeo chân'. Phần đúng duy nhất 'là gân gót chân' chỉ là đồng nghĩa."
+   "description": {
+    "lang": "vi",
+    "text": "Gân gót (gân Achilles) nằm ở mặt sau cẳng chân và là gân dày nhất cơ thể người. Gân nối cơ bụng chân và cơ dép vào xương gót.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Achilles tendon",
+    "url": "https://en.wikipedia.org/wiki/Achilles_tendon",
+    "license": "CC BY-SA 4.0"
+   }
   },
   {
    "fma": "FMA55227",
@@ -411,11 +418,19 @@
    "viName": "Trực tràng",
    "enName": "Rectum",
    "system": "digestive",
-   "status": "none",
+   "status": "vi",
    "enTitle": "Rectum",
-   "description": null,
-   "source": null,
-   "dropped": "Câu đầu hỏng từ nguồn (thiếu ngoặc mở, 'Trực tràng tiếng Latin ... )'); câu 2 chỉ là số đo, không phải định nghĩa. Không sửa chữ được nên để trống."
+   "description": {
+    "lang": "vi",
+    "text": "Trực tràng là phần cuối của ruột già. Phân được chứa tạm thời ở đây trước khi được tống ra ngoài qua hậu môn.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Rectum",
+    "url": "https://en.wikipedia.org/wiki/Rectum",
+    "license": "CC BY-SA 4.0"
+   }
   },
   {
    "fma": "FMA7148",
@@ -538,11 +553,19 @@
    "viName": "Tuyến yên",
    "enName": "Pituitary gland",
    "system": "endocrine",
-   "status": "none",
+   "status": "vi",
    "enTitle": "Pituitary gland",
-   "description": null,
-   "source": null,
-   "dropped": "Regex cắt giữa số thập phân ('0,5g'/'0.5g') nên câu đầu mở bằng '5g nằm ở...' - hỏng, và sai khối lượng nếu đọc là 5 g. Câu 2 mở bằng 'Đây', không đứng một mình."
+   "description": {
+    "lang": "vi",
+    "text": "Tuyến yên là một tuyến nội tiết. Ở người, tuyến yên nằm ở nền não, nhô ra từ mặt dưới của vùng dưới đồi.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Pituitary gland",
+    "url": "https://en.wikipedia.org/wiki/Pituitary_gland",
+    "license": "CC BY-SA 4.0"
+   }
   },
   {
    "fma": "FMA7163",
@@ -1354,11 +1377,19 @@
    "viName": null,
    "enName": "First lumbrical of right foot",
    "system": "muscular",
-   "status": "none",
-   "enTitle": "Lumbricals of the hand",
-   "mismatch": true,
-   "description": null,
-   "source": null
+   "status": "vi",
+   "enTitle": "Lumbricals of the foot",
+   "description": {
+    "lang": "vi",
+    "text": "Cơ giun bàn chân gồm bốn cơ nhỏ, đi kèm các gân của cơ gấp các ngón chân dài. Các cơ được đánh số từ phía trong của bàn chân.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Lumbricals of the foot",
+    "url": "https://en.wikipedia.org/wiki/Lumbricals_of_the_foot",
+    "license": "CC BY-SA 4.0"
+   }
   },
   {
    "fma": "FMA37746",
@@ -1440,10 +1471,19 @@
    "viName": null,
    "enName": "Flexor digiti minimi brevis of right foot",
    "system": "muscular",
-   "status": "none",
-   "enTitle": null,
-   "description": null,
-   "source": null
+   "status": "vi",
+   "enTitle": "Flexor digiti minimi brevis muscle of foot",
+   "description": {
+    "lang": "vi",
+    "text": "Cơ gấp ngón út ngắn bàn chân nằm ở mặt gan chân của xương đốt bàn chân ngón út, có hình dạng giống một cơ gian cốt.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Flexor digiti minimi brevis muscle of foot",
+    "url": "https://en.wikipedia.org/wiki/Flexor_digiti_minimi_brevis_muscle_of_foot",
+    "license": "CC BY-SA 4.0"
+   }
   },
   {
    "fma": "FMA37399",
@@ -1454,10 +1494,19 @@
    "viName": null,
    "enName": "Flexor digiti minimi brevis of left hand",
    "system": "muscular",
-   "status": "none",
-   "enTitle": null,
-   "description": null,
-   "source": null
+   "status": "vi",
+   "enTitle": "Flexor digiti minimi brevis muscle of hand",
+   "description": {
+    "lang": "vi",
+    "text": "Cơ gấp ngón út ngắn bàn tay là một cơ mô út, gấp ngón út tại khớp bàn–ngón tay. Ở tư thế giải phẫu, cơ nằm phía ngoài cơ dạng ngón út.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Flexor digiti minimi brevis muscle of hand",
+    "url": "https://en.wikipedia.org/wiki/Flexor_digiti_minimi_brevis_muscle_of_hand",
+    "license": "CC BY-SA 4.0"
+   }
   },
   {
    "fma": "FMA37462",
@@ -1629,11 +1678,19 @@
    "viName": null,
    "enName": "Fourth lumbrical of left foot",
    "system": "muscular",
-   "status": "none",
-   "enTitle": "Lumbricals of the hand",
-   "mismatch": true,
-   "description": null,
-   "source": null
+   "status": "vi",
+   "enTitle": "Lumbricals of the foot",
+   "description": {
+    "lang": "vi",
+    "text": "Cơ giun bàn chân gồm bốn cơ nhỏ, đi kèm các gân của cơ gấp các ngón chân dài. Các cơ được đánh số từ phía trong của bàn chân.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Lumbricals of the foot",
+    "url": "https://en.wikipedia.org/wiki/Lumbricals_of_the_foot",
+    "license": "CC BY-SA 4.0"
+   }
   },
   {
    "fma": "FMA22336",
@@ -1876,11 +1933,19 @@
    "viName": null,
    "enName": "Right iliocostalis cervicis",
    "system": "muscular",
-   "status": "none",
+   "status": "vi",
    "enTitle": "Iliocostalis",
-   "description": null,
-   "source": null,
-   "dropped": "Sai vị trí: cơ chậu sườn nằm ngay ngoài cơ dài (longissimus), không phải 'cơ gai'; câu 2 mở bằng 'Nó', không đứng một mình."
+   "description": {
+    "lang": "vi",
+    "text": "Cơ chậu sườn nằm ngay phía ngoài cơ dài nhất, là cột ngoài cùng của khối cơ lưng sâu chạy dọc cột sống.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Iliocostalis",
+    "url": "https://en.wikipedia.org/wiki/Iliocostalis",
+    "license": "CC BY-SA 4.0"
+   }
   },
   {
    "fma": "FMA22741",
@@ -1891,11 +1956,19 @@
    "viName": null,
    "enName": "Left iliocostalis lumborum",
    "system": "muscular",
-   "status": "none",
+   "status": "vi",
    "enTitle": "Iliocostalis",
-   "description": null,
-   "source": null,
-   "dropped": "Sai vị trí: cơ chậu sườn nằm ngay ngoài cơ dài (longissimus), không phải 'cơ gai'; câu 2 mở bằng 'Nó', không đứng một mình."
+   "description": {
+    "lang": "vi",
+    "text": "Cơ chậu sườn nằm ngay phía ngoài cơ dài nhất, là cột ngoài cùng của khối cơ lưng sâu chạy dọc cột sống.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Iliocostalis",
+    "url": "https://en.wikipedia.org/wiki/Iliocostalis",
+    "license": "CC BY-SA 4.0"
+   }
   },
   {
    "fma": "FMA22743",
@@ -1906,11 +1979,19 @@
    "viName": null,
    "enName": "Left iliocostalis thoracis",
    "system": "muscular",
-   "status": "none",
+   "status": "vi",
    "enTitle": "Iliocostalis",
-   "description": null,
-   "source": null,
-   "dropped": "Sai vị trí: cơ chậu sườn nằm ngay ngoài cơ dài (longissimus), không phải 'cơ gai'; câu 2 mở bằng 'Nó', không đứng một mình."
+   "description": {
+    "lang": "vi",
+    "text": "Cơ chậu sườn nằm ngay phía ngoài cơ dài nhất, là cột ngoài cùng của khối cơ lưng sâu chạy dọc cột sống.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Iliocostalis",
+    "url": "https://en.wikipedia.org/wiki/Iliocostalis",
+    "license": "CC BY-SA 4.0"
+   }
   },
   {
    "fma": "FMA49050",
@@ -3092,11 +3173,19 @@
    "viName": null,
    "enName": "Second lumbrical of right foot",
    "system": "muscular",
-   "status": "none",
-   "enTitle": "Lumbricals of the hand",
-   "mismatch": true,
-   "description": null,
-   "source": null
+   "status": "vi",
+   "enTitle": "Lumbricals of the foot",
+   "description": {
+    "lang": "vi",
+    "text": "Cơ giun bàn chân gồm bốn cơ nhỏ, đi kèm các gân của cơ gấp các ngón chân dài. Các cơ được đánh số từ phía trong của bàn chân.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Lumbricals of the foot",
+    "url": "https://en.wikipedia.org/wiki/Lumbricals_of_the_foot",
+    "license": "CC BY-SA 4.0"
+   }
   },
   {
    "fma": "FMA37744",
@@ -3744,11 +3833,19 @@
    "viName": null,
    "enName": "Third lumbrical of left foot",
    "system": "muscular",
-   "status": "none",
-   "enTitle": "Lumbricals of the hand",
-   "mismatch": true,
-   "description": null,
-   "source": null
+   "status": "vi",
+   "enTitle": "Lumbricals of the foot",
+   "description": {
+    "lang": "vi",
+    "text": "Cơ giun bàn chân gồm bốn cơ nhỏ, đi kèm các gân của cơ gấp các ngón chân dài. Các cơ được đánh số từ phía trong của bàn chân.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Lumbricals of the foot",
+    "url": "https://en.wikipedia.org/wiki/Lumbricals_of_the_foot",
+    "license": "CC BY-SA 4.0"
+   }
   },
   {
    "fma": "FMA37742",
@@ -4241,11 +4338,19 @@
    "viName": "Phế quản chính trái",
    "enName": "Left main bronchus",
    "system": "respiratory",
-   "status": "none",
+   "status": "vi",
    "enTitle": "Bronchus",
-   "description": null,
-   "source": null,
-   "dropped": "Hỏng chữ: 'Phế quản tứ cuống phổi' ('tứ' = bốn, lỗi gõ của 'tức') làm sai nghĩa; câu 2 mở bằng 'Nó' và có '70độ' dính chữ. Không sửa chữ được."
+   "description": {
+    "lang": "vi",
+    "text": "Phế quản là đường dẫn khí ở đường hô hấp dưới, đưa không khí vào phổi. Phế quản gốc phải và phế quản gốc trái là hai phế quản đầu tiên tách ra từ khí quản, tại cựa khí quản (carina).",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Bronchus",
+    "url": "https://en.wikipedia.org/wiki/Bronchus",
+    "license": "CC BY-SA 4.0"
+   }
   },
   {
    "fma": "FMA46633",
@@ -6336,12 +6441,19 @@
    "viName": null,
    "enName": "Right lower first secondary premolar tooth",
    "system": "skeletal",
-   "status": "none",
-   "enTitle": "Molar (tooth)",
-   "mismatch": true,
-   "description": null,
-   "source": null,
-   "dropped": "Bài nguồn 'Răng hàm' là răng hàm lớn; cấu trúc này là răng hàm nhỏ (tiền hàm), không phải 'răng phẳng ở phía sau' - mô tả sai loại răng."
+   "status": "vi",
+   "enTitle": "Premolar",
+   "description": {
+    "lang": "vi",
+    "text": "Răng hàm nhỏ là răng chuyển tiếp, nằm giữa răng nanh và răng hàm lớn. Ở người, bộ răng vĩnh viễn có hai răng hàm nhỏ ở mỗi phần tư hàm, tổng cộng tám chiếc.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Premolar",
+    "url": "https://en.wikipedia.org/wiki/Premolar",
+    "license": "CC BY-SA 4.0"
+   }
   },
   {
    "fma": "FMA57141",
@@ -6400,12 +6512,19 @@
    "viName": null,
    "enName": "Right lower second secondary premolar tooth",
    "system": "skeletal",
-   "status": "none",
-   "enTitle": "Molar (tooth)",
-   "mismatch": true,
-   "description": null,
-   "source": null,
-   "dropped": "Bài nguồn 'Răng hàm' là răng hàm lớn; cấu trúc này là răng hàm nhỏ (tiền hàm), không phải 'răng phẳng ở phía sau' - mô tả sai loại răng."
+   "status": "vi",
+   "enTitle": "Premolar",
+   "description": {
+    "lang": "vi",
+    "text": "Răng hàm nhỏ là răng chuyển tiếp, nằm giữa răng nanh và răng hàm lớn. Ở người, bộ răng vĩnh viễn có hai răng hàm nhỏ ở mỗi phần tư hàm, tổng cộng tám chiếc.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Premolar",
+    "url": "https://en.wikipedia.org/wiki/Premolar",
+    "license": "CC BY-SA 4.0"
+   }
   },
   {
    "fma": "FMA55686",
@@ -6507,11 +6626,19 @@
    "viName": null,
    "enName": "Left maxilla",
    "system": "skeletal",
-   "status": "none",
+   "status": "vi",
    "enTitle": "Maxilla",
-   "description": null,
-   "source": null,
-   "dropped": "Hỏng chữ từ nguồn: 'Hàm trên ) là...' - ngoặc đóng mồ côi, mất phần trong ngoặc. Chỉ có một câu."
+   "description": {
+    "lang": "vi",
+    "text": "Xương hàm trên là xương cố định của hàm trên; hàm trên gồm hai xương hàm trên trái và phải ghép lại. Ở người, hàm trên mang phần trước của khẩu cái cứng.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Maxilla",
+    "url": "https://en.wikipedia.org/wiki/Maxilla",
+    "license": "CC BY-SA 4.0"
+   }
   },
   {
    "fma": "FMA24521",
@@ -8126,12 +8253,19 @@
    "viName": null,
    "enName": "Left upper first secondary premolar tooth",
    "system": "skeletal",
-   "status": "none",
-   "enTitle": "Molar (tooth)",
-   "mismatch": true,
-   "description": null,
-   "source": null,
-   "dropped": "Bài nguồn 'Răng hàm' là răng hàm lớn; cấu trúc này là răng hàm nhỏ (tiền hàm), không phải 'răng phẳng ở phía sau' - mô tả sai loại răng."
+   "status": "vi",
+   "enTitle": "Premolar",
+   "description": {
+    "lang": "vi",
+    "text": "Răng hàm nhỏ là răng chuyển tiếp, nằm giữa răng nanh và răng hàm lớn. Ở người, bộ răng vĩnh viễn có hai răng hàm nhỏ ở mỗi phần tư hàm, tổng cộng tám chiếc.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Premolar",
+    "url": "https://en.wikipedia.org/wiki/Premolar",
+    "license": "CC BY-SA 4.0"
+   }
   },
   {
    "fma": "FMA55683",
@@ -8190,12 +8324,19 @@
    "viName": null,
    "enName": "Right upper second secondary premolar tooth",
    "system": "skeletal",
-   "status": "none",
-   "enTitle": "Molar (tooth)",
-   "mismatch": true,
-   "description": null,
-   "source": null,
-   "dropped": "Bài nguồn 'Răng hàm' là răng hàm lớn; cấu trúc này là răng hàm nhỏ (tiền hàm), không phải 'răng phẳng ở phía sau' - mô tả sai loại răng."
+   "status": "vi",
+   "enTitle": "Premolar",
+   "description": {
+    "lang": "vi",
+    "text": "Răng hàm nhỏ là răng chuyển tiếp, nằm giữa răng nanh và răng hàm lớn. Ở người, bộ răng vĩnh viễn có hai răng hàm nhỏ ở mỗi phần tư hàm, tổng cộng tám chiếc.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Premolar",
+    "url": "https://en.wikipedia.org/wiki/Premolar",
+    "license": "CC BY-SA 4.0"
+   }
   },
   {
    "fma": "FMA55799",

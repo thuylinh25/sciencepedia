@@ -327,8 +327,12 @@ async function run() {
     [/molar tooth/i, "Molar (tooth)"],
     [/premolar/i, "Premolar"],
     [/canine tooth/i, "Canine tooth"],
+    // Bàn chân trước bàn tay: cơ giun bàn chân từng nhận bài cơ giun bàn TAY.
+    [/\blumbrical\b.*\bfoot\b/i, "Lumbricals of the foot"],
     [/\blumbrical\b/i, "Lumbricals of the hand"],
     [/plantar interosseous/i, "Plantar interossei"],
+    [/flexor digiti minimi brevis.*\bfoot\b/i, "Flexor digiti minimi brevis muscle of foot"],
+    [/flexor digiti minimi brevis.*\bhand\b/i, "Flexor digiti minimi brevis muscle of hand"],
     [/flexor digiti minimi brevis/i, "Flexor digiti minimi brevis muscle"],
     [/opponens digiti minimi/i, "Opponens digiti minimi muscle"],
     [/\brotator\b/i, "Rotatores muscles"],

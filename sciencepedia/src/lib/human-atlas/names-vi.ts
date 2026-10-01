@@ -67,9 +67,9 @@ const HAND_NAMES: Record<string, string> = {
   // Hô hấp
   FMA7394: "Khí quản",
   FMA7409: "Phế quản",
-  FMA7405: "Phế quản chính",
-  FMA7396: "Phế quản chính trái",
-  FMA7395: "Phế quản chính phải",
+  FMA7405: "Phế quản gốc",
+  FMA7396: "Phế quản gốc trái",
+  FMA7395: "Phế quản gốc phải",
   FMA7310: "Phổi trái",
   FMA7309: "Phổi phải",
   FMA13295: "Cơ hoành",
