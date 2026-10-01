@@ -2,6 +2,8 @@ import { PrismaClient } from "@prisma/client";
 
 import { findDraftArtifacts } from "../src/lib/draft-artifacts";
 
+import { revalidateSite } from "./revalidate-site";
+
 /**
  * Gỡ dấu trích dẫn của công cụ soạn thảo AI (`【1-03d267】`…) khỏi mọi bài.
  *
@@ -38,6 +40,7 @@ async function main() {
   });
 
   let changed = 0;
+  const written: string[] = [];
   for (const article of articles) {
     const found = findDraftArtifacts(`${article.content}\n${article.contentEn ?? ""}`);
     if (found.length === 0) continue;
@@ -58,8 +61,10 @@ async function main() {
       }),
       prisma.article.update({ where: { id: article.id }, data: { content, contentEn } }),
     ]);
+    written.push(article.slug);
   }
   console.log(`\n${changed} bài.` + (write ? " Đã ghi (kèm revision)." : " Chưa ghi gì."));
+  if (written.length > 0) await revalidateSite(written);
 }
 
 main()

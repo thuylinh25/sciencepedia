@@ -2,6 +2,8 @@ import { execFileSync } from "node:child_process";
 
 import { PrismaClient } from "@prisma/client";
 
+import { revalidateSite } from "./revalidate-site";
+
 /**
  * Đường DUY NHẤT để MÁY (pipeline, script) đưa một bài sang PUBLISHED.
  *
@@ -148,6 +150,10 @@ async function main() {
   ]);
 
   console.log(`✓ "${slug}" → PUBLISHED (đã ghi revision)`);
+
+  // Trang chủ, danh sách và trang bài cập nhật ngay — cùng cơ chế với form
+  // quản trị. Không ném: bài đã publish xong, hỏng thì chỉ in lệnh chạy lại.
+  await revalidateSite([slug]);
 
   /* Đánh chỉ mục ngay, không nhắc người làm.
      Bỏ qua bằng `--no-reindex`.

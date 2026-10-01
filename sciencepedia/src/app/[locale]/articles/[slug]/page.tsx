@@ -2,13 +2,7 @@ import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 import { notFound, permanentRedirect } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import {
-  BookOpen,
-  Clock,
-  Eye,
-  ShieldCheck,
-  Tag as TagIcon,
-} from "lucide-react";
+import { BookOpen, Clock, ShieldCheck, Tag as TagIcon } from "lucide-react";
 
 import { Link } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
@@ -20,12 +14,7 @@ import {
 } from "@/server/queries";
 import { getGlossaryForMarkdown } from "@/server/glossary";
 import { articleJsonLd, breadcrumbJsonLd, buildMetadata } from "@/lib/seo";
-import {
-  absoluteUrl,
-  extractHeadings,
-  formatDate,
-  formatNumber,
-} from "@/lib/utils";
+import { absoluteUrl, extractHeadings, formatDate } from "@/lib/utils";
 import { isFallback, pick, pickName } from "@/lib/i18n-content";
 
 import { JsonLd } from "@/components/json-ld";
@@ -176,7 +165,6 @@ export default async function ArticlePage({
   return (
     <>
       <ReadingProgress />
-      <ViewCounter articleId={article.id} />
 
       <JsonLd
         data={articleJsonLd({
@@ -357,10 +345,9 @@ export default async function ArticlePage({
               {t("readingTime", { minutes: article.readingTime })}
             </span>
 
-            <span className="flex items-center gap-1.5">
-              <Eye className="size-4" />
-              {formatNumber(article.views, locale)}
-            </span>
+            {/* Lượt đọc đếm VÀ hiển thị ở trình duyệt: in vào HTML ISR thì
+                mỗi lượt đọc làm lần tái dựng sau ra byte khác (ISR Write). */}
+            <ViewCounter articleId={article.id} />
 
             {/* Byline người thẩm định — BẮT BUỘC có mặt khi JSON-LD phát `reviewedBy`.
 
@@ -550,7 +537,8 @@ export default async function ArticlePage({
       {related.length > 0 && (
         <section className="container-page section-gap">
           <SectionHeading title={t("related")} />
-          <ArticleGrid articles={related} locale={loc} />
+          {/* Không in lượt đọc: xem `ViewCounter`. */}
+          <ArticleGrid articles={related} locale={loc} showViews={false} />
         </section>
       )}
     </>

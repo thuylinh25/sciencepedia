@@ -5,6 +5,8 @@ import {
   type Credit,
 } from "../src/lib/commons-credit";
 
+import { revalidateSite } from "./revalidate-site";
+
 /**
  * Điền ghi công ảnh bìa cho bài viết và lĩnh vực, lấy trực tiếp từ Wikimedia
  * Commons.
@@ -48,6 +50,7 @@ async function main() {
   });
 
   let filled = 0;
+  const written: string[] = [];
   let skipped = 0;
 
   for (const row of [...articles, ...categories]) {
@@ -81,6 +84,7 @@ async function main() {
       };
       if (isArticle) {
         await p.article.update({ where: { id: row.id }, data });
+        written.push(row.slug);
       } else {
         await p.category.update({ where: { id: row.id }, data });
       }
@@ -95,6 +99,7 @@ async function main() {
   }
 
   console.log(`\nĐiền được: ${filled} · Bỏ qua: ${skipped}`);
+  if (written.length > 0) await revalidateSite(written);
   if (!WRITE && filled > 0) console.log("Chạy lại với --write để ghi.");
 }
 

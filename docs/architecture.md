@@ -36,11 +36,32 @@ cập đầu tiên sau khi hết hạn **vẫn** nhận bản cũ — lượt sa
 Ghi lại vì cái bẫy này đã tốn một lượt chẩn đoán: thêm `sketchfabModelId` vào
 một bài, mở trang không thấy model 3D, và kết luận đầu tiên là code hỏng.
 
-Muốn thấy ngay: `POST /api/revalidate` với `Authorization: Bearer $CRON_SECRET`
-và body `{"slug":"..."}`. Route chỉ nhận slug rồi tự dựng đường dẫn cho từng
-locale — nhận `path` thô là để người gọi quyết định cái gì bị xoá khỏi cache.
-Dùng chung `CRON_SECRET` vì cùng một loại quyền (bắt máy chủ làm việc nặng
-theo yêu cầu); thêm biến môi trường thứ hai chỉ tạo thêm một thứ để quên đặt.
+Muốn thấy ngay: `npm run revalidate -- --slug <slug>` (gọi `POST /api/revalidate`
+với `Authorization: Bearer $CRON_SECRET`, body `{"slugs":[...]}`). Route chỉ nhận
+slug rồi tự dựng đường dẫn cho từng locale — nhận `path` thô là để người gọi quyết
+định cái gì bị xoá khỏi cache. Dùng chung `CRON_SECRET` vì cùng một loại quyền (bắt
+máy chủ làm việc nặng theo yêu cầu); thêm biến môi trường thứ hai chỉ tạo thêm một
+thứ để quên đặt.
+
+### Một cơ chế invalidation cho mọi đường ghi bài (2026-10-01)
+
+`revalidateArticles(slugs)` (`src/server/revalidate-articles.ts`) là đường DUY NHẤT:
+form quản trị, API bài viết, cron đồng bộ nguồn gọi thẳng; script chạy ngoài Next
+(`publish.ts`, `links:fix`, `links:reading`, `covers:mirror`, `images:credit`,
+`rename:slug`, `recrop-cover`, `strip-draft-artifacts`) gọi `revalidateSite()`
+(`scripts/revalidate-site.ts`) → `/api/revalidate` → cùng hàm đó. Phạm vi: tag
+`articles` (trang chủ, `/categories`), `/[locale]`, `/[locale]/articles`, và trang
+từng slug ở cả hai ngôn ngữ — không đụng menu, footer, trang tĩnh.
+
+Trang bài phải revalidate bằng **đường dẫn thật** (`/vi/articles/<slug>`). Dạng cũ
+`revalidatePath("/[locale]/articles/<slug>", "page")` sinh tag
+`_N_T_/[locale]/articles/<slug>/page`, không khớp tag ngầm `_N_T_/vi/articles/<slug>`
+của trang nào — sửa bài qua form từng chỉ hiện ra khi hết TTL 300 s. Dạng
+`"/[locale]", "page"` thì đúng vì đó là CẢ route pattern, không trộn slug thật.
+
+Script không ném lỗi khi revalidate hỏng hay thiếu `CRON_SECRET` trong `.env`: CSDL
+đã ghi xong, chỉ in cảnh báo kèm lệnh chạy lại. Script viết mới mà ghi `Article` thì
+gọi `revalidateSite()` ở cuối; script cũ, sửa tay trên Supabase → `npm run revalidate`.
 
 ### Build không cần database
 
@@ -82,10 +103,21 @@ có đổi không, trang nặng bao nhiêu, bao nhiêu lần ghi. Audit 2026-10-
   messages toàn site nằm trong cả HTML lẫn `.rsc`) là 78% của ~1.500 unit/build, với
   ~10 deploy/ngày. Nay dựng sẵn 10 bài.
 
-Trang chủ GIỮ `revalidate` 120 s (từ `getLatestArticles`): đường xuất bản của máy
-(`scripts/publish.ts`) và các script sửa bài ghi thẳng CSDL, không gọi revalidate —
-nâng TTL là bài mới chậm lên trang chủ. Nâng được khi các đường đó gọi
-`/api/revalidate` cho trang chủ.
+- **Lượt đọc in trong HTML trang bài** (số ở đầu bài, số trên thẻ "Bài liên quan",
+  thẻ liên quan sắp theo `views`) — và tệ hơn, `incrementViews` dùng
+  `prisma.article.update` nên `@updatedAt` bị đóng dấu lại ở MỖI lượt đọc:
+  `dateModified`, `article:modified_time`, lastmod sitemap đều đổi theo lượt đọc
+  (64/95 bài "sửa" trong 48 giờ, không ai sửa). Nay: `UPDATE … RETURNING` bằng raw
+  SQL, số hiển thị lấy từ phản hồi của chính lượt đếm (`ViewCounter`), trang bài
+  không in lượt đọc ở đâu cả, liên quan sắp theo `publishedAt, id`. Thẻ bài ở trang
+  chủ/danh sách VẪN in lượt đọc — các trang đó vốn tái dựng theo dữ liệu bài.
+
+Trang chủ GIỮ `revalidate` 120 s (từ `getLatestArticles`). Đường ghi chính đã báo
+invalidation (mục "Một cơ chế invalidation…"), nhưng chưa CHỨNG MINH được mọi đường:
+script chỉ báo được khi `.env` có `CRON_SECRET` (2026-10-01 chưa có), ~30 script
+sửa bài một lần (`apply-*`, `fix-*`, `seed`, `import-notion`…) và lệnh SQL tay trên
+Supabase không báo. Nâng TTL khi `.env` máy chạy pipeline có `CRON_SECRET` và không
+còn đường ghi nào ngoài danh sách đó.
 
 Kiểm tính tất định: so hai lượt tái dựng có CÙNG build ID (`"b":"…"` trong RSC) —
 khác build ID là đang so hai deploy, không phải hai lượt tái dựng.
@@ -128,10 +160,15 @@ nguyên.
 Luồng hiện tại:
 
 ```
-view-counter.tsx (client, lá)
+view-counter.tsx (client, lá — đếm VÀ hiển thị)
   → POST /api/articles/[id]/view
-  → incrementViews()
+  → incrementViews()  UPDATE … RETURNING "views" (raw SQL, không chạm updatedAt)
+  ← { views }
 ```
+
+Con số không nằm trong HTML ISR (xem "ISR phải tất định"); chốt `sessionStorage`
+giữ luôn con số nên F5 hiện lại mà không gọi máy chủ. Không có JS thì không thấy
+lượt đọc — chấp nhận, nó không phải nội dung.
 
 Hai lớp chặn lạm dụng: chốt `sessionStorage` phía trình duyệt (F5 không cộng thêm)
 và rate limit theo IP trong route. Bộ đếm rate limit nằm trong RAM, không phải

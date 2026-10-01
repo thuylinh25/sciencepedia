@@ -1,5 +1,7 @@
 import { PrismaClient } from "@prisma/client";
 
+import { revalidateSite } from "./revalidate-site";
+
 /**
  * Đổi slug của một bài viết.
  *
@@ -113,6 +115,8 @@ async function main() {
     where: { id: source.id },
     data: { slug: to },
   });
+  // Cả slug cũ lẫn mới: trang cũ thôi phục vụ bản cache, trang mới dựng ngay.
+  await revalidateSite([from, to]);
 
   console.log(`\n✓ Đã đổi slug sang "${to}".`);
   console.log(

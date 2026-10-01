@@ -1,5 +1,7 @@
 import { PrismaClient } from "@prisma/client";
 
+import { revalidateSite } from "./revalidate-site";
+
 /**
  * Bổ sung mục "Đọc thêm" cho bài thiếu link nội bộ.
  *
@@ -626,6 +628,7 @@ async function main() {
   const bySlug = new Map(all.map((a) => [a.slug, a]));
 
   let changedArticles = 0;
+  const written: string[] = [];
   let changedLinks = 0;
 
   for (const plan of PLANS) {
@@ -706,12 +709,14 @@ async function main() {
       prisma.article.update({ where: { id: article.id }, data }),
     ]);
     console.log("   ĐÃ GHI (kèm revision)");
+    written.push(article.slug);
   }
 
   console.log(
     `\n${changedLinks} link trên ${changedArticles} bài.` +
       (write ? "" : " Chưa ghi gì. Thêm --write để thực thi."),
   );
+  if (written.length > 0) await revalidateSite(written);
 }
 
 main()

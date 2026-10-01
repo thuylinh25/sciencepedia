@@ -1,6 +1,5 @@
 "use server";
 
-import { revalidatePath, revalidateTag } from "next/cache";
 import { Prisma } from "@prisma/client";
 
 import { prisma } from "@/lib/prisma";
@@ -9,6 +8,7 @@ import { intakeCover } from "@/lib/cover-intake";
 import { articleSchema, type ArticleInput } from "@/lib/validations";
 import { readingTime, slugify } from "@/lib/utils";
 import { removeArticle, syncArticle } from "@/lib/meili";
+import { revalidateArticles } from "@/server/revalidate-articles";
 import type { ActionResult } from "@/server/actions/types";
 
 /* Các action ở đây ghi thẳng `status: PUBLISHED`, KHÔNG gọi `check-publish`.
@@ -23,13 +23,6 @@ const syncInclude = {
   category: { select: { slug: true, name: true, nameEn: true } },
   tags: { select: { tag: { select: { slug: true, name: true, nameEn: true } } } },
 } satisfies Prisma.ArticleInclude;
-
-function invalidate(slug?: string) {
-  revalidateTag("articles");
-  revalidatePath("/[locale]", "page");
-  revalidatePath("/[locale]/articles", "page");
-  if (slug) revalidatePath(`/[locale]/articles/${slug}`, "page");
-}
 
 function toFailure(error: unknown): ActionResult<never> {
   if (error instanceof AuthError) {
@@ -121,7 +114,7 @@ export async function createArticle(
     });
 
     await syncArticle(article);
-    invalidate(article.slug);
+    revalidateArticles([article.slug]);
 
     return { ok: true, data: { id: article.id, slug: article.slug } };
   } catch (error) {
@@ -195,8 +188,7 @@ export async function updateArticle(
     });
 
     await syncArticle(article);
-    invalidate(article.slug);
-    if (existing.slug !== article.slug) invalidate(existing.slug);
+    revalidateArticles([article.slug, existing.slug]);
 
     return { ok: true, data: { id: article.id, slug: article.slug } };
   } catch (error) {
@@ -214,7 +206,7 @@ export async function deleteArticle(id: string): Promise<ActionResult> {
     });
 
     await removeArticle(article.id);
-    invalidate(article.slug);
+    revalidateArticles([article.slug]);
 
     return { ok: true, data: undefined };
   } catch (error) {
@@ -250,7 +242,7 @@ export async function toggleArticleStatus(
     });
 
     await syncArticle(article);
-    invalidate(article.slug);
+    revalidateArticles([article.slug]);
 
     return { ok: true, data: { status: nextStatus } };
   } catch (error) {

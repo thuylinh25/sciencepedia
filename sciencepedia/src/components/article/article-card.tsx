@@ -19,6 +19,9 @@ type Props = {
   /** Cấp tiêu đề thẻ. 3 khi thẻ nằm dưới một h2 (trang chủ); 2 khi nằm ngay
    *  dưới h1 của trang danh sách — nhảy h1 → h3 làm lệch dàn ý cho trình đọc màn hình. */
   headingLevel?: 2 | 3;
+  /** `false` trên trang bài viết: số lượt đọc in vào HTML ISR của trang bài
+   *  làm mỗi lần tái dựng ra byte khác — xem `ViewCounter`. */
+  showViews?: boolean;
 };
 
 export async function ArticleCard({
@@ -28,6 +31,7 @@ export async function ArticleCard({
   priority = false,
   className,
   headingLevel = 3,
+  showViews = true,
 }: Props) {
   const Heading = headingLevel === 2 ? "h2" : "h3";
   const t = await getTranslations("article");
@@ -182,10 +186,12 @@ export async function ArticleCard({
             <Clock className="size-3.5" />
             {t("readingTime", { minutes: article.readingTime })}
           </span>
-          <span className="flex items-center gap-1.5">
-            <Eye className="size-3.5" />
-            {formatNumber(article.views, locale)}
-          </span>
+          {showViews && (
+            <span className="flex items-center gap-1.5">
+              <Eye className="size-3.5" />
+              {formatNumber(article.views, locale)}
+            </span>
+          )}
         </div>
       </div>
     </Link>

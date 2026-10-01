@@ -2,6 +2,7 @@ import { PrismaClient } from "@prisma/client";
 
 import { assetKey, assetUrl } from "../src/lib/asset";
 import { missingEnv, put } from "./r2-client";
+import { revalidateSite } from "./revalidate-site";
 
 /**
  * Sao ảnh bìa bài viết và ảnh bìa lĩnh vực từ máy chủ ngoài về Cloudflare R2,
@@ -141,6 +142,7 @@ async function main() {
   }
 
   let done = 0;
+  const written: string[] = [];
 
   for (const job of jobs) {
     const host = new URL(job.url).hostname;
@@ -168,6 +170,7 @@ async function main() {
 
       if (job.table === "Article") {
         await prisma.article.update({ where: { id: job.id }, data: { coverImage: url } });
+        written.push(job.slug);
       } else {
         await prisma.category.update({ where: { id: job.id }, data: { coverImage: url } });
       }
@@ -186,6 +189,7 @@ async function main() {
           "Tiếp: npm run images:variants -- --write  rồi  npm run assets:upload -- --write"
       : "\nChưa ghi gì. Thêm --write để thực thi.",
   );
+  if (written.length > 0) await revalidateSite(written);
 }
 
 main()

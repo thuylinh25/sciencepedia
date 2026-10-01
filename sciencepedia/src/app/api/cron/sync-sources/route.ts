@@ -1,9 +1,9 @@
 import type { NextRequest } from "next/server";
-import { revalidateTag } from "next/cache";
 
 import { syncKnowledgeFeeds } from "@/lib/feed-sync";
 import { isRewriteConfigured } from "@/lib/rewrite";
 import { syncNewArticles } from "@/lib/vaca-sync";
+import { revalidateArticles } from "@/server/revalidate-articles";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -73,7 +73,8 @@ export async function GET(request: NextRequest) {
   const imported = [...feeds.imported, ...vaca.imported];
   const published = imported.filter((row) => row.status === "PUBLISHED").length;
 
-  if (imported.length > 0) revalidateTag("articles");
+  // Cùng cơ chế với form quản trị — xem `revalidateArticles`.
+  if (imported.length > 0) revalidateArticles(imported.map((row) => row.slug));
 
   return Response.json({
     ranAt: new Date().toISOString(),

@@ -1,24 +1,30 @@
 import type { NextRequest } from "next/server";
-import { revalidatePath } from "next/cache";
 
-import { locales } from "@/i18n/routing";
+import { revalidateArticles } from "@/server/revalidate-articles";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
 /**
- * Làm mới ngay một trang bài viết sau khi sửa dữ liệu thẳng trên Supabase.
+ * Làm mới cache sau khi sửa bài thẳng trong CSDL — từ script (`publish.ts`,
+ * `links:fix`…, qua `scripts/revalidate-site.ts`) hoặc tay trên Supabase.
  *
+ *   npm run revalidate -- --slug ten-bai-viet      # hoặc:
  *   curl -X POST https://<host>/api/revalidate \
  *     -H "Authorization: Bearer $CRON_SECRET" \
  *     -H "Content-Type: application/json" \
- *     -d '{"slug":"ten-bai-viet"}'
+ *     -d '{"slugs":["ten-bai-viet"]}'
+ *
+ * Làm đúng việc form quản trị làm (`revalidateArticles`): trang chủ, danh
+ * sách, tag `articles`, và trang bài của từng slug. `slugs` rỗng vẫn hợp lệ —
+ * sửa hàng loạt thì làm mới trang chủ và danh sách, trang bài tự hết hạn.
+ * `{"slug": "…"}` (một bài) vẫn nhận, cho lệnh curl cũ.
  *
  * ## Vì sao cần
  *
- * Trang bài đặt `revalidate = 300` và được prerender sẵn. Sửa một cột trong
- * bảng Article không đi qua code nên Next không biết gì: bản HTML cũ vẫn được
- * phục vụ tới năm phút, và vì stale-while-revalidate, lượt truy cập đầu tiên
+ * Trang bài đặt `revalidate = 300`, trang chủ 120. Sửa một cột trong bảng
+ * Article không đi qua code nên Next không biết gì: bản HTML cũ vẫn được
+ * phục vụ tới hết TTL, và vì stale-while-revalidate, lượt truy cập đầu tiên
  * sau khi hết hạn vẫn nhận bản cũ — lượt sau mới thấy bản mới. Chờ mười phút
  * rồi kết luận "code hỏng" là cái bẫy đã dính một lần với sketchfabModelId.
  *
@@ -32,6 +38,10 @@ export const dynamic = "force-dynamic";
  * Không nhận `path` tuỳ ý: chỉ nhận slug và tự dựng đường dẫn cho từng locale.
  * Nhận path thô nghĩa là để người gọi quyết định cái gì bị xoá khỏi cache.
  */
+const SLUG = /^[a-z0-9-]{1,200}$/;
+/** Đủ cho một lượt sửa hàng loạt; script tự chia lô nếu nhiều hơn. */
+const MAX_SLUGS = 100;
+
 export async function POST(request: NextRequest) {
   const secret = process.env.CRON_SECRET;
 
@@ -46,25 +56,30 @@ export async function POST(request: NextRequest) {
     return Response.json({ error: "Không được phép" }, { status: 401 });
   }
 
-  let slug: unknown;
+  let body: { slug?: unknown; slugs?: unknown };
   try {
-    ({ slug } = (await request.json()) as { slug?: unknown });
+    body = (await request.json()) as typeof body;
   } catch {
     return Response.json({ error: "Body phải là JSON" }, { status: 400 });
   }
 
-  if (typeof slug !== "string" || !/^[a-z0-9-]{1,200}$/.test(slug)) {
+  const slugs =
+    body.slugs !== undefined ? body.slugs : body.slug !== undefined ? [body.slug] : [];
+
+  if (
+    !Array.isArray(slugs) ||
+    slugs.length > MAX_SLUGS ||
+    !slugs.every((slug) => typeof slug === "string" && SLUG.test(slug))
+  ) {
     return Response.json(
-      { error: "Thiếu `slug` hợp lệ (chữ thường, số và dấu gạch ngang)" },
+      {
+        error: `\`slugs\` phải là mảng tối đa ${MAX_SLUGS} slug hợp lệ (chữ thường, số và dấu gạch ngang)`,
+      },
       { status: 400 },
     );
   }
 
-  const revalidated = locales.map((locale) => {
-    const path = `/${locale}/articles/${slug}`;
-    revalidatePath(path);
-    return path;
-  });
+  const revalidated = revalidateArticles(slugs as string[]);
 
   return Response.json({ revalidated, at: new Date().toISOString() });
 }

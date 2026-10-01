@@ -37,6 +37,7 @@ npx tsx --env-file-if-exists=.env scripts/import-smooth-skin.ts  # da chia nhỏ
 
 npm run publish:check # rà điều kiện xuất bản toàn kho (chỉ đọc)
 npm run publish       # đổi state sang PUBLISHED — đường ghi DUY NHẤT của máy, có gate (form /admin đi thẳng, có chủ ý — docs/architecture.md)
+npm run revalidate -- --slug <s>  # làm mới trang chủ/danh sách/trang bài sau khi sửa bài ngoài form (cần CRON_SECRET trong .env)
 npm run pipeline      # chạy liên tục tới khi hết hạn mức (cần CLAUDE_CODE_OAUTH_TOKEN)
 npm run pipeline -- --count 1   # chỉ làm 1 bài rồi dừng
 ```
@@ -96,6 +97,7 @@ Gate accuracy **không có ngoại lệ**.
 
 ## Quy tắc code
 - **Static/ISR mặc định.** Route nội dung không dùng SSR. `export const revalidate` ở page.
+- **Ghi bảng `Article` thì báo invalidation:** trong Next gọi `revalidateArticles()`, trong script gọi `revalidateSite()` — không tự viết `revalidatePath` (xem docs/architecture.md, "Một cơ chế invalidation").
 - **Server Component mặc định.** `'use client'` đặt ở lá, kèm comment lý do.
 - **Không fetch nội dung phía client.** Thân bài, citation, metadata phải có trong HTML đầu tiên.
 - **Secret:** `SUPABASE_SERVICE_ROLE_KEY` chỉ trong module có `import "server-only"`.

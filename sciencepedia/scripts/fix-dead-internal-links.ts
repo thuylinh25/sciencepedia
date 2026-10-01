@@ -1,5 +1,7 @@
 import { PrismaClient } from "@prisma/client";
 
+import { revalidateSite } from "./revalidate-site";
+
 /**
  * Sửa link nội bộ trỏ tới slug đã chết.
  *
@@ -224,6 +226,7 @@ async function main() {
     ),
   ]);
   console.log(`Đã ghi ${updates.length} bài (kèm revision).`);
+  await revalidateSite(updates.map((u) => u.slug));
 }
 
 main()

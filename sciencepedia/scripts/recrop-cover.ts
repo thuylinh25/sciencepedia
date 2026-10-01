@@ -4,6 +4,7 @@ import sharp from "sharp";
 import { assetUrl } from "../src/lib/asset";
 import { LADDER, variantKey } from "../src/lib/image-variants";
 import { missingEnv, put } from "./r2-client";
+import { revalidateSite } from "./revalidate-site";
 
 /**
  * Cắt sẵn ảnh bìa của MỘT bài về 16/10, chọn vị trí dải cắt bằng tay.
@@ -83,6 +84,7 @@ async function main() {
   }
   const url = assetUrl(variantKey(`${stem}.webp`, widths[widths.length - 1]));
   await prisma.article.update({ where: { id: article.id }, data: { coverImage: url } });
+  await revalidateSite([slug]);
   console.log(`cũ:  ${article.coverImage}\nmới: ${url}`);
 }
 

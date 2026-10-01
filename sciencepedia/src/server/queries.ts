@@ -228,7 +228,14 @@ export const getArticleSlugRedirect = cache(async (oldSlug: string) =>
   }),
 );
 
-/** Bài liên quan: ưu tiên trùng thẻ, bù thêm bằng bài cùng danh mục. */
+/**
+ * Bài liên quan: ưu tiên trùng thẻ, bù thêm bằng bài cùng danh mục.
+ *
+ * Sắp theo `publishedAt` chứ không theo `views`: danh sách này nằm trong HTML
+ * ISR của trang bài, và sắp theo lượt đọc thì thứ tự (thậm chí bài nào lọt
+ * vào) đổi theo lượt đọc — tái dựng ra byte khác, tức một ISR Write. `id` là
+ * tie-break để hàng đồng hạng không trả theo thứ tự vật lý của heap.
+ */
 export async function getRelatedArticles(
   articleId: string,
   categoryId: string,
@@ -243,7 +250,7 @@ export async function getRelatedArticles(
           tags: { some: { tagId: { in: tagIds } } },
         },
         select: articleCardSelect,
-        orderBy: { views: "desc" },
+        orderBy: [{ publishedAt: "desc" }, { id: "desc" }],
         take,
       })
     : [];
@@ -257,7 +264,7 @@ export async function getRelatedArticles(
       id: { not: articleId, notIn: byTag.map((a) => a.id) },
     },
     select: articleCardSelect,
-    orderBy: { publishedAt: "desc" },
+    orderBy: [{ publishedAt: "desc" }, { id: "desc" }],
     take: take - byTag.length,
   });
 
@@ -273,20 +280,31 @@ export async function getRelatedArticles(
  * cache và server component không chạy lại — đếm ở đó thì bỏ sót gần hết. Đã
  * đo: sáu lượt truy cập liên tiếp mà con số không nhúc nhích.
  *
- * Lỗi ở đây được nuốt: một lượt đọc không đáng để làm hỏng gì.
+ * Raw SQL chứ không `prisma.article.update`: `@updatedAt` của Prisma đóng dấu
+ * lại `updatedAt` ở MỌI lần update qua client, kể cả `views + 1`. Khi còn dùng
+ * update, mỗi lượt đọc biến bài thành "vừa sửa" — `dateModified` trong JSON-LD,
+ * `article:modified_time`, `<lastmod>` của sitemap và thứ tự "Mới cập nhật"
+ * đều đổi theo lượt đọc (đo 2026-10-01: 64/95 bài "sửa" trong 48 giờ, không ai
+ * sửa bài nào), và trang bài ISR ra byte khác ở mọi lần tái dựng.
+ *
+ * Trả về số lượt mới — `ViewCount` hiển thị nó ngay, không cần truy vấn thứ
+ * hai. `null` khi không ghi được (bài không tồn tại, lỗi CSDL): một lượt đọc
+ * không đáng để làm hỏng gì, nên lỗi được nuốt.
  */
-export async function incrementViews(id: string) {
+export async function incrementViews(id: string): Promise<number | null> {
   // Chốt phòng xa: nếu sau này lại có chỗ nào gọi hàm này trong lúc prerender,
   // mỗi lần deploy sẽ cộng khống một lượt cho từng bài được dựng sẵn.
-  if (process.env.NEXT_PHASE === "phase-production-build") return;
+  if (process.env.NEXT_PHASE === "phase-production-build") return null;
 
   try {
-    await prisma.article.update({
-      where: { id },
-      data: { views: { increment: 1 } },
-    });
+    const rows = await prisma.$queryRaw<{ views: number }[]>`
+      UPDATE "Article" SET "views" = "views" + 1
+      WHERE "id" = ${id}
+      RETURNING "views"`;
+    return rows[0]?.views ?? null;
   } catch (error) {
     console.error("[views] không tăng được lượt xem:", error);
+    return null;
   }
 }
 

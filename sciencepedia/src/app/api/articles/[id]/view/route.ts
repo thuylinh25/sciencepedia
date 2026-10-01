@@ -20,6 +20,12 @@ export const runtime = "nodejs";
  * và rate limit theo IP ở đây cho trường hợp gọi thẳng vào API. Dùng bộ đếm
  * trong RAM chứ không phải Postgres — thiệt hại tối đa nếu bị lạm dụng chỉ là
  * một con số hiển thị bị thổi phồng, không đáng một lệnh ghi DB mỗi request.
+ *
+ * Trả về `{ views }` — số lượt SAU khi cộng — để `ViewCount` hiển thị. Con số
+ * không nằm trong HTML ISR của trang bài nữa: nằm đó thì mỗi lượt đọc làm lần
+ * tái dựng kế tiếp ra byte khác, tức một ISR Write mỗi bài mỗi 5 phút. Cùng
+ * một câu `UPDATE … RETURNING` như trước, nên không thêm truy vấn nào. 204 (không
+ * có số) khi bị rate limit hoặc không ghi được — trang khi đó ẩn con số.
  */
 export async function POST(
   request: NextRequest,
@@ -34,7 +40,8 @@ export async function POST(
   }
 
   const { id } = await params;
-  await incrementViews(id);
+  const views = await incrementViews(id);
 
-  return new Response(null, { status: 204 });
+  if (views === null) return new Response(null, { status: 204 });
+  return Response.json({ views });
 }
