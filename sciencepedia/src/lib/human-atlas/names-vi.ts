@@ -25,7 +25,7 @@
  * dịch. Sửa một tên sai: thêm `FMAxxxx: "…"` ở đây (một khái niệm) hoặc sửa
  * cụm trong `terms-vi.ts` (mọi tên chứa cụm đó).
  */
-import { translateAnatomy } from "./terms-vi";
+import { translateAnatomy } from "./terms-vi";
 import { SUPPLEMENT_NAMES_VI } from "./supplements";
 
 export const VI_NAMES: Record<string, string> = {
@@ -146,11 +146,32 @@ export const VI_NAMES: Record<string, string> = {
   FMA13407: "Cơ ức đòn chũm",
 };
 
+/**
+ * Mảnh Z-Anatomy: "Left nerve to mylohyoid muscle" là bản BÊN TRÁI của cả cấu
+ * trúc — khái niệm `ZA-…` không mang bên, importer ghép "Left/Right" vào trước.
+ * Trái/phải vì thế đứng cuối tên ("thần kinh tới cơ hàm móng trái"), không sau
+ * cụm đầu như bộ ghép làm cho tên BodyParts3D, nơi "Left lobe of thymus" là tên
+ * của một thùy ("thùy trái tuyến ức"). Ngoặc số dây sọ vẫn đứng sau cùng.
+ */
+function translateZAnatomy(englishName: string): string | null {
+  const match = /^(left|right) (.+)$/i.exec(englishName.trim());
+  if (!match) return translateAnatomy(englishName);
+  const vi = translateAnatomy(match[2]);
+  if (!vi) return null;
+  const side = match[1].toLowerCase() === "left" ? "trái" : "phải";
+  const paren = vi.lastIndexOf(" (");
+  return paren < 0 ? `${vi} ${side}` : `${vi.slice(0, paren)} ${side}${vi.slice(paren)}`;
+}
+
+function composed(conceptId: string, englishName: string): string | null {
+  return conceptId.startsWith("ZA-") ? translateZAnatomy(englishName) : translateAnatomy(englishName);
+}
+
 /** Tên tiếng Việt: bảng duyệt tay trước, rồi bảng ghép thuật ngữ; không có thì `null`. */
 export function viName(conceptId: string, englishName: string): string | null {
   // Mảnh bổ sung mang tên NHÓM riêng ("hạch bạch huyết vùng nách phải") nhưng
   // chung khái niệm FMA ("Lymph node") — tên nhóm phải thắng tên khái niệm.
-  return SUPPLEMENT_NAMES_VI[englishName] ?? VI_NAMES[conceptId] ?? translateAnatomy(englishName);
+  return SUPPLEMENT_NAMES_VI[englishName] ?? VI_NAMES[conceptId] ?? composed(conceptId, englishName);
 }
 
 /** Tên hiển thị theo locale; thiếu bản tiếng Việt thì trả tên tiếng Anh gốc. */
@@ -183,5 +204,5 @@ export type ViNameStatus = "reviewed" | "machine-translated";
 
 export function viNameStatus(conceptId: string, englishName: string): ViNameStatus | null {
   if (VI_NAMES[conceptId]) return "reviewed";
-  return translateAnatomy(englishName) ? "machine-translated" : null;
+  return composed(conceptId, englishName) ? "machine-translated" : null;
 }
