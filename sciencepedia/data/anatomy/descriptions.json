@@ -15,8 +15,9 @@
    "enTitle": "Pulmonary artery",
    "description": {
     "lang": "vi",
-    "text": "Động mạch phổi là một động mạch trong tuần hoàn phổi mang máu đã khử oxy từ bên phải của tim đến phổi. Động mạch phổi lớn nhất là động mạch phổi chính hoặc thân động mạch phổi từ tim, và những động mạch nhỏ nhất là các tiểu động mạch, dẫn đến các mao mạch bao quanh phế nang phổi.",
-    "translated": false
+    "text": "Động mạch phổi là một động mạch trong tuần hoàn phổi mang máu đã khử oxy từ bên phải của tim đến phổi.",
+    "translated": false,
+    "reviewed": true
    },
    "source": {
     "title": "Động mạch phổi",
@@ -33,19 +34,12 @@
    "viName": null,
    "enName": "Right calcaneal tendon",
    "system": "connective",
-   "status": "vi",
+   "status": "none",
    "enTitle": "Achilles tendon",
    "mismatch": true,
-   "description": {
-    "lang": "vi",
-    "text": "Gân Achilles là gân gót chân, loại gân dài và dày nhất của người, nằm ở cuối cơ bắp chân và gót chân. Đây là một thuật ngữ trong Giải phẫu học người dùng để chỉ loại gân liên kết chủ yếu với các cơ bắp chân, gân khoeo chân và xương gót (calcaneus), nhờ đó mới có được hoạt động của cẳng chân và nhất là của cả bàn chân.",
-    "translated": false
-   },
-   "source": {
-    "title": "Gân achilles",
-    "url": "https://vi.wikipedia.org/wiki/G%C3%A2n_achilles",
-    "license": "CC BY-SA 4.0"
-   }
+   "description": null,
+   "source": null,
+   "dropped": "'dài nhất' sai (gân cơ gan chân dài hơn; gân gót là dày và khoẻ nhất); câu 2 sai: gân gót không nối với 'gân khoeo chân'. Phần đúng duy nhất 'là gân gót chân' chỉ là đồng nghĩa."
   },
   {
    "fma": "FMA55227",
@@ -311,8 +305,9 @@
    "enTitle": "Appendix (anatomy)",
    "description": {
     "lang": "vi",
-    "text": "Ruột thừa là một thành phần bên trong cơ thể, có hình con giun dài từ 3 – 13 cm, mở vào manh tràng qua lỗ ruột thừa được đậy bởi một van. Ruột thừa do phần đầu của manh tràng bị thoái hóa.",
-    "translated": false
+    "text": "Ruột thừa là một thành phần bên trong cơ thể, có hình con giun.",
+    "translated": false,
+    "reviewed": true
    },
    "source": {
     "title": "Ruột thừa",
@@ -332,8 +327,9 @@
    "enTitle": "Duodenum",
    "description": {
     "lang": "vi",
-    "text": "Tá tràng (Duodenum) là phần đầu của ruột non, kéo dài từ môn vị của dạ dày đến góc tá tràng - hỗng tràng. Tá tràng là một thành phần quan trọng trong hệ tiêu hóa vì là nơi dịch tụy và dịch mật đổ vào tại nhú tá lớn và nhú tá bé trên tá tràng.",
-    "translated": false
+    "text": "Tá tràng (Duodenum) là phần đầu của ruột non, kéo dài từ môn vị của dạ dày đến góc tá tràng - hỗng tràng.",
+    "translated": false,
+    "reviewed": true
    },
    "source": {
     "title": "Tá tràng",
@@ -353,8 +349,9 @@
    "enTitle": "Esophagus",
    "description": {
     "lang": "vi",
-    "text": "Thực quản là cơ quan ở động vật có xương sống có chức năng đưa thức ăn từ hầu xuống dạ dày nhờ nhu động. Thực quản hình ống, ở người lớn dài 25 cm (10 in), ở phía sau khí quản và tim, đi qua cơ hoành và đổ vào vùng trên cùng của dạ dày.",
-    "translated": false
+    "text": "Thực quản là cơ quan ở động vật có xương sống có chức năng đưa thức ăn từ hầu xuống dạ dày nhờ nhu động.",
+    "translated": false,
+    "reviewed": true
    },
    "source": {
     "title": "Thực quản",
@@ -374,8 +371,9 @@
    "enTitle": "Gallbladder",
    "description": {
     "lang": "vi",
-    "text": "Trong động vật có xương sống túi mật (gallbladder) là một cơ quan nhỏ lưu giữ mật trước khi mật được đổ vào ruột non. Con người có thể sống mà không có túi mật.",
-    "translated": false
+    "text": "Trong động vật có xương sống túi mật (gallbladder) là một cơ quan nhỏ lưu giữ mật trước khi mật được đổ vào ruột non.",
+    "translated": false,
+    "reviewed": true
    },
    "source": {
     "title": "Túi mật",
@@ -395,8 +393,9 @@
    "enTitle": "Pancreas",
    "description": {
     "lang": "vi",
-    "text": "Tụy là một cơ quan trong cơ thể động vật, nằm sau phúc mạc và đảm trách hai chức năng chính:Chức năng ngoại tiết: Tụy sản xuất và bài tiết các dịch tụy chứa các men tiêu hóa, hay enzyme tiêu hóa.",
-    "translated": false
+    "text": "Tụy là một cơ quan trong cơ thể động vật, nằm sau phúc mạc.",
+    "translated": false,
+    "reviewed": true
    },
    "source": {
     "title": "Tụy",
@@ -412,18 +411,11 @@
    "viName": "Trực tràng",
    "enName": "Rectum",
    "system": "digestive",
-   "status": "vi",
+   "status": "none",
    "enTitle": "Rectum",
-   "description": {
-    "lang": "vi",
-    "text": "Trực tràng tiếng Latin rectum intestinum, có nghĩa là đoạn ruột thẳng) là đoạn cuối của ruột già gần như thẳng ở các động vật có vú, và ruột ở một số loài khác, nằm ngay trước hậu môn. Trực tràng ở người dài khoảng 11 cm đến 15 cm.",
-    "translated": false
-   },
-   "source": {
-    "title": "Trực tràng",
-    "url": "https://vi.wikipedia.org/wiki/Tr%E1%BB%B1c_tr%C3%A0ng",
-    "license": "CC BY-SA 4.0"
-   }
+   "description": null,
+   "source": null,
+   "dropped": "Câu đầu hỏng từ nguồn (thiếu ngoặc mở, 'Trực tràng tiếng Latin ... )'); câu 2 chỉ là số đo, không phải định nghĩa. Không sửa chữ được nên để trống."
   },
   {
    "fma": "FMA7148",
@@ -437,8 +429,9 @@
    "enTitle": "Stomach",
    "description": {
     "lang": "vi",
-    "text": "Dạ dày hay bao tử là một trong những cơ quan trực thuộc hệ tiêu hóa ở người và động vật. Ở người, dạ dày là cơ quan có dạng túi chữ J nằm trong hoàn toàn trong khoang ổ bụng, nối bởi thực quản (Oesophagus) và tá tràng (Duodenum), đoạn đầu của ruột non.",
-    "translated": false
+    "text": "Dạ dày hay bao tử là một trong những cơ quan trực thuộc hệ tiêu hóa ở người và động vật.",
+    "translated": false,
+    "reviewed": true
    },
    "source": {
     "title": "Dạ dày",
@@ -482,8 +475,9 @@
    "enTitle": "Submandibular gland",
    "description": {
     "lang": "vi",
-    "text": "Cặp tuyến nước bọt dưới hàm  là hai tuyến nước bọt chính nằm ở sàn miệng. Mỗi tuyến nặng khoảng 15 gram và đóng góp khoảng 60–67% thể tích nước bọt lúc không bị kích thích; khi được kích thích phần trăm thể tích đóng góp của tuyến nước bọt dưới hàm giảm xuống và phần trăm đóng góp của tuyến nước bọt mang tai tăng lên đến 50%.",
-    "translated": false
+    "text": "Cặp tuyến nước bọt dưới hàm  là hai tuyến nước bọt chính nằm ở sàn miệng.",
+    "translated": false,
+    "reviewed": true
    },
    "source": {
     "title": "Tuyến nước bọt dưới hàm",
@@ -503,8 +497,9 @@
    "enTitle": "Tongue",
    "description": {
     "lang": "vi",
-    "text": "Lưỡi là cơ quan vị giác nằm trong khoang miệng của động vật có xương sống. Ở động vật có vú, lưỡi là khối cơ vân chắc, phủ ngoài bằng lớp biểu bì phân lớp, phía dưới là lớp mô liên kết.",
-    "translated": false
+    "text": "Lưỡi là cơ quan vị giác nằm trong khoang miệng của động vật có xương sống.",
+    "translated": false,
+    "reviewed": true
    },
    "source": {
     "title": "Lưỡi",
@@ -526,7 +521,8 @@
    "description": {
     "lang": "vi",
     "text": "Trong hệ nội tiết, tuyến thượng thận là các tuyến nội tiết màu da cam ở phía trên cả hai quả thận.",
-    "translated": false
+    "translated": false,
+    "reviewed": true
    },
    "source": {
     "title": "Tuyến thượng thận",
@@ -542,18 +538,11 @@
    "viName": "Tuyến yên",
    "enName": "Pituitary gland",
    "system": "endocrine",
-   "status": "vi",
+   "status": "none",
    "enTitle": "Pituitary gland",
-   "description": {
-    "lang": "vi",
-    "text": "5g nằm ở sàn não thất ba, trong hố yên của thân xương bướm. Đây là một tuyến quan trọng giữ vai trò chỉ đạo hoạt động của hầu hết các tuyến nội tiết khác.",
-    "translated": false
-   },
-   "source": {
-    "title": "Tuyến yên",
-    "url": "https://vi.wikipedia.org/wiki/Tuy%E1%BA%BFn_y%C3%AAn",
-    "license": "CC BY-SA 4.0"
-   }
+   "description": null,
+   "source": null,
+   "dropped": "Regex cắt giữa số thập phân ('0,5g'/'0.5g') nên câu đầu mở bằng '5g nằm ở...' - hỏng, và sai khối lượng nếu đọc là 5 g. Câu 2 mở bằng 'Đây', không đứng một mình."
   },
   {
    "fma": "FMA7163",
@@ -567,8 +556,9 @@
    "enTitle": "Human skin",
    "description": {
     "lang": "vi",
-    "text": "Da người là lớp vỏ bọc bên ngoài của cơ thể và là cơ quan lớn nhất của hệ thống vỏ bọc. Da có tới bảy lớp mô ngoài da và bảo vệ các cơ, xương, dây chằng và các cơ quan nội tạng bên dưới.",
-    "translated": false
+    "text": "Da người là lớp vỏ bọc bên ngoài của cơ thể và là cơ quan lớn nhất của hệ thống vỏ bọc.",
+    "translated": false,
+    "reviewed": true
    },
    "source": {
     "title": "Da người",
@@ -588,8 +578,9 @@
    "enTitle": "Spleen",
    "description": {
     "lang": "vi",
-    "text": "Lách hay lá lách, theo đông y gọi là tỳ là một cơ quan có ở hầu như tất cả các động vật có xương sống. Có cấu trúc gần giống như một hạch bạch huyết lớn, nó hoạt động chủ yếu như là một bộ lọc máu.",
-    "translated": false
+    "text": "Lách hay lá lách, theo đông y gọi là tỳ là một cơ quan có ở hầu như tất cả các động vật có xương sống.",
+    "translated": false,
+    "reviewed": true
    },
    "source": {
     "title": "Lách",
@@ -795,7 +786,8 @@
    "description": {
     "lang": "vi",
     "text": "Cơ khuỷu là cơ nhỏ ở mặt sau của khớp khuỷu tay.",
-    "translated": false
+    "translated": false,
+    "reviewed": true
    },
    "source": {
     "title": "Cơ khuỷu",
@@ -816,8 +808,9 @@
    "enTitle": "Brachialis muscle",
    "description": {
     "lang": "vi",
-    "text": "Cơ cánh tay là cơ nằm ở cánh tay trên có chức năng gấp khớp khuỷu. Cơ ở phía sau cơ nhị đầu cánh tay và tạo nên một phần hố trụ.",
-    "translated": false
+    "text": "Cơ cánh tay là cơ nằm ở cánh tay trên có chức năng gấp khớp khuỷu.",
+    "translated": false,
+    "reviewed": true
    },
    "source": {
     "title": "Cơ cánh tay",
@@ -908,8 +901,9 @@
    "enTitle": "Coracobrachialis muscle",
    "description": {
     "lang": "vi",
-    "text": "Cơ quạ - cánh tay là cơ nhỏ nhất trong ba cơ gắn vào mỏm quạ của xương vai.. Cơ nằm ở phần trên và giữa của cánh tay.",
-    "translated": false
+    "text": "Cơ quạ - cánh tay là cơ nhỏ nhất trong ba cơ gắn vào mỏm quạ của xương vai.",
+    "translated": false,
+    "reviewed": true
    },
    "source": {
     "title": "Cơ quạ - cánh tay",
@@ -929,8 +923,9 @@
    "enTitle": "Thoracic diaphragm",
    "description": {
     "lang": "vi",
-    "text": "Cơ hoành là một vân cơ dẹt, rộng, hình vòm, làm thành một vách gân – cơ ngăn giữa lồng ngực và ổ bụng. Cơ hoành có vai trò quan trọng trong sinh lý hô hấp.",
-    "translated": false
+    "text": "Cơ hoành là một vân cơ dẹt, rộng, hình vòm, làm thành một vách gân – cơ ngăn giữa lồng ngực và ổ bụng.",
+    "translated": false,
+    "reviewed": true
    },
    "source": {
     "title": "Cơ hoành",
@@ -1426,8 +1421,9 @@
    "enTitle": "Flexor carpi radialis muscle",
    "description": {
     "lang": "vi",
-    "text": "Trong giải phẫu học, cơ gấp cổ tay quay là cơ thuộc phần cẳng tay người, thực hiện động tác gấp cổ tay và gập về xương quay của bàn tay. Tiếng Latin carpus nghĩa là cổ tay; do đó theo danh pháp giải phẫu tiếng Anh, flexor carpi có nghĩa là cổ tay thực hiện động tác gấp.",
-    "translated": false
+    "text": "Trong giải phẫu học, cơ gấp cổ tay quay là cơ thuộc phần cẳng tay người, thực hiện động tác gấp cổ tay và gập về xương quay của bàn tay.",
+    "translated": false,
+    "reviewed": true
    },
    "source": {
     "title": "Cơ gấp cổ tay quay",
@@ -1880,18 +1876,11 @@
    "viName": null,
    "enName": "Right iliocostalis cervicis",
    "system": "muscular",
-   "status": "vi",
+   "status": "none",
    "enTitle": "Iliocostalis",
-   "description": {
-    "lang": "vi",
-    "text": "Cơ chậu sườn là cơ nằm ngay phía ngoài cơ gai gần nếp ngăn tách cơ trên trục và cơ dưới trục. Nó nằm rất sâu so với cơ răng sau.",
-    "translated": false
-   },
-   "source": {
-    "title": "Cơ chậu sườn",
-    "url": "https://vi.wikipedia.org/wiki/C%C6%A1_ch%E1%BA%ADu_s%C6%B0%E1%BB%9Dn",
-    "license": "CC BY-SA 4.0"
-   }
+   "description": null,
+   "source": null,
+   "dropped": "Sai vị trí: cơ chậu sườn nằm ngay ngoài cơ dài (longissimus), không phải 'cơ gai'; câu 2 mở bằng 'Nó', không đứng một mình."
   },
   {
    "fma": "FMA22741",
@@ -1902,18 +1891,11 @@
    "viName": null,
    "enName": "Left iliocostalis lumborum",
    "system": "muscular",
-   "status": "vi",
+   "status": "none",
    "enTitle": "Iliocostalis",
-   "description": {
-    "lang": "vi",
-    "text": "Cơ chậu sườn là cơ nằm ngay phía ngoài cơ gai gần nếp ngăn tách cơ trên trục và cơ dưới trục. Nó nằm rất sâu so với cơ răng sau.",
-    "translated": false
-   },
-   "source": {
-    "title": "Cơ chậu sườn",
-    "url": "https://vi.wikipedia.org/wiki/C%C6%A1_ch%E1%BA%ADu_s%C6%B0%E1%BB%9Dn",
-    "license": "CC BY-SA 4.0"
-   }
+   "description": null,
+   "source": null,
+   "dropped": "Sai vị trí: cơ chậu sườn nằm ngay ngoài cơ dài (longissimus), không phải 'cơ gai'; câu 2 mở bằng 'Nó', không đứng một mình."
   },
   {
    "fma": "FMA22743",
@@ -1924,18 +1906,11 @@
    "viName": null,
    "enName": "Left iliocostalis thoracis",
    "system": "muscular",
-   "status": "vi",
+   "status": "none",
    "enTitle": "Iliocostalis",
-   "description": {
-    "lang": "vi",
-    "text": "Cơ chậu sườn là cơ nằm ngay phía ngoài cơ gai gần nếp ngăn tách cơ trên trục và cơ dưới trục. Nó nằm rất sâu so với cơ răng sau.",
-    "translated": false
-   },
-   "source": {
-    "title": "Cơ chậu sườn",
-    "url": "https://vi.wikipedia.org/wiki/C%C6%A1_ch%E1%BA%ADu_s%C6%B0%E1%BB%9Dn",
-    "license": "CC BY-SA 4.0"
-   }
+   "description": null,
+   "source": null,
+   "dropped": "Sai vị trí: cơ chậu sườn nằm ngay ngoài cơ dài (longissimus), không phải 'cơ gai'; câu 2 mở bằng 'Nó', không đứng một mình."
   },
   {
    "fma": "FMA49050",
@@ -1996,8 +1971,9 @@
    "enTitle": "Infraspinatus muscle",
    "description": {
     "lang": "vi",
-    "text": "Trong giải phẫu người, Cơ dưới gai là cơ dày, hình tam giác, chiếm phần lớn nhất diện tích của hố dưới gai. Là một trong bốn cơ chóp xoay, chức năng chính của cơ dưới gai là xoay ngoài xương cánh tay và làm ổn định khớp ổ chảo - cánh tay.",
-    "translated": false
+    "text": "Trong giải phẫu người, Cơ dưới gai là cơ dày, hình tam giác, chiếm phần lớn nhất diện tích của hố dưới gai.",
+    "translated": false,
+    "reviewed": true
    },
    "source": {
     "title": "Cơ dưới gai",
@@ -2610,8 +2586,9 @@
    "enTitle": "Palmaris longus muscle",
    "description": {
     "lang": "vi",
-    "text": "Cơ gan tay dài là cơ thuộc vùng cẳng tay trước. Cơ thuộc lớp nông và có thể nhìn thấy gân của nó dưới da, nằm giữa cơ gấp cổ tay quay và cơ gấp cổ tay trụ, một số người không có gân này.",
-    "translated": false
+    "text": "Cơ gan tay dài là cơ thuộc vùng cẳng tay trước.",
+    "translated": false,
+    "reviewed": true
    },
    "source": {
     "title": "Cơ gan tay dài",
@@ -3276,8 +3253,9 @@
    "enTitle": "Serratus anterior muscle",
    "description": {
     "lang": "vi",
-    "text": "Cơ răng trước là cơ có nguyên ủy từ mặt ngoài của 8 đến 9 xương sườn trên, nằm giữa mặt trong xương vai và các xương sườn. Động tác của cơ là kéo xương vai ra trước, xoay và giữa nó áp vào thành ngực.",
-    "translated": false
+    "text": "Cơ răng trước là cơ có nguyên ủy từ mặt ngoài của 8 đến 9 xương sườn trên, nằm giữa mặt trong xương vai và các xương sườn.",
+    "translated": false,
+    "reviewed": true
    },
    "source": {
     "title": "Cơ răng trước",
@@ -3413,7 +3391,8 @@
    "description": {
     "lang": "vi",
     "text": "Cơ gối đầu. Nguyên ủy của cơ từ dây chằng gáy, mỏm gai đốt sống C7 đến T3 và bám tận tại mặt dưới xương chũm, đường cong chẩm trên.",
-    "translated": false
+    "translated": false,
+    "reviewed": true
    },
    "source": {
     "title": "Cơ gối đầu",
@@ -3434,8 +3413,9 @@
    "enTitle": "Splenius cervicis muscle",
    "description": {
     "lang": "vi",
-    "text": "Cơ gối cổ là cơ nằm ở vùng gáy. Nó có nguyên ủy từ mỏm gai đốt sống ngực T3 đến T6 và bám tận tại mỏm ngang đốt sống cổ C1 đến C3.",
-    "translated": false
+    "text": "Cơ gối cổ là cơ nằm ở vùng gáy.",
+    "translated": false,
+    "reviewed": true
    },
    "source": {
     "title": "Cơ gối cổ",
@@ -3676,8 +3656,9 @@
    "enTitle": "Supraspinatus muscle",
    "description": {
     "lang": "vi",
-    "text": "Cơ trên gai là một cơ tương đối nhỏ của lưng trên. Cơ chạy từ hố trên gai tới củ lớn của xương cánh tay.",
-    "translated": false
+    "text": "Cơ trên gai là một cơ tương đối nhỏ của lưng trên.",
+    "translated": false,
+    "reviewed": true
    },
    "source": {
     "title": "Cơ trên gai",
@@ -3699,7 +3680,8 @@
    "description": {
     "lang": "vi",
     "text": "Cơ căng màn hầu là một cơ rộng, mỏng, giống như ruy băng trong đầu làm căng vòm miệng mềm.",
-    "translated": false
+    "translated": false,
+    "reviewed": true
    },
    "source": {
     "title": "Cơ căng màn hầu",
@@ -4081,8 +4063,9 @@
    "enTitle": "Cerebellum",
    "description": {
     "lang": "vi",
-    "text": "Tiểu não là cấu trúc giải phẫu lớn nhất của não sau của tất cả các loài động vật có xương sống. Mặc dù tiểu não thường nhỏ hơn đại não, ở một số loài động vật như cá thuộc Họ Cá mũi voi, tiểu não có kích thước bằng hoặc thậm chí lớn hơn đại não.",
-    "translated": false
+    "text": "Tiểu não là cấu trúc giải phẫu lớn nhất của não sau của tất cả các loài động vật có xương sống.",
+    "translated": false,
+    "reviewed": true
    },
    "source": {
     "title": "Tiểu não",
@@ -4147,8 +4130,9 @@
    "enTitle": "Prostate",
    "description": {
     "lang": "vi",
-    "text": "Tuyến tiền liệt là một tuyến tiết sinh dục giống đực, nằm dưới đáy bàng quang và vây quanh đoạn đầu niệu đạo của động vật có vú. Có chức năng chính là tiết ra một chất dịch được hoà với tinh dịch, giúp bảo vệ tinh dịch chống lại các tác nhân gây bệnh giúp cho tinh trùng hoạt động thuận lợi và tạo điều kiện cho sự thụ thai dễ dàng.",
-    "translated": false
+    "text": "Tuyến tiền liệt là một tuyến tiết sinh dục giống đực, nằm dưới đáy bàng quang và vây quanh đoạn đầu niệu đạo của động vật có vú.",
+    "translated": false,
+    "reviewed": true
    },
    "source": {
     "title": "Tuyến tiền liệt",
@@ -4171,7 +4155,8 @@
    "description": {
     "lang": "vi",
     "text": "Tinh hoàn hay dịch hoàn, còn gọi thông tục là trứng dái, là một cơ quan sản xuất ra tinh trùng, đồng thời là tuyến nội tiết làm cho cơ thể phát triển nam tính để thành động vật giống đực.",
-    "translated": false
+    "translated": false,
+    "reviewed": true
    },
    "source": {
     "title": "Tinh hoàn",
@@ -4256,18 +4241,11 @@
    "viName": "Phế quản chính trái",
    "enName": "Left main bronchus",
    "system": "respiratory",
-   "status": "vi",
+   "status": "none",
    "enTitle": "Bronchus",
-   "description": {
-    "lang": "vi",
-    "text": "Phế quản tứ cuống phổi là một phần của hệ hô hấp, có nhiệm vụ dẫn khí vào phổi. Nó được chia thành phế quản chính phải và phế quản chính trái, bắt đầu từ nơi phân chia của khí quản đến rốn phổi, ở ngang mức đốt sống ngực 4, 5; Hai phế quản tạo với nhau một góc 70độ.",
-    "translated": false
-   },
-   "source": {
-    "title": "Hệ thống phế quản",
-    "url": "https://vi.wikipedia.org/wiki/H%E1%BB%87_th%E1%BB%91ng_ph%E1%BA%BF_qu%E1%BA%A3n",
-    "license": "CC BY-SA 4.0"
-   }
+   "description": null,
+   "source": null,
+   "dropped": "Hỏng chữ: 'Phế quản tứ cuống phổi' ('tứ' = bốn, lỗi gõ của 'tức') làm sai nghĩa; câu 2 mở bằng 'Nó' và có '70độ' dính chữ. Không sửa chữ được."
   },
   {
    "fma": "FMA46633",
@@ -4418,8 +4396,9 @@
    "enTitle": "Trachea",
    "description": {
     "lang": "vi",
-    "text": "Khí quản là một ống dẫn khí hình lăng trụ, nối tiếp từ dưới thanh quản (larynx) ngang mức đốt sống cổ 6, với hệ phế quản của phổi (lungs). Ở đoạn cuối nó phân chia làm 2 đoạn nối với 2 phế quản chính : phải và trái, ở ngang mức đốt sống ngực 4 hoặc 5.",
-    "translated": false
+    "text": "Khí quản là một ống dẫn khí hình lăng trụ, nối tiếp từ dưới thanh quản (larynx) ngang mức đốt sống cổ 6, với hệ phế quản của phổi (lungs).",
+    "translated": false,
+    "reviewed": true
    },
    "source": {
     "title": "Khí quản",
@@ -4440,8 +4419,9 @@
    "enTitle": "Lacrimal bone",
    "description": {
     "lang": "vi",
-    "text": "Xương tuyến nước mắt là phần xương nhỏ nhất và dễ vỡ nhất trên khuôn mặt, có kích thước chỉ bằng một móng tay. Nó nằm ở trước hốc mắt.",
-    "translated": false
+    "text": "Xương tuyến nước mắt là phần xương nhỏ nhất và dễ vỡ nhất trên khuôn mặt, có kích thước chỉ bằng một móng tay.",
+    "translated": false,
+    "reviewed": true
    },
    "source": {
     "title": "Xương lệ",
@@ -4462,8 +4442,9 @@
    "enTitle": "Lacrimal gland",
    "description": {
     "lang": "vi",
-    "text": "Trong sinh lý cơ thể người, các tuyến lệ là các tuyến ngoại tiết hình quả hạnh, với mỗi tuyến cho mỗi mắt, tiết ra lớp nước của màng nước mắt. Chúng nằm ở khu vực phía trên của hốc mắt, trong hố lệ hình thành bởi xương phía trước.",
-    "translated": false
+    "text": "Trong sinh lý cơ thể người, các tuyến lệ là các tuyến ngoại tiết hình quả hạnh, với mỗi tuyến cho mỗi mắt, tiết ra lớp nước của màng nước mắt.",
+    "translated": false,
+    "reviewed": true
    },
    "source": {
     "title": "Tuyến lệ",
@@ -4645,8 +4626,9 @@
    "enTitle": "Clavicle",
    "description": {
     "lang": "vi",
-    "text": "Xương đòn là một xương dài, tạo đên phần trụ của đai vai. Xương năm ngang phía trước và trên của ngực.",
-    "translated": false
+    "text": "Xương đòn là một xương dài.",
+    "translated": false,
+    "reviewed": true
    },
    "source": {
     "title": "Xương đòn",
@@ -5000,8 +4982,9 @@
    "enTitle": "Rib",
    "description": {
     "lang": "vi",
-    "text": "Trong giải phẫu động vật có xương sống, xương sườn là những xương dài cong tạo thành lồng. Ở đa số động vật có xương sống, các xương sườn bao quanh ngực, cho phép phổi có thể giãn nở và hít thờ bằng sự giãn nở của ngực.",
-    "translated": false
+    "text": "Trong giải phẫu động vật có xương sống, xương sườn là những xương dài cong tạo thành lồng.",
+    "translated": false,
+    "reviewed": true
    },
    "source": {
     "title": "Xương sườn",
@@ -5022,8 +5005,9 @@
    "mismatch": true,
    "description": {
     "lang": "vi",
-    "text": "Ở động vật có xương sống, đốt sống ngực tạo thành đốt giữa của cột sống, giữa đốt sống cổ và đốt sống thắt lưng. Ở người, có mười hai đốt sống ngực và chúng có kích thước trung gian giữa đốt sống cổ và thắt lưng; chúng phát triển kích thước về phía đốt sống thắt lưng, với những cái ở dưới lớn hơn rất nhiều so với những cái trên.",
-    "translated": false
+    "text": "Ở động vật có xương sống, đốt sống ngực tạo thành đốt giữa của cột sống, giữa đốt sống cổ và đốt sống thắt lưng.",
+    "translated": false,
+    "reviewed": true
    },
    "source": {
     "title": "Đốt sống ngực",
@@ -5044,8 +5028,9 @@
    "enTitle": "Rib",
    "description": {
     "lang": "vi",
-    "text": "Trong giải phẫu động vật có xương sống, xương sườn là những xương dài cong tạo thành lồng. Ở đa số động vật có xương sống, các xương sườn bao quanh ngực, cho phép phổi có thể giãn nở và hít thờ bằng sự giãn nở của ngực.",
-    "translated": false
+    "text": "Trong giải phẫu động vật có xương sống, xương sườn là những xương dài cong tạo thành lồng.",
+    "translated": false,
+    "reviewed": true
    },
    "source": {
     "title": "Xương sườn",
@@ -5066,8 +5051,9 @@
    "mismatch": true,
    "description": {
     "lang": "vi",
-    "text": "Ở động vật có xương sống, đốt sống ngực tạo thành đốt giữa của cột sống, giữa đốt sống cổ và đốt sống thắt lưng. Ở người, có mười hai đốt sống ngực và chúng có kích thước trung gian giữa đốt sống cổ và thắt lưng; chúng phát triển kích thước về phía đốt sống thắt lưng, với những cái ở dưới lớn hơn rất nhiều so với những cái trên.",
-    "translated": false
+    "text": "Ở động vật có xương sống, đốt sống ngực tạo thành đốt giữa của cột sống, giữa đốt sống cổ và đốt sống thắt lưng.",
+    "translated": false,
+    "reviewed": true
    },
    "source": {
     "title": "Đốt sống ngực",
@@ -5087,8 +5073,9 @@
    "enTitle": "Ethmoid bone",
    "description": {
     "lang": "vi",
-    "text": "Xương sàng là một xương lẻ thuộc khối xương sọ ngăn cách khoang mũi và não. Xương này nằm tại trần của ổ mũi, giữa hai ổ mắt.",
-    "translated": false
+    "text": "Xương sàng là một xương lẻ thuộc khối xương sọ ngăn cách khoang mũi và não.",
+    "translated": false,
+    "reviewed": true
    },
    "source": {
     "title": "Xương sàng",
@@ -5156,7 +5143,8 @@
    "description": {
     "lang": "vi",
     "text": "Ở động vật có xương sống, đốt sống cổ là đốt sống của cổ, ngay dưới xương sọ.",
-    "translated": false
+    "translated": false,
+    "reviewed": true
    },
    "source": {
     "title": "Đốt sống cổ",
@@ -5177,8 +5165,9 @@
    "enTitle": "Costal cartilage",
    "description": {
     "lang": "vi",
-    "text": "Sụn sườn là các thanh sụn trong giúp kéo dài xương sườn về phía trước và góp phần làm co giãn các vách của ngực. Sụn sườn chỉ có thể thấy ở đuôi trước của xương sườn, tạo nên phần mở rộng ở giữa.",
-    "translated": false
+    "text": "Sụn sườn là các thanh sụn trong giúp kéo dài xương sườn về phía trước và góp phần làm co giãn các vách của ngực.",
+    "translated": false,
+    "reviewed": true
    },
    "source": {
     "title": "Sụn sườn",
@@ -5199,8 +5188,9 @@
    "mismatch": true,
    "description": {
     "lang": "vi",
-    "text": "Các đốt sống thắt lưng, trong giải phẫu người, năm đốt sống giữa lồng xương sườn và xương chậu. Chúng là những đoạn lớn nhất của cột sống và được đặc trưng bởi sự thiếu vắng của lỗ trên ổ mắt trong phạm vi các mấu ngang và do sự thiếu vắng ở hai bên của cơ thể.",
-    "translated": false
+    "text": "Các đốt sống thắt lưng, trong giải phẫu người, năm đốt sống giữa lồng xương sườn và xương chậu.",
+    "translated": false,
+    "reviewed": true
    },
    "source": {
     "title": "Đốt sống thắt lưng",
@@ -5267,8 +5257,9 @@
    "enTitle": "Rib",
    "description": {
     "lang": "vi",
-    "text": "Trong giải phẫu động vật có xương sống, xương sườn là những xương dài cong tạo thành lồng. Ở đa số động vật có xương sống, các xương sườn bao quanh ngực, cho phép phổi có thể giãn nở và hít thờ bằng sự giãn nở của ngực.",
-    "translated": false
+    "text": "Trong giải phẫu động vật có xương sống, xương sườn là những xương dài cong tạo thành lồng.",
+    "translated": false,
+    "reviewed": true
    },
    "source": {
     "title": "Xương sườn",
@@ -5289,8 +5280,9 @@
    "mismatch": true,
    "description": {
     "lang": "vi",
-    "text": "Ở động vật có xương sống, đốt sống ngực tạo thành đốt giữa của cột sống, giữa đốt sống cổ và đốt sống thắt lưng. Ở người, có mười hai đốt sống ngực và chúng có kích thước trung gian giữa đốt sống cổ và thắt lưng; chúng phát triển kích thước về phía đốt sống thắt lưng, với những cái ở dưới lớn hơn rất nhiều so với những cái trên.",
-    "translated": false
+    "text": "Ở động vật có xương sống, đốt sống ngực tạo thành đốt giữa của cột sống, giữa đốt sống cổ và đốt sống thắt lưng.",
+    "translated": false,
+    "reviewed": true
    },
    "source": {
     "title": "Đốt sống ngực",
@@ -5311,8 +5303,9 @@
    "enTitle": "Costal cartilage",
    "description": {
     "lang": "vi",
-    "text": "Sụn sườn là các thanh sụn trong giúp kéo dài xương sườn về phía trước và góp phần làm co giãn các vách của ngực. Sụn sườn chỉ có thể thấy ở đuôi trước của xương sườn, tạo nên phần mở rộng ở giữa.",
-    "translated": false
+    "text": "Sụn sườn là các thanh sụn trong giúp kéo dài xương sườn về phía trước và góp phần làm co giãn các vách của ngực.",
+    "translated": false,
+    "reviewed": true
    },
    "source": {
     "title": "Sụn sườn",
@@ -5333,8 +5326,9 @@
    "mismatch": true,
    "description": {
     "lang": "vi",
-    "text": "Các đốt sống thắt lưng, trong giải phẫu người, năm đốt sống giữa lồng xương sườn và xương chậu. Chúng là những đoạn lớn nhất của cột sống và được đặc trưng bởi sự thiếu vắng của lỗ trên ổ mắt trong phạm vi các mấu ngang và do sự thiếu vắng ở hai bên của cơ thể.",
-    "translated": false
+    "text": "Các đốt sống thắt lưng, trong giải phẫu người, năm đốt sống giữa lồng xương sườn và xương chậu.",
+    "translated": false,
+    "reviewed": true
    },
    "source": {
     "title": "Đốt sống thắt lưng",
@@ -5401,8 +5395,9 @@
    "enTitle": "Rib",
    "description": {
     "lang": "vi",
-    "text": "Trong giải phẫu động vật có xương sống, xương sườn là những xương dài cong tạo thành lồng. Ở đa số động vật có xương sống, các xương sườn bao quanh ngực, cho phép phổi có thể giãn nở và hít thờ bằng sự giãn nở của ngực.",
-    "translated": false
+    "text": "Trong giải phẫu động vật có xương sống, xương sườn là những xương dài cong tạo thành lồng.",
+    "translated": false,
+    "reviewed": true
    },
    "source": {
     "title": "Xương sườn",
@@ -5423,8 +5418,9 @@
    "mismatch": true,
    "description": {
     "lang": "vi",
-    "text": "Ở động vật có xương sống, đốt sống ngực tạo thành đốt giữa của cột sống, giữa đốt sống cổ và đốt sống thắt lưng. Ở người, có mười hai đốt sống ngực và chúng có kích thước trung gian giữa đốt sống cổ và thắt lưng; chúng phát triển kích thước về phía đốt sống thắt lưng, với những cái ở dưới lớn hơn rất nhiều so với những cái trên.",
-    "translated": false
+    "text": "Ở động vật có xương sống, đốt sống ngực tạo thành đốt giữa của cột sống, giữa đốt sống cổ và đốt sống thắt lưng.",
+    "translated": false,
+    "reviewed": true
    },
    "source": {
     "title": "Đốt sống ngực",
@@ -5446,7 +5442,8 @@
    "description": {
     "lang": "vi",
     "text": "Ở động vật có xương sống, đốt sống cổ là đốt sống của cổ, ngay dưới xương sọ.",
-    "translated": false
+    "translated": false,
+    "reviewed": true
    },
    "source": {
     "title": "Đốt sống cổ",
@@ -5467,8 +5464,9 @@
    "enTitle": "Costal cartilage",
    "description": {
     "lang": "vi",
-    "text": "Sụn sườn là các thanh sụn trong giúp kéo dài xương sườn về phía trước và góp phần làm co giãn các vách của ngực. Sụn sườn chỉ có thể thấy ở đuôi trước của xương sườn, tạo nên phần mở rộng ở giữa.",
-    "translated": false
+    "text": "Sụn sườn là các thanh sụn trong giúp kéo dài xương sườn về phía trước và góp phần làm co giãn các vách của ngực.",
+    "translated": false,
+    "reviewed": true
    },
    "source": {
     "title": "Sụn sườn",
@@ -5489,8 +5487,9 @@
    "mismatch": true,
    "description": {
     "lang": "vi",
-    "text": "Các đốt sống thắt lưng, trong giải phẫu người, năm đốt sống giữa lồng xương sườn và xương chậu. Chúng là những đoạn lớn nhất của cột sống và được đặc trưng bởi sự thiếu vắng của lỗ trên ổ mắt trong phạm vi các mấu ngang và do sự thiếu vắng ở hai bên của cơ thể.",
-    "translated": false
+    "text": "Các đốt sống thắt lưng, trong giải phẫu người, năm đốt sống giữa lồng xương sườn và xương chậu.",
+    "translated": false,
+    "reviewed": true
    },
    "source": {
     "title": "Đốt sống thắt lưng",
@@ -5557,8 +5556,9 @@
    "enTitle": "Rib",
    "description": {
     "lang": "vi",
-    "text": "Trong giải phẫu động vật có xương sống, xương sườn là những xương dài cong tạo thành lồng. Ở đa số động vật có xương sống, các xương sườn bao quanh ngực, cho phép phổi có thể giãn nở và hít thờ bằng sự giãn nở của ngực.",
-    "translated": false
+    "text": "Trong giải phẫu động vật có xương sống, xương sườn là những xương dài cong tạo thành lồng.",
+    "translated": false,
+    "reviewed": true
    },
    "source": {
     "title": "Xương sườn",
@@ -5579,8 +5579,9 @@
    "mismatch": true,
    "description": {
     "lang": "vi",
-    "text": "Ở động vật có xương sống, đốt sống ngực tạo thành đốt giữa của cột sống, giữa đốt sống cổ và đốt sống thắt lưng. Ở người, có mười hai đốt sống ngực và chúng có kích thước trung gian giữa đốt sống cổ và thắt lưng; chúng phát triển kích thước về phía đốt sống thắt lưng, với những cái ở dưới lớn hơn rất nhiều so với những cái trên.",
-    "translated": false
+    "text": "Ở động vật có xương sống, đốt sống ngực tạo thành đốt giữa của cột sống, giữa đốt sống cổ và đốt sống thắt lưng.",
+    "translated": false,
+    "reviewed": true
    },
    "source": {
     "title": "Đốt sống ngực",
@@ -5623,8 +5624,9 @@
    "enTitle": "Hamate bone",
    "description": {
     "lang": "vi",
-    "text": "Xương móc là một xương thuộc bàn tay người có thể dễ dàng nhận diện qua hình dạng góc cạnh của nó, và đặc điểm có móc giống như mỏm. Xương này nằm về phía trong và ở góc thấp của khối xương bàn tay.",
-    "translated": false
+    "text": "Xương móc là một xương thuộc bàn tay người có thể dễ dàng nhận diện qua hình dạng góc cạnh của nó, và đặc điểm có móc giống như mỏm.",
+    "translated": false,
+    "reviewed": true
    },
    "source": {
     "title": "Xương móc",
@@ -5645,8 +5647,9 @@
    "enTitle": "Hip bone",
    "description": {
     "lang": "vi",
-    "text": "Xương chậu là xương dẹt, do 3 xương nhỏ tạo thành xương cánh chậu ở trên, xương mu ở trước dưới, xương ngồi ở sau dưới. Xương chậu có hình cánh quạt, có 2 mặt, 4 bờ, 4 góc và là xương có diện tích lớn nhất trong cơ thể.",
-    "translated": false
+    "text": "Xương chậu là xương dẹt, do 3 xương nhỏ tạo thành xương cánh chậu ở trên, xương mu ở trước dưới, xương ngồi ở sau dưới.",
+    "translated": false,
+    "reviewed": true
    },
    "source": {
     "title": "Xương chậu",
@@ -5668,7 +5671,8 @@
    "description": {
     "lang": "vi",
     "text": "Xương cánh tay là một xương dài ở cánh tay hay chi trên bắt đầu từ vai cho đến khuỷu tay.",
-    "translated": false
+    "translated": false,
+    "reviewed": true
    },
    "source": {
     "title": "Xương cánh tay",
@@ -5688,8 +5692,9 @@
    "enTitle": "Hyoid bone",
    "description": {
     "lang": "vi",
-    "text": "Xương móng là một khúc xương hình móng ngựa nằm trên đường giữa mặt trước cổ ở giữa cằm và sụn giáp. Ở tư thế nghỉ, xương móng nhằm tại mức nền, xương hàm dưới ở phía trước và đốt sống cổ thứ ba ở phía sau.",
-    "translated": false
+    "text": "Xương móng là một khúc xương hình móng ngựa nằm trên đường giữa mặt trước cổ ở giữa cằm và sụn giáp.",
+    "translated": false,
+    "reviewed": true
    },
    "source": {
     "title": "Xương móng",
@@ -6288,8 +6293,9 @@
    "mismatch": true,
    "description": {
     "lang": "vi",
-    "text": "Răng cửa là răng phía trước xuất hiện ở hầu hết động vật có vú có nhóm răng khác. Chúng tọa lạc trên mảnh trước hàm và bên dưới xương hàm dưới.",
-    "translated": false
+    "text": "Răng cửa là răng phía trước xuất hiện ở hầu hết động vật có vú có nhóm răng khác.",
+    "translated": false,
+    "reviewed": true
    },
    "source": {
     "title": "Răng cửa",
@@ -6311,8 +6317,9 @@
    "mismatch": true,
    "description": {
     "lang": "vi",
-    "text": "Răng hàm là răng phẳng ở mặt sau vòm miệng. Răng phát triển ở động vật có vú.",
-    "translated": false
+    "text": "Răng hàm là răng phẳng ở mặt sau vòm miệng.",
+    "translated": false,
+    "reviewed": true
    },
    "source": {
     "title": "Răng hàm",
@@ -6329,19 +6336,12 @@
    "viName": null,
    "enName": "Right lower first secondary premolar tooth",
    "system": "skeletal",
-   "status": "vi",
+   "status": "none",
    "enTitle": "Molar (tooth)",
    "mismatch": true,
-   "description": {
-    "lang": "vi",
-    "text": "Răng hàm là răng phẳng ở mặt sau vòm miệng. Răng phát triển ở động vật có vú.",
-    "translated": false
-   },
-   "source": {
-    "title": "Răng hàm",
-    "url": "https://vi.wikipedia.org/wiki/R%C4%83ng_h%C3%A0m",
-    "license": "CC BY-SA 4.0"
-   }
+   "description": null,
+   "source": null,
+   "dropped": "Bài nguồn 'Răng hàm' là răng hàm lớn; cấu trúc này là răng hàm nhỏ (tiền hàm), không phải 'răng phẳng ở phía sau' - mô tả sai loại răng."
   },
   {
    "fma": "FMA57141",
@@ -6357,8 +6357,9 @@
    "mismatch": true,
    "description": {
     "lang": "vi",
-    "text": "Răng cửa là răng phía trước xuất hiện ở hầu hết động vật có vú có nhóm răng khác. Chúng tọa lạc trên mảnh trước hàm và bên dưới xương hàm dưới.",
-    "translated": false
+    "text": "Răng cửa là răng phía trước xuất hiện ở hầu hết động vật có vú có nhóm răng khác.",
+    "translated": false,
+    "reviewed": true
    },
    "source": {
     "title": "Răng cửa",
@@ -6380,8 +6381,9 @@
    "mismatch": true,
    "description": {
     "lang": "vi",
-    "text": "Răng hàm là răng phẳng ở mặt sau vòm miệng. Răng phát triển ở động vật có vú.",
-    "translated": false
+    "text": "Răng hàm là răng phẳng ở mặt sau vòm miệng.",
+    "translated": false,
+    "reviewed": true
    },
    "source": {
     "title": "Răng hàm",
@@ -6398,19 +6400,12 @@
    "viName": null,
    "enName": "Right lower second secondary premolar tooth",
    "system": "skeletal",
-   "status": "vi",
+   "status": "none",
    "enTitle": "Molar (tooth)",
    "mismatch": true,
-   "description": {
-    "lang": "vi",
-    "text": "Răng hàm là răng phẳng ở mặt sau vòm miệng. Răng phát triển ở động vật có vú.",
-    "translated": false
-   },
-   "source": {
-    "title": "Răng hàm",
-    "url": "https://vi.wikipedia.org/wiki/R%C4%83ng_h%C3%A0m",
-    "license": "CC BY-SA 4.0"
-   }
+   "description": null,
+   "source": null,
+   "dropped": "Bài nguồn 'Răng hàm' là răng hàm lớn; cấu trúc này là răng hàm nhỏ (tiền hàm), không phải 'răng phẳng ở phía sau' - mô tả sai loại răng."
   },
   {
    "fma": "FMA55686",
@@ -6425,8 +6420,9 @@
    "enTitle": "Canine tooth",
    "description": {
     "lang": "vi",
-    "text": "Răng nanh là những chiếc răng dài và nhọn có tác dụng cắn xé thức ăn hoặc dùng trong việc săn mồi ở một số loài động vật. Thường sẽ có 4 răng nanh ở người là hai răng ở hàm trên và hai răng ở hàm dưới.",
-    "translated": false
+    "text": "Răng nanh là những chiếc răng dài và nhọn có tác dụng cắn xé thức ăn hoặc dùng trong việc săn mồi ở một số loài động vật.",
+    "translated": false,
+    "reviewed": true
    },
    "source": {
     "title": "Răng nanh",
@@ -6492,8 +6488,9 @@
    "enTitle": "Mandible",
    "description": {
     "lang": "vi",
-    "text": "Xương hàm dưới là xương thấp nhất, lớn nhất, khỏe nhất ở mặt. Xương hàm dưới có thể cử động được, và là xương duy nhất của hộp sọ có thể cử động được.",
-    "translated": false
+    "text": "Xương hàm dưới là xương thấp nhất, lớn nhất, khỏe nhất ở mặt.",
+    "translated": false,
+    "reviewed": true
    },
    "source": {
     "title": "Xương hàm dưới",
@@ -6510,18 +6507,11 @@
    "viName": null,
    "enName": "Left maxilla",
    "system": "skeletal",
-   "status": "vi",
+   "status": "none",
    "enTitle": "Maxilla",
-   "description": {
-    "lang": "vi",
-    "text": "Hàm trên ) là một trong 2 xương tạo thành phần trên của miệng.",
-    "translated": false
-   },
-   "source": {
-    "title": "Xương hàm trên",
-    "url": "https://vi.wikipedia.org/wiki/X%C6%B0%C6%A1ng_h%C3%A0m_tr%C3%AAn",
-    "license": "CC BY-SA 4.0"
-   }
+   "description": null,
+   "source": null,
+   "dropped": "Hỏng chữ từ nguồn: 'Hàm trên ) là...' - ngoặc đóng mồ côi, mất phần trong ngoặc. Chỉ có một câu."
   },
   {
    "fma": "FMA24521",
@@ -6752,8 +6742,9 @@
    "enTitle": "Nasal bone",
    "description": {
     "lang": "vi",
-    "text": "Xương mũi là hai xương thuôn nhỏ, có kích thước và hình dạng khác nhau ở từng cá thể. Chúng được đặt cạnh nhau ở phần giữa và phần trên của khuôn mặt và tại điểm nối của chúng, tạo thành sống mũi của 1/3 trên của mũi.",
-    "translated": false
+    "text": "Xương mũi là hai xương thuôn nhỏ, có kích thước và hình dạng khác nhau ở từng cá thể.",
+    "translated": false,
+    "reviewed": true
    },
    "source": {
     "title": "Xương mũi",
@@ -6797,8 +6788,9 @@
    "enTitle": "Rib",
    "description": {
     "lang": "vi",
-    "text": "Trong giải phẫu động vật có xương sống, xương sườn là những xương dài cong tạo thành lồng. Ở đa số động vật có xương sống, các xương sườn bao quanh ngực, cho phép phổi có thể giãn nở và hít thờ bằng sự giãn nở của ngực.",
-    "translated": false
+    "text": "Trong giải phẫu động vật có xương sống, xương sườn là những xương dài cong tạo thành lồng.",
+    "translated": false,
+    "reviewed": true
    },
    "source": {
     "title": "Xương sườn",
@@ -6819,8 +6811,9 @@
    "mismatch": true,
    "description": {
     "lang": "vi",
-    "text": "Ở động vật có xương sống, đốt sống ngực tạo thành đốt giữa của cột sống, giữa đốt sống cổ và đốt sống thắt lưng. Ở người, có mười hai đốt sống ngực và chúng có kích thước trung gian giữa đốt sống cổ và thắt lưng; chúng phát triển kích thước về phía đốt sống thắt lưng, với những cái ở dưới lớn hơn rất nhiều so với những cái trên.",
-    "translated": false
+    "text": "Ở động vật có xương sống, đốt sống ngực tạo thành đốt giữa của cột sống, giữa đốt sống cổ và đốt sống thắt lưng.",
+    "translated": false,
+    "reviewed": true
    },
    "source": {
     "title": "Đốt sống ngực",
@@ -6840,8 +6833,9 @@
    "enTitle": "Occipital bone",
    "description": {
     "lang": "vi",
-    "text": "Xương chẩm là một xương sọ, phủ lên thùy chẩm của đại não. Tại nền sọ trong xương chẩm có một lỗ lớn hình chữ nhật gọi là lỗ lớn xương chẩm cho phép tủy sống đi qua.",
-    "translated": false
+    "text": "Xương chẩm là một xương sọ, phủ lên thùy chẩm của đại não.",
+    "translated": false,
+    "reviewed": true
    },
    "source": {
     "title": "Xương chẩm",
@@ -6885,8 +6879,9 @@
    "enTitle": "Parietal bone",
    "description": {
     "lang": "vi",
-    "text": "Xương đỉnh là hai xương ở sọ người, nối với nhau tại một khớp xơ, tạo thành mặt và vòm của xương sọ. Mỗi xương có dạng hình tứ giác lồi lõm, có hai bề mặt, bốn đường tiếp giáp và bốn góc.",
-    "translated": false
+    "text": "Xương đỉnh là hai xương ở sọ người, nối với nhau tại một khớp xơ, tạo thành mặt và vòm của xương sọ.",
+    "translated": false,
+    "reviewed": true
    },
    "source": {
     "title": "Xương đỉnh",
@@ -7262,7 +7257,8 @@
    "description": {
     "lang": "vi",
     "text": "Trong giải phẫu học, xương vai là xương nối giữa xương cánh tay với xương đòn.",
-    "translated": false
+    "translated": false,
+    "reviewed": true
    },
    "source": {
     "title": "Xương vai",
@@ -7283,8 +7279,9 @@
    "enTitle": "Costal cartilage",
    "description": {
     "lang": "vi",
-    "text": "Sụn sườn là các thanh sụn trong giúp kéo dài xương sườn về phía trước và góp phần làm co giãn các vách của ngực. Sụn sườn chỉ có thể thấy ở đuôi trước của xương sườn, tạo nên phần mở rộng ở giữa.",
-    "translated": false
+    "text": "Sụn sườn là các thanh sụn trong giúp kéo dài xương sườn về phía trước và góp phần làm co giãn các vách của ngực.",
+    "translated": false,
+    "reviewed": true
    },
    "source": {
     "title": "Sụn sườn",
@@ -7305,8 +7302,9 @@
    "mismatch": true,
    "description": {
     "lang": "vi",
-    "text": "Các đốt sống thắt lưng, trong giải phẫu người, năm đốt sống giữa lồng xương sườn và xương chậu. Chúng là những đoạn lớn nhất của cột sống và được đặc trưng bởi sự thiếu vắng của lỗ trên ổ mắt trong phạm vi các mấu ngang và do sự thiếu vắng ở hai bên của cơ thể.",
-    "translated": false
+    "text": "Các đốt sống thắt lưng, trong giải phẫu người, năm đốt sống giữa lồng xương sườn và xương chậu.",
+    "translated": false,
+    "reviewed": true
    },
    "source": {
     "title": "Đốt sống thắt lưng",
@@ -7373,8 +7371,9 @@
    "enTitle": "Rib",
    "description": {
     "lang": "vi",
-    "text": "Trong giải phẫu động vật có xương sống, xương sườn là những xương dài cong tạo thành lồng. Ở đa số động vật có xương sống, các xương sườn bao quanh ngực, cho phép phổi có thể giãn nở và hít thờ bằng sự giãn nở của ngực.",
-    "translated": false
+    "text": "Trong giải phẫu động vật có xương sống, xương sườn là những xương dài cong tạo thành lồng.",
+    "translated": false,
+    "reviewed": true
    },
    "source": {
     "title": "Xương sườn",
@@ -7395,8 +7394,9 @@
    "mismatch": true,
    "description": {
     "lang": "vi",
-    "text": "Ở động vật có xương sống, đốt sống ngực tạo thành đốt giữa của cột sống, giữa đốt sống cổ và đốt sống thắt lưng. Ở người, có mười hai đốt sống ngực và chúng có kích thước trung gian giữa đốt sống cổ và thắt lưng; chúng phát triển kích thước về phía đốt sống thắt lưng, với những cái ở dưới lớn hơn rất nhiều so với những cái trên.",
-    "translated": false
+    "text": "Ở động vật có xương sống, đốt sống ngực tạo thành đốt giữa của cột sống, giữa đốt sống cổ và đốt sống thắt lưng.",
+    "translated": false,
+    "reviewed": true
    },
    "source": {
     "title": "Đốt sống ngực",
@@ -7441,7 +7441,8 @@
    "description": {
     "lang": "vi",
     "text": "Ở động vật có xương sống, đốt sống cổ là đốt sống của cổ, ngay dưới xương sọ.",
-    "translated": false
+    "translated": false,
+    "reviewed": true
    },
    "source": {
     "title": "Đốt sống cổ",
@@ -7462,8 +7463,9 @@
    "enTitle": "Costal cartilage",
    "description": {
     "lang": "vi",
-    "text": "Sụn sườn là các thanh sụn trong giúp kéo dài xương sườn về phía trước và góp phần làm co giãn các vách của ngực. Sụn sườn chỉ có thể thấy ở đuôi trước của xương sườn, tạo nên phần mở rộng ở giữa.",
-    "translated": false
+    "text": "Sụn sườn là các thanh sụn trong giúp kéo dài xương sườn về phía trước và góp phần làm co giãn các vách của ngực.",
+    "translated": false,
+    "reviewed": true
    },
    "source": {
     "title": "Sụn sườn",
@@ -7484,8 +7486,9 @@
    "enTitle": "Rib",
    "description": {
     "lang": "vi",
-    "text": "Trong giải phẫu động vật có xương sống, xương sườn là những xương dài cong tạo thành lồng. Ở đa số động vật có xương sống, các xương sườn bao quanh ngực, cho phép phổi có thể giãn nở và hít thờ bằng sự giãn nở của ngực.",
-    "translated": false
+    "text": "Trong giải phẫu động vật có xương sống, xương sườn là những xương dài cong tạo thành lồng.",
+    "translated": false,
+    "reviewed": true
    },
    "source": {
     "title": "Xương sườn",
@@ -7506,8 +7509,9 @@
    "mismatch": true,
    "description": {
     "lang": "vi",
-    "text": "Ở động vật có xương sống, đốt sống ngực tạo thành đốt giữa của cột sống, giữa đốt sống cổ và đốt sống thắt lưng. Ở người, có mười hai đốt sống ngực và chúng có kích thước trung gian giữa đốt sống cổ và thắt lưng; chúng phát triển kích thước về phía đốt sống thắt lưng, với những cái ở dưới lớn hơn rất nhiều so với những cái trên.",
-    "translated": false
+    "text": "Ở động vật có xương sống, đốt sống ngực tạo thành đốt giữa của cột sống, giữa đốt sống cổ và đốt sống thắt lưng.",
+    "translated": false,
+    "reviewed": true
    },
    "source": {
     "title": "Đốt sống ngực",
@@ -7529,7 +7533,8 @@
    "description": {
     "lang": "vi",
     "text": "Ở động vật có xương sống, đốt sống cổ là đốt sống của cổ, ngay dưới xương sọ.",
-    "translated": false
+    "translated": false,
+    "reviewed": true
    },
    "source": {
     "title": "Đốt sống cổ",
@@ -7550,8 +7555,9 @@
    "enTitle": "Costal cartilage",
    "description": {
     "lang": "vi",
-    "text": "Sụn sườn là các thanh sụn trong giúp kéo dài xương sườn về phía trước và góp phần làm co giãn các vách của ngực. Sụn sườn chỉ có thể thấy ở đuôi trước của xương sườn, tạo nên phần mở rộng ở giữa.",
-    "translated": false
+    "text": "Sụn sườn là các thanh sụn trong giúp kéo dài xương sườn về phía trước và góp phần làm co giãn các vách của ngực.",
+    "translated": false,
+    "reviewed": true
    },
    "source": {
     "title": "Sụn sườn",
@@ -7572,8 +7578,9 @@
    "enTitle": "Rib",
    "description": {
     "lang": "vi",
-    "text": "Trong giải phẫu động vật có xương sống, xương sườn là những xương dài cong tạo thành lồng. Ở đa số động vật có xương sống, các xương sườn bao quanh ngực, cho phép phổi có thể giãn nở và hít thờ bằng sự giãn nở của ngực.",
-    "translated": false
+    "text": "Trong giải phẫu động vật có xương sống, xương sườn là những xương dài cong tạo thành lồng.",
+    "translated": false,
+    "reviewed": true
    },
    "source": {
     "title": "Xương sườn",
@@ -7594,8 +7601,9 @@
    "mismatch": true,
    "description": {
     "lang": "vi",
-    "text": "Ở động vật có xương sống, đốt sống ngực tạo thành đốt giữa của cột sống, giữa đốt sống cổ và đốt sống thắt lưng. Ở người, có mười hai đốt sống ngực và chúng có kích thước trung gian giữa đốt sống cổ và thắt lưng; chúng phát triển kích thước về phía đốt sống thắt lưng, với những cái ở dưới lớn hơn rất nhiều so với những cái trên.",
-    "translated": false
+    "text": "Ở động vật có xương sống, đốt sống ngực tạo thành đốt giữa của cột sống, giữa đốt sống cổ và đốt sống thắt lưng.",
+    "translated": false,
+    "reviewed": true
    },
    "source": {
     "title": "Đốt sống ngực",
@@ -7684,8 +7692,9 @@
    "enTitle": "Rib",
    "description": {
     "lang": "vi",
-    "text": "Trong giải phẫu động vật có xương sống, xương sườn là những xương dài cong tạo thành lồng. Ở đa số động vật có xương sống, các xương sườn bao quanh ngực, cho phép phổi có thể giãn nở và hít thờ bằng sự giãn nở của ngực.",
-    "translated": false
+    "text": "Trong giải phẫu động vật có xương sống, xương sườn là những xương dài cong tạo thành lồng.",
+    "translated": false,
+    "reviewed": true
    },
    "source": {
     "title": "Xương sườn",
@@ -7706,8 +7715,9 @@
    "mismatch": true,
    "description": {
     "lang": "vi",
-    "text": "Ở động vật có xương sống, đốt sống ngực tạo thành đốt giữa của cột sống, giữa đốt sống cổ và đốt sống thắt lưng. Ở người, có mười hai đốt sống ngực và chúng có kích thước trung gian giữa đốt sống cổ và thắt lưng; chúng phát triển kích thước về phía đốt sống thắt lưng, với những cái ở dưới lớn hơn rất nhiều so với những cái trên.",
-    "translated": false
+    "text": "Ở động vật có xương sống, đốt sống ngực tạo thành đốt giữa của cột sống, giữa đốt sống cổ và đốt sống thắt lưng.",
+    "translated": false,
+    "reviewed": true
    },
    "source": {
     "title": "Đốt sống ngực",
@@ -7729,7 +7739,8 @@
    "description": {
     "lang": "vi",
     "text": "Ở động vật có xương sống, đốt sống cổ là đốt sống của cổ, ngay dưới xương sọ.",
-    "translated": false
+    "translated": false,
+    "reviewed": true
    },
    "source": {
     "title": "Đốt sống cổ",
@@ -7750,8 +7761,9 @@
    "enTitle": "Costal cartilage",
    "description": {
     "lang": "vi",
-    "text": "Sụn sườn là các thanh sụn trong giúp kéo dài xương sườn về phía trước và góp phần làm co giãn các vách của ngực. Sụn sườn chỉ có thể thấy ở đuôi trước của xương sườn, tạo nên phần mở rộng ở giữa.",
-    "translated": false
+    "text": "Sụn sườn là các thanh sụn trong giúp kéo dài xương sườn về phía trước và góp phần làm co giãn các vách của ngực.",
+    "translated": false,
+    "reviewed": true
    },
    "source": {
     "title": "Sụn sườn",
@@ -7772,8 +7784,9 @@
    "mismatch": true,
    "description": {
     "lang": "vi",
-    "text": "Các đốt sống thắt lưng, trong giải phẫu người, năm đốt sống giữa lồng xương sườn và xương chậu. Chúng là những đoạn lớn nhất của cột sống và được đặc trưng bởi sự thiếu vắng của lỗ trên ổ mắt trong phạm vi các mấu ngang và do sự thiếu vắng ở hai bên của cơ thể.",
-    "translated": false
+    "text": "Các đốt sống thắt lưng, trong giải phẫu người, năm đốt sống giữa lồng xương sườn và xương chậu.",
+    "translated": false,
+    "reviewed": true
    },
    "source": {
     "title": "Đốt sống thắt lưng",
@@ -7840,8 +7853,9 @@
    "enTitle": "Rib",
    "description": {
     "lang": "vi",
-    "text": "Trong giải phẫu động vật có xương sống, xương sườn là những xương dài cong tạo thành lồng. Ở đa số động vật có xương sống, các xương sườn bao quanh ngực, cho phép phổi có thể giãn nở và hít thờ bằng sự giãn nở của ngực.",
-    "translated": false
+    "text": "Trong giải phẫu động vật có xương sống, xương sườn là những xương dài cong tạo thành lồng.",
+    "translated": false,
+    "reviewed": true
    },
    "source": {
     "title": "Xương sườn",
@@ -7862,8 +7876,9 @@
    "mismatch": true,
    "description": {
     "lang": "vi",
-    "text": "Ở động vật có xương sống, đốt sống ngực tạo thành đốt giữa của cột sống, giữa đốt sống cổ và đốt sống thắt lưng. Ở người, có mười hai đốt sống ngực và chúng có kích thước trung gian giữa đốt sống cổ và thắt lưng; chúng phát triển kích thước về phía đốt sống thắt lưng, với những cái ở dưới lớn hơn rất nhiều so với những cái trên.",
-    "translated": false
+    "text": "Ở động vật có xương sống, đốt sống ngực tạo thành đốt giữa của cột sống, giữa đốt sống cổ và đốt sống thắt lưng.",
+    "translated": false,
+    "reviewed": true
    },
    "source": {
     "title": "Đốt sống ngực",
@@ -7998,8 +8013,9 @@
    "enTitle": "Rib",
    "description": {
     "lang": "vi",
-    "text": "Trong giải phẫu động vật có xương sống, xương sườn là những xương dài cong tạo thành lồng. Ở đa số động vật có xương sống, các xương sườn bao quanh ngực, cho phép phổi có thể giãn nở và hít thờ bằng sự giãn nở của ngực.",
-    "translated": false
+    "text": "Trong giải phẫu động vật có xương sống, xương sườn là những xương dài cong tạo thành lồng.",
+    "translated": false,
+    "reviewed": true
    },
    "source": {
     "title": "Xương sườn",
@@ -8020,8 +8036,9 @@
    "mismatch": true,
    "description": {
     "lang": "vi",
-    "text": "Ở động vật có xương sống, đốt sống ngực tạo thành đốt giữa của cột sống, giữa đốt sống cổ và đốt sống thắt lưng. Ở người, có mười hai đốt sống ngực và chúng có kích thước trung gian giữa đốt sống cổ và thắt lưng; chúng phát triển kích thước về phía đốt sống thắt lưng, với những cái ở dưới lớn hơn rất nhiều so với những cái trên.",
-    "translated": false
+    "text": "Ở động vật có xương sống, đốt sống ngực tạo thành đốt giữa của cột sống, giữa đốt sống cổ và đốt sống thắt lưng.",
+    "translated": false,
+    "reviewed": true
    },
    "source": {
     "title": "Đốt sống ngực",
@@ -8042,8 +8059,9 @@
    "enTitle": "Ulna",
    "description": {
     "lang": "vi",
-    "text": "Xương trụ là một trong hai xương dài của cẳng tay, có dạng hình lăng trụ. Theo vị trí giải phẫu xương trụ nằm về phía trong của cẳng tay gần cơ thể, song song với xương quay ở cả hai tay, gồm 1 thân, 2 đầu.",
-    "translated": false
+    "text": "Xương trụ là một trong hai xương dài của cẳng tay, có dạng hình lăng trụ.",
+    "translated": false,
+    "reviewed": true
    },
    "source": {
     "title": "Xương trụ",
@@ -8065,8 +8083,9 @@
    "mismatch": true,
    "description": {
     "lang": "vi",
-    "text": "Răng cửa là răng phía trước xuất hiện ở hầu hết động vật có vú có nhóm răng khác. Chúng tọa lạc trên mảnh trước hàm và bên dưới xương hàm dưới.",
-    "translated": false
+    "text": "Răng cửa là răng phía trước xuất hiện ở hầu hết động vật có vú có nhóm răng khác.",
+    "translated": false,
+    "reviewed": true
    },
    "source": {
     "title": "Răng cửa",
@@ -8088,8 +8107,9 @@
    "mismatch": true,
    "description": {
     "lang": "vi",
-    "text": "Răng hàm là răng phẳng ở mặt sau vòm miệng. Răng phát triển ở động vật có vú.",
-    "translated": false
+    "text": "Răng hàm là răng phẳng ở mặt sau vòm miệng.",
+    "translated": false,
+    "reviewed": true
    },
    "source": {
     "title": "Răng hàm",
@@ -8106,19 +8126,12 @@
    "viName": null,
    "enName": "Left upper first secondary premolar tooth",
    "system": "skeletal",
-   "status": "vi",
+   "status": "none",
    "enTitle": "Molar (tooth)",
    "mismatch": true,
-   "description": {
-    "lang": "vi",
-    "text": "Răng hàm là răng phẳng ở mặt sau vòm miệng. Răng phát triển ở động vật có vú.",
-    "translated": false
-   },
-   "source": {
-    "title": "Răng hàm",
-    "url": "https://vi.wikipedia.org/wiki/R%C4%83ng_h%C3%A0m",
-    "license": "CC BY-SA 4.0"
-   }
+   "description": null,
+   "source": null,
+   "dropped": "Bài nguồn 'Răng hàm' là răng hàm lớn; cấu trúc này là răng hàm nhỏ (tiền hàm), không phải 'răng phẳng ở phía sau' - mô tả sai loại răng."
   },
   {
    "fma": "FMA55683",
@@ -8134,8 +8147,9 @@
    "mismatch": true,
    "description": {
     "lang": "vi",
-    "text": "Răng cửa là răng phía trước xuất hiện ở hầu hết động vật có vú có nhóm răng khác. Chúng tọa lạc trên mảnh trước hàm và bên dưới xương hàm dưới.",
-    "translated": false
+    "text": "Răng cửa là răng phía trước xuất hiện ở hầu hết động vật có vú có nhóm răng khác.",
+    "translated": false,
+    "reviewed": true
    },
    "source": {
     "title": "Răng cửa",
@@ -8157,8 +8171,9 @@
    "mismatch": true,
    "description": {
     "lang": "vi",
-    "text": "Răng hàm là răng phẳng ở mặt sau vòm miệng. Răng phát triển ở động vật có vú.",
-    "translated": false
+    "text": "Răng hàm là răng phẳng ở mặt sau vòm miệng.",
+    "translated": false,
+    "reviewed": true
    },
    "source": {
     "title": "Răng hàm",
@@ -8175,19 +8190,12 @@
    "viName": null,
    "enName": "Right upper second secondary premolar tooth",
    "system": "skeletal",
-   "status": "vi",
+   "status": "none",
    "enTitle": "Molar (tooth)",
    "mismatch": true,
-   "description": {
-    "lang": "vi",
-    "text": "Răng hàm là răng phẳng ở mặt sau vòm miệng. Răng phát triển ở động vật có vú.",
-    "translated": false
-   },
-   "source": {
-    "title": "Răng hàm",
-    "url": "https://vi.wikipedia.org/wiki/R%C4%83ng_h%C3%A0m",
-    "license": "CC BY-SA 4.0"
-   }
+   "description": null,
+   "source": null,
+   "dropped": "Bài nguồn 'Răng hàm' là răng hàm lớn; cấu trúc này là răng hàm nhỏ (tiền hàm), không phải 'răng phẳng ở phía sau' - mô tả sai loại răng."
   },
   {
    "fma": "FMA55799",
@@ -8202,8 +8210,9 @@
    "enTitle": "Canine tooth",
    "description": {
     "lang": "vi",
-    "text": "Răng nanh là những chiếc răng dài và nhọn có tác dụng cắn xé thức ăn hoặc dùng trong việc săn mồi ở một số loài động vật. Thường sẽ có 4 răng nanh ở người là hai răng ở hàm trên và hai răng ở hàm dưới.",
-    "translated": false
+    "text": "Răng nanh là những chiếc răng dài và nhọn có tác dụng cắn xé thức ăn hoặc dùng trong việc săn mồi ở một số loài động vật.",
+    "translated": false,
+    "reviewed": true
    },
    "source": {
     "title": "Răng nanh",
@@ -8293,7 +8302,8 @@
    "description": {
     "lang": "vi",
     "text": "Niệu quản, một bộ phận thuộc hệ tiết niệu của con người, là một ống cơ dài khoảng 25 cm, dẫn nước tiểu từ bể thận xuống bàng quang.",
-    "translated": false
+    "translated": false,
+    "reviewed": true
    },
    "source": {
     "title": "Niệu quản",
@@ -8313,8 +8323,9 @@
    "enTitle": "Urethra",
    "description": {
     "lang": "vi",
-    "text": "Niệu đạo là một bộ phận của hệ tiết niệu, nó là một ống dài nối từ bàng quang ra lỗ sáo để đưa nước tiểu ra ngoài. Ngoài ra ở đàn ông và động vật giống đực, nó còn có vai trò trong việc dẫn tinh dịch ra ngoài.",
-    "translated": false
+    "text": "Niệu đạo là một bộ phận của hệ tiết niệu, nó là một ống dài nối từ bàng quang ra lỗ sáo để đưa nước tiểu ra ngoài.",
+    "translated": false,
+    "reviewed": true
    },
    "source": {
     "title": "Niệu đạo",
@@ -8334,8 +8345,9 @@
    "enTitle": "Bladder",
    "description": {
     "lang": "vi",
-    "text": "Bàng quang hay bóng đái là cơ quan chứa nước tiểu do thận tiết ra trước khi thoát ra ngoài cơ thể theo quá trình đi tiểu. Bàng quang là một cơ rỗng.",
-    "translated": false
+    "text": "Bàng quang hay bóng đái là cơ quan chứa nước tiểu do thận tiết ra trước khi thoát ra ngoài cơ thể theo quá trình đi tiểu.",
+    "translated": false,
+    "reviewed": true
    },
    "source": {
     "title": "Bàng quang",
