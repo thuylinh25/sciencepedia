@@ -841,6 +841,7 @@
     "catalogLoading": "Loading the anatomy catalogue…",
     "loading": "Loading the 3D body model…",
     "loadingDetail": "{percent}% · {count} pieces",
+    "loadingMore": "Loading more anatomy… {percent}%",
     "error": "The 3D model could not be loaded. Please try again.",
     "webglError": "This browser could not start the 3D viewer. Please try a browser with WebGL enabled.",
     "contextLost": "Your device paused the 3D session. Press Try again to continue.",

@@ -195,7 +195,6 @@ export default function AnatomyScene({
     let disposed = false;
     let frame = 0;
     let dirty = true;
-    let ready = false;
     let lastView = "";
     let lastReset = -1;
     // Bắt đầu từ 0 chứ không từ giá trị hiện tại: deep link tăng `focus` TRƯỚC khi
@@ -721,24 +720,33 @@ export default function AnatomyScene({
 
     // ------------------------------------------------------ tải hình học
     /*
-     * ## Góc nhìn mở đầu tải trước (2026-09-30)
+     * ## Chỉ tải khối của những mảnh đang VẼ (2026-10-01)
      *
-     * Hình học là 18 khối dùng chung cho mọi góc nhìn (một cấu trúc nằm ở đúng
-     * một khối, góc nhìn nào cũng trỏ về nó — không có "model riêng mỗi thẻ").
-     * Mở thẳng một góc nhìn theo hệ (?view=respiratory-lungs) thì khối chứa mảnh
-     * của nó tải trước; xong nhóm đó là thanh tải về 100% và bấm được. Các khối
-     * còn lại tải tiếp ở nền: ảnh thu nhỏ, tìm kiếm, "Tách các lớp" cần cả cơ thể,
-     * nên `ready` (ảnh thu nhỏ) vẫn chờ đủ. Góc nhìn theo vùng dùng gần hết các hệ
-     * — thứ tự giữ nguyên.
+     * Hình học là 18 khối dùng chung (~44 MB nén; một cấu trúc nằm ở đúng một
+     * khối). Bản trước tải cả 18 khối ngay khi mở trang và chỉ bấm được khi xong
+     * hết — 45 MB, ~9 s. Nhưng khung mặc định là da ĐỤC: mọi lớp trong bị
+     * `underSkin` bỏ khỏi lượt vẽ, nên thứ người đọc thấy chỉ cần da + tai + mắt
+     * — khối 0, 10, 11 và da chia nhỏ, ~10 MB.
+     *
+     * Nên tập khối cần tải suy từ CHÍNH `isShown` của vòng vẽ (không một danh
+     * sách riêng dễ lệch): mỗi lần trạng thái đổi — kéo "Tách các lớp", bật hệ,
+     * mở góc nhìn, chọn một cấu trúc từ ô tìm — khối của mảnh vừa hiện được xếp
+     * lên đầu hàng đợi. Lưới góc nhìn mở thì tải nốt phần còn lại cho ảnh thu
+     * nhỏ. Khối đã tải không bao giờ gỡ; tệp trên R2 đệm `immutable` một năm.
+     *
+     * `onProgress` báo tiến độ của tập ĐANG CẦN, không phải của cả 18 khối:
+     * 100% = mọi thứ đáng lẽ đang thấy đã có trên màn.
      */
-    const opening = viewSet(latest.current.viewId);
-    const needed = new Set<number>();
-    if (opening?.only) [...opening.focus, ...opening.context].forEach((i) => needed.add(parts[i].chunk));
-    const order = [...atlas.chunks.keys()].sort((a, b) => Number(needed.has(b)) - Number(needed.has(a)));
-    const firstBatch = needed.size || atlas.chunks.length;
-    /** Khối của góc nhìn mở đầu đã đủ: bấm/rê chuột được dù phần còn lại chưa về. */
+    const chunkState = new Uint8Array(atlas.chunks.length); // 0 chưa · 1 đang tải · 2 xong
+    /** Khối của các mảnh đang vẽ — tải trước. */
+    let wanted: number[] = [];
+    /** Lưới góc nhìn đã mở: khối cho ảnh thu nhỏ, tải sau `wanted`. */
+    let galleryWanted = false;
+    let activeLoads = 0;
+    let loadFailed = false;
+    let lastPercent = -1;
+    /** Tập khối đầu tiên đã đủ: từ đó bấm/rê chuột được, kể cả khi khối khác đang về. */
     let interactive = false;
-    let loaded = 0;
     const loadChunk = async (ci: number) => {
       const chunk = atlas.chunks[ci];
       const compressed = !!chunk.gzip && typeof DecompressionStream !== "undefined";
@@ -788,36 +796,65 @@ export default function AnatomyScene({
         scene.add(mesh);
       });
       lastState = null;
-      if (needed.size === 0 || needed.has(ci)) {
-        loaded += 1;
-        callbacks.current.onProgress(Math.round((loaded / firstBatch) * 100));
-        if (loaded >= firstBatch) interactive = true;
-      }
       dirty = true;
     };
 
-    void (async () => {
-      try {
-        let cursor = 0;
-        await Promise.all(
-          Array.from({ length: PARALLEL_CHUNKS }, async () => {
-            while (cursor < order.length) {
-              const i = order[cursor++];
-              await loadChunk(i);
-            }
-          }),
-        );
-        if (!disposed) {
-          ready = true;
-          dirty = true;
-        }
-      } catch (error) {
-        if (!disposed && !(error instanceof DOMException && error.name === "AbortError")) {
-          console.error("[human-atlas] tải hình học thất bại:", error);
-          callbacks.current.onError("download");
-        }
+    /** Khối cho ảnh thu nhỏ, theo thứ tự thẻ trong lưới — thẻ đầu có ảnh trước. */
+    let thumbChunkOrder: number[] | null = null;
+    const galleryChunks = () => {
+      if (!thumbChunkOrder) {
+        const order = new Set<number>();
+        for (const id of thumbQueue) thumbChunks(id).forEach((c) => order.add(c));
+        thumbChunkOrder = [...order];
       }
-    })();
+      return thumbChunkOrder;
+    };
+    const reportProgress = () => {
+      const done = wanted.filter((c) => chunkState[c] === 2).length;
+      // `floor`: 100% chỉ khi đủ thật — 17/18 khối không được hiện thành 100.
+      const percent = wanted.length ? Math.floor((done / wanted.length) * 100) : 100;
+      if (percent === 100) interactive = true;
+      if (percent !== lastPercent) {
+        lastPercent = percent;
+        callbacks.current.onProgress(percent);
+      }
+    };
+    const pump = () => {
+      while (!disposed && !loadFailed && activeLoads < PARALLEL_CHUNKS) {
+        const next =
+          wanted.find((c) => chunkState[c] === 0) ??
+          (galleryWanted ? galleryChunks().find((c) => chunkState[c] === 0) : undefined);
+        if (next === undefined) return;
+        chunkState[next] = 1;
+        activeLoads += 1;
+        loadChunk(next)
+          .then(
+            () => {
+              chunkState[next] = 2;
+            },
+            (error: unknown) => {
+              if (disposed || (error instanceof DOMException && error.name === "AbortError")) return;
+              loadFailed = true;
+              console.error("[human-atlas] tải hình học thất bại:", error);
+              callbacks.current.onError("download");
+            },
+          )
+          .finally(() => {
+            activeLoads -= 1;
+            if (disposed) return;
+            reportProgress();
+            pump();
+          });
+      }
+    };
+    /** Tập khối của trạng thái hiện tại — gọi mỗi lần tập mảnh đang vẽ được tính lại. */
+    const demand = (chunks: Iterable<number>) => {
+      const next = [...new Set(chunks)].sort((a, b) => a - b);
+      if (next.length === wanted.length && next.every((c, i) => c === wanted[i])) return;
+      wanted = next;
+      reportProgress();
+      pump();
+    };
 
     // ------------------------------------------------------------ camera
     const fovTan = () => 2 * Math.tan(T.MathUtils.degToRad(camera.fov / 2));
@@ -1389,6 +1426,22 @@ export default function AnatomyScene({
     const THUMB_W = 240;
     const THUMB_H = 300;
     const thumbQueue = ATLAS_VIEWS.filter((v) => hasCard(v) && !v.missing && viewParts(v.id)).map((v) => v.id);
+    /** Khối mà ảnh của một góc nhìn vẽ tới — cùng điều kiện `inView` với `renderThumbnail`. */
+    const thumbChunkSets = new Map<string, Set<number>>();
+    const thumbChunks = (id: string) => {
+      let set = thumbChunkSets.get(id);
+      if (!set) {
+        const view = viewSet(id);
+        set = new Set(view ? parts.flatMap((p, i) => (inView(view, p.system, i) ? [p.chunk] : [])) : []);
+        thumbChunkSets.set(id, set);
+      }
+      return set;
+    };
+    /** Thẻ kế tiếp đã đủ hình học để chụp (lấy khỏi hàng đợi), hoặc undefined. */
+    const nextThumbnail = () => {
+      const at = thumbQueue.findIndex((id) => [...thumbChunks(id)].every((c) => chunkState[c] === 2));
+      return at < 0 ? undefined : thumbQueue.splice(at, 1)[0];
+    };
     const thumbBox = new T.Box3();
     const renderThumbnail = (id: string) => {
       const view = viewSet(id);
@@ -1673,6 +1726,8 @@ export default function AnatomyScene({
           (s.isolate ? selection.has(p.id) : inScope(p, i) || selection.has(p.id)) &&
           (s.isolate || selection.has(p.id) || (alphaOf(i) > 0.01 && !underSkin(p)));
         const visibleParts = parts.filter(isShown);
+        // Thứ đáng lẽ đang thấy mà chưa có hình học → tải ngay (xem "Chỉ tải khối…").
+        demand(visibleParts.map((p) => p.chunk));
         const nextLayoutKey =
           visibleParts.map((p) => p.id).join(",") + ":" + camera.aspect.toFixed(3);
         if (nextLayoutKey !== layoutKey) {
@@ -1890,8 +1945,13 @@ export default function AnatomyScene({
       controls.autoRotateSpeed = 0.65;
       controls.update();
       if (controls.autoRotate) dirty = true;
-      // Một ảnh thu nhỏ mỗi khung, sau khi tải xong và lúc camera đứng yên.
-      const nextThumb = ready && sized && !tween && callbacks.current.onThumbnail ? thumbQueue.shift() : undefined;
+      // Lưới góc nhìn mở lần đầu → tải nốt khối cho ảnh thu nhỏ, sau khối đang cần.
+      if (!galleryWanted && callbacks.current.onThumbnail) {
+        galleryWanted = true;
+        pump();
+      }
+      // Một ảnh thu nhỏ mỗi khung, khi khối của thẻ ấy đã về và camera đứng yên.
+      const nextThumb = sized && !tween && callbacks.current.onThumbnail ? nextThumbnail() : undefined;
       if (nextThumb) renderThumbnail(nextThumb);
       if (dirty) updateScroll();
 

@@ -841,6 +841,7 @@
     "catalogLoading": "Đang tải danh mục giải phẫu…",
     "loading": "Đang tải mô hình cơ thể 3D…",
     "loadingDetail": "{percent}% · {count} mảnh",
+    "loadingMore": "Đang tải thêm lớp giải phẫu… {percent}%",
     "error": "Không thể tải mô hình 3D. Vui lòng thử lại.",
     "webglError": "Trình duyệt này không khởi động được trình xem 3D. Hãy thử một trình duyệt có bật WebGL.",
     "contextLost": "Thiết bị đã tạm dừng phiên 3D. Bấm Thử lại để tiếp tục.",

@@ -77,7 +77,6 @@ import {
 } from "@/components/ui/sheet";
 import { AtlasErrorBoundary } from "@/components/human-atlas/atlas-error-boundary";
 import { PANEL } from "@/components/human-atlas/panel";
-import { StructureDetail } from "@/components/human-atlas/structure-detail";
 import { StructureSearch } from "@/components/human-atlas/structure-search";
 import { StructuresPanel } from "@/components/human-atlas/structures-panel";
 import { SystemsPanel } from "@/components/human-atlas/systems-panel";
@@ -94,6 +93,17 @@ import type { SceneError } from "@/components/human-atlas/anatomy-scene";
  * và trang bài viết không mang theo một byte nào của atlas.
  */
 const AnatomyScene = dynamic(() => import("@/components/human-atlas/anatomy-scene"), {
+  ssr: false,
+});
+
+/**
+ * Bảng chi tiết kéo theo ~250 KB JSON mô tả (`descriptions.generated.json`,
+ * `group-descriptions.generated.json`) mà chỉ cần khi người đọc chọn một cấu
+ * trúc. Tách khỏi chunk của trang; tải sẵn ở nền khi atlas đã dùng được (xem
+ * `usable`), nên lần chọn đầu không phải chờ.
+ */
+const loadStructureDetail = () => import("@/components/human-atlas/structure-detail");
+const StructureDetail = dynamic(() => loadStructureDetail().then((m) => m.StructureDetail), {
   ssr: false,
 });
 
@@ -119,13 +129,27 @@ const initial: SceneState = {
 
 type Failure = SceneError | "catalog";
 
-async function loadCatalog(signal: AbortSignal): Promise<Atlas> {
+/**
+ * Danh mục đã parse, giữ qua các lần mount: đổi vi ↔ en là một route khác, viewer
+ * mount lại — không cần tải và chạy Zod lại trên 1,3 MB JSON. Hỏng thì bỏ, để
+ * "Thử lại" tải mới. Không giữ HÌNH HỌC ở đây: hàng trăm MB sau giải nén mà giữ
+ * khi rời trang là rò bộ nhớ; khối hình học đã có đệm HTTP `immutable`.
+ */
+let catalogCache: Promise<Atlas> | null = null;
+function cachedCatalog(): Promise<Atlas> {
+  catalogCache ??= loadCatalog().catch((error: unknown) => {
+    catalogCache = null;
+    throw error;
+  });
+  return catalogCache;
+}
+
+async function loadCatalog(): Promise<Atlas> {
   // Bản gzip nhẹ hơn 6 lần (220 KB so với 1,3 MB); trình duyệt thiếu
   // DecompressionStream thì lấy bản thô.
   const compressed = typeof DecompressionStream !== "undefined";
-  const response = await fetch(atlasDataUrl(compressed ? "atlas.json.gz" : "atlas.json"), {
-    signal,
-  });
+  // Không gắn AbortSignal: lời hứa dùng chung giữa các lần mount (`cachedCatalog`).
+  const response = await fetch(atlasDataUrl(compressed ? "atlas.json.gz" : "atlas.json"));
   const buffer = await decodeModelResponse(response, null, compressed);
   const parsed = atlasSchema.safeParse(JSON.parse(new TextDecoder().decode(buffer)));
   if (!parsed.success) throw new Error(`atlas.json sai cấu trúc: ${parsed.error.message}`);
@@ -230,17 +254,21 @@ export function HumanAtlas({
 
   // --------------------------------------------------------- tải danh mục
   useEffect(() => {
-    const abort = new AbortController();
+    let live = true;
     setFailure(null);
     setProgress(0);
-    loadCatalog(abort.signal)
-      .then(setAtlas)
+    cachedCatalog()
+      .then((value) => {
+        if (live) setAtlas(value);
+      })
       .catch((error: unknown) => {
-        if (error instanceof DOMException && error.name === "AbortError") return;
+        if (!live) return;
         console.error("[human-atlas] không tải được danh mục:", error);
         setFailure("catalog");
       });
-    return () => abort.abort();
+    return () => {
+      live = false;
+    };
   }, [attempt]);
 
   const loaded = atlas !== null;
@@ -491,6 +519,7 @@ export function HumanAtlas({
 
   const retry = () => {
     setAtlas(null);
+    setUsable(false);
     setChosen(null);
     setDetails(false);
     setState(initial);
@@ -681,7 +710,20 @@ export function HumanAtlas({
     [atlas, locale],
   );
 
-  const onProgress = useCallback((n: number) => setProgress(n), []);
+  /**
+   * Cảnh tải hình học THEO NHU CẦU (anatomy-scene, "Chỉ tải khối…"): `progress`
+   * là tiến độ của thứ đang cần thấy, có thể tụt dưới 100 khi người đọc kéo tách
+   * lớp hay bật một hệ chưa tải. Bảng "đang tải" che giữa màn chỉ cho lần đầu;
+   * sau đó là một viên nhỏ, không chặn thao tác với phần đã có.
+   */
+  const [usable, setUsable] = useState(false);
+  useEffect(() => {
+    if (usable) void loadStructureDetail();
+  }, [usable]);
+  const onProgress = useCallback((n: number) => {
+    setProgress(n);
+    if (n >= 100) setUsable(true);
+  }, []);
   const onError = useCallback((code: SceneError) => setFailure(code), []);
 
   /** Độ tách KHÔNG GIAN (nửa đầu slider là bóc lớp, cảnh vẫn nguyên khối). */
@@ -1137,7 +1179,7 @@ export function HumanAtlas({
       {/* Điện thoại: không có dòng gợi ý ở đáy (thanh điều khiển chiếm chỗ), nên
           hiện một viên gợi ý phía trên thanh cho tới lần chạm đầu tiên rồi ẩn.
           `pointer-events-none`: không bao giờ chặn cú chạm vào mô hình. */}
-      {!interacted && progress >= 100 && !failure && (
+      {!interacted && usable && !failure && (
         <p
           aria-hidden
           className="pointer-events-none absolute inset-x-3 bottom-[calc(6.75rem+env(safe-area-inset-bottom))] z-10 hidden justify-center atlas-phone:flex"
@@ -1149,7 +1191,21 @@ export function HumanAtlas({
       )}
 
       {/* -------------------------------------------- đang tải / lỗi */}
-      {!failure && progress < 100 && (
+      {!failure && usable && progress < 100 && (
+        <p
+          role="status"
+          className={cn(
+            PANEL,
+            "pointer-events-none absolute left-1/2 z-30 flex -translate-x-1/2 items-center gap-2 rounded-full px-3 py-1.5 text-xs",
+            // Dưới chip góc nhìn (giữa trên ở màn rộng, dưới tiêu đề ở điện thoại).
+            "atlas-wide:top-[4.25rem] atlas-phone:top-[8.75rem] atlas-short:top-14",
+          )}
+        >
+          <Activity aria-hidden className="size-3.5 shrink-0 animate-pulse text-accent" />
+          <span>{t("loadingMore", { percent: progress })}</span>
+        </p>
+      )}
+      {!failure && !usable && (
         <div
           role="status"
           className={cn(

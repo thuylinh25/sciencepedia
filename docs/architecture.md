@@ -378,7 +378,7 @@ liệu, mã lỗi (chữ do giao diện dịch), nền theo theme và thêm `foc
 
 ### Dữ liệu trên R2, prefix có dấu vân — và bucket PHẢI có CORS
 
-~33 MB nén mỗi lượt xem: phát từ Vercel là tính băng thông, R2 thì không. Khoá là
+~44 MB nén cho cả cơ thể (mỗi lượt xem chỉ tải phần đang vẽ — mục dưới): phát từ Vercel là tính băng thông, R2 thì không. Khoá là
 `human-atlas/<phiên bản>-<sha256>/…`, đệm `immutable` một năm; dữ liệu đổi thì chạy lại
 `scripts/upload-human-atlas.ts` rồi sửa `HUMAN_ATLAS_DATA_VERSION` — tệp trước, hằng số sau.
 
@@ -386,6 +386,27 @@ Viewer đọc bằng `fetch()`, không phải `<img>`, nên cần CORS — thứ
 từng cần. Luật GET/HEAD mọi origin được đặt trên bucket ngày 2026-09-28. Gỡ nó thì atlas
 báo "Không thể tải mô hình 3D" trong khi ảnh vẫn hiện bình thường: kiểm header
 `Access-Control-Allow-Origin` trước khi đọc code.
+
+### Hình học tải theo thứ đang VẼ, không tải cả cơ thể (2026-10-01)
+
+Trước: mở trang là tải cả 18 khối (45 MB, ~9 s) và chỉ bấm được khi xong hết. Nhưng khung
+mặc định là da đục, và vòng vẽ đã bỏ mọi lớp nằm dưới da (`underSkin`) — thứ người đọc
+thấy chỉ cần da + tai + mắt: khối 0, 10, 11 và da chia nhỏ, ~10 MB. Nay tập khối cần
+tải suy từ CHÍNH `isShown` của vòng vẽ (`demand()` trong `anatomy-scene.tsx`), không từ
+một danh sách riêng: kéo "Tách các lớp", bật hệ, mở góc nhìn, `?structure=`, chọn từ ô
+tìm — khối của mảnh vừa hiện lên đầu hàng đợi; lưới góc nhìn mở thì tải nốt cho ảnh thu
+nhỏ. Đo headless: 45,3 MB/66 request → 11,7 MB/51; `?structure=heart` chỉ 2 khối.
+
+Cái giá có chủ ý: lần đầu kéo "Tách các lớp" mới tải ~34 MB còn lại (viên "Đang tải
+thêm lớp…" thay cho bảng che giữa màn). Đừng "sửa" bằng tải nền toàn bộ ngay sau khi
+dùng được — đó lại là 45 MB cho người chỉ xoay và tra một cấu trúc. Muốn ít khối hơn
+cho khung mặc định thì phải chia khối lại (da/tóc/môi đang nằm chung khối 10, 11 với
+cơ, mạch) — đổi dữ liệu trên R2, không phải đổi loader.
+
+Server không đụng dữ liệu atlas: route là ISR, bản cache phục vụ mọi lượt xem. CPU
+Vercel đo được ở route này là lượt tái dựng — mỗi 10 phút vì `getRootCategories`
+(`revalidate: 600`) của layout chung kéo cả route xuống, không phải `revalidate = 3600`
+của trang.
 
 ### Tên tiếng Việt: bảng duyệt tay trước, bảng ghép thuật ngữ sau
 

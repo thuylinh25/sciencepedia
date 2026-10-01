@@ -85,7 +85,8 @@ export default async function HumanAtlasPage({
 
   return (
     <>
-      {/* 33 MB tải từ R2 ngay khi trang chạy — bắt tay TLS sớm, chỉ ở route này. */}
+      {/* Danh mục + ~10 MB hình học khung mặc định tải từ R2 ngay khi trang chạy
+          (phần còn lại theo nhu cầu — anatomy-scene) — bắt tay TLS sớm, chỉ ở route này. */}
       <link rel="preconnect" href={r2Origin} crossOrigin="anonymous" />
 
       <JsonLd
