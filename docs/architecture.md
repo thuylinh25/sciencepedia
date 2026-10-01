@@ -50,7 +50,7 @@ Mọi `generateStaticParams` đều bọc `try/catch` trả `[]` khi truy vấn 
 // src/app/[locale]/articles/[slug]/page.tsx
 try {
   const slugs = await getPublishedSlugs();
-  return slugs.slice(0, 50).map(({ slug }) => ({ slug }));
+  return slugs.slice(0, 10).map(({ slug }) => ({ slug }));
 } catch (error) {
   console.warn("[build] bỏ qua prerender bài viết:", (error as Error).message);
   return [];
@@ -60,6 +60,35 @@ try {
 Hệ quả: `next build` chạy được với `DATABASE_URL` giả, chỉ prerender ít trang hơn.
 Đã kiểm chứng 2026-09-02. Đừng "sửa" các khối try/catch này thành throw — chúng
 là chủ ý, không phải nuốt lỗi cẩu thả.
+
+### ISR phải tất định — Vercel tính ISR Write cho mọi output đổi (2026-10-01)
+
+Vercel đo ISR Write theo đơn vị 8 KB, và **không tính** lượt tái dựng ra output
+y hệt bản cũ. Nên chi phí ISR không nằm ở interval mà ở ba thứ nhân nhau: output
+có đổi không, trang nặng bao nhiêu, bao nhiêu lần ghi. Audit 2026-10-01 (ISR Writes
+340K/200K) tìm ra cả ba, đã sửa:
+
+- **`now: new Date()` trong `i18n/request.ts`** bị next-intl serialize vào RSC/HTML
+  mọi trang (`"now":"$D…"`) → mỗi lượt tái dựng là một write đầy đủ, kể cả /contact.
+  Không chỗ nào dùng `now`. Đừng đặt lại; cần thời gian tương đối thì truyền `now`
+  tại component. `sitemap.ts` cũng từng điền `new Date()` cho lastmod — nay chỉ in
+  mốc thật từ CSDL, thiếu thì bỏ trống.
+- **Layout chung dùng `getRootCategories`** (600 s, tag `articles`): dữ liệu cache ở
+  layout đặt nhịp cho MỌI trang, nên /contact, /solar-system (khai 21600),
+  /human-atlas (3600)… đều thành ISR 10 phút, và lưu một bài là cả site stale.
+  Menu/footer nay dùng `getNavigationCategories` (4 trường, tag `categories`, 1 ngày).
+  Quy tắc: **thứ gì đưa vào layout chung phải không phụ thuộc bài viết.**
+- **Mỗi deploy ghi lại mọi trang dựng sẵn**; 50 bài × 2 ngôn ngữ (~12 unit/bài vì
+  messages toàn site nằm trong cả HTML lẫn `.rsc`) là 78% của ~1.500 unit/build, với
+  ~10 deploy/ngày. Nay dựng sẵn 10 bài.
+
+Trang chủ GIỮ `revalidate` 120 s (từ `getLatestArticles`): đường xuất bản của máy
+(`scripts/publish.ts`) và các script sửa bài ghi thẳng CSDL, không gọi revalidate —
+nâng TTL là bài mới chậm lên trang chủ. Nâng được khi các đường đó gọi
+`/api/revalidate` cho trang chủ.
+
+Kiểm tính tất định: so hai lượt tái dựng có CÙNG build ID (`"b":"…"` trong RSC) —
+khác build ID là đang so hai deploy, không phải hai lượt tái dựng.
 
 ---
 
@@ -404,9 +433,8 @@ cho khung mặc định thì phải chia khối lại (da/tóc/môi đang nằm 
 cơ, mạch) — đổi dữ liệu trên R2, không phải đổi loader.
 
 Server không đụng dữ liệu atlas: route là ISR, bản cache phục vụ mọi lượt xem. CPU
-Vercel đo được ở route này là lượt tái dựng — mỗi 10 phút vì `getRootCategories`
-(`revalidate: 600`) của layout chung kéo cả route xuống, không phải `revalidate = 3600`
-của trang.
+Vercel đo được ở route này là lượt tái dựng (xem "ISR phải tất định" — layout từng
+kéo route xuống 10 phút; đã gỡ 2026-10-01).
 
 ### Tên tiếng Việt: bảng duyệt tay trước, bảng ghép thuật ngữ sau
 

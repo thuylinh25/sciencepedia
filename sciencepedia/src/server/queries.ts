@@ -441,6 +441,30 @@ export const getRootCategories = unstable_cache(
   { revalidate: 600, tags: ["categories", "articles"] },
 );
 
+/**
+ * Lĩnh vực gốc cho thanh điều hướng và footer — CHỈ bốn trường giao diện dùng.
+ *
+ * Tách khỏi `getRootCategories` vì layout chung bọc MỌI trang: dữ liệu cache của
+ * layout quyết định nhịp tái dựng của cả site. `getRootCategories` mang số bài
+ * (tag `articles`, 600 s) — dùng nó ở layout là (1) mọi trang, kể cả trang tĩnh
+ * như /contact, bị kéo về ISR 10 phút, và (2) mỗi lần lưu một bài là cả site
+ * stale. Menu không in số bài, nên không có lý do gì để phụ thuộc bài viết.
+ *
+ * Chỉ tag `categories`: tạo/sửa/xoá danh mục trong admin đã gọi
+ * `revalidateTag("categories")` (`server/actions/taxonomy.ts`). TTL một ngày là
+ * lưới hứng cho sửa danh mục ngoài admin (script, SQL tay).
+ */
+export const getNavigationCategories = unstable_cache(
+  async () =>
+    prisma.category.findMany({
+      where: { parentId: null },
+      orderBy: [{ order: "asc" }, { slug: "asc" }],
+      select: { slug: true, name: true, nameEn: true, icon: true },
+    }),
+  ["navigation-categories"],
+  { revalidate: 86400, tags: ["categories"] },
+);
+
 export const getAllCategories = unstable_cache(
   async () => {
     const [categories, totals] = await Promise.all([

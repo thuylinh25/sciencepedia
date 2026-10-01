@@ -10,7 +10,7 @@ import {
 
 import { Link } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
-import { getRootCategories } from "@/server/queries";
+import { getNavigationCategories } from "@/server/queries";
 import { CONTACT_EMAIL } from "@/lib/seo";
 import { SITE_TOOLS } from "@/lib/site-tools";
 import { Logo } from "@/components/layout/logo";
@@ -36,10 +36,12 @@ export async function SiteFooter() {
   const locale = (await getLocale()) as Locale;
   const year = new Date().getFullYear();
 
-  // Cùng lý do như thanh điều hướng: danh sách ghim cứng bỏ sót lĩnh vực mới
+  // Cùng lý do như thanh điều hướng: danh sách ghim cứng bỏ sót lĩnh vực mới.
+  // Cùng query với thanh điều hướng — footer nằm trong layout chung, xem
+  // `getNavigationCategories` về vì sao nó không được phụ thuộc bài viết.
   let categories: { slug: string; name: string; nameEn: string }[] = [];
   try {
-    categories = await getRootCategories();
+    categories = await getNavigationCategories();
   } catch (error) {
     console.warn("[footer] không nạp được danh mục:", (error as Error).message);
   }

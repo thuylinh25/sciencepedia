@@ -12,6 +12,9 @@ export default getRequestConfig(async ({ requestLocale }) => {
     locale,
     messages: (await import(`../../messages/${locale}.json`)).default,
     timeZone: "Asia/Ho_Chi_Minh",
-    now: new Date(),
+    // KHÔNG đặt `now` ở đây. next-intl serialize nó vào RSC/HTML của MỌI trang
+    // ("now":"$D…"), nên mỗi lượt tái dựng ISR ra output khác dù dữ liệu y hệt —
+    // và Vercel tính ISR Write cho mọi output đổi (docs/architecture.md, mục
+    // "ISR phải tất định"). Cần thời gian tương đối thì truyền `now` tại chỗ.
   };
 });

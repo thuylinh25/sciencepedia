@@ -9,7 +9,14 @@ import {
 } from "@/server/queries";
 import { getGlossarySlugs } from "@/server/glossary";
 
-/** Sinh cả hai bản ngôn ngữ cho mỗi đường dẫn, kèm hreflang alternates. */
+/**
+ * Sinh cả hai bản ngôn ngữ cho mỗi đường dẫn, kèm hreflang alternates.
+ *
+ * `lastModified` chỉ có khi biết THẬT (mốc sửa trong CSDL). Bản trước điền
+ * `new Date()` cho mọi trang còn lại: sitemap đổi ở mỗi lượt tái dựng ISR dù
+ * không gì đổi (một ISR Write vô ích mỗi 10 phút), và lastmod "luôn là bây giờ"
+ * là tín hiệu sai mà Google học cách bỏ qua. Thiếu thì bỏ trống — đúng chuẩn.
+ */
 function entry(
   path: string,
   options: {
@@ -20,7 +27,7 @@ function entry(
 ): MetadataRoute.Sitemap {
   return routing.locales.map((locale) => ({
     url: absoluteUrl(`/${locale}${path === "/" ? "" : path}`),
-    lastModified: options.lastModified ?? new Date(),
+    ...(options.lastModified ? { lastModified: options.lastModified } : {}),
     changeFrequency: options.changeFrequency ?? "weekly",
     priority: options.priority ?? 0.6,
     alternates: {
@@ -34,12 +41,17 @@ function entry(
   }));
 }
 
-export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const staticEntries = [
-    ...entry("/", { changeFrequency: "daily", priority: 1 }),
-    ...entry("/articles", { changeFrequency: "daily", priority: 0.9 }),
-    ...entry("/categories", { priority: 0.8 }),
-    ...entry("/tags", { priority: 0.5 }),
+/**
+ * `latest` = mốc sửa của bài mới nhất — thứ thật sự làm các trang danh sách
+ * (trang chủ, /articles, /categories, /tags) đổi nội dung. Không có (CSDL
+ * không với tới) thì để trống.
+ */
+function staticEntries(latest?: Date): MetadataRoute.Sitemap {
+  return [
+    ...entry("/", { changeFrequency: "daily", priority: 1, lastModified: latest }),
+    ...entry("/articles", { changeFrequency: "daily", priority: 0.9, lastModified: latest }),
+    ...entry("/categories", { priority: 0.8, lastModified: latest }),
+    ...entry("/tags", { priority: 0.5, lastModified: latest }),
     ...entry("/solar-system", { changeFrequency: "monthly", priority: 0.8 }),
     ...entry("/space-map", { changeFrequency: "monthly", priority: 0.7 }),
 
@@ -77,7 +89,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...entry("/privacy", { changeFrequency: "yearly", priority: 0.3 }),
     ...entry("/terms", { changeFrequency: "yearly", priority: 0.3 }),
   ];
+}
 
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   let articles: Awaited<ReturnType<typeof getPublishedSlugs>> = [];
   let categories: Awaited<ReturnType<typeof getAllCategories>> = [];
   let tags: Awaited<ReturnType<typeof getAllTags>> = [];
@@ -91,8 +105,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   } catch (error) {
     // Không có DB lúc build thì vẫn xuất sitemap với các trang tĩnh
     console.warn("[sitemap] không đọc được dữ liệu:", (error as Error).message);
-    return staticEntries;
+    return staticEntries();
   }
+
+  const modified = (a: { updatedAt: Date; publishedAt: Date | null }) => a.updatedAt ?? a.publishedAt;
+  const latest = articles.reduce<Date | undefined>(
+    (max, a) => (!max || modified(a) > max ? modified(a) : max),
+    undefined,
+  );
 
   // Try riêng: bảng thuật ngữ hỏng (chưa migrate) không được kéo mất cả phần
   // bài viết ra khỏi sitemap.
@@ -110,20 +130,21 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       }),
     ),
 
-    ...staticEntries,
+    ...staticEntries(latest),
 
     ...articles.flatMap((article) =>
       entry(`/articles/${article.slug}`, {
-        lastModified: article.updatedAt,
+        lastModified: modified(article),
         changeFrequency: "monthly",
         priority: 0.8,
       }),
     ),
 
     ...categories.flatMap((category) =>
-      entry(`/categories/${category.slug}`, { priority: 0.7 }),
+      entry(`/categories/${category.slug}`, { priority: 0.7, lastModified: category.updatedAt }),
     ),
 
+    // `Tag` không có cột `updatedAt` — lastmod bỏ trống thay vì bịa.
     ...tags.flatMap((tag) => entry(`/tags/${tag.slug}`, { priority: 0.4 })),
   ];
 }

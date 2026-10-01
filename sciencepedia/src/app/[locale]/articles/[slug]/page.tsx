@@ -67,14 +67,21 @@ import { AssetImage } from "@/components/ui/asset-image";
 export const revalidate = 300;
 
 /**
- * Dựng sẵn 50 bài mới nhất; phần còn lại render theo yêu cầu.
+ * Dựng sẵn 10 bài mới nhất; phần còn lại render theo yêu cầu (dynamicParams
+ * mặc định true) rồi vào cache ISR như bài dựng sẵn.
+ *
+ * Vì sao 10 chứ không 50: mỗi deploy ghi lại MỌI trang dựng sẵn vào cache ISR.
+ * 50 bài × 2 ngôn ngữ là ~1.180 ISR Write unit mỗi lần deploy — 78% cả bản
+ * build — dù phần lớn chưa ai mở trước lần deploy kế tiếp. Render theo yêu cầu
+ * chỉ ghi bài có người đọc; người đọc đầu tiên chờ thêm một lượt render.
+ *
  * Nếu không kết nối được DB lúc build (CI, preview, container chưa có DB),
  * trả về mảng rỗng để build vẫn qua — mọi trang khi đó render theo yêu cầu.
  */
 export async function generateStaticParams() {
   try {
     const slugs = await getPublishedSlugs();
-    return slugs.slice(0, 50).map(({ slug }) => ({ slug }));
+    return slugs.slice(0, 10).map(({ slug }) => ({ slug }));
   } catch (error) {
     console.warn(
       "[build] bỏ qua prerender bài viết:",

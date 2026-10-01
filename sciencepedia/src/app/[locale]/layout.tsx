@@ -6,7 +6,7 @@ import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 
 import { routing, type Locale } from "@/i18n/routing";
-import { getRootCategories } from "@/server/queries";
+import { getNavigationCategories } from "@/server/queries";
 import { Providers } from "@/components/providers";
 import { SiteHeader, type NavCategory } from "@/components/layout/site-header";
 import { SearchHeaderForm } from "@/components/search/search-header-form";
@@ -72,18 +72,13 @@ export async function generateMetadata({
  * Lĩnh vực trên thanh điều hướng lấy thẳng từ CSDL — trước đây danh sách bị
  * ghim cứng nên thêm lĩnh vực mới là menu không có.
  *
- * `getRootCategories` đã được cache nên layout vẫn render tĩnh được; bọc
+ * `getNavigationCategories` (không phải `getRootCategories`): dữ liệu cache ở
+ * layout đặt nhịp tái dựng cho MỌI trang — xem chú thích của hàm ấy. Bọc
  * try/catch để `next build` không gãy khi không kết nối được CSDL.
  */
 async function navCategories(): Promise<NavCategory[]> {
   try {
-    const categories = await getRootCategories();
-    return categories.map(({ slug, name, nameEn, icon }) => ({
-      slug,
-      name,
-      nameEn,
-      icon,
-    }));
+    return await getNavigationCategories();
   } catch (error) {
     console.warn("[layout] không nạp được danh mục:", (error as Error).message);
     return [];
