@@ -10,6 +10,7 @@ import { OVERVIEW_VIEWS } from "./views-overviews";
 import { REPRODUCTIVE_VIEWS } from "./views-reproductive";
 import { RESPIRATORY_VIEWS } from "./views-respiratory";
 import { SENSORY_VIEWS } from "./views-sensory";
+import { SKELETAL_VIEWS } from "./views-skeletal";
 import { URINARY_VIEWS } from "./views-urinary";
 
 /*
@@ -372,6 +373,7 @@ export const SYSTEM_VIEWS: readonly AtlasViewDef[] = [
   ...SENSORY_VIEWS,
   ...LYMPHATIC_VIEWS,
   ...NERVOUS_VIEWS,
+  ...SKELETAL_VIEWS,
 ];
 
 /** Registry chung: lưới, deep link, ảnh thu nhỏ và tìm kiếm đều đọc từ đây. */
