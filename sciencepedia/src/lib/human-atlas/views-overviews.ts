@@ -14,8 +14,10 @@ import type { AtlasViewDef } from "./views";
  * Thẻ hệ và `?system=` mở tổng quan của hệ nếu hệ có (xem `overviewFor`).
  */
 
+// Đồng bộ với `CORONARY_ARTERIES` (views-cardiac.ts): thiếu ĐM nón / nhánh vách ở đây thì
+// cấu trúc "Động mạch vành" không nằm trọn trong tổng quan và bảng rơi vào "Phần còn lại".
 const CORONARY =
-  /coronary|interventricular branch|marginal branch of right|ventricular branch of right|conus branch|diagonal branch|circumflex branch of left/i;
+  /coronary|interventricular branch|marginal branch of right|ventricular branch of right|conus branch|diagonal branch|circumflex branch of left|^(left |right )?conus artery$|septal branch of ((left|right) )?(anterior|posterior) interventricular artery$/i;
 
 export const OVERVIEW_VIEWS: readonly AtlasViewDef[] = [
   {

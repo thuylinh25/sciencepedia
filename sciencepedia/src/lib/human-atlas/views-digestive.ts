@@ -49,11 +49,13 @@ const PANCREAS = rule("FMA7198", "FMA63120", "FMA10419", "FMA63103");
 // Mạch máu (hệ động/tĩnh mạch).
 const CELIAC: PartRule = {
   systems: ["arterial"],
-  name: /^celiac (trunk|artery)$|gastric artery$|hepatic artery|^splenic artery$|gastroduodenal|pancreaticoduodenal artery$/i,
+  name: /^celiac (trunk|artery)$|gastric artery$|hepatic artery|^splenic artery$|gastroduodenal|pancreaticoduodenal artery$|gastro-epiploic artery$|\bpancreatic artery$/i,
+  // "…epigastric artery" (thượng vị — thành bụng) cũng tận cùng bằng "gastric artery".
+  exclude: /epigastric/i,
 };
 const MESENTERIC_ARTERIES: PartRule = {
   systems: ["arterial"],
-  name: /mesenteric artery$|^ileal artery$|colic artery|ileocolic artery$|of (inferior branch of )?ileocolic artery$|of left colic artery$|^superior rectal artery$/i,
+  name: /mesenteric artery$|^ileal artery$|colic artery|ileocolic artery$|of (inferior branch of )?ileocolic artery$|of left colic artery$|^superior rectal artery$|cecal artery$|appendicular artery$|marginal artery of colon$|sigmoid artery$/i,
 };
 const PORTAL_SYSTEM: PartRule = {
   systems: ["venous"],

@@ -1,6 +1,7 @@
 import type { SystemId } from "./anatomy";
 import { fold } from "./search";
 import resolved from "./view-parts.generated.json";
+import { ARTERIAL_VIEWS } from "./views-arterial";
 import { CARDIAC_VIEWS } from "./views-cardiac";
 import { DIGESTIVE_VIEWS } from "./views-digestive";
 import { ENDOCRINE_VIEWS } from "./views-endocrine";
@@ -376,6 +377,7 @@ export const SYSTEM_VIEWS: readonly AtlasViewDef[] = [
   ...NERVOUS_VIEWS,
   ...SKELETAL_VIEWS,
   ...MUSCULAR_VIEWS,
+  ...ARTERIAL_VIEWS,
 ];
 
 /** Registry chung: lưới, deep link, ảnh thu nhỏ và tìm kiếm đều đọc từ đây. */
