@@ -6,9 +6,11 @@ import type { AtlasViewDef, PartRule } from "./views";
  * Audit dữ liệu: 169 mảnh — 13 mang mã FMA (lách, 2 thuỳ tuyến ức, 10 lưới
  * "Lymphatic vessels of <vùng>") và 156 hạch của UMCG (CC BY-NC-SA,
  * `scripts/import-umcg-lymphatic.ts`, mã `ZA-…`, ~110 nhóm có tên). Mạch bạch huyết
- * là LƯỚI theo vùng, không tách ống ngực/bể dưỡng chấp — lưới ngực trải y 0,98–1,58 m,
- * có thể đã chứa ống ngực; chưa kiểm bằng mắt nên KHÔNG ghi "thiếu ống ngực", và
- * đừng dựng góc nhìn "ống ngực". Không có hạnh nhân (amiđan).
+ * là LƯỚI theo vùng, không tách ống ngực/bể dưỡng chấp — lưới ngực trải y 0,98–1,58 m
+ * và CÓ ống ngực: đã xem bằng mắt (2026-10-01) — thân liền dọc trước cột sống ngực, uốn
+ * theo đường cong cột sống, cuối trên vòng sang trái lên cổ; xương bối cảnh vẽ mờ nên
+ * không che. KHÔNG ghi "thiếu ống ngực"; nhưng ống nằm chung một mesh với các mạch
+ * nhỏ, nên đừng dựng góc nhìn "ống ngực" riêng. Không có hạnh nhân (amiđan).
  *
  * "Subaortic nodes" (TA: nodi subaortici, nhóm hạch chậu chung dưới chỗ chia động
  * mạch chủ) nằm ở y ≈ 1,01 m, ngang L5 — thuộc chậu, không phải "trạm 5" trung thất

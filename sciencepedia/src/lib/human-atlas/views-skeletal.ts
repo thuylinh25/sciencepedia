@@ -9,8 +9,9 @@ import type { AtlasViewDef, PartRule } from "./views";
  * 4 xương vừng bàn chân, sụn thanh quản và sụn cánh mũi lớn (FMA xếp là sụn —
  * `skeletal.cartilage`).
  * KHÔNG có xương cụt (chỉ có cơ cụt/chậu cụt/mu cụt), xương con tai giữa, xương vừng bàn tay. Sụn sườn VIII–X không có mảnh
- * riêng, nhưng sụn sườn VII kéo tới y 1,18 m, x ±0,11 m — có thể đã gồm bờ sườn, nên
- * không ghi "thiếu". Xương lệ (hệ giác quan) và xoăn mũi dưới (hệ hô hấp của dữ liệu) là
+ * riêng: chúng nằm trong mảnh sụn sườn VII (y tới 1,18 m, x ±0,11 m). Đã xem bằng mắt
+ * (2026-10-01, trước/chéo/bên): bờ sườn là một cung liền từ mũi ức xuống đầu trước sườn
+ * VIII–X, không hở — nên không ghi "thiếu", và đừng tách "sụn sườn VIII–X". Xương lệ (hệ giác quan) và xoăn mũi dưới (hệ hô hấp của dữ liệu) là
  * xương mặt: thêm thẳng vào tổng quan và nhóm sọ theo mã FMA, như hầu ở tổng quan tiêu hoá.
  *
  * Id có tiền tố `bone-`: `skull`, `cervical-spine`, `thoracic-cage`… đã là góc nhìn
