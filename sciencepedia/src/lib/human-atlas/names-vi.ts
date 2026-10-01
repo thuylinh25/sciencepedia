@@ -24,11 +24,20 @@
  * tiếng Anh gốc ngay dưới tên Việt, và phần ghi công nói rõ nguồn gốc bản
  * dịch. Sửa một tên sai: thêm `FMAxxxx: "…"` ở đây (một khái niệm) hoặc sửa
  * cụm trong `terms-vi.ts` (mọi tên chứa cụm đó).
+ *
+ * ## Tên cấu trúc chính đã duyệt (`names-vi.reviewed.json`)
+ *
+ * Cơ quan, xương, cơ — tập "cấu trúc chính" của `scripts/atlas-descriptions.ts`,
+ * thứ người đọc chạm nhiều nhất. Tên ghép của chúng đã qua science-editor từng
+ * tên (sửa hoặc chấp nhận), nên bỏ nhãn "chưa duyệt". Tên science-editor không
+ * chắc thì KHÔNG vào tệp — giữ nhãn. Gộp bằng `scripts/atlas-names-review.ts`.
+ * Bảng tay bên dưới thắng tệp.
  */
 import { translateAnatomy } from "./terms-vi";
 import { SUPPLEMENT_NAMES_VI } from "./supplements";
+import REVIEWED from "./names-vi.reviewed.json";
 
-export const VI_NAMES: Record<string, string> = {
+const HAND_NAMES: Record<string, string> = {
   // Tim và mạch lớn
   FMA7088: "Tim",
   FMA7101: "Tâm thất trái",
@@ -145,6 +154,8 @@ export const VI_NAMES: Record<string, string> = {
   FMA22353: "Cơ may",
   FMA13407: "Cơ ức đòn chũm",
 };
+
+export const VI_NAMES: Record<string, string> = { ...(REVIEWED.names as Record<string, string>), ...HAND_NAMES };
 
 /**
  * Mảnh Z-Anatomy: "Left nerve to mylohyoid muscle" là bản BÊN TRÁI của cả cấu

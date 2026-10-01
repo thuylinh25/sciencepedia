@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { viName } from "./names-vi";
+import { viName, viNameStatus } from "./names-vi";
 import { SUPPLEMENTS } from "./supplements";
 
 test("mảnh Z-Anatomy: trái/phải đứng cuối cả tên, ngoặc số dây sọ sau cùng", () => {
@@ -14,6 +14,14 @@ test("mảnh Z-Anatomy: trái/phải đứng cuối cả tên, ngoặc số dây
 
 test("tên BodyParts3D giữ trái/phải sau cụm nó bổ nghĩa", () => {
   assert.equal(viName("FMA23119", "Right lobe of thymus"), "thùy phải tuyến ức");
+});
+
+test("tên cấu trúc chính đã duyệt thắng bản ghép và không mang nhãn", () => {
+  // Bản ghép ra "đĩa gian đốt sống đốt sống ngực 8" — lặp chữ, không nói đĩa nằm ở đâu.
+  assert.equal(viName("FMA13505", "Intervertebral disk of eighth thoracic vertebra"), "đĩa gian đốt sống ngực 8–9");
+  assert.equal(viNameStatus("FMA13505", "Intervertebral disk of eighth thoracic vertebra"), "reviewed");
+  // science-editor để lại (nhãn FMA mơ hồ) → vẫn là bản ghép chưa duyệt.
+  assert.equal(viNameStatus("FMA19728", "superficial perineal muscle"), "machine-translated");
 });
 
 test("mọi mảnh Z-Anatomy đều có tên tiếng Việt", () => {
