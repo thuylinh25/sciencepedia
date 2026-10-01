@@ -650,6 +650,9 @@ liệu/đèn — cảnh 3D chính vẫn #05070a (lý do ở `SCENE_BACKGROUND`).
   dorsal digital arteries" cùng tên cho tay và chân → cấu trúc riêng ngoài nhóm chi. Khớp đuôi tên dễ lẫn:
   "epigastric" ⊃ "gastric" (từng làm cấu trúc thân tạng của tiêu hoá nhận ĐM thượng vị), "thalamoperforating" ⊃
   "perforating". Regex mạch vành ở tổng quan tim phải đồng bộ `CORONARY_ARTERIES` của views-cardiac.ts.
+- Tĩnh mạch, mô liên kết, bề mặt cơ thể: nay MỌI hệ có góc nhìn theo hệ (test đòi mỗi hệ có tổng quan dùng được).
+  Câu báo thiếu chỉ ghi thứ đếm được là không có, và không phủ định thứ có ở hệ khác (màng cứng tuỷ + lều tiểu não
+  ở hệ thần kinh; tóc, lông mày là phần phụ của da). "Tĩnh mạch tim" đồng bộ ở tim và tổng quan tim như mạch vành.
 
 **Chọn nhiều cấu trúc từ ô tìm** (2026-09-30): ＋ / Shift+Enter thêm-bỏ mà không đóng ô tìm; bấm tên vẫn thay cả
 vùng chọn. Nhiều cấu trúc thì `chosen` = null — bảng chi tiết nói về MỘT cấu trúc, gộp là sai — mô hình xem riêng

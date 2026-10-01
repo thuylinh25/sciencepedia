@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
 
+import { SYSTEM_IDS } from "./anatomy";
 import { anatomicalSystem, viewStructures } from "./atlas-model";
 import { SYSTEM_VIEWS, hasCard, viewById, viewKind, viewParts, viewStatus } from "./views";
 
@@ -52,8 +53,12 @@ test("phổi mờ làm bối cảnh cho cây phế quản, khí quản, cơ hít
   }
 });
 
-test("hệ chưa có preset thì không có mô hình", () => {
-  assert.equal(anatomicalSystem("venous"), null);
+test("mọi hệ đều có mô hình với một tổng quan dùng được", () => {
+  for (const id of SYSTEM_IDS) {
+    const system = anatomicalSystem(id);
+    assert.ok(system, id);
+    assert.ok(system.overview?.usable, `${id}: không có tổng quan dùng được`);
+  }
 });
 
 test("cấu trúc của mỗi góc nhìn theo hệ phủ đủ tập nổi bật, không chồng nhau", () => {

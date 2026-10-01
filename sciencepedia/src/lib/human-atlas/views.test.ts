@@ -86,7 +86,7 @@ test("thẻ hệ mở tổng quan khi hệ có; hệ chưa có preset thì khôn
   assert.equal(overviewFor("respiratory"), "respiratory-overview");
   assert.equal(overviewFor("endocrine"), "endocrine-overview");
   assert.equal(overviewFor("urinary"), "urinary-overview");
-  assert.equal(overviewFor("venous"), null);
+  assert.equal(overviewFor("integumentary"), "integumentary-overview");
 });
 
 test("tổng quan tim có mạch vành và mạch phổi, không chỉ 18 mảnh tim", () => {

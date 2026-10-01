@@ -59,7 +59,9 @@ const MESENTERIC_ARTERIES: PartRule = {
 };
 const PORTAL_SYSTEM: PartRule = {
   systems: ["venous"],
-  name: /portal vein|mesenteric vein$|^splenic vein$|gastric vein$|gastroepiploic vein$|colic vein$|^ileal vein$|^pancreaticoduodenal vein$|^superior rectal vein$/i,
+  name: /portal vein|mesenteric vein$|^splenic vein$|gastric vein$|gastroepiploic vein$|colic vein$|^ileal vein$|^pancreaticoduodenal vein$|^superior rectal vein$|sigmoid vein$/i,
+  // "…epigastric vein" (thành bụng) cũng tận cùng bằng "gastric vein".
+  exclude: /epigastric/i,
 };
 const AORTA: PartRule = { systems: ["arterial"], name: /^abdominal aorta$/i };
 const SPLEEN = rule("FMA7196");

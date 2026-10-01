@@ -3,8 +3,10 @@ import { fold } from "./search";
 import resolved from "./view-parts.generated.json";
 import { ARTERIAL_VIEWS } from "./views-arterial";
 import { CARDIAC_VIEWS } from "./views-cardiac";
+import { CONNECTIVE_VIEWS } from "./views-connective";
 import { DIGESTIVE_VIEWS } from "./views-digestive";
 import { ENDOCRINE_VIEWS } from "./views-endocrine";
+import { INTEGUMENTARY_VIEWS } from "./views-integumentary";
 import { LYMPHATIC_VIEWS } from "./views-lymphatic";
 import { MUSCULAR_VIEWS } from "./views-muscular";
 import { NERVOUS_VIEWS } from "./views-nervous";
@@ -14,6 +16,7 @@ import { RESPIRATORY_VIEWS } from "./views-respiratory";
 import { SENSORY_VIEWS } from "./views-sensory";
 import { SKELETAL_VIEWS } from "./views-skeletal";
 import { URINARY_VIEWS } from "./views-urinary";
+import { VENOUS_VIEWS } from "./views-venous";
 
 /*
  * ## Góc nhìn (Views) — dữ liệu, không JSX riêng mỗi góc
@@ -378,6 +381,9 @@ export const SYSTEM_VIEWS: readonly AtlasViewDef[] = [
   ...SKELETAL_VIEWS,
   ...MUSCULAR_VIEWS,
   ...ARTERIAL_VIEWS,
+  ...VENOUS_VIEWS,
+  ...CONNECTIVE_VIEWS,
+  ...INTEGUMENTARY_VIEWS,
 ];
 
 /** Registry chung: lưới, deep link, ảnh thu nhỏ và tìm kiếm đều đọc từ đây. */

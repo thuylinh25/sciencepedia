@@ -31,7 +31,11 @@ const CORONARY_ARTERIES: PartRule = {
   systems: ["arterial"],
   name: /coronary artery$|interventricular branch|marginal branch of right|ventricular branch of right|conus branch|diagonal branch|circumflex branch of left|^(left |right )?conus artery$|septal branch of ((left|right) )?(anterior|posterior) interventricular artery$/i,
 };
-const CARDIAC_VEINS: PartRule = { systems: ["venous"], name: /cardiac vein$|^coronary sinus$/i };
+// Tĩnh mạch liên thất trước, sau thất trái, bờ: cũng đổ về xoang vành (đo: y ≈ 1,26 m, trên tim).
+const CARDIAC_VEINS: PartRule = {
+  systems: ["venous"],
+  name: /cardiac vein$|^coronary sinus$|interventricular vein$|posterior vein of (left )?ventricle$|marginal vein$/i,
+};
 const AORTA: PartRule = { systems: ["arterial"], name: /^(ascending aorta|arch of aorta)$/i };
 const PULMONARY_TRUNK = rule("FMA8612");
 const VENAE_CAVAE: PartRule = { systems: ["venous"], name: /^superior vena cava$/i };

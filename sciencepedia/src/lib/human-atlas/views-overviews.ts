@@ -29,7 +29,8 @@ export const OVERVIEW_VIEWS: readonly AtlasViewDef[] = [
     focus: [
       { systems: ["cardiac"] },
       { systems: ["arterial"], name: CORONARY },
-      { systems: ["venous"], name: /cardiac vein|coronary sinus/i },
+      // Đồng bộ `CARDIAC_VEINS` (views-cardiac.ts).
+      { systems: ["venous"], name: /cardiac vein|coronary sinus|interventricular vein$|posterior vein of (left )?ventricle$|marginal vein$/i },
       { systems: ["arterial"], name: /^(ascending aorta|arch of aorta|pulmonary trunk|(left|right) pulmonary artery)$/i },
       { systems: ["venous"], name: /^superior vena cava$/i },
       // Cây mạch phổi, đậm như ảnh tham chiếu — khung rộng theo nó.
