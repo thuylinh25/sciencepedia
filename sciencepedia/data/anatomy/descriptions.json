@@ -7190,15 +7190,16 @@
    "enName": "Left radius",
    "system": "skeletal",
    "status": "vi",
-   "enTitle": "Radius",
+   "enTitle": "Radius (bone)",
    "description": {
     "lang": "vi",
-    "text": "Trong hình học cổ điển, bán kính của một đường tròn hay của mặt cầu là khoảng cách từ một điểm bất kỳ của đường tròn/mặt cầu đến tâm của nó. Từ bán kính được sử dụng lần đầu tiên trong tiếng La Tinh là radius với nghĩa tia hoặc cũng có thể là nan hoa của bánh xe ngựa.",
-    "translated": false
+    "text": "Xương quay là xương thuộc về chi trên kéo dài từ mặt bên khớp khuỷu đến cạnh ngón cái của cổ tay.",
+    "translated": false,
+    "reviewed": true
    },
    "source": {
-    "title": "Bán kính",
-    "url": "https://vi.wikipedia.org/wiki/B%C3%A1n_k%C3%ADnh",
+    "title": "Xương quay",
+    "url": "https://vi.wikipedia.org/wiki/X%C6%B0%C6%A1ng_quay",
     "license": "CC BY-SA 4.0"
    }
   },
@@ -7948,15 +7949,16 @@
    "enName": "Left trapezoid",
    "system": "skeletal",
    "status": "vi",
-   "enTitle": "Trapezoid",
+   "enTitle": "Trapezoid bone",
    "description": {
     "lang": "vi",
-    "text": "Trong hình học Euclid, hình thang là một tứ giác lồi có hai cạnh đối song song. Hai cạnh song song này được gọi là các cạnh đáy của hình thang.",
-    "translated": false
+    "text": "Xương thê là một xương cổ tay. Đây là xương nhỏ nhất trong hàng xa của các xương cổ tay, tức hàng nằm sát các xương bàn tay.",
+    "translated": true,
+    "reviewed": true
    },
    "source": {
-    "title": "Hình thang",
-    "url": "https://vi.wikipedia.org/wiki/H%C3%ACnh_thang",
+    "title": "Trapezoid bone",
+    "url": "https://en.wikipedia.org/wiki/Trapezoid_bone",
     "license": "CC BY-SA 4.0"
    }
   },

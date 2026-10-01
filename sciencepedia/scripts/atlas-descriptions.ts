@@ -436,6 +436,10 @@ async function run() {
     [/\blunate\b/i, "Lunate bone"],
     [/\btalus\b/i, "Talus bone"],
     [/\btrapezium\b/i, "Trapezium bone"],
+    // Tên trần là bài HÌNH HỌC: "Radius" → vi "Bán kính", "Trapezoid" → "Hình thang" —
+    // từng hiện nguyên đoạn định nghĩa toán học dưới xương quay và xương thê.
+    [/\bradius$/i, "Radius (bone)"],
+    [/\btrapezoid$/i, "Trapezoid bone"],
   ];
   const family = (name: string) => FAMILY.find(([re]) => re.test(name))?.[1] ?? null;
   const noTail = (s: string) => s.replace(/\s+of\s+.*/i, "").trim(); // bỏ "of right foot", "of axis"
