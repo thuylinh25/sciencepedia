@@ -49,8 +49,8 @@ export const SYSTEM_ORDER: SystemId[] = [
 ];
 
 /**
- * Nhóm cha — chuẩn bị cho giao diện gập nhóm sau này. Tim, động mạch, tĩnh
- * mạch vẫn bật/tắt riêng như hiện nay; nhóm chỉ để gom khi hiển thị.
+ * Nhóm cha. Bảng hệ gộp ba hệ này thành MỘT hàng "Hệ tim mạch" (2026-10-01): bật nó là
+ * tim cùng cả cây mạch như Human Anatomy Atlas; hàng con mở ra để bật/tắt riêng.
  */
 export const SYSTEM_GROUP: Partial<Record<SystemId, "cardiovascular">> = {
   cardiac: "cardiovascular",

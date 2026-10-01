@@ -658,6 +658,10 @@ liệu/đèn — cảnh 3D chính vẫn #05070a (lý do ở `SCENE_BACKGROUND`).
 vùng chọn. Nhiều cấu trúc thì `chosen` = null — bảng chi tiết nói về MỘT cấu trúc, gộp là sai — mô hình xem riêng
 hợp mảnh, link `?structure=a,b` (slug/mã FMA không chứa dấu phẩy). Tập chọn tự hết khi vùng chọn bị xoá ở lối khác.
 
+**"Hệ tim mạch" là một hàng trong bảng hệ** (2026-10-01): tim, động mạch, tĩnh mạch gộp lại (`SYSTEM_GROUP`),
+hàng con mở ra để bật riêng. Lý do: chủ sản phẩm so Human Anatomy Atlas — bật "Tim" riêng (18 mảnh) chỉ ra một quả
+tim nhỏ giữa khung; người đọc muốn "hệ tim mạch" là tim + cây mạch. Thứ tự `SYSTEM_ORDER` và `?system=` không đổi.
+
 ### Hệ → Góc nhìn giải phẫu → Cấu trúc (2026-09-30)
 
 Tab "Theo hệ" bản đầu bày ba cấp thẻ ngang hàng (Tổng quan / Nhóm / 20 thẻ cấu trúc) — chủ sản

@@ -2,12 +2,13 @@
 
 // Client: bật tắt hệ đổi state của trình xem, vốn chỉ sống ở client.
 
+import { useState } from "react";
 import { useTranslations } from "next-intl";
-import { X } from "lucide-react";
+import { ChevronDown, HeartPulse, X } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import { SYSTEM_COLORS, type SystemId } from "@/lib/human-atlas/anatomy";
-import { FALLBACK_ICON, SYSTEM_ICON } from "@/lib/human-atlas/systems";
+import { FALLBACK_ICON, SYSTEM_GROUP, SYSTEM_ICON } from "@/lib/human-atlas/systems";
 import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
 import { PANEL } from "@/components/human-atlas/panel";
@@ -38,6 +39,11 @@ function same(a: SystemId[], b: SystemId[]) {
  * (điện thoại xoay ngang): ẩn, mở bằng nút "Hệ cơ thể" ở thanh dưới — trên
  * điện thoại thành bảng nổi phía trên thanh đó, không phủ kín màn hình, nên
  * mô hình vẫn thấy được và vẫn thấy hệ vừa bật tắt thay đổi ra sao.
+ *
+ * Tim, động mạch, tĩnh mạch gộp thành MỘT hàng "Hệ tim mạch" (2026-10-01, `SYSTEM_GROUP`):
+ * chủ sản phẩm so với Human Anatomy Atlas — bật hệ tim mạch ở đó là tim cùng cả cây mạch;
+ * bật riêng "Tim" (18 mảnh) chỉ ra một quả tim nhỏ giữa khung. Hàng con vẫn mở ra được để
+ * bật/tắt riêng, nên không mất điều khiển nào.
  */
 export function SystemsPanel({
   open,
@@ -53,6 +59,45 @@ export function SystemsPanel({
   onShowOnly,
 }: Props) {
   const t = useTranslations("humanAtlas");
+  const [expanded, setExpanded] = useState(false);
+  const cardio = systems.filter((id) => SYSTEM_GROUP[id] === "cardiovascular");
+  const cardioOn = cardio.length > 0 && cardio.every((id) => visible.includes(id));
+  const cardioSome = cardio.some((id) => visible.includes(id));
+  const cardioName = t("systemGroups.cardiovascular");
+
+  const row = (id: SystemId, child = false) => {
+    const name = t(`systemNames.${id}`);
+    const Icon = SYSTEM_ICON[id] ?? FALLBACK_ICON;
+    const on = visible.includes(id);
+    const only = t("showOnly", { name: name.toLowerCase() });
+    return (
+      <li key={id} className={cn("flex items-center gap-2", child && "pl-5")}>
+        <button
+          type="button"
+          className={cn(
+            "flex min-h-11 min-w-0 flex-1 items-center gap-2.5 rounded-lg px-1.5 text-left text-sm outline-none transition-opacity hover:bg-muted focus-visible:ring-[3px] focus-visible:ring-ring/50 atlas-wide:min-h-9",
+            !on && "opacity-60",
+          )}
+          title={only}
+          aria-label={only}
+          onClick={() => onShowOnly([id])}
+        >
+          {/* Icon cùng màu vật liệu 3D của hệ — màu không phải dấu hiệu duy
+              nhất: tên hệ luôn đi kèm (WCAG 1.4.1). */}
+          <Icon aria-hidden className="size-4 shrink-0" style={{ color: SYSTEM_COLORS[id] }} />
+          <span className="truncate">{name}</span>
+          <span className="ml-auto text-xs text-muted-foreground tabular-nums">
+            {counts[id].toLocaleString(locale)}
+          </span>
+        </button>
+        <Switch
+          checked={on}
+          onCheckedChange={() => onToggle(id)}
+          aria-label={t("toggleSystem", { name: name.toLowerCase() })}
+        />
+      </li>
+    );
+  };
 
   return (
     <section
@@ -107,37 +152,48 @@ export function SystemsPanel({
 
       <ul className="-mx-1 min-h-0 flex-1 overflow-y-auto overscroll-contain px-1 py-1.5">
         {systems.map((id) => {
-          const name = t(`systemNames.${id}`);
-          const Icon = SYSTEM_ICON[id] ?? FALLBACK_ICON;
-          const on = visible.includes(id);
-          const only = t("showOnly", { name: name.toLowerCase() });
-          return (
-            <li key={id} className="flex items-center gap-2">
+          if (SYSTEM_GROUP[id] !== "cardiovascular") return row(id);
+          if (id !== cardio[0]) return null;
+          const only = t("showOnly", { name: cardioName.toLowerCase() });
+          return [
+            <li key="cardiovascular" className="flex items-center gap-0.5">
               <button
                 type="button"
                 className={cn(
                   "flex min-h-11 min-w-0 flex-1 items-center gap-2.5 rounded-lg px-1.5 text-left text-sm outline-none transition-opacity hover:bg-muted focus-visible:ring-[3px] focus-visible:ring-ring/50 atlas-wide:min-h-9",
-                  !on && "opacity-60",
+                  !cardioSome && "opacity-60",
                 )}
                 title={only}
                 aria-label={only}
-                onClick={() => onShowOnly([id])}
+                onClick={() => onShowOnly(cardio)}
               >
-                {/* Icon cùng màu vật liệu 3D của hệ — màu không phải dấu hiệu duy
-                    nhất: tên hệ luôn đi kèm (WCAG 1.4.1). */}
-                <Icon aria-hidden className="size-4 shrink-0" style={{ color: SYSTEM_COLORS[id] }} />
-                <span className="truncate">{name}</span>
+                <HeartPulse aria-hidden className="size-4 shrink-0" style={{ color: SYSTEM_COLORS.cardiac }} />
+                <span className="truncate">{cardioName}</span>
                 <span className="ml-auto text-xs text-muted-foreground tabular-nums">
-                  {counts[id].toLocaleString(locale)}
+                  {cardio.reduce((n, c) => n + counts[c], 0).toLocaleString(locale)}
                 </span>
               </button>
+              <Button
+                variant="ghost"
+                size="icon-sm"
+                // Hẹp hơn nút thường: cột 16rem, tên "Hệ tim mạch" bị cắt nếu nút rộng 32px.
+                className="size-6 shrink-0"
+                aria-expanded={expanded}
+                aria-label={t(expanded ? "collapseGroup" : "expandGroup", { name: cardioName.toLowerCase() })}
+                onClick={() => setExpanded((e) => !e)}
+              >
+                <ChevronDown aria-hidden className={cn("transition-transform", expanded && "rotate-180")} />
+              </Button>
               <Switch
-                checked={on}
-                onCheckedChange={() => onToggle(id)}
-                aria-label={t("toggleSystem", { name: name.toLowerCase() })}
+                checked={cardioOn}
+                onCheckedChange={() =>
+                  onShowOnly(cardioOn ? visible.filter((v) => !cardio.includes(v)) : [...new Set([...visible, ...cardio])])
+                }
+                aria-label={t("toggleSystem", { name: cardioName.toLowerCase() })}
               />
-            </li>
-          );
+            </li>,
+            ...(expanded ? cardio.map((c) => row(c, true)) : []),
+          ];
         })}
       </ul>
 

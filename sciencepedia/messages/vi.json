@@ -877,6 +877,11 @@
       "close": "Đóng bảng chi tiết",
       "readMore": "Đọc thêm trên Sciencepedia"
     },
+    "systemGroups": {
+      "cardiovascular": "Hệ tim mạch"
+    },
+    "expandGroup": "Mở các phần của {name}",
+    "collapseGroup": "Thu gọn {name}",
     "systemNames": {
       "skeletal": "Hệ xương",
       "muscular": "Hệ cơ",

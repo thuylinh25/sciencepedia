@@ -877,6 +877,11 @@
       "close": "Close details",
       "readMore": "Read more on Sciencepedia"
     },
+    "systemGroups": {
+      "cardiovascular": "Cardiovascular system"
+    },
+    "expandGroup": "Show the parts of the {name}",
+    "collapseGroup": "Collapse the {name}",
     "systemNames": {
       "skeletal": "Skeleton",
       "muscular": "Muscles",
