@@ -1,0 +1,3889 @@
+{
+ "note": "Mô tả cấp nhóm (góc nhìn kind structure); nguồn Wikipedia CC BY-SA. Chỉ mục reviewed ra client.",
+ "entries": [
+  {
+   "viewId": "pharynx",
+   "systemId": "respiratory",
+   "nameVi": "Hầu (lớp cơ)",
+   "nameEn": "Pharynx (muscular wall)",
+   "parts": 13,
+   "bare": 1,
+   "enTitle": "Pharynx",
+   "enText": "The pharynx is the part of the throat behind the mouth and nasal cavity, and above the esophagus and trachea. It is found in vertebrates and invertebrates, though its structure can vary across species.",
+   "enUrl": "https://en.wikipedia.org/wiki/Pharynx",
+   "description": {
+    "lang": "vi",
+    "text": "Hầu là phần của cổ họng nằm sau miệng và khoang mũi, phía trên thực quản và khí quản.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Pharynx",
+    "url": "https://en.wikipedia.org/wiki/Pharynx",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "larynx",
+   "systemId": "respiratory",
+   "nameVi": "Thanh quản",
+   "nameEn": "Larynx",
+   "parts": 38,
+   "bare": 10,
+   "enTitle": "Larynx",
+   "enText": "The larynx, commonly called the voice box, is an organ in the top of the neck involved in respiration, producing sound and protecting the trachea against food aspiration. The opening of the larynx into the pharynx, known as the laryngeal inlet, is about 4–5 centimeters in diameter.",
+   "enUrl": "https://en.wikipedia.org/wiki/Larynx",
+   "description": {
+    "lang": "vi",
+    "text": "Thanh quản là cơ quan ở phần trên của cổ, tham gia hô hấp, phát âm và bảo vệ khí quản khỏi bị hít sặc thức ăn.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Larynx",
+    "url": "https://en.wikipedia.org/wiki/Larynx",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "epiglottis",
+   "systemId": "respiratory",
+   "nameVi": "Nắp thanh môn",
+   "nameEn": "Epiglottis",
+   "parts": 1,
+   "bare": 1,
+   "enTitle": "Epiglottis",
+   "enText": "The epiglottis is a leaf-shaped flap in the throat that prevents food and water from entering the trachea and the lungs. It stays open during breathing, allowing air into the larynx.",
+   "enUrl": "https://en.wikipedia.org/wiki/Epiglottis",
+   "description": {
+    "lang": "vi",
+    "text": "Nắp thanh môn là một vạt hình lá ở họng, ngăn thức ăn và nước đi vào khí quản và phổi. Khi thở, nắp mở để không khí vào thanh quản.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Epiglottis",
+    "url": "https://en.wikipedia.org/wiki/Epiglottis",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "right-main-bronchus",
+   "systemId": "respiratory",
+   "nameVi": "Phế quản gốc phải",
+   "nameEn": "Right main bronchus",
+   "parts": 1,
+   "bare": 1,
+   "enTitle": "Bronchus",
+   "enText": "A bronchus is a passage or airway in the lower respiratory tract that conducts air into the lungs. The first or primary bronchi to branch from the trachea at the carina are the right main bronchus and the left main bronchus.",
+   "enUrl": "https://en.wikipedia.org/wiki/Bronchus",
+   "description": {
+    "lang": "vi",
+    "text": "Phế quản gốc phải và phế quản gốc trái là hai phế quản đầu tiên tách ra từ khí quản tại cựa khí quản (carina). Phế quản là đường dẫn khí của đường hô hấp dưới, đưa không khí vào phổi.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Bronchus",
+    "url": "https://en.wikipedia.org/wiki/Bronchus",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "left-main-bronchus",
+   "systemId": "respiratory",
+   "nameVi": "Phế quản gốc trái",
+   "nameEn": "Left main bronchus",
+   "parts": 1,
+   "bare": 1,
+   "enTitle": "Bronchus",
+   "enText": "A bronchus is a passage or airway in the lower respiratory tract that conducts air into the lungs. The first or primary bronchi to branch from the trachea at the carina are the right main bronchus and the left main bronchus.",
+   "enUrl": "https://en.wikipedia.org/wiki/Bronchus",
+   "description": {
+    "lang": "vi",
+    "text": "Phế quản gốc phải và phế quản gốc trái là hai phế quản đầu tiên tách ra từ khí quản tại cựa khí quản (carina). Phế quản là đường dẫn khí của đường hô hấp dưới, đưa không khí vào phổi.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Bronchus",
+    "url": "https://en.wikipedia.org/wiki/Bronchus",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "right-lung",
+   "systemId": "respiratory",
+   "nameVi": "Phổi phải",
+   "nameEn": "Right lung",
+   "parts": 3,
+   "bare": 3,
+   "enTitle": "Lung",
+   "enText": "The lungs are the primary organs of the respiratory system in many animals, including humans. In mammals and most other tetrapods, two lungs are located near the backbone on either side of the heart.",
+   "enUrl": "https://en.wikipedia.org/wiki/Lung",
+   "description": {
+    "lang": "vi",
+    "text": "Phổi là cơ quan chính của hệ hô hấp. Người có hai lá phổi, nằm gần cột sống, ở hai bên tim.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Lung",
+    "url": "https://en.wikipedia.org/wiki/Lung",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "left-lung",
+   "systemId": "respiratory",
+   "nameVi": "Phổi trái",
+   "nameEn": "Left lung",
+   "parts": 2,
+   "bare": 2,
+   "enTitle": "Lung",
+   "enText": "The lungs are the primary organs of the respiratory system in many animals, including humans. In mammals and most other tetrapods, two lungs are located near the backbone on either side of the heart.",
+   "enUrl": "https://en.wikipedia.org/wiki/Lung",
+   "description": {
+    "lang": "vi",
+    "text": "Phổi là cơ quan chính của hệ hô hấp. Người có hai lá phổi, nằm gần cột sống, ở hai bên tim.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Lung",
+    "url": "https://en.wikipedia.org/wiki/Lung",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "right-upper-lobe",
+   "systemId": "respiratory",
+   "nameVi": "Thuỳ trên phổi phải",
+   "nameEn": "Right upper lobe",
+   "parts": 1,
+   "bare": 1,
+   "enTitle": null,
+   "enText": null,
+   "enUrl": null,
+   "description": null,
+   "source": null
+  },
+  {
+   "viewId": "right-middle-lobe",
+   "systemId": "respiratory",
+   "nameVi": "Thuỳ giữa phổi phải",
+   "nameEn": "Right middle lobe",
+   "parts": 1,
+   "bare": 1,
+   "enTitle": null,
+   "enText": null,
+   "enUrl": null,
+   "description": null,
+   "source": null
+  },
+  {
+   "viewId": "right-lower-lobe",
+   "systemId": "respiratory",
+   "nameVi": "Thuỳ dưới phổi phải",
+   "nameEn": "Right lower lobe",
+   "parts": 1,
+   "bare": 1,
+   "enTitle": null,
+   "enText": null,
+   "enUrl": null,
+   "description": null,
+   "source": null
+  },
+  {
+   "viewId": "left-upper-lobe",
+   "systemId": "respiratory",
+   "nameVi": "Thuỳ trên phổi trái",
+   "nameEn": "Left upper lobe",
+   "parts": 1,
+   "bare": 1,
+   "enTitle": null,
+   "enText": null,
+   "enUrl": null,
+   "description": null,
+   "source": null
+  },
+  {
+   "viewId": "left-lower-lobe",
+   "systemId": "respiratory",
+   "nameVi": "Thuỳ dưới phổi trái",
+   "nameEn": "Left lower lobe",
+   "parts": 1,
+   "bare": 1,
+   "enTitle": null,
+   "enText": null,
+   "enUrl": null,
+   "description": null,
+   "source": null
+  },
+  {
+   "viewId": "right-bronchial-tree",
+   "systemId": "respiratory",
+   "nameVi": "Cây phế quản phổi phải",
+   "nameEn": "Right bronchial tree",
+   "parts": 53,
+   "bare": 53,
+   "enTitle": "Bronchus",
+   "enText": "A bronchus is a passage or airway in the lower respiratory tract that conducts air into the lungs. The first or primary bronchi to branch from the trachea at the carina are the right main bronchus and the left main bronchus.",
+   "enUrl": "https://en.wikipedia.org/wiki/Bronchus",
+   "description": {
+    "lang": "vi",
+    "text": "Các phế quản là đường dẫn khí của đường hô hấp dưới, đưa không khí vào phổi.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Bronchus",
+    "url": "https://en.wikipedia.org/wiki/Bronchus",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "left-bronchial-tree",
+   "systemId": "respiratory",
+   "nameVi": "Cây phế quản phổi trái",
+   "nameEn": "Left bronchial tree",
+   "parts": 45,
+   "bare": 45,
+   "enTitle": "Bronchus",
+   "enText": "A bronchus is a passage or airway in the lower respiratory tract that conducts air into the lungs. The first or primary bronchi to branch from the trachea at the carina are the right main bronchus and the left main bronchus.",
+   "enUrl": "https://en.wikipedia.org/wiki/Bronchus",
+   "description": {
+    "lang": "vi",
+    "text": "Các phế quản là đường dẫn khí của đường hô hấp dưới, đưa không khí vào phổi.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Bronchus",
+    "url": "https://en.wikipedia.org/wiki/Bronchus",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "aryepiglottic-muscle",
+   "systemId": "respiratory",
+   "nameVi": "Cơ phễu nắp thanh môn",
+   "nameEn": "Aryepiglottic muscle",
+   "parts": 2,
+   "bare": 2,
+   "enTitle": "Aryepiglottic muscle",
+   "enText": "The aryepiglottic muscle or aryepiglotticus muscle, often considered the aryepiglottic part of oblique arytenoid muscle, is an intrinsic muscle of the larynx. It is a direct continuation of a portion of the fibers of the oblique arytenoid muscle, sharing its innervation and blood supply, after these select fibers travel laterally around the arytenoid apex to the aryepiglottic fold.",
+   "enUrl": "https://en.wikipedia.org/wiki/Aryepiglottic_muscle",
+   "description": {
+    "lang": "vi",
+    "text": "Cơ phễu nắp thanh môn là một cơ nội tại của thanh quản, thường được xem là phần phễu nắp thanh môn của cơ phễu chéo. Các sợi của nó đi tiếp từ cơ phễu chéo, vòng quanh đỉnh sụn phễu tới nếp phễu nắp thanh môn.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Aryepiglottic muscle",
+    "url": "https://en.wikipedia.org/wiki/Aryepiglottic_muscle",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "cricothyroid",
+   "systemId": "respiratory",
+   "nameVi": "Cơ nhẫn giáp",
+   "nameEn": "Cricothyroid",
+   "parts": 4,
+   "bare": 4,
+   "enTitle": "Cricothyroid muscle",
+   "enText": "The cricothyroid muscle is the only tensor muscle of the larynx aiding with phonation. It is innervated by the superior laryngeal nerve.",
+   "enUrl": "https://en.wikipedia.org/wiki/Cricothyroid_muscle",
+   "description": {
+    "lang": "vi",
+    "text": "Cơ nhẫn giáp là cơ căng duy nhất của thanh quản, hỗ trợ phát âm. Cơ do thần kinh thanh quản trên chi phối.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Cricothyroid muscle",
+    "url": "https://en.wikipedia.org/wiki/Cricothyroid_muscle",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "ribs-sternum",
+   "systemId": "respiratory",
+   "nameVi": "Xương sườn, sụn sườn và xương ức",
+   "nameEn": "Ribs, costal cartilages and sternum",
+   "parts": 41,
+   "bare": 3,
+   "enTitle": "Rib cage",
+   "enText": "The rib cage or thoracic cage is an endoskeletal enclosure in the thorax of most vertebrates that comprises the ribs, vertebral column and sternum, which protect the vital organs of the thoracic cavity, such as the heart, lungs and great vessels and support the shoulder girdle to form the core part of the axial skeleton.",
+   "enUrl": "https://en.wikipedia.org/wiki/Rib_cage",
+   "description": {
+    "lang": "vi",
+    "text": "Xương sườn và xương ức, cùng với cột sống, tạo nên lồng ngực, khung xương bảo vệ các cơ quan trong khoang ngực như tim, phổi và các mạch máu lớn.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Rib cage",
+    "url": "https://en.wikipedia.org/wiki/Rib_cage",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "vagus-nerves",
+   "systemId": "respiratory",
+   "nameVi": "Dây thần kinh phế vị (X)",
+   "nameEn": "Vagus nerves (X)",
+   "parts": 2,
+   "bare": 2,
+   "enTitle": "Vagus nerve",
+   "enText": "The vagus nerve, also known as the tenth cranial nerve, plays a crucial role in the autonomic nervous system, which is responsible for regulating involuntary functions within the human body. This nerve carries both sensory and motor fibers and serves as a major pathway that connects the brain to various organs, including the heart, lungs, and digestive tract.",
+   "enUrl": "https://en.wikipedia.org/wiki/Vagus_nerve",
+   "description": {
+    "lang": "vi",
+    "text": "Thần kinh phế vị là dây thần kinh sọ thứ mười (CN X), mang cả sợi cảm giác và sợi vận động. Đây là đường nối chính giữa não với nhiều cơ quan, gồm tim, phổi và ống tiêu hóa.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Vagus nerve",
+    "url": "https://en.wikipedia.org/wiki/Vagus_nerve",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "intercostal-nerves",
+   "systemId": "respiratory",
+   "nameVi": "Các dây thần kinh gian sườn",
+   "nameEn": "Intercostal nerves",
+   "parts": 2,
+   "bare": 2,
+   "enTitle": "Intercostal nerves",
+   "enText": "The intercostal nerves are part of the somatic nervous system, and arise from the anterior rami of the thoracic spinal nerves from T1 to T11. The intercostal nerves are distributed chiefly to the thoracic pleura and abdominal peritoneum, and differ from the anterior rami of the other spinal nerves in that each pursues an independent course without plexus formation.",
+   "enUrl": "https://en.wikipedia.org/wiki/Intercostal_nerves",
+   "description": {
+    "lang": "vi",
+    "text": "Các dây thần kinh gian sườn thuộc hệ thần kinh thân thể, xuất phát từ nhánh trước của các dây thần kinh sống ngực T1 đến T11. Khác với nhánh trước của các dây thần kinh sống khác, mỗi dây đi theo đường riêng, không tạo đám rối.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Intercostal nerves",
+    "url": "https://en.wikipedia.org/wiki/Intercostal_nerves",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "pulmonary-arteries",
+   "systemId": "respiratory",
+   "nameVi": "Động mạch phổi",
+   "nameEn": "Pulmonary arteries",
+   "parts": 91,
+   "bare": 91,
+   "enTitle": "Pulmonary artery",
+   "enText": "A pulmonary artery is an artery in the pulmonary circulation that carries deoxygenated blood from the right side of the heart to the lungs. The largest pulmonary artery is the main pulmonary artery or pulmonary trunk from the heart, and the smallest ones are the arterioles, which lead to the capillaries that surround the pulmonary alveoli.",
+   "enUrl": "https://en.wikipedia.org/wiki/Pulmonary_artery",
+   "description": {
+    "lang": "vi",
+    "text": "Động mạch phổi là một động mạch trong tuần hoàn phổi mang máu đã khử oxy từ bên phải của tim đến phổi.",
+    "translated": false,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Động mạch phổi",
+    "url": "https://vi.wikipedia.org/wiki/%C4%90%E1%BB%99ng_m%E1%BA%A1ch_ph%E1%BB%95i",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "right-pulmonary-artery",
+   "systemId": "respiratory",
+   "nameVi": "Động mạch phổi phải",
+   "nameEn": "Right pulmonary artery",
+   "parts": 1,
+   "bare": 1,
+   "enTitle": "Pulmonary artery",
+   "enText": "A pulmonary artery is an artery in the pulmonary circulation that carries deoxygenated blood from the right side of the heart to the lungs. The largest pulmonary artery is the main pulmonary artery or pulmonary trunk from the heart, and the smallest ones are the arterioles, which lead to the capillaries that surround the pulmonary alveoli.",
+   "enUrl": "https://en.wikipedia.org/wiki/Pulmonary_artery",
+   "description": {
+    "lang": "vi",
+    "text": "Động mạch phổi là một động mạch trong tuần hoàn phổi mang máu đã khử oxy từ bên phải của tim đến phổi.",
+    "translated": false,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Động mạch phổi",
+    "url": "https://vi.wikipedia.org/wiki/%C4%90%E1%BB%99ng_m%E1%BA%A1ch_ph%E1%BB%95i",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "pulmonary-veins",
+   "systemId": "respiratory",
+   "nameVi": "Tĩnh mạch phổi",
+   "nameEn": "Pulmonary veins",
+   "parts": 88,
+   "bare": 81,
+   "enTitle": "Pulmonary vein",
+   "enText": "The pulmonary veins are the veins that transfer oxygenated blood from the lungs to the heart. The largest pulmonary veins are the four main pulmonary veins, two from each lung that drain into the left atrium of the heart.",
+   "enUrl": "https://en.wikipedia.org/wiki/Pulmonary_vein",
+   "description": {
+    "lang": "vi",
+    "text": "Tĩnh mạch phổi là các tĩnh mạch đưa máu giàu oxy từ phổi về tim. Lớn nhất là bốn tĩnh mạch phổi chính, mỗi phổi hai, đổ vào tâm nhĩ trái.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Pulmonary vein",
+    "url": "https://en.wikipedia.org/wiki/Pulmonary_vein",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "right-atrium",
+   "systemId": "cardiac",
+   "nameVi": "Tâm nhĩ phải",
+   "nameEn": "Right atrium",
+   "parts": 2,
+   "bare": 2,
+   "enTitle": "Atrium (heart)",
+   "enText": "The atrium is one of the two upper chambers in the heart that receives blood from the circulatory system. The blood in the atria is pumped into the heart ventricles through the atrioventricular mitral and tricuspid heart valves.",
+   "enUrl": "https://en.wikipedia.org/wiki/Atrium_(heart)",
+   "description": {
+    "lang": "vi",
+    "text": "Tâm nhĩ là ngăn trên của tim, là nơi máu đi vào tim.",
+    "translated": false,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Tâm nhĩ",
+    "url": "https://vi.wikipedia.org/wiki/T%C3%A2m_nh%C4%A9",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "left-atrium",
+   "systemId": "cardiac",
+   "nameVi": "Tâm nhĩ trái",
+   "nameEn": "Left atrium",
+   "parts": 2,
+   "bare": 2,
+   "enTitle": "Atrium (heart)",
+   "enText": "The atrium is one of the two upper chambers in the heart that receives blood from the circulatory system. The blood in the atria is pumped into the heart ventricles through the atrioventricular mitral and tricuspid heart valves.",
+   "enUrl": "https://en.wikipedia.org/wiki/Atrium_(heart)",
+   "description": {
+    "lang": "vi",
+    "text": "Tâm nhĩ là ngăn trên của tim, là nơi máu đi vào tim.",
+    "translated": false,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Tâm nhĩ",
+    "url": "https://vi.wikipedia.org/wiki/T%C3%A2m_nh%C4%A9",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "ventricular-wall",
+   "systemId": "cardiac",
+   "nameVi": "Thành tâm thất",
+   "nameEn": "Ventricular wall",
+   "parts": 1,
+   "bare": 1,
+   "enTitle": "Ventricle (heart)",
+   "enText": "A ventricle is one of two large chambers located toward the bottom of the heart that collect and expel blood towards the peripheral beds within the body and lungs. The blood pumped by a ventricle is supplied by an atrium, an adjacent chamber in the upper heart that is smaller than a ventricle.",
+   "enUrl": "https://en.wikipedia.org/wiki/Ventricle_(heart)",
+   "description": {
+    "lang": "vi",
+    "text": "Tâm thất là một trong hai buồng tim lớn ở phần dưới của tim. Tâm thất nhận máu từ tâm nhĩ rồi đẩy máu đi khắp cơ thể và tới phổi.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Ventricle (heart)",
+    "url": "https://en.wikipedia.org/wiki/Ventricle_(heart)",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "right-atrium-cavity",
+   "systemId": "cardiac",
+   "nameVi": "Khoang tâm nhĩ phải",
+   "nameEn": "Right atrial cavity",
+   "parts": 1,
+   "bare": 1,
+   "enTitle": "Atrium (heart)",
+   "enText": "The atrium is one of the two upper chambers in the heart that receives blood from the circulatory system. The blood in the atria is pumped into the heart ventricles through the atrioventricular mitral and tricuspid heart valves.",
+   "enUrl": "https://en.wikipedia.org/wiki/Atrium_(heart)",
+   "description": {
+    "lang": "vi",
+    "text": "Tâm nhĩ là ngăn trên của tim, là nơi máu đi vào tim.",
+    "translated": false,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Tâm nhĩ",
+    "url": "https://vi.wikipedia.org/wiki/T%C3%A2m_nh%C4%A9",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "left-atrium-cavity",
+   "systemId": "cardiac",
+   "nameVi": "Khoang tâm nhĩ trái",
+   "nameEn": "Left atrial cavity",
+   "parts": 1,
+   "bare": 1,
+   "enTitle": "Atrium (heart)",
+   "enText": "The atrium is one of the two upper chambers in the heart that receives blood from the circulatory system. The blood in the atria is pumped into the heart ventricles through the atrioventricular mitral and tricuspid heart valves.",
+   "enUrl": "https://en.wikipedia.org/wiki/Atrium_(heart)",
+   "description": {
+    "lang": "vi",
+    "text": "Tâm nhĩ là ngăn trên của tim, là nơi máu đi vào tim.",
+    "translated": false,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Tâm nhĩ",
+    "url": "https://vi.wikipedia.org/wiki/T%C3%A2m_nh%C4%A9",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "right-ventricle-cavity",
+   "systemId": "cardiac",
+   "nameVi": "Khoang tâm thất phải",
+   "nameEn": "Right ventricular cavity",
+   "parts": 1,
+   "bare": 1,
+   "enTitle": "Ventricle (heart)",
+   "enText": "A ventricle is one of two large chambers located toward the bottom of the heart that collect and expel blood towards the peripheral beds within the body and lungs. The blood pumped by a ventricle is supplied by an atrium, an adjacent chamber in the upper heart that is smaller than a ventricle.",
+   "enUrl": "https://en.wikipedia.org/wiki/Ventricle_(heart)",
+   "description": {
+    "lang": "vi",
+    "text": "Tâm thất là một trong hai buồng tim lớn ở phần dưới của tim. Tâm thất nhận máu từ tâm nhĩ rồi đẩy máu đi khắp cơ thể và tới phổi.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Ventricle (heart)",
+    "url": "https://en.wikipedia.org/wiki/Ventricle_(heart)",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "left-ventricle-cavity",
+   "systemId": "cardiac",
+   "nameVi": "Khoang tâm thất trái",
+   "nameEn": "Left ventricular cavity",
+   "parts": 1,
+   "bare": 1,
+   "enTitle": "Ventricle (heart)",
+   "enText": "A ventricle is one of two large chambers located toward the bottom of the heart that collect and expel blood towards the peripheral beds within the body and lungs. The blood pumped by a ventricle is supplied by an atrium, an adjacent chamber in the upper heart that is smaller than a ventricle.",
+   "enUrl": "https://en.wikipedia.org/wiki/Ventricle_(heart)",
+   "description": {
+    "lang": "vi",
+    "text": "Tâm thất là một trong hai buồng tim lớn ở phần dưới của tim. Tâm thất nhận máu từ tâm nhĩ rồi đẩy máu đi khắp cơ thể và tới phổi.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Ventricle (heart)",
+    "url": "https://en.wikipedia.org/wiki/Ventricle_(heart)",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "tricuspid-valve",
+   "systemId": "cardiac",
+   "nameVi": "Van ba lá",
+   "nameEn": "Tricuspid valve",
+   "parts": 3,
+   "bare": 3,
+   "enTitle": "Tricuspid valve",
+   "enText": "The tricuspid valve, or right atrioventricular valve, is on the right dorsal side of the mammalian heart, at the superior portion of the right ventricle. The function of the valve is to allow blood to flow from the right atrium to the right ventricle during diastole, and to close to prevent backflow (regurgitation) from the right ventricle into the right atrium during right ventricular contraction (systole).",
+   "enUrl": "https://en.wikipedia.org/wiki/Tricuspid_valve",
+   "description": {
+    "lang": "vi",
+    "text": "Van ba lá, hay van nhĩ thất phải, nằm giữa tâm nhĩ phải và tâm thất phải. Van cho máu từ tâm nhĩ phải xuống tâm thất phải trong kỳ tâm trương và đóng lại để ngăn máu trào ngược khi tâm thất phải co (kỳ tâm thu).",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Tricuspid valve",
+    "url": "https://en.wikipedia.org/wiki/Tricuspid_valve",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "mitral-valve",
+   "systemId": "cardiac",
+   "nameVi": "Van hai lá",
+   "nameEn": "Mitral valve",
+   "parts": 2,
+   "bare": 2,
+   "enTitle": "Mitral valve",
+   "enText": "The mitral valve, also known as the bicuspid valve or left atrioventricular valve, is one of the four heart valves. It has two cusps or flaps and lies between the left atrium and the left ventricle of the heart.",
+   "enUrl": "https://en.wikipedia.org/wiki/Mitral_valve",
+   "description": {
+    "lang": "vi",
+    "text": "Van hai lá còn được gọi là van nhĩ thất trái là van có hai lá của tim nằm giữa tâm nhĩ trái và tâm thất trái.",
+    "translated": false,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Van hai lá",
+    "url": "https://vi.wikipedia.org/wiki/Van_hai_l%C3%A1",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "aortic-valve",
+   "systemId": "cardiac",
+   "nameVi": "Van động mạch chủ",
+   "nameEn": "Aortic valve",
+   "parts": 3,
+   "bare": 3,
+   "enTitle": "Aortic valve",
+   "enText": "The aortic valve is a valve in the heart of humans and most other animals, located between the left ventricle and the aorta. It is one of the four valves of the heart and one of the two semilunar valves, the other being the pulmonary valve.",
+   "enUrl": "https://en.wikipedia.org/wiki/Aortic_valve",
+   "description": {
+    "lang": "vi",
+    "text": "Van động mạch chủ là van tim nằm giữa tâm thất trái và động mạch chủ. Đây là một trong bốn van tim và là một trong hai van bán nguyệt, cùng với van động mạch phổi.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Aortic valve",
+    "url": "https://en.wikipedia.org/wiki/Aortic_valve",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "pulmonary-valve",
+   "systemId": "cardiac",
+   "nameVi": "Van động mạch phổi",
+   "nameEn": "Pulmonary valve",
+   "parts": 3,
+   "bare": 3,
+   "enTitle": "Pulmonary valve",
+   "enText": "The pulmonary valve is a valve of the heart that lies between the right ventricle and the pulmonary artery, and has three cusps. It is one of the four valves of the heart and one of the two semilunar valves, the other being the aortic valve.",
+   "enUrl": "https://en.wikipedia.org/wiki/Pulmonary_valve",
+   "description": {
+    "lang": "vi",
+    "text": "Van động mạch phổi là van tim nằm giữa tâm thất phải và động mạch phổi, có ba lá van. Đây là một trong bốn van tim và là một trong hai van bán nguyệt, cùng với van động mạch chủ.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Pulmonary valve",
+    "url": "https://en.wikipedia.org/wiki/Pulmonary_valve",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "coronary-arteries",
+   "systemId": "cardiac",
+   "nameVi": "Động mạch vành",
+   "nameEn": "Coronary arteries",
+   "parts": 59,
+   "bare": 59,
+   "enTitle": "Coronary arteries",
+   "enText": "The coronary arteries are the arterial blood vessels of coronary circulation, which transport oxygenated blood to the heart muscle. The heart requires a continuous supply of oxygen to function and survive, much like any other tissue or organ of the body.",
+   "enUrl": "https://en.wikipedia.org/wiki/Coronary_arteries",
+   "description": {
+    "lang": "vi",
+    "text": "Động mạch vành là những mạch máu trong tuần hoàn mạch vành có chức năng vận chuyển máu giàu oxy đến cơ tim.",
+    "translated": false,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Động mạch vành",
+    "url": "https://vi.wikipedia.org/wiki/%C4%90%E1%BB%99ng_m%E1%BA%A1ch_v%C3%A0nh",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "cardiac-veins",
+   "systemId": "cardiac",
+   "nameVi": "Tĩnh mạch tim và xoang vành",
+   "nameEn": "Cardiac veins and coronary sinus",
+   "parts": 45,
+   "bare": 45,
+   "enTitle": "Coronary sinus",
+   "enText": "The coronary sinus is the largest vein of the heart. It drains over half of the deoxygenated blood from the heart muscle into the right atrium.",
+   "enUrl": "https://en.wikipedia.org/wiki/Coronary_sinus",
+   "description": {
+    "lang": "vi",
+    "text": "Các tĩnh mạch tim dẫn máu đã khử oxy từ cơ tim. Xoang vành, tĩnh mạch lớn nhất của tim, đưa hơn một nửa lượng máu này về tâm nhĩ phải.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Coronary sinus",
+    "url": "https://en.wikipedia.org/wiki/Coronary_sinus",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "ascending-aorta-arch",
+   "systemId": "cardiac",
+   "nameVi": "Động mạch chủ lên và cung động mạch chủ",
+   "nameEn": "Ascending aorta and aortic arch",
+   "parts": 2,
+   "bare": 2,
+   "enTitle": "Ascending aorta",
+   "enText": "The ascending aorta (AAo) is a portion of the aorta commencing at the upper part of the base of the left ventricle, on a level with the lower border of the third costal cartilage behind the left half of the sternum.",
+   "enUrl": "https://en.wikipedia.org/wiki/Ascending_aorta",
+   "description": null,
+   "source": null,
+   "dropped": "vi_text đọc sai nguồn (động mạch chủ lên 'đến bờ dưới sụn sườn ba' — thực ra là điểm bắt đầu); cả hai câu chỉ nói về động mạch chủ lên, không có gì về cung động mạch chủ (1/2 mảnh)"
+  },
+  {
+   "viewId": "thyroid-gland",
+   "systemId": "endocrine",
+   "nameVi": "Tuyến giáp",
+   "nameEn": "Thyroid gland",
+   "parts": 1,
+   "bare": 1,
+   "enTitle": "Thyroid",
+   "enText": "The thyroid, or thyroid gland, is an endocrine gland in vertebrates. In humans, it is a butterfly-shaped or H-shaped gland located in the neck below the Adam's apple.",
+   "enUrl": "https://en.wikipedia.org/wiki/Thyroid",
+   "description": {
+    "lang": "vi",
+    "text": "Tuyến giáp là một tuyến nội tiết. Ở người, tuyến có hình con bướm hoặc hình chữ H, nằm ở cổ, dưới lồi thanh quản (trái cổ).",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Thyroid",
+    "url": "https://en.wikipedia.org/wiki/Thyroid",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "parathyroid-glands",
+   "systemId": "endocrine",
+   "nameVi": "Tuyến cận giáp",
+   "nameEn": "Parathyroid glands",
+   "parts": 4,
+   "bare": 4,
+   "enTitle": "Parathyroid gland",
+   "enText": "Parathyroid glands are small endocrine glands in the neck of humans and other tetrapods. Humans usually have four parathyroid glands, located on the back of the thyroid gland in variable locations.",
+   "enUrl": "https://en.wikipedia.org/wiki/Parathyroid_gland",
+   "description": {
+    "lang": "vi",
+    "text": "Tuyến cận giáp là các tuyến nội tiết nhỏ ở cổ. Người thường có bốn tuyến cận giáp, nằm ở mặt sau tuyến giáp, vị trí thay đổi tùy người.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Parathyroid gland",
+    "url": "https://en.wikipedia.org/wiki/Parathyroid_gland",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "pituitary-gland",
+   "systemId": "endocrine",
+   "nameVi": "Tuyến yên",
+   "nameEn": "Pituitary gland",
+   "parts": 1,
+   "bare": 1,
+   "enTitle": "Pituitary gland",
+   "enText": "The pituitary gland or hypophysis cerebri is an endocrine gland in vertebrates. In humans, the pituitary gland is located at the base of the brain, protruding off the bottom of the hypothalamus.",
+   "enUrl": "https://en.wikipedia.org/wiki/Pituitary_gland",
+   "description": {
+    "lang": "vi",
+    "text": "Tuyến yên là một tuyến nội tiết. Ở người, tuyến nằm ở đáy não, nhô ra từ mặt dưới vùng dưới đồi.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Pituitary gland",
+    "url": "https://en.wikipedia.org/wiki/Pituitary_gland",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "pineal-gland",
+   "systemId": "endocrine",
+   "nameVi": "Tuyến tùng",
+   "nameEn": "Pineal gland",
+   "parts": 1,
+   "bare": 1,
+   "enTitle": "Pineal gland",
+   "enText": "The pineal gland is a small endocrine gland in the brain of most vertebrates. It produces melatonin, a serotonin-derived hormone, which modulates sleep patterns following the diurnal cycles.",
+   "enUrl": "https://en.wikipedia.org/wiki/Pineal_gland",
+   "description": {
+    "lang": "vi",
+    "text": "Tuyến tùng là một tuyến nội tiết nhỏ trong não. Tuyến sản xuất melatonin, một hormone dẫn xuất từ serotonin, điều hòa nhịp ngủ theo chu kỳ ngày đêm.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Pineal gland",
+    "url": "https://en.wikipedia.org/wiki/Pineal_gland",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "jejunum",
+   "systemId": "digestive",
+   "nameVi": "Hỗng tràng",
+   "nameEn": "Jejunum",
+   "parts": 23,
+   "bare": 23,
+   "enTitle": "Jejunum",
+   "enText": "The jejunum is the second part of the small intestine in humans and most higher vertebrates, including mammals, reptiles, and birds. Its lining is specialized for the absorption by enterocytes of small nutrient molecules which have been previously digested by enzymes in the duodenum.",
+   "enUrl": "https://en.wikipedia.org/wiki/Jejunum",
+   "description": {
+    "lang": "vi",
+    "text": "Hỗng tràng là đoạn thứ hai của ruột non. Niêm mạc hỗng tràng chuyên hấp thu, qua các tế bào ruột, những phân tử dinh dưỡng nhỏ đã được enzyme tiêu hóa trước đó ở tá tràng.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Jejunum",
+    "url": "https://en.wikipedia.org/wiki/Jejunum",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "ileum",
+   "systemId": "digestive",
+   "nameVi": "Hồi tràng",
+   "nameEn": "Ileum",
+   "parts": 31,
+   "bare": 31,
+   "enTitle": "Ileum",
+   "enText": "The ileum is the final section of the small intestine in most higher vertebrates, including mammals, reptiles, and birds. In fish, the divisions of the small intestine are not as clear and the terms posterior intestine or distal intestine may be used instead of ileum.",
+   "enUrl": "https://en.wikipedia.org/wiki/Ileum",
+   "description": {
+    "lang": "vi",
+    "text": "Hồi tràng là đoạn cuối của ruột non.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Ileum",
+    "url": "https://en.wikipedia.org/wiki/Ileum",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "ileocecal-junction",
+   "systemId": "digestive",
+   "nameVi": "Chỗ nối hồi manh tràng",
+   "nameEn": "Ileocecal junction",
+   "parts": 1,
+   "bare": 1,
+   "enTitle": "Ileocecal valve",
+   "enText": "The ileocecal valve is a sphincter muscle valve that separates the small intestine and the large intestine. Its critical function is to limit the reflux of colonic contents into the ileum.",
+   "enUrl": "https://en.wikipedia.org/wiki/Ileocecal_valve",
+   "description": {
+    "lang": "vi",
+    "text": "Van hồi - manh tràng hay van Tulp, van Bauhin là một cơ vòng nằm ở ngã ba của ruột non và ruột già.",
+    "translated": false,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Van hồi - manh tràng",
+    "url": "https://vi.wikipedia.org/wiki/Van_h%E1%BB%93i_-_manh_tr%C3%A0ng",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "colon",
+   "systemId": "digestive",
+   "nameVi": "Đại tràng lên, ngang, xuống",
+   "nameEn": "Ascending, transverse and descending colon",
+   "parts": 3,
+   "bare": 3,
+   "enTitle": "Large intestine",
+   "enText": "The large intestine, also known as the large bowel, is the last part of the gastrointestinal tract and of the digestive system in tetrapods. Water and salts are absorbed here and the remaining waste material is stored in the rectum as feces before being removed by defecation.",
+   "enUrl": "https://en.wikipedia.org/wiki/Large_intestine",
+   "description": {
+    "lang": "vi",
+    "text": "Đại tràng lên, ngang và xuống là các đoạn của ruột già, phần cuối của ống tiêu hóa. Nước và muối được hấp thu ở ruột già, phần chất thải còn lại được lưu ở trực tràng dưới dạng phân.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Large intestine",
+    "url": "https://en.wikipedia.org/wiki/Large_intestine",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "taeniae-coli",
+   "systemId": "digestive",
+   "nameVi": "Dải cơ dọc đại tràng",
+   "nameEn": "Taeniae coli",
+   "parts": 3,
+   "bare": 3,
+   "enTitle": "Taenia coli",
+   "enText": "The taeniae coli are three separate longitudinal ribbons of smooth muscle on the outside of the ascending, transverse, descending and sigmoid colons. They are visible and can be seen just below the serosa or fibrosa.",
+   "enUrl": "https://en.wikipedia.org/wiki/Taenia_coli",
+   "description": {
+    "lang": "vi",
+    "text": "Dải cơ dọc đại tràng là ba dải cơ trơn dọc riêng biệt ở mặt ngoài đại tràng lên, ngang, xuống và đại tràng sigma. Có thể thấy chúng ngay dưới lớp thanh mạc.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Taenia coli",
+    "url": "https://en.wikipedia.org/wiki/Taenia_coli",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "rectum",
+   "systemId": "digestive",
+   "nameVi": "Trực tràng",
+   "nameEn": "Rectum",
+   "parts": 1,
+   "bare": 1,
+   "enTitle": "Rectum",
+   "enText": "The rectum is the final straight portion of the large intestine in humans and some other mammals, and the gut in others. Before expulsion through the anus or cloaca, the rectum stores the feces temporarily.",
+   "enUrl": "https://en.wikipedia.org/wiki/Rectum",
+   "description": {
+    "lang": "vi",
+    "text": "Trực tràng là đoạn thẳng cuối cùng của ruột già. Trực tràng chứa phân tạm thời trước khi phân được thải ra qua hậu môn.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Rectum",
+    "url": "https://en.wikipedia.org/wiki/Rectum",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "liver",
+   "systemId": "digestive",
+   "nameVi": "Gan",
+   "nameEn": "Liver",
+   "parts": 10,
+   "bare": 10,
+   "enTitle": "Liver",
+   "enText": "The liver is a major metabolic organ exclusively found in vertebrates which performs many essential biological functions, such as detoxification of the organism and the synthesis of various proteins and other biochemicals necessary for digestion and growth. In humans, it is located in the right upper quadrant of the abdomen, below the diaphragm and mostly shielded by the lower right rib cage.",
+   "enUrl": "https://en.wikipedia.org/wiki/Liver",
+   "description": {
+    "lang": "vi",
+    "text": "Gan là một cơ quan của các động vật có xương sống, bao gồm cả con người.",
+    "translated": false,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Gan",
+    "url": "https://vi.wikipedia.org/wiki/Gan",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "bile-ducts",
+   "systemId": "digestive",
+   "nameVi": "Cây đường mật",
+   "nameEn": "Biliary tree",
+   "parts": 17,
+   "bare": 17,
+   "enTitle": "Biliary tract",
+   "enText": "The biliary tract refers to the liver, gallbladder and bile ducts, and how they work together to make, store and secrete bile. Bile consists of water, electrolytes, bile acids, cholesterol, phospholipids and conjugated bilirubin.",
+   "enUrl": "https://en.wikipedia.org/wiki/Biliary_tract",
+   "description": {
+    "lang": "vi",
+    "text": "Các ống mật cùng với gan và túi mật tạo thành đường mật, hệ thống tạo, dự trữ và bài tiết mật.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Biliary tract",
+    "url": "https://en.wikipedia.org/wiki/Biliary_tract",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "pancreas",
+   "systemId": "digestive",
+   "nameVi": "Tuỵ",
+   "nameEn": "Pancreas",
+   "parts": 4,
+   "bare": 3,
+   "enTitle": "Pancreas",
+   "enText": "The pancreas is an organ of the digestive system and endocrine system of vertebrates. In humans, it is located in the abdomen behind the stomach and functions as a gland.",
+   "enUrl": "https://en.wikipedia.org/wiki/Pancreas",
+   "description": {
+    "lang": "vi",
+    "text": "Tụy là một cơ quan thuộc cả hệ tiêu hóa và hệ nội tiết. Ở người, tụy nằm trong ổ bụng, sau dạ dày, và hoạt động như một tuyến.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Pancreas",
+    "url": "https://en.wikipedia.org/wiki/Pancreas",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "celiac-branches",
+   "systemId": "digestive",
+   "nameVi": "Thân tạng và các nhánh",
+   "nameEn": "Celiac trunk and branches",
+   "parts": 38,
+   "bare": 38,
+   "enTitle": "Celiac artery",
+   "enText": "The celiac artery, also known as the celiac trunk, Haller's tripod or truncus coeliacus, is the first major branch of the abdominal aorta. It is about 1.27 cm in length.",
+   "enUrl": "https://en.wikipedia.org/wiki/Celiac_artery",
+   "description": {
+    "lang": "vi",
+    "text": "Thân tạng là nhánh lớn đầu tiên của động mạch chủ bụng; nhóm này gồm thân tạng và các nhánh của nó.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Celiac artery",
+    "url": "https://en.wikipedia.org/wiki/Celiac_artery",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "mesenteric-arteries",
+   "systemId": "digestive",
+   "nameVi": "Động mạch mạc treo tràng và các nhánh",
+   "nameEn": "Mesenteric arteries and branches",
+   "parts": 20,
+   "bare": 20,
+   "enTitle": "Mesenteric arteries",
+   "enText": "The mesenteric arteries take blood from the aorta and distribute it to a large portion of the gastrointestinal tract.",
+   "enUrl": "https://en.wikipedia.org/wiki/Mesenteric_arteries",
+   "description": {
+    "lang": "vi",
+    "text": "Các động mạch mạc treo tràng nhận máu từ động mạch chủ và phân phối tới một phần lớn ống tiêu hóa.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Mesenteric arteries",
+    "url": "https://en.wikipedia.org/wiki/Mesenteric_arteries",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "portal-veins",
+   "systemId": "digestive",
+   "nameVi": "Tĩnh mạch cửa và các nhánh",
+   "nameEn": "Portal vein and tributaries",
+   "parts": 39,
+   "bare": 38,
+   "enTitle": "Portal vein",
+   "enText": "The portal vein or hepatic portal vein (HPV) is a blood vessel that carries blood from the gastrointestinal tract, gallbladder, pancreas and spleen to the liver. This blood contains nutrients and toxins extracted from digested contents.",
+   "enUrl": "https://en.wikipedia.org/wiki/Portal_vein",
+   "description": {
+    "lang": "vi",
+    "text": "Tĩnh mạch cửa đưa máu từ ống tiêu hóa, túi mật, tụy và lách về gan. Máu này chứa chất dinh dưỡng và độc chất hấp thu từ thức ăn đã tiêu hóa.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Portal vein",
+    "url": "https://en.wikipedia.org/wiki/Portal_vein",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "renal-arteries",
+   "systemId": "urinary",
+   "nameVi": "Động mạch thận",
+   "nameEn": "Renal arteries",
+   "parts": 32,
+   "bare": 32,
+   "enTitle": "Renal artery",
+   "enText": "The renal arteries are paired arteries that supply the kidneys with blood. Each is directed across the crus of the diaphragm, so as to form nearly a right angle.",
+   "enUrl": "https://en.wikipedia.org/wiki/Renal_artery",
+   "description": {
+    "lang": "vi",
+    "text": "Động mạch thận là cặp động mạch cấp máu cho thận.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Renal artery",
+    "url": "https://en.wikipedia.org/wiki/Renal_artery",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "renal-veins",
+   "systemId": "urinary",
+   "nameVi": "Tĩnh mạch thận",
+   "nameEn": "Renal veins",
+   "parts": 4,
+   "bare": 4,
+   "enTitle": "Renal vein",
+   "enText": "The renal veins in the renal circulation, are large-calibre veins that drain blood filtered by the kidneys into the inferior vena cava. There is one renal vein draining each kidney.",
+   "enUrl": "https://en.wikipedia.org/wiki/Renal_vein",
+   "description": {
+    "lang": "vi",
+    "text": "Tĩnh mạch thận dẫn máu đã được thận lọc về tĩnh mạch chủ dưới.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Renal vein",
+    "url": "https://en.wikipedia.org/wiki/Renal_vein",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "epididymides",
+   "systemId": "reproductive",
+   "nameVi": "Mào tinh",
+   "nameEn": "Epididymides",
+   "parts": 2,
+   "bare": 2,
+   "enTitle": "Epididymis",
+   "enText": "The epididymis is an elongated tubular genital organ attached to the posterior side of each one of the two male reproductive glands, the testicles. It is a single, narrow, tightly coiled tube which, in adult humans, is about 6 to 7 centimetres in length; uncoiled, the tube would be approximately 6 m long.",
+   "enUrl": "https://en.wikipedia.org/wiki/Epididymis",
+   "description": {
+    "lang": "vi",
+    "text": "Mào tinh là một cơ quan sinh dục dạng ống, dài, gắn vào mặt sau của mỗi tinh hoàn. Đó là một ống đơn, hẹp, cuộn chặt.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Epididymis",
+    "url": "https://en.wikipedia.org/wiki/Epididymis",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "deferent-ducts",
+   "systemId": "reproductive",
+   "nameVi": "Ống dẫn tinh",
+   "nameEn": "Deferent ducts",
+   "parts": 2,
+   "bare": 2,
+   "enTitle": "Vas deferens",
+   "enText": "The vas deferens, ductus deferens, or sperm duct is part of the male reproductive system of many vertebrates. In mammals, spermatozoa are produced in the seminiferous tubules and flow into the epididymal duct.",
+   "enUrl": "https://en.wikipedia.org/wiki/Vas_deferens",
+   "description": {
+    "lang": "vi",
+    "text": "Ống dẫn tinh, cũng có tên Latin là ductus deferens, là một phần của hệ sinh dục nam của nhiều động vật có xương sống; các ống dẫn này vận chuyển tinh trùng từ mào tinh hoàn sang ống phóng tinh trước khi chuẩn bị xuất tinh.",
+    "translated": false,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Ống dẫn tinh",
+    "url": "https://vi.wikipedia.org/wiki/%E1%BB%90ng_d%E1%BA%ABn_tinh",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "seminal-vesicles",
+   "systemId": "reproductive",
+   "nameVi": "Túi tinh",
+   "nameEn": "Seminal vesicles",
+   "parts": 2,
+   "bare": 2,
+   "enTitle": "Seminal vesicles",
+   "enText": "The seminal vesicles are a pair of convoluted tubular accessory glands that lie behind the urinary bladder of male mammals. They secrete fluid that largely composes the semen.",
+   "enUrl": "https://en.wikipedia.org/wiki/Seminal_vesicles",
+   "description": {
+    "lang": "vi",
+    "text": "Túi tinh là một cặp tuyến phụ dạng ống cuộn, nằm sau bàng quang ở nam giới. Chúng tiết ra dịch chiếm phần lớn tinh dịch.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Seminal vesicles",
+    "url": "https://en.wikipedia.org/wiki/Seminal_vesicles",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "penis",
+   "systemId": "reproductive",
+   "nameVi": "Vật hang, vật xốp và quy đầu",
+   "nameEn": "Corpora and glans of the penis",
+   "parts": 3,
+   "bare": 2,
+   "enTitle": "Corpus cavernosum penis",
+   "enText": "A corpus cavernosum penis (singular) is one of a pair of sponge-like regions of erectile tissue, which contain most of the blood in the penis during an erection in several species of mammals.",
+   "enUrl": "https://en.wikipedia.org/wiki/Corpus_cavernosum_penis",
+   "description": null,
+   "source": null,
+   "dropped": "bài nguồn chỉ về vật hang; không có gì về vật xốp và quy đầu — mô tả một thành viên anh em cho cả nhóm"
+  },
+  {
+   "viewId": "right-eyeball",
+   "systemId": "sensory",
+   "nameVi": "Nhãn cầu phải",
+   "nameEn": "Right eyeball",
+   "parts": 11,
+   "bare": 11,
+   "enTitle": "Human eye",
+   "enText": "The human eye is a sensory organ in the visual system that reacts to visible light allowing eyesight. Other functions include maintaining the circadian rhythm, and keeping balance.",
+   "enUrl": "https://en.wikipedia.org/wiki/Human_eye",
+   "description": {
+    "lang": "vi",
+    "text": "Mắt người là một cơ quan cảm giác đáp ứng với ánh sáng và thực hiện chức năng thị giác.",
+    "translated": false,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Mắt người",
+    "url": "https://vi.wikipedia.org/wiki/M%E1%BA%AFt_ng%C6%B0%E1%BB%9Di",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "left-eyeball",
+   "systemId": "sensory",
+   "nameVi": "Nhãn cầu trái",
+   "nameEn": "Left eyeball",
+   "parts": 11,
+   "bare": 11,
+   "enTitle": "Human eye",
+   "enText": "The human eye is a sensory organ in the visual system that reacts to visible light allowing eyesight. Other functions include maintaining the circadian rhythm, and keeping balance.",
+   "enUrl": "https://en.wikipedia.org/wiki/Human_eye",
+   "description": {
+    "lang": "vi",
+    "text": "Mắt người là một cơ quan cảm giác đáp ứng với ánh sáng và thực hiện chức năng thị giác.",
+    "translated": false,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Mắt người",
+    "url": "https://vi.wikipedia.org/wiki/M%E1%BA%AFt_ng%C6%B0%E1%BB%9Di",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "sclera",
+   "systemId": "sensory",
+   "nameVi": "Củng mạc",
+   "nameEn": "Sclera",
+   "parts": 1,
+   "bare": 1,
+   "enTitle": "Sclera",
+   "enText": "The sclera, also known as the white of the eye or, in older literature, as the tunica albuginea oculi, is the opaque, fibrous, protective outer layer of the eye containing mainly collagen and some crucial elastic fiber.",
+   "enUrl": "https://en.wikipedia.org/wiki/Sclera",
+   "description": {
+    "lang": "vi",
+    "text": "Củng mạc, còn gọi là lòng trắng của mắt, là lớp ngoài của mắt, dạng sợi, đục, có chức năng bảo vệ, chủ yếu chứa collagen và một số sợi đàn hồi.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Sclera",
+    "url": "https://en.wikipedia.org/wiki/Sclera",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "cornea",
+   "systemId": "sensory",
+   "nameVi": "Giác mạc",
+   "nameEn": "Cornea",
+   "parts": 1,
+   "bare": 1,
+   "enTitle": "Cornea",
+   "enText": "The cornea is the transparent front part of the eyeball which covers the iris, pupil, and anterior chamber. Along with the anterior chamber and lens, the cornea refracts light, accounting for approximately two-thirds of the eye's total optical power.",
+   "enUrl": "https://en.wikipedia.org/wiki/Cornea",
+   "description": {
+    "lang": "vi",
+    "text": "Giác mạc là phần trong suốt ở phía trước nhãn cầu, che phủ mống mắt, đồng tử và tiền phòng. Cùng với tiền phòng và thể thủy tinh, giác mạc khúc xạ ánh sáng, chiếm khoảng hai phần ba tổng công suất quang học của mắt.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Cornea",
+    "url": "https://en.wikipedia.org/wiki/Cornea",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "choroid",
+   "systemId": "sensory",
+   "nameVi": "Màng mạch",
+   "nameEn": "Choroid",
+   "parts": 2,
+   "bare": 2,
+   "enTitle": "Choroid",
+   "enText": "The choroid, also known as the choroidea or choroid coat, is a part of the uvea, the vascular layer of the eye. It contains connective tissues, and lies between the retina and the sclera.",
+   "enUrl": "https://en.wikipedia.org/wiki/Choroid",
+   "description": {
+    "lang": "vi",
+    "text": "Màng mạch là một phần của màng bồ đào, lớp mạch máu của mắt. Màng mạch chứa mô liên kết và nằm giữa võng mạc và củng mạc.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Choroid",
+    "url": "https://en.wikipedia.org/wiki/Choroid",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "ciliary-body",
+   "systemId": "sensory",
+   "nameVi": "Vành mi (thể mi)",
+   "nameEn": "Pars plicata of the ciliary body",
+   "parts": 1,
+   "bare": 1,
+   "enTitle": "Ciliary body",
+   "enText": "The ciliary body is a part of the eye that includes the ciliary muscle, which controls the shape of the lens, and the ciliary epithelium, which produces the aqueous humor. The aqueous humor is produced in the non-pigmented portion of the ciliary body.",
+   "enUrl": "https://en.wikipedia.org/wiki/Ciliary_body",
+   "description": {
+    "lang": "vi",
+    "text": "Vành mi là một phần của thể mi. Thể mi gồm cơ thể mi, điều chỉnh hình dạng thể thủy tinh, và biểu mô thể mi, nơi sản xuất thủy dịch.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Ciliary body",
+    "url": "https://en.wikipedia.org/wiki/Ciliary_body",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "iris",
+   "systemId": "sensory",
+   "nameVi": "Mống mắt",
+   "nameEn": "Iris",
+   "parts": 1,
+   "bare": 1,
+   "enTitle": "Iris (anatomy)",
+   "enText": "The iris is a thin, ring-shaped structure in the eye in most mammals and birds that is responsible for controlling the diameter and size of the pupil, and thus the amount of light reaching the retina. In optical terms, the pupil is the eye's aperture, while the iris is the diaphragm.",
+   "enUrl": "https://en.wikipedia.org/wiki/Iris_(anatomy)",
+   "description": {
+    "lang": "vi",
+    "text": "Mống mắt là một cấu trúc mỏng hình vòng trong mắt, điều chỉnh đường kính đồng tử và do đó điều chỉnh lượng ánh sáng tới võng mạc.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Iris (anatomy)",
+    "url": "https://en.wikipedia.org/wiki/Iris_(anatomy)",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "lens",
+   "systemId": "sensory",
+   "nameVi": "Thể thuỷ tinh và dây chằng treo",
+   "nameEn": "Lens and suspensory ligament",
+   "parts": 2,
+   "bare": 2,
+   "enTitle": "Lens (vertebrate anatomy)",
+   "enText": "The lens, or crystalline lens, is a transparent biconvex structure in most land vertebrate eyes. Relatively long, thin fiber cells make up the majority of the lens.",
+   "enUrl": "https://en.wikipedia.org/wiki/Lens_(vertebrate_anatomy)",
+   "description": {
+    "lang": "vi",
+    "text": "Thể thủy tinh là một cấu trúc trong suốt, hai mặt lồi trong mắt. Phần lớn thể thủy tinh được tạo nên từ các tế bào sợi tương đối dài và mảnh.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Lens (vertebrate anatomy)",
+    "url": "https://en.wikipedia.org/wiki/Lens_(vertebrate_anatomy)",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "vitreous-body",
+   "systemId": "sensory",
+   "nameVi": "Thể kính",
+   "nameEn": "Vitreous body",
+   "parts": 1,
+   "bare": 1,
+   "enTitle": "Vitreous body",
+   "enText": "In human anatomy, the vitreous body is the clear gel that fills the space between the lens and the retina of the eye in humans and other vertebrates. It is often referred to as the vitreous humor, or simply \"the vitreous\".",
+   "enUrl": "https://en.wikipedia.org/wiki/Vitreous_body",
+   "description": {
+    "lang": "vi",
+    "text": "Thể kính là khối gel trong suốt lấp đầy khoảng giữa thể thủy tinh và võng mạc của mắt, còn được gọi là dịch kính.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Vitreous body",
+    "url": "https://en.wikipedia.org/wiki/Vitreous_body",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "retina",
+   "systemId": "sensory",
+   "nameVi": "Võng mạc",
+   "nameEn": "Retina",
+   "parts": 1,
+   "bare": 1,
+   "enTitle": "Retina",
+   "enText": "The retina is the innermost, light-sensitive layer of tissue of the eye. The optics of the eye create a focused two-dimensional image of the visual world on the retina, which then processes that image within the retina and sends nerve impulses along the optic nerve to the visual cortex to create visual perception.",
+   "enUrl": "https://en.wikipedia.org/wiki/Retina",
+   "description": {
+    "lang": "vi",
+    "text": "Võng mạc là lớp mô trong cùng, nhạy sáng của mắt. Hệ quang học của mắt tạo một ảnh hội tụ trên võng mạc; võng mạc xử lý ảnh đó và gửi xung thần kinh theo thần kinh thị giác tới vỏ não thị giác.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Retina",
+    "url": "https://en.wikipedia.org/wiki/Retina",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "anterior-chamber",
+   "systemId": "sensory",
+   "nameVi": "Tiền phòng",
+   "nameEn": "Anterior chamber",
+   "parts": 1,
+   "bare": 1,
+   "enTitle": "Anterior chamber of eyeball",
+   "enText": "The anterior chamber (AC) is the aqueous humor-filled space inside the eye between the iris and the cornea's innermost surface, the endothelium. Hyphema, anterior uveitis and glaucoma are three main pathologies in this area.",
+   "enUrl": "https://en.wikipedia.org/wiki/Anterior_chamber_of_eyeball",
+   "description": {
+    "lang": "vi",
+    "text": "Tiền phòng là khoang chứa thủy dịch bên trong mắt, nằm giữa mống mắt và mặt trong cùng của giác mạc (lớp nội mô).",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Anterior chamber of eyeball",
+    "url": "https://en.wikipedia.org/wiki/Anterior_chamber_of_eyeball",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "levator-palpebrae",
+   "systemId": "sensory",
+   "nameVi": "Cơ nâng mi trên",
+   "nameEn": "Levator palpebrae superioris",
+   "parts": 2,
+   "bare": 1,
+   "enTitle": "Levator palpebrae superioris muscle",
+   "enText": "The levator palpebrae superioris is the muscle in the orbit that elevates the upper eyelid.",
+   "enUrl": "https://en.wikipedia.org/wiki/Levator_palpebrae_superioris_muscle",
+   "description": {
+    "lang": "vi",
+    "text": "Cơ nâng mi trên là cơ trong ổ mắt có chức năng nâng mi trên.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Levator palpebrae superioris muscle",
+    "url": "https://en.wikipedia.org/wiki/Levator_palpebrae_superioris_muscle",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "orbital-connective",
+   "systemId": "sensory",
+   "nameVi": "Vòng gân chung, ròng rọc và dây chằng hãm",
+   "nameEn": "Common tendinous ring, trochlea and check ligaments",
+   "parts": 4,
+   "bare": 3,
+   "enTitle": "Common tendinous ring",
+   "enText": "The common tendinous ring, also known as the annulus of Zinn or annular tendon, is a ring of fibrous tissue surrounding the optic nerve at its entrance at the apex of the orbit. It is the common origin of the four recti muscles of the group of extraocular muscles.",
+   "enUrl": "https://en.wikipedia.org/wiki/Common_tendinous_ring",
+   "description": null,
+   "source": null,
+   "dropped": "bài nguồn chỉ về vòng gân chung; không có gì về ròng rọc và dây chằng hãm"
+  },
+  {
+   "viewId": "optic-nerves",
+   "systemId": "sensory",
+   "nameVi": "Dây thần kinh thị giác (II)",
+   "nameEn": "Optic nerves (II)",
+   "parts": 4,
+   "bare": 4,
+   "enTitle": "Optic nerve",
+   "enText": "In neuroanatomy, the optic nerve, also known as the second cranial nerve, cranial nerve II, or simply CN II, is a paired cranial nerve that transmits visual information from the retina to the brain. In humans, the optic nerve is derived from optic stalks during the seventh week of development and is composed of retinal ganglion cell axons and glial cells; it extends from the optic disc to the optic chiasma and continues as the optic tract to the lateral geniculate nucleus, pretectal nuclei, and superior colliculus.",
+   "enUrl": "https://en.wikipedia.org/wiki/Optic_nerve",
+   "description": {
+    "lang": "vi",
+    "text": "Thần kinh thị giác còn được gọi là thần kinh sọ II, viết tắt là CN II, là đôi dây thần kinh sọ thực hiện chức năng truyền thông tin thị giác từ võng mạc đến não.",
+    "translated": false,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Thần kinh thị giác",
+    "url": "https://vi.wikipedia.org/wiki/Th%E1%BA%A7n_kinh_th%E1%BB%8B_gi%C3%A1c",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "lacrimal-lakes",
+   "systemId": "sensory",
+   "nameVi": "Hồ lệ",
+   "nameEn": "Lacrimal lakes",
+   "parts": 2,
+   "bare": 2,
+   "enTitle": "Lacrimal lake",
+   "enText": "The lacrimal lake is the pool of tears in the lower conjunctival cul-de-sac, which drains into the opening of the tear drainage system. The volume of the lacrimal lake has been estimated to be between 7 and 10 μL.",
+   "enUrl": "https://en.wikipedia.org/wiki/Lacrimal_lake",
+   "description": {
+    "lang": "vi",
+    "text": "Hồ lệ là nơi nước mắt tụ lại trước khi chảy vào lỗ mở của hệ thống dẫn lệ.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Lacrimal lake",
+    "url": "https://en.wikipedia.org/wiki/Lacrimal_lake",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "lacrimal-canaliculi",
+   "systemId": "sensory",
+   "nameVi": "Tiểu quản lệ",
+   "nameEn": "Lacrimal canaliculi",
+   "parts": 2,
+   "bare": 2,
+   "enTitle": "Lacrimal canaliculi",
+   "enText": "The lacrimal canaliculi are the small channels in each eyelid that drain lacrimal fluid from the lacrimal puncta to the lacrimal sac. This forms part of the lacrimal apparatus that drains lacrimal fluid from the surface of the eye to the nasal cavity.",
+   "enUrl": "https://en.wikipedia.org/wiki/Lacrimal_canaliculi",
+   "description": {
+    "lang": "vi",
+    "text": "Tiểu quản lệ là các kênh nhỏ ở mỗi mí mắt, dẫn nước mắt từ điểm lệ tới túi lệ. Chúng thuộc bộ máy lệ, hệ thống dẫn nước mắt từ bề mặt mắt xuống khoang mũi.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Lacrimal canaliculi",
+    "url": "https://en.wikipedia.org/wiki/Lacrimal_canaliculi",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "lacrimal-sacs",
+   "systemId": "sensory",
+   "nameVi": "Túi lệ",
+   "nameEn": "Lacrimal sacs",
+   "parts": 2,
+   "bare": 2,
+   "enTitle": "Lacrimal sac",
+   "enText": "The lacrimal sac or lachrymal sac is the upper dilated end of the nasolacrimal duct, and is lodged in a deep groove formed by the lacrimal bone and frontal process of the maxilla. It connects the lacrimal canaliculi, which drain tears from the eye's surface, and the nasolacrimal duct, which conveys this fluid into the nasal cavity.",
+   "enUrl": "https://en.wikipedia.org/wiki/Lacrimal_sac",
+   "description": {
+    "lang": "vi",
+    "text": "Túi lệ là đầu trên giãn rộng của ống lệ mũi, nằm trong một rãnh sâu tạo bởi xương lệ và mỏm trán của xương hàm trên. Túi lệ nối tiểu quản lệ với ống lệ mũi.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Lacrimal sac",
+    "url": "https://en.wikipedia.org/wiki/Lacrimal_sac",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "nasolacrimal-ducts",
+   "systemId": "sensory",
+   "nameVi": "Ống lệ mũi",
+   "nameEn": "Nasolacrimal ducts",
+   "parts": 2,
+   "bare": 2,
+   "enTitle": "Nasolacrimal duct",
+   "enText": "The nasolacrimal duct carries tears from the lacrimal sac of the eye into the nasal cavity. The duct begins in the eye socket between the maxillary and lacrimal bones, from where it passes downwards and backwards.",
+   "enUrl": "https://en.wikipedia.org/wiki/Nasolacrimal_duct",
+   "description": {
+    "lang": "vi",
+    "text": "Ống lệ mũi dẫn nước mắt từ túi lệ của mắt xuống khoang mũi.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Nasolacrimal duct",
+    "url": "https://en.wikipedia.org/wiki/Nasolacrimal_duct",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "external-ear",
+   "systemId": "sensory",
+   "nameVi": "Tai ngoài",
+   "nameEn": "External ear",
+   "parts": 1,
+   "bare": 1,
+   "enTitle": "Outer ear",
+   "enText": "The outer ear, external ear, or auris externa is the external part of the ear, which consists of the auricle and the ear canal. It gathers sound energy and focuses it on the eardrum.",
+   "enUrl": "https://en.wikipedia.org/wiki/Outer_ear",
+   "description": {
+    "lang": "vi",
+    "text": "Tai ngoài là phần bên ngoài của tai, gồm vành tai và ống tai. Tai ngoài thu năng lượng âm thanh và hướng nó tới màng nhĩ.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Outer ear",
+    "url": "https://en.wikipedia.org/wiki/Outer_ear",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "head-lymph-nodes",
+   "systemId": "lymphatic",
+   "nameVi": "Các nhóm hạch đầu",
+   "nameEn": "Lymph nodes of the head",
+   "parts": 18,
+   "bare": 18,
+   "enTitle": "Lymph node",
+   "enText": "A lymph node, or lymph gland, is a kidney-shaped organ of the lymphatic system and the adaptive immune system. A large number of lymph nodes are linked throughout the body by the lymphatic vessels.",
+   "enUrl": "https://en.wikipedia.org/wiki/Lymph_node",
+   "description": {
+    "lang": "vi",
+    "text": "Hạch bạch huyết hay hạch lympho là một trong vô số các cấu trúc trơn, hình bầu dục dẹp, rải rác dọc theo các mạch bạch huyết, là một phần của hệ bạch huyết.",
+    "translated": false,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Hạch bạch huyết",
+    "url": "https://vi.wikipedia.org/wiki/H%E1%BA%A1ch_b%E1%BA%A1ch_huy%E1%BA%BFt",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "neck-lymph-nodes",
+   "systemId": "lymphatic",
+   "nameVi": "Các nhóm hạch cổ",
+   "nameEn": "Lymph nodes of the neck",
+   "parts": 24,
+   "bare": 24,
+   "enTitle": "Cervical lymph nodes",
+   "enText": "Cervical lymph nodes are lymph nodes found in the neck. Of the 800 lymph nodes in the human body, 300 are in the neck.",
+   "enUrl": "https://en.wikipedia.org/wiki/Cervical_lymph_nodes",
+   "description": {
+    "lang": "vi",
+    "text": "Hạch bạch huyết cổ là các hạch bạch huyết được tìm thấy ở cổ.",
+    "translated": false,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Hạch bạch huyết cổ",
+    "url": "https://vi.wikipedia.org/wiki/H%E1%BA%A1ch_b%E1%BA%A1ch_huy%E1%BA%BFt_c%E1%BB%95",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "head-neck-lymph-vessels",
+   "systemId": "lymphatic",
+   "nameVi": "Mạch bạch huyết đầu – cổ",
+   "nameEn": "Lymphatic vessels of the head and neck",
+   "parts": 1,
+   "bare": 1,
+   "enTitle": "Lymphatic vessel",
+   "enText": "The lymphatic vessels are thin-walled vessels (tubes), structured like blood vessels, that carry lymph. As part of the lymphatic system, lymph vessels are complementary to the cardiovascular system.",
+   "enUrl": "https://en.wikipedia.org/wiki/Lymphatic_vessel",
+   "description": {
+    "lang": "vi",
+    "text": "Mạch bạch huyết là những ống thành mỏng, cấu tạo giống mạch máu, dẫn bạch huyết. Là một phần của hệ bạch huyết, mạch bạch huyết bổ trợ cho hệ tim mạch.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Lymphatic vessel",
+    "url": "https://en.wikipedia.org/wiki/Lymphatic_vessel",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "axillary-lymph-nodes",
+   "systemId": "lymphatic",
+   "nameVi": "Các nhóm hạch nách",
+   "nameEn": "Axillary lymph nodes",
+   "parts": 14,
+   "bare": 14,
+   "enTitle": "Axillary lymph nodes",
+   "enText": "The axillary lymph nodes or armpit lymph nodes are lymph nodes in the human armpit. Between 20 and 49 in number, they drain lymph vessels from the lateral quadrants of the breast, the superficial lymph vessels from thin walls of the chest and the abdomen above the level of the navel, and the vessels from the upper limb.",
+   "enUrl": "https://en.wikipedia.org/wiki/Axillary_lymph_nodes",
+   "description": {
+    "lang": "vi",
+    "text": "Hạch nách là các hạch bạch huyết ở hõm nách của người. Chúng nhận bạch huyết từ chi trên, từ các phần tư ngoài của vú và từ các mạch bạch huyết nông của thành ngực và thành bụng phía trên rốn.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Axillary lymph nodes",
+    "url": "https://en.wikipedia.org/wiki/Axillary_lymph_nodes",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "arm-lymph-nodes",
+   "systemId": "lymphatic",
+   "nameVi": "Hạch cánh tay và khuỷu",
+   "nameEn": "Lymph nodes of the arm and elbow",
+   "parts": 6,
+   "bare": 6,
+   "enTitle": "Supratrochlear lymph nodes",
+   "enText": "One or two supratrochlear lymph nodes are placed above the medial epicondyle of the humerus, medial to the basilic vein.",
+   "enUrl": "https://en.wikipedia.org/wiki/Supratrochlear_lymph_nodes",
+   "description": null,
+   "source": null,
+   "dropped": "Bài Supratrochlear lymph nodes chỉ tả 1-2 hạch trên ròng rọc; nhóm 6 mảnh gồm cả hạch cánh tay khác, câu không đúng cho cả nhóm."
+  },
+  {
+   "viewId": "upper-limb-lymph-vessels",
+   "systemId": "lymphatic",
+   "nameVi": "Mạch bạch huyết chi trên và nách",
+   "nameEn": "Lymphatic vessels of the upper limb and axilla",
+   "parts": 4,
+   "bare": 4,
+   "enTitle": "Lymphatic vessel",
+   "enText": "The lymphatic vessels are thin-walled vessels (tubes), structured like blood vessels, that carry lymph. As part of the lymphatic system, lymph vessels are complementary to the cardiovascular system.",
+   "enUrl": "https://en.wikipedia.org/wiki/Lymphatic_vessel",
+   "description": {
+    "lang": "vi",
+    "text": "Mạch bạch huyết là những ống thành mỏng, cấu tạo giống mạch máu, dẫn bạch huyết. Là một phần của hệ bạch huyết, mạch bạch huyết bổ trợ cho hệ tim mạch.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Lymphatic vessel",
+    "url": "https://en.wikipedia.org/wiki/Lymphatic_vessel",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "thoracic-wall-lymph-nodes",
+   "systemId": "lymphatic",
+   "nameVi": "Hạch thành ngực",
+   "nameEn": "Lymph nodes of the thoracic wall",
+   "parts": 6,
+   "bare": 6,
+   "enTitle": "Parasternal lymph nodes",
+   "enText": "The parasternal lymph nodes are placed at the anterior ends of the intercostal spaces, by the side of the internal thoracic artery.",
+   "enUrl": "https://en.wikipedia.org/wiki/Parasternal_lymph_nodes",
+   "description": null,
+   "source": null,
+   "dropped": "Bài Parasternal lymph nodes hẹp hơn nhóm (hạch thành ngực còn gồm hạch gian sườn...); câu vị trí cạnh động mạch ngực trong sai cho các thành viên khác."
+  },
+  {
+   "viewId": "mediastinal-lymph-nodes",
+   "systemId": "lymphatic",
+   "nameVi": "Hạch trung thất và phổi",
+   "nameEn": "Mediastinal and pulmonary lymph nodes",
+   "parts": 9,
+   "bare": 9,
+   "enTitle": "Mediastinal lymph node",
+   "enText": "Mediastinal lymph nodes are lymph nodes located in the mediastinum.",
+   "enUrl": "https://en.wikipedia.org/wiki/Mediastinal_lymph_node",
+   "description": null,
+   "source": null,
+   "dropped": "Câu 'hạch nằm trong trung thất' sai cho phần hạch phổi của nhóm (hạch trong phổi/rốn phổi không nằm trong trung thất)."
+  },
+  {
+   "viewId": "thorax-lymph-vessels",
+   "systemId": "lymphatic",
+   "nameVi": "Mạch bạch huyết ngực",
+   "nameEn": "Lymphatic vessels of the thorax",
+   "parts": 1,
+   "bare": 1,
+   "enTitle": "Lymphatic vessel",
+   "enText": "The lymphatic vessels are thin-walled vessels (tubes), structured like blood vessels, that carry lymph. As part of the lymphatic system, lymph vessels are complementary to the cardiovascular system.",
+   "enUrl": "https://en.wikipedia.org/wiki/Lymphatic_vessel",
+   "description": {
+    "lang": "vi",
+    "text": "Mạch bạch huyết là những ống thành mỏng, cấu tạo giống mạch máu, dẫn bạch huyết. Là một phần của hệ bạch huyết, mạch bạch huyết bổ trợ cho hệ tim mạch.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Lymphatic vessel",
+    "url": "https://en.wikipedia.org/wiki/Lymphatic_vessel",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "abdominal-visceral-lymph-nodes",
+   "systemId": "lymphatic",
+   "nameVi": "Hạch tạng bụng",
+   "nameEn": "Visceral lymph nodes of the abdomen",
+   "parts": 21,
+   "bare": 21,
+   "enTitle": "Superior mesenteric lymph nodes",
+   "enText": "The superior mesenteric lymph nodes may be divided into three principal groups:mesenteric lymph nodes\nileocolic lymph nodes\nmesocolic lymph nodes",
+   "enUrl": "https://en.wikipedia.org/wiki/Superior_mesenteric_lymph_nodes",
+   "description": null,
+   "source": null,
+   "dropped": "en_text bị cắt cụt ('three principal groups:mesenteric lymph nodes') và bài Superior mesenteric lymph nodes chỉ là một phần của 21 mảnh hạch tạng bụng."
+  },
+  {
+   "viewId": "lumbar-lymph-nodes",
+   "systemId": "lymphatic",
+   "nameVi": "Hạch thắt lưng và hạch hoành dưới",
+   "nameEn": "Lumbar and inferior diaphragmatic lymph nodes",
+   "parts": 8,
+   "bare": 8,
+   "enTitle": "Periaortic lymph nodes",
+   "enText": "The periaortic lymph nodes are a group of lymph nodes that lie in front of the lumbar vertebrae near the aorta. These lymph nodes receive drainage from the gastrointestinal tract and the abdominal organs.",
+   "enUrl": "https://en.wikipedia.org/wiki/Periaortic_lymph_nodes",
+   "description": null,
+   "source": null,
+   "dropped": "Bài Periaortic lymph nodes không bao hạch hoành dưới (không nằm trước đốt sống thắt lưng); câu dẫn lưu 'từ ống tiêu hóa' cũng không đúng cho mọi hạch thắt lưng."
+  },
+  {
+   "viewId": "abdomen-lymph-vessels",
+   "systemId": "lymphatic",
+   "nameVi": "Mạch bạch huyết bụng",
+   "nameEn": "Lymphatic vessels of the abdomen",
+   "parts": 1,
+   "bare": 1,
+   "enTitle": "Lymphatic vessel",
+   "enText": "The lymphatic vessels are thin-walled vessels (tubes), structured like blood vessels, that carry lymph. As part of the lymphatic system, lymph vessels are complementary to the cardiovascular system.",
+   "enUrl": "https://en.wikipedia.org/wiki/Lymphatic_vessel",
+   "description": {
+    "lang": "vi",
+    "text": "Mạch bạch huyết là những ống thành mỏng, cấu tạo giống mạch máu, dẫn bạch huyết. Là một phần của hệ bạch huyết, mạch bạch huyết bổ trợ cho hệ tim mạch.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Lymphatic vessel",
+    "url": "https://en.wikipedia.org/wiki/Lymphatic_vessel",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "iliac-lymph-nodes",
+   "systemId": "lymphatic",
+   "nameVi": "Hạch chậu",
+   "nameEn": "Iliac lymph nodes",
+   "parts": 18,
+   "bare": 18,
+   "enTitle": "External iliac lymph nodes",
+   "enText": "The external iliac lymph nodes are lymph nodes, from eight to ten in number, that lie along the external iliac vessels.",
+   "enUrl": "https://en.wikipedia.org/wiki/External_iliac_lymph_nodes",
+   "description": null,
+   "source": null,
+   "dropped": "Bài External iliac lymph nodes chỉ một phân nhóm; nhóm còn hạch chậu chung và chậu trong, câu 'dọc mạch chậu ngoài, 8-10 hạch' sai cho cả nhóm."
+  },
+  {
+   "viewId": "pelvic-lymph-nodes",
+   "systemId": "lymphatic",
+   "nameVi": "Hạch cùng, mông và tạng chậu",
+   "nameEn": "Sacral, gluteal and pelvic visceral lymph nodes",
+   "parts": 12,
+   "bare": 12,
+   "enTitle": "Sacral lymph nodes",
+   "enText": "The sacral lymph nodes are placed in the concavity of the sacrum, in relation to the middle and lateral sacral arteries; they receive lymphatics from the rectum and posterior wall of the pelvis.",
+   "enUrl": "https://en.wikipedia.org/wiki/Sacral_lymph_nodes",
+   "description": null,
+   "source": null,
+   "dropped": "Bài Sacral lymph nodes chỉ tả hạch cùng; nhóm còn hạch mông và hạch tạng chậu."
+  },
+  {
+   "viewId": "pelvis-lymph-vessels",
+   "systemId": "lymphatic",
+   "nameVi": "Mạch bạch huyết chậu",
+   "nameEn": "Lymphatic vessels of the pelvis",
+   "parts": 1,
+   "bare": 1,
+   "enTitle": "Lymphatic vessel",
+   "enText": "The lymphatic vessels are thin-walled vessels (tubes), structured like blood vessels, that carry lymph. As part of the lymphatic system, lymph vessels are complementary to the cardiovascular system.",
+   "enUrl": "https://en.wikipedia.org/wiki/Lymphatic_vessel",
+   "description": {
+    "lang": "vi",
+    "text": "Mạch bạch huyết là những ống thành mỏng, cấu tạo giống mạch máu, dẫn bạch huyết. Là một phần của hệ bạch huyết, mạch bạch huyết bổ trợ cho hệ tim mạch.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Lymphatic vessel",
+    "url": "https://en.wikipedia.org/wiki/Lymphatic_vessel",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "inguinal-lymph-nodes",
+   "systemId": "lymphatic",
+   "nameVi": "Hạch bẹn",
+   "nameEn": "Inguinal lymph nodes",
+   "parts": 10,
+   "bare": 10,
+   "enTitle": "Inguinal lymph nodes",
+   "enText": "Inguinal lymph nodes are lymph nodes in the groin. They are situated in the femoral triangle of the inguinal region.",
+   "enUrl": "https://en.wikipedia.org/wiki/Inguinal_lymph_nodes",
+   "description": {
+    "lang": "vi",
+    "text": "Hạch bẹn là các hạch bạch huyết ở vùng bẹn, nằm trong tam giác đùi.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Inguinal lymph nodes",
+    "url": "https://en.wikipedia.org/wiki/Inguinal_lymph_nodes",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "leg-lymph-nodes",
+   "systemId": "lymphatic",
+   "nameVi": "Hạch khoeo và cẳng chân",
+   "nameEn": "Popliteal and leg lymph nodes",
+   "parts": 10,
+   "bare": 10,
+   "enTitle": "Popliteal lymph nodes",
+   "enText": "The popliteal lymph nodes, small in size and some six or seven in number, are embedded in the fat contained in the popliteal fossa, sometimes referred to as the 'knee pit'. One lies immediately beneath the popliteal fascia, near the terminal part of the small saphenous vein, and drains the region from which this vein derives its tributaries, such as superficial regions of the posterolateral aspect of the leg and the plantar aspect of the foot.",
+   "enUrl": "https://en.wikipedia.org/wiki/Popliteal_lymph_nodes",
+   "description": null,
+   "source": null,
+   "dropped": "Bài Popliteal lymph nodes chỉ tả hạch trong hố khoeo; nhóm còn hạch cẳng chân (ví dụ hạch chày trước), câu vị trí sai cho các thành viên đó."
+  },
+  {
+   "viewId": "lower-limb-lymph-vessels",
+   "systemId": "lymphatic",
+   "nameVi": "Mạch bạch huyết chi dưới",
+   "nameEn": "Lymphatic vessels of the lower limb",
+   "parts": 2,
+   "bare": 2,
+   "enTitle": "Lymphatic vessel",
+   "enText": "The lymphatic vessels are thin-walled vessels (tubes), structured like blood vessels, that carry lymph. As part of the lymphatic system, lymph vessels are complementary to the cardiovascular system.",
+   "enUrl": "https://en.wikipedia.org/wiki/Lymphatic_vessel",
+   "description": {
+    "lang": "vi",
+    "text": "Mạch bạch huyết là những ống thành mỏng, cấu tạo giống mạch máu, dẫn bạch huyết. Là một phần của hệ bạch huyết, mạch bạch huyết bổ trợ cho hệ tim mạch.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Lymphatic vessel",
+    "url": "https://en.wikipedia.org/wiki/Lymphatic_vessel",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "thymus",
+   "systemId": "lymphatic",
+   "nameVi": "Tuyến ức",
+   "nameEn": "Thymus",
+   "parts": 2,
+   "bare": 2,
+   "enTitle": "Thymus",
+   "enText": "The thymus is a specialized primary lymphoid organ of the immune system. Within the thymus, T cells mature.",
+   "enUrl": "https://en.wikipedia.org/wiki/Thymus",
+   "description": {
+    "lang": "vi",
+    "text": "Tuyến ức nằm ở trong lồng ngực, phía sau xương ức, thuộc trung thất trước trên, trải dài từ phía dưới cổ họng đến trước tim.",
+    "translated": false,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Tuyến ức",
+    "url": "https://vi.wikipedia.org/wiki/Tuy%E1%BA%BFn_%E1%BB%A9c",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "cerebral-cortex",
+   "systemId": "nervous",
+   "nameVi": "Các hồi và thuỳ đại não",
+   "nameEn": "Cerebral gyri and lobes",
+   "parts": 36,
+   "bare": 36,
+   "enTitle": "Gyrus",
+   "enText": "In neuroanatomy, a gyrus is a ridge on the cerebral cortex. It is generally surrounded by one or more sulci.",
+   "enUrl": "https://en.wikipedia.org/wiki/Gyrus",
+   "description": null,
+   "source": null,
+   "dropped": "Nhóm gồm cả các thùy đại não; định nghĩa hồi não (một nếp gồ được rãnh bao quanh) sai cho mảnh thùy."
+  },
+  {
+   "viewId": "cerebral-white-matter",
+   "systemId": "nervous",
+   "nameVi": "Chất trắng, thể chai và các mép",
+   "nameEn": "White matter, corpus callosum and commissures",
+   "parts": 14,
+   "bare": 14,
+   "enTitle": "White matter",
+   "enText": "White matter refers to areas of the central nervous system that are mainly made up of myelinated axons, also called tracts. Long thought to be passive tissue, white matter affects learning and brain functions, modulating the distribution of action potentials, acting as a relay and coordinating communication between different brain regions.",
+   "enUrl": "https://en.wikipedia.org/wiki/White_matter",
+   "description": {
+    "lang": "vi",
+    "text": "Chất trắng là các vùng nằm trong hệ thần kinh trung ương chủ yếu được tạo nên bởi các sợi trục có bao myelin, còn được gọi là bó thần kinh.",
+    "translated": false,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Chất trắng",
+    "url": "https://vi.wikipedia.org/wiki/Ch%E1%BA%A5t_tr%E1%BA%AFng",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "basal-nuclei",
+   "systemId": "nervous",
+   "nameVi": "Nhân đuôi, bèo sẫm và cầu nhạt",
+   "nameEn": "Caudate nucleus, putamen and globus pallidus",
+   "parts": 6,
+   "bare": 6,
+   "enTitle": "Basal ganglia",
+   "enText": "The basal ganglia (BG) or basal nuclei are a group of subcortical nuclei found in the brains of vertebrates. Positioned at the base of the forebrain and the top of the midbrain, they have strong connections with the cerebral cortex, thalamus, brainstem and other brain areas.",
+   "enUrl": "https://en.wikipedia.org/wiki/Basal_ganglia",
+   "description": {
+    "lang": "vi",
+    "text": "Hạch nền (nhân nền) là một nhóm nhân dưới vỏ nằm ở đáy não trước, có liên hệ chặt chẽ với vỏ đại não, đồi thị, thân não và các vùng não khác.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Basal ganglia",
+    "url": "https://en.wikipedia.org/wiki/Basal_ganglia",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "hippocampus-amygdala",
+   "systemId": "nervous",
+   "nameVi": "Hồi hải mã, thể hạnh nhân và vách",
+   "nameEn": "Hippocampus, amygdala and septum",
+   "parts": 5,
+   "bare": 5,
+   "enTitle": "Hippocampus",
+   "enText": "The hippocampus, also hippocampus proper, is a major component of the brain of humans and many other vertebrates. In the human brain the hippocampus, the dentate gyrus, and the subiculum are components of the hippocampal formation located in the limbic system.",
+   "enUrl": "https://en.wikipedia.org/wiki/Hippocampus",
+   "description": null,
+   "source": null,
+   "dropped": "Câu chỉ nói về hồi hải mã; nhóm còn thể hạnh nhân và vách."
+  },
+  {
+   "viewId": "diencephalon",
+   "systemId": "nervous",
+   "nameVi": "Gian não",
+   "nameEn": "Diencephalon",
+   "parts": 15,
+   "bare": 15,
+   "enTitle": "Diencephalon",
+   "enText": "In the human brain, the diencephalon is a division of the forebrain. It is situated between the telencephalon and the midbrain.",
+   "enUrl": "https://en.wikipedia.org/wiki/Diencephalon",
+   "description": {
+    "lang": "vi",
+    "text": "Gian não là một phần của não trước, nằm giữa đoan não và não giữa.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Diencephalon",
+    "url": "https://en.wikipedia.org/wiki/Diencephalon",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "brainstem",
+   "systemId": "nervous",
+   "nameVi": "Thân não",
+   "nameEn": "Brainstem",
+   "parts": 18,
+   "bare": 18,
+   "enTitle": "Brainstem",
+   "enText": "The brainstem is the posterior stalk-like part of the brain that connects the cerebrum with the spinal cord. In the human brain, the brainstem is composed of the midbrain, the pons, and the medulla oblongata.",
+   "enUrl": "https://en.wikipedia.org/wiki/Brainstem",
+   "description": {
+    "lang": "vi",
+    "text": "Thân não là phần não hình cuống ở phía sau, nối đại não với tủy sống. Ở người, thân não gồm não giữa, cầu não và hành não.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Brainstem",
+    "url": "https://en.wikipedia.org/wiki/Brainstem",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "tentorium-cerebelli",
+   "systemId": "nervous",
+   "nameVi": "Lều tiểu não",
+   "nameEn": "Tentorium cerebelli",
+   "parts": 1,
+   "bare": 1,
+   "enTitle": "Cerebellar tentorium",
+   "enText": "The cerebellar tentorium or tentorium cerebelli is one of four dural folds that separate the cranial cavity into four (incomplete) compartments. The cerebellar tentorium separates the cerebellum from the cerebrum forming a supratentorial and an infratentorial region; the cerebrum is supratentorial and the cerebellum infratentorial.",
+   "enUrl": "https://en.wikipedia.org/wiki/Cerebellar_tentorium",
+   "description": {
+    "lang": "vi",
+    "text": "Lều tiểu não là một trong bốn nếp màng cứng chia khoang sọ thành bốn ngăn không hoàn toàn. Lều ngăn tiểu não với đại não, tạo nên vùng trên lều chứa đại não và vùng dưới lều chứa tiểu não.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Cerebellar tentorium",
+    "url": "https://en.wikipedia.org/wiki/Cerebellar_tentorium",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "brain-ventricles",
+   "systemId": "nervous",
+   "nameVi": "Não thất, cống não và đám rối mạch mạc",
+   "nameEn": "Ventricles, cerebral aqueduct and choroid plexus",
+   "parts": 8,
+   "bare": 8,
+   "enTitle": "Ventricular system",
+   "enText": "In neuroanatomy, the ventricular system is a set of four interconnected cavities known as cerebral ventricles in the brain. Within each ventricle is a region of choroid plexus which produces the circulating cerebrospinal fluid (CSF).",
+   "enUrl": "https://en.wikipedia.org/wiki/Ventricular_system",
+   "description": {
+    "lang": "vi",
+    "text": "Hệ não thất là bốn khoang thông nhau trong não, gọi là các não thất. Trong mỗi não thất có một vùng đám rối mạch mạc sản xuất dịch não tủy.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Ventricular system",
+    "url": "https://en.wikipedia.org/wiki/Ventricular_system",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "optic-pathway",
+   "systemId": "nervous",
+   "nameVi": "Dây, giao thoa và dải thị giác (II)",
+   "nameEn": "Optic nerve, chiasm and tract (II)",
+   "parts": 8,
+   "bare": 8,
+   "enTitle": "Optic nerve",
+   "enText": "In neuroanatomy, the optic nerve, also known as the second cranial nerve, cranial nerve II, or simply CN II, is a paired cranial nerve that transmits visual information from the retina to the brain. In humans, the optic nerve is derived from optic stalks during the seventh week of development and is composed of retinal ganglion cell axons and glial cells; it extends from the optic disc to the optic chiasma and continues as the optic tract to the lateral geniculate nucleus, pretectal nuclei, and superior colliculus.",
+   "enUrl": "https://en.wikipedia.org/wiki/Optic_nerve",
+   "description": {
+    "lang": "vi",
+    "text": "Thần kinh thị giác (thần kinh sọ II) là đôi dây thần kinh sọ truyền thông tin thị giác từ võng mạc đến não. Dây đi từ đĩa thị đến giao thoa thị giác rồi tiếp tục thành dải thị giác tới thể gối ngoài, các nhân trước mái và gò trên.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Optic nerve",
+    "url": "https://en.wikipedia.org/wiki/Optic_nerve",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "oculomotor-nerve",
+   "systemId": "nervous",
+   "nameVi": "Dây vận nhãn (III)",
+   "nameEn": "Oculomotor nerve (III)",
+   "parts": 4,
+   "bare": 4,
+   "enTitle": "Oculomotor nerve",
+   "enText": "The oculomotor nerve, also known as the third cranial nerve, cranial nerve III, or simply CN III, is a cranial nerve that enters the orbit through the superior orbital fissure and innervates extraocular muscles that enable most movements of the eye and that raise the eyelid. The nerve also contains fibers that innervate the intrinsic eye muscles that enable pupillary constriction and accommodation.",
+   "enUrl": "https://en.wikipedia.org/wiki/Oculomotor_nerve",
+   "description": {
+    "lang": "vi",
+    "text": "Thần kinh vận nhãn (thần kinh sọ III) vào ổ mắt qua khe ổ mắt trên, chi phối các cơ ngoài nhãn cầu giúp mắt cử động theo phần lớn các hướng và nâng mi mắt. Dây còn chứa các sợi chi phối cơ trong nhãn cầu, giúp co đồng tử và điều tiết.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Oculomotor nerve",
+    "url": "https://en.wikipedia.org/wiki/Oculomotor_nerve",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "ophthalmic-nerve",
+   "systemId": "nervous",
+   "nameVi": "Dây thần kinh mắt (V1) và hạch mi",
+   "nameEn": "Ophthalmic nerve (V1) and ciliary ganglion",
+   "parts": 26,
+   "bare": 26,
+   "enTitle": "Ophthalmic nerve",
+   "enText": "The ophthalmic nerve (CN V1) is a sensory nerve of the head. It is one of three divisions of the trigeminal nerve (CN V), the fifth cranial nerve.",
+   "enUrl": "https://en.wikipedia.org/wiki/Ophthalmic_nerve",
+   "description": {
+    "lang": "vi",
+    "text": "Thần kinh mắt (V1) là một dây thần kinh cảm giác của đầu, một trong ba nhánh của thần kinh sinh ba (thần kinh sọ V).",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Ophthalmic nerve",
+    "url": "https://en.wikipedia.org/wiki/Ophthalmic_nerve",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "maxillary-nerve",
+   "systemId": "nervous",
+   "nameVi": "Dây thần kinh hàm trên (V2)",
+   "nameEn": "Maxillary nerve (V2)",
+   "parts": 4,
+   "bare": 4,
+   "enTitle": "Maxillary nerve",
+   "enText": "In neuroanatomy, the maxillary nerve (V2) is one of the three branches or divisions of the trigeminal nerve, the fifth (CN V) cranial nerve. It comprises the principal functions of sensation from the maxilla, nasal cavity, sinuses, the palate and subsequently that of the mid-face, and is intermediate, both in position and size, between the ophthalmic nerve and the mandibular nerve.",
+   "enUrl": "https://en.wikipedia.org/wiki/Maxillary_nerve",
+   "description": {
+    "lang": "vi",
+    "text": "Thần kinh hàm trên (V2) là một trong ba nhánh của thần kinh sinh ba (thần kinh sọ V). Dây đảm nhận cảm giác của xương hàm trên, khoang mũi, các xoang, khẩu cái và vùng giữa mặt.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Maxillary nerve",
+    "url": "https://en.wikipedia.org/wiki/Maxillary_nerve",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "mandibular-nerve",
+   "systemId": "nervous",
+   "nameVi": "Dây thần kinh hàm dưới (V3) và nhánh",
+   "nameEn": "Mandibular nerve (V3) and branches",
+   "parts": 14,
+   "bare": 14,
+   "enTitle": "Mandibular nerve",
+   "enText": "In neuroanatomy, the mandibular nerve (V3) is the largest of the three divisions of the trigeminal nerve, the fifth cranial nerve (CN V). Unlike the other divisions of the trigeminal nerve (ophthalmic nerve, maxillary nerve) which contain only afferent fibers, the mandibular nerve contains both afferent and efferent fibers.",
+   "enUrl": "https://en.wikipedia.org/wiki/Mandibular_nerve",
+   "description": {
+    "lang": "vi",
+    "text": "Thần kinh hàm dưới (V3) là nhánh lớn nhất trong ba nhánh của thần kinh sinh ba (thần kinh sọ V). Khác với thần kinh mắt và thần kinh hàm trên chỉ chứa sợi hướng tâm, thần kinh hàm dưới chứa cả sợi hướng tâm lẫn sợi ly tâm.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Mandibular nerve",
+    "url": "https://en.wikipedia.org/wiki/Mandibular_nerve",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "facial-nerve",
+   "systemId": "nervous",
+   "nameVi": "Dây mặt (VII) và thừng nhĩ",
+   "nameEn": "Facial nerve (VII) and chorda tympani",
+   "parts": 4,
+   "bare": 4,
+   "enTitle": "Facial nerve",
+   "enText": "The facial nerve, also known as the seventh cranial nerve, cranial nerve VII, or simply CN VII, is a cranial nerve that emerges from the pons of the brainstem, controls the muscles of facial expression, and functions in the conveyance of taste sensations from the anterior two-thirds of the tongue. The nerve typically travels from the pons through the facial canal in the temporal bone and exits the skull at the stylomastoid foramen.",
+   "enUrl": "https://en.wikipedia.org/wiki/Facial_nerve",
+   "description": {
+    "lang": "vi",
+    "text": "Thần kinh mặt là dây thần kinh sọ thứ bảy trong tổng số 12 đôi dây thần kinh sọ, viết tắt là CN VII.",
+    "translated": false,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Thần kinh mặt",
+    "url": "https://vi.wikipedia.org/wiki/Th%E1%BA%A7n_kinh_m%E1%BA%B7t",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "vestibulocochlear-nerve",
+   "systemId": "nervous",
+   "nameVi": "Dây tiền đình – ốc tai (VIII)",
+   "nameEn": "Vestibulocochlear nerve (VIII)",
+   "parts": 6,
+   "bare": 6,
+   "enTitle": "Vestibulocochlear nerve",
+   "enText": "The vestibulocochlear nerve or auditory vestibular nerve, also known as the eighth cranial nerve, cranial nerve VIII, or simply CN VIII, is a cranial nerve that transmits sound and equilibrium (balance) information from the inner ear to the brain. Through olivocochlear fibers, it also transmits motor and modulatory information from the superior olivary complex in the brainstem to the cochlea.",
+   "enUrl": "https://en.wikipedia.org/wiki/Vestibulocochlear_nerve",
+   "description": {
+    "lang": "vi",
+    "text": "Thần kinh tiền đình – ốc tai (thần kinh sọ VIII) truyền thông tin âm thanh và thăng bằng từ tai trong lên não.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Vestibulocochlear nerve",
+    "url": "https://en.wikipedia.org/wiki/Vestibulocochlear_nerve",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "glossopharyngeal-nerve",
+   "systemId": "nervous",
+   "nameVi": "Dây thiệt hầu (IX)",
+   "nameEn": "Glossopharyngeal nerve (IX)",
+   "parts": 2,
+   "bare": 2,
+   "enTitle": "Glossopharyngeal nerve",
+   "enText": "The glossopharyngeal nerve, also known as the ninth cranial nerve, cranial nerve IX, or simply CN IX, is a cranial nerve that exits the brainstem from the sides of the upper medulla, just anterior to the vagus nerve. Being a mixed nerve (sensorimotor), it carries afferent sensory and efferent motor information.",
+   "enUrl": "https://en.wikipedia.org/wiki/Glossopharyngeal_nerve",
+   "description": {
+    "lang": "vi",
+    "text": "Thần kinh thiệt hầu (thần kinh sọ IX) ra khỏi thân não ở hai bên phần trên hành não, ngay phía trước thần kinh lang thang. Đây là dây thần kinh hỗn hợp, mang cả thông tin cảm giác hướng tâm lẫn vận động ly tâm.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Glossopharyngeal nerve",
+    "url": "https://en.wikipedia.org/wiki/Glossopharyngeal_nerve",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "accessory-nerve",
+   "systemId": "nervous",
+   "nameVi": "Dây phụ (XI)",
+   "nameEn": "Accessory nerve (XI)",
+   "parts": 2,
+   "bare": 2,
+   "enTitle": "Accessory nerve",
+   "enText": "The accessory nerve, also known as the eleventh cranial nerve, cranial nerve XI, or simply CN XI, is a cranial nerve that supplies the sternocleidomastoid and trapezius muscles. It is classified as the eleventh of twelve pairs of cranial nerves because part of it was formerly believed to originate in the brain.",
+   "enUrl": "https://en.wikipedia.org/wiki/Accessory_nerve",
+   "description": {
+    "lang": "vi",
+    "text": "Thần kinh phụ là thần kinh sọ thứ 11 trong tổng số 12 đôi dây thần kinh sọ.",
+    "translated": false,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Thần kinh phụ",
+    "url": "https://vi.wikipedia.org/wiki/Th%E1%BA%A7n_kinh_ph%E1%BB%A5",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "hypoglossal-nerve",
+   "systemId": "nervous",
+   "nameVi": "Dây hạ thiệt (XII)",
+   "nameEn": "Hypoglossal nerve (XII)",
+   "parts": 2,
+   "bare": 2,
+   "enTitle": "Hypoglossal nerve",
+   "enText": "The hypoglossal nerve, also known as the twelfth cranial nerve, cranial nerve XII, or simply CN XII, is a cranial nerve that innervates all the extrinsic and intrinsic muscles of the tongue except for the palatoglossus, which is innervated by the vagus nerve.",
+   "enUrl": "https://en.wikipedia.org/wiki/Hypoglossal_nerve",
+   "description": {
+    "lang": "vi",
+    "text": "Thần kinh hạ thiệt là thần kinh thứ 12 trong tổng số 12 đôi dây thần kinh sọ, chi phối vận động các cơ trong và ngoài của lưỡi, ngoại trừ cơ khẩu cái - lưỡi.",
+    "translated": false,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Thần kinh hạ thiệt",
+    "url": "https://vi.wikipedia.org/wiki/Th%E1%BA%A7n_kinh_h%E1%BA%A1_thi%E1%BB%87t",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "spinal-cord",
+   "systemId": "nervous",
+   "nameVi": "Tuỷ sống (chất xám, chất trắng)",
+   "nameEn": "Spinal cord (grey and white matter)",
+   "parts": 5,
+   "bare": 5,
+   "enTitle": "Spinal cord",
+   "enText": "The spinal cord is a long, thin, tubular structure made up of nervous tissue that extends from the medulla oblongata in the lower brainstem to the lumbar region of the vertebral column (backbone) of vertebrate animals. The center of the spinal cord is hollow and contains a structure called the central canal, which contains cerebrospinal fluid.",
+   "enUrl": "https://en.wikipedia.org/wiki/Spinal_cord",
+   "description": {
+    "lang": "vi",
+    "text": "Tủy sống là một cấu trúc hình ống dài, mảnh, cấu tạo bằng mô thần kinh, kéo dài từ hành não ở phần dưới thân não tới vùng thắt lưng của cột sống.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Spinal cord",
+    "url": "https://en.wikipedia.org/wiki/Spinal_cord",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "spinal-dura",
+   "systemId": "nervous",
+   "nameVi": "Màng cứng tuỷ",
+   "nameEn": "Spinal dura mater",
+   "parts": 1,
+   "bare": 1,
+   "enTitle": "Dura mater",
+   "enText": "The dura mater is the outermost of the three meningeal membranes. The dura mater has two layers, an outer periosteal layer closely adhered to the neurocranium, and an inner meningeal layer known as the dural border cell layer.",
+   "enUrl": "https://en.wikipedia.org/wiki/Dura_mater",
+   "description": {
+    "lang": "vi",
+    "text": "Màng cứng là lớp ngoài cùng trong ba lớp màng não tủy.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Dura mater",
+    "url": "https://en.wikipedia.org/wiki/Dura_mater",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "spinal-roots",
+   "systemId": "nervous",
+   "nameVi": "Rễ và hạch gai",
+   "nameEn": "Spinal roots and ganglia",
+   "parts": 6,
+   "bare": 6,
+   "enTitle": "Dorsal root of spinal nerve",
+   "enText": "The dorsal root of spinal nerve is one of two \"roots\" which emerge from the spinal cord. It emerges directly from the spinal cord and travels to the dorsal root ganglion.",
+   "enUrl": "https://en.wikipedia.org/wiki/Dorsal_root_of_spinal_nerve",
+   "description": null,
+   "source": null,
+   "dropped": "Bài Dorsal root chỉ tả rễ sau; nhóm còn rễ trước, câu 'đi tới hạch rễ sau' sai cho rễ trước."
+  },
+  {
+   "viewId": "cauda-equina",
+   "systemId": "nervous",
+   "nameVi": "Chùm đuôi ngựa",
+   "nameEn": "Cauda equina",
+   "parts": 1,
+   "bare": 1,
+   "enTitle": "Cauda equina",
+   "enText": "The cauda equina is a bundle of spinal nerves and spinal nerve rootlets, consisting of the second through fifth lumbar nerve pairs, the first through fifth sacral nerve pairs, and the coccygeal nerve, all of which arise from the lumbar enlargement and the conus medullaris of the spinal cord. The cauda equina occupies the lumbar cistern, a subarachnoid space inferior to the conus medullaris.",
+   "enUrl": "https://en.wikipedia.org/wiki/Cauda_equina",
+   "description": {
+    "lang": "vi",
+    "text": "Chùm đuôi ngựa là bó các thần kinh gai và rễ con thần kinh gai, gồm các đôi thần kinh thắt lưng L2–L5, các đôi thần kinh cùng S1–S5 và thần kinh cụt, tất cả xuất phát từ phình thắt lưng và nón tủy. Chùm đuôi ngựa nằm trong bể thắt lưng, một khoang dưới nhện bên dưới nón tủy.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Cauda equina",
+    "url": "https://en.wikipedia.org/wiki/Cauda_equina",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "brachial-plexus",
+   "systemId": "nervous",
+   "nameVi": "Đám rối cánh tay (rễ, thân, ngành, bó)",
+   "nameEn": "Brachial plexus (roots, trunks, divisions, cords)",
+   "parts": 22,
+   "bare": 22,
+   "enTitle": "Brachial plexus",
+   "enText": "The brachial plexus is a network of nerves formed by the anterior rami of the lower four cervical nerves and the first thoracic nerve. This plexus extends from the spinal cord, through the cervicoaxillary canal in the neck, over the first rib, and into the armpit.",
+   "enUrl": "https://en.wikipedia.org/wiki/Brachial_plexus",
+   "description": {
+    "lang": "vi",
+    "text": "Đám rối thần kinh cánh tay là mạng lưới thần kinh tạo bởi nhánh trước của bốn thần kinh gai cổ dưới và thần kinh gai ngực thứ nhất. Đám rối đi từ tủy sống qua ống cổ – nách ở cổ, vượt trên xương sườn 1 rồi vào hõm nách.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Brachial plexus",
+    "url": "https://en.wikipedia.org/wiki/Brachial_plexus",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "brachial-plexus-collaterals",
+   "systemId": "nervous",
+   "nameVi": "Nhánh bên của đám rối cánh tay",
+   "nameEn": "Collateral branches of the brachial plexus",
+   "parts": 18,
+   "bare": 18,
+   "enTitle": "Brachial plexus",
+   "enText": "The brachial plexus is a network of nerves formed by the anterior rami of the lower four cervical nerves and the first thoracic nerve. This plexus extends from the spinal cord, through the cervicoaxillary canal in the neck, over the first rib, and into the armpit.",
+   "enUrl": "https://en.wikipedia.org/wiki/Brachial_plexus",
+   "description": null,
+   "source": null,
+   "dropped": "Câu định nghĩa cả đám rối (mạng lưới từ C5–T1), không tả các nhánh bên; người đọc dễ hiểu mỗi nhánh mang đủ C5–T1, sai (ví dụ thần kinh trên vai chỉ C5–C6)."
+  },
+  {
+   "viewId": "musculocutaneous-nerve",
+   "systemId": "nervous",
+   "nameVi": "Thần kinh cơ bì",
+   "nameEn": "Musculocutaneous nerve",
+   "parts": 4,
+   "bare": 4,
+   "enTitle": "Musculocutaneous nerve",
+   "enText": "The musculocutaneous nerve is a mixed branch of the lateral cord of the brachial plexus derived from cervical spinal nerves C5-C7. It arises opposite the lower border of the pectoralis minor.",
+   "enUrl": "https://en.wikipedia.org/wiki/Musculocutaneous_nerve",
+   "description": {
+    "lang": "vi",
+    "text": "Thần kinh cơ bì xuất phát từ bó ngoài đám rối thần kinh cánh tay.",
+    "translated": false,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Thần kinh cơ bì",
+    "url": "https://vi.wikipedia.org/wiki/Th%E1%BA%A7n_kinh_c%C6%A1_b%C3%AC",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "axillary-nerve",
+   "systemId": "nervous",
+   "nameVi": "Thần kinh nách",
+   "nameEn": "Axillary nerve",
+   "parts": 10,
+   "bare": 10,
+   "enTitle": "Axillary nerve",
+   "enText": "The axillary nerve or the circumflex nerve is a nerve of the human body, that originates from the brachial plexus at the level of the axilla (armpit) and carries nerve fibers from C5 and C6. The axillary nerve travels through the quadrangular space with the posterior circumflex humeral artery and vein to innervate the deltoid and teres minor.",
+   "enUrl": "https://en.wikipedia.org/wiki/Axillary_nerve",
+   "description": {
+    "lang": "vi",
+    "text": "Thần kinh nách là thần kinh của người, bắt nguồn từ đám rối thần kinh cánh tay ở ngang mức nách chứa các sợi C5 và C6.",
+    "translated": false,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Thần kinh nách",
+    "url": "https://vi.wikipedia.org/wiki/Th%E1%BA%A7n_kinh_n%C3%A1ch",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "median-nerve",
+   "systemId": "nervous",
+   "nameVi": "Thần kinh giữa",
+   "nameEn": "Median nerve",
+   "parts": 14,
+   "bare": 14,
+   "enTitle": "Median nerve",
+   "enText": "The median nerve is a nerve in humans and other animals in the upper limb. It is one of the five main nerves originating from the brachial plexus.",
+   "enUrl": "https://en.wikipedia.org/wiki/Median_nerve",
+   "description": {
+    "lang": "vi",
+    "text": "Thần kinh giữa là thần kinh phân bố ở vùng chi trên người và một số động vật.",
+    "translated": false,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Thần kinh giữa",
+    "url": "https://vi.wikipedia.org/wiki/Th%E1%BA%A7n_kinh_gi%E1%BB%AFa",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "ulnar-nerve",
+   "systemId": "nervous",
+   "nameVi": "Thần kinh trụ",
+   "nameEn": "Ulnar nerve",
+   "parts": 18,
+   "bare": 18,
+   "enTitle": "Ulnar nerve",
+   "enText": "The ulnar nerve is a nerve that runs near the ulna, one of the two long bones in the forearm. The ulnar collateral ligament of elbow joint is in relation with the ulnar nerve.",
+   "enUrl": "https://en.wikipedia.org/wiki/Ulnar_nerve",
+   "description": {
+    "lang": "vi",
+    "text": "Trong giải phẫu người, thần kinh trụ là dây thần kinh chạy gần xương trụ.",
+    "translated": false,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Thần kinh trụ",
+    "url": "https://vi.wikipedia.org/wiki/Th%E1%BA%A7n_kinh_tr%E1%BB%A5",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "radial-nerve",
+   "systemId": "nervous",
+   "nameVi": "Thần kinh quay",
+   "nameEn": "Radial nerve",
+   "parts": 16,
+   "bare": 16,
+   "enTitle": "Radial nerve",
+   "enText": "The radial nerve is a nerve in the human body that supplies the posterior portion of the upper limb. It innervates the medial and lateral heads of the triceps brachii muscle of the arm, as well as all 12 muscles in the posterior osteofascial compartment of the forearm and the associated joints and overlying skin.",
+   "enUrl": "https://en.wikipedia.org/wiki/Radial_nerve",
+   "description": {
+    "lang": "vi",
+    "text": "Thần kinh quay là dây thần kinh ở người, chi phối phần sau chi trên.",
+    "translated": false,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Thần kinh quay",
+    "url": "https://vi.wikipedia.org/wiki/Th%E1%BA%A7n_kinh_quay",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "medial-cutaneous-nerves-arm",
+   "systemId": "nervous",
+   "nameVi": "Thần kinh bì cánh tay trong và bì cẳng tay trong",
+   "nameEn": "Medial brachial and antebrachial cutaneous nerves",
+   "parts": 8,
+   "bare": 8,
+   "enTitle": "Medial cutaneous nerve of forearm",
+   "enText": "The medial cutaneous nerve of the forearm is a sensory branch of the medial cord of the brachial plexus derived from the ventral rami of spinal nerves C8-T1. It provides sensory innervation to the skin of the medial forearm and skin overlying the olecranon.",
+   "enUrl": "https://en.wikipedia.org/wiki/Medial_cutaneous_nerve_of_forearm",
+   "description": null,
+   "source": null,
+   "dropped": "Cả vi_text và en_text chỉ nói về thần kinh bì cẳng tay trong; nhóm còn thần kinh bì cánh tay trong."
+  },
+  {
+   "viewId": "lumbar-plexus-branches",
+   "systemId": "nervous",
+   "nameVi": "Thần kinh chậu hạ vị, chậu bẹn, sinh dục đùi và bì đùi ngoài",
+   "nameEn": "Iliohypogastric, ilio-inguinal, genitofemoral and lateral femoral cutaneous nerves",
+   "parts": 12,
+   "bare": 12,
+   "enTitle": "Lumbar plexus",
+   "enText": "The lumbar plexus is a web of nerves in the lumbar region of the body which forms part of the larger lumbosacral plexus. It is formed by the divisions of the first four lumbar nerves (L1–L4) and from contributions of the subcostal nerve (T12), which is the last thoracic nerve.",
+   "enUrl": "https://en.wikipedia.org/wiki/Lumbar_plexus",
+   "description": null,
+   "source": null,
+   "dropped": "Câu định nghĩa cả đám rối thắt lưng (L1–L4 và T12), không tả bốn nhánh của nhóm; mỗi nhánh chỉ nhận một phần các rễ đó."
+  },
+  {
+   "viewId": "femoral-nerve",
+   "systemId": "nervous",
+   "nameVi": "Thần kinh đùi và thần kinh hiển",
+   "nameEn": "Femoral and saphenous nerves",
+   "parts": 10,
+   "bare": 10,
+   "enTitle": "Femoral nerve",
+   "enText": "The femoral nerve is a nerve in the thigh that supplies skin on the upper thigh and inner leg, and the muscles that extend the knee. It is the largest branch of the lumbar plexus.",
+   "enUrl": "https://en.wikipedia.org/wiki/Femoral_nerve",
+   "description": {
+    "lang": "vi",
+    "text": "Thần kinh đùi là dây thần kinh ở đùi, cảm giác cho da phần trên đùi và mặt trong cẳng chân, vận động các cơ duỗi gối. Đây là nhánh lớn nhất của đám rối thắt lưng.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Femoral nerve",
+    "url": "https://en.wikipedia.org/wiki/Femoral_nerve",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "obturator-nerve",
+   "systemId": "nervous",
+   "nameVi": "Thần kinh bịt",
+   "nameEn": "Obturator nerve",
+   "parts": 6,
+   "bare": 6,
+   "enTitle": "Obturator nerve",
+   "enText": "The obturator nerve in human anatomy arises from the ventral divisions of the second, third, and fourth lumbar nerves in the lumbar plexus; the branch from the third is the largest, while that from the second is often very small.",
+   "enUrl": "https://en.wikipedia.org/wiki/Obturator_nerve",
+   "description": {
+    "lang": "vi",
+    "text": "Thần kinh bịt xuất phát từ các ngành trước của thần kinh thắt lưng 2, 3 và 4 trong đám rối thắt lưng; nhánh từ thần kinh thắt lưng 3 lớn nhất, còn nhánh từ thần kinh thắt lưng 2 thường rất nhỏ.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Obturator nerve",
+    "url": "https://en.wikipedia.org/wiki/Obturator_nerve",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "sacral-plexus-branches",
+   "systemId": "nervous",
+   "nameVi": "Thần kinh mông, thẹn, bì đùi sau và các nhánh cơ",
+   "nameEn": "Gluteal, pudendal, posterior femoral cutaneous and muscular branches",
+   "parts": 14,
+   "bare": 14,
+   "enTitle": "Sacral plexus",
+   "enText": "In human anatomy, the sacral plexus is a nerve plexus which provides motor and sensory nerves for the posterior thigh, most of the lower leg and foot, and part of the pelvis. It is part of the lumbosacral plexus and emerges from the lumbar vertebrae and sacral vertebrae (L4-S4).",
+   "enUrl": "https://en.wikipedia.org/wiki/Sacral_plexus",
+   "description": null,
+   "source": null,
+   "dropped": "Câu định nghĩa cả đám rối cùng và vùng chi phối của nó, không tả các nhánh trong nhóm; gán vùng chi phối của đám rối cho từng nhánh là sai."
+  },
+  {
+   "viewId": "sciatic-nerve",
+   "systemId": "nervous",
+   "nameVi": "Thần kinh ngồi",
+   "nameEn": "Sciatic nerve",
+   "parts": 2,
+   "bare": 2,
+   "enTitle": "Sciatic nerve",
+   "enText": "The sciatic nerve, also called the ischiadic nerve, is a large nerve in humans and other vertebrate animals. It is the largest branch of the sacral plexus and runs alongside the hip joint and down the lower limb.",
+   "enUrl": "https://en.wikipedia.org/wiki/Sciatic_nerve",
+   "description": {
+    "lang": "vi",
+    "text": "Thần kinh ngồi là một dây thần kinh lớn ở người. Đây là nhánh lớn nhất của đám rối cùng, chạy cạnh khớp hông xuống dọc chi dưới.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Sciatic nerve",
+    "url": "https://en.wikipedia.org/wiki/Sciatic_nerve",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "tibial-nerve",
+   "systemId": "nervous",
+   "nameVi": "Thần kinh chày và thần kinh gan chân",
+   "nameEn": "Tibial and plantar nerves",
+   "parts": 14,
+   "bare": 14,
+   "enTitle": "Tibial nerve",
+   "enText": "The tibial nerve is a branch of the sciatic nerve. The tibial nerve passes through the popliteal fossa to pass below the arch of soleus.",
+   "enUrl": "https://en.wikipedia.org/wiki/Tibial_nerve",
+   "description": {
+    "lang": "vi",
+    "text": "Thần kinh chày là một nhánh của thần kinh ngồi.",
+    "translated": false,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Thần kinh chày",
+    "url": "https://vi.wikipedia.org/wiki/Th%E1%BA%A7n_kinh_ch%C3%A0y",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "fibular-nerves",
+   "systemId": "nervous",
+   "nameVi": "Thần kinh mác chung, nông và sâu",
+   "nameEn": "Common, superficial and deep fibular nerves",
+   "parts": 16,
+   "bare": 16,
+   "enTitle": "Common fibular nerve",
+   "enText": "The common fibular nerve is a nerve in the lower leg that provides sensation over the posterolateral part of the leg and the knee joint. It divides at the knee into two terminal branches: the superficial fibular nerve and deep fibular nerve, which innervate the muscles of the lateral and anterior compartments of the leg respectively.",
+   "enUrl": "https://en.wikipedia.org/wiki/Common_fibular_nerve",
+   "description": {
+    "lang": "vi",
+    "text": "Thần kinh mác chung là dây thần kinh ở chi dưới, cảm giác cho phần sau ngoài cẳng chân và khớp gối. Ở vùng gối, dây chia thành hai nhánh tận là thần kinh mác nông và thần kinh mác sâu, lần lượt chi phối các cơ ở khoang ngoài và khoang trước cẳng chân.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Common fibular nerve",
+    "url": "https://en.wikipedia.org/wiki/Common_fibular_nerve",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "sural-nerve",
+   "systemId": "nervous",
+   "nameVi": "Thần kinh bắp chân",
+   "nameEn": "Sural nerve",
+   "parts": 6,
+   "bare": 6,
+   "enTitle": "Sural nerve",
+   "enText": "The sural nerve (L4-S1) is generally considered a pure cutaneous nerve of the posterolateral leg to the lateral ankle. The sural nerve originates from a combination of either the sural communicating branch and medial sural cutaneous nerve, or the lateral sural cutaneous nerve.",
+   "enUrl": "https://en.wikipedia.org/wiki/Sural_nerve",
+   "description": {
+    "lang": "vi",
+    "text": "Thần kinh bắp chân (L4–S1) thường được xem là dây thần kinh thuần cảm giác da, chi phối mặt sau ngoài cẳng chân đến mắt cá ngoài. Dây được tạo thành hoặc từ nhánh nối bắp chân hợp với thần kinh bì bắp chân trong, hoặc từ thần kinh bì bắp chân ngoài.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Sural nerve",
+    "url": "https://en.wikipedia.org/wiki/Sural_nerve",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "sympathetic-trunk",
+   "systemId": "nervous",
+   "nameVi": "Thân và các dây giao cảm",
+   "nameEn": "Sympathetic trunk and nerves",
+   "parts": 4,
+   "bare": 4,
+   "enTitle": "Sympathetic trunk",
+   "enText": "The sympathetic trunk is a paired bundle of nerve fibers that run from the base of the skull to the coccyx. It is a major component of the sympathetic nervous system.",
+   "enUrl": "https://en.wikipedia.org/wiki/Sympathetic_trunk",
+   "description": {
+    "lang": "vi",
+    "text": "Thân giao cảm là một đôi bó sợi thần kinh chạy từ nền sọ đến xương cụt. Đây là thành phần chính của hệ thần kinh giao cảm.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Sympathetic trunk",
+    "url": "https://en.wikipedia.org/wiki/Sympathetic_trunk",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "bone-maxilla",
+   "systemId": "skeletal",
+   "nameVi": "Xương hàm trên",
+   "nameEn": "Maxillae",
+   "parts": 2,
+   "bare": 2,
+   "enTitle": "Maxilla",
+   "enText": "In vertebrates, the maxilla is the upper fixed bone of the jaw formed from the fusion of two maxillary bones. In humans, the upper jaw includes the hard palate in the front of the mouth.",
+   "enUrl": "https://en.wikipedia.org/wiki/Maxilla",
+   "description": {
+    "lang": "vi",
+    "text": "Xương hàm trên là xương cố định phía trên của hàm, gồm hai xương hàm trên trái và phải ghép lại. Ở người, hàm trên bao gồm khẩu cái cứng ở phía trước miệng.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Maxilla",
+    "url": "https://en.wikipedia.org/wiki/Maxilla",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "teeth-premolars",
+   "systemId": "skeletal",
+   "nameVi": "Răng hàm nhỏ",
+   "nameEn": "Premolars",
+   "parts": 8,
+   "bare": 8,
+   "enTitle": "Premolar",
+   "enText": "The premolars, also called premolar teeth, or bicuspids, are transitional teeth located between the canine and molar teeth. In humans, there are two premolars per quadrant in the permanent set of teeth, making eight premolars total in the mouth.",
+   "enUrl": "https://en.wikipedia.org/wiki/Premolar",
+   "description": {
+    "lang": "vi",
+    "text": "Răng hàm nhỏ (răng tiền hàm) là các răng chuyển tiếp nằm giữa răng nanh và răng hàm lớn. Ở người, bộ răng vĩnh viễn có hai răng hàm nhỏ ở mỗi phần tư hàm, tổng cộng tám chiếc.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Premolar",
+    "url": "https://en.wikipedia.org/wiki/Premolar",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "gingiva",
+   "systemId": "skeletal",
+   "nameVi": "Lợi",
+   "nameEn": "Gums (gingiva)",
+   "parts": 2,
+   "bare": 2,
+   "enTitle": "Gums",
+   "enText": "The gums or gingiva consist of the mucosal tissue that lies over the mandible and maxilla inside the mouth. Gum health and disease can have an effect on general health.",
+   "enUrl": "https://en.wikipedia.org/wiki/Gums",
+   "description": {
+    "lang": "vi",
+    "text": "Nướu hay lợi, bao gồm các mô niêm mạc bao bọc xương hàm dưới và xương hàm trên bên trong miệng.",
+    "translated": false,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Nướu",
+    "url": "https://vi.wikipedia.org/wiki/N%C6%B0%E1%BB%9Bu",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "bone-sternum",
+   "systemId": "skeletal",
+   "nameVi": "Xương ức",
+   "nameEn": "Sternum",
+   "parts": 3,
+   "bare": 3,
+   "enTitle": "Sternum",
+   "enText": "The sternum or breastbone is a long flat bone located in the central part of the chest. It connects to the ribs via cartilage and forms the front of the rib cage, thus helping to protect the heart, lungs, and major blood vessels from injury.",
+   "enUrl": "https://en.wikipedia.org/wiki/Sternum",
+   "description": {
+    "lang": "vi",
+    "text": "Xương ức là một xương dẹt, dài nằm ở giữa ngực. Xương ức nối với các xương sườn qua sụn và tạo nên mặt trước lồng ngực, góp phần bảo vệ tim, phổi và các mạch máu lớn.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Sternum",
+    "url": "https://en.wikipedia.org/wiki/Sternum",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "deep-neck-muscles",
+   "systemId": "muscular",
+   "nameVi": "Cơ bậc thang và cơ trước cột sống",
+   "nameEn": "Scalene and prevertebral muscles",
+   "parts": 15,
+   "bare": 3,
+   "enTitle": "Scalene muscles",
+   "enText": "The scalene muscles are a group of three muscles on each side of the neck, identified as the anterior, the middle, and the posterior. They are innervated by the third to the eighth cervical spinal nerves (C3-C8).",
+   "enUrl": "https://en.wikipedia.org/wiki/Scalene_muscles",
+   "description": null,
+   "source": null,
+   "dropped": "Bài Scalene muscles chỉ nói cơ bậc thang ('nhóm ba cơ', C3-C8); sai cho các cơ trước cột sống trong nhóm."
+  },
+  {
+   "viewId": "back-superficial-muscles",
+   "systemId": "muscular",
+   "nameVi": "Cơ thang, cơ trám và cơ nâng vai",
+   "nameEn": "Trapezius, rhomboids and levator scapulae",
+   "parts": 12,
+   "bare": 6,
+   "enTitle": "Trapezius",
+   "enText": "The trapezius, historically known as cucullaris, is a large paired trapezium-shaped surface muscle that extends longitudinally from the occipital bone to the lower thoracic vertebrae of the spine and laterally to the spine of the scapula. It moves the scapula and supports the arm.",
+   "enUrl": "https://en.wikipedia.org/wiki/Trapezius",
+   "description": null,
+   "source": null,
+   "dropped": "Chỉ nói về cơ thang (vi_text còn hỏng dấu nháy); không đúng cho cơ trám và cơ nâng vai."
+  },
+  {
+   "viewId": "erector-spinae",
+   "systemId": "muscular",
+   "nameVi": "Cơ dựng sống",
+   "nameEn": "Erector spinae",
+   "parts": 16,
+   "bare": 6,
+   "enTitle": "Erector spinae muscles",
+   "enText": "The erector spinae or spinal erectors is a set of muscles that straighten and rotate the back. The spinal erectors work together with the glutes to maintain stable posture standing or sitting.",
+   "enUrl": "https://en.wikipedia.org/wiki/Erector_spinae_muscles",
+   "description": {
+    "lang": "vi",
+    "text": "Cơ dựng sống là nhóm cơ làm duỗi thẳng và xoay lưng.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Erector spinae muscles",
+    "url": "https://en.wikipedia.org/wiki/Erector_spinae_muscles",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "deep-back-muscles",
+   "systemId": "muscular",
+   "nameVi": "Cơ lưng sâu và cơ răng sau",
+   "nameEn": "Deep back muscles and serratus posterior",
+   "parts": 38,
+   "bare": 12,
+   "enTitle": "Erector spinae muscles",
+   "enText": "The erector spinae or spinal erectors is a set of muscles that straighten and rotate the back. The spinal erectors work together with the glutes to maintain stable posture standing or sitting.",
+   "enUrl": "https://en.wikipedia.org/wiki/Erector_spinae_muscles",
+   "description": null,
+   "source": null,
+   "dropped": "Ghép sai bài: nhóm là cơ lưng sâu và cơ răng sau, bài Erector spinae chỉ nói cơ dựng sống; cơ răng sau không duỗi/xoay lưng."
+  },
+  {
+   "viewId": "pectoral-muscles",
+   "systemId": "muscular",
+   "nameVi": "Cơ ngực lớn, ngực bé, dưới đòn và răng trước",
+   "nameEn": "Pectoralis major and minor, subclavius and serratus anterior",
+   "parts": 12,
+   "bare": 6,
+   "enTitle": "Pectoralis major",
+   "enText": "The pectoralis major is a thick, fan-shaped or triangular convergent muscle of the human chest. It makes up the bulk of the chest muscles and lies under the breast.",
+   "enUrl": "https://en.wikipedia.org/wiki/Pectoralis_major",
+   "description": null,
+   "source": null,
+   "dropped": "Chỉ nói về cơ ngực lớn; sai cho cơ ngực bé, cơ dưới đòn và cơ răng trước."
+  },
+  {
+   "viewId": "pelvic-floor-muscles",
+   "systemId": "muscular",
+   "nameVi": "Cơ hoành chậu và đáy chậu",
+   "nameEn": "Pelvic diaphragm and perineal muscles",
+   "parts": 15,
+   "bare": 9,
+   "enTitle": "Pelvic floor",
+   "enText": "The pelvic floor or pelvic diaphragm is an anatomical location in the human body which has an important role in urinary and anal continence, sexual function, and support of the pelvic organs. The pelvic floor includes muscles, both skeletal and smooth, ligaments, and fascia and separates between the pelvic cavity from above, and the perineum from below.",
+   "enUrl": "https://en.wikipedia.org/wiki/Pelvic_floor",
+   "description": {
+    "lang": "vi",
+    "text": "Sàn chậu có vai trò quan trọng trong việc tự chủ tiểu tiện và đại tiện, trong chức năng tình dục và trong nâng đỡ các tạng chậu.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Pelvic floor",
+    "url": "https://en.wikipedia.org/wiki/Pelvic_floor",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "shoulder-muscles",
+   "systemId": "muscular",
+   "nameVi": "Cơ delta, các cơ chóp xoay và cơ tròn lớn",
+   "nameEn": "Deltoid, rotator cuff and teres major",
+   "parts": 16,
+   "bare": 6,
+   "enTitle": "Rotator cuff",
+   "enText": "The rotator cuff is a group of muscles and their tendons that act to stabilize the human shoulder and allow for its extensive range of motion. Of the seven scapulohumeral muscles, four make up the rotator cuff.",
+   "enUrl": "https://en.wikipedia.org/wiki/Rotator_cuff",
+   "description": null,
+   "source": null,
+   "dropped": "Bài Rotator cuff chỉ nói về bốn cơ chóp xoay; sai khi người đọc bấm cơ delta hoặc cơ tròn lớn."
+  },
+  {
+   "viewId": "arm-anterior-muscles",
+   "systemId": "muscular",
+   "nameVi": "Khu trước cánh tay",
+   "nameEn": "Anterior compartment of the arm",
+   "parts": 8,
+   "bare": 4,
+   "enTitle": "Fascial compartments of arm",
+   "enText": "The fascial compartments of arm refers to the specific anatomical term of the compartments within the upper segment of the upper limb of the body. The upper limb is divided into two segments, the arm and the forearm.",
+   "enUrl": "https://en.wikipedia.org/wiki/Fascial_compartments_of_arm",
+   "description": {
+    "lang": "vi",
+    "text": "Khu trước cánh tay là một trong các khoang mạc của cánh tay, tức đoạn trên của chi trên.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Fascial compartments of arm",
+    "url": "https://en.wikipedia.org/wiki/Fascial_compartments_of_arm",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "arm-posterior-muscles",
+   "systemId": "muscular",
+   "nameVi": "Khu sau cánh tay",
+   "nameEn": "Posterior compartment of the arm",
+   "parts": 8,
+   "bare": 6,
+   "enTitle": "Fascial compartments of arm",
+   "enText": "The fascial compartments of arm refers to the specific anatomical term of the compartments within the upper segment of the upper limb of the body. The upper limb is divided into two segments, the arm and the forearm.",
+   "enUrl": "https://en.wikipedia.org/wiki/Fascial_compartments_of_arm",
+   "description": {
+    "lang": "vi",
+    "text": "Khu sau cánh tay là một trong các khoang mạc của cánh tay, tức đoạn trên của chi trên.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Fascial compartments of arm",
+    "url": "https://en.wikipedia.org/wiki/Fascial_compartments_of_arm",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "forearm-anterior-muscles",
+   "systemId": "muscular",
+   "nameVi": "Khu trước cẳng tay",
+   "nameEn": "Anterior compartment of the forearm",
+   "parts": 22,
+   "bare": 8,
+   "enTitle": "Anterior compartment of the forearm",
+   "enText": "The anterior compartment of the forearm contains the following muscles:",
+   "enUrl": "https://en.wikipedia.org/wiki/Anterior_compartment_of_the_forearm",
+   "description": null,
+   "source": null,
+   "dropped": "en_text chỉ là câu mở danh sách bị cắt ('contains the following muscles:'), không có nội dung dùng được."
+  },
+  {
+   "viewId": "hand-muscles",
+   "systemId": "muscular",
+   "nameVi": "Cơ bàn tay",
+   "nameEn": "Intrinsic muscles of the hand",
+   "parts": 24,
+   "bare": 14,
+   "enTitle": "Muscles of the hand",
+   "enText": "The muscles of the hand are the skeletal muscles responsible for the movement of the hand and fingers. The muscles of the hand can be subdivided into two groups: the extrinsic and intrinsic muscle groups.",
+   "enUrl": "https://en.wikipedia.org/wiki/Muscles_of_the_hand",
+   "description": {
+    "lang": "vi",
+    "text": "Các cơ bàn tay là cơ vân làm cử động bàn tay và ngón tay, gồm nhóm cơ ngoại lai và nhóm cơ nội tại; nhóm này là các cơ nội tại.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Muscles of the hand",
+    "url": "https://en.wikipedia.org/wiki/Muscles_of_the_hand",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "thigh-medial-muscles",
+   "systemId": "muscular",
+   "nameVi": "Khu trong đùi",
+   "nameEn": "Medial compartment of the thigh",
+   "parts": 14,
+   "bare": 2,
+   "enTitle": "Medial compartment of thigh",
+   "enText": "The medial compartment of thigh is one of the fascial compartments of the thigh and contains the hip adductor muscles and the gracilis muscle.",
+   "enUrl": "https://en.wikipedia.org/wiki/Medial_compartment_of_thigh",
+   "description": {
+    "lang": "vi",
+    "text": "Khu trong đùi là một trong các khoang mạc của đùi, chứa các cơ khép đùi và cơ thon.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Medial compartment of thigh",
+    "url": "https://en.wikipedia.org/wiki/Medial_compartment_of_thigh",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "thigh-posterior-muscles",
+   "systemId": "muscular",
+   "nameVi": "Khu sau đùi",
+   "nameEn": "Posterior compartment of the thigh",
+   "parts": 8,
+   "bare": 4,
+   "enTitle": "Posterior compartment of thigh",
+   "enText": "The posterior compartment of the thigh is one of the fascial compartments that contains the knee flexors and hip extensors known as the hamstring muscles, as well as vascular and nervous elements, particularly the sciatic nerve.",
+   "enUrl": "https://en.wikipedia.org/wiki/Posterior_compartment_of_thigh",
+   "description": {
+    "lang": "vi",
+    "text": "Khu sau đùi là một trong các khoang mạc của đùi, chứa nhóm cơ ụ ngồi – cẳng chân (gấp khớp gối, duỗi khớp háng) cùng các mạch máu và thần kinh, đặc biệt là thần kinh ngồi.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Posterior compartment of thigh",
+    "url": "https://en.wikipedia.org/wiki/Posterior_compartment_of_thigh",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "leg-posterior-muscles",
+   "systemId": "muscular",
+   "nameVi": "Khu sau cẳng chân",
+   "nameEn": "Posterior compartment of the leg",
+   "parts": 16,
+   "bare": 4,
+   "enTitle": "Posterior compartment of leg",
+   "enText": "The posterior compartment of the leg is one of the fascial compartments of the leg and is divided further into deep and superficial compartments.",
+   "enUrl": "https://en.wikipedia.org/wiki/Posterior_compartment_of_leg",
+   "description": {
+    "lang": "vi",
+    "text": "Khu sau cẳng chân là một trong các khoang mạc của cẳng chân, được chia tiếp thành khu nông và khu sâu.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Posterior compartment of leg",
+    "url": "https://en.wikipedia.org/wiki/Posterior_compartment_of_leg",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "foot-muscles",
+   "systemId": "muscular",
+   "nameVi": "Cơ bàn chân",
+   "nameEn": "Intrinsic muscles of the foot",
+   "parts": 36,
+   "bare": 20,
+   "enTitle": null,
+   "enText": null,
+   "enUrl": null,
+   "description": null,
+   "source": null
+  },
+  {
+   "viewId": "papillary-muscles",
+   "systemId": "muscular",
+   "nameVi": "Cơ nhú (tim)",
+   "nameEn": "Papillary muscles (heart)",
+   "parts": 5,
+   "bare": 5,
+   "enTitle": "Papillary muscle",
+   "enText": "The papillary muscles are muscles located in the ventricles of the heart. They attach to the cusps of the atrioventricular valves, via the chordae tendineae.",
+   "enUrl": "https://en.wikipedia.org/wiki/Papillary_muscle",
+   "description": {
+    "lang": "vi",
+    "text": "Cơ nhú là các cơ nằm trong tâm thất của tim. Chúng bám vào các lá van nhĩ thất qua các thừng gân.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Papillary muscle",
+    "url": "https://en.wikipedia.org/wiki/Papillary_muscle",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "aorta-descending",
+   "systemId": "arterial",
+   "nameVi": "Động mạch chủ xuống (ngực, bụng)",
+   "nameEn": "Descending aorta (thoracic, abdominal)",
+   "parts": 3,
+   "bare": 3,
+   "enTitle": "Descending aorta",
+   "enText": "In human anatomy, the descending aorta is part of the aorta, the largest artery, situated in the chest. It is the continued portion of the aorta immediately following the aortic arch.",
+   "enUrl": "https://en.wikipedia.org/wiki/Descending_aorta",
+   "description": {
+    "lang": "vi",
+    "text": "Động mạch chủ xuống là phần của động mạch chủ, động mạch lớn nhất cơ thể, nối tiếp ngay sau cung động mạch chủ.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Descending aorta",
+    "url": "https://en.wikipedia.org/wiki/Descending_aorta",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "aortic-arch-branches",
+   "systemId": "arterial",
+   "nameVi": "Thân cánh tay đầu, cảnh chung, dưới đòn",
+   "nameEn": "Brachiocephalic, common carotid and subclavian arteries",
+   "parts": 5,
+   "bare": 5,
+   "enTitle": "Aortic arch",
+   "enText": "The aortic arch, arch of the aorta, or transverse aortic arch is the part of the aorta between the ascending and descending aorta. The arch travels backward, so that it ultimately runs to the left of the trachea.",
+   "enUrl": "https://en.wikipedia.org/wiki/Aortic_arch",
+   "description": null,
+   "source": null,
+   "dropped": "Ghép với bài Aortic arch: câu nói về cung động mạch chủ, không phải ba nhánh của nó là thành viên nhóm."
+  },
+  {
+   "viewId": "carotid-vertebral",
+   "systemId": "arterial",
+   "nameVi": "Cảnh trong, đốt sống, nền và mắt",
+   "nameEn": "Internal carotid, vertebral, basilar and ophthalmic arteries",
+   "parts": 8,
+   "bare": 8,
+   "enTitle": "Internal carotid artery",
+   "enText": "The internal carotid artery is an artery in the neck which supplies the anterior and middle cerebral circulation.",
+   "enUrl": "https://en.wikipedia.org/wiki/Internal_carotid_artery",
+   "description": null,
+   "source": null,
+   "dropped": "Chỉ nói về động mạch cảnh trong; sai cho động mạch đốt sống, nền và mắt."
+  },
+  {
+   "viewId": "cerebral-arteries",
+   "systemId": "arterial",
+   "nameVi": "Các động mạch não và tiểu não",
+   "nameEn": "Cerebral and cerebellar arteries",
+   "parts": 143,
+   "bare": 143,
+   "enTitle": "Cerebral arteries",
+   "enText": "The cerebral arteries describe three main pairs of arteries and their branches, which perfuse the cerebrum of the brain.\nThe three main arteries are the:Anterior cerebral artery (ACA), which supplies blood to the medial portion of the brain, including the superior parts of the frontal and anterior parietal lobes\nMiddle cerebral artery (MCA), which supplies blood to the majority of the lateral portion of the brain, including the temporal and lateral-parietal lobes.",
+   "enUrl": "https://en.wikipedia.org/wiki/Cerebral_arteries",
+   "description": null,
+   "source": null,
+   "dropped": "Bài nói 'ba đôi chính tưới máu đại não'; sai cho các động mạch tiểu não trong nhóm (143 mảnh)."
+  },
+  {
+   "viewId": "subclavian-branches",
+   "systemId": "arterial",
+   "nameVi": "Nhánh thân giáp cổ và sườn cổ",
+   "nameEn": "Thyrocervical and costocervical branches",
+   "parts": 18,
+   "bare": 18,
+   "enTitle": "Thyrocervical trunk",
+   "enText": "The thyrocervical trunks are very small arteries of the neck arising from the subclavian arteries, lateral to the vertebral arteries. They divide into branches: the inferior thyroid artery, suprascapular artery, and the transverse cervical artery.",
+   "enUrl": "https://en.wikipedia.org/wiki/Thyrocervical_trunk",
+   "description": null,
+   "source": null,
+   "dropped": "Chỉ nói về thân giáp cổ và các nhánh của nó; sai cho thân sườn cổ."
+  },
+  {
+   "viewId": "thoracic-wall-arteries",
+   "systemId": "arterial",
+   "nameVi": "Động mạch thành ngực, phế quản và thực quản",
+   "nameEn": "Thoracic wall, bronchial and esophageal arteries",
+   "parts": 18,
+   "bare": 18,
+   "enTitle": "Intercostal arteries",
+   "enText": "The intercostal arteries are a group of arteries passing within an intercostal space. There are 9 anterior and 11 posterior intercostal arteries on each side of the body.",
+   "enUrl": "https://en.wikipedia.org/wiki/Intercostal_arteries",
+   "description": null,
+   "source": null,
+   "dropped": "Chỉ nói về động mạch gian sườn (kèm số 9/11); không đúng cho động mạch phế quản, thực quản."
+  },
+  {
+   "viewId": "lingular-arteries",
+   "systemId": "arterial",
+   "nameVi": "Động mạch lưỡi phổi trái",
+   "nameEn": "Lingular arteries",
+   "parts": 6,
+   "bare": 6,
+   "enTitle": "Pulmonary artery",
+   "enText": "A pulmonary artery is an artery in the pulmonary circulation that carries deoxygenated blood from the right side of the heart to the lungs. The largest pulmonary artery is the main pulmonary artery or pulmonary trunk from the heart, and the smallest ones are the arterioles, which lead to the capillaries that surround the pulmonary alveoli.",
+   "enUrl": "https://en.wikipedia.org/wiki/Pulmonary_artery",
+   "description": {
+    "lang": "vi",
+    "text": "Các động mạch lưỡi phổi trái là động mạch phổi, thuộc tuần hoàn phổi: chúng mang máu đã khử oxy từ bên phải tim đến phổi.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Pulmonary artery",
+    "url": "https://en.wikipedia.org/wiki/Pulmonary_artery",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "abdominal-other-arteries",
+   "systemId": "arterial",
+   "nameVi": "Động mạch hoành dưới, thắt lưng, thượng thận và tinh hoàn",
+   "nameEn": "Inferior phrenic, lumbar, suprarenal and testicular arteries",
+   "parts": 23,
+   "bare": 23,
+   "enTitle": "Abdominal aorta",
+   "enText": "In human anatomy, the abdominal aorta is the largest artery in the abdominal cavity. As part of the aorta, it is a direct continuation of the descending aorta.",
+   "enUrl": "https://en.wikipedia.org/wiki/Abdominal_aorta",
+   "description": null,
+   "source": null,
+   "dropped": "Bài Abdominal aorta nói về động mạch chủ bụng, không phải các nhánh hoành dưới, thắt lưng, thượng thận, tinh hoàn."
+  },
+  {
+   "viewId": "pelvic-arteries",
+   "systemId": "arterial",
+   "nameVi": "Động mạch chậu, thượng vị và động mạch lưng dương vật",
+   "nameEn": "Iliac and epigastric arteries and dorsal artery of the penis",
+   "parts": 14,
+   "bare": 14,
+   "enTitle": "Internal iliac artery",
+   "enText": "The internal iliac artery is the main artery of the pelvis.",
+   "enUrl": "https://en.wikipedia.org/wiki/Internal_iliac_artery",
+   "description": null,
+   "source": null,
+   "dropped": "Chỉ nói về động mạch chậu trong; sai cho động mạch chậu chung/ngoài, thượng vị và lưng dương vật."
+  },
+  {
+   "viewId": "axillary-arteries",
+   "systemId": "arterial",
+   "nameVi": "Động mạch nách và các nhánh",
+   "nameEn": "Axillary artery and branches",
+   "parts": 24,
+   "bare": 24,
+   "enTitle": "Axillary artery",
+   "enText": "In human anatomy, the axillary artery is a large blood vessel that conveys oxygenated blood to the lateral aspect of the thorax, the axilla (armpit) and the upper limb. Its origin is at the lateral margin of the first rib, before which it is called the subclavian artery.",
+   "enUrl": "https://en.wikipedia.org/wiki/Axillary_artery",
+   "description": {
+    "lang": "vi",
+    "text": "Động mạch nách là mạch máu lớn đưa máu giàu oxy tới mặt bên của ngực, hố nách và chi trên. Nó bắt đầu từ bờ ngoài xương sườn 1; trước điểm đó mạch mang tên động mạch dưới đòn.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Axillary artery",
+    "url": "https://en.wikipedia.org/wiki/Axillary_artery",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "brachial-arteries",
+   "systemId": "arterial",
+   "nameVi": "Động mạch cánh tay và các nhánh bên",
+   "nameEn": "Brachial artery and collateral branches",
+   "parts": 12,
+   "bare": 12,
+   "enTitle": "Brachial artery",
+   "enText": "The brachial artery is the major blood vessel of the (upper) arm. It is the continuation of the axillary artery beyond the lower margin of teres major muscle.",
+   "enUrl": "https://en.wikipedia.org/wiki/Brachial_artery",
+   "description": {
+    "lang": "vi",
+    "text": "Động mạch cánh tay là mạch máu chính của cánh tay, nối tiếp động mạch nách từ bờ dưới cơ tròn lớn.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Brachial artery",
+    "url": "https://en.wikipedia.org/wiki/Brachial_artery",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "forearm-arteries",
+   "systemId": "arterial",
+   "nameVi": "Động mạch quay, trụ và gian cốt",
+   "nameEn": "Radial, ulnar and interosseous arteries",
+   "parts": 16,
+   "bare": 16,
+   "enTitle": "Radial artery",
+   "enText": "In human anatomy, the radial artery is the main artery of the lateral aspect of the forearm.",
+   "enUrl": "https://en.wikipedia.org/wiki/Radial_artery",
+   "description": null,
+   "source": null,
+   "dropped": "Cả vi_text và en_text chỉ nói về động mạch quay; sai cho động mạch trụ và gian cốt."
+  },
+  {
+   "viewId": "hand-arteries",
+   "systemId": "arterial",
+   "nameVi": "Động mạch bàn tay (cung gan tay, đốt bàn, ngón)",
+   "nameEn": "Arteries of the hand (palmar arches, metacarpal, digital)",
+   "parts": 38,
+   "bare": 38,
+   "enTitle": "Superficial palmar arch",
+   "enText": "The superficial palmar arch is formed predominantly by the ulnar artery, with a contribution from the superficial palmar branch of the radial artery. However, in some individuals the contribution from the radial artery might be absent, and instead anastomoses with either the princeps pollicis artery, the radialis indicis artery, or the median artery, the former two of which are branches from the radial artery.",
+   "enUrl": "https://en.wikipedia.org/wiki/Superficial_palmar_arch",
+   "description": null,
+   "source": null,
+   "dropped": "Chỉ nói về cung gan tay nông và biến thể của nó; sai cho cung sâu, động mạch đốt bàn, ngón."
+  },
+  {
+   "viewId": "femoral-arteries",
+   "systemId": "arterial",
+   "nameVi": "Động mạch đùi và các nhánh",
+   "nameEn": "Femoral artery and branches",
+   "parts": 12,
+   "bare": 12,
+   "enTitle": "Femoral artery",
+   "enText": "The femoral artery is a large artery in the thigh and the main arterial supply to the thigh and leg. The femoral artery gives off the deep femoral artery and descends along the anteromedial part of the thigh in the femoral triangle.",
+   "enUrl": "https://en.wikipedia.org/wiki/Femoral_artery",
+   "description": {
+    "lang": "vi",
+    "text": "Động mạch đùi là động mạch lớn ở đùi và là nguồn cấp máu động mạch chính cho đùi và cẳng chân. Nó cho ra động mạch đùi sâu rồi đi xuống dọc mặt trước trong của đùi, trong tam giác đùi.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Femoral artery",
+    "url": "https://en.wikipedia.org/wiki/Femoral_artery",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "popliteal-arteries",
+   "systemId": "arterial",
+   "nameVi": "Động mạch khoeo và các động mạch gối",
+   "nameEn": "Popliteal and genicular arteries",
+   "parts": 14,
+   "bare": 14,
+   "enTitle": "Popliteal artery",
+   "enText": "The popliteal artery is a deeply placed continuation of the femoral artery opening in the distal portion of the adductor magnus muscle. It courses through the popliteal fossa and ends at the lower border of the popliteus muscle, where it branches into the anterior and posterior tibial arteries.",
+   "enUrl": "https://en.wikipedia.org/wiki/Popliteal_artery",
+   "description": null,
+   "source": null,
+   "dropped": "Chỉ nói về động mạch khoeo; các động mạch gối là thành viên khác (động mạch gối xuống còn tách từ động mạch đùi), nên không coi là 'X và các nhánh'."
+  },
+  {
+   "viewId": "leg-arteries",
+   "systemId": "arterial",
+   "nameVi": "Động mạch chày trước và chày sau",
+   "nameEn": "Anterior and posterior tibial arteries",
+   "parts": 8,
+   "bare": 8,
+   "enTitle": "Anterior tibial artery",
+   "enText": "The anterior tibial artery is an artery of the leg. It carries blood to the anterior compartment of the leg and dorsal surface of the foot, from the popliteal artery.",
+   "enUrl": "https://en.wikipedia.org/wiki/Anterior_tibial_artery",
+   "description": null,
+   "source": null,
+   "dropped": "Chỉ nói về động mạch chày trước; sai cho động mạch chày sau."
+  },
+  {
+   "viewId": "foot-arteries",
+   "systemId": "arterial",
+   "nameVi": "Động mạch bàn chân",
+   "nameEn": "Arteries of the foot",
+   "parts": 25,
+   "bare": 25,
+   "enTitle": "Dorsalis pedis artery",
+   "enText": "In human anatomy, the dorsalis pedis artery is a blood vessel of the lower limb. It arises from the anterior tibial artery, and ends at the first intermetatarsal space.",
+   "enUrl": "https://en.wikipedia.org/wiki/Dorsalis_pedis_artery",
+   "description": null,
+   "source": null,
+   "dropped": "Chỉ nói về động mạch mu chân; sai cho các động mạch gan chân và nhánh khác."
+  },
+  {
+   "viewId": "dorsal-digital-arteries",
+   "systemId": "arterial",
+   "nameVi": "Động mạch mu ngón (tay và chân)",
+   "nameEn": "Dorsal digital arteries (hands and feet)",
+   "parts": 4,
+   "bare": 4,
+   "enTitle": "Dorsal digital arteries of hand",
+   "enText": "Dorsal digital arteries arise from the bifurcation of dorsal metacarpal arteries. They travel along the sides and dorsal aspects of the phalanges of the middle finger, ring finger, and little finger.",
+   "enUrl": "https://en.wikipedia.org/wiki/Dorsal_digital_arteries_of_hand",
+   "description": null,
+   "source": null,
+   "dropped": "Bài chỉ nói ở bàn tay (từ động mạch mu đốt bàn tay, ngón 3-5); sai cho ngón chân trong nhóm."
+  },
+  {
+   "viewId": "venae-cavae",
+   "systemId": "venous",
+   "nameVi": "Tĩnh mạch chủ trên, chủ dưới và cánh tay đầu",
+   "nameEn": "Venae cavae and brachiocephalic veins",
+   "parts": 5,
+   "bare": 2,
+   "enTitle": "Venae cavae",
+   "enText": "In anatomy, the venae cavae are two large veins that return deoxygenated blood from the body into the heart. They are the main vein of the human body.",
+   "enUrl": "https://en.wikipedia.org/wiki/Venae_cavae",
+   "description": null,
+   "source": null,
+   "dropped": "Câu 'hai tĩnh mạch lớn đổ về tim' sai cho tĩnh mạch cánh tay đầu trong nhóm."
+  },
+  {
+   "viewId": "azygos-system",
+   "systemId": "venous",
+   "nameVi": "Hệ tĩnh mạch đơn, gian sườn và thắt lưng",
+   "nameEn": "Azygos system, intercostal and lumbar veins",
+   "parts": 14,
+   "bare": 14,
+   "enTitle": "Azygos vein",
+   "enText": "The azygos vein is a vein running up the right side of the thoracic vertebral column draining itself towards the superior vena cava. It connects the systems of superior vena cava and inferior vena cava and can provide an alternative path for blood to the right atrium when either of the venae cavae is blocked.",
+   "enUrl": "https://en.wikipedia.org/wiki/Azygos_vein",
+   "description": null,
+   "source": null,
+   "dropped": "Chỉ nói về tĩnh mạch đơn (đi bên phải cột sống); sai cho tĩnh mạch gian sườn, thắt lưng, bán đơn."
+  },
+  {
+   "viewId": "trunk-wall-veins",
+   "systemId": "venous",
+   "nameVi": "Tĩnh mạch ngực trong, thượng vị và hoành",
+   "nameEn": "Internal thoracic, epigastric and phrenic veins",
+   "parts": 23,
+   "bare": 23,
+   "enTitle": "Internal thoracic vein",
+   "enText": "In human anatomy, the internal thoracic vein is the vein that drains the chest wall and breasts.",
+   "enUrl": "https://en.wikipedia.org/wiki/Internal_thoracic_vein",
+   "description": null,
+   "source": null,
+   "dropped": "Chỉ nói về tĩnh mạch ngực trong; sai cho tĩnh mạch thượng vị và hoành."
+  },
+  {
+   "viewId": "hepatic-veins",
+   "systemId": "venous",
+   "nameVi": "Tĩnh mạch gan",
+   "nameEn": "Hepatic veins",
+   "parts": 17,
+   "bare": 17,
+   "enTitle": "Hepatic veins",
+   "enText": "In human anatomy, the hepatic veins are the veins that drain venous blood from the liver into the inferior vena cava. There are usually three large upper hepatic veins draining from the left, middle, and right parts of the liver, as well as a number (6-20) of lower hepatic veins.",
+   "enUrl": "https://en.wikipedia.org/wiki/Hepatic_veins",
+   "description": {
+    "lang": "vi",
+    "text": "Tĩnh mạch gan là các tĩnh mạch dẫn máu từ gan về tĩnh mạch chủ dưới. Thường có ba tĩnh mạch gan lớn ở trên, dẫn máu từ phần trái, giữa và phải của gan, cùng một số tĩnh mạch gan nhỏ hơn ở dưới.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Hepatic veins",
+    "url": "https://en.wikipedia.org/wiki/Hepatic_veins",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "paired-visceral-veins",
+   "systemId": "venous",
+   "nameVi": "Tĩnh mạch thượng thận và tinh hoàn",
+   "nameEn": "Suprarenal and testicular veins",
+   "parts": 4,
+   "bare": 4,
+   "enTitle": "Testicular vein",
+   "enText": "The testicular vein, the male gonadal vein, carries deoxygenated blood from its corresponding testis to the inferior vena cava or one of its tributaries. It is the male equivalent of the ovarian vein, and is the venous counterpart of the testicular artery.",
+   "enUrl": "https://en.wikipedia.org/wiki/Testicular_vein",
+   "description": null,
+   "source": null,
+   "dropped": "Chỉ nói về tĩnh mạch tinh hoàn; sai cho tĩnh mạch thượng thận."
+  },
+  {
+   "viewId": "lingular-veins",
+   "systemId": "venous",
+   "nameVi": "Tĩnh mạch lưỡi phổi trái",
+   "nameEn": "Lingular veins",
+   "parts": 4,
+   "bare": 4,
+   "enTitle": "Pulmonary vein",
+   "enText": "The pulmonary veins are the veins that transfer oxygenated blood from the lungs to the heart. The largest pulmonary veins are the four main pulmonary veins, two from each lung that drain into the left atrium of the heart.",
+   "enUrl": "https://en.wikipedia.org/wiki/Pulmonary_vein",
+   "description": {
+    "lang": "vi",
+    "text": "Các tĩnh mạch lưỡi phổi trái thuộc hệ tĩnh mạch phổi, các tĩnh mạch đưa máu giàu oxy từ phổi về tim.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Pulmonary vein",
+    "url": "https://en.wikipedia.org/wiki/Pulmonary_vein",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "neck-veins",
+   "systemId": "venous",
+   "nameVi": "Tĩnh mạch cảnh, dưới đòn và đốt sống",
+   "nameEn": "Jugular, subclavian and vertebral veins",
+   "parts": 16,
+   "bare": 16,
+   "enTitle": "Jugular vein",
+   "enText": "The jugular veins are veins that take blood from the head back to the heart via the superior vena cava. The internal jugular vein descends next to the internal carotid artery and continues posteriorly to the sternocleidomastoid muscle.",
+   "enUrl": "https://en.wikipedia.org/wiki/Jugular_vein",
+   "description": null,
+   "source": null,
+   "dropped": "Cả vi_text và en_text chỉ nói về tĩnh mạch cảnh; sai cho tĩnh mạch dưới đòn và đốt sống."
+  },
+  {
+   "viewId": "face-veins",
+   "systemId": "venous",
+   "nameVi": "Tĩnh mạch mặt, sau hàm và các tĩnh mạch khác của đầu",
+   "nameEn": "Facial, retromandibular and other veins of the head",
+   "parts": 32,
+   "bare": 32,
+   "enTitle": "Facial vein",
+   "enText": "The facial vein is a relatively large vein in the human face. It commences at the side of the root of the nose and is a direct continuation of the angular vein where it also receives a small nasal branch.",
+   "enUrl": "https://en.wikipedia.org/wiki/Facial_vein",
+   "description": null,
+   "source": null,
+   "dropped": "Chỉ nói về tĩnh mạch mặt; sai cho tĩnh mạch sau hàm và các tĩnh mạch khác của đầu."
+  },
+  {
+   "viewId": "dural-sinuses",
+   "systemId": "venous",
+   "nameVi": "Xoang tĩnh mạch màng cứng",
+   "nameEn": "Dural venous sinuses",
+   "parts": 17,
+   "bare": 17,
+   "enTitle": "Dural venous sinuses",
+   "enText": "The dural venous sinuses are venous sinuses (channels) found between the periosteal and meningeal layers of dura mater in the brain. They receive blood from the cerebral veins, and cerebrospinal fluid (CSF) from the subarachnoid space via arachnoid granulations.",
+   "enUrl": "https://en.wikipedia.org/wiki/Dural_venous_sinuses",
+   "description": {
+    "lang": "vi",
+    "text": "Xoang tĩnh mạch màng cứng là các kênh tĩnh mạch nằm giữa lớp màng xương và lớp màng não của màng cứng. Chúng nhận máu từ các tĩnh mạch não và nhận dịch não tủy từ khoang dưới nhện qua các hạt màng nhện.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Dural venous sinuses",
+    "url": "https://en.wikipedia.org/wiki/Dural_venous_sinuses",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "pelvic-veins",
+   "systemId": "venous",
+   "nameVi": "Tĩnh mạch chậu và các nhánh vùng chậu",
+   "nameEn": "Iliac and pelvic veins",
+   "parts": 41,
+   "bare": 41,
+   "enTitle": "Internal iliac vein",
+   "enText": "The internal iliac vein begins near the upper part of the greater sciatic foramen, passes upward behind and slightly medial to the internal iliac artery and, at the brim of the pelvis, joins with the external iliac vein to form the common iliac vein.",
+   "enUrl": "https://en.wikipedia.org/wiki/Internal_iliac_vein",
+   "description": null,
+   "source": null,
+   "dropped": "Chỉ nói về tĩnh mạch chậu trong; sai cho tĩnh mạch chậu chung, chậu ngoài và các nhánh khác (41 mảnh)."
+  },
+  {
+   "viewId": "axillary-veins",
+   "systemId": "venous",
+   "nameVi": "Tĩnh mạch nách và các nhánh",
+   "nameEn": "Axillary vein and tributaries",
+   "parts": 16,
+   "bare": 16,
+   "enTitle": "Axillary vein",
+   "enText": "In human anatomy, the axillary vein is a large blood vessel that conveys blood from the lateral aspect of the thorax, axilla (armpit) and upper limb toward the heart. There is one axillary vein on each side of the body.",
+   "enUrl": "https://en.wikipedia.org/wiki/Axillary_vein",
+   "description": {
+    "lang": "vi",
+    "text": "Tĩnh mạch nách là mạch máu lớn đưa máu từ mặt bên của ngực, hố nách và chi trên về tim. Mỗi bên cơ thể có một tĩnh mạch nách.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Axillary vein",
+    "url": "https://en.wikipedia.org/wiki/Axillary_vein",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "arm-superficial-veins",
+   "systemId": "venous",
+   "nameVi": "Tĩnh mạch nông chi trên (đầu, nền, giữa khuỷu)",
+   "nameEn": "Superficial veins of the upper limb (cephalic, basilic, median cubital)",
+   "parts": 8,
+   "bare": 8,
+   "enTitle": "Cephalic vein",
+   "enText": "In human anatomy, the cephalic vein is a superficial vein in the arm. It is the longest vein of the upper limb.",
+   "enUrl": "https://en.wikipedia.org/wiki/Cephalic_vein",
+   "description": null,
+   "source": null,
+   "dropped": "Chỉ nói về tĩnh mạch đầu ('dài nhất chi trên'); sai cho tĩnh mạch nền và giữa khuỷu."
+  },
+  {
+   "viewId": "arm-deep-veins",
+   "systemId": "venous",
+   "nameVi": "Tĩnh mạch sâu chi trên (cánh tay, quay, trụ)",
+   "nameEn": "Deep veins of the upper limb (brachial, radial, ulnar)",
+   "parts": 6,
+   "bare": 6,
+   "enTitle": "Brachial veins",
+   "enText": "In human anatomy, the brachial veins are venae comitantes of the brachial artery in the arm proper. Because they are deep to muscle, they are considered deep veins.",
+   "enUrl": "https://en.wikipedia.org/wiki/Brachial_veins",
+   "description": null,
+   "source": null,
+   "dropped": "Câu chỉ nói tĩnh mạch cánh tay đi kèm động mạch cánh tay; sai cho tĩnh mạch quay và trụ."
+  },
+  {
+   "viewId": "hand-veins",
+   "systemId": "venous",
+   "nameVi": "Tĩnh mạch bàn tay",
+   "nameEn": "Veins of the hand",
+   "parts": 34,
+   "bare": 34,
+   "enTitle": "Dorsal venous network of hand",
+   "enText": "The dorsal venous network of the hand is a venous network on the dorsum (backside) of hand. It is formed by the dorsal metacarpal veins, a dorsal digital vein from the radial (lateral) side of the index finger and one from the ulnar (medial) side of the little finger, and both dorsal digital veins of the thumb.",
+   "enUrl": "https://en.wikipedia.org/wiki/Dorsal_venous_network_of_hand",
+   "description": null,
+   "source": null,
+   "dropped": "Chỉ nói về mạng tĩnh mạch mu tay; sai cho các tĩnh mạch gan tay trong nhóm."
+  },
+  {
+   "viewId": "femoral-veins",
+   "systemId": "venous",
+   "nameVi": "Tĩnh mạch đùi và các nhánh",
+   "nameEn": "Femoral vein and tributaries",
+   "parts": 8,
+   "bare": 8,
+   "enTitle": "Femoral vein",
+   "enText": "In the human body, the femoral vein is the vein that accompanies the femoral artery in the femoral sheath. It is a deep vein that begins at the adductor hiatus as the continuation of the popliteal vein.",
+   "enUrl": "https://en.wikipedia.org/wiki/Femoral_vein",
+   "description": {
+    "lang": "vi",
+    "text": "Tĩnh mạch đùi là tĩnh mạch đi kèm động mạch đùi trong bao đùi. Đây là tĩnh mạch sâu, bắt đầu từ vòng gân cơ khép như đoạn nối tiếp của tĩnh mạch khoeo.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Femoral vein",
+    "url": "https://en.wikipedia.org/wiki/Femoral_vein",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "saphenous-veins",
+   "systemId": "venous",
+   "nameVi": "Tĩnh mạch hiển lớn và hiển bé",
+   "nameEn": "Great and small saphenous veins",
+   "parts": 6,
+   "bare": 6,
+   "enTitle": "Great saphenous vein",
+   "enText": "The great saphenous vein or long saphenous vein is a large, subcutaneous, superficial vein of the leg. It is the longest vein in the body, running along the length of the lower limb, returning blood from the foot, leg, and thigh to the deep femoral vein at the femoral triangle.",
+   "enUrl": "https://en.wikipedia.org/wiki/Great_saphenous_vein",
+   "description": null,
+   "source": null,
+   "dropped": "Chỉ nói về tĩnh mạch hiển lớn ('dài nhất cơ thể'); sai cho tĩnh mạch hiển bé."
+  },
+  {
+   "viewId": "popliteal-veins",
+   "systemId": "venous",
+   "nameVi": "Tĩnh mạch khoeo và tĩnh mạch gối",
+   "nameEn": "Popliteal and genicular veins",
+   "parts": 10,
+   "bare": 10,
+   "enTitle": "Popliteal vein",
+   "enText": "The popliteal vein is a vein of the lower limb. It is formed from the anterior tibial vein and the posterior tibial vein.",
+   "enUrl": "https://en.wikipedia.org/wiki/Popliteal_vein",
+   "description": null,
+   "source": null,
+   "dropped": "Chỉ nói về tĩnh mạch khoeo; sai cho các tĩnh mạch gối (giữ nhất quán với nhóm động mạch khoeo)."
+  },
+  {
+   "viewId": "leg-veins",
+   "systemId": "venous",
+   "nameVi": "Tĩnh mạch chày, mác và tĩnh mạch xuyên",
+   "nameEn": "Tibial, fibular and perforating veins",
+   "parts": 22,
+   "bare": 22,
+   "enTitle": "Anterior tibial vein",
+   "enText": "The anterior tibial vein is a vein in the lower leg.",
+   "enUrl": "https://en.wikipedia.org/wiki/Anterior_tibial_vein",
+   "description": null,
+   "source": null,
+   "dropped": "Chỉ nói về tĩnh mạch chày trước, lại gần như không có nội dung; sai cho tĩnh mạch chày sau, mác, xuyên."
+  },
+  {
+   "viewId": "foot-veins",
+   "systemId": "venous",
+   "nameVi": "Tĩnh mạch bàn chân",
+   "nameEn": "Veins of the foot",
+   "parts": 16,
+   "bare": 16,
+   "enTitle": "Dorsal venous arch of the foot",
+   "enText": "The dorsal venous arch of the foot is a superficial vein that connects the small saphenous vein and the great saphenous vein. Anatomically, it is defined by where the dorsal veins of the first and fifth digit, respectively, meet the great saphenous vein and small saphenous vein.",
+   "enUrl": "https://en.wikipedia.org/wiki/Dorsal_venous_arch_of_the_foot",
+   "description": null,
+   "source": null,
+   "dropped": "Chỉ nói về cung tĩnh mạch mu chân; sai cho các tĩnh mạch gan chân."
+  },
+  {
+   "viewId": "laryngeal-ligaments",
+   "systemId": "connective",
+   "nameVi": "Dây chằng, màng thanh quản và dây chằng trâm móng",
+   "nameEn": "Laryngeal ligaments, membranes and stylohyoid ligaments",
+   "parts": 14,
+   "bare": 5,
+   "enTitle": "Laryngeal cartilages",
+   "enText": "Laryngeal cartilages are cartilages which surround and protect the larynx. They form during embryonic development from pharyngeal arches.",
+   "enUrl": "https://en.wikipedia.org/wiki/Laryngeal_cartilages",
+   "description": null,
+   "source": null,
+   "dropped": "Ghép sai bài: nhóm là dây chằng và màng, bài Laryngeal cartilages nói về sụn thanh quản."
+  },
+  {
+   "viewId": "limb-connective",
+   "systemId": "connective",
+   "nameVi": "Màng gian cốt, gân gót, dải chậu chày, dây chằng gan chân dài, mạc giữ gân gấp",
+   "nameEn": "Interosseous membranes, calcaneal tendon, iliotibial tract, long plantar ligament, flexor retinaculum",
+   "parts": 12,
+   "bare": 6,
+   "enTitle": "Interosseous membrane",
+   "enText": "An interosseous membrane is a thick dense fibrous sheet of connective tissue that spans the space between two bones, forming a type of syndesmosis joint.",
+   "enUrl": "https://en.wikipedia.org/wiki/Interosseous_membrane",
+   "description": null,
+   "source": null,
+   "dropped": "Nhóm hỗn hợp (gân gót, dải chậu chày, mạc giữ gân…); bài chỉ nói màng gian cốt."
+  },
+  {
+   "viewId": "mesenteries",
+   "systemId": "connective",
+   "nameVi": "Mạc treo ruột non, ruột thừa và đại tràng ngang",
+   "nameEn": "Mesentery, mesoappendix and transverse mesocolon",
+   "parts": 3,
+   "bare": 3,
+   "enTitle": "Mesentery",
+   "enText": "In human anatomy, the mesentery is an organ that attaches the intestines to the posterior abdominal wall, consisting of a double fold of the peritoneum. It helps in storing fat and allowing blood vessels, lymphatics, and nerves to supply the intestines.",
+   "enUrl": "https://en.wikipedia.org/wiki/Mesentery",
+   "description": {
+    "lang": "vi",
+    "text": "Các mạc treo được tạo bởi một nếp gấp kép của phúc mạc; chúng giúp dự trữ mỡ và là đường cho mạch máu, mạch bạch huyết và thần kinh đi tới ruột.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Mesentery",
+    "url": "https://en.wikipedia.org/wiki/Mesentery",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "orbital-connective-both",
+   "systemId": "connective",
+   "nameVi": "Ròng rọc, dây chằng hãm và gân cơ nâng mi (hai mắt)",
+   "nameEn": "Trochlea, check ligaments and levator palpebrae tendon (both eyes)",
+   "parts": 7,
+   "bare": 5,
+   "enTitle": "Trochlea",
+   "enText": "Trochlea is a term in anatomy. It refers to a grooved structure reminiscent of a pulley's wheel.",
+   "enUrl": "https://en.wikipedia.org/wiki/Trochlea",
+   "description": null,
+   "source": null,
+   "dropped": "Bài Trochlea là định nghĩa thuật ngữ chung ('cấu trúc có rãnh như ròng rọc'), không nói gì về dây chằng hãm hay gân cơ nâng mi."
+  },
+  {
+   "viewId": "raphes-tendons",
+   "systemId": "connective",
+   "nameVi": "Đường đan, đường trắng, gân trung gian và cung gân cơ nâng hậu môn",
+   "nameEn": "Raphes, linea alba, intermediate tendon and tendinous arch of levator ani",
+   "parts": 9,
+   "bare": 9,
+   "enTitle": "Linea alba (abdomen)",
+   "enText": "The linea alba is a fibrous midline structure of the anterior abdominal wall situated between the two recti abdominis muscles. The umbilicus (navel) is present on the linea alba through which foetal umbilical vessels pass before birth.",
+   "enUrl": "https://en.wikipedia.org/wiki/Linea_alba_(abdomen)",
+   "description": null,
+   "source": null,
+   "dropped": "Chỉ nói về đường trắng bụng; sai cho đường đan, gân trung gian và cung gân cơ nâng hậu môn."
+  },
+  {
+   "viewId": "lips",
+   "systemId": "integumentary",
+   "nameVi": "Môi",
+   "nameEn": "Lips",
+   "parts": 1,
+   "bare": 1,
+   "enTitle": "Lip",
+   "enText": "The lips are a horizontal pair of soft appendages attached to the jaws and are the most visible part of the mouth of many animals, including humans. Mammal lips are soft, movable and serve to facilitate the ingestion of food and the articulation of sound and speech.",
+   "enUrl": "https://en.wikipedia.org/wiki/Lip",
+   "description": {
+    "lang": "vi",
+    "text": "Môi là một bộ phận có thể nhìn thấy, là một phần của miệng người và động vật.",
+    "translated": false,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Môi",
+    "url": "https://vi.wikipedia.org/wiki/M%C3%B4i",
+    "license": "CC BY-SA 4.0"
+   }
+  },
+  {
+   "viewId": "hair-eyebrows",
+   "systemId": "integumentary",
+   "nameVi": "Tóc và lông mày",
+   "nameEn": "Hair and eyebrows",
+   "parts": 2,
+   "bare": 2,
+   "enTitle": "Hair",
+   "enText": "Hair is a protein filament that grows from follicles found in the dermis. Hair is one of the distinguishing characteristics of mammals.",
+   "enUrl": "https://en.wikipedia.org/wiki/Hair",
+   "description": {
+    "lang": "vi",
+    "text": "Lông, gồm cả tóc và lông mày, là sợi protein mọc ra từ các nang lông nằm trong lớp bì của da.",
+    "translated": true,
+    "reviewed": true
+   },
+   "source": {
+    "title": "Hair",
+    "url": "https://en.wikipedia.org/wiki/Hair",
+    "license": "CC BY-SA 4.0"
+   }
+  }
+ ]
+}

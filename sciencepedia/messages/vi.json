@@ -862,6 +862,8 @@
       "reviewedBy": "duyệt bởi Ban biên tập Sciencepedia",
       "systemOverview": "Tổng quan · {system}",
       "systemNote": "Chưa có mô tả riêng cho cấu trúc này — đoạn trên nói về cả hệ.",
+      "groupOverview": "Về nhóm · {group}",
+      "groupNote": "Chưa có mô tả riêng cho cấu trúc này — đoạn trên nói về cả nhóm.",
       "latinName": "Tên Latin",
       "partOf": "Thuộc",
       "nameMachine": "Tên Việt dịch ghép, chưa qua duyệt chuyên môn",

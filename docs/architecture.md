@@ -818,6 +818,23 @@ văn chứ không tin người viết.
   trong khung "Về <cha>" — không bao giờ như mô tả của chính mảnh đang chọn.
 - **Nội dung có nguồn thắng `EXPLAINED`** (lời giải thích port từ bản gốc, không nguồn).
 
+### Mô tả Wikipedia: cấu trúc chính, rồi nhóm (2026-10-01)
+
+Thứ tự lùi trong bảng chi tiết: nội dung L2 (riêng → kế thừa) → `EXPLAINED` → gloss Wikipedia
+của chính cấu trúc → **mô tả nhóm** → mô tả hệ. Hai tầng sau luôn nằm trong khung "Về …".
+
+- **Nguyên văn tiếng Việt chỉ lấy câu đầu.** Câu thứ hai của bài vi hay là câu so sánh dịch vụng
+  ("…vốn có kích thước…" ở Xương quay); 12/108 câu đầu cũng bị science-editor bỏ (sai khoa học,
+  hỏng chữ). Mục bị bỏ ghi `dropped` — chạy lại script không được tra lại đúng câu vừa loại.
+- **Tên trần một từ dễ trùng bài ngoài giải phẫu**: "Radius" → bài hình học "Bán kính", "Trapezoid"
+  → "Hình thang", "Lens" → thấu kính quang học. Ép tiêu đề trong `FAMILY`/`TITLES`, đừng tin heuristic.
+- **Mô tả nhóm** (`scripts/atlas-group-descriptions.ts`): ~2.000 mảnh (nhánh mạch, từng hạch, hồi
+  não) không có bài riêng và sẽ không bao giờ có; nhóm cấu trúc chứa chúng (góc nhìn kind
+  `structure`) thường có. Câu phải ĐÚNG CHO CẢ NHÓM: bài của một thành viên ("Radial artery" cho
+  "Động mạch quay, trụ, gian cốt") bị bỏ, kể cả khi câu tự nó đúng — người đọc bấm động mạch trụ
+  sẽ đọc nó như mô tả của động mạch trụ. Vì rủi ro ghép bài cao hơn tên cơ quan, CHỈ mục đã qua
+  science-editor ra client; 61 nhóm bỏ trống là có chủ ý (thà về mô tả hệ còn hơn tả sai nhóm).
+
 ---
 
 ## Triển khai

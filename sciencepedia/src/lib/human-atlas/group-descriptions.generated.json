@@ -1,0 +1,692 @@
+{
+ "pharynx": {
+  "text": "Hầu là phần của cổ họng nằm sau miệng và khoang mũi, phía trên thực quản và khí quản.",
+  "title": "Pharynx",
+  "url": "https://en.wikipedia.org/wiki/Pharynx"
+ },
+ "larynx": {
+  "text": "Thanh quản là cơ quan ở phần trên của cổ, tham gia hô hấp, phát âm và bảo vệ khí quản khỏi bị hít sặc thức ăn.",
+  "title": "Larynx",
+  "url": "https://en.wikipedia.org/wiki/Larynx"
+ },
+ "epiglottis": {
+  "text": "Nắp thanh môn là một vạt hình lá ở họng, ngăn thức ăn và nước đi vào khí quản và phổi. Khi thở, nắp mở để không khí vào thanh quản.",
+  "title": "Epiglottis",
+  "url": "https://en.wikipedia.org/wiki/Epiglottis"
+ },
+ "right-main-bronchus": {
+  "text": "Phế quản gốc phải và phế quản gốc trái là hai phế quản đầu tiên tách ra từ khí quản tại cựa khí quản (carina). Phế quản là đường dẫn khí của đường hô hấp dưới, đưa không khí vào phổi.",
+  "title": "Bronchus",
+  "url": "https://en.wikipedia.org/wiki/Bronchus"
+ },
+ "left-main-bronchus": {
+  "text": "Phế quản gốc phải và phế quản gốc trái là hai phế quản đầu tiên tách ra từ khí quản tại cựa khí quản (carina). Phế quản là đường dẫn khí của đường hô hấp dưới, đưa không khí vào phổi.",
+  "title": "Bronchus",
+  "url": "https://en.wikipedia.org/wiki/Bronchus"
+ },
+ "right-lung": {
+  "text": "Phổi là cơ quan chính của hệ hô hấp. Người có hai lá phổi, nằm gần cột sống, ở hai bên tim.",
+  "title": "Lung",
+  "url": "https://en.wikipedia.org/wiki/Lung"
+ },
+ "left-lung": {
+  "text": "Phổi là cơ quan chính của hệ hô hấp. Người có hai lá phổi, nằm gần cột sống, ở hai bên tim.",
+  "title": "Lung",
+  "url": "https://en.wikipedia.org/wiki/Lung"
+ },
+ "right-bronchial-tree": {
+  "text": "Các phế quản là đường dẫn khí của đường hô hấp dưới, đưa không khí vào phổi.",
+  "title": "Bronchus",
+  "url": "https://en.wikipedia.org/wiki/Bronchus"
+ },
+ "left-bronchial-tree": {
+  "text": "Các phế quản là đường dẫn khí của đường hô hấp dưới, đưa không khí vào phổi.",
+  "title": "Bronchus",
+  "url": "https://en.wikipedia.org/wiki/Bronchus"
+ },
+ "aryepiglottic-muscle": {
+  "text": "Cơ phễu nắp thanh môn là một cơ nội tại của thanh quản, thường được xem là phần phễu nắp thanh môn của cơ phễu chéo. Các sợi của nó đi tiếp từ cơ phễu chéo, vòng quanh đỉnh sụn phễu tới nếp phễu nắp thanh môn.",
+  "title": "Aryepiglottic muscle",
+  "url": "https://en.wikipedia.org/wiki/Aryepiglottic_muscle"
+ },
+ "cricothyroid": {
+  "text": "Cơ nhẫn giáp là cơ căng duy nhất của thanh quản, hỗ trợ phát âm. Cơ do thần kinh thanh quản trên chi phối.",
+  "title": "Cricothyroid muscle",
+  "url": "https://en.wikipedia.org/wiki/Cricothyroid_muscle"
+ },
+ "ribs-sternum": {
+  "text": "Xương sườn và xương ức, cùng với cột sống, tạo nên lồng ngực, khung xương bảo vệ các cơ quan trong khoang ngực như tim, phổi và các mạch máu lớn.",
+  "title": "Rib cage",
+  "url": "https://en.wikipedia.org/wiki/Rib_cage"
+ },
+ "vagus-nerves": {
+  "text": "Thần kinh phế vị là dây thần kinh sọ thứ mười (CN X), mang cả sợi cảm giác và sợi vận động. Đây là đường nối chính giữa não với nhiều cơ quan, gồm tim, phổi và ống tiêu hóa.",
+  "title": "Vagus nerve",
+  "url": "https://en.wikipedia.org/wiki/Vagus_nerve"
+ },
+ "intercostal-nerves": {
+  "text": "Các dây thần kinh gian sườn thuộc hệ thần kinh thân thể, xuất phát từ nhánh trước của các dây thần kinh sống ngực T1 đến T11. Khác với nhánh trước của các dây thần kinh sống khác, mỗi dây đi theo đường riêng, không tạo đám rối.",
+  "title": "Intercostal nerves",
+  "url": "https://en.wikipedia.org/wiki/Intercostal_nerves"
+ },
+ "pulmonary-arteries": {
+  "text": "Động mạch phổi là một động mạch trong tuần hoàn phổi mang máu đã khử oxy từ bên phải của tim đến phổi.",
+  "title": "Động mạch phổi",
+  "url": "https://vi.wikipedia.org/wiki/%C4%90%E1%BB%99ng_m%E1%BA%A1ch_ph%E1%BB%95i"
+ },
+ "right-pulmonary-artery": {
+  "text": "Động mạch phổi là một động mạch trong tuần hoàn phổi mang máu đã khử oxy từ bên phải của tim đến phổi.",
+  "title": "Động mạch phổi",
+  "url": "https://vi.wikipedia.org/wiki/%C4%90%E1%BB%99ng_m%E1%BA%A1ch_ph%E1%BB%95i"
+ },
+ "pulmonary-veins": {
+  "text": "Tĩnh mạch phổi là các tĩnh mạch đưa máu giàu oxy từ phổi về tim. Lớn nhất là bốn tĩnh mạch phổi chính, mỗi phổi hai, đổ vào tâm nhĩ trái.",
+  "title": "Pulmonary vein",
+  "url": "https://en.wikipedia.org/wiki/Pulmonary_vein"
+ },
+ "right-atrium": {
+  "text": "Tâm nhĩ là ngăn trên của tim, là nơi máu đi vào tim.",
+  "title": "Tâm nhĩ",
+  "url": "https://vi.wikipedia.org/wiki/T%C3%A2m_nh%C4%A9"
+ },
+ "left-atrium": {
+  "text": "Tâm nhĩ là ngăn trên của tim, là nơi máu đi vào tim.",
+  "title": "Tâm nhĩ",
+  "url": "https://vi.wikipedia.org/wiki/T%C3%A2m_nh%C4%A9"
+ },
+ "ventricular-wall": {
+  "text": "Tâm thất là một trong hai buồng tim lớn ở phần dưới của tim. Tâm thất nhận máu từ tâm nhĩ rồi đẩy máu đi khắp cơ thể và tới phổi.",
+  "title": "Ventricle (heart)",
+  "url": "https://en.wikipedia.org/wiki/Ventricle_(heart)"
+ },
+ "right-atrium-cavity": {
+  "text": "Tâm nhĩ là ngăn trên của tim, là nơi máu đi vào tim.",
+  "title": "Tâm nhĩ",
+  "url": "https://vi.wikipedia.org/wiki/T%C3%A2m_nh%C4%A9"
+ },
+ "left-atrium-cavity": {
+  "text": "Tâm nhĩ là ngăn trên của tim, là nơi máu đi vào tim.",
+  "title": "Tâm nhĩ",
+  "url": "https://vi.wikipedia.org/wiki/T%C3%A2m_nh%C4%A9"
+ },
+ "right-ventricle-cavity": {
+  "text": "Tâm thất là một trong hai buồng tim lớn ở phần dưới của tim. Tâm thất nhận máu từ tâm nhĩ rồi đẩy máu đi khắp cơ thể và tới phổi.",
+  "title": "Ventricle (heart)",
+  "url": "https://en.wikipedia.org/wiki/Ventricle_(heart)"
+ },
+ "left-ventricle-cavity": {
+  "text": "Tâm thất là một trong hai buồng tim lớn ở phần dưới của tim. Tâm thất nhận máu từ tâm nhĩ rồi đẩy máu đi khắp cơ thể và tới phổi.",
+  "title": "Ventricle (heart)",
+  "url": "https://en.wikipedia.org/wiki/Ventricle_(heart)"
+ },
+ "tricuspid-valve": {
+  "text": "Van ba lá, hay van nhĩ thất phải, nằm giữa tâm nhĩ phải và tâm thất phải. Van cho máu từ tâm nhĩ phải xuống tâm thất phải trong kỳ tâm trương và đóng lại để ngăn máu trào ngược khi tâm thất phải co (kỳ tâm thu).",
+  "title": "Tricuspid valve",
+  "url": "https://en.wikipedia.org/wiki/Tricuspid_valve"
+ },
+ "mitral-valve": {
+  "text": "Van hai lá còn được gọi là van nhĩ thất trái là van có hai lá của tim nằm giữa tâm nhĩ trái và tâm thất trái.",
+  "title": "Van hai lá",
+  "url": "https://vi.wikipedia.org/wiki/Van_hai_l%C3%A1"
+ },
+ "aortic-valve": {
+  "text": "Van động mạch chủ là van tim nằm giữa tâm thất trái và động mạch chủ. Đây là một trong bốn van tim và là một trong hai van bán nguyệt, cùng với van động mạch phổi.",
+  "title": "Aortic valve",
+  "url": "https://en.wikipedia.org/wiki/Aortic_valve"
+ },
+ "pulmonary-valve": {
+  "text": "Van động mạch phổi là van tim nằm giữa tâm thất phải và động mạch phổi, có ba lá van. Đây là một trong bốn van tim và là một trong hai van bán nguyệt, cùng với van động mạch chủ.",
+  "title": "Pulmonary valve",
+  "url": "https://en.wikipedia.org/wiki/Pulmonary_valve"
+ },
+ "coronary-arteries": {
+  "text": "Động mạch vành là những mạch máu trong tuần hoàn mạch vành có chức năng vận chuyển máu giàu oxy đến cơ tim.",
+  "title": "Động mạch vành",
+  "url": "https://vi.wikipedia.org/wiki/%C4%90%E1%BB%99ng_m%E1%BA%A1ch_v%C3%A0nh"
+ },
+ "cardiac-veins": {
+  "text": "Các tĩnh mạch tim dẫn máu đã khử oxy từ cơ tim. Xoang vành, tĩnh mạch lớn nhất của tim, đưa hơn một nửa lượng máu này về tâm nhĩ phải.",
+  "title": "Coronary sinus",
+  "url": "https://en.wikipedia.org/wiki/Coronary_sinus"
+ },
+ "thyroid-gland": {
+  "text": "Tuyến giáp là một tuyến nội tiết. Ở người, tuyến có hình con bướm hoặc hình chữ H, nằm ở cổ, dưới lồi thanh quản (trái cổ).",
+  "title": "Thyroid",
+  "url": "https://en.wikipedia.org/wiki/Thyroid"
+ },
+ "parathyroid-glands": {
+  "text": "Tuyến cận giáp là các tuyến nội tiết nhỏ ở cổ. Người thường có bốn tuyến cận giáp, nằm ở mặt sau tuyến giáp, vị trí thay đổi tùy người.",
+  "title": "Parathyroid gland",
+  "url": "https://en.wikipedia.org/wiki/Parathyroid_gland"
+ },
+ "pituitary-gland": {
+  "text": "Tuyến yên là một tuyến nội tiết. Ở người, tuyến nằm ở đáy não, nhô ra từ mặt dưới vùng dưới đồi.",
+  "title": "Pituitary gland",
+  "url": "https://en.wikipedia.org/wiki/Pituitary_gland"
+ },
+ "pineal-gland": {
+  "text": "Tuyến tùng là một tuyến nội tiết nhỏ trong não. Tuyến sản xuất melatonin, một hormone dẫn xuất từ serotonin, điều hòa nhịp ngủ theo chu kỳ ngày đêm.",
+  "title": "Pineal gland",
+  "url": "https://en.wikipedia.org/wiki/Pineal_gland"
+ },
+ "jejunum": {
+  "text": "Hỗng tràng là đoạn thứ hai của ruột non. Niêm mạc hỗng tràng chuyên hấp thu, qua các tế bào ruột, những phân tử dinh dưỡng nhỏ đã được enzyme tiêu hóa trước đó ở tá tràng.",
+  "title": "Jejunum",
+  "url": "https://en.wikipedia.org/wiki/Jejunum"
+ },
+ "ileum": {
+  "text": "Hồi tràng là đoạn cuối của ruột non.",
+  "title": "Ileum",
+  "url": "https://en.wikipedia.org/wiki/Ileum"
+ },
+ "ileocecal-junction": {
+  "text": "Van hồi - manh tràng hay van Tulp, van Bauhin là một cơ vòng nằm ở ngã ba của ruột non và ruột già.",
+  "title": "Van hồi - manh tràng",
+  "url": "https://vi.wikipedia.org/wiki/Van_h%E1%BB%93i_-_manh_tr%C3%A0ng"
+ },
+ "colon": {
+  "text": "Đại tràng lên, ngang và xuống là các đoạn của ruột già, phần cuối của ống tiêu hóa. Nước và muối được hấp thu ở ruột già, phần chất thải còn lại được lưu ở trực tràng dưới dạng phân.",
+  "title": "Large intestine",
+  "url": "https://en.wikipedia.org/wiki/Large_intestine"
+ },
+ "taeniae-coli": {
+  "text": "Dải cơ dọc đại tràng là ba dải cơ trơn dọc riêng biệt ở mặt ngoài đại tràng lên, ngang, xuống và đại tràng sigma. Có thể thấy chúng ngay dưới lớp thanh mạc.",
+  "title": "Taenia coli",
+  "url": "https://en.wikipedia.org/wiki/Taenia_coli"
+ },
+ "rectum": {
+  "text": "Trực tràng là đoạn thẳng cuối cùng của ruột già. Trực tràng chứa phân tạm thời trước khi phân được thải ra qua hậu môn.",
+  "title": "Rectum",
+  "url": "https://en.wikipedia.org/wiki/Rectum"
+ },
+ "liver": {
+  "text": "Gan là một cơ quan của các động vật có xương sống, bao gồm cả con người.",
+  "title": "Gan",
+  "url": "https://vi.wikipedia.org/wiki/Gan"
+ },
+ "bile-ducts": {
+  "text": "Các ống mật cùng với gan và túi mật tạo thành đường mật, hệ thống tạo, dự trữ và bài tiết mật.",
+  "title": "Biliary tract",
+  "url": "https://en.wikipedia.org/wiki/Biliary_tract"
+ },
+ "pancreas": {
+  "text": "Tụy là một cơ quan thuộc cả hệ tiêu hóa và hệ nội tiết. Ở người, tụy nằm trong ổ bụng, sau dạ dày, và hoạt động như một tuyến.",
+  "title": "Pancreas",
+  "url": "https://en.wikipedia.org/wiki/Pancreas"
+ },
+ "celiac-branches": {
+  "text": "Thân tạng là nhánh lớn đầu tiên của động mạch chủ bụng; nhóm này gồm thân tạng và các nhánh của nó.",
+  "title": "Celiac artery",
+  "url": "https://en.wikipedia.org/wiki/Celiac_artery"
+ },
+ "mesenteric-arteries": {
+  "text": "Các động mạch mạc treo tràng nhận máu từ động mạch chủ và phân phối tới một phần lớn ống tiêu hóa.",
+  "title": "Mesenteric arteries",
+  "url": "https://en.wikipedia.org/wiki/Mesenteric_arteries"
+ },
+ "portal-veins": {
+  "text": "Tĩnh mạch cửa đưa máu từ ống tiêu hóa, túi mật, tụy và lách về gan. Máu này chứa chất dinh dưỡng và độc chất hấp thu từ thức ăn đã tiêu hóa.",
+  "title": "Portal vein",
+  "url": "https://en.wikipedia.org/wiki/Portal_vein"
+ },
+ "renal-arteries": {
+  "text": "Động mạch thận là cặp động mạch cấp máu cho thận.",
+  "title": "Renal artery",
+  "url": "https://en.wikipedia.org/wiki/Renal_artery"
+ },
+ "renal-veins": {
+  "text": "Tĩnh mạch thận dẫn máu đã được thận lọc về tĩnh mạch chủ dưới.",
+  "title": "Renal vein",
+  "url": "https://en.wikipedia.org/wiki/Renal_vein"
+ },
+ "epididymides": {
+  "text": "Mào tinh là một cơ quan sinh dục dạng ống, dài, gắn vào mặt sau của mỗi tinh hoàn. Đó là một ống đơn, hẹp, cuộn chặt.",
+  "title": "Epididymis",
+  "url": "https://en.wikipedia.org/wiki/Epididymis"
+ },
+ "deferent-ducts": {
+  "text": "Ống dẫn tinh, cũng có tên Latin là ductus deferens, là một phần của hệ sinh dục nam của nhiều động vật có xương sống; các ống dẫn này vận chuyển tinh trùng từ mào tinh hoàn sang ống phóng tinh trước khi chuẩn bị xuất tinh.",
+  "title": "Ống dẫn tinh",
+  "url": "https://vi.wikipedia.org/wiki/%E1%BB%90ng_d%E1%BA%ABn_tinh"
+ },
+ "seminal-vesicles": {
+  "text": "Túi tinh là một cặp tuyến phụ dạng ống cuộn, nằm sau bàng quang ở nam giới. Chúng tiết ra dịch chiếm phần lớn tinh dịch.",
+  "title": "Seminal vesicles",
+  "url": "https://en.wikipedia.org/wiki/Seminal_vesicles"
+ },
+ "right-eyeball": {
+  "text": "Mắt người là một cơ quan cảm giác đáp ứng với ánh sáng và thực hiện chức năng thị giác.",
+  "title": "Mắt người",
+  "url": "https://vi.wikipedia.org/wiki/M%E1%BA%AFt_ng%C6%B0%E1%BB%9Di"
+ },
+ "left-eyeball": {
+  "text": "Mắt người là một cơ quan cảm giác đáp ứng với ánh sáng và thực hiện chức năng thị giác.",
+  "title": "Mắt người",
+  "url": "https://vi.wikipedia.org/wiki/M%E1%BA%AFt_ng%C6%B0%E1%BB%9Di"
+ },
+ "sclera": {
+  "text": "Củng mạc, còn gọi là lòng trắng của mắt, là lớp ngoài của mắt, dạng sợi, đục, có chức năng bảo vệ, chủ yếu chứa collagen và một số sợi đàn hồi.",
+  "title": "Sclera",
+  "url": "https://en.wikipedia.org/wiki/Sclera"
+ },
+ "cornea": {
+  "text": "Giác mạc là phần trong suốt ở phía trước nhãn cầu, che phủ mống mắt, đồng tử và tiền phòng. Cùng với tiền phòng và thể thủy tinh, giác mạc khúc xạ ánh sáng, chiếm khoảng hai phần ba tổng công suất quang học của mắt.",
+  "title": "Cornea",
+  "url": "https://en.wikipedia.org/wiki/Cornea"
+ },
+ "choroid": {
+  "text": "Màng mạch là một phần của màng bồ đào, lớp mạch máu của mắt. Màng mạch chứa mô liên kết và nằm giữa võng mạc và củng mạc.",
+  "title": "Choroid",
+  "url": "https://en.wikipedia.org/wiki/Choroid"
+ },
+ "ciliary-body": {
+  "text": "Vành mi là một phần của thể mi. Thể mi gồm cơ thể mi, điều chỉnh hình dạng thể thủy tinh, và biểu mô thể mi, nơi sản xuất thủy dịch.",
+  "title": "Ciliary body",
+  "url": "https://en.wikipedia.org/wiki/Ciliary_body"
+ },
+ "iris": {
+  "text": "Mống mắt là một cấu trúc mỏng hình vòng trong mắt, điều chỉnh đường kính đồng tử và do đó điều chỉnh lượng ánh sáng tới võng mạc.",
+  "title": "Iris (anatomy)",
+  "url": "https://en.wikipedia.org/wiki/Iris_(anatomy)"
+ },
+ "lens": {
+  "text": "Thể thủy tinh là một cấu trúc trong suốt, hai mặt lồi trong mắt. Phần lớn thể thủy tinh được tạo nên từ các tế bào sợi tương đối dài và mảnh.",
+  "title": "Lens (vertebrate anatomy)",
+  "url": "https://en.wikipedia.org/wiki/Lens_(vertebrate_anatomy)"
+ },
+ "vitreous-body": {
+  "text": "Thể kính là khối gel trong suốt lấp đầy khoảng giữa thể thủy tinh và võng mạc của mắt, còn được gọi là dịch kính.",
+  "title": "Vitreous body",
+  "url": "https://en.wikipedia.org/wiki/Vitreous_body"
+ },
+ "retina": {
+  "text": "Võng mạc là lớp mô trong cùng, nhạy sáng của mắt. Hệ quang học của mắt tạo một ảnh hội tụ trên võng mạc; võng mạc xử lý ảnh đó và gửi xung thần kinh theo thần kinh thị giác tới vỏ não thị giác.",
+  "title": "Retina",
+  "url": "https://en.wikipedia.org/wiki/Retina"
+ },
+ "anterior-chamber": {
+  "text": "Tiền phòng là khoang chứa thủy dịch bên trong mắt, nằm giữa mống mắt và mặt trong cùng của giác mạc (lớp nội mô).",
+  "title": "Anterior chamber of eyeball",
+  "url": "https://en.wikipedia.org/wiki/Anterior_chamber_of_eyeball"
+ },
+ "levator-palpebrae": {
+  "text": "Cơ nâng mi trên là cơ trong ổ mắt có chức năng nâng mi trên.",
+  "title": "Levator palpebrae superioris muscle",
+  "url": "https://en.wikipedia.org/wiki/Levator_palpebrae_superioris_muscle"
+ },
+ "optic-nerves": {
+  "text": "Thần kinh thị giác còn được gọi là thần kinh sọ II, viết tắt là CN II, là đôi dây thần kinh sọ thực hiện chức năng truyền thông tin thị giác từ võng mạc đến não.",
+  "title": "Thần kinh thị giác",
+  "url": "https://vi.wikipedia.org/wiki/Th%E1%BA%A7n_kinh_th%E1%BB%8B_gi%C3%A1c"
+ },
+ "lacrimal-lakes": {
+  "text": "Hồ lệ là nơi nước mắt tụ lại trước khi chảy vào lỗ mở của hệ thống dẫn lệ.",
+  "title": "Lacrimal lake",
+  "url": "https://en.wikipedia.org/wiki/Lacrimal_lake"
+ },
+ "lacrimal-canaliculi": {
+  "text": "Tiểu quản lệ là các kênh nhỏ ở mỗi mí mắt, dẫn nước mắt từ điểm lệ tới túi lệ. Chúng thuộc bộ máy lệ, hệ thống dẫn nước mắt từ bề mặt mắt xuống khoang mũi.",
+  "title": "Lacrimal canaliculi",
+  "url": "https://en.wikipedia.org/wiki/Lacrimal_canaliculi"
+ },
+ "lacrimal-sacs": {
+  "text": "Túi lệ là đầu trên giãn rộng của ống lệ mũi, nằm trong một rãnh sâu tạo bởi xương lệ và mỏm trán của xương hàm trên. Túi lệ nối tiểu quản lệ với ống lệ mũi.",
+  "title": "Lacrimal sac",
+  "url": "https://en.wikipedia.org/wiki/Lacrimal_sac"
+ },
+ "nasolacrimal-ducts": {
+  "text": "Ống lệ mũi dẫn nước mắt từ túi lệ của mắt xuống khoang mũi.",
+  "title": "Nasolacrimal duct",
+  "url": "https://en.wikipedia.org/wiki/Nasolacrimal_duct"
+ },
+ "external-ear": {
+  "text": "Tai ngoài là phần bên ngoài của tai, gồm vành tai và ống tai. Tai ngoài thu năng lượng âm thanh và hướng nó tới màng nhĩ.",
+  "title": "Outer ear",
+  "url": "https://en.wikipedia.org/wiki/Outer_ear"
+ },
+ "head-lymph-nodes": {
+  "text": "Hạch bạch huyết hay hạch lympho là một trong vô số các cấu trúc trơn, hình bầu dục dẹp, rải rác dọc theo các mạch bạch huyết, là một phần của hệ bạch huyết.",
+  "title": "Hạch bạch huyết",
+  "url": "https://vi.wikipedia.org/wiki/H%E1%BA%A1ch_b%E1%BA%A1ch_huy%E1%BA%BFt"
+ },
+ "neck-lymph-nodes": {
+  "text": "Hạch bạch huyết cổ là các hạch bạch huyết được tìm thấy ở cổ.",
+  "title": "Hạch bạch huyết cổ",
+  "url": "https://vi.wikipedia.org/wiki/H%E1%BA%A1ch_b%E1%BA%A1ch_huy%E1%BA%BFt_c%E1%BB%95"
+ },
+ "head-neck-lymph-vessels": {
+  "text": "Mạch bạch huyết là những ống thành mỏng, cấu tạo giống mạch máu, dẫn bạch huyết. Là một phần của hệ bạch huyết, mạch bạch huyết bổ trợ cho hệ tim mạch.",
+  "title": "Lymphatic vessel",
+  "url": "https://en.wikipedia.org/wiki/Lymphatic_vessel"
+ },
+ "axillary-lymph-nodes": {
+  "text": "Hạch nách là các hạch bạch huyết ở hõm nách của người. Chúng nhận bạch huyết từ chi trên, từ các phần tư ngoài của vú và từ các mạch bạch huyết nông của thành ngực và thành bụng phía trên rốn.",
+  "title": "Axillary lymph nodes",
+  "url": "https://en.wikipedia.org/wiki/Axillary_lymph_nodes"
+ },
+ "upper-limb-lymph-vessels": {
+  "text": "Mạch bạch huyết là những ống thành mỏng, cấu tạo giống mạch máu, dẫn bạch huyết. Là một phần của hệ bạch huyết, mạch bạch huyết bổ trợ cho hệ tim mạch.",
+  "title": "Lymphatic vessel",
+  "url": "https://en.wikipedia.org/wiki/Lymphatic_vessel"
+ },
+ "thorax-lymph-vessels": {
+  "text": "Mạch bạch huyết là những ống thành mỏng, cấu tạo giống mạch máu, dẫn bạch huyết. Là một phần của hệ bạch huyết, mạch bạch huyết bổ trợ cho hệ tim mạch.",
+  "title": "Lymphatic vessel",
+  "url": "https://en.wikipedia.org/wiki/Lymphatic_vessel"
+ },
+ "abdomen-lymph-vessels": {
+  "text": "Mạch bạch huyết là những ống thành mỏng, cấu tạo giống mạch máu, dẫn bạch huyết. Là một phần của hệ bạch huyết, mạch bạch huyết bổ trợ cho hệ tim mạch.",
+  "title": "Lymphatic vessel",
+  "url": "https://en.wikipedia.org/wiki/Lymphatic_vessel"
+ },
+ "pelvis-lymph-vessels": {
+  "text": "Mạch bạch huyết là những ống thành mỏng, cấu tạo giống mạch máu, dẫn bạch huyết. Là một phần của hệ bạch huyết, mạch bạch huyết bổ trợ cho hệ tim mạch.",
+  "title": "Lymphatic vessel",
+  "url": "https://en.wikipedia.org/wiki/Lymphatic_vessel"
+ },
+ "inguinal-lymph-nodes": {
+  "text": "Hạch bẹn là các hạch bạch huyết ở vùng bẹn, nằm trong tam giác đùi.",
+  "title": "Inguinal lymph nodes",
+  "url": "https://en.wikipedia.org/wiki/Inguinal_lymph_nodes"
+ },
+ "lower-limb-lymph-vessels": {
+  "text": "Mạch bạch huyết là những ống thành mỏng, cấu tạo giống mạch máu, dẫn bạch huyết. Là một phần của hệ bạch huyết, mạch bạch huyết bổ trợ cho hệ tim mạch.",
+  "title": "Lymphatic vessel",
+  "url": "https://en.wikipedia.org/wiki/Lymphatic_vessel"
+ },
+ "thymus": {
+  "text": "Tuyến ức nằm ở trong lồng ngực, phía sau xương ức, thuộc trung thất trước trên, trải dài từ phía dưới cổ họng đến trước tim.",
+  "title": "Tuyến ức",
+  "url": "https://vi.wikipedia.org/wiki/Tuy%E1%BA%BFn_%E1%BB%A9c"
+ },
+ "cerebral-white-matter": {
+  "text": "Chất trắng là các vùng nằm trong hệ thần kinh trung ương chủ yếu được tạo nên bởi các sợi trục có bao myelin, còn được gọi là bó thần kinh.",
+  "title": "Chất trắng",
+  "url": "https://vi.wikipedia.org/wiki/Ch%E1%BA%A5t_tr%E1%BA%AFng"
+ },
+ "basal-nuclei": {
+  "text": "Hạch nền (nhân nền) là một nhóm nhân dưới vỏ nằm ở đáy não trước, có liên hệ chặt chẽ với vỏ đại não, đồi thị, thân não và các vùng não khác.",
+  "title": "Basal ganglia",
+  "url": "https://en.wikipedia.org/wiki/Basal_ganglia"
+ },
+ "diencephalon": {
+  "text": "Gian não là một phần của não trước, nằm giữa đoan não và não giữa.",
+  "title": "Diencephalon",
+  "url": "https://en.wikipedia.org/wiki/Diencephalon"
+ },
+ "brainstem": {
+  "text": "Thân não là phần não hình cuống ở phía sau, nối đại não với tủy sống. Ở người, thân não gồm não giữa, cầu não và hành não.",
+  "title": "Brainstem",
+  "url": "https://en.wikipedia.org/wiki/Brainstem"
+ },
+ "tentorium-cerebelli": {
+  "text": "Lều tiểu não là một trong bốn nếp màng cứng chia khoang sọ thành bốn ngăn không hoàn toàn. Lều ngăn tiểu não với đại não, tạo nên vùng trên lều chứa đại não và vùng dưới lều chứa tiểu não.",
+  "title": "Cerebellar tentorium",
+  "url": "https://en.wikipedia.org/wiki/Cerebellar_tentorium"
+ },
+ "brain-ventricles": {
+  "text": "Hệ não thất là bốn khoang thông nhau trong não, gọi là các não thất. Trong mỗi não thất có một vùng đám rối mạch mạc sản xuất dịch não tủy.",
+  "title": "Ventricular system",
+  "url": "https://en.wikipedia.org/wiki/Ventricular_system"
+ },
+ "optic-pathway": {
+  "text": "Thần kinh thị giác (thần kinh sọ II) là đôi dây thần kinh sọ truyền thông tin thị giác từ võng mạc đến não. Dây đi từ đĩa thị đến giao thoa thị giác rồi tiếp tục thành dải thị giác tới thể gối ngoài, các nhân trước mái và gò trên.",
+  "title": "Optic nerve",
+  "url": "https://en.wikipedia.org/wiki/Optic_nerve"
+ },
+ "oculomotor-nerve": {
+  "text": "Thần kinh vận nhãn (thần kinh sọ III) vào ổ mắt qua khe ổ mắt trên, chi phối các cơ ngoài nhãn cầu giúp mắt cử động theo phần lớn các hướng và nâng mi mắt. Dây còn chứa các sợi chi phối cơ trong nhãn cầu, giúp co đồng tử và điều tiết.",
+  "title": "Oculomotor nerve",
+  "url": "https://en.wikipedia.org/wiki/Oculomotor_nerve"
+ },
+ "ophthalmic-nerve": {
+  "text": "Thần kinh mắt (V1) là một dây thần kinh cảm giác của đầu, một trong ba nhánh của thần kinh sinh ba (thần kinh sọ V).",
+  "title": "Ophthalmic nerve",
+  "url": "https://en.wikipedia.org/wiki/Ophthalmic_nerve"
+ },
+ "maxillary-nerve": {
+  "text": "Thần kinh hàm trên (V2) là một trong ba nhánh của thần kinh sinh ba (thần kinh sọ V). Dây đảm nhận cảm giác của xương hàm trên, khoang mũi, các xoang, khẩu cái và vùng giữa mặt.",
+  "title": "Maxillary nerve",
+  "url": "https://en.wikipedia.org/wiki/Maxillary_nerve"
+ },
+ "mandibular-nerve": {
+  "text": "Thần kinh hàm dưới (V3) là nhánh lớn nhất trong ba nhánh của thần kinh sinh ba (thần kinh sọ V). Khác với thần kinh mắt và thần kinh hàm trên chỉ chứa sợi hướng tâm, thần kinh hàm dưới chứa cả sợi hướng tâm lẫn sợi ly tâm.",
+  "title": "Mandibular nerve",
+  "url": "https://en.wikipedia.org/wiki/Mandibular_nerve"
+ },
+ "facial-nerve": {
+  "text": "Thần kinh mặt là dây thần kinh sọ thứ bảy trong tổng số 12 đôi dây thần kinh sọ, viết tắt là CN VII.",
+  "title": "Thần kinh mặt",
+  "url": "https://vi.wikipedia.org/wiki/Th%E1%BA%A7n_kinh_m%E1%BA%B7t"
+ },
+ "vestibulocochlear-nerve": {
+  "text": "Thần kinh tiền đình – ốc tai (thần kinh sọ VIII) truyền thông tin âm thanh và thăng bằng từ tai trong lên não.",
+  "title": "Vestibulocochlear nerve",
+  "url": "https://en.wikipedia.org/wiki/Vestibulocochlear_nerve"
+ },
+ "glossopharyngeal-nerve": {
+  "text": "Thần kinh thiệt hầu (thần kinh sọ IX) ra khỏi thân não ở hai bên phần trên hành não, ngay phía trước thần kinh lang thang. Đây là dây thần kinh hỗn hợp, mang cả thông tin cảm giác hướng tâm lẫn vận động ly tâm.",
+  "title": "Glossopharyngeal nerve",
+  "url": "https://en.wikipedia.org/wiki/Glossopharyngeal_nerve"
+ },
+ "accessory-nerve": {
+  "text": "Thần kinh phụ là thần kinh sọ thứ 11 trong tổng số 12 đôi dây thần kinh sọ.",
+  "title": "Thần kinh phụ",
+  "url": "https://vi.wikipedia.org/wiki/Th%E1%BA%A7n_kinh_ph%E1%BB%A5"
+ },
+ "hypoglossal-nerve": {
+  "text": "Thần kinh hạ thiệt là thần kinh thứ 12 trong tổng số 12 đôi dây thần kinh sọ, chi phối vận động các cơ trong và ngoài của lưỡi, ngoại trừ cơ khẩu cái - lưỡi.",
+  "title": "Thần kinh hạ thiệt",
+  "url": "https://vi.wikipedia.org/wiki/Th%E1%BA%A7n_kinh_h%E1%BA%A1_thi%E1%BB%87t"
+ },
+ "spinal-cord": {
+  "text": "Tủy sống là một cấu trúc hình ống dài, mảnh, cấu tạo bằng mô thần kinh, kéo dài từ hành não ở phần dưới thân não tới vùng thắt lưng của cột sống.",
+  "title": "Spinal cord",
+  "url": "https://en.wikipedia.org/wiki/Spinal_cord"
+ },
+ "spinal-dura": {
+  "text": "Màng cứng là lớp ngoài cùng trong ba lớp màng não tủy.",
+  "title": "Dura mater",
+  "url": "https://en.wikipedia.org/wiki/Dura_mater"
+ },
+ "cauda-equina": {
+  "text": "Chùm đuôi ngựa là bó các thần kinh gai và rễ con thần kinh gai, gồm các đôi thần kinh thắt lưng L2–L5, các đôi thần kinh cùng S1–S5 và thần kinh cụt, tất cả xuất phát từ phình thắt lưng và nón tủy. Chùm đuôi ngựa nằm trong bể thắt lưng, một khoang dưới nhện bên dưới nón tủy.",
+  "title": "Cauda equina",
+  "url": "https://en.wikipedia.org/wiki/Cauda_equina"
+ },
+ "brachial-plexus": {
+  "text": "Đám rối thần kinh cánh tay là mạng lưới thần kinh tạo bởi nhánh trước của bốn thần kinh gai cổ dưới và thần kinh gai ngực thứ nhất. Đám rối đi từ tủy sống qua ống cổ – nách ở cổ, vượt trên xương sườn 1 rồi vào hõm nách.",
+  "title": "Brachial plexus",
+  "url": "https://en.wikipedia.org/wiki/Brachial_plexus"
+ },
+ "musculocutaneous-nerve": {
+  "text": "Thần kinh cơ bì xuất phát từ bó ngoài đám rối thần kinh cánh tay.",
+  "title": "Thần kinh cơ bì",
+  "url": "https://vi.wikipedia.org/wiki/Th%E1%BA%A7n_kinh_c%C6%A1_b%C3%AC"
+ },
+ "axillary-nerve": {
+  "text": "Thần kinh nách là thần kinh của người, bắt nguồn từ đám rối thần kinh cánh tay ở ngang mức nách chứa các sợi C5 và C6.",
+  "title": "Thần kinh nách",
+  "url": "https://vi.wikipedia.org/wiki/Th%E1%BA%A7n_kinh_n%C3%A1ch"
+ },
+ "median-nerve": {
+  "text": "Thần kinh giữa là thần kinh phân bố ở vùng chi trên người và một số động vật.",
+  "title": "Thần kinh giữa",
+  "url": "https://vi.wikipedia.org/wiki/Th%E1%BA%A7n_kinh_gi%E1%BB%AFa"
+ },
+ "ulnar-nerve": {
+  "text": "Trong giải phẫu người, thần kinh trụ là dây thần kinh chạy gần xương trụ.",
+  "title": "Thần kinh trụ",
+  "url": "https://vi.wikipedia.org/wiki/Th%E1%BA%A7n_kinh_tr%E1%BB%A5"
+ },
+ "radial-nerve": {
+  "text": "Thần kinh quay là dây thần kinh ở người, chi phối phần sau chi trên.",
+  "title": "Thần kinh quay",
+  "url": "https://vi.wikipedia.org/wiki/Th%E1%BA%A7n_kinh_quay"
+ },
+ "femoral-nerve": {
+  "text": "Thần kinh đùi là dây thần kinh ở đùi, cảm giác cho da phần trên đùi và mặt trong cẳng chân, vận động các cơ duỗi gối. Đây là nhánh lớn nhất của đám rối thắt lưng.",
+  "title": "Femoral nerve",
+  "url": "https://en.wikipedia.org/wiki/Femoral_nerve"
+ },
+ "obturator-nerve": {
+  "text": "Thần kinh bịt xuất phát từ các ngành trước của thần kinh thắt lưng 2, 3 và 4 trong đám rối thắt lưng; nhánh từ thần kinh thắt lưng 3 lớn nhất, còn nhánh từ thần kinh thắt lưng 2 thường rất nhỏ.",
+  "title": "Obturator nerve",
+  "url": "https://en.wikipedia.org/wiki/Obturator_nerve"
+ },
+ "sciatic-nerve": {
+  "text": "Thần kinh ngồi là một dây thần kinh lớn ở người. Đây là nhánh lớn nhất của đám rối cùng, chạy cạnh khớp hông xuống dọc chi dưới.",
+  "title": "Sciatic nerve",
+  "url": "https://en.wikipedia.org/wiki/Sciatic_nerve"
+ },
+ "tibial-nerve": {
+  "text": "Thần kinh chày là một nhánh của thần kinh ngồi.",
+  "title": "Thần kinh chày",
+  "url": "https://vi.wikipedia.org/wiki/Th%E1%BA%A7n_kinh_ch%C3%A0y"
+ },
+ "fibular-nerves": {
+  "text": "Thần kinh mác chung là dây thần kinh ở chi dưới, cảm giác cho phần sau ngoài cẳng chân và khớp gối. Ở vùng gối, dây chia thành hai nhánh tận là thần kinh mác nông và thần kinh mác sâu, lần lượt chi phối các cơ ở khoang ngoài và khoang trước cẳng chân.",
+  "title": "Common fibular nerve",
+  "url": "https://en.wikipedia.org/wiki/Common_fibular_nerve"
+ },
+ "sural-nerve": {
+  "text": "Thần kinh bắp chân (L4–S1) thường được xem là dây thần kinh thuần cảm giác da, chi phối mặt sau ngoài cẳng chân đến mắt cá ngoài. Dây được tạo thành hoặc từ nhánh nối bắp chân hợp với thần kinh bì bắp chân trong, hoặc từ thần kinh bì bắp chân ngoài.",
+  "title": "Sural nerve",
+  "url": "https://en.wikipedia.org/wiki/Sural_nerve"
+ },
+ "sympathetic-trunk": {
+  "text": "Thân giao cảm là một đôi bó sợi thần kinh chạy từ nền sọ đến xương cụt. Đây là thành phần chính của hệ thần kinh giao cảm.",
+  "title": "Sympathetic trunk",
+  "url": "https://en.wikipedia.org/wiki/Sympathetic_trunk"
+ },
+ "bone-maxilla": {
+  "text": "Xương hàm trên là xương cố định phía trên của hàm, gồm hai xương hàm trên trái và phải ghép lại. Ở người, hàm trên bao gồm khẩu cái cứng ở phía trước miệng.",
+  "title": "Maxilla",
+  "url": "https://en.wikipedia.org/wiki/Maxilla"
+ },
+ "teeth-premolars": {
+  "text": "Răng hàm nhỏ (răng tiền hàm) là các răng chuyển tiếp nằm giữa răng nanh và răng hàm lớn. Ở người, bộ răng vĩnh viễn có hai răng hàm nhỏ ở mỗi phần tư hàm, tổng cộng tám chiếc.",
+  "title": "Premolar",
+  "url": "https://en.wikipedia.org/wiki/Premolar"
+ },
+ "gingiva": {
+  "text": "Nướu hay lợi, bao gồm các mô niêm mạc bao bọc xương hàm dưới và xương hàm trên bên trong miệng.",
+  "title": "Nướu",
+  "url": "https://vi.wikipedia.org/wiki/N%C6%B0%E1%BB%9Bu"
+ },
+ "bone-sternum": {
+  "text": "Xương ức là một xương dẹt, dài nằm ở giữa ngực. Xương ức nối với các xương sườn qua sụn và tạo nên mặt trước lồng ngực, góp phần bảo vệ tim, phổi và các mạch máu lớn.",
+  "title": "Sternum",
+  "url": "https://en.wikipedia.org/wiki/Sternum"
+ },
+ "erector-spinae": {
+  "text": "Cơ dựng sống là nhóm cơ làm duỗi thẳng và xoay lưng.",
+  "title": "Erector spinae muscles",
+  "url": "https://en.wikipedia.org/wiki/Erector_spinae_muscles"
+ },
+ "pelvic-floor-muscles": {
+  "text": "Sàn chậu có vai trò quan trọng trong việc tự chủ tiểu tiện và đại tiện, trong chức năng tình dục và trong nâng đỡ các tạng chậu.",
+  "title": "Pelvic floor",
+  "url": "https://en.wikipedia.org/wiki/Pelvic_floor"
+ },
+ "arm-anterior-muscles": {
+  "text": "Khu trước cánh tay là một trong các khoang mạc của cánh tay, tức đoạn trên của chi trên.",
+  "title": "Fascial compartments of arm",
+  "url": "https://en.wikipedia.org/wiki/Fascial_compartments_of_arm"
+ },
+ "arm-posterior-muscles": {
+  "text": "Khu sau cánh tay là một trong các khoang mạc của cánh tay, tức đoạn trên của chi trên.",
+  "title": "Fascial compartments of arm",
+  "url": "https://en.wikipedia.org/wiki/Fascial_compartments_of_arm"
+ },
+ "hand-muscles": {
+  "text": "Các cơ bàn tay là cơ vân làm cử động bàn tay và ngón tay, gồm nhóm cơ ngoại lai và nhóm cơ nội tại; nhóm này là các cơ nội tại.",
+  "title": "Muscles of the hand",
+  "url": "https://en.wikipedia.org/wiki/Muscles_of_the_hand"
+ },
+ "thigh-medial-muscles": {
+  "text": "Khu trong đùi là một trong các khoang mạc của đùi, chứa các cơ khép đùi và cơ thon.",
+  "title": "Medial compartment of thigh",
+  "url": "https://en.wikipedia.org/wiki/Medial_compartment_of_thigh"
+ },
+ "thigh-posterior-muscles": {
+  "text": "Khu sau đùi là một trong các khoang mạc của đùi, chứa nhóm cơ ụ ngồi – cẳng chân (gấp khớp gối, duỗi khớp háng) cùng các mạch máu và thần kinh, đặc biệt là thần kinh ngồi.",
+  "title": "Posterior compartment of thigh",
+  "url": "https://en.wikipedia.org/wiki/Posterior_compartment_of_thigh"
+ },
+ "leg-posterior-muscles": {
+  "text": "Khu sau cẳng chân là một trong các khoang mạc của cẳng chân, được chia tiếp thành khu nông và khu sâu.",
+  "title": "Posterior compartment of leg",
+  "url": "https://en.wikipedia.org/wiki/Posterior_compartment_of_leg"
+ },
+ "papillary-muscles": {
+  "text": "Cơ nhú là các cơ nằm trong tâm thất của tim. Chúng bám vào các lá van nhĩ thất qua các thừng gân.",
+  "title": "Papillary muscle",
+  "url": "https://en.wikipedia.org/wiki/Papillary_muscle"
+ },
+ "aorta-descending": {
+  "text": "Động mạch chủ xuống là phần của động mạch chủ, động mạch lớn nhất cơ thể, nối tiếp ngay sau cung động mạch chủ.",
+  "title": "Descending aorta",
+  "url": "https://en.wikipedia.org/wiki/Descending_aorta"
+ },
+ "lingular-arteries": {
+  "text": "Các động mạch lưỡi phổi trái là động mạch phổi, thuộc tuần hoàn phổi: chúng mang máu đã khử oxy từ bên phải tim đến phổi.",
+  "title": "Pulmonary artery",
+  "url": "https://en.wikipedia.org/wiki/Pulmonary_artery"
+ },
+ "axillary-arteries": {
+  "text": "Động mạch nách là mạch máu lớn đưa máu giàu oxy tới mặt bên của ngực, hố nách và chi trên. Nó bắt đầu từ bờ ngoài xương sườn 1; trước điểm đó mạch mang tên động mạch dưới đòn.",
+  "title": "Axillary artery",
+  "url": "https://en.wikipedia.org/wiki/Axillary_artery"
+ },
+ "brachial-arteries": {
+  "text": "Động mạch cánh tay là mạch máu chính của cánh tay, nối tiếp động mạch nách từ bờ dưới cơ tròn lớn.",
+  "title": "Brachial artery",
+  "url": "https://en.wikipedia.org/wiki/Brachial_artery"
+ },
+ "femoral-arteries": {
+  "text": "Động mạch đùi là động mạch lớn ở đùi và là nguồn cấp máu động mạch chính cho đùi và cẳng chân. Nó cho ra động mạch đùi sâu rồi đi xuống dọc mặt trước trong của đùi, trong tam giác đùi.",
+  "title": "Femoral artery",
+  "url": "https://en.wikipedia.org/wiki/Femoral_artery"
+ },
+ "hepatic-veins": {
+  "text": "Tĩnh mạch gan là các tĩnh mạch dẫn máu từ gan về tĩnh mạch chủ dưới. Thường có ba tĩnh mạch gan lớn ở trên, dẫn máu từ phần trái, giữa và phải của gan, cùng một số tĩnh mạch gan nhỏ hơn ở dưới.",
+  "title": "Hepatic veins",
+  "url": "https://en.wikipedia.org/wiki/Hepatic_veins"
+ },
+ "lingular-veins": {
+  "text": "Các tĩnh mạch lưỡi phổi trái thuộc hệ tĩnh mạch phổi, các tĩnh mạch đưa máu giàu oxy từ phổi về tim.",
+  "title": "Pulmonary vein",
+  "url": "https://en.wikipedia.org/wiki/Pulmonary_vein"
+ },
+ "dural-sinuses": {
+  "text": "Xoang tĩnh mạch màng cứng là các kênh tĩnh mạch nằm giữa lớp màng xương và lớp màng não của màng cứng. Chúng nhận máu từ các tĩnh mạch não và nhận dịch não tủy từ khoang dưới nhện qua các hạt màng nhện.",
+  "title": "Dural venous sinuses",
+  "url": "https://en.wikipedia.org/wiki/Dural_venous_sinuses"
+ },
+ "axillary-veins": {
+  "text": "Tĩnh mạch nách là mạch máu lớn đưa máu từ mặt bên của ngực, hố nách và chi trên về tim. Mỗi bên cơ thể có một tĩnh mạch nách.",
+  "title": "Axillary vein",
+  "url": "https://en.wikipedia.org/wiki/Axillary_vein"
+ },
+ "femoral-veins": {
+  "text": "Tĩnh mạch đùi là tĩnh mạch đi kèm động mạch đùi trong bao đùi. Đây là tĩnh mạch sâu, bắt đầu từ vòng gân cơ khép như đoạn nối tiếp của tĩnh mạch khoeo.",
+  "title": "Femoral vein",
+  "url": "https://en.wikipedia.org/wiki/Femoral_vein"
+ },
+ "mesenteries": {
+  "text": "Các mạc treo được tạo bởi một nếp gấp kép của phúc mạc; chúng giúp dự trữ mỡ và là đường cho mạch máu, mạch bạch huyết và thần kinh đi tới ruột.",
+  "title": "Mesentery",
+  "url": "https://en.wikipedia.org/wiki/Mesentery"
+ },
+ "lips": {
+  "text": "Môi là một bộ phận có thể nhìn thấy, là một phần của miệng người và động vật.",
+  "title": "Môi",
+  "url": "https://vi.wikipedia.org/wiki/M%C3%B4i"
+ },
+ "hair-eyebrows": {
+  "text": "Lông, gồm cả tóc và lông mày, là sợi protein mọc ra từ các nang lông nằm trong lớp bì của da.",
+  "title": "Hair",
+  "url": "https://en.wikipedia.org/wiki/Hair"
+ }
+}

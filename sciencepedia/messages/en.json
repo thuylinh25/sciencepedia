@@ -862,6 +862,8 @@
       "reviewedBy": "reviewed by the Sciencepedia editorial board",
       "systemOverview": "Overview · {system}",
       "systemNote": "No description for this structure yet — the text above is about the whole system.",
+      "groupOverview": "About the group · {group}",
+      "groupNote": "No description for this structure yet — the text above is about the whole group.",
       "latinName": "Latin name",
       "partOf": "Part of",
       "nameMachine": "Vietnamese name machine-assembled, not yet reviewed",

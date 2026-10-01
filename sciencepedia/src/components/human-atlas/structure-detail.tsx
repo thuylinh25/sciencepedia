@@ -16,6 +16,7 @@ import {
 } from "@/lib/human-atlas/anatomy";
 import { displayName, hasViName, viNameStatus } from "@/lib/human-atlas/names-vi";
 import { structureDescription } from "@/lib/human-atlas/descriptions";
+import { groupDescription } from "@/lib/human-atlas/group-descriptions";
 import type { StructureArticle } from "@/lib/human-atlas/structure-links";
 import {
   ANATOMY_SOURCES,
@@ -108,6 +109,8 @@ export function StructureDetail({
   // Gloss Wikipedia (đã duyệt) — chỉ dùng khi không có nội dung L2 riêng/kế thừa
   // và không có lời giải riêng, để không đè mô tả biên soạn kỹ hơn.
   const wiki = structureDescription(concept.id, ...parts.map((p) => p.conceptId));
+  // Mảnh không có mô tả riêng → mô tả nhóm cấu trúc chứa nó, trước khi lùi về cả hệ.
+  const group = wiki ? null : groupDescription(parts.map((p) => p.id));
   const aboutName =
     resolved && resolved.about !== concept.id && anatomy
       ? displayName(locale, resolved.about, fmaName(anatomy, resolved.about) ?? resolved.about)
@@ -214,6 +217,16 @@ export function StructureDetail({
           </p>
         ) : wiki ? (
           <WikipediaText desc={wiki} locale={locale} />
+        ) : group ? (
+          <div className="rounded-xl border border-dashed p-3">
+            <h3 className="text-[11px] font-semibold tracking-[0.1em] text-muted-foreground uppercase">
+              {t("detail.groupOverview", { group: locale === "vi" ? group.name.vi : group.name.en })}
+            </h3>
+            <div className="mt-1.5">
+              <WikipediaText desc={{ ...group, lang: "vi", reviewed: true }} locale={locale} />
+            </div>
+            <p className="mt-2 text-[11px] leading-snug text-muted-foreground/80">{t("detail.groupNote")}</p>
+          </div>
         ) : (
           system && SYSTEM_DESCRIPTIONS[system] && (
             <div className="rounded-xl border border-dashed p-3">
