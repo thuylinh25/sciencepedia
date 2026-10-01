@@ -642,6 +642,10 @@ liệu/đèn — cảnh 3D chính vẫn #05070a (lý do ở `SCENE_BACKGROUND`).
   Tên hạch là đuôi của từ khác ("submandibular" ⊃ "mandibular", "epigastric" ⊃ "gastric") → regex phải ``
   + liệt kê tiền tố (supra/sub/retro-pyloric…). Phế vị và gian sườn dùng lại cấu trúc của hô hấp — khai báo
   trùng tập mảnh là hai hàng chồng nhau. Không ghi "thiếu ống ngực": lưới mạch ngực có thể đã chứa nó.
+- Xương, cơ (2026-10-01): xương lệ, xoăn mũi dưới, cơ căng mạc đùi nằm hệ khác của dữ liệu → lấy theo mã/tên
+  vào nhóm đúng. Hệ cơ chia theo KHU (khu trước cẳng tay…), không một hàng mỗi cơ. "Superficial perineal muscle"
+  (FMA19728) là bản chép hình học của nửa phải cơ thắt ngoài hậu môn → bỏ qua `DROPPED_CONCEPTS`; trước đó comment
+  để ngỏ "câu hỏi giải phẫu" — đã xét: cùng 240 đỉnh, trùng khít hộp bao, nằm sau ống hậu môn.
 
 **Chọn nhiều cấu trúc từ ô tìm** (2026-09-30): ＋ / Shift+Enter thêm-bỏ mà không đóng ô tìm; bấm tên vẫn thay cả
 vùng chọn. Nhiều cấu trúc thì `chosen` = null — bảng chi tiết nói về MỘT cấu trúc, gộp là sai — mô hình xem riêng

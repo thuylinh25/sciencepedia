@@ -426,8 +426,14 @@ export const GROUP_COLORS: Record<string, string> = {
  * Mảnh không đưa lên trình xem. Lông mu (FMA54319): khối lởm chởm của lượt dựng
  * gốc, không mang thông tin giải phẫu gì cho người học — chủ sản phẩm yêu cầu bỏ
  * (2026-09-29). Bỏ khỏi cả danh mục lẫn khái niệm, nên không tìm ra, không đếm.
+ *
+ * "Superficial perineal muscle" (FMA19728, một mảnh FJ1450): cùng số đỉnh (240) và
+ * TRÙNG KHÍT hộp bao với nửa phải cơ thắt ngoài hậu môn (FMA21930) — phía sau, quanh
+ * ống hậu môn, không ở tam giác niệu dục. Bản chép hình học mang nhãn sai: rê chuột
+ * hiện "cơ đáy chậu nông" trên cơ thắt, và hai bản chồng khít nhau (z-fighting).
+ * Bỏ (2026-10-01, science-editor); góc nhìn hệ cơ ghi thiếu cơ ngang đáy chậu.
  */
-const DROPPED_CONCEPTS = new Set(["FMA54319"]);
+const DROPPED_CONCEPTS = new Set(["FMA54319", "FMA19728"]);
 
 /**
  * Khoá hình học của một mảnh: cùng khái niệm + cùng số đỉnh/chỉ số + cùng hộp bao.
@@ -437,7 +443,8 @@ const DROPPED_CONCEPTS = new Set(["FMA54319"]);
  * nhẫn, xương móng, động mạch thân tạng, hai nhánh động mạch gan phải. Hai bản
  * chồng khít nhau: z-fighting (bề mặt lấm tấm khi xoay), đếm đôi, và "ẩn" một
  * bản thì bản kia vẫn hiện. Chỉ bỏ bản sao CÙNG khái niệm; cùng hình khác khái
- * niệm (cơ đáy chậu nông / cơ thắt hậu môn ngoài) là câu hỏi giải phẫu, để nguyên.
+ * niệm phải xét từng ca (cơ đáy chậu nông / cơ thắt hậu môn ngoài: đã xét, bỏ qua
+ * `DROPPED_CONCEPTS`).
  */
 const geometryKey = (p: Atlas["parts"][number]) =>
   `${p.conceptId}|${p.vertexCount}|${p.indexCount}|${p.bounds.flat().map((x) => x.toFixed(5)).join(",")}`;

@@ -53,7 +53,7 @@ test("phổi mờ làm bối cảnh cho cây phế quản, khí quản, cơ hít
 });
 
 test("hệ chưa có preset thì không có mô hình", () => {
-  assert.equal(anatomicalSystem("muscular"), null);
+  assert.equal(anatomicalSystem("arterial"), null);
 });
 
 test("cấu trúc của mỗi góc nhìn theo hệ phủ đủ tập nổi bật, không chồng nhau", () => {
