@@ -685,15 +685,19 @@ thì RỚT khỏi bản phát hành khi `--write` — sửa nguồn + science-ed
 hệ cơ là `effectivePeel` coi cơ như đã bóc, cơ thanh quản biến mất ở 0%.
 
 **Bối cảnh = lượt vẽ bóng mờ thứ hai** (đổi 2026-09-30): lượt chính bỏ mảnh bối cảnh (kênh A
-của texture chọn); lượt hai vẽ lại cảnh với `scene.overrideMaterial` xám xanh 20%, mặt trước, không
+của texture chọn); lượt hai vẽ lại cảnh với `scene.overrideMaterial`, mặt trước, không
 ghi depth, không xoá bộ đệm — cấu trúc chính vẫn che bối cảnh nằm sau. Bản đầu dùng ô cờ để khỏi
 đụng thứ tự vẽ: trên màn DPR 1 thành lưới sọc, thu nhỏ thì moiré — chủ sản phẩm chê. KHÔNG bật
 `transparent` trên vật liệu thường (mảnh bối cảnh chung vật liệu/lượt vẽ với mảnh nổi bật). Có bối
 cảnh thì không AO: composer vẽ vào render target, depth màn hình trống, bóng mờ sẽ đè lên tất cả.
+**Bối cảnh mang màu mô thật của từng mảnh** (2026-10-02): một vật liệu ghi đè thì mất màu riêng, nên
+màu nhóm/hệ (cùng bảng với vật liệu thường) nằm trong texture `partTint` tra theo `partIndex`. Bản xám
+xanh 20% đọc thành mảng đen trong thẻ góc nhìn — chủ sản phẩm muốn giống atlas tham chiếu (xương ngà,
+phổi hồng quanh cấu trúc chính), "không để màu đen". Độ đục nâng lên ~0,4 lõi / ~0,65 viền: màu thật ở
+0,2 trên nền tối vẫn tối. Đừng quay về một màu xám chung để "đỡ rối" — đó chính là thứ bị chê.
 **Bối cảnh tự sáng theo viền, không theo đèn** (2026-09-30): bản chiếu sáng như mô thật ở độ đục 0,2 cho
 mặt quay khỏi key light gần đen — 20% của gần-đen trên nền tối là mảng xám đen (thẻ Mũi, Cây phế quản, Thần
-kinh hệ hô hấp "chìm"). Nay fresnel: tự phát sáng + đục ở viền (~0,35), trong ở lõi (~0,09) — trung bình vẫn
-~0,2, KHÔNG tăng độ đục để làm sáng. Kèm fill gián tiếp nâng vừa (môi trường 0,36, mặt đất đèn bán cầu
+kinh hệ hô hấp "chìm"). Nay fresnel: tự phát sáng thêm ở viền, đục hơn ở viền. Kèm fill gián tiếp nâng vừa (môi trường 0,36, mặt đất đèn bán cầu
 0x363a42 thay 0x14161a); key giữ nguyên để phổi/xương không cháy. Không có texture/GLB trong đường vẽ này
 (mesh nhị phân: vị trí, pháp tuyến, chỉ số — không UV), nên không có lỗi colorSpace texture để sửa. Ảnh thu
 nhỏ vẽ 2× rồi thu nhỏ: dây thần kinh 1–2 mm hẹp hơn một điểm ảnh ở 240 px, khử răng cưa trộn nó thành xám.

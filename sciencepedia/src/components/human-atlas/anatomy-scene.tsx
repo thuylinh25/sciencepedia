@@ -316,6 +316,19 @@ export default function AnatomyScene({
     const selectedData = new Uint8Array(width * 4);
     const selectionTexture = new T.DataTexture(selectedData, width, 1);
     selectionTexture.needsUpdate = true;
+    /*
+     * Màu mô của từng mảnh (tuyến tính) cho lượt bối cảnh — cùng bảng màu với vật
+     * liệu thường (nhóm → hệ). Lượt đó dùng MỘT vật liệu ghi đè cho mọi mảnh nên
+     * màu phải tra theo `partIndex`, không lấy được từ vật liệu.
+     */
+    const tintData = new Float32Array(width * 4);
+    parts.forEach((p, i) => {
+      const key = p.group ?? (partGroups as Record<string, string>)[p.id] ?? p.system;
+      const c = new T.Color(GROUP_COLORS[key] ?? SYSTEM_COLORS[p.system] ?? "#aebbb8");
+      tintData.set([c.r, c.g, c.b, 1], i * 4);
+    });
+    const tintTexture = new T.DataTexture(tintData, width, 1, T.RGBAFormat, T.FloatType);
+    tintTexture.needsUpdate = true;
 
     const materials: T.Material[] = [];
     /*
@@ -479,6 +492,12 @@ export default function AnatomyScene({
      * dùng ô cờ (bỏ nửa điểm ảnh) để khỏi đụng thứ tự vẽ; trên màn DPR 1 nó thành
      * lưới sọc, thu nhỏ thì moiré — chủ sản phẩm chê "chưa đẹp".
      *
+     * Màu mô thật (2026-10-02): bối cảnh mang màu của chính mảnh — xương ngà, phổi
+     * hồng, da — như ảnh atlas tham chiếu, không còn một màu xám xanh. Xám xanh ở
+     * độ đục 0,2 trên nền tối đọc thành mảng đen trong thẻ (Mũi, Cơ thở ra, Thần
+     * kinh hệ hô hấp — chủ sản phẩm: "không để màu đen"). Độ đục nâng lên ~0,4–0,65
+     * để màu đọc được; cấu trúc chính vẫn hiện vì nó đục và ghi depth trước.
+     *
      * Không bật `transparent` trên vật liệu thường: mảnh bối cảnh chung vật liệu và
      * lượt vẽ với mảnh nổi bật. Thay vào đó: lượt chính bỏ mảnh bối cảnh; lượt hai
      * vẽ LẠI cảnh với `scene.overrideMaterial = ghostMaterial`, không xoá bộ đệm,
@@ -486,11 +505,11 @@ export default function AnatomyScene({
      * không phải bối cảnh bị đẩy ra ngoài clip space, khỏi tô điểm ảnh.
      */
     const ghostMaterial = new T.MeshStandardMaterial({
-      color: "#9fb1c4",
+      color: "#ffffff",
       metalness: 0,
-      roughness: 0.55,
+      roughness: 0.6,
       transparent: true,
-      opacity: 0.2,
+      opacity: 0.55,
       depthWrite: false,
       // Chỉ mặt trước: hai mặt cộng dồn thành một khối xám gần đục.
       side: T.FrontSide,
@@ -498,33 +517,35 @@ export default function AnatomyScene({
     ghostMaterial.onBeforeCompile = (shader) => {
       shader.uniforms.partState = { value: partTexture };
       shader.uniforms.selectionState = { value: selectionTexture };
+      shader.uniforms.partTint = { value: tintTexture };
       shader.uniforms.stateWidth = { value: width };
       shader.vertexShader =
-        "attribute float partIndex; uniform sampler2D partState; uniform sampler2D selectionState; uniform float stateWidth; varying float ghostOn;\n" +
+        "attribute float partIndex; uniform sampler2D partState; uniform sampler2D selectionState; uniform sampler2D partTint; uniform float stateWidth; varying float ghostOn; varying vec3 ghostTint;\n" +
         shader.vertexShader
           .replace(
             "#include <begin_vertex>",
-            "#include <begin_vertex>\nvec2 stateUv = vec2((partIndex + 0.5) / stateWidth, 0.5); vec4 state = texture2D(partState, stateUv); transformed += state.xyz; vec4 pick = texture2D(selectionState, stateUv); ghostOn = step(0.5, state.w) * step(0.5, pick.a) * (1.0 - step(0.5, pick.r));",
+            "#include <begin_vertex>\nvec2 stateUv = vec2((partIndex + 0.5) / stateWidth, 0.5); vec4 state = texture2D(partState, stateUv); transformed += state.xyz; vec4 pick = texture2D(selectionState, stateUv); ghostOn = step(0.5, state.w) * step(0.5, pick.a) * (1.0 - step(0.5, pick.r)); ghostTint = texture2D(partTint, stateUv).rgb;",
           )
           .replace(
             "#include <project_vertex>",
             "#include <project_vertex>\nif (ghostOn < 0.5) gl_Position = vec4(0.0, 0.0, 2.0, 1.0);",
           );
       shader.fragmentShader =
-        "varying float ghostOn;\n" +
+        "varying float ghostOn; varying vec3 ghostTint;\n" +
         shader.fragmentShader
           .replace("#include <clipping_planes_fragment>", "#include <clipping_planes_fragment>\nif (ghostOn < 0.5) discard;")
+          .replace("#include <color_fragment>", "#include <color_fragment>\ndiffuseColor.rgb *= ghostTint;")
           /*
            * Kiểu X-quang (2026-09-30): bối cảnh TỰ SÁNG theo viền (fresnel), không theo
            * đèn. Bản trước chiếu sáng như mô thật ở độ đục 0,2: mặt quay khỏi key light
            * gần đen, và 20% của gần-đen chồng lên nền tối là những mảng xám đen — phổi
            * mờ quanh cây phế quản, thành xương khoang mũi, lồng ngực quanh dây thần kinh
-           * "chìm" (chủ sản phẩm báo). Độ đục dời từ lõi ra viền (lõi ~0,09, viền ~0,35),
-           * trung bình giữ quanh 0,2 — không tăng độ đục để làm sáng.
+           * "chìm" (chủ sản phẩm báo). Viền đục hơn lõi; mức đục chung xem ghi chú
+           * "Màu mô thật" ở trên.
            */
           .replace(
             "#include <emissivemap_fragment>",
-            "#include <emissivemap_fragment>\nfloat ghostRim = pow(1.0 - abs(dot(normal, normalize(vViewPosition))), 2.0);\ntotalEmissiveRadiance += diffuseColor.rgb * (0.22 + 0.6 * ghostRim);\ndiffuseColor.a *= 0.45 + 1.3 * ghostRim;",
+            "#include <emissivemap_fragment>\nfloat ghostRim = pow(1.0 - abs(dot(normal, normalize(vViewPosition))), 2.0);\ntotalEmissiveRadiance += diffuseColor.rgb * (0.16 + 0.3 * ghostRim);\ndiffuseColor.a *= 0.72 + 0.5 * ghostRim;",
           );
     };
     ghostMaterial.customProgramCacheKey = () => "ghost";
@@ -2049,6 +2070,7 @@ export default function AnatomyScene({
       composer?.dispose();
       partTexture.dispose();
       selectionTexture.dispose();
+      tintTexture.dispose();
       markerGeometry.dispose();
       markerMaterial.dispose();
       hover.remove();
