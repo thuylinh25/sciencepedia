@@ -45,7 +45,7 @@ export function atlasDataUrl(file: string): string {
  * Nguồn thật là `data/anatomy/fma-structures.json` trong repo; tệp trên R2 chỉ
  * là bản phát hành của nó.
  */
-export const ANATOMY_DATA_FILE: string | null = "fma-structures.3b2abaf747.json";
+export const ANATOMY_DATA_FILE: string | null = "fma-structures.b5b2e2ee0e.json";
 
 export function anatomyDataUrl(file: string): string {
   return `${BASE}/anatomy/${file}`;

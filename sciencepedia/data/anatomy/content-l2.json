@@ -2293,6 +2293,1537 @@
     "at": "2026-09-28",
     "verdict": "approved-with-edits"
    }
+  },
+  "FMA14542": {
+   "summary": {
+    "vi": "Ruột thừa là một ống ngoằn ngoèo, dài khoảng 7,6 cm, gắn vào manh tràng — đoạn đầu của ruột già.",
+    "en": "The appendix is a twisting tube, roughly 7.6 cm in length, joined to the cecum, the first part of the large intestine."
+   },
+   "location": {
+    "vi": "Ở đầu ruột già, gắn vào manh tràng; mạc treo ruột thừa buộc nó vào mạc treo của hồi tràng.",
+    "en": "At the start of the large intestine, hanging from the cecum; its own mesentery, the mesoappendix, ties it to the mesentery of the ileum."
+   },
+   "function": {
+    "vi": "Ruột thừa chứa mô lympho, gợi ý một vai trò miễn dịch, nhưng nhìn chung vẫn được coi là cơ quan thoái hoá.",
+    "en": "It holds lymphoid tissue, which hints at a role in immunity, yet in general it is still regarded as a vestigial organ."
+   },
+   "evidence": [
+    {
+     "source": "openstax-ap2e",
+     "section": "23-5-the-small-and-large-intestines",
+     "quote": "The appendix (or vermiform appendix) is a winding tube that attaches to the cecum.",
+     "supports": [
+      "summary",
+      "location"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "23-5-the-small-and-large-intestines",
+     "quote": "Although the 7.6-cm (3-in) long appendix contains lymphoid tissue, suggesting an immunologic function, this organ is generally considered vestigial.",
+     "supports": [
+      "summary",
+      "function"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "23-5-the-small-and-large-intestines",
+     "quote": "The large intestine runs from the appendix to the anus.",
+     "supports": [
+      "summary",
+      "location"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "23-5-the-small-and-large-intestines",
+     "quote": "The mesoappendix, the mesentery of the appendix, tethers it to the mesentery of the ileum.",
+     "supports": [
+      "location"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "23-5-the-small-and-large-intestines",
+     "quote": "The first part of the large intestine is the cecum, a sac-like structure that is suspended inferior to the ileocecal valve.",
+     "supports": [
+      "summary"
+     ]
+    }
+   ],
+   "omitted": "Giả thuyết ruột thừa là kho vi khuẩn khi tiêu chảy: nguồn chỉ dẫn 'ít nhất một báo cáo gần đây' — quá dè dặt để đặt cạnh mô tả cơ bản.",
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-02",
+    "verdict": "approved-with-edits",
+    "notes": "Văn bản giữ nguyên; thêm câu trích manh tràng là phần đầu ruột già. Giữ đúng 'generally considered'; bỏ giả thuyết kho vi khuẩn là hợp lý."
+   }
+  },
+  "FMA7206": {
+   "summary": {
+    "vi": "Tá tràng là đoạn ngắn nhất trong ba đoạn của ruột non, dài 25,4 cm, chia thành bốn phần: trên, xuống, ngang và lên.",
+    "en": "Shortest of the three regions of the small intestine at 25.4 cm, the duodenum is divided into four parts: superior, descending, horizontal and ascending."
+   },
+   "location": {
+    "vi": "Bắt đầu ngay sau cơ thắt môn vị của dạ dày, vòng ra sau phúc mạc rồi uốn hình chữ C quanh đầu tuỵ trước khi nối với hỗng tràng.",
+    "en": "It starts right after the pyloric sphincter of the stomach, passes behind the peritoneum and curves in a C around the head of the pancreas before joining the jejunum."
+   },
+   "function": {
+    "vi": "Mật và dịch tuỵ đổ vào tá tràng qua nhú tá lớn. Tuyến tá tràng ở lớp dưới niêm mạc tiết chất nhầy kiềm giàu bicarbonat, đệm (làm giảm độ chua của) dưỡng chấp chua từ dạ dày xuống.",
+    "en": "Bile and pancreatic juice enter the duodenum at the major duodenal papilla. Glands in its submucosa release an alkaline, bicarbonate-rich mucus that buffers the acidic chyme coming down from the stomach."
+   },
+   "evidence": [
+    {
+     "source": "openstax-ap2e",
+     "section": "23-5-the-small-and-large-intestines",
+     "quote": "The shortest region is the 25.4-cm (10-in) duodenum, which begins at the pyloric sphincter.",
+     "supports": [
+      "summary",
+      "location"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "23-5-the-small-and-large-intestines",
+     "quote": "From proximal (at the stomach) to distal, these are the duodenum, jejunum, and ileum",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "23-5-the-small-and-large-intestines",
+     "quote": "The duodenum can therefore be subdivided into four segments: the superior, descending, horizontal, and ascending duodenum.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "23-5-the-small-and-large-intestines",
+     "quote": "it bends posteriorly behind the peritoneum, becoming retroperitoneal, and then makes a C-shaped curve around the head of the pancreas before ascending anteriorly again to return to the peritoneal cavity and join the jejunum.",
+     "supports": [
+      "location"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "23-5-the-small-and-large-intestines",
+     "quote": "This ampulla opens into the duodenum at a tiny volcano-shaped structure called the major duodenal papilla.",
+     "supports": [
+      "function"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "23-5-the-small-and-large-intestines",
+     "quote": "The hepatopancreatic sphincter (sphincter of Oddi) regulates the flow of both bile and pancreatic juice from the ampulla into the duodenum.",
+     "supports": [
+      "function"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "23-5-the-small-and-large-intestines",
+     "quote": "which produce a bicarbonate-rich alkaline mucus that buffers the acidic chyme as it enters from the stomach.",
+     "supports": [
+      "function"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-02",
+    "verdict": "approved-with-edits",
+    "notes": "Nguồn viết 'buffers' — 'trung hoà/neutralises' nâng mức khẳng định. 'lách ra sau phúc mạc' vụng → 'vòng ra'."
+   }
+  },
+  "FMA7202": {
+   "summary": {
+    "vi": "Túi mật là cơ quan phụ của tiêu hoá. Thành túi mật không có lớp dưới niêm mạc; niêm mạc biểu mô trụ đơn xếp thành nếp gấp giống dạ dày.",
+    "en": "An accessory digestive organ, the gallbladder has no submucosa in its wall; its lining of simple columnar epithelium is thrown into folds, much like the stomach's."
+   },
+   "location": {
+    "vi": "Nằm trong một hõm nông ở mặt sau thuỳ phải của gan; phúc mạc tạng từ bao gan giữ nó áp vào gan.",
+    "en": "It sits in a shallow hollow on the back of the liver's right lobe, held against the liver by visceral peritoneum continuous with the liver capsule."
+   },
+   "function": {
+    "vi": "Chứa, cô đặc và giải phóng mật. Niêm mạc hút nước và ion khỏi mật, cô đặc nó tới 10 lần; khi ruột non cần, thành túi co lại đẩy mật qua ống túi mật vào ống mật.",
+    "en": "It stores bile, concentrates it and releases it. The lining draws water and ions out of the bile, making it up to 10 times more concentrated; when the small intestine needs it, the wall contracts and sends bile down the cystic duct into the bile duct."
+   },
+   "evidence": [
+    {
+     "source": "openstax-ap2e",
+     "section": "23-6-accessory-organs-in-digestion-the-liver-pancreas-and-gallbladder",
+     "quote": "The liver, pancreas, and gallbladder are considered accessory digestive organs",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "23-6-accessory-organs-in-digestion-the-liver-pancreas-and-gallbladder",
+     "quote": "The simple columnar epithelium of the gallbladder mucosa is organized in rugae, similar to those of the stomach.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "23-6-accessory-organs-in-digestion-the-liver-pancreas-and-gallbladder",
+     "quote": "There is no submucosa in the gallbladder wall.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "23-6-accessory-organs-in-digestion-the-liver-pancreas-and-gallbladder",
+     "quote": "is nested in a shallow area on the posterior aspect of the right lobe of the liver.",
+     "supports": [
+      "location"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "23-6-accessory-organs-in-digestion-the-liver-pancreas-and-gallbladder",
+     "quote": "Visceral peritoneum reflected from the liver capsule holds the gallbladder against the liver and forms the outer coat of the gallbladder.",
+     "supports": [
+      "location"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "23-6-accessory-organs-in-digestion-the-liver-pancreas-and-gallbladder",
+     "quote": "The gallbladder primarily stores, concentrates, and releases bile.",
+     "supports": [
+      "function"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "23-6-accessory-organs-in-digestion-the-liver-pancreas-and-gallbladder",
+     "quote": "The gallbladder's mucosa absorbs water and ions from bile, concentrating it by up to 10-fold.",
+     "supports": [
+      "function"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "23-6-accessory-organs-in-digestion-the-liver-pancreas-and-gallbladder",
+     "quote": "The gallbladder stores and concentrates bile, and releases it into the two-way cystic duct when it is needed by the small intestine.",
+     "supports": [
+      "function"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "23-6-accessory-organs-in-digestion-the-liver-pancreas-and-gallbladder",
+     "quote": "When these fibers contract, the gallbladder's contents are ejected through the cystic duct and into the bile duct",
+     "supports": [
+      "function"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-02",
+    "verdict": "approved-with-edits",
+    "notes": "Văn bản giữ nguyên; thêm câu trích thành túi co đẩy mật qua ống túi mật."
+   }
+  },
+  "FMA14544": {
+   "summary": {
+    "vi": "Trực tràng dài 20,3 cm, thuộc đoạn cuối của ống tiêu hoá. Nó cong theo xương cùng, có ba chỗ gập sang bên tạo ba nếp ngang bên trong gọi là van trực tràng.",
+    "en": "The rectum is 20.3 cm long and lies in the final stretch of the alimentary canal. It bends with the curve of the sacrum, and three side-to-side bends form three internal transverse folds, the rectal valves."
+   },
+   "location": {
+    "vi": "Trong chậu hông, nối tiếp đại tràng sigma gần đốt cùng thứ ba, chạy trước xương cùng và xương cụt.",
+    "en": "In the pelvis: it continues from the sigmoid colon near the third sacral vertebra and runs in front of the sacrum and coccyx."
+   },
+   "function": {
+    "vi": "Nhận phân do các đợt co bóp khối đẩy xuống từ đại tràng. Thành trực tràng bị căng gây phản xạ đại tiện; lớp cơ phát triển mạnh tạo lực co cần cho việc tống phân.",
+    "en": "Mass movements push feces down from the colon into the rectum; the stretch of its wall sets off the defecation reflex, and its well-developed muscle layers supply the strong contractions that expel feces."
+   },
+   "evidence": [
+    {
+     "source": "openstax-ap2e",
+     "section": "23-5-the-small-and-large-intestines",
+     "quote": "The final 20.3 cm (8 in) of the alimentary canal, the rectum extends anterior to the sacrum and coccyx.",
+     "supports": [
+      "summary",
+      "location"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "23-5-the-small-and-large-intestines",
+     "quote": "this structure follows the curved contour of the sacrum and has three lateral bends that create a trio of internal transverse folds called the rectal valves.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "23-5-the-small-and-large-intestines",
+     "quote": "Food residue leaving the sigmoid colon enters the rectum in the pelvis, near the third sacral vertebra.",
+     "supports": [
+      "location"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "23-5-the-small-and-large-intestines",
+     "quote": "The process of defecation begins when mass movements force feces from the colon into the rectum, stretching the rectal wall and provoking the defecation reflex, which eliminates feces from the rectum.",
+     "supports": [
+      "function"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "23-5-the-small-and-large-intestines",
+     "quote": "they do have well-developed layers of muscularis that create the strong contractions needed for defecation.",
+     "supports": [
+      "function"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-02",
+    "verdict": "approved-with-edits",
+    "notes": "Sau trực tràng còn ống hậu môn — 'là 20,3 cm cuối' gợi trực tràng là đoạn tận cùng; đổi thành 'thuộc đoạn cuối'."
+   }
+  },
+  "FMA54640": {
+   "summary": {
+    "vi": "Lưỡi có một vách giữa chạy suốt chiều dài, chia thành hai nửa đối xứng. Dưới lớp niêm mạc, mỗi nửa gồm cùng số và loại cơ vân: cơ nội tại nằm trong lưỡi và cơ ngoại lai bám từ ngoài vào.",
+    "en": "A median septum runs the full length of the tongue and splits it into two mirror-image halves. Under the mucous membrane, each half holds the same set of skeletal muscles: intrinsic muscles lying within the tongue and extrinsic muscles reaching in from outside."
+   },
+   "location": {
+    "vi": "Nằm trên sàn khoang miệng, bám vào xương hàm dưới, mỏm trâm của xương thái dương và xương móng.",
+    "en": "It lies over the floor of the mouth, fixed to the mandible, the hyoid bone and the styloid processes of the temporal bones."
+   },
+   "function": {
+    "vi": "Tham gia đưa thức ăn vào, tiêu hoá cơ học và hoá học (lipase lưỡi), cảm nhận vị, kết cấu, nhiệt độ của thức ăn, nuốt và phát âm. Cơ nội tại đổi kích thước và hình dạng lưỡi, giúp nuốt và nói.",
+    "en": "It works in taking in food, mechanical and chemical digestion (lingual lipase), sensing the taste, texture and temperature of food, swallowing and making sounds. The intrinsic muscles change its size and shape, which helps with swallowing and speech."
+   },
+   "evidence": [
+    {
+     "source": "openstax-ap2e",
+     "section": "23-3-the-mouth-pharynx-and-esophagus",
+     "quote": "A medial septum extends the entire length of the tongue, dividing it into symmetrical halves.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "23-3-the-mouth-pharynx-and-esophagus",
+     "quote": "Beneath its mucous membrane covering, each half of the tongue is composed of the same number and type of intrinsic and extrinsic skeletal muscles.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "23-3-the-mouth-pharynx-and-esophagus",
+     "quote": "The intrinsic muscles (those within the tongue) are the longitudinalis inferior, longitudinalis superior, transversus linguae, and verticalis linguae muscles.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "23-3-the-mouth-pharynx-and-esophagus",
+     "quote": "The tongue is positioned over the floor of the oral cavity.",
+     "supports": [
+      "location"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "23-3-the-mouth-pharynx-and-esophagus",
+     "quote": "The tongue is attached to the mandible, the styloid processes of the temporal bones, and the hyoid bone.",
+     "supports": [
+      "location",
+      "summary"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "23-3-the-mouth-pharynx-and-esophagus",
+     "quote": "facilitating ingestion, mechanical digestion, chemical digestion (lingual lipase), sensation (of taste, texture, and temperature of food), swallowing, and vocalization.",
+     "supports": [
+      "function"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "23-3-the-mouth-pharynx-and-esophagus",
+     "quote": "These allow you to change the size and shape of your tongue, as well as to stick it out, if you wish.",
+     "supports": [
+      "function"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "23-3-the-mouth-pharynx-and-esophagus",
+     "quote": "Having such a flexible tongue facilitates both swallowing and speech.",
+     "supports": [
+      "function"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "23-3-the-mouth-pharynx-and-esophagus",
+     "quote": "These muscles originate outside the tongue and insert into connective tissues within the tongue.",
+     "supports": [
+      "summary"
+     ]
+    }
+   ],
+   "omitted": "'Cơ khoẻ nhất cơ thể': nguồn nói khó định lượng — không viết.",
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-02",
+    "verdict": "approved-with-edits",
+    "notes": "Văn bản giữ nguyên; thêm câu trích cơ ngoại lai bám từ ngoài vào."
+   }
+  },
+  "FMA59791": {
+   "summary": {
+    "vi": "Tuyến dưới lưỡi thuộc một trong ba đôi tuyến nước bọt lớn nằm ngoài niêm mạc miệng. Tuyến chủ yếu gồm tế bào tiết nhầy.",
+    "en": "The sublingual gland belongs to one of the three pairs of major salivary glands that lie outside the lining of the mouth, and is made up mostly of mucus-secreting cells."
+   },
+   "location": {
+    "vi": "Dưới lưỡi.",
+    "en": "Beneath the tongue."
+   },
+   "function": {
+    "vi": "Tiết nước bọt vào khoang miệng qua các ống dưới lưỡi nhỏ. Nước bọt của tuyến này đặc nhất và ít amylase nước bọt nhất.",
+    "en": "It releases saliva into the mouth through the lesser sublingual ducts. Its saliva is the thickest of all and carries the least salivary amylase."
+   },
+   "evidence": [
+    {
+     "source": "openstax-ap2e",
+     "section": "23-3-the-mouth-pharynx-and-esophagus",
+     "quote": "Outside the oral mucosa are three pairs of major salivary glands, which secrete the majority of saliva into ducts that open into the mouth",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "23-3-the-mouth-pharynx-and-esophagus",
+     "quote": "The sublingual glands, which lie below the tongue, use the lesser sublingual ducts to secrete saliva into the oral cavity.",
+     "supports": [
+      "location",
+      "function"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "23-3-the-mouth-pharynx-and-esophagus",
+     "quote": "The sublingual glands contain mostly mucous cells, and they secrete the thickest saliva with the least amount of salivary amylase.",
+     "supports": [
+      "summary",
+      "function"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-02",
+    "verdict": "approved-with-edits",
+    "notes": "Khoá kế thừa cho trái/phải: một tuyến là một chiếc trong một đôi."
+   }
+  },
+  "FMA55093": {
+   "summary": {
+    "vi": "Tuyến dưới hàm thuộc một trong ba đôi tuyến nước bọt lớn nằm ngoài niêm mạc miệng. Tuyến có tế bào giống tuyến mang tai cùng các tế bào tiết nhầy.",
+    "en": "The submandibular gland belongs to one of the three pairs of major salivary glands that lie outside the lining of the mouth; it has cells like those of the parotid gland together with mucus-secreting cells."
+   },
+   "location": {
+    "vi": "Ở sàn miệng.",
+    "en": "In the floor of the mouth."
+   },
+   "function": {
+    "vi": "Tiết nước bọt vào miệng qua ống dưới hàm. Nước bọt của tuyến có amylase, trong một dịch được nhầy làm sánh lại.",
+    "en": "It sends saliva into the mouth along the submandibular duct. That saliva contains amylase, in a fluid made thicker by mucus."
+   },
+   "evidence": [
+    {
+     "source": "openstax-ap2e",
+     "section": "23-3-the-mouth-pharynx-and-esophagus",
+     "quote": "Outside the oral mucosa are three pairs of major salivary glands, which secrete the majority of saliva into ducts that open into the mouth",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "23-3-the-mouth-pharynx-and-esophagus",
+     "quote": "The submandibular glands, which are in the floor of the mouth, secrete saliva into the mouth through the submandibular ducts.",
+     "supports": [
+      "location",
+      "function"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "23-3-the-mouth-pharynx-and-esophagus",
+     "quote": "The submandibular glands have cells similar to those of the parotid glands, as well as mucus-secreting cells.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "23-3-the-mouth-pharynx-and-esophagus",
+     "quote": "Therefore, saliva secreted by the submandibular glands also contains amylase but in a liquid thickened with mucus.",
+     "supports": [
+      "function"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-02",
+    "verdict": "approved-with-edits",
+    "notes": "Cùng lý do như tuyến dưới lưỡi."
+   }
+  },
+  "FMA9604": {
+   "summary": {
+    "vi": "Tuyến thượng thận là khối mô tuyến và mô thần kinh nội tiết hình nêm, gồm vỏ ngoài (mô tuyến, chia ba lớp: cầu, bó, lưới) và tuỷ trong (mô thần kinh), bọc trong một bao mô liên kết. Tuyến có lưu lượng máu thuộc hàng cao nhất cơ thể.",
+    "en": "Each adrenal gland is a wedge of glandular and neuroendocrine tissue: an outer cortex of glandular tissue, split into three zones (glomerulosa, fasciculata, reticularis), and an inner medulla of nervous tissue, all inside a connective tissue capsule. Its blood flow is among the highest in the body."
+   },
+   "location": {
+    "vi": "Ngồi trên đỉnh quả thận cùng bên, dính vào thận bằng một bao xơ.",
+    "en": "On top of the kidney on its own side, fixed to it by a fibrous capsule."
+   },
+   "function": {
+    "vi": "Đáp ứng với stress. Vỏ tiết hormone steroid (như cortisol) điều hoà stress dài hạn, huyết áp và thể tích máu, hấp thu và dự trữ chất dinh dưỡng, cân bằng nước – điện giải và viêm. Tuỷ tiết adrenalin (epinephrine) và noradrenalin cho đáp ứng \"chiến hay chạy\" ngắn hạn.",
+    "en": "It answers stress. The cortex releases steroid hormones such as cortisol that govern the long-term stress response, blood pressure and volume, uptake and storage of nutrients, fluid and electrolyte balance, and inflammation. The medulla releases epinephrine and norepinephrine for the short-term fight-or-flight response."
+   },
+   "evidence": [
+    {
+     "source": "openstax-ap2e",
+     "section": "17-6-the-adrenal-glands",
+     "quote": "The adrenal glands are wedges of glandular and neuroendocrine tissue adhering to the top of the kidneys by a fibrous capsule",
+     "supports": [
+      "summary",
+      "location"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "17-6-the-adrenal-glands",
+     "quote": "Both adrenal glands sit atop the kidneys and are composed of an outer cortex and an inner medulla, all surrounded by a connective tissue capsule.",
+     "supports": [
+      "summary",
+      "location"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "17-6-the-adrenal-glands",
+     "quote": "The adrenal gland consists of an outer cortex of glandular tissue and an inner medulla of nervous tissue.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "17-6-the-adrenal-glands",
+     "quote": "The cortex itself is divided into three zones: the zona glomerulosa, the zona fasciculata, and the zona reticularis.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "17-6-the-adrenal-glands",
+     "quote": "The adrenal glands have a rich blood supply and experience one of the highest rates of blood flow in the body.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "17-6-the-adrenal-glands",
+     "quote": "One of the major functions of the adrenal gland is to respond to stress.",
+     "supports": [
+      "function"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "17-6-the-adrenal-glands",
+     "quote": "secretes steroid hormones important for the regulation of the long-term stress response, blood pressure and blood volume, nutrient uptake and storage, fluid and electrolyte balance, and inflammation.",
+     "supports": [
+      "function"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "17-6-the-adrenal-glands",
+     "quote": "ACTH then stimulates the adrenal cortex to produce the hormone cortisol.",
+     "supports": [
+      "function"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "17-6-the-adrenal-glands",
+     "quote": "This is short-term stress, the fight-or-flight response, mediated by the hormones epinephrine and norepinephrine from the adrenal medulla via the SAM pathway.",
+     "supports": [
+      "function"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-02",
+    "verdict": "approved-with-edits",
+    "notes": "Khung hiện cho từng bên — 'mỗi quả thận' sai cho một tuyến đơn."
+   }
+  },
+  "FMA13889": {
+   "summary": {
+    "vi": "Tuyến yên (mấu não dưới) là cơ quan cỡ hạt đậu, gồm hai thuỳ có nguồn gốc phôi khác nhau: thuỳ sau là mô thần kinh, thuỳ trước là mô tuyến phát triển từ ống tiêu hoá nguyên thuỷ.",
+    "en": "The pituitary gland (hypophysis) is a bean-sized organ with two lobes of different embryonic origin: the posterior lobe is neural tissue, while the anterior lobe is glandular tissue that grows from the primitive digestive tract."
+   },
+   "location": {
+    "vi": "Treo dưới vùng dưới đồi bằng cuống tuyến yên (phễu), nằm trong hố yên của xương bướm thuộc hộp sọ.",
+    "en": "It hangs beneath the hypothalamus on a stalk, the infundibulum, and rests in the sella turcica of the sphenoid bone of the skull."
+   },
+   "function": {
+    "vi": "Mỗi thuỳ tiết hormone khác nhau theo tín hiệu của vùng dưới đồi. Thuỳ trước sản xuất bảy hormone, trong đó có hormone tăng trưởng; thuỳ sau không tự sản xuất hormone mà dự trữ và tiết hormone do vùng dưới đồi tạo ra, như oxytocin và ADH.",
+    "en": "Each lobe releases its own hormones in response to signals from the hypothalamus. The anterior lobe makes seven hormones, growth hormone among them; the posterior lobe makes none of its own, but stores and releases hormones made by the hypothalamus, such as oxytocin and ADH."
+   },
+   "evidence": [
+    {
+     "source": "openstax-ap2e",
+     "section": "17-3-the-pituitary-gland-and-hypothalamus",
+     "quote": "a bean-sized organ suspended from it by a stem called the infundibulum (or pituitary stalk).",
+     "supports": [
+      "summary",
+      "location"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "17-3-the-pituitary-gland-and-hypothalamus",
+     "quote": "It consists of two lobes that arise from distinct parts of embryonic tissue: the posterior pituitary (neurohypophysis) is neural tissue, whereas the anterior pituitary (also known as the adenohypophysis) is glandular tissue that develops from the primitive digestive tract.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "17-3-the-pituitary-gland-and-hypothalamus",
+     "quote": "The pituitary gland is cradled within the sellaturcica of the sphenoid bone of the skull.",
+     "supports": [
+      "location"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "17-3-the-pituitary-gland-and-hypothalamus",
+     "quote": "The pituitary gland consists of an anterior and posterior lobe, with each lobe secreting different hormones in response to signals from the hypothalamus.",
+     "supports": [
+      "function"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "17-3-the-pituitary-gland-and-hypothalamus",
+     "quote": "The anterior pituitary produces seven hormones.",
+     "supports": [
+      "function"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "17-3-the-pituitary-gland-and-hypothalamus",
+     "quote": "These are the growth hormone (GH), thyroid-stimulating hormone (TSH), adrenocorticotropic hormone (ACTH), follicle-stimulating hormone (FSH), luteinizing hormone (LH), beta endorphin, and prolactin.",
+     "supports": [
+      "function"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "17-3-the-pituitary-gland-and-hypothalamus",
+     "quote": "The posterior pituitary gland does not produce hormones, but rather stores and secretes hormones produced by the hypothalamus.",
+     "supports": [
+      "function"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "17-3-the-pituitary-gland-and-hypothalamus",
+     "quote": "Neurosecretory cells in the hypothalamus release oxytocin (OT) or ADH into the posterior lobe of the pituitary gland.",
+     "supports": [
+      "function"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-02",
+    "verdict": "approved-with-edits",
+    "notes": "Văn bản giữ nguyên; thay câu trích GH bằng danh sách bảy hormone thuỳ trước."
+   }
+  },
+  "FMA7163": {
+   "summary": {
+    "vi": "Da gồm hai lớp chính: thượng bì là biểu mô lát tầng sừng hoá, xếp sát nhau; trung bì là mô liên kết dày không đều, chứa mạch máu, nang lông, tuyến mồ hôi và các cấu trúc khác. Bên dưới là hạ bì, chủ yếu mô liên kết lỏng và mô mỡ.",
+    "en": "Skin has two main layers. The epidermis is a keratinized, stratified squamous epithelium of tightly packed cells; the dermis is dense irregular connective tissue that carries blood vessels, hair follicles, sweat glands and other structures. Below lies the hypodermis, mainly loose connective tissue and fat."
+   },
+   "location": {
+    "vi": "Mô liên kết giữ da vào các cấu trúc bên dưới; hạ bì, ngay dưới trung bì, nối da với mạc của xương và cơ.",
+    "en": "Held to the structures beneath it by connective tissue; the hypodermis, directly under the dermis, ties the skin to the fascia of the bones and muscles."
+   },
+   "function": {
+    "vi": "Che chắn cơ thể trước gió, nước và tia UV, và ngăn mất nước nhờ keratin và glycolipid ở lớp sừng. Da là một cơ quan cảm giác — có cấu trúc thần kinh chuyên biệt nhận biết chạm, nhiệt độ bề mặt và đau — và giúp điều hoà thân nhiệt qua hệ thần kinh giao cảm.",
+    "en": "It shields the body from wind, water and UV light, and keratin and glycolipids in the stratum corneum stop water escaping. It is also a sense organ, with dedicated nerve structures for touch, surface temperature and pain, and it helps control body temperature through the sympathetic nervous system."
+   },
+   "evidence": [
+    {
+     "source": "openstax-ap2e",
+     "section": "5-1-layers-of-the-skin",
+     "quote": "The skin is composed of two main layers: the epidermis, made of closely packed epithelial cells, and the dermis, made of dense, irregular connective tissue that houses blood vessels, hair follicles, sweat glands, and other structures.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "5-1-layers-of-the-skin",
+     "quote": "The epidermis is composed of keratinized, stratified squamous epithelium.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "5-1-layers-of-the-skin",
+     "quote": "Beneath the dermis lies the hypodermis, which is composed mainly of loose connective and fatty tissues.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "5-1-layers-of-the-skin",
+     "quote": "The skin is made of multiple layers of cells and tissues, which are held to underlying structures by connective tissue",
+     "supports": [
+      "location"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "5-1-layers-of-the-skin",
+     "quote": "is a layer directly below the dermis and serves to connect the skin to the underlying fascia (fibrous tissue) of the bones and muscles.",
+     "supports": [
+      "location"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "5-3-functions-of-the-integumentary-system",
+     "quote": "The skin protects the rest of the body from the basic elements of nature such as wind, water, and UV sunlight.",
+     "supports": [
+      "function"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "5-3-functions-of-the-integumentary-system",
+     "quote": "It acts as a protective barrier against water loss, due to the presence of layers of keratin and glycolipids in the stratum corneum.",
+     "supports": [
+      "function"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "5-3-functions-of-the-integumentary-system",
+     "quote": "The skin acts as a sense organ because the epidermis, dermis, and the hypodermis contain specialized sensory nerve structures that detect touch, surface temperature, and pain.",
+     "supports": [
+      "function"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "5-3-functions-of-the-integumentary-system",
+     "quote": "The integumentary system helps regulate body temperature through its tight association with the sympathetic nervous system",
+     "supports": [
+      "function"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-02",
+    "verdict": "approved-with-edits",
+    "notes": "'Phủ toàn bộ bề mặt cơ thể' không có câu trích — bỏ."
+   }
+  },
+  "FMA7210": {
+   "summary": {
+    "vi": "Tinh hoàn là tuyến sinh dục nam. Hai tinh hoàn hình bầu dục, mỗi bên dài khoảng 4–5 cm ở người trưởng thành. Lớp áo trắng — mô liên kết dày, chắc — bọc mỗi tinh hoàn và lõm vào trong thành vách, chia nó thành 300–400 tiểu thuỳ; phần lớn khối tinh hoàn là các ống sinh tinh cuộn chặt.",
+    "en": "The testes are the male gonads: two ovals, each about 4 to 5 cm long in adults. A tough white layer of dense connective tissue, the tunica albuginea, wraps each testis and folds inward as septa that split it into 300 to 400 lobules; tightly coiled seminiferous tubules make up most of its bulk."
+   },
+   "location": {
+    "vi": "Trong bìu — túi cơ có da phủ, nằm sau dương vật. Vách bìu chia bìu thành hai ngăn, mỗi ngăn chứa một tinh hoàn.",
+    "en": "Inside the scrotum, a skin-covered muscular sac behind the penis. The scrotal septum splits the scrotum into two compartments, one testis in each."
+   },
+   "function": {
+    "vi": "Sản xuất tinh trùng và androgen — các hormone nuôi dưỡng sinh lý sinh sản nam. Tinh trùng sinh ra trong ống sinh tinh; quá trình này hiệu quả hơn khi tinh hoàn mát hơn thân nhiệt trung tâm 2–4 °C.",
+    "en": "They make sperm and androgens, the hormones that sustain male reproductive physiology. Sperm form in the seminiferous tubules, and production runs better when the testes are held 2 to 4 °C below core body temperature."
+   },
+   "evidence": [
+    {
+     "source": "openstax-ap2e",
+     "section": "27-1-anatomy-and-physiology-of-the-testicular-reproductive-system",
+     "quote": "Paired ovals, adult testes are each approximately 4 to 5 cm in length and are housed within the scrotum",
+     "supports": [
+      "summary",
+      "location"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "27-1-anatomy-and-physiology-of-the-testicular-reproductive-system",
+     "quote": "Beneath the tunica vaginalis is the tunica albuginea, a tough, white, dense connective tissue layer covering the testis itself.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "27-1-anatomy-and-physiology-of-the-testicular-reproductive-system",
+     "quote": "Not only does the tunica albuginea cover the outside of the testis, it also invaginates to form septa that divide the testis into 300 to 400 structures called lobules.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "27-1-anatomy-and-physiology-of-the-testicular-reproductive-system",
+     "quote": "The tightly coiled seminiferous tubules form the bulk of each testis.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "27-1-anatomy-and-physiology-of-the-testicular-reproductive-system",
+     "quote": "The testes are located in a skin-covered, highly pigmented, muscular sack called the scrotum that extends from the body behind the penis",
+     "supports": [
+      "location"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "27-1-anatomy-and-physiology-of-the-testicular-reproductive-system",
+     "quote": "It continues internally to make up the scrotal septum, a wall that divides the scrotum into two compartments, each housing one testis.",
+     "supports": [
+      "location"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "27-1-anatomy-and-physiology-of-the-testicular-reproductive-system",
+     "quote": "as they produce both sperm and androgens, the hormones that support male reproductive physiology.",
+     "supports": [
+      "function"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "27-1-anatomy-and-physiology-of-the-testicular-reproductive-system",
+     "quote": "This sagittal view shows the seminiferous tubules, the site of sperm production.",
+     "supports": [
+      "function"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "27-1-anatomy-and-physiology-of-the-testicular-reproductive-system",
+     "quote": "proceeds more efficiently when the testes are kept 2 to 4°C below core body temperature",
+     "supports": [
+      "function"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "27-1-anatomy-and-physiology-of-the-testicular-reproductive-system",
+     "quote": "The testes (singular = testis) are the male gonads",
+     "supports": [
+      "summary"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-02",
+    "verdict": "approved-with-edits",
+    "notes": "'một đôi hình bầu dục' đọc như một tinh hoàn là một đôi. Thêm câu trích 'male gonads'; câu nhiệt độ đã xác minh nguyên văn."
+   }
+  },
+  "FMA9600": {
+   "summary": {
+    "vi": "Tuyến tiền liệt to cỡ quả óc chó, gồm cả mô cơ và mô tuyến. Bình thường kích thước tuyến tăng gấp đôi ở tuổi dậy thì.",
+    "en": "About the size of a walnut, the prostate is built of both muscle and glandular tissue. It normally doubles in size at puberty."
+   },
+   "location": {
+    "vi": "Ở trung tâm chậu hông nam, trước trực tràng, ngay đáy bàng quang, bao quanh đoạn niệu đạo đi xuyên qua nó (niệu đạo tiền liệt).",
+    "en": "Centrally in the male pelvis, in front of the rectum at the base of the bladder, wrapped around the stretch of urethra that runs through it (the prostatic urethra)."
+   },
+   "function": {
+    "vi": "Là một trong ba tuyến phụ chính tạo nên phần lớn tinh dịch: cùng túi tinh, nó thêm dịch vào tinh trùng. Ống phóng tinh đưa dịch tinh vào tuyến tiền liệt.",
+    "en": "It is one of the three key accessory glands that make most of the semen: with the seminal vesicles, it adds fluid to sperm. The ejaculatory ducts carry seminal fluid into it."
+   },
+   "evidence": [
+    {
+     "source": "openstax-ap2e",
+     "section": "27-1-anatomy-and-physiology-of-the-testicular-reproductive-system",
+     "quote": "About the size of a walnut, the prostate is formed of both muscular and glandular tissues.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "27-1-anatomy-and-physiology-of-the-testicular-reproductive-system",
+     "quote": "The prostate normally doubles in size during puberty.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "27-1-anatomy-and-physiology-of-the-testicular-reproductive-system",
+     "quote": "the centrally located prostate gland sits anterior to the rectum at the base of the bladder surrounding the prostatic urethra (the portion of the urethra that runs within the prostate).",
+     "supports": [
+      "location"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "27-1-anatomy-and-physiology-of-the-testicular-reproductive-system",
+     "quote": "The bulk of semen is produced by three critical accessory glands of the male reproductive system: the seminal vesicles, the prostate, and the bulbourethral glands.",
+     "supports": [
+      "function"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "27-1-anatomy-and-physiology-of-the-testicular-reproductive-system",
+     "quote": "The seminal vesicles and prostate gland add fluids to the sperm to create semen.",
+     "supports": [
+      "function"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "27-1-anatomy-and-physiology-of-the-testicular-reproductive-system",
+     "quote": "The paired ejaculatory ducts transport the seminal fluid into the next structure, the prostate gland.",
+     "supports": [
+      "function"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-02",
+    "verdict": "approved-with-edits",
+    "notes": "'seminal fluid' là tinh trùng + dịch túi tinh — 'dịch túi tinh' hiểu sai, đổi thành 'dịch tinh'."
+   }
+  },
+  "FMA9704": {
+   "summary": {
+    "vi": "Niệu quản là ống dẫn nước tiểu từ bể thận xuống bàng quang, dài khoảng 30 cm. Mỗi thận có một niệu quản, tiếp nối bể thận thu hẹp lại.",
+    "en": "The ureter is the tube, about 30 cm long, that carries urine from the kidney down to the bladder. Each kidney has one, formed where the renal pelvis narrows."
+   },
+   "location": {
+    "vi": "Hoàn toàn sau phúc mạc, như thận. Khi vào chậu hông, niệu quản lượn ra phía ngoài, men theo thành chậu, rồi tới bàng quang.",
+    "en": "Wholly behind the peritoneum, like the kidneys. On entering the pelvis the ureter swings outward, keeping close to the pelvic wall, before reaching the bladder."
+   },
+   "function": {
+    "vi": "Đưa nước tiểu xuống bàng quang. Nước tiểu không tự chảy xuống mà được đẩy đi bằng các làn sóng nhu động.",
+    "en": "Moves urine to the bladder — not by draining passively, but by pushing it along in waves of peristalsis."
+   },
+   "evidence": [
+    {
+     "source": "openstax-ap2e",
+     "section": "25-2-gross-anatomy-of-urine-transport",
+     "quote": "The ureters are approximately 30 cm long.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "25-2-gross-anatomy-of-urine-transport",
+     "quote": "The renal pelvis narrows to become the ureter of each kidney.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "25-2-gross-anatomy-of-urine-transport",
+     "quote": "The urinary bladder collects urine from both ureters",
+     "supports": [
+      "summary",
+      "location",
+      "function"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "25-2-gross-anatomy-of-urine-transport",
+     "quote": "The kidneys and ureters are completely retroperitoneal",
+     "supports": [
+      "location"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "25-2-gross-anatomy-of-urine-transport",
+     "quote": "As the ureters enter the pelvis, they sweep laterally, hugging the pelvic walls.",
+     "supports": [
+      "location"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "25-2-gross-anatomy-of-urine-transport",
+     "quote": "As urine passes through the ureter, it does not passively drain into the bladder but rather is propelled by waves of peristalsis.",
+     "supports": [
+      "function"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-02",
+    "verdict": "approved-with-edits",
+    "notes": "Khung hiện cho từng bên — 'lượn ra hai bên' tả cả đôi."
+   }
+  },
+  "FMA19667": {
+   "summary": {
+    "vi": "Niệu đạo là cơ quan tiết niệu duy nhất khác biệt rõ giữa nam và nữ. Ở nam dài trung bình 20 cm, chia bốn đoạn: trước tiền liệt, tiền liệt, màng và xốp (dương vật); ở nữ chỉ khoảng 4 cm.",
+    "en": "The urethra is the only urinary organ that differs markedly between males and females. In males it averages 20 cm and has four parts — preprostatic, prostatic, membranous and spongy (penile); in females it is only about 4 cm."
+   },
+   "location": {
+    "vi": "Bắt đầu ở đáy bàng quang, dưới và giữa hai lỗ niệu quản; lỗ niệu đạo cùng hai lỗ niệu quản là ba đỉnh của tam giác bàng quang. Niệu đạo chạy sau và dưới khớp mu. Ở nam, nó xuyên qua tuyến tiền liệt, qua các cơ sâu đáy chậu, rồi qua thể xốp tới lỗ ở đầu dương vật.",
+    "en": "It begins at the base of the bladder, below and between the two ureteral openings; together with them it marks the three corners of the trigone. It runs behind and below the pubic symphysis. In males it passes through the prostate, then the deep perineal muscles, then the corpus spongiosum to its opening at the tip of the penis."
+   },
+   "function": {
+    "vi": "Dẫn nước tiểu từ bàng quang ra ngoài cơ thể. Cơ thắt niệu đạo trong (không chủ ý) và ngoài (chủ ý) phối hợp giữ hoặc cho nước tiểu thoát ra.",
+    "en": "Carries urine out of the body from the bladder. An involuntary internal and a voluntary external urethral sphincter work together to hold urine in or let it out."
+   },
+   "evidence": [
+    {
+     "source": "openstax-ap2e",
+     "section": "25-2-gross-anatomy-of-urine-transport",
+     "quote": "The urethra is the only urologic organ that shows any significant anatomic difference between males and females",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "25-2-gross-anatomy-of-urine-transport",
+     "quote": "The length of the male urethra varies between people but averages 20 cm in length.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "25-2-gross-anatomy-of-urine-transport",
+     "quote": "It is divided into four regions: the preprostatic urethra, the prostatic urethra, the membranous urethra, and the spongy or penile urethra.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "25-2-gross-anatomy-of-urine-transport",
+     "quote": "Its short length, about 4 cm, is less of a barrier to fecal bacteria than the longer male urethra",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "25-2-gross-anatomy-of-urine-transport",
+     "quote": "The urethra in both males and females begins inferior and central to the two ureteral openings forming the three points of a triangular-shaped area at the base of the bladder called the trigone",
+     "supports": [
+      "location"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "25-2-gross-anatomy-of-urine-transport",
+     "quote": "The urethra tracks posterior and inferior to the pubic symphysis",
+     "supports": [
+      "location"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "25-2-gross-anatomy-of-urine-transport",
+     "quote": "The male urethra passes through the prostate gland immediately inferior to the bladder before passing below the pubic symphysis",
+     "supports": [
+      "location"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "25-2-gross-anatomy-of-urine-transport",
+     "quote": "The membranous urethra passes through the deep muscles of the perineum, where it is invested by the overlying urethral sphincters.",
+     "supports": [
+      "location"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "25-2-gross-anatomy-of-urine-transport",
+     "quote": "The spongy urethra exits at the tip (external urethral orifice) of the penis after passing through the corpus spongiosum.",
+     "supports": [
+      "location"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "25-2-gross-anatomy-of-urine-transport",
+     "quote": "The urethra transports urine from the bladder to the outside of the body for disposal.",
+     "supports": [
+      "function"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "25-2-gross-anatomy-of-urine-transport",
+     "quote": "It results from an interplay of involuntary and voluntary actions by the internal and external urethral sphincters.",
+     "supports": [
+      "function"
+     ]
+    }
+   ],
+   "omitted": "Mô hình BodyParts3D là cơ thể nam (có tuyến tiền liệt, tinh hoàn) — vị trí tả đường đi ở nam; độ dài nữ giữ trong tóm tắt như so sánh.",
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-02",
+    "verdict": "approved-with-edits",
+    "notes": "Ba đỉnh tam giác gồm hai lỗ niệu quản + lỗ niệu đạo. Giữ độ dài niệu đạo nữ như phép so sánh có nguồn."
+   }
+  },
+  "FMA50735": {
+   "summary": {
+    "vi": "Tĩnh mạch cửa gan là tĩnh mạch tương đối ngắn, hình thành ngang đốt L2 do tĩnh mạch mạc treo tràng trên và tĩnh mạch lách hợp lại; sau đó nhận thêm các tĩnh mạch vị của dạ dày và tĩnh mạch túi mật.",
+    "en": "The hepatic portal vein is fairly short. It forms at the level of L2 where the superior mesenteric and splenic veins meet, then picks up the gastric veins of the stomach and the cystic veins of the gallbladder."
+   },
+   "location": {
+    "vi": "Đi vào gan ở cửa gan, cùng động mạch gan.",
+    "en": "It enters the liver at the porta hepatis, together with the hepatic artery."
+   },
+   "function": {
+    "vi": "Đưa máu từ dạ dày, ruột non, ruột già và lách thẳng tới gan để xử lý, kết thúc ở các xoang gan. Máu này đã mất một phần oxy nhưng giàu chất dinh dưỡng hấp thu từ ruột non, và vẫn cấp cho gan nhiều oxy hơn các động mạch gan nhỏ hơn nhiều.",
+    "en": "It brings blood from the stomach, small and large intestines and spleen straight to the liver for processing, ending in the hepatic sinusoids. That blood has lost some of its oxygen but is rich in nutrients absorbed in the small intestine, and it still gives the liver more oxygen than the far smaller hepatic arteries do."
+   },
+   "evidence": [
+    {
+     "source": "openstax-ap2e",
+     "section": "20-5-circulatory-pathways",
+     "quote": "The hepatic portal vein itself is relatively short, beginning at the level of L2 with the confluence of the superior mesenteric and splenic veins.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "20-5-circulatory-pathways",
+     "quote": "After its formation, the hepatic portal vein also receives branches from the gastric veins of the stomach and cystic veins from the gall bladder.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "23-6-accessory-organs-in-digestion-the-liver-pancreas-and-gallbladder",
+     "quote": "is where the hepatic artery and hepatic portal vein enter the liver.",
+     "supports": [
+      "location"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "20-5-circulatory-pathways",
+     "quote": "the initial capillaries from the stomach, small intestine, large intestine, and spleen lead to the hepatic portal vein and end in specialized capillaries within the liver, the hepatic sinusoids.",
+     "supports": [
+      "function"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "20-5-circulatory-pathways",
+     "quote": "The hepatic portal vein delivers materials from these digestive and circulatory organs directly to the liver for processing.",
+     "supports": [
+      "function"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "23-6-accessory-organs-in-digestion-the-liver-pancreas-and-gallbladder",
+     "quote": "The hepatic portal vein delivers partially deoxygenated blood containing nutrients absorbed from the small intestine and actually supplies more oxygen to the liver than do the much smaller hepatic arteries.",
+     "supports": [
+      "function"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-02",
+    "verdict": "approved",
+    "notes": "Đúng nghĩa; 'mất một phần oxy' khớp 'partially deoxygenated'."
+   }
+  },
+  "FMA10951": {
+   "summary": {
+    "vi": "Tĩnh mạch chủ dưới là một trong hai tĩnh mạch lớn của tuần hoàn hệ thống, gắn vào đáy tim cùng tĩnh mạch chủ trên. Tĩnh mạch thận — bình thường là các tĩnh mạch lớn nhất đổ vào nó — mang máu từ thận về.",
+    "en": "One of the two major systemic veins, the inferior vena cava attaches to the base of the heart along with the superior vena cava. The renal veins, normally the largest veins draining into it, bring blood back from the kidneys."
+   },
+   "location": {
+    "vi": "Nằm ngay dưới phúc mạc thành trong ổ bụng, song song động mạch chủ bụng; đổ vào phần sau của tâm nhĩ phải, thấp hơn lỗ tĩnh mạch chủ trên.",
+    "en": "Just under the parietal peritoneum in the abdominal cavity, running alongside the abdominal aorta; it opens into the back of the right atrium, below the opening of the superior vena cava."
+   },
+   "function": {
+    "vi": "Dẫn máu từ các vùng dưới cơ hoành — hai chi dưới và vùng bụng – chậu — về tâm nhĩ phải.",
+    "en": "Returns blood from everything below the diaphragm — the lower limbs and the abdominopelvic region — to the right atrium."
+   },
+   "evidence": [
+    {
+     "source": "openstax-ap2e",
+     "section": "19-1-heart-anatomy",
+     "quote": "eventually flowing into the two major systemic veins, the superior vena cava and the inferior vena cava, which return blood to the right atrium.",
+     "supports": [
+      "summary",
+      "function"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "19-1-heart-anatomy",
+     "quote": "The great veins, the superior and inferior venae cavae, and the great arteries, the aorta and pulmonary trunk, are attached to the superior surface of the heart, called the base.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "20-5-circulatory-pathways",
+     "quote": "Blood supply from the kidneys flows into each renal vein, normally the largest veins entering the inferior vena cava.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "20-5-circulatory-pathways",
+     "quote": "Lying just beneath the parietal peritoneum in the abdominal cavity, the inferior vena cava parallels the abdominal aorta, where it can receive blood from abdominal veins.",
+     "supports": [
+      "location"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "19-1-heart-anatomy",
+     "quote": "It, too, empties into the posterior portion of the atria, but inferior to the opening of the superior vena cava.",
+     "supports": [
+      "location"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "19-1-heart-anatomy",
+     "quote": "The inferior vena cava drains blood from areas inferior to the diaphragm: the lower limbs and abdominopelvic region of the body.",
+     "supports": [
+      "function"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-02",
+    "verdict": "approved",
+    "notes": "Đúng nghĩa; giữ 'normally' (bình thường)."
+   }
+  },
+  "FMA4720": {
+   "summary": {
+    "vi": "Tĩnh mạch chủ trên là một trong hai tĩnh mạch lớn của tuần hoàn hệ thống, hình thành khi hai tĩnh mạch cánh tay đầu trái và phải hợp lại; gắn vào đáy tim cùng tĩnh mạch chủ dưới.",
+    "en": "One of the two major systemic veins, the superior vena cava is formed where the left and right brachiocephalic veins join, and it attaches to the base of the heart beside the inferior vena cava."
+   },
+   "location": {
+    "vi": "Đổ vào phần trên và phần sau của tâm nhĩ phải, phía trên lỗ tĩnh mạch chủ dưới.",
+    "en": "It opens into the upper, rear part of the right atrium, above the opening of the inferior vena cava."
+   },
+   "function": {
+    "vi": "Dẫn máu từ các vùng trên cơ hoành — đầu, cổ, hai chi trên và vùng ngực — về tâm nhĩ phải.",
+    "en": "Returns blood from everything above the diaphragm — head, neck, upper limbs and chest — to the right atrium."
+   },
+   "evidence": [
+    {
+     "source": "openstax-ap2e",
+     "section": "19-1-heart-anatomy",
+     "quote": "eventually flowing into the two major systemic veins, the superior vena cava and the inferior vena cava, which return blood to the right atrium.",
+     "supports": [
+      "summary",
+      "location",
+      "function"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "20-5-circulatory-pathways",
+     "quote": "It combines with the two large left and right brachiocephalic veins to form the superior vena cava.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "19-1-heart-anatomy",
+     "quote": "The great veins, the superior and inferior venae cavae, and the great arteries, the aorta and pulmonary trunk, are attached to the superior surface of the heart, called the base.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "20-5-circulatory-pathways",
+     "quote": "Veins of the thoracic and abdominal regions drain blood from the area above the diaphragm, returning it to the right atrium via the superior vena cava.",
+     "supports": [
+      "location",
+      "function"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "19-1-heart-anatomy",
+     "quote": "The superior vena cava drains blood from regions superior to the diaphragm: the head, neck, upper limbs, and the thoracic region.",
+     "supports": [
+      "function"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "19-1-heart-anatomy",
+     "quote": "It empties into the superior and posterior portions of the right atrium.",
+     "supports": [
+      "location"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "19-1-heart-anatomy",
+     "quote": "It, too, empties into the posterior portion of the atria, but inferior to the opening of the superior vena cava.",
+     "supports": [
+      "location"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-02",
+    "verdict": "approved-with-edits",
+    "notes": "'Trong ngực' không có câu trích — thay bằng vị trí đổ vào tâm nhĩ phải (19-1)."
+   }
+  },
+  "FMA8612": {
+   "summary": {
+    "vi": "Thân động mạch phổi là một trong hai động mạch lớn gắn vào đáy tim (cùng động mạch chủ). Nó chia đôi thành động mạch phổi trái và phải; lỗ vào thân có van bán nguyệt.",
+    "en": "The pulmonary trunk is one of the two great arteries on the base of the heart, the aorta being the other. It splits into the left and right pulmonary arteries, and a semilunar valve guards its opening."
+   },
+   "location": {
+    "vi": "Ở đáy tim, đi ra từ tâm thất phải hướng về phía phổi.",
+    "en": "At the base of the heart, leaving the right ventricle and heading toward the lungs."
+   },
+   "function": {
+    "vi": "Nhận máu nghèo oxy do tâm thất phải bơm lên và dẫn tới phổi. Thân động mạch phổi và các nhánh là những động mạch duy nhất sau khi sinh mang máu tương đối nghèo oxy.",
+    "en": "It takes oxygen-poor blood pumped out by the right ventricle and sends it to the lungs. After birth, it and its branches are the only arteries that carry relatively oxygen-poor blood."
+   },
+   "evidence": [
+    {
+     "source": "openstax-ap2e",
+     "section": "19-1-heart-anatomy",
+     "quote": "The great veins, the superior and inferior venae cavae, and the great arteries, the aorta and pulmonary trunk, are attached to the superior surface of the heart, called the base.",
+     "supports": [
+      "summary",
+      "location"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "19-1-heart-anatomy",
+     "quote": "The right ventricle pumps deoxygenated blood into the pulmonary trunk, which leads toward the lungs and bifurcates into the left and right pulmonary arteries.",
+     "supports": [
+      "summary",
+      "location",
+      "function"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "19-1-heart-anatomy",
+     "quote": "The valves at the openings that lead to the pulmonary trunk and aorta are known generically as semilunar valves.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "19-1-heart-anatomy",
+     "quote": "The pulmonary trunk arteries and their branches are the only arteries in the post-natal body that carry relatively deoxygenated blood.",
+     "supports": [
+      "function"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-02",
+    "verdict": "approved",
+    "notes": "Đúng nghĩa; giữ 'relatively' và 'post-natal'."
+   }
+  },
+  "FMA7405": {
+   "summary": {
+    "vi": "Ở carina, khí quản chia thành phế quản gốc trái và phải — hai nhánh đầu tiên của nó. Thành mỗi phế quản gốc có các vòng sụn như khí quản giữ cho ống không xẹp; lòng ống lót biểu mô trụ giả tầng có lông chuyển với tế bào hình đài tiết nhầy.",
+    "en": "At the carina the trachea divides into a left and a right main bronchus, its first branches. Rings of cartilage like the trachea's keep each bronchus from collapsing, and it is lined with pseudostratified ciliated columnar epithelium containing mucus-producing goblet cells."
+   },
+   "location": {
+    "vi": "Từ carina, mỗi phế quản gốc đi vào một phổi ở rốn phổi — chỗ lõm nơi mạch máu, mạch bạch huyết và dây thần kinh cũng đi vào phổi.",
+    "en": "From the carina each main bronchus passes into one lung at the hilum, a concave area that also admits the lung's blood vessels, lymphatics and nerves."
+   },
+   "function": {
+    "vi": "Là đường dẫn khí vào và ra phổi cùng bên, thuộc vùng dẫn khí (không trực tiếp tham gia trao đổi khí). Trong phổi, phế quản tiếp tục chia nhánh thành cây phế quản.",
+    "en": "It gives air a way into and out of the lung on its side and belongs to the conducting zone, the part of the airway not directly involved in gas exchange. Inside the lung it keeps dividing to form the bronchial tree."
+   },
+   "evidence": [
+    {
+     "source": "openstax-ap2e",
+     "section": "22-1-organs-and-structures-of-the-respiratory-system",
+     "quote": "The trachea branches into the right and left primary bronchi at the carina.",
+     "supports": [
+      "summary",
+      "location"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "22-1-organs-and-structures-of-the-respiratory-system",
+     "quote": "Rings of cartilage, similar to those of the trachea, support the structure of the bronchi and prevent their collapse.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "22-1-organs-and-structures-of-the-respiratory-system",
+     "quote": "These bronchi are also lined by pseudostratified ciliated columnar epithelium containing mucus-producing goblet cells",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "22-1-organs-and-structures-of-the-respiratory-system",
+     "quote": "The primary bronchi enter the lungs at the hilum, a concave region where blood vessels, lymphatic vessels, and nerves also enter the lungs.",
+     "supports": [
+      "location"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "22-1-organs-and-structures-of-the-respiratory-system",
+     "quote": "The main function of the bronchi, like other conducting zone structures, is to provide a passageway for air to move into and out of each lung.",
+     "supports": [
+      "function"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "22-1-organs-and-structures-of-the-respiratory-system",
+     "quote": "The conducting zone of the respiratory system includes the organs and structures not directly involved in gas exchange.",
+     "supports": [
+      "function"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "22-1-organs-and-structures-of-the-respiratory-system",
+     "quote": "The bronchi continue to branch into a bronchial tree.",
+     "supports": [
+      "function"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-02",
+    "verdict": "approved-with-edits",
+    "notes": "Nguồn 'not directly involved' — bỏ 'directly' là nâng mức khẳng định; viết lại số ít cho từng bên."
+   }
+  },
+  "FMA59101": {
+   "summary": {
+    "vi": "Tuyến lệ là tuyến sản xuất nước mắt.",
+    "en": "The lacrimal gland is the gland that makes tears."
+   },
+   "location": {
+    "vi": "Ngay bên trong ổ mắt, phía trên và phía ngoài nhãn cầu.",
+    "en": "Just inside the orbit, above and to the outer side of the eyeball."
+   },
+   "function": {
+    "vi": "Nước mắt theo các ống lệ chảy qua bề mặt nhãn cầu và kết mạc về góc trong của mắt, cuốn trôi dị vật.",
+    "en": "Its tears run along the lacrimal ducts, across the surface of the eyeball and conjunctiva to the inner corner of the eye, rinsing away foreign particles."
+   },
+   "evidence": [
+    {
+     "source": "openstax-ap2e",
+     "section": "14-1-sensory-perception",
+     "quote": "Tears are produced by the lacrimal gland, located just inside the orbit, superior and lateral to the eyeball.",
+     "supports": [
+      "summary",
+      "location"
+     ]
+    },
+    {
+     "source": "openstax-ap2e",
+     "section": "14-1-sensory-perception",
+     "quote": "Tears produced by this gland flow through the lacrimal ducts, then over the surface of the eyeball and conjunctiva to the medial corner of the eye, washing away foreign particles.",
+     "supports": [
+      "function"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-02",
+    "verdict": "approved",
+    "notes": "Đúng nghĩa, đúng cho từng bên."
+   }
   }
  }
 }
