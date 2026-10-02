@@ -984,7 +984,9 @@ export function HumanAtlas({
           onIsolate={() => setState((s) => ({ ...s, isolate: !s.isolate, explode: 0 }))}
           onChoosePart={choosePart}
           onClear={clearSelection}
-          onClose={() => setDetails(false)}
+          // Đóng bảng = bỏ chọn (2026-10-02): bản trước chỉ ẩn bảng, mảnh vẫn sáng
+          // viền và `?structure=` vẫn trên URL — chủ sản phẩm báo X "không tắt hết".
+          onClose={clearSelection}
         />
       )}
 
