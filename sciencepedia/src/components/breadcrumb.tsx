@@ -19,8 +19,8 @@ export type Crumb = {
  * lịch sử điều hướng nào phía sau. Trước đây chỗ này chỉ là hai link rời nằm
  * cạnh nhau trong một <nav> phẳng: không có gốc "Trang chủ", không có <ol>, nên
  * trình đọc màn hình không đọc ra được đây là một đường dẫn phân cấp và không
- * đếm được vị trí. Dữ liệu BreadcrumbList JSON-LD đã đúng ba bậc từ trước —
- * phần hiển thị mới là phần lệch.
+ * đếm được vị trí. Trang gọi tự dựng `items` cùng nguồn với BreadcrumbList
+ * JSON-LD của nó (kể cả danh mục cha) — lệch số bậc là khai thứ không hiện.
  *
  * Server Component: chỉ hiển thị.
  */

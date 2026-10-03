@@ -9,6 +9,7 @@ import type { Locale } from "@/i18n/routing";
 import {
   getArticleBySlug,
   getArticleSlugRedirect,
+  getPrerequisites,
   getPublishedSlugs,
   getRelatedForArticle,
 } from "@/server/queries";
@@ -168,6 +169,10 @@ export default async function ArticlePage({
   const content = pick(loc, article.content, article.contentEn);
   const showFallbackNotice = isFallback(loc, article.contentEn);
   const categoryName = pickName(loc, article.category);
+  const parentCategory = article.category.parent;
+  const parentCategoryName = parentCategory
+    ? pickName(loc, parentCategory)
+    : null;
   const coverAlt = coverAltFor(loc, article);
   const coverCredit =
     loc === "en"
@@ -177,7 +182,7 @@ export default async function ArticlePage({
   const headings = extractHeadings(content);
   const url = absoluteUrl(`/${locale}/articles/${article.slug}`);
   // Ưu tiên quan hệ trong knowledge graph, thiếu thì bù bằng tag/category
-  const [related, glossary] = await Promise.all([
+  const [related, glossary, prerequisites] = await Promise.all([
     getRelatedForArticle(
       article,
       article.tags.map((t) => t.tagId),
@@ -185,6 +190,7 @@ export default async function ArticlePage({
     // Định nghĩa cho `[[thuật ngữ]]` phải nằm sẵn trong trang ISR — tooltip
     // không fetch khi rê chuột.
     getGlossaryForMarkdown(content, loc),
+    article.entityId ? getPrerequisites(article.entityId) : [],
   ]);
 
   // Thống kê nguồn cho khối tín hiệu tin cậy
@@ -232,6 +238,14 @@ export default async function ArticlePage({
       <JsonLd
         data={breadcrumbJsonLd([
           { name: "Sciencepedia", url: absoluteUrl(`/${locale}`) },
+          ...(parentCategory && parentCategoryName
+            ? [
+              {
+                name: parentCategoryName,
+                url: absoluteUrl(`/${locale}/categories/${parentCategory.slug}`),
+              },
+            ]
+            : []),
           {
             name: categoryName,
             url: absoluteUrl(`/${locale}/categories/${article.category.slug}`),
@@ -334,6 +348,16 @@ export default async function ArticlePage({
           <Breadcrumb
             items={[
               { label: tCommon("home"), href: "/" },
+              // Danh mục cha phải hiện ở đây nếu JSON-LD khai nó — hai bên
+              // dựng từ cùng `article.category.parent`, đừng tách ra.
+              ...(parentCategory && parentCategoryName
+                ? [
+                  {
+                    label: parentCategoryName,
+                    href: `/categories/${parentCategory.slug}`,
+                  },
+                ]
+                : []),
               {
                 label: categoryName,
                 href: `/categories/${article.category.slug}`,
@@ -473,6 +497,36 @@ export default async function ArticlePage({
           {/* Cột mục lục bên phải là `hidden lg:block`; đây là bản cho điện
               thoại, bố cục chính của dự án. */}
           <MobileTableOfContents headings={headings} />
+
+          {/* Cần đọc trước — đặt ĐẦU bài, vì nó chỉ có ích trước khi đọc;
+              ở cuối bài thì người đọc đã vấp xong rồi. Một bậc cạnh
+              PREREQUISITE_OF, tiền đề chưa có bài thì đã bị lọc ở query. */}
+          {prerequisites.length > 0 && (
+            <nav
+              aria-labelledby="prerequisites-heading"
+              className="mx-auto mb-10 max-w-(--measure-prose) rounded-xl border bg-muted/40 px-4 py-3 text-sm"
+            >
+              <h2
+                id="prerequisites-heading"
+                className="flex items-center gap-1.5 font-medium text-foreground"
+              >
+                <BookOpen className="size-4 text-primary-strong" aria-hidden />
+                {t("prerequisites")}
+              </h2>
+              <ul className="mt-2 flex flex-wrap gap-x-4 gap-y-1.5">
+                {prerequisites.map((item) => (
+                  <li key={item.id}>
+                    <Link
+                      href={`/articles/${item.slug}`}
+                      className="text-primary-strong underline decoration-primary-strong/40 underline-offset-4 hover:decoration-primary-strong"
+                    >
+                      {pick(loc, item.title, item.titleEn)}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          )}
 
           {article.sketchfabModelId && (
             <SketchfabViewer
