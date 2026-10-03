@@ -41,7 +41,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Separator } from "@/components/ui/separator";
 import { CategoryIcon } from "@/components/category-icon";
-import { LocaleSwitcher } from "@/components/layout/locale-switcher";
+import { LocaleSwitcher, LocaleToggle } from "@/components/layout/locale-switcher";
 import { UserMenu } from "@/components/layout/user-menu";
 import { Logo } from "@/components/layout/logo";
 
@@ -434,6 +434,12 @@ export function SiteHeader({
                       <Logo />
                     </SheetTitle>
                   </SheetHeader>
+                  {/* Ngôn ngữ ở ĐẦU drawer, không ở đáy: dưới lg header ẩn nút
+                      ngôn ngữ, và đặt sau danh sách lĩnh vực dài thì nó rơi khỏi
+                      màn hình điện thoại — người dùng không tìm thấy. */}
+                  <div className="px-4 pb-3">
+                    <LocaleToggle />
+                  </div>
                   <Separator />
                   {/* Drawer phải cuộn được: danh sách lĩnh vực dài ra theo dữ
                     liệu, màn hình thấp sẽ không đủ chỗ cho cả khối cài đặt.
@@ -536,13 +542,6 @@ export function SiteHeader({
                     ))}
                   </nav>
 
-                  {/* Ngôn ngữ bị ẩn khỏi thanh header dưới lg, đưa vào đây.
-                      Nút sáng/tối đã gỡ khỏi cả hai chỗ — xem chú thích ở cụm
-                      điều khiển bên phải header. */}
-                  <Separator className="mt-2" />
-                  <div className="flex items-center gap-2 px-4 lg:hidden">
-                    <LocaleSwitcher />
-                  </div>
                 </SheetContent>
               </Sheet>
             )}

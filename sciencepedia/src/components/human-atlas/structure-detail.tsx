@@ -108,9 +108,14 @@ export function StructureDetail({
   const resolved = anatomy ? resolveContent(anatomy, concept.id) : null;
   // Gloss Wikipedia (đã duyệt) — chỉ dùng khi không có nội dung L2 riêng/kế thừa
   // và không có lời giải riêng, để không đè mô tả biên soạn kỹ hơn.
-  const wiki = structureDescription(concept.id, ...parts.map((p) => p.conceptId));
+  // Gloss và mô tả nhóm ra đời trước Level 2, phần lớn chỉ có bản Việt. Người đọc
+  // tiếng Anh KHÔNG nhận câu tiếng Việt: thiếu bản en thì lùi xuống tầng sau
+  // (cuối cùng là mô tả hệ, luôn song ngữ).
+  const wikiAny = structureDescription(concept.id, ...parts.map((p) => p.conceptId));
+  const wiki = wikiAny && (locale === "vi" || wikiAny.lang === "en") ? wikiAny : null;
   // Mảnh không có mô tả riêng → mô tả nhóm cấu trúc chứa nó, trước khi lùi về cả hệ.
-  const group = wiki ? null : groupDescription(parts.map((p) => p.id));
+  const groupAny = wiki ? null : groupDescription(parts.map((p) => p.id));
+  const group = groupAny && (locale === "vi" || groupAny.en) ? groupAny : null;
   const aboutName =
     resolved && resolved.about !== concept.id && anatomy
       ? displayName(locale, resolved.about, fmaName(anatomy, resolved.about) ?? resolved.about)
@@ -223,7 +228,14 @@ export function StructureDetail({
               {t("detail.groupOverview", { group: locale === "vi" ? group.name.vi : group.name.en })}
             </h3>
             <div className="mt-1.5">
-              <WikipediaText desc={{ ...group, lang: "vi", reviewed: true }} locale={locale} />
+              <WikipediaText
+                desc={
+                  locale === "vi" || !group.en
+                    ? { ...group, lang: "vi", reviewed: true }
+                    : { ...group.en, lang: "en", reviewed: true }
+                }
+                locale={locale}
+              />
             </div>
             <p className="mt-2 text-[11px] leading-snug text-muted-foreground/80">{t("detail.groupNote")}</p>
           </div>

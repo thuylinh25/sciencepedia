@@ -253,6 +253,11 @@ trình duyệt, không có một cá nhân bảo chứng.
 **Phải nhất quán.** Lúc tổ chức lúc tên riêng thì người đọc suy ra rằng bài có tên
 người được soi kỹ hơn — một hàm ý mà ta không có gì bảo đảm.
 
+**Không còn trang /about; byline không dẫn đi đâu** (chủ sản phẩm chốt 2026-10-03: gỡ mục "Về
+Sciencepedia" khỏi footer, gỡ liên kết "ai đứng sau", rồi xoá hẳn trang). Đánh đổi đã biết: người
+đọc không còn chỗ nào để biết "Ban biên tập" là quy trình AI chứ không phải chuyên gia. Dòng byline
+thì vẫn phải hiện (JSON-LD khai `reviewedBy`).
+
 **Điều kiện đổi sang tên người**: khi có biên tập viên thật ký từng bài. Lúc đó, và
 chỉ lúc đó.
 
@@ -736,6 +741,55 @@ xem `resolveContent` trước khi viết; trích từ chú thích hình, navbox 
 được); số liệu lệch giữa hai bài (lưu lượng động mạch gan 25% vs 10%) — bỏ số khi nguồn đánh
 nhau. Bách khoa toàn thư không bao giờ là nguồn sơ cấp: dùng được cho dữ kiện giải phẫu cơ
 bản đã kiểm trong ngữ cảnh, còn con số và claim còn tranh cãi cần nguồn bậc 1–3.
+
+**Lô Wikipedia thứ hai (48 mục, 2026-10-03): science-editor sửa 20, loại 0.** Chọn theo mức phủ đo
+trên từng MẢNH (1.143 → 1.694/2.234), kèm danh sách mảnh sẽ kế thừa từng mục cho người duyệt. Lỗi mới
+so với lô đầu:
+- Câu trích ngoài thân bài vẫn lọt máy: ô infobox dính liền ("ToPosterior…", "BranchesSuperior…"),
+  chú thích hình ("Medulla-animated…"), tiêu đề danh sách rỗng ("It contains the plantar flexors:").
+  Văn bản đã tải gộp hết thành một chuỗi nên máy không phân biệt được — người viết phải.
+- Thẻ bảo trì nào cũng loại câu, không chỉ [citation needed]: [who?], [dubious], câu nguồn bị cụt.
+- Nguồn tả N cái, nhóm mảnh có N+1 (ba động mạch gan ngón chung vs bốn trong FMA); "trong một phần
+  ba trường hợp" viết như luôn luôn. Lệch số đếm thì bỏ con số, không chọn bên.
+- Vùng cấp máu/chức năng của thân gán cho nhánh: thân động mạch não sau nuôi thùy chẩm không có
+  nghĩa từng nhánh vỏ cũng vậy; câu thần kinh chi phối chung cho "các cơ hầu" không nói riêng cho
+  cơ khít.
+- Số đo chỉ có nguồn bách khoa (độ dày màng mạch, phần cung lượng tim qua thận) bị bỏ; số đếm
+  giải phẫu cơ bản (năm cơ nhú, chín sụn thanh quản) giữ.
+- Lý do trong `omitted` cũng là một claim: "nhánh sâu đều từ A1" sai vì động mạch Heubner tách ở A2.
+- Nhóm FMA gộp mạch không đổ thẳng vào mạch đích (nhánh tĩnh mạch chậu trong có tĩnh mạch cùng
+  giữa; nhánh tĩnh mạch đùi có tĩnh mạch mác) thì không viết mục: đoạn văn đúng cho mạch đích vẫn
+  sai cho mảnh lạc nhóm.
+
+**Lô Wikipedia thứ ba (85 mục, 2026-10-03): sửa 42, loại 0.** Phần lớn mảnh còn thiếu là cấu
+trúc đơn lẻ có chuỗi is-a dài hơn bốn bước nên không chạm mục chung ("Tĩnh mạch đùi" không tới
+"Tĩnh mạch") — phải viết mục riêng, mỗi mục chỉ phủ hai mảnh trái/phải. Lỗi mới:
+- Câu trích cắt giữa chữ hay cắt trước mốc so sánh ("on the opposite" mất "so với nhân của nó").
+  Trích trọn mệnh đề.
+- Câu nguồn nói về một phần bị dùng cho phần khác: "main function at the elbow" là của đầu dài
+  cơ nhị đầu, không chống lưng được đầu ngắn; nhu động "đẩy lên" chỉ của kết tràng lên.
+- Lượng từ bị dời phạm vi: "ba hoặc bốn tĩnh mạch nuôi ở mỗi phổi" ≠ "mỗi tĩnh mạch phổi nhận
+  ba hoặc bốn".
+- Rút gọn để lại mô hình sai: "hai dây thị bắt chéo" phải nói bắt chéo MỘT PHẦN.
+- Thuật ngữ: epithalamus = vùng trên đồi (không phải "biểu mô đồi"); telencephalon = đoan não;
+  subthalamus ghi kèm tên Anh để khỏi lẫn với vùng dưới đồi.
+- Infobox lại là nguồn trích nhiều nhất (11 mục) — câu thân bài tương ứng mang [citation needed]
+  thì bỏ vế, không quay về infobox.
+
+**Lô Wikipedia thứ tư (119 mục, 2026-10-03): sửa 39, loại 1.** Phần đuôi dài (đầu cơ, nhánh mạch
+nhỏ, răng, dây chằng). Loại: "Superficial perineal muscle" là một LỚP trong FMA (cơ thắt hậu môn
+ngoài is-a nó), bản nháp lại tả riêng cơ ngang đáy chậu nông. Lỗi mới:
+- Thẻ bảo trì cấp mục ("This section does not cite any sources") phủ cả đoạn — không chỉ dò
+  thẻ dính ngay sau câu.
+- Câu về loài khác dùng cho người: "cắn đứt thịt đỏ" nằm trong đoạn về thỏ. Ưu tiên câu "In
+  humans…"; câu chung cho thú thì ghi rõ phạm vi.
+- Câu trích nằm trong mệnh đề tả quan niệm đã bị bác ("trước đây tưởng mạc treo rời từng đoạn").
+- Mục đầu/phần cơ dùng chung câu chức năng của cả cơ thì ghi rõ "(cả cơ)" — không để câu không
+  chủ ngữ dưới tên một đầu.
+- Nới chủ thể từ một phần nhóm sang cả nhóm (ba cơ gian cốt gan tay trung tâm → cả bốn); "tạo
+  nên sàn" khi chỉ là một phần của sàn (củ xám).
+- Chỗ nguồn sai thuật ngữ ("middle head" cơ tam đầu — không có đầu giữa): bỏ tên, không tự sửa
+  thành tên đúng khi không có câu chống lưng.
 
 **Tiếng Việt dịch sát câu nguồn: chấp nhận** (chủ sản phẩm chốt 2026-09-28). science-editor
 nêu rằng bản tiếng Việt của Level 2 bám cấu trúc câu OpenStax, có thể bị coi là phái sinh

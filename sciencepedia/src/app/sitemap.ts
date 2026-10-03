@@ -100,7 +100,6 @@ function staticEntries(latest?: Date): MetadataRoute.Sitemap {
        khai hơn hẳn một URL nằm trong sitemap. */
     // Giới thiệu + chính sách biên tập: trang Google đọc để biết ai đứng sau
     // nội dung, nên ưu tiên cao hơn hai trang pháp lý.
-    ...entry("/about", { changeFrequency: "yearly", priority: 0.5 }),
     ...entry("/privacy", { changeFrequency: "yearly", priority: 0.3 }),
     ...entry("/terms", { changeFrequency: "yearly", priority: 0.3 }),
   ];

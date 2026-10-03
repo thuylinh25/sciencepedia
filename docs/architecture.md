@@ -1022,6 +1022,11 @@ của chính cấu trúc → **mô tả nhóm** → mô tả hệ. Hai tầng sa
   "Động mạch quay, trụ, gian cốt") bị bỏ, kể cả khi câu tự nó đúng — người đọc bấm động mạch trụ
   sẽ đọc nó như mô tả của động mạch trụ. Vì rủi ro ghép bài cao hơn tên cơ quan, CHỈ mục đã qua
   science-editor ra client; 61 nhóm bỏ trống là có chủ ý (thà về mô tả hệ còn hơn tả sai nhóm).
+- **Gloss và mô tả nhóm có bản en riêng, không bao giờ rơi về câu tiếng Việt** (2026-10-03). Hai
+  lớp này ra đời trước Level 2 và chỉ lưu bản Việt, nên bản tiếng Anh của site từng hiện câu tiếng
+  Việt cho ~340 mảnh. Bản en là câu NGUYÊN VĂN bài Wikipedia tiếng Anh (`--merge-en` kiểm đoạn con
+  nguyên văn), qua science-editor cùng chuẩn "đúng cho cả nhóm". Nhóm/gloss thiếu bản en thì bản
+  tiếng Anh lùi về mô tả hệ (luôn song ngữ) — đừng "tiện" hiện bản Việt kèm nhãn.
 
 ---
 

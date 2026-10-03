@@ -14,6 +14,8 @@ const rule = (...fma: string[]): PartRule => ({ fma });
 
 const RA = rule("FMA9457", "FMA11359");
 const LA = rule("FMA9531", "FMA9465");
+const RA_WALL = rule("FMA9457");
+const LA_WALL = rule("FMA9531");
 const RA_CAVITY = rule("FMA11359");
 const LA_CAVITY = rule("FMA9465");
 const VENTRICLE_WALL = rule("FMA13884");
@@ -326,6 +328,27 @@ export const CARDIAC_VIEWS: readonly AtlasViewDef[] = [
   // Khoang nhĩ riêng: "Các buồng tim" chỉ hiện khoang, "Tâm nhĩ" (thành + khoang) không nằm trọn trong đó.
   { id: "right-atrium-cavity", systemId: "cardiac", kind: "structure", name: { vi: "Khoang tâm nhĩ phải", en: "Right atrial cavity" }, direction: "right", focus: [RA_CAVITY], context: [RA] },
   { id: "left-atrium-cavity", systemId: "cardiac", kind: "structure", name: { vi: "Khoang tâm nhĩ trái", en: "Left atrial cavity" }, direction: "back", focus: [LA_CAVITY], context: [LA] },
+  // Thành nhĩ riêng, cùng lý do: "Mặt cắt tim" chỉ vẽ thành (không khoang), nên thiếu hai hàng này
+  // thì thành nhĩ rơi vào "Phần còn lại".
+  { id: "right-atrium-wall", systemId: "cardiac", kind: "structure", name: { vi: "Thành tâm nhĩ phải", en: "Wall of right atrium" }, direction: "right", focus: [RA_WALL], context: [RA_CAVITY] },
+  { id: "left-atrium-wall", systemId: "cardiac", kind: "structure", name: { vi: "Thành tâm nhĩ trái", en: "Wall of left atrium" }, direction: "back", focus: [LA_WALL], context: [LA_CAVITY] },
+  // Bảng cấu trúc cho các góc nhìn tuần hoàn: cấu trúc của hệ động/tĩnh mạch rộng hơn
+  // tập nổi bật của các góc nhìn này (cảnh NGOÀI, nhánh tạng khác…), nên không nằm trọn
+  // trong đó và mảnh rơi vào "Phần còn lại". Mỗi hàng dưới đây đúng bằng một quy tắc focus.
+  // Tách đôi: cảnh chung nằm trong "nhánh cung ĐMC", cảnh trong trong "cảnh – đốt sống" — gộp làm
+  // một thì ở góc nhìn lớn nó chồng mảnh lên cả hai.
+  { id: "common-carotid-arteries", systemId: "cardiac", kind: "structure", name: { vi: "Động mạch cảnh chung", en: "Common carotid arteries" }, direction: "anterolateral", focus: [art(/common carotid artery$/i)], context: [SKULL_NECK] },
+  { id: "internal-carotid-arteries", systemId: "cardiac", kind: "structure", name: { vi: "Động mạch cảnh trong", en: "Internal carotid arteries" }, direction: "anterolateral", focus: [art(/internal carotid artery$/i)], context: [SKULL_NECK] },
+  { id: "internal-jugular-veins", systemId: "cardiac", kind: "structure", name: { vi: "Tĩnh mạch cảnh trong", en: "Internal jugular veins" }, direction: "anterolateral", focus: [JUGULARS], context: [SKULL_NECK] },
+  { id: "hepatic-arterial-supply", systemId: "cardiac", kind: "structure", name: { vi: "Thân tạng và động mạch gan", en: "Celiac trunk and hepatic arteries" }, direction: "front", focus: [HEPATIC_ARTERIES], context: [LIVER] },
+  { id: "intestinal-veins", systemId: "cardiac", kind: "structure", name: { vi: "Tĩnh mạch của ruột", en: "Intestinal veins" }, direction: "front", focus: [GUT_VEINS], context: [INTESTINES] },
+  { id: "pancreaticoduodenal-arteries", systemId: "cardiac", kind: "structure", name: { vi: "Động mạch tá tụy", en: "Pancreaticoduodenal arteries" }, direction: "front", focus: [art(/pancreaticoduodenal artery$/i)], context: [INTESTINES] },
+  // Vòng Willis tách đôi cùng lý do với động mạch cảnh: động mạch nền nằm trong "cảnh – đốt sống",
+  // các đoạn còn lại trong "động mạch não".
+  { id: "circle-of-willis-segments", systemId: "cardiac", kind: "structure", name: { vi: "Các đoạn vòng Willis", en: "Circle of Willis segments" }, direction: "inferior", focus: [art(/^(left|right) anterior cerebral artery$|^anterior communicating artery$|^(left|right) posterior communicating artery$|^precommunicating part of (left|right) posterior cerebral artery$/i)], context: [INTERNAL_CAROTIDS] },
+  { id: "basilar-artery", systemId: "cardiac", kind: "structure", name: { vi: "Động mạch nền", en: "Basilar artery" }, direction: "inferior", focus: [art(/^basilar artery$/i)], context: [INTERNAL_CAROTIDS] },
+  { id: "azygos-veins", systemId: "cardiac", kind: "structure", name: { vi: "Hệ tĩnh mạch đơn", en: "Azygos venous system" }, direction: "front", focus: [AZYGOS], context: [SVC] },
+  { id: "iliac-arteries", systemId: "cardiac", kind: "structure", name: { vi: "Động mạch chậu và nhánh", en: "Iliac arteries and branches" }, direction: "front", focus: [PELVIC_ARTERIES], context: [PELVIS] },
   { id: "right-ventricle-cavity", systemId: "cardiac", kind: "structure", name: { vi: "Khoang tâm thất phải", en: "Right ventricular cavity" }, direction: "front", focus: [RV_CAVITY], context: [VENTRICLE_WALL] },
   { id: "left-ventricle-cavity", systemId: "cardiac", kind: "structure", name: { vi: "Khoang tâm thất trái", en: "Left ventricular cavity" }, direction: "front", focus: [LV_CAVITY], context: [VENTRICLE_WALL] },
   { id: "tricuspid-valve", systemId: "cardiac", kind: "structure", name: { vi: "Van ba lá", en: "Tricuspid valve" }, direction: "superior", focus: [TRICUSPID], context: [WALLS] },
