@@ -6527,7 +6527,13 @@
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": "Đúng nghĩa, đúng cho cả cây phân thùy phổi phải lẫn lưỡi phổi trái; giữ 'may fuse… usually' (có thể hợp nhất, thường còn 8–9)."
+   }
   },
   "FMA7207": {
    "summary": {
@@ -6583,7 +6589,13 @@
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": "Đúng nghĩa; giữ 'about' và 'is considered to start'."
+   }
   },
   "FMA7208": {
    "summary": {
@@ -6655,7 +6667,13 @@
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": "Đúng nghĩa; giữ 'main function' và 'abundant' (mảng Peyer)."
+   }
   },
   "FMA50081": {
    "summary": {
@@ -6721,11 +6739,17 @@
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": "Đúng nghĩa; chức năng nói ở cấp động mạch não giữa, đúng cho nhóm nhánh."
+   }
   },
   "FMA50586": {
    "summary": {
-    "vi": "Các nhánh của động mạch não sau, gồm nhánh trung tâm (nhánh xuyên), nhánh mạch mạc và nhánh vỏ. Động mạch não sau là một trong một cặp động mạch não cấp máu giàu oxy cho thùy chẩm, mặt trong và mặt dưới thùy thái dương.",
+    "vi": "Các nhánh của động mạch não sau, gồm nhánh trung tâm (nhánh xuyên), nhánh mạch mạc và nhánh vỏ. Động mạch não sau (mỗi bên một) cấp máu giàu oxy cho thùy chẩm, mặt trong và mặt dưới thùy thái dương.",
     "en": "Branches of the posterior cerebral artery: central (perforating), choroidal and cortical. The posterior cerebral arteries are a pair of cerebral arteries carrying oxygenated blood to the occipital lobe and to the medial and inferior surfaces of the temporal lobe."
    },
    "location": {
@@ -6733,8 +6757,8 @@
     "en": "Both posterior cerebral arteries spring from the far end of the basilar artery, where it forks. The thalamoperforating and thalamogeniculate branches leave at the very start and pierce the posterior perforated substance; the medial posterior choroidal branches run forward under the splenium of the corpus callosum."
    },
    "function": {
-    "vi": "Nhánh đồi thị xuyên và đồi thị gối cấp máu cho mặt trong đồi thị và thành não thất ba; nhánh mạch mạc sau trong cấp máu cho tấm mạch mạc não thất ba và đám rối mạch mạc; nhánh vỏ cấp máu cho thùy chẩm và thùy thái dương.",
-    "en": "The thalamoperforating and thalamogeniculate branches feed the inner faces of the thalami and the third ventricle's walls; the medial posterior choroidal branches feed the third ventricle's tela choroidea and the choroid plexus; the cortical branches serve the occipital and temporal lobes."
+    "vi": "Nhánh đồi thị xuyên và đồi thị gối cấp máu cho mặt trong đồi thị và thành não thất ba; nhánh mạch mạc sau trong cấp máu cho tấm mạch mạc não thất ba và đám rối mạch mạc. Các nhánh vỏ đi tới vỏ thùy chẩm và thùy thái dương; nhánh rãnh đỉnh – chẩm của động mạch chẩm trong tới cả chêm và tiền chêm (thuộc thùy đỉnh).",
+    "en": "The thalamoperforating and thalamogeniculate branches feed the inner faces of the thalami and the third ventricle's walls; the medial posterior choroidal branches feed the third ventricle's tela choroidea and the choroid plexus. The cortical branches go to occipital and temporal cortex, and the parieto-occipital branch of the medial occipital artery also reaches the cuneus and precuneus."
    },
    "evidence": [
     {
@@ -6788,8 +6812,22 @@
       "location",
       "function"
      ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Posterior_cerebral_artery",
+     "quote": "Parieto-occipital sulcus, to the cuneus and the precuneus",
+     "supports": [
+      "function"
+     ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Chức năng: 'nhánh vỏ cấp máu cho thùy chẩm và thùy thái dương' bỏ sót tiền chêm (thùy đỉnh) mà chính danh sách nhánh vỏ nêu — thêm. Sửa câu tiếng Việt 'một trong một cặp'."
+   }
   },
   "FMA79615": {
    "summary": {
@@ -6879,7 +6917,13 @@
      ]
     }
    ],
-   "omitted": "Không nêu cấp máu cho bao trong, nhân đuôi, cầu nhạt: các nhánh sâu ấy tách từ A1/động mạch thông trước, không thuộc nhóm đoạn sau thông."
+   "omitted": "Không nêu cấp máu cho bao trong, nhân đuôi, cầu nhạt: các nhánh sâu ấy (động mạch trung tâm trước trong từ A1/động mạch thông trước, động mạch quặt ngược Heubner ở đầu A2) không nằm trong nhóm mảnh kế thừa đoạn này.",
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Sửa lý do ở omitted: bài nguồn ghi động mạch quặt ngược Heubner (cấp máu bao trong) thường tách ở đầu A2, nên 'các nhánh sâu đều tách từ A1' là sai; lý do đúng là chúng không có trong nhóm mảnh."
+   }
   },
   "FMA76269": {
    "summary": {
@@ -6891,8 +6935,8 @@
     "en": "The basilar artery forms where the two vertebral arteries join at the medulla–pons junction. The anterior inferior cerebellar artery leaves at that level; the superior cerebellar artery leaves near the basilar artery's end and curves around the brainstem; the pontine arteries are small vessels leaving its sides at right angles."
    },
    "function": {
-    "vi": "Động mạch tiểu não trước dưới và động mạch tiểu não trên là hai trong ba cặp động mạch cấp máu cho tiểu não; động mạch tiểu não trên còn cấp máu cho một phần não giữa. Các động mạch cầu não cấp máu cho cầu não và vùng não lân cận.",
-    "en": "The anterior inferior and superior cerebellar arteries are two of the three pairs supplying the cerebellum, and the superior one also reaches parts of the midbrain. The pontine arteries supply the pons and nearby brain."
+    "vi": "Động mạch tiểu não trước dưới là một trong ba cặp động mạch cấp máu cho tiểu não; động mạch tiểu não trên cấp máu cho một phần tiểu não, não giữa và các cấu trúc lân cận. Các động mạch cầu não cấp máu cho cầu não và vùng não lân cận.",
+    "en": "The anterior inferior cerebellar artery is one of the three pairs of arteries supplying the cerebellum; the superior cerebellar artery supplies parts of the cerebellum, the midbrain and nearby structures. The pontine arteries supply the pons and nearby brain."
    },
    "evidence": [
     {
@@ -6963,7 +7007,13 @@
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "'Hai trong ba cặp' cho cả động mạch tiểu não trên chỉ có chỗ dựa ở chú thích hình; viết lại theo đúng câu thân bài của từng động mạch."
+   }
   },
   "FMA22845": {
    "summary": {
@@ -6971,8 +7021,8 @@
     "en": "Branches of the superficial palmar arch, namely the common and proper palmar digital arteries. The arch is built mainly by the ulnar artery, with the radial artery adding its superficial palmar branch."
    },
    "location": {
-    "vi": "Động mạch gan ngón tay chung tách từ bờ lồi của cung, đi xuống trên các cơ giun thứ hai, ba, bốn; gần khớp bàn – ngón, mỗi động mạch chia thành hai động mạch gan ngón tay riêng. Động mạch gan ngón tay riêng chạy dọc hai bên đốt ngón, ngay dưới thần kinh ngón tương ứng.",
-    "en": "The common palmar digital arteries leave the convex side of the arch and run down over the second, third and fourth lumbricals; near the metacarpophalangeal joints each splits into two proper palmar digital arteries, which run along the sides of the phalanges just beneath the matching digital nerve."
+    "vi": "Động mạch gan ngón tay chung tách từ bờ lồi của cung rồi đi xuống phía các ngón; gần khớp bàn – ngón, chúng chia thành các động mạch gan ngón tay riêng. Động mạch gan ngón tay riêng chạy dọc hai bên đốt ngón, nằm ngay phía mu (phía sau) so với thần kinh ngón tương ứng.",
+    "en": "The common palmar digital arteries leave the convex side of the arch and head toward the fingers; near the metacarpophalangeal joints they split into proper palmar digital arteries, which run along the sides of the phalanges just dorsal to the matching digital nerve."
    },
    "function": {
     "vi": "Mang máu tới các ngón tay. Động mạch gan ngón tay riêng nối thông nhau ở mô dưới da đầu ngón; nhánh mu của chúng cấp máu cho phần mềm mặt mu đốt giữa và đốt xa, kể cả mầm móng.",
@@ -7030,7 +7080,13 @@
      ]
     }
    ],
-   "omitted": "Không nêu số động mạch gan ngón tay chung: bài Wikipedia ghi ba, còn FMA (và mô hình) có bốn."
+   "omitted": "Không nêu số động mạch gan ngón tay chung: bài Wikipedia ghi ba, còn FMA (và mô hình) có bốn.",
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Bỏ 'trên các cơ giun thứ hai, ba, bốn' và 'mỗi động mạch chia đôi': bài mô tả ba động mạch gan ngón chung, nhóm mảnh có bốn, nên câu không đúng cho cả bốn. 'Dưới thần kinh' đổi thành 'phía mu' theo chính chú giải của nguồn."
+   }
   },
   "FMA70494": {
    "summary": {
@@ -7042,8 +7098,8 @@
     "en": "At the hilum of the kidney. The anterior branches lie between the renal vein in front and the ureter behind; the posterior branches usually lie behind the ureter."
    },
    "function": {
-    "vi": "Đưa máu vào thận. Các động mạch thận mang một phần lớn tổng lưu lượng máu; có thể tới một phần ba cung lượng tim đi qua chúng để thận lọc.",
-    "en": "Bring blood into the kidney. The renal arteries carry a large share of the circulation: up to a third of cardiac output can pass through them to be filtered."
+    "vi": "Đưa máu vào thận.",
+    "en": "Bring blood into the kidney."
    },
    "evidence": [
     {
@@ -7080,16 +7136,14 @@
      "supports": [
       "function"
      ]
-    },
-    {
-     "source": "wikipedia-en",
-     "section": "Renal_artery",
-     "quote": "The renal arteries carry a large portion of total blood flow to the kidneys. Up to a third of total cardiac output can pass through the renal arteries to be filtered by the kidneys.",
-     "supports": [
-      "function"
-     ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Cắt câu 'tới một phần ba cung lượng tim' — con số chỉ có nguồn bách khoa, và là của động mạch thận chứ không phải nhánh phân thùy."
+   }
   },
   "FMA71209": {
    "summary": {
@@ -7101,8 +7155,8 @@
     "en": "The axillary vein begins at the lower border of teres major as the continuation of the brachial vein and ends at the outer border of the first rib, where it turns into the subclavian vein. The axillary artery runs alongside, lateral to the vein."
    },
    "function": {
-    "vi": "Đưa máu từ mặt bên lồng ngực, vùng nách và chi trên về tim.",
-    "en": "Return blood from the side of the chest, the armpit and the upper limb toward the heart."
+    "vi": "Tĩnh mạch nách đưa máu từ mặt bên lồng ngực, vùng nách và chi trên về tim; các tĩnh mạch nhóm này góp máu vào dòng chảy ấy.",
+    "en": "The axillary vein carries blood from the side of the chest, the armpit and the upper limb toward the heart; the veins in this group feed into that drainage."
    },
    "evidence": [
     {
@@ -7162,7 +7216,13 @@
      ]
     }
    ],
-   "omitted": "Nhóm FMA gồm cả tĩnh mạch quay, trụ, giữa khuỷu… vốn đổ về tĩnh mạch nách qua tĩnh mạch khác; bài Wikipedia không nói đường đi ấy nên câu chỉ mô tả tĩnh mạch nách, không khẳng định từng tĩnh mạch đổ thẳng vào nó."
+   "omitted": "Nhóm FMA gồm cả tĩnh mạch quay, trụ, giữa khuỷu… vốn đổ về tĩnh mạch nách qua tĩnh mạch khác; bài Wikipedia không nói đường đi ấy nên câu chỉ mô tả tĩnh mạch nách, không khẳng định từng tĩnh mạch đổ thẳng vào nó.",
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Chức năng viết như của từng nhánh ('đưa máu từ mặt bên lồng ngực…') sai cho tĩnh mạch quay/trụ; nêu rõ đó là chức năng của tĩnh mạch nách."
+   }
   },
   "FMA22922": {
    "summary": {
@@ -7188,7 +7248,13 @@
       "summary"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": "Đúng nghĩa; giữ 'some sources' cho phân biệt riêng/chung."
+   }
   },
   "FMA22474": {
    "summary": {
@@ -7200,8 +7266,8 @@
     "en": "The back of the lower leg. The compartment's nerve supply is the tibial nerve."
    },
    "function": {
-    "vi": "Khoang chứa các cơ gấp gan bàn chân.",
-    "en": "The compartment houses the muscles that plantarflex the foot."
+    "vi": "Mọi cơ trong nhóm, trừ cơ khoeo, đều gấp gan bàn chân ở cổ chân: cơ dép, cơ chày sau và cơ gấp các ngón chân dài; cơ gan chân và cơ gấp ngón cái dài chỉ góp phần yếu. Cơ gấp ngón cái dài và cơ gấp các ngón chân dài còn gấp các ngón chân; cơ chày sau còn nghiêng trong bàn chân. Cơ khoeo gấp gối yếu và mở khoá khớp gối.",
+    "en": "Every muscle in the group except popliteus plantarflexes the ankle: soleus, tibialis posterior and flexor digitorum longus do so outright, while plantaris and flexor hallucis longus help only weakly. The two long toe flexors also bend the toes, and tibialis posterior inverts the foot. Popliteus weakly bends the knee and unlocks it."
    },
    "evidence": [
     {
@@ -7223,12 +7289,58 @@
     {
      "source": "wikipedia-en",
      "section": "Posterior_compartment_of_leg",
-     "quote": "It contains the plantar flexors:",
+     "quote": "Plantarflexes ankle independent of position of knee; steadies leg on foot",
+     "supports": [
+      "function"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Posterior_compartment_of_leg",
+     "quote": "Weakly assists gastrocnemius in plantarflexing ankle",
+     "supports": [
+      "function"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Posterior_compartment_of_leg",
+     "quote": "Flexes big toe at all joints; weakly plantarflexes ankle; supports medial longitudinal arch of foot",
+     "supports": [
+      "function"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Posterior_compartment_of_leg",
+     "quote": "Plantarflexes ankle; inverts foot",
+     "supports": [
+      "function"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Posterior_compartment_of_leg",
+     "quote": "Flexes lateral four digits; plantarflexes ankle; supports longitudinal arches of foot",
+     "supports": [
+      "function"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Posterior_compartment_of_leg",
+     "quote": "Weakly flexes knee and unlocks it by rotating femur 5 deg on fixed tibia",
      "supports": [
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Câu trích chức năng là tiêu đề danh sách rỗng ('It contains the plantar flexors:') và 'chứa các cơ gấp gan bàn chân' sai cho cơ khoeo (gấp/mở khoá gối). Viết lại theo cột chức năng của bảng từng cơ (đã đối chiếu hàng)."
+   }
   },
   "FMA34676": {
    "summary": {
@@ -7319,7 +7431,13 @@
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": "Đúng nghĩa, đúng cho cả ba phần đòn/cùng vai/gai."
+   }
   },
   "FMA0327509": {
    "summary": {
@@ -7327,8 +7445,8 @@
     "en": "A head of triceps brachii, the large muscle on the back of the upper arm. It has three parts, the medial, lateral and long heads. All three cross the elbow, and the long head crosses the shoulder joint as well."
    },
    "location": {
-    "vi": "Đầu dài xuất phát từ củ dưới ổ chảo xương vai; đầu ngoài từ mặt sau xương cánh tay, phía ngoài và trên rãnh thần kinh quay; đầu trong từ mặt sau xương cánh tay, ngay dưới rãnh ấy. Các thớ hội tụ thành một gân bám vào mỏm khuỷu xương trụ.",
-    "en": "The long head comes from the infraglenoid tubercle of the scapula; the lateral head from the back of the humerus, lateral to and above the radial nerve groove; the medial head from the back of the humerus just below that groove. The fibres join a single tendon onto the olecranon of the ulna."
+    "vi": "Đầu dài xuất phát từ củ dưới ổ chảo xương vai; đầu ngoài từ mặt sau xương cánh tay, phía ngoài và trên rãnh thần kinh quay; đầu trong từ xương cánh tay, ngay dưới rãnh ấy. Các thớ hội tụ thành một gân bám vào mỏm khuỷu xương trụ.",
+    "en": "The long head comes from the infraglenoid tubercle of the scapula; the lateral head from the back of the humerus, lateral to and above the radial nerve groove; the medial head from the humerus just below that groove. The fibres join a single tendon onto the olecranon of the ulna."
    },
    "function": {
     "vi": "Cơ tam đầu là cơ chịu trách nhiệm chính cho việc duỗi khớp khuỷu (duỗi thẳng cánh tay).",
@@ -7392,7 +7510,13 @@
      ]
     }
    ],
-   "omitted": "Không nêu thần kinh chi phối: bài ghi kinh điển là thần kinh quay nhưng khoảng 14% có đầu dài do thần kinh nách chi phối — câu ngắn dễ đánh rơi vế sau."
+   "omitted": "Không nêu thần kinh chi phối: bài ghi kinh điển là thần kinh quay nhưng khoảng 14% có đầu dài do thần kinh nách chi phối — câu ngắn dễ đánh rơi vế sau.",
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Bỏ 'mặt sau' ở nguyên ủy đầu trong: câu trích không nói mặt nào."
+   }
   },
   "FMA19089": {
    "summary": {
@@ -7440,7 +7564,13 @@
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": "Đúng nghĩa, đúng cho ba thành phần; giữ 'main' và 'greater part'."
+   }
   },
   "FMA19726": {
    "summary": {
@@ -7448,12 +7578,12 @@
     "en": "The pelvic diaphragm is made by levator ani and coccygeus on each side: levator ani forms most of the pelvic floor and coccygeus completes it. In the model this group holds coccygeus and the tendinous arch of levator ani."
    },
    "location": {
-    "vi": "Ở đáy khoang chậu. Cơ ngồi – cụt nằm sau cơ nâng hậu môn và trước dây chằng cùng – gai, đi từ gai ngồi tới bờ xương cụt và mặt bên đốt xương cùng thấp nhất.",
-    "en": "Across the bottom of the pelvic cavity. Coccygeus lies behind levator ani and in front of the sacrospinous ligament, spanning from the ischial spine to the edge of the coccyx and the side of the lowest sacral segment."
+    "vi": "Cơ ngồi – cụt nằm ở sàn chậu, sau cơ nâng hậu môn và trước dây chằng cùng – gai; nó đi từ gai ngồi và dây chằng cùng – gai tới bờ xương cụt và mặt bên đốt xương cùng thấp nhất.",
+    "en": "Coccygeus sits in the pelvic floor behind levator ani and in front of the sacrospinous ligament, running from the ischial spine and that ligament to the edge of the coccyx and the side of the lowest sacral segment."
    },
    "function": {
-    "vi": "Nâng đỡ các tạng trong khoang chậu. Cơ ngồi – cụt phối hợp với cơ nâng hậu môn và cơ hình lê khép kín phần sau của eo dưới chậu hông.",
-    "en": "Supports the pelvic organs. Coccygeus works with levator ani and piriformis to close off the back part of the pelvic outlet."
+    "vi": "Cơ nâng hậu môn nâng đỡ các tạng trong khoang chậu. Cơ ngồi – cụt phối hợp với cơ nâng hậu môn và cơ hình lê khép kín phần sau của eo dưới chậu hông, qua đó góp phần nâng đỡ âm đạo ở nữ và các tạng chậu khác.",
+    "en": "Levator ani holds up the pelvic organs. Coccygeus works with levator ani and piriformis to close off the back part of the pelvic outlet, which in turn helps hold up the vagina in women along with the other pelvic organs."
    },
    "evidence": [
     {
@@ -7504,7 +7634,13 @@
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "'Ở đáy khoang chậu' sai cho cung gân cơ nâng hậu môn (ở thành bên chậu) — bỏ, chỉ mô tả cơ ngồi – cụt; thêm nguyên ủy từ dây chằng cùng – gai bị rơi. Chức năng nêu rõ chủ thể từng câu."
+   }
   },
   "FMA46562": {
    "summary": {
@@ -7576,7 +7712,13 @@
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": "Đúng nghĩa; mọi mảnh là cơ nội tại, không có cơ nhẫn – giáp trong nhóm; câu thần kinh lấy từ thân bài."
+   }
   },
   "FMA55108": {
    "summary": {
@@ -7664,7 +7806,13 @@
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": "Đúng nghĩa; sụn nắp chỉ xuất hiện trong câu liệt kê chín sụn, không mô tả như mảnh."
+   }
   },
   "FMA312408": {
    "summary": {
@@ -7721,7 +7869,13 @@
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": "Đúng nghĩa; giữ phân chia thần kinh III/VI chỉ cho bốn cơ thẳng."
+   }
   },
   "FMA13354": {
    "summary": {
@@ -7729,8 +7883,8 @@
     "en": "Intercostal muscles are groups of muscles running between the ribs that help build and move the chest wall. There are three layers, external, internal and innermost; the innermost is separated from the internal layer by a neurovascular bundle."
    },
    "location": {
-    "vi": "Giữa các xương sườn. Cơ gian sườn ngoài đi từ xương sườn 1–11 tới xương sườn 2–12; cơ gian sườn trong đi từ xương sườn 2–12 tới xương sườn 1–11, thớ chạy vuông góc với thớ cơ gian sườn ngoài.",
-    "en": "Between the ribs. The external intercostals run from ribs 1–11 to ribs 2–12; the internal intercostals run from ribs 2–12 to ribs 1–11, with fibres at right angles to the external layer."
+    "vi": "Giữa các xương sườn. Cơ gian sườn ngoài đi từ xương sườn 1–11 tới xương sườn 2–12. Thớ cơ gian sườn trong chạy vuông góc với thớ cơ gian sườn ngoài; lớp trong cùng nằm sâu hơn lớp trong, thớ chạy cùng hướng với lớp trong.",
+    "en": "Between the ribs. The external intercostals run from ribs 1–11 to ribs 2–12. Fibres of the internal intercostals run at right angles to the external layer; the innermost layer lies deep to the internal one, its fibres running the same way."
    },
    "function": {
     "vi": "Chủ yếu tham gia cơ học của hô hấp, giúp lồng ngực nở ra và thu lại. Cơ gian sườn ngoài nâng xương sườn, hỗ trợ hít vào cả khi thở yên lẫn khi gắng sức; cơ gian sườn trong hạ xương sườn, hỗ trợ thở ra gắng sức (thở ra khi yên tĩnh là quá trình thụ động).",
@@ -7783,14 +7937,6 @@
     {
      "source": "wikipedia-en",
      "section": "Intercostal_muscles",
-     "quote": "They originate on ribs 2–12 and have their insertions on ribs 1–11.",
-     "supports": [
-      "location"
-     ]
-    },
-    {
-     "source": "wikipedia-en",
-     "section": "Intercostal_muscles",
      "quote": "The muscle fibers are directed downwards, backwards and laterally, perpendicular to the external intercostal muscles.",
      "supports": [
       "location"
@@ -7819,8 +7965,22 @@
      "supports": [
       "function"
      ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Intercostal_muscles",
+     "quote": "The muscle fibers are directed downwards, backwards and laterally, the same way as the internal intercostal muscles.",
+     "supports": [
+      "location"
+     ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Bỏ nguyên ủy/bám tận theo số xương sườn của cơ gian sườn trong (quy ước nguyên ủy–bám tận của lớp này khác nhau giữa các tài liệu, chỉ có một nguồn bách khoa); thêm hướng thớ của lớp trong cùng để vị trí nói được cả ba lớp mảnh kế thừa."
+   }
   },
   "FMA22823": {
    "summary": {
@@ -7874,7 +8034,13 @@
      ]
     }
    ],
-   "omitted": "Bài Wikipedia không có mục chức năng; thần kinh chi phối ghi 'nhánh sau thần kinh sống cổ', không đúng trọn cho cơ bán gai ngực nên bỏ."
+   "omitted": "Bài Wikipedia không có mục chức năng; thần kinh chi phối ghi 'nhánh sau thần kinh sống cổ', không đúng trọn cho cơ bán gai ngực nên bỏ.",
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": "Đúng nghĩa, đã đối chiếu chủ ngữ từng câu trích (đầu/cổ/ngực)."
+   }
   },
   "FMA32514": {
    "summary": {
@@ -7892,7 +8058,13 @@
       "summary"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": "Đúng nghĩa; giữ 'older definition'."
+   }
   },
   "FMA7591": {
    "summary": {
@@ -7933,7 +8105,13 @@
       "location"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": "Đúng nghĩa; câu về ba đôi và hai đôi cuối mô tả khái niệm, không gán cho bảy sụn trong nhóm."
+   }
   },
   "FMA55637": {
    "summary": {
@@ -7945,8 +8123,8 @@
     "en": "Between the canine in front and the molars behind, in both jaws: the first and second maxillary premolars and the first and second mandibular premolars."
    },
    "function": {
-    "vi": "Là răng chuyển tiếp khi nhai: thức ăn được chuyển từ răng nanh sang răng tiền hàm rồi tới răng hàm để nghiền, thay vì đi thẳng từ răng nanh sang răng hàm.",
-    "en": "They act as go-betweens in chewing: food passes from the canines to the premolars and then to the molars for grinding, rather than straight from canines to molars."
+    "vi": "Có thể xem là răng chuyển tiếp khi nhai: thức ăn được chuyển từ răng nanh sang răng tiền hàm rồi tới răng hàm để nghiền, thay vì đi thẳng từ răng nanh sang răng hàm.",
+    "en": "They can be thought of as go-betweens in chewing: food passes from the canines to the premolars and then to the molars for grinding, rather than straight from canines to molars."
    },
    "evidence": [
     {
@@ -7982,7 +8160,13 @@
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Giữ rào đón của nguồn ('can be considered'): 'là răng chuyển tiếp' → 'có thể xem là răng chuyển tiếp'."
+   }
   },
   "FMA274516": {
    "summary": {
@@ -8063,7 +8247,13 @@
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": "Đúng nghĩa; chức năng nêu chủ ngữ từng hồi, không gán cho cả nhóm; giữ 'about a third'."
+   }
   },
   "FMA52624": {
    "summary": {
@@ -8127,12 +8317,18 @@
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": "Đúng nghĩa; vị trí và chức năng nêu chủ ngữ là thần kinh mắt/các nhánh lớn."
+   }
   },
   "FMA52671": {
    "summary": {
-    "vi": "Nhánh của thần kinh mũi mi: thần kinh sàng sau, thần kinh sàng trước, các thần kinh mi dài, thần kinh dưới ròng rọc và nhánh nối với hạch mi. Thần kinh mũi mi là một nhánh của thần kinh mắt, có cỡ trung gian giữa hai nhánh kia là thần kinh trán và thần kinh lệ.",
-    "en": "A branch of the nasociliary nerve: the posterior and anterior ethmoidal nerves, the long ciliary nerves, the infratrochlear nerve and the communicating branch to the ciliary ganglion. The nasociliary nerve itself comes off the ophthalmic nerve and is middle-sized compared with that nerve's other two branches, the frontal and lacrimal nerves."
+    "vi": "Nhánh của thần kinh mũi mi. Các nhánh của thần kinh mũi mi gồm thần kinh sàng sau, thần kinh sàng trước, các thần kinh mi dài, thần kinh dưới ròng rọc và nhánh nối với hạch mi. Thần kinh mũi mi là một nhánh của thần kinh mắt, có cỡ trung gian giữa hai nhánh kia là thần kinh trán và thần kinh lệ.",
+    "en": "A branch of the nasociliary nerve. Its branches include the posterior and anterior ethmoidal nerves, the long ciliary nerves, the infratrochlear nerve and the communicating branch to the ciliary ganglion. The nasociliary nerve itself comes off the ophthalmic nerve and is middle-sized compared with that nerve's other two branches, the frontal and lacrimal nerves."
    },
    "location": {
     "vi": "Trong ổ mắt. Thần kinh mũi mi chạy chéo bên dưới cơ thẳng trên và cơ chéo trên tới thành trong ổ mắt, nơi nó tách ra thần kinh sàng sau và thần kinh sàng trước.",
@@ -8140,14 +8336,6 @@
    },
    "function": null,
    "evidence": [
-    {
-     "source": "wikipedia-en",
-     "section": "Nasociliary_nerve",
-     "quote": "ToPosterior ethmoidal nerve, anterior ethmoidal nerve, long ciliary nerves, infratrochlear nerve, communicating branch to ciliary ganglion",
-     "supports": [
-      "summary"
-     ]
-    },
     {
      "source": "wikipedia-en",
      "section": "Nasociliary_nerve",
@@ -8163,9 +8351,23 @@
      "supports": [
       "location"
      ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Nasociliary_nerve",
+     "quote": "Branches of the nasociliary nerve include: posterior ethmoidal nerve anterior ethmoidal nerve long ciliary nerves infratrochlear nerve communicating branch to ciliary ganglion",
+     "supports": [
+      "summary"
+     ]
     }
    ],
-   "omitted": "Câu về vùng chi phối cảm giác của các nhánh mang [citation needed] nên bỏ trống chức năng."
+   "omitted": "Câu về vùng chi phối cảm giác của các nhánh mang [citation needed] nên bỏ trống chức năng.",
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Câu trích danh sách nhánh lấy từ ô infobox ('ToPosterior…') — thay bằng danh sách ở mục Branches của thân bài; giữ 'include' (không khẳng định danh sách đủ)."
+   }
   },
   "FMA50863": {
    "summary": {
@@ -8224,20 +8426,26 @@
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": "Đúng nghĩa; giữ 'technically' và 'partial' (bắt chéo một phần, chỉ sợi nửa phía mũi)."
+   }
   },
   "FMA71856": {
    "summary": {
-    "vi": "Đoạn của cây đường mật. Đường mật là con đường mật do gan tiết ra được dẫn tới tá tràng; nó được gọi là cây vì bắt đầu bằng nhiều nhánh nhỏ và tận cùng ở ống mật chủ.",
-    "en": "A segment of the biliary tree, the route by which bile made in the liver travels to the duodenum. It is called a tree because it starts as many small branches and ends in the common bile duct."
+    "vi": "Đoạn của cây đường mật. Đường mật là con đường mật do gan tiết ra được dẫn tới tá tràng; nó thường được gọi là cây vì bắt đầu bằng nhiều nhánh nhỏ và tận cùng ở ống mật chủ.",
+    "en": "A segment of the biliary tree, the route by which bile made in the liver travels to the duodenum. It is often called a tree because it starts as many small branches and ends in the common bile duct."
    },
    "location": {
     "vi": "Trong và ngay dưới gan. Mật đi từ tiểu quản mật qua các ống mật nhỏ trong gan tới ống gan phải và trái; ống gan chung ra khỏi gan và hợp với ống túi mật để tạo thành ống mật chủ.",
     "en": "Inside and just below the liver. Bile moves from the canaliculi through small intrahepatic ducts to the left and right hepatic ducts; the common hepatic duct leaves the liver and meets the cystic duct to form the common bile duct."
    },
    "function": {
-    "vi": "Dẫn mật: gan tiết mật vào các ống nhỏ, các ống này hợp lại thành ống gan chung. Giữa các bữa ăn mật được trữ trong túi mật; trong bữa ăn mật được đổ vào tá tràng, giúp hấp thu chất béo.",
-    "en": "Carries bile: the liver releases it into small ducts that merge into the common hepatic duct. Between meals bile is stored in the gallbladder; during a meal it is released into the duodenum, helping the body absorb fats."
+    "vi": "Dẫn mật: gan tiết mật vào các ống nhỏ, các ống này hợp lại thành ống gan chung. Giữa các bữa ăn mật được trữ trong túi mật; trong bữa ăn mật được đổ vào tá tràng, vừa để thải các chất thải chứa trong mật, vừa giúp hấp thu chất béo.",
+    "en": "Carries bile: the liver releases it into small ducts that merge into the common hepatic duct. Between meals bile is stored in the gallbladder; during a meal it is released into the duodenum, both to clear waste carried in the bile and to help the body absorb fats."
    },
    "evidence": [
     {
@@ -8291,12 +8499,18 @@
     {
      "source": "wikipedia-en",
      "section": "Biliary_tract",
-     "quote": "as well as aid in the absorption of dietary fats and oils.",
+     "quote": "to rid the body of waste stored in the bile as well as aid in the absorption of dietary fats and oils.",
      "supports": [
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Chức năng bỏ mất vế 'thải chất thải theo mật' (chọn một kể như tất cả) — thêm lại; giữ 'often' trong 'thường được gọi là cây'."
+   }
   },
   "FMA61063": {
    "summary": {
@@ -8338,7 +8552,13 @@
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": "Đúng nghĩa; tóm tắt nói rõ hồ lệ cũng thuộc nhóm."
+   }
   },
   "FMA22671": {
    "summary": {
@@ -8407,7 +8627,13 @@
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": "Đúng nghĩa; giữ 'generally overlapped'; bảng nhánh đã đối chiếu từng hàng."
+   }
   },
   "FMA22654": {
    "summary": {
@@ -8419,18 +8645,10 @@
     "en": "It begins at the outer border of the first rib, before which it is the subclavian artery, and becomes the brachial artery once past the lower border of teres major. In the armpit it is surrounded by the brachial plexus, with the axillary vein running along its inner side."
    },
    "function": {
-    "vi": "Mang máu giàu oxy tới mặt bên lồng ngực, vùng nách và chi trên.",
-    "en": "Delivers oxygenated blood to the side of the chest, the armpit and the upper limb."
+    "vi": "Động mạch nách mang máu giàu oxy tới mặt bên lồng ngực, vùng nách và chi trên.",
+    "en": "The axillary artery delivers oxygenated blood to the side of the chest, the armpit and the upper limb."
    },
    "evidence": [
-    {
-     "source": "wikipedia-en",
-     "section": "Axillary_artery",
-     "quote": "BranchesSuperior thoracicthoracoacromiallateral thoracicsubscapularanterior circumflex humeralposterior circumflex humeralcontinues as brachial artery",
-     "supports": [
-      "summary"
-     ]
-    },
     {
      "source": "wikipedia-en",
      "section": "Axillary_artery",
@@ -8479,13 +8697,27 @@
      "supports": [
       "location"
      ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Axillary_artery",
+     "quote": "Third part (3 branches) Subscapular artery Anterior humeral circumflex artery Posterior humeral circumflex artery",
+     "supports": [
+      "summary"
+     ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Câu trích nhánh lấy từ infobox — thay bằng danh sách nhánh đoạn ba ở thân bài. Chức năng nêu rõ chủ thể là động mạch nách (sai nếu đọc như chức năng của động mạch mũ cánh tay cũng kế thừa đoạn này)."
+   }
   },
   "FMA70353": {
    "summary": {
-    "vi": "Các nhánh thuộc thân giáp – cổ. Thân giáp – cổ là động mạch rất nhỏ ở cổ, tách từ động mạch dưới đòn ở phía ngoài động mạch đốt sống, rồi chia thành động mạch giáp dưới, động mạch trên vai và động mạch ngang cổ. Trong một phần ba số trường hợp, động mạch cổ nông và động mạch vai sau tách ra dưới dạng động mạch ngang cổ.",
-    "en": "Branches of the thyrocervical trunk, a very small neck artery that leaves the subclavian artery lateral to the vertebral artery and divides into the inferior thyroid, suprascapular and transverse cervical arteries. In a third of cases the superficial cervical and dorsal scapular arteries arise as the transverse cervical artery."
+    "vi": "Các động mạch FMA xếp vào nhóm phân nhánh của thân giáp – cổ. Thân giáp – cổ là động mạch rất nhỏ ở cổ, tách từ động mạch dưới đòn ở phía ngoài động mạch đốt sống, rồi chia thành động mạch giáp dưới, động mạch trên vai và động mạch ngang cổ. Động mạch cổ nông và động mạch vai sau: trong một phần ba số trường hợp, chúng tách ra dưới dạng động mạch ngang cổ.",
+    "en": "Arteries that FMA groups as subdivisions of the thyrocervical trunk, a very small neck artery that leaves the subclavian artery lateral to the vertebral artery and divides into the inferior thyroid, suprascapular and transverse cervical arteries. As for the superficial cervical and dorsal scapular arteries, in a third of cases they arise as the transverse cervical artery."
    },
    "location": {
     "vi": "Ở cổ. Thân tách từ đoạn một của động mạch dưới đòn. Động mạch trên vai và động mạch ngang cổ đều đi ra ngoài, bắt chéo phía trước cơ bậc thang trước và thần kinh hoành; động mạch giáp dưới đi lên tới phần dưới tuyến giáp.",
@@ -8536,7 +8768,13 @@
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "'Các nhánh thuộc thân giáp – cổ' khẳng định cho cả động mạch vai sau và cổ nông, trong khi nguồn chỉ ghi chúng tách theo đường ấy ở một phần ba số trường hợp — đổi thành 'FMA xếp vào nhóm' và gắn câu một phần ba vào đúng hai động mạch này."
+   }
   },
   "FMA67943": {
    "summary": {
@@ -8601,7 +8839,13 @@
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": "Đúng nghĩa; giữ 'about 2.5 cm'."
+   }
   },
   "FMA62004": {
    "summary": {
@@ -8609,8 +8853,8 @@
     "en": "The medulla oblongata is a long, stalk-like, cone-shaped mass of neurons forming the lower part of the brainstem."
    },
    "location": {
-    "vi": "Phần thấp nhất của thân não, ở trước và hơi dưới tiểu não. Hành não thò ra qua lỗ lớn xương chẩm, rồi nối tiếp thành tủy sống.",
-    "en": "The lowest part of the brainstem, in front of and partly below the cerebellum. It passes through the foramen magnum and carries on as the spinal cord."
+    "vi": "Phần thấp nhất của thân não, ở trước và hơi dưới tiểu não. Hành não nối các tầng cao hơn của não với tủy sống.",
+    "en": "The lowest part of the brainstem, in front of and partly below the cerebellum. It links the higher levels of the brain with the spinal cord."
    },
    "function": {
     "vi": "Đảm nhận các chức năng tự chủ (không theo ý muốn), từ nôn tới hắt hơi. Hành não chứa trung tâm tim mạch, trung tâm hô hấp, trung tâm nôn và trung tâm vận mạch, điều hòa nhịp thở, nhịp tim, huyết áp và cả chu kỳ thức – ngủ.",
@@ -8638,20 +8882,26 @@
     {
      "source": "wikipedia-en",
      "section": "Medulla_oblongata",
-     "quote": "Medulla-animated as it protrudes from the foramen magnum of the skull-base, after which it gives rise to the spinal cord.",
+     "quote": "The medulla contains the cardiovascular center, the respiratory center, vomiting and vasomotor centers, responsible for the autonomic functions of breathing, heart rate and blood pressure as well as the sleep–wake cycle.",
      "supports": [
-      "location"
+      "function"
      ]
     },
     {
      "source": "wikipedia-en",
      "section": "Medulla_oblongata",
-     "quote": "The medulla contains the cardiovascular center, the respiratory center, vomiting and vasomotor centers, responsible for the autonomic functions of breathing, heart rate and blood pressure as well as the sleep–wake cycle.",
+     "quote": "The medulla oblongata connects the higher levels of the brain to the spinal cord",
      "supports": [
-      "function"
+      "location"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Câu 'thò ra qua lỗ lớn xương chẩm rồi thành tủy sống' trích từ chú thích hình ('Medulla-animated…') — thay bằng câu thân bài về nối não với tủy sống."
+   }
   },
   "FMA62008": {
    "summary": {
@@ -8717,7 +8967,13 @@
      ]
     }
    ],
-   "omitted": "Bỏ các hành vi xã hội, nuôi con, tình dục — đoạn nguồn kể dài, viết rút dễ sai mức độ."
+   "omitted": "Bỏ các hành vi xã hội, nuôi con, tình dục — đoạn nguồn kể dài, viết rút dễ sai mức độ.",
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": "Đúng nghĩa; giữ 'certain'; phần hành vi nuôi con/xã hội bỏ có ghi omitted."
+   }
   },
   "FMA62007": {
    "summary": {
@@ -8797,7 +9053,13 @@
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": "Đúng nghĩa; giữ 'generally believed' và 'may be subdivided… at least'."
+   }
   },
   "FMA58235": {
    "summary": {
@@ -8863,7 +9125,13 @@
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": "Đúng nghĩa, đã đối chiếu chủ ngữ câu cơ thắt/cơ giãn đồng tử."
+   }
   },
   "FMA58298": {
    "summary": {
@@ -8871,8 +9139,8 @@
     "en": "The choroid is part of the uvea, the eye's vascular layer, and contains connective tissue. Together with the ciliary body and iris it makes up the uveal tract."
    },
    "location": {
-    "vi": "Nằm giữa võng mạc và củng mạc. Ở người, màng mạch dày nhất ở tận cùng phía sau mắt (0,2 mm) và mỏng dần còn 0,1 mm ở vùng ngoại vi.",
-    "en": "Between the retina and the sclera. In humans it is thickest at the very back of the eye (0.2 mm) and thins to 0.1 mm toward the periphery."
+    "vi": "Nằm giữa võng mạc và củng mạc. Ở người, màng mạch dày nhất ở tận cùng phía sau mắt và mỏng dần về vùng ngoại vi.",
+    "en": "Between the retina and the sclera. In humans it is thickest at the very back of the eye and thins toward the periphery."
    },
    "function": {
     "vi": "Cung cấp oxy và dưỡng chất cho các lớp ngoài của võng mạc.",
@@ -8912,7 +9180,13 @@
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Bỏ số đo độ dày (0,2 mm / 0,1 mm): con số chỉ có nguồn bách khoa, không có nguồn bậc 1–3; giữ xu hướng dày ở sau, mỏng ở ngoại vi."
+   }
   },
   "FMA58238": {
    "summary": {
@@ -8978,7 +9252,13 @@
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": "Đúng nghĩa; giữ 'about' và 'approximately'."
+   }
   },
   "FMA58269": {
    "summary": {
@@ -9026,7 +9306,13 @@
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": "Đúng nghĩa; ba vế chức năng giữ đủ."
+   }
   },
   "FMA7232": {
    "summary": {
@@ -9085,7 +9371,13 @@
      ]
     }
    ],
-   "omitted": "Không chép tên lá van của Wikipedia (trái/phải/trước, trái/phải/sau): FMA và mô hình dùng hệ tên khác (trước, sau phải, sau trái…)."
+   "omitted": "Không chép tên lá van của Wikipedia (trái/phải/trước, trái/phải/sau): FMA và mô hình dùng hệ tên khác (trước, sau phải, sau trái…).",
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": "Đúng nghĩa, đúng cho cả lá van động mạch chủ và động mạch phổi."
+   }
   },
   "FMA67598": {
    "summary": {
@@ -9142,7 +9434,13 @@
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": "Đúng nghĩa, đúng cho cả van hai lá và van ba lá."
+   }
   },
   "FMA268955": {
    "summary": {
@@ -9208,7 +9506,13 @@
      ]
     }
    ],
-   "omitted": "Không chép tên cơ nhú tâm thất trái của Wikipedia (trước ngoài, sau trong): FMA dùng tên khác (cơ nhú ngoài…)."
+   "omitted": "Không chép tên cơ nhú tâm thất trái của Wikipedia (trước ngoài, sau trong): FMA dùng tên khác (cơ nhú ngoài…).",
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": "Đúng nghĩa; tên cơ nhú tâm thất trái theo Wikipedia không chép (đã ghi omitted)."
+   }
   },
   "FMA46620": {
    "summary": {
@@ -9220,8 +9524,8 @@
     "en": "In the wall of the pharynx, behind the oral cavity."
    },
    "function": {
-    "vi": "Khi nuốt, các cơ khít hầu co lại để đẩy viên thức ăn xuống thực quản. Chúng được nhánh hầu của thần kinh lang thang (dây X) chi phối.",
-    "en": "In swallowing the constrictors squeeze to drive the food bolus down into the oesophagus. Their nerve supply comes from the vagus (CN X), through its pharyngeal branch."
+    "vi": "Khi nuốt, các cơ khít hầu co lại để đẩy viên thức ăn xuống thực quản.",
+    "en": "In swallowing the constrictors squeeze to drive the food bolus down into the oesophagus."
    },
    "evidence": [
     {
@@ -9256,16 +9560,15 @@
      "supports": [
       "function"
      ]
-    },
-    {
-     "source": "wikipedia-en",
-     "section": "Pharyngeal_muscles",
-     "quote": "They are innervated by the pharyngeal branch of the vagus nerve (CN X) with the exception of the stylopharyngeus muscle",
-     "supports": [
-      "function"
-     ]
     }
-   ]
+   ],
+   "omitted": "Không nêu thần kinh chi phối: câu nguồn nói chung cho mọi cơ hầu (trừ cơ trâm – hầu) và không nói riêng cho từng cơ khít; viết 'các cơ khít hầu do nhánh hầu dây X chi phối' là đẩy một câu chung thành khẳng định riêng cho cả ba mảnh, nhất là cơ khít hầu dưới.",
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Cắt câu thần kinh chi phối (câu nguồn nói chung cho nhóm cơ hầu, chủ ngữ 'They' mơ hồ, không đủ chắc cho cơ khít hầu dưới)."
+   }
   },
   "FMA242787": {
    "summary": {
@@ -9277,8 +9580,8 @@
     "en": "Within the brain. The interventricular foramina (of Monro) join the lateral ventricles to the third ventricle, and from the fourth ventricle the system carries on into the central canal of the spinal cord."
    },
    "function": {
-    "vi": "Sản xuất và lưu thông dịch não tủy: mỗi não thất có một vùng đám rối mạch mạc tiết ra dịch này.",
-    "en": "Produces and circulates cerebrospinal fluid: each ventricle contains an area of choroid plexus that makes it."
+    "vi": "Hệ não thất sản xuất và lưu thông dịch não tủy: mỗi não thất có một vùng đám rối mạch mạc tiết ra dịch này.",
+    "en": "The ventricular system produces and circulates cerebrospinal fluid: each ventricle contains an area of choroid plexus that makes it."
    },
    "evidence": [
     {
@@ -9338,7 +9641,13 @@
      ]
     }
    ],
-   "omitted": "Câu Wikipedia về vị trí não thất ba/bốn bị hỏng chữ ('the diencephalon medulla oblongata of the hindbrain') nên không dùng."
+   "omitted": "Câu Wikipedia về vị trí não thất ba/bốn bị hỏng chữ ('the diencephalon medulla oblongata of the hindbrain') nên không dùng.",
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Nêu rõ chủ ngữ là cả hệ não thất: cống não (cũng kế thừa đoạn này) chỉ dẫn dịch, không tiết dịch."
+   }
   },
   "FMA274518": {
    "summary": {
@@ -9386,12 +9695,18 @@
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": "Đúng nghĩa; giữ 'appears to be involved' (có vẻ)."
+   }
   },
   "FMA274528": {
    "summary": {
-    "vi": "Hồi của thùy viền. Thùy viền là vùng vỏ não hình cung thuộc hệ viền, trên mặt trong mỗi bán cầu, gồm các phần của thùy trán, thùy đỉnh và thùy thái dương. Thuật ngữ này không thống nhất: một số tác giả xếp vào đó hồi đai, hồi cạnh hải mã, hồi răng, hải mã và hồi hải mã phụ.",
-    "en": "A gyrus of the limbic lobe, a curved strip of limbic-system cortex on each hemisphere's inner face that borrows parts of the frontal, parietal and temporal lobes. Usage of the term varies; some authors count the cingulate, parahippocampal and dentate gyri, hippocampus and subiculum."
+    "vi": "Hồi của thùy viền. Thùy viền là vùng vỏ não hình cung thuộc hệ viền, trên mặt trong mỗi bán cầu, gồm các phần của thùy trán, thùy đỉnh và thùy thái dương.",
+    "en": "A gyrus of the limbic lobe, a curved strip of limbic-system cortex on each hemisphere's inner face that borrows parts of the frontal, parietal and temporal lobes."
    },
    "location": {
     "vi": "Trên mặt trong của mỗi bán cầu đại não.",
@@ -9407,25 +9722,15 @@
       "summary",
       "location"
      ]
-    },
-    {
-     "source": "wikipedia-en",
-     "section": "Limbic_lobe",
-     "quote": "The term is ambiguous, with some authors",
-     "supports": [
-      "summary"
-     ]
-    },
-    {
-     "source": "wikipedia-en",
-     "section": "Limbic_lobe",
-     "quote": "including the paraterminal gyrus, the subcallosal area, the cingulate gyrus, the parahippocampal gyrus, the dentate gyrus, the hippocampus and the subiculum",
-     "supports": [
-      "summary"
-     ]
     }
    ],
-   "omitted": "Bỏ trống chức năng: mỗi hồi một vai trò (hải mã – trí nhớ) và bài thùy viền chỉ nêu lịch sử khái niệm."
+   "omitted": "Bỏ trống chức năng: mỗi hồi một vai trò (hải mã – trí nhớ) và bài thùy viền chỉ nêu lịch sử khái niệm. Bỏ câu 'thuật ngữ không thống nhất, một số tác giả xếp vào…': câu nguồn mang [who?] và bị cụt giữa chừng.",
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Cắt câu 'một số tác giả xếp vào…': nguồn gắn [who?] và câu bị cụt; bản nháp còn bỏ sót hồi cận tận cùng, vùng dưới thể chai và dịch 'subiculum' thành 'hồi hải mã phụ' không chuẩn."
+   }
   }
  }
 }

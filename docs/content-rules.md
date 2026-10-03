@@ -737,6 +737,25 @@ xem `resolveContent` trước khi viết; trích từ chú thích hình, navbox 
 nhau. Bách khoa toàn thư không bao giờ là nguồn sơ cấp: dùng được cho dữ kiện giải phẫu cơ
 bản đã kiểm trong ngữ cảnh, còn con số và claim còn tranh cãi cần nguồn bậc 1–3.
 
+**Lô Wikipedia thứ hai (48 mục, 2026-10-03): science-editor sửa 20, loại 0.** Chọn theo mức phủ đo
+trên từng MẢNH (1.143 → 1.694/2.234), kèm danh sách mảnh sẽ kế thừa từng mục cho người duyệt. Lỗi mới
+so với lô đầu:
+- Câu trích ngoài thân bài vẫn lọt máy: ô infobox dính liền ("ToPosterior…", "BranchesSuperior…"),
+  chú thích hình ("Medulla-animated…"), tiêu đề danh sách rỗng ("It contains the plantar flexors:").
+  Văn bản đã tải gộp hết thành một chuỗi nên máy không phân biệt được — người viết phải.
+- Thẻ bảo trì nào cũng loại câu, không chỉ [citation needed]: [who?], [dubious], câu nguồn bị cụt.
+- Nguồn tả N cái, nhóm mảnh có N+1 (ba động mạch gan ngón chung vs bốn trong FMA); "trong một phần
+  ba trường hợp" viết như luôn luôn. Lệch số đếm thì bỏ con số, không chọn bên.
+- Vùng cấp máu/chức năng của thân gán cho nhánh: thân động mạch não sau nuôi thùy chẩm không có
+  nghĩa từng nhánh vỏ cũng vậy; câu thần kinh chi phối chung cho "các cơ hầu" không nói riêng cho
+  cơ khít.
+- Số đo chỉ có nguồn bách khoa (độ dày màng mạch, phần cung lượng tim qua thận) bị bỏ; số đếm
+  giải phẫu cơ bản (năm cơ nhú, chín sụn thanh quản) giữ.
+- Lý do trong `omitted` cũng là một claim: "nhánh sâu đều từ A1" sai vì động mạch Heubner tách ở A2.
+- Nhóm FMA gộp mạch không đổ thẳng vào mạch đích (nhánh tĩnh mạch chậu trong có tĩnh mạch cùng
+  giữa; nhánh tĩnh mạch đùi có tĩnh mạch mác) thì không viết mục: đoạn văn đúng cho mạch đích vẫn
+  sai cho mảnh lạc nhóm.
+
 **Tiếng Việt dịch sát câu nguồn: chấp nhận** (chủ sản phẩm chốt 2026-09-28). science-editor
 nêu rằng bản tiếng Việt của Level 2 bám cấu trúc câu OpenStax, có thể bị coi là phái sinh
 dưới NC-SA. Chủ sản phẩm chấp nhận như hiện tại. Luật chặn ≥10 từ trùng chỉ áp cho tiếng
