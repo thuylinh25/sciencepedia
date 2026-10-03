@@ -359,6 +359,7 @@
     "roleUser": "Member",
     "roleEditor": "Editor",
     "roleAdmin": "Admin",
+    "joined": "Joined",
     "activity": {
       "column": "Viewed",
       "summary": "{articles} articles · {models} models",

@@ -77,7 +77,7 @@ export default async function AdminUsersPage({
             {activity && (
               <TableHead className="w-44">{t("activity.column")}</TableHead>
             )}
-            <TableHead className="w-32">{t("save")}</TableHead>
+            <TableHead className="w-32">{t("joined")}</TableHead>
             <TableHead className="w-64">{t("resetLink")}</TableHead>
             <TableHead className="w-44">{t("role")}</TableHead>
           </TableRow>
@@ -126,7 +126,7 @@ export default async function AdminUsersPage({
                         className="flex flex-col rounded-sm hover:underline focus-visible:underline"
                         aria-label={`${t("activity.action")}: ${user.name ?? user.email}`}
                       >
-                        <span className="text-sm tabular-nums">
+                        <span className="text-sm whitespace-nowrap tabular-nums">
                           {t("activity.summary", {
                             articles: summary?.articles ?? 0,
                             models: summary?.models ?? 0,
@@ -143,7 +143,7 @@ export default async function AdminUsersPage({
                 </TableCell>
               )}
 
-              <TableCell className="text-muted-foreground">
+              <TableCell className="whitespace-nowrap text-muted-foreground">
                 {formatDate(user.createdAt, locale)}
               </TableCell>
 

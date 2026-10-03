@@ -359,6 +359,7 @@
     "roleUser": "Thành viên",
     "roleEditor": "Biên tập",
     "roleAdmin": "Quản trị",
+    "joined": "Tham gia",
     "activity": {
       "column": "Đã xem",
       "summary": "{articles} bài · {models} mô hình",
