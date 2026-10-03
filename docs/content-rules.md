@@ -756,6 +756,21 @@ so với lô đầu:
   giữa; nhánh tĩnh mạch đùi có tĩnh mạch mác) thì không viết mục: đoạn văn đúng cho mạch đích vẫn
   sai cho mảnh lạc nhóm.
 
+**Lô Wikipedia thứ ba (85 mục, 2026-10-03): sửa 42, loại 0.** Phần lớn mảnh còn thiếu là cấu
+trúc đơn lẻ có chuỗi is-a dài hơn bốn bước nên không chạm mục chung ("Tĩnh mạch đùi" không tới
+"Tĩnh mạch") — phải viết mục riêng, mỗi mục chỉ phủ hai mảnh trái/phải. Lỗi mới:
+- Câu trích cắt giữa chữ hay cắt trước mốc so sánh ("on the opposite" mất "so với nhân của nó").
+  Trích trọn mệnh đề.
+- Câu nguồn nói về một phần bị dùng cho phần khác: "main function at the elbow" là của đầu dài
+  cơ nhị đầu, không chống lưng được đầu ngắn; nhu động "đẩy lên" chỉ của kết tràng lên.
+- Lượng từ bị dời phạm vi: "ba hoặc bốn tĩnh mạch nuôi ở mỗi phổi" ≠ "mỗi tĩnh mạch phổi nhận
+  ba hoặc bốn".
+- Rút gọn để lại mô hình sai: "hai dây thị bắt chéo" phải nói bắt chéo MỘT PHẦN.
+- Thuật ngữ: epithalamus = vùng trên đồi (không phải "biểu mô đồi"); telencephalon = đoan não;
+  subthalamus ghi kèm tên Anh để khỏi lẫn với vùng dưới đồi.
+- Infobox lại là nguồn trích nhiều nhất (11 mục) — câu thân bài tương ứng mang [citation needed]
+  thì bỏ vế, không quay về infobox.
+
 **Tiếng Việt dịch sát câu nguồn: chấp nhận** (chủ sản phẩm chốt 2026-09-28). science-editor
 nêu rằng bản tiếng Việt của Level 2 bám cấu trúc câu OpenStax, có thể bị coi là phái sinh
 dưới NC-SA. Chủ sản phẩm chấp nhận như hiện tại. Luật chặn ≥10 từ trùng chỉ áp cho tiếng

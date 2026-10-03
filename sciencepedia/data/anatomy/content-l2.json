@@ -9742,8 +9742,8 @@
     "en": "It starts at the adductor hiatus, an opening in adductor magnus, continuing on from the popliteal vein, and ends at the lower edge of the inguinal ligament, where it turns into the external iliac vein."
    },
    "function": {
-    "vi": "Dẫn máu từ các cơ sâu của đùi; nhận máu của tĩnh mạch hiển lớn và tĩnh mạch đùi sâu ở tam giác đùi.",
-    "en": "Drains the deep muscles of the thigh, and collects the great saphenous and deep femoral veins in the femoral triangle."
+    "vi": "Dẫn máu từ các cơ sâu của đùi và từ xương đùi; nhận máu của tĩnh mạch hiển lớn và tĩnh mạch đùi sâu ở tam giác đùi.",
+    "en": "Drains the deep muscles of the thigh and the femur, and collects the great saphenous and deep femoral veins in the femoral triangle."
    },
    "evidence": [
     {
@@ -9775,12 +9775,18 @@
     {
      "source": "wikipedia-en",
      "section": "Femoral_vein",
-     "quote": "It drains blood from the deep thigh muscl",
+     "quote": "It drains blood from the deep thigh muscles and thigh bone.",
      "supports": [
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Câu trích bị cụt giữa chữ ('muscl') — thay bằng câu đầy đủ; câu nguồn kể cả xương đùi nên thêm vế đó (không chọn một kể như tất cả)."
+   }
   },
   "FMA21376": {
    "summary": {
@@ -9830,7 +9836,13 @@
      ]
     }
    ],
-   "omitted": "Câu mở đầu ghi đổ vào 'deep femoral vein' trong khi đoạn sau ghi đổ vào tĩnh mạch đùi; viết theo đoạn sau và câu 'trả máu về hệ sâu ở tam giác đùi'."
+   "omitted": "Câu mở đầu ghi đổ vào 'deep femoral vein' trong khi đoạn sau ghi đổ vào tĩnh mạch đùi; viết theo đoạn sau và câu 'trả máu về hệ sâu ở tam giác đùi'.",
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA44333": {
    "summary": {
@@ -9887,7 +9899,13 @@
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA44327": {
    "summary": {
@@ -9943,7 +9961,13 @@
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA4725": {
    "summary": {
@@ -9993,7 +10017,13 @@
       "location"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA4724": {
    "summary": {
@@ -10005,8 +10035,8 @@
     "en": "Its origin lies in the rear compartment of the jugular foramen at the skull base, where a slight swelling forms the superior bulb. It descends vertically along the neck within the carotid sheath beside the common carotid artery and vagus nerve, and at the neck's root merges with the subclavian vein into the brachiocephalic vein."
    },
    "function": {
-    "vi": "Dẫn máu từ não, mặt và cổ về tim; một thân chung nhận tĩnh mạch mặt, tĩnh mạch lưỡi và nhánh trước tĩnh mạch sau hàm.",
-    "en": "Carries blood from the brain, face and neck back toward the heart; a shared trunk brings in the facial and lingual veins and the anterior branch of the retromandibular vein."
+    "vi": "Nhận máu từ não và từ phần nông của mặt và cổ; một thân chung nhận tĩnh mạch mặt, tĩnh mạch lưỡi và nhánh trước tĩnh mạch sau hàm.",
+    "en": "Collects blood from the brain and from the superficial face and neck; a shared trunk brings in the facial and lingual veins and the anterior branch of the retromandibular vein."
    },
    "evidence": [
     {
@@ -10042,8 +10072,22 @@
      "supports": [
       "function"
      ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Internal_jugular_vein",
+     "quote": "It runs down the side of the neck in a vertical direction",
+     "supports": [
+      "location"
+     ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Chức năng 'dẫn máu từ não, mặt và cổ về tim' nới chủ thể (nguồn: phần NÔNG của mặt và cổ) và thêm đích 'về tim' nguồn không nói ở đây — viết lại theo câu nguồn. Thêm câu nguồn cho vế 'chạy thẳng xuống bên cổ' vốn chưa có chỗ dựa."
+   }
   },
   "FMA4706": {
    "summary": {
@@ -10085,12 +10129,18 @@
       "location"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA322369": {
    "summary": {
-    "vi": "Tĩnh mạch chày (trước và sau) là các tĩnh mạch sâu của cẳng chân, đi kèm động mạch cùng tên. Tĩnh mạch chày trước và tĩnh mạch chày sau hợp lại thành tĩnh mạch khoeo.",
-    "en": "The tibial veins, anterior and posterior, are deep veins of the leg that travel with the arteries of the same names. The two join to form the popliteal vein."
+    "vi": "Tĩnh mạch chày trước và tĩnh mạch chày sau là các tĩnh mạch của cẳng chân, mỗi tĩnh mạch đi kèm động mạch cùng tên. Tĩnh mạch chày trước và tĩnh mạch chày sau hợp lại thành tĩnh mạch khoeo.",
+    "en": "The anterior and posterior tibial veins are veins of the leg, each running with the artery of the same name. The anterior and posterior tibial veins unite to form the popliteal vein."
    },
    "location": {
     "vi": "Hai tĩnh mạch chày trước bắt đầu từ cung tĩnh mạch mu bàn chân và đi lên ở màng gian cốt giữa xương chày và xương mác. Tĩnh mạch chày sau nhận máu từ các tĩnh mạch gan chân trong và ngoài, nằm sau mắt cá trong ở cổ chân.",
@@ -10160,7 +10210,13 @@
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Nguồn chỉ gọi tĩnh mạch chày trước là tĩnh mạch sâu ('like most deep veins in legs'); bài tĩnh mạch chày sau không nói 'sâu' — bỏ chữ 'sâu' khỏi câu áp cho cả nhóm, giữ 'đi kèm động mạch cùng tên' (cả hai bài đều nói)."
+   }
   },
   "FMA44558": {
    "summary": {
@@ -10190,7 +10246,13 @@
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA49907": {
    "summary": {
@@ -10202,8 +10264,8 @@
     "en": "At the root of the right lung, the superior vein sits in front of the pulmonary artery and slightly lower, while the inferior one occupies the bottom of the hilum. The main veins open into the left atrium; those of the right lung run behind the right atrium and superior vena cava."
    },
    "function": {
-    "vi": "Đưa máu giàu oxy từ phổi về tim. Mỗi tĩnh mạch phổi chính nhận máu từ ba hoặc bốn tĩnh mạch nuôi trong phổi; các tĩnh mạch này không đi theo cây phế quản mà chạy giữa các phân thùy phổi.",
-    "en": "Bring oxygen-rich blood from the lungs to the heart. Each main vein collects from three or four feeder veins, which do not follow the bronchial tree but run between the lung segments they drain."
+    "vi": "Đưa máu giàu oxy từ phổi về tim. Ở mỗi phổi, các tĩnh mạch phổi chính nhận máu từ ba hoặc bốn tĩnh mạch nuôi; các tĩnh mạch nuôi ngoại vi không đi theo cây phế quản mà chạy giữa các phân thùy phổi mà chúng dẫn máu.",
+    "en": "Bring oxygen-rich blood from the lungs to the heart. In each lung the main veins are fed by three or four feeder veins; the peripheral feeders do not follow the bronchial tree but run between the lung segments they drain."
    },
    "evidence": [
     {
@@ -10255,7 +10317,13 @@
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Sai số đếm: nguồn nói 'ba hoặc bốn tĩnh mạch nuôi ở MỖI PHỔI', bản nháp viết 'mỗi tĩnh mạch phổi chính nhận từ ba hoặc bốn' — sửa lại đúng phạm vi. Câu biến thể số tĩnh mạch đổ vào nhĩ trái mang [citation needed], không dùng."
+   }
   },
   "FMA22689": {
    "summary": {
@@ -10304,7 +10372,13 @@
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA3789": {
    "summary": {
@@ -10312,12 +10386,12 @@
     "en": "Largest artery of the abdominal cavity, the abdominal aorta continues straight on from the thoracic descending aorta."
    },
    "location": {
-    "vi": "Bắt đầu ngang đốt sống T12, nơi đi qua lỗ động mạch chủ của cơ hoành; chạy xuống thành sau bụng, trước cột sống, theo độ cong lồi ra trước của các đốt sống thắt lưng. Tĩnh mạch chủ dưới chạy song song ngay bên phải nó.",
-    "en": "It begins at vertebral level T12, passing through the aortic hiatus of the diaphragm, and descends the back wall of the abdomen in front of the spine, following the forward curve of the lumbar vertebrae. The inferior vena cava runs parallel just to its right."
+    "vi": "Bắt đầu ngang đốt sống T12, nơi đi qua lỗ động mạch chủ của cơ hoành; chạy xuống thành sau bụng, trước cột sống, theo độ cong lồi ra trước của các đốt sống thắt lưng. Tĩnh mạch chủ dưới chạy song song ngay bên phải nó. Kết thúc ngang L4, nơi chia đôi thành hai động mạch chậu chung.",
+    "en": "It begins at vertebral level T12, passing through the aortic hiatus of the diaphragm, and descends the back wall of the abdomen in front of the spine, following the forward curve of the lumbar vertebrae. The inferior vena cava runs parallel just to its right. It ends at L4, splitting into the two common iliac arteries."
    },
    "function": {
-    "vi": "Các nhánh của nó gồm động mạch thân tạng, động mạch mạc treo tràng trên, động mạch mạc treo tràng dưới và hai động mạch chậu chung; đường kính nhỏ dần khi tách nhánh.",
-    "en": "Its branches include the celiac, superior and inferior mesenteric and common iliac arteries, and it narrows as it gives them off."
+    "vi": "Cấp máu cho phần lớn khoang bụng; đường kính nhỏ dần khi tách nhánh.",
+    "en": "Supplies much of the abdominal cavity, and narrows as it gives off branches."
    },
    "evidence": [
     {
@@ -10356,12 +10430,19 @@
     {
      "source": "wikipedia-en",
      "section": "Abdominal_aorta",
-     "quote": "BranchesCeliac artery, superior mesenteric artery, inferior mesenteric artery, common iliac",
+     "quote": "The abdominal aorta supplies blood to much of the abdominal cavity. It begins at T12 and ends at L4 with its bifurcation into the common iliac arteries",
      "supports": [
+      "location",
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Danh sách nhánh trích từ ô infobox ('BranchesCeliac artery…') — bỏ; thay bằng câu thân bài về vùng cấp máu và chỗ chia đôi thành hai động mạch chậu chung. Không chép bảng nhánh đã bị làm phẳng."
+   }
   },
   "FMA87217": {
    "summary": {
@@ -10373,8 +10454,8 @@
     "en": "In the posterior mediastinum, frequently bulging into the left pleural cavity. It runs from the lower border of the fourth thoracic vertebra to in front of the lower border of the twelfth, at the diaphragm's aortic hiatus, where it becomes the abdominal aorta. It starts to the left of the spine and moves toward the midline as it descends."
    },
    "function": {
-    "vi": "Cho các nhánh phế quản, thực quản, gian sườn sau, hoành trên và màng ngoài tim.",
-    "en": "Gives bronchial, oesophageal, posterior intercostal, superior phrenic and pericardial branches."
+    "vi": "Khi đi xuống, nó cho nhiều nhánh có đôi, theo thứ tự từ trên xuống: động mạch phế quản, trung thất, thực quản, màng ngoài tim và hoành trên; các động mạch gian sườn sau tách ra suốt dọc mặt sau của nó.",
+    "en": "On its way down it gives off several paired branches, from top to bottom: bronchial, mediastinal, oesophageal, pericardial and superior phrenic arteries; the posterior intercostal arteries leave all along its back surface."
    },
    "evidence": [
     {
@@ -10413,12 +10494,26 @@
     {
      "source": "wikipedia-en",
      "section": "Descending_thoracic_aorta",
-     "quote": "BranchesBronchial arteries, esophageal arteries, posterior intercostal arteries, abdominal aorta, superior phrenic artery, pericardial arteries",
+     "quote": "The aorta gives off several paired branches as it descends. In descending order, these include the",
+     "supports": [
+      "function"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Descending_thoracic_aorta",
+     "quote": "The posterior intercostal arteries are branches that originate throughout the length of the posterior aspect of the descending thoracic aorta.",
      "supports": [
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Danh sách nhánh trích từ ô infobox ('BranchesBronchial arteries…', còn ghi cả 'abdominal aorta' như một nhánh) — thay bằng mục Function ở thân bài (nhánh phế quản, trung thất, thực quản, màng ngoài tim, hoành trên theo thứ tự; gian sườn sau dọc mặt sau). Bản nháp sót nhánh trung thất."
+   }
   },
   "FMA10636": {
    "summary": {
@@ -10461,7 +10556,13 @@
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA22838": {
    "summary": {
@@ -10469,10 +10570,13 @@
     "en": "The deep palmar arch is an arterial network in the palm, usually formed mainly by the end of the radial artery with the ulnar artery joining in through an anastomosis — the reverse of the superficial arch, which is mostly ulnar."
    },
    "location": {
-    "vi": "Ở gan tay, sâu hơn cung gan tay nông.",
-    "en": "In the palm, deeper than the superficial palmar arch."
+    "vi": "Ở gan tay, nằm trên nền các xương đốt bàn tay và các cơ gian cốt, sâu hơn đầu chéo cơ khép ngón cái, các gân gấp ngón tay và các cơ giun. Cung gan tay nông nằm xa hơn về phía ngón so với cung sâu.",
+    "en": "In the palm, lying on the bases of the metacarpals and the interossei, beneath the oblique head of adductor pollicis, the finger flexor tendons and the lumbricals. The superficial arch lies further toward the fingers than the deep one."
    },
-   "function": null,
+   "function": {
+    "vi": "Các động mạch gan đốt bàn tay tách từ cung này. Cung sâu nối với cung gan tay nông; có thể kiểm tra nhánh nối này bằng nghiệm pháp Allen.",
+    "en": "The palmar metacarpal arteries come off it. It connects with the superficial arch, and that link can be checked with Allen's test."
+   },
    "evidence": [
     {
      "source": "wikipedia-en",
@@ -10482,8 +10586,46 @@
       "summary",
       "location"
      ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Deep_palmar_arch",
+     "quote": "The deep palmar arch lies upon the bases of the metacarpal bones and on the interossei of the hand. It is deep to the oblique head of the adductor pollicis muscle, the flexor tendons of the fingers, and the lumbricals of the hand.",
+     "supports": [
+      "location"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Deep_palmar_arch",
+     "quote": "The superficial palmar arch is more distally located than the deep palmar arch.",
+     "supports": [
+      "location"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Deep_palmar_arch",
+     "quote": "The palmar metacarpal arteries arise from the deep palmar arch.",
+     "supports": [
+      "function"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Deep_palmar_arch",
+     "quote": "The connection between the deep and superficial palmar arterial arches is an example of anastomosis. This anastomosis can be tested for using Allen's test.",
+     "supports": [
+      "function"
+     ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Vị trí 'sâu hơn cung gan tay nông' không có câu nguồn — thay bằng tương quan thân bài nêu (nền xương đốt bàn, cơ gian cốt; sâu hơn đầu chéo cơ khép ngón cái, gân gấp, cơ giun). Thêm chức năng có nguồn (động mạch gan đốt bàn tay, nhánh nối kiểm bằng nghiệm pháp Allen)."
+   }
   },
   "FMA22834": {
    "summary": {
@@ -10540,18 +10682,27 @@
      ]
     }
    ],
-   "omitted": "Không nêu số động mạch gan ngón chung (Wikipedia: ba; FMA: bốn)."
+   "omitted": "Không nêu số động mạch gan ngón chung (Wikipedia: ba; FMA: bốn).",
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA43942": {
    "summary": {
-    "vi": "Cung động mạch gan chân (cung gan chân sâu) chạy từ xương bàn chân năm vào trong tới xương bàn chân một.",
-    "en": "The plantar arch, or deep plantar arch, runs from the fifth metatarsal inward to the first."
+    "vi": "Cung động mạch gan chân (cung gan chân sâu) là một vòng nối tuần hoàn, tạo bởi động mạch gan chân ngoài và động mạch gan chân sâu — nhánh của động mạch mu chân. Cung chạy từ xương bàn chân năm vào trong tới xương bàn chân một.",
+    "en": "The plantar (deep plantar) arch is a circulatory anastomosis built from the lateral plantar artery and the deep plantar artery, a branch of the dorsalis pedis. The arch runs from the fifth metatarsal inward to the first."
    },
    "location": {
     "vi": "Ở gan bàn chân. Cung hình thành khi động mạch gan chân ngoài quặt vào trong tới khoảng giữa nền xương bàn chân một và hai, nối với nhánh gan chân sâu của động mạch mu chân.",
     "en": "In the sole. It forms when the lateral plantar artery turns inward to the gap between the bases of the first and second metatarsals and joins the deep plantar branch of the dorsalis pedis artery."
    },
-   "function": null,
+   "function": {
+    "vi": "Cung gan chân cấp máu cho mặt dưới (gan) bàn chân.",
+    "en": "The plantar arch supplies the underside of the foot, the sole."
+   },
    "evidence": [
     {
      "source": "wikipedia-en",
@@ -10569,13 +10720,43 @@
       "summary",
       "location"
      ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Plantar_arch",
+     "quote": "The plantar arch is a circulatory anastomosis formed from:",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Plantar_arch",
+     "quote": "deep plantar artery, from the dorsalis pedis - a.k.a. dorsal artery of the foot",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Plantar_arch",
+     "quote": "The plantar arch supplies the underside, or sole, of the foot.",
+     "supports": [
+      "function"
+     ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Khối này gồm cả mảnh động mạch gan chân sâu: tóm tắt cũ chỉ tả cung nên sai cho mảnh đó ('chạy từ xương bàn chân năm…'). Viết lại để nêu động mạch gan chân sâu là một trong hai thành phần tạo cung; câu vị trí/hành trình gán rõ cho cung. Thêm chức năng có nguồn ở thân bài."
+   }
   },
   "FMA20798": {
    "summary": {
-    "vi": "Động mạch mũ đùi ngoài là động mạch ở phần trên đùi, thường là nhánh lớn nhất của động mạch đùi sâu, và cho ba nhánh.",
-    "en": "The lateral circumflex femoral artery is an artery of the upper thigh, usually the largest branch of the deep femoral artery, and it gives off three branches."
+    "vi": "Động mạch mũ đùi ngoài thường là một nhánh của động mạch đùi sâu và là nhánh lớn nhất của động mạch này; nó cho ba nhánh.",
+    "en": "The lateral circumflex femoral artery is usually a branch of the deep femoral artery, being that vessel's largest branch, and it gives off three branches."
    },
    "location": {
     "vi": "Thường tách từ phía ngoài động mạch đùi sâu, đôi khi trực tiếp từ động mạch đùi. Nó đi ngang giữa các nhánh của thần kinh đùi, sau cơ may và cơ thẳng đùi.",
@@ -10583,7 +10764,7 @@
    },
    "function": {
     "vi": "Phân bố chủ yếu cho các cơ mặt ngoài đùi, cấp máu cho nhóm cơ duỗi gối.",
-    "en": "Mostly supplies the muscles of the outer thigh, including the knee extensors."
+    "en": "Mostly supplies the muscles of the outer thigh, feeding the knee extensor group."
    },
    "evidence": [
     {
@@ -10612,7 +10793,13 @@
       "location"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Bỏ 'ở phần trên đùi' (câu nguồn mang [citation needed]). Tách 'thường' khỏi 'nhánh lớn nhất' — nguồn: 'thường là nhánh của động mạch đùi sâu', 'là nhánh lớn nhất' không rào. EN chức năng 'including the knee extensors' thêm quan hệ bao hàm — sửa theo nguồn."
+   }
   },
   "FMA18060": {
    "summary": {
@@ -10624,8 +10811,8 @@
     "en": "In the side of the lumbar region, between the spine and the brim of the lesser pelvis. Its deep part starts on the transverse processes of L1–L5; its superficial part on the sides of the last thoracic vertebra, L1–L4 and the discs between them. The lumbar plexus lies sandwiched between the two."
    },
    "function": {
-    "vi": "Là một phần của cơ thắt lưng – chậu, góp phần gấp khớp háng.",
-    "en": "As part of iliopsoas it helps flex the hip."
+    "vi": "Là một phần của cơ thắt lưng – chậu, góp phần gấp khớp háng. Ở cột sống thắt lưng, co một bên làm nghiêng thân sang bên; co hai bên nâng thân lên từ tư thế nằm ngửa. Do bám vào mấu chuyển bé, nó còn xoay ngoài và khép nhẹ khớp háng.",
+    "en": "As part of iliopsoas it helps flex the hip. At the lumbar spine, one-sided contraction bends the trunk sideways, while both sides together lift the trunk up from lying supine. Its attachment on the lesser trochanter also lets it turn the hip outward and weakly adduct it."
    },
    "evidence": [
     {
@@ -10653,8 +10840,22 @@
      "supports": [
       "function"
      ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Psoas_major_muscle",
+     "quote": "On the lumbar spine, unilateral contraction bends the trunk laterally, while bilateral contraction raises the trunk from its supine position. In addition, attachment to the lesser trochanter, located on the posteromedial aspect of the femur, causes lateral rotation and weak adduction of the hip.",
+     "supports": [
+      "function"
+     ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Chọn một kể như tất cả: mục Function còn nêu tác dụng lên cột sống thắt lưng và xoay ngoài/khép nhẹ háng — thêm vào."
+   }
   },
   "FMA22310": {
    "summary": {
@@ -10687,7 +10888,13 @@
       "location"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA13335": {
    "summary": {
@@ -10736,7 +10943,13 @@
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA13397": {
    "summary": {
@@ -10748,8 +10961,8 @@
     "en": "It starts on the side of the chest from the upper nine ribs and attaches along the whole front of the scapula's medial border."
    },
    "function": {
-    "vi": "Kéo xương vai ra trước, ôm quanh lồng ngực.",
-    "en": "Pulls the scapula forward around the rib cage."
+    "vi": "Kéo xương vai ra trước, ôm quanh lồng ngực. Khi phần trên và phần dưới cùng co, chúng cùng các cơ trám giữ xương vai áp vào lồng ngực; cơ răng trước phối hợp với thớ trên và thớ dưới cơ thang duy trì động tác xoay lên của xương vai, giúp nâng tay quá đầu.",
+    "en": "Pulls the scapula forward around the rib cage. With upper and lower parts acting together it joins the rhomboids in holding the scapula against the chest, and with the upper and lower trapezius it sustains upward rotation of the scapula, allowing overhead lifting."
    },
    "evidence": [
     {
@@ -10768,21 +10981,43 @@
      "supports": [
       "function"
      ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Serratus_anterior_muscle",
+     "quote": "when the inferior and superior parts act together, they keep the scapula pressed against the thorax together with the rhomboids",
+     "supports": [
+      "function"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Serratus_anterior_muscle",
+     "quote": "The serratus anterior acts in concert with the upper and lower fibers of the trapezius muscle to sustain upward rotation of the scapula, which allows for overhead lifting.",
+     "supports": [
+      "function"
+     ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Chọn một kể như tất cả: thân bài còn nêu vai trò giữ xương vai áp lồng ngực và xoay lên cùng cơ thang — thêm."
+   }
   },
   "FMA13379": {
    "summary": {
-    "vi": "Cơ trám lớn là cơ vân ở lưng nối xương vai với các đốt sống; nó hình thoi và là cơ lớn hơn trong hai cơ trám.",
-    "en": "Rhomboid major is a diamond-shaped skeletal muscle of the back linking the scapula to the spine; it is the bigger of the two rhomboids."
+    "vi": "Cơ trám lớn là cơ vân ở lưng nối xương vai với các đốt sống; nó có hình thoi.",
+    "en": "Rhomboid major is a diamond-shaped skeletal muscle of the back that links the scapula to the vertebrae."
    },
    "location": {
-    "vi": "Xuất phát từ mỏm gai các đốt sống ngực T2–T5 và dây chằng trên gai; bám vào phần dưới bờ trong xương vai, dưới chỗ bám của cơ trám bé.",
-    "en": "It runs from the spinous processes of T2–T5 and the supraspinous ligament to the lower part of the scapula's medial border, below rhomboid minor's attachment."
+    "vi": "Xuất phát từ mỏm gai các đốt sống ngực T2–T5 và dây chằng trên gai; bám vào phần dưới bờ trong xương vai.",
+    "en": "It runs from the spinous processes of T2–T5 and the supraspinous ligament to the lower part of the scapula's medial border."
    },
    "function": {
-    "vi": "Cùng cơ trám bé giữ xương vai áp vào thành ngực và kéo xương vai về phía cột sống.",
-    "en": "With rhomboid minor it holds the scapula against the chest wall and draws it back toward the spine."
+    "vi": "Cùng cơ trám bé giữ xương vai áp vào thành ngực và kéo xương vai về phía cột sống. Các cơ trám phối hợp với cơ nâng vai nâng bờ trong xương vai, xoay xương vai xuống.",
+    "en": "With rhomboid minor it holds the scapula against the chest wall and draws it back toward the spine. Together with levator scapulae the rhomboids lift the scapula's medial border, rotating the scapula downward."
    },
    "evidence": [
     {
@@ -10791,14 +11026,6 @@
      "quote": "The rhomboid major is a skeletal muscle of the back that connects the scapula with the vertebrae of the spinal column. It originates from the spinous processes of the thoracic vertebrae T2–T5 and supraspinous ligament; it inserts onto the lower portion of the medial border of the scapula.",
      "supports": [
       "summary",
-      "location"
-     ]
-    },
-    {
-     "source": "wikipedia-en",
-     "section": "Rhomboid_major_muscle",
-     "quote": "InsertionMedial border of the scapula, inferior to the insertion of rhomboid minor muscle",
-     "supports": [
       "location"
      ]
     },
@@ -10817,8 +11044,22 @@
      "supports": [
       "summary"
      ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Rhomboid_major_muscle",
+     "quote": "The rhomboids work collectively with the levator scapulae muscles to elevate the medial border of the scapula, downwardly rotating the scapula with respect to the glenohumeral joint.",
+     "supports": [
+      "function"
+     ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Bỏ 'dưới chỗ bám của cơ trám bé' (chỉ có ở ô infobox; câu thân bài tương ứng mang [citation needed]) và 'là cơ lớn hơn trong hai cơ trám' (câu nguồn mang [citation needed]). Thêm tác dụng xoay xương vai xuống từ mục Function."
+   }
   },
   "FMA13380": {
    "summary": {
@@ -10826,12 +11067,12 @@
     "en": "A small back muscle, rhomboid minor ties the scapula to the spine; the dorsal scapular nerve supplies it."
    },
    "location": {
-    "vi": "Xuất phát từ bờ dưới dây chằng gáy, mỏm gai các đốt C7–T1 và dây chằng trên gai xen giữa; bám vào một vùng nhỏ ở bờ trong xương vai, trên chỗ bám của cơ trám lớn.",
-    "en": "It arises from the lower edge of the nuchal ligament, the spines of C7–T1 and the supraspinous ligament between them, and attaches to a small area of the scapula's medial border above rhomboid major."
+    "vi": "Xuất phát từ bờ dưới dây chằng gáy, mỏm gai các đốt C7–T1 và dây chằng trên gai xen giữa; bám vào một vùng nhỏ ở bờ trong xương vai.",
+    "en": "It arises from the lower edge of the nuchal ligament, the spines of C7–T1 and the supraspinous ligament between them, and attaches to a small area of the scapula's medial border."
    },
    "function": {
-    "vi": "Cùng cơ trám lớn giữ xương vai áp vào thành ngực.",
-    "en": "Works with rhomboid major to hold the scapula against the chest wall."
+    "vi": "Cùng cơ trám lớn giữ xương vai áp vào thành ngực, và kéo xương vai về sau khi cơ thang co. Cùng cơ nâng vai, hai cơ trám nâng bờ trong xương vai và xoay xương vai xuống; khi các cơ vai khác hoạt động, chúng giữ vững xương vai.",
+    "en": "With rhomboid major it holds the scapula against the chest wall, and retracts the scapula when trapezius contracts. With levator scapulae the two rhomboids raise the scapula's medial border and rotate it downward, and they steady the scapula while other shoulder muscles work."
    },
    "evidence": [
     {
@@ -10870,12 +11111,26 @@
     {
      "source": "wikipedia-en",
      "section": "Rhomboid_minor_muscle",
-     "quote": "InsertionMedial border of scapula, superior to the insertion of rhomboid major muscle",
+     "quote": "Together with the rhomboid major, the rhomboid minor retracts the scapula when the trapezius is contracted. Acting as a synergist to the trapezius, the rhomboid major and minor elevate the medial border of the scapula medially and upward, working in tandem with the levator scapulae muscle to rotate the scapulae downward.",
      "supports": [
-      "location"
+      "function"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Rhomboid_minor_muscle",
+     "quote": "While other shoulder muscles are active, the rhomboid major and minor stabilize the scapula.",
+     "supports": [
+      "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Bỏ 'trên chỗ bám của cơ trám lớn' (ô infobox; câu thân bài 'superior to rhomboid major' mang [citation needed]). Chức năng chỉ giữ một trong bốn tác dụng mục Function nêu — bổ sung kéo ra sau, xoay xuống, giữ vững."
+   }
   },
   "FMA13109": {
    "summary": {
@@ -10916,7 +11171,14 @@
       "function"
      ]
     }
-   ]
+   ],
+   "omitted": "Mục Function viết cơ 'kéo xương vai lên trên (superior), về phía lồng ngực' trong khi ô infobox ghi kéo xuống dưới (inferiorly) — nguồn tự mâu thuẫn về hướng nên không đưa tác dụng hạ mỏm vai/xoay góc dưới vào; chỉ giữ câu mở đầu (giữ vững xương vai).",
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Mục Function của bài mâu thuẫn với chính infobox về hướng kéo xương vai; giữ chức năng ở câu mở đầu và ghi lý do bỏ vào omitted."
+   }
   },
   "FMA13410": {
    "summary": {
@@ -10924,8 +11186,8 @@
     "en": "Subclavius is a small triangular muscle; with pectoralis major and minor it forms the front wall of the armpit."
    },
    "location": {
-    "vi": "Giữa xương đòn và xương sườn thứ nhất. Xuất phát bằng một gân ngắn, dày từ chỗ nối xương sườn một với sụn của nó, trước dây chằng sườn – đòn; bám vào rãnh dưới đòn ở mặt dưới một phần ba giữa xương đòn.",
-    "en": "Between the clavicle and the first rib. A short, thick tendon anchors it to the junction of the first rib and its cartilage, in front of the costoclavicular ligament, and it inserts into the subclavian groove under the middle third of the clavicle."
+    "vi": "Giữa xương đòn và xương sườn thứ nhất. Xuất phát bằng một gân ngắn, dày từ chỗ nối xương sườn một với sụn của nó, trước dây chằng sườn – đòn; các thớ thịt chạy chếch lên trên và ra ngoài để bám vào rãnh ở mặt dưới xương đòn.",
+    "en": "Between the clavicle and the first rib. A short, thick tendon anchors it to the junction of the first rib and its cartilage, in front of the costoclavicular ligament; its fleshy fibres slant up and outward into the groove on the clavicle's underside."
    },
    "function": {
     "vi": "Hạ đầu ngoài xương đòn và giữ vững xương đòn khi vai cử động cánh tay; khi thở, nó nâng xương sườn một trong lúc hạ xương đòn.",
@@ -10952,20 +11214,26 @@
     {
      "source": "wikipedia-en",
      "section": "Subclavius_muscle",
-     "quote": "InsertionSubclavian groove of clavicle (inferior surface of middle one third of the clavicle)",
+     "quote": "It depresses the lateral clavicle, acts to stabilize the clavicle while the shoulder moves the arm. It also raises the first rib while lowering the clavicle during breathing.",
      "supports": [
-      "location"
+      "function"
      ]
     },
     {
      "source": "wikipedia-en",
      "section": "Subclavius_muscle",
-     "quote": "It depresses the lateral clavicle, acts to stabilize the clavicle while the shoulder moves the arm. It also raises the first rib while lowering the clavicle during breathing.",
+     "quote": "The fleshy fibers proceed obliquely superolaterally, to be inserted into the groove on the under surface of the clavicle.",
      "supports": [
-      "function"
+      "location"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Bám tận trích từ ô infobox ('InsertionSubclavian groove… middle one third') — thay bằng câu thân bài; bỏ 'một phần ba giữa' vì chỉ có ở infobox."
+   }
   },
   "FMA32519": {
    "summary": {
@@ -10977,8 +11245,8 @@
     "en": "It arises by tendinous slips from the posterior tubercles of the transverse processes of the top four cervical vertebrae (C1–C4) and attaches to the upper part of the scapula's medial border."
    },
    "function": {
-    "vi": "Chức năng chính là nâng xương vai; nó còn xoay xương vai xuống, làm ổ chảo nghiêng xuống dưới.",
-    "en": "Its main job is lifting the scapula; it also rotates the scapula downward, tipping the glenoid cavity down."
+    "vi": "Chức năng chính là nâng xương vai. Khi cột sống cố định, nó nâng xương vai và xoay góc dưới xương vai vào trong; nó thường phối hợp với các cơ trám và cơ ngực bé để xoay xương vai xuống. Khi vai cố định, nó xoay cổ về cùng bên và nghiêng cột sống cổ sang bên.",
+    "en": "Its main job is lifting the scapula. With the spine fixed it raises the scapula and turns its inferior angle medially, often teaming with the rhomboids and pectoralis minor to rotate the scapula downward. With the shoulder fixed it turns the neck to its own side and bends the cervical spine sideways."
    },
    "evidence": [
     {
@@ -11009,12 +11277,26 @@
     {
      "source": "wikipedia-en",
      "section": "Levator_scapulae_muscle",
-     "quote": "ActionsElevates scapula and tilts its glenoid cavity inferiorly by downwardly rotating the scapula",
+     "quote": "When the spine is fixed, levator scapulae elevates the scapula and rotates its inferior angle medially. It often works in combination with other muscles like the rhomboids and pectoralis minor to produce downward rotation of the scapula.",
+     "supports": [
+      "function"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Levator_scapulae_muscle",
+     "quote": "When the shoulder is fixed, levator scapulae rotates to the same side and flexes the cervical spine laterally.",
      "supports": [
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Vế xoay xương vai xuống dựa vào ô infobox ('ActionsElevates scapula…') — thay bằng mục Function ở thân bài, kèm tác dụng khi vai cố định mà bản nháp bỏ sót."
+   }
   },
   "FMA37667": {
    "summary": {
@@ -11064,7 +11346,13 @@
       "summary"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA37664": {
    "summary": {
@@ -11106,7 +11394,13 @@
       "location"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA37704": {
    "summary": {
@@ -11114,12 +11408,12 @@
     "en": "Anconeus is a small triangular muscle whose upper edge seems continuous with the outer part of triceps; some regard it as an extension of triceps brachii."
    },
    "location": {
-    "vi": "Ở sau và dưới khớp khuỷu.",
-    "en": "Behind and below the elbow joint."
+    "vi": "Ở sau và dưới khớp khuỷu. Xuất phát bằng một gân riêng từ mặt sau mỏm trên lồi cầu ngoài xương cánh tay; bám vào một phần tư trên mặt sau xương trụ và mặt ngoài mỏm khuỷu.",
+    "en": "Behind and below the elbow joint. It starts by its own tendon from the back of the humerus's lateral epicondyle and attaches to the upper quarter of the back of the ulna and the outer side of the olecranon."
    },
    "function": {
-    "vi": "Hòa một phần với cơ tam đầu và hỗ trợ cơ này duỗi khuỷu.",
-    "en": "Partly merged with triceps, it assists it in extending the elbow."
+    "vi": "Hỗ trợ duỗi khuỷu, trong đó cơ tam đầu cánh tay là cơ chủ vận; ở người vai trò này không đáng kể. Nó còn ngăn bao khớp khuỷu bị kẹp vào hố khuỷu khi duỗi, dạng xương trụ và giữ vững khớp khuỷu.",
+    "en": "Assists elbow extension, for which triceps brachii is the prime mover, though in humans this contribution is trivial. It also keeps the joint capsule from being pinched in the olecranon fossa during extension, abducts the ulna and steadies the elbow joint."
    },
    "evidence": [
     {
@@ -11142,12 +11436,26 @@
     {
      "source": "wikipedia-en",
      "section": "Anconeus_muscle",
-     "quote": "ActionsIt is partly blended in with the triceps, which it assists in extension of the elbow.",
+     "quote": "Anconeus originates by a separate tendon (i.e., not by the common extensor tendon) from the posterior surface of the lateral epicondyle of the humerus and inserts distally on the upper fourth of the posterior surface of the ulna and the lateral aspect of the olecranon.",
+     "supports": [
+      "location"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Anconeus_muscle",
+     "quote": "Its role in elbow extension is trivial in humans. It assists in extension of the elbow, where the triceps brachii is the principal agonist, and supports the elbow in full extension. It also prevents the elbow joint capsule being pinched in the olecranon fossa during extension of the elbow. Anconeus also abducts the ulna and stabilizes the elbow joint.",
      "supports": [
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Chức năng dựa vào ô infobox ('ActionsIt is partly blended…') — thay bằng mục Function ở thân bài; bản nháp bỏ mất vế đối trọng 'vai trò duỗi khuỷu ở người không đáng kể'. Thêm nguyên ủy/bám tận có nguồn."
+   }
   },
   "FMA49039": {
    "summary": {
@@ -11159,18 +11467,10 @@
     "en": "In the orbit. Its tendon loops through a pulley, the trochlea of the superior oblique, and attaches to the sclera on the back, temple side of the eyeball."
    },
    "function": {
-    "vi": "Tác dụng chính là xoay trong nhãn cầu; tác dụng phụ là dạng và hạ nhãn cầu, đưa mắt ra ngoài và xuống dưới.",
-    "en": "Chiefly rotates the eye inward (intorsion); secondarily it abducts and lowers it, turning the gaze outward and down."
+    "vi": "Tác dụng chính là xoay trong nhãn cầu; tác dụng thứ hai là hạ nhãn cầu (chủ yếu khi mắt ở tư thế khép); tác dụng thứ ba là dạng.",
+    "en": "Its primary action is intorsion (inward rotation of the eye); its secondary action is depression, mainly with the eye adducted; its tertiary action is abduction."
    },
    "evidence": [
-    {
-     "source": "wikipedia-en",
-     "section": "Superior_oblique_muscle",
-     "quote": "is a fusiform muscle originating in the upper, medial side of the orbit (i",
-     "supports": [
-      "summary"
-     ]
-    },
     {
      "source": "wikipedia-en",
      "section": "Superior_oblique_muscle",
@@ -11190,12 +11490,26 @@
     {
      "source": "wikipedia-en",
      "section": "Superior_oblique_muscle",
-     "quote": "ActionsPrimary action is intorsion (medial rotation); secondary actions are to abduct and depress the eyeball",
+     "quote": "is a fusiform muscle originating in the upper, medial side of the orbit (i.e. from beside the nose) which abducts, depresses and internally rotates the eye.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Superior_oblique_muscle",
+     "quote": "The primary (main) action of the superior oblique muscle is intorsion (internal rotation), the secondary action is depression (primarily in the adducted position) and the tertiary action is abduction (lateral rotation).",
      "supports": [
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Chức năng dựa vào ô infobox ('ActionsPrimary action is intorsion…', gộp dạng và hạ làm tác dụng phụ) — thay bằng mục Function: hạ là tác dụng thứ hai (chủ yếu khi mắt khép), dạng là thứ ba. Câu trích tóm tắt bị cụt ở '(i' — thay bằng câu đầy đủ."
+   }
   },
   "FMA49040": {
    "summary": {
@@ -11237,20 +11551,26 @@
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA32557": {
    "summary": {
-    "vi": "Phần xuống (thớ trên) của cơ thang. Cơ thang là cơ nông lớn, hình thang, đi từ xương chẩm xuống các đốt ngực dưới và ra ngoài tới gai vai; nó cử động xương vai và nâng đỡ cánh tay.",
-    "en": "The descending (upper) part of trapezius, a large, flat, trapezium-shaped surface muscle that reaches from the occipital bone down to the lower thoracic spine and out to the scapular spine; it moves the scapula and supports the arm."
+    "vi": "Phần xuống (thớ trên) của cơ thang. Cơ thang là cơ nông lớn, có đôi, hình thang, đi từ xương chẩm xuống các đốt ngực dưới và ra ngoài tới gai vai; nó cử động xương vai và nâng đỡ cánh tay.",
+    "en": "The descending (upper) part of trapezius, a large, paired, trapezium-shaped surface muscle that reaches from the occipital bone down to the lower thoracic spine and out to the scapular spine; it moves the scapula and supports the arm."
    },
    "location": {
     "vi": "Thớ trên xuất phát từ mỏm gai C7, ụ chẩm ngoài, một phần ba trong đường gáy trên và dây chằng gáy; chạy xuống dưới và ra ngoài để bám vào bờ sau một phần ba ngoài xương đòn.",
     "en": "Upper fibres start from the C7 spine, the external occipital protuberance, the inner third of the superior nuchal line and the nuchal ligament, and slope down and outward to the back edge of the outer third of the clavicle."
    },
    "function": {
-    "vi": "Thớ trên nâng xương vai.",
-    "en": "The upper fibres raise the scapula."
+    "vi": "Thớ trên nâng xương vai. Thớ trên và thớ dưới cùng cơ răng trước xoay xương vai lên.",
+    "en": "The upper fibres raise the scapula. Together with the lower fibres and serratus anterior they rotate the scapula upward."
    },
    "evidence": [
     {
@@ -11276,13 +11596,27 @@
      "supports": [
       "function"
      ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Trapezius",
+     "quote": "The upper and lower fibers work in tandem with serratus anterior to upwardly rotate the scapulae",
+     "supports": [
+      "function"
+     ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "EN 'flat' không có trong nguồn — thay bằng 'paired' (nguồn: 'large paired'). Thêm tác dụng xoay xương vai lên mà thân bài gán cho thớ trên và thớ dưới."
+   }
   },
   "FMA32556": {
    "summary": {
-    "vi": "Phần ngang (thớ giữa) của cơ thang. Cơ thang là cơ nông lớn, hình thang, đi từ xương chẩm xuống các đốt ngực dưới và ra ngoài tới gai vai; nó cử động xương vai và nâng đỡ cánh tay.",
-    "en": "The transverse (middle) part of trapezius, a large, flat, trapezium-shaped surface muscle that reaches from the occipital bone down to the lower thoracic spine and out to the scapular spine; it moves the scapula and supports the arm."
+    "vi": "Phần ngang (thớ giữa) của cơ thang. Cơ thang là cơ nông lớn, có đôi, hình thang, đi từ xương chẩm xuống các đốt ngực dưới và ra ngoài tới gai vai; nó cử động xương vai và nâng đỡ cánh tay.",
+    "en": "The transverse (middle) part of trapezius, a large, paired, trapezium-shaped surface muscle that reaches from the occipital bone down to the lower thoracic spine and out to the scapular spine; it moves the scapula and supports the arm."
    },
    "location": {
     "vi": "Thớ giữa xuất phát từ mỏm gai đốt cổ bảy và ba đốt ngực đầu; bám vào bờ trong mỏm cùng vai và mép trên bờ sau gai vai.",
@@ -11317,20 +11651,26 @@
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "EN 'flat' không có trong nguồn — thay bằng 'paired'."
+   }
   },
   "FMA32555": {
    "summary": {
-    "vi": "Phần lên (thớ dưới) của cơ thang. Cơ thang là cơ nông lớn, hình thang, đi từ xương chẩm xuống các đốt ngực dưới và ra ngoài tới gai vai; nó cử động xương vai và nâng đỡ cánh tay.",
-    "en": "The ascending (lower) part of trapezius, a large, flat, trapezium-shaped surface muscle that reaches from the occipital bone down to the lower thoracic spine and out to the scapular spine; it moves the scapula and supports the arm."
+    "vi": "Phần lên (thớ dưới) của cơ thang. Cơ thang là cơ nông lớn, có đôi, hình thang, đi từ xương chẩm xuống các đốt ngực dưới và ra ngoài tới gai vai; nó cử động xương vai và nâng đỡ cánh tay.",
+    "en": "The ascending (lower) part of trapezius, a large, paired, trapezium-shaped surface muscle that reaches from the occipital bone down to the lower thoracic spine and out to the scapular spine; it moves the scapula and supports the arm."
    },
    "location": {
     "vi": "Thớ dưới xuất phát từ mỏm gai các đốt ngực còn lại (T4–T12), chạy lên và ra ngoài, tận cùng bằng một cân lướt trên mặt tam giác ở đầu trong gai vai rồi bám vào một củ ở đỉnh tam giác ấy.",
     "en": "Lower fibres rise from the spines of the remaining thoracic vertebrae (T4–T12), run up and outward, and end in an aponeurosis that slides over the triangular area at the inner end of the scapular spine before attaching to a tubercle at its apex."
    },
    "function": {
-    "vi": "Thớ dưới hạ xương vai.",
-    "en": "The lower fibres lower the scapula."
+    "vi": "Thớ dưới hạ xương vai. Thớ dưới và thớ trên cùng cơ răng trước xoay xương vai lên.",
+    "en": "The lower fibres lower the scapula. Together with the upper fibres and serratus anterior they rotate the scapula upward."
    },
    "evidence": [
     {
@@ -11364,8 +11704,22 @@
      "supports": [
       "function"
      ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Trapezius",
+     "quote": "The upper and lower fibers work in tandem with serratus anterior to upwardly rotate the scapulae",
+     "supports": [
+      "function"
+     ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "EN 'flat' không có trong nguồn — thay bằng 'paired'. Thêm tác dụng xoay xương vai lên mà thân bài gán cho thớ dưới và thớ trên."
+   }
   },
   "FMA37683": {
    "summary": {
@@ -11377,8 +11731,8 @@
     "en": "The long head starts at the supraglenoid tubercle and stays tendinous as it passes through the shoulder joint. Both heads end on the radial tuberosity, the long head nearer the elbow and the short head further down."
    },
    "function": {
-    "vi": "Đầu dài bắt chéo cả khớp vai lẫn khớp khuỷu, nhưng tác dụng chính của cơ nhị đầu là ở khuỷu: gấp và ngửa cẳng tay.",
-    "en": "The long head crosses both shoulder and elbow, but biceps does its main work at the elbow, flexing and supinating the forearm."
+    "vi": "Đầu dài bắt chéo cả khớp vai lẫn khớp khuỷu, nhưng tác dụng chính là ở khuỷu: gấp và ngửa cẳng tay. Đầu dài còn ngăn chỏm xương cánh tay bị đẩy lên trên.",
+    "en": "The long head crosses both shoulder and elbow, yet its chief work is at the elbow, flexing and supinating the forearm. It also stops the humeral head from riding upward."
    },
    "evidence": [
     {
@@ -11421,8 +11775,22 @@
      "supports": [
       "location"
      ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Biceps",
+     "quote": "the long head of biceps prevents the upward displacement of the head of the humerus",
+     "supports": [
+      "function"
+     ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Thêm vai trò riêng của đầu dài ở khớp vai (mục Function). Không gán 'tác dụng chính' cho cả cơ khi câu nguồn nói về đầu dài."
+   }
   },
   "FMA37682": {
    "summary": {
@@ -11434,8 +11802,8 @@
     "en": "The short head starts at the coracoid process and runs beside the tendon of coracobrachialis. Both heads end on the radial tuberosity, the short head further down and the long head nearer the elbow."
    },
    "function": {
-    "vi": "Tác dụng chính của cơ nhị đầu là ở khuỷu: gấp và ngửa cẳng tay.",
-    "en": "Biceps does its main work at the elbow, flexing and supinating the forearm."
+    "vi": "Tác dụng quan trọng nhất của cơ nhị đầu là ngửa cẳng tay và gấp khuỷu. Đầu ngắn còn hỗ trợ khép ngang cánh tay (đưa cánh tay ngang qua thân) khi cánh tay xoay trong.",
+    "en": "Biceps matters most as a supinator of the forearm and a flexor of the elbow. When the arm is rotated inward, the short head additionally helps sweep it across the chest (horizontal adduction)."
    },
    "evidence": [
     {
@@ -11466,7 +11834,15 @@
     {
      "source": "wikipedia-en",
      "section": "Biceps",
-     "quote": "While the long head of the biceps crosses both the shoulder and elbow joints, its main function is at the elbow where it flexes and supinates the forearm.",
+     "quote": "short head runs adjacent to the tendon of the coracobrachialis.",
+     "supports": [
+      "location"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Biceps",
+     "quote": "The biceps works across three joints. The most important of these functions is to supinate the forearm and flex the elbow.",
      "supports": [
       "function"
      ]
@@ -11474,12 +11850,18 @@
     {
      "source": "wikipedia-en",
      "section": "Biceps",
-     "quote": "short head runs adjacent to the tendon of the coracobrachialis.",
+     "quote": "The short head of the biceps brachii also assists with horizontal adduction (bringing the arm across the body) when the arm is internally (or medially) rotated.",
      "supports": [
-      "location"
+      "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Câu nguồn cũ nói về ĐẦU DÀI ('its main function is at the elbow') nên không làm chỗ dựa cho đầu ngắn — thay bằng câu mục Function về cả cơ, thêm vai trò riêng của đầu ngắn."
+   }
   },
   "FMA45959": {
    "summary": {
@@ -11527,7 +11909,13 @@
       "location"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA45956": {
    "summary": {
@@ -11575,7 +11963,13 @@
       "location"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA45887": {
    "summary": {
@@ -11587,8 +11981,8 @@
     "en": "It arises from the lower inner impression on the back of the ischial tuberosity, sharing a tendon with semitendinosus, and from the lower part of the sacrotuberous ligament."
    },
    "function": {
-    "vi": "Gấp gối, xoay ngoài gối khi gối đang gấp; riêng đầu dài còn duỗi háng.",
-    "en": "Bends the knee, rotates it outward when bent, and, for the long head only, extends the hip."
+    "vi": "Cả hai đầu cơ nhị đầu đùi gấp gối. Vì xuất phát từ chậu hông, đầu dài còn tham gia duỗi háng. Khi gối gấp nửa chừng, cơ nhị đầu đùi xoay cẳng chân hơi ra ngoài.",
+    "en": "Both heads of biceps femoris bend the knee. Arising in the pelvis, the long head also takes part in hip extension. With the knee half bent, the muscle turns the leg slightly outward."
    },
    "evidence": [
     {
@@ -11618,12 +12012,34 @@
     {
      "source": "wikipedia-en",
      "section": "Biceps_femoris_muscle",
-     "quote": "ActionsFlexes knee joint, laterally rotates knee joint (when knee is flexed), extends hip joint (long head only)",
+     "quote": "Both heads of the biceps femoris perform knee flexion.",
+     "supports": [
+      "function"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Biceps_femoris_muscle",
+     "quote": "Since the long head originates in the pelvis it is involved in hip extension.",
+     "supports": [
+      "function"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Biceps_femoris_muscle",
+     "quote": "When the knee is semi-flexed, the biceps femoris in consequence of its oblique direction rotates the leg slightly outward.",
      "supports": [
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Chức năng dựa vào ô infobox ('ActionsFlexes knee joint…') — thay bằng mục Function ở thân bài; giữ 'hơi' (slightly) và điều kiện 'gối gấp nửa chừng'."
+   }
   },
   "FMA45890": {
    "summary": {
@@ -11672,7 +12088,13 @@
       "location"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA46727": {
    "summary": {
@@ -11713,7 +12135,13 @@
       "location"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA46730": {
    "summary": {
@@ -11755,7 +12183,13 @@
      ]
     }
    ],
-   "omitted": "Nguyên ủy ở hố thuyền mỏm chân bướm mang [citation needed] nên bỏ."
+   "omitted": "Nguyên ủy ở hố thuyền mỏm chân bướm mang [citation needed] nên bỏ.",
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA9760": {
    "summary": {
@@ -11812,7 +12246,13 @@
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA37458": {
    "summary": {
@@ -11824,8 +12264,8 @@
     "en": "They start on the inner sides of metatarsals III–V, cross the metatarsophalangeal joints of toes III–V and insert on the proximal phalanges of those same toes."
    },
    "function": {
-    "vi": "Khép các ngón chân III, IV và V tại khớp bàn – ngón.",
-    "en": "Adduct toes III, IV and V at the metatarsophalangeal joint."
+    "vi": "Khép các ngón chân III, IV và V tại khớp bàn – ngón. Chúng còn cùng các cơ gian cốt mu chân làm vững cung xương bàn chân.",
+    "en": "Adduct toes III, IV and V at the metatarsophalangeal joint. Together with the dorsal interossei they also strengthen the metatarsal arch."
    },
    "evidence": [
     {
@@ -11848,14 +12288,6 @@
     {
      "source": "wikipedia-en",
      "section": "Plantar_interossei_muscles",
-     "quote": "All three plantar interosseous muscles are innervated by the lateral plant",
-     "supports": [
-      "summary"
-     ]
-    },
-    {
-     "source": "wikipedia-en",
-     "section": "Plantar_interossei_muscles",
      "quote": "The muscles then continue distally along the foot and insert in the proximal phalanges III-V. The muscles cross the metatarsophalangeal joint of toes III-V",
      "supports": [
       "location"
@@ -11868,8 +12300,30 @@
      "supports": [
       "function"
      ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Plantar_interossei_muscles",
+     "quote": "All three plantar interosseous muscles are innervated by the lateral plantar nerve.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Plantar_interossei_muscles",
+     "quote": "They also work together to strengthen the metatarsal arch.",
+     "supports": [
+      "function"
+     ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Câu trích cụt giữa chữ ('lateral plant') — thay bằng câu đầy đủ. Thêm vai trò làm vững cung xương bàn chân mà mục Function nêu."
+   }
   },
   "FMA61833": {
    "summary": {
@@ -11906,7 +12360,13 @@
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA61834": {
    "summary": {
@@ -11948,12 +12408,18 @@
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA61835": {
    "summary": {
-    "vi": "Cầu nhạt (nhân nhạt) là một thành phần chính của hạch nền dưới vỏ, gồm hai đoạn kề nhau: đoạn ngoài và đoạn trong. Nó thuộc đại não (telencephalon) nhưng gắn bó chức năng chặt với vùng dưới đồi thị; cả hai thuộc hệ vận động ngoại tháp.",
-    "en": "The globus pallidus is a major component of the subcortical basal ganglia, made of two adjacent segments, external and internal. It belongs to the telencephalon yet works closely with the subthalamus; both are part of the extrapyramidal motor system."
+    "vi": "Cầu nhạt (nhân nhạt) là một thành phần chính của hạch nền dưới vỏ, gồm hai đoạn kề nhau: đoạn ngoài và đoạn trong. Nó thuộc đoan não (telencephalon) nhưng gắn bó chức năng chặt với vùng dưới đồi thị (subthalamus) ở gian não; cả hai thuộc hệ vận động ngoại tháp.",
+    "en": "The globus pallidus is a major component of the subcortical basal ganglia, made of two adjacent segments, external and internal. It belongs to the telencephalon yet works closely with the subthalamus of the diencephalon; both are part of the extrapyramidal motor system."
    },
    "location": null,
    "function": {
@@ -11985,7 +12451,13 @@
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Thuật ngữ: telencephalon là 'đoan não', không phải 'đại não'; ghi kèm 'subthalamus' để không lẫn 'vùng dưới đồi thị' với vùng dưới đồi (hypothalamus), và nêu 'ở gian não' như nguồn."
+   }
   },
   "FMA61841": {
    "summary": {
@@ -12018,7 +12490,13 @@
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA67329": {
    "summary": {
@@ -12046,20 +12524,26 @@
     {
      "source": "wikipedia-en",
      "section": "Insular_cortex",
-     "quote": "The insular cortex is divided by the central sulcus of the insula, into two parts: the anteri",
+     "quote": "The insulae are believed to be involved in consciousness and play a role in diverse functions usually linked to emotion, interoception, or the regulation of the body's homeostasis.",
      "supports": [
-      "summary"
+      "function"
      ]
     },
     {
      "source": "wikipedia-en",
      "section": "Insular_cortex",
-     "quote": "The insulae are believed to be involved in consciousness and play a role in diverse functions usually linked to emotion, interoception, or the regulation of the body's homeostasis.",
+     "quote": "The insular cortex is divided by the central sulcus of the insula, into two parts: the anterior insula and the posterior insula",
      "supports": [
-      "function"
+      "summary"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Câu trích cụt giữa chữ ('the anteri') — thay bằng câu đầy đủ; văn bản không đổi."
+   }
   },
   "FMA67325": {
    "summary": {
@@ -12100,7 +12584,13 @@
       "location"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA61896": {
    "summary": {
@@ -12126,7 +12616,13 @@
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA61899": {
    "summary": {
@@ -12182,7 +12678,13 @@
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA61897": {
    "summary": {
@@ -12212,7 +12714,13 @@
      ]
     }
    ],
-   "omitted": "Vai trò ngôn ngữ nguồn rào bằng 'probably' — từ bị cấm, không diễn đạt được đúng mức nên bỏ."
+   "omitted": "Vai trò ngôn ngữ nguồn rào bằng 'probably' — từ bị cấm, không diễn đạt được đúng mức nên bỏ.",
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA61898": {
    "summary": {
@@ -12245,7 +12753,13 @@
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA62403": {
    "summary": {
@@ -12294,7 +12808,13 @@
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA62404": {
    "summary": {
@@ -12322,12 +12842,18 @@
     {
      "source": "wikipedia-en",
      "section": "Inferior_colliculus",
-     "quote": "The inferior colliculi together with the superior colliculi form the eminences of the corpora quadrigemina, and also part of the midbrain tec",
+     "quote": "The inferior colliculi together with the superior colliculi form the eminences of the corpora quadrigemina, and also part of the midbrain tectum.",
      "supports": [
       "location"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Câu trích cụt giữa chữ ('midbrain tec') — thay bằng câu đầy đủ; văn bản không đổi."
+   }
   },
   "FMA62209": {
    "summary": {
@@ -12335,8 +12861,8 @@
     "en": "The lateral geniculate body is a part of the thalamus and a key link in the visual pathway. In humans it has six layers of neurons (grey matter) alternating with optic fibres (white matter)."
    },
    "location": {
-    "vi": "Là một chỗ lồi nhỏ hình trứng ở mặt bụng đồi thị, nơi đồi thị nối với đường thị giác; mỗi bên đồi thị có một.",
-    "en": "A small oval bulge on the underside of the thalamus where it meets the visual pathway, one on each side."
+    "vi": "Là một chỗ lồi nhỏ hình trứng ở mặt bụng đồi thị; mỗi bên đồi thị có một.",
+    "en": "A small oval bulge on the ventral side of the thalamus, one on each side."
    },
    "function": {
     "vi": "Nhận thông tin trực tiếp từ tế bào hạch võng mạc qua dải thị giác, rồi gửi sợi trục qua tia thị giác — đường đi thẳng tới vỏ thị giác sơ cấp.",
@@ -12368,7 +12894,13 @@
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Nguồn viết 'nơi đồi thị nối với dây thần kinh thị giác' (về giải phẫu là dải thị giác); bản nháp tự đổi thành 'đường thị giác' — vế này bỏ thay vì sửa nguồn hay chép chỗ không chính xác."
+   }
   },
   "FMA62211": {
    "summary": {
@@ -12390,20 +12922,26 @@
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA62045": {
    "summary": {
-    "vi": "Giao thoa thị giác là phần não nơi hai dây thần kinh thị giác bắt chéo nhau.",
-    "en": "The optic chiasm is the part of the brain where the two optic nerves cross."
+    "vi": "Giao thoa thị giác là phần não nơi hai dây thần kinh thị giác bắt chéo nhau. Ở các loài có thị trường hai mắt chồng nhau nhiều (phần lớn thú, trong đó có người), sự bắt chéo chỉ một phần: sợi từ nửa trong mỗi võng mạc sang bên đối diện, phần sợi còn lại đi tiếp về dải thị giác cùng bên.",
+    "en": "At the optic chiasm, a part of the brain, the two optic nerves cross over. In animals whose two visual fields overlap widely (most mammals, humans included), the crossing is partial: fibres from the inner half of each retina go to the opposite side, while the rest carry on into the same-side optic tract."
    },
    "location": {
     "vi": "Ở mặt dưới não, ngay dưới vùng dưới đồi.",
     "en": "On the underside of the brain, directly below the hypothalamus."
    },
    "function": {
-    "vi": "Truyền thông tin thị giác từ các dây thần kinh thị giác về phía thùy chẩm.",
-    "en": "Passes visual information from the optic nerves on toward the occipital lobes."
+    "vi": "Nhờ bắt chéo một phần, vỏ thị giác nhận cùng một nửa thị trường từ cả hai mắt: bán cầu phải xử lý nửa thị trường trái, bán cầu trái xử lý nửa thị trường phải. Sau giao thoa, các sợi đi tiếp thành dải thị giác.",
+    "en": "Thanks to this partial crossing the visual cortex receives the same half of the visual field from both eyes: the right hemisphere handles the left half-field and the left hemisphere the right. Beyond the chiasm the fibres continue as the optic tracts."
    },
    "evidence": [
     {
@@ -12418,12 +12956,58 @@
     {
      "source": "wikipedia-en",
      "section": "Optic_chiasm",
-     "quote": "FunctionTransmit visual information from the optic nerves to the occipital lobes of the brain",
+     "quote": "In vertebrates with a large overlap of the visual fields of the two eyes, i.e., most mammals and birds, but also amphibians, reptiles such as chameleons, the two optic nerves merge in the optic chiasm. In such a merged optic chiasm, part of the nerve fibres do not cross the midline, but continue towards the optic tract of the ipsilateral side.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Optic_chiasm",
+     "quote": "In the case of such partial decussation, the optic nerve fibres on the medial sides of each retina (which correspond to the lateral side of each visual hemifield, because the image is inverted) cross over to the opposite side of the body midline.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Optic_chiasm",
+     "quote": "(3% in mice and 45% in humans do not cross)",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Optic_chiasm",
+     "quote": "The partial crossing over of optic nerve fibres at the optic chiasm allows the visual cortex to receive the same hemispheric visual field from both eyes.",
+     "supports": [
+      "function"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Optic_chiasm",
+     "quote": "The net result is that the right cerebral hemisphere processes left visual hemifield, and the left cerebral hemisphere processes the right visual hemifield.",
+     "supports": [
+      "function"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Optic_chiasm",
+     "quote": "Beyond the optic chiasm, with crossed and uncrossed fibers, the optic nerves are called optic tracts.",
      "supports": [
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Chức năng dựa vào ô infobox ('FunctionTransmit visual…') — thay bằng thân bài. 'Hai dây thần kinh thị giác bắt chéo' đứng một mình để lại mô hình sai (bắt chéo toàn bộ) — thêm rằng ở người sự bắt chéo chỉ một phần (sợi nửa trong võng mạc). Tỉ lệ 45% không đưa lên trang (số liệu chỉ có nguồn bách khoa), chỉ dùng làm bằng chứng người có sợi không bắt chéo."
+   }
   },
   "FMA62046": {
    "summary": {
@@ -12465,7 +13049,13 @@
       "summary"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA74877": {
    "summary": {
@@ -12502,25 +13092,31 @@
     {
      "source": "wikipedia-en",
      "section": "Mammillary_body",
-     "quote": "act as a relay for impulses coming from the amygdalae and hippocampi, via the mamillothalamic tract to the thalamu",
+     "quote": "act as a relay for impulses coming from the amygdalae and hippocampi, via the mamillothalamic tract to the thalamus.",
      "supports": [
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Câu trích cụt giữa chữ ('thalamu') — thay bằng câu đầy đủ. Câu nguồn gọi thể vú là 'nhân thân não' (mâu thuẫn với 'thuộc gian não' ngay sau) — bản nháp đã đúng khi không dùng chữ đó."
+   }
   },
   "FMA61965": {
    "summary": {
-    "vi": "Vòm não (fornix) là một bó chất trắng nối hồi hải mã với các vùng não khác. Nó gồm tua, trụ, thân và cột; hai trụ hợp lại thành thân vòm não.",
-    "en": "The fornix is a white-matter tract linking the hippocampus to other brain regions. It is made of the fimbria, crura, body and columns, the two crura merging into the body."
+    "vi": "Vòm não (fornix) là một bó chất trắng nối hồi hải mã với các vùng não khác. Nó gồm tua, trụ, thân và cột; hai trụ hợp lại thành thân vòm não. Phần trong của thân vòm não nối với nhau bởi một lá mỏng hình tam giác chứa một số sợi mép nối hai hồi hải mã qua đường giữa — đó là mép vòm não (mép hồi hải mã).",
+    "en": "The fornix is a white-matter tract linking the hippocampus to other brain regions. It is made of the fimbria, crura, body and columns, the two crura merging into the body. The inner parts of the body are joined by a thin triangular sheet carrying some commissural fibres that link the two hippocampi across the midline: the commissure of the fornix, or hippocampal commissure."
    },
    "location": {
     "vi": "Thân vòm não đi ra trước rồi lại chia đôi gần mép trước. Sợi sau mép của mỗi bên đi qua vùng dưới đồi tới thể vú; sợi trước mép tận ở các nhân vách của não trước nền và nhân accumbens.",
     "en": "Its body runs forward and splits again near the anterior commissure. On each side the postcommissural fibres pass through the hypothalamus to the mammillary bodies, while the precommissural fibres end in the septal nuclei of the basal forebrain and the nucleus accumbens."
    },
    "function": {
-    "vi": "Mang tín hiệu từ hồi hải mã; qua thể vú, đường đi tiếp tới các nhân trước đồi thị theo bó thể vú – đồi thị.",
-    "en": "Carries signals out of the hippocampus; via the mammillary bodies the route continues to the anterior thalamic nuclei along the mammillothalamic tract."
+    "vi": "Là đường ra chính của hồi hải mã; nó cũng mang một số sợi đến hồi hải mã từ các cấu trúc ở gian não và não trước nền. Sợi sau mép tới thể vú, rồi đường đi tiếp tới các nhân trước đồi thị theo bó thể vú – đồi thị.",
+    "en": "It is the hippocampus's main output tract, and also brings some incoming fibres to the hippocampus from diencephalic and basal forebrain structures. The postcommissural fibres reach the mammillary bodies, from which the route goes on to the anterior thalamic nuclei along the mammillothalamic tract."
    },
    "evidence": [
     {
@@ -12556,16 +13152,38 @@
      "supports": [
       "location"
      ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Fornix_(neuroanatomy)",
+     "quote": "is a C-shaped bundle of nerve fibers in the brain that acts as the major output tract of the hippocampus. The fornix also carries some afferent fibers to the hippocampus from structures in the diencephalon and basal forebrain.",
+     "supports": [
+      "function"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Fornix_(neuroanatomy)",
+     "quote": "The medial portions of the body of the fornix are joined by a thin triangular lamina, named the psalterium (lyra). This lamina contains some commissural fibers that connect the two hippocampi across the middle line and constitute the commissure of fornix (also called the hippocampal commissure).",
+     "supports": [
+      "summary"
+     ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Khối gồm cả mảnh mép vòm não — thêm câu nguồn về mép vòm não để đoạn văn nói được mảnh đó. Chức năng 'mang tín hiệu từ hồi hải mã' bỏ mất vế sợi đến hồi hải mã — bổ sung theo câu mở đầu bài."
+   }
   },
   "FMA62033": {
    "summary": {
-    "vi": "Tuyến tùng (thể tùng) là tuyến nội tiết nhỏ trong não, có hình như quả thông. Nó là một trong các cơ quan quanh não thất tiết thần kinh – nội tiết, nơi mao mạch phần lớn cho các chất tan trong máu thấm qua.",
-    "en": "The pineal gland, or pineal body, is a small pine-cone-shaped endocrine gland in the brain. It is one of the neuroendocrine circumventricular organs, where the capillaries let most blood solutes through."
+    "vi": "Tuyến tùng (thể tùng) là tuyến nội tiết nhỏ trong não, có hình như quả thông. Nó là một trong các cơ quan quanh não thất tiết thần kinh – nội tiết, nơi mao mạch phần lớn thấm được các chất tan trong máu.",
+    "en": "The pineal gland, or pineal body, is a small pine-cone-shaped endocrine gland in the brain. It is one of the neuroendocrine circumventricular organs, whose capillaries are largely permeable to solutes in the blood."
    },
    "location": {
-    "vi": "Ở biểu mô đồi (epithalamus), gần trung tâm não, giữa hai bán cầu, nằm trong một rãnh nơi hai nửa đồi thị gặp nhau.",
+    "vi": "Ở vùng trên đồi (epithalamus), gần trung tâm não, giữa hai bán cầu, nằm trong một rãnh nơi hai nửa đồi thị gặp nhau.",
     "en": "Within the epithalamus, close to the brain's centre and between the hemispheres, lodged in the groove where left and right thalamus come together."
    },
    "function": {
@@ -12591,7 +13209,13 @@
       "location"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Thuật ngữ: epithalamus là 'vùng trên đồi', không phải 'biểu mô đồi'. 'Capillaries are mostly permeable' là mức thấm của mao mạch, không phải 'cho phần lớn chất tan qua' — sửa cho đúng chủ thể của 'mostly'."
+   }
   },
   "FMA50865": {
    "summary": {
@@ -12603,8 +13227,8 @@
     "en": "It is the only cranial nerve leaving the back of the brainstem, curving round it to reach the front."
    },
    "function": {
-    "vi": "Điều khiển cơ chéo trên ở bên đối diện.",
-    "en": "Drives the superior oblique muscle on the opposite side."
+    "vi": "Điều khiển cơ chéo trên ở bên đối diện với nhân của nó.",
+    "en": "Drives the superior oblique muscle on the side opposite its nucleus."
    },
    "evidence": [
     {
@@ -12634,12 +13258,18 @@
     {
      "source": "wikipedia-en",
      "section": "Trochlear_nerve",
-     "quote": "It innervates a muscle, the superior oblique muscle, on the opposite",
+     "quote": "It innervates a muscle, the superior oblique muscle, on the opposite side (contralateral) from its nucleus.",
      "supports": [
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Câu trích bị cắt trước mốc so sánh ('on the opposite') — 'bên đối diện' là đối diện với NHÂN, không phải với dây thần kinh; thay bằng câu đầy đủ và nói rõ mốc."
+   }
   },
   "FMA6964": {
    "summary": {
@@ -12647,8 +13277,8 @@
     "en": "The ciliary ganglion is a parasympathetic ganglion containing postganglionic parasympathetic neurons; it is one of the head's four parasympathetic ganglia."
    },
    "location": {
-    "vi": "Ngay sau nhãn cầu, ở phần sau ổ mắt. Đường kính 1–2 mm.",
-    "en": "Just behind the eyeball in the back of the orbit, 1–2 mm across."
+    "vi": "Ngay sau nhãn cầu, ở phần sau ổ mắt.",
+    "en": "Just behind the eyeball in the back of the orbit."
    },
    "function": {
     "vi": "Các nơ-ron của nó chi phối cơ thắt đồng tử (làm co đồng tử) và cơ mi (co lại làm thể thủy tinh phồng hơn); cả hai cơ đều không theo ý muốn.",
@@ -12681,20 +13311,26 @@
       "summary"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Bỏ số đo 'đường kính 1–2 mm' — số đo chỉ có nguồn bách khoa (phán quyết lô hai)."
+   }
   },
   "FMA222905": {
    "summary": {
-    "vi": "Đoạn của kết tràng. Kết tràng gồm bốn đoạn: kết tràng lên, kết tràng ngang, kết tràng xuống và kết tràng sigma; mô hình có ba đoạn đầu.",
-    "en": "A segment of the colon. The colon has four sections, ascending, transverse, descending and sigmoid; the model shows the first three."
+    "vi": "Đoạn của kết tràng. Kết tràng gồm bốn đoạn: kết tràng lên, kết tràng ngang, kết tràng xuống và kết tràng sigma.",
+    "en": "A segment of the colon. The colon has four sections: ascending, transverse, descending and sigmoid."
    },
    "location": {
     "vi": "Kết tràng lên đi lên trong ổ bụng, kết tràng ngang vắt ngang khoang bụng, kết tràng xuống đi xuống về phía trực tràng. Kết tràng lên và kết tràng xuống nằm sau phúc mạc; kết tràng ngang nằm trong phúc mạc.",
     "en": "The ascending colon climbs the abdomen, the transverse colon crosses it and the descending colon runs down toward the rectum. The ascending and descending parts lie behind the peritoneum; the transverse colon lies within it."
    },
    "function": {
-    "vi": "Ruột già hấp thu nước và muối; phần chất thải còn lại được trữ ở trực tràng thành phân trước khi thải ra. Chất thải được nhu động đẩy dọc kết tràng.",
-    "en": "The large intestine absorbs water and salts, and what remains is stored in the rectum as faeces until defecation. Peristalsis moves the waste along the colon."
+    "vi": "Ruột già hấp thu nước và muối; phần chất thải còn lại được trữ ở trực tràng thành phân trước khi thải ra. Ở kết tràng lên, chất thải được nhu động đẩy lên về phía kết tràng ngang.",
+    "en": "The large intestine absorbs water and salts, and what remains is stored in the rectum as faeces until defecation. In the ascending colon, peristalsis pushes the waste up toward the transverse colon."
    },
    "evidence": [
     {
@@ -12737,7 +13373,13 @@
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Bỏ 'mô hình có ba đoạn đầu' — mệnh đề về mô hình, không có nguồn (lỗi lô đầu). Câu nhu động trong nguồn nói riêng về kết tràng lên ('pumped upwards toward the transverse colon'), bản nháp nới thành 'dọc kết tràng' — gán lại đúng đoạn. Câu 'wider in diameter' mang [failed verification] không dùng."
+   }
   },
   "FMA15041": {
    "summary": {
@@ -12770,20 +13412,26 @@
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA18255": {
    "summary": {
-    "vi": "Mào tinh hoàn gồm ba phần: đầu, thân và đuôi. Nó được bọc hoàn toàn trong lớp tinh mạc, liên tục với tinh mạc phủ tinh hoàn.",
-    "en": "The epididymis has a head, body and tail and is wrapped entirely in the tunica vaginalis, which continues over the testis."
+    "vi": "Mào tinh hoàn có thể chia thành ba vùng chính: đầu, thân và đuôi. Nó được bọc hoàn toàn trong lớp tinh mạc, liên tục với tinh mạc phủ tinh hoàn.",
+    "en": "The epididymis can be split into three main regions, head, body and tail, and is wrapped entirely in the tunica vaginalis, which continues over the testis."
    },
    "location": {
     "vi": "Nằm sau và hơi ngoài tinh hoàn. Đầu mào tinh nhận tinh trùng qua các ống ra ở cực trên tinh hoàn; đuôi nối tiếp phần ngoằn ngoèo của ống dẫn tinh.",
     "en": "Behind and slightly lateral to the testis. Its head takes in sperm through the efferent ducts at the testis's upper pole, and its tail carries on into the coiled start of the vas deferens."
    },
    "function": {
-    "vi": "Tinh trùng sinh ra ở tinh hoàn vào đầu mào tinh, qua thân và tới đuôi, nơi chúng được dự trữ. Đầu mào tinh hấp thu dịch để cô đặc tinh trùng.",
-    "en": "Sperm made in the testis enter the head, pass through the body and reach the tail, where they are stored. The head absorbs fluid to concentrate them."
+    "vi": "Tinh trùng sinh ra ở tinh hoàn vào đầu mào tinh, qua thân và tới đuôi, nơi chúng được dự trữ. Đầu mào tinh tham gia hấp thu dịch để cô đặc tinh trùng.",
+    "en": "Sperm made in the testis enter the head, pass through the body and reach the tail, where they are stored. The head takes part in absorbing fluid to concentrate them."
    },
    "evidence": [
     {
@@ -12793,14 +13441,6 @@
      "supports": [
       "summary",
       "location"
-     ]
-    },
-    {
-     "source": "wikipedia-en",
-     "section": "Epididymis",
-     "quote": "Head of epididymis, B. Body of epididymis, C. Tail of epididymis",
-     "supports": [
-      "summary"
      ]
     },
     {
@@ -12834,8 +13474,46 @@
      "supports": [
       "function"
      ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Epididymis",
+     "quote": "The epididymis can be divided into three main regions:",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Epididymis",
+     "quote": "The head (Latin: caput).",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Epididymis",
+     "quote": "The body (Latin: corpus).",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Epididymis",
+     "quote": "The tail (Latin: cauda).",
+     "supports": [
+      "summary"
+     ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Ba phần đầu–thân–đuôi trích từ chú thích hình ('Head of epididymis, B. Body…') — thay bằng danh sách ở thân bài (tiêu đề kèm cả ba mục). Giữ rào 'is involved in' → 'tham gia hấp thu dịch', không viết như chức năng duy nhất."
+   }
   },
   "FMA19386": {
    "summary": {
@@ -12870,7 +13548,13 @@
       "location"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA19234": {
    "summary": {
@@ -12881,7 +13565,10 @@
     "vi": "Phía gần nối tiếp đuôi mào tinh, đoạn đầu ngoằn ngoèo; phía xa phình thành bóng ống dẫn tinh rồi hợp với ống của túi tinh thành ống phóng tinh.",
     "en": "Near its start it continues from the tail of the epididymis with a twisting first stretch; at the far end it swells into the ampulla and then joins the seminal vesicle's duct to form the ejaculatory duct."
    },
-   "function": null,
+   "function": {
+    "vi": "Khi phóng tinh, cơ trơn ở thành ống dẫn tinh co theo phản xạ, đẩy tinh trùng đi tới (nhu động).",
+    "en": "During ejaculation the smooth muscle of its wall contracts by reflex and pushes the sperm onward (peristalsis)."
+   },
    "evidence": [
     {
      "source": "wikipedia-en",
@@ -12907,21 +13594,35 @@
       "summary",
       "location"
      ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Vas_deferens",
+     "quote": "During ejaculation, the smooth muscle in the walls of the vas deferens contracts reflexively, thus propelling the sperm forward. This is also known as peristalsis.",
+     "supports": [
+      "function"
+     ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Chức năng để trống trong khi thân bài có mục Function — điền theo câu nguồn."
+   }
   },
   "FMA19617": {
    "summary": {
-    "vi": "Thể xốp là khối mô xốp bao quanh niệu đạo nam trong dương vật; đầu gần của nó phình ra thành hành niệu đạo.",
-    "en": "The corpus spongiosum is the spongy tissue mass around the male urethra inside the penis; its near end widens into the urethral bulb."
+    "vi": "Thể xốp là khối mô xốp bao quanh niệu đạo nam trong dương vật, một vùng mô cương nhỏ hơn hai thể hang; đầu gần của nó phình ra thành hành niệu đạo.",
+    "en": "The corpus spongiosum is the spongy tissue mass around the male urethra inside the penis, a smaller zone of erectile tissue than the corpora cavernosa; its near end widens into the urethral bulb."
    },
    "location": {
-    "vi": "Dọc mặt dưới dương vật; thể xốp chứa niệu đạo và tạo thành quy đầu.",
-    "en": "Along the underside of the penis, containing the urethra and forming the glans."
+    "vi": "Dọc mặt dưới dương vật; phần ở trước hành nằm trong một rãnh ở mặt dưới hai thể hang. Thể xốp chứa niệu đạo và tạo thành quy đầu.",
+    "en": "Along the underside of the penis; in front of the bulb it lies in a groove under the joined corpora cavernosa. It contains the urethra and forms the glans."
    },
    "function": {
-    "vi": "Là mô cương nhỏ hơn so với hai thể hang.",
-    "en": "A smaller region of erectile tissue than the corpora cavernosa."
+    "vi": "Khi cương, thể xốp vẫn mềm trong lúc hai thể hang căng máu, nhờ đó niệu đạo không bị kẹp lại và vẫn là đường thông cho phóng tinh.",
+    "en": "During erection it stays pliable while the corpora cavernosa fill, so the urethra is not squeezed shut and remains open for ejaculation."
    },
    "evidence": [
     {
@@ -12948,8 +13649,30 @@
       "location",
       "function"
      ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Corpus_spongiosum_penis",
+     "quote": "The portion of the corpus spongiosum in front of the bulb lies in a groove on the under surface of the conjoined corpora cavernosa penis.",
+     "supports": [
+      "location"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Corpus_spongiosum_penis",
+     "quote": "The function of the corpus spongiosum in erection is to prevent the urethra from pinching closed, thereby maintaining the urethra as a viable channel for ejaculation. To do this, the corpus spongiosum remains pliable during erection while the corpora cavernosa penis become engorged with blood.",
+     "supports": [
+      "function"
+     ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Trường chức năng chứa một mô tả ('là mô cương nhỏ hơn') — chuyển sang tóm tắt (đặt sai trường); điền chức năng theo mục Function của bài Corpus spongiosum."
+   }
   },
   "FMA321004": {
    "summary": {
@@ -12983,7 +13706,13 @@
       "summary"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA18247": {
    "summary": {
@@ -13013,7 +13742,13 @@
       "location"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA71193": {
    "summary": {
@@ -13021,12 +13756,12 @@
     "en": "A lobe of the thymus. The thymus has two lobes that meet in the upper midline under a capsule, each with a central medulla and an outer cortex."
    },
    "location": {
-    "vi": "Trong trung thất trước, sau xương ức, nằm trên màng ngoài tim; hai thùy trải từ dưới tuyến giáp ở cổ xuống tới ngang sụn sườn thứ tư.",
-    "en": "In the anterior mediastinum behind the sternum, resting on the pericardium; the lobes reach from below the thyroid in the neck down to the level of the fourth costal cartilage."
+    "vi": "Trong trung thất trước, sau xương ức, nằm trên màng ngoài tim; hai thùy trải từ dưới tuyến giáp ở cổ xuống tới tận ngang sụn sườn thứ tư.",
+    "en": "In the anterior mediastinum behind the sternum, resting on the pericardium; the lobes reach from below the thyroid in the neck down as far as the fourth costal cartilage."
    },
    "function": {
-    "vi": "Tuyến ức chứa tế bào T chưa trưởng thành (thymocyte); các tế bào biểu mô lót giúp chúng phát triển. Tuyến lớn nhất và hoạt động mạnh nhất ở sơ sinh và trước tuổi dậy thì, rồi nhỏ dần, mô dần được thay bằng mỡ.",
-    "en": "The thymus houses immature T cells (thymocytes), which its lining epithelial cells help to develop. It is biggest and busiest in newborns and before adolescence, then shrinks as fat gradually replaces its tissue."
+    "vi": "Tuyến ức chứa tế bào T chưa trưởng thành (thymocyte); các tế bào biểu mô lót giúp chúng phát triển. Tuyến lớn nhất và hoạt động mạnh nhất ở giai đoạn sơ sinh và trước tuổi dậy thì; từ đầu tuổi thiếu niên nó bắt đầu nhỏ dần, giảm hoạt động, và mô dần được thay bằng mỡ.",
+    "en": "The thymus houses immature T cells (thymocytes), which its lining epithelial cells help to develop. It is biggest and busiest in the newborn and pre-adolescent years; from the early teens it starts to shrink and slow down as fat gradually replaces its tissue."
    },
    "evidence": [
     {
@@ -13070,7 +13805,13 @@
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Giữ sắc thái 'as low as' (xuống tới tận) mà không thêm rào đón nguồn không có; giữ mốc thời gian 'từ đầu tuổi thiếu niên' của nguồn."
+   }
   },
   "FMA51061": {
    "summary": {
@@ -13096,7 +13837,13 @@
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA51048": {
    "summary": {
@@ -13104,12 +13851,12 @@
     "en": "The iliotibial tract is a lengthwise fibrous reinforcement of the fascia lata."
    },
    "location": {
-    "vi": "Ở mặt ngoài đùi; bám từ phần củ chậu trước ngoài trên mép ngoài mào chậu.",
-    "en": "On the outside of the thigh, starting from the anterolateral iliac tubercle on the outer lip of the iliac crest."
+    "vi": "Là phần tăng cường của mạc đùi. Phần dải nằm dưới cơ căng mạc đùi kéo dài lên trên, hợp với phần ngoài bao khớp háng; cơ mông lớn và cơ căng mạc đùi bám vào dải.",
+    "en": "Part of the fascia lata. The section lying under tensor fasciae latae extends upward to blend with the outer hip-joint capsule, and gluteus maximus and tensor fasciae latae insert on the tract."
    },
    "function": {
-    "vi": "Góp phần giữ vững mặt ngoài khớp gối.",
-    "en": "Helps stabilise the outer side of the knee."
+    "vi": "Góp phần giữ vững mặt ngoài khớp gối, cả khi gối duỗi lẫn khi gấp một phần, nên được dùng liên tục khi đi và chạy.",
+    "en": "Helps steady the outer side of the knee, both when it is straight and when partly bent, so it is in constant use in walking and running."
    },
    "evidence": [
     {
@@ -13123,7 +13870,15 @@
     {
      "source": "wikipedia-en",
      "section": "Iliotibial_tract",
-     "quote": "OriginAnterolateral iliac tubercle portion of the external lip of the iliac crest",
+     "quote": "The ITB contributes to lateral knee stabilization.",
+     "supports": [
+      "function"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Iliotibial_tract",
+     "quote": "The part of the iliotibial band which lies beneath the tensor fasciae latae is prolonged upward to join the lateral part of the capsule of the hip-joint.",
      "supports": [
       "location"
      ]
@@ -13131,12 +13886,26 @@
     {
      "source": "wikipedia-en",
      "section": "Iliotibial_tract",
-     "quote": "The ITB contributes to lateral knee stabilization.",
+     "quote": "The gluteus maximus muscle and the tensor fasciae latae insert upon the tract.",
+     "supports": [
+      "location"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Iliotibial_tract",
+     "quote": "The IT band stabilizes the knee both in extension and in partial flexion, and is therefore used constantly during walking and running.",
      "supports": [
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Vị trí dựa duy nhất vào ô infobox ('OriginAnterolateral iliac tubercle…') và 'mặt ngoài đùi' không có câu thân bài — thay bằng các liên hệ thân bài nêu (bao khớp háng, cơ mông lớn, cơ căng mạc đùi). Thêm vế giữ vững gối khi duỗi và gấp một phần."
+   }
   },
   "FMA54839": {
    "summary": {
@@ -13145,7 +13914,7 @@
    },
    "location": {
     "vi": "Ở cẳng tay, màng nối bờ gian cốt xương quay và xương trụ, là phần chính của khớp sợi quay – trụ; ở cẳng chân, màng căng giữa mào gian cốt xương chày và xương mác.",
-    "en": "In the forearm it joins the interosseous borders of radius and ulna and forms most of the fibrous radio-ulnar joint; in the leg it spans the interosseous crests of tibia and fibula."
+    "en": "In the forearm it joins the interosseous borders of radius and ulna and is the main part of the fibrous radio-ulnar joint; in the leg it spans the interosseous crests of tibia and fibula."
    },
    "function": {
     "vi": "Màng gian cốt cẳng tay chia cẳng tay thành khoang trước và khoang sau, là nơi bám của cơ và truyền tải lực; màng gian cốt cẳng chân giúp giữ vững tương quan giữa xương chày và xương mác.",
@@ -13179,7 +13948,13 @@
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "EN 'forms most of' đổi nghĩa của 'main part' (phần chính, không phải phần lớn) — sửa theo nguồn; bản tiếng Việt đã đúng."
+   }
   },
   "FMA58078": {
    "summary": {
@@ -13201,7 +13976,13 @@
       "location"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA58604": {
    "summary": {
@@ -13258,7 +14039,13 @@
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA55130": {
    "summary": {
@@ -13299,7 +14086,13 @@
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA14539": {
    "summary": {
@@ -13325,7 +14118,13 @@
       "summary"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA10419": {
    "summary": {
@@ -13366,7 +14165,13 @@
       "summary"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA13365": {
    "summary": {
@@ -13412,7 +14217,13 @@
       "location"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA14643": {
    "summary": {
@@ -13438,7 +14249,13 @@
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   }
  }
 }
