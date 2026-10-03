@@ -89,9 +89,9 @@ export async function SiteFooter() {
   }));
 
   const legal = [
-    // Đứng đầu: "ai đứng sau trang này" là câu hỏi đầu tiên của người đọc
-    // nội dung sức khoẻ, trước cả chính sách dữ liệu.
-    { href: "/about", label: t("about") },
+    // "Về Sciencepedia" đã gỡ khỏi footer theo yêu cầu chủ sản phẩm
+    // (2026-10-03). Trang /about vẫn còn: dòng "ai đứng sau" ở mỗi bài viết
+    // dẫn tới đó, và nó phải khớp quy trình thật (CLAUDE.md).
     { href: "/privacy", label: t("privacy") },
     { href: "/terms", label: t("terms") },
     { href: "/contact", label: t("contact") },
