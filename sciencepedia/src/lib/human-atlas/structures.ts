@@ -83,6 +83,12 @@ export const ANATOMY_SOURCES = {
     type: "encyclopedia",
     title: "Wikipedia",
     publisher: "Wikimedia Foundation",
+    /**
+     * Wikipedia không có ấn bản; "phiên bản" là ngày chụp các trang (= bản
+     * trong `.cache`, = `accessedAt`). Schema bắt buộc trường này — thiếu nó
+     * thì `anatomy-enrich` dừng ở bước Zod.
+     */
+    version: "2026-10-03",
     url: "https://en.wikipedia.org/",
     license: "CC BY-SA 4.0",
     licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/",
