@@ -1073,3 +1073,16 @@ sửa của cả hai được chụp vào `Revision` trong cùng transaction.
 - **Còn nợ:** Quyền sử dụng nội dung phái sinh VACA (nguồn đã chết từ 17/09) vẫn chờ người quyết.
 - **Còn nợ:** Số vệ tinh (NASA 8/2026) và số hành tinh lùn (9/2026): kiểm lại sau 6 tháng; cột vệ tinh vẫn gộp ba tiêu chí đếm của NASA (IAU công nhận / confirmed / known) — chưa chuẩn hoá.
 - **Còn nợ:** Tên Sao Mai/Sao Hôm là tên tiếng Việt; nguồn NASA chỉ đỡ ý 'người xưa tưởng là hai thiên thể, sao mai và sao hôm'.
+
+## 2026-10-03 — sửa lỗi phát hiện khi bổ sung bản en
+
+Kế hoạch: `docs/content/checks/2026-10-03/fixes.json`. Script: `scripts/apply-fixes-2026-10-03.ts`;
+bản trước khi sửa được chụp vào `Revision` trong cùng transaction.
+
+### ho-den-noi-hinh-hoc-cua-khong-gian-sup-do
+
+- - 2026-10-03 | ho-den-noi-hinh-hoc-cua-khong-gian-sup-do | Bản en: 'core … collapses after a supernova' → lõi sụp đổ TRƯỚC vụ nổ, neutrino từ lõi sụp đổ truyền năng lượng thổi bay lớp ngoài thành siêu tân tinh (đồng bộ với bản vi đã đính chính; bản vi không đổi). Rà toàn bài: các đoạn còn lại khớp claim bản vi. | bản vi hiện hành (đính chính trước đó); đồng bộ theo docs/content-rules.md 'Đính chính chỉ xong khi CẢ HAI bản ngôn ngữ đã đổi'
+
+### nhung-su-gia-hoa-hoc-dieu-khien-hoat-dong-cua-nao-bo
+
+- - 2026-10-03 | nhung-su-gia-hoa-hoc-dieu-khien-hoat-dong-cua-nao-bo | Cả hai bản: heading '6 hóa chất' / '6 chemicals' → '7', khớp số chất bài trình bày (dopamine, serotonin, GABA, glutamate, adrenaline, oxytocin, endorphin) | đối chiếu nội bộ bài

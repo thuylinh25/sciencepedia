@@ -1,0 +1,50 @@
+{
+  "edits": [
+    {
+      "slug": "ho-den-noi-hinh-hoc-cua-khong-gian-sup-do",
+      "field": "contentEn",
+      "kind": "claim",
+      "find": "**Stellar-mass black holes** (5–100 solar masses) form when the core of a massive star collapses after a supernova.",
+      "replace": "**Stellar-mass black holes** (5–100 solar masses) form when the core of a massive star collapses. That collapse comes BEFORE the explosion, not after it: the collapsing core releases neutrinos, and it is the neutrinos that transfer energy to the outer layers, blowing them apart as a [[sieu-tan-tinh|supernova]].",
+      "log": "Bản en: 'core … collapses after a supernova' → lõi sụp đổ TRƯỚC vụ nổ, neutrino từ lõi sụp đổ truyền năng lượng thổi bay lớp ngoài thành siêu tân tinh (đồng bộ với bản vi đã đính chính; bản vi không đổi). Rà toàn bài: các đoạn còn lại khớp claim bản vi.",
+      "basis": "bản vi hiện hành (đính chính trước đó); đồng bộ theo docs/content-rules.md 'Đính chính chỉ xong khi CẢ HAI bản ngôn ngữ đã đổi'"
+    },
+    {
+      "slug": "nhung-su-gia-hoa-hoc-dieu-khien-hoat-dong-cua-nao-bo",
+      "field": "content",
+      "kind": "claim",
+      "find": "## Não bộ không được điều khiển bởi 6 hóa chất",
+      "replace": "## Não bộ không được điều khiển bởi 7 hóa chất",
+      "log": "Cả hai bản: heading '6 hóa chất' / '6 chemicals' → '7', khớp số chất bài trình bày (dopamine, serotonin, GABA, glutamate, adrenaline, oxytocin, endorphin)",
+      "basis": "đối chiếu nội bộ bài"
+    },
+    {
+      "slug": "nhung-su-gia-hoa-hoc-dieu-khien-hoat-dong-cua-nao-bo",
+      "field": "contentEn",
+      "kind": "claim",
+      "find": "## The brain is not run by 6 chemicals",
+      "replace": "## The brain is not run by 7 chemicals"
+    },
+    {
+      "slug": "photon-hat-anh-sang-thuc-su-la-gi",
+      "field": "content",
+      "kind": "anchor",
+      "find": "[Hành Trình Của Photon: Chuyến Đi 100.000 Năm Từ Lõi Mặt Trời Đến Trái Đất]",
+      "replace": "[Hành Trình Của Photon: Hàng Chục Nghìn Năm Từ Lõi Mặt Trời Đến Trái Đất]"
+    },
+    {
+      "slug": "mat-troi-lo-phan-ung-giu-ca-he-hanh-tinh",
+      "field": "content",
+      "kind": "anchor",
+      "find": "[Hành Trình Của Photon: Chuyến Đi 100.000 Năm Từ Lõi Mặt Trời Đến Trái Đất]",
+      "replace": "[Hành Trình Của Photon: Hàng Chục Nghìn Năm Từ Lõi Mặt Trời Đến Trái Đất]"
+    },
+    {
+      "slug": "mat-khong-thuc-su-nhin-nao-bo-tao-ra-hinh-anh-nhu-the-nao",
+      "field": "summary",
+      "kind": "format",
+      "find": "mà chúng ta nhìn thấy mỗi ngày.",
+      "replace": "mà chúng ta nhìn thấy mỗi ngày.**"
+    }
+  ]
+}
