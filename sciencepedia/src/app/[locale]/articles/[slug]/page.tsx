@@ -427,9 +427,9 @@ export default async function ArticlePage({
             {article.reviewedBy?.name && article.reviewedAt && (
               <span className="flex items-center gap-1.5">
                 <ShieldCheck className="size-4 text-primary-strong" />
-                {/* Chữ thường, không còn liên kết tới /about#ai-dung-sau: chủ
-                    sản phẩm gỡ cả mục "ai đứng sau" (2026-10-03). Bản thân dòng
-                    byline thì phải ở lại — xem chú thích ngay trên. */}
+                {/* Chữ thường: trang /about (mục "ai đứng sau") đã xoá theo
+                    yêu cầu chủ sản phẩm (2026-10-03). Bản thân dòng byline thì
+                    phải ở lại — xem chú thích ngay trên. */}
                 {t("reviewedBy", {
                   name: article.reviewedBy.name,
                   date: formatDate(article.reviewedAt, locale),

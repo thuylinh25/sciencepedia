@@ -253,10 +253,10 @@ trình duyệt, không có một cá nhân bảo chứng.
 **Phải nhất quán.** Lúc tổ chức lúc tên riêng thì người đọc suy ra rằng bài có tên
 người được soi kỹ hơn — một hàm ý mà ta không có gì bảo đảm.
 
-**Byline không còn dẫn tới /about** (chủ sản phẩm chốt 2026-10-03, cùng lúc gỡ mục "Về
-Sciencepedia" khỏi footer). Đánh đổi đã biết: người đọc không còn một chỗ bấm để biết "Ban biên
-tập" là quy trình chứ không phải chuyên gia. Dòng byline thì vẫn phải hiện (JSON-LD khai
-`reviewedBy`). Trang /about còn đó, chỉ không còn liên kết vào từ giao diện.
+**Không còn trang /about; byline không dẫn đi đâu** (chủ sản phẩm chốt 2026-10-03: gỡ mục "Về
+Sciencepedia" khỏi footer, gỡ liên kết "ai đứng sau", rồi xoá hẳn trang). Đánh đổi đã biết: người
+đọc không còn chỗ nào để biết "Ban biên tập" là quy trình AI chứ không phải chuyên gia. Dòng byline
+thì vẫn phải hiện (JSON-LD khai `reviewedBy`).
 
 **Điều kiện đổi sang tên người**: khi có biên tập viên thật ký từng bài. Lúc đó, và
 chỉ lúc đó.

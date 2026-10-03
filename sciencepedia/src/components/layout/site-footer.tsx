@@ -89,9 +89,8 @@ export async function SiteFooter() {
   }));
 
   const legal = [
-    // "Về Sciencepedia" đã gỡ khỏi footer theo yêu cầu chủ sản phẩm
-    // (2026-10-03). Trang /about vẫn còn: dòng "ai đứng sau" ở mỗi bài viết
-    // dẫn tới đó, và nó phải khớp quy trình thật (CLAUDE.md).
+    // Không còn "Về Sciencepedia": trang /about đã xoá theo yêu cầu chủ sản
+    // phẩm (2026-10-03).
     { href: "/privacy", label: t("privacy") },
     { href: "/terms", label: t("terms") },
     { href: "/contact", label: t("contact") },
