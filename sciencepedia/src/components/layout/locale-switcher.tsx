@@ -17,8 +17,7 @@ import {
 const LABEL: Record<Locale, string> = { vi: "Tiếng Việt", en: "English" };
 const SHORT: Record<Locale, string> = { vi: "VI", en: "EN" };
 
-export function LocaleSwitcher() {
-  const t = useTranslations("common");
+function useSwitchLocale() {
   const locale = useLocale() as Locale;
   const router = useRouter();
   const pathname = usePathname();
@@ -32,6 +31,51 @@ export function LocaleSwitcher() {
       router.replace(pathname, { locale: next });
     });
   }
+
+  return { locale, pending, switchTo };
+}
+
+/**
+ * Công tắc hai nút cho menu điện thoại.
+ *
+ * Bản xổ menu ("🌐 VI") từng nằm ở ĐÁY drawer, sau danh sách lĩnh vực dài:
+ * trên điện thoại nó rơi dưới mép màn hình hoặc dưới thanh trình duyệt, và
+ * người dùng báo "không thấy chỗ đổi ngôn ngữ". Trong drawer có đủ chỗ cho
+ * cả hai lựa chọn hiện tên đầy đủ — một lần chạm, không phải mở menu lồng
+ * trong menu.
+ */
+export function LocaleToggle() {
+  const t = useTranslations("common");
+  const { locale, pending, switchTo } = useSwitchLocale();
+
+  return (
+    <div role="group" aria-label={t("language")} className="flex items-center gap-2">
+      <Globe className="size-4 shrink-0 text-muted-foreground" aria-hidden />
+      <div className="grid flex-1 grid-cols-2 gap-1 rounded-full border bg-muted/40 p-1">
+        {routing.locales.map((code) => (
+          <button
+            key={code}
+            type="button"
+            disabled={pending}
+            aria-pressed={code === locale}
+            onClick={() => switchTo(code)}
+            className={
+              code === locale
+                ? "rounded-full bg-primary px-3 py-1.5 text-sm font-semibold text-primary-foreground"
+                : "rounded-full px-3 py-1.5 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+            }
+          >
+            {LABEL[code]}
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+export function LocaleSwitcher() {
+  const t = useTranslations("common");
+  const { locale, pending, switchTo } = useSwitchLocale();
 
   return (
     <DropdownMenu>
