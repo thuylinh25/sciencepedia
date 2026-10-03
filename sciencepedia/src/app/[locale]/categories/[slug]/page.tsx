@@ -31,10 +31,13 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({
   params,
+  searchParams,
 }: {
   params: Promise<{ locale: string; slug: string }>;
+  searchParams: Promise<{ page?: string }>;
 }): Promise<Metadata> {
   const { locale, slug } = await params;
+  const { page } = await searchParams;
   const category = await getCategoryBySlug(slug);
   // noindex cho slug không tồn tại — xem chú thích ở articles/[slug]/page.tsx
   if (!category) {
@@ -43,8 +46,13 @@ export async function generateMetadata({
 
   const loc = locale as Locale;
   const name = loc === "en" ? category.nameEn : category.name;
+  const t = await getTranslations({ locale, namespace: "category" });
+  // Danh mục chưa có mô tả từng lấy chính tên làm mô tả — trùng tiêu đề.
+  // Câu mẫu chỉ là lưới đỡ; chỗ sửa thật là viết mô tả cho danh mục.
   const description =
-    (loc === "en" ? category.descriptionEn : category.description) ?? name;
+    (loc === "en"
+      ? (category.descriptionEn ?? category.description)
+      : category.description) ?? t("metaDescription", { name });
 
   return buildMetadata({
     title: name,
@@ -52,6 +60,11 @@ export async function generateMetadata({
     path: `/categories/${category.slug}`,
     locale: loc,
     image: category.coverImage,
+    page: Math.max(1, Number(page) || 1),
+    // Danh mục chưa có bài (đếm cả bài của danh mục con) là trang trống: để
+    // nó trong chỉ mục là nộp cho Google một trang "nội dung mỏng". Sitemap
+    // lọc cùng điều kiện. Có bài đầu tiên là tự vào lại chỉ mục.
+    noindex: category._count.articles === 0,
   });
 }
 

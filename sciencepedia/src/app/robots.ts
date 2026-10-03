@@ -7,7 +7,11 @@ export default function robots(): MetadataRoute.Robots {
     rules: [
       {
         userAgent: "*",
-        allow: "/",
+        /* `/api/og` là ảnh chia sẻ dự phòng mà og:image trỏ tới khi bài
+           không có ảnh bìa. Chặn nó cùng `/api/` thì Google không tải được
+           ảnh đó. Google chọn quy tắc DÀI hơn khi allow/disallow cùng khớp,
+           nên `/api/og` thắng `/api/` mà không mở phần API còn lại. */
+        allow: ["/", "/api/og"],
         // Khu quản trị, API và trang kết quả tìm kiếm không cần vào chỉ mục
         disallow: [
           "/api/",

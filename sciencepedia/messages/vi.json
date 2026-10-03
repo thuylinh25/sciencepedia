@@ -148,6 +148,7 @@
     "views": "{count} lượt xem",
     "publishedOn": "Đăng ngày {date}",
     "updatedOn": "Cập nhật {date}",
+    "verifiedOn": "Đối chiếu nguồn {date}",
     "author": "Tác giả",
     "tableOfContents": "Mục lục",
     "sources": "Nguồn tham khảo",
@@ -197,12 +198,14 @@
     "title": "Lĩnh vực khoa học",
     "subtitle": "Kho kiến thức được sắp xếp theo từng nhánh của khoa học",
     "articleCount": "{count} bài viết",
+    "metaDescription": "Bài viết về {name} trên Sciencepedia: kiến thức khoa học trình bày dễ hiểu, mỗi bài đều dẫn nguồn đầy đủ.",
     "subcategories": "Chủ đề con",
     "empty": "Lĩnh vực này chưa có bài viết."
   },
   "tag": {
     "title": "Chủ đề",
     "taggedWith": "Gắn thẻ “{tag}”",
+    "metaDescription": "Các bài viết khoa học về {tag} trên Sciencepedia — giải thích dễ hiểu, dẫn nguồn đầy đủ ở cuối mỗi bài.",
     "allTags": "Tất cả chủ đề"
   },
   "solar": {

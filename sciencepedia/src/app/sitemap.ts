@@ -52,8 +52,16 @@ function entry(
  */
 function staticEntries(latest?: Date): MetadataRoute.Sitemap {
   return [
-    ...entry("/", { changeFrequency: "daily", priority: 1, lastModified: latest }),
-    ...entry("/articles", { changeFrequency: "daily", priority: 0.9, lastModified: latest }),
+    ...entry("/", {
+      changeFrequency: "daily",
+      priority: 1,
+      lastModified: latest,
+    }),
+    ...entry("/articles", {
+      changeFrequency: "daily",
+      priority: 0.9,
+      lastModified: latest,
+    }),
     ...entry("/categories", { priority: 0.8, lastModified: latest }),
     ...entry("/tags", { priority: 0.5, lastModified: latest }),
     ...entry("/solar-system", { changeFrequency: "monthly", priority: 0.8 }),
@@ -114,7 +122,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     return staticEntries();
   }
 
-  const modified = (a: { updatedAt: Date; publishedAt: Date | null }) => a.updatedAt ?? a.publishedAt;
+  const modified = (a: { updatedAt: Date; publishedAt: Date | null }) =>
+    a.updatedAt ?? a.publishedAt;
   const latest = articles.reduce<Date | undefined>(
     (max, a) => (!max || modified(a) > max ? modified(a) : max),
     undefined,
@@ -148,9 +157,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       }),
     ),
 
-    ...categories.flatMap((category) =>
-      entry(`/categories/${category.slug}`, { priority: 0.7, lastModified: category.updatedAt }),
-    ),
+    // Danh mục trống đã noindex (xem categories/[slug]) — sitemap không mời
+    // Google vào trang mà chính trang đó bảo đừng lập chỉ mục.
+    ...categories
+      .filter((category) => category._count.articles > 0)
+      .flatMap((category) =>
+        entry(`/categories/${category.slug}`, {
+          priority: 0.7,
+          lastModified: category.updatedAt,
+        }),
+      ),
 
     // `Tag` không có cột `updatedAt` — lastmod bỏ trống thay vì bịa.
     ...tags.flatMap((tag) => entry(`/tags/${tag.slug}`, { priority: 0.4 })),

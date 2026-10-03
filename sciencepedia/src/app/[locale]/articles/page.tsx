@@ -12,10 +12,13 @@ const PER_PAGE = 12;
 
 export async function generateMetadata({
   params,
+  searchParams,
 }: {
   params: Promise<{ locale: string }>;
+  searchParams: Promise<{ page?: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
+  const { page } = await searchParams;
   const t = await getTranslations({ locale, namespace: "nav" });
   const tSite = await getTranslations({ locale, namespace: "site" });
 
@@ -24,6 +27,7 @@ export async function generateMetadata({
     description: tSite("description"),
     path: "/articles",
     locale: locale as Locale,
+    page: Math.max(1, Number(page) || 1),
   });
 }
 

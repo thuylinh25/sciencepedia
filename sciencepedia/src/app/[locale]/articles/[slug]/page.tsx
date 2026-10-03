@@ -190,6 +190,7 @@ export default async function ArticlePage({
           locale: loc,
           reviewer: article.reviewedBy?.name,
           reviewedAt: article.reviewedAt,
+          lastVerifiedAt: article.lastVerifiedAt,
           // Chỉ khai báo nguồn thật sự hiển thị ở mục tham khảo cuối bài
           citations: article.sources.map((source) => ({
             title: source.title,
@@ -350,6 +351,32 @@ export default async function ArticlePage({
               </time>
             )}
 
+            {/* JSON-LD khai `dateModified` cho mọi bài, nên ngày cập nhật phải
+                hiện trên trang — "chỉ khai báo thứ hiển thị". Trùng ngày đăng
+                thì ẩn: hai dòng cùng một ngày chỉ là nhiễu, và `dateModified`
+                bằng `datePublished` vẫn đúng với cái đang hiện. */}
+            {article.publishedAt &&
+              formatDate(article.updatedAt, locale) !==
+                formatDate(article.publishedAt, locale) && (
+                <time dateTime={article.updatedAt.toISOString()}>
+                  {t("updatedOn", {
+                    date: formatDate(article.updatedAt, locale),
+                  })}
+                </time>
+              )}
+
+            {/* Ngày đối chiếu nguồn góp vào `lastReviewed` của JSON-LD (mốc
+                mới hơn giữa thẩm định và đối chiếu) — cùng luật: khai thì
+                phải hiện. Khác ngày thẩm định: đây là lần gần nhất claim
+                được so lại với nguồn, không phải lần bài được duyệt. */}
+            {article.lastVerifiedAt && (
+              <time dateTime={article.lastVerifiedAt.toISOString()}>
+                {t("verifiedOn", {
+                  date: formatDate(article.lastVerifiedAt, locale),
+                })}
+              </time>
+            )}
+
             <span className="flex items-center gap-1.5">
               <Clock className="size-4" />
               {t("readingTime", { minutes: article.readingTime })}
@@ -361,7 +388,7 @@ export default async function ArticlePage({
 
             {/* Byline người thẩm định — BẮT BUỘC có mặt khi JSON-LD phát `reviewedBy`.
 
-                `lib/seo.ts` phát `reviewedBy` + `dateReviewed` làm tín hiệu
+                `lib/seo.ts` phát `reviewedBy` + `lastReviewed` làm tín hiệu
                 E-E-A-T cho nội dung YMYL, và chính file đó ghi luật: "chỉ khai
                 báo những gì thật sự hiện trên trang". Commit 10836c1 gỡ khối
                 trạng thái thẩm định khỏi trang mà không gỡ phần JSON-LD, nên
@@ -373,7 +400,7 @@ export default async function ArticlePage({
                 nhất đủ để lời khai là thật.
 
                 Điều kiện hiển thị phải KHỚP ĐÚNG điều kiện phát JSON-LD
-                (`reviewer` khác null). Lệch một bên là quay lại đúng lỗi này. */}
+                (có CẢ tên và ngày). Lệch một bên là quay lại đúng lỗi này. */}
             {article.reviewedBy?.name && article.reviewedAt && (
               <span className="flex items-center gap-1.5">
                 <ShieldCheck className="size-4 text-primary-strong" />

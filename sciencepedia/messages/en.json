@@ -148,6 +148,7 @@
     "views": "{count} views",
     "publishedOn": "Published {date}",
     "updatedOn": "Updated {date}",
+    "verifiedOn": "Sources checked {date}",
     "author": "Author",
     "tableOfContents": "Contents",
     "sources": "References",
@@ -197,12 +198,14 @@
     "title": "Fields of science",
     "subtitle": "Knowledge organised by branch of science",
     "articleCount": "{count} articles",
+    "metaDescription": "Articles about {name} on Sciencepedia: science explained clearly, every article with its sources cited.",
     "subcategories": "Subtopics",
     "empty": "This field has no articles yet."
   },
   "tag": {
     "title": "Topics",
     "taggedWith": "Tagged “{tag}”",
+    "metaDescription": "Science articles about {tag} on Sciencepedia — clear explanations, with full sources listed at the end of every article.",
     "allTags": "All topics"
   },
   "solar": {

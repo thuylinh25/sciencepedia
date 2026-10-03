@@ -12,6 +12,48 @@ export const SITE_NAME = process.env.NEXT_PUBLIC_SITE_NAME ?? "Sciencepedia";
  */
 export const CONTACT_EMAIL = "sciencepedia.contact@gmail.com";
 
+/**
+ * Tài khoản đứng tên tác giả và người duyệt của mọi bài hiện có. Đây là một
+ * BAN, không phải một người — `docs/content-rules.md`, mục "Byline người
+ * duyệt". Khai nó là `Person` trong JSON-LD là nói với Google rằng có một cá
+ * nhân tên "Ban biên tập Sciencepedia" bảo chứng bài, đúng loại quy công sai
+ * mà luật byline sinh ra để tránh.
+ *
+ * Nhận diện bằng tên chứ không bằng cột trong `User`: hiện chỉ có đúng một
+ * tài khoản tổ chức, và thêm cột là một migration cho một phân biệt chưa ai
+ * cần ở chỗ khác. Khi có biên tập viên thật ký bài, tên họ khác chuỗi này nên
+ * tự rơi về `Person` — đúng điều kiện đổi mà luật byline đã chốt.
+ */
+export const EDITORIAL_BOARD_NAME = `Ban biên tập ${SITE_NAME}`;
+
+/** Một node Organization dùng chung, mọi trang tham chiếu cùng `@id` này. */
+export const ORGANIZATION_ID = absoluteUrl("/#organization");
+
+function organizationNode() {
+  return {
+    "@type": "Organization",
+    "@id": ORGANIZATION_ID,
+    name: SITE_NAME,
+    url: absoluteUrl("/"),
+    // Tệp có thật trong public/ — từng trỏ /icon.png, một URL 404
+    logo: { "@type": "ImageObject", url: absoluteUrl("/icon.svg") },
+    // Hộp thư này hiện ở footer mọi trang — khai được vì nó hiển thị
+    email: CONTACT_EMAIL,
+  };
+}
+
+/** Tác giả/người duyệt: tổ chức nếu là tài khoản ban biên tập, còn lại là người. */
+function partyNode(name: string) {
+  if (name === EDITORIAL_BOARD_NAME || name === SITE_NAME) {
+    return {
+      "@type": "Organization",
+      name,
+      parentOrganization: { "@id": ORGANIZATION_ID },
+    };
+  }
+  return { "@type": "Person", name };
+}
+
 type SeoInput = {
   title: string;
   description: string;
@@ -27,6 +69,9 @@ type SeoInput = {
   /// Những ngôn ngữ trang này THẬT SỰ có nội dung. Mặc định: mọi locale.
   /// Bài chưa dịch truyền `["vi"]` — xem chú thích trong `buildMetadata`.
   availableLocales?: readonly Locale[];
+  /// Trang danh sách có phân trang: trang 2 trở đi là trang KHÁC, có danh
+  /// sách bài khác — canonical trỏ chính nó, không trỏ về trang 1.
+  page?: number;
 };
 
 /** Giới hạn Google hiển thị cho tiêu đề và mô tả trên trang kết quả. */
@@ -48,7 +93,16 @@ export function buildMetadata({
   keywords,
   noindex,
   availableLocales = routing.locales,
+  page,
 }: SeoInput): Metadata {
+  /* Trước đây `?page=2` khai canonical về trang 1. Google hiểu thế là "trang
+     2 là bản sao của trang 1" và bỏ nó khỏi chỉ mục — kéo theo những bài chỉ
+     được liệt kê từ trang 2 trở đi mất một đường dẫn nội bộ. Tiêu đề cũng
+     phải khác, không thì hai trang mang cùng <title>. */
+  if (page !== undefined && page > 1) {
+    title = `${title} · ${locale === "vi" ? "Trang" : "Page"} ${page}`;
+    path = `${path}?page=${page}`;
+  }
   const suffix = path === "/" ? "" : path;
   const localeUrl = (code: Locale) => absoluteUrl(`/${code}${suffix}`);
 
@@ -132,14 +186,20 @@ export function buildMetadata({
 }
 
 /**
- * JSON-LD cho một mục bách khoa.
+ * JSON-LD cho một mục bách khoa — một `@graph` gồm trang (`WebPage`), bài
+ * (`ScholarlyArticle`) và tổ chức đứng sau site.
  *
  * Dùng `ScholarlyArticle` chứ không phải `Article`: đây là nội dung tham khảo
- * có trích dẫn, không phải tin bài. Kèm theo ba tín hiệu E-E-A-T mà Google
- * dùng để đánh giá nội dung khoa học (YMYL):
- *   - `reviewedBy` — ai đã thẩm định về mặt khoa học
+ * có trích dẫn, không phải tin bài. Kèm các tín hiệu tin cậy mà Google dùng
+ * để đánh giá nội dung khoa học (YMYL):
+ *   - `reviewedBy` + `lastReviewed` — ai đã thẩm định, lần cuối khi nào
  *   - `citation`   — bài dựa trên nguồn nào
  *   - `about.sameAs` — khái niệm này ứng với thực thể nào trên Wikidata
+ *
+ * `reviewedBy`/`lastReviewed` nằm trên `WebPage`, KHÔNG trên bài: schema.org
+ * chỉ định nghĩa chúng cho `WebPage`. Bản cũ gắn `reviewedBy` vào
+ * `ScholarlyArticle` và phát `dateReviewed` — thuộc tính không có trong
+ * chuẩn — nên trình kiểm tra bỏ qua đúng tín hiệu ta muốn nó đọc.
  *
  * Chỉ khai báo những gì thật sự hiện trên trang: đánh dấu dữ liệu không hiển
  * thị là vi phạm nguyên tắc structured data.
@@ -155,8 +215,11 @@ export function articleJsonLd(input: {
   section?: string;
   keywords?: string[];
   locale: Locale;
+  /// Byline thẩm định chỉ hiện khi có CẢ tên và ngày — JSON-LD theo đúng điều kiện đó
   reviewer?: string | null;
   reviewedAt?: Date | string | null;
+  /// Ngày đối chiếu nguồn gần nhất, cũng hiện trên trang
+  lastVerifiedAt?: Date | string | null;
   /// Nguồn đã hiển thị trong mục tham khảo cuối bài
   citations?: { title: string; url?: string | null; doi?: string | null }[];
   /// Tên khái niệm + Wikidata QID, nếu bài đã gắn entity
@@ -165,49 +228,70 @@ export function articleJsonLd(input: {
   const iso = (value?: Date | string | null) =>
     value ? new Date(value).toISOString() : undefined;
 
+  const reviewed = Boolean(input.reviewer && input.reviewedAt);
+  // Lần duyệt gần nhất: mốc mới hơn giữa thẩm định và đối chiếu nguồn
+  const reviewTimes = [reviewed ? input.reviewedAt : null, input.lastVerifiedAt]
+    .filter((value): value is Date | string => Boolean(value))
+    .map((value) => new Date(value).getTime());
+  const lastReviewed = reviewTimes.length
+    ? new Date(Math.max(...reviewTimes)).toISOString()
+    : undefined;
+
+  const articleId = `${input.url}#article`;
+
   return {
     "@context": "https://schema.org",
-    "@type": "ScholarlyArticle",
-    headline: input.title,
-    description: input.description,
-    image: input.image ? [input.image] : undefined,
-    author: { "@type": "Person", name: input.author },
-    // Chỉ phát khi thật sự có người duyệt — bịa reviewer là bịa tín hiệu tin cậy
-    reviewedBy: input.reviewer
-      ? { "@type": "Person", name: input.reviewer }
-      : undefined,
-    publisher: {
-      "@type": "Organization",
-      name: SITE_NAME,
-      // Tệp có thật trong public/ — từng trỏ /icon.png, một URL 404
-      logo: { "@type": "ImageObject", url: absoluteUrl("/icon.svg") },
-    },
-    datePublished: iso(input.publishedAt),
-    dateModified: iso(input.updatedAt),
-    // Ngày thẩm định khoa học, tách khỏi ngày sửa nội dung
-    dateReviewed: iso(input.reviewedAt),
-    citation: input.citations?.length
-      ? input.citations.map((source) => ({
-          "@type": "CreativeWork",
-          name: source.title,
-          url: source.doi
-            ? `https://doi.org/${source.doi}`
-            : (source.url ?? undefined),
-        }))
-      : undefined,
-    about: input.entity
-      ? {
-          "@type": "Thing",
-          name: input.entity.name,
-          sameAs: input.entity.wikidataQid
-            ? `https://www.wikidata.org/wiki/${input.entity.wikidataQid}`
-            : undefined,
-        }
-      : undefined,
-    mainEntityOfPage: { "@type": "WebPage", "@id": input.url },
-    articleSection: input.section,
-    keywords: input.keywords?.join(", "),
-    inLanguage: input.locale,
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": input.url,
+        url: input.url,
+        name: input.title,
+        inLanguage: input.locale,
+        isPartOf: { "@id": websiteId(input.locale) },
+        mainEntity: { "@id": articleId },
+        // Chỉ phát khi thật sự có người duyệt — bịa reviewer là bịa tín hiệu tin cậy
+        reviewedBy:
+          reviewed && input.reviewer ? partyNode(input.reviewer) : undefined,
+        lastReviewed,
+      },
+      {
+        "@type": "ScholarlyArticle",
+        "@id": articleId,
+        mainEntityOfPage: { "@id": input.url },
+        headline: input.title,
+        description: input.description,
+        image: input.image ? [input.image] : undefined,
+        author: partyNode(input.author),
+        publisher: { "@id": ORGANIZATION_ID },
+        datePublished: iso(input.publishedAt),
+        dateModified: iso(input.updatedAt),
+        citation: input.citations?.length
+          ? input.citations.map((source) => ({
+              "@type": "CreativeWork",
+              name: source.title,
+              url: source.doi
+                ? `https://doi.org/${source.doi}`
+                : (source.url ?? undefined),
+            }))
+          : undefined,
+        about: input.entity
+          ? {
+              "@type": "Thing",
+              name: input.entity.name,
+              sameAs: input.entity.wikidataQid
+                ? `https://www.wikidata.org/wiki/${input.entity.wikidataQid}`
+                : undefined,
+            }
+          : undefined,
+        articleSection: input.section,
+        keywords: input.keywords?.join(", "),
+        inLanguage: input.locale,
+      },
+      // Lặp lại node tổ chức trong cùng graph: tham chiếu `@id` sang một khối
+      // JSON-LD khác trên trang không phải trình đọc nào cũng nối được.
+      organizationNode(),
+    ],
   };
 }
 
@@ -250,19 +334,35 @@ export function breadcrumbJsonLd(items: { name: string; url: string }[]) {
   };
 }
 
+/** `@id` của node `WebSite` theo ngôn ngữ — `WebPage.isPartOf` trỏ vào đây. */
+export function websiteId(locale: Locale) {
+  return absoluteUrl(`/${locale}#website`);
+}
+
+/** Phát ở layout, tức trên MỌI trang: đây là chỗ Google đọc tổ chức của site. */
 export function websiteJsonLd(locale: Locale) {
   return {
     "@context": "https://schema.org",
-    "@type": "WebSite",
-    name: SITE_NAME,
-    url: absoluteUrl(`/${locale}`),
-    potentialAction: {
-      "@type": "SearchAction",
-      target: {
-        "@type": "EntryPoint",
-        urlTemplate: absoluteUrl(`/${locale}/search?q={search_term_string}`),
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": websiteId(locale),
+        name: SITE_NAME,
+        url: absoluteUrl(`/${locale}`),
+        inLanguage: locale,
+        publisher: { "@id": ORGANIZATION_ID },
+        potentialAction: {
+          "@type": "SearchAction",
+          target: {
+            "@type": "EntryPoint",
+            urlTemplate: absoluteUrl(
+              `/${locale}/search?q={search_term_string}`,
+            ),
+          },
+          "query-input": "required name=search_term_string",
+        },
       },
-      "query-input": "required name=search_term_string",
-    },
+      organizationNode(),
+    ],
   };
 }

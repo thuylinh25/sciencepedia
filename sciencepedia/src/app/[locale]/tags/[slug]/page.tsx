@@ -25,10 +25,13 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({
   params,
+  searchParams,
 }: {
   params: Promise<{ locale: string; slug: string }>;
+  searchParams: Promise<{ page?: string }>;
 }): Promise<Metadata> {
   const { locale, slug } = await params;
+  const { page } = await searchParams;
   const tag = await getTagBySlug(slug);
   // noindex cho slug không tồn tại — xem chú thích ở articles/[slug]/page.tsx
   if (!tag) {
@@ -41,9 +44,12 @@ export async function generateMetadata({
 
   return buildMetadata({
     title: t("taggedWith", { tag: name }),
-    description: t("taggedWith", { tag: name }),
+    // Mô tả từng trùng y tiêu đề: Google coi đó là thiếu mô tả và tự cắt
+    // một đoạn bất kỳ trong trang để thay.
+    description: t("metaDescription", { tag: name }),
     path: `/tags/${tag.slug}`,
     locale: loc,
+    page: Math.max(1, Number(page) || 1),
   });
 }
 

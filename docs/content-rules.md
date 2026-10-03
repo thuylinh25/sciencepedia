@@ -256,6 +256,12 @@ người được soi kỹ hơn — một hàm ý mà ta không có gì bảo đ
 **Điều kiện đổi sang tên người**: khi có biên tập viên thật ký từng bài. Lúc đó, và
 chỉ lúc đó.
 
+**JSON-LD theo cùng luật** (2026-10-03). Tài khoản này được khai là `Organization`,
+không phải `Person`. Khai nó là `Person` là nói với Google rằng có một cá nhân bảo
+chứng bài, tức đúng lỗi quy công sai mà mục này cấm, chỉ khác là nói bằng máy.
+`lib/seo.ts` nhận diện tài khoản bằng tên, nên biên tập viên thật ký bài sẽ tự được
+khai là `Person`.
+
 ### Mục từ điển thuật ngữ áp cùng một luật
 
 Mở rộng 2026-09-21, khi `GlossaryTerm` có `reviewedById`/`reviewedAt`.
