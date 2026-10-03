@@ -427,18 +427,13 @@ export default async function ArticlePage({
             {article.reviewedBy?.name && article.reviewedAt && (
               <span className="flex items-center gap-1.5">
                 <ShieldCheck className="size-4 text-primary-strong" />
-                {/* Trỏ tới trang nói rõ "Ban biên tập" là một quy trình AI,
-                    không phải một người — byline tổ chức mà không giải thích
-                    thì người đọc tự hiểu là có chuyên gia duyệt. */}
-                <Link
-                  href="/about#ai-dung-sau"
-                  className="underline-offset-4 hover:underline"
-                >
-                  {t("reviewedBy", {
-                    name: article.reviewedBy.name,
-                    date: formatDate(article.reviewedAt, locale),
-                  })}
-                </Link>
+                {/* Chữ thường, không còn liên kết tới /about#ai-dung-sau: chủ
+                    sản phẩm gỡ cả mục "ai đứng sau" (2026-10-03). Bản thân dòng
+                    byline thì phải ở lại — xem chú thích ngay trên. */}
+                {t("reviewedBy", {
+                  name: article.reviewedBy.name,
+                  date: formatDate(article.reviewedAt, locale),
+                })}
               </span>
             )}
           </div>
