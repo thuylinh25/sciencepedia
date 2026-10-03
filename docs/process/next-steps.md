@@ -1,6 +1,6 @@
 # Việc đang dở
 
-Cập nhật 2026-09-13. Mọi con số dưới đây **đo trong lượt cập nhật**, không chép
+Cập nhật 2026-10-03 (mục giao diện); phần nội dung và hạ tầng vẫn là số đo 2026-09-13. Mọi con số dưới đây **đo trong lượt cập nhật**, không chép
 lại từ bản trước — bản trước sai đúng ở chỗ nó chép.
 
 ## Đã đóng từ bản trước
@@ -26,23 +26,22 @@ kết luận rằng related concepts vẫn chạy fallback tag/category. Đo l�
 Nên `getRelatedForArticle` đã chạy bằng graph thật cho phần lớn kho. Chín bài
 còn thiếu `entityId` là phần dư, không phải tình trạng chung.
 
-## Còn mở — đã kiểm lại trong lượt này, cả ba vẫn đúng
+## Đóng 2026-10-03
 
-**1. Breadcrumb hiển thị lệch với JSON-LD.** JSON-LD khai 3 cấp (Sciencepedia →
-Danh mục → Bài), UI chỉ hiện "Bài viết / Danh mục". `getArticleBySlug` **đã
-select `category.parent`** nhưng trang không render — `grep "category.parent"`
-trên `src/app/[locale]/articles/[slug]/page.tsx` không ra dòng nào. Cây lồng
-nhau (Vũ trụ › Hệ Mặt Trời › Sao Hoả) vì thế không bao giờ hiện. Google yêu cầu
-markup phản ánh nội dung nhìn thấy — cùng một lỗi loại với chuyện `reviewedBy`
-vừa đóng ở trên.
+**1. Breadcrumb lệch JSON-LD — XONG.** Trang bài giờ chèn danh mục cha (nếu
+có) vào CẢ `<Breadcrumb>` lẫn `BreadcrumbList`, dựng từ cùng
+`article.category.parent`. Ghi chú bản trước cũng sai một nửa: UI đã có ba
+bậc từ lâu; cái thiếu ở cả hai bên là danh mục cha.
 
-**2. `getPrerequisites` vẫn là code chết.** Khai ở `src/server/queries.ts:852`,
-không chỗ nào gọi. "Cần đọc trước" hữu ích ở ĐẦU bài, không phải cuối. Nay đã
-có 67 entity nên khối này sẽ thật sự trả về kết quả — điều kiện chặn nó ở bản
-trước đã hết.
+**2. `getPrerequisites` — XONG.** Khối "Nên đọc trước" ở đầu thân bài, một
+bậc cạnh `PREREQUISITE_OF`; không có cạnh hoặc tiền đề chưa có bài thì khối
+không hiện.
 
-**3. Độ dài dòng.** `src/app/[locale]/articles/[slug]/page.tsx:345` vẫn là
-`max-w-3xl`, cho ~78 ký tự mỗi dòng, trên ngưỡng 75.
+**3. Độ dài dòng — đã xong từ trước.** `max-w-3xl` là cột `<article>`, còn
+thân bài khoá bằng `.article-prose { max-width: var(--measure-prose) }`
+(42rem). Bản trước đo nhầm thẻ.
+
+## Còn mở
 
 **Chưa quy được trách nhiệm:** route bài viết 209 kB First Load JS trên budget
 120 kB. Cần chạy `@next/bundle-analyzer` trước khi đoán. Nghi `next-auth/react`
