@@ -72,6 +72,30 @@ export const ANATOMY_SOURCES = {
     urlTemplate: "https://openstax.org/books/anatomy-and-physiology-2e/pages/{section}",
     accessedAt: "2026-09-28",
   },
+  /**
+   * Nguồn cho mục Level 2 MỚI từ 2026-10-03: trang sách OpenStax ghi "may not be
+   * used in the training of large language models or otherwise be ingested into
+   * large language models or generative AI offerings without OpenStax's prior
+   * written permission" — mà mục Level 2 do AI soạn. `section` là tên bài (dạng URL).
+   */
+  "wikipedia-en": {
+    id: "wikipedia-en",
+    type: "encyclopedia",
+    title: "Wikipedia",
+    publisher: "Wikimedia Foundation",
+    /**
+     * Wikipedia không có ấn bản; "phiên bản" là ngày chụp các trang (= bản
+     * trong `.cache`, = `accessedAt`). Schema bắt buộc trường này — thiếu nó
+     * thì `anatomy-enrich` dừng ở bước Zod.
+     */
+    version: "2026-10-03",
+    url: "https://en.wikipedia.org/",
+    license: "CC BY-SA 4.0",
+    licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/",
+    usage: "facts-only",
+    urlTemplate: "https://en.wikipedia.org/wiki/{section}",
+    accessedAt: "2026-10-03",
+  },
 } as const;
 
 export type AnatomySourceRef = keyof typeof ANATOMY_SOURCES;

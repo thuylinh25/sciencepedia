@@ -111,7 +111,14 @@ async function sectionText(template: string, cacheDir: string, section: string):
   const response = await fetch(url, { headers: { "user-agent": "Mozilla/5.0 (Sciencepedia anatomy-enrich)" } });
   if (!response.ok) throw new Error(`${url}: HTTP ${response.status}`);
   const html = await response.text();
-  const body = html.split(/<div[^>]*data-type="page"[^>]*>/)[1] ?? html;
+  const wikipedia = template.includes("wikipedia.org");
+  const body = wikipedia
+    ? // Bỏ số chú thích "[12]" để câu trích không phải mang chúng.
+      (html.split(/<div[^>]*id="mw-content-text"[^>]*>/)[1] ?? html).replace(
+        /<sup[^>]*class="[^"]*reference[^"]*"[^>]*>[\s\S]*?<\/sup>/g,
+        "",
+      )
+    : (html.split(/<div[^>]*data-type="page"[^>]*>/)[1] ?? html);
   const text = body
     .replace(/<(script|style)[^>]*>[\s\S]*?<\/\1>/g, "")
     .replace(/<\/(p|h[1-6]|li|tr|figcaption|div)>/g, "\n")
