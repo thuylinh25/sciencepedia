@@ -995,8 +995,11 @@ văn chứ không tin người viết.
   bài; `sectionText()` cắt `#mw-content-text` và bỏ số chú thích `[n]` để câu trích không phải mang
   chúng. Chọn khái niệm để viết theo mức phủ đo trên dữ liệu (lớp ontology trừu tượng như "Organ
   component" bị loại), và kiểm khái niệm ấy rơi vào những mảnh nào: "Muscle of face" của FMA thực
-  ra phủ cơ lưỡi, vòm miệng, vận nhãn; "Long bone" phủ cả xương sườn mà nguồn xếp vào xương dẹt —
-  nên viết mục riêng cho khái niệm con thay vì một đoạn chung sai cho nửa số mảnh.
+  ra phủ cơ lưỡi, vòm miệng, vận nhãn; "Long bone" phủ cả xương sườn, mà bài Wikipedia "Rib" tự
+  mâu thuẫn (mở đầu: xương dài cong; đoạn sau: xương dẹt) — nên viết mục riêng cho khái niệm con
+  thay vì một đoạn chung sai cho nửa số mảnh. Phân loại xương theo FMA (cái panel hiện), không
+  theo câu ví dụ của bài: science-editor gỡ xương lệ, lá mía, sườn khỏi ví dụ "xương dẹt" vì FMA
+  xếp chúng vào xương không đều/xương dài.
 - **Viết cho khái niệm chung, cấu trúc con kế thừa** (`resolveContent`): "Xương đùi trái" is-a
   "Xương đùi"; mảnh không có is-a mang nội dung thì thử cha part-of. Khoá nội dung được là mã
   không có mảnh (Phổi FMA7195, Nhãn cầu FMA12513, Cơ ngực lớn FMA9627). Kế thừa luôn hiện

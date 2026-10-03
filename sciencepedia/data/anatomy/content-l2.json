@@ -3839,16 +3839,16 @@
   },
   "FMA66464": {
    "summary": {
-    "vi": "Động mạch hệ thống là các động mạch của vòng tuần hoàn lớn, những mạch máu dẫn máu rời khỏi tim. Thành động mạch có ba lớp áo: áo trong, áo giữa và áo ngoài.",
-    "en": "Systemic arteries are the arteries of the systemic circuit, the vessels that take blood out of the heart. An arterial wall is built from three coats: the tunica intima, tunica media and tunica externa."
+    "vi": "Động mạch hệ thống thuộc vòng tuần hoàn lớn: đó là các mạch đưa máu rời tim đi khắp cơ thể. Như mọi động mạch, thành của chúng có ba lớp áo: áo trong, áo giữa và áo ngoài.",
+    "en": "Systemic arteries belong to the systemic circuit: they are the vessels that take blood away from the heart and out to the body. As in any artery, the wall has three coats, the tunica intima, tunica media and tunica externa."
    },
    "location": {
-    "vi": "Vòng tuần hoàn lớn bắt đầu từ nửa trái của tim, đi qua động mạch chủ rồi tới mọi phần còn lại của cơ thể.",
-    "en": "The systemic circuit starts at the left side of the heart and runs through the aorta to every other part of the body."
+    "vi": "Thuộc vòng tuần hoàn bắt đầu từ nửa trái của tim, đi qua động mạch chủ rồi tới phần còn lại của cơ thể.",
+    "en": "They form the circuit that leaves the left side of the heart through the aorta and reaches the rest of the body."
    },
    "function": {
-    "vi": "Đưa máu giàu oxy từ tim tới khắp cơ thể; sau khi qua các mô, máu đã nghèo oxy theo các tĩnh mạch lớn là tĩnh mạch chủ trở về nửa phải của tim.",
-    "en": "They deliver oxygen-rich blood from the heart to the whole body; once it has passed through the tissues, the oxygen-poor blood comes back to the right side of the heart through the large veins called the venae cavae."
+    "vi": "Đưa máu giàu oxy từ nửa trái của tim tới phần còn lại của cơ thể.",
+    "en": "They carry oxygen-rich blood from the left side of the heart out to the rest of the body."
    },
    "evidence": [
     {
@@ -3876,35 +3876,43 @@
       "location",
       "function"
      ]
-    },
-    {
-     "source": "wikipedia-en",
-     "section": "Circulatory_system",
-     "quote": "The systemic circulation is a circuit loop that delivers oxygenated blood from the left heart to the rest of the body, and returns deoxygenated blood back to the right heart via large veins known as the venae cavae.",
-     "supports": [
-      "function"
-     ]
     }
-   ]
+   ],
+   "omitted": "Bỏ vế 'máu nghèo oxy theo tĩnh mạch chủ về tim phải': đó là việc của tĩnh mạch, không phải chức năng của động mạch; và đoạn này hiện cho cả động mạch vành, mà máu của tuần hoàn vành về tim qua xoang tĩnh mạch vành chứ không qua tĩnh mạch chủ.",
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Cắt vế máu về qua tĩnh mạch chủ (không phải chức năng động mạch; sai với tuần hoàn vành vốn thừa kế đoạn này). Viết lại tiếng Anh."
+   }
   },
   "FMA66644": {
    "summary": {
-    "vi": "Tĩnh mạch hệ thống là các tĩnh mạch của vòng tuần hoàn lớn: chúng đưa máu đã nghèo oxy từ các cơ quan và mô của cơ thể trở về tim.",
-    "en": "Systemic veins are the veins of the systemic circuit: they bring oxygen-poor blood from the body's organs and tissues back to the heart."
+    "vi": "Tĩnh mạch hệ thống là các tĩnh mạch của vòng tuần hoàn lớn, những mạch đưa máu từ các cơ quan và mô của cơ thể về tim.",
+    "en": "Systemic veins are the veins of the systemic circuit, the vessels that bring blood back to the heart from the body's organs and tissues."
    },
    "location": {
-    "vi": "Mọi tĩnh mạch hệ thống đều là nhánh đổ về hai tĩnh mạch lớn nhất, tĩnh mạch chủ trên và tĩnh mạch chủ dưới; hai tĩnh mạch này đổ máu nghèo oxy vào tâm nhĩ phải.",
-    "en": "Every systemic vein is a tributary of the two largest veins, the superior and inferior venae cavae, which empty oxygen-depleted blood into the right atrium."
+    "vi": "Chúng đổ về hai tĩnh mạch lớn nhất cơ thể là tĩnh mạch chủ trên và tĩnh mạch chủ dưới; hai tĩnh mạch này đổ vào tâm nhĩ phải. Ngoại lệ là các tĩnh mạch của chính cơ tim: chúng đưa máu về tâm nhĩ phải, phần lớn qua xoang tĩnh mạch vành.",
+    "en": "They drain into the body's two largest veins, the superior and inferior venae cavae, which open into the right atrium. The veins of the heart muscle itself are the exception: they take their blood to the right atrium, most of it by way of the coronary sinus."
    },
    "function": {
-    "vi": "Nhiều tĩnh mạch có van giữ cho máu chỉ chảy một chiều, về phía tim.",
-    "en": "Many veins carry valves that keep the blood flowing one way only, toward the heart."
+    "vi": "Đưa máu nghèo oxy về tim; nhiều tĩnh mạch có van giữ cho dòng máu chỉ đi một chiều.",
+    "en": "They return oxygen-poor blood to the heart; in many of them, valves keep the flow going one way."
    },
    "evidence": [
     {
      "source": "wikipedia-en",
      "section": "Vein",
      "quote": "In the systemic circulation the return is of deoxygenated blood from the organs and tissues of the body, and in the pulmonary circulation the pulmonary veins return oxygenated blood from the lungs to the heart.",
+     "supports": [
+      "summary",
+      "function"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Vein",
+     "quote": "is a blood vessel in the circulatory system of humans and most other animals that carries blood towards the heart.",
      "supports": [
       "summary"
      ]
@@ -3920,30 +3928,45 @@
     {
      "source": "wikipedia-en",
      "section": "Vein",
-     "quote": "There are valves present in many veins that maintain unidirectional flow.",
+     "quote": "Cardiac veins carry blood with a poor level of oxygen, from the heart muscle to the right atrium.",
      "supports": [
-      "function"
+      "location"
      ]
     },
     {
      "source": "wikipedia-en",
      "section": "Vein",
-     "quote": "is a blood vessel in the circulatory system of humans and most other animals that carries blood towards the heart.",
+     "quote": "Most of the blood of the cardiac veins returns through the coronary sinus.",
+     "supports": [
+      "location"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Vein",
+     "quote": "There are valves present in many veins that maintain unidirectional flow.",
      "supports": [
       "function"
      ]
     }
-   ]
+   ],
+   "omitted": "Câu nguồn 'mọi tĩnh mạch hệ thống đều là nhánh của tĩnh mạch chủ' mâu thuẫn với chính bài Vein (tĩnh mạch tim về tâm nhĩ phải, phần lớn qua xoang vành); đoạn này hiện cho tĩnh mạch tim lớn/giữa/nhỏ nên phải nêu ngoại lệ.",
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Sửa vị trí: 'mọi tĩnh mạch hệ thống đổ về tĩnh mạch chủ' sai với tĩnh mạch tim (thừa kế đoạn này) — thêm ngoại lệ xoang vành từ chính bài nguồn. Chuyển ý 'đưa máu về tim' sang chức năng."
+   }
   },
   "FMA50723": {
    "summary": {
-    "vi": "Tĩnh mạch là mạch máu dẫn máu về tim. Phần lớn tĩnh mạch mang máu nghèo oxy từ các mô về tim; ngoại lệ là tĩnh mạch của tuần hoàn phổi và tuần hoàn thai, mang máu giàu oxy.",
-    "en": "A vein is a blood vessel that carries blood toward the heart. Most veins return oxygen-poor blood from the tissues; the exceptions are the veins of the pulmonary and fetal circulations, whose blood is oxygen-rich."
+    "vi": "Tĩnh mạch là mạch máu dẫn máu về tim. Phần lớn tĩnh mạch mang máu nghèo oxy từ các mô về tim; ngoại lệ là tĩnh mạch của tuần hoàn phổi và tuần hoàn thai, mang máu giàu oxy. Lớp áo giữa — lớp cơ trơn — của tĩnh mạch mỏng hơn của động mạch nhiều, vì tĩnh mạch không phải chịu áp lực tâm thu cao như động mạch.",
+    "en": "A vein is a blood vessel that carries blood toward the heart. Most veins return oxygen-poor blood from the tissues; only in the pulmonary and fetal circulations do veins carry oxygen-rich blood. A vein's smooth-muscle middle coat, the tunica media, is far thinner than an artery's, because veins do not face high systolic pressure the way arteries do."
    },
    "location": null,
    "function": {
-    "vi": "Lớp áo giữa của tĩnh mạch mỏng hơn của động mạch nhiều, vì tĩnh mạch không phải chịu áp lực tâm thu cao. Ở tĩnh mạch cỡ vừa và lớn, van một chiều ngăn máu chảy ngược; ở chi dưới, các cơ khi co ép lên tĩnh mạch trong cơ (bơm cơ) và đẩy máu về tim.",
-    "en": "The tunica media of a vein is much thinner than an artery's, since veins are spared the high systolic pressures arteries face. In medium and large veins, one-way valves stop blood from flowing backward, and in the legs contracting muscles squeeze the veins inside them (the muscle pump) and push blood on toward the heart."
+    "vi": "Ở tĩnh mạch cỡ vừa và lớn, van một chiều ngăn máu chảy ngược. Ở chi dưới, khi co, các cơ ép lên tĩnh mạch nằm trong cơ (bơm cơ, còn gọi là bơm tĩnh mạch), góp phần đẩy máu về tim.",
+    "en": "In medium and large veins, one-way valves stop blood from flowing backward. In the lower limbs, contracting muscles squeeze the veins that run through them (the muscle or venous pump), which helps drive blood back to the heart."
    },
    "evidence": [
     {
@@ -3965,9 +3988,17 @@
     {
      "source": "wikipedia-en",
      "section": "Vein",
+     "quote": "The middle layer, consists of bands of smooth muscle and is known as the tunica media.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Vein",
      "quote": "The tunica media in the veins is much thinner than that in the arteries as the veins are not subject to the high systolic pressures that the arteries are.",
      "supports": [
-      "function"
+      "summary"
      ]
     },
     {
@@ -3986,7 +4017,13 @@
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Câu lớp áo giữa là cấu trúc, chuyển từ chức năng sang tóm tắt và viết lại; 'aided' giữ thành 'helps'."
+   }
   },
   "FMA66326": {
    "summary": {
@@ -3998,8 +4035,8 @@
     "en": "The pulmonary trunk divides into the right and left pulmonary arteries beneath the aortic arch, in front of the left main bronchus. Each side then splits into branches for the lobes of the lung, and these lobar arteries divide again into segmental arteries, roughly one per segment, which travel with the segmental bronchi."
    },
    "function": {
-    "vi": "Đưa máu nghèo oxy từ nửa phải của tim qua mạng mao mạch bao quanh phế nang để máu được nhận oxy; ở tận cùng, các nhánh động mạch phổi trở thành mao mạch tại phế nang.",
-    "en": "They send oxygen-poor blood from the right heart into the capillaries wrapped around the alveoli so that it can take up oxygen; at their far ends the branches turn into capillaries at the alveoli."
+    "vi": "Đưa máu nghèo oxy từ nửa phải của tim vào phổi; các nhánh nhỏ nhất là tiểu động mạch dẫn vào mạng mao mạch bao quanh phế nang, nơi máu nhận oxy.",
+    "en": "They carry oxygen-poor blood from the right heart into the lungs; their smallest branches, the arterioles, open into the capillaries around the alveoli, where the blood takes up oxygen."
    },
    "evidence": [
     {
@@ -4060,30 +4097,28 @@
     },
     {
      "source": "wikipedia-en",
-     "section": "Pulmonary_circulation",
-     "quote": "passes deoxygenated blood from the right heart through the capillaries surrounding the alveoli to be oxygenated",
-     "supports": [
-      "function"
-     ]
-    },
-    {
-     "source": "wikipedia-en",
      "section": "Pulmonary_artery",
-     "quote": "pulmonary arteries (labelled at the bottom) become capillaries at the pulmonary alveoli.",
+     "quote": "the smallest ones are the arterioles, which lead to the capillaries that surround the pulmonary alveoli.",
      "supports": [
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Bỏ vế lặp lấy từ chú thích hình; thay bằng câu thân bài về tiểu động mạch → mao mạch phế nang."
+   }
   },
   "FMA66643": {
    "summary": {
-    "vi": "Tĩnh mạch phổi đưa máu đã giàu oxy từ phổi về tim. Lớn nhất là bốn tĩnh mạch phổi chính, mỗi phổi hai, đổ vào tâm nhĩ trái.",
-    "en": "The pulmonary veins return oxygenated blood from the lungs to the heart. The largest are the four main pulmonary veins, two per lung, which open into the left atrium."
+    "vi": "Tĩnh mạch phổi đưa máu giàu oxy từ phổi trở về tim. Lớn nhất là bốn tĩnh mạch phổi chính, mỗi phổi hai, đổ vào tâm nhĩ trái.",
+    "en": "The pulmonary veins bring oxygen-rich blood back to the heart from the lungs. The largest are the four main pulmonary veins, two per lung, which open into the left atrium."
    },
    "location": {
-    "vi": "Mỗi phổi có một tĩnh mạch phổi chính trên và một tĩnh mạch phổi chính dưới, ra khỏi phổi ở rốn phổi; mỗi tĩnh mạch chính nhận máu từ ba hoặc bốn tĩnh mạch nhỏ hơn trong phổi. Trong phổi, các tĩnh mạch chạy giữa những phân thùy phổi mà chúng dẫn máu về.",
-    "en": "Each lung has an upper and a lower main pulmonary vein, which leave through the hilum; inside the lung they are fed by three or four smaller veins. Within the lung, the veins run between the pulmonary segments whose blood they collect."
+    "vi": "Mỗi phổi có một tĩnh mạch phổi chính trên và một tĩnh mạch phổi chính dưới, cùng ra khỏi phổi ở rốn phổi; ở mỗi phổi, các tĩnh mạch chính nhận máu từ ba hoặc bốn tĩnh mạch nuôi. Các tĩnh mạch nhỏ ở ngoại vi không đi theo cây phế quản mà chạy giữa các phân thùy phổi mà chúng dẫn máu về.",
+    "en": "Each lung has an upper and a lower main pulmonary vein, both leaving through the hilum; in each lung, three or four feeding veins drain into them. The smaller peripheral veins do not follow the bronchial tree but run between the pulmonary segments whose blood they collect."
    },
    "function": null,
    "evidence": [
@@ -4122,25 +4157,39 @@
     {
      "source": "wikipedia-en",
      "section": "Pulmonary_vein",
+     "quote": "The peripheral feeding veins do not follow the bronchial tree.",
+     "supports": [
+      "location"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Pulmonary_vein",
      "quote": "They run between the pulmonary segments from which they drain the blood.",
      "supports": [
       "location"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Bản Việt dịch sai 'ba hoặc bốn tĩnh mạch nuôi' thành của mỗi tĩnh mạch chính (nguồn: mỗi phổi). Viết lại câu tiếng Anh trùng 8 từ."
+   }
   },
   "FMA14769": {
    "summary": {
-    "vi": "Động mạch gan riêng là động mạch cấp máu cho gan và túi mật. Nó tách ra từ động mạch gan chung, vốn là một nhánh của động mạch thân tạng.",
-    "en": "The hepatic artery proper is the vessel that supplies the liver and the gallbladder. It comes off the common hepatic artery, which is itself a branch of the celiac artery."
+    "vi": "Động mạch gan là các động mạch đưa máu vào gan. Chúng bắt đầu từ chỗ động mạch gan riêng — mạch cấp máu cho gan và túi mật — chia thành động mạch gan phải và động mạch gan trái.",
+    "en": "Hepatic arteries are the arteries that take blood into the liver. They begin where the hepatic artery proper, the vessel supplying the liver and gallbladder, divides into the right and left hepatic arteries."
    },
    "location": {
-    "vi": "Đi cạnh tĩnh mạch cửa và ống mật chủ; ba cấu trúc này hợp thành bộ ba cửa.",
-    "en": "It travels beside the portal vein and the common bile duct, and the three together make up the portal triad."
+    "vi": "Động mạch gan riêng tách từ động mạch gan chung (một nhánh của động mạch thân tạng) và đi cạnh tĩnh mạch cửa cùng ống mật chủ; ba cấu trúc này hợp thành bộ ba cửa. Cách phân nhánh có thể khác: động mạch gan phải có khi tách từ động mạch mạc treo tràng trên, động mạch gan trái có khi tách từ động mạch vị trái.",
+    "en": "The hepatic artery proper is a branch of the common hepatic artery, itself an offshoot of the celiac artery; its course takes it alongside the portal vein and common bile duct, and the three make up the portal triad. The pattern can vary: a right hepatic artery may instead arise from the superior mesenteric artery, and a left one from the left gastric artery."
    },
    "function": {
-    "vi": "Máu từ các nhánh động mạch gan hoà với máu tĩnh mạch cửa trong các xoang gan để cung cấp oxy cho tế bào gan. Động mạch gan chỉ chiếm 25% tổng lưu lượng máu qua gan nhưng mang tới 30–40% lượng oxy gan nhận được.",
-    "en": "Blood from hepatic artery branches mixes with portal blood in the sinusoids and brings oxygen to the hepatocytes. The hepatic artery carries only 25% of the liver's total blood flow, yet it delivers 30 to 40% of the liver's oxygen."
+    "vi": "Máu từ các nhánh động mạch gan hoà với máu từ các nhánh tĩnh mạch cửa trong các xoang gan và cung cấp oxy cho tế bào gan.",
+    "en": "Blood from the hepatic artery branches mixes in the liver's sinusoids with blood from the portal vein branches, and supplies the liver cells (hepatocytes) with oxygen."
    },
    "evidence": [
     {
@@ -4154,9 +4203,17 @@
     {
      "source": "wikipedia-en",
      "section": "Hepatic_artery_proper",
-     "quote": "It raises from the common hepatic artery, a branch of the celiac artery.",
+     "quote": "It subsequently bifurcates into the right and left hepatic arteries.",
      "supports": [
       "summary"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Hepatic_artery_proper",
+     "quote": "It raises from the common hepatic artery, a branch of the celiac artery.",
+     "supports": [
+      "location"
      ]
     },
     {
@@ -4169,8 +4226,16 @@
     },
     {
      "source": "wikipedia-en",
+     "section": "Hepatic_artery_proper",
+     "quote": "A misplaced right hepatic artery may arise from the superior mesenteric artery (SMA) and a misplaced left hepatic artery may arise from the left gastric artery.",
+     "supports": [
+      "location"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
      "section": "Hepatic_portal_system",
-     "quote": "Blood also flows from branches of the hepatic artery and mixes in the sinusoids to supply the hepatocytes with oxygen.",
+     "quote": "Blood passes from branches of the portal vein through cavities between \"plates\" of hepatocytes called sinusoids.",
      "supports": [
       "function"
      ]
@@ -4178,12 +4243,20 @@
     {
      "source": "wikipedia-en",
      "section": "Hepatic_portal_system",
-     "quote": "The hepatic artery provides 30 to 40% of the oxygen to the liver, while only accounting for 25% of the total liver blood flow.",
+     "quote": "Blood also flows from branches of the hepatic artery and mixes in the sinusoids to supply the hepatocytes with oxygen.",
      "supports": [
+      "summary",
       "function"
      ]
     }
-   ]
+   ],
+   "omitted": "Bản nháp tả động mạch gan riêng (FMA14772) dưới tên 'Hepatic artery' (FMA14769 — lớp gồm động mạch gan phải/trái và các nhánh phân thùy), nên các nhánh này hiện câu 'tách từ động mạch gan chung' — sai. Bỏ tỷ lệ lưu lượng/oxy: Hepatic_portal_system ghi 25% lưu lượng và 30–40% oxy, Hepatic_artery_proper ghi 10% lưu lượng và 30% oxy — hai bài vênh nhau, không chọn một số.",
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Viết lại: bản nháp tả động mạch gan riêng chứ không phải lớp động mạch gan phải/trái/phân thùy đang thừa kế đoạn này. Bỏ số % (hai bài Wikipedia vênh: 25% vs 10% lưu lượng). Thêm biến thể nguyên ủy có nguồn."
+   }
   },
   "FMA66645": {
    "summary": {
@@ -4195,8 +4268,8 @@
     "en": "The superior mesenteric and splenic veins unite to form the portal vein. In most people the inferior mesenteric vein ends in the splenic vein, though in some it joins the portal or superior mesenteric vein instead. The system also drains the spleen, the pancreas and visceral fat."
    },
    "function": {
-    "vi": "Dẫn máu từ các phần của ống tiêu hoá về gan: chất hấp thu ở ruột non tới gan để được xử lý trước khi về tim. Nhờ vậy gan làm lá chắn giữa thức ăn, độc chất và các chất chuyển hoá trung gian của nó (như amoniac) với các mô còn lại của cơ thể, kể cả não.",
-    "en": "It routes blood from parts of the digestive tract to the liver, so whatever the small intestine absorbs is processed in the liver before travelling on to the heart. The liver thereby shields the rest of the body, the brain included, from food, its toxins and its metabolic intermediates such as ammonia."
+    "vi": "Dẫn máu từ một số phần của ống tiêu hoá về gan: các chất hấp thu ở ruột non qua gan để được xử lý trước rồi mới về tim. Nhờ vậy gan là tuyến phòng vệ đầu tiên giữa một bên là thức ăn, độc chất của nó và các chất chuyển hoá trung gian (như amoniac), một bên là các mô còn lại của cơ thể, kể cả não.",
+    "en": "It routes blood from parts of the digestive tract to the liver: substances absorbed in the small intestine pass through the liver for processing before they continue to the heart. The liver thus acts as a first line of defence between food, its toxins and its metabolic intermediates such as ammonia on one side, and the rest of the body's tissues, the brain included, on the other."
    },
    "evidence": [
     {
@@ -4263,7 +4336,13 @@
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "'whatever the small intestine absorbs' nới quá nguồn ('substances absorbed') — sửa về đúng phạm vi."
+   }
   },
   "FMA5018": {
    "summary": {
@@ -4272,8 +4351,8 @@
    },
    "location": null,
    "function": {
-    "vi": "Xương bảo vệ các cơ quan, sinh ra hồng cầu và bạch cầu, dự trữ khoáng chất, góp phần điều hoà cân bằng axit–bazơ, tạo cấu trúc và nâng đỡ cơ thể, đồng thời giúp cơ thể cử động và nghe được.",
-    "en": "Bones shield the organs, make red and white blood cells, hold mineral reserves, help keep acid–base balance, give the body its structure and support, and make both movement and hearing possible."
+    "vi": "Xương tạo khung và nâng đỡ cơ thể, che chở các cơ quan, giúp cử động và nghe được, sinh ra hồng cầu và bạch cầu, dự trữ khoáng chất và góp phần điều hoà cân bằng axit–bazơ.",
+    "en": "Bones give the body its framework and support, guard its organs, allow movement and hearing, make red and white blood cells, hold mineral reserves and help regulate acid–base balance."
    },
    "evidence": [
     {
@@ -4300,7 +4379,13 @@
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Câu chức năng tiếng Anh bám đúng cấu trúc câu nguồn — viết lại, giữ đủ sáu chức năng."
+   }
   },
   "FMA7474": {
    "summary": {
@@ -4308,8 +4393,8 @@
     "en": "A long bone is one that measures more in length than in width. Its outer shell is compact bone, a deeper layer is spongy (cancellous) bone, and the medullary cavity inside holds the marrow."
    },
    "location": {
-    "vi": "Ở các chi: xương đùi, xương chày, xương mác ở chân; xương cánh tay, xương quay, xương trụ ở tay; các xương đốt bàn tay, đốt bàn chân, các đốt ngón tay, ngón chân; và xương đòn.",
-    "en": "In the limbs: the femur, tibia and fibula of the leg; the humerus, radius and ulna of the arm; the metacarpals and metatarsals; the finger and toe phalanges; and the collarbones."
+    "vi": "Gồm xương đùi, xương chày, xương mác ở chi dưới; xương cánh tay, xương quay, xương trụ ở chi trên; các xương đốt bàn tay và đốt bàn chân; các đốt ngón tay, ngón chân; và xương đòn.",
+    "en": "The group includes the femur, tibia and fibula of the leg; the humerus, radius and ulna of the arm; the metacarpals and metatarsals; the finger and toe phalanges; and the collarbones (clavicles)."
    },
    "function": {
     "vi": "Xương dài, nhất là xương đùi và xương chày, gánh phần lớn tải trọng trong sinh hoạt hằng ngày và rất quan trọng cho vận động. Các xương dài của chân chiếm gần một nửa chiều cao người trưởng thành.",
@@ -4356,26 +4441,40 @@
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Bỏ khung 'In the limbs:' không có trong nguồn (xương đòn)."
+   }
   },
   "FMA7476": {
    "summary": {
-    "vi": "Xương dẹt là những xương có chức năng chính là che chở trên diện rộng hoặc tạo bề mặt rộng cho cơ bám.",
-    "en": "Flat bones are bones whose chief job is either to protect over a wide area or to offer broad surfaces where muscles can attach."
+    "vi": "Xương dẹt là những xương trải thành tấm rộng, dẹt: hai lớp xương đặc mỏng kẹp giữa một lượng xương xốp nhiều ít tuỳ xương, nơi có tuỷ đỏ.",
+    "en": "Flat bones are spread out into broad, flat plates: two thin layers of compact bone with a variable amount of spongy bone between them, which is where red marrow sits."
    },
    "location": {
-    "vi": "Gồm xương chẩm, xương đỉnh, xương trán, xương mũi, xương lệ, xương lá mía, xương ức, các xương sườn và xương bả vai.",
-    "en": "They include the occipital, parietal, frontal, nasal and lacrimal bones, the vomer, the sternum, the ribs and the scapulae."
+    "vi": "Ví dụ: xương chẩm, xương đỉnh, xương trán, xương mũi, xương ức và xương bả vai.",
+    "en": "Examples include the occipital, parietal, frontal and nasal bones, the sternum and the scapulae."
    },
    "function": {
-    "vi": "Ở người trưởng thành, phần lớn hồng cầu được tạo ra trong xương dẹt. Vì xương dẹt thường mỏng hơn xương dài, chúng chỉ có tuỷ đỏ chứ không có cả tuỷ đỏ lẫn tuỷ vàng (tuỷ vàng phần lớn là mỡ).",
-    "en": "In adults, most red blood cells are made in flat bones. Being usually thinner than long bones, they hold only red marrow, not both red and yellow marrow (yellow marrow is mostly fat)."
+    "vi": "Chức năng chính của chúng là che chở trên diện rộng hoặc tạo bề mặt rộng cho cơ bám.",
+    "en": "Their principal job is either to protect over a wide area or to offer broad surfaces where muscles can attach."
    },
    "evidence": [
     {
      "source": "wikipedia-en",
      "section": "Flat_bone",
-     "quote": "Flat bones are bones whose principal function is either extensive protection or the provision of broad surfaces for muscular attachment.",
+     "quote": "These bones are expanded into broad, flat plates, as in the cranium (skull), the ilium, ischium, and pubis (pelvis), sternum and the rib cage.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Flat_bone",
+     "quote": "These bones are composed of two thin layers of compact bone enclosing between them a variable quantity of cancellous bone, which is the location of red bone marrow.",
      "supports": [
       "summary"
      ]
@@ -4391,20 +4490,19 @@
     {
      "source": "wikipedia-en",
      "section": "Flat_bone",
-     "quote": "In an adult, most red blood cells are formed in flat bones.",
-     "supports": [
-      "function"
-     ]
-    },
-    {
-     "source": "wikipedia-en",
-     "section": "Flat_bone",
-     "quote": "Since flat bones are usually thinner than the long bones, they only have red bone marrow, rather than both red and yellow bone marrow (yellow bone marrow being made up of mostly fat).",
+     "quote": "Flat bones are bones whose principal function is either extensive protection or the provision of broad surfaces for muscular attachment.",
      "supports": [
       "function"
      ]
     }
-   ]
+   ],
+   "omitted": "Danh sách nguồn còn có xương lệ, xương lá mía và xương sườn; FMA (bộ khung phân loại atlas hiển thị) xếp xương lệ, xương lá mía vào xương không đều và xương sườn vào xương dài — giữ lại thì bảng chi tiết tự mâu thuẫn, nên chỉ nêu ví dụ hai bên cùng công nhận. Bỏ 'phần lớn hồng cầu tạo ở xương dẹt' và 'xương dẹt chỉ có tuỷ đỏ': hai câu tuyệt đối, câu sau lập luận yếu ('vì mỏng hơn'), và theo phân loại FMA (đốt sống, xương hông là xương không đều) câu trước dễ gây hiểu sai.",
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Bỏ xương lệ/lá mía/sườn khỏi danh sách (FMA xếp không đều/dài — mâu thuẫn với panel). Cắt hai câu tuỷ đỏ/hồng cầu (tuyệt đối, dễ sai theo phân loại FMA). Tóm tắt nói xương dẹt là gì; chức năng chính chuyển sang chức năng."
+   }
   },
   "FMA7477": {
    "summary": {
@@ -4433,7 +4531,13 @@
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": "Đã đối chiếu: không nhắc xương lá mía nên không mâu thuẫn với danh sách xương dẹt sau khi sửa."
+   }
   },
   "FMA32672": {
    "summary": {
@@ -4445,8 +4549,8 @@
     "en": "Sesamoids occur at joints all over the body; at the knee, for example, the patella sits inside the quadriceps tendon."
    },
    "function": {
-    "vi": "Xương vừng hoạt động như ròng rọc: tạo mặt nhẵn cho gân trượt qua, nhờ đó gân truyền lực của cơ tốt hơn.",
-    "en": "They act as pulleys, giving the tendon a smooth surface to glide over and so improving how well it passes on the pull of the muscle."
+    "vi": "Xương vừng hoạt động giống như ròng rọc: tạo mặt nhẵn cho gân trượt qua, nhờ đó gân truyền lực của cơ tốt hơn.",
+    "en": "They work like pulleys, giving the tendon a smooth surface to glide over and so improving how well it passes on the pull of the muscle."
    },
    "evidence": [
     {
@@ -4481,12 +4585,18 @@
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "'act as pulleys' → 'work like pulleys' (nguồn: 'act like')."
+   }
   },
   "FMA9914": {
    "summary": {
-    "vi": "Đốt sống là một xương không đều có cấu trúc phức tạp, gồm xương và một ít sụn trong. Một đốt sống điển hình có thân đốt sống ở phía trước và cung đốt sống ở phía sau.",
-    "en": "A vertebra is an irregular bone of complex structure, made of bone together with some hyaline cartilage. A typical vertebra has a body at the front and a vertebral arch behind it."
+    "vi": "Đốt sống là một xương không đều có hình dạng phức tạp, cấu tạo từ xương và một ít sụn trong. Một đốt sống điển hình có thân đốt sống ở phía trước và cung đốt sống ở phía sau.",
+    "en": "Each vertebra is an irregular bone with an intricate shape, built of bone plus a little hyaline cartilage. A typical vertebra has a body at the front and a vertebral arch behind it."
    },
    "location": {
     "vi": "Các đốt sống nối tiếp nhau tạo thành cột sống. Mặt trên và mặt dưới thân đốt sống là chỗ bám của các đĩa gian đốt sống.",
@@ -4538,7 +4648,13 @@
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Viết lại câu đầu tiếng Anh cho khỏi phỏng sát câu nguồn. 'Điển hình' giữ nguyên — cần cho đốt đội (không có thân) đang thừa kế đoạn này."
+   }
   },
   "FMA10446": {
    "summary": {
@@ -4546,12 +4662,12 @@
     "en": "An intervertebral disc consists of an outer fibrous ring wrapped around a gel-like core, the nucleus pulposus."
    },
    "location": {
-    "vi": "Giữa mỗi cặp đốt sống kề nhau có một đĩa, trừ đoạn cổ đầu tiên là đốt đội.",
-    "en": "One disc lies between every two neighbouring vertebrae, with the exception of the atlas, the first cervical segment."
+    "vi": "Giữa mỗi cặp đốt sống kề nhau có một đĩa, trừ ở đốt sống cổ thứ nhất là đốt đội.",
+    "en": "There is a disc between each pair of neighbouring vertebrae, except at the first cervical segment, the atlas."
    },
    "function": {
-    "vi": "Mỗi đĩa tạo thành một khớp sụn sợi (khớp dính): cho phép các đốt sống cử động nhẹ, giữ các đốt sống với nhau như một dây chằng, và làm đệm giảm chấn cho cột sống. Nhân nhầy giúp phân bố áp lực đều khắp đĩa.",
-    "en": "Every disc is a fibrocartilaginous joint (a symphysis): it allows the vertebrae a little movement, binds them together the way a ligament would, and cushions the spine against shocks. The nucleus pulposus spreads pressure evenly through the disc."
+    "vi": "Mỗi đĩa tạo thành một khớp sụn sợi (khớp dính): cho phép các đốt sống cử động nhẹ, giữ các đốt sống với nhau như một dây chằng và làm đệm giảm chấn cho cột sống. Nhân nhầy bên trong góp phần phân bố áp lực đều khắp đĩa.",
+    "en": "Every disc makes a fibrocartilaginous joint (a symphysis) that lets the vertebrae move slightly, holds them together as a ligament would, and absorbs shocks for the spine. The nucleus pulposus within it helps spread pressure evenly across the disc."
    },
    "evidence": [
     {
@@ -4586,16 +4702,22 @@
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Trả lại từ dè dặt 'helps' bị rơi (nhân nhầy 'helps to distribute'); 'is a joint' → 'forms a joint' như nguồn."
+   }
   },
   "FMA7574": {
    "summary": {
-    "vi": "Xương sườn là xương dẹt. Người thường có 24 xương sườn, xếp thành 12 đôi; nhìn chung xương sườn dài dần từ sườn 1 tới sườn 7 rồi ngắn lại dần tới sườn 12.",
-    "en": "Ribs are flat bones. People usually have 24 of them, in 12 pairs; in general they lengthen from rib 1 to rib 7 and then shorten again down to rib 12."
+    "vi": "Xương sườn là những xương dài, cong tạo nên lồng ngực. Người thường có 24 xương sườn, xếp thành 12 đôi; nhìn chung xương sườn dài dần từ sườn 1 tới sườn 7 rồi ngắn lại dần tới sườn 12.",
+    "en": "Ribs are the long, curved bones that make up the rib cage. People usually have 24 of them, in 12 pairs; in general they lengthen from rib 1 to rib 7 and then shorten again down to rib 12."
    },
    "location": {
-    "vi": "Ở phía trước cơ thể, phần lớn xương sườn nối với xương ức bằng sụn sườn; ở phía sau, mỗi xương sườn khớp với đốt sống ngực cùng số thứ tự.",
-    "en": "At the front, most ribs are linked to the sternum by costal cartilage; at the back, each rib articulates with the thoracic vertebra that has the same number."
+    "vi": "Ở phía sau, mọi xương sườn đều gắn vào các đốt sống ngực và được đánh số từ 1 đến 12 theo đốt sống mà chúng gắn vào. Ở phía trước, phần lớn xương sườn nối với xương ức bằng sụn sườn.",
+    "en": "At the back, every rib is fixed to the thoracic vertebrae, and the ribs are numbered 1 to 12 after the vertebrae they attach to. At the front, most of them are joined to the sternum by costal cartilage."
    },
    "function": {
     "vi": "Là một phần của lồng ngực, xương sườn giúp che chở các cơ quan bên trong.",
@@ -4605,10 +4727,9 @@
     {
      "source": "wikipedia-en",
      "section": "Rib",
-     "quote": "Human ribs are flat bones that form part of the rib cage to help protect internal organs.",
+     "quote": "are the long curved bones which form the rib cage, part of the axial skeleton.",
      "supports": [
-      "summary",
-      "function"
+      "summary"
      ]
     },
     {
@@ -4630,6 +4751,14 @@
     {
      "source": "wikipedia-en",
      "section": "Rib",
+     "quote": "All are attached at the back to the thoracic vertebrae and are numbered from 1 to 12 according to the vertebrae to which they attach.",
+     "supports": [
+      "location"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Rib",
      "quote": "At the front of the body, most of the ribs are joined by costal cartilage to the sternum.",
      "supports": [
       "location"
@@ -4638,12 +4767,19 @@
     {
      "source": "wikipedia-en",
      "section": "Rib",
-     "quote": "connects to the transverse costal facet on the thoracic vertebra of the same rib number.",
+     "quote": "Human ribs are flat bones that form part of the rib cage to help protect internal organs.",
      "supports": [
-      "location"
+      "function"
      ]
     }
-   ]
+   ],
+   "omitted": "Bài Rib tự vênh: đoạn mở đầu gọi xương sườn là 'long curved bones', mục giải phẫu người gọi là 'flat bones'; FMA (panel hiển thị) xếp Rib vào xương dài. Không viết 'xương sườn là xương dẹt' để khỏi mâu thuẫn với phân loại ngay trên panel; dùng mô tả 'dài, cong'. Bỏ câu diện khớp củ sườn với mỏm ngang 'mỗi xương sườn' — không đúng cho sườn 11–12.",
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "'Ribs are flat bones' mâu thuẫn với FMA (Rib is-a Long bone, hiện trên panel) và với chính đoạn mở đầu bài nguồn — đổi thành 'dài, cong'. Thay câu diện khớp củ sườn (sai cho sườn 11–12) bằng câu gắn đốt sống ngực/đánh số."
+   }
   },
   "FMA7592": {
    "summary": {
@@ -4672,7 +4808,12 @@
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved"
+   }
   },
   "FMA7594": {
    "summary": {
@@ -4709,7 +4850,12 @@
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved"
+   }
   },
   "FMA23914": {
    "summary": {
@@ -4770,12 +4916,18 @@
       "location"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": "Đã kiểm câu [citation needed] về dính đốt ngón chân 4–5: mục này không dùng."
+   }
   },
   "FMA24493": {
    "summary": {
-    "vi": "Đốt ngón chân là các xương tạo nên ngón chân. Mỗi ngón chân có ba đốt, riêng ngón cái chỉ có hai vì không có đốt giữa. So với đốt ngón tay, đốt ngón chân thường ngắn và dẹt hơn, nhất là đốt gần.",
-    "en": "The toe bones, or phalanges of the foot, make up the toes. Each toe has three except the big toe, which has two because it lacks a middle phalanx. Compared with the hand, the foot's phalanges are often shorter and more compressed, especially the proximal ones."
+    "vi": "Đốt ngón chân là các xương tạo nên ngón chân. Mỗi ngón chân có ba đốt, riêng ngón cái chỉ có hai vì không có đốt giữa; tuỳ người, đôi khi ngón út cũng không có đốt giữa. So với đốt ngón tay, đốt ngón chân thường ngắn và dẹt hơn, nhất là đốt gần.",
+    "en": "The toe bones, or phalanges of the foot, make up the toes. Each toe has three, except the big toe, which has two because it lacks a middle phalanx; people vary, and sometimes the little toe has no middle phalanx either. Compared with the hand, the foot's phalanges are often shorter and more compressed, especially the proximal ones."
    },
    "location": {
     "vi": "Đốt gần là đốt gần bàn chân nhất; nó khớp với xương đốt bàn chân ở khớp đốt bàn–ngón chân.",
@@ -4802,7 +4954,15 @@
     {
      "source": "wikipedia-en",
      "section": "Phalanx_bone",
-     "quote": "Note the big toe has no middle phalanx.",
+     "quote": "The thumb and large toe do not have middle phalanges.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Phalanx_bone",
+     "quote": "People vary; sometimes the smallest toe also has none",
      "supports": [
       "summary"
      ]
@@ -4831,7 +4991,13 @@
       "location"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Thêm biến thể ngón út không có đốt giữa (nguồn có nêu) — đoạn này hiện cho 'đốt giữa ngón út'. Thay câu trích từ mã wikitext của bộ sưu tập ảnh bằng câu thân bài."
+   }
   },
   "FMA23889": {
    "summary": {
@@ -4839,12 +5005,12 @@
     "en": "The carpal bones are eight small bones that together form the wrist, linking the hand with the forearm."
    },
    "location": {
-    "vi": "Có thể chia tám xương này thành hai hàng ngang. Hàng gần gồm xương thuyền, xương nguyệt, xương tháp và xương đậu, khớp với xương quay và với hàng xa; hàng xa cứng hơn vì cung ngang của nó chuyển động cùng các xương đốt bàn tay.",
-    "en": "The eight can be thought of as two transverse rows. The proximal row (scaphoid, lunate, triquetral and pisiform) meets the radius and the distal row; the distal row is stiffer, because its transverse arch moves along with the metacarpals."
+    "vi": "Có thể chia tám xương này thành hai hàng ngang (hoặc thành ba cột dọc). Hàng gần gồm xương thuyền, xương nguyệt, xương tháp và xương đậu, khớp với xương quay và với hàng xa; hàng xa cứng hơn vì cung ngang của nó chuyển động cùng các xương đốt bàn tay.",
+    "en": "The eight can be thought of as two transverse rows (or, alternatively, as three longitudinal columns). The proximal row (scaphoid, lunate, triquetral and pisiform) meets the radius and the distal row; the distal row is stiffer, because its transverse arch moves along with the metacarpals."
    },
    "function": {
-    "vi": "Vai trò chính là khớp với đầu xương quay và xương trụ tạo nên khớp cổ tay rất linh hoạt, làm chỗ bám cho các cơ mô cái và mô út, và tạo thành một phần của ống cổ tay cứng — nơi dây thần kinh giữa và gân các cơ trước cẳng tay đi xuống bàn tay và các ngón.",
-    "en": "Their main roles: they articulate with the heads of the radius and ulna in the very mobile wrist joint, give the thenar and hypothenar muscles somewhere to attach, and help build the stiff carpal tunnel, through which the median nerve and the anterior forearm tendons reach the hand and fingers."
+    "vi": "Vai trò chính: tham gia tạo nên khớp cổ tay rất linh hoạt, làm chỗ bám cho các cơ mô cái và mô út, và tạo thành một phần của ống cổ tay cứng — nơi dây thần kinh giữa và gân của các cơ vùng cẳng tay trước đi xuống bàn tay và các ngón.",
+    "en": "Their main roles: they take part in the highly mobile wrist joint, give the thenar and hypothenar muscles places to attach, and help build the rigid carpal tunnel, through which the median nerve and tendons of anterior forearm muscles reach the hand and fingers."
    },
    "evidence": [
     {
@@ -4887,7 +5053,14 @@
       "function"
      ]
     }
-   ]
+   ],
+   "omitted": "Câu nguồn nói xương cổ tay khớp với 'đầu xương quay và đầu xương trụ'; chính mục cấu trúc của bài chỉ nêu hàng gần khớp với xương quay. Không viết vế xương trụ để khỏi tạo hình dung sai về khớp cổ tay.",
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Bỏ 'khớp với đầu xương trụ' (vênh với chính mục cấu trúc của nguồn). Thêm cách chia ba cột dọc mà nguồn nêu song song. 'the anterior forearm tendons' (ngụ ý tất cả) → 'tendons of anterior forearm muscles'."
+   }
   },
   "FMA24491": {
    "summary": {
@@ -4937,7 +5110,12 @@
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved"
+   }
   },
   "FMA12516": {
    "summary": {
@@ -4949,8 +5127,8 @@
     "en": "The roots are anchored in the upper jaw (maxilla) or lower jaw (mandible), with the gums covering them. The anatomical crown is the enamel-covered part above the cementoenamel junction, the tooth's neck."
    },
    "function": {
-    "vi": "Răng làm nhỏ thức ăn một cách cơ học bằng cách cắt và nghiền, chuẩn bị cho việc nuốt và tiêu hoá.",
-    "en": "Teeth break food down mechanically, cutting and crushing it to get it ready for swallowing and digestion."
+    "vi": "Răng làm nhỏ thức ăn một cách cơ học bằng cách cắt và nghiền, chuẩn bị cho việc nuốt và tiêu hoá: răng cửa cắt, răng nanh xé, răng tiền hàm và răng hàm nghiền.",
+    "en": "Teeth break food down mechanically, cutting and crushing it to get it ready for swallowing and digestion: incisors cut, canines tear, and premolars and molars crush."
    },
    "evidence": [
     {
@@ -4992,17 +5170,31 @@
      "supports": [
       "function"
      ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Human_tooth",
+     "quote": "The incisors cut the food, the canines tear the food and the molars and premolars crush the food.",
+     "supports": [
+      "function"
+     ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Tóm tắt nói mỗi loại răng có chức năng riêng mà không nói là gì; thêm chức năng từng loại (đoạn này hiện cho răng cửa/nanh/tiền hàm/hàm)."
+   }
   },
   "FMA9617": {
    "summary": {
-    "vi": "Các cơ cổ trong mô hình gồm bốn cơ trên móng (cơ hai bụng, cơ trâm móng, cơ cằm móng, cơ hàm móng), bốn đôi cơ dưới móng hay cơ dải (cơ ức móng, cơ ức giáp, cơ giáp móng, cơ vai móng) và ba cơ bậc thang (trước, giữa, sau) ở mỗi bên cổ.",
-    "en": "The neck muscles here comprise the four suprahyoid muscles (digastric, stylohyoid, geniohyoid, mylohyoid), the four pairs of infrahyoid or strap muscles (sternohyoid, sternothyroid, thyrohyoid, omohyoid) and, on each side, the three scalenes: anterior, middle and posterior."
+    "vi": "Trong số các cơ cổ có bốn cơ trên móng (cơ hai bụng, cơ trâm móng, cơ cằm móng, cơ hàm móng), bốn đôi cơ dưới móng hay cơ dải (cơ ức móng, cơ ức giáp, cơ giáp móng, cơ vai móng) và ba cơ bậc thang (trước, giữa, sau) ở mỗi bên cổ.",
+    "en": "Among the neck muscles are the four suprahyoid muscles (digastric, stylohyoid, geniohyoid, mylohyoid), the four pairs of infrahyoid or strap muscles (sternohyoid, sternothyroid, thyrohyoid, omohyoid) and, on each side, the three scalenes: anterior, middle and posterior."
    },
    "location": {
     "vi": "Cơ trên móng nằm phía trên xương móng; cơ dưới móng ở phần trước cổ. Cơ bậc thang ở hai bên cổ, một đầu bám vào các mỏm xương của đốt sống C2 đến C7, đầu kia bám vào xương sườn thứ nhất và thứ hai.",
-    "en": "The suprahyoids lie above the hyoid bone and the infrahyoids in the front of the neck. The scalenes sit at the sides of the neck, fixed at one end to bony projections of vertebrae C2 to C7 and at the other to the first and second ribs."
+    "en": "The suprahyoids lie above the hyoid bone and the infrahyoids in the front of the neck. The scalenes sit at the sides of the neck, anchored on bony projections of the C2–C7 vertebrae at one end and on the first two ribs at the other."
    },
    "function": {
     "vi": "Bốn cơ trên móng có tác dụng khác nhau, nhưng nhìn chung giúp nâng xương móng và mở rộng thực quản khi nuốt. Cơ dưới móng nâng và hạ xương móng cùng thanh quản khi nuốt và khi nói. Cơ bậc thang trước và giữa nâng xương sườn thứ nhất, cơ bậc thang sau nâng xương sườn thứ hai, và chúng nghiêng cổ về cùng bên; vì nâng các xương sườn trên nên chúng còn là cơ hô hấp phụ.",
@@ -5100,7 +5292,13 @@
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "'The neck muscles here comprise…' sai: đoạn này còn hiện cho cơ bám da cổ, cơ thanh quản, cơ hầu — đổi thành 'trong số các cơ cổ có'. Viết lại câu vị trí trùng 8 từ."
+   }
   },
   "FMA46689": {
    "summary": {
@@ -5158,12 +5356,17 @@
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved"
+   }
   },
   "FMA49033": {
    "summary": {
-    "vi": "Sáu trong số các cơ ngoài nhãn cầu — bốn cơ thẳng cùng cơ chéo trên và cơ chéo dưới — điều khiển cử động của mắt. Cơ còn lại, cơ nâng mi trên, điều khiển việc nâng mi mắt.",
-    "en": "Six of the extraocular muscles, the four recti plus the superior and inferior obliques, move the eye. The remaining one, levator palpebrae superioris, raises the eyelid."
+    "vi": "Các cơ ngoài nhãn cầu là bảy cơ ngoại lai của mắt. Sáu cơ — bốn cơ thẳng cùng cơ chéo trên và cơ chéo dưới — làm mắt cử động; cơ thứ bảy, cơ nâng mi trên, nâng mi mắt.",
+    "en": "The extraocular muscles are the eye's seven extrinsic muscles. Six of them, the four recti and the two obliques (superior and inferior), turn the eye; the seventh, levator palpebrae superioris, lifts the eyelid."
    },
    "location": {
     "vi": "Bốn cơ thẳng (trên, ngoài, trong, dưới) xuất phát từ một vòng sợi ở đáy ổ mắt gọi là vòng gân chung. Cơ chéo trên xuất phát ở đáy ổ mắt, đi ra trước tới một ròng rọc sụn ở thành trên–trong ổ mắt rồi quặt ngang để bám vào phần sau–ngoài nhãn cầu. Cơ chéo dưới xuất phát ở phần trước dưới của thành ổ mắt phía mũi.",
@@ -5174,6 +5377,14 @@
     "en": "Because only a small patch of the eye, the fovea, gives sharp vision, the eye has to turn to keep a target in view. What each of the six eye-moving muscles does depends on where the eye is pointing when it contracts."
    },
    "evidence": [
+    {
+     "source": "wikipedia-en",
+     "section": "Extraocular_muscles",
+     "quote": "are the seven extrinsic muscles of the eye in humans and other animals.",
+     "supports": [
+      "summary"
+     ]
+    },
     {
      "source": "wikipedia-en",
      "section": "Extraocular_muscles",
@@ -5246,20 +5457,26 @@
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Viết lại tóm tắt tiếng Anh trùng 8 từ; thêm tổng số bảy cơ có nguồn."
+   }
   },
   "FMA32559": {
    "summary": {
-    "vi": "Khối cơ dựng sống không phải một cơ mà là một nhóm cơ và gân. Ở vùng thắt lưng trên, khối cơ tách thành ba cột: cột ngoài là cơ chậu sườn, cột giữa là cơ dài — cột lớn nhất — và cột trong là cơ gai — cột nhỏ nhất.",
-    "en": "The erector spinae is not a single muscle but a group of muscles and tendons. In the upper lumbar region the mass separates into three columns: iliocostalis on the outside, longissimus in the middle (the largest), and spinalis on the inside (the smallest)."
+    "vi": "Khối cơ dựng sống không phải một cơ mà là một nhóm cơ và gân. Ở vùng thắt lưng trên, khối thịt này tách thành ba cột: cột ngoài là cơ chậu sườn, cột giữa là cơ dài — cột lớn nhất — và cột trong là cơ gai — cột nhỏ nhất.",
+    "en": "The erector spinae is a set of muscles and tendons rather than a single muscle. In the upper lumbar region its fleshy mass splits into three columns: iliocostalis on the outside, longissimus in the middle (the largest) and spinalis on the inside (the smallest)."
    },
    "location": {
-    "vi": "Chạy gần suốt chiều dài cột sống ở cả hai bên, từ xương cùng và hông lên tới nền sọ; nằm hai bên các mỏm gai đốt sống, trải qua vùng thắt lưng, ngực và cổ.",
-    "en": "It runs roughly the whole length of the spine on both sides, from the sacrum and hips up to the base of the skull, lying alongside the spinous processes through the lumbar, thoracic and cervical regions."
+    "vi": "Khối cơ dựng sống chạy ở hai bên cột sống, gần suốt chiều dài của nó, từ xương cùng và hông lên tới nền sọ; nằm hai bên các mỏm gai đốt sống, trải qua vùng thắt lưng, ngực và cổ.",
+    "en": "The erector spinae runs along both sides of the spine for roughly its whole length, from the sacrum and hips up to the base of the skull, lying beside the spinous processes through the lumbar, thoracic and cervical regions."
    },
    "function": {
-    "vi": "Cơ dựng sống phối hợp với các cơ mông để giữ tư thế vững khi đứng hoặc ngồi. Cơ gối đầu là cơ chủ vận khi ngửa đầu ra sau, và còn giúp nghiêng và xoay cột sống cổ.",
-    "en": "The erector spinae works with the gluteal muscles to hold a stable posture when standing or sitting. Splenius capitis is a prime mover in tilting the head back, and also helps bend the neck sideways and rotate it."
+    "vi": "Khối cơ dựng sống duỗi thẳng và xoay lưng, và phối hợp với các cơ mông để giữ tư thế vững khi đứng hoặc ngồi. Cơ gối đầu là cơ chủ vận khi ngửa đầu ra sau, và còn có thể nghiêng và xoay cột sống cổ.",
+    "en": "The erector spinae straightens and rotates the back, and together with the gluteal muscles it keeps posture stable when standing or sitting. Splenius capitis is a prime mover in tilting the head back, and it can also bend the neck sideways and rotate it."
    },
    "evidence": [
     {
@@ -5306,6 +5523,14 @@
     {
      "source": "wikipedia-en",
      "section": "Erector_spinae_muscles",
+     "quote": "or spinal erectors is a set of muscles that straighten and rotate the back.",
+     "supports": [
+      "function"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Erector_spinae_muscles",
      "quote": "The spinal erectors work together with the glutes (gluteus maximus, gluteus medius and gluteus minimus) to maintain stable posture standing or sitting.",
      "supports": [
       "function"
@@ -5327,20 +5552,26 @@
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Chức năng chỉ giữ 'giữ tư thế' mà bỏ tác dụng chính duỗi/xoay lưng của cơ dựng sống — thêm. 'can also allow' của cơ gối đầu bị nâng thành 'helps' — trả về 'can'. Nêu chủ ngữ ở vị trí (đoạn này hiện cả cho cơ gối)."
+   }
   },
   "FMA32561": {
    "summary": {
-    "vi": "Nhóm cơ sâu ở sau cột sống. Trong mô hình có các cơ xoay — nằm dưới cơ nhiều chân và chỉ bắc qua một đến hai đốt sống — và các cơ dưới chẩm như cơ chéo đầu trên, cơ chéo đầu dưới.",
-    "en": "The deep muscles behind the spine. The model shows the rotatores, which lie under the multifidus and span just one or two vertebral segments, and suboccipital muscles such as the superior and inferior oblique muscles of the head."
+    "vi": "Các cơ sâu ở mặt sau cột sống. Trong đó có các cơ xoay — nằm dưới cơ nhiều chân và chỉ bắc qua một đến hai đốt sống — và các cơ dưới chẩm như cơ chéo đầu trên, cơ chéo đầu dưới.",
+    "en": "Deep muscles at the back of the vertebral column. They include the rotatores, which lie beneath the multifidus and span one or two vertebral segments, and suboccipital muscles such as the superior and inferior oblique muscles of the head."
    },
    "location": {
     "vi": "Các cơ dưới chẩm nằm dưới xương chẩm: bốn đôi cơ ở mặt dưới xương chẩm, gồm hai cơ thẳng và hai cơ chéo. Cơ chéo đầu trên đi từ mỏm ngang đốt đội tới xương chẩm; cơ chéo đầu dưới đi từ mỏm gai đốt trục tới mỏm ngang đốt đội.",
     "en": "The suboccipital muscles sit beneath the occipital bone, four pairs on its underside: two straight (rectus) and two oblique. Obliquus capitis superior runs between the atlas's transverse process and the occiput; obliquus capitis inferior links the spine of the axis to the transverse process of the atlas."
    },
    "function": {
-    "vi": "Nhóm cơ ngang gai, trong đó có các cơ xoay, cùng co thì xoay và duỗi cột sống.",
-    "en": "Acting together, the transversospinales, the rotatores among them, rotate and extend the vertebral column."
+    "vi": "Nhóm cơ ngang gai, trong đó có các cơ xoay, cùng tác dụng xoay và duỗi cột sống, dù đây là những cơ nhỏ, có lợi thế cơ học kém.",
+    "en": "The transversospinales, the group the rotatores belong to, act together to rotate and extend the vertebral column, although they are small muscles with little mechanical advantage."
    },
    "evidence": [
     {
@@ -5401,21 +5632,35 @@
      "supports": [
       "function"
      ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Transversospinales",
+     "quote": "These muscles are small and have a poor mechanical advantage for contributing to motion.",
+     "supports": [
+      "function"
+     ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Bỏ 'The model shows…' (lời về mô hình, không có nguồn; mô hình còn có cơ gian gai, cơ gian ngang). Thêm hạn định của nguồn: cơ nhỏ, lợi thế cơ học kém."
+   }
   },
   "FMA33531": {
    "summary": {
-    "vi": "Cơ vùng vai trong mô hình gồm nhóm cơ chóp xoay — bốn trong bảy cơ nối xương bả vai với xương cánh tay — cùng các cơ gắn với xương bả vai như hai cơ trám, cơ răng trước và cơ nâng vai.",
-    "en": "The shoulder muscles shown here are the rotator cuff, four of the seven scapulohumeral muscles, along with muscles attached to the scapula such as the two rhomboids, serratus anterior and levator scapulae."
+    "vi": "Trong số các cơ vùng vai có nhóm cơ chóp xoay — bốn trong bảy cơ nối xương bả vai với xương cánh tay — và các cơ khác bám vào xương bả vai như hai cơ trám, cơ răng trước và cơ nâng vai.",
+    "en": "Shoulder muscles include the rotator cuff, made up of four of the seven scapulohumeral muscles, and other muscles attached to the scapula, such as the two rhomboids, serratus anterior and levator scapulae."
    },
    "location": {
-    "vi": "Các cơ chóp xoay xuất phát từ xương bả vai và bám vào chỏm xương cánh tay, tạo thành một vòng bít quanh khớp vai. Cơ trám lớn nằm dưới cơ thang, ở phần trên của vùng ngực sau lưng.",
+    "vi": "Các cơ chóp xoay xuất phát từ xương bả vai và bám vào chỏm xương cánh tay, tạo thành một vòng bít quanh khớp vai. Cơ trám lớn nằm dưới cơ thang, ở phần trên vùng lưng ngực.",
     "en": "The rotator cuff muscles arise on the scapula and fasten onto the humeral head, wrapping the shoulder joint like a cuff. Rhomboid major lies under the trapezius in the upper thoracic part of the back."
    },
    "function": {
     "vi": "Cơ chóp xoay giữ vững khớp vai (khớp ổ chảo–cánh tay) và cho phép vai cử động trong biên độ rộng. Cơ răng trước kéo xương bả vai ra trước quanh lồng ngực; chức năng chính của cơ nâng vai là nâng xương bả vai; hai cơ trám tham gia cử động xương bả vai.",
-    "en": "The rotator cuff steadies the glenohumeral (shoulder) joint while allowing the shoulder its wide range of motion. Serratus anterior draws the scapula forward around the chest; the main job of levator scapulae is to raise the scapula; the rhomboids take part in moving the scapula."
+    "en": "The rotator cuff steadies the glenohumeral (shoulder) joint while letting the shoulder move through its wide range. Serratus anterior draws the scapula forward around the chest; the main job of levator scapulae is to raise the scapula; the rhomboids take part in moving the scapula."
    },
    "evidence": [
     {
@@ -5436,10 +5681,33 @@
     },
     {
      "source": "wikipedia-en",
+     "section": "Rhomboid_muscles",
+     "quote": "are rhombus-shaped muscles associated with the scapula.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Serratus_anterior_muscle",
+     "quote": "it inserts along the entire length of the anterior aspect of the medial border of the scapula.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Levator_scapulae_muscle",
+     "quote": "it inserts onto the upper portion of the medial border of the scapula.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
      "section": "Serratus_anterior_muscle",
      "quote": "The serratus anterior acts to pull the scapula forward around the thorax.",
      "supports": [
-      "summary",
       "function"
      ]
     },
@@ -5448,7 +5716,6 @@
      "section": "Levator_scapulae_muscle",
      "quote": "As the Latin name suggests, its main function is to lift the scapula.",
      "supports": [
-      "summary",
       "function"
      ]
     },
@@ -5485,12 +5752,18 @@
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Cảnh báo 'main' là do câu chức năng cơ nâng vai bị gắn nhầm làm bằng chứng cho tóm tắt; tóm tắt không nói chức năng nên đổi sang câu bám tận vào xương bả vai, 'main' vẫn giữ ở chức năng. Bỏ 'shown here' (lời về mô hình)."
+   }
   },
   "FMA38456": {
    "summary": {
-    "vi": "Khoang trước cẳng tay (khoang gấp) chứa các cơ xếp thành lớp nông và lớp sâu. Cơ gấp các ngón nông nằm giữa bốn cơ còn lại của lớp nông và ba cơ của lớp sâu, nên còn được xếp riêng thành lớp giữa.",
-    "en": "The anterior, or flexor, compartment of the forearm holds superficial and deep muscles. Flexor digitorum superficialis lies between the other four superficial muscles and the three deep ones, which is why it is also counted as an intermediate layer."
+    "vi": "Khoang trước cẳng tay (khoang gấp) chứa các cơ lớp nông và lớp sâu. Lớp nông gồm cơ gấp cổ tay quay, cơ gan tay dài, cơ gấp cổ tay trụ và cơ sấp tròn; cơ gấp các ngón nông nằm giữa bốn cơ này và ba cơ lớp sâu (cơ gấp các ngón sâu, cơ gấp ngón cái dài, cơ sấp vuông), nên còn được xếp riêng thành lớp giữa.",
+    "en": "The anterior, or flexor, compartment of the forearm holds superficial and deep muscles. The superficial ones are flexor carpi radialis, palmaris longus, flexor carpi ulnaris and pronator teres; flexor digitorum superficialis lies between them and the three deep muscles (flexor digitorum profundus, flexor pollicis longus and pronator quadratus), which is why it is also counted as an intermediate layer."
    },
    "location": {
     "vi": "Ở mặt trước cẳng tay. Các cơ lớp nông có nguyên uỷ chung ở gân gấp chung. Dây thần kinh trụ và động mạch trụ cũng nằm trong khoang này.",
@@ -5508,6 +5781,14 @@
      "supports": [
       "summary",
       "location"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Anterior_compartment_of_the_forearm",
+     "quote": "superficial: pronator teres palmaris longus flexor carpi radialis flexor carpi ulnaris flexor digitorum superficialis deep: pronator quadratus flexor digitorum profundus flexor pollicis longus",
+     "supports": [
+      "summary"
      ]
     },
     {
@@ -5551,7 +5832,13 @@
      ]
     }
    ],
-   "omitted": "Câu nguồn ghi 'flexion and supination'; vế 'supination' bị bỏ: chính bảng của bài liệt kê cơ sấp tròn (pronator teres) và cơ sấp vuông (pronator quadratus) trong khoang này — nhóm làm SẤP, không làm ngửa. Nghi lỗi của nguồn; cần science-editor xem."
+   "omitted": "Câu nguồn ghi 'flexion and supination'; vế 'supination' bị bỏ: chính bảng của bài liệt kê cơ sấp tròn và cơ sấp vuông trong khoang này, không có cơ ngửa nào. science-editor (2026-10-03): chấp nhận bỏ — nguồn tự mâu thuẫn, bỏ an toàn hơn chép một lỗi; nhưng không được để 'gấp' đứng một mình như thể là tất cả, vì đoạn này hiện cho cơ sấp vuông — nên tóm tắt liệt kê đủ tám cơ, có hai cơ sấp. Không viết 'các cơ sấp làm sấp cẳng tay' vì không có câu nguồn nào nói vậy.",
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Phán quyết: bỏ 'supination' chấp nhận được (bảng của chính bài nguồn có hai cơ sấp, không có cơ ngửa). Nhưng 'largely involved in flexion' hiện trên cơ sấp vuông mà không nhắc cơ sấp là chọn-một-kể-như-tất-cả — thêm danh sách đủ tám cơ theo lớp."
+   }
   },
   "FMA38488": {
    "summary": {
@@ -5563,8 +5850,8 @@
     "en": "On the back of the forearm, divided from the front compartment by the interosseous membrane that spans the radius and ulna. Most superficial and intermediate muscles share an origin on the outer elbow, at the lateral epicondyle of the humerus; the deep ones come from the lower ulna and the nearby interosseous membrane."
    },
    "function": {
-    "vi": "Các cơ này chủ yếu duỗi cổ tay và các ngón. Cơ cánh tay quay là ngoại lệ: nằm ở khoang sau nhưng lại gấp cẳng tay ở khuỷu.",
-    "en": "Their primary action is extending the wrist and the digits. Brachioradialis is the odd one out: it sits in this compartment but flexes the forearm at the elbow."
+    "vi": "Các cơ này chủ yếu duỗi cổ tay và các ngón. Cơ cánh tay quay là ngoại lệ: nằm ở khoang sau nhưng lại gấp cẳng tay ở khuỷu; khi gấp, nó có xu hướng làm ngửa cẳng tay đang sấp và làm sấp cẳng tay đang ngửa.",
+    "en": "Their primary action is extending the wrist and the digits. Brachioradialis is the odd one out: it sits in this compartment but flexes the forearm at the elbow, and as it flexes it tends to supinate a pronated forearm and to pronate a supinated one."
    },
    "evidence": [
     {
@@ -5631,21 +5918,43 @@
      "supports": [
       "function"
      ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Brachioradialis",
+     "quote": "When the forearm is pronated, the brachioradialis tends to supinate as it flexes.",
+     "supports": [
+      "function"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Brachioradialis",
+     "quote": "In a supinated position, it tends to pronate as it flexes.",
+     "supports": [
+      "function"
+     ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Cơ cánh tay quay: thêm vế sấp/ngửa tuỳ tư thế mà nguồn nêu, để 'chỉ gấp khuỷu' không thành chọn-một-kể-như-tất-cả."
+   }
   },
   "FMA42380": {
    "summary": {
-    "vi": "Cơ nội tại bàn tay trong mô hình gồm nhóm cơ mô cái của ngón cái và nhóm ba cơ mô út điều khiển cử động ngón út.",
-    "en": "The intrinsic hand muscles shown here are the thenar group of the thumb and the three hypothenar muscles that move the little finger."
+    "vi": "Trong số các cơ nội tại bàn tay có nhóm cơ mô cái ở gốc ngón cái và ba cơ mô út điều khiển cử động ngón út.",
+    "en": "Intrinsic hand muscles include the thenar group at the base of the thumb and the three hypothenar muscles, which control the little finger."
    },
    "location": {
-    "vi": "Ở gan tay: mô cái là ụ thịt ở gốc ngón cái, do nhóm cơ nội tại của ngón cái tạo thành; ba cơ mô út cũng là cơ của gan tay.",
-    "en": "In the palm: the thenar eminence is the mound at the base of the thumb built by the thumb's intrinsic muscles, and the three hypothenar muscles likewise belong to the palm."
+    "vi": "Ở gan tay. Mô cái là ụ thịt ở gốc ngón cái do các cơ nội tại của ngón cái tạo thành; cơ dạng ngón cái ngắn nằm nông nhất, cơ đối ngón cái nằm sâu dưới nó. Ba cơ mô út cũng là cơ của gan tay.",
+    "en": "In the palm. The thenar eminence is the mound at the base of the thumb formed by the thumb's intrinsic muscles; abductor pollicis brevis is the most superficial of them and opponens pollicis lies deep to it. The three hypothenar muscles are palm muscles too."
    },
    "function": {
-    "vi": "Mô cái gồm ba cơ: cơ dạng ngón cái ngắn làm dạng ngón cái; cơ gấp ngón cái ngắn, nằm cạnh nó, gấp ngón cái và cuộn ngón vào lòng bàn tay; cơ đối ngón cái nằm sâu dưới cơ dạng ngón cái ngắn. Mô út gồm cơ dạng ngón út, cơ gấp ngón út ngắn và cơ đối ngón út, điều khiển cử động ngón út.",
-    "en": "The thenar group has three muscles: abductor pollicis brevis abducts the thumb; flexor pollicis brevis, beside it, bends the thumb and curls it into the palm; opponens pollicis lies deep to the abductor. The hypothenar group (abductor digiti minimi, flexor digiti minimi brevis and opponens digiti minimi) controls the little finger."
+    "vi": "Trong ba cơ mô cái, cơ dạng ngón cái ngắn làm dạng ngón cái, cơ gấp ngón cái ngắn gấp ngón cái và cuộn nó vào lòng bàn tay, cơ đối ngón cái đưa ngón cái đối chiếu với các ngón khác. Nhóm mô út (cơ dạng ngón út, cơ gấp ngón út ngắn, cơ đối ngón út) điều khiển cử động ngón út.",
+    "en": "Of the three thenar muscles, abductor pollicis brevis abducts the thumb, flexor pollicis brevis bends it and curls it into the palm, and opponens pollicis opposes it, bringing it against the fingers. The hypothenar group (abductor digiti minimi, flexor digiti minimi brevis and opponens digiti minimi) controls the little finger."
    },
    "evidence": [
     {
@@ -5670,6 +5979,22 @@
     {
      "source": "wikipedia-en",
      "section": "Thenar_eminence",
+     "quote": "This muscle is the most superficial of the thenar group.",
+     "supports": [
+      "location"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Thenar_eminence",
+     "quote": "Opponens pollicis lies deep to abductor pollicis brevis.",
+     "supports": [
+      "location"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Thenar_eminence",
      "quote": "The following three muscles are considered part of the thenar eminence: Abductor pollicis brevis abducts the thumb.",
      "supports": [
       "function"
@@ -5686,7 +6011,7 @@
     {
      "source": "wikipedia-en",
      "section": "Thenar_eminence",
-     "quote": "Opponens pollicis lies deep to abductor pollicis brevis.",
+     "quote": "As its name suggests it opposes the thumb, bringing it against the fingers.",
      "supports": [
       "function"
      ]
@@ -5699,22 +6024,36 @@
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Cơ đối ngón cái chỉ có vị trí, nằm sai trường chức năng và thiếu tác dụng đối chiếu ngón cái mà nguồn nêu — chuyển vị trí, thêm chức năng. Bỏ 'shown here'."
+   }
   },
   "FMA64922": {
    "summary": {
-    "vi": "Có ba cơ mông: cơ mông lớn — lớn nhất và nông nhất —, cơ mông nhỡ, và cơ mông bé — nhỏ nhất, nằm ngay dưới cơ mông nhỡ. Ở vùng này còn có nhóm sáu cơ xoay ngoài nhỏ của hông: cơ hình lê, hai cơ sinh đôi (trên và dưới), cơ bịt trong, cơ bịt ngoài và cơ vuông đùi.",
-    "en": "There are three gluteal muscles: gluteus maximus, the largest and most superficial; gluteus medius; and gluteus minimus, the smallest, directly under the medius. The region also holds the lateral rotator group, six small hip muscles: piriformis, the superior and inferior gemelli, the internal and external obturators, and quadratus femoris."
+    "vi": "Ba cơ mông tạo nên vùng mông: cơ mông lớn — lớn nhất và nông nhất —, cơ mông nhỡ, và cơ mông bé — nhỏ nhất, nằm ngay dưới cơ mông nhỡ. Nhóm cơ xoay ngoài gồm sáu cơ nhỏ của hông: cơ hình lê, hai cơ sinh đôi (trên và dưới), cơ bịt trong, cơ bịt ngoài và cơ vuông đùi.",
+    "en": "The three gluteal muscles make up the buttock region: gluteus maximus, the largest and most superficial; gluteus medius; and gluteus minimus, the smallest, directly under the medius. The lateral rotator group is a set of six small hip muscles: piriformis, the superior and inferior gemelli, the internal and external obturators, and quadratus femoris."
    },
    "location": {
-    "vi": "Cơ mông nhỡ là cơ rộng, dày, toả hình nan quạt, nằm trên mặt ngoài xương chậu; một phần ba sau của nó bị cơ mông lớn che phủ. Các cơ xoay ngoài đều xuất phát từ xương hông và bám vào đầu trên xương đùi.",
-    "en": "Gluteus medius is a broad, thick, fan-shaped muscle lying on the outer surface of the pelvis, with its rear third hidden under gluteus maximus. The lateral rotators all arise from the hip bone and insert on the upper end of the femur."
+    "vi": "Ba cơ mông xuất phát từ xương cánh chậu và xương cùng, bám tận vào xương đùi. Cơ mông nhỡ là cơ rộng, dày, toả hình nan quạt, nằm trên mặt ngoài khung chậu; một phần ba sau của nó bị cơ mông lớn che phủ. Các cơ xoay ngoài đều xuất phát từ xương hông và bám vào đầu trên xương đùi.",
+    "en": "The three gluteal muscles arise from the ilium and sacrum and attach to the femur. Gluteus medius is a broad, thick, fan-shaped muscle on the outer surface of the pelvis, with its rear third covered by gluteus maximus. The lateral rotators all arise from the hip bone and insert on the upper end of the femur."
    },
    "function": {
-    "vi": "Phần trước và phần sau cơ mông nhỡ cùng co thì dạng hông và giữ vững xương chậu trong mặt phẳng đứng ngang. Nhóm cơ xoay ngoài đều xoay xương đùi ra ngoài trong khớp hông.",
-    "en": "When its front and back parts contract together, gluteus medius abducts the hip and keeps the pelvis steady in the coronal plane. The lateral rotators all turn the femur outward at the hip joint."
+    "vi": "Tác dụng của các cơ mông gồm duỗi, dạng, xoay ngoài và xoay trong khớp hông. Khi phần trước và phần sau cùng co, cơ mông nhỡ dạng hông và giữ vững khung chậu trong mặt phẳng đứng ngang. Các cơ xoay ngoài đều xoay xương đùi ra ngoài tại khớp hông.",
+    "en": "Between them, the gluteal muscles' actions include extending and abducting the hip and rotating it both outward and inward. When its front and back parts work together, gluteus medius abducts the hip and keeps the pelvis steady in the coronal plane. The lateral rotators all turn the femur outward at the hip joint."
    },
    "evidence": [
+    {
+     "source": "wikipedia-en",
+     "section": "Gluteal_muscles",
+     "quote": "are a group of three muscles which make up the gluteal region commonly known as the buttocks",
+     "supports": [
+      "summary"
+     ]
+    },
     {
      "source": "wikipedia-en",
      "section": "Gluteal_muscles",
@@ -5750,6 +6089,14 @@
     },
     {
      "source": "wikipedia-en",
+     "section": "Gluteal_muscles",
+     "quote": "The three muscles originate from the ilium and sacrum and insert on the femur.",
+     "supports": [
+      "location"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
      "section": "Gluteus_medius",
      "quote": "is a broad, thick, radiating muscle. It is situated on the outer surface of the pelvis.",
      "supports": [
@@ -5774,13 +6121,27 @@
     },
     {
      "source": "wikipedia-en",
+     "section": "Gluteal_muscles",
+     "quote": "The functions of the muscles include extension, abduction, external rotation, and internal rotation of the hip joint.",
+     "supports": [
+      "function"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
      "section": "Gluteus_medius",
      "quote": "The anterior and posterior parts working together abduct the hip and stabilize the pelvis in the coronal plane.",
      "supports": [
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Chức năng chỉ có cơ mông nhỡ và nhóm xoay ngoài — thêm tác dụng chung của ba cơ mông (nguồn liệt kê). Bỏ 'The region also holds' (không có nguồn); thêm nguyên ủy/bám tận chung."
+   }
   },
   "FMA22470": {
    "summary": {
@@ -5789,8 +6150,8 @@
    },
    "location": null,
    "function": {
-    "vi": "Cả bốn cơ của cơ tứ đầu đùi đều là cơ duỗi gối mạnh. Ba cơ ụ ngồi–cẳng chân 'thực thụ' bắc qua cả khớp hông lẫn khớp gối, nên vừa gấp gối vừa duỗi hông. Các cơ khép ở khoang trong chủ yếu dùng để khép hai đùi vào nhau.",
-    "en": "All four quadriceps are powerful knee extensors. The three true hamstrings span two joints, hip and knee, so they bend the knee and extend the hip. The adductors of the medial compartment are mostly used to draw the thighs together."
+    "vi": "Cả bốn phần của cơ tứ đầu đùi đều là cơ duỗi gối mạnh; cơ thẳng đùi, vì bám vào xương cánh chậu, còn gấp hông. Ba cơ ụ ngồi–cẳng chân 'thực thụ' bắc qua cả khớp hông lẫn khớp gối, nên tham gia gấp gối và duỗi hông. Các cơ khép ở khoang trong chủ yếu dùng để khép hai đùi vào nhau.",
+    "en": "All four parts of the quadriceps are powerful knee extensors, and rectus femoris, which attaches to the ilium, also flexes the hip. The three 'true' hamstrings span two joints, hip and knee, so they take part in bending the knee and extending the hip. The adductors of the medial compartment are mostly used to draw the thighs together."
    },
    "evidence": [
     {
@@ -5835,6 +6196,14 @@
     },
     {
      "source": "wikipedia-en",
+     "section": "Quadriceps",
+     "quote": "Because the rectus femoris attaches to the ilium, it is also a flexor of the hip.",
+     "supports": [
+      "function"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
      "section": "Hamstring",
      "quote": "The three 'true' hamstrings cross both the hip and the knee joint and are therefore involved in knee flexion and hip extension.",
      "supports": [
@@ -5849,7 +6218,13 @@
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "'are involved in knee flexion and hip extension' bị nâng thành động từ trực tiếp — trả về 'take part in'. Thêm gấp hông của cơ thẳng đùi."
+   }
   },
   "FMA22471": {
    "summary": {
@@ -5857,8 +6232,8 @@
     "en": "The muscles of the lower leg sit in fascial compartments, anterior, lateral and posterior, with the posterior one further split into deep and superficial parts."
    },
    "location": {
-    "vi": "Khoang trước có cơ chày trước, cơ duỗi các ngón chân dài, cùng động mạch, tĩnh mạch chày trước và thần kinh mác sâu. Khoang ngoài có cơ mác dài và cơ mác ngắn.",
-    "en": "The anterior compartment holds tibialis anterior and extensor digitorum longus, along with the deep fibular nerve and the anterior tibial vessels (artery and veins). The lateral compartment holds fibularis longus and fibularis brevis."
+    "vi": "Khoang trước có cơ chày trước, cơ duỗi ngón cái dài, cơ duỗi các ngón chân dài và cơ mác ba, cùng động mạch, tĩnh mạch chày trước và thần kinh mác sâu. Khoang ngoài có cơ mác dài và cơ mác ngắn.",
+    "en": "The anterior compartment holds tibialis anterior, extensor hallucis longus, extensor digitorum longus and fibularis tertius, along with the deep fibular nerve and the anterior tibial artery and veins. The lateral compartment holds fibularis longus and fibularis brevis."
    },
    "function": {
     "vi": "Cơ khoang trước gấp mu bàn chân và tham gia lật trong, lật ngoài bàn chân; cơ khoang ngoài lật ngoài và gấp gan bàn chân; khoang sau chứa các cơ gấp gan bàn chân.",
@@ -5892,7 +6267,7 @@
     {
      "source": "wikipedia-en",
      "section": "Anterior_compartment_of_leg",
-     "quote": "Blood for the compartment is supplied by the anterior tibial artery, which runs between the tibialis anterior and extensor digitorum longus muscles.",
+     "quote": "The muscles of the compartment are: tibialis anterior extensor hallucis longus extensor digitorum longus fibularis (peroneus) tertius",
      "supports": [
       "location"
      ]
@@ -5930,20 +6305,26 @@
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Khoang trước chỉ kể 2/4 cơ (thiếu duỗi ngón cái dài, mác ba — cả hai có trong mô hình) — kể đủ theo danh sách nguồn."
+   }
   },
   "FMA65046": {
    "summary": {
-    "vi": "Các cơ nội tại ở gan bàn chân xếp thành bốn lớp. Lớp thứ nhất có cơ gấp các ngón chân ngắn, cơ lớn ở giữa nằm ngay trên cân gan chân. Lớp thứ hai có cơ vuông gan chân, nằm dưới cơ gấp các ngón chân ngắn và bám vào gân cơ gấp các ngón chân dài — chỗ xuất phát của các cơ giun. Lớp thứ ba có cơ khép ngón cái; lớp thứ tư là các cơ gian cốt mu chân và gian cốt gan chân.",
-    "en": "The sole's intrinsic muscles are stacked in four layers. In the first, flexor digitorum brevis is the big central muscle right above the plantar aponeurosis. In the second, quadratus plantae, under flexor digitorum brevis, inserts on the flexor digitorum longus tendon, where the lumbricals begin. The third holds adductor hallucis, and the fourth the dorsal and plantar interossei."
+    "vi": "Các cơ nội tại ở gan bàn chân xếp thành bốn lớp. Lớp thứ nhất có cơ gấp các ngón chân ngắn — cơ lớn ở giữa, nằm ngay trên cân gan chân — kẹp giữa cơ dạng ngón cái và cơ dạng ngón út. Lớp thứ hai có cơ vuông gan chân, nằm dưới cơ gấp các ngón chân ngắn và bám vào gân cơ gấp các ngón chân dài — chỗ xuất phát của các cơ giun. Lớp thứ ba có cơ khép ngón cái, cơ gấp ngón cái ngắn và cơ gấp ngón út ngắn nhỏ hơn nhiều; lớp thứ tư là các cơ gian cốt mu chân và gian cốt gan chân.",
+    "en": "The sole's intrinsic muscles are stacked in four layers. In the first, flexor digitorum brevis is the big central muscle just above the plantar aponeurosis, with abductor hallucis on one side and abductor digiti minimi on the other. In the second, quadratus plantae, below flexor digitorum brevis, inserts on the flexor digitorum longus tendon, which is where the lumbricals start. The third includes adductor hallucis, flexor hallucis brevis and the much smaller flexor digiti minimi brevis; the fourth holds the dorsal and plantar interossei."
    },
    "location": {
-    "vi": "Ở gan bàn chân. Phần trung tâm của mạc gan chân bám vào các xương nâng đỡ và tách thành hai vách trong và ngoài, vạch ranh giới cho ba khoang cơ của gan bàn chân. Các cơ gian cốt nằm giữa và dưới các xương đốt bàn chân.",
-    "en": "In the sole of the foot. The central part of the plantar fascia reaches down to the supporting bones and divides into medial and lateral parts, marking off the sole's three muscle compartments. The interossei lie between and below the metatarsal bones."
+    "vi": "Ở gan bàn chân. Phần trung tâm của mạc gan chân bám tới các xương nâng đỡ và tách ra hai phần trong và ngoài, vạch ranh giới cho ba khoang cơ của gan bàn chân. Các cơ gian cốt nằm giữa và dưới các xương đốt bàn chân.",
+    "en": "In the sole of the foot. The central part of the plantar fascia extends to the supporting bones and gives off medial and lateral divisions, which mark the boundaries of the sole's three muscle compartments. The interossei lie between and below the metatarsal bones."
    },
    "function": {
-    "vi": "Cơ gian cốt mu chân và cơ gian cốt gan chân tác dụng đối kháng nhau.",
-    "en": "The dorsal and plantar interossei work as antagonists of each other."
+    "vi": "Cơ gấp các ngón chân ngắn gấp các ngón chân từ thứ hai đến thứ năm. Cơ gian cốt mu chân và cơ gian cốt gan chân tác dụng đối kháng nhau.",
+    "en": "Flexor digitorum brevis bends the second to fifth toes. The dorsal and plantar interossei work as antagonists of each other."
    },
    "evidence": [
     {
@@ -5952,6 +6333,15 @@
      "quote": "The intrinsic muscles in the sole are grouped in four layers: In the first layer, the flexor digitorum brevis is the large central muscle located immediately above the plantar aponeurosis.",
      "supports": [
       "summary"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Sole_(foot)",
+     "quote": "It flexes the second to fifth toes and is flanked by abductor hallucis and abductor digiti minimi.",
+     "supports": [
+      "summary",
+      "function"
      ]
     },
     {
@@ -5966,6 +6356,22 @@
      "source": "wikipedia-en",
      "section": "Sole_(foot)",
      "quote": "In the third layer, the oblique head of adductor hallucis joins the muscle's transversal head on the lateral side of the big toe.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Sole_(foot)",
+     "quote": "Medially to adductor hallucis are the two heads of flexor hallucis brevis, deep to the tendon of flexor hallucis longus.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Sole_(foot)",
+     "quote": "The considerably smaller flexor digiti minimi brevis on the lateral side can be mistaken for one of the interossei.",
      "supports": [
       "summary"
      ]
@@ -5988,7 +6394,13 @@
       "location"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Lớp 1 và lớp 3 chỉ kể một cơ như thể là cả lớp (thiếu cơ dạng ngón cái, dạng ngón út, gấp ngón cái ngắn, gấp ngón út ngắn — đều có trong mô hình và thừa kế đoạn này) — kể đủ. 'reaches down' sai hướng → 'extends to'. Thêm chức năng cơ gấp các ngón ngắn."
+   }
   },
   "FMA83929": {
    "summary": {
@@ -5996,12 +6408,12 @@
     "en": "White matter is the part of the central nervous system made up mainly of myelinated axons, also called tracts. It owes its name to its fairly light colour, which comes from the lipid in myelin."
    },
    "location": {
-    "vi": "Chất trắng chiếm phần lớn các phần sâu của não và các phần nông của tuỷ sống. Các não thất chứa dịch cũng nằm sâu trong chất trắng đại não.",
-    "en": "White matter makes up most of the brain's deep regions and the outer parts of the spinal cord. The fluid-filled ventricles also lie deep inside the cerebral white matter."
+    "vi": "Chất trắng chiếm phần lớn các vùng sâu của não và các phần nông của tuỷ sống.",
+    "en": "White matter makes up most of the brain's deep regions and the outer parts of the spinal cord."
    },
    "function": {
-    "vi": "Chất trắng gồm các bó nối những vùng chất xám (nơi có thân tế bào thần kinh) với nhau và dẫn xung thần kinh giữa các nơ-ron. Từng bị coi là mô thụ động, chất trắng thực ra ảnh hưởng tới học tập và chức năng não: điều chỉnh sự phân bố điện thế hoạt động, làm trạm chuyển tiếp và điều phối liên lạc giữa các vùng não.",
-    "en": "Its bundles link the grey matter areas, where nerve cell bodies are, to one another and carry impulses between neurons. Once taken for passive tissue, white matter in fact shapes learning and brain function: it tunes how action potentials are distributed, relays signals and coordinates communication among brain regions."
+    "vi": "Chất trắng gồm các bó nối những vùng chất xám (nơi có thân tế bào thần kinh) với nhau và dẫn xung thần kinh giữa các nơ-ron. Từng bị coi là mô thụ động, chất trắng có ảnh hưởng tới học tập và chức năng não: điều biến sự phân bố điện thế hoạt động, làm trạm chuyển tiếp và điều phối liên lạc giữa các vùng não.",
+    "en": "Its bundles link the grey matter areas, where nerve cell bodies are, to one another and carry impulses between neurons. Long regarded as passive, white matter has an effect on learning and on how the brain works: it modulates how action potentials are distributed, acts as a relay and coordinates communication among brain regions."
    },
    "evidence": [
     {
@@ -6031,14 +6443,6 @@
     {
      "source": "wikipedia-en",
      "section": "White_matter",
-     "quote": "The fluid-filled cerebral ventricles (lateral ventricles, third ventricle, cerebral aqueduct, fourth ventricle) are also located deep within the cerebral white matter.",
-     "supports": [
-      "location"
-     ]
-    },
-    {
-     "source": "wikipedia-en",
-     "section": "White_matter",
      "quote": "White matter is composed of bundles, which connect various grey matter areas (the locations of nerve cell bodies) of the brain to each other, and carry nerve impulses between neurons.",
      "supports": [
       "function"
@@ -6052,7 +6456,14 @@
       "function"
      ]
     }
-   ]
+   ],
+   "omitted": "Bỏ câu 'các não thất nằm sâu trong chất trắng đại não': nguồn tính cả cống não và não thất IV (nằm ở thân não, không ở chất trắng đại não), và đó là vị trí của não thất chứ không phải của chất trắng.",
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Cắt câu não thất (sai với cống não/não thất IV; sai trường). 'in fact shapes' → 'affects' như nguồn."
+   }
   }
  }
 }

@@ -729,6 +729,14 @@ of the forearm" ghi nhóm cơ "largely involved with flexion and supination", tr
 bảng của bài liệt kê cơ sấp tròn và cơ sấp vuông. Mục nào bỏ một vế nguồn thì ghi lý do vào
 `omitted`; câu nguồn mang "[citation needed]" không làm chỗ dựa.
 
+**Lô Wikipedia đầu (36 mục, 2026-10-03): máy sạch, science-editor vẫn sửa 30.** Các lỗi lặp:
+viết cho tên FMA thay vì cho cả nhóm mảnh kế thừa đoạn văn ("động mạch hệ thống… trở về qua
+tĩnh mạch chủ" sai cho động mạch vành; "trong mô hình gồm…" sai khi thanh quản cũng kế thừa) —
+xem `resolveContent` trước khi viết; trích từ chú thích hình, navbox hay mã wikitext (không
+được); số liệu lệch giữa hai bài (lưu lượng động mạch gan 25% vs 10%) — bỏ số khi nguồn đánh
+nhau. Bách khoa toàn thư không bao giờ là nguồn sơ cấp: dùng được cho dữ kiện giải phẫu cơ
+bản đã kiểm trong ngữ cảnh, còn con số và claim còn tranh cãi cần nguồn bậc 1–3.
+
 **Tiếng Việt dịch sát câu nguồn: chấp nhận** (chủ sản phẩm chốt 2026-09-28). science-editor
 nêu rằng bản tiếng Việt của Level 2 bám cấu trúc câu OpenStax, có thể bị coi là phái sinh
 dưới NC-SA. Chủ sản phẩm chấp nhận như hiện tại. Luật chặn ≥10 từ trùng chỉ áp cho tiếng
