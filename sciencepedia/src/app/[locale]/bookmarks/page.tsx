@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { redirect } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { BookmarkX } from "lucide-react";
@@ -12,6 +13,9 @@ import { ArticleGrid } from "@/components/article/article-grid";
 import { EmptyState } from "@/components/empty-state";
 
 export const dynamic = "force-dynamic";
+
+// Trang riêng tư: không có gì để lập chỉ mục
+export const metadata: Metadata = { robots: { index: false, follow: false } };
 
 export default async function BookmarksPage({
   params,

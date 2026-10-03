@@ -104,19 +104,26 @@ export async function generateMetadata({
   const title = pick(loc, article.title, article.titleEn);
   const summary = pick(loc, article.summary, article.summaryEn);
 
+  // `seoTitle`/`seoDescription` chỉ có bản tiếng Việt: dùng chúng cho `/en` là
+  // đặt <title> tiếng Việt lên trang tiếng Anh dù `titleEn` có sẵn.
+  const vi = loc === "vi";
+  const untranslated = isFallback("en", article.contentEn);
+
   return buildMetadata({
-    title: article.seoTitle || title,
-    description: article.seoDescription || summary,
+    title: (vi && article.seoTitle) || title,
+    description: (vi && article.seoDescription) || summary,
     path: `/articles/${article.slug}`,
     locale: loc,
+    availableLocales: untranslated ? ["vi"] : undefined,
     image: article.ogImage ?? article.coverImage,
     type: "article",
     publishedTime: article.publishedAt,
     modifiedTime: article.updatedAt,
     authors: article.author.name ? [article.author.name] : undefined,
-    keywords: article.seoKeywords
-      ? article.seoKeywords.split(",").map((k) => k.trim())
-      : article.tags.map((t) => t.tag.name),
+    keywords:
+      vi && article.seoKeywords
+        ? article.seoKeywords.split(",").map((k) => k.trim())
+        : article.tags.map((t) => pickName(loc, t.tag)),
   });
 }
 
@@ -392,7 +399,12 @@ export default async function ArticlePage({
 
       {/* ------------------------------------------------------- Nội dung */}
       <div className="container-page mt-10 grid gap-12 lg:grid-cols-[minmax(0,1fr)_16rem] lg:items-start">
-        <article className="mx-auto w-full max-w-3xl">
+        {/* Bản `/en` chưa dịch hiện nội dung tiếng Việt: `<html lang="en">`
+            nói sai ngôn ngữ, nên đánh dấu lại ở vùng nội dung. */}
+        <article
+          lang={showFallbackNotice ? "vi" : undefined}
+          className="mx-auto w-full max-w-3xl"
+        >
           {/* Quả cầu 3D — tự ẩn nếu bài không phải về một thiên thể trong
               Hệ Mặt Trời, nên gọi vô điều kiện ở đây là an toàn. */}
           {SOLAR_BODY_SLUGS.has(article.slug) && (

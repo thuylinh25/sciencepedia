@@ -328,6 +328,20 @@ export const getPublishedSlugs = cache(async () =>
   }),
 );
 
+/**
+ * Slug của các bài đã xuất bản CHƯA có bản tiếng Anh. Trang `/en` của chúng
+ * hiện nội dung tiếng Việt, nên sitemap không liệt kê URL `/en` đó và hreflang
+ * chỉ khai `vi` — xem `availableLocales` trong `buildMetadata`.
+ * Cùng điều kiện với `isFallback()`; truy vấn riêng để sitemap khỏi kéo cả
+ * thân bài tiếng Anh về chỉ để kiểm tra nó có rỗng không.
+ */
+export const getUntranslatedSlugs = cache(async () => {
+  const rows = await prisma.$queryRaw<{ slug: string }[]>`
+    SELECT slug FROM "Article"
+    WHERE status = 'PUBLISHED' AND COALESCE(TRIM("contentEn"), '') = ''`;
+  return new Set(rows.map((row) => row.slug));
+});
+
 // ---------------------------------------------------------------- Danh mục
 
 /**

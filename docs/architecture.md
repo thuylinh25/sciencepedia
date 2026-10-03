@@ -179,6 +179,27 @@ Postgres — thiệt hại tối đa nếu bị lạm dụng chỉ là con số 
 hỏng — project Vercel mới tạo ~24 giờ trước, chưa có lưu lượng. Đừng kết luận
 "hệ thống không đo" khi thấy cột này rỗng.
 
+**Dữ liệu cũ (2026-10-03):** `scripts/restore-updated-at.ts` hạ `updatedAt` bị lượt
+đọc đẩy lên về mốc Revision mới nhất (hoặc `publishedAt`). Lần sửa chỉ đụng bản
+tiếng Anh mà không sinh Revision sẽ mang mốc sớm hơn thực tế — nên mọi script ghi
+bản dịch phải kèm `revision.create`.
+
+---
+
+## SEO: bản `/en` chưa dịch không phải một trang riêng (2026-10-03)
+
+Bài thiếu `contentEn` vẫn render ở `/en` (nội dung tiếng Việt + thông báo "chưa có
+bản dịch") để link không chết. Với máy tìm kiếm đó là bản sao của `/vi` mang nhãn
+tiếng Anh, nên: canonical trỏ `/vi`, hreflang chỉ khai `vi` ở CẢ HAI trang (khai báo
+phải hai chiều), sitemap bỏ URL `/en`, và `<article lang="vi">`. Một điều kiện duy
+nhất — `isFallback()` / `getUntranslatedSlugs()` — dịch xong là bản `/en` tự vào chỉ
+mục, không cần sửa gì. Đừng đổi sang `noindex`: canonical còn chuyển tín hiệu về bản
+`/vi`, `noindex` thì vứt.
+
+`seoTitle`/`seoDescription`/`seoKeywords` chỉ có tiếng Việt → chỉ dùng ở `/vi`;
+`/en` lấy `titleEn`/`summaryEn`. Tiêu đề quá 60 ký tự khi cộng ` · Sciencepedia`
+thì bỏ hậu tố (`title.absolute`) thay vì để Google cắt mất phần mang nghĩa.
+
 ---
 
 ## Knowledge graph

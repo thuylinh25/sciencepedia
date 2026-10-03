@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { redirect } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import {
@@ -18,6 +19,9 @@ import { Badge } from "@/components/ui/badge";
 import { LibraryStats } from "@/components/profile/library-stats";
 
 export const dynamic = "force-dynamic";
+
+// Trang riêng tư: không có gì để lập chỉ mục
+export const metadata: Metadata = { robots: { index: false, follow: false } };
 
 export default async function ProfilePage({
   params,

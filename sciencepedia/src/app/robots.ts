@@ -22,7 +22,7 @@ export default function robots(): MetadataRoute.Robots {
         ],
       },
     ],
+    // Không khai `host`: chỉ thị riêng của Yandex, Google bỏ qua
     sitemap: absoluteUrl("/sitemap.xml"),
-    host: absoluteUrl("/"),
   };
 }

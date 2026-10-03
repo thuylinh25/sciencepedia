@@ -89,6 +89,9 @@ function buildComponents(locale: string, glossary: GlossaryMap): Components {
         </GlossaryTerm>
       );
     },
+    // `# ` trong thân bài hạ xuống h2: trang đã có h1 là tiêu đề bài, và hai
+    // h1 làm máy tìm kiếm không biết đâu là chủ đề chính.
+    h1: ({ children }) => <h2 id={headingId(children)}>{children}</h2>,
     h2: ({ children }) => <h2 id={headingId(children)}>{children}</h2>,
     h3: ({ children }) => <h3 id={headingId(children)}>{children}</h3>,
     a: ({ href, children }) => {

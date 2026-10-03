@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { absoluteUrl, truncate } from "./utils";
-import type { Locale } from "@/i18n/routing";
+import { routing, type Locale } from "@/i18n/routing";
 
 export const SITE_NAME = process.env.NEXT_PUBLIC_SITE_NAME ?? "Sciencepedia";
 
@@ -24,7 +24,16 @@ type SeoInput = {
   authors?: string[];
   keywords?: string[];
   noindex?: boolean;
+  /// Những ngôn ngữ trang này THẬT SỰ có nội dung. Mặc định: mọi locale.
+  /// Bài chưa dịch truyền `["vi"]` — xem chú thích trong `buildMetadata`.
+  availableLocales?: readonly Locale[];
 };
+
+/** Giới hạn Google hiển thị cho tiêu đề và mô tả trên trang kết quả. */
+const TITLE_MAX = 60;
+const DESCRIPTION_MAX = 159; // `truncate` có thể thêm một dấu "…"
+/** Phải khớp `title.template` trong `[locale]/layout.tsx`. */
+const TITLE_SUFFIX = ` · ${SITE_NAME}`;
 
 export function buildMetadata({
   title,
@@ -38,24 +47,48 @@ export function buildMetadata({
   authors,
   keywords,
   noindex,
+  availableLocales = routing.locales,
 }: SeoInput): Metadata {
   const suffix = path === "/" ? "" : path;
-  const url = absoluteUrl(`/${locale}${suffix}`);
+  const localeUrl = (code: Locale) => absoluteUrl(`/${code}${suffix}`);
+
+  /* Bản `/en` của một bài chưa dịch vẫn render — người đọc thấy nội dung
+     tiếng Việt kèm thông báo "chưa có bản dịch". Với máy tìm kiếm thì nó là
+     bản sao của trang `/vi` mang nhãn tiếng Anh. Nên canonical trỏ về bản có
+     thật, và hreflang chỉ khai những bản có thật — ở CẢ HAI trang, để khai
+     báo vẫn hai chiều. Sitemap lọc theo cùng điều kiện. */
+  const canonicalLocale = availableLocales.includes(locale)
+    ? locale
+    : (availableLocales[0] ?? routing.defaultLocale);
+  const url = localeUrl(canonicalLocale);
+  const pageDescription = truncate(description, DESCRIPTION_MAX);
+
+  /* Tiêu đề dài thì bỏ hậu tố tên site thay vì để Google cắt cụt chính tiêu
+     đề: phần bị cắt là phần mang nghĩa, còn tên site đã có trong
+     `og:site_name` và breadcrumb. */
+  const pageTitle =
+    title.length + TITLE_SUFFIX.length > TITLE_MAX ? { absolute: title } : title;
+
   // Không có ảnh bìa riêng thì sinh ảnh OG động từ tiêu đề
   const ogImage =
     image ?? absoluteUrl(`/api/og?title=${encodeURIComponent(title)}`);
 
   return {
-    title,
-    description: truncate(description, 300),
+    title: pageTitle,
+    description: pageDescription,
     keywords,
     authors: authors?.map((name) => ({ name })),
     alternates: {
       canonical: url,
       languages: {
-        vi: absoluteUrl(`/vi${suffix}`),
-        en: absoluteUrl(`/en${suffix}`),
-        "x-default": absoluteUrl(`/vi${suffix}`),
+        ...Object.fromEntries(
+          availableLocales.map((code) => [code, localeUrl(code)]),
+        ),
+        "x-default": localeUrl(
+          availableLocales.includes(routing.defaultLocale)
+            ? routing.defaultLocale
+            : canonicalLocale,
+        ),
       },
     },
     robots: noindex
@@ -71,7 +104,7 @@ export function buildMetadata({
         },
     openGraph: {
       title,
-      description: truncate(description, 300),
+      description: pageDescription,
       url,
       siteName: SITE_NAME,
       locale: locale === "vi" ? "vi_VN" : "en_US",
@@ -92,7 +125,7 @@ export function buildMetadata({
     twitter: {
       card: "summary_large_image",
       title,
-      description: truncate(description, 200),
+      description: pageDescription,
       images: [ogImage],
     },
   };
@@ -146,7 +179,8 @@ export function articleJsonLd(input: {
     publisher: {
       "@type": "Organization",
       name: SITE_NAME,
-      logo: { "@type": "ImageObject", url: absoluteUrl("/icon.png") },
+      // Tệp có thật trong public/ — từng trỏ /icon.png, một URL 404
+      logo: { "@type": "ImageObject", url: absoluteUrl("/icon.svg") },
     },
     datePublished: iso(input.publishedAt),
     dateModified: iso(input.updatedAt),

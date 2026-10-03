@@ -1,11 +1,12 @@
 import type { MetadataRoute } from "next";
 
-import { routing } from "@/i18n/routing";
+import { routing, type Locale } from "@/i18n/routing";
 import { absoluteUrl } from "@/lib/utils";
 import {
   getAllCategories,
   getAllTags,
   getPublishedSlugs,
+  getUntranslatedSlugs,
 } from "@/server/queries";
 import { getGlossarySlugs } from "@/server/glossary";
 
@@ -23,16 +24,19 @@ function entry(
     lastModified?: Date;
     changeFrequency?: MetadataRoute.Sitemap[number]["changeFrequency"];
     priority?: number;
+    /// Bài chưa dịch chỉ có bản `vi` — cùng điều kiện với `buildMetadata`
+    locales?: readonly Locale[];
   } = {},
 ): MetadataRoute.Sitemap {
-  return routing.locales.map((locale) => ({
+  const locales = options.locales ?? routing.locales;
+  return locales.map((locale) => ({
     url: absoluteUrl(`/${locale}${path === "/" ? "" : path}`),
     ...(options.lastModified ? { lastModified: options.lastModified } : {}),
     changeFrequency: options.changeFrequency ?? "weekly",
     priority: options.priority ?? 0.6,
     alternates: {
       languages: Object.fromEntries(
-        routing.locales.map((code) => [
+        locales.map((code) => [
           code,
           absoluteUrl(`/${code}${path === "/" ? "" : path}`),
         ]),
@@ -95,12 +99,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   let articles: Awaited<ReturnType<typeof getPublishedSlugs>> = [];
   let categories: Awaited<ReturnType<typeof getAllCategories>> = [];
   let tags: Awaited<ReturnType<typeof getAllTags>> = [];
+  let untranslated = new Set<string>();
 
   try {
-    [articles, categories, tags] = await Promise.all([
+    [articles, categories, tags, untranslated] = await Promise.all([
       getPublishedSlugs(),
       getAllCategories(),
       getAllTags(),
+      getUntranslatedSlugs(),
     ]);
   } catch (error) {
     // Không có DB lúc build thì vẫn xuất sitemap với các trang tĩnh
@@ -137,6 +143,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         lastModified: modified(article),
         changeFrequency: "monthly",
         priority: 0.8,
+        // Bản `/en` chưa dịch là bản sao tiếng Việt, canonical đã trỏ về `/vi`
+        locales: untranslated.has(article.slug) ? ["vi"] : undefined,
       }),
     ),
 
