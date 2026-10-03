@@ -717,6 +717,18 @@ không đoán mã FMA mới cho chín mã BodyParts3D đã biến mất khỏi F
 là nguồn DỮ KIỆN: câu Sciencepedia tự viết, không chép, không phỏng sát câu, không dùng
 hình. Dòng nguồn ghi "biên soạn từ dữ kiện trong…", không "trích từ…".
 
+**Giấy phép đọc được ≠ được cho AI đọc.** Ngoài CC BY-NC-SA, trang sách OpenStax còn cấm đưa
+sách vào mô hình ngôn ngữ lớn hay sản phẩm AI tạo sinh khi chưa có văn bản cho phép — điều
+khoản này nằm ngoài giấy phép CC, nên đọc giấy phép thôi là bỏ sót. Level 2 do AI soạn từ chính
+văn bản nguồn, nên từ 2026-10-03 mục mới lấy dữ kiện từ Wikipedia tiếng Anh (CC BY-SA 4.0, không
+có điều khoản ấy). Trước khi nhận một nguồn mới cho nội dung do AI soạn, đọc cả trang điều khoản
+của nguồn, không chỉ dòng giấy phép.
+
+**Wikipedia cũng sai — câu trích resolve không có nghĩa là đúng.** Bài "Anterior compartment
+of the forearm" ghi nhóm cơ "largely involved with flexion and supination", trong khi chính
+bảng của bài liệt kê cơ sấp tròn và cơ sấp vuông. Mục nào bỏ một vế nguồn thì ghi lý do vào
+`omitted`; câu nguồn mang "[citation needed]" không làm chỗ dựa.
+
 **Tiếng Việt dịch sát câu nguồn: chấp nhận** (chủ sản phẩm chốt 2026-09-28). science-editor
 nêu rằng bản tiếng Việt của Level 2 bám cấu trúc câu OpenStax, có thể bị coi là phái sinh
 dưới NC-SA. Chủ sản phẩm chấp nhận như hiện tại. Luật chặn ≥10 từ trùng chỉ áp cho tiếng

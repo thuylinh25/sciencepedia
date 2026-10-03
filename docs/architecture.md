@@ -975,7 +975,8 @@ tải lười SAU danh mục, không chặn gì; không có lượt gọi API y 
 ### Level 2: viết tay có bằng chứng, máy kiểm hình thức, science-editor kiểm nghĩa
 
 `data/anatomy/content-l2.json`: tóm tắt / vị trí / chức năng song ngữ, mỗi trường kèm câu trích
-NGUYÊN VĂN từ OpenStax A&P 2e. `scripts/anatomy-content.ts` (gọi từ `anatomy-enrich.ts`) loại
+NGUYÊN VĂN từ nguồn (52 mục đầu: OpenStax A&P 2e; từ 2026-10-03: Wikipedia tiếng Anh — lý do ở
+gạch đầu dòng "Nguồn mới" bên dưới). `scripts/anatomy-content.ts` (gọi từ `anatomy-enrich.ts`) loại
 mục nếu: câu trích không có nguyên văn trong mục sách đã tải, một con số trong câu không có
 trong câu trích chống lưng, trường không có bằng chứng, hoặc câu rào đón khi nguồn không rào
 đón. Chỉ mục có `review` (science-editor) vào bản phát hành; câu trích ở lại repo, không lên R2.
@@ -985,6 +986,17 @@ văn chứ không tin người viết.
 
 - **OpenStax A&P 2e là CC BY-NC-SA 4.0**, không phải CC BY. Chỉ dùng làm nguồn dữ kiện, câu
   chữ tự viết; chép hay phỏng sát câu thì trang kế thừa phi thương mại + share-alike.
+- **Nguồn mới cho Level 2 là Wikipedia tiếng Anh (`wikipedia-en`), không phải OpenStax.** Trang
+  sách OpenStax ghi sách "may not be used in the training of large language models or otherwise
+  be ingested into large language models or generative AI offerings without OpenStax's prior
+  written permission" — mà mục Level 2 do AI soạn từ chính văn bản nguồn. Chủ sản phẩm chốt
+  2026-10-03: dùng Wikipedia (CC BY-SA 4.0) cho mục mới; 52 mục OpenStax cũ giữ nguyên chờ quyết
+  định riêng. Đừng "tiện tay" thêm câu trích OpenStax vào mục mới. `section` của Wikipedia là tên
+  bài; `sectionText()` cắt `#mw-content-text` và bỏ số chú thích `[n]` để câu trích không phải mang
+  chúng. Chọn khái niệm để viết theo mức phủ đo trên dữ liệu (lớp ontology trừu tượng như "Organ
+  component" bị loại), và kiểm khái niệm ấy rơi vào những mảnh nào: "Muscle of face" của FMA thực
+  ra phủ cơ lưỡi, vòm miệng, vận nhãn; "Long bone" phủ cả xương sườn mà nguồn xếp vào xương dẹt —
+  nên viết mục riêng cho khái niệm con thay vì một đoạn chung sai cho nửa số mảnh.
 - **Viết cho khái niệm chung, cấu trúc con kế thừa** (`resolveContent`): "Xương đùi trái" is-a
   "Xương đùi"; mảnh không có is-a mang nội dung thì thử cha part-of. Khoá nội dung được là mã
   không có mảnh (Phổi FMA7195, Nhãn cầu FMA12513, Cơ ngực lớn FMA9627). Kế thừa luôn hiện

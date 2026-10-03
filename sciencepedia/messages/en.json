@@ -890,6 +890,7 @@
       "location": "Location",
       "function": "Function",
       "compiledFrom": "Written by Sciencepedia from facts in {source} (OpenStax, CC BY-NC-SA 4.0),",
+      "compiledFromWikipedia": "Written by Sciencepedia from facts in English Wikipedia (CC BY-SA 4.0), articles",
       "section": "section {number}",
       "reviewedBy": "reviewed by the Sciencepedia editorial board",
       "systemOverview": "Overview · {system}",

@@ -426,6 +426,21 @@ function StructureText({ content, locale }: { content: StructureContent; locale:
   const t = useTranslations("humanAtlas.detail");
   const pick = (value: Bilingual) => (locale === "vi" ? value.vi : value.en);
   const openstax = ANATOMY_SOURCES["openstax-ap2e"];
+  const openstaxSources = content.sources.filter((s) => s.ref === "openstax-ap2e");
+  const wikipediaSources = content.sources.filter((s) => s.ref === "wikipedia-en");
+  const link = (source: StructureContent["sources"][number], index: number, label: string) => (
+    <span key={source.url}>
+      {index > 0 && ", "}
+      <a
+        href={source.url}
+        target="_blank"
+        rel="noreferrer"
+        className="underline underline-offset-2 hover:text-foreground"
+      >
+        {label}
+      </a>
+    </span>
+  );
   return (
     <div className="space-y-2.5 text-sm leading-relaxed">
       <p className="text-muted-foreground">{pick(content.summary)}</p>
@@ -446,20 +461,23 @@ function StructureText({ content, locale }: { content: StructureContent; locale:
         </dl>
       )}
       <p className="text-[11px] leading-snug text-muted-foreground">
-        {t("compiledFrom", { source: openstax.title })}{" "}
-        {content.sources.map((source, index) => (
-          <span key={source.url}>
-            {index > 0 && ", "}
-            <a
-              href={source.url}
-              target="_blank"
-              rel="noreferrer"
-              className="underline underline-offset-2 hover:text-foreground"
-            >
-              {t("section", { number: sectionNumber(source.section) })}
-            </a>
-          </span>
-        ))}
+        {openstaxSources.length > 0 && (
+          <>
+            {t("compiledFrom", { source: openstax.title })}{" "}
+            {openstaxSources.map((source, index) =>
+              link(source, index, t("section", { number: sectionNumber(source.section) })),
+            )}
+          </>
+        )}
+        {openstaxSources.length > 0 && wikipediaSources.length > 0 && "; "}
+        {wikipediaSources.length > 0 && (
+          <>
+            {t("compiledFromWikipedia")}{" "}
+            {wikipediaSources.map((source, index) =>
+              link(source, index, decodeURIComponent(source.section).replace(/_/g, " ")),
+            )}
+          </>
+        )}
         {" · "}
         {t("reviewedBy")}
       </p>

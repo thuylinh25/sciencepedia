@@ -113,6 +113,7 @@ Gate accuracy **không có ngoại lệ**.
 - **Song ngữ:** dùng `pick()` / `pickName()` từ `@/lib/i18n-content`, không hardcode.
 - **Trang Giới thiệu (`/about`) phải khớp quy trình thật.** Đổi pipeline, cách duyệt hay nguồn ảnh thì sửa trang này trong cùng lượt và qua `science-editor`. Không nêu tên người duyệt khi không có người thật duyệt.
 - **Thuật ngữ `[[...]]`:** định nghĩa ngắn tra trên server lúc render, không fetch khi rê chuột. Giải thích do AI sinh **không bao giờ ghi vào CSDL** và luôn mang nhãn "do AI" — lý do: `docs/architecture.md`, mục "Thuật ngữ".
+- **Mô tả giải phẫu Level 2 mới lấy dữ kiện từ Wikipedia tiếng Anh, KHÔNG từ OpenStax** — OpenStax cấm đưa sách vào AI khi chưa được phép. Lý do: `docs/content-rules.md`, mục "Giấy phép đọc được ≠ được cho AI đọc".
 - **Dấu duyệt mục từ chỉ đến từ `glossary.json`, và tự gỡ khi nội dung đổi.** `GlossaryTerm.reviewedById`/`reviewedAt` trỏ tài khoản tổ chức như bài viết; `/admin/glossary` không đặt được chúng, chỉ gỡ khi tên thuật ngữ hoặc định nghĩa đổi. Mục không có bằng chứng duyệt thì để trống, không suy từ `createdAt` — lý do: `docs/content-rules.md`, mục "Byline người duyệt".
 
 ## Tài liệu
