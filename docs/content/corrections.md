@@ -1086,3 +1086,7 @@ bản trước khi sửa được chụp vào `Revision` trong cùng transaction
 ### nhung-su-gia-hoa-hoc-dieu-khien-hoat-dong-cua-nao-bo
 
 - - 2026-10-03 | nhung-su-gia-hoa-hoc-dieu-khien-hoat-dong-cua-nao-bo | Cả hai bản: heading '6 hóa chất' / '6 chemicals' → '7', khớp số chất bài trình bày (dopamine, serotonin, GABA, glutamate, adrenaline, oxytocin, endorphin) | đối chiếu nội bộ bài
+
+### mat-troi-lo-phan-ung-giu-ca-he-hanh-tinh
+
+- - 2026-10-03 | mat-troi-lo-phan-ung-giu-ca-he-hanh-tinh | Cả hai bản: 'Một photon sinh ra ở lõi phải mất hàng chục nghìn đến hàng trăm nghìn năm để len qua vùng bức xạ' → thứ mất thời gian ấy là NĂNG LƯỢNG (hấp thụ–phát xạ lại ở vùng bức xạ, rồi đối lưu), không phải một photon; khoảng 10.000–170.000 năm theo phần lớn tính toán NASA dẫn; photon tới mắt rời bề mặt hơn 8 phút trước. Bỏ 'ánh sáng hôm nay bắt đầu hành trình từ trước khi loài người xuất hiện' (sai: Homo sapiens xuất hiện ~300.000 năm trước, lâu hơn 10.000–170.000 năm). Khớp bài hanh-trinh-cua-photon-chuyen-di-100000-nam-tu-loi-mat-troi-den-trai-dat. | NASA Sun facts + tài liệu NASA (10.000–170.000 năm) như bài hành trình photon; đối chiếu nội bộ kho

@@ -40,6 +40,22 @@
       "replace": "[Hành Trình Của Photon: Hàng Chục Nghìn Năm Từ Lõi Mặt Trời Đến Trái Đất]"
     },
     {
+      "slug": "mat-troi-lo-phan-ung-giu-ca-he-hanh-tinh",
+      "field": "content",
+      "kind": "claim",
+      "find": "Một [[photon]] sinh ra ở lõi phải mất hàng chục nghìn đến hàng trăm nghìn năm để len qua vùng bức xạ dày đặc trước khi tới bề mặt. Ánh sáng bạn thấy hôm nay đã bắt đầu hành trình từ rất lâu trước khi loài người xuất hiện.",
+      "replace": "Trong vùng bức xạ dày đặc, [[photon]] liên tục bị hấp thụ rồi phát xạ lại, nên thứ len ra ngoài không phải một photon duy nhất mà là năng lượng; tới vùng đối lưu, chính plasma mang năng lượng ấy lên bề mặt. Theo một tài liệu của NASA, phần lớn các tính toán cho thời gian này trong khoảng 10.000 đến 170.000 năm. Còn photon chạm tới mắt bạn hôm nay chỉ vừa rời bề mặt Mặt Trời hơn 8 phút trước.",
+      "log": "Cả hai bản: 'Một photon sinh ra ở lõi phải mất hàng chục nghìn đến hàng trăm nghìn năm để len qua vùng bức xạ' → thứ mất thời gian ấy là NĂNG LƯỢNG (hấp thụ–phát xạ lại ở vùng bức xạ, rồi đối lưu), không phải một photon; khoảng 10.000–170.000 năm theo phần lớn tính toán NASA dẫn; photon tới mắt rời bề mặt hơn 8 phút trước. Bỏ 'ánh sáng hôm nay bắt đầu hành trình từ trước khi loài người xuất hiện' (sai: Homo sapiens xuất hiện ~300.000 năm trước, lâu hơn 10.000–170.000 năm). Khớp bài hanh-trinh-cua-photon-chuyen-di-100000-nam-tu-loi-mat-troi-den-trai-dat.",
+      "basis": "NASA Sun facts + tài liệu NASA (10.000–170.000 năm) như bài hành trình photon; đối chiếu nội bộ kho"
+    },
+    {
+      "slug": "mat-troi-lo-phan-ung-giu-ca-he-hanh-tinh",
+      "field": "contentEn",
+      "kind": "claim",
+      "find": "A [[photon]] born in the core takes tens to hundreds of thousands of years to work its way out through the dense radiative zone. The light you see today began its journey long before humans existed.",
+      "replace": "In the dense radiative zone, [[photon|photons]] are constantly absorbed and re-emitted, so what works its way out is not a single photon but the energy; in the convective zone, the plasma itself carries that energy up to the surface. According to one NASA document, most calculations put this time at between 10,000 and 170,000 years. The photon that reaches your eye today, by contrast, left the Sun's surface just over 8 minutes ago."
+    },
+    {
       "slug": "mat-khong-thuc-su-nhin-nao-bo-tao-ra-hinh-anh-nhu-the-nao",
       "field": "summary",
       "kind": "format",

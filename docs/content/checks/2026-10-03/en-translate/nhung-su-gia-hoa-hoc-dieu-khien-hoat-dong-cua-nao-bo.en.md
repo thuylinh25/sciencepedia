@@ -120,7 +120,7 @@ Habits that benefit brain function in general include:
 
 These activities affect many neural systems at once, rather than flipping a single "dopamine switch" or "serotonin switch".
 
-## The brain is not run by 6 chemicals
+## The brain is not run by 7 chemicals
 
 Scientists know of **dozens of neurotransmitters**, and each can produce different effects depending on the type of receptor and its location in the body. 
 
