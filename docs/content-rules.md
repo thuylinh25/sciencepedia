@@ -776,6 +776,21 @@ trúc đơn lẻ có chuỗi is-a dài hơn bốn bước nên không chạm m�
 - Infobox lại là nguồn trích nhiều nhất (11 mục) — câu thân bài tương ứng mang [citation needed]
   thì bỏ vế, không quay về infobox.
 
+**Lô Wikipedia thứ tư (119 mục, 2026-10-03): sửa 39, loại 1.** Phần đuôi dài (đầu cơ, nhánh mạch
+nhỏ, răng, dây chằng). Loại: "Superficial perineal muscle" là một LỚP trong FMA (cơ thắt hậu môn
+ngoài is-a nó), bản nháp lại tả riêng cơ ngang đáy chậu nông. Lỗi mới:
+- Thẻ bảo trì cấp mục ("This section does not cite any sources") phủ cả đoạn — không chỉ dò
+  thẻ dính ngay sau câu.
+- Câu về loài khác dùng cho người: "cắn đứt thịt đỏ" nằm trong đoạn về thỏ. Ưu tiên câu "In
+  humans…"; câu chung cho thú thì ghi rõ phạm vi.
+- Câu trích nằm trong mệnh đề tả quan niệm đã bị bác ("trước đây tưởng mạc treo rời từng đoạn").
+- Mục đầu/phần cơ dùng chung câu chức năng của cả cơ thì ghi rõ "(cả cơ)" — không để câu không
+  chủ ngữ dưới tên một đầu.
+- Nới chủ thể từ một phần nhóm sang cả nhóm (ba cơ gian cốt gan tay trung tâm → cả bốn); "tạo
+  nên sàn" khi chỉ là một phần của sàn (củ xám).
+- Chỗ nguồn sai thuật ngữ ("middle head" cơ tam đầu — không có đầu giữa): bỏ tên, không tự sửa
+  thành tên đúng khi không có câu chống lưng.
+
 **Tiếng Việt dịch sát câu nguồn: chấp nhận** (chủ sản phẩm chốt 2026-09-28). science-editor
 nêu rằng bản tiếng Việt của Level 2 bám cấu trúc câu OpenStax, có thể bị coi là phái sinh
 dưới NC-SA. Chủ sản phẩm chấp nhận như hiện tại. Luật chặn ≥10 từ trùng chỉ áp cho tiếng

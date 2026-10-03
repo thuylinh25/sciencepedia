@@ -14296,7 +14296,13 @@
       "location"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA22762": {
    "summary": {
@@ -14326,7 +14332,13 @@
      ]
     }
    ],
-   "omitted": "Câu 'mạch ngón cái đập mạnh, không nên dùng bắt mạch người khác' là lời khuyên không có nguồn trong bài — bỏ."
+   "omitted": "Câu 'mạch ngón cái đập mạnh, không nên dùng bắt mạch người khác' là lời khuyên không có nguồn trong bài — bỏ.",
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA19795": {
    "summary": {
@@ -14359,7 +14371,13 @@
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA76998": {
    "summary": {
@@ -14393,7 +14411,13 @@
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA44594": {
    "summary": {
@@ -14427,7 +14451,13 @@
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA22506": {
    "summary": {
@@ -14468,11 +14498,17 @@
      ]
     }
    ],
-   "omitted": "Câu 'chia ngay làm hai nhánh' mang thẻ [contradictory] — bỏ."
+   "omitted": "Câu 'chia ngay làm hai nhánh' mang thẻ [contradictory] — bỏ.",
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA44595": {
    "summary": {
-    "vi": "Động mạch cổ chân ngoài tách từ động mạch mu chân khi mạch này bắt qua xương thuyền.",
+    "vi": "Động mạch cổ chân ngoài tách từ động mạch mu chân khi mạch này bắt chéo qua xương thuyền.",
     "en": "The lateral tarsal artery branches from the dorsalis pedis where that artery crosses the navicular bone."
    },
    "location": {
@@ -14494,7 +14530,13 @@
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Sửa lỗi chữ \"bắt qua\" → \"bắt chéo qua\"."
+   }
   },
   "FMA22810": {
    "summary": {
@@ -14527,7 +14569,13 @@
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA10659": {
    "summary": {
@@ -14567,7 +14615,13 @@
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA3990": {
    "summary": {
@@ -14575,11 +14629,11 @@
     "en": "The thyrocervical trunk is a very small, short, wide neck artery coming off the subclavian lateral to the vertebral artery; it divides into the inferior thyroid, suprascapular and transverse cervical arteries."
    },
    "location": {
-    "vi": "Tách từ đoạn một động mạch dưới đòn, giữa nguyên ủy động mạch dưới đòn và bờ trong cơ bậc thang trước; nằm xa hơn động mạch đốt sống và gần hơn thân sườn – cổ.",
+    "vi": "Tách từ đoạn một động mạch dưới đòn, giữa nguyên ủy động mạch dưới đòn và bờ trong cơ bậc thang trước; trên động mạch dưới đòn, chỗ tách của nó ở xa hơn động mạch đốt sống và gần hơn thân sườn – cổ.",
     "en": "It leaves the first part of the subclavian, between its origin and the inner edge of scalenus anterior, beyond the vertebral artery and before the costocervical trunk."
    },
    "function": {
-    "vi": "Cấp máu cho tuyến giáp và một số cơ vùng vai.",
+    "vi": "Cấp máu cho tuyến giáp và một số cơ vùng bả vai.",
     "en": "Supplies the thyroid gland and some shoulder-blade muscles."
    },
    "evidence": [
@@ -14602,7 +14656,7 @@
     {
      "source": "wikipedia-en",
      "section": "Thyrocervical_trunk",
-     "quote": "It arises from the first portion of this vessel, between the origin of the subclavian artery and the inner border of the anterior scalene mus",
+     "quote": "It arises from the first portion of this vessel, between the origin of the subclavian artery and the inner border of the anterior scalene muscle.",
      "supports": [
       "location"
      ]
@@ -14623,7 +14677,13 @@
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Câu trích vị trí cắt giữa chữ (\"scalene mus\") — trích trọn câu. \"scapular muscles\" là cơ vùng bả vai; nói rõ \"xa/gần\" tính dọc động mạch dưới đòn."
+   }
   },
   "FMA23120": {
    "summary": {
@@ -14649,7 +14709,13 @@
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA23119": {
    "summary": {
@@ -14657,8 +14723,8 @@
     "en": "The medial (middle) collateral artery is a branch of the profunda brachii."
    },
    "location": {
-    "vi": "Đi xuống trong đầu giữa cơ tam đầu cánh tay.",
-    "en": "It descends within the medial head of triceps brachii."
+    "vi": "Đi xuống trong cơ tam đầu cánh tay.",
+    "en": "It descends within triceps brachii."
    },
    "function": {
     "vi": "Góp phần tạo vòng nối với động mạch quặt ngược gian cốt phía trên mỏm khuỷu.",
@@ -14675,7 +14741,14 @@
       "function"
      ]
     }
-   ]
+   ],
+   "omitted": "Không nêu đầu nào của cơ tam đầu: câu nguồn ghi \"middle head\", nhưng cơ tam đầu chỉ có đầu dài, đầu ngoài và đầu trong; bản nháp tiếng Anh tự đổi thành \"medial head\" mà không có câu trích chống lưng.",
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Bản nháp: tiếng Việt \"đầu giữa\" (cơ tam đầu không có đầu giữa), tiếng Anh tự sửa nguồn thành \"medial head\" — bỏ tên đầu, chỉ giữ \"trong cơ tam đầu\"."
+   }
   },
   "FMA66320": {
    "summary": {
@@ -14702,7 +14775,13 @@
      ]
     }
    ],
-   "omitted": "Câu 'cấp máu cho cơ lưng rộng' mang [citation needed] — bỏ."
+   "omitted": "Câu 'cấp máu cho cơ lưng rộng' mang [citation needed] — bỏ.",
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA21384": {
    "summary": {
@@ -14736,7 +14815,13 @@
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA21354": {
    "summary": {
@@ -14759,7 +14844,13 @@
      ]
     }
    ],
-   "omitted": "Câu về vùng dẫn lưu (quy đầu, thể hang) mang [citation needed] — bỏ trống chức năng."
+   "omitted": "Câu về vùng dẫn lưu (quy đầu, thể hang) mang [citation needed] — bỏ trống chức năng.",
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA51041": {
    "summary": {
@@ -14793,7 +14884,13 @@
       "location"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA44318": {
    "summary": {
@@ -14815,7 +14912,13 @@
       "location"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA13329": {
    "summary": {
@@ -14879,7 +14982,13 @@
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA67977": {
    "summary": {
@@ -14912,7 +15021,13 @@
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA22911": {
    "summary": {
@@ -14938,7 +15053,13 @@
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA22914": {
    "summary": {
@@ -14961,7 +15082,13 @@
      ]
     }
    ],
-   "omitted": "Câu về các nhánh đổ vào và nơi cung đổ ra mang [citation needed]/[additional citation(s) needed] — bỏ."
+   "omitted": "Câu về các nhánh đổ vào và nơi cung đổ ra mang [citation needed]/[additional citation(s) needed] — bỏ.",
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA14319": {
    "summary": {
@@ -14969,8 +15096,8 @@
     "en": "The suprascapular vein runs above the scapula."
    },
    "location": {
-    "vi": "Chạy trên xương vai, phía trên dây chằng quạ – gai trước.",
-    "en": "Above the scapula, over the anterior coracospinal ligament."
+    "vi": "Phía trên xương vai, nằm gần động mạch trên vai.",
+    "en": "Above the scapula, close to the suprascapular artery."
    },
    "function": {
     "vi": "Dẫn máu vùng sau quanh xương vai và đổ vào tĩnh mạch cảnh ngoài.",
@@ -14989,12 +15116,19 @@
     {
      "source": "wikipedia-en",
      "section": "Suprascapular_vein",
-     "quote": "It runs above the anterior coracospinal ligament.",
+     "quote": "It lies close to the suprascapular artery.",
      "supports": [
       "location"
      ]
     }
-   ]
+   ],
+   "omitted": "Bỏ \"phía trên dây chằng quạ – gai trước\" (anterior coracospinal ligament): tên dây chằng không có trong danh pháp chuẩn, nguồn bậc cao thường tả mạch đi qua dây chằng ngang vai trên — nghi ngờ thì cắt.",
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Bỏ mốc \"anterior coracospinal ligament\" (không phải thuật ngữ chuẩn, không kiểm được); thay bằng câu thân bài về động mạch trên vai."
+   }
   },
   "FMA21162": {
    "summary": {
@@ -15016,7 +15150,13 @@
       "location"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA18911": {
    "summary": {
@@ -15049,7 +15189,13 @@
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA18917": {
    "summary": {
@@ -15057,8 +15203,8 @@
     "en": "The internal pudendal veins are pelvic veins accompanying the internal pudendal artery, enclosed with that artery and the pudendal nerve in the pudendal canal."
    },
    "location": {
-    "vi": "Ở nam, chúng bắt đầu từ các tĩnh mạch sâu của bìu và dương vật, đi ra từ hành dương vật; đi kèm động mạch thẹn trong, hợp lại thành một tĩnh mạch rồi đổ vào tĩnh mạch chậu trong.",
-    "en": "In males their origin is the deep venous drainage of scrotum and penis, emerging from the penile bulb; running with the internal pudendal artery, they merge and finish in the internal iliac vein."
+    "vi": "Đi kèm động mạch thẹn trong, hợp lại thành một tĩnh mạch rồi đổ vào tĩnh mạch chậu trong.",
+    "en": "Running alongside the internal pudendal artery, they merge into one vessel that finishes in the internal iliac vein."
    },
    "function": null,
    "evidence": [
@@ -15073,12 +15219,19 @@
     {
      "source": "wikipedia-en",
      "section": "Internal_pudendal_veins",
-     "quote": "They begin in the deep veins of the scrotum and of the penis, issuing from the bulb of the vestibule and the bulb of the penis, respectively. They accompany the internal pudendal artery, and unite to form a single vessel, which ends in the internal iliac vein.",
+     "quote": "They accompany the internal pudendal artery, and unite to form a single vessel, which ends in the internal iliac vein.",
      "supports": [
       "location"
      ]
     }
-   ]
+   ],
+   "omitted": "Bỏ câu nguyên ủy: nguồn ghép \"tĩnh mạch sâu của bìu và dương vật\" với \"hành tiền đình và hành dương vật, theo thứ tự\" — ghép sai giới (bìu ↔ hành tiền đình), không dùng làm chỗ dựa.",
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Câu nguyên ủy của nguồn tự mâu thuẫn (\"respectively\" ghép bìu với hành tiền đình); bản nháp chọn một vế và gắn \"ở nam\". Bỏ câu, chỉ giữ đường đi và nơi đổ."
+   }
   },
   "FMA18905": {
    "summary": {
@@ -15100,7 +15253,13 @@
       "location"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA18914": {
    "summary": {
@@ -15137,16 +15296,22 @@
       "summary"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA4731": {
    "summary": {
-    "vi": "Tĩnh mạch thượng vị trên là hai hay nhiều tĩnh mạch đi kèm mỗi động mạch thượng vị trên, nối với tĩnh mạch ngực trong.",
-    "en": "The superior epigastric veins are two or more companion veins of each superior epigastric artery, connected with the internal thoracic vein."
+    "vi": "Tĩnh mạch thượng vị trên là hai hay nhiều tĩnh mạch đi kèm mỗi động mạch thượng vị trên, đổ vào tĩnh mạch ngực trong.",
+    "en": "The superior epigastric veins are two or more companion veins of each superior epigastric artery, draining into the internal thoracic vein."
    },
    "location": {
-    "vi": "Lúc đầu chạy giữa bờ xương ức và các sụn sườn.",
-    "en": "At first they run between the edge of the sternum and the costal cartilages."
+    "vi": "Lúc đầu chạy giữa bờ xương ức và bờ sườn của cơ hoành, rồi đi vào bao cơ thẳng bụng.",
+    "en": "They start out between the sternal and costal margins of the diaphragm and then pass into the rectus sheath."
    },
    "function": {
     "vi": "Tham gia dẫn lưu mặt trên cơ hoành.",
@@ -15165,12 +15330,18 @@
     {
      "source": "wikipedia-en",
      "section": "Superior_epigastric_vein",
-     "quote": "The superior epigastric veins first run between the sternal margin and the cost",
+     "quote": "The superior epigastric veins first run between the sternal margin and the costal margin of the diaphragm, then enter the rectus sheath.",
      "supports": [
       "location"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Câu trích cắt giữa chữ (\"cost…\") làm bản nháp đọc thành \"sụn sườn\"; nguồn nói \"bờ sườn của cơ hoành\". Trích trọn câu, sửa vị trí; \"nối với\" → \"đổ vào\" đúng câu nguồn."
+   }
   },
   "FMA18908": {
    "summary": {
@@ -15192,7 +15363,13 @@
       "location"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA15393": {
    "summary": {
@@ -15221,7 +15398,13 @@
       "location"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA21930": {
    "summary": {
@@ -15264,30 +15447,25 @@
       "location"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA45970": {
    "summary": {
-    "vi": "Đầu ngoài của cơ gấp ngắn ngón cái chân. Phía trước, cơ chia thành hai phần bám vào hai bên nền đốt một ngón cái; cả hai đầu do thần kinh gan chân trong chi phối.",
-    "en": "The lateral head of flexor hallucis brevis. In front the muscle splits into two parts attached to either side of the base of the big toe's first phalanx; both heads are supplied by the medial plantar nerve."
+    "vi": "Đầu ngoài của cơ gấp ngắn ngón cái chân, một cơ ở bàn chân. Cả hai đầu của cơ do thần kinh gan chân trong chi phối.",
+    "en": "The lateral head of flexor hallucis brevis, a muscle of the foot. Both of its heads are supplied by the medial plantar nerve."
    },
-   "location": {
-    "vi": "Ở gan bàn chân; đầu ngoài bám vào bờ ngoài nền đốt một ngón cái.",
-    "en": "In the sole; the lateral head inserts on the lateral side of the base of the big toe's first phalanx."
-   },
+   "location": null,
    "function": {
-    "vi": "Co cơ làm gấp ngón cái chân.",
-    "en": "Its contraction flexes the big toe."
+    "vi": "Cơ gấp ngắn ngón cái chân (cả cơ) gấp khớp bàn – ngón thứ nhất, tức gấp ngón cái; nó giúp giữ vòm dọc trong của bàn chân và hỗ trợ lực đẩy ở pha nhấc ngón khi bước.",
+    "en": "Flexor hallucis brevis as a whole bends the big toe at its first metatarsophalangeal joint, helps keep up the medial longitudinal arch and adds push as the toes leave the ground in walking."
    },
    "evidence": [
-    {
-     "source": "wikipedia-en",
-     "section": "Flexor_hallucis_brevis_muscle",
-     "quote": "As its name suggests, its contraction results in flexion of the big toe (hallux).",
-     "supports": [
-      "function"
-     ]
-    },
     {
      "source": "wikipedia-en",
      "section": "Flexor_hallucis_brevis_muscle",
@@ -15299,36 +15477,39 @@
     {
      "source": "wikipedia-en",
      "section": "Flexor_hallucis_brevis_muscle",
-     "quote": "It divides in front into two portions, which are inserted into the medial and lateral sides of the base of the first phalanx of the great toe",
+     "quote": "Flexor hallucis brevis muscle is a muscle of the foot that flexes the big toe.",
      "supports": [
-      "summary",
-      "location"
+      "summary"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Flexor_hallucis_brevis_muscle",
+     "quote": "Flexor hallucis brevis flexes the first metatarsophalangeal joint, or the big toe. It helps to maintain the medial longitudinal arch. It assists with the toe-off phase of gait providing increased push-off.",
+     "supports": [
+      "function"
      ]
     }
-   ]
+   ],
+   "omitted": "Bỏ câu bám tận (hai phần bám vào hai bên nền đốt một ngón cái) và câu \"As its name suggests…\": cả hai nằm trong đoạn mang thẻ \"This section does not cite any sources\"; ô bám tận theo từng đầu chỉ có trong infobox nên không dùng. Vị trí để trống.",
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Câu bám tận và câu chức năng cũ nằm trong đoạn có thẻ bảo trì cấp mục (\"This section does not cite any sources\") — bỏ; vị trí để trống. Chức năng lấy từ mục Function, ghi rõ là của cả cơ."
+   }
   },
   "FMA45969": {
    "summary": {
-    "vi": "Đầu trong của cơ gấp ngắn ngón cái chân. Phía trước, cơ chia thành hai phần bám vào hai bên nền đốt một ngón cái; cả hai đầu do thần kinh gan chân trong chi phối.",
-    "en": "The medial head of flexor hallucis brevis. In front the muscle splits into two parts attached to either side of the base of the big toe's first phalanx; both heads are supplied by the medial plantar nerve."
+    "vi": "Đầu trong của cơ gấp ngắn ngón cái chân, một cơ ở bàn chân. Cả hai đầu của cơ do thần kinh gan chân trong chi phối.",
+    "en": "The medial head of flexor hallucis brevis, a muscle of the foot. Both of its heads are supplied by the medial plantar nerve."
    },
-   "location": {
-    "vi": "Ở gan bàn chân; đầu trong bám vào bờ trong nền đốt một ngón cái.",
-    "en": "In the sole; the medial head inserts on the medial side of the base of the big toe's first phalanx."
-   },
+   "location": null,
    "function": {
-    "vi": "Co cơ làm gấp ngón cái chân.",
-    "en": "Its contraction flexes the big toe."
+    "vi": "Cơ gấp ngắn ngón cái chân (cả cơ) gấp khớp bàn – ngón thứ nhất, tức gấp ngón cái; nó giúp giữ vòm dọc trong của bàn chân và hỗ trợ lực đẩy ở pha nhấc ngón khi bước.",
+    "en": "Flexor hallucis brevis as a whole bends the big toe at its first metatarsophalangeal joint, helps keep up the medial longitudinal arch and adds push as the toes leave the ground in walking."
    },
    "evidence": [
-    {
-     "source": "wikipedia-en",
-     "section": "Flexor_hallucis_brevis_muscle",
-     "quote": "As its name suggests, its contraction results in flexion of the big toe (hallux).",
-     "supports": [
-      "function"
-     ]
-    },
     {
      "source": "wikipedia-en",
      "section": "Flexor_hallucis_brevis_muscle",
@@ -15340,13 +15521,27 @@
     {
      "source": "wikipedia-en",
      "section": "Flexor_hallucis_brevis_muscle",
-     "quote": "It divides in front into two portions, which are inserted into the medial and lateral sides of the base of the first phalanx of the great toe",
+     "quote": "Flexor hallucis brevis muscle is a muscle of the foot that flexes the big toe.",
      "supports": [
-      "summary",
-      "location"
+      "summary"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Flexor_hallucis_brevis_muscle",
+     "quote": "Flexor hallucis brevis flexes the first metatarsophalangeal joint, or the big toe. It helps to maintain the medial longitudinal arch. It assists with the toe-off phase of gait providing increased push-off.",
+     "supports": [
+      "function"
      ]
     }
-   ]
+   ],
+   "omitted": "Bỏ câu bám tận (hai phần bám vào hai bên nền đốt một ngón cái) và câu \"As its name suggests…\": cả hai nằm trong đoạn mang thẻ \"This section does not cite any sources\"; ô bám tận theo từng đầu chỉ có trong infobox nên không dùng. Vị trí để trống.",
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Câu bám tận và câu chức năng cũ nằm trong đoạn có thẻ bảo trì cấp mục (\"This section does not cite any sources\") — bỏ; vị trí để trống. Chức năng lấy từ mục Function, ghi rõ là của cả cơ."
+   }
   },
   "FMA46014": {
    "summary": {
@@ -15358,8 +15553,8 @@
     "en": "A large, thick fleshy mass slanting across the foot in the hollow under metatarsals one to four. It arises from the bases of metatarsals two to four and the fibularis longus tendon sheath, and inserts with the outer part of flexor hallucis brevis on the outer side of the big toe's first phalanx base."
    },
    "function": {
-    "vi": "Khép ngón cái chân.",
-    "en": "Adducts the big toe."
+    "vi": "Cơ khép ngón cái chân (cả cơ) khép ngón cái chân.",
+    "en": "Adductor hallucis as a whole adducts the big toe."
    },
    "evidence": [
     {
@@ -15382,12 +15577,18 @@
     {
      "source": "wikipedia-en",
      "section": "Adductor_hallucis_muscle",
-     "quote": "and is inserted, together with the lateral portion of the flexor hallucis brevis, into the lateral side of the base of the first phalanx of the grea",
+     "quote": "and is inserted, together with the lateral portion of the flexor hallucis brevis, into the lateral side of the base of the first phalanx of the great toe.",
      "supports": [
       "location"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Câu chức năng là của cả cơ — ghi rõ chủ thể. Câu trích bám tận cắt giữa chữ (\"grea\") — trích trọn."
+   }
   },
   "FMA46015": {
    "summary": {
@@ -15399,8 +15600,8 @@
     "en": "A narrow, flat bundle arising from the plantar metatarsophalangeal ligaments of toes three to five (sometimes only three and four) and from the transverse metatarsal ligament."
    },
    "function": {
-    "vi": "Khép ngón cái chân.",
-    "en": "Adducts the big toe."
+    "vi": "Cơ khép ngón cái chân (cả cơ) khép ngón cái chân.",
+    "en": "Adductor hallucis as a whole adducts the big toe."
    },
    "evidence": [
     {
@@ -15420,7 +15621,13 @@
       "location"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Câu chức năng là của cả cơ — ghi rõ chủ thể."
+   }
   },
   "FMA43885": {
    "summary": {
@@ -15453,7 +15660,13 @@
       "location"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA51141": {
    "summary": {
@@ -15494,7 +15707,13 @@
       "location"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA71314": {
    "summary": {
@@ -15524,7 +15743,13 @@
       "location"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA71313": {
    "summary": {
@@ -15555,7 +15780,13 @@
       "location"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA38615": {
    "summary": {
@@ -15567,8 +15798,8 @@
     "en": "It arises from the humerus's medial epicondyle through the common flexor tendon; the ulnar nerve and artery pass between the two heads."
    },
    "function": {
-    "vi": "Gấp và khép cổ tay.",
-    "en": "Flexes and adducts the wrist."
+    "vi": "Cơ gấp cổ tay trụ (cả cơ) gấp và khép cổ tay.",
+    "en": "Flexor carpi ulnaris as a whole flexes and adducts the wrist."
    },
    "evidence": [
     {
@@ -15611,7 +15842,13 @@
       "location"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Câu chức năng là của cả cơ — ghi rõ chủ thể để không đọc thành việc riêng của một đầu."
+   }
   },
   "FMA38616": {
    "summary": {
@@ -15623,8 +15860,8 @@
     "en": "It arises by an aponeurosis from the inner edge of the olecranon and the upper two-thirds of the ulna's back border; the ulnar nerve and artery pass between the two heads."
    },
    "function": {
-    "vi": "Gấp và khép cổ tay.",
-    "en": "Flexes and adducts the wrist."
+    "vi": "Cơ gấp cổ tay trụ (cả cơ) gấp và khép cổ tay.",
+    "en": "Flexor carpi ulnaris as a whole flexes and adducts the wrist."
    },
    "evidence": [
     {
@@ -15667,7 +15904,13 @@
       "location"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Câu chức năng là của cả cơ — ghi rõ chủ thể để không đọc thành việc riêng của một đầu."
+   }
   },
   "FMA38558": {
    "summary": {
@@ -15708,7 +15951,13 @@
       "location"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA38559": {
    "summary": {
@@ -15749,7 +15998,13 @@
       "location"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA46119": {
    "summary": {
@@ -15761,8 +16016,8 @@
     "en": "Several slips anchor it to the capitate, to the second and third metacarpal bases, to the ligaments between the carpal bones and to the sheath around the flexor carpi radialis tendon."
    },
    "function": {
-    "vi": "Khép ngón cái.",
-    "en": "Adducts the thumb."
+    "vi": "Cơ khép ngón cái (cả cơ) khép ngón cái.",
+    "en": "Adductor pollicis as a whole adducts the thumb."
    },
    "evidence": [
     {
@@ -15790,7 +16045,13 @@
       "location"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Câu chức năng là của cả cơ — ghi rõ chủ thể."
+   }
   },
   "FMA46120": {
    "summary": {
@@ -15802,8 +16063,8 @@
     "en": "Deep in the hand."
    },
    "function": {
-    "vi": "Khép ngón cái.",
-    "en": "Adducts the thumb."
+    "vi": "Cơ khép ngón cái (cả cơ) khép ngón cái.",
+    "en": "Adductor pollicis as a whole adducts the thumb."
    },
    "evidence": [
     {
@@ -15832,7 +16093,13 @@
       "location"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Câu chức năng là của cả cơ — ghi rõ chủ thể."
+   }
   },
   "FMA46104": {
    "summary": {
@@ -15844,8 +16111,8 @@
     "en": "Its origin is the trapezium's tubercle plus the outer two-thirds of the flexor retinaculum's lower border; it runs beside the radial side of the flexor pollicis longus tendon."
    },
    "function": {
-    "vi": "Gấp ngón cái.",
-    "en": "Flexes the thumb."
+    "vi": "Cơ gấp ngắn ngón cái (cả cơ) gấp ngón cái.",
+    "en": "Flexor pollicis brevis as a whole flexes the thumb."
    },
    "evidence": [
     {
@@ -15881,7 +16148,13 @@
       "location"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Câu chức năng là của cả cơ — ghi rõ chủ thể."
+   }
   },
   "FMA38497": {
    "summary": {
@@ -15914,7 +16187,13 @@
       "location"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA38494": {
    "summary": {
@@ -15926,8 +16205,8 @@
     "en": "It starts on the outer side of the humerus and attaches to the base of the second metacarpal, that of the index finger."
    },
    "function": {
-    "vi": "Duỗi cổ tay.",
-    "en": "Extends the wrist."
+    "vi": "Duỗi cổ tay; vì chạy dọc phía quay nên nó còn dạng bàn tay tại cổ tay (dạng về phía quay, phía ngón cái).",
+    "en": "Extends the wrist and, running along the radial side, also tilts the hand toward the thumb side at the wrist (radial abduction)."
    },
    "evidence": [
     {
@@ -15947,8 +16226,22 @@
       "summary",
       "function"
      ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Extensor_carpi_radialis_longus_muscle",
+     "quote": "As the name suggests, this muscle is an extensor at the wrist joint and travels along the radial side of the arm, so it will also abduct (radial abduction) the hand at the wrist.",
+     "supports": [
+      "function"
+     ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Chức năng chỉ giữ \"duỗi\" trong khi mục Function của nguồn nêu cả dạng cổ tay (chọn một kể như tất cả) — thêm vế dạng kèm câu trích thân bài."
+   }
   },
   "FMA71319": {
    "summary": {
@@ -15992,12 +16285,18 @@
     {
      "source": "wikipedia-en",
      "section": "Dorsal_interossei_of_the_hand",
-     "quote": "They are inserted into the bases of the proximal phalanges and into the extensor expansion of the corresponding extensor di",
+     "quote": "They are inserted into the bases of the proximal phalanges and into the extensor expansion of the corresponding extensor digitorum tendon.",
      "supports": [
       "location"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Câu trích cắt giữa chữ (\"extensor di\") — trích trọn."
+   }
   },
   "FMA71318": {
    "summary": {
@@ -16031,7 +16330,13 @@
       "location"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA71320": {
    "summary": {
@@ -16039,8 +16344,8 @@
     "en": "The palmar interossei: four muscles, one at the thumb that is occasionally absent and three small unipennate central ones, all smaller than the dorsal interossei."
    },
    "location": {
-    "vi": "Nằm giữa các xương bàn tay, gắn với ngón trỏ, ngón nhẫn và ngón út. Mỗi cơ xuất phát dọc thân xương bàn của chính ngón nó tác động và bám vào nền đốt gần cùng trẽ duỗi của ngón ấy.",
-    "en": "They lie between the metacarpals and attach to the index, ring and little fingers. Each starts along the shaft of the metacarpal of the finger it moves and inserts on that finger's proximal phalanx base and extensor expansion."
+    "vi": "Ba cơ trung tâm nằm giữa các xương bàn tay, gắn với ngón trỏ, ngón nhẫn và ngón út. Mỗi cơ xuất phát dọc thân xương bàn của chính ngón nó tác động và bám vào nền đốt gần cùng trẽ duỗi của ngón ấy.",
+    "en": "The three central ones lie between the metacarpals and attach to the index, ring and little fingers. Each starts along the shaft of the metacarpal of the finger it moves and inserts on that finger's proximal phalanx base and extensor expansion."
    },
    "function": null,
    "evidence": [
@@ -16061,7 +16366,13 @@
       "location"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Nới chủ thể: câu nguồn nói BA cơ trung tâm gắn với ngón trỏ/nhẫn/út, bản nháp viết cho cả bốn (kể cả cơ ở ngón cái). Sửa về đúng ba."
+   }
   },
   "FMA13402": {
    "summary": {
@@ -16110,7 +16421,13 @@
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA13401": {
    "summary": {
@@ -16141,7 +16458,13 @@
      ]
     }
    ],
-   "omitted": "Câu chức năng (nâng sườn hai đến năm, hỗ trợ thở sâu) mang [citation needed] — bỏ."
+   "omitted": "Câu chức năng (nâng sườn hai đến năm, hỗ trợ thở sâu) mang [citation needed] — bỏ.",
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA71442": {
    "summary": {
@@ -16178,7 +16501,13 @@
       "location"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA71443": {
    "summary": {
@@ -16215,7 +16544,13 @@
       "location"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA71309": {
    "summary": {
@@ -16244,7 +16579,13 @@
       "location"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA71307": {
    "summary": {
@@ -16273,7 +16614,13 @@
       "location"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA32525": {
    "summary": {
@@ -16314,7 +16661,13 @@
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA32526": {
    "summary": {
@@ -16340,7 +16693,13 @@
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA46610": {
    "summary": {
@@ -16352,8 +16711,8 @@
     "en": "The muscle arises from the front-outer face of the cricoid; the oblique part runs back and outward to the inferior horn of the thyroid cartilage."
    },
    "function": {
-    "vi": "Nghiêng sụn giáp ra trước, góp phần làm căng dây thanh và tăng cao độ giọng.",
-    "en": "Tips the thyroid cartilage forward, helping tighten the vocal cords and raise the voice's pitch."
+    "vi": "Cơ nhẫn – giáp (cả cơ) nghiêng sụn giáp ra trước, góp phần làm căng dây thanh và tăng cao độ giọng.",
+    "en": "The cricothyroid as a whole tips the thyroid cartilage forward, helping tighten the vocal cords and raise the voice's pitch."
    },
    "evidence": [
     {
@@ -16389,7 +16748,13 @@
       "location"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Câu chức năng là của cả cơ — ghi rõ chủ thể."
+   }
   },
   "FMA46609": {
    "summary": {
@@ -16401,8 +16766,8 @@
     "en": "The muscle arises from the front-outer face of the cricoid; the straight part runs back and upward to the lower edge of the thyroid lamina."
    },
    "function": {
-    "vi": "Nghiêng sụn giáp ra trước, góp phần làm căng dây thanh và tăng cao độ giọng.",
-    "en": "Tips the thyroid cartilage forward, helping tighten the vocal cords and raise the voice's pitch."
+    "vi": "Cơ nhẫn – giáp (cả cơ) nghiêng sụn giáp ra trước, góp phần làm căng dây thanh và tăng cao độ giọng.",
+    "en": "The cricothyroid as a whole tips the thyroid cartilage forward, helping tighten the vocal cords and raise the voice's pitch."
    },
    "evidence": [
     {
@@ -16438,37 +16803,13 @@
       "location"
      ]
     }
-   ]
-  },
-  "FMA19728": {
-   "summary": {
-    "vi": "Cơ ngang đáy chậu nông là một trẽ cơ hẹp chạy gần như ngang qua vùng đáy chậu, trước hậu môn.",
-    "en": "The superficial transverse perineal muscle is a narrow slip running roughly crosswise through the perineum in front of the anus."
-   },
-   "location": {
-    "vi": "Xuất phát bằng thớ gân từ mặt trong và phần trước ụ ngồi, chạy vào trong, bám vào điểm gân trung tâm của đáy chậu.",
-    "en": "Tendinous fibres anchor it to the inner front of the ischial tuberosity; it runs inward to the perineum's central tendon (perineal body)."
-   },
-   "function": null,
-   "evidence": [
-    {
-     "source": "wikipedia-en",
-     "section": "Superficial_transverse_perineal_muscle",
-     "quote": "is a narrow muscular slip, which passes more or less transversely across the perineal space in front of the anus.",
-     "supports": [
-      "summary",
-      "location"
-     ]
-    },
-    {
-     "source": "wikipedia-en",
-     "section": "Superficial_transverse_perineal_muscle",
-     "quote": "It arises by tendinous fibers from the inner and forepart of the ischial tuberosity and, running medially, is inserted into the central tendinous point of the perineum",
-     "supports": [
-      "location"
-     ]
-    }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Câu chức năng là của cả cơ — ghi rõ chủ thể."
+   }
   },
   "FMA46280": {
    "summary": {
@@ -16505,7 +16846,13 @@
       "location"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA46281": {
    "summary": {
@@ -16543,7 +16890,13 @@
       "location"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA46282": {
    "summary": {
@@ -16580,7 +16933,13 @@
       "location"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA46733": {
    "summary": {
@@ -16613,7 +16972,13 @@
       "location"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA34687": {
    "summary": {
@@ -16654,7 +17019,13 @@
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA52621": {
    "summary": {
@@ -16703,7 +17074,13 @@
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA52572": {
    "summary": {
@@ -16738,7 +17115,13 @@
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA52573": {
    "summary": {
@@ -16776,7 +17159,13 @@
       "location"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA7041": {
    "summary": {
@@ -16809,7 +17198,13 @@
       "location"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA83740": {
    "summary": {
@@ -16847,7 +17242,13 @@
       "location"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA61975": {
    "summary": {
@@ -16859,21 +17260,27 @@
     "en": "Its extent runs from the foramen of Monro, the interventricular opening, as far as the small recess where the optic stalk begins."
    },
    "function": {
-    "vi": "Chứa cơ quan mạch của lá tận cùng, nơi điều hòa nồng độ thẩm thấu.",
-    "en": "Within it sits a vascular organ that helps control osmotic concentration."
+    "vi": "Chứa cơ quan mạch của lá tận cùng, nơi điều hòa nồng độ thẩm thấu của máu.",
+    "en": "Inside it sits the vascular organ of the lamina terminalis, which keeps the blood's osmotic concentration in check."
    },
    "evidence": [
     {
      "source": "wikipedia-en",
      "section": "Lamina_terminalis",
-     "quote": "The lamina terminalis is a thin layer that forms the median portion of the wall of the forebrain. It stretches from the interventricular foramen (foramen of Monro) to the recess at the base of the optic stalk (optic nerve) and contains the vascular organ of the lamina terminalis, which regulates the osmotic concentration of the",
+     "quote": "The lamina terminalis is a thin layer that forms the median portion of the wall of the forebrain. It stretches from the interventricular foramen (foramen of Monro) to the recess at the base of the optic stalk (optic nerve) and contains the vascular organ of the lamina terminalis, which regulates the osmotic concentration of the blood.",
      "supports": [
       "summary",
       "location",
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Câu trích cắt trước danh từ (\"concentration of the\") — trích tới \"blood\"; bản Anh \"helps control\" đổi về \"regulates\" đúng nguồn, nêu rõ là của máu."
+   }
   },
   "FMA62080": {
    "summary": {
@@ -16906,7 +17313,13 @@
       "location"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA61974": {
    "summary": {
@@ -16934,17 +17347,23 @@
     {
      "source": "wikipedia-en",
      "section": "Stria_terminalis",
-     "quote": "The stria terminalis covers the superior thalamostriate vein, marking a line of separation between the thalamus and the caudate nucle",
+     "quote": "The stria terminalis covers the superior thalamostriate vein, marking a line of separation between the thalamus and the caudate nucleus",
      "supports": [
       "location"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Câu trích cắt giữa chữ (\"caudate nucle\") — trích trọn."
+   }
   },
   "FMA62327": {
    "summary": {
-    "vi": "Củ xám là phần vùng dưới đồi tạo nên sàn não thất ba. Vùng củ là một trong ba vùng của vùng dưới đồi, cùng vùng giao thoa và vùng thể vú.",
-    "en": "The tuber cinereum is the part of the hypothalamus forming the floor of the third ventricle; the tuberal region is one of the hypothalamus's three regions, with the chiasmatic and mammillary."
+    "vi": "Củ xám là phần vùng dưới đồi tham gia tạo sàn não thất ba. Vùng củ là một trong ba vùng của vùng dưới đồi, cùng vùng giao thoa và vùng thể vú.",
+    "en": "The tuber cinereum is the part of the hypothalamus that helps form the floor of the third ventricle; the tuberal region is one of the hypothalamus's three regions, with the chiasmatic and mammillary."
    },
    "location": {
     "vi": "Giữa giao thoa thị giác và các thể vú.",
@@ -16961,7 +17380,13 @@
       "location"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Nguồn viết \"forming the floor of the third ventricle\" — củ xám chỉ là một phần của sàn (sàn còn có giao thoa thị, thể vú…); rút về \"tham gia tạo sàn\" để không để lại mô hình sai."
+   }
   },
   "FMA70701": {
    "summary": {
@@ -16994,7 +17419,13 @@
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA70703": {
    "summary": {
@@ -17027,7 +17458,13 @@
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA78497": {
    "summary": {
@@ -17038,22 +17475,25 @@
     "vi": "Nằm dưới và nối với hệ não thất, từ đó nhận dịch não tủy.",
     "en": "It lies below the ventricular system and is connected to it, receiving cerebrospinal fluid from it."
    },
-   "function": {
-    "vi": "Giúp vận chuyển chất dinh dưỡng tới tủy sống và bảo vệ tủy bằng cách làm đệm khi cột sống chịu lực tác động.",
-    "en": "Helps carry nutrients to the spinal cord and protects it by cushioning when the spine takes an impact."
-   },
+   "function": null,
    "evidence": [
     {
      "source": "wikipedia-en",
      "section": "Central_canal",
-     "quote": "is the cerebrospinal fluid-filled space that runs through the spinal cord. The central canal lies below and is connected to the ventricular system of the brain, from which it receives cerebrospinal fluid, and shares the same ependymal lining. The central canal helps to transport nutrients to the spinal cord as well as protect it by cushioning the impact of a force when the spine is affected.",
+     "quote": "is the cerebrospinal fluid-filled space that runs through the spinal cord. The central canal lies below and is connected to the ventricular system of the brain, from which it receives cerebrospinal fluid, and shares the same ependymal lining.",
      "supports": [
       "summary",
-      "location",
-      "function"
+      "location"
      ]
     }
-   ]
+   ],
+   "omitted": "Bỏ câu \"vận chuyển chất dinh dưỡng tới tủy sống và làm đệm bảo vệ khi cột sống chịu lực\": claim chức năng không có trong giáo trình giải phẫu chuẩn, nguồn chỉ là đoạn mở đầu bách khoa, và ở người lớn ống trung tâm thường hẹp/tắc từng đoạn — nghi ngờ thì cắt.",
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Cắt câu chức năng (dinh dưỡng, làm đệm) — claim yếu chỉ có nguồn bách khoa."
+   }
   },
   "FMA62032": {
    "summary": {
@@ -17101,7 +17541,13 @@
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA62072": {
    "summary": {
@@ -17132,7 +17578,13 @@
      ]
     }
    ],
-   "omitted": "Vai trò trong phản xạ đồng tử hai bên mang [citation needed] — bỏ."
+   "omitted": "Vai trò trong phản xạ đồng tử hai bên mang [citation needed] — bỏ.",
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA83966": {
    "summary": {
@@ -17170,7 +17622,13 @@
       "location"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA59511": {
    "summary": {
@@ -17208,7 +17666,13 @@
       "location"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA59503": {
    "summary": {
@@ -17234,7 +17698,13 @@
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA59504": {
    "summary": {
@@ -17256,7 +17726,13 @@
       "location"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA49071": {
    "summary": {
@@ -17275,19 +17751,25 @@
     {
      "source": "wikipedia-en",
      "section": "Annulus_of_Zinn",
-     "quote": "is a ring of fibrous tissue surrounding the optic nerve at its entrance at the apex of the orbit. It is the common origin of the four recti muscles of th",
+     "quote": "is a ring of fibrous tissue surrounding the optic nerve at its entrance at the apex of the orbit. It is the common origin of the four recti muscles of the group of extraocular muscles.",
      "supports": [
       "summary",
       "location",
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Câu trích cắt giữa chữ (\"of th\") — trích trọn."
+   }
   },
   "FMA59087": {
    "summary": {
-    "vi": "Sụn mi trên (tấm sụn mi trên) là tấm lớn hơn trong hai tấm sụn mi, hình bán nguyệt, rộng khoảng 10 mm ở giữa và hẹp dần về hai đầu.",
-    "en": "The superior tarsus, the larger of the two tarsal plates, is half-moon shaped, about 10 mm wide at the centre and narrowing toward its ends."
+    "vi": "Sụn mi trên (tấm sụn mi trên) là tấm lớn hơn trong hai tấm sụn mi, hình bán nguyệt, hẹp dần về hai đầu.",
+    "en": "The superior tarsus, the larger of the two tarsal plates, is half-moon shaped and narrows toward its ends."
    },
    "location": {
     "vi": "Trong mi trên; cơ sụn mi trên nằm sát nó, và cân cơ nâng mi trên bám vào mặt trước tấm sụn.",
@@ -17331,12 +17813,19 @@
       "function"
      ]
     }
-   ]
+   ],
+   "omitted": "Bỏ số đo bề rộng khoảng 10 mm: số đo chỉ có nguồn bách khoa.",
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Bỏ số đo 10 mm (chỉ có nguồn bách khoa)."
+   }
   },
   "FMA59088": {
    "summary": {
-    "vi": "Sụn mi dưới (tấm sụn mi dưới) nhỏ hơn, mỏng, hình bầu dục, đường kính dọc khoảng 5 mm.",
-    "en": "The inferior tarsus is the smaller plate: thin, elliptical and about 5 mm tall."
+    "vi": "Sụn mi dưới (tấm sụn mi dưới) nhỏ hơn sụn mi trên, mỏng, hình bầu dục.",
+    "en": "The inferior tarsus is the smaller plate: thin and elliptical."
    },
    "location": {
     "vi": "Trong mi dưới; bờ tự do (bờ mi) của tấm sụn dày và thẳng.",
@@ -17372,7 +17861,14 @@
       "function"
      ]
     }
-   ]
+   ],
+   "omitted": "Bỏ số đo đường kính dọc khoảng 5 mm: số đo chỉ có nguồn bách khoa.",
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Bỏ số đo 5 mm (chỉ có nguồn bách khoa)."
+   }
   },
   "FMA39988": {
    "summary": {
@@ -17406,7 +17902,13 @@
       "location"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA61934": {
    "summary": {
@@ -17441,7 +17943,13 @@
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA49065": {
    "summary": {
@@ -17474,7 +17982,13 @@
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA44248": {
    "summary": {
@@ -17498,14 +18012,28 @@
     {
      "source": "wikipedia-en",
      "section": "Long_plantar_ligament",
-     "quote": "The long plantar ligament is the longest of all the ligaments of the tarsus. It is attached behind to the plantar surface of the calcaneus in front of the tuberosity, and in front to the tuberosity on the plantar surface of the cuboid bone, the more superficial fibers being continued forward to the bases of the",
+     "quote": "The long plantar ligament is the longest of all the ligaments of the tarsus. It is attached behind to the plantar surface of the calcaneus in front of the tuberosity, and in front to the tuberosity on the plantar surface of the cuboid bone",
      "supports": [
       "summary",
       "location"
      ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Long_plantar_ligament",
+     "quote": "the more superficial fibers being continued forward to the bases of the second, third, and fourth metatarsal bones.",
+     "supports": [
+      "location"
+     ]
     }
    ],
-   "omitted": "Không nêu các xương bàn chân cụ thể: đoạn mở đầu ghi 2–5, thân bài ghi 2–4."
+   "omitted": "Không nêu các xương bàn chân cụ thể: đoạn mở đầu ghi 2–5, thân bài ghi 2–4.",
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Câu trích cắt trước danh từ (\"bases of the\") — tách thành hai câu trích trọn vế."
+   }
   },
   "FMA55618": {
    "summary": {
@@ -17531,7 +18059,13 @@
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA72308": {
    "summary": {
@@ -17573,7 +18107,13 @@
      ]
     }
    ],
-   "omitted": "Điểm bám cụ thể (sừng bé xương móng, đỉnh mỏm trâm) mang [citation needed] — bỏ."
+   "omitted": "Điểm bám cụ thể (sừng bé xương móng, đỉnh mỏm trâm) mang [citation needed] — bỏ.",
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA55250": {
    "summary": {
@@ -17615,12 +18155,18 @@
       "location"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA55244": {
    "summary": {
-    "vi": "Dây chằng thanh âm là bờ tự do ở phía trên của nón đàn hồi; ở trẻ sơ sinh chưa có, xuất hiện ở trẻ khoảng bốn tuổi.",
-    "en": "The vocal ligament is the free upper border of the conus elasticus; newborns lack it, and it appears in children around four years old."
+    "vi": "Dây chằng thanh âm là bờ tự do ở phía trên của nón đàn hồi; ở trẻ nhũ nhi chưa có, bắt đầu xuất hiện ở trẻ khoảng bốn tuổi.",
+    "en": "The vocal ligament is the free upper border of the conus elasticus; infants lack it, and it starts to appear in children at around four years old."
    },
    "location": {
     "vi": "Trong dây thanh, liền với bờ trên nón đàn hồi.",
@@ -17653,7 +18199,13 @@
       "summary"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "\"infant\" là trẻ nhũ nhi, không phải \"trẻ sơ sinh\"."
+   }
   },
   "FMA55237": {
    "summary": {
@@ -17695,7 +18247,13 @@
       "location"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA55132": {
    "summary": {
@@ -17724,7 +18282,13 @@
       "location"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA55138": {
    "summary": {
@@ -17754,7 +18318,13 @@
       "location"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA11336": {
    "summary": {
@@ -17784,7 +18354,13 @@
       "location"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA55814": {
    "summary": {
@@ -17826,7 +18402,13 @@
       "location"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA55815": {
    "summary": {
@@ -17868,7 +18450,13 @@
       "location"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA55811": {
    "summary": {
@@ -17910,7 +18498,13 @@
       "location"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA55812": {
    "summary": {
@@ -17952,7 +18546,13 @@
       "location"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA55722": {
    "summary": {
@@ -17964,8 +18564,8 @@
     "en": "At the front, upper jaw, closest to the centre of the lips."
    },
    "function": {
-    "vi": "Răng cửa dùng để cắn đứt thức ăn dai, như thịt đỏ.",
-    "en": "Incisors bite through tough food such as red meat."
+    "vi": "Ở người, răng cửa dùng để cắt đứt miếng thức ăn và giữ các thức ăn khác.",
+    "en": "In people the incisors slice off bites of food and help hold other foods."
    },
    "evidence": [
     {
@@ -17973,8 +18573,7 @@
      "section": "Incisor",
      "quote": "are the front teeth present in most mammals and other therapsids. They are located in the premaxilla above and on the mandible below.",
      "supports": [
-      "summary",
-      "location"
+      "summary"
      ]
     },
     {
@@ -17988,7 +18587,7 @@
     {
      "source": "wikipedia-en",
      "section": "Incisor",
-     "quote": "Incisors are used to bite off tough foods, such as red meat.",
+     "quote": "In humans, the incisors serve to cut off pieces of food, as well as in the grip of other food items.",
      "supports": [
       "function"
      ]
@@ -18001,7 +18600,13 @@
       "location"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Câu chức năng cũ (\"cắn đứt thức ăn dai như thịt đỏ\") nằm trong đoạn về thỏ/động vật khác — thay bằng câu \"In humans…\" ở mục Function. Vị trí dựa vào danh sách bốn loại răng cửa, không dựa câu \"premaxilla\" (của đa số thú)."
+   }
   },
   "FMA55724": {
    "summary": {
@@ -18013,8 +18618,8 @@
     "en": "At the front, upper jaw, beside the upper central incisor."
    },
    "function": {
-    "vi": "Răng cửa dùng để cắn đứt thức ăn dai, như thịt đỏ.",
-    "en": "Incisors bite through tough food such as red meat."
+    "vi": "Ở người, răng cửa dùng để cắt đứt miếng thức ăn và giữ các thức ăn khác.",
+    "en": "In people the incisors slice off bites of food and help hold other foods."
    },
    "evidence": [
     {
@@ -18022,8 +18627,7 @@
      "section": "Incisor",
      "quote": "are the front teeth present in most mammals and other therapsids. They are located in the premaxilla above and on the mandible below.",
      "supports": [
-      "summary",
-      "location"
+      "summary"
      ]
     },
     {
@@ -18037,7 +18641,7 @@
     {
      "source": "wikipedia-en",
      "section": "Incisor",
-     "quote": "Incisors are used to bite off tough foods, such as red meat.",
+     "quote": "In humans, the incisors serve to cut off pieces of food, as well as in the grip of other food items.",
      "supports": [
       "function"
      ]
@@ -18050,7 +18654,13 @@
       "location"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Câu chức năng cũ (\"cắn đứt thức ăn dai như thịt đỏ\") nằm trong đoạn về thỏ/động vật khác — thay bằng câu \"In humans…\" ở mục Function. Vị trí dựa vào danh sách bốn loại răng cửa, không dựa câu \"premaxilla\" (của đa số thú)."
+   }
   },
   "FMA55723": {
    "summary": {
@@ -18058,12 +18668,12 @@
     "en": "The permanent lower central incisor is an incisor, one of the front teeth. Adults normally have eight incisors, two of each kind."
    },
    "location": {
-    "vi": "Ở phía trước miệng, trên xương hàm dưới.",
-    "en": "At the front of the mouth, on the mandible."
+    "vi": "Ở phía trước, hàm dưới, gần đường giữa môi nhất.",
+    "en": "At the front, lower jaw, closest to the centre of the lips."
    },
    "function": {
-    "vi": "Răng cửa dùng để cắn đứt thức ăn dai, như thịt đỏ.",
-    "en": "Incisors bite through tough food such as red meat."
+    "vi": "Ở người, răng cửa dùng để cắt đứt miếng thức ăn và giữ các thức ăn khác.",
+    "en": "In people the incisors slice off bites of food and help hold other foods."
    },
    "evidence": [
     {
@@ -18071,8 +18681,7 @@
      "section": "Incisor",
      "quote": "are the front teeth present in most mammals and other therapsids. They are located in the premaxilla above and on the mandible below.",
      "supports": [
-      "summary",
-      "location"
+      "summary"
      ]
     },
     {
@@ -18086,12 +18695,26 @@
     {
      "source": "wikipedia-en",
      "section": "Incisor",
-     "quote": "Incisors are used to bite off tough foods, such as red meat.",
+     "quote": "In humans, the incisors serve to cut off pieces of food, as well as in the grip of other food items.",
      "supports": [
       "function"
      ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Incisor",
+     "quote": "mandibular central incisor (lower jaw, closest to the center of the lips)",
+     "supports": [
+      "location"
+     ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Câu chức năng cũ (\"cắn đứt thức ăn dai như thịt đỏ\") nằm trong đoạn về thỏ/động vật khác — thay bằng câu \"In humans…\" ở mục Function. Vị trí dựa vào danh sách bốn loại răng cửa, không dựa câu \"premaxilla\" (của đa số thú)."
+   }
   },
   "FMA55725": {
    "summary": {
@@ -18099,12 +18722,12 @@
     "en": "The permanent lower lateral incisor is an incisor, one of the front teeth. Adults normally have eight incisors, two of each kind."
    },
    "location": {
-    "vi": "Ở phía trước miệng, trên xương hàm dưới.",
-    "en": "At the front of the mouth, on the mandible."
+    "vi": "Ở phía trước, hàm dưới, cạnh răng cửa giữa hàm dưới.",
+    "en": "At the front, lower jaw, beside the lower central incisor."
    },
    "function": {
-    "vi": "Răng cửa dùng để cắn đứt thức ăn dai, như thịt đỏ.",
-    "en": "Incisors bite through tough food such as red meat."
+    "vi": "Ở người, răng cửa dùng để cắt đứt miếng thức ăn và giữ các thức ăn khác.",
+    "en": "In people the incisors slice off bites of food and help hold other foods."
    },
    "evidence": [
     {
@@ -18112,8 +18735,7 @@
      "section": "Incisor",
      "quote": "are the front teeth present in most mammals and other therapsids. They are located in the premaxilla above and on the mandible below.",
      "supports": [
-      "summary",
-      "location"
+      "summary"
      ]
     },
     {
@@ -18127,12 +18749,26 @@
     {
      "source": "wikipedia-en",
      "section": "Incisor",
-     "quote": "Incisors are used to bite off tough foods, such as red meat.",
+     "quote": "In humans, the incisors serve to cut off pieces of food, as well as in the grip of other food items.",
      "supports": [
       "function"
      ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Incisor",
+     "quote": "mandibular lateral incisor (lower jaw, beside the mandibular central incisor)",
+     "supports": [
+      "location"
+     ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Câu chức năng cũ (\"cắn đứt thức ăn dai như thịt đỏ\") nằm trong đoạn về thỏ/động vật khác — thay bằng câu \"In humans…\" ở mục Function. Vị trí dựa vào danh sách bốn loại răng cửa, không dựa câu \"premaxilla\" (của đa số thú)."
+   }
   },
   "FMA55714": {
    "summary": {
@@ -18144,8 +18780,8 @@
     "en": "Upper jaw; popularly called eye teeth for sitting under the eyes."
    },
    "function": {
-    "vi": "Chủ yếu dùng để giữ chặt thức ăn mà xé.",
-    "en": "Mainly grip food firmly so it can be torn."
+    "vi": "Ở thú nói chung, răng nanh chủ yếu dùng để giữ chặt thức ăn mà xé; nguồn không nêu riêng chức năng của răng nanh người.",
+    "en": "Across mammals, canines serve mainly to hold food firmly so it can be torn apart; the source does not single out the human canine's role."
    },
    "evidence": [
     {
@@ -18182,7 +18818,13 @@
       "location"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Câu chức năng nguồn nói về răng nanh của thú nói chung — ghi rõ phạm vi, không viết như chức năng riêng của răng nanh người."
+   }
   },
   "FMA55715": {
    "summary": {
@@ -18194,8 +18836,8 @@
     "en": "Lower jaw."
    },
    "function": {
-    "vi": "Chủ yếu dùng để giữ chặt thức ăn mà xé.",
-    "en": "Mainly grip food firmly so it can be torn."
+    "vi": "Ở thú nói chung, răng nanh chủ yếu dùng để giữ chặt thức ăn mà xé; nguồn không nêu riêng chức năng của răng nanh người.",
+    "en": "Across mammals, canines serve mainly to hold food firmly so it can be torn apart; the source does not single out the human canine's role."
    },
    "evidence": [
     {
@@ -18231,7 +18873,13 @@
       "summary"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Câu chức năng nguồn nói về răng nanh của thú nói chung — ghi rõ phạm vi, không viết như chức năng riêng của răng nanh người."
+   }
   },
   "FMA59763": {
    "summary": {
@@ -18257,7 +18905,13 @@
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA59764": {
    "summary": {
@@ -18283,7 +18937,13 @@
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA11338": {
    "summary": {
@@ -18316,17 +18976,26 @@
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA14647": {
    "summary": {
-    "vi": "Mạc treo đại tràng ngang là một phần có tên của mạc treo — cơ quan gồm hai lá phúc mạc gấp lại, gắn ruột vào thành bụng sau.",
-    "en": "The transverse mesocolon is a named part of the mesentery, the double fold of peritoneum that attaches the intestines to the back wall of the abdomen."
+    "vi": "Mạc treo kết tràng ngang là đoạn mạc treo gắn vào kết tràng ngang. Mạc treo là cơ quan gồm hai lá phúc mạc gấp lại, gắn ruột vào thành bụng sau.",
+    "en": "The transverse mesocolon is the stretch of mesentery attached to the transverse colon. The mesentery is the double fold of peritoneum that attaches the intestines to the back wall of the abdomen."
    },
-   "location": null,
+   "location": {
+    "vi": "Gắn vào kết tràng ngang, nằm giữa hai góc kết tràng.",
+    "en": "Attached to the transverse colon, between the colic flexures."
+   },
    "function": {
-    "vi": "Mạc treo giúp trữ mỡ và cho mạch máu, mạch bạch huyết, thần kinh đi tới ruột.",
-    "en": "The mesentery stores fat and lets blood vessels, lymphatics and nerves reach the gut."
+    "vi": "Trong số các chức năng, mạc treo giúp trữ mỡ và cho mạch máu, mạch bạch huyết, thần kinh đi tới ruột.",
+    "en": "Among other roles, the mesentery stores fat and lets blood vessels, lymphatics and nerves reach the gut."
    },
    "evidence": [
     {
@@ -18340,30 +19009,40 @@
     {
      "source": "wikipedia-en",
      "section": "Mesentery",
-     "quote": "with all named parts—the ascending, transverse, descending, and sigmoid mesocolons, the mesoappendix, and the mesorectum",
+     "quote": "It helps (among other functions) in storing fat and allowing blood vessels, lymphatics, and nerves to supply the intestines.",
      "supports": [
-      "summary"
+      "function"
      ]
     },
     {
      "source": "wikipedia-en",
      "section": "Mesentery",
-     "quote": "It helps (among other functions) in storing fat and allowing blood vessels, lymphatics, and nerves to supply the intestines.",
+     "quote": "The transverse mesocolon is that section of the mesentery attached to the transverse colon that lies between the colic flexures.",
      "supports": [
-      "function"
+      "summary",
+      "location"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Câu trích \"named parts\" lấy từ mệnh đề tả quan niệm CŨ (mạc treo rời từng đoạn) — thay bằng câu mục \"Mesocolon regions\". Giữ rào \"among other functions\". Thuật ngữ: kết tràng ngang (không \"đại tràng ngang\")."
+   }
   },
   "FMA16549": {
    "summary": {
-    "vi": "Mạc treo ruột thừa là một phần có tên của mạc treo — cơ quan gồm hai lá phúc mạc gấp lại, gắn ruột vào thành bụng sau.",
-    "en": "The mesoappendix is a named part of the mesentery, the double fold of peritoneum that attaches the intestines to the back wall of the abdomen."
+    "vi": "Mạc treo ruột thừa là phần mạc treo nối hồi tràng với ruột thừa. Mạc treo là cơ quan gồm hai lá phúc mạc gấp lại, gắn ruột vào thành bụng sau.",
+    "en": "The mesoappendix is the part of the mesentery linking the ileum to the appendix. The mesentery is the double fold of peritoneum that attaches the intestines to the back wall of the abdomen."
    },
-   "location": null,
+   "location": {
+    "vi": "Giữa hồi tràng và ruột thừa; có thể kéo dài tới đầu ruột thừa.",
+    "en": "Between the ileum and the appendix; it may reach as far as the appendix tip."
+   },
    "function": {
-    "vi": "Mạc treo giúp trữ mỡ và cho mạch máu, mạch bạch huyết, thần kinh đi tới ruột.",
-    "en": "The mesentery stores fat and lets blood vessels, lymphatics and nerves reach the gut."
+    "vi": "Chứa động mạch và tĩnh mạch ruột thừa cùng mạch bạch huyết, thần kinh, và thường có một hạch bạch huyết. Trong số các chức năng, mạc treo nói chung giúp trữ mỡ và cho mạch máu, mạch bạch huyết, thần kinh đi tới ruột.",
+    "en": "It carries the appendicular artery and vein along with lymphatics, nerves and often a lymph node. Among other roles, the mesentery as a whole stores fat and lets blood vessels, lymphatics and nerves reach the gut."
    },
    "evidence": [
     {
@@ -18377,20 +19056,28 @@
     {
      "source": "wikipedia-en",
      "section": "Mesentery",
-     "quote": "with all named parts—the ascending, transverse, descending, and sigmoid mesocolons, the mesoappendix, and the mesorectum",
+     "quote": "It helps (among other functions) in storing fat and allowing blood vessels, lymphatics, and nerves to supply the intestines.",
      "supports": [
-      "summary"
+      "function"
      ]
     },
     {
      "source": "wikipedia-en",
      "section": "Mesentery",
-     "quote": "It helps (among other functions) in storing fat and allowing blood vessels, lymphatics, and nerves to supply the intestines.",
+     "quote": "The mesoappendix is the portion of the mesentery connecting the ileum to the appendix. It may extend to the tip of the appendix. It encloses the appendicular artery and vein, as well as lymphatic vessels, nerves, and often a lymph node.",
      "supports": [
+      "summary",
+      "location",
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Câu trích \"named parts\" lấy từ mệnh đề tả quan niệm CŨ — thay bằng câu mục \"Mesocolon regions\" về mạc treo ruột thừa (giữ \"may\", \"often\"). Giữ rào \"among other functions\"."
+   }
   },
   "FMA54237": {
    "summary": {
@@ -18416,7 +19103,13 @@
       "function"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA54241": {
    "summary": {
@@ -18442,7 +19135,13 @@
       "summary"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved",
+    "notes": ""
+   }
   },
   "FMA54319": {
    "summary": {
@@ -18450,21 +19149,35 @@
     "en": "Pubic hair is terminal body hair found in the genital and pubic region of adolescents and adults."
    },
    "location": {
-    "vi": "Trên và quanh cơ quan sinh dục, đôi khi ở phần trên mặt trong đùi, thậm chí lan xuống đáy chậu tới vùng hậu môn; ở nam còn có trên bìu và gốc thân dương vật.",
-    "en": "On and around the sex organs, sometimes at the top of the inner thighs and even down the perineum to the anal region; in males also on the scrotum and the base of the penile shaft."
+    "vi": "Trên và quanh cơ quan sinh dục, đôi khi ở phần trên mặt trong đùi, thậm chí lan xuống đáy chậu tới vùng hậu môn; ở nam còn có trên bìu và gốc thân dương vật, ở nữ có trên âm hộ.",
+    "en": "On and around the sex organs, sometimes at the top of the inner thighs and even down the perineum to the anal region; in males also on the scrotum and the base of the penile shaft, in females on the vulva."
    },
    "function": null,
    "evidence": [
     {
      "source": "wikipedia-en",
      "section": "Pubic_hair",
-     "quote": "is terminal body hair that is found in the genital area and pubic region of adolescent and adult humans. The hair is located on and around the sex organs, and sometimes at the top of the inside of the thighs, even extending down the perineum, and to the anal region. Pubic hair is also found on the scrotum and base of the penile shaft (in males)",
+     "quote": "is terminal body hair that is found in the genital area and pubic region of adolescent and adult humans. The hair is located on and around the sex organs, and sometimes at the top of the inside of the thighs, even extending down the perineum, and to the anal region.",
      "supports": [
       "summary",
       "location"
      ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Pubic_hair",
+     "quote": "Pubic hair is also found on the scrotum and base of the penile shaft (in males) and on the vulva (in females).",
+     "supports": [
+      "location"
+     ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Câu trích dừng ở \"(in males)\" bỏ vế \"on the vulva (in females)\" — trích trọn và thêm vế nữ."
+   }
   },
   "FMA59816": {
    "summary": {
@@ -18480,19 +19193,25 @@
     {
      "source": "wikipedia-en",
      "section": "Lip",
-     "quote": "The lips are a horizontal pair of soft appendages attached to the jaws and are the most visible part of the mouth of many animals, including humans. Mammal lips are soft, movable and serve to facilitate the ingestion of food (e",
+     "quote": "The lips are a horizontal pair of soft appendages attached to the jaws and are the most visible part of the mouth of many animals, including humans.",
      "supports": [
-      "summary",
+      "summary"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Lip",
+     "quote": "Mammal lips are soft, movable and serve to facilitate the ingestion of food (e.g. suckling and gulping) and the articulation of sound and speech.",
+     "supports": [
       "function"
      ]
     },
     {
      "source": "wikipedia-en",
      "section": "Lip",
-     "quote": "suckling and gulping) and the articulation of sound and speech. Human lips are also a somatosensory organ",
+     "quote": "Human lips are also a somatosensory organ",
      "supports": [
-      "summary",
-      "function"
+      "summary"
      ]
     },
     {
@@ -18503,7 +19222,13 @@
       "summary"
      ]
     }
-   ]
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03",
+    "verdict": "approved-with-edits",
+    "notes": "Câu trích cắt giữa \"(e.g.\" thành hai mảnh — trích lại trọn câu, tách theo câu."
+   }
   }
  }
 }

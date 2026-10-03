@@ -155139,6 +155139,3401 @@
     "by": "science-editor",
     "at": "2026-10-03"
    }
+  },
+  "FMA22763": {
+   "summary": {
+    "vi": "Động mạch quay ngón trỏ là một nhánh của động mạch quay, mang máu tới ngón trỏ.",
+    "en": "The radialis indicis artery is a branch of the radial artery that brings blood to the index finger."
+   },
+   "location": {
+    "vi": "Tách gần chỗ tách của động mạch chính ngón cái; đi xuống giữa cơ gian cốt mu tay thứ nhất và đầu ngang cơ khép ngón cái, rồi chạy dọc bờ ngoài ngón trỏ tới đầu ngón. Động mạch này và động mạch chính ngón cái có thể tách từ một thân chung gọi là động mạch gan đốt bàn thứ nhất.",
+    "en": "It arises near the princeps pollicis artery, passes down between the first dorsal interosseous and the transverse head of adductor pollicis, and follows the outer side of the index finger to its tip. It and the princeps pollicis may share a common trunk, the first palmar metacarpal artery."
+   },
+   "function": {
+    "vi": "Ở đầu ngón, nó nối với động mạch ngón riêng, cấp máu cho mặt trong ngón.",
+    "en": "At the fingertip it joins the proper digital artery and supplies the inner side of the finger."
+   },
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Radialis_indicis_artery",
+     "url": "https://en.wikipedia.org/wiki/Radialis_indicis_artery",
+     "supports": [
+      "summary",
+      "location",
+      "function"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA22762": {
+   "summary": {
+    "vi": "Động mạch chính ngón cái tách từ động mạch quay, đúng lúc động mạch quay quặt vào trong để đi vào phần sâu bàn tay.",
+    "en": "The princeps pollicis, the principal artery of the thumb, comes off the radial artery just as that vessel turns inward into the deep hand."
+   },
+   "location": {
+    "vi": "Đi xuống giữa cơ gian cốt mu tay thứ nhất và đầu chéo cơ khép ngón cái, dọc bờ trong xương bàn tay một tới nền đốt gần, nơi nó nằm dưới gân cơ gấp ngón cái dài và chia làm hai nhánh.",
+    "en": "Passing down between the first dorsal interosseous and adductor pollicis's oblique head, it follows the inner edge of the first metacarpal to the proximal phalanx's base; there, under the long thumb flexor's tendon, it splits in two."
+   },
+   "function": null,
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Princeps_pollicis_artery",
+     "url": "https://en.wikipedia.org/wiki/Princeps_pollicis_artery",
+     "supports": [
+      "summary",
+      "location"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA19795": {
+   "summary": {
+    "vi": "Động mạch mu dương vật là đôi nhánh tận của động mạch thẹn trong.",
+    "en": "The dorsal arteries of the penis are a pair of end branches of the internal pudendal artery."
+   },
+   "location": {
+    "vi": "Chạy trên mặt lưng dương vật tới nền quy đầu, nơi hai bên nối với nhau.",
+    "en": "They run along the top of the penis to the base of the glans, where left and right join."
+   },
+   "function": {
+    "vi": "Cấp máu cho da và mạc dương vật (kể cả bao quy đầu) và các mô cương, nhất là quy đầu.",
+    "en": "Supply the skin and fascia of the penis, foreskin included, and its erectile tissue, the glans above all."
+   },
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Dorsal_artery_of_the_penis",
+     "url": "https://en.wikipedia.org/wiki/Dorsal_artery_of_the_penis",
+     "supports": [
+      "summary",
+      "location",
+      "function"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA76998": {
+   "summary": {
+    "vi": "Động mạch gian sườn trên cùng là một trong hai nhánh của thân sườn – cổ (nhánh kia là động mạch cổ sâu).",
+    "en": "The supreme (highest) intercostal artery is one of the two branches of the costocervical trunk, the other being the deep cervical artery."
+   },
+   "location": {
+    "vi": "Đi xuống sau màng phổi, trước cổ xương sườn một và hai.",
+    "en": "Its course is downward, behind the pleura and over the front of the first two rib necks."
+   },
+   "function": {
+    "vi": "Nối với động mạch gian sườn đầu tiên tách từ động mạch chủ, và cho một nhánh vào khoang gian sườn thứ nhất.",
+    "en": "Links up with the first intercostal artery from the aorta and sends a branch into the first intercostal space."
+   },
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Costocervical_trunk",
+     "url": "https://en.wikipedia.org/wiki/Costocervical_trunk",
+     "supports": [
+      "summary",
+      "location",
+      "function"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA44594": {
+   "summary": {
+    "vi": "Động mạch cung (động mạch đốt bàn) ở mu bàn chân tách từ động mạch mu chân, hơi ra trước so với động mạch cổ chân ngoài, ngang khớp thuyền – chêm.",
+    "en": "The arcuate artery of the foot leaves the dorsalis pedis, a little in front of the lateral tarsal artery, over the naviculocuneiform joint."
+   },
+   "location": {
+    "vi": "Chạy ra ngoài, vắt qua nền bốn xương bàn chân ngoài, dưới các gân cơ duỗi ngắn các ngón chân, và tận cùng ở động mạch cổ chân ngoài.",
+    "en": "It heads outward across the bases of the outer four metatarsals, under the extensor digitorum brevis tendons, and ends in the lateral tarsal artery."
+   },
+   "function": {
+    "vi": "Thông với các động mạch gan chân qua các động mạch xuyên của bàn chân.",
+    "en": "Via the foot's perforating arteries it links up with the plantar arteries."
+   },
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Arcuate_artery_of_the_foot",
+     "url": "https://en.wikipedia.org/wiki/Arcuate_artery_of_the_foot",
+     "supports": [
+      "summary",
+      "location",
+      "function"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA22506": {
+   "summary": {
+    "vi": "Động mạch gối xuống (động mạch gối cao nhất) tách từ động mạch đùi ngay trước khi động mạch này đi qua lỗ gân cơ khép.",
+    "en": "The descending (highest) genicular artery comes off the femoral artery just before it passes through the adductor hiatus."
+   },
+   "location": {
+    "vi": "Nhánh hiển xuyên qua lớp cân phủ ống cơ khép, đi cùng thần kinh hiển tới mặt trong gối, giữa cơ may và cơ thon.",
+    "en": "Its saphenous branch pierces the covering of the adductor canal and travels with the saphenous nerve to the inner knee, between sartorius and gracilis."
+   },
+   "function": {
+    "vi": "Nhánh hiển phân bố cho da phần trên mặt trong cẳng chân và nối với động mạch gối dưới trong.",
+    "en": "The saphenous branch supplies the skin of the upper inner leg and joins the medial inferior genicular artery."
+   },
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Descending_genicular_artery",
+     "url": "https://en.wikipedia.org/wiki/Descending_genicular_artery",
+     "supports": [
+      "summary",
+      "location",
+      "function"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA44595": {
+   "summary": {
+    "vi": "Động mạch cổ chân ngoài tách từ động mạch mu chân khi mạch này bắt chéo qua xương thuyền.",
+    "en": "The lateral tarsal artery branches from the dorsalis pedis where that artery crosses the navicular bone."
+   },
+   "location": {
+    "vi": "Chạy vòng cung ra ngoài, nằm trên các xương cổ chân, dưới cơ duỗi ngắn ngón cái và cơ duỗi ngắn các ngón chân; ở nền xương bàn chân năm nó nhận động mạch cung.",
+    "en": "It arcs outward over the tarsal bones beneath extensor hallucis brevis and extensor digitorum brevis, and receives the arcuate artery at the base of the fifth metatarsal."
+   },
+   "function": {
+    "vi": "Cấp máu cho hai cơ ấy và các khớp cổ chân.",
+    "en": "Supplies those muscles and the tarsal joints."
+   },
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Lateral_tarsal_artery",
+     "url": "https://en.wikipedia.org/wiki/Lateral_tarsal_artery",
+     "supports": [
+      "summary",
+      "location",
+      "function"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA22810": {
+   "summary": {
+    "vi": "Động mạch gian cốt trước là một động mạch ở cẳng tay, nhánh của động mạch gian cốt chung.",
+    "en": "The anterior interosseous artery is a forearm artery branching from the common interosseous artery."
+   },
+   "location": {
+    "vi": "Đi cùng nhánh gian cốt gan tay của thần kinh giữa, bị bờ kề nhau của cơ gấp các ngón sâu và cơ gấp ngón cái dài che phủ.",
+    "en": "It travels with the palmar interosseous branch of the median nerve, overlapped by the adjoining edges of flexor digitorum profundus and flexor pollicis longus."
+   },
+   "function": {
+    "vi": "Cho các nhánh cơ và các động mạch nuôi xương quay, xương trụ.",
+    "en": "Sends twigs to muscles and the arteries that nourish the radius and ulna."
+   },
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Anterior_interosseous_artery",
+     "url": "https://en.wikipedia.org/wiki/Anterior_interosseous_artery",
+     "supports": [
+      "summary",
+      "location",
+      "function"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA10659": {
+   "summary": {
+    "vi": "Động mạch cổ sâu phần lớn tách từ thân sườn – cổ, đôi khi là một nhánh riêng của động mạch dưới đòn; nó tương đương nhánh sau của một động mạch gian sườn tách từ động mạch chủ.",
+    "en": "In most cases the deep cervical artery comes off the costocervical trunk, occasionally straight from the subclavian, and corresponds to the back branch of an aortic intercostal artery."
+   },
+   "location": {
+    "vi": "Đi ra sau, trên dây thần kinh cổ tám, giữa mỏm ngang đốt cổ bảy và cổ xương sườn một, rồi lên mặt sau cổ giữa cơ bán gai đầu và cơ bán gai cổ, tới ngang đốt trục.",
+    "en": "It heads back above the eighth cervical nerve, between the seventh cervical transverse process and the first rib's neck, then climbs the back of the neck between semispinalis capitis and cervicis as far as the axis."
+   },
+   "function": {
+    "vi": "Cấp máu cho các cơ ấy và cơ lân cận, nối với nhánh của động mạch chẩm và động mạch đốt sống.",
+    "en": "Supplies those and nearby muscles and joins branches of the occipital and vertebral arteries."
+   },
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Deep_cervical_artery",
+     "url": "https://en.wikipedia.org/wiki/Deep_cervical_artery",
+     "supports": [
+      "summary",
+      "location",
+      "function"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA3990": {
+   "summary": {
+    "vi": "Thân giáp – cổ là động mạch rất nhỏ ở cổ, tách từ động mạch dưới đòn ở phía ngoài động mạch đốt sống; nó ngắn và rộng, chia thành động mạch giáp dưới, động mạch trên vai và động mạch ngang cổ.",
+    "en": "The thyrocervical trunk is a very small, short, wide neck artery coming off the subclavian lateral to the vertebral artery; it divides into the inferior thyroid, suprascapular and transverse cervical arteries."
+   },
+   "location": {
+    "vi": "Tách từ đoạn một động mạch dưới đòn, giữa nguyên ủy động mạch dưới đòn và bờ trong cơ bậc thang trước; trên động mạch dưới đòn, chỗ tách của nó ở xa hơn động mạch đốt sống và gần hơn thân sườn – cổ.",
+    "en": "It leaves the first part of the subclavian, between its origin and the inner edge of scalenus anterior, beyond the vertebral artery and before the costocervical trunk."
+   },
+   "function": {
+    "vi": "Cấp máu cho tuyến giáp và một số cơ vùng bả vai.",
+    "en": "Supplies the thyroid gland and some shoulder-blade muscles."
+   },
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Thyrocervical_trunk",
+     "url": "https://en.wikipedia.org/wiki/Thyrocervical_trunk",
+     "supports": [
+      "summary",
+      "location",
+      "function"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA23120": {
+   "summary": {
+    "vi": "Động mạch bên quay (nhánh xuống trước của động mạch cánh tay sâu) là một nhánh của động mạch cánh tay sâu.",
+    "en": "The radial collateral artery, the anterior descending branch of the profunda brachii, is a branch of the deep brachial artery."
+   },
+   "location": {
+    "vi": "Tách ở cánh tay.",
+    "en": "It arises in the arm proper."
+   },
+   "function": {
+    "vi": "Nối với động mạch quặt ngược quay gần khuỷu.",
+    "en": "Joins the radial recurrent artery near the elbow."
+   },
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Radial_collateral_artery",
+     "url": "https://en.wikipedia.org/wiki/Radial_collateral_artery",
+     "supports": [
+      "summary",
+      "location",
+      "function"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA23119": {
+   "summary": {
+    "vi": "Động mạch bên giữa là một nhánh của động mạch cánh tay sâu.",
+    "en": "The medial (middle) collateral artery is a branch of the profunda brachii."
+   },
+   "location": {
+    "vi": "Đi xuống trong cơ tam đầu cánh tay.",
+    "en": "It descends within triceps brachii."
+   },
+   "function": {
+    "vi": "Góp phần tạo vòng nối với động mạch quặt ngược gian cốt phía trên mỏm khuỷu.",
+    "en": "Contributes to the arterial link with the interosseous recurrent artery just above the olecranon."
+   },
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Middle_collateral_artery",
+     "url": "https://en.wikipedia.org/wiki/Middle_collateral_artery",
+     "supports": [
+      "summary",
+      "location",
+      "function"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA66320": {
+   "summary": {
+    "vi": "Động mạch ngực – lưng là một nhánh của động mạch dưới vai, đi kèm thần kinh ngực – lưng.",
+    "en": "A branch of the subscapular artery, the thoracodorsal artery travels alongside the nerve of the same name."
+   },
+   "location": {
+    "vi": "Đi xuống trên mặt cơ răng trước.",
+    "en": "It runs down over the surface of serratus anterior."
+   },
+   "function": {
+    "vi": "Cấp máu cho phần sau – dưới cơ răng trước, sau vùng của động mạch ngực ngoài.",
+    "en": "Supplies the back-lower part of serratus anterior, behind the territory of the lateral thoracic artery."
+   },
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Thoracodorsal_artery",
+     "url": "https://en.wikipedia.org/wiki/Thoracodorsal_artery",
+     "supports": [
+      "summary",
+      "location",
+      "function"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA21384": {
+   "summary": {
+    "vi": "Tĩnh mạch mu dương vật nông thuộc hệ dẫn lưu nông của dương vật; nó do các tĩnh mạch nông nhỏ hợp lại ở mặt lưng – bên dương vật.",
+    "en": "Part of the penis's superficial drainage, this vein forms where small surface veins converge along its upper side."
+   },
+   "location": {
+    "vi": "Trên mặt lưng dương vật, trong lớp mạc dartos nông — ngoài mạc Buck, khác với tĩnh mạch mu sâu.",
+    "en": "On the upper surface of the penis within the superficial dartos fascia, outside Buck's fascia, unlike the deep dorsal vein."
+   },
+   "function": {
+    "vi": "Dẫn máu từ bao quy đầu và da thân dương vật.",
+    "en": "Drains the foreskin and the skin of the shaft."
+   },
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Superficial_dorsal_vein_of_the_penis",
+     "url": "https://en.wikipedia.org/wiki/Superficial_dorsal_vein_of_the_penis",
+     "supports": [
+      "summary",
+      "location",
+      "function"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA21354": {
+   "summary": {
+    "vi": "Tĩnh mạch mu dương vật sâu thuộc hệ dẫn lưu trung gian của dương vật, cùng các tĩnh mạch mũ và tĩnh mạch xuyên của chúng.",
+    "en": "Along with the circumflex veins and their emissary veins, this vein makes up the penis's intermediate drainage system."
+   },
+   "location": {
+    "vi": "Chạy ngay dưới tĩnh mạch mu nông, hai tĩnh mạch ngăn nhau bằng mạc sâu dương vật.",
+    "en": "It runs directly under the superficial dorsal vein, the deep penile fascia lying between the two."
+   },
+   "function": null,
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Deep_dorsal_vein_of_the_penis",
+     "url": "https://en.wikipedia.org/wiki/Deep_dorsal_vein_of_the_penis",
+     "supports": [
+      "summary",
+      "location"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA51041": {
+   "summary": {
+    "vi": "Tĩnh mạch đùi sâu là tĩnh mạch sâu lớn ở đùi.",
+    "en": "The deep femoral vein is a large deep vein of the thigh."
+   },
+   "location": {
+    "vi": "Đi lên và vào trong cạnh động mạch đùi sâu, đổ vào tĩnh mạch đùi khoảng ngang phần thấp nhất của ụ ngồi.",
+    "en": "It runs up and inward beside the deep femoral artery and empties into the femoral vein at about the level of the lowest part of the ischial tuberosity."
+   },
+   "function": {
+    "vi": "Nhận máu từ mặt trong đùi.",
+    "en": "Collects blood from the inner thigh."
+   },
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Deep_femoral_vein",
+     "url": "https://en.wikipedia.org/wiki/Deep_femoral_vein",
+     "supports": [
+      "summary",
+      "location",
+      "function"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA44318": {
+   "summary": {
+    "vi": "Tĩnh mạch thượng vị nông là tĩnh mạch đi kèm động mạch thượng vị nông.",
+    "en": "The superficial epigastric vein travels with the superficial epigastric artery."
+   },
+   "location": {
+    "vi": "Đổ vào tĩnh mạch hiển phụ gần hố bầu dục.",
+    "en": "Its blood passes into the accessory saphenous vein, close by the fossa ovalis."
+   },
+   "function": null,
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Superficial_epigastric_vein",
+     "url": "https://en.wikipedia.org/wiki/Superficial_epigastric_vein",
+     "supports": [
+      "summary",
+      "location"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA13329": {
+   "summary": {
+    "vi": "Tĩnh mạch nách là tĩnh mạch lớn, mỗi bên cơ thể một; nó được tạo bởi tĩnh mạch cánh tay và tĩnh mạch nền, ở đoạn tận nhận thêm tĩnh mạch đầu.",
+    "en": "The axillary vein is a large vein, one per side, formed by the brachial and basilic veins and joined near its end by the cephalic vein."
+   },
+   "location": {
+    "vi": "Bắt đầu ở bờ dưới cơ tròn lớn, nối tiếp tĩnh mạch cánh tay; tận ở bờ ngoài xương sườn một, nơi trở thành tĩnh mạch dưới đòn. Động mạch nách đi kèm ở phía ngoài.",
+    "en": "It starts at the lower border of teres major, continuing the brachial vein, and ends at the outer edge of the first rib, becoming the subclavian vein. The axillary artery runs on its outer side."
+   },
+   "function": {
+    "vi": "Đưa máu từ mặt bên ngực, nách và chi trên về tim.",
+    "en": "Returns blood from the side of the chest, the armpit and the upper limb to the heart."
+   },
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Axillary_vein",
+     "url": "https://en.wikipedia.org/wiki/Axillary_vein",
+     "supports": [
+      "summary",
+      "location",
+      "function"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA67977": {
+   "summary": {
+    "vi": "Mạng tĩnh mạch mu tay là mạng tĩnh mạch ở mu bàn tay, do ba tĩnh mạch mu đốt bàn, tĩnh mạch mu ngón ở bờ quay ngón trỏ, ở bờ trụ ngón út và hai tĩnh mạch mu ngón cái tạo nên.",
+    "en": "The dorsal venous network of the hand lies on the back of the hand, built from the three dorsal metacarpal veins together with dorsal digital veins: one on the radial edge of the index finger, one on the ulnar edge of the little finger, and the thumb's two."
+   },
+   "location": {
+    "vi": "Ở mu bàn tay.",
+    "en": "On the back of the hand."
+   },
+   "function": {
+    "vi": "Mạng này là nơi khởi đầu của tĩnh mạch đầu và tĩnh mạch nền.",
+    "en": "It gives rise to the cephalic and basilic veins."
+   },
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Dorsal_venous_network_of_hand",
+     "url": "https://en.wikipedia.org/wiki/Dorsal_venous_network_of_hand",
+     "supports": [
+      "summary",
+      "location",
+      "function"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA22911": {
+   "summary": {
+    "vi": "Cung tĩnh mạch gan tay sâu là đôi tĩnh mạch đi kèm cung động mạch gan tay sâu.",
+    "en": "The deep palmar venous arch is the pair of veins accompanying the deep palmar arterial arch."
+   },
+   "location": {
+    "vi": "Ở gan tay, đi cùng cung động mạch gan tay sâu.",
+    "en": "In the palm, alongside the deep palmar arterial arch."
+   },
+   "function": {
+    "vi": "Nhận các tĩnh mạch tương ứng với nhánh của cung động mạch — các tĩnh mạch gan đốt bàn.",
+    "en": "Receives the veins matching the arterial arch's branches, the palmar metacarpal veins."
+   },
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Deep_palmar_venous_arch",
+     "url": "https://en.wikipedia.org/wiki/Deep_palmar_venous_arch",
+     "supports": [
+      "summary",
+      "location",
+      "function"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA22914": {
+   "summary": {
+    "vi": "Cung tĩnh mạch gan tay nông gồm đôi tĩnh mạch đi kèm cung động mạch gan tay nông.",
+    "en": "The superficial palmar venous arch is a pair of veins accompanying the superficial palmar arterial arch."
+   },
+   "location": {
+    "vi": "Ở gan tay, đi cùng cung động mạch gan tay nông.",
+    "en": "In the palm, alongside the superficial palmar arterial arch."
+   },
+   "function": null,
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Superficial_palmar_venous_arch",
+     "url": "https://en.wikipedia.org/wiki/Superficial_palmar_venous_arch",
+     "supports": [
+      "summary",
+      "location"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA14319": {
+   "summary": {
+    "vi": "Tĩnh mạch trên vai là tĩnh mạch chạy phía trên xương vai.",
+    "en": "The suprascapular vein runs above the scapula."
+   },
+   "location": {
+    "vi": "Phía trên xương vai, nằm gần động mạch trên vai.",
+    "en": "Above the scapula, close to the suprascapular artery."
+   },
+   "function": {
+    "vi": "Dẫn máu vùng sau quanh xương vai và đổ vào tĩnh mạch cảnh ngoài.",
+    "en": "Drains the back region around the scapula and empties into the external jugular vein."
+   },
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Suprascapular_vein",
+     "url": "https://en.wikipedia.org/wiki/Suprascapular_vein",
+     "supports": [
+      "summary",
+      "function",
+      "location"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA21162": {
+   "summary": {
+    "vi": "Tĩnh mạch thượng vị dưới là một hoặc hai tĩnh mạch đi kèm động mạch thượng vị dưới.",
+    "en": "The inferior epigastric veins, one or two of them, accompany the inferior epigastric artery."
+   },
+   "location": {
+    "vi": "Đổ vào tĩnh mạch chậu ngoài, ngay trên dây chằng bẹn.",
+    "en": "They empty into the external iliac vein just above the inguinal ligament."
+   },
+   "function": null,
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Inferior_epigastric_vein",
+     "url": "https://en.wikipedia.org/wiki/Inferior_epigastric_vein",
+     "supports": [
+      "summary",
+      "location"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA18911": {
+   "summary": {
+    "vi": "Tĩnh mạch mông dưới là các tĩnh mạch đi kèm động mạch mông dưới.",
+    "en": "The inferior gluteal veins accompany the inferior gluteal artery."
+   },
+   "location": {
+    "vi": "Bắt đầu ở phần trên mặt sau đùi, vào chậu hông qua phần dưới lỗ ngồi lớn, hợp thành một tĩnh mạch rồi đổ vào đoạn xa của tĩnh mạch chậu trong.",
+    "en": "Starting in the upper back of the thigh, they pass into the pelvis via the greater sciatic foramen's lower portion, fuse into a single vessel and drain into the internal iliac vein near its far end."
+   },
+   "function": {
+    "vi": "Ở nơi bắt đầu, chúng nối với tĩnh mạch mũ đùi trong và các tĩnh mạch xuyên đầu tiên, tạo đường tuần hoàn bàng hệ.",
+    "en": "At their origin they connect with the first perforating veins and the medial circumflex femoral vein, giving blood an alternative route."
+   },
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Inferior_gluteal_veins",
+     "url": "https://en.wikipedia.org/wiki/Inferior_gluteal_veins",
+     "supports": [
+      "summary",
+      "location",
+      "function"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA18917": {
+   "summary": {
+    "vi": "Tĩnh mạch thẹn trong là các tĩnh mạch ở chậu hông đi kèm động mạch thẹn trong; chúng nằm trong ống thẹn cùng động mạch thẹn trong và thần kinh thẹn.",
+    "en": "The internal pudendal veins are pelvic veins accompanying the internal pudendal artery, enclosed with that artery and the pudendal nerve in the pudendal canal."
+   },
+   "location": {
+    "vi": "Đi kèm động mạch thẹn trong, hợp lại thành một tĩnh mạch rồi đổ vào tĩnh mạch chậu trong.",
+    "en": "Running alongside the internal pudendal artery, they merge into one vessel that finishes in the internal iliac vein."
+   },
+   "function": null,
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Internal_pudendal_veins",
+     "url": "https://en.wikipedia.org/wiki/Internal_pudendal_veins",
+     "supports": [
+      "summary",
+      "location"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA18905": {
+   "summary": {
+    "vi": "Tĩnh mạch cùng bên đi kèm động mạch cùng bên; chúng thông với nhau qua đám rối tĩnh mạch cùng.",
+    "en": "The lateral sacral veins accompany the lateral sacral arteries and communicate through the sacral venous plexus."
+   },
+   "location": {
+    "vi": "Ở mặt trước xương cùng; đổ vào tĩnh mạch chậu trong.",
+    "en": "Across the sacrum's front surface, emptying into the internal iliac vein."
+   },
+   "function": null,
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Lateral_sacral_veins",
+     "url": "https://en.wikipedia.org/wiki/Lateral_sacral_veins",
+     "supports": [
+      "summary",
+      "location"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA18914": {
+   "summary": {
+    "vi": "Tĩnh mạch bịt có một nhánh trước và một nhánh sau.",
+    "en": "The obturator vein has an anterior and a posterior branch."
+   },
+   "location": {
+    "vi": "Bắt đầu ở phần trên vùng cơ khép của đùi, vào chậu hông qua ống bịt; chạy ra sau và lên trên thành bên chậu hông, dưới động mạch bịt, rồi đi giữa niệu quản và động mạch chậu trong để đổ vào tĩnh mạch chậu trong.",
+    "en": "Rising from the upper adductor area of the thigh, it reaches the pelvis by way of the obturator canal, travels up and back along the pelvic side wall beneath the obturator artery, then slips between ureter and internal iliac artery and finishes in the internal iliac vein."
+   },
+   "function": null,
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Obturator_vein",
+     "url": "https://en.wikipedia.org/wiki/Obturator_vein",
+     "supports": [
+      "location",
+      "summary"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA4731": {
+   "summary": {
+    "vi": "Tĩnh mạch thượng vị trên là hai hay nhiều tĩnh mạch đi kèm mỗi động mạch thượng vị trên, đổ vào tĩnh mạch ngực trong.",
+    "en": "The superior epigastric veins are two or more companion veins of each superior epigastric artery, draining into the internal thoracic vein."
+   },
+   "location": {
+    "vi": "Lúc đầu chạy giữa bờ xương ức và bờ sườn của cơ hoành, rồi đi vào bao cơ thẳng bụng.",
+    "en": "They start out between the sternal and costal margins of the diaphragm and then pass into the rectus sheath."
+   },
+   "function": {
+    "vi": "Tham gia dẫn lưu mặt trên cơ hoành.",
+    "en": "Help drain the upper surface of the diaphragm."
+   },
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Superior_epigastric_vein",
+     "url": "https://en.wikipedia.org/wiki/Superior_epigastric_vein",
+     "supports": [
+      "summary",
+      "function",
+      "location"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA18908": {
+   "summary": {
+    "vi": "Tĩnh mạch mông trên là các tĩnh mạch đi kèm động mạch mông trên; chúng nhận các nhánh từ vùng mông tương ứng với nhánh của động mạch.",
+    "en": "The superior gluteal veins accompany the superior gluteal artery and collect tributaries from the buttock matching the artery's branches."
+   },
+   "location": {
+    "vi": "Vào chậu hông qua lỗ ngồi lớn, phía trên cơ hình lê, rồi đổ vào tĩnh mạch chậu trong (thường hợp thành một thân).",
+    "en": "They enter the pelvis through the greater sciatic foramen above piriformis and drain into the internal iliac vein, often as a single trunk."
+   },
+   "function": null,
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Superior_gluteal_veins",
+     "url": "https://en.wikipedia.org/wiki/Superior_gluteal_veins",
+     "supports": [
+      "summary",
+      "location"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA15393": {
+   "summary": {
+    "vi": "Tĩnh mạch trực tràng trên (tĩnh mạch trĩ trên) là đoạn khởi đầu của tĩnh mạch mạc treo tràng dưới ở trực tràng; nó xuất phát từ đám rối trĩ và qua đám rối ấy thông với tĩnh mạch trĩ giữa và dưới.",
+    "en": "The superior rectal (superior haemorrhoidal) vein is where the inferior mesenteric vein begins, in the rectum; it starts from the haemorrhoidal plexus and through it connects with the middle and inferior haemorrhoidal veins."
+   },
+   "location": {
+    "vi": "Rời chậu hông bé, bắt chéo các mạch chậu chung trái cùng động mạch trực tràng trên, rồi tiếp tục đi lên thành tĩnh mạch mạc treo tràng dưới.",
+    "en": "Exiting the lesser pelvis together with the superior rectal artery, it passes over the left common iliac vessels and continues upward under the name inferior mesenteric vein."
+   },
+   "function": null,
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Superior_rectal_vein",
+     "url": "https://en.wikipedia.org/wiki/Superior_rectal_vein",
+     "supports": [
+      "summary",
+      "location"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA21930": {
+   "summary": {
+    "vi": "Cơ thắt hậu môn ngoài là một ống bầu dục bằng thớ cơ vân, dày hơn nhiều so với cơ thắt hậu môn trong.",
+    "en": "The external anal sphincter is an oval tube of skeletal muscle, far bulkier than the internal anal sphincter."
+   },
+   "location": {
+    "vi": "Đầu xa dính vào da quanh bờ hậu môn; phần gần chồng lên mặt nông của cơ thắt trong, hai cơ ngăn nhau bởi lớp cơ dọc kết hợp.",
+    "en": "Its far end adheres to the skin around the anal margin; its near part overlaps the internal sphincter on the outside, the two separated by the conjoint longitudinal muscle."
+   },
+   "function": {
+    "vi": "Ở trạng thái nghỉ vẫn co trương lực liên tục, và co thêm trong phản xạ hành – xốp.",
+    "en": "Stays in steady tonic contraction at rest and also contracts in the bulbospongiosus reflex."
+   },
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "External_anal_sphincter",
+     "url": "https://en.wikipedia.org/wiki/External_anal_sphincter",
+     "supports": [
+      "summary",
+      "location",
+      "function"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA45970": {
+   "summary": {
+    "vi": "Đầu ngoài của cơ gấp ngắn ngón cái chân, một cơ ở bàn chân. Cả hai đầu của cơ do thần kinh gan chân trong chi phối.",
+    "en": "The lateral head of flexor hallucis brevis, a muscle of the foot. Both of its heads are supplied by the medial plantar nerve."
+   },
+   "location": null,
+   "function": {
+    "vi": "Cơ gấp ngắn ngón cái chân (cả cơ) gấp khớp bàn – ngón thứ nhất, tức gấp ngón cái; nó giúp giữ vòm dọc trong của bàn chân và hỗ trợ lực đẩy ở pha nhấc ngón khi bước.",
+    "en": "Flexor hallucis brevis as a whole bends the big toe at its first metatarsophalangeal joint, helps keep up the medial longitudinal arch and adds push as the toes leave the ground in walking."
+   },
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Flexor_hallucis_brevis_muscle",
+     "url": "https://en.wikipedia.org/wiki/Flexor_hallucis_brevis_muscle",
+     "supports": [
+      "summary",
+      "function"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA45969": {
+   "summary": {
+    "vi": "Đầu trong của cơ gấp ngắn ngón cái chân, một cơ ở bàn chân. Cả hai đầu của cơ do thần kinh gan chân trong chi phối.",
+    "en": "The medial head of flexor hallucis brevis, a muscle of the foot. Both of its heads are supplied by the medial plantar nerve."
+   },
+   "location": null,
+   "function": {
+    "vi": "Cơ gấp ngắn ngón cái chân (cả cơ) gấp khớp bàn – ngón thứ nhất, tức gấp ngón cái; nó giúp giữ vòm dọc trong của bàn chân và hỗ trợ lực đẩy ở pha nhấc ngón khi bước.",
+    "en": "Flexor hallucis brevis as a whole bends the big toe at its first metatarsophalangeal joint, helps keep up the medial longitudinal arch and adds push as the toes leave the ground in walking."
+   },
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Flexor_hallucis_brevis_muscle",
+     "url": "https://en.wikipedia.org/wiki/Flexor_hallucis_brevis_muscle",
+     "supports": [
+      "summary",
+      "function"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA46014": {
+   "summary": {
+    "vi": "Đầu chéo của cơ khép ngón cái chân. Cơ khép ngón cái chân có hai đầu (chéo và ngang), đều do thần kinh gan chân ngoài chi phối.",
+    "en": "The oblique head of adductor hallucis, a muscle with oblique and transverse heads, both supplied by the lateral plantar nerve."
+   },
+   "location": {
+    "vi": "Là khối thịt lớn, dày, chạy chéo qua bàn chân, chiếm chỗ lõm dưới các xương bàn chân một đến bốn. Xuất phát từ nền xương bàn chân hai, ba, bốn và bao gân cơ mác dài; bám cùng phần ngoài cơ gấp ngắn ngón cái vào bờ ngoài nền đốt một ngón cái.",
+    "en": "A large, thick fleshy mass slanting across the foot in the hollow under metatarsals one to four. It arises from the bases of metatarsals two to four and the fibularis longus tendon sheath, and inserts with the outer part of flexor hallucis brevis on the outer side of the big toe's first phalanx base."
+   },
+   "function": {
+    "vi": "Cơ khép ngón cái chân (cả cơ) khép ngón cái chân.",
+    "en": "Adductor hallucis as a whole adducts the big toe."
+   },
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Adductor_hallucis_muscle",
+     "url": "https://en.wikipedia.org/wiki/Adductor_hallucis_muscle",
+     "supports": [
+      "summary",
+      "function",
+      "location"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA46015": {
+   "summary": {
+    "vi": "Đầu ngang của cơ khép ngón cái chân. Cơ khép ngón cái chân có hai đầu (chéo và ngang), đều do thần kinh gan chân ngoài chi phối.",
+    "en": "The transverse head of adductor hallucis, a muscle with oblique and transverse heads, both supplied by the lateral plantar nerve."
+   },
+   "location": {
+    "vi": "Là một bó hẹp, dẹt, xuất phát từ dây chằng gan chân bàn – ngón của ngón ba, bốn, năm (đôi khi chỉ ngón ba và bốn) và từ dây chằng ngang các xương bàn chân.",
+    "en": "A narrow, flat bundle arising from the plantar metatarsophalangeal ligaments of toes three to five (sometimes only three and four) and from the transverse metatarsal ligament."
+   },
+   "function": {
+    "vi": "Cơ khép ngón cái chân (cả cơ) khép ngón cái chân.",
+    "en": "Adductor hallucis as a whole adducts the big toe."
+   },
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Adductor_hallucis_muscle",
+     "url": "https://en.wikipedia.org/wiki/Adductor_hallucis_muscle",
+     "supports": [
+      "summary",
+      "function",
+      "location"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA43885": {
+   "summary": {
+    "vi": "Cơ khép bé nhất là cơ vân nhỏ, dẹt ở đùi, tạo nên phần trên – ngoài của cơ khép lớn.",
+    "en": "Adductor minimus is a small, flat thigh muscle forming the upper outer part of adductor magnus."
+   },
+   "location": {
+    "vi": "Xuất phát từ ngành dưới xương mu, là phần trước nhất của cơ khép lớn; bám vào mép trong đường ráp ở mặt sau xương đùi, nên bắt chéo phần gần của cơ khép lớn thực sự.",
+    "en": "It starts on the inferior pubic ramus as the frontmost part of adductor magnus and inserts on the inner lip of the linea aspera at the back of the femur, crossing the upper part of adductor magnus proper."
+   },
+   "function": {
+    "vi": "Khép và xoay ngoài xương đùi.",
+    "en": "Adducts and rotates the femur outward."
+   },
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Adductor_minimus_muscle",
+     "url": "https://en.wikipedia.org/wiki/Adductor_minimus_muscle",
+     "supports": [
+      "summary",
+      "function",
+      "location"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA51141": {
+   "summary": {
+    "vi": "Cơ duỗi ngắn ngón cái chân thực chất là phần trong của cơ duỗi ngắn các ngón chân; một số nhà giải phẫu còn tranh luận chúng có phải hai cơ riêng hay không.",
+    "en": "Extensor hallucis brevis is essentially the inner part of extensor digitorum brevis; some anatomists have debated whether the two are separate muscles."
+   },
+   "location": {
+    "vi": "Ở mu bàn chân. Xuất phát từ xương gót, bám vào đốt gần ngón cái.",
+    "en": "On the top of the foot, running from the calcaneus to the proximal phalanx of the big toe."
+   },
+   "function": {
+    "vi": "Giúp duỗi ngón cái chân.",
+    "en": "Helps extend the big toe."
+   },
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Extensor_hallucis_brevis_muscle",
+     "url": "https://en.wikipedia.org/wiki/Extensor_hallucis_brevis_muscle",
+     "supports": [
+      "location",
+      "function",
+      "summary"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA71314": {
+   "summary": {
+    "vi": "Nhóm cơ nâng sườn ngắn. Cơ nâng sườn gồm mười hai bó nhỏ ở mỗi bên, vừa gân vừa thịt, xuất phát từ đầu mỏm ngang đốt cổ bảy và mười một đốt ngực trên.",
+    "en": "The short levatores costarum. The levatores costarum are twelve small tendinous-fleshy bundles per side, arising from the transverse-process tips of the seventh cervical and upper eleven thoracic vertebrae."
+   },
+   "location": {
+    "vi": "Mỗi bó chạy chéo xuống và ra ngoài như thớ cơ gian sườn ngoài, bám vào mặt ngoài xương sườn ngay dưới đốt sống nơi nó xuất phát, giữa củ sườn và góc sườn.",
+    "en": "Each slants down and outward like the external intercostal fibres and attaches to the outer face of the rib just below its vertebra of origin, between the tubercle and the angle."
+   },
+   "function": null,
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Levatores_costarum",
+     "url": "https://en.wikipedia.org/wiki/Levatores_costarum",
+     "supports": [
+      "summary",
+      "location"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA71313": {
+   "summary": {
+    "vi": "Nhóm cơ nâng sườn dài. Cơ nâng sườn gồm mười hai bó nhỏ ở mỗi bên, xuất phát từ đầu mỏm ngang đốt cổ bảy và mười một đốt ngực trên; bốn bó dưới mỗi bó chia làm hai, một phần là cơ nâng sườn dài.",
+    "en": "The long levatores costarum. Of the twelve levatores costarum per side, arising from the transverse-process tips of the seventh cervical and upper eleven thoracic vertebrae, each of the lower four splits in two, one part forming a long levator."
+   },
+   "location": {
+    "vi": "Bó dài đi xuống bám vào xương sườn thứ hai dưới chỗ xuất phát của nó.",
+    "en": "The long slip descends to the second rib below its origin."
+   },
+   "function": null,
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Levatores_costarum",
+     "url": "https://en.wikipedia.org/wiki/Levatores_costarum",
+     "supports": [
+      "summary",
+      "location"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA38615": {
+   "summary": {
+    "vi": "Đầu cánh tay của cơ gấp cổ tay trụ. Cơ gấp cổ tay trụ có hai đầu (cánh tay và trụ) và do thần kinh trụ chi phối.",
+    "en": "The humeral head of flexor carpi ulnaris, a two-headed muscle (humeral and ulnar) supplied by the ulnar nerve."
+   },
+   "location": {
+    "vi": "Xuất phát từ mỏm trên lồi cầu trong xương cánh tay qua gân gấp chung. Thần kinh trụ và động mạch trụ đi giữa hai đầu.",
+    "en": "It arises from the humerus's medial epicondyle through the common flexor tendon; the ulnar nerve and artery pass between the two heads."
+   },
+   "function": {
+    "vi": "Cơ gấp cổ tay trụ (cả cơ) gấp và khép cổ tay.",
+    "en": "Flexor carpi ulnaris as a whole flexes and adducts the wrist."
+   },
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Flexor_carpi_ulnaris_muscle",
+     "url": "https://en.wikipedia.org/wiki/Flexor_carpi_ulnaris_muscle",
+     "supports": [
+      "function",
+      "summary",
+      "location"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA38616": {
+   "summary": {
+    "vi": "Đầu trụ của cơ gấp cổ tay trụ. Cơ gấp cổ tay trụ có hai đầu (cánh tay và trụ) và do thần kinh trụ chi phối.",
+    "en": "The ulnar head of flexor carpi ulnaris, a two-headed muscle (humeral and ulnar) supplied by the ulnar nerve."
+   },
+   "location": {
+    "vi": "Xuất phát bằng một cân từ bờ trong mỏm khuỷu và hai phần ba trên bờ sau xương trụ. Thần kinh trụ và động mạch trụ đi giữa hai đầu.",
+    "en": "It arises by an aponeurosis from the inner edge of the olecranon and the upper two-thirds of the ulna's back border; the ulnar nerve and artery pass between the two heads."
+   },
+   "function": {
+    "vi": "Cơ gấp cổ tay trụ (cả cơ) gấp và khép cổ tay.",
+    "en": "Flexor carpi ulnaris as a whole flexes and adducts the wrist."
+   },
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Flexor_carpi_ulnaris_muscle",
+     "url": "https://en.wikipedia.org/wiki/Flexor_carpi_ulnaris_muscle",
+     "supports": [
+      "function",
+      "summary",
+      "location"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA38558": {
+   "summary": {
+    "vi": "Đầu cánh tay của cơ sấp tròn — đầu lớn hơn và nông hơn. Cơ sấp tròn do thần kinh giữa chi phối.",
+    "en": "The humeral head of pronator teres, the larger and more superficial of its two heads; the muscle is supplied by the median nerve."
+   },
+   "location": {
+    "vi": "Xuất phát từ mào trên lồi cầu trong ngay trên mỏm trên lồi cầu trong xương cánh tay, và từ gân gấp chung.",
+    "en": "It arises from the medial supracondylar ridge just above the humerus's medial epicondyle and from the common flexor tendon."
+   },
+   "function": {
+    "vi": "Cùng cơ sấp vuông, cơ sấp tròn làm sấp cẳng tay.",
+    "en": "With pronator quadratus, pronator teres turns the forearm palm-down (pronation)."
+   },
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Pronator_teres_muscle",
+     "url": "https://en.wikipedia.org/wiki/Pronator_teres_muscle",
+     "supports": [
+      "function",
+      "summary",
+      "location"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA38559": {
+   "summary": {
+    "vi": "Đầu trụ của cơ sấp tròn — một bó mỏng. Cơ sấp tròn do thần kinh giữa chi phối.",
+    "en": "The ulnar head of pronator teres, a thin bundle; the muscle is supplied by the median nerve."
+   },
+   "location": {
+    "vi": "Xuất phát từ bờ trong mỏm vẹt xương trụ và hợp với đầu cánh tay theo một góc nhọn.",
+    "en": "It arises from the inner side of the ulna's coronoid process and joins the humeral head at an acute angle."
+   },
+   "function": {
+    "vi": "Cùng cơ sấp vuông, cơ sấp tròn làm sấp cẳng tay.",
+    "en": "With pronator quadratus, pronator teres turns the forearm palm-down (pronation)."
+   },
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Pronator_teres_muscle",
+     "url": "https://en.wikipedia.org/wiki/Pronator_teres_muscle",
+     "supports": [
+      "function",
+      "summary",
+      "location"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA46119": {
+   "summary": {
+    "vi": "Đầu chéo của cơ khép ngón cái. Cơ khép ngón cái có hai đầu (ngang và chéo), do nhánh sâu thần kinh trụ chi phối.",
+    "en": "The oblique head of adductor pollicis, a two-headed (transverse and oblique) muscle supplied by the deep branch of the ulnar nerve."
+   },
+   "location": {
+    "vi": "Xuất phát bằng nhiều trẽ từ xương cả, nền xương bàn tay hai và ba, các dây chằng gian cổ tay và bao gân cơ gấp cổ tay quay.",
+    "en": "Several slips anchor it to the capitate, to the second and third metacarpal bases, to the ligaments between the carpal bones and to the sheath around the flexor carpi radialis tendon."
+   },
+   "function": {
+    "vi": "Cơ khép ngón cái (cả cơ) khép ngón cái.",
+    "en": "Adductor pollicis as a whole adducts the thumb."
+   },
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Adductor_pollicis_muscle",
+     "url": "https://en.wikipedia.org/wiki/Adductor_pollicis_muscle",
+     "supports": [
+      "summary",
+      "function",
+      "location"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA46120": {
+   "summary": {
+    "vi": "Đầu ngang của cơ khép ngón cái — nằm sâu. Cơ khép ngón cái có hai đầu (ngang và chéo), do nhánh sâu thần kinh trụ chi phối.",
+    "en": "The transverse head of adductor pollicis, lying deep; the two-headed muscle is supplied by the deep branch of the ulnar nerve."
+   },
+   "location": {
+    "vi": "Nằm sâu trong bàn tay.",
+    "en": "Deep in the hand."
+   },
+   "function": {
+    "vi": "Cơ khép ngón cái (cả cơ) khép ngón cái.",
+    "en": "Adductor pollicis as a whole adducts the thumb."
+   },
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Adductor_pollicis_muscle",
+     "url": "https://en.wikipedia.org/wiki/Adductor_pollicis_muscle",
+     "supports": [
+      "summary",
+      "function",
+      "location"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA46104": {
+   "summary": {
+    "vi": "Đầu nông của cơ gấp ngắn ngón cái, cơ ở bàn tay có tác dụng gấp ngón cái; đầu nông thường do nhánh tận ngoài của thần kinh giữa chi phối.",
+    "en": "The superficial head of flexor pollicis brevis, the hand muscle that bends the thumb; this head is usually supplied by the lateral terminal branch of the median nerve."
+   },
+   "location": {
+    "vi": "Xuất phát từ hai phần ba ngoài bờ dưới mạc giữ gân gấp và từ củ xương thang; đi dọc phía ngoài gân cơ gấp ngón cái dài.",
+    "en": "Its origin is the trapezium's tubercle plus the outer two-thirds of the flexor retinaculum's lower border; it runs beside the radial side of the flexor pollicis longus tendon."
+   },
+   "function": {
+    "vi": "Cơ gấp ngắn ngón cái (cả cơ) gấp ngón cái.",
+    "en": "Flexor pollicis brevis as a whole flexes the thumb."
+   },
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Flexor_pollicis_brevis_muscle",
+     "url": "https://en.wikipedia.org/wiki/Flexor_pollicis_brevis_muscle",
+     "supports": [
+      "summary",
+      "function",
+      "location"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA38497": {
+   "summary": {
+    "vi": "Cơ duỗi cổ tay quay ngắn là cơ ở cẳng tay, ngắn và dày hơn cơ duỗi cổ tay quay dài cùng tên.",
+    "en": "Extensor carpi radialis brevis is a forearm muscle, shorter and thicker than its namesake, the longus."
+   },
+   "location": {
+    "vi": "Xuất phát từ mỏm trên lồi cầu ngoài xương cánh tay qua gân duỗi chung, từ dây chằng bên quay của khớp khuỷu, từ một cân phủ mặt nó và từ các vách gian cơ.",
+    "en": "It arises from the lateral epicondyle via the common extensor tendon, from the elbow's radial collateral ligament, from an aponeurosis over its surface and from the intermuscular septa."
+   },
+   "function": {
+    "vi": "Duỗi và dạng cổ tay.",
+    "en": "Extends and abducts the wrist."
+   },
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Extensor_carpi_radialis_brevis_muscle",
+     "url": "https://en.wikipedia.org/wiki/Extensor_carpi_radialis_brevis_muscle",
+     "supports": [
+      "summary",
+      "function",
+      "location"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA38494": {
+   "summary": {
+    "vi": "Cơ duỗi cổ tay quay dài là một trong năm cơ chính điều khiển cử động cổ tay; nó khá dài và do thần kinh quay chi phối.",
+    "en": "Among the five principal wrist movers, extensor carpi radialis longus is a fairly long muscle supplied by the radial nerve."
+   },
+   "location": {
+    "vi": "Bắt đầu ở mặt ngoài xương cánh tay và bám vào nền xương bàn tay hai (xương bàn của ngón trỏ).",
+    "en": "It starts on the outer side of the humerus and attaches to the base of the second metacarpal, that of the index finger."
+   },
+   "function": {
+    "vi": "Duỗi cổ tay; vì chạy dọc phía quay nên nó còn dạng bàn tay tại cổ tay (dạng về phía quay, phía ngón cái).",
+    "en": "Extends the wrist and, running along the radial side, also tilts the hand toward the thumb side at the wrist (radial abduction)."
+   },
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Extensor_carpi_radialis_longus_muscle",
+     "url": "https://en.wikipedia.org/wiki/Extensor_carpi_radialis_longus_muscle",
+     "supports": [
+      "summary",
+      "location",
+      "function"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA71319": {
+   "summary": {
+    "vi": "Nhóm cơ gian cốt mu tay: bốn cơ ở mu bàn tay, mỗi bàn tay bốn cơ. Chúng là cơ hai lông chim, mỗi cơ xuất phát bằng hai đầu từ hai mặt kề nhau của các xương bàn tay.",
+    "en": "The dorsal interossei of the hand: four muscles on the back of each hand. They are bipennate, each starting by two heads from the facing sides of neighbouring metacarpals."
+   },
+   "location": {
+    "vi": "Giữa các xương bàn tay, ở mặt mu; bám vào nền đốt gần và vào trẽ duỗi của ngón tương ứng.",
+    "en": "Between the metacarpals on the back of the hand; they insert on the proximal phalanx bases and the matching extensor expansions."
+   },
+   "function": {
+    "vi": "Dạng (xòe) ngón trỏ, ngón giữa và ngón nhẫn ra xa đường giữa bàn tay (trục ngón giữa), hỗ trợ gấp khớp bàn – ngón và duỗi các khớp liên đốt của ba ngón ấy.",
+    "en": "Fan the index, middle and ring fingers outward from the line of the middle finger, and assist in bending those fingers at the knuckles while straightening their finger joints."
+   },
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Dorsal_interossei_of_the_hand",
+     "url": "https://en.wikipedia.org/wiki/Dorsal_interossei_of_the_hand",
+     "supports": [
+      "summary",
+      "function",
+      "location"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA71318": {
+   "summary": {
+    "vi": "Nhóm cơ giun bàn tay: bốn cơ nhỏ hình con giun ở mỗi bàn tay, thuộc cơ nội tại bàn tay. Chúng đặc biệt ở chỗ không bám vào xương.",
+    "en": "The lumbricals of the hand: four small worm-like intrinsic muscles in each hand, unusual in having no bony attachment."
+   },
+   "location": {
+    "vi": "Đầu gần bám vào bờ quay các gân cơ gấp các ngón sâu, đầu xa bám vào trẽ duỗi. Cơ giun một và hai là cơ một lông chim; cơ ba và bốn là cơ hai lông chim.",
+    "en": "They attach at one end to the radial side of the flexor digitorum profundus tendons and at the other to the extensor expansions. The first two are unipennate, the third and fourth bipennate."
+   },
+   "function": {
+    "vi": "Gấp các khớp bàn – ngón và duỗi các khớp liên đốt.",
+    "en": "Flex the knuckle (metacarpophalangeal) joints and straighten the finger (interphalangeal) joints."
+   },
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Lumbricals_of_the_hand",
+     "url": "https://en.wikipedia.org/wiki/Lumbricals_of_the_hand",
+     "supports": [
+      "summary",
+      "function",
+      "location"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA71320": {
+   "summary": {
+    "vi": "Nhóm cơ gian cốt gan tay: bốn cơ — một ở ngón cái, đôi khi không có, và ba cơ nhỏ một lông chim ở giữa bàn tay — nhỏ hơn các cơ gian cốt mu tay.",
+    "en": "The palmar interossei: four muscles, one at the thumb that is occasionally absent and three small unipennate central ones, all smaller than the dorsal interossei."
+   },
+   "location": {
+    "vi": "Ba cơ trung tâm nằm giữa các xương bàn tay, gắn với ngón trỏ, ngón nhẫn và ngón út. Mỗi cơ xuất phát dọc thân xương bàn của chính ngón nó tác động và bám vào nền đốt gần cùng trẽ duỗi của ngón ấy.",
+    "en": "The three central ones lie between the metacarpals and attach to the index, ring and little fingers. Each starts along the shaft of the metacarpal of the finger it moves and inserts on that finger's proximal phalanx base and extensor expansion."
+   },
+   "function": null,
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Palmar_interossei_muscles",
+     "url": "https://en.wikipedia.org/wiki/Palmar_interossei_muscles",
+     "supports": [
+      "summary",
+      "location"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA13402": {
+   "summary": {
+    "vi": "Cơ răng sau dưới có hình tứ giác không đều, rộng hơn cơ răng sau trên và cách xa cơ này.",
+    "en": "Serratus posterior inferior is an irregular four-sided muscle, broader than serratus posterior superior and well separated from it."
+   },
+   "location": {
+    "vi": "Ở chỗ nối vùng ngực và vùng thắt lưng. Xuất phát bằng một cân mỏng từ mỏm gai hai đốt ngực dưới và hai đốt thắt lưng trên; chạy chéo lên và ra ngoài, chia thành bốn trẽ bám vào bờ dưới bốn xương sườn dưới, quá góc sườn một chút.",
+    "en": "At the junction of the thoracic and lumbar regions. A thin aponeurosis anchors it to the spines of the two lowest thoracic and two highest lumbar vertebrae; slanting up and out, it splits into four slips attached to the lower edges of the bottom four ribs, just past their angles."
+   },
+   "function": {
+    "vi": "Kéo các xương sườn dưới ra sau và xuống, hỗ trợ xoay và duỗi thân.",
+    "en": "Pulls the lower ribs back and down, assisting rotation and extension of the trunk."
+   },
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Serratus_posterior_inferior_muscle",
+     "url": "https://en.wikipedia.org/wiki/Serratus_posterior_inferior_muscle",
+     "supports": [
+      "summary",
+      "location",
+      "function"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA13401": {
+   "summary": {
+    "vi": "Cơ răng sau trên là cơ mỏng hình tứ giác.",
+    "en": "Serratus posterior superior is a thin, four-sided muscle."
+   },
+   "location": {
+    "vi": "Ở phần trên – sau lồng ngực, sâu dưới các cơ trám. Xuất phát bằng một cân từ phần dưới dây chằng gáy, mỏm gai C7–T3 và dây chằng trên gai; bám bằng bốn trẽ thịt vào bờ trên xương sườn hai đến năm, quá góc sườn.",
+    "en": "High on the back of the chest, beneath the rhomboids. An aponeurosis ties it to the lower nuchal ligament, the spines of C7 to T3 and the supraspinous ligament, and four fleshy slips attach it to the upper edges of ribs two to five beyond their angles."
+   },
+   "function": null,
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Serratus_posterior_superior_muscle",
+     "url": "https://en.wikipedia.org/wiki/Serratus_posterior_superior_muscle",
+     "supports": [
+      "summary",
+      "location"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA71442": {
+   "summary": {
+    "vi": "Nhóm cơ gian ngang trước ở cổ. Cơ gian ngang là các cơ nhỏ nằm giữa mỏm ngang các đốt sống; ở cổ chúng phát triển nhất, xếp thành cặp.",
+    "en": "The anterior cervical intertransversarii. Intertransversarii are small muscles between vertebral transverse processes, best developed in the neck, where they come in pairs."
+   },
+   "location": {
+    "vi": "Nối các củ trước của mỏm ngang hai đốt sống cổ liền kề.",
+    "en": "They join the anterior tubercles of the transverse processes of adjacent cervical vertebrae."
+   },
+   "function": null,
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Intertransversarii",
+     "url": "https://en.wikipedia.org/wiki/Intertransversarii",
+     "supports": [
+      "summary",
+      "location"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA71443": {
+   "summary": {
+    "vi": "Nhóm cơ gian ngang sau ở cổ. Cơ gian ngang là các cơ nhỏ nằm giữa mỏm ngang các đốt sống; ở cổ chúng phát triển nhất, xếp thành cặp.",
+    "en": "The posterior cervical intertransversarii. Intertransversarii are small muscles between vertebral transverse processes, best developed in the neck, where they come in pairs."
+   },
+   "location": {
+    "vi": "Nối các củ sau của mỏm ngang hai đốt sống cổ liền kề.",
+    "en": "They join the posterior tubercles of the transverse processes of adjacent cervical vertebrae."
+   },
+   "function": null,
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Intertransversarii",
+     "url": "https://en.wikipedia.org/wiki/Intertransversarii",
+     "supports": [
+      "summary",
+      "location"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA71309": {
+   "summary": {
+    "vi": "Nhóm cơ gian gai cổ. Cơ gian gai là những bó cơ ngắn xếp thành cặp giữa mỏm gai các đốt sống liền kề, mỗi bên dây chằng gian gai một bó.",
+    "en": "The cervical interspinales. Interspinales are short paired bundles between the spinous processes of neighbouring vertebrae, one on each side of the interspinous ligament."
+   },
+   "location": {
+    "vi": "Ở cổ chúng rõ nhất, gồm sáu cặp: cặp đầu giữa đốt trục và đốt cổ ba, cặp cuối giữa đốt cổ bảy và đốt ngực một; chúng bám vào đỉnh mỏm gai.",
+    "en": "In the neck they are most distinct: six pairs, the first between the axis and the third cervical vertebra and the last between the seventh cervical and first thoracic, fixed to the tips of the spines."
+   },
+   "function": null,
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Interspinales_muscles",
+     "url": "https://en.wikipedia.org/wiki/Interspinales_muscles",
+     "supports": [
+      "summary",
+      "location"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA71307": {
+   "summary": {
+    "vi": "Nhóm cơ gian gai thắt lưng. Cơ gian gai là những bó cơ ngắn xếp thành cặp giữa mỏm gai các đốt sống liền kề, mỗi bên dây chằng gian gai một bó.",
+    "en": "The lumbar interspinales. Interspinales are short paired bundles between the spinous processes of neighbouring vertebrae, one on each side of the interspinous ligament."
+   },
+   "location": {
+    "vi": "Ở thắt lưng có bốn cặp, nằm trong các khoảng giữa năm đốt thắt lưng; đôi khi có thêm một cặp giữa đốt ngực cuối và thắt lưng một, và một cặp giữa thắt lưng năm và xương cùng.",
+    "en": "There are four pairs in the gaps between the five lumbar vertebrae, occasionally with an extra pair between the last thoracic and first lumbar and another between the last lumbar vertebra and the sacrum."
+   },
+   "function": null,
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Interspinales_muscles",
+     "url": "https://en.wikipedia.org/wiki/Interspinales_muscles",
+     "supports": [
+      "summary",
+      "location"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA32525": {
+   "summary": {
+    "vi": "Cơ thẳng đầu sau lớn là một cơ ở phần trên mặt sau cổ, thuộc nhóm cơ dưới chẩm; do thần kinh dưới chẩm (nhánh sau dây sống C1) chi phối.",
+    "en": "Rectus capitis posterior major is an upper back-of-neck muscle, one of the suboccipital group, supplied by the suboccipital nerve (posterior ramus of C1)."
+   },
+   "location": {
+    "vi": "Dưới bám vào mỏm gai đốt trục (đốt cổ hai); trên bám vào mặt ngoài xương chẩm, ở và quanh phần bên đường gáy dưới.",
+    "en": "Below it attaches to the spine of the axis, the second cervical vertebra; above, to the outer occipital bone on and around the side of the inferior nuchal line."
+   },
+   "function": {
+    "vi": "Duỗi đầu và xoay đầu về cùng bên.",
+    "en": "Extends the head and turns it toward its own side."
+   },
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Rectus_capitis_posterior_major_muscle",
+     "url": "https://en.wikipedia.org/wiki/Rectus_capitis_posterior_major_muscle",
+     "supports": [
+      "summary",
+      "location",
+      "function"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA32526": {
+   "summary": {
+    "vi": "Cơ thẳng đầu sau nhỏ là một cơ ở phần trên mặt sau cổ, thuộc nhóm cơ dưới chẩm; do thần kinh dưới chẩm (nhánh sau dây sống cổ một) chi phối.",
+    "en": "Rectus capitis posterior minor is an upper back-of-neck muscle in the suboccipital group, supplied by the suboccipital nerve (posterior ramus of the first cervical nerve)."
+   },
+   "location": {
+    "vi": "Dưới bám vào cung sau đốt đội; trên bám vào xương chẩm ở và dưới đường gáy dưới.",
+    "en": "Below it attaches to the atlas's posterior arch; above, to the occiput on and beneath the inferior nuchal line."
+   },
+   "function": {
+    "vi": "Là cơ duỗi đầu yếu.",
+    "en": "Acts as a weak extensor of the head."
+   },
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Rectus_capitis_posterior_minor_muscle",
+     "url": "https://en.wikipedia.org/wiki/Rectus_capitis_posterior_minor_muscle",
+     "supports": [
+      "summary",
+      "location",
+      "function"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA46610": {
+   "summary": {
+    "vi": "Phần chéo của cơ nhẫn – giáp. Cơ nhẫn – giáp là cơ hình quạt ở mặt ngoài thanh quản, là cơ căng duy nhất của thanh quản hỗ trợ phát âm; do thần kinh thanh quản trên chi phối.",
+    "en": "The oblique part of cricothyroid, the fan-shaped muscle on the outside of the larynx and its only tensor aiding voice production, supplied by the superior laryngeal nerve."
+   },
+   "location": {
+    "vi": "Cơ xuất phát từ mặt trước – ngoài sụn nhẫn. Phần chéo đi ra sau và ra ngoài, bám vào sừng dưới sụn giáp.",
+    "en": "The muscle arises from the front-outer face of the cricoid; the oblique part runs back and outward to the inferior horn of the thyroid cartilage."
+   },
+   "function": {
+    "vi": "Cơ nhẫn – giáp (cả cơ) nghiêng sụn giáp ra trước, góp phần làm căng dây thanh và tăng cao độ giọng.",
+    "en": "The cricothyroid as a whole tips the thyroid cartilage forward, helping tighten the vocal cords and raise the voice's pitch."
+   },
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Cricothyroid_muscle",
+     "url": "https://en.wikipedia.org/wiki/Cricothyroid_muscle",
+     "supports": [
+      "summary",
+      "function",
+      "location"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA46609": {
+   "summary": {
+    "vi": "Phần thẳng của cơ nhẫn – giáp. Cơ nhẫn – giáp là cơ hình quạt ở mặt ngoài thanh quản, là cơ căng duy nhất của thanh quản hỗ trợ phát âm; do thần kinh thanh quản trên chi phối.",
+    "en": "The straight part of cricothyroid, the fan-shaped muscle on the outside of the larynx and its only tensor aiding voice production, supplied by the superior laryngeal nerve."
+   },
+   "location": {
+    "vi": "Cơ xuất phát từ mặt trước – ngoài sụn nhẫn. Phần thẳng đi ra sau và lên trên, bám vào bờ dưới mảnh sụn giáp.",
+    "en": "The muscle arises from the front-outer face of the cricoid; the straight part runs back and upward to the lower edge of the thyroid lamina."
+   },
+   "function": {
+    "vi": "Cơ nhẫn – giáp (cả cơ) nghiêng sụn giáp ra trước, góp phần làm căng dây thanh và tăng cao độ giọng.",
+    "en": "The cricothyroid as a whole tips the thyroid cartilage forward, helping tighten the vocal cords and raise the voice's pitch."
+   },
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Cricothyroid_muscle",
+     "url": "https://en.wikipedia.org/wiki/Cricothyroid_muscle",
+     "supports": [
+      "summary",
+      "function",
+      "location"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA46280": {
+   "summary": {
+    "vi": "Phần chéo trên của cơ dài cổ. Cơ dài cổ nằm ở mặt trước cột sống, từ đốt đội tới đốt ngực ba; rộng ở giữa, nhọn hai đầu, gồm ba phần: chéo trên, chéo dưới và thẳng.",
+    "en": "The superior oblique part of longus colli, which lies on the front of the spine from the atlas to the third thoracic vertebra, broad in the middle and pointed at both ends, in three parts: superior oblique, inferior oblique and vertical."
+   },
+   "location": {
+    "vi": "Xuất phát từ củ trước mỏm ngang đốt cổ ba, bốn, năm, đi chéo lên và vào trong, bám bằng một gân hẹp vào củ ở cung trước đốt đội.",
+    "en": "From the anterior tubercles of the third to fifth cervical transverse processes it slants up and inward to a narrow tendon on the tubercle of the atlas's anterior arch."
+   },
+   "function": null,
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Longus_colli_muscle",
+     "url": "https://en.wikipedia.org/wiki/Longus_colli_muscle",
+     "supports": [
+      "summary",
+      "location"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA46281": {
+   "summary": {
+    "vi": "Phần chéo dưới của cơ dài cổ. Cơ dài cổ nằm ở mặt trước cột sống, từ đốt đội tới đốt ngực ba; rộng ở giữa, nhọn hai đầu, gồm ba phần: chéo trên, chéo dưới và thẳng. Phần chéo dưới nhỏ nhất.",
+    "en": "The inferior oblique part of longus colli, which lies on the front of the spine from the atlas to the third thoracic vertebra, broad in the middle and pointed at both ends, in three parts: superior oblique, inferior oblique and vertical. The inferior oblique part is the smallest."
+   },
+   "location": {
+    "vi": "Xuất phát từ mặt trước thân hai hoặc ba đốt ngực đầu, đi chéo lên và ra ngoài, bám vào củ trước mỏm ngang đốt cổ năm và sáu.",
+    "en": "Starting on the fronts of the top two or three thoracic vertebral bodies, it slants up and outward to the anterior tubercles on the fifth and sixth cervical transverse processes."
+   },
+   "function": null,
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Longus_colli_muscle",
+     "url": "https://en.wikipedia.org/wiki/Longus_colli_muscle",
+     "supports": [
+      "summary",
+      "location"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA46282": {
+   "summary": {
+    "vi": "Phần thẳng (giữa) của cơ dài cổ. Cơ dài cổ nằm ở mặt trước cột sống, từ đốt đội tới đốt ngực ba; rộng ở giữa, nhọn hai đầu, gồm ba phần: chéo trên, chéo dưới và thẳng.",
+    "en": "The vertical part of longus colli, which lies on the front of the spine from the atlas to the third thoracic vertebra, broad in the middle and pointed at both ends, in three parts: superior oblique, inferior oblique and vertical."
+   },
+   "location": {
+    "vi": "Phía dưới xuất phát từ mặt trước thân ba đốt ngực trên và ba đốt cổ dưới; bám vào mặt trước thân đốt cổ hai, ba và bốn.",
+    "en": "It rises from the front of the bodies of the top three thoracic and bottom three cervical vertebrae and attaches to the fronts of the second to fourth cervical bodies."
+   },
+   "function": null,
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Longus_colli_muscle",
+     "url": "https://en.wikipedia.org/wiki/Longus_colli_muscle",
+     "supports": [
+      "summary",
+      "location"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA46733": {
+   "summary": {
+    "vi": "Cơ lưỡi gà là cơ có đôi của khẩu cái mềm (một trong năm cơ khẩu cái), chiếm phần lớn khối lưỡi gà; do đám rối hầu của thần kinh lang thang (dây X) chi phối.",
+    "en": "Musculus uvulae is a paired soft-palate muscle, one of five, forming most of the uvula's bulk; it is supplied by the vagus nerve (X) through the pharyngeal plexus."
+   },
+   "location": {
+    "vi": "Nằm giữa hai lá của cân khẩu cái; từ nguyên ủy chạy ra sau, phía trên dải treo do cơ nâng màn hầu tạo nên.",
+    "en": "Between the two layers of the palatine aponeurosis; from its origin it runs backward above the sling formed by levator veli palatini."
+   },
+   "function": {
+    "vi": "Khi hai bên cùng co, làm ngắn lưỡi gà.",
+    "en": "When both sides contract it shortens the uvula."
+   },
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Musculus_uvulae",
+     "url": "https://en.wikipedia.org/wiki/Musculus_uvulae",
+     "supports": [
+      "summary",
+      "function",
+      "location"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA34687": {
+   "summary": {
+    "vi": "Phần đòn (đầu đòn) của cơ ngực lớn; nó nhận chi phối từ rễ thần kinh C5, C6 qua thân trên và bó ngoài đám rối cánh tay, nhánh thần kinh ngực ngoài.",
+    "en": "The clavicular part (head) of pectoralis major, which gets its nerve supply from roots C5 and C6 by way of the brachial plexus's upper trunk and lateral cord and then the lateral pectoral nerve."
+   },
+   "location": {
+    "vi": "Nằm sát cơ delta.",
+    "en": "It lies close to the deltoid."
+   },
+   "function": {
+    "vi": "Đầu đòn gấp xương cánh tay; nó góp phần gấp, khép ngang và xoay trong xương cánh tay.",
+    "en": "The clavicular head flexes the humerus and contributes to its flexion, horizontal adduction and inward rotation."
+   },
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Pectoralis_major_muscle",
+     "url": "https://en.wikipedia.org/wiki/Pectoralis_major_muscle",
+     "supports": [
+      "summary",
+      "function",
+      "location"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA52621": {
+   "summary": {
+    "vi": "Thần kinh mắt là thần kinh cảm giác của đầu, nhánh chia thứ nhất và nhỏ nhất trong ba nhánh chia của thần kinh sinh ba (dây sọ V).",
+    "en": "The ophthalmic nerve is a sensory nerve of the head and the first, smallest of the trigeminal nerve's three divisions."
+   },
+   "location": {
+    "vi": "Tách từ phần trên hạch sinh ba, chạy ra trước dọc thành ngoài xoang hang, dưới thần kinh vận nhãn và thần kinh ròng rọc, rồi vào ổ mắt qua khe ổ mắt trên.",
+    "en": "It leaves the upper trigeminal ganglion, runs forward along the cavernous sinus's outer wall beneath the oculomotor and trochlear nerves, and enters the orbit via the superior orbital fissure."
+   },
+   "function": {
+    "vi": "Ba nhánh lớn của nó chi phối cảm giác cho mắt, da mặt phần trên, da đầu phía trước và một số cấu trúc khác của đầu.",
+    "en": "Its three major branches carry sensation from the eye, the upper facial skin, the front of the scalp and other head structures."
+   },
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Ophthalmic_nerve",
+     "url": "https://en.wikipedia.org/wiki/Ophthalmic_nerve",
+     "supports": [
+      "summary",
+      "location",
+      "function"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA52572": {
+   "summary": {
+    "vi": "Nhánh trên (nhánh nhỏ hơn) của thần kinh vận nhãn (dây sọ III). Khi vào ổ mắt qua khe ổ mắt trên, thần kinh vận nhãn chia thành nhánh trên và nhánh dưới.",
+    "en": "The superior, smaller division of the oculomotor nerve (cranial nerve III), which splits into upper and lower branches as it enters the orbit through the superior orbital fissure."
+   },
+   "location": {
+    "vi": "Đi vào trong, vắt qua phía trên dây thần kinh thị giác.",
+    "en": "It passes inward over the optic nerve."
+   },
+   "function": {
+    "vi": "Chi phối cơ thẳng trên và cơ nâng mi trên.",
+    "en": "Supplies superior rectus and levator palpebrae superioris."
+   },
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Oculomotor_nerve",
+     "url": "https://en.wikipedia.org/wiki/Oculomotor_nerve",
+     "supports": [
+      "summary",
+      "location",
+      "function"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA52573": {
+   "summary": {
+    "vi": "Nhánh dưới (nhánh lớn hơn) của thần kinh vận nhãn (dây sọ III); nó chia tiếp thành ba nhánh. Khi vào ổ mắt qua khe ổ mắt trên, thần kinh vận nhãn chia thành nhánh trên và nhánh dưới.",
+    "en": "The inferior, larger division of the oculomotor nerve (cranial nerve III), which divides again into three branches; the nerve splits into upper and lower branches on entering the orbit through the superior orbital fissure."
+   },
+   "location": {
+    "vi": "Một trong ba nhánh của nó đi dưới dây thần kinh thị giác tới cơ thẳng trong.",
+    "en": "One of its three branches passes under the optic nerve to medial rectus."
+   },
+   "function": null,
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Oculomotor_nerve",
+     "url": "https://en.wikipedia.org/wiki/Oculomotor_nerve",
+     "supports": [
+      "summary",
+      "location"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA7041": {
+   "summary": {
+    "vi": "Thần kinh mi ngắn là các dây thần kinh ở ổ mắt quanh nhãn cầu, nhánh của hạch mi.",
+    "en": "The short ciliary nerves are orbital nerves around the eye, branches of the ciliary ganglion."
+   },
+   "location": {
+    "vi": "Tách từ phần trước hạch mi thành hai bó nối với góc trên và góc dưới của hạch; bó dưới lớn hơn bó trên.",
+    "en": "They leave the front of the ciliary ganglion in two bundles linked to its upper and lower angles, the lower bundle being the larger."
+   },
+   "function": {
+    "vi": "Mang sợi đối giao cảm và giao cảm tới cơ mi, mống mắt và giác mạc. Tổn thương có thể làm mất phản xạ đồng tử với ánh sáng hoặc gây giãn đồng tử.",
+    "en": "Carry parasympathetic and sympathetic fibres to the ciliary muscle, iris and cornea; damage can abolish the pupillary light reflex or cause a dilated pupil."
+   },
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Short_ciliary_nerves",
+     "url": "https://en.wikipedia.org/wiki/Short_ciliary_nerves",
+     "supports": [
+      "summary",
+      "function",
+      "location"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA83740": {
+   "summary": {
+    "vi": "Hố gian cuống là một chỗ lõm sâu ở mặt bụng não giữa, giữa hai trụ đại não; vùng này có hình gần như thoi ở nền não.",
+    "en": "The interpeduncular fossa is a deep hollow on the underside of the midbrain between the two cerebral crura, a roughly rhomboid area at the base of the brain."
+   },
+   "location": {
+    "vi": "Ở nền não, mặt bụng não giữa. Thành bên của hố có một rãnh — rãnh vận nhãn.",
+    "en": "At the base of the brain on the underside of the midbrain; its side wall bears a groove, the oculomotor sulcus."
+   },
+   "function": null,
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Interpeduncular_fossa",
+     "url": "https://en.wikipedia.org/wiki/Interpeduncular_fossa",
+     "supports": [
+      "summary",
+      "location"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA61975": {
+   "summary": {
+    "vi": "Lá tận cùng là một lớp mỏng tạo nên phần giữa thành não trước.",
+    "en": "The lamina terminalis is a thin sheet forming the midline part of the forebrain wall."
+   },
+   "location": {
+    "vi": "Trải từ lỗ gian não thất (lỗ Monro) tới ngách ở nền cuống thị (dây thần kinh thị giác).",
+    "en": "Its extent runs from the foramen of Monro, the interventricular opening, as far as the small recess where the optic stalk begins."
+   },
+   "function": {
+    "vi": "Chứa cơ quan mạch của lá tận cùng, nơi điều hòa nồng độ thẩm thấu của máu.",
+    "en": "Inside it sits the vascular organ of the lamina terminalis, which keeps the blood's osmotic concentration in check."
+   },
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Lamina_terminalis",
+     "url": "https://en.wikipedia.org/wiki/Lamina_terminalis",
+     "supports": [
+      "summary",
+      "location",
+      "function"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA62080": {
+   "summary": {
+    "vi": "Vân tủy đồi thị là một phần của vùng trên đồi, một bó chất trắng hai bên thuộc đoạn đầu hệ dẫn truyền gian não lưng.",
+    "en": "The stria medullaris of the thalamus is part of the epithalamus, a paired white-matter tract forming the first stretch of the dorsal diencephalic conduction system."
+   },
+   "location": {
+    "vi": "Tạo một gờ nằm ngang ở mặt trong đồi thị.",
+    "en": "It forms a horizontal ridge on the inner face of the thalamus."
+   },
+   "function": {
+    "vi": "Mang sợi đến từ các nhân vách, vùng trước thị – dưới đồi bên và các nhân trước đồi thị tới cuống tùng (habenula).",
+    "en": "Carries incoming fibres from the septal nuclei, the lateral preoptic–hypothalamic region and the anterior thalamic nuclei to the habenula."
+   },
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Stria_medullaris_of_thalamus",
+     "url": "https://en.wikipedia.org/wiki/Stria_medullaris_of_thalamus",
+     "supports": [
+      "summary",
+      "function",
+      "location"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA61974": {
+   "summary": {
+    "vi": "Vân tận cùng là một dải sợi chạy dọc bờ ngoài mặt não thất của đồi thị.",
+    "en": "The stria terminalis is a band of fibres along the outer edge of the thalamus's ventricular surface."
+   },
+   "location": {
+    "vi": "Phủ lên tĩnh mạch đồi thị – thể vân trên, đánh dấu ranh giới giữa đồi thị và nhân đuôi.",
+    "en": "It covers the superior thalamostriate vein and marks the boundary between thalamus and caudate nucleus."
+   },
+   "function": {
+    "vi": "Là một đường ra chính của hạnh nhân, đi từ phần trung tâm – trong của hạnh nhân tới nhân bụng – trong vùng dưới đồi.",
+    "en": "A major output route of the amygdala, running from its centromedial division to the hypothalamus's ventromedial nucleus."
+   },
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Stria_terminalis",
+     "url": "https://en.wikipedia.org/wiki/Stria_terminalis",
+     "supports": [
+      "summary",
+      "function",
+      "location"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA62327": {
+   "summary": {
+    "vi": "Củ xám là phần vùng dưới đồi tham gia tạo sàn não thất ba. Vùng củ là một trong ba vùng của vùng dưới đồi, cùng vùng giao thoa và vùng thể vú.",
+    "en": "The tuber cinereum is the part of the hypothalamus that helps form the floor of the third ventricle; the tuberal region is one of the hypothalamus's three regions, with the chiasmatic and mammillary."
+   },
+   "location": {
+    "vi": "Giữa giao thoa thị giác và các thể vú.",
+    "en": "Between the optic chiasm and the mammillary bodies."
+   },
+   "function": null,
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Tuber_cinereum",
+     "url": "https://en.wikipedia.org/wiki/Tuber_cinereum",
+     "supports": [
+      "summary",
+      "location"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA70701": {
+   "summary": {
+    "vi": "Phần trước của hồi thái dương trên. Hồi thái dương trên là một trong ba (đôi khi hai) hồi của thùy thái dương.",
+    "en": "The anterior part of the superior temporal gyrus, one of the temporal lobe's three (sometimes two) gyri."
+   },
+   "location": {
+    "vi": "Ở mặt bên đầu, hơi phía trên tai ngoài.",
+    "en": "On the side of the head, a little above the outer ear."
+   },
+   "function": {
+    "vi": "Hồi thái dương trên chứa vỏ thính giác, nơi xử lý âm thanh.",
+    "en": "The superior temporal gyrus holds the auditory cortex, which processes sound."
+   },
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Superior_temporal_gyrus",
+     "url": "https://en.wikipedia.org/wiki/Superior_temporal_gyrus",
+     "supports": [
+      "summary",
+      "location",
+      "function"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA70703": {
+   "summary": {
+    "vi": "Phần sau của hồi thái dương trên. Hồi thái dương trên là một trong ba (đôi khi hai) hồi của thùy thái dương.",
+    "en": "The posterior part of the superior temporal gyrus, one of the temporal lobe's three (sometimes two) gyri."
+   },
+   "location": {
+    "vi": "Ở mặt bên đầu, hơi phía trên tai ngoài.",
+    "en": "On the side of the head, a little above the outer ear."
+   },
+   "function": {
+    "vi": "Hồi thái dương trên chứa vỏ thính giác, nơi xử lý âm thanh.",
+    "en": "The superior temporal gyrus holds the auditory cortex, which processes sound."
+   },
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Superior_temporal_gyrus",
+     "url": "https://en.wikipedia.org/wiki/Superior_temporal_gyrus",
+     "supports": [
+      "summary",
+      "location",
+      "function"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA78497": {
+   "summary": {
+    "vi": "Ống trung tâm (ống nội tủy) là khoang chứa dịch não tủy chạy suốt tủy sống, có cùng lớp lót màng nội tủy với hệ não thất.",
+    "en": "The central canal is the fluid-filled channel running through the spinal cord, sharing the ependymal lining of the brain's ventricles."
+   },
+   "location": {
+    "vi": "Nằm dưới và nối với hệ não thất, từ đó nhận dịch não tủy.",
+    "en": "It lies below the ventricular system and is connected to it, receiving cerebrospinal fluid from it."
+   },
+   "function": null,
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Central_canal",
+     "url": "https://en.wikipedia.org/wiki/Central_canal",
+     "supports": [
+      "summary",
+      "location"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA62032": {
+   "summary": {
+    "vi": "Cuống tùng (habenula) là cấu trúc nơ-ron nhỏ hai bên, không lớn hơn hạt đậu. Mỗi nhân cuống tùng chia thành hai vùng: cuống tùng trong và cuống tùng ngoài.",
+    "en": "The habenula is a small paired neuronal structure no bigger than a pea; each habenular nucleus has two regions, the medial and lateral habenula."
+   },
+   "location": {
+    "vi": "Ở vùng trên đồi, giáp não thất ba, nằm trước tuyến tùng.",
+    "en": "In the epithalamus, bordering the third ventricle, in front of the pineal gland."
+   },
+   "function": {
+    "vi": "Nối các vùng não trước với não giữa, làm trạm tích hợp xử lý cảm xúc và cảm giác; nó tổng hợp thông tin từ hệ viền, cảm giác và hạch nền để định hướng phản ứng phù hợp.",
+    "en": "Links forebrain to midbrain and acts as a hub for combining emotional and sensory processing, pooling limbic, sensory and basal-ganglia input to guide suitable responses."
+   },
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Habenula",
+     "url": "https://en.wikipedia.org/wiki/Habenula",
+     "supports": [
+      "summary",
+      "location",
+      "function"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA62072": {
+   "summary": {
+    "vi": "Mép sau (mép trên đồi) là một dải sợi trắng tròn bắt chéo đường giữa; nó là một phần của vùng trên đồi.",
+    "en": "The posterior (epithalamic) commissure is a rounded band of white fibres crossing the midline; it is part of the epithalamus."
+   },
+   "location": {
+    "vi": "Ở mặt lưng đầu trên của cống não.",
+    "en": "On the dorsal side of the upper (rostral) end of the cerebral aqueduct."
+   },
+   "function": null,
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Posterior_commissure",
+     "url": "https://en.wikipedia.org/wiki/Posterior_commissure",
+     "supports": [
+      "summary",
+      "location"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA83966": {
+   "summary": {
+    "vi": "Lều tiểu não là một trong bốn nếp màng cứng chia khoang sọ thành bốn ngăn không hoàn toàn.",
+    "en": "The tentorium cerebelli is one of four folds of dura mater that divide the cranial cavity into four incomplete compartments."
+   },
+   "location": {
+    "vi": "Ngăn tiểu não với đại não, tạo vùng trên lều (đại não) và vùng dưới lều (tiểu não). Bờ tự do hình chữ U của nó chừa lối cho não giữa đi qua.",
+    "en": "It separates cerebellum from cerebrum, creating a supratentorial region (cerebrum) and an infratentorial one (cerebellum); its U-shaped free edge leaves a gap for the midbrain."
+   },
+   "function": null,
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Tentorium_cerebelli",
+     "url": "https://en.wikipedia.org/wiki/Tentorium_cerebelli",
+     "supports": [
+      "summary",
+      "location"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA59511": {
+   "summary": {
+    "vi": "Sụn mũi bên (sụn bên trên, mỏm bên của sụn vách mũi) là một sụn dẹt hình tam giác.",
+    "en": "The lateral nasal cartilage, also called the upper lateral cartilage or lateral process of the septal cartilage, is flat and triangular."
+   },
+   "location": {
+    "vi": "Nằm dưới bờ dưới xương mũi. Bờ trên bám vào xương mũi và mỏm trán xương hàm trên; bờ trước liền với sụn vách mũi ở phía trên.",
+    "en": "Below the lower edge of the nasal bone. Its upper edge attaches to the nasal bone and the maxilla's frontal process, and its front edge joins the septal cartilage above."
+   },
+   "function": null,
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Lateral_nasal_cartilage",
+     "url": "https://en.wikipedia.org/wiki/Lateral_nasal_cartilage",
+     "supports": [
+      "summary",
+      "location"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA59503": {
+   "summary": {
+    "vi": "Sụn vách mũi (sụn tứ giác) là sụn trong, có hình gần như tứ giác, dày ở bờ hơn ở giữa.",
+    "en": "The septal nasal (quadrangular) cartilage is hyaline cartilage, roughly four-sided and thicker at its edges than in the middle."
+   },
+   "location": {
+    "vi": "Ở phần trước vách mũi.",
+    "en": "In the front part of the nasal septum."
+   },
+   "function": {
+    "vi": "Hoàn thiện vách ngăn giữa hai hốc mũi ở phía trước.",
+    "en": "Completes the partition between the two nasal cavities at the front."
+   },
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Septal_nasal_cartilage",
+     "url": "https://en.wikipedia.org/wiki/Septal_nasal_cartilage",
+     "supports": [
+      "summary",
+      "location",
+      "function"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA59504": {
+   "summary": {
+    "vi": "Sụn cánh mũi lớn (sụn bên dưới) là một tấm mỏng, mềm dẻo.",
+    "en": "The major alar (lower lateral) cartilage is a thin, flexible plate."
+   },
+   "location": {
+    "vi": "Ngay dưới sụn mũi bên; nó gập lại để tạo thành thành trong và thành ngoài lỗ mũi cùng bên.",
+    "en": "Just below the lateral nasal cartilage, folded back on itself to form the inner and outer walls of the nostril on its side."
+   },
+   "function": null,
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Major_alar_cartilage",
+     "url": "https://en.wikipedia.org/wiki/Major_alar_cartilage",
+     "supports": [
+      "summary",
+      "location"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA49071": {
+   "summary": {
+    "vi": "Vòng gân chung (vòng Zinn) là một vòng mô xơ.",
+    "en": "The common tendinous ring, or annulus of Zinn, is a ring of fibrous tissue."
+   },
+   "location": {
+    "vi": "Bao quanh dây thần kinh thị giác ở chỗ nó đi vào đỉnh ổ mắt.",
+    "en": "It encircles the optic nerve where it enters at the apex of the orbit."
+   },
+   "function": {
+    "vi": "Là nguyên ủy chung của bốn cơ thẳng của mắt.",
+    "en": "It is the shared origin of the eye's four rectus muscles."
+   },
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Annulus_of_Zinn",
+     "url": "https://en.wikipedia.org/wiki/Annulus_of_Zinn",
+     "supports": [
+      "summary",
+      "location",
+      "function"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA59087": {
+   "summary": {
+    "vi": "Sụn mi trên (tấm sụn mi trên) là tấm lớn hơn trong hai tấm sụn mi, hình bán nguyệt, hẹp dần về hai đầu.",
+    "en": "The superior tarsus, the larger of the two tarsal plates, is half-moon shaped and narrows toward its ends."
+   },
+   "location": {
+    "vi": "Trong mi trên; cơ sụn mi trên nằm sát nó, và cân cơ nâng mi trên bám vào mặt trước tấm sụn.",
+    "en": "In the upper eyelid; the superior tarsal muscle adjoins it and the levator palpebrae superioris aponeurosis attaches to its front."
+   },
+   "function": {
+    "vi": "Dọc bờ trong tấm sụn có các tuyến bã biến đổi (tuyến sụn mi, tuyến Meibom) xếp dọc; chúng tiết chất giàu lipid giúp nước mắt không bay hơi quá nhanh, giữ ẩm cho mắt.",
+    "en": "Along its inner edge run modified sebaceous glands, the tarsal (meibomian) glands, whose lipid-rich secretion slows tear evaporation and keeps the eye moist."
+   },
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Tarsus_(eyelids)",
+     "url": "https://en.wikipedia.org/wiki/Tarsus_(eyelids)",
+     "supports": [
+      "summary",
+      "location",
+      "function"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA59088": {
+   "summary": {
+    "vi": "Sụn mi dưới (tấm sụn mi dưới) nhỏ hơn sụn mi trên, mỏng, hình bầu dục.",
+    "en": "The inferior tarsus is the smaller plate: thin and elliptical."
+   },
+   "location": {
+    "vi": "Trong mi dưới; bờ tự do (bờ mi) của tấm sụn dày và thẳng.",
+    "en": "In the lower eyelid; its free (lash) margin is thick and straight."
+   },
+   "function": {
+    "vi": "Dọc bờ trong tấm sụn có các tuyến bã biến đổi (tuyến sụn mi, tuyến Meibom) xếp dọc; chúng tiết chất giàu lipid giúp nước mắt không bay hơi quá nhanh, giữ ẩm cho mắt.",
+    "en": "Along its inner edge run modified sebaceous glands, the tarsal (meibomian) glands, whose lipid-rich secretion slows tear evaporation and keeps the eye moist."
+   },
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Tarsus_(eyelids)",
+     "url": "https://en.wikipedia.org/wiki/Tarsus_(eyelids)",
+     "supports": [
+      "summary",
+      "location",
+      "function"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA39988": {
+   "summary": {
+    "vi": "Mạc giữ gân gấp (dây chằng ngang cổ tay) là một dải xơ chắc ở mặt gan tay gần cổ tay.",
+    "en": "The flexor retinaculum, or transverse carpal ligament, is a strong fibrous band on the palm side of the hand near the wrist."
+   },
+   "location": {
+    "vi": "Vòng qua các xương cổ tay. Phía trụ bám vào xương đậu và móc xương móc; phía quay bám vào củ xương thuyền, phần trong mặt gan tay và củ xương thang.",
+    "en": "It arches over the carpal bones; on the ulnar side it attaches to the pisiform and the hook of the hamate, on the radial side to the scaphoid tubercle and the trapezium's palmar surface and tubercle."
+   },
+   "function": {
+    "vi": "Phủ lên các xương cổ tay, tạo nên ống cổ tay.",
+    "en": "Covers the carpal bones and forms the carpal tunnel."
+   },
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Flexor_retinaculum_of_the_hand",
+     "url": "https://en.wikipedia.org/wiki/Flexor_retinaculum_of_the_hand",
+     "supports": [
+      "summary",
+      "location",
+      "function"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA61934": {
+   "summary": {
+    "vi": "Đám rối mạch mạc là đám tế bào phát sinh từ tấm mạch mạc ở mỗi não thất; nó gồm tế bào màng nội tủy biến đổi bao quanh lõi mao mạch và mô liên kết lỏng lẻo.",
+    "en": "The choroid plexus is a plexus of cells arising from the tela choroidea in each ventricle, made of modified ependymal cells around a core of capillaries and loose connective tissue."
+   },
+   "location": {
+    "vi": "Trong các não thất của não; mục này là phần ở bán cầu đại não.",
+    "en": "Inside the brain's ventricles; this entry is the part in the cerebral hemisphere."
+   },
+   "function": {
+    "vi": "Các vùng của đám rối sản xuất và tiết phần lớn dịch não tủy của hệ thần kinh trung ương; nhiều lông chuyển trên tế bào màng nội tủy giúp dịch não tủy lưu thông.",
+    "en": "Parts of it make and secrete most of the central nervous system's cerebrospinal fluid, and cilia on its ependymal cells keep the fluid circulating."
+   },
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Choroid_plexus",
+     "url": "https://en.wikipedia.org/wiki/Choroid_plexus",
+     "supports": [
+      "summary",
+      "location",
+      "function"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA49065": {
+   "summary": {
+    "vi": "Ròng rọc cơ chéo trên là một cấu trúc như ròng rọc ở mắt, nơi gân cơ chéo trên đi qua; đây là sụn duy nhất có trong ổ mắt bình thường.",
+    "en": "A pulley for the superior oblique tendon, the trochlea is the sole piece of cartilage found in a normal orbit."
+   },
+   "location": {
+    "vi": "Ở phía trên – mũi của xương trán, trong ổ mắt.",
+    "en": "On the upper nasal side of the frontal bone, in the orbit."
+   },
+   "function": {
+    "vi": "Đổi hướng gân: thân cơ chéo trên nằm sau nhãn cầu nhưng gân, sau khi qua ròng rọc, tiến tới nhãn cầu từ phía trước.",
+    "en": "Redirects the tendon: the muscle body sits behind the eyeball, but after the trochlea its tendon approaches the eye from the front."
+   },
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Trochlea_of_superior_oblique",
+     "url": "https://en.wikipedia.org/wiki/Trochlea_of_superior_oblique",
+     "supports": [
+      "summary",
+      "location",
+      "function"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA44248": {
+   "summary": {
+    "vi": "Dây chằng gan chân dài (dây chằng gót – hộp dài) là dây chằng dài nhất trong các dây chằng cổ chân, ở mặt dưới bàn chân.",
+    "en": "The long plantar (long calcaneocuboid) ligament on the underside of the foot is the longest of the tarsal ligaments."
+   },
+   "location": {
+    "vi": "Phía sau bám vào mặt gan xương gót trước củ gót; phía trước bám vào lồi củ mặt gan xương hộp, các thớ nông hơn tiếp tục tới nền các xương bàn chân.",
+    "en": "Behind it attaches to the calcaneus's plantar surface in front of the tuberosity; in front, to the tuberosity on the cuboid's plantar surface, with surface fibres continuing to the metatarsal bases."
+   },
+   "function": null,
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Long_plantar_ligament",
+     "url": "https://en.wikipedia.org/wiki/Long_plantar_ligament",
+     "supports": [
+      "summary",
+      "location"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA55618": {
+   "summary": {
+    "vi": "Đường đan chân bướm – hàm dưới là một dải gân mỏng của mạc má – hầu.",
+    "en": "The pterygomandibular raphe is a thin tendinous band of buccopharyngeal fascia."
+   },
+   "location": {
+    "vi": "Trên bám vào móc chân bướm của mảnh chân bướm trong; dưới bám vào đầu sau đường hàm – móng của xương hàm dưới.",
+    "en": "Above it attaches to the pterygoid hamulus of the medial pterygoid plate; below, to the back end of the mandible's mylohyoid line."
+   },
+   "function": {
+    "vi": "Là chỗ bám của cơ mút ở phía trước và cơ khít hầu trên ở phía sau.",
+    "en": "Gives attachment to buccinator in front and the superior pharyngeal constrictor behind."
+   },
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Pterygomandibular_raphe",
+     "url": "https://en.wikipedia.org/wiki/Pterygomandibular_raphe",
+     "supports": [
+      "summary",
+      "location",
+      "function"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA72308": {
+   "summary": {
+    "vi": "Dây chằng trâm – móng là dây chằng căng giữa xương móng và mỏm trâm xương thái dương; ở giữa nó hay có một ít sụn.",
+    "en": "The stylohyoid ligament stretches between the hyoid bone and the styloid process of the temporal bone and frequently contains a little cartilage in the middle."
+   },
+   "location": {
+    "vi": "Giữa xương móng và mỏm trâm xương thái dương.",
+    "en": "Between the hyoid bone and the temporal bone's styloid process."
+   },
+   "function": {
+    "vi": "Là chỗ bám của các thớ trên cùng của cơ khít hầu giữa.",
+    "en": "Gives attachment to the uppermost fibres of the middle pharyngeal constrictor."
+   },
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Stylohyoid_ligament",
+     "url": "https://en.wikipedia.org/wiki/Stylohyoid_ligament",
+     "supports": [
+      "summary",
+      "location",
+      "function"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA55250": {
+   "summary": {
+    "vi": "Nón đàn hồi là phần bên của dây chằng nhẫn – giáp (màng nhẫn – thanh âm) — dây chằng thanh quản nối sụn nhẫn với sụn giáp.",
+    "en": "The conus elasticus is the lateral portion of the cricothyroid ligament, the laryngeal ligament joining the cricoid and thyroid cartilages."
+   },
+   "location": {
+    "vi": "Mỏng hơn phần giữa, nằm sát dưới niêm mạc thanh quản; đi từ bờ trên sụn nhẫn tới bờ dưới dây chằng thanh âm và liền với chúng — dây chằng thanh âm có thể xem là bờ tự do của mỗi nón đàn hồi.",
+    "en": "Thinner than the middle part and lying just under the laryngeal mucosa, it runs from the upper edge of the cricoid to the lower edge of the vocal ligaments and merges with them, so each vocal ligament can be seen as the free border of a conus elasticus."
+   },
+   "function": {
+    "vi": "Dây chằng nhẫn – giáp ngăn hai sụn nhẫn và giáp rời nhau quá xa.",
+    "en": "The cricothyroid ligament keeps the cricoid and thyroid cartilages from drifting too far apart."
+   },
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Conus_elasticus",
+     "url": "https://en.wikipedia.org/wiki/Conus_elasticus",
+     "supports": [
+      "summary",
+      "function",
+      "location"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA55244": {
+   "summary": {
+    "vi": "Dây chằng thanh âm là bờ tự do ở phía trên của nón đàn hồi; ở trẻ nhũ nhi chưa có, bắt đầu xuất hiện ở trẻ khoảng bốn tuổi.",
+    "en": "The vocal ligament is the free upper border of the conus elasticus; infants lack it, and it starts to appear in children at around four years old."
+   },
+   "location": {
+    "vi": "Trong dây thanh, liền với bờ trên nón đàn hồi.",
+    "en": "Inside the vocal fold, continuous with the upper edge of the conus elasticus."
+   },
+   "function": null,
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Conus_elasticus",
+     "url": "https://en.wikipedia.org/wiki/Conus_elasticus",
+     "supports": [
+      "summary",
+      "location"
+     ]
+    },
+    {
+     "ref": "wikipedia-en",
+     "section": "Vocal_ligament",
+     "url": "https://en.wikipedia.org/wiki/Vocal_ligament",
+     "supports": [
+      "summary"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA55237": {
+   "summary": {
+    "vi": "Dây chằng nhẫn – giáp giữa là chỗ dày lên ở đường giữa của màng nhẫn – giáp: một dải mô liên kết trắng, dẹt, dày và chắc, hẹp ở trên rộng ở dưới.",
+    "en": "The median cricothyroid ligament is the midline thickening of the cricothyroid membrane: a flat, thick, strong band of white connective tissue, narrow above and broad below."
+   },
+   "location": {
+    "vi": "Nối phần trước các bờ kề nhau của sụn nhẫn và sụn giáp.",
+    "en": "It joins the front parts of the adjacent edges of the cricoid and thyroid cartilages."
+   },
+   "function": {
+    "vi": "Dây chằng nhẫn – giáp ngăn hai sụn rời nhau quá xa; nó bị rạch trong thủ thuật mở màng nhẫn – giáp cấp cứu khi tắc đường thở trên.",
+    "en": "The cricothyroid ligament stops the two cartilages separating too far, and is cut in an emergency cricothyrotomy for upper airway obstruction."
+   },
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Conus_elasticus",
+     "url": "https://en.wikipedia.org/wiki/Conus_elasticus",
+     "supports": [
+      "summary",
+      "function",
+      "location"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA55132": {
+   "summary": {
+    "vi": "Màng giáp – móng là một tấm rộng, xơ – đàn hồi của thanh quản, nối bờ trên sụn giáp với xương móng.",
+    "en": "The thyrohyoid membrane is a broad fibro-elastic sheet of the larynx joining the upper edge of the thyroid cartilage to the hyoid bone."
+   },
+   "location": {
+    "vi": "Dưới bám vào bờ trên sụn giáp và mặt trước sừng trên; trên bám vào mép trên mặt sau thân và sừng lớn xương móng, đi sau mặt sau thân xương móng.",
+    "en": "Below it attaches to the thyroid cartilage's upper edge and the front of its superior horn; above, to the upper rim of the back of the hyoid body and greater horn, passing behind the hyoid body."
+   },
+   "function": null,
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Thyrohyoid_membrane",
+     "url": "https://en.wikipedia.org/wiki/Thyrohyoid_membrane",
+     "supports": [
+      "summary",
+      "location"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA55138": {
+   "summary": {
+    "vi": "Dây chằng giáp – móng giữa là phần giữa dày hơn của màng giáp – móng — tấm xơ – đàn hồi nối bờ trên sụn giáp với xương móng.",
+    "en": "The median thyrohyoid ligament is the thicker middle part of the thyrohyoid membrane, the fibro-elastic sheet joining the thyroid cartilage's upper edge to the hyoid."
+   },
+   "location": {
+    "vi": "Ở đường giữa, giữa sụn giáp và xương móng.",
+    "en": "In the midline between the thyroid cartilage and the hyoid."
+   },
+   "function": null,
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Thyrohyoid_membrane",
+     "url": "https://en.wikipedia.org/wiki/Thyrohyoid_membrane",
+     "supports": [
+      "summary",
+      "location"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA11336": {
+   "summary": {
+    "vi": "Đường trắng là cấu trúc xơ ở đường giữa thành bụng trước, do các cân của các cơ thành bụng trước — tạo nên bao cơ thẳng bụng — hợp lại.",
+    "en": "The linea alba is a fibrous midline structure of the front abdominal wall, formed where the aponeuroses of the anterior wall muscles, which make up the rectus sheath, meet."
+   },
+   "location": {
+    "vi": "Giữa hai cơ thẳng bụng, mỗi bên một cơ; rốn nằm trên đường trắng. Trên bám vào mỏm mũi kiếm.",
+    "en": "Between the two rectus abdominis muscles, one either side; the navel lies on it. Above, it attaches to the xiphoid process."
+   },
+   "function": null,
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Linea_alba_(abdomen)",
+     "url": "https://en.wikipedia.org/wiki/Linea_alba_(abdomen)",
+     "supports": [
+      "summary",
+      "location"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA55814": {
+   "summary": {
+    "vi": "Răng hàm lớn thứ nhất hàm dưới (vĩnh viễn) là một răng hàm lớn — loại răng to, mặt nhai phẳng. Ở người, răng hàm lớn có bốn hoặc năm múi; người trưởng thành có 12 răng hàm lớn.",
+    "en": "The permanent first lower molar is one of the molars, the large flat-topped teeth. Human molars have four or five cusps, and adults have 12 of them."
+   },
+   "location": {
+    "vi": "Ở phía sau miệng; 12 răng hàm lớn xếp thành bốn nhóm, mỗi nhóm ba chiếc.",
+    "en": "At the back of the mouth, the 12 molars sitting in four groups of three."
+   },
+   "function": {
+    "vi": "Chủ yếu dùng để nghiền thức ăn khi nhai.",
+    "en": "Mainly grind food during chewing."
+   },
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Molar_(tooth)",
+     "url": "https://en.wikipedia.org/wiki/Molar_(tooth)",
+     "supports": [
+      "summary",
+      "location",
+      "function"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA55815": {
+   "summary": {
+    "vi": "Răng hàm lớn thứ hai hàm dưới (vĩnh viễn) là một răng hàm lớn — loại răng to, mặt nhai phẳng. Ở người, răng hàm lớn có bốn hoặc năm múi; người trưởng thành có 12 răng hàm lớn.",
+    "en": "The permanent second lower molar is one of the molars, the large flat-topped teeth. Human molars have four or five cusps, and adults have 12 of them."
+   },
+   "location": {
+    "vi": "Ở phía sau miệng; 12 răng hàm lớn xếp thành bốn nhóm, mỗi nhóm ba chiếc.",
+    "en": "At the back of the mouth, the 12 molars sitting in four groups of three."
+   },
+   "function": {
+    "vi": "Chủ yếu dùng để nghiền thức ăn khi nhai.",
+    "en": "Mainly grind food during chewing."
+   },
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Molar_(tooth)",
+     "url": "https://en.wikipedia.org/wiki/Molar_(tooth)",
+     "supports": [
+      "summary",
+      "location",
+      "function"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA55811": {
+   "summary": {
+    "vi": "Răng hàm lớn thứ nhất hàm trên (vĩnh viễn) là một răng hàm lớn — loại răng to, mặt nhai phẳng. Ở người, răng hàm lớn có bốn hoặc năm múi; người trưởng thành có 12 răng hàm lớn.",
+    "en": "The permanent first upper molar is one of the molars, the large flat-topped teeth. Human molars have four or five cusps, and adults have 12 of them."
+   },
+   "location": {
+    "vi": "Ở phía sau miệng; 12 răng hàm lớn xếp thành bốn nhóm, mỗi nhóm ba chiếc.",
+    "en": "At the back of the mouth, the 12 molars sitting in four groups of three."
+   },
+   "function": {
+    "vi": "Chủ yếu dùng để nghiền thức ăn khi nhai.",
+    "en": "Mainly grind food during chewing."
+   },
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Molar_(tooth)",
+     "url": "https://en.wikipedia.org/wiki/Molar_(tooth)",
+     "supports": [
+      "summary",
+      "location",
+      "function"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA55812": {
+   "summary": {
+    "vi": "Răng hàm lớn thứ hai hàm trên (vĩnh viễn) là một răng hàm lớn — loại răng to, mặt nhai phẳng. Ở người, răng hàm lớn có bốn hoặc năm múi; người trưởng thành có 12 răng hàm lớn.",
+    "en": "The permanent second upper molar is one of the molars, the large flat-topped teeth. Human molars have four or five cusps, and adults have 12 of them."
+   },
+   "location": {
+    "vi": "Ở phía sau miệng; 12 răng hàm lớn xếp thành bốn nhóm, mỗi nhóm ba chiếc.",
+    "en": "At the back of the mouth, the 12 molars sitting in four groups of three."
+   },
+   "function": {
+    "vi": "Chủ yếu dùng để nghiền thức ăn khi nhai.",
+    "en": "Mainly grind food during chewing."
+   },
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Molar_(tooth)",
+     "url": "https://en.wikipedia.org/wiki/Molar_(tooth)",
+     "supports": [
+      "summary",
+      "location",
+      "function"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA55722": {
+   "summary": {
+    "vi": "Răng cửa giữa hàm trên (vĩnh viễn) là một răng cửa — răng ở phía trước miệng. Người trưởng thành bình thường có tám răng cửa, mỗi loại hai chiếc.",
+    "en": "The permanent upper central incisor is an incisor, one of the front teeth. Adults normally have eight incisors, two of each kind."
+   },
+   "location": {
+    "vi": "Ở phía trước, hàm trên, gần đường giữa môi nhất.",
+    "en": "At the front, upper jaw, closest to the centre of the lips."
+   },
+   "function": {
+    "vi": "Ở người, răng cửa dùng để cắt đứt miếng thức ăn và giữ các thức ăn khác.",
+    "en": "In people the incisors slice off bites of food and help hold other foods."
+   },
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Incisor",
+     "url": "https://en.wikipedia.org/wiki/Incisor",
+     "supports": [
+      "summary",
+      "function",
+      "location"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA55724": {
+   "summary": {
+    "vi": "Răng cửa bên hàm trên (vĩnh viễn) là một răng cửa — răng ở phía trước miệng. Người trưởng thành bình thường có tám răng cửa, mỗi loại hai chiếc.",
+    "en": "The permanent upper lateral incisor is an incisor, one of the front teeth. Adults normally have eight incisors, two of each kind."
+   },
+   "location": {
+    "vi": "Ở phía trước, hàm trên, cạnh răng cửa giữa hàm trên.",
+    "en": "At the front, upper jaw, beside the upper central incisor."
+   },
+   "function": {
+    "vi": "Ở người, răng cửa dùng để cắt đứt miếng thức ăn và giữ các thức ăn khác.",
+    "en": "In people the incisors slice off bites of food and help hold other foods."
+   },
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Incisor",
+     "url": "https://en.wikipedia.org/wiki/Incisor",
+     "supports": [
+      "summary",
+      "function",
+      "location"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA55723": {
+   "summary": {
+    "vi": "Răng cửa giữa hàm dưới (vĩnh viễn) là một răng cửa — răng ở phía trước miệng. Người trưởng thành bình thường có tám răng cửa, mỗi loại hai chiếc.",
+    "en": "The permanent lower central incisor is an incisor, one of the front teeth. Adults normally have eight incisors, two of each kind."
+   },
+   "location": {
+    "vi": "Ở phía trước, hàm dưới, gần đường giữa môi nhất.",
+    "en": "At the front, lower jaw, closest to the centre of the lips."
+   },
+   "function": {
+    "vi": "Ở người, răng cửa dùng để cắt đứt miếng thức ăn và giữ các thức ăn khác.",
+    "en": "In people the incisors slice off bites of food and help hold other foods."
+   },
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Incisor",
+     "url": "https://en.wikipedia.org/wiki/Incisor",
+     "supports": [
+      "summary",
+      "function",
+      "location"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA55725": {
+   "summary": {
+    "vi": "Răng cửa bên hàm dưới (vĩnh viễn) là một răng cửa — răng ở phía trước miệng. Người trưởng thành bình thường có tám răng cửa, mỗi loại hai chiếc.",
+    "en": "The permanent lower lateral incisor is an incisor, one of the front teeth. Adults normally have eight incisors, two of each kind."
+   },
+   "location": {
+    "vi": "Ở phía trước, hàm dưới, cạnh răng cửa giữa hàm dưới.",
+    "en": "At the front, lower jaw, beside the lower central incisor."
+   },
+   "function": {
+    "vi": "Ở người, răng cửa dùng để cắt đứt miếng thức ăn và giữ các thức ăn khác.",
+    "en": "In people the incisors slice off bites of food and help hold other foods."
+   },
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Incisor",
+     "url": "https://en.wikipedia.org/wiki/Incisor",
+     "supports": [
+      "summary",
+      "function",
+      "location"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA55714": {
+   "summary": {
+    "vi": "Răng nanh hàm trên (vĩnh viễn) là một trong bốn răng nanh của người — những răng tương đối dài và nhọn. Ở người, răng nanh trên lớn và dài hơn răng nanh dưới, thường có một gờ nền rõ.",
+    "en": "The permanent upper canine is one of the four human canines, the fairly long pointed teeth. Human upper canines are bigger and longer than the lower ones and usually have a distinct basal ridge."
+   },
+   "location": {
+    "vi": "Hàm trên; còn gọi là răng mắt vì nằm dưới mắt.",
+    "en": "Upper jaw; popularly called eye teeth for sitting under the eyes."
+   },
+   "function": {
+    "vi": "Ở thú nói chung, răng nanh chủ yếu dùng để giữ chặt thức ăn mà xé; nguồn không nêu riêng chức năng của răng nanh người.",
+    "en": "Across mammals, canines serve mainly to hold food firmly so it can be torn apart; the source does not single out the human canine's role."
+   },
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Canine_tooth",
+     "url": "https://en.wikipedia.org/wiki/Canine_tooth",
+     "supports": [
+      "summary",
+      "location",
+      "function"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA55715": {
+   "summary": {
+    "vi": "Răng nanh hàm dưới (vĩnh viễn) là một trong bốn răng nanh của người — những răng tương đối dài và nhọn; răng nanh dưới nhỏ và ngắn hơn răng nanh trên.",
+    "en": "The permanent lower canine is one of the four human canines, the fairly long pointed teeth; it is smaller and shorter than the upper canine."
+   },
+   "location": {
+    "vi": "Hàm dưới.",
+    "en": "Lower jaw."
+   },
+   "function": {
+    "vi": "Ở thú nói chung, răng nanh chủ yếu dùng để giữ chặt thức ăn mà xé; nguồn không nêu riêng chức năng của răng nanh người.",
+    "en": "Across mammals, canines serve mainly to hold food firmly so it can be torn apart; the source does not single out the human canine's role."
+   },
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Canine_tooth",
+     "url": "https://en.wikipedia.org/wiki/Canine_tooth",
+     "supports": [
+      "summary",
+      "location",
+      "function"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA59763": {
+   "summary": {
+    "vi": "Lợi (nướu) hàm trên. Lợi là một phần của lớp mô mềm lót miệng; khác với niêm mạc môi và má, phần lớn lợi bám chặt vào xương bên dưới.",
+    "en": "The gum (gingiva) of the upper jaw. Gums are part of the mouth's soft lining; unlike the lining of lips and cheeks, most gum tissue is firmly bound to the bone beneath."
+   },
+   "location": {
+    "vi": "Bao quanh các răng.",
+    "en": "Surrounding the teeth."
+   },
+   "function": {
+    "vi": "Tạo vòng bịt kín quanh răng; việc bám chặt vào xương giúp lợi chịu được ma sát của thức ăn đi qua.",
+    "en": "Seals around the teeth; being bound to bone lets it withstand the rubbing of food passing over."
+   },
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Gums",
+     "url": "https://en.wikipedia.org/wiki/Gums",
+     "supports": [
+      "summary",
+      "location",
+      "function"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA59764": {
+   "summary": {
+    "vi": "Lợi (nướu) hàm dưới. Lợi là một phần của lớp mô mềm lót miệng; khác với niêm mạc môi và má, phần lớn lợi bám chặt vào xương bên dưới.",
+    "en": "The gum (gingiva) of the lower jaw. Gums are part of the mouth's soft lining; unlike the lining of lips and cheeks, most gum tissue is firmly bound to the bone beneath."
+   },
+   "location": {
+    "vi": "Bao quanh các răng.",
+    "en": "Surrounding the teeth."
+   },
+   "function": {
+    "vi": "Tạo vòng bịt kín quanh răng; việc bám chặt vào xương giúp lợi chịu được ma sát của thức ăn đi qua.",
+    "en": "Seals around the teeth; being bound to bone lets it withstand the rubbing of food passing over."
+   },
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Gums",
+     "url": "https://en.wikipedia.org/wiki/Gums",
+     "supports": [
+      "summary",
+      "location",
+      "function"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA11338": {
+   "summary": {
+    "vi": "Chỗ nối hồi – manh tràng là nơi hồi tràng — đoạn cuối ruột non — kết thúc và thông với manh tràng của ruột già qua van hồi manh tràng.",
+    "en": "At the ileocecal junction the ileum, final stretch of the small intestine, terminates, and its contents pass via the ileocecal valve into the cecum."
+   },
+   "location": {
+    "vi": "Giữa đoạn cuối hồi tràng và manh tràng.",
+    "en": "Between the end of the ileum and the cecum."
+   },
+   "function": {
+    "vi": "Van hồi manh tràng ở đây là một van cơ thắt ngăn ruột non với ruột già; chức năng then chốt là hạn chế chất trong kết tràng trào ngược vào hồi tràng.",
+    "en": "Its ileocecal valve, a muscular sphincter dividing small from large intestine, chiefly limits backflow of colonic contents into the ileum."
+   },
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Ileum",
+     "url": "https://en.wikipedia.org/wiki/Ileum",
+     "supports": [
+      "summary",
+      "location"
+     ]
+    },
+    {
+     "ref": "wikipedia-en",
+     "section": "Ileocecal_valve",
+     "url": "https://en.wikipedia.org/wiki/Ileocecal_valve",
+     "supports": [
+      "function"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA14647": {
+   "summary": {
+    "vi": "Mạc treo kết tràng ngang là đoạn mạc treo gắn vào kết tràng ngang. Mạc treo là cơ quan gồm hai lá phúc mạc gấp lại, gắn ruột vào thành bụng sau.",
+    "en": "The transverse mesocolon is the stretch of mesentery attached to the transverse colon. The mesentery is the double fold of peritoneum that attaches the intestines to the back wall of the abdomen."
+   },
+   "location": {
+    "vi": "Gắn vào kết tràng ngang, nằm giữa hai góc kết tràng.",
+    "en": "Attached to the transverse colon, between the colic flexures."
+   },
+   "function": {
+    "vi": "Trong số các chức năng, mạc treo giúp trữ mỡ và cho mạch máu, mạch bạch huyết, thần kinh đi tới ruột.",
+    "en": "Among other roles, the mesentery stores fat and lets blood vessels, lymphatics and nerves reach the gut."
+   },
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Mesentery",
+     "url": "https://en.wikipedia.org/wiki/Mesentery",
+     "supports": [
+      "summary",
+      "function",
+      "location"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA16549": {
+   "summary": {
+    "vi": "Mạc treo ruột thừa là phần mạc treo nối hồi tràng với ruột thừa. Mạc treo là cơ quan gồm hai lá phúc mạc gấp lại, gắn ruột vào thành bụng sau.",
+    "en": "The mesoappendix is the part of the mesentery linking the ileum to the appendix. The mesentery is the double fold of peritoneum that attaches the intestines to the back wall of the abdomen."
+   },
+   "location": {
+    "vi": "Giữa hồi tràng và ruột thừa; có thể kéo dài tới đầu ruột thừa.",
+    "en": "Between the ileum and the appendix; it may reach as far as the appendix tip."
+   },
+   "function": {
+    "vi": "Chứa động mạch và tĩnh mạch ruột thừa cùng mạch bạch huyết, thần kinh, và thường có một hạch bạch huyết. Trong số các chức năng, mạc treo nói chung giúp trữ mỡ và cho mạch máu, mạch bạch huyết, thần kinh đi tới ruột.",
+    "en": "It carries the appendicular artery and vein along with lymphatics, nerves and often a lymph node. Among other roles, the mesentery as a whole stores fat and lets blood vessels, lymphatics and nerves reach the gut."
+   },
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Mesentery",
+     "url": "https://en.wikipedia.org/wiki/Mesentery",
+     "supports": [
+      "summary",
+      "function",
+      "location"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA54237": {
+   "summary": {
+    "vi": "Lông mày là vùng lông cứng ngắn ở trên mỗi mắt, chạy theo bờ dưới cung mày.",
+    "en": "An eyebrow is a patch of short terminal hairs above each eye following the lower edge of the brow ridge."
+   },
+   "location": {
+    "vi": "Trên mỗi mắt.",
+    "en": "Above each eye."
+   },
+   "function": {
+    "vi": "Ở người, lông mày có hai chức năng chính: ngăn mồ hôi, nước và vụn bẩn rơi vào hốc mắt, và giao tiếp qua biểu cảm khuôn mặt.",
+    "en": "In humans eyebrows have two main jobs: keeping sweat, water and debris from running into the eye socket, and communicating through facial expression."
+   },
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Eyebrow",
+     "url": "https://en.wikipedia.org/wiki/Eyebrow",
+     "supports": [
+      "summary",
+      "location",
+      "function"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA54241": {
+   "summary": {
+    "vi": "Tóc. Lông, tóc là sợi protein mọc từ các nang trong lớp bì; mỗi sợi gồm tủy, vỏ và lớp biểu bì sợi tóc, trong đó tủy là vùng trong cùng không phải lúc nào cũng có.",
+    "en": "Hair of the head. Hair is a protein filament growing from follicles in the dermis; each strand has a medulla, cortex and cuticle, the innermost medulla not always present."
+   },
+   "location": null,
+   "function": null,
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Hair",
+     "url": "https://en.wikipedia.org/wiki/Hair",
+     "supports": [
+      "summary"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA54319": {
+   "summary": {
+    "vi": "Lông mu là lông cứng trên cơ thể, có ở vùng sinh dục và vùng mu của thiếu niên và người lớn.",
+    "en": "Pubic hair is terminal body hair found in the genital and pubic region of adolescents and adults."
+   },
+   "location": {
+    "vi": "Trên và quanh cơ quan sinh dục, đôi khi ở phần trên mặt trong đùi, thậm chí lan xuống đáy chậu tới vùng hậu môn; ở nam còn có trên bìu và gốc thân dương vật, ở nữ có trên âm hộ.",
+    "en": "On and around the sex organs, sometimes at the top of the inner thighs and even down the perineum to the anal region; in males also on the scrotum and the base of the penile shaft, in females on the vulva."
+   },
+   "function": null,
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Pubic_hair",
+     "url": "https://en.wikipedia.org/wiki/Pubic_hair",
+     "supports": [
+      "summary",
+      "location"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
+  },
+  "FMA59816": {
+   "summary": {
+    "vi": "Môi là một đôi phần phụ mềm nằm ngang, gắn với hai hàm, và là phần dễ thấy nhất của miệng; môi trên và môi dưới. Môi người còn là một cơ quan cảm giác thân thể.",
+    "en": "Upper and lower, the lips are two soft horizontal flaps fixed to the jaws and form the mouth's most visible part; in humans they also act as a sense organ for touch."
+   },
+   "location": null,
+   "function": {
+    "vi": "Ở thú, môi mềm, cử động được, giúp đưa thức ăn vào (như mút, nuốt ực) và tạo âm, phát âm lời nói.",
+    "en": "Mammal lips are soft and mobile and help take in food, as in suckling and gulping, and shape sounds and speech."
+   },
+   "sources": [
+    {
+     "ref": "wikipedia-en",
+     "section": "Lip",
+     "url": "https://en.wikipedia.org/wiki/Lip",
+     "supports": [
+      "summary",
+      "function"
+     ]
+    }
+   ],
+   "review": {
+    "by": "science-editor",
+    "at": "2026-10-03"
+   }
   }
  }
 }
