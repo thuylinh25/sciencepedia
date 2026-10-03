@@ -866,7 +866,11 @@
    Thu vào: từ đáy khung lao vào tâm, nhỏ dần tới mất hút — người xem đi theo
    nó vào cấp nhỏ hơn. Thu ra: từ tâm quay đầu (xoay 180°) lao về phía người
    xem, lớn dần rồi vượt khỏi mép dưới. Hai chiều là ảnh gương của nhau theo
-   thời gian, nên bấm tới rồi bấm lui đọc ra đúng một chuyến đi và về. */
+   thời gian, nên bấm tới rồi bấm lui đọc ra đúng một chuyến đi và về.
+
+   Điểm đầu (thu vào) và điểm cuối (thu ra) ở 74% chiều cao, không phải mép
+   dưới: hàng nút "Lùi ra / Thu vào" nằm ở đáy khung, và tên lửa từng bay
+   ngang qua nó — chủ sản phẩm yêu cầu cho xuất phát cao hơn (2026-10-03). */
 .warp-rocket-in,
 .warp-rocket-out {
   position: absolute;
@@ -886,9 +890,9 @@
 
 @keyframes warp-rocket-in {
   0% {
-    top: 105%;
+    top: 74%;
     opacity: 0;
-    transform: translate(-50%, -50%) scale(1.5);
+    transform: translate(-50%, -50%) scale(1.15);
   }
   15% {
     opacity: 1;
@@ -912,13 +916,13 @@
   20% {
     opacity: 1;
   }
-  85% {
+  75% {
     opacity: 1;
   }
   100% {
-    top: 115%;
+    top: 74%;
     opacity: 0;
-    transform: translate(-50%, -50%) rotate(180deg) scale(1.9);
+    transform: translate(-50%, -50%) rotate(180deg) scale(1.6);
   }
 }
 
