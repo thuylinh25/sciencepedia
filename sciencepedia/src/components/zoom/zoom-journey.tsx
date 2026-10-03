@@ -10,6 +10,7 @@ import { EARTH_CLOUDS_TEXTURE, PLANETS } from "@/lib/solar-data";
 import { ZOOM_LEVELS, stepRatio, type ZoomLevel } from "@/lib/zoom-levels";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
+import { WarpTransition } from "@/components/zoom/warp-transition";
 
 const UniverseScene = dynamic(
   () =>
@@ -29,8 +30,15 @@ const GlobeScene = dynamic(
   { ssr: false },
 );
 
-/** Thời gian hoà mờ giữa hai cấp, mili giây. */
-const FADE_MS = 900;
+/** Thời gian chuyển cấp, mili giây.
+
+    900 → 1300 khi thêm lớp bay xuyên không gian: dưới chừng 1,2 giây thì tên
+    lửa chưa kịp đọc ra là tên lửa đã mất hút, chỉ còn một vệt loé. */
+const FADE_MS = 1300;
+
+function prefersReducedMotion(): boolean {
+  return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+}
 
 function supportsWebGL(): boolean {
   try {
@@ -161,6 +169,10 @@ function LevelScene({
  * ở camera: cảnh đi ra phóng to dần rồi mờ đi, cảnh đi vào bắt đầu từ nhỏ rồi
  * lớn lên. Nhờ vậy không phải sửa gì bên trong ba cảnh đã có, và mỗi cảnh vẫn
  * giữ nguyên tỉ lệ riêng của nó.
+ *
+ * Phủ lên trên là lớp bay xuyên không gian (`WarpTransition`): vệt sao và một
+ * tên lửa lao vào tâm khi thu vào, bay ngược ra khi thu ra — chủ sản phẩm yêu
+ * cầu 2026-10-03. Người bật "giảm chuyển động" không thấy lớp này.
  */
 export function ZoomJourney() {
   const t = useTranslations("zoom");
@@ -172,10 +184,18 @@ export function ZoomJourney() {
   const [outgoing, setOutgoing] = useState<{
     id: string;
     direction: "in" | "out";
+    /** Tăng mỗi lượt chuyển — làm `key` để lớp bay chạy lại từ đầu khi bấm
+        liên tiếp, kể cả hai lượt cùng chiều. */
+    seq: number;
   } | null>(null);
+  const seq = useRef(0);
+  const [reducedMotion, setReducedMotion] = useState(false);
   const timer = useRef<number | null>(null);
 
-  useEffect(() => setWebgl(supportsWebGL()), []);
+  useEffect(() => {
+    setWebgl(supportsWebGL());
+    setReducedMotion(prefersReducedMotion());
+  }, []);
   useEffect(() => () => {
     if (timer.current) window.clearTimeout(timer.current);
   }, []);
@@ -184,7 +204,8 @@ export function ZoomJourney() {
     (next: number) => {
       if (next < 0 || next >= ZOOM_LEVELS.length || next === index) return;
       const direction = next > index ? "in" : "out";
-      setOutgoing({ id: ZOOM_LEVELS[index].id, direction });
+      seq.current += 1;
+      setOutgoing({ id: ZOOM_LEVELS[index].id, direction, seq: seq.current });
       setIndex(next);
 
       if (timer.current) window.clearTimeout(timer.current);
@@ -220,10 +241,13 @@ export function ZoomJourney() {
             {outgoing && (
               <div
                 key={`out-${outgoing.id}`}
-                className="absolute inset-0 animate-[zoom-out_900ms_ease-in_forwards]"
+                className="zoom-layer-out absolute inset-0"
                 style={{
+                  ["--zoom-ms" as string]: `${FADE_MS}ms`,
+                  /* Lao qua cảnh cũ: phóng lớn hẳn chứ không chỉ nhích —
+                     cảm giác bay xuyên qua nó, không phải lùi khỏi nó. */
                   ["--zoom-to" as string]:
-                    outgoing.direction === "in" ? "1.6" : "0.6",
+                    outgoing.direction === "in" ? "2.6" : "0.35",
                 }}
               >
                 <LevelScene level={outgoingLevel} locale={locale} />
@@ -232,14 +256,23 @@ export function ZoomJourney() {
 
             <div
               key={`in-${level.id}`}
-              className="absolute inset-0 animate-[zoom-in_900ms_ease-out_forwards]"
+              className="zoom-layer-in absolute inset-0"
               style={{
+                ["--zoom-ms" as string]: `${FADE_MS}ms`,
                 ["--zoom-from" as string]:
-                  outgoing?.direction === "out" ? "1.6" : "0.6",
+                  outgoing?.direction === "out" ? "2.6" : "0.35",
               }}
             >
               <LevelScene level={level} locale={locale} />
             </div>
+
+            {outgoing && !reducedMotion && (
+              <WarpTransition
+                key={`warp-${outgoing.seq}`}
+                direction={outgoing.direction}
+                durationMs={FADE_MS}
+              />
+            )}
           </>
         )}
 
