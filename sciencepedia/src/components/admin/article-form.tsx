@@ -68,6 +68,8 @@ const FIELD_ORDER: (keyof ArticleInput)[] = [
   "coverImage",
   "coverImageCredit",
   "coverImageCreditEn",
+  "coverImageAlt",
+  "coverImageAltEn",
   "tagIds",
   "status",
   "featured",
@@ -569,6 +571,38 @@ export function ArticleForm({
                 placeholder={t("form.coverCreditHint")}
                 className="text-xs"
                 {...register("coverImageCreditEn")}
+              />
+            </div>
+
+            {/* Mô tả ảnh: cạnh ô chọn ảnh vì cùng lý do với ghi công — người
+                biên tập đang nhìn ảnh ngay lúc này. Tả cái ảnh cho thấy, không
+                chép lại tiêu đề bài. */}
+            <div className="space-y-1.5 border-t pt-3">
+              <Label htmlFor="coverImageAlt" className="text-xs">
+                {t("form.coverAlt")}
+              </Label>
+              <Input
+                id="coverImageAlt"
+                placeholder={t("form.coverAltHint")}
+                className="text-xs"
+                {...register("coverImageAlt")}
+              />
+              {errors.coverImageAlt && (
+                <p className="text-xs text-destructive">
+                  {errors.coverImageAlt.message}
+                </p>
+              )}
+            </div>
+
+            <div className="space-y-1.5">
+              <Label htmlFor="coverImageAltEn" className="text-xs">
+                {t("form.coverAltEn")}
+              </Label>
+              <Input
+                id="coverImageAltEn"
+                placeholder={t("form.coverAltHint")}
+                className="text-xs"
+                {...register("coverImageAltEn")}
               />
             </div>
           </div>

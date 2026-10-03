@@ -1,8 +1,11 @@
 import "server-only";
 
 import { revalidatePath, revalidateTag } from "next/cache";
+import { after } from "next/server";
 
 import { locales } from "@/i18n/routing";
+import { notifyIndexNow } from "@/lib/indexnow";
+import { absoluteUrl } from "@/lib/utils";
 
 /**
  * Làm mới cache sau khi bài viết đổi trong CSDL. Đường DUY NHẤT: form quản trị,
@@ -23,6 +26,11 @@ import { locales } from "@/i18n/routing";
  * "page")` sinh tag `_N_T_/[locale]/articles/<slug>/page` — không khớp trang nào,
  * nên sửa bài từng chỉ hiện ra khi hết TTL 300 giây.
  *
+ * Cũng báo IndexNow cho đúng các trang bài đó — cùng một chỗ vì "trang này
+ * vừa đổi" là cùng một sự kiện, và mọi đường ghi bài đã đi qua đây. Gửi trong
+ * `after()`: phản hồi của form/route không chờ một API bên ngoài. Slug của bài
+ * vừa gỡ cũng được gửi, và đó là đúng giao thức: IndexNow nhận cả URL đã xoá.
+ *
  * Trả về các đường dẫn trang bài đã làm mới, để người gọi in ra.
  */
 export function revalidateArticles(slugs: Iterable<string> = []): string[] {
@@ -37,6 +45,10 @@ export function revalidateArticles(slugs: Iterable<string> = []): string[] {
       revalidatePath(path);
       paths.push(path);
     }
+  }
+
+  if (paths.length > 0) {
+    after(() => notifyIndexNow(paths.map((path) => absoluteUrl(path))));
   }
   return paths;
 }

@@ -38,6 +38,8 @@ export default async function NewArticlePage({
           coverImage: "",
           coverImageCredit: "",
           coverImageCreditEn: "",
+          coverImageAlt: "",
+          coverImageAltEn: "",
           categoryId: categories[0]?.id ?? "",
           tagIds: [],
           status: "DRAFT",

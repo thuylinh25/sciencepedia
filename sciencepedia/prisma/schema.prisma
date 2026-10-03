@@ -195,6 +195,10 @@ model Article {
   /// nhưng vẫn nên ghi.
   coverImageCredit   String?
   coverImageCreditEn String?
+  /// Mô tả ảnh bìa cho thuộc tính alt: ảnh CHO THẤY gì, không lặp tiêu đề.
+  /// Trống thì ảnh render alt="" (trang trí) — không suy từ tiêu đề.
+  coverImageAlt      String?
+  coverImageAltEn    String?
   /// Thiên thể mà bài này nói tới, nếu có. Nguồn của khối "Xem trên bản đồ
   /// bầu trời" cuối bài. Nullable vì tuyệt đại đa số bài không phải thiên văn.
   skyObjectId        String?

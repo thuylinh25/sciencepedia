@@ -89,6 +89,9 @@ export async function SiteFooter() {
   }));
 
   const legal = [
+    // Đứng đầu: "ai đứng sau trang này" là câu hỏi đầu tiên của người đọc
+    // nội dung sức khoẻ, trước cả chính sách dữ liệu.
+    { href: "/about", label: t("about") },
     { href: "/privacy", label: t("privacy") },
     { href: "/terms", label: t("terms") },
     { href: "/contact", label: t("contact") },

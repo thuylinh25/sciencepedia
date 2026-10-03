@@ -578,6 +578,295 @@ const PLANS: Plan[] = [
     to: ["trai-dat-hanh-tinh-duy-nhat-ta-biet-co-su-song", "dai-tuyet-chung-permi-lan-su-song-suyt-bien-mat"],
     why: "Bài dừng ở từ trường che chắn hành tinh; bài đầu đặt nó cạnh ba hệ thống khác giữ sự sống, bài sau là lúc magma từ bên dưới lớp vỏ phun trào đủ lớn để đổi cả sinh quyển (Siberian Traps).",
   },
+  // ---- Bù link VÀO (2026-10-03) ----
+  // Rà kho: 40/95 bài có dưới 3 bài khác trỏ vào, hai bài không có bài nào.
+  // Mỗi dòng dưới đây đi từ một bài NGUỒN tới những bài đang thiếu link vào,
+  // và chỉ khi người đọc xong bài nguồn có lý do để mở bài đích. Ba link vào
+  // là ngưỡng của gate SEO, không phải mục tiêu: chỗ nào không trả lời được
+  // "vì sao", để bài thiếu còn hơn nhét một link vô duyên.
+  //
+  // Bài châm cứu (`huyet-dao-…`) CỐ Ý không nhận link mới (science-editor,
+  // 2026-10-03): bài chưa được đối chiếu lại, phần cơ chế viết chắc tay mà
+  // không nói khác biệt so với châm giả là nhỏ. Đặt nó trong "Đọc thêm" của
+  // bài thần kinh học sẽ bị đọc như cơ chế ấy đã được xác lập. Thêm lại sau
+  // khi bài được đối chiếu và có câu nêu kết quả so với sham.
+  {
+    slug: "khi-tim-ngung-dap-dieu-gi-thuc-su-xay-ra-voi-co-the-khi-chung-ta-chet",
+    to: [
+      "cai-chet-duoi-goc-nhin-tien-hoa-vi-sao-tu-nhien-khong-thiet-ke-chung-ta-de-song-mai",
+      "thuoc-gay-me-da-tat-y-thuc-cua-ban-nhu-the-nao",
+      "van-dong-thay-doi-tim-va-mach-mau-nhu-the-nao",
+    ],
+    why: "Bài chưa có link nào. Bài kể cơ thể ngừng hoạt động thế nào; ba đích là ba câu hỏi kế tiếp: vì sao tiến hoá không cho ta sống mãi, ý thức 'tắt' mà không chết thì khác gì, và trái tim đang khoẻ thì làm việc ra sao.",
+  },
+  {
+    slug: "stress-tac-dong-len-co-the-nhu-the-nao-va-vi-sao-van-dong-giup-chung-ta-giai-toa",
+    to: [
+      "runners-high-vi-sao-chay-bo-co-the-khien-ban-hung-phan",
+      "thieu-ngu-khoan-no-the-chap-bang-suc-khoe-va-tuong-lai",
+      "van-dong-thay-doi-tim-va-mach-mau-nhu-the-nao",
+    ],
+    why: "Bài chưa có link nào. Bài nói vận động giải toả stress và nhắc giấc ngủ nhiều lần; ba đích kể tiếp phần thưởng hoá học của vận động, cái giá của thiếu ngủ, và vận động đổi tim mạch ra sao.",
+  },
+  {
+    slug: "van-dong-thay-doi-tim-va-mach-mau-nhu-the-nao",
+    to: [
+      "khi-tim-ngung-dap-dieu-gi-thuc-su-xay-ra-voi-co-the-khi-chung-ta-chet",
+      "stress-tac-dong-len-co-the-nhu-the-nao-va-vi-sao-van-dong-giup-chung-ta-giai-toa",
+    ],
+    why: "Cùng một trái tim: bài này kể nó khoẻ lên khi vận động, bài đầu kể điều xảy ra khi nó ngừng. Bài sau là mặt tinh thần của cùng lời khuyên vận động.",
+  },
+  {
+    slug: "runners-high-vi-sao-chay-bo-co-the-khien-ban-hung-phan",
+    to: ["stress-tac-dong-len-co-the-nhu-the-nao-va-vi-sao-van-dong-giup-chung-ta-giai-toa"],
+    why: "Vế còn lại của 'chạy bộ làm ta dễ chịu': giảm căng thẳng chứ không chỉ hưng phấn.",
+  },
+  {
+    slug: "thieu-ngu-khoan-no-the-chap-bang-suc-khoe-va-tuong-lai",
+    to: [
+      "stress-tac-dong-len-co-the-nhu-the-nao-va-vi-sao-van-dong-giup-chung-ta-giai-toa",
+      "ca-phe-va-tra-danh-thuc-nao-bo-nhu-the-nao",
+      "dang-sau-tieng-bung-keu-dieu-gi-xay-ra-khi-chung-ta-doi",
+    ],
+    why: "Ba thứ người thiếu ngủ gặp ngay hôm sau: căng thẳng, ly cà phê để gượng tỉnh, và cơn đói — bài có nhắc tới đói.",
+  },
+  {
+    slug: "cai-chet-duoi-goc-nhin-tien-hoa-vi-sao-tu-nhien-khong-thiet-ke-chung-ta-de-song-mai",
+    to: ["khi-tim-ngung-dap-dieu-gi-thuc-su-xay-ra-voi-co-the-khi-chung-ta-chet"],
+    why: "Bài trả lời 'vì sao phải chết'; bài đích trả lời 'chết diễn ra thế nào' trong cơ thể.",
+  },
+  {
+    slug: "co-the-nguoi-bien-doi-the-nao-ngoai-vu-tru-khong-bao-ho",
+    to: ["khi-tim-ngung-dap-dieu-gi-thuc-su-xay-ra-voi-co-the-khi-chung-ta-chet"],
+    why: "Cả hai xoay quanh cùng một cơ chế: não thiếu oxy. Bài này kể nó xảy ra trong chân không, bài đích kể chuỗi sự kiện khi tim thôi bơm máu.",
+  },
+  {
+    slug: "nhung-su-gia-hoa-hoc-dieu-khien-hoat-dong-cua-nao-bo",
+    to: ["ca-phe-va-tra-danh-thuc-nao-bo-nhu-the-nao"],
+    why: "Bài liệt kê các chất truyền tin của não; caffeine là ví dụ quen thuộc nhất về một phân tử chen vào hệ tín hiệu ấy.",
+  },
+  {
+    slug: "su-song-tren-trai-dat-4-ti-nam-trong-mot-dong-thoi-gian",
+    to: [
+      "cai-chet-duoi-goc-nhin-tien-hoa-vi-sao-tu-nhien-khong-thiet-ke-chung-ta-de-song-mai",
+      "nhung-lan-dai-tuyet-chung-co-lien-quan-toi-hanh-trinh-cua-he-mat-troi-trong-ngan-ha",
+    ],
+    why: "Dòng thời gian nhắc tuyệt chủng nhiều lần. Bài sau hỏi các lần tuyệt chủng ấy có liên quan tới hành trình của Mặt Trời trong Ngân Hà không; bài đầu hỏi ở thang cá thể: sự sống kéo dài 4 tỉ năm, sao mỗi sinh vật lại chết.",
+  },
+  {
+    slug: "buc-xa-dien-tu-tu-song-radio-den-tia-gamma",
+    to: ["chung-ta-dang-song-trong-mot-bong-bong-giac-quan-nho-be-cua-thuc-tai"],
+    why: "Bài vẽ cả phổ điện từ, trong đó ánh sáng nhìn thấy chỉ là một dải hẹp; bài đích đi từ chính sự thật ấy sang câu hỏi giác quan của ta bỏ sót bao nhiêu.",
+  },
+  {
+    slug: "y-thuc-mon-qua-vi-dai-hay-cai-gia-dat-cua-su-tien-hoa",
+    to: [
+      "chung-ta-dang-song-trong-mot-bong-bong-giac-quan-nho-be-cua-thuc-tai",
+      "vi-sao-chung-ta-khong-the-nho-nhung-nam-thang-dau-doi",
+    ],
+    why: "Hai mặt của 'trải nghiệm là thứ não dựng nên': thế giới ta cảm nhận chỉ là một phần, và những năm đầu đời ta đã sống mà không giữ lại được.",
+  },
+  {
+    slug: "he-vi-sinh-duong-ruot-hang-chuc-nghin-ti-cu-dan-va-anh-huong-cua-chung",
+    to: ["crispr-cay-keo-phan-tu-den-tu-vi-khuan"],
+    why: "Bài kể về vi khuẩn sống trong ta; bài đích kể một công cụ vi khuẩn dùng để chống virus, nay thành công cụ chỉnh sửa gen.",
+  },
+  {
+    slug: "he-mien-dich-nhan-dien-mot-virus-bang-cach-nao",
+    to: ["crispr-cay-keo-phan-tu-den-tu-vi-khuan"],
+    why: "Bài kể cách cơ thể người nhận diện virus; CRISPR là cách vi khuẩn làm cùng việc đó — một hệ miễn dịch có trí nhớ ở sinh vật đơn bào.",
+  },
+  {
+    slug: "vat-chat-toi-va-nang-luong-toi-tran-chien-keo-co-vi-dai-cua-vu-tru",
+    to: ["giai-ma-nhung-khoang-trong-rong-voids-trong-vu-tru"],
+    why: "Các khoảng trống là mặt hấp dẫn của cuộc kéo co: vật chất bị kéo về các sợi và nút thiên hà, để vùng thưa ngày càng thưa. Chúng cũng được dùng làm phép thử cho năng lượng tối.",
+  },
+  {
+    slug: "thien-ha-dinh-nghia-va-cach-phan-loai",
+    to: [
+      "giai-ma-nhung-khoang-trong-rong-voids-trong-vu-tru",
+      "kinh-james-webb-nhin-nguoc-ve-thuo-vu-tru-so-sinh",
+      "nhung-lan-dai-tuyet-chung-co-lien-quan-toi-hanh-trinh-cua-he-mat-troi-trong-ngan-ha",
+    ],
+    why: "Ba bước ra ngoài từ một thiên hà: thiên hà phân bố ra sao (và để trống những đâu), thiên hà thuở sớm trông thế nào qua James Webb, và chính Ngân Hà của ta có liên quan gì tới lịch sử Trái Đất.",
+  },
+  {
+    slug: "big-bang-vu-tru-da-dien-ra-the-nao-trong-138-ti-nam",
+    to: ["kinh-james-webb-nhin-nguoc-ve-thuo-vu-tru-so-sinh"],
+    why: "Bài kể những ngôi sao và thiên hà đầu tiên ra đời; James Webb được chế tạo một phần để nhìn đúng giai đoạn ấy.",
+  },
+  {
+    slug: "ho-den-noi-hinh-hoc-cua-khong-gian-sup-do",
+    to: ["proton-co-bat-tu-dieu-gi-xay-ra-neu-mot-ngay-vat-chat-bat-dau-phan-ra"],
+    why: "Hai câu hỏi về tương lai rất xa của vật chất: hố đen có bay hơi không, và chính proton có phân rã không.",
+  },
+  {
+    slug: "ngoi-sao-cau-tao-va-vong-doi",
+    to: [
+      "proton-co-bat-tu-dieu-gi-xay-ra-neu-mot-ngay-vat-chat-bat-dau-phan-ra",
+      "hanh-trinh-cua-photon-chuyen-di-100000-nam-tu-loi-mat-troi-den-trai-dat",
+    ],
+    why: "Bài đi hết vòng đời một ngôi sao; bài đầu hỏi điều gì còn lại khi những ngôi sao cuối cùng đã tắt, bài sau theo năng lượng sinh ra ở lõi một ngôi sao cụ thể trên đường ra ngoài.",
+  },
+  {
+    slug: "dopamine-va-chiec-bay-khien-ban-khong-the-roi-dien-thoai",
+    to: ["runners-high-vi-sao-chay-bo-co-the-khien-ban-hung-phan"],
+    why: "Bài này kể hệ phần thưởng bị ứng dụng khai thác; bài đích kể một cảm giác dễ chịu do vận động, qua hệ endocannabinoid và opioid — những hệ có giao với hệ phần thưởng.",
+  },
+  {
+    slug: "sao-thien-vuong-hanh-tinh-lan-nghieng-tren-quy-dao",
+    to: ["sao-hai-vuong-hanh-tinh-tim-ra-bang-toan-hoc"],
+    why: "Hai hành tinh băng khổng lồ, và câu chuyện tìm ra Sao Hải Vương bắt đầu từ quỹ đạo lệch dự đoán của chính Sao Thiên Vương.",
+  },
+  {
+    slug: "newton-da-giai-ma-the-gioi-nhu-the-nao",
+    to: [
+      "sao-hai-vuong-hanh-tinh-tim-ra-bang-toan-hoc",
+      "vu-tru-khong-bao-gio-dung-yen-chuyen-dong-la-trang-thai-tu-nhien-cua-moi-thu",
+    ],
+    why: "Bài đầu là phép thử nổi tiếng của cơ học Newton: một hành tinh được tính ra trước khi có người nhìn thấy. Bài sau kéo ý tưởng chuyển động là trạng thái tự nhiên tới thang vũ trụ.",
+  },
+  {
+    slug: "sao-choi-nguon-goc-cau-tao-va-so-phan",
+    to: [
+      "sao-moc-nguoi-khong-lo-khi-va-tam-khien-cua-he",
+      "tai-sao-pluto-khong-con-la-hanh-tinh",
+    ],
+    why: "Số phận của sao chổi gắn với hai nơi: lực hút của Sao Mộc làm lệch hoặc bắt lấy chúng, và vành đai Kuiper — nơi Pluto quay quanh Mặt Trời.",
+  },
+  {
+    slug: "sao-tho-vanh-dai-mong-manh-va-ve-tinh-co-dai-duong",
+    to: ["sao-moc-nguoi-khong-lo-khi-va-tam-khien-cua-he"],
+    why: "Hai người khổng lồ khí của Hệ Mặt Trời; đọc xong một thì người đọc thường muốn so với cái còn lại.",
+  },
+  {
+    slug: "sao-hai-vuong-hanh-tinh-tim-ra-bang-toan-hoc",
+    to: [
+      "sao-thien-vuong-hanh-tinh-lan-nghieng-tren-quy-dao",
+      "tai-sao-pluto-khong-con-la-hanh-tinh",
+      "tuyet-ky-di-ke-hanh-tinh-cach-tau-vu-tru-bay-hang-ty-kilomet-ma-khong-ton-them-nhien-lieu",
+    ],
+    why: "Hàng xóm băng khổng lồ ở phía trong, Pluto ở phía ngoài, và cách tàu Voyager 2 — bài có nhắc — tới được tận đó bằng lực hút của các hành tinh.",
+  },
+  {
+    slug: "nguyen-nhan-cua-mua-do-nghieng-truc-khong-phai-khoang-cach",
+    to: [
+      "sao-thien-vuong-hanh-tinh-lan-nghieng-tren-quy-dao",
+      "dieu-gi-tao-ra-gio-thuy-trieu-va-cac-dong-hai-luu",
+    ],
+    why: "Bài nhắc Sao Thiên Vương như trường hợp cực đoan của trục nghiêng — bài đầu kể đủ. Bài sau đi tiếp từ chỗ bài dừng: Mặt Trời sưởi Trái Đất không đều thì không khí và nước chuyển động.",
+  },
+  {
+    slug: "sao-kim-bai-hoc-ve-hieu-ung-nha-kinh-mat-kiem-soat",
+    to: ["sao-thuy-the-gioi-da-bi-nung-va-dong-bang-cung-luc"],
+    why: "Hàng xóm gần Mặt Trời hơn nhưng gần như không có khí quyển giữ nhiệt — phép so sánh làm rõ vì sao Sao Kim nóng hơn dù ở xa hơn.",
+  },
+  {
+    slug: "mat-trang",
+    to: ["sao-thuy-the-gioi-da-bi-nung-va-dong-bang-cung-luc"],
+    why: "Hai thiên thể đá gần như không có khí quyển, bề mặt cùng chi chít hố va chạm.",
+  },
+  {
+    slug: "gaba-bo-phanh-cua-nao-co-khien-ban-lo-do-ue-oai",
+    to: ["thuoc-gay-me-da-tat-y-thuc-cua-ban-nhu-the-nao"],
+    why: "Bài nhắc gây mê; bài đích nhắc GABA trong cơ chế của thuốc gây mê.",
+  },
+  {
+    slug: "thuoc-gay-me-da-tat-y-thuc-cua-ban-nhu-the-nao",
+    to: ["gaba-bo-phanh-cua-nao-co-khien-ban-lo-do-ue-oai"],
+    why: "Bài nhắc GABA; bài đích giải thích chất này làm gì trong não lúc bình thường.",
+  },
+  {
+    slug: "ba-dinh-luat-kepler-hanh-tinh-chuyen-dong-theo-quy-luat-nao",
+    to: ["tuyet-ky-di-ke-hanh-tinh-cach-tau-vu-tru-bay-hang-ty-kilomet-ma-khong-ton-them-nhien-lieu"],
+    why: "Ứng dụng hiện đại của cơ học quỹ đạo: tính đường bay để mượn chuyển động của chính các hành tinh mà Kepler mô tả.",
+  },
+  {
+    slug: "photon-hat-anh-sang-thuc-su-la-gi",
+    to: ["vi-sao-bau-troi-xanh-hoang-hon-do-va-may-lai-trang"],
+    why: "Hiện tượng hằng ngày dễ thấy nhất của ánh sáng gặp vật chất: ánh sáng xanh bị không khí tán xạ nhiều hơn ánh sáng đỏ.",
+  },
+  {
+    slug: "cuc-quang-anh-sang-do-chinh-khi-quyen-trai-dat-phat-ra",
+    to: [
+      "vi-sao-bau-troi-xanh-hoang-hon-do-va-may-lai-trang",
+      "tu-truong-va-luc-hap-dan-hai-luc-vo-hinh-hai-co-che-khac-nhau",
+    ],
+    why: "Bài nhắc từ trường nhiều lần — bài sau giải thích nó là gì. Bài đầu là phép đối chiếu: cực quang là khí quyển phát sáng khi bị hạt mang điện từ Mặt Trời kích thích, còn màu trời là khí quyển tán xạ ánh sáng Mặt Trời.",
+  },
+  {
+    slug: "chung-ta-dang-song-trong-mot-bong-bong-giac-quan-nho-be-cua-thuc-tai",
+    to: ["vi-sao-chung-ta-khong-the-nho-nhung-nam-thang-dau-doi"],
+    why: "Bài nói não chỉ dựng lại một phần thế giới; bài đích nói não cũng không giữ lại được những năm đầu ta đã sống.",
+  },
+  {
+    slug: "trai-dat-hanh-tinh-duy-nhat-ta-biet-co-su-song",
+    to: ["hien-tuong-el-nino-khi-dai-duong-noi-gian-va-dao-lon-khi-hau-toan-cau"],
+    why: "Bài kể các hệ thống giữ Trái Đất ở được; El Niño là ví dụ cụ thể về đại dương và khí quyển cùng nhau làm xáo trộn thời tiết khắp hành tinh trong một, hai năm — một dao động tự nhiên, không phải biến đổi khí hậu.",
+  },
+  {
+    slug: "da-vu-tru-bon-cap-do-va-mot-cau-hoi-kho",
+    to: ["lo-trang-va-lo-sau-hai-nghiem-toan-hoc-chua-ai-nhin-thay"],
+    why: "Cùng một loại câu hỏi: lý thuyết cho phép điều gì đó tồn tại, nhưng chưa quan sát nào xác nhận. Bài đích là trường hợp của thuyết tương đối rộng.",
+  },
+  {
+    slug: "song-truyen-nang-luong-nhu-the-nao",
+    to: ["nang-luong-la-gi"],
+    why: "Bài nói sóng mang năng lượng đi; bài đích trả lời câu hỏi nền: năng lượng là gì.",
+  },
+  {
+    slug: "neu-phai-roi-trai-dat-con-nguoi-co-the-song-o-dau-trong-he-mat-troi",
+    to: ["neu-roi-he-mat-troi-proxima-centauri-se-la-diem-dung-dau-tien"],
+    why: "Bước tiếp theo của chính câu hỏi trong bài: ra khỏi Hệ Mặt Trời thì điểm đến gần nhất là đâu.",
+  },
+  {
+    slug: "giai-ma-hanh-tinh-tu-quay-quanh-truc",
+    to: ["neu-trai-dat-dang-quay-vi-sao-chung-ta-khong-cam-nhan-duoc"],
+    why: "Bài giải thích vì sao hành tinh quay; câu hỏi đầu tiên người đọc tự đặt ra là sao mình không thấy Trái Đất quay.",
+  },
+  {
+    slug: "dai-tuyet-chung-permi-lan-su-song-suyt-bien-mat",
+    to: ["nghich-ly-15-do-c-tai-sao-mot-thay-doi-nho-lai-quyet-dinh-so-phan-hanh-tinh"],
+    why: "Bài kể một lần nóng lên dữ dội trong quá khứ địa chất; bài đích hỏi vì sao vài độ hôm nay đã đủ quan trọng.",
+  },
+  {
+    slug: "co-hoc-luong-tu-the-gioi-ky-la-phia-sau-vat-chat",
+    to: ["nguyen-tu-cau-tao-nen-van-vat"],
+    why: "Cơ học lượng tử gắn liền với việc giải thích nguyên tử; bài đích kể nguyên tử từ đầu cho người cần nền trước.",
+  },
+  {
+    slug: "tai-sao-pluto-khong-con-la-hanh-tinh",
+    to: ["sao-choi-nguon-goc-cau-tao-va-so-phan"],
+    why: "Bài nhắc vành đai Kuiper — nơi Pluto ở, và cũng là một nguồn của sao chổi.",
+  },
+  {
+    slug: "cac-sao-toi-co-the-da-de-lai-tieng-vong-duoi-dang-song-hap-dan-khap-vu-tru",
+    to: ["song-hap-dan-va-song-trong-luc-mot-chu-khac-nhau-hai-hien-tuong-khong-lien-quan"],
+    why: "Bài nhắc sóng hấp dẫn tám lần; bài đích giải thích chính khái niệm ấy, và gỡ chỗ dễ nhầm với sóng trọng lực.",
+  },
+  {
+    slug: "tu-truong-va-luc-hap-dan-hai-luc-vo-hinh-hai-co-che-khac-nhau",
+    to: ["tia-vu-tru-nhung-vien-dan-vo-hinh-ban-pha-trai-dat-moi-giay"],
+    why: "Bài nói từ trường Trái Đất làm lệch gió Mặt Trời; tia vũ trụ là những hạt mang điện khác tới từ không gian.",
+  },
+  {
+    slug: "nguyen-tu-cau-tao-nen-van-vat",
+    to: [
+      "tu-electron-den-dong-dien-nguon-goc-cua-dien-nang",
+      "ban-khong-chi-song-trong-vu-tru-ban-la-mot-phan-cua-no",
+    ],
+    why: "Hai câu hỏi tiếp theo về nguyên tử: electron của nó tạo ra dòng điện ra sao, và các nguyên tố trong cơ thể ta được tạo ra ở đâu.",
+  },
+  {
+    slug: "tu-electron-den-dong-dien-nguon-goc-cua-dien-nang",
+    to: ["ung-dung-co-hoc-luong-tu-tu-nen-tang-cong-nghe-hien-tai-den-dot-pha-tuong-lai"],
+    why: "Bài dừng ở electron trong dây dẫn; chất bán dẫn trong các con chip là bước kế tiếp, và nó cần cơ học lượng tử để hiểu.",
+  },
+  {
+    slug: "su-ra-doi-cua-he-mat-troi",
+    to: ["ban-khong-chi-song-trong-vu-tru-ban-la-mot-phan-cua-no"],
+    why: "Đám mây khí sinh ra Hệ Mặt Trời mang sẵn nguyên tố từ những ngôi sao đời trước; bài đích theo các nguyên tố ấy tới tận cơ thể người.",
+  },
 ];
 
 /* Chỗ này từng có một danh sách chặn tay.

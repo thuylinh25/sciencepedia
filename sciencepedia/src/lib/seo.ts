@@ -60,6 +60,8 @@ type SeoInput = {
   path: string;
   locale: Locale;
   image?: string | null;
+  /// Mô tả ảnh (alt) — thiếu thì og:image:alt lấy tiêu đề như trước
+  imageAlt?: string | null;
   type?: "website" | "article";
   publishedTime?: Date | string | null;
   modifiedTime?: Date | string | null;
@@ -86,6 +88,7 @@ export function buildMetadata({
   path,
   locale,
   image,
+  imageAlt,
   type = "website",
   publishedTime,
   modifiedTime,
@@ -163,7 +166,9 @@ export function buildMetadata({
       siteName: SITE_NAME,
       locale: locale === "vi" ? "vi_VN" : "en_US",
       type,
-      images: [{ url: ogImage, width: 1200, height: 630, alt: title }],
+      images: [
+        { url: ogImage, width: 1200, height: 630, alt: imageAlt || title },
+      ],
       ...(type === "article"
         ? {
             publishedTime: publishedTime
@@ -182,6 +187,43 @@ export function buildMetadata({
       description: pageDescription,
       images: [ogImage],
     },
+  };
+}
+
+/** Bỏ cú pháp liên kết Markdown, giữ chữ: `[NASA](https://…)` → `NASA`. */
+function plainCredit(markdown: string) {
+  return markdown
+    .replace(/\[([^\]]*)\]\([^)]*\)/g, "$1")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+/**
+ * Ảnh bìa dạng `ImageObject`, để Google Images đọc được mô tả, ghi công và
+ * nơi nêu giấy phép.
+ *
+ * `license` chỉ phát khi ghi công trỏ tới trang tệp trên Wikimedia Commons —
+ * trang đó nêu đúng giấy phép của đúng tấm ảnh. Ảnh Unsplash, iStock… không
+ * phát: ghi công của chúng không nói giấy phép nào, và đoán ("Unsplash thì là
+ * Unsplash License") sai với ảnh Unsplash+ trả phí. Khai sai giấy phép tệ hơn
+ * không khai.
+ */
+function imageObject(
+  url: string,
+  alt?: string | null,
+  credit?: string | null,
+) {
+  const commonsPage = credit?.match(
+    /https?:\/\/commons\.wikimedia\.org\/wiki\/File:[^)\s]+/,
+  )?.[0];
+  return {
+    "@type": "ImageObject",
+    url,
+    contentUrl: url,
+    caption: alt || undefined,
+    creditText: credit ? plainCredit(credit) || undefined : undefined,
+    license: commonsPage,
+    acquireLicensePage: commonsPage,
   };
 }
 
@@ -209,6 +251,10 @@ export function articleJsonLd(input: {
   description: string;
   url: string;
   image?: string | null;
+  /// Mô tả ảnh bìa đang dùng làm alt trên trang
+  imageAlt?: string | null;
+  /// Ghi công ảnh bìa (Markdown), đang hiện ở cuối bài
+  imageCredit?: string | null;
   author: string;
   publishedAt?: Date | string | null;
   updatedAt?: Date | string | null;
@@ -261,7 +307,9 @@ export function articleJsonLd(input: {
         mainEntityOfPage: { "@id": input.url },
         headline: input.title,
         description: input.description,
-        image: input.image ? [input.image] : undefined,
+        image: input.image
+          ? imageObject(input.image, input.imageAlt, input.imageCredit)
+          : undefined,
         author: partyNode(input.author),
         publisher: { "@id": ORGANIZATION_ID },
         datePublished: iso(input.publishedAt),

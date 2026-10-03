@@ -81,6 +81,18 @@ export async function generateStaticParams() {
   }
 }
 
+/**
+ * Alt của ảnh bìa theo ngôn ngữ trang. KHÔNG rơi về bản kia như `pick()`:
+ * alt tiếng Việt trên một trang tiếng Anh là trình đọc màn hình đọc sai thứ
+ * tiếng. Thiếu bản tiếng Anh thì để trống, ảnh coi là trang trí.
+ */
+function coverAltFor(
+  locale: Locale,
+  article: { coverImageAlt: string | null; coverImageAltEn: string | null },
+) {
+  return (locale === "en" ? article.coverImageAltEn : article.coverImageAlt) || null;
+}
+
 export async function generateMetadata({
   params,
 }: {
@@ -117,6 +129,8 @@ export async function generateMetadata({
     locale: loc,
     availableLocales: untranslated ? ["vi"] : undefined,
     image: article.ogImage ?? article.coverImage,
+    // Alt tả ảnh BÌA — chỉ dùng khi og:image chính là ảnh bìa
+    imageAlt: article.ogImage ? null : coverAltFor(loc, article),
     type: "article",
     publishedTime: article.publishedAt,
     modifiedTime: article.updatedAt,
@@ -154,6 +168,11 @@ export default async function ArticlePage({
   const content = pick(loc, article.content, article.contentEn);
   const showFallbackNotice = isFallback(loc, article.contentEn);
   const categoryName = pickName(loc, article.category);
+  const coverAlt = coverAltFor(loc, article);
+  const coverCredit =
+    loc === "en"
+      ? (article.coverImageCreditEn ?? article.coverImageCredit)
+      : article.coverImageCredit;
 
   const headings = extractHeadings(content);
   const url = absoluteUrl(`/${locale}/articles/${article.slug}`);
@@ -182,6 +201,8 @@ export default async function ArticlePage({
           description: summary,
           url,
           image: article.coverImage,
+          imageAlt: coverAlt,
+          imageCredit: coverCredit,
           author: article.author.name ?? "Sciencepedia",
           publishedAt: article.publishedAt,
           updatedAt: article.updatedAt,
@@ -289,9 +310,11 @@ export default async function ArticlePage({
              dung đầu tiên lùi khỏi màn hình đầu trên laptop. Đổi lại ảnh bìa
              không còn bị đọc nhầm là ảnh hỏng. */
           <div className="relative h-[64vh] max-h-[36rem] min-h-[24rem] w-full overflow-hidden bg-space-900">
+            {/* Chưa có mô tả thì alt="" — coi là ảnh trang trí, không bịa
+                alt từ tiêu đề (tiêu đề đã ngay bên dưới, đọc hai lần). */}
             <AssetImage
               src={article.coverImage}
-              alt=""
+              alt={coverAlt ?? ""}
               priority
               sizes="100vw"
               className="object-scale-down"
@@ -404,12 +427,18 @@ export default async function ArticlePage({
             {article.reviewedBy?.name && article.reviewedAt && (
               <span className="flex items-center gap-1.5">
                 <ShieldCheck className="size-4 text-primary-strong" />
-                <span>
+                {/* Trỏ tới trang nói rõ "Ban biên tập" là một quy trình AI,
+                    không phải một người — byline tổ chức mà không giải thích
+                    thì người đọc tự hiểu là có chuyên gia duyệt. */}
+                <Link
+                  href="/about#ai-dung-sau"
+                  className="underline-offset-4 hover:underline"
+                >
                   {t("reviewedBy", {
                     name: article.reviewedBy.name,
                     date: formatDate(article.reviewedAt, locale),
                   })}
-                </span>
+                </Link>
               </span>
             )}
           </div>
@@ -554,11 +583,7 @@ export default async function ArticlePage({
               theo. Chép vào Markdown thì lần thay ảnh sau để lại ghi công của
               tấm cũ — ghi công sai người, tệ hơn không ghi. */}
           <ImageCredit
-            credit={
-              loc === "en"
-                ? (article.coverImageCreditEn ?? article.coverImageCredit)
-                : article.coverImageCredit
-            }
+            credit={coverCredit}
             className="mt-10"
           />
 

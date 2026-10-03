@@ -56,6 +56,8 @@ function normalise(input: ArticleInput) {
     coverImage: input.coverImage?.trim() || null,
     coverImageCredit: input.coverImageCredit?.trim() || null,
     coverImageCreditEn: input.coverImageCreditEn?.trim() || null,
+    coverImageAlt: input.coverImageAlt?.trim() || null,
+    coverImageAltEn: input.coverImageAltEn?.trim() || null,
     categoryId: input.categoryId,
     status: input.status,
     featured: input.featured,

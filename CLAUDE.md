@@ -26,6 +26,8 @@ npm run redirects:sync # đổ bảng redirect ra JSON cho next.config — PHẢ
 npm run glossary:usedin # đồng bộ trường usedIn của glossary.json (cần --write)
 npx tsx --env-file-if-exists=.env scripts/recrop-cover.ts --slug <s> --top <px>  # ảnh bìa đứng mất đầu trên thẻ: cắt sẵn 16/10 (cần --write)
 npx tsx --env-file-if-exists=.env scripts/strip-draft-artifacts.ts  # gỡ dấu 【…】 của công cụ AI khỏi bài (cần --write)
+npx tsx --env-file-if-exists=.env scripts/set-cover-alt.ts  # alt ảnh bìa từ scripts/data/cover-alt.json, chỉ điền ô trống (cần --write)
+npx tsx --env-file-if-exists=.env scripts/set-category-descriptions.ts  # mô tả danh mục còn trống (cần --write)
 
 npx tsx --env-file-if-exists=.env scripts/upload-human-atlas.ts --source <human-atlas/public/models>  # dữ liệu giải phẫu lên R2 (cần --write), rồi sửa HUMAN_ATLAS_DATA_VERSION
 npx tsx --env-file-if-exists=.env scripts/anatomy-enrich.ts  # FMA → data/anatomy/fma-structures.json (chạy khô; --write ghi, --upload đẩy R2 rồi sửa ANATOMY_DATA_FILE)
@@ -109,6 +111,7 @@ Gate accuracy **không có ngoại lệ**.
 - **Dán URL ảnh ngoài vào form quản trị thì tự về R2** kèm ghi công Commons, ngay trong lượt lưu (`src/lib/cover-intake.ts`). Hỏng thì vẫn lưu, bìa còn trỏ ra ngoài. `npm run covers:mirror -- --write` là lưới hứng cho những lượt hụt và cho ảnh do pipeline sinh ra — chạy `npm run images:credit -- --write` TRƯỚC nó, vì sao ảnh xong là mất dấu vết Commons.
 - **Ảnh tải lên qua trang quản trị đi thẳng R2** (`/api/upload`), tự chuyển WebP và dựng sẵn các cỡ — không cần chạy script nào sau đó. Supabase Storage không còn nhận ảnh mới.
 - **Song ngữ:** dùng `pick()` / `pickName()` từ `@/lib/i18n-content`, không hardcode.
+- **Trang Giới thiệu (`/about`) phải khớp quy trình thật.** Đổi pipeline, cách duyệt hay nguồn ảnh thì sửa trang này trong cùng lượt và qua `science-editor`. Không nêu tên người duyệt khi không có người thật duyệt.
 - **Thuật ngữ `[[...]]`:** định nghĩa ngắn tra trên server lúc render, không fetch khi rê chuột. Giải thích do AI sinh **không bao giờ ghi vào CSDL** và luôn mang nhãn "do AI" — lý do: `docs/architecture.md`, mục "Thuật ngữ".
 - **Dấu duyệt mục từ chỉ đến từ `glossary.json`, và tự gỡ khi nội dung đổi.** `GlossaryTerm.reviewedById`/`reviewedAt` trỏ tài khoản tổ chức như bài viết; `/admin/glossary` không đặt được chúng, chỉ gỡ khi tên thuật ngữ hoặc định nghĩa đổi. Mục không có bằng chứng duyệt thì để trống, không suy từ `createdAt` — lý do: `docs/content-rules.md`, mục "Byline người duyệt".
 

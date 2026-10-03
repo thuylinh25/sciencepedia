@@ -200,6 +200,46 @@ mục, không cần sửa gì. Đừng đổi sang `noindex`: canonical còn chu
 `/en` lấy `titleEn`/`summaryEn`. Tiêu đề quá 60 ký tự khi cộng ` · Sciencepedia`
 thì bỏ hậu tố (`title.absolute`) thay vì để Google cắt mất phần mang nghĩa.
 
+### JSON-LD và các trang danh sách (2026-10-03)
+
+- **Ban biên tập là `Organization`, không phải `Person`.** Lý do ở
+  `docs/content-rules.md`, mục "Byline người duyệt". `reviewedBy` và
+  `lastReviewed` gắn vào `WebPage`, vì schema.org chỉ định nghĩa chúng cho
+  `WebPage`; gắn vào bài thì trình kiểm tra bỏ qua. `dateReviewed` không có
+  trong chuẩn nên đã bỏ.
+- **Khai thì phải hiện.** `dateModified` khai cho mọi bài, nên ngày cập nhật
+  hiện trên trang (ẩn khi trùng ngày đăng). `lastReviewed` lấy mốc mới hơn
+  giữa thẩm định và `lastVerifiedAt`, nên ngày đối chiếu nguồn cũng hiện.
+- **`?page=N` tự canonical** và có số trang trong tiêu đề. Canonical về trang
+  1 bảo Google rằng trang 2 là bản sao, và những bài chỉ được liệt kê từ trang
+  2 trở đi mất đường dẫn nội bộ.
+- **Danh mục chưa có bài thì `noindex` và rút khỏi sitemap**, cùng một điều
+  kiện (`_count.articles`, có cộng cả bài của danh mục con).
+- **`ImageObject.license` chỉ phát khi ghi công trỏ về trang tệp trên
+  Commons.** Đoán giấy phép từ tên kho ảnh (vd. "Unsplash thì là Unsplash
+  License") sai với ảnh trả phí, mà khai sai giấy phép tệ hơn không khai.
+
+### IndexNow nằm trong `revalidateArticles`, không nằm trong `publish.ts`
+
+"Trang bài này vừa đổi" là một sự kiện duy nhất, và mọi đường ghi bài đã đi qua
+`revalidateArticles`: form quản trị, cron, và script qua `/api/revalidate`.
+Gắn IndexNow vào `publish.ts` sẽ bỏ sót đường form, mà form lại là đường xuất
+bản tay của chủ sản phẩm. Thông báo gửi trong `after()` nên form không phải
+chờ một API bên ngoài, và chỉ gửi khi `VERCEL_ENV=production`. Khoá IndexNow
+không phải bí mật: giao thức bắt nó nằm công khai ở `public/<khoá>.txt`. Đổi
+khoá thì phải đổi cả hằng `INDEXNOW_KEY` lẫn tên tệp. Google không dùng
+IndexNow, nên với Google vẫn chỉ có sitemap và Search Console.
+
+### Alt ảnh bìa: cột riêng, tả ẢNH, trống thì `alt=""`
+
+`Article.coverImageAlt`/`coverImageAltEn` (migration
+`20261003180000_article_cover_alt`). Thiếu thì render `alt=""`, tức coi là ảnh
+trang trí, chứ không lấy tiêu đề bài làm alt: tiêu đề nằm ngay bên dưới, và
+trình đọc màn hình sẽ đọc nó hai lần. Bản `/en` không rơi về alt tiếng Việt,
+vì như thế trình đọc màn hình đọc sai thứ tiếng. Alt tả đúng cái ảnh cho thấy,
+kể cả khi ảnh lệch bài. Chỗ sửa khi đó là thay ảnh, và thay ảnh thì phải xoá
+alt cũ.
+
 ---
 
 ## Lịch sử xem — một hàng mỗi (người, nội dung), server quyết lượt xem (2026-10-03)

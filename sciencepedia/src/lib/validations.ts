@@ -71,6 +71,10 @@ export const articleSchema = z.object({
      (`scripts/check-publish.ts`), nơi biết được ảnh đến từ host nào. */
   coverImageCredit: z.string().max(500).optional().or(z.literal("")),
   coverImageCreditEn: z.string().max(500).optional().or(z.literal("")),
+  // Alt của ảnh bìa: tả ảnh cho người không thấy nó, nên ngắn — trình đọc màn
+  // hình đọc trọn chuỗi, không có nút bỏ qua giữa chừng.
+  coverImageAlt: z.string().max(250).optional().or(z.literal("")),
+  coverImageAltEn: z.string().max(250).optional().or(z.literal("")),
   categoryId: z.string().min(1, "Chọn danh mục"),
   // Không dùng .default() ở các schema gắn với form: nó khiến kiểu đầu vào và
   // đầu ra của Zod lệch nhau, và zodResolver sẽ báo lỗi kiểu với useForm.
