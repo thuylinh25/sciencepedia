@@ -6464,6 +6464,2968 @@
     "verdict": "approved-with-edits",
     "notes": "Cắt câu não thất (sai với cống não/não thất IV; sai trường). 'in fact shapes' → 'affects' như nguồn."
    }
+  },
+  "FMA68208": {
+   "summary": {
+    "vi": "Cây phế quản phân thùy là phần cây phế quản phục vụ một phân thùy phổi. Phế quản thùy chia thành các phế quản phân thùy (phế quản cấp ba), mỗi phế quản phân thùy cấp khí cho một phân thùy phế quản – phổi, vùng phổi được vách mô liên kết ngăn với phần còn lại.",
+    "en": "A segmental bronchial tree is the stretch of airway serving one lung segment. Lobar bronchi branch into segmental, or tertiary, bronchi; each of these supplies a single bronchopulmonary segment, a region of lung walled off from the rest by a connective-tissue septum."
+   },
+   "location": {
+    "vi": "Trong phổi. Phổi phải có mười phân thùy: ba ở thùy trên, hai ở thùy giữa, năm ở thùy dưới. Ở phổi trái một số phân thùy có thể hợp nhất, thường còn tám đến chín phân thùy.",
+    "en": "Within the lungs. The right lung holds ten segments, three upper-lobe, two middle-lobe and five lower-lobe. In the left lung some segments may merge, usually leaving eight or nine."
+   },
+   "function": {
+    "vi": "Dẫn khí vào phân thùy phổi mà nó cấp. Ở phế quản không có trao đổi khí.",
+    "en": "Conducts air into the lung segment it serves. No gas exchange takes place in the bronchi."
+   },
+   "evidence": [
+    {
+     "source": "wikipedia-en",
+     "section": "Bronchus",
+     "quote": "The secondary bronchi divide further into tertiary bronchi, (also known as segmental bronchi), each of which supplies a bronchopulmonary segment.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Bronchus",
+     "quote": "A bronchopulmonary segment is a division of a lung separated from the rest of the lung by a septum of connective tissue.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Bronchopulmonary_segment",
+     "quote": "There are ten bronchopulmonary segments in the right lung: three in the superior lobe, two in the middle lobe, and five in the inferior lobe.",
+     "supports": [
+      "location"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Bronchopulmonary_segment",
+     "quote": "Some of the segments may fuse in the left lung to form usually eight to nine segments",
+     "supports": [
+      "location"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Bronchus",
+     "quote": "is a passage or airway in the lower respiratory tract that conducts air into the lungs.",
+     "supports": [
+      "function"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Bronchus",
+     "quote": "No gas exchange takes place in the bronchi.",
+     "supports": [
+      "function"
+     ]
+    }
+   ]
+  },
+  "FMA7207": {
+   "summary": {
+    "vi": "Hỗng tràng là đoạn thứ hai của ruột non, chiếm khoảng hai phần năm chiều dài ruột non. Giữa hỗng tràng và hồi tràng không có ranh giới giải phẫu rõ rệt.",
+    "en": "The jejunum, second part of the small intestine, makes up about two-fifths of its length. No clear anatomical boundary separates it from the ileum."
+   },
+   "location": {
+    "vi": "Nằm giữa tá tràng và hồi tràng; được xem là bắt đầu ở cơ treo tá tràng, tại góc tá – hỗng tràng.",
+    "en": "Between the duodenum and the ileum. It is considered to begin at the suspensory muscle of the duodenum, at the duodenojejunal flexure."
+   },
+   "function": {
+    "vi": "Lớp lót của hỗng tràng chuyên cho việc hấp thu các phân tử dưỡng chất nhỏ — do tế bào ruột (enterocyte) đảm nhận — sau khi enzyme ở tá tràng đã tiêu hoá chúng.",
+    "en": "Its lining is specialised for absorption: enterocytes take up small nutrient molecules that enzymes in the duodenum have already broken down."
+   },
+   "evidence": [
+    {
+     "source": "wikipedia-en",
+     "section": "Jejunum",
+     "quote": "The jejunum is the second part of the small intestine in humans and most higher vertebrates",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Jejunum",
+     "quote": "about two-fifths of which (about 2.5 m (8.2 ft)) is the jejunum.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Jejunum",
+     "quote": "The division between the jejunum and ileum is not anatomically distinct.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Jejunum",
+     "quote": "The jejunum lies between the duodenum and the ileum and is considered to start at the suspensory muscle of the duodenum, a location called the duodenojejunal flexure.",
+     "supports": [
+      "location"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Jejunum",
+     "quote": "Its lining is specialized for the absorption by enterocytes of small nutrient molecules which have been previously digested by enzymes in the duodenum.",
+     "supports": [
+      "function"
+     ]
+    }
+   ]
+  },
+  "FMA7208": {
+   "summary": {
+    "vi": "Hồi tràng là đoạn thứ ba, cũng là đoạn cuối của ruột non, dài khoảng 2–4 m. So với hỗng tràng, lòng hồi tràng nhỏ hơn và thành mỏng hơn; chỉ hồi tràng có nhiều mảng Peyer — các nốt lympho không có vỏ bọc.",
+    "en": "The ileum is the third and last part of the small intestine, about 2–4 m long. Compared with the jejunum it has a narrower lumen and thinner walls, and it alone has abundant Peyer's patches, lymphoid nodules without a capsule."
+   },
+   "location": {
+    "vi": "Nối tiếp hỗng tràng và kết thúc ở chỗ nối hồi – manh tràng, nơi nó thông với manh tràng của ruột già qua van hồi manh tràng. Cùng với hỗng tràng, hồi tràng được treo trong mạc treo — nếp phúc mạc mang động mạch và tĩnh mạch mạc treo tràng trên tới nuôi chúng.",
+    "en": "It continues on from the jejunum and finishes at the ileocecal junction, where it opens into the cecum, first part of the large intestine, via the ileocecal valve. Like the jejunum it hangs in the mesentery, a peritoneal fold that carries the superior mesenteric artery and vein to it."
+   },
+   "function": {
+    "vi": "Chức năng chính là hấp thu vitamin B12, muối mật và những sản phẩm tiêu hoá mà hỗng tràng chưa hấp thu hết.",
+    "en": "Its main job is absorbing vitamin B12, bile salts and any digestion products the jejunum has not already taken up."
+   },
+   "evidence": [
+    {
+     "source": "wikipedia-en",
+     "section": "Ileum",
+     "quote": "The ileum is the third and final part of the small intestine.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Ileum",
+     "quote": "In humans, the ileum is about 2–4 m long",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Ileum",
+     "quote": "The diameter of its lumen is smaller and has thinner walls than the jejunum.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Ileum",
+     "quote": "only the ileum has abundant Peyer's patches, unencapsulated lymphoid nodules that contain large numbers of lymphocytes",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Ileum",
+     "quote": "It follows the jejunum and ends at the ileocecal junction, where the terminal ileum communicates with the cecum of the large intestine through the ileocecal valve.",
+     "supports": [
+      "location"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Ileum",
+     "quote": "The ileum, along with the jejunum, is suspended inside the mesentery, a peritoneal formation that carries the blood vessels supplying them (the superior mesenteric artery and vein)",
+     "supports": [
+      "location"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Ileum",
+     "quote": "Its main function is to absorb vitamin B12, bile salts, and whatever products of digestion that were not absorbed by the jejunum.",
+     "supports": [
+      "function"
+     ]
+    }
+   ]
+  },
+  "FMA50081": {
+   "summary": {
+    "vi": "Các nhánh của động mạch não giữa. Động mạch não giữa là một trong ba cặp động mạch não lớn cấp máu cho đại não; nó tách từ động mạch cảnh trong, đi vào rãnh bên rồi chia nhánh. Các nhánh được mô tả theo vùng não mà chúng tưới máu.",
+    "en": "Branches of the middle cerebral artery, one of the three major paired arteries feeding the cerebrum. The artery leaves the internal carotid, runs into the lateral sulcus and branches there; its branches are named for the brain areas they supply."
+   },
+   "location": {
+    "vi": "Đoạn đầu (M1) cho nhiều nhánh trung tâm trước ngoài (động mạch đậu vân bên) xuyên vào nhu mô não. Các nhánh vỏ tận cùng bắt đầu ở bờ ngoài rãnh Sylvius rồi toả ra trên bề mặt vỏ não.",
+    "en": "The first segment (M1) sends numerous anterolateral central (lateral lenticulostriate) arteries into the brain substance. The terminal cortical branches start at the outer edges of the Sylvian fissure and spread out over the cortex."
+   },
+   "function": {
+    "vi": "Cấp máu cho nhiều vùng vỏ não mặt ngoài, cho phần trước thùy thái dương và vỏ đảo; các nhánh trung tâm trước ngoài cấp máu cho các nhân nền.",
+    "en": "Supply many parts of the lateral cerebral cortex, the front of the temporal lobe and the insular cortex; the anterolateral central branches supply the basal ganglia."
+   },
+   "evidence": [
+    {
+     "source": "wikipedia-en",
+     "section": "Middle_cerebral_artery",
+     "quote": "The middle cerebral artery (MCA) is one of the three major paired cerebral arteries that supply blood to the cerebrum.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Middle_cerebral_artery",
+     "quote": "The MCA arises from the internal carotid artery and continues into the lateral sulcus where it then branches and projects to many parts of the lateral cerebral cortex.",
+     "supports": [
+      "summary",
+      "function"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Middle_cerebral_artery",
+     "quote": "The branches of the MCA can be described by the areas that they irrigate.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Middle_cerebral_artery",
+     "quote": "The M1 segment perforates the brain with numerous anterolateral central (lateral lenticulostriate) arteries, which supply the basal ganglia.",
+     "supports": [
+      "location",
+      "function"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Middle_cerebral_artery",
+     "quote": "These finer terminal or cortical segments irrigate the cortex. They begin at the external margins of the Sylvian fissure and extend distally away on the cortex of the brain.",
+     "supports": [
+      "location"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Middle_cerebral_artery",
+     "quote": "It also supplies blood to the anterior temporal lobes and the insular cortices.",
+     "supports": [
+      "function"
+     ]
+    }
+   ]
+  },
+  "FMA50586": {
+   "summary": {
+    "vi": "Các nhánh của động mạch não sau, gồm nhánh trung tâm (nhánh xuyên), nhánh mạch mạc và nhánh vỏ. Động mạch não sau là một trong một cặp động mạch não cấp máu giàu oxy cho thùy chẩm, mặt trong và mặt dưới thùy thái dương.",
+    "en": "Branches of the posterior cerebral artery: central (perforating), choroidal and cortical. The posterior cerebral arteries are a pair of cerebral arteries carrying oxygenated blood to the occipital lobe and to the medial and inferior surfaces of the temporal lobe."
+   },
+   "location": {
+    "vi": "Hai động mạch não sau tách từ đầu xa của động mạch nền, nơi động mạch nền chia đôi. Nhánh đồi thị xuyên và đồi thị gối tách ngay ở đoạn khởi đầu và xuyên qua chất thủng sau; nhánh mạch mạc sau trong chạy ra trước dưới lồi thể chai.",
+    "en": "Both posterior cerebral arteries spring from the far end of the basilar artery, where it forks. The thalamoperforating and thalamogeniculate branches leave at the very start and pierce the posterior perforated substance; the medial posterior choroidal branches run forward under the splenium of the corpus callosum."
+   },
+   "function": {
+    "vi": "Nhánh đồi thị xuyên và đồi thị gối cấp máu cho mặt trong đồi thị và thành não thất ba; nhánh mạch mạc sau trong cấp máu cho tấm mạch mạc não thất ba và đám rối mạch mạc; nhánh vỏ cấp máu cho thùy chẩm và thùy thái dương.",
+    "en": "The thalamoperforating and thalamogeniculate branches feed the inner faces of the thalami and the third ventricle's walls; the medial posterior choroidal branches feed the third ventricle's tela choroidea and the choroid plexus; the cortical branches serve the occipital and temporal lobes."
+   },
+   "evidence": [
+    {
+     "source": "wikipedia-en",
+     "section": "Posterior_cerebral_artery",
+     "quote": "The posterior cerebral artery (PCA) is one of a pair of cerebral arteries that supply oxygenated blood to the occipital lobe, as well as the medial and inferior aspects of the temporal lobe of the human brain.",
+     "supports": [
+      "summary",
+      "function"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Posterior_cerebral_artery",
+     "quote": "The following are central branches of the PCA, also known as perforating branches:",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Posterior_cerebral_artery",
+     "quote": "The cortical branches are:",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Posterior_cerebral_artery",
+     "quote": "The two arteries originate from the distal end of the basilar artery, where it bifurcates into the left and right posterior cerebral arteries.",
+     "supports": [
+      "location"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Posterior_cerebral_artery",
+     "quote": "a group of small arteries which arise at the commencement of the posterior cerebral artery: these, with similar branches from the posterior communicating, pierce the posterior perforated substance, and supply the medial surfaces of the thalami and the walls of the third ventricle.",
+     "supports": [
+      "location",
+      "function"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Posterior_cerebral_artery",
+     "quote": "Medial posterior choroidal branches: run forward beneath the splenium of the corpus callosum, and supply the tela choroidea of the third ventricle and the choroid plexus.",
+     "supports": [
+      "summary",
+      "location",
+      "function"
+     ]
+    }
+   ]
+  },
+  "FMA79615": {
+   "summary": {
+    "vi": "Các nhánh của đoạn sau thông của động mạch não trước — tức phần nằm sau động mạch thông trước: động mạch trán nền trong (ổ mắt – trán), động mạch quanh thể chai, động mạch viền thể chai và các nhánh của chúng. Động mạch não trước tách từ động mạch cảnh trong và thuộc vòng Willis.",
+    "en": "Branches of the anterior cerebral artery beyond the anterior communicating artery: the medial frontobasal (orbitofrontal) artery, the pericallosal and callosomarginal arteries, and their branches. The anterior cerebral artery comes off the internal carotid and forms part of the circle of Willis."
+   },
+   "location": {
+    "vi": "Đoạn A2 đi từ động mạch thông trước tới chỗ chia thành động mạch quanh thể chai và động mạch viền thể chai. Động mạch quanh thể chai chạy ra sau trong rãnh quanh thể chai; động mạch viền thể chai tách từ nó, nhưng tuỳ biến thể có thể không tách bạch hoặc không thấy được.",
+    "en": "Segment A2 runs from the anterior communicating artery to the point where the pericallosal and callosomarginal arteries part. The pericallosal artery travels backward in the pericallosal sulcus; the callosomarginal artery branches off it, though depending on variation it may be indistinct or not visible."
+   },
+   "function": {
+    "vi": "Động mạch não trước cấp máu cho phần lớn vùng đường giữa của thùy trán và phần trên mặt trong thùy đỉnh, cùng bốn phần năm phía trước của thể chai. Động mạch viền thể chai cho các động mạch trán trong, động mạch cạnh trung tâm và các nhánh hồi đai.",
+    "en": "The anterior cerebral artery feeds most of the midline frontal lobe, the upper medial parietal lobe and the front four-fifths of the corpus callosum. The callosomarginal artery gives off the medial frontal arteries, the paracentral artery and cingulate branches."
+   },
+   "evidence": [
+    {
+     "source": "wikipedia-en",
+     "section": "Anterior_cerebral_artery",
+     "quote": "The two anterior cerebral arteries arise from the internal carotid artery and are part of the circle of Willis.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Anterior_cerebral_artery",
+     "quote": "A2 extends from the AComm to the bifurcation forming the pericallosal and callosomarginal arteries.",
+     "supports": [
+      "summary",
+      "location"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Anterior_cerebral_artery",
+     "quote": "Orbitofrontal artery (medial frontal basal): Arises a small distance away from the AComm",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Anterior_cerebral_artery",
+     "quote": "which extends posteriorly in the pericallosal sulcus to form the internal parietal arteries (superior, inferior) and the precuneal artery.",
+     "supports": [
+      "location"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Anterior_cerebral_artery",
+     "quote": "Callosal marginal artery: A commonly present terminal branch of the ACA, which bifurcates from the pericallosal artery.",
+     "supports": [
+      "location"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Anterior_cerebral_artery",
+     "quote": "Depending on anatomical variation, the callosal marginal artery may be none discrete or not be visible.",
+     "supports": [
+      "location"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Anterior_cerebral_artery",
+     "quote": "supplies oxygenated blood to most midline portions of the frontal lobes and superior medial parietal lobes of the brain.",
+     "supports": [
+      "function"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Anterior_cerebral_artery",
+     "quote": "It also supplies the front four–fifths of the corpus callosum",
+     "supports": [
+      "function"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Anterior_cerebral_artery",
+     "quote": "This artery in turn branches into the medial frontal arteries (anterior, intermediate, posterior), and the paracentral artery, with the cingulate branches arising throughout its length.",
+     "supports": [
+      "function"
+     ]
+    }
+   ],
+   "omitted": "Không nêu cấp máu cho bao trong, nhân đuôi, cầu nhạt: các nhánh sâu ấy tách từ A1/động mạch thông trước, không thuộc nhóm đoạn sau thông."
+  },
+  "FMA76269": {
+   "summary": {
+    "vi": "Các nhánh của động mạch nền trong mô hình: động mạch tiểu não trước dưới, động mạch tiểu não trên, các động mạch cầu não và nhánh của chúng. Động mạch nền cấp máu giàu oxy cho não.",
+    "en": "Branches of the basilar artery shown in the model: the anterior inferior cerebellar artery, the superior cerebellar artery, the pontine arteries and their branches. The basilar artery is one of the arteries carrying oxygen-rich blood to the brain."
+   },
+   "location": {
+    "vi": "Động mạch nền hình thành từ hai động mạch đốt sống hợp lại ở chỗ nối hành não – cầu não. Động mạch tiểu não trước dưới tách ở ngang mức đó; động mạch tiểu não trên tách gần đầu tận của động mạch nền rồi vòng quanh thân não; các động mạch cầu não là những nhánh nhỏ tách vuông góc từ hai bên động mạch nền.",
+    "en": "The basilar artery forms where the two vertebral arteries join at the medulla–pons junction. The anterior inferior cerebellar artery leaves at that level; the superior cerebellar artery leaves near the basilar artery's end and curves around the brainstem; the pontine arteries are small vessels leaving its sides at right angles."
+   },
+   "function": {
+    "vi": "Động mạch tiểu não trước dưới và động mạch tiểu não trên là hai trong ba cặp động mạch cấp máu cho tiểu não; động mạch tiểu não trên còn cấp máu cho một phần não giữa. Các động mạch cầu não cấp máu cho cầu não và vùng não lân cận.",
+    "en": "The anterior inferior and superior cerebellar arteries are two of the three pairs supplying the cerebellum, and the superior one also reaches parts of the midbrain. The pontine arteries supply the pons and nearby brain."
+   },
+   "evidence": [
+    {
+     "source": "wikipedia-en",
+     "section": "Basilar_artery",
+     "quote": "is one of the arteries that supplies the brain with oxygen-rich blood.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Basilar_artery",
+     "quote": "The basilar artery arises from the union of the two vertebral arteries at the junction between the medulla oblongata and the pons",
+     "supports": [
+      "location"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Anterior_inferior_cerebellar_artery",
+     "quote": "It arises from the basilar artery on each side at the level of the junction between the medulla oblongata and the pons in the brainstem.",
+     "supports": [
+      "summary",
+      "location"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Superior_cerebellar_artery",
+     "quote": "It arises near the end of the basilar artery. It is a branch of the basilar artery.",
+     "supports": [
+      "summary",
+      "location"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Superior_cerebellar_artery",
+     "quote": "It passes laterally around the brainstem.",
+     "supports": [
+      "location"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Pontine_arteries",
+     "quote": "The pontine arteries are a number of small arteries which come off at right angles from either side of the basilar artery and supply the pons and adjacent parts of the brain.",
+     "supports": [
+      "summary",
+      "location",
+      "function"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Anterior_inferior_cerebellar_artery",
+     "quote": "is one of three pairs of arteries that supplies blood to the cerebellum.",
+     "supports": [
+      "function"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Superior_cerebellar_artery",
+     "quote": "It supplies parts of the cerebellum, the midbrain, and other nearby structures.",
+     "supports": [
+      "function"
+     ]
+    }
+   ]
+  },
+  "FMA22845": {
+   "summary": {
+    "vi": "Các nhánh của cung động mạch gan tay nông: các động mạch gan ngón tay chung và các động mạch gan ngón tay riêng. Cung gan tay nông chủ yếu do động mạch trụ tạo nên, có thêm phần góp từ nhánh gan tay nông của động mạch quay.",
+    "en": "Branches of the superficial palmar arch, namely the common and proper palmar digital arteries. The arch is built mainly by the ulnar artery, with the radial artery adding its superficial palmar branch."
+   },
+   "location": {
+    "vi": "Động mạch gan ngón tay chung tách từ bờ lồi của cung, đi xuống trên các cơ giun thứ hai, ba, bốn; gần khớp bàn – ngón, mỗi động mạch chia thành hai động mạch gan ngón tay riêng. Động mạch gan ngón tay riêng chạy dọc hai bên đốt ngón, ngay dưới thần kinh ngón tương ứng.",
+    "en": "The common palmar digital arteries leave the convex side of the arch and run down over the second, third and fourth lumbricals; near the metacarpophalangeal joints each splits into two proper palmar digital arteries, which run along the sides of the phalanges just beneath the matching digital nerve."
+   },
+   "function": {
+    "vi": "Mang máu tới các ngón tay. Động mạch gan ngón tay riêng nối thông nhau ở mô dưới da đầu ngón; nhánh mu của chúng cấp máu cho phần mềm mặt mu đốt giữa và đốt xa, kể cả mầm móng.",
+    "en": "Carry blood to the fingers. The proper palmar digital arteries link up freely beneath the skin of the fingertips, and their dorsal branches supply the soft tissue on the back of the middle and distal phalanges, nail matrix included."
+   },
+   "evidence": [
+    {
+     "source": "wikipedia-en",
+     "section": "Superficial_palmar_arch",
+     "quote": "The superficial palmar arch is formed predominantly by the ulnar artery, with a contribution from the superficial palmar branch of the radial artery.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Superficial_palmar_arch",
+     "quote": "Near the level of the metacarpophalangeal joints, each common palmar digital artery divides into two proper palmar digital arteries.",
+     "supports": [
+      "summary",
+      "location"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Common_palmar_digital_arteries",
+     "quote": "arise from the convexity of the superficial palmar arch and proceed distally over the second, third, and fourth lumbricales muscles.",
+     "supports": [
+      "location"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Proper_palmar_digital_arteries",
+     "quote": "The proper palmar digital arteries travel along the sides of the phalanges (along the contiguous sides of the index, middle, ring, and little fingers), each artery lying just below (dorsal to) its corresponding digital nerve.",
+     "supports": [
+      "location",
+      "function"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Proper_palmar_digital_arteries",
+     "quote": "Proper palmar digital arteries anastomose freely in the subcutaneous tissue of the finger tips",
+     "supports": [
+      "function"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Proper_palmar_digital_arteries",
+     "quote": "supply the soft parts on the back of the second and third phalanges, including the matrix of the fingernail.",
+     "supports": [
+      "function"
+     ]
+    }
+   ],
+   "omitted": "Không nêu số động mạch gan ngón tay chung: bài Wikipedia ghi ba, còn FMA (và mô hình) có bốn."
+  },
+  "FMA70494": {
+   "summary": {
+    "vi": "Các nhánh phân thùy của động mạch thận. Trước khi tới rốn thận, mỗi động mạch thận chia thành bốn hoặc năm nhánh: nhóm trước gồm các động mạch phân thùy trên, giữa, dưới và đỉnh; nhóm sau ít nhánh hơn, gồm động mạch phân thùy sau.",
+    "en": "Segmental branches of the renal artery. Before reaching the hilum each renal artery splits into four or five branches: an anterior group (upper, middle, lower and apical segmental arteries) and a smaller posterior group that includes the posterior segmental artery."
+   },
+   "location": {
+    "vi": "Ở rốn thận. Các nhánh trước nằm giữa tĩnh mạch thận ở phía trước và niệu quản ở phía sau; các nhánh sau thường nằm sau niệu quản.",
+    "en": "At the hilum of the kidney. The anterior branches lie between the renal vein in front and the ureter behind; the posterior branches usually lie behind the ureter."
+   },
+   "function": {
+    "vi": "Đưa máu vào thận. Các động mạch thận mang một phần lớn tổng lưu lượng máu; có thể tới một phần ba cung lượng tim đi qua chúng để thận lọc.",
+    "en": "Bring blood into the kidney. The renal arteries carry a large share of the circulation: up to a third of cardiac output can pass through them to be filtered."
+   },
+   "evidence": [
+    {
+     "source": "wikipedia-en",
+     "section": "Renal_artery",
+     "quote": "Before reaching the hilus of the kidney, each artery divides into four or five branches.",
+     "supports": [
+      "summary",
+      "location"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Renal_artery",
+     "quote": "The anterior branches (the upper, middle, lower and apical segmental arteries) lie between the renal vein and ureter, the vein being in front, the ureter behind.",
+     "supports": [
+      "summary",
+      "location"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Renal_artery",
+     "quote": "The posterior branches, which are fewer in number and include the posterior segmental artery, are usually situated behind the ureter.",
+     "supports": [
+      "summary",
+      "location"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Renal_artery",
+     "quote": "The renal arteries are paired arteries that supply the kidneys with blood.",
+     "supports": [
+      "function"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Renal_artery",
+     "quote": "The renal arteries carry a large portion of total blood flow to the kidneys. Up to a third of total cardiac output can pass through the renal arteries to be filtered by the kidneys.",
+     "supports": [
+      "function"
+     ]
+    }
+   ]
+  },
+  "FMA71209": {
+   "summary": {
+    "vi": "Các tĩnh mạch mà FMA xếp vào nhóm nhánh đổ về tĩnh mạch nách. Tĩnh mạch nách là tĩnh mạch lớn, mỗi bên cơ thể có một; nó được tạo nên bởi tĩnh mạch cánh tay và tĩnh mạch nền, ở đoạn tận nhận thêm tĩnh mạch đầu. Các nhánh đổ khác gồm tĩnh mạch vai dưới, tĩnh mạch mũ cánh tay, tĩnh mạch ngực ngoài và tĩnh mạch ngực – cùng vai.",
+    "en": "Veins that FMA groups as tributaries of the axillary vein. The axillary vein, one on each side, is a large vessel formed by the brachial and basilic veins and joined near its end by the cephalic vein; its other tributaries include the subscapular, circumflex humeral, lateral thoracic and thoraco-acromial veins."
+   },
+   "location": {
+    "vi": "Tĩnh mạch nách bắt đầu ở bờ dưới cơ tròn lớn, nối tiếp tĩnh mạch cánh tay, và kết thúc ở bờ ngoài xương sườn thứ nhất, nơi nó trở thành tĩnh mạch dưới đòn. Động mạch nách đi kèm, nằm phía ngoài tĩnh mạch.",
+    "en": "The axillary vein begins at the lower border of teres major as the continuation of the brachial vein and ends at the outer border of the first rib, where it turns into the subclavian vein. The axillary artery runs alongside, lateral to the vein."
+   },
+   "function": {
+    "vi": "Đưa máu từ mặt bên lồng ngực, vùng nách và chi trên về tim.",
+    "en": "Return blood from the side of the chest, the armpit and the upper limb toward the heart."
+   },
+   "evidence": [
+    {
+     "source": "wikipedia-en",
+     "section": "Axillary_vein",
+     "quote": "There is one axillary vein on each side of the body.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Axillary_vein",
+     "quote": "This large vein is formed by the brachial vein and the basilic vein. At its terminal part, it is also joined by the cephalic vein.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Axillary_vein",
+     "quote": "Other tributaries include the subscapular vein, circumflex humeral vein, lateral thoracic vein and thoraco-acromial vein.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Axillary_vein",
+     "quote": "Its origin is at the lower margin of the teres major muscle and a continuation of the brachial vein.",
+     "supports": [
+      "location"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Axillary_vein",
+     "quote": "It terminates at the lateral margin of the first rib, at which it becomes the subclavian vein.",
+     "supports": [
+      "location"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Axillary_vein",
+     "quote": "It is accompanied along its course by a similarly named artery, the axillary artery, which lies laterally to the axillary vein.",
+     "supports": [
+      "location"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Axillary_vein",
+     "quote": "the axillary vein is a large blood vessel that conveys blood from the lateral aspect of the thorax, axilla (armpit) and upper limb toward the heart.",
+     "supports": [
+      "function"
+     ]
+    }
+   ],
+   "omitted": "Nhóm FMA gồm cả tĩnh mạch quay, trụ, giữa khuỷu… vốn đổ về tĩnh mạch nách qua tĩnh mạch khác; bài Wikipedia không nói đường đi ấy nên câu chỉ mô tả tĩnh mạch nách, không khẳng định từng tĩnh mạch đổ thẳng vào nó."
+  },
+  "FMA22922": {
+   "summary": {
+    "vi": "Các tĩnh mạch gan ngón tay. Ở mỗi ngón, tĩnh mạch gan ngón tay nối với tĩnh mạch mu ngón qua các tĩnh mạch gian chỏm chạy chéo. Một số nguồn phân biệt tĩnh mạch gan ngón tay riêng, ở xa hơn, với tĩnh mạch gan ngón tay chung, ở gần hơn.",
+    "en": "The palmar digital veins. On each finger they link up with the dorsal digital veins through oblique intercapitular veins. Some sources tell apart the more distal proper palmar digital veins from the more proximal common palmar digital veins."
+   },
+   "location": null,
+   "function": null,
+   "evidence": [
+    {
+     "source": "wikipedia-en",
+     "section": "Palmar_digital_veins",
+     "quote": "The palmar digital veins (or volar digital veins) on each finger are connected to the dorsal digital veins by oblique intercapitular veins.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Palmar_digital_veins",
+     "quote": "Some sources distinguish between the \"proper palmar digital veins\", which are more distal, and the \"common palmar digital veins\", which are more proximal.",
+     "supports": [
+      "summary"
+     ]
+    }
+   ]
+  },
+  "FMA22474": {
+   "summary": {
+    "vi": "Các cơ của khoang sau cẳng chân. Khoang sau là một trong các khoang mạc của cẳng chân và được chia tiếp thành khoang nông và khoang sâu.",
+    "en": "Muscles of the posterior compartment of the leg, one of the leg's fascial compartments, itself split into a superficial and a deep part."
+   },
+   "location": {
+    "vi": "Mặt sau cẳng chân. Khoang do thần kinh chày chi phối.",
+    "en": "The back of the lower leg. The compartment's nerve supply is the tibial nerve."
+   },
+   "function": {
+    "vi": "Khoang chứa các cơ gấp gan bàn chân.",
+    "en": "The compartment houses the muscles that plantarflex the foot."
+   },
+   "evidence": [
+    {
+     "source": "wikipedia-en",
+     "section": "Posterior_compartment_of_leg",
+     "quote": "The posterior compartment of the leg is one of the fascial compartments of the leg and is divided further into deep and superficial compartments.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Posterior_compartment_of_leg",
+     "quote": "The posterior compartment of the leg is supplied by the tibial nerve.",
+     "supports": [
+      "location"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Posterior_compartment_of_leg",
+     "quote": "It contains the plantar flexors:",
+     "supports": [
+      "function"
+     ]
+    }
+   ]
+  },
+  "FMA34676": {
+   "summary": {
+    "vi": "Phần của cơ delta. Cơ delta tạo nên đường cong tròn của vai và gồm ba nhóm thớ cơ riêng biệt: thớ trước (thớ đòn), thớ giữa (thớ cùng vai) và thớ sau (thớ gai).",
+    "en": "A part of the deltoid, the muscle that gives the shoulder its rounded outline. The deltoid has three distinct sets of fibres: anterior (clavicular), intermediate (acromial) and posterior (spinal)."
+   },
+   "location": {
+    "vi": "Thớ trước bám từ phần lớn bờ trước và mặt trên một phần ba ngoài xương đòn; thớ giữa từ mặt trên mỏm cùng vai; thớ sau từ mép dưới bờ sau gai vai. Các thớ hội tụ về lồi củ delta, ở giữa mặt ngoài thân xương cánh tay.",
+    "en": "Anterior fibres start on most of the front border and upper surface of the outer third of the clavicle; intermediate fibres on the top of the acromion; posterior fibres on the lower lip of the back edge of the scapular spine. All converge on the deltoid tuberosity, midway down the outer side of the humeral shaft."
+   },
+   "function": {
+    "vi": "Khi mọi thớ cùng co, cơ delta là cơ chủ vận dạng cánh tay. Thớ trước hỗ trợ cơ ngực lớn gấp vai; thớ sau hỗ trợ cơ lưng rộng duỗi vai.",
+    "en": "With all fibres contracting together, the deltoid is the prime mover of arm abduction. Its anterior fibres help pectoralis major flex the shoulder, and its posterior fibres help latissimus dorsi extend it."
+   },
+   "evidence": [
+    {
+     "source": "wikipedia-en",
+     "section": "Deltoid_muscle",
+     "quote": "The deltoid muscle (or musculus deltoideus) is the muscle forming the rounded contour of the human shoulder.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Deltoid_muscle",
+     "quote": "the deltoid muscle is made up of three distinct sets of muscle fibers",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Deltoid_muscle",
+     "quote": "The anterior or clavicular fibers arise from most of the anterior border and upper surface of the lateral third of the clavicle.",
+     "supports": [
+      "summary",
+      "location"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Deltoid_muscle",
+     "quote": "Intermediate or acromial fibers arise from the superior surface of the acromion process of the scapula.",
+     "supports": [
+      "summary",
+      "location"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Deltoid_muscle",
+     "quote": "Posterior or spinal fibers arise from the lower lip of the posterior border of the spine of the scapula.",
+     "supports": [
+      "summary",
+      "location"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Deltoid_muscle",
+     "quote": "the fibers converge toward their insertion on the deltoid tuberosity on the middle of the lateral aspect of the shaft of the humerus",
+     "supports": [
+      "location"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Deltoid_muscle",
+     "quote": "When all its fibers contract simultaneously, the deltoid is the prime mover of arm abduction along the frontal plane.",
+     "supports": [
+      "function"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Deltoid_muscle",
+     "quote": "The anterior fibers assist the pectoralis major to flex the shoulder.",
+     "supports": [
+      "function"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Deltoid_muscle",
+     "quote": "The posterior fibers assist the latissimus dorsi to extend the shoulder.",
+     "supports": [
+      "function"
+     ]
+    }
+   ]
+  },
+  "FMA0327509": {
+   "summary": {
+    "vi": "Đầu của cơ tam đầu cánh tay. Cơ tam đầu là cơ lớn ở mặt sau cánh tay, gồm ba phần: đầu trong, đầu ngoài và đầu dài. Cả ba đầu bắt chéo khớp khuỷu; riêng đầu dài còn bắt chéo cả khớp vai.",
+    "en": "A head of triceps brachii, the large muscle on the back of the upper arm. It has three parts, the medial, lateral and long heads. All three cross the elbow, and the long head crosses the shoulder joint as well."
+   },
+   "location": {
+    "vi": "Đầu dài xuất phát từ củ dưới ổ chảo xương vai; đầu ngoài từ mặt sau xương cánh tay, phía ngoài và trên rãnh thần kinh quay; đầu trong từ mặt sau xương cánh tay, ngay dưới rãnh ấy. Các thớ hội tụ thành một gân bám vào mỏm khuỷu xương trụ.",
+    "en": "The long head comes from the infraglenoid tubercle of the scapula; the lateral head from the back of the humerus, lateral to and above the radial nerve groove; the medial head from the back of the humerus just below that groove. The fibres join a single tendon onto the olecranon of the ulna."
+   },
+   "function": {
+    "vi": "Cơ tam đầu là cơ chịu trách nhiệm chính cho việc duỗi khớp khuỷu (duỗi thẳng cánh tay).",
+    "en": "Triceps is the principal extensor of the elbow, the muscle that straightens the arm."
+   },
+   "evidence": [
+    {
+     "source": "wikipedia-en",
+     "section": "Triceps",
+     "quote": "is a large muscle on the back of the upper limb of many vertebrates. It consists of three parts: the medial, lateral, and long head.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Triceps",
+     "quote": "All three heads cross the elbow joint. However, the long head also crosses the shoulder joint.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Triceps",
+     "quote": "The long head arises from the infraglenoid tubercle of the scapula.",
+     "supports": [
+      "location"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Triceps",
+     "quote": "The lateral head arises from the dorsal surface of the humerus, lateral and proximal to the groove of the radial nerve",
+     "supports": [
+      "location"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Triceps",
+     "quote": "The medial head arises proximally in the humerus, just inferior to the groove of the radial nerve",
+     "supports": [
+      "location"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Triceps",
+     "quote": "The fibers converge to a single tendon to insert onto the olecranon process of the ulna",
+     "supports": [
+      "location"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Triceps",
+     "quote": "It is the muscle principally responsible for extension of the elbow joint (straightening of the arm).",
+     "supports": [
+      "function"
+     ]
+    }
+   ],
+   "omitted": "Không nêu thần kinh chi phối: bài ghi kinh điển là thần kinh quay nhưng khoảng 14% có đầu dài do thần kinh nách chi phối — câu ngắn dễ đánh rơi vế sau."
+  },
+  "FMA19089": {
+   "summary": {
+    "vi": "Phần của cơ nâng hậu môn. Cơ nâng hậu môn là một nhóm cơ rộng, mỏng ở mỗi bên chậu hông, gồm ba thành phần: cơ mu – trực tràng, cơ mu – cụt và cơ chậu – cụt.",
+    "en": "A part of levator ani, a broad, thin group of muscles on each side of the pelvis made of three components: puborectalis, pubococcygeus and iliococcygeus."
+   },
+   "location": {
+    "vi": "Bám vào mặt trong mỗi bên chậu hông bé; hai bên hợp lại tạo nên phần lớn sàn chậu, phần còn lại do cơ ngồi – cụt hoàn thiện.",
+    "en": "Fixed to the inner wall of the lesser pelvis on either side; left and right halves meet to make up most of the pelvic floor, with coccygeus finishing it off."
+   },
+   "function": {
+    "vi": "Nâng đỡ các tạng trong khoang chậu và bao quanh những cấu trúc đi qua nó. Cơ nâng hậu môn là cơ chính của sàn chậu.",
+    "en": "Holds up the organs of the pelvic cavity and surrounds the structures passing through it. Levator ani is the main muscle of the pelvic floor."
+   },
+   "evidence": [
+    {
+     "source": "wikipedia-en",
+     "section": "Levator_ani",
+     "quote": "The levator ani is a broad, thin muscle group, situated on either side of the pelvis. It is formed from three muscle components: the puborectalis, pubococcygeus, and the iliococcygeus.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Levator_ani",
+     "quote": "It is attached to the inner surface of each side of the lesser pelvis, and these unite to form the greater part of the pelvic floor. The coccygeus muscle completes the pelvic floor",
+     "supports": [
+      "location"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Levator_ani",
+     "quote": "It supports the viscera in the pelvic cavity, and surrounds the various structures that pass through it.",
+     "supports": [
+      "function"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Levator_ani",
+     "quote": "The levator ani is the main pelvic floor muscle",
+     "supports": [
+      "function"
+     ]
+    }
+   ]
+  },
+  "FMA19726": {
+   "summary": {
+    "vi": "Hoành chậu do cơ nâng hậu môn và cơ ngồi – cụt hai bên tạo nên: cơ nâng hậu môn hợp thành phần lớn sàn chậu, cơ ngồi – cụt hoàn thiện nó. Trong mô hình, nhóm này gồm cơ ngồi – cụt và cung gân cơ nâng hậu môn.",
+    "en": "The pelvic diaphragm is made by levator ani and coccygeus on each side: levator ani forms most of the pelvic floor and coccygeus completes it. In the model this group holds coccygeus and the tendinous arch of levator ani."
+   },
+   "location": {
+    "vi": "Ở đáy khoang chậu. Cơ ngồi – cụt nằm sau cơ nâng hậu môn và trước dây chằng cùng – gai, đi từ gai ngồi tới bờ xương cụt và mặt bên đốt xương cùng thấp nhất.",
+    "en": "Across the bottom of the pelvic cavity. Coccygeus lies behind levator ani and in front of the sacrospinous ligament, spanning from the ischial spine to the edge of the coccyx and the side of the lowest sacral segment."
+   },
+   "function": {
+    "vi": "Nâng đỡ các tạng trong khoang chậu. Cơ ngồi – cụt phối hợp với cơ nâng hậu môn và cơ hình lê khép kín phần sau của eo dưới chậu hông.",
+    "en": "Supports the pelvic organs. Coccygeus works with levator ani and piriformis to close off the back part of the pelvic outlet."
+   },
+   "evidence": [
+    {
+     "source": "wikipedia-en",
+     "section": "Levator_ani",
+     "quote": "these unite to form the greater part of the pelvic floor. The coccygeus muscle completes the pelvic floor, which is also called the pelvic diaphragm.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Coccygeus_muscle",
+     "quote": "In combination with the levator ani, it forms the pelvic diaphragm.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Coccygeus_muscle",
+     "quote": "The coccygeus muscle is posterior to levator ani and anterior to the sacrospinous ligament in the pelvic floor.",
+     "supports": [
+      "location"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Coccygeus_muscle",
+     "quote": "It arises by its apex from the spine of the ischium and sacrospinous ligament. It is inserted by its base into the margin of the coccyx and into the side of the lowest piece of the sacrum.",
+     "supports": [
+      "location"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Levator_ani",
+     "quote": "It supports the viscera in the pelvic cavity",
+     "supports": [
+      "function"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Coccygeus_muscle",
+     "quote": "The coccygeus muscle assists the levator ani and piriformis muscle in closing in the back part of the outlet of the pelvis. This helps to support the vagina in women, and the other pelvic organs.",
+     "supports": [
+      "function"
+     ]
+    }
+   ]
+  },
+  "FMA46562": {
+   "summary": {
+    "vi": "Cơ nội tại của thanh quản. Các cơ thanh quản chia thành cơ nội tại và cơ ngoại lai; cơ nội tại nằm gọn trong thanh quản, cả nguyên ủy lẫn bám tận đều ở đó. Trừ cơ nhẫn – giáp, mọi cơ thanh quản do nhánh thanh quản quặt ngược của thần kinh lang thang chi phối.",
+    "en": "An intrinsic muscle of the larynx. Laryngeal muscles are split into intrinsic and extrinsic groups; the intrinsic ones sit wholly inside the larynx, where both their origin and insertion lie. Except for cricothyroid, all of them are supplied by the recurrent laryngeal branch of the vagus nerve."
+   },
+   "location": {
+    "vi": "Trong thanh quản, ở phần trước cổ, ngang mức đốt sống cổ C3–C6 ở người lớn.",
+    "en": "Inside the larynx, in the front of the neck at the level of vertebrae C3–C6 in adults."
+   },
+   "function": {
+    "vi": "Cơ nội tại điều khiển việc tạo âm. Nhóm cơ hô hấp kéo hai dây thanh xa nhau, phục vụ hô hấp — cơ hô hấp chính là cơ nhẫn – phễu sau, cũng là cơ duy nhất tách được dây thanh để thở bình thường. Nhóm cơ phát âm kéo hai dây thanh lại gần nhau để tạo tiếng.",
+    "en": "The intrinsic muscles control sound production. Respiratory muscles pull the vocal cords apart for breathing; the main one, posterior cricoarytenoid, is also the only muscle able to part the cords for normal breathing. Phonatory muscles bring the cords together to produce voice."
+   },
+   "evidence": [
+    {
+     "source": "wikipedia-en",
+     "section": "Larynx",
+     "quote": "The muscles of the larynx are divided into intrinsic and extrinsic muscles.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Larynx",
+     "quote": "the intrinsic muscles are confined entirely within the larynx and have their origin and insertion there.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Larynx",
+     "quote": "all muscles are innervated by the recurrent laryngeal branch of the vagus except the cricothyroid muscle",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Larynx",
+     "quote": "In adult humans, the larynx is found in the anterior neck at the level of the cervical vertebrae C3–C6.",
+     "supports": [
+      "location"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Larynx",
+     "quote": "The intrinsic laryngeal muscles are responsible for controlling sound production.",
+     "supports": [
+      "function"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Larynx",
+     "quote": "The respiratory muscles move the vocal cords apart and serve breathing. The phonatory muscles move the vocal cords together and serve the production of voice. The main respiratory muscles are the posterior cricoarytenoid muscles.",
+     "supports": [
+      "function"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Larynx",
+     "quote": "the only muscle capable of separating the vocal cords for normal breathing is the posterior cricoarytenoid.",
+     "supports": [
+      "function"
+     ]
+    }
+   ]
+  },
+  "FMA55108": {
+   "summary": {
+    "vi": "Sụn thanh quản. Bộ khung thanh quản gồm chín sụn: ba sụn đơn (sụn nắp thanh môn, sụn giáp, sụn nhẫn) và ba đôi sụn (sụn phễu, sụn sừng, sụn chêm).",
+    "en": "A cartilage of the larynx. Nine cartilages make up the laryngeal skeleton: three single ones (epiglottic, thyroid, cricoid) and three pairs (arytenoid, corniculate, cuneiform)."
+   },
+   "location": {
+    "vi": "Ở phần trước cổ, ngang đốt sống cổ C3–C6 ở người lớn. Sụn giáp tạo nên lồi thanh quản (trái táo Adam); sụn nhẫn là vòng sụn tạo thành dưới thanh quản, gắn với đỉnh khí quản; sụn phễu nằm ở bờ trên – sau sụn nhẫn; sụn sừng ở đỉnh mỗi sụn phễu; sụn chêm nằm trước sụn sừng.",
+    "en": "In the front of the neck at vertebral level C3–C6 in adults. The thyroid cartilage forms the Adam's apple; the cricoid is a ring forming the lower wall of the larynx, attached to the top of the trachea; the arytenoids sit on the upper back edge of the cricoid; a corniculate cartilage caps each arytenoid; the cuneiforms lie in front of the corniculates."
+   },
+   "function": {
+    "vi": "Các sụn nâng đỡ thanh quản và tạo nên bộ khung của nó. Trong các sụn đôi, sụn phễu quan trọng nhất vì ảnh hưởng tới vị trí và độ căng của dây thanh.",
+    "en": "They support the larynx and form its framework. Of the paired cartilages the arytenoids matter most, because they influence where the vocal cords sit and how tense they are."
+   },
+   "evidence": [
+    {
+     "source": "wikipedia-en",
+     "section": "Larynx",
+     "quote": "The laryngeal skeleton consists of nine cartilages: three single (epiglottic, thyroid and cricoid) and three paired (arytenoid, corniculate, and cuneiform).",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Larynx",
+     "quote": "In adult humans, the larynx is found in the anterior neck at the level of the cervical vertebrae C3–C6.",
+     "supports": [
+      "location"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Larynx",
+     "quote": "Thyroid cartilage: This forms the Adam's apple (also called the laryngeal prominence).",
+     "supports": [
+      "location"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Larynx",
+     "quote": "Cricoid cartilage: A ring of hyaline cartilage that forms the inferior wall of the larynx. It is attached to the top of the trachea.",
+     "supports": [
+      "location"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Larynx",
+     "quote": "These are triangular pieces of mostly hyaline cartilage located at the posterosuperior border of the cricoid cartilage.",
+     "supports": [
+      "location"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Larynx",
+     "quote": "Corniculate cartilages: Horn-shaped pieces of elastic cartilage located at the apex of each arytenoid cartilage.",
+     "supports": [
+      "location"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Larynx",
+     "quote": "Cuneiform cartilages: Club-shaped pieces of elastic cartilage located anterior to the corniculate cartilages.",
+     "supports": [
+      "location"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Larynx",
+     "quote": "There are nine cartilages, three unpaired and three paired (3 pairs), that support the mammalian larynx and form its skeleton.",
+     "supports": [
+      "function"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Larynx",
+     "quote": "Arytenoid cartilages: Of the paired cartilages, the arytenoid cartilages are the most important because they influence the position and tension of the vocal cords.",
+     "supports": [
+      "function"
+     ]
+    }
+   ]
+  },
+  "FMA312408": {
+   "summary": {
+    "vi": "Cơ thẳng của mắt. Có bốn cơ thẳng — cơ thẳng trên, ngoài, trong và dưới — đặt tên theo vị trí bám tương đối của chúng. Bốn cơ thẳng cùng hai cơ chéo là sáu trong bảy cơ ngoài nhãn cầu điều khiển cử động mắt.",
+    "en": "A rectus muscle of the eye. The four recti, superior, lateral, medial and inferior, are named after where they attach relative to each other. With the two obliques they are the six extraocular muscles that move the eye."
+   },
+   "location": {
+    "vi": "Trong ổ mắt. Bốn cơ thẳng xuất phát ở phía sau ổ mắt, từ một vòng sợi gọi là vòng gân chung.",
+    "en": "In the orbit. All four recti arise at the back of the orbit from a fibrous ring, the common tendinous ring."
+   },
+   "function": {
+    "vi": "Cử động nhãn cầu; tác dụng của từng cơ phụ thuộc vào tư thế của mắt lúc cơ co. Cơ thẳng ngoài do thần kinh vận nhãn ngoài (VI) điều khiển; ba cơ thẳng còn lại do thần kinh vận nhãn (III).",
+    "en": "They move the eyeball, and what each one does depends on the eye's position when it contracts. The lateral rectus is controlled by the abducens nerve (VI); the other three recti by the oculomotor nerve (III)."
+   },
+   "evidence": [
+    {
+     "source": "wikipedia-en",
+     "section": "Extraocular_muscles",
+     "quote": "The four recti muscles are named according to their relative positions of attachment – the superior rectus muscle, lateral rectus muscle, medial rectus muscle, and inferior rectus muscle.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Extraocular_muscles",
+     "quote": "Six of the extraocular muscles, the four recti muscles, and the superior and inferior oblique muscles, control movement of the eye.",
+     "supports": [
+      "summary",
+      "function"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Extraocular_muscles",
+     "quote": "Four of the extraocular muscles have their origin in the back of the orbit in a fibrous ring called the common tendinous ring: the four recti muscles.",
+     "supports": [
+      "location"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Extraocular_muscles",
+     "quote": "The actions of the six muscles responsible for eye movement depend on the position of the eye at the time of muscle contraction.",
+     "supports": [
+      "function"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Extraocular_muscles",
+     "quote": "The oculomotor nerve controls all muscles of the eye except for the superior oblique muscle controlled by the trochlear nerve (IV), and the lateral rectus muscle controlled by the abducens nerve (VI).",
+     "supports": [
+      "function"
+     ]
+    }
+   ]
+  },
+  "FMA13354": {
+   "summary": {
+    "vi": "Cơ gian sườn — các nhóm cơ chạy giữa các xương sườn, góp phần tạo nên và cử động thành ngực. Có ba lớp: cơ gian sườn ngoài, cơ gian sườn trong và cơ gian sườn trong cùng; lớp trong cùng tách khỏi lớp trong bởi một bó mạch – thần kinh.",
+    "en": "Intercostal muscles are groups of muscles running between the ribs that help build and move the chest wall. There are three layers, external, internal and innermost; the innermost is separated from the internal layer by a neurovascular bundle."
+   },
+   "location": {
+    "vi": "Giữa các xương sườn. Cơ gian sườn ngoài đi từ xương sườn 1–11 tới xương sườn 2–12; cơ gian sườn trong đi từ xương sườn 2–12 tới xương sườn 1–11, thớ chạy vuông góc với thớ cơ gian sườn ngoài.",
+    "en": "Between the ribs. The external intercostals run from ribs 1–11 to ribs 2–12; the internal intercostals run from ribs 2–12 to ribs 1–11, with fibres at right angles to the external layer."
+   },
+   "function": {
+    "vi": "Chủ yếu tham gia cơ học của hô hấp, giúp lồng ngực nở ra và thu lại. Cơ gian sườn ngoài nâng xương sườn, hỗ trợ hít vào cả khi thở yên lẫn khi gắng sức; cơ gian sườn trong hạ xương sườn, hỗ trợ thở ra gắng sức (thở ra khi yên tĩnh là quá trình thụ động).",
+    "en": "Mainly involved in the mechanics of breathing, helping the chest cavity enlarge and shrink. The external intercostals raise the ribs and assist both quiet and forced inhalation; the internal intercostals lower the ribs and assist forced exhalation (quiet exhalation is passive)."
+   },
+   "evidence": [
+    {
+     "source": "wikipedia-en",
+     "section": "Intercostal_muscles",
+     "quote": "The intercostal muscles comprise many different groups of muscles that run between the ribs, and help form and move the chest wall.",
+     "supports": [
+      "summary",
+      "location"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Intercostal_muscles",
+     "quote": "Innermost intercostal muscle also known as intercostalis intimus are deep layers of the internal intercostal muscles which are separated from them by a neurovascular bundle.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Intercostal_muscles",
+     "quote": "External intercostal muscles also known as intercostalis externus aid in quiet and forced inhalation.",
+     "supports": [
+      "summary",
+      "function"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Intercostal_muscles",
+     "quote": "Internal intercostal muscles also known as intercostalis internus aid in forced expiration (quiet expiration is a passive process).",
+     "supports": [
+      "summary",
+      "function"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Intercostal_muscles",
+     "quote": "They originate on ribs 1–11 and have their insertion on ribs 2–12.",
+     "supports": [
+      "location"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Intercostal_muscles",
+     "quote": "They originate on ribs 2–12 and have their insertions on ribs 1–11.",
+     "supports": [
+      "location"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Intercostal_muscles",
+     "quote": "The muscle fibers are directed downwards, backwards and laterally, perpendicular to the external intercostal muscles.",
+     "supports": [
+      "location"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Intercostal_muscles",
+     "quote": "The intercostal muscles are mainly involved in the mechanical aspect of breathing by helping expand and shrink the size of the chest cavity.",
+     "supports": [
+      "function"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Intercostal_muscles",
+     "quote": "The external intercostals are responsible for the elevation of the ribs",
+     "supports": [
+      "function"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Intercostal_muscles",
+     "quote": "The internal intercostals are responsible for the depression of the ribs",
+     "supports": [
+      "function"
+     ]
+    }
+   ]
+  },
+  "FMA22823": {
+   "summary": {
+    "vi": "Cơ bán gai là nhóm ba cơ thuộc khối cơ ngang – gai: cơ bán gai đầu, cơ bán gai cổ và cơ bán gai ngực.",
+    "en": "The semispinalis is a group of three muscles within the transversospinales: semispinalis capitis, semispinalis cervicis and semispinalis thoracis."
+   },
+   "location": {
+    "vi": "Mặt sau cột sống, từ ngực tới chẩm. Cơ bán gai đầu ở phần trên – sau cổ, sâu dưới cơ gối và cơ thang, bám tận giữa đường gáy trên và đường gáy dưới xương chẩm. Cơ bán gai cổ đi từ mỏm ngang sáu đốt sống ngực trên tới mỏm gai các đốt sống cổ. Cơ bán gai ngực đi từ mỏm ngang đốt ngực sáu tới mười tới mỏm gai các đốt ngực trên và cổ dưới.",
+    "en": "Along the back of the spine from the thorax to the occiput. Semispinalis capitis lies in the upper back of the neck, beneath splenius and trapezius, and inserts between the superior and inferior nuchal lines. Semispinalis cervicis spans from the upper six thoracic transverse processes to cervical spines. Semispinalis thoracis spans from the transverse processes of thoracic vertebrae six to ten up to the spines of upper thoracic and lower cervical vertebrae."
+   },
+   "function": null,
+   "evidence": [
+    {
+     "source": "wikipedia-en",
+     "section": "Semispinalis_muscles",
+     "quote": "The semispinalis muscles are a group of three muscles belonging to the transversospinales. These are the semispinalis capitis, the semispinalis cervicis and the semispinalis thoracis.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Semispinalis_muscles",
+     "quote": "is situated at the upper and back part of the neck, deep to the splenius muscles",
+     "supports": [
+      "location"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Semispinalis_muscles",
+     "quote": "is inserted between the superior and inferior nuchal lines of the occipital bone. It lies deep to the trapezius muscle",
+     "supports": [
+      "location"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Semispinalis_muscles",
+     "quote": "arises by a series of tendinous and fleshy fibers from the transverse processes of the upper six thoracic vertebrae, and is inserted into the cervical spinous processes",
+     "supports": [
+      "location"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Semispinalis_muscles",
+     "quote": "It arises by a series of small tendons from the transverse processes of the sixth to the tenth thoracic vertebrae, and is inserted, by tendons, into the spinous processes of the upper four thoracic and lower two cervical vertebrae.",
+     "supports": [
+      "location"
+     ]
+    }
+   ],
+   "omitted": "Bài Wikipedia không có mục chức năng; thần kinh chi phối ghi 'nhánh sau thần kinh sống cổ', không đúng trọn cho cơ bán gai ngực nên bỏ."
+  },
+  "FMA32514": {
+   "summary": {
+    "vi": "Cơ trước cột sống — các cơ nằm giữa mạc trước cột sống (theo định nghĩa cũ) và cột sống: cơ dài đầu, cơ dài cổ, cơ thẳng đầu trước và cơ thẳng đầu ngoài.",
+    "en": "Prevertebral muscles lie between the vertebral column and the prevertebral fascia (older definition): rectus capitis anterior and lateralis, longus capitis and longus colli."
+   },
+   "location": null,
+   "function": null,
+   "evidence": [
+    {
+     "source": "wikipedia-en",
+     "section": "Prevertebral_muscles",
+     "quote": "The prevertebral muscles are the muscles located between the prevertebral fascia (older definition) and the vertebral column, i.e., the longus capitis, longus colli, rectus capitis anterior, and rectus capitis lateralis muscles.",
+     "supports": [
+      "summary"
+     ]
+    }
+   ]
+  },
+  "FMA7591": {
+   "summary": {
+    "vi": "Sụn sườn là những thanh sụn trong nối dài xương sườn ra phía trước. Sụn sườn chỉ có ở đầu trước các xương sườn.",
+    "en": "Costal cartilages are bars of hyaline cartilage that carry the ribs forward. They occur only at the front ends of the ribs."
+   },
+   "location": {
+    "vi": "Ở thành trước ngực. Bảy đôi đầu nối với xương ức; ba đôi kế tiếp khớp với bờ dưới sụn của xương sườn ngay trên; hai đôi cuối có đầu nhọn, tận hết trong thành bụng. Chiều dài tăng dần từ sụn thứ nhất tới thứ bảy rồi giảm dần.",
+    "en": "In the front of the chest wall. The first seven pairs join the sternum; the next three each articulate with the lower edge of the cartilage above; the last two end in points within the abdominal wall. They lengthen from the first to the seventh, then shorten."
+   },
+   "function": {
+    "vi": "Kéo dài xương sườn ra trước và góp phần tạo độ đàn hồi cho thành ngực.",
+    "en": "They extend the ribs forward and add to the springiness of the chest wall."
+   },
+   "evidence": [
+    {
+     "source": "wikipedia-en",
+     "section": "Costal_cartilage",
+     "quote": "are bars of hyaline cartilage that serve to prolong the ribs forward and contribute to the elasticity of the walls of the thorax. Costal cartilage is only found at the anterior ends of the ribs",
+     "supports": [
+      "summary",
+      "function"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Costal_cartilage",
+     "quote": "The first seven pairs are connected with the sternum; the next three are each articulated with the lower border of the cartilage of the preceding rib; the last two have pointed extremities, which end in the wall of the abdomen.",
+     "supports": [
+      "location"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Costal_cartilage",
+     "quote": "They increase in length from the first to the seventh, then gradually decrease to the twelfth.",
+     "supports": [
+      "location"
+     ]
+    }
+   ]
+  },
+  "FMA55637": {
+   "summary": {
+    "vi": "Răng tiền hàm (răng hai múi) là răng chuyển tiếp nằm giữa răng nanh và răng hàm. Ở bộ răng vĩnh viễn của người có hai răng tiền hàm mỗi phần tư hàm, tổng cộng tám chiếc; mỗi răng có ít nhất hai múi.",
+    "en": "Premolars, or bicuspids, are transitional teeth between the canines and the molars. The permanent human set has two per quadrant, eight in all, each with at least two cusps."
+   },
+   "location": {
+    "vi": "Giữa răng nanh ở phía trước và răng hàm ở phía sau, trên cả hàm trên và hàm dưới: răng tiền hàm thứ nhất và thứ hai hàm trên, răng tiền hàm thứ nhất và thứ hai hàm dưới.",
+    "en": "Between the canine in front and the molars behind, in both jaws: the first and second maxillary premolars and the first and second mandibular premolars."
+   },
+   "function": {
+    "vi": "Là răng chuyển tiếp khi nhai: thức ăn được chuyển từ răng nanh sang răng tiền hàm rồi tới răng hàm để nghiền, thay vì đi thẳng từ răng nanh sang răng hàm.",
+    "en": "They act as go-betweens in chewing: food passes from the canines to the premolars and then to the molars for grinding, rather than straight from canines to molars."
+   },
+   "evidence": [
+    {
+     "source": "wikipedia-en",
+     "section": "Premolar",
+     "quote": "are transitional teeth located between the canine and molar teeth. In humans, there are two premolars per quadrant in the permanent set of teeth, making eight premolars total in the mouth. They have at least two cusps.",
+     "supports": [
+      "summary",
+      "location"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Premolar",
+     "quote": "The premolars in humans are the maxillary first premolar, maxillary second premolar, mandibular first premolar, and the mandibular second premolar.",
+     "supports": [
+      "location"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Premolar",
+     "quote": "Premolars can be considered transitional teeth during chewing, or mastication.",
+     "supports": [
+      "function"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Premolar",
+     "quote": "so food can be transferred from the canines to the premolars and finally to the molars for grinding, instead of directly from the canines to the molars.",
+     "supports": [
+      "function"
+     ]
+    }
+   ]
+  },
+  "FMA274516": {
+   "summary": {
+    "vi": "Hồi của thùy trán. Thùy trán là thùy lớn nhất của não, chiếm khoảng một phần ba diện tích bề mặt mỗi bán cầu, và có bốn hồi chính: hồi trước trung tâm cùng ba hồi xếp ngang — hồi trán trên, hồi trán giữa, hồi trán dưới. Phần ổ mắt của thùy trán có các hồi ổ mắt.",
+    "en": "A gyrus of the frontal lobe, the largest lobe of the brain, covering about a third of each hemisphere's surface. It has four principal gyri: the precentral gyrus and three horizontal ones, the superior, middle and inferior frontal gyri. Its orbital part carries the orbital gyri."
+   },
+   "location": {
+    "vi": "Thùy trán là thùy ở phía trước nhất của bán cầu đại não; rãnh trung tâm ngăn nó với thùy đỉnh, rãnh bên ngăn nó với thùy thái dương. Hồi trước trung tâm nằm ngay trước rãnh trung tâm và chạy song song với rãnh này.",
+    "en": "The frontal lobe is the frontmost lobe of each cerebral hemisphere; the central sulcus divides it from the parietal lobe and the lateral sulcus from the temporal lobe. The precentral gyrus lies immediately in front of the central sulcus and parallel to it."
+   },
+   "function": {
+    "vi": "Hồi trước trung tâm chứa vỏ vận động sơ cấp, nơi điều khiển cử động có ý thức của từng phần cơ thể. Hồi trán dưới về chức năng được gọi là vỏ trước trán bụng – bên.",
+    "en": "The precentral gyrus holds the primary motor cortex, which controls voluntary movement of specific body parts. The inferior frontal gyrus is known functionally as the ventrolateral prefrontal cortex."
+   },
+   "evidence": [
+    {
+     "source": "wikipedia-en",
+     "section": "Frontal_lobe",
+     "quote": "The frontal lobe is the largest lobe of the brain and makes up about a third of the surface area of each hemisphere.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Frontal_lobe",
+     "quote": "Located in the frontal lobe are also four principal gyri.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Frontal_lobe",
+     "quote": "Three other frontal gyri, horizontally arranged, are the superior frontal gyrus, the middle frontal gyrus, and the inferior frontal gyrus.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Frontal_lobe",
+     "quote": "Orbital part: Lateral orbital gyrus, anterior orbital gyrus, posterior orbital gyrus, medial orbital gyrus, and gyrus rectus",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Frontal_lobe",
+     "quote": "is the largest lobe of the vertebrate brain and the most anterior lobe of the cerebral hemispheres. The anatomical groove known as the central sulcus separates the frontal lobe from the parietal lobe",
+     "supports": [
+      "location"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Frontal_lobe",
+     "quote": "the deeper anatomical groove called the lateral sulcus separates the frontal lobe from the temporal lobe.",
+     "supports": [
+      "location"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Frontal_lobe",
+     "quote": "The precentral gyrus is directly anterior to the central sulcus, running parallel to it and containing the primary motor cortex, which controls voluntary movements of specific body parts.",
+     "supports": [
+      "location",
+      "function"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Frontal_lobe",
+     "quote": "it is functionally known as the ventrolateral prefrontal cortex.",
+     "supports": [
+      "function"
+     ]
+    }
+   ]
+  },
+  "FMA52624": {
+   "summary": {
+    "vi": "Nhánh của thần kinh mắt. Thần kinh mắt là thần kinh cảm giác, nhánh chia thứ nhất và nhỏ nhất trong ba nhánh chia của thần kinh sinh ba (dây sọ V). Nó có ba nhánh lớn đi qua khe ổ mắt trên.",
+    "en": "A branch of the ophthalmic nerve, the sensory nerve that is the first and smallest of the trigeminal nerve's three divisions. It splits into three major branches that pass through the superior orbital fissure."
+   },
+   "location": {
+    "vi": "Thần kinh mắt tách từ phần trên hạch sinh ba, chạy ra trước dọc thành ngoài xoang hang, rồi rời hộp sọ vào ổ mắt qua khe ổ mắt trên.",
+    "en": "The ophthalmic nerve leaves the upper part of the trigeminal ganglion, runs forward along the outer wall of the cavernous sinus and enters the orbit through the superior orbital fissure."
+   },
+   "function": {
+    "vi": "Các nhánh lớn của thần kinh mắt chi phối cảm giác cho mắt, da vùng mặt trên và da đầu phía trước, cùng một số cấu trúc khác của đầu.",
+    "en": "Its major branches carry sensation from the eye, the skin of the upper face and front of the scalp, and other structures of the head."
+   },
+   "evidence": [
+    {
+     "source": "wikipedia-en",
+     "section": "Ophthalmic_nerve",
+     "quote": "The ophthalmic nerve is the first branch of the trigeminal nerve (CN V), the first and smallest of its three divisions.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Ophthalmic_nerve",
+     "quote": "is a sensory nerve of the head.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Ophthalmic_nerve",
+     "quote": "The ophthalmic nerve divides into three major branches which pass through the superior orbital fissure:",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Ophthalmic_nerve",
+     "quote": "It arises from the superior part of the trigeminal ganglion.",
+     "supports": [
+      "location"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Ophthalmic_nerve",
+     "quote": "It passes anterior-ward along the lateral wall of the cavernous sinus inferior to the oculomotor nerve (CN III) and trochlear nerve (CN IV). It exits the skull into the orbit through the superior orbital fissure.",
+     "supports": [
+      "location"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Ophthalmic_nerve",
+     "quote": "It has three major branches which provide sensory innervation to the eye, and the skin of the upper face and anterior scalp, as well as other structures of the head.",
+     "supports": [
+      "function"
+     ]
+    }
+   ]
+  },
+  "FMA52671": {
+   "summary": {
+    "vi": "Nhánh của thần kinh mũi mi: thần kinh sàng sau, thần kinh sàng trước, các thần kinh mi dài, thần kinh dưới ròng rọc và nhánh nối với hạch mi. Thần kinh mũi mi là một nhánh của thần kinh mắt, có cỡ trung gian giữa hai nhánh kia là thần kinh trán và thần kinh lệ.",
+    "en": "A branch of the nasociliary nerve: the posterior and anterior ethmoidal nerves, the long ciliary nerves, the infratrochlear nerve and the communicating branch to the ciliary ganglion. The nasociliary nerve itself comes off the ophthalmic nerve and is middle-sized compared with that nerve's other two branches, the frontal and lacrimal nerves."
+   },
+   "location": {
+    "vi": "Trong ổ mắt. Thần kinh mũi mi chạy chéo bên dưới cơ thẳng trên và cơ chéo trên tới thành trong ổ mắt, nơi nó tách ra thần kinh sàng sau và thần kinh sàng trước.",
+    "en": "In the orbit. The nasociliary nerve runs obliquely beneath superior rectus and superior oblique to the inner wall of the orbit, where it gives off the posterior and anterior ethmoidal nerves."
+   },
+   "function": null,
+   "evidence": [
+    {
+     "source": "wikipedia-en",
+     "section": "Nasociliary_nerve",
+     "quote": "ToPosterior ethmoidal nerve, anterior ethmoidal nerve, long ciliary nerves, infratrochlear nerve, communicating branch to ciliary ganglion",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Nasociliary_nerve",
+     "quote": "The nasociliary nerve is a branch of the ophthalmic nerve (CN V1) (which is in turn a branch of the trigeminal nerve (CN V)). It is intermediate in size between the other two branches of the ophthalmic nerve, the frontal nerve and lacrimal nerve.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Nasociliary_nerve",
+     "quote": "It then runs obliquely beneath (inferior to) the superior rectus muscle and superior oblique muscle to the medial wall of the orbital cavity whereupon it emits the posterior ethmoidal nerve, and the anterior ethmoidal nerve.",
+     "supports": [
+      "location"
+     ]
+    }
+   ],
+   "omitted": "Câu về vùng chi phối cảm giác của các nhánh mang [citation needed] nên bỏ trống chức năng."
+  },
+  "FMA50863": {
+   "summary": {
+    "vi": "Thần kinh thị giác (dây thần kinh sọ II) là đôi dây thần kinh sọ gồm sợi trục của tế bào hạch võng mạc và tế bào thần kinh đệm. Về bản chất nó là một bó có myelin của hệ thần kinh trung ương chứ không phải dây thần kinh ngoại biên điển hình, và được bọc trong cả ba lớp màng não.",
+    "en": "The optic nerve, cranial nerve II, is a paired nerve made of retinal ganglion cell axons and glial cells. Technically it counts as a myelinated CNS tract, not a classical peripheral nerve, and all three meninges wrap it."
+   },
+   "location": {
+    "vi": "Đi từ đĩa thị tới giao thoa thị giác, rồi tiếp tục thành dải thị giác. Nó rời ổ mắt qua ống thị giác, chạy ra sau và vào trong tới giao thoa thị giác.",
+    "en": "It runs from the optic disc to the optic chiasm and carries on as the optic tract. It leaves the orbit through the optic canal, heading backward and inward to the chiasm."
+   },
+   "function": {
+    "vi": "Truyền thông tin thị giác từ võng mạc lên não. Ở giao thoa thị giác, các sợi từ nửa võng mạc phía mũi của hai mắt bắt chéo sang bên đối diện.",
+    "en": "Carries visual information from the retina to the brain. At the optic chiasm, fibres from the nasal half of each retina cross to the other side."
+   },
+   "evidence": [
+    {
+     "source": "wikipedia-en",
+     "section": "Optic_nerve",
+     "quote": "is a paired cranial nerve that transmits visual information from the retina to the brain.",
+     "supports": [
+      "summary",
+      "function"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Optic_nerve",
+     "quote": "is composed of retinal ganglion cell axons and glial cells; it extends from the optic disc to the optic chiasma and continues as the optic tract",
+     "supports": [
+      "summary",
+      "location"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Optic_nerve",
+     "quote": "but it is technically a myelinated tract of the central nervous system, rather than a classical nerve of the peripheral nervous system",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Optic_nerve",
+     "quote": "The optic nerve is ensheathed in all three meningeal layers (dura, arachnoid, and pia mater)",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Optic_nerve",
+     "quote": "The optic nerve leaves the orbit (eye socket) via the optic canal, running postero-medially towards the optic chiasm, where there is a partial decussation (crossing) of fibers from the temporal visual fields (the nasal hemi-retina) of both eyes.",
+     "supports": [
+      "location",
+      "function"
+     ]
+    }
+   ]
+  },
+  "FMA71856": {
+   "summary": {
+    "vi": "Đoạn của cây đường mật. Đường mật là con đường mật do gan tiết ra được dẫn tới tá tràng; nó được gọi là cây vì bắt đầu bằng nhiều nhánh nhỏ và tận cùng ở ống mật chủ.",
+    "en": "A segment of the biliary tree, the route by which bile made in the liver travels to the duodenum. It is called a tree because it starts as many small branches and ends in the common bile duct."
+   },
+   "location": {
+    "vi": "Trong và ngay dưới gan. Mật đi từ tiểu quản mật qua các ống mật nhỏ trong gan tới ống gan phải và trái; ống gan chung ra khỏi gan và hợp với ống túi mật để tạo thành ống mật chủ.",
+    "en": "Inside and just below the liver. Bile moves from the canaliculi through small intrahepatic ducts to the left and right hepatic ducts; the common hepatic duct leaves the liver and meets the cystic duct to form the common bile duct."
+   },
+   "function": {
+    "vi": "Dẫn mật: gan tiết mật vào các ống nhỏ, các ống này hợp lại thành ống gan chung. Giữa các bữa ăn mật được trữ trong túi mật; trong bữa ăn mật được đổ vào tá tràng, giúp hấp thu chất béo.",
+    "en": "Carries bile: the liver releases it into small ducts that merge into the common hepatic duct. Between meals bile is stored in the gallbladder; during a meal it is released into the duodenum, helping the body absorb fats."
+   },
+   "evidence": [
+    {
+     "source": "wikipedia-en",
+     "section": "Biliary_tract",
+     "quote": "The biliary tract refers to the path by which bile is secreted by the liver then transported to the duodenum, the first part of the small intestine.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Biliary_tract",
+     "quote": "the biliary tract is often referred to as a tree because it begins with many small branches that end in the common bile duct",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Biliary_tract",
+     "quote": "Bile canaliculi >> Canals of Hering >> intrahepatic bile ductule (in portal tracts / triads) >> interlobular bile ducts >> left and right hepatic ducts",
+     "supports": [
+      "location"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Biliary_tract",
+     "quote": "The common hepatic duct exits the liver and joins with the cystic duct from gall bladder",
+     "supports": [
+      "location"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Biliary_tract",
+     "quote": "Together these form the common bile duct which joins the pancreatic duct",
+     "supports": [
+      "location"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Biliary_tract",
+     "quote": "Bile is secreted by the liver into small ducts that join to form the common hepatic duct. Between meals, secreted bile is stored in the gallbladder. During a meal, the bile is secreted into the duodenum",
+     "supports": [
+      "function"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Biliary_tract",
+     "quote": "as well as aid in the absorption of dietary fats and oils.",
+     "supports": [
+      "function"
+     ]
+    }
+   ]
+  },
+  "FMA61063": {
+   "summary": {
+    "vi": "Phần đường dẫn lệ. Bộ lệ gồm hệ chế tiết tạo nước mắt và hệ bài xuất dẫn lưu nước mắt; tiểu quản lệ, túi lệ và ống lệ – mũi là đường dẫn nước mắt xuống khoang mũi. Trong mô hình, nhóm này còn có hồ lệ.",
+    "en": "Part of the tear drainage pathway. The lacrimal apparatus has a secretory part that makes tears and an excretory part that drains them; the lacrimal canaliculi, lacrimal sac and nasolacrimal duct carry the fluid down into the nose. In the model this group also includes the lacrimal lake."
+   },
+   "location": {
+    "vi": "Dẫn xuống khoang mũi; ống lệ – mũi đổ vào khoang mũi ở phía trước – dưới xoăn mũi dưới.",
+    "en": "Leading down to the nasal cavity; the nasolacrimal duct opens into the nose in front of and below the inferior nasal concha."
+   },
+   "function": {
+    "vi": "Dẫn lưu nước mắt. Một phần nước mắt bay hơi giữa các lần chớp mắt, một phần thoát qua điểm lệ và cuối cùng được dẫn xuống mũi.",
+    "en": "Drains tears. Some tear fluid evaporates between blinks; some leaves through the lacrimal punctum and is finally drained into the nose."
+   },
+   "evidence": [
+    {
+     "source": "wikipedia-en",
+     "section": "Lacrimal_apparatus",
+     "quote": "The lacrimal system is made up of a secretory system, which produces tears, and an excretory system, which drains the tears.",
+     "supports": [
+      "summary",
+      "function"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Lacrimal_apparatus",
+     "quote": "The lacrimal canaliculi, the lacrimal sac, and the nasolacrimal duct, by which the fluid is conveyed into the cavity of the nose, emptying anterioinferiorly to the inferior nasal conchae from the nasolacrimal duct.",
+     "supports": [
+      "summary",
+      "location"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Lacrimal_apparatus",
+     "quote": "As tears are produced, some fluid evaporates between blinks, and some is drained through the lacrimal punctum. The tears that are drained through the punctum will eventually be drained through the nose.",
+     "supports": [
+      "function"
+     ]
+    }
+   ]
+  },
+  "FMA22671": {
+   "summary": {
+    "vi": "Động mạch ngực – cùng vai và các nhánh của nó. Đây là một thân động mạch ngắn tách từ đoạn hai của động mạch nách, rồi chia thành bốn nhánh: nhánh ngực, nhánh cùng vai, nhánh đòn và nhánh delta.",
+    "en": "The thoracoacromial artery and its branches. It is a short trunk coming off the second part of the axillary artery that divides into four branches: pectoral, acromial, clavicular and deltoid."
+   },
+   "location": {
+    "vi": "Nguyên ủy thường bị bờ trên cơ ngực bé che phủ. Thân đi ra trước tới bờ trên cơ ngực bé, xuyên qua mạc đòn – quạ rồi chia nhánh. Nhánh ngực đi xuống giữa hai cơ ngực; nhánh cùng vai chạy ra ngoài trên mỏm quạ, dưới cơ delta; nhánh delta đi trong cùng rãnh với tĩnh mạch đầu, giữa cơ ngực lớn và cơ delta.",
+    "en": "Its origin is generally covered by the upper edge of pectoralis minor. The trunk heads forward to that edge, pierces the clavipectoral (coracoclavicular) fascia and divides. The pectoral branch descends between the two pectoral muscles; the acromial branch runs outward over the coracoid process beneath deltoid; the deltoid branch travels in the cephalic vein's groove between pectoralis major and deltoid."
+   },
+   "function": {
+    "vi": "Nhánh ngực cấp máu cho hai cơ ngực và tuyến vú; nhánh cùng vai cho nhánh vào cơ delta rồi tận cùng ở mạng động mạch trên mỏm cùng vai; nhánh đòn cấp máu cho khớp ức – đòn và cơ dưới đòn; nhánh delta cấp máu cho cơ ngực lớn và cơ delta.",
+    "en": "The pectoral branch supplies both pectoral muscles and the breast; the acromial branch gives twigs to deltoid and ends in the arterial network on the acromion; the clavicular branch supplies the sternoclavicular joint and subclavius; the deltoid branch supplies pectoralis major and deltoid."
+   },
+   "evidence": [
+    {
+     "source": "wikipedia-en",
+     "section": "Thoracoacromial_artery",
+     "quote": "is a short trunk that arises from the second part of the axillary artery, its origin being generally overlapped by the upper edge of the pectoralis minor.",
+     "supports": [
+      "summary",
+      "location"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Thoracoacromial_artery",
+     "quote": "Projecting forward to the upper border of the Pectoralis minor, it pierces the coracoclavicular fascia and divides into four branches—pectoral, acromial, clavicular, and deltoid.",
+     "supports": [
+      "summary",
+      "location"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Thoracoacromial_artery",
+     "quote": "Descends between the two pectorales, and is distributed to them and to the mamma",
+     "supports": [
+      "location",
+      "function"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Thoracoacromial_artery",
+     "quote": "Runs laterally over the coracoid process and under the deltoideus, to which it gives branches; it then pierces that muscle and ends on the acromion in an arterial network",
+     "supports": [
+      "location",
+      "function"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Thoracoacromial_artery",
+     "quote": "Runs upward and medialward to the sternoclavicular joint, supplying this articulation, and the subclavius.",
+     "supports": [
+      "function"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Thoracoacromial_artery",
+     "quote": "passes in the same groove as the cephalic vein, between the pectoralis major and deltoideus, and gives branches to both muscles.",
+     "supports": [
+      "location",
+      "function"
+     ]
+    }
+   ]
+  },
+  "FMA22654": {
+   "summary": {
+    "vi": "Động mạch nách và các nhánh của nó, trong đó có động mạch mũ cánh tay trước và sau. Động mạch nách là mạch máu lớn, thường được chia làm ba đoạn theo vị trí so với cơ ngực bé nằm nông hơn nó.",
+    "en": "The axillary artery and its branches, among them the anterior and posterior circumflex humeral arteries. The axillary artery is a large vessel usually described in three parts according to its relation to pectoralis minor, which lies superficial to it."
+   },
+   "location": {
+    "vi": "Bắt đầu ở bờ ngoài xương sườn thứ nhất — trước đó gọi là động mạch dưới đòn — và trở thành động mạch cánh tay sau khi qua bờ dưới cơ tròn lớn. Trong nách, động mạch được đám rối cánh tay vây quanh; tĩnh mạch nách đi kèm ở phía trong.",
+    "en": "It begins at the outer border of the first rib, before which it is the subclavian artery, and becomes the brachial artery once past the lower border of teres major. In the armpit it is surrounded by the brachial plexus, with the axillary vein running along its inner side."
+   },
+   "function": {
+    "vi": "Mang máu giàu oxy tới mặt bên lồng ngực, vùng nách và chi trên.",
+    "en": "Delivers oxygenated blood to the side of the chest, the armpit and the upper limb."
+   },
+   "evidence": [
+    {
+     "source": "wikipedia-en",
+     "section": "Axillary_artery",
+     "quote": "BranchesSuperior thoracicthoracoacromiallateral thoracicsubscapularanterior circumflex humeralposterior circumflex humeralcontinues as brachial artery",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Axillary_artery",
+     "quote": "The axillary artery is often referred to as having three parts, with these divisions based on its location relative to the pectoralis minor muscle, which is superficial to the artery.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Axillary_artery",
+     "quote": "the axillary artery is a large blood vessel that conveys oxygenated blood to the lateral aspect of the thorax, the axilla (armpit) and the upper limb.",
+     "supports": [
+      "summary",
+      "function"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Axillary_artery",
+     "quote": "Its origin is at the lateral margin of the first rib, before which it is called the subclavian artery.",
+     "supports": [
+      "location"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Axillary_artery",
+     "quote": "After passing the lower margin of teres major it becomes the brachial artery.",
+     "supports": [
+      "location"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Axillary_artery",
+     "quote": "In the axilla, the axillary artery is surrounded by the brachial plexus.",
+     "supports": [
+      "location"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Axillary_artery",
+     "quote": "The axillary artery is accompanied by the axillary vein, which lies medial to the artery, along its length.",
+     "supports": [
+      "location"
+     ]
+    }
+   ]
+  },
+  "FMA70353": {
+   "summary": {
+    "vi": "Các nhánh thuộc thân giáp – cổ. Thân giáp – cổ là động mạch rất nhỏ ở cổ, tách từ động mạch dưới đòn ở phía ngoài động mạch đốt sống, rồi chia thành động mạch giáp dưới, động mạch trên vai và động mạch ngang cổ. Trong một phần ba số trường hợp, động mạch cổ nông và động mạch vai sau tách ra dưới dạng động mạch ngang cổ.",
+    "en": "Branches of the thyrocervical trunk, a very small neck artery that leaves the subclavian artery lateral to the vertebral artery and divides into the inferior thyroid, suprascapular and transverse cervical arteries. In a third of cases the superficial cervical and dorsal scapular arteries arise as the transverse cervical artery."
+   },
+   "location": {
+    "vi": "Ở cổ. Thân tách từ đoạn một của động mạch dưới đòn. Động mạch trên vai và động mạch ngang cổ đều đi ra ngoài, bắt chéo phía trước cơ bậc thang trước và thần kinh hoành; động mạch giáp dưới đi lên tới phần dưới tuyến giáp.",
+    "en": "In the neck. The trunk comes off the first part of the subclavian artery. The suprascapular and transverse cervical arteries both head outward across the front of scalenus anterior and the phrenic nerve; the inferior thyroid artery climbs to the lower thyroid gland."
+   },
+   "function": {
+    "vi": "Thân giáp – cổ cấp máu cho tuyến giáp và một số cơ vùng vai.",
+    "en": "The thyrocervical trunk supplies the thyroid gland and some muscles of the shoulder blade."
+   },
+   "evidence": [
+    {
+     "source": "wikipedia-en",
+     "section": "Thyrocervical_trunk",
+     "quote": "The thyrocervical trunks are very small arteries of the neck arising from the subclavian arteries, lateral to the vertebral arteries. They divide into branches: the inferior thyroid artery, suprascapular artery, and the transverse cervical artery.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Thyrocervical_trunk",
+     "quote": "In a third of cases the superficial cervical artery and the dorsal scapular artery arise as the transverse cervical artery.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Thyrocervical_trunk",
+     "quote": "It arises from the first portion of this vessel",
+     "supports": [
+      "location"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Thyrocervical_trunk",
+     "quote": "The suprascapular artery and transverse cervical artery both head laterally and cross in front of (anterior to) the anterior scalene muscle and the phrenic nerve. The inferior thyroid artery runs superiorly from the thyrocervical trunk to the inferior portion of the thyroid gland.",
+     "supports": [
+      "location"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Thyrocervical_trunk",
+     "quote": "The thyrocervical trunks supply the thyroid gland and some scapular muscles.",
+     "supports": [
+      "function"
+     ]
+    }
+   ]
+  },
+  "FMA67943": {
+   "summary": {
+    "vi": "Cầu não là một phần của thân não. Ở người, cầu não dài khoảng 2,5 cm. Mặt cắt ngang chia nó thành phần bụng (phần nền) và phần lưng (trần cầu não).",
+    "en": "The pons is a part of the brainstem, about 2.5 cm long in humans. In cross-section it splits into a ventral basilar part and a dorsal part, the pontine tegmentum."
+   },
+   "location": {
+    "vi": "Nằm dưới não giữa, trên hành não và trước tiểu não. Rãnh hành – cầu ngăn nó với hành não, rãnh cầu trên ngăn nó với não giữa; phía sau, mỗi bên cầu não uốn thành cuống tiểu não giữa.",
+    "en": "Below the midbrain, above the medulla oblongata and in front of the cerebellum. The medullopontine sulcus marks it off from the medulla and the superior pontine sulcus from the midbrain; behind, each side curves into a middle cerebellar peduncle."
+   },
+   "function": {
+    "vi": "Chứa các đường dẫn truyền và bó thần kinh mang tín hiệu từ não xuống tiểu não và hành não, cùng các đường mang tín hiệu cảm giác lên đồi thị.",
+    "en": "It holds pathways and tracts that carry signals down from the brain to the cerebellum and medulla, and pathways that carry sensory signals up to the thalamus."
+   },
+   "evidence": [
+    {
+     "source": "wikipedia-en",
+     "section": "Pons",
+     "quote": "is the part of the brainstem that, in humans and other mammals, lies inferior to the midbrain, superior to the medulla oblongata, and anterior to the cerebellum.",
+     "supports": [
+      "summary",
+      "location"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Pons",
+     "quote": "The pons in humans measures about 2.5 centimetres (0.98 in) in length.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Pons",
+     "quote": "A cross-section of the pons divides it into a ventral and a dorsal area. The ventral pons is known as the basilar part, and the dorsal pons is known as the pontine tegmentum.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Pons",
+     "quote": "The horizontal medullopontine sulcus demarcates the boundary between the pons and medulla oblongata on the ventral aspect of the brainstem",
+     "supports": [
+      "location"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Pons",
+     "quote": "The superior pontine sulcus separates the pons from the midbrain. Posteriorly, the pons curves on either side into a middle cerebellar peduncle.",
+     "supports": [
+      "location"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Pons",
+     "quote": "The pons contains neural pathways and nerve tracts that conduct signals from the brain down to the cerebellum and medulla, as well as pathways that carry the sensory signals up into the thalamus.",
+     "supports": [
+      "function"
+     ]
+    }
+   ]
+  },
+  "FMA62004": {
+   "summary": {
+    "vi": "Hành não (hành tủy) là cấu trúc dài hình thân cây tạo nên phần dưới của thân não — một khối nơ-ron hình nón.",
+    "en": "The medulla oblongata is a long, stalk-like, cone-shaped mass of neurons forming the lower part of the brainstem."
+   },
+   "location": {
+    "vi": "Phần thấp nhất của thân não, ở trước và hơi dưới tiểu não. Hành não thò ra qua lỗ lớn xương chẩm, rồi nối tiếp thành tủy sống.",
+    "en": "The lowest part of the brainstem, in front of and partly below the cerebellum. It passes through the foramen magnum and carries on as the spinal cord."
+   },
+   "function": {
+    "vi": "Đảm nhận các chức năng tự chủ (không theo ý muốn), từ nôn tới hắt hơi. Hành não chứa trung tâm tim mạch, trung tâm hô hấp, trung tâm nôn và trung tâm vận mạch, điều hòa nhịp thở, nhịp tim, huyết áp và cả chu kỳ thức – ngủ.",
+    "en": "Runs autonomic, involuntary functions, from vomiting to sneezing. It houses the cardiovascular, respiratory, vomiting and vasomotor centres that govern breathing, heart rate and blood pressure, and the sleep–wake cycle."
+   },
+   "evidence": [
+    {
+     "source": "wikipedia-en",
+     "section": "Medulla_oblongata",
+     "quote": "The medulla oblongata or simply medulla is a long stem-like structure which makes up the lower part of the brainstem. It is anterior and partially inferior to the cerebellum.",
+     "supports": [
+      "summary",
+      "location"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Medulla_oblongata",
+     "quote": "It is a cone-shaped neuronal mass responsible for autonomic (involuntary) functions, ranging from vomiting to sneezing.",
+     "supports": [
+      "summary",
+      "function"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Medulla_oblongata",
+     "quote": "Medulla-animated as it protrudes from the foramen magnum of the skull-base, after which it gives rise to the spinal cord.",
+     "supports": [
+      "location"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Medulla_oblongata",
+     "quote": "The medulla contains the cardiovascular center, the respiratory center, vomiting and vasomotor centers, responsible for the autonomic functions of breathing, heart rate and blood pressure as well as the sleep–wake cycle.",
+     "supports": [
+      "function"
+     ]
+    }
+   ]
+  },
+  "FMA62008": {
+   "summary": {
+    "vi": "Vùng dưới đồi là một phần của hệ viền, liên kết chặt với nhiều phần khác của hệ thần kinh trung ương, đặc biệt là thân não và cấu tạo lưới. Nó được chia thành bốn vùng (trước thị, trên thị, củ, thể vú) theo chiều trước – sau.",
+    "en": "The hypothalamus belongs to the limbic system and is densely connected with the rest of the central nervous system, above all the brainstem and its reticular formation. Front to back it is divided into four regions: preoptic, supraoptic, tuberal and mammillary."
+   },
+   "location": {
+    "vi": "Nằm dưới đồi thị.",
+    "en": "Below the thalamus."
+   },
+   "function": {
+    "vi": "Điều hòa một số quá trình chuyển hóa và hoạt động của hệ thần kinh tự chủ. Nó tổng hợp và tiết các hormone giải phóng, kích thích hoặc ức chế tuyến yên tiết hormone. Vùng dưới đồi kiểm soát thân nhiệt, cảm giác đói, khát, mệt, giấc ngủ và nhịp sinh học.",
+    "en": "Regulates certain metabolic processes and other autonomic activities. It makes and secretes releasing hormones that stimulate or inhibit hormone secretion by the pituitary. It controls body temperature, hunger, thirst, fatigue, sleep and circadian rhythms."
+   },
+   "evidence": [
+    {
+     "source": "wikipedia-en",
+     "section": "Hypothalamus",
+     "quote": "The hypothalamus is located below the thalamus and is part of the limbic system.",
+     "supports": [
+      "summary",
+      "location"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Hypothalamus",
+     "quote": "The hypothalamus is highly interconnected with other parts of the central nervous system, in particular the brainstem and its reticular formation.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Hypothalamus",
+     "quote": "The hypothalamus is divided into four regions (preoptic, supraoptic, tuberal, mammillary) in a parasagittal plane, indicating location anterior-posterior",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Hypothalamus",
+     "quote": "The hypothalamus has the function of regulating certain metabolic processes and other activities of the autonomic nervous system.",
+     "supports": [
+      "function"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Hypothalamus",
+     "quote": "It synthesizes and secretes certain neurohormones, called releasing hormones or hypothalamic hormones, and these in turn stimulate or inhibit the secretion of hormones from the pituitary gland.",
+     "supports": [
+      "function"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Hypothalamus",
+     "quote": "The hypothalamus controls body temperature, hunger, important aspects of parenting and maternal attachment behaviours, thirst, fatigue, sleep, circadian rhythms",
+     "supports": [
+      "function"
+     ]
+    }
+   ],
+   "omitted": "Bỏ các hành vi xã hội, nuôi con, tình dục — đoạn nguồn kể dài, viết rút dễ sai mức độ."
+  },
+  "FMA62007": {
+   "summary": {
+    "vi": "Đồi thị là đôi cấu trúc chất xám hình trứng, dài khoảng bốn centimet. Mỗi đồi thị có thể chia thành ít nhất 30 nhân; lá tủy trong hình chữ Y chia các nhân thành nhóm trước, nhóm trong và nhóm ngoài.",
+    "en": "The thalami are a pair of ovoid grey-matter structures about four centimetres long. Each can be divided into at least 30 nuclei, which a Y-shaped internal medullary lamina sorts into anterior, medial and lateral groups."
+   },
+   "location": {
+    "vi": "Gần trung tâm não, giữa vỏ đại não và não giữa. Mặt trong của đồi thị tạo nên phần trên thành bên não thất ba và nối với đồi thị bên kia bằng dính gian đồi thị.",
+    "en": "Near the centre of the brain, between the cerebral cortex and the midbrain. Its inner surface forms the upper part of the side wall of the third ventricle and is joined to the other thalamus by the interthalamic adhesion."
+   },
+   "function": {
+    "vi": "Thường được xem như trạm chuyển tiếp, chuyển thông tin giữa các vùng dưới vỏ và vỏ đại não. Đồi thị chuyển tiếp tín hiệu cảm giác và vận động lên vỏ não, và điều hòa ý thức, giấc ngủ, sự tỉnh táo.",
+    "en": "Generally regarded as a relay hub passing information between subcortical areas and the cerebral cortex. It relays sensory and motor signals to the cortex and regulates consciousness, sleep and alertness."
+   },
+   "evidence": [
+    {
+     "source": "wikipedia-en",
+     "section": "Thalamus",
+     "quote": "The thalami are paired structures of gray matter about four centimetres long and ovoid in appearance",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Thalamus",
+     "quote": "Each of the thalami may be subdivided into at least 30 nuclei",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Thalamus",
+     "quote": "The grey matter of thalamus is partitioned by a Y shaped internal medullary lamina which divides the nuclei into anterior, medial, and lateral groups.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Thalamus",
+     "quote": "situated between the cerebral cortex and the midbrain.",
+     "supports": [
+      "location"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Thalamus",
+     "quote": "near the center of the brain with nerve fibers projecting out to the cerebral cortex in all directions.",
+     "supports": [
+      "location"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Thalamus",
+     "quote": "The medial surface of the thalamus constitutes the upper part of the lateral wall of the third ventricle, and is connected to the corresponding surface of the opposite thalamus by a flattened gray band, the interthalamic adhesion.",
+     "supports": [
+      "location"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Thalamus",
+     "quote": "The thalamus has multiple functions, and is generally believed to act as a relay station, or hub, relaying information between different subcortical areas and the cerebral cortex.",
+     "supports": [
+      "function"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Thalamus",
+     "quote": "It has several functions, such as the relaying of sensory and motor signals to the cerebral cortex and the regulation of consciousness, sleep, and alertness.",
+     "supports": [
+      "function"
+     ]
+    }
+   ]
+  },
+  "FMA58235": {
+   "summary": {
+    "vi": "Mống mắt là cấu trúc mỏng hình vòng, phần có màu của mắt, với đồng tử ở giữa. Mống mắt gồm hai lớp: lớp đệm sợi – mạch có sắc tố ở trước và lớp tế bào biểu mô sắc tố ở sau.",
+    "en": "The iris is the thin, ring-shaped, coloured part of the eye with the pupil at its centre. It has two layers: a pigmented fibrovascular stroma in front and pigmented epithelial cells behind it."
+   },
+   "location": {
+    "vi": "Ở phía trước nhãn cầu, được củng mạc trắng bao quanh. Bờ ngoài của mống mắt (chân mống mắt) gắn vào củng mạc và phần trước thể mi; mống mắt cùng thể mi hợp thành màng bồ đào trước.",
+    "en": "At the front of the eye, ringed by the white sclera. Its outer edge, the root, attaches to the sclera and the front of the ciliary body; iris and ciliary body together make up the anterior uvea."
+   },
+   "function": {
+    "vi": "Điều chỉnh đường kính đồng tử, do đó điều chỉnh lượng ánh sáng tới võng mạc: cơ thắt đồng tử làm đồng tử co nhỏ, cơ giãn đồng tử kéo mống mắt theo hướng nan hoa để mở rộng đồng tử. Lớp sắc tố dày ở mặt sau chặn ánh sáng, chỉ cho ánh sáng đi qua đồng tử.",
+    "en": "Sets the size of the pupil and so how much light reaches the retina: the sphincter pupillae narrows the pupil, the dilator pupillae pulls the iris outward to widen it. Dense pigment on its back surface stops light passing through, so light gets in only through the pupil."
+   },
+   "evidence": [
+    {
+     "source": "wikipedia-en",
+     "section": "Iris_(anatomy)",
+     "quote": "is a thin, ring-shaped structure in the eye in most mammals and birds that is responsible for controlling the diameter and size of the pupil, and thus the amount of light reaching the retina.",
+     "supports": [
+      "summary",
+      "function"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Iris_(anatomy)",
+     "quote": "The iris in humans is the colored (typically brown, blue, or green) area, with the pupil (the circular black spot) in its center, and surrounded by the white sclera.",
+     "supports": [
+      "summary",
+      "location"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Iris_(anatomy)",
+     "quote": "The iris consists of two layers: the front pigmented fibrovascular layer known as a stroma and, behind the stroma, pigmented epithelial cells.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Iris_(anatomy)",
+     "quote": "The outer edge of the iris, known as the root, is attached to the sclera and the anterior ciliary body. The iris and ciliary body together are known as the anterior uve",
+     "supports": [
+      "location"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Iris_(anatomy)",
+     "quote": "which contracts the pupil in a circular motion, and a set of dilator muscles (dilator pupillae), which pull the iris radially to enlarge the pupil",
+     "supports": [
+      "function"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Iris_(anatomy)",
+     "quote": "The high pigment content blocks light from passing through the iris to the retina, restricting it to the pupil.",
+     "supports": [
+      "function"
+     ]
+    }
+   ]
+  },
+  "FMA58298": {
+   "summary": {
+    "vi": "Màng mạch là một phần của màng bồ đào — lớp mạch máu của mắt — và chứa mô liên kết. Cùng thể mi và mống mắt, màng mạch tạo nên màng bồ đào.",
+    "en": "The choroid is part of the uvea, the eye's vascular layer, and contains connective tissue. Together with the ciliary body and iris it makes up the uveal tract."
+   },
+   "location": {
+    "vi": "Nằm giữa võng mạc và củng mạc. Ở người, màng mạch dày nhất ở tận cùng phía sau mắt (0,2 mm) và mỏng dần còn 0,1 mm ở vùng ngoại vi.",
+    "en": "Between the retina and the sclera. In humans it is thickest at the very back of the eye (0.2 mm) and thins to 0.1 mm toward the periphery."
+   },
+   "function": {
+    "vi": "Cung cấp oxy và dưỡng chất cho các lớp ngoài của võng mạc.",
+    "en": "Supplies oxygen and nutrients to the outer layers of the retina."
+   },
+   "evidence": [
+    {
+     "source": "wikipedia-en",
+     "section": "Choroid",
+     "quote": "is a part of the uvea, the vascular layer of the eye. It contains connective tissues, and lies between the retina and the sclera.",
+     "supports": [
+      "summary",
+      "location"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Choroid",
+     "quote": "Along with the ciliary body and iris, the choroid forms the uveal tract.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Choroid",
+     "quote": "The human choroid is thickest at the far extreme rear of the eye (at 0.2 mm), while in the outlying areas it narrows to 0.1 mm.",
+     "supports": [
+      "location"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Choroid",
+     "quote": "The choroid provides oxygen and nourishment to the outer layers of the retina.",
+     "supports": [
+      "function"
+     ]
+    }
+   ]
+  },
+  "FMA58238": {
+   "summary": {
+    "vi": "Giác mạc là phần trong suốt ở mặt trước nhãn cầu. Giác mạc khỏe mạnh không có mạch máu: oxy hòa tan trong nước mắt rồi khuếch tán vào giác mạc. Giác mạc có các đầu tận thần kinh không myelin nhạy với chạm, nhiệt độ và hóa chất.",
+    "en": "The cornea is the clear front part of the eyeball. A healthy cornea has no blood vessels: oxygen dissolves in the tears and diffuses into it. It carries unmyelinated nerve endings that sense touch, temperature and chemicals."
+   },
+   "location": {
+    "vi": "Ở mặt trước nhãn cầu, che phủ mống mắt, đồng tử và tiền phòng. Giác mạc người có đường kính khoảng 11,5 mm.",
+    "en": "At the front of the eyeball, covering the iris, pupil and anterior chamber. The human cornea is about 11.5 mm across."
+   },
+   "function": {
+    "vi": "Cùng tiền phòng và thể thủy tinh, giác mạc khúc xạ ánh sáng, chiếm khoảng hai phần ba tổng công suất quang học của mắt; tiêu cự của nó cố định. Chạm vào giác mạc gây phản xạ nhắm mắt không chủ ý.",
+    "en": "With the anterior chamber and lens it bends incoming light, supplying roughly two-thirds of the eye's optical power, though its focus is fixed. Touching it sets off an involuntary blink reflex."
+   },
+   "evidence": [
+    {
+     "source": "wikipedia-en",
+     "section": "Cornea",
+     "quote": "The cornea is the transparent front part of the eyeball which covers the iris, pupil, and anterior chamber.",
+     "supports": [
+      "summary",
+      "location"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Cornea",
+     "quote": "the healthy cornea does not have or need blood vessels within it. Instead, oxygen dissolves in tears and then diffuses throughout the cornea to keep it healthy.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Cornea",
+     "quote": "The cornea has unmyelinated nerve endings sensitive to touch, temperature and chemicals; a touch of the cornea causes an involuntary reflex to close the eyelid.",
+     "supports": [
+      "summary",
+      "function"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Cornea",
+     "quote": "In humans, the cornea has a diameter of about 11.5 mm",
+     "supports": [
+      "location"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Cornea",
+     "quote": "Along with the anterior chamber and lens, the cornea refracts light, accounting for approximately two-thirds of the eye's total optical power.",
+     "supports": [
+      "function"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Cornea",
+     "quote": "While the cornea contributes most of the eye's focusing power, its focus is fixed.",
+     "supports": [
+      "function"
+     ]
+    }
+   ]
+  },
+  "FMA58269": {
+   "summary": {
+    "vi": "Củng mạc (lòng trắng mắt) là lớp ngoài cùng của nhãn cầu: đục, dạng sợi, có tác dụng bảo vệ, cấu tạo chủ yếu từ collagen cùng một ít sợi đàn hồi.",
+    "en": "The sclera, the white of the eye, is the opaque, fibrous, protective outer coat of the eye, made mainly of collagen with some elastic fibre."
+   },
+   "location": {
+    "vi": "Tạo nên năm phần sáu phía sau của lớp vỏ mô liên kết bọc nhãn cầu; liên tục với màng cứng ở phía sau và với giác mạc ở phía trước.",
+    "en": "It forms the back five-sixths of the eyeball's connective-tissue coat and is continuous with the dura mater and with the cornea."
+   },
+   "function": {
+    "vi": "Giữ hình dạng nhãn cầu, chống lại các lực từ trong và ngoài, và là nơi bám tận của các cơ ngoài nhãn cầu.",
+    "en": "Keeps the eyeball in shape, resists forces from inside and out, and gives the extraocular muscles their insertion."
+   },
+   "evidence": [
+    {
+     "source": "wikipedia-en",
+     "section": "Sclera",
+     "quote": "is the opaque, fibrous, protective outer layer of the eye containing mainly collagen and some crucial elastic fiber.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Sclera",
+     "quote": "The sclera, also known as the white of the eye",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Sclera",
+     "quote": "The sclera forms the posterior five-sixths of the connective tissue coat of the human eyeball. It is continuous with the dura mater and the cornea",
+     "supports": [
+      "location"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Sclera",
+     "quote": "and maintains the shape of the eyeball, offering resistance to internal and external forces, and provides an attachment for the extraocular muscle insertions.",
+     "supports": [
+      "function"
+     ]
+    }
+   ]
+  },
+  "FMA7232": {
+   "summary": {
+    "vi": "Lá van của van bán nguyệt (van động mạch chủ, van động mạch phổi). Mỗi van tim có các lá van; van hai lá có hai lá, các van còn lại — kể cả hai van bán nguyệt — có ba lá. Ở đầu các lá van có những nốt nhỏ giúp van đóng kín hơn.",
+    "en": "A cusp of a semilunar valve, aortic or pulmonary. Heart valves are built from cusps; the mitral valve has two and every other valve, both semilunar ones included, has three. Small nodules at the cusp tips make the seal tighter."
+   },
+   "location": {
+    "vi": "Hai van bán nguyệt nằm ở lối vào các động mạch rời tim: van động mạch chủ ở động mạch chủ, van động mạch phổi ở động mạch phổi. Van tim nằm quanh các vòng sợi của khung xơ tim.",
+    "en": "The two semilunar valves sit at the entrances to the arteries leaving the heart: the aortic valve at the aorta, the pulmonary valve at the pulmonary artery. Heart valves are set around the fibrous rings of the cardiac skeleton."
+   },
+   "function": {
+    "vi": "Lá van bị đẩy mở để máu chảy qua, rồi khép lại với nhau để bịt kín, ngăn máu chảy ngược. Van đóng hay mở do chênh lệch áp suất máu hai bên.",
+    "en": "Cusps are pushed apart to let blood through, then meet to seal the opening and stop backflow. Valves open and close in response to the pressure difference across them."
+   },
+   "evidence": [
+    {
+     "source": "wikipedia-en",
+     "section": "Heart_valve",
+     "quote": "The mitral valve has two cusps, whereas the others have three. There are nodules at the tips of the cusps that make the seal tighter.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Heart_valve",
+     "quote": "The two semilunar valves are at the entrance of the arteries leaving the heart. These are the aortic valve at the aorta, and the pulmonary valve at the pulmonary artery.",
+     "supports": [
+      "summary",
+      "location"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Heart_valve",
+     "quote": "Heart valves are situated around the fibrous rings of the cardiac skeleton.",
+     "supports": [
+      "location"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Heart_valve",
+     "quote": "The valves incorporate flaps called leaflets or cusps, similar to a duckbill valve or flutter valve, which are pushed open to allow blood flow and which then close together to seal and prevent backflow.",
+     "supports": [
+      "summary",
+      "function"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Heart_valve",
+     "quote": "Heart valves are opened or closed by a difference in blood pressure on each side.",
+     "supports": [
+      "function"
+     ]
+    }
+   ],
+   "omitted": "Không chép tên lá van của Wikipedia (trái/phải/trước, trái/phải/sau): FMA và mô hình dùng hệ tên khác (trước, sau phải, sau trái…)."
+  },
+  "FMA67598": {
+   "summary": {
+    "vi": "Lá van của van nhĩ – thất. Tim có hai van nhĩ – thất ngăn tâm nhĩ ở trên với tâm thất ở dưới: van hai lá bên tim trái có lá trước và lá sau; van ba lá bên tim phải có lá trước, lá sau và lá vách.",
+    "en": "A leaflet of an atrioventricular valve. Two such valves separate the atria above from the ventricles below: the mitral valve on the left, with anterior and posterior cusps, and the tricuspid valve on the right, with anterior, posterior and septal cusps."
+   },
+   "location": {
+    "vi": "Giữa tâm nhĩ và tâm thất cùng bên. Lá van được các cơ nhú trong tâm thất giữ lại qua các thừng gân.",
+    "en": "Between the atrium and ventricle on the same side. The cusps are tethered by chordae tendineae to papillary muscles inside the ventricles."
+   },
+   "function": {
+    "vi": "Lá van bị đẩy mở để máu chảy qua, rồi khép lại với nhau để bịt kín, ngăn máu chảy ngược từ tâm thất lên tâm nhĩ.",
+    "en": "The cusps swing open to let blood through and then meet to seal, keeping blood from flowing back from ventricle to atrium."
+   },
+   "evidence": [
+    {
+     "source": "wikipedia-en",
+     "section": "Heart_valve",
+     "quote": "The mammalian heart has two atrioventricular valves separating the upper atria from the lower ventricles: the mitral valve in the left heart, and the tricuspid valve in the right heart.",
+     "supports": [
+      "summary",
+      "location"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Heart_valve",
+     "quote": "The tricuspid valve has anterior, posterior, and septal cusps; and the mitral valve has just anterior and posterior cusps.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Papillary_muscle",
+     "quote": "They attach to the cusps of the atrioventricular valves (the mitral valve between the left atrium and ventricle and the tricuspid valve between the right atrium and ventricle), via the chordae tendineae.",
+     "supports": [
+      "location"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Heart_valve",
+     "quote": "The valves incorporate flaps called leaflets or cusps, similar to a duckbill valve or flutter valve, which are pushed open to allow blood flow and which then close together to seal and prevent backflow.",
+     "supports": [
+      "function"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Papillary_muscle",
+     "quote": "This prevents regurgitation—backward flow of ventricular blood into the atrial cavities",
+     "supports": [
+      "function"
+     ]
+    }
+   ]
+  },
+  "FMA268955": {
+   "summary": {
+    "vi": "Cơ nhú là các cơ nằm trong tâm thất. Tim có tổng cộng năm cơ nhú: ba ở tâm thất phải, hai ở tâm thất trái.",
+    "en": "Papillary muscles sit inside the heart's ventricles. The heart has five altogether, three on the right side and two on the left."
+   },
+   "location": {
+    "vi": "Trong tâm thất. Cơ nhú tâm thất phải bám qua thừng gân vào van ba lá; cơ nhú tâm thất trái bám qua thừng gân vào van hai lá.",
+    "en": "Inside the ventricles. The right ventricle's papillary muscles anchor to the tricuspid valve, the left ventricle's to the mitral valve, in each case through chordae tendineae."
+   },
+   "function": {
+    "vi": "Co lại ngay trước khi tâm thất co và giữ căng suốt kỳ tâm thu, giằng van nhĩ – thất để van không bị lộn hay sa, nhờ đó máu không chảy ngược từ tâm thất lên tâm nhĩ.",
+    "en": "They tighten just before the ventricles contract and hold that tension through systole, bracing the atrioventricular valves so they cannot invert or prolapse and blood cannot leak back into the atria."
+   },
+   "evidence": [
+    {
+     "source": "wikipedia-en",
+     "section": "Papillary_muscle",
+     "quote": "The papillary muscles are muscles located in the ventricles of the heart.",
+     "supports": [
+      "summary",
+      "location"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Papillary_muscle",
+     "quote": "There are five total papillary muscles in the heart: three in the right ventricle and two in the left ventricle.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Papillary_muscle",
+     "quote": "The anterior, posterior, and septal papillary muscles of the right ventricle each attach via chordae tendineae to the tricuspid valve.",
+     "supports": [
+      "location"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Papillary_muscle",
+     "quote": "The anterolateral and posteromedial papillary muscles of the left ventricle attach via chordae tendineae to the mitral valve.",
+     "supports": [
+      "location"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Papillary_muscle",
+     "quote": "They contract to prevent inversion or prolapse of these valves on systole (or ventricular contraction).",
+     "supports": [
+      "function"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Papillary_muscle",
+     "quote": "The papillary muscles of both the right and left ventricles begin to contract shortly before ventricular systole and maintain tension throughout. This prevents regurgitation—backward flow of ventricular blood into the atrial cavities",
+     "supports": [
+      "function"
+     ]
+    }
+   ],
+   "omitted": "Không chép tên cơ nhú tâm thất trái của Wikipedia (trước ngoài, sau trong): FMA dùng tên khác (cơ nhú ngoài…)."
+  },
+  "FMA46620": {
+   "summary": {
+    "vi": "Cơ khít hầu (trên, giữa, dưới). Các cơ hầu là nhóm cơ tạo nên hầu, quyết định hình dạng lòng hầu; chúng xếp thành hai lớp: lớp vòng bên ngoài là các cơ khít hầu, lớp dọc ở bên trong.",
+    "en": "A pharyngeal constrictor muscle (superior, middle or inferior). The pharyngeal muscles make up the pharynx and shape its lumen, in two layers: an outer circular layer of constrictors and an inner longitudinal layer."
+   },
+   "location": {
+    "vi": "Ở thành hầu, phía sau khoang miệng.",
+    "en": "In the wall of the pharynx, behind the oral cavity."
+   },
+   "function": {
+    "vi": "Khi nuốt, các cơ khít hầu co lại để đẩy viên thức ăn xuống thực quản. Chúng được nhánh hầu của thần kinh lang thang (dây X) chi phối.",
+    "en": "In swallowing the constrictors squeeze to drive the food bolus down into the oesophagus. Their nerve supply comes from the vagus (CN X), through its pharyngeal branch."
+   },
+   "evidence": [
+    {
+     "source": "wikipedia-en",
+     "section": "Pharyngeal_muscles",
+     "quote": "The pharyngeal muscles are a group of muscles that form the pharynx, which is posterior to the oral cavity, determining the shape of its lumen",
+     "supports": [
+      "summary",
+      "location"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Pharyngeal_muscles",
+     "quote": "There are two muscular layers of the pharynx: the outer circular layer of pharyngeal constrictor muscles and the inner longitudinal layer.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Pharyngeal_muscles",
+     "quote": "The pharyngeal muscles (involuntary skeletal) push food into the esophagus.",
+     "supports": [
+      "function"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Pharyngeal_muscles",
+     "quote": "During swallowing, these muscles constrict to propel a bolus downwards (an involuntary process).",
+     "supports": [
+      "function"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Pharyngeal_muscles",
+     "quote": "They are innervated by the pharyngeal branch of the vagus nerve (CN X) with the exception of the stylopharyngeus muscle",
+     "supports": [
+      "function"
+     ]
+    }
+   ]
+  },
+  "FMA242787": {
+   "summary": {
+    "vi": "Hệ não thất gồm bốn khoang thông nhau trong não gọi là các não thất; hai não thất lớn nhất là hai não thất bên ở đại não. Toàn bộ hệ não thất và ống trung tâm tủy sống được lót bởi màng nội tủy (ependyma).",
+    "en": "Four connected cavities in the brain, the cerebral ventricles, make up the ventricular system; the largest pair are the lateral ventricles of the cerebrum. Ependyma lines all of it, as well as the central canal of the spinal cord."
+   },
+   "location": {
+    "vi": "Trong não. Hai lỗ gian não thất (lỗ Monro) nối các não thất bên với não thất ba; từ não thất bốn, hệ não thất nối tiếp ống trung tâm tủy sống.",
+    "en": "Within the brain. The interventricular foramina (of Monro) join the lateral ventricles to the third ventricle, and from the fourth ventricle the system carries on into the central canal of the spinal cord."
+   },
+   "function": {
+    "vi": "Sản xuất và lưu thông dịch não tủy: mỗi não thất có một vùng đám rối mạch mạc tiết ra dịch này.",
+    "en": "Produces and circulates cerebrospinal fluid: each ventricle contains an area of choroid plexus that makes it."
+   },
+   "evidence": [
+    {
+     "source": "wikipedia-en",
+     "section": "Ventricular_system",
+     "quote": "the ventricular system is a set of four interconnected cavities known as cerebral ventricles in the brain.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Ventricular_system",
+     "quote": "The two largest are the lateral ventricles in the cerebrum",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Ventricular_system",
+     "quote": "All of the ventricular system and the central canal of the spinal cord are lined with ependyma",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Ventricular_system",
+     "quote": "The interventricular foramina (also called the foramina of Monro) connect the lateral ventricles to the third ventricle",
+     "supports": [
+      "location"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Ventricular_system",
+     "quote": "The ventricular system is continuous with the central canal of the spinal cord from the fourth ventricle",
+     "supports": [
+      "location"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Ventricular_system",
+     "quote": "Within each ventricle is a region of choroid plexus which produces the circulating cerebrospinal fluid (CSF).",
+     "supports": [
+      "function"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Ventricular_system",
+     "quote": "The ventricles are concerned with the production and circulation of cerebrospinal fluid.",
+     "supports": [
+      "function"
+     ]
+    }
+   ],
+   "omitted": "Câu Wikipedia về vị trí não thất ba/bốn bị hỏng chữ ('the diencephalon medulla oblongata of the hindbrain') nên không dùng."
+  },
+  "FMA274518": {
+   "summary": {
+    "vi": "Hồi của thùy thái dương. Thùy thái dương là một trong bốn thùy chính của vỏ đại não.",
+    "en": "A gyrus of the temporal lobe, which is one of the cerebral cortex's four major lobes."
+   },
+   "location": {
+    "vi": "Thùy thái dương nằm dưới rãnh bên, ở cả hai bán cầu đại não.",
+    "en": "The temporal lobe lies below the lateral fissure in both cerebral hemispheres."
+   },
+   "function": {
+    "vi": "Thùy thái dương tham gia xử lý thông tin cảm giác thành ý nghĩa để ghi nhớ thị giác, hiểu ngôn ngữ và gắn với cảm xúc. Phần bụng của vỏ thái dương có vẻ tham gia xử lý thị giác cấp cao các kích thích phức tạp như khuôn mặt — ở hồi thoi.",
+    "en": "The temporal lobe helps convert sensory input into meaning, serving the retention of visual memories, the understanding of language and the linking of emotions. Its ventral cortex appears involved in advanced visual analysis of complex things like faces (fusiform gyrus)."
+   },
+   "evidence": [
+    {
+     "source": "wikipedia-en",
+     "section": "Temporal_lobe",
+     "quote": "The temporal lobe is one of the four major lobes of the cerebral cortex in the brain of mammals.",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Temporal_lobe",
+     "quote": "The temporal lobe is located beneath the lateral fissure on both cerebral hemispheres of the mammalian brain.",
+     "supports": [
+      "location"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Temporal_lobe",
+     "quote": "The temporal lobe is involved in processing sensory input into derived meanings for the appropriate retention of visual memory, language comprehension, and emotion association.",
+     "supports": [
+      "function"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Temporal_lobe",
+     "quote": "The ventral part of the temporal cortices appears to be involved in high-level visual processing of complex stimuli such as faces (fusiform gyrus)",
+     "supports": [
+      "function"
+     ]
+    }
+   ]
+  },
+  "FMA274528": {
+   "summary": {
+    "vi": "Hồi của thùy viền. Thùy viền là vùng vỏ não hình cung thuộc hệ viền, trên mặt trong mỗi bán cầu, gồm các phần của thùy trán, thùy đỉnh và thùy thái dương. Thuật ngữ này không thống nhất: một số tác giả xếp vào đó hồi đai, hồi cạnh hải mã, hồi răng, hải mã và hồi hải mã phụ.",
+    "en": "A gyrus of the limbic lobe, a curved strip of limbic-system cortex on each hemisphere's inner face that borrows parts of the frontal, parietal and temporal lobes. Usage of the term varies; some authors count the cingulate, parahippocampal and dentate gyri, hippocampus and subiculum."
+   },
+   "location": {
+    "vi": "Trên mặt trong của mỗi bán cầu đại não.",
+    "en": "On the medial surface of each cerebral hemisphere."
+   },
+   "function": null,
+   "evidence": [
+    {
+     "source": "wikipedia-en",
+     "section": "Limbic_lobe",
+     "quote": "The limbic lobe is an arc-shaped cortical region of the limbic system, on the medial surface of each cerebral hemisphere of the mammalian brain, consisting of parts of the frontal, parietal and temporal lobes.",
+     "supports": [
+      "summary",
+      "location"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Limbic_lobe",
+     "quote": "The term is ambiguous, with some authors",
+     "supports": [
+      "summary"
+     ]
+    },
+    {
+     "source": "wikipedia-en",
+     "section": "Limbic_lobe",
+     "quote": "including the paraterminal gyrus, the subcallosal area, the cingulate gyrus, the parahippocampal gyrus, the dentate gyrus, the hippocampus and the subiculum",
+     "supports": [
+      "summary"
+     ]
+    }
+   ],
+   "omitted": "Bỏ trống chức năng: mỗi hồi một vai trò (hải mã – trí nhớ) và bài thùy viền chỉ nêu lịch sử khái niệm."
   }
  }
 }
