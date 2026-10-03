@@ -4,6 +4,7 @@
  *   npx tsx scripts/atlas-group-descriptions.ts [--write]          tra Wikipedia, ghi data/anatomy/group-descriptions.json
  *   npx tsx scripts/atlas-group-descriptions.ts --emit-review <dir> TSV cho science-editor
  *   npx tsx scripts/atlas-group-descriptions.ts --merge <result.json> [--write]
+ *   npx tsx scripts/atlas-group-descriptions.ts --merge-en <result.json> [--write]  bản en đã duyệt
  *   npx tsx scripts/atlas-group-descriptions.ts --emit-client       → src/lib/human-atlas/group-descriptions.generated.json
  *
  * ## Vì sao cấp nhóm
@@ -19,6 +20,15 @@
  * Tên nhóm ghép ("Iliac and pelvic veins") map sang bài kém hơn tên cơ quan, và bài
  * có thể rộng hoặc hẹp hơn nhóm. science-editor duyệt cả MAPPING lẫn câu chữ; mục
  * chưa duyệt nằm trong tệp dữ liệu nhưng `--emit-client` bỏ qua.
+ *
+ * ## Vì sao có trường `en` riêng (2026-10-03)
+ *
+ * Lớp này ra đời trước Level 2 và chỉ lưu bản Việt, nên bản tiếng Anh của site
+ * hiện câu tiếng Việt cho ~340 mảnh. `en` là câu NGUYÊN VĂN bài Wikipedia tiếng
+ * Anh (đúng phần bản Việt đã dịch, hoặc câu mở đầu khi bản Việt lấy từ bài vi),
+ * qua science-editor như bản Việt: đúng cho cả nhóm. Nhóm chưa có `en` thì bản
+ * tiếng Anh lùi về mô tả hệ — không bao giờ hiện câu tiếng Việt cho người đọc
+ * tiếng Anh.
  */
 import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
@@ -140,6 +150,8 @@ type Entry = {
   enUrl: string | null;
   description: { lang: "vi" | "en"; text: string; translated: boolean; reviewed: boolean } | null;
   source: { title: string; url: string; license: "CC BY-SA 4.0" } | null;
+  /** Bản en đã duyệt: câu nguyên văn bài en (`enTitle`/`enUrl`). */
+  en?: { text: string; reviewed: boolean };
   /** science-editor bỏ (sai nhóm, sai khoa học) — lý do. Chạy lại không tra lại; xoá trường này để tra lại sau khi đổi TITLES. */
   dropped?: string;
 };
@@ -253,12 +265,38 @@ function merge(resultPath: string, write: boolean) {
   else console.log("chạy khô — thêm --write để ghi");
 }
 
+/** result = {rows:[{viewId, action:"APPROVE"|"DROP", en?}]}: APPROVE ghi `en` (nguyên văn bài en). */
+function mergeEn(resultPath: string, write: boolean) {
+  const doc = JSON.parse(readFileSync(OUT, "utf8")) as Doc;
+  const rows = (JSON.parse(readFileSync(resultPath, "utf8")) as { rows: { viewId: string; action: string; en?: string }[] }).rows;
+  const byId = new Map(doc.entries.map((e) => [e.viewId, e]));
+  const n = { APPROVE: 0, DROP: 0 };
+  for (const r of rows) {
+    const e = byId.get(r.viewId);
+    if (!e) throw new Error(`${r.viewId} không có trong ${OUT}`);
+    if (r.action === "DROP") {
+      delete e.en;
+    } else if (r.action === "APPROVE") {
+      const text = r.en?.trim();
+      if (!text || !e.enText || !e.enTitle || !e.enUrl) throw new Error(`${r.viewId}: APPROVE cần câu en + bài en`);
+      // Nguyên văn: câu phải nằm trong đoạn bài en đã tải — không viết lại.
+      if (!e.enText.replace(/\s+/g, " ").includes(text.replace(/\s+/g, " "))) throw new Error(`${r.viewId}: câu en không có nguyên văn trong bài`);
+      e.en = { text, reviewed: true };
+    } else throw new Error(`${r.viewId}: action ${r.action}`);
+    n[r.action as keyof typeof n]++;
+  }
+  console.log(n);
+  if (write) writeFileSync(OUT, JSON.stringify(doc, null, 1));
+  else console.log("chạy khô — thêm --write để ghi");
+}
+
 function emitClient() {
   const doc = JSON.parse(readFileSync(OUT, "utf8")) as Doc;
-  const map: Record<string, { text: string; title: string; url: string }> = {};
+  const map: Record<string, { text: string; title: string; url: string; en?: { text: string; title: string; url: string } }> = {};
   for (const e of doc.entries) {
     if (!e.description?.reviewed || !e.source || e.description.lang !== "vi") continue;
     map[e.viewId] = { text: e.description.text, title: e.source.title, url: e.source.url };
+    if (e.en?.reviewed && e.enTitle && e.enUrl) map[e.viewId].en = { text: e.en.text, title: e.enTitle, url: e.enUrl };
   }
   writeFileSync(CLIENT_OUT, JSON.stringify(map, null, 1) + "\n");
   console.log(`Đã ghi ${path.relative(process.cwd(), CLIENT_OUT)}: ${Object.keys(map).length} nhóm.`);
@@ -268,6 +306,8 @@ const args = process.argv.slice(2);
 const at = (flag: string) => args[args.indexOf(flag) + 1];
 const run = args.includes("--emit-review")
   ? async () => emitReview(at("--emit-review"))
+  : args.includes("--merge-en")
+    ? async () => mergeEn(at("--merge-en"), args.includes("--write"))
   : args.includes("--merge")
     ? async () => merge(at("--merge"), args.includes("--write"))
     : args.includes("--emit-client")

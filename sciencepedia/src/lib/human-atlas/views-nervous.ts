@@ -65,7 +65,8 @@ const BRACHIAL_PLEXUS = n(/brachial plexus$/i);
 /** Nhánh bên của đám rối (tách từ rễ/thân/bó, không thuộc các nhánh tận). */
 const PLEXUS_COLLATERAL = n(/dorsal scapular nerve$|long thoracic nerve$|suprascapular nerve$|subclavian nerve$|subscapular nerve$|thoracodorsal nerve$|pectoral nerve$/i);
 const MUSCULOCUTANEOUS = n(/musculocutaneous nerve$|lateral antebrachial cutaneous nerve$/i);
-const AXILLARY_NERVE = n(/^(left|right) axillary nerve$|axillary nerve$|superior lateral brachial cutaneous nerve$/i);
+// `\b`: thiếu nó, "axillary nerve$" khớp cả "maxillary nerve" (thần kinh hàm trên).
+const AXILLARY_NERVE = n(/\baxillary nerve$|superior lateral brachial cutaneous nerve$/i);
 /** Dây giữa + nhánh; thần kinh gian cốt trước là nhánh của dây giữa. */
 const MEDIAN = n(/median nerve$|median nerve with ulnar nerve$|anterior interosseous nerve of forearm$/i, /of (left|right) ulnar nerve$/i);
 const ULNAR = n(/ulnar nerve$/i, /median nerve with/i);

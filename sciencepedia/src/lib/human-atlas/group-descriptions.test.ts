@@ -27,3 +27,11 @@ test("nhóm science-editor bỏ không có mô tả — thà trống còn hơn t
   assert.equal(MAP["cerebral-arteries"], undefined);
   assert.equal(groupDescription([viewParts("cerebral-arteries")!.focus[0]]), null);
 });
+
+test("bản en của mô tả nhóm (nếu có) có câu và nguồn bài tiếng Anh", () => {
+  for (const [id, d] of Object.entries(MAP as Record<string, { en?: { text: string; title: string; url: string } }>)) {
+    if (!d.en) continue;
+    assert.ok(d.en.text.trim().length > 0 && d.en.title, `${id} thiếu câu en`);
+    assert.match(d.en.url, /^https:\/\/en\.wikipedia\.org\//, `${id}: nguồn bản en phải là bài en`);
+  }
+});

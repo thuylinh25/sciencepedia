@@ -2,7 +2,12 @@
  "pharynx": {
   "text": "Hầu là phần của cổ họng nằm sau miệng và khoang mũi, phía trên thực quản và khí quản.",
   "title": "Pharynx",
-  "url": "https://en.wikipedia.org/wiki/Pharynx"
+  "url": "https://en.wikipedia.org/wiki/Pharynx",
+  "en": {
+   "text": "The pharynx is the part of the throat behind the mouth and nasal cavity, and above the esophagus and trachea.",
+   "title": "Pharynx",
+   "url": "https://en.wikipedia.org/wiki/Pharynx"
+  }
  },
  "larynx": {
   "text": "Thanh quản là cơ quan ở phần trên của cổ, tham gia hô hấp, phát âm và bảo vệ khí quản khỏi bị hít sặc thức ăn.",
@@ -27,12 +32,22 @@
  "right-lung": {
   "text": "Phổi là cơ quan chính của hệ hô hấp. Người có hai lá phổi, nằm gần cột sống, ở hai bên tim.",
   "title": "Lung",
-  "url": "https://en.wikipedia.org/wiki/Lung"
+  "url": "https://en.wikipedia.org/wiki/Lung",
+  "en": {
+   "text": "The lungs are the primary organs of the respiratory system in many animals, including humans.",
+   "title": "Lung",
+   "url": "https://en.wikipedia.org/wiki/Lung"
+  }
  },
  "left-lung": {
   "text": "Phổi là cơ quan chính của hệ hô hấp. Người có hai lá phổi, nằm gần cột sống, ở hai bên tim.",
   "title": "Lung",
-  "url": "https://en.wikipedia.org/wiki/Lung"
+  "url": "https://en.wikipedia.org/wiki/Lung",
+  "en": {
+   "text": "The lungs are the primary organs of the respiratory system in many animals, including humans.",
+   "title": "Lung",
+   "url": "https://en.wikipedia.org/wiki/Lung"
+  }
  },
  "right-bronchial-tree": {
   "text": "Các phế quản là đường dẫn khí của đường hô hấp dưới, đưa không khí vào phổi.",
@@ -62,12 +77,22 @@
  "vagus-nerves": {
   "text": "Thần kinh phế vị là dây thần kinh sọ thứ mười (CN X), mang cả sợi cảm giác và sợi vận động. Đây là đường nối chính giữa não với nhiều cơ quan, gồm tim, phổi và ống tiêu hóa.",
   "title": "Vagus nerve",
-  "url": "https://en.wikipedia.org/wiki/Vagus_nerve"
+  "url": "https://en.wikipedia.org/wiki/Vagus_nerve",
+  "en": {
+   "text": "The vagus nerve, also known as the tenth cranial nerve, plays a crucial role in the autonomic nervous system, which is responsible for regulating involuntary functions within the human body. This nerve carries both sensory and motor fibers and serves as a major pathway that connects the brain to various organs, including the heart, lungs, and digestive tract.",
+   "title": "Vagus nerve",
+   "url": "https://en.wikipedia.org/wiki/Vagus_nerve"
+  }
  },
  "intercostal-nerves": {
   "text": "Các dây thần kinh gian sườn thuộc hệ thần kinh thân thể, xuất phát từ nhánh trước của các dây thần kinh sống ngực T1 đến T11. Khác với nhánh trước của các dây thần kinh sống khác, mỗi dây đi theo đường riêng, không tạo đám rối.",
   "title": "Intercostal nerves",
-  "url": "https://en.wikipedia.org/wiki/Intercostal_nerves"
+  "url": "https://en.wikipedia.org/wiki/Intercostal_nerves",
+  "en": {
+   "text": "The intercostal nerves are part of the somatic nervous system, and arise from the anterior rami of the thoracic spinal nerves from T1 to T11.",
+   "title": "Intercostal nerves",
+   "url": "https://en.wikipedia.org/wiki/Intercostal_nerves"
+  }
  },
  "pulmonary-arteries": {
   "text": "Động mạch phổi là một động mạch trong tuần hoàn phổi mang máu đã khử oxy từ bên phải của tim đến phổi.",
@@ -87,17 +112,32 @@
  "right-atrium": {
   "text": "Tâm nhĩ là ngăn trên của tim, là nơi máu đi vào tim.",
   "title": "Tâm nhĩ",
-  "url": "https://vi.wikipedia.org/wiki/T%C3%A2m_nh%C4%A9"
+  "url": "https://vi.wikipedia.org/wiki/T%C3%A2m_nh%C4%A9",
+  "en": {
+   "text": "The atrium is one of the two upper chambers in the heart that receives blood from the circulatory system.",
+   "title": "Atrium (heart)",
+   "url": "https://en.wikipedia.org/wiki/Atrium_(heart)"
+  }
  },
  "left-atrium": {
   "text": "Tâm nhĩ là ngăn trên của tim, là nơi máu đi vào tim.",
   "title": "Tâm nhĩ",
-  "url": "https://vi.wikipedia.org/wiki/T%C3%A2m_nh%C4%A9"
+  "url": "https://vi.wikipedia.org/wiki/T%C3%A2m_nh%C4%A9",
+  "en": {
+   "text": "The atrium is one of the two upper chambers in the heart that receives blood from the circulatory system.",
+   "title": "Atrium (heart)",
+   "url": "https://en.wikipedia.org/wiki/Atrium_(heart)"
+  }
  },
  "ventricular-wall": {
   "text": "Tâm thất là một trong hai buồng tim lớn ở phần dưới của tim. Tâm thất nhận máu từ tâm nhĩ rồi đẩy máu đi khắp cơ thể và tới phổi.",
   "title": "Ventricle (heart)",
-  "url": "https://en.wikipedia.org/wiki/Ventricle_(heart)"
+  "url": "https://en.wikipedia.org/wiki/Ventricle_(heart)",
+  "en": {
+   "text": "A ventricle is one of two large chambers located toward the bottom of the heart that collect and expel blood towards the peripheral beds within the body and lungs. The blood pumped by a ventricle is supplied by an atrium, an adjacent chamber in the upper heart that is smaller than a ventricle.",
+   "title": "Ventricle (heart)",
+   "url": "https://en.wikipedia.org/wiki/Ventricle_(heart)"
+  }
  },
  "right-atrium-cavity": {
   "text": "Tâm nhĩ là ngăn trên của tim, là nơi máu đi vào tim.",
@@ -142,7 +182,12 @@
  "coronary-arteries": {
   "text": "Động mạch vành là những mạch máu trong tuần hoàn mạch vành có chức năng vận chuyển máu giàu oxy đến cơ tim.",
   "title": "Động mạch vành",
-  "url": "https://vi.wikipedia.org/wiki/%C4%90%E1%BB%99ng_m%E1%BA%A1ch_v%C3%A0nh"
+  "url": "https://vi.wikipedia.org/wiki/%C4%90%E1%BB%99ng_m%E1%BA%A1ch_v%C3%A0nh",
+  "en": {
+   "text": "The coronary arteries are the arterial blood vessels of coronary circulation, which transport oxygenated blood to the heart muscle.",
+   "title": "Coronary arteries",
+   "url": "https://en.wikipedia.org/wiki/Coronary_arteries"
+  }
  },
  "cardiac-veins": {
   "text": "Các tĩnh mạch tim dẫn máu đã khử oxy từ cơ tim. Xoang vành, tĩnh mạch lớn nhất của tim, đưa hơn một nửa lượng máu này về tâm nhĩ phải.",
@@ -152,12 +197,22 @@
  "thyroid-gland": {
   "text": "Tuyến giáp là một tuyến nội tiết. Ở người, tuyến có hình con bướm hoặc hình chữ H, nằm ở cổ, dưới lồi thanh quản (trái cổ).",
   "title": "Thyroid",
-  "url": "https://en.wikipedia.org/wiki/Thyroid"
+  "url": "https://en.wikipedia.org/wiki/Thyroid",
+  "en": {
+   "text": "The thyroid, or thyroid gland, is an endocrine gland in vertebrates. In humans, it is a butterfly-shaped or H-shaped gland located in the neck below the Adam's apple.",
+   "title": "Thyroid",
+   "url": "https://en.wikipedia.org/wiki/Thyroid"
+  }
  },
  "parathyroid-glands": {
   "text": "Tuyến cận giáp là các tuyến nội tiết nhỏ ở cổ. Người thường có bốn tuyến cận giáp, nằm ở mặt sau tuyến giáp, vị trí thay đổi tùy người.",
   "title": "Parathyroid gland",
-  "url": "https://en.wikipedia.org/wiki/Parathyroid_gland"
+  "url": "https://en.wikipedia.org/wiki/Parathyroid_gland",
+  "en": {
+   "text": "Parathyroid glands are small endocrine glands in the neck of humans and other tetrapods. Humans usually have four parathyroid glands, located on the back of the thyroid gland in variable locations.",
+   "title": "Parathyroid gland",
+   "url": "https://en.wikipedia.org/wiki/Parathyroid_gland"
+  }
  },
  "pituitary-gland": {
   "text": "Tuyến yên là một tuyến nội tiết. Ở người, tuyến nằm ở đáy não, nhô ra từ mặt dưới vùng dưới đồi.",
@@ -202,7 +257,12 @@
  "liver": {
   "text": "Gan là một cơ quan của các động vật có xương sống, bao gồm cả con người.",
   "title": "Gan",
-  "url": "https://vi.wikipedia.org/wiki/Gan"
+  "url": "https://vi.wikipedia.org/wiki/Gan",
+  "en": {
+   "text": "The liver is a major metabolic organ exclusively found in vertebrates which performs many essential biological functions, such as detoxification of the organism and the synthesis of various proteins and other biochemicals necessary for digestion and growth. In humans, it is located in the right upper quadrant of the abdomen, below the diaphragm and mostly shielded by the lower right rib cage.",
+   "title": "Liver",
+   "url": "https://en.wikipedia.org/wiki/Liver"
+  }
  },
  "bile-ducts": {
   "text": "Các ống mật cùng với gan và túi mật tạo thành đường mật, hệ thống tạo, dự trữ và bài tiết mật.",
@@ -217,7 +277,12 @@
  "celiac-branches": {
   "text": "Thân tạng là nhánh lớn đầu tiên của động mạch chủ bụng; nhóm này gồm thân tạng và các nhánh của nó.",
   "title": "Celiac artery",
-  "url": "https://en.wikipedia.org/wiki/Celiac_artery"
+  "url": "https://en.wikipedia.org/wiki/Celiac_artery",
+  "en": {
+   "text": "The celiac artery, also known as the celiac trunk, Haller's tripod or truncus coeliacus, is the first major branch of the abdominal aorta.",
+   "title": "Celiac artery",
+   "url": "https://en.wikipedia.org/wiki/Celiac_artery"
+  }
  },
  "mesenteric-arteries": {
   "text": "Các động mạch mạc treo tràng nhận máu từ động mạch chủ và phân phối tới một phần lớn ống tiêu hóa.",
@@ -227,7 +292,12 @@
  "portal-veins": {
   "text": "Tĩnh mạch cửa đưa máu từ ống tiêu hóa, túi mật, tụy và lách về gan. Máu này chứa chất dinh dưỡng và độc chất hấp thu từ thức ăn đã tiêu hóa.",
   "title": "Portal vein",
-  "url": "https://en.wikipedia.org/wiki/Portal_vein"
+  "url": "https://en.wikipedia.org/wiki/Portal_vein",
+  "en": {
+   "text": "The portal vein or hepatic portal vein (HPV) is a blood vessel that carries blood from the gastrointestinal tract, gallbladder, pancreas and spleen to the liver. This blood contains nutrients and toxins extracted from digested contents.",
+   "title": "Portal vein",
+   "url": "https://en.wikipedia.org/wiki/Portal_vein"
+  }
  },
  "renal-arteries": {
   "text": "Động mạch thận là cặp động mạch cấp máu cho thận.",
@@ -257,12 +327,22 @@
  "right-eyeball": {
   "text": "Mắt người là một cơ quan cảm giác đáp ứng với ánh sáng và thực hiện chức năng thị giác.",
   "title": "Mắt người",
-  "url": "https://vi.wikipedia.org/wiki/M%E1%BA%AFt_ng%C6%B0%E1%BB%9Di"
+  "url": "https://vi.wikipedia.org/wiki/M%E1%BA%AFt_ng%C6%B0%E1%BB%9Di",
+  "en": {
+   "text": "The human eye is a sensory organ in the visual system that reacts to visible light allowing eyesight.",
+   "title": "Human eye",
+   "url": "https://en.wikipedia.org/wiki/Human_eye"
+  }
  },
  "left-eyeball": {
   "text": "Mắt người là một cơ quan cảm giác đáp ứng với ánh sáng và thực hiện chức năng thị giác.",
   "title": "Mắt người",
-  "url": "https://vi.wikipedia.org/wiki/M%E1%BA%AFt_ng%C6%B0%E1%BB%9Di"
+  "url": "https://vi.wikipedia.org/wiki/M%E1%BA%AFt_ng%C6%B0%E1%BB%9Di",
+  "en": {
+   "text": "The human eye is a sensory organ in the visual system that reacts to visible light allowing eyesight.",
+   "title": "Human eye",
+   "url": "https://en.wikipedia.org/wiki/Human_eye"
+  }
  },
  "sclera": {
   "text": "Củng mạc, còn gọi là lòng trắng của mắt, là lớp ngoài của mắt, dạng sợi, đục, có chức năng bảo vệ, chủ yếu chứa collagen và một số sợi đàn hồi.",
@@ -312,7 +392,12 @@
  "levator-palpebrae": {
   "text": "Cơ nâng mi trên là cơ trong ổ mắt có chức năng nâng mi trên.",
   "title": "Levator palpebrae superioris muscle",
-  "url": "https://en.wikipedia.org/wiki/Levator_palpebrae_superioris_muscle"
+  "url": "https://en.wikipedia.org/wiki/Levator_palpebrae_superioris_muscle",
+  "en": {
+   "text": "The levator palpebrae superioris is the muscle in the orbit that elevates the upper eyelid.",
+   "title": "Levator palpebrae superioris muscle",
+   "url": "https://en.wikipedia.org/wiki/Levator_palpebrae_superioris_muscle"
+  }
  },
  "optic-nerves": {
   "text": "Thần kinh thị giác còn được gọi là thần kinh sọ II, viết tắt là CN II, là đôi dây thần kinh sọ thực hiện chức năng truyền thông tin thị giác từ võng mạc đến não.",
@@ -342,57 +427,112 @@
  "external-ear": {
   "text": "Tai ngoài là phần bên ngoài của tai, gồm vành tai và ống tai. Tai ngoài thu năng lượng âm thanh và hướng nó tới màng nhĩ.",
   "title": "Outer ear",
-  "url": "https://en.wikipedia.org/wiki/Outer_ear"
+  "url": "https://en.wikipedia.org/wiki/Outer_ear",
+  "en": {
+   "text": "The outer ear, external ear, or auris externa is the external part of the ear, which consists of the auricle and the ear canal. It gathers sound energy and focuses it on the eardrum.",
+   "title": "Outer ear",
+   "url": "https://en.wikipedia.org/wiki/Outer_ear"
+  }
  },
  "head-lymph-nodes": {
   "text": "Hạch bạch huyết hay hạch lympho là một trong vô số các cấu trúc trơn, hình bầu dục dẹp, rải rác dọc theo các mạch bạch huyết, là một phần của hệ bạch huyết.",
   "title": "Hạch bạch huyết",
-  "url": "https://vi.wikipedia.org/wiki/H%E1%BA%A1ch_b%E1%BA%A1ch_huy%E1%BA%BFt"
+  "url": "https://vi.wikipedia.org/wiki/H%E1%BA%A1ch_b%E1%BA%A1ch_huy%E1%BA%BFt",
+  "en": {
+   "text": "A lymph node, or lymph gland, is a kidney-shaped organ of the lymphatic system and the adaptive immune system.",
+   "title": "Lymph node",
+   "url": "https://en.wikipedia.org/wiki/Lymph_node"
+  }
  },
  "neck-lymph-nodes": {
   "text": "Hạch bạch huyết cổ là các hạch bạch huyết được tìm thấy ở cổ.",
   "title": "Hạch bạch huyết cổ",
-  "url": "https://vi.wikipedia.org/wiki/H%E1%BA%A1ch_b%E1%BA%A1ch_huy%E1%BA%BFt_c%E1%BB%95"
+  "url": "https://vi.wikipedia.org/wiki/H%E1%BA%A1ch_b%E1%BA%A1ch_huy%E1%BA%BFt_c%E1%BB%95",
+  "en": {
+   "text": "Cervical lymph nodes are lymph nodes found in the neck.",
+   "title": "Cervical lymph nodes",
+   "url": "https://en.wikipedia.org/wiki/Cervical_lymph_nodes"
+  }
  },
  "head-neck-lymph-vessels": {
   "text": "Mạch bạch huyết là những ống thành mỏng, cấu tạo giống mạch máu, dẫn bạch huyết. Là một phần của hệ bạch huyết, mạch bạch huyết bổ trợ cho hệ tim mạch.",
   "title": "Lymphatic vessel",
-  "url": "https://en.wikipedia.org/wiki/Lymphatic_vessel"
+  "url": "https://en.wikipedia.org/wiki/Lymphatic_vessel",
+  "en": {
+   "text": "The lymphatic vessels are thin-walled vessels (tubes), structured like blood vessels, that carry lymph. As part of the lymphatic system, lymph vessels are complementary to the cardiovascular system.",
+   "title": "Lymphatic vessel",
+   "url": "https://en.wikipedia.org/wiki/Lymphatic_vessel"
+  }
  },
  "axillary-lymph-nodes": {
   "text": "Hạch nách là các hạch bạch huyết ở hõm nách của người. Chúng nhận bạch huyết từ chi trên, từ các phần tư ngoài của vú và từ các mạch bạch huyết nông của thành ngực và thành bụng phía trên rốn.",
   "title": "Axillary lymph nodes",
-  "url": "https://en.wikipedia.org/wiki/Axillary_lymph_nodes"
+  "url": "https://en.wikipedia.org/wiki/Axillary_lymph_nodes",
+  "en": {
+   "text": "The axillary lymph nodes or armpit lymph nodes are lymph nodes in the human armpit.",
+   "title": "Axillary lymph nodes",
+   "url": "https://en.wikipedia.org/wiki/Axillary_lymph_nodes"
+  }
  },
  "upper-limb-lymph-vessels": {
   "text": "Mạch bạch huyết là những ống thành mỏng, cấu tạo giống mạch máu, dẫn bạch huyết. Là một phần của hệ bạch huyết, mạch bạch huyết bổ trợ cho hệ tim mạch.",
   "title": "Lymphatic vessel",
-  "url": "https://en.wikipedia.org/wiki/Lymphatic_vessel"
+  "url": "https://en.wikipedia.org/wiki/Lymphatic_vessel",
+  "en": {
+   "text": "The lymphatic vessels are thin-walled vessels (tubes), structured like blood vessels, that carry lymph. As part of the lymphatic system, lymph vessels are complementary to the cardiovascular system.",
+   "title": "Lymphatic vessel",
+   "url": "https://en.wikipedia.org/wiki/Lymphatic_vessel"
+  }
  },
  "thorax-lymph-vessels": {
   "text": "Mạch bạch huyết là những ống thành mỏng, cấu tạo giống mạch máu, dẫn bạch huyết. Là một phần của hệ bạch huyết, mạch bạch huyết bổ trợ cho hệ tim mạch.",
   "title": "Lymphatic vessel",
-  "url": "https://en.wikipedia.org/wiki/Lymphatic_vessel"
+  "url": "https://en.wikipedia.org/wiki/Lymphatic_vessel",
+  "en": {
+   "text": "The lymphatic vessels are thin-walled vessels (tubes), structured like blood vessels, that carry lymph. As part of the lymphatic system, lymph vessels are complementary to the cardiovascular system.",
+   "title": "Lymphatic vessel",
+   "url": "https://en.wikipedia.org/wiki/Lymphatic_vessel"
+  }
  },
  "abdomen-lymph-vessels": {
   "text": "Mạch bạch huyết là những ống thành mỏng, cấu tạo giống mạch máu, dẫn bạch huyết. Là một phần của hệ bạch huyết, mạch bạch huyết bổ trợ cho hệ tim mạch.",
   "title": "Lymphatic vessel",
-  "url": "https://en.wikipedia.org/wiki/Lymphatic_vessel"
+  "url": "https://en.wikipedia.org/wiki/Lymphatic_vessel",
+  "en": {
+   "text": "The lymphatic vessels are thin-walled vessels (tubes), structured like blood vessels, that carry lymph. As part of the lymphatic system, lymph vessels are complementary to the cardiovascular system.",
+   "title": "Lymphatic vessel",
+   "url": "https://en.wikipedia.org/wiki/Lymphatic_vessel"
+  }
  },
  "pelvis-lymph-vessels": {
   "text": "Mạch bạch huyết là những ống thành mỏng, cấu tạo giống mạch máu, dẫn bạch huyết. Là một phần của hệ bạch huyết, mạch bạch huyết bổ trợ cho hệ tim mạch.",
   "title": "Lymphatic vessel",
-  "url": "https://en.wikipedia.org/wiki/Lymphatic_vessel"
+  "url": "https://en.wikipedia.org/wiki/Lymphatic_vessel",
+  "en": {
+   "text": "The lymphatic vessels are thin-walled vessels (tubes), structured like blood vessels, that carry lymph. As part of the lymphatic system, lymph vessels are complementary to the cardiovascular system.",
+   "title": "Lymphatic vessel",
+   "url": "https://en.wikipedia.org/wiki/Lymphatic_vessel"
+  }
  },
  "inguinal-lymph-nodes": {
   "text": "Hạch bẹn là các hạch bạch huyết ở vùng bẹn, nằm trong tam giác đùi.",
   "title": "Inguinal lymph nodes",
-  "url": "https://en.wikipedia.org/wiki/Inguinal_lymph_nodes"
+  "url": "https://en.wikipedia.org/wiki/Inguinal_lymph_nodes",
+  "en": {
+   "text": "Inguinal lymph nodes are lymph nodes in the groin.",
+   "title": "Inguinal lymph nodes",
+   "url": "https://en.wikipedia.org/wiki/Inguinal_lymph_nodes"
+  }
  },
  "lower-limb-lymph-vessels": {
   "text": "Mạch bạch huyết là những ống thành mỏng, cấu tạo giống mạch máu, dẫn bạch huyết. Là một phần của hệ bạch huyết, mạch bạch huyết bổ trợ cho hệ tim mạch.",
   "title": "Lymphatic vessel",
-  "url": "https://en.wikipedia.org/wiki/Lymphatic_vessel"
+  "url": "https://en.wikipedia.org/wiki/Lymphatic_vessel",
+  "en": {
+   "text": "The lymphatic vessels are thin-walled vessels (tubes), structured like blood vessels, that carry lymph. As part of the lymphatic system, lymph vessels are complementary to the cardiovascular system.",
+   "title": "Lymphatic vessel",
+   "url": "https://en.wikipedia.org/wiki/Lymphatic_vessel"
+  }
  },
  "thymus": {
   "text": "Tuyến ức nằm ở trong lồng ngực, phía sau xương ức, thuộc trung thất trước trên, trải dài từ phía dưới cổ họng đến trước tim.",
@@ -417,7 +557,12 @@
  "brainstem": {
   "text": "Thân não là phần não hình cuống ở phía sau, nối đại não với tủy sống. Ở người, thân não gồm não giữa, cầu não và hành não.",
   "title": "Brainstem",
-  "url": "https://en.wikipedia.org/wiki/Brainstem"
+  "url": "https://en.wikipedia.org/wiki/Brainstem",
+  "en": {
+   "text": "The brainstem is the posterior stalk-like part of the brain that connects the cerebrum with the spinal cord. In the human brain, the brainstem is composed of the midbrain, the pons, and the medulla oblongata.",
+   "title": "Brainstem",
+   "url": "https://en.wikipedia.org/wiki/Brainstem"
+  }
  },
  "tentorium-cerebelli": {
   "text": "Lều tiểu não là một trong bốn nếp màng cứng chia khoang sọ thành bốn ngăn không hoàn toàn. Lều ngăn tiểu não với đại não, tạo nên vùng trên lều chứa đại não và vùng dưới lều chứa tiểu não.",
@@ -427,7 +572,12 @@
  "brain-ventricles": {
   "text": "Hệ não thất là bốn khoang thông nhau trong não, gọi là các não thất. Trong mỗi não thất có một vùng đám rối mạch mạc sản xuất dịch não tủy.",
   "title": "Ventricular system",
-  "url": "https://en.wikipedia.org/wiki/Ventricular_system"
+  "url": "https://en.wikipedia.org/wiki/Ventricular_system",
+  "en": {
+   "text": "In neuroanatomy, the ventricular system is a set of four interconnected cavities known as cerebral ventricles in the brain. Within each ventricle is a region of choroid plexus which produces the circulating cerebrospinal fluid (CSF).",
+   "title": "Ventricular system",
+   "url": "https://en.wikipedia.org/wiki/Ventricular_system"
+  }
  },
  "optic-pathway": {
   "text": "Thần kinh thị giác (thần kinh sọ II) là đôi dây thần kinh sọ truyền thông tin thị giác từ võng mạc đến não. Dây đi từ đĩa thị đến giao thoa thị giác rồi tiếp tục thành dải thị giác tới thể gối ngoài, các nhân trước mái và gò trên.",
@@ -447,117 +597,232 @@
  "maxillary-nerve": {
   "text": "Thần kinh hàm trên (V2) là một trong ba nhánh của thần kinh sinh ba (thần kinh sọ V). Dây đảm nhận cảm giác của xương hàm trên, khoang mũi, các xoang, khẩu cái và vùng giữa mặt.",
   "title": "Maxillary nerve",
-  "url": "https://en.wikipedia.org/wiki/Maxillary_nerve"
+  "url": "https://en.wikipedia.org/wiki/Maxillary_nerve",
+  "en": {
+   "text": "In neuroanatomy, the maxillary nerve (V2) is one of the three branches or divisions of the trigeminal nerve, the fifth (CN V) cranial nerve. It comprises the principal functions of sensation from the maxilla, nasal cavity, sinuses, the palate and subsequently that of the mid-face, and is intermediate, both in position and size, between the ophthalmic nerve and the mandibular nerve.",
+   "title": "Maxillary nerve",
+   "url": "https://en.wikipedia.org/wiki/Maxillary_nerve"
+  }
  },
  "mandibular-nerve": {
   "text": "Thần kinh hàm dưới (V3) là nhánh lớn nhất trong ba nhánh của thần kinh sinh ba (thần kinh sọ V). Khác với thần kinh mắt và thần kinh hàm trên chỉ chứa sợi hướng tâm, thần kinh hàm dưới chứa cả sợi hướng tâm lẫn sợi ly tâm.",
   "title": "Mandibular nerve",
-  "url": "https://en.wikipedia.org/wiki/Mandibular_nerve"
+  "url": "https://en.wikipedia.org/wiki/Mandibular_nerve",
+  "en": {
+   "text": "In neuroanatomy, the mandibular nerve (V3) is the largest of the three divisions of the trigeminal nerve, the fifth cranial nerve (CN V). Unlike the other divisions of the trigeminal nerve (ophthalmic nerve, maxillary nerve) which contain only afferent fibers, the mandibular nerve contains both afferent and efferent fibers.",
+   "title": "Mandibular nerve",
+   "url": "https://en.wikipedia.org/wiki/Mandibular_nerve"
+  }
  },
  "facial-nerve": {
   "text": "Thần kinh mặt là dây thần kinh sọ thứ bảy trong tổng số 12 đôi dây thần kinh sọ, viết tắt là CN VII.",
   "title": "Thần kinh mặt",
-  "url": "https://vi.wikipedia.org/wiki/Th%E1%BA%A7n_kinh_m%E1%BA%B7t"
+  "url": "https://vi.wikipedia.org/wiki/Th%E1%BA%A7n_kinh_m%E1%BA%B7t",
+  "en": {
+   "text": "The facial nerve, also known as the seventh cranial nerve, cranial nerve VII, or simply CN VII, is a cranial nerve that emerges from the pons of the brainstem, controls the muscles of facial expression, and functions in the conveyance of taste sensations from the anterior two-thirds of the tongue.",
+   "title": "Facial nerve",
+   "url": "https://en.wikipedia.org/wiki/Facial_nerve"
+  }
  },
  "vestibulocochlear-nerve": {
   "text": "Thần kinh tiền đình – ốc tai (thần kinh sọ VIII) truyền thông tin âm thanh và thăng bằng từ tai trong lên não.",
   "title": "Vestibulocochlear nerve",
-  "url": "https://en.wikipedia.org/wiki/Vestibulocochlear_nerve"
+  "url": "https://en.wikipedia.org/wiki/Vestibulocochlear_nerve",
+  "en": {
+   "text": "The vestibulocochlear nerve or auditory vestibular nerve, also known as the eighth cranial nerve, cranial nerve VIII, or simply CN VIII, is a cranial nerve that transmits sound and equilibrium (balance) information from the inner ear to the brain.",
+   "title": "Vestibulocochlear nerve",
+   "url": "https://en.wikipedia.org/wiki/Vestibulocochlear_nerve"
+  }
  },
  "glossopharyngeal-nerve": {
   "text": "Thần kinh thiệt hầu (thần kinh sọ IX) ra khỏi thân não ở hai bên phần trên hành não, ngay phía trước thần kinh lang thang. Đây là dây thần kinh hỗn hợp, mang cả thông tin cảm giác hướng tâm lẫn vận động ly tâm.",
   "title": "Glossopharyngeal nerve",
-  "url": "https://en.wikipedia.org/wiki/Glossopharyngeal_nerve"
+  "url": "https://en.wikipedia.org/wiki/Glossopharyngeal_nerve",
+  "en": {
+   "text": "The glossopharyngeal nerve, also known as the ninth cranial nerve, cranial nerve IX, or simply CN IX, is a cranial nerve that exits the brainstem from the sides of the upper medulla, just anterior to the vagus nerve. Being a mixed nerve (sensorimotor), it carries afferent sensory and efferent motor information.",
+   "title": "Glossopharyngeal nerve",
+   "url": "https://en.wikipedia.org/wiki/Glossopharyngeal_nerve"
+  }
  },
  "accessory-nerve": {
   "text": "Thần kinh phụ là thần kinh sọ thứ 11 trong tổng số 12 đôi dây thần kinh sọ.",
   "title": "Thần kinh phụ",
-  "url": "https://vi.wikipedia.org/wiki/Th%E1%BA%A7n_kinh_ph%E1%BB%A5"
+  "url": "https://vi.wikipedia.org/wiki/Th%E1%BA%A7n_kinh_ph%E1%BB%A5",
+  "en": {
+   "text": "The accessory nerve, also known as the eleventh cranial nerve, cranial nerve XI, or simply CN XI, is a cranial nerve that supplies the sternocleidomastoid and trapezius muscles.",
+   "title": "Accessory nerve",
+   "url": "https://en.wikipedia.org/wiki/Accessory_nerve"
+  }
  },
  "hypoglossal-nerve": {
   "text": "Thần kinh hạ thiệt là thần kinh thứ 12 trong tổng số 12 đôi dây thần kinh sọ, chi phối vận động các cơ trong và ngoài của lưỡi, ngoại trừ cơ khẩu cái - lưỡi.",
   "title": "Thần kinh hạ thiệt",
-  "url": "https://vi.wikipedia.org/wiki/Th%E1%BA%A7n_kinh_h%E1%BA%A1_thi%E1%BB%87t"
+  "url": "https://vi.wikipedia.org/wiki/Th%E1%BA%A7n_kinh_h%E1%BA%A1_thi%E1%BB%87t",
+  "en": {
+   "text": "The hypoglossal nerve, also known as the twelfth cranial nerve, cranial nerve XII, or simply CN XII, is a cranial nerve that innervates all the extrinsic and intrinsic muscles of the tongue except for the palatoglossus, which is innervated by the vagus nerve.",
+   "title": "Hypoglossal nerve",
+   "url": "https://en.wikipedia.org/wiki/Hypoglossal_nerve"
+  }
  },
  "spinal-cord": {
   "text": "Tủy sống là một cấu trúc hình ống dài, mảnh, cấu tạo bằng mô thần kinh, kéo dài từ hành não ở phần dưới thân não tới vùng thắt lưng của cột sống.",
   "title": "Spinal cord",
-  "url": "https://en.wikipedia.org/wiki/Spinal_cord"
+  "url": "https://en.wikipedia.org/wiki/Spinal_cord",
+  "en": {
+   "text": "The spinal cord is a long, thin, tubular structure made up of nervous tissue that extends from the medulla oblongata in the lower brainstem to the lumbar region of the vertebral column (backbone) of vertebrate animals.",
+   "title": "Spinal cord",
+   "url": "https://en.wikipedia.org/wiki/Spinal_cord"
+  }
  },
  "spinal-dura": {
   "text": "Màng cứng là lớp ngoài cùng trong ba lớp màng não tủy.",
   "title": "Dura mater",
-  "url": "https://en.wikipedia.org/wiki/Dura_mater"
+  "url": "https://en.wikipedia.org/wiki/Dura_mater",
+  "en": {
+   "text": "The dura mater is the outermost of the three meningeal membranes.",
+   "title": "Dura mater",
+   "url": "https://en.wikipedia.org/wiki/Dura_mater"
+  }
  },
  "cauda-equina": {
   "text": "Chùm đuôi ngựa là bó các thần kinh gai và rễ con thần kinh gai, gồm các đôi thần kinh thắt lưng L2–L5, các đôi thần kinh cùng S1–S5 và thần kinh cụt, tất cả xuất phát từ phình thắt lưng và nón tủy. Chùm đuôi ngựa nằm trong bể thắt lưng, một khoang dưới nhện bên dưới nón tủy.",
   "title": "Cauda equina",
-  "url": "https://en.wikipedia.org/wiki/Cauda_equina"
+  "url": "https://en.wikipedia.org/wiki/Cauda_equina",
+  "en": {
+   "text": "The cauda equina is a bundle of spinal nerves and spinal nerve rootlets, consisting of the second through fifth lumbar nerve pairs, the first through fifth sacral nerve pairs, and the coccygeal nerve, all of which arise from the lumbar enlargement and the conus medullaris of the spinal cord. The cauda equina occupies the lumbar cistern, a subarachnoid space inferior to the conus medullaris.",
+   "title": "Cauda equina",
+   "url": "https://en.wikipedia.org/wiki/Cauda_equina"
+  }
  },
  "brachial-plexus": {
   "text": "Đám rối thần kinh cánh tay là mạng lưới thần kinh tạo bởi nhánh trước của bốn thần kinh gai cổ dưới và thần kinh gai ngực thứ nhất. Đám rối đi từ tủy sống qua ống cổ – nách ở cổ, vượt trên xương sườn 1 rồi vào hõm nách.",
   "title": "Brachial plexus",
-  "url": "https://en.wikipedia.org/wiki/Brachial_plexus"
+  "url": "https://en.wikipedia.org/wiki/Brachial_plexus",
+  "en": {
+   "text": "The brachial plexus is a network of nerves formed by the anterior rami of the lower four cervical nerves and the first thoracic nerve. This plexus extends from the spinal cord, through the cervicoaxillary canal in the neck, over the first rib, and into the armpit.",
+   "title": "Brachial plexus",
+   "url": "https://en.wikipedia.org/wiki/Brachial_plexus"
+  }
  },
  "musculocutaneous-nerve": {
   "text": "Thần kinh cơ bì xuất phát từ bó ngoài đám rối thần kinh cánh tay.",
   "title": "Thần kinh cơ bì",
-  "url": "https://vi.wikipedia.org/wiki/Th%E1%BA%A7n_kinh_c%C6%A1_b%C3%AC"
+  "url": "https://vi.wikipedia.org/wiki/Th%E1%BA%A7n_kinh_c%C6%A1_b%C3%AC",
+  "en": {
+   "text": "The musculocutaneous nerve is a mixed branch of the lateral cord of the brachial plexus derived from cervical spinal nerves C5-C7.",
+   "title": "Musculocutaneous nerve",
+   "url": "https://en.wikipedia.org/wiki/Musculocutaneous_nerve"
+  }
  },
  "axillary-nerve": {
   "text": "Thần kinh nách là thần kinh của người, bắt nguồn từ đám rối thần kinh cánh tay ở ngang mức nách chứa các sợi C5 và C6.",
   "title": "Thần kinh nách",
-  "url": "https://vi.wikipedia.org/wiki/Th%E1%BA%A7n_kinh_n%C3%A1ch"
+  "url": "https://vi.wikipedia.org/wiki/Th%E1%BA%A7n_kinh_n%C3%A1ch",
+  "en": {
+   "text": "The axillary nerve or the circumflex nerve is a nerve of the human body, that originates from the brachial plexus at the level of the axilla (armpit) and carries nerve fibers from C5 and C6.",
+   "title": "Axillary nerve",
+   "url": "https://en.wikipedia.org/wiki/Axillary_nerve"
+  }
  },
  "median-nerve": {
   "text": "Thần kinh giữa là thần kinh phân bố ở vùng chi trên người và một số động vật.",
   "title": "Thần kinh giữa",
-  "url": "https://vi.wikipedia.org/wiki/Th%E1%BA%A7n_kinh_gi%E1%BB%AFa"
+  "url": "https://vi.wikipedia.org/wiki/Th%E1%BA%A7n_kinh_gi%E1%BB%AFa",
+  "en": {
+   "text": "The median nerve is a nerve in humans and other animals in the upper limb.",
+   "title": "Median nerve",
+   "url": "https://en.wikipedia.org/wiki/Median_nerve"
+  }
  },
  "ulnar-nerve": {
   "text": "Trong giải phẫu người, thần kinh trụ là dây thần kinh chạy gần xương trụ.",
   "title": "Thần kinh trụ",
-  "url": "https://vi.wikipedia.org/wiki/Th%E1%BA%A7n_kinh_tr%E1%BB%A5"
+  "url": "https://vi.wikipedia.org/wiki/Th%E1%BA%A7n_kinh_tr%E1%BB%A5",
+  "en": {
+   "text": "The ulnar nerve is a nerve that runs near the ulna, one of the two long bones in the forearm.",
+   "title": "Ulnar nerve",
+   "url": "https://en.wikipedia.org/wiki/Ulnar_nerve"
+  }
  },
  "radial-nerve": {
   "text": "Thần kinh quay là dây thần kinh ở người, chi phối phần sau chi trên.",
   "title": "Thần kinh quay",
-  "url": "https://vi.wikipedia.org/wiki/Th%E1%BA%A7n_kinh_quay"
+  "url": "https://vi.wikipedia.org/wiki/Th%E1%BA%A7n_kinh_quay",
+  "en": {
+   "text": "The radial nerve is a nerve in the human body that supplies the posterior portion of the upper limb.",
+   "title": "Radial nerve",
+   "url": "https://en.wikipedia.org/wiki/Radial_nerve"
+  }
  },
  "femoral-nerve": {
   "text": "Thần kinh đùi là dây thần kinh ở đùi, cảm giác cho da phần trên đùi và mặt trong cẳng chân, vận động các cơ duỗi gối. Đây là nhánh lớn nhất của đám rối thắt lưng.",
   "title": "Femoral nerve",
-  "url": "https://en.wikipedia.org/wiki/Femoral_nerve"
+  "url": "https://en.wikipedia.org/wiki/Femoral_nerve",
+  "en": {
+   "text": "The femoral nerve is a nerve in the thigh that supplies skin on the upper thigh and inner leg, and the muscles that extend the knee. It is the largest branch of the lumbar plexus.",
+   "title": "Femoral nerve",
+   "url": "https://en.wikipedia.org/wiki/Femoral_nerve"
+  }
  },
  "obturator-nerve": {
   "text": "Thần kinh bịt xuất phát từ các ngành trước của thần kinh thắt lưng 2, 3 và 4 trong đám rối thắt lưng; nhánh từ thần kinh thắt lưng 3 lớn nhất, còn nhánh từ thần kinh thắt lưng 2 thường rất nhỏ.",
   "title": "Obturator nerve",
-  "url": "https://en.wikipedia.org/wiki/Obturator_nerve"
+  "url": "https://en.wikipedia.org/wiki/Obturator_nerve",
+  "en": {
+   "text": "The obturator nerve in human anatomy arises from the ventral divisions of the second, third, and fourth lumbar nerves in the lumbar plexus; the branch from the third is the largest, while that from the second is often very small.",
+   "title": "Obturator nerve",
+   "url": "https://en.wikipedia.org/wiki/Obturator_nerve"
+  }
  },
  "sciatic-nerve": {
   "text": "Thần kinh ngồi là một dây thần kinh lớn ở người. Đây là nhánh lớn nhất của đám rối cùng, chạy cạnh khớp hông xuống dọc chi dưới.",
   "title": "Sciatic nerve",
-  "url": "https://en.wikipedia.org/wiki/Sciatic_nerve"
+  "url": "https://en.wikipedia.org/wiki/Sciatic_nerve",
+  "en": {
+   "text": "The sciatic nerve, also called the ischiadic nerve, is a large nerve in humans and other vertebrate animals. It is the largest branch of the sacral plexus and runs alongside the hip joint and down the lower limb.",
+   "title": "Sciatic nerve",
+   "url": "https://en.wikipedia.org/wiki/Sciatic_nerve"
+  }
  },
  "tibial-nerve": {
   "text": "Thần kinh chày là một nhánh của thần kinh ngồi.",
   "title": "Thần kinh chày",
-  "url": "https://vi.wikipedia.org/wiki/Th%E1%BA%A7n_kinh_ch%C3%A0y"
+  "url": "https://vi.wikipedia.org/wiki/Th%E1%BA%A7n_kinh_ch%C3%A0y",
+  "en": {
+   "text": "The tibial nerve is a branch of the sciatic nerve.",
+   "title": "Tibial nerve",
+   "url": "https://en.wikipedia.org/wiki/Tibial_nerve"
+  }
  },
  "fibular-nerves": {
   "text": "Thần kinh mác chung là dây thần kinh ở chi dưới, cảm giác cho phần sau ngoài cẳng chân và khớp gối. Ở vùng gối, dây chia thành hai nhánh tận là thần kinh mác nông và thần kinh mác sâu, lần lượt chi phối các cơ ở khoang ngoài và khoang trước cẳng chân.",
   "title": "Common fibular nerve",
-  "url": "https://en.wikipedia.org/wiki/Common_fibular_nerve"
+  "url": "https://en.wikipedia.org/wiki/Common_fibular_nerve",
+  "en": {
+   "text": "The common fibular nerve is a nerve in the lower leg that provides sensation over the posterolateral part of the leg and the knee joint. It divides at the knee into two terminal branches: the superficial fibular nerve and deep fibular nerve, which innervate the muscles of the lateral and anterior compartments of the leg respectively.",
+   "title": "Common fibular nerve",
+   "url": "https://en.wikipedia.org/wiki/Common_fibular_nerve"
+  }
  },
  "sural-nerve": {
   "text": "Thần kinh bắp chân (L4–S1) thường được xem là dây thần kinh thuần cảm giác da, chi phối mặt sau ngoài cẳng chân đến mắt cá ngoài. Dây được tạo thành hoặc từ nhánh nối bắp chân hợp với thần kinh bì bắp chân trong, hoặc từ thần kinh bì bắp chân ngoài.",
   "title": "Sural nerve",
-  "url": "https://en.wikipedia.org/wiki/Sural_nerve"
+  "url": "https://en.wikipedia.org/wiki/Sural_nerve",
+  "en": {
+   "text": "The sural nerve originates from a combination of either the sural communicating branch and medial sural cutaneous nerve, or the lateral sural cutaneous nerve.",
+   "title": "Sural nerve",
+   "url": "https://en.wikipedia.org/wiki/Sural_nerve"
+  }
  },
  "sympathetic-trunk": {
   "text": "Thân giao cảm là một đôi bó sợi thần kinh chạy từ nền sọ đến xương cụt. Đây là thành phần chính của hệ thần kinh giao cảm.",
   "title": "Sympathetic trunk",
-  "url": "https://en.wikipedia.org/wiki/Sympathetic_trunk"
+  "url": "https://en.wikipedia.org/wiki/Sympathetic_trunk",
+  "en": {
+   "text": "The sympathetic trunk is a paired bundle of nerve fibers that run from the base of the skull to the coccyx. It is a major component of the sympathetic nervous system.",
+   "title": "Sympathetic trunk",
+   "url": "https://en.wikipedia.org/wiki/Sympathetic_trunk"
+  }
  },
  "bone-maxilla": {
   "text": "Xương hàm trên là xương cố định phía trên của hàm, gồm hai xương hàm trên trái và phải ghép lại. Ở người, hàm trên bao gồm khẩu cái cứng ở phía trước miệng.",
@@ -647,7 +912,12 @@
  "femoral-arteries": {
   "text": "Động mạch đùi là động mạch lớn ở đùi và là nguồn cấp máu động mạch chính cho đùi và cẳng chân. Nó cho ra động mạch đùi sâu rồi đi xuống dọc mặt trước trong của đùi, trong tam giác đùi.",
   "title": "Femoral artery",
-  "url": "https://en.wikipedia.org/wiki/Femoral_artery"
+  "url": "https://en.wikipedia.org/wiki/Femoral_artery",
+  "en": {
+   "text": "The femoral artery is a large artery in the thigh and the main arterial supply to the thigh and leg. The femoral artery gives off the deep femoral artery and descends along the anteromedial part of the thigh in the femoral triangle.",
+   "title": "Femoral artery",
+   "url": "https://en.wikipedia.org/wiki/Femoral_artery"
+  }
  },
  "hepatic-veins": {
   "text": "Tĩnh mạch gan là các tĩnh mạch dẫn máu từ gan về tĩnh mạch chủ dưới. Thường có ba tĩnh mạch gan lớn ở trên, dẫn máu từ phần trái, giữa và phải của gan, cùng một số tĩnh mạch gan nhỏ hơn ở dưới.",
@@ -662,17 +932,32 @@
  "dural-sinuses": {
   "text": "Xoang tĩnh mạch màng cứng là các kênh tĩnh mạch nằm giữa lớp màng xương và lớp màng não của màng cứng. Chúng nhận máu từ các tĩnh mạch não và nhận dịch não tủy từ khoang dưới nhện qua các hạt màng nhện.",
   "title": "Dural venous sinuses",
-  "url": "https://en.wikipedia.org/wiki/Dural_venous_sinuses"
+  "url": "https://en.wikipedia.org/wiki/Dural_venous_sinuses",
+  "en": {
+   "text": "The dural venous sinuses are venous sinuses (channels) found between the periosteal and meningeal layers of dura mater in the brain. They receive blood from the cerebral veins, and cerebrospinal fluid (CSF) from the subarachnoid space via arachnoid granulations.",
+   "title": "Dural venous sinuses",
+   "url": "https://en.wikipedia.org/wiki/Dural_venous_sinuses"
+  }
  },
  "axillary-veins": {
   "text": "Tĩnh mạch nách là mạch máu lớn đưa máu từ mặt bên của ngực, hố nách và chi trên về tim. Mỗi bên cơ thể có một tĩnh mạch nách.",
   "title": "Axillary vein",
-  "url": "https://en.wikipedia.org/wiki/Axillary_vein"
+  "url": "https://en.wikipedia.org/wiki/Axillary_vein",
+  "en": {
+   "text": "In human anatomy, the axillary vein is a large blood vessel that conveys blood from the lateral aspect of the thorax, axilla (armpit) and upper limb toward the heart. There is one axillary vein on each side of the body.",
+   "title": "Axillary vein",
+   "url": "https://en.wikipedia.org/wiki/Axillary_vein"
+  }
  },
  "femoral-veins": {
   "text": "Tĩnh mạch đùi là tĩnh mạch đi kèm động mạch đùi trong bao đùi. Đây là tĩnh mạch sâu, bắt đầu từ vòng gân cơ khép như đoạn nối tiếp của tĩnh mạch khoeo.",
   "title": "Femoral vein",
-  "url": "https://en.wikipedia.org/wiki/Femoral_vein"
+  "url": "https://en.wikipedia.org/wiki/Femoral_vein",
+  "en": {
+   "text": "In the human body, the femoral vein is the vein that accompanies the femoral artery in the femoral sheath. It is a deep vein that begins at the adductor hiatus as the continuation of the popliteal vein.",
+   "title": "Femoral vein",
+   "url": "https://en.wikipedia.org/wiki/Femoral_vein"
+  }
  },
  "mesenteries": {
   "text": "Các mạc treo được tạo bởi một nếp gấp kép của phúc mạc; chúng giúp dự trữ mỡ và là đường cho mạch máu, mạch bạch huyết và thần kinh đi tới ruột.",

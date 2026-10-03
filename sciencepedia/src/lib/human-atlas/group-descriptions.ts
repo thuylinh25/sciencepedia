@@ -13,13 +13,19 @@ import { ATLAS_VIEWS, viewKind, viewParts } from "./views";
 export type GroupDescription = {
   viewId: string;
   name: { vi: string; en: string };
+  /** Bản Việt đã duyệt. */
   text: string;
   /** Bài nguồn để ghi công (CC BY-SA). */
   title: string;
   url: string;
+  /**
+   * Bản tiếng Anh đã duyệt (nguyên văn bài en). Không có thì bản tiếng Anh của
+   * site KHÔNG dùng mô tả nhóm — lùi về mô tả hệ, không hiện câu tiếng Việt.
+   */
+  en?: { text: string; title: string; url: string };
 };
 
-const MAP = GROUPS as Record<string, { text: string; title: string; url: string }>;
+const MAP = GROUPS as Record<string, { text: string; title: string; url: string; en?: { text: string; title: string; url: string } }>;
 
 // Mảnh → nhóm có mô tả. Dựng một lần, chỉ cho nhóm có mục (vài trăm mảnh).
 let index: Map<string, string> | null = null;
