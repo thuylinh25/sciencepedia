@@ -86,6 +86,7 @@ import { viewStructures, type AnatomicalStructure } from "@/lib/human-atlas/atla
 import { withSupplements } from "@/lib/human-atlas/supplements";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import type { SceneError } from "@/components/human-atlas/anatomy-scene";
+import { useContentActivity } from "@/hooks/use-content-activity";
 
 /**
  * three.js (~600 KB) và cảnh chỉ tải khi trang này chạy ở trình duyệt:
@@ -737,6 +738,24 @@ export function HumanAtlas({
 
   const viewDef = viewById(state.viewId);
   const viewName = viewDef ? (locale === "vi" ? viewDef.name.vi : viewDef.name.en) : null;
+
+  /* Lịch sử xem (người đã đăng nhập). "Một mô hình" là cấu trúc người đọc MỞ
+     (bảng chi tiết đang hiện) hoặc góc nhìn đang chọn — chỉ sau khi cảnh đã tải
+     xong (`usable`). Vào trang Atlas mà chưa mở gì thì không ghi. 3 giây lọc
+     những cú chạm lướt qua từng mảnh để tìm đúng chỗ. */
+  const trackedModel = !usable
+    ? null
+    : details && chosen
+      ? { id: `structure:${chosen.id}`, label: displayName(locale, chosen.id, chosen.name) }
+      : viewDef && viewName
+        ? { id: `view:${viewDef.id}`, label: viewName }
+        : null;
+  useContentActivity({
+    type: "model",
+    id: trackedModel?.id ?? null,
+    label: trackedModel?.label,
+    minSeconds: 3,
+  });
   const caption = viewName && !state.isolate && spread < 0.05
     ? viewName
     : state.isolate

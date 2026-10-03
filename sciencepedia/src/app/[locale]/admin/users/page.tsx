@@ -3,6 +3,9 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { auth } from "@/auth";
 import { prisma } from "@/lib/prisma";
 import { formatDate } from "@/lib/utils";
+import { atLeast } from "@/lib/roles";
+import { Link } from "@/i18n/navigation";
+import { getActivitySummaries } from "@/server/activity";
 import { RoleSelect } from "@/components/admin/role-select";
 import { UserCreate } from "@/components/admin/user-create";
 import { ResetLinkButton } from "@/components/admin/reset-link-button";
@@ -40,6 +43,20 @@ export default async function AdminUsersPage({
     },
   });
 
+  // Lịch sử xem là dữ liệu hành vi cá nhân: chỉ ADMIN thấy, kể cả khi trang
+  // này lọt tới quyền thấp hơn. MỘT truy vấn GROUP BY cho cả bảng, không N+1.
+  const isAdmin = atLeast(session?.user?.role ?? "USER", "ADMIN");
+  // Lỗi (vd. code lên trước migration `content_activity`) thì ẩn cột, không
+  // kéo sập cả trang quản lý người dùng.
+  const activity = isAdmin
+    ? await getActivitySummaries(users.map((user) => user.id)).catch(
+        (error: Error) => {
+          console.error("[admin/users] không đọc được lịch sử xem:", error.message);
+          return null;
+        },
+      )
+    : null;
+
   return (
     <div className="space-y-6">
       {/* Tiêu đề và nút tạo cùng một hàng: nút là hành động DUY NHẤT của
@@ -57,6 +74,9 @@ export default async function AdminUsersPage({
           <TableRow>
             <TableHead>{t("users")}</TableHead>
             <TableHead className="w-24 text-right">{t("articles")}</TableHead>
+            {activity && (
+              <TableHead className="w-44">{t("activity.column")}</TableHead>
+            )}
             <TableHead className="w-32">{t("save")}</TableHead>
             <TableHead className="w-64">{t("resetLink")}</TableHead>
             <TableHead className="w-44">{t("role")}</TableHead>
@@ -75,7 +95,16 @@ export default async function AdminUsersPage({
                     </AvatarFallback>
                   </Avatar>
                   <span className="flex flex-col">
-                    <span className="font-medium">{user.name ?? "—"}</span>
+                    {activity ? (
+                      <Link
+                        href={`/admin/users/${user.id}`}
+                        className="font-medium hover:underline"
+                      >
+                        {user.name ?? "—"}
+                      </Link>
+                    ) : (
+                      <span className="font-medium">{user.name ?? "—"}</span>
+                    )}
                     <span className="text-xs text-muted-foreground">
                       {user.email}
                     </span>
@@ -86,6 +115,33 @@ export default async function AdminUsersPage({
               <TableCell className="text-right tabular-nums">
                 {user._count.articles}
               </TableCell>
+
+              {activity && (
+                <TableCell>
+                  {(() => {
+                    const summary = activity.get(user.id);
+                    return (
+                      <Link
+                        href={`/admin/users/${user.id}`}
+                        className="flex flex-col rounded-sm hover:underline focus-visible:underline"
+                        aria-label={`${t("activity.action")}: ${user.name ?? user.email}`}
+                      >
+                        <span className="text-sm tabular-nums">
+                          {t("activity.summary", {
+                            articles: summary?.articles ?? 0,
+                            models: summary?.models ?? 0,
+                          })}
+                        </span>
+                        <span className="text-xs text-muted-foreground">
+                          {summary?.lastActivityAt
+                            ? formatDate(summary.lastActivityAt, locale)
+                            : t("activity.never")}
+                        </span>
+                      </Link>
+                    );
+                  })()}
+                </TableCell>
+              )}
 
               <TableCell className="text-muted-foreground">
                 {formatDate(user.createdAt, locale)}

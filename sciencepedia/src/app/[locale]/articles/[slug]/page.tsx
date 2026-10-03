@@ -21,6 +21,7 @@ import { JsonLd } from "@/components/json-ld";
 import { ArticleContent } from "@/components/article/article-content";
 import { ImageCredit } from "@/components/article/image-credit";
 import { ViewCounter } from "@/components/article/view-counter";
+import { ArticleActivity } from "@/components/article/article-activity";
 import {
   MobileTableOfContents,
   TableOfContents,
@@ -172,6 +173,8 @@ export default async function ArticlePage({
   return (
     <>
       <ReadingProgress />
+      {/* Lịch sử xem của người đã đăng nhập — client, không chặn render */}
+      <ArticleActivity articleId={article.id} />
 
       <JsonLd
         data={articleJsonLd({

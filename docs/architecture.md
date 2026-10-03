@@ -202,6 +202,28 @@ thì bỏ hậu tố (`title.absolute`) thay vì để Google cắt mất phần
 
 ---
 
+## Lịch sử xem — một hàng mỗi (người, nội dung), server quyết lượt xem (2026-10-03)
+
+Bảng `ContentActivity`, tách khỏi `Article.views`: `views` là bộ đếm công khai cho
+cả khách; lịch sử xem chỉ có người đã đăng nhập và chỉ ADMIN đọc.
+
+- **Upsert, không log.** UNIQUE (userId, contentType, contentId) + `INSERT … ON
+  CONFLICT` trong một câu SQL — hai tab ghi đồng thời không tạo được hai hàng.
+  `prisma.upsert` thì có: nó đọc rồi mới ghi, và ném P2002 khi đua.
+- **Server quyết có cộng `viewCount` không**: chỉ khi lần xem trước cách >30 phút.
+  Nhờ vậy client không phải nhớ gì qua lần tải trang — tải lại, tab thứ hai, mount
+  lại đều không cộng. Đừng chuyển chốt này về `sessionStorage`: nó không thấy tab khác.
+- **Nhịp gửi**: một "view" khi đủ ngưỡng (bài 5 giây, mô hình Atlas 3 giây, chỉ tính
+  lúc tab hiện), rồi một "duration" mỗi lần rời đi (tab ẩn, `pagehide`, đổi nội dung).
+  Không gửi theo nhịp giây. `sendBeacon`, không ai chờ — không nằm trên đường render.
+- **"Mô hình" của Atlas** = cấu trúc đang mở bảng chi tiết, hoặc góc nhìn đang chọn,
+  SAU khi cảnh đã tải (`usable`). Atlas không có bảng trong CSDL, nên `contentId` là
+  `structure:<FMA>` / `view:<id>` và tên lưu vào `label` lúc xem.
+- **Bảng Users**: một `groupBy` cho cả trang, không N+1. RLS bật không policy để
+  PostgREST của Supabase không phơi bảng này.
+
+---
+
 ## Knowledge graph
 
 Schema đã có và **đã apply lên prod**: `Entity`, `Relationship`, enum `EntityType` /

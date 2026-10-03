@@ -9,27 +9,62 @@ datasource db {
 }
 
 model User {
-  id               String         @id @default(cuid())
+  id               String            @id @default(cuid())
   name             String?
-  email            String         @unique
+  email            String            @unique
   emailVerified    DateTime?
   image            String?
   passwordHash     String?
   bio              String?
-  role             Role           @default(USER)
-  createdAt        DateTime       @default(now())
-  updatedAt        DateTime       @updatedAt
+  role             Role              @default(USER)
+  createdAt        DateTime          @default(now())
+  updatedAt        DateTime          @updatedAt
   accounts         Account[]
-  articles         Article[]      @relation("ArticleAuthor")
-  reviewedArticles Article[]      @relation("ArticleReviewer")
+  articles         Article[]         @relation("ArticleAuthor")
+  reviewedArticles Article[]         @relation("ArticleReviewer")
   bookmarks        Bookmark[]
   chats            ChatSession[]
   comments         Comment[]
   media            Media[]
   reviewedTerms    GlossaryTerm[]
   sessions         Session[]
+  activities       ContentActivity[]
 
   @@index([role])
+}
+
+/// Loại nội dung trong lịch sử xem của người dùng.
+enum ActivityContentType {
+  ARTICLE
+  MODEL
+}
+
+/// Lịch sử xem của MỘT người dùng với MỘT nội dung — một hàng cho mỗi tổ hợp,
+/// cập nhật dồn (upsert), không phải một hàng mỗi lượt xem: bảng tăng theo số
+/// nội dung người đọc chạm tới, không theo số lần tải trang.
+///
+/// Tách khỏi `Article.views`: cột đó là bộ đếm công khai cho cả khách, còn bảng
+/// này chỉ có người đã đăng nhập và chỉ admin đọc được. Xem docs/architecture.md,
+/// mục "Lịch sử xem".
+model ContentActivity {
+  id            String              @id @default(cuid())
+  userId        String
+  contentType   ActivityContentType
+  /// ARTICLE: `Article.id`. MODEL: `structure:<mã FMA>` hoặc `view:<id góc nhìn>`
+  /// của Human Atlas — atlas không có bảng trong CSDL nên id là chuỗi ổn định.
+  contentId     String
+  /// Tên hiển thị của MODEL lúc xem (atlas không có bảng để join). ARTICLE để
+  /// trống — tên lấy từ bảng `Article`, đổi tên bài thì lịch sử đổi theo.
+  label         String?
+  firstViewedAt DateTime            @default(now())
+  lastViewedAt  DateTime            @default(now())
+  viewCount     Int                 @default(1)
+  /// Giây xem thật (tab đang hiện), cộng dồn qua các lần xem
+  totalDuration Int                 @default(0)
+  user          User                @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, contentType, contentId])
+  @@index([userId, lastViewedAt(sort: Desc)])
 }
 
 model Account {
