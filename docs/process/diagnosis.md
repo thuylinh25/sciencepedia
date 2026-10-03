@@ -799,3 +799,12 @@ Chặn vòng lặp bằng một cookie đánh dấu, và chỉ mở đường b�
 nguyên nhân tự khỏi khi đổi ngữ cảnh (`pkce-missing`, `state-missing`). Một cơ
 chế tự sửa mà không có điều kiện dừng thì biến một lỗi hiện rõ thành một vòng
 lặp âm thầm.
+
+Mở rộng 2026-10-03: thêm `db` và `network`. Báo lỗi mới — mở từ ứng dụng cài
+ra màn hình chính (cài từ Chrome, nên CHUNG hộp cookie với Chrome), đăng nhập
+Google "sau một khoảng thời gian dài" thì hỏng. Chung hộp cookie loại ca PKCE;
+chi tiết "sau thời gian dài" chỉ về truy vấn CSDL đầu tiên của hàm nguội, vì
+trang nội dung là static/ISR nên đăng nhập gần như là thứ duy nhất chạm CSDL.
+Đây là suy luận chưa có log xác nhận — nhưng bắt lại một lần vô hại kể cả khi
+đoán sai, nên được làm trước khi có log. Nếu log (`[auth] callback hỏng`) cho
+`cause` khác, đừng nới thêm danh sách theo đoán: đọc nguyên nhân đã.

@@ -81,11 +81,12 @@ export async function GET(request: NextRequest) {
      bắt người dùng tự đoán ra.
 
      Chặn vòng lặp bằng một cookie đánh dấu: chỉ bắt lại ĐÚNG MỘT lần, và chỉ
-     cho hai nguyên nhân thật sự tự khỏi khi đổi ngữ cảnh. Mọi nguyên nhân khác
-     đi thẳng tới trang lỗi như cũ. */
+     cho những nguyên nhân tự khỏi ở lượt sau (`RETRYABLE_CAUSES`). Mọi nguyên
+     nhân khác đi thẳng tới trang lỗi như cũ. */
   const provider = url.pathname.split("/").pop() ?? "";
   const canRetry =
-    (cause === "pkce-missing" || cause === "state-missing") &&
+    RETRYABLE_CAUSES.has(cause) &&
+    target.searchParams.get("error") === "Configuration" &&
     provider !== "" &&
     !request.cookies.has(RETRY_COOKIE);
 
@@ -100,6 +101,29 @@ export async function GET(request: NextRequest) {
   headers.set("location", target.toString());
   return new Response(response.body, { status: response.status, headers });
 }
+
+/**
+ * Nguyên nhân mà một lượt đăng nhập MỚI chữa được.
+ *
+ * - `pkce-missing`, `state-missing`: cookie ở hộp khác — xem khối chú thích
+ *   ở `GET`.
+ * - `db`, `network`: báo 2026-10-03 — mở từ ứng dụng cài ra màn hình chính
+ *   (cài từ Chrome, nên chung hộp cookie với Chrome — không phải ca PKCE),
+ *   đăng nhập Google "sau một khoảng thời gian dài" thì hỏng, bấm lại thì
+ *   được. Trang nội dung là static/ISR nên gần như chỉ đăng nhập chạm CSDL;
+ *   sau lúc nghỉ dài, truy vấn đầu tiên của hàm nguội tới pooler có thể quá
+ *   giờ. Mã `code` của OAuth đã dùng thì không chạy lại được, nhưng một lượt
+ *   đăng nhập mới thì được — và lúc ấy kết nối đã ấm.
+ *
+ * Bắt lại vô hại ngay cả khi đoán sai nguyên nhân: tối đa một lần, nên cái giá
+ * xấu nhất là một vòng qua Google trước khi tới cùng trang lỗi.
+ */
+const RETRYABLE_CAUSES = new Set([
+  "pkce-missing",
+  "state-missing",
+  "db",
+  "network",
+]);
 
 /** Đánh dấu "đã bắt lại một lần" — xem khối chú thích ở `GET`. */
 const RETRY_COOKIE = "authretry";
