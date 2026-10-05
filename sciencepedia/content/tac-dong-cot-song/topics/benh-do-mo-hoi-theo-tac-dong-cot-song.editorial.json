@@ -1,0 +1,218 @@
+{
+  "section": "benh-do-mo-hoi",
+  "slug": "benh-do-mo-hoi-theo-tac-dong-cot-song",
+  "title": {
+    "vi": "Bệnh đổ mồ hôi theo phương pháp Tác động cột sống",
+    "en": "Sweating disorders in the Spinal Impact method"
+  },
+  "summary": {
+    "vi": "Tài liệu Phương pháp Tác động Cột sống Việt Nam mô tả sáu thể đổ mồ hôi — từ vã mồ hôi như tắm, mồ hôi tay, mồ hôi trộm đến không ra mồ hôi — mỗi thể kèm vùng nhiệt độ và đốt sống trọng điểm; trích nguyên văn, đặt sau kiến thức y khoa có nguồn về đổ mồ hôi và dấu hiệu sốc nhiệt cần cấp cứu.",
+    "en": "How the Vietnamese Spinal Impact method document describes six forms of sweating disorder — from drenching sweats, sweaty palms and night sweats to not sweating at all — each with a temperature zone and key vertebrae; quoted verbatim, after sourced medical information on sweating and the emergency signs of heatstroke."
+  },
+  "seoDescription": {
+    "vi": "Bệnh đổ mồ hôi theo tài liệu Phương pháp Tác động Cột sống Việt Nam: sáu thể và đốt sống trọng điểm C6, C7, T1–T3, T7, T8, T11, L3 — kèm kiến thức y khoa và dấu hiệu sốc nhiệt.",
+    "en": "Sweating disorders in the Vietnamese Spinal Impact method document: six forms and key vertebrae C6, C7, T1–T3, T7, T8, T11, L3 — with sourced medical facts and the signs of heatstroke."
+  },
+  "keywords": "đổ mồ hôi, vã mồ hôi, mồ hôi tay, mồ hôi trộm, không ra mồ hôi, sốc nhiệt, tác động cột sống, đốt sống",
+  "riskLevel": "normal",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Excessive sweating (hyperhidrosis)",
+      "publisher": "NHS",
+      "url": "https://www.nhs.uk/conditions/excessive-sweating-hyperhidrosis/",
+      "tier": 2,
+      "accessed": "2026-10-05"
+    },
+    {
+      "id": "s2",
+      "title": "Night sweats",
+      "publisher": "NHS",
+      "url": "https://www.nhs.uk/conditions/night-sweats/",
+      "tier": 2,
+      "accessed": "2026-10-05"
+    },
+    {
+      "id": "s3",
+      "title": "Sweating",
+      "publisher": "MedlinePlus — U.S. National Library of Medicine",
+      "url": "https://medlineplus.gov/ency/article/003218.htm",
+      "tier": 2,
+      "accessed": "2026-10-05"
+    },
+    {
+      "id": "s4",
+      "title": "Heat exhaustion and heatstroke",
+      "publisher": "NHS",
+      "url": "https://www.nhs.uk/conditions/heat-exhaustion-heatstroke/",
+      "tier": 2,
+      "accessed": "2026-10-05"
+    },
+    {
+      "id": "s5",
+      "title": "Heat emergencies",
+      "publisher": "MedlinePlus — U.S. National Library of Medicine",
+      "url": "https://medlineplus.gov/ency/article/000056.htm",
+      "tier": 2,
+      "accessed": "2026-10-05"
+    }
+  ],
+  "safety": {
+    "heading": {
+      "vi": "⚠️ Nóng mà không ra mồ hôi: nghĩ đến sốc nhiệt",
+      "en": "⚠️ Hot but not sweating: think of heatstroke"
+    },
+    "body": {
+      "vi": "**Sốc nhiệt là cấp cứu.** Theo NHS, cần gọi cấp cứu ngay khi có dấu hiệu sốc nhiệt: vẫn mệt sau 30 phút nghỉ ở chỗ mát, đã được làm mát và uống nước; thân nhiệt rất cao; **da nóng mà không ra mồ hôi**, có thể đỏ; tim đập nhanh; thở nhanh hoặc khó thở; lú lẫn, mất phối hợp; co giật; mất ý thức. MedlinePlus giải thích sốc nhiệt xảy ra khi cơ thể không còn tự điều hòa được thân nhiệt và nhiệt độ cứ tăng — lúc này mồ hôi có thể ngừng ra — và có thể gây sốc, tổn thương não, suy cơ quan, thậm chí tử vong. Trong lúc chờ cấp cứu, NHS khuyên quấn người bệnh bằng khăn ướt mát, quạt hoặc lau nước lạnh.\n\nTài liệu dưới đây có hai thể \"Không có mồ hôi\" và \"Nóng không ra mồ hôi\". Người đang ở chỗ nóng hay vừa gắng sức mà da nóng, không ra mồ hôi, kèm các dấu hiệu trên thì phải xử trí như sốc nhiệt, không chờ tác động cột sống.\n\nVới đổ mồ hôi nhiều, MedlinePlus khuyên liên hệ nhân viên y tế khi đổ mồ hôi kèm đau ngực, sốt, tim đập nhanh và mạnh, khó thở hoặc sụt cân. NHS khuyên đi khám khi mồ hôi trộm (đổ mồ hôi đêm) thường xuyên làm tỉnh giấc, kèm sốt cao, ho, tiêu chảy, hoặc sụt cân không rõ lý do.",
+      "en": "**Heatstroke is an emergency.** The NHS advises calling emergency services right away for signs of heatstroke: still feeling unwell after 30 minutes of resting in a cool place, being cooled and drinking fluids; a very high temperature; **hot skin that is not sweating** and may look red; a fast heartbeat; fast breathing or shortness of breath; confusion and lack of coordination; a seizure; or loss of consciousness. MedlinePlus explains that heatstroke happens when the body can no longer regulate its temperature and it keeps rising — at this point sweating may stop — and that it can cause shock, brain damage, organ failure and even death. While waiting for help, the NHS advises wrapping the person in a cool, wet sheet, fanning them or sponging them with cold water.\n\nThe document below has two forms, \"No sweating\" and \"Hot without sweating\". Someone in a hot place or after exertion whose skin is hot and not sweating, with any of the signs above, must be treated as having heatstroke — not left to wait for spinal work.\n\nFor heavy sweating, MedlinePlus advises contacting a health professional if sweating occurs with chest pain, fever, a rapid pounding heartbeat, shortness of breath or weight loss. The NHS advises seeing a doctor if night sweats regularly wake you up, come with a very high temperature, a cough or diarrhoea, or with weight loss for no reason."
+    },
+    "sources": [
+      "s2",
+      "s3",
+      "s4",
+      "s5"
+    ]
+  },
+  "general": [
+    {
+      "heading": {
+        "vi": "Đổ mồ hôi và đổ mồ hôi nhiều",
+        "en": "Sweating and excessive sweating"
+      },
+      "body": {
+        "vi": "Theo MedlinePlus (Thư viện Y khoa Quốc gia Hoa Kỳ), đổ mồ hôi là cách tự nhiên cơ thể điều hòa thân nhiệt, do hệ thần kinh tự chủ điều khiển. Mồ hôi thường ra ở nách, bàn chân và lòng bàn tay. Trời nóng, vận động, hay những lúc lo lắng, tức giận, xấu hổ, sợ hãi đều làm ra mồ hôi nhiều hơn; nguyên nhân khác gồm sốt, nhiễm trùng, hạ đường huyết, mãn kinh, rượu, cà phê, đồ ăn cay và một số thuốc. Sau khi ra nhiều mồ hôi, cần uống đủ nước để bù lại.\n\nNHS (Dịch vụ Y tế Quốc gia Anh) cho biết đổ mồ hôi nhiều là thường gặp, có thể ở toàn thân hoặc chỉ vài vùng, và được coi là quá mức khi xảy ra lúc cơ thể không cần làm mát. Nó có thể không rõ lý do, do một bệnh khác, hoặc là tác dụng phụ của thuốc. **Mồ hôi trộm** — đổ mồ hôi đêm đến ướt đẫm quần áo, chăn gối dù chỗ ngủ mát — thường do triệu chứng mãn kinh, lo âu, một số thuốc, hạ đường huyết, rượu hoặc chất kích thích, hay chứng tăng tiết mồ hôi vô hại (NHS).",
+        "en": "According to MedlinePlus (U.S. National Library of Medicine), sweating is the body's natural way of regulating temperature, controlled by the autonomic nervous system. Sweat is most common under the arms, on the feet and on the palms. Hot weather, exercise, and feeling nervous, angry, embarrassed or afraid all make you sweat more; other causes include fever, infection, low blood sugar, menopause, alcohol, caffeine, spicy foods and some medicines. After sweating a lot, drink plenty of fluids to replace it.\n\nThe NHS (UK National Health Service) says excessive sweating is common, can affect the whole body or just certain areas, and is excessive when it happens while the body does not need to cool down. It can happen for no obvious reason, because of another condition, or as a side effect of a medicine. **Night sweats** — sweating so much that night clothes and bedding are soaking wet even though where you sleep is cool — are most often due to menopause symptoms, anxiety, some medicines, low blood sugar, alcohol or drug use, or a harmless condition called hyperhidrosis (NHS)."
+      },
+      "sources": [
+        "s1",
+        "s2",
+        "s3"
+      ]
+    }
+  ],
+  "symptoms": [],
+  "methodQuotes": [],
+  "variants": [
+    {
+      "id": "va-mo-hoi-nhu-tam",
+      "label": {
+        "vi": "Vã mồ hôi như tắm",
+        "en": "Drenching sweats"
+      },
+      "quotes": [
+        {
+          "pdfPage": 40,
+          "vi": "Nhiệt độ biến đổi…Vai phải Đốt sống trọng điểm… T11 Tam giác cơ biến đổi:…Tiết cơ ngang T8 Liên quan chức năng:… Mật.",
+          "en": "Temperature change…: right shoulder. Key vertebra…: T11. Muscle triangle changed:… transverse muscle segment T8. Related function:… gallbladder."
+        }
+      ]
+    },
+    {
+      "id": "ban-tay-nhieu-mo-hoi",
+      "label": {
+        "vi": "Bàn tay nhiều mồ hôi",
+        "en": "Sweaty palms"
+      },
+      "quotes": [
+        {
+          "pdfPage": 40,
+          "vi": "Nhiệt độ biến đổi…: ngực trái và lưng trên Đốt sống trọng điểm…: C6,C7, T3 Tam giác cơ biến đổi:…Tiết cơ ngang C5,C6 Liên quan chức năng… Màng bao tim",
+          "en": "Temperature change…: left chest and upper back. Key vertebrae…: C6, C7, T3. Muscle triangle changed:… transverse muscle segment C5, C6. Related function…: pericardium"
+        }
+      ]
+    },
+    {
+      "id": "nhieu-mo-hoi",
+      "label": {
+        "vi": "Nhiều mồ hôi",
+        "en": "Heavy sweating"
+      },
+      "quotes": [
+        {
+          "pdfPage": 40,
+          "vi": "Nhiệt độ biến đổi…: Vùng giữa lưng Đốt sống trọng điểm…: T7,T8 Tam giác cơ biến đổi:…Tiết cơ ngangT4,T5 Liên quan chức năng…:Lá lách",
+          "en": "Temperature change…: middle of the back. Key vertebrae…: T7, T8. Muscle triangle changed:… transverse muscle segment T4, T5. Related function…: spleen"
+        }
+      ]
+    },
+    {
+      "id": "mo-hoi-trom",
+      "label": {
+        "vi": "Mồ hôi trộm",
+        "en": "Night sweats"
+      },
+      "quotes": [
+        {
+          "pdfPage": 40,
+          "vi": "Nhiệt độ biến đổi…: Vùng thắt lưng phải Đốt sống trọng điểm…: L3 Tam giác cơ biến đổi…Tiết cơ ngang T11 Liên quan chức năng…:Thận",
+          "en": "Temperature change…: right lower back. Key vertebra…: L3. Muscle triangle changed… transverse muscle segment T11. Related function…: kidneys"
+        }
+      ]
+    },
+    {
+      "id": "khong-co-mo-hoi",
+      "label": {
+        "vi": "Không có mồ hôi",
+        "en": "No sweating"
+      },
+      "quotes": [
+        {
+          "pdfPage": 40,
+          "vi": "Nhiệt độ biến đổi…: Ngực trái và cổ phải Đốt sống trọng điểm…: T1,T2 Tam giác cơ biến đổi…Tiết cơ ngang C6,C7 Liên quan chức năng… :Tâm ,Phế",
+          "en": "Temperature change…: left chest and right side of the neck. Key vertebrae…: T1, T2. Muscle triangle changed… transverse muscle segment C6, C7. Related functions…: Heart, Lung (in traditional terms)"
+        }
+      ]
+    },
+    {
+      "id": "nong-khong-ra-mo-hoi",
+      "label": {
+        "vi": "Nóng không ra mồ hôi",
+        "en": "Hot without sweating"
+      },
+      "quotes": [
+        {
+          "pdfPage": 40,
+          "vi": "Nhiệt độ biến đổi…: Thắt lưng phải nóng Đốt sống trọng điểm…: L3 Tam giác cơ biến đổi…Tiết cơ ngang T11 Liên quan chức năng :Tuyến thượng Thận thường ảnh hưởng tới phó giao cảm",
+          "en": "Temperature change…: right lower back hot. Key vertebra…: L3. Muscle triangle changed… transverse muscle segment T11. Related function: the adrenal glands, often affecting the parasympathetic system"
+        }
+      ]
+    }
+  ],
+  "outOfScope": [],
+  "cover": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/Illu_vertebral_column.svg/1920px-Illu_vertebral_column.svg.png",
+    "page": "https://commons.wikimedia.org/wiki/File:Illu_vertebral_column.svg",
+    "license": "Public domain"
+  },
+  "furtherReading": [
+    {
+      "slug": "stress-tac-dong-len-co-the-nhu-the-nao-va-vi-sao-van-dong-giup-chung-ta-giai-toa",
+      "title": {
+        "vi": "Stress tác động lên cơ thể như thế nào và vì sao vận động giúp chúng ta giải tỏa?",
+        "en": "How does stress affect the body, and why does exercise help us unwind?"
+      },
+      "why": "Lo âu là một nguyên nhân thường gặp của đổ mồ hôi nhiều — bài kia nói stress tác động lên cơ thể ra sao."
+    },
+    {
+      "slug": "van-dong-thay-doi-tim-va-mach-mau-nhu-the-nao",
+      "title": {
+        "vi": "Vận động thay đổi tim và mạch máu như thế nào",
+        "en": "How exercise reshapes the heart and blood vessels"
+      },
+      "why": "Vận động làm ra mồ hôi và là lúc dễ quá nhiệt — bài kia nói cơ thể thích nghi với gắng sức ra sao."
+    },
+    {
+      "slug": "huyet-dao-va-cham-cuu-khi-cua-dong-y-co-lien-he-gi-voi-khoa-hoc-hien-dai",
+      "title": {
+        "vi": "Huyệt đạo và châm cứu: \"Khí\" của Đông y có liên hệ gì với khoa học hiện đại?",
+        "en": "Acupoints and acupuncture: how does the \"Qi\" of Eastern medicine relate to modern science?"
+      },
+      "why": "Cùng câu hỏi nền: một phương pháp truyền thống của Việt Nam/Đông y được khoa học hiện đại nhìn nhận thế nào."
+    }
+  ],
+  "review": {
+    "transcription": "pending",
+    "mapping": "passed",
+    "editor": "pending"
+  }
+}

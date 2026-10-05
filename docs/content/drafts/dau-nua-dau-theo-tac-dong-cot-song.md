@@ -148,6 +148,7 @@ Không có xét nghiệm đặc hiệu nào chứng minh một cơn đau đầu 
 
 **Cùng loạt Tác động cột sống:**
 
+- [Bệnh đổ mồ hôi theo phương pháp Tác động cột sống](/articles/benh-do-mo-hoi-theo-tac-dong-cot-song)
 - [Các bệnh về đau đầu theo phương pháp Tác động cột sống](/articles/dau-dau-theo-tac-dong-cot-song)
 - [Đau lưng cấp theo phương pháp Tác động cột sống](/articles/dau-lung-cap-theo-tac-dong-cot-song)
 - [Đau lưng mãn tính theo phương pháp Tác động cột sống](/articles/dau-lung-man-tinh-theo-tac-dong-cot-song)
