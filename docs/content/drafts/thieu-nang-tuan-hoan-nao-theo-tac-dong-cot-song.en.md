@@ -12,7 +12,7 @@ According to MedlinePlus, stroke warning signs come on **suddenly**:
 
 MedlinePlus advises **calling emergency services right away** if you think you or someone else is having a stroke: immediate treatment may save a life and improve the chances of recovery.
 
-**Symptoms that go away are still an emergency.** A transient ischemic attack (TIA) causes stroke-like symptoms that then resolve, usually within 1 to 2 hours. MedlinePlus calls a TIA a medical emergency that needs emergency services right away, and a warning sign that a true stroke may follow — about half of strokes after a TIA happen within 48 hours.
+**Symptoms that go away are still an emergency.** A transient ischemic attack (TIA) causes stroke-like symptoms that then resolve, usually within 1 to 2 hours. MedlinePlus calls a TIA a medical emergency that needs emergency services right away, and a warning sign that a true stroke may follow — some people have a stroke within 3 months of a TIA, and half of those strokes happen within the first 48 hours.
 
 For dizziness, MedlinePlus advises calling emergency services or going to an emergency room if it comes with a head injury; fever over 38.3°C (101°F), headache or severe neck stiffness; seizures; being unable to keep fluids down; chest pain; irregular heartbeat; shortness of breath; weakness or inability to move an arm or leg; changes in vision or speech; or fainting with loss of consciousness lasting more than a few minutes.
 

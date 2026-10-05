@@ -10,11 +10,13 @@ High blood pressure usually has **no symptoms** — most people feel nothing, an
 
 Stroke warning signs that come on **suddenly** — numbness or weakness of the face, arm or leg (especially on one side); confusion or trouble speaking; trouble seeing; difficulty walking, dizziness or loss of balance; severe headache with no known cause — also need emergency services right away (MedlinePlus).
 
+**Controlling blood pressure relies on monitoring it carefully and taking medicines properly** (MedlinePlus); treatment combines lifestyle changes with medicines when needed. Nothing in the document quoted below replaces that.
+
 ## What is high blood pressure?
 
 According to MedlinePlus (U.S. National Library of Medicine), blood pressure is the force of your blood pushing against the walls of your arteries, written as two numbers: **systolic** (pressure when the heart beats) and **diastolic** (pressure between beats), for example 120/80. The document calls these the "upper" and "lower" numbers.
 
-The classification table MedlinePlus publishes: normal is systolic below 120 and diastolic below 80; elevated is systolic 120–129 and diastolic below 80; stages 1 and 2 as in the box above; a **hypertensive crisis** is systolic higher than 180 and diastolic higher than 120.
+The classification table MedlinePlus publishes: normal is systolic below 120 and diastolic below 80; elevated is systolic 120–129 and diastolic below 80; stages 1 and 2 as in the box above; a **hypertensive crisis** — according to NHLBI (U.S. National Heart, Lung, and Blood Institute) — is systolic higher than 180 **or** diastolic higher than 120, and needs a health professional immediately. (MedlinePlus's table uses "and" at this threshold; this article follows NHLBI's more cautious one.)
 
 Sustained high blood pressure makes the heart work harder and can lead to heart attack, stroke, heart failure and kidney failure. Treatment combines heart-healthy lifestyle changes with medicines when needed, depending on the cause and severity.
 

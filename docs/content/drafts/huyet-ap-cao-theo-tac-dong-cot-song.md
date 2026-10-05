@@ -10,11 +10,13 @@ Huyết áp cao thường **không có triệu chứng** — phần lớn ngư�
 
 Các dấu hiệu đột quỵ đến **đột ngột** — tê hoặc yếu mặt, tay, chân (nhất là một bên); lú lẫn, nói khó; nhìn khó; đi lại khó, chóng mặt, mất thăng bằng; đau đầu dữ dội không rõ nguyên nhân — cũng cần gọi cấp cứu ngay (MedlinePlus).
 
+**Kiểm soát huyết áp dựa vào đo huyết áp định kỳ và dùng thuốc đúng chỉ định** (MedlinePlus); điều trị kết hợp thay đổi lối sống với thuốc khi cần. Không có điều gì trong tài liệu dưới đây thay thế việc đó.
+
 ## Huyết áp cao là gì?
 
 Theo MedlinePlus (Thư viện Y khoa Quốc gia Hoa Kỳ), huyết áp là lực máu đẩy lên thành động mạch, ghi bằng hai số: **tâm thu** (áp lực khi tim co bóp) và **tâm trương** (áp lực giữa hai nhịp đập), ví dụ 120/80. Tài liệu gọi hai số này là "tối đa" và "tối thiểu".
 
-Bảng phân loại MedlinePlus đăng: bình thường là tâm thu dưới 120 và tâm trương dưới 80; tăng là tâm thu 120–129 và tâm trương dưới 80; giai đoạn 1 và 2 như trong khung trên; **cơn tăng huyết áp** là tâm thu trên 180 và tâm trương trên 120.
+Bảng phân loại MedlinePlus đăng: bình thường là tâm thu dưới 120 và tâm trương dưới 80; tăng là tâm thu 120–129 và tâm trương dưới 80; giai đoạn 1 và 2 như trong khung trên; **cơn tăng huyết áp** — theo NHLBI (Viện Tim, Phổi và Máu Hoa Kỳ) — là tâm thu trên 180 **hoặc** tâm trương trên 120, và cần liên hệ nhân viên y tế ngay. (Bảng của MedlinePlus viết "và" ở ngưỡng này; bài theo ngưỡng thận trọng hơn của NHLBI.)
 
 Huyết áp cao kéo dài buộc tim làm việc nhiều hơn và có thể dẫn đến nhồi máu cơ tim, đột quỵ, suy tim và suy thận. Điều trị kết hợp thay đổi lối sống tốt cho tim với thuốc khi cần, tùy nguyên nhân và mức độ.
 

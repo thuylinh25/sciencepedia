@@ -10793,7 +10793,35 @@
      ]
     }
    ],
-   "mentions": []
+   "mentions": [
+    {
+     "line": "Liên quan chức năng :Tuyến thượng Thận thường ảnh hưởng tới phó giao cảm, tác động C1 và S1,S2.",
+     "ref": {
+      "pdfPage": 40,
+      "bookPage": 39
+     },
+     "vertebrae": {
+      "raw": "C1, S1, S2",
+      "codes": [
+       {
+        "code": "C1",
+        "confidence": "exact"
+       },
+       {
+        "code": "S1",
+        "confidence": "exact"
+       },
+       {
+        "code": "S2",
+        "confidence": "exact"
+       }
+      ],
+      "regions": [],
+      "issues": []
+     },
+     "variant": "nong-khong-ra-mo-hoi"
+    }
+   ]
   },
   {
    "id": "mat-ngu",

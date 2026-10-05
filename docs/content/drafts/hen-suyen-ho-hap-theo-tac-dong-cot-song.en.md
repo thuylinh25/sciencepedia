@@ -29,7 +29,7 @@ After recovering from an attack, even if you feel better, see a doctor within 2 
 
 According to the NHS (UK National Health Service), asthma is a common condition that affects your breathing. It cannot currently be cured, but if it is well treated you should not have problems with symptoms. Symptoms happen when the airways become swollen and narrower.
 
-The main symptoms are wheezing, coughing, shortness of breath and a tight chest. According to NHLBI (U.S. National Heart, Lung, and Blood Institute), asthma symptoms often follow a pattern: they come and go, get worse with viral infections such as a cold, are triggered by exercise, allergies or cold air, and are worse at night or in the morning. MedlinePlus adds an abnormal breathing pattern seen in asthma: breathing out takes more than twice as long as breathing in — what the document calls "breathing out is hard".
+The main symptoms are wheezing, coughing, shortness of breath and a tight chest. According to NHLBI (U.S. National Heart, Lung, and Blood Institute), asthma symptoms often follow a pattern: they come and go, get worse with viral infections such as a cold, are triggered by exercise, allergies or cold air, and are worse at night or in the morning. MedlinePlus adds an abnormal breathing pattern seen in asthma: breathing out takes more than twice as long as breathing in — close to what the document describes as "breathing out is hard".
 
 An asthma attack can last from minutes to days and may start suddenly or slowly (MedlinePlus). Diagnosis relies on questions, listening to the chest, a breathing test and sometimes peak flow readings at home (NHS). The main treatment is inhaled medicine, following an asthma action plan that sets out which medicine to use when and what to do if symptoms get worse. With proper self-care and medical treatment, most people with asthma can lead a normal life (MedlinePlus). MedlinePlus also says removing tobacco smoke from the home is the single most important thing a family can do for someone with asthma.
 
@@ -38,7 +38,7 @@ An asthma attack can last from minutes to days and may start suddenly or slowly 
 Breathing problems can have different causes, which is one reason asthma can take time to diagnose (NHS). Two forms in the document below describe symptoms that also occur in other conditions:
 
 - **Breathlessness at night with a fast heartbeat** (form 4): for **heart failure**, MedlinePlus lists waking up after a couple of hours of sleep due to shortness of breath, shortness of breath after lying down, and a fast or irregular pulse; on examination, doctors look for abnormal heart sounds. MedlinePlus advises calling emergency services for fainting, a fast and irregular heartbeat, or severe chest pain.
-- **Fast breathing with fever** (form 2): MedlinePlus lists cough, fever, shaking chills and shortness of breath as the most common symptoms of **pneumonia**, and advises contacting a doctor for fast or painful breathing, or shortness of breath with persistent fevers.
+- **Fast breathing with fever** (form 2): MedlinePlus lists cough, fever, shaking chills and shortness of breath as the most common symptoms of **pneumonia**, and advises contacting a doctor for fast or painful breathing, or for shortness of breath, shaking chills or persistent fevers.
 
 So breathlessness that is new or changing needs a medical check to find its cause.
 
@@ -54,7 +54,7 @@ Vertebrae named by the document:
 
 [View on the Human Atlas →](/human-atlas?structure=third-cervical-vertebra,fourth-cervical-vertebra,second-thoracic-vertebra,third-thoracic-vertebra#atlas-embed)
 
-### Heavy, fast breathing with fever, usually at night
+### Heavy, fast breathing with fever usually at night
 
 > Temperature change: left chest, right side of the neck, lower back. Muscle zones changed: triangles 3, 4. Key vertebrae: T2, 3, 4, 7. Related function: breathing
 
@@ -74,7 +74,7 @@ Vertebrae named by the document:
 
 [View on the Human Atlas →](/human-atlas?structure=fourth-thoracic-vertebra,sixth-thoracic-vertebra#atlas-embed)
 
-### Breathlessness at night, fast heartbeat, a "galloping" sound, fast or slow breathing
+### Breathlessness at night, fast heartbeat, a gallop rhythm, fast or slow breathing
 
 > Temperature change: left chest, right side of the neck. Muscle zones changed: triangles 3, 4. Key vertebrae: T2, 3, 4. Related functions: heart, breathing
 

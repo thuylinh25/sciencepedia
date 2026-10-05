@@ -29,7 +29,7 @@ Với **trẻ nhỏ** bị hen, NHLBI khuyên gọi cấp cứu khi trẻ có v�
 
 Theo NHS (Dịch vụ Y tế Quốc gia Anh), hen là bệnh thường gặp ảnh hưởng đến hô hấp. Hiện chưa chữa khỏi được, nhưng nếu được điều trị tốt thì người bệnh thường không gặp vấn đề với triệu chứng. Triệu chứng xuất hiện khi đường thở bị sưng lên và hẹp lại.
 
-Triệu chứng chính là khò khè, ho, khó thở và tức ngực. Theo NHLBI (Viện Tim, Phổi và Máu Hoa Kỳ), ở người bị hen các triệu chứng thường theo một kiểu: đến rồi đi, nặng lên khi nhiễm virus như cảm lạnh, bị khởi phát bởi vận động, dị ứng, không khí lạnh, và nặng hơn về đêm hoặc sáng sớm. MedlinePlus mô tả thêm kiểu thở bất thường của hen: thở ra mất hơn gấp đôi thời gian hít vào — điều tài liệu gọi là "thở ra khó".
+Triệu chứng chính là khò khè, ho, khó thở và tức ngực. Theo NHLBI (Viện Tim, Phổi và Máu Hoa Kỳ), ở người bị hen các triệu chứng thường theo một kiểu: đến rồi đi, nặng lên khi nhiễm virus như cảm lạnh, bị khởi phát bởi vận động, dị ứng, không khí lạnh, và nặng hơn về đêm hoặc sáng sớm. MedlinePlus mô tả thêm kiểu thở bất thường của hen: thở ra mất hơn gấp đôi thời gian hít vào — gần với điều tài liệu mô tả là "thở ra khó".
 
 Cơn hen có thể kéo dài từ vài phút đến vài ngày, đến đột ngột hoặc từ từ (MedlinePlus). Chẩn đoán dựa trên hỏi bệnh, nghe phổi, đo chức năng hô hấp và đôi khi theo dõi lưu lượng đỉnh tại nhà (NHS). Điều trị chính là thuốc hít qua bình xịt, theo một kế hoạch hành động hen ghi rõ khi nào dùng thuốc nào và làm gì khi triệu chứng nặng lên. Với tự chăm sóc và điều trị y khoa đúng, phần lớn người bị hen sống bình thường (MedlinePlus). MedlinePlus cũng nêu loại bỏ khói thuốc lá khỏi nhà là việc quan trọng nhất một gia đình có thể làm cho người bị hen.
 
@@ -38,7 +38,7 @@ Cơn hen có thể kéo dài từ vài phút đến vài ngày, đến đột ng
 Khó thở có thể do nhiều nguyên nhân, nên hen có khi cần thời gian mới chẩn đoán được (NHS). Hai thể trong tài liệu dưới đây mô tả triệu chứng cũng gặp ở bệnh khác:
 
 - **Khó thở về đêm, tim đập nhanh** (thể 4): MedlinePlus liệt kê cho **suy tim** các triệu chứng thức giấc sau vài giờ ngủ vì khó thở, khó thở khi nằm, và mạch nhanh hoặc không đều; khi khám, bác sĩ tìm tiếng tim bất thường. MedlinePlus khuyên gọi cấp cứu nếu bị ngất, tim đập nhanh và không đều, hoặc đau ngực dữ dội.
-- **Thở nhanh kèm sốt** (thể 2): MedlinePlus nêu ho, sốt, rét run và khó thở là triệu chứng thường gặp nhất của **viêm phổi**, và khuyên liên hệ bác sĩ khi thở nhanh hoặc đau khi thở, hoặc khó thở kèm sốt kéo dài.
+- **Thở nhanh kèm sốt** (thể 2): MedlinePlus nêu ho, sốt, rét run và khó thở là triệu chứng thường gặp nhất của **viêm phổi**, và khuyên liên hệ bác sĩ khi thở nhanh hoặc đau khi thở, hoặc khi khó thở, rét run hay sốt kéo dài.
 
 Vì vậy, khó thở mới xuất hiện hay thay đổi cần được khám để tìm nguyên nhân.
 
@@ -54,7 +54,7 @@ Vì vậy, khó thở mới xuất hiện hay thay đổi cần được khám �
 
 [Xem trên Bản đồ cơ thể người →](/human-atlas?structure=third-cervical-vertebra,fourth-cervical-vertebra,second-thoracic-vertebra,third-thoracic-vertebra#atlas-embed)
 
-### Thở nhiều và mau, kèm sốt, thường xảy ra ban đêm
+### Thở nhiều và mau, kèm sốt thường xảy ra ban đêm
 
 > Nhiệt độ biến đổi : ngực trái , cổ phải, thắt lưng Vùng cơ biến đổi : tam giác 3,4 Đốt sống trọng điểm: T2,3,4,7 Liên quan chức năng : Hô hấp
 

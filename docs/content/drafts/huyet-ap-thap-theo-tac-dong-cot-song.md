@@ -4,7 +4,7 @@
 
 **Người bất tỉnh mà không thở hoặc không có mạch: gọi cấp cứu và bắt đầu hồi sức tim phổi (CPR) ngay** (MedlinePlus). Tài liệu có một thể mang tên "ngất, ngừng thở, tim ngừng đập" — đó là tình huống cấp cứu, không phải việc chờ xử lý ở nhà.
 
-Với người huyết áp thấp, MedlinePlus khuyên gọi cấp cứu khi có:
+Theo MedlinePlus, nếu huyết áp thấp làm người bệnh ngất, cần được điều trị ngay hoặc gọi cấp cứu; nếu người đó không thở hoặc không có mạch, bắt đầu hồi sức tim phổi. Với người huyết áp thấp, MedlinePlus khuyên liên hệ nhân viên y tế **ngay** khi có:
 
 - đau ngực;
 - chóng mặt, choáng váng;
@@ -14,13 +14,13 @@ Với người huyết áp thấp, MedlinePlus khuyên gọi cấp cứu khi có
 - khó thở;
 - phân đen hoặc màu nâu đỏ sẫm.
 
-Sau một lần ngất, MedlinePlus khuyên gọi cấp cứu nếu người bị ngất ngã từ trên cao (nhất là khi bị thương hay chảy máu), không tỉnh lại trong vài phút, đang mang thai, trên 50 tuổi, có bệnh tiểu đường, đau hoặc tức ngực, tim đập mạnh hay không đều, mất tiếng nói, rối loạn thị lực hoặc không cử động được tay chân, co giật, cắn vào lưỡi, hoặc mất kiểm soát tiểu tiện hay đại tiện. Người chưa từng ngất, ngất nhiều lần, hoặc có triệu chứng mới đi kèm cũng nên đi khám sớm.
+Sau một lần ngất, MedlinePlus khuyên gọi cấp cứu nếu người bị ngất ngã từ trên cao (nhất là khi bị thương hay chảy máu), không tỉnh lại trong vài phút, đang mang thai, trên 50 tuổi, có bệnh tiểu đường, đau hoặc tức ngực, tim đập mạnh hay không đều, mất tiếng nói, rối loạn thị lực hoặc không cử động được tay chân, co giật, tổn thương lưỡi, hoặc mất kiểm soát tiểu tiện hay đại tiện. Người chưa từng ngất, ngất nhiều lần, hoặc có triệu chứng mới đi kèm cũng nên đi khám sớm.
 
 ## Huyết áp thấp là gì?
 
 Theo MedlinePlus (Thư viện Y khoa Quốc gia Hoa Kỳ), huyết áp là lực máu đẩy lên thành động mạch. Ở người lớn, huyết áp bình thường nằm trong khoảng 90/60 mmHg đến 120/80 mmHg; số đo từ 90/60 trở xuống là huyết áp thấp.
 
-Một số người lúc nào cũng có huyết áp thấp, không có triệu chứng, và số đo thấp là bình thường với họ — thường không cần điều trị. Huyết áp thấp chỉ thành vấn đề khi gây chóng mặt, ngất, hoặc trong trường hợp nặng là sốc. (Tài liệu cũng ghi thể "huyết áp thấp nhưng ổn định" là "không phải là bệnh".)
+Một số người lúc nào cũng có huyết áp thấp, không có triệu chứng, và số đo thấp là bình thường với họ — thường không cần điều trị. Huyết áp thấp chỉ thành vấn đề khi gây chóng mặt, ngất, hoặc trong trường hợp nặng là sốc.
 
 Triệu chứng MedlinePlus nêu gồm nhìn mờ, lú lẫn, chóng mặt, ngất, choáng váng, buồn nôn hoặc nôn, buồn ngủ và yếu người. Nguyên nhân có thể là bệnh tim, tác dụng phụ của thuốc (thuốc lợi tiểu, thuốc chống trầm cảm, thuốc hạ huyết áp), uống không đủ nước, mất nước, và tổn thương thần kinh do tiểu đường.
 

@@ -4,7 +4,7 @@
 
 **If a person is unconscious and not breathing or has no pulse: call emergency services and start CPR right away** (MedlinePlus). The document has a form named "fainting, stopped breathing, stopped heartbeat" — that is an emergency, not something to wait out at home.
 
-For a person with low blood pressure, MedlinePlus advises calling emergency services for:
+According to MedlinePlus, if low blood pressure makes a person pass out, seek treatment right away or call emergency services; if the person is not breathing or has no pulse, begin CPR. For a person with low blood pressure, MedlinePlus advises contacting a health professional **right away** for:
 
 - chest pain;
 - dizziness or lightheadedness;
@@ -20,7 +20,7 @@ After fainting, MedlinePlus advises calling emergency services if the person fel
 
 According to MedlinePlus (U.S. National Library of Medicine), blood pressure is the force of your blood pushing against the walls of your arteries. In adults, normal blood pressure is between 90/60 mmHg and 120/80 mmHg; a reading of 90/60 or lower is low blood pressure.
 
-Some people have low blood pressure all the time, have no symptoms, and their low readings are normal for them — it often needs no treatment. Low blood pressure is a problem only if it causes dizziness, fainting or, in extreme cases, shock. (The document likewise calls "low but stable blood pressure" "not a disease".)
+Some people have low blood pressure all the time, have no symptoms, and their low readings are normal for them — it often needs no treatment. Low blood pressure is a problem only if it causes dizziness, fainting or, in extreme cases, shock.
 
 Symptoms MedlinePlus lists include blurry vision, confusion, dizziness, fainting, lightheadedness, nausea or vomiting, sleepiness and weakness. Causes can include heart conditions, medication side effects (diuretics, antidepressants, blood pressure drugs), not drinking enough fluids, dehydration, and nerve damage from diabetes.
 

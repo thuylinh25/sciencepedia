@@ -2,7 +2,9 @@
 
 ## ⚠️ When to see a doctor
 
-MedlinePlus advises contacting a health professional if sweating occurs with **chest pain, fever, a rapid pounding heartbeat, shortness of breath or weight loss** — these may indicate a problem such as an overactive thyroid or an infection.
+**Sweating with chest pain that feels tight or like squeezing, or spreads to your arms, neck or jaw: call emergency services right away** — it can be a sign of a heart attack (NHS).
+
+Beyond that, MedlinePlus advises contacting a health professional if sweating occurs with **chest pain, fever, a rapid pounding heartbeat, shortness of breath or weight loss** — these may indicate a problem such as an overactive thyroid or an infection.
 
 The NHS advises seeing a doctor if you are sweating excessively and: things you do yourself are not helping; it has lasted at least 6 months; it stops you getting on with daily activities; it happens at least once a week; it happens at night; you have a family history of excessive sweating; or you are taking medicine for another condition.
 

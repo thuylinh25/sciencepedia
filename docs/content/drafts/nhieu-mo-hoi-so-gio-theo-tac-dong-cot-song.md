@@ -2,7 +2,9 @@
 
 ## ⚠️ Khi nào nên đi khám
 
-MedlinePlus khuyên liên hệ nhân viên y tế khi đổ mồ hôi đi kèm **đau ngực, sốt, tim đập nhanh và mạnh, khó thở hoặc sụt cân** — các dấu hiệu này có thể cho thấy một vấn đề như cường giáp hay nhiễm trùng.
+**Đổ mồ hôi kèm đau ngực như bị đè ép, bóp chặt, hoặc đau lan ra cánh tay, cổ, hàm: gọi cấp cứu ngay** — đó có thể là dấu hiệu nhồi máu cơ tim (NHS).
+
+Ngoài trường hợp trên, MedlinePlus khuyên liên hệ nhân viên y tế khi đổ mồ hôi đi kèm **đau ngực, sốt, tim đập nhanh và mạnh, khó thở hoặc sụt cân** — các dấu hiệu này có thể cho thấy một vấn đề như cường giáp hay nhiễm trùng.
 
 NHS khuyên đi khám khi đổ mồ hôi nhiều và: tự chăm sóc không đỡ; kéo dài từ 6 tháng; cản trở sinh hoạt hằng ngày; xảy ra ít nhất mỗi tuần một lần; xảy ra về đêm; trong nhà có người cũng bị; hoặc bạn đang dùng thuốc chữa bệnh khác.
 

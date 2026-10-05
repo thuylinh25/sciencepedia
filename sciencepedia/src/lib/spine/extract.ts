@@ -260,6 +260,14 @@ export function extractSection(id: string, pdfPages: [number, number], pages: Pa
       const kind = m?.groups ? classify(m.groups.label) : null;
       if (m?.groups && kind) {
         ensureVariant(ref).fields.push(labelled(kind, m.groups.label.trim(), m.groups.value.trim(), ref));
+        // "Liên quan chức năng :Tuyến thượng Thận…, tác động C1 và S1,S2." (trang 40): mã
+        // trong dòng chức năng không có vai — đưa xuống mention cho người duyệt gán (D-40),
+        // đừng để lặn trong `functions`. Dòng tam giác cơ thì không: "tiết cơ ngang T8"
+        // không phải đốt sống.
+        if (kind === "functions") {
+          const codes = parseVertebraList(m.groups.value.match(/[CTLSD] ?\d{1,2}(?:[\s,.;\-–>]*\d{1,2})*/gu)?.join(", ") ?? "");
+          if (codes.codes.length) mentions.push({ line: text, ref, vertebrae: codes, variant: current?.id });
+        }
         continue;
       }
 

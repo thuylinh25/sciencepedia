@@ -521,6 +521,33 @@
       "resolution": "Đoạn \"Trẻ em sốt cao\": trích phần nhận định của tài liệu, BỎ câu mô tả thủ thuật (\"đẩy lên không được kéo xuống\") — quy tắc \"không chép từng bước lực tay\". Khung cảnh báo co giật ở trẻ đặt trước. (duyệt Q-3, source/proposals.md)",
       "decidedBy": "chủ sản phẩm",
       "decidedAt": "2026-10-05"
+    },
+    {
+      "id": "D-39",
+      "section": "sot",
+      "pdfPage": 36,
+      "raw": "Úp bàn tay vào T3,T4 ta thấy mỗi lúc lên cơn giật, đốt sống T3,T4 máy động, ta phải thao tác rất nhẹ ở lớp ngoài và theo dõi cường độ giật sẽ giảm.",
+      "resolution": "Thu hẹp D-33/D-38: đoạn trích chỉ còn phần quan sát (\"Úp bàn tay vào T3,T4 ta thấy mỗi lúc lên cơn giật, đốt sống T3,T4 máy động…\"); bỏ \"ta phải thao tác rất nhẹ ở lớp ngoài và theo dõi cường độ giật sẽ giảm\" — vừa là bước thao tác trên trẻ đang co giật, vừa hứa hiệu quả, ngược lời dặn của NHS (không giữ chặt, không di chuyển trẻ; gọi cấp cứu). T3, T4 giữ vai thận trọng theo D-33. (science-editor vòng 1, chủ sản phẩm chọn phương án cắt)",
+      "decidedBy": "chủ sản phẩm",
+      "decidedAt": "2026-10-05"
+    },
+    {
+      "id": "D-40",
+      "section": "benh-do-mo-hoi",
+      "pdfPage": 40,
+      "match": "tác động C1 và S1,S2",
+      "resolution": "Thể \"Nóng không ra mồ hôi\": trích hết câu \"…thường ảnh hưởng tới phó giao cảm, tác động C1 và S1,S2.\"; C1, S1, S2 vai related — câu nói \"tác động\", không nói \"trọng điểm\". S1, S2 hiện trên atlas là khối xương cùng (quy tắc S1–S5 một khối). Mã nằm trong dòng \"Liên quan chức năng\" nên bản đầu bộ trích bỏ sót; nay bộ trích đưa mã ở dòng ấy xuống mention. (science-editor vòng 1, chủ sản phẩm chọn phương án gán \"Liên quan\")",
+      "decidedBy": "chủ sản phẩm",
+      "decidedAt": "2026-10-05",
+      "apply": {
+        "assign": "tác động C1 và S1,S2",
+        "role": "related",
+        "codes": [
+          "C1",
+          "S1",
+          "S2"
+        ]
+      }
     }
   ]
 }

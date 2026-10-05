@@ -2,11 +2,11 @@
 
 ## ⚠️ Hot but not sweating: think of heatstroke
 
-**Heatstroke is an emergency.** The NHS advises calling emergency services right away for signs of heatstroke: still feeling unwell after 30 minutes of resting in a cool place, being cooled and drinking fluids; a very high temperature; **hot skin that is not sweating** and may look red; a fast heartbeat; fast breathing or shortness of breath; confusion and lack of coordination; a seizure; or loss of consciousness. MedlinePlus explains that heatstroke happens when the body can no longer regulate its temperature and it keeps rising — at this point sweating may stop — and that it can cause shock, brain damage, organ failure and even death. While waiting for help, the NHS advises wrapping the person in a cool, wet sheet, fanning them or sponging them with cold water.
+**Heatstroke is an emergency.** The NHS advises calling emergency services right away for signs of heatstroke: still feeling unwell after 30 minutes of resting in a cool place, being cooled and drinking fluids; a very high temperature; **hot skin that is not sweating** and may look red; a fast heartbeat; fast breathing or shortness of breath; confusion and lack of coordination; a seizure; or loss of consciousness. MedlinePlus explains that heatstroke happens when the body can no longer regulate its temperature and it keeps rising — at this point sweating **may** stop, so still sweating does not rule heatstroke out — and that it can cause shock, brain damage, organ failure and even death. While waiting for help, the NHS advises wrapping the person in a cool, wet sheet, fanning them or sponging them with cold water.
 
 The document below has two forms, "No sweating" and "Hot without sweating". Someone in a hot place or after exertion whose skin is hot and not sweating, with any of the signs above, must be treated as having heatstroke — not left to wait for spinal work.
 
-For heavy sweating, MedlinePlus advises contacting a health professional if sweating occurs with chest pain, fever, a rapid pounding heartbeat, shortness of breath or weight loss. The NHS advises seeing a doctor if night sweats regularly wake you up, come with a very high temperature, a cough or diarrhoea, or with weight loss for no reason.
+**Sweating with chest pain that feels tight or like squeezing, or spreads to your arms, neck or jaw: call emergency services right away** — it can be a sign of a heart attack (NHS). Beyond that, MedlinePlus advises contacting a health professional if sweating occurs with chest pain, fever, a rapid pounding heartbeat, shortness of breath or weight loss. The NHS advises seeing a doctor if night sweats regularly wake you up, come with a very high temperature, a cough or diarrhoea, or with weight loss for no reason.
 
 ## Sweating and excessive sweating
 
@@ -58,7 +58,7 @@ Vertebrae named by the document:
 
 ### No sweating
 
-> Temperature change…: left chest and right side of the neck. Key vertebrae…: T1, T2. Muscle triangle changed… transverse muscle segment C6, C7. Related functions…: Heart, Lung (in traditional terms)
+> Temperature change…: left chest and right side of the neck. Key vertebrae…: T1, T2. Muscle triangle changed… transverse muscle segment C6, C7. Related functions…: Heart, Lung [traditional-medicine organ names]
 
 Vertebrae named by the document:
 
@@ -68,13 +68,14 @@ Vertebrae named by the document:
 
 ### Hot without sweating
 
-> Temperature change…: right lower back hot. Key vertebra…: L3. Muscle triangle changed… transverse muscle segment T11. Related function: the adrenal glands, often affecting the parasympathetic system
+> Temperature change…: right lower back hot. Key vertebra…: L3. Muscle triangle changed… transverse muscle segment T11. Related function: the adrenal glands, often affecting the parasympathetic system, work on C1 and S1, S2.
 
 Vertebrae named by the document:
 
 - **Key point:** [L3](/human-atlas?structure=third-lumbar-vertebra#atlas-viewer)
+- **Related:** [C1](/human-atlas?structure=atlas#atlas-viewer), [S1](/human-atlas?structure=sacrum#atlas-viewer), [S2](/human-atlas?structure=sacrum#atlas-viewer)
 
-[View on the Human Atlas →](/human-atlas?structure=third-lumbar-vertebra#atlas-embed)
+[View on the Human Atlas →](/human-atlas?structure=atlas,third-lumbar-vertebra,sacrum#atlas-embed)
 
 ## Further reading
 
