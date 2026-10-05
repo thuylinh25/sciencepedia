@@ -1,0 +1,167 @@
+> **Tư liệu lưu trữ.** Bài này trình bày nội dung của tài liệu *Phương pháp Tác động Cột sống Việt Nam* (Chi hội Tác động cột sống Hà Nội — Hội Đông y thành phố Hà Nội) để lưu trữ, nghiên cứu và tham khảo. Các đoạn trích là lời của tài liệu, không phải kết luận y khoa của Sciencepedia, và không thay thế chẩn đoán hay điều trị của nhân viên y tế.
+
+## ⚠️ Khi nào cần cấp cứu
+
+NHS khuyên gọi cấp cứu nếu bạn hoặc con bạn:
+
+- đau đầu **đột ngột và cực kỳ dữ dội**;
+- khó nói hoặc khó nhớ;
+- mất thị lực, nhìn mờ hoặc nhìn đôi;
+- sốt rất cao kèm các dấu hiệu của viêm màng não;
+- không cử động được, hoặc yếu tay, chân hay mặt ở một bên cơ thể.
+
+MedlinePlus cũng khuyên gọi cấp cứu khi đó là cơn đau đầu tệ nhất từng gặp, hoặc có rối loạn lời nói, thị lực, vận động, mất thăng bằng — nhất là khi các cơn migraine trước chưa từng như vậy. Đau đầu khởi phát đột ngột, như bùng nổ, cần được khám ngay vì có thể do vỡ mạch máu trong não. Đau đầu kèm sốt, cứng cổ, buồn nôn và nôn, hoặc đau đầu mới xuất hiện — nhất là ở người trên 50 tuổi — cũng cần đi khám ngay (MedlinePlus).
+
+## Đau nửa đầu (migraine) là gì?
+
+Theo NINDS, migraine là một tình trạng bệnh, **không chỉ là một cơn đau đầu nặng**. Một trong những triệu chứng thường gặp nhất của cơn migraine là đau nhói theo nhịp, mức vừa đến nặng, thường ở một bên đầu. MedlinePlus cho biết cơn có thể kèm buồn nôn, nôn, hoặc nhạy cảm với ánh sáng và âm thanh.
+
+Theo NHS, cơn migraine thường kéo dài từ 4 giờ đến 3 ngày. Chỉ một số người có **tiền triệu** (aura): theo NINDS, tiền triệu xuất hiện khoảng 10 phút đến một giờ trước cơn và thường không quá một giờ. Dạng thường gặp nhất là migraine không có tiền triệu (NINDS).
+
+## Hiểu biết hiện nay về cơ chế và điều trị
+
+NHS viết rằng chưa biết nguyên nhân gây migraine, nhưng nó xảy ra khi có thay đổi ở dây thần kinh và mạch máu trong não. Theo NINDS, nghiên cứu hiện nay cho thấy cơn đau xảy ra khi tín hiệu thần kinh, các chất hóa học trong não và mạch máu không hoạt động bình thường; MedlinePlus ghi rằng chuỗi sự kiện chính xác vẫn chưa rõ.
+
+Không có xét nghiệm đặc hiệu nào chứng minh một cơn đau đầu là migraine, và chỉ nhân viên y tế mới xác định được triệu chứng là do migraine hay một bệnh khác (MedlinePlus). Hiện chưa có cách chữa khỏi migraine, nhưng điều trị giúp kiểm soát triệu chứng (NINDS).
+
+## Triệu chứng được tài liệu mô tả
+
+> **Theo tài liệu (tr. 11):** Lúc đầu chỉ đau ở một bên đầu, vùng trán, thái dương, ít khi ở vùng chẩm. Rồi dần dần có thể lan ra cả đầu hoặc đau bên nửa đầu đối diện.
+
+> **Theo tài liệu (tr. 11):** Những triệu chứng kèm theo là buồn nôn, rối loạn tuần hoàn như mạch chậm, huyết áp có thể hơi cao, nhạy cảm với các mùi. Cơn đau thường kéo dài từ vài giờ đến 3 ngày, mất đi vào ban đêm hoặc để lại cảm giác ê ẩm ở trong đầu ngày hôm sau.
+
+## Nội dung theo phương pháp Tác động cột sống
+
+Các mục dưới đây trích nguyên văn từ tài liệu, kèm số trang. Bài chỉ ghi lại tài liệu nói gì; bài không hướng dẫn thao tác và không thay cho việc khám bệnh.
+
+> **Theo tài liệu (tr. 12):** Phương pháp tác động cột sống Việt Nam căn cứ vào sự biến đổi nhiệt độ da, sự biến đổi về tiết cơ trên hệ cột sống, sự biến đổi của các đốt sống liên quan đến các triệu chứng bệnh và cảm giác khách quan trên các đốt sống đó để xác định các đốt sống trọng điểm và giải toả các trọng điểm đó để điều trị các triệu chứng của bệnh.
+
+### Nảy đom đóm mắt
+
+> **Theo tài liệu (tr. 12):** Nhiệt độ da ta thấy vùng ngực trái, vai phải, sườn phải của bệnh nhân nóng cao. Liên quan đến các chức năng về tuần hoàn, hô hấp, gan rối loạn. Đốt sống trọng điểm là C6, T9,T10,T11.
+
+Đốt sống tài liệu nêu:
+
+- **Trọng điểm:** [C6](/human-atlas?structure=sixth-cervical-vertebra#atlas-viewer), [T9](/human-atlas?structure=ninth-thoracic-vertebra#atlas-viewer), [T10](/human-atlas?structure=tenth-thoracic-vertebra#atlas-viewer), [T11](/human-atlas?structure=eleventh-thoracic-vertebra#atlas-viewer)
+
+[Xem trên Bản đồ cơ thể người →](/human-atlas?structure=sixth-cervical-vertebra,ninth-thoracic-vertebra,tenth-thoracic-vertebra,eleventh-thoracic-vertebra#atlas-viewer)
+
+### Nặng đầu, mất ngủ, buồn nôn, rối loạn tuần hoàn
+
+> **Theo tài liệu (tr. 12):** Nhiệt độ vùng ngực trái nóng cao. Liên quan đến các chức năng về tuần hoàn, hô hấp Đốt sống trọng điểm là T3,T6.
+
+Đốt sống tài liệu nêu:
+
+- **Trọng điểm:** [T3](/human-atlas?structure=third-thoracic-vertebra#atlas-viewer), [T6](/human-atlas?structure=sixth-thoracic-vertebra#atlas-viewer)
+
+[Xem trên Bản đồ cơ thể người →](/human-atlas?structure=third-thoracic-vertebra,sixth-thoracic-vertebra#atlas-viewer)
+
+### Tê bì chi trên và đầu ngón tay
+
+> **Theo tài liệu (tr. 12):** Nhiệt độ rối loạn vùng chẩm, cổ phải, mỏ ác (nóng cao); Liên quan đến chức năng phổi, dạ dày, đại tràng rối loạn. Đối sống trọng điểm là C7,L1,L3.
+
+Đốt sống tài liệu nêu:
+
+- **Trọng điểm:** [C7](/human-atlas?structure=seventh-cervical-vertebra#atlas-viewer), [L1](/human-atlas?structure=first-lumbar-vertebra#atlas-viewer), [L3](/human-atlas?structure=third-lumbar-vertebra#atlas-viewer)
+
+[Xem trên Bản đồ cơ thể người →](/human-atlas?structure=seventh-cervical-vertebra,first-lumbar-vertebra,third-lumbar-vertebra#atlas-viewer)
+
+### Mệt, hay ngáp, ợ hơi
+
+> **Theo tài liệu (tr. 12):** Nhiệt độ rối loạn vùng ngực trái. Liên quan đến chức năng đại tràng, tim mạch rối loạn. Trọng điểm là đốt sống T6, T7, T9
+
+Đốt sống tài liệu nêu:
+
+- **Trọng điểm:** [T6](/human-atlas?structure=sixth-thoracic-vertebra#atlas-viewer), [T7](/human-atlas?structure=seventh-thoracic-vertebra#atlas-viewer), [T9](/human-atlas?structure=ninth-thoracic-vertebra#atlas-viewer)
+
+[Xem trên Bản đồ cơ thể người →](/human-atlas?structure=sixth-thoracic-vertebra,seventh-thoracic-vertebra,ninth-thoracic-vertebra#atlas-viewer)
+
+### Nói khó, nghe đọc không hiểu
+
+> **Theo tài liệu (tr. 12):** Nhiệt độ rối loạn ở vùng chẩm. Liên quan đến chức năng đại tràng, tim mạch rối loạn. Trọng điểm là đốt sống S5.
+
+Đốt sống tài liệu nêu:
+
+- **Trọng điểm:** [S5](/human-atlas?structure=sacrum#atlas-viewer)
+
+[Xem trên Bản đồ cơ thể người →](/human-atlas?structure=sacrum#atlas-viewer)
+
+### Nhức nửa đầu sau, lan sang hốc mắt
+
+> **Theo tài liệu (tr. 13):** Nhiệt độ rối loạn ở vùng đầu sau, hốc mắt và vùng vai phải, mỏ ác. Liên quan đến chức năng thần kinh và phổi rối loạn. Đốt sống trọng điểm là C1,C3,C5,C6,T11.
+
+Đốt sống tài liệu nêu:
+
+- **Trọng điểm:** [C1](/human-atlas?structure=atlas#atlas-viewer), [C3](/human-atlas?structure=third-cervical-vertebra#atlas-viewer), [C5](/human-atlas?structure=fifth-cervical-vertebra#atlas-viewer), [C6](/human-atlas?structure=sixth-cervical-vertebra#atlas-viewer), [T11](/human-atlas?structure=eleventh-thoracic-vertebra#atlas-viewer)
+
+[Xem trên Bản đồ cơ thể người →](/human-atlas?structure=atlas,third-cervical-vertebra,fifth-cervical-vertebra,sixth-cervical-vertebra,eleventh-thoracic-vertebra#atlas-viewer)
+
+### Nhức đầu vùng thái dương
+
+> **Theo tài liệu (tr. 13):** Nhiệt độ rối loạn vùng vai phải, mỏ ác. Liên quan đến chức năng hô hấp và dạ dày rối loạn. Đốt sống trọng điểm là T11,L1.
+
+Đốt sống tài liệu nêu:
+
+- **Trọng điểm:** [T11](/human-atlas?structure=eleventh-thoracic-vertebra#atlas-viewer), [L1](/human-atlas?structure=first-lumbar-vertebra#atlas-viewer)
+
+[Xem trên Bản đồ cơ thể người →](/human-atlas?structure=eleventh-thoracic-vertebra,first-lumbar-vertebra#atlas-viewer)
+
+### Nhức đầu vùng trán và hốc mắt
+
+> **Theo tài liệu (tr. 13):** Nhiệt độ rối loạn vùng vai phải. Liên quan đến chức năng hô hấp rối loạn. Đốt sống trọng điểm là T10,T11.
+
+Đốt sống tài liệu nêu:
+
+- **Trọng điểm:** [T10](/human-atlas?structure=tenth-thoracic-vertebra#atlas-viewer), [T11](/human-atlas?structure=eleventh-thoracic-vertebra#atlas-viewer)
+
+[Xem trên Bản đồ cơ thể người →](/human-atlas?structure=tenth-thoracic-vertebra,eleventh-thoracic-vertebra#atlas-viewer)
+
+### Nhìn hình đôi, sụp mi
+
+> **Theo tài liệu (tr. 13):** Nhiệt độ địa phương vùng mắt nóng cao. Liên quan đến chức năng thần kinh rối loạn. Đốt sống trọng điểm là C7.
+
+Đốt sống tài liệu nêu:
+
+- **Trọng điểm:** [C7](/human-atlas?structure=seventh-cervical-vertebra#atlas-viewer)
+
+[Xem trên Bản đồ cơ thể người →](/human-atlas?structure=seventh-cervical-vertebra#atlas-viewer)
+
+### Liệt nhẹ chi trên và nói khó
+
+> **Theo tài liệu (tr. 13):** Nhiệt độ rối loạn vùng lưng trên. Liên quan đến chức năng tuần hoàn hô hấp rối loạn. Đốt sống trọng điểm là C6,T1.
+
+Đốt sống tài liệu nêu:
+
+- **Trọng điểm:** [C6](/human-atlas?structure=sixth-cervical-vertebra#atlas-viewer), [T1](/human-atlas?structure=first-thoracic-vertebra#atlas-viewer)
+
+[Xem trên Bản đồ cơ thể người →](/human-atlas?structure=sixth-cervical-vertebra,first-thoracic-vertebra#atlas-viewer)
+
+## Đốt sống liên quan
+
+Tổng hợp từ các mục trên. Vai trò là cách tài liệu gọi tên (trọng điểm, liên quan, thận trọng, tránh), không phải khuyến cáo của Sciencepedia. Bấm mã để xem đốt sống trên Bản đồ cơ thể người.
+
+- [C1](/human-atlas?structure=atlas#atlas-viewer) — Đốt đội (C1): trọng điểm
+- [C3](/human-atlas?structure=third-cervical-vertebra#atlas-viewer) — Đốt sống cổ 3: trọng điểm
+- [C5](/human-atlas?structure=fifth-cervical-vertebra#atlas-viewer) — Đốt sống cổ 5: trọng điểm
+- [C6](/human-atlas?structure=sixth-cervical-vertebra#atlas-viewer) — Đốt sống cổ 6: trọng điểm
+- [C7](/human-atlas?structure=seventh-cervical-vertebra#atlas-viewer) — Đốt sống cổ 7: trọng điểm
+- [T1](/human-atlas?structure=first-thoracic-vertebra#atlas-viewer) — Đốt sống ngực 1: trọng điểm
+- [T3](/human-atlas?structure=third-thoracic-vertebra#atlas-viewer) — Đốt sống ngực 3: trọng điểm
+- [T6](/human-atlas?structure=sixth-thoracic-vertebra#atlas-viewer) — Đốt sống ngực 6: trọng điểm
+- [T7](/human-atlas?structure=seventh-thoracic-vertebra#atlas-viewer) — Đốt sống ngực 7: trọng điểm
+- [T9](/human-atlas?structure=ninth-thoracic-vertebra#atlas-viewer) — Đốt sống ngực 9: trọng điểm
+- [T10](/human-atlas?structure=tenth-thoracic-vertebra#atlas-viewer) — Đốt sống ngực 10: trọng điểm
+- [T11](/human-atlas?structure=eleventh-thoracic-vertebra#atlas-viewer) — Đốt sống ngực 11: trọng điểm
+- [L1](/human-atlas?structure=first-lumbar-vertebra#atlas-viewer) — Đốt sống thắt lưng 1: trọng điểm
+- [L3](/human-atlas?structure=third-lumbar-vertebra#atlas-viewer) — Đốt sống thắt lưng 3: trọng điểm
+- [S5](/human-atlas?structure=sacrum#atlas-viewer) — Đốt cùng 5: trọng điểm
+
+*Trên Bản đồ cơ thể người, S1–S5 hiện chung là xương cùng: mô hình không tách riêng năm đốt cùng.*
+
+[Xem trên Bản đồ cơ thể người →](/human-atlas?structure=atlas,third-cervical-vertebra,fifth-cervical-vertebra,sixth-cervical-vertebra,seventh-cervical-vertebra,first-thoracic-vertebra,third-thoracic-vertebra,sixth-thoracic-vertebra,seventh-thoracic-vertebra,ninth-thoracic-vertebra,tenth-thoracic-vertebra,eleventh-thoracic-vertebra,first-lumbar-vertebra,third-lumbar-vertebra,sacrum#atlas-viewer)
+
+## Nguồn tài liệu
+
+Tài liệu *Phương pháp Tác động Cột sống Việt Nam* (Chi hội Tác động cột sống Hà Nội — Hội Đông y thành phố Hà Nội), phần "IV. ĐAU NỬA ĐẦU (MIGRAINE)", trang 11–13 của sách (trang 12–14 của bản scan). Bản chép từng trang lưu cùng mã nguồn Sciencepedia.
+
+> 🩺 Nội dung trên dùng cho mục đích lưu trữ, nghiên cứu và tham khảo. Nếu bạn đang có triệu chứng, hãy đến cơ sở y tế để được chẩn đoán và điều trị.

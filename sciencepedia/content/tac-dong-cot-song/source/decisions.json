@@ -1,5 +1,5 @@
 {
-  "policy": "Quyết định của NGƯỜI cho các cờ review mà máy không được tự quyết. Id D-<n> cố định, chỉ thêm, không đánh số lại. `match` là chuỗi con của dòng cờ trong review-flags.md — spine-extract đánh dấu cờ khớp là đã quyết. Bước dựng topic JSON đọc `resolution` ở đây.",
+  "policy": "Quyết định của NGƯỜI cho các cờ review mà máy không được tự quyết. Id D-<n> cố định, chỉ thêm, không đánh số lại. `match` là chuỗi con của dòng cờ trong review-flags.md — spine-extract đánh dấu cờ khớp là đã quyết. Bước dựng topic JSON đọc `resolution` ở đây. `apply` là phần máy đọc: `confirm` = chuỗi con của trường (raw) mà người đã xác nhận cách đọc → mã hết 'uncertain'; `assign` = chuỗi con của câu mention → gán `role`/`codes`/`side`.",
   "entries": [
     {
       "id": "D-1",
@@ -9,7 +9,10 @@
       "match": "\"C7; T1; T2; T3 bên phải\"",
       "resolution": "\"bên phải\" áp cho CẢ BỐN đốt: C7, T1, T2, T3 đều side = right.",
       "decidedBy": "chủ sản phẩm",
-      "decidedAt": "2026-10-05"
+      "decidedAt": "2026-10-05",
+      "apply": {
+        "confirm": "C7; T1; T2; T3 bên phải"
+      }
     },
     {
       "id": "D-2",
@@ -19,7 +22,15 @@
       "match": "\"HA do tim .......T6 F\"",
       "resolution": "T6 vai trò caution (thận trọng khi tác động), side = right — dòng này giải thích câu \"Thận trọng khi chữa T6; T10; và L3\" ngay trên, không phải đốt tác động.",
       "decidedBy": "chủ sản phẩm",
-      "decidedAt": "2026-10-05"
+      "decidedAt": "2026-10-05",
+      "apply": {
+        "assign": "HA do tim .......T6 F",
+        "role": "caution",
+        "codes": [
+          "T6"
+        ],
+        "side": "right"
+      }
     },
     {
       "id": "D-3",
@@ -29,7 +40,15 @@
       "match": "\"HA do thượng thận ....T10 F\"",
       "resolution": "T10 vai trò caution (thận trọng khi tác động), side = right — dòng này giải thích câu \"Thận trọng khi chữa T6; T10; và L3\" ngay trên, không phải đốt tác động.",
       "decidedBy": "chủ sản phẩm",
-      "decidedAt": "2026-10-05"
+      "decidedAt": "2026-10-05",
+      "apply": {
+        "assign": "HA do thượng thận ....T10 F",
+        "role": "caution",
+        "codes": [
+          "T10"
+        ],
+        "side": "right"
+      }
     },
     {
       "id": "D-4",
@@ -39,7 +58,15 @@
       "match": "\"HA do tiết niệu .........L3 F\"",
       "resolution": "L3 vai trò caution (thận trọng khi tác động), side = right — dòng này giải thích câu \"Thận trọng khi chữa T6; T10; và L3\" ngay trên, không phải đốt tác động.",
       "decidedBy": "chủ sản phẩm",
-      "decidedAt": "2026-10-05"
+      "decidedAt": "2026-10-05",
+      "apply": {
+        "assign": "HA do tiết niệu .........L3 F",
+        "role": "caution",
+        "codes": [
+          "L3"
+        ],
+        "side": "right"
+      }
     },
     {
       "id": "D-5",
@@ -49,7 +76,10 @@
       "match": "\"vùng T2 T,3T7 T8\"",
       "resolution": "Đọc là T2, T3, T7, T8 — vai trò primary, confidence exact sau duyệt (chữ \"T\" lẻ là lỗi in, không phải bên trái).",
       "decidedBy": "chủ sản phẩm",
-      "decidedAt": "2026-10-05"
+      "decidedAt": "2026-10-05",
+      "apply": {
+        "confirm": "vùng T2 T,3T7 T8"
+      }
     },
     {
       "id": "D-6",
@@ -59,7 +89,17 @@
       "match": "Không chữa ngay ở L4, L5 và S1,S2",
       "resolution": "L4, L5, S1, S2 vai trò related — tài liệu chỉ chữa ở đây ở giai đoạn cuối, không phải trọng điểm ban đầu. Bài viết giữ nguyên ý \"giai đoạn cuối\" trong phần trích.",
       "decidedBy": "chủ sản phẩm",
-      "decidedAt": "2026-10-05"
+      "decidedAt": "2026-10-05",
+      "apply": {
+        "assign": "Không chữa ngay ở L4, L5 và S1,S2",
+        "role": "related",
+        "codes": [
+          "L4",
+          "L5",
+          "S1",
+          "S2"
+        ]
+      }
     }
   ]
 }

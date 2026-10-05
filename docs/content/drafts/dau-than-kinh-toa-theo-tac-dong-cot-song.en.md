@@ -1,0 +1,84 @@
+> **Archival material.** This article presents the content of the document *Phương pháp Tác động Cột sống Việt Nam* ("Vietnamese Spinal Impact Method"; Hanoi Spinal Impact Association — Hanoi Association of Traditional Medicine) for archiving, research and reference. Quoted passages are the document's own words, not medical conclusions of Sciencepedia, and they do not replace diagnosis or treatment by a health professional.
+
+## ⚠️ When it is an emergency
+
+The NHS advises going to A&E or calling emergency services if you:
+
+- have sciatica on **both sides**;
+- have weakness or numbness in both legs that is severe or getting worse;
+- have numbness around or under your genitals, or around your anus;
+- find it hard to start peeing, cannot pee or cannot control when you pee — and this is not normal for you;
+- do not notice when you need to poo or cannot control it — and this is not normal for you.
+
+The NHS says these could be symptoms of a serious back problem that needs hospital treatment as soon as possible. MedlinePlus advises contacting a health professional right away for unexplained fever with back pain, back pain after a severe blow or fall, pain travelling below the knee, or loss of control of urine or stool.
+
+## What is sciatica?
+
+According to MedlinePlus, sciatica is pain, weakness, numbness or tingling in the leg caused by injury to or pressure on the sciatic nerve. It is **a symptom** of another medical problem, not a condition by itself.
+
+The sciatic nerve starts in the lower back and runs down the back of each leg (MedlinePlus); the NHS describes it as running from the lower back to the feet. Symptoms usually affect the buttock and the back of **one** leg, often including the foot and toes (NHS). The NHS also notes that if you only have back pain, you probably do not have sciatica.
+
+NINDS lists sciatica as an example of **neuropathic pain** — pain caused by nerve damage, often described as burning, tingling, shooting, or like electric shocks.
+
+## Causes and course
+
+According to the NHS, the most common cause is a **slipped disc** — when a soft cushion of tissue between the bones of the spine pushes out — and it becomes more likely with age. Other causes include spinal stenosis (narrowing of the part of the spine where nerves pass through) and spondylolisthesis (a spinal bone slipping out of position). Because sciatica is a symptom, MedlinePlus stresses that the underlying cause should be identified and treated.
+
+Sciatica usually improves within a few weeks to a few months but can last longer (NHS), and it commonly returns (MedlinePlus, NHS). MedlinePlus also notes that it can lead to permanent numbness or weakness of the leg.
+
+## Symptoms described in the document
+
+> **According to the document (p. 6, translated):** Sciatic nerve pain usually shows the following restriction signs: 1. painful points (spelled "Walleix" in the original); 2. restricted forward bending while standing; 3. restricted squatting; 4. restricted leg raising; 5. restricted spinal extension; 6. restricted fast walking.
+
+## Content according to the Spinal Impact method
+
+The passages below are translated from the document, with page numbers. The article records what the document says; it does not teach any technique and is not a substitute for medical care.
+
+### Restricted forward bending
+
+> **According to the document (p. 7, translated):** The patient stands straight with feet shoulder-width apart, knees kept straight, and slowly bends forward; if both index fingers can touch the big toes it is normal, if they cannot reach the big toes it is restricted.
+
+> **According to the document (p. 7, translated):** The key points are usually in the region of T2, T3, T7, T8.
+
+Vertebrae named by the document:
+
+- **Key point:** [T2](/human-atlas?structure=second-thoracic-vertebra#atlas-viewer), [T3](/human-atlas?structure=third-thoracic-vertebra#atlas-viewer), [T7](/human-atlas?structure=seventh-thoracic-vertebra#atlas-viewer), [T8](/human-atlas?structure=eighth-thoracic-vertebra#atlas-viewer)
+
+[View on the Human Atlas →](/human-atlas?structure=second-thoracic-vertebra,third-thoracic-vertebra,seventh-thoracic-vertebra,eighth-thoracic-vertebra#atlas-viewer)
+
+### The document's note on the lumbosacral region
+
+> **According to the document (p. 9, translated):** People with sciatic nerve pain often walk in a pain-relieving posture, leaning to one side. Treatment cannot start right at L4, L5 and S1, S2; instead the corresponding-muscle-contraction approach is applied, working from the upper back downwards. Treating L4, 5 and S1, 2 is the final stage.
+
+Vertebrae named by the document:
+
+- **Related:** [L4](/human-atlas?structure=fourth-lumbar-vertebra#atlas-viewer), [L5](/human-atlas?structure=fifth-lumbar-vertebra#atlas-viewer), [S1](/human-atlas?structure=sacrum#atlas-viewer), [S2](/human-atlas?structure=sacrum#atlas-viewer)
+
+[View on the Human Atlas →](/human-atlas?structure=fourth-lumbar-vertebra,fifth-lumbar-vertebra,sacrum#atlas-viewer)
+
+## Related vertebrae
+
+Compiled from the sections above. Roles are the document's own terms (key point, related, caution, avoid), not recommendations by Sciencepedia. Select a code to see the vertebra on the Human Atlas.
+
+- [T2](/human-atlas?structure=second-thoracic-vertebra#atlas-viewer) — Second thoracic vertebra: key point
+- [T3](/human-atlas?structure=third-thoracic-vertebra#atlas-viewer) — Third thoracic vertebra: key point
+- [T7](/human-atlas?structure=seventh-thoracic-vertebra#atlas-viewer) — Seventh thoracic vertebra: key point
+- [T8](/human-atlas?structure=eighth-thoracic-vertebra#atlas-viewer) — Eighth thoracic vertebra: key point
+- [L4](/human-atlas?structure=fourth-lumbar-vertebra#atlas-viewer) — Fourth lumbar vertebra: related
+- [L5](/human-atlas?structure=fifth-lumbar-vertebra#atlas-viewer) — Fifth lumbar vertebra: related
+- [S1](/human-atlas?structure=sacrum#atlas-viewer) — Sacral vertebra 1: related
+- [S2](/human-atlas?structure=sacrum#atlas-viewer) — Sacral vertebra 2: related
+
+*On the Human Atlas, S1–S5 are shown together as the sacrum: the model does not separate the five sacral vertebrae.*
+
+[View on the Human Atlas →](/human-atlas?structure=second-thoracic-vertebra,third-thoracic-vertebra,seventh-thoracic-vertebra,eighth-thoracic-vertebra,fourth-lumbar-vertebra,fifth-lumbar-vertebra,sacrum#atlas-viewer)
+
+## Where the document says the method does not apply
+
+> **According to the document (p. 9, translated):** Inability to pull the bell-rope or push with the leg is due to cauda equina inflammation, or spinal cord and meningeal tumours… none of these are treated with Spinal Impact (medication is required).
+
+## Source document
+
+The document *Phương pháp Tác động Cột sống Việt Nam* ("Vietnamese Spinal Impact Method"; Hanoi Spinal Impact Association — Hanoi Association of Traditional Medicine), section "III. ĐAU THẦN KINH TOẠ", book pages 6–10 (scan pages 7–11). The page-by-page transcription is kept with the Sciencepedia source code.
+
+> 🩺 This content is for archiving, research and reference. If you have symptoms, please see a health professional for diagnosis and treatment.

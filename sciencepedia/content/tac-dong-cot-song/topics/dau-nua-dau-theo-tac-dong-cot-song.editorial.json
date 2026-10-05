@@ -1,0 +1,211 @@
+{
+  "section": "dau-nua-dau",
+  "slug": "dau-nua-dau-theo-tac-dong-cot-song",
+  "title": {
+    "vi": "Đau nửa đầu theo phương pháp Tác động cột sống",
+    "en": "Migraine in the Spinal Impact method"
+  },
+  "summary": {
+    "vi": "Tài liệu Phương pháp Tác động Cột sống Việt Nam chia đau nửa đầu thành mười nhóm triệu chứng, mỗi nhóm một vùng nhiệt độ và các đốt sống trọng điểm — trích nguyên văn, đặt cạnh kiến thức y khoa có nguồn về migraine và các dấu hiệu cần cấp cứu.",
+    "en": "The Vietnamese Spinal Impact method document divides migraine into ten symptom groups, each with a temperature zone and key vertebrae — quoted with page numbers, alongside sourced medical information on migraine and emergency warning signs."
+  },
+  "seoDescription": {
+    "vi": "Đau nửa đầu (migraine) theo tài liệu Phương pháp Tác động Cột sống Việt Nam: mười nhóm triệu chứng và đốt sống trọng điểm — kèm kiến thức y khoa và dấu hiệu cần cấp cứu.",
+    "en": "Migraine in the Vietnamese Spinal Impact method document: ten symptom groups and their key vertebrae — with sourced medical facts and emergency warning signs."
+  },
+  "keywords": "đau nửa đầu, migraine, tác động cột sống, đốt sống cổ, đau đầu",
+  "riskLevel": "normal",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Migraine",
+      "publisher": "National Institute of Neurological Disorders and Stroke (NIH)",
+      "url": "https://www.ninds.nih.gov/health-information/disorders/migraine",
+      "tier": 2,
+      "accessed": "2026-10-05"
+    },
+    {
+      "id": "s2",
+      "title": "Migraine",
+      "publisher": "MedlinePlus — U.S. National Library of Medicine",
+      "url": "https://medlineplus.gov/ency/article/000709.htm",
+      "tier": 2,
+      "accessed": "2026-10-05"
+    },
+    {
+      "id": "s3",
+      "title": "Migraine",
+      "publisher": "NHS",
+      "url": "https://www.nhs.uk/conditions/migraine/",
+      "tier": 2,
+      "accessed": "2026-10-05"
+    },
+    {
+      "id": "s4",
+      "title": "Headache",
+      "publisher": "MedlinePlus — U.S. National Library of Medicine",
+      "url": "https://medlineplus.gov/ency/article/003024.htm",
+      "tier": 2,
+      "accessed": "2026-10-05"
+    }
+  ],
+  "safety": {
+    "heading": { "vi": "⚠️ Khi nào cần cấp cứu", "en": "⚠️ When it is an emergency" },
+    "body": {
+      "vi": "NHS khuyên gọi cấp cứu nếu bạn hoặc con bạn:\n\n- đau đầu **đột ngột và cực kỳ dữ dội**;\n- khó nói hoặc khó nhớ;\n- mất thị lực, nhìn mờ hoặc nhìn đôi;\n- sốt rất cao kèm các dấu hiệu của viêm màng não;\n- không cử động được, hoặc yếu tay, chân hay mặt ở một bên cơ thể.\n\nMedlinePlus cũng khuyên gọi cấp cứu khi đó là cơn đau đầu tệ nhất từng gặp, hoặc có rối loạn lời nói, thị lực, vận động, mất thăng bằng — nhất là khi các cơn migraine trước chưa từng như vậy. Đau đầu khởi phát đột ngột, như bùng nổ, cần được khám ngay vì có thể do vỡ mạch máu trong não. Đau đầu kèm sốt, cứng cổ, buồn nôn và nôn, hoặc đau đầu mới xuất hiện — nhất là ở người trên 50 tuổi — cũng cần đi khám ngay (MedlinePlus).",
+      "en": "The NHS advises calling emergency services if you or your child:\n\n- have a headache that came on **suddenly and is extremely painful**;\n- have problems speaking or remembering things;\n- lose your vision, or have blurred or double vision;\n- have a very high temperature and symptoms of meningitis;\n- cannot move, or have weakness in the arm, leg or face on one side of the body.\n\nMedlinePlus also advises calling emergency services for the worst headache of your life, or speech, vision or movement problems or loss of balance — especially if earlier migraines never caused them. A sudden, explosive headache needs medical attention right away because it may be due to a ruptured blood vessel in the brain. Headache with fever, stiff neck, nausea and vomiting, or newly starting headaches — especially over age 50 — also need prompt medical care (MedlinePlus)."
+    },
+    "sources": ["s2", "s3", "s4"]
+  },
+  "general": [
+    {
+      "heading": { "vi": "Đau nửa đầu (migraine) là gì?", "en": "What is migraine?" },
+      "body": {
+        "vi": "Theo NINDS, migraine là một tình trạng bệnh, **không chỉ là một cơn đau đầu nặng**. Một trong những triệu chứng thường gặp nhất của cơn migraine là đau nhói theo nhịp, mức vừa đến nặng, thường ở một bên đầu. MedlinePlus cho biết cơn có thể kèm buồn nôn, nôn, hoặc nhạy cảm với ánh sáng và âm thanh.\n\nTheo NHS, cơn migraine thường kéo dài từ 4 giờ đến 3 ngày. Chỉ một số người có **tiền triệu** (aura): theo NINDS, tiền triệu xuất hiện khoảng 10 phút đến một giờ trước cơn và thường không quá một giờ. Dạng thường gặp nhất là migraine không có tiền triệu (NINDS).",
+        "en": "According to NINDS, migraine is a health condition that is **more than having a bad headache**. One of the most common symptoms of a migraine episode is moderate to severe throbbing pain that usually happens on one side of the head. MedlinePlus says it may come with nausea, vomiting, or sensitivity to light and sound.\n\nAccording to the NHS, migraine attacks usually last between 4 hours and 3 days. Only some people have an **aura**: NINDS says auras appear about 10 minutes to an hour before the episode and usually last no more than an hour. The most common type is migraine without aura (NINDS)."
+      },
+      "sources": ["s1", "s2", "s3"]
+    },
+    {
+      "heading": { "vi": "Hiểu biết hiện nay về cơ chế và điều trị", "en": "What is known about cause and treatment" },
+      "body": {
+        "vi": "NHS viết rằng chưa biết nguyên nhân gây migraine, nhưng nó xảy ra khi có thay đổi ở dây thần kinh và mạch máu trong não. Theo NINDS, nghiên cứu hiện nay cho thấy cơn đau xảy ra khi tín hiệu thần kinh, các chất hóa học trong não và mạch máu không hoạt động bình thường; MedlinePlus ghi rằng chuỗi sự kiện chính xác vẫn chưa rõ.\n\nKhông có xét nghiệm đặc hiệu nào chứng minh một cơn đau đầu là migraine, và chỉ nhân viên y tế mới xác định được triệu chứng là do migraine hay một bệnh khác (MedlinePlus). Hiện chưa có cách chữa khỏi migraine, nhưng điều trị giúp kiểm soát triệu chứng (NINDS).",
+        "en": "The NHS says it is not known what causes migraine, but that it happens when there are changes to nerves and blood vessels in the brain. According to NINDS, current research shows that migraine head pain happens when nerve signals, brain chemicals and blood vessels are not working properly in the brain; MedlinePlus notes that the exact chain of events remains unclear.\n\nThere is no specific test to prove that a headache is a migraine, and only a health professional can determine whether symptoms are due to migraine or another condition (MedlinePlus). There is currently no cure for migraine, but treatments can help manage symptoms (NINDS)."
+      },
+      "sources": ["s1", "s2", "s3"]
+    }
+  ],
+  "symptoms": [
+    {
+      "pdfPage": 12,
+      "vi": "Lúc đầu chỉ đau ở một bên đầu, vùng trán, thái dương, ít khi ở vùng chẩm. Rồi dần dần có thể lan ra cả đầu hoặc đau bên nửa đầu đối diện.",
+      "en": "At first the pain is on one side of the head only, at the forehead or temple, rarely at the back of the head. Then it may gradually spread to the whole head or to the opposite half."
+    },
+    {
+      "pdfPage": 12,
+      "vi": "Những triệu chứng kèm theo là buồn nôn, rối loạn tuần hoàn như mạch chậm, huyết áp có thể hơi cao, nhạy cảm với các mùi. Cơn đau thường kéo dài từ vài giờ đến 3 ngày, mất đi vào ban đêm hoặc để lại cảm giác ê ẩm ở trong đầu ngày hôm sau.",
+      "en": "Accompanying symptoms are nausea, circulatory disturbances such as a slow pulse, possibly slightly raised blood pressure, and sensitivity to smells. The pain usually lasts from a few hours to 3 days, fading at night or leaving a dull ache in the head the next day."
+    }
+  ],
+  "methodQuotes": [
+    {
+      "pdfPage": 13,
+      "vi": "Phương pháp tác động cột sống Việt Nam căn cứ vào sự biến đổi nhiệt độ da, sự biến đổi về tiết cơ trên hệ cột sống, sự biến đổi của các đốt sống liên quan đến các triệu chứng bệnh và cảm giác khách quan trên các đốt sống đó để xác định các đốt sống trọng điểm và giải toả các trọng điểm đó để điều trị các triệu chứng của bệnh.",
+      "en": "The Vietnamese Spinal Impact method relies on changes in skin temperature, changes in the muscle segments along the spine, changes in the vertebrae related to the symptoms, and the objective sensations over those vertebrae, in order to identify key vertebrae and release those key points to treat the symptoms."
+    }
+  ],
+  "variants": [
+    {
+      "id": "trieu-chung-nay-dom-dom-mat",
+      "label": { "vi": "Nảy đom đóm mắt", "en": "Seeing flashes (\"fireflies\")" },
+      "quotes": [
+        {
+          "pdfPage": 13,
+          "vi": "Nhiệt độ da ta thấy vùng ngực trái, vai phải, sườn phải của bệnh nhân nóng cao. Liên quan đến các chức năng về tuần hoàn, hô hấp, gan rối loạn. Đốt sống trọng điểm là C6, T9,T10,T11.",
+          "en": "Skin temperature is high over the patient's left chest, right shoulder and right flank. Related to disturbed circulatory, respiratory and liver functions. The key vertebrae are C6, T9, T10, T11."
+        }
+      ]
+    },
+    {
+      "id": "trieu-chung-nang-dau-mat-ngu-buon",
+      "label": { "vi": "Nặng đầu, mất ngủ, buồn nôn, rối loạn tuần hoàn", "en": "Heavy head, insomnia, nausea, circulatory disturbance" },
+      "quotes": [
+        {
+          "pdfPage": 13,
+          "vi": "Nhiệt độ vùng ngực trái nóng cao. Liên quan đến các chức năng về tuần hoàn, hô hấp Đốt sống trọng điểm là T3,T6.",
+          "en": "Temperature is high over the left chest. Related to circulatory and respiratory functions. The key vertebrae are T3, T6."
+        }
+      ]
+    },
+    {
+      "id": "chi-tren-va-dau-ngon-tay-te",
+      "label": { "vi": "Tê bì chi trên và đầu ngón tay", "en": "Numbness of the arms and fingertips" },
+      "quotes": [
+        {
+          "pdfPage": 13,
+          "vi": "Nhiệt độ rối loạn vùng chẩm, cổ phải, mỏ ác (nóng cao); Liên quan đến chức năng phổi, dạ dày, đại tràng rối loạn. Đối sống trọng điểm là C7,L1,L3.",
+          "en": "Temperature is disturbed (high) over the back of the head, the right side of the neck and the epigastrium; related to disturbed lung, stomach and colon functions. The key vertebrae are C7, L1, L3."
+        }
+      ]
+    },
+    {
+      "id": "nguoi-met-hay-ngap-o-hoi",
+      "label": { "vi": "Mệt, hay ngáp, ợ hơi", "en": "Tiredness, frequent yawning, belching" },
+      "quotes": [
+        {
+          "pdfPage": 13,
+          "vi": "Nhiệt độ rối loạn vùng ngực trái. Liên quan đến chức năng đại tràng, tim mạch rối loạn. Trọng điểm là đốt sống T6, T7, T9",
+          "en": "Temperature is disturbed over the left chest. Related to disturbed colon and cardiovascular functions. The key vertebrae are T6, T7, T9."
+        }
+      ]
+    },
+    {
+      "id": "noi-kho-nghe-doc-khong-hieu",
+      "label": { "vi": "Nói khó, nghe đọc không hiểu", "en": "Difficulty speaking, not understanding speech or text" },
+      "quotes": [
+        {
+          "pdfPage": 13,
+          "vi": "Nhiệt độ rối loạn ở vùng chẩm. Liên quan đến chức năng đại tràng, tim mạch rối loạn. Trọng điểm là đốt sống S5.",
+          "en": "Temperature is disturbed over the back of the head. Related to disturbed colon and cardiovascular functions. The key vertebra is S5."
+        }
+      ]
+    },
+    {
+      "id": "nhuc-nua-dau-sau-lan-sang-hoc",
+      "label": { "vi": "Nhức nửa đầu sau, lan sang hốc mắt", "en": "Ache at the back of one side of the head, spreading to the eye socket" },
+      "quotes": [
+        {
+          "pdfPage": 14,
+          "vi": "Nhiệt độ rối loạn ở vùng đầu sau, hốc mắt và vùng vai phải, mỏ ác. Liên quan đến chức năng thần kinh và phổi rối loạn. Đốt sống trọng điểm là C1,C3,C5,C6,T11.",
+          "en": "Temperature is disturbed over the back of the head, the eye socket, the right shoulder and the epigastrium. Related to disturbed nervous and lung functions. The key vertebrae are C1, C3, C5, C6, T11."
+        }
+      ]
+    },
+    {
+      "id": "nhuc-dau-vung-thai-duong",
+      "label": { "vi": "Nhức đầu vùng thái dương", "en": "Ache at the temples" },
+      "quotes": [
+        {
+          "pdfPage": 14,
+          "vi": "Nhiệt độ rối loạn vùng vai phải, mỏ ác. Liên quan đến chức năng hô hấp và dạ dày rối loạn. Đốt sống trọng điểm là T11,L1.",
+          "en": "Temperature is disturbed over the right shoulder and the epigastrium. Related to disturbed respiratory and stomach functions. The key vertebrae are T11, L1."
+        }
+      ]
+    },
+    {
+      "id": "nhuc-dau-vung-tran-va-hoc-mat",
+      "label": { "vi": "Nhức đầu vùng trán và hốc mắt", "en": "Ache at the forehead and eye sockets" },
+      "quotes": [
+        {
+          "pdfPage": 14,
+          "vi": "Nhiệt độ rối loạn vùng vai phải. Liên quan đến chức năng hô hấp rối loạn. Đốt sống trọng điểm là T10,T11.",
+          "en": "Temperature is disturbed over the right shoulder. Related to disturbed respiratory function. The key vertebrae are T10, T11."
+        }
+      ]
+    },
+    {
+      "id": "mat-nhin-hinh-doi-sup-mi",
+      "label": { "vi": "Nhìn hình đôi, sụp mi", "en": "Double vision, drooping eyelid" },
+      "quotes": [
+        {
+          "pdfPage": 14,
+          "vi": "Nhiệt độ địa phương vùng mắt nóng cao. Liên quan đến chức năng thần kinh rối loạn. Đốt sống trọng điểm là C7.",
+          "en": "Local temperature around the eye is high. Related to disturbed nervous function. The key vertebra is C7."
+        }
+      ]
+    },
+    {
+      "id": "liet-nhe-chi-tren-va-noi-kho",
+      "label": { "vi": "Liệt nhẹ chi trên và nói khó", "en": "Mild weakness of the arm and difficulty speaking" },
+      "quotes": [
+        {
+          "pdfPage": 14,
+          "vi": "Nhiệt độ rối loạn vùng lưng trên. Liên quan đến chức năng tuần hoàn hô hấp rối loạn. Đốt sống trọng điểm là C6,T1.",
+          "en": "Temperature is disturbed over the upper back. Related to disturbed circulatory and respiratory functions. The key vertebrae are C6, T1."
+        }
+      ]
+    }
+  ],
+  "outOfScope": [],
+  "review": { "transcription": "pending", "mapping": "pending", "editor": "pending" }
+}

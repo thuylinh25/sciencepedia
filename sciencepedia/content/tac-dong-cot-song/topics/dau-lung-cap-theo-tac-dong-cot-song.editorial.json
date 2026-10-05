@@ -1,0 +1,124 @@
+{
+  "section": "dau-lung-cap",
+  "slug": "dau-lung-cap-theo-tac-dong-cot-song",
+  "title": {
+    "vi": "Đau lưng cấp theo phương pháp Tác động cột sống",
+    "en": "Acute back pain in the Spinal Impact method"
+  },
+  "summary": {
+    "vi": "Tài liệu Phương pháp Tác động Cột sống Việt Nam mô tả đau lưng cấp và các đốt sống mà phương pháp này chú ý — trích nguyên văn, đặt cạnh kiến thức y khoa có nguồn về đau lưng cấp và các dấu hiệu cần đi khám ngay.",
+    "en": "How the Vietnamese Spinal Impact method document describes acute back pain and the vertebrae it focuses on — quoted with page numbers, alongside sourced medical information on acute back pain and the warning signs that need urgent care."
+  },
+  "seoDescription": {
+    "vi": "Đau lưng cấp theo tài liệu Phương pháp Tác động Cột sống Việt Nam: triệu chứng, đốt sống T2, T3, T7, T8, L4, L5, S1 — kèm kiến thức y khoa và dấu hiệu cần đi khám.",
+    "en": "Acute back pain in the Vietnamese Spinal Impact method document: symptoms and vertebrae T2, T3, T7, T8, L4, L5, S1 — with sourced medical facts and red-flag symptoms."
+  },
+  "keywords": "đau lưng cấp, tác động cột sống, đốt sống, cột sống, thắt lưng, đau lưng",
+  "riskLevel": "normal",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Low back pain - acute",
+      "publisher": "MedlinePlus — U.S. National Library of Medicine",
+      "url": "https://medlineplus.gov/ency/article/007425.htm",
+      "tier": 2,
+      "accessed": "2026-10-05"
+    },
+    {
+      "id": "s2",
+      "title": "Back pain",
+      "publisher": "NHS",
+      "url": "https://www.nhs.uk/conditions/back-pain/",
+      "tier": 2,
+      "accessed": "2026-10-05"
+    },
+    {
+      "id": "s3",
+      "title": "Pain",
+      "publisher": "National Institute of Neurological Disorders and Stroke (NIH)",
+      "url": "https://www.ninds.nih.gov/health-information/disorders/back-pain",
+      "tier": 2,
+      "accessed": "2026-10-05"
+    }
+  ],
+  "safety": {
+    "heading": { "vi": "⚠️ Khi nào cần đi khám ngay", "en": "⚠️ When to get medical help right away" },
+    "body": {
+      "vi": "NHS khuyên gọi cấp cứu hoặc đến khoa cấp cứu nếu đau lưng đi kèm một trong các dấu hiệu sau:\n\n- đau, châm chích, yếu hoặc tê ở **cả hai chân**;\n- mất cảm giác quanh vùng sinh dục hoặc hậu môn;\n- thay đổi khi đi tiểu hoặc đại tiện, như khó tiểu, hoặc tiểu, đại tiện không tự chủ;\n- đau bắt đầu sau một tai nạn nghiêm trọng.\n\nMedlinePlus khuyên liên hệ nhân viên y tế ngay nếu đau lưng kèm sốt không rõ nguyên nhân, có tiền sử ung thư, đau lan xuống dưới đầu gối, đau nặng hơn khi nằm hoặc làm thức giấc ban đêm, yếu hoặc tê ở mông, đùi, chân hay vùng chậu, đi lại hoặc giữ thăng bằng khó khăn — và cả khi đợt đau đã kéo dài hơn 4 tuần.\n\nTheo NHS, rất hiếm khi đau lưng là dấu hiệu của một vấn đề nghiêm trọng như gãy xương, ung thư hay nhiễm trùng — nhưng chính vì thế các dấu hiệu trên cần được khám, không tự xử lý.",
+      "en": "The NHS advises calling emergency services or going to A&E if back pain comes with any of these:\n\n- pain, tingling, weakness or numbness in **both legs**;\n- loss of feeling around the genitals or anus;\n- changes in your bladder or bowels, such as difficulty peeing, or peeing or pooing yourself;\n- pain that started after a serious accident.\n\nMedlinePlus advises contacting a health professional right away for back pain with unexplained fever, a history of cancer, pain travelling below the knee, pain that is worse lying down or wakes you at night, weakness or numbness in the buttocks, thigh, leg or pelvis, or difficulty walking or keeping your balance — and also when an episode has lasted longer than 4 weeks.\n\nAccording to the NHS, back pain is very rarely a sign of a serious problem such as a broken bone, cancer or an infection — which is exactly why these signs need a medical examination rather than self-care."
+    },
+    "sources": ["s1", "s2"]
+  },
+  "general": [
+    {
+      "heading": { "vi": "Đau lưng cấp là gì?", "en": "What is acute back pain?" },
+      "body": {
+        "vi": "Theo MedlinePlus (Thư viện Y khoa Quốc gia Hoa Kỳ), đau thắt lưng là đau ở vùng lưng dưới, có thể kèm cứng lưng, giảm cử động và khó đứng thẳng. **Đau lưng cấp** kéo dài từ vài ngày đến vài tuần.\n\nCơn đau thường xuất hiện ngay sau khi nâng vật nặng, cử động đột ngột, ngồi lâu một tư thế, hoặc sau chấn thương, tai nạn. MedlinePlus cho biết nguyên nhân hay gặp nhất của đau thắt lưng cấp là tổn thương đột ngột ở cơ và dây chằng nâng đỡ lưng — co thắt cơ, căng hoặc rách cơ, dây chằng. NHS cũng nêu căng cơ là một nguyên nhân thường gặp.\n\nĐau lưng thường đỡ trong vài tuần (NHS); MedlinePlus ghi phần lớn người bệnh đỡ hoặc hồi phục trong 4 đến 6 tuần, nhiều khi sớm hơn. MedlinePlus cũng lưu ý rằng nằm nghỉ lâu trên giường không được khuyến cáo.",
+        "en": "According to MedlinePlus (U.S. National Library of Medicine), low back pain is pain felt in the lower back, possibly with stiffness, reduced movement and difficulty standing straight. **Acute back pain** lasts from a few days to a few weeks.\n\nIt usually starts just after lifting something heavy, moving suddenly, sitting in one position for a long time, or an injury or accident. MedlinePlus says acute low back pain is most often caused by a sudden injury to the muscles and ligaments that support the back — muscle spasm, or a strain or tear of muscles and ligaments. The NHS also names a pulled muscle (strain) as a common cause.\n\nBack pain usually improves within a few weeks (NHS); MedlinePlus says most people improve or recover within 4 to 6 weeks, often sooner. MedlinePlus also notes that bed rest is not recommended."
+      },
+      "sources": ["s1", "s2"]
+    },
+    {
+      "heading": { "vi": "Cấp tính và mạn tính khác nhau thế nào?", "en": "Acute versus chronic" },
+      "body": {
+        "vi": "Viện Quốc gia về Rối loạn Thần kinh và Đột quỵ Hoa Kỳ (NINDS) gọi **đau cấp** là cơn đau bắt đầu đột ngột và hết khi nguyên nhân được điều trị hoặc lành. Đau kéo dài hơn ba tháng, hoặc quá thời gian lành dự kiến, là **đau mạn tính** — và trong một số trường hợp, cơn đau cấp có thể kéo dài thành mạn tính.",
+        "en": "The U.S. National Institute of Neurological Disorders and Stroke (NINDS) describes **acute pain** as pain that starts suddenly and ends when its cause is treated or healed. Pain lasting longer than three months, or beyond the expected healing time, is **chronic pain** — and in some cases an acute pain condition can persist and become chronic."
+      },
+      "sources": ["s3"]
+    }
+  ],
+  "symptoms": [
+    {
+      "pdfPage": 2,
+      "vi": "Thường xuất hiện đột ngột sau một vận động quá mức hay một vận động trái tư thế nghe thấy cục một cái rồi thấy đau",
+      "en": "It usually appears suddenly after an excessive movement or a movement in an awkward posture: one hears a click and then feels pain"
+    },
+    {
+      "pdfPage": 2,
+      "vi": "Khi vừa bị (sau khi nghe tiếng cục) thì đau ít, sau đó tăng dần lên, có khi rất đau, hạn chế vận động như cúi, ngửa đi ngửa lại khó khăn, nằm khi trở mình cũng đau. Bệnh nhân thường đi trong tư thế giảm đau (đi cong người hoặc vẹo người sang một bên).",
+      "en": "Right after it happens (after the click) the pain is mild, then it gradually increases, sometimes becoming very painful; movement is limited, bending forward and backward is difficult, and turning over in bed also hurts. Patients often walk in a pain-relieving posture (bent over or leaning to one side)."
+    },
+    {
+      "pdfPage": 2,
+      "vi": "Mùa lạnh bị cảm phong hàn cũng có thể gây nên đau lưng cấp.",
+      "en": "In the cold season, catching a \"wind-cold\" chill can also cause acute back pain."
+    }
+  ],
+  "methodQuotes": [],
+  "variants": [
+    {
+      "id": "tham-kham",
+      "label": { "vi": "Tài liệu thăm khám thế nào", "en": "How the document examines the patient" },
+      "quotes": [
+        {
+          "pdfPage": 2,
+          "vi": "Về nhiệt độ: Tại vùng đau, chỗ đau nhiệt độ nóng cao và có những vùng nhiệt độ tương ứng (không phải chỗ đang đau) trên cột sống cũng nóng cao.",
+          "en": "Temperature: at the painful area the temperature is high, and there are corresponding temperature zones on the spine (not where it currently hurts) that are also hot."
+        }
+      ]
+    },
+    {
+      "id": "dieu-tri",
+      "label": { "vi": "Các trọng điểm tài liệu nêu", "en": "Key points named by the document" },
+      "quotes": [
+        {
+          "pdfPage": 2,
+          "vi": "Chú ý: Tại chỗ đau, điểm đau trên cột sống nhiệt độ nóng cao đang là vùng bệnh lý, chưa được tác động vào, phải tìm vùng tương ứng với nó trên cột sống để chữa. Nếu bệnh nhân đau không cúi được thường có điểm T2,3,7,8",
+          "en": "Note: at the painful spot, the painful point on the spine with a high temperature is the diseased zone and is not to be acted on yet; the corresponding zone on the spine must be found and treated instead. If the patient cannot bend forward because of pain, there is usually a point at T2, 3, 7, 8"
+        },
+        {
+          "pdfPage": 3,
+          "vi": "Nếu bệnh nhân đau không ngồi thẳng lưng được có trọng điểm L4,5 và S1.",
+          "en": "If the patient cannot sit up straight because of pain, the key points are L4, 5 and S1."
+        },
+        {
+          "pdfPage": 3,
+          "vi": "Nếu bệnh nhân bị ngoại cảm phong hàn không ra mồ hôi, lưng rất đau, vận động khó khăn … trọng điểm thường cũng có T2.3.",
+          "en": "If the patient has an external wind-cold chill without sweating, with severe back pain and difficulty moving … the key points also usually include T2, 3."
+        }
+      ]
+    }
+  ],
+  "outOfScope": [],
+  "review": { "transcription": "pending", "mapping": "pending", "editor": "pending" }
+}

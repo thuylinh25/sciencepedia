@@ -1,0 +1,70 @@
+# Bảng nguồn — dau-than-kinh-toa-theo-tac-dong-cot-song (bước 1: content-research)
+#
+# Lập 2026-10-05. Chỉ cho phần kiến thức chung + khung cảnh báo; lời tài liệu
+# Tác động cột sống ở sciencepedia/content/tac-dong-cot-song/source/pages/p07–p11.md.
+# Passage đọc thật bằng curl ngày 2026-10-05.
+#
+# CHÚ Ý: không nguồn nào ở đây nêu rễ thần kinh tạo nên dây thần kinh tọa.
+# Bài KHÔNG được viết câu đó như kiến thức chung. Tài liệu Tác động cột sống nói
+# "rễ L5 và rễ S1" — câu ấy chỉ xuất hiện dưới nhãn tài liệu.
+
+topic: Đau thần kinh tọa (kiến thức chung)
+slug: dau-than-kinh-toa-theo-tac-dong-cot-song
+accessed: 2026-10-05
+sufficient: true
+
+sources:
+  - id: s1
+    tier: 2
+    title: "Sciatica"
+    publisher: MedlinePlus Medical Encyclopedia — U.S. National Library of Medicine (NIH)
+    url: https://medlineplus.gov/ency/article/000686.htm
+    reviewed: 2024-08-27
+    passages:
+      - "Sciatica refers to pain, weakness, numbness, or tingling in the leg. It is caused by injury to or pressure on the sciatic nerve. Sciatica is a symptom of a medical problem. It is not a medical condition by itself."
+      - "This nerve starts in the lower back and runs down the back of each leg."
+      - "The pain most often occurs on one side of the body."
+      - "As sciatica is a symptom of a more specific medical condition, the underlying cause should be identified and treated."
+      - "Often, sciatica gets better on its own. But it is common for it to return."
+      - "Sciatica can lead to permanent numbness or weakness of your leg."
+      - "Contact your provider right away if you have: Unexplained fever with back pain; Back pain after a severe blow or fall; Redness or swelling on the back or spine; Pain traveling down your legs below the knee; Weakness or numbness in your buttocks, thigh, leg, or pelvis; Burning with urination or blood in your urine; Pain that is worse when you lie down, or awakens you at night; Severe pain and you cannot get comfortable; Loss of control of urine or stool (incontinence)"
+  - id: s2
+    tier: 2
+    title: "Sciatica"
+    publisher: NHS (UK)
+    url: https://www.nhs.uk/conditions/sciatica/
+    reviewed: 2024-12-03
+    passages:
+      - "Sciatica happens when the sciatic nerve, which runs from your lower back to your feet, is irritated or compressed. It usually gets better in a few weeks to a few months but can last longer."
+      - "The symptoms of sciatica usually affect your bottom and the back of one leg, often including your foot and toes."
+      - "You probably do not have sciatica if you only have back pain ."
+      - "a slipped disc , when a soft cushion of tissue between the bones in your spine pushes out – this is the most common cause of sciatica and is more likely to happen as you get older"
+      - "spinal stenosis – narrowing of the part of your spine where nerves pass through"
+      - "spondylolisthesis – when one of the bones in your spine slips out of position"
+      - "Immediate action required: Go to A&E or call 999 if you: have sciatica on both sides; have weakness or numbness in both legs that's severe or getting worse; have numbness around or under your genitals, or around your bottom (anus); find it hard to start peeing, cannot pee or cannot control when you pee – and this is not normal for you; do not notice when you need to poo or cannot control when you poo – and this is not normal for you"
+      - "These could be symptoms of a serious back problem that needs to be treated in hospital as soon as possible."
+  - id: s3
+    tier: 2
+    title: "Pain"
+    publisher: National Institute of Neurological Disorders and Stroke (NIH)
+    url: https://www.ninds.nih.gov/health-information/disorders/back-pain
+    reviewed: 2026-03-13
+    passages:
+      - "Neuropathic pain describes pain that is caused by nerve damage due to an injury or disease. Neuropathic pain sensations are often described as burning, tingling, shooting, or like electric shocks. Examples of conditions that cause neuropathic pain are diabetic neuropathy, shingles, and sciatica."
+
+key_facts:
+  - claim: "Đau thần kinh tọa là đau, yếu, tê hoặc châm chích ở chân do dây thần kinh tọa bị tổn thương hoặc chèn ép; là triệu chứng của một vấn đề khác, không phải bệnh riêng."
+    sources: [s1, s2]
+  - claim: "Dây thần kinh tọa bắt đầu từ thắt lưng, chạy dọc mặt sau mỗi chân (NHS: tới bàn chân)."
+    sources: [s1, s2]
+  - claim: "Nguyên nhân thường gặp nhất là thoát vị đĩa đệm (NHS); ngoài ra hẹp ống sống, trượt đốt sống."
+    sources: [s1, s2]
+  - claim: "Thường chỉ một bên; thường đỡ trong vài tuần đến vài tháng nhưng hay tái phát."
+    sources: [s1, s2]
+  - claim: "Cấp cứu khi đau hai bên, tê/yếu hai chân nặng hoặc nặng dần, tê vùng sinh dục–hậu môn, rối loạn tiểu tiện/đại tiện."
+    sources: [s1, s2]
+  - claim: "Là một ví dụ của đau do thần kinh (neuropathic pain)."
+    sources: [s3]
+conflicts: []
+gaps:
+  - "Thành phần rễ của dây thần kinh tọa: không có trong nguồn đã đọc — không viết như kiến thức chung."

@@ -35,6 +35,7 @@
         "bookPage": 1
        },
        "from": "prose",
+       "line": "Chú ý: Tại chỗ đau, điểm đau trên cột sống nhiệt độ nóng cao đang là vùng bệnh lý, chưa được tác động vào, phải tìm vùng tương ứng với nó trên cột sống để chữa. Nếu bệnh nhân đau không cúi được thường có điểm T2,3,7,8",
        "vertebrae": {
         "raw": "T2,3,7,8",
         "codes": [
@@ -68,6 +69,7 @@
         "bookPage": 2
        },
        "from": "prose",
+       "line": "trên cột sống để chữa. Nếu bệnh nhân đau không ngồi thẳng lưng được có trọng điểm L4,5 và S1.",
        "vertebrae": {
         "raw": "L4,5 và S1",
         "codes": [
@@ -97,6 +99,7 @@
         "bookPage": 2
        },
        "from": "prose",
+       "line": "Nếu bệnh nhân bị ngoại cảm phong hàn không ra mồ hôi, lưng rất đau, vận động khó khăn cần giải cảm mạnh bằng cách đánh cảm và xông để ra mồ hôi. Chữa bằng phương pháp Tác động cột sống Việt Nam cần giải toả những chỗ cơ co, trọng điểm thường cũng có T2.3.",
        "vertebrae": {
         "raw": "cũng có T2.3",
         "codes": [
@@ -137,7 +140,8 @@
       ],
       "regions": [],
       "issues": []
-     }
+     },
+     "variant": "dieu-tri"
     }
    ]
   },
@@ -196,6 +200,7 @@
         "bookPage": 4
        },
        "from": "prose",
+       "line": "Gai đôi là do bẩm sinh. Khi sinh ra đã có gai đôi rồi, thường là do mỏm gai sau đốt sống L4.5 hay S1 bị xẻ làm đôi. Khi còn trẻ, dây chằng trên gai sống và lớp cơ đệm trên đầu gai sống còn mềm thư nhuận nên chưa gây đau. Khi những cơ đó xơ co lại gây đau. Khi ngồi trùng gân cơ trên cột sống thì đỡ đau, khi vận động hay cúi cong lưng thường thấy đau. Có người bị đau do gai đôi đã mổ cắt mỏm gai đôi đi nhưng vẫn đau. Nguyên nhân gây đau là do cơ xơ co ở vùng đối xứng với L4, L5, S1 thường trọng điểm ở C1,3,4. Ngoài ra cần xác định thêm những vùng co cơ khác trên cột sống để chữa. Chữa tại L4.5 S1 là giai đoạn cuối cùng.",
        "vertebrae": {
         "raw": "C1,3,4",
         "codes": [
@@ -236,6 +241,7 @@
         "bookPage": 4
        },
        "from": "prose",
+       "line": "Thăm khám và điều trị: Đau lưng trên liên quan đến bệnh phổi. Ở phổi nhiệt độ thường nâng cao ở cổ phải, lưng trên. Trọng điểm thường ở T3.4.5 . Chữa cả 3 lớp ngoài, giữa, trong. Nếu đau liên quan đến bệnh về tim, thường nhiệt độ nóng cao ở cổ, ngực, vai trái và lưng trên. Trọng điểm thường có T2.4.5.6 chữa lực vừa, ở lớp ngoài và lớp giữa.",
        "vertebrae": {
         "raw": "T3.4.5",
         "codes": [
@@ -265,6 +271,7 @@
         "bookPage": 4
        },
        "from": "prose",
+       "line": "Thăm khám và điều trị: Đau lưng trên liên quan đến bệnh phổi. Ở phổi nhiệt độ thường nâng cao ở cổ phải, lưng trên. Trọng điểm thường ở T3.4.5 . Chữa cả 3 lớp ngoài, giữa, trong. Nếu đau liên quan đến bệnh về tim, thường nhiệt độ nóng cao ở cổ, ngực, vai trái và lưng trên. Trọng điểm thường có T2.4.5.6 chữa lực vừa, ở lớp ngoài và lớp giữa.",
        "vertebrae": {
         "raw": "T2.4.5.6",
         "codes": [
@@ -298,6 +305,7 @@
         "bookPage": 4
        },
        "from": "prose",
+       "line": "Bệnh về đại tràng, thường gây đau vùng thắt lưng, vùng cùng. Có khi cả vùng giữa lưng cũng đau. Nhiệt độ rối loạn thường ở vùng chẩm, mỏ ác, giữa lưng, thắt lưng nóng cao. Vùng trọng khu gồm có các đốt sống T10,12 L1->L5 S1->5.",
        "vertebrae": {
         "raw": "T10,12 L1->L5 S1->5",
         "codes": [
@@ -456,7 +464,8 @@
       ],
       "regions": [],
       "issues": []
-     }
+     },
+     "variant": "dau-lung-do-thoai-hoa-voi-hoa"
     },
     {
      "line": "đốt sống L5 hay thắt lưng cùng hoá đốt S1: Tại vùng L5, S1 nhiệt độ cao cơ co trên gai. Phải xác định vùng cơ co tương ứng trên cột sống để chữa. Có trường hợp cơ xơ co lên cả vùng T1,2,3.",
@@ -490,7 +499,8 @@
       ],
       "regions": [],
       "issues": []
-     }
+     },
+     "variant": "dau-lung-do-cung-hoa"
     },
     {
      "line": "gây đau vùng thắt lưng cùng và vùng hông, có trường hợp đau xuống cả đùi, chân. Vận động thì đỡ đau. Sáng lúc mới ngủ dậy thì đau, nằm nghỉ lâu ở một tư thế lúc trở mình cũng đau. Nếu đau lâu ngày cơ vùng L4,5 và vùng hông sẽ nhược đi. Về nhiệt độ. Vùng L4.5 và vùng cùng thường nóng cao.",
@@ -512,7 +522,8 @@
       ],
       "regions": [],
       "issues": []
-     }
+     },
+     "variant": "viem-khop-cung-chau"
     },
     {
      "line": "Gai đôi là do bẩm sinh. Khi sinh ra đã có gai đôi rồi, thường là do mỏm gai sau đốt sống L4.5 hay S1 bị xẻ làm đôi. Khi còn trẻ, dây chằng trên gai sống và lớp cơ đệm trên đầu gai sống còn mềm thư nhuận nên chưa gây đau. Khi những cơ đó xơ co lại gây đau. Khi ngồi trùng gân cơ trên cột sống thì đỡ đau, khi vận động hay cúi cong lưng thường thấy đau. Có người bị đau do gai đôi đã mổ cắt mỏm gai đôi đi nhưng vẫn đau. Nguyên nhân gây đau là do cơ xơ co ở vùng đối xứng với L4, L5, S1 thường trọng điểm ở C1,3,4. Ngoài ra cần xác định thêm những vùng co cơ khác trên cột sống để chữa. Chữa tại L4.5 S1 là giai đoạn cuối cùng.",
@@ -538,7 +549,8 @@
       ],
       "regions": [],
       "issues": []
-     }
+     },
+     "variant": "dau-lung-do-gai-doi"
     },
     {
      "line": "Các triệu trứng về thận và tiết niệu như : Viêm cầu thận, đái rắt, đái buốt, đái đỏ có thể gây đau vùng giữa lưng, thắt lưng. Nhiệt độ rối loạn, thường co thắt lưng phải, hạ sườn phải, vùng mỏ ác nóng cao, đốt sống rối loạn thường là T10, T12, L1, L3,S3.",
@@ -572,7 +584,8 @@
       ],
       "regions": [],
       "issues": []
-     }
+     },
+     "variant": "dau-lung-lien-quan-den-benh-noi"
     },
     {
      "line": "Đau lưng do lao đốt sống thường hay bị ở đốt sống T7, T8. Bệnh liên quan đến phổi, ấn vào thấy cơ mềm hơn bình thường, có nhiều sợi xơ, cảm giác dưới đầu ngón tay có mủ. Bệnh nhân thấy đau chói khi bị ấn vào đốt sống bệnh lý. Chụp phim XQ thấy có những đám hang hốc ăn cả vào xương.",
@@ -594,7 +607,8 @@
       ],
       "regions": [],
       "issues": []
-     }
+     },
+     "variant": "dau-lung-do-nhiem-khuan-lao-dot"
     }
    ]
   },
@@ -643,6 +657,7 @@
         "bookPage": 7
        },
        "from": "prose",
+       "line": "Khi đã xác định được vùng có trọng điểm (thường nơi đó là nguyên uỷ của cơ xơ rãnh sống và cơ thẳng lưng) ta bảo bệnh nhân ngồi trên ghế (ghế dùng để cho bệnh nhân ngồi chữa bệnh) từ từ cúi xuống, hai tay với theo hai chân) khi vùng có trọng điểm và vùng cơ co lộ ra (hiện rõ ra) ta bảo bệnh nhân dừng lại. Thầy thuốc dùng ngón tay cái bật ngang chỗ cơ co. Trọng điểm thường ở vùng T2 T,3T7 T8.",
        "vertebrae": {
         "raw": "vùng T2 T,3T7 T8",
         "codes": [
@@ -766,7 +781,8 @@
       ],
       "regions": [],
       "issues": []
-     }
+     },
+     "variant": "cach-xac-dinh-cac-thong-diem"
     },
     {
      "line": "Tư thế bệnh nhân: Bệnh nhân đứng thẳng, hai chân rộng bằng hai vai. Dùng thước dây đo từ S1 lên 10cm. Giữ chặt đầu dây phía trên, bảo bệnh nhân từ từ cúi xuống tối đa theo mức của bệnh nhân. Đo từ S1 lên dến đầu dưới của thước dây, nếu dây co lên 3,5cm đối với nữ là bình thường,5,5 cm đối với nam là bình thường. Nhỏ hơn chỉ số trên là bị hạn chế.",
@@ -784,7 +800,8 @@
       ],
       "regions": [],
       "issues": []
-     }
+     },
+     "variant": "dau-hieu-gian-cot-song-han-che"
     },
     {
      "line": "Người bị đau dây thần kinh hông hay đi trong tư thế giảm đau vẹo sang một bên. Không chữa ngay ở L4, L5 và S1,S2 được mà phải áp dụng phương thức co cơ tương ứng để chữa từ trên lưng trên xuống. Chữa ở L4.5 và S1.2 là giai đoạn cuối cùng. Có trường hợp chỉ phải xử lý nhẹ nhàng ở L4.5 và S1.2",
@@ -814,7 +831,8 @@
       ],
       "regions": [],
       "issues": []
-     }
+     },
+     "variant": "dau-hieu-di-nhanh-han-che"
     }
    ]
   },
@@ -843,6 +861,7 @@
         "bookPage": 12
        },
        "from": "prose",
+       "line": "Đốt sống trọng điểm là C6, T9,T10,T11. Tuỳ theo hình thái của trọng điểm mà áp dụng các thủ thuật cho thích hợp.",
        "vertebrae": {
         "raw": "C6, T9,T10,T11",
         "codes": [
@@ -887,6 +906,7 @@
         "bookPage": 12
        },
        "from": "prose",
+       "line": "Đốt sống trọng điểm là T3,T6.",
        "vertebrae": {
         "raw": "T3,T6",
         "codes": [
@@ -923,6 +943,7 @@
         "bookPage": 12
        },
        "from": "prose",
+       "line": "Đối sống trọng điểm là C7,L1,L3.",
        "vertebrae": {
         "raw": "C7,L1,L3",
         "codes": [
@@ -963,6 +984,7 @@
         "bookPage": 12
        },
        "from": "prose",
+       "line": "Trọng điểm là đốt sống T6, T7, T9",
        "vertebrae": {
         "raw": "đốt sống T6, T7, T9",
         "codes": [
@@ -1003,6 +1025,7 @@
         "bookPage": 12
        },
        "from": "prose",
+       "line": "Trọng điểm là đốt sống S5.",
        "vertebrae": {
         "raw": "đốt sống S5",
         "codes": [
@@ -1035,6 +1058,7 @@
         "bookPage": 13
        },
        "from": "prose",
+       "line": "Đốt sống trọng điểm là C1,C3,C5,C6,T11.",
        "vertebrae": {
         "raw": "C1,C3,C5,C6,T11",
         "codes": [
@@ -1083,6 +1107,7 @@
         "bookPage": 13
        },
        "from": "prose",
+       "line": "Đốt sống trọng điểm là T11,L1.",
        "vertebrae": {
         "raw": "T11,L1",
         "codes": [
@@ -1119,6 +1144,7 @@
         "bookPage": 13
        },
        "from": "prose",
+       "line": "Đốt sống trọng điểm là T10,T11.",
        "vertebrae": {
         "raw": "T10,T11",
         "codes": [
@@ -1155,6 +1181,7 @@
         "bookPage": 13
        },
        "from": "prose",
+       "line": "Đốt sống trọng điểm là C7.",
        "vertebrae": {
         "raw": "C7",
         "codes": [
@@ -1187,6 +1214,7 @@
         "bookPage": 13
        },
        "from": "prose",
+       "line": "Đốt sống trọng điểm là C6,T1.",
        "vertebrae": {
         "raw": "C6,T1",
         "codes": [
@@ -3181,6 +3209,7 @@
         "bookPage": 18
        },
        "from": "prose",
+       "line": "Khi tác động cho bệnh nhân có chứng trạng là huyết áp cao thì không được chữa vùng chẩm và từ C1; 2; 3",
        "vertebrae": {
         "raw": "C1; 2; 3",
         "codes": [
@@ -3210,6 +3239,7 @@
         "bookPage": 18
        },
        "from": "prose",
+       "line": "Tập trung vào C7; T1; T2; T3 bên phải",
        "vertebrae": {
         "raw": "C7; T1; T2; T3 bên phải",
         "codes": [
@@ -3249,6 +3279,7 @@
         "bookPage": 18
        },
        "from": "prose",
+       "line": "Thận trọng khi chữa T6; T10; và L3",
        "vertebrae": {
         "raw": "T6; T10; và L3",
         "codes": [
@@ -3289,7 +3320,8 @@
       ],
       "regions": [],
       "issues": []
-     }
+     },
+     "variant": "benh-huyet-ap-cao"
     },
     {
      "line": "HA do thượng thận ....T10 F",
@@ -3307,7 +3339,8 @@
       ],
       "regions": [],
       "issues": []
-     }
+     },
+     "variant": "benh-huyet-ap-cao"
     },
     {
      "line": "HA do tiết niệu .........L3 F",
@@ -3325,7 +3358,8 @@
       ],
       "regions": [],
       "issues": []
-     }
+     },
+     "variant": "benh-huyet-ap-cao"
     },
     {
      "line": "Các bệnh nhân có Tâm trương (tối thiểu) cần phải điều chỉnh thì tác động T3 bên phải.",
@@ -3343,7 +3377,8 @@
       ],
       "regions": [],
       "issues": []
-     }
+     },
+     "variant": "benh-huyet-ap-cao"
     }
    ]
   },
@@ -3624,6 +3659,7 @@
         "bookPage": 20
        },
        "from": "prose",
+       "line": "Trung tâm điều nhiệt vùng đầu, vùng mỏ ác. Giải tỏa trọng điểm các đốt sống cổ và L1.",
        "vertebrae": {
         "raw": "các đốt sống cổ và L1",
         "codes": [
@@ -3647,6 +3683,7 @@
         "bookPage": 20
        },
        "from": "prose",
+       "line": "Trung tâm điều nhiệt vùng đầu, vùng mỏ ác. Giải tỏa trọng điểm các đốt sống cổ và L1.",
        "vertebrae": {
         "raw": "đốt sống cổ và L1",
         "codes": [
@@ -3804,6 +3841,7 @@
         "bookPage": 20
        },
        "from": "prose",
+       "line": "Trung tâm điều nhiệt vùng đầu, mỏ ác và giữa lưng. Giải tỏa các đốt sống cổ, T12 và L1.",
        "vertebrae": {
         "raw": "đốt sống cổ, T12 và L1",
         "codes": [
@@ -3883,6 +3921,7 @@
         "bookPage": 21
        },
        "from": "prose",
+       "line": "Trung tâm điều nhiệt vùng nửa bên đầu và vai phải, giải tỏa các đốt sống cổ và T11.",
        "vertebrae": {
         "raw": "đốt sống cổ và T11",
         "codes": [
@@ -3958,6 +3997,7 @@
         "bookPage": 21
        },
        "from": "prose",
+       "line": "Trung tâm điều nhiệt vùng đầu và vai phải, giải tỏa trọng điểm các đốt sống cổ và T11.",
        "vertebrae": {
         "raw": "các đốt sống cổ và T11",
         "codes": [
@@ -3981,6 +4021,7 @@
         "bookPage": 21
        },
        "from": "prose",
+       "line": "Trung tâm điều nhiệt vùng đầu và vai phải, giải tỏa trọng điểm các đốt sống cổ và T11.",
        "vertebrae": {
         "raw": "đốt sống cổ và T11",
         "codes": [
@@ -4056,6 +4097,7 @@
         "bookPage": 21
        },
        "from": "prose",
+       "line": "Giải tỏa trọng điểm các đốt sống cổ và T11",
        "vertebrae": {
         "raw": "các đốt sống cổ và T11",
         "codes": [
@@ -4079,6 +4121,7 @@
         "bookPage": 21
        },
        "from": "prose",
+       "line": "Giải tỏa trọng điểm các đốt sống cổ và T11",
        "vertebrae": {
         "raw": "đốt sống cổ và T11",
         "codes": [
@@ -4879,6 +4922,7 @@
         "bookPage": 24
        },
        "from": "prose",
+       "line": "Ghi chú: Đau đầu do tăng huyết áp cần tác động T1, T2 ; thận trọng khi tác động ở T6, T10, L3 bên phải",
        "vertebrae": {
         "raw": "T6, T10, L3 bên phải",
         "codes": [
@@ -4913,6 +4957,7 @@
         "bookPage": 24
        },
        "from": "prose",
+       "line": "Ghi chú: Đau đầu do tăng huyết áp cần tác động T1, T2 ; thận trọng khi tác động ở T6, T10, L3 bên phải",
        "vertebrae": {
         "raw": "T1, T2",
         "codes": [
@@ -6622,6 +6667,7 @@
         "bookPage": 29
        },
        "from": "prose",
+       "line": "Những người có bệnh sơ cứng động mạch vành tim thì không được tác động ở C1, C2, C3, C4.",
        "vertebrae": {
         "raw": "C1, C2, C3, C4",
         "codes": [
@@ -6655,6 +6701,7 @@
         "bookPage": 29
        },
        "from": "prose",
+       "line": "Những người bệnh huyết áp cao tránh C1, C2, thận trọng T6, T10 và L3 phải.",
        "vertebrae": {
         "raw": "C1, C2",
         "codes": [
@@ -6680,6 +6727,7 @@
         "bookPage": 29
        },
        "from": "prose",
+       "line": "Những người bệnh huyết áp cao tránh C1, C2, thận trọng T6, T10 và L3 phải.",
        "vertebrae": {
         "raw": "T6, T10 và L3 phải",
         "codes": [
@@ -6714,6 +6762,7 @@
         "bookPage": 29
        },
        "from": "prose",
+       "line": "Đau đầu giãn đồng tử, mắt mờ tránh tác động C1, C2. Co đồng tử, mắt mờ thận trọng C7, D1.",
        "vertebrae": {
         "raw": "C1, C2",
         "codes": [
@@ -6739,6 +6788,7 @@
         "bookPage": 29
        },
        "from": "prose",
+       "line": "Đau đầu giãn đồng tử, mắt mờ tránh tác động C1, C2. Co đồng tử, mắt mờ thận trọng C7, D1.",
        "vertebrae": {
         "raw": "C7, D1",
         "codes": [
@@ -8123,7 +8173,8 @@
       ],
       "regions": [],
       "issues": []
-     }
+     },
+     "variant": "nhung-trieu-chung-dau-va-cac-cam"
     }
    ]
   },
@@ -9178,6 +9229,7 @@
         "bookPage": 35
        },
        "from": "prose",
+       "line": "Nhiệt độ vùng lưng trên và ngực trái nóng, nhưng không phải rối loạn tim mà là rối loạn động mạch. Trọng điểm : Tập trung giải quyết C7, T1 ; làm cho mạch giảm, thuộc tam giác 2 xuống cơ hai vai, hai tay, hai hõm cổ một đẩy, một kéo, chữa xuống tới T4, L5",
        "vertebrae": {
         "raw": "C7, T1 ; là",
         "codes": [
@@ -9214,6 +9266,7 @@
         "bookPage": 35
        },
        "from": "prose",
+       "line": "Nhiệt độ thường nóng cao vùng thắt lưng và rốn, chức năng rối loạn là Thận, Tim và Ruột non. Các đốt sống TĐ : C6,T9,L3,S3",
        "vertebrae": {
         "raw": "C6,T9,L3,S3",
         "codes": [
@@ -9247,6 +9300,7 @@
         "bookPage": 35
        },
        "from": "prose",
+       "line": "Khi sốt rét từ trong ruột rét ra gây khó thở, khi rét ta đặt tay trên ĐS để áp dụng phương thức đối động. Thường thấy trọng điểm ở C6,T9,L3,S3 Trước tiên giải S3 theo dõi nhiệt độ ở rốn, tiếp theo giải quyết C6 liên quan tuyến cận giáp để cân bằng can xi, giảm co giật, tiếp tục đến T9 để điều hòa nhịp tim, sau đó đến L3 liên quan đến mạch nối lớn, động viên sức đề kháng của cơ thể, tiêu diệt vi trùng sốt rét.",
        "vertebrae": {
         "raw": "C6,T9,L3,S3",
         "codes": [
@@ -9291,6 +9345,7 @@
         "bookPage": 36
        },
        "from": "prose",
+       "line": "Đốt sống trọng điểm là C3.",
        "vertebrae": {
         "raw": "C3",
         "codes": [
@@ -9357,6 +9412,7 @@
         "bookPage": 36
        },
        "from": "prose",
+       "line": "Liên quan đến chức năng Thận, rối loạn thân nhiệt nên tập trung T7 để điều nhiệt thắt lưng.",
        "vertebrae": {
         "raw": "T7",
         "codes": [
@@ -9435,6 +9491,7 @@
         "bookPage": 36
        },
        "from": "prose",
+       "line": "Đốt sống trọng điểm chủ yếu S3",
        "vertebrae": {
         "raw": "S3",
         "codes": [
@@ -9493,6 +9550,7 @@
         "bookPage": 36
        },
        "from": "prose",
+       "line": "Đốt sống TĐ là T5,T10,T12, L1",
        "vertebrae": {
         "raw": "T5,T10,T12, L1",
         "codes": [
@@ -9551,6 +9609,7 @@
         "bookPage": 36
        },
        "from": "prose",
+       "line": "Đốt sống TĐ T10",
        "vertebrae": {
         "raw": "T10",
         "codes": [
@@ -9881,7 +9940,8 @@
       ],
       "regions": [],
       "issues": []
-     }
+     },
+     "variant": "tre-em-sot-cao"
     },
     {
      "line": "Nhiệt độ vùng lưng trên và ngực trái nóng, nhưng không phải rối loạn tim mà là rối loạn động mạch. Trọng điểm : Tập trung giải quyết C7, T1 ; làm cho mạch giảm, thuộc tam giác 2 xuống cơ hai vai, hai tay, hai hõm cổ một đẩy, một kéo, chữa xuống tới T4, L5",
@@ -9903,7 +9963,8 @@
       ],
       "regions": [],
       "issues": []
-     }
+     },
+     "variant": "sot-ret-con"
     },
     {
      "line": "Khi sốt rét từ trong ruột rét ra gây khó thở, khi rét ta đặt tay trên ĐS để áp dụng phương thức đối động. Thường thấy trọng điểm ở C6,T9,L3,S3 Trước tiên giải S3 theo dõi nhiệt độ ở rốn, tiếp theo giải quyết C6 liên quan tuyến cận giáp để cân bằng can xi, giảm co giật, tiếp tục đến T9 để điều hòa nhịp tim, sau đó đến L3 liên quan đến mạch nối lớn, động viên sức đề kháng của cơ thể, tiêu diệt vi trùng sốt rét.",
@@ -9933,7 +9994,8 @@
       ],
       "regions": [],
       "issues": []
-     }
+     },
+     "variant": "sot-ret"
     },
     {
      "line": "Đầu tiên xử lý T12, L1 sau đó mới giải quyết T5,T10",
@@ -9963,7 +10025,8 @@
       ],
       "regions": [],
       "issues": []
-     }
+     },
+     "variant": "sot-trong-nguoi-nong-chi-muon-uong"
     }
    ]
   },
@@ -11373,6 +11436,7 @@
         "bookPage": 42
        },
        "from": "prose",
+       "line": "nhiệt độ rối loạn vùng chẩm, vùng rốn, vùng thắt lưng. Đốt sống trọng điểm là T12. Chú ý chữa nhẹ từ lớp ngoài.",
        "vertebrae": {
         "raw": "T12",
         "codes": [
@@ -11404,6 +11468,7 @@
         "bookPage": 42
        },
        "from": "prose",
+       "line": "nhiệt độ rối loạn vùng chẩm, vùng rốn, vùng mỏ ác, vùng vai phải, sườn phải, giữa lưng. Các đốt sống trọng điểm là T8,T11,T12,L5. Chữa nhẹ từ lớp ngoài tới lớp trong.",
        "vertebrae": {
         "raw": "T8,T11,T12,L5",
         "codes": [
@@ -11447,6 +11512,7 @@
         "bookPage": 42
        },
        "from": "prose",
+       "line": "nhiệt độ vùng mỏ ác biến đổi. Đốt sống vùng trọng điểm T7, T8. Chữa nhẹ từ lớp ngoài.",
        "vertebrae": {
         "raw": "T7, T8",
         "codes": [
@@ -11482,6 +11548,7 @@
         "bookPage": 42
        },
        "from": "prose",
+       "line": "nhiệt độ vùng mỏ ác rối loạn. Đốt sống trọng điểm L1,L2. Chữa từ lớp ngoài vào lớp trong.",
        "vertebrae": {
         "raw": "L1,L2",
         "codes": [
@@ -11517,6 +11584,7 @@
         "bookPage": 42
        },
        "from": "prose",
+       "line": "nhiệt độ rối loạn vùng chẩm và thắt lưng. Đốt sống có trọng điểm là T10,L1.2.3.4.5, S1.2.3.4.",
        "vertebrae": {
         "raw": "T10,L1.2.3.4.5, S1.2.3.4",
         "codes": [
@@ -11584,6 +11652,7 @@
         "bookPage": 42
        },
        "from": "prose",
+       "line": "nhiệt độ rối loạn vùng giữa lưng. Đốt sống trọng điểm T12. Chữa từ lớp ngoài đến lớp trong.",
        "vertebrae": {
         "raw": "T12",
         "codes": [
@@ -11615,6 +11684,7 @@
         "bookPage": 42
        },
        "from": "prose",
+       "line": "nhiệt độ vùng ngực trái, mỏ ác rối loạn. Đốt sống có trọng điểm T5.6.7.11.12. Chữa cả 3 lớp ngoài, giữa, trong.",
        "vertebrae": {
         "raw": "T5.6.7.11.12",
         "codes": [
@@ -11662,6 +11732,7 @@
         "bookPage": 42
        },
        "from": "prose",
+       "line": "Nhiệt độ rối loạn vùng mỏ ác đốt sống có trọng điểm là T1.2.3.5.6. Chữa lớp ngoài và lớp giữa.",
        "vertebrae": {
         "raw": "T1.2.3.5.6",
         "codes": [
@@ -11709,6 +11780,7 @@
         "bookPage": 42
        },
        "from": "prose",
+       "line": "nhiệt độ rối loạn vùng ngực trái. Đốt sống có trọng điểm là T6.7.8.9. Chữa từ lớp ngoài vào lớp trong./.",
        "vertebrae": {
         "raw": "T6.7.8.9",
         "codes": [

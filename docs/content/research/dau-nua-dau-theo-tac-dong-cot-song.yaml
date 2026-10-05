@@ -1,0 +1,75 @@
+# Bảng nguồn — dau-nua-dau-theo-tac-dong-cot-song (bước 1: content-research)
+#
+# Lập 2026-10-05. Chỉ cho phần kiến thức chung + khung cảnh báo; lời tài liệu
+# Tác động cột sống ở sciencepedia/content/tac-dong-cot-song/source/pages/p12–p14.md.
+# Passage đọc thật bằng curl ngày 2026-10-05; WHO fact sheet bị chặn.
+
+topic: Đau nửa đầu / migraine (kiến thức chung)
+slug: dau-nua-dau-theo-tac-dong-cot-song
+accessed: 2026-10-05
+sufficient: true
+
+sources:
+  - id: s1
+    tier: 2
+    title: "Migraine"
+    publisher: National Institute of Neurological Disorders and Stroke (NIH)
+    url: https://www.ninds.nih.gov/health-information/disorders/migraine
+    reviewed: 2026-08-10
+    passages:
+      - "Migraine is a health condition that is more than having a bad headache ."
+      - "One of the most common symptoms of a migraine episode is moderate to severe throbbing pain that usually happens on one side of the head. Current research shows that migraine-associated head pain happens when nerve signals, brain chemicals, and blood vessels aren’t working properly in the brain."
+      - "Migraine episodes may last from hours to days and make daily life hard."
+      - "Only some people living with migraine episodes have an aura. Auras appear about 10 minutes to an hour before the actual episode, and usually last no more than an hour."
+      - "The most common type of migraine is migraine without aura."
+      - "There is currently no cure for migraine, but treatments can help manage symptoms."
+  - id: s2
+    tier: 2
+    title: "Migraine"
+    publisher: MedlinePlus Medical Encyclopedia — U.S. National Library of Medicine (NIH)
+    url: https://medlineplus.gov/ency/article/000709.htm
+    reviewed: 2025-02-11
+    passages:
+      - "A migraine is a type of headache. It may occur with symptoms such as nausea, vomiting, or sensitivity to light and sound. In most people, a throbbing pain is felt only on one side of the head."
+      - "A migraine headache is caused by abnormal brain activity. This activity can be triggered by many things. But the exact chain of events remains unclear."
+      - "Only your health care provider can determine if your symptoms are due to a migraine disorder or other condition."
+      - "There is no specific test to prove that your headache is actually a migraine."
+      - "Call 911 or the local emergency number if: You are experiencing the worst headache of your life. You have speech, vision, or movement problems or loss of balance, especially if you have not had these symptoms with a migraine before. A headache starts suddenly."
+  - id: s3
+    tier: 2
+    title: "Migraine"
+    publisher: NHS (UK)
+    url: https://www.nhs.uk/conditions/migraine/
+    passages:
+      - "Migraine attacks usually last between 4 hours and 3 days"
+      - "Aura symptoms should not last for longer than 1 hour."
+      - "It's not known what causes migraine, but it happens when there are changes to nerves and blood vessels in the brain."
+      - "Immediate action required: Call 999 if you or your child: have a headache that came on suddenly and is extremely painful; have problems speaking or remembering things; lose your vision, or have blurred or double vision; have a very high temperature and symptoms of meningitis; cannot move or have weakness in the arms or legs on 1 side of your body, or 1 side of your face"
+  - id: s4
+    tier: 2
+    title: "Headache"
+    publisher: MedlinePlus Medical Encyclopedia — U.S. National Library of Medicine (NIH)
+    url: https://medlineplus.gov/ency/article/003024.htm
+    reviewed: 2025-10-27
+    passages:
+      - "Your headache comes on suddenly and is explosive or violent. This kind of headache needs medical attention right away. It may be due to a ruptured blood vessel in the brain."
+      - "You also have a fever, stiff neck, nausea, and vomiting with your headache."
+      - "You just started getting headaches, especially if you are older than 50."
+
+key_facts:
+  - claim: "Migraine là một tình trạng bệnh, không chỉ là cơn đau đầu nặng; đau thường nhói theo nhịp, vừa đến nặng, thường ở một bên đầu."
+    sources: [s1, s2]
+  - claim: "Cơn thường kéo dài từ 4 giờ đến 3 ngày (NHS); NINDS: vài giờ đến vài ngày."
+    sources: [s1, s3]
+  - claim: "Tiền triệu (aura) chỉ có ở một số người, xuất hiện khoảng 10 phút đến 1 giờ trước cơn, thường không quá 1 giờ."
+    sources: [s1, s3]
+  - claim: "Cơ chế chưa rõ hoàn toàn; nghiên cứu hiện nay liên hệ cơn đau với tín hiệu thần kinh, chất hóa học não và mạch máu."
+    sources: [s1, s2, s3]
+  - claim: "Hiện chưa có cách chữa khỏi; điều trị giúp kiểm soát triệu chứng."
+    sources: [s1]
+  - claim: "Gọi cấp cứu khi: đau đầu đột ngột, dữ dội; khó nói, mất thị lực hoặc nhìn đôi; yếu tay chân hoặc mặt một bên; sốt cao kèm dấu hiệu viêm màng não."
+    sources: [s2, s3, s4]
+conflicts:
+  - "Thời lượng cơn: NHS nêu số cụ thể (4 giờ–3 ngày), NINDS nói 'hours to days'. Không mâu thuẫn — dùng số của NHS, ghi nguồn."
+gaps:
+  - "WHO fact sheet Headache disorders bị chặn — không dùng."

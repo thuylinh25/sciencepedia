@@ -1,0 +1,68 @@
+# Bảng nguồn — dau-lung-cap-theo-tac-dong-cot-song (bước 1: content-research)
+#
+# Lập 2026-10-05. Bảng này CHỈ phục vụ phần "kiến thức chung" và khung cảnh báo
+# của bài (docs/content-rules.md, "Tác động cột sống"). Lời của tài liệu Phương
+# pháp Tác động Cột sống Việt Nam KHÔNG nằm ở đây — nó là trích dẫn có trang, nguồn
+# ở sciencepedia/content/tac-dong-cot-song/source/pages/p02–p03.md.
+#
+# Mọi passage đọc thật bằng curl (UA trình duyệt) ngày 2026-10-05; WebFetch bị 403
+# ở NINDS. Trang NINDS "back-pain" nay chuyển hướng về trang chung "Pain".
+
+topic: Đau lưng cấp (kiến thức chung)
+slug: dau-lung-cap-theo-tac-dong-cot-song
+accessed: 2026-10-05
+sufficient: true
+
+sources:
+  - id: s1
+    tier: 2
+    title: "Low back pain - acute"
+    publisher: MedlinePlus Medical Encyclopedia — U.S. National Library of Medicine (NIH)
+    url: https://medlineplus.gov/ency/article/007425.htm
+    reviewed: 2024-06-17   # "Internal review and update on 07/01/2025"
+    passages:
+      - "Low back pain refers to pain that you feel in your lower back. You may also have back stiffness, decreased movement of the lower back, and difficulty standing straight."
+      - "Acute back pain can last for a few days to a few weeks."
+      - "You will usually first feel back pain just after you lift a heavy object, move suddenly, sit in one position for a long time, or have an injury or accident."
+      - "Acute low back pain is most often caused by a sudden injury to the muscles and ligaments supporting the back. The pain may be caused by muscle spasms or a strain or tear in the muscles and ligaments."
+      - "Most people with back pain improve or recover within 4 to 6 weeks and often much sooner than that."
+      - "A common misbelief about back pain is that you need to rest and avoid activity for a long time. In fact, bed rest is not recommended."
+      - "Contact your provider right away if you have: Back pain after a severe blow or fall; Burning with urination or blood in your urine; A history of cancer; Loss of control over urine or stool (incontinence); Pain traveling down your legs below the knee; Pain that is worse when you lie down; Pain that wakes you up at night; Redness or swelling on the back or spine; Severe pain that does not allow you to get comfortable; Unexplained fever with back pain; Weakness or numbness in your buttocks, thigh, leg, or pelvis; Difficulty walking or maintaining your balance"
+      - "This episode of back pain has lasted longer than 4 weeks"
+  - id: s2
+    tier: 2
+    title: "Back pain"
+    publisher: NHS (UK)
+    url: https://www.nhs.uk/conditions/back-pain/
+    reviewed: 2026-03-05
+    passages:
+      - "Back pain, particularly lower back pain, is very common. It usually improves within a few weeks but can sometimes last longer or keep coming back."
+      - "A common cause of back pain is an injury like a pulled muscle ( strain )."
+      - "Very rarely, back pain can be a sign of a serious problem such as a broken bone, cancer or an infection."
+      - "Immediate action required: Call 999 or go to A&E if: pain, tingling, weakness or numbness in both legs; a loss of feeling around your genitals or anus; changes in your bladder or bowels, such as difficulty peeing, or peeing or pooing yourself; … it started after a serious accident, such as a car accident"
+      - "Urgent advice: Ask for an urgent GP appointment or get help from 111 if: you feel hot, cold, shivery or generally unwell; it's severe pain that starts suddenly, or it's getting worse quickly"
+  - id: s3
+    tier: 2
+    title: "Pain"
+    publisher: National Institute of Neurological Disorders and Stroke (NIH)
+    url: https://www.ninds.nih.gov/health-information/disorders/back-pain
+    reviewed: 2026-03-13
+    note: URL cũ "back-pain", nay hiển thị trang chung "Pain".
+    passages:
+      - "Acute pain starts suddenly and ends when its cause is treated or healed."
+      - "Chronic pain lasts for longer than three months or the expected healing time. In some cases, an acute pain condition might persist and become chronic pain."
+
+key_facts:
+  - claim: "Đau lưng cấp kéo dài vài ngày đến vài tuần; phần lớn người bệnh đỡ hoặc hồi phục trong 4–6 tuần."
+    sources: [s1, s2]
+  - claim: "Đau lưng cấp thường do chấn thương đột ngột ở cơ và dây chằng nâng đỡ lưng (co thắt, căng, rách)."
+    sources: [s1, s2]
+  - claim: "Nằm nghỉ lâu trên giường không được khuyến cáo."
+    sources: [s1, s2]
+  - claim: "Dấu hiệu cần đi khám ngay / cấp cứu: mất kiểm soát tiểu tiện hoặc đại tiện, mất cảm giác vùng sinh dục–hậu môn, đau/tê/yếu hai chân, sốt không rõ nguyên nhân kèm đau lưng, đau sau chấn thương nặng."
+    sources: [s1, s2]
+  - claim: "Đau kéo dài hơn ba tháng (hoặc quá thời gian lành dự kiến) gọi là đau mạn tính; đau cấp có thể kéo dài thành mạn tính."
+    sources: [s3]
+conflicts: []
+gaps:
+  - "WHO (fact sheet Low back pain) bị chặn cả WebFetch lẫn curl — không dùng."

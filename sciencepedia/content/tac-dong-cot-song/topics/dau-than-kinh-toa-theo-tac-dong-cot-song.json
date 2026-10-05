@@ -1,0 +1,257 @@
+{
+  "slug": "dau-than-kinh-toa-theo-tac-dong-cot-song",
+  "collection": "tac-dong-cot-song",
+  "section": "dau-than-kinh-toa",
+  "title": {
+    "vi": "Đau thần kinh tọa theo phương pháp Tác động cột sống",
+    "en": "Sciatica in the Spinal Impact method"
+  },
+  "riskLevel": "normal",
+  "source": {
+    "docId": "pp-tdcs-vn",
+    "part": "Phần I",
+    "heading": "III. ĐAU THẦN KINH TOẠ",
+    "pdfPages": [
+      7,
+      11
+    ]
+  },
+  "variants": [
+    {
+      "id": "dieu-tri-cach-xac-dinh-va-tac",
+      "label": {
+        "vi": "2- Điều trị: Cách xác định và tác động",
+        "en": "2- Điều trị: Cách xác định và tác động"
+      },
+      "heading": "2- Điều trị: Cách xác định và tác động",
+      "ref": {
+        "pdfPage": 8,
+        "bookPage": 7
+      },
+      "mappings": []
+    },
+    {
+      "id": "cach-xac-dinh-cac-thong-diem",
+      "label": {
+        "vi": "1. Cách xác định các thống điểm",
+        "en": "1. Cách xác định các thống điểm"
+      },
+      "heading": "1. Cách xác định các thống điểm",
+      "ref": {
+        "pdfPage": 8,
+        "bookPage": 7
+      },
+      "mappings": []
+    },
+    {
+      "id": "cach-xac-dinh-dau-hieu-dung-cui",
+      "label": {
+        "vi": "Dấu hiệu đứng cúi hạn chế",
+        "en": "Restricted forward bending"
+      },
+      "heading": "2. Cách xác định dấu hiệu đứng cúi hạn chế",
+      "ref": {
+        "pdfPage": 8,
+        "bookPage": 7
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "T2",
+          "role": "primary",
+          "raw": "vùng T2 T,3T7 T8",
+          "context": "Khi đã xác định được vùng có trọng điểm (thường nơi đó là nguyên uỷ của cơ xơ rãnh sống và cơ thẳng lưng) ta bảo bệnh nhân ngồi trên ghế (ghế dùng để cho bệnh nhân ngồi chữa bệnh) từ từ cúi xuống, hai tay với theo hai chân) khi vùng có trọng điểm và vùng cơ co lộ ra (hiện rõ ra) ta bảo bệnh nhân dừng lại. Thầy thuốc dùng ngón tay cái bật ngang chỗ cơ co. Trọng điểm thường ở vùng T2 T,3T7 T8.",
+          "confidence": "exact",
+          "decision": "D-5",
+          "ref": {
+            "pdfPage": 8,
+            "bookPage": 7
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T3",
+          "role": "primary",
+          "raw": "vùng T2 T,3T7 T8",
+          "context": "Khi đã xác định được vùng có trọng điểm (thường nơi đó là nguyên uỷ của cơ xơ rãnh sống và cơ thẳng lưng) ta bảo bệnh nhân ngồi trên ghế (ghế dùng để cho bệnh nhân ngồi chữa bệnh) từ từ cúi xuống, hai tay với theo hai chân) khi vùng có trọng điểm và vùng cơ co lộ ra (hiện rõ ra) ta bảo bệnh nhân dừng lại. Thầy thuốc dùng ngón tay cái bật ngang chỗ cơ co. Trọng điểm thường ở vùng T2 T,3T7 T8.",
+          "confidence": "exact",
+          "decision": "D-5",
+          "ref": {
+            "pdfPage": 8,
+            "bookPage": 7
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T7",
+          "role": "primary",
+          "raw": "vùng T2 T,3T7 T8",
+          "context": "Khi đã xác định được vùng có trọng điểm (thường nơi đó là nguyên uỷ của cơ xơ rãnh sống và cơ thẳng lưng) ta bảo bệnh nhân ngồi trên ghế (ghế dùng để cho bệnh nhân ngồi chữa bệnh) từ từ cúi xuống, hai tay với theo hai chân) khi vùng có trọng điểm và vùng cơ co lộ ra (hiện rõ ra) ta bảo bệnh nhân dừng lại. Thầy thuốc dùng ngón tay cái bật ngang chỗ cơ co. Trọng điểm thường ở vùng T2 T,3T7 T8.",
+          "confidence": "exact",
+          "decision": "D-5",
+          "ref": {
+            "pdfPage": 8,
+            "bookPage": 7
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T8",
+          "role": "primary",
+          "raw": "vùng T2 T,3T7 T8",
+          "context": "Khi đã xác định được vùng có trọng điểm (thường nơi đó là nguyên uỷ của cơ xơ rãnh sống và cơ thẳng lưng) ta bảo bệnh nhân ngồi trên ghế (ghế dùng để cho bệnh nhân ngồi chữa bệnh) từ từ cúi xuống, hai tay với theo hai chân) khi vùng có trọng điểm và vùng cơ co lộ ra (hiện rõ ra) ta bảo bệnh nhân dừng lại. Thầy thuốc dùng ngón tay cái bật ngang chỗ cơ co. Trọng điểm thường ở vùng T2 T,3T7 T8.",
+          "confidence": "exact",
+          "decision": "D-5",
+          "ref": {
+            "pdfPage": 8,
+            "bookPage": 7
+          }
+        }
+      ]
+    },
+    {
+      "id": "cach-xac-dinh-dau-hieu-ngoi-xom",
+      "label": {
+        "vi": "3. Cách xác định dấu hiệu ngồi xổm hạn chế",
+        "en": "3. Cách xác định dấu hiệu ngồi xổm hạn chế"
+      },
+      "heading": "3. Cách xác định dấu hiệu ngồi xổm hạn chế",
+      "ref": {
+        "pdfPage": 9,
+        "bookPage": 8
+      },
+      "mappings": []
+    },
+    {
+      "id": "dau-hieu-nang-chan-han-che",
+      "label": {
+        "vi": "4. Dấu hiệu nâng chân hạn chế .",
+        "en": "4. Dấu hiệu nâng chân hạn chế ."
+      },
+      "heading": "4. Dấu hiệu nâng chân hạn chế .",
+      "ref": {
+        "pdfPage": 9,
+        "bookPage": 8
+      },
+      "mappings": []
+    },
+    {
+      "id": "dau-hieu-gian-cot-song-han-che",
+      "label": {
+        "vi": "5. Dấu hiệu giãn cột sống hạn chế",
+        "en": "5. Dấu hiệu giãn cột sống hạn chế"
+      },
+      "heading": "5. Dấu hiệu giãn cột sống hạn chế",
+      "ref": {
+        "pdfPage": 9,
+        "bookPage": 8
+      },
+      "mappings": []
+    },
+    {
+      "id": "dau-hieu-di-nhanh-han-che",
+      "label": {
+        "vi": "Lưu ý của tài liệu về vùng thắt lưng – cùng",
+        "en": "The document's note on the lumbosacral region"
+      },
+      "heading": "6. Dấu hiệu đi nhanh hạn chế",
+      "ref": {
+        "pdfPage": 10,
+        "bookPage": 9
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "L4",
+          "role": "related",
+          "raw": "Không chữa ngay ở L4, L5 và S1,S2",
+          "context": "Người bị đau dây thần kinh hông hay đi trong tư thế giảm đau vẹo sang một bên. Không chữa ngay ở L4, L5 và S1,S2 được mà phải áp dụng phương thức co cơ tương ứng để chữa từ trên lưng trên xuống. Chữa ở L4.5 và S1.2 là giai đoạn cuối cùng. Có trường hợp chỉ phải xử lý nhẹ nhàng ở L4.5 và S1.2",
+          "confidence": "exact",
+          "decision": "D-6",
+          "ref": {
+            "pdfPage": 10,
+            "bookPage": 9
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "L5",
+          "role": "related",
+          "raw": "Không chữa ngay ở L4, L5 và S1,S2",
+          "context": "Người bị đau dây thần kinh hông hay đi trong tư thế giảm đau vẹo sang một bên. Không chữa ngay ở L4, L5 và S1,S2 được mà phải áp dụng phương thức co cơ tương ứng để chữa từ trên lưng trên xuống. Chữa ở L4.5 và S1.2 là giai đoạn cuối cùng. Có trường hợp chỉ phải xử lý nhẹ nhàng ở L4.5 và S1.2",
+          "confidence": "exact",
+          "decision": "D-6",
+          "ref": {
+            "pdfPage": 10,
+            "bookPage": 9
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "S1",
+          "role": "related",
+          "raw": "Không chữa ngay ở L4, L5 và S1,S2",
+          "context": "Người bị đau dây thần kinh hông hay đi trong tư thế giảm đau vẹo sang một bên. Không chữa ngay ở L4, L5 và S1,S2 được mà phải áp dụng phương thức co cơ tương ứng để chữa từ trên lưng trên xuống. Chữa ở L4.5 và S1.2 là giai đoạn cuối cùng. Có trường hợp chỉ phải xử lý nhẹ nhàng ở L4.5 và S1.2",
+          "confidence": "exact",
+          "decision": "D-6",
+          "ref": {
+            "pdfPage": 10,
+            "bookPage": 9
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "S2",
+          "role": "related",
+          "raw": "Không chữa ngay ở L4, L5 và S1,S2",
+          "context": "Người bị đau dây thần kinh hông hay đi trong tư thế giảm đau vẹo sang một bên. Không chữa ngay ở L4, L5 và S1,S2 được mà phải áp dụng phương thức co cơ tương ứng để chữa từ trên lưng trên xuống. Chữa ở L4.5 và S1.2 là giai đoạn cuối cùng. Có trường hợp chỉ phải xử lý nhẹ nhàng ở L4.5 và S1.2",
+          "confidence": "exact",
+          "decision": "D-6",
+          "ref": {
+            "pdfPage": 10,
+            "bookPage": 9
+          }
+        }
+      ]
+    }
+  ],
+  "unassigned": [
+    {
+      "line": "Đau thần kinh toạ , theo y học hiện đại là đau dây thần kinh hông. Đau dây thần kinh hông là một hội chứng rất phổ biến, ảnh hưởng nhiều đến khả năng lao động, nhất là đối với những người lao động chân tay. Bệnh thường gặp ở lứa tuổi 30->60. Nam mắc nhiều hơn nữ, tỷ lệ 3/1. Dây thần kinh hông do 2 rễ chính tạo nên: Rễ thần kinh thắt lưng L5 và rễ thần kinh cùng S1 thuộc đám rối cùng. Từ chậu hông, dây thần kinh hông chui qua lỗ mẻ hông to, qua giữa ụ ngồi và mấu chuyển lớn của xương đùi, chui sâu vào mặt sau đùi đi đến kheo ngoài. Khi các rễ thắt lưng L5 và cùng S1 hợp thành dây hông để đi ra ngoài ống sống phải đi qua một khe hẹp gọi là khe gian đốt - đĩa đệm – dây chằng. Sự biến đổi mất bình thường của vùng thắt lưng – cùng, đặc biệt là đốt L4, L5, S1 đều có thể gây đau dây thần kinh hông",
+      "codes": [
+        "L5",
+        "S1",
+        "L4"
+      ],
+      "ref": {
+        "pdfPage": 7,
+        "bookPage": 6
+      }
+    },
+    {
+      "line": "Đo từ S5 ngang ra đến cánh chậu (điểm ở hông)",
+      "codes": [
+        "S5"
+      ],
+      "ref": {
+        "pdfPage": 8,
+        "bookPage": 7
+      }
+    },
+    {
+      "line": "Tư thế bệnh nhân: Bệnh nhân đứng thẳng, hai chân rộng bằng hai vai. Dùng thước dây đo từ S1 lên 10cm. Giữ chặt đầu dây phía trên, bảo bệnh nhân từ từ cúi xuống tối đa theo mức của bệnh nhân. Đo từ S1 lên dến đầu dưới của thước dây, nếu dây co lên 3,5cm đối với nữ là bình thường,5,5 cm đối với nam là bình thường. Nhỏ hơn chỉ số trên là bị hạn chế.",
+      "codes": [
+        "S1"
+      ],
+      "ref": {
+        "pdfPage": 10,
+        "bookPage": 9
+      }
+    }
+  ],
+  "review": {
+    "transcription": "pending",
+    "mapping": "pending",
+    "editor": "pending"
+  }
+}

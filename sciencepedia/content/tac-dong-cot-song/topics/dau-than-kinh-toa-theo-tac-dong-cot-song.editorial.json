@@ -1,0 +1,115 @@
+{
+  "section": "dau-than-kinh-toa",
+  "slug": "dau-than-kinh-toa-theo-tac-dong-cot-song",
+  "title": {
+    "vi": "Đau thần kinh tọa theo phương pháp Tác động cột sống",
+    "en": "Sciatica in the Spinal Impact method"
+  },
+  "summary": {
+    "vi": "Tài liệu Phương pháp Tác động Cột sống Việt Nam nhận biết đau thần kinh tọa qua sáu dấu hiệu hạn chế và nêu các đốt sống trọng điểm — trích nguyên văn, đặt cạnh kiến thức y khoa có nguồn về đau thần kinh tọa và các dấu hiệu cần cấp cứu.",
+    "en": "The Vietnamese Spinal Impact method document recognises sciatica by six restriction signs and names key vertebrae — quoted with page numbers, alongside sourced medical information on sciatica and the warning signs that need emergency care."
+  },
+  "seoDescription": {
+    "vi": "Đau thần kinh tọa theo tài liệu Phương pháp Tác động Cột sống Việt Nam: sáu dấu hiệu, đốt sống T2, T3, T7, T8, L4, L5, S1, S2 — kèm kiến thức y khoa và dấu hiệu cần cấp cứu.",
+    "en": "Sciatica in the Vietnamese Spinal Impact method document: six signs and vertebrae T2, T3, T7, T8, L4, L5, S1, S2 — with sourced medical facts and emergency warning signs."
+  },
+  "keywords": "đau thần kinh tọa, thần kinh hông, tác động cột sống, đốt sống, thắt lưng",
+  "riskLevel": "normal",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Sciatica",
+      "publisher": "MedlinePlus — U.S. National Library of Medicine",
+      "url": "https://medlineplus.gov/ency/article/000686.htm",
+      "tier": 2,
+      "accessed": "2026-10-05"
+    },
+    {
+      "id": "s2",
+      "title": "Sciatica",
+      "publisher": "NHS",
+      "url": "https://www.nhs.uk/conditions/sciatica/",
+      "tier": 2,
+      "accessed": "2026-10-05"
+    },
+    {
+      "id": "s3",
+      "title": "Pain",
+      "publisher": "National Institute of Neurological Disorders and Stroke (NIH)",
+      "url": "https://www.ninds.nih.gov/health-information/disorders/back-pain",
+      "tier": 2,
+      "accessed": "2026-10-05"
+    }
+  ],
+  "safety": {
+    "heading": { "vi": "⚠️ Khi nào cần cấp cứu", "en": "⚠️ When it is an emergency" },
+    "body": {
+      "vi": "NHS khuyên đến khoa cấp cứu hoặc gọi cấp cứu nếu bạn:\n\n- đau thần kinh tọa ở **cả hai bên**;\n- yếu hoặc tê ở cả hai chân, nặng hoặc nặng dần;\n- tê quanh hoặc dưới vùng sinh dục, hoặc quanh hậu môn;\n- khó bắt đầu đi tiểu, không tiểu được hoặc không kiểm soát được việc tiểu — khác với bình thường;\n- không nhận biết lúc cần đại tiện hoặc không kiểm soát được — khác với bình thường.\n\nTheo NHS, đây có thể là triệu chứng của một vấn đề nghiêm trọng ở lưng cần điều trị tại bệnh viện càng sớm càng tốt. MedlinePlus khuyên liên hệ nhân viên y tế ngay khi có sốt không rõ nguyên nhân kèm đau lưng, đau sau va đập hoặc ngã mạnh, đau lan xuống dưới đầu gối, hoặc mất kiểm soát tiểu tiện, đại tiện.",
+      "en": "The NHS advises going to A&E or calling emergency services if you:\n\n- have sciatica on **both sides**;\n- have weakness or numbness in both legs that is severe or getting worse;\n- have numbness around or under your genitals, or around your anus;\n- find it hard to start peeing, cannot pee or cannot control when you pee — and this is not normal for you;\n- do not notice when you need to poo or cannot control it — and this is not normal for you.\n\nThe NHS says these could be symptoms of a serious back problem that needs hospital treatment as soon as possible. MedlinePlus advises contacting a health professional right away for unexplained fever with back pain, back pain after a severe blow or fall, pain travelling below the knee, or loss of control of urine or stool."
+    },
+    "sources": ["s1", "s2"]
+  },
+  "general": [
+    {
+      "heading": { "vi": "Đau thần kinh tọa là gì?", "en": "What is sciatica?" },
+      "body": {
+        "vi": "Theo MedlinePlus, đau thần kinh tọa là đau, yếu, tê hoặc châm chích ở chân, do dây thần kinh tọa bị tổn thương hoặc bị chèn ép. Đó là **một triệu chứng** của một vấn đề y khoa khác, không phải một bệnh riêng.\n\nDây thần kinh tọa bắt đầu ở vùng thắt lưng và chạy dọc mặt sau mỗi chân (MedlinePlus); NHS mô tả nó chạy từ thắt lưng xuống tới bàn chân. Triệu chứng thường ở mông và mặt sau **một** bên chân, nhiều khi xuống tới bàn chân và ngón chân (NHS). NHS cũng lưu ý: nếu chỉ đau lưng thì nhiều khả năng đó không phải đau thần kinh tọa.\n\nNINDS xếp đau thần kinh tọa vào nhóm **đau do thần kinh** — loại đau do dây thần kinh bị tổn thương, thường được tả là bỏng rát, châm chích, nhói lan, hoặc như điện giật.",
+        "en": "According to MedlinePlus, sciatica is pain, weakness, numbness or tingling in the leg caused by injury to or pressure on the sciatic nerve. It is **a symptom** of another medical problem, not a condition by itself.\n\nThe sciatic nerve starts in the lower back and runs down the back of each leg (MedlinePlus); the NHS describes it as running from the lower back to the feet. Symptoms usually affect the buttock and the back of **one** leg, often including the foot and toes (NHS). The NHS also notes that if you only have back pain, you probably do not have sciatica.\n\nNINDS lists sciatica as an example of **neuropathic pain** — pain caused by nerve damage, often described as burning, tingling, shooting, or like electric shocks."
+      },
+      "sources": ["s1", "s2", "s3"]
+    },
+    {
+      "heading": { "vi": "Nguyên nhân và diễn tiến", "en": "Causes and course" },
+      "body": {
+        "vi": "Theo NHS, nguyên nhân thường gặp nhất là **thoát vị đĩa đệm** — khi lớp mô mềm làm đệm giữa các xương cột sống lồi ra — và nó dễ xảy ra hơn khi lớn tuổi. Các nguyên nhân khác gồm hẹp ống sống (phần cột sống nơi dây thần kinh đi qua bị hẹp lại) và trượt đốt sống (một xương cột sống trượt khỏi vị trí). Vì đau thần kinh tọa là triệu chứng, MedlinePlus nhấn mạnh cần tìm ra và điều trị nguyên nhân bên dưới.\n\nĐau thần kinh tọa thường đỡ trong vài tuần đến vài tháng, nhưng có thể kéo dài hơn (NHS), và hay tái phát (MedlinePlus, NHS). MedlinePlus cũng ghi rằng nó có thể dẫn tới tê hoặc yếu chân vĩnh viễn.",
+        "en": "According to the NHS, the most common cause is a **slipped disc** — when a soft cushion of tissue between the bones of the spine pushes out — and it becomes more likely with age. Other causes include spinal stenosis (narrowing of the part of the spine where nerves pass through) and spondylolisthesis (a spinal bone slipping out of position). Because sciatica is a symptom, MedlinePlus stresses that the underlying cause should be identified and treated.\n\nSciatica usually improves within a few weeks to a few months but can last longer (NHS), and it commonly returns (MedlinePlus, NHS). MedlinePlus also notes that it can lead to permanent numbness or weakness of the leg."
+      },
+      "sources": ["s1", "s2"]
+    }
+  ],
+  "symptoms": [
+    {
+      "pdfPage": 7,
+      "vi": "Đau dây thần kinh hông thường có các dấu hiệu hạn chế sau đây: 1. Dấu hiệu thống điểm đau (Walleix) 2. Dấu hiệu đứng cúi hạn chế 3. Dấu hiệu ngồi sớm hạn chế 4. Dấu hiệu nâng chân hạn chế 5. Dấu hiệu giãn cột sống hạn chế 6. Dấu hiệu đi nhanh hạn chế.",
+      "en": "Sciatic nerve pain usually shows the following restriction signs: 1. painful points (spelled \"Walleix\" in the original); 2. restricted forward bending while standing; 3. restricted squatting; 4. restricted leg raising; 5. restricted spinal extension; 6. restricted fast walking."
+    }
+  ],
+  "methodQuotes": [],
+  "variants": [
+    {
+      "id": "cach-xac-dinh-dau-hieu-dung-cui",
+      "label": { "vi": "Dấu hiệu đứng cúi hạn chế", "en": "Restricted forward bending" },
+      "quotes": [
+        {
+          "pdfPage": 8,
+          "vi": "Bệnh nhân đứng thẳng, hai chân rộng bằng 2 vai, giữ 2 gối thẳng, từ từ cúi xuống nếu hai ngón tay trỏ, chạm được tới ngón chân cái là bình thường, nếu không chạm được ngón chân cái là bị hạn chế.",
+          "en": "The patient stands straight with feet shoulder-width apart, knees kept straight, and slowly bends forward; if both index fingers can touch the big toes it is normal, if they cannot reach the big toes it is restricted."
+        },
+        {
+          "pdfPage": 8,
+          "vi": "Trọng điểm thường ở vùng T2 T,3T7 T8.",
+          "en": "The key points are usually in the region of T2, T3, T7, T8."
+        }
+      ]
+    },
+    {
+      "id": "dau-hieu-di-nhanh-han-che",
+      "label": { "vi": "Lưu ý của tài liệu về vùng thắt lưng – cùng", "en": "The document's note on the lumbosacral region" },
+      "quotes": [
+        {
+          "pdfPage": 10,
+          "vi": "Người bị đau dây thần kinh hông hay đi trong tư thế giảm đau vẹo sang một bên. Không chữa ngay ở L4, L5 và S1,S2 được mà phải áp dụng phương thức co cơ tương ứng để chữa từ trên lưng trên xuống. Chữa ở L4.5 và S1.2 là giai đoạn cuối cùng.",
+          "en": "People with sciatic nerve pain often walk in a pain-relieving posture, leaning to one side. Treatment cannot start right at L4, L5 and S1, S2; instead the corresponding-muscle-contraction approach is applied, working from the upper back downwards. Treating L4, 5 and S1, 2 is the final stage."
+        }
+      ]
+    }
+  ],
+  "outOfScope": [
+    {
+      "pdfPage": 10,
+      "vi": "Hiện tượng kéo chuông hay đạp chân không được là do viêm đuôi ngựa hay u tuỷ và u màng tuỷ… đều không chữa Tác động cột sống (phải dùng thuốc).",
+      "en": "Inability to pull the bell-rope or push with the leg is due to cauda equina inflammation, or spinal cord and meningeal tumours… none of these are treated with Spinal Impact (medication is required)."
+    }
+  ],
+  "review": { "transcription": "pending", "mapping": "pending", "editor": "pending" }
+}

@@ -1,0 +1,150 @@
+{
+  "slug": "dau-lung-cap-theo-tac-dong-cot-song",
+  "collection": "tac-dong-cot-song",
+  "section": "dau-lung-cap",
+  "title": {
+    "vi": "Đau lưng cấp theo phương pháp Tác động cột sống",
+    "en": "Acute back pain in the Spinal Impact method"
+  },
+  "riskLevel": "normal",
+  "source": {
+    "docId": "pp-tdcs-vn",
+    "part": "Phần I",
+    "heading": "I. ĐAU LƯNG CẤP",
+    "pdfPages": [
+      2,
+      3
+    ]
+  },
+  "variants": [
+    {
+      "id": "tham-kham",
+      "label": {
+        "vi": "Tài liệu thăm khám thế nào",
+        "en": "How the document examines the patient"
+      },
+      "heading": "1. Thăm khám",
+      "ref": {
+        "pdfPage": 2,
+        "bookPage": 1
+      },
+      "mappings": []
+    },
+    {
+      "id": "dieu-tri",
+      "label": {
+        "vi": "Các trọng điểm tài liệu nêu",
+        "en": "Key points named by the document"
+      },
+      "heading": "2. Điều trị.",
+      "ref": {
+        "pdfPage": 2,
+        "bookPage": 1
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "T2",
+          "role": "primary",
+          "raw": "T2,3,7,8",
+          "context": "Chú ý: Tại chỗ đau, điểm đau trên cột sống nhiệt độ nóng cao đang là vùng bệnh lý, chưa được tác động vào, phải tìm vùng tương ứng với nó trên cột sống để chữa. Nếu bệnh nhân đau không cúi được thường có điểm T2,3,7,8",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 2,
+            "bookPage": 1
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T3",
+          "role": "primary",
+          "raw": "T2,3,7,8",
+          "context": "Chú ý: Tại chỗ đau, điểm đau trên cột sống nhiệt độ nóng cao đang là vùng bệnh lý, chưa được tác động vào, phải tìm vùng tương ứng với nó trên cột sống để chữa. Nếu bệnh nhân đau không cúi được thường có điểm T2,3,7,8",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 2,
+            "bookPage": 1
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T7",
+          "role": "primary",
+          "raw": "T2,3,7,8",
+          "context": "Chú ý: Tại chỗ đau, điểm đau trên cột sống nhiệt độ nóng cao đang là vùng bệnh lý, chưa được tác động vào, phải tìm vùng tương ứng với nó trên cột sống để chữa. Nếu bệnh nhân đau không cúi được thường có điểm T2,3,7,8",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 2,
+            "bookPage": 1
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T8",
+          "role": "primary",
+          "raw": "T2,3,7,8",
+          "context": "Chú ý: Tại chỗ đau, điểm đau trên cột sống nhiệt độ nóng cao đang là vùng bệnh lý, chưa được tác động vào, phải tìm vùng tương ứng với nó trên cột sống để chữa. Nếu bệnh nhân đau không cúi được thường có điểm T2,3,7,8",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 2,
+            "bookPage": 1
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "L4",
+          "role": "primary",
+          "raw": "L4,5 và S1",
+          "context": "trên cột sống để chữa. Nếu bệnh nhân đau không ngồi thẳng lưng được có trọng điểm L4,5 và S1.",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 3,
+            "bookPage": 2
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "L5",
+          "role": "primary",
+          "raw": "L4,5 và S1",
+          "context": "trên cột sống để chữa. Nếu bệnh nhân đau không ngồi thẳng lưng được có trọng điểm L4,5 và S1.",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 3,
+            "bookPage": 2
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "S1",
+          "role": "primary",
+          "raw": "L4,5 và S1",
+          "context": "trên cột sống để chữa. Nếu bệnh nhân đau không ngồi thẳng lưng được có trọng điểm L4,5 và S1.",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 3,
+            "bookPage": 2
+          }
+        }
+      ]
+    }
+  ],
+  "unassigned": [
+    {
+      "line": "Nếu bệnh nhân ra nhiều mồ hôi chữa hai bên hố chẩm vào tới C1,2 và song chỉnh với vùng S. Xác định những tiết cơ, bó cơ co trên lưng để giải toả.",
+      "codes": [
+        "C1",
+        "C2"
+      ],
+      "ref": {
+        "pdfPage": 3,
+        "bookPage": 2
+      }
+    }
+  ],
+  "review": {
+    "transcription": "pending",
+    "mapping": "pending",
+    "editor": "pending"
+  }
+}

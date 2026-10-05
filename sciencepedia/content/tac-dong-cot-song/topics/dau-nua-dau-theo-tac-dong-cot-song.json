@@ -1,0 +1,467 @@
+{
+  "slug": "dau-nua-dau-theo-tac-dong-cot-song",
+  "collection": "tac-dong-cot-song",
+  "section": "dau-nua-dau",
+  "title": {
+    "vi": "Đau nửa đầu theo phương pháp Tác động cột sống",
+    "en": "Migraine in the Spinal Impact method"
+  },
+  "riskLevel": "normal",
+  "source": {
+    "docId": "pp-tdcs-vn",
+    "part": "Phần I",
+    "heading": "IV. ĐAU NỬA ĐẦU (MIGRAINE)",
+    "pdfPages": [
+      12,
+      14
+    ]
+  },
+  "variants": [
+    {
+      "id": "trieu-chung-nay-dom-dom-mat",
+      "label": {
+        "vi": "Nảy đom đóm mắt",
+        "en": "Seeing flashes (\"fireflies\")"
+      },
+      "heading": "1. Triệu chứng nảy đom đóm mắt",
+      "ref": {
+        "pdfPage": 13,
+        "bookPage": 12
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "C6",
+          "role": "primary",
+          "raw": "C6, T9,T10,T11",
+          "context": "Đốt sống trọng điểm là C6, T9,T10,T11. Tuỳ theo hình thái của trọng điểm mà áp dụng các thủ thuật cho thích hợp.",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 13,
+            "bookPage": 12
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T9",
+          "role": "primary",
+          "raw": "C6, T9,T10,T11",
+          "context": "Đốt sống trọng điểm là C6, T9,T10,T11. Tuỳ theo hình thái của trọng điểm mà áp dụng các thủ thuật cho thích hợp.",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 13,
+            "bookPage": 12
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T10",
+          "role": "primary",
+          "raw": "C6, T9,T10,T11",
+          "context": "Đốt sống trọng điểm là C6, T9,T10,T11. Tuỳ theo hình thái của trọng điểm mà áp dụng các thủ thuật cho thích hợp.",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 13,
+            "bookPage": 12
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T11",
+          "role": "primary",
+          "raw": "C6, T9,T10,T11",
+          "context": "Đốt sống trọng điểm là C6, T9,T10,T11. Tuỳ theo hình thái của trọng điểm mà áp dụng các thủ thuật cho thích hợp.",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 13,
+            "bookPage": 12
+          }
+        }
+      ]
+    },
+    {
+      "id": "trieu-chung-nang-dau-mat-ngu-buon",
+      "label": {
+        "vi": "Nặng đầu, mất ngủ, buồn nôn, rối loạn tuần hoàn",
+        "en": "Heavy head, insomnia, nausea, circulatory disturbance"
+      },
+      "heading": "2. Triệu chứng nặng đầu, mất ngủ, buồn nôn, rối loạn tuần hoàn",
+      "ref": {
+        "pdfPage": 13,
+        "bookPage": 12
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "T3",
+          "role": "primary",
+          "raw": "T3,T6",
+          "context": "Đốt sống trọng điểm là T3,T6.",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 13,
+            "bookPage": 12
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T6",
+          "role": "primary",
+          "raw": "T3,T6",
+          "context": "Đốt sống trọng điểm là T3,T6.",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 13,
+            "bookPage": 12
+          }
+        }
+      ]
+    },
+    {
+      "id": "chi-tren-va-dau-ngon-tay-te",
+      "label": {
+        "vi": "Tê bì chi trên và đầu ngón tay",
+        "en": "Numbness of the arms and fingertips"
+      },
+      "heading": "3. Chi trên và đầu ngón tay tê bì",
+      "ref": {
+        "pdfPage": 13,
+        "bookPage": 12
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "C7",
+          "role": "primary",
+          "raw": "C7,L1,L3",
+          "context": "Đối sống trọng điểm là C7,L1,L3.",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 13,
+            "bookPage": 12
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "L1",
+          "role": "primary",
+          "raw": "C7,L1,L3",
+          "context": "Đối sống trọng điểm là C7,L1,L3.",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 13,
+            "bookPage": 12
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "L3",
+          "role": "primary",
+          "raw": "C7,L1,L3",
+          "context": "Đối sống trọng điểm là C7,L1,L3.",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 13,
+            "bookPage": 12
+          }
+        }
+      ]
+    },
+    {
+      "id": "nguoi-met-hay-ngap-o-hoi",
+      "label": {
+        "vi": "Mệt, hay ngáp, ợ hơi",
+        "en": "Tiredness, frequent yawning, belching"
+      },
+      "heading": "4. Người mệt, hay ngáp, ợ hơi",
+      "ref": {
+        "pdfPage": 13,
+        "bookPage": 12
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "T6",
+          "role": "primary",
+          "raw": "đốt sống T6, T7, T9",
+          "context": "Trọng điểm là đốt sống T6, T7, T9",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 13,
+            "bookPage": 12
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T7",
+          "role": "primary",
+          "raw": "đốt sống T6, T7, T9",
+          "context": "Trọng điểm là đốt sống T6, T7, T9",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 13,
+            "bookPage": 12
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T9",
+          "role": "primary",
+          "raw": "đốt sống T6, T7, T9",
+          "context": "Trọng điểm là đốt sống T6, T7, T9",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 13,
+            "bookPage": 12
+          }
+        }
+      ]
+    },
+    {
+      "id": "noi-kho-nghe-doc-khong-hieu",
+      "label": {
+        "vi": "Nói khó, nghe đọc không hiểu",
+        "en": "Difficulty speaking, not understanding speech or text"
+      },
+      "heading": "5. Nói khó, nghe đọc không hiểu",
+      "ref": {
+        "pdfPage": 13,
+        "bookPage": 12
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "S5",
+          "role": "primary",
+          "raw": "đốt sống S5",
+          "context": "Trọng điểm là đốt sống S5.",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 13,
+            "bookPage": 12
+          }
+        }
+      ]
+    },
+    {
+      "id": "nhuc-nua-dau-sau-lan-sang-hoc",
+      "label": {
+        "vi": "Nhức nửa đầu sau, lan sang hốc mắt",
+        "en": "Ache at the back of one side of the head, spreading to the eye socket"
+      },
+      "heading": "6. Nhức nửa đầu sau, lan sang hốc mắt",
+      "ref": {
+        "pdfPage": 14,
+        "bookPage": 13
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "C1",
+          "role": "primary",
+          "raw": "C1,C3,C5,C6,T11",
+          "context": "Đốt sống trọng điểm là C1,C3,C5,C6,T11.",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 14,
+            "bookPage": 13
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "C3",
+          "role": "primary",
+          "raw": "C1,C3,C5,C6,T11",
+          "context": "Đốt sống trọng điểm là C1,C3,C5,C6,T11.",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 14,
+            "bookPage": 13
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "C5",
+          "role": "primary",
+          "raw": "C1,C3,C5,C6,T11",
+          "context": "Đốt sống trọng điểm là C1,C3,C5,C6,T11.",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 14,
+            "bookPage": 13
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "C6",
+          "role": "primary",
+          "raw": "C1,C3,C5,C6,T11",
+          "context": "Đốt sống trọng điểm là C1,C3,C5,C6,T11.",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 14,
+            "bookPage": 13
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T11",
+          "role": "primary",
+          "raw": "C1,C3,C5,C6,T11",
+          "context": "Đốt sống trọng điểm là C1,C3,C5,C6,T11.",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 14,
+            "bookPage": 13
+          }
+        }
+      ]
+    },
+    {
+      "id": "nhuc-dau-vung-thai-duong",
+      "label": {
+        "vi": "Nhức đầu vùng thái dương",
+        "en": "Ache at the temples"
+      },
+      "heading": "7. Nhức đầu vùng thái dương",
+      "ref": {
+        "pdfPage": 14,
+        "bookPage": 13
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "T11",
+          "role": "primary",
+          "raw": "T11,L1",
+          "context": "Đốt sống trọng điểm là T11,L1.",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 14,
+            "bookPage": 13
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "L1",
+          "role": "primary",
+          "raw": "T11,L1",
+          "context": "Đốt sống trọng điểm là T11,L1.",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 14,
+            "bookPage": 13
+          }
+        }
+      ]
+    },
+    {
+      "id": "nhuc-dau-vung-tran-va-hoc-mat",
+      "label": {
+        "vi": "Nhức đầu vùng trán và hốc mắt",
+        "en": "Ache at the forehead and eye sockets"
+      },
+      "heading": "8. Nhức đầu vùng trán và hốc mắt",
+      "ref": {
+        "pdfPage": 14,
+        "bookPage": 13
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "T10",
+          "role": "primary",
+          "raw": "T10,T11",
+          "context": "Đốt sống trọng điểm là T10,T11.",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 14,
+            "bookPage": 13
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T11",
+          "role": "primary",
+          "raw": "T10,T11",
+          "context": "Đốt sống trọng điểm là T10,T11.",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 14,
+            "bookPage": 13
+          }
+        }
+      ]
+    },
+    {
+      "id": "mat-nhin-hinh-doi-sup-mi",
+      "label": {
+        "vi": "Nhìn hình đôi, sụp mi",
+        "en": "Double vision, drooping eyelid"
+      },
+      "heading": "9. Mắt nhìn hình đôi, sụp mi",
+      "ref": {
+        "pdfPage": 14,
+        "bookPage": 13
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "C7",
+          "role": "primary",
+          "raw": "C7",
+          "context": "Đốt sống trọng điểm là C7.",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 14,
+            "bookPage": 13
+          }
+        }
+      ]
+    },
+    {
+      "id": "liet-nhe-chi-tren-va-noi-kho",
+      "label": {
+        "vi": "Liệt nhẹ chi trên và nói khó",
+        "en": "Mild weakness of the arm and difficulty speaking"
+      },
+      "heading": "10. Liệt nhẹ chi trên và nói khó",
+      "ref": {
+        "pdfPage": 14,
+        "bookPage": 13
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "C6",
+          "role": "primary",
+          "raw": "C6,T1",
+          "context": "Đốt sống trọng điểm là C6,T1.",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 14,
+            "bookPage": 13
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T1",
+          "role": "primary",
+          "raw": "C6,T1",
+          "context": "Đốt sống trọng điểm là C6,T1.",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 14,
+            "bookPage": 13
+          }
+        }
+      ]
+    }
+  ],
+  "unassigned": [],
+  "review": {
+    "transcription": "pending",
+    "mapping": "pending",
+    "editor": "pending"
+  }
+}

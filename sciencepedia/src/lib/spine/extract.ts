@@ -30,6 +30,8 @@ export type Field = {
   raw: string;
   ref: PageMeta;
   from: "label" | "prose";
+  /** Câu nguồn chứa trường văn xuôi — để bài và người duyệt thấy bối cảnh của mã. */
+  line?: string;
   vertebrae?: ParsedList;
   zones?: Zone[];
   triangles?: number[];
@@ -45,7 +47,7 @@ export type ExtractedVariant = {
   fields: Field[];
 };
 
-export type Mention = { line: string; ref: PageMeta; vertebrae: ParsedList };
+export type Mention = { line: string; ref: PageMeta; vertebrae: ParsedList; variant?: string };
 
 export type SectionExtract = {
   id: string;
@@ -192,7 +194,7 @@ function proseFields(line: string, ref: PageMeta): { fields: Field[]; rest: stri
       const run = CODE_RUN.exec(after);
       if (!run || !HAS_CODE.test(run[1])) return match;
       const raw = run[1].replace(/[\s,.;]+$/u, "").trim();
-      fields.push({ kind, label, raw, ref, from: "prose", vertebrae: parseVertebraList(raw) });
+      fields.push({ kind, label, raw, ref, from: "prose", line, vertebrae: parseVertebraList(raw) });
       return match;
     });
   }
@@ -256,7 +258,7 @@ export function extractSection(id: string, pdfPages: [number, number], pages: Pa
       const { fields, rest } = proseFields(text, ref);
       if (fields.length) ensureVariant(ref).fields.push(...fields);
       const leftover = parseVertebraList(rest.match(/[CTLSD] ?\d{1,2}(?:[\s,.;\-–>]*\d{1,2})*/gu)?.join(", ") ?? "");
-      if (leftover.codes.length) mentions.push({ line: text, ref, vertebrae: leftover });
+      if (leftover.codes.length) mentions.push({ line: text, ref, vertebrae: leftover, variant: current?.id });
     }
   }
   return { id, pdfPages, variants, mentions };
