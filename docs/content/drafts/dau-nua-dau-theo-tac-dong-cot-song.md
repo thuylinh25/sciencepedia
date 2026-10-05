@@ -148,10 +148,13 @@ Không có xét nghiệm đặc hiệu nào chứng minh một cơn đau đầu 
 
 **Cùng loạt Tác động cột sống:**
 
+- [Các bệnh về đau đầu theo phương pháp Tác động cột sống](/articles/dau-dau-theo-tac-dong-cot-song)
 - [Đau lưng cấp theo phương pháp Tác động cột sống](/articles/dau-lung-cap-theo-tac-dong-cot-song)
 - [Đau lưng mãn tính theo phương pháp Tác động cột sống](/articles/dau-lung-man-tinh-theo-tac-dong-cot-song)
 - [Đau thần kinh tọa theo phương pháp Tác động cột sống](/articles/dau-than-kinh-toa-theo-tac-dong-cot-song)
+- [Huyết áp cao theo phương pháp Tác động cột sống](/articles/huyet-ap-cao-theo-tac-dong-cot-song)
 - [Huyết áp thấp theo phương pháp Tác động cột sống](/articles/huyet-ap-thap-theo-tac-dong-cot-song)
+- [Thiểu năng tuần hoàn não theo phương pháp Tác động cột sống](/articles/thieu-nang-tuan-hoan-nao-theo-tac-dong-cot-song)
 
 ## Nguồn tài liệu
 

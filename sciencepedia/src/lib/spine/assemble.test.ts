@@ -150,3 +150,13 @@ test("bài render: có nhãn tư liệu, link atlas, lời khép bài; không c�
     assert.doesNotMatch(md, /tự thực hiện|làm theo các bước|điều trị ngay|try this at home/i);
   }
 });
+
+test("cùng mã, cùng vai trong một đoạn trích: chỉ hiện bản có bên (huyết áp cao, D-2…D-4)", () => {
+  const slug = "huyet-ap-cao-theo-tac-dong-cot-song";
+  const e = editorial(slug);
+  const topic = assembleTopic(extractSection("huyet-ap-cao", [19, 19], pages), meta("huyet-ap-cao"), decisions, e);
+  const md = renderArticle(topic, e, "vi");
+  const caution = md.split("\n").find((l) => l.startsWith("- **Thận trọng:**"))!;
+  assert.equal(caution.match(/\[T6\]/g)?.length, 1);
+  assert.match(caution, /\[T6\]\([^)]+\) \(phải\)/);
+});

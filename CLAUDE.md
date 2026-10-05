@@ -126,11 +126,12 @@ Gate accuracy **không có ngoại lệ**.
 Chủ sản phẩm chốt 2026-10-05: **làm xong một thay đổi thì tự commit → push → PR → merge vào `main`**, không chờ được bảo, không hỏi lại.
 
 - **Nhánh:** làm trên nhánh `claude/<tên>` được giao cho session; không commit thẳng lên `main`. PR của nhánh đã merge thì nhánh ấy xong — việc tiếp theo dựng lại nhánh từ `origin/main` mới nhất (`git checkout -B <nhánh> origin/main`), không chồng commit lên lịch sử đã merge.
-- **Trước khi commit:** `npm run typecheck`, `npm run lint`, test liên quan (`npm test`) xanh; đổi route/rendering thì thêm `npm run build`. Không commit `.env`, secret, token, chuỗi kết nối CSDL.
+- **Trước khi commit:** `npm run typecheck`, `npm run lint`, test liên quan (`npm test`) xanh; đổi route/rendering thì thêm `npm run build`. Sửa `src/lib/spine/` thì `npx tsx --test src/lib/spine/*.test.ts`; sửa dữ liệu Tác động cột sống thì `npm run spine:build` không có ✖. Không commit `.env`, secret, token, chuỗi kết nối CSDL.
+- **Tệp sinh ra** (`extract.generated.json`, `topics/*.json` không có `.editorial`, `docs/content/drafts/*`, `src/lib/spine/index.generated.json`) commit cùng nguồn của nó, sinh bằng script — không sửa tay. `package-lock.json` không commit nếu chỉ do npm khác phiên bản tự sửa.
 - **Commit:** thông điệp kiểu `feat(scope): …` / `fix(…)` / `content(…)` / `docs(…)`, tiếng Việt, nói *vì sao* ở thân. Commit kèm cập nhật `CLAUDE.md`/`docs/*` khi thay đổi "đáng kể" (mục Memory Update Rules).
-- **Push:** `git push -u origin <nhánh>`; lỗi mạng thì thử lại tối đa 4 lần (2s, 4s, 8s, 16s).
+- **Push:** `git push -u origin <nhánh>`; lỗi mạng thì thử lại tối đa 4 lần (2s, 4s, 8s, 16s). Rebase / force-with-lease chỉ trên nhánh của chính session; nhánh người khác thì merge, không viết lại lịch sử.
 - **PR → `main`:** PR có sẵn thì dùng luôn, kể cả PR do giao diện Claude Code tạo. Mô tả PR: tóm tắt, cách kiểm, việc người phải làm sau deploy.
-- **Merge:** kiểm mergeable, conflict, review bắt buộc, check/status trên head (check đang chạy thì chờ xong). Merge bằng merge commit, khoá `expectedHeadSha`.
+- **Merge:** chỉ merge PR của nhánh mình làm — PR khác (bot Vercel, nhánh session khác) để nguyên. Kiểm mergeable, conflict, review bắt buộc, check/status trên head (check đang chạy — thường là status `Vercel`, có khi hơn 10 phút — thì chờ xong). Merge bằng merge commit, khoá `expectedHeadSha`.
 - **Không bao giờ bypass** branch protection, review requirement hay conflict (không admin-merge, không tắt rule, không tự approve). Gặp chặn thì dừng và báo **chính xác** thứ đang chặn — tên rule/check, review còn thiếu, file conflict.
 - **Ngoài quy tắc tự động:** script ghi CSDL production (`--write`), `npm run publish`, `spine:publish` — agent báo lệnh, người chạy. Merge `main` là Vercel deploy production, nên bước CSDL đi sau deploy.
 - **Trạng thái công việc dở dang** ghi ở `HANDOFF.md`, không ghi vào file này.

@@ -166,7 +166,9 @@ function labelled(kind: FieldKind, label: string, value: string, ref: PageMeta):
 const PROSE_TRIGGERS: { pattern: RegExp; kind: FieldKind }[] = [
   { pattern: /không được (?:chữa|tác động)(?: ở)?|tránh(?: tác động)?/iu, kind: "avoid" },
   { pattern: /thận trọng(?: khi (?:chữa|tác động)(?: ở)?)?/iu, kind: "caution" },
-  { pattern: /trọng điểm(?: chính| thường| chủ yếu)?(?: là| ở| có)?|(?<![\p{L}])TĐ(?: là)?|tập trung(?: vào| giải quyết)?|cần tác động|trọng khu gồm có các đốt sống|thường có điểm/iu, kind: "primary" },
+  // "Giải tỏa trọng điểm các đốt sống cổ và L1" (trang 21) là dòng điều trị, không phải
+  // dòng trọng điểm — bản đầu bắt nhầm, thêm "các đốt sống cổ" vào một thể chỉ có L1.
+  { pattern: /(?<!giải\s+t(?:ỏa|oả)\s+)trọng điểm(?: chính| thường| chủ yếu)?(?: là| ở| có)?|(?<![\p{L}])TĐ(?: là)?|tập trung(?: vào| giải quyết)?|cần tác động|trọng khu gồm có các đốt sống|thường có điểm/iu, kind: "primary" },
   // "Giải tỏa các đốt sống cổ, T12 và L1" — bước điều trị, đối chiếu với trọng điểm.
   { pattern: /giải tỏa(?: trọng điểm)?(?: các)?/iu, kind: "treatment" },
 ];

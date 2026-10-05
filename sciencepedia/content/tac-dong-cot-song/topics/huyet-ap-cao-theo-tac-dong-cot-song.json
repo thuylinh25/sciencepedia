@@ -1,0 +1,226 @@
+{
+  "slug": "huyet-ap-cao-theo-tac-dong-cot-song",
+  "collection": "tac-dong-cot-song",
+  "section": "huyet-ap-cao",
+  "title": {
+    "vi": "Huyết áp cao theo phương pháp Tác động cột sống",
+    "en": "High blood pressure in the Spinal Impact method"
+  },
+  "riskLevel": "high",
+  "source": {
+    "docId": "pp-tdcs-vn",
+    "part": "Phần I",
+    "heading": "VII. BỆNH HUYẾT ÁP CAO",
+    "pdfPages": [
+      19,
+      19
+    ]
+  },
+  "variants": [
+    {
+      "id": "benh-huyet-ap-cao",
+      "label": {
+        "vi": "Vùng cấm, đốt sống tập trung và thận trọng",
+        "en": "Areas to avoid, vertebrae to focus on, and caution"
+      },
+      "heading": "VII. BỆNH HUYẾT ÁP CAO",
+      "ref": {
+        "pdfPage": 19,
+        "bookPage": 18
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "C1",
+          "role": "avoid",
+          "raw": "C1; 2; 3",
+          "context": "Khi tác động cho bệnh nhân có chứng trạng là huyết áp cao thì không được chữa vùng chẩm và từ C1; 2; 3",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 19,
+            "bookPage": 18
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "C2",
+          "role": "avoid",
+          "raw": "C1; 2; 3",
+          "context": "Khi tác động cho bệnh nhân có chứng trạng là huyết áp cao thì không được chữa vùng chẩm và từ C1; 2; 3",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 19,
+            "bookPage": 18
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "C3",
+          "role": "avoid",
+          "raw": "C1; 2; 3",
+          "context": "Khi tác động cho bệnh nhân có chứng trạng là huyết áp cao thì không được chữa vùng chẩm và từ C1; 2; 3",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 19,
+            "bookPage": 18
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "C7",
+          "role": "primary",
+          "side": "right",
+          "raw": "C7; T1; T2; T3 bên phải",
+          "context": "Tập trung vào C7; T1; T2; T3 bên phải",
+          "confidence": "exact",
+          "decision": "D-1",
+          "ref": {
+            "pdfPage": 19,
+            "bookPage": 18
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T1",
+          "role": "primary",
+          "side": "right",
+          "raw": "C7; T1; T2; T3 bên phải",
+          "context": "Tập trung vào C7; T1; T2; T3 bên phải",
+          "confidence": "exact",
+          "decision": "D-1",
+          "ref": {
+            "pdfPage": 19,
+            "bookPage": 18
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T2",
+          "role": "primary",
+          "side": "right",
+          "raw": "C7; T1; T2; T3 bên phải",
+          "context": "Tập trung vào C7; T1; T2; T3 bên phải",
+          "confidence": "exact",
+          "decision": "D-1",
+          "ref": {
+            "pdfPage": 19,
+            "bookPage": 18
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T3",
+          "role": "primary",
+          "side": "right",
+          "raw": "C7; T1; T2; T3 bên phải",
+          "context": "Tập trung vào C7; T1; T2; T3 bên phải",
+          "confidence": "exact",
+          "decision": "D-1",
+          "ref": {
+            "pdfPage": 19,
+            "bookPage": 18
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T6",
+          "role": "caution",
+          "raw": "T6; T10; và L3",
+          "context": "Thận trọng khi chữa T6; T10; và L3",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 19,
+            "bookPage": 18
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T10",
+          "role": "caution",
+          "raw": "T6; T10; và L3",
+          "context": "Thận trọng khi chữa T6; T10; và L3",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 19,
+            "bookPage": 18
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "L3",
+          "role": "caution",
+          "raw": "T6; T10; và L3",
+          "context": "Thận trọng khi chữa T6; T10; và L3",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 19,
+            "bookPage": 18
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T6",
+          "role": "caution",
+          "side": "right",
+          "raw": "HA do tim .......T6 F",
+          "context": "HA do tim .......T6 F",
+          "confidence": "exact",
+          "decision": "D-2",
+          "ref": {
+            "pdfPage": 19,
+            "bookPage": 18
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T10",
+          "role": "caution",
+          "side": "right",
+          "raw": "HA do thượng thận ....T10 F",
+          "context": "HA do thượng thận ....T10 F",
+          "confidence": "exact",
+          "decision": "D-3",
+          "ref": {
+            "pdfPage": 19,
+            "bookPage": 18
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "L3",
+          "role": "caution",
+          "side": "right",
+          "raw": "HA do tiết niệu .........L3 F",
+          "context": "HA do tiết niệu .........L3 F",
+          "confidence": "exact",
+          "decision": "D-4",
+          "ref": {
+            "pdfPage": 19,
+            "bookPage": 18
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T3",
+          "role": "primary",
+          "side": "right",
+          "raw": "cần phải điều chỉnh thì tác động T3 bên phải",
+          "context": "Các bệnh nhân có Tâm trương (tối thiểu) cần phải điều chỉnh thì tác động T3 bên phải.",
+          "confidence": "exact",
+          "note": "khi tâm trương cần điều chỉnh",
+          "decision": "D-26",
+          "ref": {
+            "pdfPage": 19,
+            "bookPage": 18
+          }
+        }
+      ]
+    }
+  ],
+  "unassigned": [],
+  "review": {
+    "transcription": "pending",
+    "mapping": "passed",
+    "editor": "pending"
+  }
+}

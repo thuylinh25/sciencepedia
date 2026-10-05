@@ -148,10 +148,13 @@ Vertebrae named by the document:
 
 **More from the Spinal Impact series:**
 
+- [Headache in the Spinal Impact method](/articles/dau-dau-theo-tac-dong-cot-song)
 - [Acute back pain in the Spinal Impact method](/articles/dau-lung-cap-theo-tac-dong-cot-song)
 - [Chronic back pain in the Spinal Impact method](/articles/dau-lung-man-tinh-theo-tac-dong-cot-song)
 - [Sciatica in the Spinal Impact method](/articles/dau-than-kinh-toa-theo-tac-dong-cot-song)
+- [High blood pressure in the Spinal Impact method](/articles/huyet-ap-cao-theo-tac-dong-cot-song)
 - [Low blood pressure in the Spinal Impact method](/articles/huyet-ap-thap-theo-tac-dong-cot-song)
+- ["Cerebral circulatory insufficiency" in the Spinal Impact method](/articles/thieu-nang-tuan-hoan-nao-theo-tac-dong-cot-song)
 
 ## Source document
 
