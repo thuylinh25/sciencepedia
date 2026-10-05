@@ -265,6 +265,12 @@ export interface SceneState {
   visible: SystemId[];
   selected: string[];
   isolate: boolean;
+  /**
+   * "Hiện giải phẫu xung quanh": vùng chọn vẽ đục, phần còn lại của cơ thể (trừ da)
+   * vẽ thành bóng mờ quanh nó, camera vẫn khung vào vùng chọn. Chỉ có nghĩa khi
+   * `isolate` false và có vùng chọn.
+   */
+  surround?: boolean;
   view: View;
   rotate: boolean;
   reset: number;

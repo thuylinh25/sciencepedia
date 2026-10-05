@@ -81,6 +81,15 @@ type Props = {
  * là thứ duy nhất trong khung, nền không được có màu riêng. Khớp với nền của
  * khung trong `human-atlas.tsx` để không loé khi canvas chưa vẽ.
  */
+/** Độ đục lượt bóng mờ khi "Hiện giải phẫu xung quanh" (xem `ghostFade`). */
+const SURROUND_FADE = 0.3;
+/**
+ * Cạnh nhỏ nhất (mét) của khung camera quanh vùng chọn: một đốt sống chỉ 3–4 cm, khung
+ * sát nó thì bóng mờ xung quanh chỉ là một mảng cơ, không nói được đốt nằm ở đâu.
+ * 0,4 m ≈ bề ngang thân.
+ */
+const SURROUND_MIN_SIZE = 0.4;
+
 export const SCENE_BACKGROUND = { light: "#eef0f1", dark: "#05070a" } as const;
 
 /*
@@ -514,7 +523,14 @@ export default function AnatomyScene({
       // Chỉ mặt trước: hai mặt cộng dồn thành một khối xám gần đục.
       side: T.FrontSide,
     });
+    /**
+     * Độ đục chung của lượt bóng mờ. Góc nhìn theo hệ chỉ có vài mảnh bối cảnh → 1.
+     * "Hiện giải phẫu xung quanh" lấy cả cơ thể làm bối cảnh: hàng chục lớp cơ, mạch,
+     * tạng chồng nhau ở 0,55 cộng lại gần đục và che mất vùng chọn — hạ xuống.
+     */
+    const ghostFade = { value: 1 };
     ghostMaterial.onBeforeCompile = (shader) => {
+      shader.uniforms.ghostFade = ghostFade;
       shader.uniforms.partState = { value: partTexture };
       shader.uniforms.selectionState = { value: selectionTexture };
       shader.uniforms.partTint = { value: tintTexture };
@@ -531,7 +547,7 @@ export default function AnatomyScene({
             "#include <project_vertex>\nif (ghostOn < 0.5) gl_Position = vec4(0.0, 0.0, 2.0, 1.0);",
           );
       shader.fragmentShader =
-        "varying float ghostOn; varying vec3 ghostTint;\n" +
+        "uniform float ghostFade; varying float ghostOn; varying vec3 ghostTint;\n" +
         shader.fragmentShader
           .replace("#include <clipping_planes_fragment>", "#include <clipping_planes_fragment>\nif (ghostOn < 0.5) discard;")
           .replace("#include <color_fragment>", "#include <color_fragment>\ndiffuseColor.rgb *= ghostTint;")
@@ -545,13 +561,15 @@ export default function AnatomyScene({
            */
           .replace(
             "#include <emissivemap_fragment>",
-            "#include <emissivemap_fragment>\nfloat ghostRim = pow(1.0 - abs(dot(normal, normalize(vViewPosition))), 2.0);\ntotalEmissiveRadiance += diffuseColor.rgb * (0.16 + 0.3 * ghostRim);\ndiffuseColor.a *= 0.72 + 0.5 * ghostRim;",
+            "#include <emissivemap_fragment>\nfloat ghostRim = pow(1.0 - abs(dot(normal, normalize(vViewPosition))), 2.0);\ntotalEmissiveRadiance += diffuseColor.rgb * (0.16 + 0.3 * ghostRim);\ndiffuseColor.a *= (0.72 + 0.5 * ghostRim) * ghostFade;",
           );
     };
     ghostMaterial.customProgramCacheKey = () => "ghost";
     materials.push(ghostMaterial);
     /** Góc nhìn đang có mảnh bối cảnh hiện — khi đó mới cần lượt bóng mờ. */
     let ghostActive = false;
+    /** "Hiện giải phẫu xung quanh" đang bật (xem `SceneState.surround`). */
+    let surroundOn = false;
     const drawGhost = () => {
       if (!ghostActive) return;
       const autoClear = renderer.autoClear;
@@ -1532,9 +1550,12 @@ export default function AnatomyScene({
       renderer.clear();
       renderer.render(scene, camera);
       const ghostWas = ghostActive;
+      const fadeWas = ghostFade.value;
       ghostActive = hasContext;
+      ghostFade.value = 1;
       drawGhost();
       ghostActive = ghostWas;
+      ghostFade.value = fadeWas;
       const out = document.createElement("canvas");
       out.width = THUMB_W;
       out.height = THUMB_H;
@@ -1584,7 +1605,10 @@ export default function AnatomyScene({
     const canvas = renderer.domElement;
 
     /** Mảnh bấm được: đang hiện và lớp của nó đủ đậm (lớp mờ để bấm xuyên qua). */
-    const pickable = (i: number) => data[i * 4 + 3] > 0.5 && alphaOf(i) >= 0.5;
+    // Bóng mờ quanh vùng chọn không bấm được: chạm vào đốt sống nằm sau lớp cơ mờ
+    // phải trúng đốt sống, không trúng lớp cơ người đọc chỉ dùng để định vị.
+    const pickable = (i: number) =>
+      data[i * 4 + 3] > 0.5 && alphaOf(i) >= 0.5 && (!surroundOn || selectedData[i * 4] > 0);
 
     /** Mảnh gần nhất dưới một điểm màn hình, hoặc -1. Lọc bằng hộp bao trước khi xét tam giác. */
     const pickAt = (clientX: number, clientY: number) => {
@@ -1704,6 +1728,7 @@ export default function AnatomyScene({
         lastState?.visible !== s.visible ||
         lastState?.selected !== s.selected ||
         lastState?.isolate !== s.isolate ||
+        lastState?.surround !== s.surround ||
         lastState?.viewId !== s.viewId ||
         lastState?.hiddenIn !== s.hiddenIn;
       // Bật/tắt lớp da hay cơ đổi thang slider (`effectivePeel`) — tính lại độ tách.
@@ -1722,6 +1747,7 @@ export default function AnatomyScene({
         applyLayers(s.selected);
         const visible = new Set(s.visible);
         const selection = new Set(s.selected);
+        surroundOn = !!s.surround && !s.isolate && selection.size > 0;
         const view = viewSet(s.viewId);
         userHidden =
           view && s.viewId && s.hiddenIn?.viewId === s.viewId
@@ -1742,8 +1768,11 @@ export default function AnatomyScene({
         const underSkin = (p: (typeof parts)[number]) =>
           skinSolid && p.system !== "integumentary" && !SKIN_VISIBLE.has(keyOf(p));
         // Lớp đã mờ hẳn (da sau 20%) không chiếm ô trong lưới tách.
+        // Quanh vùng chọn không vẽ da: một lớp vỏ mờ phủ cả người làm nhoè mọi thứ
+        // bên trong, như atlas tham chiếu (cơ, xương, mạch, thần kinh mờ — không da).
         const isShown = (p: (typeof parts)[number], i: number) =>
           !userHidden.has(i) &&
+          !(surroundOn && p.system === "integumentary" && !selection.has(p.id)) &&
           (s.isolate ? selection.has(p.id) : inScope(p, i) || selection.has(p.id)) &&
           (s.isolate || selection.has(p.id) || (alphaOf(i) > 0.01 && !underSkin(p)));
         const visibleParts = parts.filter(isShown);
@@ -1786,7 +1815,7 @@ export default function AnatomyScene({
           data[i * 4 + 1] = dy;
           data[i * 4 + 2] = dz;
           data[i * 4 + 3] = shown ? 1 : 0;
-          const context = isContext(view, i);
+          const context = surroundOn ? !selected : isContext(view, i);
           if (context && shown) ghostNext = true;
           selectedData[i * 4] = selected ? 255 : 0;
           // Bối cảnh ô cờ không đổ bóng AO: nửa điểm ảnh đã bỏ mà AO vẫn tô tối cả mảng.
@@ -1808,6 +1837,7 @@ export default function AnatomyScene({
         });
         if (refit) fit(s.view);
         ghostActive = ghostNext;
+        ghostFade.value = surroundOn ? SURROUND_FADE : 1;
         partTexture.needsUpdate = true;
         selectionTexture.needsUpdate = true;
         markerGeometry.attributes.position.needsUpdate = true;
@@ -1855,11 +1885,14 @@ export default function AnatomyScene({
         if (!s.isolate && amount < 0.05) focusSelection(s.selected);
       }
 
-      const isolateKey = s.isolate
-        ? `${s.selected.join(",")}:${s.reset}:${s.inspectorOpen}:${camera.aspect}`
+      // Xem riêng và "giải phẫu xung quanh" khung cùng một vùng chọn; xung quanh thì
+      // nới hộp ra (`SURROUND_MIN_SIZE`) để thấy vùng chọn nằm ở đâu trên cơ thể.
+      const framed = s.isolate || surroundOn;
+      const isolateKey = framed
+        ? `${s.selected.join(",")}:${s.reset}:${s.inspectorOpen}:${camera.aspect}:${surroundOn}`
         : "";
       if (isolateKey !== lastIsolate || (s.isolate && moving)) {
-        if (s.isolate) {
+        if (framed) {
           const box = new T.Box3();
           parts.forEach((p, i) => {
             if (s.selected.includes(p.id)) {
@@ -1873,6 +1906,7 @@ export default function AnatomyScene({
           if (!box.isEmpty()) {
             const center = box.getCenter(new T.Vector3());
             const size = box.getSize(new T.Vector3());
+            if (surroundOn) size.max(new T.Vector3(SURROUND_MIN_SIZE, SURROUND_MIN_SIZE, 0));
             const w = el.clientWidth;
             const h = el.clientHeight;
             const mobile = w < 768;

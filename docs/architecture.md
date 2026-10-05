@@ -778,6 +778,16 @@ màu nhóm/hệ (cùng bảng với vật liệu thường) nằm trong texture 
 xanh 20% đọc thành mảng đen trong thẻ góc nhìn — chủ sản phẩm muốn giống atlas tham chiếu (xương ngà,
 phổi hồng quanh cấu trúc chính), "không để màu đen". Độ đục nâng lên ~0,4 lõi / ~0,65 viền: màu thật ở
 0,2 trên nền tối vẫn tối. Đừng quay về một màu xám chung để "đỡ rối" — đó chính là thứ bị chê.
+
+**"Hiện giải phẫu xung quanh" = cả cơ thể làm bối cảnh mờ** (2026-10-05): trước đây nút này chỉ tắt
+"xem riêng" — camera bay về toàn thân, đốt sống vừa chọn lẫn vào cơ và tạng đục. Chủ sản phẩm muốn
+như atlas tham chiếu: vùng chọn đục, quanh nó là lớp cơ/xương/mạch mờ để biết nó nằm ở đâu. Dùng lại
+lượt bóng mờ, mọi mảnh đang hiện trừ vùng chọn là bối cảnh; KHÔNG vẽ da (một lớp vỏ mờ phủ cả người làm
+nhoè mọi thứ bên trong). Độ đục lượt bóng hạ còn 0,3 (`ghostFade`) — hàng chục lớp chồng nhau ở mức của
+góc nhìn cộng lại gần đục, che mất vùng chọn. Camera vẫn khung vùng chọn nhưng nới tối thiểu 0,4 m
+(một đốt sống 3–4 cm, khung sát thì bóng mờ chỉ là một mảng cơ). Bóng mờ không bấm được: chạm phải
+trúng đốt sống sau lớp cơ mờ. Chế độ gắn với ĐÚNG mảng `selected` lúc bấm (so tham chiếu) — mọi lối đổi
+vùng chọn tự rời chế độ, không phải nhớ tắt ở từng lối.
 **Bối cảnh tự sáng theo viền, không theo đèn** (2026-09-30): bản chiếu sáng như mô thật ở độ đục 0,2 cho
 mặt quay khỏi key light gần đen — 20% của gần-đen trên nền tối là mảng xám đen (thẻ Mũi, Cây phế quản, Thần
 kinh hệ hô hấp "chìm"). Nay fresnel: tự phát sáng thêm ở viền, đục hơn ở viền. Kèm fill gián tiếp nâng vừa (môi trường 0,36, mặt đất đèn bán cầu
