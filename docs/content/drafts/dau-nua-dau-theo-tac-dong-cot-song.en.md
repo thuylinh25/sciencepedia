@@ -166,6 +166,17 @@ Compiled from the sections above. Roles are the document's own terms (key point,
 
 [View on the Human Atlas →](/human-atlas?structure=atlas,third-cervical-vertebra,fifth-cervical-vertebra,sixth-cervical-vertebra,seventh-cervical-vertebra,first-thoracic-vertebra,third-thoracic-vertebra,sixth-thoracic-vertebra,seventh-thoracic-vertebra,ninth-thoracic-vertebra,tenth-thoracic-vertebra,eleventh-thoracic-vertebra,first-lumbar-vertebra,third-lumbar-vertebra,sacrum#atlas-viewer)
 
+## Further reading
+
+- [Acupoints and acupuncture: how does the "Qi" of Eastern medicine relate to modern science?](/articles/huyet-dao-va-cham-cuu-khi-cua-dong-y-co-lien-he-gi-voi-khoa-hoc-hien-dai)
+- [The "chemical messengers" that run the brain](/articles/nhung-su-gia-hoa-hoc-dieu-khien-hoat-dong-cua-nao-bo)
+- [Sleep deprivation: a debt secured against your health and your future](/articles/thieu-ngu-khoan-no-the-chap-bang-suc-khoe-va-tuong-lai)
+
+**More from the Spinal Impact series:**
+
+- [Acute back pain in the Spinal Impact method](/articles/dau-lung-cap-theo-tac-dong-cot-song)
+- [Sciatica in the Spinal Impact method](/articles/dau-than-kinh-toa-theo-tac-dong-cot-song)
+
 ## Source document
 
 The document *Phương pháp Tác động Cột sống Việt Nam* ("Vietnamese Spinal Impact Method"; Hanoi Spinal Impact Association — Hanoi Association of Traditional Medicine), section "IV. ĐAU NỬA ĐẦU (MIGRAINE)", book pages 11–13 (scan pages 12–14). The page-by-page transcription is kept with the Sciencepedia source code.

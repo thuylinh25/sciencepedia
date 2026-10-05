@@ -60,6 +60,7 @@
     "spine:extract": "tsx scripts/spine-extract.ts",
     "spine:build": "tsx scripts/spine-build.ts",
     "spine:import": "tsx --env-file-if-exists=.env scripts/spine-import.ts",
+    "spine:publish": "tsx --env-file-if-exists=.env scripts/spine-publish.ts",
     "fix:earth-title": "tsx --env-file-if-exists=.env scripts/fix-earth-title-2026-09-22.ts",
     "corrections:0922": "tsx --env-file-if-exists=.env scripts/apply-corrections-2026-09-22.ts"
   },

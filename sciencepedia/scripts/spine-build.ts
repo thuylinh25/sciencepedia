@@ -36,6 +36,11 @@ function main() {
   const files = readdirSync(topicsDir).filter((f) => f.endsWith(".editorial.json")).sort();
   let failed = 0;
   const built: Topic[] = [];
+  const editorials = files.flatMap((f) => {
+    const r = Editorial.safeParse(read(path.join(topicsDir, f)));
+    return r.success ? [r.data] : [];
+  });
+  const series = editorials.map((e) => ({ slug: e.slug, title: e.title }));
 
   for (const file of files) {
     const parsed = Editorial.safeParse(read(path.join(topicsDir, file)));
@@ -86,8 +91,8 @@ function main() {
     if (write) {
       mkdirSync(DRAFTS, { recursive: true });
       writeFileSync(path.join(topicsDir, `${editorial.slug}.json`), `${JSON.stringify(topic, null, 2)}\n`);
-      writeFileSync(path.join(DRAFTS, `${editorial.slug}.md`), renderArticle(topic, editorial, "vi"));
-      writeFileSync(path.join(DRAFTS, `${editorial.slug}.en.md`), renderArticle(topic, editorial, "en"));
+      writeFileSync(path.join(DRAFTS, `${editorial.slug}.md`), renderArticle(topic, editorial, "vi", series));
+      writeFileSync(path.join(DRAFTS, `${editorial.slug}.en.md`), renderArticle(topic, editorial, "en", series));
     }
   }
 

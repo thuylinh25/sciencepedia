@@ -44,6 +44,19 @@ const DOC_SOURCE = {
   tier: 4,
 };
 
+/* Một entity cho cả loạt: bài nói về TÀI LIỆU, không phải bài chính về bệnh. Gắn
+   vào entity "đau nửa đầu" thì JSON-LD `about` tuyên bố bài tư liệu này là bài
+   Sciencepedia về migraine — đúng điều slug "-theo-tac-dong-cot-song" tránh. */
+const ENTITY = {
+  slug: "phuong-phap-tac-dong-cot-song-viet-nam",
+  canonicalName: "Phương pháp Tác động Cột sống Việt Nam",
+  canonicalNameEn: "Vietnamese Spinal Impact method",
+  entityType: "METHOD" as const,
+  aliases: ["tác động cột sống", "tdcs", "spinal impact method"],
+  description:
+    "Phương pháp do Chi hội Tác động cột sống Hà Nội (Hội Đông y TP Hà Nội) mô tả trong tài liệu cùng tên; Sciencepedia lưu trữ tài liệu dưới dạng trích dẫn có trang.",
+};
+
 const readingTime = (md: string) => Math.max(1, Math.round(md.split(/\s+/).length / 200));
 
 async function main() {
@@ -84,9 +97,18 @@ async function main() {
     },
   });
 
+  const entity = await prisma.entity.upsert({
+    where: { slug: ENTITY.slug },
+    update: {},
+    create: ENTITY,
+  });
+
   for (const { editorial, topic, vi, en } of plan) {
     await prisma.$transaction(async (tx) => {
-      const existing = await tx.article.findUnique({ where: { slug: editorial.slug }, select: { status: true } });
+      const existing = await tx.article.findUnique({
+        where: { slug: editorial.slug },
+        select: { status: true, coverImage: true },
+      });
       if (existing && existing.status !== "DRAFT") {
         throw new Error(`${editorial.slug} đang ${existing.status} — script này chỉ ghi bài nháp; sửa bài đã xuất bản là đính chính, đi đường khác.`);
       }
@@ -104,6 +126,9 @@ async function main() {
         status: "DRAFT" as const,
         categoryId: category.id,
         authorId: ADMIN_ID,
+        entityId: entity.id,
+        // Bìa chỉ ghi lần đầu: sau `covers:mirror` nó là URL R2, ghi đè là kéo ngược về Commons.
+        ...(existing?.coverImage ? {} : { coverImage: editorial.cover.url }),
       };
       const article = await tx.article.upsert({
         where: { slug: editorial.slug },

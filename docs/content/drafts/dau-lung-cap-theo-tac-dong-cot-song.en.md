@@ -77,6 +77,17 @@ Compiled from the sections above. Roles are the document's own terms (key point,
 
 [View on the Human Atlas →](/human-atlas?structure=atlas,axis,second-thoracic-vertebra,third-thoracic-vertebra,seventh-thoracic-vertebra,eighth-thoracic-vertebra,fourth-lumbar-vertebra,fifth-lumbar-vertebra,sacrum#atlas-viewer)
 
+## Further reading
+
+- [Acupoints and acupuncture: how does the "Qi" of Eastern medicine relate to modern science?](/articles/huyet-dao-va-cham-cuu-khi-cua-dong-y-co-lien-he-gi-voi-khoa-hoc-hien-dai)
+- [How does stress affect the body, and why does exercise help us unwind?](/articles/stress-tac-dong-len-co-the-nhu-the-nao-va-vi-sao-van-dong-giup-chung-ta-giai-toa)
+- [How exercise reshapes the heart and blood vessels](/articles/van-dong-thay-doi-tim-va-mach-mau-nhu-the-nao)
+
+**More from the Spinal Impact series:**
+
+- [Migraine in the Spinal Impact method](/articles/dau-nua-dau-theo-tac-dong-cot-song)
+- [Sciatica in the Spinal Impact method](/articles/dau-than-kinh-toa-theo-tac-dong-cot-song)
+
 ## Source document
 
 The document *Phương pháp Tác động Cột sống Việt Nam* ("Vietnamese Spinal Impact Method"; Hanoi Spinal Impact Association — Hanoi Association of Traditional Medicine), section "I. ĐAU LƯNG CẤP", book pages 1–2 (scan pages 2–3). The page-by-page transcription is kept with the Sciencepedia source code.

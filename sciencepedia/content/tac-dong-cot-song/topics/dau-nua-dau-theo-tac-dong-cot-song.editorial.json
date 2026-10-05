@@ -268,6 +268,37 @@
     }
   ],
   "outOfScope": [],
+  "cover": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/57/Cervical_Spine_Lateral_View.png/1920px-Cervical_Spine_Lateral_View.png",
+    "page": "https://commons.wikimedia.org/wiki/File:Cervical_Spine_Lateral_View.png",
+    "license": "CC BY-SA 4.0"
+  },
+  "furtherReading": [
+    {
+      "slug": "huyet-dao-va-cham-cuu-khi-cua-dong-y-co-lien-he-gi-voi-khoa-hoc-hien-dai",
+      "title": {
+        "vi": "Huyệt đạo và châm cứu: \"Khí\" của Đông y có liên hệ gì với khoa học hiện đại?",
+        "en": "Acupoints and acupuncture: how does the \"Qi\" of Eastern medicine relate to modern science?"
+      },
+      "why": "Cùng câu hỏi nền: một phương pháp truyền thống của Việt Nam/Đông y được khoa học hiện đại nhìn nhận thế nào — bài kia làm việc ấy cho huyệt đạo và châm cứu."
+    },
+    {
+      "slug": "nhung-su-gia-hoa-hoc-dieu-khien-hoat-dong-cua-nao-bo",
+      "title": {
+        "vi": "Những \"sứ giả hóa học\" điều khiển hoạt động của não bộ",
+        "en": "The \"chemical messengers\" that run the brain"
+      },
+      "why": "Tài liệu nhắc serotonin; bài kia là bài về các chất dẫn truyền thần kinh, gồm cả serotonin."
+    },
+    {
+      "slug": "thieu-ngu-khoan-no-the-chap-bang-suc-khoe-va-tuong-lai",
+      "title": {
+        "vi": "Thiếu ngủ: Khoản nợ thế chấp bằng sức khỏe và tương lai",
+        "en": "Sleep deprivation: a debt secured against your health and your future"
+      },
+      "why": "Mất ngủ xuất hiện trong nhiều thể của tài liệu; bài kia là bài về thiếu ngủ và cơ thể."
+    }
+  ],
   "review": {
     "transcription": "passed",
     "mapping": "passed",

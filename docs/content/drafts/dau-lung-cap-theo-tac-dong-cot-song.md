@@ -77,6 +77,17 @@ Tổng hợp từ các mục trên. Vai trò là cách tài liệu gọi tên (t
 
 [Xem trên Bản đồ cơ thể người →](/human-atlas?structure=atlas,axis,second-thoracic-vertebra,third-thoracic-vertebra,seventh-thoracic-vertebra,eighth-thoracic-vertebra,fourth-lumbar-vertebra,fifth-lumbar-vertebra,sacrum#atlas-viewer)
 
+## Đọc thêm
+
+- [Huyệt đạo và châm cứu: "Khí" của Đông y có liên hệ gì với khoa học hiện đại?](/articles/huyet-dao-va-cham-cuu-khi-cua-dong-y-co-lien-he-gi-voi-khoa-hoc-hien-dai)
+- [Stress tác động lên cơ thể như thế nào và vì sao vận động giúp chúng ta giải tỏa?](/articles/stress-tac-dong-len-co-the-nhu-the-nao-va-vi-sao-van-dong-giup-chung-ta-giai-toa)
+- [Vận động thay đổi tim và mạch máu như thế nào](/articles/van-dong-thay-doi-tim-va-mach-mau-nhu-the-nao)
+
+**Cùng loạt Tác động cột sống:**
+
+- [Đau nửa đầu theo phương pháp Tác động cột sống](/articles/dau-nua-dau-theo-tac-dong-cot-song)
+- [Đau thần kinh tọa theo phương pháp Tác động cột sống](/articles/dau-than-kinh-toa-theo-tac-dong-cot-song)
+
 ## Nguồn tài liệu
 
 Tài liệu *Phương pháp Tác động Cột sống Việt Nam* (Chi hội Tác động cột sống Hà Nội — Hội Đông y thành phố Hà Nội), phần "I. ĐAU LƯNG CẤP", trang 1–2 của sách (trang 2–3 của bản scan). Bản chép từng trang lưu cùng mã nguồn Sciencepedia.

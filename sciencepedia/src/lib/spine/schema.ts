@@ -111,6 +111,15 @@ export const Editorial = z
       }),
     ),
     outOfScope: z.array(Quote),
+    /** Ảnh bìa: URL Commons; spine:import ghi khi bài chưa có bìa, covers:mirror đưa về R2. */
+    cover: z.object({ url: z.url(), page: z.url(), license: z.string() }),
+    /**
+     * "Đọc thêm": bài ĐÃ xuất bản, chọn tay, kèm `why` (người đọc bài này muốn đọc bài kia
+     * vì sao) — theo lệ của scripts/add-reading-links.ts. Không câu nào trong đây là claim.
+     */
+    furtherReading: z
+      .array(z.object({ slug: z.string(), title: Bilingual, why: z.string() }))
+      .min(3),
     review: z.object({ transcription: ReviewState, mapping: ReviewState, editor: ReviewState }),
   })
   .superRefine((e, ctx) => {

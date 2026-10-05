@@ -27,6 +27,7 @@ npm run glossary:usedin # đồng bộ trường usedIn của glossary.json (c�
 npm run spine:extract  # Tác động cột sống: bản chép trang → trường + cờ review (chạy khô; --write ghi content/tac-dong-cot-song/extract)
 npm run spine:build    # topic biên tập + quyết định D-n → topic JSON, bản nháp vi/en, chỉ mục atlas (chạy khô; --write ghi)
 npm run spine:import   # bài Tác động cột sống → CSDL ở DRAFT (chạy khô; --write) — không bao giờ PUBLISHED/PASSED/reviewedById
+npm run spine:publish  # NGƯỜI chạy (ghi byline duyệt): duyệt + link vào từ bài Huyệt đạo + publish cả loạt qua gate (chạy khô; --write)
 npx tsx --env-file-if-exists=.env scripts/recrop-cover.ts --slug <s> --top <px>  # ảnh bìa đứng mất đầu trên thẻ: cắt sẵn 16/10 (cần --write)
 npx tsx --env-file-if-exists=.env scripts/strip-draft-artifacts.ts  # gỡ dấu 【…】 của công cụ AI khỏi bài (cần --write)
 npx tsx --env-file-if-exists=.env scripts/set-cover-alt.ts  # alt ảnh bìa từ scripts/data/cover-alt.json, chỉ điền ô trống (cần --write)

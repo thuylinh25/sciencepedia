@@ -81,6 +81,17 @@ Compiled from the sections above. Roles are the document's own terms (key point,
 
 > **According to the document (p. 9, translated):** The "bell-pulling" phenomenon or being unable to push with the foot is due to inflammation of the cauda equina, or spinal cord tumours and spinal meningeal tumours… none of these are treated with Spinal Impact (medication is required).
 
+## Further reading
+
+- [Acupoints and acupuncture: how does the "Qi" of Eastern medicine relate to modern science?](/articles/huyet-dao-va-cham-cuu-khi-cua-dong-y-co-lien-he-gi-voi-khoa-hoc-hien-dai)
+- [The "chemical messengers" that run the brain](/articles/nhung-su-gia-hoa-hoc-dieu-khien-hoat-dong-cua-nao-bo)
+- [How does stress affect the body, and why does exercise help us unwind?](/articles/stress-tac-dong-len-co-the-nhu-the-nao-va-vi-sao-van-dong-giup-chung-ta-giai-toa)
+
+**More from the Spinal Impact series:**
+
+- [Acute back pain in the Spinal Impact method](/articles/dau-lung-cap-theo-tac-dong-cot-song)
+- [Migraine in the Spinal Impact method](/articles/dau-nua-dau-theo-tac-dong-cot-song)
+
 ## Source document
 
 The document *Phương pháp Tác động Cột sống Việt Nam* ("Vietnamese Spinal Impact Method"; Hanoi Spinal Impact Association — Hanoi Association of Traditional Medicine), section "III. ĐAU THẦN KINH TOẠ", book pages 6–10 (scan pages 7–11). The page-by-page transcription is kept with the Sciencepedia source code.

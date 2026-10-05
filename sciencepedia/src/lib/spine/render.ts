@@ -39,6 +39,8 @@ const T = {
     sacrumNote: "Trên Bản đồ cơ thể người, S1–S5 hiện chung là xương cùng: mô hình không tách riêng năm đốt cùng.",
     outOfScope: "Tài liệu nói phương pháp không áp dụng",
     sourceHeading: "Nguồn tài liệu",
+    reading: "Đọc thêm",
+    series: "Cùng loạt Tác động cột sống",
     sourceLine: (doc: string, a: number, b: number) =>
       `Tài liệu ${doc}, phần "${"%HEADING%"}", trang ${a - 1}–${b - 1} của sách (trang ${a}–${b} của bản scan). Bản chép từng trang lưu cùng mã nguồn Sciencepedia.`,
     closing:
@@ -64,6 +66,8 @@ const T = {
     sacrumNote: "On the Human Atlas, S1–S5 are shown together as the sacrum: the model does not separate the five sacral vertebrae.",
     outOfScope: "Where the document says the method does not apply",
     sourceHeading: "Source document",
+    reading: "Further reading",
+    series: "More from the Spinal Impact series",
     sourceLine: (doc: string, a: number, b: number) =>
       `The document ${doc}, section "${"%HEADING%"}", book pages ${a - 1}–${b - 1} (scan pages ${a}–${b}). The page-by-page transcription is kept with the Sciencepedia source code.`,
     closing:
@@ -102,7 +106,14 @@ function roleLines(mappings: Mapping[], locale: Locale): string[] {
   return lines;
 }
 
-export function renderArticle(topic: Topic, editorial: Editorial, locale: Locale): string {
+export type SeriesEntry = { slug: string; title: { vi: string; en: string } };
+
+export function renderArticle(
+  topic: Topic,
+  editorial: Editorial,
+  locale: Locale,
+  series: SeriesEntry[] = [],
+): string {
   const t = T[locale];
   const out: string[] = [t.notice(DOC[locale]), ""];
 
@@ -147,6 +158,15 @@ export function renderArticle(topic: Topic, editorial: Editorial, locale: Locale
     out.push(`## ${t.outOfScope}`, "");
     for (const q of editorial.outOfScope) out.push(quote(q, locale), "");
   }
+
+  out.push(`## ${t.reading}`, "");
+  for (const r of editorial.furtherReading) out.push(`- [${r.title[locale]}](/articles/${r.slug})`);
+  const siblings = series.filter((s) => s.slug !== editorial.slug);
+  if (siblings.length) {
+    out.push("", `**${t.series}:**`, "");
+    for (const s of siblings) out.push(`- [${s.title[locale]}](/articles/${s.slug})`);
+  }
+  out.push("");
 
   out.push(
     `## ${t.sourceHeading}`,

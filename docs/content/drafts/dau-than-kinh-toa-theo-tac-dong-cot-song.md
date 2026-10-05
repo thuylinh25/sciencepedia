@@ -81,6 +81,17 @@ Tổng hợp từ các mục trên. Vai trò là cách tài liệu gọi tên (t
 
 > **Theo tài liệu (tr. 9):** Hiện tượng kéo chuông hay đạp chân không được là do viêm đuôi ngựa hay u tuỷ và u màng tuỷ… đều không chữa Tác động cột sống (phải dùng thuốc).
 
+## Đọc thêm
+
+- [Huyệt đạo và châm cứu: "Khí" của Đông y có liên hệ gì với khoa học hiện đại?](/articles/huyet-dao-va-cham-cuu-khi-cua-dong-y-co-lien-he-gi-voi-khoa-hoc-hien-dai)
+- [Những "sứ giả hóa học" điều khiển hoạt động của não bộ](/articles/nhung-su-gia-hoa-hoc-dieu-khien-hoat-dong-cua-nao-bo)
+- [Stress tác động lên cơ thể như thế nào và vì sao vận động giúp chúng ta giải tỏa?](/articles/stress-tac-dong-len-co-the-nhu-the-nao-va-vi-sao-van-dong-giup-chung-ta-giai-toa)
+
+**Cùng loạt Tác động cột sống:**
+
+- [Đau lưng cấp theo phương pháp Tác động cột sống](/articles/dau-lung-cap-theo-tac-dong-cot-song)
+- [Đau nửa đầu theo phương pháp Tác động cột sống](/articles/dau-nua-dau-theo-tac-dong-cot-song)
+
 ## Nguồn tài liệu
 
 Tài liệu *Phương pháp Tác động Cột sống Việt Nam* (Chi hội Tác động cột sống Hà Nội — Hội Đông y thành phố Hà Nội), phần "III. ĐAU THẦN KINH TOẠ", trang 6–10 của sách (trang 7–11 của bản scan). Bản chép từng trang lưu cùng mã nguồn Sciencepedia.

@@ -166,6 +166,17 @@ Tổng hợp từ các mục trên. Vai trò là cách tài liệu gọi tên (t
 
 [Xem trên Bản đồ cơ thể người →](/human-atlas?structure=atlas,third-cervical-vertebra,fifth-cervical-vertebra,sixth-cervical-vertebra,seventh-cervical-vertebra,first-thoracic-vertebra,third-thoracic-vertebra,sixth-thoracic-vertebra,seventh-thoracic-vertebra,ninth-thoracic-vertebra,tenth-thoracic-vertebra,eleventh-thoracic-vertebra,first-lumbar-vertebra,third-lumbar-vertebra,sacrum#atlas-viewer)
 
+## Đọc thêm
+
+- [Huyệt đạo và châm cứu: "Khí" của Đông y có liên hệ gì với khoa học hiện đại?](/articles/huyet-dao-va-cham-cuu-khi-cua-dong-y-co-lien-he-gi-voi-khoa-hoc-hien-dai)
+- [Những "sứ giả hóa học" điều khiển hoạt động của não bộ](/articles/nhung-su-gia-hoa-hoc-dieu-khien-hoat-dong-cua-nao-bo)
+- [Thiếu ngủ: Khoản nợ thế chấp bằng sức khỏe và tương lai](/articles/thieu-ngu-khoan-no-the-chap-bang-suc-khoe-va-tuong-lai)
+
+**Cùng loạt Tác động cột sống:**
+
+- [Đau lưng cấp theo phương pháp Tác động cột sống](/articles/dau-lung-cap-theo-tac-dong-cot-song)
+- [Đau thần kinh tọa theo phương pháp Tác động cột sống](/articles/dau-than-kinh-toa-theo-tac-dong-cot-song)
+
 ## Nguồn tài liệu
 
 Tài liệu *Phương pháp Tác động Cột sống Việt Nam* (Chi hội Tác động cột sống Hà Nội — Hội Đông y thành phố Hà Nội), phần "IV. ĐAU NỬA ĐẦU (MIGRAINE)", trang 11–13 của sách (trang 12–14 của bản scan). Bản chép từng trang lưu cùng mã nguồn Sciencepedia.
