@@ -1,0 +1,359 @@
+{
+  "section": "thieu-nang-tuan-hoan-nao",
+  "slug": "thieu-nang-tuan-hoan-nao-theo-tac-dong-cot-song",
+  "title": {
+    "vi": "Thiểu năng tuần hoàn não theo phương pháp Tác động cột sống",
+    "en": "\"Cerebral circulatory insufficiency\" in the Spinal Impact method"
+  },
+  "summary": {
+    "vi": "Tài liệu Phương pháp Tác động Cột sống Việt Nam liệt kê 16 triệu chứng của \"thiểu năng tuần hoàn não\", mỗi triệu chứng kèm đốt sống chủ yếu và liên quan — trích nguyên văn, đặt sau kiến thức y khoa có nguồn về cơn thiếu máu não thoáng qua, đột quỵ và khi nào phải gọi cấp cứu.",
+    "en": "How the Vietnamese Spinal Impact method document lists 16 symptoms of \"cerebral circulatory insufficiency\", each with main and related vertebrae — quoted verbatim, after sourced medical information on transient ischemic attack, stroke and when to call emergency services."
+  },
+  "seoDescription": {
+    "vi": "Thiểu năng tuần hoàn não theo tài liệu Phương pháp Tác động Cột sống Việt Nam: 16 triệu chứng, đốt sống chủ yếu C6, C7, T1 — kèm dấu hiệu đột quỵ và cơn thiếu máu não thoáng qua cần gọi cấp cứu.",
+    "en": "\"Cerebral circulatory insufficiency\" in the Vietnamese Spinal Impact method document: 16 symptoms, main vertebrae C6, C7, T1 — with stroke and TIA warning signs that need emergency care."
+  },
+  "keywords": "thiểu năng tuần hoàn não, chóng mặt, đau đầu, cơn thiếu máu não thoáng qua, đột quỵ, tác động cột sống, đốt sống",
+  "riskLevel": "high",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Transient ischemic attack",
+      "publisher": "MedlinePlus — U.S. National Library of Medicine",
+      "url": "https://medlineplus.gov/ency/article/000730.htm",
+      "tier": 2,
+      "accessed": "2026-10-05"
+    },
+    {
+      "id": "s2",
+      "title": "Stroke",
+      "publisher": "MedlinePlus — U.S. National Library of Medicine",
+      "url": "https://medlineplus.gov/stroke.html",
+      "tier": 2,
+      "accessed": "2026-10-05"
+    },
+    {
+      "id": "s3",
+      "title": "Dizziness",
+      "publisher": "MedlinePlus — U.S. National Library of Medicine",
+      "url": "https://medlineplus.gov/ency/article/003093.htm",
+      "tier": 2,
+      "accessed": "2026-10-05"
+    }
+  ],
+  "safety": {
+    "heading": {
+      "vi": "⚠️ Dấu hiệu đột quỵ — gọi cấp cứu ngay",
+      "en": "⚠️ Stroke warning signs — call emergency services now"
+    },
+    "body": {
+      "vi": "Theo MedlinePlus, các dấu hiệu đột quỵ xuất hiện **đột ngột**:\n\n- tê hoặc yếu ở mặt, tay hay chân, nhất là một bên người;\n- lú lẫn, nói khó hoặc khó hiểu lời người khác;\n- nhìn khó ở một hoặc hai mắt;\n- đi lại khó, chóng mặt, mất thăng bằng hay mất phối hợp động tác;\n- đau đầu dữ dội không rõ nguyên nhân.\n\nMedlinePlus khuyên **gọi cấp cứu ngay** nếu nghĩ mình hoặc người khác đang bị đột quỵ: điều trị ngay có thể cứu sống và tăng cơ hội hồi phục.\n\n**Triệu chứng tự hết vẫn là cấp cứu.** Cơn thiếu máu não thoáng qua (TIA) gây triệu chứng giống đột quỵ rồi hết, thường trong 1–2 giờ. MedlinePlus gọi TIA là một cấp cứu y khoa, cần gọi cấp cứu ngay, và là dấu hiệu cảnh báo đột quỵ thật có thể xảy ra sau đó — khoảng một nửa số ca đột quỵ sau TIA xảy ra trong 48 giờ.\n\nVới chóng mặt, MedlinePlus khuyên gọi cấp cứu hoặc đến khoa cấp cứu nếu chóng mặt đi kèm chấn thương đầu; sốt trên 38,3°C, đau đầu hoặc cứng cổ nặng; co giật; không uống giữ được nước; đau ngực; tim đập không đều; khó thở; yếu hoặc không cử động được tay hay chân; thay đổi thị lực hoặc lời nói; hoặc ngất mất ý thức quá vài phút.",
+      "en": "According to MedlinePlus, stroke warning signs come on **suddenly**:\n\n- numbness or weakness of the face, arm or leg, especially on one side;\n- confusion, trouble speaking or understanding speech;\n- trouble seeing in one or both eyes;\n- difficulty walking, dizziness, loss of balance or coordination;\n- severe headache with no known cause.\n\nMedlinePlus advises **calling emergency services right away** if you think you or someone else is having a stroke: immediate treatment may save a life and improve the chances of recovery.\n\n**Symptoms that go away are still an emergency.** A transient ischemic attack (TIA) causes stroke-like symptoms that then resolve, usually within 1 to 2 hours. MedlinePlus calls a TIA a medical emergency that needs emergency services right away, and a warning sign that a true stroke may follow — about half of strokes after a TIA happen within 48 hours.\n\nFor dizziness, MedlinePlus advises calling emergency services or going to an emergency room if it comes with a head injury; fever over 38.3°C (101°F), headache or severe neck stiffness; seizures; being unable to keep fluids down; chest pain; irregular heartbeat; shortness of breath; weakness or inability to move an arm or leg; changes in vision or speech; or fainting with loss of consciousness lasting more than a few minutes."
+    },
+    "sources": [
+      "s1",
+      "s2",
+      "s3"
+    ]
+  },
+  "general": [
+    {
+      "heading": {
+        "vi": "Đột quỵ và cơn thiếu máu não thoáng qua",
+        "en": "Stroke and transient ischemic attack"
+      },
+      "body": {
+        "vi": "Theo MedlinePlus (Thư viện Y khoa Quốc gia Hoa Kỳ), đột quỵ xảy ra khi một phần não mất dòng máu nuôi; tế bào não không nhận được oxy và dưỡng chất nên chết đi trong vài phút, có thể để lại tổn thương lâu dài, tàn tật hoặc tử vong.\n\nCơn thiếu máu não thoáng qua (TIA) là khi dòng máu đến một phần não ngừng trong thời gian ngắn. Người bệnh có triệu chứng giống đột quỵ, kéo dài tới 24 giờ nhưng thường hết trong 1–2 giờ. Triệu chứng MedlinePlus nêu gồm thay đổi thị giác, thính giác, vị giác hay xúc giác; lú lẫn, giảm trí nhớ hoặc nói khó; yếu cơ hoặc nuốt khó; chóng mặt hay mất thăng bằng; tê hoặc châm chích một bên người.\n\nMột số triệu chứng tài liệu xếp vào \"thiểu năng tuần hoàn não\" — chóng mặt, lảo đảo, tay tê, trí nhớ giảm — cũng có trong danh sách triệu chứng của TIA và đột quỵ ở trên. Vì thế, khi chúng đến đột ngột, việc đầu tiên là gọi cấp cứu.",
+        "en": "According to MedlinePlus (U.S. National Library of Medicine), a stroke happens when part of the brain loses its blood flow; brain cells cannot get oxygen and nutrients and die within minutes, which can cause lasting damage, disability or death.\n\nA transient ischemic attack (TIA) is when blood flow to part of the brain stops for a brief time. People have stroke-like symptoms lasting up to 24 hours, though they usually resolve within 1 to 2 hours. Symptoms MedlinePlus lists include changes in vision, hearing, taste or touch; confusion, memory loss or trouble speaking; muscle weakness or trouble swallowing; dizziness or balance problems; and numbness or tingling on one side of the body.\n\nSome symptoms the document groups under \"cerebral circulatory insufficiency\" — dizziness, unsteadiness, numb hands, memory decline — also appear in the TIA and stroke symptom lists above. So when they come on suddenly, the first step is to call emergency services."
+      },
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    {
+      "heading": {
+        "vi": "Chóng mặt: choáng váng và chóng mặt quay",
+        "en": "Dizziness: lightheadedness and vertigo"
+      },
+      "body": {
+        "vi": "MedlinePlus phân biệt hai kiểu chóng mặt: **choáng váng** là cảm giác như sắp ngất; **chóng mặt quay** (vertigo) là cảm giác mình đang quay hay chuyển động, hoặc mọi thứ quanh mình đang quay.",
+        "en": "MedlinePlus distinguishes two kinds of dizziness: **lightheadedness** is a feeling that you might faint; **vertigo** is a feeling that you are spinning or moving, or that the world is spinning around you."
+      },
+      "sources": [
+        "s3"
+      ]
+    }
+  ],
+  "symptoms": [
+    {
+      "pdfPage": 17,
+      "vi": "Triệu chứng: Đau đầu, Chóng mặt, Khó thở tức ngực, Ù tai, Người mệt mỏi, Lảo đảo, Cơn bốc nóng, Kém ăn, ít ngủ, đại tiện táo, đại tiện lỏng,trí nhớ giảm, đau lưng trên, tay tê nhức, chân tê, đau cứng cổ.",
+      "en": "Symptoms: headache, dizziness, shortness of breath with chest tightness, ringing in the ears, fatigue, unsteadiness, hot flushes, poor appetite, poor sleep, constipation, loose stools, memory decline, upper back pain, numb aching hands, numb legs, stiff painful neck."
+    }
+  ],
+  "methodQuotes": [],
+  "variants": [
+    {
+      "id": "dau-dau",
+      "label": {
+        "vi": "Đau đầu",
+        "en": "Headache"
+      },
+      "quotes": [
+        {
+          "pdfPage": 17,
+          "vi": "Đốt sống chủ yếu:…C6, C7, T1 Đốt sống liên quan:…C1- C5; T1- T10",
+          "en": "Main vertebrae:…C6, C7, T1 Related vertebrae:…C1–C5; T1–T10"
+        }
+      ]
+    },
+    {
+      "id": "chong-mat",
+      "label": {
+        "vi": "Chóng mặt",
+        "en": "Dizziness"
+      },
+      "quotes": [
+        {
+          "pdfPage": 17,
+          "vi": "Đốt sống chủ yếu:…C6,7, T1 Đốt sống liên quan:…T2,3,4,5,7,8,10",
+          "en": "Main vertebrae:…C6, 7, T1 Related vertebrae:…T2, 3, 4, 5, 7, 8, 10"
+        }
+      ]
+    },
+    {
+      "id": "kho-tho-tuc-nguc",
+      "label": {
+        "vi": "Khó thở, tức ngực",
+        "en": "Shortness of breath, chest tightness"
+      },
+      "quotes": [
+        {
+          "pdfPage": 17,
+          "vi": "Đốt sống chủ yếu:…T3,4,7 Đốt sống liên quan:…C6, C7",
+          "en": "Main vertebrae:…T3, 4, 7 Related vertebrae:…C6, C7"
+        }
+      ]
+    },
+    {
+      "id": "u-tai",
+      "label": {
+        "vi": "Ù tai",
+        "en": "Ringing in the ears"
+      },
+      "quotes": [
+        {
+          "pdfPage": 17,
+          "vi": "Đốt sống chủ yếu:…C6,7 Đốt sống liên quan:…T1,2,3",
+          "en": "Main vertebrae:…C6, 7 Related vertebrae:…T1, 2, 3"
+        }
+      ]
+    },
+    {
+      "id": "nguoi-met-moi",
+      "label": {
+        "vi": "Người mệt mỏi",
+        "en": "Fatigue"
+      },
+      "quotes": [
+        {
+          "pdfPage": 17,
+          "vi": "Đốt sống chủ yếu:…C6,7,T1 Đốt sống liên quan:…T3,T6",
+          "en": "Main vertebrae:…C6, 7, T1 Related vertebrae:…T3, T6"
+        }
+      ]
+    },
+    {
+      "id": "lao-dao",
+      "label": {
+        "vi": "Lảo đảo",
+        "en": "Unsteadiness"
+      },
+      "quotes": [
+        {
+          "pdfPage": 17,
+          "vi": "Đốt sống chủ yếu:…C7,T1 Đốt sống liên quan:…T1,T2,T5",
+          "en": "Main vertebrae:…C7, T1 Related vertebrae:…T1, T2, T5"
+        }
+      ]
+    },
+    {
+      "id": "con-boc-nong",
+      "label": {
+        "vi": "Cơn bốc nóng",
+        "en": "Hot flushes"
+      },
+      "quotes": [
+        {
+          "pdfPage": 17,
+          "vi": "Đốt sống chủ yếu:…C7,T1 Đốt sống liên quan:…T5,6",
+          "en": "Main vertebrae:…C7, T1 Related vertebrae:…T5, 6"
+        }
+      ]
+    },
+    {
+      "id": "kem-an",
+      "label": {
+        "vi": "Kém ăn",
+        "en": "Poor appetite"
+      },
+      "quotes": [
+        {
+          "pdfPage": 17,
+          "vi": "Đốt sống chủ yếu:…C6,7 Đốt sống liên quan:…T1,3,4,6",
+          "en": "Main vertebrae:…C6, 7 Related vertebrae:…T1, 3, 4, 6"
+        }
+      ]
+    },
+    {
+      "id": "it-ngu",
+      "label": {
+        "vi": "Ít ngủ",
+        "en": "Poor sleep"
+      },
+      "quotes": [
+        {
+          "pdfPage": 17,
+          "vi": "Đốt sống chủ yếu:…C6,7,T1 Đốt sống liên quan:…T1 – T8",
+          "en": "Main vertebrae:…C6, 7, T1 Related vertebrae:…T1–T8"
+        }
+      ]
+    },
+    {
+      "id": "dai-tien-tao",
+      "label": {
+        "vi": "Đại tiện táo",
+        "en": "Constipation"
+      },
+      "quotes": [
+        {
+          "pdfPage": 17,
+          "vi": "Đốt sống chủ yếu:…C6,7 Đốt sống liên quan:…T2,3,5",
+          "en": "Main vertebrae:…C6, 7 Related vertebrae:…T2, 3, 5"
+        }
+      ]
+    },
+    {
+      "id": "dai-tien-long",
+      "label": {
+        "vi": "Đại tiện lỏng",
+        "en": "Loose stools"
+      },
+      "quotes": [
+        {
+          "pdfPage": 17,
+          "vi": "Đốt sống chủ yếu:…C6,7 Đốt sống liên quan:…T1,3",
+          "en": "Main vertebrae:…C6, 7 Related vertebrae:…T1, 3"
+        }
+      ]
+    },
+    {
+      "id": "tri-nho-giam",
+      "label": {
+        "vi": "Trí nhớ giảm",
+        "en": "Memory decline"
+      },
+      "quotes": [
+        {
+          "pdfPage": 18,
+          "vi": "Đốt sống chủ yếu:…C6, T2,3,4 Đốt sống liên quan:…T7,8, L4",
+          "en": "Main vertebrae:…C6, T2, 3, 4 Related vertebrae:…T7, 8, L4"
+        }
+      ]
+    },
+    {
+      "id": "dau-lung-tren",
+      "label": {
+        "vi": "Đau lưng trên",
+        "en": "Upper back pain"
+      },
+      "quotes": [
+        {
+          "pdfPage": 18,
+          "vi": "Đốt sống chủ yếu:…C6,7, T1,2,3 Đốt sống liên quan:…T1,3,4,8,9,10,11,12",
+          "en": "Main vertebrae:…C6, 7, T1, 2, 3 Related vertebrae:…T1, 3, 4, 8, 9, 10, 11, 12"
+        }
+      ]
+    },
+    {
+      "id": "tay-te-nhuc",
+      "label": {
+        "vi": "Tay tê nhức",
+        "en": "Numb, aching hands"
+      },
+      "quotes": [
+        {
+          "pdfPage": 18,
+          "vi": "Đốt sống chủ yếu:…C6,7, T1 Đốt sống liên quan:…T2,3,6",
+          "en": "Main vertebrae:…C6, 7, T1 Related vertebrae:…T2, 3, 6"
+        }
+      ]
+    },
+    {
+      "id": "dau-cung-co",
+      "label": {
+        "vi": "Đau cứng cổ",
+        "en": "Stiff, painful neck"
+      },
+      "quotes": [
+        {
+          "pdfPage": 18,
+          "vi": "Đốt sống chủ yếu:…C1, T1,2,3 Đốt sống liên quan:…T6, L1",
+          "en": "Main vertebrae:…C1, T1, 2, 3 Related vertebrae:…T6, L1"
+        }
+      ]
+    },
+    {
+      "id": "chan-te",
+      "label": {
+        "vi": "Chân tê",
+        "en": "Numb legs"
+      },
+      "quotes": [
+        {
+          "pdfPage": 18,
+          "vi": "Đốt sống chủ yếu:…T7 Đốt sống liên quan:…S3, L1-L5, S1- S5",
+          "en": "Main vertebrae:…T7 Related vertebrae:…S3, L1–L5, S1–S5"
+        }
+      ]
+    }
+  ],
+  "outOfScope": [],
+  "cover": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/57/Cervical_Spine_Lateral_View.png/1920px-Cervical_Spine_Lateral_View.png",
+    "page": "https://commons.wikimedia.org/wiki/File:Cervical_Spine_Lateral_View.png",
+    "license": "CC BY-SA 4.0"
+  },
+  "furtherReading": [
+    {
+      "slug": "nhung-su-gia-hoa-hoc-dieu-khien-hoat-dong-cua-nao-bo",
+      "title": {
+        "vi": "Những sứ giả hóa học điều khiển hoạt động của não bộ",
+        "en": "The chemical messengers that run the brain"
+      },
+      "why": "Bài về cách não bộ hoạt động — cơ quan mà các triệu chứng trong bài này xoay quanh."
+    },
+    {
+      "slug": "van-dong-thay-doi-tim-va-mach-mau-nhu-the-nao",
+      "title": {
+        "vi": "Vận động thay đổi tim và mạch máu như thế nào",
+        "en": "How exercise reshapes the heart and blood vessels"
+      },
+      "why": "Tuần hoàn não là một phần của hệ tim mạch; bài kia nói hệ ấy thay đổi ra sao khi vận động."
+    },
+    {
+      "slug": "huyet-dao-va-cham-cuu-khi-cua-dong-y-co-lien-he-gi-voi-khoa-hoc-hien-dai",
+      "title": {
+        "vi": "Huyệt đạo và châm cứu: \"Khí\" của Đông y có liên hệ gì với khoa học hiện đại?",
+        "en": "Acupoints and acupuncture: how does the \"Qi\" of Eastern medicine relate to modern science?"
+      },
+      "why": "Cùng câu hỏi nền: một phương pháp truyền thống của Việt Nam/Đông y được khoa học hiện đại nhìn nhận thế nào."
+    }
+  ],
+  "review": {
+    "transcription": "pending",
+    "mapping": "passed",
+    "editor": "pending"
+  }
+}

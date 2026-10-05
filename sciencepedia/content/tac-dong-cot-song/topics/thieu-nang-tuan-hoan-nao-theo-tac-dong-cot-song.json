@@ -1,0 +1,1559 @@
+{
+  "slug": "thieu-nang-tuan-hoan-nao-theo-tac-dong-cot-song",
+  "collection": "tac-dong-cot-song",
+  "section": "thieu-nang-tuan-hoan-nao",
+  "title": {
+    "vi": "Thiểu năng tuần hoàn não theo phương pháp Tác động cột sống",
+    "en": "\"Cerebral circulatory insufficiency\" in the Spinal Impact method"
+  },
+  "riskLevel": "high",
+  "source": {
+    "docId": "pp-tdcs-vn",
+    "part": "Phần I",
+    "heading": "VI. THIỂU NĂNG TUẦN HOÀN NÃO",
+    "pdfPages": [
+      17,
+      18
+    ]
+  },
+  "variants": [
+    {
+      "id": "dau-dau",
+      "label": {
+        "vi": "Đau đầu",
+        "en": "Headache"
+      },
+      "heading": "1/ Đau đầu",
+      "ref": {
+        "pdfPage": 17,
+        "bookPage": 16
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "C6",
+          "role": "primary",
+          "raw": "...........C6, C7, T1",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 17,
+            "bookPage": 16
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "C7",
+          "role": "primary",
+          "raw": "...........C6, C7, T1",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 17,
+            "bookPage": 16
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T1",
+          "role": "primary",
+          "raw": "...........C6, C7, T1",
+          "confidence": "exact",
+          "decision": "D-21",
+          "ref": {
+            "pdfPage": 17,
+            "bookPage": 16
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "C1",
+          "role": "related",
+          "raw": "..........C1- C5; T1- T10",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 17,
+            "bookPage": 16
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "C2",
+          "role": "related",
+          "raw": "..........C1- C5; T1- T10",
+          "confidence": "expanded",
+          "note": "bung từ khoảng C1–C5",
+          "ref": {
+            "pdfPage": 17,
+            "bookPage": 16
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "C3",
+          "role": "related",
+          "raw": "..........C1- C5; T1- T10",
+          "confidence": "expanded",
+          "note": "bung từ khoảng C1–C5",
+          "ref": {
+            "pdfPage": 17,
+            "bookPage": 16
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "C4",
+          "role": "related",
+          "raw": "..........C1- C5; T1- T10",
+          "confidence": "expanded",
+          "note": "bung từ khoảng C1–C5",
+          "ref": {
+            "pdfPage": 17,
+            "bookPage": 16
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "C5",
+          "role": "related",
+          "raw": "..........C1- C5; T1- T10",
+          "confidence": "expanded",
+          "note": "bung từ khoảng C1–C5",
+          "ref": {
+            "pdfPage": 17,
+            "bookPage": 16
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T2",
+          "role": "related",
+          "raw": "..........C1- C5; T1- T10",
+          "confidence": "expanded",
+          "note": "bung từ khoảng T1–T10",
+          "ref": {
+            "pdfPage": 17,
+            "bookPage": 16
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T3",
+          "role": "related",
+          "raw": "..........C1- C5; T1- T10",
+          "confidence": "expanded",
+          "note": "bung từ khoảng T1–T10",
+          "ref": {
+            "pdfPage": 17,
+            "bookPage": 16
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T4",
+          "role": "related",
+          "raw": "..........C1- C5; T1- T10",
+          "confidence": "expanded",
+          "note": "bung từ khoảng T1–T10",
+          "ref": {
+            "pdfPage": 17,
+            "bookPage": 16
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T5",
+          "role": "related",
+          "raw": "..........C1- C5; T1- T10",
+          "confidence": "expanded",
+          "note": "bung từ khoảng T1–T10",
+          "ref": {
+            "pdfPage": 17,
+            "bookPage": 16
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T6",
+          "role": "related",
+          "raw": "..........C1- C5; T1- T10",
+          "confidence": "expanded",
+          "note": "bung từ khoảng T1–T10",
+          "ref": {
+            "pdfPage": 17,
+            "bookPage": 16
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T7",
+          "role": "related",
+          "raw": "..........C1- C5; T1- T10",
+          "confidence": "expanded",
+          "note": "bung từ khoảng T1–T10",
+          "ref": {
+            "pdfPage": 17,
+            "bookPage": 16
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T8",
+          "role": "related",
+          "raw": "..........C1- C5; T1- T10",
+          "confidence": "expanded",
+          "note": "bung từ khoảng T1–T10",
+          "ref": {
+            "pdfPage": 17,
+            "bookPage": 16
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T9",
+          "role": "related",
+          "raw": "..........C1- C5; T1- T10",
+          "confidence": "expanded",
+          "note": "bung từ khoảng T1–T10",
+          "ref": {
+            "pdfPage": 17,
+            "bookPage": 16
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T10",
+          "role": "related",
+          "raw": "..........C1- C5; T1- T10",
+          "confidence": "expanded",
+          "note": "bung từ khoảng T1–T10",
+          "ref": {
+            "pdfPage": 17,
+            "bookPage": 16
+          }
+        }
+      ]
+    },
+    {
+      "id": "chong-mat",
+      "label": {
+        "vi": "Chóng mặt",
+        "en": "Dizziness"
+      },
+      "heading": "2/ Chóng mặt",
+      "ref": {
+        "pdfPage": 17,
+        "bookPage": 16
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "C6",
+          "role": "primary",
+          "raw": "...........C6,7, T1",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 17,
+            "bookPage": 16
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "C7",
+          "role": "primary",
+          "raw": "...........C6,7, T1",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 17,
+            "bookPage": 16
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T1",
+          "role": "primary",
+          "raw": "...........C6,7, T1",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 17,
+            "bookPage": 16
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T2",
+          "role": "related",
+          "raw": "..........T2,3,4,5,7,8,10",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 17,
+            "bookPage": 16
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T3",
+          "role": "related",
+          "raw": "..........T2,3,4,5,7,8,10",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 17,
+            "bookPage": 16
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T4",
+          "role": "related",
+          "raw": "..........T2,3,4,5,7,8,10",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 17,
+            "bookPage": 16
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T5",
+          "role": "related",
+          "raw": "..........T2,3,4,5,7,8,10",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 17,
+            "bookPage": 16
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T7",
+          "role": "related",
+          "raw": "..........T2,3,4,5,7,8,10",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 17,
+            "bookPage": 16
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T8",
+          "role": "related",
+          "raw": "..........T2,3,4,5,7,8,10",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 17,
+            "bookPage": 16
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T10",
+          "role": "related",
+          "raw": "..........T2,3,4,5,7,8,10",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 17,
+            "bookPage": 16
+          }
+        }
+      ]
+    },
+    {
+      "id": "kho-tho-tuc-nguc",
+      "label": {
+        "vi": "Khó thở, tức ngực",
+        "en": "Shortness of breath, chest tightness"
+      },
+      "heading": "3/ Khó thở tức ngực",
+      "ref": {
+        "pdfPage": 17,
+        "bookPage": 16
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "T3",
+          "role": "primary",
+          "raw": "...........T3,4,7",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 17,
+            "bookPage": 16
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T4",
+          "role": "primary",
+          "raw": "...........T3,4,7",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 17,
+            "bookPage": 16
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T7",
+          "role": "primary",
+          "raw": "...........T3,4,7",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 17,
+            "bookPage": 16
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "C6",
+          "role": "related",
+          "raw": "..........C6, C7",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 17,
+            "bookPage": 16
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "C7",
+          "role": "related",
+          "raw": "..........C6, C7",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 17,
+            "bookPage": 16
+          }
+        }
+      ]
+    },
+    {
+      "id": "u-tai",
+      "label": {
+        "vi": "Ù tai",
+        "en": "Ringing in the ears"
+      },
+      "heading": "4/ Ù tai",
+      "ref": {
+        "pdfPage": 17,
+        "bookPage": 16
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "C6",
+          "role": "primary",
+          "raw": "...........C6,7",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 17,
+            "bookPage": 16
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "C7",
+          "role": "primary",
+          "raw": "...........C6,7",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 17,
+            "bookPage": 16
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T1",
+          "role": "related",
+          "raw": "..........T1,2,3",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 17,
+            "bookPage": 16
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T2",
+          "role": "related",
+          "raw": "..........T1,2,3",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 17,
+            "bookPage": 16
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T3",
+          "role": "related",
+          "raw": "..........T1,2,3",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 17,
+            "bookPage": 16
+          }
+        }
+      ]
+    },
+    {
+      "id": "nguoi-met-moi",
+      "label": {
+        "vi": "Người mệt mỏi",
+        "en": "Fatigue"
+      },
+      "heading": "5/ Người mệt mỏi",
+      "ref": {
+        "pdfPage": 17,
+        "bookPage": 16
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "C6",
+          "role": "primary",
+          "raw": "...........C6,7,T1",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 17,
+            "bookPage": 16
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "C7",
+          "role": "primary",
+          "raw": "...........C6,7,T1",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 17,
+            "bookPage": 16
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T1",
+          "role": "primary",
+          "raw": "...........C6,7,T1",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 17,
+            "bookPage": 16
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T3",
+          "role": "related",
+          "raw": "..........T3,T6",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 17,
+            "bookPage": 16
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T6",
+          "role": "related",
+          "raw": "..........T3,T6",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 17,
+            "bookPage": 16
+          }
+        }
+      ]
+    },
+    {
+      "id": "lao-dao",
+      "label": {
+        "vi": "Lảo đảo",
+        "en": "Unsteadiness"
+      },
+      "heading": "6/ Lảo đảo",
+      "ref": {
+        "pdfPage": 17,
+        "bookPage": 16
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "C7",
+          "role": "primary",
+          "raw": "...........C7,T1",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 17,
+            "bookPage": 16
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T1",
+          "role": "primary",
+          "raw": "...........C7,T1",
+          "confidence": "exact",
+          "decision": "D-22",
+          "ref": {
+            "pdfPage": 17,
+            "bookPage": 16
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T2",
+          "role": "related",
+          "raw": "..........T1,T2,T5",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 17,
+            "bookPage": 16
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T5",
+          "role": "related",
+          "raw": "..........T1,T2,T5",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 17,
+            "bookPage": 16
+          }
+        }
+      ]
+    },
+    {
+      "id": "con-boc-nong",
+      "label": {
+        "vi": "Cơn bốc nóng",
+        "en": "Hot flushes"
+      },
+      "heading": "7/ Cơn bốc nóng",
+      "ref": {
+        "pdfPage": 17,
+        "bookPage": 16
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "C7",
+          "role": "primary",
+          "raw": "...........C7,T1",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 17,
+            "bookPage": 16
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T1",
+          "role": "primary",
+          "raw": "...........C7,T1",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 17,
+            "bookPage": 16
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T5",
+          "role": "related",
+          "raw": "..........T5,6",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 17,
+            "bookPage": 16
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T6",
+          "role": "related",
+          "raw": "..........T5,6",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 17,
+            "bookPage": 16
+          }
+        }
+      ]
+    },
+    {
+      "id": "kem-an",
+      "label": {
+        "vi": "Kém ăn",
+        "en": "Poor appetite"
+      },
+      "heading": "8/ Kém ăn",
+      "ref": {
+        "pdfPage": 17,
+        "bookPage": 16
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "C6",
+          "role": "primary",
+          "raw": "...........C6,7",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 17,
+            "bookPage": 16
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "C7",
+          "role": "primary",
+          "raw": "...........C6,7",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 17,
+            "bookPage": 16
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T1",
+          "role": "related",
+          "raw": "..........T1,3,4,6",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 17,
+            "bookPage": 16
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T3",
+          "role": "related",
+          "raw": "..........T1,3,4,6",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 17,
+            "bookPage": 16
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T4",
+          "role": "related",
+          "raw": "..........T1,3,4,6",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 17,
+            "bookPage": 16
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T6",
+          "role": "related",
+          "raw": "..........T1,3,4,6",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 17,
+            "bookPage": 16
+          }
+        }
+      ]
+    },
+    {
+      "id": "it-ngu",
+      "label": {
+        "vi": "Ít ngủ",
+        "en": "Poor sleep"
+      },
+      "heading": "9/ Ít ngủ",
+      "ref": {
+        "pdfPage": 17,
+        "bookPage": 16
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "C6",
+          "role": "primary",
+          "raw": "...........C6,7,T1",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 17,
+            "bookPage": 16
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "C7",
+          "role": "primary",
+          "raw": "...........C6,7,T1",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 17,
+            "bookPage": 16
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T1",
+          "role": "primary",
+          "raw": "...........C6,7,T1",
+          "confidence": "exact",
+          "decision": "D-23",
+          "ref": {
+            "pdfPage": 17,
+            "bookPage": 16
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T2",
+          "role": "related",
+          "raw": "..........T1 – T8",
+          "confidence": "expanded",
+          "note": "bung từ khoảng T1–T8",
+          "ref": {
+            "pdfPage": 17,
+            "bookPage": 16
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T3",
+          "role": "related",
+          "raw": "..........T1 – T8",
+          "confidence": "expanded",
+          "note": "bung từ khoảng T1–T8",
+          "ref": {
+            "pdfPage": 17,
+            "bookPage": 16
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T4",
+          "role": "related",
+          "raw": "..........T1 – T8",
+          "confidence": "expanded",
+          "note": "bung từ khoảng T1–T8",
+          "ref": {
+            "pdfPage": 17,
+            "bookPage": 16
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T5",
+          "role": "related",
+          "raw": "..........T1 – T8",
+          "confidence": "expanded",
+          "note": "bung từ khoảng T1–T8",
+          "ref": {
+            "pdfPage": 17,
+            "bookPage": 16
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T6",
+          "role": "related",
+          "raw": "..........T1 – T8",
+          "confidence": "expanded",
+          "note": "bung từ khoảng T1–T8",
+          "ref": {
+            "pdfPage": 17,
+            "bookPage": 16
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T7",
+          "role": "related",
+          "raw": "..........T1 – T8",
+          "confidence": "expanded",
+          "note": "bung từ khoảng T1–T8",
+          "ref": {
+            "pdfPage": 17,
+            "bookPage": 16
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T8",
+          "role": "related",
+          "raw": "..........T1 – T8",
+          "confidence": "expanded",
+          "note": "bung từ khoảng T1–T8",
+          "ref": {
+            "pdfPage": 17,
+            "bookPage": 16
+          }
+        }
+      ]
+    },
+    {
+      "id": "dai-tien-tao",
+      "label": {
+        "vi": "Đại tiện táo",
+        "en": "Constipation"
+      },
+      "heading": "10/ Đại tiện táo",
+      "ref": {
+        "pdfPage": 17,
+        "bookPage": 16
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "C6",
+          "role": "primary",
+          "raw": "...........C6,7",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 17,
+            "bookPage": 16
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "C7",
+          "role": "primary",
+          "raw": "...........C6,7",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 17,
+            "bookPage": 16
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T2",
+          "role": "related",
+          "raw": "..........T2,3,5",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 17,
+            "bookPage": 16
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T3",
+          "role": "related",
+          "raw": "..........T2,3,5",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 17,
+            "bookPage": 16
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T5",
+          "role": "related",
+          "raw": "..........T2,3,5",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 17,
+            "bookPage": 16
+          }
+        }
+      ]
+    },
+    {
+      "id": "dai-tien-long",
+      "label": {
+        "vi": "Đại tiện lỏng",
+        "en": "Loose stools"
+      },
+      "heading": "11/ Đại tiện lỏng",
+      "ref": {
+        "pdfPage": 17,
+        "bookPage": 16
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "C6",
+          "role": "primary",
+          "raw": "...........C6,7",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 17,
+            "bookPage": 16
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "C7",
+          "role": "primary",
+          "raw": "...........C6,7",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 17,
+            "bookPage": 16
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T1",
+          "role": "related",
+          "raw": "..........T1,3",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 17,
+            "bookPage": 16
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T3",
+          "role": "related",
+          "raw": "..........T1,3",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 17,
+            "bookPage": 16
+          }
+        }
+      ]
+    },
+    {
+      "id": "tri-nho-giam",
+      "label": {
+        "vi": "Trí nhớ giảm",
+        "en": "Memory decline"
+      },
+      "heading": "12/ Trí nhớ giảm",
+      "ref": {
+        "pdfPage": 18,
+        "bookPage": 17
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "C6",
+          "role": "primary",
+          "raw": "...........C6, T2,3,4",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 18,
+            "bookPage": 17
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T2",
+          "role": "primary",
+          "raw": "...........C6, T2,3,4",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 18,
+            "bookPage": 17
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T3",
+          "role": "primary",
+          "raw": "...........C6, T2,3,4",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 18,
+            "bookPage": 17
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T4",
+          "role": "primary",
+          "raw": "...........C6, T2,3,4",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 18,
+            "bookPage": 17
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T7",
+          "role": "related",
+          "raw": "..........T7,8, L4",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 18,
+            "bookPage": 17
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T8",
+          "role": "related",
+          "raw": "..........T7,8, L4",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 18,
+            "bookPage": 17
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "L4",
+          "role": "related",
+          "raw": "..........T7,8, L4",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 18,
+            "bookPage": 17
+          }
+        }
+      ]
+    },
+    {
+      "id": "dau-lung-tren",
+      "label": {
+        "vi": "Đau lưng trên",
+        "en": "Upper back pain"
+      },
+      "heading": "13/ Đau lưng trên",
+      "ref": {
+        "pdfPage": 18,
+        "bookPage": 17
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "C6",
+          "role": "primary",
+          "raw": "...........C6,7, T1,2,3",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 18,
+            "bookPage": 17
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "C7",
+          "role": "primary",
+          "raw": "...........C6,7, T1,2,3",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 18,
+            "bookPage": 17
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T1",
+          "role": "primary",
+          "raw": "...........C6,7, T1,2,3",
+          "confidence": "exact",
+          "decision": "D-24",
+          "ref": {
+            "pdfPage": 18,
+            "bookPage": 17
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T2",
+          "role": "primary",
+          "raw": "...........C6,7, T1,2,3",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 18,
+            "bookPage": 17
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T3",
+          "role": "primary",
+          "raw": "...........C6,7, T1,2,3",
+          "confidence": "exact",
+          "decision": "D-25",
+          "ref": {
+            "pdfPage": 18,
+            "bookPage": 17
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T4",
+          "role": "related",
+          "raw": "..........T1,3,4,8,9,10,11,12",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 18,
+            "bookPage": 17
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T8",
+          "role": "related",
+          "raw": "..........T1,3,4,8,9,10,11,12",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 18,
+            "bookPage": 17
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T9",
+          "role": "related",
+          "raw": "..........T1,3,4,8,9,10,11,12",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 18,
+            "bookPage": 17
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T10",
+          "role": "related",
+          "raw": "..........T1,3,4,8,9,10,11,12",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 18,
+            "bookPage": 17
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T11",
+          "role": "related",
+          "raw": "..........T1,3,4,8,9,10,11,12",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 18,
+            "bookPage": 17
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T12",
+          "role": "related",
+          "raw": "..........T1,3,4,8,9,10,11,12",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 18,
+            "bookPage": 17
+          }
+        }
+      ]
+    },
+    {
+      "id": "tay-te-nhuc",
+      "label": {
+        "vi": "Tay tê nhức",
+        "en": "Numb, aching hands"
+      },
+      "heading": "14/ Tay tê nhức",
+      "ref": {
+        "pdfPage": 18,
+        "bookPage": 17
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "C6",
+          "role": "primary",
+          "raw": "...........C6,7, T1",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 18,
+            "bookPage": 17
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "C7",
+          "role": "primary",
+          "raw": "...........C6,7, T1",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 18,
+            "bookPage": 17
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T1",
+          "role": "primary",
+          "raw": "...........C6,7, T1",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 18,
+            "bookPage": 17
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T2",
+          "role": "related",
+          "raw": "..........T2,3,6",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 18,
+            "bookPage": 17
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T3",
+          "role": "related",
+          "raw": "..........T2,3,6",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 18,
+            "bookPage": 17
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T6",
+          "role": "related",
+          "raw": "..........T2,3,6",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 18,
+            "bookPage": 17
+          }
+        }
+      ]
+    },
+    {
+      "id": "dau-cung-co",
+      "label": {
+        "vi": "Đau cứng cổ",
+        "en": "Stiff, painful neck"
+      },
+      "heading": "15/ Đau cứng cổ",
+      "ref": {
+        "pdfPage": 18,
+        "bookPage": 17
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "C1",
+          "role": "primary",
+          "raw": "...........C1, T1,2,3",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 18,
+            "bookPage": 17
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T1",
+          "role": "primary",
+          "raw": "...........C1, T1,2,3",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 18,
+            "bookPage": 17
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T2",
+          "role": "primary",
+          "raw": "...........C1, T1,2,3",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 18,
+            "bookPage": 17
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T3",
+          "role": "primary",
+          "raw": "...........C1, T1,2,3",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 18,
+            "bookPage": 17
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T6",
+          "role": "related",
+          "raw": "..........T6, L1",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 18,
+            "bookPage": 17
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "L1",
+          "role": "related",
+          "raw": "..........T6, L1",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 18,
+            "bookPage": 17
+          }
+        }
+      ]
+    },
+    {
+      "id": "chan-te",
+      "label": {
+        "vi": "Chân tê",
+        "en": "Numb legs"
+      },
+      "heading": "16/ Chân tê.",
+      "ref": {
+        "pdfPage": 18,
+        "bookPage": 17
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "T7",
+          "role": "primary",
+          "raw": "...........T7",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 18,
+            "bookPage": 17
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "S3",
+          "role": "related",
+          "raw": "..........S3, L1-L5, S1- S5",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 18,
+            "bookPage": 17
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "L1",
+          "role": "related",
+          "raw": "..........S3, L1-L5, S1- S5",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 18,
+            "bookPage": 17
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "L2",
+          "role": "related",
+          "raw": "..........S3, L1-L5, S1- S5",
+          "confidence": "expanded",
+          "note": "bung từ khoảng L1–L5",
+          "ref": {
+            "pdfPage": 18,
+            "bookPage": 17
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "L3",
+          "role": "related",
+          "raw": "..........S3, L1-L5, S1- S5",
+          "confidence": "expanded",
+          "note": "bung từ khoảng L1–L5",
+          "ref": {
+            "pdfPage": 18,
+            "bookPage": 17
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "L4",
+          "role": "related",
+          "raw": "..........S3, L1-L5, S1- S5",
+          "confidence": "expanded",
+          "note": "bung từ khoảng L1–L5",
+          "ref": {
+            "pdfPage": 18,
+            "bookPage": 17
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "L5",
+          "role": "related",
+          "raw": "..........S3, L1-L5, S1- S5",
+          "confidence": "expanded",
+          "note": "bung từ khoảng L1–L5",
+          "ref": {
+            "pdfPage": 18,
+            "bookPage": 17
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "S1",
+          "role": "related",
+          "raw": "..........S3, L1-L5, S1- S5",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 18,
+            "bookPage": 17
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "S2",
+          "role": "related",
+          "raw": "..........S3, L1-L5, S1- S5",
+          "confidence": "expanded",
+          "note": "bung từ khoảng S1–S5",
+          "ref": {
+            "pdfPage": 18,
+            "bookPage": 17
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "S4",
+          "role": "related",
+          "raw": "..........S3, L1-L5, S1- S5",
+          "confidence": "expanded",
+          "note": "bung từ khoảng S1–S5",
+          "ref": {
+            "pdfPage": 18,
+            "bookPage": 17
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "S5",
+          "role": "related",
+          "raw": "..........S3, L1-L5, S1- S5",
+          "confidence": "expanded",
+          "note": "bung từ khoảng S1–S5",
+          "ref": {
+            "pdfPage": 18,
+            "bookPage": 17
+          }
+        }
+      ]
+    }
+  ],
+  "unassigned": [],
+  "review": {
+    "transcription": "pending",
+    "mapping": "passed",
+    "editor": "pending"
+  }
+}

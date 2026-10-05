@@ -136,6 +136,7 @@ Vertebrae named by the document:
 - [Chronic back pain in the Spinal Impact method](/articles/dau-lung-man-tinh-theo-tac-dong-cot-song)
 - [Migraine in the Spinal Impact method](/articles/dau-nua-dau-theo-tac-dong-cot-song)
 - [Sciatica in the Spinal Impact method](/articles/dau-than-kinh-toa-theo-tac-dong-cot-song)
+- ["Cerebral circulatory insufficiency" in the Spinal Impact method](/articles/thieu-nang-tuan-hoan-nao-theo-tac-dong-cot-song)
 
 ## Source document
 
