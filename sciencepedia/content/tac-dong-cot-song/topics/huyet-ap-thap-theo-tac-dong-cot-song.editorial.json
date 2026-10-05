@@ -1,0 +1,268 @@
+{
+  "section": "huyet-ap-thap",
+  "slug": "huyet-ap-thap-theo-tac-dong-cot-song",
+  "title": {
+    "vi": "Huyết áp thấp theo phương pháp Tác động cột sống",
+    "en": "Low blood pressure in the Spinal Impact method"
+  },
+  "summary": {
+    "vi": "Tài liệu Phương pháp Tác động Cột sống Việt Nam chia huyết áp thấp thành mười thể, mỗi thể kèm vùng nhiệt độ biến đổi và đốt sống trọng điểm — trích nguyên văn, đặt sau kiến thức y khoa có nguồn về huyết áp thấp, ngất và khi nào phải gọi cấp cứu.",
+    "en": "How the Vietnamese Spinal Impact method document divides low blood pressure into ten forms, each with a temperature-change zone and key vertebrae — quoted verbatim, after sourced medical information on low blood pressure, fainting and when to call emergency services."
+  },
+  "seoDescription": {
+    "vi": "Huyết áp thấp theo tài liệu Phương pháp Tác động Cột sống Việt Nam: mười thể và đốt sống trọng điểm C1, C2, T1, T2, T4, T5, T6 — kèm kiến thức y khoa và dấu hiệu cần gọi cấp cứu.",
+    "en": "Low blood pressure in the Vietnamese Spinal Impact method document: ten forms and key vertebrae C1, C2, T1, T2, T4, T5, T6 — with sourced medical facts and emergency warning signs."
+  },
+  "keywords": "huyết áp thấp, hạ huyết áp, ngất, chóng mặt, tác động cột sống, đốt sống",
+  "riskLevel": "high",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Low Blood Pressure",
+      "publisher": "MedlinePlus — U.S. National Library of Medicine",
+      "url": "https://medlineplus.gov/lowbloodpressure.html",
+      "tier": 2,
+      "accessed": "2026-10-05"
+    },
+    {
+      "id": "s2",
+      "title": "Low blood pressure",
+      "publisher": "MedlinePlus — U.S. National Library of Medicine",
+      "url": "https://medlineplus.gov/ency/article/007278.htm",
+      "tier": 2,
+      "accessed": "2026-10-05"
+    },
+    {
+      "id": "s3",
+      "title": "Fainting",
+      "publisher": "MedlinePlus — U.S. National Library of Medicine",
+      "url": "https://medlineplus.gov/ency/article/003092.htm",
+      "tier": 2,
+      "accessed": "2026-10-05"
+    }
+  ],
+  "safety": {
+    "heading": {
+      "vi": "⚠️ Khi nào cần cấp cứu",
+      "en": "⚠️ When it is an emergency"
+    },
+    "body": {
+      "vi": "**Người bất tỉnh mà không thở hoặc không có mạch: gọi cấp cứu và bắt đầu hồi sức tim phổi (CPR) ngay** (MedlinePlus). Tài liệu có một thể mang tên \"ngất, ngừng thở, tim ngừng đập\" — đó là tình huống cấp cứu, không phải việc chờ xử lý ở nhà.\n\nVới người huyết áp thấp, MedlinePlus khuyên gọi cấp cứu khi có:\n\n- đau ngực;\n- chóng mặt, choáng váng;\n- ngất;\n- sốt trên 38,3°C;\n- tim đập không đều;\n- khó thở;\n- phân đen hoặc màu nâu đỏ sẫm.\n\nSau một lần ngất, MedlinePlus khuyên gọi cấp cứu nếu người bị ngất ngã từ trên cao (nhất là khi bị thương hay chảy máu), không tỉnh lại trong vài phút, đang mang thai, trên 50 tuổi, có bệnh tiểu đường, đau hoặc tức ngực, tim đập mạnh hay không đều, mất tiếng nói, rối loạn thị lực hoặc không cử động được tay chân, co giật, cắn vào lưỡi, hoặc mất kiểm soát tiểu tiện hay đại tiện. Người chưa từng ngất, ngất nhiều lần, hoặc có triệu chứng mới đi kèm cũng nên đi khám sớm.",
+      "en": "**If a person is unconscious and not breathing or has no pulse: call emergency services and start CPR right away** (MedlinePlus). The document has a form named \"fainting, stopped breathing, stopped heartbeat\" — that is an emergency, not something to wait out at home.\n\nFor a person with low blood pressure, MedlinePlus advises calling emergency services for:\n\n- chest pain;\n- dizziness or lightheadedness;\n- fainting;\n- fever higher than 38.3°C (101°F);\n- irregular heartbeat;\n- shortness of breath;\n- black or maroon stools.\n\nAfter fainting, MedlinePlus advises calling emergency services if the person fell from a height (especially if injured or bleeding), does not regain consciousness within a few minutes, is pregnant, is over age 50, has diabetes, feels chest pain, pressure or discomfort, has a pounding or irregular heartbeat, loses speech, has vision problems or cannot move arms and legs, has convulsions, a tongue injury, or loss of bladder or bowel control. Someone who has never fainted before, faints often, or has new symptoms with fainting should also get prompt medical care."
+    },
+    "sources": [
+      "s2",
+      "s3"
+    ]
+  },
+  "general": [
+    {
+      "heading": {
+        "vi": "Huyết áp thấp là gì?",
+        "en": "What is low blood pressure?"
+      },
+      "body": {
+        "vi": "Theo MedlinePlus (Thư viện Y khoa Quốc gia Hoa Kỳ), huyết áp là lực máu đẩy lên thành động mạch. Ở người lớn, huyết áp bình thường nằm trong khoảng 90/60 mmHg đến 120/80 mmHg; số đo từ 90/60 trở xuống là huyết áp thấp.\n\nMột số người lúc nào cũng có huyết áp thấp, không có triệu chứng, và số đo thấp là bình thường với họ — thường không cần điều trị. Huyết áp thấp chỉ thành vấn đề khi gây chóng mặt, ngất, hoặc trong trường hợp nặng là sốc. (Tài liệu cũng ghi thể \"huyết áp thấp nhưng ổn định\" là \"không phải là bệnh\".)\n\nTriệu chứng MedlinePlus nêu gồm nhìn mờ, lú lẫn, chóng mặt, ngất, choáng váng, buồn nôn hoặc nôn, buồn ngủ và yếu người. Nguyên nhân có thể là bệnh tim, tác dụng phụ của thuốc (thuốc lợi tiểu, thuốc chống trầm cảm, thuốc hạ huyết áp), uống không đủ nước, mất nước, và tổn thương thần kinh do tiểu đường.",
+        "en": "According to MedlinePlus (U.S. National Library of Medicine), blood pressure is the force of your blood pushing against the walls of your arteries. In adults, normal blood pressure is between 90/60 mmHg and 120/80 mmHg; a reading of 90/60 or lower is low blood pressure.\n\nSome people have low blood pressure all the time, have no symptoms, and their low readings are normal for them — it often needs no treatment. Low blood pressure is a problem only if it causes dizziness, fainting or, in extreme cases, shock. (The document likewise calls \"low but stable blood pressure\" \"not a disease\".)\n\nSymptoms MedlinePlus lists include blurry vision, confusion, dizziness, fainting, lightheadedness, nausea or vomiting, sleepiness and weakness. Causes can include heart conditions, medication side effects (diuretics, antidepressants, blood pressure drugs), not drinking enough fluids, dehydration, and nerve damage from diabetes."
+      },
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    {
+      "heading": {
+        "vi": "Ngất là gì?",
+        "en": "What is fainting?"
+      },
+      "body": {
+        "vi": "MedlinePlus định nghĩa ngất là mất ý thức trong thời gian ngắn do lưu lượng máu lên não giảm. Cơn ngất thường kéo dài không quá vài phút và người bệnh hồi phục nhanh.",
+        "en": "MedlinePlus defines fainting as a brief loss of consciousness due to a drop in blood flow to the brain. An episode usually lasts no more than a couple of minutes, with quick recovery."
+      },
+      "sources": [
+        "s3"
+      ]
+    }
+  ],
+  "symptoms": [],
+  "methodQuotes": [],
+  "variants": [
+    {
+      "id": "xay-xam-mat-may-thoang-me",
+      "label": {
+        "vi": "Xây xẩm mặt mày, thoáng mê",
+        "en": "Dizziness and brief clouding of consciousness"
+      },
+      "quotes": [
+        {
+          "pdfPage": 15,
+          "vi": "Nhiệt độ biến đổi vùng…: lưng trên Vùng tam giác cơ biến đổi…: 3 Đốt sống trọng điểm…: T1",
+          "en": "Temperature-change zone…: upper back. Muscle-triangle zone changed…: 3. Key vertebra…: T1"
+        }
+      ]
+    },
+    {
+      "id": "ngat-ngung-tho-tim-ngung-dap-phuc",
+      "label": {
+        "vi": "Ngất, ngừng thở, tim ngừng đập (tài liệu ghi \"phục hồi nhanh\")",
+        "en": "Fainting, stopped breathing, stopped heartbeat (the document says \"recovering quickly\")"
+      },
+      "quotes": [
+        {
+          "pdfPage": 15,
+          "vi": "Nhiệt độ biến đổi vùng…: Chẩm, toàn thân lạnh Vùng tam giác cơ biến đổi…: 1 Đốt sống trọng điểm…: C1",
+          "en": "Temperature-change zone…: occiput, whole body cold. Muscle-triangle zone changed…: 1. Key vertebra…: C1"
+        }
+      ]
+    },
+    {
+      "id": "tim-dap-cham-nguoi-met-la",
+      "label": {
+        "vi": "Tim đập chậm, người mệt lả",
+        "en": "Slow heartbeat, exhaustion"
+      },
+      "quotes": [
+        {
+          "pdfPage": 15,
+          "vi": "Nhiệt độ biến đổi vùng…: Cổ gáy lạnh, ngực trái nóng Vùng tam giác cơ biến đổi…: 1-3 Đốt sống trọng điểm…: C1, T1",
+          "en": "Temperature-change zone…: nape cold, left chest hot. Muscle-triangle zone changed…: 1-3. Key vertebrae…: C1, T1"
+        }
+      ]
+    },
+    {
+      "id": "ha-huyet-ap-dot-ngot-do-roi",
+      "label": {
+        "vi": "Hạ huyết áp đột ngột do rối loạn thần kinh tim",
+        "en": "Sudden drop in blood pressure from cardiac nervous disorder"
+      },
+      "quotes": [
+        {
+          "pdfPage": 15,
+          "vi": "Nhiệt độ biến đổi vùng…: Ngực trái nóng, cổ gáy lạnh Vùng tam giác cơ biến đổi…: 1-4 Đốt sống trọng điểm…:C1,C2, T6",
+          "en": "Temperature-change zone…: left chest hot, nape cold. Muscle-triangle zone changed…: 1-4. Key vertebrae…: C1, C2, T6"
+        }
+      ]
+    },
+    {
+      "id": "nguoi-met-moi-keo-dai-thoang-ngat",
+      "label": {
+        "vi": "Mệt mỏi kéo dài, thoáng ngất",
+        "en": "Prolonged fatigue, near-fainting"
+      },
+      "quotes": [
+        {
+          "pdfPage": 15,
+          "vi": "Nhiệt độ biến đổi vùng…: toàn thân và cổ gáy lạnh Vùng tam giác cơ biến đổi…: 1-3-4-5 Đốt sống trọng điểm…: C1, T1,T5,6,7,10",
+          "en": "Temperature-change zone…: whole body and nape cold. Muscle-triangle zones changed…: 1-3-4-5. Key vertebrae…: C1, T1, T5, 6, 7, 10"
+        }
+      ]
+    },
+    {
+      "id": "chan-tay-lanh-da-tim-tai-dau",
+      "label": {
+        "vi": "Chân tay lạnh, da tím tái, đau vùng tim",
+        "en": "Cold hands and feet, bluish skin, pain over the heart"
+      },
+      "quotes": [
+        {
+          "pdfPage": 15,
+          "vi": "Nhiệt độ biến đổi vùng…: Ngực trái, thắt lưng nóng Vùng tam giác cơ biến đổi…: 4-6 Đốt sống trọng điểm…:T5, T6, L3",
+          "en": "Temperature-change zone…: left chest and lumbar region hot. Muscle-triangle zones changed…: 4-6. Key vertebrae…: T5, T6, L3"
+        }
+      ]
+    },
+    {
+      "id": "huyet-ap-thap-do-benh-ho-hap",
+      "label": {
+        "vi": "Huyết áp thấp do bệnh hô hấp",
+        "en": "Low blood pressure from respiratory disease"
+      },
+      "quotes": [
+        {
+          "pdfPage": 15,
+          "vi": "Nhiệt độ biến đổi vùng…: Cổ phải, rốn Vùng tam giác cơ biến đổi…: 3-4 Đốt sống trọng điểm…: T2, T4, T5",
+          "en": "Temperature-change zone…: right side of the neck, navel. Muscle-triangle zones changed…: 3-4. Key vertebrae…: T2, T4, T5"
+        }
+      ]
+    },
+    {
+      "id": "huyet-ap-thap-do-benh-gan",
+      "label": {
+        "vi": "Huyết áp thấp do bệnh gan",
+        "en": "Low blood pressure from liver disease"
+      },
+      "quotes": [
+        {
+          "pdfPage": 15,
+          "vi": "Nhiệt độ biến đổi vùng…: Sườn phải, rốn Vùng tam giác cơ biến đổi…: 3-5-6-7 Đốt sống trọng điểm…: T2, T10, L3, L5",
+          "en": "Temperature-change zone…: right flank, navel. Muscle-triangle zones changed…: 3-5-6-7. Key vertebrae…: T2, T10, L3, L5"
+        }
+      ]
+    },
+    {
+      "id": "huyet-ap-thap-do-benh-tim",
+      "label": {
+        "vi": "Huyết áp thấp do bệnh tim",
+        "en": "Low blood pressure from heart disease"
+      },
+      "quotes": [
+        {
+          "pdfPage": 16,
+          "vi": "Nhiệt độ biến đổi vùng…: Chẩm nóng, cổ gáy lạnh Vùng tam giác cơ biến đổi…: 1-3 Đốt sống trọng điểm…: C1, T1",
+          "en": "Temperature-change zone…: occiput hot, nape cold. Muscle-triangle zones changed…: 1-3. Key vertebrae…: C1, T1"
+        }
+      ]
+    },
+    {
+      "id": "huyet-ap-thap-nhung-on-dinh-la",
+      "label": {
+        "vi": "Huyết áp thấp nhưng ổn định",
+        "en": "Low but stable blood pressure"
+      },
+      "quotes": [
+        {
+          "pdfPage": 16,
+          "vi": "Nhiệt độ biến đổi vùng…: không có biến đổi Vùng tam giác cơ biến đổi…: không biến đổi Đốt sống trọng điểm: ( Không phải là bệnh)",
+          "en": "Temperature-change zone…: no change. Muscle-triangle zone changed…: no change. Key vertebrae: (Not a disease)"
+        }
+      ]
+    }
+  ],
+  "outOfScope": [],
+  "cover": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/Illu_vertebral_column.svg/1920px-Illu_vertebral_column.svg.png",
+    "page": "https://commons.wikimedia.org/wiki/File:Illu_vertebral_column.svg",
+    "license": "Public domain"
+  },
+  "furtherReading": [
+    {
+      "slug": "van-dong-thay-doi-tim-va-mach-mau-nhu-the-nao",
+      "title": {
+        "vi": "Vận động thay đổi tim và mạch máu như thế nào",
+        "en": "How exercise reshapes the heart and blood vessels"
+      },
+      "why": "Huyết áp là chuyện của tim và mạch máu — bài kia giải thích hai cơ quan ấy thay đổi ra sao."
+    },
+    {
+      "slug": "huyet-dao-va-cham-cuu-khi-cua-dong-y-co-lien-he-gi-voi-khoa-hoc-hien-dai",
+      "title": {
+        "vi": "Huyệt đạo và châm cứu: \"Khí\" của Đông y có liên hệ gì với khoa học hiện đại?",
+        "en": "Acupoints and acupuncture: how does the \"Qi\" of Eastern medicine relate to modern science?"
+      },
+      "why": "Cùng câu hỏi nền: một phương pháp truyền thống của Việt Nam/Đông y được khoa học hiện đại nhìn nhận thế nào."
+    },
+    {
+      "slug": "stress-tac-dong-len-co-the-nhu-the-nao-va-vi-sao-van-dong-giup-chung-ta-giai-toa",
+      "title": {
+        "vi": "Stress tác động lên cơ thể như thế nào và vì sao vận động giúp chúng ta giải tỏa?",
+        "en": "How does stress affect the body, and why does exercise help us unwind?"
+      },
+      "why": "Bài nói hệ thần kinh tự chủ điều khiển nhịp tim và mạch máu khi căng thẳng — cùng hệ điều hòa huyết áp."
+    }
+  ],
+  "review": {
+    "transcription": "pending",
+    "mapping": "passed",
+    "editor": "pending"
+  }
+}

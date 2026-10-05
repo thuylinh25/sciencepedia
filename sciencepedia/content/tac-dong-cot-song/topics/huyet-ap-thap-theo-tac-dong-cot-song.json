@@ -1,0 +1,441 @@
+{
+  "slug": "huyet-ap-thap-theo-tac-dong-cot-song",
+  "collection": "tac-dong-cot-song",
+  "section": "huyet-ap-thap",
+  "title": {
+    "vi": "Huyết áp thấp theo phương pháp Tác động cột sống",
+    "en": "Low blood pressure in the Spinal Impact method"
+  },
+  "riskLevel": "high",
+  "source": {
+    "docId": "pp-tdcs-vn",
+    "part": "Phần I",
+    "heading": "V. BỆNH HUYẾT ÁP THẤP",
+    "pdfPages": [
+      15,
+      16
+    ]
+  },
+  "variants": [
+    {
+      "id": "xay-xam-mat-may-thoang-me",
+      "label": {
+        "vi": "Xây xẩm mặt mày, thoáng mê",
+        "en": "Dizziness and brief clouding of consciousness"
+      },
+      "heading": "1/ Xây xẩm mặt mày, thoáng mê",
+      "ref": {
+        "pdfPage": 15,
+        "bookPage": 14
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "T1",
+          "role": "primary",
+          "raw": "T1",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 15,
+            "bookPage": 14
+          }
+        }
+      ]
+    },
+    {
+      "id": "ngat-ngung-tho-tim-ngung-dap-phuc",
+      "label": {
+        "vi": "Ngất, ngừng thở, tim ngừng đập (tài liệu ghi \"phục hồi nhanh\")",
+        "en": "Fainting, stopped breathing, stopped heartbeat (the document says \"recovering quickly\")"
+      },
+      "heading": "2/ Ngất, ngừng thở, tim ngừng đập phục hồi nhanh",
+      "ref": {
+        "pdfPage": 15,
+        "bookPage": 14
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "C1",
+          "role": "primary",
+          "raw": "C1",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 15,
+            "bookPage": 14
+          }
+        }
+      ]
+    },
+    {
+      "id": "tim-dap-cham-nguoi-met-la",
+      "label": {
+        "vi": "Tim đập chậm, người mệt lả",
+        "en": "Slow heartbeat, exhaustion"
+      },
+      "heading": "3/ Tim đập chậm người mệt lả",
+      "ref": {
+        "pdfPage": 15,
+        "bookPage": 14
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "C1",
+          "role": "primary",
+          "raw": "C1, T1",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 15,
+            "bookPage": 14
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T1",
+          "role": "primary",
+          "raw": "C1, T1",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 15,
+            "bookPage": 14
+          }
+        }
+      ]
+    },
+    {
+      "id": "ha-huyet-ap-dot-ngot-do-roi",
+      "label": {
+        "vi": "Hạ huyết áp đột ngột do rối loạn thần kinh tim",
+        "en": "Sudden drop in blood pressure from cardiac nervous disorder"
+      },
+      "heading": "4/ Hạ huyết áp đột ngột do rối loạn thần kinh tim",
+      "ref": {
+        "pdfPage": 15,
+        "bookPage": 14
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "C1",
+          "role": "primary",
+          "raw": "C1,C2, T6",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 15,
+            "bookPage": 14
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "C2",
+          "role": "primary",
+          "raw": "C1,C2, T6",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 15,
+            "bookPage": 14
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T6",
+          "role": "primary",
+          "raw": "C1,C2, T6",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 15,
+            "bookPage": 14
+          }
+        }
+      ]
+    },
+    {
+      "id": "nguoi-met-moi-keo-dai-thoang-ngat",
+      "label": {
+        "vi": "Mệt mỏi kéo dài, thoáng ngất",
+        "en": "Prolonged fatigue, near-fainting"
+      },
+      "heading": "5/ Người mệt mỏi kéo dài, thoáng ngất",
+      "ref": {
+        "pdfPage": 15,
+        "bookPage": 14
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "C1",
+          "role": "primary",
+          "raw": "C1, T1,T5,6,7,10",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 15,
+            "bookPage": 14
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T1",
+          "role": "primary",
+          "raw": "C1, T1,T5,6,7,10",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 15,
+            "bookPage": 14
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T5",
+          "role": "primary",
+          "raw": "C1, T1,T5,6,7,10",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 15,
+            "bookPage": 14
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T6",
+          "role": "primary",
+          "raw": "C1, T1,T5,6,7,10",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 15,
+            "bookPage": 14
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T7",
+          "role": "primary",
+          "raw": "C1, T1,T5,6,7,10",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 15,
+            "bookPage": 14
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T10",
+          "role": "primary",
+          "raw": "C1, T1,T5,6,7,10",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 15,
+            "bookPage": 14
+          }
+        }
+      ]
+    },
+    {
+      "id": "chan-tay-lanh-da-tim-tai-dau",
+      "label": {
+        "vi": "Chân tay lạnh, da tím tái, đau vùng tim",
+        "en": "Cold hands and feet, bluish skin, pain over the heart"
+      },
+      "heading": "6/ Chân tay lạnh, da tím tái, đau vùng tim",
+      "ref": {
+        "pdfPage": 15,
+        "bookPage": 14
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "T5",
+          "role": "primary",
+          "raw": "T5, T6, L3",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 15,
+            "bookPage": 14
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T6",
+          "role": "primary",
+          "raw": "T5, T6, L3",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 15,
+            "bookPage": 14
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "L3",
+          "role": "primary",
+          "raw": "T5, T6, L3",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 15,
+            "bookPage": 14
+          }
+        }
+      ]
+    },
+    {
+      "id": "huyet-ap-thap-do-benh-ho-hap",
+      "label": {
+        "vi": "Huyết áp thấp do bệnh hô hấp",
+        "en": "Low blood pressure from respiratory disease"
+      },
+      "heading": "7/ Huyết áp thấp do bệnh hô hấp",
+      "ref": {
+        "pdfPage": 15,
+        "bookPage": 14
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "T2",
+          "role": "primary",
+          "raw": "T2, T4, T5",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 15,
+            "bookPage": 14
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T4",
+          "role": "primary",
+          "raw": "T2, T4, T5",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 15,
+            "bookPage": 14
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T5",
+          "role": "primary",
+          "raw": "T2, T4, T5",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 15,
+            "bookPage": 14
+          }
+        }
+      ]
+    },
+    {
+      "id": "huyet-ap-thap-do-benh-gan",
+      "label": {
+        "vi": "Huyết áp thấp do bệnh gan",
+        "en": "Low blood pressure from liver disease"
+      },
+      "heading": "8/ Huyết áp thấp do bệnh gan",
+      "ref": {
+        "pdfPage": 15,
+        "bookPage": 14
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "T2",
+          "role": "primary",
+          "raw": "T2, T10, L3, L5",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 15,
+            "bookPage": 14
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T10",
+          "role": "primary",
+          "raw": "T2, T10, L3, L5",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 15,
+            "bookPage": 14
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "L3",
+          "role": "primary",
+          "raw": "T2, T10, L3, L5",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 15,
+            "bookPage": 14
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "L5",
+          "role": "primary",
+          "raw": "T2, T10, L3, L5",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 15,
+            "bookPage": 14
+          }
+        }
+      ]
+    },
+    {
+      "id": "huyet-ap-thap-do-benh-tim",
+      "label": {
+        "vi": "Huyết áp thấp do bệnh tim",
+        "en": "Low blood pressure from heart disease"
+      },
+      "heading": "9/ Huyết áp thấp do bệnh tim",
+      "ref": {
+        "pdfPage": 16,
+        "bookPage": 15
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "C1",
+          "role": "primary",
+          "raw": "C1, T1",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 16,
+            "bookPage": 15
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T1",
+          "role": "primary",
+          "raw": "C1, T1",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 16,
+            "bookPage": 15
+          }
+        }
+      ]
+    },
+    {
+      "id": "huyet-ap-thap-nhung-on-dinh-la",
+      "label": {
+        "vi": "Huyết áp thấp nhưng ổn định",
+        "en": "Low but stable blood pressure"
+      },
+      "heading": "10/ Huyết áp thấp nhưng ổn định (là bình thường)",
+      "ref": {
+        "pdfPage": 16,
+        "bookPage": 15
+      },
+      "mappings": []
+    }
+  ],
+  "unassigned": [],
+  "review": {
+    "transcription": "pending",
+    "mapping": "passed",
+    "editor": "pending"
+  }
+}
