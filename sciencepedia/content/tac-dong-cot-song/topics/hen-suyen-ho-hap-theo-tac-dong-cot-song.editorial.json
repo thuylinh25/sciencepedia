@@ -1,0 +1,324 @@
+{
+  "section": "hen-suyen-ho-hap",
+  "slug": "hen-suyen-ho-hap-theo-tac-dong-cot-song",
+  "title": {
+    "vi": "Hen suyễn và triệu chứng hô hấp theo phương pháp Tác động cột sống",
+    "en": "Asthma and breathing symptoms in the Spinal Impact method"
+  },
+  "summary": {
+    "vi": "Tài liệu Phương pháp Tác động Cột sống Việt Nam chia bệnh hen suyễn thành bảy thể và nêu đốt sống cho năm triệu chứng hô hấp — trích nguyên văn, đặt sau kiến thức y khoa có nguồn về hen, cơn hen và khi nào phải gọi cấp cứu.",
+    "en": "How the Vietnamese Spinal Impact method document divides asthma into seven forms and names vertebrae for five breathing symptoms — quoted verbatim, after sourced medical information on asthma, asthma attacks and when to call emergency services."
+  },
+  "seoDescription": {
+    "vi": "Hen suyễn theo tài liệu Phương pháp Tác động Cột sống Việt Nam: bảy thể, năm triệu chứng hô hấp và các đốt sống C3, C6, C7, T1–T7, L1 — kèm kiến thức y khoa và dấu hiệu cơn hen cần cấp cứu.",
+    "en": "Asthma in the Vietnamese Spinal Impact method document: seven forms, five breathing symptoms and vertebrae C3, C6, C7, T1–T7, L1 — with sourced medical facts and the warning signs of an emergency asthma attack."
+  },
+  "keywords": "hen suyễn, hen phế quản, cơn hen, khó thở, ho, tức ngực, tác động cột sống, đốt sống",
+  "riskLevel": "high",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Asthma",
+      "publisher": "NHS",
+      "url": "https://www.nhs.uk/conditions/asthma/",
+      "tier": 2,
+      "accessed": "2026-10-05"
+    },
+    {
+      "id": "s2",
+      "title": "Asthma",
+      "publisher": "MedlinePlus — U.S. National Library of Medicine",
+      "url": "https://medlineplus.gov/ency/article/000141.htm",
+      "tier": 2,
+      "accessed": "2026-10-05"
+    },
+    {
+      "id": "s3",
+      "title": "Asthma — Asthma Attack",
+      "publisher": "National Heart, Lung, and Blood Institute (NIH)",
+      "url": "https://www.nhlbi.nih.gov/health/asthma/attacks",
+      "tier": 2,
+      "accessed": "2026-10-05"
+    },
+    {
+      "id": "s4",
+      "title": "Asthma — Symptoms",
+      "publisher": "National Heart, Lung, and Blood Institute (NIH)",
+      "url": "https://www.nhlbi.nih.gov/health/asthma/symptoms",
+      "tier": 2,
+      "accessed": "2026-10-05"
+    },
+    {
+      "id": "s5",
+      "title": "Heart failure",
+      "publisher": "MedlinePlus — U.S. National Library of Medicine",
+      "url": "https://medlineplus.gov/ency/article/000158.htm",
+      "tier": 2,
+      "accessed": "2026-10-05"
+    },
+    {
+      "id": "s6",
+      "title": "Pneumonia - adults (community acquired)",
+      "publisher": "MedlinePlus — U.S. National Library of Medicine",
+      "url": "https://medlineplus.gov/ency/article/000145.htm",
+      "tier": 2,
+      "accessed": "2026-10-05"
+    }
+  ],
+  "safety": {
+    "heading": {
+      "vi": "⚠️ Cơn hen có thể đe dọa tính mạng",
+      "en": "⚠️ An asthma attack can be life-threatening"
+    },
+    "body": {
+      "vi": "**Cơn hen là lúc triệu chứng nặng và khó thở, có thể đe dọa tính mạng** (NHS). Đang lên cơn thì ngồi thẳng, giữ bình tĩnh và dùng thuốc cắt cơn đúng như kế hoạch hành động hen mà nhân viên y tế đã lập. Không có điều gì trong tài liệu dưới đây thay thế thuốc hen hay kế hoạch ấy.\n\nNHS khuyên gọi cấp cứu khi người đang lên cơn hen:\n\n- thấy nặng hơn vào bất kỳ lúc nào;\n- không đỡ sau khi đã dùng thuốc cắt cơn tới liều tối đa;\n- không có bình xịt hen.\n\nMedlinePlus khuyên đến khoa cấp cứu hoặc gọi cấp cứu ngay khi có:\n\n- buồn ngủ hoặc lú lẫn;\n- khó thở nặng cả khi nghỉ;\n- lưu lượng đỉnh dưới 50% mức tốt nhất của bản thân;\n- đau ngực dữ dội;\n- môi và mặt tím tái;\n- cực kỳ khó thở;\n- mạch nhanh;\n- lo sợ dữ dội vì khó thở.\n\nVới **trẻ nhỏ** bị hen, NHLBI khuyên gọi cấp cứu khi trẻ có vẻ lơ mơ, lú lẫn hoặc bứt rứt, da và môi ngả xanh, hoặc tim đập nhanh.\n\nĐã qua cơn và thấy khỏe lại thì vẫn nên gặp bác sĩ trong vòng 2 ngày để xem lại điều trị và phòng cơn sau (NHS).",
+      "en": "**An asthma attack is when symptoms are severe and it is difficult to breathe, and it can be life-threatening** (NHS). During an attack, sit up straight, try to stay calm, and use reliever medicine exactly as set out in the asthma action plan a health professional made with you. Nothing in the document quoted below replaces asthma medicine or that plan.\n\nThe NHS advises calling emergency services when someone having an asthma attack:\n\n- starts to feel worse at any time;\n- does not feel better after taking the maximum dose of their reliever inhaler;\n- does not have an asthma inhaler.\n\nMedlinePlus advises going to the emergency room or calling emergency services right away for:\n\n- drowsiness or confusion;\n- severe shortness of breath at rest;\n- a peak flow below 50% of your personal best;\n- severe chest pain;\n- bluish color to the lips and face;\n- extreme difficulty breathing;\n- rapid pulse;\n- severe anxiety due to shortness of breath.\n\nFor **young children** with asthma, NHLBI advises calling emergency services if they seem drowsy, confused or troubled, have a blue tint to the skin and lips, or have a fast heartbeat.\n\nAfter recovering from an attack, even if you feel better, see a doctor within 2 days to review treatment and help prevent another attack (NHS)."
+    },
+    "sources": [
+      "s1",
+      "s2",
+      "s3"
+    ]
+  },
+  "general": [
+    {
+      "heading": {
+        "vi": "Hen suyễn là gì?",
+        "en": "What is asthma?"
+      },
+      "body": {
+        "vi": "Theo NHS (Dịch vụ Y tế Quốc gia Anh), hen là bệnh thường gặp ảnh hưởng đến hô hấp. Hiện chưa chữa khỏi được, nhưng nếu được điều trị tốt thì người bệnh thường không gặp vấn đề với triệu chứng. Triệu chứng xuất hiện khi đường thở bị sưng lên và hẹp lại.\n\nTriệu chứng chính là khò khè, ho, khó thở và tức ngực. Theo NHLBI (Viện Tim, Phổi và Máu Hoa Kỳ), ở người bị hen các triệu chứng thường theo một kiểu: đến rồi đi, nặng lên khi nhiễm virus như cảm lạnh, bị khởi phát bởi vận động, dị ứng, không khí lạnh, và nặng hơn về đêm hoặc sáng sớm. MedlinePlus mô tả thêm kiểu thở bất thường của hen: thở ra mất hơn gấp đôi thời gian hít vào — điều tài liệu gọi là \"thở ra khó\".\n\nCơn hen có thể kéo dài từ vài phút đến vài ngày, đến đột ngột hoặc từ từ (MedlinePlus). Chẩn đoán dựa trên hỏi bệnh, nghe phổi, đo chức năng hô hấp và đôi khi theo dõi lưu lượng đỉnh tại nhà (NHS). Điều trị chính là thuốc hít qua bình xịt, theo một kế hoạch hành động hen ghi rõ khi nào dùng thuốc nào và làm gì khi triệu chứng nặng lên. Với tự chăm sóc và điều trị y khoa đúng, phần lớn người bị hen sống bình thường (MedlinePlus). MedlinePlus cũng nêu loại bỏ khói thuốc lá khỏi nhà là việc quan trọng nhất một gia đình có thể làm cho người bị hen.",
+        "en": "According to the NHS (UK National Health Service), asthma is a common condition that affects your breathing. It cannot currently be cured, but if it is well treated you should not have problems with symptoms. Symptoms happen when the airways become swollen and narrower.\n\nThe main symptoms are wheezing, coughing, shortness of breath and a tight chest. According to NHLBI (U.S. National Heart, Lung, and Blood Institute), asthma symptoms often follow a pattern: they come and go, get worse with viral infections such as a cold, are triggered by exercise, allergies or cold air, and are worse at night or in the morning. MedlinePlus adds an abnormal breathing pattern seen in asthma: breathing out takes more than twice as long as breathing in — what the document calls \"breathing out is hard\".\n\nAn asthma attack can last from minutes to days and may start suddenly or slowly (MedlinePlus). Diagnosis relies on questions, listening to the chest, a breathing test and sometimes peak flow readings at home (NHS). The main treatment is inhaled medicine, following an asthma action plan that sets out which medicine to use when and what to do if symptoms get worse. With proper self-care and medical treatment, most people with asthma can lead a normal life (MedlinePlus). MedlinePlus also says removing tobacco smoke from the home is the single most important thing a family can do for someone with asthma."
+      },
+      "sources": [
+        "s1",
+        "s2",
+        "s4"
+      ]
+    },
+    {
+      "heading": {
+        "vi": "Khó thở không phải lúc nào cũng là hen",
+        "en": "Breathlessness is not always asthma"
+      },
+      "body": {
+        "vi": "Khó thở có thể do nhiều nguyên nhân, nên hen có khi cần thời gian mới chẩn đoán được (NHS). Hai thể trong tài liệu dưới đây mô tả triệu chứng cũng gặp ở bệnh khác:\n\n- **Khó thở về đêm, tim đập nhanh** (thể 4): MedlinePlus liệt kê cho **suy tim** các triệu chứng thức giấc sau vài giờ ngủ vì khó thở, khó thở khi nằm, và mạch nhanh hoặc không đều; khi khám, bác sĩ tìm tiếng tim bất thường. MedlinePlus khuyên gọi cấp cứu nếu bị ngất, tim đập nhanh và không đều, hoặc đau ngực dữ dội.\n- **Thở nhanh kèm sốt** (thể 2): MedlinePlus nêu ho, sốt, rét run và khó thở là triệu chứng thường gặp nhất của **viêm phổi**, và khuyên liên hệ bác sĩ khi thở nhanh hoặc đau khi thở, hoặc khó thở kèm sốt kéo dài.\n\nVì vậy, khó thở mới xuất hiện hay thay đổi cần được khám để tìm nguyên nhân.",
+        "en": "Breathing problems can have different causes, which is one reason asthma can take time to diagnose (NHS). Two forms in the document below describe symptoms that also occur in other conditions:\n\n- **Breathlessness at night with a fast heartbeat** (form 4): for **heart failure**, MedlinePlus lists waking up after a couple of hours of sleep due to shortness of breath, shortness of breath after lying down, and a fast or irregular pulse; on examination, doctors look for abnormal heart sounds. MedlinePlus advises calling emergency services for fainting, a fast and irregular heartbeat, or severe chest pain.\n- **Fast breathing with fever** (form 2): MedlinePlus lists cough, fever, shaking chills and shortness of breath as the most common symptoms of **pneumonia**, and advises contacting a doctor for fast or painful breathing, or shortness of breath with persistent fevers.\n\nSo breathlessness that is new or changing needs a medical check to find its cause."
+      },
+      "sources": [
+        "s1",
+        "s5",
+        "s6"
+      ]
+    }
+  ],
+  "symptoms": [],
+  "methodQuotes": [],
+  "variants": [
+    {
+      "id": "kho-tho-tung-con-tho-cham-tho",
+      "label": {
+        "vi": "Khó thở từng cơn, thở chậm, thở ra khó, khò khè nhưng không sốt",
+        "en": "Episodes of breathlessness, slow breathing, hard to breathe out, wheezing but no fever"
+      },
+      "quotes": [
+        {
+          "pdfPage": 33,
+          "vi": "Nhiệt độ biến đổi : Cổ phải, ngực trái Vùng cơ biến đổi : tam giác 1,2,3,4 Đốt sống trọng điểm: C3,4, T2,T3 Liên quan chức năng : tuần hoàn, hô hấp",
+          "en": "Temperature change: right side of the neck, left chest. Muscle zones changed: triangles 1, 2, 3, 4. Key vertebrae: C3, 4, T2, T3. Related functions: circulation, breathing"
+        }
+      ]
+    },
+    {
+      "id": "tho-nhieu-va-mau-kem-sot-thuong",
+      "label": {
+        "vi": "Thở nhiều và mau, kèm sốt, thường xảy ra ban đêm",
+        "en": "Heavy, fast breathing with fever, usually at night"
+      },
+      "quotes": [
+        {
+          "pdfPage": 33,
+          "vi": "Nhiệt độ biến đổi : ngực trái , cổ phải, thắt lưng Vùng cơ biến đổi : tam giác 3,4 Đốt sống trọng điểm: T2,3,4,7 Liên quan chức năng : Hô hấp",
+          "en": "Temperature change: left chest, right side of the neck, lower back. Muscle zones changed: triangles 3, 4. Key vertebrae: T2, 3, 4, 7. Related function: breathing"
+        }
+      ]
+    },
+    {
+      "id": "kho-tho-lien-tuc-khac-nhieu-dom",
+      "label": {
+        "vi": "Khó thở liên tục, khạc nhiều đờm và khạc liên tục",
+        "en": "Constant breathlessness, coughing up a lot of phlegm, continuously"
+      },
+      "quotes": [
+        {
+          "pdfPage": 33,
+          "vi": "Nhiệt độ biến đổi : Ngực trái – cổ phải Vùng cơ biến đổi : tam giác 4 Đốt sống trọng điểm: T4, T6 Liên quan chức năng : Hô hấp",
+          "en": "Temperature change: left chest – right side of the neck. Muscle zone changed: triangle 4. Key vertebrae: T4, T6. Related function: breathing"
+        }
+      ]
+    },
+    {
+      "id": "kho-tho-vao-ban-dem-tim-dap",
+      "label": {
+        "vi": "Khó thở vào ban đêm, tim đập nhanh, có \"tiếng ngựa phi\", nhịp thở nhanh hoặc chậm",
+        "en": "Breathlessness at night, fast heartbeat, a \"galloping\" sound, fast or slow breathing"
+      },
+      "quotes": [
+        {
+          "pdfPage": 33,
+          "vi": "Nhiệt độ biến đổi : ngực trái , cổ phải Vùng cơ biến đổi : tam giác 3,4 Đốt sống trọng điểm: T2,3,4 Liên quan chức năng : Tim, hô hấp",
+          "en": "Temperature change: left chest, right side of the neck. Muscle zones changed: triangles 3, 4. Key vertebrae: T2, 3, 4. Related functions: heart, breathing"
+        }
+      ]
+    },
+    {
+      "id": "chung-cho-hen-phe-quan",
+      "label": {
+        "vi": "Chung cho hen phế quản",
+        "en": "Common to bronchial asthma"
+      },
+      "quotes": [
+        {
+          "pdfPage": 33,
+          "vi": "Nhiệt độ biến đổi : Ngực trái- cổ phải- thắt lưng Vùng cơ biến đổi : tam giác 4,6 Đốt sống trọng điểm: T3,T6,T7, L1 Liên quan chức năng : Tuần hoàn, hô hấp.",
+          "en": "Temperature change: left chest – right side of the neck – lower back. Muscle zones changed: triangles 4, 6. Key vertebrae: T3, T6, T7, L1. Related functions: circulation, breathing."
+        }
+      ]
+    },
+    {
+      "id": "suyen-nhieu-dom",
+      "label": {
+        "vi": "Suyễn (nhiều đờm)",
+        "en": "Wheezing illness with a lot of phlegm"
+      },
+      "quotes": [
+        {
+          "pdfPage": 33,
+          "vi": "Nhiệt độ biến đổi : Vùng chẩm Vùng cơ biến đổi : tam giác 6 Đốt sống trọng điểm: L1 Liên quan chức năng : Đại tràng.",
+          "en": "Temperature change: occipital area. Muscle zone changed: triangle 6. Key vertebra: L1. Related function: large intestine."
+        }
+      ]
+    },
+    {
+      "id": "hen-nhung-khong-sot",
+      "label": {
+        "vi": "Hen nhưng không sốt",
+        "en": "Asthma without fever"
+      },
+      "quotes": [
+        {
+          "pdfPage": 34,
+          "vi": "Nhiệt độ biến đổi : Cổ phải Vùng cơ biến đổi : 1 Đốt sống trọng điểm: C3 Liên quan chức năng : Hô hấp",
+          "en": "Temperature change: right side of the neck. Muscle zone changed: 1. Key vertebra: C3. Related function: breathing"
+        }
+      ]
+    },
+    {
+      "id": "ho",
+      "label": {
+        "vi": "Triệu chứng hô hấp: Ho",
+        "en": "Breathing symptom: cough"
+      },
+      "quotes": [
+        {
+          "pdfPage": 34,
+          "vi": "Đốt sống chủ yếu:…T2,3 Đốt sống liên quan:…T4,5,6,10",
+          "en": "Main vertebrae:…T2, 3 Related vertebrae:…T4, 5, 6, 10"
+        }
+      ]
+    },
+    {
+      "id": "kho-tho",
+      "label": {
+        "vi": "Triệu chứng hô hấp: Khó thở",
+        "en": "Breathing symptom: shortness of breath"
+      },
+      "quotes": [
+        {
+          "pdfPage": 34,
+          "vi": "Đốt sống chủ yếu:…C6,7,T1 Đốt sống liên quan:…T3,5,8,12, L2",
+          "en": "Main vertebrae:…C6, 7, T1 Related vertebrae:…T3, 5, 8, 12, L2"
+        }
+      ]
+    },
+    {
+      "id": "bi-nghen-o-co",
+      "label": {
+        "vi": "Triệu chứng hô hấp: Bị nghẹn ở cổ",
+        "en": "Breathing symptom: a choking feeling in the throat"
+      },
+      "quotes": [
+        {
+          "pdfPage": 34,
+          "vi": "Đốt sống chủ yếu:…C6,7 Đốt sống liên quan:…T8, L2",
+          "en": "Main vertebrae:…C6, 7 Related vertebrae:…T8, L2"
+        }
+      ]
+    },
+    {
+      "id": "tuc-nguc",
+      "label": {
+        "vi": "Triệu chứng hô hấp: Tức ngực",
+        "en": "Breathing symptom: chest tightness"
+      },
+      "quotes": [
+        {
+          "pdfPage": 34,
+          "vi": "Đốt sống chủ yếu:…C7, T1 Đốt sống liên quan:…T3,7,8,9",
+          "en": "Main vertebrae:…C7, T1 Related vertebrae:…T3, 7, 8, 9"
+        }
+      ]
+    },
+    {
+      "id": "dom-nhieu",
+      "label": {
+        "vi": "Triệu chứng hô hấp: Đờm nhiều",
+        "en": "Breathing symptom: a lot of phlegm"
+      },
+      "quotes": [
+        {
+          "pdfPage": 34,
+          "vi": "Đốt sống chủ yếu:…T2 Đốt sống liên quan:…T6",
+          "en": "Main vertebra:…T2 Related vertebra:…T6"
+        }
+      ]
+    }
+  ],
+  "outOfScope": [],
+  "cover": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/Illu_vertebral_column.svg/1920px-Illu_vertebral_column.svg.png",
+    "page": "https://commons.wikimedia.org/wiki/File:Illu_vertebral_column.svg",
+    "license": "Public domain"
+  },
+  "furtherReading": [
+    {
+      "slug": "he-mien-dich-nhan-dien-mot-virus-bang-cach-nao",
+      "title": {
+        "vi": "Hệ miễn dịch nhận diện một virus bằng cách nào",
+        "en": "How the immune system recognises a virus"
+      },
+      "why": "Nhiễm virus như cảm lạnh làm hen nặng lên — bài kia giải thích cơ thể phản ứng với virus ra sao."
+    },
+    {
+      "slug": "van-dong-thay-doi-tim-va-mach-mau-nhu-the-nao",
+      "title": {
+        "vi": "Vận động thay đổi tim và mạch máu như thế nào",
+        "en": "How exercise reshapes the heart and blood vessels"
+      },
+      "why": "Tài liệu gắn nhiều thể hen với tuần hoàn và tim — bài kia nói về tim và mạch máu."
+    },
+    {
+      "slug": "huyet-dao-va-cham-cuu-khi-cua-dong-y-co-lien-he-gi-voi-khoa-hoc-hien-dai",
+      "title": {
+        "vi": "Huyệt đạo và châm cứu: \"Khí\" của Đông y có liên hệ gì với khoa học hiện đại?",
+        "en": "Acupoints and acupuncture: how does the \"Qi\" of Eastern medicine relate to modern science?"
+      },
+      "why": "Cùng câu hỏi nền: một phương pháp truyền thống của Việt Nam/Đông y được khoa học hiện đại nhìn nhận thế nào."
+    }
+  ],
+  "review": {
+    "transcription": "pending",
+    "mapping": "passed",
+    "editor": "pending"
+  }
+}

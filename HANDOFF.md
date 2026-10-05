@@ -38,7 +38,8 @@ bằng chứng khoa học.
 | `dau-lung-cap`, `dau-than-kinh-toa`, `dau-nua-dau` | 2–3, 7–11, 12–14 | PUBLISHED |
 | `dau-lung-man-tinh`, `huyet-ap-thap` | 4–6, 15–16 | nháp, đã ở `main` (#13) |
 | `thieu-nang-tuan-hoan-nao`, `huyet-ap-cao`, `dau-dau` | 17–32 | nháp (#14) |
-| `hen-suyen-ho-hap` → `sot` → `nhieu-mo-hoi-so-gio` → `benh-do-mo-hoi` → `mat-ngu` → `viem-dai-trang-man-tinh` | 33–43 | **chưa làm** (vai đốt sống của `sot` đã chốt: D-32…D-36, D-38) |
+| `hen-suyen-ho-hap` | 33–34 | nháp (nhánh `claude/hen-suyen-ho-hap`): 12 thể, nguồn NHS + NHLBI + MedlinePlus, `riskLevel high` |
+| `sot` → `nhieu-mo-hoi-so-gio` → `benh-do-mo-hoi` → `mat-ngu` → `viem-dai-trang-man-tinh` | 35–43 | **chưa làm** (vai đốt sống của `sot` đã chốt: D-32…D-36, D-38) |
 
 **Cách làm một chủ đề:**
 1. Đọc `source/pages/pNN.md`.

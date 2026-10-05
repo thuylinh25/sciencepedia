@@ -1,0 +1,690 @@
+{
+  "slug": "hen-suyen-ho-hap-theo-tac-dong-cot-song",
+  "collection": "tac-dong-cot-song",
+  "section": "hen-suyen-ho-hap",
+  "title": {
+    "vi": "Hen suyễn và triệu chứng hô hấp theo phương pháp Tác động cột sống",
+    "en": "Asthma and breathing symptoms in the Spinal Impact method"
+  },
+  "riskLevel": "high",
+  "source": {
+    "docId": "pp-tdcs-vn",
+    "part": "Phần 2",
+    "heading": "CÁC BỆNH VỀ HÔ HẤP",
+    "pdfPages": [
+      33,
+      34
+    ]
+  },
+  "variants": [
+    {
+      "id": "kho-tho-tung-con-tho-cham-tho",
+      "label": {
+        "vi": "Khó thở từng cơn, thở chậm, thở ra khó, khò khè nhưng không sốt",
+        "en": "Episodes of breathlessness, slow breathing, hard to breathe out, wheezing but no fever"
+      },
+      "heading": "1/ Khó thở từng cơn, thở chậm, thở ra khó, khò khè nhưng không sốt.",
+      "ref": {
+        "pdfPage": 33,
+        "bookPage": 32
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "C3",
+          "role": "primary",
+          "raw": "C3,4, T2,T3",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 33,
+            "bookPage": 32
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "C4",
+          "role": "primary",
+          "raw": "C3,4, T2,T3",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 33,
+            "bookPage": 32
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T2",
+          "role": "primary",
+          "raw": "C3,4, T2,T3",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 33,
+            "bookPage": 32
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T3",
+          "role": "primary",
+          "raw": "C3,4, T2,T3",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 33,
+            "bookPage": 32
+          }
+        }
+      ]
+    },
+    {
+      "id": "tho-nhieu-va-mau-kem-sot-thuong",
+      "label": {
+        "vi": "Thở nhiều và mau, kèm sốt, thường xảy ra ban đêm",
+        "en": "Heavy, fast breathing with fever, usually at night"
+      },
+      "heading": "2/ Thở nhiều và mau, kèm sốt thường xảy ra ban đêm",
+      "ref": {
+        "pdfPage": 33,
+        "bookPage": 32
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "T2",
+          "role": "primary",
+          "raw": "T2,3,4,7",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 33,
+            "bookPage": 32
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T3",
+          "role": "primary",
+          "raw": "T2,3,4,7",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 33,
+            "bookPage": 32
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T4",
+          "role": "primary",
+          "raw": "T2,3,4,7",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 33,
+            "bookPage": 32
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T7",
+          "role": "primary",
+          "raw": "T2,3,4,7",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 33,
+            "bookPage": 32
+          }
+        }
+      ]
+    },
+    {
+      "id": "kho-tho-lien-tuc-khac-nhieu-dom",
+      "label": {
+        "vi": "Khó thở liên tục, khạc nhiều đờm và khạc liên tục",
+        "en": "Constant breathlessness, coughing up a lot of phlegm, continuously"
+      },
+      "heading": "3/ Khó thở liên tục, khạc nhiều đờm và khạc liên tục",
+      "ref": {
+        "pdfPage": 33,
+        "bookPage": 32
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "T4",
+          "role": "primary",
+          "raw": "T4, T6",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 33,
+            "bookPage": 32
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T6",
+          "role": "primary",
+          "raw": "T4, T6",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 33,
+            "bookPage": 32
+          }
+        }
+      ]
+    },
+    {
+      "id": "kho-tho-vao-ban-dem-tim-dap",
+      "label": {
+        "vi": "Khó thở vào ban đêm, tim đập nhanh, có \"tiếng ngựa phi\", nhịp thở nhanh hoặc chậm",
+        "en": "Breathlessness at night, fast heartbeat, a \"galloping\" sound, fast or slow breathing"
+      },
+      "heading": "4/ Khó thở vào ban đêm- tim đập nhanh, có tiếng ngựa phi, nhịp thở nhanh hoặc chậm.",
+      "ref": {
+        "pdfPage": 33,
+        "bookPage": 32
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "T2",
+          "role": "primary",
+          "raw": "T2,3,4",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 33,
+            "bookPage": 32
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T3",
+          "role": "primary",
+          "raw": "T2,3,4",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 33,
+            "bookPage": 32
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T4",
+          "role": "primary",
+          "raw": "T2,3,4",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 33,
+            "bookPage": 32
+          }
+        }
+      ]
+    },
+    {
+      "id": "chung-cho-hen-phe-quan",
+      "label": {
+        "vi": "Chung cho hen phế quản",
+        "en": "Common to bronchial asthma"
+      },
+      "heading": "5/ Chung cho HEN PHẾ QUẢN.",
+      "ref": {
+        "pdfPage": 33,
+        "bookPage": 32
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "T3",
+          "role": "primary",
+          "raw": "T3,T6,T7, L1",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 33,
+            "bookPage": 32
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T6",
+          "role": "primary",
+          "raw": "T3,T6,T7, L1",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 33,
+            "bookPage": 32
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T7",
+          "role": "primary",
+          "raw": "T3,T6,T7, L1",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 33,
+            "bookPage": 32
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "L1",
+          "role": "primary",
+          "raw": "T3,T6,T7, L1",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 33,
+            "bookPage": 32
+          }
+        }
+      ]
+    },
+    {
+      "id": "suyen-nhieu-dom",
+      "label": {
+        "vi": "Suyễn (nhiều đờm)",
+        "en": "Wheezing illness with a lot of phlegm"
+      },
+      "heading": "6/ Suyễn (nhiều đờm).",
+      "ref": {
+        "pdfPage": 33,
+        "bookPage": 32
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "L1",
+          "role": "primary",
+          "raw": "L1",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 33,
+            "bookPage": 32
+          }
+        }
+      ]
+    },
+    {
+      "id": "hen-nhung-khong-sot",
+      "label": {
+        "vi": "Hen nhưng không sốt",
+        "en": "Asthma without fever"
+      },
+      "heading": "7/ Hen nhưng không sốt",
+      "ref": {
+        "pdfPage": 34,
+        "bookPage": 33
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "C3",
+          "role": "primary",
+          "raw": "C3",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 34,
+            "bookPage": 33
+          }
+        }
+      ]
+    },
+    {
+      "id": "ho",
+      "label": {
+        "vi": "Triệu chứng hô hấp: Ho",
+        "en": "Breathing symptom: cough"
+      },
+      "heading": "1/ Ho",
+      "ref": {
+        "pdfPage": 34,
+        "bookPage": 33
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "T2",
+          "role": "primary",
+          "raw": "...........T2,3",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 34,
+            "bookPage": 33
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T3",
+          "role": "primary",
+          "raw": "...........T2,3",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 34,
+            "bookPage": 33
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T4",
+          "role": "related",
+          "raw": "..........T4,5,6,10",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 34,
+            "bookPage": 33
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T5",
+          "role": "related",
+          "raw": "..........T4,5,6,10",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 34,
+            "bookPage": 33
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T6",
+          "role": "related",
+          "raw": "..........T4,5,6,10",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 34,
+            "bookPage": 33
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T10",
+          "role": "related",
+          "raw": "..........T4,5,6,10",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 34,
+            "bookPage": 33
+          }
+        }
+      ]
+    },
+    {
+      "id": "kho-tho",
+      "label": {
+        "vi": "Triệu chứng hô hấp: Khó thở",
+        "en": "Breathing symptom: shortness of breath"
+      },
+      "heading": "2/ Khó thở",
+      "ref": {
+        "pdfPage": 34,
+        "bookPage": 33
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "C6",
+          "role": "primary",
+          "raw": "...........C6,7,T1",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 34,
+            "bookPage": 33
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "C7",
+          "role": "primary",
+          "raw": "...........C6,7,T1",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 34,
+            "bookPage": 33
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T1",
+          "role": "primary",
+          "raw": "...........C6,7,T1",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 34,
+            "bookPage": 33
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T3",
+          "role": "related",
+          "raw": "..........T3,5,8,12, L2",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 34,
+            "bookPage": 33
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T5",
+          "role": "related",
+          "raw": "..........T3,5,8,12, L2",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 34,
+            "bookPage": 33
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T8",
+          "role": "related",
+          "raw": "..........T3,5,8,12, L2",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 34,
+            "bookPage": 33
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T12",
+          "role": "related",
+          "raw": "..........T3,5,8,12, L2",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 34,
+            "bookPage": 33
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "L2",
+          "role": "related",
+          "raw": "..........T3,5,8,12, L2",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 34,
+            "bookPage": 33
+          }
+        }
+      ]
+    },
+    {
+      "id": "bi-nghen-o-co",
+      "label": {
+        "vi": "Triệu chứng hô hấp: Bị nghẹn ở cổ",
+        "en": "Breathing symptom: a choking feeling in the throat"
+      },
+      "heading": "3/ Bị nghẹn ở cổ",
+      "ref": {
+        "pdfPage": 34,
+        "bookPage": 33
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "C6",
+          "role": "primary",
+          "raw": "...........C6,7",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 34,
+            "bookPage": 33
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "C7",
+          "role": "primary",
+          "raw": "...........C6,7",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 34,
+            "bookPage": 33
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T8",
+          "role": "related",
+          "raw": "..........T8, L2",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 34,
+            "bookPage": 33
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "L2",
+          "role": "related",
+          "raw": "..........T8, L2",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 34,
+            "bookPage": 33
+          }
+        }
+      ]
+    },
+    {
+      "id": "tuc-nguc",
+      "label": {
+        "vi": "Triệu chứng hô hấp: Tức ngực",
+        "en": "Breathing symptom: chest tightness"
+      },
+      "heading": "4/ Tức ngực",
+      "ref": {
+        "pdfPage": 34,
+        "bookPage": 33
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "C7",
+          "role": "primary",
+          "raw": "...........C7, T1",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 34,
+            "bookPage": 33
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T1",
+          "role": "primary",
+          "raw": "...........C7, T1",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 34,
+            "bookPage": 33
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T3",
+          "role": "related",
+          "raw": "..........T3,7,8,9",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 34,
+            "bookPage": 33
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T7",
+          "role": "related",
+          "raw": "..........T3,7,8,9",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 34,
+            "bookPage": 33
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T8",
+          "role": "related",
+          "raw": "..........T3,7,8,9",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 34,
+            "bookPage": 33
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T9",
+          "role": "related",
+          "raw": "..........T3,7,8,9",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 34,
+            "bookPage": 33
+          }
+        }
+      ]
+    },
+    {
+      "id": "dom-nhieu",
+      "label": {
+        "vi": "Triệu chứng hô hấp: Đờm nhiều",
+        "en": "Breathing symptom: a lot of phlegm"
+      },
+      "heading": "5/ Đờm nhiều",
+      "ref": {
+        "pdfPage": 34,
+        "bookPage": 33
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "T2",
+          "role": "primary",
+          "raw": "...........T2",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 34,
+            "bookPage": 33
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T6",
+          "role": "related",
+          "raw": "..........T6",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 34,
+            "bookPage": 33
+          }
+        }
+      ]
+    }
+  ],
+  "unassigned": [],
+  "review": {
+    "transcription": "pending",
+    "mapping": "passed",
+    "editor": "pending"
+  }
+}
