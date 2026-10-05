@@ -140,30 +140,6 @@ Không có xét nghiệm đặc hiệu nào chứng minh một cơn đau đầu 
 
 [Xem trên Bản đồ cơ thể người →](/human-atlas?structure=sixth-cervical-vertebra,first-thoracic-vertebra#atlas-embed)
 
-## Đốt sống liên quan
-
-Tổng hợp từ các mục trên. Vai trò là cách tài liệu gọi tên (trọng điểm, liên quan, thận trọng, tránh), không phải khuyến cáo của Sciencepedia. Bấm mã để xem đốt sống trên Bản đồ cơ thể người.
-
-- [C1](/human-atlas?structure=atlas#atlas-viewer) — Đốt đội (C1): trọng điểm
-- [C3](/human-atlas?structure=third-cervical-vertebra#atlas-viewer) — Đốt sống cổ 3: trọng điểm
-- [C5](/human-atlas?structure=fifth-cervical-vertebra#atlas-viewer) — Đốt sống cổ 5: trọng điểm
-- [C6](/human-atlas?structure=sixth-cervical-vertebra#atlas-viewer) — Đốt sống cổ 6: trọng điểm
-- [C7](/human-atlas?structure=seventh-cervical-vertebra#atlas-viewer) — Đốt sống cổ 7: trọng điểm
-- [T1](/human-atlas?structure=first-thoracic-vertebra#atlas-viewer) — Đốt sống ngực 1: trọng điểm
-- [T3](/human-atlas?structure=third-thoracic-vertebra#atlas-viewer) — Đốt sống ngực 3: trọng điểm
-- [T6](/human-atlas?structure=sixth-thoracic-vertebra#atlas-viewer) — Đốt sống ngực 6: trọng điểm
-- [T7](/human-atlas?structure=seventh-thoracic-vertebra#atlas-viewer) — Đốt sống ngực 7: trọng điểm
-- [T9](/human-atlas?structure=ninth-thoracic-vertebra#atlas-viewer) — Đốt sống ngực 9: trọng điểm
-- [T10](/human-atlas?structure=tenth-thoracic-vertebra#atlas-viewer) — Đốt sống ngực 10: trọng điểm
-- [T11](/human-atlas?structure=eleventh-thoracic-vertebra#atlas-viewer) — Đốt sống ngực 11: trọng điểm
-- [L1](/human-atlas?structure=first-lumbar-vertebra#atlas-viewer) — Đốt sống thắt lưng 1: trọng điểm
-- [L3](/human-atlas?structure=third-lumbar-vertebra#atlas-viewer) — Đốt sống thắt lưng 3: trọng điểm
-- [S5](/human-atlas?structure=sacrum#atlas-viewer) — Đốt cùng 5: trọng điểm
-
-*Trên Bản đồ cơ thể người, S1–S5 hiện chung là xương cùng: mô hình không tách riêng năm đốt cùng.*
-
-[Xem trên Bản đồ cơ thể người →](/human-atlas?structure=atlas,third-cervical-vertebra,fifth-cervical-vertebra,sixth-cervical-vertebra,seventh-cervical-vertebra,first-thoracic-vertebra,third-thoracic-vertebra,sixth-thoracic-vertebra,seventh-thoracic-vertebra,ninth-thoracic-vertebra,tenth-thoracic-vertebra,eleventh-thoracic-vertebra,first-lumbar-vertebra,third-lumbar-vertebra,sacrum#atlas-embed)
-
 ## Đọc thêm
 
 - [Huyệt đạo và châm cứu: "Khí" của Đông y có liên hệ gì với khoa học hiện đại?](/articles/huyet-dao-va-cham-cuu-khi-cua-dong-y-co-lien-he-gi-voi-khoa-hoc-hien-dai)

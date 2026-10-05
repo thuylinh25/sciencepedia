@@ -57,24 +57,6 @@ Viện Quốc gia về Rối loạn Thần kinh và Đột quỵ Hoa Kỳ (NINDS
 
 [Xem trên Bản đồ cơ thể người →](/human-atlas?structure=atlas,axis,second-thoracic-vertebra,third-thoracic-vertebra,seventh-thoracic-vertebra,eighth-thoracic-vertebra,fourth-lumbar-vertebra,fifth-lumbar-vertebra,sacrum#atlas-embed)
 
-## Đốt sống liên quan
-
-Tổng hợp từ các mục trên. Vai trò là cách tài liệu gọi tên (trọng điểm, liên quan, thận trọng, tránh), không phải khuyến cáo của Sciencepedia. Bấm mã để xem đốt sống trên Bản đồ cơ thể người.
-
-- [C1](/human-atlas?structure=atlas#atlas-viewer) — Đốt đội (C1): trọng điểm
-- [C2](/human-atlas?structure=axis#atlas-viewer) — Đốt trục (C2): trọng điểm
-- [T2](/human-atlas?structure=second-thoracic-vertebra#atlas-viewer) — Đốt sống ngực 2: trọng điểm
-- [T3](/human-atlas?structure=third-thoracic-vertebra#atlas-viewer) — Đốt sống ngực 3: trọng điểm
-- [T7](/human-atlas?structure=seventh-thoracic-vertebra#atlas-viewer) — Đốt sống ngực 7: trọng điểm
-- [T8](/human-atlas?structure=eighth-thoracic-vertebra#atlas-viewer) — Đốt sống ngực 8: trọng điểm
-- [L4](/human-atlas?structure=fourth-lumbar-vertebra#atlas-viewer) — Đốt sống thắt lưng 4: trọng điểm
-- [L5](/human-atlas?structure=fifth-lumbar-vertebra#atlas-viewer) — Đốt sống thắt lưng 5: trọng điểm
-- [S1](/human-atlas?structure=sacrum#atlas-viewer) — Đốt cùng 1: trọng điểm
-
-*Trên Bản đồ cơ thể người, S1–S5 hiện chung là xương cùng: mô hình không tách riêng năm đốt cùng.*
-
-[Xem trên Bản đồ cơ thể người →](/human-atlas?structure=atlas,axis,second-thoracic-vertebra,third-thoracic-vertebra,seventh-thoracic-vertebra,eighth-thoracic-vertebra,fourth-lumbar-vertebra,fifth-lumbar-vertebra,sacrum#atlas-embed)
-
 ## Đọc thêm
 
 - [Huyệt đạo và châm cứu: "Khí" của Đông y có liên hệ gì với khoa học hiện đại?](/articles/huyet-dao-va-cham-cuu-khi-cua-dong-y-co-lien-he-gi-voi-khoa-hoc-hien-dai)

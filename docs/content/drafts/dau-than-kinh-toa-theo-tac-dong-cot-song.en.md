@@ -58,23 +58,6 @@ Vertebrae named by the document:
 
 [View on the Human Atlas →](/human-atlas?structure=fourth-lumbar-vertebra,fifth-lumbar-vertebra,sacrum#atlas-embed)
 
-## Related vertebrae
-
-Compiled from the sections above. Roles are the document's own terms (key point, related, caution, avoid), not recommendations by Sciencepedia. Select a code to see the vertebra on the Human Atlas.
-
-- [T2](/human-atlas?structure=second-thoracic-vertebra#atlas-viewer) — Second thoracic vertebra: key point
-- [T3](/human-atlas?structure=third-thoracic-vertebra#atlas-viewer) — Third thoracic vertebra: key point
-- [T7](/human-atlas?structure=seventh-thoracic-vertebra#atlas-viewer) — Seventh thoracic vertebra: key point
-- [T8](/human-atlas?structure=eighth-thoracic-vertebra#atlas-viewer) — Eighth thoracic vertebra: key point
-- [L4](/human-atlas?structure=fourth-lumbar-vertebra#atlas-viewer) — Fourth lumbar vertebra: related
-- [L5](/human-atlas?structure=fifth-lumbar-vertebra#atlas-viewer) — Fifth lumbar vertebra: related
-- [S1](/human-atlas?structure=sacrum#atlas-viewer) — Sacral vertebra 1: related
-- [S2](/human-atlas?structure=sacrum#atlas-viewer) — Sacral vertebra 2: related
-
-*On the Human Atlas, S1–S5 are shown together as the sacrum: the model does not separate the five sacral vertebrae.*
-
-[View on the Human Atlas →](/human-atlas?structure=second-thoracic-vertebra,third-thoracic-vertebra,seventh-thoracic-vertebra,eighth-thoracic-vertebra,fourth-lumbar-vertebra,fifth-lumbar-vertebra,sacrum#atlas-embed)
-
 ## Where the document says the method does not apply
 
 > The "bell-pulling" phenomenon or being unable to push with the foot is due to inflammation of the cauda equina, or spinal cord tumours and spinal meningeal tumours… none of these are treated with Spinal Impact (medication is required).

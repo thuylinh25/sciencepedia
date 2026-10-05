@@ -57,24 +57,6 @@ Vertebrae named by the document:
 
 [View on the Human Atlas →](/human-atlas?structure=atlas,axis,second-thoracic-vertebra,third-thoracic-vertebra,seventh-thoracic-vertebra,eighth-thoracic-vertebra,fourth-lumbar-vertebra,fifth-lumbar-vertebra,sacrum#atlas-embed)
 
-## Related vertebrae
-
-Compiled from the sections above. Roles are the document's own terms (key point, related, caution, avoid), not recommendations by Sciencepedia. Select a code to see the vertebra on the Human Atlas.
-
-- [C1](/human-atlas?structure=atlas#atlas-viewer) — Atlas (C1): key point
-- [C2](/human-atlas?structure=axis#atlas-viewer) — Axis (C2): key point
-- [T2](/human-atlas?structure=second-thoracic-vertebra#atlas-viewer) — Second thoracic vertebra: key point
-- [T3](/human-atlas?structure=third-thoracic-vertebra#atlas-viewer) — Third thoracic vertebra: key point
-- [T7](/human-atlas?structure=seventh-thoracic-vertebra#atlas-viewer) — Seventh thoracic vertebra: key point
-- [T8](/human-atlas?structure=eighth-thoracic-vertebra#atlas-viewer) — Eighth thoracic vertebra: key point
-- [L4](/human-atlas?structure=fourth-lumbar-vertebra#atlas-viewer) — Fourth lumbar vertebra: key point
-- [L5](/human-atlas?structure=fifth-lumbar-vertebra#atlas-viewer) — Fifth lumbar vertebra: key point
-- [S1](/human-atlas?structure=sacrum#atlas-viewer) — Sacral vertebra 1: key point
-
-*On the Human Atlas, S1–S5 are shown together as the sacrum: the model does not separate the five sacral vertebrae.*
-
-[View on the Human Atlas →](/human-atlas?structure=atlas,axis,second-thoracic-vertebra,third-thoracic-vertebra,seventh-thoracic-vertebra,eighth-thoracic-vertebra,fourth-lumbar-vertebra,fifth-lumbar-vertebra,sacrum#atlas-embed)
-
 ## Further reading
 
 - [Acupoints and acupuncture: how does the "Qi" of Eastern medicine relate to modern science?](/articles/huyet-dao-va-cham-cuu-khi-cua-dong-y-co-lien-he-gi-voi-khoa-hoc-hien-dai)

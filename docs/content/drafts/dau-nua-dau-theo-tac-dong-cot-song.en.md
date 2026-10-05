@@ -140,30 +140,6 @@ Vertebrae named by the document:
 
 [View on the Human Atlas →](/human-atlas?structure=sixth-cervical-vertebra,first-thoracic-vertebra#atlas-embed)
 
-## Related vertebrae
-
-Compiled from the sections above. Roles are the document's own terms (key point, related, caution, avoid), not recommendations by Sciencepedia. Select a code to see the vertebra on the Human Atlas.
-
-- [C1](/human-atlas?structure=atlas#atlas-viewer) — Atlas (C1): key point
-- [C3](/human-atlas?structure=third-cervical-vertebra#atlas-viewer) — Third cervical vertebra: key point
-- [C5](/human-atlas?structure=fifth-cervical-vertebra#atlas-viewer) — Fifth cervical vertebra: key point
-- [C6](/human-atlas?structure=sixth-cervical-vertebra#atlas-viewer) — Sixth cervical vertebra: key point
-- [C7](/human-atlas?structure=seventh-cervical-vertebra#atlas-viewer) — Seventh cervical vertebra: key point
-- [T1](/human-atlas?structure=first-thoracic-vertebra#atlas-viewer) — First thoracic vertebra: key point
-- [T3](/human-atlas?structure=third-thoracic-vertebra#atlas-viewer) — Third thoracic vertebra: key point
-- [T6](/human-atlas?structure=sixth-thoracic-vertebra#atlas-viewer) — Sixth thoracic vertebra: key point
-- [T7](/human-atlas?structure=seventh-thoracic-vertebra#atlas-viewer) — Seventh thoracic vertebra: key point
-- [T9](/human-atlas?structure=ninth-thoracic-vertebra#atlas-viewer) — Ninth thoracic vertebra: key point
-- [T10](/human-atlas?structure=tenth-thoracic-vertebra#atlas-viewer) — Tenth thoracic vertebra: key point
-- [T11](/human-atlas?structure=eleventh-thoracic-vertebra#atlas-viewer) — Eleventh thoracic vertebra: key point
-- [L1](/human-atlas?structure=first-lumbar-vertebra#atlas-viewer) — First lumbar vertebra: key point
-- [L3](/human-atlas?structure=third-lumbar-vertebra#atlas-viewer) — Third lumbar vertebra: key point
-- [S5](/human-atlas?structure=sacrum#atlas-viewer) — Sacral vertebra 5: key point
-
-*On the Human Atlas, S1–S5 are shown together as the sacrum: the model does not separate the five sacral vertebrae.*
-
-[View on the Human Atlas →](/human-atlas?structure=atlas,third-cervical-vertebra,fifth-cervical-vertebra,sixth-cervical-vertebra,seventh-cervical-vertebra,first-thoracic-vertebra,third-thoracic-vertebra,sixth-thoracic-vertebra,seventh-thoracic-vertebra,ninth-thoracic-vertebra,tenth-thoracic-vertebra,eleventh-thoracic-vertebra,first-lumbar-vertebra,third-lumbar-vertebra,sacrum#atlas-embed)
-
 ## Further reading
 
 - [Acupoints and acupuncture: how does the "Qi" of Eastern medicine relate to modern science?](/articles/huyet-dao-va-cham-cuu-khi-cua-dong-y-co-lien-he-gi-voi-khoa-hoc-hien-dai)

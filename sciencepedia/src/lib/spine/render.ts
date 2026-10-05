@@ -1,5 +1,5 @@
 import type { Editorial, Mapping, Quote, Topic } from "./schema";
-import { VERTEBRAE, atlasEmbedHref, atlasHref, compareVertebrae, type VertebraCode } from "./vertebrae";
+import { atlasEmbedHref, atlasHref, compareVertebrae, type VertebraCode } from "./vertebrae";
 
 /**
  * Topic + tệp biên tập → Markdown của bài (vi hoặc en), ghi vào
@@ -30,10 +30,6 @@ const T = {
     left: "trái",
     regions: { cervical: "các đốt sống cổ", thoracic: "các đốt sống ngực", lumbar: "các đốt sống thắt lưng", sacral: "vùng cùng" },
     atlas: "Xem trên Bản đồ cơ thể người",
-    summaryHeading: "Đốt sống liên quan",
-    summaryIntro:
-      "Tổng hợp từ các mục trên. Vai trò là cách tài liệu gọi tên (trọng điểm, liên quan, thận trọng, tránh), không phải khuyến cáo của Sciencepedia. Bấm mã để xem đốt sống trên Bản đồ cơ thể người.",
-    sacrumNote: "Trên Bản đồ cơ thể người, S1–S5 hiện chung là xương cùng: mô hình không tách riêng năm đốt cùng.",
     outOfScope: "Tài liệu nói phương pháp không áp dụng",
     sourceHeading: "Nguồn tài liệu",
     reading: "Đọc thêm",
@@ -54,10 +50,6 @@ const T = {
     left: "left",
     regions: { cervical: "the cervical vertebrae", thoracic: "the thoracic vertebrae", lumbar: "the lumbar vertebrae", sacral: "the sacral region" },
     atlas: "View on the Human Atlas",
-    summaryHeading: "Related vertebrae",
-    summaryIntro:
-      "Compiled from the sections above. Roles are the document's own terms (key point, related, caution, avoid), not recommendations by Sciencepedia. Select a code to see the vertebra on the Human Atlas.",
-    sacrumNote: "On the Human Atlas, S1–S5 are shown together as the sacrum: the model does not separate the five sacral vertebrae.",
     outOfScope: "Where the document says the method does not apply",
     sourceHeading: "Source document",
     reading: "Further reading",
@@ -141,18 +133,9 @@ export function renderArticle(
     }
   }
 
-  const all = topic.variants.flatMap((v) => v.mappings);
-  const vertebrae = [...new Set(all.filter((m) => m.targetType === "vertebra").map((m) => m.targetId as VertebraCode))].sort(compareVertebrae);
-  if (vertebrae.length) {
-    out.push(`## ${t.summaryHeading}`, "", t.summaryIntro, "");
-    for (const code of vertebrae) {
-      const roles = ROLE_ORDER.filter((r) => all.some((m) => m.targetId === code && m.role === r));
-      out.push(`- [${code}](${atlasHref([code])}) — ${VERTEBRAE.get(code)![locale === "vi" ? "vi" : "en"]}: ${roles.map((r) => t.roles[r].toLowerCase()).join(", ")}`);
-    }
-    out.push("");
-    if (vertebrae.some((c) => c.startsWith("S"))) out.push(`*${t.sacrumNote}*`, "");
-    out.push(`[${t.atlas} →](${atlasEmbedHref(vertebrae)})`, "");
-  }
+  /* Mục tổng hợp "Đốt sống liên quan" đã bỏ theo yêu cầu chủ sản phẩm (2026-10-05):
+     mỗi thể đã nêu đốt sống và có khung atlas riêng ngay dưới nó. Bảng đốt sống → bài
+     vẫn có ở /human-atlas (chỉ mục sinh từ topic, không phụ thuộc mục này). */
 
   if (editorial.outOfScope.length) {
     out.push(`## ${t.outOfScope}`, "");

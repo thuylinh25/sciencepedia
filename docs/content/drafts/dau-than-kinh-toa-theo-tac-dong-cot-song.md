@@ -58,23 +58,6 @@ Theo NHS, nguyên nhân thường gặp nhất là **thoát vị đĩa đệm** 
 
 [Xem trên Bản đồ cơ thể người →](/human-atlas?structure=fourth-lumbar-vertebra,fifth-lumbar-vertebra,sacrum#atlas-embed)
 
-## Đốt sống liên quan
-
-Tổng hợp từ các mục trên. Vai trò là cách tài liệu gọi tên (trọng điểm, liên quan, thận trọng, tránh), không phải khuyến cáo của Sciencepedia. Bấm mã để xem đốt sống trên Bản đồ cơ thể người.
-
-- [T2](/human-atlas?structure=second-thoracic-vertebra#atlas-viewer) — Đốt sống ngực 2: trọng điểm
-- [T3](/human-atlas?structure=third-thoracic-vertebra#atlas-viewer) — Đốt sống ngực 3: trọng điểm
-- [T7](/human-atlas?structure=seventh-thoracic-vertebra#atlas-viewer) — Đốt sống ngực 7: trọng điểm
-- [T8](/human-atlas?structure=eighth-thoracic-vertebra#atlas-viewer) — Đốt sống ngực 8: trọng điểm
-- [L4](/human-atlas?structure=fourth-lumbar-vertebra#atlas-viewer) — Đốt sống thắt lưng 4: liên quan
-- [L5](/human-atlas?structure=fifth-lumbar-vertebra#atlas-viewer) — Đốt sống thắt lưng 5: liên quan
-- [S1](/human-atlas?structure=sacrum#atlas-viewer) — Đốt cùng 1: liên quan
-- [S2](/human-atlas?structure=sacrum#atlas-viewer) — Đốt cùng 2: liên quan
-
-*Trên Bản đồ cơ thể người, S1–S5 hiện chung là xương cùng: mô hình không tách riêng năm đốt cùng.*
-
-[Xem trên Bản đồ cơ thể người →](/human-atlas?structure=second-thoracic-vertebra,third-thoracic-vertebra,seventh-thoracic-vertebra,eighth-thoracic-vertebra,fourth-lumbar-vertebra,fifth-lumbar-vertebra,sacrum#atlas-embed)
-
 ## Tài liệu nói phương pháp không áp dụng
 
 > Hiện tượng kéo chuông hay đạp chân không được là do viêm đuôi ngựa hay u tuỷ và u màng tuỷ… đều không chữa Tác động cột sống (phải dùng thuốc).
