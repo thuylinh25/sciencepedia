@@ -30,5 +30,13 @@ export const STRUCTURE_ARTICLE_SLUGS = [
   ...new Set(Object.values(STRUCTURE_ARTICLES).flat()),
 ];
 
-/** Bài đã kiểm là PUBLISHED, trang truyền xuống client. */
-export type StructureArticle = { slug: string; title: string };
+/**
+ * Bài đã kiểm là PUBLISHED, trang truyền xuống client. `spine` có mặt khi bài
+ * đến từ chỉ mục "Tác động cột sống" (`@/lib/spine/links`): vai là cách TÀI LIỆU
+ * gọi đốt ấy, bảng chi tiết hiện nó thành nhãn — không bao giờ như khuyến cáo.
+ */
+export type StructureArticle = {
+  slug: string;
+  title: string;
+  spine?: { roles: ("primary" | "related" | "caution" | "avoid")[]; codes: string[] };
+};

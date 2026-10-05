@@ -37,6 +37,9 @@ export function revalidateArticles(slugs: Iterable<string> = []): string[] {
   revalidateTag("articles");
   revalidatePath("/[locale]", "page");
   revalidatePath("/[locale]/articles", "page");
+  // Bảng chi tiết atlas lọc bài theo PUBLISHED (structure-links + chỉ mục đốt
+  // sống). Không làm mới thì bài vừa xuất bản chờ tới 1 giờ (revalidate = 3600).
+  revalidatePath("/[locale]/human-atlas", "page");
 
   const paths: string[] = [];
   for (const slug of new Set(slugs)) {

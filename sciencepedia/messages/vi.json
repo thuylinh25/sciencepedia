@@ -911,7 +911,16 @@
       "showSurrounding": "Hiện giải phẫu xung quanh",
       "clear": "Bỏ chọn",
       "close": "Đóng bảng chi tiết",
-      "readMore": "Đọc thêm trên Sciencepedia"
+      "readMore": "Đọc thêm trên Sciencepedia",
+      "spineHeading": "Theo tài liệu Tác động cột sống",
+      "spineNote": "Bài lưu trữ tài liệu Phương pháp Tác động Cột sống Việt Nam. Nhãn là cách tài liệu gọi đốt sống này, không phải khuyến cáo y khoa.",
+      "spineRoles": {
+        "primary": "Trọng điểm",
+        "related": "Liên quan",
+        "caution": "Thận trọng",
+        "avoid": "Tránh"
+      },
+      "spineSacrum": "Tài liệu ghi S1–S5; mô hình chỉ có xương cùng nguyên khối nên các mã này cùng trỏ vào đây."
     },
     "systemGroups": {
       "cardiovascular": "Hệ tim mạch"

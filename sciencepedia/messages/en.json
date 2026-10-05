@@ -911,7 +911,16 @@
       "showSurrounding": "Show surrounding anatomy",
       "clear": "Clear selection",
       "close": "Close details",
-      "readMore": "Read more on Sciencepedia"
+      "readMore": "Read more on Sciencepedia",
+      "spineHeading": "According to the Spinal Impact document",
+      "spineNote": "Archival articles on the Vietnamese Spinal Impact method document. Labels are the document's own terms for this vertebra, not medical advice.",
+      "spineRoles": {
+        "primary": "Key point",
+        "related": "Related",
+        "caution": "Caution",
+        "avoid": "Avoid"
+      },
+      "spineSacrum": "The document names S1–S5; the model has a single sacrum, so these codes all point here."
     },
     "systemGroups": {
       "cardiovascular": "Cardiovascular system"

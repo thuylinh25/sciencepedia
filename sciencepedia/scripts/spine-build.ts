@@ -4,7 +4,8 @@ import path from "node:path";
 import { assembleTopic, verifyQuotes, type Decision, type SectionMeta } from "../src/lib/spine/assemble";
 import { extractSection, parsePage } from "../src/lib/spine/extract";
 import { renderArticle } from "../src/lib/spine/render";
-import { Editorial } from "../src/lib/spine/schema";
+import { Editorial, type Topic } from "../src/lib/spine/schema";
+import { VERTEBRAE, compareVertebrae, type VertebraCode } from "../src/lib/spine/vertebrae";
 
 /**
  * Tệp biên tập + bản chép trang + quyết định D-n → topic JSON + bản nháp bài.
@@ -34,6 +35,7 @@ function main() {
   const topicsDir = path.join(ROOT, "topics");
   const files = readdirSync(topicsDir).filter((f) => f.endsWith(".editorial.json")).sort();
   let failed = 0;
+  const built: Topic[] = [];
 
   for (const file of files) {
     const parsed = Editorial.safeParse(read(path.join(topicsDir, file)));
@@ -80,12 +82,44 @@ function main() {
         ` (${uncertain} chưa chắc) · ${topic.unassigned.length} mã không vai · ${editorial.sources.length} nguồn bậc 1–2`,
     );
 
+    built.push(topic);
     if (write) {
       mkdirSync(DRAFTS, { recursive: true });
       writeFileSync(path.join(topicsDir, `${editorial.slug}.json`), `${JSON.stringify(topic, null, 2)}\n`);
       writeFileSync(path.join(DRAFTS, `${editorial.slug}.md`), renderArticle(topic, editorial, "vi"));
       writeFileSync(path.join(DRAFTS, `${editorial.slug}.en.md`), renderArticle(topic, editorial, "en"));
     }
+  }
+
+  // Chỉ mục atlas: mã FMA → bài + vai. Chỉ ghi khi MỌI chủ đề build được — một
+  // chỉ mục thiếu bài hỏng trông y như chỉ mục đúng.
+  const byFma: Record<string, { slug: string; roles: string[]; codes: string[] }[]> = {};
+  for (const topic of built) {
+    const perFma = new Map<string, { roles: Set<string>; codes: Set<VertebraCode> }>();
+    for (const m of topic.variants.flatMap((v) => v.mappings)) {
+      if (m.targetType !== "vertebra") continue;
+      const code = m.targetId as VertebraCode;
+      const fma = VERTEBRAE.get(code)!.fma;
+      const entry = perFma.get(fma) ?? { roles: new Set(), codes: new Set() };
+      entry.roles.add(m.role);
+      entry.codes.add(code);
+      perFma.set(fma, entry);
+    }
+    const order = ["primary", "related", "caution", "avoid"];
+    for (const [fma, e] of perFma) {
+      (byFma[fma] ??= []).push({
+        slug: topic.slug,
+        roles: order.filter((r) => e.roles.has(r)),
+        codes: [...e.codes].sort(compareVertebrae),
+      });
+    }
+  }
+  for (const list of Object.values(byFma)) list.sort((a, b) => a.slug.localeCompare(b.slug));
+  const indexJson = `${JSON.stringify({ generatedBy: "npm run spine:build", byFma: Object.fromEntries(Object.entries(byFma).sort()) }, null, 1)}
+`;
+  if (write && !failed) {
+    writeFileSync(path.join(process.cwd(), "src/lib/spine/index.generated.json"), indexJson);
+    console.log(`chỉ mục atlas: ${Object.keys(byFma).length} khái niệm FMA`);
   }
 
   if (failed) {

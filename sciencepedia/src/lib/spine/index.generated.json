@@ -1,0 +1,325 @@
+{
+ "generatedBy": "npm run spine:build",
+ "byFma": {
+  "FMA10014": [
+   {
+    "slug": "dau-nua-dau-theo-tac-dong-cot-song",
+    "roles": [
+     "primary"
+    ],
+    "codes": [
+     "T9"
+    ]
+   }
+  ],
+  "FMA10037": [
+   {
+    "slug": "dau-nua-dau-theo-tac-dong-cot-song",
+    "roles": [
+     "primary"
+    ],
+    "codes": [
+     "T10"
+    ]
+   }
+  ],
+  "FMA10059": [
+   {
+    "slug": "dau-nua-dau-theo-tac-dong-cot-song",
+    "roles": [
+     "primary"
+    ],
+    "codes": [
+     "T11"
+    ]
+   }
+  ],
+  "FMA12519": [
+   {
+    "slug": "dau-lung-cap-theo-tac-dong-cot-song",
+    "roles": [
+     "primary"
+    ],
+    "codes": [
+     "C1"
+    ]
+   },
+   {
+    "slug": "dau-nua-dau-theo-tac-dong-cot-song",
+    "roles": [
+     "primary"
+    ],
+    "codes": [
+     "C1"
+    ]
+   }
+  ],
+  "FMA12520": [
+   {
+    "slug": "dau-lung-cap-theo-tac-dong-cot-song",
+    "roles": [
+     "primary"
+    ],
+    "codes": [
+     "C2"
+    ]
+   }
+  ],
+  "FMA12521": [
+   {
+    "slug": "dau-nua-dau-theo-tac-dong-cot-song",
+    "roles": [
+     "primary"
+    ],
+    "codes": [
+     "C3"
+    ]
+   }
+  ],
+  "FMA12523": [
+   {
+    "slug": "dau-nua-dau-theo-tac-dong-cot-song",
+    "roles": [
+     "primary"
+    ],
+    "codes": [
+     "C5"
+    ]
+   }
+  ],
+  "FMA12524": [
+   {
+    "slug": "dau-nua-dau-theo-tac-dong-cot-song",
+    "roles": [
+     "primary"
+    ],
+    "codes": [
+     "C6"
+    ]
+   }
+  ],
+  "FMA12525": [
+   {
+    "slug": "dau-nua-dau-theo-tac-dong-cot-song",
+    "roles": [
+     "primary"
+    ],
+    "codes": [
+     "C7"
+    ]
+   }
+  ],
+  "FMA13072": [
+   {
+    "slug": "dau-nua-dau-theo-tac-dong-cot-song",
+    "roles": [
+     "primary"
+    ],
+    "codes": [
+     "L1"
+    ]
+   }
+  ],
+  "FMA13074": [
+   {
+    "slug": "dau-nua-dau-theo-tac-dong-cot-song",
+    "roles": [
+     "primary"
+    ],
+    "codes": [
+     "L3"
+    ]
+   }
+  ],
+  "FMA13075": [
+   {
+    "slug": "dau-lung-cap-theo-tac-dong-cot-song",
+    "roles": [
+     "primary"
+    ],
+    "codes": [
+     "L4"
+    ]
+   },
+   {
+    "slug": "dau-than-kinh-toa-theo-tac-dong-cot-song",
+    "roles": [
+     "related"
+    ],
+    "codes": [
+     "L4"
+    ]
+   }
+  ],
+  "FMA13076": [
+   {
+    "slug": "dau-lung-cap-theo-tac-dong-cot-song",
+    "roles": [
+     "primary"
+    ],
+    "codes": [
+     "L5"
+    ]
+   },
+   {
+    "slug": "dau-than-kinh-toa-theo-tac-dong-cot-song",
+    "roles": [
+     "related"
+    ],
+    "codes": [
+     "L5"
+    ]
+   }
+  ],
+  "FMA16202": [
+   {
+    "slug": "dau-lung-cap-theo-tac-dong-cot-song",
+    "roles": [
+     "primary"
+    ],
+    "codes": [
+     "S1"
+    ]
+   },
+   {
+    "slug": "dau-nua-dau-theo-tac-dong-cot-song",
+    "roles": [
+     "primary"
+    ],
+    "codes": [
+     "S5"
+    ]
+   },
+   {
+    "slug": "dau-than-kinh-toa-theo-tac-dong-cot-song",
+    "roles": [
+     "related"
+    ],
+    "codes": [
+     "S1",
+     "S2"
+    ]
+   }
+  ],
+  "FMA9165": [
+   {
+    "slug": "dau-nua-dau-theo-tac-dong-cot-song",
+    "roles": [
+     "primary"
+    ],
+    "codes": [
+     "T1"
+    ]
+   }
+  ],
+  "FMA9187": [
+   {
+    "slug": "dau-lung-cap-theo-tac-dong-cot-song",
+    "roles": [
+     "primary"
+    ],
+    "codes": [
+     "T2"
+    ]
+   },
+   {
+    "slug": "dau-than-kinh-toa-theo-tac-dong-cot-song",
+    "roles": [
+     "primary"
+    ],
+    "codes": [
+     "T2"
+    ]
+   }
+  ],
+  "FMA9209": [
+   {
+    "slug": "dau-lung-cap-theo-tac-dong-cot-song",
+    "roles": [
+     "primary"
+    ],
+    "codes": [
+     "T3"
+    ]
+   },
+   {
+    "slug": "dau-nua-dau-theo-tac-dong-cot-song",
+    "roles": [
+     "primary"
+    ],
+    "codes": [
+     "T3"
+    ]
+   },
+   {
+    "slug": "dau-than-kinh-toa-theo-tac-dong-cot-song",
+    "roles": [
+     "primary"
+    ],
+    "codes": [
+     "T3"
+    ]
+   }
+  ],
+  "FMA9945": [
+   {
+    "slug": "dau-nua-dau-theo-tac-dong-cot-song",
+    "roles": [
+     "primary"
+    ],
+    "codes": [
+     "T6"
+    ]
+   }
+  ],
+  "FMA9968": [
+   {
+    "slug": "dau-lung-cap-theo-tac-dong-cot-song",
+    "roles": [
+     "primary"
+    ],
+    "codes": [
+     "T7"
+    ]
+   },
+   {
+    "slug": "dau-nua-dau-theo-tac-dong-cot-song",
+    "roles": [
+     "primary"
+    ],
+    "codes": [
+     "T7"
+    ]
+   },
+   {
+    "slug": "dau-than-kinh-toa-theo-tac-dong-cot-song",
+    "roles": [
+     "primary"
+    ],
+    "codes": [
+     "T7"
+    ]
+   }
+  ],
+  "FMA9991": [
+   {
+    "slug": "dau-lung-cap-theo-tac-dong-cot-song",
+    "roles": [
+     "primary"
+    ],
+    "codes": [
+     "T8"
+    ]
+   },
+   {
+    "slug": "dau-than-kinh-toa-theo-tac-dong-cot-song",
+    "roles": [
+     "primary"
+    ],
+    "codes": [
+     "T8"
+    ]
+   }
+  ]
+ }
+}

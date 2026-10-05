@@ -79,6 +79,8 @@ export function StructureDetail({
   onClose: () => void;
 }) {
   const t = useTranslations("humanAtlas");
+  const generalArticles = articles.filter((a) => !a.spine);
+  const spineArticles = articles.flatMap((a) => (a.spine ? [{ ...a, spine: a.spine }] : []));
   const fromUmcg = parts.some((p) => SUPPLEMENT_SOURCE[p.id] === "umcg-lymphatic");
   const fromZa = parts.some((p) => SUPPLEMENT_SOURCE[p.id] === "z-anatomy");
   const fromBp3d = parts.length === 0 || parts.some((p) => !SUPPLEMENT_SOURCE[p.id]);
@@ -277,14 +279,14 @@ export function StructureDetail({
           {isolate ? t("detail.showSurrounding") : t("detail.isolate")}
         </Button>
 
-        {articles.length > 0 && (
+        {generalArticles.length > 0 && (
           <div className="rounded-xl border border-accent/25 bg-accent/[0.06] p-3">
             <p className="flex items-center gap-2 text-xs font-semibold">
               <BookOpen aria-hidden className="size-3.5" />
               {t("detail.readMore")}
             </p>
             <ul className="mt-1.5 space-y-1">
-              {articles.map((article) => (
+              {generalArticles.map((article) => (
                 <li key={article.slug}>
                   <Link
                     href={`/articles/${article.slug}`}
@@ -295,6 +297,49 @@ export function StructureDetail({
                 </li>
               ))}
             </ul>
+          </div>
+        )}
+
+        {/* Kiến thức liên quan từ tài liệu "Tác động cột sống": khung riêng, nhãn
+            riêng — vai (trọng điểm / liên quan / thận trọng / tránh) là chữ của
+            tài liệu, không phải khuyến cáo. docs/content-rules.md, "Tác động cột sống". */}
+        {spineArticles.length > 0 && (
+          <div className="rounded-xl border p-3">
+            <p className="flex items-center gap-2 text-xs font-semibold">
+              <BookOpen aria-hidden className="size-3.5" />
+              {t("detail.spineHeading")}
+            </p>
+            <p className="mt-1 text-xs leading-relaxed text-muted-foreground">{t("detail.spineNote")}</p>
+            <ul className="mt-2 space-y-2">
+              {spineArticles.map(({ slug, title, spine }) => (
+                <li key={slug} className="text-sm leading-snug">
+                  <Link href={`/articles/${slug}`} className="text-accent underline-offset-4 hover:underline">
+                    {title}
+                  </Link>
+                  <span className="mt-1 flex flex-wrap items-center gap-1">
+                    {spine.roles.map((role) => (
+                      <span
+                        key={role}
+                        className={cn(
+                          "rounded-md border px-1.5 py-0.5 text-[11px] font-medium",
+                          role === "avoid" || role === "caution"
+                            ? "border-amber-500/40 bg-amber-500/10 text-amber-800 dark:text-amber-300"
+                            : "bg-foreground/[0.04] text-muted-foreground",
+                        )}
+                      >
+                        {t(`detail.spineRoles.${role}`)}
+                      </span>
+                    ))}
+                    {spine.codes.some((c) => c.startsWith("S")) && (
+                      <span className="text-[11px] text-muted-foreground">{spine.codes.join(", ")}</span>
+                    )}
+                  </span>
+                </li>
+              ))}
+            </ul>
+            {spineArticles.some(({ spine }) => spine.codes.some((c) => c.startsWith("S"))) && (
+              <p className="mt-2 text-[11px] leading-relaxed text-muted-foreground">{t("detail.spineSacrum")}</p>
+            )}
           </div>
         )}
 

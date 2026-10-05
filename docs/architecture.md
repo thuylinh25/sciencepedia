@@ -1402,3 +1402,31 @@ khi lúc viết thì người viết đã biết.
 
 Đây là ranh giới giữa "nợ đo được" và "nợ phải đào lại". 41 bài cũ đã ở phía
 sau ranh giới đó rồi; việc cần làm là đừng đẩy thêm bài nào sang.
+
+---
+
+## Tác động cột sống — chỉ mục đốt sống ↔ bài sinh lúc build, không ở CSDL
+
+Chốt 2026-10-05. Bài "Tác động cột sống" nằm trong bảng `Article` như mọi bài; quan hệ
+đốt sống ↔ bài thì KHÔNG. Nó là `src/lib/spine/index.generated.json` (mã FMA → slug + vai),
+do `npm run spine:build` sinh từ `sciencepedia/content/tac-dong-cot-song/topics/*.json`.
+
+**Vì sao không thêm bảng.** Mỗi mapping phải truy được về một dòng của bản chép trang và
+một quyết định D-n của người (`source/decisions.json`). Một bảng sửa được từ form quản trị
+là chỗ mapping lặng lẽ trôi khỏi tài liệu gốc. Chỉ mục chỉ đổi khi topic đổi, và topic chỉ
+đổi qua build — build từ chối đoạn trích lệch nguyên văn, mã chưa chắc khi đã "passed", thể
+có mapping mà biên tập bỏ quên. Khi cần form quản trị cho liên kết giải phẫu thì đó là một
+quyết định mới, kèm migration.
+
+**Vì sao khoá là mã FMA, không phải "L5".** `/human-atlas` đã gắn bài theo FMA
+(`structure-links.ts`); dùng chung khoá thì trang gộp hai nguồn mà không biết gì về đốt
+sống, và S1–S5 tự gộp về một khái niệm xương cùng (mô hình không tách năm đốt cùng).
+
+**Tiêu đề và trạng thái vẫn đọc từ CSDL lúc render**, qua cùng bộ lọc PUBLISHED: bài nháp có
+trong chỉ mục không bao giờ hiện, không bao giờ dẫn vào 404. Vì thế `revalidateArticles()`
+giờ làm mới cả `/[locale]/human-atlas` — trang ISR 3600 s, không làm mới thì bài vừa xuất
+bản chờ tới một giờ mới hiện trong bảng chi tiết.
+
+**Trang bài không thêm component, không thêm JS.** Mã đốt sống trong thân bài là link
+Markdown `/human-atlas?structure=…` do build sinh sẵn; `localizeHref` thêm tiền tố ngôn ngữ.
+Không nhúng atlas vào bài: nó là ~3.500 dòng client và ~10 MB hình học.

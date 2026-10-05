@@ -126,3 +126,8 @@ export function atlasHref(codes: readonly VertebraCode[]): string {
   )];
   return `/human-atlas?structure=${slugs.join(",")}#atlas-viewer`;
 }
+
+/** Mã FMA → các ký hiệu trỏ vào nó (FMA16202 → S1…S5). */
+export function codesForFma(fma: string): VertebraCode[] {
+  return VERTEBRA_ORDER.filter((code) => VERTEBRAE.get(code)!.fma === fma);
+}

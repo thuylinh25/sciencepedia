@@ -16,6 +16,7 @@ import {
   STRUCTURE_ARTICLE_SLUGS,
   type StructureArticle,
 } from "@/lib/human-atlas/structure-links";
+import { SPINE_LINKS, SPINE_SLUGS } from "@/lib/spine/links";
 import { getPublishedArticleTitles } from "@/server/queries";
 import { ArrowRight } from "lucide-react";
 
@@ -70,7 +71,7 @@ export default async function HumanAtlasPage({
   setRequestLocale(locale);
   const t = await getTranslations("humanAtlas");
 
-  const rows = await getPublishedArticleTitles(STRUCTURE_ARTICLE_SLUGS);
+  const rows = await getPublishedArticleTitles([...new Set([...STRUCTURE_ARTICLE_SLUGS, ...SPINE_SLUGS])]);
   const bySlug = new Map(rows.map((row) => [row.slug, row]));
   const articles: Record<string, StructureArticle[]> = {};
   for (const [conceptId, slugs] of Object.entries(STRUCTURE_ARTICLES)) {
@@ -79,6 +80,22 @@ export default async function HumanAtlasPage({
       .filter((row): row is NonNullable<typeof row> => !!row)
       .map((row) => ({ slug: row.slug, title: pick(locale as Locale, row.title, row.titleEn) }));
     if (found.length > 0) articles[conceptId] = found;
+  }
+  // Đốt sống ↔ bài "Tác động cột sống": chỉ mục sinh từ topic, cùng bộ lọc
+  // PUBLISHED. Bài đã có ở danh sách tay thì không lặp.
+  for (const [conceptId, links] of Object.entries(SPINE_LINKS)) {
+    const found = links
+      .filter((link) => bySlug.has(link.slug))
+      .filter((link) => !articles[conceptId]?.some((a) => a.slug === link.slug))
+      .map((link) => {
+        const row = bySlug.get(link.slug)!;
+        return {
+          slug: row.slug,
+          title: pick(locale as Locale, row.title, row.titleEn),
+          spine: { roles: link.roles, codes: link.codes },
+        };
+      });
+    if (found.length > 0) articles[conceptId] = [...(articles[conceptId] ?? []), ...found];
   }
 
   const r2Origin = new URL(ASSET_BASE_URL).origin;
