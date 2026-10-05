@@ -45,17 +45,35 @@ Viện Quốc gia về Rối loạn Thần kinh và Đột quỵ Hoa Kỳ (NINDS
 
 > Chú ý: Tại chỗ đau, điểm đau trên cột sống nhiệt độ nóng cao đang là vùng bệnh lý, chưa được tác động vào, phải tìm vùng tương ứng với nó trên cột sống để chữa. Nếu bệnh nhân đau không cúi được thường có điểm T2,3,7,8
 
+Đốt sống tài liệu nêu:
+
+- **Trọng điểm:** [T2](/human-atlas?structure=second-thoracic-vertebra#atlas-viewer), [T3](/human-atlas?structure=third-thoracic-vertebra#atlas-viewer), [T7](/human-atlas?structure=seventh-thoracic-vertebra#atlas-viewer), [T8](/human-atlas?structure=eighth-thoracic-vertebra#atlas-viewer)
+
+[Xem trên Bản đồ cơ thể người →](/human-atlas?structure=second-thoracic-vertebra,third-thoracic-vertebra,seventh-thoracic-vertebra,eighth-thoracic-vertebra#atlas-embed)
+
 > Nếu bệnh nhân đau không ngồi thẳng lưng được có trọng điểm L4,5 và S1.
 
+Đốt sống tài liệu nêu:
+
+- **Trọng điểm:** [L4](/human-atlas?structure=fourth-lumbar-vertebra#atlas-viewer), [L5](/human-atlas?structure=fifth-lumbar-vertebra#atlas-viewer), [S1](/human-atlas?structure=sacrum#atlas-viewer)
+
+[Xem trên Bản đồ cơ thể người →](/human-atlas?structure=fourth-lumbar-vertebra,fifth-lumbar-vertebra,sacrum#atlas-embed)
+
 > Nếu bệnh nhân bị ngoại cảm phong hàn không ra mồ hôi, lưng rất đau, vận động khó khăn … trọng điểm thường cũng có T2.3.
+
+Đốt sống tài liệu nêu:
+
+- **Trọng điểm:** [T2](/human-atlas?structure=second-thoracic-vertebra#atlas-viewer), [T3](/human-atlas?structure=third-thoracic-vertebra#atlas-viewer)
+
+[Xem trên Bản đồ cơ thể người →](/human-atlas?structure=second-thoracic-vertebra,third-thoracic-vertebra#atlas-embed)
 
 > Nếu bệnh nhân ra nhiều mồ hôi chữa hai bên hố chẩm vào tới C1,2 và song chỉnh với vùng S.
 
 Đốt sống tài liệu nêu:
 
-- **Trọng điểm:** [C1](/human-atlas?structure=atlas#atlas-viewer), [C2](/human-atlas?structure=axis#atlas-viewer), [T2](/human-atlas?structure=second-thoracic-vertebra#atlas-viewer), [T3](/human-atlas?structure=third-thoracic-vertebra#atlas-viewer), [T7](/human-atlas?structure=seventh-thoracic-vertebra#atlas-viewer), [T8](/human-atlas?structure=eighth-thoracic-vertebra#atlas-viewer), [L4](/human-atlas?structure=fourth-lumbar-vertebra#atlas-viewer), [L5](/human-atlas?structure=fifth-lumbar-vertebra#atlas-viewer), [S1](/human-atlas?structure=sacrum#atlas-viewer)
+- **Trọng điểm:** [C1](/human-atlas?structure=atlas#atlas-viewer), [C2](/human-atlas?structure=axis#atlas-viewer)
 
-[Xem trên Bản đồ cơ thể người →](/human-atlas?structure=atlas,axis,second-thoracic-vertebra,third-thoracic-vertebra,seventh-thoracic-vertebra,eighth-thoracic-vertebra,fourth-lumbar-vertebra,fifth-lumbar-vertebra,sacrum#atlas-embed)
+[Xem trên Bản đồ cơ thể người →](/human-atlas?structure=atlas,axis#atlas-embed)
 
 ## Đọc thêm
 

@@ -61,6 +61,23 @@ test("review.mapping = passed mà còn mã chưa chắc thì build dừng", () =
   );
 });
 
+test("trọng điểm + khung atlas nằm ngay dưới từng đoạn trích nêu chúng", () => {
+  const slug = "dau-lung-cap-theo-tac-dong-cot-song";
+  const e = editorial(slug);
+  const topic = assembleTopic(extractSection("dau-lung-cap", [2, 3], pages), meta("dau-lung-cap"), decisions, e);
+  const md = renderArticle(topic, e, "vi");
+  const part = md.slice(md.indexOf("### Các trọng điểm"), md.indexOf("## Đọc thêm"));
+  // Bốn đoạn trích, bốn khung atlas — mỗi khung theo đúng mã của đoạn ngay trên nó.
+  assert.equal(part.match(/#atlas-embed\)/g)?.length, 4);
+  const order = [...part.matchAll(/structure=([a-z,-]+)#atlas-embed/g)].map((m) => m[1]);
+  assert.deepEqual(order, [
+    "second-thoracic-vertebra,third-thoracic-vertebra,seventh-thoracic-vertebra,eighth-thoracic-vertebra",
+    "fourth-lumbar-vertebra,fifth-lumbar-vertebra,sacrum",
+    "second-thoracic-vertebra,third-thoracic-vertebra",
+    "atlas,axis",
+  ]);
+});
+
 test("bài render: có nhãn tư liệu, link atlas, lời khép bài; không có lời mời tự làm", () => {
   const slug = "dau-lung-cap-theo-tac-dong-cot-song";
   const e = editorial(slug);

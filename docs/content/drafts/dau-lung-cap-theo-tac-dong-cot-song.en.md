@@ -45,17 +45,35 @@ The U.S. National Institute of Neurological Disorders and Stroke (NINDS) describ
 
 > Note: at the painful spot, the painful point on the spine with a high temperature is the diseased zone and is not to be acted on yet; the corresponding zone on the spine must be found and treated instead. If the patient cannot bend forward because of pain, there is usually a point at T2, 3, 7, 8
 
+Vertebrae named by the document:
+
+- **Key point:** [T2](/human-atlas?structure=second-thoracic-vertebra#atlas-viewer), [T3](/human-atlas?structure=third-thoracic-vertebra#atlas-viewer), [T7](/human-atlas?structure=seventh-thoracic-vertebra#atlas-viewer), [T8](/human-atlas?structure=eighth-thoracic-vertebra#atlas-viewer)
+
+[View on the Human Atlas →](/human-atlas?structure=second-thoracic-vertebra,third-thoracic-vertebra,seventh-thoracic-vertebra,eighth-thoracic-vertebra#atlas-embed)
+
 > If the patient cannot sit up straight because of pain, the key points are L4, 5 and S1.
 
+Vertebrae named by the document:
+
+- **Key point:** [L4](/human-atlas?structure=fourth-lumbar-vertebra#atlas-viewer), [L5](/human-atlas?structure=fifth-lumbar-vertebra#atlas-viewer), [S1](/human-atlas?structure=sacrum#atlas-viewer)
+
+[View on the Human Atlas →](/human-atlas?structure=fourth-lumbar-vertebra,fifth-lumbar-vertebra,sacrum#atlas-embed)
+
 > If the patient has an external wind-cold chill without sweating, with severe back pain and difficulty moving … the key points also usually include T2, 3.
+
+Vertebrae named by the document:
+
+- **Key point:** [T2](/human-atlas?structure=second-thoracic-vertebra#atlas-viewer), [T3](/human-atlas?structure=third-thoracic-vertebra#atlas-viewer)
+
+[View on the Human Atlas →](/human-atlas?structure=second-thoracic-vertebra,third-thoracic-vertebra#atlas-embed)
 
 > If the patient sweats a lot, treat both sides of the occipital fossa inward to C1, 2, with "song chỉnh" (the method's term for acting on two different points at the same time with both hands) at the S region.
 
 Vertebrae named by the document:
 
-- **Key point:** [C1](/human-atlas?structure=atlas#atlas-viewer), [C2](/human-atlas?structure=axis#atlas-viewer), [T2](/human-atlas?structure=second-thoracic-vertebra#atlas-viewer), [T3](/human-atlas?structure=third-thoracic-vertebra#atlas-viewer), [T7](/human-atlas?structure=seventh-thoracic-vertebra#atlas-viewer), [T8](/human-atlas?structure=eighth-thoracic-vertebra#atlas-viewer), [L4](/human-atlas?structure=fourth-lumbar-vertebra#atlas-viewer), [L5](/human-atlas?structure=fifth-lumbar-vertebra#atlas-viewer), [S1](/human-atlas?structure=sacrum#atlas-viewer)
+- **Key point:** [C1](/human-atlas?structure=atlas#atlas-viewer), [C2](/human-atlas?structure=axis#atlas-viewer)
 
-[View on the Human Atlas →](/human-atlas?structure=atlas,axis,second-thoracic-vertebra,third-thoracic-vertebra,seventh-thoracic-vertebra,eighth-thoracic-vertebra,fourth-lumbar-vertebra,fifth-lumbar-vertebra,sacrum#atlas-embed)
+[View on the Human Atlas →](/human-atlas?structure=atlas,axis#atlas-embed)
 
 ## Further reading
 

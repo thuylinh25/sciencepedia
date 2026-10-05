@@ -69,6 +69,8 @@ const ROLE_ORDER: Mapping["role"][] = ["primary", "related", "caution", "avoid"]
  * nằm ở cấp mục — nhãn "Tư liệu lưu trữ" đầu bài và tiêu đề mục. Truy vết trang vẫn còn:
  * `ref.pdfPage` trong topic JSON và khoảng trang ở mục "Nguồn tài liệu" cuối bài.
  */
+const squash = (s: string) => s.normalize("NFC").replace(/\s+/g, " ").trim();
+
 function quote(q: Quote, locale: Locale): string {
   const text = (locale === "vi" ? q.vi : q.en).trim().replace(/\n+/g, " ");
   return `> ${text}`;
@@ -124,13 +126,24 @@ export function renderArticle(
     const v = byId.get(ev.id);
     if (!v) continue;
     out.push(`### ${ev.label[locale]}`, "");
-    for (const q of ev.quotes) out.push(quote(q, locale), "");
-    const lines = roleLines(v.mappings, locale);
-    if (lines.length) {
+    // Trọng điểm + khung atlas ngay dưới ĐOẠN TRÍCH nêu chúng, không gom cuối thể
+    // (chủ sản phẩm, 2026-10-05). Mapping nào không tìm thấy nguyên văn trong đoạn nào
+    // thì rơi xuống cuối thể — không bao giờ bị bỏ mất.
+    const placed = new Set<Mapping>();
+    const block = (mappings: Mapping[]) => {
+      const lines = roleLines(mappings, locale);
+      if (!lines.length) return;
       out.push(`${t.vertebraeNamed}:`, "", ...lines, "");
-      const codes = v.mappings.filter((m) => m.targetType === "vertebra").map((m) => m.targetId as VertebraCode);
+      const codes = mappings.filter((m) => m.targetType === "vertebra").map((m) => m.targetId as VertebraCode);
       if (codes.length) out.push(`[${t.atlas} →](${atlasEmbedHref(codes)})`, "");
+    };
+    for (const q of ev.quotes) {
+      out.push(quote(q, locale), "");
+      const mine = v.mappings.filter((m) => !placed.has(m) && m.ref.pdfPage === q.pdfPage && squash(q.vi).includes(squash(m.raw)));
+      mine.forEach((m) => placed.add(m));
+      block(mine);
     }
+    block(v.mappings.filter((m) => !placed.has(m)));
   }
 
   /* Mục tổng hợp "Đốt sống liên quan" đã bỏ theo yêu cầu chủ sản phẩm (2026-10-05):

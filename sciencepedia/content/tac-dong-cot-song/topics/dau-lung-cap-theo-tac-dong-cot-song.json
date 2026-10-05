@@ -128,6 +128,30 @@
         },
         {
           "targetType": "vertebra",
+          "targetId": "T2",
+          "role": "primary",
+          "raw": "cũng có T2.3",
+          "context": "Nếu bệnh nhân bị ngoại cảm phong hàn không ra mồ hôi, lưng rất đau, vận động khó khăn cần giải cảm mạnh bằng cách đánh cảm và xông để ra mồ hôi. Chữa bằng phương pháp Tác động cột sống Việt Nam cần giải toả những chỗ cơ co, trọng điểm thường cũng có T2.3.",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 3,
+            "bookPage": 2
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T3",
+          "role": "primary",
+          "raw": "cũng có T2.3",
+          "context": "Nếu bệnh nhân bị ngoại cảm phong hàn không ra mồ hôi, lưng rất đau, vận động khó khăn cần giải cảm mạnh bằng cách đánh cảm và xông để ra mồ hôi. Chữa bằng phương pháp Tác động cột sống Việt Nam cần giải toả những chỗ cơ co, trọng điểm thường cũng có T2.3.",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 3,
+            "bookPage": 2
+          }
+        },
+        {
+          "targetType": "vertebra",
           "targetId": "C1",
           "role": "primary",
           "raw": "chữa hai bên hố chẩm vào tới C1,2",

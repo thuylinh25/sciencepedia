@@ -39,7 +39,8 @@ export function assembleTopic(
     const mappings: Mapping[] = [];
     const seen = new Set<string>();
     const add = (m: Mapping) => {
-      const key = `${m.targetType}:${m.targetId}:${m.role}`;
+      // Cùng mã + vai nhưng ở đoạn khác (raw khác) vẫn giữ: bài đặt trọng điểm dưới TỪNG đoạn.
+      const key = `${m.targetType}:${m.targetId}:${m.role}:${m.raw}`;
       if (seen.has(key)) return;
       seen.add(key);
       mappings.push(m);
