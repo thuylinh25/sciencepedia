@@ -52,6 +52,35 @@ sources:
     passages:
       - "Neuropathic pain describes pain that is caused by nerve damage due to an injury or disease. Neuropathic pain sensations are often described as burning, tingling, shooting, or like electric shocks. Examples of conditions that cause neuropathic pain are diabetic neuropathy, shingles, and sciatica."
 
+  - id: s4
+    tier: 1
+    title: "Evaluation and Management of Cauda Equina Syndrome"
+    publisher: Kuris EO, McDonald CL, Palumbo MA, Daniels AH — The American Journal of Medicine
+    doi: 10.1016/j.amjmed.2021.07.021
+    citation: "Am J Med. 2021;134(12):1483-1489. PMID 34473966"   # Crossref xác nhận 2026-10-05
+    accessed: 2026-10-05
+    read: abstract qua Europe PMC REST (NCBI E-utilities bị chặn — trang misuse)
+    passages:
+      - "Cauda equina syndrome is a potentially devastating spinal condition."
+      - "Cauda equina syndrome results from conditions that compress the nerves in the lumbosacral spinal canal."
+      - "Once suspected, emergent spinal surgery referral is indicated, along with urgent decompression. Even with expeditious surgery, improvements remain inconsistent. However, early intervention has been shown to portend greater chance of neurologic recovery."
+  - id: s5
+    tier: 1
+    title: "Evaluation and management of cauda equina syndrome in the emergency department"
+    publisher: Long B, Koyfman A, Gottlieb M — The American Journal of Emergency Medicine
+    doi: 10.1016/j.ajem.2019.158402
+    citation: "Am J Emerg Med. 2020;38(1):143-148. PMID 31471075"   # Crossref xác nhận 2026-10-05
+    accessed: 2026-10-05
+    read: abstract qua Europe PMC REST
+    passages:
+      - "Cauda equina syndrome is a rare but emergent condition associated with back pain. It can result in severe morbidity and can be due to a variety of causes, most commonly vertebral disc protrusion."
+      - "Treatment relies upon surgical consultation and operative intervention for decompression."
+    note: >
+      Thêm 2026-10-05 theo quyết định của chủ sản phẩm ("tìm thêm nguồn") cho đoạn trích
+      outOfScope trang 10 ("viêm đuôi ngựa … phải dùng thuốc"). Bài KHÔNG đồng nhất
+      "viêm đuôi ngựa" của tài liệu với hội chứng chùm đuôi ngựa — chỉ nêu dữ kiện về
+      hội chứng này trong khung cảnh báo. Bài về u tuỷ: chưa có nguồn, không viết gì.
+
 key_facts:
   - claim: "Đau thần kinh tọa là đau, yếu, tê hoặc châm chích ở chân do dây thần kinh tọa bị tổn thương hoặc chèn ép; là triệu chứng của một vấn đề khác, không phải bệnh riêng."
     sources: [s1, s2]
@@ -68,4 +97,5 @@ key_facts:
 conflicts: []
 # science-editor 2026-10-05: NHS Sciatica KHÔNG nói về tái phát — "hay tái phát" chỉ có nguồn MedlinePlus.
 gaps:
+  - "U tuỷ / u màng tuỷ: chưa tìm nguồn bậc 1–2 — khung cảnh báo không nói gì về chúng."
   - "Thành phần rễ của dây thần kinh tọa: không có trong nguồn đã đọc — không viết như kiến thức chung."

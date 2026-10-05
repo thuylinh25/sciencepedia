@@ -13,7 +13,8 @@ import { isVertebraCode } from "./vertebrae";
 export type Decision = {
   id: string;
   section: string;
-  apply:
+  /** Không có `apply` = quyết định biên tập, không đổi mapping (vd. D-7: giữ một thể). */
+  apply?:
     | { confirm: string }
     | { assign: string; role: Mapping["role"]; codes: string[]; side?: "left" | "right" };
 };
@@ -29,7 +30,7 @@ export function assembleTopic(
   editorial: Editorial,
 ): Topic {
   const errors: string[] = [];
-  const mine = decisions.filter((d) => d.section === meta.id);
+  const mine = decisions.filter((d): d is Decision & { apply: NonNullable<Decision["apply"]> } => d.section === meta.id && !!d.apply);
   const labels = new Map(editorial.variants.map((v) => [v.id, v.label]));
   const known = new Set(extract.variants.map((v) => v.id));
   for (const id of labels.keys()) if (!known.has(id)) errors.push(`biên tập nêu thể "${id}" không có trong bộ trích`);

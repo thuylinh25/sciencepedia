@@ -20,7 +20,7 @@ const ROOT = path.join(process.cwd(), "content/tac-dong-cot-song");
 const SOURCE = path.join(ROOT, "source");
 
 type Manifest = { sections: { id: string; pdfPages: [number, number] }[] };
-type Decision = { id: string; section: string; match: string; resolution: string };
+type Decision = { id: string; section: string; match?: string; resolution: string };
 
 function main() {
   const argv = process.argv.slice(2);
@@ -58,7 +58,7 @@ function main() {
   for (const section of sections) {
     // Cờ đã có quyết định của người vẫn hiện (để thấy dấu vết), nhưng không đếm là việc còn mở.
     const flags = reviewFlags(section).map((flag) => {
-      const d = decisions.find((x) => x.section === section.id && flag.includes(x.match));
+      const d = decisions.find((x) => x.section === section.id && !!x.match && flag.includes(x.match));
       return d ? `✔ ${d.id}: ${flag} → ${d.resolution}` : flag;
     });
     const open = flags.filter((f) => !f.startsWith("✔")).length;

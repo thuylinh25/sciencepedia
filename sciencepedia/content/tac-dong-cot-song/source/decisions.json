@@ -100,6 +100,51 @@
           "S2"
         ]
       }
+    },
+    {
+      "id": "D-7",
+      "section": "dau-nua-dau",
+      "pdfPage": 13,
+      "raw": "Các thể \"Nói khó, nghe đọc không hiểu\" (tr.13), \"Mắt nhìn hình đôi, sụp mi\" và \"Liệt nhẹ chi trên và nói khó\" (tr.14)",
+      "resolution": "GIỮ cả ba thể trong bài. science-editor (vòng 1, 2026-10-05) đề xuất cân nhắc bỏ vì tên thể trùng dấu hiệu đột quỵ cần gọi cấp cứu; chủ sản phẩm quyết giữ. Điều kiện đi kèm (đã có trong bài, không được gỡ): khung cảnh báo đặt trước phần trích nêu danh sách gọi cấp cứu của NHS/MedlinePlus, và đoạn trích ngữ cảnh tiền triệu (tr. 12–13 PDF).",
+      "decidedBy": "chủ sản phẩm",
+      "decidedAt": "2026-10-05"
+    },
+    {
+      "id": "D-8",
+      "section": "dau-than-kinh-toa",
+      "pdfPage": 8,
+      "raw": "Bệnh nhân đứng thẳng, hai chân rộng bằng 2 vai, giữ 2 gối thẳng, từ từ cúi xuống …",
+      "resolution": "GIỮ đoạn trích mô tả dấu hiệu đứng cúi hạn chế. science-editor (vòng 1) lưu ý nó dễ dẫn tới tự chẩn đoán; chủ sản phẩm quyết giữ. Đây là phép thử khám, không phải thao tác lực tay; khung cảnh báo đứng trước vẫn bắt buộc.",
+      "decidedBy": "chủ sản phẩm",
+      "decidedAt": "2026-10-05"
+    },
+    {
+      "id": "D-9",
+      "section": "dau-than-kinh-toa",
+      "pdfPage": 7,
+      "match": "Đau thần kinh toạ , theo y học hiện đại là đau dây thần kinh hông",
+      "resolution": "L4, L5, S1 ở đoạn giới thiệu giải phẫu (rễ thần kinh, vùng gây đau) — KHÔNG phải đốt tác động, không vào chỉ mục.",
+      "decidedBy": "chủ sản phẩm",
+      "decidedAt": "2026-10-05"
+    },
+    {
+      "id": "D-10",
+      "section": "dau-than-kinh-toa",
+      "pdfPage": 8,
+      "match": "Đo từ S5 ngang ra đến cánh chậu",
+      "resolution": "S5 là mốc đo vị trí thống điểm — KHÔNG phải đốt tác động, không vào chỉ mục.",
+      "decidedBy": "chủ sản phẩm",
+      "decidedAt": "2026-10-05"
+    },
+    {
+      "id": "D-11",
+      "section": "dau-than-kinh-toa",
+      "pdfPage": 10,
+      "match": "Dùng thước dây đo từ S1 lên 10cm",
+      "resolution": "S1 là mốc đo dấu hiệu giãn cột sống — KHÔNG phải đốt tác động, không vào chỉ mục.",
+      "decidedBy": "chủ sản phẩm",
+      "decidedAt": "2026-10-05"
     }
   ]
 }

@@ -75,6 +75,7 @@ const SourceEntry = z.object({
   title: z.string(),
   publisher: z.string(),
   url: z.url(),
+  doi: z.string().optional(),
   tier: z.union([z.literal(1), z.literal(2)]),
   accessed: z.iso.date(),
 });

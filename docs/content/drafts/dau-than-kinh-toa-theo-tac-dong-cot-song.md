@@ -12,7 +12,7 @@ NHS khuyên đến khoa cấp cứu hoặc gọi cấp cứu nếu bạn:
 
 Theo NHS, đây có thể là triệu chứng của một vấn đề nghiêm trọng ở lưng cần điều trị tại bệnh viện càng sớm càng tốt. MedlinePlus khuyên liên hệ nhân viên y tế ngay khi có những dấu hiệu như sốt không rõ nguyên nhân kèm đau lưng, đau sau va đập hoặc ngã mạnh, đau lan xuống dưới đầu gối, hoặc mất kiểm soát tiểu tiện, đại tiện.
 
-Cuối bài có đoạn trích tài liệu về những trường hợp tài liệu nói phương pháp không áp dụng. Với các dấu hiệu trong danh sách của NHS ở trên, NHS khuyên đến khoa cấp cứu hoặc gọi cấp cứu.
+**Hội chứng chùm đuôi ngựa** là hậu quả của các tình trạng chèn ép dây thần kinh trong ống sống vùng thắt lưng – cùng. Theo tổng quan của Kuris và cộng sự (*The American Journal of Medicine*, 2021), đây là một bệnh lý cột sống có thể gây hậu quả nặng nề; khi đã nghi ngờ, người bệnh cần được chuyển phẫu thuật cột sống cấp cứu và giải ép khẩn, và can thiệp sớm cho thấy cơ hội hồi phục thần kinh cao hơn — dù kết quả vẫn không đồng đều. Tổng quan của Long và cộng sự (*The American Journal of Emergency Medicine*, 2020) mô tả đây là một tình trạng hiếm nhưng cấp cứu, nguyên nhân thường gặp nhất là lồi đĩa đệm, và việc điều trị dựa vào hội chẩn phẫu thuật cùng phẫu thuật giải ép.
 
 ## Đau thần kinh tọa là gì?
 

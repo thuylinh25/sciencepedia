@@ -12,7 +12,7 @@ The NHS advises going to A&E or calling emergency services if you:
 
 The NHS says these could be symptoms of a serious back problem that needs hospital treatment as soon as possible. MedlinePlus advises contacting a health professional right away for signs such as unexplained fever with back pain, back pain after a severe blow or fall, pain travelling below the knee, or loss of control of urine or stool.
 
-Near the end of this article is a quoted passage on cases where the document says the method does not apply. For the signs in the NHS list above, the NHS advises going to A&E or calling emergency services.
+**Cauda equina syndrome** results from conditions that compress the nerves in the lumbosacral spinal canal. According to a review by Kuris and colleagues (*The American Journal of Medicine*, 2021), it is a potentially devastating spinal condition; once it is suspected, emergent spinal surgery referral is indicated along with urgent decompression, and early intervention has been shown to give a greater chance of neurological recovery — although improvements remain inconsistent. A review by Long and colleagues (*The American Journal of Emergency Medicine*, 2020) describes it as rare but emergent, most commonly due to vertebral disc protrusion, with treatment relying on surgical consultation and operative decompression.
 
 ## What is sciatica?
 
