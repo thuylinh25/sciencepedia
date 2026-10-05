@@ -1101,3 +1101,29 @@
 .aladin-container canvas {
   image-rendering: auto !important;
 }
+
+/* ---------------------------------------------------------------------------
+   /human-atlas?embed=1 trong iframe của AtlasEmbed (khung atlas trong bài viết).
+   Class do script trong human-atlas/page.tsx gắn — chỉ khi trang thật sự nằm trong
+   iframe, nên mở thẳng URL có embed=1 vẫn thấy trang đầy đủ. Ẩn mọi thứ ngoài khung
+   atlas; khung chiếm trọn iframe. Bố cục bên trong atlas vẫn theo media query —
+   giờ là cỡ iframe, đúng thứ cần.
+   --------------------------------------------------------------------------- */
+html.atlas-embed body > :not(div:has(#main)):not(script):not(style):not(noscript) {
+  display: none !important;
+}
+html.atlas-embed div:has(> #main) > :not(#main),
+html.atlas-embed #main > :not(#atlas-viewer) {
+  display: none !important;
+}
+html.atlas-embed #main {
+  padding: 0;
+}
+html.atlas-embed #atlas-viewer {
+  height: 100dvh;
+}
+/* Tiêu đề "Bản đồ cơ thể người 3D" của atlas: khung nhúng đã có chú thích riêng ở
+   thanh trên, và trong iframe hẹp tiêu đề đè lên nút "Góc nhìn". */
+html.atlas-embed #atlas-viewer > div > header[data-atlas-avoid="top"] {
+  display: none;
+}

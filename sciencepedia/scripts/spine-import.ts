@@ -57,6 +57,9 @@ const ENTITY = {
     "Phương pháp do Chi hội Tác động cột sống Hà Nội (Hội Đông y TP Hà Nội) mô tả trong tài liệu cùng tên; Sciencepedia lưu trữ tài liệu dưới dạng trích dẫn có trang.",
 };
 
+/** Markdown bỏ mọi địa chỉ link — hai bản bằng nhau nghĩa là chỉ ĐÍCH link đổi, chữ không đổi. */
+const withoutHrefs = (md: string) => md.replace(/\]\([^)]*\)/g, "]()").replace(/\s+/g, " ").trim();
+
 const readingTime = (md: string) => Math.max(1, Math.round(md.split(/\s+/).length / 200));
 
 async function main() {
@@ -104,13 +107,35 @@ async function main() {
   });
 
   for (const { editorial, topic, vi, en } of plan) {
-    await prisma.$transaction(async (tx) => {
+    const outcome = await prisma.$transaction(async (tx): Promise<string> => {
       const existing = await tx.article.findUnique({
         where: { slug: editorial.slug },
-        select: { status: true, coverImage: true },
+        select: { id: true, status: true, coverImage: true, title: true, content: true, contentEn: true },
       });
       if (existing && existing.status !== "DRAFT") {
-        throw new Error(`${editorial.slug} đang ${existing.status} — script này chỉ ghi bài nháp; sửa bài đã xuất bản là đính chính, đi đường khác.`);
+        /* Bài đã xuất bản: chỉ cho qua khi CHỮ không đổi, chỉ đích link đổi (vd. nút
+           "Xem trên Bản đồ" chuyển sang khung nhúng). Đổi bất kỳ chữ nào là đính chính —
+           docs/content-rules.md, "Sửa bài đã publish là đính chính" — đi đường khác. */
+        const sameText =
+          withoutHrefs(existing.content) === withoutHrefs(vi) &&
+          withoutHrefs(existing.contentEn ?? "") === withoutHrefs(en);
+        if (!sameText) {
+          throw new Error(`${editorial.slug} đang ${existing.status} và phần chữ đã đổi — sửa bài đã xuất bản là đính chính, đi đường khác.`);
+        }
+        if (existing.content === vi && existing.contentEn === en) {
+          return `· ${editorial.slug} — ${existing.status}, không đổi`;
+        }
+        await tx.revision.create({
+          data: {
+            articleId: existing.id,
+            title: existing.title,
+            content: existing.content,
+            editorId: ADMIN_ID,
+            note: "Trước khi đổi đích link (spine:build) — phần chữ giữ nguyên",
+          },
+        });
+        await tx.article.update({ where: { id: existing.id }, data: { content: vi, contentEn: en } });
+        return `✔ ${editorial.slug} — ${existing.status}, chỉ đổi đích link`;
       }
       const data = {
         title: editorial.title.vi,
@@ -167,8 +192,9 @@ async function main() {
           },
         });
       }
+      return `✔ ${editorial.slug} — DRAFT`;
     });
-    console.log(`  ✔ ${editorial.slug} — DRAFT`);
+    console.log(`  ${outcome}`);
   }
 }
 

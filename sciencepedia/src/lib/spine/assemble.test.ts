@@ -70,6 +70,8 @@ test("bài render: có nhãn tư liệu, link atlas, lời khép bài; không c�
     assert.match(md, /^> \*\*(Tư liệu lưu trữ|Archival material)\.\*\*/);
     assert.match(md, /\[L5\]\(\/human-atlas\?structure=fifth-lumbar-vertebra#atlas-viewer\)/);
     assert.match(md, /🩺/);
+    // Nút "Xem trên Bản đồ" là khung nhúng tại chỗ; mã đốt sống lẻ vẫn dẫn sang trang atlas.
+    assert.match(md, /\]\(\/human-atlas\?structure=[a-z,-]+#atlas-embed\)/);
     assert.doesNotMatch(md, /tự thực hiện|làm theo các bước|điều trị ngay|try this at home/i);
   }
 });

@@ -1429,4 +1429,12 @@ bản chờ tới một giờ mới hiện trong bảng chi tiết.
 
 **Trang bài không thêm component, không thêm JS.** Mã đốt sống trong thân bài là link
 Markdown `/human-atlas?structure=…` do build sinh sẵn; `localizeHref` thêm tiền tố ngôn ngữ.
-Không nhúng atlas vào bài: nó là ~3.500 dòng client và ~10 MB hình học.
+Atlas KHÔNG tải sẵn trong bài: nó là ~3.500 dòng client và ~10 MB hình học. Nút
+"Xem trên Bản đồ" (link `#atlas-embed`) bấm mới mở khung, là một iframe tới chính trang
+`/human-atlas?embed=1&structure=…` (sửa 2026-10-05 theo yêu cầu chủ sản phẩm "hiển thị
+mô hình ngay trong bài"). Iframe chứ không dựng component thẳng vào bài: bố cục atlas
+đáp ứng theo media query của VIEWPORT, nên trong khung 640 px trên màn rộng nó bày đủ
+giao diện desktop và che mô hình — đã thử. Iframe cho atlas viewport riêng bằng cỡ khung,
+và `?structure=` đổi trong iframe không chạm URL bài. Chế độ embed ẩn khung site bằng
+class do script gắn (trang vẫn ISR, không đọc `searchParams`), chỉ khi thật sự nằm
+trong iframe. Mỗi lúc một khung: mỗi khung là một WebGL context.

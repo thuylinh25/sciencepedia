@@ -7,6 +7,13 @@ import { remarkGlossary, type GlossaryMap } from "@/lib/glossary";
 import { defaultLocale, locales, type Locale } from "@/i18n/routing";
 import { GlossaryTerm } from "@/components/glossary/glossary-term";
 import { ScrollStrip } from "@/components/ui/scroll-strip";
+import { AtlasEmbed } from "@/components/article/atlas-embed";
+
+/**
+ * Link `…#atlas-embed` (sinh bởi `npm run spine:build`) là chỗ đặt khung Bản đồ cơ thể
+ * người ngay trong bài, bấm mới tải. Link `#atlas-viewer` thường vẫn dẫn sang trang atlas.
+ */
+const ATLAS_EMBED = /^\/(?:[a-z]{2}\/)?human-atlas\?[^#]*#atlas-embed$/;
 
 /**
  * Thêm tiền tố locale cho link nội bộ viết trong Markdown.
@@ -94,7 +101,18 @@ function buildComponents(locale: string, glossary: GlossaryMap): Components {
     h1: ({ children }) => <h2 id={headingId(children)}>{children}</h2>,
     h2: ({ children }) => <h2 id={headingId(children)}>{children}</h2>,
     h3: ({ children }) => <h3 id={headingId(children)}>{children}</h3>,
+    p: ({ node, children }) => {
+      // Đoạn chỉ có đúng một link nhúng atlas: thành khối, vì khung atlas là div và
+      // div trong p là HTML hỏng (trình duyệt tự đóng thẻ p, React báo lỗi hydrate).
+      const only = node?.children.length === 1 ? node.children[0] : null;
+      const href = only?.type === "element" && only.tagName === "a" ? String(only.properties.href ?? "") : "";
+      if (ATLAS_EMBED.test(href)) return <div>{children}</div>;
+      return <p>{children}</p>;
+    },
     a: ({ href, children }) => {
+      if (href && ATLAS_EMBED.test(href)) {
+        return <AtlasEmbed href={href} label={nodeToText(children)} />;
+      }
       const external = href?.startsWith("http");
       return (
         <a

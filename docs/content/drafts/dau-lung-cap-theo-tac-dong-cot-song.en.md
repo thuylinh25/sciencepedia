@@ -57,7 +57,7 @@ Vertebrae named by the document:
 
 - **Key point:** [C1](/human-atlas?structure=atlas#atlas-viewer), [C2](/human-atlas?structure=axis#atlas-viewer), [T2](/human-atlas?structure=second-thoracic-vertebra#atlas-viewer), [T3](/human-atlas?structure=third-thoracic-vertebra#atlas-viewer), [T7](/human-atlas?structure=seventh-thoracic-vertebra#atlas-viewer), [T8](/human-atlas?structure=eighth-thoracic-vertebra#atlas-viewer), [L4](/human-atlas?structure=fourth-lumbar-vertebra#atlas-viewer), [L5](/human-atlas?structure=fifth-lumbar-vertebra#atlas-viewer), [S1](/human-atlas?structure=sacrum#atlas-viewer)
 
-[View on the Human Atlas →](/human-atlas?structure=atlas,axis,second-thoracic-vertebra,third-thoracic-vertebra,seventh-thoracic-vertebra,eighth-thoracic-vertebra,fourth-lumbar-vertebra,fifth-lumbar-vertebra,sacrum#atlas-viewer)
+[View on the Human Atlas →](/human-atlas?structure=atlas,axis,second-thoracic-vertebra,third-thoracic-vertebra,seventh-thoracic-vertebra,eighth-thoracic-vertebra,fourth-lumbar-vertebra,fifth-lumbar-vertebra,sacrum#atlas-embed)
 
 ## Related vertebrae
 
@@ -75,7 +75,7 @@ Compiled from the sections above. Roles are the document's own terms (key point,
 
 *On the Human Atlas, S1–S5 are shown together as the sacrum: the model does not separate the five sacral vertebrae.*
 
-[View on the Human Atlas →](/human-atlas?structure=atlas,axis,second-thoracic-vertebra,third-thoracic-vertebra,seventh-thoracic-vertebra,eighth-thoracic-vertebra,fourth-lumbar-vertebra,fifth-lumbar-vertebra,sacrum#atlas-viewer)
+[View on the Human Atlas →](/human-atlas?structure=atlas,axis,second-thoracic-vertebra,third-thoracic-vertebra,seventh-thoracic-vertebra,eighth-thoracic-vertebra,fourth-lumbar-vertebra,fifth-lumbar-vertebra,sacrum#atlas-embed)
 
 ## Further reading
 

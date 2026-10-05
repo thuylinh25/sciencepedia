@@ -46,6 +46,15 @@ import { SystemCardLink } from "@/components/human-atlas/system-card-link";
  */
 export const revalidate = 3600;
 
+/**
+ * `?embed=1` — trang này trong iframe của `AtlasEmbed` (khung atlas trong bài viết).
+ * Trang vẫn tĩnh (ISR): KHÔNG đọc `searchParams` trên server; một script chạy trước khi
+ * vẽ gắn class `atlas-embed` lên <html>, CSS trong globals.css ẩn khung site (header,
+ * footer, nút trợ lý, phần giới thiệu bên dưới) và cho khung atlas chiếm trọn iframe.
+ * Link trong khung (bài liên quan) mở ở trang ngoài, không mở trong iframe.
+ */
+const EMBED_SCRIPT = `(function(){try{if(new URLSearchParams(location.search).get("embed")!=="1"||window.top===window)return;var d=document.documentElement;d.classList.add("atlas-embed");document.addEventListener("click",function(e){var a=e.target&&e.target.closest&&e.target.closest("a[href]");if(!a)return;var h=a.getAttribute("href");if(!h||h.charAt(0)==="#")return;e.preventDefault();e.stopPropagation();window.top.location.href=a.href;},true);}catch(_){}})();`;
+
 export async function generateMetadata({
   params,
 }: {
@@ -105,6 +114,8 @@ export default async function HumanAtlasPage({
       {/* Danh mục + ~10 MB hình học khung mặc định tải từ R2 ngay khi trang chạy
           (phần còn lại theo nhu cầu — anatomy-scene) — bắt tay TLS sớm, chỉ ở route này. */}
       <link rel="preconnect" href={r2Origin} crossOrigin="anonymous" />
+      {/* Chuỗi hằng trong mã nguồn — không có dữ liệu ngoài nào đi vào innerHTML. */}
+      <script dangerouslySetInnerHTML={{ __html: EMBED_SCRIPT }} />
 
       <JsonLd
         data={{

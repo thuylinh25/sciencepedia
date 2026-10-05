@@ -50,7 +50,7 @@ Vertebrae named by the document:
 
 - **Key point:** [C6](/human-atlas?structure=sixth-cervical-vertebra#atlas-viewer), [T9](/human-atlas?structure=ninth-thoracic-vertebra#atlas-viewer), [T10](/human-atlas?structure=tenth-thoracic-vertebra#atlas-viewer), [T11](/human-atlas?structure=eleventh-thoracic-vertebra#atlas-viewer)
 
-[View on the Human Atlas →](/human-atlas?structure=sixth-cervical-vertebra,ninth-thoracic-vertebra,tenth-thoracic-vertebra,eleventh-thoracic-vertebra#atlas-viewer)
+[View on the Human Atlas →](/human-atlas?structure=sixth-cervical-vertebra,ninth-thoracic-vertebra,tenth-thoracic-vertebra,eleventh-thoracic-vertebra#atlas-embed)
 
 ### Heavy head, insomnia, nausea, circulatory disturbance
 
@@ -60,7 +60,7 @@ Vertebrae named by the document:
 
 - **Key point:** [T3](/human-atlas?structure=third-thoracic-vertebra#atlas-viewer), [T6](/human-atlas?structure=sixth-thoracic-vertebra#atlas-viewer)
 
-[View on the Human Atlas →](/human-atlas?structure=third-thoracic-vertebra,sixth-thoracic-vertebra#atlas-viewer)
+[View on the Human Atlas →](/human-atlas?structure=third-thoracic-vertebra,sixth-thoracic-vertebra#atlas-embed)
 
 ### Numbness of the arms and fingertips
 
@@ -70,7 +70,7 @@ Vertebrae named by the document:
 
 - **Key point:** [C7](/human-atlas?structure=seventh-cervical-vertebra#atlas-viewer), [L1](/human-atlas?structure=first-lumbar-vertebra#atlas-viewer), [L3](/human-atlas?structure=third-lumbar-vertebra#atlas-viewer)
 
-[View on the Human Atlas →](/human-atlas?structure=seventh-cervical-vertebra,first-lumbar-vertebra,third-lumbar-vertebra#atlas-viewer)
+[View on the Human Atlas →](/human-atlas?structure=seventh-cervical-vertebra,first-lumbar-vertebra,third-lumbar-vertebra#atlas-embed)
 
 ### Tiredness, frequent yawning, belching
 
@@ -80,7 +80,7 @@ Vertebrae named by the document:
 
 - **Key point:** [T6](/human-atlas?structure=sixth-thoracic-vertebra#atlas-viewer), [T7](/human-atlas?structure=seventh-thoracic-vertebra#atlas-viewer), [T9](/human-atlas?structure=ninth-thoracic-vertebra#atlas-viewer)
 
-[View on the Human Atlas →](/human-atlas?structure=sixth-thoracic-vertebra,seventh-thoracic-vertebra,ninth-thoracic-vertebra#atlas-viewer)
+[View on the Human Atlas →](/human-atlas?structure=sixth-thoracic-vertebra,seventh-thoracic-vertebra,ninth-thoracic-vertebra#atlas-embed)
 
 ### Difficulty speaking, not understanding speech or text
 
@@ -90,7 +90,7 @@ Vertebrae named by the document:
 
 - **Key point:** [S5](/human-atlas?structure=sacrum#atlas-viewer)
 
-[View on the Human Atlas →](/human-atlas?structure=sacrum#atlas-viewer)
+[View on the Human Atlas →](/human-atlas?structure=sacrum#atlas-embed)
 
 ### Ache at the back of one side of the head, spreading to the eye socket
 
@@ -100,7 +100,7 @@ Vertebrae named by the document:
 
 - **Key point:** [C1](/human-atlas?structure=atlas#atlas-viewer), [C3](/human-atlas?structure=third-cervical-vertebra#atlas-viewer), [C5](/human-atlas?structure=fifth-cervical-vertebra#atlas-viewer), [C6](/human-atlas?structure=sixth-cervical-vertebra#atlas-viewer), [T11](/human-atlas?structure=eleventh-thoracic-vertebra#atlas-viewer)
 
-[View on the Human Atlas →](/human-atlas?structure=atlas,third-cervical-vertebra,fifth-cervical-vertebra,sixth-cervical-vertebra,eleventh-thoracic-vertebra#atlas-viewer)
+[View on the Human Atlas →](/human-atlas?structure=atlas,third-cervical-vertebra,fifth-cervical-vertebra,sixth-cervical-vertebra,eleventh-thoracic-vertebra#atlas-embed)
 
 ### Ache at the temples
 
@@ -110,7 +110,7 @@ Vertebrae named by the document:
 
 - **Key point:** [T11](/human-atlas?structure=eleventh-thoracic-vertebra#atlas-viewer), [L1](/human-atlas?structure=first-lumbar-vertebra#atlas-viewer)
 
-[View on the Human Atlas →](/human-atlas?structure=eleventh-thoracic-vertebra,first-lumbar-vertebra#atlas-viewer)
+[View on the Human Atlas →](/human-atlas?structure=eleventh-thoracic-vertebra,first-lumbar-vertebra#atlas-embed)
 
 ### Ache at the forehead and eye sockets
 
@@ -120,7 +120,7 @@ Vertebrae named by the document:
 
 - **Key point:** [T10](/human-atlas?structure=tenth-thoracic-vertebra#atlas-viewer), [T11](/human-atlas?structure=eleventh-thoracic-vertebra#atlas-viewer)
 
-[View on the Human Atlas →](/human-atlas?structure=tenth-thoracic-vertebra,eleventh-thoracic-vertebra#atlas-viewer)
+[View on the Human Atlas →](/human-atlas?structure=tenth-thoracic-vertebra,eleventh-thoracic-vertebra#atlas-embed)
 
 ### Double vision, drooping eyelid
 
@@ -130,7 +130,7 @@ Vertebrae named by the document:
 
 - **Key point:** [C7](/human-atlas?structure=seventh-cervical-vertebra#atlas-viewer)
 
-[View on the Human Atlas →](/human-atlas?structure=seventh-cervical-vertebra#atlas-viewer)
+[View on the Human Atlas →](/human-atlas?structure=seventh-cervical-vertebra#atlas-embed)
 
 ### Mild paralysis of the upper limb and difficulty speaking
 
@@ -140,7 +140,7 @@ Vertebrae named by the document:
 
 - **Key point:** [C6](/human-atlas?structure=sixth-cervical-vertebra#atlas-viewer), [T1](/human-atlas?structure=first-thoracic-vertebra#atlas-viewer)
 
-[View on the Human Atlas →](/human-atlas?structure=sixth-cervical-vertebra,first-thoracic-vertebra#atlas-viewer)
+[View on the Human Atlas →](/human-atlas?structure=sixth-cervical-vertebra,first-thoracic-vertebra#atlas-embed)
 
 ## Related vertebrae
 
@@ -164,7 +164,7 @@ Compiled from the sections above. Roles are the document's own terms (key point,
 
 *On the Human Atlas, S1–S5 are shown together as the sacrum: the model does not separate the five sacral vertebrae.*
 
-[View on the Human Atlas →](/human-atlas?structure=atlas,third-cervical-vertebra,fifth-cervical-vertebra,sixth-cervical-vertebra,seventh-cervical-vertebra,first-thoracic-vertebra,third-thoracic-vertebra,sixth-thoracic-vertebra,seventh-thoracic-vertebra,ninth-thoracic-vertebra,tenth-thoracic-vertebra,eleventh-thoracic-vertebra,first-lumbar-vertebra,third-lumbar-vertebra,sacrum#atlas-viewer)
+[View on the Human Atlas →](/human-atlas?structure=atlas,third-cervical-vertebra,fifth-cervical-vertebra,sixth-cervical-vertebra,seventh-cervical-vertebra,first-thoracic-vertebra,third-thoracic-vertebra,sixth-thoracic-vertebra,seventh-thoracic-vertebra,ninth-thoracic-vertebra,tenth-thoracic-vertebra,eleventh-thoracic-vertebra,first-lumbar-vertebra,third-lumbar-vertebra,sacrum#atlas-embed)
 
 ## Further reading
 

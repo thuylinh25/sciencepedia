@@ -50,7 +50,7 @@ Các mục dưới đây trích nguyên văn từ tài liệu, kèm số trang. 
 
 - **Trọng điểm:** [C6](/human-atlas?structure=sixth-cervical-vertebra#atlas-viewer), [T9](/human-atlas?structure=ninth-thoracic-vertebra#atlas-viewer), [T10](/human-atlas?structure=tenth-thoracic-vertebra#atlas-viewer), [T11](/human-atlas?structure=eleventh-thoracic-vertebra#atlas-viewer)
 
-[Xem trên Bản đồ cơ thể người →](/human-atlas?structure=sixth-cervical-vertebra,ninth-thoracic-vertebra,tenth-thoracic-vertebra,eleventh-thoracic-vertebra#atlas-viewer)
+[Xem trên Bản đồ cơ thể người →](/human-atlas?structure=sixth-cervical-vertebra,ninth-thoracic-vertebra,tenth-thoracic-vertebra,eleventh-thoracic-vertebra#atlas-embed)
 
 ### Nặng đầu, mất ngủ, buồn nôn, rối loạn tuần hoàn
 
@@ -60,7 +60,7 @@ Các mục dưới đây trích nguyên văn từ tài liệu, kèm số trang. 
 
 - **Trọng điểm:** [T3](/human-atlas?structure=third-thoracic-vertebra#atlas-viewer), [T6](/human-atlas?structure=sixth-thoracic-vertebra#atlas-viewer)
 
-[Xem trên Bản đồ cơ thể người →](/human-atlas?structure=third-thoracic-vertebra,sixth-thoracic-vertebra#atlas-viewer)
+[Xem trên Bản đồ cơ thể người →](/human-atlas?structure=third-thoracic-vertebra,sixth-thoracic-vertebra#atlas-embed)
 
 ### Tê bì chi trên và đầu ngón tay
 
@@ -70,7 +70,7 @@ Các mục dưới đây trích nguyên văn từ tài liệu, kèm số trang. 
 
 - **Trọng điểm:** [C7](/human-atlas?structure=seventh-cervical-vertebra#atlas-viewer), [L1](/human-atlas?structure=first-lumbar-vertebra#atlas-viewer), [L3](/human-atlas?structure=third-lumbar-vertebra#atlas-viewer)
 
-[Xem trên Bản đồ cơ thể người →](/human-atlas?structure=seventh-cervical-vertebra,first-lumbar-vertebra,third-lumbar-vertebra#atlas-viewer)
+[Xem trên Bản đồ cơ thể người →](/human-atlas?structure=seventh-cervical-vertebra,first-lumbar-vertebra,third-lumbar-vertebra#atlas-embed)
 
 ### Mệt, hay ngáp, ợ hơi
 
@@ -80,7 +80,7 @@ Các mục dưới đây trích nguyên văn từ tài liệu, kèm số trang. 
 
 - **Trọng điểm:** [T6](/human-atlas?structure=sixth-thoracic-vertebra#atlas-viewer), [T7](/human-atlas?structure=seventh-thoracic-vertebra#atlas-viewer), [T9](/human-atlas?structure=ninth-thoracic-vertebra#atlas-viewer)
 
-[Xem trên Bản đồ cơ thể người →](/human-atlas?structure=sixth-thoracic-vertebra,seventh-thoracic-vertebra,ninth-thoracic-vertebra#atlas-viewer)
+[Xem trên Bản đồ cơ thể người →](/human-atlas?structure=sixth-thoracic-vertebra,seventh-thoracic-vertebra,ninth-thoracic-vertebra#atlas-embed)
 
 ### Nói khó, nghe đọc không hiểu
 
@@ -90,7 +90,7 @@ Các mục dưới đây trích nguyên văn từ tài liệu, kèm số trang. 
 
 - **Trọng điểm:** [S5](/human-atlas?structure=sacrum#atlas-viewer)
 
-[Xem trên Bản đồ cơ thể người →](/human-atlas?structure=sacrum#atlas-viewer)
+[Xem trên Bản đồ cơ thể người →](/human-atlas?structure=sacrum#atlas-embed)
 
 ### Nhức nửa đầu sau, lan sang hốc mắt
 
@@ -100,7 +100,7 @@ Các mục dưới đây trích nguyên văn từ tài liệu, kèm số trang. 
 
 - **Trọng điểm:** [C1](/human-atlas?structure=atlas#atlas-viewer), [C3](/human-atlas?structure=third-cervical-vertebra#atlas-viewer), [C5](/human-atlas?structure=fifth-cervical-vertebra#atlas-viewer), [C6](/human-atlas?structure=sixth-cervical-vertebra#atlas-viewer), [T11](/human-atlas?structure=eleventh-thoracic-vertebra#atlas-viewer)
 
-[Xem trên Bản đồ cơ thể người →](/human-atlas?structure=atlas,third-cervical-vertebra,fifth-cervical-vertebra,sixth-cervical-vertebra,eleventh-thoracic-vertebra#atlas-viewer)
+[Xem trên Bản đồ cơ thể người →](/human-atlas?structure=atlas,third-cervical-vertebra,fifth-cervical-vertebra,sixth-cervical-vertebra,eleventh-thoracic-vertebra#atlas-embed)
 
 ### Nhức đầu vùng thái dương
 
@@ -110,7 +110,7 @@ Các mục dưới đây trích nguyên văn từ tài liệu, kèm số trang. 
 
 - **Trọng điểm:** [T11](/human-atlas?structure=eleventh-thoracic-vertebra#atlas-viewer), [L1](/human-atlas?structure=first-lumbar-vertebra#atlas-viewer)
 
-[Xem trên Bản đồ cơ thể người →](/human-atlas?structure=eleventh-thoracic-vertebra,first-lumbar-vertebra#atlas-viewer)
+[Xem trên Bản đồ cơ thể người →](/human-atlas?structure=eleventh-thoracic-vertebra,first-lumbar-vertebra#atlas-embed)
 
 ### Nhức đầu vùng trán và hốc mắt
 
@@ -120,7 +120,7 @@ Các mục dưới đây trích nguyên văn từ tài liệu, kèm số trang. 
 
 - **Trọng điểm:** [T10](/human-atlas?structure=tenth-thoracic-vertebra#atlas-viewer), [T11](/human-atlas?structure=eleventh-thoracic-vertebra#atlas-viewer)
 
-[Xem trên Bản đồ cơ thể người →](/human-atlas?structure=tenth-thoracic-vertebra,eleventh-thoracic-vertebra#atlas-viewer)
+[Xem trên Bản đồ cơ thể người →](/human-atlas?structure=tenth-thoracic-vertebra,eleventh-thoracic-vertebra#atlas-embed)
 
 ### Nhìn hình đôi, sụp mi
 
@@ -130,7 +130,7 @@ Các mục dưới đây trích nguyên văn từ tài liệu, kèm số trang. 
 
 - **Trọng điểm:** [C7](/human-atlas?structure=seventh-cervical-vertebra#atlas-viewer)
 
-[Xem trên Bản đồ cơ thể người →](/human-atlas?structure=seventh-cervical-vertebra#atlas-viewer)
+[Xem trên Bản đồ cơ thể người →](/human-atlas?structure=seventh-cervical-vertebra#atlas-embed)
 
 ### Liệt nhẹ chi trên và nói khó
 
@@ -140,7 +140,7 @@ Các mục dưới đây trích nguyên văn từ tài liệu, kèm số trang. 
 
 - **Trọng điểm:** [C6](/human-atlas?structure=sixth-cervical-vertebra#atlas-viewer), [T1](/human-atlas?structure=first-thoracic-vertebra#atlas-viewer)
 
-[Xem trên Bản đồ cơ thể người →](/human-atlas?structure=sixth-cervical-vertebra,first-thoracic-vertebra#atlas-viewer)
+[Xem trên Bản đồ cơ thể người →](/human-atlas?structure=sixth-cervical-vertebra,first-thoracic-vertebra#atlas-embed)
 
 ## Đốt sống liên quan
 
@@ -164,7 +164,7 @@ Tổng hợp từ các mục trên. Vai trò là cách tài liệu gọi tên (t
 
 *Trên Bản đồ cơ thể người, S1–S5 hiện chung là xương cùng: mô hình không tách riêng năm đốt cùng.*
 
-[Xem trên Bản đồ cơ thể người →](/human-atlas?structure=atlas,third-cervical-vertebra,fifth-cervical-vertebra,sixth-cervical-vertebra,seventh-cervical-vertebra,first-thoracic-vertebra,third-thoracic-vertebra,sixth-thoracic-vertebra,seventh-thoracic-vertebra,ninth-thoracic-vertebra,tenth-thoracic-vertebra,eleventh-thoracic-vertebra,first-lumbar-vertebra,third-lumbar-vertebra,sacrum#atlas-viewer)
+[Xem trên Bản đồ cơ thể người →](/human-atlas?structure=atlas,third-cervical-vertebra,fifth-cervical-vertebra,sixth-cervical-vertebra,seventh-cervical-vertebra,first-thoracic-vertebra,third-thoracic-vertebra,sixth-thoracic-vertebra,seventh-thoracic-vertebra,ninth-thoracic-vertebra,tenth-thoracic-vertebra,eleventh-thoracic-vertebra,first-lumbar-vertebra,third-lumbar-vertebra,sacrum#atlas-embed)
 
 ## Đọc thêm
 

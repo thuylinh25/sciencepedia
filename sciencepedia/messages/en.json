@@ -144,6 +144,12 @@
     "aiNotConfigured": "AI explanations are not enabled."
   },
   "article": {
+    "atlasEmbed": {
+      "caption": "Human Atlas — drag to rotate, tap to inspect a structure",
+      "fullscreen": "Open full page",
+      "close": "Close model",
+      "loading": "Opening the Human Atlas…"
+    },
     "readingTime": "{minutes} min read",
     "views": "{count} views",
     "publishedOn": "Published {date}",

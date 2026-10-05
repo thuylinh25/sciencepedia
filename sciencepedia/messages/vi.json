@@ -144,6 +144,12 @@
     "aiNotConfigured": "Tính năng giải thích bằng AI chưa được bật."
   },
   "article": {
+    "atlasEmbed": {
+      "caption": "Bản đồ cơ thể người — kéo để xoay, chạm để xem cấu trúc",
+      "fullscreen": "Mở toàn trang",
+      "close": "Đóng mô hình",
+      "loading": "Đang mở Bản đồ cơ thể người…"
+    },
     "readingTime": "{minutes} phút đọc",
     "views": "{count} lượt xem",
     "publishedOn": "Đăng ngày {date}",

@@ -1,5 +1,5 @@
 import type { Editorial, Mapping, Quote, Topic } from "./schema";
-import { VERTEBRAE, atlasHref, compareVertebrae, type VertebraCode } from "./vertebrae";
+import { VERTEBRAE, atlasEmbedHref, atlasHref, compareVertebrae, type VertebraCode } from "./vertebrae";
 
 /**
  * Topic + tệp biên tập → Markdown của bài (vi hoặc en), ghi vào
@@ -137,7 +137,7 @@ export function renderArticle(
     if (lines.length) {
       out.push(`${t.vertebraeNamed}:`, "", ...lines, "");
       const codes = v.mappings.filter((m) => m.targetType === "vertebra").map((m) => m.targetId as VertebraCode);
-      if (codes.length) out.push(`[${t.atlas} →](${atlasHref(codes)})`, "");
+      if (codes.length) out.push(`[${t.atlas} →](${atlasEmbedHref(codes)})`, "");
     }
   }
 
@@ -151,7 +151,7 @@ export function renderArticle(
     }
     out.push("");
     if (vertebrae.some((c) => c.startsWith("S"))) out.push(`*${t.sacrumNote}*`, "");
-    out.push(`[${t.atlas} →](${atlasHref(vertebrae)})`, "");
+    out.push(`[${t.atlas} →](${atlasEmbedHref(vertebrae)})`, "");
   }
 
   if (editorial.outOfScope.length) {
