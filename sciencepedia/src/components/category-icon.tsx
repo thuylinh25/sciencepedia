@@ -1,4 +1,5 @@
 import {
+  Activity,
   Atom,
   Bone,
   Brain,
@@ -11,12 +12,14 @@ import {
   FlaskConical,
   GitBranch,
   Globe2,
+  Hand,
   HeartPulse,
   Leaf,
   Microscope,
   Mountain,
   Move,
   Orbit,
+  PersonStanding,
   Rocket,
   Salad,
   ScrollText,
@@ -42,6 +45,8 @@ import {
  * Thêm danh mục có icon mới thì sửa file này trong cùng một thay đổi.
  */
 const ICONS: Record<string, LucideIcon> = {
+  // `spine:import` ghi "Activity" cho `tac-dong-cot-song`.
+  Activity,
   Atom,
   Bone,
   Brain,
@@ -54,12 +59,14 @@ const ICONS: Record<string, LucideIcon> = {
   FlaskConical,
   GitBranch,
   Globe2,
+  Hand,
   HeartPulse,
   Leaf,
   Microscope,
   Mountain,
   Move,
   Orbit,
+  PersonStanding,
   Rocket,
   Salad,
   ScrollText,

@@ -21,11 +21,18 @@ export async function CategoryCard({
   category,
   locale,
   className,
+  headingLevel = 2,
+  label,
 }: {
   category: CategoryLike;
   locale: Locale;
   className?: string;
+  /** 3 khi thẻ nằm dưới một tiêu đề mục h2 (trang danh mục cha). */
+  headingLevel?: 2 | 3;
+  /** Nhãn phân loại ngắn, ví dụ "Phương pháp truyền thống". */
+  label?: string;
 }) {
+  const Heading = headingLevel === 3 ? "h3" : "h2";
   const t = await getTranslations("category");
 
   const name = locale === "en" ? category.nameEn : category.name;
@@ -59,9 +66,15 @@ export async function CategoryCard({
         <CategoryIcon name={category.icon} className="size-6" />
       </span>
 
-      <h2 className="mt-5 font-display text-xl font-bold tracking-tight">
+      <Heading className="mt-5 font-display text-xl font-bold tracking-tight">
         {name}
-      </h2>
+      </Heading>
+
+      {label && (
+        <span className="mt-2 w-fit rounded-full border border-warning/40 bg-warning/10 px-2.5 py-0.5 text-xs font-medium">
+          {label}
+        </span>
+      )}
 
       {description && (
         <p className="mt-2 line-clamp-3 text-sm leading-relaxed text-muted-foreground">

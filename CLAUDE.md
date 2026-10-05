@@ -28,6 +28,7 @@ npm run spine:extract  # Tác động cột sống: bản chép trang → trư�
 npm run spine:build    # topic biên tập + quyết định D-n → topic JSON, bản nháp vi/en, chỉ mục atlas (chạy khô; --write ghi)
 npm run spine:import   # bài Tác động cột sống → CSDL ở DRAFT (chạy khô; --write) — không bao giờ PUBLISHED/PASSED/reviewedById
 npm run spine:publish  # NGƯỜI chạy (ghi byline duyệt): duyệt + link vào từ bài Huyệt đạo + publish cả loạt qua gate (chạy khô; --write)
+npm run taxonomy:health # nhóm con của Sức khoẻ: Cơ thể người · Tác động cột sống · Bấm huyệt · Y học cổ truyền (chạy khô; --write)
 npx tsx --env-file-if-exists=.env scripts/recrop-cover.ts --slug <s> --top <px>  # ảnh bìa đứng mất đầu trên thẻ: cắt sẵn 16/10 (cần --write)
 npx tsx --env-file-if-exists=.env scripts/strip-draft-artifacts.ts  # gỡ dấu 【…】 của công cụ AI khỏi bài (cần --write)
 npx tsx --env-file-if-exists=.env scripts/set-cover-alt.ts  # alt ảnh bìa từ scripts/data/cover-alt.json, chỉ điền ô trống (cần --write)
@@ -116,6 +117,7 @@ Gate accuracy **không có ngoại lệ**.
 - **Ảnh tải lên qua trang quản trị đi thẳng R2** (`/api/upload`), tự chuyển WebP và dựng sẵn các cỡ — không cần chạy script nào sau đó. Supabase Storage không còn nhận ảnh mới.
 - **Song ngữ:** dùng `pick()` / `pickName()` từ `@/lib/i18n-content`, không hardcode.
 - **Không có trang Giới thiệu.** `/about` đã xoá theo yêu cầu chủ sản phẩm (2026-10-03); byline "Ban biên tập Sciencepedia" là chữ thường, không dẫn đi đâu. Đừng dựng lại trang hay liên kết khi chưa có quyết định mới. Vẫn không nêu tên người duyệt khi không có người thật duyệt.
+- **Menu Khám phá chỉ liệt kê lĩnh vực gốc.** Nhóm con (vd. Tác động cột sống, Bấm huyệt, Y học cổ truyền dưới Sức khoẻ) là `Category` có `parentId`, hiện thành thẻ trên trang lĩnh vực — không thêm vào menu, không dựng submenu. Khung lưu ý theo danh mục ở `@/lib/category-notices` (code, không CSDL) — lý do: `docs/architecture.md`, mục "Nhóm con của Sức khoẻ".
 - **Thuật ngữ `[[...]]`:** định nghĩa ngắn tra trên server lúc render, không fetch khi rê chuột. Giải thích do AI sinh **không bao giờ ghi vào CSDL** và luôn mang nhãn "do AI" — lý do: `docs/architecture.md`, mục "Thuật ngữ".
 - **Mô tả giải phẫu Level 2 mới lấy dữ kiện từ Wikipedia tiếng Anh, KHÔNG từ OpenStax** — OpenStax cấm đưa sách vào AI khi chưa được phép. Lý do: `docs/content-rules.md`, mục "Giấy phép đọc được ≠ được cho AI đọc".
 - **Dấu duyệt mục từ chỉ đến từ `glossary.json`, và tự gỡ khi nội dung đổi.** `GlossaryTerm.reviewedById`/`reviewedAt` trỏ tài khoản tổ chức như bài viết; `/admin/glossary` không đặt được chúng, chỉ gỡ khi tên thuật ngữ hoặc định nghĩa đổi. Mục không có bằng chứng duyệt thì để trống, không suy từ `createdAt` — lý do: `docs/content-rules.md`, mục "Byline người duyệt".

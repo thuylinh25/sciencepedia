@@ -207,7 +207,18 @@
     "articleCount": "{count} bài viết",
     "metaDescription": "Bài viết về {name} trên Sciencepedia: kiến thức khoa học trình bày dễ hiểu, mỗi bài đều dẫn nguồn đầy đủ.",
     "subcategories": "Chủ đề con",
-    "empty": "Lĩnh vực này chưa có bài viết."
+    "empty": "Lĩnh vực này chưa có bài viết.",
+    "notice": {
+      "health": {
+        "title": "Thông tin tham khảo, không phải tư vấn y tế",
+        "body": "Bài viết trong mục này giải thích kiến thức chung dựa trên các nguồn được dẫn. Nội dung không dùng để tự chẩn đoán, tự điều trị hay thay cho việc khám với nhân viên y tế. Khi có dấu hiệu cấp cứu, hãy liên hệ ngay cơ sở y tế."
+      },
+      "traditional": {
+        "label": "Phương pháp truyền thống",
+        "title": "Phương pháp truyền thống: mô tả không phải bằng chứng",
+        "body": "Nhóm này trình bày phương pháp và công dụng theo quan niệm của trường phái truyền thống. Công dụng được mô tả không có nghĩa là hiệu quả điều trị đã được nghiên cứu khoa học chứng minh; bằng chứng y học hiện đại, khi có, được nêu riêng và dẫn nguồn. Sciencepedia không hướng dẫn tự thực hiện. Hỏi ý kiến nhân viên y tế trước khi áp dụng bất kỳ phương pháp nào, nhất là khi đang mang thai, có bệnh mạn tính hoặc đang điều trị."
+      }
+    }
   },
   "tag": {
     "title": "Chủ đề",

@@ -207,7 +207,18 @@
     "articleCount": "{count} articles",
     "metaDescription": "Articles about {name} on Sciencepedia: science explained clearly, every article with its sources cited.",
     "subcategories": "Subtopics",
-    "empty": "This field has no articles yet."
+    "empty": "This field has no articles yet.",
+    "notice": {
+      "health": {
+        "title": "General information, not medical advice",
+        "body": "Articles in this section explain general knowledge based on the cited sources. They are not meant for self-diagnosis or self-treatment, and do not replace seeing a health professional. In an emergency, contact medical services immediately."
+      },
+      "traditional": {
+        "label": "Traditional practice",
+        "title": "Traditional practice: a description, not evidence",
+        "body": "This group presents methods and uses as the traditional school describes them. A described use does not mean the treatment has been shown to work in scientific studies; modern medical evidence, where it exists, is stated separately with sources. Sciencepedia does not give self-treatment instructions. Ask a health professional before trying any method, especially if you are pregnant, have a chronic condition or are under treatment."
+      }
+    }
   },
   "tag": {
     "title": "Topics",

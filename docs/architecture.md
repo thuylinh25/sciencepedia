@@ -1448,3 +1448,27 @@ giao diện desktop và che mô hình — đã thử. Iframe cho atlas viewport 
 và `?structure=` đổi trong iframe không chạm URL bài. Chế độ embed ẩn khung site bằng
 class do script gắn (trang vẫn ISR, không đọc `searchParams`), chỉ khi thật sự nằm
 trong iframe. Mỗi lúc một khung: mỗi khung là một WebGL context.
+
+## Nhóm con của Sức khoẻ — thẻ trên trang lĩnh vực, không phải mục menu
+
+Chốt 2026-10-05 (chủ sản phẩm). Tác động cột sống, Bấm huyệt, Y học cổ truyền (cùng Cơ thể
+người) là danh mục CON của `suc-khoe` trong bảng `Category` — `npm run taxonomy:health`.
+
+**Vì sao không lên menu.** Menu Khám phá đọc `getNavigationCategories` (chỉ `parentId: null`).
+Lên gốc là menu dài thêm và đặt phương pháp truyền thống ngang hàng Vật lý, Hoá học — ngầm
+nói chúng là một ngành khoa học. Submenu bay sang phải bị loại vì làm menu phức tạp. Đường vào
+nhóm con là trang `/categories/[slug]` của lĩnh vực cha: danh mục con hiện thành thẻ
+(`CategoryCard`) thay cho hàng chip cũ — áp dụng cho MỌI lĩnh vực có con, vì thẻ đọc thẳng
+`category.children`. Thêm "Sơ cứu", "Bệnh học" là thêm một hàng; không sửa menu, không sửa trang.
+
+**Vì sao lời lưu ý nằm trong code, không trong CSDL.** `src/lib/category-notices.ts` gắn loại
+lưu ý (`health` | `traditional`) theo slug; câu chữ ở `messages/*.json` (`category.notice`). Mỗi
+câu là phán quyết biên tập có bản vi/en — một ô sửa được trong form quản trị là chỗ câu chữ trôi
+khỏi lần duyệt (cùng lý do dấu duyệt mục từ chỉ đến từ `glossary.json`). Danh mục con kế thừa
+lưu ý của cha khi không có lưu ý riêng, nên nhóm sức khoẻ mới tự mang khung "không thay thế
+tư vấn y tế". Nhóm truyền thống mang khung riêng: công dụng được MÔ TẢ theo trường phái, không
+phải hiệu quả đã chứng minh; không hướng dẫn tự làm.
+
+**Khung chỉ ở trang danh mục, không chèn vào trang bài.** Bài Tác động cột sống đã có nhãn
+"Tư liệu lưu trữ" và khung cảnh báo riêng từng bệnh (docs/content-rules.md); chủ sản phẩm đã
+nhiều lần gỡ nhãn thừa khỏi các bài ấy. Thêm khung chung trên trang bài là quyết định riêng.
