@@ -7,7 +7,7 @@ không được phép quyết. Đối chiếu với ảnh trang, ghi quyết đ�
 
 ## dau-lung-cap (tr. 2–3)
 
-- [mention] tr.3 C1, C2 — vai trò trống: "Nếu bệnh nhân ra nhiều mồ hôi chữa hai bên hố chẩm vào tới C1,2 và song chỉnh với vùng S. Xác định những tiết cơ, bó cơ "
+- ✔ D-12: [mention] tr.3 C1, C2 — vai trò trống: "Nếu bệnh nhân ra nhiều mồ hôi chữa hai bên hố chẩm vào tới C1,2 và song chỉnh với vùng S. Xác định những tiết cơ, bó cơ " → C1, C2 vai trò primary (trọng điểm) cho trường hợp ra nhiều mồ hôi. "vùng S" (song chỉnh) CHƯA được quyết — vẫn không vào chỉ mục.
 
 ## dau-lung-man-tinh (tr. 4–6)
 

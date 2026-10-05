@@ -51,16 +51,20 @@ The passages below are translated from the document, with page numbers. The arti
 
 > **According to the document (p. 2, translated):** If the patient has an external wind-cold chill without sweating, with severe back pain and difficulty moving … the key points also usually include T2, 3.
 
+> **According to the document (p. 2, translated):** If the patient sweats a lot, treat both sides of the occipital fossa inward to C1, 2, together with "song chỉnh" (the method's own term, left untranslated) at the S region.
+
 Vertebrae named by the document:
 
-- **Key point:** [T2](/human-atlas?structure=second-thoracic-vertebra#atlas-viewer), [T3](/human-atlas?structure=third-thoracic-vertebra#atlas-viewer), [T7](/human-atlas?structure=seventh-thoracic-vertebra#atlas-viewer), [T8](/human-atlas?structure=eighth-thoracic-vertebra#atlas-viewer), [L4](/human-atlas?structure=fourth-lumbar-vertebra#atlas-viewer), [L5](/human-atlas?structure=fifth-lumbar-vertebra#atlas-viewer), [S1](/human-atlas?structure=sacrum#atlas-viewer)
+- **Key point:** [C1](/human-atlas?structure=atlas#atlas-viewer), [C2](/human-atlas?structure=axis#atlas-viewer), [T2](/human-atlas?structure=second-thoracic-vertebra#atlas-viewer), [T3](/human-atlas?structure=third-thoracic-vertebra#atlas-viewer), [T7](/human-atlas?structure=seventh-thoracic-vertebra#atlas-viewer), [T8](/human-atlas?structure=eighth-thoracic-vertebra#atlas-viewer), [L4](/human-atlas?structure=fourth-lumbar-vertebra#atlas-viewer), [L5](/human-atlas?structure=fifth-lumbar-vertebra#atlas-viewer), [S1](/human-atlas?structure=sacrum#atlas-viewer)
 
-[View on the Human Atlas →](/human-atlas?structure=second-thoracic-vertebra,third-thoracic-vertebra,seventh-thoracic-vertebra,eighth-thoracic-vertebra,fourth-lumbar-vertebra,fifth-lumbar-vertebra,sacrum#atlas-viewer)
+[View on the Human Atlas →](/human-atlas?structure=atlas,axis,second-thoracic-vertebra,third-thoracic-vertebra,seventh-thoracic-vertebra,eighth-thoracic-vertebra,fourth-lumbar-vertebra,fifth-lumbar-vertebra,sacrum#atlas-viewer)
 
 ## Related vertebrae
 
 Compiled from the sections above. Roles are the document's own terms (key point, related, caution, avoid), not recommendations by Sciencepedia. Select a code to see the vertebra on the Human Atlas.
 
+- [C1](/human-atlas?structure=atlas#atlas-viewer) — Atlas (C1): key point
+- [C2](/human-atlas?structure=axis#atlas-viewer) — Axis (C2): key point
 - [T2](/human-atlas?structure=second-thoracic-vertebra#atlas-viewer) — Second thoracic vertebra: key point
 - [T3](/human-atlas?structure=third-thoracic-vertebra#atlas-viewer) — Third thoracic vertebra: key point
 - [T7](/human-atlas?structure=seventh-thoracic-vertebra#atlas-viewer) — Seventh thoracic vertebra: key point
@@ -71,7 +75,7 @@ Compiled from the sections above. Roles are the document's own terms (key point,
 
 *On the Human Atlas, S1–S5 are shown together as the sacrum: the model does not separate the five sacral vertebrae.*
 
-[View on the Human Atlas →](/human-atlas?structure=second-thoracic-vertebra,third-thoracic-vertebra,seventh-thoracic-vertebra,eighth-thoracic-vertebra,fourth-lumbar-vertebra,fifth-lumbar-vertebra,sacrum#atlas-viewer)
+[View on the Human Atlas →](/human-atlas?structure=atlas,axis,second-thoracic-vertebra,third-thoracic-vertebra,seventh-thoracic-vertebra,eighth-thoracic-vertebra,fourth-lumbar-vertebra,fifth-lumbar-vertebra,sacrum#atlas-viewer)
 
 ## Source document
 

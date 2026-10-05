@@ -51,16 +51,20 @@ Các mục dưới đây trích nguyên văn từ tài liệu, kèm số trang. 
 
 > **Theo tài liệu (tr. 2):** Nếu bệnh nhân bị ngoại cảm phong hàn không ra mồ hôi, lưng rất đau, vận động khó khăn … trọng điểm thường cũng có T2.3.
 
+> **Theo tài liệu (tr. 2):** Nếu bệnh nhân ra nhiều mồ hôi chữa hai bên hố chẩm vào tới C1,2 và song chỉnh với vùng S.
+
 Đốt sống tài liệu nêu:
 
-- **Trọng điểm:** [T2](/human-atlas?structure=second-thoracic-vertebra#atlas-viewer), [T3](/human-atlas?structure=third-thoracic-vertebra#atlas-viewer), [T7](/human-atlas?structure=seventh-thoracic-vertebra#atlas-viewer), [T8](/human-atlas?structure=eighth-thoracic-vertebra#atlas-viewer), [L4](/human-atlas?structure=fourth-lumbar-vertebra#atlas-viewer), [L5](/human-atlas?structure=fifth-lumbar-vertebra#atlas-viewer), [S1](/human-atlas?structure=sacrum#atlas-viewer)
+- **Trọng điểm:** [C1](/human-atlas?structure=atlas#atlas-viewer), [C2](/human-atlas?structure=axis#atlas-viewer), [T2](/human-atlas?structure=second-thoracic-vertebra#atlas-viewer), [T3](/human-atlas?structure=third-thoracic-vertebra#atlas-viewer), [T7](/human-atlas?structure=seventh-thoracic-vertebra#atlas-viewer), [T8](/human-atlas?structure=eighth-thoracic-vertebra#atlas-viewer), [L4](/human-atlas?structure=fourth-lumbar-vertebra#atlas-viewer), [L5](/human-atlas?structure=fifth-lumbar-vertebra#atlas-viewer), [S1](/human-atlas?structure=sacrum#atlas-viewer)
 
-[Xem trên Bản đồ cơ thể người →](/human-atlas?structure=second-thoracic-vertebra,third-thoracic-vertebra,seventh-thoracic-vertebra,eighth-thoracic-vertebra,fourth-lumbar-vertebra,fifth-lumbar-vertebra,sacrum#atlas-viewer)
+[Xem trên Bản đồ cơ thể người →](/human-atlas?structure=atlas,axis,second-thoracic-vertebra,third-thoracic-vertebra,seventh-thoracic-vertebra,eighth-thoracic-vertebra,fourth-lumbar-vertebra,fifth-lumbar-vertebra,sacrum#atlas-viewer)
 
 ## Đốt sống liên quan
 
 Tổng hợp từ các mục trên. Vai trò là cách tài liệu gọi tên (trọng điểm, liên quan, thận trọng, tránh), không phải khuyến cáo của Sciencepedia. Bấm mã để xem đốt sống trên Bản đồ cơ thể người.
 
+- [C1](/human-atlas?structure=atlas#atlas-viewer) — Đốt đội (C1): trọng điểm
+- [C2](/human-atlas?structure=axis#atlas-viewer) — Đốt trục (C2): trọng điểm
 - [T2](/human-atlas?structure=second-thoracic-vertebra#atlas-viewer) — Đốt sống ngực 2: trọng điểm
 - [T3](/human-atlas?structure=third-thoracic-vertebra#atlas-viewer) — Đốt sống ngực 3: trọng điểm
 - [T7](/human-atlas?structure=seventh-thoracic-vertebra#atlas-viewer) — Đốt sống ngực 7: trọng điểm
@@ -71,7 +75,7 @@ Tổng hợp từ các mục trên. Vai trò là cách tài liệu gọi tên (t
 
 *Trên Bản đồ cơ thể người, S1–S5 hiện chung là xương cùng: mô hình không tách riêng năm đốt cùng.*
 
-[Xem trên Bản đồ cơ thể người →](/human-atlas?structure=second-thoracic-vertebra,third-thoracic-vertebra,seventh-thoracic-vertebra,eighth-thoracic-vertebra,fourth-lumbar-vertebra,fifth-lumbar-vertebra,sacrum#atlas-viewer)
+[Xem trên Bản đồ cơ thể người →](/human-atlas?structure=atlas,axis,second-thoracic-vertebra,third-thoracic-vertebra,seventh-thoracic-vertebra,eighth-thoracic-vertebra,fourth-lumbar-vertebra,fifth-lumbar-vertebra,sacrum#atlas-viewer)
 
 ## Nguồn tài liệu
 

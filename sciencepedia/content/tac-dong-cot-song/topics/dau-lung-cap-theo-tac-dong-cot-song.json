@@ -125,23 +125,37 @@
             "pdfPage": 3,
             "bookPage": 2
           }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "C1",
+          "role": "primary",
+          "raw": "chữa hai bên hố chẩm vào tới C1,2",
+          "context": "Nếu bệnh nhân ra nhiều mồ hôi chữa hai bên hố chẩm vào tới C1,2 và song chỉnh với vùng S. Xác định những tiết cơ, bó cơ co trên lưng để giải toả.",
+          "confidence": "exact",
+          "decision": "D-12",
+          "ref": {
+            "pdfPage": 3,
+            "bookPage": 2
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "C2",
+          "role": "primary",
+          "raw": "chữa hai bên hố chẩm vào tới C1,2",
+          "context": "Nếu bệnh nhân ra nhiều mồ hôi chữa hai bên hố chẩm vào tới C1,2 và song chỉnh với vùng S. Xác định những tiết cơ, bó cơ co trên lưng để giải toả.",
+          "confidence": "exact",
+          "decision": "D-12",
+          "ref": {
+            "pdfPage": 3,
+            "bookPage": 2
+          }
         }
       ]
     }
   ],
-  "unassigned": [
-    {
-      "line": "Nếu bệnh nhân ra nhiều mồ hôi chữa hai bên hố chẩm vào tới C1,2 và song chỉnh với vùng S. Xác định những tiết cơ, bó cơ co trên lưng để giải toả.",
-      "codes": [
-        "C1",
-        "C2"
-      ],
-      "ref": {
-        "pdfPage": 3,
-        "bookPage": 2
-      }
-    }
-  ],
+  "unassigned": [],
   "review": {
     "transcription": "pending",
     "mapping": "pending",
