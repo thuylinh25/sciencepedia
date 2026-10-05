@@ -1,0 +1,622 @@
+{
+  "slug": "dau-lung-man-tinh-theo-tac-dong-cot-song",
+  "collection": "tac-dong-cot-song",
+  "section": "dau-lung-man-tinh",
+  "title": {
+    "vi": "Đau lưng mãn tính theo phương pháp Tác động cột sống",
+    "en": "Chronic back pain in the Spinal Impact method"
+  },
+  "riskLevel": "normal",
+  "source": {
+    "docId": "pp-tdcs-vn",
+    "part": "Phần I",
+    "heading": "II. ĐAU LƯNG MÃN TÍNH",
+    "pdfPages": [
+      4,
+      6
+    ]
+  },
+  "variants": [
+    {
+      "id": "dau-lung-do-thoai-hoa-voi-hoa",
+      "label": {
+        "vi": "Đau lưng do thoái hoá, vôi hoá",
+        "en": "Back pain from degeneration and calcification"
+      },
+      "heading": "1. Đau lưng do thoái hoá, vôi hoá",
+      "ref": {
+        "pdfPage": 4,
+        "bookPage": 3
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "T2",
+          "role": "related",
+          "raw": "xơ co từ vùng lưng trên T2, T3 và T7, T8",
+          "context": "Đau lưng do thoái hoá thường hay đau vùng thắt lưng tới đốt cùng S1. Nhiệt độ vùng thắt lưng nóng cao, vùng giữa lưng và lưng trên cũng rối loạn. Lớp cơ đệm trên đầu gai sống cơ co từ giữa lưng xuống thắt lưng, có trường hợp xơ co từ vùng lưng trên T2, T3 và T7, T8.",
+          "confidence": "exact",
+          "decision": "D-15",
+          "ref": {
+            "pdfPage": 4,
+            "bookPage": 3
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T3",
+          "role": "related",
+          "raw": "xơ co từ vùng lưng trên T2, T3 và T7, T8",
+          "context": "Đau lưng do thoái hoá thường hay đau vùng thắt lưng tới đốt cùng S1. Nhiệt độ vùng thắt lưng nóng cao, vùng giữa lưng và lưng trên cũng rối loạn. Lớp cơ đệm trên đầu gai sống cơ co từ giữa lưng xuống thắt lưng, có trường hợp xơ co từ vùng lưng trên T2, T3 và T7, T8.",
+          "confidence": "exact",
+          "decision": "D-15",
+          "ref": {
+            "pdfPage": 4,
+            "bookPage": 3
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T7",
+          "role": "related",
+          "raw": "xơ co từ vùng lưng trên T2, T3 và T7, T8",
+          "context": "Đau lưng do thoái hoá thường hay đau vùng thắt lưng tới đốt cùng S1. Nhiệt độ vùng thắt lưng nóng cao, vùng giữa lưng và lưng trên cũng rối loạn. Lớp cơ đệm trên đầu gai sống cơ co từ giữa lưng xuống thắt lưng, có trường hợp xơ co từ vùng lưng trên T2, T3 và T7, T8.",
+          "confidence": "exact",
+          "decision": "D-15",
+          "ref": {
+            "pdfPage": 4,
+            "bookPage": 3
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T8",
+          "role": "related",
+          "raw": "xơ co từ vùng lưng trên T2, T3 và T7, T8",
+          "context": "Đau lưng do thoái hoá thường hay đau vùng thắt lưng tới đốt cùng S1. Nhiệt độ vùng thắt lưng nóng cao, vùng giữa lưng và lưng trên cũng rối loạn. Lớp cơ đệm trên đầu gai sống cơ co từ giữa lưng xuống thắt lưng, có trường hợp xơ co từ vùng lưng trên T2, T3 và T7, T8.",
+          "confidence": "exact",
+          "decision": "D-15",
+          "ref": {
+            "pdfPage": 4,
+            "bookPage": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "dau-lung-do-cung-hoa",
+      "label": {
+        "vi": "Đau lưng do cùng hoá L5 / thắt lưng hoá S1",
+        "en": "Back pain from sacralisation of L5 / lumbarisation of S1"
+      },
+      "heading": "2. Đau lưng do cùng hoá",
+      "ref": {
+        "pdfPage": 4,
+        "bookPage": 3
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "T1",
+          "role": "related",
+          "raw": "cơ xơ co lên cả vùng T1,2,3",
+          "context": "đốt sống L5 hay thắt lưng cùng hoá đốt S1: Tại vùng L5, S1 nhiệt độ cao cơ co trên gai. Phải xác định vùng cơ co tương ứng trên cột sống để chữa. Có trường hợp cơ xơ co lên cả vùng T1,2,3.",
+          "confidence": "exact",
+          "decision": "D-16",
+          "ref": {
+            "pdfPage": 4,
+            "bookPage": 3
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T2",
+          "role": "related",
+          "raw": "cơ xơ co lên cả vùng T1,2,3",
+          "context": "đốt sống L5 hay thắt lưng cùng hoá đốt S1: Tại vùng L5, S1 nhiệt độ cao cơ co trên gai. Phải xác định vùng cơ co tương ứng trên cột sống để chữa. Có trường hợp cơ xơ co lên cả vùng T1,2,3.",
+          "confidence": "exact",
+          "decision": "D-16",
+          "ref": {
+            "pdfPage": 4,
+            "bookPage": 3
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T3",
+          "role": "related",
+          "raw": "cơ xơ co lên cả vùng T1,2,3",
+          "context": "đốt sống L5 hay thắt lưng cùng hoá đốt S1: Tại vùng L5, S1 nhiệt độ cao cơ co trên gai. Phải xác định vùng cơ co tương ứng trên cột sống để chữa. Có trường hợp cơ xơ co lên cả vùng T1,2,3.",
+          "confidence": "exact",
+          "decision": "D-16",
+          "ref": {
+            "pdfPage": 4,
+            "bookPage": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "viem-khop-cung-chau",
+      "label": {
+        "vi": "Viêm khớp cùng chậu",
+        "en": "Sacroiliac joint inflammation"
+      },
+      "heading": "3. Viêm khớp cùng chậu",
+      "ref": {
+        "pdfPage": 4,
+        "bookPage": 3
+      },
+      "mappings": []
+    },
+    {
+      "id": "dau-lung-do-gai-doi",
+      "label": {
+        "vi": "Đau lưng do gai đôi",
+        "en": "Back pain from a split spinous process"
+      },
+      "heading": "1. Đau lưng do gai đôi",
+      "ref": {
+        "pdfPage": 5,
+        "bookPage": 4
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "C1",
+          "role": "primary",
+          "raw": "C1,3,4",
+          "context": "Gai đôi là do bẩm sinh. Khi sinh ra đã có gai đôi rồi, thường là do mỏm gai sau đốt sống L4.5 hay S1 bị xẻ làm đôi. Khi còn trẻ, dây chằng trên gai sống và lớp cơ đệm trên đầu gai sống còn mềm thư nhuận nên chưa gây đau. Khi những cơ đó xơ co lại gây đau. Khi ngồi trùng gân cơ trên cột sống thì đỡ đau, khi vận động hay cúi cong lưng thường thấy đau. Có người bị đau do gai đôi đã mổ cắt mỏm gai đôi đi nhưng vẫn đau. Nguyên nhân gây đau là do cơ xơ co ở vùng đối xứng với L4, L5, S1 thường trọng điểm ở C1,3,4. Ngoài ra cần xác định thêm những vùng co cơ khác trên cột sống để chữa. Chữa tại L4.5 S1 là giai đoạn cuối cùng.",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 5,
+            "bookPage": 4
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "C3",
+          "role": "primary",
+          "raw": "C1,3,4",
+          "context": "Gai đôi là do bẩm sinh. Khi sinh ra đã có gai đôi rồi, thường là do mỏm gai sau đốt sống L4.5 hay S1 bị xẻ làm đôi. Khi còn trẻ, dây chằng trên gai sống và lớp cơ đệm trên đầu gai sống còn mềm thư nhuận nên chưa gây đau. Khi những cơ đó xơ co lại gây đau. Khi ngồi trùng gân cơ trên cột sống thì đỡ đau, khi vận động hay cúi cong lưng thường thấy đau. Có người bị đau do gai đôi đã mổ cắt mỏm gai đôi đi nhưng vẫn đau. Nguyên nhân gây đau là do cơ xơ co ở vùng đối xứng với L4, L5, S1 thường trọng điểm ở C1,3,4. Ngoài ra cần xác định thêm những vùng co cơ khác trên cột sống để chữa. Chữa tại L4.5 S1 là giai đoạn cuối cùng.",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 5,
+            "bookPage": 4
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "C4",
+          "role": "primary",
+          "raw": "C1,3,4",
+          "context": "Gai đôi là do bẩm sinh. Khi sinh ra đã có gai đôi rồi, thường là do mỏm gai sau đốt sống L4.5 hay S1 bị xẻ làm đôi. Khi còn trẻ, dây chằng trên gai sống và lớp cơ đệm trên đầu gai sống còn mềm thư nhuận nên chưa gây đau. Khi những cơ đó xơ co lại gây đau. Khi ngồi trùng gân cơ trên cột sống thì đỡ đau, khi vận động hay cúi cong lưng thường thấy đau. Có người bị đau do gai đôi đã mổ cắt mỏm gai đôi đi nhưng vẫn đau. Nguyên nhân gây đau là do cơ xơ co ở vùng đối xứng với L4, L5, S1 thường trọng điểm ở C1,3,4. Ngoài ra cần xác định thêm những vùng co cơ khác trên cột sống để chữa. Chữa tại L4.5 S1 là giai đoạn cuối cùng.",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 5,
+            "bookPage": 4
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "L4",
+          "role": "related",
+          "raw": "Chữa tại L4.5 S1 là giai đoạn cuối cùng",
+          "context": "Gai đôi là do bẩm sinh. Khi sinh ra đã có gai đôi rồi, thường là do mỏm gai sau đốt sống L4.5 hay S1 bị xẻ làm đôi. Khi còn trẻ, dây chằng trên gai sống và lớp cơ đệm trên đầu gai sống còn mềm thư nhuận nên chưa gây đau. Khi những cơ đó xơ co lại gây đau. Khi ngồi trùng gân cơ trên cột sống thì đỡ đau, khi vận động hay cúi cong lưng thường thấy đau. Có người bị đau do gai đôi đã mổ cắt mỏm gai đôi đi nhưng vẫn đau. Nguyên nhân gây đau là do cơ xơ co ở vùng đối xứng với L4, L5, S1 thường trọng điểm ở C1,3,4. Ngoài ra cần xác định thêm những vùng co cơ khác trên cột sống để chữa. Chữa tại L4.5 S1 là giai đoạn cuối cùng.",
+          "confidence": "exact",
+          "decision": "D-18",
+          "ref": {
+            "pdfPage": 5,
+            "bookPage": 4
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "L5",
+          "role": "related",
+          "raw": "Chữa tại L4.5 S1 là giai đoạn cuối cùng",
+          "context": "Gai đôi là do bẩm sinh. Khi sinh ra đã có gai đôi rồi, thường là do mỏm gai sau đốt sống L4.5 hay S1 bị xẻ làm đôi. Khi còn trẻ, dây chằng trên gai sống và lớp cơ đệm trên đầu gai sống còn mềm thư nhuận nên chưa gây đau. Khi những cơ đó xơ co lại gây đau. Khi ngồi trùng gân cơ trên cột sống thì đỡ đau, khi vận động hay cúi cong lưng thường thấy đau. Có người bị đau do gai đôi đã mổ cắt mỏm gai đôi đi nhưng vẫn đau. Nguyên nhân gây đau là do cơ xơ co ở vùng đối xứng với L4, L5, S1 thường trọng điểm ở C1,3,4. Ngoài ra cần xác định thêm những vùng co cơ khác trên cột sống để chữa. Chữa tại L4.5 S1 là giai đoạn cuối cùng.",
+          "confidence": "exact",
+          "decision": "D-18",
+          "ref": {
+            "pdfPage": 5,
+            "bookPage": 4
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "S1",
+          "role": "related",
+          "raw": "Chữa tại L4.5 S1 là giai đoạn cuối cùng",
+          "context": "Gai đôi là do bẩm sinh. Khi sinh ra đã có gai đôi rồi, thường là do mỏm gai sau đốt sống L4.5 hay S1 bị xẻ làm đôi. Khi còn trẻ, dây chằng trên gai sống và lớp cơ đệm trên đầu gai sống còn mềm thư nhuận nên chưa gây đau. Khi những cơ đó xơ co lại gây đau. Khi ngồi trùng gân cơ trên cột sống thì đỡ đau, khi vận động hay cúi cong lưng thường thấy đau. Có người bị đau do gai đôi đã mổ cắt mỏm gai đôi đi nhưng vẫn đau. Nguyên nhân gây đau là do cơ xơ co ở vùng đối xứng với L4, L5, S1 thường trọng điểm ở C1,3,4. Ngoài ra cần xác định thêm những vùng co cơ khác trên cột sống để chữa. Chữa tại L4.5 S1 là giai đoạn cuối cùng.",
+          "confidence": "exact",
+          "decision": "D-18",
+          "ref": {
+            "pdfPage": 5,
+            "bookPage": 4
+          }
+        }
+      ]
+    },
+    {
+      "id": "dau-lung-lien-quan-den-benh-noi",
+      "label": {
+        "vi": "Đau lưng liên quan đến bệnh nội tạng",
+        "en": "Back pain related to internal-organ disease"
+      },
+      "heading": "5. Đau lưng liên quan đến bệnh nội tạng",
+      "ref": {
+        "pdfPage": 5,
+        "bookPage": 4
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "T3",
+          "role": "primary",
+          "raw": "T3.4.5",
+          "context": "Thăm khám và điều trị: Đau lưng trên liên quan đến bệnh phổi. Ở phổi nhiệt độ thường nâng cao ở cổ phải, lưng trên. Trọng điểm thường ở T3.4.5 . Chữa cả 3 lớp ngoài, giữa, trong. Nếu đau liên quan đến bệnh về tim, thường nhiệt độ nóng cao ở cổ, ngực, vai trái và lưng trên. Trọng điểm thường có T2.4.5.6 chữa lực vừa, ở lớp ngoài và lớp giữa.",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 5,
+            "bookPage": 4
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T4",
+          "role": "primary",
+          "raw": "T3.4.5",
+          "context": "Thăm khám và điều trị: Đau lưng trên liên quan đến bệnh phổi. Ở phổi nhiệt độ thường nâng cao ở cổ phải, lưng trên. Trọng điểm thường ở T3.4.5 . Chữa cả 3 lớp ngoài, giữa, trong. Nếu đau liên quan đến bệnh về tim, thường nhiệt độ nóng cao ở cổ, ngực, vai trái và lưng trên. Trọng điểm thường có T2.4.5.6 chữa lực vừa, ở lớp ngoài và lớp giữa.",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 5,
+            "bookPage": 4
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T5",
+          "role": "primary",
+          "raw": "T3.4.5",
+          "context": "Thăm khám và điều trị: Đau lưng trên liên quan đến bệnh phổi. Ở phổi nhiệt độ thường nâng cao ở cổ phải, lưng trên. Trọng điểm thường ở T3.4.5 . Chữa cả 3 lớp ngoài, giữa, trong. Nếu đau liên quan đến bệnh về tim, thường nhiệt độ nóng cao ở cổ, ngực, vai trái và lưng trên. Trọng điểm thường có T2.4.5.6 chữa lực vừa, ở lớp ngoài và lớp giữa.",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 5,
+            "bookPage": 4
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T2",
+          "role": "primary",
+          "raw": "T2.4.5.6",
+          "context": "Thăm khám và điều trị: Đau lưng trên liên quan đến bệnh phổi. Ở phổi nhiệt độ thường nâng cao ở cổ phải, lưng trên. Trọng điểm thường ở T3.4.5 . Chữa cả 3 lớp ngoài, giữa, trong. Nếu đau liên quan đến bệnh về tim, thường nhiệt độ nóng cao ở cổ, ngực, vai trái và lưng trên. Trọng điểm thường có T2.4.5.6 chữa lực vừa, ở lớp ngoài và lớp giữa.",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 5,
+            "bookPage": 4
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T4",
+          "role": "primary",
+          "raw": "T2.4.5.6",
+          "context": "Thăm khám và điều trị: Đau lưng trên liên quan đến bệnh phổi. Ở phổi nhiệt độ thường nâng cao ở cổ phải, lưng trên. Trọng điểm thường ở T3.4.5 . Chữa cả 3 lớp ngoài, giữa, trong. Nếu đau liên quan đến bệnh về tim, thường nhiệt độ nóng cao ở cổ, ngực, vai trái và lưng trên. Trọng điểm thường có T2.4.5.6 chữa lực vừa, ở lớp ngoài và lớp giữa.",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 5,
+            "bookPage": 4
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T5",
+          "role": "primary",
+          "raw": "T2.4.5.6",
+          "context": "Thăm khám và điều trị: Đau lưng trên liên quan đến bệnh phổi. Ở phổi nhiệt độ thường nâng cao ở cổ phải, lưng trên. Trọng điểm thường ở T3.4.5 . Chữa cả 3 lớp ngoài, giữa, trong. Nếu đau liên quan đến bệnh về tim, thường nhiệt độ nóng cao ở cổ, ngực, vai trái và lưng trên. Trọng điểm thường có T2.4.5.6 chữa lực vừa, ở lớp ngoài và lớp giữa.",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 5,
+            "bookPage": 4
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T6",
+          "role": "primary",
+          "raw": "T2.4.5.6",
+          "context": "Thăm khám và điều trị: Đau lưng trên liên quan đến bệnh phổi. Ở phổi nhiệt độ thường nâng cao ở cổ phải, lưng trên. Trọng điểm thường ở T3.4.5 . Chữa cả 3 lớp ngoài, giữa, trong. Nếu đau liên quan đến bệnh về tim, thường nhiệt độ nóng cao ở cổ, ngực, vai trái và lưng trên. Trọng điểm thường có T2.4.5.6 chữa lực vừa, ở lớp ngoài và lớp giữa.",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 5,
+            "bookPage": 4
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T10",
+          "role": "primary",
+          "raw": "T10,12 L1->L5 S1->5",
+          "context": "Bệnh về đại tràng, thường gây đau vùng thắt lưng, vùng cùng. Có khi cả vùng giữa lưng cũng đau. Nhiệt độ rối loạn thường ở vùng chẩm, mỏ ác, giữa lưng, thắt lưng nóng cao. Vùng trọng khu gồm có các đốt sống T10,12 L1->L5 S1->5.",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 5,
+            "bookPage": 4
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T12",
+          "role": "primary",
+          "raw": "T10,12 L1->L5 S1->5",
+          "context": "Bệnh về đại tràng, thường gây đau vùng thắt lưng, vùng cùng. Có khi cả vùng giữa lưng cũng đau. Nhiệt độ rối loạn thường ở vùng chẩm, mỏ ác, giữa lưng, thắt lưng nóng cao. Vùng trọng khu gồm có các đốt sống T10,12 L1->L5 S1->5.",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 5,
+            "bookPage": 4
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "L1",
+          "role": "primary",
+          "raw": "T10,12 L1->L5 S1->5",
+          "context": "Bệnh về đại tràng, thường gây đau vùng thắt lưng, vùng cùng. Có khi cả vùng giữa lưng cũng đau. Nhiệt độ rối loạn thường ở vùng chẩm, mỏ ác, giữa lưng, thắt lưng nóng cao. Vùng trọng khu gồm có các đốt sống T10,12 L1->L5 S1->5.",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 5,
+            "bookPage": 4
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "L2",
+          "role": "primary",
+          "raw": "T10,12 L1->L5 S1->5",
+          "context": "Bệnh về đại tràng, thường gây đau vùng thắt lưng, vùng cùng. Có khi cả vùng giữa lưng cũng đau. Nhiệt độ rối loạn thường ở vùng chẩm, mỏ ác, giữa lưng, thắt lưng nóng cao. Vùng trọng khu gồm có các đốt sống T10,12 L1->L5 S1->5.",
+          "confidence": "expanded",
+          "note": "bung từ khoảng L1–L5",
+          "ref": {
+            "pdfPage": 5,
+            "bookPage": 4
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "L3",
+          "role": "primary",
+          "raw": "T10,12 L1->L5 S1->5",
+          "context": "Bệnh về đại tràng, thường gây đau vùng thắt lưng, vùng cùng. Có khi cả vùng giữa lưng cũng đau. Nhiệt độ rối loạn thường ở vùng chẩm, mỏ ác, giữa lưng, thắt lưng nóng cao. Vùng trọng khu gồm có các đốt sống T10,12 L1->L5 S1->5.",
+          "confidence": "expanded",
+          "note": "bung từ khoảng L1–L5",
+          "ref": {
+            "pdfPage": 5,
+            "bookPage": 4
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "L4",
+          "role": "primary",
+          "raw": "T10,12 L1->L5 S1->5",
+          "context": "Bệnh về đại tràng, thường gây đau vùng thắt lưng, vùng cùng. Có khi cả vùng giữa lưng cũng đau. Nhiệt độ rối loạn thường ở vùng chẩm, mỏ ác, giữa lưng, thắt lưng nóng cao. Vùng trọng khu gồm có các đốt sống T10,12 L1->L5 S1->5.",
+          "confidence": "expanded",
+          "note": "bung từ khoảng L1–L5",
+          "ref": {
+            "pdfPage": 5,
+            "bookPage": 4
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "L5",
+          "role": "primary",
+          "raw": "T10,12 L1->L5 S1->5",
+          "context": "Bệnh về đại tràng, thường gây đau vùng thắt lưng, vùng cùng. Có khi cả vùng giữa lưng cũng đau. Nhiệt độ rối loạn thường ở vùng chẩm, mỏ ác, giữa lưng, thắt lưng nóng cao. Vùng trọng khu gồm có các đốt sống T10,12 L1->L5 S1->5.",
+          "confidence": "expanded",
+          "note": "bung từ khoảng L1–L5",
+          "ref": {
+            "pdfPage": 5,
+            "bookPage": 4
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "S1",
+          "role": "primary",
+          "raw": "T10,12 L1->L5 S1->5",
+          "context": "Bệnh về đại tràng, thường gây đau vùng thắt lưng, vùng cùng. Có khi cả vùng giữa lưng cũng đau. Nhiệt độ rối loạn thường ở vùng chẩm, mỏ ác, giữa lưng, thắt lưng nóng cao. Vùng trọng khu gồm có các đốt sống T10,12 L1->L5 S1->5.",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 5,
+            "bookPage": 4
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "S2",
+          "role": "primary",
+          "raw": "T10,12 L1->L5 S1->5",
+          "context": "Bệnh về đại tràng, thường gây đau vùng thắt lưng, vùng cùng. Có khi cả vùng giữa lưng cũng đau. Nhiệt độ rối loạn thường ở vùng chẩm, mỏ ác, giữa lưng, thắt lưng nóng cao. Vùng trọng khu gồm có các đốt sống T10,12 L1->L5 S1->5.",
+          "confidence": "expanded",
+          "note": "bung từ khoảng S1–S5",
+          "ref": {
+            "pdfPage": 5,
+            "bookPage": 4
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "S3",
+          "role": "primary",
+          "raw": "T10,12 L1->L5 S1->5",
+          "context": "Bệnh về đại tràng, thường gây đau vùng thắt lưng, vùng cùng. Có khi cả vùng giữa lưng cũng đau. Nhiệt độ rối loạn thường ở vùng chẩm, mỏ ác, giữa lưng, thắt lưng nóng cao. Vùng trọng khu gồm có các đốt sống T10,12 L1->L5 S1->5.",
+          "confidence": "expanded",
+          "note": "bung từ khoảng S1–S5",
+          "ref": {
+            "pdfPage": 5,
+            "bookPage": 4
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "S4",
+          "role": "primary",
+          "raw": "T10,12 L1->L5 S1->5",
+          "context": "Bệnh về đại tràng, thường gây đau vùng thắt lưng, vùng cùng. Có khi cả vùng giữa lưng cũng đau. Nhiệt độ rối loạn thường ở vùng chẩm, mỏ ác, giữa lưng, thắt lưng nóng cao. Vùng trọng khu gồm có các đốt sống T10,12 L1->L5 S1->5.",
+          "confidence": "expanded",
+          "note": "bung từ khoảng S1–S5",
+          "ref": {
+            "pdfPage": 5,
+            "bookPage": 4
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "S5",
+          "role": "primary",
+          "raw": "T10,12 L1->L5 S1->5",
+          "context": "Bệnh về đại tràng, thường gây đau vùng thắt lưng, vùng cùng. Có khi cả vùng giữa lưng cũng đau. Nhiệt độ rối loạn thường ở vùng chẩm, mỏ ác, giữa lưng, thắt lưng nóng cao. Vùng trọng khu gồm có các đốt sống T10,12 L1->L5 S1->5.",
+          "confidence": "expanded",
+          "note": "bung từ khoảng S1–S5",
+          "ref": {
+            "pdfPage": 5,
+            "bookPage": 4
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T10",
+          "role": "related",
+          "raw": "đốt sống rối loạn thường là T10, T12, L1, L3,S3",
+          "context": "Các triệu trứng về thận và tiết niệu như : Viêm cầu thận, đái rắt, đái buốt, đái đỏ có thể gây đau vùng giữa lưng, thắt lưng. Nhiệt độ rối loạn, thường co thắt lưng phải, hạ sườn phải, vùng mỏ ác nóng cao, đốt sống rối loạn thường là T10, T12, L1, L3,S3.",
+          "confidence": "exact",
+          "decision": "D-19",
+          "ref": {
+            "pdfPage": 5,
+            "bookPage": 4
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T12",
+          "role": "related",
+          "raw": "đốt sống rối loạn thường là T10, T12, L1, L3,S3",
+          "context": "Các triệu trứng về thận và tiết niệu như : Viêm cầu thận, đái rắt, đái buốt, đái đỏ có thể gây đau vùng giữa lưng, thắt lưng. Nhiệt độ rối loạn, thường co thắt lưng phải, hạ sườn phải, vùng mỏ ác nóng cao, đốt sống rối loạn thường là T10, T12, L1, L3,S3.",
+          "confidence": "exact",
+          "decision": "D-19",
+          "ref": {
+            "pdfPage": 5,
+            "bookPage": 4
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "L1",
+          "role": "related",
+          "raw": "đốt sống rối loạn thường là T10, T12, L1, L3,S3",
+          "context": "Các triệu trứng về thận và tiết niệu như : Viêm cầu thận, đái rắt, đái buốt, đái đỏ có thể gây đau vùng giữa lưng, thắt lưng. Nhiệt độ rối loạn, thường co thắt lưng phải, hạ sườn phải, vùng mỏ ác nóng cao, đốt sống rối loạn thường là T10, T12, L1, L3,S3.",
+          "confidence": "exact",
+          "decision": "D-19",
+          "ref": {
+            "pdfPage": 5,
+            "bookPage": 4
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "L3",
+          "role": "related",
+          "raw": "đốt sống rối loạn thường là T10, T12, L1, L3,S3",
+          "context": "Các triệu trứng về thận và tiết niệu như : Viêm cầu thận, đái rắt, đái buốt, đái đỏ có thể gây đau vùng giữa lưng, thắt lưng. Nhiệt độ rối loạn, thường co thắt lưng phải, hạ sườn phải, vùng mỏ ác nóng cao, đốt sống rối loạn thường là T10, T12, L1, L3,S3.",
+          "confidence": "exact",
+          "decision": "D-19",
+          "ref": {
+            "pdfPage": 5,
+            "bookPage": 4
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "S3",
+          "role": "related",
+          "raw": "đốt sống rối loạn thường là T10, T12, L1, L3,S3",
+          "context": "Các triệu trứng về thận và tiết niệu như : Viêm cầu thận, đái rắt, đái buốt, đái đỏ có thể gây đau vùng giữa lưng, thắt lưng. Nhiệt độ rối loạn, thường co thắt lưng phải, hạ sườn phải, vùng mỏ ác nóng cao, đốt sống rối loạn thường là T10, T12, L1, L3,S3.",
+          "confidence": "exact",
+          "decision": "D-19",
+          "ref": {
+            "pdfPage": 5,
+            "bookPage": 4
+          }
+        }
+      ]
+    },
+    {
+      "id": "dau-lung-do-nhiem-khuan-lao-dot",
+      "label": {
+        "vi": "6. Đau lưng do nhiễm khuẩn, lao đốt sống, u đốt sống",
+        "en": "6. Đau lưng do nhiễm khuẩn, lao đốt sống, u đốt sống"
+      },
+      "heading": "6. Đau lưng do nhiễm khuẩn, lao đốt sống, u đốt sống",
+      "ref": {
+        "pdfPage": 5,
+        "bookPage": 4
+      },
+      "mappings": []
+    }
+  ],
+  "unassigned": [
+    {
+      "line": "Đau lưng do cùng hoá sống thắt lưng L5, hay thắt lưng cùng hoá đốt cùng S1.",
+      "codes": [
+        "L5",
+        "S1"
+      ],
+      "ref": {
+        "pdfPage": 4,
+        "bookPage": 3
+      }
+    },
+    {
+      "line": "Đau lưng do gai đôi mỏm gai sau đốt L1,L5 hoặc S1",
+      "codes": [
+        "L1",
+        "L5",
+        "S1"
+      ],
+      "ref": {
+        "pdfPage": 4,
+        "bookPage": 3
+      }
+    },
+    {
+      "line": "gây đau vùng thắt lưng cùng và vùng hông, có trường hợp đau xuống cả đùi, chân. Vận động thì đỡ đau. Sáng lúc mới ngủ dậy thì đau, nằm nghỉ lâu ở một tư thế lúc trở mình cũng đau. Nếu đau lâu ngày cơ vùng L4,5 và vùng hông sẽ nhược đi. Về nhiệt độ. Vùng L4.5 và vùng cùng thường nóng cao.",
+      "codes": [
+        "L4",
+        "L5"
+      ],
+      "ref": {
+        "pdfPage": 4,
+        "bookPage": 3
+      }
+    },
+    {
+      "line": "Đau lưng do lao đốt sống thường hay bị ở đốt sống T7, T8. Bệnh liên quan đến phổi, ấn vào thấy cơ mềm hơn bình thường, có nhiều sợi xơ, cảm giác dưới đầu ngón tay có mủ. Bệnh nhân thấy đau chói khi bị ấn vào đốt sống bệnh lý. Chụp phim XQ thấy có những đám hang hốc ăn cả vào xương.",
+      "codes": [
+        "T7",
+        "T8"
+      ],
+      "ref": {
+        "pdfPage": 6,
+        "bookPage": 5
+      }
+    }
+  ],
+  "review": {
+    "transcription": "pending",
+    "mapping": "passed",
+    "editor": "pending"
+  }
+}

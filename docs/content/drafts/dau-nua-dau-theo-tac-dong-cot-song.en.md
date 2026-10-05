@@ -149,6 +149,7 @@ Vertebrae named by the document:
 **More from the Spinal Impact series:**
 
 - [Acute back pain in the Spinal Impact method](/articles/dau-lung-cap-theo-tac-dong-cot-song)
+- [Chronic back pain in the Spinal Impact method](/articles/dau-lung-man-tinh-theo-tac-dong-cot-song)
 - [Sciatica in the Spinal Impact method](/articles/dau-than-kinh-toa-theo-tac-dong-cot-song)
 
 ## Source document
