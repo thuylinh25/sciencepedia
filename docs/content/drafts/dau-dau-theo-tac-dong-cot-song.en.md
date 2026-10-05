@@ -22,7 +22,7 @@ MedlinePlus advises seeking medical help right away when:
 
 **Accompanying symptoms can be emergencies of their own.** Some forms in the document mention chest pain, heart pain, vomiting blood, or bleeding during pregnancy:
 
-- chest discomfort (pressure, squeezing, fullness or pain, usually lasting more than a few minutes), shortness of breath, discomfort spreading to the arms, back, shoulders, neck or jaw: call emergency services, even if you are not sure it is a heart attack (MedlinePlus);
+- chest discomfort (pressure, squeezing, fullness or pain, usually lasting more than a few minutes), shortness of breath, discomfort in one or both arms, the back, shoulders, neck, jaw or upper stomach: call emergency services, even if you are not sure it is a heart attack (MedlinePlus);
 - vomiting blood: contact a health professional or go to the emergency room — you need to be examined right away (MedlinePlus);
 - vaginal bleeding during pregnancy: treat it as a potential emergency and contact a health professional (MedlinePlus).
 

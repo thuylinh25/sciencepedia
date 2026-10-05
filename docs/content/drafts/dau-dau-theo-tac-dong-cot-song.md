@@ -22,7 +22,7 @@ MedlinePlus khuyên tìm trợ giúp y tế ngay khi:
 
 **Triệu chứng đi kèm cũng có thể là cấp cứu riêng.** Một số thể trong tài liệu nhắc tới đau ngực, đau tim, nôn ra máu, ra máu khi mang thai:
 
-- đau hoặc khó chịu ở ngực (đè ép, bóp nghẹt, căng tức, thường kéo dài hơn vài phút), khó thở, khó chịu lan ra tay, lưng, vai, cổ, hàm: gọi cấp cứu, kể cả khi chưa chắc là nhồi máu cơ tim (MedlinePlus);
+- đau hoặc khó chịu ở ngực (đè ép, bóp nghẹt, căng tức, thường kéo dài hơn vài phút), khó thở, khó chịu ở một hoặc hai tay, lưng, vai, cổ, hàm hoặc bụng trên: gọi cấp cứu, kể cả khi chưa chắc là nhồi máu cơ tim (MedlinePlus);
 - nôn ra máu: liên hệ nhân viên y tế hoặc đến khoa cấp cứu, cần được khám ngay (MedlinePlus);
 - ra máu âm đạo khi đang mang thai: coi là tình huống có thể cấp cứu, liên hệ nhân viên y tế (MedlinePlus).
 
