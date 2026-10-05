@@ -1,0 +1,160 @@
+{
+  "section": "huyet-ap-cao",
+  "slug": "huyet-ap-cao-theo-tac-dong-cot-song",
+  "title": {
+    "vi": "Huyết áp cao theo phương pháp Tác động cột sống",
+    "en": "High blood pressure in the Spinal Impact method"
+  },
+  "summary": {
+    "vi": "Tài liệu Phương pháp Tác động Cột sống Việt Nam nêu vùng cấm, đốt sống tập trung và đốt sống cần thận trọng khi bệnh nhân huyết áp cao — trích nguyên văn, đặt sau định nghĩa huyết áp cao hiện hành và các dấu hiệu cấp cứu, có nguồn.",
+    "en": "Where the Vietnamese Spinal Impact method document says not to work, which vertebrae to focus on and which to approach with caution for patients with high blood pressure — quoted verbatim, after the current definition of high blood pressure and its emergency signs, with sources."
+  },
+  "seoDescription": {
+    "vi": "Huyết áp cao theo tài liệu Phương pháp Tác động Cột sống Việt Nam: tránh C1–C3, tập trung C7, T1, T2, T3 bên phải, thận trọng T6, T10, L3 — kèm định nghĩa hiện hành và dấu hiệu cấp cứu.",
+    "en": "High blood pressure in the Vietnamese Spinal Impact method document: avoid C1–C3, focus on right-side C7, T1, T2, T3, caution at T6, T10, L3 — with the current definition and emergency signs."
+  },
+  "keywords": "huyết áp cao, tăng huyết áp, tác động cột sống, đốt sống, cơn tăng huyết áp",
+  "riskLevel": "high",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "High Blood Pressure",
+      "publisher": "MedlinePlus — U.S. National Library of Medicine",
+      "url": "https://medlineplus.gov/highbloodpressure.html",
+      "tier": 2,
+      "accessed": "2026-10-05"
+    },
+    {
+      "id": "s2",
+      "title": "High blood pressure - adults",
+      "publisher": "MedlinePlus — U.S. National Library of Medicine",
+      "url": "https://medlineplus.gov/ency/article/000468.htm",
+      "tier": 2,
+      "accessed": "2026-10-05"
+    },
+    {
+      "id": "s3",
+      "title": "Malignant hypertension",
+      "publisher": "MedlinePlus — U.S. National Library of Medicine",
+      "url": "https://medlineplus.gov/ency/article/000491.htm",
+      "tier": 2,
+      "accessed": "2026-10-05"
+    },
+    {
+      "id": "s4",
+      "title": "Stroke",
+      "publisher": "MedlinePlus — U.S. National Library of Medicine",
+      "url": "https://medlineplus.gov/stroke.html",
+      "tier": 2,
+      "accessed": "2026-10-05"
+    }
+  ],
+  "safety": {
+    "heading": {
+      "vi": "⚠️ Định nghĩa hiện hành và khi nào cần cấp cứu",
+      "en": "⚠️ The current definition and when it is an emergency"
+    },
+    "body": {
+      "vi": "**Định nghĩa hiện hành dùng \"hoặc\", không dùng \"và\".** Tài liệu gọi là huyết áp cao khi tối đa > 140 **và** tối thiểu > 90. Theo bảng phân loại MedlinePlus đăng, chỉ cần **một** trong hai số vượt ngưỡng: huyết áp cao giai đoạn 1 là tâm thu 130–139 **hoặc** tâm trương 80–89; giai đoạn 2 là tâm thu từ 140 **hoặc** tâm trương từ 90. Chẩn đoán cần từ hai lần đo trở lên ở các lần khám khác nhau.\n\nHuyết áp cao thường **không có triệu chứng** — phần lớn người bệnh không thấy gì, và bệnh hay được phát hiện khi khám định kỳ. Vì thế, cảm giác dễ chịu không cho biết huyết áp đã về mức an toàn.\n\n**Cơn tăng huyết áp ác tính là cấp cứu.** MedlinePlus mô tả đây là huyết áp rất cao, đến đột ngột và nhanh, với các dấu hiệu như nhìn mờ, lú lẫn hoặc giảm tỉnh táo, đau ngực (cảm giác bị đè ép), đau đầu, khó thở, co giật, yếu hoặc tê tay chân. MedlinePlus khuyên đến khoa cấp cứu hoặc gọi cấp cứu khi có các triệu chứng này — tình trạng có thể đe dọa tính mạng.\n\nCác dấu hiệu đột quỵ đến **đột ngột** — tê hoặc yếu mặt, tay, chân (nhất là một bên); lú lẫn, nói khó; nhìn khó; đi lại khó, chóng mặt, mất thăng bằng; đau đầu dữ dội không rõ nguyên nhân — cũng cần gọi cấp cứu ngay (MedlinePlus).",
+      "en": "**The current definition uses \"or\", not \"and\".** The document calls blood pressure high when the upper number is > 140 **and** the lower number is > 90. Under the classification table MedlinePlus publishes, **either** number crossing the threshold is enough: stage 1 high blood pressure is systolic 130–139 **or** diastolic 80–89; stage 2 is systolic 140 or higher **or** diastolic 90 or higher. Diagnosis needs two or more readings at separate visits.\n\nHigh blood pressure usually has **no symptoms** — most people feel nothing, and it is often found at routine check-ups. So feeling well does not tell you that blood pressure has come down to a safe level.\n\n**Malignant hypertension is an emergency.** MedlinePlus describes it as very high blood pressure that comes on suddenly and quickly, with signs such as blurred vision, confusion or decreased alertness, chest pain (a crushing or pressure feeling), headache, shortness of breath, seizure, and weakness or numbness of the arms or legs. MedlinePlus advises going to the emergency room or calling emergency services for these symptoms — the condition can be life-threatening.\n\nStroke warning signs that come on **suddenly** — numbness or weakness of the face, arm or leg (especially on one side); confusion or trouble speaking; trouble seeing; difficulty walking, dizziness or loss of balance; severe headache with no known cause — also need emergency services right away (MedlinePlus)."
+    },
+    "sources": [
+      "s1",
+      "s2",
+      "s3",
+      "s4"
+    ]
+  },
+  "general": [
+    {
+      "heading": {
+        "vi": "Huyết áp cao là gì?",
+        "en": "What is high blood pressure?"
+      },
+      "body": {
+        "vi": "Theo MedlinePlus (Thư viện Y khoa Quốc gia Hoa Kỳ), huyết áp là lực máu đẩy lên thành động mạch, ghi bằng hai số: **tâm thu** (áp lực khi tim co bóp) và **tâm trương** (áp lực giữa hai nhịp đập), ví dụ 120/80. Tài liệu gọi hai số này là \"tối đa\" và \"tối thiểu\".\n\nBảng phân loại MedlinePlus đăng: bình thường là tâm thu dưới 120 và tâm trương dưới 80; tăng là tâm thu 120–129 và tâm trương dưới 80; giai đoạn 1 và 2 như trong khung trên; **cơn tăng huyết áp** là tâm thu trên 180 và tâm trương trên 120.\n\nHuyết áp cao kéo dài buộc tim làm việc nhiều hơn và có thể dẫn đến nhồi máu cơ tim, đột quỵ, suy tim và suy thận. Điều trị kết hợp thay đổi lối sống tốt cho tim với thuốc khi cần, tùy nguyên nhân và mức độ.",
+        "en": "According to MedlinePlus (U.S. National Library of Medicine), blood pressure is the force of your blood pushing against the walls of your arteries, written as two numbers: **systolic** (pressure when the heart beats) and **diastolic** (pressure between beats), for example 120/80. The document calls these the \"upper\" and \"lower\" numbers.\n\nThe classification table MedlinePlus publishes: normal is systolic below 120 and diastolic below 80; elevated is systolic 120–129 and diastolic below 80; stages 1 and 2 as in the box above; a **hypertensive crisis** is systolic higher than 180 and diastolic higher than 120.\n\nSustained high blood pressure makes the heart work harder and can lead to heart attack, stroke, heart failure and kidney failure. Treatment combines heart-healthy lifestyle changes with medicines when needed, depending on the cause and severity."
+      },
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    }
+  ],
+  "symptoms": [],
+  "methodQuotes": [
+    {
+      "pdfPage": 19,
+      "vi": "Nếu bệnh nhân có các chỉ số huyết áp là : Tối đa > 140 và Tối thiểu > 90 thì được gọi là bệnh huyết áp cao.",
+      "en": "If the patient's blood pressure readings are: upper > 140 and lower > 90, this is called high blood pressure disease."
+    }
+  ],
+  "variants": [
+    {
+      "id": "benh-huyet-ap-cao",
+      "label": {
+        "vi": "Vùng cấm, đốt sống tập trung và thận trọng",
+        "en": "Areas to avoid, vertebrae to focus on, and caution"
+      },
+      "quotes": [
+        {
+          "pdfPage": 19,
+          "vi": "Khi tác động cho bệnh nhân có chứng trạng là huyết áp cao thì không được chữa vùng chẩm và từ C1; 2; 3",
+          "en": "When working on a patient with high blood pressure, do not treat the occipital area or C1, 2, 3"
+        },
+        {
+          "pdfPage": 19,
+          "vi": "Tập trung vào C7; T1; T2; T3 bên phải",
+          "en": "Focus on C7, T1, T2, T3 on the right side"
+        },
+        {
+          "pdfPage": 19,
+          "vi": "Thận trọng khi chữa T6; T10; và L3 HA do tim .......T6 F HA do thượng thận ....T10 F HA do tiết niệu .........L3 F",
+          "en": "Be cautious when treating T6, T10 and L3. High blood pressure of cardiac origin .......T6 right. High blood pressure of adrenal origin ....T10 right. High blood pressure of urinary origin .........L3 right"
+        },
+        {
+          "pdfPage": 19,
+          "vi": "Các bệnh nhân có Tâm trương (tối thiểu) cần phải điều chỉnh thì tác động T3 bên phải.",
+          "en": "Patients whose diastolic (lower) pressure needs adjusting are worked on at T3 on the right side."
+        }
+      ]
+    }
+  ],
+  "outOfScope": [],
+  "cover": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/Illu_vertebral_column.svg/1920px-Illu_vertebral_column.svg.png",
+    "page": "https://commons.wikimedia.org/wiki/File:Illu_vertebral_column.svg",
+    "license": "Public domain"
+  },
+  "furtherReading": [
+    {
+      "slug": "van-dong-thay-doi-tim-va-mach-mau-nhu-the-nao",
+      "title": {
+        "vi": "Vận động thay đổi tim và mạch máu như thế nào",
+        "en": "How exercise reshapes the heart and blood vessels"
+      },
+      "why": "Huyết áp là áp lực trong mạch máu; bài kia giải thích tim và mạch thay đổi ra sao."
+    },
+    {
+      "slug": "stress-tac-dong-len-co-the-nhu-the-nao-va-vi-sao-van-dong-giup-chung-ta-giai-toa",
+      "title": {
+        "vi": "Stress tác động lên cơ thể như thế nào và vì sao vận động giúp chúng ta giải tỏa?",
+        "en": "How does stress affect the body, and why does exercise help us unwind?"
+      },
+      "why": "Bài nói phản ứng của tim mạch với căng thẳng — một mặt của chuyện huyết áp."
+    },
+    {
+      "slug": "huyet-dao-va-cham-cuu-khi-cua-dong-y-co-lien-he-gi-voi-khoa-hoc-hien-dai",
+      "title": {
+        "vi": "Huyệt đạo và châm cứu: \"Khí\" của Đông y có liên hệ gì với khoa học hiện đại?",
+        "en": "Acupoints and acupuncture: how does the \"Qi\" of Eastern medicine relate to modern science?"
+      },
+      "why": "Cùng câu hỏi nền: một phương pháp truyền thống của Việt Nam/Đông y được khoa học hiện đại nhìn nhận thế nào."
+    }
+  ],
+  "review": {
+    "transcription": "pending",
+    "mapping": "passed",
+    "editor": "pending"
+  }
+}

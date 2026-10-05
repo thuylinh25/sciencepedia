@@ -98,7 +98,12 @@ function sortMappings(list: Mapping[]): Mapping[] {
 function roleLines(mappings: Mapping[], locale: Locale): string[] {
   const lines: string[] = [];
   for (const role of ROLE_ORDER) {
-    const of = sortMappings(mappings.filter((m) => m.role === role));
+    const inRole = mappings.filter((m) => m.role === role);
+    // "Thận trọng khi chữa T6" và "HA do tim …T6 F" (D-2) nằm cùng một đoạn trích: cùng mã,
+    // cùng vai — chỉ hiện bản có bên, khỏi thành "T6, T6 (bên phải)".
+    const sided = new Set(inRole.filter((m) => m.side).map((m) => m.targetId));
+    const kept = inRole.filter((m) => m.side || !sided.has(m.targetId));
+    const of = sortMappings([...new Map(kept.map((m) => [`${m.targetType}:${m.targetId}:${m.side ?? ""}`, m])).values()]);
     if (of.length) lines.push(`- **${T[locale].roles[role]}:** ${of.map((m) => codeLink(m, locale)).join(", ")}`);
   }
   return lines;

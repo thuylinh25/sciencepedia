@@ -222,6 +222,7 @@ MedlinePlus phân biệt hai kiểu chóng mặt: **choáng váng** là cảm gi
 - [Đau lưng mãn tính theo phương pháp Tác động cột sống](/articles/dau-lung-man-tinh-theo-tac-dong-cot-song)
 - [Đau nửa đầu theo phương pháp Tác động cột sống](/articles/dau-nua-dau-theo-tac-dong-cot-song)
 - [Đau thần kinh tọa theo phương pháp Tác động cột sống](/articles/dau-than-kinh-toa-theo-tac-dong-cot-song)
+- [Huyết áp cao theo phương pháp Tác động cột sống](/articles/huyet-ap-cao-theo-tac-dong-cot-song)
 - [Huyết áp thấp theo phương pháp Tác động cột sống](/articles/huyet-ap-thap-theo-tac-dong-cot-song)
 
 ## Nguồn tài liệu

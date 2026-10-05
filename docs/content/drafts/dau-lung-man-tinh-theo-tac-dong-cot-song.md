@@ -130,6 +130,7 @@ Tài liệu nêu lao đốt sống và nhiễm khuẩn là nguyên nhân đau l�
 - [Đau lưng cấp theo phương pháp Tác động cột sống](/articles/dau-lung-cap-theo-tac-dong-cot-song)
 - [Đau nửa đầu theo phương pháp Tác động cột sống](/articles/dau-nua-dau-theo-tac-dong-cot-song)
 - [Đau thần kinh tọa theo phương pháp Tác động cột sống](/articles/dau-than-kinh-toa-theo-tac-dong-cot-song)
+- [Huyết áp cao theo phương pháp Tác động cột sống](/articles/huyet-ap-cao-theo-tac-dong-cot-song)
 - [Huyết áp thấp theo phương pháp Tác động cột sống](/articles/huyet-ap-thap-theo-tac-dong-cot-song)
 - [Thiểu năng tuần hoàn não theo phương pháp Tác động cột sống](/articles/thieu-nang-tuan-hoan-nao-theo-tac-dong-cot-song)
 
