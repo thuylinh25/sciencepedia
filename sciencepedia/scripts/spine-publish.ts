@@ -1,4 +1,5 @@
 import { spawnSync } from "node:child_process";
+import path from "node:path";
 
 import { PrismaClient } from "@prisma/client";
 
@@ -106,9 +107,15 @@ async function main() {
 
   // 3. Publish qua gate
   for (const [i, slug] of SERIES.entries()) {
-    const run = spawnSync("npx", ["tsx", "--env-file-if-exists=.env", "scripts/publish.ts", "--slug", slug, "--note", "Loạt Tác động cột sống — science-editor 2/2 vòng"], {
+    if (drafts.find((d) => d.slug === slug)?.status === "PUBLISHED") {
+      console.log(`· ${slug} đã PUBLISHED — bỏ qua`);
+      continue;
+    }
+    // Gọi thẳng node + tsx, KHÔNG qua shell: qua shell thì --note bị tách theo dấu cách
+    // (npm báo "Argument starts with non-ascii dash" ở chữ "—") và Node cảnh báo DEP0190.
+    const tsx = path.join(process.cwd(), "node_modules/tsx/dist/cli.mjs");
+    const run = spawnSync(process.execPath, [tsx, "--env-file-if-exists=.env", "scripts/publish.ts", "--slug", slug, "--note", "Loạt Tác động cột sống — science-editor 2/2 vòng"], {
       stdio: "inherit",
-      shell: true,
     });
     if (run.status !== 0) {
       console.error(`\n✖ ${slug} bị gate chặn — dừng.`);
