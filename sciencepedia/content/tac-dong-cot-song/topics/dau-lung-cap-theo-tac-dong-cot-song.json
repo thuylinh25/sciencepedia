@@ -175,6 +175,20 @@
             "pdfPage": 3,
             "bookPage": 2
           }
+        },
+        {
+          "targetType": "region",
+          "targetId": "sacral",
+          "role": "related",
+          "raw": "song chỉnh với vùng S",
+          "context": "Nếu bệnh nhân ra nhiều mồ hôi chữa hai bên hố chẩm vào tới C1,2 và song chỉnh với vùng S. Xác định những tiết cơ, bó cơ co trên lưng để giải toả.",
+          "confidence": "region-only",
+          "note": "song chỉnh với C1–C2",
+          "decision": "D-37",
+          "ref": {
+            "pdfPage": 3,
+            "bookPage": 2
+          }
         }
       ]
     }

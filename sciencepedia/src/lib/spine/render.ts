@@ -1,5 +1,5 @@
 import type { Editorial, Mapping, Quote, Topic } from "./schema";
-import { atlasEmbedHref, atlasHref, compareVertebrae, type VertebraCode } from "./vertebrae";
+import { atlasCodeOf, atlasEmbedHref, atlasHref, compareVertebrae, type VertebraCode } from "./vertebrae";
 
 /**
  * Topic + tệp biên tập → Markdown của bài (vi hoặc en), ghi vào
@@ -77,7 +77,11 @@ function quote(q: Quote, locale: Locale): string {
 }
 
 function codeLink(m: Mapping, locale: Locale): string {
-  if (m.targetType === "region") return T[locale].regions[m.targetId as keyof (typeof T)["vi"]["regions"]];
+  if (m.targetType === "region") {
+    const label = T[locale].regions[m.targetId as keyof (typeof T)["vi"]["regions"]];
+    const code = atlasCodeOf(m);
+    return code ? `[${label}](${atlasHref([code])})` : label;
+  }
   const code = m.targetId as VertebraCode;
   const side = m.side ? ` (${T[locale][m.side]})` : "";
   return `[${code}](${atlasHref([code])})${side}`;
@@ -134,7 +138,7 @@ export function renderArticle(
       const lines = roleLines(mappings, locale);
       if (!lines.length) return;
       out.push(`${t.vertebraeNamed}:`, "", ...lines, "");
-      const codes = mappings.filter((m) => m.targetType === "vertebra").map((m) => m.targetId as VertebraCode);
+      const codes = [...new Set(mappings.map(atlasCodeOf).filter((c): c is VertebraCode => c !== null))];
       if (codes.length) out.push(`[${t.atlas} →](${atlasEmbedHref(codes)})`, "");
     };
     for (const q of ev.quotes) {

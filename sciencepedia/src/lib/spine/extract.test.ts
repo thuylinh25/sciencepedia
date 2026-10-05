@@ -74,3 +74,13 @@ test("đủ số thể theo bản gốc ở các mục dạng bảng", () => {
   assert.equal(count("viem-dai-trang-man-tinh", [42, 43]), 9);
   assert.equal(count("mat-ngu", [41, 41]), 7);
 });
+
+test("trung tâm điều nhiệt: mã sau mô tả vùng là vùng điều nhiệt, không phải mã giải tỏa (D-28)", () => {
+  const s = extractSection("dau-dau", [20, 32], pages);
+  const thermo = (variant: string) =>
+    s.variants.find((v) => v.id === variant)!.fields.find((f) => f.label.startsWith("Trung tâm điều nhiệt"))!.vertebrae?.codes.map((c) => c.code);
+  assert.equal(thermo("dau-dau-vung-giua-lung-nong-cao"), undefined); // "Vùng đầu, T7-T11"
+  assert.deepEqual(thermo("dau-dau-sot-ret-con-lung-gay"), ["C7", "T1"]); // "vùng đầu : C7 và T1"
+  assert.deepEqual(thermo("dau-dau-sot-cao-kiem-chung-lung"), ["T7"]); // "…vùng đầu. Giải tỏa trọng điểm T7"
+  assert.ok(!reviewFlags(s).some((f) => f.includes("phần giải tỏa có T7")));
+});

@@ -926,7 +926,8 @@
         "caution": "Thận trọng",
         "avoid": "Tránh"
       },
-      "spineSacrum": "Tài liệu ghi S1–S5; mô hình chỉ có xương cùng nguyên khối nên các mã này cùng trỏ vào đây."
+      "spineSacrum": "Tài liệu ghi S1–S5; mô hình chỉ có xương cùng nguyên khối nên các mã này cùng trỏ vào đây.",
+      "spineSacralRegion": "vùng S"
     },
     "systemGroups": {
       "cardiovascular": "Hệ tim mạch"

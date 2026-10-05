@@ -331,7 +331,10 @@ export function StructureDetail({
                       </span>
                     ))}
                     {spine.codes.some((c) => c.startsWith("S")) && (
-                      <span className="text-[11px] text-muted-foreground">{spine.codes.join(", ")}</span>
+                      <span className="text-[11px] text-muted-foreground">
+                        {/* "S" trong chỉ mục là "vùng S" của tài liệu, không phải một đốt (D-37). */}
+                        {spine.codes.map((c) => (c === "S" ? t("detail.spineSacralRegion") : c)).join(", ")}
+                      </span>
                     )}
                   </span>
                 </li>

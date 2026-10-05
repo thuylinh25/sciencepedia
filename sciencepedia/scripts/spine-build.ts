@@ -5,7 +5,7 @@ import { assembleTopic, verifyQuotes, type Decision, type SectionMeta } from "..
 import { extractSection, parsePage } from "../src/lib/spine/extract";
 import { renderArticle } from "../src/lib/spine/render";
 import { Editorial, type Topic } from "../src/lib/spine/schema";
-import { VERTEBRAE, compareVertebrae, type VertebraCode } from "../src/lib/spine/vertebrae";
+import { SACRAL_REGION_LABEL, VERTEBRAE, atlasCodeOf, compareVertebrae, type VertebraCode } from "../src/lib/spine/vertebrae";
 
 /**
  * Tệp biên tập + bản chép trang + quyết định D-n → topic JSON + bản nháp bài.
@@ -100,11 +100,13 @@ function main() {
   // chỉ mục thiếu bài hỏng trông y như chỉ mục đúng.
   const byFma: Record<string, { slug: string; roles: string[]; codes: string[] }[]> = {};
   for (const topic of built) {
-    const perFma = new Map<string, { roles: Set<string>; codes: Set<VertebraCode> }>();
+    const perFma = new Map<string, { roles: Set<string>; codes: Set<string> }>();
     for (const m of topic.variants.flatMap((v) => v.mappings)) {
-      if (m.targetType !== "vertebra") continue;
-      const code = m.targetId as VertebraCode;
-      const fma = VERTEBRAE.get(code)!.fma;
+      // Vùng không có chỗ tô, trừ "vùng S" → cả khối xương cùng (D-37, atlasCodeOf).
+      const atlas = atlasCodeOf(m);
+      if (!atlas) continue;
+      const code = m.targetType === "region" ? SACRAL_REGION_LABEL : m.targetId;
+      const fma = VERTEBRAE.get(atlas)!.fma;
       const entry = perFma.get(fma) ?? { roles: new Set(), codes: new Set() };
       entry.roles.add(m.role);
       entry.codes.add(code);
@@ -115,7 +117,10 @@ function main() {
       (byFma[fma] ??= []).push({
         slug: topic.slug,
         roles: order.filter((r) => e.roles.has(r)),
-        codes: [...e.codes].sort(compareVertebrae),
+        // "S" (vùng) đứng sau các đốt cùng cụ thể.
+        codes: [...e.codes].sort((a, b) =>
+          a === SACRAL_REGION_LABEL ? 1 : b === SACRAL_REGION_LABEL ? -1 : compareVertebrae(a as VertebraCode, b as VertebraCode),
+        ),
       });
     }
   }

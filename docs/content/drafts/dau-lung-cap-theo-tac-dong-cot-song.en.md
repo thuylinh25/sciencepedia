@@ -72,8 +72,9 @@ Vertebrae named by the document:
 Vertebrae named by the document:
 
 - **Key point:** [C1](/human-atlas?structure=atlas#atlas-viewer), [C2](/human-atlas?structure=axis#atlas-viewer)
+- **Related:** [the sacral region](/human-atlas?structure=sacrum#atlas-viewer)
 
-[View on the Human Atlas →](/human-atlas?structure=atlas,axis#atlas-embed)
+[View on the Human Atlas →](/human-atlas?structure=atlas,axis,sacrum#atlas-embed)
 
 ## Further reading
 

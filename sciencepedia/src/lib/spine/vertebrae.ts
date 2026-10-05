@@ -132,6 +132,19 @@ export function atlasEmbedHref(codes: readonly VertebraCode[]): string {
   return atlasHref(codes).replace(/#atlas-viewer$/, "#atlas-embed");
 }
 
+/**
+ * Đích của một mapping → ký hiệu atlas tô. "Vùng S" (`region: sacral`) không bung thành
+ * đốt, nhưng xương cùng vốn là MỘT khối trên atlas nên tô cả khối mà không giả vờ chỉ
+ * đúng một đốt (D-37). Vùng khác ("các đốt sống cổ") trả null: tô C1–C7 là nói thay tài liệu.
+ */
+export function atlasCodeOf(target: { targetType: string; targetId: string }): VertebraCode | null {
+  if (target.targetType === "vertebra") return isVertebraCode(target.targetId) ? target.targetId : null;
+  return target.targetType === "region" && target.targetId === "sacral" ? "S1" : null;
+}
+
+/** Ký hiệu hiển thị của "vùng S" trong chỉ mục atlas — xếp sau S1–S5. */
+export const SACRAL_REGION_LABEL = "S";
+
 /** Mã FMA → các ký hiệu trỏ vào nó (FMA16202 → S1…S5). */
 export function codesForFma(fma: string): VertebraCode[] {
   return VERTEBRA_ORDER.filter((code) => VERTEBRAE.get(code)!.fma === fma);

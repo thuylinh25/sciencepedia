@@ -1,5 +1,5 @@
 {
-  "policy": "Quyết định của NGƯỜI cho các cờ review mà máy không được tự quyết. Id D-<n> cố định, chỉ thêm, không đánh số lại. `match` là chuỗi con của dòng cờ trong review-flags.md — spine-extract đánh dấu cờ khớp là đã quyết. Bước dựng topic JSON đọc `resolution` ở đây. `apply` là phần máy đọc: `confirm` = chuỗi con của trường (raw) mà người đã xác nhận cách đọc → mã hết 'uncertain'; `assign` = chuỗi con của câu mention → gán `role`/`codes`/`side`.",
+  "policy": "Quyết định của NGƯỜI cho các cờ review mà máy không được tự quyết. Id D-<n> cố định, chỉ thêm, không đánh số lại. `match` là chuỗi con của dòng cờ trong review-flags.md — spine-extract đánh dấu cờ khớp là đã quyết. Bước dựng topic JSON đọc `resolution` ở đây. `apply` là phần máy đọc: `confirm` = chuỗi con của trường (raw) mà người đã xác nhận cách đọc → mã hết 'uncertain'; `assign` = chuỗi con của câu mention → gán `role`/`codes`/`side` (`regions` cho vùng, `note` cho điều kiện); `keepRole` = mã mang hai vai trong một thể → giữ vai này, bỏ vai kia; `setSide` = đặt bên cho mapping đã có.",
   "entries": [
     {
       "id": "D-1",
@@ -161,6 +161,364 @@
           "C2"
         ]
       },
+      "decidedBy": "chủ sản phẩm",
+      "decidedAt": "2026-10-05"
+    },
+    {
+      "id": "D-13",
+      "section": "dau-lung-man-tinh",
+      "pdfPage": 4,
+      "match": "Đau lưng do cùng hoá sống thắt lưng L5",
+      "resolution": "L5, S1 là tên nguyên nhân (cùng hoá / thắt lưng hoá) trong danh sách nguyên nhân — KHÔNG phải đốt tác động, không vào chỉ mục. (duyệt P-1, source/proposals.md)",
+      "decidedBy": "chủ sản phẩm",
+      "decidedAt": "2026-10-05"
+    },
+    {
+      "id": "D-14",
+      "section": "dau-lung-man-tinh",
+      "pdfPage": 4,
+      "match": "Đau lưng do gai đôi mỏm gai sau đốt L1,L5",
+      "resolution": "L1, L5, S1 là vị trí dị tật gai đôi — KHÔNG phải đốt tác động, không vào chỉ mục. Còn treo: trang 5 ghi gai đôi ở \"L4.5 hay S1\", trang 4 ghi \"L1,L5\" — có thể lỗi chép L4 → L1; đối chiếu ảnh trang 4 khi có PDF. Không ảnh hưởng chỉ mục vì cả hai đều không chỉ mục. (duyệt P-2, source/proposals.md)",
+      "decidedBy": "chủ sản phẩm",
+      "decidedAt": "2026-10-05"
+    },
+    {
+      "id": "D-15",
+      "section": "dau-lung-man-tinh",
+      "pdfPage": 4,
+      "raw": "…xơ co từ vùng lưng trên T2, T3 và T7, T8.",
+      "match": "Đau lưng do thoái hoá thường hay đau vùng thắt lưng",
+      "resolution": "S1 mô tả vùng đau — không chỉ mục. T2, T3, T7, T8 vai trò related: vùng cơ xơ co mà tài liệu bảo xác định để chữa, không chữa ngay chỗ đau. Không có chữ \"trọng điểm\" nên không lên primary. (duyệt P-3, source/proposals.md)",
+      "decidedBy": "chủ sản phẩm",
+      "decidedAt": "2026-10-05",
+      "apply": {
+        "assign": "xơ co từ vùng lưng trên T2, T3 và T7, T8",
+        "role": "related",
+        "codes": [
+          "T2",
+          "T3",
+          "T7",
+          "T8"
+        ]
+      }
+    },
+    {
+      "id": "D-16",
+      "section": "dau-lung-man-tinh",
+      "pdfPage": 4,
+      "raw": "Có trường hợp cơ xơ co lên cả vùng T1,2,3.",
+      "match": "Tại vùng L5, S1 nhiệt độ cao cơ co trên gai",
+      "resolution": "L5, S1 là nơi đau — không chỉ mục. T1, T2, T3 vai trò related (vùng cơ xơ co, cùng lý do D-15). (duyệt P-4, source/proposals.md)",
+      "decidedBy": "chủ sản phẩm",
+      "decidedAt": "2026-10-05",
+      "apply": {
+        "assign": "cơ xơ co lên cả vùng T1,2,3",
+        "role": "related",
+        "codes": [
+          "T1",
+          "T2",
+          "T3"
+        ]
+      }
+    },
+    {
+      "id": "D-17",
+      "section": "dau-lung-man-tinh",
+      "pdfPage": 4,
+      "match": "gây đau vùng thắt lưng cùng và vùng hông",
+      "resolution": "L4, L5 (viêm khớp cùng chậu) là mô tả dấu hiệu; điều trị chỉ ghi \"xác định vùng cơ co … tương ứng\", không nêu đốt — không chỉ mục. (duyệt P-5, source/proposals.md)",
+      "decidedBy": "chủ sản phẩm",
+      "decidedAt": "2026-10-05"
+    },
+    {
+      "id": "D-18",
+      "section": "dau-lung-man-tinh",
+      "pdfPage": 5,
+      "raw": "Chữa tại L4.5 S1 là giai đoạn cuối cùng.",
+      "match": "Gai đôi là do bẩm sinh",
+      "resolution": "C1, C3, C4 giữ primary (máy bắt từ \"trọng điểm ở\"). L4, L5, S1 vai trò related — \"giai đoạn cuối cùng\", cùng cách D-6. Bài giữ nguyên ý \"giai đoạn cuối\". L4, L5, S1 ở cụm \"vùng đối xứng với\" là nơi đau, không gán thêm. (duyệt P-6, source/proposals.md)",
+      "decidedBy": "chủ sản phẩm",
+      "decidedAt": "2026-10-05",
+      "apply": {
+        "assign": "Chữa tại L4.5 S1 là giai đoạn cuối cùng",
+        "role": "related",
+        "codes": [
+          "L4",
+          "L5",
+          "S1"
+        ]
+      }
+    },
+    {
+      "id": "D-19",
+      "section": "dau-lung-man-tinh",
+      "pdfPage": 5,
+      "raw": "đốt sống rối loạn thường là T10, T12, L1, L3,S3.",
+      "match": "Các triệu trứng về thận và tiết niệu",
+      "resolution": "T10, T12, L1, L3, S3 vai trò related — \"đốt sống rối loạn\" là dấu hiệu khám, không phải chữ \"trọng điểm\". (duyệt P-7, source/proposals.md)",
+      "decidedBy": "chủ sản phẩm",
+      "decidedAt": "2026-10-05",
+      "apply": {
+        "assign": "đốt sống rối loạn thường là T10, T12, L1, L3,S3",
+        "role": "related",
+        "codes": [
+          "T10",
+          "T12",
+          "L1",
+          "L3",
+          "S3"
+        ]
+      }
+    },
+    {
+      "id": "D-20",
+      "section": "dau-lung-man-tinh",
+      "pdfPage": 6,
+      "match": "Đau lưng do lao đốt sống thường hay bị ở đốt sống T7, T8",
+      "resolution": "T7, T8 là nơi bệnh lao nằm — không chỉ mục (đúng ví dụ trong content-rules). Đoạn này vào mục \"Tài liệu nói phương pháp không áp dụng\" của bài (phương pháp không chữa, dùng thuốc chuyên khoa lao). (duyệt P-8, source/proposals.md)",
+      "decidedBy": "chủ sản phẩm",
+      "decidedAt": "2026-10-05"
+    },
+    {
+      "id": "D-21",
+      "section": "thieu-nang-tuan-hoan-nao",
+      "pdfPage": 17,
+      "match": "[dau-dau] T1 mang nhiều vai",
+      "resolution": "T1 primary; dải liên quan T1–T10 bắt đầu từ T1 chỉ do viết dải, không phải vai thứ hai. Quy tắc chung đã duyệt: mã có cả vai chủ yếu và liên quan trong cùng một thể → giữ vai cao hơn (primary); vẫn ghi một D-n cho từng chỗ để chỗ nào bị đổi cũng truy được. (duyệt P-9, source/proposals.md)",
+      "decidedBy": "chủ sản phẩm",
+      "decidedAt": "2026-10-05",
+      "apply": {
+        "keepRole": "primary",
+        "variant": "dau-dau",
+        "codes": [
+          "T1"
+        ]
+      }
+    },
+    {
+      "id": "D-22",
+      "section": "thieu-nang-tuan-hoan-nao",
+      "pdfPage": 17,
+      "match": "[lao-dao] T1 mang nhiều vai",
+      "resolution": "T1 primary (quy tắc D-21). Ghi chú: T1 lặp nguyên ở dòng liên quan — có thể lỗi in; đối chiếu ảnh trang 17 khi có PDF. (duyệt P-10, source/proposals.md)",
+      "decidedBy": "chủ sản phẩm",
+      "decidedAt": "2026-10-05",
+      "apply": {
+        "keepRole": "primary",
+        "variant": "lao-dao",
+        "codes": [
+          "T1"
+        ]
+      }
+    },
+    {
+      "id": "D-23",
+      "section": "thieu-nang-tuan-hoan-nao",
+      "pdfPage": 17,
+      "match": "[it-ngu] T1 mang nhiều vai",
+      "resolution": "T1 primary (quy tắc D-21). (duyệt P-11, source/proposals.md)",
+      "decidedBy": "chủ sản phẩm",
+      "decidedAt": "2026-10-05",
+      "apply": {
+        "keepRole": "primary",
+        "variant": "it-ngu",
+        "codes": [
+          "T1"
+        ]
+      }
+    },
+    {
+      "id": "D-24",
+      "section": "thieu-nang-tuan-hoan-nao",
+      "pdfPage": 18,
+      "match": "[dau-lung-tren] T1 mang nhiều vai",
+      "resolution": "T1 primary (quy tắc D-21). (duyệt P-12, source/proposals.md)",
+      "decidedBy": "chủ sản phẩm",
+      "decidedAt": "2026-10-05",
+      "apply": {
+        "keepRole": "primary",
+        "variant": "dau-lung-tren",
+        "codes": [
+          "T1"
+        ]
+      }
+    },
+    {
+      "id": "D-25",
+      "section": "thieu-nang-tuan-hoan-nao",
+      "pdfPage": 18,
+      "match": "[dau-lung-tren] T3 mang nhiều vai",
+      "resolution": "T3 primary (quy tắc D-21). (duyệt P-13, source/proposals.md)",
+      "decidedBy": "chủ sản phẩm",
+      "decidedAt": "2026-10-05",
+      "apply": {
+        "keepRole": "primary",
+        "variant": "dau-lung-tren",
+        "codes": [
+          "T3"
+        ]
+      }
+    },
+    {
+      "id": "D-26",
+      "section": "huyet-ap-cao",
+      "pdfPage": 19,
+      "raw": "Các bệnh nhân có Tâm trương (tối thiểu) cần phải điều chỉnh thì tác động T3 bên phải.",
+      "match": "Các bệnh nhân có Tâm trương (tối thiểu) cần phải điều chỉnh",
+      "resolution": "T3 primary, side = right, chỉ khi tâm trương cần điều chỉnh. Nhất quán với D-1. (duyệt P-14, source/proposals.md)",
+      "decidedBy": "chủ sản phẩm",
+      "decidedAt": "2026-10-05",
+      "apply": {
+        "assign": "cần phải điều chỉnh thì tác động T3 bên phải",
+        "role": "primary",
+        "codes": [
+          "T3"
+        ],
+        "side": "right",
+        "note": "khi tâm trương cần điều chỉnh"
+      }
+    },
+    {
+      "id": "D-27",
+      "section": "dau-dau",
+      "pdfPage": 25,
+      "raw": "thận trọng khi tác động ở T6, T10, L3 bên phải",
+      "match": "\"T6, T10, L3 bên phải\"",
+      "resolution": "\"bên phải\" áp cho CẢ BA: T6, T10, L3 caution, side = right — cùng bộ ba và cách đọc D-1…D-4. (duyệt P-15, source/proposals.md)",
+      "decidedBy": "chủ sản phẩm",
+      "decidedAt": "2026-10-05",
+      "apply": {
+        "confirm": "T6, T10, L3 bên phải"
+      }
+    },
+    {
+      "id": "D-28",
+      "section": "dau-dau",
+      "pdfPage": 26,
+      "raw": "Trung tâm điều nhiệt : Vùng đầu, T7-T11",
+      "resolution": "T7–T11 trong \"Trung tâm điều nhiệt : Vùng đầu, T7-T11\" là vùng điều nhiệt, không phải trọng điểm hay mã giải tỏa — không gán vai. Sửa ở parser cho mọi dòng \"Trung tâm điều nhiệt\": mã đứng sau mô tả vùng không còn đếm là mã giải tỏa (src/lib/spine/extract.ts). Cờ \"phần giải tỏa có T7, T8, T9, T11…\" vì thế không còn sinh ra. (duyệt P-16, source/proposals.md)",
+      "decidedBy": "chủ sản phẩm",
+      "decidedAt": "2026-10-05"
+    },
+    {
+      "id": "D-29",
+      "section": "dau-dau",
+      "pdfPage": 26,
+      "raw": "Giải tỏa trọng điểm: C6,C7 và T1 phải, cơ vai.",
+      "match": "\"C6,C7 và T1 phải, cơ vai.\"",
+      "resolution": "C6, C7, T1 primary, side = right — đọc \"phải\" ở dòng giải tỏa áp cho cả danh sách, như D-1. Căn cứ yếu: dòng \"Trọng điểm: C6, C7 và T1\" không nêu bên; chủ sản phẩm chọn theo đề xuất mặc định, đổi được bằng cách sửa mục này. (duyệt P-17, source/proposals.md)",
+      "decidedBy": "chủ sản phẩm",
+      "decidedAt": "2026-10-05",
+      "apply": {
+        "setSide": "right",
+        "variant": "dau-dau-lao-dao-muon-nga-kiem",
+        "role": "primary",
+        "codes": [
+          "C6",
+          "C7",
+          "T1"
+        ]
+      }
+    },
+    {
+      "id": "D-30",
+      "section": "dau-dau",
+      "pdfPage": 30,
+      "raw": "Những người bệnh huyết áp cao tránh C1, C2, thận trọng T6, T10 và L3 phải.",
+      "match": "\"T6, T10 và L3 phải\"",
+      "resolution": "T6, T10, L3 caution, side = right (như D-27). C1, C2 avoid giữ nguyên (máy đã bắt). (duyệt P-18, source/proposals.md)",
+      "decidedBy": "chủ sản phẩm",
+      "decidedAt": "2026-10-05",
+      "apply": {
+        "confirm": "T6, T10 và L3 phải"
+      }
+    },
+    {
+      "id": "D-31",
+      "section": "dau-dau",
+      "pdfPage": 30,
+      "match": "đều có liên quan ảnh hưởng từ các đốt sống cổ",
+      "resolution": "C1–C7 ở câu lý thuyết chung về đau đầu, không phải chỉ định cho thể nào — không chỉ mục. (duyệt P-19, source/proposals.md)",
+      "decidedBy": "chủ sản phẩm",
+      "decidedAt": "2026-10-05"
+    },
+    {
+      "id": "D-32",
+      "section": "sot",
+      "pdfPage": 36,
+      "match": "bỏ qua phần \"thuộc Tam giác cơ 4, lớp cơ sâu\"",
+      "resolution": "T7 primary. \"Tam giác cơ 4, lớp cơ sâu\" là khái niệm riêng của phương pháp — giữ nguyên văn trong đoạn trích, không thành đốt. (duyệt P-20, source/proposals.md)",
+      "decidedBy": "chủ sản phẩm",
+      "decidedAt": "2026-10-05"
+    },
+    {
+      "id": "D-33",
+      "section": "sot",
+      "pdfPage": 36,
+      "match": "Úp bàn tay vào T3,T4",
+      "resolution": "T3, T4 caution — tài liệu tự dặn \"thao tác rất nhẹ\" khi trẻ đang co giật. Khung cảnh báo (co giật ở trẻ là cấp cứu) bắt buộc đặt TRƯỚC đoạn trích; phạm vi trích theo D-38. (duyệt P-21, source/proposals.md)",
+      "decidedBy": "chủ sản phẩm",
+      "decidedAt": "2026-10-05",
+      "apply": {
+        "assign": "Úp bàn tay vào T3,T4",
+        "role": "caution",
+        "codes": [
+          "T3",
+          "T4"
+        ]
+      }
+    },
+    {
+      "id": "D-34",
+      "section": "sot",
+      "pdfPage": 36,
+      "match": "tr.36 T4, L5 — vai trò trống",
+      "resolution": "C7, T1 giữ primary (máy bắt). T4, L5 không chỉ mục — \"chữa xuống tới\" là phạm vi thao tác, và \"T4, L5\" mơ hồ (dải hay hai mốc); đối chiếu ảnh trang khi có PDF. (duyệt P-22, source/proposals.md)",
+      "decidedBy": "chủ sản phẩm",
+      "decidedAt": "2026-10-05"
+    },
+    {
+      "id": "D-35",
+      "section": "sot",
+      "pdfPage": 36,
+      "match": "Khi sốt rét từ trong ruột rét ra",
+      "resolution": "C6, T9, L3, S3 primary — máy đã bắt từ \"trọng điểm ở\", trùng dòng \"Các đốt sống TĐ\" ngay trên; các mã còn lại trong câu là thứ tự giải (S3 → C6 → T9 → L3), ghi trong trích, không gán thêm. \"tiêu diệt vi trùng sốt rét\" là claim y khoa: chỉ trích nguyên văn dưới nhãn tài liệu; khung cảnh báo nói sốt rét là cấp cứu cần thuốc đặc hiệu. (duyệt P-23, source/proposals.md)",
+      "decidedBy": "chủ sản phẩm",
+      "decidedAt": "2026-10-05"
+    },
+    {
+      "id": "D-36",
+      "section": "sot",
+      "pdfPage": 37,
+      "match": "Đầu tiên xử lý T12, L1 sau đó mới giải quyết T5,T10",
+      "resolution": "T5, T10, T12, L1 primary — máy đã bắt từ \"Đốt sống TĐ là T5,T10,T12, L1\" ngay trên; câu này chỉ là thứ tự (T12, L1 trước, T5, T10 sau), ghi trong trích. (duyệt P-24, source/proposals.md)",
+      "decidedBy": "chủ sản phẩm",
+      "decidedAt": "2026-10-05"
+    },
+    {
+      "id": "D-37",
+      "section": "dau-lung-cap",
+      "pdfPage": 3,
+      "raw": "Nếu bệnh nhân ra nhiều mồ hôi chữa hai bên hố chẩm vào tới C1,2 và song chỉnh với vùng S.",
+      "resolution": "\"vùng S\" (song chỉnh với C1–C2) vai trò related, đích là vùng `sacral` — không bung thành S1–S5. Chỉ mục atlas trỏ vào khối xương cùng (S1–S5 vốn là một khối trong BodyParts3D), mã hiển thị \"S\". Không lên primary vì câu không gọi vùng S là trọng điểm. Cùng dòng với D-12; D-12 giữ C1, C2. (duyệt Q-1 (b), source/proposals.md)",
+      "decidedBy": "chủ sản phẩm",
+      "decidedAt": "2026-10-05",
+      "apply": {
+        "assign": "song chỉnh với vùng S",
+        "role": "related",
+        "codes": [],
+        "regions": [
+          "sacral"
+        ],
+        "note": "song chỉnh với C1–C2"
+      }
+    },
+    {
+      "id": "D-38",
+      "section": "sot",
+      "pdfPage": 36,
+      "raw": "Thủ thuật giải quyết đám cơ (đẩy lên không được kéo xuống) song phần cơ mới giải quyết đốt sống.",
+      "resolution": "Đoạn \"Trẻ em sốt cao\": trích phần nhận định của tài liệu, BỎ câu mô tả thủ thuật (\"đẩy lên không được kéo xuống\") — quy tắc \"không chép từng bước lực tay\". Khung cảnh báo co giật ở trẻ đặt trước. (duyệt Q-3, source/proposals.md)",
       "decidedBy": "chủ sản phẩm",
       "decidedAt": "2026-10-05"
     }
