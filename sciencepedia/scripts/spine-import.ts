@@ -64,6 +64,13 @@ const readingTime = (md: string) => Math.max(1, Math.round(md.split(/\s+/).lengt
 
 async function main() {
   const write = process.argv.includes("--write");
+  /* Đổi cách trình bày trên bài đã xuất bản (nhãn, định dạng) mà không đổi claim: phải
+     nói rõ lý do, lý do vào Revision. Đổi claim thì KHÔNG dùng cờ này — đó là đính chính. */
+  const fcIndex = process.argv.indexOf("--format-change");
+  const formatChange = fcIndex > -1 ? process.argv[fcIndex + 1] : undefined;
+  if (fcIndex > -1 && (!formatChange || formatChange.startsWith("--"))) {
+    throw new Error('--format-change cần lý do, vd. --format-change "bỏ nhãn Theo tài liệu theo yêu cầu chủ sản phẩm"');
+  }
   const read = (p: string) => JSON.parse(readFileSync(path.join(ROOT, "topics", p), "utf8"));
 
   const files = readdirSync(path.join(ROOT, "topics")).filter((f) => f.endsWith(".editorial.json")).sort();
@@ -119,8 +126,11 @@ async function main() {
         const sameText =
           withoutHrefs(existing.content) === withoutHrefs(vi) &&
           withoutHrefs(existing.contentEn ?? "") === withoutHrefs(en);
-        if (!sameText) {
-          throw new Error(`${editorial.slug} đang ${existing.status} và phần chữ đã đổi — sửa bài đã xuất bản là đính chính, đi đường khác.`);
+        if (!sameText && !formatChange) {
+          throw new Error(
+            `${editorial.slug} đang ${existing.status} và phần chữ đã đổi — sửa bài đã xuất bản là đính chính, đi đường khác. ` +
+              `Nếu chỉ là đổi CÁCH TRÌNH BÀY (không claim nào đổi), chạy lại với --format-change "<lý do>".`,
+          );
         }
         if (existing.content === vi && existing.contentEn === en) {
           return `· ${editorial.slug} — ${existing.status}, không đổi`;
@@ -131,11 +141,13 @@ async function main() {
             title: existing.title,
             content: existing.content,
             editorId: ADMIN_ID,
-            note: "Trước khi đổi đích link (spine:build) — phần chữ giữ nguyên",
+            note: sameText
+              ? "Trước khi đổi đích link (spine:build) — phần chữ giữ nguyên"
+              : `Trước khi đổi trình bày (spine:build): ${formatChange}`,
           },
         });
         await tx.article.update({ where: { id: existing.id }, data: { content: vi, contentEn: en } });
-        return `✔ ${editorial.slug} — ${existing.status}, chỉ đổi đích link`;
+        return `✔ ${editorial.slug} — ${existing.status}, ${sameText ? "chỉ đổi đích link" : "đổi trình bày"}`;
       }
       const data = {
         title: editorial.title.vi,

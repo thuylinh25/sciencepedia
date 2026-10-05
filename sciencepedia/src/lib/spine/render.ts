@@ -26,7 +26,7 @@ const T = {
     method: "Nội dung theo phương pháp Tác động cột sống",
     methodIntro:
       "Các mục dưới đây trích nguyên văn từ tài liệu, kèm số trang. Bài chỉ ghi lại tài liệu nói gì; bài không hướng dẫn thao tác và không thay cho việc khám bệnh.",
-    according: (page: number) => `Theo tài liệu (tr. ${page})`,
+    page: (page: number) => `tr. ${page}`,
     roles: { primary: "Trọng điểm", related: "Liên quan", caution: "Thận trọng", avoid: "Tránh" },
     vertebraeNamed: "Đốt sống tài liệu nêu",
     right: "phải",
@@ -53,7 +53,7 @@ const T = {
     method: "Content according to the Spinal Impact method",
     methodIntro:
       "The passages below are translated from the document, with page numbers. The article records what the document says; it does not teach any technique and is not a substitute for medical care.",
-    according: (page: number) => `According to the document (p. ${page}, translated)`,
+    page: (page: number) => `p. ${page}, translated`,
     roles: { primary: "Key point", related: "Related", caution: "Caution", avoid: "Avoid" },
     vertebraeNamed: "Vertebrae named by the document",
     right: "right",
@@ -77,9 +77,16 @@ const T = {
 
 const ROLE_ORDER: Mapping["role"][] = ["primary", "related", "caution", "avoid"];
 
+/*
+ * Đoạn trích không còn nhãn "Theo tài liệu (tr. N):" ở đầu — chủ sản phẩm yêu cầu bỏ
+ * (2026-10-05). Việc gán lời cho tài liệu giờ nằm ở cấp mục: nhãn "Tư liệu lưu trữ"
+ * đầu bài, tiêu đề mục ("Triệu chứng được tài liệu mô tả", "Nội dung theo phương pháp…",
+ * "Tài liệu nói phương pháp không áp dụng") và câu dẫn "trích nguyên văn từ tài liệu".
+ * Số trang GIỮ, ở cuối đoạn — truy vết về bản gốc là yêu cầu gốc của module.
+ */
 function quote(q: Quote, locale: Locale): string {
   const text = (locale === "vi" ? q.vi : q.en).trim().replace(/\n+/g, " ");
-  return `> **${T[locale].according(q.pdfPage - 1)}:** ${text}`;
+  return `> ${text} *(${T[locale].page(q.pdfPage - 1)})*`;
 }
 
 function codeLink(m: Mapping, locale: Locale): string {

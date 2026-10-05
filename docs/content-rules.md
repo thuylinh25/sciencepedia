@@ -818,8 +818,12 @@ Chốt 2026-10-05 (chủ sản phẩm), khi nhập tài liệu "Phương pháp T
 (Chi hội Tác động cột sống Hà Nội — Hội Đông y TP Hà Nội). Dữ liệu ở
 `sciencepedia/content/tac-dong-cot-song/`, máy ở `src/lib/spine/` + `scripts/spine-extract.ts`.
 
-**Hai giọng, không trộn.** Lời tài liệu là trích nguyên văn có trang, luôn dưới nhãn "Theo
-tài liệu…". Kiến thức chung (giải phẫu, bệnh là gì, khi nào đi khám, khung cảnh báo) do
+**Hai giọng, không trộn.** Lời tài liệu là trích nguyên văn có trang. Nhãn "Theo tài liệu
+(tr. N):" đầu MỖI đoạn trích đã bỏ theo yêu cầu chủ sản phẩm (2026-10-05); việc gán lời cho
+tài liệu nằm ở cấp mục — nhãn "Tư liệu lưu trữ" đầu bài, tiêu đề mục ("Triệu chứng được tài
+liệu mô tả", "Nội dung theo phương pháp…", "Tài liệu nói phương pháp không áp dụng") và câu
+dẫn "trích nguyên văn từ tài liệu". Số trang vẫn giữ, ở cuối đoạn. Đừng đưa đoạn trích ra
+ngoài các mục ấy: ra khỏi mục là mất dấu ai nói. Kiến thức chung (giải phẫu, bệnh là gì, khi nào đi khám, khung cảnh báo) do
 Sciencepedia viết từ nguồn bậc 1–2, và gate `check-publish.ts` tính trên phần này — không
 nới gate. Tài liệu vào `Source` ở bậc yếu nên không bao giờ tự đưa bài qua gate. Lý do: tài
 liệu của một hội nghề nghiệp là tư liệu về một phương pháp, không phải bằng chứng y khoa;

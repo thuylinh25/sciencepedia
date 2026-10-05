@@ -32,7 +32,7 @@ Sciatica usually improves within a few weeks to a few months but can last longer
 
 ## Symptoms described in the document
 
-> **According to the document (p. 6, translated):** Sciatic nerve pain usually shows the following restriction signs: 1. the painful-point sign (spelled "Walleix" in the original); 2. restricted forward bending while standing; 3. restricted "ngồi sổm" (as printed; the standard spelling is "ngồi xổm", squatting, which the document itself uses on p. 8); 4. restricted leg raising; 5. restricted spinal stretching; 6. restricted fast walking.
+> Sciatic nerve pain usually shows the following restriction signs: 1. the painful-point sign (spelled "Walleix" in the original); 2. restricted forward bending while standing; 3. restricted "ngồi sổm" (as printed; the standard spelling is "ngồi xổm", squatting, which the document itself uses on p. 8); 4. restricted leg raising; 5. restricted spinal stretching; 6. restricted fast walking. *(p. 6, translated)*
 
 ## Content according to the Spinal Impact method
 
@@ -40,9 +40,9 @@ The passages below are translated from the document, with page numbers. The arti
 
 ### Restricted forward bending
 
-> **According to the document (p. 7, translated):** The patient stands straight with feet shoulder-width apart, knees kept straight, and slowly bends forward; if both index fingers can touch the big toes it is normal, if they cannot reach the big toes it is restricted.
+> The patient stands straight with feet shoulder-width apart, knees kept straight, and slowly bends forward; if both index fingers can touch the big toes it is normal, if they cannot reach the big toes it is restricted. *(p. 7, translated)*
 
-> **According to the document (p. 7, translated):** The key points are usually in the region of T2, T3, T7, T8.
+> The key points are usually in the region of T2, T3, T7, T8. *(p. 7, translated)*
 
 Vertebrae named by the document:
 
@@ -52,7 +52,7 @@ Vertebrae named by the document:
 
 ### The document's note on the lumbosacral region
 
-> **According to the document (p. 9, translated):** People with sciatic nerve pain often walk in a pain-relieving posture, leaning to one side. Treatment cannot start right at L4, L5 and S1, S2; instead the corresponding-muscle-contraction approach is applied, working from the upper back downwards. Treating L4, 5 and S1, 2 is the final stage.
+> People with sciatic nerve pain often walk in a pain-relieving posture, leaning to one side. Treatment cannot start right at L4, L5 and S1, S2; instead the corresponding-muscle-contraction approach is applied, working from the upper back downwards. Treating L4, 5 and S1, 2 is the final stage. *(p. 9, translated)*
 
 Vertebrae named by the document:
 
@@ -79,7 +79,7 @@ Compiled from the sections above. Roles are the document's own terms (key point,
 
 ## Where the document says the method does not apply
 
-> **According to the document (p. 9, translated):** The "bell-pulling" phenomenon or being unable to push with the foot is due to inflammation of the cauda equina, or spinal cord tumours and spinal meningeal tumours… none of these are treated with Spinal Impact (medication is required).
+> The "bell-pulling" phenomenon or being unable to push with the foot is due to inflammation of the cauda equina, or spinal cord tumours and spinal meningeal tumours… none of these are treated with Spinal Impact (medication is required). *(p. 9, translated)*
 
 ## Further reading
 

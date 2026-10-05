@@ -29,11 +29,11 @@ The U.S. National Institute of Neurological Disorders and Stroke (NINDS) describ
 
 ## Symptoms described in the document
 
-> **According to the document (p. 1, translated):** It usually appears suddenly after an excessive movement or a movement in an awkward posture: one hears a click and then feels pain
+> It usually appears suddenly after an excessive movement or a movement in an awkward posture: one hears a click and then feels pain *(p. 1, translated)*
 
-> **According to the document (p. 1, translated):** Right after it happens (after the click) the pain is mild, then it gradually increases, sometimes becoming very painful; movement is limited, bending forward and backward is difficult, and turning over in bed also hurts. Patients often walk in a pain-relieving posture (bent over or leaning to one side).
+> Right after it happens (after the click) the pain is mild, then it gradually increases, sometimes becoming very painful; movement is limited, bending forward and backward is difficult, and turning over in bed also hurts. Patients often walk in a pain-relieving posture (bent over or leaning to one side). *(p. 1, translated)*
 
-> **According to the document (p. 1, translated):** In the cold season, catching a "wind-cold" chill can also cause acute back pain.
+> In the cold season, catching a "wind-cold" chill can also cause acute back pain. *(p. 1, translated)*
 
 ## Content according to the Spinal Impact method
 
@@ -41,17 +41,17 @@ The passages below are translated from the document, with page numbers. The arti
 
 ### How the document examines the patient
 
-> **According to the document (p. 1, translated):** Temperature: at the painful area the temperature is high, and there are corresponding temperature zones on the spine (not where it currently hurts) that are also hot.
+> Temperature: at the painful area the temperature is high, and there are corresponding temperature zones on the spine (not where it currently hurts) that are also hot. *(p. 1, translated)*
 
 ### Key points named by the document
 
-> **According to the document (p. 1, translated):** Note: at the painful spot, the painful point on the spine with a high temperature is the diseased zone and is not to be acted on yet; the corresponding zone on the spine must be found and treated instead. If the patient cannot bend forward because of pain, there is usually a point at T2, 3, 7, 8
+> Note: at the painful spot, the painful point on the spine with a high temperature is the diseased zone and is not to be acted on yet; the corresponding zone on the spine must be found and treated instead. If the patient cannot bend forward because of pain, there is usually a point at T2, 3, 7, 8 *(p. 1, translated)*
 
-> **According to the document (p. 2, translated):** If the patient cannot sit up straight because of pain, the key points are L4, 5 and S1.
+> If the patient cannot sit up straight because of pain, the key points are L4, 5 and S1. *(p. 2, translated)*
 
-> **According to the document (p. 2, translated):** If the patient has an external wind-cold chill without sweating, with severe back pain and difficulty moving … the key points also usually include T2, 3.
+> If the patient has an external wind-cold chill without sweating, with severe back pain and difficulty moving … the key points also usually include T2, 3. *(p. 2, translated)*
 
-> **According to the document (p. 2, translated):** If the patient sweats a lot, treat both sides of the occipital fossa inward to C1, 2, with "song chỉnh" (the method's term for acting on two different points at the same time with both hands) at the S region.
+> If the patient sweats a lot, treat both sides of the occipital fossa inward to C1, 2, with "song chỉnh" (the method's term for acting on two different points at the same time with both hands) at the S region. *(p. 2, translated)*
 
 Vertebrae named by the document:
 

@@ -32,7 +32,7 @@ Theo NHS, nguyên nhân thường gặp nhất là **thoát vị đĩa đệm** 
 
 ## Triệu chứng được tài liệu mô tả
 
-> **Theo tài liệu (tr. 6):** Đau dây thần kinh hông thường có các dấu hiệu hạn chế sau đây: 1. Dấu hiệu thống điểm đau (Walleix) 2. Dấu hiệu đứng cúi hạn chế 3. Dấu hiệu ngồi sổm hạn chế 4. Dấu hiệu nâng chân hạn chế 5. Dấu hiệu giãn cột sống hạn chế 6. Dấu hiệu đi nhanh hạn chế.
+> Đau dây thần kinh hông thường có các dấu hiệu hạn chế sau đây: 1. Dấu hiệu thống điểm đau (Walleix) 2. Dấu hiệu đứng cúi hạn chế 3. Dấu hiệu ngồi sổm hạn chế 4. Dấu hiệu nâng chân hạn chế 5. Dấu hiệu giãn cột sống hạn chế 6. Dấu hiệu đi nhanh hạn chế. *(tr. 6)*
 
 ## Nội dung theo phương pháp Tác động cột sống
 
@@ -40,9 +40,9 @@ Các mục dưới đây trích nguyên văn từ tài liệu, kèm số trang. 
 
 ### Dấu hiệu đứng cúi hạn chế
 
-> **Theo tài liệu (tr. 7):** Bệnh nhân đứng thẳng, hai chân rộng bằng 2 vai, giữ 2 gối thẳng, từ từ cúi xuống nếu hai ngón tay trỏ, chạm được tới ngón chân cái là bình thường, nếu không chạm được ngón chân cái là bị hạn chế.
+> Bệnh nhân đứng thẳng, hai chân rộng bằng 2 vai, giữ 2 gối thẳng, từ từ cúi xuống nếu hai ngón tay trỏ, chạm được tới ngón chân cái là bình thường, nếu không chạm được ngón chân cái là bị hạn chế. *(tr. 7)*
 
-> **Theo tài liệu (tr. 7):** Trọng điểm thường ở vùng T2 T,3T7 T8.
+> Trọng điểm thường ở vùng T2 T,3T7 T8. *(tr. 7)*
 
 Đốt sống tài liệu nêu:
 
@@ -52,7 +52,7 @@ Các mục dưới đây trích nguyên văn từ tài liệu, kèm số trang. 
 
 ### Lưu ý của tài liệu về vùng thắt lưng – cùng
 
-> **Theo tài liệu (tr. 9):** Người bị đau dây thần kinh hông hay đi trong tư thế giảm đau vẹo sang một bên. Không chữa ngay ở L4, L5 và S1,S2 được mà phải áp dụng phương thức co cơ tương ứng để chữa từ trên lưng trên xuống. Chữa ở L4.5 và S1.2 là giai đoạn cuối cùng.
+> Người bị đau dây thần kinh hông hay đi trong tư thế giảm đau vẹo sang một bên. Không chữa ngay ở L4, L5 và S1,S2 được mà phải áp dụng phương thức co cơ tương ứng để chữa từ trên lưng trên xuống. Chữa ở L4.5 và S1.2 là giai đoạn cuối cùng. *(tr. 9)*
 
 Đốt sống tài liệu nêu:
 
@@ -79,7 +79,7 @@ Tổng hợp từ các mục trên. Vai trò là cách tài liệu gọi tên (t
 
 ## Tài liệu nói phương pháp không áp dụng
 
-> **Theo tài liệu (tr. 9):** Hiện tượng kéo chuông hay đạp chân không được là do viêm đuôi ngựa hay u tuỷ và u màng tuỷ… đều không chữa Tác động cột sống (phải dùng thuốc).
+> Hiện tượng kéo chuông hay đạp chân không được là do viêm đuôi ngựa hay u tuỷ và u màng tuỷ… đều không chữa Tác động cột sống (phải dùng thuốc). *(tr. 9)*
 
 ## Đọc thêm
 
