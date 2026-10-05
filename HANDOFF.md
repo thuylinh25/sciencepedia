@@ -36,12 +36,7 @@ bằng chứng khoa học.
 | Chủ đề (manifest id) | Trang | Trạng thái |
 |---|---|---|
 | `dau-lung-cap`, `dau-than-kinh-toa`, `dau-nua-dau` | 2–3, 7–11, 12–14 | PUBLISHED |
-| `dau-lung-man-tinh`, `huyet-ap-thap` | 4–6, 15–16 | nháp, đã ở `main` (#13) |
-| `thieu-nang-tuan-hoan-nao`, `huyet-ap-cao`, `dau-dau` | 17–32 | nháp (#14) |
-| `hen-suyen-ho-hap` | 33–34 | nháp, đã ở `main` (#16): 12 thể, nguồn NHS + NHLBI + MedlinePlus, `riskLevel high` |
-| `sot` | 35–38 | nháp, đã ở `main` (#16): 15 thể, 8 nguồn NHS + MedlinePlus; khung nêu co giật do sốt đơn thuần vô hại (MedlinePlus) — đối lập câu "di chứng bại não" của tài liệu, cần science-editor xem kỹ |
-| `nhieu-mo-hoi-so-gio` | 39 | nháp (nhánh `claude/nhieu-mo-hoi-so-gio`): 5 thể, 6 mapping, nguồn NHS + MedlinePlus, `riskLevel normal` |
-| `benh-do-mo-hoi` | 40 | nháp (nhánh `claude/benh-do-mo-hoi`): 6 thể, 10 mapping, khung sốc nhiệt; câu "tác động C1 và S1,S2" (thể 6) không trích, không chỉ mục — chủ sản phẩm quyết |
+| `dau-lung-man-tinh`, `huyet-ap-thap`, `thieu-nang-tuan-hoan-nao`, `huyet-ap-cao`, `dau-dau`, `hen-suyen-ho-hap`, `sot`, `nhieu-mo-hoi-so-gio`, `benh-do-mo-hoi` | 4–6, 15–40 | nháp ở `main`. **science-editor PASS** (2 vòng, 2026-10-05; #19 sửa mục chặn vòng 1, D-39, D-40), chủ sản phẩm xác nhận → `editor = passed`. **Còn `transcription = pending`**: chủ sản phẩm đang đối chiếu bản chép trang với ảnh trang PDF. Xong thì đổi cờ → `spine:build` → người chạy `spine:import` → thêm 9 slug vào `SERIES` của `scripts/spine-publish.ts` → người chạy `spine:publish`. Góp ý không chặn còn treo: xem mô tả PR #19 và báo cáo science-editor (dịch en, note D-26 cho "Những đốt sống cần tránh", "trang 18–18", dấu "…" cuối trường). |
 | `mat-ngu` → `viem-dai-trang-man-tinh` | 41–43 | **chưa làm** |
 
 **Cách làm một chủ đề:**
