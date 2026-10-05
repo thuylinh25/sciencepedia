@@ -1,0 +1,163 @@
+{
+  "slug": "nhieu-mo-hoi-so-gio-theo-tac-dong-cot-song",
+  "collection": "tac-dong-cot-song",
+  "section": "nhieu-mo-hoi-so-gio",
+  "title": {
+    "vi": "Nhiều mồ hôi, sợ gió theo phương pháp Tác động cột sống",
+    "en": "Heavy sweating and aversion to wind in the Spinal Impact method"
+  },
+  "riskLevel": "normal",
+  "source": {
+    "docId": "pp-tdcs-vn",
+    "part": "Phần 3",
+    "heading": "II- NHIỀU MỒ HÔI, SỢ GIÓ",
+    "pdfPages": [
+      39,
+      39
+    ]
+  },
+  "variants": [
+    {
+      "id": "tren-long-may-trang-bot",
+      "label": {
+        "vi": "Trên lông mày trắng bọt",
+        "en": "Pale white above the eyebrows"
+      },
+      "heading": "1/ Trên lông mày trắng bọt",
+      "ref": {
+        "pdfPage": 39,
+        "bookPage": 38
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "T4",
+          "role": "primary",
+          "raw": "T4",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 39,
+            "bookPage": 38
+          }
+        }
+      ]
+    },
+    {
+      "id": "trong-mieng-sac-do",
+      "label": {
+        "vi": "Trong miệng sắc đỏ",
+        "en": "Red colour inside the mouth"
+      },
+      "heading": "2/ Trong miệng sắc đỏ",
+      "ref": {
+        "pdfPage": 39,
+        "bookPage": 38
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "T5",
+          "role": "primary",
+          "raw": "T5,T6",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 39,
+            "bookPage": 38
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T6",
+          "role": "primary",
+          "raw": "T5,T6",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 39,
+            "bookPage": 38
+          }
+        }
+      ]
+    },
+    {
+      "id": "duoi-mat-sac-tai-xanh",
+      "label": {
+        "vi": "Dưới mắt sắc tái xanh",
+        "en": "Pale bluish colour under the eyes"
+      },
+      "heading": "3/ Dưới mắt sắc tái xanh.",
+      "ref": {
+        "pdfPage": 39,
+        "bookPage": 38
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "T10",
+          "role": "primary",
+          "raw": "T10",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 39,
+            "bookPage": 38
+          }
+        }
+      ]
+    },
+    {
+      "id": "tren-mui-vang",
+      "label": {
+        "vi": "Trên mũi vàng",
+        "en": "Yellow on the nose"
+      },
+      "heading": "4/ Trên mũi vàng",
+      "ref": {
+        "pdfPage": 39,
+        "bookPage": 38
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "T12",
+          "role": "primary",
+          "raw": "T12",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 39,
+            "bookPage": 38
+          }
+        }
+      ]
+    },
+    {
+      "id": "co-nhieu-mo-hoi-so-gio-nguoi",
+      "label": {
+        "vi": "Cổ nhiều mồ hôi, sợ gió, người gầy, bụng to",
+        "en": "Heavy sweating at the neck, aversion to wind, thin body, large belly"
+      },
+      "heading": "5/ Cổ nhiều mồ hôi, sợ gió, người gầy, bụng to",
+      "ref": {
+        "pdfPage": 39,
+        "bookPage": 38
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "L1",
+          "role": "primary",
+          "raw": "L1",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 39,
+            "bookPage": 38
+          }
+        }
+      ]
+    }
+  ],
+  "unassigned": [],
+  "review": {
+    "transcription": "pending",
+    "mapping": "passed",
+    "editor": "pending"
+  }
+}
