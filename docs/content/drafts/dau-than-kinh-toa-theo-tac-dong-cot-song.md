@@ -10,7 +10,9 @@ NHS khuyên đến khoa cấp cứu hoặc gọi cấp cứu nếu bạn:
 - khó bắt đầu đi tiểu, không tiểu được hoặc không kiểm soát được việc tiểu — khác với bình thường;
 - không nhận biết lúc cần đại tiện hoặc không kiểm soát được — khác với bình thường.
 
-Theo NHS, đây có thể là triệu chứng của một vấn đề nghiêm trọng ở lưng cần điều trị tại bệnh viện càng sớm càng tốt. MedlinePlus khuyên liên hệ nhân viên y tế ngay khi có sốt không rõ nguyên nhân kèm đau lưng, đau sau va đập hoặc ngã mạnh, đau lan xuống dưới đầu gối, hoặc mất kiểm soát tiểu tiện, đại tiện.
+Theo NHS, đây có thể là triệu chứng của một vấn đề nghiêm trọng ở lưng cần điều trị tại bệnh viện càng sớm càng tốt. MedlinePlus khuyên liên hệ nhân viên y tế ngay khi có những dấu hiệu như sốt không rõ nguyên nhân kèm đau lưng, đau sau va đập hoặc ngã mạnh, đau lan xuống dưới đầu gối, hoặc mất kiểm soát tiểu tiện, đại tiện.
+
+Cuối bài có đoạn trích tài liệu về những trường hợp tài liệu nói phương pháp không áp dụng. Với các dấu hiệu trong danh sách của NHS ở trên, NHS khuyên đến khoa cấp cứu hoặc gọi cấp cứu.
 
 ## Đau thần kinh tọa là gì?
 
@@ -18,13 +20,13 @@ Theo MedlinePlus, đau thần kinh tọa là đau, yếu, tê hoặc châm chíc
 
 Dây thần kinh tọa bắt đầu ở vùng thắt lưng và chạy dọc mặt sau mỗi chân (MedlinePlus); NHS mô tả nó chạy từ thắt lưng xuống tới bàn chân. Triệu chứng thường ở mông và mặt sau **một** bên chân, nhiều khi xuống tới bàn chân và ngón chân (NHS). NHS cũng lưu ý: nếu chỉ đau lưng thì nhiều khả năng đó không phải đau thần kinh tọa.
 
-NINDS xếp đau thần kinh tọa vào nhóm **đau do thần kinh** — loại đau do dây thần kinh bị tổn thương, thường được tả là bỏng rát, châm chích, nhói lan, hoặc như điện giật.
+NINDS nêu đau thần kinh tọa là một ví dụ của **đau do thần kinh** — loại đau do dây thần kinh bị tổn thương, thường được tả là bỏng rát, châm chích, nhói lan, hoặc như điện giật.
 
 ## Nguyên nhân và diễn tiến
 
 Theo NHS, nguyên nhân thường gặp nhất là **thoát vị đĩa đệm** — khi lớp mô mềm làm đệm giữa các xương cột sống lồi ra — và nó dễ xảy ra hơn khi lớn tuổi. Các nguyên nhân khác gồm hẹp ống sống (phần cột sống nơi dây thần kinh đi qua bị hẹp lại) và trượt đốt sống (một xương cột sống trượt khỏi vị trí). Vì đau thần kinh tọa là triệu chứng, MedlinePlus nhấn mạnh cần tìm ra và điều trị nguyên nhân bên dưới.
 
-Đau thần kinh tọa thường đỡ trong vài tuần đến vài tháng, nhưng có thể kéo dài hơn (NHS), và hay tái phát (MedlinePlus, NHS). MedlinePlus cũng ghi rằng nó có thể dẫn tới tê hoặc yếu chân vĩnh viễn.
+Đau thần kinh tọa thường đỡ trong vài tuần đến vài tháng, nhưng có thể kéo dài hơn (NHS), và hay tái phát (MedlinePlus). MedlinePlus cũng ghi rằng nó có thể dẫn tới tê hoặc yếu chân vĩnh viễn.
 
 ## Triệu chứng được tài liệu mô tả
 

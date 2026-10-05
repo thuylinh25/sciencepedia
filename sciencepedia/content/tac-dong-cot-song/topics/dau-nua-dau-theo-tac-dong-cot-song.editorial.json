@@ -14,7 +14,7 @@
     "en": "Migraine in the Vietnamese Spinal Impact method document: ten symptom groups and their key vertebrae — with sourced medical facts and emergency warning signs."
   },
   "keywords": "đau nửa đầu, migraine, tác động cột sống, đốt sống cổ, đau đầu",
-  "riskLevel": "normal",
+  "riskLevel": "high",
   "sources": [
     {
       "id": "s1",
@@ -52,8 +52,8 @@
   "safety": {
     "heading": { "vi": "⚠️ Khi nào cần cấp cứu", "en": "⚠️ When it is an emergency" },
     "body": {
-      "vi": "NHS khuyên gọi cấp cứu nếu bạn hoặc con bạn:\n\n- đau đầu **đột ngột và cực kỳ dữ dội**;\n- khó nói hoặc khó nhớ;\n- mất thị lực, nhìn mờ hoặc nhìn đôi;\n- sốt rất cao kèm các dấu hiệu của viêm màng não;\n- không cử động được, hoặc yếu tay, chân hay mặt ở một bên cơ thể.\n\nMedlinePlus cũng khuyên gọi cấp cứu khi đó là cơn đau đầu tệ nhất từng gặp, hoặc có rối loạn lời nói, thị lực, vận động, mất thăng bằng — nhất là khi các cơn migraine trước chưa từng như vậy. Đau đầu khởi phát đột ngột, như bùng nổ, cần được khám ngay vì có thể do vỡ mạch máu trong não. Đau đầu kèm sốt, cứng cổ, buồn nôn và nôn, hoặc đau đầu mới xuất hiện — nhất là ở người trên 50 tuổi — cũng cần đi khám ngay (MedlinePlus).",
-      "en": "The NHS advises calling emergency services if you or your child:\n\n- have a headache that came on **suddenly and is extremely painful**;\n- have problems speaking or remembering things;\n- lose your vision, or have blurred or double vision;\n- have a very high temperature and symptoms of meningitis;\n- cannot move, or have weakness in the arm, leg or face on one side of the body.\n\nMedlinePlus also advises calling emergency services for the worst headache of your life, or speech, vision or movement problems or loss of balance — especially if earlier migraines never caused them. A sudden, explosive headache needs medical attention right away because it may be due to a ruptured blood vessel in the brain. Headache with fever, stiff neck, nausea and vomiting, or newly starting headaches — especially over age 50 — also need prompt medical care (MedlinePlus)."
+      "vi": "NHS khuyên gọi cấp cứu nếu bạn hoặc con bạn:\n\n- đau đầu **đột ngột và cực kỳ dữ dội**;\n- khó nói hoặc khó nhớ;\n- mất thị lực, nhìn mờ hoặc nhìn đôi;\n- sốt rất cao kèm các dấu hiệu của viêm màng não;\n- không cử động được, hoặc yếu tay, chân hay mặt ở một bên cơ thể.\n\nMedlinePlus cũng khuyên gọi cấp cứu khi đó là cơn đau đầu tệ nhất từng gặp, hoặc có rối loạn lời nói, thị lực, vận động, mất thăng bằng — nhất là khi các cơn migraine trước chưa từng như vậy. Đau đầu khởi phát đột ngột, như bùng nổ, cần được khám ngay vì có thể do vỡ mạch máu trong não. Đau đầu kèm sốt, cứng cổ, buồn nôn và nôn, hoặc đau đầu mới xuất hiện — nhất là ở người trên 50 tuổi — cũng cần đi khám ngay (MedlinePlus). NHS khuyên hẹn khám bác sĩ gấp nếu một cơn migraine đã kéo dài hơn 72 giờ, hoặc triệu chứng tiền triệu kéo dài hơn 1 giờ mỗi lần.\n\nMột số mục trích bên dưới mang tên những triệu chứng như nói khó, nhìn hình đôi, liệt nhẹ chi trên. Theo NHS, khó nói, nhìn đôi, hoặc yếu tay, chân hay mặt ở một bên cơ thể là lý do gọi cấp cứu, như danh sách trên.",
+      "en": "The NHS advises calling emergency services if you or your child:\n\n- have a headache that came on **suddenly and is extremely painful**;\n- have problems speaking or remembering things;\n- lose your vision, or have blurred or double vision;\n- have a very high temperature and symptoms of meningitis;\n- cannot move, or have weakness in the arm, leg or face on one side of the body.\n\nMedlinePlus also advises calling emergency services for the worst headache of your life, or speech, vision or movement problems or loss of balance — especially if earlier migraines never caused them. A sudden, explosive headache needs medical attention right away because it may be due to a ruptured blood vessel in the brain. Headache with fever, stiff neck, nausea and vomiting, or newly starting headaches — especially over age 50 — also need medical help right away (MedlinePlus). The NHS advises an urgent GP appointment if a migraine attack has lasted longer than 72 hours, or if aura symptoms last longer than 1 hour at a time.\n\nSome of the quoted sections below are named after symptoms such as difficulty speaking, double vision or mild paralysis of the upper limb. According to the NHS, problems speaking, double vision, or weakness in the arm, leg or face on one side of the body are reasons to call emergency services, as in the list above."
     },
     "sources": ["s2", "s3", "s4"]
   },
@@ -85,6 +85,16 @@
       "pdfPage": 12,
       "vi": "Những triệu chứng kèm theo là buồn nôn, rối loạn tuần hoàn như mạch chậm, huyết áp có thể hơi cao, nhạy cảm với các mùi. Cơn đau thường kéo dài từ vài giờ đến 3 ngày, mất đi vào ban đêm hoặc để lại cảm giác ê ẩm ở trong đầu ngày hôm sau.",
       "en": "Accompanying symptoms are nausea, circulatory disturbances such as a slow pulse, possibly slightly raised blood pressure, and sensitivity to smells. The pain usually lasts from a few hours to 3 days, fading at night or leaving a dull ache in the head the next day."
+    },
+    {
+      "pdfPage": 12,
+      "vi": "Đau nửa đầu có tiền triệu: Đau đầu khởi phát bằng tiền triệu nghĩa là những triệu chứng thần kinh khu trú ở vỏ não rồi phát triển dần dần trong vòng 6 đến 20 phút, kéo dài dưới 60 phút. … Tiền triệu có thể là rối loạn thị lực nhìn hình đôi, lác mắt ở cùng bên đau; …",
+      "en": "Migraine with aura: the headache begins with an aura, meaning focal neurological symptoms of the cerebral cortex that develop gradually over 6 to 20 minutes and last less than 60 minutes. … The aura may be a visual disturbance with double vision, a squint on the same side as the pain; …"
+    },
+    {
+      "pdfPage": 13,
+      "vi": "… yếu nửa người, liệt nhẹ chi trên, mất ngôn ngữ, nói khó. Tiền triệu kéo dài dưới 60 phút và sẽ phục hồi hoàn toàn. Đây là dấu hiệu quan trọng để phân biệt với những bệnh nhân không phải đau nửa đầu có tiền triệu .",
+      "en": "… weakness of one side of the body, mild paralysis of the upper limb, loss of language, difficulty speaking. The aura lasts less than 60 minutes and resolves completely. This is an important sign for distinguishing them from patients who do not have migraine with aura."
     }
   ],
   "methodQuotes": [
@@ -196,7 +206,7 @@
     },
     {
       "id": "liet-nhe-chi-tren-va-noi-kho",
-      "label": { "vi": "Liệt nhẹ chi trên và nói khó", "en": "Mild weakness of the arm and difficulty speaking" },
+      "label": { "vi": "Liệt nhẹ chi trên và nói khó", "en": "Mild paralysis of the upper limb and difficulty speaking" },
       "quotes": [
         {
           "pdfPage": 14,

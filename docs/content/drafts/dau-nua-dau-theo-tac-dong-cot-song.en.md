@@ -10,7 +10,9 @@ The NHS advises calling emergency services if you or your child:
 - have a very high temperature and symptoms of meningitis;
 - cannot move, or have weakness in the arm, leg or face on one side of the body.
 
-MedlinePlus also advises calling emergency services for the worst headache of your life, or speech, vision or movement problems or loss of balance — especially if earlier migraines never caused them. A sudden, explosive headache needs medical attention right away because it may be due to a ruptured blood vessel in the brain. Headache with fever, stiff neck, nausea and vomiting, or newly starting headaches — especially over age 50 — also need prompt medical care (MedlinePlus).
+MedlinePlus also advises calling emergency services for the worst headache of your life, or speech, vision or movement problems or loss of balance — especially if earlier migraines never caused them. A sudden, explosive headache needs medical attention right away because it may be due to a ruptured blood vessel in the brain. Headache with fever, stiff neck, nausea and vomiting, or newly starting headaches — especially over age 50 — also need medical help right away (MedlinePlus). The NHS advises an urgent GP appointment if a migraine attack has lasted longer than 72 hours, or if aura symptoms last longer than 1 hour at a time.
+
+Some of the quoted sections below are named after symptoms such as difficulty speaking, double vision or mild paralysis of the upper limb. According to the NHS, problems speaking, double vision, or weakness in the arm, leg or face on one side of the body are reasons to call emergency services, as in the list above.
 
 ## What is migraine?
 
@@ -29,6 +31,10 @@ There is no specific test to prove that a headache is a migraine, and only a hea
 > **According to the document (p. 11, translated):** At first the pain is on one side of the head only, at the forehead or temple, rarely at the back of the head. Then it may gradually spread to the whole head or to the opposite half.
 
 > **According to the document (p. 11, translated):** Accompanying symptoms are nausea, circulatory disturbances such as a slow pulse, possibly slightly raised blood pressure, and sensitivity to smells. The pain usually lasts from a few hours to 3 days, fading at night or leaving a dull ache in the head the next day.
+
+> **According to the document (p. 11, translated):** Migraine with aura: the headache begins with an aura, meaning focal neurological symptoms of the cerebral cortex that develop gradually over 6 to 20 minutes and last less than 60 minutes. … The aura may be a visual disturbance with double vision, a squint on the same side as the pain; …
+
+> **According to the document (p. 12, translated):** … weakness of one side of the body, mild paralysis of the upper limb, loss of language, difficulty speaking. The aura lasts less than 60 minutes and resolves completely. This is an important sign for distinguishing them from patients who do not have migraine with aura.
 
 ## Content according to the Spinal Impact method
 
@@ -126,7 +132,7 @@ Vertebrae named by the document:
 
 [View on the Human Atlas →](/human-atlas?structure=seventh-cervical-vertebra#atlas-viewer)
 
-### Mild weakness of the arm and difficulty speaking
+### Mild paralysis of the upper limb and difficulty speaking
 
 > **According to the document (p. 13, translated):** Temperature is disturbed over the upper back. Related to disturbed circulatory and respiratory functions. The key vertebrae are C6, T1.
 

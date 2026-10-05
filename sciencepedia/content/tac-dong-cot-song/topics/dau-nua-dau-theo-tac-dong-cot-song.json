@@ -6,7 +6,7 @@
     "vi": "Đau nửa đầu theo phương pháp Tác động cột sống",
     "en": "Migraine in the Spinal Impact method"
   },
-  "riskLevel": "normal",
+  "riskLevel": "high",
   "source": {
     "docId": "pp-tdcs-vn",
     "part": "Phần I",
@@ -423,7 +423,7 @@
       "id": "liet-nhe-chi-tren-va-noi-kho",
       "label": {
         "vi": "Liệt nhẹ chi trên và nói khó",
-        "en": "Mild weakness of the arm and difficulty speaking"
+        "en": "Mild paralysis of the upper limb and difficulty speaking"
       },
       "heading": "10. Liệt nhẹ chi trên và nói khó",
       "ref": {

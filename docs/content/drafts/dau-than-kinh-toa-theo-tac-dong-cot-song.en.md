@@ -10,7 +10,9 @@ The NHS advises going to A&E or calling emergency services if you:
 - find it hard to start peeing, cannot pee or cannot control when you pee — and this is not normal for you;
 - do not notice when you need to poo or cannot control it — and this is not normal for you.
 
-The NHS says these could be symptoms of a serious back problem that needs hospital treatment as soon as possible. MedlinePlus advises contacting a health professional right away for unexplained fever with back pain, back pain after a severe blow or fall, pain travelling below the knee, or loss of control of urine or stool.
+The NHS says these could be symptoms of a serious back problem that needs hospital treatment as soon as possible. MedlinePlus advises contacting a health professional right away for signs such as unexplained fever with back pain, back pain after a severe blow or fall, pain travelling below the knee, or loss of control of urine or stool.
+
+Near the end of this article is a quoted passage on cases where the document says the method does not apply. For the signs in the NHS list above, the NHS advises going to A&E or calling emergency services.
 
 ## What is sciatica?
 
@@ -24,11 +26,11 @@ NINDS lists sciatica as an example of **neuropathic pain** — pain caused by ne
 
 According to the NHS, the most common cause is a **slipped disc** — when a soft cushion of tissue between the bones of the spine pushes out — and it becomes more likely with age. Other causes include spinal stenosis (narrowing of the part of the spine where nerves pass through) and spondylolisthesis (a spinal bone slipping out of position). Because sciatica is a symptom, MedlinePlus stresses that the underlying cause should be identified and treated.
 
-Sciatica usually improves within a few weeks to a few months but can last longer (NHS), and it commonly returns (MedlinePlus, NHS). MedlinePlus also notes that it can lead to permanent numbness or weakness of the leg.
+Sciatica usually improves within a few weeks to a few months but can last longer (NHS), and it commonly returns (MedlinePlus). MedlinePlus also notes that it can lead to permanent numbness or weakness of the leg.
 
 ## Symptoms described in the document
 
-> **According to the document (p. 6, translated):** Sciatic nerve pain usually shows the following restriction signs: 1. painful points (spelled "Walleix" in the original); 2. restricted forward bending while standing; 3. restricted squatting; 4. restricted leg raising; 5. restricted spinal extension; 6. restricted fast walking.
+> **According to the document (p. 6, translated):** Sciatic nerve pain usually shows the following restriction signs: 1. the painful-point sign (spelled "Walleix" in the original); 2. restricted forward bending while standing; 3. restricted "ngồi sớm" (as printed; the document's own heading for this sign on p. 8 reads "ngồi xổm", squatting); 4. restricted leg raising; 5. restricted spinal stretching; 6. restricted fast walking.
 
 ## Content according to the Spinal Impact method
 
@@ -75,7 +77,7 @@ Compiled from the sections above. Roles are the document's own terms (key point,
 
 ## Where the document says the method does not apply
 
-> **According to the document (p. 9, translated):** Inability to pull the bell-rope or push with the leg is due to cauda equina inflammation, or spinal cord and meningeal tumours… none of these are treated with Spinal Impact (medication is required).
+> **According to the document (p. 9, translated):** The "bell-pulling" phenomenon or being unable to push with the foot is due to inflammation of the cauda equina, or spinal cord tumours and spinal meningeal tumours… none of these are treated with Spinal Impact (medication is required).
 
 ## Source document
 

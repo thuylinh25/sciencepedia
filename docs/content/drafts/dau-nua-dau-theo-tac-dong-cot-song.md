@@ -10,7 +10,9 @@ NHS khuyên gọi cấp cứu nếu bạn hoặc con bạn:
 - sốt rất cao kèm các dấu hiệu của viêm màng não;
 - không cử động được, hoặc yếu tay, chân hay mặt ở một bên cơ thể.
 
-MedlinePlus cũng khuyên gọi cấp cứu khi đó là cơn đau đầu tệ nhất từng gặp, hoặc có rối loạn lời nói, thị lực, vận động, mất thăng bằng — nhất là khi các cơn migraine trước chưa từng như vậy. Đau đầu khởi phát đột ngột, như bùng nổ, cần được khám ngay vì có thể do vỡ mạch máu trong não. Đau đầu kèm sốt, cứng cổ, buồn nôn và nôn, hoặc đau đầu mới xuất hiện — nhất là ở người trên 50 tuổi — cũng cần đi khám ngay (MedlinePlus).
+MedlinePlus cũng khuyên gọi cấp cứu khi đó là cơn đau đầu tệ nhất từng gặp, hoặc có rối loạn lời nói, thị lực, vận động, mất thăng bằng — nhất là khi các cơn migraine trước chưa từng như vậy. Đau đầu khởi phát đột ngột, như bùng nổ, cần được khám ngay vì có thể do vỡ mạch máu trong não. Đau đầu kèm sốt, cứng cổ, buồn nôn và nôn, hoặc đau đầu mới xuất hiện — nhất là ở người trên 50 tuổi — cũng cần đi khám ngay (MedlinePlus). NHS khuyên hẹn khám bác sĩ gấp nếu một cơn migraine đã kéo dài hơn 72 giờ, hoặc triệu chứng tiền triệu kéo dài hơn 1 giờ mỗi lần.
+
+Một số mục trích bên dưới mang tên những triệu chứng như nói khó, nhìn hình đôi, liệt nhẹ chi trên. Theo NHS, khó nói, nhìn đôi, hoặc yếu tay, chân hay mặt ở một bên cơ thể là lý do gọi cấp cứu, như danh sách trên.
 
 ## Đau nửa đầu (migraine) là gì?
 
@@ -29,6 +31,10 @@ Không có xét nghiệm đặc hiệu nào chứng minh một cơn đau đầu 
 > **Theo tài liệu (tr. 11):** Lúc đầu chỉ đau ở một bên đầu, vùng trán, thái dương, ít khi ở vùng chẩm. Rồi dần dần có thể lan ra cả đầu hoặc đau bên nửa đầu đối diện.
 
 > **Theo tài liệu (tr. 11):** Những triệu chứng kèm theo là buồn nôn, rối loạn tuần hoàn như mạch chậm, huyết áp có thể hơi cao, nhạy cảm với các mùi. Cơn đau thường kéo dài từ vài giờ đến 3 ngày, mất đi vào ban đêm hoặc để lại cảm giác ê ẩm ở trong đầu ngày hôm sau.
+
+> **Theo tài liệu (tr. 11):** Đau nửa đầu có tiền triệu: Đau đầu khởi phát bằng tiền triệu nghĩa là những triệu chứng thần kinh khu trú ở vỏ não rồi phát triển dần dần trong vòng 6 đến 20 phút, kéo dài dưới 60 phút. … Tiền triệu có thể là rối loạn thị lực nhìn hình đôi, lác mắt ở cùng bên đau; …
+
+> **Theo tài liệu (tr. 12):** … yếu nửa người, liệt nhẹ chi trên, mất ngôn ngữ, nói khó. Tiền triệu kéo dài dưới 60 phút và sẽ phục hồi hoàn toàn. Đây là dấu hiệu quan trọng để phân biệt với những bệnh nhân không phải đau nửa đầu có tiền triệu .
 
 ## Nội dung theo phương pháp Tác động cột sống
 

@@ -7,19 +7,21 @@ The NHS advises calling emergency services or going to A&E if back pain comes wi
 - pain, tingling, weakness or numbness in **both legs**;
 - loss of feeling around the genitals or anus;
 - changes in your bladder or bowels, such as difficulty peeing, or peeing or pooing yourself;
+- changes in how your penis or vagina feels during sex, not being able to get or keep an erection, or not being able to orgasm;
+- chest pain;
 - pain that started after a serious accident.
 
-MedlinePlus advises contacting a health professional right away for back pain with unexplained fever, a history of cancer, pain travelling below the knee, pain that is worse lying down or wakes you at night, weakness or numbness in the buttocks, thigh, leg or pelvis, or difficulty walking or keeping your balance — and also when an episode has lasted longer than 4 weeks.
+MedlinePlus advises contacting a health professional right away for back pain with signs such as unexplained fever, a history of cancer, pain travelling below the knee, pain that is worse lying down or wakes you at night, weakness or numbness in the buttocks, thigh, leg or pelvis, or difficulty walking or keeping your balance. MedlinePlus also advises contacting a health professional if an episode has lasted longer than 4 weeks.
 
-According to the NHS, back pain is very rarely a sign of a serious problem such as a broken bone, cancer or an infection — which is exactly why these signs need a medical examination rather than self-care.
+According to the NHS, back pain is very rarely a sign of a serious problem such as a broken bone, cancer or an infection.
 
 ## What is acute back pain?
 
-According to MedlinePlus (U.S. National Library of Medicine), low back pain is pain felt in the lower back, possibly with stiffness, reduced movement and difficulty standing straight. **Acute back pain** lasts from a few days to a few weeks.
+According to MedlinePlus (U.S. National Library of Medicine), low back pain is pain felt in the lower back, possibly with stiffness, reduced movement and difficulty standing straight. **Acute back pain** can last from a few days to a few weeks.
 
-It usually starts just after lifting something heavy, moving suddenly, sitting in one position for a long time, or an injury or accident. MedlinePlus says acute low back pain is most often caused by a sudden injury to the muscles and ligaments that support the back — muscle spasm, or a strain or tear of muscles and ligaments. The NHS also names a pulled muscle (strain) as a common cause.
+It usually starts just after lifting something heavy, moving suddenly, sitting in one position for a long time, or an injury or accident. MedlinePlus says acute low back pain is most often caused by a sudden injury to the muscles and ligaments that support the back; the pain may be caused by muscle spasms or by a strain or tear in the muscles and ligaments. The NHS also names a pulled muscle (strain) as a common cause.
 
-Back pain usually improves within a few weeks (NHS); MedlinePlus says most people improve or recover within 4 to 6 weeks, often sooner. MedlinePlus also notes that bed rest is not recommended.
+Back pain usually improves within a few weeks but can sometimes last longer or keep coming back (NHS); MedlinePlus says most people improve or recover within 4 to 6 weeks, often sooner. MedlinePlus also notes that bed rest is not recommended.
 
 ## Acute versus chronic
 

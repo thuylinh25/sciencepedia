@@ -28,7 +28,7 @@ sources:
       - "Most people with back pain improve or recover within 4 to 6 weeks and often much sooner than that."
       - "A common misbelief about back pain is that you need to rest and avoid activity for a long time. In fact, bed rest is not recommended."
       - "Contact your provider right away if you have: Back pain after a severe blow or fall; Burning with urination or blood in your urine; A history of cancer; Loss of control over urine or stool (incontinence); Pain traveling down your legs below the knee; Pain that is worse when you lie down; Pain that wakes you up at night; Redness or swelling on the back or spine; Severe pain that does not allow you to get comfortable; Unexplained fever with back pain; Weakness or numbness in your buttocks, thigh, leg, or pelvis; Difficulty walking or maintaining your balance"
-      - "This episode of back pain has lasted longer than 4 weeks"
+      - "Also contact your provider if: … This episode of back pain has lasted longer than 4 weeks"  # mục "Also contact", KHÔNG thuộc "right away"
   - id: s2
     tier: 2
     title: "Back pain"
@@ -39,7 +39,7 @@ sources:
       - "Back pain, particularly lower back pain, is very common. It usually improves within a few weeks but can sometimes last longer or keep coming back."
       - "A common cause of back pain is an injury like a pulled muscle ( strain )."
       - "Very rarely, back pain can be a sign of a serious problem such as a broken bone, cancer or an infection."
-      - "Immediate action required: Call 999 or go to A&E if: pain, tingling, weakness or numbness in both legs; a loss of feeling around your genitals or anus; changes in your bladder or bowels, such as difficulty peeing, or peeing or pooing yourself; … it started after a serious accident, such as a car accident"
+      - "Immediate action required: Call 999 or go to A&E if: pain, tingling, weakness or numbness in both legs; a loss of feeling around your genitals or anus; changes in your bladder or bowels, such as difficulty peeing, or peeing or pooing yourself; changes in how your penis or vagina feels during sex, not being able to get or keep an erection, or not being able to orgasm; chest pain; it started after a serious accident, such as a car accident"  # đủ danh sách, science-editor đọc lại 2026-10-05
       - "Urgent advice: Ask for an urgent GP appointment or get help from 111 if: you feel hot, cold, shivery or generally unwell; it's severe pain that starts suddenly, or it's getting worse quickly"
   - id: s3
     tier: 2
@@ -57,8 +57,8 @@ key_facts:
     sources: [s1, s2]
   - claim: "Đau lưng cấp thường do chấn thương đột ngột ở cơ và dây chằng nâng đỡ lưng (co thắt, căng, rách)."
     sources: [s1, s2]
-  - claim: "Nằm nghỉ lâu trên giường không được khuyến cáo."
-    sources: [s1, s2]
+  - claim: "Nằm nghỉ trên giường không được khuyến cáo."
+    sources: [s1]
   - claim: "Dấu hiệu cần đi khám ngay / cấp cứu: mất kiểm soát tiểu tiện hoặc đại tiện, mất cảm giác vùng sinh dục–hậu môn, đau/tê/yếu hai chân, sốt không rõ nguyên nhân kèm đau lưng, đau sau chấn thương nặng."
     sources: [s1, s2]
   - claim: "Đau kéo dài hơn ba tháng (hoặc quá thời gian lành dự kiến) gọi là đau mạn tính; đau cấp có thể kéo dài thành mạn tính."

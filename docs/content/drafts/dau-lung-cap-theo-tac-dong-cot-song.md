@@ -7,19 +7,21 @@ NHS khuyên gọi cấp cứu hoặc đến khoa cấp cứu nếu đau lưng đ
 - đau, châm chích, yếu hoặc tê ở **cả hai chân**;
 - mất cảm giác quanh vùng sinh dục hoặc hậu môn;
 - thay đổi khi đi tiểu hoặc đại tiện, như khó tiểu, hoặc tiểu, đại tiện không tự chủ;
+- thay đổi cảm giác ở dương vật hoặc âm đạo khi quan hệ tình dục, không cương được hoặc không giữ được cương cứng, hoặc không đạt cực khoái;
+- đau ngực;
 - đau bắt đầu sau một tai nạn nghiêm trọng.
 
-MedlinePlus khuyên liên hệ nhân viên y tế ngay nếu đau lưng kèm sốt không rõ nguyên nhân, có tiền sử ung thư, đau lan xuống dưới đầu gối, đau nặng hơn khi nằm hoặc làm thức giấc ban đêm, yếu hoặc tê ở mông, đùi, chân hay vùng chậu, đi lại hoặc giữ thăng bằng khó khăn — và cả khi đợt đau đã kéo dài hơn 4 tuần.
+MedlinePlus khuyên liên hệ nhân viên y tế ngay khi đau lưng đi kèm những dấu hiệu như sốt không rõ nguyên nhân, tiền sử ung thư, đau lan xuống dưới đầu gối, đau nặng hơn khi nằm hoặc làm thức giấc ban đêm, yếu hoặc tê ở mông, đùi, chân hay vùng chậu, đi lại hoặc giữ thăng bằng khó khăn. MedlinePlus cũng khuyên liên hệ nhân viên y tế nếu đợt đau đã kéo dài hơn 4 tuần.
 
-Theo NHS, rất hiếm khi đau lưng là dấu hiệu của một vấn đề nghiêm trọng như gãy xương, ung thư hay nhiễm trùng — nhưng chính vì thế các dấu hiệu trên cần được khám, không tự xử lý.
+Theo NHS, rất hiếm khi đau lưng là dấu hiệu của một vấn đề nghiêm trọng như gãy xương, ung thư hay nhiễm trùng.
 
 ## Đau lưng cấp là gì?
 
-Theo MedlinePlus (Thư viện Y khoa Quốc gia Hoa Kỳ), đau thắt lưng là đau ở vùng lưng dưới, có thể kèm cứng lưng, giảm cử động và khó đứng thẳng. **Đau lưng cấp** kéo dài từ vài ngày đến vài tuần.
+Theo MedlinePlus (Thư viện Y khoa Quốc gia Hoa Kỳ), đau thắt lưng là đau ở vùng lưng dưới, có thể kèm cứng lưng, giảm cử động và khó đứng thẳng. **Đau lưng cấp** có thể kéo dài từ vài ngày đến vài tuần.
 
-Cơn đau thường xuất hiện ngay sau khi nâng vật nặng, cử động đột ngột, ngồi lâu một tư thế, hoặc sau chấn thương, tai nạn. MedlinePlus cho biết nguyên nhân hay gặp nhất của đau thắt lưng cấp là tổn thương đột ngột ở cơ và dây chằng nâng đỡ lưng — co thắt cơ, căng hoặc rách cơ, dây chằng. NHS cũng nêu căng cơ là một nguyên nhân thường gặp.
+Cơn đau thường xuất hiện ngay sau khi nâng vật nặng, cử động đột ngột, ngồi lâu một tư thế, hoặc sau chấn thương, tai nạn. MedlinePlus cho biết nguyên nhân hay gặp nhất của đau thắt lưng cấp là tổn thương đột ngột ở cơ và dây chằng nâng đỡ lưng; cơn đau có thể do co thắt cơ, hoặc do căng, rách cơ và dây chằng. NHS cũng nêu căng cơ là một nguyên nhân thường gặp.
 
-Đau lưng thường đỡ trong vài tuần (NHS); MedlinePlus ghi phần lớn người bệnh đỡ hoặc hồi phục trong 4 đến 6 tuần, nhiều khi sớm hơn. MedlinePlus cũng lưu ý rằng nằm nghỉ lâu trên giường không được khuyến cáo.
+Đau lưng thường đỡ trong vài tuần, nhưng đôi khi kéo dài hơn hoặc tái đi tái lại (NHS); MedlinePlus ghi phần lớn người bệnh đỡ hoặc hồi phục trong 4 đến 6 tuần, nhiều khi sớm hơn. MedlinePlus cũng lưu ý rằng nằm nghỉ trên giường không được khuyến cáo.
 
 ## Cấp tính và mạn tính khác nhau thế nào?
 

@@ -66,5 +66,6 @@ key_facts:
   - claim: "Là một ví dụ của đau do thần kinh (neuropathic pain)."
     sources: [s3]
 conflicts: []
+# science-editor 2026-10-05: NHS Sciatica KHÔNG nói về tái phát — "hay tái phát" chỉ có nguồn MedlinePlus.
 gaps:
   - "Thành phần rễ của dây thần kinh tọa: không có trong nguồn đã đọc — không viết như kiến thức chung."
