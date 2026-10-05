@@ -22,11 +22,11 @@ không được phép quyết. Đối chiếu với ảnh trang, ghi quyết đ�
 
 ## dau-than-kinh-toa (tr. 7–11)
 
-- [cach-xac-dinh-dau-hieu-dung-cui] tr.8 Trọng điểm thường ở: "vùng T2 T,3T7 T8" — "T" đứng riêng giữa danh sách đốt — trái, hay mã ngực thiếu số?
+- ✔ D-5: [cach-xac-dinh-dau-hieu-dung-cui] tr.8 Trọng điểm thường ở: "vùng T2 T,3T7 T8" — "T" đứng riêng giữa danh sách đốt — trái, hay mã ngực thiếu số? → Đọc là T2, T3, T7, T8 — vai trò primary, confidence exact sau duyệt (chữ "T" lẻ là lỗi in, không phải bên trái).
 - [mention] tr.7 L5, S1, L4 — vai trò trống: "Đau thần kinh toạ , theo y học hiện đại là đau dây thần kinh hông. Đau dây thần kinh hông là một hội chứng rất phổ biến,"
 - [mention] tr.8 S5 — vai trò trống: "Đo từ S5 ngang ra đến cánh chậu (điểm ở hông)"
 - [mention] tr.10 S1 — vai trò trống: "Tư thế bệnh nhân: Bệnh nhân đứng thẳng, hai chân rộng bằng hai vai. Dùng thước dây đo từ S1 lên 10cm. Giữ chặt đầu dây p"
-- [mention] tr.10 L4, L5, S1, S2 — vai trò trống: "Người bị đau dây thần kinh hông hay đi trong tư thế giảm đau vẹo sang một bên. Không chữa ngay ở L4, L5 và S1,S2 được mà"
+- ✔ D-6: [mention] tr.10 L4, L5, S1, S2 — vai trò trống: "Người bị đau dây thần kinh hông hay đi trong tư thế giảm đau vẹo sang một bên. Không chữa ngay ở L4, L5 và S1,S2 được mà" → L4, L5, S1, S2 vai trò related — tài liệu chỉ chữa ở đây ở giai đoạn cuối, không phải trọng điểm ban đầu. Bài viết giữ nguyên ý "giai đoạn cuối" trong phần trích.
 
 ## dau-nua-dau (tr. 12–14)
 

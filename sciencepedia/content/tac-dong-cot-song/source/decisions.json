@@ -40,6 +40,26 @@
       "resolution": "L3 vai trò caution (thận trọng khi tác động), side = right — dòng này giải thích câu \"Thận trọng khi chữa T6; T10; và L3\" ngay trên, không phải đốt tác động.",
       "decidedBy": "chủ sản phẩm",
       "decidedAt": "2026-10-05"
+    },
+    {
+      "id": "D-5",
+      "section": "dau-than-kinh-toa",
+      "pdfPage": 8,
+      "raw": "Trọng điểm thường ở vùng T2 T,3T7 T8.",
+      "match": "\"vùng T2 T,3T7 T8\"",
+      "resolution": "Đọc là T2, T3, T7, T8 — vai trò primary, confidence exact sau duyệt (chữ \"T\" lẻ là lỗi in, không phải bên trái).",
+      "decidedBy": "chủ sản phẩm",
+      "decidedAt": "2026-10-05"
+    },
+    {
+      "id": "D-6",
+      "section": "dau-than-kinh-toa",
+      "pdfPage": 10,
+      "raw": "Không chữa ngay ở L4, L5 và S1,S2 được mà phải áp dụng phương thức co cơ tương ứng để chữa từ trên lưng trên xuống. Chữa ở L4.5 và S1.2 là giai đoạn cuối cùng.",
+      "match": "Không chữa ngay ở L4, L5 và S1,S2",
+      "resolution": "L4, L5, S1, S2 vai trò related — tài liệu chỉ chữa ở đây ở giai đoạn cuối, không phải trọng điểm ban đầu. Bài viết giữ nguyên ý \"giai đoạn cuối\" trong phần trích.",
+      "decidedBy": "chủ sản phẩm",
+      "decidedAt": "2026-10-05"
     }
   ]
 }
