@@ -121,7 +121,8 @@ Gate accuracy **không có ngoại lệ**.
 - **Dấu duyệt mục từ chỉ đến từ `glossary.json`, và tự gỡ khi nội dung đổi.** `GlossaryTerm.reviewedById`/`reviewedAt` trỏ tài khoản tổ chức như bài viết; `/admin/glossary` không đặt được chúng, chỉ gỡ khi tên thuật ngữ hoặc định nghĩa đổi. Mục không có bằng chứng duyệt thì để trống, không suy từ `createdAt` — lý do: `docs/content-rules.md`, mục "Byline người duyệt".
 
 ## Merge PR
-- Được yêu cầu merge thì kiểm trước: trạng thái mergeable, conflict, review bắt buộc, check/status trên head. Merge bằng merge commit, khoá `expectedHeadSha`.
+- **Tự merge PR vào `main`, không chờ chủ sản phẩm bảo.** PR của nhánh đang làm có rồi thì merge luôn khi đạt, kể cả PR do giao diện Claude Code tạo.
+- Trước khi merge kiểm: trạng thái mergeable, conflict, review bắt buộc, check/status trên head (check đang chạy thì chờ xong). Merge bằng merge commit, khoá `expectedHeadSha`.
 - **Không bao giờ bypass** branch protection, review requirement hay conflict (không admin-merge, không tắt rule, không tự approve). Gặp chặn thì dừng và báo **chính xác** thứ đang chặn — tên rule/check, review còn thiếu, file conflict — chủ sản phẩm chốt 2026-10-05.
 
 ## Tài liệu
