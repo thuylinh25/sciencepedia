@@ -1,0 +1,50 @@
+{
+  "docId": "pp-tdcs-vn",
+  "title": "Phương pháp Tác động Cột sống Việt Nam",
+  "subtitle": "Một số bệnh thường gặp trong cuộc sống và hướng điều trị của phương pháp Tác động cột sống",
+  "publisher": "Chi hội Tác động cột sống Hà Nội — Hội Đông y thành phố Hà Nội",
+  "website": "tacdongcotsong.org",
+  "rights": "Chủ sản phẩm xác nhận 2026-10-05: Sciencepedia có quyền tái bản và dịch sang tiếng Anh. Logo không thuộc phạm vi đã xác nhận — không dùng.",
+  "file": {
+    "name": "PHƯƠNG PHÁP TÁC ĐỘNG CỘT SỐNG.pdf",
+    "sha256": "5e004812a81552a4900a026ff904180e0967116700b1340f929e97c3c88038f1",
+    "bytes": 25290527,
+    "pages": 43,
+    "scanner": "RICOH MP C8003, 2026-09-16",
+    "textLayer": false,
+    "committed": false,
+    "why": "25 MB và là bản scan của tài liệu bên thứ ba — repo giữ bản chép từng trang + mã băm để đối chiếu, không giữ PDF."
+  },
+  "pageMapping": "bookPage = pdfPage − 1 (trang 1 là bìa, không đánh số). Trang 42–43 mang số viết tay 41–42.",
+  "transcription": {
+    "method": "Chép tay bằng mô hình thị giác từ ảnh trang 1500 px (nửa trên + nửa dưới), một lượt, 2026-10-05. Máy không có OCR (tesseract/poppler) — chủ ý không thêm dependency cho 43 trang.",
+    "policy": "Nguyên văn, kể cả lỗi chính tả của bản gốc (\"triệu trứng\", \"viên phế quản\", \"Đối sống\", \"tám giác\", \"kiên chứng\"…). Không sửa trong pages/; chỗ nào bài viết cần sửa thì ghi vào corrections.json kèm lý do.",
+    "status": "single-pass — CHƯA có lượt chép thứ hai độc lập. Mọi trường đốt sống phải được người đối chiếu với ảnh trang trước khi topic chuyển review.mapping = passed."
+  },
+  "sections": [
+    { "id": "dau-lung-cap", "part": "Phần I", "heading": "I. ĐAU LƯNG CẤP", "pdfPages": [2, 3] },
+    { "id": "dau-lung-man-tinh", "part": "Phần I", "heading": "II. ĐAU LƯNG MÃN TÍNH", "pdfPages": [4, 6] },
+    { "id": "dau-than-kinh-toa", "part": "Phần I", "heading": "III. ĐAU THẦN KINH TOẠ", "pdfPages": [7, 11] },
+    { "id": "dau-nua-dau", "part": "Phần I", "heading": "IV. ĐAU NỬA ĐẦU (MIGRAINE)", "pdfPages": [12, 14] },
+    { "id": "huyet-ap-thap", "part": "Phần I", "heading": "V. BỆNH HUYẾT ÁP THẤP", "pdfPages": [15, 16] },
+    { "id": "thieu-nang-tuan-hoan-nao", "part": "Phần I", "heading": "VI. THIỂU NĂNG TUẦN HOÀN NÃO", "pdfPages": [17, 18] },
+    { "id": "huyet-ap-cao", "part": "Phần I", "heading": "VII. BỆNH HUYẾT ÁP CAO", "pdfPages": [19, 19], "risk": "high" },
+    { "id": "dau-dau", "part": "Phần II", "heading": "CÁC BỆNH VỀ ĐAU ĐẦU", "pdfPages": [20, 32], "risk": "high", "riskWhy": "Có mục trẻ em co giật (VI), động kinh, tăng huyết áp, sốt rét (X.2)." },
+    { "id": "hen-suyen-ho-hap", "part": "Phần 2", "heading": "CÁC BỆNH VỀ HÔ HẤP", "pdfPages": [33, 34], "risk": "high" },
+    { "id": "sot", "part": "Phần 3", "heading": "I- CÁC BỆNH LIÊN QUAN ĐẾN SỐT", "pdfPages": [35, 38], "risk": "high" },
+    { "id": "nhieu-mo-hoi-so-gio", "part": "Phần 3", "heading": "II- NHIỀU MỒ HÔI, SỢ GIÓ", "pdfPages": [39, 39] },
+    { "id": "benh-do-mo-hoi", "part": "Phần 3", "heading": "III-BỆNH ĐỔ MỒ HÔI", "pdfPages": [40, 40] },
+    { "id": "mat-ngu", "part": "Phần 3", "heading": "IV- BỆNH MẤT NGỦ", "pdfPages": [41, 41] },
+    { "id": "viem-dai-trang-man-tinh", "part": "D", "heading": "D.VIÊM ĐẠI TRÀNG MÃN TÍNH", "pdfPages": [42, 43] }
+  ],
+  "anomalies": [
+    { "pdfPage": 5, "what": "Đau lưng mạn tính: mục \"1. Đau lưng do gai đôi\" đứng sau mục 3 — theo mạch là mục 4. Số in sai trong bản gốc." },
+    { "pdfPage": 17, "what": "Thiểu năng tuần hoàn não, mục 6/ Lảo đảo: T1 có ở cả \"chủ yếu\" lẫn \"liên quan\". Mục 9 (T1) và mục 13 trang 18 (T1, T3) cũng thế. spine-extract liệt kê đủ. Giữ cả hai vai; người duyệt quyết." },
+    { "pdfPage": 19, "what": "Huyết áp cao: \"Tối đa > 140 và Tối thiểu > 90\" — định nghĩa của tài liệu, KHÁC định nghĩa hiện hành (\"hoặc\"). Trích nguyên văn dưới nhãn tài liệu; khung cảnh báo nêu định nghĩa có nguồn." },
+    { "pdfPage": 19, "what": "\"Tập trung vào C7; T1; T2; T3 bên phải\" — \"bên phải\" áp cho cả bốn mã hay chỉ T3: không rõ." },
+    { "pdfPage": 30, "what": "Hai danh sách \"tránh\" lệch nhau: trang 19 tránh C1–C3, trang 30 tránh C1, C2 (cùng là huyết áp cao)." },
+    { "pdfPage": 35, "what": "Danh sách 15 thể sốt ở trang 35 khác thứ tự và tên với phần chi tiết trang 36–38 (vd. mục 3 là \"Sốt thương hàn\" ở danh sách nhưng là \"Sốt rét cơn\" ở chi tiết; thương hàn là mục 15)." },
+    { "pdfPage": 41, "what": "Mất ngủ, mục 7/ chỉ có tiêu đề; trang kế là mục D (viêm đại tràng). Thiếu nội dung — không suy đoán." },
+    { "pdfPage": 42, "what": "Trang 42–43 khác kiểu chữ, header \"Một sốt bệnh thường gặp\", footer có thêm \"Hội đông y thành phố Hà Nội\". Có mục D nhưng không có A–C: tập này ghép từ nhiều tài liệu." }
+  ]
+}

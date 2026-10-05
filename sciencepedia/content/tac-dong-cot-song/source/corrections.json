@@ -1,0 +1,4 @@
+{
+  "policy": "pages/*.md là bản chép nguyên văn và không bao giờ bị sửa để 'cho đẹp'. Khi bài viết cần dùng dạng đã sửa (lỗi chính tả rõ ràng của bản gốc, hoặc lỗi chép), ghi một mục ở đây: trang, nguyên văn, dạng dùng, lý do, ai/khi nào. Lỗi CHÉP (bản chép lệch ảnh trang) thì sửa thẳng pages/ VÀ ghi ở đây với kind = \"transcription\".",
+  "entries": []
+}

@@ -809,3 +809,48 @@ rồi science-editor vẫn sửa 31: tiếng Anh phỏng sát câu sách (~25 m�
 kê), rơi từ hạn định ("sometimes", "largely", "main" — nay máy cảnh báo), nới chủ thể
 ("đầu" thành "sọ"), đặt sai trường, và thuật ngữ Việt (đại tràng → kết tràng; vòm sọ là
 calvaria, không phải sọ não). Viết lại một trường đã duyệt thì gỡ dấu duyệt của mục đó.
+
+---
+
+## Tác động cột sống: tư liệu được lưu, không phải kết luận của Sciencepedia
+
+Chốt 2026-10-05 (chủ sản phẩm), khi nhập tài liệu "Phương pháp Tác động Cột sống Việt Nam"
+(Chi hội Tác động cột sống Hà Nội — Hội Đông y TP Hà Nội). Dữ liệu ở
+`sciencepedia/content/tac-dong-cot-song/`, máy ở `src/lib/spine/` + `scripts/spine-extract.ts`.
+
+**Hai giọng, không trộn.** Lời tài liệu là trích nguyên văn có trang, luôn dưới nhãn "Theo
+tài liệu…". Kiến thức chung (giải phẫu, bệnh là gì, khi nào đi khám, khung cảnh báo) do
+Sciencepedia viết từ nguồn bậc 1–2, và gate `check-publish.ts` tính trên phần này — không
+nới gate. Tài liệu vào `Source` ở bậc yếu nên không bao giờ tự đưa bài qua gate. Lý do: tài
+liệu của một hội nghề nghiệp là tư liệu về một phương pháp, không phải bằng chứng y khoa;
+gộp hai giọng là biến khẳng định của trường phái ("tiêu diệt vi trùng sốt rét", "đạt kết
+quả khá") thành kết luận của bách khoa.
+
+**Chủ đề rủi ro cao giữ lại, kèm khung cảnh báo riêng.** Huyết áp cao, sốt (trẻ em co giật,
+sốt rét, thương hàn), hen, đau đầu (có mục co giật, động kinh). Khung viết cho từng bệnh,
+có nguồn, đặt TRƯỚC phần trích. Khung nêu dữ kiện có nguồn, không viết "tài liệu sai" —
+câu ấy cũng cần nguồn. Tài liệu định nghĩa huyết áp cao bằng "và" (> 140 **và** > 90): trích
+nguyên văn dưới nhãn tài liệu; định nghĩa hiện hành đi trong khung, có nguồn.
+
+**Không có lời mời tự làm.** Không "tự thực hiện", "làm theo các bước". Bài mô tả tài liệu
+xác định trọng điểm thế nào, không chép từng bước lực tay.
+
+**Nơi bệnh nằm không phải nơi tác động.** "Lao đốt sống thường hay bị ở T7, T8" là vị trí
+bệnh. Máy chỉ gán vai (trọng điểm / liên quan / thận trọng / tránh) khi có từ khoá vai rõ
+ràng; mã còn lại vào `mentions` với vai trống, người duyệt quyết. Ngược lại, "tránh" và
+"thận trọng" là dữ liệu an toàn: bắt thừa rồi gắn cờ còn hơn sót — bản đầu của bộ trích
+đã để lọt "không được chữa vùng chẩm và từ C1; 2; 3", và test giờ khoá đúng câu ấy.
+
+**Ký hiệu.** "T"/"F" đứng riêng là trái/phải (chủ sản phẩm xác nhận); chỉ chữ + số mới là
+đốt. "D11" là T11 (ký hiệu dorsal). "Các đốt sống cổ", "vùng S" là vùng — không bung thành
+C1–C7 hay S1–S5, vì tài liệu không nói đốt nào. "Tam giác cơ 1–8" và "tiết cơ ngang T8" là
+khái niệm riêng của phương pháp, không bao giờ thành đốt sống.
+
+**Bản chép nguyên văn, kể cả lỗi in.** `source/pages/` không sửa cho đẹp; dạng đã sửa dùng
+trong bài ghi ở `corrections.json`. PDF không commit (25 MB, bản scan của bên thứ ba) — repo
+giữ mã băm. Bản chép mới một lượt: trường đốt sống phải được người đối chiếu với ảnh trang
+trước khi topic chuyển `review.mapping = passed`.
+
+**S1–S5 là một khối trên atlas.** BodyParts3D không tách năm đốt cùng; chip S1 mở xương cùng
+và giao diện nói rõ điều đó, không giả vờ tô đúng một đốt. Xương cụt không có trong mô hình
+nên không có link.
