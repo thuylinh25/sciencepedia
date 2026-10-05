@@ -1,0 +1,187 @@
+{
+  "section": "nhieu-mo-hoi-so-gio",
+  "slug": "nhieu-mo-hoi-so-gio-theo-tac-dong-cot-song",
+  "title": {
+    "vi": "Nhiều mồ hôi, sợ gió theo phương pháp Tác động cột sống",
+    "en": "Heavy sweating and aversion to wind in the Spinal Impact method"
+  },
+  "summary": {
+    "vi": "Tài liệu Phương pháp Tác động Cột sống Việt Nam chia chứng nhiều mồ hôi, sợ gió thành năm thể theo sắc mặt và vùng cơ thể, mỗi thể kèm vùng nhiệt độ và đốt sống trọng điểm — trích nguyên văn, đặt sau kiến thức y khoa có nguồn về đổ mồ hôi nhiều và khi nào nên đi khám.",
+    "en": "How the Vietnamese Spinal Impact method document divides heavy sweating with aversion to wind into five forms by facial colour and body area, each with a temperature zone and key vertebrae — quoted verbatim, after sourced medical information on excessive sweating and when to see a doctor."
+  },
+  "seoDescription": {
+    "vi": "Nhiều mồ hôi, sợ gió theo tài liệu Phương pháp Tác động Cột sống Việt Nam: năm thể và đốt sống trọng điểm T4, T5, T6, T10, T12, L1 — kèm kiến thức y khoa về đổ mồ hôi nhiều.",
+    "en": "Heavy sweating with aversion to wind in the Vietnamese Spinal Impact method document: five forms and key vertebrae T4, T5, T6, T10, T12, L1 — with sourced medical facts on excessive sweating."
+  },
+  "keywords": "nhiều mồ hôi, đổ mồ hôi, tăng tiết mồ hôi, đổ mồ hôi đêm, sợ gió, tác động cột sống, đốt sống",
+  "riskLevel": "normal",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Excessive sweating (hyperhidrosis)",
+      "publisher": "NHS",
+      "url": "https://www.nhs.uk/conditions/excessive-sweating-hyperhidrosis/",
+      "tier": 2,
+      "accessed": "2026-10-05"
+    },
+    {
+      "id": "s2",
+      "title": "Night sweats",
+      "publisher": "NHS",
+      "url": "https://www.nhs.uk/conditions/night-sweats/",
+      "tier": 2,
+      "accessed": "2026-10-05"
+    },
+    {
+      "id": "s3",
+      "title": "Sweating",
+      "publisher": "MedlinePlus — U.S. National Library of Medicine",
+      "url": "https://medlineplus.gov/ency/article/003218.htm",
+      "tier": 2,
+      "accessed": "2026-10-05"
+    }
+  ],
+  "safety": {
+    "heading": {
+      "vi": "⚠️ Khi nào nên đi khám",
+      "en": "⚠️ When to see a doctor"
+    },
+    "body": {
+      "vi": "MedlinePlus khuyên liên hệ nhân viên y tế khi đổ mồ hôi đi kèm **đau ngực, sốt, tim đập nhanh và mạnh, khó thở hoặc sụt cân** — các dấu hiệu này có thể cho thấy một vấn đề như cường giáp hay nhiễm trùng.\n\nNHS khuyên đi khám khi đổ mồ hôi nhiều và: tự chăm sóc không đỡ; kéo dài từ 6 tháng; cản trở sinh hoạt hằng ngày; xảy ra ít nhất mỗi tuần một lần; xảy ra về đêm; trong nhà có người cũng bị; hoặc bạn đang dùng thuốc chữa bệnh khác.\n\nVới **đổ mồ hôi đêm**, NHS khuyên đi khám khi thường xuyên bị đến mức tỉnh giấc hoặc lo lắng, khi kèm sốt cao (hoặc cảm thấy nóng, lạnh, run), ho hay tiêu chảy, hoặc khi sụt cân không rõ lý do.",
+      "en": "MedlinePlus advises contacting a health professional if sweating occurs with **chest pain, fever, a rapid pounding heartbeat, shortness of breath or weight loss** — these may indicate a problem such as an overactive thyroid or an infection.\n\nThe NHS advises seeing a doctor if you are sweating excessively and: things you do yourself are not helping; it has lasted at least 6 months; it stops you getting on with daily activities; it happens at least once a week; it happens at night; you have a family history of excessive sweating; or you are taking medicine for another condition.\n\nFor **night sweats**, the NHS advises seeing a doctor if they happen regularly and wake you up or worry you, if you also have a very high temperature (or feel hot, cold or shivery), a cough or diarrhoea, or if you are losing weight for no reason."
+    },
+    "sources": [
+      "s1",
+      "s2",
+      "s3"
+    ]
+  },
+  "general": [
+    {
+      "heading": {
+        "vi": "Đổ mồ hôi và đổ mồ hôi nhiều",
+        "en": "Sweating and excessive sweating"
+      },
+      "body": {
+        "vi": "Theo MedlinePlus (Thư viện Y khoa Quốc gia Hoa Kỳ), đổ mồ hôi là cách tự nhiên cơ thể điều hòa thân nhiệt, do hệ thần kinh tự chủ điều khiển — phần thần kinh nằm ngoài ý muốn. Trời nóng, vận động, hay những lúc lo lắng, tức giận, xấu hổ, sợ hãi đều làm ra mồ hôi nhiều hơn. Nguyên nhân khác MedlinePlus nêu gồm sốt, nhiễm trùng, hạ đường huyết, mãn kinh, rượu, cà phê, đồ ăn cay, và một số thuốc.\n\nNHS (Dịch vụ Y tế Quốc gia Anh) cho biết đổ mồ hôi nhiều là thường gặp, có thể ở toàn thân hoặc chỉ vài vùng, và đôi khi đỡ dần theo tuổi. Đổ mồ hôi được coi là quá mức khi xảy ra lúc cơ thể không cần làm mát. Nó có thể không rõ lý do, do một bệnh khác, hoặc là tác dụng phụ của thuốc.\n\n**Đổ mồ hôi đêm** là khi ra mồ hôi đến ướt đẫm quần áo và chăn gối dù chỗ ngủ mát (NHS). Nguyên nhân thường gặp nhất gồm triệu chứng mãn kinh, lo âu, một số thuốc, hạ đường huyết, rượu hoặc chất kích thích, và chứng tăng tiết mồ hôi vô hại; đôi khi không rõ nguyên nhân.",
+        "en": "According to MedlinePlus (U.S. National Library of Medicine), sweating is the body's natural way of regulating temperature, controlled by the autonomic nervous system — the part of the nervous system that is not under your control. Hot weather, exercise, and feeling nervous, angry, embarrassed or afraid all make you sweat more. Other causes MedlinePlus lists include fever, infection, low blood sugar, menopause, alcohol, caffeine, spicy foods and some medicines.\n\nThe NHS (UK National Health Service) says excessive sweating is common, can affect the whole body or just certain areas, and sometimes gets better with age. Sweating is excessive when it happens while the body does not need to cool down. It can happen for no obvious reason, because of another condition, or as a side effect of a medicine.\n\n**Night sweats** are when you sweat so much that your night clothes and bedding are soaking wet even though where you sleep is cool (NHS). The most common reasons are menopause symptoms, anxiety, some medicines, low blood sugar, alcohol or drug use, and a harmless condition called hyperhidrosis; sometimes the cause is unknown."
+      },
+      "sources": [
+        "s1",
+        "s2",
+        "s3"
+      ]
+    }
+  ],
+  "symptoms": [],
+  "methodQuotes": [],
+  "variants": [
+    {
+      "id": "tren-long-may-trang-bot",
+      "label": {
+        "vi": "Trên lông mày trắng bọt",
+        "en": "Pale white above the eyebrows"
+      },
+      "quotes": [
+        {
+          "pdfPage": 39,
+          "vi": "Nhiệt độ vùng…:cổ phải và ngực trái biến đổi Đốt sống TĐ…:T4 Tam giác cơ biến đổi:… Thuộc vùng tam giác cơ 3,4 Liên quan chức năng…: Tuần hoàn, hô hấp, thường gặp ở những đốt sống lồi.",
+          "en": "Temperature zone…: right side of the neck and left chest change. Key vertebra…: T4. Muscle triangles changed:… triangle zones 3, 4. Related functions…: circulation, breathing; commonly seen with protruding vertebrae."
+        }
+      ]
+    },
+    {
+      "id": "trong-mieng-sac-do",
+      "label": {
+        "vi": "Trong miệng sắc đỏ",
+        "en": "Red colour inside the mouth"
+      },
+      "quotes": [
+        {
+          "pdfPage": 39,
+          "vi": "Nhiệt độ vùng…:ngực trái biến đổi Đốt sống TĐ…:T5,T6 Tam giác cơ biến đổi:…Thuộc vùng tam giác cơ 4 Liên quan chức năng…:Tuần hoàn ( Màng bao Tim và Tim)",
+          "en": "Temperature zone…: left chest changes. Key vertebrae…: T5, T6. Muscle triangle changed:… triangle zone 4. Related function…: circulation (the pericardium and the heart)"
+        }
+      ]
+    },
+    {
+      "id": "duoi-mat-sac-tai-xanh",
+      "label": {
+        "vi": "Dưới mắt sắc tái xanh",
+        "en": "Pale bluish colour under the eyes"
+      },
+      "quotes": [
+        {
+          "pdfPage": 39,
+          "vi": "Nhiệt độ vùng…:hạ sườn phải biến đổi Đốt sống TĐ…:T10 Tam giác cơ biến đổi:…Thuộc vùng cơ tam giác 5 Liên quan chức năng…:Gan",
+          "en": "Temperature zone…: right upper abdomen changes. Key vertebra…: T10. Muscle triangle changed:… triangle zone 5. Related function…: liver"
+        }
+      ]
+    },
+    {
+      "id": "tren-mui-vang",
+      "label": {
+        "vi": "Trên mũi vàng",
+        "en": "Yellow on the nose"
+      },
+      "quotes": [
+        {
+          "pdfPage": 39,
+          "vi": "Nhiệt độ vùng…:giữa lưng biến đổi Đốt sống trọng điểm…:T12 Tam giác cơ biến đổi:…Thuộc vùng tam giác cơ 5 Liên quan chức năng…:Lá lách",
+          "en": "Temperature zone…: middle of the back changes. Key vertebra…: T12. Muscle triangle changed:… triangle zone 5. Related function…: spleen"
+        }
+      ]
+    },
+    {
+      "id": "co-nhieu-mo-hoi-so-gio-nguoi",
+      "label": {
+        "vi": "Cổ nhiều mồ hôi, sợ gió, người gầy, bụng to",
+        "en": "Heavy sweating at the neck, aversion to wind, thin body, large belly"
+      },
+      "quotes": [
+        {
+          "pdfPage": 39,
+          "vi": "Nhiệt độ vùng…:mỏ ác biến đổi Đốt sống TĐ…: L1 Tam giác cơ biến đổi:…Thuộc vùng tam giác cơ 6 Liên quan chức năng…: Dạ dày",
+          "en": "Temperature zone…: the pit of the stomach changes. Key vertebra…: L1. Muscle triangle changed:… triangle zone 6. Related function…: stomach"
+        }
+      ]
+    }
+  ],
+  "outOfScope": [],
+  "cover": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/Illu_vertebral_column.svg/1920px-Illu_vertebral_column.svg.png",
+    "page": "https://commons.wikimedia.org/wiki/File:Illu_vertebral_column.svg",
+    "license": "Public domain"
+  },
+  "furtherReading": [
+    {
+      "slug": "stress-tac-dong-len-co-the-nhu-the-nao-va-vi-sao-van-dong-giup-chung-ta-giai-toa",
+      "title": {
+        "vi": "Stress tác động lên cơ thể như thế nào và vì sao vận động giúp chúng ta giải tỏa?",
+        "en": "How does stress affect the body, and why does exercise help us unwind?"
+      },
+      "why": "Lo âu là một nguyên nhân thường gặp của đổ mồ hôi nhiều — bài kia nói stress tác động lên cơ thể ra sao."
+    },
+    {
+      "slug": "he-mien-dich-nhan-dien-mot-virus-bang-cach-nao",
+      "title": {
+        "vi": "Hệ miễn dịch nhận diện một virus bằng cách nào",
+        "en": "How the immune system recognises a virus"
+      },
+      "why": "Sốt và nhiễm trùng làm ra nhiều mồ hôi — bài kia giải thích cơ thể phản ứng với mầm bệnh."
+    },
+    {
+      "slug": "huyet-dao-va-cham-cuu-khi-cua-dong-y-co-lien-he-gi-voi-khoa-hoc-hien-dai",
+      "title": {
+        "vi": "Huyệt đạo và châm cứu: \"Khí\" của Đông y có liên hệ gì với khoa học hiện đại?",
+        "en": "Acupoints and acupuncture: how does the \"Qi\" of Eastern medicine relate to modern science?"
+      },
+      "why": "Cùng câu hỏi nền: một phương pháp truyền thống của Việt Nam/Đông y được khoa học hiện đại nhìn nhận thế nào."
+    }
+  ],
+  "review": {
+    "transcription": "pending",
+    "mapping": "passed",
+    "editor": "pending"
+  }
+}

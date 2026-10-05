@@ -184,6 +184,7 @@ Vertebrae named by the document:
 - [Sciatica in the Spinal Impact method](/articles/dau-than-kinh-toa-theo-tac-dong-cot-song)
 - [High blood pressure in the Spinal Impact method](/articles/huyet-ap-cao-theo-tac-dong-cot-song)
 - [Low blood pressure in the Spinal Impact method](/articles/huyet-ap-thap-theo-tac-dong-cot-song)
+- [Heavy sweating and aversion to wind in the Spinal Impact method](/articles/nhieu-mo-hoi-so-gio-theo-tac-dong-cot-song)
 - [Fever-related conditions in the Spinal Impact method](/articles/sot-theo-tac-dong-cot-song)
 - ["Cerebral circulatory insufficiency" in the Spinal Impact method](/articles/thieu-nang-tuan-hoan-nao-theo-tac-dong-cot-song)
 

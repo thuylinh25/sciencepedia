@@ -38,9 +38,10 @@ bằng chứng khoa học.
 | `dau-lung-cap`, `dau-than-kinh-toa`, `dau-nua-dau` | 2–3, 7–11, 12–14 | PUBLISHED |
 | `dau-lung-man-tinh`, `huyet-ap-thap` | 4–6, 15–16 | nháp, đã ở `main` (#13) |
 | `thieu-nang-tuan-hoan-nao`, `huyet-ap-cao`, `dau-dau` | 17–32 | nháp (#14) |
-| `hen-suyen-ho-hap` | 33–34 | nháp (nhánh `claude/hen-suyen-ho-hap`): 12 thể, nguồn NHS + NHLBI + MedlinePlus, `riskLevel high` |
-| `sot` | 35–38 | nháp (cùng nhánh): 15 thể, 8 nguồn NHS + MedlinePlus; khung nêu co giật do sốt đơn thuần vô hại (MedlinePlus) — đối lập câu "di chứng bại não" của tài liệu, cần science-editor xem kỹ |
-| `nhieu-mo-hoi-so-gio` → `benh-do-mo-hoi` → `mat-ngu` → `viem-dai-trang-man-tinh` | 39–43 | **chưa làm** |
+| `hen-suyen-ho-hap` | 33–34 | nháp, đã ở `main` (#16): 12 thể, nguồn NHS + NHLBI + MedlinePlus, `riskLevel high` |
+| `sot` | 35–38 | nháp, đã ở `main` (#16): 15 thể, 8 nguồn NHS + MedlinePlus; khung nêu co giật do sốt đơn thuần vô hại (MedlinePlus) — đối lập câu "di chứng bại não" của tài liệu, cần science-editor xem kỹ |
+| `nhieu-mo-hoi-so-gio` | 39 | nháp (nhánh `claude/nhieu-mo-hoi-so-gio`): 5 thể, 6 mapping, nguồn NHS + MedlinePlus, `riskLevel normal` |
+| `benh-do-mo-hoi` → `mat-ngu` → `viem-dai-trang-man-tinh` | 40–43 | **chưa làm** |
 
 **Cách làm một chủ đề:**
 1. Đọc `source/pages/pNN.md`.
