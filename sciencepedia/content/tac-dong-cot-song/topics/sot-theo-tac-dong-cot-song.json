@@ -1,0 +1,578 @@
+{
+  "slug": "sot-theo-tac-dong-cot-song",
+  "collection": "tac-dong-cot-song",
+  "section": "sot",
+  "title": {
+    "vi": "Các bệnh liên quan đến sốt theo phương pháp Tác động cột sống",
+    "en": "Fever-related conditions in the Spinal Impact method"
+  },
+  "riskLevel": "high",
+  "source": {
+    "docId": "pp-tdcs-vn",
+    "part": "Phần 3",
+    "heading": "I- CÁC BỆNH LIÊN QUAN ĐẾN SỐT",
+    "pdfPages": [
+      35,
+      38
+    ]
+  },
+  "variants": [
+    {
+      "id": "con-sot-cao",
+      "label": {
+        "vi": "Cơn sốt cao",
+        "en": "High fever"
+      },
+      "heading": "1- Cơn sốt cao",
+      "ref": {
+        "pdfPage": 36,
+        "bookPage": 35
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "T7",
+          "role": "primary",
+          "raw": "T7 thuộc Tam giác cơ 4, lớp cơ sâu",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 36,
+            "bookPage": 35
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "L3",
+          "role": "related",
+          "raw": "Song chỉnh L3// S3 , cơ sâu",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 36,
+            "bookPage": 35
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "S3",
+          "role": "related",
+          "raw": "Song chỉnh L3// S3 , cơ sâu",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 36,
+            "bookPage": 35
+          }
+        }
+      ]
+    },
+    {
+      "id": "tre-em-sot-cao",
+      "label": {
+        "vi": "Trẻ em sốt cao",
+        "en": "High fever in children"
+      },
+      "heading": "2- Trẻ em sốt cao",
+      "ref": {
+        "pdfPage": 36,
+        "bookPage": 35
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "T3",
+          "role": "caution",
+          "raw": "Úp bàn tay vào T3,T4",
+          "context": "Úp bàn tay vào T3,T4 ta thấy mỗi lúc lên cơn giật, đốt sống T3,T4 máy động, ta phải thao tác rất nhẹ ở lớp ngoài và theo dõi cường độ giật sẽ giảm. Giải tỏa lớp xơ co ở tam giác 3, sẽ xuất hiện xơ co từ T4 sang hai bờ vai. Thủ thuật giải quyết đám cơ (đẩy lên không được kéo xuống) song phần cơ mới giải quyết đốt sống.",
+          "confidence": "exact",
+          "decision": "D-33",
+          "ref": {
+            "pdfPage": 36,
+            "bookPage": 35
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T4",
+          "role": "caution",
+          "raw": "Úp bàn tay vào T3,T4",
+          "context": "Úp bàn tay vào T3,T4 ta thấy mỗi lúc lên cơn giật, đốt sống T3,T4 máy động, ta phải thao tác rất nhẹ ở lớp ngoài và theo dõi cường độ giật sẽ giảm. Giải tỏa lớp xơ co ở tam giác 3, sẽ xuất hiện xơ co từ T4 sang hai bờ vai. Thủ thuật giải quyết đám cơ (đẩy lên không được kéo xuống) song phần cơ mới giải quyết đốt sống.",
+          "confidence": "exact",
+          "decision": "D-33",
+          "ref": {
+            "pdfPage": 36,
+            "bookPage": 35
+          }
+        }
+      ]
+    },
+    {
+      "id": "sot-ret-con",
+      "label": {
+        "vi": "Sốt rét cơn",
+        "en": "Intermittent chills and fever"
+      },
+      "heading": "3- Sốt rét cơn",
+      "ref": {
+        "pdfPage": 36,
+        "bookPage": 35
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "C7",
+          "role": "primary",
+          "raw": "C7, T1 ; là",
+          "context": "Nhiệt độ vùng lưng trên và ngực trái nóng, nhưng không phải rối loạn tim mà là rối loạn động mạch. Trọng điểm : Tập trung giải quyết C7, T1 ; làm cho mạch giảm, thuộc tam giác 2 xuống cơ hai vai, hai tay, hai hõm cổ một đẩy, một kéo, chữa xuống tới T4, L5",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 36,
+            "bookPage": 35
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T1",
+          "role": "primary",
+          "raw": "C7, T1 ; là",
+          "context": "Nhiệt độ vùng lưng trên và ngực trái nóng, nhưng không phải rối loạn tim mà là rối loạn động mạch. Trọng điểm : Tập trung giải quyết C7, T1 ; làm cho mạch giảm, thuộc tam giác 2 xuống cơ hai vai, hai tay, hai hõm cổ một đẩy, một kéo, chữa xuống tới T4, L5",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 36,
+            "bookPage": 35
+          }
+        }
+      ]
+    },
+    {
+      "id": "sot-ret",
+      "label": {
+        "vi": "Sốt rét",
+        "en": "Malaria"
+      },
+      "heading": "4- Sốt rét",
+      "ref": {
+        "pdfPage": 36,
+        "bookPage": 35
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "C6",
+          "role": "primary",
+          "raw": "C6,T9,L3,S3",
+          "context": "Nhiệt độ thường nóng cao vùng thắt lưng và rốn, chức năng rối loạn là Thận, Tim và Ruột non. Các đốt sống TĐ : C6,T9,L3,S3",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 36,
+            "bookPage": 35
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T9",
+          "role": "primary",
+          "raw": "C6,T9,L3,S3",
+          "context": "Nhiệt độ thường nóng cao vùng thắt lưng và rốn, chức năng rối loạn là Thận, Tim và Ruột non. Các đốt sống TĐ : C6,T9,L3,S3",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 36,
+            "bookPage": 35
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "L3",
+          "role": "primary",
+          "raw": "C6,T9,L3,S3",
+          "context": "Nhiệt độ thường nóng cao vùng thắt lưng và rốn, chức năng rối loạn là Thận, Tim và Ruột non. Các đốt sống TĐ : C6,T9,L3,S3",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 36,
+            "bookPage": 35
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "S3",
+          "role": "primary",
+          "raw": "C6,T9,L3,S3",
+          "context": "Nhiệt độ thường nóng cao vùng thắt lưng và rốn, chức năng rối loạn là Thận, Tim và Ruột non. Các đốt sống TĐ : C6,T9,L3,S3",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 36,
+            "bookPage": 35
+          }
+        }
+      ]
+    },
+    {
+      "id": "gai-ret",
+      "label": {
+        "vi": "Gai rét",
+        "en": "Shivering chills"
+      },
+      "heading": "5- Gai rét",
+      "ref": {
+        "pdfPage": 37,
+        "bookPage": 36
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "C3",
+          "role": "primary",
+          "raw": "C3",
+          "context": "Đốt sống trọng điểm là C3.",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 37,
+            "bookPage": 36
+          }
+        }
+      ]
+    },
+    {
+      "id": "sot-ret-lien-mien-ve-chieu",
+      "label": {
+        "vi": "Sốt rét liên miên về chiều",
+        "en": "Persistent chills and fever in the afternoon"
+      },
+      "heading": "6- Sốt rét liên miên về chiều",
+      "ref": {
+        "pdfPage": 37,
+        "bookPage": 36
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "T7",
+          "role": "primary",
+          "raw": "T7",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 37,
+            "bookPage": 36
+          }
+        }
+      ]
+    },
+    {
+      "id": "sot-cao-hoang-hot-sot-hay-so",
+      "label": {
+        "vi": "Sốt cao hoảng hốt (sốt hay sợ, thở dài, không muốn ăn)",
+        "en": "High fever with alarm (fearful, sighing, no appetite)"
+      },
+      "heading": "7- Sốt cao hoảng hốt: ( Sốt hay sợ, thở dài không muốn ăn)",
+      "ref": {
+        "pdfPage": 37,
+        "bookPage": 36
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "T4",
+          "role": "primary",
+          "raw": "T4.",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 37,
+            "bookPage": 36
+          }
+        }
+      ]
+    },
+    {
+      "id": "sot-lung-dau-minh-nang-ret-tu",
+      "label": {
+        "vi": "Sốt, lưng đau, mình nặng, rét từ lưng",
+        "en": "Fever with back pain, heavy body, chills starting from the back"
+      },
+      "heading": "8- Sốt lưng đau, mình nặng rét từ lưng",
+      "ref": {
+        "pdfPage": 37,
+        "bookPage": 36
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "S3",
+          "role": "primary",
+          "raw": "S3",
+          "context": "Đốt sống trọng điểm chủ yếu S3",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 37,
+            "bookPage": 36
+          }
+        }
+      ]
+    },
+    {
+      "id": "sot-trong-nguoi-nong-chi-muon-uong",
+      "label": {
+        "vi": "Sốt, trong người nóng, chỉ muốn uống nước",
+        "en": "Fever, feeling hot inside, wanting only to drink water"
+      },
+      "heading": "9- Sốt trong người nóng chỉ muốn uống nước",
+      "ref": {
+        "pdfPage": 37,
+        "bookPage": 36
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "T5",
+          "role": "primary",
+          "raw": "T5,T10,T12, L1",
+          "context": "Đốt sống TĐ là T5,T10,T12, L1",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 37,
+            "bookPage": 36
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T10",
+          "role": "primary",
+          "raw": "T5,T10,T12, L1",
+          "context": "Đốt sống TĐ là T5,T10,T12, L1",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 37,
+            "bookPage": 36
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T12",
+          "role": "primary",
+          "raw": "T5,T10,T12, L1",
+          "context": "Đốt sống TĐ là T5,T10,T12, L1",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 37,
+            "bookPage": 36
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "L1",
+          "role": "primary",
+          "raw": "T5,T10,T12, L1",
+          "context": "Đốt sống TĐ là T5,T10,T12, L1",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 37,
+            "bookPage": 36
+          }
+        }
+      ]
+    },
+    {
+      "id": "sot-mat-tai-xanh-hay-tho-dai",
+      "label": {
+        "vi": "Sốt, mặt tái xanh, hay thở dài, bụng dưới khó chịu, tiểu tiện đau, sợ sệt, trong bụng bồn chồn",
+        "en": "Fever with a pale face, frequent sighing, lower abdominal discomfort, painful urination, fearfulness, restlessness in the belly"
+      },
+      "heading": "10- Sốt mặt tái xanh, hay thở dài, bụng dưới khó chịu, tiểu tiện đau, sợ sệt, trong bụng bồn chồn.",
+      "ref": {
+        "pdfPage": 37,
+        "bookPage": 36
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "T10",
+          "role": "primary",
+          "raw": "T10",
+          "context": "Đốt sống TĐ T10",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 37,
+            "bookPage": 36
+          }
+        }
+      ]
+    },
+    {
+      "id": "sot-nguoi-ron-ron",
+      "label": {
+        "vi": "Sốt người rờn rợn",
+        "en": "Fever with creeping chills"
+      },
+      "heading": "11- Sốt người rờn rợn",
+      "ref": {
+        "pdfPage": 38,
+        "bookPage": 37
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "L3",
+          "role": "primary",
+          "raw": "L3",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 38,
+            "bookPage": 37
+          }
+        }
+      ]
+    },
+    {
+      "id": "sot-khong-an-duoc-an-vao-day",
+      "label": {
+        "vi": "Sốt không ăn được: ăn vào đầy, bụng chướng",
+        "en": "Fever with no appetite: feeling full after eating, bloated belly"
+      },
+      "heading": "12- Sốt không ăn được: ăn vào đầy, bụng chướng",
+      "ref": {
+        "pdfPage": 38,
+        "bookPage": 37
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "L1",
+          "role": "primary",
+          "raw": "L1",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 38,
+            "bookPage": 37
+          }
+        }
+      ]
+    },
+    {
+      "id": "sot-moi-met-thay-nguoi-hoang-so",
+      "label": {
+        "vi": "Sốt mỏi mệt, thấy người hoảng sợ",
+        "en": "Fever with exhaustion and fearfulness"
+      },
+      "heading": "13- Sốt mỏi mệt thấy người hoảng sợ",
+      "ref": {
+        "pdfPage": 38,
+        "bookPage": 37
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "T11",
+          "role": "primary",
+          "raw": "T11",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 38,
+            "bookPage": 37
+          }
+        }
+      ]
+    },
+    {
+      "id": "sot-bung-day-soi-bung-mo-hoi",
+      "label": {
+        "vi": "Sốt, bụng đầy, sôi bụng, mồ hôi nhiều",
+        "en": "Fever with a full, rumbling belly and heavy sweating"
+      },
+      "heading": "14- Sốt, bụng đầy, sôi bụng, mồ hôi nhiều",
+      "ref": {
+        "pdfPage": 38,
+        "bookPage": 37
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "T11",
+          "role": "primary",
+          "raw": "T11,T12",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 38,
+            "bookPage": 37
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T12",
+          "role": "primary",
+          "raw": "T11,T12",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 38,
+            "bookPage": 37
+          }
+        }
+      ]
+    },
+    {
+      "id": "sot-thuong-han",
+      "label": {
+        "vi": "Sốt thương hàn",
+        "en": "Typhoid fever"
+      },
+      "heading": "15- Sốt thương hàn",
+      "ref": {
+        "pdfPage": 38,
+        "bookPage": 37
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "T9",
+          "role": "primary",
+          "raw": "T9",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 38,
+            "bookPage": 37
+          }
+        }
+      ]
+    }
+  ],
+  "unassigned": [
+    {
+      "line": "Nhiệt độ vùng lưng trên và ngực trái nóng, nhưng không phải rối loạn tim mà là rối loạn động mạch. Trọng điểm : Tập trung giải quyết C7, T1 ; làm cho mạch giảm, thuộc tam giác 2 xuống cơ hai vai, hai tay, hai hõm cổ một đẩy, một kéo, chữa xuống tới T4, L5",
+      "codes": [
+        "T4",
+        "L5"
+      ],
+      "ref": {
+        "pdfPage": 36,
+        "bookPage": 35
+      }
+    },
+    {
+      "line": "Khi sốt rét từ trong ruột rét ra gây khó thở, khi rét ta đặt tay trên ĐS để áp dụng phương thức đối động. Thường thấy trọng điểm ở C6,T9,L3,S3 Trước tiên giải S3 theo dõi nhiệt độ ở rốn, tiếp theo giải quyết C6 liên quan tuyến cận giáp để cân bằng can xi, giảm co giật, tiếp tục đến T9 để điều hòa nhịp tim, sau đó đến L3 liên quan đến mạch nối lớn, động viên sức đề kháng của cơ thể, tiêu diệt vi trùng sốt rét.",
+      "codes": [
+        "S3",
+        "C6",
+        "T9",
+        "L3"
+      ],
+      "ref": {
+        "pdfPage": 36,
+        "bookPage": 35
+      }
+    },
+    {
+      "line": "Đầu tiên xử lý T12, L1 sau đó mới giải quyết T5,T10",
+      "codes": [
+        "T12",
+        "L1",
+        "T5",
+        "T10"
+      ],
+      "ref": {
+        "pdfPage": 37,
+        "bookPage": 36
+      }
+    }
+  ],
+  "review": {
+    "transcription": "pending",
+    "mapping": "passed",
+    "editor": "pending"
+  }
+}

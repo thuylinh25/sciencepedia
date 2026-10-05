@@ -226,6 +226,7 @@ Vertebrae named by the document:
 - [Asthma and breathing symptoms in the Spinal Impact method](/articles/hen-suyen-ho-hap-theo-tac-dong-cot-song)
 - [High blood pressure in the Spinal Impact method](/articles/huyet-ap-cao-theo-tac-dong-cot-song)
 - [Low blood pressure in the Spinal Impact method](/articles/huyet-ap-thap-theo-tac-dong-cot-song)
+- [Fever-related conditions in the Spinal Impact method](/articles/sot-theo-tac-dong-cot-song)
 
 ## Source document
 

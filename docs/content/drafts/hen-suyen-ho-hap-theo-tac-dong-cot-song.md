@@ -184,6 +184,7 @@ Vì vậy, khó thở mới xuất hiện hay thay đổi cần được khám �
 - [Đau thần kinh tọa theo phương pháp Tác động cột sống](/articles/dau-than-kinh-toa-theo-tac-dong-cot-song)
 - [Huyết áp cao theo phương pháp Tác động cột sống](/articles/huyet-ap-cao-theo-tac-dong-cot-song)
 - [Huyết áp thấp theo phương pháp Tác động cột sống](/articles/huyet-ap-thap-theo-tac-dong-cot-song)
+- [Các bệnh liên quan đến sốt theo phương pháp Tác động cột sống](/articles/sot-theo-tac-dong-cot-song)
 - [Thiểu năng tuần hoàn não theo phương pháp Tác động cột sống](/articles/thieu-nang-tuan-hoan-nao-theo-tac-dong-cot-song)
 
 ## Nguồn tài liệu
