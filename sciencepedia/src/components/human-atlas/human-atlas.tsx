@@ -229,6 +229,22 @@ export function HumanAtlas({
   useEffect(() => {
     isolateRef.current = state;
   }, [state]);
+  /**
+   * "Hiện giải phẫu xung quanh" gắn với ĐÚNG mảng vùng chọn lúc bấm (so theo tham
+   * chiếu): mọi lối đổi vùng chọn (chạm mảnh khác, tìm, đổi hệ, Đặt lại…) tạo mảng
+   * mới nên tự rời chế độ này, không phải nhớ tắt ở từng lối.
+   */
+  const [surroundFor, setSurroundFor] = useState<string[] | null>(null);
+  const surround = !state.isolate && state.selected.length > 0 && surroundFor === state.selected;
+  const surroundRef = useRef(surround);
+  useEffect(() => {
+    surroundRef.current = surround;
+  }, [surround]);
+  /** Nút Xem riêng ↔ Hiện giải phẫu xung quanh (bảng chi tiết và thanh chọn nhiều). */
+  const toggleIsolate = () => {
+    setSurroundFor(state.isolate ? state.selected : null);
+    setState((s) => ({ ...s, isolate: !s.isolate, explode: 0 }));
+  };
   const [panel, setPanel] = useState<"layers" | "search" | null>(null);
   const [gallery, setGallery] = useState(false);
   // Ảnh thu nhỏ chỉ chụp sau lần mở lưới đầu tiên: mỗi ảnh là một lượt vẽ cả mô
@@ -423,7 +439,7 @@ export function HumanAtlas({
       // nó KHÔNG phải chọn lại — bản trước đặt isolate false và vùng chọn một mảnh, nên
       // chạm vào đốt sống đang xem riêng là bật về toàn cơ thể (chủ sản phẩm báo
       // 2026-10-01). Giữ nguyên, chỉ mở lại bảng chi tiết.
-      if (isolateRef.current.isolate && isolateRef.current.selected.includes(id)) {
+      if ((isolateRef.current.isolate || surroundRef.current) && isolateRef.current.selected.includes(id)) {
         // Đang xem riêng NHIỀU cấu trúc (link từ bài Tác động cột sống mở cả loạt đốt
         // sống): `chosen` null nên chỉ bật `details` là không hiện gì (chủ sản phẩm báo
         // 2026-10-05). Mở bảng cho đúng cấu trúc vừa chạm, giữ nguyên tập đang xem riêng.
@@ -781,7 +797,7 @@ export function HumanAtlas({
   });
   const caption = viewName && !state.isolate && spread < 0.05
     ? viewName
-    : state.isolate
+    : state.isolate || (surround && chosen)
     ? chosen
       ? displayName(locale, chosen.id, chosen.name)
       : picked.length > 1
@@ -830,7 +846,7 @@ export function HumanAtlas({
           <AnatomyScene
             key={attempt}
             atlas={atlas}
-            state={{ ...state, inspectorOpen: detailOpen }}
+            state={{ ...state, surround, inspectorOpen: detailOpen }}
             dark={dark}
             ariaLabel={t("canvasLabel")}
             scrollLabel={t("scrollBody")}
@@ -1023,7 +1039,7 @@ export function HumanAtlas({
           articles={articles[chosen.id] ?? []}
           anatomy={anatomy}
           focusOnOpen={focusDetail}
-          onIsolate={() => setState((s) => ({ ...s, isolate: !s.isolate, explode: 0 }))}
+          onIsolate={toggleIsolate}
           onChoosePart={choosePart}
           onClear={clearSelection}
           // Đóng bảng = bỏ chọn (2026-10-02): bản trước chỉ ẩn bảng, mảnh vẫn sáng
@@ -1102,7 +1118,7 @@ export function HumanAtlas({
           <Button
             variant="ghost"
             size="sm"
-            onClick={() => setState((s) => ({ ...s, isolate: !s.isolate, explode: 0 }))}
+            onClick={toggleIsolate}
             aria-pressed={!state.isolate}
           >
             <Scan aria-hidden />
