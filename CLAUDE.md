@@ -122,10 +122,28 @@ Gate accuracy **không có ngoại lệ**.
 - **Mô tả giải phẫu Level 2 mới lấy dữ kiện từ Wikipedia tiếng Anh, KHÔNG từ OpenStax** — OpenStax cấm đưa sách vào AI khi chưa được phép. Lý do: `docs/content-rules.md`, mục "Giấy phép đọc được ≠ được cho AI đọc".
 - **Dấu duyệt mục từ chỉ đến từ `glossary.json`, và tự gỡ khi nội dung đổi.** `GlossaryTerm.reviewedById`/`reviewedAt` trỏ tài khoản tổ chức như bài viết; `/admin/glossary` không đặt được chúng, chỉ gỡ khi tên thuật ngữ hoặc định nghĩa đổi. Mục không có bằng chứng duyệt thì để trống, không suy từ `createdAt` — lý do: `docs/content-rules.md`, mục "Byline người duyệt".
 
-## Merge PR
-- **Tự merge PR vào `main`, không chờ chủ sản phẩm bảo.** PR của nhánh đang làm có rồi thì merge luôn khi đạt, kể cả PR do giao diện Claude Code tạo.
-- Trước khi merge kiểm: trạng thái mergeable, conflict, review bắt buộc, check/status trên head (check đang chạy thì chờ xong). Merge bằng merge commit, khoá `expectedHeadSha`.
-- **Không bao giờ bypass** branch protection, review requirement hay conflict (không admin-merge, không tắt rule, không tự approve). Gặp chặn thì dừng và báo **chính xác** thứ đang chặn — tên rule/check, review còn thiếu, file conflict — chủ sản phẩm chốt 2026-10-05.
+## Git — commit, push, PR, merge
+
+Chủ sản phẩm chốt 2026-10-05. Áp cho mọi session, mọi tài khoản.
+
+**Nhánh.** Mỗi session làm trên một nhánh `claude/<tên>` (session giao sẵn tên nào dùng tên đó); không commit thẳng `main`. PR của nhánh đã merge thì nhánh coi như xong: việc tiếp theo dựng lại nhánh từ `origin/main` mới nhất (`git fetch origin main && git checkout -B <nhánh> origin/main`), commit chưa merge thì rebase lên trên — không chồng commit mới lên lịch sử đã merge.
+
+**Commit.**
+- `npm run typecheck` xanh trước khi commit; sửa `src/lib/spine/` thì chạy `npx tsx --test src/lib/spine/*.test.ts`; sửa dữ liệu Tác động cột sống thì `npm run spine:build` không có ✖.
+- Tiêu đề kiểu `type(scope): mô tả tiếng Việt` (`content(spine)`, `feat(human-atlas)`, `fix(...)`, `docs(...)`); thân ghi **vì sao**, không kể lại diff.
+- Tệp sinh ra (`extract.generated.json`, `topics/*.json` không có `.editorial`, `docs/content/drafts/*`, `src/lib/spine/index.generated.json`) commit cùng nguồn của nó, sinh bằng script — không sửa tay.
+- Không commit `.env`, secret, file tạm. `package-lock.json` không commit nếu chỉ do npm khác phiên bản tự sửa.
+
+**Push.** `git push -u origin <nhánh>`. Rebase / force-with-lease chỉ trên nhánh của chính session; nhánh người khác thì merge, không viết lại lịch sử.
+
+**PR.** Mở PR vào `main` khi một khối việc xong (vài bài, một tính năng). Thân PR: tóm tắt, lưu ý (cái gì chưa duyệt, cái gì bị chặn), cách đã kiểm. Đang chờ CI thì làm tiếp ở máy, chưa push lên nhánh đang có PR mở trừ khi muốn gộp vào PR đó.
+
+**Merge.**
+- **Tự merge PR vào `main`, không chờ chủ sản phẩm bảo.** PR của nhánh đang làm có rồi thì merge luôn khi đạt, kể cả PR do giao diện Claude Code tạo. Chỉ merge PR của nhánh mình làm — PR khác (bot Vercel, nhánh người khác) để nguyên.
+- Trước khi merge kiểm: trạng thái mergeable, conflict, review bắt buộc, check/status trên head (check đang chạy — thường là status `Vercel` — thì chờ xong). Merge bằng merge commit, khoá `expectedHeadSha`.
+- **Không bao giờ bypass** branch protection, review requirement hay conflict (không admin-merge, không tắt rule, không tự approve). Gặp chặn thì dừng và báo **chính xác** thứ đang chặn — tên rule/check, review còn thiếu, file conflict.
+
+**Không thuộc quyền máy:** ghi CSDL production qua `spine:import --write`/`spine:publish --write`, ký byline duyệt, đổi bài sang PUBLISHED ngoài `npm run publish`. Merge code vào `main` không kéo theo xuất bản bài.
 
 ## Tài liệu
 
@@ -135,6 +153,7 @@ Gate accuracy **không có ngoại lệ**.
 | `docs/design-system.md` | Token, quy tắc component, a11y, các đánh đổi đã chốt |
 | `docs/content-rules.md` | Phán quyết biên tập — độ dài bài, số liệu, trích dẫn, nhãn, provenance |
 | `docs/process/diagnosis.md` | Quy tắc chẩn đoán — rút từ những lần sửa nhầm chỗ |
+| `HANDOFF.md` | Trạng thái bàn giao giữa các session (tạm thời — đọc đầu session nếu có; không phải nguồn quy tắc) |
 | `docs/process/` | agent-index · collaboration-workflow (có pipeline) · development-lifecycle · agent-dependency-graph |
 
 Ba file đầu giữ **lý do**, không giữ mô tả code. Cấu trúc code thì đọc code; tài liệu chỉ ghi những gì đọc code không suy ra được.
