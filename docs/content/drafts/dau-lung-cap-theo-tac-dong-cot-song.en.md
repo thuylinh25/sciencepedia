@@ -51,7 +51,7 @@ The passages below are translated from the document, with page numbers. The arti
 
 > **According to the document (p. 2, translated):** If the patient has an external wind-cold chill without sweating, with severe back pain and difficulty moving … the key points also usually include T2, 3.
 
-> **According to the document (p. 2, translated):** If the patient sweats a lot, treat both sides of the occipital fossa inward to C1, 2, together with "song chỉnh" (the method's own term, left untranslated) at the S region.
+> **According to the document (p. 2, translated):** If the patient sweats a lot, treat both sides of the occipital fossa inward to C1, 2, with "song chỉnh" (the method's term for acting on two different points at the same time with both hands) at the S region.
 
 Vertebrae named by the document:
 

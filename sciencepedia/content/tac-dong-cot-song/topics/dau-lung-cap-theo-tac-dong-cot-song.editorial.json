@@ -142,15 +142,15 @@
         {
           "pdfPage": 3,
           "vi": "Nếu bệnh nhân ra nhiều mồ hôi chữa hai bên hố chẩm vào tới C1,2 và song chỉnh với vùng S.",
-          "en": "If the patient sweats a lot, treat both sides of the occipital fossa inward to C1, 2, together with \"song chỉnh\" (the method's own term, left untranslated) at the S region."
+          "en": "If the patient sweats a lot, treat both sides of the occipital fossa inward to C1, 2, with \"song chỉnh\" (the method's term for acting on two different points at the same time with both hands) at the S region."
         }
       ]
     }
   ],
   "outOfScope": [],
   "review": {
-    "transcription": "pending",
-    "mapping": "pending",
+    "transcription": "passed",
+    "mapping": "passed",
     "editor": "pending"
   }
 }

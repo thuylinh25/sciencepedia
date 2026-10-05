@@ -32,7 +32,7 @@ Sciatica usually improves within a few weeks to a few months but can last longer
 
 ## Symptoms described in the document
 
-> **According to the document (p. 6, translated):** Sciatic nerve pain usually shows the following restriction signs: 1. the painful-point sign (spelled "Walleix" in the original); 2. restricted forward bending while standing; 3. restricted "ngồi sớm" (as printed; the document's own heading for this sign on p. 8 reads "ngồi xổm", squatting); 4. restricted leg raising; 5. restricted spinal stretching; 6. restricted fast walking.
+> **According to the document (p. 6, translated):** Sciatic nerve pain usually shows the following restriction signs: 1. the painful-point sign (spelled "Walleix" in the original); 2. restricted forward bending while standing; 3. restricted "ngồi sổm" (as printed; the standard spelling is "ngồi xổm", squatting, which the document itself uses on p. 8); 4. restricted leg raising; 5. restricted spinal stretching; 6. restricted fast walking.
 
 ## Content according to the Spinal Impact method
 

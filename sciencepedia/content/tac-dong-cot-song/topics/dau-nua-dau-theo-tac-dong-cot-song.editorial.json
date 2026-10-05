@@ -50,29 +50,50 @@
     }
   ],
   "safety": {
-    "heading": { "vi": "⚠️ Khi nào cần cấp cứu", "en": "⚠️ When it is an emergency" },
+    "heading": {
+      "vi": "⚠️ Khi nào cần cấp cứu",
+      "en": "⚠️ When it is an emergency"
+    },
     "body": {
       "vi": "NHS khuyên gọi cấp cứu nếu bạn hoặc con bạn:\n\n- đau đầu **đột ngột và cực kỳ dữ dội**;\n- khó nói hoặc khó nhớ;\n- mất thị lực, nhìn mờ hoặc nhìn đôi;\n- sốt rất cao kèm các dấu hiệu của viêm màng não;\n- không cử động được, hoặc yếu tay, chân hay mặt ở một bên cơ thể.\n\nMedlinePlus cũng khuyên gọi cấp cứu khi đó là cơn đau đầu tệ nhất từng gặp, hoặc có rối loạn lời nói, thị lực, vận động, mất thăng bằng — nhất là khi các cơn migraine trước chưa từng như vậy. Đau đầu khởi phát đột ngột, như bùng nổ, cần được khám ngay vì có thể do vỡ mạch máu trong não. Đau đầu kèm sốt, cứng cổ, buồn nôn và nôn, hoặc đau đầu mới xuất hiện — nhất là ở người trên 50 tuổi — cũng cần đi khám ngay (MedlinePlus). NHS khuyên hẹn khám bác sĩ gấp nếu một cơn migraine đã kéo dài hơn 72 giờ, hoặc triệu chứng tiền triệu kéo dài hơn 1 giờ mỗi lần.\n\nMột số mục trích bên dưới mang tên những triệu chứng như nói khó, nhìn hình đôi, liệt nhẹ chi trên. Theo NHS, khó nói, nhìn đôi, hoặc yếu tay, chân hay mặt ở một bên cơ thể là lý do gọi cấp cứu, như danh sách trên.",
       "en": "The NHS advises calling emergency services if you or your child:\n\n- have a headache that came on **suddenly and is extremely painful**;\n- have problems speaking or remembering things;\n- lose your vision, or have blurred or double vision;\n- have a very high temperature and symptoms of meningitis;\n- cannot move, or have weakness in the arm, leg or face on one side of the body.\n\nMedlinePlus also advises calling emergency services for the worst headache of your life, or speech, vision or movement problems or loss of balance — especially if earlier migraines never caused them. A sudden, explosive headache needs medical attention right away because it may be due to a ruptured blood vessel in the brain. Headache with fever, stiff neck, nausea and vomiting, or newly starting headaches — especially over age 50 — also need medical help right away (MedlinePlus). The NHS advises an urgent GP appointment if a migraine attack has lasted longer than 72 hours, or if aura symptoms last longer than 1 hour at a time.\n\nSome of the quoted sections below are named after symptoms such as difficulty speaking, double vision or mild paralysis of the upper limb. According to the NHS, problems speaking, double vision, or weakness in the arm, leg or face on one side of the body are reasons to call emergency services, as in the list above."
     },
-    "sources": ["s2", "s3", "s4"]
+    "sources": [
+      "s2",
+      "s3",
+      "s4"
+    ]
   },
   "general": [
     {
-      "heading": { "vi": "Đau nửa đầu (migraine) là gì?", "en": "What is migraine?" },
+      "heading": {
+        "vi": "Đau nửa đầu (migraine) là gì?",
+        "en": "What is migraine?"
+      },
       "body": {
         "vi": "Theo NINDS, migraine là một tình trạng bệnh, **không chỉ là một cơn đau đầu nặng**. Một trong những triệu chứng thường gặp nhất của cơn migraine là đau nhói theo nhịp, mức vừa đến nặng, thường ở một bên đầu. MedlinePlus cho biết cơn có thể kèm buồn nôn, nôn, hoặc nhạy cảm với ánh sáng và âm thanh.\n\nTheo NHS, cơn migraine thường kéo dài từ 4 giờ đến 3 ngày. Chỉ một số người có **tiền triệu** (aura): theo NINDS, tiền triệu xuất hiện khoảng 10 phút đến một giờ trước cơn và thường không quá một giờ. Dạng thường gặp nhất là migraine không có tiền triệu (NINDS).",
         "en": "According to NINDS, migraine is a health condition that is **more than having a bad headache**. One of the most common symptoms of a migraine episode is moderate to severe throbbing pain that usually happens on one side of the head. MedlinePlus says it may come with nausea, vomiting, or sensitivity to light and sound.\n\nAccording to the NHS, migraine attacks usually last between 4 hours and 3 days. Only some people have an **aura**: NINDS says auras appear about 10 minutes to an hour before the episode and usually last no more than an hour. The most common type is migraine without aura (NINDS)."
       },
-      "sources": ["s1", "s2", "s3"]
+      "sources": [
+        "s1",
+        "s2",
+        "s3"
+      ]
     },
     {
-      "heading": { "vi": "Hiểu biết hiện nay về cơ chế và điều trị", "en": "What is known about cause and treatment" },
+      "heading": {
+        "vi": "Hiểu biết hiện nay về cơ chế và điều trị",
+        "en": "What is known about cause and treatment"
+      },
       "body": {
         "vi": "NHS viết rằng chưa biết nguyên nhân gây migraine, nhưng nó xảy ra khi có thay đổi ở dây thần kinh và mạch máu trong não. Theo NINDS, nghiên cứu hiện nay cho thấy cơn đau xảy ra khi tín hiệu thần kinh, các chất hóa học trong não và mạch máu không hoạt động bình thường; MedlinePlus ghi rằng chuỗi sự kiện chính xác vẫn chưa rõ.\n\nKhông có xét nghiệm đặc hiệu nào chứng minh một cơn đau đầu là migraine, và chỉ nhân viên y tế mới xác định được triệu chứng là do migraine hay một bệnh khác (MedlinePlus). Hiện chưa có cách chữa khỏi migraine, nhưng điều trị giúp kiểm soát triệu chứng (NINDS).",
         "en": "The NHS says it is not known what causes migraine, but that it happens when there are changes to nerves and blood vessels in the brain. According to NINDS, current research shows that migraine head pain happens when nerve signals, brain chemicals and blood vessels are not working properly in the brain; MedlinePlus notes that the exact chain of events remains unclear.\n\nThere is no specific test to prove that a headache is a migraine, and only a health professional can determine whether symptoms are due to migraine or another condition (MedlinePlus). There is currently no cure for migraine, but treatments can help manage symptoms (NINDS)."
       },
-      "sources": ["s1", "s2", "s3"]
+      "sources": [
+        "s1",
+        "s2",
+        "s3"
+      ]
     }
   ],
   "symptoms": [
@@ -107,7 +128,10 @@
   "variants": [
     {
       "id": "trieu-chung-nay-dom-dom-mat",
-      "label": { "vi": "Nảy đom đóm mắt", "en": "Seeing flashes (\"fireflies\")" },
+      "label": {
+        "vi": "Nảy đom đóm mắt",
+        "en": "Seeing flashes (\"fireflies\")"
+      },
       "quotes": [
         {
           "pdfPage": 13,
@@ -118,7 +142,10 @@
     },
     {
       "id": "trieu-chung-nang-dau-mat-ngu-buon",
-      "label": { "vi": "Nặng đầu, mất ngủ, buồn nôn, rối loạn tuần hoàn", "en": "Heavy head, insomnia, nausea, circulatory disturbance" },
+      "label": {
+        "vi": "Nặng đầu, mất ngủ, buồn nôn, rối loạn tuần hoàn",
+        "en": "Heavy head, insomnia, nausea, circulatory disturbance"
+      },
       "quotes": [
         {
           "pdfPage": 13,
@@ -129,7 +156,10 @@
     },
     {
       "id": "chi-tren-va-dau-ngon-tay-te",
-      "label": { "vi": "Tê bì chi trên và đầu ngón tay", "en": "Numbness of the arms and fingertips" },
+      "label": {
+        "vi": "Tê bì chi trên và đầu ngón tay",
+        "en": "Numbness of the arms and fingertips"
+      },
       "quotes": [
         {
           "pdfPage": 13,
@@ -140,7 +170,10 @@
     },
     {
       "id": "nguoi-met-hay-ngap-o-hoi",
-      "label": { "vi": "Mệt, hay ngáp, ợ hơi", "en": "Tiredness, frequent yawning, belching" },
+      "label": {
+        "vi": "Mệt, hay ngáp, ợ hơi",
+        "en": "Tiredness, frequent yawning, belching"
+      },
       "quotes": [
         {
           "pdfPage": 13,
@@ -151,7 +184,10 @@
     },
     {
       "id": "noi-kho-nghe-doc-khong-hieu",
-      "label": { "vi": "Nói khó, nghe đọc không hiểu", "en": "Difficulty speaking, not understanding speech or text" },
+      "label": {
+        "vi": "Nói khó, nghe đọc không hiểu",
+        "en": "Difficulty speaking, not understanding speech or text"
+      },
       "quotes": [
         {
           "pdfPage": 13,
@@ -162,7 +198,10 @@
     },
     {
       "id": "nhuc-nua-dau-sau-lan-sang-hoc",
-      "label": { "vi": "Nhức nửa đầu sau, lan sang hốc mắt", "en": "Ache at the back of one side of the head, spreading to the eye socket" },
+      "label": {
+        "vi": "Nhức nửa đầu sau, lan sang hốc mắt",
+        "en": "Ache at the back of one side of the head, spreading to the eye socket"
+      },
       "quotes": [
         {
           "pdfPage": 14,
@@ -173,7 +212,10 @@
     },
     {
       "id": "nhuc-dau-vung-thai-duong",
-      "label": { "vi": "Nhức đầu vùng thái dương", "en": "Ache at the temples" },
+      "label": {
+        "vi": "Nhức đầu vùng thái dương",
+        "en": "Ache at the temples"
+      },
       "quotes": [
         {
           "pdfPage": 14,
@@ -184,7 +226,10 @@
     },
     {
       "id": "nhuc-dau-vung-tran-va-hoc-mat",
-      "label": { "vi": "Nhức đầu vùng trán và hốc mắt", "en": "Ache at the forehead and eye sockets" },
+      "label": {
+        "vi": "Nhức đầu vùng trán và hốc mắt",
+        "en": "Ache at the forehead and eye sockets"
+      },
       "quotes": [
         {
           "pdfPage": 14,
@@ -195,7 +240,10 @@
     },
     {
       "id": "mat-nhin-hinh-doi-sup-mi",
-      "label": { "vi": "Nhìn hình đôi, sụp mi", "en": "Double vision, drooping eyelid" },
+      "label": {
+        "vi": "Nhìn hình đôi, sụp mi",
+        "en": "Double vision, drooping eyelid"
+      },
       "quotes": [
         {
           "pdfPage": 14,
@@ -206,7 +254,10 @@
     },
     {
       "id": "liet-nhe-chi-tren-va-noi-kho",
-      "label": { "vi": "Liệt nhẹ chi trên và nói khó", "en": "Mild paralysis of the upper limb and difficulty speaking" },
+      "label": {
+        "vi": "Liệt nhẹ chi trên và nói khó",
+        "en": "Mild paralysis of the upper limb and difficulty speaking"
+      },
       "quotes": [
         {
           "pdfPage": 14,
@@ -217,5 +268,9 @@
     }
   ],
   "outOfScope": [],
-  "review": { "transcription": "pending", "mapping": "pending", "editor": "pending" }
+  "review": {
+    "transcription": "passed",
+    "mapping": "passed",
+    "editor": "pending"
+  }
 }

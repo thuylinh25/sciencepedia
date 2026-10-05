@@ -32,7 +32,7 @@ Theo NHS, nguyên nhân thường gặp nhất là **thoát vị đĩa đệm** 
 
 ## Triệu chứng được tài liệu mô tả
 
-> **Theo tài liệu (tr. 6):** Đau dây thần kinh hông thường có các dấu hiệu hạn chế sau đây: 1. Dấu hiệu thống điểm đau (Walleix) 2. Dấu hiệu đứng cúi hạn chế 3. Dấu hiệu ngồi sớm hạn chế 4. Dấu hiệu nâng chân hạn chế 5. Dấu hiệu giãn cột sống hạn chế 6. Dấu hiệu đi nhanh hạn chế.
+> **Theo tài liệu (tr. 6):** Đau dây thần kinh hông thường có các dấu hiệu hạn chế sau đây: 1. Dấu hiệu thống điểm đau (Walleix) 2. Dấu hiệu đứng cúi hạn chế 3. Dấu hiệu ngồi sổm hạn chế 4. Dấu hiệu nâng chân hạn chế 5. Dấu hiệu giãn cột sống hạn chế 6. Dấu hiệu đi nhanh hạn chế.
 
 ## Nội dung theo phương pháp Tác động cột sống
 

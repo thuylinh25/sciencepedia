@@ -1,4 +1,23 @@
 {
   "policy": "pages/*.md là bản chép nguyên văn và không bao giờ bị sửa để 'cho đẹp'. Khi bài viết cần dùng dạng đã sửa (lỗi chính tả rõ ràng của bản gốc, hoặc lỗi chép), ghi một mục ở đây: trang, nguyên văn, dạng dùng, lý do, ai/khi nào. Lỗi CHÉP (bản chép lệch ảnh trang) thì sửa thẳng pages/ VÀ ghi ở đây với kind = \"transcription\".",
-  "entries": []
+  "entries": [
+    {
+      "kind": "transcription",
+      "pdfPage": 7,
+      "before": "ngồi sớm",
+      "after": "ngồi sổm",
+      "why": "Lượt chép 1 đọc \"sớm\", lượt 2 đọc \"sồm\"; ảnh phóng to cho thấy dấu hỏi: \"sổm\". Bản gốc in sai chính tả của \"xổm\" — giữ nguyên dạng in.",
+      "by": "Claude (lượt chép 2 + phóng to)",
+      "at": "2026-10-05"
+    },
+    {
+      "kind": "transcription",
+      "pdfPage": 11,
+      "before": "nhiệt độ",
+      "after": "nhiêt độ",
+      "why": "Bản gốc in thiếu dấu nặng (\"nhiêt\"); lượt chép 1 đã tự sửa — trả về nguyên văn.",
+      "by": "Claude (lượt chép 2 + phóng to)",
+      "at": "2026-10-05"
+    }
+  ]
 }

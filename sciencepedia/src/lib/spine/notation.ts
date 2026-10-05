@@ -89,7 +89,8 @@ function normalize(raw: string): string {
     .replace(/[₀-₉]/g, (c) => SUBSCRIPTS[c] ?? c)
     // "->", "–", "—", "-" giữa hai vế đều là khoảng.
     .replace(/->|→|[–—−]/g, "-")
-    // "//" là ký hiệu song chỉnh: hai đốt ngang hàng, đọc như dấu phân cách.
+    // "//" là ký hiệu song chỉnh — hai tay tác động cùng lúc vào hai điểm (chủ sản
+    // phẩm giải thích 2026-10-05). Với chỉ mục, hai điểm là hai mã: đọc như dấu phân cách.
     .replace(/\/\//g, ",")
     .replace(/\s+/g, " ")
     .trim();

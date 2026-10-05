@@ -109,8 +109,8 @@
   "symptoms": [
     {
       "pdfPage": 7,
-      "vi": "Đau dây thần kinh hông thường có các dấu hiệu hạn chế sau đây: 1. Dấu hiệu thống điểm đau (Walleix) 2. Dấu hiệu đứng cúi hạn chế 3. Dấu hiệu ngồi sớm hạn chế 4. Dấu hiệu nâng chân hạn chế 5. Dấu hiệu giãn cột sống hạn chế 6. Dấu hiệu đi nhanh hạn chế.",
-      "en": "Sciatic nerve pain usually shows the following restriction signs: 1. the painful-point sign (spelled \"Walleix\" in the original); 2. restricted forward bending while standing; 3. restricted \"ngồi sớm\" (as printed; the document's own heading for this sign on p. 8 reads \"ngồi xổm\", squatting); 4. restricted leg raising; 5. restricted spinal stretching; 6. restricted fast walking."
+      "vi": "Đau dây thần kinh hông thường có các dấu hiệu hạn chế sau đây: 1. Dấu hiệu thống điểm đau (Walleix) 2. Dấu hiệu đứng cúi hạn chế 3. Dấu hiệu ngồi sổm hạn chế 4. Dấu hiệu nâng chân hạn chế 5. Dấu hiệu giãn cột sống hạn chế 6. Dấu hiệu đi nhanh hạn chế.",
+      "en": "Sciatic nerve pain usually shows the following restriction signs: 1. the painful-point sign (spelled \"Walleix\" in the original); 2. restricted forward bending while standing; 3. restricted \"ngồi sổm\" (as printed; the standard spelling is \"ngồi xổm\", squatting, which the document itself uses on p. 8); 4. restricted leg raising; 5. restricted spinal stretching; 6. restricted fast walking."
     }
   ],
   "methodQuotes": [],
@@ -157,8 +157,8 @@
     }
   ],
   "review": {
-    "transcription": "pending",
-    "mapping": "pending",
+    "transcription": "passed",
+    "mapping": "passed",
     "editor": "pending"
   }
 }
