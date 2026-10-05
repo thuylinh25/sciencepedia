@@ -3651,30 +3651,6 @@
        }
       },
       {
-       "kind": "primary",
-       "label": "trọng điểm",
-       "raw": "các đốt sống cổ và L1",
-       "ref": {
-        "pdfPage": 21,
-        "bookPage": 20
-       },
-       "from": "prose",
-       "line": "Trung tâm điều nhiệt vùng đầu, vùng mỏ ác. Giải tỏa trọng điểm các đốt sống cổ và L1.",
-       "vertebrae": {
-        "raw": "các đốt sống cổ và L1",
-        "codes": [
-         {
-          "code": "L1",
-          "confidence": "exact"
-         }
-        ],
-        "regions": [
-         "cervical"
-        ],
-        "issues": []
-       }
-      },
-      {
        "kind": "treatment",
        "label": "Giải tỏa trọng điểm các",
        "raw": "đốt sống cổ và L1",
@@ -3989,30 +3965,6 @@
        }
       },
       {
-       "kind": "primary",
-       "label": "trọng điểm",
-       "raw": "các đốt sống cổ và T11",
-       "ref": {
-        "pdfPage": 22,
-        "bookPage": 21
-       },
-       "from": "prose",
-       "line": "Trung tâm điều nhiệt vùng đầu và vai phải, giải tỏa trọng điểm các đốt sống cổ và T11.",
-       "vertebrae": {
-        "raw": "các đốt sống cổ và T11",
-        "codes": [
-         {
-          "code": "T11",
-          "confidence": "exact"
-         }
-        ],
-        "regions": [
-         "cervical"
-        ],
-        "issues": []
-       }
-      },
-      {
        "kind": "treatment",
        "label": "giải tỏa trọng điểm các",
        "raw": "đốt sống cổ và T11",
@@ -4074,30 +4026,6 @@
         "bookPage": 21
        },
        "from": "label",
-       "vertebrae": {
-        "raw": "các đốt sống cổ và T11",
-        "codes": [
-         {
-          "code": "T11",
-          "confidence": "exact"
-         }
-        ],
-        "regions": [
-         "cervical"
-        ],
-        "issues": []
-       }
-      },
-      {
-       "kind": "primary",
-       "label": "trọng điểm",
-       "raw": "các đốt sống cổ và T11",
-       "ref": {
-        "pdfPage": 22,
-        "bookPage": 21
-       },
-       "from": "prose",
-       "line": "Giải tỏa trọng điểm các đốt sống cổ và T11",
        "vertebrae": {
         "raw": "các đốt sống cổ và T11",
         "codes": [

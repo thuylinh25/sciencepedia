@@ -1,0 +1,2653 @@
+{
+  "slug": "dau-dau-theo-tac-dong-cot-song",
+  "collection": "tac-dong-cot-song",
+  "section": "dau-dau",
+  "title": {
+    "vi": "Các bệnh về đau đầu theo phương pháp Tác động cột sống",
+    "en": "Headache in the Spinal Impact method"
+  },
+  "riskLevel": "high",
+  "source": {
+    "docId": "pp-tdcs-vn",
+    "part": "Phần II",
+    "heading": "CÁC BỆNH VỀ ĐAU ĐẦU",
+    "pdfPages": [
+      20,
+      32
+    ]
+  },
+  "variants": [
+    {
+      "id": "dau-dau-sot-ret-con-lung-gay",
+      "label": {
+        "vi": "Đau đầu sốt rét cơn, lưng gáy co cứng, ứ phế quản hoặc cảm mạo",
+        "en": "Headache with intermittent chills and fever, stiff back and nape, bronchial congestion or a cold"
+      },
+      "heading": "1/ Đau đầu sốt rét cơn, lưng gáy co cứng, ứ phế quản hoặc cảm mạo",
+      "ref": {
+        "pdfPage": 20,
+        "bookPage": 19
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "C7",
+          "role": "primary",
+          "raw": "C7 – T1",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 20,
+            "bookPage": 19
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T1",
+          "role": "primary",
+          "raw": "C7 – T1",
+          "confidence": "expanded",
+          "note": "bung từ khoảng C7–T1",
+          "ref": {
+            "pdfPage": 20,
+            "bookPage": 19
+          }
+        }
+      ]
+    },
+    {
+      "id": "dau-dau-do-bi-cam-kiem-chung",
+      "label": {
+        "vi": "Đau đầu do bị cảm, kiêm chứng bắp thịt cổ gáy co giật, có sốt rét cơn",
+        "en": "Headache from a cold, with twitching neck muscles and intermittent chills"
+      },
+      "heading": "2/ Đau đầu do bị cảm, kiêm chứng bắp thịt cổ gáy co giật, có sốt rét cơn",
+      "ref": {
+        "pdfPage": 20,
+        "bookPage": 19
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "T2",
+          "role": "primary",
+          "raw": "T2",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 20,
+            "bookPage": 19
+          }
+        }
+      ]
+    },
+    {
+      "id": "dau-dau-sot-cao-kiem-chung-lung",
+      "label": {
+        "vi": "Đau đầu sốt cao, kiêm chứng lưng và thắt lưng cứng đau, chân đau tê, đau kẽ sườn, vàng da, suyễn, bụng trên lạnh, biếng ăn",
+        "en": "Headache with high fever, with stiff painful back and lower back, numb aching legs, rib pain, jaundice, wheezing, cold upper abdomen, poor appetite"
+      },
+      "heading": "3/ Đau đầu sốt cao, kiêm chứng lưng và thắt lưng cứng đau, chân đau tê, đau kẽ sườn, vàng da, suyễn, bụng trên lạnh, biếng ăn.",
+      "ref": {
+        "pdfPage": 20,
+        "bookPage": 19
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "T7",
+          "role": "primary",
+          "raw": "T7",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 20,
+            "bookPage": 19
+          }
+        }
+      ]
+    },
+    {
+      "id": "dau-mot-ben-dau-kiem-chung-chay",
+      "label": {
+        "vi": "Đau một bên đầu kiêm chứng chảy nước mắt trông không rõ",
+        "en": "One-sided headache with watery eyes and unclear vision"
+      },
+      "heading": "1/ Đau một bên đầu kiêm chứng chảy nước mắt trông không rõ",
+      "ref": {
+        "pdfPage": 21,
+        "bookPage": 20
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "L1",
+          "role": "primary",
+          "raw": "L1",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 21,
+            "bookPage": 20
+          }
+        }
+      ]
+    },
+    {
+      "id": "dau-dau-chong-mat-kiem-sung-dau",
+      "label": {
+        "vi": "Đau đầu, chóng mặt kiêm sưng đau khớp cổ chân, ống chân và đầy bụng",
+        "en": "Headache and dizziness, with swollen painful ankles and shins and bloating"
+      },
+      "heading": "2/ Đau đầu, chóng mặt kiêm sưng đau khớp cổ chân, ống chân và đầy bụng",
+      "ref": {
+        "pdfPage": 21,
+        "bookPage": 20
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "L1",
+          "role": "primary",
+          "raw": "các đốt sống cổ và L1",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 21,
+            "bookPage": 20
+          }
+        },
+        {
+          "targetType": "region",
+          "targetId": "cervical",
+          "role": "primary",
+          "raw": "các đốt sống cổ và L1",
+          "confidence": "region-only",
+          "ref": {
+            "pdfPage": 21,
+            "bookPage": 20
+          }
+        }
+      ]
+    },
+    {
+      "id": "dau-nhuc-vung-tran-kiem-tieu-hoa",
+      "label": {
+        "vi": "Đau nhức vùng trán kiêm tiêu hóa kém, đầy bụng đi ỉa lỏng, chân đau tê bại",
+        "en": "Aching forehead, with poor digestion, bloating, loose stools, numb weak legs"
+      },
+      "heading": "3/ Đau nhức vùng trán kiêm tiêu hóa kém, đầy bụng đi ỉa lỏng, chân đau tê bại",
+      "ref": {
+        "pdfPage": 21,
+        "bookPage": 20
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "T12",
+          "role": "primary",
+          "raw": "các đốt sống cổ , T12 và L1",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 21,
+            "bookPage": 20
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "L1",
+          "role": "primary",
+          "raw": "các đốt sống cổ , T12 và L1",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 21,
+            "bookPage": 20
+          }
+        },
+        {
+          "targetType": "region",
+          "targetId": "cervical",
+          "role": "primary",
+          "raw": "các đốt sống cổ , T12 và L1",
+          "confidence": "region-only",
+          "ref": {
+            "pdfPage": 21,
+            "bookPage": 20
+          }
+        }
+      ]
+    },
+    {
+      "id": "dau-mot-ben-dau-kiem-chung-u",
+      "label": {
+        "vi": "Đau một bên đầu, kiêm chứng ù tai, điếc tai giữa, đau răng , liệt dây 7",
+        "en": "One-sided headache, with ringing in the ears, middle-ear deafness, toothache, facial (7th) nerve palsy"
+      },
+      "heading": "1/ Đau một bên đầu, kiêm chứng ù tai, điếc tai giữa, đau răng , liệt dây 7",
+      "ref": {
+        "pdfPage": 22,
+        "bookPage": 21
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "T11",
+          "role": "primary",
+          "raw": "các đốt sống cổ và T11",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 22,
+            "bookPage": 21
+          }
+        },
+        {
+          "targetType": "region",
+          "targetId": "cervical",
+          "role": "primary",
+          "raw": "các đốt sống cổ và T11",
+          "confidence": "region-only",
+          "ref": {
+            "pdfPage": 22,
+            "bookPage": 21
+          }
+        }
+      ]
+    },
+    {
+      "id": "dau-dau-do-bi-cam-kiem-co",
+      "label": {
+        "vi": "Đau đầu do bị cảm kiêm cổ gáy cứng đau",
+        "en": "Headache from a cold, with stiff painful nape"
+      },
+      "heading": "2/ Đau đầu do bị cảm kiêm cổ gáy cứng đau.",
+      "ref": {
+        "pdfPage": 22,
+        "bookPage": 21
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "T11",
+          "role": "primary",
+          "raw": "các đốt sống cổ và T11",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 22,
+            "bookPage": 21
+          }
+        },
+        {
+          "targetType": "region",
+          "targetId": "cervical",
+          "role": "primary",
+          "raw": "các đốt sống cổ và T11",
+          "confidence": "region-only",
+          "ref": {
+            "pdfPage": 22,
+            "bookPage": 21
+          }
+        }
+      ]
+    },
+    {
+      "id": "dau-vung-tran-kiem-mat-nhuc-dau",
+      "label": {
+        "vi": "Đau vùng trán kiêm mắt nhức đau liệt dây 7",
+        "en": "Forehead pain with aching eyes, facial (7th) nerve palsy"
+      },
+      "heading": "3/ Đau vùng trán kiêm mắt nhức đau liệt dây 7",
+      "ref": {
+        "pdfPage": 22,
+        "bookPage": 21
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "T11",
+          "role": "primary",
+          "raw": "các đốt sống cổ và T11",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 22,
+            "bookPage": 21
+          }
+        },
+        {
+          "targetType": "region",
+          "targetId": "cervical",
+          "role": "primary",
+          "raw": "các đốt sống cổ và T11",
+          "confidence": "region-only",
+          "ref": {
+            "pdfPage": 22,
+            "bookPage": 21
+          }
+        }
+      ]
+    },
+    {
+      "id": "dau-vung-tran-kiem-hay-nhay-mat",
+      "label": {
+        "vi": "Đau vùng trán kiêm hay nháy mắt, chóng mặt",
+        "en": "Forehead pain with frequent blinking, dizziness"
+      },
+      "heading": "1/ Đau vùng trán kiêm hay nháy mắt, chóng mặt",
+      "ref": {
+        "pdfPage": 22,
+        "bookPage": 21
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "S3",
+          "role": "primary",
+          "raw": "các đốt sống cổ, S3",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 23,
+            "bookPage": 22
+          }
+        },
+        {
+          "targetType": "region",
+          "targetId": "cervical",
+          "role": "primary",
+          "raw": "các đốt sống cổ, S3",
+          "confidence": "region-only",
+          "ref": {
+            "pdfPage": 23,
+            "bookPage": 22
+          }
+        }
+      ]
+    },
+    {
+      "id": "dau-dau-chong-mat-kiem-dau-eo",
+      "label": {
+        "vi": "Đau đầu, chóng mặt kiêm đau eo, lưng , chân tê và lạnh buốt, đi đứng khó khăn, mất ngủ kéo dài",
+        "en": "Headache and dizziness, with waist and back pain, numb icy legs, difficulty walking, long-lasting insomnia"
+      },
+      "heading": "2/ Đau đầu, chóng mặt kiêm đau eo, lưng , chân tê và lạnh buốt, đi đứng khó khăn, mất ngủ kéo dài",
+      "ref": {
+        "pdfPage": 23,
+        "bookPage": 22
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "S3",
+          "role": "primary",
+          "raw": "các đốt sống cổ, S3",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 23,
+            "bookPage": 22
+          }
+        },
+        {
+          "targetType": "region",
+          "targetId": "cervical",
+          "role": "primary",
+          "raw": "các đốt sống cổ, S3",
+          "confidence": "region-only",
+          "ref": {
+            "pdfPage": 23,
+            "bookPage": 22
+          }
+        }
+      ]
+    },
+    {
+      "id": "dau-nang-dau-kieu-co-gay-cung",
+      "label": {
+        "vi": "Đau nặng đầu: Kiểu cổ gáy cùng đau, mờ mắt, tắc mũi, lưng vai đau mỏi",
+        "en": "Heavy head: nape pain, blurred vision, blocked nose, aching back and shoulders"
+      },
+      "heading": "3/ Đau nặng đầu: Kiểu cổ gáy cùng đau, mờ mắt, tắc mũi, lưng vai đau mỏi",
+      "ref": {
+        "pdfPage": 23,
+        "bookPage": 22
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "S3",
+          "role": "primary",
+          "raw": "các đốt sống cổ và S3",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 23,
+            "bookPage": 22
+          }
+        },
+        {
+          "targetType": "region",
+          "targetId": "cervical",
+          "role": "primary",
+          "raw": "các đốt sống cổ và S3",
+          "confidence": "region-only",
+          "ref": {
+            "pdfPage": 23,
+            "bookPage": 22
+          }
+        }
+      ]
+    },
+    {
+      "id": "dau-dau-vung-co-phai-nong-lien",
+      "label": {
+        "vi": "Đau đầu vùng cổ phải nóng liên quan chức năng hô hấp rối loạn",
+        "en": "Headache with a hot right side of the neck, related to disturbed respiratory function"
+      },
+      "heading": "V. Đau đầu vùng cổ phải nóng liên quan chức năng hô hấp rối loạn",
+      "ref": {
+        "pdfPage": 23,
+        "bookPage": 22
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "T3",
+          "role": "primary",
+          "raw": "các đốt sống cổ, T3,T4",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 23,
+            "bookPage": 22
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T4",
+          "role": "primary",
+          "raw": "các đốt sống cổ, T3,T4",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 23,
+            "bookPage": 22
+          }
+        },
+        {
+          "targetType": "region",
+          "targetId": "cervical",
+          "role": "primary",
+          "raw": "các đốt sống cổ, T3,T4",
+          "confidence": "region-only",
+          "ref": {
+            "pdfPage": 23,
+            "bookPage": 22
+          }
+        }
+      ]
+    },
+    {
+      "id": "dau-dau-vung-cham-nong-cao-lien",
+      "label": {
+        "vi": "Đau đầu vùng chẩm nóng cao liên quan chức năng đại tràng kiêm : chảy máu cam, đau răng, ù tai, tê họng, ho suyễn, nhức 2 vai, trẻ em bị co giật",
+        "en": "Headache with a hot occiput, related to colon function, with nosebleeds, toothache, tinnitus, numb throat, cough and wheezing, aching shoulders, convulsions in children"
+      },
+      "heading": "VI. Đau đầu vùng chẩm nóng cao liên quan chức năng đại tràng kiêm : chảy máu cam, đau răng, ù tai, tê họng, ho suyễn, nhức 2 vai, trẻ em bị co giật",
+      "ref": {
+        "pdfPage": 24,
+        "bookPage": 23
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "L3",
+          "role": "primary",
+          "raw": "các đốt cổ và L3,L5",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 24,
+            "bookPage": 23
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "L5",
+          "role": "primary",
+          "raw": "các đốt cổ và L3,L5",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 24,
+            "bookPage": 23
+          }
+        },
+        {
+          "targetType": "region",
+          "targetId": "cervical",
+          "role": "primary",
+          "raw": "các đốt cổ và L3,L5",
+          "confidence": "region-only",
+          "ref": {
+            "pdfPage": 24,
+            "bookPage": 23
+          }
+        }
+      ]
+    },
+    {
+      "id": "dau-dau-vung-ron-nong-cao-lien",
+      "label": {
+        "vi": "Đau đầu vùng rốn nóng cao liên quan chức năng ruột non rối loạn kiêm : đau 2 bên đầu ; tai, mắt, gáy, họng bị rối loạn, bệnh phát nóng, tâm thần",
+        "en": "Headache with a hot navel area, related to disturbed small-intestine function, with pain on both sides of the head; ear, eye, nape and throat disturbances; fever; mental disorders"
+      },
+      "heading": "VII. Đau đầu vùng rốn nóng cao liên quan chức năng ruột non rối loạn kiêm : đau 2 bên đầu ; tai, mắt, gáy, họng bị rối loạn, bệnh phát nóng, tâm thần",
+      "ref": {
+        "pdfPage": 24,
+        "bookPage": 23
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "S2",
+          "role": "primary",
+          "raw": "các đốt sống cổ, S2",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 24,
+            "bookPage": 23
+          }
+        },
+        {
+          "targetType": "region",
+          "targetId": "cervical",
+          "role": "primary",
+          "raw": "các đốt sống cổ, S2",
+          "confidence": "region-only",
+          "ref": {
+            "pdfPage": 24,
+            "bookPage": 23
+          }
+        }
+      ]
+    },
+    {
+      "id": "dau-dau-eo-lung-trai-nong-cao",
+      "label": {
+        "vi": "Đau đầu eo lưng trái nóng cao liên quan chức năng thần kinh vận động và sinh dục rối loạn",
+        "en": "Headache with a hot left waist, related to disturbed motor-nerve and reproductive function"
+      },
+      "heading": "VIII. Đau đầu eo lưng trái nóng cao liên quan chức năng thần kinh vận động và sinh dục rối loạn",
+      "ref": {
+        "pdfPage": 24,
+        "bookPage": 23
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "L3",
+          "role": "primary",
+          "raw": "các đốt sống cổ, L3,L5 rối loạn",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 24,
+            "bookPage": 23
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "L5",
+          "role": "primary",
+          "raw": "các đốt sống cổ, L3,L5 rối loạn",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 24,
+            "bookPage": 23
+          }
+        },
+        {
+          "targetType": "region",
+          "targetId": "cervical",
+          "role": "primary",
+          "raw": "các đốt sống cổ, L3,L5 rối loạn",
+          "confidence": "region-only",
+          "ref": {
+            "pdfPage": 24,
+            "bookPage": 23
+          }
+        }
+      ]
+    },
+    {
+      "id": "dau-dau-vung-ha-suon-phai-nong",
+      "label": {
+        "vi": "Đau đầu vùng hạ sườn phải nóng cao liên quan chức năng gan rối loạn",
+        "en": "Headache with a hot right upper abdomen, related to disturbed liver function"
+      },
+      "heading": "IX. Đau đầu vùng hạ sườn phải nóng cao liên quan chức năng gan rối loạn",
+      "ref": {
+        "pdfPage": 25,
+        "bookPage": 24
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "T10",
+          "role": "primary",
+          "raw": "các đốt sống cổ, T10",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 25,
+            "bookPage": 24
+          }
+        },
+        {
+          "targetType": "region",
+          "targetId": "cervical",
+          "role": "primary",
+          "raw": "các đốt sống cổ, T10",
+          "confidence": "region-only",
+          "ref": {
+            "pdfPage": 25,
+            "bookPage": 24
+          }
+        }
+      ]
+    },
+    {
+      "id": "dau-dau-do-tang-huyet-ap-kiem",
+      "label": {
+        "vi": "Đau đầu do tăng huyết áp kiêm tim hồi hộp: ngực đau tức, đau dạ dày, nôn ra máu, hông đau",
+        "en": "Headache from high blood pressure with palpitations: chest tightness, stomach pain, vomiting blood, hip pain"
+      },
+      "heading": "1/ Đau đầu do tăng huyết áp kiêm tim hồi hộp: ngực đau tức, đau dạ dày, nôn ra máu, hông đau",
+      "ref": {
+        "pdfPage": 25,
+        "bookPage": 24
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "T5",
+          "role": "primary",
+          "raw": "các đốt sống cổ, T5",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 25,
+            "bookPage": 24
+          }
+        },
+        {
+          "targetType": "region",
+          "targetId": "cervical",
+          "role": "primary",
+          "raw": "các đốt sống cổ, T5",
+          "confidence": "region-only",
+          "ref": {
+            "pdfPage": 25,
+            "bookPage": 24
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T6",
+          "role": "caution",
+          "side": "right",
+          "raw": "T6, T10, L3 bên phải",
+          "context": "Ghi chú: Đau đầu do tăng huyết áp cần tác động T1, T2 ; thận trọng khi tác động ở T6, T10, L3 bên phải",
+          "confidence": "exact",
+          "decision": "D-27",
+          "ref": {
+            "pdfPage": 25,
+            "bookPage": 24
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T10",
+          "role": "caution",
+          "side": "right",
+          "raw": "T6, T10, L3 bên phải",
+          "context": "Ghi chú: Đau đầu do tăng huyết áp cần tác động T1, T2 ; thận trọng khi tác động ở T6, T10, L3 bên phải",
+          "confidence": "exact",
+          "decision": "D-27",
+          "ref": {
+            "pdfPage": 25,
+            "bookPage": 24
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "L3",
+          "role": "caution",
+          "side": "right",
+          "raw": "T6, T10, L3 bên phải",
+          "context": "Ghi chú: Đau đầu do tăng huyết áp cần tác động T1, T2 ; thận trọng khi tác động ở T6, T10, L3 bên phải",
+          "confidence": "exact",
+          "decision": "D-27",
+          "ref": {
+            "pdfPage": 25,
+            "bookPage": 24
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T1",
+          "role": "primary",
+          "raw": "T1, T2",
+          "context": "Ghi chú: Đau đầu do tăng huyết áp cần tác động T1, T2 ; thận trọng khi tác động ở T6, T10, L3 bên phải",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 25,
+            "bookPage": 24
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T2",
+          "role": "primary",
+          "raw": "T1, T2",
+          "context": "Ghi chú: Đau đầu do tăng huyết áp cần tác động T1, T2 ; thận trọng khi tác động ở T6, T10, L3 bên phải",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 25,
+            "bookPage": 24
+          }
+        }
+      ]
+    },
+    {
+      "id": "dau-dau-mat-ngu-kiem-dong-kinh",
+      "label": {
+        "vi": "Đau đầu mất ngủ kiêm động kinh, lưng cứng, tim đau, sốt rét, mạch nhanh",
+        "en": "Headache with insomnia, with epilepsy, stiff back, heart pain, chills and fever, fast pulse"
+      },
+      "heading": "2/ Đau đầu mất ngủ kiêm động kinh, lưng cứng, tim đau, sốt rét, mạch nhanh",
+      "ref": {
+        "pdfPage": 25,
+        "bookPage": 24
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "T9",
+          "role": "primary",
+          "raw": "các đốt sống cổ, T9",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 25,
+            "bookPage": 24
+          }
+        },
+        {
+          "targetType": "region",
+          "targetId": "cervical",
+          "role": "primary",
+          "raw": "các đốt sống cổ, T9",
+          "confidence": "region-only",
+          "ref": {
+            "pdfPage": 25,
+            "bookPage": 24
+          }
+        }
+      ]
+    },
+    {
+      "id": "dau-dau-mat-ngu-kiem-canh-tay",
+      "label": {
+        "vi": "Đau đầu mất ngủ, kiêm cánh tay, cẳng tay tê dại, tràng nhạc, tim đau nhói",
+        "en": "Headache with insomnia, with numb arms and forearms, scrofula, stabbing heart pain"
+      },
+      "heading": "3/ Đau đầu mất ngủ, kiêm cánh tay, cẳng tay tê dại, tràng nhạc, tim đau nhói.",
+      "ref": {
+        "pdfPage": 26,
+        "bookPage": 25
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "T6",
+          "role": "primary",
+          "raw": "các đốt sống cổ và T6",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 26,
+            "bookPage": 25
+          }
+        },
+        {
+          "targetType": "region",
+          "targetId": "cervical",
+          "role": "primary",
+          "raw": "các đốt sống cổ và T6",
+          "confidence": "region-only",
+          "ref": {
+            "pdfPage": 26,
+            "bookPage": 25
+          }
+        }
+      ]
+    },
+    {
+      "id": "dau-dau-vung-giua-lung-nong-cao",
+      "label": {
+        "vi": "Đau đầu vùng giữa lưng nóng cao liên quan chức năng lá lách rối loạn",
+        "en": "Headache with a hot mid-back, related to disturbed spleen function"
+      },
+      "heading": "XI. Đau đầu vùng giữa lưng nóng cao liên quan chức năng lá lách rối loạn:",
+      "ref": {
+        "pdfPage": 26,
+        "bookPage": 25
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "T10",
+          "role": "primary",
+          "raw": "Các đốt sống cổ và T10,T12, S1-S5",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 26,
+            "bookPage": 25
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T12",
+          "role": "primary",
+          "raw": "Các đốt sống cổ và T10,T12, S1-S5",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 26,
+            "bookPage": 25
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "S1",
+          "role": "primary",
+          "raw": "Các đốt sống cổ và T10,T12, S1-S5",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 26,
+            "bookPage": 25
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "S2",
+          "role": "primary",
+          "raw": "Các đốt sống cổ và T10,T12, S1-S5",
+          "confidence": "expanded",
+          "note": "bung từ khoảng S1–S5",
+          "ref": {
+            "pdfPage": 26,
+            "bookPage": 25
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "S3",
+          "role": "primary",
+          "raw": "Các đốt sống cổ và T10,T12, S1-S5",
+          "confidence": "expanded",
+          "note": "bung từ khoảng S1–S5",
+          "ref": {
+            "pdfPage": 26,
+            "bookPage": 25
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "S4",
+          "role": "primary",
+          "raw": "Các đốt sống cổ và T10,T12, S1-S5",
+          "confidence": "expanded",
+          "note": "bung từ khoảng S1–S5",
+          "ref": {
+            "pdfPage": 26,
+            "bookPage": 25
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "S5",
+          "role": "primary",
+          "raw": "Các đốt sống cổ và T10,T12, S1-S5",
+          "confidence": "expanded",
+          "note": "bung từ khoảng S1–S5",
+          "ref": {
+            "pdfPage": 26,
+            "bookPage": 25
+          }
+        },
+        {
+          "targetType": "region",
+          "targetId": "cervical",
+          "role": "primary",
+          "raw": "Các đốt sống cổ và T10,T12, S1-S5",
+          "confidence": "region-only",
+          "ref": {
+            "pdfPage": 26,
+            "bookPage": 25
+          }
+        }
+      ]
+    },
+    {
+      "id": "dau-dau-lao-dao-muon-nga-kiem",
+      "label": {
+        "vi": "Đau đầu lảo đảo muốn ngã kiêm hội chứng tiền đình, huyết áp cao",
+        "en": "Headache with unsteadiness, as if about to fall, with vestibular syndrome and high blood pressure"
+      },
+      "heading": "1/ Đau đầu lảo đảo muốn ngã kiêm hội chứng tiền đình, huyết áp cao.",
+      "ref": {
+        "pdfPage": 26,
+        "bookPage": 25
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "C6",
+          "role": "primary",
+          "side": "right",
+          "raw": "C6, C7 và T1",
+          "confidence": "exact",
+          "decision": "D-29",
+          "ref": {
+            "pdfPage": 26,
+            "bookPage": 25
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "C7",
+          "role": "primary",
+          "side": "right",
+          "raw": "C6, C7 và T1",
+          "confidence": "exact",
+          "decision": "D-29",
+          "ref": {
+            "pdfPage": 26,
+            "bookPage": 25
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T1",
+          "role": "primary",
+          "side": "right",
+          "raw": "C6, C7 và T1",
+          "confidence": "exact",
+          "decision": "D-29",
+          "ref": {
+            "pdfPage": 26,
+            "bookPage": 25
+          }
+        }
+      ]
+    },
+    {
+      "id": "dau-dau-phia-sau-kiem-dau-gay",
+      "label": {
+        "vi": "Đau đầu phía sau kiêm đau gáy, mất tiếng, động kinh",
+        "en": "Headache at the back of the head, with nape pain, loss of voice, epilepsy"
+      },
+      "heading": "2/ Đau đầu phía sau kiêm đau gáy, mất tiếng, động kinh.",
+      "ref": {
+        "pdfPage": 26,
+        "bookPage": 25
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "C1",
+          "role": "primary",
+          "raw": "C1,C5",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 27,
+            "bookPage": 26
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "C5",
+          "role": "primary",
+          "raw": "C1,C5",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 27,
+            "bookPage": 26
+          }
+        }
+      ]
+    },
+    {
+      "id": "dau-dau-buon-non-kiem-lung-va",
+      "label": {
+        "vi": "Đau đầu buồn nôn kiêm lưng và eo lưng lạnh biếng ăn, bụng trên lạnh",
+        "en": "Headache with nausea, with cold back and waist, poor appetite, cold upper abdomen"
+      },
+      "heading": "3/ Đau đầu buồn nôn kiêm lưng và eo lưng lạnh biếng ăn, bụng trên lạnh.",
+      "ref": {
+        "pdfPage": 27,
+        "bookPage": 26
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "T6",
+          "role": "primary",
+          "raw": "Vùng cổ và T6, T7",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 27,
+            "bookPage": 26
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T7",
+          "role": "primary",
+          "raw": "Vùng cổ và T6, T7",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 27,
+            "bookPage": 26
+          }
+        },
+        {
+          "targetType": "region",
+          "targetId": "cervical",
+          "role": "primary",
+          "raw": "Vùng cổ và T6, T7",
+          "confidence": "region-only",
+          "ref": {
+            "pdfPage": 27,
+            "bookPage": 26
+          }
+        }
+      ]
+    },
+    {
+      "id": "dau-dau-kinh-nien",
+      "label": {
+        "vi": "Đau đầu kinh niên",
+        "en": "Chronic headache"
+      },
+      "heading": "4/ Đau đầu kinh niên",
+      "ref": {
+        "pdfPage": 27,
+        "bookPage": 26
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "C6",
+          "role": "primary",
+          "raw": "C6,C7,T1",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 27,
+            "bookPage": 26
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "C7",
+          "role": "primary",
+          "raw": "C6,C7,T1",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 27,
+            "bookPage": 26
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T1",
+          "role": "primary",
+          "raw": "C6,C7,T1",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 27,
+            "bookPage": 26
+          }
+        }
+      ]
+    },
+    {
+      "id": "dau-am-u-kiem-cac-chung-trang",
+      "label": {
+        "vi": "Đầu âm u kiêm các chứng trạng trong bệnh tâm thần",
+        "en": "Clouded head with symptoms of mental illness"
+      },
+      "heading": "5/ Đầu âm u kiêm các chứng trạng trong bệnh tâm thần",
+      "ref": {
+        "pdfPage": 27,
+        "bookPage": 26
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "C4",
+          "role": "primary",
+          "raw": "Các đốt sống C4 – C7 ; T1,T2,T5,T7,T8 ; L4, L5; S1- S4",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 27,
+            "bookPage": 26
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "C5",
+          "role": "primary",
+          "raw": "Các đốt sống C4 – C7 ; T1,T2,T5,T7,T8 ; L4, L5; S1- S4",
+          "confidence": "expanded",
+          "note": "bung từ khoảng C4–C7",
+          "ref": {
+            "pdfPage": 27,
+            "bookPage": 26
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "C6",
+          "role": "primary",
+          "raw": "Các đốt sống C4 – C7 ; T1,T2,T5,T7,T8 ; L4, L5; S1- S4",
+          "confidence": "expanded",
+          "note": "bung từ khoảng C4–C7",
+          "ref": {
+            "pdfPage": 27,
+            "bookPage": 26
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "C7",
+          "role": "primary",
+          "raw": "Các đốt sống C4 – C7 ; T1,T2,T5,T7,T8 ; L4, L5; S1- S4",
+          "confidence": "expanded",
+          "note": "bung từ khoảng C4–C7",
+          "ref": {
+            "pdfPage": 27,
+            "bookPage": 26
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T1",
+          "role": "primary",
+          "raw": "Các đốt sống C4 – C7 ; T1,T2,T5,T7,T8 ; L4, L5; S1- S4",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 27,
+            "bookPage": 26
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T2",
+          "role": "primary",
+          "raw": "Các đốt sống C4 – C7 ; T1,T2,T5,T7,T8 ; L4, L5; S1- S4",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 27,
+            "bookPage": 26
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T5",
+          "role": "primary",
+          "raw": "Các đốt sống C4 – C7 ; T1,T2,T5,T7,T8 ; L4, L5; S1- S4",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 27,
+            "bookPage": 26
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T7",
+          "role": "primary",
+          "raw": "Các đốt sống C4 – C7 ; T1,T2,T5,T7,T8 ; L4, L5; S1- S4",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 27,
+            "bookPage": 26
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T8",
+          "role": "primary",
+          "raw": "Các đốt sống C4 – C7 ; T1,T2,T5,T7,T8 ; L4, L5; S1- S4",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 27,
+            "bookPage": 26
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "L4",
+          "role": "primary",
+          "raw": "Các đốt sống C4 – C7 ; T1,T2,T5,T7,T8 ; L4, L5; S1- S4",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 27,
+            "bookPage": 26
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "L5",
+          "role": "primary",
+          "raw": "Các đốt sống C4 – C7 ; T1,T2,T5,T7,T8 ; L4, L5; S1- S4",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 27,
+            "bookPage": 26
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "S1",
+          "role": "primary",
+          "raw": "Các đốt sống C4 – C7 ; T1,T2,T5,T7,T8 ; L4, L5; S1- S4",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 27,
+            "bookPage": 26
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "S2",
+          "role": "primary",
+          "raw": "Các đốt sống C4 – C7 ; T1,T2,T5,T7,T8 ; L4, L5; S1- S4",
+          "confidence": "expanded",
+          "note": "bung từ khoảng S1–S4",
+          "ref": {
+            "pdfPage": 27,
+            "bookPage": 26
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "S3",
+          "role": "primary",
+          "raw": "Các đốt sống C4 – C7 ; T1,T2,T5,T7,T8 ; L4, L5; S1- S4",
+          "confidence": "expanded",
+          "note": "bung từ khoảng S1–S4",
+          "ref": {
+            "pdfPage": 27,
+            "bookPage": 26
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "S4",
+          "role": "primary",
+          "raw": "Các đốt sống C4 – C7 ; T1,T2,T5,T7,T8 ; L4, L5; S1- S4",
+          "confidence": "expanded",
+          "note": "bung từ khoảng S1–S4",
+          "ref": {
+            "pdfPage": 27,
+            "bookPage": 26
+          }
+        }
+      ]
+    },
+    {
+      "id": "nong-vung-tran",
+      "label": {
+        "vi": "Nóng vùng trán",
+        "en": "Hot forehead"
+      },
+      "heading": "6/ Nóng vùng trán.",
+      "ref": {
+        "pdfPage": 27,
+        "bookPage": 26
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "C6",
+          "role": "primary",
+          "raw": "C6, C7, T11",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 28,
+            "bookPage": 27
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "C7",
+          "role": "primary",
+          "raw": "C6, C7, T11",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 28,
+            "bookPage": 27
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T11",
+          "role": "primary",
+          "raw": "C6, C7, T11",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 28,
+            "bookPage": 27
+          }
+        }
+      ]
+    },
+    {
+      "id": "nong-dinh-dau-kiem-dai-dat",
+      "label": {
+        "vi": "Nóng đỉnh đầu kiêm đái dắt",
+        "en": "Hot crown of the head with frequent urination"
+      },
+      "heading": "7/Nóng đỉnh đầu kiêm đái dắt",
+      "ref": {
+        "pdfPage": 28,
+        "bookPage": 27
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "L2",
+          "role": "primary",
+          "raw": "đốt sống cổ , L2,L3,S4, S5",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 28,
+            "bookPage": 27
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "L3",
+          "role": "primary",
+          "raw": "đốt sống cổ , L2,L3,S4, S5",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 28,
+            "bookPage": 27
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "S4",
+          "role": "primary",
+          "raw": "đốt sống cổ , L2,L3,S4, S5",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 28,
+            "bookPage": 27
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "S5",
+          "role": "primary",
+          "raw": "đốt sống cổ , L2,L3,S4, S5",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 28,
+            "bookPage": 27
+          }
+        },
+        {
+          "targetType": "region",
+          "targetId": "cervical",
+          "role": "primary",
+          "raw": "đốt sống cổ , L2,L3,S4, S5",
+          "confidence": "region-only",
+          "ref": {
+            "pdfPage": 28,
+            "bookPage": 27
+          }
+        }
+      ]
+    },
+    {
+      "id": "nong-vung-cham-kiem-cam-giac-giam",
+      "label": {
+        "vi": "Nóng vùng chẩm kiêm cảm giác giảm",
+        "en": "Hot occiput with reduced sensation"
+      },
+      "heading": "8/ Nóng vùng chẩm kiêm cảm giác giảm",
+      "ref": {
+        "pdfPage": 28,
+        "bookPage": 27
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "S2",
+          "role": "primary",
+          "raw": "Các đốt sống cổ và S2, S3",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 28,
+            "bookPage": 27
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "S3",
+          "role": "primary",
+          "raw": "Các đốt sống cổ và S2, S3",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 28,
+            "bookPage": 27
+          }
+        },
+        {
+          "targetType": "region",
+          "targetId": "cervical",
+          "role": "primary",
+          "raw": "Các đốt sống cổ và S2, S3",
+          "confidence": "region-only",
+          "ref": {
+            "pdfPage": 28,
+            "bookPage": 27
+          }
+        }
+      ]
+    },
+    {
+      "id": "nong-vung-dau",
+      "label": {
+        "vi": "Nóng vùng đầu",
+        "en": "Hot head"
+      },
+      "heading": "9/ Nóng vùng đầu",
+      "ref": {
+        "pdfPage": 28,
+        "bookPage": 27
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "C3",
+          "role": "primary",
+          "raw": "C3",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 28,
+            "bookPage": 27
+          }
+        }
+      ]
+    },
+    {
+      "id": "nong-vung-gay",
+      "label": {
+        "vi": "Nóng vùng gáy",
+        "en": "Hot nape"
+      },
+      "heading": "10/ Nóng vùng gáy",
+      "ref": {
+        "pdfPage": 28,
+        "bookPage": 27
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "C5",
+          "role": "primary",
+          "raw": "C5",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 29,
+            "bookPage": 28
+          }
+        }
+      ]
+    },
+    {
+      "id": "dau-tuc-vung-cham-kiem-ha-huyet",
+      "label": {
+        "vi": "Đau tức vùng chẩm kiêm hạ huyết áp, mệt lả, chân tay mỏi rã rời",
+        "en": "Pressure pain at the occiput, with low blood pressure, exhaustion, utterly tired limbs"
+      },
+      "heading": "11/ Đau tức vùng chẩm kiêm hạ huyết áp, mệt lả, chân tay mỏi rã rời.",
+      "ref": {
+        "pdfPage": 29,
+        "bookPage": 28
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "C1",
+          "role": "primary",
+          "raw": "C1,C2 ; T6, T10 và L3",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 29,
+            "bookPage": 28
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "C2",
+          "role": "primary",
+          "raw": "C1,C2 ; T6, T10 và L3",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 29,
+            "bookPage": 28
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T6",
+          "role": "primary",
+          "raw": "C1,C2 ; T6, T10 và L3",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 29,
+            "bookPage": 28
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T10",
+          "role": "primary",
+          "raw": "C1,C2 ; T6, T10 và L3",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 29,
+            "bookPage": 28
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "L3",
+          "role": "primary",
+          "raw": "C1,C2 ; T6, T10 và L3",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 29,
+            "bookPage": 28
+          }
+        }
+      ]
+    },
+    {
+      "id": "lanh-vung-gay-kiem-ha-huyet-ap",
+      "label": {
+        "vi": "Lạnh vùng gáy kiêm hạ huyết áp, mạch chậm",
+        "en": "Cold nape with low blood pressure and slow pulse"
+      },
+      "heading": "12/ Lạnh vùng gáy kiêm hạ huyết áp, mạch chậm.",
+      "ref": {
+        "pdfPage": 29,
+        "bookPage": 28
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "C2",
+          "role": "primary",
+          "raw": "C2",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 29,
+            "bookPage": 28
+          }
+        }
+      ]
+    },
+    {
+      "id": "te-bi-vung-cham",
+      "label": {
+        "vi": "Tê bì vùng chẩm",
+        "en": "Numbness at the occiput"
+      },
+      "heading": "13/ Tê bì vùng chẩm",
+      "ref": {
+        "pdfPage": 29,
+        "bookPage": 28
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "C1",
+          "role": "primary",
+          "raw": "C1",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 29,
+            "bookPage": 28
+          }
+        }
+      ]
+    },
+    {
+      "id": "nhung-trieu-chung-dau-va-cac-cam",
+      "label": {
+        "vi": "1/ Những triệu chứng đau và các cảm giác khác ở trong đầu kể cả",
+        "en": "1/ Những triệu chứng đau và các cảm giác khác ở trong đầu kể cả"
+      },
+      "heading": "1/ Những triệu chứng đau và các cảm giác khác ở trong đầu kể cả",
+      "ref": {
+        "pdfPage": 29,
+        "bookPage": 28
+      },
+      "mappings": []
+    },
+    {
+      "id": "phuong-phap-tac-dong-cot-song-quy",
+      "label": {
+        "vi": "2/ Phương pháp tác động cột sống quy định về nhiệt độ da ở vùng đầu là",
+        "en": "2/ Phương pháp tác động cột sống quy định về nhiệt độ da ở vùng đầu là"
+      },
+      "heading": "2/ Phương pháp tác động cột sống quy định về nhiệt độ da ở vùng đầu là",
+      "ref": {
+        "pdfPage": 30,
+        "bookPage": 29
+      },
+      "mappings": []
+    },
+    {
+      "id": "nhung-dot-song-can-tranh-trong-cac",
+      "label": {
+        "vi": "Những đốt sống cần tránh trong các trường hợp đau đầu",
+        "en": "Vertebrae to avoid in headache"
+      },
+      "heading": "3/ Những đốt sống cần tránh trong các trường hợp đau đầu;",
+      "ref": {
+        "pdfPage": 30,
+        "bookPage": 29
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "C1",
+          "role": "avoid",
+          "raw": "C1, C2, C3, C4",
+          "context": "Những người có bệnh sơ cứng động mạch vành tim thì không được tác động ở C1, C2, C3, C4.",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 30,
+            "bookPage": 29
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "C2",
+          "role": "avoid",
+          "raw": "C1, C2, C3, C4",
+          "context": "Những người có bệnh sơ cứng động mạch vành tim thì không được tác động ở C1, C2, C3, C4.",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 30,
+            "bookPage": 29
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "C3",
+          "role": "avoid",
+          "raw": "C1, C2, C3, C4",
+          "context": "Những người có bệnh sơ cứng động mạch vành tim thì không được tác động ở C1, C2, C3, C4.",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 30,
+            "bookPage": 29
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "C4",
+          "role": "avoid",
+          "raw": "C1, C2, C3, C4",
+          "context": "Những người có bệnh sơ cứng động mạch vành tim thì không được tác động ở C1, C2, C3, C4.",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 30,
+            "bookPage": 29
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "C1",
+          "role": "avoid",
+          "raw": "C1, C2",
+          "context": "Những người bệnh huyết áp cao tránh C1, C2, thận trọng T6, T10 và L3 phải.",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 30,
+            "bookPage": 29
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "C2",
+          "role": "avoid",
+          "raw": "C1, C2",
+          "context": "Những người bệnh huyết áp cao tránh C1, C2, thận trọng T6, T10 và L3 phải.",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 30,
+            "bookPage": 29
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T6",
+          "role": "caution",
+          "side": "right",
+          "raw": "T6, T10 và L3 phải",
+          "context": "Những người bệnh huyết áp cao tránh C1, C2, thận trọng T6, T10 và L3 phải.",
+          "confidence": "exact",
+          "decision": "D-30",
+          "ref": {
+            "pdfPage": 30,
+            "bookPage": 29
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T10",
+          "role": "caution",
+          "side": "right",
+          "raw": "T6, T10 và L3 phải",
+          "context": "Những người bệnh huyết áp cao tránh C1, C2, thận trọng T6, T10 và L3 phải.",
+          "confidence": "exact",
+          "decision": "D-30",
+          "ref": {
+            "pdfPage": 30,
+            "bookPage": 29
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "L3",
+          "role": "caution",
+          "side": "right",
+          "raw": "T6, T10 và L3 phải",
+          "context": "Những người bệnh huyết áp cao tránh C1, C2, thận trọng T6, T10 và L3 phải.",
+          "confidence": "exact",
+          "decision": "D-30",
+          "ref": {
+            "pdfPage": 30,
+            "bookPage": 29
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "C7",
+          "role": "caution",
+          "raw": "C7, D1",
+          "context": "Đau đầu giãn đồng tử, mắt mờ tránh tác động C1, C2. Co đồng tử, mắt mờ thận trọng C7, D1.",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 30,
+            "bookPage": 29
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T1",
+          "role": "caution",
+          "raw": "C7, D1",
+          "context": "Đau đầu giãn đồng tử, mắt mờ tránh tác động C1, C2. Co đồng tử, mắt mờ thận trọng C7, D1.",
+          "confidence": "expanded",
+          "note": "D1 = T1 (ký hiệu dorsal)",
+          "ref": {
+            "pdfPage": 30,
+            "bookPage": 29
+          }
+        }
+      ]
+    },
+    {
+      "id": "dau-do-bi-cam",
+      "label": {
+        "vi": "Đau do bị cảm",
+        "en": "Pain from a cold"
+      },
+      "heading": "1/ Đau do bị cảm",
+      "ref": {
+        "pdfPage": 30,
+        "bookPage": 29
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "T2",
+          "role": "primary",
+          "raw": ".................................. T2",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 30,
+            "bookPage": 29
+          }
+        }
+      ]
+    },
+    {
+      "id": "ca-vung-dau-nong-ran",
+      "label": {
+        "vi": "Cả vùng đầu nóng ran",
+        "en": "Whole head burning hot"
+      },
+      "heading": "2/ Cả vùng đầu nóng ran",
+      "ref": {
+        "pdfPage": 30,
+        "bookPage": 29
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "C3",
+          "role": "primary",
+          "raw": ".................................. C3",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 30,
+            "bookPage": 29
+          }
+        }
+      ]
+    },
+    {
+      "id": "dau-dau-vung-tran-nong",
+      "label": {
+        "vi": "Đau đầu, vùng trán nóng",
+        "en": "Headache with a hot forehead"
+      },
+      "heading": "3/ Đau đầu, vùng trán nóng",
+      "ref": {
+        "pdfPage": 30,
+        "bookPage": 29
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "C6",
+          "role": "primary",
+          "raw": ".................................. C6,7, D11",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 30,
+            "bookPage": 29
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "C7",
+          "role": "primary",
+          "raw": ".................................. C6,7, D11",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 30,
+            "bookPage": 29
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T11",
+          "role": "primary",
+          "raw": ".................................. C6,7, D11",
+          "confidence": "expanded",
+          "note": "D11 = T11 (ký hiệu dorsal)",
+          "ref": {
+            "pdfPage": 30,
+            "bookPage": 29
+          }
+        }
+      ]
+    },
+    {
+      "id": "dau-vung-dinh-dau",
+      "label": {
+        "vi": "Đau vùng đỉnh đầu",
+        "en": "Pain at the top of the head"
+      },
+      "heading": "4/ Đau vùng đỉnh đầu",
+      "ref": {
+        "pdfPage": 30,
+        "bookPage": 29
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "S4",
+          "role": "primary",
+          "raw": ".................................. S4,5",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 30,
+            "bookPage": 29
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "S5",
+          "role": "primary",
+          "raw": ".................................. S4,5",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 30,
+            "bookPage": 29
+          }
+        }
+      ]
+    },
+    {
+      "id": "dau-vung-cham",
+      "label": {
+        "vi": "Đau vùng chẩm",
+        "en": "Pain at the occiput"
+      },
+      "heading": "5/ Đau vùng chẩm",
+      "ref": {
+        "pdfPage": 31,
+        "bookPage": 30
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "S2",
+          "role": "primary",
+          "raw": ".................................. S2,3",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 31,
+            "bookPage": 30
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "S3",
+          "role": "primary",
+          "raw": ".................................. S2,3",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 31,
+            "bookPage": 30
+          }
+        }
+      ]
+    },
+    {
+      "id": "vung-cham-te-bi",
+      "label": {
+        "vi": "Vùng chẩm tê bì",
+        "en": "Numbness at the occiput (table)"
+      },
+      "heading": "6/ Vùng chẩm tê bì",
+      "ref": {
+        "pdfPage": 31,
+        "bookPage": 30
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "C1",
+          "role": "primary",
+          "raw": ".................................. C1",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 31,
+            "bookPage": 30
+          }
+        }
+      ]
+    },
+    {
+      "id": "dau-dau-nhuc-mat",
+      "label": {
+        "vi": "Đau đầu nhức mắt",
+        "en": "Headache with aching eyes"
+      },
+      "heading": "7/ Đau đầu nhức mắt",
+      "ref": {
+        "pdfPage": 31,
+        "bookPage": 30
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "C3",
+          "role": "primary",
+          "raw": ".................................. C3",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 31,
+            "bookPage": 30
+          }
+        }
+      ]
+    },
+    {
+      "id": "dau-nhu-that-o-truoc-tran",
+      "label": {
+        "vi": "Đau như thắt ở trước trán",
+        "en": "Tight, band-like pain at the front of the forehead"
+      },
+      "heading": "8/ Đau như thắt ở trước trán",
+      "ref": {
+        "pdfPage": 31,
+        "bookPage": 30
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "T1",
+          "role": "primary",
+          "raw": ".................................. T1, L1",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 31,
+            "bookPage": 30
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "L1",
+          "role": "primary",
+          "raw": ".................................. T1, L1",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 31,
+            "bookPage": 30
+          }
+        }
+      ]
+    },
+    {
+      "id": "dau-dau-buon-non",
+      "label": {
+        "vi": "Đau đầu buồn nôn",
+        "en": "Headache with nausea"
+      },
+      "heading": "9/ Đau đầu buồn nôn",
+      "ref": {
+        "pdfPage": 31,
+        "bookPage": 30
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "C1",
+          "role": "primary",
+          "raw": ".................................. C1-C7",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 31,
+            "bookPage": 30
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "C2",
+          "role": "primary",
+          "raw": ".................................. C1-C7",
+          "confidence": "expanded",
+          "note": "bung từ khoảng C1–C7",
+          "ref": {
+            "pdfPage": 31,
+            "bookPage": 30
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "C3",
+          "role": "primary",
+          "raw": ".................................. C1-C7",
+          "confidence": "expanded",
+          "note": "bung từ khoảng C1–C7",
+          "ref": {
+            "pdfPage": 31,
+            "bookPage": 30
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "C4",
+          "role": "primary",
+          "raw": ".................................. C1-C7",
+          "confidence": "expanded",
+          "note": "bung từ khoảng C1–C7",
+          "ref": {
+            "pdfPage": 31,
+            "bookPage": 30
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "C5",
+          "role": "primary",
+          "raw": ".................................. C1-C7",
+          "confidence": "expanded",
+          "note": "bung từ khoảng C1–C7",
+          "ref": {
+            "pdfPage": 31,
+            "bookPage": 30
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "C6",
+          "role": "primary",
+          "raw": ".................................. C1-C7",
+          "confidence": "expanded",
+          "note": "bung từ khoảng C1–C7",
+          "ref": {
+            "pdfPage": 31,
+            "bookPage": 30
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "C7",
+          "role": "primary",
+          "raw": ".................................. C1-C7",
+          "confidence": "expanded",
+          "note": "bung từ khoảng C1–C7",
+          "ref": {
+            "pdfPage": 31,
+            "bookPage": 30
+          }
+        }
+      ]
+    },
+    {
+      "id": "dau-nua-dau-phia-truoc",
+      "label": {
+        "vi": "Đau nửa đầu phía trước",
+        "en": "Front one-sided headache"
+      },
+      "heading": "10/ Đau nửa đầu phía trước",
+      "ref": {
+        "pdfPage": 31,
+        "bookPage": 30
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "L1",
+          "role": "primary",
+          "raw": ".................................. L1",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 31,
+            "bookPage": 30
+          }
+        }
+      ]
+    },
+    {
+      "id": "dau-nua-dau-phia-sau",
+      "label": {
+        "vi": "Đau nửa đầu phía sau",
+        "en": "Back one-sided headache"
+      },
+      "heading": "11/ Đau nửa đầu phía sau",
+      "ref": {
+        "pdfPage": 31,
+        "bookPage": 30
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "C1",
+          "role": "primary",
+          "raw": ".................................. C1",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 31,
+            "bookPage": 30
+          }
+        }
+      ]
+    },
+    {
+      "id": "dau-nua-dau-it-ngu-buon-non",
+      "label": {
+        "vi": "Đau nửa đầu, ít ngủ, buồn nôn",
+        "en": "One-sided headache, poor sleep, nausea"
+      },
+      "heading": "12/ Đau nửa đầu, ít ngủ, buồn nôn",
+      "ref": {
+        "pdfPage": 31,
+        "bookPage": 30
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "C3",
+          "role": "primary",
+          "raw": ".................................. C3, 4,5,6,7, T4",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 31,
+            "bookPage": 30
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "C4",
+          "role": "primary",
+          "raw": ".................................. C3, 4,5,6,7, T4",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 31,
+            "bookPage": 30
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "C5",
+          "role": "primary",
+          "raw": ".................................. C3, 4,5,6,7, T4",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 31,
+            "bookPage": 30
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "C6",
+          "role": "primary",
+          "raw": ".................................. C3, 4,5,6,7, T4",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 31,
+            "bookPage": 30
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "C7",
+          "role": "primary",
+          "raw": ".................................. C3, 4,5,6,7, T4",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 31,
+            "bookPage": 30
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T4",
+          "role": "primary",
+          "raw": ".................................. C3, 4,5,6,7, T4",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 31,
+            "bookPage": 30
+          }
+        }
+      ]
+    },
+    {
+      "id": "dau-dinh-dau",
+      "label": {
+        "vi": "Đau đỉnh đầu",
+        "en": "Pain at the crown of the head"
+      },
+      "heading": "13/ Đau đỉnh đầu",
+      "ref": {
+        "pdfPage": 32,
+        "bookPage": 31
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "L2",
+          "role": "primary",
+          "raw": ".................................. L2",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 32,
+            "bookPage": 31
+          }
+        }
+      ]
+    },
+    {
+      "id": "dau-ca-vung-dau-kien-chung-tao",
+      "label": {
+        "vi": "Đau cả vùng đầu kiên chứng táo bón ( những người bị thần kinh hay bị đau cả vùng đầu)",
+        "en": "Whole-head pain with constipation (people with nervous conditions often have whole-head pain)"
+      },
+      "heading": "14/ Đau cả vùng đầu kiên chứng táo bón ( những người bị thần kinh hay bị đau cả vùng đầu).",
+      "ref": {
+        "pdfPage": 32,
+        "bookPage": 31
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "T10",
+          "role": "primary",
+          "raw": ".................................. T10,11",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 32,
+            "bookPage": 31
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T11",
+          "role": "primary",
+          "raw": ".................................. T10,11",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 32,
+            "bookPage": 31
+          }
+        }
+      ]
+    },
+    {
+      "id": "dau-dau-co-the-suy-nhuoc-met",
+      "label": {
+        "vi": "Đau đầu, cơ thể suy nhược, mệt mỏi",
+        "en": "Headache, weakness, fatigue"
+      },
+      "heading": "15/ Đau đầu, cơ thể suy nhược, mệt mỏi",
+      "ref": {
+        "pdfPage": 32,
+        "bookPage": 31
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "T6",
+          "role": "primary",
+          "raw": ".................................. T6,7,9",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 32,
+            "bookPage": 31
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T7",
+          "role": "primary",
+          "raw": ".................................. T6,7,9",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 32,
+            "bookPage": 31
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T9",
+          "role": "primary",
+          "raw": ".................................. T6,7,9",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 32,
+            "bookPage": 31
+          }
+        }
+      ]
+    },
+    {
+      "id": "dau-dau-buon-non-choang-vang-huyet",
+      "label": {
+        "vi": "Đau đầu, buồn nôn, choáng váng, huyết áp cao",
+        "en": "Headache, nausea, lightheadedness, high blood pressure"
+      },
+      "heading": "16/ Đau đầu, buồn nôn, choáng váng, huyết áp cao",
+      "ref": {
+        "pdfPage": 32,
+        "bookPage": 31
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "C4",
+          "role": "primary",
+          "raw": ".................................. C4,5,6,7, T1,2,3,10",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 32,
+            "bookPage": 31
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "C5",
+          "role": "primary",
+          "raw": ".................................. C4,5,6,7, T1,2,3,10",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 32,
+            "bookPage": 31
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "C6",
+          "role": "primary",
+          "raw": ".................................. C4,5,6,7, T1,2,3,10",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 32,
+            "bookPage": 31
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "C7",
+          "role": "primary",
+          "raw": ".................................. C4,5,6,7, T1,2,3,10",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 32,
+            "bookPage": 31
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T1",
+          "role": "primary",
+          "raw": ".................................. C4,5,6,7, T1,2,3,10",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 32,
+            "bookPage": 31
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T2",
+          "role": "primary",
+          "raw": ".................................. C4,5,6,7, T1,2,3,10",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 32,
+            "bookPage": 31
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T3",
+          "role": "primary",
+          "raw": ".................................. C4,5,6,7, T1,2,3,10",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 32,
+            "bookPage": 31
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T10",
+          "role": "primary",
+          "raw": ".................................. C4,5,6,7, T1,2,3,10",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 32,
+            "bookPage": 31
+          }
+        }
+      ]
+    },
+    {
+      "id": "dau-ca-vung-dau",
+      "label": {
+        "vi": "Đau cả vùng đầu",
+        "en": "Whole-head pain"
+      },
+      "heading": "17/ Đau cả vùng đầu",
+      "ref": {
+        "pdfPage": 32,
+        "bookPage": 31
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "C5",
+          "role": "primary",
+          "raw": ".................................. C5,6,7",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 32,
+            "bookPage": 31
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "C6",
+          "role": "primary",
+          "raw": ".................................. C5,6,7",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 32,
+            "bookPage": 31
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "C7",
+          "role": "primary",
+          "raw": ".................................. C5,6,7",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 32,
+            "bookPage": 31
+          }
+        }
+      ]
+    },
+    {
+      "id": "dau-dau-kinh-nien-2",
+      "label": {
+        "vi": "Đau đầu kinh niên",
+        "en": "Chronic headache (table)"
+      },
+      "heading": "18/ Đau đầu kinh niên",
+      "ref": {
+        "pdfPage": 32,
+        "bookPage": 31
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "C2",
+          "role": "primary",
+          "raw": ".................................. C2,3,4,5,6,7,T1",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 32,
+            "bookPage": 31
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "C3",
+          "role": "primary",
+          "raw": ".................................. C2,3,4,5,6,7,T1",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 32,
+            "bookPage": 31
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "C4",
+          "role": "primary",
+          "raw": ".................................. C2,3,4,5,6,7,T1",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 32,
+            "bookPage": 31
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "C5",
+          "role": "primary",
+          "raw": ".................................. C2,3,4,5,6,7,T1",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 32,
+            "bookPage": 31
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "C6",
+          "role": "primary",
+          "raw": ".................................. C2,3,4,5,6,7,T1",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 32,
+            "bookPage": 31
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "C7",
+          "role": "primary",
+          "raw": ".................................. C2,3,4,5,6,7,T1",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 32,
+            "bookPage": 31
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T1",
+          "role": "primary",
+          "raw": ".................................. C2,3,4,5,6,7,T1",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 32,
+            "bookPage": 31
+          }
+        }
+      ]
+    }
+  ],
+  "unassigned": [
+    {
+      "line": "những trường hợp bệnh lý hay không bệnh lý đều có liên quan ảnh hưởng từ các đốt sống cổ (C1- C7) có định hình bệnh lý :Mất đối xứng.",
+      "codes": [
+        "C1",
+        "C7"
+      ],
+      "ref": {
+        "pdfPage": 30,
+        "bookPage": 29
+      }
+    }
+  ],
+  "review": {
+    "transcription": "pending",
+    "mapping": "passed",
+    "editor": "pending"
+  }
+}

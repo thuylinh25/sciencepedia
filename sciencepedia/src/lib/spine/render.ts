@@ -69,7 +69,10 @@ const ROLE_ORDER: Mapping["role"][] = ["primary", "related", "caution", "avoid"]
  * nằm ở cấp mục — nhãn "Tư liệu lưu trữ" đầu bài và tiêu đề mục. Truy vết trang vẫn còn:
  * `ref.pdfPage` trong topic JSON và khoảng trang ở mục "Nguồn tài liệu" cuối bài.
  */
-const squash = (s: string) => s.normalize("NFC").replace(/\s+/g, " ").trim();
+// Dấu chấm dẫn của bảng ("Đốt sống trọng điểm: ……… T2") ở raw còn nguyên, trong đoạn trích
+// đã thu thành "…" — so trên dạng đã thu, kẻo mã rơi khỏi đoạn trích nêu nó.
+const squash = (s: string) =>
+  s.normalize("NFC").replace(/\s*(?:\.{2,}|…)\s*/g, "…").replace(/\s+/g, " ").trim();
 
 function quote(q: Quote, locale: Locale): string {
   const text = (locale === "vi" ? q.vi : q.en).trim().replace(/\n+/g, " ");

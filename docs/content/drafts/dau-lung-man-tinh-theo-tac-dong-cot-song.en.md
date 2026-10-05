@@ -127,6 +127,7 @@ Vertebrae named by the document:
 
 **More from the Spinal Impact series:**
 
+- [Headache in the Spinal Impact method](/articles/dau-dau-theo-tac-dong-cot-song)
 - [Acute back pain in the Spinal Impact method](/articles/dau-lung-cap-theo-tac-dong-cot-song)
 - [Migraine in the Spinal Impact method](/articles/dau-nua-dau-theo-tac-dong-cot-song)
 - [Sciatica in the Spinal Impact method](/articles/dau-than-kinh-toa-theo-tac-dong-cot-song)

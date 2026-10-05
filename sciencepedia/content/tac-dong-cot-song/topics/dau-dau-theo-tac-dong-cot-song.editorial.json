@@ -1,0 +1,882 @@
+{
+  "section": "dau-dau",
+  "slug": "dau-dau-theo-tac-dong-cot-song",
+  "title": {
+    "vi": "Các bệnh về đau đầu theo phương pháp Tác động cột sống",
+    "en": "Headache in the Spinal Impact method"
+  },
+  "summary": {
+    "vi": "Tài liệu Phương pháp Tác động Cột sống Việt Nam chia đau đầu theo vùng nhiệt độ biến đổi, nêu trọng điểm cho hơn năm mươi thể và các đốt sống cần tránh — trích nguyên văn, đặt sau kiến thức y khoa có nguồn về đau đầu và các dấu hiệu phải đi cấp cứu.",
+    "en": "How the Vietnamese Spinal Impact method document groups headache by temperature-change zone, names key points for more than fifty forms and the vertebrae to avoid — quoted verbatim, after sourced medical information on headache and the signs that need emergency care."
+  },
+  "seoDescription": {
+    "vi": "Đau đầu theo tài liệu Phương pháp Tác động Cột sống Việt Nam: hơn 50 thể, trọng điểm và đốt sống cần tránh — kèm dấu hiệu đau đầu nguy hiểm, đột quỵ, co giật cần cấp cứu.",
+    "en": "Headache in the Vietnamese Spinal Impact method document: more than 50 forms, key points and vertebrae to avoid — with dangerous-headache, stroke and seizure signs that need emergency care."
+  },
+  "keywords": "đau đầu, nhức đầu, đau nửa đầu, tác động cột sống, đốt sống, đốt sống cổ",
+  "riskLevel": "high",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Headache",
+      "publisher": "MedlinePlus — U.S. National Library of Medicine",
+      "url": "https://medlineplus.gov/ency/article/003024.htm",
+      "tier": 2,
+      "accessed": "2026-10-05"
+    },
+    {
+      "id": "s2",
+      "title": "Stroke",
+      "publisher": "MedlinePlus — U.S. National Library of Medicine",
+      "url": "https://medlineplus.gov/stroke.html",
+      "tier": 2,
+      "accessed": "2026-10-05"
+    },
+    {
+      "id": "s3",
+      "title": "Seizures",
+      "publisher": "MedlinePlus — U.S. National Library of Medicine",
+      "url": "https://medlineplus.gov/ency/article/003200.htm",
+      "tier": 2,
+      "accessed": "2026-10-05"
+    },
+    {
+      "id": "s4",
+      "title": "Malignant hypertension",
+      "publisher": "MedlinePlus — U.S. National Library of Medicine",
+      "url": "https://medlineplus.gov/ency/article/000491.htm",
+      "tier": 2,
+      "accessed": "2026-10-05"
+    }
+  ],
+  "safety": {
+    "heading": {
+      "vi": "⚠️ Khi nào đau đầu là cấp cứu",
+      "en": "⚠️ When a headache is an emergency"
+    },
+    "body": {
+      "vi": "MedlinePlus khuyên tìm trợ giúp y tế ngay khi:\n\n- đau đầu đến **đột ngột, dữ dội như bùng nổ** — có thể do vỡ mạch máu trong não; gọi cấp cứu hoặc đến khoa cấp cứu gần nhất;\n- đây là cơn đau đầu \"tệ nhất từ trước tới nay\", kể cả với người hay đau đầu;\n- đau đầu kèm nói ngọng, thay đổi thị lực, khó cử động tay chân, mất thăng bằng, lú lẫn hoặc giảm trí nhớ;\n- đau đầu kèm sốt, cứng cổ, buồn nôn và nôn;\n- đau đầu nặng dần trong 24 giờ;\n- đau đầu sau chấn thương đầu;\n- đau dữ dội chỉ ở một mắt, kèm mắt đỏ;\n- lần đầu trong đời bị đau đầu ảnh hưởng tới sinh hoạt; mới bắt đầu đau đầu, nhất là sau 50 tuổi;\n- đau đầu kèm rối loạn thị lực, đau khi nhai hoặc sụt cân; có tiền sử ung thư mà xuất hiện cơn đau đầu mới; hệ miễn dịch suy yếu do bệnh hay do thuốc.\n\n**Dấu hiệu đột quỵ** đến đột ngột — tê hoặc yếu mặt, tay, chân (nhất là một bên); lú lẫn, nói khó; nhìn khó; chóng mặt, mất thăng bằng; đau đầu dữ dội không rõ nguyên nhân: gọi cấp cứu ngay (MedlinePlus).\n\n**Co giật:** tài liệu có nhiều thể nhắc tới động kinh và co giật ở trẻ em. MedlinePlus khuyên gọi cấp cứu khi đó là lần co giật đầu tiên, cơn kéo dài quá 2–5 phút, người bệnh không tỉnh lại hoặc không trở lại bình thường sau cơn, cơn khác đến ngay sau đó, co giật dưới nước, người bệnh đang mang thai, bị thương hoặc có bệnh tiểu đường, hoặc cơn khác hẳn kiểu thường gặp.\n\n**Đau đầu kèm huyết áp rất cao** — nhìn mờ, lú lẫn, đau ngực, khó thở, co giật, yếu hoặc tê tay chân — có thể là tăng huyết áp ác tính, một cấp cứu đe dọa tính mạng (MedlinePlus).",
+      "en": "MedlinePlus advises seeking medical help right away when:\n\n- a headache comes on **suddenly and is explosive or violent** — it may be due to a ruptured blood vessel in the brain; call emergency services or go to the nearest emergency room;\n- it is \"the worst ever\" headache, even for someone who regularly gets headaches;\n- the headache comes with slurred speech, a change in vision, problems moving the arms or legs, loss of balance, confusion or memory loss;\n- the headache comes with fever, stiff neck, nausea and vomiting;\n- the headache gets worse over 24 hours;\n- the headache occurs with a head injury;\n- the pain is severe and in one eye only, with redness in that eye;\n- it is the first headache of your life and it interferes with daily activities; you just started getting headaches, especially after age 50;\n- headaches come with vision problems, pain while chewing or weight loss; you have a history of cancer and develop a new headache; your immune system is weakened by disease or medicines.\n\n**Stroke signs** that come on suddenly — numbness or weakness of the face, arm or leg (especially on one side); confusion or trouble speaking; trouble seeing; dizziness or loss of balance; severe headache with no known cause: call emergency services right away (MedlinePlus).\n\n**Seizures:** several forms in the document mention epilepsy and convulsions in children. MedlinePlus advises calling emergency services for a first seizure, a seizure lasting longer than 2 to 5 minutes, a person who does not wake up or return to normal afterwards, another seizure soon after, a seizure in water, a person who is pregnant, injured or has diabetes, or a seizure that is different from the person's usual pattern.\n\n**Headache with very high blood pressure** — blurred vision, confusion, chest pain, shortness of breath, seizure, weakness or numbness of the limbs — may be malignant hypertension, a life-threatening emergency (MedlinePlus)."
+    },
+    "sources": [
+      "s1",
+      "s2",
+      "s3",
+      "s4"
+    ]
+  },
+  "general": [
+    {
+      "heading": {
+        "vi": "Đau đầu là gì?",
+        "en": "What is a headache?"
+      },
+      "body": {
+        "vi": "Theo MedlinePlus (Thư viện Y khoa Quốc gia Hoa Kỳ), đau đầu là cảm giác đau hoặc khó chịu ở đầu, da đầu hoặc cổ; nguyên nhân nghiêm trọng của đau đầu là hiếm.\n\nMedlinePlus nêu ba loại thường gặp: **đau đầu do căng cơ** — loại phổ biến nhất, thường do cơ căng cứng, hay liên quan tới căng thẳng, lo âu; **đau nửa đầu (migraine)** — đau giật ở một bên đầu, đôi khi kèm thay đổi thị lực hoặc nhạy cảm với ánh sáng, âm thanh; và **đau đầu từng cụm** — đau nhói, rất đau, xuất hiện hằng ngày trong nhiều tuần hay nhiều tháng rồi biến mất một thời gian dài.",
+        "en": "According to MedlinePlus (U.S. National Library of Medicine), a headache is pain or discomfort in the head, scalp or neck; serious causes of headaches are rare.\n\nMedlinePlus describes three common types: **tension headaches** — the most common, usually caused by tight muscles and often linked to stress or anxiety; **migraine** — throbbing pain on one side of the head, sometimes with vision changes or sensitivity to light and sound; and **cluster headaches** — sharp, very painful headaches that occur daily for weeks or months and then go away for a long time."
+      },
+      "sources": [
+        "s1"
+      ]
+    }
+  ],
+  "symptoms": [],
+  "methodQuotes": [
+    {
+      "pdfPage": 30,
+      "vi": "Phương pháp tác động cột sống quy định về nhiệt độ da ở vùng đầu là khi ở vùng đầu toàn thể hay một khu vực có cảm giác đau hoặc khác thường thì nhiệt độ da ở vùng đó cao hơn mức bình thường.",
+      "en": "The Spinal Impact method holds that when the whole head, or one area of it, feels painful or abnormal, the skin temperature of that area is higher than normal."
+    },
+    {
+      "pdfPage": 20,
+      "vi": "Phương pháp tác động cột sống căn cứ vào đặc trưng bệnh lý để chẩn và trị bệnh đau đầu như sau:",
+      "en": "The Spinal Impact method diagnoses and treats headache on the basis of its pathological features, as follows:"
+    }
+  ],
+  "variants": [
+    {
+      "id": "dau-dau-sot-ret-con-lung-gay",
+      "label": {
+        "vi": "Đau đầu sốt rét cơn, lưng gáy co cứng, ứ phế quản hoặc cảm mạo",
+        "en": "Headache with intermittent chills and fever, stiff back and nape, bronchial congestion or a cold"
+      },
+      "quotes": [
+        {
+          "pdfPage": 20,
+          "vi": "Nhiệt độ biến đổi : Liên vùng cổ dưới và lưng trên Trọng điểm : C7 – T1",
+          "en": "Temperature change: across the lower neck and upper back. Key points: C7–T1."
+        }
+      ]
+    },
+    {
+      "id": "dau-dau-do-bi-cam-kiem-chung",
+      "label": {
+        "vi": "Đau đầu do bị cảm, kiêm chứng bắp thịt cổ gáy co giật, có sốt rét cơn",
+        "en": "Headache from a cold, with twitching neck muscles and intermittent chills"
+      },
+      "quotes": [
+        {
+          "pdfPage": 20,
+          "vi": "Nhiệt độ biến đổi : Vùng lưng trên nóng cao Trọng điểm : T2",
+          "en": "Temperature change: upper back hot. Key points: T2."
+        }
+      ]
+    },
+    {
+      "id": "dau-dau-sot-cao-kiem-chung-lung",
+      "label": {
+        "vi": "Đau đầu sốt cao, kiêm chứng lưng và thắt lưng cứng đau, chân đau tê, đau kẽ sườn, vàng da, suyễn, bụng trên lạnh, biếng ăn",
+        "en": "Headache with high fever, with stiff painful back and lower back, numb aching legs, rib pain, jaundice, wheezing, cold upper abdomen, poor appetite"
+      },
+      "quotes": [
+        {
+          "pdfPage": 20,
+          "vi": "Nhiệt độ biến đổi : phần dưới của lưng trên Trọng điểm : T7",
+          "en": "Temperature change: lower part of the upper back. Key points: T7."
+        }
+      ]
+    },
+    {
+      "id": "dau-mot-ben-dau-kiem-chung-chay",
+      "label": {
+        "vi": "Đau một bên đầu kiêm chứng chảy nước mắt trông không rõ",
+        "en": "One-sided headache with watery eyes and unclear vision"
+      },
+      "quotes": [
+        {
+          "pdfPage": 21,
+          "vi": "Nhiệt độ biến đổi : Vùng lưngdưới nóng cao Trọng điểm : L1",
+          "en": "Temperature change: lower back hot. Key points: L1."
+        }
+      ]
+    },
+    {
+      "id": "dau-dau-chong-mat-kiem-sung-dau",
+      "label": {
+        "vi": "Đau đầu, chóng mặt kiêm sưng đau khớp cổ chân, ống chân và đầy bụng",
+        "en": "Headache and dizziness, with swollen painful ankles and shins and bloating"
+      },
+      "quotes": [
+        {
+          "pdfPage": 21,
+          "vi": "Nhiệt độ biến đổi : Vùng cổ, lưng dưới nóng cao Trọng điểm : các đốt sống cổ và L1",
+          "en": "Temperature change: neck and lower back hot. Key points: the cervical vertebrae and L1."
+        }
+      ]
+    },
+    {
+      "id": "dau-nhuc-vung-tran-kiem-tieu-hoa",
+      "label": {
+        "vi": "Đau nhức vùng trán kiêm tiêu hóa kém, đầy bụng đi ỉa lỏng, chân đau tê bại",
+        "en": "Aching forehead, with poor digestion, bloating, loose stools, numb weak legs"
+      },
+      "quotes": [
+        {
+          "pdfPage": 21,
+          "vi": "Nhiệt độ biến đổi : Vùng cổ, dưới lưng giữa và lưng dưới nóng cao Trọng điểm : các đốt sống cổ , T12 và L1",
+          "en": "Temperature change: neck, below the mid-back and the lower back hot. Key points: the cervical vertebrae, T12 and L1."
+        }
+      ]
+    },
+    {
+      "id": "dau-mot-ben-dau-kiem-chung-u",
+      "label": {
+        "vi": "Đau một bên đầu, kiêm chứng ù tai, điếc tai giữa, đau răng , liệt dây 7",
+        "en": "One-sided headache, with ringing in the ears, middle-ear deafness, toothache, facial (7th) nerve palsy"
+      },
+      "quotes": [
+        {
+          "pdfPage": 22,
+          "vi": "Nhiệt độ biến đổi : Dưới lưng giữa và vùng cổ Trọng điểm : các đốt sống cổ và T11",
+          "en": "Temperature change: below the mid-back and the neck. Key points: the cervical vertebrae and T11."
+        }
+      ]
+    },
+    {
+      "id": "dau-dau-do-bi-cam-kiem-co",
+      "label": {
+        "vi": "Đau đầu do bị cảm kiêm cổ gáy cứng đau",
+        "en": "Headache from a cold, with stiff painful nape"
+      },
+      "quotes": [
+        {
+          "pdfPage": 22,
+          "vi": "Nhiệt độ biến đổi : Vùng dưới lưng giữa và vùng cổ Trọng điểm : các đốt sống cổ và T11",
+          "en": "Temperature change: below the mid-back and the neck. Key points: the cervical vertebrae and T11."
+        }
+      ]
+    },
+    {
+      "id": "dau-vung-tran-kiem-mat-nhuc-dau",
+      "label": {
+        "vi": "Đau vùng trán kiêm mắt nhức đau liệt dây 7",
+        "en": "Forehead pain with aching eyes, facial (7th) nerve palsy"
+      },
+      "quotes": [
+        {
+          "pdfPage": 22,
+          "vi": "Nhiệt độ biến đổi : Vùng cổ, lưng dưới nóng cao Trọng điểm : các đốt sống cổ và T11",
+          "en": "Temperature change: neck and lower back hot. Key points: the cervical vertebrae and T11."
+        }
+      ]
+    },
+    {
+      "id": "dau-vung-tran-kiem-hay-nhay-mat",
+      "label": {
+        "vi": "Đau vùng trán kiêm hay nháy mắt, chóng mặt",
+        "en": "Forehead pain with frequent blinking, dizziness"
+      },
+      "quotes": [
+        {
+          "pdfPage": 23,
+          "vi": "Nhiệt độ biến đổi : Vùng cổ- vùng cụt nóng cao Trọng điểm : các đốt sống cổ, S3",
+          "en": "Temperature change: neck and coccygeal region hot. Key points: the cervical vertebrae, S3."
+        }
+      ]
+    },
+    {
+      "id": "dau-dau-chong-mat-kiem-dau-eo",
+      "label": {
+        "vi": "Đau đầu, chóng mặt kiêm đau eo, lưng , chân tê và lạnh buốt, đi đứng khó khăn, mất ngủ kéo dài",
+        "en": "Headache and dizziness, with waist and back pain, numb icy legs, difficulty walking, long-lasting insomnia"
+      },
+      "quotes": [
+        {
+          "pdfPage": 23,
+          "vi": "Nhiệt độ biến đổi : Vùng cổ, hông nóng cao Trọng điểm : các đốt sống cổ, S3",
+          "en": "Temperature change: neck and hips hot. Key points: the cervical vertebrae, S3."
+        }
+      ]
+    },
+    {
+      "id": "dau-nang-dau-kieu-co-gay-cung",
+      "label": {
+        "vi": "Đau nặng đầu: Kiểu cổ gáy cùng đau, mờ mắt, tắc mũi, lưng vai đau mỏi",
+        "en": "Heavy head: nape pain, blurred vision, blocked nose, aching back and shoulders"
+      },
+      "quotes": [
+        {
+          "pdfPage": 23,
+          "vi": "Nhiệt độ biến đổi : Vùng cổ, hông nóng cao Trọng điểm : các đốt sống cổ và S3",
+          "en": "Temperature change: neck and hips hot. Key points: the cervical vertebrae and S3."
+        }
+      ]
+    },
+    {
+      "id": "dau-dau-vung-co-phai-nong-lien",
+      "label": {
+        "vi": "Đau đầu vùng cổ phải nóng liên quan chức năng hô hấp rối loạn",
+        "en": "Headache with a hot right side of the neck, related to disturbed respiratory function"
+      },
+      "quotes": [
+        {
+          "pdfPage": 23,
+          "vi": "Đau 1 bên đầu, kiêm ho, viêm phế quản, suyễn, các chứng sốt … Nhiệt độ biến đổi : Vùng cổ phải nóng cao Trọng điểm : các đốt sống cổ, T3,T4",
+          "en": "Headache on one side, with cough, bronchitis, asthma and fevers. … Temperature change: right side of the neck hot. Key points: the cervical vertebrae, T3, T4."
+        }
+      ]
+    },
+    {
+      "id": "dau-dau-vung-cham-nong-cao-lien",
+      "label": {
+        "vi": "Đau đầu vùng chẩm nóng cao liên quan chức năng đại tràng kiêm : chảy máu cam, đau răng, ù tai, tê họng, ho suyễn, nhức 2 vai, trẻ em bị co giật",
+        "en": "Headache with a hot occiput, related to colon function, with nosebleeds, toothache, tinnitus, numb throat, cough and wheezing, aching shoulders, convulsions in children"
+      },
+      "quotes": [
+        {
+          "pdfPage": 24,
+          "vi": "Nhiệt độ biến đổi : Vùng thắt lưng, hông nóng cao Trọng điểm : các đốt cổ và L3,L5",
+          "en": "Temperature change: lumbar region and hips hot. Key points: the cervical vertebrae and L3, L5."
+        }
+      ]
+    },
+    {
+      "id": "dau-dau-vung-ron-nong-cao-lien",
+      "label": {
+        "vi": "Đau đầu vùng rốn nóng cao liên quan chức năng ruột non rối loạn kiêm : đau 2 bên đầu ; tai, mắt, gáy, họng bị rối loạn, bệnh phát nóng, tâm thần",
+        "en": "Headache with a hot navel area, related to disturbed small-intestine function, with pain on both sides of the head; ear, eye, nape and throat disturbances; fever; mental disorders"
+      },
+      "quotes": [
+        {
+          "pdfPage": 24,
+          "vi": "Nhiệt độ biến đổi : Vùng cụt nóng cao Trọng điểm : các đốt sống cổ, S2",
+          "en": "Temperature change: coccygeal region hot. Key points: the cervical vertebrae, S2."
+        }
+      ]
+    },
+    {
+      "id": "dau-dau-eo-lung-trai-nong-cao",
+      "label": {
+        "vi": "Đau đầu eo lưng trái nóng cao liên quan chức năng thần kinh vận động và sinh dục rối loạn",
+        "en": "Headache with a hot left waist, related to disturbed motor-nerve and reproductive function"
+      },
+      "quotes": [
+        {
+          "pdfPage": 24,
+          "vi": "Đau đỉnh đầu kiêm bàn chân đau, động kinh, nữ sa dạ con hoặc các bệnh sinh dục ( nam nữ) … Nhiệt độ biến đổi : Vùng thắt lưng nóng cao Trọng điểm : các đốt sống cổ, L3,L5 rối loạn",
+          "en": "Pain at the crown of the head, with foot pain, epilepsy, uterine prolapse in women, or genital diseases (men and women). … Temperature change: lumbar region hot. Key points: the cervical vertebrae, L3, L5 disturbed."
+        }
+      ]
+    },
+    {
+      "id": "dau-dau-vung-ha-suon-phai-nong",
+      "label": {
+        "vi": "Đau đầu vùng hạ sườn phải nóng cao liên quan chức năng gan rối loạn",
+        "en": "Headache with a hot right upper abdomen, related to disturbed liver function"
+      },
+      "quotes": [
+        {
+          "pdfPage": 25,
+          "vi": "Đau đầu nhức mắt: kiêm ngứa nhiều, vàng da … Nhiệt độ biến đổi : Vùng cổ, lưng dưới nóng cao Trọng điểm : các đốt sống cổ, T10",
+          "en": "Headache with aching eyes, with much itching and jaundice. … Temperature change: neck and lower back hot. Key points: the cervical vertebrae, T10."
+        }
+      ]
+    },
+    {
+      "id": "dau-dau-do-tang-huyet-ap-kiem",
+      "label": {
+        "vi": "Đau đầu do tăng huyết áp kiêm tim hồi hộp: ngực đau tức, đau dạ dày, nôn ra máu, hông đau",
+        "en": "Headache from high blood pressure with palpitations: chest tightness, stomach pain, vomiting blood, hip pain"
+      },
+      "quotes": [
+        {
+          "pdfPage": 25,
+          "vi": "Nhiệt độ biến đổi : phần dưới bụng trên nóng cao Trọng điểm : các đốt sống cổ, T5 … Ghi chú: Đau đầu do tăng huyết áp cần tác động T1, T2 ; thận trọng khi tác động ở T6, T10, L3 bên phải",
+          "en": "Temperature change: lower part of the upper abdomen hot. Key points: the cervical vertebrae, T5. … Note: headache from high blood pressure needs work at T1, T2; be cautious when working at T6, T10, L3 on the right side."
+        }
+      ]
+    },
+    {
+      "id": "dau-dau-mat-ngu-kiem-dong-kinh",
+      "label": {
+        "vi": "Đau đầu mất ngủ kiêm động kinh, lưng cứng, tim đau, sốt rét, mạch nhanh",
+        "en": "Headache with insomnia, with epilepsy, stiff back, heart pain, chills and fever, fast pulse"
+      },
+      "quotes": [
+        {
+          "pdfPage": 25,
+          "vi": "Nhiệt độ biến đổi : vùng cổ và lưng giữa nóng cao Trọng điểm : các đốt sống cổ, T9",
+          "en": "Temperature change: neck and mid-back hot. Key points: the cervical vertebrae, T9."
+        }
+      ]
+    },
+    {
+      "id": "dau-dau-mat-ngu-kiem-canh-tay",
+      "label": {
+        "vi": "Đau đầu mất ngủ, kiêm cánh tay, cẳng tay tê dại, tràng nhạc, tim đau nhói",
+        "en": "Headache with insomnia, with numb arms and forearms, scrofula, stabbing heart pain"
+      },
+      "quotes": [
+        {
+          "pdfPage": 26,
+          "vi": "Nhiệt độ biến đổi : vùng cổ, phần dưới lưng trên nóng cao Trọng điểm : các đốt sống cổ và T6",
+          "en": "Temperature change: neck and lower part of the upper back hot. Key points: the cervical vertebrae and T6."
+        }
+      ]
+    },
+    {
+      "id": "dau-dau-vung-giua-lung-nong-cao",
+      "label": {
+        "vi": "Đau đầu vùng giữa lưng nóng cao liên quan chức năng lá lách rối loạn",
+        "en": "Headache with a hot mid-back, related to disturbed spleen function"
+      },
+      "quotes": [
+        {
+          "pdfPage": 26,
+          "vi": "Đau đầu mất ngủ ( suy nhược thần kinh) kiêm : Nữ: Kinh nguyệt không điều, quá nhiều, thống kinh, tử cung ra máu, khí hư, động thai. Nam: Đau đầu dương vật, di tinh, trẻ em đái dầm, chân đau hoặc tê dại, tiêu hóa kém, bụng đầy trướng, đi ỉa lỏng. … Nhiệt độ biến đổi : Vùng cổ, lưng dưới nóng cao Trọng điểm : Các đốt sống cổ và T10,T12, S1-S5",
+          "en": "Headache with insomnia (nervous exhaustion), with — in women: irregular or heavy periods, painful periods, uterine bleeding, vaginal discharge, threatened miscarriage; in men: pain at the tip of the penis, nocturnal emissions; children: bedwetting; leg pain or numbness, poor digestion, bloating, loose stools. … Temperature change: neck and lower back hot. Key points: the cervical vertebrae and T10, T12, S1-S5."
+        }
+      ]
+    },
+    {
+      "id": "dau-dau-lao-dao-muon-nga-kiem",
+      "label": {
+        "vi": "Đau đầu lảo đảo muốn ngã kiêm hội chứng tiền đình, huyết áp cao",
+        "en": "Headache with unsteadiness, as if about to fall, with vestibular syndrome and high blood pressure"
+      },
+      "quotes": [
+        {
+          "pdfPage": 26,
+          "vi": "Nhiệt độ biến đổi : Vùng cổ dưới và lưng trên nóng cao Trọng điểm : C6, C7 và T1",
+          "en": "Temperature change: lower neck and upper back hot. Key points: C6, C7 and T1."
+        }
+      ]
+    },
+    {
+      "id": "dau-dau-phia-sau-kiem-dau-gay",
+      "label": {
+        "vi": "Đau đầu phía sau kiêm đau gáy, mất tiếng, động kinh",
+        "en": "Headache at the back of the head, with nape pain, loss of voice, epilepsy"
+      },
+      "quotes": [
+        {
+          "pdfPage": 27,
+          "vi": "Nhiệt độ biến đổi : Cổ trên nóng cao Trọng điểm : C1,C5",
+          "en": "Temperature change: upper neck hot. Key points: C1, C5."
+        }
+      ]
+    },
+    {
+      "id": "dau-dau-buon-non-kiem-lung-va",
+      "label": {
+        "vi": "Đau đầu buồn nôn kiêm lưng và eo lưng lạnh biếng ăn, bụng trên lạnh",
+        "en": "Headache with nausea, with cold back and waist, poor appetite, cold upper abdomen"
+      },
+      "quotes": [
+        {
+          "pdfPage": 27,
+          "vi": "Nhiệt độ biến đổi : Phần dưới lưng trên Trọng điểm : Vùng cổ và T6, T7",
+          "en": "Temperature change: lower part of the upper back. Key points: the neck region and T6, T7."
+        }
+      ]
+    },
+    {
+      "id": "dau-dau-kinh-nien",
+      "label": {
+        "vi": "Đau đầu kinh niên",
+        "en": "Chronic headache"
+      },
+      "quotes": [
+        {
+          "pdfPage": 27,
+          "vi": "Nhiệt độ biến đổi : Vùng cổ và vùng trên lưng trên Trọng điểm : C6,C7,T1",
+          "en": "Temperature change: neck and the top of the upper back. Key points: C6, C7, T1."
+        }
+      ]
+    },
+    {
+      "id": "dau-am-u-kiem-cac-chung-trang",
+      "label": {
+        "vi": "Đầu âm u kiêm các chứng trạng trong bệnh tâm thần",
+        "en": "Clouded head with symptoms of mental illness"
+      },
+      "quotes": [
+        {
+          "pdfPage": 27,
+          "vi": "Nhiệt độ biến đổi : Vùng cổ, lưng trên và giữa lưng, lưng dưới, thắt lưng và vùng cùng nóng cao Trọng điểm : Các đốt sống C4 – C7 ; T1,T2,T5,T7,T8 ; L4, L5; S1- S4",
+          "en": "Temperature change: neck, upper back and mid-back, lower back, lumbar and sacral regions hot. Key points: vertebrae C4–C7 ; T1, T2, T5, T7, T8 ; L4, L5; S1–S4."
+        }
+      ]
+    },
+    {
+      "id": "nong-vung-tran",
+      "label": {
+        "vi": "Nóng vùng trán",
+        "en": "Hot forehead"
+      },
+      "quotes": [
+        {
+          "pdfPage": 28,
+          "vi": "Nhiệt độ biến đổi : Phần dưới cổ và lưng dưới Trọng điểm : C6, C7, T11",
+          "en": "Temperature change: lower part of the neck and the lower back. Key points: C6, C7, T11."
+        }
+      ]
+    },
+    {
+      "id": "nong-dinh-dau-kiem-dai-dat",
+      "label": {
+        "vi": "Nóng đỉnh đầu kiêm đái dắt",
+        "en": "Hot crown of the head with frequent urination"
+      },
+      "quotes": [
+        {
+          "pdfPage": 28,
+          "vi": "Nhiệt độ biến đổi : Vùng cổ, vùng hông Trọng điểm : đốt sống cổ , L2,L3,S4, S5",
+          "en": "Temperature change: neck, hips. Key points: the cervical vertebrae, L2, L3, S4, S5."
+        }
+      ]
+    },
+    {
+      "id": "nong-vung-cham-kiem-cam-giac-giam",
+      "label": {
+        "vi": "Nóng vùng chẩm kiêm cảm giác giảm",
+        "en": "Hot occiput with reduced sensation"
+      },
+      "quotes": [
+        {
+          "pdfPage": 28,
+          "vi": "Nhiệt độ biến đổi : Vùng hông Trọng điểm : Các đốt sống cổ và S2, S3",
+          "en": "Temperature change: hips. Key points: the cervical vertebrae and S2, S3."
+        }
+      ]
+    },
+    {
+      "id": "nong-vung-dau",
+      "label": {
+        "vi": "Nóng vùng đầu",
+        "en": "Hot head"
+      },
+      "quotes": [
+        {
+          "pdfPage": 28,
+          "vi": "Nhiệt độ biến đổi : Vùng cổ Trọng điểm : C3",
+          "en": "Temperature change: neck. Key points: C3."
+        }
+      ]
+    },
+    {
+      "id": "nong-vung-gay",
+      "label": {
+        "vi": "Nóng vùng gáy",
+        "en": "Hot nape"
+      },
+      "quotes": [
+        {
+          "pdfPage": 29,
+          "vi": "Nhiệt độ biến đổi : Phần dưới cổ Trọng điểm : C5",
+          "en": "Temperature change: lower part of the neck. Key points: C5."
+        }
+      ]
+    },
+    {
+      "id": "dau-tuc-vung-cham-kiem-ha-huyet",
+      "label": {
+        "vi": "Đau tức vùng chẩm kiêm hạ huyết áp, mệt lả, chân tay mỏi rã rời",
+        "en": "Pressure pain at the occiput, with low blood pressure, exhaustion, utterly tired limbs"
+      },
+      "quotes": [
+        {
+          "pdfPage": 29,
+          "vi": "Nhiệt độ biến đổi : Cổ trên, phần dưới lưng trên, lưng dưới và vùng thắt lưng Trọng điểm : C1,C2 ; T6, T10 và L3",
+          "en": "Temperature change: upper neck, lower part of the upper back, lower back and lumbar region. Key points: C1, C2 ; T6, T10 and L3."
+        }
+      ]
+    },
+    {
+      "id": "lanh-vung-gay-kiem-ha-huyet-ap",
+      "label": {
+        "vi": "Lạnh vùng gáy kiêm hạ huyết áp, mạch chậm",
+        "en": "Cold nape with low blood pressure and slow pulse"
+      },
+      "quotes": [
+        {
+          "pdfPage": 29,
+          "vi": "Nhiệt độ biến đổi : Cổ trên Trọng điểm : C2",
+          "en": "Temperature change: upper neck. Key points: C2."
+        }
+      ]
+    },
+    {
+      "id": "te-bi-vung-cham",
+      "label": {
+        "vi": "Tê bì vùng chẩm",
+        "en": "Numbness at the occiput"
+      },
+      "quotes": [
+        {
+          "pdfPage": 29,
+          "vi": "Nhiệt độ biến đổi : Phần cổ trên Trọng điểm : C1",
+          "en": "Temperature change: upper part of the neck. Key points: C1."
+        }
+      ]
+    },
+    {
+      "id": "nhung-dot-song-can-tranh-trong-cac",
+      "label": {
+        "vi": "Những đốt sống cần tránh trong các trường hợp đau đầu",
+        "en": "Vertebrae to avoid in headache"
+      },
+      "quotes": [
+        {
+          "pdfPage": 30,
+          "vi": "Những người có bệnh sơ cứng động mạch vành tim thì không được tác động ở C1, C2, C3, C4. Những người bệnh huyết áp cao tránh C1, C2, thận trọng T6, T10 và L3 phải. Đau đầu giãn đồng tử, mắt mờ tránh tác động C1, C2. Co đồng tử, mắt mờ thận trọng C7, D1.",
+          "en": "People with coronary artery sclerosis must not be worked on at C1, C2, C3, C4. People with high blood pressure avoid C1, C2, and caution at T6, T10 and L3 on the right. Headache with dilated pupils and blurred vision: avoid working at C1, C2. Constricted pupils and blurred vision: caution at C7, D1 (= T1)."
+        }
+      ]
+    },
+    {
+      "id": "dau-do-bi-cam",
+      "label": {
+        "vi": "Đau do bị cảm",
+        "en": "Pain from a cold"
+      },
+      "quotes": [
+        {
+          "pdfPage": 30,
+          "vi": "Nhiệt độ biến đổi vùng:…vùng đầu, ngực trái, cổ phải Vùng tam giác cơ biến đổi:…3 Đốt sống trọng điểm:…T2",
+          "en": "Temperature-change zone:…head, left chest, right side of the neck Muscle-triangle zone changed:…3 Key vertebrae:…T2"
+        }
+      ]
+    },
+    {
+      "id": "ca-vung-dau-nong-ran",
+      "label": {
+        "vi": "Cả vùng đầu nóng ran",
+        "en": "Whole head burning hot"
+      },
+      "quotes": [
+        {
+          "pdfPage": 30,
+          "vi": "Nhiệt độ biến đổi vùng:…Chẩm Vùng tam giác cơ biến đổi:…1 Đốt sống trọng điểm:…C3",
+          "en": "Temperature-change zone:…occiput Muscle-triangle zone changed:…1 Key vertebrae:…C3"
+        }
+      ]
+    },
+    {
+      "id": "dau-dau-vung-tran-nong",
+      "label": {
+        "vi": "Đau đầu, vùng trán nóng",
+        "en": "Headache with a hot forehead"
+      },
+      "quotes": [
+        {
+          "pdfPage": 30,
+          "vi": "Nhiệt độ biến đổi vùng:…Vai phải Vùng tam giác cơ biến đổi:…2-5 Đốt sống trọng điểm:…C6,7, D11",
+          "en": "Temperature-change zone:…right shoulder Muscle-triangle zone changed:…2-5 Key vertebrae:…C6, 7, D11"
+        }
+      ]
+    },
+    {
+      "id": "dau-vung-dinh-dau",
+      "label": {
+        "vi": "Đau vùng đỉnh đầu",
+        "en": "Pain at the top of the head"
+      },
+      "quotes": [
+        {
+          "pdfPage": 30,
+          "vi": "Nhiệt độ biến đổi vùng:…Chẩm Vùng tam giác cơ biến đổi:…8 Đốt sống trọng điểm:…S4,5",
+          "en": "Temperature-change zone:…occiput Muscle-triangle zone changed:…8 Key vertebrae:…S4, 5"
+        }
+      ]
+    },
+    {
+      "id": "dau-vung-cham",
+      "label": {
+        "vi": "Đau vùng chẩm",
+        "en": "Pain at the occiput"
+      },
+      "quotes": [
+        {
+          "pdfPage": 31,
+          "vi": "Nhiệt độ biến đổi vùng:…Rốn Vùng tam giác cơ biến đổi:…8 Đốt sống trọng điểm:…S2,3",
+          "en": "Temperature-change zone:…navel Muscle-triangle zone changed:…8 Key vertebrae:…S2, 3"
+        }
+      ]
+    },
+    {
+      "id": "vung-cham-te-bi",
+      "label": {
+        "vi": "Vùng chẩm tê bì",
+        "en": "Numbness at the occiput (table)"
+      },
+      "quotes": [
+        {
+          "pdfPage": 31,
+          "vi": "Nhiệt độ biến đổi vùng:…Đầu phải giảm Vùng tam giác cơ biến đổi:…1 Đốt sống trọng điểm:…C1 Liên quan chức năng :…Thần kinh",
+          "en": "Temperature-change zone:…right side of the head lower Muscle-triangle zone changed:…1 Key vertebrae:…C1 Related function:…nervous"
+        }
+      ]
+    },
+    {
+      "id": "dau-dau-nhuc-mat",
+      "label": {
+        "vi": "Đau đầu nhức mắt",
+        "en": "Headache with aching eyes"
+      },
+      "quotes": [
+        {
+          "pdfPage": 31,
+          "vi": "Nhiệt độ biến đổi vùng:…hạ sườn phải Vùng tam giác cơ biến đổi:…1 Đốt sống trọng điểm:…C3 Liên quan chức năng :…Thần kinh",
+          "en": "Temperature-change zone:…right upper abdomen Muscle-triangle zone changed:…1 Key vertebrae:…C3 Related function:…nervous"
+        }
+      ]
+    },
+    {
+      "id": "dau-nhu-that-o-truoc-tran",
+      "label": {
+        "vi": "Đau như thắt ở trước trán",
+        "en": "Tight, band-like pain at the front of the forehead"
+      },
+      "quotes": [
+        {
+          "pdfPage": 31,
+          "vi": "Nhiệt độ biến đổi vùng:…Đầu phải, mỏ ác, vai phải Vùng tam giác cơ biến đổi:…5-6 Đốt sống trọng điểm:…T1, L1",
+          "en": "Temperature-change zone:…right side of the head, epigastrium, right shoulder Muscle-triangle zone changed:…5-6 Key vertebrae:…T1, L1"
+        }
+      ]
+    },
+    {
+      "id": "dau-dau-buon-non",
+      "label": {
+        "vi": "Đau đầu buồn nôn",
+        "en": "Headache with nausea"
+      },
+      "quotes": [
+        {
+          "pdfPage": 31,
+          "vi": "Nhiệt độ biến đổi vùng:…Đầu phải Vùng tam giác cơ biến đổi:…1-2 Đốt sống trọng điểm:…C1-C7",
+          "en": "Temperature-change zone:…right side of the head Muscle-triangle zone changed:…1-2 Key vertebrae:…C1-C7"
+        }
+      ]
+    },
+    {
+      "id": "dau-nua-dau-phia-truoc",
+      "label": {
+        "vi": "Đau nửa đầu phía trước",
+        "en": "Front one-sided headache"
+      },
+      "quotes": [
+        {
+          "pdfPage": 31,
+          "vi": "Nhiệt độ biến đổi vùng:…Đầu phải, mỏ ác Vùng tam giác cơ biến đổi:…6 Đốt sống trọng điểm:…L1",
+          "en": "Temperature-change zone:…right side of the head, epigastrium Muscle-triangle zone changed:…6 Key vertebrae:…L1"
+        }
+      ]
+    },
+    {
+      "id": "dau-nua-dau-phia-sau",
+      "label": {
+        "vi": "Đau nửa đầu phía sau",
+        "en": "Back one-sided headache"
+      },
+      "quotes": [
+        {
+          "pdfPage": 31,
+          "vi": "Nhiệt độ biến đổi vùng:…Đầu phải Vùng tam giác cơ biến đổi:…1 Đốt sống trọng điểm:…C1",
+          "en": "Temperature-change zone:…right side of the head Muscle-triangle zone changed:…1 Key vertebrae:…C1"
+        }
+      ]
+    },
+    {
+      "id": "dau-nua-dau-it-ngu-buon-non",
+      "label": {
+        "vi": "Đau nửa đầu, ít ngủ, buồn nôn",
+        "en": "One-sided headache, poor sleep, nausea"
+      },
+      "quotes": [
+        {
+          "pdfPage": 31,
+          "vi": "Nhiệt độ biến đổi vùng:…Đầu, vai phải, mỏ ác, chẩm. Vùng tam giác cơ biến đổi:…1-2-4 Đốt sống trọng điểm:…C3, 4,5,6,7, T4",
+          "en": "Temperature-change zone:…head, right shoulder, epigastrium, occiput. Muscle-triangle zone changed:…1-2-4 Key vertebrae:…C3, 4, 5, 6, 7, T4"
+        },
+        {
+          "pdfPage": 32,
+          "vi": "Liên quan chức năng :…Hô hấp, dạ dầy, đại tràng",
+          "en": "Related function:…respiratory, stomach, colon"
+        }
+      ]
+    },
+    {
+      "id": "dau-dinh-dau",
+      "label": {
+        "vi": "Đau đỉnh đầu",
+        "en": "Pain at the crown of the head"
+      },
+      "quotes": [
+        {
+          "pdfPage": 32,
+          "vi": "Nhiệt độ biến đổi vùng:…Đỉnh đầu, thắt lưng Vùng tam giác cơ biến đổi:…6 Đốt sống trọng điểm:…L2",
+          "en": "Temperature-change zone:…crown of the head, lumbar region Muscle-triangle zone changed:…6 Key vertebrae:…L2"
+        }
+      ]
+    },
+    {
+      "id": "dau-ca-vung-dau-kien-chung-tao",
+      "label": {
+        "vi": "Đau cả vùng đầu kiên chứng táo bón ( những người bị thần kinh hay bị đau cả vùng đầu)",
+        "en": "Whole-head pain with constipation (people with nervous conditions often have whole-head pain)"
+      },
+      "quotes": [
+        {
+          "pdfPage": 32,
+          "vi": "Nhiệt độ biến đổi vùng:…Chẩm Vùng tam giác cơ biến đổi:…5 Đốt sống trọng điểm:…T10,11",
+          "en": "Temperature-change zone:…occiput Muscle-triangle zone changed:…5 Key vertebrae:…T10, 11"
+        }
+      ]
+    },
+    {
+      "id": "dau-dau-co-the-suy-nhuoc-met",
+      "label": {
+        "vi": "Đau đầu, cơ thể suy nhược, mệt mỏi",
+        "en": "Headache, weakness, fatigue"
+      },
+      "quotes": [
+        {
+          "pdfPage": 32,
+          "vi": "Nhiệt độ biến đổi vùng:…Ngực trái, sườn phải Vùng tam giác cơ biến đổi:…4-5 Đốt sống trọng điểm:…T6,7,9",
+          "en": "Temperature-change zone:…left chest, right flank Muscle-triangle zone changed:…4-5 Key vertebrae:…T6, 7, 9"
+        }
+      ]
+    },
+    {
+      "id": "dau-dau-buon-non-choang-vang-huyet",
+      "label": {
+        "vi": "Đau đầu, buồn nôn, choáng váng, huyết áp cao",
+        "en": "Headache, nausea, lightheadedness, high blood pressure"
+      },
+      "quotes": [
+        {
+          "pdfPage": 32,
+          "vi": "Nhiệt độ biến đổi vùng:…Đầu, mặt, cổ, ngực T,sườn F Vùng tam giác cơ biến đổi:…2-3-5 Đốt sống trọng điểm:…C4,5,6,7, T1,2,3,10",
+          "en": "Temperature-change zone:…head, face, neck, left chest, right flank Muscle-triangle zone changed:…2-3-5 Key vertebrae:…C4, 5, 6, 7, T1, 2, 3, 10"
+        }
+      ]
+    },
+    {
+      "id": "dau-ca-vung-dau",
+      "label": {
+        "vi": "Đau cả vùng đầu",
+        "en": "Whole-head pain"
+      },
+      "quotes": [
+        {
+          "pdfPage": 32,
+          "vi": "Nhiệt độ biến đổi vùng:…Đầu F giảm, chẩm Vùng tam giác cơ biến đổi:…2 Đốt sống trọng điểm:…C5,6,7",
+          "en": "Temperature-change zone:…head lower on the right, occiput Muscle-triangle zone changed:…2 Key vertebrae:…C5, 6, 7"
+        }
+      ]
+    },
+    {
+      "id": "dau-dau-kinh-nien-2",
+      "label": {
+        "vi": "Đau đầu kinh niên",
+        "en": "Chronic headache (table)"
+      },
+      "quotes": [
+        {
+          "pdfPage": 32,
+          "vi": "Nhiệt độ biến đổi vùng:…Đầu phải, ngực trái, chẩm Vùng tam giác cơ biến đổi:…1-2-3 Đốt sống trọng điểm:…C2,3,4,5,6,7,T1",
+          "en": "Temperature-change zone:…right side of the head, left chest, occiput Muscle-triangle zone changed:…1-2-3 Key vertebrae:…C2, 3, 4, 5, 6, 7, T1"
+        }
+      ]
+    }
+  ],
+  "outOfScope": [],
+  "cover": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/57/Cervical_Spine_Lateral_View.png/1920px-Cervical_Spine_Lateral_View.png",
+    "page": "https://commons.wikimedia.org/wiki/File:Cervical_Spine_Lateral_View.png",
+    "license": "CC BY-SA 4.0"
+  },
+  "furtherReading": [
+    {
+      "slug": "nhung-su-gia-hoa-hoc-dieu-khien-hoat-dong-cua-nao-bo",
+      "title": {
+        "vi": "Những sứ giả hóa học điều khiển hoạt động của não bộ",
+        "en": "The chemical messengers that run the brain"
+      },
+      "why": "Bài về hoạt động của não bộ — nơi cảm giác đau đầu được xử lý."
+    },
+    {
+      "slug": "thieu-ngu-khoan-no-the-chap-bang-suc-khoe-va-tuong-lai",
+      "title": {
+        "vi": "Thiếu ngủ: Khoản nợ thế chấp bằng sức khỏe và tương lai",
+        "en": "Sleep debt: a loan secured against health and the future"
+      },
+      "why": "Nhiều thể đau đầu trong tài liệu đi kèm mất ngủ; bài kia nói hậu quả của thiếu ngủ."
+    },
+    {
+      "slug": "stress-tac-dong-len-co-the-nhu-the-nao-va-vi-sao-van-dong-giup-chung-ta-giai-toa",
+      "title": {
+        "vi": "Stress tác động lên cơ thể như thế nào và vì sao vận động giúp chúng ta giải tỏa?",
+        "en": "How does stress affect the body, and why does exercise help us unwind?"
+      },
+      "why": "Đau đầu do căng cơ — loại phổ biến nhất — hay liên quan tới căng thẳng; bài kia giải thích căng thẳng tác động lên cơ thể."
+    }
+  ],
+  "review": {
+    "transcription": "pending",
+    "mapping": "passed",
+    "editor": "pending"
+  }
+}

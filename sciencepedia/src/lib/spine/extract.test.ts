@@ -84,3 +84,11 @@ test("trung tâm điều nhiệt: mã sau mô tả vùng là vùng điều nhi�
   assert.deepEqual(thermo("dau-dau-sot-cao-kiem-chung-lung"), ["T7"]); // "…vùng đầu. Giải tỏa trọng điểm T7"
   assert.ok(!reviewFlags(s).some((f) => f.includes("phần giải tỏa có T7")));
 });
+
+test("\"Giải tỏa trọng điểm …\" trong văn xuôi là dòng điều trị, không mở vai trọng điểm", () => {
+  const s = extractSection("dau-dau", [20, 32], pages);
+  const v = s.variants.find((x) => x.id === "dau-mot-ben-dau-kiem-chung-chay")!;
+  const primary = v.fields.filter((f) => f.kind === "primary");
+  assert.deepEqual(primary.flatMap((f) => f.vertebrae?.codes.map((c) => c.code) ?? []), ["L1"]);
+  assert.deepEqual(primary.flatMap((f) => f.vertebrae?.regions ?? []), []);
+});
