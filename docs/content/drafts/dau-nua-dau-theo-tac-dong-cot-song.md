@@ -151,6 +151,7 @@ Không có xét nghiệm đặc hiệu nào chứng minh một cơn đau đầu 
 - [Đau lưng cấp theo phương pháp Tác động cột sống](/articles/dau-lung-cap-theo-tac-dong-cot-song)
 - [Đau lưng mãn tính theo phương pháp Tác động cột sống](/articles/dau-lung-man-tinh-theo-tac-dong-cot-song)
 - [Đau thần kinh tọa theo phương pháp Tác động cột sống](/articles/dau-than-kinh-toa-theo-tac-dong-cot-song)
+- [Huyết áp thấp theo phương pháp Tác động cột sống](/articles/huyet-ap-thap-theo-tac-dong-cot-song)
 
 ## Nguồn tài liệu
 

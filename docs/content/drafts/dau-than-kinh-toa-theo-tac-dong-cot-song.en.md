@@ -73,6 +73,7 @@ Vertebrae named by the document:
 - [Acute back pain in the Spinal Impact method](/articles/dau-lung-cap-theo-tac-dong-cot-song)
 - [Chronic back pain in the Spinal Impact method](/articles/dau-lung-man-tinh-theo-tac-dong-cot-song)
 - [Migraine in the Spinal Impact method](/articles/dau-nua-dau-theo-tac-dong-cot-song)
+- [Low blood pressure in the Spinal Impact method](/articles/huyet-ap-thap-theo-tac-dong-cot-song)
 
 ## Source document
 
