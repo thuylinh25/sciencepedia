@@ -20,6 +20,7 @@ bằng chứng khoa học.
 |---|---|
 | [#12](https://github.com/thuylinh25/sciencepedia/pull/12) | Nhóm con của Sức khoẻ hiện thành **thẻ** trên trang lĩnh vực. Thêm khung lưu ý `health`/`traditional`, script `taxonomy:health` và icon `Activity`/`Hand`/`PersonStanding`. Merge commit `ee70edd`. |
 | #9–#11 + commit `195190c`, `ce3f79f` | Loạt **Tác động cột sống**: extract/build/import/publish, chỉ mục đốt sống ↔ bài trên Human Atlas, quyết định D-1…D-38. **3 bài đã PUBLISHED**: đau lưng cấp, đau thần kinh toạ, đau nửa đầu. |
+| [#13](https://github.com/thuylinh25/sciencepedia/pull/13) (session khác) | Thêm 2 bài Tác động cột sống **ở dạng bản nháp, `review.editor = pending`**: Đau lưng mãn tính (chủ đề II) và Huyết áp thấp (chủ đề V, `riskLevel high`, có khung cấp cứu đặt trước phần trích). Nguồn chỉ có MedlinePlus vì NHS/NINDS/NIAMS bị proxy mạng chặn. **Chưa qua science-editor, chưa import, chưa publish.** |
 | (cùng đợt) | Quy tắc Git và merge PR trong `CLAUDE.md` (mục "Git — commit, push, PR, merge"). |
 
 Đã kiểm tra trước khi merge #12:
@@ -40,9 +41,10 @@ bằng chứng khoa học.
    - Cần `.env` có `DATABASE_URL`. Muốn làm mới cache ngay thì thêm `CRON_SECRET` và `NEXT_PUBLIC_SITE_URL`. Không có thì trang `/categories/suc-khoe` tự mới sau ≤ 5 phút (ISR 300 s).
 2. **Xếp bài vào nhóm mới** (category-manager, bước 7 của pipeline). Hiện chưa chuyển bài nào. Ứng viên rõ nhất: bài Huyệt đạo `huyet-dao-va-cham-cuu-khi-cua-dong-y-co-lien-he-gi-voi-khoa-hoc-hien-dai` → `bam-huyet` hoặc `y-hoc-co-truyen`. Cần quyết định biên tập.
 3. **Nội dung cho Bấm huyệt và Y học cổ truyền.** Hai nhóm này đang 0 bài nên tự `noindex`. Bài mới phải đi đủ pipeline 11 bước.
-4. **Q-2 (Tác động cột sống) còn mở.** Thuật ngữ cho bài "Tổng quan" phải do chủ sản phẩm giải nghĩa, máy không tự viết. Xem `sciencepedia/content/tac-dong-cot-song/source/proposals.md`.
-5. **P-2, P-10, P-22 còn treo** tới khi có PDF tài liệu gốc để đối chiếu ảnh trang. Cả ba không ảnh hưởng chỉ mục.
-6. **Tuỳ chọn, chưa quyết:** đặt khung lưu ý trên **trang bài** thuộc nhóm truyền thống. Hiện khung chỉ có ở trang danh mục, có chủ ý (xem mục 6). Làm thì cần chủ sản phẩm đồng ý.
+4. **Hai bài nháp mới của PR #13** (đau lưng mãn tính, huyết áp thấp) phải qua science-editor rồi mới `review.editor = passed`, sau đó `spine:build` → `spine:import` → người chạy `spine:publish`. Cần cân nhắc bổ sung nguồn bậc 1–2 ngoài MedlinePlus khi mạng cho phép. Hiện `spine:publish` chỉ liệt kê 3 bài trong `SERIES`, nên phải thêm hai slug mới vào đó.
+5. **Q-2 (Tác động cột sống) còn mở.** Thuật ngữ cho bài "Tổng quan" phải do chủ sản phẩm giải nghĩa, máy không tự viết. Xem `sciencepedia/content/tac-dong-cot-song/source/proposals.md`.
+6. **P-2, P-10, P-22 còn treo** tới khi có PDF tài liệu gốc để đối chiếu ảnh trang. Cả ba không ảnh hưởng chỉ mục.
+7. **Tuỳ chọn, chưa quyết:** đặt khung lưu ý trên **trang bài** thuộc nhóm truyền thống. Hiện khung chỉ có ở trang danh mục, có chủ ý (xem mục 6). Làm thì cần chủ sản phẩm đồng ý.
 
 ## 4. Command hay dùng
 
