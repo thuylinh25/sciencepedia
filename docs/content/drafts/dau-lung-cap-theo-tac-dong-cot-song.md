@@ -29,29 +29,27 @@ Viện Quốc gia về Rối loạn Thần kinh và Đột quỵ Hoa Kỳ (NINDS
 
 ## Triệu chứng được tài liệu mô tả
 
-> Thường xuất hiện đột ngột sau một vận động quá mức hay một vận động trái tư thế nghe thấy cục một cái rồi thấy đau *(tr. 1)*
+> Thường xuất hiện đột ngột sau một vận động quá mức hay một vận động trái tư thế nghe thấy cục một cái rồi thấy đau
 
-> Khi vừa bị (sau khi nghe tiếng cục) thì đau ít, sau đó tăng dần lên, có khi rất đau, hạn chế vận động như cúi, ngửa đi ngửa lại khó khăn, nằm khi trở mình cũng đau. Bệnh nhân thường đi trong tư thế giảm đau (đi cong người hoặc vẹo người sang một bên). *(tr. 1)*
+> Khi vừa bị (sau khi nghe tiếng cục) thì đau ít, sau đó tăng dần lên, có khi rất đau, hạn chế vận động như cúi, ngửa đi ngửa lại khó khăn, nằm khi trở mình cũng đau. Bệnh nhân thường đi trong tư thế giảm đau (đi cong người hoặc vẹo người sang một bên).
 
-> Mùa lạnh bị cảm phong hàn cũng có thể gây nên đau lưng cấp. *(tr. 1)*
+> Mùa lạnh bị cảm phong hàn cũng có thể gây nên đau lưng cấp.
 
 ## Nội dung theo phương pháp Tác động cột sống
 
-Các mục dưới đây trích nguyên văn từ tài liệu, kèm số trang. Bài chỉ ghi lại tài liệu nói gì; bài không hướng dẫn thao tác và không thay cho việc khám bệnh.
-
 ### Tài liệu thăm khám thế nào
 
-> Về nhiệt độ: Tại vùng đau, chỗ đau nhiệt độ nóng cao và có những vùng nhiệt độ tương ứng (không phải chỗ đang đau) trên cột sống cũng nóng cao. *(tr. 1)*
+> Về nhiệt độ: Tại vùng đau, chỗ đau nhiệt độ nóng cao và có những vùng nhiệt độ tương ứng (không phải chỗ đang đau) trên cột sống cũng nóng cao.
 
 ### Các trọng điểm tài liệu nêu
 
-> Chú ý: Tại chỗ đau, điểm đau trên cột sống nhiệt độ nóng cao đang là vùng bệnh lý, chưa được tác động vào, phải tìm vùng tương ứng với nó trên cột sống để chữa. Nếu bệnh nhân đau không cúi được thường có điểm T2,3,7,8 *(tr. 1)*
+> Chú ý: Tại chỗ đau, điểm đau trên cột sống nhiệt độ nóng cao đang là vùng bệnh lý, chưa được tác động vào, phải tìm vùng tương ứng với nó trên cột sống để chữa. Nếu bệnh nhân đau không cúi được thường có điểm T2,3,7,8
 
-> Nếu bệnh nhân đau không ngồi thẳng lưng được có trọng điểm L4,5 và S1. *(tr. 2)*
+> Nếu bệnh nhân đau không ngồi thẳng lưng được có trọng điểm L4,5 và S1.
 
-> Nếu bệnh nhân bị ngoại cảm phong hàn không ra mồ hôi, lưng rất đau, vận động khó khăn … trọng điểm thường cũng có T2.3. *(tr. 2)*
+> Nếu bệnh nhân bị ngoại cảm phong hàn không ra mồ hôi, lưng rất đau, vận động khó khăn … trọng điểm thường cũng có T2.3.
 
-> Nếu bệnh nhân ra nhiều mồ hôi chữa hai bên hố chẩm vào tới C1,2 và song chỉnh với vùng S. *(tr. 2)*
+> Nếu bệnh nhân ra nhiều mồ hôi chữa hai bên hố chẩm vào tới C1,2 và song chỉnh với vùng S.
 
 Đốt sống tài liệu nêu:
 

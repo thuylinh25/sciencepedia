@@ -28,23 +28,21 @@ Không có xét nghiệm đặc hiệu nào chứng minh một cơn đau đầu 
 
 ## Triệu chứng được tài liệu mô tả
 
-> Lúc đầu chỉ đau ở một bên đầu, vùng trán, thái dương, ít khi ở vùng chẩm. Rồi dần dần có thể lan ra cả đầu hoặc đau bên nửa đầu đối diện. *(tr. 11)*
+> Lúc đầu chỉ đau ở một bên đầu, vùng trán, thái dương, ít khi ở vùng chẩm. Rồi dần dần có thể lan ra cả đầu hoặc đau bên nửa đầu đối diện.
 
-> Những triệu chứng kèm theo là buồn nôn, rối loạn tuần hoàn như mạch chậm, huyết áp có thể hơi cao, nhạy cảm với các mùi. Cơn đau thường kéo dài từ vài giờ đến 3 ngày, mất đi vào ban đêm hoặc để lại cảm giác ê ẩm ở trong đầu ngày hôm sau. *(tr. 11)*
+> Những triệu chứng kèm theo là buồn nôn, rối loạn tuần hoàn như mạch chậm, huyết áp có thể hơi cao, nhạy cảm với các mùi. Cơn đau thường kéo dài từ vài giờ đến 3 ngày, mất đi vào ban đêm hoặc để lại cảm giác ê ẩm ở trong đầu ngày hôm sau.
 
-> Đau nửa đầu có tiền triệu: Đau đầu khởi phát bằng tiền triệu nghĩa là những triệu chứng thần kinh khu trú ở vỏ não rồi phát triển dần dần trong vòng 6 đến 20 phút, kéo dài dưới 60 phút. … Tiền triệu có thể là rối loạn thị lực nhìn hình đôi, lác mắt ở cùng bên đau; … *(tr. 11)*
+> Đau nửa đầu có tiền triệu: Đau đầu khởi phát bằng tiền triệu nghĩa là những triệu chứng thần kinh khu trú ở vỏ não rồi phát triển dần dần trong vòng 6 đến 20 phút, kéo dài dưới 60 phút. … Tiền triệu có thể là rối loạn thị lực nhìn hình đôi, lác mắt ở cùng bên đau; …
 
-> … yếu nửa người, liệt nhẹ chi trên, mất ngôn ngữ, nói khó. Tiền triệu kéo dài dưới 60 phút và sẽ phục hồi hoàn toàn. Đây là dấu hiệu quan trọng để phân biệt với những bệnh nhân không phải đau nửa đầu có tiền triệu . *(tr. 12)*
+> … yếu nửa người, liệt nhẹ chi trên, mất ngôn ngữ, nói khó. Tiền triệu kéo dài dưới 60 phút và sẽ phục hồi hoàn toàn. Đây là dấu hiệu quan trọng để phân biệt với những bệnh nhân không phải đau nửa đầu có tiền triệu .
 
 ## Nội dung theo phương pháp Tác động cột sống
 
-Các mục dưới đây trích nguyên văn từ tài liệu, kèm số trang. Bài chỉ ghi lại tài liệu nói gì; bài không hướng dẫn thao tác và không thay cho việc khám bệnh.
-
-> Phương pháp tác động cột sống Việt Nam căn cứ vào sự biến đổi nhiệt độ da, sự biến đổi về tiết cơ trên hệ cột sống, sự biến đổi của các đốt sống liên quan đến các triệu chứng bệnh và cảm giác khách quan trên các đốt sống đó để xác định các đốt sống trọng điểm và giải toả các trọng điểm đó để điều trị các triệu chứng của bệnh. *(tr. 12)*
+> Phương pháp tác động cột sống Việt Nam căn cứ vào sự biến đổi nhiệt độ da, sự biến đổi về tiết cơ trên hệ cột sống, sự biến đổi của các đốt sống liên quan đến các triệu chứng bệnh và cảm giác khách quan trên các đốt sống đó để xác định các đốt sống trọng điểm và giải toả các trọng điểm đó để điều trị các triệu chứng của bệnh.
 
 ### Nảy đom đóm mắt
 
-> Nhiệt độ da ta thấy vùng ngực trái, vai phải, sườn phải của bệnh nhân nóng cao. Liên quan đến các chức năng về tuần hoàn, hô hấp, gan rối loạn. Đốt sống trọng điểm là C6, T9,T10,T11. *(tr. 12)*
+> Nhiệt độ da ta thấy vùng ngực trái, vai phải, sườn phải của bệnh nhân nóng cao. Liên quan đến các chức năng về tuần hoàn, hô hấp, gan rối loạn. Đốt sống trọng điểm là C6, T9,T10,T11.
 
 Đốt sống tài liệu nêu:
 
@@ -54,7 +52,7 @@ Các mục dưới đây trích nguyên văn từ tài liệu, kèm số trang. 
 
 ### Nặng đầu, mất ngủ, buồn nôn, rối loạn tuần hoàn
 
-> Nhiệt độ vùng ngực trái nóng cao. Liên quan đến các chức năng về tuần hoàn, hô hấp Đốt sống trọng điểm là T3,T6. *(tr. 12)*
+> Nhiệt độ vùng ngực trái nóng cao. Liên quan đến các chức năng về tuần hoàn, hô hấp Đốt sống trọng điểm là T3,T6.
 
 Đốt sống tài liệu nêu:
 
@@ -64,7 +62,7 @@ Các mục dưới đây trích nguyên văn từ tài liệu, kèm số trang. 
 
 ### Tê bì chi trên và đầu ngón tay
 
-> Nhiệt độ rối loạn vùng chẩm, cổ phải, mỏ ác (nóng cao); Liên quan đến chức năng phổi, dạ dày, đại tràng rối loạn. Đối sống trọng điểm là C7,L1,L3. *(tr. 12)*
+> Nhiệt độ rối loạn vùng chẩm, cổ phải, mỏ ác (nóng cao); Liên quan đến chức năng phổi, dạ dày, đại tràng rối loạn. Đối sống trọng điểm là C7,L1,L3.
 
 Đốt sống tài liệu nêu:
 
@@ -74,7 +72,7 @@ Các mục dưới đây trích nguyên văn từ tài liệu, kèm số trang. 
 
 ### Mệt, hay ngáp, ợ hơi
 
-> Nhiệt độ rối loạn vùng ngực trái. Liên quan đến chức năng đại tràng, tim mạch rối loạn. Trọng điểm là đốt sống T6, T7, T9 *(tr. 12)*
+> Nhiệt độ rối loạn vùng ngực trái. Liên quan đến chức năng đại tràng, tim mạch rối loạn. Trọng điểm là đốt sống T6, T7, T9
 
 Đốt sống tài liệu nêu:
 
@@ -84,7 +82,7 @@ Các mục dưới đây trích nguyên văn từ tài liệu, kèm số trang. 
 
 ### Nói khó, nghe đọc không hiểu
 
-> Nhiệt độ rối loạn ở vùng chẩm. Liên quan đến chức năng đại tràng, tim mạch rối loạn. Trọng điểm là đốt sống S5. *(tr. 12)*
+> Nhiệt độ rối loạn ở vùng chẩm. Liên quan đến chức năng đại tràng, tim mạch rối loạn. Trọng điểm là đốt sống S5.
 
 Đốt sống tài liệu nêu:
 
@@ -94,7 +92,7 @@ Các mục dưới đây trích nguyên văn từ tài liệu, kèm số trang. 
 
 ### Nhức nửa đầu sau, lan sang hốc mắt
 
-> Nhiệt độ rối loạn ở vùng đầu sau, hốc mắt và vùng vai phải, mỏ ác. Liên quan đến chức năng thần kinh và phổi rối loạn. Đốt sống trọng điểm là C1,C3,C5,C6,T11. *(tr. 13)*
+> Nhiệt độ rối loạn ở vùng đầu sau, hốc mắt và vùng vai phải, mỏ ác. Liên quan đến chức năng thần kinh và phổi rối loạn. Đốt sống trọng điểm là C1,C3,C5,C6,T11.
 
 Đốt sống tài liệu nêu:
 
@@ -104,7 +102,7 @@ Các mục dưới đây trích nguyên văn từ tài liệu, kèm số trang. 
 
 ### Nhức đầu vùng thái dương
 
-> Nhiệt độ rối loạn vùng vai phải, mỏ ác. Liên quan đến chức năng hô hấp và dạ dày rối loạn. Đốt sống trọng điểm là T11,L1. *(tr. 13)*
+> Nhiệt độ rối loạn vùng vai phải, mỏ ác. Liên quan đến chức năng hô hấp và dạ dày rối loạn. Đốt sống trọng điểm là T11,L1.
 
 Đốt sống tài liệu nêu:
 
@@ -114,7 +112,7 @@ Các mục dưới đây trích nguyên văn từ tài liệu, kèm số trang. 
 
 ### Nhức đầu vùng trán và hốc mắt
 
-> Nhiệt độ rối loạn vùng vai phải. Liên quan đến chức năng hô hấp rối loạn. Đốt sống trọng điểm là T10,T11. *(tr. 13)*
+> Nhiệt độ rối loạn vùng vai phải. Liên quan đến chức năng hô hấp rối loạn. Đốt sống trọng điểm là T10,T11.
 
 Đốt sống tài liệu nêu:
 
@@ -124,7 +122,7 @@ Các mục dưới đây trích nguyên văn từ tài liệu, kèm số trang. 
 
 ### Nhìn hình đôi, sụp mi
 
-> Nhiệt độ địa phương vùng mắt nóng cao. Liên quan đến chức năng thần kinh rối loạn. Đốt sống trọng điểm là C7. *(tr. 13)*
+> Nhiệt độ địa phương vùng mắt nóng cao. Liên quan đến chức năng thần kinh rối loạn. Đốt sống trọng điểm là C7.
 
 Đốt sống tài liệu nêu:
 
@@ -134,7 +132,7 @@ Các mục dưới đây trích nguyên văn từ tài liệu, kèm số trang. 
 
 ### Liệt nhẹ chi trên và nói khó
 
-> Nhiệt độ rối loạn vùng lưng trên. Liên quan đến chức năng tuần hoàn hô hấp rối loạn. Đốt sống trọng điểm là C6,T1. *(tr. 13)*
+> Nhiệt độ rối loạn vùng lưng trên. Liên quan đến chức năng tuần hoàn hô hấp rối loạn. Đốt sống trọng điểm là C6,T1.
 
 Đốt sống tài liệu nêu:
 

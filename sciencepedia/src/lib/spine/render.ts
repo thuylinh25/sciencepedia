@@ -24,9 +24,6 @@ const T = {
       `> **Tư liệu lưu trữ.** Bài này trình bày nội dung của tài liệu ${doc} để lưu trữ, nghiên cứu và tham khảo. Các đoạn trích là lời của tài liệu, không phải kết luận y khoa của Sciencepedia, và không thay thế chẩn đoán hay điều trị của nhân viên y tế.`,
     symptoms: "Triệu chứng được tài liệu mô tả",
     method: "Nội dung theo phương pháp Tác động cột sống",
-    methodIntro:
-      "Các mục dưới đây trích nguyên văn từ tài liệu, kèm số trang. Bài chỉ ghi lại tài liệu nói gì; bài không hướng dẫn thao tác và không thay cho việc khám bệnh.",
-    page: (page: number) => `tr. ${page}`,
     roles: { primary: "Trọng điểm", related: "Liên quan", caution: "Thận trọng", avoid: "Tránh" },
     vertebraeNamed: "Đốt sống tài liệu nêu",
     right: "phải",
@@ -51,9 +48,6 @@ const T = {
       `> **Archival material.** This article presents the content of the document ${doc} for archiving, research and reference. Quoted passages are the document's own words, not medical conclusions of Sciencepedia, and they do not replace diagnosis or treatment by a health professional.`,
     symptoms: "Symptoms described in the document",
     method: "Content according to the Spinal Impact method",
-    methodIntro:
-      "The passages below are translated from the document, with page numbers. The article records what the document says; it does not teach any technique and is not a substitute for medical care.",
-    page: (page: number) => `p. ${page}, translated`,
     roles: { primary: "Key point", related: "Related", caution: "Caution", avoid: "Avoid" },
     vertebraeNamed: "Vertebrae named by the document",
     right: "right",
@@ -78,15 +72,14 @@ const T = {
 const ROLE_ORDER: Mapping["role"][] = ["primary", "related", "caution", "avoid"];
 
 /*
- * Đoạn trích không còn nhãn "Theo tài liệu (tr. N):" ở đầu — chủ sản phẩm yêu cầu bỏ
- * (2026-10-05). Việc gán lời cho tài liệu giờ nằm ở cấp mục: nhãn "Tư liệu lưu trữ"
- * đầu bài, tiêu đề mục ("Triệu chứng được tài liệu mô tả", "Nội dung theo phương pháp…",
- * "Tài liệu nói phương pháp không áp dụng") và câu dẫn "trích nguyên văn từ tài liệu".
- * Số trang GIỮ, ở cuối đoạn — truy vết về bản gốc là yêu cầu gốc của module.
+ * Đoạn trích chỉ còn lời tài liệu: nhãn "Theo tài liệu (tr. N):", câu dẫn đầu mục và số
+ * trang cuối đoạn đều bỏ theo yêu cầu chủ sản phẩm (2026-10-05). Gán lời cho tài liệu
+ * nằm ở cấp mục — nhãn "Tư liệu lưu trữ" đầu bài và tiêu đề mục. Truy vết trang vẫn còn:
+ * `ref.pdfPage` trong topic JSON và khoảng trang ở mục "Nguồn tài liệu" cuối bài.
  */
 function quote(q: Quote, locale: Locale): string {
   const text = (locale === "vi" ? q.vi : q.en).trim().replace(/\n+/g, " ");
-  return `> ${text} *(${T[locale].page(q.pdfPage - 1)})*`;
+  return `> ${text}`;
 }
 
 function codeLink(m: Mapping, locale: Locale): string {
@@ -132,7 +125,7 @@ export function renderArticle(
     for (const q of editorial.symptoms) out.push(quote(q, locale), "");
   }
 
-  out.push(`## ${t.method}`, "", t.methodIntro, "");
+  out.push(`## ${t.method}`, "");
   for (const q of editorial.methodQuotes) out.push(quote(q, locale), "");
   const byId = new Map(topic.variants.map((v) => [v.id, v]));
   for (const ev of editorial.variants) {

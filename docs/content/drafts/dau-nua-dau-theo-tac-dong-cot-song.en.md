@@ -28,23 +28,21 @@ There is no specific test to prove that a headache is a migraine, and only a hea
 
 ## Symptoms described in the document
 
-> At first the pain is on one side of the head only, at the forehead or temple, rarely at the back of the head. Then it may gradually spread to the whole head or to the opposite half. *(p. 11, translated)*
+> At first the pain is on one side of the head only, at the forehead or temple, rarely at the back of the head. Then it may gradually spread to the whole head or to the opposite half.
 
-> Accompanying symptoms are nausea, circulatory disturbances such as a slow pulse, possibly slightly raised blood pressure, and sensitivity to smells. The pain usually lasts from a few hours to 3 days, fading at night or leaving a dull ache in the head the next day. *(p. 11, translated)*
+> Accompanying symptoms are nausea, circulatory disturbances such as a slow pulse, possibly slightly raised blood pressure, and sensitivity to smells. The pain usually lasts from a few hours to 3 days, fading at night or leaving a dull ache in the head the next day.
 
-> Migraine with aura: the headache begins with an aura, meaning focal neurological symptoms of the cerebral cortex that develop gradually over 6 to 20 minutes and last less than 60 minutes. … The aura may be a visual disturbance with double vision, a squint on the same side as the pain; … *(p. 11, translated)*
+> Migraine with aura: the headache begins with an aura, meaning focal neurological symptoms of the cerebral cortex that develop gradually over 6 to 20 minutes and last less than 60 minutes. … The aura may be a visual disturbance with double vision, a squint on the same side as the pain; …
 
-> … weakness of one side of the body, mild paralysis of the upper limb, loss of language, difficulty speaking. The aura lasts less than 60 minutes and resolves completely. This is an important sign for distinguishing them from patients who do not have migraine with aura. *(p. 12, translated)*
+> … weakness of one side of the body, mild paralysis of the upper limb, loss of language, difficulty speaking. The aura lasts less than 60 minutes and resolves completely. This is an important sign for distinguishing them from patients who do not have migraine with aura.
 
 ## Content according to the Spinal Impact method
 
-The passages below are translated from the document, with page numbers. The article records what the document says; it does not teach any technique and is not a substitute for medical care.
-
-> The Vietnamese Spinal Impact method relies on changes in skin temperature, changes in the muscle segments along the spine, changes in the vertebrae related to the symptoms, and the objective sensations over those vertebrae, in order to identify key vertebrae and release those key points to treat the symptoms. *(p. 12, translated)*
+> The Vietnamese Spinal Impact method relies on changes in skin temperature, changes in the muscle segments along the spine, changes in the vertebrae related to the symptoms, and the objective sensations over those vertebrae, in order to identify key vertebrae and release those key points to treat the symptoms.
 
 ### Seeing flashes ("fireflies")
 
-> Skin temperature is high over the patient's left chest, right shoulder and right flank. Related to disturbed circulatory, respiratory and liver functions. The key vertebrae are C6, T9, T10, T11. *(p. 12, translated)*
+> Skin temperature is high over the patient's left chest, right shoulder and right flank. Related to disturbed circulatory, respiratory and liver functions. The key vertebrae are C6, T9, T10, T11.
 
 Vertebrae named by the document:
 
@@ -54,7 +52,7 @@ Vertebrae named by the document:
 
 ### Heavy head, insomnia, nausea, circulatory disturbance
 
-> Temperature is high over the left chest. Related to circulatory and respiratory functions. The key vertebrae are T3, T6. *(p. 12, translated)*
+> Temperature is high over the left chest. Related to circulatory and respiratory functions. The key vertebrae are T3, T6.
 
 Vertebrae named by the document:
 
@@ -64,7 +62,7 @@ Vertebrae named by the document:
 
 ### Numbness of the arms and fingertips
 
-> Temperature is disturbed (high) over the back of the head, the right side of the neck and the epigastrium; related to disturbed lung, stomach and colon functions. The key vertebrae are C7, L1, L3. *(p. 12, translated)*
+> Temperature is disturbed (high) over the back of the head, the right side of the neck and the epigastrium; related to disturbed lung, stomach and colon functions. The key vertebrae are C7, L1, L3.
 
 Vertebrae named by the document:
 
@@ -74,7 +72,7 @@ Vertebrae named by the document:
 
 ### Tiredness, frequent yawning, belching
 
-> Temperature is disturbed over the left chest. Related to disturbed colon and cardiovascular functions. The key vertebrae are T6, T7, T9. *(p. 12, translated)*
+> Temperature is disturbed over the left chest. Related to disturbed colon and cardiovascular functions. The key vertebrae are T6, T7, T9.
 
 Vertebrae named by the document:
 
@@ -84,7 +82,7 @@ Vertebrae named by the document:
 
 ### Difficulty speaking, not understanding speech or text
 
-> Temperature is disturbed over the back of the head. Related to disturbed colon and cardiovascular functions. The key vertebra is S5. *(p. 12, translated)*
+> Temperature is disturbed over the back of the head. Related to disturbed colon and cardiovascular functions. The key vertebra is S5.
 
 Vertebrae named by the document:
 
@@ -94,7 +92,7 @@ Vertebrae named by the document:
 
 ### Ache at the back of one side of the head, spreading to the eye socket
 
-> Temperature is disturbed over the back of the head, the eye socket, the right shoulder and the epigastrium. Related to disturbed nervous and lung functions. The key vertebrae are C1, C3, C5, C6, T11. *(p. 13, translated)*
+> Temperature is disturbed over the back of the head, the eye socket, the right shoulder and the epigastrium. Related to disturbed nervous and lung functions. The key vertebrae are C1, C3, C5, C6, T11.
 
 Vertebrae named by the document:
 
@@ -104,7 +102,7 @@ Vertebrae named by the document:
 
 ### Ache at the temples
 
-> Temperature is disturbed over the right shoulder and the epigastrium. Related to disturbed respiratory and stomach functions. The key vertebrae are T11, L1. *(p. 13, translated)*
+> Temperature is disturbed over the right shoulder and the epigastrium. Related to disturbed respiratory and stomach functions. The key vertebrae are T11, L1.
 
 Vertebrae named by the document:
 
@@ -114,7 +112,7 @@ Vertebrae named by the document:
 
 ### Ache at the forehead and eye sockets
 
-> Temperature is disturbed over the right shoulder. Related to disturbed respiratory function. The key vertebrae are T10, T11. *(p. 13, translated)*
+> Temperature is disturbed over the right shoulder. Related to disturbed respiratory function. The key vertebrae are T10, T11.
 
 Vertebrae named by the document:
 
@@ -124,7 +122,7 @@ Vertebrae named by the document:
 
 ### Double vision, drooping eyelid
 
-> Local temperature around the eye is high. Related to disturbed nervous function. The key vertebra is C7. *(p. 13, translated)*
+> Local temperature around the eye is high. Related to disturbed nervous function. The key vertebra is C7.
 
 Vertebrae named by the document:
 
@@ -134,7 +132,7 @@ Vertebrae named by the document:
 
 ### Mild paralysis of the upper limb and difficulty speaking
 
-> Temperature is disturbed over the upper back. Related to disturbed circulatory and respiratory functions. The key vertebrae are C6, T1. *(p. 13, translated)*
+> Temperature is disturbed over the upper back. Related to disturbed circulatory and respiratory functions. The key vertebrae are C6, T1.
 
 Vertebrae named by the document:
 
