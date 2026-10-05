@@ -75,6 +75,8 @@ sources:
     passages:
       - "Cauda equina syndrome is a rare but emergent condition associated with back pain. It can result in severe morbidity and can be due to a variety of causes, most commonly vertebral disc protrusion."
       - "Treatment relies upon surgical consultation and operative intervention for decompression."
+      - "Red flags and findings consistent with CES include bilateral neurogenic sciatica, reduced perineal sensation, altered bladder function leading to painless urinary retention, loss of anal tone, and loss of sexual function."   # science-editor vòng 2, Europe PMC
+      - "Symptoms may occur either suddenly or gradually, and most patients do not present with all of these symptoms."
     note: >
       Thêm 2026-10-05 theo quyết định của chủ sản phẩm ("tìm thêm nguồn") cho đoạn trích
       outOfScope trang 10 ("viêm đuôi ngựa … phải dùng thuốc"). Bài KHÔNG đồng nhất
