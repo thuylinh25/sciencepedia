@@ -248,6 +248,10 @@ export function HumanAtlas({
    * chi tiết nói về MỘT cấu trúc, không gộp được), mô hình xem riêng hợp của chúng.
    */
   const [picked, setPicked] = useState<Concept[]>([]);
+  const pickedRef = useRef(picked);
+  useEffect(() => {
+    pickedRef.current = picked;
+  }, [picked]);
   const [focusDetail, setFocusDetail] = useState(false);
   /** Người đọc đã chạm/kéo lần nào chưa — để hạ độ nổi của dòng gợi ý thao tác. */
   const [interacted, setInteracted] = useState(false);
@@ -383,6 +387,10 @@ export function HumanAtlas({
               : state.visible.includes(p.system)) || state.selected.includes(p.id)),
     ).length ?? 0;
   const detailOpen = details && selectedParts.length > 0 && !!chosen;
+  /** Mảnh của riêng cấu trúc đang mở bảng — khác `selectedParts` khi đang chọn nhiều cấu trúc. */
+  const chosenParts = (chosen?.elements ?? [])
+    .map((id) => parts.get(id))
+    .filter((p): p is NonNullable<typeof p> => !!p);
 
   // ---------------------------------------------------------- thao tác
   const choose = useCallback(
@@ -416,6 +424,16 @@ export function HumanAtlas({
       // chạm vào đốt sống đang xem riêng là bật về toàn cơ thể (chủ sản phẩm báo
       // 2026-10-01). Giữ nguyên, chỉ mở lại bảng chi tiết.
       if (isolateRef.current.isolate && isolateRef.current.selected.includes(id)) {
+        // Đang xem riêng NHIỀU cấu trúc (link từ bài Tác động cột sống mở cả loạt đốt
+        // sống): `chosen` null nên chỉ bật `details` là không hiện gì (chủ sản phẩm báo
+        // 2026-10-05). Mở bảng cho đúng cấu trúc vừa chạm, giữ nguyên tập đang xem riêng.
+        if (pickedRef.current.length > 1) {
+          const concept =
+            pickedRef.current.find((c) => c.elements.includes(id)) ??
+            ({ id: p.conceptId, name: p.name, elements: [id] } satisfies Concept);
+          setChosen(concept);
+          setFocusDetail(true);
+        }
         setDetails(true);
         setPanel(null);
         return;
@@ -431,6 +449,11 @@ export function HumanAtlas({
     },
     [parts, index],
   );
+
+  const closePickedDetail = () => {
+    setDetails(false);
+    setChosen(null);
+  };
 
   const clearSelection = () => {
     setState((s) => ({ ...s, selected: [], isolate: false }));
@@ -994,7 +1017,7 @@ export function HumanAtlas({
       {detailOpen && chosen && (
         <StructureDetail
           concept={chosen}
-          parts={selectedParts}
+          parts={picked.length > 1 ? chosenParts : selectedParts}
           isolate={state.isolate}
           locale={locale}
           articles={articles[chosen.id] ?? []}
@@ -1005,7 +1028,8 @@ export function HumanAtlas({
           onClear={clearSelection}
           // Đóng bảng = bỏ chọn (2026-10-02): bản trước chỉ ẩn bảng, mảnh vẫn sáng
           // viền và `?structure=` vẫn trên URL — chủ sản phẩm báo X "không tắt hết".
-          onClose={clearSelection}
+          // Trong tập chọn nhiều cấu trúc, đóng bảng là về lại tập ấy — chưa bỏ chọn.
+          onClose={picked.length > 1 ? closePickedDetail : clearSelection}
         />
       )}
 
