@@ -5232,38 +5232,7 @@
         "pdfPage": 26,
         "bookPage": 25
        },
-       "from": "label",
-       "vertebrae": {
-        "raw": "T7-T11",
-        "codes": [
-         {
-          "code": "T7",
-          "confidence": "exact"
-         },
-         {
-          "code": "T8",
-          "confidence": "expanded",
-          "note": "bung từ khoảng T7–T11"
-         },
-         {
-          "code": "T9",
-          "confidence": "expanded",
-          "note": "bung từ khoảng T7–T11"
-         },
-         {
-          "code": "T10",
-          "confidence": "expanded",
-          "note": "bung từ khoảng T7–T11"
-         },
-         {
-          "code": "T11",
-          "confidence": "expanded",
-          "note": "bung từ khoảng T7–T11"
-         }
-        ],
-        "regions": [],
-        "issues": []
-       }
+       "from": "label"
       },
       {
        "kind": "treatment",

@@ -1,4 +1,13 @@
-# Đề xuất cho các cờ review còn mở — CHƯA PHẢI QUYẾT ĐỊNH
+# Đề xuất cho các cờ review còn mở — ĐÃ DUYỆT (trừ Q-2)
+
+> **Đã duyệt 2026-10-05** (chủ sản phẩm: "thực hiện" phiếu này = duyệt hết theo đề xuất).
+> Đã chép sang `decisions.json`: P-n → **D-(n+12)** (P-1 = D-13 … P-24 = D-36),
+> Q-1 phương án (b) → **D-37**, Q-3 → **D-38**. `spine:extract` còn 0 cờ mở.
+> P-17 (C6, C7, T1 bên phải) đi theo đề xuất mặc định dù căn cứ yếu — đổi ở D-29 nếu cần.
+> **Q-2 còn mở**: thuật ngữ cho bài "Tổng quan" phải do chủ sản phẩm giải nghĩa, máy không
+> tự viết. Các chỗ "cần nhìn ảnh trang" (P-2, P-10, P-22) vẫn treo tới khi có PDF; cả ba
+> đều không chỉ mục hoặc không đổi vai nên chỉ mục không phụ thuộc chúng.
+> Phần dưới giữ nguyên làm hồ sơ.
 
 Lập 2026-10-05 (Claude), từ bản chép một lượt trong `pages/` — **chưa đối chiếu ảnh trang**
 (PDF không có trong container). Mỗi mục là đề xuất máy đọc ra; chỉ khi chủ sản phẩm duyệt

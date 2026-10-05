@@ -175,10 +175,12 @@
    {
     "slug": "dau-lung-cap-theo-tac-dong-cot-song",
     "roles": [
-     "primary"
+     "primary",
+     "related"
     ],
     "codes": [
-     "S1"
+     "S1",
+     "S"
     ]
    },
    {

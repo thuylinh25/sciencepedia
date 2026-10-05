@@ -138,11 +138,17 @@ function parseTriangles(value: string): Pick<Field, "triangles" | "muscleSegment
 function labelled(kind: FieldKind, label: string, value: string, ref: PageMeta): Field {
   const field: Field = { kind, label, raw: value, ref, from: "label" };
   if (kind === "treatment") {
-    // Dòng điều trị trộn vùng điều nhiệt với mã ("Vùng đầu, T7-T11", "Trung tâm
-    // điều nhiệt vùng đầu. Giải tỏa trọng điểm T7"): chỉ đọc từ mã đầu tiên. Không
-    // có mã thì là lời dặn ("Tuỳ theo hình thái…"), bỏ qua.
-    const start = value.search(HAS_CODE);
-    if (start >= 0) field.vertebrae = parseVertebraList(value.slice(start));
+    // Dòng "Trung tâm điều nhiệt" trộn vùng điều nhiệt với mã giải tỏa. Mã sau chữ
+    // "giải tỏa" là mã giải tỏa ("…vùng đầu. Giải tỏa trọng điểm T7"); mã mở đầu
+    // giá trị thì nhãn đã giữ phần vùng ("…vùng đầu : C7 và T1"). Còn mã đứng SAU
+    // một mô tả vùng ("Vùng đầu, T7-T11", trang 26) thuộc về vùng điều nhiệt —
+    // không phải mã giải tỏa (P-16 → D-28). Không có mã thì là lời dặn, bỏ qua.
+    const thermo = /^trung tam dieu nhiet/.test(fold(label));
+    const relief = thermo ? value.search(/giải\s+t(?:ỏa|oả)/iu) : -1;
+    const from = Math.max(relief, 0);
+    const at = value.slice(from).search(HAS_CODE);
+    const start = at < 0 ? -1 : from + at;
+    if (start >= 0 && (!thermo || relief >= 0 || start === 0)) field.vertebrae = parseVertebraList(value.slice(start));
   } else if (kind === "primary" || kind === "related") {
     field.vertebrae = parseVertebraList(value.replace(/^là\s+/u, ""));
   } else if (kind === "zones") {

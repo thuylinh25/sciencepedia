@@ -74,8 +74,66 @@ test("trọng điểm + khung atlas nằm ngay dưới từng đoạn trích nê
     "second-thoracic-vertebra,third-thoracic-vertebra,seventh-thoracic-vertebra,eighth-thoracic-vertebra",
     "fourth-lumbar-vertebra,fifth-lumbar-vertebra,sacrum",
     "second-thoracic-vertebra,third-thoracic-vertebra",
-    "atlas,axis",
+    // D-37: "vùng S" song chỉnh tô cả khối xương cùng, cạnh C1–C2 của D-12.
+    "atlas,axis,sacrum",
   ]);
+});
+
+// Mục chưa có tệp biên tập: mượn tệp của một bài, đặt nhãn theo tiêu đề thể — chỉ để
+// chạy phần mapping của assembleTopic.
+function topicOf(section: string, range: [number, number]) {
+  const extract = extractSection(section, range, pages);
+  const base = editorial("dau-lung-cap-theo-tac-dong-cot-song");
+  const e = { ...base, section, variants: extract.variants.map((v) => ({ id: v.id, label: { vi: v.heading, en: v.heading }, quotes: [] })) };
+  return assembleTopic(extract, meta(section), decisions, e);
+}
+const mappingsOf = (topic: ReturnType<typeof topicOf>, variant: string) => topic.variants.find((v) => v.id === variant)!.mappings;
+
+test("D-37: vùng S thành mapping vùng 'sacral', vai liên quan — không bung thành S1–S5", () => {
+  const topic = topicOf("dau-lung-cap", [2, 3]);
+  const sweat = topic.variants.flatMap((v) => v.mappings).filter((m) => m.decision === "D-12" || m.decision === "D-37");
+  assert.deepEqual(sweat.map((m) => `${m.targetType}:${m.targetId}:${m.role}`), ["vertebra:C1:primary", "vertebra:C2:primary", "region:sacral:related"]);
+});
+
+test("D-21…D-25 (keepRole): mã hai vai trong một thể chỉ còn vai trọng điểm", () => {
+  const topic = topicOf("thieu-nang-tuan-hoan-nao", [17, 18]);
+  for (const [variant, codes] of [["dau-dau", ["T1"]], ["lao-dao", ["T1"]], ["it-ngu", ["T1"]], ["dau-lung-tren", ["T1", "T3"]]] as const) {
+    for (const code of codes) {
+      assert.deepEqual(mappingsOf(topic, variant).filter((m) => m.targetId === code).map((m) => m.role), ["primary"], `${variant}:${code}`);
+    }
+  }
+  // Mã khác của dải liên quan không bị đụng.
+  assert.ok(mappingsOf(topic, "lao-dao").some((m) => m.targetId === "T2" && m.role === "related"));
+});
+
+test("keepRole trỏ vào mã không có vai ấy thì build dừng", () => {
+  const extract = extractSection("thieu-nang-tuan-hoan-nao", [17, 18], pages);
+  const base = editorial("dau-lung-cap-theo-tac-dong-cot-song");
+  const e = { ...base, variants: extract.variants.map((v) => ({ id: v.id, label: { vi: v.heading, en: v.heading }, quotes: [] })) };
+  const bad: Decision = { id: "D-x", section: "thieu-nang-tuan-hoan-nao", apply: { keepRole: "primary", variant: "lao-dao", codes: ["T5"] } };
+  assert.throws(() => assembleTopic(extract, meta("thieu-nang-tuan-hoan-nao"), [bad], e), /D-x/);
+});
+
+test("D-26, D-27, D-29, D-30: bên phải và điều kiện đi theo quyết định", () => {
+  const hap = mappingsOf(topicOf("huyet-ap-cao", [19, 19]), "benh-huyet-ap-cao").find((m) => m.decision === "D-26")!;
+  assert.deepEqual([hap.targetId, hap.role, hap.side, hap.note], ["T3", "primary", "right", "khi tâm trương cần điều chỉnh"]);
+
+  const dd = topicOf("dau-dau", [20, 32]);
+  const caution = mappingsOf(dd, "dau-dau-do-tang-huyet-ap-kiem").filter((m) => m.role === "caution");
+  assert.deepEqual(caution.map((m) => `${m.targetId}:${m.side}:${m.confidence}`), ["T6:right:exact", "T10:right:exact", "L3:right:exact"]);
+  const laoDao = mappingsOf(dd, "dau-dau-lao-dao-muon-nga-kiem").filter((m) => m.role === "primary");
+  assert.deepEqual(laoDao.map((m) => `${m.targetId}:${m.side}:${m.decision}`), ["C6:right:D-29", "C7:right:D-29", "T1:right:D-29"]);
+});
+
+test("đau lưng mạn tính: nơi bệnh nằm không vào chỉ mục, vùng xơ co là liên quan", () => {
+  const topic = topicOf("dau-lung-man-tinh", [4, 6]);
+  const all = topic.variants.flatMap((v) => v.mappings);
+  // Lao T7, T8 (D-20) và L4, L5 viêm khớp cùng chậu (D-17) không có mapping nào.
+  assert.equal(mappingsOf(topic, "dau-lung-do-nhiem-khuan-lao-dot").length, 0);
+  assert.equal(mappingsOf(topic, "viem-khop-cung-chau").length, 0);
+  assert.deepEqual(mappingsOf(topic, "dau-lung-do-thoai-hoa-voi-hoa").map((m) => `${m.targetId}:${m.role}`), ["T2:related", "T3:related", "T7:related", "T8:related"]);
+  assert.deepEqual(mappingsOf(topic, "dau-lung-do-gai-doi").map((m) => `${m.targetId}:${m.role}`), ["C1:primary", "C3:primary", "C4:primary", "L4:related", "L5:related", "S1:related"]);
+  assert.ok(all.every((m) => m.confidence !== "uncertain"));
 });
 
 test("bài render: có nhãn tư liệu, link atlas, lời khép bài; không có lời mời tự làm", () => {

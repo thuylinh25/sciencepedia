@@ -926,7 +926,8 @@
         "caution": "Caution",
         "avoid": "Avoid"
       },
-      "spineSacrum": "The document names S1–S5; the model has a single sacrum, so these codes all point here."
+      "spineSacrum": "The document names S1–S5; the model has a single sacrum, so these codes all point here.",
+      "spineSacralRegion": "sacral region"
     },
     "systemGroups": {
       "cardiovascular": "Cardiovascular system"

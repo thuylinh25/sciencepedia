@@ -5,7 +5,7 @@ import { test } from "node:test";
 
 import { SPINE_LINKS } from "./links";
 import { Topic } from "./schema";
-import { VERTEBRAE, codesForFma, type VertebraCode } from "./vertebrae";
+import { SACRAL_REGION_LABEL, VERTEBRAE, atlasCodeOf, codesForFma, type VertebraCode } from "./vertebrae";
 
 // Chạy: npx tsx --test src/lib/spine/links.test.ts
 
@@ -18,8 +18,9 @@ test("chỉ mục atlas khớp topic — chạy lại `npm run spine:build -- --
   const expected = new Map<string, Set<string>>();
   for (const t of topics) {
     for (const m of t.variants.flatMap((v) => v.mappings)) {
-      if (m.targetType !== "vertebra") continue;
-      const fma = VERTEBRAE.get(m.targetId as VertebraCode)!.fma;
+      const atlas = atlasCodeOf(m);
+      if (!atlas) continue;
+      const fma = VERTEBRAE.get(atlas)!.fma;
       if (!expected.has(fma)) expected.set(fma, new Set());
       expected.get(fma)!.add(`${t.slug}:${m.role}`);
     }
@@ -34,7 +35,13 @@ test("mọi khoá là FMA của một đốt sống, mã đi kèm đúng khoá",
   for (const [fma, links] of Object.entries(SPINE_LINKS)) {
     const codes = codesForFma(fma);
     assert.ok(codes.length > 0, `${fma} không phải khái niệm đốt sống`);
-    for (const l of links) for (const c of l.codes) assert.ok(codes.includes(c as VertebraCode), `${c} không thuộc ${fma}`);
+    for (const l of links) {
+      for (const c of l.codes) {
+        // "S" = "vùng S" (D-37): chỉ được nằm ở khoá xương cùng.
+        const ok = c === SACRAL_REGION_LABEL ? codes.includes("S1") : codes.includes(c as VertebraCode);
+        assert.ok(ok, `${c} không thuộc ${fma}`);
+      }
+    }
   }
 });
 

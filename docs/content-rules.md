@@ -860,3 +860,23 @@ trước khi topic chuyển `review.mapping = passed`.
 **S1–S5 là một khối trên atlas.** BodyParts3D không tách năm đốt cùng; chip S1 mở xương cùng
 và giao diện nói rõ điều đó, không giả vờ tô đúng một đốt. Xương cụt không có trong mô hình
 nên không có link.
+
+**"Vùng S" tô cả xương cùng; các vùng khác không tô** (D-37, 2026-10-05). Vẫn không bung
+thành S1–S5, nhưng vì xương cùng vốn là một khối nên tô cả khối là nói đúng điều tài liệu
+nói — và là cách duy nhất người xem atlas thấy điểm thứ hai của lần song chỉnh. "Các đốt
+sống cổ" thì KHÔNG tô C1–C7: đó là bảy cấu trúc riêng, tô hết là nói thay tài liệu. Quy tắc
+nằm ở một chỗ (`atlasCodeOf`); chỉ mục ghi mã "S", atlas hiện "vùng S".
+
+**Mã mang hai vai trong một thể → giữ vai cao hơn** (D-21…D-25). Bảng "chủ yếu / liên
+quan" ở thiểu năng tuần hoàn não viết dải "T1–T10" bắt đầu từ chính mã chủ yếu — đó là
+cách viết dải, không phải vai thứ hai. Vẫn ghi một D-n cho TỪNG chỗ (`apply.keepRole`)
+thay vì gộp tự động: chỗ nào bị đổi thì truy được về quyết định, và một dải lặp bất
+thường (T1 lặp nguyên ở "lảo đảo") vẫn hiện cho người nhìn.
+
+**Dòng "Trung tâm điều nhiệt" không phải dòng giải tỏa** (D-28). "Vùng đầu, T7-T11" là
+vùng điều nhiệt; chỉ mã sau chữ "giải tỏa", hoặc mã mở đầu giá trị ("…vùng đầu : C7 và
+T1"), mới là mã giải tỏa. Bản đầu của bộ trích đọc mọi mã trong dòng và sinh cờ "phần giải
+tỏa có T7…T11 mà trọng điểm không có" — một mâu thuẫn do máy tự tạo.
+
+**Điều kiện đi cùng vai thì ghi vào mapping** (`note`, D-26: T3 phải "khi tâm trương cần
+điều chỉnh"). Bỏ điều kiện là biến chỉ định có điều kiện thành chỉ định chung.

@@ -72,8 +72,9 @@ Viện Quốc gia về Rối loạn Thần kinh và Đột quỵ Hoa Kỳ (NINDS
 Đốt sống tài liệu nêu:
 
 - **Trọng điểm:** [C1](/human-atlas?structure=atlas#atlas-viewer), [C2](/human-atlas?structure=axis#atlas-viewer)
+- **Liên quan:** [vùng cùng](/human-atlas?structure=sacrum#atlas-viewer)
 
-[Xem trên Bản đồ cơ thể người →](/human-atlas?structure=atlas,axis#atlas-embed)
+[Xem trên Bản đồ cơ thể người →](/human-atlas?structure=atlas,axis,sacrum#atlas-embed)
 
 ## Đọc thêm
 
