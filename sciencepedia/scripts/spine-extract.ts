@@ -20,6 +20,7 @@ const ROOT = path.join(process.cwd(), "content/tac-dong-cot-song");
 const SOURCE = path.join(ROOT, "source");
 
 type Manifest = { sections: { id: string; pdfPages: [number, number] }[] };
+type Decision = { id: string; section: string; match: string; resolution: string };
 
 function main() {
   const argv = process.argv.slice(2);
@@ -35,6 +36,10 @@ function main() {
   const missing = Array.from({ length: 43 }, (_, i) => i + 1).filter((n) => !pages.some((p) => p.pdfPage === n));
   if (missing.length) throw new Error(`thiếu bản chép trang: ${missing.join(", ")}`);
 
+  const decisions = (
+    JSON.parse(readFileSync(path.join(SOURCE, "decisions.json"), "utf8")) as { entries: Decision[] }
+  ).entries;
+
   const sections: SectionExtract[] = manifest.sections
     .filter((s) => !only || s.id === only)
     .map((s) => extractSection(s.id, s.pdfPages, pages));
@@ -44,26 +49,32 @@ function main() {
     "# Cờ review — Tác động cột sống",
     "",
     "Sinh bởi `scripts/spine-extract.ts`. Mỗi dòng là một chỗ máy KHÔNG chắc hoặc",
-    "không được phép quyết. Đối chiếu với ảnh trang, ghi quyết định vào topic JSON;",
+    "không được phép quyết. Đối chiếu với ảnh trang, ghi quyết định vào",
+    "`source/decisions.json` (cờ khớp sẽ hiện ✔ kèm id quyết định);",
     "đừng sửa tệp này bằng tay — chạy lại script.",
     "",
   ];
   let total = 0;
   for (const section of sections) {
-    const flags = reviewFlags(section);
+    // Cờ đã có quyết định của người vẫn hiện (để thấy dấu vết), nhưng không đếm là việc còn mở.
+    const flags = reviewFlags(section).map((flag) => {
+      const d = decisions.find((x) => x.section === section.id && flag.includes(x.match));
+      return d ? `✔ ${d.id}: ${flag} → ${d.resolution}` : flag;
+    });
+    const open = flags.filter((f) => !f.startsWith("✔")).length;
     const codes = section.variants.reduce(
       (n, v) => n + v.fields.reduce((m, f) => m + (f.kind !== "treatment" ? f.vertebrae?.codes.length ?? 0 : 0), 0),
       0,
     );
-    total += flags.length;
+    total += open;
     console.log(
       `${section.id.padEnd(28)} tr.${section.pdfPages.join("–").padEnd(6)} ` +
-        `${String(section.variants.length).padStart(3)} thể · ${String(codes).padStart(3)} mã · ${String(flags.length).padStart(3)} cờ`,
+        `${String(section.variants.length).padStart(3)} thể · ${String(codes).padStart(3)} mã · ${String(open).padStart(3)} cờ mở`,
     );
     report.push(`## ${section.id} (tr. ${section.pdfPages.join("–")})`, "");
     report.push(...(flags.length ? flags.map((f) => `- ${f}`) : ["- (không có cờ)"]), "");
   }
-  console.log(`\nTổng: ${total} cờ review.`);
+  console.log(`\nTổng: ${total} cờ review còn mở.`);
 
   if (!write) {
     console.log("Chạy khô — thêm --write để ghi extract.generated.json và review-flags.md.");

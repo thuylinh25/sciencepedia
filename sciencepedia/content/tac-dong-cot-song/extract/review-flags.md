@@ -1,7 +1,8 @@
 # Cờ review — Tác động cột sống
 
 Sinh bởi `scripts/spine-extract.ts`. Mỗi dòng là một chỗ máy KHÔNG chắc hoặc
-không được phép quyết. Đối chiếu với ảnh trang, ghi quyết định vào topic JSON;
+không được phép quyết. Đối chiếu với ảnh trang, ghi quyết định vào
+`source/decisions.json` (cờ khớp sẽ hiện ✔ kèm id quyết định);
 đừng sửa tệp này bằng tay — chạy lại script.
 
 ## dau-lung-cap (tr. 2–3)
@@ -45,10 +46,10 @@ không được phép quyết. Đối chiếu với ảnh trang, ghi quyết đ�
 
 ## huyet-ap-cao (tr. 19–19)
 
-- [benh-huyet-ap-cao] tr.19 Tập trung vào: "C7; T1; T2; T3 bên phải" — "bên phải" áp cho cả 4 mã hay chỉ mã cuối?
-- [mention] tr.19 T6 — vai trò trống: "HA do tim .......T6 F"
-- [mention] tr.19 T10 — vai trò trống: "HA do thượng thận ....T10 F"
-- [mention] tr.19 L3 — vai trò trống: "HA do tiết niệu .........L3 F"
+- ✔ D-1: [benh-huyet-ap-cao] tr.19 Tập trung vào: "C7; T1; T2; T3 bên phải" — "bên phải" áp cho cả 4 mã hay chỉ mã cuối? → "bên phải" áp cho CẢ BỐN đốt: C7, T1, T2, T3 đều side = right.
+- ✔ D-2: [mention] tr.19 T6 — vai trò trống: "HA do tim .......T6 F" → T6 vai trò caution (thận trọng khi tác động), side = right — dòng này giải thích câu "Thận trọng khi chữa T6; T10; và L3" ngay trên, không phải đốt tác động.
+- ✔ D-3: [mention] tr.19 T10 — vai trò trống: "HA do thượng thận ....T10 F" → T10 vai trò caution (thận trọng khi tác động), side = right — dòng này giải thích câu "Thận trọng khi chữa T6; T10; và L3" ngay trên, không phải đốt tác động.
+- ✔ D-4: [mention] tr.19 L3 — vai trò trống: "HA do tiết niệu .........L3 F" → L3 vai trò caution (thận trọng khi tác động), side = right — dòng này giải thích câu "Thận trọng khi chữa T6; T10; và L3" ngay trên, không phải đốt tác động.
 - [mention] tr.19 T3 — vai trò trống: "Các bệnh nhân có Tâm trương (tối thiểu) cần phải điều chỉnh thì tác động T3 bên phải."
 
 ## dau-dau (tr. 20–32)

@@ -1,0 +1,45 @@
+{
+  "policy": "Quyết định của NGƯỜI cho các cờ review mà máy không được tự quyết. Id D-<n> cố định, chỉ thêm, không đánh số lại. `match` là chuỗi con của dòng cờ trong review-flags.md — spine-extract đánh dấu cờ khớp là đã quyết. Bước dựng topic JSON đọc `resolution` ở đây.",
+  "entries": [
+    {
+      "id": "D-1",
+      "section": "huyet-ap-cao",
+      "pdfPage": 19,
+      "raw": "Tập trung vào C7; T1; T2; T3 bên phải",
+      "match": "\"C7; T1; T2; T3 bên phải\"",
+      "resolution": "\"bên phải\" áp cho CẢ BỐN đốt: C7, T1, T2, T3 đều side = right.",
+      "decidedBy": "chủ sản phẩm",
+      "decidedAt": "2026-10-05"
+    },
+    {
+      "id": "D-2",
+      "section": "huyet-ap-cao",
+      "pdfPage": 19,
+      "raw": "HA do tim .......T6 F",
+      "match": "\"HA do tim .......T6 F\"",
+      "resolution": "T6 vai trò caution (thận trọng khi tác động), side = right — dòng này giải thích câu \"Thận trọng khi chữa T6; T10; và L3\" ngay trên, không phải đốt tác động.",
+      "decidedBy": "chủ sản phẩm",
+      "decidedAt": "2026-10-05"
+    },
+    {
+      "id": "D-3",
+      "section": "huyet-ap-cao",
+      "pdfPage": 19,
+      "raw": "HA do thượng thận ....T10 F",
+      "match": "\"HA do thượng thận ....T10 F\"",
+      "resolution": "T10 vai trò caution (thận trọng khi tác động), side = right — dòng này giải thích câu \"Thận trọng khi chữa T6; T10; và L3\" ngay trên, không phải đốt tác động.",
+      "decidedBy": "chủ sản phẩm",
+      "decidedAt": "2026-10-05"
+    },
+    {
+      "id": "D-4",
+      "section": "huyet-ap-cao",
+      "pdfPage": 19,
+      "raw": "HA do tiết niệu .........L3 F",
+      "match": "\"HA do tiết niệu .........L3 F\"",
+      "resolution": "L3 vai trò caution (thận trọng khi tác động), side = right — dòng này giải thích câu \"Thận trọng khi chữa T6; T10; và L3\" ngay trên, không phải đốt tác động.",
+      "decidedBy": "chủ sản phẩm",
+      "decidedAt": "2026-10-05"
+    }
+  ]
+}
