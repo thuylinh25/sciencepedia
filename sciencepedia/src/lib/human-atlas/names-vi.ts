@@ -126,9 +126,36 @@ const HAND_NAMES: Record<string, string> = {
   FMA52745: "Xương mũi",
   FMA52749: "Xương móng",
   FMA13478: "Cột sống",
-  FMA12519: "Đốt đội",
-  FMA12520: "Đốt trục",
-  FMA16202: "Xương cùng",
+  // Đốt sống: tên kèm ký hiệu lâm sàng ("Đốt sống thắt lưng L5", không "… 5") — chủ
+  // sản phẩm yêu cầu 2026-10-05; bài viết (Tác động cột sống, chuyên khoa) gọi đốt sống
+  // bằng ký hiệu, nên bảng chi tiết phải cho người đọc thấy đúng ký hiệu ấy. Ghi đè tên
+  // "đốt sống thắt lưng 5" của names-vi.reviewed.json. Khoá bởi names-vi.test.ts.
+  FMA12519: "Đốt đội (C1)",
+  FMA12520: "Đốt trục (C2)",
+  FMA12521: "Đốt sống cổ C3",
+  FMA12522: "Đốt sống cổ C4",
+  FMA12523: "Đốt sống cổ C5",
+  FMA12524: "Đốt sống cổ C6",
+  FMA12525: "Đốt sống cổ C7",
+  FMA9165: "Đốt sống ngực T1",
+  FMA9187: "Đốt sống ngực T2",
+  FMA9209: "Đốt sống ngực T3",
+  FMA9248: "Đốt sống ngực T4",
+  FMA9922: "Đốt sống ngực T5",
+  FMA9945: "Đốt sống ngực T6",
+  FMA9968: "Đốt sống ngực T7",
+  FMA9991: "Đốt sống ngực T8",
+  FMA10014: "Đốt sống ngực T9",
+  FMA10037: "Đốt sống ngực T10",
+  FMA10059: "Đốt sống ngực T11",
+  FMA10081: "Đốt sống ngực T12",
+  FMA13072: "Đốt sống thắt lưng L1",
+  FMA13073: "Đốt sống thắt lưng L2",
+  FMA13074: "Đốt sống thắt lưng L3",
+  FMA13075: "Đốt sống thắt lưng L4",
+  FMA13076: "Đốt sống thắt lưng L5",
+  // Mô hình không tách năm đốt cùng; tài liệu và bài viết gọi S1–S5.
+  FMA16202: "Xương cùng (S1–S5)",
   FMA7485: "Xương ức",
   FMA7574: "Xương sườn",
   FMA13321: "Xương đòn",
@@ -196,7 +223,11 @@ export function displayName(
     if (vi) return vi.charAt(0).toUpperCase() + vi.slice(1);
   }
   // Bộ dữ liệu có tên viết thường ("vascular tree") lẫn viết hoa ("Left kidney").
-  return englishName.charAt(0).toUpperCase() + englishName.slice(1);
+  const en = englishName.charAt(0).toUpperCase() + englishName.slice(1);
+  // Ký hiệu đốt sống lấy từ chính tên Việt đã đặt ("… L5", "Đốt đội (C1)", "Xương cùng
+  // (S1–S5)") — một nguồn, bản en không tự suy lại: "Fifth lumbar vertebra (L5)".
+  const code = /(?:\(|\s)([CTLS]\d{1,2}(?:–S\d)?)\)?$/.exec(HAND_NAMES[conceptId] ?? "")?.[1];
+  return code ? `${en} (${code})` : en;
 }
 
 /** Có tên tiếng Việt thật hay không — để hiện kèm tên gốc cho người học. */

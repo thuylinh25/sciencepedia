@@ -72,7 +72,7 @@ function build(): Map<VertebraCode, Vertebra> {
       const vi =
         segment === "C" && n === 1 ? "Đốt đội (C1)" :
         segment === "C" && n === 2 ? "Đốt trục (C2)" :
-        `Đốt sống ${SEGMENTS[segment].vi} ${n}`;
+        `Đốt sống ${SEGMENTS[segment].vi} ${segment}${n}`;
       out.set(code, {
         code,
         segment,

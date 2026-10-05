@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { viName, viNameStatus } from "./names-vi";
+import { VI_NAMES, displayName, viName, viNameStatus } from "./names-vi";
 import { SUPPLEMENTS } from "./supplements";
 import REVIEWED from "./names-vi.reviewed.json";
 
@@ -35,4 +35,20 @@ test("số thứ tự viết bằng chữ số: <cụm danh từ> <số> <bên>"
 test("mọi mảnh Z-Anatomy đều có tên tiếng Việt", () => {
   const missing = SUPPLEMENTS.flatMap((s) => s.parts).filter((p) => !viName(p.conceptId, p.name));
   assert.deepEqual(missing.map((p) => p.name), []);
+});
+
+test("đốt sống mang ký hiệu lâm sàng: \"Đốt sống thắt lưng L5\", không \"… 5\"", () => {
+  assert.equal(displayName("vi", "FMA13076", "Fifth lumbar vertebra"), "Đốt sống thắt lưng L5");
+  assert.equal(displayName("vi", "FMA9165", "First thoracic vertebra"), "Đốt sống ngực T1");
+  assert.equal(displayName("vi", "FMA12525", "Seventh cervical vertebra"), "Đốt sống cổ C7");
+  assert.equal(displayName("vi", "FMA12519", "Atlas"), "Đốt đội (C1)");
+  assert.equal(displayName("vi", "FMA16202", "Sacrum"), "Xương cùng (S1–S5)");
+  assert.equal(displayName("en", "FMA13076", "Fifth lumbar vertebra"), "Fifth lumbar vertebra (L5)");
+  assert.equal(displayName("en", "FMA12519", "Atlas"), "Atlas (C1)");
+  assert.equal(displayName("en", "FMA16202", "Sacrum"), "Sacrum (S1–S5)");
+  assert.equal(displayName("en", "FMA7088", "Heart"), "Heart");
+  // Không còn dạng cũ cho đốt C/T/L nào.
+  for (const [id, name] of Object.entries(VI_NAMES)) {
+    if (/^đốt sống (cổ|ngực|thắt lưng) \d+$/i.test(name)) assert.fail(`${id} còn dạng cũ: ${name}`);
+  }
 });

@@ -80,7 +80,11 @@ export function buildSearchIndex(atlas: Atlas, anatomy: AnatomyData | null = nul
           .filter(Boolean)
           .join(" ")
       : "";
-    haystack.push(fold(`${concept.name} ${vi ?? ""} ${concept.id} ${extra} ${spineAliases(concept.name).join(" ")}`));
+    // Số trần của ký hiệu ("1" từ "l1"): tên Việt nay là "đốt sống thắt lưng L1" (chủ sản
+    // phẩm, 2026-10-05), không còn "… 1" riêng — "thắt lưng 1", "lumbar 1" vẫn phải ra.
+    const aliases = spineAliases(concept.name);
+    const numbers = aliases.map((a) => a.replace(/^[a-z]+/, ""));
+    haystack.push(fold(`${concept.name} ${vi ?? ""} ${concept.id} ${extra} ${aliases.join(" ")} ${numbers.join(" ")}`));
   }
 
   /*
