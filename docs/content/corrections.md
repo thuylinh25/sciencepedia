@@ -1090,3 +1090,10 @@ bản trước khi sửa được chụp vào `Revision` trong cùng transaction
 ### mat-troi-lo-phan-ung-giu-ca-he-hanh-tinh
 
 - - 2026-10-03 | mat-troi-lo-phan-ung-giu-ca-he-hanh-tinh | Cả hai bản: 'Một photon sinh ra ở lõi phải mất hàng chục nghìn đến hàng trăm nghìn năm để len qua vùng bức xạ' → thứ mất thời gian ấy là NĂNG LƯỢNG (hấp thụ–phát xạ lại ở vùng bức xạ, rồi đối lưu), không phải một photon; khoảng 10.000–170.000 năm theo phần lớn tính toán NASA dẫn; photon tới mắt rời bề mặt hơn 8 phút trước. Bỏ 'ánh sáng hôm nay bắt đầu hành trình từ trước khi loài người xuất hiện' (sai: Homo sapiens xuất hiện ~300.000 năm trước, lâu hơn 10.000–170.000 năm). Khớp bài hanh-trinh-cua-photon-chuyen-di-100000-nam-tu-loi-mat-troi-den-trai-dat. | NASA Sun facts + tài liệu NASA (10.000–170.000 năm) như bài hành trình photon; đối chiếu nội bộ kho
+
+## 2026-10-05 — Tác động cột sống: áp quyết định D-37 lên bài đã xuất bản
+
+### dau-lung-cap-theo-tac-dong-cot-song
+- Cũ: dưới đoạn trích "Nếu bệnh nhân ra nhiều mồ hôi chữa hai bên hố chẩm vào tới C1,2 và song chỉnh với vùng S." chỉ ghi trọng điểm C1, C2; khung mô hình tô C1, C2.
+- Mới: thêm "Liên quan: vùng cùng"; khung mô hình tô thêm xương cùng. Câu trích không đổi.
+- Căn cứ: quyết định D-37 (`sciencepedia/content/tac-dong-cot-song/source/decisions.json`), chủ sản phẩm xác nhận trực tiếp 2026-10-05 — "vùng S" vai liên quan, đích là vùng xương cùng, không bung thành S1–S5. Áp bằng `npm run spine:import -- --write --format-change …`, Revision chụp bản trước.
