@@ -218,6 +218,7 @@ MedlinePlus phân biệt hai kiểu chóng mặt: **choáng váng** là cảm gi
 
 **Cùng loạt Tác động cột sống:**
 
+- [Bệnh đổ mồ hôi theo phương pháp Tác động cột sống](/articles/benh-do-mo-hoi-theo-tac-dong-cot-song)
 - [Các bệnh về đau đầu theo phương pháp Tác động cột sống](/articles/dau-dau-theo-tac-dong-cot-song)
 - [Đau lưng cấp theo phương pháp Tác động cột sống](/articles/dau-lung-cap-theo-tac-dong-cot-song)
 - [Đau lưng mãn tính theo phương pháp Tác động cột sống](/articles/dau-lung-man-tinh-theo-tac-dong-cot-song)

@@ -574,6 +574,7 @@ MedlinePlus nêu ba loại thường gặp: **đau đầu do căng cơ** — lo�
 
 **Cùng loạt Tác động cột sống:**
 
+- [Bệnh đổ mồ hôi theo phương pháp Tác động cột sống](/articles/benh-do-mo-hoi-theo-tac-dong-cot-song)
 - [Đau lưng cấp theo phương pháp Tác động cột sống](/articles/dau-lung-cap-theo-tac-dong-cot-song)
 - [Đau lưng mãn tính theo phương pháp Tác động cột sống](/articles/dau-lung-man-tinh-theo-tac-dong-cot-song)
 - [Đau nửa đầu theo phương pháp Tác động cột sống](/articles/dau-nua-dau-theo-tac-dong-cot-song)

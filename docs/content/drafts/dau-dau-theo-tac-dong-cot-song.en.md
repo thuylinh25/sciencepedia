@@ -574,6 +574,7 @@ Vertebrae named by the document:
 
 **More from the Spinal Impact series:**
 
+- [Sweating disorders in the Spinal Impact method](/articles/benh-do-mo-hoi-theo-tac-dong-cot-song)
 - [Acute back pain in the Spinal Impact method](/articles/dau-lung-cap-theo-tac-dong-cot-song)
 - [Chronic back pain in the Spinal Impact method](/articles/dau-lung-man-tinh-theo-tac-dong-cot-song)
 - [Migraine in the Spinal Impact method](/articles/dau-nua-dau-theo-tac-dong-cot-song)

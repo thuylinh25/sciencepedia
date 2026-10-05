@@ -41,7 +41,8 @@ bằng chứng khoa học.
 | `hen-suyen-ho-hap` | 33–34 | nháp, đã ở `main` (#16): 12 thể, nguồn NHS + NHLBI + MedlinePlus, `riskLevel high` |
 | `sot` | 35–38 | nháp, đã ở `main` (#16): 15 thể, 8 nguồn NHS + MedlinePlus; khung nêu co giật do sốt đơn thuần vô hại (MedlinePlus) — đối lập câu "di chứng bại não" của tài liệu, cần science-editor xem kỹ |
 | `nhieu-mo-hoi-so-gio` | 39 | nháp (nhánh `claude/nhieu-mo-hoi-so-gio`): 5 thể, 6 mapping, nguồn NHS + MedlinePlus, `riskLevel normal` |
-| `benh-do-mo-hoi` → `mat-ngu` → `viem-dai-trang-man-tinh` | 40–43 | **chưa làm** |
+| `benh-do-mo-hoi` | 40 | nháp (nhánh `claude/benh-do-mo-hoi`): 6 thể, 10 mapping, khung sốc nhiệt; câu "tác động C1 và S1,S2" (thể 6) không trích, không chỉ mục — chủ sản phẩm quyết |
+| `mat-ngu` → `viem-dai-trang-man-tinh` | 41–43 | **chưa làm** |
 
 **Cách làm một chủ đề:**
 1. Đọc `source/pages/pNN.md`.

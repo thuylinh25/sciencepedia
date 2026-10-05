@@ -1,0 +1,221 @@
+{
+  "slug": "benh-do-mo-hoi-theo-tac-dong-cot-song",
+  "collection": "tac-dong-cot-song",
+  "section": "benh-do-mo-hoi",
+  "title": {
+    "vi": "Bệnh đổ mồ hôi theo phương pháp Tác động cột sống",
+    "en": "Sweating disorders in the Spinal Impact method"
+  },
+  "riskLevel": "normal",
+  "source": {
+    "docId": "pp-tdcs-vn",
+    "part": "Phần 3",
+    "heading": "III-BỆNH ĐỔ MỒ HÔI",
+    "pdfPages": [
+      40,
+      40
+    ]
+  },
+  "variants": [
+    {
+      "id": "va-mo-hoi-nhu-tam",
+      "label": {
+        "vi": "Vã mồ hôi như tắm",
+        "en": "Drenching sweats"
+      },
+      "heading": "1/ Vã mồ hôi như tắm",
+      "ref": {
+        "pdfPage": 40,
+        "bookPage": 39
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "T11",
+          "role": "primary",
+          "raw": "T11",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 40,
+            "bookPage": 39
+          }
+        }
+      ]
+    },
+    {
+      "id": "ban-tay-nhieu-mo-hoi",
+      "label": {
+        "vi": "Bàn tay nhiều mồ hôi",
+        "en": "Sweaty palms"
+      },
+      "heading": "2/ Bàn tay nhiều mồ hôi",
+      "ref": {
+        "pdfPage": 40,
+        "bookPage": 39
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "C6",
+          "role": "primary",
+          "raw": "C6,C7, T3",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 40,
+            "bookPage": 39
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "C7",
+          "role": "primary",
+          "raw": "C6,C7, T3",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 40,
+            "bookPage": 39
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T3",
+          "role": "primary",
+          "raw": "C6,C7, T3",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 40,
+            "bookPage": 39
+          }
+        }
+      ]
+    },
+    {
+      "id": "nhieu-mo-hoi",
+      "label": {
+        "vi": "Nhiều mồ hôi",
+        "en": "Heavy sweating"
+      },
+      "heading": "3/ Nhiều mồ hôi",
+      "ref": {
+        "pdfPage": 40,
+        "bookPage": 39
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "T7",
+          "role": "primary",
+          "raw": "T7,T8",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 40,
+            "bookPage": 39
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T8",
+          "role": "primary",
+          "raw": "T7,T8",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 40,
+            "bookPage": 39
+          }
+        }
+      ]
+    },
+    {
+      "id": "mo-hoi-trom",
+      "label": {
+        "vi": "Mồ hôi trộm",
+        "en": "Night sweats"
+      },
+      "heading": "4/ Mồ hôi trộm",
+      "ref": {
+        "pdfPage": 40,
+        "bookPage": 39
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "L3",
+          "role": "primary",
+          "raw": "L3",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 40,
+            "bookPage": 39
+          }
+        }
+      ]
+    },
+    {
+      "id": "khong-co-mo-hoi",
+      "label": {
+        "vi": "Không có mồ hôi",
+        "en": "No sweating"
+      },
+      "heading": "5/ Không có mồ hôi",
+      "ref": {
+        "pdfPage": 40,
+        "bookPage": 39
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "T1",
+          "role": "primary",
+          "raw": "T1,T2",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 40,
+            "bookPage": 39
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T2",
+          "role": "primary",
+          "raw": "T1,T2",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 40,
+            "bookPage": 39
+          }
+        }
+      ]
+    },
+    {
+      "id": "nong-khong-ra-mo-hoi",
+      "label": {
+        "vi": "Nóng không ra mồ hôi",
+        "en": "Hot without sweating"
+      },
+      "heading": "6/ Nóng không ra mồ hôi",
+      "ref": {
+        "pdfPage": 40,
+        "bookPage": 39
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "L3",
+          "role": "primary",
+          "raw": "L3",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 40,
+            "bookPage": 39
+          }
+        }
+      ]
+    }
+  ],
+  "unassigned": [],
+  "review": {
+    "transcription": "pending",
+    "mapping": "passed",
+    "editor": "pending"
+  }
+}

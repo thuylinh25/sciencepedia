@@ -135,6 +135,15 @@
   ],
   "FMA10059": [
    {
+    "slug": "benh-do-mo-hoi-theo-tac-dong-cot-song",
+    "roles": [
+     "primary"
+    ],
+    "codes": [
+     "T11"
+    ]
+   },
+   {
     "slug": "dau-dau-theo-tac-dong-cot-song",
     "roles": [
      "primary"
@@ -479,6 +488,15 @@
   ],
   "FMA12524": [
    {
+    "slug": "benh-do-mo-hoi-theo-tac-dong-cot-song",
+    "roles": [
+     "primary"
+    ],
+    "codes": [
+     "C6"
+    ]
+   },
+   {
     "slug": "dau-dau-theo-tac-dong-cot-song",
     "roles": [
      "primary"
@@ -526,6 +544,15 @@
    }
   ],
   "FMA12525": [
+   {
+    "slug": "benh-do-mo-hoi-theo-tac-dong-cot-song",
+    "roles": [
+     "primary"
+    ],
+    "codes": [
+     "C7"
+    ]
+   },
    {
     "slug": "dau-dau-theo-tac-dong-cot-song",
     "roles": [
@@ -688,6 +715,15 @@
    }
   ],
   "FMA13074": [
+   {
+    "slug": "benh-do-mo-hoi-theo-tac-dong-cot-song",
+    "roles": [
+     "primary"
+    ],
+    "codes": [
+     "L3"
+    ]
+   },
    {
     "slug": "dau-dau-theo-tac-dong-cot-song",
     "roles": [
@@ -944,6 +980,15 @@
   ],
   "FMA9165": [
    {
+    "slug": "benh-do-mo-hoi-theo-tac-dong-cot-song",
+    "roles": [
+     "primary"
+    ],
+    "codes": [
+     "T1"
+    ]
+   },
+   {
     "slug": "dau-dau-theo-tac-dong-cot-song",
     "roles": [
      "primary",
@@ -1020,6 +1065,15 @@
   ],
   "FMA9187": [
    {
+    "slug": "benh-do-mo-hoi-theo-tac-dong-cot-song",
+    "roles": [
+     "primary"
+    ],
+    "codes": [
+     "T2"
+    ]
+   },
+   {
     "slug": "dau-dau-theo-tac-dong-cot-song",
     "roles": [
      "primary"
@@ -1095,6 +1149,15 @@
    }
   ],
   "FMA9209": [
+   {
+    "slug": "benh-do-mo-hoi-theo-tac-dong-cot-song",
+    "roles": [
+     "primary"
+    ],
+    "codes": [
+     "T3"
+    ]
+   },
    {
     "slug": "dau-dau-theo-tac-dong-cot-song",
     "roles": [
@@ -1391,6 +1454,15 @@
   ],
   "FMA9968": [
    {
+    "slug": "benh-do-mo-hoi-theo-tac-dong-cot-song",
+    "roles": [
+     "primary"
+    ],
+    "codes": [
+     "T7"
+    ]
+   },
+   {
     "slug": "dau-dau-theo-tac-dong-cot-song",
     "roles": [
      "primary"
@@ -1475,6 +1547,15 @@
    }
   ],
   "FMA9991": [
+   {
+    "slug": "benh-do-mo-hoi-theo-tac-dong-cot-song",
+    "roles": [
+     "primary"
+    ],
+    "codes": [
+     "T8"
+    ]
+   },
    {
     "slug": "dau-dau-theo-tac-dong-cot-song",
     "roles": [
