@@ -6,13 +6,15 @@ import { Link } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
 import { buildMetadata, breadcrumbJsonLd } from "@/lib/seo";
 import { absoluteUrl, cn } from "@/lib/utils";
+import { categoryNotice } from "@/lib/category-notices";
 import { getAllCategories, getCategoryBySlug, listArticles } from "@/server/queries";
 
 import { JsonLd } from "@/components/json-ld";
 import { CategoryIcon } from "@/components/category-icon";
 import { ArticleGrid } from "@/components/article/article-grid";
 import { Pagination } from "@/components/pagination";
-import { Badge } from "@/components/ui/badge";
+import { CategoryCard } from "@/components/category/category-card";
+import { CategoryNotice } from "@/components/category/category-notice";
 import { AssetImage } from "@/components/ui/asset-image";
 
 export const revalidate = 300;
@@ -103,6 +105,7 @@ export default async function CategoryPage({
      token màu chữ. Contrast phải đúng ở mọi giá trị dữ liệu VÀ mọi theme,
      không phải ở tổ hợp may mắn. */
   const onImage = Boolean(category.coverImage);
+  const notice = categoryNotice(category.slug, category.parent?.slug);
   const muted = onImage ? "text-white/75" : "text-muted-foreground";
 
   // `page` trả về đã được kẹp vào khoảng trang thật sự có bài
@@ -204,33 +207,46 @@ export default async function CategoryPage({
               {description}
             </p>
           )}
-
-          {category.children.length > 0 && (
-            <div className="mt-7">
-              <p className={cn("mb-2 text-xs font-semibold tracking-widest uppercase", muted)}>
-                {t("subcategories")}
-              </p>
-              <div className="flex flex-wrap gap-2">
-                {category.children.map((child) => (
-                  <Link key={child.id} href={`/categories/${child.slug}`}>
-                    <Badge
-                      variant="outline"
-                      className="bg-background/60 px-3 py-1 backdrop-blur transition-colors hover:border-accent"
-                    >
-                      {loc === "en" ? child.nameEn : child.name}
-                      <span className="ml-1.5 text-muted-foreground">
-                        {child._count.articles}
-                      </span>
-                    </Badge>
-                  </Link>
-                ))}
-              </div>
-            </div>
-          )}
         </div>
       </header>
 
       <div className="container-page page-pad">
+        {notice && <CategoryNotice kind={notice} className="mb-10 max-w-3xl" />}
+
+        {/* Danh mục con là THẺ, không còn là hàng chip trong đầu trang.
+
+            Trang lĩnh vực là trang "landing" của nhánh: menu Khám phá chỉ liệt
+            kê lĩnh vực gốc (giữ menu gọn, không có submenu bay sang phải), nên
+            đường vào nhóm con — "Tác động cột sống", "Bấm huyệt"… dưới Sức
+            khoẻ — là ở đây. Một hàng chip nhỏ trên ảnh bìa không gánh nổi vai
+            trò đó. Thẻ đọc thẳng `category.children` từ CSDL: thêm nhóm con mới
+            là thêm một hàng, không sửa code. */}
+        {category.children.length > 0 && (
+          <section aria-labelledby="subcategories" className="mb-14">
+            <h2
+              id="subcategories"
+              className="mb-5 font-display text-2xl font-bold tracking-tight"
+            >
+              {t("subcategories")}
+            </h2>
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+              {category.children.map((child) => (
+                <CategoryCard
+                  key={child.id}
+                  category={child}
+                  locale={loc}
+                  headingLevel={3}
+                  label={
+                    categoryNotice(child.slug, category.slug) === "traditional"
+                      ? t("notice.traditional.label")
+                      : undefined
+                  }
+                />
+              ))}
+            </div>
+          </section>
+        )}
+
         <ArticleGrid articles={items} locale={loc} headingLevel={2} />
         <Pagination
           page={page}
