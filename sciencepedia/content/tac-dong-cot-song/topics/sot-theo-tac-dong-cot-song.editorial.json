@@ -1,0 +1,408 @@
+{
+  "section": "sot",
+  "slug": "sot-theo-tac-dong-cot-song",
+  "title": {
+    "vi": "Các bệnh liên quan đến sốt theo phương pháp Tác động cột sống",
+    "en": "Fever-related conditions in the Spinal Impact method"
+  },
+  "summary": {
+    "vi": "Tài liệu Phương pháp Tác động Cột sống Việt Nam mô tả mười lăm thể sốt — từ sốt cao, trẻ em sốt cao đến sốt rét, thương hàn — kèm vùng nhiệt độ và đốt sống trọng điểm; trích nguyên văn, đặt sau kiến thức y khoa có nguồn về sốt, co giật do sốt ở trẻ, sốt rét, thương hàn và khi nào phải gọi cấp cứu.",
+    "en": "How the Vietnamese Spinal Impact method document describes fifteen forms of fever — from high fever and high fever in children to malaria and typhoid — with temperature zones and key vertebrae; quoted verbatim, after sourced medical information on fever, febrile seizures in children, malaria, typhoid and when to call emergency services."
+  },
+  "seoDescription": {
+    "vi": "Sốt theo tài liệu Phương pháp Tác động Cột sống Việt Nam: mười lăm thể và đốt sống trọng điểm — kèm dấu hiệu sốt cần cấp cứu, co giật do sốt ở trẻ, sốt rét và thương hàn theo NHS, MedlinePlus.",
+    "en": "Fever in the Vietnamese Spinal Impact method document: fifteen forms and key vertebrae — with emergency fever signs, febrile seizures in children, malaria and typhoid per the NHS and MedlinePlus."
+  },
+  "keywords": "sốt, sốt cao, trẻ em sốt cao, co giật do sốt, sốt rét, thương hàn, tác động cột sống, đốt sống",
+  "riskLevel": "high",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "High temperature (fever) in children",
+      "publisher": "NHS",
+      "url": "https://www.nhs.uk/conditions/fever-in-children/",
+      "tier": 2,
+      "accessed": "2026-10-05"
+    },
+    {
+      "id": "s2",
+      "title": "Febrile seizures",
+      "publisher": "NHS",
+      "url": "https://www.nhs.uk/conditions/febrile-seizures/",
+      "tier": 2,
+      "accessed": "2026-10-05"
+    },
+    {
+      "id": "s3",
+      "title": "Fever",
+      "publisher": "MedlinePlus — U.S. National Library of Medicine",
+      "url": "https://medlineplus.gov/ency/article/003090.htm",
+      "tier": 2,
+      "accessed": "2026-10-05"
+    },
+    {
+      "id": "s4",
+      "title": "Febrile seizures",
+      "publisher": "MedlinePlus — U.S. National Library of Medicine",
+      "url": "https://medlineplus.gov/ency/article/000980.htm",
+      "tier": 2,
+      "accessed": "2026-10-05"
+    },
+    {
+      "id": "s5",
+      "title": "Malaria",
+      "publisher": "NHS",
+      "url": "https://www.nhs.uk/conditions/malaria/",
+      "tier": 2,
+      "accessed": "2026-10-05"
+    },
+    {
+      "id": "s6",
+      "title": "Malaria",
+      "publisher": "MedlinePlus — U.S. National Library of Medicine",
+      "url": "https://medlineplus.gov/ency/article/000621.htm",
+      "tier": 2,
+      "accessed": "2026-10-05"
+    },
+    {
+      "id": "s7",
+      "title": "Typhoid fever",
+      "publisher": "NHS",
+      "url": "https://www.nhs.uk/conditions/typhoid-fever/",
+      "tier": 2,
+      "accessed": "2026-10-05"
+    },
+    {
+      "id": "s8",
+      "title": "Typhoid fever",
+      "publisher": "MedlinePlus — U.S. National Library of Medicine",
+      "url": "https://medlineplus.gov/ency/article/001332.htm",
+      "tier": 2,
+      "accessed": "2026-10-05"
+    }
+  ],
+  "safety": {
+    "heading": {
+      "vi": "⚠️ Khi nào sốt là cấp cứu",
+      "en": "⚠️ When a fever is an emergency"
+    },
+    "body": {
+      "vi": "**Trẻ co giật do sốt lần đầu: gọi cấp cứu.** NHS khuyên gọi cấp cứu hoặc đến khoa cấp cứu khi trẻ co giật lần đầu, cơn co giật kéo dài hơn 5 phút, trẻ khó thở, co cứng và giật chỉ ở một bên người, trẻ buồn ngủ hơn bình thường quá 1 giờ sau cơn, hoặc có hơn một cơn trong 24 giờ. Trẻ còn đang co giật hoặc bất tỉnh thì gọi cấp cứu, không tự chở đi. Trong lúc chờ: ghi giờ cơn bắt đầu và kết thúc, đỡ đầu trẻ bằng tay hoặc vật mềm, dẹp vật nguy hiểm quanh trẻ; **không** giữ chặt hay di chuyển trẻ, **không** cho gì vào miệng trẻ, không cởi đồ hay lau nước lạnh để hạ nhiệt (NHS). Tài liệu dưới đây có đoạn đặt tay lên lưng trẻ đang co giật — đó không thay thế việc gọi cấp cứu.\n\nVới mọi lứa tuổi, MedlinePlus khuyên gọi cấp cứu khi sốt kèm: trẻ khóc không dỗ được; khó đánh thức hoặc không đánh thức được; lú lẫn; không đi được; khó thở dù đã thông mũi; môi, lưỡi hoặc móng tím tái; đau đầu dữ dội; cứng cổ; trẻ không chịu cử động tay hay chân; co giật.\n\nNHS khuyên gọi cấp cứu khi trẻ sốt và có thêm: ban không mất khi ấn cốc thủy tinh lên; sợ ánh sáng; tay chân lạnh bất thường; da hoặc môi xanh, xám, nhợt hay loang lổ; rất kích động hoặc lú lẫn; khó thở, thở rít hoặc thở rất nhanh. Trẻ dưới 3 tháng sốt từ 38°C, hoặc 3–6 tháng sốt từ 39°C, cần được nhân viên y tế tư vấn ngay.\n\n**Sốt rét là cấp cứu** và cần được điều trị nhanh bằng thuốc chống sốt rét; người bệnh có thể tử vong nếu không được chẩn đoán và điều trị kịp thời (NHS). Ai sốt sau khi đến vùng có sốt rét trong 12 tháng qua cần đi khám ngay. **Thương hàn** được điều trị bằng kháng sinh; đau bụng đột ngột nặng dần, phân đen hoặc đỏ sẫm, nôn ra máu hoặc chất như bã cà phê là lý do gọi cấp cứu (NHS).",
+      "en": "**A child having a febrile seizure for the first time: call emergency services.** The NHS advises calling emergency services or going to the emergency department if a child has a seizure for the first time, a seizure lasts more than 5 minutes, the child has difficulty breathing, stiffness and twitching on only one side of the body, is more sleepy than usual for more than 1 hour after the seizure, or has more than one seizure within 24 hours. If the child is still having a seizure or is unconscious, call emergency services rather than driving. While you wait: note when the seizure starts and ends, protect the child's head with your hands or something soft, and remove dangerous objects; do **not** move the child or try to hold them in place, do **not** put anything in their mouth, and do not undress them or sponge them with cold water to lower their temperature (NHS). The document below includes a passage about placing a hand on the back of a child who is having a seizure — that does not replace calling emergency services.\n\nAt any age, MedlinePlus advises calling emergency services for a fever together with: a child crying who cannot be calmed; being hard or impossible to wake; seeming confused; being unable to walk; difficulty breathing even after the nose is cleared; blue lips, tongue or nails; a very bad headache; a stiff neck; a child refusing to move an arm or leg; or a seizure.\n\nThe NHS advises calling emergency services when a child with a fever also has: a rash that does not fade when a glass is pressed against it; discomfort with light; unusually cold hands and feet; blue, grey, pale or blotchy skin or lips; extreme agitation or confusion; or difficulty breathing, grunting or very fast breathing. A baby under 3 months with a temperature of 38°C or more, or 3–6 months with 39°C or more, needs urgent medical advice.\n\n**Malaria is an emergency** and needs quick treatment with antimalarial medicines; you can die from it if it is not diagnosed and treated quickly (NHS). Anyone with a fever after being in a malaria area during the last 12 months should get medical help urgently. **Typhoid** is treated with antibiotics; a sudden stomach pain that keeps getting worse, black or dark red stools, or vomiting blood or material that looks like ground coffee are reasons to call emergency services (NHS)."
+    },
+    "sources": [
+      "s1",
+      "s2",
+      "s3",
+      "s5",
+      "s7"
+    ]
+  },
+  "general": [
+    {
+      "heading": {
+        "vi": "Sốt là gì?",
+        "en": "What is a fever?"
+      },
+      "body": {
+        "vi": "Theo MedlinePlus (Thư viện Y khoa Quốc gia Hoa Kỳ), sốt là thân nhiệt tăng tạm thời để đáp ứng với một bệnh. Sốt là một phần quan trọng trong cách cơ thể chống nhiễm trùng. NHS (Dịch vụ Y tế Quốc gia Anh) coi nhiệt độ từ 38°C trở lên ở trẻ là sốt cao; sốt ở trẻ nhỏ rất thường gặp và thường hết sau 1–4 ngày.\n\nMedlinePlus cho biết cảm lạnh hay nhiễm virus thông thường đôi khi gây sốt cao (38,9–40°C) mà không có nghĩa là bệnh nặng; ngược lại, một số nhiễm trùng nặng lại không gây sốt. Sốt nhẹ mà không có vấn đề gì khác thì không cần điều trị — uống đủ nước và nghỉ ngơi. Người lớn nên liên hệ bác sĩ khi sốt kéo dài quá 48–72 giờ, sốt từ 39,4°C trở lên không hạ, sốt lúc có lúc không kéo dài cả tuần, sốt kèm ban mới, tiểu buốt, hoặc mới đi nước ngoài về (MedlinePlus).",
+        "en": "According to MedlinePlus (U.S. National Library of Medicine), fever is the temporary increase in the body's temperature in response to a disease or illness. It is an important part of the body's defense against infection. The NHS (UK National Health Service) treats 38°C or more as a high temperature in children; fever is very common in young children and usually returns to normal within 1 to 4 days.\n\nMedlinePlus notes that a simple cold or other viral infection can sometimes cause a high fever (38.9–40°C) without meaning there is a serious problem, while some serious infections do not cause a fever at all. A mild fever with no other problems does not need treatment — drink fluids and rest. Adults should contact a doctor for a fever lasting longer than 48–72 hours, a fever that stays at or above 39.4°C, fevers that come and go for a week or more, or a fever with a new rash, pain when urinating, or after recent travel abroad (MedlinePlus)."
+      },
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    {
+      "heading": {
+        "vi": "Co giật do sốt ở trẻ",
+        "en": "Febrile seizures in children"
+      },
+      "body": {
+        "vi": "Co giật do sốt đôi khi xảy ra khi trẻ sốt cao, thường ở trẻ từ 6 tháng đến 6 tuổi, và thường kéo dài 2–3 phút (NHS). Trẻ có thể co cứng, giật, bất tỉnh, không đáp lại, và lơ mơ hay cáu kỉnh tới 1 giờ sau cơn. Lần co giật đầu tiên, trẻ cần được khám ở bệnh viện (NHS).\n\nVề hậu quả, MedlinePlus viết: co giật do sốt đơn thuần là vô hại, và không có bằng chứng chúng gây tử vong, tổn thương não, động kinh hay khó khăn học tập. NHS cũng nói cơn co giật do sốt khó có khả năng gây hại hay để lại ảnh hưởng lâu dài. Phần lớn trẻ hết bị co giật do sốt khi lên 5 tuổi (MedlinePlus). Ở trẻ nhỏ co giật lần đầu, bác sĩ cần loại trừ nguyên nhân khác, nhất là viêm màng não (MedlinePlus) — đây là lý do phải đi khám dù trẻ đã hết cơn.",
+        "en": "A febrile seizure can sometimes happen when a child has a high temperature, usually between 6 months and 6 years old, and usually lasts 2 to 3 minutes (NHS). The child may become stiff, twitch or jerk, become unconscious, not respond, and be sleepy or irritable for up to 1 hour afterwards. After a first febrile seizure, the child needs to be checked in hospital (NHS).\n\nOn consequences, MedlinePlus says simple febrile seizures are harmless, and there is no evidence that they cause death, brain damage, epilepsy or learning problems. The NHS likewise says a febrile seizure is unlikely to harm a child or cause long-term effects. Most children outgrow febrile seizures by age 5 (MedlinePlus). In infants and young children with a first seizure, doctors need to rule out other causes, especially meningitis (MedlinePlus) — which is why the child must be checked even after the seizure has stopped."
+      },
+      "sources": [
+        "s2",
+        "s4"
+      ]
+    },
+    {
+      "heading": {
+        "vi": "Sốt rét và thương hàn",
+        "en": "Malaria and typhoid"
+      },
+      "body": {
+        "vi": "**Sốt rét** là bệnh nhiễm trùng nặng do muỗi nhiễm bệnh đốt, gặp ở vùng nhiệt đới gồm nhiều vùng rộng của châu Phi và châu Á (NHS). Triệu chứng gồm sốt cao hoặc cảm giác nóng, lạnh, run; vã mồ hôi; đau đầu, lú lẫn; rất mệt và buồn ngủ (nhất là ở trẻ); buồn nôn, nôn, đau bụng, tiêu chảy; vàng da. Triệu chứng thường xuất hiện 7–18 ngày sau khi bị đốt (NHS). Sốt rét được điều trị bằng thuốc chống sốt rét; biến chứng có thể gồm nhiễm trùng não, thiếu máu do vỡ hồng cầu, suy thận, suy gan và suy hô hấp (MedlinePlus).\n\n**Thương hàn** là bệnh nhiễm trùng lây qua thức ăn hoặc nước không sạch (NHS). Triệu chứng gồm sốt cao có thể tăng dần trong vài ngày, đau đầu, ho, ớn lạnh, mệt, táo bón, chán ăn; đau bụng và tiêu chảy thường đến sau. Bệnh được điều trị bằng kháng sinh, cần uống hết liều dù đã thấy khỏe (NHS). Không điều trị, thương hàn có thể gây chảy máu hoặc thủng ruột và viêm phúc mạc (MedlinePlus).",
+        "en": "**Malaria** is a serious infection spread by the bite of an infected mosquito, found in tropical regions including large areas of Africa and Asia (NHS). Symptoms include a high temperature or feeling hot, cold or shivery; sweating; headache and confusion; feeling very tired and sleepy (especially in children); feeling or being sick, tummy pain and diarrhoea; and jaundice. Symptoms usually appear 7 to 18 days after the bite (NHS). Malaria is treated with antimalarial medicines; complications can include brain infection, destruction of red blood cells, kidney failure, liver failure and respiratory failure (MedlinePlus).\n\n**Typhoid fever** is an infection spread through unclean food or water (NHS). Symptoms include a high temperature that may slowly get worse over a few days, headache, cough, chills, tiredness, constipation and loss of appetite; tummy ache and diarrhoea usually come later. It is treated with antibiotics, and the full course must be finished even if you feel better (NHS). Untreated, typhoid can cause intestinal bleeding or perforation and peritonitis (MedlinePlus)."
+      },
+      "sources": [
+        "s5",
+        "s6",
+        "s7",
+        "s8"
+      ]
+    }
+  ],
+  "symptoms": [],
+  "methodQuotes": [],
+  "variants": [
+    {
+      "id": "con-sot-cao",
+      "label": {
+        "vi": "Cơn sốt cao",
+        "en": "High fever"
+      },
+      "quotes": [
+        {
+          "pdfPage": 36,
+          "vi": "Trọng điểm chính : T7 thuộc Tam giác cơ 4, lớp cơ sâu Nhiệt độ liên quan…: Thắt lưng và rốn Đốt sống liên quan : Song chỉnh L3// S3 , cơ sâu",
+          "en": "Main key point: T7, in muscle triangle 4, deep muscle layer. Related temperature…: lower back and navel. Related vertebrae: paired adjustment L3 // S3, deep muscle"
+        }
+      ]
+    },
+    {
+      "id": "tre-em-sot-cao",
+      "label": {
+        "vi": "Trẻ em sốt cao",
+        "en": "High fever in children"
+      },
+      "quotes": [
+        {
+          "pdfPage": 36,
+          "vi": "Thường xảy ra co giật ảnh hưởng tới não, nếu không giải quyết kịp thời thường để lại di chứng bại não. Nhiệt độ toàn thân nóng cao, không được để chân lạnh.",
+          "en": "Seizures often occur, affecting the brain; if not resolved in time they often leave cerebral palsy as a sequela. Whole-body temperature is very hot; the feet must not be allowed to get cold."
+        },
+        {
+          "pdfPage": 36,
+          "vi": "Úp bàn tay vào T3,T4 ta thấy mỗi lúc lên cơn giật, đốt sống T3,T4 máy động, ta phải thao tác rất nhẹ ở lớp ngoài và theo dõi cường độ giật sẽ giảm.",
+          "en": "Placing the palm over T3, T4, one feels T3, T4 twitch with each seizure; one must work very gently on the outer layer and watch the intensity of the seizure decrease."
+        }
+      ]
+    },
+    {
+      "id": "sot-ret-con",
+      "label": {
+        "vi": "Sốt rét cơn",
+        "en": "Intermittent chills and fever"
+      },
+      "quotes": [
+        {
+          "pdfPage": 36,
+          "vi": "Thường gặp khi thời tiết thay đổi thất thường hoặc cảm cúm mà lên cơn sốt rét. Nhiệt độ vùng lưng trên và ngực trái nóng, nhưng không phải rối loạn tim mà là rối loạn động mạch. Trọng điểm : Tập trung giải quyết C7, T1",
+          "en": "Common when the weather changes erratically or with a cold or flu that brings on bouts of chills and fever. Temperature of the upper back and left chest is hot, but this is not a heart disorder, rather an arterial disorder. Key point: focus on C7, T1"
+        }
+      ]
+    },
+    {
+      "id": "sot-ret",
+      "label": {
+        "vi": "Sốt rét",
+        "en": "Malaria"
+      },
+      "quotes": [
+        {
+          "pdfPage": 36,
+          "vi": "Nhiệt độ thường nóng cao vùng thắt lưng và rốn, chức năng rối loạn là Thận, Tim và Ruột non. Các đốt sống TĐ : C6,T9,L3,S3 Thuộc vùng tam giác 2,5,6",
+          "en": "Temperature is usually very hot at the lower back and navel; the disordered functions are the kidneys, heart and small intestine. Key vertebrae: C6, T9, L3, S3. In triangle zones 2, 5, 6"
+        },
+        {
+          "pdfPage": 36,
+          "vi": "Khi sốt rét từ trong ruột rét ra gây khó thở, … Thường thấy trọng điểm ở C6,T9,L3,S3 Trước tiên giải S3 theo dõi nhiệt độ ở rốn, tiếp theo giải quyết C6 liên quan tuyến cận giáp để cân bằng can xi, giảm co giật, tiếp tục đến T9 để điều hòa nhịp tim, sau đó đến L3 liên quan đến mạch nối lớn, động viên sức đề kháng của cơ thể, tiêu diệt vi trùng sốt rét.",
+          "en": "When the chill of malaria comes from inside the gut and causes breathlessness, … The key points are usually C6, T9, L3, S3. First release S3 while watching the temperature at the navel, then C6, related to the parathyroid glands, to balance calcium and reduce seizures, then T9 to regulate the heart rhythm, then L3, related to the great anastomotic vessel, to mobilise the body's resistance and destroy the malaria germ."
+        }
+      ]
+    },
+    {
+      "id": "gai-ret",
+      "label": {
+        "vi": "Gai rét",
+        "en": "Shivering chills"
+      },
+      "quotes": [
+        {
+          "pdfPage": 37,
+          "vi": "Không liên quan đến nội tạng chỉ ảnh hưởng tới thần kinh. Đốt sống trọng điểm là C3. Nhiệt độ vùng lưng trên nóng cao (Chú ý hai bên hố chẩm).",
+          "en": "Not related to the internal organs, it only affects the nerves. The key vertebra is C3. The upper back is very hot (note both sides of the occipital hollows)."
+        }
+      ]
+    },
+    {
+      "id": "sot-ret-lien-mien-ve-chieu",
+      "label": {
+        "vi": "Sốt rét liên miên về chiều",
+        "en": "Persistent chills and fever in the afternoon"
+      },
+      "quotes": [
+        {
+          "pdfPage": 37,
+          "vi": "Nhiệt độ nóng ran vùng thắt lưng Đốt sống trọng điểm : T7 Tam giác cơ biến đổi: thuộc vùng tam giác cơ số 4. Liên quan đến chức năng Thận, rối loạn thân nhiệt",
+          "en": "Burning heat across the lower back. Key vertebra: T7. Muscle triangle changed: muscle triangle zone 4. Related to kidney function, disordered body temperature"
+        }
+      ]
+    },
+    {
+      "id": "sot-cao-hoang-hot-sot-hay-so",
+      "label": {
+        "vi": "Sốt cao hoảng hốt (sốt hay sợ, thở dài, không muốn ăn)",
+        "en": "High fever with alarm (fearful, sighing, no appetite)"
+      },
+      "quotes": [
+        {
+          "pdfPage": 37,
+          "vi": "Nhiệt độ vùng lưng trên và ngực trái biến đổi, Đốt sống trọng điểm : T4. Tam giác cơ biến đổi: tam giác cơ 3 và 4, Liên quan chức năng tuần hoàn.",
+          "en": "Temperature of the upper back and left chest changes. Key vertebra: T4. Muscle triangles changed: muscle triangles 3 and 4. Related function: circulation."
+        }
+      ]
+    },
+    {
+      "id": "sot-lung-dau-minh-nang-ret-tu",
+      "label": {
+        "vi": "Sốt, lưng đau, mình nặng, rét từ lưng",
+        "en": "Fever with back pain, heavy body, chills starting from the back"
+      },
+      "quotes": [
+        {
+          "pdfPage": 37,
+          "vi": "Nhiệt độ vùng rốn và toàn thân nóng cao. Đốt sống trọng điểm chủ yếu S3 Tam giác cơ biến đổi: thuộc tam giác 6. Liên quan chức năng : Ruột non.",
+          "en": "The navel area and whole body are very hot. Main key vertebra S3. Muscle triangle changed: triangle 6. Related function: small intestine."
+        }
+      ]
+    },
+    {
+      "id": "sot-trong-nguoi-nong-chi-muon-uong",
+      "label": {
+        "vi": "Sốt, trong người nóng, chỉ muốn uống nước",
+        "en": "Fever, feeling hot inside, wanting only to drink water"
+      },
+      "quotes": [
+        {
+          "pdfPage": 37,
+          "vi": "Nhiệt độ chủ yếu là hạ sườn phải và mỏ ác Đốt sống TĐ là T5,T10,T12, L1 Tam giác cơ biến đổi: Thuộc vùng tam giác cơ 4 và 5 Liên quan chức năng nội tạng là Gan và Dạ dày. Đầu tiên xử lý T12, L1 sau đó mới giải quyết T5,T10",
+          "en": "Temperature is mainly at the right upper abdomen and the pit of the stomach. Key vertebrae are T5, T10, T12, L1. Muscle triangles changed: triangle zones 4 and 5. Related organ functions: liver and stomach. T12, L1 are dealt with first, then T5, T10"
+        }
+      ]
+    },
+    {
+      "id": "sot-mat-tai-xanh-hay-tho-dai",
+      "label": {
+        "vi": "Sốt, mặt tái xanh, hay thở dài, bụng dưới khó chịu, tiểu tiện đau, sợ sệt, trong bụng bồn chồn",
+        "en": "Fever with a pale face, frequent sighing, lower abdominal discomfort, painful urination, fearfulness, restlessness in the belly"
+      },
+      "quotes": [
+        {
+          "pdfPage": 37,
+          "vi": "Nhiệt độ toàn thân nóng, hạ sườn phải nóng Đốt sống TĐ T10 Tam giác cơ biến đổi: Thuộc vùng tám giác cơ 5 Liên quan chức năng gan rối loạn",
+          "en": "Whole body hot, right upper abdomen hot. Key vertebra T10. Muscle triangle changed: muscle triangle zone 5. Related function: liver disorder"
+        }
+      ]
+    },
+    {
+      "id": "sot-nguoi-ron-ron",
+      "label": {
+        "vi": "Sốt người rờn rợn",
+        "en": "Fever with creeping chills"
+      },
+      "quotes": [
+        {
+          "pdfPage": 38,
+          "vi": "Đau lưng, đại tiện khó, nôn nhiều, chỉ muốn nằm, mắt trơ tráo nhìn không tỏ, chân tay lạnh. Nhiệt độ thắt lưng nóng cao. Đốt sống trọng điểm: L3 Tam giác cơ biến đổi: Thuộc vùng tam giác cơ 6. Liên quan chức năng: Thận rối loạn",
+          "en": "Back pain, difficult bowel movements, much vomiting, wanting only to lie down, staring eyes that cannot see clearly, cold hands and feet. The lower back is very hot. Key vertebra: L3. Muscle triangle changed: muscle triangle zone 6. Related function: kidney disorder"
+        }
+      ]
+    },
+    {
+      "id": "sot-khong-an-duoc-an-vao-day",
+      "label": {
+        "vi": "Sốt không ăn được: ăn vào đầy, bụng chướng",
+        "en": "Fever with no appetite: feeling full after eating, bloated belly"
+      },
+      "quotes": [
+        {
+          "pdfPage": 38,
+          "vi": "Nhiệt độ vùng mỏ ác và toàn thân nóng cao Đốt sống trọng điểm: L1 Tam giác cơ biến đổi : Thuộc vùng cơ tam giác 6 Liên quan chức năng : Dạ dày",
+          "en": "The pit of the stomach and whole body are very hot. Key vertebra: L1. Muscle triangle changed: muscle triangle zone 6. Related function: stomach"
+        }
+      ]
+    },
+    {
+      "id": "sot-moi-met-thay-nguoi-hoang-so",
+      "label": {
+        "vi": "Sốt mỏi mệt, thấy người hoảng sợ",
+        "en": "Fever with exhaustion and fearfulness"
+      },
+      "quotes": [
+        {
+          "pdfPage": 38,
+          "vi": "Nhiệt độ vùng vai phải và toàn thân nóng cao Đốt sống trọng điểm: T11 Tam giác cơ biến đổi: Thuộc vùng tam giác 5 Liên quan chức năng : Mật",
+          "en": "The right shoulder and whole body are very hot. Key vertebra: T11. Muscle triangle changed: triangle zone 5. Related function: gallbladder"
+        }
+      ]
+    },
+    {
+      "id": "sot-bung-day-soi-bung-mo-hoi",
+      "label": {
+        "vi": "Sốt, bụng đầy, sôi bụng, mồ hôi nhiều",
+        "en": "Fever with a full, rumbling belly and heavy sweating"
+      },
+      "quotes": [
+        {
+          "pdfPage": 38,
+          "vi": "Nhiệt độ vùng giữa lưng và vai phải nóng Đốt sống trọng điểm: T11,T12 Tam giác cơ biến đổi: Thuộc vùng cơ tam giác 5 Liên quan chức năng : Mật và lá lách",
+          "en": "The middle of the back and the right shoulder are hot. Key vertebrae: T11, T12. Muscle triangle changed: muscle triangle zone 5. Related functions: gallbladder and spleen"
+        }
+      ]
+    },
+    {
+      "id": "sot-thuong-han",
+      "label": {
+        "vi": "Sốt thương hàn",
+        "en": "Typhoid fever"
+      },
+      "quotes": [
+        {
+          "pdfPage": 38,
+          "vi": "Nhiệt độ vùng vai phải và giữa lưng nóng cao Đốt sống trọng điểm: T9 Tam giác cơ biến đổi: Thuộc vùng tam giác cơ 5",
+          "en": "The right shoulder and middle of the back are very hot. Key vertebra: T9. Muscle triangle changed: muscle triangle zone 5"
+        }
+      ]
+    }
+  ],
+  "outOfScope": [],
+  "cover": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/Illu_vertebral_column.svg/1920px-Illu_vertebral_column.svg.png",
+    "page": "https://commons.wikimedia.org/wiki/File:Illu_vertebral_column.svg",
+    "license": "Public domain"
+  },
+  "furtherReading": [
+    {
+      "slug": "he-mien-dich-nhan-dien-mot-virus-bang-cach-nao",
+      "title": {
+        "vi": "Hệ miễn dịch nhận diện một virus bằng cách nào",
+        "en": "How the immune system recognises a virus"
+      },
+      "why": "Sốt là một phần trong cách cơ thể chống nhiễm trùng — bài kia giải thích hệ miễn dịch nhận ra mầm bệnh ra sao."
+    },
+    {
+      "slug": "he-vi-sinh-duong-ruot-hang-chuc-nghin-ti-cu-dan-va-anh-huong-cua-chung",
+      "title": {
+        "vi": "Hệ vi sinh đường ruột: hàng chục nghìn tỉ cư dân và ảnh hưởng của chúng",
+        "en": "The gut microbiome: tens of trillions of residents and what they do"
+      },
+      "why": "Thương hàn lây qua thức ăn và nước, và tài liệu gắn nhiều thể sốt với ruột — bài kia nói về vi sinh vật sống trong ruột."
+    },
+    {
+      "slug": "huyet-dao-va-cham-cuu-khi-cua-dong-y-co-lien-he-gi-voi-khoa-hoc-hien-dai",
+      "title": {
+        "vi": "Huyệt đạo và châm cứu: \"Khí\" của Đông y có liên hệ gì với khoa học hiện đại?",
+        "en": "Acupoints and acupuncture: how does the \"Qi\" of Eastern medicine relate to modern science?"
+      },
+      "why": "Cùng câu hỏi nền: một phương pháp truyền thống của Việt Nam/Đông y được khoa học hiện đại nhìn nhận thế nào."
+    }
+  ],
+  "review": {
+    "transcription": "pending",
+    "mapping": "passed",
+    "editor": "pending"
+  }
+}

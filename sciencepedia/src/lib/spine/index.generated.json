@@ -21,6 +21,24 @@
     ]
    },
    {
+    "slug": "hen-suyen-ho-hap-theo-tac-dong-cot-song",
+    "roles": [
+     "related"
+    ],
+    "codes": [
+     "T9"
+    ]
+   },
+   {
+    "slug": "sot-theo-tac-dong-cot-song",
+    "roles": [
+     "primary"
+    ],
+    "codes": [
+     "T9"
+    ]
+   },
+   {
     "slug": "thieu-nang-tuan-hoan-nao-theo-tac-dong-cot-song",
     "roles": [
      "related"
@@ -61,6 +79,15 @@
     ]
    },
    {
+    "slug": "hen-suyen-ho-hap-theo-tac-dong-cot-song",
+    "roles": [
+     "related"
+    ],
+    "codes": [
+     "T10"
+    ]
+   },
+   {
     "slug": "huyet-ap-cao-theo-tac-dong-cot-song",
     "roles": [
      "caution"
@@ -71,6 +98,15 @@
    },
    {
     "slug": "huyet-ap-thap-theo-tac-dong-cot-song",
+    "roles": [
+     "primary"
+    ],
+    "codes": [
+     "T10"
+    ]
+   },
+   {
+    "slug": "sot-theo-tac-dong-cot-song",
     "roles": [
      "primary"
     ],
@@ -108,6 +144,15 @@
     ]
    },
    {
+    "slug": "sot-theo-tac-dong-cot-song",
+    "roles": [
+     "primary"
+    ],
+    "codes": [
+     "T11"
+    ]
+   },
+   {
     "slug": "thieu-nang-tuan-hoan-nao-theo-tac-dong-cot-song",
     "roles": [
      "related"
@@ -132,6 +177,24 @@
     "roles": [
      "primary",
      "related"
+    ],
+    "codes": [
+     "T12"
+    ]
+   },
+   {
+    "slug": "hen-suyen-ho-hap-theo-tac-dong-cot-song",
+    "roles": [
+     "related"
+    ],
+    "codes": [
+     "T12"
+    ]
+   },
+   {
+    "slug": "sot-theo-tac-dong-cot-song",
+    "roles": [
+     "primary"
     ],
     "codes": [
      "T12"
@@ -292,9 +355,27 @@
     ]
    },
    {
+    "slug": "hen-suyen-ho-hap-theo-tac-dong-cot-song",
+    "roles": [
+     "primary"
+    ],
+    "codes": [
+     "C3"
+    ]
+   },
+   {
     "slug": "huyet-ap-cao-theo-tac-dong-cot-song",
     "roles": [
      "avoid"
+    ],
+    "codes": [
+     "C3"
+    ]
+   },
+   {
+    "slug": "sot-theo-tac-dong-cot-song",
+    "roles": [
+     "primary"
     ],
     "codes": [
      "C3"
@@ -323,6 +404,15 @@
    },
    {
     "slug": "dau-lung-man-tinh-theo-tac-dong-cot-song",
+    "roles": [
+     "primary"
+    ],
+    "codes": [
+     "C4"
+    ]
+   },
+   {
+    "slug": "hen-suyen-ho-hap-theo-tac-dong-cot-song",
     "roles": [
      "primary"
     ],
@@ -389,6 +479,24 @@
     ]
    },
    {
+    "slug": "hen-suyen-ho-hap-theo-tac-dong-cot-song",
+    "roles": [
+     "primary"
+    ],
+    "codes": [
+     "C6"
+    ]
+   },
+   {
+    "slug": "sot-theo-tac-dong-cot-song",
+    "roles": [
+     "primary"
+    ],
+    "codes": [
+     "C6"
+    ]
+   },
+   {
     "slug": "thieu-nang-tuan-hoan-nao-theo-tac-dong-cot-song",
     "roles": [
      "primary",
@@ -420,7 +528,25 @@
     ]
    },
    {
+    "slug": "hen-suyen-ho-hap-theo-tac-dong-cot-song",
+    "roles": [
+     "primary"
+    ],
+    "codes": [
+     "C7"
+    ]
+   },
+   {
     "slug": "huyet-ap-cao-theo-tac-dong-cot-song",
+    "roles": [
+     "primary"
+    ],
+    "codes": [
+     "C7"
+    ]
+   },
+   {
+    "slug": "sot-theo-tac-dong-cot-song",
     "roles": [
      "primary"
     ],
@@ -469,6 +595,24 @@
     ]
    },
    {
+    "slug": "hen-suyen-ho-hap-theo-tac-dong-cot-song",
+    "roles": [
+     "primary"
+    ],
+    "codes": [
+     "L1"
+    ]
+   },
+   {
+    "slug": "sot-theo-tac-dong-cot-song",
+    "roles": [
+     "primary"
+    ],
+    "codes": [
+     "L1"
+    ]
+   },
+   {
     "slug": "thieu-nang-tuan-hoan-nao-theo-tac-dong-cot-song",
     "roles": [
      "related"
@@ -492,6 +636,15 @@
     "slug": "dau-lung-man-tinh-theo-tac-dong-cot-song",
     "roles": [
      "primary"
+    ],
+    "codes": [
+     "L2"
+    ]
+   },
+   {
+    "slug": "hen-suyen-ho-hap-theo-tac-dong-cot-song",
+    "roles": [
+     "related"
     ],
     "codes": [
      "L2"
@@ -550,6 +703,16 @@
     "slug": "huyet-ap-thap-theo-tac-dong-cot-song",
     "roles": [
      "primary"
+    ],
+    "codes": [
+     "L3"
+    ]
+   },
+   {
+    "slug": "sot-theo-tac-dong-cot-song",
+    "roles": [
+     "primary",
+     "related"
     ],
     "codes": [
      "L3"
@@ -729,6 +892,16 @@
     ]
    },
    {
+    "slug": "sot-theo-tac-dong-cot-song",
+    "roles": [
+     "primary",
+     "related"
+    ],
+    "codes": [
+     "S3"
+    ]
+   },
+   {
     "slug": "thieu-nang-tuan-hoan-nao-theo-tac-dong-cot-song",
     "roles": [
      "related"
@@ -772,6 +945,15 @@
     ]
    },
    {
+    "slug": "hen-suyen-ho-hap-theo-tac-dong-cot-song",
+    "roles": [
+     "primary"
+    ],
+    "codes": [
+     "T1"
+    ]
+   },
+   {
     "slug": "huyet-ap-cao-theo-tac-dong-cot-song",
     "roles": [
      "primary"
@@ -782,6 +964,15 @@
    },
    {
     "slug": "huyet-ap-thap-theo-tac-dong-cot-song",
+    "roles": [
+     "primary"
+    ],
+    "codes": [
+     "T1"
+    ]
+   },
+   {
+    "slug": "sot-theo-tac-dong-cot-song",
     "roles": [
      "primary"
     ],
@@ -831,6 +1022,15 @@
    },
    {
     "slug": "dau-than-kinh-toa-theo-tac-dong-cot-song",
+    "roles": [
+     "primary"
+    ],
+    "codes": [
+     "T2"
+    ]
+   },
+   {
+    "slug": "hen-suyen-ho-hap-theo-tac-dong-cot-song",
     "roles": [
      "primary"
     ],
@@ -915,9 +1115,28 @@
     ]
    },
    {
+    "slug": "hen-suyen-ho-hap-theo-tac-dong-cot-song",
+    "roles": [
+     "primary",
+     "related"
+    ],
+    "codes": [
+     "T3"
+    ]
+   },
+   {
     "slug": "huyet-ap-cao-theo-tac-dong-cot-song",
     "roles": [
      "primary"
+    ],
+    "codes": [
+     "T3"
+    ]
+   },
+   {
+    "slug": "sot-theo-tac-dong-cot-song",
+    "roles": [
+     "caution"
     ],
     "codes": [
      "T3"
@@ -954,9 +1173,29 @@
     ]
    },
    {
+    "slug": "hen-suyen-ho-hap-theo-tac-dong-cot-song",
+    "roles": [
+     "primary",
+     "related"
+    ],
+    "codes": [
+     "T4"
+    ]
+   },
+   {
     "slug": "huyet-ap-thap-theo-tac-dong-cot-song",
     "roles": [
      "primary"
+    ],
+    "codes": [
+     "T4"
+    ]
+   },
+   {
+    "slug": "sot-theo-tac-dong-cot-song",
+    "roles": [
+     "primary",
+     "caution"
     ],
     "codes": [
      "T4"
@@ -993,7 +1232,25 @@
     ]
    },
    {
+    "slug": "hen-suyen-ho-hap-theo-tac-dong-cot-song",
+    "roles": [
+     "related"
+    ],
+    "codes": [
+     "T5"
+    ]
+   },
+   {
     "slug": "huyet-ap-thap-theo-tac-dong-cot-song",
+    "roles": [
+     "primary"
+    ],
+    "codes": [
+     "T5"
+    ]
+   },
+   {
+    "slug": "sot-theo-tac-dong-cot-song",
     "roles": [
      "primary"
     ],
@@ -1035,6 +1292,16 @@
     "slug": "dau-nua-dau-theo-tac-dong-cot-song",
     "roles": [
      "primary"
+    ],
+    "codes": [
+     "T6"
+    ]
+   },
+   {
+    "slug": "hen-suyen-ho-hap-theo-tac-dong-cot-song",
+    "roles": [
+     "primary",
+     "related"
     ],
     "codes": [
      "T6"
@@ -1115,7 +1382,26 @@
     ]
    },
    {
+    "slug": "hen-suyen-ho-hap-theo-tac-dong-cot-song",
+    "roles": [
+     "primary",
+     "related"
+    ],
+    "codes": [
+     "T7"
+    ]
+   },
+   {
     "slug": "huyet-ap-thap-theo-tac-dong-cot-song",
+    "roles": [
+     "primary"
+    ],
+    "codes": [
+     "T7"
+    ]
+   },
+   {
+    "slug": "sot-theo-tac-dong-cot-song",
     "roles": [
      "primary"
     ],
@@ -1166,6 +1452,15 @@
     "slug": "dau-than-kinh-toa-theo-tac-dong-cot-song",
     "roles": [
      "primary"
+    ],
+    "codes": [
+     "T8"
+    ]
+   },
+   {
+    "slug": "hen-suyen-ho-hap-theo-tac-dong-cot-song",
+    "roles": [
+     "related"
     ],
     "codes": [
      "T8"
