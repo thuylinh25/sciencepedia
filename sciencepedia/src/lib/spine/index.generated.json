@@ -55,6 +55,15 @@
     "codes": [
      "T9"
     ]
+   },
+   {
+    "slug": "viem-dai-trang-man-tinh-theo-tac-dong-cot-song",
+    "roles": [
+     "primary"
+    ],
+    "codes": [
+     "T9"
+    ]
    }
   ],
   "FMA10037": [
@@ -140,6 +149,15 @@
     "codes": [
      "T10"
     ]
+   },
+   {
+    "slug": "viem-dai-trang-man-tinh-theo-tac-dong-cot-song",
+    "roles": [
+     "primary"
+    ],
+    "codes": [
+     "T10"
+    ]
    }
   ],
   "FMA10059": [
@@ -183,6 +201,15 @@
     "slug": "thieu-nang-tuan-hoan-nao-theo-tac-dong-cot-song",
     "roles": [
      "related"
+    ],
+    "codes": [
+     "T11"
+    ]
+   },
+   {
+    "slug": "viem-dai-trang-man-tinh-theo-tac-dong-cot-song",
+    "roles": [
+     "primary"
     ],
     "codes": [
      "T11"
@@ -240,6 +267,15 @@
     "slug": "thieu-nang-tuan-hoan-nao-theo-tac-dong-cot-song",
     "roles": [
      "related"
+    ],
+    "codes": [
+     "T12"
+    ]
+   },
+   {
+    "slug": "viem-dai-trang-man-tinh-theo-tac-dong-cot-song",
+    "roles": [
+     "primary"
     ],
     "codes": [
      "T12"
@@ -692,6 +728,15 @@
     "codes": [
      "L1"
     ]
+   },
+   {
+    "slug": "viem-dai-trang-man-tinh-theo-tac-dong-cot-song",
+    "roles": [
+     "primary"
+    ],
+    "codes": [
+     "L1"
+    ]
    }
   ],
   "FMA13073": [
@@ -735,6 +780,15 @@
     "slug": "thieu-nang-tuan-hoan-nao-theo-tac-dong-cot-song",
     "roles": [
      "related"
+    ],
+    "codes": [
+     "L2"
+    ]
+   },
+   {
+    "slug": "viem-dai-trang-man-tinh-theo-tac-dong-cot-song",
+    "roles": [
+     "primary"
     ],
     "codes": [
      "L2"
@@ -825,6 +879,15 @@
     "codes": [
      "L3"
     ]
+   },
+   {
+    "slug": "viem-dai-trang-man-tinh-theo-tac-dong-cot-song",
+    "roles": [
+     "primary"
+    ],
+    "codes": [
+     "L3"
+    ]
    }
   ],
   "FMA13075": [
@@ -869,6 +932,15 @@
     "slug": "thieu-nang-tuan-hoan-nao-theo-tac-dong-cot-song",
     "roles": [
      "related"
+    ],
+    "codes": [
+     "L4"
+    ]
+   },
+   {
+    "slug": "viem-dai-trang-man-tinh-theo-tac-dong-cot-song",
+    "roles": [
+     "primary"
     ],
     "codes": [
      "L4"
@@ -926,6 +998,15 @@
     "slug": "thieu-nang-tuan-hoan-nao-theo-tac-dong-cot-song",
     "roles": [
      "related"
+    ],
+    "codes": [
+     "L5"
+    ]
+   },
+   {
+    "slug": "viem-dai-trang-man-tinh-theo-tac-dong-cot-song",
+    "roles": [
+     "primary"
     ],
     "codes": [
      "L5"
@@ -1022,6 +1103,18 @@
      "S4",
      "S5"
     ]
+   },
+   {
+    "slug": "viem-dai-trang-man-tinh-theo-tac-dong-cot-song",
+    "roles": [
+     "primary"
+    ],
+    "codes": [
+     "S1",
+     "S2",
+     "S3",
+     "S4"
+    ]
    }
   ],
   "FMA9165": [
@@ -1116,6 +1209,15 @@
     "codes": [
      "T1"
     ]
+   },
+   {
+    "slug": "viem-dai-trang-man-tinh-theo-tac-dong-cot-song",
+    "roles": [
+     "primary"
+    ],
+    "codes": [
+     "T1"
+    ]
    }
   ],
   "FMA9187": [
@@ -1206,6 +1308,15 @@
     "roles": [
      "primary",
      "related"
+    ],
+    "codes": [
+     "T2"
+    ]
+   },
+   {
+    "slug": "viem-dai-trang-man-tinh-theo-tac-dong-cot-song",
+    "roles": [
+     "primary"
     ],
     "codes": [
      "T2"
@@ -1310,6 +1421,15 @@
     "roles": [
      "primary",
      "related"
+    ],
+    "codes": [
+     "T3"
+    ]
+   },
+   {
+    "slug": "viem-dai-trang-man-tinh-theo-tac-dong-cot-song",
+    "roles": [
+     "primary"
     ],
     "codes": [
      "T3"
@@ -1456,6 +1576,15 @@
     "codes": [
      "T5"
     ]
+   },
+   {
+    "slug": "viem-dai-trang-man-tinh-theo-tac-dong-cot-song",
+    "roles": [
+     "primary"
+    ],
+    "codes": [
+     "T5"
+    ]
    }
   ],
   "FMA9945": [
@@ -1537,6 +1666,15 @@
     "slug": "thieu-nang-tuan-hoan-nao-theo-tac-dong-cot-song",
     "roles": [
      "related"
+    ],
+    "codes": [
+     "T6"
+    ]
+   },
+   {
+    "slug": "viem-dai-trang-man-tinh-theo-tac-dong-cot-song",
+    "roles": [
+     "primary"
     ],
     "codes": [
      "T6"
@@ -1635,6 +1773,15 @@
     "codes": [
      "T7"
     ]
+   },
+   {
+    "slug": "viem-dai-trang-man-tinh-theo-tac-dong-cot-song",
+    "roles": [
+     "primary"
+    ],
+    "codes": [
+     "T7"
+    ]
    }
   ],
   "FMA9991": [
@@ -1696,6 +1843,15 @@
     "slug": "thieu-nang-tuan-hoan-nao-theo-tac-dong-cot-song",
     "roles": [
      "related"
+    ],
+    "codes": [
+     "T8"
+    ]
+   },
+   {
+    "slug": "viem-dai-trang-man-tinh-theo-tac-dong-cot-song",
+    "roles": [
+     "primary"
     ],
     "codes": [
      "T8"

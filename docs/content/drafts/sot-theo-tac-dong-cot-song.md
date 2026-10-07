@@ -205,6 +205,7 @@ Về hậu quả, MedlinePlus viết: co giật do sốt đơn thuần là vô h
 - [Mất ngủ theo phương pháp Tác động cột sống](/articles/mat-ngu-theo-tac-dong-cot-song)
 - [Nhiều mồ hôi, sợ gió theo phương pháp Tác động cột sống](/articles/nhieu-mo-hoi-so-gio-theo-tac-dong-cot-song)
 - [Thiểu năng tuần hoàn não theo phương pháp Tác động cột sống](/articles/thieu-nang-tuan-hoan-nao-theo-tac-dong-cot-song)
+- [Viêm đại tràng mạn tính theo phương pháp Tác động cột sống](/articles/viem-dai-trang-man-tinh-theo-tac-dong-cot-song)
 
 ## Nguồn tài liệu
 

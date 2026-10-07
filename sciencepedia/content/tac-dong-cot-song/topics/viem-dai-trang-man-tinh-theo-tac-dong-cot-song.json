@@ -1,0 +1,561 @@
+{
+  "slug": "viem-dai-trang-man-tinh-theo-tac-dong-cot-song",
+  "collection": "tac-dong-cot-song",
+  "section": "viem-dai-trang-man-tinh",
+  "title": {
+    "vi": "Viêm đại tràng mạn tính theo phương pháp Tác động cột sống",
+    "en": "Chronic colitis in the Spinal Impact method"
+  },
+  "riskLevel": "high",
+  "source": {
+    "docId": "pp-tdcs-vn",
+    "part": "D",
+    "heading": "D.VIÊM ĐẠI TRÀNG MÃN TÍNH",
+    "pdfPages": [
+      42,
+      43
+    ]
+  },
+  "variants": [
+    {
+      "id": "trieu-chung-ia-chay-kem-theo-sot",
+      "label": {
+        "vi": "Tiêu chảy kèm sốt, sôi bụng, đau bụng",
+        "en": "Diarrhoea with fever, rumbling and tummy pain"
+      },
+      "heading": "1. Triệu chứng ỉa chảy kèm theo sốt, sôi bụng, đau bụng",
+      "ref": {
+        "pdfPage": 43,
+        "bookPage": 42
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "T12",
+          "role": "primary",
+          "raw": "T12",
+          "context": "nhiệt độ rối loạn vùng chẩm, vùng rốn, vùng thắt lưng. Đốt sống trọng điểm là T12. Chú ý chữa nhẹ từ lớp ngoài.",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 43,
+            "bookPage": 42
+          }
+        }
+      ]
+    },
+    {
+      "id": "trieu-chung-ia-chay-keo-dai",
+      "label": {
+        "vi": "Tiêu chảy kéo dài",
+        "en": "Prolonged diarrhoea"
+      },
+      "heading": "2. Triệu chứng ỉa chảy kéo dài",
+      "ref": {
+        "pdfPage": 43,
+        "bookPage": 42
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "T8",
+          "role": "primary",
+          "raw": "T8,T11,T12,L5",
+          "context": "nhiệt độ rối loạn vùng chẩm, vùng rốn, vùng mỏ ác, vùng vai phải, sườn phải, giữa lưng. Các đốt sống trọng điểm là T8,T11,T12,L5. Chữa nhẹ từ lớp ngoài tới lớp trong.",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 43,
+            "bookPage": 42
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T11",
+          "role": "primary",
+          "raw": "T8,T11,T12,L5",
+          "context": "nhiệt độ rối loạn vùng chẩm, vùng rốn, vùng mỏ ác, vùng vai phải, sườn phải, giữa lưng. Các đốt sống trọng điểm là T8,T11,T12,L5. Chữa nhẹ từ lớp ngoài tới lớp trong.",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 43,
+            "bookPage": 42
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T12",
+          "role": "primary",
+          "raw": "T8,T11,T12,L5",
+          "context": "nhiệt độ rối loạn vùng chẩm, vùng rốn, vùng mỏ ác, vùng vai phải, sườn phải, giữa lưng. Các đốt sống trọng điểm là T8,T11,T12,L5. Chữa nhẹ từ lớp ngoài tới lớp trong.",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 43,
+            "bookPage": 42
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "L5",
+          "role": "primary",
+          "raw": "T8,T11,T12,L5",
+          "context": "nhiệt độ rối loạn vùng chẩm, vùng rốn, vùng mỏ ác, vùng vai phải, sườn phải, giữa lưng. Các đốt sống trọng điểm là T8,T11,T12,L5. Chữa nhẹ từ lớp ngoài tới lớp trong.",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 43,
+            "bookPage": 42
+          }
+        }
+      ]
+    },
+    {
+      "id": "dau-quan-bung",
+      "label": {
+        "vi": "Đau quặn bụng",
+        "en": "Cramping tummy pain"
+      },
+      "heading": "3. Đau quặn bụng",
+      "ref": {
+        "pdfPage": 43,
+        "bookPage": 42
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "T7",
+          "role": "primary",
+          "raw": "T7, T8",
+          "context": "nhiệt độ vùng mỏ ác biến đổi. Đốt sống vùng trọng điểm T7, T8. Chữa nhẹ từ lớp ngoài.",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 43,
+            "bookPage": 42
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T8",
+          "role": "primary",
+          "raw": "T7, T8",
+          "context": "nhiệt độ vùng mỏ ác biến đổi. Đốt sống vùng trọng điểm T7, T8. Chữa nhẹ từ lớp ngoài.",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 43,
+            "bookPage": 42
+          }
+        }
+      ]
+    },
+    {
+      "id": "day-bung-bieng-an-luoi-trang",
+      "label": {
+        "vi": "Đầy bụng, biếng ăn, lưỡi trắng",
+        "en": "Bloating, poor appetite, white tongue"
+      },
+      "heading": "4. Đầy bụng, biếng ăn, lưỡi trắng",
+      "ref": {
+        "pdfPage": 43,
+        "bookPage": 42
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "L1",
+          "role": "primary",
+          "raw": "L1,L2",
+          "context": "nhiệt độ vùng mỏ ác rối loạn. Đốt sống trọng điểm L1,L2. Chữa từ lớp ngoài vào lớp trong.",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 43,
+            "bookPage": 42
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "L2",
+          "role": "primary",
+          "raw": "L1,L2",
+          "context": "nhiệt độ vùng mỏ ác rối loạn. Đốt sống trọng điểm L1,L2. Chữa từ lớp ngoài vào lớp trong.",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 43,
+            "bookPage": 42
+          }
+        }
+      ]
+    },
+    {
+      "id": "tao-bon-phan-co-mui",
+      "label": {
+        "vi": "Táo bón, phân có nhầy",
+        "en": "Constipation, mucus in the stool"
+      },
+      "heading": "5. Táo bón, phân có mũi",
+      "ref": {
+        "pdfPage": 43,
+        "bookPage": 42
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "T10",
+          "role": "primary",
+          "raw": "T10,L1.2.3.4.5, S1.2.3.4",
+          "context": "nhiệt độ rối loạn vùng chẩm và thắt lưng. Đốt sống có trọng điểm là T10,L1.2.3.4.5, S1.2.3.4.",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 43,
+            "bookPage": 42
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "L1",
+          "role": "primary",
+          "raw": "T10,L1.2.3.4.5, S1.2.3.4",
+          "context": "nhiệt độ rối loạn vùng chẩm và thắt lưng. Đốt sống có trọng điểm là T10,L1.2.3.4.5, S1.2.3.4.",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 43,
+            "bookPage": 42
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "L2",
+          "role": "primary",
+          "raw": "T10,L1.2.3.4.5, S1.2.3.4",
+          "context": "nhiệt độ rối loạn vùng chẩm và thắt lưng. Đốt sống có trọng điểm là T10,L1.2.3.4.5, S1.2.3.4.",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 43,
+            "bookPage": 42
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "L3",
+          "role": "primary",
+          "raw": "T10,L1.2.3.4.5, S1.2.3.4",
+          "context": "nhiệt độ rối loạn vùng chẩm và thắt lưng. Đốt sống có trọng điểm là T10,L1.2.3.4.5, S1.2.3.4.",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 43,
+            "bookPage": 42
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "L4",
+          "role": "primary",
+          "raw": "T10,L1.2.3.4.5, S1.2.3.4",
+          "context": "nhiệt độ rối loạn vùng chẩm và thắt lưng. Đốt sống có trọng điểm là T10,L1.2.3.4.5, S1.2.3.4.",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 43,
+            "bookPage": 42
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "L5",
+          "role": "primary",
+          "raw": "T10,L1.2.3.4.5, S1.2.3.4",
+          "context": "nhiệt độ rối loạn vùng chẩm và thắt lưng. Đốt sống có trọng điểm là T10,L1.2.3.4.5, S1.2.3.4.",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 43,
+            "bookPage": 42
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "S1",
+          "role": "primary",
+          "raw": "T10,L1.2.3.4.5, S1.2.3.4",
+          "context": "nhiệt độ rối loạn vùng chẩm và thắt lưng. Đốt sống có trọng điểm là T10,L1.2.3.4.5, S1.2.3.4.",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 43,
+            "bookPage": 42
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "S2",
+          "role": "primary",
+          "raw": "T10,L1.2.3.4.5, S1.2.3.4",
+          "context": "nhiệt độ rối loạn vùng chẩm và thắt lưng. Đốt sống có trọng điểm là T10,L1.2.3.4.5, S1.2.3.4.",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 43,
+            "bookPage": 42
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "S3",
+          "role": "primary",
+          "raw": "T10,L1.2.3.4.5, S1.2.3.4",
+          "context": "nhiệt độ rối loạn vùng chẩm và thắt lưng. Đốt sống có trọng điểm là T10,L1.2.3.4.5, S1.2.3.4.",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 43,
+            "bookPage": 42
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "S4",
+          "role": "primary",
+          "raw": "T10,L1.2.3.4.5, S1.2.3.4",
+          "context": "nhiệt độ rối loạn vùng chẩm và thắt lưng. Đốt sống có trọng điểm là T10,L1.2.3.4.5, S1.2.3.4.",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 43,
+            "bookPage": 42
+          }
+        }
+      ]
+    },
+    {
+      "id": "dai-tien-cung-nat-that-thuong",
+      "label": {
+        "vi": "Đại tiện lúc cứng lúc nát",
+        "en": "Stools alternating between hard and loose"
+      },
+      "heading": "6. Đại tiện cứng, nát thất thường",
+      "ref": {
+        "pdfPage": 43,
+        "bookPage": 42
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "T12",
+          "role": "primary",
+          "raw": "T12",
+          "context": "nhiệt độ rối loạn vùng giữa lưng. Đốt sống trọng điểm T12. Chữa từ lớp ngoài đến lớp trong.",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 43,
+            "bookPage": 42
+          }
+        }
+      ]
+    },
+    {
+      "id": "buon-non-an-vao-kho-chiu",
+      "label": {
+        "vi": "Buồn nôn, ăn vào khó chịu",
+        "en": "Nausea, discomfort after eating"
+      },
+      "heading": "7. Buồn nôn, ăn vào khó chịu",
+      "ref": {
+        "pdfPage": 43,
+        "bookPage": 42
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "T5",
+          "role": "primary",
+          "raw": "T5.6.7.11.12",
+          "context": "nhiệt độ vùng ngực trái, mỏ ác rối loạn. Đốt sống có trọng điểm T5.6.7.11.12. Chữa cả 3 lớp ngoài, giữa, trong.",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 43,
+            "bookPage": 42
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T6",
+          "role": "primary",
+          "raw": "T5.6.7.11.12",
+          "context": "nhiệt độ vùng ngực trái, mỏ ác rối loạn. Đốt sống có trọng điểm T5.6.7.11.12. Chữa cả 3 lớp ngoài, giữa, trong.",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 43,
+            "bookPage": 42
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T7",
+          "role": "primary",
+          "raw": "T5.6.7.11.12",
+          "context": "nhiệt độ vùng ngực trái, mỏ ác rối loạn. Đốt sống có trọng điểm T5.6.7.11.12. Chữa cả 3 lớp ngoài, giữa, trong.",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 43,
+            "bookPage": 42
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T11",
+          "role": "primary",
+          "raw": "T5.6.7.11.12",
+          "context": "nhiệt độ vùng ngực trái, mỏ ác rối loạn. Đốt sống có trọng điểm T5.6.7.11.12. Chữa cả 3 lớp ngoài, giữa, trong.",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 43,
+            "bookPage": 42
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T12",
+          "role": "primary",
+          "raw": "T5.6.7.11.12",
+          "context": "nhiệt độ vùng ngực trái, mỏ ác rối loạn. Đốt sống có trọng điểm T5.6.7.11.12. Chữa cả 3 lớp ngoài, giữa, trong.",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 43,
+            "bookPage": 42
+          }
+        }
+      ]
+    },
+    {
+      "id": "kho-ngu-ngu-giat-minh-ngu-me",
+      "label": {
+        "vi": "Khó ngủ, ngủ giật mình, mơ ngã xuống vực",
+        "en": "Trouble sleeping, startled awake, dreams of falling"
+      },
+      "heading": "8. Khó ngủ, ngủ giật mình, ngủ mê ngã xuống vực",
+      "ref": {
+        "pdfPage": 43,
+        "bookPage": 42
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "T1",
+          "role": "primary",
+          "raw": "T1.2.3.5.6",
+          "context": "Nhiệt độ rối loạn vùng mỏ ác đốt sống có trọng điểm là T1.2.3.5.6. Chữa lớp ngoài và lớp giữa.",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 43,
+            "bookPage": 42
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T2",
+          "role": "primary",
+          "raw": "T1.2.3.5.6",
+          "context": "Nhiệt độ rối loạn vùng mỏ ác đốt sống có trọng điểm là T1.2.3.5.6. Chữa lớp ngoài và lớp giữa.",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 43,
+            "bookPage": 42
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T3",
+          "role": "primary",
+          "raw": "T1.2.3.5.6",
+          "context": "Nhiệt độ rối loạn vùng mỏ ác đốt sống có trọng điểm là T1.2.3.5.6. Chữa lớp ngoài và lớp giữa.",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 43,
+            "bookPage": 42
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T5",
+          "role": "primary",
+          "raw": "T1.2.3.5.6",
+          "context": "Nhiệt độ rối loạn vùng mỏ ác đốt sống có trọng điểm là T1.2.3.5.6. Chữa lớp ngoài và lớp giữa.",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 43,
+            "bookPage": 42
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T6",
+          "role": "primary",
+          "raw": "T1.2.3.5.6",
+          "context": "Nhiệt độ rối loạn vùng mỏ ác đốt sống có trọng điểm là T1.2.3.5.6. Chữa lớp ngoài và lớp giữa.",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 43,
+            "bookPage": 42
+          }
+        }
+      ]
+    },
+    {
+      "id": "nguoi-het-suc-met-moi",
+      "label": {
+        "vi": "Người hết sức mệt mỏi",
+        "en": "Extreme exhaustion"
+      },
+      "heading": "Người hết sức mệt mỏi",
+      "ref": {
+        "pdfPage": 43,
+        "bookPage": 42
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "T6",
+          "role": "primary",
+          "raw": "T6.7.8.9",
+          "context": "nhiệt độ rối loạn vùng ngực trái. Đốt sống có trọng điểm là T6.7.8.9. Chữa từ lớp ngoài vào lớp trong./.",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 43,
+            "bookPage": 42
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T7",
+          "role": "primary",
+          "raw": "T6.7.8.9",
+          "context": "nhiệt độ rối loạn vùng ngực trái. Đốt sống có trọng điểm là T6.7.8.9. Chữa từ lớp ngoài vào lớp trong./.",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 43,
+            "bookPage": 42
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T8",
+          "role": "primary",
+          "raw": "T6.7.8.9",
+          "context": "nhiệt độ rối loạn vùng ngực trái. Đốt sống có trọng điểm là T6.7.8.9. Chữa từ lớp ngoài vào lớp trong./.",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 43,
+            "bookPage": 42
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T9",
+          "role": "primary",
+          "raw": "T6.7.8.9",
+          "context": "nhiệt độ rối loạn vùng ngực trái. Đốt sống có trọng điểm là T6.7.8.9. Chữa từ lớp ngoài vào lớp trong./.",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 43,
+            "bookPage": 42
+          }
+        }
+      ]
+    }
+  ],
+  "unassigned": [],
+  "review": {
+    "transcription": "pending",
+    "mapping": "passed",
+    "editor": "pending"
+  }
+}

@@ -96,6 +96,7 @@ Vertebrae named by the document:
 - [Heavy sweating and aversion to wind in the Spinal Impact method](/articles/nhieu-mo-hoi-so-gio-theo-tac-dong-cot-song)
 - [Fever-related conditions in the Spinal Impact method](/articles/sot-theo-tac-dong-cot-song)
 - ["Cerebral circulatory insufficiency" in the Spinal Impact method](/articles/thieu-nang-tuan-hoan-nao-theo-tac-dong-cot-song)
+- [Chronic colitis in the Spinal Impact method](/articles/viem-dai-trang-man-tinh-theo-tac-dong-cot-song)
 
 ## Source document
 

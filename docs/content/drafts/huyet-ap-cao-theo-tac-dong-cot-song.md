@@ -76,6 +76,7 @@ Huyết áp cao kéo dài buộc tim làm việc nhiều hơn và có thể dẫ
 - [Nhiều mồ hôi, sợ gió theo phương pháp Tác động cột sống](/articles/nhieu-mo-hoi-so-gio-theo-tac-dong-cot-song)
 - [Các bệnh liên quan đến sốt theo phương pháp Tác động cột sống](/articles/sot-theo-tac-dong-cot-song)
 - [Thiểu năng tuần hoàn não theo phương pháp Tác động cột sống](/articles/thieu-nang-tuan-hoan-nao-theo-tac-dong-cot-song)
+- [Viêm đại tràng mạn tính theo phương pháp Tác động cột sống](/articles/viem-dai-trang-man-tinh-theo-tac-dong-cot-song)
 
 ## Nguồn tài liệu
 

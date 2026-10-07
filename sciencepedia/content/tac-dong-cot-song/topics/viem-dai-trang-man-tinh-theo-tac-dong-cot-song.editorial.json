@@ -1,0 +1,297 @@
+{
+  "section": "viem-dai-trang-man-tinh",
+  "slug": "viem-dai-trang-man-tinh-theo-tac-dong-cot-song",
+  "title": {
+    "vi": "Viêm đại tràng mạn tính theo phương pháp Tác động cột sống",
+    "en": "Chronic colitis in the Spinal Impact method"
+  },
+  "summary": {
+    "vi": "Tài liệu Phương pháp Tác động Cột sống Việt Nam liệt kê chín triệu chứng của viêm đại tràng mạn tính — tiêu chảy, đau quặn bụng, đầy bụng, táo bón, buồn nôn, khó ngủ, mệt mỏi — mỗi triệu chứng kèm vùng nhiệt độ và đốt sống trọng điểm. Phần trích nguyên văn đặt sau kiến thức y khoa có nguồn về viêm loét đại tràng, bệnh Crohn, hội chứng ruột kích thích và các dấu hiệu cần đi khám ngay.",
+    "en": "How the Vietnamese Spinal Impact method document lists nine symptoms of chronic colitis — diarrhoea, cramping pain, bloating, constipation, nausea, poor sleep and exhaustion — each with a temperature zone and key vertebrae. The verbatim quotes follow sourced medical information on ulcerative colitis, Crohn's disease, irritable bowel syndrome and the signs that need urgent care."
+  },
+  "seoDescription": {
+    "vi": "Viêm đại tràng mạn tính theo tài liệu Phương pháp Tác động Cột sống Việt Nam: chín triệu chứng và đốt sống trọng điểm — kèm kiến thức y khoa về viêm loét đại tràng, bệnh Crohn, hội chứng ruột kích thích.",
+    "en": "Chronic colitis in the Vietnamese Spinal Impact method document: nine symptoms and key vertebrae — with sourced medical facts on ulcerative colitis, Crohn's disease and irritable bowel syndrome."
+  },
+  "keywords": "viêm đại tràng mạn tính, viêm loét đại tràng, bệnh Crohn, hội chứng ruột kích thích, tiêu chảy, táo bón, tác động cột sống, đốt sống",
+  "riskLevel": "high",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Ulcerative colitis",
+      "publisher": "NHS",
+      "url": "https://www.nhs.uk/conditions/ulcerative-colitis/",
+      "tier": 2,
+      "accessed": "2026-10-07"
+    },
+    {
+      "id": "s2",
+      "title": "Crohn's disease",
+      "publisher": "NHS",
+      "url": "https://www.nhs.uk/conditions/crohns-disease/",
+      "tier": 2,
+      "accessed": "2026-10-07"
+    },
+    {
+      "id": "s3",
+      "title": "Symptoms of IBS (irritable bowel syndrome)",
+      "publisher": "NHS",
+      "url": "https://www.nhs.uk/conditions/irritable-bowel-syndrome-ibs/symptoms/",
+      "tier": 2,
+      "accessed": "2026-10-07"
+    },
+    {
+      "id": "s4",
+      "title": "Symptoms of bowel cancer",
+      "publisher": "NHS",
+      "url": "https://www.nhs.uk/conditions/bowel-cancer/symptoms/",
+      "tier": 2,
+      "accessed": "2026-10-07"
+    },
+    {
+      "id": "s5",
+      "title": "Diarrhoea and vomiting",
+      "publisher": "NHS",
+      "url": "https://www.nhs.uk/conditions/diarrhoea-and-vomiting/",
+      "tier": 2,
+      "accessed": "2026-10-07"
+    },
+    {
+      "id": "s6",
+      "title": "Ulcerative Colitis",
+      "publisher": "National Institute of Diabetes and Digestive and Kidney Diseases (NIDDK)",
+      "url": "https://www.niddk.nih.gov/health-information/digestive-diseases/ulcerative-colitis",
+      "tier": 2,
+      "accessed": "2026-10-07"
+    }
+  ],
+  "safety": {
+    "heading": {
+      "vi": "⚠️ Dấu hiệu cần đi khám ngay",
+      "en": "⚠️ Signs that need urgent care"
+    },
+    "body": {
+      "vi": "**Gọi cấp cứu hoặc đến khoa cấp cứu ngay** khi (NHS): đau bụng dữ dội; chảy máu hậu môn không ngừng; đi ngoài ra nhiều máu hoặc cục máu đông lớn; nôn ra máu, nôn ra phân, hoặc chất nôn trông như bã cà phê. Đừng tự lái xe đi.\n\n**Khám gấp trong ngày** khi (NHS): tiêu chảy ra máu hoặc tiêu chảy rất nặng; phân đen hoặc đỏ sẫm; có triệu chứng đường ruột kèm sốt (hoặc thấy nóng, lạnh, run), tim đập nhanh, hay không đánh hơi, không đi ngoài được; sụt nhiều cân không rõ lý do; sờ thấy khối cứng hoặc chỗ sưng ở bụng; khó thở, hồi hộp kèm da nhợt hơn bình thường. Tiêu chảy quá 7 ngày, nôn quá 2 ngày, hoặc nôn liên tục không giữ được nước cũng cần gọi tư vấn y tế ngay.\n\nNHS khuyên đi khám khi đi ngoài thay đổi khác thường với bạn — phân lỏng hơn, tiêu chảy hay táo bón, đi nhiều hơn hoặc ít hơn — có máu trong phân, hay đau bụng, đầy bụng kéo dài: đây cũng là những triệu chứng có thể gặp trong ung thư đại tràng, và phát hiện sớm thì dễ chữa hơn. Triệu chứng của bệnh Crohn giống nhiều bệnh đường ruột khác; NHS khuyên **đừng tự chẩn đoán**.\n\nTài liệu dưới đây gọi chung các triệu chứng này là viêm đại tràng mạn tính. Phần trích không phải là chẩn đoán và không thay cho thăm khám.",
+      "en": "**Call emergency services or go to A&E right away** if (NHS): you have severe tummy pain; you are bleeding non-stop from your bottom; there is a lot of blood or you see large blood clots when you poo; or you are vomiting blood or poo, or your sick looks like coffee grounds. Do not drive yourself.\n\n**Get an urgent same-day appointment** if (NHS): you have bloody or very bad diarrhoea; your poo is black or dark red; you have bowel symptoms with a high temperature (or feel hot, cold or shivery), a fast heartbeat, or you cannot fart or poo; you have lost a lot of weight for no reason; you find a hard lump or swelling in your tummy; or you have shortness of breath, noticeable heartbeats and skin paler than usual. Diarrhoea for more than 7 days, vomiting for more than 2 days, or being sick so often you cannot keep fluids down also need medical advice now.\n\nThe NHS advises seeing a doctor about changes in your poo that are not usual for you — softer poo, diarrhoea or constipation, pooing more or less often — blood in your poo, or ongoing tummy pain or bloating: these can also be symptoms of bowel cancer, and finding it early can make it easier to treat. Crohn's disease symptoms resemble many other bowel conditions; the NHS advises **not to try to diagnose the problem yourself**.\n\nThe document below groups these symptoms under chronic colitis. The quoted passages are not a diagnosis and do not replace an examination."
+    },
+    "sources": [
+      "s1",
+      "s2",
+      "s3",
+      "s4",
+      "s5"
+    ]
+  },
+  "general": [
+    {
+      "heading": {
+        "vi": "Viêm loét đại tràng và bệnh Crohn",
+        "en": "Ulcerative colitis and Crohn's disease"
+      },
+      "body": {
+        "vi": "Theo Viện Đái tháo đường, Tiêu hoá và Thận Hoa Kỳ (NIDDK), **viêm loét đại tràng** là một bệnh viêm ruột mạn tính: phản ứng bất thường của hệ miễn dịch gây viêm và loét ở lớp niêm mạc trong của đại tràng. Bệnh gặp ở mọi lứa tuổi nhưng hay khởi phát ở tuổi 15–30. Các chuyên gia chưa chắc chắn nguyên nhân, nhưng cho rằng gen, phản ứng miễn dịch bất thường, hệ vi sinh đường ruột và môi trường đều góp phần. Bác sĩ chẩn đoán dựa trên triệu chứng, tiền sử, thăm khám và xét nghiệm máu, xét nghiệm phân, nội soi đại tràng. Điều trị thường bằng thuốc giảm viêm để đưa bệnh vào giai đoạn lui bệnh và giữ nó ở đó; đôi khi cần phẫu thuật.\n\nNHS (Dịch vụ Y tế Quốc gia Anh) mô tả triệu chứng thường gặp của viêm loét đại tràng: tiêu chảy có thể lẫn máu, nhầy hoặc mủ; đau bụng, nhất là phía dưới bên trái, có thể đỡ sau khi đi ngoài; mót đi ngoài thường xuyên, gấp hoặc về đêm; chảy máu hậu môn; đầy hơi. Bệnh có những đợt bùng phát xen giai đoạn ít hoặc không có triệu chứng; đợt bùng phát có thể kèm sốt, đau khớp, loét miệng, đỏ mắt, và có thể bị khởi phát bởi căng thẳng, nhiễm trùng, đổi thuốc, thuốc giảm đau chống viêm (NSAID) như ibuprofen hay aspirin, hoặc một số thức ăn.\n\n**Bệnh Crohn** là bệnh lâu dài trong đó một phần ống tiêu hoá bị viêm (NHS). Triệu chứng tuỳ đoạn bị viêm: tiêu chảy, máu hoặc nhầy trong phân, đau bụng, táo bón, đau hậu môn, rất mệt, chán ăn và sụt cân; trẻ em có thể chậm lớn. Hiện chưa chữa khỏi được, nhưng có thuốc giúp phòng và kiểm soát triệu chứng, người bệnh được theo dõi bởi bác sĩ chuyên khoa tiêu hoá.",
+        "en": "According to the U.S. National Institute of Diabetes and Digestive and Kidney Diseases (NIDDK), **ulcerative colitis** is a chronic inflammatory bowel disease in which abnormal reactions of the immune system cause inflammation and ulcers on the inner lining of the large intestine. It can develop at any age but is more likely between 15 and 30. Experts are not sure what causes it but think genes, abnormal immune reactions, the microbiome and the environment play a role. Doctors diagnose it from symptoms, medical history, a physical exam and tests such as blood tests, stool tests and endoscopy of the large intestine. It is typically treated with medicines that reduce inflammation to bring on and maintain remission; some people need surgery.\n\nThe NHS (UK National Health Service) lists the common symptoms of ulcerative colitis: diarrhoea that may contain blood, mucus or pus; tummy pain, particularly in the lower left, which may get better after pooing; needing to poo frequently, urgently or at night; bleeding from the bottom; and wind or bloating. Periods with few or no symptoms alternate with flare-ups, which may bring a high temperature, joint pain, mouth ulcers or red eyes, and can be triggered by stress, infections, changes in medicines, NSAID painkillers such as ibuprofen or aspirin, or certain foods.\n\n**Crohn's disease** is a long-term condition in which part of the gut becomes inflamed (NHS). Symptoms depend on the part affected: diarrhoea, blood or mucus in the poo, stomach pain, constipation, pain in the bottom, feeling very tired, loss of appetite and weight loss; children may not grow as expected. It cannot currently be cured, but there are treatments that help prevent or manage symptoms, under the care of a specialist in digestive conditions."
+      },
+      "sources": [
+        "s1",
+        "s2",
+        "s6"
+      ]
+    },
+    {
+      "heading": {
+        "vi": "Hội chứng ruột kích thích",
+        "en": "Irritable bowel syndrome"
+      },
+      "body": {
+        "vi": "NHS cho biết triệu chứng của bệnh Crohn có thể giống các bệnh đường ruột khác như **hội chứng ruột kích thích (IBS)**, viêm loét đại tràng, bệnh túi thừa và bệnh celiac — vì vậy cần bác sĩ phân biệt.\n\nTriệu chứng chính của IBS theo NHS: đau hoặc co thắt bụng, thường nặng hơn sau ăn và đỡ sau khi đi ngoài; đầy bụng; tiêu chảy, có khi phải đi gấp; táo bón, rặn mà không thấy đi hết. Có thể kèm nhầy trong phân, đầy hơi, mệt mỏi, buồn nôn, đau lưng. Triệu chứng lúc tăng lúc giảm, đôi khi không rõ lý do, đôi khi do rượu, cà phê, đồ cay hay nhiều dầu mỡ, căng thẳng và lo âu, hoặc dùng kháng sinh thường xuyên. NHS khuyên đi khám nếu nghĩ mình bị IBS và triệu chứng đã quá 4 tuần, để bác sĩ làm xét nghiệm loại trừ bệnh khác.",
+        "en": "The NHS says Crohn's disease symptoms can be similar to those of other gut conditions such as **irritable bowel syndrome (IBS)**, ulcerative colitis, diverticular disease and coeliac disease — which is why a doctor needs to tell them apart.\n\nThe main symptoms of IBS according to the NHS are stomach pain or cramps, usually worse after eating and better after pooing; bloating; diarrhoea, sometimes with a sudden need to poo; and constipation, straining and feeling you cannot empty your bowels fully. There may also be mucus in the poo, wind, tiredness, nausea and backache. Symptoms come and go, sometimes for no obvious reason and sometimes triggered by alcohol, caffeine, spicy or fatty food, stress and anxiety, or regular antibiotic use. The NHS advises seeing a doctor if you think you might have IBS and have had symptoms for over 4 weeks, so tests can rule out other problems."
+      },
+      "sources": [
+        "s2",
+        "s3"
+      ]
+    }
+  ],
+  "symptoms": [],
+  "methodQuotes": [],
+  "variants": [
+    {
+      "id": "trieu-chung-ia-chay-kem-theo-sot",
+      "label": {
+        "vi": "Tiêu chảy kèm sốt, sôi bụng, đau bụng",
+        "en": "Diarrhoea with fever, rumbling and tummy pain"
+      },
+      "quotes": [
+        {
+          "pdfPage": 43,
+          "vi": "Triệu chứng ỉa chảy kèm theo sốt, sôi bụng, đau bụng: nhiệt độ rối loạn vùng chẩm, vùng rốn, vùng thắt lưng. Đốt sống trọng điểm là T12.",
+          "en": "Symptom of diarrhoea with fever, a rumbling stomach and tummy pain: temperature disturbed at the occipital area, the navel area and the lower back. The key vertebra is T12."
+        }
+      ]
+    },
+    {
+      "id": "trieu-chung-ia-chay-keo-dai",
+      "label": {
+        "vi": "Tiêu chảy kéo dài",
+        "en": "Prolonged diarrhoea"
+      },
+      "quotes": [
+        {
+          "pdfPage": 43,
+          "vi": "Triệu chứng ỉa chảy kéo dài: nhiệt độ rối loạn vùng chẩm, vùng rốn, vùng mỏ ác, vùng vai phải, sườn phải, giữa lưng. Các đốt sống trọng điểm là T8,T11,T12,L5.",
+          "en": "Symptom of prolonged diarrhoea: temperature disturbed at the occipital area, the navel, the pit of the stomach, the right shoulder, the right ribs and the middle of the back. The key vertebrae are T8, T11, T12, L5."
+        }
+      ]
+    },
+    {
+      "id": "dau-quan-bung",
+      "label": {
+        "vi": "Đau quặn bụng",
+        "en": "Cramping tummy pain"
+      },
+      "quotes": [
+        {
+          "pdfPage": 43,
+          "vi": "Đau quặn bụng: nhiệt độ vùng mỏ ác biến đổi. Đốt sống vùng trọng điểm T7, T8.",
+          "en": "Cramping tummy pain: temperature at the pit of the stomach changes. Key vertebrae T7, T8."
+        }
+      ]
+    },
+    {
+      "id": "day-bung-bieng-an-luoi-trang",
+      "label": {
+        "vi": "Đầy bụng, biếng ăn, lưỡi trắng",
+        "en": "Bloating, poor appetite, white tongue"
+      },
+      "quotes": [
+        {
+          "pdfPage": 43,
+          "vi": "Đầy bụng, biếng ăn, lưỡi trắng: nhiệt độ vùng mỏ ác rối loạn. Đốt sống trọng điểm L1,L2.",
+          "en": "Bloating, poor appetite, white tongue: temperature at the pit of the stomach disturbed. Key vertebrae L1, L2."
+        }
+      ]
+    },
+    {
+      "id": "tao-bon-phan-co-mui",
+      "label": {
+        "vi": "Táo bón, phân có nhầy",
+        "en": "Constipation, mucus in the stool"
+      },
+      "quotes": [
+        {
+          "pdfPage": 43,
+          "vi": "Táo bón, phân có mũi: nhiệt độ rối loạn vùng chẩm và thắt lưng. Đốt sống có trọng điểm là T10,L1.2.3.4.5, S1.2.3.4.",
+          "en": "Constipation, stool with mucus: temperature disturbed at the occipital area and the lower back. The key vertebrae are T10, L1, 2, 3, 4, 5, S1, 2, 3, 4."
+        }
+      ]
+    },
+    {
+      "id": "dai-tien-cung-nat-that-thuong",
+      "label": {
+        "vi": "Đại tiện lúc cứng lúc nát",
+        "en": "Stools alternating between hard and loose"
+      },
+      "quotes": [
+        {
+          "pdfPage": 43,
+          "vi": "Đại tiện cứng, nát thất thường: nhiệt độ rối loạn vùng giữa lưng. Đốt sống trọng điểm T12.",
+          "en": "Stools irregularly hard or loose: temperature disturbed at the middle of the back. Key vertebra T12."
+        }
+      ]
+    },
+    {
+      "id": "buon-non-an-vao-kho-chiu",
+      "label": {
+        "vi": "Buồn nôn, ăn vào khó chịu",
+        "en": "Nausea, discomfort after eating"
+      },
+      "quotes": [
+        {
+          "pdfPage": 43,
+          "vi": "Buồn nôn, ăn vào khó chịu: nhiệt độ vùng ngực trái, mỏ ác rối loạn. Đốt sống có trọng điểm T5.6.7.11.12.",
+          "en": "Nausea, discomfort after eating: temperature at the left chest and the pit of the stomach disturbed. Key vertebrae T5, 6, 7, 11, 12."
+        }
+      ]
+    },
+    {
+      "id": "kho-ngu-ngu-giat-minh-ngu-me",
+      "label": {
+        "vi": "Khó ngủ, ngủ giật mình, mơ ngã xuống vực",
+        "en": "Trouble sleeping, startled awake, dreams of falling"
+      },
+      "quotes": [
+        {
+          "pdfPage": 43,
+          "vi": "Khó ngủ, ngủ giật mình, ngủ mê ngã xuống vực: Nhiệt độ rối loạn vùng mỏ ác đốt sống có trọng điểm là T1.2.3.5.6.",
+          "en": "Trouble sleeping, being startled awake, dreaming of falling into an abyss: temperature disturbed at the pit of the stomach; the key vertebrae are T1, 2, 3, 5, 6."
+        }
+      ]
+    },
+    {
+      "id": "nguoi-het-suc-met-moi",
+      "label": {
+        "vi": "Người hết sức mệt mỏi",
+        "en": "Extreme exhaustion"
+      },
+      "quotes": [
+        {
+          "pdfPage": 43,
+          "vi": "Người hết sức mệt mỏi: nhiệt độ rối loạn vùng ngực trái. Đốt sống có trọng điểm là T6.7.8.9.",
+          "en": "Extreme exhaustion: temperature disturbed at the left chest. The key vertebrae are T6, 7, 8, 9."
+        }
+      ]
+    }
+  ],
+  "outOfScope": [
+    {
+      "pdfPage": 42,
+      "vi": "Viêm đại tràng có thể cấp và mạn tính. Viêm cấp tính thường do nhiễm độc vi khuẩn hoặc ký sinh trùng. … Tuy nhiên, dùng thuốc phải có ý kiến của thầy thuốc. Trong tài liệu này chúng tôi chỉ đề cập tới chữa viêm đại tràng mạn tính bằng phương pháp Tác động cột sống Việt Nam",
+      "en": "Colitis can be acute or chronic. Acute colitis is usually caused by bacterial poisoning or parasites. … However, medicines must be taken on a physician's advice. In this document we only deal with treating chronic colitis with the Vietnamese Spinal Impact method"
+    }
+  ],
+  "cover": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/Illu_vertebral_column.svg/1920px-Illu_vertebral_column.svg.png",
+    "page": "https://commons.wikimedia.org/wiki/File:Illu_vertebral_column.svg",
+    "license": "Public domain"
+  },
+  "furtherReading": [
+    {
+      "slug": "he-vi-sinh-duong-ruot-hang-chuc-nghin-ti-cu-dan-va-anh-huong-cua-chung",
+      "title": {
+        "vi": "Hệ vi sinh đường ruột: hàng chục nghìn tỉ cư dân và ảnh hưởng của chúng",
+        "en": "The gut microbiome: tens of trillions of residents and what they do"
+      },
+      "why": "Hệ vi sinh đường ruột được cho là góp phần vào viêm loét đại tràng — bài kia giải thích hệ vi sinh ấy là gì."
+    },
+    {
+      "slug": "ruot-he-vi-sinh-vat-va-quyen-luc-cua-bo-nao-thu-hai",
+      "title": {
+        "vi": "Ruột, hệ vi sinh vật và quyền lực của bộ não thứ hai",
+        "en": "The Gut, the Microbiome, and the Power of the Second Brain"
+      },
+      "why": "Căng thẳng làm triệu chứng đường ruột nặng thêm — bài kia nói về mối liên hệ giữa ruột và não."
+    },
+    {
+      "slug": "stress-tac-dong-len-co-the-nhu-the-nao-va-vi-sao-van-dong-giup-chung-ta-giai-toa",
+      "title": {
+        "vi": "Stress tác động lên cơ thể như thế nào và vì sao vận động giúp chúng ta giải tỏa?",
+        "en": "How does stress affect the body, and why does exercise help us unwind?"
+      },
+      "why": "Căng thẳng là yếu tố khởi phát đợt bùng phát của viêm loét đại tràng và hội chứng ruột kích thích."
+    },
+    {
+      "slug": "huyet-dao-va-cham-cuu-khi-cua-dong-y-co-lien-he-gi-voi-khoa-hoc-hien-dai",
+      "title": {
+        "vi": "Huyệt đạo và châm cứu: \"Khí\" của Đông y có liên hệ gì với khoa học hiện đại?",
+        "en": "Acupoints and acupuncture: how does the \"Qi\" of Eastern medicine relate to modern science?"
+      },
+      "why": "Cùng câu hỏi nền: một phương pháp truyền thống của Việt Nam/Đông y được khoa học hiện đại nhìn nhận thế nào."
+    }
+  ],
+  "review": {
+    "transcription": "pending",
+    "mapping": "passed",
+    "editor": "pending"
+  }
+}
