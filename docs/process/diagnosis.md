@@ -808,3 +808,14 @@ trang nội dung là static/ISR nên đăng nhập gần như là thứ duy nh�
 Đây là suy luận chưa có log xác nhận — nhưng bắt lại một lần vô hại kể cả khi
 đoán sai, nên được làm trước khi có log. Nếu log (`[auth] callback hỏng`) cho
 `cause` khác, đừng nới thêm danh sách theo đoán: đọc nguyên nhân đã.
+
+Đo 2026-10-07, cùng kiểu máy (mở từ biểu tượng ứng dụng, Android 10, Chrome
+154): `cause` là **`pkce-missing`**, không phải `db`. Callback mang theo
+`authjs.session-token` nhưng thiếu cả `pkce.code_verifier`, `csrf-token` lẫn
+`callback-url` — dù `GET csrf` và `POST signin/google` chạy 0,7 giây trước đó.
+Tức là lượt bấm (cửa sổ ứng dụng) và lượt Google trả về (thẻ có ✕ mở đè lên,
+nơi còn phiên cũ) nằm ở HAI hộp cookie. Giả định "cài từ Chrome nên chung hộp
+cookie" ở đoạn trên là sai, ít nhất trên máy này. Lượt bắt lại chạy đúng: callback
+thứ hai 2 giây sau thành công. Cái sai còn lại là giao diện — trang trung chuyển
+hiện băng đỏ "Chưa hoàn tất…" trong lúc đang tự sửa, nên người dùng báo lỗi dù đã
+đăng nhập được. Nay có `?retry=` thì hiện "Đang hoàn tất đăng nhập…" thay băng đỏ.
