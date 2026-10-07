@@ -40,9 +40,10 @@ bằng chứng khoa học.
 | `thieu-nang-tuan-hoan-nao`, `huyet-ap-cao`, `dau-dau` | 17–32 | nháp (#14) |
 | `hen-suyen-ho-hap` | 33–34 | nháp, đã ở `main` (#16): 12 thể, nguồn NHS + NHLBI + MedlinePlus, `riskLevel high` |
 | `sot` | 35–38 | nháp, đã ở `main` (#16): 15 thể, 8 nguồn NHS + MedlinePlus; khung nêu co giật do sốt đơn thuần vô hại (MedlinePlus) — đối lập câu "di chứng bại não" của tài liệu, cần science-editor xem kỹ |
-| `nhieu-mo-hoi-so-gio` | 39 | nháp (nhánh `claude/nhieu-mo-hoi-so-gio`): 5 thể, 6 mapping, nguồn NHS + MedlinePlus, `riskLevel normal` |
-| `benh-do-mo-hoi` | 40 | nháp (nhánh `claude/benh-do-mo-hoi`): 6 thể, 10 mapping, khung sốc nhiệt; câu "tác động C1 và S1,S2" (thể 6) không trích, không chỉ mục — chủ sản phẩm quyết |
-| `mat-ngu` → `viem-dai-trang-man-tinh` | 41–43 | **chưa làm** |
+| `nhieu-mo-hoi-so-gio` | 39 | nháp, đã ở `main` (#17): 5 thể, 6 mapping, nguồn NHS + MedlinePlus, `riskLevel normal` |
+| `benh-do-mo-hoi` | 40 | nháp, đã ở `main` (#18): 6 thể, 10 mapping, khung sốc nhiệt; câu "tác động C1 và S1,S2" (thể 6) không trích, không chỉ mục — chủ sản phẩm quyết |
+| `mat-ngu` | 41 | nháp (nhánh `claude/mat-ngu`): 6 thể, 14 mapping, nguồn NHS + MedlinePlus + NHLBI, `riskLevel normal`; khung nêu hồi hộp kèm đau ngực/khó thở/ngất là cấp cứu (thể 5). Mục 7 "Mất ngủ kéo dài" chỉ có tiêu đề trong bản scan → không đưa vào bài |
+| `viem-dai-trang-man-tinh` | 42–43 | **chưa làm** |
 
 **Cách làm một chủ đề:**
 1. Đọc `source/pages/pNN.md`.

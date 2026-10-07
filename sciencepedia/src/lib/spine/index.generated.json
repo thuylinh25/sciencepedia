@@ -30,6 +30,15 @@
     ]
    },
    {
+    "slug": "mat-ngu-theo-tac-dong-cot-song",
+    "roles": [
+     "primary"
+    ],
+    "codes": [
+     "T9"
+    ]
+   },
+   {
     "slug": "sot-theo-tac-dong-cot-song",
     "roles": [
      "primary"
@@ -524,6 +533,15 @@
     ]
    },
    {
+    "slug": "mat-ngu-theo-tac-dong-cot-song",
+    "roles": [
+     "primary"
+    ],
+    "codes": [
+     "C6"
+    ]
+   },
+   {
     "slug": "sot-theo-tac-dong-cot-song",
     "roles": [
      "primary"
@@ -705,6 +723,15 @@
     ]
    },
    {
+    "slug": "mat-ngu-theo-tac-dong-cot-song",
+    "roles": [
+     "primary"
+    ],
+    "codes": [
+     "L2"
+    ]
+   },
+   {
     "slug": "thieu-nang-tuan-hoan-nao-theo-tac-dong-cot-song",
     "roles": [
      "related"
@@ -764,6 +791,15 @@
    },
    {
     "slug": "huyet-ap-thap-theo-tac-dong-cot-song",
+    "roles": [
+     "primary"
+    ],
+    "codes": [
+     "L3"
+    ]
+   },
+   {
+    "slug": "mat-ngu-theo-tac-dong-cot-song",
     "roles": [
      "primary"
     ],
@@ -955,6 +991,16 @@
     ]
    },
    {
+    "slug": "mat-ngu-theo-tac-dong-cot-song",
+    "roles": [
+     "primary"
+    ],
+    "codes": [
+     "S1",
+     "S2"
+    ]
+   },
+   {
     "slug": "sot-theo-tac-dong-cot-song",
     "roles": [
      "primary",
@@ -1036,6 +1082,15 @@
    },
    {
     "slug": "huyet-ap-thap-theo-tac-dong-cot-song",
+    "roles": [
+     "primary"
+    ],
+    "codes": [
+     "T1"
+    ]
+   },
+   {
+    "slug": "mat-ngu-theo-tac-dong-cot-song",
     "roles": [
      "primary"
     ],
@@ -1138,6 +1193,15 @@
     ]
    },
    {
+    "slug": "mat-ngu-theo-tac-dong-cot-song",
+    "roles": [
+     "primary"
+    ],
+    "codes": [
+     "T2"
+    ]
+   },
+   {
     "slug": "thieu-nang-tuan-hoan-nao-theo-tac-dong-cot-song",
     "roles": [
      "primary",
@@ -1216,6 +1280,15 @@
    },
    {
     "slug": "huyet-ap-cao-theo-tac-dong-cot-song",
+    "roles": [
+     "primary"
+    ],
+    "codes": [
+     "T3"
+    ]
+   },
+   {
+    "slug": "mat-ngu-theo-tac-dong-cot-song",
     "roles": [
      "primary"
     ],
@@ -1349,6 +1422,15 @@
     ]
    },
    {
+    "slug": "mat-ngu-theo-tac-dong-cot-song",
+    "roles": [
+     "primary"
+    ],
+    "codes": [
+     "T5"
+    ]
+   },
+   {
     "slug": "nhieu-mo-hoi-so-gio-theo-tac-dong-cot-song",
     "roles": [
      "primary"
@@ -1426,6 +1508,15 @@
    },
    {
     "slug": "huyet-ap-thap-theo-tac-dong-cot-song",
+    "roles": [
+     "primary"
+    ],
+    "codes": [
+     "T6"
+    ]
+   },
+   {
+    "slug": "mat-ngu-theo-tac-dong-cot-song",
     "roles": [
      "primary"
     ],
