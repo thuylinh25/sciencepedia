@@ -4,6 +4,7 @@ import path from "node:path";
 import { Prisma, PrismaClient } from "@prisma/client";
 
 import { Editorial, Topic } from "../src/lib/spine/schema";
+import { revalidateSite } from "./revalidate-site";
 
 /**
  * Bước 10 cho các bài "Tác động cột sống": topic + bản nháp → bảng Article, ở
@@ -12,6 +13,7 @@ import { Editorial, Topic } from "../src/lib/spine/schema";
  *   npm run spine:import              # in kế hoạch, không ghi
  *   npm run spine:import -- --write   # ghi (upsert, chạy lại được)
  *   npm run spine:import -- --write --drafts-only   # bỏ qua bài đã xuất bản
+ *   npm run spine:import -- --write --slugs a,b --correction "<lý do>"   # đính chính bài đã xuất bản
  *
  * KHÔNG đặt PUBLISHED, KHÔNG đặt factCheck = PASSED, KHÔNG ghi reviewedById:
  * xuất bản chỉ qua `npm run publish` (gate trong scripts/publish.ts), và byline
@@ -63,6 +65,30 @@ const withoutHrefs = (md: string) => md.replace(/\]\([^)]*\)/g, "]()").replace(/
 
 const readingTime = (md: string) => Math.max(1, Math.round(md.split(/\s+/).length / 200));
 
+/** Bảng nguồn của bài = nguồn bậc 1–2 trong tệp biên tập + tài liệu (bậc 4). Xoá rồi ghi lại. */
+async function writeSources(tx: Prisma.TransactionClient, articleId: string, editorial: Editorial, topic: Topic) {
+  await tx.source.deleteMany({ where: { articleId } });
+  await tx.source.createMany({
+    data: [
+      ...editorial.sources.map((s) => ({
+        articleId,
+        title: s.title,
+        publisher: s.publisher,
+        url: s.url,
+        doi: s.doi ?? null,
+        tier: s.tier,
+        accessedAt: new Date(`${s.accessed}T00:00:00Z`),
+      })),
+      {
+        articleId,
+        ...DOC_SOURCE,
+        title: `${DOC_SOURCE.title} — ${topic.source.heading}, tr. ${topic.source.pdfPages[0] - 1}–${topic.source.pdfPages[1] - 1}`,
+        accessedAt: new Date("2026-10-05T00:00:00Z"),
+      },
+    ],
+  });
+}
+
 async function main() {
   const write = process.argv.includes("--write");
   const draftsOnly = process.argv.includes("--drafts-only");
@@ -73,9 +99,25 @@ async function main() {
   if (fcIndex > -1 && (!formatChange || formatChange.startsWith("--"))) {
     throw new Error('--format-change cần lý do, vd. --format-change "bỏ nhãn Theo tài liệu theo yêu cầu chủ sản phẩm"');
   }
+  /* Đính chính bài đã xuất bản: đổi claim và bảng nguồn (docs/content-rules.md, "Sửa bài đã
+     publish là đính chính"). Phải nêu đúng bài (--slugs) và bài phải có mục trong
+     docs/content/corrections.md trước — nhật ký đi trước lệnh sửa, không đi sau. */
+  const ccIndex = process.argv.indexOf("--correction");
+  const correction = ccIndex > -1 ? process.argv[ccIndex + 1] : undefined;
+  if (ccIndex > -1 && (!correction || correction.startsWith("--"))) {
+    throw new Error('--correction cần lý do, vd. --correction "gỡ nguồn MedlinePlus /ency/ (A.D.A.M.)"');
+  }
+  const slIndex = process.argv.indexOf("--slugs");
+  const only = slIndex > -1 ? new Set((process.argv[slIndex + 1] ?? "").split(",").filter(Boolean)) : null;
+  if (correction && !only?.size) throw new Error("--correction cần --slugs a,b,c — đính chính phải nêu đúng bài.");
+  const correctionLog = correction ? readFileSync(path.join(process.cwd(), "../docs/content/corrections.md"), "utf8") : "";
   const read = (p: string) => JSON.parse(readFileSync(path.join(ROOT, "topics", p), "utf8"));
 
-  const files = readdirSync(path.join(ROOT, "topics")).filter((f) => f.endsWith(".editorial.json")).sort();
+  const files = readdirSync(path.join(ROOT, "topics"))
+    .filter((f) => f.endsWith(".editorial.json"))
+    .filter((f) => !only || only.has(f.replace(".editorial.json", "")))
+    .sort();
+  if (only && files.length !== only.size) throw new Error(`--slugs có slug không có tệp biên tập: ${[...only].join(", ")}`);
   const plan = files.map((file) => {
     const editorial = Editorial.parse(read(file));
     const topic = Topic.parse(read(`${editorial.slug}.json`));
@@ -133,11 +175,15 @@ async function main() {
         const sameText =
           withoutHrefs(existing.content) === withoutHrefs(vi) &&
           withoutHrefs(existing.contentEn ?? "") === withoutHrefs(en);
-        if (!sameText && !formatChange) {
+        if (!sameText && !formatChange && !correction) {
           throw new Error(
-            `${editorial.slug} đang ${existing.status} và phần chữ đã đổi — sửa bài đã xuất bản là đính chính, đi đường khác. ` +
-              `Nếu chỉ là đổi CÁCH TRÌNH BÀY (không claim nào đổi), chạy lại với --format-change "<lý do>".`,
+            `${editorial.slug} đang ${existing.status} và phần chữ đã đổi — sửa bài đã xuất bản là đính chính: ` +
+              `ghi docs/content/corrections.md rồi chạy với --slugs ${editorial.slug} --correction "<lý do>". ` +
+              `Nếu chỉ là đổi CÁCH TRÌNH BÀY (không claim nào đổi), dùng --format-change "<lý do>".`,
           );
+        }
+        if (correction && !correctionLog.includes(editorial.slug)) {
+          throw new Error(`${editorial.slug}: chưa có mục trong docs/content/corrections.md — ghi nhật ký trước khi đính chính.`);
         }
         if (existing.content === vi && existing.contentEn === en) {
           return `· ${editorial.slug} — ${existing.status}, không đổi`;
@@ -148,11 +194,30 @@ async function main() {
             title: existing.title,
             content: existing.content,
             editorId: ADMIN_ID,
-            note: sameText
-              ? "Trước khi đổi đích link (spine:build) — phần chữ giữ nguyên"
-              : `Trước khi đổi trình bày (spine:build): ${formatChange}`,
+            note: correction
+              ? `Trước khi đính chính: ${correction}`
+              : sameText
+                ? "Trước khi đổi đích link (spine:build) — phần chữ giữ nguyên"
+                : `Trước khi đổi trình bày (spine:build): ${formatChange}`,
           },
         });
+        if (correction) {
+          // Đổi claim thì đổi cả bảng nguồn, và cả bản en (docs/content-rules.md).
+          await tx.article.update({
+            where: { id: existing.id },
+            data: {
+              content: vi,
+              contentEn: en,
+              summary: editorial.summary.vi,
+              summaryEn: editorial.summary.en,
+              seoDescription: editorial.seoDescription.vi,
+              readingTime: readingTime(vi),
+              lastVerifiedAt: new Date(),
+            },
+          });
+          await writeSources(tx, existing.id, editorial, topic);
+          return `✔ ${editorial.slug} — ${existing.status}, đính chính`;
+        }
         await tx.article.update({ where: { id: existing.id }, data: { content: vi, contentEn: en } });
         return `✔ ${editorial.slug} — ${existing.status}, ${sameText ? "chỉ đổi đích link" : "đổi trình bày"}`;
       }
@@ -179,27 +244,7 @@ async function main() {
         update: data,
         create: { slug: editorial.slug, ...data },
       });
-      await tx.source.deleteMany({ where: { articleId: article.id } });
-      const accessed = new Date("2026-10-05T00:00:00Z");
-      await tx.source.createMany({
-        data: [
-          ...editorial.sources.map((s) => ({
-            articleId: article.id,
-            title: s.title,
-            publisher: s.publisher,
-            url: s.url,
-            doi: s.doi ?? null,
-            tier: s.tier,
-            accessedAt: new Date(`${s.accessed}T00:00:00Z`),
-          })),
-          {
-            articleId: article.id,
-            ...DOC_SOURCE,
-            title: `${DOC_SOURCE.title} — ${topic.source.heading}, tr. ${topic.source.pdfPages[0] - 1}–${topic.source.pdfPages[1] - 1}`,
-            accessedAt: accessed,
-          },
-        ],
-      });
+      await writeSources(tx, article.id, editorial, topic);
       if ((await tx.revision.count({ where: { articleId: article.id } })) === 0) {
         await tx.revision.create({
           data: {
@@ -216,6 +261,8 @@ async function main() {
     });
     console.log(`  ${outcome}`);
   }
+  // Bài đã xuất bản vừa đổi: báo invalidation, không chờ ISR (CLAUDE.md, "Ghi bảng Article thì báo invalidation").
+  if (correction && only) await revalidateSite([...only]);
 }
 
 main()

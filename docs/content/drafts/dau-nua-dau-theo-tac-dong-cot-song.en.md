@@ -6,25 +6,30 @@ The NHS advises calling emergency services if you or your child:
 
 - have a headache that came on **suddenly and is extremely painful**;
 - have problems speaking or remembering things;
+- feel drowsy or confused;
+- have a seizure or fit;
 - lose your vision, or have blurred or double vision;
 - have a very high temperature and symptoms of meningitis;
-- cannot move, or have weakness in the arm, leg or face on one side of the body.
+- cannot move, or have weakness in the arm, leg or face on one side of the body;
+- have recently had a head injury.
 
-MedlinePlus also advises calling emergency services for the worst headache of your life, or speech, vision or movement problems or loss of balance — especially if earlier migraines never caused them. A sudden, explosive headache needs medical attention right away because it may be due to a ruptured blood vessel in the brain. Headache with fever, stiff neck, nausea and vomiting, or newly starting headaches — especially over age 50 — also need medical help right away (MedlinePlus). The NHS advises an urgent GP appointment if a migraine attack has lasted longer than 72 hours, or if aura symptoms last longer than 1 hour at a time.
+The NHS headaches page also advises calling 999 or going to A&E if a headache comes with numbness or weakness in the body or face, or difficulty speaking, balancing, walking or remembering things; and **asking for an urgent GP appointment or getting help from 111** if a headache comes with vision or eye problems.
 
-Some of the quoted sections below are named after symptoms such as difficulty speaking, double vision or mild paralysis of the upper limb. According to the NHS, problems speaking, double vision, or weakness in the arm, leg or face on one side of the body are reasons to call emergency services, as in the list above.
+Do not drive yourself to A&E (NHS). MedlinePlus advises getting medical help right away if you have a headache after a blow to your head, or a headache along with a stiff neck, fever, confusion, loss of consciousness, or pain in the eye or ear. The NHS advises an urgent GP appointment or getting help from 111 if you have a migraine attack and it has lasted longer than 72 hours, aura symptoms last longer than 1 hour at a time, or you are pregnant or have just had a baby; and seeing a GP if your attacks are severe or getting worse or lasting longer than usual, happen more than once a week, or are difficult to control.
+
+Some of the quoted sections below are named after symptoms such as difficulty speaking, double vision, drooping eyelid, numbness or mild paralysis of the upper limb. According to the NHS, problems speaking, double vision, or numbness or weakness in the body, limbs or face with a headache are reasons to call emergency services, and a headache with eye problems needs an urgent appointment, as above.
 
 ## What is migraine?
 
-According to NINDS, migraine is a health condition that is **more than having a bad headache**. One of the most common symptoms of a migraine episode is moderate to severe throbbing pain that usually happens on one side of the head. MedlinePlus says it may come with nausea, vomiting, or sensitivity to light and sound.
+According to NINDS, migraine is a health condition that is **more than having a bad headache**. One of the most common symptoms of a migraine episode is moderate to severe throbbing pain that usually happens on one side of the head. MedlinePlus (U.S. National Library of Medicine) says it may come with other symptoms such as nausea and weakness, and you may be sensitive to light and sound.
 
 According to the NHS, migraine attacks usually last between 4 hours and 3 days. Only some people have an **aura**: NINDS says auras appear about 10 minutes to an hour before the episode and usually last no more than an hour. The most common type is migraine without aura (NINDS).
 
 ## What is known about cause and treatment
 
-The NHS says it is not known what causes migraine, but that it happens when there are changes to nerves and blood vessels in the brain. According to NINDS, current research shows that migraine head pain happens when nerve signals, brain chemicals and blood vessels are not working properly in the brain; MedlinePlus notes that the exact chain of events remains unclear.
+The NHS says it is not known what causes migraine, but that it happens when there are changes to nerves and blood vessels in the brain. According to NINDS, current research shows that migraine head pain happens when nerve signals, brain chemicals and blood vessels are not working properly in the brain; MedlinePlus says researchers believe that migraine has a genetic cause.
 
-There is no specific test to prove that a headache is a migraine, and only a health professional can determine whether symptoms are due to migraine or another condition (MedlinePlus). There is currently no cure for migraine, but treatments can help manage symptoms (NINDS).
+To diagnose migraine, a health care provider takes your medical history, asks about your symptoms and does a physical and neurological exam; an important part is ruling out other conditions that could be causing the symptoms, so you may also have blood tests, an MRI or CT scan, or other tests (MedlinePlus). There is currently no cure for migraine, but treatments can help manage symptoms (NINDS).
 
 ## Symptoms described in the document
 

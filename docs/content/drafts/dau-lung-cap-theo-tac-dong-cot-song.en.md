@@ -11,17 +11,23 @@ The NHS advises calling emergency services or going to A&E if back pain comes wi
 - chest pain;
 - pain that started after a serious accident.
 
-MedlinePlus advises contacting a health professional right away for back pain with signs such as unexplained fever, a history of cancer, pain travelling below the knee, pain that is worse lying down or wakes you at night, weakness or numbness in the buttocks, thigh, leg or pelvis, or difficulty walking or keeping your balance. MedlinePlus also advises contacting a health professional if an episode has lasted longer than 4 weeks.
+Do not drive yourself to A&E — ask someone to drive you or call for an ambulance (NHS).
+
+The NHS advises asking for an **urgent GP appointment or getting help from 111** if you have back pain and feel hot, cold, shivery or generally unwell, or if it is severe pain that starts suddenly or is getting worse quickly.
+
+The NHS advises seeing a doctor if you have back pain and: it does not improve after treating it at home for a few weeks; it stops you doing your day-to-day activities; you are worried about the pain or struggling to cope; you have lost weight without trying to; there is a lump or swelling in your back, or your back has changed shape; it does not improve after resting or is worse at night; it is worse when sneezing, coughing or pooing; or it is coming from the top of your back (between your shoulders) rather than your lower back.
+
+NIAMS (U.S. National Institute of Arthritis and Musculoskeletal and Skin Diseases) also advises seeing a doctor if the pain does not improve after a few weeks, or if you have numbness and tingling; severe back pain that does not improve with medication; back pain after a fall or injury; or back pain along with trouble urinating, weakness, pain or numbness in your legs, fever, or weight loss you did not intend. MedlinePlus advises calling your health care provider if your back pain is severe or does not improve after three days.
 
 According to the NHS, back pain is very rarely a sign of a serious problem such as a broken bone, cancer or an infection.
 
 ## What is acute back pain?
 
-According to MedlinePlus (U.S. National Library of Medicine), low back pain is pain felt in the lower back, possibly with stiffness, reduced movement and difficulty standing straight. **Acute back pain** can last from a few days to a few weeks.
+According to MedlinePlus (U.S. National Library of Medicine), back pain is one of the most common medical problems, affecting 8 out of 10 people at some point during their lives; it can range from a dull, constant ache to a sudden, sharp pain. **Acute back pain** comes on suddenly and usually lasts from a few days to a few weeks (MedlinePlus; NIAMS — U.S. National Institute of Arthritis and Musculoskeletal and Skin Diseases).
 
-It usually starts just after lifting something heavy, moving suddenly, sitting in one position for a long time, or an injury or accident. MedlinePlus says acute low back pain is most often caused by a sudden injury to the muscles and ligaments that support the back; the pain may be caused by muscle spasms or by a strain or tear in the muscles and ligaments. The NHS also names a pulled muscle (strain) as a common cause.
+The NHS says back pain can have many causes, it is not always obvious what causes it, and it often gets better on its own; a common cause is an injury like a pulled muscle (strain).
 
-Back pain usually improves within a few weeks but can sometimes last longer or keep coming back (NHS); MedlinePlus says most people improve or recover within 4 to 6 weeks, often sooner. MedlinePlus also notes that bed rest is not recommended.
+Back pain usually improves within a few weeks but can sometimes last longer or keep coming back (NHS). Most back pain goes away on its own, though it may take a while; staying in bed for more than 1 or 2 days can make it worse (MedlinePlus).
 
 ## Acute versus chronic
 
