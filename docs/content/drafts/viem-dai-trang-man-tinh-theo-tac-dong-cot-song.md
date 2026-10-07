@@ -2,27 +2,27 @@
 
 ## ⚠️ Dấu hiệu cần đi khám ngay
 
-**Gọi cấp cứu hoặc đến khoa cấp cứu ngay** khi (NHS): đau bụng dữ dội; chảy máu hậu môn không ngừng; đi ngoài ra nhiều máu hoặc cục máu đông lớn; nôn ra máu, nôn ra phân, hoặc chất nôn trông như bã cà phê. Đừng tự lái xe đi.
+**Gọi cấp cứu hoặc đến khoa cấp cứu ngay** khi (NHS): đau bụng dữ dội; chảy máu hậu môn không ngừng; đi ngoài ra nhiều máu hoặc cục máu đông lớn; nôn ra máu, nôn ra phân, hoặc chất nôn trông như bã cà phê hay như đất. Đừng tự lái xe đi — nhờ người chở hoặc gọi xe cấp cứu.
 
-**Khám gấp trong ngày** khi (NHS): tiêu chảy ra máu hoặc tiêu chảy rất nặng; phân đen hoặc đỏ sẫm; có triệu chứng đường ruột kèm sốt (hoặc thấy nóng, lạnh, run), tim đập nhanh, hay không đánh hơi, không đi ngoài được; sụt nhiều cân không rõ lý do; sờ thấy khối cứng hoặc chỗ sưng ở bụng; khó thở, hồi hộp kèm da nhợt hơn bình thường. Tiêu chảy quá 7 ngày, nôn quá 2 ngày, hoặc nôn liên tục không giữ được nước cũng cần gọi tư vấn y tế ngay.
+**Đi khám gấp** (NHS: xin lịch khám gấp hoặc gọi đường dây tư vấn y tế) khi: chảy máu hậu môn hoặc tiêu chảy ra máu; phân đen hoặc đỏ sẫm; có triệu chứng của viêm loét đại tràng (như tiêu chảy, đau bụng) kèm một trong các dấu hiệu: tiêu chảy rất nặng, sốt (hoặc thấy nóng, lạnh, run), tim đập nhanh, không đánh hơi hoặc không đi ngoài được; sụt nhiều cân không rõ lý do; sờ thấy khối cứng hoặc chỗ sưng ở bụng; khó thở, hồi hộp kèm da nhợt hơn bình thường. Tiêu chảy quá 7 ngày, nôn quá 2 ngày, hoặc nôn liên tục không giữ được nước cũng cần gọi tư vấn y tế ngay.
 
-NHS khuyên đi khám khi đi ngoài thay đổi khác thường với bạn — phân lỏng hơn, tiêu chảy hay táo bón, đi nhiều hơn hoặc ít hơn — có máu trong phân, hay đau bụng, đầy bụng kéo dài: đây cũng là những triệu chứng có thể gặp trong ung thư đại tràng, và phát hiện sớm thì dễ chữa hơn. Triệu chứng của bệnh Crohn giống nhiều bệnh đường ruột khác; NHS khuyên **đừng tự chẩn đoán**.
+NHS khuyên đi khám khi đi ngoài thay đổi khác thường với bạn — phân lỏng hơn, tiêu chảy hay táo bón, đi nhiều hơn hoặc ít hơn — có máu trong phân, đau bụng, đầy bụng, hoặc rất mệt hay khó thở (dấu hiệu thiếu máu): đây cũng là những triệu chứng có thể gặp trong ung thư ruột (đại trực tràng), và nếu đúng là ung thư, phát hiện sớm có thể giúp điều trị dễ hơn. Triệu chứng của bệnh Crohn có thể giống nhiều bệnh đường ruột khác; NHS khuyên **đừng tự chẩn đoán**.
 
-Tài liệu dưới đây gọi chung các triệu chứng này là viêm đại tràng mạn tính. Phần trích không phải là chẩn đoán và không thay cho thăm khám.
+Tài liệu dưới đây xếp chín triệu chứng của mình vào viêm đại tràng mạn tính. Phần trích không phải là chẩn đoán và không thay cho thăm khám.
 
 ## Viêm loét đại tràng và bệnh Crohn
 
-Theo Viện Đái tháo đường, Tiêu hoá và Thận Hoa Kỳ (NIDDK), **viêm loét đại tràng** là một bệnh viêm ruột mạn tính: phản ứng bất thường của hệ miễn dịch gây viêm và loét ở lớp niêm mạc trong của đại tràng. Bệnh gặp ở mọi lứa tuổi nhưng hay khởi phát ở tuổi 15–30. Các chuyên gia chưa chắc chắn nguyên nhân, nhưng cho rằng gen, phản ứng miễn dịch bất thường, hệ vi sinh đường ruột và môi trường đều góp phần. Bác sĩ chẩn đoán dựa trên triệu chứng, tiền sử, thăm khám và xét nghiệm máu, xét nghiệm phân, nội soi đại tràng. Điều trị thường bằng thuốc giảm viêm để đưa bệnh vào giai đoạn lui bệnh và giữ nó ở đó; đôi khi cần phẫu thuật.
+Theo Viện Đái tháo đường, Tiêu hoá và Thận Hoa Kỳ (NIDDK), **viêm loét đại tràng** là một bệnh viêm ruột mạn tính: phản ứng bất thường của hệ miễn dịch gây viêm và loét ở lớp niêm mạc trong của đại tràng. Bệnh gặp ở mọi lứa tuổi nhưng hay khởi phát ở tuổi 15–30. Các chuyên gia chưa chắc chắn nguyên nhân, nhưng cho rằng gen, phản ứng miễn dịch bất thường, hệ vi sinh đường ruột và môi trường đều góp phần. Bác sĩ chẩn đoán dựa trên triệu chứng, tiền sử, thăm khám và xét nghiệm máu, xét nghiệm phân, nội soi đại tràng. Điều trị thường bằng thuốc giảm viêm để đưa bệnh vào giai đoạn lui bệnh và giữ nó ở đó; trong một số trường hợp, bác sĩ có thể đề nghị phẫu thuật để điều trị bệnh hoặc biến chứng.
 
 NHS (Dịch vụ Y tế Quốc gia Anh) mô tả triệu chứng thường gặp của viêm loét đại tràng: tiêu chảy có thể lẫn máu, nhầy hoặc mủ; đau bụng, nhất là phía dưới bên trái, có thể đỡ sau khi đi ngoài; mót đi ngoài thường xuyên, gấp hoặc về đêm; chảy máu hậu môn; đầy hơi. Bệnh có những đợt bùng phát xen giai đoạn ít hoặc không có triệu chứng; đợt bùng phát có thể kèm sốt, đau khớp, loét miệng, đỏ mắt, và có thể bị khởi phát bởi căng thẳng, nhiễm trùng, đổi thuốc, thuốc giảm đau chống viêm (NSAID) như ibuprofen hay aspirin, hoặc một số thức ăn.
 
-**Bệnh Crohn** là bệnh lâu dài trong đó một phần ống tiêu hoá bị viêm (NHS). Triệu chứng tuỳ đoạn bị viêm: tiêu chảy, máu hoặc nhầy trong phân, đau bụng, táo bón, đau hậu môn, rất mệt, chán ăn và sụt cân; trẻ em có thể chậm lớn. Hiện chưa chữa khỏi được, nhưng có thuốc giúp phòng và kiểm soát triệu chứng, người bệnh được theo dõi bởi bác sĩ chuyên khoa tiêu hoá.
+**Bệnh Crohn** là bệnh lâu dài trong đó một phần ống tiêu hoá bị viêm (NHS). Triệu chứng tuỳ đoạn bị viêm: tiêu chảy, máu hoặc nhầy trong phân, đau bụng, táo bón, đau hậu môn, rất mệt, chán ăn và sụt cân; trẻ em có thể chậm lớn. Hiện chưa chữa khỏi được, nhưng có cách điều trị có thể giúp phòng ngừa hoặc kiểm soát triệu chứng, người bệnh được theo dõi bởi bác sĩ chuyên khoa tiêu hoá.
 
 ## Hội chứng ruột kích thích
 
 NHS cho biết triệu chứng của bệnh Crohn có thể giống các bệnh đường ruột khác như **hội chứng ruột kích thích (IBS)**, viêm loét đại tràng, bệnh túi thừa và bệnh celiac — vì vậy cần bác sĩ phân biệt.
 
-Triệu chứng chính của IBS theo NHS: đau hoặc co thắt bụng, thường nặng hơn sau ăn và đỡ sau khi đi ngoài; đầy bụng; tiêu chảy, có khi phải đi gấp; táo bón, rặn mà không thấy đi hết. Có thể kèm nhầy trong phân, đầy hơi, mệt mỏi, buồn nôn, đau lưng. Triệu chứng lúc tăng lúc giảm, đôi khi không rõ lý do, đôi khi do rượu, cà phê, đồ cay hay nhiều dầu mỡ, căng thẳng và lo âu, hoặc dùng kháng sinh thường xuyên. NHS khuyên đi khám nếu nghĩ mình bị IBS và triệu chứng đã quá 4 tuần, để bác sĩ làm xét nghiệm loại trừ bệnh khác.
+Triệu chứng chính của IBS theo NHS: đau hoặc co thắt bụng, thường nặng hơn sau ăn và đỡ sau khi đi ngoài; đầy bụng; tiêu chảy, có khi phải đi gấp; táo bón, rặn mà không thấy đi hết. Có thể kèm nhầy trong phân, đầy hơi, mệt mỏi, buồn nôn, đau lưng. Triệu chứng lúc tăng lúc giảm, đôi khi không rõ lý do, đôi khi được khởi phát bởi rượu, cà phê, đồ cay hay nhiều dầu mỡ, căng thẳng và lo âu, hoặc dùng kháng sinh thường xuyên. NHS khuyên đi khám nếu nghĩ mình bị IBS và triệu chứng đã quá 4 tuần, để bác sĩ làm xét nghiệm loại trừ bệnh khác.
 
 ## Nội dung theo phương pháp Tác động cột sống
 

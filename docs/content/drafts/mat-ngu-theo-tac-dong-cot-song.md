@@ -2,25 +2,25 @@
 
 ## ⚠️ Khi nào nên đi khám
 
-**Hồi hộp kèm đau ngực, khó thở hoặc choáng ngất là cấp cứu.** Tài liệu dưới đây có thể "Hồi hộp khó ngủ". NHS khuyên gọi cấp cứu hoặc đến khoa cấp cứu ngay khi đang hồi hộp, tim đập nhanh mà không dứt, hoặc kèm **đau ngực, khó thở, cảm thấy sắp ngất hay ngất** — và không tự lái xe đi. Hồi hộp thường vô hại, nhưng nên đi khám khi cơn cứ trở lại hoặc dày hơn, kéo dài quá vài phút, hoặc bạn có bệnh tim hay trong nhà có người bị bệnh tim.
+**Hồi hộp kèm đau ngực, khó thở, cảm thấy sắp ngất hay ngất là cấp cứu.** Tài liệu dưới đây có mục "Hồi hộp khó ngủ". NHS khuyên gọi cấp cứu hoặc đến khoa cấp cứu ngay nếu bạn đang bị hồi hộp mà cơn không dứt, hoặc hồi hộp kèm bất kỳ dấu hiệu nào sau đây: **đau ngực, khó thở, cảm thấy sắp ngất hay ngất** — và không tự lái xe đi. Nếu đã có các dấu hiệu ấy nhưng nay đã dứt, NHS khuyên xin khám gấp. Hồi hộp — tim đập nhanh, không đều, thình thịch hay rộn lên — thường vô hại, nhưng nên đi khám khi cơn cứ trở lại hoặc dày hơn, kéo dài quá vài phút, hoặc bạn có bệnh tim hay gia đình có tiền sử bệnh tim.
 
 NHS khuyên đi khám khi: thay đổi thói quen ngủ không giúp được; khó ngủ đã nhiều tháng; hoặc mất ngủ ảnh hưởng tới sinh hoạt đến mức khó xoay xở. MedlinePlus khuyên liên hệ nhân viên y tế khi mất ngủ đã thành vấn đề.
 
-Ngủ ngáy to, **ngừng thở rồi thở lại** trong khi ngủ, thở hổn hển hay sặc lúc ngủ, ban ngày lúc nào cũng rất mệt là dấu hiệu của ngưng thở khi ngủ — NHS khuyên đi khám, vì bệnh này có thể nghiêm trọng nếu không được chẩn đoán và điều trị. Buồn ngủ thì không lái xe (NHS, MedlinePlus). Hỏi bác sĩ trước khi dùng bất cứ thứ gì để ngủ (NHS).
+NHS khuyên đi khám nếu bạn có bất kỳ triệu chứng chính nào của ngưng thở khi ngủ, như: **ngừng thở rồi thở lại** trong khi ngủ; thở hổn hển, khịt hay sặc lúc ngủ; ban ngày lúc nào cũng rất mệt — vì bệnh này có thể nghiêm trọng nếu không được chẩn đoán và điều trị. Ngáy to cũng là một triệu chứng NHS liệt kê. Buồn ngủ thì không lái xe (NHS, MedlinePlus). Hỏi bác sĩ trước khi dùng bất cứ thứ gì để ngủ (NHS).
 
 ## Mất ngủ là gì
 
 Theo NHS (Dịch vụ Y tế Quốc gia Anh), mất ngủ là thường xuyên gặp khó khăn với giấc ngủ: khó vào giấc, thức giấc nhiều lần trong đêm, nằm thao thức, dậy sớm rồi không ngủ lại được, ngủ dậy vẫn mệt, ban ngày mệt mỏi, cáu gắt và khó tập trung. Mất ngủ dưới 3 tháng gọi là mất ngủ ngắn hạn; từ 3 tháng trở lên là mất ngủ dài hạn.
 
-Viện Tim, Phổi và Máu Hoa Kỳ (NHLBI) mô tả mất ngủ là một rối loạn giấc ngủ thường gặp, xảy ra **ngay cả khi có đủ thời gian và chỗ ngủ phù hợp**. Mất ngủ mạn tính là khi xảy ra từ 3 đêm mỗi tuần, kéo dài hơn 3 tháng và không giải thích được hoàn toàn bằng một vấn đề sức khoẻ khác. Theo NHLBI, thức giấc thường xuyên trong đêm là triệu chứng hay gặp nhất, chủ yếu ở người lớn tuổi; nằm lâu mới ngủ được thì hay gặp hơn ở người trẻ. Mất ngủ có thể làm giảm trí nhớ và sự tập trung, khiến người bệnh lo âu, buồn chán hoặc dễ cáu.
+Viện Tim, Phổi và Máu Hoa Kỳ (NHLBI) mô tả mất ngủ là một rối loạn giấc ngủ thường gặp, xảy ra **ngay cả khi có đủ thời gian và chỗ ngủ phù hợp**. Mất ngủ mạn tính là khi xảy ra từ 3 đêm mỗi tuần, kéo dài hơn 3 tháng và không giải thích được hoàn toàn bằng một vấn đề sức khoẻ khác. Theo NHLBI, thức giấc thường xuyên trong đêm là triệu chứng hay gặp nhất, chủ yếu ở người lớn tuổi; nằm lâu mới ngủ được thì hay gặp hơn ở người trẻ. Mất ngủ có thể ảnh hưởng tới trí nhớ và sự tập trung, khiến người bệnh lo âu, buồn chán hoặc dễ cáu.
 
 Nhu cầu ngủ mỗi người mỗi khác. Theo NHS, trung bình người lớn cần 7–9 giờ, trẻ em 9–13 giờ, trẻ nhỏ và trẻ sơ sinh 12–17 giờ; lúc nào ban ngày cũng mệt thì có lẽ bạn đang ngủ không đủ.
 
 ## Nguyên nhân thường gặp và cách y khoa tiếp cận
 
-NHS nêu các nguyên nhân thường gặp nhất: căng thẳng, lo âu hoặc trầm cảm; tiếng ồn; phòng quá nóng hay quá lạnh; giường không thoải mái; rượu, cà phê hoặc nicotin; ma tuý; lệch múi giờ; làm việc theo ca. Một số bệnh và thuốc cũng gây mất ngủ — trong đó có cường giáp, mãn kinh, hội chứng chân không yên, bệnh Alzheimer, bệnh Parkinson. Đau kéo dài, ngưng thở khi ngủ và ác mộng cũng làm mất giấc ngủ ngon. MedlinePlus (Thư viện Y khoa Quốc gia Hoa Kỳ) bổ sung: đi ngủ mỗi đêm một giờ, ngủ ngày, dùng điện thoại hay ti vi trên giường, đau, phải dậy đi tiểu đêm; và theo tuổi, nhiều người khó vào giấc hơn và hay thức giấc hơn.
+NHS nêu các nguyên nhân thường gặp nhất: căng thẳng, lo âu hoặc trầm cảm; tiếng ồn; phòng quá nóng hay quá lạnh; giường không thoải mái; rượu, caffeine hoặc nicotin; ma tuý; lệch múi giờ; làm việc theo ca. Một số bệnh và thuốc cũng có thể gây mất ngủ — trong đó có cường giáp, mãn kinh, hội chứng chân không yên, bệnh Alzheimer, bệnh Parkinson. Đau kéo dài, ngưng thở khi ngủ và ác mộng cũng làm mất giấc ngủ ngon. MedlinePlus (Thư viện Y khoa Quốc gia Hoa Kỳ) bổ sung: đi ngủ mỗi đêm một giờ, ngủ ngày, dùng điện thoại hay ti vi trên giường, đau, phải dậy đi tiểu đêm; và theo tuổi, nhiều người khó vào giấc hơn và hay thức giấc hơn.
 
-Theo NHS và MedlinePlus, mất ngủ thường đỡ khi thay đổi thói quen ngủ. Bác sĩ sẽ tìm nguyên nhân — kể cả xem lại thuốc đang dùng và các bệnh khác — và có thể đề nghị **liệu pháp nhận thức – hành vi cho mất ngủ (CBT-I)**. NHS cho biết thuốc ngủ hiện ít được kê, và nếu kê thì chỉ vài ngày đến tối đa vài tuần, vì thuốc có thể gây tác dụng phụ nghiêm trọng và gây lệ thuộc. NHLBI ghi nhận mất ngủ mạn tính làm tăng nguy cơ tăng huyết áp, bệnh mạch vành, đái tháo đường và ung thư.
+Theo NHS và MedlinePlus, mất ngủ thường đỡ khi thay đổi thói quen ngủ. Bác sĩ sẽ tìm nguyên nhân — kể cả xem lại thuốc đang dùng và các bệnh khác — và có thể đề nghị **liệu pháp nhận thức – hành vi cho mất ngủ (CBT-I)**. NHS cho biết thuốc ngủ hiện ít được kê. Thuốc ngủ có thể gây tác dụng phụ nghiêm trọng và gây lệ thuộc. Thuốc ngủ chỉ được kê vài ngày, tối đa vài tuần, khi: mất ngủ rất nặng; các cách điều trị khác không hiệu quả. NHLBI ghi nhận mất ngủ mạn tính làm tăng nguy cơ tăng huyết áp, bệnh mạch vành, đái tháo đường và ung thư.
 
 ## Nội dung theo phương pháp Tác động cột sống
 

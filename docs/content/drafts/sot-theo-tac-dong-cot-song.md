@@ -2,11 +2,11 @@
 
 ## ⚠️ Khi nào sốt là cấp cứu
 
-**Trẻ co giật do sốt lần đầu: gọi cấp cứu.** NHS khuyên gọi cấp cứu hoặc đến khoa cấp cứu khi trẻ co giật lần đầu, cơn co giật kéo dài hơn 5 phút, trẻ khó thở, co cứng và giật chỉ ở một bên người, trẻ buồn ngủ hơn bình thường quá 1 giờ sau cơn, hoặc có hơn một cơn trong 24 giờ. Trẻ còn đang co giật hoặc bất tỉnh thì gọi cấp cứu, không tự chở đi. Trong lúc chờ: ghi giờ cơn bắt đầu và kết thúc, đỡ đầu trẻ bằng tay hoặc vật mềm, dẹp vật nguy hiểm quanh trẻ; **không** giữ chặt hay di chuyển trẻ, **không** cho gì vào miệng trẻ, không cởi đồ hay lau nước lạnh để hạ nhiệt (NHS). Tài liệu dưới đây có đoạn đặt tay lên lưng trẻ đang co giật — đó không thay thế việc gọi cấp cứu.
+**Trẻ co giật do sốt lần đầu: gọi cấp cứu.** NHS khuyên gọi cấp cứu hoặc đến khoa cấp cứu khi trẻ co giật lần đầu, cơn co giật kéo dài hơn 5 phút, trẻ khó thở, co cứng và giật chỉ ở một bên người, trẻ buồn ngủ hơn bình thường quá 1 giờ sau cơn, hoặc có hơn một cơn trong 24 giờ. Trẻ còn đang co giật hoặc bất tỉnh thì gọi cấp cứu, không tự chở đi. Trong lúc chờ: ghi giờ cơn bắt đầu và kết thúc, đỡ đầu trẻ bằng tay hoặc vật mềm, dẹp vật nguy hiểm quanh trẻ; **không** giữ chặt hay di chuyển trẻ, **không** cho gì vào miệng trẻ, không cởi đồ hay lau nước lạnh để hạ nhiệt (NHS). Tài liệu dưới đây có đoạn mô tả việc đặt tay lên lưng trẻ đang co giật — đó là quan sát của phương pháp, không phải cách xử trí cơn co giật, và không thay thế việc gọi cấp cứu.
 
 Với mọi lứa tuổi, MedlinePlus khuyên gọi cấp cứu khi sốt kèm: trẻ khóc không dỗ được; khó đánh thức hoặc không đánh thức được; lú lẫn; không đi được; khó thở dù đã thông mũi; môi, lưỡi hoặc móng tím tái; đau đầu dữ dội; cứng cổ; trẻ không chịu cử động tay hay chân; co giật.
 
-NHS khuyên gọi cấp cứu khi trẻ sốt và có thêm: ban không mất khi ấn cốc thủy tinh lên; sợ ánh sáng; tay chân lạnh bất thường; da hoặc môi xanh, xám, nhợt hay loang lổ; rất kích động hoặc lú lẫn; khó thở, thở rít hoặc thở rất nhanh. Trẻ dưới 3 tháng sốt từ 38°C, hoặc 3–6 tháng sốt từ 39°C, cần được nhân viên y tế tư vấn ngay.
+NHS khuyên gọi cấp cứu khi trẻ sốt và có thêm: ban không mất khi ấn cốc thủy tinh lên; sợ ánh sáng; tay chân lạnh bất thường; da hoặc môi xanh, xám, nhợt hay loang lổ; rất kích động (khóc không ngừng) hoặc lú lẫn; khó thở (thở rên, bụng hóp vào dưới sườn), hụt hơi hoặc thở rất nhanh; không phản ứng như bình thường, hoặc không muốn bú, ăn hay chơi. Trẻ dưới 3 tháng sốt từ 38°C, hoặc 3–6 tháng sốt từ 39°C, cần được nhân viên y tế tư vấn ngay.
 
 **Sốt rét là cấp cứu** và cần được điều trị nhanh bằng thuốc chống sốt rét; người bệnh có thể tử vong nếu không được chẩn đoán và điều trị kịp thời (NHS). Ai sốt sau khi đến vùng có sốt rét trong 12 tháng qua cần đi khám ngay. **Thương hàn** được điều trị bằng kháng sinh; đau bụng đột ngột nặng dần, phân đen hoặc đỏ sẫm, nôn ra máu hoặc chất như bã cà phê là lý do gọi cấp cứu (NHS).
 
@@ -20,13 +20,13 @@ MedlinePlus cho biết cảm lạnh hay nhiễm virus thông thường đôi khi
 
 Co giật do sốt đôi khi xảy ra khi trẻ sốt cao, thường ở trẻ từ 6 tháng đến 6 tuổi, và thường kéo dài 2–3 phút (NHS). Trẻ có thể co cứng, giật, bất tỉnh, không đáp lại, và lơ mơ hay cáu kỉnh tới 1 giờ sau cơn. Lần co giật đầu tiên, trẻ cần được khám ở bệnh viện (NHS).
 
-Về hậu quả, MedlinePlus viết: co giật do sốt đơn thuần là vô hại, và không có bằng chứng chúng gây tử vong, tổn thương não, động kinh hay khó khăn học tập. NHS cũng nói cơn co giật do sốt khó có khả năng gây hại hay để lại ảnh hưởng lâu dài. Phần lớn trẻ hết bị co giật do sốt khi lên 5 tuổi (MedlinePlus). Ở trẻ nhỏ co giật lần đầu, bác sĩ cần loại trừ nguyên nhân khác, nhất là viêm màng não (MedlinePlus) — đây là lý do phải đi khám dù trẻ đã hết cơn.
+Về hậu quả, MedlinePlus viết: co giật do sốt đơn thuần là vô hại, và không có bằng chứng chúng gây tử vong, tổn thương não, động kinh hay khó khăn học tập. NHS cũng nói cơn co giật do sốt khó có khả năng gây hại hay để lại ảnh hưởng lâu dài. Phần lớn trẻ hết bị co giật do sốt khi lên 5 tuổi (MedlinePlus). Trẻ từng co giật do sốt có nguy cơ động kinh về sau tăng nhẹ, nhưng hiếm (NHS). Ở trẻ nhỏ co giật lần đầu, bác sĩ cần loại trừ nguyên nhân khác, nhất là viêm màng não (MedlinePlus) — đây là lý do phải đi khám dù trẻ đã hết cơn.
 
 ## Sốt rét và thương hàn
 
 **Sốt rét** là bệnh nhiễm trùng nặng do muỗi nhiễm bệnh đốt, gặp ở vùng nhiệt đới gồm nhiều vùng rộng của châu Phi và châu Á (NHS). Triệu chứng gồm sốt cao hoặc cảm giác nóng, lạnh, run; vã mồ hôi; đau đầu, lú lẫn; rất mệt và buồn ngủ (nhất là ở trẻ); buồn nôn, nôn, đau bụng, tiêu chảy; vàng da. Triệu chứng thường xuất hiện 7–18 ngày sau khi bị đốt (NHS). Sốt rét được điều trị bằng thuốc chống sốt rét; biến chứng có thể gồm nhiễm trùng não, thiếu máu do vỡ hồng cầu, suy thận, suy gan và suy hô hấp (MedlinePlus).
 
-**Thương hàn** là bệnh nhiễm trùng lây qua thức ăn hoặc nước không sạch (NHS). Triệu chứng gồm sốt cao có thể tăng dần trong vài ngày, đau đầu, ho, ớn lạnh, mệt, táo bón, chán ăn; đau bụng và tiêu chảy thường đến sau. Bệnh được điều trị bằng kháng sinh, cần uống hết liều dù đã thấy khỏe (NHS). Không điều trị, thương hàn có thể gây chảy máu hoặc thủng ruột và viêm phúc mạc (MedlinePlus).
+**Thương hàn** là bệnh nhiễm trùng lây qua thức ăn hoặc nước không sạch (NHS). Triệu chứng gồm sốt cao có thể tăng dần trong vài ngày, đau đầu, ho, ớn lạnh, mệt, táo bón, chán ăn; đau bụng và tiêu chảy thường đến sau. Bệnh được điều trị bằng kháng sinh, cần uống hết liều dù đã thấy khỏe (NHS). Không điều trị, thương hàn có thể gây chảy máu trong và viêm phúc mạc (NHS); biến chứng MedlinePlus nêu còn có thủng ruột và suy thận.
 
 ## Nội dung theo phương pháp Tác động cột sống
 
@@ -45,7 +45,7 @@ Về hậu quả, MedlinePlus viết: co giật do sốt đơn thuần là vô h
 
 > Thường xảy ra co giật ảnh hưởng tới não, nếu không giải quyết kịp thời thường để lại di chứng bại não. Nhiệt độ toàn thân nóng cao, không được để chân lạnh.
 
-> Úp bàn tay vào T3,T4 ta thấy mỗi lúc lên cơn giật, đốt sống T3,T4 máy động, ta phải thao tác rất nhẹ ở lớp ngoài và theo dõi cường độ giật sẽ giảm.
+> Úp bàn tay vào T3,T4 ta thấy mỗi lúc lên cơn giật, đốt sống T3,T4 máy động…
 
 Đốt sống tài liệu nêu:
 

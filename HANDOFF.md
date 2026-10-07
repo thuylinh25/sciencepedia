@@ -19,7 +19,7 @@ bằng chứng khoa học.
 | PR | Nội dung |
 |---|---|
 | [#12](https://github.com/thuylinh25/sciencepedia/pull/12) | Nhóm con của Sức khoẻ hiện thành **thẻ** trên trang lĩnh vực. Thêm khung lưu ý `health`/`traditional`, script `taxonomy:health` và icon `Activity`/`Hand`/`PersonStanding`. Merge commit `ee70edd`. |
-| #9–#11 + commit `195190c`, `ce3f79f` | Loạt **Tác động cột sống**: extract/build/import/publish, chỉ mục đốt sống ↔ bài trên Human Atlas, quyết định D-1…D-39. **3 bài đã PUBLISHED**: đau lưng cấp, đau thần kinh toạ, đau nửa đầu. |
+| #9–#11 + commit `195190c`, `ce3f79f` | Loạt **Tác động cột sống**: extract/build/import/publish, chỉ mục đốt sống ↔ bài trên Human Atlas, quyết định D-1…D-41. **3 bài đã PUBLISHED**: đau lưng cấp, đau thần kinh toạ, đau nửa đầu. |
 | [#13](https://github.com/thuylinh25/sciencepedia/pull/13) (session khác) | Thêm 2 bài Tác động cột sống **ở dạng bản nháp, `review.editor = pending`**: Đau lưng mãn tính (chủ đề II) và Huyết áp thấp (chủ đề V, `riskLevel high`, có khung cấp cứu đặt trước phần trích). Nguồn chỉ có MedlinePlus vì NHS/NINDS/NIAMS bị proxy mạng chặn. **Chưa qua science-editor, chưa import, chưa publish.** |
 | [#14](https://github.com/thuylinh25/sciencepedia/pull/14) | Thêm 3 bài Tác động cột sống, cũng ở dạng nháp với `review.editor = pending`: Thiểu năng tuần hoàn não (VI), Huyết áp cao (VII), Các bệnh về đau đầu (53 thể). Cả ba `riskLevel high`. Sửa máy: (a) "Giải tỏa trọng điểm …" trong văn xuôi không còn mở vai trọng điểm; (b) render bỏ mã trùng không bên; (c) mapping được so với đoạn trích sau khi thu dấu chấm dẫn. Nhánh `claude/cool-galileo-gyghv8`. |
 | [#10](https://github.com/thuylinh25/sciencepedia/pull/10) | D-13…D-38 (duyệt phiếu `proposals.md`). Thêm `apply` mới `keepRole`/`setSide`; `assign` nhận `regions`/`note`. "Vùng S" tô cả xương cùng (`atlasCodeOf`). Toàn kho còn 0 cờ review mở. |
@@ -36,14 +36,11 @@ bằng chứng khoa học.
 | Chủ đề (manifest id) | Trang | Trạng thái |
 |---|---|---|
 | `dau-lung-cap`, `dau-than-kinh-toa`, `dau-nua-dau` | 2–3, 7–11, 12–14 | PUBLISHED |
-| `dau-lung-man-tinh`, `huyet-ap-thap` | 4–6, 15–16 | nháp, đã ở `main` (#13) |
-| `thieu-nang-tuan-hoan-nao`, `huyet-ap-cao`, `dau-dau` | 17–32 | nháp (#14) |
-| `hen-suyen-ho-hap` | 33–34 | nháp, đã ở `main` (#16): 12 thể, nguồn NHS + NHLBI + MedlinePlus, `riskLevel high` |
-| `sot` | 35–38 | nháp, đã ở `main` (#16): 15 thể, 8 nguồn NHS + MedlinePlus; khung nêu co giật do sốt đơn thuần vô hại (MedlinePlus) — đối lập câu "di chứng bại não" của tài liệu, cần science-editor xem kỹ |
-| `nhieu-mo-hoi-so-gio` | 39 | nháp, đã ở `main` (#17): 5 thể, 6 mapping, nguồn NHS + MedlinePlus, `riskLevel normal` |
-| `benh-do-mo-hoi` | 40 | nháp, đã ở `main` (#18): 6 thể, 10 mapping, khung sốc nhiệt; câu "tác động C1 và S1,S2" (thể 6) không trích, không chỉ mục — chủ sản phẩm quyết |
-| `mat-ngu` | 41 | nháp (nhánh `claude/mat-ngu`): 6 thể, 14 mapping, nguồn NHS + MedlinePlus + NHLBI, `riskLevel normal`; khung nêu hồi hộp kèm đau ngực/khó thở/ngất là cấp cứu (thể 5). Mục 7 "Mất ngủ kéo dài" chỉ có tiêu đề trong bản scan → bỏ (D-39, chủ sản phẩm) |
-| `viem-dai-trang-man-tinh` | 42–43 | nháp (nhánh `claude/mat-ngu-muc-7`): 9 thể, 34 mapping, 6 nguồn NHS + NIDDK, `riskLevel high`. Không trích các câu "Chữa … lớp ngoài/trong" và câu tài liệu tự nhận "đạt kết quả khá"; đoạn viêm cấp đưa vào mục không áp dụng. Tài liệu viết "điều trị nội khoa rất hạn chế" — trái NIDDK (thuốc giảm viêm đưa bệnh vào lui bệnh); science-editor xem |
+| `dau-lung-man-tinh`, `huyet-ap-thap`, `thieu-nang-tuan-hoan-nao`, `huyet-ap-cao`, `dau-dau`, `hen-suyen-ho-hap`, `sot`, `nhieu-mo-hoi-so-gio`, `benh-do-mo-hoi` | 4–6, 15–40 | nháp. **science-editor PASS** (2 vòng, 2026-10-05; #19 sửa mục chặn vòng 1, D-39, D-40), chủ sản phẩm xác nhận → `editor = passed`. Góp ý không chặn còn treo: xem mô tả PR #19. |
+| `mat-ngu` | 41 | nháp: 6 thể, 14 mapping, nguồn NHS + MedlinePlus + NHLBI. science-editor PASS (2 vòng, 2026-10-07). Mục 7 chỉ có tiêu đề trong bản scan → bỏ (D-41). |
+| `viem-dai-trang-man-tinh` | 42–43 | nháp: 9 thể, 34 mapping, nguồn NHS + NIDDK, `riskLevel high`. science-editor PASS (2 vòng, 2026-10-07). Không trích câu "Chữa … lớp" và câu tự nhận "đạt kết quả khá". |
+
+**11 bài nháp trên: `transcription = passed` theo D-42** (chủ sản phẩm miễn đối chiếu bản chép với ảnh trang, 2026-10-07 — KHÔNG phải đã đối chiếu). Bước tiếp: người chạy `npm run spine:import -- --write --drafts-only` (ghi DRAFT; `--drafts-only` bỏ qua 3 bài đã PUBLISHED, vì bản nháp của chúng có "Cùng loạt" trỏ tới bài chưa xuất bản — đẩy lên là link 404) → thêm 11 slug vào `SERIES` của `scripts/spine-publish.ts` → người chạy `spine:publish`. **Còn mở:** chân trang MedlinePlus (A.D.A.M.) cấm dùng cho hệ AI — chủ sản phẩm chưa quyết giữ hay thay nguồn.
 
 **Cách làm một chủ đề:**
 1. Đọc `source/pages/pNN.md`.
@@ -163,7 +160,7 @@ Khám phá (menu)  → chỉ 7 lĩnh vực gốc (Category.parentId = null), đ�
 5. `sciencepedia/src/components/layout/site-header.tsx`: menu Khám phá. Giữ nguyên, chỉ liệt kê lĩnh vực gốc.
 6. `sciencepedia/scripts/seed-health-groups.ts`, `scripts/spine-*.ts`.
 7. `sciencepedia/content/tac-dong-cot-song/source/proposals.md`: Q-2 và P còn treo.
-8. `sciencepedia/content/tac-dong-cot-song/source/decisions.json`: D-1…D-39, chỉ thêm, không đánh số lại.
+8. `sciencepedia/content/tac-dong-cot-song/source/decisions.json`: D-1…D-41, chỉ thêm, không đánh số lại.
 9. `sciencepedia/src/lib/spine/schema.ts`, `assemble.ts`, `render.ts`, cùng các tệp biên tập mẫu ở `topics/`.
 
 ## 9. Kiểm tra sau khi triển khai

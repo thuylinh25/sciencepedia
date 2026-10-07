@@ -16,15 +16,21 @@ MedlinePlus advises seeking medical help right away when:
 
 **Stroke signs** that come on suddenly — numbness or weakness of the face, arm or leg (especially on one side); confusion or trouble speaking; trouble seeing; dizziness or loss of balance; severe headache with no known cause: call emergency services right away (MedlinePlus).
 
-**Seizures:** several forms in the document mention epilepsy and convulsions in children. MedlinePlus advises calling emergency services for a first seizure, a seizure lasting longer than 2 to 5 minutes, a person who does not wake up or return to normal afterwards, another seizure soon after, a seizure in water, a person who is pregnant, injured or has diabetes, or a seizure that is different from the person's usual pattern.
+**Seizures:** several forms in the document mention epilepsy and convulsions in children. During a seizure, MedlinePlus advises not holding the person down, not placing anything between their teeth (including fingers), and giving nothing by mouth until they are fully awake; a child who has a seizure during a high fever should be cooled slowly with lukewarm water, not put in a cold bath, and their doctor called. MedlinePlus advises calling emergency services for a first seizure, a seizure lasting longer than 2 to 5 minutes, a person who does not wake up or return to normal afterwards, another seizure soon after, a seizure in water, a person who is pregnant, injured or has diabetes, or a seizure that is different from the person's usual pattern.
 
 **Headache with very high blood pressure** — blurred vision, confusion, chest pain, shortness of breath, seizure, weakness or numbness of the limbs — may be malignant hypertension, a life-threatening emergency (MedlinePlus).
+
+**Accompanying symptoms can be emergencies of their own.** Some forms in the document mention chest pain, heart pain, vomiting blood, or bleeding during pregnancy:
+
+- chest discomfort (pressure, squeezing, fullness or pain, usually lasting more than a few minutes), shortness of breath, discomfort in one or both arms, the back, shoulders, neck, jaw or upper stomach: call emergency services, even if you are not sure it is a heart attack (MedlinePlus);
+- vomiting blood: contact a health professional or go to the emergency room — you need to be examined right away (MedlinePlus);
+- vaginal bleeding during pregnancy: treat it as a potential emergency and contact a health professional (MedlinePlus).
 
 ## What is a headache?
 
 According to MedlinePlus (U.S. National Library of Medicine), a headache is pain or discomfort in the head, scalp or neck; serious causes of headaches are rare.
 
-MedlinePlus describes three common types: **tension headaches** — the most common, usually caused by tight muscles and often linked to stress or anxiety; **migraine** — throbbing pain on one side of the head, sometimes with vision changes or sensitivity to light and sound; and **cluster headaches** — sharp, very painful headaches that occur daily for weeks or months and then go away for a long time.
+MedlinePlus describes three common types: **tension headaches** — the most common, likely caused by tight muscles in the shoulders, neck, scalp and jaw, and may be related to stress, depression or anxiety; **migraine** — throbbing, pounding or pulsating pain on one side of the head, often with vision changes, sensitivity to light or sound, or nausea; and **cluster headaches** — sharp, very painful headaches that occur daily, sometimes several times a day, for months, then go away for weeks to months.
 
 ## Content according to the Spinal Impact method
 

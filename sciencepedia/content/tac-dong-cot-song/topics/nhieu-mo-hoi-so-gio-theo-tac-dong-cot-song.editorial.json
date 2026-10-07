@@ -39,6 +39,14 @@
       "url": "https://medlineplus.gov/ency/article/003218.htm",
       "tier": 2,
       "accessed": "2026-10-05"
+    },
+    {
+      "id": "s4",
+      "title": "Heart attack",
+      "publisher": "NHS",
+      "url": "https://www.nhs.uk/conditions/heart-attack/",
+      "tier": 2,
+      "accessed": "2026-10-05"
     }
   ],
   "safety": {
@@ -47,13 +55,14 @@
       "en": "⚠️ When to see a doctor"
     },
     "body": {
-      "vi": "MedlinePlus khuyên liên hệ nhân viên y tế khi đổ mồ hôi đi kèm **đau ngực, sốt, tim đập nhanh và mạnh, khó thở hoặc sụt cân** — các dấu hiệu này có thể cho thấy một vấn đề như cường giáp hay nhiễm trùng.\n\nNHS khuyên đi khám khi đổ mồ hôi nhiều và: tự chăm sóc không đỡ; kéo dài từ 6 tháng; cản trở sinh hoạt hằng ngày; xảy ra ít nhất mỗi tuần một lần; xảy ra về đêm; trong nhà có người cũng bị; hoặc bạn đang dùng thuốc chữa bệnh khác.\n\nVới **đổ mồ hôi đêm**, NHS khuyên đi khám khi thường xuyên bị đến mức tỉnh giấc hoặc lo lắng, khi kèm sốt cao (hoặc cảm thấy nóng, lạnh, run), ho hay tiêu chảy, hoặc khi sụt cân không rõ lý do.",
-      "en": "MedlinePlus advises contacting a health professional if sweating occurs with **chest pain, fever, a rapid pounding heartbeat, shortness of breath or weight loss** — these may indicate a problem such as an overactive thyroid or an infection.\n\nThe NHS advises seeing a doctor if you are sweating excessively and: things you do yourself are not helping; it has lasted at least 6 months; it stops you getting on with daily activities; it happens at least once a week; it happens at night; you have a family history of excessive sweating; or you are taking medicine for another condition.\n\nFor **night sweats**, the NHS advises seeing a doctor if they happen regularly and wake you up or worry you, if you also have a very high temperature (or feel hot, cold or shivery), a cough or diarrhoea, or if you are losing weight for no reason."
+      "vi": "**Đổ mồ hôi kèm đau ngực như bị đè ép, bóp chặt, hoặc đau lan ra cánh tay, cổ, hàm: gọi cấp cứu ngay** — đó có thể là dấu hiệu nhồi máu cơ tim (NHS).\n\nNgoài trường hợp trên, MedlinePlus khuyên liên hệ nhân viên y tế khi đổ mồ hôi đi kèm **đau ngực, sốt, tim đập nhanh và mạnh, khó thở hoặc sụt cân** — các dấu hiệu này có thể cho thấy một vấn đề như cường giáp hay nhiễm trùng.\n\nNHS khuyên đi khám khi đổ mồ hôi nhiều và: tự chăm sóc không đỡ; kéo dài từ 6 tháng; cản trở sinh hoạt hằng ngày; xảy ra ít nhất mỗi tuần một lần; xảy ra về đêm; trong nhà có người cũng bị; hoặc bạn đang dùng thuốc chữa bệnh khác.\n\nVới **đổ mồ hôi đêm**, NHS khuyên đi khám khi thường xuyên bị đến mức tỉnh giấc hoặc lo lắng, khi kèm sốt cao (hoặc cảm thấy nóng, lạnh, run), ho hay tiêu chảy, hoặc khi sụt cân không rõ lý do.",
+      "en": "**Sweating with chest pain that feels tight or like squeezing, or spreads to your arms, neck or jaw: call emergency services right away** — it can be a sign of a heart attack (NHS).\n\nBeyond that, MedlinePlus advises contacting a health professional if sweating occurs with **chest pain, fever, a rapid pounding heartbeat, shortness of breath or weight loss** — these may indicate a problem such as an overactive thyroid or an infection.\n\nThe NHS advises seeing a doctor if you are sweating excessively and: things you do yourself are not helping; it has lasted at least 6 months; it stops you getting on with daily activities; it happens at least once a week; it happens at night; you have a family history of excessive sweating; or you are taking medicine for another condition.\n\nFor **night sweats**, the NHS advises seeing a doctor if they happen regularly and wake you up or worry you, if you also have a very high temperature (or feel hot, cold or shivery), a cough or diarrhoea, or if you are losing weight for no reason."
     },
     "sources": [
       "s1",
       "s2",
-      "s3"
+      "s3",
+      "s4"
     ]
   },
   "general": [
@@ -180,8 +189,8 @@
     }
   ],
   "review": {
-    "transcription": "pending",
+    "transcription": "passed",
     "mapping": "passed",
-    "editor": "pending"
+    "editor": "passed"
   }
 }

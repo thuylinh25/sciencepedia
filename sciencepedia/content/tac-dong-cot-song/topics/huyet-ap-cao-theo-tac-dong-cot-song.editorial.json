@@ -10,8 +10,8 @@
     "en": "Where the Vietnamese Spinal Impact method document says not to work, which vertebrae to focus on and which to approach with caution for patients with high blood pressure — quoted verbatim, after the current definition of high blood pressure and its emergency signs, with sources."
   },
   "seoDescription": {
-    "vi": "Huyết áp cao theo tài liệu Phương pháp Tác động Cột sống Việt Nam: tránh C1–C3, tập trung C7, T1, T2, T3 bên phải, thận trọng T6, T10, L3 — kèm định nghĩa hiện hành và dấu hiệu cấp cứu.",
-    "en": "High blood pressure in the Vietnamese Spinal Impact method document: avoid C1–C3, focus on right-side C7, T1, T2, T3, caution at T6, T10, L3 — with the current definition and emergency signs."
+    "vi": "Huyết áp cao theo tài liệu Phương pháp Tác động Cột sống Việt Nam: các đốt sống tài liệu nêu (vùng cấm, tập trung, thận trọng) — kèm định nghĩa hiện hành và dấu hiệu cấp cứu.",
+    "en": "High blood pressure in the Vietnamese Spinal Impact method document: the vertebrae it names (areas to avoid, to focus on, to approach with caution) — with the current definition and emergency signs."
   },
   "keywords": "huyết áp cao, tăng huyết áp, tác động cột sống, đốt sống, cơn tăng huyết áp",
   "riskLevel": "high",
@@ -47,6 +47,14 @@
       "url": "https://medlineplus.gov/stroke.html",
       "tier": 2,
       "accessed": "2026-10-05"
+    },
+    {
+      "id": "s5",
+      "title": "High Blood Pressure — What Is High Blood Pressure?",
+      "publisher": "National Heart, Lung, and Blood Institute (NIH)",
+      "url": "https://www.nhlbi.nih.gov/health/high-blood-pressure",
+      "tier": 2,
+      "accessed": "2026-10-05"
     }
   ],
   "safety": {
@@ -55,8 +63,8 @@
       "en": "⚠️ The current definition and when it is an emergency"
     },
     "body": {
-      "vi": "**Định nghĩa hiện hành dùng \"hoặc\", không dùng \"và\".** Tài liệu gọi là huyết áp cao khi tối đa > 140 **và** tối thiểu > 90. Theo bảng phân loại MedlinePlus đăng, chỉ cần **một** trong hai số vượt ngưỡng: huyết áp cao giai đoạn 1 là tâm thu 130–139 **hoặc** tâm trương 80–89; giai đoạn 2 là tâm thu từ 140 **hoặc** tâm trương từ 90. Chẩn đoán cần từ hai lần đo trở lên ở các lần khám khác nhau.\n\nHuyết áp cao thường **không có triệu chứng** — phần lớn người bệnh không thấy gì, và bệnh hay được phát hiện khi khám định kỳ. Vì thế, cảm giác dễ chịu không cho biết huyết áp đã về mức an toàn.\n\n**Cơn tăng huyết áp ác tính là cấp cứu.** MedlinePlus mô tả đây là huyết áp rất cao, đến đột ngột và nhanh, với các dấu hiệu như nhìn mờ, lú lẫn hoặc giảm tỉnh táo, đau ngực (cảm giác bị đè ép), đau đầu, khó thở, co giật, yếu hoặc tê tay chân. MedlinePlus khuyên đến khoa cấp cứu hoặc gọi cấp cứu khi có các triệu chứng này — tình trạng có thể đe dọa tính mạng.\n\nCác dấu hiệu đột quỵ đến **đột ngột** — tê hoặc yếu mặt, tay, chân (nhất là một bên); lú lẫn, nói khó; nhìn khó; đi lại khó, chóng mặt, mất thăng bằng; đau đầu dữ dội không rõ nguyên nhân — cũng cần gọi cấp cứu ngay (MedlinePlus).",
-      "en": "**The current definition uses \"or\", not \"and\".** The document calls blood pressure high when the upper number is > 140 **and** the lower number is > 90. Under the classification table MedlinePlus publishes, **either** number crossing the threshold is enough: stage 1 high blood pressure is systolic 130–139 **or** diastolic 80–89; stage 2 is systolic 140 or higher **or** diastolic 90 or higher. Diagnosis needs two or more readings at separate visits.\n\nHigh blood pressure usually has **no symptoms** — most people feel nothing, and it is often found at routine check-ups. So feeling well does not tell you that blood pressure has come down to a safe level.\n\n**Malignant hypertension is an emergency.** MedlinePlus describes it as very high blood pressure that comes on suddenly and quickly, with signs such as blurred vision, confusion or decreased alertness, chest pain (a crushing or pressure feeling), headache, shortness of breath, seizure, and weakness or numbness of the arms or legs. MedlinePlus advises going to the emergency room or calling emergency services for these symptoms — the condition can be life-threatening.\n\nStroke warning signs that come on **suddenly** — numbness or weakness of the face, arm or leg (especially on one side); confusion or trouble speaking; trouble seeing; difficulty walking, dizziness or loss of balance; severe headache with no known cause — also need emergency services right away (MedlinePlus)."
+      "vi": "**Định nghĩa hiện hành dùng \"hoặc\", không dùng \"và\".** Tài liệu gọi là huyết áp cao khi tối đa > 140 **và** tối thiểu > 90. Theo bảng phân loại MedlinePlus đăng, chỉ cần **một** trong hai số vượt ngưỡng: huyết áp cao giai đoạn 1 là tâm thu 130–139 **hoặc** tâm trương 80–89; giai đoạn 2 là tâm thu từ 140 **hoặc** tâm trương từ 90. Chẩn đoán cần từ hai lần đo trở lên ở các lần khám khác nhau.\n\nHuyết áp cao thường **không có triệu chứng** — phần lớn người bệnh không thấy gì, và bệnh hay được phát hiện khi khám định kỳ. Vì thế, cảm giác dễ chịu không cho biết huyết áp đã về mức an toàn.\n\n**Cơn tăng huyết áp ác tính là cấp cứu.** MedlinePlus mô tả đây là huyết áp rất cao, đến đột ngột và nhanh, với các dấu hiệu như nhìn mờ, lú lẫn hoặc giảm tỉnh táo, đau ngực (cảm giác bị đè ép), đau đầu, khó thở, co giật, yếu hoặc tê tay chân. MedlinePlus khuyên đến khoa cấp cứu hoặc gọi cấp cứu khi có các triệu chứng này — tình trạng có thể đe dọa tính mạng.\n\nCác dấu hiệu đột quỵ đến **đột ngột** — tê hoặc yếu mặt, tay, chân (nhất là một bên); lú lẫn, nói khó; nhìn khó; đi lại khó, chóng mặt, mất thăng bằng; đau đầu dữ dội không rõ nguyên nhân — cũng cần gọi cấp cứu ngay (MedlinePlus).\n\n**Kiểm soát huyết áp dựa vào đo huyết áp định kỳ và dùng thuốc đúng chỉ định** (MedlinePlus); điều trị kết hợp thay đổi lối sống với thuốc khi cần. Không có điều gì trong tài liệu dưới đây thay thế việc đó.",
+      "en": "**The current definition uses \"or\", not \"and\".** The document calls blood pressure high when the upper number is > 140 **and** the lower number is > 90. Under the classification table MedlinePlus publishes, **either** number crossing the threshold is enough: stage 1 high blood pressure is systolic 130–139 **or** diastolic 80–89; stage 2 is systolic 140 or higher **or** diastolic 90 or higher. Diagnosis needs two or more readings at separate visits.\n\nHigh blood pressure usually has **no symptoms** — most people feel nothing, and it is often found at routine check-ups. So feeling well does not tell you that blood pressure has come down to a safe level.\n\n**Malignant hypertension is an emergency.** MedlinePlus describes it as very high blood pressure that comes on suddenly and quickly, with signs such as blurred vision, confusion or decreased alertness, chest pain (a crushing or pressure feeling), headache, shortness of breath, seizure, and weakness or numbness of the arms or legs. MedlinePlus advises going to the emergency room or calling emergency services for these symptoms — the condition can be life-threatening.\n\nStroke warning signs that come on **suddenly** — numbness or weakness of the face, arm or leg (especially on one side); confusion or trouble speaking; trouble seeing; difficulty walking, dizziness or loss of balance; severe headache with no known cause — also need emergency services right away (MedlinePlus).\n\n**Controlling blood pressure relies on monitoring it carefully and taking medicines properly** (MedlinePlus); treatment combines lifestyle changes with medicines when needed. Nothing in the document quoted below replaces that."
     },
     "sources": [
       "s1",
@@ -72,12 +80,13 @@
         "en": "What is high blood pressure?"
       },
       "body": {
-        "vi": "Theo MedlinePlus (Thư viện Y khoa Quốc gia Hoa Kỳ), huyết áp là lực máu đẩy lên thành động mạch, ghi bằng hai số: **tâm thu** (áp lực khi tim co bóp) và **tâm trương** (áp lực giữa hai nhịp đập), ví dụ 120/80. Tài liệu gọi hai số này là \"tối đa\" và \"tối thiểu\".\n\nBảng phân loại MedlinePlus đăng: bình thường là tâm thu dưới 120 và tâm trương dưới 80; tăng là tâm thu 120–129 và tâm trương dưới 80; giai đoạn 1 và 2 như trong khung trên; **cơn tăng huyết áp** là tâm thu trên 180 và tâm trương trên 120.\n\nHuyết áp cao kéo dài buộc tim làm việc nhiều hơn và có thể dẫn đến nhồi máu cơ tim, đột quỵ, suy tim và suy thận. Điều trị kết hợp thay đổi lối sống tốt cho tim với thuốc khi cần, tùy nguyên nhân và mức độ.",
-        "en": "According to MedlinePlus (U.S. National Library of Medicine), blood pressure is the force of your blood pushing against the walls of your arteries, written as two numbers: **systolic** (pressure when the heart beats) and **diastolic** (pressure between beats), for example 120/80. The document calls these the \"upper\" and \"lower\" numbers.\n\nThe classification table MedlinePlus publishes: normal is systolic below 120 and diastolic below 80; elevated is systolic 120–129 and diastolic below 80; stages 1 and 2 as in the box above; a **hypertensive crisis** is systolic higher than 180 and diastolic higher than 120.\n\nSustained high blood pressure makes the heart work harder and can lead to heart attack, stroke, heart failure and kidney failure. Treatment combines heart-healthy lifestyle changes with medicines when needed, depending on the cause and severity."
+        "vi": "Theo MedlinePlus (Thư viện Y khoa Quốc gia Hoa Kỳ), huyết áp là lực máu đẩy lên thành động mạch, ghi bằng hai số: **tâm thu** (áp lực khi tim co bóp) và **tâm trương** (áp lực giữa hai nhịp đập), ví dụ 120/80. Tài liệu gọi hai số này là \"tối đa\" và \"tối thiểu\".\n\nBảng phân loại MedlinePlus đăng: bình thường là tâm thu dưới 120 và tâm trương dưới 80; tăng là tâm thu 120–129 và tâm trương dưới 80; giai đoạn 1 và 2 như trong khung trên; **cơn tăng huyết áp** — theo NHLBI (Viện Tim, Phổi và Máu Hoa Kỳ) — là tâm thu trên 180 **hoặc** tâm trương trên 120, và cần liên hệ nhân viên y tế ngay. (Bảng của MedlinePlus viết \"và\" ở ngưỡng này; bài theo ngưỡng thận trọng hơn của NHLBI.)\n\nHuyết áp cao kéo dài buộc tim làm việc nhiều hơn và có thể dẫn đến nhồi máu cơ tim, đột quỵ, suy tim và suy thận. Điều trị kết hợp thay đổi lối sống tốt cho tim với thuốc khi cần, tùy nguyên nhân và mức độ.",
+        "en": "According to MedlinePlus (U.S. National Library of Medicine), blood pressure is the force of your blood pushing against the walls of your arteries, written as two numbers: **systolic** (pressure when the heart beats) and **diastolic** (pressure between beats), for example 120/80. The document calls these the \"upper\" and \"lower\" numbers.\n\nThe classification table MedlinePlus publishes: normal is systolic below 120 and diastolic below 80; elevated is systolic 120–129 and diastolic below 80; stages 1 and 2 as in the box above; a **hypertensive crisis** — according to NHLBI (U.S. National Heart, Lung, and Blood Institute) — is systolic higher than 180 **or** diastolic higher than 120, and needs a health professional immediately. (MedlinePlus's table uses \"and\" at this threshold; this article follows NHLBI's more cautious one.)\n\nSustained high blood pressure makes the heart work harder and can lead to heart attack, stroke, heart failure and kidney failure. Treatment combines heart-healthy lifestyle changes with medicines when needed, depending on the cause and severity."
       },
       "sources": [
         "s1",
-        "s2"
+        "s2",
+        "s5"
       ]
     }
   ],
@@ -153,8 +162,8 @@
     }
   ],
   "review": {
-    "transcription": "pending",
+    "transcription": "passed",
     "mapping": "passed",
-    "editor": "pending"
+    "editor": "passed"
   }
 }
