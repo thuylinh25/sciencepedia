@@ -1,0 +1,278 @@
+{
+  "slug": "mat-ngu-theo-tac-dong-cot-song",
+  "collection": "tac-dong-cot-song",
+  "section": "mat-ngu",
+  "title": {
+    "vi": "Mất ngủ theo phương pháp Tác động cột sống",
+    "en": "Insomnia in the Spinal Impact method"
+  },
+  "riskLevel": "normal",
+  "source": {
+    "docId": "pp-tdcs-vn",
+    "part": "Phần 3",
+    "heading": "IV- BỆNH MẤT NGỦ",
+    "pdfPages": [
+      41,
+      41
+    ]
+  },
+  "variants": [
+    {
+      "id": "kho-ngu-thuc-giac-khong-ngu-lai",
+      "label": {
+        "vi": "Khó ngủ, thức giấc không ngủ lại được",
+        "en": "Trouble falling asleep, waking and not getting back to sleep"
+      },
+      "heading": "1/ Khó ngủ, thức giấc không ngủ lại được",
+      "ref": {
+        "pdfPage": 41,
+        "bookPage": 40
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "T3",
+          "role": "primary",
+          "raw": "......................... T3, T6",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 41,
+            "bookPage": 40
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T6",
+          "role": "primary",
+          "raw": "......................... T3, T6",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 41,
+            "bookPage": 40
+          }
+        }
+      ]
+    },
+    {
+      "id": "ngu-khong-yen-giac",
+      "label": {
+        "vi": "Ngủ không yên giấc",
+        "en": "Restless sleep"
+      },
+      "heading": "2/ Ngủ không yên giấc",
+      "ref": {
+        "pdfPage": 41,
+        "bookPage": 40
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "T9",
+          "role": "primary",
+          "raw": "......................... T9",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 41,
+            "bookPage": 40
+          }
+        }
+      ]
+    },
+    {
+      "id": "ngu-mo-hay-giat-minh",
+      "label": {
+        "vi": "Ngủ mơ, hay giật mình",
+        "en": "Dreaming, often startled awake"
+      },
+      "heading": "3Ngủ mơ, hay giật mình",
+      "ref": {
+        "pdfPage": 41,
+        "bookPage": 40
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "T5",
+          "role": "primary",
+          "raw": "......................... T5",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 41,
+            "bookPage": 40
+          }
+        }
+      ]
+    },
+    {
+      "id": "ngu-mo-ac-mong",
+      "label": {
+        "vi": "Ngủ mơ ác mộng",
+        "en": "Nightmares"
+      },
+      "heading": "4/ Ngủ mơ ác mộng",
+      "ref": {
+        "pdfPage": 41,
+        "bookPage": 40
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "T1",
+          "role": "primary",
+          "raw": "......................... T1,2,3. T6",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 41,
+            "bookPage": 40
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T2",
+          "role": "primary",
+          "raw": "......................... T1,2,3. T6",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 41,
+            "bookPage": 40
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T3",
+          "role": "primary",
+          "raw": "......................... T1,2,3. T6",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 41,
+            "bookPage": 40
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T6",
+          "role": "primary",
+          "raw": "......................... T1,2,3. T6",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 41,
+            "bookPage": 40
+          }
+        }
+      ]
+    },
+    {
+      "id": "hoi-hop-kho-ngu",
+      "label": {
+        "vi": "Hồi hộp khó ngủ",
+        "en": "Palpitations with trouble sleeping"
+      },
+      "heading": "5/Hồi hộp khó ngủ",
+      "ref": {
+        "pdfPage": 41,
+        "bookPage": 40
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "C6",
+          "role": "primary",
+          "raw": "......................... C6, T5",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 41,
+            "bookPage": 40
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "T5",
+          "role": "primary",
+          "raw": "......................... C6, T5",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 41,
+            "bookPage": 40
+          }
+        }
+      ]
+    },
+    {
+      "id": "mat-ngu-hoan-toan-khong-nham-duoc",
+      "label": {
+        "vi": "Mất ngủ hoàn toàn, không nhắm được mắt",
+        "en": "Complete sleeplessness, unable to close the eyes"
+      },
+      "heading": "6/ Mất ngủ hoàn toàn, không nhắm được mắt",
+      "ref": {
+        "pdfPage": 41,
+        "bookPage": 40
+      },
+      "mappings": [
+        {
+          "targetType": "vertebra",
+          "targetId": "L2",
+          "role": "primary",
+          "raw": "......................... L2,3. S1,2",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 41,
+            "bookPage": 40
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "L3",
+          "role": "primary",
+          "raw": "......................... L2,3. S1,2",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 41,
+            "bookPage": 40
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "S1",
+          "role": "primary",
+          "raw": "......................... L2,3. S1,2",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 41,
+            "bookPage": 40
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "S2",
+          "role": "primary",
+          "raw": "......................... L2,3. S1,2",
+          "confidence": "exact",
+          "ref": {
+            "pdfPage": 41,
+            "bookPage": 40
+          }
+        }
+      ]
+    },
+    {
+      "id": "mat-ngu-keo-dai-nguoi-met-la",
+      "label": {
+        "vi": "7/ Mất ngủ kéo dài, người mêt. lả",
+        "en": "7/ Mất ngủ kéo dài, người mêt. lả"
+      },
+      "heading": "7/ Mất ngủ kéo dài, người mêt. lả",
+      "ref": {
+        "pdfPage": 41,
+        "bookPage": 40
+      },
+      "mappings": []
+    }
+  ],
+  "unassigned": [],
+  "review": {
+    "transcription": "pending",
+    "mapping": "passed",
+    "editor": "pending"
+  }
+}

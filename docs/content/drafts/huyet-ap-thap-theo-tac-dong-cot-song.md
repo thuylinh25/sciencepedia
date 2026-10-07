@@ -140,6 +140,7 @@ MedlinePlus định nghĩa ngất là mất ý thức trong thời gian ngắn d
 - [Đau thần kinh tọa theo phương pháp Tác động cột sống](/articles/dau-than-kinh-toa-theo-tac-dong-cot-song)
 - [Hen suyễn và triệu chứng hô hấp theo phương pháp Tác động cột sống](/articles/hen-suyen-ho-hap-theo-tac-dong-cot-song)
 - [Huyết áp cao theo phương pháp Tác động cột sống](/articles/huyet-ap-cao-theo-tac-dong-cot-song)
+- [Mất ngủ theo phương pháp Tác động cột sống](/articles/mat-ngu-theo-tac-dong-cot-song)
 - [Nhiều mồ hôi, sợ gió theo phương pháp Tác động cột sống](/articles/nhieu-mo-hoi-so-gio-theo-tac-dong-cot-song)
 - [Các bệnh liên quan đến sốt theo phương pháp Tác động cột sống](/articles/sot-theo-tac-dong-cot-song)
 - [Thiểu năng tuần hoàn não theo phương pháp Tác động cột sống](/articles/thieu-nang-tuan-hoan-nao-theo-tac-dong-cot-song)
