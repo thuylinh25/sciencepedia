@@ -31,7 +31,7 @@ bằng chứng khoa học.
 
 ## 3. Việc đang dở / bước tiếp theo
 
-**Tiến độ loạt Tác động cột sống: 14 chủ đề, làm theo thứ tự trong tài liệu — đã soạn đủ 14 (2026-10-07). CSDL: 3 PUBLISHED, 11 bài còn lại chưa import.**
+**Tiến độ loạt Tác động cột sống: 14 chủ đề, làm theo thứ tự trong tài liệu — đã soạn đủ 14 (2026-10-07). CSDL: 3 PUBLISHED, 11 DRAFT.**
 
 | Chủ đề (manifest id) | Trang | Trạng thái |
 |---|---|---|
@@ -40,7 +40,7 @@ bằng chứng khoa học.
 | `mat-ngu` | 41 | nháp: 6 thể, 14 mapping, nguồn NHS + MedlinePlus + NHLBI. science-editor PASS (2 vòng, 2026-10-07). Mục 7 chỉ có tiêu đề trong bản scan → bỏ (D-41). |
 | `viem-dai-trang-man-tinh` | 42–43 | nháp: 9 thể, 34 mapping, nguồn NHS + NIDDK, `riskLevel high`. science-editor PASS (2 vòng, 2026-10-07). Không trích câu "Chữa … lớp" và câu tự nhận "đạt kết quả khá". |
 
-**11 bài nháp trên: `transcription = passed` theo D-42** (chủ sản phẩm miễn đối chiếu bản chép với ảnh trang, 2026-10-07 — KHÔNG phải đã đối chiếu). Bước tiếp: người chạy `npm run spine:import -- --write --drafts-only` (ghi DRAFT; `--drafts-only` bỏ qua 3 bài đã PUBLISHED, vì bản nháp của chúng có "Cùng loạt" trỏ tới bài chưa xuất bản — đẩy lên là link 404) → thêm 11 slug vào `SERIES` của `scripts/spine-publish.ts` → người chạy `spine:publish`. **Còn mở:** chân trang MedlinePlus (A.D.A.M.) cấm dùng cho hệ AI — chủ sản phẩm chưa quyết giữ hay thay nguồn.
+**11 bài nháp trên: `transcription = passed` theo D-42** (chủ sản phẩm miễn đối chiếu bản chép với ảnh trang, 2026-10-07 — KHÔNG phải đã đối chiếu). **Đã nhập CSDL ở DRAFT (2026-10-07, chủ sản phẩm chạy `spine:import -- --write --drafts-only`)**: 11 bài, mỗi bài có bản en, ảnh bìa, nguồn, 1 revision; chưa có byline duyệt, factCheck PENDING. Bước tiếp: thêm 11 slug vào `SERIES` của `scripts/spine-publish.ts` → người chạy `spine:publish` (ghi byline duyệt, cập nhật "Cùng loạt" của 3 bài đã xuất bản). **Còn mở:** chân trang MedlinePlus (A.D.A.M.) cấm dùng cho hệ AI — chủ sản phẩm chưa quyết giữ hay thay nguồn.
 
 **Cách làm một chủ đề:**
 1. Đọc `source/pages/pNN.md`.
