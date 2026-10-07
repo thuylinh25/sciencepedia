@@ -2,11 +2,11 @@
 
 ## ⚠️ Nóng mà không ra mồ hôi: nghĩ đến sốc nhiệt
 
-**Sốc nhiệt là cấp cứu.** Theo NHS, cần gọi cấp cứu ngay khi có dấu hiệu sốc nhiệt: vẫn mệt sau 30 phút nghỉ ở chỗ mát, đã được làm mát và uống nước; thân nhiệt rất cao; **da nóng mà không ra mồ hôi**, có thể đỏ; tim đập nhanh; thở nhanh hoặc khó thở; lú lẫn, mất phối hợp; co giật; mất ý thức. MedlinePlus giải thích sốc nhiệt xảy ra khi cơ thể không còn tự điều hòa được thân nhiệt và nhiệt độ cứ tăng — lúc này mồ hôi có thể ngừng ra — và có thể gây sốc, tổn thương não, suy cơ quan, thậm chí tử vong. Trong lúc chờ cấp cứu, NHS khuyên quấn người bệnh bằng khăn ướt mát, quạt hoặc lau nước lạnh.
+**Sốc nhiệt là cấp cứu.** Theo NHS, cần gọi cấp cứu ngay khi có dấu hiệu sốc nhiệt: vẫn mệt sau 30 phút nghỉ ở chỗ mát, đã được làm mát và uống nước; thân nhiệt rất cao; **da nóng mà không ra mồ hôi**, có thể đỏ; tim đập nhanh; thở nhanh hoặc khó thở; lú lẫn, mất phối hợp; co giật; mất ý thức. MedlinePlus giải thích sốc nhiệt xảy ra khi cơ thể không còn tự điều hòa được thân nhiệt và nhiệt độ cứ tăng — lúc này mồ hôi **có thể** ngừng ra, nên vẫn ra mồ hôi không loại trừ sốc nhiệt — và có thể gây sốc, tổn thương não, suy cơ quan, thậm chí tử vong. Trong lúc chờ cấp cứu, NHS khuyên quấn người bệnh bằng khăn ướt mát, quạt hoặc lau nước lạnh.
 
 Tài liệu dưới đây có hai thể "Không có mồ hôi" và "Nóng không ra mồ hôi". Người đang ở chỗ nóng hay vừa gắng sức mà da nóng, không ra mồ hôi, kèm các dấu hiệu trên thì phải xử trí như sốc nhiệt, không chờ tác động cột sống.
 
-Với đổ mồ hôi nhiều, MedlinePlus khuyên liên hệ nhân viên y tế khi đổ mồ hôi kèm đau ngực, sốt, tim đập nhanh và mạnh, khó thở hoặc sụt cân. NHS khuyên đi khám khi mồ hôi trộm (đổ mồ hôi đêm) thường xuyên làm tỉnh giấc, kèm sốt cao, ho, tiêu chảy, hoặc sụt cân không rõ lý do.
+**Đổ mồ hôi kèm đau ngực như bị đè ép, bóp chặt, hoặc đau lan ra cánh tay, cổ, hàm: gọi cấp cứu ngay** — đó có thể là dấu hiệu nhồi máu cơ tim (NHS). Ngoài trường hợp đó, MedlinePlus khuyên liên hệ nhân viên y tế khi đổ mồ hôi kèm đau ngực, sốt, tim đập nhanh và mạnh, khó thở hoặc sụt cân. NHS khuyên đi khám khi mồ hôi trộm (đổ mồ hôi đêm) thường xuyên làm tỉnh giấc, kèm sốt cao, ho, tiêu chảy, hoặc sụt cân không rõ lý do.
 
 ## Đổ mồ hôi và đổ mồ hôi nhiều
 
@@ -68,13 +68,14 @@ NHS (Dịch vụ Y tế Quốc gia Anh) cho biết đổ mồ hôi nhiều là t
 
 ### Nóng không ra mồ hôi
 
-> Nhiệt độ biến đổi…: Thắt lưng phải nóng Đốt sống trọng điểm…: L3 Tam giác cơ biến đổi…Tiết cơ ngang T11 Liên quan chức năng :Tuyến thượng Thận thường ảnh hưởng tới phó giao cảm
+> Nhiệt độ biến đổi…: Thắt lưng phải nóng Đốt sống trọng điểm…: L3 Tam giác cơ biến đổi…Tiết cơ ngang T11 Liên quan chức năng :Tuyến thượng Thận thường ảnh hưởng tới phó giao cảm, tác động C1 và S1,S2.
 
 Đốt sống tài liệu nêu:
 
 - **Trọng điểm:** [L3](/human-atlas?structure=third-lumbar-vertebra#atlas-viewer)
+- **Liên quan:** [C1](/human-atlas?structure=atlas#atlas-viewer), [S1](/human-atlas?structure=sacrum#atlas-viewer), [S2](/human-atlas?structure=sacrum#atlas-viewer)
 
-[Xem trên Bản đồ cơ thể người →](/human-atlas?structure=third-lumbar-vertebra#atlas-embed)
+[Xem trên Bản đồ cơ thể người →](/human-atlas?structure=atlas,third-lumbar-vertebra,sacrum#atlas-embed)
 
 ## Đọc thêm
 

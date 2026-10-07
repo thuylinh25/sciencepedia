@@ -38,6 +38,15 @@ test("nơi bệnh nằm KHÔNG thành nơi tác động: lao đốt sống T7, T
   assert.deepEqual(codesOf(s, "dau-lung-do-nhiem-khuan-lao-dot", "primary"), []);
 });
 
+test("mã trong dòng \"Liên quan chức năng\" xuống mention, không lặn trong functions (D-40)", () => {
+  const s = extractSection("benh-do-mo-hoi", [40, 40], pages);
+  const m = s.mentions.find((x) => x.variant === "nong-khong-ra-mo-hoi");
+  assert.deepEqual(m?.vertebrae.codes.map((c) => c.code), ["C1", "S1", "S2"]);
+  assert.deepEqual(codesOf(s, "nong-khong-ra-mo-hoi", "primary"), ["L3"]);
+  // tiết cơ ngang ở cùng mục vẫn không thành đốt
+  assert.ok(!s.mentions.some((x) => x.vertebrae.codes.some((c) => c.code === "T11")));
+});
+
 test("tiêu đề đậm một phần: nội dung sau tiêu đề vẫn được đọc", () => {
   const s = extractSection("dau-lung-man-tinh", [4, 6], pages);
   assert.ok(s.variants.some((v) => v.id === "dau-lung-do-thoai-hoa-voi-hoa"));

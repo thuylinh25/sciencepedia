@@ -523,11 +523,46 @@
       "decidedAt": "2026-10-05"
     },
     {
+      "id": "D-39",
+      "section": "sot",
+      "pdfPage": 36,
+      "raw": "Úp bàn tay vào T3,T4 ta thấy mỗi lúc lên cơn giật, đốt sống T3,T4 máy động, ta phải thao tác rất nhẹ ở lớp ngoài và theo dõi cường độ giật sẽ giảm.",
+      "resolution": "Thu hẹp D-33/D-38: đoạn trích chỉ còn phần quan sát (\"Úp bàn tay vào T3,T4 ta thấy mỗi lúc lên cơn giật, đốt sống T3,T4 máy động…\"); bỏ \"ta phải thao tác rất nhẹ ở lớp ngoài và theo dõi cường độ giật sẽ giảm\" — vừa là bước thao tác trên trẻ đang co giật, vừa hứa hiệu quả, ngược lời dặn của NHS (không giữ chặt, không di chuyển trẻ; gọi cấp cứu). T3, T4 giữ vai thận trọng theo D-33. (science-editor vòng 1, chủ sản phẩm chọn phương án cắt)",
+      "decidedBy": "chủ sản phẩm",
+      "decidedAt": "2026-10-05"
+    },
+    {
+      "id": "D-40",
+      "section": "benh-do-mo-hoi",
+      "pdfPage": 40,
+      "match": "tác động C1 và S1,S2",
+      "resolution": "Thể \"Nóng không ra mồ hôi\": trích hết câu \"…thường ảnh hưởng tới phó giao cảm, tác động C1 và S1,S2.\"; C1, S1, S2 vai related — câu nói \"tác động\", không nói \"trọng điểm\". S1, S2 hiện trên atlas là khối xương cùng (quy tắc S1–S5 một khối). Mã nằm trong dòng \"Liên quan chức năng\" nên bản đầu bộ trích bỏ sót; nay bộ trích đưa mã ở dòng ấy xuống mention. (science-editor vòng 1, chủ sản phẩm chọn phương án gán \"Liên quan\")",
+      "decidedBy": "chủ sản phẩm",
+      "decidedAt": "2026-10-05",
+      "apply": {
+        "assign": "tác động C1 và S1,S2",
+        "role": "related",
+        "codes": [
+          "C1",
+          "S1",
+          "S2"
+        ]
+      }
+    },
+    {
       "id": "D-41",
       "section": "mat-ngu",
       "pdfPage": 41,
       "raw": "7/ Mất ngủ kéo dài, người mêt. lả:",
       "resolution": "BỎ mục 7 khỏi bài. Bản scan chỉ có tiêu đề, trang 42 đã sang mục D — không có vùng nhiệt độ, tam giác cơ hay đốt sống nào để trích. Không dựng mục rỗng, không suy nội dung. Bổ sung lại chỉ khi có PDF gốc đủ trang. (Ban đầu ghi D-39; đổi thành D-41 vì PR #19 đã cấp D-39, D-40 từ 2026-10-05.)",
+      "decidedBy": "chủ sản phẩm",
+      "decidedAt": "2026-10-07"
+    },
+    {
+      "id": "D-42",
+      "section": "*",
+      "raw": "review.transcription của 11 bài nháp: dau-lung-man-tinh, huyet-ap-thap, thieu-nang-tuan-hoan-nao, huyet-ap-cao, dau-dau, hen-suyen-ho-hap, sot, nhieu-mo-hoi-so-gio, benh-do-mo-hoi, mat-ngu, viem-dai-trang-man-tinh",
+      "resolution": "Chủ sản phẩm MIỄN bước đối chiếu bản chép trang với ảnh trang PDF và cho nhập CSDL (2026-10-07: \"không cần đối chiếu, nhập vào csdl đi\"). Cờ transcription = passed của 11 bài này nghĩa là ĐƯỢC MIỄN, không phải đã có người đối chiếu. Bản chép vẫn chỉ qua máy (spine-extract) và science-editor (đọc theo bản chép, không có ảnh trang). Sai sót chép nếu phát hiện về sau là đính chính.",
       "decidedBy": "chủ sản phẩm",
       "decidedAt": "2026-10-07"
     }

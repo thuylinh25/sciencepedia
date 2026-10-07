@@ -10,8 +10,8 @@
     "en": "How the Vietnamese Spinal Impact method document describes six forms of sweating disorder — from drenching sweats, sweaty palms and night sweats to not sweating at all — each with a temperature zone and key vertebrae; quoted verbatim, after sourced medical information on sweating and the emergency signs of heatstroke."
   },
   "seoDescription": {
-    "vi": "Bệnh đổ mồ hôi theo tài liệu Phương pháp Tác động Cột sống Việt Nam: sáu thể và đốt sống trọng điểm C6, C7, T1–T3, T7, T8, T11, L3 — kèm kiến thức y khoa và dấu hiệu sốc nhiệt.",
-    "en": "Sweating disorders in the Vietnamese Spinal Impact method document: six forms and key vertebrae C6, C7, T1–T3, T7, T8, T11, L3 — with sourced medical facts and the signs of heatstroke."
+    "vi": "Bệnh đổ mồ hôi theo tài liệu Phương pháp Tác động Cột sống Việt Nam: sáu thể và đốt sống trọng điểm C6, C7, T1–T3, T7, T8, T11, L3 (kèm C1, S1, S2 liên quan) — với kiến thức y khoa và dấu hiệu sốc nhiệt.",
+    "en": "Sweating disorders in the Vietnamese Spinal Impact method document: six forms and key vertebrae C6, C7, T1–T3, T7, T8, T11, L3 (with related C1, S1, S2) — with sourced medical facts and the signs of heatstroke."
   },
   "keywords": "đổ mồ hôi, vã mồ hôi, mồ hôi tay, mồ hôi trộm, không ra mồ hôi, sốc nhiệt, tác động cột sống, đốt sống",
   "riskLevel": "normal",
@@ -55,6 +55,14 @@
       "url": "https://medlineplus.gov/ency/article/000056.htm",
       "tier": 2,
       "accessed": "2026-10-05"
+    },
+    {
+      "id": "s6",
+      "title": "Heart attack",
+      "publisher": "NHS",
+      "url": "https://www.nhs.uk/conditions/heart-attack/",
+      "tier": 2,
+      "accessed": "2026-10-05"
     }
   ],
   "safety": {
@@ -63,14 +71,15 @@
       "en": "⚠️ Hot but not sweating: think of heatstroke"
     },
     "body": {
-      "vi": "**Sốc nhiệt là cấp cứu.** Theo NHS, cần gọi cấp cứu ngay khi có dấu hiệu sốc nhiệt: vẫn mệt sau 30 phút nghỉ ở chỗ mát, đã được làm mát và uống nước; thân nhiệt rất cao; **da nóng mà không ra mồ hôi**, có thể đỏ; tim đập nhanh; thở nhanh hoặc khó thở; lú lẫn, mất phối hợp; co giật; mất ý thức. MedlinePlus giải thích sốc nhiệt xảy ra khi cơ thể không còn tự điều hòa được thân nhiệt và nhiệt độ cứ tăng — lúc này mồ hôi có thể ngừng ra — và có thể gây sốc, tổn thương não, suy cơ quan, thậm chí tử vong. Trong lúc chờ cấp cứu, NHS khuyên quấn người bệnh bằng khăn ướt mát, quạt hoặc lau nước lạnh.\n\nTài liệu dưới đây có hai thể \"Không có mồ hôi\" và \"Nóng không ra mồ hôi\". Người đang ở chỗ nóng hay vừa gắng sức mà da nóng, không ra mồ hôi, kèm các dấu hiệu trên thì phải xử trí như sốc nhiệt, không chờ tác động cột sống.\n\nVới đổ mồ hôi nhiều, MedlinePlus khuyên liên hệ nhân viên y tế khi đổ mồ hôi kèm đau ngực, sốt, tim đập nhanh và mạnh, khó thở hoặc sụt cân. NHS khuyên đi khám khi mồ hôi trộm (đổ mồ hôi đêm) thường xuyên làm tỉnh giấc, kèm sốt cao, ho, tiêu chảy, hoặc sụt cân không rõ lý do.",
-      "en": "**Heatstroke is an emergency.** The NHS advises calling emergency services right away for signs of heatstroke: still feeling unwell after 30 minutes of resting in a cool place, being cooled and drinking fluids; a very high temperature; **hot skin that is not sweating** and may look red; a fast heartbeat; fast breathing or shortness of breath; confusion and lack of coordination; a seizure; or loss of consciousness. MedlinePlus explains that heatstroke happens when the body can no longer regulate its temperature and it keeps rising — at this point sweating may stop — and that it can cause shock, brain damage, organ failure and even death. While waiting for help, the NHS advises wrapping the person in a cool, wet sheet, fanning them or sponging them with cold water.\n\nThe document below has two forms, \"No sweating\" and \"Hot without sweating\". Someone in a hot place or after exertion whose skin is hot and not sweating, with any of the signs above, must be treated as having heatstroke — not left to wait for spinal work.\n\nFor heavy sweating, MedlinePlus advises contacting a health professional if sweating occurs with chest pain, fever, a rapid pounding heartbeat, shortness of breath or weight loss. The NHS advises seeing a doctor if night sweats regularly wake you up, come with a very high temperature, a cough or diarrhoea, or with weight loss for no reason."
+      "vi": "**Sốc nhiệt là cấp cứu.** Theo NHS, cần gọi cấp cứu ngay khi có dấu hiệu sốc nhiệt: vẫn mệt sau 30 phút nghỉ ở chỗ mát, đã được làm mát và uống nước; thân nhiệt rất cao; **da nóng mà không ra mồ hôi**, có thể đỏ; tim đập nhanh; thở nhanh hoặc khó thở; lú lẫn, mất phối hợp; co giật; mất ý thức. MedlinePlus giải thích sốc nhiệt xảy ra khi cơ thể không còn tự điều hòa được thân nhiệt và nhiệt độ cứ tăng — lúc này mồ hôi **có thể** ngừng ra, nên vẫn ra mồ hôi không loại trừ sốc nhiệt — và có thể gây sốc, tổn thương não, suy cơ quan, thậm chí tử vong. Trong lúc chờ cấp cứu, NHS khuyên quấn người bệnh bằng khăn ướt mát, quạt hoặc lau nước lạnh.\n\nTài liệu dưới đây có hai thể \"Không có mồ hôi\" và \"Nóng không ra mồ hôi\". Người đang ở chỗ nóng hay vừa gắng sức mà da nóng, không ra mồ hôi, kèm các dấu hiệu trên thì phải xử trí như sốc nhiệt, không chờ tác động cột sống.\n\n**Đổ mồ hôi kèm đau ngực như bị đè ép, bóp chặt, hoặc đau lan ra cánh tay, cổ, hàm: gọi cấp cứu ngay** — đó có thể là dấu hiệu nhồi máu cơ tim (NHS). Ngoài trường hợp đó, MedlinePlus khuyên liên hệ nhân viên y tế khi đổ mồ hôi kèm đau ngực, sốt, tim đập nhanh và mạnh, khó thở hoặc sụt cân. NHS khuyên đi khám khi mồ hôi trộm (đổ mồ hôi đêm) thường xuyên làm tỉnh giấc, kèm sốt cao, ho, tiêu chảy, hoặc sụt cân không rõ lý do.",
+      "en": "**Heatstroke is an emergency.** The NHS advises calling emergency services right away for signs of heatstroke: still feeling unwell after 30 minutes of resting in a cool place, being cooled and drinking fluids; a very high temperature; **hot skin that is not sweating** and may look red; a fast heartbeat; fast breathing or shortness of breath; confusion and lack of coordination; a seizure; or loss of consciousness. MedlinePlus explains that heatstroke happens when the body can no longer regulate its temperature and it keeps rising — at this point sweating **may** stop, so still sweating does not rule heatstroke out — and that it can cause shock, brain damage, organ failure and even death. While waiting for help, the NHS advises wrapping the person in a cool, wet sheet, fanning them or sponging them with cold water.\n\nThe document below has two forms, \"No sweating\" and \"Hot without sweating\". Someone in a hot place or after exertion whose skin is hot and not sweating, with any of the signs above, must be treated as having heatstroke — not left to wait for spinal work.\n\n**Sweating with chest pain that feels tight or like squeezing, or spreads to your arms, neck or jaw: call emergency services right away** — it can be a sign of a heart attack (NHS). Beyond that, MedlinePlus advises contacting a health professional if sweating occurs with chest pain, fever, a rapid pounding heartbeat, shortness of breath or weight loss. The NHS advises seeing a doctor if night sweats regularly wake you up, come with a very high temperature, a cough or diarrhoea, or with weight loss for no reason."
     },
     "sources": [
       "s2",
       "s3",
       "s4",
-      "s5"
+      "s5",
+      "s6"
     ]
   },
   "general": [
@@ -159,7 +168,7 @@
         {
           "pdfPage": 40,
           "vi": "Nhiệt độ biến đổi…: Ngực trái và cổ phải Đốt sống trọng điểm…: T1,T2 Tam giác cơ biến đổi…Tiết cơ ngang C6,C7 Liên quan chức năng… :Tâm ,Phế",
-          "en": "Temperature change…: left chest and right side of the neck. Key vertebrae…: T1, T2. Muscle triangle changed… transverse muscle segment C6, C7. Related functions…: Heart, Lung (in traditional terms)"
+          "en": "Temperature change…: left chest and right side of the neck. Key vertebrae…: T1, T2. Muscle triangle changed… transverse muscle segment C6, C7. Related functions…: Heart, Lung [traditional-medicine organ names]"
         }
       ]
     },
@@ -172,8 +181,8 @@
       "quotes": [
         {
           "pdfPage": 40,
-          "vi": "Nhiệt độ biến đổi…: Thắt lưng phải nóng Đốt sống trọng điểm…: L3 Tam giác cơ biến đổi…Tiết cơ ngang T11 Liên quan chức năng :Tuyến thượng Thận thường ảnh hưởng tới phó giao cảm",
-          "en": "Temperature change…: right lower back hot. Key vertebra…: L3. Muscle triangle changed… transverse muscle segment T11. Related function: the adrenal glands, often affecting the parasympathetic system"
+          "vi": "Nhiệt độ biến đổi…: Thắt lưng phải nóng Đốt sống trọng điểm…: L3 Tam giác cơ biến đổi…Tiết cơ ngang T11 Liên quan chức năng :Tuyến thượng Thận thường ảnh hưởng tới phó giao cảm, tác động C1 và S1,S2.",
+          "en": "Temperature change…: right lower back hot. Key vertebra…: L3. Muscle triangle changed… transverse muscle segment T11. Related function: the adrenal glands, often affecting the parasympathetic system, work on C1 and S1, S2."
         }
       ]
     }
@@ -211,8 +220,8 @@
     }
   ],
   "review": {
-    "transcription": "pending",
+    "transcription": "passed",
     "mapping": "passed",
-    "editor": "pending"
+    "editor": "passed"
   }
 }

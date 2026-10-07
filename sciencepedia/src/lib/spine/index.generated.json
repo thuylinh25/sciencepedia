@@ -284,6 +284,15 @@
   ],
   "FMA12519": [
    {
+    "slug": "benh-do-mo-hoi-theo-tac-dong-cot-song",
+    "roles": [
+     "related"
+    ],
+    "codes": [
+     "C1"
+    ]
+   },
+   {
     "slug": "dau-dau-theo-tac-dong-cot-song",
     "roles": [
      "primary",
@@ -1014,6 +1023,16 @@
    }
   ],
   "FMA16202": [
+   {
+    "slug": "benh-do-mo-hoi-theo-tac-dong-cot-song",
+    "roles": [
+     "related"
+    ],
+    "codes": [
+     "S1",
+     "S2"
+    ]
+   },
    {
     "slug": "dau-dau-theo-tac-dong-cot-song",
     "roles": [

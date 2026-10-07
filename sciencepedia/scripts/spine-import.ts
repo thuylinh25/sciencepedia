@@ -11,6 +11,7 @@ import { Editorial, Topic } from "../src/lib/spine/schema";
  *
  *   npm run spine:import              # in kế hoạch, không ghi
  *   npm run spine:import -- --write   # ghi (upsert, chạy lại được)
+ *   npm run spine:import -- --write --drafts-only   # bỏ qua bài đã xuất bản
  *
  * KHÔNG đặt PUBLISHED, KHÔNG đặt factCheck = PASSED, KHÔNG ghi reviewedById:
  * xuất bản chỉ qua `npm run publish` (gate trong scripts/publish.ts), và byline
@@ -64,6 +65,7 @@ const readingTime = (md: string) => Math.max(1, Math.round(md.split(/\s+/).lengt
 
 async function main() {
   const write = process.argv.includes("--write");
+  const draftsOnly = process.argv.includes("--drafts-only");
   /* Đổi cách trình bày trên bài đã xuất bản (nhãn, định dạng) mà không đổi claim: phải
      nói rõ lý do, lý do vào Revision. Đổi claim thì KHÔNG dùng cờ này — đó là đính chính. */
   const fcIndex = process.argv.indexOf("--format-change");
@@ -119,6 +121,11 @@ async function main() {
         where: { slug: editorial.slug },
         select: { id: true, status: true, coverImage: true, title: true, content: true, contentEn: true },
       });
+      /* Bài đã xuất bản có "Cùng loạt" trỏ tới bài nháp mới: đẩy bản ấy lên là link 404 trên
+         trang thật. Nhập loạt nháp thì bỏ qua chúng; danh sách cập nhật khi các bài kia xuất bản. */
+      if (existing && existing.status !== "DRAFT" && draftsOnly) {
+        return `· ${editorial.slug} — ${existing.status}, bỏ qua (--drafts-only)`;
+      }
       if (existing && existing.status !== "DRAFT") {
         /* Bài đã xuất bản: chỉ cho qua khi CHỮ không đổi, chỉ đích link đổi (vd. nút
            "Xem trên Bản đồ" chuyển sang khung nhúng). Đổi bất kỳ chữ nào là đính chính —
@@ -200,7 +207,8 @@ async function main() {
             title: data.title,
             content: vi,
             editorId: ADMIN_ID,
-            note: "Bản đầu từ npm run spine:build — science-editor duyệt 2/2 vòng, bản chép 2 lượt.",
+            // Không ghi cứng "bản chép 2 lượt": 11 bài sau ba bài đầu được MIỄN đối chiếu (D-42).
+            note: "Bản đầu từ npm run spine:build — science-editor PASS; tình trạng bản chép ghi ở content/tac-dong-cot-song/source/decisions.json.",
           },
         });
       }

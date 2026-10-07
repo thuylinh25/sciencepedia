@@ -18,9 +18,9 @@ Trong bài về đau lưng, MedlinePlus còn liệt kê các dấu hiệu cần 
 
 MedlinePlus cũng khuyên liên hệ nhân viên y tế nếu sụt cân không chủ ý, hoặc nếu từng đau lưng nhưng lần này khác và nặng hơn.
 
-**Đau lưng trên kèm khó chịu ở ngực:** theo MedlinePlus, nhồi máu cơ tim có thể gây đau hoặc khó chịu ở một hay hai cánh tay, lưng, vai, cổ, hàm hoặc vùng bụng trên, thường kèm khó chịu ở ngực hoặc khó thở. MedlinePlus khuyên gọi cấp cứu khi có triệu chứng nhồi máu cơ tim, kể cả khi chưa chắc đó là nhồi máu cơ tim.
+**Đau lưng trên có thể là triệu chứng nhồi máu cơ tim.** Theo MedlinePlus, triệu chứng thường gặp nhất của nhồi máu cơ tim gồm: khó chịu ở ngực; khó thở (đôi khi là triệu chứng duy nhất); đau hoặc khó chịu ở một hay hai cánh tay, lưng, vai, cổ, hàm hoặc bụng trên. MedlinePlus khuyên gọi cấp cứu khi có triệu chứng nhồi máu cơ tim, kể cả khi chưa chắc đó là nhồi máu cơ tim.
 
-**Áp xe tủy sống** — một nhiễm trùng bên trong cột sống, ở một số nơi trên thế giới có thể do lao — gây sốt, ớn lạnh, đau lưng tăng dần, yếu hoặc tê, mất kiểm soát tiểu tiện hay đại tiện. MedlinePlus khuyên đến khoa cấp cứu hoặc gọi cấp cứu khi có các triệu chứng này.
+**Áp xe tủy sống** — một nhiễm trùng bên trong cột sống, thường do tụ cầu, ở một số nơi trên thế giới có thể do lao — gây sốt, ớn lạnh, đau lưng tăng dần, mất cử động hoặc mất cảm giác ở vùng dưới ổ áp xe, mất kiểm soát tiểu tiện hay đại tiện. MedlinePlus khuyên đến khoa cấp cứu hoặc gọi cấp cứu khi có các triệu chứng này.
 
 ## Đau lưng mạn tính là gì?
 
@@ -32,7 +32,7 @@ MedlinePlus cũng lưu ý nằm trên giường quá 1–2 ngày có thể làm 
 
 ## Lao cột sống và nhiễm trùng cột sống
 
-Tài liệu nêu lao đốt sống và nhiễm khuẩn là nguyên nhân đau lưng mà phương pháp không chữa được. Theo MedlinePlus, lao là bệnh do vi khuẩn, thường tấn công phổi nhưng cũng có thể tấn công các bộ phận khác, trong đó có thận, cột sống và não. Lao lây từ người sang người qua không khí. Bệnh lao gần như luôn chữa khỏi được bằng kháng sinh; với lao hoạt động, người bệnh thường phải dùng thuốc trong bốn, sáu hoặc chín tháng tùy phác đồ.
+Tài liệu viết phương pháp không chữa được đau lưng do lao đốt sống, và đau lưng do nhiễm khuẩn phải điều trị bằng thuốc đặc trị. Theo MedlinePlus, lao là bệnh do vi khuẩn, thường tấn công phổi nhưng cũng có thể tấn công các bộ phận khác, trong đó có thận, cột sống và não. Lao lây từ người sang người qua không khí. Bệnh lao gần như luôn chữa khỏi được bằng kháng sinh; với lao hoạt động, người bệnh thường phải dùng thuốc trong bốn, sáu hoặc chín tháng tùy phác đồ.
 
 ## Triệu chứng được tài liệu mô tả
 

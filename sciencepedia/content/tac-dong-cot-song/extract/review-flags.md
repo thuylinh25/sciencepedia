@@ -77,7 +77,7 @@ không được phép quyết. Đối chiếu với ảnh trang, ghi quyết đ�
 
 ## benh-do-mo-hoi (tr. 40–40)
 
-- (không có cờ)
+- ✔ D-40: [mention] tr.40 C1, S1, S2 — vai trò trống: "Liên quan chức năng :Tuyến thượng Thận thường ảnh hưởng tới phó giao cảm, tác động C1 và S1,S2." → Thể "Nóng không ra mồ hôi": trích hết câu "…thường ảnh hưởng tới phó giao cảm, tác động C1 và S1,S2."; C1, S1, S2 vai related — câu nói "tác động", không nói "trọng điểm". S1, S2 hiện trên atlas là khối xương cùng (quy tắc S1–S5 một khối). Mã nằm trong dòng "Liên quan chức năng" nên bản đầu bộ trích bỏ sót; nay bộ trích đưa mã ở dòng ấy xuống mention. (science-editor vòng 1, chủ sản phẩm chọn phương án gán "Liên quan")
 
 ## mat-ngu (tr. 41–41)
 

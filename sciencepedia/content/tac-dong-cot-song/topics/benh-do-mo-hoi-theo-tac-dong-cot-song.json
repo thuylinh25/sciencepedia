@@ -208,14 +208,53 @@
             "pdfPage": 40,
             "bookPage": 39
           }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "C1",
+          "role": "related",
+          "raw": "tác động C1 và S1,S2",
+          "context": "Liên quan chức năng :Tuyến thượng Thận thường ảnh hưởng tới phó giao cảm, tác động C1 và S1,S2.",
+          "confidence": "exact",
+          "decision": "D-40",
+          "ref": {
+            "pdfPage": 40,
+            "bookPage": 39
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "S1",
+          "role": "related",
+          "raw": "tác động C1 và S1,S2",
+          "context": "Liên quan chức năng :Tuyến thượng Thận thường ảnh hưởng tới phó giao cảm, tác động C1 và S1,S2.",
+          "confidence": "exact",
+          "decision": "D-40",
+          "ref": {
+            "pdfPage": 40,
+            "bookPage": 39
+          }
+        },
+        {
+          "targetType": "vertebra",
+          "targetId": "S2",
+          "role": "related",
+          "raw": "tác động C1 và S1,S2",
+          "context": "Liên quan chức năng :Tuyến thượng Thận thường ảnh hưởng tới phó giao cảm, tác động C1 và S1,S2.",
+          "confidence": "exact",
+          "decision": "D-40",
+          "ref": {
+            "pdfPage": 40,
+            "bookPage": 39
+          }
         }
       ]
     }
   ],
   "unassigned": [],
   "review": {
-    "transcription": "pending",
+    "transcription": "passed",
     "mapping": "passed",
-    "editor": "pending"
+    "editor": "passed"
   }
 }

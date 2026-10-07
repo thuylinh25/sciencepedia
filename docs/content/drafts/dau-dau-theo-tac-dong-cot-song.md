@@ -16,15 +16,21 @@ MedlinePlus khuyên tìm trợ giúp y tế ngay khi:
 
 **Dấu hiệu đột quỵ** đến đột ngột — tê hoặc yếu mặt, tay, chân (nhất là một bên); lú lẫn, nói khó; nhìn khó; chóng mặt, mất thăng bằng; đau đầu dữ dội không rõ nguyên nhân: gọi cấp cứu ngay (MedlinePlus).
 
-**Co giật:** tài liệu có nhiều thể nhắc tới động kinh và co giật ở trẻ em. MedlinePlus khuyên gọi cấp cứu khi đó là lần co giật đầu tiên, cơn kéo dài quá 2–5 phút, người bệnh không tỉnh lại hoặc không trở lại bình thường sau cơn, cơn khác đến ngay sau đó, co giật dưới nước, người bệnh đang mang thai, bị thương hoặc có bệnh tiểu đường, hoặc cơn khác hẳn kiểu thường gặp.
+**Co giật:** tài liệu có nhiều thể nhắc tới động kinh và co giật ở trẻ em. Trong lúc co giật, MedlinePlus dặn không giữ chặt người bệnh, không cho gì vào giữa hai hàm răng (kể cả ngón tay), không cho uống gì cho tới khi tỉnh hẳn; trẻ co giật khi sốt cao thì làm mát từ từ bằng nước ấm, không ngâm nước lạnh, và gọi bác sĩ của trẻ. MedlinePlus khuyên gọi cấp cứu khi đó là lần co giật đầu tiên, cơn kéo dài quá 2–5 phút, người bệnh không tỉnh lại hoặc không trở lại bình thường sau cơn, cơn khác đến ngay sau đó, co giật dưới nước, người bệnh đang mang thai, bị thương hoặc có bệnh tiểu đường, hoặc cơn khác hẳn kiểu thường gặp.
 
 **Đau đầu kèm huyết áp rất cao** — nhìn mờ, lú lẫn, đau ngực, khó thở, co giật, yếu hoặc tê tay chân — có thể là tăng huyết áp ác tính, một cấp cứu đe dọa tính mạng (MedlinePlus).
+
+**Triệu chứng đi kèm cũng có thể là cấp cứu riêng.** Một số thể trong tài liệu nhắc tới đau ngực, đau tim, nôn ra máu, ra máu khi mang thai:
+
+- đau hoặc khó chịu ở ngực (đè ép, bóp nghẹt, căng tức, thường kéo dài hơn vài phút), khó thở, khó chịu ở một hoặc hai tay, lưng, vai, cổ, hàm hoặc bụng trên: gọi cấp cứu, kể cả khi chưa chắc là nhồi máu cơ tim (MedlinePlus);
+- nôn ra máu: liên hệ nhân viên y tế hoặc đến khoa cấp cứu, cần được khám ngay (MedlinePlus);
+- ra máu âm đạo khi đang mang thai: coi là tình huống có thể cấp cứu, liên hệ nhân viên y tế (MedlinePlus).
 
 ## Đau đầu là gì?
 
 Theo MedlinePlus (Thư viện Y khoa Quốc gia Hoa Kỳ), đau đầu là cảm giác đau hoặc khó chịu ở đầu, da đầu hoặc cổ; nguyên nhân nghiêm trọng của đau đầu là hiếm.
 
-MedlinePlus nêu ba loại thường gặp: **đau đầu do căng cơ** — loại phổ biến nhất, thường do cơ căng cứng, hay liên quan tới căng thẳng, lo âu; **đau nửa đầu (migraine)** — đau giật ở một bên đầu, đôi khi kèm thay đổi thị lực hoặc nhạy cảm với ánh sáng, âm thanh; và **đau đầu từng cụm** — đau nhói, rất đau, xuất hiện hằng ngày trong nhiều tuần hay nhiều tháng rồi biến mất một thời gian dài.
+MedlinePlus nêu ba loại thường gặp: **đau đầu do căng cơ** — loại phổ biến nhất, có lẽ do cơ căng cứng ở vai, cổ, da đầu và hàm, và có thể liên quan tới căng thẳng, trầm cảm, lo âu; **đau nửa đầu (migraine)** — đau giật, đau nhói theo nhịp ở một bên đầu, thường kèm thay đổi thị lực, nhạy cảm với ánh sáng, âm thanh, hoặc buồn nôn; và **đau đầu từng cụm** — đau nhói, rất đau, xuất hiện hằng ngày, có khi vài lần một ngày, trong nhiều tháng, rồi hết trong vài tuần đến vài tháng.
 
 ## Nội dung theo phương pháp Tác động cột sống
 

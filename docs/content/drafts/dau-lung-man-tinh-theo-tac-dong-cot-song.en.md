@@ -18,9 +18,9 @@ In its article on back pain, MedlinePlus also lists signs that need a health pro
 
 MedlinePlus also advises contacting a health professional if you have been losing weight unintentionally, or if you have had back pain before but this episode is different and feels worse.
 
-**Upper back pain with chest discomfort:** according to MedlinePlus, a heart attack can cause pain or discomfort in one or both arms, the back, shoulders, neck, jaw or upper stomach, usually with chest discomfort or shortness of breath. MedlinePlus advises calling emergency services for heart attack symptoms, even if you are not sure it is a heart attack.
+**Upper back pain can be a symptom of a heart attack.** According to MedlinePlus, the most common heart attack symptoms are: chest discomfort; shortness of breath (sometimes the only symptom); and pain or discomfort in one or both arms, the back, shoulders, neck, jaw or upper part of the stomach. MedlinePlus advises calling emergency services for heart attack symptoms, even if you are not sure it is a heart attack.
 
-**Spinal cord abscess** — an infection inside the spine, caused by tuberculosis in some areas of the world — causes fever, chills, worsening back pain, weakness or numbness, and loss of bladder or bowel control. MedlinePlus advises going to the emergency room or calling emergency services for these symptoms.
+**Spinal cord abscess** — an infection inside the spine, often caused by a staphylococcus infection and in some areas of the world possibly by tuberculosis — causes fever, chills, worsening back pain, loss of movement or sensation in an area below the abscess, and loss of bladder or bowel control. MedlinePlus advises going to the emergency room or calling emergency services for these symptoms.
 
 ## What is chronic back pain?
 
@@ -32,7 +32,7 @@ MedlinePlus also notes that staying in bed for more than 1 or 2 days can make ba
 
 ## Spinal tuberculosis and spinal infection
 
-The document names spinal tuberculosis and infection as causes of back pain that the method cannot treat. According to MedlinePlus, tuberculosis is a bacterial disease that usually attacks the lungs but can also attack other parts of the body, including the kidneys, spine and brain. It spreads from person to person through the air. TB disease can almost always be cured with antibiotics; for active TB disease, people usually need to take medicines for four, six or nine months, depending on the treatment plan.
+The document says the method cannot treat back pain caused by spinal tuberculosis, and that back pain caused by infection must be treated with specific medicines. According to MedlinePlus, tuberculosis is a bacterial disease that usually attacks the lungs but can also attack other parts of the body, including the kidneys, spine and brain. It spreads from person to person through the air. TB disease can almost always be cured with antibiotics; for active TB disease, people usually need to take medicines for four, six or nine months, depending on the treatment plan.
 
 ## Symptoms described in the document
 

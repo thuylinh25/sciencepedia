@@ -12,7 +12,7 @@ Theo MedlinePlus, các dấu hiệu đột quỵ xuất hiện **đột ngột**
 
 MedlinePlus khuyên **gọi cấp cứu ngay** nếu nghĩ mình hoặc người khác đang bị đột quỵ: điều trị ngay có thể cứu sống và tăng cơ hội hồi phục.
 
-**Triệu chứng tự hết vẫn là cấp cứu.** Cơn thiếu máu não thoáng qua (TIA) gây triệu chứng giống đột quỵ rồi hết, thường trong 1–2 giờ. MedlinePlus gọi TIA là một cấp cứu y khoa, cần gọi cấp cứu ngay, và là dấu hiệu cảnh báo đột quỵ thật có thể xảy ra sau đó — khoảng một nửa số ca đột quỵ sau TIA xảy ra trong 48 giờ.
+**Triệu chứng tự hết vẫn là cấp cứu.** Cơn thiếu máu não thoáng qua (TIA) gây triệu chứng giống đột quỵ rồi hết, thường trong 1–2 giờ. MedlinePlus gọi TIA là một cấp cứu y khoa, cần gọi cấp cứu ngay, và là dấu hiệu cảnh báo đột quỵ thật có thể xảy ra sau đó — một số người bị đột quỵ trong vòng 3 tháng sau TIA, và một nửa số ca đó xảy ra trong 48 giờ đầu.
 
 Với chóng mặt, MedlinePlus khuyên gọi cấp cứu hoặc đến khoa cấp cứu nếu chóng mặt đi kèm chấn thương đầu; sốt trên 38,3°C, đau đầu hoặc cứng cổ nặng; co giật; không uống giữ được nước; đau ngực; tim đập không đều; khó thở; yếu hoặc không cử động được tay hay chân; thay đổi thị lực hoặc lời nói; hoặc ngất mất ý thức quá vài phút.
 

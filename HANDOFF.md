@@ -36,14 +36,11 @@ bằng chứng khoa học.
 | Chủ đề (manifest id) | Trang | Trạng thái |
 |---|---|---|
 | `dau-lung-cap`, `dau-than-kinh-toa`, `dau-nua-dau` | 2–3, 7–11, 12–14 | PUBLISHED |
-| `dau-lung-man-tinh`, `huyet-ap-thap` | 4–6, 15–16 | nháp, đã ở `main` (#13) |
-| `thieu-nang-tuan-hoan-nao`, `huyet-ap-cao`, `dau-dau` | 17–32 | nháp (#14) |
-| `hen-suyen-ho-hap` | 33–34 | nháp, đã ở `main` (#16): 12 thể, nguồn NHS + NHLBI + MedlinePlus, `riskLevel high` |
-| `sot` | 35–38 | nháp, đã ở `main` (#16): 15 thể, 8 nguồn NHS + MedlinePlus; khung nêu co giật do sốt đơn thuần vô hại (MedlinePlus) — đối lập câu "di chứng bại não" của tài liệu, cần science-editor xem kỹ |
-| `nhieu-mo-hoi-so-gio` | 39 | nháp, đã ở `main` (#17): 5 thể, 6 mapping, nguồn NHS + MedlinePlus, `riskLevel normal` |
-| `benh-do-mo-hoi` | 40 | nháp, đã ở `main` (#18): 6 thể, 10 mapping, khung sốc nhiệt; câu "tác động C1 và S1,S2" (thể 6) không trích, không chỉ mục — chủ sản phẩm quyết |
-| `mat-ngu` | 41 | nháp, đã ở `main` (#21); science-editor vòng 2 PASS (2026-10-07), `editor` còn `pending` chờ chủ sản phẩm xác nhận + quyết MedlinePlus: 6 thể, 14 mapping, nguồn NHS + MedlinePlus + NHLBI, `riskLevel normal`; khung nêu hồi hộp kèm đau ngực/khó thở/ngất là cấp cứu (thể 5). Mục 7 "Mất ngủ kéo dài" chỉ có tiêu đề trong bản scan → bỏ (D-41, chủ sản phẩm) |
-| `viem-dai-trang-man-tinh` | 42–43 | nháp, đã ở `main` (#22); science-editor vòng 2 PASS (2026-10-07), `editor` còn `pending`: 9 thể, 34 mapping, 6 nguồn NHS + NIDDK, `riskLevel high`. Không trích các câu "Chữa … lớp ngoài/trong" và câu tài liệu tự nhận "đạt kết quả khá"; đoạn viêm cấp đưa vào mục không áp dụng. Tài liệu viết "điều trị nội khoa rất hạn chế" — trái NIDDK (thuốc giảm viêm đưa bệnh vào lui bệnh); science-editor xem |
+| `dau-lung-man-tinh`, `huyet-ap-thap`, `thieu-nang-tuan-hoan-nao`, `huyet-ap-cao`, `dau-dau`, `hen-suyen-ho-hap`, `sot`, `nhieu-mo-hoi-so-gio`, `benh-do-mo-hoi` | 4–6, 15–40 | nháp. **science-editor PASS** (2 vòng, 2026-10-05; #19 sửa mục chặn vòng 1, D-39, D-40), chủ sản phẩm xác nhận → `editor = passed`. Góp ý không chặn còn treo: xem mô tả PR #19. |
+| `mat-ngu` | 41 | nháp: 6 thể, 14 mapping, nguồn NHS + MedlinePlus + NHLBI. science-editor PASS (2 vòng, 2026-10-07). Mục 7 chỉ có tiêu đề trong bản scan → bỏ (D-41). |
+| `viem-dai-trang-man-tinh` | 42–43 | nháp: 9 thể, 34 mapping, nguồn NHS + NIDDK, `riskLevel high`. science-editor PASS (2 vòng, 2026-10-07). Không trích câu "Chữa … lớp" và câu tự nhận "đạt kết quả khá". |
+
+**11 bài nháp trên: `transcription = passed` theo D-42** (chủ sản phẩm miễn đối chiếu bản chép với ảnh trang, 2026-10-07 — KHÔNG phải đã đối chiếu). Bước tiếp: người chạy `npm run spine:import -- --write --drafts-only` (ghi DRAFT; `--drafts-only` bỏ qua 3 bài đã PUBLISHED, vì bản nháp của chúng có "Cùng loạt" trỏ tới bài chưa xuất bản — đẩy lên là link 404) → thêm 11 slug vào `SERIES` của `scripts/spine-publish.ts` → người chạy `spine:publish`. **Còn mở:** chân trang MedlinePlus (A.D.A.M.) cấm dùng cho hệ AI — chủ sản phẩm chưa quyết giữ hay thay nguồn.
 
 **Cách làm một chủ đề:**
 1. Đọc `source/pages/pNN.md`.

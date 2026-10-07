@@ -47,6 +47,30 @@
       "url": "https://medlineplus.gov/ency/article/000491.htm",
       "tier": 2,
       "accessed": "2026-10-05"
+    },
+    {
+      "id": "s5",
+      "title": "Heart Attack",
+      "publisher": "MedlinePlus — U.S. National Library of Medicine",
+      "url": "https://medlineplus.gov/heartattack.html",
+      "tier": 2,
+      "accessed": "2026-10-05"
+    },
+    {
+      "id": "s6",
+      "title": "Vomiting blood",
+      "publisher": "MedlinePlus — U.S. National Library of Medicine",
+      "url": "https://medlineplus.gov/ency/article/003118.htm",
+      "tier": 2,
+      "accessed": "2026-10-05"
+    },
+    {
+      "id": "s7",
+      "title": "Vaginal bleeding in pregnancy",
+      "publisher": "MedlinePlus — U.S. National Library of Medicine",
+      "url": "https://medlineplus.gov/ency/article/003264.htm",
+      "tier": 2,
+      "accessed": "2026-10-05"
     }
   ],
   "safety": {
@@ -55,14 +79,17 @@
       "en": "⚠️ When a headache is an emergency"
     },
     "body": {
-      "vi": "MedlinePlus khuyên tìm trợ giúp y tế ngay khi:\n\n- đau đầu đến **đột ngột, dữ dội như bùng nổ** — có thể do vỡ mạch máu trong não; gọi cấp cứu hoặc đến khoa cấp cứu gần nhất;\n- đây là cơn đau đầu \"tệ nhất từ trước tới nay\", kể cả với người hay đau đầu;\n- đau đầu kèm nói ngọng, thay đổi thị lực, khó cử động tay chân, mất thăng bằng, lú lẫn hoặc giảm trí nhớ;\n- đau đầu kèm sốt, cứng cổ, buồn nôn và nôn;\n- đau đầu nặng dần trong 24 giờ;\n- đau đầu sau chấn thương đầu;\n- đau dữ dội chỉ ở một mắt, kèm mắt đỏ;\n- lần đầu trong đời bị đau đầu ảnh hưởng tới sinh hoạt; mới bắt đầu đau đầu, nhất là sau 50 tuổi;\n- đau đầu kèm rối loạn thị lực, đau khi nhai hoặc sụt cân; có tiền sử ung thư mà xuất hiện cơn đau đầu mới; hệ miễn dịch suy yếu do bệnh hay do thuốc.\n\n**Dấu hiệu đột quỵ** đến đột ngột — tê hoặc yếu mặt, tay, chân (nhất là một bên); lú lẫn, nói khó; nhìn khó; chóng mặt, mất thăng bằng; đau đầu dữ dội không rõ nguyên nhân: gọi cấp cứu ngay (MedlinePlus).\n\n**Co giật:** tài liệu có nhiều thể nhắc tới động kinh và co giật ở trẻ em. MedlinePlus khuyên gọi cấp cứu khi đó là lần co giật đầu tiên, cơn kéo dài quá 2–5 phút, người bệnh không tỉnh lại hoặc không trở lại bình thường sau cơn, cơn khác đến ngay sau đó, co giật dưới nước, người bệnh đang mang thai, bị thương hoặc có bệnh tiểu đường, hoặc cơn khác hẳn kiểu thường gặp.\n\n**Đau đầu kèm huyết áp rất cao** — nhìn mờ, lú lẫn, đau ngực, khó thở, co giật, yếu hoặc tê tay chân — có thể là tăng huyết áp ác tính, một cấp cứu đe dọa tính mạng (MedlinePlus).",
-      "en": "MedlinePlus advises seeking medical help right away when:\n\n- a headache comes on **suddenly and is explosive or violent** — it may be due to a ruptured blood vessel in the brain; call emergency services or go to the nearest emergency room;\n- it is \"the worst ever\" headache, even for someone who regularly gets headaches;\n- the headache comes with slurred speech, a change in vision, problems moving the arms or legs, loss of balance, confusion or memory loss;\n- the headache comes with fever, stiff neck, nausea and vomiting;\n- the headache gets worse over 24 hours;\n- the headache occurs with a head injury;\n- the pain is severe and in one eye only, with redness in that eye;\n- it is the first headache of your life and it interferes with daily activities; you just started getting headaches, especially after age 50;\n- headaches come with vision problems, pain while chewing or weight loss; you have a history of cancer and develop a new headache; your immune system is weakened by disease or medicines.\n\n**Stroke signs** that come on suddenly — numbness or weakness of the face, arm or leg (especially on one side); confusion or trouble speaking; trouble seeing; dizziness or loss of balance; severe headache with no known cause: call emergency services right away (MedlinePlus).\n\n**Seizures:** several forms in the document mention epilepsy and convulsions in children. MedlinePlus advises calling emergency services for a first seizure, a seizure lasting longer than 2 to 5 minutes, a person who does not wake up or return to normal afterwards, another seizure soon after, a seizure in water, a person who is pregnant, injured or has diabetes, or a seizure that is different from the person's usual pattern.\n\n**Headache with very high blood pressure** — blurred vision, confusion, chest pain, shortness of breath, seizure, weakness or numbness of the limbs — may be malignant hypertension, a life-threatening emergency (MedlinePlus)."
+      "vi": "MedlinePlus khuyên tìm trợ giúp y tế ngay khi:\n\n- đau đầu đến **đột ngột, dữ dội như bùng nổ** — có thể do vỡ mạch máu trong não; gọi cấp cứu hoặc đến khoa cấp cứu gần nhất;\n- đây là cơn đau đầu \"tệ nhất từ trước tới nay\", kể cả với người hay đau đầu;\n- đau đầu kèm nói ngọng, thay đổi thị lực, khó cử động tay chân, mất thăng bằng, lú lẫn hoặc giảm trí nhớ;\n- đau đầu kèm sốt, cứng cổ, buồn nôn và nôn;\n- đau đầu nặng dần trong 24 giờ;\n- đau đầu sau chấn thương đầu;\n- đau dữ dội chỉ ở một mắt, kèm mắt đỏ;\n- lần đầu trong đời bị đau đầu ảnh hưởng tới sinh hoạt; mới bắt đầu đau đầu, nhất là sau 50 tuổi;\n- đau đầu kèm rối loạn thị lực, đau khi nhai hoặc sụt cân; có tiền sử ung thư mà xuất hiện cơn đau đầu mới; hệ miễn dịch suy yếu do bệnh hay do thuốc.\n\n**Dấu hiệu đột quỵ** đến đột ngột — tê hoặc yếu mặt, tay, chân (nhất là một bên); lú lẫn, nói khó; nhìn khó; chóng mặt, mất thăng bằng; đau đầu dữ dội không rõ nguyên nhân: gọi cấp cứu ngay (MedlinePlus).\n\n**Co giật:** tài liệu có nhiều thể nhắc tới động kinh và co giật ở trẻ em. Trong lúc co giật, MedlinePlus dặn không giữ chặt người bệnh, không cho gì vào giữa hai hàm răng (kể cả ngón tay), không cho uống gì cho tới khi tỉnh hẳn; trẻ co giật khi sốt cao thì làm mát từ từ bằng nước ấm, không ngâm nước lạnh, và gọi bác sĩ của trẻ. MedlinePlus khuyên gọi cấp cứu khi đó là lần co giật đầu tiên, cơn kéo dài quá 2–5 phút, người bệnh không tỉnh lại hoặc không trở lại bình thường sau cơn, cơn khác đến ngay sau đó, co giật dưới nước, người bệnh đang mang thai, bị thương hoặc có bệnh tiểu đường, hoặc cơn khác hẳn kiểu thường gặp.\n\n**Đau đầu kèm huyết áp rất cao** — nhìn mờ, lú lẫn, đau ngực, khó thở, co giật, yếu hoặc tê tay chân — có thể là tăng huyết áp ác tính, một cấp cứu đe dọa tính mạng (MedlinePlus).\n\n**Triệu chứng đi kèm cũng có thể là cấp cứu riêng.** Một số thể trong tài liệu nhắc tới đau ngực, đau tim, nôn ra máu, ra máu khi mang thai:\n\n- đau hoặc khó chịu ở ngực (đè ép, bóp nghẹt, căng tức, thường kéo dài hơn vài phút), khó thở, khó chịu ở một hoặc hai tay, lưng, vai, cổ, hàm hoặc bụng trên: gọi cấp cứu, kể cả khi chưa chắc là nhồi máu cơ tim (MedlinePlus);\n- nôn ra máu: liên hệ nhân viên y tế hoặc đến khoa cấp cứu, cần được khám ngay (MedlinePlus);\n- ra máu âm đạo khi đang mang thai: coi là tình huống có thể cấp cứu, liên hệ nhân viên y tế (MedlinePlus).",
+      "en": "MedlinePlus advises seeking medical help right away when:\n\n- a headache comes on **suddenly and is explosive or violent** — it may be due to a ruptured blood vessel in the brain; call emergency services or go to the nearest emergency room;\n- it is \"the worst ever\" headache, even for someone who regularly gets headaches;\n- the headache comes with slurred speech, a change in vision, problems moving the arms or legs, loss of balance, confusion or memory loss;\n- the headache comes with fever, stiff neck, nausea and vomiting;\n- the headache gets worse over 24 hours;\n- the headache occurs with a head injury;\n- the pain is severe and in one eye only, with redness in that eye;\n- it is the first headache of your life and it interferes with daily activities; you just started getting headaches, especially after age 50;\n- headaches come with vision problems, pain while chewing or weight loss; you have a history of cancer and develop a new headache; your immune system is weakened by disease or medicines.\n\n**Stroke signs** that come on suddenly — numbness or weakness of the face, arm or leg (especially on one side); confusion or trouble speaking; trouble seeing; dizziness or loss of balance; severe headache with no known cause: call emergency services right away (MedlinePlus).\n\n**Seizures:** several forms in the document mention epilepsy and convulsions in children. During a seizure, MedlinePlus advises not holding the person down, not placing anything between their teeth (including fingers), and giving nothing by mouth until they are fully awake; a child who has a seizure during a high fever should be cooled slowly with lukewarm water, not put in a cold bath, and their doctor called. MedlinePlus advises calling emergency services for a first seizure, a seizure lasting longer than 2 to 5 minutes, a person who does not wake up or return to normal afterwards, another seizure soon after, a seizure in water, a person who is pregnant, injured or has diabetes, or a seizure that is different from the person's usual pattern.\n\n**Headache with very high blood pressure** — blurred vision, confusion, chest pain, shortness of breath, seizure, weakness or numbness of the limbs — may be malignant hypertension, a life-threatening emergency (MedlinePlus).\n\n**Accompanying symptoms can be emergencies of their own.** Some forms in the document mention chest pain, heart pain, vomiting blood, or bleeding during pregnancy:\n\n- chest discomfort (pressure, squeezing, fullness or pain, usually lasting more than a few minutes), shortness of breath, discomfort in one or both arms, the back, shoulders, neck, jaw or upper stomach: call emergency services, even if you are not sure it is a heart attack (MedlinePlus);\n- vomiting blood: contact a health professional or go to the emergency room — you need to be examined right away (MedlinePlus);\n- vaginal bleeding during pregnancy: treat it as a potential emergency and contact a health professional (MedlinePlus)."
     },
     "sources": [
       "s1",
       "s2",
       "s3",
-      "s4"
+      "s4",
+      "s5",
+      "s6",
+      "s7"
     ]
   },
   "general": [
@@ -72,8 +99,8 @@
         "en": "What is a headache?"
       },
       "body": {
-        "vi": "Theo MedlinePlus (Thư viện Y khoa Quốc gia Hoa Kỳ), đau đầu là cảm giác đau hoặc khó chịu ở đầu, da đầu hoặc cổ; nguyên nhân nghiêm trọng của đau đầu là hiếm.\n\nMedlinePlus nêu ba loại thường gặp: **đau đầu do căng cơ** — loại phổ biến nhất, thường do cơ căng cứng, hay liên quan tới căng thẳng, lo âu; **đau nửa đầu (migraine)** — đau giật ở một bên đầu, đôi khi kèm thay đổi thị lực hoặc nhạy cảm với ánh sáng, âm thanh; và **đau đầu từng cụm** — đau nhói, rất đau, xuất hiện hằng ngày trong nhiều tuần hay nhiều tháng rồi biến mất một thời gian dài.",
-        "en": "According to MedlinePlus (U.S. National Library of Medicine), a headache is pain or discomfort in the head, scalp or neck; serious causes of headaches are rare.\n\nMedlinePlus describes three common types: **tension headaches** — the most common, usually caused by tight muscles and often linked to stress or anxiety; **migraine** — throbbing pain on one side of the head, sometimes with vision changes or sensitivity to light and sound; and **cluster headaches** — sharp, very painful headaches that occur daily for weeks or months and then go away for a long time."
+        "vi": "Theo MedlinePlus (Thư viện Y khoa Quốc gia Hoa Kỳ), đau đầu là cảm giác đau hoặc khó chịu ở đầu, da đầu hoặc cổ; nguyên nhân nghiêm trọng của đau đầu là hiếm.\n\nMedlinePlus nêu ba loại thường gặp: **đau đầu do căng cơ** — loại phổ biến nhất, có lẽ do cơ căng cứng ở vai, cổ, da đầu và hàm, và có thể liên quan tới căng thẳng, trầm cảm, lo âu; **đau nửa đầu (migraine)** — đau giật, đau nhói theo nhịp ở một bên đầu, thường kèm thay đổi thị lực, nhạy cảm với ánh sáng, âm thanh, hoặc buồn nôn; và **đau đầu từng cụm** — đau nhói, rất đau, xuất hiện hằng ngày, có khi vài lần một ngày, trong nhiều tháng, rồi hết trong vài tuần đến vài tháng.",
+        "en": "According to MedlinePlus (U.S. National Library of Medicine), a headache is pain or discomfort in the head, scalp or neck; serious causes of headaches are rare.\n\nMedlinePlus describes three common types: **tension headaches** — the most common, likely caused by tight muscles in the shoulders, neck, scalp and jaw, and may be related to stress, depression or anxiety; **migraine** — throbbing, pounding or pulsating pain on one side of the head, often with vision changes, sensitivity to light or sound, or nausea; and **cluster headaches** — sharp, very painful headaches that occur daily, sometimes several times a day, for months, then go away for weeks to months."
       },
       "sources": [
         "s1"
@@ -875,8 +902,8 @@
     }
   ],
   "review": {
-    "transcription": "pending",
+    "transcription": "passed",
     "mapping": "passed",
-    "editor": "pending"
+    "editor": "passed"
   }
 }
