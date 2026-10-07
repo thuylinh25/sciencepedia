@@ -205,6 +205,7 @@ Vertebrae named by the document:
 - [Insomnia in the Spinal Impact method](/articles/mat-ngu-theo-tac-dong-cot-song)
 - [Heavy sweating and aversion to wind in the Spinal Impact method](/articles/nhieu-mo-hoi-so-gio-theo-tac-dong-cot-song)
 - ["Cerebral circulatory insufficiency" in the Spinal Impact method](/articles/thieu-nang-tuan-hoan-nao-theo-tac-dong-cot-song)
+- [Chronic colitis in the Spinal Impact method](/articles/viem-dai-trang-man-tinh-theo-tac-dong-cot-song)
 
 ## Source document
 

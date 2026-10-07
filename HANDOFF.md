@@ -31,7 +31,7 @@ bằng chứng khoa học.
 
 ## 3. Việc đang dở / bước tiếp theo
 
-**Tiến độ loạt Tác động cột sống: 14 chủ đề, làm theo thứ tự trong tài liệu.**
+**Tiến độ loạt Tác động cột sống: 14 chủ đề, làm theo thứ tự trong tài liệu — đã soạn đủ 14 (2026-10-07). CSDL: 3 PUBLISHED, 11 bài còn lại chưa import.**
 
 | Chủ đề (manifest id) | Trang | Trạng thái |
 |---|---|---|
@@ -43,7 +43,7 @@ bằng chứng khoa học.
 | `nhieu-mo-hoi-so-gio` | 39 | nháp, đã ở `main` (#17): 5 thể, 6 mapping, nguồn NHS + MedlinePlus, `riskLevel normal` |
 | `benh-do-mo-hoi` | 40 | nháp, đã ở `main` (#18): 6 thể, 10 mapping, khung sốc nhiệt; câu "tác động C1 và S1,S2" (thể 6) không trích, không chỉ mục — chủ sản phẩm quyết |
 | `mat-ngu` | 41 | nháp (nhánh `claude/mat-ngu`): 6 thể, 14 mapping, nguồn NHS + MedlinePlus + NHLBI, `riskLevel normal`; khung nêu hồi hộp kèm đau ngực/khó thở/ngất là cấp cứu (thể 5). Mục 7 "Mất ngủ kéo dài" chỉ có tiêu đề trong bản scan → bỏ (D-39, chủ sản phẩm) |
-| `viem-dai-trang-man-tinh` | 42–43 | **chưa làm** |
+| `viem-dai-trang-man-tinh` | 42–43 | nháp (nhánh `claude/mat-ngu-muc-7`): 9 thể, 34 mapping, 6 nguồn NHS + NIDDK, `riskLevel high`. Không trích các câu "Chữa … lớp ngoài/trong" và câu tài liệu tự nhận "đạt kết quả khá"; đoạn viêm cấp đưa vào mục không áp dụng. Tài liệu viết "điều trị nội khoa rất hạn chế" — trái NIDDK (thuốc giảm viêm đưa bệnh vào lui bệnh); science-editor xem |
 
 **Cách làm một chủ đề:**
 1. Đọc `source/pages/pNN.md`.
