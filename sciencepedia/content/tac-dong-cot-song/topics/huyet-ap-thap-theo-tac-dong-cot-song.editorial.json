@@ -22,23 +22,71 @@
       "publisher": "MedlinePlus — U.S. National Library of Medicine",
       "url": "https://medlineplus.gov/lowbloodpressure.html",
       "tier": 2,
-      "accessed": "2026-10-05"
+      "accessed": "2026-10-07"
     },
     {
-      "id": "s2",
-      "title": "Low blood pressure",
-      "publisher": "MedlinePlus — U.S. National Library of Medicine",
-      "url": "https://medlineplus.gov/ency/article/007278.htm",
+      "id": "s4",
+      "title": "Low Blood Pressure",
+      "publisher": "National Heart, Lung, and Blood Institute (NIH)",
+      "url": "https://www.nhlbi.nih.gov/health/low-blood-pressure",
       "tier": 2,
-      "accessed": "2026-10-05"
+      "accessed": "2026-10-07"
     },
     {
-      "id": "s3",
+      "id": "s5",
+      "title": "Low blood pressure (hypotension)",
+      "publisher": "NHS (UK National Health Service)",
+      "url": "https://www.nhs.uk/conditions/low-blood-pressure-hypotension/",
+      "tier": 2,
+      "accessed": "2026-10-07"
+    },
+    {
+      "id": "s6",
+      "title": "Fainting",
+      "publisher": "NHS (UK National Health Service)",
+      "url": "https://www.nhs.uk/symptoms/fainting/",
+      "tier": 2,
+      "accessed": "2026-10-07"
+    },
+    {
+      "id": "s7",
       "title": "Fainting",
       "publisher": "MedlinePlus — U.S. National Library of Medicine",
-      "url": "https://medlineplus.gov/ency/article/003092.htm",
+      "url": "https://medlineplus.gov/fainting.html",
       "tier": 2,
-      "accessed": "2026-10-05"
+      "accessed": "2026-10-07"
+    },
+    {
+      "id": "s8",
+      "title": "Chest pain",
+      "publisher": "NHS (UK National Health Service)",
+      "url": "https://www.nhs.uk/symptoms/chest-pain/",
+      "tier": 2,
+      "accessed": "2026-10-07"
+    },
+    {
+      "id": "s9",
+      "title": "Cardiac Arrest — Treatment",
+      "publisher": "National Heart, Lung, and Blood Institute (NHLBI)",
+      "url": "https://www.nhlbi.nih.gov/health/cardiac-arrest/treatment",
+      "tier": 2,
+      "accessed": "2026-10-07"
+    },
+    {
+      "id": "s10",
+      "title": "CPR",
+      "publisher": "MedlinePlus — U.S. National Library of Medicine",
+      "url": "https://medlineplus.gov/cpr.html",
+      "tier": 2,
+      "accessed": "2026-10-07"
+    },
+    {
+      "id": "s11",
+      "title": "Arrhythmias — Symptoms",
+      "publisher": "National Heart, Lung, and Blood Institute (NHLBI)",
+      "url": "https://www.nhlbi.nih.gov/health/arrhythmias/symptoms",
+      "tier": 2,
+      "accessed": "2026-10-07"
     }
   ],
   "safety": {
@@ -47,12 +95,17 @@
       "en": "⚠️ When it is an emergency"
     },
     "body": {
-      "vi": "**Người bất tỉnh mà không thở hoặc không có mạch: gọi cấp cứu và bắt đầu hồi sức tim phổi (CPR) ngay** (MedlinePlus). Tài liệu có một thể mang tên \"ngất, ngừng thở, tim ngừng đập\" — đó là tình huống cấp cứu, không phải việc chờ xử lý ở nhà.\n\nTheo MedlinePlus, nếu huyết áp thấp làm người bệnh ngất, cần được điều trị ngay hoặc gọi cấp cứu; nếu người đó không thở hoặc không có mạch, bắt đầu hồi sức tim phổi. Với người huyết áp thấp, MedlinePlus khuyên liên hệ nhân viên y tế **ngay** khi có:\n\n- đau ngực;\n- chóng mặt, choáng váng;\n- ngất;\n- sốt trên 38,3°C;\n- tim đập không đều;\n- khó thở;\n- phân đen hoặc màu nâu đỏ sẫm.\n\nSau một lần ngất, MedlinePlus khuyên gọi cấp cứu nếu người bị ngất ngã từ trên cao (nhất là khi bị thương hay chảy máu), không tỉnh lại trong vài phút, đang mang thai, trên 50 tuổi, có bệnh tiểu đường, đau hoặc tức ngực, tim đập mạnh hay không đều, mất tiếng nói, rối loạn thị lực hoặc không cử động được tay chân, co giật, tổn thương lưỡi, hoặc mất kiểm soát tiểu tiện hay đại tiện. Người chưa từng ngất, ngất nhiều lần, hoặc có triệu chứng mới đi kèm cũng nên đi khám sớm.",
-      "en": "**If a person is unconscious and not breathing or has no pulse: call emergency services and start CPR right away** (MedlinePlus). The document has a form named \"fainting, stopped breathing, stopped heartbeat\" — that is an emergency, not something to wait out at home.\n\nAccording to MedlinePlus, if low blood pressure makes a person pass out, seek treatment right away or call emergency services; if the person is not breathing or has no pulse, begin CPR. For a person with low blood pressure, MedlinePlus advises contacting a health professional **right away** for:\n\n- chest pain;\n- dizziness or lightheadedness;\n- fainting;\n- fever higher than 38.3°C (101°F);\n- irregular heartbeat;\n- shortness of breath;\n- black or maroon stools.\n\nAfter fainting, MedlinePlus advises calling emergency services if the person fell from a height (especially if injured or bleeding), does not regain consciousness within a few minutes, is pregnant, is over age 50, has diabetes, feels chest pain, pressure or discomfort, has a pounding or irregular heartbeat, loses speech, has vision problems or cannot move arms and legs, has convulsions, a tongue injury, or loss of bladder or bowel control. Someone who has never fainted before, faints often, or has new symptoms with fainting should also get prompt medical care."
+      "vi": "**Người không phản ứng và không thở bình thường: gọi cấp cứu và bắt đầu hồi sức tim phổi (CPR) ngay** — thở ngáp hay thở có tiếng ọc ọc trong cổ không phải là thở bình thường; nếu có người khác ở gần, nhờ họ gọi trong lúc bạn bắt đầu CPR. Người chưa học CPR có thể chỉ ép ngực, không thổi ngạt, với thiếu niên và người lớn bị ngừng tim (NHLBI; MedlinePlus). Tài liệu có một thể mang tên \"ngất, ngừng thở, tim ngừng đập\" — đó là tình huống cấp cứu, không phải việc chờ xử lý ở nhà. Người trực đường dây cấp cứu sẽ hướng dẫn cần làm gì (NHS — Dịch vụ Y tế Quốc gia Anh).\n\nTheo NHLBI (Viện Tim, Phổi và Máu Hoa Kỳ), huyết áp tụt đột ngột, hoặc huyết áp thấp liên quan đến một vấn đề sức khoẻ, có thể nguy hiểm vì tim, não hay các cơ quan sống còn khác có thể không nhận đủ máu. Huyết áp tụt quá thấp có thể dẫn đến sốc — tình trạng cần chăm sóc y tế ngay. Dấu hiệu sốc gồm da lạnh và vã mồ hôi, thở nhanh, da tím tái, hoặc mạch yếu và nhanh: **gọi cấp cứu** nếu thấy các dấu hiệu này ở mình hay người khác.\n\nSau một lần ngất, NHS khuyên **gọi cấp cứu** nếu người bị ngất:\n\n- không thở;\n- không gọi tỉnh được trong vòng 1 phút;\n- chưa hồi phục hẳn, hoặc nói khó hay cử động khó;\n- đau ngực, hoặc tim đập thình thịch, đập loạn hay không đều (hồi hộp đánh trống ngực);\n- bị thương nặng trước hoặc sau khi ngất;\n- run giật người (co giật);\n- ngất khi đang vận động thể lực;\n- ngất khi đang nằm.\n\nKhông tự lái xe đến khoa cấp cứu. Người đã ngất mà không thuộc các trường hợp trên vẫn nên đi khám để tìm nguyên nhân (NHS).\n\nVới đau ngực, NHS khuyên **gọi cấp cứu ngay** nếu đau hoặc khó chịu ở ngực đến đột ngột và không hết (có thể như bị bóp chặt, đè ép, nóng rát hay khó tiêu); nếu đau lan ra một hay hai tay, cổ, hàm, bụng hoặc lưng; hoặc nếu đau ngực kèm vã mồ hôi, buồn nôn, choáng váng hay khó thở.\n\nTim đập chậm hay không đều có thể là triệu chứng rối loạn nhịp tim; NHLBI khuyên **tìm chăm sóc y tế cấp cứu** nếu triệu chứng rất nặng, như khó thở hay đau ngực.\n\nNếu cứ bị các triệu chứng huyết áp thấp như chóng mặt và ngất, NHS khuyên đi khám bác sĩ.",
+      "en": "**If a person does not respond and is not breathing normally: call emergency services and start CPR right away** — gasping or gurgling is not normal breathing; if someone else is nearby, send them to call while you start CPR. If you haven't had CPR training, you can do hands-only CPR (chest compressions only, no breaths) for a teen or adult whose heart has stopped (NHLBI; MedlinePlus). The document has a form named \"fainting, stopped breathing, stopped heartbeat\" — that is an emergency, not something to wait out at home. The emergency call handler will give advice about what to do (NHS — the UK National Health Service).\n\nAccording to NHLBI (U.S. National Heart, Lung, and Blood Institute), a sudden drop in blood pressure, or low blood pressure that may be linked to a health problem, can be dangerous because the heart, brain or other vital organs may not be getting enough blood flow. If blood pressure drops too low, it can lead to shock, which requires immediate medical attention. Signs of shock include cold and sweaty skin, rapid breathing, a blue skin tone, or a weak and rapid pulse: **call emergency services** if you notice these signs in yourself or someone else.\n\nAfter fainting, the NHS advises **calling emergency services** if the person:\n\n- is not breathing;\n- cannot be woken up within 1 minute;\n- has not fully recovered or has difficulty with speech or movement;\n- has chest pain or a pounding, fluttering or irregular heartbeat (heart palpitations);\n- has seriously hurt themselves before or after fainting;\n- is shaking or jerking (having a seizure or fit);\n- fainted while exercising;\n- fainted while lying down.\n\nDo not drive yourself to the emergency department. Someone who has fainted but does not fit any of these cases should still get checked by a doctor to find out what caused it (NHS).\n\nFor chest pain, the NHS advises **calling emergency services straight away** if you get sudden pain or discomfort in your chest that does not go away (it can feel like squeezing or pressure, burning or indigestion); if the pain spreads to your left or right arm, or your neck, jaw, stomach or back; or if you have chest pain and feel sweaty, sick, lightheaded or short of breath.\n\nA slow or irregular heartbeat can be a symptom of an arrhythmia; NHLBI advises **seeking emergency medical care** if symptoms are very serious, such as difficulty breathing or chest pain.\n\nIf you keep getting symptoms of low blood pressure such as dizziness and fainting, the NHS advises seeing a doctor."
     },
     "sources": [
-      "s2",
-      "s3"
+      "s4",
+      "s5",
+      "s6",
+      "s8",
+      "s9",
+      "s10",
+      "s11"
     ]
   },
   "general": [
@@ -62,12 +115,13 @@
         "en": "What is low blood pressure?"
       },
       "body": {
-        "vi": "Theo MedlinePlus (Thư viện Y khoa Quốc gia Hoa Kỳ), huyết áp là lực máu đẩy lên thành động mạch. Ở người lớn, huyết áp bình thường nằm trong khoảng 90/60 mmHg đến 120/80 mmHg; số đo từ 90/60 trở xuống là huyết áp thấp.\n\nMột số người lúc nào cũng có huyết áp thấp, không có triệu chứng, và số đo thấp là bình thường với họ — thường không cần điều trị. Huyết áp thấp chỉ thành vấn đề khi gây chóng mặt, ngất, hoặc trong trường hợp nặng là sốc.\n\nTriệu chứng MedlinePlus nêu gồm nhìn mờ, lú lẫn, chóng mặt, ngất, choáng váng, buồn nôn hoặc nôn, buồn ngủ và yếu người. Nguyên nhân có thể là bệnh tim, tác dụng phụ của thuốc (thuốc lợi tiểu, thuốc chống trầm cảm, thuốc hạ huyết áp), uống không đủ nước, mất nước, và tổn thương thần kinh do tiểu đường.",
-        "en": "According to MedlinePlus (U.S. National Library of Medicine), blood pressure is the force of your blood pushing against the walls of your arteries. In adults, normal blood pressure is between 90/60 mmHg and 120/80 mmHg; a reading of 90/60 or lower is low blood pressure.\n\nSome people have low blood pressure all the time, have no symptoms, and their low readings are normal for them — it often needs no treatment. Low blood pressure is a problem only if it causes dizziness, fainting or, in extreme cases, shock.\n\nSymptoms MedlinePlus lists include blurry vision, confusion, dizziness, fainting, lightheadedness, nausea or vomiting, sleepiness and weakness. Causes can include heart conditions, medication side effects (diuretics, antidepressants, blood pressure drugs), not drinking enough fluids, dehydration, and nerve damage from diabetes."
+        "vi": "Theo MedlinePlus (Thư viện Y khoa Quốc gia Hoa Kỳ), huyết áp là lực máu đẩy lên thành động mạch; số đo từ 90/60 mmHg trở xuống là huyết áp thấp (NHLBI và NHS ghi \"dưới 90/60 mmHg\"). Với phần lớn người lớn, huyết áp bình thường thường dưới 120/80 mmHg (NHLBI).\n\nMột số người lúc nào cũng có huyết áp thấp, không có triệu chứng, và số đo thấp là bình thường với họ. Huyết áp thấp chỉ thành vấn đề khi gây chóng mặt, ngất, hoặc trong trường hợp nặng là sốc (MedlinePlus). Có thể không cần điều trị huyết áp thấp (NHLBI).\n\nNhiều người không nhận ra mình bị huyết áp thấp; người khác có thể có triệu chứng như lú lẫn, chóng mặt hoặc choáng váng, ngất, mệt hoặc yếu người, nhìn mờ, đau đầu, đau cổ hoặc lưng, buồn nôn, và hồi hộp đánh trống ngực — cảm giác tim hẫng một nhịp, đập loạn, đập quá mạnh hay quá nhanh (NHLBI). Nguyên nhân có thể là rối loạn hệ thần kinh tự chủ (như trong bệnh Parkinson), mất máu do chấn thương gây tụt huyết áp đột ngột, bệnh tim như rối loạn nhịp, và thuốc điều trị huyết áp cao, trầm cảm hay Parkinson (NHLBI); NHLBI cũng kể mất nước, tiểu đường và mang thai.",
+        "en": "According to MedlinePlus (U.S. National Library of Medicine), blood pressure is the force of your blood pushing against the walls of your arteries; a reading of 90/60 mmHg or lower is low blood pressure (NHLBI and the NHS say \"lower than 90/60 mmHg\"). For most adults, a normal blood pressure is usually less than 120/80 mmHg (NHLBI).\n\nSome people have low blood pressure all the time, have no symptoms, and their low readings are normal for them. Low blood pressure is a problem only if it causes dizziness, fainting or, in extreme cases, shock (MedlinePlus). You may not need treatment for low blood pressure (NHLBI).\n\nFor many people, low blood pressure goes unnoticed; others may feel symptoms such as confusion, dizziness or lightheadedness, fainting, feeling tired or weak, blurry vision, headache, neck or back pain, nausea, and heart palpitations — feeling that your heart is skipping a beat, fluttering, or beating too hard or too fast (NHLBI). Causes can include problems with the autonomic nervous system (such as in Parkinson's disease), blood loss from an injury that causes a sudden drop in blood pressure, heart problems such as arrhythmias, and medicines to treat high blood pressure, depression or Parkinson's (NHLBI); NHLBI also lists dehydration, diabetes and pregnancy."
       },
       "sources": [
         "s1",
-        "s2"
+        "s4",
+        "s5"
       ]
     },
     {
@@ -76,11 +130,12 @@
         "en": "What is fainting?"
       },
       "body": {
-        "vi": "MedlinePlus định nghĩa ngất là mất ý thức trong thời gian ngắn do lưu lượng máu lên não giảm. Cơn ngất thường kéo dài không quá vài phút và người bệnh hồi phục nhanh.",
-        "en": "MedlinePlus defines fainting as a brief loss of consciousness due to a drop in blood flow to the brain. An episode usually lasts no more than a couple of minutes, with quick recovery."
+        "vi": "Theo MedlinePlus, ngất là mất ý thức tạm thời, thường xảy ra khi huyết áp tụt đột ngột làm lưu lượng máu lên não giảm; phần lớn người bị ngất hồi phục hoàn toàn. Theo NHS, người bị ngất thường tỉnh lại trong vòng 30 giây.",
+        "en": "According to MedlinePlus, fainting is a temporary loss of consciousness that usually happens when blood pressure drops suddenly, causing a decrease in blood flow to the brain; most people recover completely. According to the NHS, a person who has fainted will usually wake up within 30 seconds."
       },
       "sources": [
-        "s3"
+        "s6",
+        "s7"
       ]
     }
   ],

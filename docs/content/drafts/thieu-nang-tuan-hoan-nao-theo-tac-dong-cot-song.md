@@ -12,21 +12,25 @@ Theo MedlinePlus, các dấu hiệu đột quỵ xuất hiện **đột ngột**
 
 MedlinePlus khuyên **gọi cấp cứu ngay** nếu nghĩ mình hoặc người khác đang bị đột quỵ: điều trị ngay có thể cứu sống và tăng cơ hội hồi phục.
 
-**Triệu chứng tự hết vẫn là cấp cứu.** Cơn thiếu máu não thoáng qua (TIA) gây triệu chứng giống đột quỵ rồi hết, thường trong 1–2 giờ. MedlinePlus gọi TIA là một cấp cứu y khoa, cần gọi cấp cứu ngay, và là dấu hiệu cảnh báo đột quỵ thật có thể xảy ra sau đó — một số người bị đột quỵ trong vòng 3 tháng sau TIA, và một nửa số ca đó xảy ra trong 48 giờ đầu.
+**Triệu chứng tự hết vẫn là cấp cứu.** Cơn thiếu máu não thoáng qua (TIA) gây triệu chứng giống đột quỵ nhưng không kéo dài: phần lớn hết trong vòng một giờ, dù có thể kéo dài tới 24 giờ (MedlinePlus). Lúc đầu không thể biết đó là TIA hay đột quỵ thật, nên NHS (Dịch vụ Y tế Quốc gia Anh) khuyên **gọi cấp cứu ngay** khi mình hay người khác có triệu chứng TIA hoặc đột quỵ; kể cả khi triệu chứng hết trong lúc chờ xe cấp cứu, người bệnh vẫn cần được đánh giá ở bệnh viện. TIA là dấu hiệu cảnh báo rằng người bệnh có thể có nguy cơ bị đột quỵ thật trong thời gian tới. Người nghĩ trước đây mình từng bị TIA nhưng triệu chứng đã qua mà chưa đi khám thì nên đặt lịch khám gấp với bác sĩ (NHS).
 
-Với chóng mặt, MedlinePlus khuyên gọi cấp cứu hoặc đến khoa cấp cứu nếu chóng mặt đi kèm chấn thương đầu; sốt trên 38,3°C, đau đầu hoặc cứng cổ nặng; co giật; không uống giữ được nước; đau ngực; tim đập không đều; khó thở; yếu hoặc không cử động được tay hay chân; thay đổi thị lực hoặc lời nói; hoặc ngất mất ý thức quá vài phút.
+Với chóng mặt, MedlinePlus khuyên **tìm trợ giúp cấp cứu ngay** nếu chóng mặt hoặc chóng mặt quay xảy ra đột ngột hay dữ dội, đi kèm rối loạn thị lực, nói líu hoặc yếu người — đó có thể là dấu hiệu của bệnh nặng hơn.
+
+Với đau ngực, NHS khuyên **gọi cấp cứu ngay** nếu đau hoặc khó chịu ở ngực đến đột ngột và không hết (có thể như bị bóp chặt, đè ép, nóng rát hay khó tiêu); nếu đau lan ra một hay hai tay, cổ, hàm, bụng hoặc lưng; hoặc nếu đau ngực kèm vã mồ hôi, buồn nôn, choáng váng hay khó thở. Với khó thở, NHS khuyên **gọi cấp cứu hoặc đến khoa cấp cứu ngay** nếu khó thở nặng (thở hổn hển, nghẹn, không nói ra lời), ngực thấy bó chặt hay nặng, đau lan ra tay, lưng, cổ và hàm, môi hoặc da chuyển rất nhợt, tím hay xám, hoặc đột nhiên lú lẫn.
+
+Với cứng cổ, NHS khuyên **gọi cấp cứu hoặc đến khoa cấp cứu** nếu cứng cổ kèm không nhìn được ánh sáng chói, hoặc có sốt rất cao hay thân nhiệt rất thấp, đau đầu rất dữ dội, lú lẫn hay nói líu, phát ban không mờ đi khi ấn, hoặc co giật lần đầu — đó có thể là dấu hiệu viêm màng não.
 
 ## Đột quỵ và cơn thiếu máu não thoáng qua
 
 Theo MedlinePlus (Thư viện Y khoa Quốc gia Hoa Kỳ), đột quỵ xảy ra khi một phần não mất dòng máu nuôi; tế bào não không nhận được oxy và dưỡng chất nên chết đi trong vài phút, có thể để lại tổn thương lâu dài, tàn tật hoặc tử vong.
 
-Cơn thiếu máu não thoáng qua (TIA) là khi dòng máu đến một phần não ngừng trong thời gian ngắn. Người bệnh có triệu chứng giống đột quỵ, kéo dài tới 24 giờ nhưng thường hết trong 1–2 giờ. Triệu chứng MedlinePlus nêu gồm thay đổi thị giác, thính giác, vị giác hay xúc giác; lú lẫn, giảm trí nhớ hoặc nói khó; yếu cơ hoặc nuốt khó; chóng mặt hay mất thăng bằng; tê hoặc châm chích một bên người.
+Cơn thiếu máu não thoáng qua (TIA, còn gọi là "đột quỵ nhỏ") xảy ra khi nguồn máu đến một phần não bị tắc trong thời gian ngắn. Triệu chứng giống đột quỵ nhưng không kéo dài: phần lớn hết trong vòng một giờ, dù có thể kéo dài tới 24 giờ. Triệu chứng đến đột ngột; MedlinePlus nêu tê hoặc yếu, nhất là ở một bên người; lú lẫn, nói khó hoặc khó hiểu lời người khác; nhìn khó ở một hoặc hai mắt; đi lại khó; chóng mặt; mất thăng bằng hay mất phối hợp động tác.
 
-Một số triệu chứng tài liệu xếp vào "thiểu năng tuần hoàn não" — chóng mặt, lảo đảo, tay tê, trí nhớ giảm — cũng có trong danh sách triệu chứng của TIA và đột quỵ ở trên. Vì thế, khi chúng đến đột ngột, việc đầu tiên là gọi cấp cứu.
+Một số triệu chứng tài liệu xếp vào "thiểu năng tuần hoàn não" — chóng mặt, lảo đảo, tay tê — cũng có trong danh sách triệu chứng của TIA và đột quỵ ở trên. Vì thế, khi chúng đến đột ngột, việc đầu tiên là gọi cấp cứu.
 
 ## Chóng mặt: choáng váng và chóng mặt quay
 
-MedlinePlus phân biệt hai kiểu chóng mặt: **choáng váng** là cảm giác như sắp ngất; **chóng mặt quay** (vertigo) là cảm giác mình đang quay hay chuyển động, hoặc mọi thứ quanh mình đang quay.
+MedlinePlus phân biệt chóng mặt với chóng mặt quay (vertigo) — hai thứ hay bị lẫn với nhau: **chóng mặt** có thể khiến bạn thấy choáng váng, lâng lâng hoặc đứng không vững; **chóng mặt quay** là cảm giác mình hoặc căn phòng đang quay dù không có gì chuyển động.
 
 ## Triệu chứng được tài liệu mô tả
 

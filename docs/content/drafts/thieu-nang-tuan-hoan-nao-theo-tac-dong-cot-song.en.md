@@ -12,21 +12,25 @@ According to MedlinePlus, stroke warning signs come on **suddenly**:
 
 MedlinePlus advises **calling emergency services right away** if you think you or someone else is having a stroke: immediate treatment may save a life and improve the chances of recovery.
 
-**Symptoms that go away are still an emergency.** A transient ischemic attack (TIA) causes stroke-like symptoms that then resolve, usually within 1 to 2 hours. MedlinePlus calls a TIA a medical emergency that needs emergency services right away, and a warning sign that a true stroke may follow — some people have a stroke within 3 months of a TIA, and half of those strokes happen within the first 48 hours.
+**Symptoms that go away are still an emergency.** A transient ischemic attack (TIA) causes stroke-like symptoms that do not last as long: most disappear within an hour, although they may last for up to 24 hours (MedlinePlus). In the early stages it is not possible to tell whether it is a TIA or a full stroke, so the NHS (UK National Health Service) advises **calling emergency services immediately** if you or someone else has symptoms of a TIA or stroke; even if the symptoms disappear while you are waiting for an ambulance, you still need to be assessed in hospital. A TIA is a warning sign that you may be at risk of having a full stroke in the near future. If you think you may have had a TIA previously, but the symptoms have passed and you did not seek medical advice at the time, make an urgent appointment with a doctor (NHS).
 
-For dizziness, MedlinePlus advises calling emergency services or going to an emergency room if it comes with a head injury; fever over 38.3°C (101°F), headache or severe neck stiffness; seizures; being unable to keep fluids down; chest pain; irregular heartbeat; shortness of breath; weakness or inability to move an arm or leg; changes in vision or speech; or fainting with loss of consciousness lasting more than a few minutes.
+For dizziness, MedlinePlus advises **getting emergency help right away** if you have sudden or severe dizziness or vertigo along with vision problems, slurred speech or weakness — these may be signs of a more serious condition.
+
+For chest pain, the NHS advises **calling emergency services straight away** if you get sudden pain or discomfort in your chest that does not go away (it can feel like squeezing or pressure, burning or indigestion); if the pain spreads to your left or right arm, or your neck, jaw, stomach or back; or if you have chest pain and feel sweaty, sick, lightheaded or short of breath. For shortness of breath, the NHS advises **calling emergency services or going to the emergency department immediately** if you have severe difficulty breathing (gasping, choking or not able to get words out), your chest feels tight or heavy, you have pain that spreads to your arms, back, neck and jaw, your lips or skin are turning very pale, blue or grey, or you feel suddenly confused.
+
+For a stiff neck, the NHS advises **calling emergency services or going to the emergency department** if it comes with being unable to look at bright lights, or with a very high or very low temperature, a very painful headache, confusion or slurred speech, a rash that does not fade when pressed, or a first-time seizure — these can be signs of meningitis.
 
 ## Stroke and transient ischemic attack
 
 According to MedlinePlus (U.S. National Library of Medicine), a stroke happens when part of the brain loses its blood flow; brain cells cannot get oxygen and nutrients and die within minutes, which can cause lasting damage, disability or death.
 
-A transient ischemic attack (TIA) is when blood flow to part of the brain stops for a brief time. People have stroke-like symptoms lasting up to 24 hours, though they usually resolve within 1 to 2 hours. Symptoms MedlinePlus lists include changes in vision, hearing, taste or touch; confusion, memory loss or trouble speaking; muscle weakness or trouble swallowing; dizziness or balance problems; and numbness or tingling on one side of the body.
+A transient ischemic attack (TIA, sometimes called a "mini-stroke") happens when the blood supply to part of the brain is briefly blocked. Its symptoms are like stroke symptoms but do not last as long: most disappear within an hour, although they may last for up to 24 hours. They happen suddenly; MedlinePlus lists numbness or weakness, especially on one side of the body; confusion or trouble speaking or understanding speech; trouble seeing in one or both eyes; difficulty walking; dizziness; and loss of balance or coordination.
 
-Some symptoms the document groups under "cerebral circulatory insufficiency" — dizziness, unsteadiness, numb hands, memory decline — also appear in the TIA and stroke symptom lists above. So when they come on suddenly, the first step is to call emergency services.
+Some symptoms the document groups under "cerebral circulatory insufficiency" — dizziness, unsteadiness, numb hands — also appear in the TIA and stroke symptom lists above. So when they come on suddenly, the first step is to call emergency services.
 
 ## Dizziness: lightheadedness and vertigo
 
-MedlinePlus distinguishes two kinds of dizziness: **lightheadedness** is a feeling that you might faint; **vertigo** is a feeling that you are spinning or moving, or that the world is spinning around you.
+MedlinePlus distinguishes dizziness from vertigo, which are often mixed up: **dizziness** can make you feel lightheaded, woozy or unsteady on your feet; **vertigo** is the feeling that you or the room is spinning even when nothing is moving.
 
 ## Symptoms described in the document
 

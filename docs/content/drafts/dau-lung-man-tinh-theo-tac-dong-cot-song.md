@@ -1,32 +1,33 @@
 > **Tư liệu lưu trữ.** Bài này trình bày nội dung của tài liệu *Phương pháp Tác động Cột sống Việt Nam* (Chi hội Tác động cột sống Hà Nội — Hội Đông y thành phố Hà Nội) để lưu trữ, nghiên cứu và tham khảo. Các đoạn trích là lời của tài liệu, không phải kết luận y khoa của Sciencepedia, và không thay thế chẩn đoán hay điều trị của nhân viên y tế.
 
-## ⚠️ Khi nào cần đi khám ngay
+## ⚠️ Khi nào cần đi khám
 
-Với đau lưng mạn tính, MedlinePlus khuyên liên hệ nhân viên y tế nếu đau lưng nặng mà không hết, và liên hệ **ngay** nếu bị tê, mất cử động, yếu, hoặc có thay đổi khi đi tiểu hay đại tiện.
+Theo NHS (Dịch vụ Y tế Quốc gia Anh), **gọi cấp cứu hoặc đến khoa cấp cứu** nếu đau lưng kèm:
 
-Trong bài về đau lưng, MedlinePlus còn liệt kê các dấu hiệu cần liên hệ nhân viên y tế ngay, trong đó có:
+- đau, ngứa ran, yếu hoặc tê ở cả hai chân;
+- mất cảm giác quanh bộ phận sinh dục hoặc hậu môn;
+- thay đổi khi đi tiểu hay đại tiện, như khó tiểu, hoặc tiểu hay đại tiện không tự chủ;
+- thay đổi cảm giác ở dương vật hay âm đạo khi quan hệ, không cương được hoặc không giữ được cương, hoặc không đạt cực khoái;
+- đau ngực;
+- đau bắt đầu sau một tai nạn nghiêm trọng, như tai nạn xe.
 
-- đau lưng sau một cú va đập mạnh hoặc té ngã;
-- tiểu buốt hoặc có máu trong nước tiểu;
-- tiền sử ung thư;
-- tiểu hoặc đại tiện không tự chủ;
-- đau lan xuống chân, dưới đầu gối;
-- đau nặng hơn khi nằm, hoặc làm thức giấc ban đêm;
-- lưng hoặc cột sống bị đỏ, sưng;
-- sốt không rõ nguyên nhân kèm đau lưng;
-- yếu hoặc tê ở mông, đùi, chân hay vùng chậu; đi lại hoặc giữ thăng bằng khó khăn.
+Không tự lái xe đến khoa cấp cứu — nhờ người khác chở hoặc gọi xe cấp cứu (NHS).
 
-MedlinePlus cũng khuyên liên hệ nhân viên y tế nếu sụt cân không chủ ý, hoặc nếu từng đau lưng nhưng lần này khác và nặng hơn.
+NHS khuyên **xin khám gấp** nếu đau lưng kèm cảm giác nóng, lạnh, run hoặc thấy người không khỏe, hoặc nếu cơn đau dữ dội bắt đầu đột ngột hay nặng lên nhanh.
+
+NHS khuyên đi khám nếu đau lưng và: không đỡ sau vài tuần tự chăm sóc ở nhà; cản trở sinh hoạt hằng ngày; bạn lo lắng về cơn đau hoặc khó chịu đựng nổi; sụt cân không chủ ý; lưng có khối u hay chỗ sưng, hoặc lưng đổi hình dạng; không đỡ khi nghỉ hoặc nặng hơn về đêm; nặng hơn khi hắt hơi, ho hay đi đại tiện; đau ở lưng trên (giữa hai vai) chứ không phải ở thắt lưng. NHS lưu ý: rất hiếm khi, đau lưng có thể là dấu hiệu của một vấn đề nghiêm trọng như gãy xương, ung thư hoặc nhiễm trùng.
+
+NIAMS (Viện Viêm khớp, Cơ xương và Da Hoa Kỳ) cũng khuyên đi khám nếu đau không đỡ sau vài tuần, hoặc có tê và ngứa ran; đau lưng dữ dội không đỡ khi dùng thuốc; đau lưng sau té ngã hay chấn thương; hoặc đau lưng kèm khó tiểu, yếu, đau hay tê ở chân, sốt, hay sụt cân không chủ ý.
+
+**Đau lưng kèm tiểu buốt hoặc tiểu ra máu: đi khám, không chờ tác động cột sống.** Tài liệu dưới đây có mục "Đau lưng liên quan đến bệnh nội tạng", trong đó nêu cả đái buốt, đái đỏ. NHS khuyên xin khám gấp nếu thấy hoặc nghĩ là có máu trong nước tiểu (nước tiểu có thể hồng tươi, đỏ hoặc nâu sẫm), vì máu trong nước tiểu phải được kiểm tra và có thể là dấu hiệu ung thư. Đau, rát hay buốt khi đi tiểu thì NHS khuyên đi khám. Nếu nghĩ mình bị nhiễm trùng thận (có thể gây đau thắt lưng hoặc mạn sườn) mà kèm sốt rất cao hoặc thấy nóng, lạnh, run, có máu trong nước tiểu, buồn nôn hay nôn, hoặc cả ngày không đi tiểu, NHS khuyên xin khám gấp. Nếu lú lẫn, lơ mơ hoặc khó nói thì gọi cấp cứu, vì nhiễm trùng thận không được điều trị có thể gây nhiễm trùng huyết.
 
 **Đau lưng trên có thể là triệu chứng nhồi máu cơ tim.** Theo MedlinePlus, triệu chứng thường gặp nhất của nhồi máu cơ tim gồm: khó chịu ở ngực; khó thở (đôi khi là triệu chứng duy nhất); đau hoặc khó chịu ở một hay hai cánh tay, lưng, vai, cổ, hàm hoặc bụng trên. MedlinePlus khuyên gọi cấp cứu khi có triệu chứng nhồi máu cơ tim, kể cả khi chưa chắc đó là nhồi máu cơ tim.
-
-**Áp xe tủy sống** — một nhiễm trùng bên trong cột sống, thường do tụ cầu, ở một số nơi trên thế giới có thể do lao — gây sốt, ớn lạnh, đau lưng tăng dần, mất cử động hoặc mất cảm giác ở vùng dưới ổ áp xe, mất kiểm soát tiểu tiện hay đại tiện. MedlinePlus khuyên đến khoa cấp cứu hoặc gọi cấp cứu khi có các triệu chứng này.
 
 ## Đau lưng mạn tính là gì?
 
 Theo MedlinePlus (Thư viện Y khoa Quốc gia Hoa Kỳ), đau lưng là một trong những vấn đề y khoa thường gặp nhất, gặp ở 8 trên 10 người vào một lúc nào đó trong đời. Đau lưng cấp đến đột ngột và thường kéo dài từ vài ngày đến vài tuần; đau lưng được gọi là **mạn tính** khi kéo dài hơn ba tháng.
 
-Đau thắt lưng mạn tính có thể kèm cứng lưng, giảm cử động vùng thắt lưng và khó đứng thẳng. MedlinePlus cho biết thường không tìm được nguyên nhân chính xác của cơn đau. Các nguyên nhân MedlinePlus nêu gồm viêm khớp và thoái hóa cột sống, thoát vị đĩa đệm chèn vào dây thần kinh, hẹp ống sống, cột sống cong bất thường (vẹo, gù), đau xơ cơ hoặc viêm khớp dạng thấp, và hội chứng cơ hình lê.
+Theo NIAMS (Viện Quốc gia về Viêm khớp, Bệnh cơ xương và Da, Hoa Kỳ), đau lưng có thể do nhiều yếu tố khác nhau, có khi cùng lúc hiện diện và tác động lẫn nhau, dẫn đến đau thắt lưng mạn tính; cũng có khi không xác định được nguyên nhân cụ thể. Các nguyên nhân NIAMS nêu có: bong gân, căng cơ; thoái hóa đĩa đệm; thoát vị đĩa đệm chèn ép, kích thích dây thần kinh; trượt đốt sống; hẹp ống sống; gãy đốt sống; vẹo cột sống hay các biến đổi bẩm sinh khác của cột sống; viêm cột sống dính khớp và các dạng viêm khớp do viêm khác của cột sống; loãng xương; đau xơ cơ; sỏi thận hay nhiễm trùng thận; nhiễm trùng xương cột sống hay đĩa đệm; và hiếm khi là khối u.
 
 MedlinePlus cũng lưu ý nằm trên giường quá 1–2 ngày có thể làm đau lưng nặng hơn.
 

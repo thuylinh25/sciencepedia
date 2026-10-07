@@ -25,22 +25,6 @@
       "accessed": "2026-10-05"
     },
     {
-      "id": "s2",
-      "title": "Low back pain - chronic",
-      "publisher": "MedlinePlus — U.S. National Library of Medicine",
-      "url": "https://medlineplus.gov/ency/article/007422.htm",
-      "tier": 2,
-      "accessed": "2026-10-05"
-    },
-    {
-      "id": "s3",
-      "title": "Low back pain - acute",
-      "publisher": "MedlinePlus — U.S. National Library of Medicine",
-      "url": "https://medlineplus.gov/ency/article/007425.htm",
-      "tier": 2,
-      "accessed": "2026-10-05"
-    },
-    {
       "id": "s4",
       "title": "Heart Attack",
       "publisher": "MedlinePlus — U.S. National Library of Medicine",
@@ -57,28 +41,53 @@
       "accessed": "2026-10-05"
     },
     {
-      "id": "s6",
-      "title": "Spinal cord abscess",
-      "publisher": "MedlinePlus — U.S. National Library of Medicine",
-      "url": "https://medlineplus.gov/ency/article/001405.htm",
+      "id": "s7",
+      "title": "Back pain",
+      "publisher": "NHS",
+      "url": "https://www.nhs.uk/conditions/back-pain/",
       "tier": 2,
-      "accessed": "2026-10-05"
+      "accessed": "2026-10-07"
+    },
+    {
+      "id": "s8",
+      "title": "Back Pain",
+      "publisher": "National Institute of Arthritis and Musculoskeletal and Skin Diseases (NIAMS)",
+      "url": "https://www.niams.nih.gov/health-topics/back-pain",
+      "tier": 2,
+      "accessed": "2026-10-07"
+    },
+    {
+      "id": "s9",
+      "title": "Blood in urine",
+      "publisher": "NHS (UK National Health Service)",
+      "url": "https://www.nhs.uk/conditions/blood-in-urine/",
+      "tier": 2,
+      "accessed": "2026-10-07"
+    },
+    {
+      "id": "s10",
+      "title": "Kidney infection",
+      "publisher": "NHS (UK National Health Service)",
+      "url": "https://www.nhs.uk/conditions/kidney-infection/",
+      "tier": 2,
+      "accessed": "2026-10-07"
     }
   ],
   "safety": {
     "heading": {
-      "vi": "⚠️ Khi nào cần đi khám ngay",
-      "en": "⚠️ When to get medical help right away"
+      "vi": "⚠️ Khi nào cần đi khám",
+      "en": "⚠️ When to get medical help"
     },
     "body": {
-      "vi": "Với đau lưng mạn tính, MedlinePlus khuyên liên hệ nhân viên y tế nếu đau lưng nặng mà không hết, và liên hệ **ngay** nếu bị tê, mất cử động, yếu, hoặc có thay đổi khi đi tiểu hay đại tiện.\n\nTrong bài về đau lưng, MedlinePlus còn liệt kê các dấu hiệu cần liên hệ nhân viên y tế ngay, trong đó có:\n\n- đau lưng sau một cú va đập mạnh hoặc té ngã;\n- tiểu buốt hoặc có máu trong nước tiểu;\n- tiền sử ung thư;\n- tiểu hoặc đại tiện không tự chủ;\n- đau lan xuống chân, dưới đầu gối;\n- đau nặng hơn khi nằm, hoặc làm thức giấc ban đêm;\n- lưng hoặc cột sống bị đỏ, sưng;\n- sốt không rõ nguyên nhân kèm đau lưng;\n- yếu hoặc tê ở mông, đùi, chân hay vùng chậu; đi lại hoặc giữ thăng bằng khó khăn.\n\nMedlinePlus cũng khuyên liên hệ nhân viên y tế nếu sụt cân không chủ ý, hoặc nếu từng đau lưng nhưng lần này khác và nặng hơn.\n\n**Đau lưng trên có thể là triệu chứng nhồi máu cơ tim.** Theo MedlinePlus, triệu chứng thường gặp nhất của nhồi máu cơ tim gồm: khó chịu ở ngực; khó thở (đôi khi là triệu chứng duy nhất); đau hoặc khó chịu ở một hay hai cánh tay, lưng, vai, cổ, hàm hoặc bụng trên. MedlinePlus khuyên gọi cấp cứu khi có triệu chứng nhồi máu cơ tim, kể cả khi chưa chắc đó là nhồi máu cơ tim.\n\n**Áp xe tủy sống** — một nhiễm trùng bên trong cột sống, thường do tụ cầu, ở một số nơi trên thế giới có thể do lao — gây sốt, ớn lạnh, đau lưng tăng dần, mất cử động hoặc mất cảm giác ở vùng dưới ổ áp xe, mất kiểm soát tiểu tiện hay đại tiện. MedlinePlus khuyên đến khoa cấp cứu hoặc gọi cấp cứu khi có các triệu chứng này.",
-      "en": "For chronic back pain, MedlinePlus advises contacting a health professional if you have severe back pain that does not go away, and contacting them **right away** if you have numbness, loss of movement, weakness, or bowel or bladder changes.\n\nIn its article on back pain, MedlinePlus also lists signs that need a health professional right away, including:\n\n- back pain after a severe blow or fall;\n- burning with urination or blood in your urine;\n- a history of cancer;\n- loss of control over urine or stool;\n- pain travelling down your legs below the knee;\n- pain that is worse when you lie down, or wakes you up at night;\n- redness or swelling on the back or spine;\n- unexplained fever with back pain;\n- weakness or numbness in your buttocks, thigh, leg or pelvis; difficulty walking or keeping your balance.\n\nMedlinePlus also advises contacting a health professional if you have been losing weight unintentionally, or if you have had back pain before but this episode is different and feels worse.\n\n**Upper back pain can be a symptom of a heart attack.** According to MedlinePlus, the most common heart attack symptoms are: chest discomfort; shortness of breath (sometimes the only symptom); and pain or discomfort in one or both arms, the back, shoulders, neck, jaw or upper part of the stomach. MedlinePlus advises calling emergency services for heart attack symptoms, even if you are not sure it is a heart attack.\n\n**Spinal cord abscess** — an infection inside the spine, often caused by a staphylococcus infection and in some areas of the world possibly by tuberculosis — causes fever, chills, worsening back pain, loss of movement or sensation in an area below the abscess, and loss of bladder or bowel control. MedlinePlus advises going to the emergency room or calling emergency services for these symptoms."
+      "vi": "Theo NHS (Dịch vụ Y tế Quốc gia Anh), **gọi cấp cứu hoặc đến khoa cấp cứu** nếu đau lưng kèm:\n\n- đau, ngứa ran, yếu hoặc tê ở cả hai chân;\n- mất cảm giác quanh bộ phận sinh dục hoặc hậu môn;\n- thay đổi khi đi tiểu hay đại tiện, như khó tiểu, hoặc tiểu hay đại tiện không tự chủ;\n- thay đổi cảm giác ở dương vật hay âm đạo khi quan hệ, không cương được hoặc không giữ được cương, hoặc không đạt cực khoái;\n- đau ngực;\n- đau bắt đầu sau một tai nạn nghiêm trọng, như tai nạn xe.\n\nKhông tự lái xe đến khoa cấp cứu — nhờ người khác chở hoặc gọi xe cấp cứu (NHS).\n\nNHS khuyên **xin khám gấp** nếu đau lưng kèm cảm giác nóng, lạnh, run hoặc thấy người không khỏe, hoặc nếu cơn đau dữ dội bắt đầu đột ngột hay nặng lên nhanh.\n\nNHS khuyên đi khám nếu đau lưng và: không đỡ sau vài tuần tự chăm sóc ở nhà; cản trở sinh hoạt hằng ngày; bạn lo lắng về cơn đau hoặc khó chịu đựng nổi; sụt cân không chủ ý; lưng có khối u hay chỗ sưng, hoặc lưng đổi hình dạng; không đỡ khi nghỉ hoặc nặng hơn về đêm; nặng hơn khi hắt hơi, ho hay đi đại tiện; đau ở lưng trên (giữa hai vai) chứ không phải ở thắt lưng. NHS lưu ý: rất hiếm khi, đau lưng có thể là dấu hiệu của một vấn đề nghiêm trọng như gãy xương, ung thư hoặc nhiễm trùng.\n\nNIAMS (Viện Viêm khớp, Cơ xương và Da Hoa Kỳ) cũng khuyên đi khám nếu đau không đỡ sau vài tuần, hoặc có tê và ngứa ran; đau lưng dữ dội không đỡ khi dùng thuốc; đau lưng sau té ngã hay chấn thương; hoặc đau lưng kèm khó tiểu, yếu, đau hay tê ở chân, sốt, hay sụt cân không chủ ý.\n\n**Đau lưng kèm tiểu buốt hoặc tiểu ra máu: đi khám, không chờ tác động cột sống.** Tài liệu dưới đây có mục \"Đau lưng liên quan đến bệnh nội tạng\", trong đó nêu cả đái buốt, đái đỏ. NHS khuyên xin khám gấp nếu thấy hoặc nghĩ là có máu trong nước tiểu (nước tiểu có thể hồng tươi, đỏ hoặc nâu sẫm), vì máu trong nước tiểu phải được kiểm tra và có thể là dấu hiệu ung thư. Đau, rát hay buốt khi đi tiểu thì NHS khuyên đi khám. Nếu nghĩ mình bị nhiễm trùng thận (có thể gây đau thắt lưng hoặc mạn sườn) mà kèm sốt rất cao hoặc thấy nóng, lạnh, run, có máu trong nước tiểu, buồn nôn hay nôn, hoặc cả ngày không đi tiểu, NHS khuyên xin khám gấp. Nếu lú lẫn, lơ mơ hoặc khó nói thì gọi cấp cứu, vì nhiễm trùng thận không được điều trị có thể gây nhiễm trùng huyết.\n\n**Đau lưng trên có thể là triệu chứng nhồi máu cơ tim.** Theo MedlinePlus, triệu chứng thường gặp nhất của nhồi máu cơ tim gồm: khó chịu ở ngực; khó thở (đôi khi là triệu chứng duy nhất); đau hoặc khó chịu ở một hay hai cánh tay, lưng, vai, cổ, hàm hoặc bụng trên. MedlinePlus khuyên gọi cấp cứu khi có triệu chứng nhồi máu cơ tim, kể cả khi chưa chắc đó là nhồi máu cơ tim.",
+      "en": "According to the NHS (UK National Health Service), **call emergency services or go to A&E** if you have back pain and:\n\n- pain, tingling, weakness or numbness in both legs;\n- a loss of feeling around your genitals or anus;\n- changes in your bladder or bowels, such as difficulty peeing, or peeing or pooing yourself;\n- changes in how your penis or vagina feels during sex, not being able to get or keep an erection, or not being able to orgasm;\n- chest pain;\n- pain that started after a serious accident, such as a car accident.\n\nDo not drive yourself to A&E — ask someone to drive you or call for an ambulance (NHS).\n\nThe NHS advises asking for an **urgent appointment** if you have back pain and feel hot, cold, shivery or generally unwell, or if it is severe pain that starts suddenly or is getting worse quickly.\n\nThe NHS advises seeing a doctor if you have back pain and: it does not improve after treating it at home for a few weeks; it stops you doing your day-to-day activities; you are worried about the pain or struggling to cope; you have lost weight without trying to; there is a lump or swelling in your back, or your back has changed shape; it does not improve after resting or is worse at night; it is worse when sneezing, coughing or pooing; or it is coming from the top of your back (between your shoulders) rather than your lower back. The NHS notes that, very rarely, back pain can be a sign of a serious problem such as a broken bone, cancer or an infection.\n\nNIAMS (U.S. National Institute of Arthritis and Musculoskeletal and Skin Diseases) also advises seeing a doctor if the pain does not improve after a few weeks, or if you have numbness and tingling; severe back pain that does not improve with medication; back pain after a fall or injury; or back pain along with trouble urinating, weakness, pain or numbness in your legs, fever, or weight loss you did not intend.\n\n**Back pain with painful peeing or blood in your pee: see a doctor rather than waiting for spinal work.** The document below has a form called \"Back pain related to internal-organ disease\", which includes painful urination and red urine. The NHS advises asking for an urgent appointment if you have or think you may have blood in your pee (it may be bright pink, red or dark brown), because it must be checked out and can be a sign of cancer. For pain, burning or stinging when you pee, the NHS advises seeing a doctor. If you think you may have a kidney infection (which can cause pain in your lower back or side) and you have a very high temperature or feel hot, cold or shivery, blood in your pee, are feeling or being sick, or have not had a pee all day, the NHS advises an urgent appointment. Call emergency services if you are confused, drowsy or have difficulty speaking, because an untreated kidney infection can cause sepsis.\n\n**Upper back pain can be a symptom of a heart attack.** According to MedlinePlus, the most common heart attack symptoms are: chest discomfort; shortness of breath (sometimes the only symptom); and pain or discomfort in one or both arms, the back, shoulders, neck, jaw or upper part of the stomach. MedlinePlus advises calling emergency services for heart attack symptoms, even if you are not sure it is a heart attack."
     },
     "sources": [
-      "s2",
-      "s3",
       "s4",
-      "s6"
+      "s7",
+      "s8",
+      "s9",
+      "s10"
     ]
   },
   "general": [
@@ -88,12 +97,12 @@
         "en": "What is chronic back pain?"
       },
       "body": {
-        "vi": "Theo MedlinePlus (Thư viện Y khoa Quốc gia Hoa Kỳ), đau lưng là một trong những vấn đề y khoa thường gặp nhất, gặp ở 8 trên 10 người vào một lúc nào đó trong đời. Đau lưng cấp đến đột ngột và thường kéo dài từ vài ngày đến vài tuần; đau lưng được gọi là **mạn tính** khi kéo dài hơn ba tháng.\n\nĐau thắt lưng mạn tính có thể kèm cứng lưng, giảm cử động vùng thắt lưng và khó đứng thẳng. MedlinePlus cho biết thường không tìm được nguyên nhân chính xác của cơn đau. Các nguyên nhân MedlinePlus nêu gồm viêm khớp và thoái hóa cột sống, thoát vị đĩa đệm chèn vào dây thần kinh, hẹp ống sống, cột sống cong bất thường (vẹo, gù), đau xơ cơ hoặc viêm khớp dạng thấp, và hội chứng cơ hình lê.\n\nMedlinePlus cũng lưu ý nằm trên giường quá 1–2 ngày có thể làm đau lưng nặng hơn.",
-        "en": "According to MedlinePlus (U.S. National Library of Medicine), back pain is one of the most common medical problems, affecting 8 out of 10 people at some point in their lives. Acute back pain comes on suddenly and usually lasts from a few days to a few weeks; back pain is called **chronic** if it lasts for more than three months.\n\nChronic low back pain may come with back stiffness, decreased movement of the lower back and difficulty standing straight. MedlinePlus says the exact cause of the pain often cannot be found. The causes it lists include arthritis and degenerative spine disease, herniated disks pressing on nerves, spinal stenosis, abnormal curvature of the spine (scoliosis, kyphosis), fibromyalgia or rheumatoid arthritis, and piriformis syndrome.\n\nMedlinePlus also notes that staying in bed for more than 1 or 2 days can make back pain worse."
+        "vi": "Theo MedlinePlus (Thư viện Y khoa Quốc gia Hoa Kỳ), đau lưng là một trong những vấn đề y khoa thường gặp nhất, gặp ở 8 trên 10 người vào một lúc nào đó trong đời. Đau lưng cấp đến đột ngột và thường kéo dài từ vài ngày đến vài tuần; đau lưng được gọi là **mạn tính** khi kéo dài hơn ba tháng.\n\nTheo NIAMS (Viện Quốc gia về Viêm khớp, Bệnh cơ xương và Da, Hoa Kỳ), đau lưng có thể do nhiều yếu tố khác nhau, có khi cùng lúc hiện diện và tác động lẫn nhau, dẫn đến đau thắt lưng mạn tính; cũng có khi không xác định được nguyên nhân cụ thể. Các nguyên nhân NIAMS nêu có: bong gân, căng cơ; thoái hóa đĩa đệm; thoát vị đĩa đệm chèn ép, kích thích dây thần kinh; trượt đốt sống; hẹp ống sống; gãy đốt sống; vẹo cột sống hay các biến đổi bẩm sinh khác của cột sống; viêm cột sống dính khớp và các dạng viêm khớp do viêm khác của cột sống; loãng xương; đau xơ cơ; sỏi thận hay nhiễm trùng thận; nhiễm trùng xương cột sống hay đĩa đệm; và hiếm khi là khối u.\n\nMedlinePlus cũng lưu ý nằm trên giường quá 1–2 ngày có thể làm đau lưng nặng hơn.",
+        "en": "According to MedlinePlus (U.S. National Library of Medicine), back pain is one of the most common medical problems, affecting 8 out of 10 people at some point in their lives. Acute back pain comes on suddenly and usually lasts from a few days to a few weeks; back pain is called **chronic** if it lasts for more than three months.\n\nAccording to NIAMS (U.S. National Institute of Arthritis and Musculoskeletal and Skin Diseases), back pain can be caused by many different factors, which may all be present at the same time and interact to result in chronic low back pain; it is also possible that no specific cause can be identified. The causes NIAMS lists include sprains and strains; degenerative disc disease; herniated or ruptured discs compressing and irritating nearby nerves; spondylolisthesis; spinal stenosis; fractured vertebrae; scoliosis or other congenital changes to the spine; ankylosing spondylitis and other types of inflammatory arthritis of the spine; osteoporosis; fibromyalgia; kidney stones or infections; infections of the bones of the spine or the discs between them; and, in rare cases, tumors.\n\nMedlinePlus also notes that staying in bed for more than 1 or 2 days can make back pain worse."
       },
       "sources": [
         "s1",
-        "s2"
+        "s8"
       ]
     },
     {

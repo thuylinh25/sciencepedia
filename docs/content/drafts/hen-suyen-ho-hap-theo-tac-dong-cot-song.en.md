@@ -10,16 +10,7 @@ The NHS advises calling emergency services when someone having an asthma attack:
 - does not feel better after taking the maximum dose of their reliever inhaler;
 - does not have an asthma inhaler.
 
-MedlinePlus advises going to the emergency room or calling emergency services right away for:
-
-- drowsiness or confusion;
-- severe shortness of breath at rest;
-- a peak flow below 50% of your personal best;
-- severe chest pain;
-- bluish color to the lips and face;
-- extreme difficulty breathing;
-- rapid pulse;
-- severe anxiety due to shortness of breath.
+NHLBI (U.S. National Heart, Lung, and Blood Institute) advises calling emergency services if your medicines are not relieving your symptoms during an asthma attack or if breathing is still very hard, and going to the emergency room if your symptoms do not go away soon after taking your at-home medicines or if you have a serious asthma attack.
 
 For **young children** with asthma, NHLBI advises calling emergency services if they seem drowsy, confused or troubled, have a blue tint to the skin and lips, or have a fast heartbeat.
 
@@ -29,16 +20,16 @@ After recovering from an attack, even if you feel better, see a doctor within 2 
 
 According to the NHS (UK National Health Service), asthma is a common condition that affects your breathing. It cannot currently be cured, but if it is well treated you should not have problems with symptoms. Symptoms happen when the airways become swollen and narrower.
 
-The main symptoms are wheezing, coughing, shortness of breath and a tight chest. According to NHLBI (U.S. National Heart, Lung, and Blood Institute), asthma symptoms often follow a pattern: they come and go, get worse with viral infections such as a cold, are triggered by exercise, allergies or cold air, and are worse at night or in the morning. MedlinePlus adds an abnormal breathing pattern seen in asthma: breathing out takes more than twice as long as breathing in — close to what the document describes as "breathing out is hard".
+The main symptoms are wheezing, coughing, shortness of breath and a tight chest. According to NHLBI (U.S. National Heart, Lung, and Blood Institute), asthma symptoms often follow a pattern: they come and go, get worse with viral infections such as a cold, are triggered by exercise, allergies or cold air, and are worse at night or in the morning.
 
-An asthma attack can last from minutes to days and may start suddenly or slowly (MedlinePlus). Diagnosis relies on questions, listening to the chest, a breathing test and sometimes peak flow readings at home (NHS). The main treatment is inhaled medicine, following an asthma action plan that sets out which medicine to use when and what to do if symptoms get worse. With proper self-care and medical treatment, most people with asthma can lead a normal life (MedlinePlus). MedlinePlus also says removing tobacco smoke from the home is the single most important thing a family can do for someone with asthma.
+An asthma attack can come on quickly or gradually (NHLBI). Diagnosis relies on questions, listening to the chest, a breathing test and sometimes peak flow readings at home (NHS). The main treatment is inhaled medicine, following an asthma action plan that sets out which medicine to use when and what to do if symptoms get worse. For most people, inhalers work well to prevent or reduce symptoms if they are used correctly, and asthma has only a small impact on their daily life (NHS). The NHS also advises not smoking and trying to avoid things that trigger asthma symptoms, such as air pollution, smoke, pollen or animals.
 
 ## Breathlessness is not always asthma
 
 Breathing problems can have different causes, which is one reason asthma can take time to diagnose (NHS). Two forms in the document below describe symptoms that also occur in other conditions:
 
-- **Breathlessness at night with a fast heartbeat** (form 4): for **heart failure**, MedlinePlus lists waking up after a couple of hours of sleep due to shortness of breath, shortness of breath after lying down, and a fast or irregular pulse; on examination, doctors look for abnormal heart sounds. MedlinePlus advises calling emergency services for fainting, a fast and irregular heartbeat, or severe chest pain.
-- **Fast breathing with fever** (form 2): MedlinePlus lists cough, fever, shaking chills and shortness of breath as the most common symptoms of **pneumonia**, and advises contacting a doctor for fast or painful breathing, or for shortness of breath, shaking chills or persistent fevers.
+- **Breathlessness at night with a fast heartbeat** (form 4): among the symptoms of **heart failure**, the NHS lists feeling out of breath when doing everyday activities or lying down, and coughing at night. The NHS advises asking for an urgent GP appointment or getting help from NHS 111 if you feel breathless when lying down or from everyday activity, and calling emergency services for severe difficulty breathing (gasping, choking or not able to get words out), pale, blue or grey lips or skin, or if someone has passed out and is not responding normally.
+- **Fast breathing with fever** (form 2): the NHS lists a cough, shortness of breath, a high temperature and chest pain among the possible symptoms of **pneumonia**. It advises asking for an urgent GP appointment or getting help from NHS 111 if you are feeling short of breath, or have chest pain that comes and goes or happens when breathing or coughing; and calling emergency services or going to the emergency department if you are struggling to breathe (choking, gasping and unable to speak), have pale, blue or blotchy skin, lips or tongue, are coughing up blood, or suddenly feel confused.
 
 So breathlessness that is new or changing needs a medical check to find its cause.
 

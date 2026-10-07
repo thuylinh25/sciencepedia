@@ -2,31 +2,40 @@
 
 ## ⚠️ When it is an emergency
 
-**If a person is unconscious and not breathing or has no pulse: call emergency services and start CPR right away** (MedlinePlus). The document has a form named "fainting, stopped breathing, stopped heartbeat" — that is an emergency, not something to wait out at home.
+**If a person does not respond and is not breathing normally: call emergency services and start CPR right away** — gasping or gurgling is not normal breathing; if someone else is nearby, send them to call while you start CPR. If you haven't had CPR training, you can do hands-only CPR (chest compressions only, no breaths) for a teen or adult whose heart has stopped (NHLBI; MedlinePlus). The document has a form named "fainting, stopped breathing, stopped heartbeat" — that is an emergency, not something to wait out at home. The emergency call handler will give advice about what to do (NHS — the UK National Health Service).
 
-According to MedlinePlus, if low blood pressure makes a person pass out, seek treatment right away or call emergency services; if the person is not breathing or has no pulse, begin CPR. For a person with low blood pressure, MedlinePlus advises contacting a health professional **right away** for:
+According to NHLBI (U.S. National Heart, Lung, and Blood Institute), a sudden drop in blood pressure, or low blood pressure that may be linked to a health problem, can be dangerous because the heart, brain or other vital organs may not be getting enough blood flow. If blood pressure drops too low, it can lead to shock, which requires immediate medical attention. Signs of shock include cold and sweaty skin, rapid breathing, a blue skin tone, or a weak and rapid pulse: **call emergency services** if you notice these signs in yourself or someone else.
 
-- chest pain;
-- dizziness or lightheadedness;
-- fainting;
-- fever higher than 38.3°C (101°F);
-- irregular heartbeat;
-- shortness of breath;
-- black or maroon stools.
+After fainting, the NHS advises **calling emergency services** if the person:
 
-After fainting, MedlinePlus advises calling emergency services if the person fell from a height (especially if injured or bleeding), does not regain consciousness within a few minutes, is pregnant, is over age 50, has diabetes, feels chest pain, pressure or discomfort, has a pounding or irregular heartbeat, loses speech, has vision problems or cannot move arms and legs, has convulsions, a tongue injury, or loss of bladder or bowel control. Someone who has never fainted before, faints often, or has new symptoms with fainting should also get prompt medical care.
+- is not breathing;
+- cannot be woken up within 1 minute;
+- has not fully recovered or has difficulty with speech or movement;
+- has chest pain or a pounding, fluttering or irregular heartbeat (heart palpitations);
+- has seriously hurt themselves before or after fainting;
+- is shaking or jerking (having a seizure or fit);
+- fainted while exercising;
+- fainted while lying down.
+
+Do not drive yourself to the emergency department. Someone who has fainted but does not fit any of these cases should still get checked by a doctor to find out what caused it (NHS).
+
+For chest pain, the NHS advises **calling emergency services straight away** if you get sudden pain or discomfort in your chest that does not go away (it can feel like squeezing or pressure, burning or indigestion); if the pain spreads to your left or right arm, or your neck, jaw, stomach or back; or if you have chest pain and feel sweaty, sick, lightheaded or short of breath.
+
+A slow or irregular heartbeat can be a symptom of an arrhythmia; NHLBI advises **seeking emergency medical care** if symptoms are very serious, such as difficulty breathing or chest pain.
+
+If you keep getting symptoms of low blood pressure such as dizziness and fainting, the NHS advises seeing a doctor.
 
 ## What is low blood pressure?
 
-According to MedlinePlus (U.S. National Library of Medicine), blood pressure is the force of your blood pushing against the walls of your arteries. In adults, normal blood pressure is between 90/60 mmHg and 120/80 mmHg; a reading of 90/60 or lower is low blood pressure.
+According to MedlinePlus (U.S. National Library of Medicine), blood pressure is the force of your blood pushing against the walls of your arteries; a reading of 90/60 mmHg or lower is low blood pressure (NHLBI and the NHS say "lower than 90/60 mmHg"). For most adults, a normal blood pressure is usually less than 120/80 mmHg (NHLBI).
 
-Some people have low blood pressure all the time, have no symptoms, and their low readings are normal for them — it often needs no treatment. Low blood pressure is a problem only if it causes dizziness, fainting or, in extreme cases, shock.
+Some people have low blood pressure all the time, have no symptoms, and their low readings are normal for them. Low blood pressure is a problem only if it causes dizziness, fainting or, in extreme cases, shock (MedlinePlus). You may not need treatment for low blood pressure (NHLBI).
 
-Symptoms MedlinePlus lists include blurry vision, confusion, dizziness, fainting, lightheadedness, nausea or vomiting, sleepiness and weakness. Causes can include heart conditions, medication side effects (diuretics, antidepressants, blood pressure drugs), not drinking enough fluids, dehydration, and nerve damage from diabetes.
+For many people, low blood pressure goes unnoticed; others may feel symptoms such as confusion, dizziness or lightheadedness, fainting, feeling tired or weak, blurry vision, headache, neck or back pain, nausea, and heart palpitations — feeling that your heart is skipping a beat, fluttering, or beating too hard or too fast (NHLBI). Causes can include problems with the autonomic nervous system (such as in Parkinson's disease), blood loss from an injury that causes a sudden drop in blood pressure, heart problems such as arrhythmias, and medicines to treat high blood pressure, depression or Parkinson's (NHLBI); NHLBI also lists dehydration, diabetes and pregnancy.
 
 ## What is fainting?
 
-MedlinePlus defines fainting as a brief loss of consciousness due to a drop in blood flow to the brain. An episode usually lasts no more than a couple of minutes, with quick recovery.
+According to MedlinePlus, fainting is a temporary loss of consciousness that usually happens when blood pressure drops suddenly, causing a decrease in blood flow to the brain; most people recover completely. According to the NHS, a person who has fainted will usually wake up within 30 seconds.
 
 ## Content according to the Spinal Impact method
 

@@ -4,13 +4,22 @@
 
 **Định nghĩa hiện hành dùng "hoặc", không dùng "và".** Tài liệu gọi là huyết áp cao khi tối đa > 140 **và** tối thiểu > 90. Theo bảng phân loại MedlinePlus đăng, chỉ cần **một** trong hai số vượt ngưỡng: huyết áp cao giai đoạn 1 là tâm thu 130–139 **hoặc** tâm trương 80–89; giai đoạn 2 là tâm thu từ 140 **hoặc** tâm trương từ 90. Chẩn đoán cần từ hai lần đo trở lên ở các lần khám khác nhau.
 
-Huyết áp cao thường **không có triệu chứng** — phần lớn người bệnh không thấy gì, và bệnh hay được phát hiện khi khám định kỳ. Vì thế, cảm giác dễ chịu không cho biết huyết áp đã về mức an toàn.
+Huyết áp cao thường **không có triệu chứng**, nên cách duy nhất để biết mình có bị hay không là đo huyết áp định kỳ ở cơ sở y tế (MedlinePlus). Vì thế, cảm giác dễ chịu không cho biết huyết áp đã về mức an toàn.
 
-**Cơn tăng huyết áp ác tính là cấp cứu.** MedlinePlus mô tả đây là huyết áp rất cao, đến đột ngột và nhanh, với các dấu hiệu như nhìn mờ, lú lẫn hoặc giảm tỉnh táo, đau ngực (cảm giác bị đè ép), đau đầu, khó thở, co giật, yếu hoặc tê tay chân. MedlinePlus khuyên đến khoa cấp cứu hoặc gọi cấp cứu khi có các triệu chứng này — tình trạng có thể đe dọa tính mạng.
+**Huyết áp trên 180/120 mmHg: khi nào gọi cấp cứu.** Theo NHLBI (Viện Tim, Phổi và Máu Hoa Kỳ), huyết áp trên 180/120 mmHg — tức tâm thu trên 180 **hoặc** tâm trương trên 120, chỉ cần một trong hai số — là quá cao và cần được chăm sóc y tế, nhất là khi có triệu chứng; huyết áp cao đến mức này có thể làm tổn thương các cơ quan. Nếu đo được 180/120 mà không có triệu chứng, chờ 5 phút rồi đo lại; nếu vẫn cao, gọi cho nhân viên y tế. Nếu lần đo thứ hai vẫn cao **và** có bất kỳ triệu chứng nào sau đây, **gọi cấp cứu**:
+
+- đau đầu đột ngột, dữ dội;
+- khó thở;
+- đau đột ngột, dữ dội ở bụng, ngực hoặc lưng;
+- tê hoặc yếu;
+- thay đổi thị lực đột ngột;
+- nói khó.
+
+Đừng chờ xem huyết áp có tự hạ hay không.
 
 Các dấu hiệu đột quỵ đến **đột ngột** — tê hoặc yếu mặt, tay, chân (nhất là một bên); lú lẫn, nói khó; nhìn khó; đi lại khó, chóng mặt, mất thăng bằng; đau đầu dữ dội không rõ nguyên nhân — cũng cần gọi cấp cứu ngay (MedlinePlus).
 
-**Kiểm soát huyết áp dựa vào đo huyết áp định kỳ và dùng thuốc đúng chỉ định** (MedlinePlus); điều trị kết hợp thay đổi lối sống với thuốc khi cần. Không có điều gì trong tài liệu dưới đây thay thế việc đó.
+**NHLBI khuyên đo huyết áp ít nhất mỗi năm một lần và theo dõi huyết áp tại nhà đều đặn**; điều trị gồm thay đổi lối sống tốt cho tim và thuốc, theo kế hoạch lập cùng nhân viên y tế (MedlinePlus). Không có điều gì trong tài liệu dưới đây thay thế việc đó.
 
 ## Huyết áp cao là gì?
 
@@ -18,7 +27,7 @@ Theo MedlinePlus (Thư viện Y khoa Quốc gia Hoa Kỳ), huyết áp là lực
 
 Bảng phân loại MedlinePlus đăng: bình thường là tâm thu dưới 120 và tâm trương dưới 80; tăng là tâm thu 120–129 và tâm trương dưới 80; giai đoạn 1 và 2 như trong khung trên; **cơn tăng huyết áp** — theo NHLBI (Viện Tim, Phổi và Máu Hoa Kỳ) — là tâm thu trên 180 **hoặc** tâm trương trên 120, và cần liên hệ nhân viên y tế ngay. (Bảng của MedlinePlus viết "và" ở ngưỡng này; bài theo ngưỡng thận trọng hơn của NHLBI.)
 
-Huyết áp cao kéo dài buộc tim làm việc nhiều hơn và có thể dẫn đến nhồi máu cơ tim, đột quỵ, suy tim và suy thận. Điều trị kết hợp thay đổi lối sống tốt cho tim với thuốc khi cần, tùy nguyên nhân và mức độ.
+Huyết áp cao kéo dài buộc tim làm việc nhiều hơn và có thể dẫn đến nhồi máu cơ tim, đột quỵ, suy tim và suy thận. Điều trị gồm thay đổi lối sống tốt cho tim và thuốc: có khi chỉ cần thay đổi lối sống, nhưng nếu như vậy chưa kiểm soát hay hạ được huyết áp thì có thể phải dùng thuốc.
 
 ## Nội dung theo phương pháp Tác động cột sống
 

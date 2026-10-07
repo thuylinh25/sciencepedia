@@ -4,9 +4,9 @@
 
 **Hồi hộp kèm đau ngực, khó thở, cảm thấy sắp ngất hay ngất là cấp cứu.** Tài liệu dưới đây có mục "Hồi hộp khó ngủ". NHS khuyên gọi cấp cứu hoặc đến khoa cấp cứu ngay nếu bạn đang bị hồi hộp mà cơn không dứt, hoặc hồi hộp kèm bất kỳ dấu hiệu nào sau đây: **đau ngực, khó thở, cảm thấy sắp ngất hay ngất** — và không tự lái xe đi. Nếu đã có các dấu hiệu ấy nhưng nay đã dứt, NHS khuyên xin khám gấp. Hồi hộp — tim đập nhanh, không đều, thình thịch hay rộn lên — thường vô hại, nhưng nên đi khám khi cơn cứ trở lại hoặc dày hơn, kéo dài quá vài phút, hoặc bạn có bệnh tim hay gia đình có tiền sử bệnh tim.
 
-NHS khuyên đi khám khi: thay đổi thói quen ngủ không giúp được; khó ngủ đã nhiều tháng; hoặc mất ngủ ảnh hưởng tới sinh hoạt đến mức khó xoay xở. MedlinePlus khuyên liên hệ nhân viên y tế khi mất ngủ đã thành vấn đề.
+NHS khuyên đi khám khi: thay đổi thói quen ngủ không giúp được; khó ngủ đã nhiều tháng; hoặc mất ngủ ảnh hưởng tới sinh hoạt đến mức khó xoay xở.
 
-NHS khuyên đi khám nếu bạn có bất kỳ triệu chứng chính nào của ngưng thở khi ngủ, như: **ngừng thở rồi thở lại** trong khi ngủ; thở hổn hển, khịt hay sặc lúc ngủ; ban ngày lúc nào cũng rất mệt — vì bệnh này có thể nghiêm trọng nếu không được chẩn đoán và điều trị. Ngáy to cũng là một triệu chứng NHS liệt kê. Buồn ngủ thì không lái xe (NHS, MedlinePlus). Hỏi bác sĩ trước khi dùng bất cứ thứ gì để ngủ (NHS).
+NHS khuyên đi khám nếu bạn có bất kỳ triệu chứng chính nào của ngưng thở khi ngủ, như: **ngừng thở rồi thở lại** trong khi ngủ; thở hổn hển, khịt hay sặc lúc ngủ; ban ngày lúc nào cũng rất mệt — vì bệnh này có thể nghiêm trọng nếu không được chẩn đoán và điều trị. Ngáy to cũng là một triệu chứng NHS liệt kê. Buồn ngủ thì không lái xe (NHS). Hỏi bác sĩ trước khi dùng bất cứ thứ gì để ngủ (NHS).
 
 ## Mất ngủ là gì
 
@@ -18,9 +18,9 @@ Nhu cầu ngủ mỗi người mỗi khác. Theo NHS, trung bình người lớn
 
 ## Nguyên nhân thường gặp và cách y khoa tiếp cận
 
-NHS nêu các nguyên nhân thường gặp nhất: căng thẳng, lo âu hoặc trầm cảm; tiếng ồn; phòng quá nóng hay quá lạnh; giường không thoải mái; rượu, caffeine hoặc nicotin; ma tuý; lệch múi giờ; làm việc theo ca. Một số bệnh và thuốc cũng có thể gây mất ngủ — trong đó có cường giáp, mãn kinh, hội chứng chân không yên, bệnh Alzheimer, bệnh Parkinson. Đau kéo dài, ngưng thở khi ngủ và ác mộng cũng làm mất giấc ngủ ngon. MedlinePlus (Thư viện Y khoa Quốc gia Hoa Kỳ) bổ sung: đi ngủ mỗi đêm một giờ, ngủ ngày, dùng điện thoại hay ti vi trên giường, đau, phải dậy đi tiểu đêm; và theo tuổi, nhiều người khó vào giấc hơn và hay thức giấc hơn.
+NHS nêu các nguyên nhân thường gặp nhất: căng thẳng, lo âu hoặc trầm cảm; tiếng ồn; phòng quá nóng hay quá lạnh; giường không thoải mái; rượu, caffeine hoặc nicotin; ma tuý; lệch múi giờ; làm việc theo ca. Một số bệnh và thuốc cũng có thể gây mất ngủ — trong đó có cường giáp, mãn kinh, hội chứng chân không yên, bệnh Alzheimer, bệnh Parkinson. Đau kéo dài, ngưng thở khi ngủ và ác mộng cũng làm mất giấc ngủ ngon. NHLBI bổ sung những thói quen có thể làm tăng nguy cơ gặp vấn đề về giấc ngủ: hay thay đổi nếp sinh hoạt, kể cả giờ ngủ; giấc ngủ bị gián đoạn, như phải thức dậy nhiều lần để chăm con nhỏ; ngủ ngày lâu; ít vận động ban ngày; xem ti vi hay dùng thiết bị điện tử sát giờ ngủ. Mất ngủ có thể gặp ở mọi lứa tuổi, nhưng khả năng mắc tăng dần theo tuổi (NHLBI).
 
-Theo NHS và MedlinePlus, mất ngủ thường đỡ khi thay đổi thói quen ngủ. Bác sĩ sẽ tìm nguyên nhân — kể cả xem lại thuốc đang dùng và các bệnh khác — và có thể đề nghị **liệu pháp nhận thức – hành vi cho mất ngủ (CBT-I)**. NHS cho biết thuốc ngủ hiện ít được kê. Thuốc ngủ có thể gây tác dụng phụ nghiêm trọng và gây lệ thuộc. Thuốc ngủ chỉ được kê vài ngày, tối đa vài tuần, khi: mất ngủ rất nặng; các cách điều trị khác không hiệu quả. NHLBI ghi nhận mất ngủ mạn tính làm tăng nguy cơ tăng huyết áp, bệnh mạch vành, đái tháo đường và ung thư.
+Theo NHS, mất ngủ thường đỡ khi thay đổi thói quen ngủ. Bác sĩ sẽ tìm nguyên nhân gây mất ngủ để điều trị cho đúng, và có thể đề nghị **liệu pháp nhận thức – hành vi cho mất ngủ (CBT-I)**. NHS cho biết thuốc ngủ hiện ít được kê. Thuốc ngủ có thể gây tác dụng phụ nghiêm trọng và gây lệ thuộc. Thuốc ngủ chỉ được kê vài ngày, tối đa vài tuần, khi: mất ngủ rất nặng; các cách điều trị khác không hiệu quả. NHLBI ghi nhận mất ngủ mạn tính làm tăng nguy cơ tăng huyết áp, bệnh mạch vành, đái tháo đường và ung thư.
 
 ## Nội dung theo phương pháp Tác động cột sống
 

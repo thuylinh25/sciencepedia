@@ -1,32 +1,33 @@
 > **Archival material.** This article presents the content of the document *Phương pháp Tác động Cột sống Việt Nam* ("Vietnamese Spinal Impact Method"; Hanoi Spinal Impact Association — Hanoi Association of Traditional Medicine) for archiving, research and reference. Quoted passages are the document's own words, not medical conclusions of Sciencepedia, and they do not replace diagnosis or treatment by a health professional.
 
-## ⚠️ When to get medical help right away
+## ⚠️ When to get medical help
 
-For chronic back pain, MedlinePlus advises contacting a health professional if you have severe back pain that does not go away, and contacting them **right away** if you have numbness, loss of movement, weakness, or bowel or bladder changes.
+According to the NHS (UK National Health Service), **call emergency services or go to A&E** if you have back pain and:
 
-In its article on back pain, MedlinePlus also lists signs that need a health professional right away, including:
+- pain, tingling, weakness or numbness in both legs;
+- a loss of feeling around your genitals or anus;
+- changes in your bladder or bowels, such as difficulty peeing, or peeing or pooing yourself;
+- changes in how your penis or vagina feels during sex, not being able to get or keep an erection, or not being able to orgasm;
+- chest pain;
+- pain that started after a serious accident, such as a car accident.
 
-- back pain after a severe blow or fall;
-- burning with urination or blood in your urine;
-- a history of cancer;
-- loss of control over urine or stool;
-- pain travelling down your legs below the knee;
-- pain that is worse when you lie down, or wakes you up at night;
-- redness or swelling on the back or spine;
-- unexplained fever with back pain;
-- weakness or numbness in your buttocks, thigh, leg or pelvis; difficulty walking or keeping your balance.
+Do not drive yourself to A&E — ask someone to drive you or call for an ambulance (NHS).
 
-MedlinePlus also advises contacting a health professional if you have been losing weight unintentionally, or if you have had back pain before but this episode is different and feels worse.
+The NHS advises asking for an **urgent appointment** if you have back pain and feel hot, cold, shivery or generally unwell, or if it is severe pain that starts suddenly or is getting worse quickly.
+
+The NHS advises seeing a doctor if you have back pain and: it does not improve after treating it at home for a few weeks; it stops you doing your day-to-day activities; you are worried about the pain or struggling to cope; you have lost weight without trying to; there is a lump or swelling in your back, or your back has changed shape; it does not improve after resting or is worse at night; it is worse when sneezing, coughing or pooing; or it is coming from the top of your back (between your shoulders) rather than your lower back. The NHS notes that, very rarely, back pain can be a sign of a serious problem such as a broken bone, cancer or an infection.
+
+NIAMS (U.S. National Institute of Arthritis and Musculoskeletal and Skin Diseases) also advises seeing a doctor if the pain does not improve after a few weeks, or if you have numbness and tingling; severe back pain that does not improve with medication; back pain after a fall or injury; or back pain along with trouble urinating, weakness, pain or numbness in your legs, fever, or weight loss you did not intend.
+
+**Back pain with painful peeing or blood in your pee: see a doctor rather than waiting for spinal work.** The document below has a form called "Back pain related to internal-organ disease", which includes painful urination and red urine. The NHS advises asking for an urgent appointment if you have or think you may have blood in your pee (it may be bright pink, red or dark brown), because it must be checked out and can be a sign of cancer. For pain, burning or stinging when you pee, the NHS advises seeing a doctor. If you think you may have a kidney infection (which can cause pain in your lower back or side) and you have a very high temperature or feel hot, cold or shivery, blood in your pee, are feeling or being sick, or have not had a pee all day, the NHS advises an urgent appointment. Call emergency services if you are confused, drowsy or have difficulty speaking, because an untreated kidney infection can cause sepsis.
 
 **Upper back pain can be a symptom of a heart attack.** According to MedlinePlus, the most common heart attack symptoms are: chest discomfort; shortness of breath (sometimes the only symptom); and pain or discomfort in one or both arms, the back, shoulders, neck, jaw or upper part of the stomach. MedlinePlus advises calling emergency services for heart attack symptoms, even if you are not sure it is a heart attack.
-
-**Spinal cord abscess** — an infection inside the spine, often caused by a staphylococcus infection and in some areas of the world possibly by tuberculosis — causes fever, chills, worsening back pain, loss of movement or sensation in an area below the abscess, and loss of bladder or bowel control. MedlinePlus advises going to the emergency room or calling emergency services for these symptoms.
 
 ## What is chronic back pain?
 
 According to MedlinePlus (U.S. National Library of Medicine), back pain is one of the most common medical problems, affecting 8 out of 10 people at some point in their lives. Acute back pain comes on suddenly and usually lasts from a few days to a few weeks; back pain is called **chronic** if it lasts for more than three months.
 
-Chronic low back pain may come with back stiffness, decreased movement of the lower back and difficulty standing straight. MedlinePlus says the exact cause of the pain often cannot be found. The causes it lists include arthritis and degenerative spine disease, herniated disks pressing on nerves, spinal stenosis, abnormal curvature of the spine (scoliosis, kyphosis), fibromyalgia or rheumatoid arthritis, and piriformis syndrome.
+According to NIAMS (U.S. National Institute of Arthritis and Musculoskeletal and Skin Diseases), back pain can be caused by many different factors, which may all be present at the same time and interact to result in chronic low back pain; it is also possible that no specific cause can be identified. The causes NIAMS lists include sprains and strains; degenerative disc disease; herniated or ruptured discs compressing and irritating nearby nerves; spondylolisthesis; spinal stenosis; fractured vertebrae; scoliosis or other congenital changes to the spine; ankylosing spondylitis and other types of inflammatory arthritis of the spine; osteoporosis; fibromyalgia; kidney stones or infections; infections of the bones of the spine or the discs between them; and, in rare cases, tumors.
 
 MedlinePlus also notes that staying in bed for more than 1 or 2 days can make back pain worse.
 

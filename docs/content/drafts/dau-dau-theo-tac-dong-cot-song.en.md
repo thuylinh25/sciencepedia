@@ -2,35 +2,41 @@
 
 ## ⚠️ When a headache is an emergency
 
-MedlinePlus advises seeking medical help right away when:
+According to the NHS (UK National Health Service), most headaches are not serious, but sometimes you may need medical help. **Call emergency services or go to the emergency department** if you or a child has a headache and:
 
-- a headache comes on **suddenly and is explosive or violent** — it may be due to a ruptured blood vessel in the brain; call emergency services or go to the nearest emergency room;
-- it is "the worst ever" headache, even for someone who regularly gets headaches;
-- the headache comes with slurred speech, a change in vision, problems moving the arms or legs, loss of balance, confusion or memory loss;
-- the headache comes with fever, stiff neck, nausea and vomiting;
-- the headache gets worse over 24 hours;
-- the headache occurs with a head injury;
-- the pain is severe and in one eye only, with redness in that eye;
-- it is the first headache of your life and it interferes with daily activities; you just started getting headaches, especially after age 50;
-- headaches come with vision problems, pain while chewing or weight loss; you have a history of cancer and develop a new headache; your immune system is weakened by disease or medicines.
+- has had a seizure (fit);
+- has numbness or weakness in the body or face;
+- it started **suddenly and is extremely painful**;
+- has had a head injury within the last 3 months — for example, from a fall or accident;
+- is finding it difficult to speak, balance, walk or remember things;
+- is drowsy or confused;
+- has loss of vision;
+- has a rash that does not fade when a glass is rolled over it;
+- has a very high temperature, a stiff neck, or bright lights are bothering them.
+
+**Get an urgent appointment** (NHS: ask for an urgent GP appointment or get help from the 111 advice line) if you or a child has a headache with vision or eye problems; a headache triggered or made worse by coughing, sneezing, bending down or exercising; a headache with vomiting; a child has a headache that is getting worse or wakes them at night; you have a headache and jaw pain when eating, or a sore or tender scalp; or any other symptoms you are worried about. **See a doctor** if you have tried treating a headache yourself and it is not getting better or is getting worse, or if you regularly get headaches (NHS).
+
+**Headache with eye pain:** MedlinePlus advises getting medical help right away if you have a headache after a blow to your head, or a headache along with a stiff neck, fever, confusion, loss of consciousness, or pain in the eye or ear. The NHS says glaucoma can sometimes develop suddenly and cause intense eye pain, a red eye, tenderness around the eyes, rainbow-coloured circles around bright lights, blurred vision, feeling or being sick, and a headache (other conditions can cause similar symptoms); if these symptoms come on suddenly, call emergency services or go to the emergency department — it is a medical emergency (NHS).
 
 **Stroke signs** that come on suddenly — numbness or weakness of the face, arm or leg (especially on one side); confusion or trouble speaking; trouble seeing; dizziness or loss of balance; severe headache with no known cause: call emergency services right away (MedlinePlus).
 
-**Seizures:** several forms in the document mention epilepsy and convulsions in children. During a seizure, MedlinePlus advises not holding the person down, not placing anything between their teeth (including fingers), and giving nothing by mouth until they are fully awake; a child who has a seizure during a high fever should be cooled slowly with lukewarm water, not put in a cold bath, and their doctor called. MedlinePlus advises calling emergency services for a first seizure, a seizure lasting longer than 2 to 5 minutes, a person who does not wake up or return to normal afterwards, another seizure soon after, a seizure in water, a person who is pregnant, injured or has diabetes, or a seizure that is different from the person's usual pattern.
+**Seizures:** several forms in the document mention epilepsy and convulsions in children. If you are with someone having a seizure, the NHS advises: only move them if they are in danger (such as near a busy road or a hot cooker); cushion their head if they are on the ground; loosen any tight clothing around their neck; turn them on to their side after their convulsions stop; stay with them and talk to them calmly until they recover; note the time the seizure starts and finishes. Do not put anything in their mouth, including your fingers; they should not have any food or drink until they have fully recovered. The NHS advises calling emergency services if it is the first time someone has had a seizure; the seizure lasts longer than is usual for them, or more than 5 minutes if you do not know how long their seizures usually last; the person does not regain full consciousness, or has several seizures without regaining consciousness; the person is seriously injured during the seizure; or the person has difficulty breathing after the seizure.
 
-**Headache with very high blood pressure** — blurred vision, confusion, chest pain, shortness of breath, seizure, weakness or numbness of the limbs — may be malignant hypertension, a life-threatening emergency (MedlinePlus).
+A child who has a seizure with a high temperature: the NHS advises not moving the child or trying to hold them in place, not putting anything in their mouth, and not trying to lower their temperature by undressing them or sponging them with cold water. Call emergency services or go to the emergency department if the child has a seizure for the first time, the seizure lasts more than 5 minutes, the child has difficulty breathing, has stiffness and twitching on only one side of their body, is more sleepy than usual for more than 1 hour after the seizure stops, or has more than 1 seizure within 24 hours; if the child is still having a seizure or is unconscious, call emergency services rather than taking them to the emergency department yourself.
+
+**Headache with very high blood pressure:** according to the NHLBI (U.S. National Heart, Lung, and Blood Institute), blood pressure above 180/120 mm Hg is too high and requires medical attention, especially if you have symptoms. If it is 180/120 and you have no symptoms, wait 5 minutes and check again; if it is still high, call your healthcare provider. If the second measurement is also high and you have any of these symptoms — a sudden, severe headache; difficulty breathing; sudden, severe pain in the abdomen, chest or back; numbness or weakness; a sudden change in vision; problems talking — call emergency services, and do not wait to see if your pressure comes down on its own.
 
 **Accompanying symptoms can be emergencies of their own.** Some forms in the document mention chest pain, heart pain, vomiting blood, or bleeding during pregnancy:
 
 - chest discomfort (pressure, squeezing, fullness or pain, usually lasting more than a few minutes), shortness of breath, discomfort in one or both arms, the back, shoulders, neck, jaw or upper stomach: call emergency services, even if you are not sure it is a heart attack (MedlinePlus);
-- vomiting blood: contact a health professional or go to the emergency room — you need to be examined right away (MedlinePlus);
-- vaginal bleeding during pregnancy: treat it as a potential emergency and contact a health professional (MedlinePlus).
+- vomiting blood: the NHS says you should always get medical help; call emergency services or go to the emergency department if you are vomiting blood and feel generally unwell, confused, faint or dizzy, have rapid or shallow breathing, cold, clammy, pale skin, tummy pain, or black poo; if you have stopped vomiting blood and have no other symptoms, get an urgent appointment (NHS);
+- vaginal bleeding during pregnancy: it is not always serious but can sometimes need urgent treatment, so get advice from a healthcare professional; call emergency services if you are bleeding and have severe tummy pain, pain in your shoulder, feel sick, faint or dizzy or lose consciousness, or the bleeding is heavy (soaking a period pad soon after putting it on) (NHS).
 
 ## What is a headache?
 
-According to MedlinePlus (U.S. National Library of Medicine), a headache is pain or discomfort in the head, scalp or neck; serious causes of headaches are rare.
+According to MedlinePlus (U.S. National Library of Medicine), almost everyone has had a headache, and headache is the most common form of pain. Not all headaches require a doctor's attention, but sometimes headaches warn of a more serious disorder. The NHS (UK National Health Service) says most headaches go away on their own and are not a sign of something more serious; a headache can last 30 minutes, several hours, or sometimes several days.
 
-MedlinePlus describes three common types: **tension headaches** — the most common, likely caused by tight muscles in the shoulders, neck, scalp and jaw, and may be related to stress, depression or anxiety; **migraine** — throbbing, pounding or pulsating pain on one side of the head, often with vision changes, sensitivity to light or sound, or nausea; and **cluster headaches** — sharp, very painful headaches that occur daily, sometimes several times a day, for months, then go away for weeks to months.
+According to MedlinePlus, the most common type is the **tension headache** — due to tight muscles in the shoulders, neck, scalp and jaw, and often related to stress, depression or anxiety. Other common types of headache include **migraine**, **cluster headaches** and **sinus headaches**.
 
 ## Content according to the Spinal Impact method
 
