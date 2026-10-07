@@ -10,7 +10,7 @@ The NHS advises going to A&E or calling emergency services if you:
 - find it hard to start peeing, cannot pee or cannot control when you pee — and this is not normal for you;
 - do not notice when you need to poo or cannot control it — and this is not normal for you.
 
-The NHS says these could be symptoms of a serious back problem that needs hospital treatment as soon as possible. MedlinePlus advises contacting a health professional right away for signs such as unexplained fever with back pain, back pain after a severe blow or fall, pain travelling below the knee, or loss of control of urine or stool.
+The NHS says these could be symptoms of a serious back problem that needs hospital treatment as soon as possible. Do not drive to A&E — ask someone to drive you or call for an ambulance (NHS). The NHS advises seeing a doctor if your sciatica has not improved after trying home treatments for a few weeks, is getting worse, or is stopping you doing your normal activities. For back pain in general, the NHS advises asking for an **urgent GP appointment or getting help from 111** if you feel hot, cold, shivery or generally unwell, or if it is severe pain that starts suddenly or is getting worse quickly. NIAMS (U.S. National Institute of Arthritis and Musculoskeletal and Skin Diseases) advises seeing a doctor for back pain after a fall or injury, or back pain along with fever, trouble urinating, weakness, pain or numbness in your legs, or weight loss you did not intend.
 
 According to a review by Kuris and colleagues (*The American Journal of Medicine*, 2021), **cauda equina syndrome** results from conditions that compress the nerves in the lumbosacral spinal canal and is a potentially devastating spinal condition. Once it is suspected, emergent spinal surgery referral is indicated, along with urgent decompression. Even with expeditious surgery, improvements remain inconsistent; however, early intervention has been shown to portend a greater chance of neurological recovery.
 
@@ -18,17 +18,17 @@ A review by Long and colleagues (*The American Journal of Emergency Medicine*, 2
 
 ## What is sciatica?
 
-According to MedlinePlus, sciatica is pain, weakness, numbness or tingling in the leg caused by injury to or pressure on the sciatic nerve. It is **a symptom** of another medical problem, not a condition by itself.
+According to MedlinePlus (U.S. National Library of Medicine), sciatica is **a symptom** of a problem with the sciatic nerve, the largest nerve in the body. It causes pain, weakness, numbness or tingling, which can start in the lower back and extend down the leg to the calf, foot or even the toes.
 
-The sciatic nerve starts in the lower back and runs down the back of each leg (MedlinePlus); the NHS describes it as running from the lower back to the feet. Symptoms usually affect the buttock and the back of **one** leg, often including the foot and toes (NHS). The NHS also notes that if you only have back pain, you probably do not have sciatica.
+The NHS describes the sciatic nerve as running from the lower back to the feet. Symptoms usually affect the buttock and the back of **one** leg, often including the foot and toes (NHS). The NHS also notes that if you only have back pain, you probably do not have sciatica.
 
 NINDS lists sciatica as an example of **neuropathic pain** — pain caused by nerve damage, often described as burning, tingling, shooting, or like electric shocks.
 
 ## Causes and course
 
-According to the NHS, the most common cause is a **slipped disc** — when a soft cushion of tissue between the bones of the spine pushes out — and it becomes more likely with age. Other causes include spinal stenosis (narrowing of the part of the spine where nerves pass through) and spondylolisthesis (a spinal bone slipping out of position). Because sciatica is a symptom, MedlinePlus stresses that the underlying cause should be identified and treated.
+According to the NHS, the most common cause is a **slipped disc** — when a soft cushion of tissue between the bones of the spine pushes out — and it becomes more likely with age. Other causes include spinal stenosis (narrowing of the part of the spine where nerves pass through) and spondylolisthesis (a spinal bone slipping out of position). MedlinePlus adds injuries such as a pelvic fracture, and says that in many cases no cause can be found; treatment, if needed, depends on the cause.
 
-Sciatica usually improves within a few weeks to a few months but can last longer (NHS), and it commonly returns (MedlinePlus). MedlinePlus also notes that it can lead to permanent numbness or weakness of the leg.
+Sciatica usually improves within a few weeks to a few months but can last longer, and it can return if you have had it before (NHS); sometimes it goes away on its own (MedlinePlus).
 
 ## Symptoms described in the document
 

@@ -6,25 +6,30 @@ NHS khuyên gọi cấp cứu nếu bạn hoặc con bạn:
 
 - đau đầu **đột ngột và cực kỳ dữ dội**;
 - khó nói hoặc khó nhớ;
+- lơ mơ hoặc lú lẫn;
+- co giật;
 - mất thị lực, nhìn mờ hoặc nhìn đôi;
 - sốt rất cao kèm các dấu hiệu của viêm màng não;
-- không cử động được, hoặc yếu tay, chân hay mặt ở một bên cơ thể.
+- không cử động được, hoặc yếu tay, chân hay mặt ở một bên cơ thể;
+- vừa bị chấn thương đầu.
 
-MedlinePlus cũng khuyên gọi cấp cứu khi đó là cơn đau đầu tệ nhất từng gặp, hoặc có rối loạn lời nói, thị lực, vận động, mất thăng bằng — nhất là khi các cơn migraine trước chưa từng như vậy. Đau đầu khởi phát đột ngột, như bùng nổ, cần được khám ngay vì có thể do vỡ mạch máu trong não. Đau đầu kèm sốt, cứng cổ, buồn nôn và nôn, hoặc đau đầu mới xuất hiện — nhất là ở người trên 50 tuổi — cũng cần đi khám ngay (MedlinePlus). NHS khuyên hẹn khám bác sĩ gấp nếu một cơn migraine đã kéo dài hơn 72 giờ, hoặc triệu chứng tiền triệu kéo dài hơn 1 giờ mỗi lần.
+Trang Đau đầu của NHS còn khuyên gọi cấp cứu hoặc đến khoa cấp cứu nếu đau đầu kèm tê hoặc yếu ở thân người hay mặt, hoặc khó nói, khó giữ thăng bằng, khó đi lại hay khó nhớ; và **xin khám gấp** (hẹn bác sĩ gia đình gấp hoặc gọi đường dây tư vấn 111) nếu đau đầu kèm vấn đề về thị lực hoặc về mắt.
 
-Một số mục trích bên dưới mang tên những triệu chứng như nói khó, nhìn hình đôi, liệt nhẹ chi trên. Theo NHS, khó nói, nhìn đôi, hoặc yếu tay, chân hay mặt ở một bên cơ thể là lý do gọi cấp cứu, như danh sách trên.
+Không tự lái xe đến khoa cấp cứu (NHS). MedlinePlus khuyên tìm trợ giúp y tế ngay nếu đau đầu sau một cú va đập vào đầu, hoặc đau đầu kèm cứng cổ, sốt, lú lẫn, mất ý thức, hoặc đau ở mắt hay tai. NHS khuyên hẹn khám bác sĩ gấp hoặc gọi 111 nếu đang có cơn migraine mà cơn đã kéo dài hơn 72 giờ, triệu chứng tiền triệu kéo dài hơn 1 giờ mỗi lần, hoặc bạn đang mang thai hay vừa sinh con; và đi khám nếu các cơn nặng hoặc nặng dần, dài hơn thường lệ, xảy ra hơn một lần mỗi tuần, hoặc khó kiểm soát.
+
+Một số mục trích bên dưới mang tên những triệu chứng như nói khó, nhìn hình đôi, sụp mi, tê bì hay liệt nhẹ chi trên. Theo NHS, khó nói, nhìn đôi, tê hoặc yếu ở thân người, tay chân hay mặt kèm đau đầu là lý do gọi cấp cứu, còn đau đầu kèm vấn đề về mắt cần khám gấp, như nêu trên.
 
 ## Đau nửa đầu (migraine) là gì?
 
-Theo NINDS, migraine là một tình trạng bệnh, **không chỉ là một cơn đau đầu nặng**. Một trong những triệu chứng thường gặp nhất của cơn migraine là đau nhói theo nhịp, mức vừa đến nặng, thường ở một bên đầu. MedlinePlus cho biết cơn có thể kèm buồn nôn, nôn, hoặc nhạy cảm với ánh sáng và âm thanh.
+Theo NINDS, migraine là một tình trạng bệnh, **không chỉ là một cơn đau đầu nặng**. Một trong những triệu chứng thường gặp nhất của cơn migraine là đau nhói theo nhịp, mức vừa đến nặng, thường ở một bên đầu. MedlinePlus (Thư viện Y khoa Quốc gia Hoa Kỳ) cho biết cơn có thể kèm buồn nôn và yếu người, và người bệnh có thể nhạy cảm với ánh sáng và âm thanh.
 
 Theo NHS, cơn migraine thường kéo dài từ 4 giờ đến 3 ngày. Chỉ một số người có **tiền triệu** (aura): theo NINDS, tiền triệu xuất hiện khoảng 10 phút đến một giờ trước cơn và thường không quá một giờ. Dạng thường gặp nhất là migraine không có tiền triệu (NINDS).
 
 ## Hiểu biết hiện nay về cơ chế và điều trị
 
-NHS viết rằng chưa biết nguyên nhân gây migraine, nhưng nó xảy ra khi có thay đổi ở dây thần kinh và mạch máu trong não. Theo NINDS, nghiên cứu hiện nay cho thấy cơn đau xảy ra khi tín hiệu thần kinh, các chất hóa học trong não và mạch máu không hoạt động bình thường; MedlinePlus ghi rằng chuỗi sự kiện chính xác vẫn chưa rõ.
+NHS viết rằng chưa biết nguyên nhân gây migraine, nhưng nó xảy ra khi có thay đổi ở dây thần kinh và mạch máu trong não. Theo NINDS, nghiên cứu hiện nay cho thấy cơn đau xảy ra khi tín hiệu thần kinh, các chất hóa học trong não và mạch máu không hoạt động bình thường; MedlinePlus cho biết các nhà nghiên cứu cho rằng migraine có nguyên nhân di truyền.
 
-Không có xét nghiệm đặc hiệu nào chứng minh một cơn đau đầu là migraine, và chỉ nhân viên y tế mới xác định được triệu chứng là do migraine hay một bệnh khác (MedlinePlus). Hiện chưa có cách chữa khỏi migraine, nhưng điều trị giúp kiểm soát triệu chứng (NINDS).
+Để chẩn đoán, nhân viên y tế hỏi tiền sử, triệu chứng và khám thực thể, khám thần kinh; một phần quan trọng là loại trừ các bệnh khác có thể gây ra triệu chứng, nên có thể cần xét nghiệm máu, chụp MRI hay CT (MedlinePlus). Hiện chưa có cách chữa khỏi migraine, nhưng điều trị giúp kiểm soát triệu chứng (NINDS).
 
 ## Triệu chứng được tài liệu mô tả
 

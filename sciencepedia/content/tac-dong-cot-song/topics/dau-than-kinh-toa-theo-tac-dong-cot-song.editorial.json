@@ -17,14 +17,6 @@
   "riskLevel": "normal",
   "sources": [
     {
-      "id": "s1",
-      "title": "Sciatica",
-      "publisher": "MedlinePlus — U.S. National Library of Medicine",
-      "url": "https://medlineplus.gov/ency/article/000686.htm",
-      "tier": 2,
-      "accessed": "2026-10-05"
-    },
-    {
       "id": "s2",
       "title": "Sciatica",
       "publisher": "NHS",
@@ -57,6 +49,30 @@
       "doi": "10.1016/j.ajem.2019.158402",
       "tier": 1,
       "accessed": "2026-10-05"
+    },
+    {
+      "id": "s6",
+      "title": "Sciatica",
+      "publisher": "MedlinePlus — U.S. National Library of Medicine",
+      "url": "https://medlineplus.gov/sciatica.html",
+      "tier": 2,
+      "accessed": "2026-10-07"
+    },
+    {
+      "id": "s7",
+      "title": "Back Pain",
+      "publisher": "National Institute of Arthritis and Musculoskeletal and Skin Diseases (NIAMS)",
+      "url": "https://www.niams.nih.gov/health-topics/back-pain",
+      "tier": 2,
+      "accessed": "2026-10-07"
+    },
+    {
+      "id": "s8",
+      "title": "Back pain",
+      "publisher": "NHS",
+      "url": "https://www.nhs.uk/conditions/back-pain/",
+      "tier": 2,
+      "accessed": "2026-10-07"
     }
   ],
   "safety": {
@@ -65,14 +81,15 @@
       "en": "⚠️ When it is an emergency"
     },
     "body": {
-      "vi": "NHS khuyên đến khoa cấp cứu hoặc gọi cấp cứu nếu bạn:\n\n- đau thần kinh tọa ở **cả hai bên**;\n- yếu hoặc tê ở cả hai chân, nặng hoặc nặng dần;\n- tê quanh hoặc dưới vùng sinh dục, hoặc quanh hậu môn;\n- khó bắt đầu đi tiểu, không tiểu được hoặc không kiểm soát được việc tiểu — khác với bình thường;\n- không nhận biết lúc cần đại tiện hoặc không kiểm soát được — khác với bình thường.\n\nTheo NHS, đây có thể là triệu chứng của một vấn đề nghiêm trọng ở lưng cần điều trị tại bệnh viện càng sớm càng tốt. MedlinePlus khuyên liên hệ nhân viên y tế ngay khi có những dấu hiệu như sốt không rõ nguyên nhân kèm đau lưng, đau sau va đập hoặc ngã mạnh, đau lan xuống dưới đầu gối, hoặc mất kiểm soát tiểu tiện, đại tiện.\n\nTheo tổng quan của Kuris và cộng sự (*The American Journal of Medicine*, 2021), **hội chứng chùm đuôi ngựa** là hậu quả của các tình trạng chèn ép dây thần kinh trong ống sống vùng thắt lưng – cùng, và là một bệnh lý cột sống có thể gây hậu quả nặng nề. Khi đã nghi ngờ, có chỉ định chuyển cấp cứu tới chuyên khoa phẫu thuật cột sống và giải ép khẩn. Ngay cả khi phẫu thuật nhanh chóng, mức cải thiện vẫn không đồng đều; tuy vậy, can thiệp sớm đã được ghi nhận đi kèm cơ hội hồi phục thần kinh cao hơn.\n\nTổng quan của Long và cộng sự (*The American Journal of Emergency Medicine*, 2020) mô tả đây là một tình trạng hiếm nhưng cấp cứu, có thể do nhiều nguyên nhân, thường gặp nhất là lồi đĩa đệm. Các dấu hiệu cảnh báo được nêu gồm đau thần kinh tọa hai bên có nguồn gốc thần kinh, giảm cảm giác vùng đáy chậu, rối loạn chức năng bàng quang dẫn tới bí tiểu không đau, mất trương lực cơ thắt hậu môn và mất chức năng tình dục. Triệu chứng có thể xuất hiện đột ngột hoặc từ từ, và phần lớn người bệnh không có đủ tất cả các triệu chứng này. Điều trị dựa vào hội chẩn phẫu thuật và phẫu thuật giải ép.",
-      "en": "The NHS advises going to A&E or calling emergency services if you:\n\n- have sciatica on **both sides**;\n- have weakness or numbness in both legs that is severe or getting worse;\n- have numbness around or under your genitals, or around your anus;\n- find it hard to start peeing, cannot pee or cannot control when you pee — and this is not normal for you;\n- do not notice when you need to poo or cannot control it — and this is not normal for you.\n\nThe NHS says these could be symptoms of a serious back problem that needs hospital treatment as soon as possible. MedlinePlus advises contacting a health professional right away for signs such as unexplained fever with back pain, back pain after a severe blow or fall, pain travelling below the knee, or loss of control of urine or stool.\n\nAccording to a review by Kuris and colleagues (*The American Journal of Medicine*, 2021), **cauda equina syndrome** results from conditions that compress the nerves in the lumbosacral spinal canal and is a potentially devastating spinal condition. Once it is suspected, emergent spinal surgery referral is indicated, along with urgent decompression. Even with expeditious surgery, improvements remain inconsistent; however, early intervention has been shown to portend a greater chance of neurological recovery.\n\nA review by Long and colleagues (*The American Journal of Emergency Medicine*, 2020) describes it as a rare but emergent condition that can have a variety of causes, most commonly vertebral disc protrusion. The red flags it lists include bilateral neurogenic sciatica, reduced perineal sensation, altered bladder function leading to painless urinary retention, loss of anal tone, and loss of sexual function. Symptoms may come on suddenly or gradually, and most patients do not have all of these symptoms. Treatment relies on surgical consultation and operative decompression."
+      "vi": "NHS khuyên đến khoa cấp cứu hoặc gọi cấp cứu nếu bạn:\n\n- đau thần kinh tọa ở **cả hai bên**;\n- yếu hoặc tê ở cả hai chân, nặng hoặc nặng dần;\n- tê quanh hoặc dưới vùng sinh dục, hoặc quanh hậu môn;\n- khó bắt đầu đi tiểu, không tiểu được hoặc không kiểm soát được việc tiểu — khác với bình thường;\n- không nhận biết lúc cần đại tiện hoặc không kiểm soát được — khác với bình thường.\n\nTheo NHS, đây có thể là triệu chứng của một vấn đề nghiêm trọng ở lưng cần điều trị tại bệnh viện càng sớm càng tốt. Không tự lái xe đến khoa cấp cứu — nhờ người khác chở hoặc gọi xe cấp cứu (NHS). NHS khuyên đi khám nếu đau thần kinh tọa đã tự chăm sóc vài tuần mà không đỡ, đang nặng dần, hoặc cản trở sinh hoạt bình thường. Với đau lưng nói chung, NHS khuyên **xin khám gấp** (hẹn bác sĩ gia đình gấp hoặc gọi đường dây tư vấn 111) nếu cảm thấy nóng, lạnh, run hoặc thấy người không khỏe, hoặc nếu cơn đau dữ dội bắt đầu đột ngột hay nặng lên nhanh. NIAMS (Viện Viêm khớp, Cơ xương và Da Hoa Kỳ) khuyên đi khám nếu đau lưng sau té ngã hay chấn thương, hoặc đau lưng kèm sốt, khó tiểu, yếu, đau hay tê ở chân, hay sụt cân không chủ ý.\n\nTheo tổng quan của Kuris và cộng sự (*The American Journal of Medicine*, 2021), **hội chứng chùm đuôi ngựa** là hậu quả của các tình trạng chèn ép dây thần kinh trong ống sống vùng thắt lưng – cùng, và là một bệnh lý cột sống có thể gây hậu quả nặng nề. Khi đã nghi ngờ, có chỉ định chuyển cấp cứu tới chuyên khoa phẫu thuật cột sống và giải ép khẩn. Ngay cả khi phẫu thuật nhanh chóng, mức cải thiện vẫn không đồng đều; tuy vậy, can thiệp sớm đã được ghi nhận đi kèm cơ hội hồi phục thần kinh cao hơn.\n\nTổng quan của Long và cộng sự (*The American Journal of Emergency Medicine*, 2020) mô tả đây là một tình trạng hiếm nhưng cấp cứu, có thể do nhiều nguyên nhân, thường gặp nhất là lồi đĩa đệm. Các dấu hiệu cảnh báo được nêu gồm đau thần kinh tọa hai bên có nguồn gốc thần kinh, giảm cảm giác vùng đáy chậu, rối loạn chức năng bàng quang dẫn tới bí tiểu không đau, mất trương lực cơ thắt hậu môn và mất chức năng tình dục. Triệu chứng có thể xuất hiện đột ngột hoặc từ từ, và phần lớn người bệnh không có đủ tất cả các triệu chứng này. Điều trị dựa vào hội chẩn phẫu thuật và phẫu thuật giải ép.",
+      "en": "The NHS advises going to A&E or calling emergency services if you:\n\n- have sciatica on **both sides**;\n- have weakness or numbness in both legs that is severe or getting worse;\n- have numbness around or under your genitals, or around your anus;\n- find it hard to start peeing, cannot pee or cannot control when you pee — and this is not normal for you;\n- do not notice when you need to poo or cannot control it — and this is not normal for you.\n\nThe NHS says these could be symptoms of a serious back problem that needs hospital treatment as soon as possible. Do not drive to A&E — ask someone to drive you or call for an ambulance (NHS). The NHS advises seeing a doctor if your sciatica has not improved after trying home treatments for a few weeks, is getting worse, or is stopping you doing your normal activities. For back pain in general, the NHS advises asking for an **urgent GP appointment or getting help from 111** if you feel hot, cold, shivery or generally unwell, or if it is severe pain that starts suddenly or is getting worse quickly. NIAMS (U.S. National Institute of Arthritis and Musculoskeletal and Skin Diseases) advises seeing a doctor for back pain after a fall or injury, or back pain along with fever, trouble urinating, weakness, pain or numbness in your legs, or weight loss you did not intend.\n\nAccording to a review by Kuris and colleagues (*The American Journal of Medicine*, 2021), **cauda equina syndrome** results from conditions that compress the nerves in the lumbosacral spinal canal and is a potentially devastating spinal condition. Once it is suspected, emergent spinal surgery referral is indicated, along with urgent decompression. Even with expeditious surgery, improvements remain inconsistent; however, early intervention has been shown to portend a greater chance of neurological recovery.\n\nA review by Long and colleagues (*The American Journal of Emergency Medicine*, 2020) describes it as a rare but emergent condition that can have a variety of causes, most commonly vertebral disc protrusion. The red flags it lists include bilateral neurogenic sciatica, reduced perineal sensation, altered bladder function leading to painless urinary retention, loss of anal tone, and loss of sexual function. Symptoms may come on suddenly or gradually, and most patients do not have all of these symptoms. Treatment relies on surgical consultation and operative decompression."
     },
     "sources": [
-      "s1",
       "s2",
       "s4",
-      "s5"
+      "s5",
+      "s7",
+      "s8"
     ]
   },
   "general": [
@@ -82,13 +99,13 @@
         "en": "What is sciatica?"
       },
       "body": {
-        "vi": "Theo MedlinePlus, đau thần kinh tọa là đau, yếu, tê hoặc châm chích ở chân, do dây thần kinh tọa bị tổn thương hoặc bị chèn ép. Đó là **một triệu chứng** của một vấn đề y khoa khác, không phải một bệnh riêng.\n\nDây thần kinh tọa bắt đầu ở vùng thắt lưng và chạy dọc mặt sau mỗi chân (MedlinePlus); NHS mô tả nó chạy từ thắt lưng xuống tới bàn chân. Triệu chứng thường ở mông và mặt sau **một** bên chân, nhiều khi xuống tới bàn chân và ngón chân (NHS). NHS cũng lưu ý: nếu chỉ đau lưng thì nhiều khả năng đó không phải đau thần kinh tọa.\n\nNINDS nêu đau thần kinh tọa là một ví dụ của **đau do thần kinh** — loại đau do dây thần kinh bị tổn thương, thường được tả là bỏng rát, châm chích, nhói lan, hoặc như điện giật.",
-        "en": "According to MedlinePlus, sciatica is pain, weakness, numbness or tingling in the leg caused by injury to or pressure on the sciatic nerve. It is **a symptom** of another medical problem, not a condition by itself.\n\nThe sciatic nerve starts in the lower back and runs down the back of each leg (MedlinePlus); the NHS describes it as running from the lower back to the feet. Symptoms usually affect the buttock and the back of **one** leg, often including the foot and toes (NHS). The NHS also notes that if you only have back pain, you probably do not have sciatica.\n\nNINDS lists sciatica as an example of **neuropathic pain** — pain caused by nerve damage, often described as burning, tingling, shooting, or like electric shocks."
+        "vi": "Theo MedlinePlus (Thư viện Y khoa Quốc gia Hoa Kỳ), đau thần kinh tọa là **một triệu chứng** của vấn đề ở dây thần kinh tọa — dây thần kinh lớn nhất cơ thể. Người bệnh bị đau, yếu, tê hoặc châm chích, có thể bắt đầu ở thắt lưng rồi lan xuống chân tới bắp chân, bàn chân, thậm chí ngón chân.\n\nNHS mô tả dây thần kinh tọa chạy từ thắt lưng xuống tới bàn chân. Triệu chứng thường ở mông và mặt sau **một** bên chân, nhiều khi xuống tới bàn chân và ngón chân (NHS). NHS cũng lưu ý: nếu chỉ đau lưng thì nhiều khả năng đó không phải đau thần kinh tọa.\n\nNINDS nêu đau thần kinh tọa là một ví dụ của **đau do thần kinh** — loại đau do dây thần kinh bị tổn thương, thường được tả là bỏng rát, châm chích, nhói lan, hoặc như điện giật.",
+        "en": "According to MedlinePlus (U.S. National Library of Medicine), sciatica is **a symptom** of a problem with the sciatic nerve, the largest nerve in the body. It causes pain, weakness, numbness or tingling, which can start in the lower back and extend down the leg to the calf, foot or even the toes.\n\nThe NHS describes the sciatic nerve as running from the lower back to the feet. Symptoms usually affect the buttock and the back of **one** leg, often including the foot and toes (NHS). The NHS also notes that if you only have back pain, you probably do not have sciatica.\n\nNINDS lists sciatica as an example of **neuropathic pain** — pain caused by nerve damage, often described as burning, tingling, shooting, or like electric shocks."
       },
       "sources": [
-        "s1",
         "s2",
-        "s3"
+        "s3",
+        "s6"
       ]
     },
     {
@@ -97,12 +114,12 @@
         "en": "Causes and course"
       },
       "body": {
-        "vi": "Theo NHS, nguyên nhân thường gặp nhất là **thoát vị đĩa đệm** — khi lớp mô mềm làm đệm giữa các xương cột sống lồi ra — và nó dễ xảy ra hơn khi lớn tuổi. Các nguyên nhân khác gồm hẹp ống sống (phần cột sống nơi dây thần kinh đi qua bị hẹp lại) và trượt đốt sống (một xương cột sống trượt khỏi vị trí). Vì đau thần kinh tọa là triệu chứng, MedlinePlus nhấn mạnh cần tìm ra và điều trị nguyên nhân bên dưới.\n\nĐau thần kinh tọa thường đỡ trong vài tuần đến vài tháng, nhưng có thể kéo dài hơn (NHS), và hay tái phát (MedlinePlus). MedlinePlus cũng ghi rằng nó có thể dẫn tới tê hoặc yếu chân vĩnh viễn.",
-        "en": "According to the NHS, the most common cause is a **slipped disc** — when a soft cushion of tissue between the bones of the spine pushes out — and it becomes more likely with age. Other causes include spinal stenosis (narrowing of the part of the spine where nerves pass through) and spondylolisthesis (a spinal bone slipping out of position). Because sciatica is a symptom, MedlinePlus stresses that the underlying cause should be identified and treated.\n\nSciatica usually improves within a few weeks to a few months but can last longer (NHS), and it commonly returns (MedlinePlus). MedlinePlus also notes that it can lead to permanent numbness or weakness of the leg."
+        "vi": "Theo NHS, nguyên nhân thường gặp nhất là **thoát vị đĩa đệm** — khi lớp mô mềm làm đệm giữa các xương cột sống lồi ra — và nó dễ xảy ra hơn khi lớn tuổi. Các nguyên nhân khác gồm hẹp ống sống (phần cột sống nơi dây thần kinh đi qua bị hẹp lại) và trượt đốt sống (một xương cột sống trượt khỏi vị trí). MedlinePlus nêu thêm chấn thương như gãy xương chậu, và cho biết nhiều trường hợp không tìm ra nguyên nhân; điều trị, nếu cần, tùy nguyên nhân.\n\nĐau thần kinh tọa thường đỡ trong vài tuần đến vài tháng, nhưng có thể kéo dài hơn, và có thể tái phát ở người đã từng bị (NHS); đôi khi nó tự hết (MedlinePlus).",
+        "en": "According to the NHS, the most common cause is a **slipped disc** — when a soft cushion of tissue between the bones of the spine pushes out — and it becomes more likely with age. Other causes include spinal stenosis (narrowing of the part of the spine where nerves pass through) and spondylolisthesis (a spinal bone slipping out of position). MedlinePlus adds injuries such as a pelvic fracture, and says that in many cases no cause can be found; treatment, if needed, depends on the cause.\n\nSciatica usually improves within a few weeks to a few months but can last longer, and it can return if you have had it before (NHS); sometimes it goes away on its own (MedlinePlus)."
       },
       "sources": [
-        "s1",
-        "s2"
+        "s2",
+        "s6"
       ]
     }
   ],

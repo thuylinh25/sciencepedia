@@ -17,14 +17,6 @@
   "riskLevel": "normal",
   "sources": [
     {
-      "id": "s1",
-      "title": "Low back pain - acute",
-      "publisher": "MedlinePlus — U.S. National Library of Medicine",
-      "url": "https://medlineplus.gov/ency/article/007425.htm",
-      "tier": 2,
-      "accessed": "2026-10-05"
-    },
-    {
       "id": "s2",
       "title": "Back pain",
       "publisher": "NHS",
@@ -39,6 +31,22 @@
       "url": "https://www.ninds.nih.gov/health-information/disorders/back-pain",
       "tier": 2,
       "accessed": "2026-10-05"
+    },
+    {
+      "id": "s4",
+      "title": "Back Pain",
+      "publisher": "MedlinePlus — U.S. National Library of Medicine",
+      "url": "https://medlineplus.gov/backpain.html",
+      "tier": 2,
+      "accessed": "2026-10-07"
+    },
+    {
+      "id": "s5",
+      "title": "Back Pain",
+      "publisher": "National Institute of Arthritis and Musculoskeletal and Skin Diseases (NIAMS)",
+      "url": "https://www.niams.nih.gov/health-topics/back-pain",
+      "tier": 2,
+      "accessed": "2026-10-07"
     }
   ],
   "safety": {
@@ -47,12 +55,13 @@
       "en": "⚠️ When to get medical help right away"
     },
     "body": {
-      "vi": "NHS khuyên gọi cấp cứu hoặc đến khoa cấp cứu nếu đau lưng đi kèm một trong các dấu hiệu sau:\n\n- đau, châm chích, yếu hoặc tê ở **cả hai chân**;\n- mất cảm giác quanh vùng sinh dục hoặc hậu môn;\n- thay đổi khi đi tiểu hoặc đại tiện, như khó tiểu, hoặc tiểu, đại tiện không tự chủ;\n- thay đổi cảm giác ở dương vật hoặc âm đạo khi quan hệ tình dục, không cương được hoặc không giữ được cương cứng, hoặc không đạt cực khoái;\n- đau ngực;\n- đau bắt đầu sau một tai nạn nghiêm trọng.\n\nMedlinePlus khuyên liên hệ nhân viên y tế ngay khi đau lưng đi kèm những dấu hiệu như sốt không rõ nguyên nhân, tiền sử ung thư, đau lan xuống dưới đầu gối, đau nặng hơn khi nằm hoặc làm thức giấc ban đêm, yếu hoặc tê ở mông, đùi, chân hay vùng chậu, đi lại hoặc giữ thăng bằng khó khăn. MedlinePlus cũng khuyên liên hệ nhân viên y tế nếu đợt đau đã kéo dài hơn 4 tuần.\n\nTheo NHS, rất hiếm khi đau lưng là dấu hiệu của một vấn đề nghiêm trọng như gãy xương, ung thư hay nhiễm trùng.",
-      "en": "The NHS advises calling emergency services or going to A&E if back pain comes with any of these:\n\n- pain, tingling, weakness or numbness in **both legs**;\n- loss of feeling around the genitals or anus;\n- changes in your bladder or bowels, such as difficulty peeing, or peeing or pooing yourself;\n- changes in how your penis or vagina feels during sex, not being able to get or keep an erection, or not being able to orgasm;\n- chest pain;\n- pain that started after a serious accident.\n\nMedlinePlus advises contacting a health professional right away for back pain with signs such as unexplained fever, a history of cancer, pain travelling below the knee, pain that is worse lying down or wakes you at night, weakness or numbness in the buttocks, thigh, leg or pelvis, or difficulty walking or keeping your balance. MedlinePlus also advises contacting a health professional if an episode has lasted longer than 4 weeks.\n\nAccording to the NHS, back pain is very rarely a sign of a serious problem such as a broken bone, cancer or an infection."
+      "vi": "NHS khuyên gọi cấp cứu hoặc đến khoa cấp cứu nếu đau lưng đi kèm một trong các dấu hiệu sau:\n\n- đau, châm chích, yếu hoặc tê ở **cả hai chân**;\n- mất cảm giác quanh vùng sinh dục hoặc hậu môn;\n- thay đổi khi đi tiểu hoặc đại tiện, như khó tiểu, hoặc tiểu, đại tiện không tự chủ;\n- thay đổi cảm giác ở dương vật hoặc âm đạo khi quan hệ tình dục, không cương được hoặc không giữ được cương cứng, hoặc không đạt cực khoái;\n- đau ngực;\n- đau bắt đầu sau một tai nạn nghiêm trọng.\n\nKhông tự lái xe đến khoa cấp cứu — nhờ người khác chở hoặc gọi xe cấp cứu (NHS).\n\nNHS khuyên **xin khám gấp** (hẹn bác sĩ gia đình gấp hoặc gọi đường dây tư vấn 111) nếu đau lưng kèm cảm giác nóng, lạnh, run hoặc thấy người không khỏe, hoặc nếu cơn đau dữ dội bắt đầu đột ngột hay nặng lên nhanh.\n\nNHS khuyên đi khám nếu đau lưng và: không đỡ sau vài tuần tự chăm sóc ở nhà; cản trở sinh hoạt hằng ngày; bạn lo lắng về cơn đau hoặc khó chịu đựng nổi; sụt cân không chủ ý; lưng có khối u hay chỗ sưng, hoặc lưng đổi hình dạng; không đỡ khi nghỉ hoặc nặng hơn về đêm; nặng hơn khi hắt hơi, ho hay đi đại tiện; đau ở lưng trên (giữa hai vai) chứ không phải ở thắt lưng.\n\nNIAMS (Viện Viêm khớp, Cơ xương và Da Hoa Kỳ) cũng khuyên đi khám nếu đau không đỡ sau vài tuần, hoặc có tê và ngứa ran; đau lưng dữ dội không đỡ khi dùng thuốc; đau lưng sau té ngã hay chấn thương; hoặc đau lưng kèm khó tiểu, yếu, đau hay tê ở chân, sốt, hay sụt cân không chủ ý. MedlinePlus khuyên gọi nhân viên y tế nếu đau lưng dữ dội hoặc không đỡ sau ba ngày.\n\nTheo NHS, rất hiếm khi đau lưng là dấu hiệu của một vấn đề nghiêm trọng như gãy xương, ung thư hay nhiễm trùng.",
+      "en": "The NHS advises calling emergency services or going to A&E if back pain comes with any of these:\n\n- pain, tingling, weakness or numbness in **both legs**;\n- loss of feeling around the genitals or anus;\n- changes in your bladder or bowels, such as difficulty peeing, or peeing or pooing yourself;\n- changes in how your penis or vagina feels during sex, not being able to get or keep an erection, or not being able to orgasm;\n- chest pain;\n- pain that started after a serious accident.\n\nDo not drive yourself to A&E — ask someone to drive you or call for an ambulance (NHS).\n\nThe NHS advises asking for an **urgent GP appointment or getting help from 111** if you have back pain and feel hot, cold, shivery or generally unwell, or if it is severe pain that starts suddenly or is getting worse quickly.\n\nThe NHS advises seeing a doctor if you have back pain and: it does not improve after treating it at home for a few weeks; it stops you doing your day-to-day activities; you are worried about the pain or struggling to cope; you have lost weight without trying to; there is a lump or swelling in your back, or your back has changed shape; it does not improve after resting or is worse at night; it is worse when sneezing, coughing or pooing; or it is coming from the top of your back (between your shoulders) rather than your lower back.\n\nNIAMS (U.S. National Institute of Arthritis and Musculoskeletal and Skin Diseases) also advises seeing a doctor if the pain does not improve after a few weeks, or if you have numbness and tingling; severe back pain that does not improve with medication; back pain after a fall or injury; or back pain along with trouble urinating, weakness, pain or numbness in your legs, fever, or weight loss you did not intend. MedlinePlus advises calling your health care provider if your back pain is severe or does not improve after three days.\n\nAccording to the NHS, back pain is very rarely a sign of a serious problem such as a broken bone, cancer or an infection."
     },
     "sources": [
-      "s1",
-      "s2"
+      "s2",
+      "s4",
+      "s5"
     ]
   },
   "general": [
@@ -62,12 +71,13 @@
         "en": "What is acute back pain?"
       },
       "body": {
-        "vi": "Theo MedlinePlus (Thư viện Y khoa Quốc gia Hoa Kỳ), đau thắt lưng là đau ở vùng lưng dưới, có thể kèm cứng lưng, giảm cử động và khó đứng thẳng. **Đau lưng cấp** có thể kéo dài từ vài ngày đến vài tuần.\n\nCơn đau thường xuất hiện ngay sau khi nâng vật nặng, cử động đột ngột, ngồi lâu một tư thế, hoặc sau chấn thương, tai nạn. MedlinePlus cho biết nguyên nhân hay gặp nhất của đau thắt lưng cấp là tổn thương đột ngột ở cơ và dây chằng nâng đỡ lưng; cơn đau có thể do co thắt cơ, hoặc do căng, rách cơ và dây chằng. NHS cũng nêu căng cơ là một nguyên nhân thường gặp.\n\nĐau lưng thường đỡ trong vài tuần, nhưng đôi khi kéo dài hơn hoặc tái đi tái lại (NHS); MedlinePlus ghi phần lớn người bệnh đỡ hoặc hồi phục trong 4 đến 6 tuần, nhiều khi sớm hơn. MedlinePlus cũng lưu ý rằng nằm nghỉ trên giường không được khuyến cáo.",
-        "en": "According to MedlinePlus (U.S. National Library of Medicine), low back pain is pain felt in the lower back, possibly with stiffness, reduced movement and difficulty standing straight. **Acute back pain** can last from a few days to a few weeks.\n\nIt usually starts just after lifting something heavy, moving suddenly, sitting in one position for a long time, or an injury or accident. MedlinePlus says acute low back pain is most often caused by a sudden injury to the muscles and ligaments that support the back; the pain may be caused by muscle spasms or by a strain or tear in the muscles and ligaments. The NHS also names a pulled muscle (strain) as a common cause.\n\nBack pain usually improves within a few weeks but can sometimes last longer or keep coming back (NHS); MedlinePlus says most people improve or recover within 4 to 6 weeks, often sooner. MedlinePlus also notes that bed rest is not recommended."
+        "vi": "Theo MedlinePlus (Thư viện Y khoa Quốc gia Hoa Kỳ), đau lưng là một trong những vấn đề y khoa thường gặp nhất, ảnh hưởng tới 8/10 người vào một lúc nào đó trong đời; cơn đau có thể từ âm ỉ liên tục tới nhói đột ngột. **Đau lưng cấp** đến đột ngột và thường kéo dài từ vài ngày đến vài tuần (MedlinePlus; NIAMS — Viện Viêm khớp, Cơ xương và Da Hoa Kỳ).\n\nNHS cho biết đau lưng có nhiều nguyên nhân, không phải lúc nào cũng rõ, và thường tự đỡ; một nguyên nhân thường gặp là chấn thương như căng cơ.\n\nĐau lưng thường đỡ trong vài tuần, nhưng đôi khi kéo dài hơn hoặc tái đi tái lại (NHS). Phần lớn đau lưng tự hết, dù có thể mất một thời gian; nằm trên giường quá 1–2 ngày có thể làm đau nặng hơn (MedlinePlus).",
+        "en": "According to MedlinePlus (U.S. National Library of Medicine), back pain is one of the most common medical problems, affecting 8 out of 10 people at some point during their lives; it can range from a dull, constant ache to a sudden, sharp pain. **Acute back pain** comes on suddenly and usually lasts from a few days to a few weeks (MedlinePlus; NIAMS — U.S. National Institute of Arthritis and Musculoskeletal and Skin Diseases).\n\nThe NHS says back pain can have many causes, it is not always obvious what causes it, and it often gets better on its own; a common cause is an injury like a pulled muscle (strain).\n\nBack pain usually improves within a few weeks but can sometimes last longer or keep coming back (NHS). Most back pain goes away on its own, though it may take a while; staying in bed for more than 1 or 2 days can make it worse (MedlinePlus)."
       },
       "sources": [
-        "s1",
-        "s2"
+        "s2",
+        "s4",
+        "s5"
       ]
     },
     {

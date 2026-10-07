@@ -1097,3 +1097,27 @@ bản trước khi sửa được chụp vào `Revision` trong cùng transaction
 - Cũ: dưới đoạn trích "Nếu bệnh nhân ra nhiều mồ hôi chữa hai bên hố chẩm vào tới C1,2 và song chỉnh với vùng S." chỉ ghi trọng điểm C1, C2; khung mô hình tô C1, C2.
 - Mới: thêm "Liên quan: vùng cùng"; khung mô hình tô thêm xương cùng. Câu trích không đổi.
 - Căn cứ: quyết định D-37 (`sciencepedia/content/tac-dong-cot-song/source/decisions.json`), chủ sản phẩm xác nhận trực tiếp 2026-10-05 — "vùng S" vai liên quan, đích là vùng xương cùng, không bung thành S1–S5. Áp bằng `npm run spine:import -- --write --format-change …`, Revision chụp bản trước.
+
+## 2026-10-07 — Tác động cột sống: gỡ nguồn MedlinePlus /ency/ (A.D.A.M.) khỏi ba bài đã xuất bản
+
+Bối cảnh: trang `medlineplus.gov/ency/` là bách khoa A.D.A.M. (© Ebix); chân trang cấm dùng công cụ tự động trích nội dung và cấm dùng cho hệ AI khi chưa có văn bản đồng ý. Ba bài đầu loạt viết phần kiến thức chung và khung an toàn từ các trang ấy. Gỡ link thôi không đủ — câu viết từ trang ấy vẫn còn — nên mọi câu dựa vào chúng được viết lại theo nguồn khác hoặc bỏ. Chủ sản phẩm chốt đính chính 2026-10-07; quy tắc ở `docs/content-rules.md`, mục "MedlinePlus: trang chủ đề dùng được, bách khoa /ency/ thì không". science-editor duyệt 2 vòng, PASS cả ba. Sửa cả vi lẫn en, thay cả bảng nguồn; áp bằng `npm run spine:import -- --write --slugs … --correction …` (Revision chụp bản trước, `lastVerifiedAt` cập nhật).
+
+Nguồn gỡ: `ency/article/007425.htm` (đau lưng cấp), `000686.htm` (thần kinh tọa), `000709.htm` và `003024.htm` (nửa đầu). Nguồn thêm: MedlinePlus Back Pain, Sciatica, Migraine, Headache (trang chủ đề do NLM soạn — đã xem chân trang, không có A.D.A.M./Ebix); NIAMS Back Pain; NHS Back pain, Headaches.
+
+### dau-lung-cap-theo-tac-dong-cot-song
+- Cũ: liên hệ nhân viên y tế **ngay** khi đau lưng kèm sốt không rõ nguyên nhân, tiền sử ung thư, đau lan dưới đầu gối, đau nặng khi nằm hoặc làm thức giấc ban đêm, yếu/tê mông–đùi–chân–chậu, khó đi lại hoặc giữ thăng bằng; liên hệ nếu đợt đau quá 4 tuần.
+- Mới: phân tầng theo NHS — xin khám gấp (hẹn bác sĩ gia đình gấp hoặc gọi 111) khi thấy nóng, lạnh, run, người không khỏe, hoặc đau dữ dội khởi phát đột ngột/nặng nhanh; đi khám theo danh sách của NHS (gồm nặng hơn về đêm, sụt cân không chủ ý) và của NIAMS (gồm sốt, khó tiểu, đau sau té ngã); MedlinePlus: gọi nhân viên y tế nếu đau dữ dội hoặc không đỡ sau ba ngày; không tự lái xe đến khoa cấp cứu. Bỏ tiền sử ung thư, đau dưới gối, giữ thăng bằng, mốc 4 tuần — không nguồn thay nào nói.
+- Cũ: nguyên nhân hay gặp nhất là tổn thương đột ngột ở cơ và dây chằng; phần lớn hồi phục trong 4–6 tuần; không khuyến cáo nằm nghỉ trên giường.
+- Mới: đau lưng có nhiều nguyên nhân, không phải lúc nào cũng rõ, thường tự đỡ; một nguyên nhân thường gặp là căng cơ (NHS). Phần lớn tự hết dù có thể mất một thời gian; nằm giường quá 1–2 ngày có thể làm đau nặng hơn (MedlinePlus). Đau lưng ảnh hưởng 8/10 người; đau cấp đến đột ngột và thường kéo dài vài ngày–vài tuần (MedlinePlus; NIAMS).
+
+### dau-than-kinh-toa-theo-tac-dong-cot-song
+- Cũ: liên hệ **ngay** khi sốt kèm đau lưng, đau sau va đập/ngã mạnh, đau lan dưới đầu gối, mất kiểm soát tiểu/đại tiện.
+- Mới: với đau lưng nói chung, xin khám gấp (hẹn bác sĩ gia đình gấp hoặc gọi 111) khi thấy nóng, lạnh, run, người không khỏe, hoặc đau dữ dội khởi phát đột ngột/nặng nhanh (NHS Back pain); đi khám nếu tự chăm sóc vài tuần không đỡ, nặng dần hoặc cản trở sinh hoạt (NHS Sciatica); đi khám nếu đau lưng sau té ngã/chấn thương hoặc kèm sốt, khó tiểu, yếu/đau/tê chân, sụt cân không chủ ý (NIAMS). Rối loạn tiểu/đại tiện vẫn ở mức gọi cấp cứu theo NHS Sciatica. Bỏ "đau lan dưới gối".
+- Cũ: đau thần kinh tọa hay tái phát; có thể dẫn tới tê/yếu chân vĩnh viễn.
+- Mới: có thể tái phát ở người đã từng bị (NHS); đôi khi tự hết; nhiều trường hợp không tìm ra nguyên nhân; nguyên nhân gồm cả chấn thương như gãy xương chậu (MedlinePlus Sciatica). Câu "vĩnh viễn" bỏ — không nguồn thay nào nói; hậu quả nặng của hội chứng chùm đuôi ngựa vẫn nêu theo Kuris 2021 và Long 2020.
+
+### dau-nua-dau-theo-tac-dong-cot-song
+- Cũ: gọi cấp cứu khi đau đầu tệ nhất từng gặp, rối loạn lời nói/thị lực/vận động, mất thăng bằng; đau đột ngột như bùng nổ có thể do vỡ mạch máu não; đau đầu mới sau 50 tuổi cần khám ngay.
+- Mới: danh sách gọi cấp cứu theo NHS Migraine thêm lơ mơ/lú lẫn, co giật, vừa chấn thương đầu; theo NHS Headaches, gọi cấp cứu khi đau đầu kèm tê hoặc yếu ở thân người hay mặt, khó nói, khó giữ thăng bằng, khó đi lại, khó nhớ, và xin khám gấp khi đau đầu kèm vấn đề về mắt; MedlinePlus Headache: tìm trợ giúp ngay khi đau đầu sau va đập đầu hoặc kèm cứng cổ, sốt, lú lẫn, mất ý thức, đau mắt/tai. Thêm mức khám gấp khi đang mang thai hoặc vừa sinh con, và mức đi khám khi cơn nặng dần/dày hơn/khó kiểm soát (NHS). Bỏ "tệ nhất từ trước tới nay" (đã nằm trong "đột ngột và cực kỳ dữ dội"), "vỡ mạch máu", "sau 50 tuổi".
+- Cũ: chuỗi sự kiện gây migraine chưa rõ; không có xét nghiệm đặc hiệu, chỉ nhân viên y tế xác định được.
+- Mới: các nhà nghiên cứu cho rằng migraine có nguyên nhân di truyền; chẩn đoán gồm hỏi bệnh, khám thực thể và thần kinh, quan trọng là loại trừ bệnh khác, có thể cần xét nghiệm máu, MRI, CT (MedlinePlus Migraine).

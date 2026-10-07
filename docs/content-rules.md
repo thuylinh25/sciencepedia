@@ -736,7 +736,8 @@ chưa có văn bản đồng ý. Bài do agent viết từ nguồn rơi đúng v
 đề `medlineplus.gov/<chủ-đề>.html` do NLM soạn (tác phẩm liên bang, không bản quyền theo trang
 "Linking to and Using Content") vẫn dùng được, sau khi xem chân trang không có A.D.A.M./Ebix. Loạt
 Tác động cột sống phát hiện sau khi đã dùng ~30 trang `/ency/` ở 13/14 bài; test
-`src/lib/spine/sources.test.ts` chặn tái diễn, ba bài đã xuất bản nằm trong danh sách chờ đính chính.
+`src/lib/spine/sources.test.ts` chặn tái diễn; ba bài đã xuất bản được gỡ theo đường đính chính
+(`docs/content/corrections.md`, 2026-10-07).
 
 **Wikipedia cũng sai — câu trích resolve không có nghĩa là đúng.** Bài "Anterior compartment
 of the forearm" ghi nhóm cơ "largely involved with flexion and supination", trong khi chính
