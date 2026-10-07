@@ -523,11 +523,11 @@
       "decidedAt": "2026-10-05"
     },
     {
-      "id": "D-39",
+      "id": "D-41",
       "section": "mat-ngu",
       "pdfPage": 41,
       "raw": "7/ Mất ngủ kéo dài, người mêt. lả:",
-      "resolution": "BỎ mục 7 khỏi bài. Bản scan chỉ có tiêu đề, trang 42 đã sang mục D — không có vùng nhiệt độ, tam giác cơ hay đốt sống nào để trích. Không dựng mục rỗng, không suy nội dung. Bổ sung lại chỉ khi có PDF gốc đủ trang.",
+      "resolution": "BỎ mục 7 khỏi bài. Bản scan chỉ có tiêu đề, trang 42 đã sang mục D — không có vùng nhiệt độ, tam giác cơ hay đốt sống nào để trích. Không dựng mục rỗng, không suy nội dung. Bổ sung lại chỉ khi có PDF gốc đủ trang. (Ban đầu ghi D-39; đổi thành D-41 vì PR #19 đã cấp D-39, D-40 từ 2026-10-05.)",
       "decidedBy": "chủ sản phẩm",
       "decidedAt": "2026-10-07"
     }
