@@ -89,15 +89,13 @@ export function LoginForm({
      Máy chủ đã đặt một cookie đánh dấu nên đường này không lặp lại được: nếu
      lượt thứ hai cũng hỏng, callback về thẳng trang lỗi, không kèm `retry`. */
   const retryProvider = searchParams.get("retry");
+  const retrying =
+    retryProvider === "google" ||
+    retryProvider === "github" ||
+    retryProvider === "facebook";
   useEffect(() => {
-    if (
-      retryProvider === "google" ||
-      retryProvider === "github" ||
-      retryProvider === "facebook"
-    ) {
-      void signIn(retryProvider, { callbackUrl: "/" });
-    }
-  }, [retryProvider]);
+    if (retrying) void signIn(retryProvider, { callbackUrl: "/" });
+  }, [retrying, retryProvider]);
 
   async function onSubmit(values: LoginInput) {
     setServerError(null);
@@ -139,7 +137,16 @@ export function LoginForm({
      câu thay vì chép đôi. */
   const messageKey =
     errorCode === "AccountNotLinked" ? "OAuthAccountNotLinked" : errorCode;
-  const oauthError = errorCode
+  /* Đang bắt lại thì KHÔNG hiện băng đỏ. Trang này chỉ hiện ra một hai giây
+     trước khi `signIn` ở trên chuyển đi, và lượt thứ hai thường thành công —
+     đo 2026-10-07 trên ứng dụng cài ra màn hình chính (Android, Chrome):
+     callback 1 `pkce-missing`, callback 2 ngay sau đó thành công. Băng đỏ lúc
+     ấy báo lỗi cho một việc đang tự khỏi, và câu "mở bằng trình duyệt" chỉ
+     đường sai. Nếu lượt hai cũng hỏng, callback về không kèm `retry` và băng
+     đỏ hiện như thường. */
+  const oauthError = retrying
+    ? null
+    : errorCode
     ? KNOWN_ERRORS.has(errorCode)
       ? t(`error${messageKey}` as "errorConfiguration")
       : t("errorDefault", { code: errorCode })
@@ -154,6 +161,15 @@ export function LoginForm({
 
   return (
     <div className="space-y-5 short:space-y-4 shorter:space-y-2">
+      {retrying && (
+        <p
+          role="status"
+          className="flex items-center gap-2.5 rounded-xl border border-border bg-muted/40 px-4 py-3 text-sm"
+        >
+          <Loader2 className="size-4 shrink-0 animate-spin" aria-hidden />
+          {t("finishingSignIn")}
+        </p>
+      )}
       {oauthError && (
         <p
           role="alert"
