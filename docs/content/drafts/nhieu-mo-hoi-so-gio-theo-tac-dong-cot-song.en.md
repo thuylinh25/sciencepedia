@@ -4,15 +4,13 @@
 
 **Sweating with chest pain that feels tight or like squeezing, or spreads to your arms, neck or jaw: call emergency services right away** — it can be a sign of a heart attack (NHS).
 
-Beyond that, MedlinePlus advises contacting a health professional if sweating occurs with **chest pain, fever, a rapid pounding heartbeat, shortness of breath or weight loss** — these may indicate a problem such as an overactive thyroid or an infection.
-
-The NHS advises seeing a doctor if you are sweating excessively and: things you do yourself are not helping; it has lasted at least 6 months; it stops you getting on with daily activities; it happens at least once a week; it happens at night; you have a family history of excessive sweating; or you are taking medicine for another condition.
+Beyond that, the NHS advises seeing a doctor if you are sweating excessively and: things you do yourself are not helping; it has lasted at least 6 months; it stops you getting on with daily activities; it happens at least once a week; it happens at night; you have a family history of excessive sweating; or you are taking medicine for another condition.
 
 For **night sweats**, the NHS advises seeing a doctor if they happen regularly and wake you up or worry you, if you also have a very high temperature (or feel hot, cold or shivery), a cough or diarrhoea, or if you are losing weight for no reason.
 
 ## Sweating and excessive sweating
 
-According to MedlinePlus (U.S. National Library of Medicine), sweating is the body's natural way of regulating temperature, controlled by the autonomic nervous system — the part of the nervous system that is not under your control. Hot weather, exercise, and feeling nervous, angry, embarrassed or afraid all make you sweat more. Other causes MedlinePlus lists include fever, infection, low blood sugar, menopause, alcohol, caffeine, spicy foods and some medicines.
+According to MedlinePlus (U.S. National Library of Medicine), sweating is how the body cools itself. Sweating a lot is normal when it is hot or when you exercise, are anxious or have a fever; it also happens during menopause. Often sweating too much is called hyperhidrosis; causes include thyroid or nervous system disorders, low blood sugar, or another health problem.
 
 The NHS (UK National Health Service) says excessive sweating is common, can affect the whole body or just certain areas, and sometimes gets better with age. Sweating is excessive when it happens while the body does not need to cool down. It can happen for no obvious reason, because of another condition, or as a side effect of a medicine.
 

@@ -2,35 +2,41 @@
 
 ## ⚠️ Khi nào đau đầu là cấp cứu
 
-MedlinePlus khuyên tìm trợ giúp y tế ngay khi:
+Theo NHS (Dịch vụ Y tế Quốc gia Anh), phần lớn các cơn đau đầu không nghiêm trọng, nhưng đôi khi cần trợ giúp y tế. **Gọi cấp cứu hoặc đến khoa cấp cứu** nếu bạn hoặc trẻ bị đau đầu và:
 
-- đau đầu đến **đột ngột, dữ dội như bùng nổ** — có thể do vỡ mạch máu trong não; gọi cấp cứu hoặc đến khoa cấp cứu gần nhất;
-- đây là cơn đau đầu "tệ nhất từ trước tới nay", kể cả với người hay đau đầu;
-- đau đầu kèm nói ngọng, thay đổi thị lực, khó cử động tay chân, mất thăng bằng, lú lẫn hoặc giảm trí nhớ;
-- đau đầu kèm sốt, cứng cổ, buồn nôn và nôn;
-- đau đầu nặng dần trong 24 giờ;
-- đau đầu sau chấn thương đầu;
-- đau dữ dội chỉ ở một mắt, kèm mắt đỏ;
-- lần đầu trong đời bị đau đầu ảnh hưởng tới sinh hoạt; mới bắt đầu đau đầu, nhất là sau 50 tuổi;
-- đau đầu kèm rối loạn thị lực, đau khi nhai hoặc sụt cân; có tiền sử ung thư mà xuất hiện cơn đau đầu mới; hệ miễn dịch suy yếu do bệnh hay do thuốc.
+- đã bị co giật;
+- bị tê hoặc yếu ở cơ thể hoặc mặt;
+- cơn đau bắt đầu **đột ngột và cực kỳ dữ dội**;
+- bị chấn thương đầu trong 3 tháng gần đây — ví dụ do ngã hoặc tai nạn;
+- thấy khó nói, khó giữ thăng bằng, khó đi lại hoặc khó nhớ;
+- lơ mơ hoặc lú lẫn;
+- mất thị lực;
+- nổi ban không mờ đi khi lăn một cốc thủy tinh lên trên;
+- sốt rất cao, cứng cổ, hoặc thấy khó chịu với ánh sáng chói.
+
+**Xin khám gấp** (NHS: hẹn bác sĩ đa khoa khám gấp hoặc gọi đường dây tư vấn 111) nếu bạn hoặc trẻ bị đau đầu kèm vấn đề về thị lực hoặc về mắt; đau đầu khởi phát hoặc nặng lên khi ho, hắt hơi, cúi người hoặc vận động gắng sức; đau đầu kèm nôn; trẻ bị đau đầu nặng dần hoặc làm trẻ thức giấc ban đêm; bạn bị đau đầu kèm đau hàm khi ăn, hoặc da đầu đau, nhạy cảm khi chạm; hoặc có bất kỳ triệu chứng nào khác khiến bạn lo lắng. **Đi khám** nếu đã tự xử lý mà cơn đau đầu không đỡ hoặc nặng hơn, hoặc nếu thường xuyên bị đau đầu (NHS).
+
+**Đau đầu kèm đau mắt:** MedlinePlus khuyên tìm trợ giúp y tế ngay nếu đau đầu sau một cú va đập vào đầu, hoặc đau đầu kèm cứng cổ, sốt, lú lẫn, mất ý thức, hoặc đau ở mắt hay tai. NHS cho biết glôcôm đôi khi khởi phát đột ngột, gây đau mắt dữ dội, mắt đỏ, đau khi chạm quanh mắt, thấy quầng sáng nhiều màu quanh đèn, nhìn mờ, buồn nôn hoặc nôn và đau đầu (bệnh khác cũng có thể gây triệu chứng tương tự); nếu các triệu chứng này đến đột ngột, gọi cấp cứu hoặc đến khoa cấp cứu — đây là cấp cứu y khoa (NHS).
 
 **Dấu hiệu đột quỵ** đến đột ngột — tê hoặc yếu mặt, tay, chân (nhất là một bên); lú lẫn, nói khó; nhìn khó; chóng mặt, mất thăng bằng; đau đầu dữ dội không rõ nguyên nhân: gọi cấp cứu ngay (MedlinePlus).
 
-**Co giật:** tài liệu có nhiều thể nhắc tới động kinh và co giật ở trẻ em. Trong lúc co giật, MedlinePlus dặn không giữ chặt người bệnh, không cho gì vào giữa hai hàm răng (kể cả ngón tay), không cho uống gì cho tới khi tỉnh hẳn; trẻ co giật khi sốt cao thì làm mát từ từ bằng nước ấm, không ngâm nước lạnh, và gọi bác sĩ của trẻ. MedlinePlus khuyên gọi cấp cứu khi đó là lần co giật đầu tiên, cơn kéo dài quá 2–5 phút, người bệnh không tỉnh lại hoặc không trở lại bình thường sau cơn, cơn khác đến ngay sau đó, co giật dưới nước, người bệnh đang mang thai, bị thương hoặc có bệnh tiểu đường, hoặc cơn khác hẳn kiểu thường gặp.
+**Co giật:** tài liệu có nhiều thể nhắc tới động kinh và co giật ở trẻ em. Khi ở cạnh người đang co giật, NHS dặn: chỉ di chuyển họ nếu họ đang gặp nguy hiểm (như gần đường đông xe hay bếp nóng); kê đệm dưới đầu nếu họ nằm trên sàn; nới lỏng quần áo chật quanh cổ; khi hết giật thì đặt họ nằm nghiêng; ở bên, nói chuyện bình tĩnh với họ cho tới khi hồi phục; ghi lại lúc cơn bắt đầu và kết thúc. Không cho bất cứ thứ gì vào miệng họ, kể cả ngón tay; không cho ăn uống gì cho tới khi họ hồi phục hoàn toàn. NHS khuyên gọi cấp cứu khi đó là lần co giật đầu tiên; cơn kéo dài hơn mức thường gặp ở người đó, hoặc hơn 5 phút nếu không biết cơn của họ thường kéo dài bao lâu; người bệnh không tỉnh lại hoàn toàn, hoặc lên nhiều cơn mà không tỉnh lại; người bệnh bị thương nặng trong cơn; hoặc khó thở sau cơn.
 
-**Đau đầu kèm huyết áp rất cao** — nhìn mờ, lú lẫn, đau ngực, khó thở, co giật, yếu hoặc tê tay chân — có thể là tăng huyết áp ác tính, một cấp cứu đe dọa tính mạng (MedlinePlus).
+Trẻ co giật khi sốt cao: NHS dặn không di chuyển trẻ hay cố giữ chặt trẻ, không cho gì vào miệng trẻ, không cố hạ sốt bằng cách cởi đồ hay lau người trẻ bằng nước lạnh. Gọi cấp cứu hoặc đến khoa cấp cứu nếu trẻ co giật lần đầu, cơn kéo dài hơn 5 phút, trẻ khó thở, co cứng và giật chỉ ở một bên người, buồn ngủ hơn bình thường quá 1 giờ sau khi hết cơn, hoặc co giật hơn 1 lần trong 24 giờ; trẻ còn đang co giật hoặc bất tỉnh thì gọi cấp cứu, không tự đưa trẻ đến khoa cấp cứu.
+
+**Đau đầu kèm huyết áp rất cao:** theo NHLBI (Viện Tim, Phổi và Máu Hoa Kỳ), huyết áp trên 180/120 mm Hg là quá cao và cần được chăm sóc y tế, nhất là khi có triệu chứng. Đo được 180/120 mà không có triệu chứng thì chờ 5 phút rồi đo lại; nếu vẫn cao, gọi nhân viên y tế của bạn. Nếu lần đo thứ hai vẫn cao và có bất kỳ triệu chứng nào sau — đau đầu đột ngột, dữ dội; khó thở; đau đột ngột, dữ dội ở bụng, ngực hoặc lưng; tê hoặc yếu; thay đổi thị lực đột ngột; khó nói — thì gọi cấp cứu, đừng chờ xem huyết áp có tự hạ không.
 
 **Triệu chứng đi kèm cũng có thể là cấp cứu riêng.** Một số thể trong tài liệu nhắc tới đau ngực, đau tim, nôn ra máu, ra máu khi mang thai:
 
 - đau hoặc khó chịu ở ngực (đè ép, bóp nghẹt, căng tức, thường kéo dài hơn vài phút), khó thở, khó chịu ở một hoặc hai tay, lưng, vai, cổ, hàm hoặc bụng trên: gọi cấp cứu, kể cả khi chưa chắc là nhồi máu cơ tim (MedlinePlus);
-- nôn ra máu: liên hệ nhân viên y tế hoặc đến khoa cấp cứu, cần được khám ngay (MedlinePlus);
-- ra máu âm đạo khi đang mang thai: coi là tình huống có thể cấp cứu, liên hệ nhân viên y tế (MedlinePlus).
+- nôn ra máu: NHS khuyên luôn phải đi khám; gọi cấp cứu hoặc đến khoa cấp cứu nếu nôn ra máu kèm thấy người không khỏe, lú lẫn, choáng hoặc chóng mặt, thở nhanh hoặc nông, da lạnh, ẩm và tái, đau bụng, hoặc đi ngoài phân đen; nếu đã ngừng nôn ra máu và không có triệu chứng nào khác, xin khám gấp (NHS);
+- ra máu âm đạo khi đang mang thai: không phải lúc nào cũng nghiêm trọng nhưng đôi khi cần điều trị gấp, nên cần hỏi ý kiến nhân viên y tế; gọi cấp cứu nếu ra máu kèm đau bụng dữ dội, đau ở vai, buồn nôn, choáng, chóng mặt hoặc ngất, hoặc ra máu nhiều (thấm đẫm băng vệ sinh ngay sau khi thay) (NHS).
 
 ## Đau đầu là gì?
 
-Theo MedlinePlus (Thư viện Y khoa Quốc gia Hoa Kỳ), đau đầu là cảm giác đau hoặc khó chịu ở đầu, da đầu hoặc cổ; nguyên nhân nghiêm trọng của đau đầu là hiếm.
+Theo MedlinePlus (Thư viện Y khoa Quốc gia Hoa Kỳ), hầu như ai cũng từng bị đau đầu, và đau đầu là dạng đau phổ biến nhất. Không phải cơn đau đầu nào cũng cần bác sĩ, nhưng đôi khi đau đầu báo hiệu một rối loạn nghiêm trọng hơn. NHS (Dịch vụ Y tế Quốc gia Anh) cho biết phần lớn các cơn đau đầu tự hết và không phải dấu hiệu của bệnh nghiêm trọng hơn; một cơn có thể kéo dài 30 phút, vài giờ, đôi khi vài ngày.
 
-MedlinePlus nêu ba loại thường gặp: **đau đầu do căng cơ** — loại phổ biến nhất, có lẽ do cơ căng cứng ở vai, cổ, da đầu và hàm, và có thể liên quan tới căng thẳng, trầm cảm, lo âu; **đau nửa đầu (migraine)** — đau giật, đau nhói theo nhịp ở một bên đầu, thường kèm thay đổi thị lực, nhạy cảm với ánh sáng, âm thanh, hoặc buồn nôn; và **đau đầu từng cụm** — đau nhói, rất đau, xuất hiện hằng ngày, có khi vài lần một ngày, trong nhiều tháng, rồi hết trong vài tuần đến vài tháng.
+Theo MedlinePlus, loại thường gặp nhất là **đau đầu do căng cơ** — do cơ căng cứng ở vai, cổ, da đầu và hàm, và thường liên quan tới căng thẳng, trầm cảm hoặc lo âu. Các loại đau đầu thường gặp khác gồm **đau nửa đầu (migraine)**, **đau đầu từng cụm** và **đau đầu do xoang**.
 
 ## Nội dung theo phương pháp Tác động cột sống
 

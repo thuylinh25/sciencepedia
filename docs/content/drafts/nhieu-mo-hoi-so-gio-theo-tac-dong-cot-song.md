@@ -4,15 +4,13 @@
 
 **Đổ mồ hôi kèm đau ngực như bị đè ép, bóp chặt, hoặc đau lan ra cánh tay, cổ, hàm: gọi cấp cứu ngay** — đó có thể là dấu hiệu nhồi máu cơ tim (NHS).
 
-Ngoài trường hợp trên, MedlinePlus khuyên liên hệ nhân viên y tế khi đổ mồ hôi đi kèm **đau ngực, sốt, tim đập nhanh và mạnh, khó thở hoặc sụt cân** — các dấu hiệu này có thể cho thấy một vấn đề như cường giáp hay nhiễm trùng.
-
-NHS khuyên đi khám khi đổ mồ hôi nhiều và: tự chăm sóc không đỡ; kéo dài từ 6 tháng; cản trở sinh hoạt hằng ngày; xảy ra ít nhất mỗi tuần một lần; xảy ra về đêm; trong nhà có người cũng bị; hoặc bạn đang dùng thuốc chữa bệnh khác.
+Ngoài trường hợp trên, NHS khuyên đi khám khi đổ mồ hôi nhiều và: tự chăm sóc không đỡ; kéo dài từ 6 tháng; cản trở sinh hoạt hằng ngày; xảy ra ít nhất mỗi tuần một lần; xảy ra về đêm; gia đình có người từng bị đổ mồ hôi quá mức; hoặc bạn đang dùng thuốc chữa bệnh khác.
 
 Với **đổ mồ hôi đêm**, NHS khuyên đi khám khi thường xuyên bị đến mức tỉnh giấc hoặc lo lắng, khi kèm sốt cao (hoặc cảm thấy nóng, lạnh, run), ho hay tiêu chảy, hoặc khi sụt cân không rõ lý do.
 
 ## Đổ mồ hôi và đổ mồ hôi nhiều
 
-Theo MedlinePlus (Thư viện Y khoa Quốc gia Hoa Kỳ), đổ mồ hôi là cách tự nhiên cơ thể điều hòa thân nhiệt, do hệ thần kinh tự chủ điều khiển — phần thần kinh nằm ngoài ý muốn. Trời nóng, vận động, hay những lúc lo lắng, tức giận, xấu hổ, sợ hãi đều làm ra mồ hôi nhiều hơn. Nguyên nhân khác MedlinePlus nêu gồm sốt, nhiễm trùng, hạ đường huyết, mãn kinh, rượu, cà phê, đồ ăn cay, và một số thuốc.
+Theo MedlinePlus (Thư viện Y khoa Quốc gia Hoa Kỳ), đổ mồ hôi là cách cơ thể tự làm mát. Đổ nhiều mồ hôi là bình thường khi trời nóng, khi vận động, khi lo lắng hoặc khi sốt; nó cũng xảy ra trong thời kỳ mãn kinh. Thường xuyên đổ quá nhiều mồ hôi gọi là chứng tăng tiết mồ hôi; nguyên nhân gồm rối loạn tuyến giáp hoặc hệ thần kinh, hạ đường huyết, hoặc một vấn đề sức khỏe khác.
 
 NHS (Dịch vụ Y tế Quốc gia Anh) cho biết đổ mồ hôi nhiều là thường gặp, có thể ở toàn thân hoặc chỉ vài vùng, và đôi khi đỡ dần theo tuổi. Đổ mồ hôi được coi là quá mức khi xảy ra lúc cơ thể không cần làm mát. Nó có thể không rõ lý do, do một bệnh khác, hoặc là tác dụng phụ của thuốc.
 

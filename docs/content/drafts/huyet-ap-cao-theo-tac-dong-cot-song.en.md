@@ -4,13 +4,22 @@
 
 **The current definition uses "or", not "and".** The document calls blood pressure high when the upper number is > 140 **and** the lower number is > 90. Under the classification table MedlinePlus publishes, **either** number crossing the threshold is enough: stage 1 high blood pressure is systolic 130–139 **or** diastolic 80–89; stage 2 is systolic 140 or higher **or** diastolic 90 or higher. Diagnosis needs two or more readings at separate visits.
 
-High blood pressure usually has **no symptoms** — most people feel nothing, and it is often found at routine check-ups. So feeling well does not tell you that blood pressure has come down to a safe level.
+High blood pressure usually has **no symptoms**, so the only way to find out whether you have it is to get regular blood pressure checks from a health care provider (MedlinePlus). Feeling well therefore does not tell you that blood pressure has come down to a safe level.
 
-**Malignant hypertension is an emergency.** MedlinePlus describes it as very high blood pressure that comes on suddenly and quickly, with signs such as blurred vision, confusion or decreased alertness, chest pain (a crushing or pressure feeling), headache, shortness of breath, seizure, and weakness or numbness of the arms or legs. MedlinePlus advises going to the emergency room or calling emergency services for these symptoms — the condition can be life-threatening.
+**Blood pressure above 180/120 mm Hg: when to call emergency services.** According to NHLBI (U.S. National Heart, Lung, and Blood Institute), blood pressure above 180/120 mm Hg — that is, systolic higher than 180 **or** diastolic higher than 120; either number is enough — is too high and requires medical attention, especially if you have symptoms; blood pressure this high can damage your organs. If your blood pressure is 180/120 but you don't have symptoms, wait 5 minutes and check it again; if it is still high, call your healthcare provider. If the second measurement is also high **and** you have any of these symptoms, **call emergency services**:
+
+- a sudden, severe headache;
+- difficulty breathing;
+- sudden, severe pain in the abdomen, chest or back;
+- numbness or weakness;
+- a sudden change in vision;
+- problems talking.
+
+Do not wait to see if your pressure comes down on its own.
 
 Stroke warning signs that come on **suddenly** — numbness or weakness of the face, arm or leg (especially on one side); confusion or trouble speaking; trouble seeing; difficulty walking, dizziness or loss of balance; severe headache with no known cause — also need emergency services right away (MedlinePlus).
 
-**Controlling blood pressure relies on monitoring it carefully and taking medicines properly** (MedlinePlus); treatment combines lifestyle changes with medicines when needed. Nothing in the document quoted below replaces that.
+**NHLBI says it is important to have your blood pressure checked at least once a year, and recommends regular home blood pressure monitoring**; treatment includes heart-healthy lifestyle changes and medicines, under a plan worked out with your provider (MedlinePlus). Nothing in the document quoted below replaces that.
 
 ## What is high blood pressure?
 
@@ -18,7 +27,7 @@ According to MedlinePlus (U.S. National Library of Medicine), blood pressure is 
 
 The classification table MedlinePlus publishes: normal is systolic below 120 and diastolic below 80; elevated is systolic 120–129 and diastolic below 80; stages 1 and 2 as in the box above; a **hypertensive crisis** — according to NHLBI (U.S. National Heart, Lung, and Blood Institute) — is systolic higher than 180 **or** diastolic higher than 120, and needs a health professional immediately. (MedlinePlus's table uses "and" at this threshold; this article follows NHLBI's more cautious one.)
 
-Sustained high blood pressure makes the heart work harder and can lead to heart attack, stroke, heart failure and kidney failure. Treatment combines heart-healthy lifestyle changes with medicines when needed, depending on the cause and severity.
+Sustained high blood pressure makes the heart work harder and can lead to heart attack, stroke, heart failure and kidney failure. Treatment includes heart-healthy lifestyle changes and medicines: sometimes lifestyle changes alone are enough, but if they do not control or lower blood pressure, medicine may be needed.
 
 ## Content according to the Spinal Impact method
 

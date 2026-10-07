@@ -729,6 +729,15 @@ văn bản nguồn, nên từ 2026-10-03 mục mới lấy dữ kiện từ Wiki
 có điều khoản ấy). Trước khi nhận một nguồn mới cho nội dung do AI soạn, đọc cả trang điều khoản
 của nguồn, không chỉ dòng giấy phép.
 
+**MedlinePlus: trang chủ đề dùng được, bách khoa `/ency/` thì không (2026-10-07).** Trang
+`medlineplus.gov/ency/…` là bách khoa A.D.A.M. (© Ebix): chân trang cấm dùng công cụ tự động trích
+nội dung và cấm dùng cho hệ AI dưới mọi hình thức — kể cả hệ "đọc nội dung để sinh kết quả" — khi
+chưa có văn bản đồng ý. Bài do agent viết từ nguồn rơi đúng vào đó, dù câu chữ đúng nguồn. Trang chủ
+đề `medlineplus.gov/<chủ-đề>.html` do NLM soạn (tác phẩm liên bang, không bản quyền theo trang
+"Linking to and Using Content") vẫn dùng được, sau khi xem chân trang không có A.D.A.M./Ebix. Loạt
+Tác động cột sống phát hiện sau khi đã dùng ~30 trang `/ency/` ở 13/14 bài; test
+`src/lib/spine/sources.test.ts` chặn tái diễn, ba bài đã xuất bản nằm trong danh sách chờ đính chính.
+
 **Wikipedia cũng sai — câu trích resolve không có nghĩa là đúng.** Bài "Anterior compartment
 of the forearm" ghi nhóm cơ "largely involved with flexion and supination", trong khi chính
 bảng của bài liệt kê cơ sấp tròn và cơ sấp vuông. Mục nào bỏ một vế nguồn thì ghi lý do vào

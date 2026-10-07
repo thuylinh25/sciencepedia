@@ -25,14 +25,6 @@
       "accessed": "2026-10-07"
     },
     {
-      "id": "s2",
-      "title": "Insomnia",
-      "publisher": "MedlinePlus — U.S. National Library of Medicine",
-      "url": "https://medlineplus.gov/ency/article/000805.htm",
-      "tier": 2,
-      "accessed": "2026-10-07"
-    },
-    {
       "id": "s3",
       "title": "What Is Insomnia?",
       "publisher": "National Heart, Lung, and Blood Institute (NHLBI)",
@@ -63,6 +55,22 @@
       "url": "https://www.nhs.uk/conditions/sleep-apnoea/",
       "tier": 2,
       "accessed": "2026-10-07"
+    },
+    {
+      "id": "s7",
+      "title": "Insomnia — Causes and Risk Factors",
+      "publisher": "National Heart, Lung, and Blood Institute (NHLBI)",
+      "url": "https://www.nhlbi.nih.gov/health/insomnia/causes",
+      "tier": 2,
+      "accessed": "2026-10-07"
+    },
+    {
+      "id": "s8",
+      "title": "Insomnia — Treatment",
+      "publisher": "National Heart, Lung, and Blood Institute (NHLBI)",
+      "url": "https://www.nhlbi.nih.gov/health/insomnia/treatment",
+      "tier": 2,
+      "accessed": "2026-10-07"
     }
   ],
   "safety": {
@@ -71,12 +79,11 @@
       "en": "⚠️ When to see a doctor"
     },
     "body": {
-      "vi": "**Hồi hộp kèm đau ngực, khó thở, cảm thấy sắp ngất hay ngất là cấp cứu.** Tài liệu dưới đây có mục \"Hồi hộp khó ngủ\". NHS khuyên gọi cấp cứu hoặc đến khoa cấp cứu ngay nếu bạn đang bị hồi hộp mà cơn không dứt, hoặc hồi hộp kèm bất kỳ dấu hiệu nào sau đây: **đau ngực, khó thở, cảm thấy sắp ngất hay ngất** — và không tự lái xe đi. Nếu đã có các dấu hiệu ấy nhưng nay đã dứt, NHS khuyên xin khám gấp. Hồi hộp — tim đập nhanh, không đều, thình thịch hay rộn lên — thường vô hại, nhưng nên đi khám khi cơn cứ trở lại hoặc dày hơn, kéo dài quá vài phút, hoặc bạn có bệnh tim hay gia đình có tiền sử bệnh tim.\n\nNHS khuyên đi khám khi: thay đổi thói quen ngủ không giúp được; khó ngủ đã nhiều tháng; hoặc mất ngủ ảnh hưởng tới sinh hoạt đến mức khó xoay xở. MedlinePlus khuyên liên hệ nhân viên y tế khi mất ngủ đã thành vấn đề.\n\nNHS khuyên đi khám nếu bạn có bất kỳ triệu chứng chính nào của ngưng thở khi ngủ, như: **ngừng thở rồi thở lại** trong khi ngủ; thở hổn hển, khịt hay sặc lúc ngủ; ban ngày lúc nào cũng rất mệt — vì bệnh này có thể nghiêm trọng nếu không được chẩn đoán và điều trị. Ngáy to cũng là một triệu chứng NHS liệt kê. Buồn ngủ thì không lái xe (NHS, MedlinePlus). Hỏi bác sĩ trước khi dùng bất cứ thứ gì để ngủ (NHS).",
-      "en": "**Palpitations with chest pain, shortness of breath, or feeling faint or fainting are an emergency.** The document below has a form called \"Palpitations with trouble sleeping\". The NHS advises calling emergency services or going to A&E right away if you currently have heart palpitations that do not go away, or palpitations with any of these: **chest pain, shortness of breath, or feeling faint or fainting** — and not to drive yourself there. If you had these symptoms but they have now stopped, the NHS advises getting an urgent appointment. Palpitations — a heartbeat that feels racing, irregular, pounding or fluttering — are usually harmless, but see a doctor if they keep coming back or happen more often, last longer than a few minutes, or if you have a heart condition or a family history of heart problems.\n\nThe NHS advises seeing a doctor if changing your sleeping habits has not helped, you have had trouble sleeping for months, or insomnia is affecting your daily life in a way that makes it hard to cope. MedlinePlus advises contacting a health professional if insomnia has become a problem.\n\nThe NHS advises seeing a doctor if you have any of the main symptoms of sleep apnoea, such as **breathing that stops and starts** while you sleep, gasping, snorting or choking noises while you sleep, or always feeling very tired during the day — because it can be serious if it is not diagnosed and treated. Loud snoring is also one of the symptoms the NHS lists. Do not drive when you feel sleepy (NHS, MedlinePlus). Check with your doctor before taking anything for your sleep (NHS)."
+      "vi": "**Hồi hộp kèm đau ngực, khó thở, cảm thấy sắp ngất hay ngất là cấp cứu.** Tài liệu dưới đây có mục \"Hồi hộp khó ngủ\". NHS khuyên gọi cấp cứu hoặc đến khoa cấp cứu ngay nếu bạn đang bị hồi hộp mà cơn không dứt, hoặc hồi hộp kèm bất kỳ dấu hiệu nào sau đây: **đau ngực, khó thở, cảm thấy sắp ngất hay ngất** — và không tự lái xe đi. Nếu đã có các dấu hiệu ấy nhưng nay đã dứt, NHS khuyên xin khám gấp. Hồi hộp — tim đập nhanh, không đều, thình thịch hay rộn lên — thường vô hại, nhưng nên đi khám khi cơn cứ trở lại hoặc dày hơn, kéo dài quá vài phút, hoặc bạn có bệnh tim hay gia đình có tiền sử bệnh tim.\n\nNHS khuyên đi khám khi: thay đổi thói quen ngủ không giúp được; khó ngủ đã nhiều tháng; hoặc mất ngủ ảnh hưởng tới sinh hoạt đến mức khó xoay xở.\n\nNHS khuyên đi khám nếu bạn có bất kỳ triệu chứng chính nào của ngưng thở khi ngủ, như: **ngừng thở rồi thở lại** trong khi ngủ; thở hổn hển, khịt hay sặc lúc ngủ; ban ngày lúc nào cũng rất mệt — vì bệnh này có thể nghiêm trọng nếu không được chẩn đoán và điều trị. Ngáy to cũng là một triệu chứng NHS liệt kê. Buồn ngủ thì không lái xe (NHS). Hỏi bác sĩ trước khi dùng bất cứ thứ gì để ngủ (NHS).",
+      "en": "**Palpitations with chest pain, shortness of breath, or feeling faint or fainting are an emergency.** The document below has a form called \"Palpitations with trouble sleeping\". The NHS advises calling emergency services or going to A&E right away if you currently have heart palpitations that do not go away, or palpitations with any of these: **chest pain, shortness of breath, or feeling faint or fainting** — and not to drive yourself there. If you had these symptoms but they have now stopped, the NHS advises getting an urgent appointment. Palpitations — a heartbeat that feels racing, irregular, pounding or fluttering — are usually harmless, but see a doctor if they keep coming back or happen more often, last longer than a few minutes, or if you have a heart condition or a family history of heart problems.\n\nThe NHS advises seeing a doctor if changing your sleeping habits has not helped, you have had trouble sleeping for months, or insomnia is affecting your daily life in a way that makes it hard to cope.\n\nThe NHS advises seeing a doctor if you have any of the main symptoms of sleep apnoea, such as **breathing that stops and starts** while you sleep, gasping, snorting or choking noises while you sleep, or always feeling very tired during the day — because it can be serious if it is not diagnosed and treated. Loud snoring is also one of the symptoms the NHS lists. Do not drive when you feel sleepy (NHS). Check with your doctor before taking anything for your sleep (NHS)."
     },
     "sources": [
       "s1",
-      "s2",
       "s5",
       "s6"
     ]
@@ -103,13 +110,14 @@
         "en": "Common causes and the medical approach"
       },
       "body": {
-        "vi": "NHS nêu các nguyên nhân thường gặp nhất: căng thẳng, lo âu hoặc trầm cảm; tiếng ồn; phòng quá nóng hay quá lạnh; giường không thoải mái; rượu, caffeine hoặc nicotin; ma tuý; lệch múi giờ; làm việc theo ca. Một số bệnh và thuốc cũng có thể gây mất ngủ — trong đó có cường giáp, mãn kinh, hội chứng chân không yên, bệnh Alzheimer, bệnh Parkinson. Đau kéo dài, ngưng thở khi ngủ và ác mộng cũng làm mất giấc ngủ ngon. MedlinePlus (Thư viện Y khoa Quốc gia Hoa Kỳ) bổ sung: đi ngủ mỗi đêm một giờ, ngủ ngày, dùng điện thoại hay ti vi trên giường, đau, phải dậy đi tiểu đêm; và theo tuổi, nhiều người khó vào giấc hơn và hay thức giấc hơn.\n\nTheo NHS và MedlinePlus, mất ngủ thường đỡ khi thay đổi thói quen ngủ. Bác sĩ sẽ tìm nguyên nhân — kể cả xem lại thuốc đang dùng và các bệnh khác — và có thể đề nghị **liệu pháp nhận thức – hành vi cho mất ngủ (CBT-I)**. NHS cho biết thuốc ngủ hiện ít được kê. Thuốc ngủ có thể gây tác dụng phụ nghiêm trọng và gây lệ thuộc. Thuốc ngủ chỉ được kê vài ngày, tối đa vài tuần, khi: mất ngủ rất nặng; các cách điều trị khác không hiệu quả. NHLBI ghi nhận mất ngủ mạn tính làm tăng nguy cơ tăng huyết áp, bệnh mạch vành, đái tháo đường và ung thư.",
-        "en": "The NHS lists the most common causes: stress, anxiety or depression; noise; a room that is too hot or cold; an uncomfortable bed; alcohol, caffeine or nicotine; illegal drugs; jet lag; and shift work. Some conditions and medicines can also cause insomnia — among them an overactive thyroid, menopause, restless legs syndrome, Alzheimer's disease and Parkinson's disease. Long-term pain, sleep apnoea and nightmares can also keep you from a good night's sleep. MedlinePlus (U.S. National Library of Medicine) adds going to bed at a different time each night, daytime napping, using a TV or phone in bed, pain, and waking at night to urinate; and with age, many people find it harder to fall asleep and wake more often.\n\nAccording to the NHS and MedlinePlus, insomnia usually gets better by changing sleeping habits. A doctor will look for the cause — including reviewing medicines and other health problems — and may offer **cognitive behavioural therapy for insomnia (CBT-I)**. The NHS says sleeping pills are now rarely prescribed. Sleeping pills can have serious side effects and people can become dependent on them. They are only prescribed for a few days, or weeks at most, if: the insomnia is very bad; other treatments have not worked. The NHLBI notes that chronic insomnia raises the risk of high blood pressure, coronary heart disease, diabetes and cancer."
+        "vi": "NHS nêu các nguyên nhân thường gặp nhất: căng thẳng, lo âu hoặc trầm cảm; tiếng ồn; phòng quá nóng hay quá lạnh; giường không thoải mái; rượu, caffeine hoặc nicotin; ma tuý; lệch múi giờ; làm việc theo ca. Một số bệnh và thuốc cũng có thể gây mất ngủ — trong đó có cường giáp, mãn kinh, hội chứng chân không yên, bệnh Alzheimer, bệnh Parkinson. Đau kéo dài, ngưng thở khi ngủ và ác mộng cũng làm mất giấc ngủ ngon. NHLBI bổ sung những thói quen có thể làm tăng nguy cơ gặp vấn đề về giấc ngủ: hay thay đổi nếp sinh hoạt, kể cả giờ ngủ; giấc ngủ bị gián đoạn, như phải thức dậy nhiều lần để chăm con nhỏ; ngủ ngày lâu; ít vận động ban ngày; xem ti vi hay dùng thiết bị điện tử sát giờ ngủ. Mất ngủ có thể gặp ở mọi lứa tuổi, nhưng khả năng mắc tăng dần theo tuổi (NHLBI).\n\nTheo NHS, mất ngủ thường đỡ khi thay đổi thói quen ngủ. Bác sĩ sẽ tìm nguyên nhân gây mất ngủ để điều trị cho đúng, và có thể đề nghị **liệu pháp nhận thức – hành vi cho mất ngủ (CBT-I)**. NHS cho biết thuốc ngủ hiện ít được kê. Thuốc ngủ có thể gây tác dụng phụ nghiêm trọng và gây lệ thuộc. Thuốc ngủ chỉ được kê vài ngày, tối đa vài tuần, khi: mất ngủ rất nặng; các cách điều trị khác không hiệu quả. NHLBI ghi nhận mất ngủ mạn tính làm tăng nguy cơ tăng huyết áp, bệnh mạch vành, đái tháo đường và ung thư.",
+        "en": "The NHS lists the most common causes: stress, anxiety or depression; noise; a room that is too hot or cold; an uncomfortable bed; alcohol, caffeine or nicotine; illegal drugs; jet lag; and shift work. Some conditions and medicines can also cause insomnia — among them an overactive thyroid, menopause, restless legs syndrome, Alzheimer's disease and Parkinson's disease. Long-term pain, sleep apnoea and nightmares can also keep you from a good night's sleep. The NHLBI adds lifestyle habits that can raise the risk of sleep problems: changing your normal routine often, including your sleep schedule; interruptions in your sleep, such as waking up often to care for a baby; taking long naps during the day; getting too little physical activity during the day; and watching TV or using electronic devices close to bedtime. Insomnia can develop at any age, but the chances of having it increase as you get older (NHLBI).\n\nAccording to the NHS, insomnia usually gets better by changing sleeping habits. A doctor will try to find out what is causing it so you get the right treatment, and may offer **cognitive behavioural therapy for insomnia (CBT-I)**. The NHS says sleeping pills are now rarely prescribed. Sleeping pills can have serious side effects and people can become dependent on them. They are only prescribed for a few days, or weeks at most, if: the insomnia is very bad; other treatments have not worked. The NHLBI notes that chronic insomnia raises the risk of high blood pressure, coronary heart disease, diabetes and cancer."
       },
       "sources": [
         "s1",
-        "s2",
-        "s3"
+        "s3",
+        "s7",
+        "s8"
       ]
     }
   ],

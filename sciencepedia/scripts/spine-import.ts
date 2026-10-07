@@ -190,7 +190,7 @@ async function main() {
             url: s.url,
             doi: s.doi ?? null,
             tier: s.tier,
-            accessedAt: accessed,
+            accessedAt: new Date(`${s.accessed}T00:00:00Z`),
           })),
           {
             articleId: article.id,

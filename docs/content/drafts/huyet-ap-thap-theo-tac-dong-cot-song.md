@@ -2,31 +2,40 @@
 
 ## ⚠️ Khi nào cần cấp cứu
 
-**Người bất tỉnh mà không thở hoặc không có mạch: gọi cấp cứu và bắt đầu hồi sức tim phổi (CPR) ngay** (MedlinePlus). Tài liệu có một thể mang tên "ngất, ngừng thở, tim ngừng đập" — đó là tình huống cấp cứu, không phải việc chờ xử lý ở nhà.
+**Người không phản ứng và không thở bình thường: gọi cấp cứu và bắt đầu hồi sức tim phổi (CPR) ngay** — thở ngáp hay thở có tiếng ọc ọc trong cổ không phải là thở bình thường; nếu có người khác ở gần, nhờ họ gọi trong lúc bạn bắt đầu CPR. Người chưa học CPR có thể chỉ ép ngực, không thổi ngạt, với thiếu niên và người lớn bị ngừng tim (NHLBI; MedlinePlus). Tài liệu có một thể mang tên "ngất, ngừng thở, tim ngừng đập" — đó là tình huống cấp cứu, không phải việc chờ xử lý ở nhà. Người trực đường dây cấp cứu sẽ hướng dẫn cần làm gì (NHS — Dịch vụ Y tế Quốc gia Anh).
 
-Theo MedlinePlus, nếu huyết áp thấp làm người bệnh ngất, cần được điều trị ngay hoặc gọi cấp cứu; nếu người đó không thở hoặc không có mạch, bắt đầu hồi sức tim phổi. Với người huyết áp thấp, MedlinePlus khuyên liên hệ nhân viên y tế **ngay** khi có:
+Theo NHLBI (Viện Tim, Phổi và Máu Hoa Kỳ), huyết áp tụt đột ngột, hoặc huyết áp thấp liên quan đến một vấn đề sức khoẻ, có thể nguy hiểm vì tim, não hay các cơ quan sống còn khác có thể không nhận đủ máu. Huyết áp tụt quá thấp có thể dẫn đến sốc — tình trạng cần chăm sóc y tế ngay. Dấu hiệu sốc gồm da lạnh và vã mồ hôi, thở nhanh, da tím tái, hoặc mạch yếu và nhanh: **gọi cấp cứu** nếu thấy các dấu hiệu này ở mình hay người khác.
 
-- đau ngực;
-- chóng mặt, choáng váng;
-- ngất;
-- sốt trên 38,3°C;
-- tim đập không đều;
-- khó thở;
-- phân đen hoặc màu nâu đỏ sẫm.
+Sau một lần ngất, NHS khuyên **gọi cấp cứu** nếu người bị ngất:
 
-Sau một lần ngất, MedlinePlus khuyên gọi cấp cứu nếu người bị ngất ngã từ trên cao (nhất là khi bị thương hay chảy máu), không tỉnh lại trong vài phút, đang mang thai, trên 50 tuổi, có bệnh tiểu đường, đau hoặc tức ngực, tim đập mạnh hay không đều, mất tiếng nói, rối loạn thị lực hoặc không cử động được tay chân, co giật, tổn thương lưỡi, hoặc mất kiểm soát tiểu tiện hay đại tiện. Người chưa từng ngất, ngất nhiều lần, hoặc có triệu chứng mới đi kèm cũng nên đi khám sớm.
+- không thở;
+- không gọi tỉnh được trong vòng 1 phút;
+- chưa hồi phục hẳn, hoặc nói khó hay cử động khó;
+- đau ngực, hoặc tim đập thình thịch, đập loạn hay không đều (hồi hộp đánh trống ngực);
+- bị thương nặng trước hoặc sau khi ngất;
+- run giật người (co giật);
+- ngất khi đang vận động thể lực;
+- ngất khi đang nằm.
+
+Không tự lái xe đến khoa cấp cứu. Người đã ngất mà không thuộc các trường hợp trên vẫn nên đi khám để tìm nguyên nhân (NHS).
+
+Với đau ngực, NHS khuyên **gọi cấp cứu ngay** nếu đau hoặc khó chịu ở ngực đến đột ngột và không hết (có thể như bị bóp chặt, đè ép, nóng rát hay khó tiêu); nếu đau lan ra một hay hai tay, cổ, hàm, bụng hoặc lưng; hoặc nếu đau ngực kèm vã mồ hôi, buồn nôn, choáng váng hay khó thở.
+
+Tim đập chậm hay không đều có thể là triệu chứng rối loạn nhịp tim; NHLBI khuyên **tìm chăm sóc y tế cấp cứu** nếu triệu chứng rất nặng, như khó thở hay đau ngực.
+
+Nếu cứ bị các triệu chứng huyết áp thấp như chóng mặt và ngất, NHS khuyên đi khám bác sĩ.
 
 ## Huyết áp thấp là gì?
 
-Theo MedlinePlus (Thư viện Y khoa Quốc gia Hoa Kỳ), huyết áp là lực máu đẩy lên thành động mạch. Ở người lớn, huyết áp bình thường nằm trong khoảng 90/60 mmHg đến 120/80 mmHg; số đo từ 90/60 trở xuống là huyết áp thấp.
+Theo MedlinePlus (Thư viện Y khoa Quốc gia Hoa Kỳ), huyết áp là lực máu đẩy lên thành động mạch; số đo từ 90/60 mmHg trở xuống là huyết áp thấp (NHLBI và NHS ghi "dưới 90/60 mmHg"). Với phần lớn người lớn, huyết áp bình thường thường dưới 120/80 mmHg (NHLBI).
 
-Một số người lúc nào cũng có huyết áp thấp, không có triệu chứng, và số đo thấp là bình thường với họ — thường không cần điều trị. Huyết áp thấp chỉ thành vấn đề khi gây chóng mặt, ngất, hoặc trong trường hợp nặng là sốc.
+Một số người lúc nào cũng có huyết áp thấp, không có triệu chứng, và số đo thấp là bình thường với họ. Huyết áp thấp chỉ thành vấn đề khi gây chóng mặt, ngất, hoặc trong trường hợp nặng là sốc (MedlinePlus). Có thể không cần điều trị huyết áp thấp (NHLBI).
 
-Triệu chứng MedlinePlus nêu gồm nhìn mờ, lú lẫn, chóng mặt, ngất, choáng váng, buồn nôn hoặc nôn, buồn ngủ và yếu người. Nguyên nhân có thể là bệnh tim, tác dụng phụ của thuốc (thuốc lợi tiểu, thuốc chống trầm cảm, thuốc hạ huyết áp), uống không đủ nước, mất nước, và tổn thương thần kinh do tiểu đường.
+Nhiều người không nhận ra mình bị huyết áp thấp; người khác có thể có triệu chứng như lú lẫn, chóng mặt hoặc choáng váng, ngất, mệt hoặc yếu người, nhìn mờ, đau đầu, đau cổ hoặc lưng, buồn nôn, và hồi hộp đánh trống ngực — cảm giác tim hẫng một nhịp, đập loạn, đập quá mạnh hay quá nhanh (NHLBI). Nguyên nhân có thể là rối loạn hệ thần kinh tự chủ (như trong bệnh Parkinson), mất máu do chấn thương gây tụt huyết áp đột ngột, bệnh tim như rối loạn nhịp, và thuốc điều trị huyết áp cao, trầm cảm hay Parkinson (NHLBI); NHLBI cũng kể mất nước, tiểu đường và mang thai.
 
 ## Ngất là gì?
 
-MedlinePlus định nghĩa ngất là mất ý thức trong thời gian ngắn do lưu lượng máu lên não giảm. Cơn ngất thường kéo dài không quá vài phút và người bệnh hồi phục nhanh.
+Theo MedlinePlus, ngất là mất ý thức tạm thời, thường xảy ra khi huyết áp tụt đột ngột làm lưu lượng máu lên não giảm; phần lớn người bị ngất hồi phục hoàn toàn. Theo NHS, người bị ngất thường tỉnh lại trong vòng 30 giây.
 
 ## Nội dung theo phương pháp Tác động cột sống
 

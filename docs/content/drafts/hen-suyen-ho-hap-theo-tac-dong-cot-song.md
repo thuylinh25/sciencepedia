@@ -10,16 +10,7 @@ NHS khuyên gọi cấp cứu khi người đang lên cơn hen:
 - không đỡ sau khi đã dùng thuốc cắt cơn tới liều tối đa;
 - không có bình xịt hen.
 
-MedlinePlus khuyên đến khoa cấp cứu hoặc gọi cấp cứu ngay khi có:
-
-- buồn ngủ hoặc lú lẫn;
-- khó thở nặng cả khi nghỉ;
-- lưu lượng đỉnh dưới 50% mức tốt nhất của bản thân;
-- đau ngực dữ dội;
-- môi và mặt tím tái;
-- cực kỳ khó thở;
-- mạch nhanh;
-- lo sợ dữ dội vì khó thở.
+NHLBI (Viện Tim, Phổi và Máu Hoa Kỳ) khuyên gọi cấp cứu nếu thuốc không làm giảm triệu chứng trong cơn hen hoặc vẫn thở rất khó, và nên đến khoa cấp cứu nếu triệu chứng không hết sớm sau khi dùng thuốc tại nhà hoặc khi lên cơn hen nặng.
 
 Với **trẻ nhỏ** bị hen, NHLBI khuyên gọi cấp cứu khi trẻ có vẻ lơ mơ, lú lẫn hoặc bứt rứt, da và môi ngả xanh, hoặc tim đập nhanh.
 
@@ -29,16 +20,16 @@ Với **trẻ nhỏ** bị hen, NHLBI khuyên gọi cấp cứu khi trẻ có v�
 
 Theo NHS (Dịch vụ Y tế Quốc gia Anh), hen là bệnh thường gặp ảnh hưởng đến hô hấp. Hiện chưa chữa khỏi được, nhưng nếu được điều trị tốt thì người bệnh thường không gặp vấn đề với triệu chứng. Triệu chứng xuất hiện khi đường thở bị sưng lên và hẹp lại.
 
-Triệu chứng chính là khò khè, ho, khó thở và tức ngực. Theo NHLBI (Viện Tim, Phổi và Máu Hoa Kỳ), ở người bị hen các triệu chứng thường theo một kiểu: đến rồi đi, nặng lên khi nhiễm virus như cảm lạnh, bị khởi phát bởi vận động, dị ứng, không khí lạnh, và nặng hơn về đêm hoặc sáng sớm. MedlinePlus mô tả thêm kiểu thở bất thường của hen: thở ra mất hơn gấp đôi thời gian hít vào — gần với điều tài liệu mô tả là "thở ra khó".
+Triệu chứng chính là khò khè, ho, khó thở và tức ngực. Theo NHLBI (Viện Tim, Phổi và Máu Hoa Kỳ), ở người bị hen các triệu chứng thường theo một kiểu: đến rồi đi, nặng lên khi nhiễm virus như cảm lạnh, bị khởi phát bởi vận động, dị ứng, không khí lạnh, và nặng hơn về đêm hoặc sáng sớm.
 
-Cơn hen có thể kéo dài từ vài phút đến vài ngày, đến đột ngột hoặc từ từ (MedlinePlus). Chẩn đoán dựa trên hỏi bệnh, nghe phổi, đo chức năng hô hấp và đôi khi theo dõi lưu lượng đỉnh tại nhà (NHS). Điều trị chính là thuốc hít qua bình xịt, theo một kế hoạch hành động hen ghi rõ khi nào dùng thuốc nào và làm gì khi triệu chứng nặng lên. Với tự chăm sóc và điều trị y khoa đúng, phần lớn người bị hen sống bình thường (MedlinePlus). MedlinePlus cũng nêu loại bỏ khói thuốc lá khỏi nhà là việc quan trọng nhất một gia đình có thể làm cho người bị hen.
+Cơn hen có thể đến nhanh hoặc từ từ (NHLBI). Chẩn đoán dựa trên hỏi bệnh, nghe phổi, đo chức năng hô hấp và đôi khi theo dõi lưu lượng đỉnh tại nhà (NHS). Điều trị chính là thuốc hít qua bình xịt, theo một kế hoạch hành động hen ghi rõ khi nào dùng thuốc nào và làm gì khi triệu chứng nặng lên. Với phần lớn người bệnh, bình xịt dùng đúng cách giúp phòng hoặc giảm triệu chứng hiệu quả, và hen chỉ ảnh hưởng nhỏ đến sinh hoạt hằng ngày (NHS). NHS cũng khuyên không hút thuốc và cố tránh những thứ khởi phát triệu chứng hen như ô nhiễm không khí, khói, phấn hoa hay động vật.
 
 ## Khó thở không phải lúc nào cũng là hen
 
 Khó thở có thể do nhiều nguyên nhân, nên hen có khi cần thời gian mới chẩn đoán được (NHS). Hai thể trong tài liệu dưới đây mô tả triệu chứng cũng gặp ở bệnh khác:
 
-- **Khó thở về đêm, tim đập nhanh** (thể 4): MedlinePlus liệt kê cho **suy tim** các triệu chứng thức giấc sau vài giờ ngủ vì khó thở, khó thở khi nằm, và mạch nhanh hoặc không đều; khi khám, bác sĩ tìm tiếng tim bất thường. MedlinePlus khuyên gọi cấp cứu nếu bị ngất, tim đập nhanh và không đều, hoặc đau ngực dữ dội.
-- **Thở nhanh kèm sốt** (thể 2): MedlinePlus nêu ho, sốt, rét run và khó thở là triệu chứng thường gặp nhất của **viêm phổi**, và khuyên liên hệ bác sĩ khi thở nhanh hoặc đau khi thở, hoặc khi khó thở, rét run hay sốt kéo dài.
+- **Khó thở về đêm, tim đập nhanh** (thể 4): NHS liệt kê trong các triệu chứng của **suy tim** việc thấy khó thở khi sinh hoạt hằng ngày hoặc khi nằm, và ho về đêm. NHS khuyên xin khám bác sĩ gấp hoặc gọi đường dây tư vấn NHS 111 nếu thấy khó thở khi nằm hoặc khi sinh hoạt hằng ngày, và gọi cấp cứu nếu khó thở dữ dội (thở hổn hển, nghẹn hoặc không nói được thành lời), môi hoặc da tái, xanh hay xám, hoặc có người ngất và không phản ứng bình thường.
+- **Thở nhanh kèm sốt** (thể 2): NHS liệt kê ho, khó thở, sốt cao và đau ngực trong các triệu chứng có thể có của **viêm phổi**. NHS khuyên xin khám bác sĩ gấp hoặc gọi đường dây tư vấn NHS 111 khi thấy khó thở, hoặc đau ngực lúc có lúc không hay khi thở hoặc ho; và gọi cấp cứu hoặc đến khoa cấp cứu khi phải gắng sức mới thở được (nghẹn, thở hổn hển, không nói được), da, môi hoặc lưỡi tái, xanh hay loang lổ, ho ra máu, hoặc đột nhiên lú lẫn.
 
 Vì vậy, khó thở mới xuất hiện hay thay đổi cần được khám để tìm nguyên nhân.
 
