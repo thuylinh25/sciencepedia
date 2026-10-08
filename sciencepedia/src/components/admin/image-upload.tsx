@@ -29,11 +29,18 @@ const ALLOWED = [
 export function ImageUpload({
   value,
   onChange,
+  onCommit,
   prefix = "articles",
   className,
 }: {
   value: string;
   onChange: (url: string) => void;
+  /**
+   * Ảnh đã CHỐT: tải lên xong, bấm xoá, hoặc rời ô URL. Khác `onChange` — ô URL
+   * gọi `onChange` theo từng phím, mà việc tốn kém (tả ảnh bằng AI) chỉ nên
+   * chạy một lần khi người ta dán xong.
+   */
+  onCommit?: (url: string) => void;
   prefix?: string;
   className?: string;
 }) {
@@ -66,6 +73,7 @@ export function ImageUpload({
       }
 
       onChange(data.url);
+      onCommit?.(data.url);
       toast.success(t("imageUploaded"));
     } catch (error) {
       const code = (error as Error).message;
@@ -146,7 +154,10 @@ export function ImageUpload({
               type="button"
               size="sm"
               variant="destructive"
-              onClick={() => onChange("")}
+              onClick={() => {
+                onChange("");
+                onCommit?.("");
+              }}
               disabled={uploading}
             >
               <Trash2 className="size-4" />
@@ -209,6 +220,7 @@ export function ImageUpload({
         <Input
           value={value}
           onChange={(event) => onChange(event.target.value)}
+          onBlur={(event) => onCommit?.(event.target.value.trim())}
           placeholder="https://…"
           className="font-mono text-xs"
         />
