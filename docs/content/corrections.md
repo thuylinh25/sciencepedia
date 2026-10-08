@@ -1132,3 +1132,45 @@ Bối cảnh: bài lên trang ngày 2026-10-07 qua form /admin với 0 nguồn v
 - Cũ: liệu pháp biệt hóa "hiệu quả đáng kể" ở "một số bệnh ung thư máu". Mới: APL — ATRA + arsenic trioxide, sống không biến cố 2 năm 97% so với 86% (ATRA + hóa trị), bệnh nhân nguy cơ thấp–trung bình. Căn cứ: Lo-Coco et al., NEJM 2013.
 - Cũ: tế bào gốc ung thư "được xem là một mô hình quan trọng". Mới: "được đề xuất để giải thích một phần", kèm lưu ý mô hình còn tranh luận — ở u hắc tố khoảng một phần tư tế bào chưa chọn lọc tạo được khối u. Căn cứ: Quintana et al., Nature 2008; Bonnet & Dick 1997; Al-Hajj 2003.
 - Sửa nhỏ: "hai cơ chế quan trọng nhất" → "được nghiên cứu nhiều nhất"; bỏ "hiểu lầm phổ biến" (không căn cứ); bỏ câu "tế bào gốc biệt hóa thành máu, thần kinh, cơ, da" (đọc như một tế bào gốc làm được hết); bỏ emoji; thêm mục "Đọc thêm".
+
+## 2026-10-09 — ba bài đăng qua /admin chưa qua gate: rìa Hệ Mặt Trời, Vũ trụ quan sát được, ngồi thẳng lưng
+
+Bối cảnh: ba bài lên trang qua form /admin với 0 nguồn và `factCheck = PENDING`. Phiếu thẩm định ngày 2026-10-08 (`docs/content/checks/2026-10-08/<slug>.md`) trả SỬA cho cả ba. Áp bằng `scripts/apply-corrections-2026-10-09.ts` (`npm run corrections:1009 -- --write`, người chạy): mỗi bài một transaction gồm Revision chụp bản trước (cả tiêu đề), lệnh sửa và lệnh thêm nguồn; `lastVerifiedAt` cập nhật; `factCheck` giữ nguyên; slug cả ba bài giữ nguyên. Ba bài chưa có bản en. Mỗi bài thêm mục "Đọc thêm" (3 bài đã xuất bản). Ảnh bìa (alt, giấy phép) chưa làm — việc của người.
+
+### bi-an-ria-thai-duong-he-noi-anh-huong-cua-mat-troi-dan-ket-thuc
+
+9 nguồn (5 bậc 1: Gurnett 2013, Stone 2013, Krimigis 2013, Batygin & Brown 2016, Napier 2021; 4 bậc 2: các trang NASA Voyager Interstellar Mission, Kuiper Belt, Oort Cloud, Planet Nine). Bài giữ PUBLISHED.
+
+- Cũ: mật độ plasma bên ngoài nhật bao "cao hơn dự đoán trước đây". Mới: khoảng 0,08 electron/cm³, so với 0,002 ở vùng ngoài nhật quyển — rất gần giá trị dự kiến cho môi trường liên sao. Căn cứ: Gurnett et al., Science 2013 ("very close to the value expected").
+- Cũ: tia vũ trụ liên sao "tăng mạnh"; "những quan sát đó xác nhận" tàu đã vào môi trường liên sao. Mới: hạt nguồn gốc Mặt Trời giảm hơn 1.000 lần, tia vũ trụ Thiên Hà tăng khoảng 9%; số đo từ trường khi ấy vẫn cho thấy tàu còn trong nhật quyển, bằng chứng mạnh đến từ số đo mật độ plasma tháng 4/2013. Căn cứ: Krimigis et al. 2013; Stone et al. 2013; Gurnett et al. 2013.
+- Cũ: sơ đồ Mặt Trời → hành tinh → Vành đai Kuiper → nhật quyển → nhật bao → không gian liên sao, không có Đám mây Oort; mục nhật bao đứng trước mục Kuiper; nhật bao là "ranh giới của ảnh hưởng Mặt Trời". Mới: phần chính Vành đai Kuiper (30–50 AU) nằm trong nhật quyển, nhật bao ở khoảng 122 AU, Đám mây Oort (5.000–100.000 AU) ngoài nhật bao nhưng vẫn bị lực hấp dẫn Mặt Trời giữ; "rìa" có hai nghĩa; thêm sốc kết thúc. Căn cứ: NASA Kuiper Belt, Oort Cloud, Voyager Interstellar Mission; Stone 2013.
+- Cũ: Hành tinh Thứ Chín giải thích "quỹ đạo bất thường", chỉ "chưa quan sát trực tiếp". Mới: bằng chứng là sự tụm quỹ đạo, và chính sự tụm ấy bị chất vấn — 14 thiên thể của ba khảo sát phù hợp phân bố đều. Căn cứ: Batygin & Brown, AJ 2016; Napier et al., PSJ 2021.
+- Cũ: Đám mây Oort "tới 100.000 AU hoặc xa hơn", "ảnh hưởng hấp dẫn từ các ngôi sao lân cận". Mới: 5.000–100.000 AU; có thể hàng trăm tỷ đến hàng nghìn tỷ thiên thể; tác động mạnh nhất có lẽ là lực thủy triều của Thiên Hà. Căn cứ: NASA Oort Cloud: Facts.
+- Cũ (tóm tắt): "cách Trái Đất hàng tỷ kilomet". Mới: "ra tới khoảng cách hàng nghìn tỷ kilomet" (tính cả Đám mây Oort). Căn cứ: NASA Oort Cloud: Facts.
+- Thống nhất thuật ngữ, không đổi claim: "Thái Dương Hệ" → "Hệ Mặt Trời" ở tiêu đề, `seoTitle`, `seoDescription`, tóm tắt và thân bài; "nhật bao" cho *heliopause* (chủ sản phẩm chốt). Tiêu đề mới: "Bí ẩn rìa Hệ Mặt Trời: nơi ảnh hưởng của Mặt Trời dần kết thúc" (viết hoa kiểu câu).
+- Sửa nhỏ: Eris là thành viên lớn nhất của đĩa phân tán, thêm Makemake; kết luận bỏ câu chung chung về "sứ mệnh tương lai"; "Kết Luận" → "Kết luận".
+
+### khung-hoang-hien-sinh-cua-vu-tru-lieu-chung-ta-co-the-hieu-toan-bo-vu-tru
+
+12 nguồn (8 bậc 1; 3 bậc 2 gồm tiền ấn phẩm DESI 2025; 1 bậc 3 cho xuất xứ câu Sagan, ngoài 3 nguồn bậc 1–2 tối thiểu). Bài giữ PUBLISHED.
+
+- Đổi tiêu đề: cũ "Khủng Hoảng Hiện Sinh Của Vũ Trụ: Liệu Chúng Ta Có Thể Hiểu Toàn Bộ Vũ Trụ?", mới "Vũ trụ quan sát được: vì sao ta không thể nhìn thấy toàn bộ Vũ Trụ". Lý do: tiêu đề hỏi chuyện "hiểu" nhưng thân bài nói về giới hạn "quan sát"; "khủng hoảng hiện sinh" là nhân cách hoá giật gân. `seoDescription` viết lại cho khớp; `seoTitle` không lặp tiêu đề cũ nên giữ.
+- Cũ: "luôn tồn tại những vùng không gian mà ánh sáng từ đó chưa từng… đến được". Mới: chỉ khi Vũ Trụ quả thật lớn hơn phần quan sát được mới có những vùng như vậy; phép đo chỉ đặt được giới hạn dưới cho kích thước, hữu hạn hay vô hạn chưa xác định. Căn cứ: Vardanyan, Trotta & Silk 2011; Planck 2018 (Ω_K = 0,001 ± 0,002).
+- Cũ: thiên hà xa sẽ ra ngoài tầm quan sát "do ánh sáng không còn đủ thời gian để đến nơi". Mới: do giãn nở tăng tốc tạo chân trời sự kiện vũ trụ — ánh sáng phát từ nay về sau ở ngoài chân trời sẽ không bao giờ tới; với điều kiện sự tăng tốc tiếp diễn như mô hình chuẩn. Căn cứ: Davis & Lineweaver 2004; Krauss & Scherrer 2007.
+- Cũ: các nguyên tố tạo nên cơ thể "đều" hình thành trong sao, sự sống "bắt nguồn từ… trong lòng các ngôi sao". Mới: phần lớn nguyên tố tạo ra trong vòng đời và cái chết của sao; hydro hình thành vài phút sau Big Bang. Căn cứ: Johnson, Science 2019; NASA Universe overview.
+- Cũ: đường kính Vũ trụ quan sát được 93 tỷ năm ánh sáng, đặt ngay sau "phần ánh sáng đã kịp truyền tới trong 13,8 tỷ năm". Mới: giữ con số, thêm giải thích bán kính khoảng 46 tỷ năm ánh sáng vì không gian giãn nở trong lúc ánh sáng đang đi; tuổi 13,787 ± 0,020 tỷ năm. Căn cứ: Davis & Lineweaver 2004; Planck 2018.
+- Cũ: "Carl Sagan từng viết: 'Chúng ta là cách để Vũ Trụ tự nhận thức chính mình.'" Mới: lời Sagan nói trong tập đầu phim tài liệu *Cosmos* (1980), dịch "Chúng ta là một cách để vũ trụ tự biết về chính mình", kèm nguyên văn "We are a way for the cosmos to know itself." Căn cứ: *Cosmos: A Personal Voyage*, tập 1 (chủ sản phẩm chọn giữ trích dẫn; phiếu ghi chưa đối chiếu được bản gốc).
+- Sửa nhỏ: năng lượng tối là tên cho nguyên nhân chưa biết, chiếm khoảng 68–70% (NASA), 68,5% (Planck 2018); nêu hai nhóm khám phá 1998 và Nobel 2011; thêm kết quả sơ bộ DESI 2025 (năng lượng tối có thể biến đổi, 2,8–4,2σ); sơ đồ thêm pha giãn nở chậm dần; kết luận bỏ xếp hạng không nguồn.
+
+### cuoc-chien-chong-lai-trong-luc-vi-sao-ngoi-thang-lung-lai-kho-den-the
+
+12 nguồn (9 bậc 1, 3 bậc 2). **Bài chuyển về DRAFT** trong cùng transaction (quyết định chủ sản phẩm, theo khuyến nghị của phiếu: bài nói với người đọc điều ngược số đo và thiếu dấu hiệu nên đi khám), chờ người duyệt đọc lại bản đã sửa. Tiêu đề giữ.
+
+- Cũ: ngồi khom "ít tốn sức hơn nhưng tăng áp lực lên cột sống"; tải "chuyển sang dây chằng và đĩa đệm". Mới: trong phép đo trực tiếp trên một người, áp lực đĩa đệm khi ngồi thả lỏng (0,3 MPa) thấp hơn khi ngồi không tựa (0,46 MPa), ngồi gập tối đa 0,83 MPa; khi khom, mô thụ động như dây chằng nhiều khả năng gánh phần tải. Căn cứ: Wilke et al., Spine 1999; Callaghan & Dunk 2002.
+- Cũ: "não bộ luôn muốn tiết kiệm năng lượng", cơ thể "được thiết kế để tiết kiệm năng lượng", mỏi cơ khiến ta tự chuyển sang khom. Mới: bỏ — không nguồn nào đo; thay bằng số đo hoạt động cơ theo từng kiểu ngồi thẳng và ngồi khom. Căn cứ: O'Sullivan et al., Spine 2006; Callaghan & Dunk 2002.
+- Cũ: tư thế co chân "gần với tư thế nghỉ tự nhiên" và giảm hoạt động cơ. Mới: ở người Hadza, tư thế nghỉ ngồi xổm, quỳ đòi hỏi cơ chi dưới hoạt động NHIỀU hơn ngồi ghế; giả thuyết "lệch pha bất động" chưa được xác nhận. Căn cứ: Raichlen et al., PNAS 2020.
+- Cũ: ngồi lâu gây chuỗi "thay đổi thường gặp" (cơ mông yếu, cơ ngực ngắn, đầu vai trượt trước). Mới: bỏ; thay bằng khuyến nghị WHO 2020 giảm thời gian tĩnh tại, tập tăng sức cơ. Căn cứ: Bull et al., BJSM 2020 (không tìm được nghiên cứu cho chuỗi thay đổi cũ).
+- Cũ: "đứng dậy hoặc đi lại mỗi 30–60 phút". Mới: bỏ con số — bằng chứng chưa đủ để xác định ngưỡng thời gian ngồi. Căn cứ: Bull et al., BJSM 2020.
+- Cũ: "các nghiên cứu hiện nay cho thấy không có tư thế ngồi tĩnh nào hoàn hảo". Mới: chưa có bằng chứng mạnh cho tư thế nào; chưa có đồng thuận rằng tư thế gây đau thắt lưng; nhà vật lý trị liệu vẫn chuộng ngồi thẳng; NIAMS coi tư thế là yếu tố có thể góp phần. Căn cứ: Swain et al. 2020; Korakakis et al. 2019; Slater et al. 2019; NIAMS.
+- Thêm mục "Khi nào nên đi khám" (dấu hiệu cần khám, khám gấp, cấp cứu). Căn cứ: NHS, Back pain.
+- Sửa nhỏ: độ ưỡn thắt lưng ổn định thân trên (bỏ "hấp thụ chấn động", Whitcome 2007); bỏ ngôn ngữ "được thiết kế/tối ưu"; bỏ quy tắc chỉnh bàn ghế không nguồn; tóm tắt, `seoDescription` và kết luận bỏ luận điểm "tiết kiệm năng lượng"; tiêu đề mục viết hoa kiểu câu.
