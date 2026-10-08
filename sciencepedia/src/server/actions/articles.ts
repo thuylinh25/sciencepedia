@@ -5,6 +5,7 @@ import { Prisma } from "@prisma/client";
 import { prisma } from "@/lib/prisma";
 import { requireRole, AuthError } from "@/lib/rbac";
 import { intakeCover } from "@/lib/cover-intake";
+import { fillCoverAlt } from "@/server/cover-alt";
 import { articleSchema, type ArticleInput } from "@/lib/validations";
 import { readingTime, slugify } from "@/lib/utils";
 import { removeArticle, syncArticle } from "@/lib/meili";
@@ -90,10 +91,13 @@ export async function createArticle(
        `src/lib/cover-intake.ts`. Hỏng thì vẫn lưu, chỉ là bìa còn trỏ ra
        ngoài cho tới lượt `covers:mirror` kế tiếp. */
     const base = normalise(parsed.data);
-    const data = await intakeCover(base, {
+    const intaken = await intakeCover(base, {
       prefix: "articles",
       name: base.slug,
     });
+    /* Ô alt còn trống thì nhờ mô hình nhìn ảnh mà điền — SAU `intakeCover`, để
+       tả bản đã nằm trên R2. Hỏng thì vẫn lưu với ô trống. */
+    const data = await fillCoverAlt(intaken, { submittedCover: base.coverImage });
 
     const article = await prisma.article.create({
       data: {
@@ -145,7 +149,15 @@ export async function updateArticle(
 
     const existing = await prisma.article.findUnique({
       where: { id },
-      select: { slug: true, status: true, publishedAt: true, content: true },
+      select: {
+        slug: true,
+        status: true,
+        publishedAt: true,
+        content: true,
+        coverImage: true,
+        coverImageAlt: true,
+        coverImageAltEn: true,
+      },
     });
     if (!existing) return { ok: false, error: "NOT_FOUND" };
 
@@ -153,9 +165,15 @@ export async function updateArticle(
        `src/lib/cover-intake.ts`. Hỏng thì vẫn lưu, chỉ là bìa còn trỏ ra
        ngoài cho tới lượt `covers:mirror` kế tiếp. */
     const base = normalise(parsed.data);
-    const data = await intakeCover(base, {
+    const intaken = await intakeCover(base, {
       prefix: "articles",
       name: base.slug,
+    });
+    /* Điền ô alt trống; ảnh bìa đổi mà alt gửi lên còn là alt cũ trong CSDL
+       thì alt ấy tả ảnh cũ — tạo lại. Quy tắc: `altFieldsToFill`. */
+    const data = await fillCoverAlt(intaken, {
+      submittedCover: base.coverImage,
+      previous: existing,
     });
 
     // Chỉ đặt publishedAt lần đầu xuất bản — giữ nguyên ở các lần sửa sau

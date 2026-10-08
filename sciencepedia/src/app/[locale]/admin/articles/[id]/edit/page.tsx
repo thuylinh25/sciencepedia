@@ -5,6 +5,11 @@ import type { Locale } from "@/i18n/routing";
 import { prisma } from "@/lib/prisma";
 import { ArticleForm } from "@/components/admin/article-form";
 
+/* Server action Lưu chạy trong hàm của trang này: kéo ảnh bìa về R2
+   (`intakeCover`, tới 20 s) rồi nhờ Gemini tả ảnh (`fillCoverAlt`, tới 15 s)
+   có thể vượt hạn mặc định của Vercel. */
+export const maxDuration = 60;
+
 export default async function EditArticlePage({
   params,
 }: {

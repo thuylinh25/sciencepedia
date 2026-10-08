@@ -1,15 +1,16 @@
 "use client";
 
-import { useState, useTransition } from "react";
+import { useRef, useState, useTransition } from "react";
 import { useForm, Controller, type FieldErrors } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useTranslations } from "next-intl";
-import { Eye, Loader2, Save, Sparkles, Wand2 } from "lucide-react";
+import { Eye, Loader2, RefreshCw, Save, Sparkles, Wand2 } from "lucide-react";
 import { toast } from "sonner";
 
 import { useRouter } from "@/i18n/navigation";
 import { articleSchema, type ArticleInput } from "@/lib/validations";
 import { readingTime, slugify } from "@/lib/utils";
+import { isAltTiedToOldCover } from "@/lib/cover-alt";
 import { createArticle, updateArticle } from "@/server/actions/articles";
 import { ArticleContent } from "@/components/article/article-content";
 import { ImageUpload } from "@/components/admin/image-upload";
@@ -74,6 +75,8 @@ const FIELD_ORDER: (keyof ArticleInput)[] = [
   "status",
   "featured",
 ];
+
+const ALT_FIELDS = { vi: "coverImageAlt", en: "coverImageAltEn" } as const;
 
 export function ArticleForm({
   articleId,
@@ -177,6 +180,96 @@ export function ArticleForm({
       setClassifying(false);
     }
   }
+
+  /* ---------------------------------------------- Mô tả ảnh bìa bằng AI
+
+     Đổi ảnh bìa thì nhờ mô hình nhìn ảnh mà điền ô alt — chỉ ô TRỐNG, không bao
+     giờ đè chữ người biên tập đã gõ. Lý do: docs/architecture.md, "Mô tả ảnh
+     bìa tự động". Server làm lại đúng việc này lúc Lưu (`fillCoverAlt`), nên
+     ở đây hỏng thì chỉ báo, không chặn gì. */
+  const [altBusy, setAltBusy] = useState(false);
+  /** Chữ mô hình vừa điền — dòng nhắc "do AI" hiện khi ô còn đúng chữ ấy. */
+  const [aiAlt, setAiAlt] = useState<{ vi?: string; en?: string }>({});
+  /** Ảnh bìa đã chốt gần nhất, để `onBlur` không gọi lại khi URL không đổi. */
+  const committedCover = useRef(defaultValues.coverImage ?? "");
+  /** Alt đang gắn với ảnh hiện tại: alt nạp từ CSDL, hoặc alt mô hình vừa điền. */
+  const altAnchor = useRef({
+    vi: defaultValues.coverImageAlt ?? "",
+    en: defaultValues.coverImageAltEn ?? "",
+  });
+  /** Lượt gọi mới nhất — kết quả của lượt cũ (ảnh đã đổi tiếp) thì bỏ. */
+  const altRequest = useRef(0);
+
+  async function generateAlt(url: string, overwrite: boolean) {
+    if (!url) return;
+    const request = ++altRequest.current;
+    setAltBusy(true);
+    try {
+      const response = await fetch("/api/admin/cover-alt", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ url }),
+      });
+      const data = (await response.json().catch(() => ({}))) as {
+        vi?: string;
+        en?: string;
+        detail?: string;
+      };
+      if (request !== altRequest.current || getValues("coverImage")?.trim() !== url) return;
+      if (!response.ok || !data.vi || !data.en) {
+        toast.error(data.detail ?? t("form.coverAltFailed"));
+        return;
+      }
+
+      const filled: { vi?: string; en?: string } = {};
+      for (const lang of ["vi", "en"] as const) {
+        const field = ALT_FIELDS[lang];
+        const value = data[lang];
+        if (!value) continue;
+        // Đọc ô NGAY LÚC có kết quả: người biên tập có thể đã gõ trong lúc chờ.
+        if (!overwrite && getValues(field)?.trim()) continue;
+        setValue(field, value, { shouldDirty: true });
+        altAnchor.current[lang] = value;
+        filled[lang] = value;
+      }
+      setAiAlt((current) => ({ ...current, ...filled }));
+    } catch {
+      if (request === altRequest.current) toast.error(t("form.coverAltFailed"));
+    } finally {
+      if (request === altRequest.current) setAltBusy(false);
+    }
+  }
+
+  function onCoverCommit(url: string) {
+    if (url === committedCover.current) return;
+    committedCover.current = url;
+
+    /* Alt còn y chữ của ảnh trước (chưa ai sửa tay) thì nó tả ảnh CŨ: xoá,
+       rồi để mô hình tả ảnh mới. Alt đã sửa tay thì để yên. */
+    for (const lang of ["vi", "en"] as const) {
+      const field = ALT_FIELDS[lang];
+      if (isAltTiedToOldCover(getValues(field), altAnchor.current[lang])) {
+        setValue(field, "", { shouldDirty: true });
+      }
+      altAnchor.current[lang] = "";
+    }
+    setAiAlt({});
+
+    if (url) {
+      void generateAlt(url, false);
+    } else {
+      // Bỏ ảnh: kết quả của lượt đang chạy không còn ảnh nào để tả.
+      altRequest.current += 1;
+      setAltBusy(false);
+    }
+  }
+
+  const coverImage = watch("coverImage");
+  const coverAlt = watch("coverImageAlt");
+  const coverAltEn = watch("coverImageAltEn");
+  const showAiNote =
+    (Boolean(aiAlt.vi) && coverAlt === aiAlt.vi) ||
+    (Boolean(aiAlt.en) && coverAltEn === aiAlt.en);
 
   const selectedTags = watch("tagIds");
 
@@ -526,6 +619,7 @@ export function ArticleForm({
                 <ImageUpload
                   value={field.value ?? ""}
                   onChange={field.onChange}
+                  onCommit={onCoverCommit}
                   prefix="articles"
                 />
               )}
@@ -578,9 +672,23 @@ export function ArticleForm({
                 biên tập đang nhìn ảnh ngay lúc này. Tả cái ảnh cho thấy, không
                 chép lại tiêu đề bài. */}
             <div className="space-y-1.5 border-t pt-3">
-              <Label htmlFor="coverImageAlt" className="text-xs">
-                {t("form.coverAlt")}
-              </Label>
+              <div className="flex items-center justify-between gap-2">
+                <Label htmlFor="coverImageAlt" className="text-xs">
+                  {t("form.coverAlt")}
+                </Label>
+                {/* Ghi đè CÓ CHỦ Ý cả hai ô — nút duy nhất được đè chữ đã gõ. */}
+                <Button
+                  type="button"
+                  variant="ghost"
+                  size="sm"
+                  className="h-7 px-2 text-xs"
+                  onClick={() => void generateAlt(coverImage?.trim() ?? "", true)}
+                  disabled={altBusy || pending || !coverImage?.trim()}
+                >
+                  <RefreshCw className="size-3.5" />
+                  {t("form.coverAltRegenerate")}
+                </Button>
+              </div>
               <Input
                 id="coverImageAlt"
                 placeholder={t("form.coverAltHint")}
@@ -604,6 +712,20 @@ export function ArticleForm({
                 className="text-xs"
                 {...register("coverImageAltEn")}
               />
+            </div>
+
+            <div aria-live="polite" className="text-xs text-muted-foreground">
+              {altBusy ? (
+                <p className="flex items-center gap-1.5">
+                  <Loader2 className="size-3.5 animate-spin" />
+                  {t("form.coverAltGenerating")}
+                </p>
+              ) : showAiNote ? (
+                <p className="flex items-center gap-1.5">
+                  <Sparkles className="size-3.5" />
+                  {t("form.coverAltAiNote")}
+                </p>
+              ) : null}
             </div>
           </div>
 

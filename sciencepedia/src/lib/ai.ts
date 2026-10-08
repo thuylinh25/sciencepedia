@@ -178,6 +178,7 @@ export async function generateGemini({
   temperature = 0.2,
   maxOutputTokens = 8192,
   thinking = ThinkingLevel.LOW,
+  images = [],
   signal,
 }: {
   prompt: string;
@@ -193,6 +194,12 @@ export async function generateGemini({
   maxOutputTokens?: number;
   /** Việc chọn trong danh sách có sẵn không cần nghĩ sâu — LOW mặc định. */
   thinking?: ThinkingLevel;
+  /**
+   * Ảnh gửi kèm, base64 nội tuyến, đặt TRƯỚC chữ trong cùng lượt — cho việc
+   * phải nhìn ảnh (mô tả ảnh bìa, `src/server/cover-alt.ts`). Lớp gọi tự thu
+   * nhỏ ảnh trước: ảnh tính token theo kích thước.
+   */
+  images?: { mimeType: string; data: string }[];
   signal?: AbortSignal;
 }): Promise<{ text: string; model: string }> {
   const apiKey = process.env.GEMINI_API_KEY;
@@ -203,7 +210,15 @@ export async function generateGemini({
   try {
     const response = await ai.models.generateContent({
       model: GEMINI_MODEL,
-      contents: [{ role: "user", parts: [{ text: prompt }] }],
+      contents: [
+        {
+          role: "user",
+          parts: [
+            ...images.map((image) => ({ inlineData: image })),
+            { text: prompt },
+          ],
+        },
+      ],
       config: {
         ...(system ? { systemInstruction: system } : {}),
         ...(json ? { responseMimeType: "application/json" } : {}),

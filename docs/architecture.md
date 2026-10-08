@@ -240,6 +240,31 @@ vì như thế trình đọc màn hình đọc sai thứ tiếng. Alt tả đún
 kể cả khi ảnh lệch bài. Chỗ sửa khi đó là thay ảnh, và thay ảnh thì phải xoá
 alt cũ.
 
+### Mô tả ảnh bìa tự động (2026-10-08)
+
+Form bài viết tự điền hai ô alt: chọn ảnh (tải lên, hoặc rời ô dán URL) thì gọi
+`POST /api/admin/cover-alt`; bấm Lưu thì `fillCoverAlt` làm lại cho ô còn trống.
+Gemini NHÌN ảnh (`describeCover`, `src/server/cover-alt.ts`) — không đọc tiêu đề
+hay thân bài, vì alt tả ảnh, kể cả ảnh lệch bài.
+
+**Vì sao AI được ghi alt vào CSDL, trong khi giải thích thuật ngữ do AI thì không**
+(mục "Thuật ngữ" bên dưới). Giải thích thuật ngữ là nhận định khoa học, sinh lúc
+người đọc bấm, không ai đọc trước khi nó lên trang. Alt tả một tấm ảnh — thứ người
+biên tập đang nhìn ngay cạnh ô — và hiện trong form chưa lưu, kèm dòng "Mô tả do AI
+tạo — kiểm lại trước khi lưu". Prompt cấm nêu nhận định ngoài cái ảnh cho thấy, cấm
+đoán tên khi ảnh không tự nói. Riêng lượt điền lúc Lưu thì không ai kịp đọc: nó chỉ
+chạy cho ô người biên tập để trống, và đổi lại là một ảnh có alt thay vì `alt=""`.
+
+**Không bao giờ ghi đè chữ người gõ.** Tự động chỉ điền ô trống; ô đang mang đúng alt
+của ảnh trước (nạp từ CSDL, hoặc AI vừa điền, chưa ai sửa) thì khi đổi ảnh bị xoá rồi
+tạo lại — vì nó tả ảnh cũ. Lúc Lưu cũng vậy: ảnh bìa khác CSDL mà alt gửi lên bằng y
+alt cũ trong CSDL thì coi là alt của ảnh cũ (`altFieldsToFill`). Ghi đè có chủ ý chỉ
+qua nút "Tạo lại mô tả".
+
+**Hỏng thì vẫn lưu, và trống hơn sai.** Thiếu khoá, 429, ảnh hỏng, đầu ra không qua
+Zod → `null`, không ném. Alt cũ của ảnh đã thay mà tạo lại hỏng thì ghi `null`, không
+giữ alt sai. Đầu ra quá 250 ký tự bị loại cả cặp chứ không cắt cụt.
+
 ---
 
 ## Lịch sử xem — một hàng mỗi (người, nội dung), server quyết lượt xem (2026-10-03)
