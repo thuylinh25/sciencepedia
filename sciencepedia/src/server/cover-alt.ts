@@ -31,6 +31,8 @@ const MODEL_IMAGE_EDGE = 1024;
 /** Wikimedia trả 403 cho request không khai User-Agent — như `cover-intake.ts`. */
 const USER_AGENT =
   "SciencepediaCoverAlt/1.0 (+https://sciencepedia-sciencepedia.vercel.app)";
+const PRIVATE_HOST =
+  /^(localhost|0\.0\.0\.0|127\.|10\.|192\.168\.|169\.254\.|172\.(1[6-9]|2\d|3[01])\.|\[?::1\]?$|\[?f[cd][0-9a-f]{2}:)/i;
 
 const PROMPT = `Bạn viết mô tả ảnh (thuộc tính alt) cho ảnh bìa một bài của SciencePedia — bách khoa khoa học tiếng Việt. Người đọc alt là người KHÔNG nhìn thấy ảnh (trình đọc màn hình) và máy tìm kiếm ảnh.
 
@@ -85,6 +87,10 @@ export async function describeCover(
     return null;
   }
   if (parsed.protocol !== "https:" && parsed.protocol !== "http:") return null;
+  // Route nhận URL do người biên tập gõ: không để máy chủ tự gọi vào mạng nội bộ
+  // (metadata đám mây 169.254.x, localhost…). Chặn theo tên/IP literal — rẻ, không
+  // chống được DNS trỏ về IP nội bộ, nhưng đủ cho route chỉ EDITOR dùng.
+  if (PRIVATE_HOST.test(parsed.hostname)) return null;
 
   // Một hạn chót cho cả hai chặng (tải ảnh + gọi mô hình), không phải mỗi chặng
   // một hạn: lượt lưu bài chờ đúng chừng này rồi đi tiếp.
