@@ -20,12 +20,12 @@ bằng chứng khoa học.
 
 Quy trình: skill `tham-dinh-bai-da-dang` (phiếu A–F ở `docs/content/checks/<ngày>/`, engine `scripts/lib/corrections.ts`, script đợt `npm run corrections:<MMDD>`). Chủ sản phẩm chốt: bài **giữ PUBLISHED** trong lúc sửa; agent **tự chạy** script đính chính; agent **không ký byline** (người chạy `scripts/pass-factcheck-*.ts`); **không dùng Meilisearch**.
 
-- **Grounding** và **"Từ nguyên tử đến kim cương"** đã đính chính, đang PUBLISHED, **chờ người ký**: `npx tsx --env-file-if-exists=.env scripts/pass-factcheck-2026-10-09-d.ts` (thay script -c). Bài kim cương còn: chưa có ảnh bìa (cần image-finder), danh mục nằm thẳng ở gốc `vat-ly`, "than chì" hay "graphit" chưa chốt (mỗi cách 1 bài).
+- **Grounding** và **"Từ nguyên tử đến kim cương"** đã đính chính, đang PUBLISHED, **chờ người ký**: `npx tsx --env-file-if-exists=.env scripts/pass-factcheck-2026-10-09-d.ts` (thay script -c). Bài kim cương: chuyển sang lĩnh vực Hoá học (09/10); **ảnh bìa chủ sản phẩm tự bổ sung** (gate còn chặn vì thiếu ảnh).
 - **"Bản thiết kế chung của sự sống"** (`ban-thiet-ke-chung-cua-su-song-…`, đăng 09/10): chưa thẩm định — có sơ đồ mũi tên nhân quả bằng `<div>`, tiêu đề viết hoa từng chữ.
 - **Sarcopenia:** tên Việt chưa chốt (tiêu đề còn "Chứng teo cơ…", rộng hơn sarcopenia — cần người tra thuật ngữ Bộ Y tế/hội lão khoa); `seoKeywords` cũ, link Runner's High yếu, danh sách thực phẩm giàu đạm chưa nguồn.
 - **Sóng điện từ:** số liệu tần số/công suất là của Mỹ (ghi rõ "ở Mỹ"); muốn số Việt Nam cần văn bản quy hoạch tần số.
 - **Lượt duyệt hàng loạt 2026-09-30** (56 bài, `scripts/pass-factcheck-2026-09-30.ts`): bài "Cái chết…" cho thấy nguồn có thật nhưng không phủ phần sai — nên lấy mẫu kiểm lại vài bài.
-- **Chính tả** "hóa" (52 bài) / "hoá" (34 bài) chưa thống nhất. Thuật ngữ đã chốt cho cả kho: "tích lũy đột biến", "đa hiệu đối kháng".
+- **Chính tả** "hóa" (52 bài) / "hoá" (34 bài) chưa thống nhất. Thuật ngữ đã chốt cho cả kho: "tích lũy đột biến", "đa hiệu đối kháng", "than chì" (không "graphit").
 
 ### Sức khoẻ / Tác động cột sống
 
