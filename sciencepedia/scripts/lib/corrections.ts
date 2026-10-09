@@ -1,6 +1,7 @@
 import { PrismaClient } from "@prisma/client";
 
 import { revalidateSite } from "../revalidate-site";
+import { tagDrift } from "./sheet";
 
 /**
  * Engine áp phiếu thẩm định (docs/content/checks/<ngày>/<slug>.md) lên bài đã đăng. Mỗi đợt
@@ -229,6 +230,8 @@ async function run(prisma: PrismaClient, plans: Plan[]) {
         (s) => !linksOf(next[f]).has(s) && !(plan.dropLinks ?? []).includes(s),
       );
       if (lost.length) throw new Error(`[${plan.slug}] ${f} mất link nội bộ: ${lost.join(", ")} — giữ lại, hoặc ghi vào dropLinks nếu cố ý`);
+      const drift = tagDrift((f === "content" ? a.content : (a.contentEn ?? "")).replace(/\r\n/g, "\n"), next[f]);
+      if (drift.length) throw new Error(`[${plan.slug}] ${f} lệch thẻ HTML sau khi sửa: ${drift.join(", ")} — chuỗi tìm/thay phải gồm trọn khối, tới thẻ đóng ngoài cùng`);
     }
 
     if (plan.reading.length && !/^## Đọc thêm/m.test(next.content)) {
