@@ -314,5 +314,4 @@ async function run(prisma: PrismaClient, plans: Plan[]) {
   }
   await revalidateSite(plans.map((p) => p.slug));
   console.log("\nĐÃ GHI (revision + nội dung + nguồn, mỗi bài một transaction). factCheck vẫn giữ — người duyệt đặt sau khi đọc bản đã sửa.");
-  if (jobs.some((j) => j.draft)) console.log("Bài về DRAFT cần ra khỏi chỉ mục tìm kiếm: npm run search:reindex");
 }

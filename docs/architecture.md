@@ -1286,7 +1286,7 @@ lên bucket — R2 là bản duy nhất, không có bản trong repo để đố
 
 ## Tìm kiếm
 
-Meilisearch, fallback Postgres FTS. HTML highlight từ search **phải** đi qua
+Postgres FTS (chủ sản phẩm chốt 2026-10-09: **không dùng Meilisearch**; code Meilisearch còn để dành, chỉ bật khi đặt `MEILISEARCH_HOST` — hiện không đặt ở đâu). Bài đổi status là tự vào/ra kết quả, không có bước reindex. HTML highlight từ search **phải** đi qua
 `highlightToSafeHtml()` — không đưa thẳng vào `dangerouslySetInnerHTML`.
 
 ---

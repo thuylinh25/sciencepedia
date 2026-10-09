@@ -3,7 +3,7 @@
 Bách khoa toàn thư khoa học. Code ở `sciencepedia/`, hệ agent/skill ở `.claude/`.
 
 ## Stack
-Next.js 15 (App Router) · React 19 · TypeScript strict · Tailwind · shadcn/ui · **Prisma + Supabase Postgres** · Meilisearch (fallback: Postgres FTS) · next-auth v5 · next-intl (vi/en) · Vercel
+Next.js 15 (App Router) · React 19 · TypeScript strict · Tailwind · shadcn/ui · **Prisma + Supabase Postgres** · Postgres FTS (**không dùng Meilisearch** — chủ sản phẩm chốt 2026-10-09; code Meilisearch còn nhưng không bật) · next-auth v5 · next-intl (vi/en) · Vercel
 
 > Lưu ý: DB truy cập qua **Prisma**, không qua Supabase client. Supabase chỉ dùng cho **Storage**. Đừng viết code truy vấn bảng bằng `@supabase/supabase-js`.
 
@@ -16,7 +16,7 @@ npm run build        # prisma generate && next build
 npm run db:migrate   # tạo migration (cần DIRECT_URL)
 npm run db:deploy    # apply migration trên prod
 npm run db:seed
-npm run search:reindex
+npm run search:reindex  # chỉ cho Meilisearch — KHÔNG dùng; Postgres FTS tự cập nhật theo status
 npm run sky:seed     # đồng bộ danh mục thiên thể sang bảng SkyObject (chạy khô, cần --write)
 npm run glossary:check  # [[thuật ngữ]] nào trong bài đã xuất bản chưa có mục từ (chỉ đọc)
 npm run links:fix     # link nội bộ trỏ slug đã chết — chạy khô, cần --write
