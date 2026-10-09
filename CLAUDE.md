@@ -111,6 +111,7 @@ Gate accuracy **không có ngoại lệ**.
 - **Không fetch nội dung phía client.** Thân bài, citation, metadata phải có trong HTML đầu tiên.
 - **Secret:** `SUPABASE_SERVICE_ROLE_KEY` chỉ trong module có `import "server-only"`.
 - **HTML từ search phải qua `highlightToSafeHtml()`** — không đưa thẳng vào `dangerouslySetInnerHTML`.
+- **HTML thô trong thân bài chỉ đi qua `rehypeArticleHtml`** (`@/lib/markdown-html`: sanitize + lọc `style`) — không bật `rehype-raw` một mình, không cho `style` tự do. Lý do: docs/architecture.md, mục "HTML thô trong bài".
 - **Strict TS, không `any` ở biên.** Dữ liệu ngoài parse bằng Zod.
 - **Ảnh:** luôn có kích thước; dùng `next/image`; remote host phải khai báo trong `next.config.ts`.
 - **Ảnh tĩnh giao diện nằm trên Cloudflare R2**, không trong `public/`. Dựng URL bằng `assetUrl()` (`@/lib/asset`), đừng viết cứng.
