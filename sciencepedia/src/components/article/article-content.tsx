@@ -4,6 +4,7 @@ import remarkGfm from "remark-gfm";
 
 import { slugify } from "@/lib/utils";
 import { remarkGlossary, type GlossaryMap } from "@/lib/glossary";
+import { rehypeArticleHtml } from "@/lib/markdown-html";
 import { defaultLocale, locales, type Locale } from "@/i18n/routing";
 import { GlossaryTerm } from "@/components/glossary/glossary-term";
 import { ScrollStrip } from "@/components/ui/scroll-strip";
@@ -74,8 +75,9 @@ const headingId = (children: ReactNode) =>
  *
  * Id của heading được sinh bằng chính `slugify` mà mục lục dùng, nên hai bên
  * luôn khớp nhau (rehype-slug giữ nguyên dấu tiếng Việt nên sẽ lệch).
- * react-markdown mặc định không cho HTML thô đi qua, nên nội dung do biên tập
- * viên nhập không thể chèn script.
+ * HTML thô trong Markdown được cho qua một tập con đã lọc (`rehypeArticleHtml`):
+ * hiển thị được khối căn giữa, cỡ chữ… mà vẫn không chèn được script — xem
+ * `@/lib/markdown-html` và docs/architecture.md, mục "HTML thô trong bài".
  */
 function buildComponents(locale: string, glossary: GlossaryMap): Components {
   const components: Components & {
@@ -194,6 +196,7 @@ export function ArticleContent({
     <div className="article-prose">
       <ReactMarkdown
         remarkPlugins={[remarkGfm, remarkGlossary]}
+        rehypePlugins={rehypeArticleHtml}
         components={buildComponents(locale, glossary)}
       >
         {markdown}

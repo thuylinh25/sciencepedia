@@ -1497,3 +1497,15 @@ phải hiệu quả đã chứng minh; không hướng dẫn tự làm.
 **Khung chỉ ở trang danh mục, không chèn vào trang bài.** Bài Tác động cột sống đã có nhãn
 "Tư liệu lưu trữ" và khung cảnh báo riêng từng bệnh (docs/content-rules.md); chủ sản phẩm đã
 nhiều lần gỡ nhãn thừa khỏi các bài ấy. Thêm khung chung trên trang bài là quyết định riêng.
+
+## HTML thô trong bài — cho qua tập con đã lọc, không bật tự do
+
+Chốt 2026-10-09. Trước đó react-markdown chặn hẳn HTML thô (an toàn mặc định), nên khối `<div style="text-align:center">…` biên tập viên dán vào form /admin hiện ra thành chữ có cả thẻ. Chủ sản phẩm muốn nó hiển thị.
+
+Nội dung bài là dữ liệu người nhập qua form, và trang bài được cache ISR cho mọi người đọc — một thẻ `<script>` lọt qua là XSS trên toàn bộ lượt xem. Nên `@/lib/markdown-html` xếp ba lớp: `rehype-raw` dựng cây HTML, `rehype-sanitize` lọc theo danh sách trắng của GitHub (không script, iframe, form, thuộc tính `on*`; href chỉ http(s)/mailto/tương đối), rồi lọc `style` chỉ giữ thuộc tính trình bày (căn lề, cỡ chữ, màu, khoảng cách).
+
+**Đừng "sửa cho gọn" bằng cách cho `style` tự do.** `position:fixed; inset:0` phủ kín trang bằng một giao diện giả (đăng nhập, thông báo) mà không cần script; `url(...)` tải tài nguyên ngoài. Cần thêm thuộc tính CSS thì thêm vào `STYLE_ALLOW` kèm lý do.
+
+Thẻ tự đặt `glossary-term` (do `remarkGlossary` sinh) phải có trong danh sách trắng — sanitize gỡ thẻ lạ, và lúc đó tooltip thuật ngữ biến mất mà không báo lỗi. Test `src/lib/markdown-html.test.ts` khoá cả hai chiều: HTML trình bày hiển thị, HTML nguy hiểm bị gỡ, `[[thuật ngữ]]` còn sống.
+
+Về biên tập: sơ đồ mũi tên dựng bằng `<div>` vẫn là sơ đồ — skill `tham-dinh-bai-da-dang` xem sơ đồ nhân quả không nguồn là lỗi nội dung, dù nó hiển thị đẹp.
