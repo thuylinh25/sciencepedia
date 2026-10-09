@@ -1,6 +1,6 @@
 # HANDOFF — Sciencepedia
 
-> Ảnh chụp trạng thái công việc tại **2026-10-09** (mục 3 đầu; phần còn lại từ 2026-10-05), để session mới (tài khoản khác) làm tiếp
+> Ảnh chụp trạng thái công việc tại **2026-10-09**, để session mới (tài khoản khác) làm tiếp
 > mà không cần đọc hội thoại cũ. Quy tắc lâu dài nằm ở `CLAUDE.md` — đọc file đó trước.
 > File này là trạng thái tạm: cập nhật hoặc xoá mục khi việc xong.
 > Không có secret trong file này; giá trị thật nằm ở `.env` (không commit) và Vercel.
@@ -14,88 +14,40 @@ Sciencepedia là bách khoa toàn thư khoa học song ngữ vi/en. Code nằm �
 **Sức khoẻ**. Có hai yêu cầu: không làm rối menu, và luôn tách rõ mô tả truyền thống với
 bằng chứng khoa học.
 
-## 2. Việc vừa hoàn thành (đã ở `main`)
+## 2. Việc đang dở / bước tiếp theo
 
-| PR | Nội dung |
-|---|---|
-| [#12](https://github.com/thuylinh25/sciencepedia/pull/12) | Nhóm con của Sức khoẻ hiện thành **thẻ** trên trang lĩnh vực. Thêm khung lưu ý `health`/`traditional`, script `taxonomy:health` và icon `Activity`/`Hand`/`PersonStanding`. Merge commit `ee70edd`. |
-| #9–#11 + commit `195190c`, `ce3f79f` | Loạt **Tác động cột sống**: extract/build/import/publish, chỉ mục đốt sống ↔ bài trên Human Atlas, quyết định D-1…D-41. **3 bài đã PUBLISHED**: đau lưng cấp, đau thần kinh toạ, đau nửa đầu. |
-| [#13](https://github.com/thuylinh25/sciencepedia/pull/13) (session khác) | Thêm 2 bài Tác động cột sống **ở dạng bản nháp, `review.editor = pending`**: Đau lưng mãn tính (chủ đề II) và Huyết áp thấp (chủ đề V, `riskLevel high`, có khung cấp cứu đặt trước phần trích). Nguồn chỉ có MedlinePlus vì NHS/NINDS/NIAMS bị proxy mạng chặn. **Chưa qua science-editor, chưa import, chưa publish.** |
-| [#14](https://github.com/thuylinh25/sciencepedia/pull/14) | Thêm 3 bài Tác động cột sống, cũng ở dạng nháp với `review.editor = pending`: Thiểu năng tuần hoàn não (VI), Huyết áp cao (VII), Các bệnh về đau đầu (53 thể). Cả ba `riskLevel high`. Sửa máy: (a) "Giải tỏa trọng điểm …" trong văn xuôi không còn mở vai trọng điểm; (b) render bỏ mã trùng không bên; (c) mapping được so với đoạn trích sau khi thu dấu chấm dẫn. Nhánh `claude/cool-galileo-gyghv8`. |
-| [#10](https://github.com/thuylinh25/sciencepedia/pull/10) | D-13…D-38 (duyệt phiếu `proposals.md`). Thêm `apply` mới `keepRole`/`setSide`; `assign` nhận `regions`/`note`. "Vùng S" tô cả xương cùng (`atlasCodeOf`). Toàn kho còn 0 cờ review mở. |
-| (cùng đợt) | Quy tắc Git và merge PR trong `CLAUDE.md` (mục "Git — commit, push, PR, merge"). |
+### Thẩm định bài đăng thẳng qua /admin
 
-Đã kiểm tra trước khi merge #12:
-- `typecheck`, `lint`, `npm test` (73/73) và `build` đều xanh.
-- Trên Postgres cục bộ: chụp desktop 1440 px và mobile 390 px, cả sáng lẫn tối. Không có cuộn ngang. Menu Khám phá vẫn đúng 7 lĩnh vực.
+Quy trình: skill `tham-dinh-bai-da-dang` (phiếu A–F ở `docs/content/checks/<ngày>/`, engine `scripts/lib/corrections.ts`, script đợt `npm run corrections:<MMDD>`). Chủ sản phẩm chốt: bài **giữ PUBLISHED** trong lúc sửa; agent **tự chạy** script đính chính; agent **không ký byline** (người chạy `scripts/pass-factcheck-*.ts`); **không dùng Meilisearch**.
 
-## 3. Việc đang dở / bước tiếp theo
+- **Grounding** (`grounding-tiep-dia-…`) đã đính chính, đang PUBLISHED, **chờ người ký**: `npx tsx --env-file-if-exists=.env scripts/pass-factcheck-2026-10-09-c.ts`.
+- **"Từ nguyên tử đến kim cương"** (`tu-nguyen-tu-den-kim-cuong-…`, đăng 09/10): đang thẩm định — phiếu sẽ ở `docs/content/checks/2026-10-09/`.
+- **"Bản thiết kế chung của sự sống"** (`ban-thiet-ke-chung-cua-su-song-…`, đăng 09/10): chưa thẩm định — có sơ đồ mũi tên nhân quả bằng `<div>`, tiêu đề viết hoa từng chữ.
+- **Sarcopenia:** tên Việt chưa chốt (tiêu đề còn "Chứng teo cơ…", rộng hơn sarcopenia — cần người tra thuật ngữ Bộ Y tế/hội lão khoa); `seoKeywords` cũ, link Runner's High yếu, danh sách thực phẩm giàu đạm chưa nguồn.
+- **Sóng điện từ:** số liệu tần số/công suất là của Mỹ (ghi rõ "ở Mỹ"); muốn số Việt Nam cần văn bản quy hoạch tần số.
+- **Lượt duyệt hàng loạt 2026-09-30** (56 bài, `scripts/pass-factcheck-2026-09-30.ts`): bài "Cái chết…" cho thấy nguồn có thật nhưng không phủ phần sai — nên lấy mẫu kiểm lại vài bài.
+- **Chính tả** "hóa" (52 bài) / "hoá" (34 bài) chưa thống nhất. Thuật ngữ đã chốt cho cả kho: "tích lũy đột biến", "đa hiệu đối kháng".
 
-### Đợt thẩm định bài đăng thẳng qua /admin (2026-10-08 → 09)
+### Sức khoẻ / Tác động cột sống
 
-Quy trình nay là skill `tham-dinh-bai-da-dang` (phiếu A–F ở `docs/content/checks/<ngày>/`, engine `scripts/lib/corrections.ts`, script đợt `npm run corrections:<MMDD>`). Chủ sản phẩm chốt: bài **giữ PUBLISHED** trong lúc sửa; agent **tự chạy** script đính chính; agent **không ký byline** (người chạy `scripts/pass-factcheck-*.ts`); **không dùng Meilisearch**.
+Cả 14 bài Tác động cột sống đã PUBLISHED; nguồn MedlinePlus `/ency/` đã gỡ hết (CSDL còn 0).
 
-| Bài | Trạng thái 2026-10-09 |
-|---|---|
-| Rìa Hệ Mặt Trời, Vũ trụ quan sát được, Ngồi thẳng lưng (đợt 1009) | đã đính chính; byline: xem CSDL |
-| Đau đầu, Bất tử, Sarcopenia (1009b) | đã đính chính, về DRAFT rồi đăng lại; PASSED + byline |
-| Grounding (1009b) | đã đính chính, PUBLISHED; **chờ ký**: `npx tsx --env-file-if-exists=.env scripts/pass-factcheck-2026-10-09-c.ts` |
-| Sóng điện từ, Thời tiết–huyết áp (1009c); Cái chết dưới góc nhìn tiến hóa (1009d) | đã đính chính; PASSED + byline |
-
-Còn mở:
-- **"Bản thiết kế chung của sự sống"** (`ban-thiet-ke-chung-cua-su-song-…`) đăng 09/10 qua /admin, chưa thẩm định — có sơ đồ mũi tên nhân quả bằng `<div>`, tiêu đề viết hoa từng chữ.
-- Tên Việt cho sarcopenia chưa chốt (tiêu đề còn "Chứng teo cơ…", rộng hơn sarcopenia). Bài sarcopenia: `seoKeywords` cũ, link Runner's High yếu, danh sách thực phẩm giàu đạm chưa nguồn.
-- Bài sóng điện từ dùng số liệu tần số/công suất của Mỹ (ghi rõ "ở Mỹ").
-- Lượt duyệt hàng loạt 2026-09-30 (56 bài, `scripts/pass-factcheck-2026-09-30.ts`): bài "Cái chết…" cho thấy nguồn có thật nhưng không phủ phần sai — nên lấy mẫu kiểm lại vài bài theo cách ấy.
-- Chính tả "hóa" (52 bài) / "hoá" (34 bài) chưa thống nhất; thuật ngữ đã chốt cho cả kho: "tích lũy đột biến", "đa hiệu đối kháng".
-- `scripts/apply-corrections-2026-10-09-b.ts` dùng engine cũ, chạy lại sẽ báo lỗi vì bài bất tử đã đổi sau đó — đúng hành vi (dừng, không ghi), không cần sửa.
-
-**Tiến độ loạt Tác động cột sống: 14 chủ đề, làm theo thứ tự trong tài liệu — đã soạn đủ 14 (2026-10-07). **CSDL: cả 14 bài PUBLISHED** (11 bài sau lên 2026-10-07 qua `spine:publish`, đã kiểm CSDL + trang thật vi/en).**
-
-| Chủ đề (manifest id) | Trang | Trạng thái |
-|---|---|---|
-| `dau-lung-cap`, `dau-than-kinh-toa`, `dau-nua-dau` | 2–3, 7–11, 12–14 | PUBLISHED |
-| `dau-lung-man-tinh`, `huyet-ap-thap`, `thieu-nang-tuan-hoan-nao`, `huyet-ap-cao`, `dau-dau`, `hen-suyen-ho-hap`, `sot`, `nhieu-mo-hoi-so-gio`, `benh-do-mo-hoi` | 4–6, 15–40 | nháp. **science-editor PASS** (2 vòng, 2026-10-05; #19 sửa mục chặn vòng 1, D-39, D-40), chủ sản phẩm xác nhận → `editor = passed`. Góp ý không chặn còn treo: xem mô tả PR #19. |
-| `mat-ngu` | 41 | nháp: 6 thể, 14 mapping, nguồn NHS + MedlinePlus + NHLBI. science-editor PASS (2 vòng, 2026-10-07). Mục 7 chỉ có tiêu đề trong bản scan → bỏ (D-41). |
-| `viem-dai-trang-man-tinh` | 42–43 | nháp: 9 thể, 34 mapping, nguồn NHS + NIDDK, `riskLevel high`. science-editor PASS (2 vòng, 2026-10-07). Không trích câu "Chữa … lớp" và câu tự nhận "đạt kết quả khá". |
-
-**11 bài nháp trên: `transcription = passed` theo D-42** (chủ sản phẩm miễn đối chiếu bản chép với ảnh trang, 2026-10-07 — KHÔNG phải đã đối chiếu). **Đã nhập CSDL ở DRAFT (2026-10-07, chủ sản phẩm chạy `spine:import -- --write --drafts-only`)**: 11 bài, mỗi bài có bản en, ảnh bìa, nguồn, 1 revision; chưa có byline duyệt, factCheck PENDING. **Đã xuất bản cả loạt (2026-10-07).** **MedlinePlus `/ency/` (A.D.A.M., cấm dùng cho AI) đã gỡ khỏi 10 bài nháp (2026-10-07)**, thay bằng NHS/NHLBI/NINDS/NIAMS/WHO/trang chủ đề NLM; science-editor duyệt lại PASS cả 10. Quy tắc ở `docs/content-rules.md`, test `src/lib/spine/sources.test.ts`. **Phải nhập lại CSDL** (`spine:import -- --write --drafts-only`) để DRAFT nhận bản mới. 3 bài đầu (đã PUBLISHED) đã soạn đính chính gỡ `/ency/` (2026-10-07, science-editor PASS 2 vòng, nhật ký ở `docs/content/corrections.md`); **người chạy** `npm run spine:import -- --write --slugs dau-lung-cap-theo-tac-dong-cot-song,dau-than-kinh-toa-theo-tac-dong-cot-song,dau-nua-dau-theo-tac-dong-cot-song --correction "gỡ nguồn MedlinePlus /ency/ (A.D.A.M.)"`. Góp ý không chặn còn treo: Sốt (dấu hiệu 999 riêng cho trẻ dưới 5 tuổi từ trang viêm màng não/nhiễm trùng huyết NHS; ngưỡng 38°C/39°C NHS xếp 999), Hen (xịt lại sau 10 phút; không tự lái xe). Lỗi dịch lặp: "family history" phải là "tiền sử gia đình / gia đình có người từng bị", không phải "trong nhà có người".
-
-**Cách làm một chủ đề:**
-1. Đọc `source/pages/pNN.md`.
-2. Lấy nguồn bậc 1–2.
-3. Viết `topics/<slug>.editorial.json` theo schema `Editorial` (`src/lib/spine/schema.ts`):
-   - tối thiểu 3 nguồn;
-   - `safety` đặt trước phần trích;
-   - chủ đề rủi ro cao đặt `riskLevel: "high"`;
-   - `furtherReading` gồm ≥ 3 bài đã xuất bản;
-   - `review` để `pending`, trừ `mapping: passed` khi mọi cờ đã có D-n.
-4. Đoạn trích phải là nguyên văn:
-   - Ở dạng bảng, dấu chấm dẫn thu thành "…"; chỗ lược dòng cũng ghi "…".
-   - Không đưa dòng điều trị (giải tỏa, điều nhiệt) vào trích.
-   - Mỗi mapping phải nằm dưới đoạn trích chứa raw của nó.
-   - Mẫu: `dau-lung-cap…editorial.json` (văn xuôi), `huyet-ap-thap…editorial.json` (bảng), `dau-dau…editorial.json` (khối thăm khám).
-5. Chạy `npm run spine:build -- --write` và test spine, rồi commit và mở PR.
-
-
-1. **[NGƯỜI chạy, ưu tiên cao] Tạo 4 nhóm con trên CSDL production.** PR #12 mới chỉ có code.
+1. **[NGƯỜI chạy, ưu tiên cao] Tạo các nhóm con trên CSDL production** — kiểm 2026-10-09: chỉ có `tac-dong-cot-song`; `co-the-nguoi`, `bam-huyet`, `y-hoc-co-truyen` CHƯA có.
    ```bash
    cd sciencepedia
    npm run taxonomy:health            # chạy khô: xem kế hoạch
    npm run taxonomy:health -- --write # ghi
    ```
-   - Script tạo `co-the-nguoi`, `bam-huyet`, `y-hoc-co-truyen` nếu chưa có. Với `tac-dong-cot-song` (do `spine:import` tạo) nó chỉ đặt `order` và không đổi tên/mô tả.
-   - Thứ tự hiển thị: Cơ thể người → Tác động cột sống → Bấm huyệt → Y học cổ truyền → các nhóm con cũ (Giấc ngủ, Dinh dưỡng, Miễn dịch…).
+   - Với `tac-dong-cot-song` script chỉ đặt `order`, không đổi tên/mô tả. Thứ tự: Cơ thể người → Tác động cột sống → Bấm huyệt → Y học cổ truyền → các nhóm con cũ.
    - Script **dừng** nếu một slug đã nằm dưới lĩnh vực khác: chuyển nhánh là quyết định của category-manager.
-   - Cần `.env` có `DATABASE_URL`. Muốn làm mới cache ngay thì thêm `CRON_SECRET` và `NEXT_PUBLIC_SITE_URL`. Không có thì trang `/categories/suc-khoe` tự mới sau ≤ 5 phút (ISR 300 s).
-2. **Xếp bài vào nhóm mới** (category-manager, bước 7 của pipeline). Hiện chưa chuyển bài nào. Ứng viên rõ nhất: bài Huyệt đạo `huyet-dao-va-cham-cuu-khi-cua-dong-y-co-lien-he-gi-voi-khoa-hoc-hien-dai` → `bam-huyet` hoặc `y-hoc-co-truyen`. Cần quyết định biên tập.
-3. **Nội dung cho Bấm huyệt và Y học cổ truyền.** Hai nhóm này đang 0 bài nên tự `noindex`. Bài mới phải đi đủ pipeline 11 bước.
-4. **Hai bài nháp mới của PR #13** (đau lưng mãn tính, huyết áp thấp) phải qua science-editor rồi mới `review.editor = passed`, sau đó `spine:build` → `spine:import` → người chạy `spine:publish`. Cần cân nhắc bổ sung nguồn bậc 1–2 ngoài MedlinePlus khi mạng cho phép. Hiện `spine:publish` chỉ liệt kê 3 bài trong `SERIES`, nên phải thêm hai slug mới vào đó.
-5. **Q-2 (Tác động cột sống) còn mở.** Thuật ngữ cho bài "Tổng quan" phải do chủ sản phẩm giải nghĩa, máy không tự viết. Xem `sciencepedia/content/tac-dong-cot-song/source/proposals.md`.
-6. **P-2, P-10, P-22 còn treo** tới khi có PDF tài liệu gốc để đối chiếu ảnh trang. Cả ba không ảnh hưởng chỉ mục.
-7. **Tuỳ chọn, chưa quyết:** đặt khung lưu ý trên **trang bài** thuộc nhóm truyền thống. Hiện khung chỉ có ở trang danh mục, có chủ ý (xem mục 6). Làm thì cần chủ sản phẩm đồng ý.
+2. **Xếp bài vào nhóm mới** (category-manager, bước 7). Ứng viên rõ nhất: bài Huyệt đạo `huyet-dao-va-cham-cuu-khi-cua-dong-y-co-lien-he-gi-voi-khoa-hoc-hien-dai` (hiện ở `sinh-ly-va-trao-doi-chat`) → `bam-huyet` hoặc `y-hoc-co-truyen`. Cần quyết định biên tập.
+3. **Nội dung cho Bấm huyệt và Y học cổ truyền.** Hai nhóm sẽ 0 bài nên tự `noindex`. Bài mới phải đi đủ pipeline 11 bước.
+4. **Q-2 còn mở.** Thuật ngữ cho bài "Tổng quan" phải do chủ sản phẩm giải nghĩa. Xem `sciencepedia/content/tac-dong-cot-song/source/proposals.md`.
+5. **P-2, P-10, P-22 còn treo** tới khi có PDF tài liệu gốc để đối chiếu ảnh trang. Không ảnh hưởng chỉ mục.
+6. **Góp ý không chặn còn treo:** Sốt (dấu hiệu 999 riêng cho trẻ dưới 5 tuổi từ trang viêm màng não/nhiễm trùng huyết NHS; ngưỡng 38°C/39°C NHS xếp 999), Hen (xịt lại sau 10 phút; không tự lái xe).
+7. **Tuỳ chọn, chưa quyết:** khung lưu ý trên **trang bài** thuộc nhóm truyền thống (hiện chỉ ở trang danh mục, có chủ ý — mục 5).
 
-## 4. Command hay dùng
+## 3. Command hay dùng
 
 Tác động cột sống:
 `npx tsx scripts/spine-extract.ts` (phải báo 0 cờ mở) · `npm run spine:build` (không có ✖) ·
@@ -104,7 +56,7 @@ Tác động cột sống:
 
 ```bash
 cd sciencepedia
-npm install                 # (npm ci đang lỗi: lockfile lệch, xem mục 7)
+npm install                 # (npm ci đang lỗi: lockfile lệch, xem mục 6)
 npm run typecheck && npm run lint && npm test
 npm run build               # cần DATABASE_URL; không có CSDL thì build vẫn qua nhưng bỏ prerender
 npm run dev
@@ -123,7 +75,7 @@ Kiểm UI cục bộ không cần CSDL prod. Dựng Postgres tạm, chạy `npx 
 Theme mặc định là **dark** (`defaultTheme="dark"`). Muốn chụp giao diện sáng thì đặt
 `localStorage.theme = "light"`; giả lập `prefers-color-scheme` thôi là chưa đủ.
 
-## 5. Cấu trúc Sức khoẻ / Tác động cột sống / Bấm huyệt / YHCT
+## 4. Cấu trúc Sức khoẻ / Tác động cột sống / Bấm huyệt / YHCT
 
 ```
 Khám phá (menu)  → chỉ 7 lĩnh vực gốc (Category.parentId = null), đọc từ CSDL
@@ -146,7 +98,7 @@ Khám phá (menu)  → chỉ 7 lĩnh vực gốc (Category.parentId = null), đ�
   - Dữ liệu ở `sciencepedia/content/tac-dong-cot-song/` (`source/` gồm bản chép trang, `decisions.json`, `corrections.json`; `topics/`). Code ở `src/lib/spine/`.
   - Chỉ mục đốt sống ↔ bài nằm ở `src/lib/spine/index.generated.json`, không ở CSDL.
 
-## 6. Quyết định đã chốt (2026-10-05)
+## 5. Quyết định đã chốt (2026-10-05)
 
 - **Không** đưa Tác động cột sống, Bấm huyệt, Y học cổ truyền thành mục cấp 1 trong menu Khám phá. **Không** dùng submenu bay sang phải. Đường vào các nhóm là thẻ trên trang Sức khoẻ.
 - Trên trang danh mục, danh mục con hiện thành thẻ thay cho hàng chip. Áp dụng chung cho mọi lĩnh vực để không phải viết cứng slug.
@@ -155,22 +107,21 @@ Khám phá (menu)  → chỉ 7 lĩnh vực gốc (Category.parentId = null), đ�
 - Khung lưu ý chỉ đặt ở trang danh mục, **chưa** đặt ở trang bài. Lý do: bài Tác động cột sống đã có nhãn "Tư liệu lưu trữ" và khung cảnh báo riêng từng bệnh, và chủ sản phẩm đã nhiều lần gỡ nhãn thừa khỏi các bài này.
 - Tài liệu Tác động cột sống được lưu như tư liệu, xếp nguồn bậc 4, nên không bao giờ tự đưa bài qua gate. Chi tiết: `docs/content-rules.md`, mục "Tác động cột sống".
 - "Thực hiện" một phiếu đề xuất nghĩa là duyệt toàn bộ theo đề xuất mặc định. P-17 (C6, C7, T1 bên phải) có căn cứ yếu, muốn đổi thì sửa D-29. Một mã mang hai vai trong cùng một thể thì giữ vai cao hơn, và mỗi chỗ vẫn ghi một D-n. "Vùng S" tô cả xương cùng; vùng khác không tô. Đoạn "Trẻ em sốt cao" bỏ câu mô tả thủ thuật (D-38).
-- Tự động commit → push → PR → merge. Script ghi CSDL prod và publish thì do người chạy. Chi tiết: `CLAUDE.md`, mục Git.
+- Tự động commit → push → PR → merge. Chi tiết: `CLAUDE.md`, mục Git. Từ 2026-10-09: script đính chính (`corrections:*`), `npm run publish` do agent tự chạy; ký byline duyệt (`pass-factcheck-*`, `spine:publish`) vẫn do người.
 - Thao tác GitHub (tạo PR, merge) đi qua công cụ GitHub MCP. Session cloud không có `gh`.
 
-## 7. Vấn đề / blocker hiện tại
+## 6. Vấn đề / blocker hiện tại
 
 - **Proxy mạng của môi trường cloud chặn hầu hết nguồn y khoa**: NHS, NINDS, NIAMS, CDC, WHO, NCBI, NICE, Mayo. Chỉ `medlineplus.gov` vào được, nên các bài nháp mới chỉ dẫn MedlinePlus (bậc 2, vẫn đủ 3 nguồn cho gate). Muốn đa dạng nguồn thì thêm các miền này vào *Allowed domains* của môi trường.
 - **Commons / Wikimedia bị chặn**, nên không kiểm được giấy phép ảnh mới. Bìa của các bài nháp mới đang dùng lại hai ảnh cột sống đã kiểm.
 - **CSDL Supabase không vào được** từ container (host pooler bị chặn), nên không chạy được `spine:import` hay `publish:check` từ session agent.
-- Bản nháp (`docs/content/drafts/`) của các bài đã xuất bản có danh sách "Cùng loạt" trỏ tới bài chưa xuất bản. Đây chỉ là tệp, chưa vào CSDL. Khi import hoặc publish nhớ kiểm link (`npm run links:fix`).
 
-- **Chưa chạy `taxonomy:health` trên prod.** Session agent không có `.env` prod (xem mục 3.1).
+- **Chưa chạy `taxonomy:health` trên prod** (kiểm 2026-10-09) — xem mục 2, "Sức khoẻ / Tác động cột sống" bước 1.
 - **`package-lock.json` lệch `package.json`** (thiếu `@swc/helpers@0.5.23`), nên `npm ci` lỗi. Tạm thời dùng `npm install` rồi `git checkout package-lock.json`. Sửa hẳn bằng một PR riêng chạy `npm install` và commit lockfile.
 - **MCP `code-review-graph` không kết nối được trong cloud.** Cấu hình trỏ tới đường dẫn Windows. `CLAUDE.md` bảo dùng graph trước, nhưng khi không có thì đọc source trực tiếp.
 - **Bộ phân loại an toàn của chế độ auto** từng chặn agent tự commit thay đổi quy tắc Git trong `CLAUDE.md` (lý do: "Self-Modification"). Nếu lặp lại, người dùng commit tay hoặc thêm quyền.
 
-## 8. File quan trọng cần đọc
+## 7. File quan trọng cần đọc
 
 1. `CLAUDE.md`: quy tắc, pipeline, gate, Git.
 2. `docs/architecture.md`: các mục "Nhóm con của Sức khoẻ", "Tác động cột sống — chỉ mục…", "Xuất bản tự động", "Một cơ chế invalidation".
@@ -182,7 +133,7 @@ Khám phá (menu)  → chỉ 7 lĩnh vực gốc (Category.parentId = null), đ�
 8. `sciencepedia/content/tac-dong-cot-song/source/decisions.json`: D-1…D-41, chỉ thêm, không đánh số lại.
 9. `sciencepedia/src/lib/spine/schema.ts`, `assemble.ts`, `render.ts`, cùng các tệp biên tập mẫu ở `topics/`.
 
-## 9. Kiểm tra sau khi triển khai
+## 8. Kiểm tra sau khi triển khai
 
 Sau khi Vercel deploy `main` và đã chạy `taxonomy:health -- --write`:
 
