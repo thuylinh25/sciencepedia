@@ -84,5 +84,9 @@ Step 3 of the article chain. Turns a validated source pack into a draft with ful
 
     Rule 15's clause-level sentence did not stop its shape in batch 5 either: the counterweight clause was dropped in 5 of 10 entries again. A rule the drafter has read is not a rule the drafter applies — batch 5's notes showed two sources misdescribed. Until that changes, the reviewer reads the source, not the drafter's notes.
 
+19. **Safety advice is never weaker than its source, and keeps the source's exceptions.** If NIDDK says "never walk barefoot, even indoors", the draft does not say "be careful". If PROT-AGE recommends more protein for older adults *except* those with severe kidney disease, the exception travels with the advice. A tip aimed at the people most at risk ("drink enough water" for heart patients) must carry the exception that applies to them (heart failure: fluid may be restricted).
+
+    Why rule 19 exists: the 2026-10-08/09 audits of articles posted straight through /admin found the same shape three times in one batch — grounding (diabetes advice softer than CDC/NIDDK), sarcopenia (protein advice without the kidney exception), weather and blood pressure (fluids without the heart-failure exception, breathlessness at rest filed as a mild symptom). Every word was sourced; the harm was in what was left out. Health articles with self-care advice also need a "## Khi nào nên đi khám" section, whatever their category.
+
 ## Fails when
 The source pack is insufficient, or a section required by the template cannot be sourced. Return a gap report rather than a padded article.
