@@ -1257,3 +1257,13 @@ Bối cảnh: bài đã PUBLISHED, factCheck PASSED từ lượt duyệt hàng l
 - Đổi tiêu đề: cũ "…: Vì sao tự nhiên không thiết kế chúng ta để sống mãi?", mới "Cái chết dưới góc nhìn tiến hóa: vì sao chúng ta không sống mãi?" (bỏ văn mục đích luận); link text ở 4 bài trỏ vào đổi theo.
 - Sửa nhỏ: thêm mục "Ngân sách có hạn: thuyết cơ thể dùng một lần" (Kirkwood 1977); bỏ emoji ở tiêu đề mục; "Đọc thêm" bỏ CRISPR (lạc chủ đề), thêm bài đại tuyệt chủng Permi và bài bất tử; thêm link giữa câu tới bài dòng thời gian sự sống và bài vòng đời sao; `seoKeywords` theo nội dung mới.
 - Đi kèm, không đổi claim: bài `cai-gia-cua-su-bat-tu-lieu-song-mai-co-thuc-su-la-loi-the` đổi "Tích luỹ đột biến" → "Tích lũy đột biến" và thêm link về bài này.
+
+## 2026-10-09 — `tu-nguyen-tu-den-kim-cuong-dieu-gi-thuc-su-quyet-dinh-tinh-chat-cua-vat-chat`: plasma, siêu dẫn, tóm tắt
+
+Bối cảnh: bài lên trang qua form /admin ngày 2026-10-09 với 0 nguồn, `factCheck = PENDING`. Phiếu `docs/content/checks/2026-10-09/<slug>.md` (skill `tham-dinh-bai-da-dang`) trả SỬA. Áp bằng `npm run corrections:1009e -- --write`, văn bản thay nguyên văn mục D; bài giữ PUBLISHED; chưa có bản en. 17 nguồn (4 bậc 1: Nat Commun 2025, Nanomaterials 2024, J Adv Res 2025, Meissner & Ochsenfeld 1933 — chỉ xác minh tồn tại; 9 bậc 2: DOE, CERN, NOAA, tài liệu Nobel 2010, NIST WebBook; 4 bậc 3: RSC). Thẩm định lại sau 36 tháng.
+
+- Cũ: "sấm sét" là ví dụ plasma; plasma "dẫn điện rất tốt", "phản ứng mạnh với từ trường", "phát sáng khi bị kích thích"; cực quang là plasma. Mới: ví dụ là Mặt Trời, sao, tinh vân; plasma "dẫn được điện"; cực quang *do* plasma gây ra (electron lao dọc từ trường xuống vùng cực). Căn cứ: DOE (plasma); NOAA NWS (sấm là âm thanh); NOAA SWPC (cực quang).
+- Cũ: chất siêu dẫn có "điện trở gần như bằng 0"; ứng dụng "tàu đệm từ"; khái quát về hiệu ứng lượng tử ở nhiệt độ thấp. Mới: siêu dẫn là dẫn dòng điện không mất năng lượng (điện trở bằng 0); bỏ ứng dụng và khái quát không nguồn; nêu hiệu ứng Meissner. Căn cứ: DOE (siêu dẫn); CERN; Meissner & Ochsenfeld 1933.
+- Cũ: tóm tắt hỏi vì sao oxy là khí, nước là lỏng, sắt là rắn, gợi câu trả lời "phản ứng với môi trường xung quanh" — thân bài không trả lời. Mới: tóm tắt nói đúng những gì thân bài trình bày (electron hóa trị, cách nguyên tử liên kết, nhiệt độ và áp suất).
+- Sửa nhỏ: tiêu đề và tiêu đề mục viết hoa kiểu câu; `seoDescription` viết lại; thêm link giữa câu tới bài nguyên tử và bài vật chất tối; thêm "Đọc thêm".
+- Đi kèm, không đổi claim: bài `nguyen-tu-cau-tao-nen-van-vat` thêm link tới bài này (link vào đầu tiên của nó).

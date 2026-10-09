@@ -3,7 +3,7 @@ import { EntityType, PrismaClient } from "@prisma/client";
 import { revalidateSite } from "./revalidate-site";
 
 /**
- * Gắn entity cho 4 bài đính chính 09/10 còn nằm ngoài knowledge graph, và đặt mốc thẩm định
+ * Gắn entity cho 5 bài đính chính 09/10 còn nằm ngoài knowledge graph, và đặt mốc thẩm định
  * lại 12 tháng cho bài grounding (phiếu 2026-10-08 B4 đề nghị; engine đợt đó chưa có trường này).
  *
  *   npx tsx --env-file-if-exists=.env scripts/entity-2026-10-09.ts           # chạy khô
@@ -78,6 +78,18 @@ const JOBS: { article: string; entity: EntityIn; reverifyMonths?: number }[] = [
       description: "Phương pháp cho da tiếp xúc trực tiếp với mặt đất hoặc nối cơ thể xuống đất bằng vật dẫn; lợi ích sức khoẻ chưa được chứng minh.",
     },
     reverifyMonths: 12,
+  },
+  {
+    article: "tu-nguyen-tu-den-kim-cuong-dieu-gi-thuc-su-quyet-dinh-tinh-chat-cua-vat-chat",
+    entity: {
+      slug: "lien-ket-hoa-hoc",
+      canonicalName: "Liên kết hóa học",
+      canonicalNameEn: "Chemical bond",
+      entityType: "CONCEPT",
+      aliases: ["chemical bond"],
+      wikidataQid: "Q44424",
+      description: "Lực hút bền giữa các nguyên tử, hình thành qua electron lớp ngoài; quyết định cấu trúc và nhiều tính chất của chất.",
+    },
   },
 ];
 
