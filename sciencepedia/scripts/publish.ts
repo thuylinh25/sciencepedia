@@ -168,11 +168,16 @@ async function main() {
      lệch là chuyện chạy lại được, còn báo lỗi ở đây sẽ khiến người gọi tưởng
      việc xuất bản thất bại và đi làm lại một việc đã xong. `reindex.ts` ném
      lỗi khi chưa đặt MEILISEARCH_HOST — với môi trường chỉ dùng Postgres FTS
-     thì đó là trạng thái bình thường, không phải sự cố. */
+     thì đó là trạng thái bình thường, không phải sự cố.
+
+     Chủ sản phẩm chốt 2026-10-09: KHÔNG dùng Meilisearch — tìm kiếm là Postgres FTS
+     (cột `searchVector` sinh sẵn, lọc `status = 'PUBLISHED'`), bài đổi trạng thái là tự vào/ra
+     kết quả. Nên không có MEILISEARCH_HOST thì bỏ qua lặng lẽ, không gọi reindex rồi in stack trace. */
   if (argv.includes("--no-reindex")) {
     console.log("Bỏ qua reindex theo --no-reindex.");
     return;
   }
+  if (!process.env.MEILISEARCH_HOST) return;
 
   try {
     execFileSync("npx", ["tsx", "--env-file-if-exists=.env", "scripts/reindex.ts"], {

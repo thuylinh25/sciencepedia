@@ -1,6 +1,6 @@
 # HANDOFF — Sciencepedia
 
-> Ảnh chụp trạng thái công việc tại **2026-10-05**, để session mới (tài khoản khác) làm tiếp
+> Ảnh chụp trạng thái công việc tại **2026-10-09** (mục 3 đầu; phần còn lại từ 2026-10-05), để session mới (tài khoản khác) làm tiếp
 > mà không cần đọc hội thoại cũ. Quy tắc lâu dài nằm ở `CLAUDE.md` — đọc file đó trước.
 > File này là trạng thái tạm: cập nhật hoặc xoá mục khi việc xong.
 > Không có secret trong file này; giá trị thật nằm ở `.env` (không commit) và Vercel.
@@ -30,6 +30,25 @@ bằng chứng khoa học.
 - Trên Postgres cục bộ: chụp desktop 1440 px và mobile 390 px, cả sáng lẫn tối. Không có cuộn ngang. Menu Khám phá vẫn đúng 7 lĩnh vực.
 
 ## 3. Việc đang dở / bước tiếp theo
+
+### Đợt thẩm định bài đăng thẳng qua /admin (2026-10-08 → 09)
+
+Quy trình nay là skill `tham-dinh-bai-da-dang` (phiếu A–F ở `docs/content/checks/<ngày>/`, engine `scripts/lib/corrections.ts`, script đợt `npm run corrections:<MMDD>`). Chủ sản phẩm chốt: bài **giữ PUBLISHED** trong lúc sửa; agent **tự chạy** script đính chính; agent **không ký byline** (người chạy `scripts/pass-factcheck-*.ts`); **không dùng Meilisearch**.
+
+| Bài | Trạng thái 2026-10-09 |
+|---|---|
+| Rìa Hệ Mặt Trời, Vũ trụ quan sát được, Ngồi thẳng lưng (đợt 1009) | đã đính chính; byline: xem CSDL |
+| Đau đầu, Bất tử, Sarcopenia (1009b) | đã đính chính, về DRAFT rồi đăng lại; PASSED + byline |
+| Grounding (1009b) | đã đính chính, PUBLISHED; **chờ ký**: `npx tsx --env-file-if-exists=.env scripts/pass-factcheck-2026-10-09-c.ts` |
+| Sóng điện từ, Thời tiết–huyết áp (1009c); Cái chết dưới góc nhìn tiến hóa (1009d) | đã đính chính; PASSED + byline |
+
+Còn mở:
+- **"Bản thiết kế chung của sự sống"** (`ban-thiet-ke-chung-cua-su-song-…`) đăng 09/10 qua /admin, chưa thẩm định — có sơ đồ mũi tên nhân quả bằng `<div>`, tiêu đề viết hoa từng chữ.
+- Tên Việt cho sarcopenia chưa chốt (tiêu đề còn "Chứng teo cơ…", rộng hơn sarcopenia). Bài sarcopenia: `seoKeywords` cũ, link Runner's High yếu, danh sách thực phẩm giàu đạm chưa nguồn.
+- Bài sóng điện từ dùng số liệu tần số/công suất của Mỹ (ghi rõ "ở Mỹ").
+- Lượt duyệt hàng loạt 2026-09-30 (56 bài, `scripts/pass-factcheck-2026-09-30.ts`): bài "Cái chết…" cho thấy nguồn có thật nhưng không phủ phần sai — nên lấy mẫu kiểm lại vài bài theo cách ấy.
+- Chính tả "hóa" (52 bài) / "hoá" (34 bài) chưa thống nhất; thuật ngữ đã chốt cho cả kho: "tích lũy đột biến", "đa hiệu đối kháng".
+- `scripts/apply-corrections-2026-10-09-b.ts` dùng engine cũ, chạy lại sẽ báo lỗi vì bài bất tử đã đổi sau đó — đúng hành vi (dừng, không ghi), không cần sửa.
 
 **Tiến độ loạt Tác động cột sống: 14 chủ đề, làm theo thứ tự trong tài liệu — đã soạn đủ 14 (2026-10-07). **CSDL: cả 14 bài PUBLISHED** (11 bài sau lên 2026-10-07 qua `spine:publish`, đã kiểm CSDL + trang thật vi/en).**
 
