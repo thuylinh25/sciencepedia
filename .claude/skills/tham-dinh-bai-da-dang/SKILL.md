@@ -35,7 +35,9 @@ Chạy trong `sciencepedia/`:
 1. `content-research`: tìm nguồn bậc 1–2 cho chủ đề, **≥3 nguồn độc lập**. Cơ quan (NHS, CDC, NHLBI,
    NINDS, NIA, WHO, NASA, NOAA, NIST) cho lời khuyên và số liệu nền.
 2. `fact-check` chế độ Audit: tách bài thành claim nguyên tử, mỗi claim một phán quyết.
-3. Mọi DOI tra **Crossref** (`api.crossref.org/works/<doi>`) — tiêu đề, tạp chí, năm khớp. Abstract/toàn văn
+3. Mọi DOI tra **Crossref** (`api.crossref.org/works/<doi>`) — tiêu đề, tạp chí, năm khớp. **Không lấy DOI từ
+   trí nhớ**: tìm bằng `api.crossref.org/works?query.bibliographic=<tác giả + tiêu đề>` rồi lấy DOI từ kết quả —
+   đợt 09/10, 2/13 DOI nhớ sẵn trỏ sang bài báo khác hẳn. Abstract/toàn văn
    qua **Europe PMC REST** hoặc **PubMed E-utilities** khi trang chặn (WebFetch hay bị 403). Trang trả 403 thì
    **không dùng**, ghi vào phiếu.
 4. Phiếu ghi rõ **đọc gì** cho từng nguồn: "Abstract", "Toàn văn (PMCxxxx) các đoạn: …", "Chỉ xác minh tồn
@@ -111,14 +113,16 @@ bản lệch nhau sau đính chính.
 
 Engine: `sciencepedia/scripts/lib/corrections.ts` (`runCorrections`, kiểu `Plan`/`Fix`).
 
-1. Mỗi bài một tệp `scripts/data/corrections-<đợt>/<tên>.ts` export một `Plan`. **Trích khối D bằng chương
-   trình** (regex trên phiếu) thay vì chép tay — chép tay là chỗ sai nguyên văn.
+1. Mỗi bài một tệp `scripts/data/corrections-<đợt>/<tên>.ts` export một `Plan`. **Trích khối D bằng
+   `extractD`** (`scripts/lib/sheet.ts`, có test) thay vì chép tay hay regex viết lại mỗi đợt — chép tay sai
+   nguyên văn, regex tự viết từng cắt nhầm ở dòng `## …` nằm trong khối thay thế.
 2. Script đợt `scripts/apply-corrections-<ngày>.ts` gọi `runCorrections([...])`; thêm `corrections:<MMDD>`
    vào `package.json`. Ghi quyết định của chủ sản phẩm vào chú thích đầu script.
 3. **Mặc định giữ PUBLISHED** (không `toDraft`), kể cả khi phiếu khuyến nghị DRAFT — chỉ đặt khi chủ sản phẩm
    bảo rõ cho bài đó. Lý do: DRAFT kéo theo cả chuỗi đăng lại (byline, link vào, entity, readingTime).
 4. Kiểm trên bản chép CSDL bằng `applyFix`, rồi chạy khô thật: mọi fix khớp đúng một chỗ, ≥3 nguồn bậc 1–2,
-   "Đọc thêm" đều PUBLISHED. `--dump <dir>` in bản sau sửa — đọc lại ít nhất phần đầu và mục an toàn.
+   "Đọc thêm" đều PUBLISHED, không lệch thẻ HTML (engine chặn bằng `tagDrift`: thay khối HTML lồng nhau thì
+   chuỗi tìm phải tới thẻ đóng NGOÀI CÙNG). `--dump <dir>` in bản sau sửa — đọc lại ít nhất phần đầu và mục an toàn.
 5. Một mục `docs/content/corrections.md` cho mỗi bài: Cũ → Mới → Căn cứ, chỉ những claim thật sự đổi
    (đối chiếu với bản dump, không với phiếu).
 6. typecheck + eslint, commit → PR → merge (CLAUDE.md, mục Git).
