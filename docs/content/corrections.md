@@ -1267,3 +1267,25 @@ Bối cảnh: bài lên trang qua form /admin ngày 2026-10-09 với 0 nguồn, 
 - Cũ: tóm tắt hỏi vì sao oxy là khí, nước là lỏng, sắt là rắn, gợi câu trả lời "phản ứng với môi trường xung quanh" — thân bài không trả lời. Mới: tóm tắt nói đúng những gì thân bài trình bày (electron hóa trị, cách nguyên tử liên kết, nhiệt độ và áp suất).
 - Sửa nhỏ: tiêu đề và tiêu đề mục viết hoa kiểu câu; `seoDescription` viết lại; thêm link giữa câu tới bài nguyên tử và bài vật chất tối; thêm "Đọc thêm".
 - Đi kèm, không đổi claim: bài `nguyen-tu-cau-tao-nen-van-vat` thêm link tới bài này (link vào đầu tiên của nó).
+
+## 2026-10-09 — `bi-an-di-truyen-nhung-gi-con-trai-thua-huong-tu-me`: chiếc X của người cha, ADN ti thể dừng ở con trai
+
+Bối cảnh: bài lên trang qua form /admin ngày 2026-10-09 với 0 nguồn, `factCheck = PENDING`. Phiếu `docs/content/checks/2026-10-09/<slug>.md` (skill `tham-dinh-bai-da-dang`) trả SỬA. Áp bằng `npm run corrections:1009g -- --write`, văn bản thay nguyên văn mục D; bài giữ PUBLISHED; chưa có bản en. 10 nguồn (5 bậc 1: PNAS 2018, Nat Commun 2020, BBA 2013, Curr Genomics 2007, Nature 2005 — đọc abstract; 5 bậc 2: MedlinePlus Genetics). Thẩm định lại sau 36 tháng.
+
+- Cũ: chiếc X người cha truyền cho con gái "chứa nhiều đoạn ADN có nguồn gốc từ bà nội và bà ngoại". Mới: đó là chiếc X anh nhận từ mẹ mình (bà nội của bé); X và Y chỉ trao đổi đoạn ở hai vùng giả nhiễm sắc thể thường, nên chiếc X đến với con gái gần như nguyên vẹn. Căn cứ: MedlinePlus Genetics (kiểu di truyền); Mangs & Morris 2007.
+- Cũ: "dòng di truyền của người mẹ không hề bị đứt đoạn ở con trai"; bài không nói con trai có truyền ADN ti thể hay không. Mới: người con trai không truyền ADN ti thể cho con; ADN ti thể của mẹ dừng ở thế hệ của anh. Căn cứ: MedlinePlus Genetics; Sato & Sato 2013; Wei và cs. 2020.
+- Cũ: mỗi đứa trẻ nhận "khoảng 50% vật chất di truyền từ mẹ và 50% từ bố". Mới: nửa số nhiễm sắc thể trong nhân từ mỗi bên; ở con trai, lượng ADN từ mẹ nhỉnh hơn (X khoảng 5% tổng ADN, Y gần 2%, cộng ADN ti thể). Căn cứ: MedlinePlus Genetics (nhiễm sắc thể X, Y).
+- Thêm: số gen X 900–1.400, Y 70–200; bệnh liên kết X lặn gặp ở nam nhiều hơn hẳn; tranh luận về ADN ti thể từ bố (Luo 2018, Wei 2020).
+- Sửa nhỏ: tóm tắt bỏ "nhiều người cho rằng…", "hoàn toàn ngược lại"; bỏ danh sách đặc điểm do gen quyết định (không nguồn); tiêu đề và tên mục viết hoa kiểu câu; `seoDescription` viết lại; thêm "Đọc thêm".
+- Đi kèm, không đổi claim: bài `crispr-cay-keo-phan-tu-den-tu-vi-khuan` thêm bài này vào mục "Đọc thêm" (link vào đầu tiên của nó).
+
+## 2026-10-09 — `ban-thiet-ke-chung-cua-su-song-vi-sao-cac-loai-dong-vat-co-cau-tao-giong-nhau`: gen Hox, cánh chim và cánh dơi, sơ đồ mở bài
+
+Bối cảnh: bài lên trang qua form /admin ngày 2026-10-09 với 0 nguồn, `factCheck = PENDING`. Phiếu `docs/content/checks/2026-10-09/<slug>.md` trả SỬA. Áp bằng `npm run corrections:1009g -- --write`; bài giữ PUBLISHED; chưa có bản en. 11 nguồn bậc 1 (abstract; Jacob 1977 chỉ xác minh tồn tại). Ảnh bìa chưa có ghi công — chờ người (phiếu mục E). Thẩm định lại sau 36 tháng.
+
+- Cũ: gen Hox xác định "đâu là phần đầu, đâu là phần đuôi", "tay chân xuất hiện ở vị trí nào", "các cơ quan phát triển theo trật tự ra sao". Mới: gen Hox trao "danh tính" cho từng vùng dọc trục đầu – đuôi, không vạch ra đâu là đầu, đâu là đuôi; gen Hox của chuột làm được một phần việc của gen tương ứng ở ruồi giấm. Căn cứ: Mallo và cs. 2010; Malicki và cs. 1990.
+- Cũ: "Chim và dơi đều phát triển cánh để bay" là ví dụ đồng quy, trong khi mục trước coi chi trước của dơi là đồng nguồn. Mới: là chi trước thì đồng nguồn, là cánh thì đồng quy; bay xuất hiện độc lập ở thằn lằn bay, chim và dơi, mỗi nhóm dựng cánh khác nhau. Căn cứ: Wang và cs. 2019; Sears và cs. 2006; Tamura và cs. 2011.
+- Cũ: sơ đồ mở bài "Tổ tiên chung → kế thừa → thích nghi với môi trường → tạo ra các cơ quan…". Mới: thừa hưởng bộ xương → qua nhiều thế hệ, biến dị di truyền và chọn lọc tự nhiên biến đổi từng xương → cùng bộ xương, nhiều chức năng. Căn cứ: Shubin và cs. 2009; Stern 2013.
+- Cũ: "các định luật vật lý thường giới hạn số lượng giải pháp"; ví dụ cá heo và cá mập. Mới: cá ngừ, cá mập họ Lamnidae, cá voi và ichthyosaur có chung thân hình thoi, vây đuôi lưỡi liềm và vài đặc điểm cột sống gắn với cơ học kiểu bơi ấy. Căn cứ: Motani & Shimada 2023.
+- Sửa nhỏ: "động vật có vú" → động vật bốn chi; bỏ "bằng chứng mạnh mẽ nhất", "hàng trăm triệu năm"; tên mục "Vì sao tự nhiên không thiết kế lại từ đầu?" → "Vì sao tiến hóa sửa cái có sẵn…" (Shubin 2009; Jacob 1977); tiêu đề viết hoa kiểu câu; thêm link giữa câu sang bài "Cái chết…" và "Đọc thêm".
+- Đi kèm, không đổi claim: bài `cai-gia-cua-su-bat-tu-lieu-song-mai-co-thuc-su-la-loi-the` thêm link tới bài này (link vào đầu tiên của nó).
