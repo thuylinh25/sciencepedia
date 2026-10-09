@@ -20,39 +20,23 @@ bằng chứng khoa học.
 
 Quy trình: skill `tham-dinh-bai-da-dang` (phiếu A–F ở `docs/content/checks/<ngày>/`, engine `scripts/lib/corrections.ts`, script đợt `npm run corrections:<MMDD>`). Chủ sản phẩm chốt: bài **giữ PUBLISHED** trong lúc sửa; agent **tự chạy** script đính chính; agent **không ký byline** (người chạy `scripts/pass-factcheck-*.ts`); **không dùng Meilisearch**.
 
-- **[NGƯỜI chạy] Ký 6 bài đã đính chính** (rìa Hệ Mặt Trời, Vũ trụ quan sát được, tế bào gốc, Bí ẩn di truyền, Bản thiết kế chung — PUBLISHED; ngồi thẳng lưng — DRAFT, đã có entity + readingTime):
-  ```bash
-  cd sciencepedia
-  npx tsx --env-file-if-exists=.env scripts/pass-factcheck-2026-10-09-e.ts
-  npx tsx --env-file-if-exists=.env scripts/republish-prep-2026-10-09-b.ts --write --links
-  npm run publish -- --slug cuoc-chien-chong-lai-trong-luc-vi-sao-ngoi-thang-lung-lai-kho-den-the
-  ```
 - **Bài kim cương:** ảnh bìa chủ sản phẩm tự bổ sung (gate còn chặn vì thiếu ảnh).
-- **Bản thiết kế chung của sự sống:** ảnh bìa không ghi công, không rõ gốc — chủ sản phẩm bổ sung nguồn hoặc thay bằng Commons "Homology vertebrates-en.svg" (CC BY-SA 4.0; phiếu mục E). Hai bài 09/10 tối chưa có entity (gắn sau khi ký).
-- **108 bài PUBLISHED chưa có phiếu thẩm định** (đã ký, đều ≥3 nguồn: 55 bài lượt 30/09, 27 bài 25/09, 11 bài 07/10, còn lại rải rác). Chờ chủ sản phẩm chọn phạm vi/thứ tự.
+- **Bản thiết kế chung của sự sống:** ảnh bìa không ghi công, không rõ gốc — chủ sản phẩm bổ sung nguồn hoặc thay bằng Commons "Homology vertebrates-en.svg" (CC BY-SA 4.0; phiếu mục E). Hai bài này chưa có entity.
+- **Phạm vi thẩm định** (chủ sản phẩm chốt 2026-10-09): chỉ thẩm định bài **chưa có dấu duyệt** (factCheck khác PASSED hoặc không byline). Bài đã ký thì không tự thẩm định lại, kể cả 108 bài chưa có phiếu (55 bài lượt duyệt hàng loạt 30/09); chỉ làm khi chủ sản phẩm yêu cầu cụ thể. Kiểm 2026-10-09 tối: 0 bài chưa có dấu duyệt.
 - **Sarcopenia:** tên Việt chưa chốt (tiêu đề còn "Chứng teo cơ…", rộng hơn sarcopenia — cần người tra thuật ngữ Bộ Y tế/hội lão khoa); `seoKeywords` cũ, link Runner's High yếu, danh sách thực phẩm giàu đạm chưa nguồn.
 - **Sóng điện từ:** số liệu tần số/công suất là của Mỹ (ghi rõ "ở Mỹ"); muốn số Việt Nam cần văn bản quy hoạch tần số.
-- **Lượt duyệt hàng loạt 2026-09-30** (56 bài, `scripts/pass-factcheck-2026-09-30.ts`): bài "Cái chết…" cho thấy nguồn có thật nhưng không phủ phần sai — nên lấy mẫu kiểm lại vài bài.
 - **Chính tả** "hóa" (52 bài) / "hoá" (34 bài) chưa thống nhất. Thuật ngữ đã chốt cho cả kho: "tích lũy đột biến", "đa hiệu đối kháng", "than chì" (không "graphit").
 
 ### Sức khoẻ / Tác động cột sống
 
 Cả 14 bài Tác động cột sống đã PUBLISHED; nguồn MedlinePlus `/ency/` đã gỡ hết (CSDL còn 0).
 
-1. **[NGƯỜI chạy, ưu tiên cao] Tạo các nhóm con trên CSDL production** — kiểm 2026-10-09: chỉ có `tac-dong-cot-song`; `co-the-nguoi`, `bam-huyet`, `y-hoc-co-truyen` CHƯA có.
-   ```bash
-   cd sciencepedia
-   npm run taxonomy:health            # chạy khô: xem kế hoạch
-   npm run taxonomy:health -- --write # ghi
-   ```
-   - Với `tac-dong-cot-song` script chỉ đặt `order`, không đổi tên/mô tả. Thứ tự: Cơ thể người → Tác động cột sống → Bấm huyệt → Y học cổ truyền → các nhóm con cũ.
-   - Script **dừng** nếu một slug đã nằm dưới lĩnh vực khác: chuyển nhánh là quyết định của category-manager.
-2. **Xếp bài vào nhóm mới** (category-manager, bước 7). Ứng viên rõ nhất: bài Huyệt đạo `huyet-dao-va-cham-cuu-khi-cua-dong-y-co-lien-he-gi-voi-khoa-hoc-hien-dai` (hiện ở `sinh-ly-va-trao-doi-chat`) → `bam-huyet` hoặc `y-hoc-co-truyen`. Cần quyết định biên tập.
-3. **Nội dung cho Bấm huyệt và Y học cổ truyền.** Hai nhóm sẽ 0 bài nên tự `noindex`. Bài mới phải đi đủ pipeline 11 bước.
-4. **Q-2 còn mở.** Thuật ngữ cho bài "Tổng quan" phải do chủ sản phẩm giải nghĩa. Xem `sciencepedia/content/tac-dong-cot-song/source/proposals.md`.
-5. **P-2, P-10, P-22 còn treo** tới khi có PDF tài liệu gốc để đối chiếu ảnh trang. Không ảnh hưởng chỉ mục.
-6. **Góp ý không chặn còn treo:** Sốt (dấu hiệu 999 riêng cho trẻ dưới 5 tuổi từ trang viêm màng não/nhiễm trùng huyết NHS; ngưỡng 38°C/39°C NHS xếp 999), Hen (xịt lại sau 10 phút; không tự lái xe).
-7. **Tuỳ chọn, chưa quyết:** khung lưu ý trên **trang bài** thuộc nhóm truyền thống (hiện chỉ ở trang danh mục, có chủ ý — mục 5).
+1. **Xếp bài vào nhóm mới** (nhóm con Cơ thể người, Bấm huyệt, Y học cổ truyền đã có trên production 2026-10-09) (category-manager, bước 7). Ứng viên rõ nhất: bài Huyệt đạo `huyet-dao-va-cham-cuu-khi-cua-dong-y-co-lien-he-gi-voi-khoa-hoc-hien-dai` (hiện ở `sinh-ly-va-trao-doi-chat`) → `bam-huyet` hoặc `y-hoc-co-truyen`. Cần quyết định biên tập.
+2. **Nội dung cho Bấm huyệt và Y học cổ truyền.** Hai nhóm sẽ 0 bài nên tự `noindex`. Bài mới phải đi đủ pipeline 11 bước.
+3. **Q-2 còn mở.** Thuật ngữ cho bài "Tổng quan" phải do chủ sản phẩm giải nghĩa. Xem `sciencepedia/content/tac-dong-cot-song/source/proposals.md`.
+4. **P-2, P-10, P-22 còn treo** tới khi có PDF tài liệu gốc để đối chiếu ảnh trang. Không ảnh hưởng chỉ mục.
+5. **Góp ý không chặn còn treo:** Sốt (dấu hiệu 999 riêng cho trẻ dưới 5 tuổi từ trang viêm màng não/nhiễm trùng huyết NHS; ngưỡng 38°C/39°C NHS xếp 999), Hen (xịt lại sau 10 phút; không tự lái xe).
+6. **Tuỳ chọn, chưa quyết:** khung lưu ý trên **trang bài** thuộc nhóm truyền thống (hiện chỉ ở trang danh mục, có chủ ý — mục 5).
 
 ## 3. Command hay dùng
 
