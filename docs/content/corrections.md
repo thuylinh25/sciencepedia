@@ -1219,3 +1219,30 @@ Bối cảnh: bốn bài lên trang qua form /admin với 0 nguồn và `factChe
 - Cũ: "chưa có sự đồng thuận khoa học hoàn toàn", lợi ích "không chỉ đến từ yếu tố điện học". Mới: chưa có bằng chứng đủ mạnh cho lợi ích sức khoẻ; dòng điện giữa người và đất chỉ cỡ nano-ampe. Căn cứ: Chamberlin et al. 2014.
 - Cũ: mục "Bề mặt nào dẫn điện tốt?" (chín mệnh đề không nguồn). Mới: xoá; giữ một câu có nguồn về đế cao su, nhựa cách điện. Căn cứ: Chevalier 2012.
 - Sửa nhỏ: lợi ích của thời gian ngoài thiên nhiên và vận động tách riêng, ghi rõ là tương quan (White et al. 2019; CDC); tiêu đề mục viết hoa kiểu câu.
+
+## 2026-10-09 — hai bài đăng qua /admin ngày 2026-10-09: sóng điện từ, thời tiết và huyết áp
+
+Bối cảnh: hai bài lên trang qua form /admin với 0 nguồn và `factCheck = PENDING`. Phiếu thẩm định ngày 2026-10-09 (`docs/content/checks/2026-10-09/<slug>.md`, skill `tham-dinh-bai-da-dang`) trả SỬA cả hai. Áp bằng `scripts/apply-corrections-2026-10-09-c.ts` (`npm run corrections:1009c -- --write`), văn bản thay lấy nguyên văn mục D: mỗi bài một transaction gồm Revision chụp bản trước, lệnh sửa và lệnh thêm nguồn; `lastVerifiedAt`, `readingTime`, `reverifyDueAt` cập nhật; `factCheck` giữ nguyên; slug giữ. **Cả hai bài giữ PUBLISHED** (quy tắc chủ sản phẩm chốt 2026-10-09, dù phiếu thời tiết khuyến nghị DRAFT). Chưa có bản en.
+
+### tu-khong-khi-den-song-dien-tu-vi-sao-am-thanh-va-hinh-anh-co-the-truyen-di-khong-can-day
+
+18 nguồn (14 bậc 1–2: NASA, NIST, NOAA, eCFR 47 CFR 73.201/73.211/73.310/73.402/15.247, quyết định FCC 20-51; 4 bậc 3: Bluetooth SIG, Wi-Fi Alliance). Thẩm định lại sau 24 tháng.
+
+- Cũ: sóng điện từ đi qua không khí, nước và chân không "với tốc độ ánh sáng, khoảng 300.000 km mỗi giây"; kết luận lại nói "gần bằng tốc độ ánh sáng". Mới: tốc độ ánh sáng là tốc độ trong chân không; trong vật chất sóng chậm hơn, và sóng vô tuyến không đi xa được trong nước. Căn cứ: NASA; NOAA.
+- Cũ: "mỗi hệ thống dùng băng tần riêng" nên không lẫn nhau. Mới: Wi-Fi và Bluetooth dùng chung băng 2,4 GHz; Bluetooth giảm va chạm bằng nhảy tần. Căn cứ: Bluetooth SIG; 47 CFR 15.247.
+- Cũ: mọi tín hiệu đều được số hoá; "âm thanh không di chuyển qua không khí". Mới: phát thanh AM/FM là tín hiệu tương tự; điều chế gắn thông tin lên sóng mang. Căn cứ: 47 CFR 73.310, 73.402.
+- Cũ: độ trễ "phần nghìn hoặc phần triệu giây". Mới: bỏ — không nguồn.
+- Cũ: Wi-Fi phủ gần hơn radio chỉ vì tần số; "hàng trăm km", "vài chục mét". Mới: còn do công suất và độ cao ăng-ten — ở Mỹ thiết bị điều chế số 2,4 GHz phát tối đa 1 W, đài FM hạng C tới 100 kW ERP. Căn cứ: 47 CFR 15.247, 73.211.
+- Sửa nhỏ: ghi công ảnh "Nasa" → "NASA" kèm link trang gốc; tiêu đề và tiêu đề mục viết hoa kiểu câu; thêm "Đọc thêm".
+
+### bien-dong-thoi-tiet-va-he-tim-mach-vi-sao-thoi-tiet-co-the-anh-huong-den-huyet-ap
+
+21 nguồn (14 bậc 1 gồm đồng thuận ESH 2020, nghiên cứu Three-City, khuyến nghị ESC/ESH 2018; 7 bậc 2: NOAA, NHS, NHLBI). Danh mục giữ Sinh học, dòng lưu ý y tế đặt trong thân bài. Thẩm định lại sau 12 tháng.
+
+- Cũ: thời tiết hằng ngày làm đổi "nồng độ oxy", cơ thể phản ứng qua "điều hòa oxy" (sơ đồ, tóm tắt, mục áp suất, kết luận). Mới: tách hai thang đo — ở 2.500 m oxy hít vào giảm khoảng 25%, áp suất giảm 5 hPa trong ngày chỉ khoảng 0,5%; bằng chứng về áp suất hằng ngày và huyết áp chưa nhất quán. Căn cứ: các nguồn bậc 1 trong phiếu; NOAA.
+- Cũ: khuyên người bệnh tim "uống đủ nước". Mới: người được bác sĩ dặn hạn chế muối và nước (có thể gặp ở suy tim) thì làm theo lời dặn. Căn cứ: NHLBI.
+- Cũ: "khó thở" ở nơi cao xếp chung với triệu chứng nhẹ. Mới: khó thở cả khi nghỉ, lú lẫn, mất thăng bằng là dấu hiệu cần trợ giúp y tế ngay; xuống thấp 300–1.000 m. Căn cứ: NHS.
+- Cũ: không nói tới trời nóng. Mới: trời nóng huyết áp thường thấp hơn, có thể hạ quá mức ở người dùng thuốc hạ áp. Căn cứ: ESH 2020; NHS.
+- Cũ: huyết áp tăng là "một trong những nguyên nhân" gây đột quỵ khi rét đậm; huyết áp tăng gây triệu chứng say độ cao. Mới: bỏ mức chắc chắn và nhân quả không nguồn. Căn cứ: ESH 2020; ESC/ESH 2018.
+- Thêm mục "Khi nào cần đi khám hoặc gọi cấp cứu" và dòng lưu ý y tế. Căn cứ: NHS, NHLBI.
+- Sửa nhỏ: bỏ chủ đề "đi máy bay" (không nguồn); tiêu đề và tiêu đề mục viết hoa kiểu câu; thêm "Đọc thêm".

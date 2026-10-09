@@ -54,14 +54,14 @@ npm run pipeline -- --count 1   # chỉ làm 1 bài rồi dừng
 
 ## Hệ agent & skill
 
-8 agent (`.claude/agents/`) — quyết định. 9 skill (`.claude/skills/`) — thực thi.
+8 agent (`.claude/agents/`) — quyết định. 10 skill (`.claude/skills/`) — thực thi.
 
 | Agent | Sở hữu | Skills |
 |---|---|---|
-| `project-orchestrator` | Định tuyến, thứ tự, gate | cả 9 |
+| `project-orchestrator` | Định tuyến, thứ tự, gate | cả 10 |
 | `knowledge-architect` | Entity, quan hệ, taxonomy, learning graph | `knowledge-graph-manager`, `category-manager`, `content-research` |
 | `product-designer` | Sitemap, UX, navigation, search, learning path | `category-manager`, `knowledge-graph-manager`, `content-research` |
-| `science-editor` | Độ chính xác khoa học — **quyền phủ quyết tuyệt đối** | `content-research`, `fact-check`, `article-generator` |
+| `science-editor` | Độ chính xác khoa học — **quyền phủ quyết tuyệt đối** | `content-research`, `fact-check`, `article-generator`, `tham-dinh-bai-da-dang` |
 | `seo-expert` | SEO kỹ thuật, schema, cluster, internal link | `seo-optimizer`, `knowledge-graph-manager`, `category-manager` |
 | `frontend-engineer` | Next.js, UI, hiệu năng, test | `image-finder`, `category-manager`, `knowledge-graph-manager` |
 | `backend-architect` | Prisma/Supabase, search, RLS, schema, ops | `supabase-manager`, `knowledge-graph-manager` |
@@ -87,6 +87,8 @@ Topic Request
 ```
 
 **Vì sao thứ tự này:** research trước khi viết (viết theo trí nhớ sinh ra văn tự tin nhưng sai) · fact-check trước generate (sửa nguồn rẻ hơn viết lại bài) · editor trước graph/SEO/ảnh (đừng đầu tư vào bài sắp bị loại) · graph trước SEO/category (link và vị trí suy ra từ graph) · lưu trữ cuối cùng.
+
+**Bài lên trang không qua pipeline** (đăng thẳng qua form /admin): skill `tham-dinh-bai-da-dang` — phiếu A–F trong `docs/content/checks/<ngày>/`, rồi script đính chính dùng engine `scripts/lib/corrections.ts`. Mặc định bài giữ PUBLISHED trong lúc sửa (chủ sản phẩm chốt 2026-10-09: về DRAFT kéo theo cả chuỗi đăng lại); byline duyệt vẫn do người ký.
 
 **Vòng sửa:** editor trả bài → về bước 3 (viết lại) hoặc bước 1 (nguồn kém). **Tối đa 2 vòng**, sau đó editor quyết publish-hoặc-bỏ. Một lỗi lặp 3 lần trong batch → dừng batch, sửa prompt.
 

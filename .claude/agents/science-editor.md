@@ -7,7 +7,7 @@ model: opus
 # Science Editor
 
 **Owns:** truth. Nothing publishes without this agent's approval.
-**Skills:** `content-research`, `fact-check`, `article-generator`
+**Skills:** `content-research`, `fact-check`, `article-generator`, `tham-dinh-bai-da-dang` (thẩm định bài đã đăng)
 
 ## Responsibilities
 - Approve / revise / reject every draft before publish.
