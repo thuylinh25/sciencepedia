@@ -63,6 +63,17 @@ export type Plan = {
    * link vào) — đã suýt xảy ra với bài bất tử 09/10.
    */
   dropLinks?: string[];
+  /**
+   * Gỡ byline duyệt và đưa factCheck về PENDING trong cùng transaction — dùng khi bài đang mang
+   * byline cho bản CŨ mà đính chính đổi claim: byline không được đứng trên nội dung chưa ai đọc.
+   * Gỡ không phải ký; ký lại vẫn do người chạy scripts/pass-factcheck-*.ts.
+   */
+  clearReview?: boolean;
+  /**
+   * Sửa đi kèm không đổi claim (link text, thống nhất thuật ngữ): không cập nhật lastVerifiedAt,
+   * vì bài không được thẩm định lại — chỉ được sửa chữ.
+   */
+  minor?: boolean;
 };
 
 const FIELDS: Field[] = [
@@ -151,10 +162,10 @@ async function run(prisma: PrismaClient, plans: Plan[]) {
   const now = new Date();
 
   // Mọi bài trong "Đọc thêm" phải đang PUBLISHED — không link bài DRAFT, kể cả bài trong loạt này.
-  const own = new Set(plans.map((p) => p.slug));
+  const drafting = new Set(plans.filter((p) => p.toDraft).map((p) => p.slug));
   const readingSlugs = plans.flatMap((p) => p.reading.map(([, s]) => s));
-  const self = readingSlugs.filter((s) => own.has(s));
-  if (self.length) throw new Error(`"Đọc thêm" trỏ bài trong chính loạt đính chính: ${self.join(", ")}`);
+  const self = readingSlugs.filter((s) => drafting.has(s));
+  if (self.length) throw new Error(`"Đọc thêm" trỏ bài sắp về DRAFT trong chính loạt này: ${self.join(", ")}`);
   const live = new Set(
     (await prisma.article.findMany({ where: { slug: { in: readingSlugs }, status: "PUBLISHED" }, select: { slug: true } })).map((r) => r.slug),
   );
@@ -211,27 +222,28 @@ async function run(prisma: PrismaClient, plans: Plan[]) {
       if (lost.length) throw new Error(`[${plan.slug}] ${f} mất link nội bộ: ${lost.join(", ")} — giữ lại, hoặc ghi vào dropLinks nếu cố ý`);
     }
 
-    if (!/^## Đọc thêm/m.test(next.content)) {
+    if (plan.reading.length && !/^## Đọc thêm/m.test(next.content)) {
       next.content = `${next.content.replace(/\s+$/, "")}\n\n## Đọc thêm\n\n${plan.reading.map(([t, s]) => `- [${t}](/articles/${s})`).join("\n")}\n`;
       console.log(`\n+ mục "Đọc thêm": ${plan.reading.map(([, s]) => s).join(", ")}`);
     }
 
     console.log(`\nMục sau khi sửa: ${next.content.split("\n").filter((l) => /^##+ /.test(l)).join(" · ")}`);
 
-    const have = await prisma.source.findMany({ where: { articleId: a.id }, select: { url: true, title: true } });
+    const have = await prisma.source.findMany({ where: { articleId: a.id }, select: { url: true, title: true, tier: true, retractedAt: true } });
     const haveUrl = new Set(have.map((s) => s.url).filter(Boolean));
     const haveTitle = new Set(have.map((s) => s.title));
     const add = plan.sources.filter((s) => {
       const url = sourceUrl(s);
       return url ? !haveUrl.has(url) : !haveTitle.has(s.title);
     });
-    const tier12 = plan.sources.filter((s) => s.tier <= 2).length;
+    // Đếm cả nguồn bậc 1–2 đã có (còn hiệu lực) — bài đã có nguồn chỉ cần sửa chữ thì không phải khai lại.
+    const tier12 = have.filter((s) => s.tier <= 2 && !s.retractedAt).length + add.filter((s) => s.tier <= 2).length;
     if (tier12 < 3) throw new Error(`[${plan.slug}] chỉ ${tier12} nguồn bậc 1–2, cần ≥ 3`);
     const draft = plan.toDraft && a.status !== "DRAFT";
     const readingTime = readingTimeOf(next.content);
     console.log(
       `\nfix áp: ${applied}/${plan.fixes.length} · nguồn thêm: ${add.length}/${plan.sources.length} (bậc 1–2: ${tier12})` +
-        ` · readingTime ${a.readingTime} → ${readingTime} · factCheck ${a.factCheck} — GIỮ NGUYÊN · status ${a.status}${draft ? " → DRAFT" : " — giữ"}`,
+        ` · readingTime ${a.readingTime} → ${readingTime} · factCheck ${a.factCheck}${plan.clearReview ? " → PENDING, GỠ byline" : " — GIỮ NGUYÊN"} · status ${a.status}${draft ? " → DRAFT" : " — giữ"}`,
     );
 
     const orNull = (old: string | null, value: string) => (old === null && value === "" ? null : value);
@@ -248,9 +260,10 @@ async function run(prisma: PrismaClient, plans: Plan[]) {
       coverImageCredit: orNull(a.coverImageCredit, next.coverImageCredit),
       coverImageCreditEn: orNull(a.coverImageCreditEn, next.coverImageCreditEn),
       readingTime,
-      lastVerifiedAt: now,
+      ...(plan.minor ? {} : { lastVerifiedAt: now }),
       ...(plan.reverifyMonths ? { reverifyDueAt: new Date(new Date(now).setMonth(now.getMonth() + plan.reverifyMonths)) } : {}),
       ...(draft ? { status: "DRAFT" as const } : {}),
+      ...(plan.clearReview ? { factCheck: "PENDING" as const, reviewedById: null, reviewedAt: null } : {}),
     };
     jobs.push({ plan, a, data, add, draft });
   }
@@ -262,7 +275,8 @@ async function run(prisma: PrismaClient, plans: Plan[]) {
     for (const { plan, data } of jobs) {
       writeFileSync(
         `${dir}/${plan.slug}.md`,
-        `# ${data.title}\n\n> ${data.summary}\n\nseoTitle: ${data.seoTitle}\nseoDescription: ${data.seoDescription}\ncoverImageCredit: ${data.coverImageCredit}\n\n---\n\n${data.content}`,
+        `# ${data.title}\n\n> ${data.summary}\n\nseoTitle: ${data.seoTitle}\nseoDescription: ${data.seoDescription}\ncoverImageCredit: ${data.coverImageCredit}\n\n---\n\n${data.content}` +
+          (data.contentEn ? `\n\n=== EN ===\n\n# ${data.titleEn}\n\n> ${data.summaryEn}\n\n${data.contentEn}` : ""),
       );
     }
     console.log(`\nĐã in bản sau sửa ra ${dir}`);

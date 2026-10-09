@@ -1246,3 +1246,14 @@ Bối cảnh: hai bài lên trang qua form /admin với 0 nguồn và `factCheck
 - Cũ: huyết áp tăng là "một trong những nguyên nhân" gây đột quỵ khi rét đậm; huyết áp tăng gây triệu chứng say độ cao. Mới: bỏ mức chắc chắn và nhân quả không nguồn. Căn cứ: ESH 2020; ESC/ESH 2018.
 - Thêm mục "Khi nào cần đi khám hoặc gọi cấp cứu" và dòng lưu ý y tế. Căn cứ: NHS, NHLBI.
 - Sửa nhỏ: bỏ chủ đề "đi máy bay" (không nguồn); tiêu đề và tiêu đề mục viết hoa kiểu câu; thêm "Đọc thêm".
+
+## 2026-10-09 — `cai-chet-duoi-goc-nhin-tien-hoa-vi-sao-tu-nhien-khong-thiet-ke-chung-ta-de-song-mai`: gỡ thuyết lão hoá được lập trình
+
+Bối cảnh: bài đã PUBLISHED, factCheck PASSED từ lượt duyệt hàng loạt 2026-09-30. Khi đính chính bài bất tử, thấy bài này dạy đúng thuyết mà bài kia vừa gỡ. Phiếu `docs/content/checks/2026-10-09/<slug>.md` (skill `tham-dinh-bai-da-dang`) trả SỬA lớn. Áp bằng `npm run corrections:1009d -- --write`, sửa cả bản vi lẫn bản en; Revision chụp bản vi trước sửa. Quyết định của chủ sản phẩm (2026-10-09): **gỡ byline duyệt, factCheck về PENDING** (byline cũ ký cho bản có lỗi), bài giữ PUBLISHED; đổi tiêu đề (slug giữ); thuật ngữ cho cả kho "tích lũy đột biến", "đa hiệu đối kháng". 6 nguồn bậc 1 thêm vào 3 nguồn cũ (Kowald & Kirkwood 2016, Schaible 2015, Jones 2014, Raup 1994, Schulte 2010, Johnson 2019).
+
+- Cũ: mục "Nếu không có cái chết thì điều gì xảy ra?" (tài nguyên cạn kiệt, tiến hóa chậm lại, thích nghi giảm) và câu kết "Cái chết giúp tạo chỗ cho thế hệ mới và duy trì khả năng thích nghi của sự sống". Mới: mục "Cái chết vì già có giúp loài tiến hóa?" — ý tưởng ấy (Weismann 1891) nay được chấp nhận rộng rãi là sai: dựa vào chọn lọc cấp nhóm, lập luận vòng quanh, phần lớn đột biến có hại; tách "không ai chết" với "không ai già" (thủy tức). Căn cứ: Kowald & Kirkwood, Aging Cell 2016; Schaible et al., PNAS 2015.
+- Cũ: tóm tắt, kết luận, `seoDescription` nói tiến hóa có "mục tiêu", "ưu tiên", "quan tâm". Mới: chọn lọc tự nhiên không có mục đích; lão hóa là hệ quả của sức chọn lọc giảm theo tuổi. Căn cứ: Kowald & Kirkwood 2016.
+- Cũ: "hơn 99% loài đã tuyệt chủng", "khủng long thống trị hơn 160 triệu năm", "hơn 4 tỷ năm". Mới: câu định tính có nguồn. Căn cứ: Raup 1994; Schulte et al., Science 2010.
+- Đổi tiêu đề: cũ "…: Vì sao tự nhiên không thiết kế chúng ta để sống mãi?", mới "Cái chết dưới góc nhìn tiến hóa: vì sao chúng ta không sống mãi?" (bỏ văn mục đích luận); link text ở 4 bài trỏ vào đổi theo.
+- Sửa nhỏ: thêm mục "Ngân sách có hạn: thuyết cơ thể dùng một lần" (Kirkwood 1977); bỏ emoji ở tiêu đề mục; "Đọc thêm" bỏ CRISPR (lạc chủ đề), thêm bài đại tuyệt chủng Permi và bài bất tử; thêm link giữa câu tới bài dòng thời gian sự sống và bài vòng đời sao; `seoKeywords` theo nội dung mới.
+- Đi kèm, không đổi claim: bài `cai-gia-cua-su-bat-tu-lieu-song-mai-co-thuc-su-la-loi-the` đổi "Tích luỹ đột biến" → "Tích lũy đột biến" và thêm link về bài này.
