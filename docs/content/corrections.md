@@ -1174,3 +1174,48 @@ Bối cảnh: ba bài lên trang qua form /admin với 0 nguồn và `factCheck 
 - Cũ: "các nghiên cứu hiện nay cho thấy không có tư thế ngồi tĩnh nào hoàn hảo". Mới: chưa có bằng chứng mạnh cho tư thế nào; chưa có đồng thuận rằng tư thế gây đau thắt lưng; nhà vật lý trị liệu vẫn chuộng ngồi thẳng; NIAMS coi tư thế là yếu tố có thể góp phần. Căn cứ: Swain et al. 2020; Korakakis et al. 2019; Slater et al. 2019; NIAMS.
 - Thêm mục "Khi nào nên đi khám" (dấu hiệu cần khám, khám gấp, cấp cứu). Căn cứ: NHS, Back pain.
 - Sửa nhỏ: độ ưỡn thắt lưng ổn định thân trên (bỏ "hấp thụ chấn động", Whitcome 2007); bỏ ngôn ngữ "được thiết kế/tối ưu"; bỏ quy tắc chỉnh bàn ghế không nguồn; tóm tắt, `seoDescription` và kết luận bỏ luận điểm "tiết kiệm năng lượng"; tiêu đề mục viết hoa kiểu câu.
+
+## 2026-10-09 — bốn bài đăng qua /admin ngày 2026-10-08: đau đầu, sự bất tử, sarcopenia, grounding
+
+Bối cảnh: bốn bài lên trang qua form /admin với 0 nguồn và `factCheck = PENDING`. Phiếu thẩm định ngày 2026-10-08 (`docs/content/checks/2026-10-08/<slug>.md`) trả SỬA cho cả bốn. Áp bằng `scripts/apply-corrections-2026-10-09-b.ts` (`npm run corrections:1009b -- --write`, người chạy), văn bản thay lấy nguyên văn mục D của phiếu: mỗi bài một transaction gồm Revision chụp bản trước (cả tiêu đề), lệnh sửa và lệnh thêm nguồn; `lastVerifiedAt` cập nhật; `factCheck` giữ nguyên; slug giữ nguyên. Bốn bài chưa có bản en. Mỗi bài thêm mục "Đọc thêm" (bài đã xuất bản, `factCheck = PASSED`). Quyết định của chủ sản phẩm (2026-10-09): ba bài đau đầu, bất tử, sarcopenia **về DRAFT** trong cùng transaction tới khi người duyệt đọc lại; bài grounding giữ PUBLISHED vì lời khuyên cho người đái tháo đường được sửa ngay trong lượt ghi; grounding dùng "tiếp địa"; bài đau đầu giữ danh mục Sinh học; ảnh bìa đã được chủ sản phẩm xác nhận.
+
+### bi-an-giai-phau-vi-sao-bo-nao-khong-the-cam-nhan-dau
+
+9 nguồn (5 bậc 1: Fontaine 2018, Goadsby 2017, Levy 2019, Amin 2013, Ashina 2021; 3 bậc 2: NINDS Headache, NHS Headaches, NHS Migraine; 1 bậc 3: StatPearls về mổ tỉnh). **Bài về DRAFT.** Tiêu đề mới: "Vì sao mô não không cảm thấy đau, mà ta vẫn đau đầu?".
+
+- Cũ: bác sĩ tác động trực tiếp lên mô não khi mổ tỉnh mà người bệnh không đau. Mới: đúng cho nhu mô, vỏ não; chạm, kéo màng mềm hoặc mạch máu nhỏ bề mặt não có thể gây đau. Căn cứ: Fontaine et al., Brain 2018 (61/93 lần đau do kích thích cơ học màng mềm hoặc mạch máu nhỏ).
+- Cũ: các cấu trúc quanh não chứa "rất nhiều" thụ thể đau; sơ đồ "co cơ, viêm, thay đổi mạch máu → đau đầu". Mới: bỏ "rất nhiều" và sơ đồ; màng cứng gây đau ở nền sọ và liềm đại não; migraine là rối loạn xử lý cảm giác của chính não. Căn cứ: Fontaine 2018; Goadsby et al., Physiol Rev 2017; NINDS.
+- Cũ: migraine do dây thần kinh giải phóng chất "gây giãn mạch và viêm thần kinh". Mới: nguyên nhân chưa rõ; thuyết mạch máu đã bị bỏ, chụp mạch trong cơn không thấy động mạch ngoài sọ giãn. Căn cứ: NHS Migraine; Goadsby 2017; Amin et al., Lancet Neurol 2013.
+- Cũ: đau đầu do căng thẳng là co cơ do căng thẳng, ngồi sai tư thế. Mới: cơ chế sinh học chưa giải quyết; cơ chế ngoại vi chỉ "có vẻ" tham gia. Căn cứ: Ashina et al., Nat Rev Dis Primers 2021; NINDS.
+- Cũ: mục "Tại sao não không cần cảm giác đau?" giải thích bằng tiến hoá. Mới: bỏ — không nguồn; thay bằng mục đau đầu là triệu chứng của bệnh khác. Căn cứ: NHS Headaches, NINDS.
+- Thêm mục "Khi nào nên đi khám" (dấu hiệu cần khám và cấp cứu). Căn cứ: NHS, NINDS.
+
+### cai-gia-cua-su-bat-tu-lieu-song-mai-co-thuc-su-la-loi-the
+
+12 nguồn bậc 1 (Kowald & Kirkwood 2016, Schaible 2015, Jones 2014, Piraino 1996, Pascual-Torner 2022, Reed & Frankham 2003, Spielman 2004, Raup & Sepkoski 1982, Lyons 2014, Kirkwood 1977, Williams 1957, Kirkwood & Austad 2000). **Bài về DRAFT.** Tiêu đề mới: "Cái giá của sự bất tử: sống mãi có phải là lợi thế?".
+
+- Cũ: sơ đồ, tóm tắt và kết luận ngầm cho rằng già và chết giúp loài thích nghi ("không còn biến đổi → bị đào thải"). Mới: lời giải thích chủ lưu là sức chọn lọc giảm theo tuổi (Medawar), tích luỹ đột biến, đa hiệu đối kháng (Williams 1957), cơ thể dùng một lần (Kirkwood 1977); thuyết Weismann "được chấp nhận rộng rãi là sai". Căn cứ: Kowald & Kirkwood, Aging Cell 2016.
+- Cũ: "không có bằng chứng cho thấy bất tử sinh học là trạng thái tối ưu". Mới: ở thuỷ tức, tỉ lệ chết và sinh sản không đổi theo tuổi, không già có thể là chiến lược tối ưu; quỹ đạo tử vong theo tuổi đa dạng giữa 46 loài. Căn cứ: Schaible et al., PNAS 2015; Jones et al., Nature 2014.
+- Cũ: sứa *Turritopsis* "đảo ngược quá trình lão hoá" khi gặp điều kiện bất lợi; danh sách bốn cách chết. Mới: quay ngược vòng đời sau khi đã trưởng thành sinh dục, bất tử *tiềm năng*; bỏ tác nhân và danh sách không nguồn. Căn cứ: Piraino et al., Biol Bull 1996; Pascual-Torner et al., PNAS 2022.
+- Sửa nhỏ: oxy thay đổi qua hàng tỷ năm (Lyons 2014); tuyệt chủng hàng loạt theo Raup & Sepkoski 1982; đa dạng di truyền định lượng theo Reed & Frankham 2003, Spielman 2004; bỏ văn mục đích luận ("để đối phó", "loài chọn"); `seoTitle`, `seoDescription` viết lại.
+
+### chung-teo-co-do-tuoi-tac-sarcopenia-ke-thu-tham-lang-cua-tuoi-gia
+
+18 nguồn (16 bậc 1, gồm EWGSOP2 2019, Cruz-Jentoft & Sayer 2019, PROT-AGE 2013, Goodpaster 2006, Janssen 2000, Larsson 2019, DeFronzo & Tripathy 2009; 2 bậc 2: WHO 2020, NIA). **Bài về DRAFT.** Tiêu đề chỉ viết hoa kiểu câu, giữ chữ "teo cơ" tới khi chủ sản phẩm chốt tên Việt.
+
+- Cũ: sarcopenia "là một phần của quá trình lão hoá". Mới: một bệnh của cơ, chẩn đoán khi sức cơ và khối cơ dưới ngưỡng (EWGSOP2, AWGS 2019), có thể gặp sớm hơn tuổi già. Căn cứ: Cruz-Jentoft et al., Age Ageing 2019; Cruz-Jentoft & Sayer, Lancet 2019.
+- Cũ: khuyên người cao tuổi ăn thêm đạm, không nêu ngoại lệ. Mới: ≥1,0–1,2 g/kg/ngày, trừ người bệnh thận nặng (eGFR dưới 30) chưa chạy thận có thể cần hạn chế đạm; bỏ "chia đều đạm các bữa thường có lợi hơn" (bằng chứng chưa đủ). Căn cứ: Bauer et al. (PROT-AGE), JAMDA 2013.
+- Cũ: sơ đồ "mất khối cơ → mất sức cơ"; khối cơ giảm "từ sau tuổi 30". Mới: sức cơ giảm nhanh hơn khối cơ nhiều lần, giữ khối cơ không ngăn được sức cơ giảm; mốc tuổi theo Janssen 2000. Căn cứ: Goodpaster et al. 2006; Mitchell et al. 2012; Janssen et al. 2000.
+- Cũ: ít vận động là "nguyên nhân phổ biến nhất"; cơ là nơi tiêu thụ glucose lớn nhất. Mới: nhiều nguyên nhân, mất tế bào thần kinh vận động là một yếu tố chính; cơ hấp thu phần lớn glucose sau ăn, không phải lúc đói. Căn cứ: EWGSOP2; Larsson et al., Physiol Rev 2019; DeFronzo & Tripathy 2009.
+- Cũ: tập sức mạnh "ít nhất 2-3 buổi" mỗi tuần. Mới: người cao tuổi tập đa thành phần nhấn mạnh thăng bằng và sức cơ từ 3 ngày/tuần trở lên. Căn cứ: WHO 2020.
+- Thêm mục "Khi nào nên đi khám". Căn cứ: NIA; EWGSOP2; WHO 2020.
+
+### grounding-tiep-dia-dieu-gi-thuc-su-xay-ra-khi-di-chan-tran-tren-dat
+
+16 nguồn (8 bậc 1, gồm hai tổng quan của nhóm tác giả có lợi ích tài chính, chỉ dùng để dẫn điều chính họ thừa nhận; 8 bậc 2: CDC, NIDDK, NHLBI, NINDS, NCCIH). Bài giữ PUBLISHED. Tiêu đề mới: "Grounding (tiếp địa): điều gì thực sự xảy ra khi đi chân trần trên đất?".
+
+- Cũ: nêu lợi ích sinh lý của grounding, không nói ai làm nghiên cứu. Mới: nghiên cứu dùng tấm lót, miếng dán nối đất trong nhà, không phải đi chân trần; mẫu nhỏ, nhiều kết quả tự đánh giá; các tác giả chính có hợp đồng, cổ phần ở hãng bán sản phẩm tiếp địa và tài trợ nghiên cứu. Căn cứ: Chevalier et al. 2012 (phần khai lợi ích), Ghaly & Teplitz 2004, Brown 2010, Chevalier 2013, 2019.
+- Cũ: người đái tháo đường có biến chứng thần kinh "nên đặc biệt thận trọng". Mới: người đái tháo đường không nên đi chân trần, kể cả trong nhà; thêm rủi ro giun móc và uốn ván. Căn cứ: CDC Diabetes and Your Feet; NIDDK; CDC.
+- Cũ: "chưa có sự đồng thuận khoa học hoàn toàn", lợi ích "không chỉ đến từ yếu tố điện học". Mới: chưa có bằng chứng đủ mạnh cho lợi ích sức khoẻ; dòng điện giữa người và đất chỉ cỡ nano-ampe. Căn cứ: Chamberlin et al. 2014.
+- Cũ: mục "Bề mặt nào dẫn điện tốt?" (chín mệnh đề không nguồn). Mới: xoá; giữ một câu có nguồn về đế cao su, nhựa cách điện. Căn cứ: Chevalier 2012.
+- Sửa nhỏ: lợi ích của thời gian ngoài thiên nhiên và vận động tách riêng, ghi rõ là tương quan (White et al. 2019; CDC); tiêu đề mục viết hoa kiểu câu.
