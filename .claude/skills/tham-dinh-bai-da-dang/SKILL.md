@@ -9,8 +9,9 @@ Bài đã lên trang mà chưa qua 11 bước pipeline. Skill này gom hai việ
 **phiếu thẩm định** (science-editor quyết) → **script đính chính** (máy áp nguyên văn phiếu). Rút từ ba đợt
 2026-10-08/09 (13 bài), mọi lỗi lặp được ghi ở mục "Danh sách kiểm".
 
-Agent chủ trì: `science-editor`. Gọi lần lượt `content-research` → `fact-check` (chế độ **Audit**) — skill này
-không thay hai skill đó, nó quy định đầu vào, thứ tự và định dạng đầu ra.
+Agent chủ trì: `science-editor`. Gọi lần lượt `content-research` → `fact-check` (chế độ **Audit**) →
+`seo-optimizer` (phần SEO) → `translation` (nếu bài có bản EN) — skill này không thay các skill đó, nó quy định
+đầu vào, thứ tự và định dạng đầu ra. Ghi ở mục F những skill đã gọi.
 
 ## Bước 1 — Đọc bài (chỉ đọc)
 
@@ -19,6 +20,15 @@ Script tạm trong `sciencepedia/scripts/tmp-*.ts` (Prisma cần node_modules c�
 seoDescription, coverImage, coverImageAlt, coverImageCredit, status, factCheck, reviewedById, category,
 sources, contentEn`. Ghi lại danh mục: con của `suc-khoe` thì có khung lưu ý y tế, chỗ khác thì không
 (`@/lib/category-notices`).
+
+## Bước 1b — Kiểm máy (chỉ đọc, mọi CHẶN/CẢNH vào phiếu)
+
+Chạy trong `sciencepedia/`:
+- `npm run publish:check -- --slug <slug>` — gate đầy đủ: nguồn, ≥3 link nội bộ resolve, link chết, ≥1 link
+  vào, entity, readingTime, ghi công ảnh. Bài đang PUBLISHED mà trượt gate thì cũng ghi vào phiếu.
+- `npm run glossary:check` — lọc dòng của bài này: `[[thuật ngữ]]` nào chưa có mục từ.
+- Link VÀO bài này: tìm `/articles/<slug>` trong các bài PUBLISHED khác. Ghi danh sách vào mục E — đổi tiêu đề
+  thì link text ở đó có thể cần đổi theo.
 
 ## Bước 2 — Nguồn và claim
 
@@ -53,10 +63,34 @@ sources, contentEn`. Ghi lại danh mục: con của `suc-khoe` thì có khung l
 - Con số không nguồn ("sau tuổi 30", "2–3 buổi", "phần nghìn giây"): bỏ, không làm tròn cho có vẻ đúng.
 - Xung đột lợi ích của tác giả nghiên cứu được dẫn mà bài không nêu.
 
-**Nên sửa:** viết hoa kiểu câu cho tiêu đề và tiêu đề mục (giữ slug); `seoTitle`/`seoDescription` mang cùng
-claim sai thì sửa cùng; ghi công ảnh; ảnh bìa và alt (**agent không viết alt cho ảnh chưa xem** — tải về, xem
-bằng Read, rồi mới kết luận); "Đọc thêm" ≥3 bài **PUBLISHED + factCheck PASSED**, không trỏ bài đang mâu
-thuẫn với bản sửa.
+**Thuật ngữ** (nhất quán toàn kho, không chỉ trong bài):
+- Mỗi thuật ngữ khoa học chính của bài: đối chiếu `sciencepedia/prisma/seed-data/glossary.json` (tên + aliases), rồi
+  tìm trong CSDL các cách gọi khác của cùng khái niệm ở bài PUBLISHED. Lệch → mục E, kèm số bài dùng mỗi cách
+  ("đa hiệu đối kháng" 1 bài / "đa hiệu đối nghịch" 1 bài). Chủ sản phẩm chốt; D giữ cách gọi đang dùng của
+  bài, tên Anh in nghiêng lần đầu. Chính tả "hóa/hoá", "lý/lí": theo đa số trong kho.
+- `[[…]]` thiếu mục từ: đề xuất ở mục E; thêm mục từ qua `glossary.json` + science-editor, không ghi thẳng CSDL.
+- Thuật ngữ dịch sai nghĩa (vd. "family history" → "trong nhà có người") là lỗi nội dung, vào A/B.
+
+**Link nội bộ và "Đọc thêm":**
+- Link trong thân bài phải trỏ bài PUBLISHED; link chết → B, kèm slug thay (hoặc bỏ).
+- Đề xuất 1–2 **link giữa câu** ở đúng chỗ bài đích giải thích kỹ điều câu đang lướt qua (kiểu
+  `scripts/add-backlinks.ts`: cụm neo khớp đúng một chỗ, kèm lý do). Không neo vào cụm cùng chữ khác nghĩa.
+- **D viết lại một mục thì phải giữ mọi link `/articles/…` của mục cũ** (hoặc ghi rõ vì sao bỏ) — có thể đó
+  là link vào duy nhất của bài khác. Engine chặn mất link, trừ khi plan ghi `dropLinks`.
+- "Đọc thêm" ≥3 bài **PUBLISHED + factCheck PASSED**, cùng chủ đề thật, không trỏ bài đang mâu thuẫn với bản sửa.
+
+**SEO** (gọi skill `seo-optimizer` cho phần này):
+- `seoTitle`, `seoDescription`, `seoKeywords` mang cùng claim sai → sửa cùng thân bài; từ khoá phải khớp nội dung
+  mới (vd. bỏ "teo cơ … bổ sung protein" nếu bài không còn nói thế).
+- Tiêu đề và `seoDescription` không trùng bài khác (truy vấn CSDL); độ dài theo `seo-optimizer`.
+- Bài thiếu entity → ghi E (gắn bằng script khi đăng lại, mẫu `scripts/republish-prep-2026-10-09.ts`).
+
+**Nên sửa khác:** viết hoa kiểu câu cho tiêu đề và tiêu đề mục (giữ slug); emoji trong tiêu đề mục; ghi công ảnh;
+ảnh bìa và alt (**agent không viết alt cho ảnh chưa xem** — tải về, xem bằng Read, rồi mới kết luận).
+
+**Bản EN:** bài có `contentEn` thì mọi lỗi A cũng nằm ở bản EN. D kèm bản dịch EN cho từng khối (skill
+`translation`, giữ thuật ngữ theo glossary) — engine sửa được `titleEn`, `summaryEn`, `contentEn`. Không để hai
+bản lệch nhau sau đính chính.
 
 ## Bước 4 — Phiếu
 
@@ -69,7 +103,8 @@ thuẫn với bản sửa.
   `thay toàn mục "## <tiêu đề HIỆN TẠI nguyên văn>"` · `thay trường summary` / `seoDescription` / … ·
   `thêm mục mới trước "## <tiêu đề hiện tại>"` · `xoá toàn mục "## …"` · `thay câu "<nguyên văn>"`.
   Khối văn bản đặt trong ```` ```markdown ````. Không có backtick hay `${` trong khối.
-- **E. Việc chưa làm / cần người** — quyết định của chủ sản phẩm, thuật ngữ chưa chốt, ảnh, bài khác cần thẩm định.
+- **E. Việc chưa làm / cần người** — quyết định của chủ sản phẩm, thuật ngữ chưa chốt, ảnh, bài khác cần thẩm định,
+  kết quả kiểm máy (bước 1b), danh sách link vào. Bài đang mang byline duyệt cho bản cũ: hỏi giữ hay gỡ.
 - **F. Ghi chú thẩm định** — chỗ đã cân nhắc mà không đưa vào D và vì sao.
 
 ## Bước 5 — Script đính chính

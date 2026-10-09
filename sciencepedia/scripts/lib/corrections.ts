@@ -17,7 +17,10 @@ import { revalidateSite } from "../revalidate-site";
  *   <lệnh> --dump <dir> # in thêm bản sau sửa ra thư mục để đọc
  *   <lệnh> --write      # thực thi
  */
-export type Field = "title" | "summary" | "content" | "seoTitle" | "seoDescription" | "coverImageCredit" | "coverImageCreditEn";
+export type Field =
+  | "title" | "summary" | "content" | "seoTitle" | "seoDescription" | "seoKeywords"
+  | "titleEn" | "summaryEn" | "contentEn"
+  | "coverImageCredit" | "coverImageCreditEn";
 
 export type Fix =
   /** Thay đúng một chỗ khớp nguyên văn. */
@@ -27,9 +30,9 @@ export type Fix =
    * cùng cấp hoặc cấp cao hơn kế tiếp (hoặc hết bài). Tiểu mục cấp sâu hơn nằm trong mục bị thay.
    * `replace: ""` là xoá mục.
    */
-  | { field: "content"; section: string; replace: string; why: string }
+  | { field: "content" | "contentEn"; section: string; replace: string; why: string }
   /** Chèn một khối ngay TRƯỚC dòng tiêu đề `before` (khớp nguyên dòng, đúng một lần). */
-  | { field: "content"; before: string; insert: string; why: string };
+  | { field: "content" | "contentEn"; before: string; insert: string; why: string };
 
 export type SourceIn = {
   title: string;
@@ -54,9 +57,21 @@ export type Plan = {
   toDraft?: boolean;
   /** Hẹn thẩm định lại sau N tháng (reverifyDueAt), nếu phiếu đề nghị. */
   reverifyMonths?: number;
+  /**
+   * Link nội bộ `/articles/<slug>` có trong bản cũ mà bản mới được phép bỏ. Mặc định mọi link
+   * phải còn: viết lại cả mục dễ xoá mất link vào DUY NHẤT của một bài khác (gate publish đếm
+   * link vào) — đã suýt xảy ra với bài bất tử 09/10.
+   */
+  dropLinks?: string[];
 };
 
-const FIELDS: Field[] = ["title", "summary", "content", "seoTitle", "seoDescription", "coverImageCredit", "coverImageCreditEn"];
+const FIELDS: Field[] = [
+  "title", "summary", "content", "seoTitle", "seoDescription", "seoKeywords",
+  "titleEn", "summaryEn", "contentEn", "coverImageCredit", "coverImageCreditEn",
+];
+
+const INTERNAL_LINK = /\/articles\/([a-z0-9-]+)/g;
+const linksOf = (text: string) => new Set([...text.matchAll(INTERNAL_LINK)].map((m) => m[1]));
 
 function sourceUrl(s: SourceIn): string | null {
   if (s.url !== undefined) return s.url;
@@ -153,6 +168,7 @@ async function run(prisma: PrismaClient, plans: Plan[]) {
       where: { slug: plan.slug },
       select: {
         id: true, title: true, summary: true, content: true, seoTitle: true, seoDescription: true,
+        seoKeywords: true, titleEn: true, summaryEn: true, contentEn: true,
         coverImageCredit: true, coverImageCreditEn: true, readingTime: true, factCheck: true, status: true,
       },
     });
@@ -162,6 +178,10 @@ async function run(prisma: PrismaClient, plans: Plan[]) {
       content: a.content.replace(/\r\n/g, "\n"),
       seoTitle: a.seoTitle ?? "",
       seoDescription: a.seoDescription ?? "",
+      seoKeywords: a.seoKeywords ?? "",
+      titleEn: a.titleEn ?? "",
+      summaryEn: a.summaryEn ?? "",
+      contentEn: (a.contentEn ?? "").replace(/\r\n/g, "\n"),
       coverImageCredit: a.coverImageCredit ?? "",
       coverImageCreditEn: a.coverImageCreditEn ?? "",
     };
@@ -182,6 +202,13 @@ async function run(prisma: PrismaClient, plans: Plan[]) {
     for (const word of plan.forbid ?? []) {
       const left = FIELDS.filter((f) => next[f].includes(word));
       if (left.length) throw new Error(`[${plan.slug}] vẫn còn "${word}" ở: ${left.join(", ")}`);
+    }
+
+    for (const f of ["content", "contentEn"] as const) {
+      const lost = [...linksOf(f === "content" ? a.content : (a.contentEn ?? ""))].filter(
+        (s) => !linksOf(next[f]).has(s) && !(plan.dropLinks ?? []).includes(s),
+      );
+      if (lost.length) throw new Error(`[${plan.slug}] ${f} mất link nội bộ: ${lost.join(", ")} — giữ lại, hoặc ghi vào dropLinks nếu cố ý`);
     }
 
     if (!/^## Đọc thêm/m.test(next.content)) {
@@ -214,6 +241,10 @@ async function run(prisma: PrismaClient, plans: Plan[]) {
       content: next.content,
       seoTitle: orNull(a.seoTitle, next.seoTitle),
       seoDescription: orNull(a.seoDescription, next.seoDescription),
+      seoKeywords: orNull(a.seoKeywords, next.seoKeywords),
+      titleEn: orNull(a.titleEn, next.titleEn),
+      summaryEn: orNull(a.summaryEn, next.summaryEn),
+      contentEn: orNull(a.contentEn, next.contentEn),
       coverImageCredit: orNull(a.coverImageCredit, next.coverImageCredit),
       coverImageCreditEn: orNull(a.coverImageCreditEn, next.coverImageCreditEn),
       readingTime,
