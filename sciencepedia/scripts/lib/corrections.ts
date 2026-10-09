@@ -104,10 +104,19 @@ function headingAt(text: string, heading: string, ctx: string): number {
   return hits[0];
 }
 
-/** Áp một fix; trả null nếu đã áp từ trước. */
+/**
+ * Áp một fix; trả null nếu đã áp từ trước (chạy lại script phải ra 0 fix).
+ * Hai trường hợp dễ sót: `replace` chứa nguyên `find` (thêm một dòng sau dòng neo — áp lại là
+ * nhân đôi dòng), và thay mục giữ nguyên tiêu đề (tiêu đề cũ vẫn còn sau khi áp).
+ */
 export function applyFix(text: string, fix: Fix, ctx: string): string | null {
+  const out = applyOnce(text, fix, ctx);
+  return out === null || out === text ? null : out;
+}
+
+function applyOnce(text: string, fix: Fix, ctx: string): string | null {
   if ("find" in fix) {
-    if (!text.includes(fix.find) && text.includes(fix.replace)) return null;
+    if (text.includes(fix.replace)) return null;
     const count = text.split(fix.find).length - 1;
     if (count !== 1) throw new Error(`[${ctx}] cụm cần sửa khớp ${count} chỗ, cần đúng 1: ${fix.find.slice(0, 80)}`);
     return text.replace(fix.find, () => fix.replace);
