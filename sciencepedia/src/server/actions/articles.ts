@@ -8,6 +8,7 @@ import { intakeCover } from "@/lib/cover-intake";
 import { fillCoverAlt } from "@/server/cover-alt";
 import { articleSchema, type ArticleInput } from "@/lib/validations";
 import { readingTime, slugify } from "@/lib/utils";
+import { parseSketchfabId } from "@/lib/sketchfab";
 import { removeArticle, syncArticle } from "@/lib/meili";
 import { revalidateArticles } from "@/server/revalidate-articles";
 import type { ActionResult } from "@/server/actions/types";
@@ -59,6 +60,7 @@ function normalise(input: ArticleInput) {
     coverImageCreditEn: input.coverImageCreditEn?.trim() || null,
     coverImageAlt: input.coverImageAlt?.trim() || null,
     coverImageAltEn: input.coverImageAltEn?.trim() || null,
+    sketchfabModelId: parseSketchfabId(input.sketchfabModelId),
     categoryId: input.categoryId,
     status: input.status,
     featured: input.featured,
