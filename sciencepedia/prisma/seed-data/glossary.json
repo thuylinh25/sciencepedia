@@ -111,6 +111,7 @@
     ],
     "usedIn": [
       "20-ngoi-sao-sang-nhat-bau-troi-dem",
+      "bi-an-bau-troi-dem-tai-sao-ngoi-sao-lap-lanh-con-hanh-tinh-thi-khong",
       "co-hoc-luong-tu-the-gioi-ky-la-phia-sau-vat-chat",
       "da-vu-tru-bon-cap-do-va-mot-cau-hoi-kho",
       "giai-ma-nhung-khoang-trong-rong-voids-trong-vu-tru",
@@ -231,6 +232,7 @@
     ],
     "usedIn": [
       "ban-khong-chi-song-trong-vu-tru-ban-la-mot-phan-cua-no",
+      "bi-an-bau-troi-dem-tai-sao-ngoi-sao-lap-lanh-con-hanh-tinh-thi-khong",
       "cac-sao-toi-co-the-da-de-lai-tieng-vong-duoi-dang-song-hap-dan-khap-vu-tru",
       "hanh-trinh-cua-photon-chuyen-di-100000-nam-tu-loi-mat-troi-den-trai-dat",
       "ngoi-sao-cau-tao-va-vong-doi",
@@ -359,6 +361,7 @@
       "20-ngoi-sao-sang-nhat-bau-troi-dem",
       "ban-khong-chi-song-trong-vu-tru-ban-la-mot-phan-cua-no",
       "big-bang-vu-tru-da-dien-ra-the-nao-trong-138-ti-nam",
+      "cai-chet-duoi-goc-nhin-tien-hoa-vi-sao-tu-nhien-khong-thiet-ke-chung-ta-de-song-mai",
       "ho-den-noi-hinh-hoc-cua-khong-gian-sup-do",
       "ngoi-sao-cau-tao-va-vong-doi",
       "nhung-lan-dai-tuyet-chung-co-lien-quan-toi-hanh-trinh-cua-he-mat-troi-trong-ngan-ha",
@@ -1222,6 +1225,7 @@
     "reviewedAt": "2026-09-21",
     "notes": "Duyet accuracy gate dot 3 boi science-editor, 2026-09-21. Reviewer tu tai lai toan bo URL nguon trong cung ngay va doi chieu tung menh de Viet-Anh. CAT 2 menh de khong nguon: (a) '...va cho phep sao chep' - ca hai trang nguon deu KHONG noi bat cap base la co so cua sao chep, day la he qua tu rut ra (quy tac 14); (b) '...nen cho moi thu con lai trong di truyen hoc phan tu' - danh gia chu khong phai khang dinh co nguon (quy tac 1). THAY bang kich thuoc chuoi xoan, nguyen van OpenStax 14.2. DA XAC NHAN nguyen van OpenStax 14.2: hai lien ket hydro A-T va ba C-G; nguoc chieu 3'-5'; xoan phai do Watson-Crick de xuat. DA XAC NHAN nguyen van NHGRI: bon base A/C/G/T, quy luat bat cap, 'attached to each sugar'.",
     "usedIn": [
+      "bi-an-di-truyen-nhung-gi-con-trai-thua-huong-tu-me",
       "crispr-cay-keo-phan-tu-den-tu-vi-khuan",
       "vu-tru-khong-bao-gio-dung-yen-chuyen-dong-la-trang-thai-tu-nhien-cua-moi-thu"
     ]
@@ -1255,6 +1259,8 @@
     "reviewedAt": "2026-09-21",
     "notes": "Duyet accuracy gate dot 3 boi science-editor, 2026-09-21. Reviewer tu tai lai toan bo URL nguon trong cung ngay va doi chieu tung menh de Viet-Anh. CAT cau 'Con so ay nho hon nhieu so voi hinh dung thong thuong ve do phuc tap cua co the nguoi': khang dinh ve truc giac cua nguoi doc ma khong nguon nao noi, va no cham vao mot tranh luan co that (g-value paradox) ma nguon khong mo (quy tac 1). SUA 'lam phan lon cong viec trong CO THE' thanh 'trong TE BAO' - NHGRI Protein viet 'critical to most of the work done by CELLS', con 'within the body' la cum cua trang Gene noi ve chuc nang khac nhau; ban cu han hai cum tu hai trang thanh mot khang dinh khong trang nao phat bieu. DA XAC NHAN nguyen van NHGRI: 'approximately 20,000 protein-coding genes' - hedge 'khoang' giu dung.",
     "usedIn": [
+      "ban-thiet-ke-chung-cua-su-song-vi-sao-cac-loai-dong-vat-co-cau-tao-giong-nhau",
+      "bi-an-di-truyen-nhung-gi-con-trai-thua-huong-tu-me",
       "cai-chet-duoi-goc-nhin-tien-hoa-vi-sao-tu-nhien-khong-thiet-ke-chung-ta-de-song-mai",
       "crispr-cay-keo-phan-tu-den-tu-vi-khuan",
       "he-mien-dich-nhan-dien-mot-virus-bang-cach-nao",
@@ -1529,6 +1535,7 @@
     "reviewedAt": "2026-09-21",
     "notes": "Duyet accuracy gate dot 3 boi science-editor, 2026-09-21. Reviewer tu tai lai toan bo URL nguon trong cung ngay va doi chieu tung menh de Viet-Anh. BA SUA. (1) Quy tac 3, rot hedge, va lech Viet-Anh: ban tieng Anh giu 'placebos MAY be helpful', ban tieng Viet viet 'gia duoc VAN CO ICH ngay ca khi...' - mat chu 'may' cua NCCIH. Da tra lai 'CO THE'. Day la menh de duy nhat trong ca dot ma hai ban ngon ngu noi khac nhau ve muc do chac chan.\n(2) Quy tac 12: cat 'Do la ly do hieu ung nay xuat hien trong nhieu loai can thiep khac nhau.' NCCIH khong noi cau do, va no bien mot dinh nghia thanh mot khang dinh nhan qua cong mot khang dinh thuc nghiem ve pham vi.\n(3) Doan 3 cu la CHO REVIEWER DOC, khong phai cho nguoi doc: 'Trang khong khang dinh co che nao khac...', 'cung khong goi y gia duoc thay the duoc dieu tri dua tren bang chung'. Ba cau do deu DUNG ve mat mo ta trang nguon - reviewer da kiem, NCCIH that su im lang ca hai chuyen. Nhung lap luan tu su im lang cua nguon la mot dang vuot pham vi: nguoi doc nhan ve 'gia duoc khong thay the duoc dieu tri' nhu mot ket luan CO NGUON, trong khi nguon khong he ket luan gi. Da thay bang noi dung huong toi nguoi doc va co nguon: thu nghiem lam sang ngau nhien co doi chung gia duoc, nguyen van tren chinh trang NCCIH ay. Do la thu nguoi doc can nhat va no von nam san trong nguon.\n(4) MOT NGUON: da giai quyet. Them NCATS (mot trung tam cua NIH) cho dinh nghia GIA DUOC - danh tu. Ban cu co mot lech it ai de y: term la 'Gia duoc' (placebo) nhung shortDef chi dinh nghia HIEU UNG gia duoc, nen alias 'placebo' truot phep thu dot 2. Them dinh nghia NCATS vua vap dinh gate hai nguon, vua khop term voi dinh nghia, vua cuu alias 'placebo'. Mot sua, bon van de.\n(5) CATEGORY doi 'Suc khoe' -> 'Y hoc': xem ghi chu chung cua dot.",
     "usedIn": [
+      "grounding-tiep-dia-dieu-gi-thuc-su-xay-ra-khi-di-chan-tran-tren-dat",
       "huyet-dao-va-cham-cuu-khi-cua-dong-y-co-lien-he-gi-voi-khoa-hoc-hien-dai"
     ]
   },
@@ -1563,6 +1570,7 @@
     "reviewedAt": "2026-09-25",
     "notes": "Duyet accuracy gate dot 4 boi science-editor, 2026-09-25. Reviewer tu tai lai toan bo URL nguon trong cung ngay (curl, UA trinh duyet; tat ca 200) va doi chieu tung menh de Viet-Anh. DA XAC NHAN nguyen van JPL Basics of Space Flight ch.2: '23.4 deg from the celestial equator', 'where the Sun and planets appear to travel', 'where the Sun and Moon converge during their eclipses (hence the name)', diem xuan phan la goc xich kinh, 'crosses into the northern hemisphere beginning spring'. DA XAC NHAN PDF Night Sky Network (ASP 2008, pypdf): 'a 26,000-year wobble', 'carried about one constellation to the west'.\nSUA doan 3 (quy tac 14, suy dien lech voi chinh trang nguon). Ban cu viet 'Cac chom sao nam doc hoang dao GOI LA cac chom sao hoang dao' roi 'hoang dao di qua 13 chom, ke ca Xa Phu' - tuc ngam noi Xa Phu la mot chom sao hoang dao. PDF noi nguoc lai: 'Most people think of the 12 classical astronomical constellations of the Zodiac. It is acknowledged that Ophiuchus is the 13th constellation along the ecliptic' - Xa Phu nam tren hoang dao nhung KHONG thuoc 12 chom hoang dao co dien. Ban cu cung noi so 13 voi 'ranh gioi hien dai' bang mot quan he nguon khong dat: PDF dung 'modern boundaries... of varying sizes' de giai thich vi sao Mat Troi o truoc moi chom trong khoang thoi gian KHAC NHAU, doi lap voi moi cung chiem tinh deu 30 do. Nay viet dung hai menh de ay o dung cho nguon dat. Them cau ket 'cung chiem tinh va chom sao thien van khong phai la mot' - nguyen van 'do not confuse astrological signs with astronomical constellations'. '26.000 nam' giu chu 'khoang' (nguon viet tron so, them rao la ha muc chac chan, khong phai nang). Khong co so lieu nao can moc ngay.",
     "usedIn": [
+      "bi-an-bau-troi-dem-tai-sao-ngoi-sao-lap-lanh-con-hanh-tinh-thi-khong",
       "cac-chom-sao-hoang-dao",
       "giai-ma-hanh-tinh-tu-quay-quanh-truc",
       "tai-sao-pluto-khong-con-la-hanh-tinh",
@@ -2004,6 +2012,7 @@
     "reviewedAt": "2026-09-25",
     "notes": "Duyet accuracy gate dot 5 boi science-editor, 2026-09-25. Reviewer tu tai lai toan bo URL nguon trong cung ngay (curl, UA trinh duyet; tat ca 200) va doi chieu tung menh de Viet-Anh. DA XAC NHAN nguyen van NHLBI (What Is High Blood Pressure?, 'Last updated on April 25, 2024'): '120/80 mm Hg', 'The first number is your systolic', 'changes throughout the day based on your activities', bang 5 muc (Normal / Elevated / Stage 1 / Stage 2 / Hypertensive Crisis 'Higher than 180... OR Higher than 120... Contact your provider immediately'), 'high when you have CONSISTENT systolic readings of 130...', 'Symptoms... don't usually occur until it causes serious health problems', 'checked at least once a year'. MedlinePlus: 'highest when your heart beats... between beats, your blood pressure falls', 'usually has no symptoms. So the only way to find out...', 'two or more readings at separate appointments', tre em so theo tuoi/chieu cao/gioi, 'seek medical care right away' o muc khung hoang. Bang muc khop giua hai nguon.\nLUA CHON BO 'HYPERTENSIVE CRISIS' CUA NGUOI SOAN: BAC (quy tac 15). Ca hai nguon dat 5 muc; muc tu ghi 4 muc nhu the do la ca bang. Muc thu 5 cung la muc duy nhat mang loi dan an toan co nguon ('lien he bac si ngay') - bo no khong lam muc tu than trong hon. Nay them dung chu nguon.\nHAI SUA NUA. (1) Quy tac 15, ve doi trong: 'thuong khong co trieu chung' (MedlinePlus) duoc NHLBI noi chat hon 'cho toi khi no gay ra van de suc khoe nghiem trong' (quy tac 13); ban cu bo ve ay. (2) Tu 'consistent' cua NHLBI bi bo; nay ghi. shortDef them 'muc cao nhat' / 'huyet ap ha xuong' cua MedlinePlus de hai so co nghia. Nguong la quy uoc lam sang co the doi, nen ghi moc ngay trang NHLBI (4/2024) ngay trong fullDef; lich kiem lai: khi NHLBI cap nhat trang. Alias tang-huyet-ap/cao-huyet-ap/hypertension: giu - fullDef dinh nghia day du cac muc tang huyet ap.",
     "usedIn": [
+      "bien-dong-thoi-tiet-va-he-tim-mach-vi-sao-thoi-tiet-co-the-anh-huong-den-huyet-ap",
       "stress-tac-dong-len-co-the-nhu-the-nao-va-vi-sao-van-dong-giup-chung-ta-giai-toa",
       "van-dong-thay-doi-tim-va-mach-mau-nhu-the-nao"
     ]
@@ -2459,6 +2468,37 @@
     "notes": "science-editor duyet 2026-09-30. Ca hai DOI xac minh Crossref: Furness 2014 'The Enteric Nervous System and Gastrointestinal Innervation: Integrated Local and Central Control' (Adv Exp Med Biol; doi 10.1007/978-1-4939-0897-4_3, 200); Furness 2012 'The enteric nervous system and neurogastroenterology' (Nat Rev Gastroenterol Hepatol; doi 10.1038/nrgastro.2012.32). Abstract doc qua Europe PMC (EXT_ID 24997029 va 22392290).\nMENH DE 'khoang 200-600 trieu no-ron / hai dam roi myenteric+submucosal / dam roi co ruot lien tuc tu thuc quan tren': Furness 2014 abstract NGUYEN VAN 'The ENS in human contains 200-600 million neurons, distributed in many thousands of small ganglia, the great majority of which are found in two plexuses, the myenteric and submucosal plexuses. The myenteric plexus forms a continuous network that extends from the upper esophagus...'. Con so 200-600 trieu lay TRUC TIEP tu bai binh duyet nay (quy tac 6: so co nguon).\nMENH DE 'phoi hop CNS, qua hach giao cam, thong tin hai chieu' + 'muc do CNS/ENS chi phoi thay doi doc ong tieu hoa': Furness 2014 abstract ('works in concert with CNS reflex and command centers and with neural pathways that pass through sympathetic ganglia', 'bidirectional information flow') va Furness 2012 abstract ('the extent to which the ENS or CNS controls digestion differs considerably along the digestive tract'). KHOP.\n'BO NAO THU HAI': dat nhu BIET DANH ('doi khi duoc goi la'), KHONG nhu tuyen bo rang no la mot bo nao; neo vao chinh so no-ron lon + mach tich hop, la co so Furness dua ra. Quy tac 4 (don gian hoa khong lam sai mo hinh): da noi ro 'kha doc lap'/'fairly autonomously' chu khong 'doc lap hoan toan'. Entity he-than-kinh-ruot da co san (brief) nen slug trung khop co y. Alias dang slug.",
     "usedIn": [
       "ruot-he-vi-sinh-vat-va-quyen-luc-cua-bo-nao-thu-hai"
+    ]
+  },
+  {
+    "slug": "khuc-xa",
+    "term": "Khúc xạ",
+    "termEn": "Refraction",
+    "shortDef": "Hiện tượng ánh sáng đổi hướng khi đi từ môi trường này sang môi trường khác. Ánh sáng truyền với tốc độ khác nhau trong các môi trường khác nhau, và chính sự thay đổi tốc độ khi đi vào môi trường mới làm đường đi của nó bị bẻ cong.",
+    "shortDefEn": "The change in direction of light as it passes from one medium to another. Light travels at different speeds in different media, and it is the change in speed on entering a new medium that bends its path.",
+    "fullDef": "Ánh sáng đi chậm hơn trong không khí so với trong chân không, và còn chậm hơn nữa trong nước. Khi ánh sáng đi vào một môi trường có tốc độ truyền khác, sự thay đổi tốc độ ấy làm nó bị bẻ cong. Đặc tính của môi trường quyết định mức làm chậm này gọi là chiết suất: phần sóng đi qua vùng có chiết suất cao hơn bị làm chậm lại.\n\nCác bước sóng khác nhau bị làm chậm ở mức khác nhau, nên chúng lệch đi theo những góc khác nhau. Vì thế khi toàn bộ dải ánh sáng nhìn thấy đi qua lớp thuỷ tinh của một lăng kính, các bước sóng tách ra thành các màu cầu vồng.\n\nChiết suất không chỉ khác nhau giữa các chất mà còn thay đổi ngay trong không khí: chiết suất của không khí phụ thuộc vào mật độ của nó. Khi các lớp khí có nhiệt độ, và do đó mật độ, khác nhau bị nhiễu loạn trộn vào nhau, chúng tạo thành một màn chiết suất biến đổi liên tục theo không gian và thời gian. Ánh sáng từ một ngôi sao đi qua màn ấy bị làm méo mặt sóng, và độ sáng thu được dao động; mắt thường thấy sự dao động đó là sao lấp lánh.",
+    "fullDefEn": "Light travels slower in air than in a vacuum, and slower still in water. When light enters a medium in which it travels at a different speed, that change in speed bends it. The property of a medium that sets how much it slows light is its refractive index: the part of a wave passing through a region of higher refractive index is held back.\n\nDifferent wavelengths are slowed by different amounts, so they bend at different angles. That is why, when the full spectrum of visible light passes through the glass of a prism, the wavelengths separate into the colours of the rainbow.\n\nRefractive index differs not only between substances but also within air itself: the refractive index of air depends on its density. When turbulence mixes layers of air at different temperatures, and hence different densities, it forms a screen of refractive index that varies continuously in space and time. Light from a star passing through that screen has its wavefront distorted and its received brightness fluctuates; to the naked eye that fluctuation is seen as twinkling.",
+    "aliases": [
+      "khuc-xa-anh-sang",
+      "refraction"
+    ],
+    "category": "Vật lý",
+    "sources": [
+      {
+        "title": "Wave Behaviors",
+        "publisher": "NASA Science",
+        "url": "https://science.nasa.gov/ems/03_behaviors/"
+      },
+      {
+        "title": "Atmospheric scintillation in astronomical photometry (Osborn, Föhring, Dhillon & Wilson, Monthly Notices of the Royal Astronomical Society 452: 1707–1716, 2015)",
+        "publisher": "Monthly Notices of the Royal Astronomical Society",
+        "url": "https://doi.org/10.1093/mnras/stv1400"
+      }
+    ],
+    "verdict": "PASS",
+    "notes": "science-editor duyet 2026-10-12. Ca hai nguon tai lai va doc trong ngay (curl, HTTP 200).\nNGUON 1 - NASA Science 'Wave Behaviors' (https://science.nasa.gov/ems/03_behaviors/), muc Refraction, NGUYEN VAN: 'Refraction is when light waves change direction as they pass from one medium to another. Light travels slower in air than in a vacuum, and even slower in water. As light travels into a different medium, the change in speed bends the light. Different wavelengths of light are slowed at different rates, which causes them to bend at different angles. For example, when the full spectrum of visible light travels through the glass of a prism, the wavelengths are separated into the colors of the rainbow.'\nNGUON 2 - Osborn et al. 2015. DOI 10.1093/mnras/stv1400 xac minh qua api.crossref.org (title 'Atmospheric scintillation in astronomical photometry', MNRAS 452, tr. 1707-1716, tac gia Osborn, Fohring, Dhillon, Wilson). Ban toan van doc tu arXiv 1506.06921 (pdf, 11 trang). Muc 2 NGUYEN VAN: 'Optical turbulence is caused by the mechanical mixing of layers of air with different temperatures and hence density. The refractive index of air depends on its density and so turbulence at a boundary of air masses with different temperatures creates a continuous screen of spatially and temporally varying refractive indices.' / 'The first effect is to deform the wavefront by retarding the sections passing through regions of higher refractive index.' / '...locally focus and defocus the wavefront, which results in spatial intensity fluctuations ... This is known as scintillation.' Muc 1: 'regions of turbulence cause intensity fluctuations (seen as twinkling by the naked eye) called scintillation.'\nDOI CHIEU TUNG MENH DE:\n(1) shortDef 'anh sang doi huong khi di tu moi truong nay sang moi truong khac' = NASA cau 1. KHOP.\n(2) 'toc do khac nhau trong cac moi truong; su thay doi toc do khi di vao moi truong moi lam duong di bi be cong' = NASA cau 2-3. KHOP. Co y KHONG viet 'o mat phan cach' de khong loai tru truong hop chiet suat bien doi lien tuc (doan 3).\n(3) 'cham hon trong khong khi so voi chan khong, cham hon nua trong nuoc' = NASA cau 2 nguyen y. KHOP. Khong dua so (c, n=1,33...) vi khong nguon nao trong goi neu.\n(4) 'chiet suat: phan song di qua vung chiet suat cao hon bi lam cham lai' = Osborn 'retarding the sections passing through regions of higher refractive index'. KHOP. KHONG dinh nghia chiet suat la ti so c/v: dung ve vat ly nhung khong nguon nao trong goi noi nguyen van, nen giu o muc nguon noi (quy tac 'don gian hoa khong lam sai': cau hien tai khong tao mo hinh sai, chi it hon).\n(5) 'buoc song khac nhau bi lam cham khac nhau, lech theo goc khac nhau; lang kinh tach thanh mau cau vong' = NASA cau 4-5. KHOP. 'toan bo dai anh sang nhin thay' giu dung 'full spectrum of visible light', khong doi thanh 'anh sang trang'. KHONG noi day la co che tao cau vong ngoai troi: NASA chi noi 'colors of the rainbow' cho lang kinh.\n(6) 'chiet suat khong khi phu thuoc mat do; lop khi khac nhiet do (va do do mat do) bi nhieu loan tron, tao man chiet suat bien doi lien tuc theo khong gian va thoi gian' = Osborn muc 2 cau 1-2. KHOP.\n(7) 'anh sang sao bi meo mat song, do sang dao dong, mat thuong thay la sao lap lanh' = Osborn muc 2 (deform the wavefront; intensity fluctuations = scintillation) + muc 1 ('seen as twinkling by the naked eye'). KHOP. Khong nhac do lon dao dong (~0,1-1%) de muc tu khong mang so phai tai kiem.\nKHONG dung OpenStax/MedlinePlus (giay phep cam AI doc). Khong so lieu khong nguon. Khong reviewedBy/reviewedAt: muc tu de trong byline = chua ky (docs/content-rules.md, Byline nguoi duyet). Trung lap: da ra 68 muc, khong slug/alias nao chua khuc-xa/refraction/chiet-suat. Alias dang slug. usedIn de rong, dong bo bang glossary:usedin.",
+    "usedIn": [
+      "bi-an-bau-troi-dem-tai-sao-ngoi-sao-lap-lanh-con-hanh-tinh-thi-khong"
     ]
   }
 ]
