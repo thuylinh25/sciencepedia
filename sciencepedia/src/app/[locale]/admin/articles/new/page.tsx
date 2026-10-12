@@ -45,6 +45,7 @@ export default async function NewArticlePage({
           coverImageCreditEn: "",
           coverImageAlt: "",
           coverImageAltEn: "",
+          sketchfabModelId: "",
           categoryId: categories[0]?.id ?? "",
           tagIds: [],
           status: "DRAFT",

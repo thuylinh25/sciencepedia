@@ -11,6 +11,7 @@ import { useRouter } from "@/i18n/navigation";
 import { articleSchema, type ArticleInput } from "@/lib/validations";
 import { readingTime, slugify } from "@/lib/utils";
 import { isAltTiedToOldCover } from "@/lib/cover-alt";
+import { parseSketchfabId } from "@/lib/sketchfab";
 import { createArticle, updateArticle } from "@/server/actions/articles";
 import { ArticleContent } from "@/components/article/article-content";
 import { ImageUpload } from "@/components/admin/image-upload";
@@ -71,6 +72,7 @@ const FIELD_ORDER: (keyof ArticleInput)[] = [
   "coverImageCreditEn",
   "coverImageAlt",
   "coverImageAltEn",
+  "sketchfabModelId",
   "tagIds",
   "status",
   "featured",
@@ -267,6 +269,7 @@ export function ArticleForm({
   const coverImage = watch("coverImage");
   const coverAlt = watch("coverImageAlt");
   const coverAltEn = watch("coverImageAltEn");
+  const sketchfabId = parseSketchfabId(watch("sketchfabModelId"));
   const showAiNote =
     (Boolean(aiAlt.vi) && coverAlt === aiAlt.vi) ||
     (Boolean(aiAlt.en) && coverAltEn === aiAlt.en);
@@ -727,6 +730,39 @@ export function ArticleForm({
                 </p>
               ) : null}
             </div>
+          </div>
+
+          {/* Mô hình 3D: dán link Sketchfab nào cũng được, tách id ở `parseSketchfabId`.
+              Xem trước ngay tại đây để người biên tập biết dán đúng model trước khi Lưu —
+              trang bài là ISR, sai rồi mới thấy thì phải chờ làm mới. */}
+          <div className="space-y-2 rounded-2xl border bg-card p-5">
+            <Label htmlFor="sketchfabModelId">{t("form.model3d")}</Label>
+            <Input
+              id="sketchfabModelId"
+              placeholder={t("form.model3dHint")}
+              className="text-xs"
+              {...register("sketchfabModelId")}
+            />
+            {errors.sketchfabModelId ? (
+              <p className="text-xs text-destructive">
+                {errors.sketchfabModelId.message}
+              </p>
+            ) : (
+              <p className="text-xs text-muted-foreground">
+                {t("form.model3dNote")}
+              </p>
+            )}
+            {sketchfabId && (
+              <div className="overflow-hidden rounded-lg border" style={{ aspectRatio: "16 / 9" }}>
+                <iframe
+                  title={t("form.model3d")}
+                  src={`https://sketchfab.com/models/${sketchfabId}/embed`}
+                  className="h-full w-full"
+                  allow="autoplay; fullscreen; xr-spatial-tracking"
+                  allowFullScreen
+                />
+              </div>
+            )}
           </div>
 
           <div className="flex gap-2">

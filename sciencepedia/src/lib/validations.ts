@@ -1,6 +1,7 @@
 import { z } from "zod";
 
 import { findDraftArtifacts } from "./draft-artifacts";
+import { parseSketchfabId } from "./sketchfab";
 import { isAllowedImageUrl } from "./utils";
 
 /** Chặn lúc lưu, cả bản nháp: không có trạng thái nào mà dấu này hợp lệ. */
@@ -75,6 +76,15 @@ export const articleSchema = z.object({
   // hình đọc trọn chuỗi, không có nút bỏ qua giữa chừng.
   coverImageAlt: z.string().max(250).optional().or(z.literal("")),
   coverImageAltEn: z.string().max(250).optional().or(z.literal("")),
+  // Mô hình 3D Sketchfab. Ô nhận cả link trang model, link nhúng hay đoạn <iframe> — action
+  // tách ra id (`parseSketchfabId`), CSDL chỉ giữ id. Dán thứ không tách được thì báo ngay ở
+  // form, đừng để Lưu xong mới thấy khối 3D biến mất.
+  sketchfabModelId: z
+    .string()
+    .max(2000)
+    .refine((v) => !v.trim() || parseSketchfabId(v) !== null, "Không nhận ra link Sketchfab — dán link trang model (sketchfab.com/3d-models/…), không dùng link rút gọn skfb.ly")
+    .optional()
+    .or(z.literal("")),
   categoryId: z.string().min(1, "Chọn danh mục"),
   // Không dùng .default() ở các schema gắn với form: nó khiến kiểu đầu vào và
   // đầu ra của Zod lệch nhau, và zodResolver sẽ báo lỗi kiểu với useForm.
