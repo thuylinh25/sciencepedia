@@ -1320,3 +1320,13 @@ Bối cảnh: bài lên trang qua form /admin ngày 2026-10-12 với 0 nguồn, 
 - Cũ: "cơ thể được thiết kế để trải qua những đợt căng thẳng ngắn hạn". Mới: phản ứng tiến hóa như một cơ chế sinh tồn. Căn cứ: Harvard Health.
 - Thêm: mục "Khi nào nên đi khám" và danh sách cách ứng phó theo NIMH.
 - Sửa nhỏ: "kháng cortisol" → đề kháng thụ thể glucocorticoid (Cohen 2012); danh sách bệnh liên quan viêm mạn tính theo Furman 2019; ba giai đoạn của Selye rút từ thí nghiệm trên chuột (Rochette 2023) và khái niệm gánh nặng thích nghi (McEwen 2017); bỏ số "vài phút đến vài giờ", "tổn thương vi thể", noradrenaline; "mãn tính" → "mạn tính", "tiểu đường tuýp 2" → "đái tháo đường type 2"; viết hoa kiểu câu; thêm link giữa câu và "Đọc thêm".
+
+## 2026-10-12 — `hoi-chung-thieu-mau-khi-co-the-van-hanh-nhu-mot-cai-cay-thieu-nuoc`: cơ chế tự thêm, cảnh báo sắt, mục đi khám
+
+Bối cảnh: bài lên trang qua form /admin ngày 2026-10-12 với 0 nguồn, `factCheck = PENDING`. Phiếu `docs/content/checks/2026-10-12/<slug>.md` trả SỬA. Áp bằng `npm run corrections:1012g -- --write`; bài giữ PUBLISHED; chưa có bản en. 9 nguồn bậc 2 (NHLBI ×7, NHS ×2). Thẩm định lại sau 24 tháng.
+
+- Cũ: thiếu oxy làm cơ "chuyển sang chuyển hóa kỵ khí, tạo ra acid lactic" → đau mỏi, chuột rút, "đó là lý do" người thiếu máu mệt kéo dài; các cơ quan "ưu tiên theo thứ tự", thiếu máu gây "triệu chứng thần kinh sớm nhất"; não 2% trọng lượng, 20% oxy. Mới: thiếu máu làm cơ thể không nhận đủ máu giàu oxy, việc thiếu oxy có thể gây mệt, yếu; triệu chứng tim, não theo danh sách của NHLBI, NHS; bỏ con số 2%/20% vì chưa đọc được nguồn. Căn cứ: NHLBI; NHS.
+- Cũ: mục bổ sung sắt chỉ nói cần xác định nguyên nhân. Mới: thêm "viên sắt thường không dùng cho người không thiếu sắt vì thừa sắt có thể hại các cơ quan" và "trẻ nhỏ uống quá liều sắt có thể tử vong"; thiếu máu nhẹ có thể không cần điều trị. Căn cứ: NHLBI (Treatment); NHS.
+- Cũ: "móng tay dễ gãy, tóc khô và dễ rụng" là dấu hiệu chung của thiếu máu. Mới: triệu chứng chung theo NHLBI; rụng tóc, móng đổi dạng hình thìa và các dấu hiệu khác là dấu hiệu ít gặp của thiếu máu do thiếu sắt. Căn cứ: NHS.
+- Thêm: mục "Khi nào nên đi khám" (nghi thiếu máu, kinh nguyệt ra nhiều theo ngưỡng của NHLBI; gọi cấp cứu khi đau ngực theo NHS); nhóm nguyên nhân bệnh mạn tính (bệnh thận mạn, viêm, ung thư, tự miễn, hoá trị), thiếu sắt do hấp thu kém và do NSAID; suy tuỷ ảnh hưởng cả hồng cầu, bạch cầu, tiểu cầu.
+- Sửa nhỏ: bỏ "phì đại cơ tim", "tổn thương đa cơ quan", chi tiết thực vật không nguồn và emoji trong bảng; viết hoa kiểu câu; thêm link giữa câu và "Đọc thêm".
