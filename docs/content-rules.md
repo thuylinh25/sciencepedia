@@ -421,11 +421,31 @@ bay, bản ba mới đạt.
 Với thứ có hình hài, "typecheck xanh" không phải bằng chứng nó đúng. Kết xuất ra,
 xem ở **đúng kích thước sẽ dùng**, rồi mới giao.
 
+## Thuật ngữ đã chốt — một khái niệm, một cách gọi
+
+Chủ sản phẩm chốt 2026-10-14, sau khi phiếu thẩm định đợt ấy đếm thấy kho gọi cùng
+một thứ bằng nhiều tên:
+
+| Dùng | Không dùng |
+|---|---|
+| nơron | neuron, nơ-ron |
+| hố đen | lỗ đen |
+| lý thuyết dây | thuyết dây |
+
+"Nơron" được chọn dù lúc chốt "neuron" đang chiếm đa số trong bài (6 bài so với 2):
+đây là quyết định của chủ sản phẩm, không phải phép đếm — đừng "sửa lại cho theo đa
+số". Áp cho mọi chữ tiếng Việt người đọc thấy: thân bài, tóm tắt, SEO, định nghĩa
+glossary, nhãn bầu trời. Bản tiếng Anh giữ *neuron*, *black hole*, *string theory*.
+Tên riêng không đổi theo luật này: "lỗ trắng", "lỗ sâu" là thuật ngữ khác, chưa chốt.
+
+`src/lib/terminology.test.ts` quét glossary và nhãn bầu trời để chặn dạng cũ quay lại.
+Bài trong CSDL không có test: phiếu thẩm định bài mới phải soát bảng này (mục E).
+
 ## Tên thiên thể — từ loại tiếng Việt, tên riêng quốc tế
 
 Nhãn hiển thị của một thiên thể ghép từ hai phần: từ chỉ loại bằng tiếng Việt,
 rồi tên riêng giữ nguyên dạng quốc tế. "Thiên hà Andromeda", "Tinh vân Orion",
-"Cụm sao Pleiades", "Sao Betelgeuse", "Lỗ đen Sagittarius A*".
+"Cụm sao Pleiades", "Sao Betelgeuse", "Hố đen Sagittarius A*".
 
 Lý do là chuyện tra cứu chứ không phải thẩm mỹ. Tên Hán-Việt ("Tiên Nữ", "Lạp
 Hộ", "Tua Rua") không dẫn tới đâu cả: gõ vào SIMBAD, Stellarium hay bất kỳ ứng

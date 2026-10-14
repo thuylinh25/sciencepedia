@@ -147,9 +147,9 @@ Mục tiêu của nó là mô tả thành công cả:
 
 Hai ứng viên được biết đến nhiều nhất hiện nay là:
 
-### Thuyết dây (*string theory*)
+### Lý thuyết dây (*string theory*)
 
-Thuyết dây cho rằng các hạt cơ bản không phải là những điểm đơn lẻ mà là các "dây" cực nhỏ dao động.
+Lý thuyết dây cho rằng các hạt cơ bản không phải là những điểm đơn lẻ mà là các "dây" cực nhỏ dao động.
 
 Trong một số hướng nghiên cứu của lý thuyết này, điểm kỳ dị có thể được thay thế bằng các cấu trúc lượng tử hữu hạn thay vì những giá trị vô hạn. Một ví dụ là đề xuất *fuzzball* của nhà vật lý Samir Mathur, trong đó phần bên trong hố đen được hình dung lại từ các trạng thái vi mô của dây.
 
@@ -191,7 +191,7 @@ Bốn bài PUBLISHED + `factCheck = PASSED` (truy vấn CSDL 2026-10-14), chưa 
 ## E. Việc chưa làm / cần người
 
 1. **Ảnh bìa — giấy phép.** Góc phải dưới ảnh có khung mờ chồng lên, bên trong có chữ "12.8": lớp phủ của bên thứ ba. Ghi công "vchalup / Adobe Stock" chỉ đúng nếu tổ chức có giấy phép Adobe Stock cho ảnh này **và** tệp đang dùng là tệp tải từ Adobe Stock. Nếu không chắc: thay ảnh. Alt (engine không sửa trường này): sửa "dầy đặc" → "dày đặc".
-2. **Thuật ngữ** (chủ sản phẩm chốt): "thuyết dây" (bài này) / "lý thuyết dây" (`seoKeywords` của chính bài) — kho chưa bài nào khác dùng; D giữ "thuyết dây" theo bài. Kho dùng cả "hố đen" (bài này, `ho-den-…`) và "lỗ đen" (`lo-trang-va-lo-sau-…`) — đề xuất thống nhất "hố đen". Kho chưa có mục từ "Điểm kỳ dị", "Hấp dẫn lượng tử", "Độ dài Planck" — đề xuất soạn qua `glossary.json` + science-editor; khi seed xong gắn `[[…]]` bằng một lượt sửa chữ riêng.
+2. **Thuật ngữ** — chủ sản phẩm chốt 2026-10-14: "lý thuyết dây", "hố đen", "nơron" (docs/content-rules.md, "Thuật ngữ đã chốt"); D6 đã sửa theo, áp toàn kho bằng `corrections:1014b`. Kho chưa có mục từ "Điểm kỳ dị", "Hấp dẫn lượng tử", "Độ dài Planck" — đề xuất soạn qua `glossary.json` + science-editor; khi seed xong gắn `[[…]]` bằng một lượt sửa chữ riêng.
 3. **Link vào** (gate: 0): bài Big Bounce (cùng đợt) link sang bài này sau đính chính. Thêm link từ bài PASSED `ho-den-noi-hinh-hoc-cua-khong-gian-sup-do` (câu "Hố đen là nơi thuyết tương đối rộng và cơ học lượng tử buộc phải gặp nhau…") — làm sau khi ký, như các đợt trước.
 4. **Entity** (gate chặn): gợi ý "Điểm kỳ dị hấp dẫn" (*gravitational singularity*, Wikidata — tra lúc làm). Làm sau khi ký.
 5. **Kiểm máy (bước 1b)**: `publish:check` — CHẶN: factCheck PENDING; không byline; 0/3 nguồn; 0/3 link nội bộ; 0 link vào; chưa entity. Ảnh có ghi công. `glossary:check`: bài không có `[[…]]` trước đính chính. Link vào bài này: không có.

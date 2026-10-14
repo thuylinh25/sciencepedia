@@ -232,7 +232,7 @@ Butyrate đặc biệt quan trọng: nó là nguồn năng lượng chính cho t
 
 ## Trục ruột – não
 
-Ruột có mạng lưới khoảng 500 triệu neuron riêng (hệ thần kinh ruột) và trao đổi tín hiệu với não qua dây thần kinh phế vị, qua hormone, và qua các chất chuyển hoá do vi khuẩn tạo ra.
+Ruột có mạng lưới khoảng 500 triệu nơron riêng (hệ thần kinh ruột) và trao đổi tín hiệu với não qua dây thần kinh phế vị, qua hormone, và qua các chất chuyển hoá do vi khuẩn tạo ra.
 
 Đây là lĩnh vực đang rất sôi động — nhưng cũng là nơi truyền thông hay đi trước bằng chứng. Phần lớn kết quả ấn tượng đến từ chuột vô trùng, và việc ngoại suy sang người vẫn còn nhiều khoảng trống. Hãy đọc mọi tuyên bố kiểu "vi khuẩn ruột gây ra bệnh X" với thái độ dè dặt: rất nhiều nghiên cứu chỉ cho thấy **tương quan**.
 
