@@ -164,7 +164,7 @@ Bốn bài PUBLISHED + `factCheck = PASSED` (truy vấn CSDL 2026-10-14), chưa 
    - `coverImageCredit`: `Ảnh: iStock/ktsimage` — với điều kiện tổ chức có giấy phép iStock cho ảnh này.
    - `coverImageCreditEn`: `Image: iStock/ktsimage`.
    - `coverImageAlt` (đã xem ảnh), đề xuất: `Hình minh họa 3D các tế bào thần kinh màu xám bạc với nhiều nhánh, những tia sáng như tia điện chạy dọc theo các sợi nhánh trên nền xanh thẫm.`
-2. **Thuật ngữ** (chủ sản phẩm chốt): kho có 6 bài PASSED viết "neuron" (`nhung-su-gia-hoa-hoc-…`, `gaba-…`, `thuoc-gay-me-…`, `khi-tim-ngung-dap-…`, `vi-sao-chung-ta-khong-the-nho-…`, …), 1 bài PASSED và bài này viết "nơron" (`ruot-he-vi-sinh-vat-…`). D giữ "nơron" theo bài. Đề xuất thống nhất "neuron" (đa số). Kho chưa có mục từ "Điện thế hoạt động", "Synapse" — đề xuất soạn qua `glossary.json` + science-editor. `[[chất dẫn truyền thần kinh]]` đã có mục từ.
+2. **Thuật ngữ** — chủ sản phẩm chốt 2026-10-14: "nơron" (docs/content-rules.md, "Thuật ngữ đã chốt"); áp toàn kho bằng `corrections:1014b`. Kho chưa có mục từ "Điện thế hoạt động", "Synapse" — đề xuất soạn qua `glossary.json` + science-editor. `[[chất dẫn truyền thần kinh]]` đã có mục từ.
 3. **Link vào** (gate: 0): đề xuất thêm link từ bài PASSED `nhung-su-gia-hoa-hoc-dieu-khien-hoat-dong-cua-nao-bo` (câu "Khi một xung điện chạy tới đầu neuron…", neo "xung điện") — làm sau khi ký.
 4. **Entity** (gate chặn): gợi ý "Điện thế hoạt động" (*action potential*, Wikidata — tra lúc làm). Làm sau khi ký.
 5. **Kiểm máy (bước 1b)**: `publish:check` — CHẶN: factCheck PENDING; không byline; 0/3 nguồn; 0/3 link nội bộ; 0 link vào; chưa entity; CẢNH: ảnh bìa chưa ghi công. `glossary:check`: bài không có `[[…]]` trước đính chính. Link vào bài này: không có.

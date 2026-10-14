@@ -310,7 +310,7 @@ export const SKY_TARGETS: SkyTarget[] = [
      * TRONG nó hoặc được nhìn xuyên qua nó. Người mở bản đồ lần đầu không có
      * chỗ nào để thấy mình đang đứng ở đâu.
      *
-     * Khác `sgr-a-star` ở quy mô, không ở toạ độ: cùng tâm, nhưng lỗ đen là
+     * Khác `sgr-a-star` ở quy mô, không ở toạ độ: cùng tâm, nhưng hố đen là
      * một điểm 0,3° còn đây là 90° — gần nửa bầu trời, đủ để thấy dải Ngân Hà
      * trải ngang chứ không phải một đám sao sáng.
      *
@@ -405,7 +405,7 @@ export const SKY_TARGETS: SkyTarget[] = [
     constellation: "Virgo",
     constellationEn: "Virgo",
     blurb:
-      "Thiên hà elip khổng lồ trong chòm Virgo, ở tâm cụm thiên hà cùng tên, cách khoảng 54 triệu năm ánh sáng. Đáng xem vì lỗ đen siêu khối lượng của nó là vật thể đầu tiên được chụp ảnh trực tiếp, công bố năm 2019.",
+      "Thiên hà elip khổng lồ trong chòm Virgo, ở tâm cụm thiên hà cùng tên, cách khoảng 54 triệu năm ánh sáng. Đáng xem vì hố đen siêu khối lượng của nó là vật thể đầu tiên được chụp ảnh trực tiếp, công bố năm 2019.",
     blurbEn:
       "A giant elliptical galaxy in the constellation Virgo, at the heart of the cluster of the same name, about 54 million light-years away. Worth a look because its supermassive black hole was the first ever imaged directly, published in 2019.",
     visibility: "SMALL_SCOPE",
@@ -491,7 +491,7 @@ export const SKY_TARGETS: SkyTarget[] = [
   {
     id: "sgr-a-star",
     catalogId: "Sgr A*",
-    name: "Lỗ đen Sagittarius A*",
+    name: "Hố đen Sagittarius A*",
     nameEn: "Sagittarius A*",
     aliases: ["Sgr A*", "Sagittarius A*", "Sagittarius A star", "Nhân Mã A*"],
     kind: "BLACK_HOLE",
@@ -504,7 +504,7 @@ export const SKY_TARGETS: SkyTarget[] = [
     constellation: "Sagittarius",
     constellationEn: "Sagittarius",
     blurb:
-      "Lỗ đen siêu khối lượng ở tâm Ngân Hà, về hướng chòm Sagittarius, cách khoảng 26.000 năm ánh sáng. Đáng xem vì đây là lỗ đen siêu khối lượng gần ta nhất — khối lượng chừng 4 triệu lần Mặt Trời — và ảnh chụp trực tiếp được công bố năm 2022.",
+      "Hố đen siêu khối lượng ở tâm Ngân Hà, về hướng chòm Sagittarius, cách khoảng 26.000 năm ánh sáng. Đáng xem vì đây là hố đen siêu khối lượng gần ta nhất — khối lượng chừng 4 triệu lần Mặt Trời — và ảnh chụp trực tiếp được công bố năm 2022.",
     blurbEn:
       "The supermassive black hole at the centre of the Milky Way, towards the constellation Sagittarius, about 26,000 light-years away. It is the closest supermassive black hole to us — some four million solar masses — and its direct image was published in 2022.",
     visibility: "IMAGE_ONLY",
