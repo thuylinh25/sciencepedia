@@ -1330,3 +1330,35 @@ Bối cảnh: bài lên trang qua form /admin ngày 2026-10-12 với 0 nguồn, 
 - Cũ: "móng tay dễ gãy, tóc khô và dễ rụng" là dấu hiệu chung của thiếu máu. Mới: triệu chứng chung theo NHLBI; rụng tóc, móng đổi dạng hình thìa và các dấu hiệu khác là dấu hiệu ít gặp của thiếu máu do thiếu sắt. Căn cứ: NHS.
 - Thêm: mục "Khi nào nên đi khám" (nghi thiếu máu, kinh nguyệt ra nhiều theo ngưỡng của NHLBI; gọi cấp cứu khi đau ngực theo NHS); nhóm nguyên nhân bệnh mạn tính (bệnh thận mạn, viêm, ung thư, tự miễn, hoá trị), thiếu sắt do hấp thu kém và do NSAID; suy tuỷ ảnh hưởng cả hồng cầu, bạch cầu, tiểu cầu.
 - Sửa nhỏ: bỏ "phì đại cơ tim", "tổn thương đa cơ quan", chi tiết thực vật không nguồn và emoji trong bảng; viết hoa kiểu câu; thêm link giữa câu và "Đọc thêm".
+
+## 2026-10-14 — `diem-ky-di-cua-ho-den-noi-hai-tru-cot-vat-ly-va-cham`: gán sai lý thuyết, quan hệ hai trụ cột, tên hấp dẫn lượng tử vòng
+
+Bối cảnh: bài lên trang qua form /admin ngày 2026-10-14 với 0 nguồn, `factCheck = PENDING`. Phiếu `docs/content/checks/2026-10-14/<slug>.md` trả SỬA. Áp bằng `npm run corrections:1014 -- --write`; bài giữ PUBLISHED; chưa có bản en. 10 nguồn: 4 bài báo bậc 1 (abstract; Penrose 1965 chỉ xác minh tồn tại), Nobel 2020, Einstein Online/Viện Max Planck, NIST. Ảnh bìa có lớp phủ của bên thứ ba, chờ người kiểm giấy phép (phiếu mục E). Thẩm định lại sau 36 tháng.
+
+- Cũ: "Theo cơ học lượng tử: … Không gian và thời gian có thể không còn liên tục như trong vật lý cổ điển." Mới: ý tưởng không-thời gian không liên tục là giả thuyết của một số ứng viên hấp dẫn lượng tử, không phải kết luận của cơ học lượng tử thông thường; ở thang Planck, thứ không còn bỏ qua được là hiệu ứng lượng tử của chính hấp dẫn. Căn cứ: Rovelli & Smolin 1995; Einstein Online.
+- Cũ: sơ đồ đầu bài và câu kết "Thuyết Tương đối rộng và Cơ học lượng tử cùng cho những dự đoán chưa thể dung hòa". Mới: thuyết tương đối rộng dự đoán điểm kỳ dị và không còn áp dụng được ở đó; vùng ấy cần cả hai lý thuyết nhưng chưa có lý thuyết hợp nhất. Căn cứ: Nobel 2020 (popular information).
+- Cũ: "Cơ học lượng tử vòng". Mới: hấp dẫn lượng tử vòng (*loop quantum gravity*). Căn cứ: Einstein Online.
+- Cũ: không-thời gian không thể bị nén vô hạn, nên điểm kỳ dị "được thay thế bởi một trạng thái mật độ rất cao nhưng hữu hạn" (nói như đã có cho hố đen). Mới: kết quả cú nảy mới được tính cho Big Bang; với hố đen vẫn đang nghiên cứu. Căn cứ: Ashtekar, Pawlowski & Singh 2006.
+- Thêm: Penrose 1965 chứng minh điểm kỳ dị không phải hệ quả của giả định ngôi sao tròn hoàn hảo; điểm kỳ dị là ranh giới nơi không-thời gian kết thúc, giống điểm tận cùng của thời gian hơn là chấm ở tâm. Căn cứ: Nobel 2020; Einstein Online.
+- Sửa nhỏ: thuyết dây thêm ví dụ fuzzball (Mathur 2005), bỏ "dây năng lượng"; kết luận bỏ "đối tượng thiên văn học"; viết hoa kiểu câu; thêm link giữa câu và "Đọc thêm".
+
+## 2026-10-14 — `tu-big-bang-den-big-bounce-lieu-vu-tru-co-tai-sinh-theo-chu-ky`: thách thức từ năng lượng tối, cú nảy và chu kỳ, vũ trụ học lượng tử vòng
+
+Bối cảnh: bài lên trang qua form /admin ngày 2026-10-14 với 0 nguồn, `factCheck = PENDING`. Phiếu `docs/content/checks/2026-10-14/<slug>.md` trả SỬA. Áp bằng `npm run corrections:1014 -- --write`; bài giữ PUBLISHED; chưa có bản en. 9 nguồn: 5 bài báo bậc 1 (abstract; Ashtekar 2009 toàn văn), Einstein Online, NASA, Berkeley Lab. Ghi công và alt ảnh bìa chờ người (phiếu mục E). Thẩm định lại sau 6 tháng (DESI).
+
+- Cũ: nếu giãn nở tăng tốc tiếp tục, "Kịch bản Big Crunch và Big Bounce trở nên khó xảy ra hơn… một trong những thách thức lớn nhất đối với các mô hình tuần hoàn". Mới: sự tăng tốc nói về tương lai, gây khó cho kịch bản cần Big Crunch, nhưng không kiểm chứng được một cú nảy trong quá khứ; mô hình Steinhardt–Turok cần chính pha tăng tốc; DESI 2025 gợi ý năng lượng tối có thể yếu dần (2,8–4,2σ, chưa tới 5σ). Căn cứ: Steinhardt & Turok 2002; Ashtekar, Pawlowski & Singh 2006; Berkeley Lab.
+- Cũ: sơ đồ "Giãn nở → Cực đại → Co lại → Big Bounce → Chu kỳ mới" ở đầu bài; kết luận Big Bang là "giai đoạn chuyển tiếp giữa các chu kỳ". Mới: Big Bounce là tên chung cho các kịch bản cú nảy; có kịch bản một cú nảy, có kịch bản lặp thành chu kỳ (vd. mô hình đóng của vũ trụ học lượng tử vòng). Căn cứ: Ashtekar 2009.
+- Cũ: "Cơ học lượng tử vòng (Loop Quantum Gravity)"; vũ trụ "co đến một giới hạn cực nhỏ". Mới: hấp dẫn lượng tử vòng và vũ trụ học lượng tử vòng; hiệu ứng hình học lượng tử chi phối từ khoảng 0,01 mật độ Planck, cú nảy ở khoảng 0,41 mật độ Planck; thứ quyết định là mật độ, không phải kích thước. Căn cứ: Ashtekar 2009; Ashtekar & Singh 2011.
+- Cũ: vấn đề entropy "chưa có lời giải được chấp nhận rộng rãi" (không nêu các đề xuất). Mới: thêm lời giải đề xuất của Steinhardt–Turok 2002 (pha tăng tốc làm loãng entropy) và Ijjas–Steinhardt 2019 (kích thước vũ trụ lớn lên sau mỗi chu kỳ); vẫn chưa được chấp nhận rộng rãi.
+- Sửa nhỏ: danh sách chu kỳ gắn với mô hình Steinhardt–Turok, thêm pha tăng tốc; năng lượng tối khoảng 68–70% (NASA); viết hoa kiểu câu; thêm link giữa câu và "Đọc thêm".
+
+## 2026-10-14 — `vi-sao-nao-bo-tao-ra-dien`: bài cụt, synapse hóa học, năng lượng của não
+
+Bối cảnh: bài lên trang qua form /admin ngày 2026-10-14 với 0 nguồn, `factCheck = PENDING`. Phiếu `docs/content/checks/2026-10-14/<slug>.md` trả SỬA. Áp bằng `npm run corrections:1014 -- --write`; bài giữ PUBLISHED; chưa có bản en. 9 nguồn: 4 bài báo bậc 1 (abstract; Herculano-Houzel 2011 toàn văn), NINDS, Queensland Brain Institute, StatPearls ×2, NHS. Ghi công (trường vi rỗng) và alt ảnh bìa chờ người (phiếu mục E). Thẩm định lại sau 36 tháng.
+
+- Cũ: bài dừng giữa câu cuối ("…bên trong não bộ của "). Mới: viết lại mục Kết luận cho trọn.
+- Cũ: sơ đồ "Xung thần kinh → Trao đổi thông tin giữa các nơron"; tóm tắt "mọi suy nghĩ… đều bắt nguồn từ các tín hiệu điện"; kết luận "xung thần kinh giúp nơron giao tiếp với nhau". Mới: nơron dùng tín hiệu điện dọc từng tế bào và chất dẫn truyền thần kinh qua synapse để truyền tin sang tế bào kế tiếp. Căn cứ: NINDS; Queensland Brain Institute.
+- Cũ: năng lượng của não "không dùng để 'suy nghĩ' mà dùng để" duy trì ion, vận hành bơm, truyền xung. Mới: phần lớn năng lượng dành cho chính việc truyền tin; theo ước tính trên não loài gặm nhấm, khoảng 47% cho điện thế hoạt động, 34% cho synapse, 13% cho điện thế nghỉ. Căn cứ: Herculano-Houzel 2011; Attwell & Laughlin 2001.
+- Cũ: tín hiệu điện "cộng hưởng"; năm dải sóng EEG và chức năng (vd. gamma "xử lý thông tin phức tạp"). Mới: các dòng điện cộng gộp, đóng góp lớn nhất từ dòng điện synapse; nhịp sóng khác nhau giữa thức và ngủ; EEG dùng chủ yếu cho động kinh, ngoài ra rối loạn giấc ngủ, viêm não. Căn cứ: Buzsáki và cs. 2012; NHS.
+- Cũ: "tốc độ từ vài mét mỗi giây đến hơn 100 mét mỗi giây"; "mỗi giây, hàng tỷ nơron…". Mới: bỏ khoảng tốc độ (không đọc được nguồn); não người có khoảng 86 tỷ nơron. Căn cứ: Azevedo và cs. 2009.
+- Sửa nhỏ: điện thế nghỉ sinh ra từ ion qua kênh và bơm, bơm natri–kali giữ chênh lệch nồng độ (StatPearls); thêm ngưỡng khoảng -50 mV, pha hồi cực bằng kali, kiểu "tất cả hoặc không" (QBI, StatPearls); viết hoa kiểu câu; thêm link giữa câu và "Đọc thêm".
