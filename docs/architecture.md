@@ -789,6 +789,12 @@ trong bối cảnh mạch/tạng. Mắt, tai, lưỡi, da của atlas ở hệ g
 Hệ viền tách thành cấu trúc con lồng trong vỏ/chất trắng/gian não; một cấu trúc "hệ viền" chung sẽ
 chồng một phần lên ba cấu trúc kia ở góc nhìn Não và vỡ test.
 
+**Hệ cơ nhóm theo ĐỘNG TÁC, không theo vùng** (2026-10-15, theo "Muscular System Views" của atlas):
+nghiêng/xoay/duỗi/gập đầu cổ, hạ hàm, rồi vai/khuỷu/cổ tay/lưng/hông/gối/cổ chân. Một cơ ở nhiều
+động tác nên có cấu trúc từng cơ, mỗi cái lồng trong một khu cơ cũ. science-editor chốt: nhóm chỉ
+gồm cơ làm động tác đó — quạ cánh tay không ở Khuỷu, cánh tay quay không ở Cổ tay, khoeo không ở Cổ
+chân, cơ dưới móng là bối cảnh của Hạ hàm. Đừng "gom lại cho gọn" bằng khu cơ cả khối.
+
 **Bề mặt cơ thể KHÔNG có góc nhìn** (chủ sản phẩm bỏ, 2026-10-15): tab "Theo hệ" không còn chip này;
 da vẫn là lớp ngoài của mô hình và vẫn bật/tắt ở bảng hệ. Bản duyệt mô tả nhóm (môi, tóc) giữ trong tệp
 dữ liệu, `--emit-client` bỏ mục không còn góc nhìn.
