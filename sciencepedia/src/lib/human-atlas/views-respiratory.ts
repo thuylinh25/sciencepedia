@@ -1,4 +1,5 @@
 import type { AtlasViewDef, PartRule } from "./views";
+import { CAROTIDS } from "./views-cardiac";
 
 /*
  * ## Góc nhìn theo hệ — Hệ hô hấp (pilot, 2026-09-29)
@@ -176,6 +177,15 @@ export const RESPIRATORY_VIEWS: readonly AtlasViewDef[] = [
     quality: "needs-improvement",
   },
   {
+    id: "respiratory-eustachian-tubes",
+    systemId: "respiratory",
+    kind: "group",
+    name: { vi: "Vòi tai", en: "Eustachian tubes" },
+    direction: "left",
+    missing: { vi: "Bộ dữ liệu chưa có vòi tai", en: "The Eustachian (pharyngotympanic) tubes are not in the dataset" },
+    terms: ["vòi tai", "vòi Eustache", "eustachian tube", "pharyngotympanic tube"],
+  },
+  {
     id: "respiratory-pharynx-larynx",
     systemId: "respiratory",
     kind: "group",
@@ -187,6 +197,19 @@ export const RESPIRATORY_VIEWS: readonly AtlasViewDef[] = [
     quality: "good",
   },
   {
+    // Atlas: "Trachea and Carotids" — khí quản giữa hai động mạch cảnh ở cổ.
+    id: "respiratory-trachea-carotids",
+    systemId: "respiratory",
+    kind: "group",
+    name: { vi: "Khí quản và động mạch cảnh", en: "Trachea and carotid arteries" },
+    direction: "anterolateral",
+    focus: [TRACHEA, CAROTIDS],
+    context: [LARYNX_CARTILAGES, HYOID, CLAVICLES],
+    partial: { vi: "Thiếu động mạch cảnh ngoài và các nhánh", en: "The external carotid artery and its branches are missing" },
+    terms: ["khí quản", "trachea", "động mạch cảnh", "carotid", "cổ", "neck"],
+    quality: "acceptable",
+  },
+  {
     id: "respiratory-laryngeal-muscles",
     systemId: "respiratory",
     kind: "group",
@@ -195,6 +218,32 @@ export const RESPIRATORY_VIEWS: readonly AtlasViewDef[] = [
     focus: [LARYNX_MUSCLES],
     context: [LARYNX_CARTILAGES, EPIGLOTTIS, HYOID],
     terms: ["cơ nội thanh quản", "intrinsic muscles of larynx", "dây thanh", "vocal"],
+    quality: "acceptable",
+  },
+  {
+    // Phổi trong khung xương: xương sườn, xương ức và cơ hoành hiện đặc như ảnh atlas;
+    // cột sống ngực và xương đòn chỉ làm bối cảnh.
+    id: "respiratory-lung-position",
+    systemId: "respiratory",
+    kind: "group",
+    name: { vi: "Vị trí của phổi", en: "Location of the lungs" },
+    direction: "front",
+    focus: [...RIGHT_LUNG, ...LEFT_LUNG, TRACHEA, RIGHT_MAIN, LEFT_MAIN, RIBS_STERNUM, DIAPHRAGM],
+    context: [THORACIC_SPINE, CLAVICLES],
+    terms: ["lồng ngực", "thoracic cage", "cơ hoành", "diaphragm", "phổi", "lung"],
+    quality: "good",
+  },
+  {
+    // Mặt trong (trung thất) của phổi phải: camera đặt ở phía trái người mẫu (+x)
+    // nhìn sang. Chỉ phổi phải được vẽ nên phổi trái không che.
+    id: "respiratory-right-hilum",
+    systemId: "respiratory",
+    kind: "group",
+    name: { vi: "Rốn phổi phải", en: "Hilum of the right lung" },
+    direction: [1, 0.05, -0.1],
+    focus: [...RIGHT_LUNG, RIGHT_MAIN, ...RIGHT_TREE, RIGHT_PA, RIGHT_PV],
+    context: [TRACHEA],
+    terms: ["rốn phổi", "hilum", "cuống phổi", "lung root", "mặt trung thất"],
     quality: "acceptable",
   },
   {
@@ -234,32 +283,6 @@ export const RESPIRATORY_VIEWS: readonly AtlasViewDef[] = [
     context: [TRACHEA, RIGHT_MAIN, LEFT_MAIN, ...RIGHT_LUNG, ...LEFT_LUNG],
     terms: ["phổi", "lung", "phế quản", "bronchi", "cây phế quản"],
     quality: "good",
-  },
-  {
-    // Phổi trong khung xương: xương sườn, xương ức và cơ hoành hiện đặc như ảnh atlas;
-    // cột sống ngực và xương đòn chỉ làm bối cảnh.
-    id: "respiratory-lung-position",
-    systemId: "respiratory",
-    kind: "group",
-    name: { vi: "Vị trí của phổi", en: "Location of the lungs" },
-    direction: "front",
-    focus: [...RIGHT_LUNG, ...LEFT_LUNG, TRACHEA, RIGHT_MAIN, LEFT_MAIN, RIBS_STERNUM, DIAPHRAGM],
-    context: [THORACIC_SPINE, CLAVICLES],
-    terms: ["lồng ngực", "thoracic cage", "cơ hoành", "diaphragm", "phổi", "lung"],
-    quality: "good",
-  },
-  {
-    // Mặt trong (trung thất) của phổi phải: camera đặt ở phía trái người mẫu (+x)
-    // nhìn sang. Chỉ phổi phải được vẽ nên phổi trái không che.
-    id: "respiratory-right-hilum",
-    systemId: "respiratory",
-    kind: "group",
-    name: { vi: "Rốn phổi phải", en: "Hilum of the right lung" },
-    direction: [1, 0.05, -0.1],
-    focus: [...RIGHT_LUNG, RIGHT_MAIN, ...RIGHT_TREE, RIGHT_PA, RIGHT_PV],
-    context: [TRACHEA],
-    terms: ["rốn phổi", "hilum", "cuống phổi", "lung root", "mặt trung thất"],
-    quality: "acceptable",
   },
   {
     // Cơ chính (cơ hoành, gian sườn ngoài) + cơ phụ khi hít vào gắng sức (bậc thang: OpenStax
