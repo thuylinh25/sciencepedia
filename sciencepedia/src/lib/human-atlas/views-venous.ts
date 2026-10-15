@@ -41,7 +41,7 @@ const NECK_VEINS = v(/jugular vein$|subclavian vein$|vertebral vein$|suprascapul
 const FACE_VEINS = v(
   /facial vein$|angular vein$|retromandibular vein$|maxillary veins$|superficial temporal veins$|posterior auricular vein$|occipital vein$|lingual vein$|submental vein$|labial veins?$|ophthalmic vein$/i,
 );
-const DURAL_SINUSES = v(/sinus$|basilar venous plexus$/i, /coronary sinus/i);
+export const DURAL_SINUSES = v(/sinus$|basilar venous plexus$/i, /coronary sinus/i);
 // Chậu.
 const PELVIC = v(/iliac vein$|iliolumbar vein$|sacral veins?$|gluteal veins?$|obturator vein$|pudendal veins?$|dorsal vein of penis$/i);
 // Chi trên.

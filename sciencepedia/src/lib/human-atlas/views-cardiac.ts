@@ -1,4 +1,6 @@
 import type { AtlasViewDef, PartRule } from "./views";
+import { CAROTID_VERTEBRAL, CEREBRAL } from "./views-arterial";
+import { DURAL_SINUSES } from "./views-venous";
 
 /*
  * ## Góc nhìn theo hệ — Tim (2026-09-30)
@@ -74,7 +76,7 @@ const DIAPHRAGM = rule("FMA13295");
 const PULMONARY_ARTERIES = art(/^(right|left) pulmonary artery$|segmental artery|lobar artery/i, MISPLACED);
 const ALL_PULMONARY_VEINS = ven(/pulmonary vein$|segmental vein$/i);
 // Cảnh – não.
-const CAROTIDS = art(/(common|internal) carotid artery$/i);
+export const CAROTIDS = art(/(common|internal) carotid artery$/i);
 const JUGULARS = ven(/internal jugular vein$/i);
 const SKULL_NECK: PartRule = {
   systems: ["skeletal"],
@@ -154,76 +156,29 @@ export const CARDIAC_VIEWS: readonly AtlasViewDef[] = [
     quality: "acceptable",
   },
   {
-    id: "cardiac-chambers",
+    // Atlas: "Vasculature of the Brain" — động mạch não (như "Động mạch não" của hệ
+    // động mạch) + xoang tĩnh mạch màng cứng; não mờ. Không có tĩnh mạch não.
+    id: "cardiac-brain-vessels",
     systemId: "cardiac",
     kind: "group",
-    name: { vi: "Các buồng tim", en: "Chambers of the heart" },
-    direction: "front",
-    focus: [CAVITIES],
-    context: [WALLS],
-    terms: ["tâm nhĩ", "atrium", "tâm thất", "ventricle", "buồng tim"],
+    name: { vi: "Mạch máu não", en: "Vasculature of the brain" },
+    direction: "side",
+    focus: [CAROTID_VERTEBRAL, CEREBRAL, DURAL_SINUSES],
+    context: [BRAIN],
+    partial: { vi: "Thiếu các tĩnh mạch não", en: "The cerebral veins are missing" },
+    terms: ["mạch máu não", "brain vessels", "xoang tĩnh mạch", "dural sinus", "động mạch não", "cerebral arteries"],
     quality: "acceptable",
   },
   {
-    // Mặt cắt đứng ngang (coronal) qua giữa tim: bỏ nửa trước (z > 0,03 m — tâm hộp
-    // bao thành thất, đo trên atlas.json), nhìn từ trước vào mặt cắt bốn buồng.
-    // Khoang buồng (khối máu) không vẽ: cắt khối đặc chỉ ra vỏ rỗng che mất thành.
-    id: "cardiac-section",
+    id: "cardiac-circle-of-willis",
     systemId: "cardiac",
     kind: "group",
-    name: { vi: "Mặt cắt tim", en: "Heart section" },
-    direction: "front",
-    clip: { normal: [0, 0, -1], constant: 0.03 },
-    focus: [WALLS, ...VALVES],
-    terms: ["mặt cắt đứng ngang", "coronal section", "cơ tim", "myocardium"],
-    quality: "acceptable",
-  },
-  {
-    id: "cardiac-valves",
-    systemId: "cardiac",
-    kind: "group",
-    name: { vi: "Van tim", en: "Heart valves" },
-    direction: "superior",
-    focus: VALVES,
-    context: [WALLS],
-    terms: ["valve", "van hai lá", "van ba lá", "mitral", "tricuspid"],
-    quality: "acceptable",
-  },
-  {
-    id: "cardiac-coronary",
-    systemId: "cardiac",
-    kind: "group",
-    // "Mạch vành" thường chỉ hiểu là động mạch vành; góc nhìn có cả tĩnh mạch tim.
-    name: { vi: "Tuần hoàn vành", en: "Coronary circulation" },
-    direction: "front",
-    focus: [CORONARY_ARTERIES, CARDIAC_VEINS],
-    context: [HEART, AORTA],
-    terms: ["động mạch vành", "coronary artery", "tĩnh mạch tim", "cardiac vein"],
-    quality: "good",
-  },
-  {
-    id: "cardiac-great-vessels",
-    systemId: "cardiac",
-    kind: "group",
-    name: { vi: "Mạch máu lớn của tim", en: "Great vessels" },
-    direction: "front",
-    // Mạch lớn gồm cả tĩnh mạch phổi và tĩnh mạch chủ dưới. TM chủ dưới là MỘT mảnh dài
-    // tới chậu: để nổi bật thì khung kéo xuống bụng (xem views-overviews.ts) — nên nó
-    // hiện mờ làm bối cảnh, vẫn thấy chỗ đổ vào nhĩ phải.
-    focus: [AORTA, PULMONARY_TRUNK, VENAE_CAVAE, PULMONARY_VEINS],
-    context: [HEART, IVC],
-    terms: ["động mạch chủ", "aorta", "tĩnh mạch chủ", "vena cava", "thân động mạch phổi"],
-    quality: "acceptable",
-  },
-  {
-    id: "cardiac-pulmonary",
-    systemId: "cardiac",
-    kind: "group",
-    name: { vi: "Tim và mạch phổi", en: "Heart and pulmonary vessels" },
-    direction: "front",
-    focus: [HEART, PULMONARY_TRUNK, PULMONARY_ARTERIES, ALL_PULMONARY_VEINS],
-    context: [LUNGS],
-    terms: ["tuần hoàn phổi", "pulmonary circulation", "tiểu tuần hoàn"],
+    name: { vi: "Vòng động mạch não (đa giác Willis)", en: "Circle of Willis" },
+    direction: "inferior",
+    focus: [CIRCLE_OF_WILLIS],
+    context: [INTERNAL_CAROTIDS, BRAIN],
+    camera: { fill: 0.5, thumbnailFill: 0.6 },
+    terms: ["đa giác willis", "vòng willis", "circle of willis", "cerebral arterial circle"],
     quality: "acceptable",
   },
   {
@@ -242,15 +197,28 @@ export const CARDIAC_VIEWS: readonly AtlasViewDef[] = [
     quality: "acceptable",
   },
   {
-    id: "cardiac-circle-of-willis",
+    id: "cardiac-pulmonary",
     systemId: "cardiac",
     kind: "group",
-    name: { vi: "Vòng động mạch não (đa giác Willis)", en: "Circle of Willis" },
-    direction: "inferior",
-    focus: [CIRCLE_OF_WILLIS],
-    context: [INTERNAL_CAROTIDS, BRAIN],
-    camera: { fill: 0.5, thumbnailFill: 0.6 },
-    terms: ["đa giác willis", "vòng willis", "circle of willis", "cerebral arterial circle"],
+    name: { vi: "Tim và mạch phổi", en: "Heart and pulmonary vessels" },
+    direction: "front",
+    focus: [HEART, PULMONARY_TRUNK, PULMONARY_ARTERIES, ALL_PULMONARY_VEINS],
+    context: [LUNGS],
+    terms: ["tuần hoàn phổi", "pulmonary circulation", "tiểu tuần hoàn"],
+    quality: "acceptable",
+  },
+  {
+    // Mặt cắt đứng ngang (coronal) qua giữa tim: bỏ nửa trước (z > 0,03 m — tâm hộp
+    // bao thành thất, đo trên atlas.json), nhìn từ trước vào mặt cắt bốn buồng.
+    // Khoang buồng (khối máu) không vẽ: cắt khối đặc chỉ ra vỏ rỗng che mất thành.
+    id: "cardiac-section",
+    systemId: "cardiac",
+    kind: "group",
+    name: { vi: "Mặt cắt tim", en: "Heart section" },
+    direction: "front",
+    clip: { normal: [0, 0, -1], constant: 0.03 },
+    focus: [WALLS, ...VALVES],
+    terms: ["mặt cắt đứng ngang", "coronal section", "cơ tim", "myocardium"],
     quality: "acceptable",
   },
   {
@@ -319,6 +287,54 @@ export const CARDIAC_VIEWS: readonly AtlasViewDef[] = [
       en: "The median sacral artery and most branches of the internal iliac artery (gluteal, obturator, internal pudendal, umbilical, vesical, middle and inferior rectal) are missing",
     },
     terms: ["động mạch chậu", "iliac artery", "tĩnh mạch chậu", "iliac vein"],
+    quality: "acceptable",
+  },
+  {
+    id: "cardiac-chambers",
+    systemId: "cardiac",
+    kind: "group",
+    name: { vi: "Các buồng tim", en: "Chambers of the heart" },
+    direction: "front",
+    focus: [CAVITIES],
+    context: [WALLS],
+    terms: ["tâm nhĩ", "atrium", "tâm thất", "ventricle", "buồng tim"],
+    quality: "acceptable",
+  },
+  {
+    id: "cardiac-valves",
+    systemId: "cardiac",
+    kind: "group",
+    name: { vi: "Van tim", en: "Heart valves" },
+    direction: "superior",
+    focus: VALVES,
+    context: [WALLS],
+    terms: ["valve", "van hai lá", "van ba lá", "mitral", "tricuspid"],
+    quality: "acceptable",
+  },
+  {
+    id: "cardiac-coronary",
+    systemId: "cardiac",
+    kind: "group",
+    // "Mạch vành" thường chỉ hiểu là động mạch vành; góc nhìn có cả tĩnh mạch tim.
+    name: { vi: "Tuần hoàn vành", en: "Coronary circulation" },
+    direction: "front",
+    focus: [CORONARY_ARTERIES, CARDIAC_VEINS],
+    context: [HEART, AORTA],
+    terms: ["động mạch vành", "coronary artery", "tĩnh mạch tim", "cardiac vein"],
+    quality: "good",
+  },
+  {
+    id: "cardiac-great-vessels",
+    systemId: "cardiac",
+    kind: "group",
+    name: { vi: "Mạch máu lớn của tim", en: "Great vessels" },
+    direction: "front",
+    // Mạch lớn gồm cả tĩnh mạch phổi và tĩnh mạch chủ dưới. TM chủ dưới là MỘT mảnh dài
+    // tới chậu: để nổi bật thì khung kéo xuống bụng (xem views-overviews.ts) — nên nó
+    // hiện mờ làm bối cảnh, vẫn thấy chỗ đổ vào nhĩ phải.
+    focus: [AORTA, PULMONARY_TRUNK, VENAE_CAVAE, PULMONARY_VEINS],
+    context: [HEART, IVC],
+    terms: ["động mạch chủ", "aorta", "tĩnh mạch chủ", "vena cava", "thân động mạch phổi"],
     quality: "acceptable",
   },
 
