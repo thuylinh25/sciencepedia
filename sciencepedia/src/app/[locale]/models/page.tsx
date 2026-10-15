@@ -42,9 +42,16 @@ export default async function ModelsPage({
      mô tả cho cùng một thứ là hai bản sẽ lệch nhau. */
   const tSky = await getTranslations("sky");
   const tZoom = await getTranslations("zoom");
+  const tAtlas = await getTranslations("humanAtlas");
+  const tEarth = await getTranslations("earthLive");
   const loc = locale as Locale;
 
-  const toolCopy = { sky: tSky, zoom: tZoom } as const;
+  const toolCopy = {
+    sky: tSky,
+    zoom: tZoom,
+    humanAtlas: tAtlas,
+    earthLive: tEarth,
+  } as const;
 
   return (
     <div className="container-page py-16">
@@ -101,7 +108,7 @@ export default async function ModelsPage({
       </ol>
 
       {/* `<ul>` chứ không `<ol>` như nhóm trên: ba mô hình có thứ tự thật —
-          nhỏ tới lớn — còn hai công cụ này không xếp trước sau gì cả. */}
+          nhỏ tới lớn — còn các công cụ này không xếp trước sau gì cả. */}
       <h2 className="mt-14 font-display text-xl font-bold">
         {t("toolsGroup")}
       </h2>
@@ -133,7 +140,7 @@ export default async function ModelsPage({
                     {tc("title")}
                   </h3>
                   <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
-                    {tc("subtitle")}
+                    {tc(tool.descKey)}
                   </p>
                   <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-primary-strong">
                     {t("openTool")}

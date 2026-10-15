@@ -94,8 +94,14 @@ export const MODEL_STEPS: ModelStep[] = [
 export type ExploreTool = {
   id: string;
   href: string;
-  /** Khoá namespace gốc chứa `title` và `subtitle` của chính công cụ đó */
-  copyKey: "sky" | "zoom";
+  /** Namespace gốc của chính trang công cụ: thẻ dùng lại `title` của nó */
+  copyKey: "sky" | "zoom" | "humanAtlas" | "earthLive";
+  /**
+   * Khoá mô tả trong namespace đó. Mỗi trang đặt tên khác nhau (`subtitle`,
+   * `description`, `metaDescription`) — lấy đúng câu trang ấy tự dùng làm mô
+   * tả, không viết bản rút gọn riêng cho thẻ.
+   */
+  descKey: "subtitle" | "description" | "metaDescription";
   image: string;
   color: string;
 };
@@ -105,6 +111,7 @@ export const EXPLORE_TOOLS: ExploreTool[] = [
     id: "space-map",
     href: "/space-map",
     copyKey: "sky",
+    descKey: "subtitle",
     image: assetUrl("explore/sky-map.jpg"),
     color: "#38bdf8",
   },
@@ -112,8 +119,28 @@ export const EXPLORE_TOOLS: ExploreTool[] = [
     id: "zoom",
     href: "/zoom",
     copyKey: "zoom",
+    descKey: "subtitle",
     image: assetUrl("explore/zoom.jpg"),
     color: "#10b981",
+  },
+  // Hai công cụ này từng chỉ có ở trang chủ và menu; trang /models — nơi nút
+  // "Tìm hiểu thêm" của fanpage dẫn tới — thiếu chúng, nên người bấm từ một
+  // bài quảng bá Atlas tới đây không thấy Atlas đâu.
+  {
+    id: "human-atlas",
+    href: "/human-atlas",
+    copyKey: "humanAtlas",
+    descKey: "description",
+    image: assetUrl("explore/human-atlas-v2.jpg"),
+    color: "#f472b6",
+  },
+  {
+    id: "earth-live",
+    href: "/earth-live",
+    copyKey: "earthLive",
+    descKey: "metaDescription",
+    image: assetUrl("explore/earth-live.jpg"),
+    color: "#60a5fa",
   },
 ];
 
