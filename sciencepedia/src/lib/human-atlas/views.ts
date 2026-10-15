@@ -6,7 +6,6 @@ import { CARDIAC_VIEWS } from "./views-cardiac";
 import { CONNECTIVE_VIEWS } from "./views-connective";
 import { DIGESTIVE_VIEWS } from "./views-digestive";
 import { ENDOCRINE_VIEWS } from "./views-endocrine";
-import { INTEGUMENTARY_VIEWS } from "./views-integumentary";
 import { LYMPHATIC_VIEWS } from "./views-lymphatic";
 import { MUSCULAR_VIEWS } from "./views-muscular";
 import { NERVOUS_VIEWS } from "./views-nervous";
@@ -383,7 +382,6 @@ export const SYSTEM_VIEWS: readonly AtlasViewDef[] = [
   ...ARTERIAL_VIEWS,
   ...VENOUS_VIEWS,
   ...CONNECTIVE_VIEWS,
-  ...INTEGUMENTARY_VIEWS,
 ];
 
 /** Registry chung: lưới, deep link, ảnh thu nhỏ và tìm kiếm đều đọc từ đây. */

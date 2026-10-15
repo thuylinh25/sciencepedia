@@ -23557,41 +23557,5 @@
       "FJ2756"
     ],
     "hide": []
-  },
-  "integumentary-overview": {
-    "focus": [
-      "FJ2810",
-      "FJ2812",
-      "FJ2813",
-      "FJ2814"
-    ],
-    "hide": []
-  },
-  "integumentary-head": {
-    "focus": [
-      "FJ2812",
-      "FJ2813",
-      "FJ2814"
-    ],
-    "hide": []
-  },
-  "skin": {
-    "focus": [
-      "FJ2810"
-    ],
-    "hide": []
-  },
-  "lips": {
-    "focus": [
-      "FJ2814"
-    ],
-    "hide": []
-  },
-  "hair-eyebrows": {
-    "focus": [
-      "FJ2812",
-      "FJ2813"
-    ],
-    "hide": []
   }
 }
