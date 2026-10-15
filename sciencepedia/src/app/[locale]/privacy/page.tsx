@@ -15,8 +15,8 @@ import { StaticPage, type PageSection } from "@/components/static-page";
  *
  * Sửa nội dung bên dưới thì sửa luôn hai hằng số này.
  */
-const UPDATED_VI = "13/09/2026";
-const UPDATED_EN = "13 September 2026";
+const UPDATED_VI = "15/10/2026";
+const UPDATED_EN = "15 October 2026";
 
 const DESCRIPTION_VI =
   "Sciencepedia thu thập những dữ liệu nào khi bạn tạo tài khoản hoặc đăng nhập bằng Google, GitHub, Facebook; dùng chúng vào việc gì; chia sẻ với ai; lưu trong bao lâu; và cách yêu cầu xoá dữ liệu.";
@@ -129,17 +129,26 @@ function sectionsVi(): PageSection[] {
               Bình luận bạn đăng, và bài viết bạn là tác giả hoặc người duyệt.
             </li>
             <li>
-              Câu hỏi bạn gửi cho trợ lý AI cùng câu trả lời, lưu lại để bạn xem
-              lại lịch sử trò chuyện.
+              Câu hỏi bạn gửi cho trợ lý AI. Chúng tôi{" "}
+              <strong>không lưu</strong> câu hỏi hay câu trả lời trên máy chủ:
+              cuộc trò chuyện chỉ nằm trong trình duyệt và mất khi bạn tải lại
+              trang. Câu hỏi được chuyển tới nhà cung cấp AI để tạo câu trả lời
+              (xem mục Chia sẻ dữ liệu).
             </li>
             <li>
-              Lượt xem bài viết, đếm ở dạng <strong>tổng</strong> và không gắn
-              với danh tính người xem.
+              Lượt xem bài viết hiển thị công khai, đếm ở dạng{" "}
+              <strong>tổng</strong> và không gắn với danh tính người xem.
+            </li>
+            <li>
+              <strong>Lịch sử xem khi bạn đã đăng nhập</strong> — bài viết và
+              cấu trúc giải phẫu bạn đã mở, số lần mở và tổng thời gian xem.
+              Chỉ quản trị viên đọc được; không hiển thị công khai.
             </li>
             <li>
               Nhật ký máy chủ kỹ thuật (địa chỉ IP, loại trình duyệt, thời điểm
               truy cập) do nền tảng vận hành ghi lại để bảo đảm dịch vụ chạy và
-              chống lạm dụng.
+              chống lạm dụng. Mã tài khoản hoặc địa chỉ IP cũng được dùng làm
+              khoá đếm tạm thời để giới hạn tần suất yêu cầu.
             </li>
           </ul>
 
@@ -167,8 +176,13 @@ function sectionsVi(): PageSection[] {
               diện xuất hiện cạnh bình luận và bài viết bạn đứng tên.
             </li>
             <li>
-              <strong>Cá nhân hoá nội dung của riêng bạn</strong> — danh sách
-              bài đã đánh dấu và lịch sử hỏi trợ lý AI.
+              <strong>Phục vụ nội dung của riêng bạn</strong> — danh sách bài
+              đã đánh dấu.
+            </li>
+            <li>
+              <strong>Hiểu nội dung nào được đọc</strong> — lịch sử xem giúp ban
+              biên tập biết bài nào được đọc kỹ, bài nào bị bỏ dở, để ưu tiên
+              sửa và viết tiếp.
             </li>
             <li>
               <strong>Liên hệ về tài khoản</strong> — đặt lại mật khẩu và các
@@ -180,8 +194,10 @@ function sectionsVi(): PageSection[] {
             </li>
           </ul>
           <p>
-            Dữ liệu của bạn không được dùng cho quảng cáo nhắm mục tiêu, và nội
-            dung bạn gửi không được dùng để huấn luyện mô hình ngôn ngữ.
+            Dữ liệu của bạn không được dùng cho quảng cáo nhắm mục tiêu, và
+            Sciencepedia không tự huấn luyện mô hình nào trên nội dung bạn gửi.
+            Riêng câu hỏi gửi trợ lý AI thì đi qua nhà cung cấp bên ngoài — xem
+            mục Chia sẻ dữ liệu.
           </p>
         </>
       ),
@@ -202,9 +218,15 @@ function sectionsVi(): PageSection[] {
             <li>
               <strong>Nhà cung cấp hạ tầng</strong> mà dịch vụ phải dựa vào để
               chạy, mỗi bên chỉ nhận phần dữ liệu cần cho đúng việc của mình:
-              Vercel (vận hành website), Supabase (cơ sở dữ liệu và lưu trữ
-              tệp), Resend (gửi email giao dịch như thư đặt lại mật khẩu),
-              Anthropic (xử lý câu hỏi bạn gửi cho trợ lý AI).
+              Vercel (vận hành website), Supabase (cơ sở dữ liệu), Cloudflare
+              R2 (lưu ảnh), Resend (gửi email giao dịch như thư đặt lại mật
+              khẩu), Google Gemini và OpenRouter (tạo câu trả lời cho câu hỏi
+              bạn gửi trợ lý AI). Trợ lý dùng gói miễn phí của các nhà cung cấp
+              AI này; theo điều khoản của họ, câu hỏi có thể được lưu và dùng
+              để cải thiện mô hình của họ.{" "}
+              <strong>
+                Đừng nhập thông tin cá nhân hay thông tin nhạy cảm vào trợ lý.
+              </strong>
             </li>
             <li>
               <strong>Thông tin bạn chủ động công khai</strong> — tên hiển thị
@@ -226,15 +248,16 @@ function sectionsVi(): PageSection[] {
         <>
           <p>
             Dữ liệu tài khoản được lưu trong cơ sở dữ liệu PostgreSQL do
-            Supabase vận hành; tệp bạn tải lên nằm trong Supabase Storage. Máy
+            Supabase vận hành; ảnh tải lên nằm trên Cloudflare R2 (một số tệp
+            cũ vẫn ở Supabase Storage). Máy
             chủ đặt tại trung tâm dữ liệu của các nhà cung cấp nêu trên và có
             thể nằm ngoài Việt Nam.
           </p>
           <p>
             Chúng tôi giữ dữ liệu{" "}
             <strong>trong suốt thời gian tài khoản của bạn còn tồn tại</strong>.
-            Khi bạn yêu cầu xoá, hồ sơ, danh sách đã đánh dấu và lịch sử trò
-            chuyện với trợ lý AI bị xoá khỏi cơ sở dữ liệu. Bình luận và bài
+            Khi bạn yêu cầu xoá, hồ sơ, danh sách đã đánh dấu và lịch sử xem
+            bị xoá khỏi cơ sở dữ liệu. Bình luận và bài
             viết đã xuất bản có thể được giữ lại nhưng gỡ bỏ liên kết tới danh
             tính của bạn, để mạch nội dung công khai không bị đứt quãng.
           </p>
@@ -284,6 +307,31 @@ function sectionsVi(): PageSection[] {
             trong phần cài đặt ứng dụng của Google, GitHub hoặc Facebook. Thu
             hồi sẽ chặn lần đăng nhập sau, nhưng <strong>không</strong> tự xoá
             dữ liệu đã lưu — muốn xoá thì gửi yêu cầu như trên.
+          </p>
+        </>
+      ),
+    },
+    {
+      id: "facebook",
+      title: "Trang Facebook của Sciencepedia",
+      body: (
+        <>
+          <p>
+            Sciencepedia có một trang Facebook. Bài đăng trên trang được tạo
+            tay, hoặc tạo tự động từ những bài viết{" "}
+            <strong>đã được duyệt</strong> trên website thông qua một ứng dụng
+            Meta do chúng tôi vận hành.
+          </p>
+          <p>
+            Ứng dụng đó chỉ có quyền trên chính trang của Sciencepedia: đăng bài
+            và đọc số liệu tổng hợp của các bài đã đăng (lượt xem, lượt tương
+            tác). Nó <strong>không</strong> thu thập thông tin cá nhân của người
+            theo dõi, không đọc tin nhắn, và không đưa dữ liệu nào từ Facebook
+            vào website.
+          </p>
+          <p>
+            Khi bạn thích, bình luận hay nhắn tin cho trang trên Facebook, dữ
+            liệu đó do Meta xử lý theo chính sách quyền riêng tư của Meta.
           </p>
         </>
       ),
@@ -354,16 +402,27 @@ function sectionsEn(): PageSection[] {
             <li>Articles you bookmark for later.</li>
             <li>Comments you post, and articles you author or review.</li>
             <li>
-              Questions you send to the AI assistant and the answers it gives,
-              kept so you can revisit your own history.
+              Questions you send to the AI assistant. We do{" "}
+              <strong>not</strong> store questions or answers on our servers:
+              the conversation lives only in your browser and is gone when you
+              reload the page. Questions are passed to an AI provider to
+              generate the answer (see Sharing your data).
             </li>
             <li>
-              Article view counts, stored as <strong>aggregate</strong> numbers
-              and never tied to an individual reader.
+              Public article view counts, stored as{" "}
+              <strong>aggregate</strong> numbers and never tied to an individual
+              reader.
+            </li>
+            <li>
+              <strong>Viewing history while signed in</strong> — the articles
+              and anatomy structures you opened, how many times, and total time
+              spent. Readable by administrators only; never shown publicly.
             </li>
             <li>
               Technical server logs (IP address, browser type, timestamp) kept
-              by our hosting platform to run the service and prevent abuse.
+              by our hosting platform to run the service and prevent abuse. Your
+              account ID or IP address is also used as a short-lived counter key
+              for rate limiting.
             </li>
           </ul>
 
@@ -391,8 +450,12 @@ function sectionsEn(): PageSection[] {
               picture next to your comments and credited articles.
             </li>
             <li>
-              <strong>Personalising what is yours</strong> — your bookmarks and
-              your AI assistant history.
+              <strong>Serving what is yours</strong> — your bookmarks.
+            </li>
+            <li>
+              <strong>Understanding what gets read</strong> — viewing history
+              tells the editors which articles are read closely and which are
+              abandoned, so they know what to fix and write next.
             </li>
             <li>
               <strong>Contacting you about your account</strong> — password
@@ -404,8 +467,9 @@ function sectionsEn(): PageSection[] {
             </li>
           </ul>
           <p>
-            Your data is never used for targeted advertising, and your content
-            is not used to train language models.
+            Your data is never used for targeted advertising, and Sciencepedia
+            trains no model on what you submit. Questions sent to the AI
+            assistant do pass through outside providers — see Sharing your data.
           </p>
         </>
       ),
@@ -425,9 +489,16 @@ function sectionsEn(): PageSection[] {
             <li>
               <strong>Infrastructure providers</strong> the service runs on,
               each receiving only what its job requires: Vercel (hosting),
-              Supabase (database and file storage), Resend (transactional email
-              such as password resets), Anthropic (processing the questions you
-              send to the AI assistant).
+              Supabase (database), Cloudflare R2 (image storage), Resend
+              (transactional email such as password resets), Google Gemini and
+              OpenRouter (generating answers to questions you send the AI
+              assistant). The assistant uses these providers&rsquo; free tiers;
+              under their terms, questions may be retained and used to improve
+              their models.{" "}
+              <strong>
+                Do not enter personal or sensitive information into the
+                assistant.
+              </strong>
             </li>
             <li>
               <strong>What you publish yourself</strong> — your display name and
@@ -449,13 +520,14 @@ function sectionsEn(): PageSection[] {
         <>
           <p>
             Account data lives in a PostgreSQL database operated by Supabase;
-            files you upload live in Supabase Storage. Servers sit in those
+            uploaded images live on Cloudflare R2 (some older files remain in
+            Supabase Storage). Servers sit in those
             providers&rsquo; data centres, which may be outside Vietnam.
           </p>
           <p>
             We keep your data{" "}
             <strong>for as long as your account exists</strong>. When you ask us
-            to delete it, your profile, bookmarks and AI assistant history are
+            to delete it, your profile, bookmarks and viewing history are
             removed from the database. Published comments and articles may be
             retained with your identity detached from them, so that the public
             record stays coherent.
@@ -505,6 +577,31 @@ function sectionsEn(): PageSection[] {
             in the app settings of Google, GitHub or Facebook. Revoking blocks
             the next sign-in but does <strong>not</strong> by itself delete
             stored data — send a deletion request for that.
+          </p>
+        </>
+      ),
+    },
+    {
+      id: "facebook",
+      title: "Sciencepedia on Facebook",
+      body: (
+        <>
+          <p>
+            Sciencepedia runs a Facebook Page. Posts on it are written by hand,
+            or generated automatically from articles that have{" "}
+            <strong>passed editorial review</strong> on the website through a
+            Meta app we operate.
+          </p>
+          <p>
+            That app holds permissions on Sciencepedia&rsquo;s own Page only:
+            publishing posts and reading aggregate metrics for those posts
+            (views, engagement). It does <strong>not</strong> collect personal
+            data about followers, does not read messages, and brings no data
+            from Facebook into the website.
+          </p>
+          <p>
+            When you like, comment on or message the Page on Facebook, that data
+            is handled by Meta under Meta&rsquo;s own privacy policy.
           </p>
         </>
       ),
