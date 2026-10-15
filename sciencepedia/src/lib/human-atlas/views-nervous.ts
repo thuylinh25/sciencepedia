@@ -1,4 +1,6 @@
 import type { AtlasViewDef, PartRule } from "./views";
+import { CAROTID_VERTEBRAL, CEREBRAL } from "./views-arterial";
+import { INTERCOSTAL_NERVES, VAGUS } from "./views-respiratory";
 
 /*
  * ## Góc nhìn theo hệ — Hệ thần kinh (2026-09-30)
@@ -14,6 +16,15 @@ import type { AtlasViewDef, PartRule } from "./views";
  * (`vagus-nerves`, `intercostal-nerves`) — dùng lại, không khai báo trùng: hai
  * cấu trúc cùng tập mảnh sẽ cùng lên bảng và chồng nhau. Khớp bằng tên, trong hệ
  * thần kinh.
+ *
+ * Lưới góc nhìn xếp theo "Nervous System Views" của các atlas giải phẫu (chủ sản
+ * phẩm, 2026-10-15): não → cấp máu → hệ viền → đồi thị → dây sọ → phế vị →
+ * đám rối cánh tay → thắt lưng–cùng → thần kinh ngồi → tự chủ. Mắt, tai, lưỡi,
+ * da của atlas nằm ở hệ giác quan / tiêu hoá / da của ta, không nhân bản ở đây.
+ * Id cũ giữ nguyên cho deep link (`nervous-deep-brain`, `nervous-trunk` đổi
+ * phạm vi, không đổi id). Nhóm được MƯỢN mảnh hệ khác làm nổi bật (cấp máu não
+ * = động mạch) miễn tập nổi bật đúng bằng hợp các cấu trúc sẵn có — test "phủ
+ * đủ, không chồng" của atlas-model.
  */
 
 const n = (name: RegExp, exclude?: RegExp): PartRule => ({ systems: ["nervous"], name, ...(exclude ? { exclude } : {}) });
@@ -24,7 +35,7 @@ const CEREBRAL_WHITE = n(
   /white matter of (left|right) cerebral hemisphere$|corpus callosum$|internal capsule$|(anterior|posterior) commissure$|fornix of forebrain$|stria terminalis$|lamina terminalis$/i,
 );
 const BASAL_NUCLEI = n(/caudate nucleus$|putamen$|globus pallidus$/i);
-// Vách gian bán cầu (FMA61842) gồm cả vùng vách — chất xám, hệ viền — không để ở chất trắng.
+// Vách (FMA61842: vách trong suốt và vùng vách) gồm cả vùng vách — chất xám, hệ viền — không để ở chất trắng.
 const HIPPOCAMPUS_AMYGDALA = n(/hippocampus$|amygdala$|^septum of telencephalon$/i);
 const DIENCEPHALON = n(
   /thalamus$|hypothalamus$|habenula$|mammillary body$|tuber cinereum$|geniculate body$|stria medullaris of thalamus$/i,
@@ -35,6 +46,12 @@ const TENTORIUM = n(/^tentorium cerebelli$/i);
 const VENTRICLES = n(/ventricle$|^cerebral aqueduct$|interventricular foramen$|choroid plexus of ((left|right) )?cerebral hemisphere$/i);
 // Lều tiểu não là màng cứng, không phải mô não — bối cảnh, không nổi bật.
 const BRAIN = [CORTEX, CEREBRAL_WHITE, BASAL_NUCLEI, HIPPOCAMPUS_AMYGDALA, DIENCEPHALON, BRAINSTEM, CEREBELLUM, VENTRICLES];
+// Hệ viền: cấu trúc con lồng trong vỏ não / chất trắng / gian não — không khai một
+// cấu trúc "hệ viền" chung, vì nó chồng một phần lên ba cấu trúc kia ở góc nhìn Não.
+const LIMBIC_GYRI = n(/cingulate gyrus$|parahippocampal gyrus$/i);
+const FORNIX = n(/fornix of forebrain$/i);
+const MAMMILLARY = n(/^mammillary body$/i);
+const LIMBIC = [LIMBIC_GYRI, HIPPOCAMPUS_AMYGDALA, FORNIX, MAMMILLARY];
 
 // ------------------------------------------------------------------ dây sọ
 const OPTIC = n(/optic (nerve|chiasm|tract)$/i);
@@ -49,7 +66,6 @@ const MANDIBULAR = n(/division of mandibular nerve$|buccal nerve$|lingual nerve$
 const FACIAL = n(/facial nerve \(vii\)$|chorda tympani$/i);
 const VESTIBULOCOCHLEAR = n(/vestibulocochlear nerve \(viii\)$|cochlear nerve$|vestibular nerve$/i);
 const GLOSSOPHARYNGEAL = n(/glossopharyngeal nerve \(ix\)$/i);
-const VAGUS = n(/^(left|right) vagus nerve \(x\)$/i);
 const ACCESSORY = n(/accessory nerve \(xi\)$/i);
 const HYPOGLOSSAL = n(/hypoglossal nerve \(xii\)$/i);
 const CRANIAL = [OPTIC, OCULOMOTOR, TROCHLEAR, OPHTHALMIC, MAXILLARY, MANDIBULAR, FACIAL, VESTIBULOCOCHLEAR, GLOSSOPHARYNGEAL, VAGUS, ACCESSORY, HYPOGLOSSAL];
@@ -87,7 +103,6 @@ const SURAL = n(/sural nerve$|sural cutaneous nerve$|sural communicating branch 
 const LOWER_LIMB = [LUMBAR_PLEXUS_OTHER, FEMORAL, OBTURATOR, SACRAL_PLEXUS_OTHER, SCIATIC, TIBIAL, FIBULAR, SURAL];
 
 // ------------------------------------------------------------------ thân mình
-const INTERCOSTAL = n(/^(left|right) intercostal nerves$/i);
 const SYMPATHETIC = n(/sympathetic (trunk|nerves)$/i);
 
 // Bối cảnh.
@@ -96,6 +111,9 @@ const SPINE: PartRule = { systems: ["skeletal"], name: /vertebra$|^atlas$|^axis$
 const UPPER_LIMB_BONES: PartRule = { systems: ["skeletal"], name: /(humerus|scapula|clavicle|radius|ulna)$/i };
 const LOWER_LIMB_BONES: PartRule = { systems: ["skeletal"], name: /(femur|tibia|fibula|patella|hip bone)$|^sacrum$/i };
 const RIBS: PartRule = { systems: ["skeletal"], name: /\brib\b|thoracic vertebra$/i };
+const HEART: PartRule = { systems: ["cardiac"] };
+const NECK_THORAX_VISCERA: PartRule = { systems: ["respiratory", "digestive"], name: /^(trachea|esophagus|stomach)$/i };
+const ABDOMINAL_VISCERA: PartRule = { systems: ["digestive", "urinary"], name: /^(esophagus|stomach|duodenum|(ascending|transverse|descending) colon|(left|right) kidney)$/i };
 
 const group = (
   id: string,
@@ -133,8 +151,15 @@ export const NERVOUS_VIEWS: readonly AtlasViewDef[] = [
     quality: "acceptable",
   },
   group("nervous-brain", "Não", "Brain", "side", BRAIN, [SKULL, TENTORIUM], ["brain", "đại não", "cerebrum"]),
+  // Động mạch nổi bật, não mờ phía sau — tập nổi bật đúng bằng "Động mạch não" của hệ động mạch.
+  group("nervous-brain-blood-supply", "Cấp máu cho não", "Blood supply of the brain", "side", [CAROTID_VERTEBRAL, CEREBRAL], BRAIN,
+    ["động mạch não", "cerebral arteries", "vòng Willis", "circle of Willis", "cấp máu", "blood supply"]),
+  group("nervous-limbic", "Hệ viền", "Limbic system", "side", LIMBIC, [CEREBRAL_WHITE, DIENCEPHALON, BRAINSTEM],
+    ["hệ viền", "limbic", "hồi đai", "cingulate", "hải mã", "hippocampus", "hạnh nhân", "amygdala", "vòm não", "fornix"]),
+  // Id cũ (trước gồm cả hệ viền) — hệ viền nay là góc nhìn riêng.
+  group("nervous-deep-brain", "Gian não và nhân nền", "Diencephalon and basal nuclei", "three-quarter", [DIENCEPHALON, BASAL_NUCLEI], [CEREBRAL_WHITE, BRAINSTEM],
+    ["đồi thị", "thalamus", "vùng dưới đồi", "hypothalamus", "hạch nền", "basal ganglia"]),
   group("nervous-cerebrum", "Đại não: vỏ và chất trắng", "Cerebrum: cortex and white matter", "side", [CORTEX, CEREBRAL_WHITE], [CEREBELLUM, BRAINSTEM], ["hồi não", "gyrus", "thuỳ não", "lobe", "thể chai", "corpus callosum"]),
-  group("nervous-deep-brain", "Nhân nền, gian não và hệ viền", "Basal nuclei, diencephalon and limbic structures", "three-quarter", [BASAL_NUCLEI, HIPPOCAMPUS_AMYGDALA, DIENCEPHALON], [CEREBRAL_WHITE, BRAINSTEM], ["đồi thị", "thalamus", "hải mã", "hippocampus", "hạch nền", "basal ganglia"]),
   group("nervous-brainstem-cerebellum", "Thân não và tiểu não", "Brainstem and cerebellum", "side", [BRAINSTEM, CEREBELLUM], [DIENCEPHALON, SPINAL_CORD, TENTORIUM], ["hành não", "cầu não", "trung não", "cerebellum"]),
   group("nervous-ventricles", "Hệ não thất", "Ventricular system", "three-quarter", [VENTRICLES], [CEREBRAL_WHITE, BRAINSTEM, CEREBELLUM], ["não thất", "ventricle", "dịch não tuỷ", "cerebrospinal fluid"]),
   group("nervous-cranial-nerves", "Dây thần kinh sọ", "Cranial nerves", "three-quarter", CRANIAL, [BRAINSTEM, SKULL], ["dây sọ", "cranial nerve"], {
@@ -144,16 +169,40 @@ export const NERVOUS_VIEWS: readonly AtlasViewDef[] = [
     },
   }),
   group("nervous-orbit", "Thần kinh ổ mắt", "Nerves of the orbit", [-0.8, 0.35, 0.5], [OPTIC, OCULOMOTOR, TROCHLEAR, OPHTHALMIC], [SKULL], ["ổ mắt", "orbit", "dây III", "dây IV", "V1"]),
+  group("nervous-vagus", "Dây phế vị (X)", "Vagus nerve (X)", "anterolateral", [VAGUS], [HEART, NECK_THORAX_VISCERA, SKULL],
+    ["phế vị", "vagus", "dây X", "cranial nerve X"]),
+  {
+    id: "nervous-phrenic",
+    systemId: "nervous",
+    kind: "group",
+    name: { vi: "Dây thần kinh hoành", en: "Phrenic nerves" },
+    direction: "front",
+    missing: { vi: "Bộ dữ liệu chưa có dây thần kinh hoành", en: "The phrenic nerves are not in the dataset" },
+    terms: ["thần kinh hoành", "phrenic"],
+  },
   group("nervous-spinal-cord", "Tuỷ sống và rễ thần kinh", "Spinal cord and nerve roots", "back", [SPINAL_CORD, SPINAL_DURA, SPINAL_ROOTS, CAUDA_EQUINA], [SPINE], ["tuỷ sống", "spinal cord", "đuôi ngựa", "cauda equina", "rễ thần kinh"]),
   group("nervous-upper-limb", "Đám rối cánh tay và thần kinh chi trên", "Brachial plexus and nerves of the upper limb", "front", UPPER_LIMB, [UPPER_LIMB_BONES], ["đám rối cánh tay", "brachial plexus", "thần kinh giữa", "median nerve"]),
   // Có thần kinh thẹn (đáy chậu), chậu hạ vị/chậu bẹn (thành bụng) — không chỉ chi dưới.
-  group("nervous-lower-limb", "Đám rối thắt lưng – cùng và thần kinh chi dưới", "Lumbosacral plexus branches and nerves of the lower limb", "front", LOWER_LIMB, [LOWER_LIMB_BONES], ["thần kinh ngồi", "sciatic nerve", "thần kinh đùi", "femoral nerve"]),
-  group("nervous-trunk", "Thần kinh gian sườn và thân giao cảm", "Intercostal nerves and sympathetic trunk", "anterolateral", [INTERCOSTAL, SYMPATHETIC], [RIBS], ["giao cảm", "sympathetic", "gian sườn", "intercostal"]),
+  group("nervous-lower-limb", "Đám rối thắt lưng – cùng và thần kinh chi dưới", "Lumbosacral plexus branches and nerves of the lower limb", "front", LOWER_LIMB, [LOWER_LIMB_BONES], ["đám rối thắt lưng", "lumbosacral plexus", "thần kinh đùi", "femoral nerve"]),
+  group("nervous-sciatic", "Thần kinh ngồi và các nhánh", "Sciatic nerve and its branches", "back", [SCIATIC, TIBIAL, FIBULAR, SURAL], [LOWER_LIMB_BONES],
+    ["thần kinh ngồi", "thần kinh toạ", "sciatic nerve", "thần kinh chày", "tibial nerve", "thần kinh mác", "fibular nerve"]),
+  // Id cũ (trước gồm cả thân giao cảm) — thân giao cảm nay ở "Thần kinh tự chủ".
+  group("nervous-trunk", "Thần kinh gian sườn", "Intercostal nerves", "anterolateral", [INTERCOSTAL_NERVES], [RIBS], ["gian sườn", "intercostal"]),
+  group("nervous-autonomic", "Thần kinh tự chủ: thân giao cảm và dây phế vị", "Autonomic nerves: sympathetic trunk and vagus nerve", "front", [SYMPATHETIC, VAGUS], [HEART, ABDOMINAL_VISCERA, SPINE],
+    ["tự chủ", "thực vật", "autonomic", "giao cảm", "sympathetic", "đối giao cảm", "parasympathetic"], {
+      partial: {
+        vi: "Thiếu các hạch trước cột sống, các đám rối tự chủ ở ngực, bụng và chậu, và thần kinh tạng chậu (đối giao cảm cùng)",
+        en: "The prevertebral ganglia, the autonomic plexuses of the thorax, abdomen and pelvis, and the pelvic splanchnic nerves (sacral parasympathetic) are missing",
+      },
+    }),
 
   structure("cerebral-cortex", "Các hồi và thuỳ đại não", "Cerebral gyri and lobes", "side", CORTEX, ["vỏ não", "cortex"]),
   structure("cerebral-white-matter", "Chất trắng, thể chai và các mép", "White matter, corpus callosum and commissures", "side", CEREBRAL_WHITE),
   structure("basal-nuclei", "Nhân đuôi, bèo sẫm và cầu nhạt", "Caudate nucleus, putamen and globus pallidus", "three-quarter", BASAL_NUCLEI, ["nhân nền", "basal nuclei", "nhân bèo", "lentiform nucleus"]),
-  structure("hippocampus-amygdala", "Hồi hải mã, thể hạnh nhân và vách", "Hippocampus, amygdala and septum", "three-quarter", HIPPOCAMPUS_AMYGDALA),
+  structure("hippocampus-amygdala", "Hải mã, thể hạnh nhân và vách", "Hippocampus, amygdala and septum", "three-quarter", HIPPOCAMPUS_AMYGDALA),
+  structure("limbic-gyri", "Hồi đai và hồi cạnh hải mã", "Cingulate and parahippocampal gyri", "three-quarter", LIMBIC_GYRI, ["hồi đai", "cingulate gyrus", "thuỳ viền", "limbic lobe"]),
+  structure("fornix", "Vòm não", "Fornix", "three-quarter", FORNIX, ["fornix", "thể vòm", "thể tam giác"]),
+  structure("mammillary-body", "Thể vú", "Mammillary body", "three-quarter", MAMMILLARY, ["mammillary body"]),
   structure("diencephalon", "Gian não", "Diencephalon", "three-quarter", DIENCEPHALON, ["đồi thị", "thalamus", "vùng dưới đồi", "hypothalamus"]),
   structure("brainstem", "Thân não", "Brainstem", "side", BRAINSTEM),
   structure("cerebellum", "Tiểu não", "Cerebellum", "side", CEREBELLUM),

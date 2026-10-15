@@ -780,6 +780,15 @@ Tổng quan tim loại "Right anterior segmental artery" (FMA8620): FMA gọi l�
 một màu thì thận lẫn niệu quản, khí quản lẫn phổi. Sụn khí–phế quản trắng ngà, phổi hồng tím,
 thận đỏ nâu, niệu quản vàng nhạt, giáp đỏ sẫm, thượng thận vàng — theo ảnh tham chiếu. Bề mặt mô theo lối atlas (`SURFACES` trong anatomy-scene.tsx, 2026-09-30): phổi lốm đốm + bóng ướt, xương xám be có hạt/lỗ xốp, sụn xanh xám bóng nhẹ, dây chằng trắng bạc có thớ. Một màu trơn trông như nhựa; mesh không có UV nên vân là nhiễu 3D theo toạ độ mô TRƯỚC khi tách (`position`) — dính vào mô khi kéo slider. Chỉ màu + độ nhám, không bump/texture. Mỗi bề mặt cần `customProgramCacheKey` riêng: three.js mặc định gom shader theo mã nguồn `onBeforeCompile` (giống nhau ở mọi vật liệu), nên xương từng dùng lại shader trơn — vân không hiện mà không báo lỗi.
 
+**Nhóm được mượn mảnh hệ khác làm NỔI BẬT** (2026-10-15, hệ thần kinh xếp theo "Nervous System
+Views" của atlas): "Cấp máu cho não" nổi bật động mạch não, não mờ phía sau; "Dây phế vị", "Thần
+kinh tự chủ" lấy quy tắc `VAGUS` xuất từ `views-respiratory.ts`. Điều kiện: tập nổi bật phải đúng
+bằng hợp các cấu trúc sẵn có (import quy tắc, đừng gõ lại regex) — test "phủ đủ, không chồng" của
+atlas-model chặn phần dư. Đừng "dọn" thành chỉ mảnh cùng hệ: góc nhìn kiểu atlas là thần kinh
+trong bối cảnh mạch/tạng. Mắt, tai, lưỡi, da của atlas ở hệ giác quan/tiêu hoá/da — không nhân bản.
+Hệ viền tách thành cấu trúc con lồng trong vỏ/chất trắng/gian não; một cấu trúc "hệ viền" chung sẽ
+chồng một phần lên ba cấu trúc kia ở góc nhìn Não và vỡ test.
+
 **Góc nhìn theo hệ lấp 74% chiều cao VÙNG TRỐNG**, không của cả khung như theo vùng: cơ quan cao
 như khí quản lấp theo cả khung là ~93% vùng trống, đè chip và thanh trượt.
 

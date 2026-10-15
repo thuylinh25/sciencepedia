@@ -30,8 +30,8 @@ const AORTA = a(/^(descending aorta|descending thoracic aorta|abdominal aorta)$/
 const ARCH_BRANCHES = a(/brachiocephalic artery$|common carotid artery$|^(left |right )?subclavian artery$/i);
 const ASC_ARCH: PartRule = { systems: ["arterial"], name: /^(ascending aorta|arch of aorta)$/i };
 // Đầu – cổ – não.
-const CAROTID_VERTEBRAL = a(/internal carotid artery$|vertebral artery$|ophthalmic artery$|^basilar artery$/i);
-const CEREBRAL = a(
+export const CAROTID_VERTEBRAL = a(/internal carotid artery$|vertebral artery$|ophthalmic artery$|^basilar artery$/i);
+export const CEREBRAL = a(
   /cerebral artery|cerebellar artery|communicating artery|choroidal artery|pontine artery|callosomarginal|pericallosal|frontobasal artery$|parietal artery$|temporal artery$|occipital artery$|thalamo|prefrontal artery$|sulcus$|splenial artery$|precuneal branch|hypothalamic branch|anterior spinal artery$|angular gyrus$|internal capsule$|vermian branch|temporal branch|temporal branches/i,
 );
 const NECK_BRANCHES = a(
