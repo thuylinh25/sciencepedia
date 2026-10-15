@@ -1,6 +1,7 @@
 import type { NextRequest } from "next/server";
 
 import { prisma } from "@/lib/prisma";
+import { AuthError, requireRole } from "@/lib/rbac";
 import { articleSchema } from "@/lib/validations";
 import { deleteArticle, updateArticle } from "@/server/actions/articles";
 
@@ -37,7 +38,22 @@ export async function GET(_request: NextRequest, { params }: Params) {
     return Response.json({ error: "NOT_FOUND" }, { status: 404 });
   }
 
-  return Response.json(article);
+  // Bài chưa xuất bản chưa qua gate accuracy — chỉ biên tập viên được đọc.
+  // Người khác nhận 404 như bài không tồn tại, để id không thành cách dò bài nháp.
+  if (article.status !== "PUBLISHED") {
+    try {
+      await requireRole("EDITOR");
+    } catch (error) {
+      if (error instanceof AuthError) {
+        return Response.json({ error: "NOT_FOUND" }, { status: 404 });
+      }
+      throw error;
+    }
+  }
+
+  return Response.json(article, {
+    headers: { "Cache-Control": "private, no-store" },
+  });
 }
 
 export async function PATCH(request: NextRequest, { params }: Params) {
