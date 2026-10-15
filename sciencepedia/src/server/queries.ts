@@ -179,6 +179,42 @@ export async function listArticles({
   return { items, total, page: current, perPage, totalPages };
 }
 
+/**
+ * Bài đã xuất bản VÀ đã có người ký duyệt — nguồn cho kênh mạng xã hội.
+ *
+ * Vì sao không dùng `listArticles`: bài đăng thẳng qua form /admin là PUBLISHED
+ * nhưng factCheck còn PENDING; mạng xã hội chỉ được nhân bản nội dung đã qua
+ * gate accuracy. Sắp theo `reviewedAt` vì bài thường được ký SAU khi đã lên
+ * trang (đính chính giữ PUBLISHED), nên lúc ký mới là lúc "có bài mới để đăng".
+ * Không trả danh tính người duyệt — kênh ngoài không cần, và byline ở web là
+ * "Ban biên tập".
+ */
+export async function listVerifiedArticles(limit = 20) {
+  return prisma.article.findMany({
+    where: {
+      ...PUBLISHED,
+      factCheck: "PASSED",
+      reviewedById: { not: null },
+      reviewedAt: { not: null },
+    },
+    select: {
+      slug: true,
+      title: true,
+      summary: true,
+      coverImage: true,
+      coverImageAlt: true,
+      publishedAt: true,
+      reviewedAt: true,
+      category: {
+        select: { slug: true, name: true, parent: { select: { slug: true } } },
+      },
+      tags: { select: { tag: { select: { name: true } } } },
+    },
+    orderBy: { reviewedAt: "desc" },
+    take: Math.min(50, Math.max(1, limit)),
+  });
+}
+
 /** `cache` của React gộp các lần gọi trùng trong cùng một request. */
 export const getArticleBySlug = cache(async (slug: string) =>
   prisma.article.findFirst({

@@ -1509,3 +1509,11 @@ Nội dung bài là dữ liệu người nhập qua form, và trang bài đượ
 Thẻ tự đặt `glossary-term` (do `remarkGlossary` sinh) phải có trong danh sách trắng — sanitize gỡ thẻ lạ, và lúc đó tooltip thuật ngữ biến mất mà không báo lỗi. Test `src/lib/markdown-html.test.ts` khoá cả hai chiều: HTML trình bày hiển thị, HTML nguy hiểm bị gỡ, `[[thuật ngữ]]` còn sống.
 
 Về biên tập: sơ đồ mũi tên dựng bằng `<div>` vẫn là sơ đồ — skill `tham-dinh-bai-da-dang` xem sơ đồ nhân quả không nguồn là lỗi nội dung, dù nó hiển thị đẹp.
+
+## Feed cho kênh mạng xã hội — chỉ bài đã có người ký (2026-10-15)
+
+`GET /api/feed/verified` liệt kê bài PUBLISHED **và** factCheck PASSED **và** có `reviewedById`, sắp theo `reviewedAt`. Repo riêng `thuylinh25/sciencepedia-social` đọc feed này để tự tạo bài trên fanpage.
+
+**Vì sao không dùng `/api/articles`:** bài đăng thẳng qua form /admin là PUBLISHED nhưng chưa qua gate accuracy; nhân bản nó ra kênh ngoài là đẩy khẳng định chưa duyệt đi xa hơn, và đính chính trên web không kéo theo bài trên Facebook. **Vì sao sắp theo `reviewedAt`:** bài thường được ký *sau* khi đã lên trang (đính chính giữ PUBLISHED), nên lúc ký mới là lúc "có bài mới để đăng".
+
+Feed trả `notice` (từ `categoryNotice`) để caption mang đúng khung lưu ý sức khoẻ / phương pháp truyền thống như trang web — đừng để kênh ngoài tự suy từ tên danh mục. Không trả danh tính người duyệt. Repo social không đọc CSDL: không có lý do để chuỗi kết nối production nằm ở một repo khác.
