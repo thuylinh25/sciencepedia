@@ -200,13 +200,20 @@ export async function listVerifiedArticles(limit = 20) {
     select: {
       slug: true,
       title: true,
+      titleEn: true,
       summary: true,
+      summaryEn: true,
       coverImage: true,
       coverImageAlt: true,
       publishedAt: true,
       reviewedAt: true,
       category: {
-        select: { slug: true, name: true, parent: { select: { slug: true } } },
+        select: {
+          slug: true,
+          name: true,
+          nameEn: true,
+          parent: { select: { slug: true } },
+        },
       },
       tags: { select: { tag: { select: { name: true } } } },
     },

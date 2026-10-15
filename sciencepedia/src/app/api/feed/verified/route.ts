@@ -26,12 +26,27 @@ export async function GET(request: NextRequest) {
     url: absoluteUrl(`/vi/articles/${a.slug}`),
     title: a.title,
     summary: a.summary,
+    // Bản EN chỉ trả khi bài CÓ cả tiêu đề lẫn tóm tắt tiếng Anh — trang /en
+    // của bài chưa dịch là trang lặp nội dung (docs/architecture.md, mục SEO
+    // bản /en), và kênh ngoài không được tự dịch bằng máy thay vào chỗ trống.
+    en:
+      a.titleEn && a.summaryEn
+        ? {
+            title: a.titleEn,
+            summary: a.summaryEn,
+            url: absoluteUrl(`/en/articles/${a.slug}`),
+          }
+        : null,
     coverImage: a.coverImage,
     coverImageAlt: a.coverImageAlt,
     publishedAt: a.publishedAt,
     reviewedAt: a.reviewedAt,
     category: a.category
-      ? { slug: a.category.slug, name: a.category.name }
+      ? {
+          slug: a.category.slug,
+          name: a.category.name,
+          nameEn: a.category.nameEn,
+        }
       : null,
     notice: a.category
       ? categoryNotice(a.category.slug, a.category.parent?.slug)
