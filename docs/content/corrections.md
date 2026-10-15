@@ -1362,3 +1362,10 @@ Bối cảnh: bài lên trang qua form /admin ngày 2026-10-14 với 0 nguồn, 
 - Cũ: tín hiệu điện "cộng hưởng"; năm dải sóng EEG và chức năng (vd. gamma "xử lý thông tin phức tạp"). Mới: các dòng điện cộng gộp, đóng góp lớn nhất từ dòng điện synapse; nhịp sóng khác nhau giữa thức và ngủ; EEG dùng chủ yếu cho động kinh, ngoài ra rối loạn giấc ngủ, viêm não. Căn cứ: Buzsáki và cs. 2012; NHS.
 - Cũ: "tốc độ từ vài mét mỗi giây đến hơn 100 mét mỗi giây"; "mỗi giây, hàng tỷ nơron…". Mới: bỏ khoảng tốc độ (không đọc được nguồn); não người có khoảng 86 tỷ nơron. Căn cứ: Azevedo và cs. 2009.
 - Sửa nhỏ: điện thế nghỉ sinh ra từ ion qua kênh và bơm, bơm natri–kali giữ chênh lệch nồng độ (StatPearls); thêm ngưỡng khoảng -50 mV, pha hồi cực bằng kali, kiểu "tất cả hoặc không" (QBI, StatPearls); viết hoa kiểu câu; thêm link giữa câu và "Đọc thêm".
+
+## 2026-10-15 — `tu-dong-dien-den-phep-tinh-mach-dien-lam-toan-nhu-the-nao`: Op-Amp và nhân tín hiệu, bổ nguồn
+
+Bối cảnh: bài lên trang qua form /admin với 0 nguồn, `factCheck = PENDING`. Phiếu `docs/content/checks/2026-10-15/<slug>.md` trả SỬA (nội dung khoa học chính xác, không lỗi chặn). Áp bằng `npm run corrections:1015b -- --write`; bài giữ PUBLISHED; chưa có bản en. 5 nguồn bậc 1–2: Nature (memristor), Proceedings of the IEEE (Mead 1990; Moore 1965 in lại 1998), Nature Reviews Physics (neuromorphic), Computer History Museum — DOI tra qua Crossref. Thẩm định lại sau 36 tháng.
+
+- Cũ: "Khi kết hợp với điện trở và tụ điện, Op-Amp có thể thực hiện: … Nhân …" — hàm ý chỉ cần R + C là nhân được hai tín hiệu. Mới: "Khi kết hợp với điện trở, tụ điện và một số mạch chuyên dụng, các mạch dựa trên Op-Amp có thể thực hiện:" — nhân hai tín hiệu cần mạch nhân chuyên dụng, không chỉ R + C.
+- Sửa nhỏ (không đổi claim): gắn 5 nguồn bậc 1–2; thêm 3 link giữa câu (*dòng điện*, *khớp thần kinh*, *năng lượng*) và mục "Đọc thêm" (4 bài); viết hoa kiểu câu cho tiêu đề bài và 10 tiêu đề mục. SEO (seoTitle/seoDescription/seoKeywords), entity, link vào và giấy phép ảnh bìa Getty để người làm tiếp (phiếu mục E).
