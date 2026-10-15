@@ -2,6 +2,7 @@ import { readdirSync, readFileSync, existsSync } from "node:fs";
 import { basename, join } from "node:path";
 import { PrismaClient } from "@prisma/client";
 import { slugify } from "../src/lib/utils";
+import { revalidateSite } from "./revalidate-site";
 
 /**
  * Bổ sung bản tiếng Anh cho bài đã xuất bản còn thiếu (đợt 03/10).
@@ -9,8 +10,9 @@ import { slugify } from "../src/lib/utils";
  *   npx tsx --env-file-if-exists=.env scripts/apply-en-translations-2026-10-03.ts                 # chạy khô
  *   npx tsx --env-file-if-exists=.env scripts/apply-en-translations-2026-10-03.ts --only a,b      # chỉ vài bài
  *   npx tsx --env-file-if-exists=.env scripts/apply-en-translations-2026-10-03.ts --write         # ghi
+ *   … --batch 2026-10-15                                                       # đợt dịch khác
  *
- * Dữ liệu: `docs/content/checks/2026-10-03/en-translate/<slug>.json` (titleEn, summaryEn)
+ * Dữ liệu: `docs/content/checks/<batch>/en-translate/<slug>.json` (titleEn, summaryEn)
  * + `<slug>.en.md` (contentEn), do `science-editor` dịch và đối chiếu từng bài với bản vi.
  *
  * ## Vì sao có lượt này
@@ -43,11 +45,14 @@ import { slugify } from "../src/lib/utils";
  */
 const prisma = new PrismaClient();
 
-const DIR = join(__dirname, "..", "..", "docs", "content", "checks", "2026-10-03", "en-translate");
+// Mỗi đợt dịch một thư mục theo ngày; cùng các phép chặn nên dùng lại script, không chép.
+const BATCH = process.argv.find((a, i) => process.argv[i - 1] === "--batch") ?? "2026-10-03";
+if (!/^\d{4}-\d{2}-\d{2}$/.test(BATCH)) throw new Error(`--batch phải là ngày YYYY-MM-DD, nhận "${BATCH}"`);
+const DIR = join(__dirname, "..", "..", "docs", "content", "checks", BATCH, "en-translate");
 const INTERNAL_LINK = /\]\(\/(?:[a-z]{2}\/)?articles\/([a-z0-9-]+)\)/gi;
 const GLOSSARY = /\[\[([^[\]|\n]{1,80})(?:\|([^[\]\n]{1,80}))?\]\]/g;
 const VI_LETTERS = /[ăâđêôơưạảấầẩẫậắằẳẵặẹẻẽếềểễệỉịọỏốồổỗộớờởỡợụủứừửữựỳỵỷỹ]/i;
-const NOTE = "Bản dịch EN lần đầu 2026-10-03 (titleEn/summaryEn/contentEn) — chụp bản VI nguồn đã dịch";
+const NOTE = `Bản dịch EN lần đầu ${BATCH} (titleEn/summaryEn/contentEn) — chụp bản VI nguồn đã dịch`;
 
 type Plan = { slug: string; titleEn: string; summaryEn: string; contentEnFile: string };
 
@@ -74,7 +79,7 @@ async function main() {
   const write = process.argv.includes("--write");
   const onlyArg = process.argv.find((a, i) => process.argv[i - 1] === "--only");
   const only = onlyArg ? new Set(onlyArg.split(",")) : null;
-  console.log("=== BỔ SUNG BẢN EN — đợt 03/10 ===");
+  console.log(`=== BỔ SUNG BẢN EN — đợt ${BATCH} ===`);
   console.log(write ? "GHI THẬT.\n" : "Chạy thử — không ghi gì. Thêm --write để thực thi.\n");
 
   const terms = await prisma.glossaryTerm.findMany({ select: { id: true, slug: true, aliases: true } });
@@ -191,6 +196,7 @@ async function main() {
     console.log(`✓ ${p.slug}`);
   }
   console.log(`\nĐã ghi ${planned.length} bài.`);
+  if (planned.length > 0) await revalidateSite(planned.map((p) => p.slug));
 }
 
 main()
