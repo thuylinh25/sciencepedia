@@ -103,8 +103,8 @@ const THORACIC_SPINE: PartRule = { systems: ["skeletal"], name: /thoracic verteb
 const CLAVICLES = rule("FMA13322", "FMA13323");
 const DIAPHRAGM = rule("FMA13295");
 const EXTERNAL_INTERCOSTAL = rule("FMA9756");
-const STERNOCLEIDOMASTOID = rule("FMA13408", "FMA13409");
-const SCALENES = rule("FMA13388", "FMA13389", "FMA13390", "FMA13391", "FMA13392", "FMA13393");
+export const STERNOCLEIDOMASTOID = rule("FMA13408", "FMA13409");
+export const SCALENES = rule("FMA13388", "FMA13389", "FMA13390", "FMA13391", "FMA13392", "FMA13393");
 const PECTORALIS_MINOR = rule("FMA13375", "FMA13376");
 // Cơ thở ra gắng sức có trong BodyParts3D 4.0 (mỗi mã hai mảnh phải/trái).
 const INTERNAL_INTERCOSTAL = rule("FMA9757");
