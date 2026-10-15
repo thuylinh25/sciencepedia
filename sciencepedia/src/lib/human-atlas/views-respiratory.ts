@@ -112,9 +112,9 @@ const TRANSVERSUS_THORACIS = rule("FMA9761", "FMA9762");
 const EXTERNAL_OBLIQUE = rule("FMA13336", "FMA13337");
 
 // Thần kinh (Z-Anatomy, CC BY-SA — mã `ZA-…`, khớp bằng tên). Không có thần kinh hoành.
-const VAGUS: PartRule = { systems: ["nervous"], name: /^(left|right) vagus nerve \(x\)$/i };
+export const VAGUS: PartRule = { systems: ["nervous"], name: /^(left|right) vagus nerve \(x\)$/i };
 const SYMPATHETIC_TRUNKS: PartRule = { systems: ["nervous"], name: /^(left|right) sympathetic trunk$/i };
-const INTERCOSTAL_NERVES: PartRule = { systems: ["nervous"], name: /^(left|right) intercostal nerves$/i };
+export const INTERCOSTAL_NERVES: PartRule = { systems: ["nervous"], name: /^(left|right) intercostal nerves$/i };
 
 // Mạch phổi. "Right anterior segmental artery" (FMA8620) bị loại như ở tổng quan
 // tim: hai mảnh nằm ngang thận — lỗi vị trí của BodyParts3D (views-overviews.ts).
