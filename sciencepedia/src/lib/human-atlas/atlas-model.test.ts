@@ -54,7 +54,8 @@ test("phổi mờ làm bối cảnh cho cây phế quản, khí quản, cơ hít
 });
 
 test("mọi hệ đều có mô hình với một tổng quan dùng được", () => {
-  for (const id of SYSTEM_IDS) {
+  // Bề mặt cơ thể: không có góc nhìn (chủ sản phẩm bỏ, 2026-10-15) — da vẫn là lớp ngoài của mô hình.
+  for (const id of SYSTEM_IDS.filter((x) => x !== "integumentary")) {
     const system = anatomicalSystem(id);
     assert.ok(system, id);
     assert.ok(system.overview?.usable, `${id}: không có tổng quan dùng được`);

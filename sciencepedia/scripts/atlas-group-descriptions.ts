@@ -295,6 +295,8 @@ function emitClient() {
   const map: Record<string, { text: string; title: string; url: string; en?: { text: string; title: string; url: string } }> = {};
   for (const e of doc.entries) {
     if (!e.description?.reviewed || !e.source || e.description.lang !== "vi") continue;
+    // Góc nhìn đã bỏ khỏi registry (vd. bề mặt cơ thể, 2026-10-15): giữ bản duyệt trong tệp dữ liệu, không xuất ra client.
+    if (!ATLAS_VIEWS.some((v) => v.id === e.viewId)) continue;
     map[e.viewId] = { text: e.description.text, title: e.source.title, url: e.source.url };
     if (e.en?.reviewed && e.enTitle && e.enUrl) map[e.viewId].en = { text: e.en.text, title: e.enTitle, url: e.enUrl };
   }

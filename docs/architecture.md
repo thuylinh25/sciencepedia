@@ -789,6 +789,10 @@ trong bối cảnh mạch/tạng. Mắt, tai, lưỡi, da của atlas ở hệ g
 Hệ viền tách thành cấu trúc con lồng trong vỏ/chất trắng/gian não; một cấu trúc "hệ viền" chung sẽ
 chồng một phần lên ba cấu trúc kia ở góc nhìn Não và vỡ test.
 
+**Bề mặt cơ thể KHÔNG có góc nhìn** (chủ sản phẩm bỏ, 2026-10-15): tab "Theo hệ" không còn chip này;
+da vẫn là lớp ngoài của mô hình và vẫn bật/tắt ở bảng hệ. Bản duyệt mô tả nhóm (môi, tóc) giữ trong tệp
+dữ liệu, `--emit-client` bỏ mục không còn góc nhìn.
+
 **Góc nhìn theo hệ lấp 74% chiều cao VÙNG TRỐNG**, không của cả khung như theo vùng: cơ quan cao
 như khí quản lấp theo cả khung là ~93% vùng trống, đè chip và thanh trượt.
 
