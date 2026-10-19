@@ -65,18 +65,18 @@
     ]
   },
   "coverage": {
-    "nodes": 219,
-    "nodes3d": 214,
+    "nodes": 229,
+    "nodes3d": 224,
     "byStatus": {
-      "live": 179,
-      "buildable": 3,
+      "live": 192,
+      "buildable": 0,
       "import-za": 12,
       "needs-schema": 8,
       "needs-clipping": 4,
       "missing": 8
     },
-    "readyNow": "182/214 (85%) nút 3D dựng được bằng dữ liệu đang có",
-    "afterZaImport": "194/214 (91%)",
+    "readyNow": "192/224 (86%) nút 3D dựng được bằng dữ liệu đang có",
+    "afterZaImport": "204/224 (91%)",
     "haaTiles": {
       "note": "So với 24 ô \"Nervous System Views\" của HAA (ảnh tham chiếu, không dùng asset HAA).",
       "withCardNow": "19/24 (79%)",
@@ -240,11 +240,7 @@
       "phase": "4–7",
       "title": "Tự chủ, đám rối, nhánh thần kinh từ mảnh sẵn có",
       "status": "buildable",
-      "items": [
-        "sympathetic",
-        "parasympathetic",
-        "parasympathetic-cranial"
-      ]
+      "items": []
     },
     {
       "id": "M4",
@@ -1330,7 +1326,10 @@
         "reviewed": true
       },
       "parent": "brainstem",
-      "children": [],
+      "children": [
+        "cranial-nerve-motor-nuclei",
+        "cranial-nerve-sensory-nuclei"
+      ],
       "learningObjectives": {
         "vi": [
           "Định vị cột nhân vận động và cảm giác của dây sọ trong thân não",
@@ -5277,7 +5276,12 @@
         "reviewed": true
       },
       "parent": "cn-v-trigeminal",
-      "children": [],
+      "children": [
+        "ophthalmic-nerve-trunk",
+        "frontal-nerve",
+        "lacrimal-nerve",
+        "nasociliary-nerve"
+      ],
       "learningObjectives": {
         "vi": [
           "Xác định vùng cảm giác của V1 (trán, mi trên, sống mũi) và hạch mi treo trên nhánh mũi mi"
@@ -5640,9 +5644,9 @@
       "kind": "group",
       "level": 3,
       "name": {
-        "vi": "Phân hệ giao cảm",
-        "en": "Sympathetic division",
-        "reviewed": false
+        "vi": "Phân hệ giao cảm: thân giao cảm đoạn cổ – ngực",
+        "en": "Sympathetic division: cervical and thoracic sympathetic trunk",
+        "reviewed": true
       },
       "parent": "nervous-autonomic",
       "children": [
@@ -5657,9 +5661,11 @@
         ],
         "reviewed": false
       },
-      "structures3d": [],
+      "structures3d": [
+        "rule hiện có của `sympathetic`"
+      ],
       "view": {
-        "direction": "anterolateral",
+        "direction": "front",
         "zoom": {
           "level": "region",
           "cameraFill": 0.78,
@@ -5667,8 +5673,7 @@
         },
         "display": "layered",
         "context": [
-          "SPINE",
-          "RIBS"
+          "SPINE"
         ]
       },
       "url": {
@@ -5678,17 +5683,17 @@
       "thumbnail": {
         "source": "auto-capture",
         "from": "model",
-        "direction": "anterolateral"
+        "direction": "front"
       },
       "data": {
-        "status": "buildable",
+        "status": "live",
         "partial": true,
-        "existingViewId": null,
+        "existingViewId": "sympathetic",
         "borrowedFromSystem": null,
-        "note": "Thiếu hạch trước sống (tạng, mạc treo), dây tạng — không nguồn nào có."
+        "note": "Z-Anatomy chỉ có thân giao cảm cổ – ngực (dừng ngang T12, đo hộp bao); thiếu đoạn thắt lưng, cùng, hạch trước sống, dây tạng."
       },
       "phase": 4,
-      "priority": "P2"
+      "priority": "done"
     },
     {
       "id": "intermediolateral-column",
@@ -5793,13 +5798,14 @@
       "kind": "group",
       "level": 3,
       "name": {
-        "vi": "Phân hệ đối giao cảm",
-        "en": "Parasympathetic division",
-        "reviewed": false
+        "vi": "Phân hệ đối giao cảm: phần sọ",
+        "en": "Parasympathetic division: cranial part",
+        "reviewed": true
       },
       "parent": "nervous-autonomic",
       "children": [
-        "parasympathetic-cranial",
+        "cranial-parasympathetic-nuclei",
+        "ciliary-ganglion",
         "parasympathetic-sacral"
       ],
       "learningObjectives": {
@@ -5810,13 +5816,15 @@
         "reviewed": false
       },
       "structures3d": [
-        "VAGUS (mượn views-respiratory)",
-        "ciliary ganglion (trong OPHTHALMIC)",
-        "chorda tympani (trong FACIAL)",
-        "nhân Edinger-Westphal, nhân nước bọt (ZA)"
+        "cranial-parasympathetic-nuclei",
+        "ciliary-ganglion",
+        "oculomotor-nerve",
+        "facial-nerve",
+        "glossopharyngeal-nerve",
+        "vagus-nerves"
       ],
       "view": {
-        "direction": "front",
+        "direction": "anterolateral",
         "zoom": {
           "level": "region",
           "cameraFill": 0.78,
@@ -5824,9 +5832,8 @@
         },
         "display": "layered",
         "context": [
-          "SKULL (xương sọ, ghost)",
-          "HEART",
-          "ABDOMINAL_VISCERA"
+          "BRAINSTEM",
+          "HEART"
         ]
       },
       "url": {
@@ -5836,71 +5843,620 @@
       "thumbnail": {
         "source": "auto-capture",
         "from": "model",
-        "direction": "front"
+        "direction": "anterolateral"
       },
       "data": {
-        "status": "buildable",
+        "status": "live",
         "partial": true,
-        "existingViewId": null,
+        "existingViewId": "parasympathetic",
         "borrowedFromSystem": null,
-        "note": "Thiếu hạch chân bướm – khẩu cái, hạch tai, hạch dưới hàm, dây tạng chậu (đối giao cảm cùng). Group mới chỉ được nổi bật đúng HỢP các structure sẵn có (test phủ đủ)."
+        "note": "Chỉ có phần sọ — nút 'parasympathetic-cranial' gộp vào đây. Dây III, VII, IX, X hiện nguyên dây. Thiếu hạch chân bướm – khẩu cái, hạch tai, hạch dưới hàm, dây đá, đối giao cảm cùng."
       },
       "phase": 4,
-      "priority": "P2"
+      "priority": "done"
     },
     {
-      "id": "parasympathetic-cranial",
-      "viewId": "parasympathetic-cranial",
+      "id": "cranial-parasympathetic-nuclei",
+      "viewId": "cranial-parasympathetic-nuclei",
       "section": "G",
       "kind": "structure",
       "level": 4,
       "name": {
-        "vi": "Đối giao cảm phần sọ",
-        "en": "Cranial parasympathetic outflow",
-        "reviewed": false
+        "vi": "Nhân đối giao cảm các dây thần kinh sọ",
+        "en": "Parasympathetic nuclei of the cranial nerves",
+        "reviewed": true
       },
       "parent": "parasympathetic",
       "children": [],
       "learningObjectives": {
         "vi": [
-          "Liên hệ dây III, VII, IX, X với hạch đối giao cảm tương ứng"
+          "Liên hệ nhân Edinger–Westphal, nhân nước bọt trên/dưới, nhân lưng dây X với dây III, VII, IX, X"
         ],
         "reviewed": false
       },
       "structures3d": [
-        "vagus-nerves",
-        "ciliary ganglion",
-        "chorda tympani",
-        "Accessory nucleus of oculomotor nerve, Superior/Inferior salivatory nucleus, Posterior nucleus of vagus (ZA)"
+        "rule hiện có của `cranial-parasympathetic-nuclei`"
       ],
       "view": {
-        "direction": "three-quarter",
+        "direction": "back",
         "zoom": {
-          "level": "structure",
-          "cameraFill": 0.86,
+          "level": "detail",
+          "cameraFill": 0.9,
+          "thumbnailFill": 0.86
+        },
+        "display": "layered",
+        "context": [
+          "BRAINSTEM"
+        ]
+      },
+      "url": {
+        "vi": "/vi/human-atlas?view=cranial-parasympathetic-nuclei",
+        "en": "/en/human-atlas?view=cranial-parasympathetic-nuclei"
+      },
+      "thumbnail": {
+        "source": "auto-capture",
+        "from": "model",
+        "direction": "back"
+      },
+      "data": {
+        "status": "live",
+        "partial": false,
+        "existingViewId": "cranial-parasympathetic-nuclei",
+        "borrowedFromSystem": null,
+        "note": null
+      },
+      "phase": 4,
+      "priority": "done"
+    },
+    {
+      "id": "ciliary-ganglion",
+      "viewId": "ciliary-ganglion",
+      "section": "G",
+      "kind": "structure",
+      "level": 4,
+      "name": {
+        "vi": "Hạch mi và các thần kinh mi ngắn",
+        "en": "Ciliary ganglion and short ciliary nerves",
+        "reviewed": true
+      },
+      "parent": "parasympathetic",
+      "children": [],
+      "learningObjectives": {
+        "vi": [
+          "Định vị hạch mi sau nhãn cầu, nơi sợi đối giao cảm của dây III tiếp hợp"
+        ],
+        "reviewed": false
+      },
+      "structures3d": [
+        "rule hiện có của `ciliary-ganglion`"
+      ],
+      "view": {
+        "direction": [
+          -0.8,
+          0.35,
+          0.5
+        ],
+        "zoom": {
+          "level": "detail",
+          "cameraFill": 0.9,
           "thumbnailFill": 0.86
         },
         "display": "layered",
         "context": []
       },
       "url": {
-        "vi": "/vi/human-atlas?view=parasympathetic-cranial",
-        "en": "/en/human-atlas?view=parasympathetic-cranial"
+        "vi": "/vi/human-atlas?view=ciliary-ganglion",
+        "en": "/en/human-atlas?view=ciliary-ganglion"
       },
       "thumbnail": {
         "source": "auto-capture",
         "from": "model",
-        "direction": "three-quarter"
+        "direction": [
+          -0.8,
+          0.35,
+          0.5
+        ]
       },
       "data": {
-        "status": "buildable",
-        "partial": true,
-        "existingViewId": null,
+        "status": "live",
+        "partial": false,
+        "existingViewId": "ciliary-ganglion",
         "borrowedFromSystem": null,
         "note": null
       },
       "phase": 4,
-      "priority": "P2"
+      "priority": "done"
+    },
+    {
+      "id": "cranial-nerve-motor-nuclei",
+      "viewId": "cranial-nerve-motor-nuclei",
+      "section": "G",
+      "kind": "structure",
+      "level": 5,
+      "name": {
+        "vi": "Nhân vận động các dây thần kinh sọ (chưa gồm nhân vận động dây sinh ba)",
+        "en": "Motor nuclei of the cranial nerves (excluding the trigeminal motor nucleus)",
+        "reviewed": true
+      },
+      "parent": "cranial-nerve-nuclei",
+      "children": [],
+      "learningObjectives": {
+        "vi": [
+          "Định vị nhân vận động dây III, IV, VI, VII, IX–X (nhân mơ hồ), XI, XII"
+        ],
+        "reviewed": false
+      },
+      "structures3d": [
+        "rule hiện có của `cranial-nerve-motor-nuclei`"
+      ],
+      "view": {
+        "direction": "back",
+        "zoom": {
+          "level": "detail",
+          "cameraFill": 0.9,
+          "thumbnailFill": 0.86
+        },
+        "display": "layered",
+        "context": []
+      },
+      "url": {
+        "vi": "/vi/human-atlas?view=cranial-nerve-motor-nuclei",
+        "en": "/en/human-atlas?view=cranial-nerve-motor-nuclei"
+      },
+      "thumbnail": {
+        "source": "auto-capture",
+        "from": "model",
+        "direction": "back"
+      },
+      "data": {
+        "status": "live",
+        "partial": false,
+        "existingViewId": "cranial-nerve-motor-nuclei",
+        "borrowedFromSystem": null,
+        "note": null
+      },
+      "phase": 4,
+      "priority": "done"
+    },
+    {
+      "id": "cranial-nerve-sensory-nuclei",
+      "viewId": "cranial-nerve-sensory-nuclei",
+      "section": "G",
+      "kind": "structure",
+      "level": 5,
+      "name": {
+        "vi": "Nhân cảm giác các dây thần kinh sọ (chưa gồm các nhân dây sinh ba)",
+        "en": "Sensory nuclei of the cranial nerves (excluding the trigeminal nuclei)",
+        "reviewed": true
+      },
+      "parent": "cranial-nerve-nuclei",
+      "children": [],
+      "learningObjectives": {
+        "vi": [
+          "Định vị nhân bó đơn độc, nhân tiền đình, nhân ốc tai"
+        ],
+        "reviewed": false
+      },
+      "structures3d": [
+        "rule hiện có của `cranial-nerve-sensory-nuclei`"
+      ],
+      "view": {
+        "direction": "back",
+        "zoom": {
+          "level": "detail",
+          "cameraFill": 0.9,
+          "thumbnailFill": 0.86
+        },
+        "display": "layered",
+        "context": []
+      },
+      "url": {
+        "vi": "/vi/human-atlas?view=cranial-nerve-sensory-nuclei",
+        "en": "/en/human-atlas?view=cranial-nerve-sensory-nuclei"
+      },
+      "thumbnail": {
+        "source": "auto-capture",
+        "from": "model",
+        "direction": "back"
+      },
+      "data": {
+        "status": "live",
+        "partial": false,
+        "existingViewId": "cranial-nerve-sensory-nuclei",
+        "borrowedFromSystem": null,
+        "note": null
+      },
+      "phase": 4,
+      "priority": "done"
+    },
+    {
+      "id": "ophthalmic-nerve-trunk",
+      "viewId": "ophthalmic-nerve-trunk",
+      "section": "G",
+      "kind": "structure",
+      "level": 5,
+      "name": {
+        "vi": "Thân dây thần kinh mắt (V1)",
+        "en": "Ophthalmic nerve (V1) trunk",
+        "reviewed": true
+      },
+      "parent": "ophthalmic-nerve",
+      "children": [],
+      "learningObjectives": {
+        "vi": [
+          "Theo thân V1 từ hạch sinh ba tới khe ổ mắt trên"
+        ],
+        "reviewed": false
+      },
+      "structures3d": [
+        "rule hiện có của `ophthalmic-nerve-trunk`"
+      ],
+      "view": {
+        "direction": [
+          -0.8,
+          0.35,
+          0.5
+        ],
+        "zoom": {
+          "level": "detail",
+          "cameraFill": 0.9,
+          "thumbnailFill": 0.86
+        },
+        "display": "layered",
+        "context": []
+      },
+      "url": {
+        "vi": "/vi/human-atlas?view=ophthalmic-nerve-trunk",
+        "en": "/en/human-atlas?view=ophthalmic-nerve-trunk"
+      },
+      "thumbnail": {
+        "source": "auto-capture",
+        "from": "model",
+        "direction": [
+          -0.8,
+          0.35,
+          0.5
+        ]
+      },
+      "data": {
+        "status": "live",
+        "partial": false,
+        "existingViewId": "ophthalmic-nerve-trunk",
+        "borrowedFromSystem": null,
+        "note": null
+      },
+      "phase": 4,
+      "priority": "done"
+    },
+    {
+      "id": "frontal-nerve",
+      "viewId": "frontal-nerve",
+      "section": "G",
+      "kind": "structure",
+      "level": 5,
+      "name": {
+        "vi": "Thần kinh trán, trên ổ mắt và trên ròng rọc",
+        "en": "Frontal, supra-orbital and supratrochlear nerves",
+        "reviewed": true
+      },
+      "parent": "ophthalmic-nerve",
+      "children": [],
+      "learningObjectives": {
+        "vi": [
+          "Theo thần kinh trán chia nhánh trên ổ mắt và trên ròng rọc"
+        ],
+        "reviewed": false
+      },
+      "structures3d": [
+        "rule hiện có của `frontal-nerve`"
+      ],
+      "view": {
+        "direction": [
+          -0.8,
+          0.35,
+          0.5
+        ],
+        "zoom": {
+          "level": "detail",
+          "cameraFill": 0.9,
+          "thumbnailFill": 0.86
+        },
+        "display": "layered",
+        "context": []
+      },
+      "url": {
+        "vi": "/vi/human-atlas?view=frontal-nerve",
+        "en": "/en/human-atlas?view=frontal-nerve"
+      },
+      "thumbnail": {
+        "source": "auto-capture",
+        "from": "model",
+        "direction": [
+          -0.8,
+          0.35,
+          0.5
+        ]
+      },
+      "data": {
+        "status": "live",
+        "partial": false,
+        "existingViewId": "frontal-nerve",
+        "borrowedFromSystem": null,
+        "note": null
+      },
+      "phase": 4,
+      "priority": "done"
+    },
+    {
+      "id": "lacrimal-nerve",
+      "viewId": "lacrimal-nerve",
+      "section": "G",
+      "kind": "structure",
+      "level": 5,
+      "name": {
+        "vi": "Thần kinh lệ",
+        "en": "Lacrimal nerve",
+        "reviewed": true
+      },
+      "parent": "ophthalmic-nerve",
+      "children": [],
+      "learningObjectives": {
+        "vi": [
+          "Theo thần kinh lệ tới tuyến lệ"
+        ],
+        "reviewed": false
+      },
+      "structures3d": [
+        "rule hiện có của `lacrimal-nerve`"
+      ],
+      "view": {
+        "direction": [
+          -0.8,
+          0.35,
+          0.5
+        ],
+        "zoom": {
+          "level": "detail",
+          "cameraFill": 0.9,
+          "thumbnailFill": 0.86
+        },
+        "display": "layered",
+        "context": []
+      },
+      "url": {
+        "vi": "/vi/human-atlas?view=lacrimal-nerve",
+        "en": "/en/human-atlas?view=lacrimal-nerve"
+      },
+      "thumbnail": {
+        "source": "auto-capture",
+        "from": "model",
+        "direction": [
+          -0.8,
+          0.35,
+          0.5
+        ]
+      },
+      "data": {
+        "status": "live",
+        "partial": false,
+        "existingViewId": "lacrimal-nerve",
+        "borrowedFromSystem": null,
+        "note": null
+      },
+      "phase": 4,
+      "priority": "done"
+    },
+    {
+      "id": "nasociliary-nerve",
+      "viewId": "nasociliary-nerve",
+      "section": "G",
+      "kind": "structure",
+      "level": 5,
+      "name": {
+        "vi": "Thần kinh mũi mi và các nhánh",
+        "en": "Nasociliary nerve and its branches",
+        "reviewed": true
+      },
+      "parent": "ophthalmic-nerve",
+      "children": [],
+      "learningObjectives": {
+        "vi": [
+          "Kể nhánh của thần kinh mũi mi: sàng trước/sau, dưới ròng rọc, mi dài"
+        ],
+        "reviewed": false
+      },
+      "structures3d": [
+        "rule hiện có của `nasociliary-nerve`"
+      ],
+      "view": {
+        "direction": [
+          -0.8,
+          0.35,
+          0.5
+        ],
+        "zoom": {
+          "level": "detail",
+          "cameraFill": 0.9,
+          "thumbnailFill": 0.86
+        },
+        "display": "layered",
+        "context": []
+      },
+      "url": {
+        "vi": "/vi/human-atlas?view=nasociliary-nerve",
+        "en": "/en/human-atlas?view=nasociliary-nerve"
+      },
+      "thumbnail": {
+        "source": "auto-capture",
+        "from": "model",
+        "direction": [
+          -0.8,
+          0.35,
+          0.5
+        ]
+      },
+      "data": {
+        "status": "live",
+        "partial": false,
+        "existingViewId": "nasociliary-nerve",
+        "borrowedFromSystem": null,
+        "note": null
+      },
+      "phase": 4,
+      "priority": "done"
+    },
+    {
+      "id": "sympathetic-chain",
+      "viewId": "sympathetic-chain",
+      "section": "G",
+      "kind": "structure",
+      "level": 5,
+      "name": {
+        "vi": "Dải thân giao cảm (không gồm hạch)",
+        "en": "Sympathetic trunk cord (without ganglia)",
+        "reviewed": true
+      },
+      "parent": "sympathetic-trunk",
+      "children": [],
+      "learningObjectives": {
+        "vi": [
+          "Theo thân giao cảm dọc hai bên thân đốt sống"
+        ],
+        "reviewed": false
+      },
+      "structures3d": [
+        "rule hiện có của `sympathetic-chain`"
+      ],
+      "view": {
+        "direction": "anterolateral",
+        "zoom": {
+          "level": "detail",
+          "cameraFill": 0.9,
+          "thumbnailFill": 0.86
+        },
+        "display": "layered",
+        "context": []
+      },
+      "url": {
+        "vi": "/vi/human-atlas?view=sympathetic-chain",
+        "en": "/en/human-atlas?view=sympathetic-chain"
+      },
+      "thumbnail": {
+        "source": "auto-capture",
+        "from": "model",
+        "direction": "anterolateral"
+      },
+      "data": {
+        "status": "live",
+        "partial": false,
+        "existingViewId": "sympathetic-chain",
+        "borrowedFromSystem": null,
+        "note": null
+      },
+      "phase": 4,
+      "priority": "done"
+    },
+    {
+      "id": "sympathetic-ganglia",
+      "viewId": "sympathetic-ganglia",
+      "section": "G",
+      "kind": "structure",
+      "level": 5,
+      "name": {
+        "vi": "Các hạch thân giao cảm",
+        "en": "Ganglia of the sympathetic trunk",
+        "reviewed": true
+      },
+      "parent": "sympathetic-trunk",
+      "children": [],
+      "learningObjectives": {
+        "vi": [
+          "Nhận ra hạch giao cảm nằm thành chuỗi trên thân"
+        ],
+        "reviewed": false
+      },
+      "structures3d": [
+        "rule hiện có của `sympathetic-ganglia`"
+      ],
+      "view": {
+        "direction": "anterolateral",
+        "zoom": {
+          "level": "detail",
+          "cameraFill": 0.9,
+          "thumbnailFill": 0.86
+        },
+        "display": "layered",
+        "context": []
+      },
+      "url": {
+        "vi": "/vi/human-atlas?view=sympathetic-ganglia",
+        "en": "/en/human-atlas?view=sympathetic-ganglia"
+      },
+      "thumbnail": {
+        "source": "auto-capture",
+        "from": "model",
+        "direction": "anterolateral"
+      },
+      "data": {
+        "status": "live",
+        "partial": false,
+        "existingViewId": "sympathetic-ganglia",
+        "borrowedFromSystem": null,
+        "note": null
+      },
+      "phase": 4,
+      "priority": "done"
+    },
+    {
+      "id": "sympathetic-nerves",
+      "viewId": "sympathetic-nerves",
+      "section": "G",
+      "kind": "structure",
+      "level": 5,
+      "name": {
+        "vi": "Các nhánh giao cảm",
+        "en": "Sympathetic nerves",
+        "reviewed": true
+      },
+      "parent": "sympathetic-trunk",
+      "children": [],
+      "learningObjectives": {
+        "vi": [
+          "Phân biệt nhánh giao cảm với thân giao cảm"
+        ],
+        "reviewed": false
+      },
+      "structures3d": [
+        "rule hiện có của `sympathetic-nerves`"
+      ],
+      "view": {
+        "direction": "anterolateral",
+        "zoom": {
+          "level": "detail",
+          "cameraFill": 0.9,
+          "thumbnailFill": 0.86
+        },
+        "display": "layered",
+        "context": []
+      },
+      "url": {
+        "vi": "/vi/human-atlas?view=sympathetic-nerves",
+        "en": "/en/human-atlas?view=sympathetic-nerves"
+      },
+      "thumbnail": {
+        "source": "auto-capture",
+        "from": "model",
+        "direction": "anterolateral"
+      },
+      "data": {
+        "status": "live",
+        "partial": false,
+        "existingViewId": "sympathetic-nerves",
+        "borrowedFromSystem": null,
+        "note": null
+      },
+      "phase": 4,
+      "priority": "done"
     },
     {
       "id": "parasympathetic-sacral",
@@ -12095,12 +12651,16 @@
       "kind": "structure",
       "level": 4,
       "name": {
-        "vi": "Thân và các dây giao cảm",
-        "en": "Sympathetic trunk and nerves",
+        "vi": "Thân giao cảm đoạn cổ – ngực: dải thân, các hạch và các nhánh",
+        "en": "Cervical and thoracic sympathetic trunk: cord, ganglia and branches",
         "reviewed": true
       },
       "parent": "sympathetic",
-      "children": [],
+      "children": [
+        "sympathetic-chain",
+        "sympathetic-ganglia",
+        "sympathetic-nerves"
+      ],
       "learningObjectives": {
         "vi": [
           "Xác định thân giao cảm hai bên thân đốt sống"

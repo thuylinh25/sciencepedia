@@ -17512,6 +17512,132 @@
       "FJ3348"
     ]
   },
+  "sympathetic": {
+    "focus": [
+      "ZA-left-ganglia-of-sympathetic-trunk",
+      "ZA-left-sympathetic-nerves",
+      "ZA-left-sympathetic-trunk",
+      "ZA-right-ganglia-of-sympathetic-trunk",
+      "ZA-right-sympathetic-nerves",
+      "ZA-right-sympathetic-trunk"
+    ],
+    "hide": [],
+    "context": [
+      "FJ3154",
+      "FJ3155",
+      "FJ3156",
+      "FJ3157",
+      "FJ3158",
+      "FJ3159",
+      "FJ3160",
+      "FJ3161",
+      "FJ3162",
+      "FJ3163",
+      "FJ3164",
+      "FJ3165",
+      "FJ3166",
+      "FJ3167",
+      "FJ3168",
+      "FJ3169",
+      "FJ3170",
+      "FJ3171",
+      "FJ3172",
+      "FJ3173",
+      "FJ3174",
+      "FJ3175",
+      "FJ3176",
+      "FJ3177",
+      "FJ3203",
+      "FJ3204",
+      "FJ3205",
+      "FJ3206",
+      "FJ3207",
+      "FJ3208",
+      "FJ3209",
+      "FJ3210",
+      "FJ3212",
+      "FJ3213",
+      "FJ3214",
+      "FJ3215",
+      "FJ3216",
+      "FJ3217",
+      "FJ3218",
+      "FJ3219",
+      "FJ3220",
+      "FJ3221",
+      "FJ3222",
+      "FJ3223",
+      "FJ3224",
+      "FJ3393"
+    ]
+  },
+  "parasympathetic": {
+    "focus": [
+      "FJ1288",
+      "FJ1293",
+      "FJ1319",
+      "FJ1321",
+      "FJ1339",
+      "FJ1344",
+      "FJ1370",
+      "FJ1372",
+      "ZA-left-accessory-nucleus-of-oculomotor-nerve",
+      "ZA-left-chorda-tympani",
+      "ZA-left-facial-nerve-vii",
+      "ZA-left-glossopharyngeal-nerve-ix",
+      "ZA-left-inferior-salivatory-nucleus",
+      "ZA-left-posterior-nucleus-of-vagus-nerve",
+      "ZA-left-superior-salivatory-nucleus",
+      "ZA-left-vagus-nerve-x",
+      "ZA-right-accessory-nucleus-of-oculomotor-nerve",
+      "ZA-right-chorda-tympani",
+      "ZA-right-facial-nerve-vii",
+      "ZA-right-glossopharyngeal-nerve-ix",
+      "ZA-right-inferior-salivatory-nucleus",
+      "ZA-right-posterior-nucleus-of-vagus-nerve",
+      "ZA-right-superior-salivatory-nucleus",
+      "ZA-right-vagus-nerve-x"
+    ],
+    "hide": [],
+    "context": [
+      "FJ1735",
+      "FJ1736",
+      "FJ1761",
+      "FJ1762",
+      "FJ1763",
+      "FJ1769",
+      "FJ1770",
+      "FJ1774",
+      "FJ1775",
+      "FJ1779",
+      "FJ1809",
+      "FJ1810",
+      "FJ1811",
+      "FJ1817",
+      "FJ1821",
+      "FJ1822",
+      "FJ1826",
+      "FJ1831",
+      "FJ2417",
+      "FJ2420",
+      "FJ2421",
+      "FJ2422",
+      "FJ2423",
+      "FJ2424",
+      "FJ2425",
+      "FJ2426",
+      "FJ2427",
+      "FJ2428",
+      "FJ2431",
+      "FJ2432",
+      "FJ2433",
+      "FJ2434",
+      "FJ2435",
+      "FJ2436",
+      "FJ2438",
+      "FJ2439"
+    ]
+  },
   "nervous-autonomic": {
     "focus": [
       "ZA-left-ganglia-of-sympathetic-trunk",
@@ -18495,6 +18621,111 @@
       "FJ1831"
     ]
   },
+  "cranial-nerve-motor-nuclei": {
+    "focus": [
+      "ZA-left-motor-nucleus-of-facial-nerve",
+      "ZA-left-nucleus-ambiguus",
+      "ZA-left-nucleus-of-abducens-nerve",
+      "ZA-left-nucleus-of-accessory-nerve",
+      "ZA-left-nucleus-of-hypoglossal-nerve",
+      "ZA-left-nucleus-of-oculomotor-nerve",
+      "ZA-left-nucleus-of-trochlear-nerve",
+      "ZA-right-motor-nucleus-of-facial-nerve",
+      "ZA-right-nucleus-ambiguus",
+      "ZA-right-nucleus-of-abducens-nerve",
+      "ZA-right-nucleus-of-accessory-nerve",
+      "ZA-right-nucleus-of-hypoglossal-nerve",
+      "ZA-right-nucleus-of-oculomotor-nerve",
+      "ZA-right-nucleus-of-trochlear-nerve"
+    ],
+    "hide": [],
+    "context": [
+      "FJ1735",
+      "FJ1736",
+      "FJ1761",
+      "FJ1762",
+      "FJ1763",
+      "FJ1769",
+      "FJ1770",
+      "FJ1774",
+      "FJ1775",
+      "FJ1779",
+      "FJ1809",
+      "FJ1810",
+      "FJ1811",
+      "FJ1817",
+      "FJ1821",
+      "FJ1822",
+      "FJ1826",
+      "FJ1831"
+    ]
+  },
+  "cranial-parasympathetic-nuclei": {
+    "focus": [
+      "ZA-left-accessory-nucleus-of-oculomotor-nerve",
+      "ZA-left-inferior-salivatory-nucleus",
+      "ZA-left-posterior-nucleus-of-vagus-nerve",
+      "ZA-left-superior-salivatory-nucleus",
+      "ZA-right-accessory-nucleus-of-oculomotor-nerve",
+      "ZA-right-inferior-salivatory-nucleus",
+      "ZA-right-posterior-nucleus-of-vagus-nerve",
+      "ZA-right-superior-salivatory-nucleus"
+    ],
+    "hide": [],
+    "context": [
+      "FJ1735",
+      "FJ1736",
+      "FJ1761",
+      "FJ1762",
+      "FJ1763",
+      "FJ1769",
+      "FJ1770",
+      "FJ1774",
+      "FJ1775",
+      "FJ1779",
+      "FJ1809",
+      "FJ1810",
+      "FJ1811",
+      "FJ1817",
+      "FJ1821",
+      "FJ1822",
+      "FJ1826",
+      "FJ1831"
+    ]
+  },
+  "cranial-nerve-sensory-nuclei": {
+    "focus": [
+      "ZA-left-anterior-cochlear-nucleus",
+      "ZA-left-nucleus-of-solitary-tract",
+      "ZA-left-posterior-cochlear-nucleus",
+      "ZA-left-vestibular-nuclei",
+      "ZA-right-anterior-cochlear-nucleus",
+      "ZA-right-nucleus-of-solitary-tract",
+      "ZA-right-posterior-cochlear-nucleus",
+      "ZA-right-vestibular-nuclei"
+    ],
+    "hide": [],
+    "context": [
+      "FJ1735",
+      "FJ1736",
+      "FJ1761",
+      "FJ1762",
+      "FJ1763",
+      "FJ1769",
+      "FJ1770",
+      "FJ1774",
+      "FJ1775",
+      "FJ1779",
+      "FJ1809",
+      "FJ1810",
+      "FJ1811",
+      "FJ1817",
+      "FJ1821",
+      "FJ1822",
+      "FJ1826",
+      "FJ1831"
+    ]
+  },
   "red-nucleus": {
     "focus": [
       "ZA-left-red-nucleus",
@@ -18662,6 +18893,57 @@
       "FJ1370",
       "FJ1376",
       "FJ1377"
+    ],
+    "hide": []
+  },
+  "ophthalmic-nerve-trunk": {
+    "focus": [
+      "FJ1312",
+      "FJ1363"
+    ],
+    "hide": []
+  },
+  "frontal-nerve": {
+    "focus": [
+      "FJ1290",
+      "FJ1325",
+      "FJ1326",
+      "FJ1341",
+      "FJ1376",
+      "FJ1377"
+    ],
+    "hide": []
+  },
+  "lacrimal-nerve": {
+    "focus": [
+      "FJ1300",
+      "FJ1351"
+    ],
+    "hide": []
+  },
+  "nasociliary-nerve": {
+    "focus": [
+      "FJ1283",
+      "FJ1296",
+      "FJ1310",
+      "FJ1311",
+      "FJ1315",
+      "FJ1318",
+      "FJ1333",
+      "FJ1347",
+      "FJ1361",
+      "FJ1362",
+      "FJ1366",
+      "FJ1369"
+    ],
+    "hide": []
+  },
+  "ciliary-ganglion": {
+    "focus": [
+      "FJ1288",
+      "FJ1319",
+      "FJ1339",
+      "FJ1370"
     ],
     "hide": []
   },
@@ -19282,6 +19564,27 @@
       "ZA-right-ganglia-of-sympathetic-trunk",
       "ZA-right-sympathetic-nerves",
       "ZA-right-sympathetic-trunk"
+    ],
+    "hide": []
+  },
+  "sympathetic-chain": {
+    "focus": [
+      "ZA-left-sympathetic-trunk",
+      "ZA-right-sympathetic-trunk"
+    ],
+    "hide": []
+  },
+  "sympathetic-ganglia": {
+    "focus": [
+      "ZA-left-ganglia-of-sympathetic-trunk",
+      "ZA-right-ganglia-of-sympathetic-trunk"
+    ],
+    "hide": []
+  },
+  "sympathetic-nerves": {
+    "focus": [
+      "ZA-left-sympathetic-nerves",
+      "ZA-right-sympathetic-nerves"
     ],
     "hide": []
   },

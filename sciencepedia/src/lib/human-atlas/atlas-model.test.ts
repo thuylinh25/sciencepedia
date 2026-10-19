@@ -125,6 +125,10 @@ test("não chia sâu: mở cấu trúc cha ra đúng các con, không còn mản
     ],
     "tibial-nerve": ["tibial-nerve-trunk", "plantar-nerves"],
     "plantar-nerves": ["medial-plantar-nerve", "lateral-plantar-nerve"],
+    // Tự chủ: nhân dây sọ theo ba cột chức năng; V1 tách hạch mi (chặng hậu hạch đối giao cảm).
+    "cranial-nerve-nuclei": ["cranial-nerve-motor-nuclei", "cranial-parasympathetic-nuclei", "cranial-nerve-sensory-nuclei"],
+    "ophthalmic-nerve": ["ophthalmic-nerve-trunk", "frontal-nerve", "lacrimal-nerve", "nasociliary-nerve", "ciliary-ganglion"],
+    "sympathetic-trunk": ["sympathetic-chain", "sympathetic-ganglia", "sympathetic-nerves"],
   };
   for (const [view, children] of Object.entries(expect)) {
     const list = viewStructures(view);

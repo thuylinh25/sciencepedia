@@ -51,6 +51,13 @@ const TENTORIUM = n(/^tentorium cerebelli$/i);
 // Z-Anatomy (mốc M2, 2026-10-19): liềm đại não; nhân dây sọ và nhân đỏ nằm TRONG
 // mảnh thân não BodyParts3D — cấu trúc riêng, không lồng vào `brainstem`.
 const FALX = n(/^falx cerebri$/i);
+/*
+ * Nhân dây sọ chia ba cột theo chức năng, phủ kín CN_NUCLEI. Nhân đối giao cảm (Edinger–Westphal,
+ * nước bọt trên/dưới, lưng dây X) là nhân nguồn của phân hệ đối giao cảm phần sọ.
+ */
+const CN_MOTOR_NUCLEI = n(/^(left |right )?nucleus of (oculomotor|trochlear|abducens|hypoglossal|accessory) nerve$|motor nucleus of facial nerve$|nucleus ambiguus$/i);
+const CN_PARASYMPATHETIC_NUCLEI = n(/accessory nucleus of oculomotor nerve$|salivatory nucleus$|posterior nucleus of vagus nerve$/i);
+const CN_SENSORY_NUCLEI = n(/nucleus of solitary tract$|vestibular nuclei$|cochlear nucleus$/i);
 const CN_NUCLEI = n(
   /nucleus of (oculomotor|trochlear|abducens|hypoglossal|accessory) nerve$|accessory nucleus of oculomotor nerve$|motor nucleus of facial nerve$|nucleus ambiguus$|nucleus of solitary tract$|posterior nucleus of vagus nerve$|salivatory nucleus$|vestibular nuclei$|cochlear nucleus$/i,
 );
@@ -157,6 +164,12 @@ const TROCHLEAR = n(/trochlear nerve$/i, /(supra|infra)trochlear|nucleus/i);
 const OPHTHALMIC = n(
   /ophthalmic nerve$|frontal nerve$|supra-orbital nerve$|supratrochlear nerve$|lacrimal nerve$|nasociliary nerve$|ethmoidal nerve$|infratrochlear nerve$|ciliary nerve$|ciliary ganglion$|nasociliary nerve with (left|right) ciliary ganglion$/i,
 );
+// V1 chia con phủ kín OPHTHALMIC. Hạch mi + thần kinh mi ngắn: chặng hậu hạch đối giao cảm của dây III.
+const OPHTHALMIC_TRUNK = n(/^(left |right )?ophthalmic nerve$/i);
+const FRONTAL_NERVE = n(/frontal nerve$|supra-orbital nerve$|supratrochlear nerve$/i);
+const LACRIMAL_NERVE = n(/lacrimal nerve$/i);
+const NASOCILIARY = n(/^(left |right )?nasociliary nerve$|nasociliary nerve with (left|right) ciliary ganglion$|ethmoidal nerve$|infratrochlear nerve$|long ciliary nerve$/i);
+const CILIARY_GANGLION = n(/ciliary ganglion$|short ciliary nerve$/i, /nasociliary/i);
 const MAXILLARY = n(/maxillary nerve$/i);
 const MANDIBULAR = n(/division of mandibular nerve$|buccal nerve$|lingual nerve$|inferior alveolar nerve$|mental nerve$|nerve to mylohyoid muscle$/i);
 const FACIAL = n(/facial nerve \(vii\)$|chorda tympani$/i);
@@ -244,6 +257,14 @@ const LATERAL_PLANTAR = n(/lateral plantar nerve$/i);
 
 // ------------------------------------------------------------------ thân mình
 const SYMPATHETIC = n(/sympathetic (trunk|nerves)$/i);
+/*
+ * Z-Anatomy: thân giao cảm chạy từ cổ tới ngang đốt ngực XII (đo hộp bao: đáy y 1,140, T12 1,128–1,180) —
+ * thiếu đoạn thắt lưng, đoạn cùng. Đỉnh 1,511 nằm trong đốt cổ III (1,495–1,524) → "đoạn cổ – ngực" đúng. "Sympathetic nerves" toả ra SAU tới ngang lỗ gian đốt (z −0,093),
+ * nên là nhánh nối với dây sống, không phải dây tạng — tên giữ đúng nhãn nguồn, không gọi "dây tạng".
+ */
+const SYMPATHETIC_CHAIN = n(/^(left |right )?sympathetic trunk$/i);
+const SYMPATHETIC_GANGLIA = n(/ganglia of sympathetic trunk$/i);
+const SYMPATHETIC_NERVES = n(/sympathetic nerves$/i);
 
 // Bối cảnh.
 const SKULL: PartRule = { systems: ["skeletal"], name: /skull|cranium|frontal bone|parietal bone|occipital bone|temporal bone|sphenoid bone|ethmoid$/i };
@@ -391,6 +412,21 @@ export const NERVOUS_VIEWS: readonly AtlasViewDef[] = [
     ["thần kinh ngồi", "thần kinh toạ", "sciatic nerve", "thần kinh chày", "tibial nerve", "thần kinh mác", "fibular nerve"]),
   // Id cũ (trước gồm cả thân giao cảm) — thân giao cảm nay ở "Thần kinh tự chủ".
   group("nervous-trunk", "Thần kinh gian sườn", "Intercostal nerves", "anterolateral", [INTERCOSTAL_NERVES], [RIBS], ["gian sườn", "intercostal"]),
+  group("sympathetic", "Phân hệ giao cảm: thân giao cảm đoạn cổ – ngực", "Sympathetic division: cervical and thoracic sympathetic trunk", "front", [SYMPATHETIC], [SPINE],
+    ["giao cảm", "sympathetic", "chuỗi hạch giao cảm", "sympathetic chain"], {
+      partial: {
+        vi: "Thân giao cảm chỉ có đoạn cổ và ngực, dừng ngang đốt sống ngực XII; thiếu đoạn thắt lưng, đoạn cùng, các thần kinh tạng và các hạch trước cột sống",
+        en: "Only the cervical and thoracic sympathetic trunk is shown, ending at the level of the twelfth thoracic vertebra; the lumbar and sacral parts, the splanchnic nerves and the prevertebral ganglia are missing",
+      },
+    }),
+  group("parasympathetic", "Phân hệ đối giao cảm: phần sọ", "Parasympathetic division: cranial part", "anterolateral",
+    [CN_PARASYMPATHETIC_NUCLEI, CILIARY_GANGLION, OCULOMOTOR, FACIAL, GLOSSOPHARYNGEAL, VAGUS], [BRAINSTEM, HEART],
+    ["đối giao cảm", "parasympathetic", "Edinger–Westphal", "hạch mi", "ciliary ganglion"], {
+      partial: {
+        vi: "Dây VII, IX, X hiện nguyên dây, gồm cả các sợi không phải đối giao cảm; dây III chỉ có nhánh trên và nhánh dưới, không có thân dây. Thiếu hạch chân bướm – khẩu cái, hạch tai, hạch dưới hàm, thần kinh đá lớn, thần kinh đá bé và phần đối giao cảm cùng (các thần kinh tạng chậu)",
+        en: "Cranial nerves VII, IX and X are shown whole, including their non-parasympathetic fibres; for the oculomotor nerve only its superior and inferior branches are shown, without the nerve trunk. The pterygopalatine, otic and submandibular ganglia, the greater and lesser petrosal nerves and the sacral parasympathetic outflow (pelvic splanchnic nerves) are missing",
+      },
+    }),
   group("nervous-autonomic", "Thần kinh tự chủ: thân giao cảm và dây phế vị", "Autonomic nerves: sympathetic trunk and vagus nerve", "front", [SYMPATHETIC, VAGUS], [HEART, ABDOMINAL_VISCERA, SPINE],
     ["tự chủ", "thực vật", "autonomic", "giao cảm", "sympathetic", "đối giao cảm", "parasympathetic"], {
       partial: {
@@ -473,6 +509,9 @@ export const NERVOUS_VIEWS: readonly AtlasViewDef[] = [
   { ...structure("cerebellar-deep-nuclei", "Các nhân sâu tiểu não", "Deep cerebellar nuclei", "back", A_CEREBELLAR_DEEP_NUCLEI, ["nhân răng", "dentate nucleus", "nhân nút", "nhân cầu", "nhân mái", "nhân sâu tiểu não"]), context: [CEREBELLUM] },
   // Nhân nằm trong thân não: thân não mờ làm bối cảnh, không thì chỉ thấy các khối lơ lửng.
   { ...structure("cranial-nerve-nuclei", "Nhân các dây thần kinh sọ (chưa gồm nhân dây sinh ba)", "Cranial nerve nuclei (excluding trigeminal nuclei)", "back", CN_NUCLEI, ["nhân dây sọ", "cranial nerve nuclei", "Edinger–Westphal", "nhân mơ hồ"]), context: [BRAINSTEM] },
+  { ...structure("cranial-nerve-motor-nuclei", "Nhân vận động các dây thần kinh sọ (chưa gồm nhân vận động dây sinh ba)", "Motor nuclei of the cranial nerves (excluding the trigeminal motor nucleus)", "back", CN_MOTOR_NUCLEI), context: [BRAINSTEM] },
+  { ...structure("cranial-parasympathetic-nuclei", "Nhân đối giao cảm các dây thần kinh sọ", "Parasympathetic nuclei of the cranial nerves", "back", CN_PARASYMPATHETIC_NUCLEI, ["Edinger–Westphal", "nhân nước bọt", "salivatory nucleus"]), context: [BRAINSTEM] },
+  { ...structure("cranial-nerve-sensory-nuclei", "Nhân cảm giác các dây thần kinh sọ (chưa gồm các nhân dây sinh ba)", "Sensory nuclei of the cranial nerves (excluding the trigeminal nuclei)", "back", CN_SENSORY_NUCLEI), context: [BRAINSTEM] },
   { ...structure("red-nucleus", "Nhân đỏ", "Red nucleus", "three-quarter", RED_NUCLEUS, ["red nucleus"]), context: [BRAINSTEM] },
   structure("tentorium-cerebelli", "Lều tiểu não", "Tentorium cerebelli", "side", TENTORIUM),
   structure("falx-cerebri", "Liềm đại não", "Falx cerebri", "side", FALX, ["liềm não", "falx"]),
@@ -497,6 +536,11 @@ export const NERVOUS_VIEWS: readonly AtlasViewDef[] = [
   structure("trigeminal-roots", "Thân và rễ dây sinh ba (V)", "Trigeminal nerve trunk and roots (V)", "side", TRIGEMINAL_ROOTS, ["dây V", "sinh ba", "trigeminal"]),
   structure("abducens-nerve", "Dây vận nhãn ngoài (VI)", "Abducens nerve (VI)", [-0.8, 0.35, 0.5], ABDUCENS, ["dây VI", "abducens"]),
   structure("ophthalmic-nerve", "Dây thần kinh mắt (V1) và hạch mi", "Ophthalmic nerve (V1) and ciliary ganglion", [-0.8, 0.35, 0.5], OPHTHALMIC),
+  structure("ophthalmic-nerve-trunk", "Thân dây thần kinh mắt (V1)", "Ophthalmic nerve (V1) trunk", [-0.8, 0.35, 0.5], OPHTHALMIC_TRUNK),
+  structure("frontal-nerve", "Thần kinh trán, trên ổ mắt và trên ròng rọc", "Frontal, supra-orbital and supratrochlear nerves", [-0.8, 0.35, 0.5], FRONTAL_NERVE),
+  structure("lacrimal-nerve", "Thần kinh lệ", "Lacrimal nerve", [-0.8, 0.35, 0.5], LACRIMAL_NERVE),
+  structure("nasociliary-nerve", "Thần kinh mũi mi và các nhánh", "Nasociliary nerve and its branches", [-0.8, 0.35, 0.5], NASOCILIARY),
+  structure("ciliary-ganglion", "Hạch mi và các thần kinh mi ngắn", "Ciliary ganglion and short ciliary nerves", [-0.8, 0.35, 0.5], CILIARY_GANGLION, ["hạch mi", "ciliary ganglion"]),
   structure("maxillary-nerve", "Dây thần kinh hàm trên (V2)", "Maxillary nerve (V2)", "anterolateral", MAXILLARY),
   structure("mandibular-nerve", "Dây thần kinh hàm dưới (V3) và nhánh", "Mandibular nerve (V3) and branches", "anterolateral", MANDIBULAR),
   structure("facial-nerve", "Dây mặt (VII) và thừng nhĩ", "Facial nerve (VII) and chorda tympani", "side", FACIAL),
@@ -556,5 +600,8 @@ export const NERVOUS_VIEWS: readonly AtlasViewDef[] = [
   structure("lateral-plantar-nerve", "Thần kinh gan chân ngoài và các nhánh gan ngón chân", "Lateral plantar nerve and its plantar digital branches", [0, -1, 0.3], LATERAL_PLANTAR),
   structure("fibular-nerves", "Thần kinh mác chung, nông và sâu", "Common, superficial and deep fibular nerves", "front", FIBULAR),
   structure("sural-nerve", "Thần kinh bắp chân", "Sural nerve", "back", SURAL),
-  structure("sympathetic-trunk", "Thân và các dây giao cảm", "Sympathetic trunk and nerves", "anterolateral", SYMPATHETIC),
+  structure("sympathetic-trunk", "Thân giao cảm đoạn cổ – ngực: dải thân, các hạch và các nhánh", "Cervical and thoracic sympathetic trunk: cord, ganglia and branches", "anterolateral", SYMPATHETIC),
+  structure("sympathetic-chain", "Dải thân giao cảm (không gồm hạch)", "Sympathetic trunk cord (without ganglia)", "anterolateral", SYMPATHETIC_CHAIN),
+  structure("sympathetic-ganglia", "Các hạch thân giao cảm", "Ganglia of the sympathetic trunk", "anterolateral", SYMPATHETIC_GANGLIA),
+  structure("sympathetic-nerves", "Các nhánh giao cảm", "Sympathetic nerves", "anterolateral", SYMPATHETIC_NERVES),
 ];
