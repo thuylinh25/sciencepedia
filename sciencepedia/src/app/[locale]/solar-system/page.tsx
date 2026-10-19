@@ -3,6 +3,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 
 import type { Locale } from "@/i18n/routing";
 import { buildMetadata } from "@/lib/seo";
+import { toolImage } from "@/lib/models";
 import { ScaleLadder } from "@/components/models/scale-ladder";
 import { tryGetPlanetPositions } from "@/lib/horizons";
 import { SolarSystem } from "@/components/solar/solar-system";
@@ -26,6 +27,7 @@ export async function generateMetadata({
     title: t("title"),
     description: t("subtitle"),
     path: "/solar-system",
+    image: toolImage("/solar-system"),
     locale: locale as Locale,
   });
 }

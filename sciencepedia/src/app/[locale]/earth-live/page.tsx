@@ -5,6 +5,7 @@ import { ArrowRight, Radio, Satellite, Telescope } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
 import { buildMetadata } from "@/lib/seo";
+import { toolImage } from "@/lib/models";
 import { absoluteUrl } from "@/lib/utils";
 import { EpicEarth } from "@/components/earth/epic-earth";
 import { JsonLd } from "@/components/json-ld";
@@ -26,6 +27,7 @@ export async function generateMetadata({
     title: t("title"),
     description: t("metaDescription"),
     path: "/earth-live",
+    image: toolImage("/earth-live"),
     locale: locale as Locale,
   });
 }

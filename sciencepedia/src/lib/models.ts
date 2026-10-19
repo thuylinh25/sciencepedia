@@ -306,3 +306,12 @@ export function modelNeighbours(id: string) {
     next: index < MODEL_STEPS.length - 1 ? MODEL_STEPS[index + 1] : null,
   };
 }
+
+/**
+ * Ảnh chia sẻ (og:image) của một trang công cụ: chính ảnh thẻ của nó ở /models.
+ * Thiếu dòng này trang rơi về ảnh OG sinh từ tiêu đề — một nền tối có chữ, nên
+ * bài fanpage dẫn link tới công cụ hiện ra thẻ không có hình nào.
+ */
+export function toolImage(href: string): string | undefined {
+  return [...MODEL_STEPS, ...EXPLORE_TOOLS].find((t) => t.href === href)?.image;
+}
