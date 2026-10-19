@@ -88,6 +88,25 @@ test("cấu trúc lớn thắng cấu trúc con; cấu trúc dùng lại ở nhi
   assert.deepEqual(ids("trachea"), ["trachea"]);
 });
 
+test("não chia sâu: mở cấu trúc cha ra đúng các con, không còn mảnh lẻ", () => {
+  const expect: Record<string, string[]> = {
+    "cerebral-cortex": ["frontal-lobe", "parietal-lobe", "temporal-lobe", "occipital-lobe", "insula", "limbic-gyri"],
+    "frontal-lobe": ["precentral-gyrus", "superior-frontal-gyrus", "middle-frontal-gyrus", "inferior-frontal-gyrus", "orbital-gyri"],
+    "parietal-lobe": ["postcentral-gyrus", "superior-parietal-lobule", "inferior-parietal-lobule"],
+    "inferior-parietal-lobule": ["supramarginal-gyrus", "angular-gyrus"],
+    "temporal-lobe": ["superior-temporal-gyrus", "middle-temporal-gyrus", "inferior-temporal-gyrus", "fusiform-gyrus"],
+    "hippocampus-amygdala": ["hippocampus", "amygdala", "septum-telencephalon"],
+    diencephalon: ["thalamus", "geniculate-bodies", "hypothalamus", "mammillary-body", "epithalamus"],
+    brainstem: ["midbrain", "pons", "medulla-oblongata"],
+    "brain-ventricles": ["lateral-ventricles", "third-ventricle", "cerebral-aqueduct", "fourth-ventricle", "choroid-plexus"],
+  };
+  for (const [view, children] of Object.entries(expect)) {
+    const list = viewStructures(view);
+    assert.ok(!list.some((s) => s.rest), `${view}: còn mảnh không thuộc cấu trúc con`);
+    assert.deepEqual(list.map((s) => s.id), children, view);
+  }
+});
+
 test("góc nhìn không cấu trúc nào khớp thì không có bảng", () => {
   assert.deepEqual(viewStructures("skull"), []);
   assert.deepEqual(viewStructures(null), []);
