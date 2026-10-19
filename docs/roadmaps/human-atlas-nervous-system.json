@@ -65,18 +65,18 @@
     ]
   },
   "coverage": {
-    "nodes": 161,
-    "nodes3d": 156,
+    "nodes": 167,
+    "nodes3d": 162,
     "byStatus": {
-      "live": 70,
-      "buildable": 40,
-      "import-za": 24,
+      "live": 104,
+      "buildable": 13,
+      "import-za": 23,
       "needs-schema": 8,
       "needs-clipping": 4,
       "missing": 10
     },
-    "readyNow": "110/156 (71%) nút 3D dựng được bằng dữ liệu đang có",
-    "afterZaImport": "134/156 (86%)",
+    "readyNow": "117/162 (72%) nút 3D dựng được bằng dữ liệu đang có",
+    "afterZaImport": "140/162 (86%)",
     "haaTiles": {
       "note": "So với 24 ô \"Nervous System Views\" của HAA (ảnh tham chiếu, không dùng asset HAA).",
       "withCardNow": "16/24 (67%)",
@@ -211,37 +211,9 @@
     {
       "id": "M1",
       "phase": "1–2",
-      "title": "Tách não theo thuỳ, hệ viền, gian não, thân não, não thất",
-      "status": "buildable",
-      "items": [
-        "midbrain",
-        "pons",
-        "medulla-oblongata",
-        "lateral-ventricles",
-        "third-ventricle",
-        "cerebral-aqueduct",
-        "fourth-ventricle",
-        "choroid-plexus",
-        "frontal-lobe",
-        "precentral-gyrus",
-        "frontal-gyri-other",
-        "parietal-lobe",
-        "postcentral-gyrus",
-        "inferior-parietal-lobule",
-        "superior-parietal-lobule",
-        "temporal-lobe",
-        "superior-temporal-gyrus",
-        "temporal-gyri-other",
-        "occipital-lobe",
-        "insula",
-        "hippocampus",
-        "amygdala",
-        "septal-area",
-        "thalamus",
-        "geniculate-bodies",
-        "hypothalamus",
-        "epithalamus"
-      ]
+      "title": "Tách não theo thuỳ, hệ viền, gian não, thân não, não thất — XONG 2026-10-19 (31 cấu trúc, science-editor PASS)",
+      "status": "done",
+      "items": []
     },
     {
       "id": "M2",
@@ -258,7 +230,6 @@
         "cranial-nerve-nuclei",
         "nervous-meninges",
         "falx-cerebri",
-        "inferior-frontal-gyrus",
         "transverse-temporal-gyri",
         "occipital-gyri",
         "medial-surface-hemisphere",
@@ -1128,7 +1099,7 @@
       "name": {
         "vi": "Trung não",
         "en": "Midbrain",
-        "reviewed": false
+        "reviewed": true
       },
       "parent": "brainstem",
       "children": [
@@ -1171,14 +1142,14 @@
         "direction": "side"
       },
       "data": {
-        "status": "buildable",
+        "status": "live",
         "partial": false,
-        "existingViewId": null,
+        "existingViewId": "midbrain",
         "borrowedFromSystem": null,
         "note": null
       },
       "phase": 2,
-      "priority": "P1"
+      "priority": "done"
     },
     {
       "id": "red-nucleus",
@@ -1248,7 +1219,7 @@
       "name": {
         "vi": "Cầu não",
         "en": "Pons",
-        "reviewed": false
+        "reviewed": true
       },
       "parent": "brainstem",
       "children": [],
@@ -1285,14 +1256,14 @@
         "direction": "side"
       },
       "data": {
-        "status": "buildable",
+        "status": "live",
         "partial": false,
-        "existingViewId": null,
+        "existingViewId": "pons",
         "borrowedFromSystem": null,
         "note": null
       },
       "phase": 2,
-      "priority": "P1"
+      "priority": "done"
     },
     {
       "id": "medulla-oblongata",
@@ -1303,7 +1274,7 @@
       "name": {
         "vi": "Hành não",
         "en": "Medulla oblongata",
-        "reviewed": false
+        "reviewed": true
       },
       "parent": "brainstem",
       "children": [
@@ -1341,14 +1312,14 @@
         "direction": "front"
       },
       "data": {
-        "status": "buildable",
+        "status": "live",
         "partial": false,
-        "existingViewId": null,
+        "existingViewId": "medulla-oblongata",
         "borrowedFromSystem": null,
         "note": null
       },
       "phase": 2,
-      "priority": "P1"
+      "priority": "done"
     },
     {
       "id": "medulla-pyramid-olive",
@@ -1543,9 +1514,9 @@
       "kind": "structure",
       "level": 5,
       "name": {
-        "vi": "Não thất bên",
-        "en": "Lateral ventricles",
-        "reviewed": false
+        "vi": "Não thất bên và lỗ gian não thất",
+        "en": "Lateral ventricles and interventricular foramen",
+        "reviewed": true
       },
       "parent": "brain-ventricles",
       "children": [],
@@ -1581,14 +1552,14 @@
         "direction": "three-quarter"
       },
       "data": {
-        "status": "buildable",
+        "status": "live",
         "partial": false,
-        "existingViewId": null,
+        "existingViewId": "lateral-ventricles",
         "borrowedFromSystem": null,
         "note": "Tách `brain-ventricles` thành 4 structure — đổi id cũ thành group, giữ deep link."
       },
       "phase": 2,
-      "priority": "P1"
+      "priority": "done"
     },
     {
       "id": "third-ventricle",
@@ -1599,7 +1570,7 @@
       "name": {
         "vi": "Não thất ba",
         "en": "Third ventricle",
-        "reviewed": false
+        "reviewed": true
       },
       "parent": "brain-ventricles",
       "children": [],
@@ -1634,14 +1605,14 @@
         "direction": "side"
       },
       "data": {
-        "status": "buildable",
+        "status": "live",
         "partial": false,
-        "existingViewId": null,
+        "existingViewId": "third-ventricle",
         "borrowedFromSystem": null,
         "note": null
       },
       "phase": 2,
-      "priority": "P1"
+      "priority": "done"
     },
     {
       "id": "cerebral-aqueduct",
@@ -1652,7 +1623,7 @@
       "name": {
         "vi": "Cống não",
         "en": "Cerebral aqueduct",
-        "reviewed": false
+        "reviewed": true
       },
       "parent": "brain-ventricles",
       "children": [],
@@ -1687,14 +1658,14 @@
         "direction": "side"
       },
       "data": {
-        "status": "buildable",
+        "status": "live",
         "partial": false,
-        "existingViewId": null,
+        "existingViewId": "cerebral-aqueduct",
         "borrowedFromSystem": null,
         "note": null
       },
       "phase": 2,
-      "priority": "P1"
+      "priority": "done"
     },
     {
       "id": "fourth-ventricle",
@@ -1705,7 +1676,7 @@
       "name": {
         "vi": "Não thất bốn",
         "en": "Fourth ventricle",
-        "reviewed": false
+        "reviewed": true
       },
       "parent": "brain-ventricles",
       "children": [],
@@ -1742,14 +1713,14 @@
         "direction": "side"
       },
       "data": {
-        "status": "buildable",
+        "status": "live",
         "partial": false,
-        "existingViewId": null,
+        "existingViewId": "fourth-ventricle",
         "borrowedFromSystem": null,
         "note": null
       },
       "phase": 2,
-      "priority": "P1"
+      "priority": "done"
     },
     {
       "id": "choroid-plexus",
@@ -1758,9 +1729,9 @@
       "kind": "structure",
       "level": 5,
       "name": {
-        "vi": "Đám rối mạch mạc",
-        "en": "Choroid plexus",
-        "reviewed": false
+        "vi": "Đám rối mạch mạc não thất bên",
+        "en": "Choroid plexus of lateral ventricles",
+        "reviewed": true
       },
       "parent": "brain-ventricles",
       "children": [],
@@ -1795,14 +1766,14 @@
         "direction": "three-quarter"
       },
       "data": {
-        "status": "buildable",
+        "status": "live",
         "partial": false,
-        "existingViewId": null,
+        "existingViewId": "choroid-plexus",
         "borrowedFromSystem": null,
         "note": "Mảnh BP3D đang bị xếp hệ sensory — kiểm SYSTEM_CORRECTIONS trước khi dựng."
       },
       "phase": 2,
-      "priority": "P1"
+      "priority": "done"
     },
     {
       "id": "nervous-meninges",
@@ -2046,15 +2017,17 @@
       "name": {
         "vi": "Thuỳ trán",
         "en": "Frontal lobe",
-        "reviewed": false
+        "reviewed": true
       },
       "parent": "cerebral-cortex",
       "children": [
         "precentral-gyrus",
         "premotor-sma",
         "inferior-frontal-gyrus",
-        "frontal-gyri-other",
-        "prefrontal-cortex"
+        "prefrontal-cortex",
+        "superior-frontal-gyrus",
+        "middle-frontal-gyrus",
+        "orbital-gyri"
       ],
       "learningObjectives": {
         "vi": [
@@ -2090,14 +2063,14 @@
         "direction": "side"
       },
       "data": {
-        "status": "buildable",
+        "status": "live",
         "partial": false,
-        "existingViewId": null,
+        "existingViewId": "frontal-lobe",
         "borrowedFromSystem": null,
         "note": "Mảnh hồi BP3D đều nằm trong rule CORTEX → cấu trúc `cerebral-cortex`. Tách thuỳ = thay `cerebral-cortex` bằng 5 structure thuỳ (test \"phủ đủ, không chồng\")."
       },
       "phase": 2,
-      "priority": "P1"
+      "priority": "done"
     },
     {
       "id": "precentral-gyrus",
@@ -2108,7 +2081,7 @@
       "name": {
         "vi": "Hồi trước trung tâm",
         "en": "Precentral gyrus",
-        "reviewed": false
+        "reviewed": true
       },
       "parent": "frontal-lobe",
       "children": [
@@ -2146,14 +2119,14 @@
         "direction": "side"
       },
       "data": {
-        "status": "buildable",
+        "status": "live",
         "partial": false,
-        "existingViewId": null,
+        "existingViewId": "precentral-gyrus",
         "borrowedFromSystem": null,
         "note": null
       },
       "phase": 2,
-      "priority": "P1"
+      "priority": "done"
     },
     {
       "id": "primary-motor-cortex",
@@ -2257,9 +2230,9 @@
       "kind": "structure",
       "level": 6,
       "name": {
-        "vi": "Hồi trán dưới (phần nắp, tam giác, ổ mắt)",
-        "en": "Inferior frontal gyrus (opercular, triangular, orbital parts)",
-        "reviewed": false
+        "vi": "Hồi trán dưới",
+        "en": "Inferior frontal gyrus",
+        "reviewed": true
       },
       "parent": "frontal-lobe",
       "children": [
@@ -2298,20 +2271,14 @@
         "direction": "side"
       },
       "data": {
-        "status": "import-za",
+        "status": "live",
         "partial": false,
-        "existingViewId": null,
+        "existingViewId": "inferior-frontal-gyrus",
         "borrowedFromSystem": null,
-        "note": "BP3D có hồi trán dưới nguyên khối; ZA chia 3 phần → khử trùng theo không gian, giữ bản ZA khi xem cấp 4.",
-        "importPath": [
-          {
-            "path": "replace-bp3d",
-            "how": "Chồng lên mảnh BP3D nguyên khối → khử trùng sẽ loại; phải THAY mảnh BP3D bằng các mảnh ZA (đổi test phủ đủ)"
-          }
-        ]
+        "note": "Đã dựng nguyên hồi (BP3D, M1). Phần nắp/tam giác/ổ mắt có trong ZA — tách sau, phải THAY mảnh BP3D."
       },
       "phase": 2,
-      "priority": "P2"
+      "priority": "done"
     },
     {
       "id": "broca-area",
@@ -2359,59 +2326,6 @@
       },
       "phase": 2,
       "priority": "P3"
-    },
-    {
-      "id": "frontal-gyri-other",
-      "viewId": "frontal-gyri-other",
-      "section": "C",
-      "kind": "structure",
-      "level": 6,
-      "name": {
-        "vi": "Hồi trán trên, giữa và các hồi ổ mắt",
-        "en": "Superior and middle frontal gyri, orbital gyri",
-        "reviewed": false
-      },
-      "parent": "frontal-lobe",
-      "children": [],
-      "learningObjectives": {
-        "vi": [
-          "Kể tên các hồi trán xếp từ trên xuống"
-        ],
-        "reviewed": false
-      },
-      "structures3d": [
-        "Superior frontal gyrus",
-        "Middle frontal gyrus",
-        "Orbital gyrus"
-      ],
-      "view": {
-        "direction": "three-quarter",
-        "zoom": {
-          "level": "structure",
-          "cameraFill": 0.86,
-          "thumbnailFill": 0.86
-        },
-        "display": "layered",
-        "context": []
-      },
-      "url": {
-        "vi": "/vi/human-atlas?view=frontal-gyri-other",
-        "en": "/en/human-atlas?view=frontal-gyri-other"
-      },
-      "thumbnail": {
-        "source": "auto-capture",
-        "from": "model",
-        "direction": "three-quarter"
-      },
-      "data": {
-        "status": "buildable",
-        "partial": false,
-        "existingViewId": null,
-        "borrowedFromSystem": null,
-        "note": null
-      },
-      "phase": 2,
-      "priority": "P1"
     },
     {
       "id": "prefrontal-cortex",
@@ -2469,7 +2383,7 @@
       "name": {
         "vi": "Thuỳ đỉnh",
         "en": "Parietal lobe",
-        "reviewed": false
+        "reviewed": true
       },
       "parent": "cerebral-cortex",
       "children": [
@@ -2512,14 +2426,14 @@
         "direction": "side"
       },
       "data": {
-        "status": "buildable",
+        "status": "live",
         "partial": false,
-        "existingViewId": null,
+        "existingViewId": "parietal-lobe",
         "borrowedFromSystem": null,
         "note": "Mảnh hồi BP3D đều nằm trong rule CORTEX → cấu trúc `cerebral-cortex`. Tách thuỳ = thay `cerebral-cortex` bằng 5 structure thuỳ (test \"phủ đủ, không chồng\")."
       },
       "phase": 2,
-      "priority": "P1"
+      "priority": "done"
     },
     {
       "id": "postcentral-gyrus",
@@ -2530,7 +2444,7 @@
       "name": {
         "vi": "Hồi sau trung tâm",
         "en": "Postcentral gyrus",
-        "reviewed": false
+        "reviewed": true
       },
       "parent": "parietal-lobe",
       "children": [
@@ -2567,14 +2481,14 @@
         "direction": "side"
       },
       "data": {
-        "status": "buildable",
+        "status": "live",
         "partial": false,
-        "existingViewId": null,
+        "existingViewId": "postcentral-gyrus",
         "borrowedFromSystem": null,
         "note": null
       },
       "phase": 2,
-      "priority": "P1"
+      "priority": "done"
     },
     {
       "id": "primary-somatosensory-cortex",
@@ -2630,12 +2544,15 @@
       "kind": "structure",
       "level": 6,
       "name": {
-        "vi": "Tiểu thuỳ đỉnh dưới (hồi trên viền, hồi góc)",
-        "en": "Inferior parietal lobule (supramarginal, angular gyri)",
-        "reviewed": false
+        "vi": "Tiểu thuỳ đỉnh dưới",
+        "en": "Inferior parietal lobule",
+        "reviewed": true
       },
       "parent": "parietal-lobe",
-      "children": [],
+      "children": [
+        "supramarginal-gyrus",
+        "angular-gyrus"
+      ],
       "learningObjectives": {
         "vi": [
           "Xác định hồi trên viền và hồi góc quanh đầu sau rãnh bên"
@@ -2666,14 +2583,14 @@
         "direction": "side"
       },
       "data": {
-        "status": "buildable",
+        "status": "live",
         "partial": false,
-        "existingViewId": null,
+        "existingViewId": "inferior-parietal-lobule",
         "borrowedFromSystem": null,
         "note": null
       },
       "phase": 2,
-      "priority": "P1"
+      "priority": "done"
     },
     {
       "id": "superior-parietal-lobule",
@@ -2684,7 +2601,7 @@
       "name": {
         "vi": "Tiểu thuỳ đỉnh trên",
         "en": "Superior parietal lobule",
-        "reviewed": false
+        "reviewed": true
       },
       "parent": "parietal-lobe",
       "children": [],
@@ -2717,14 +2634,14 @@
         "direction": "superior"
       },
       "data": {
-        "status": "buildable",
+        "status": "live",
         "partial": false,
-        "existingViewId": null,
+        "existingViewId": "superior-parietal-lobule",
         "borrowedFromSystem": null,
         "note": null
       },
       "phase": 2,
-      "priority": "P1"
+      "priority": "done"
     },
     {
       "id": "temporal-lobe",
@@ -2735,12 +2652,14 @@
       "name": {
         "vi": "Thuỳ thái dương",
         "en": "Temporal lobe",
-        "reviewed": false
+        "reviewed": true
       },
       "parent": "cerebral-cortex",
       "children": [
         "superior-temporal-gyrus",
-        "temporal-gyri-other"
+        "middle-temporal-gyrus",
+        "inferior-temporal-gyrus",
+        "fusiform-gyrus"
       ],
       "learningObjectives": {
         "vi": [
@@ -2776,14 +2695,14 @@
         "direction": "side"
       },
       "data": {
-        "status": "buildable",
+        "status": "live",
         "partial": false,
-        "existingViewId": null,
+        "existingViewId": "temporal-lobe",
         "borrowedFromSystem": null,
         "note": "Mảnh hồi BP3D đều nằm trong rule CORTEX → cấu trúc `cerebral-cortex`. Tách thuỳ = thay `cerebral-cortex` bằng 5 structure thuỳ (test \"phủ đủ, không chồng\"). Hồi cạnh hải mã thuộc hệ viền (LIMBIC_GYRI), không tính vào đây."
       },
       "phase": 2,
-      "priority": "P1"
+      "priority": "done"
     },
     {
       "id": "superior-temporal-gyrus",
@@ -2794,7 +2713,7 @@
       "name": {
         "vi": "Hồi thái dương trên",
         "en": "Superior temporal gyrus",
-        "reviewed": false
+        "reviewed": true
       },
       "parent": "temporal-lobe",
       "children": [
@@ -2830,14 +2749,14 @@
         "direction": "side"
       },
       "data": {
-        "status": "buildable",
+        "status": "live",
         "partial": false,
-        "existingViewId": null,
+        "existingViewId": "superior-temporal-gyrus",
         "borrowedFromSystem": null,
         "note": null
       },
       "phase": 2,
-      "priority": "P1"
+      "priority": "done"
     },
     {
       "id": "transverse-temporal-gyri",
@@ -2997,67 +2916,6 @@
       "priority": "P3"
     },
     {
-      "id": "temporal-gyri-other",
-      "viewId": "temporal-gyri-other",
-      "section": "C",
-      "kind": "structure",
-      "level": 6,
-      "name": {
-        "vi": "Hồi thái dương giữa, dưới và hồi chẩm – thái dương ngoài",
-        "en": "Middle and inferior temporal gyri, fusiform gyrus",
-        "reviewed": false
-      },
-      "parent": "temporal-lobe",
-      "children": [],
-      "learningObjectives": {
-        "vi": [
-          "Xác định hồi thái dương giữa, dưới và hồi hình thoi ở mặt dưới"
-        ],
-        "reviewed": false
-      },
-      "structures3d": [
-        "Middle temporal gyrus",
-        "Inferior temporal gyrus",
-        "Fusiform gyrus"
-      ],
-      "view": {
-        "direction": [
-          0.6,
-          -0.5,
-          0.6
-        ],
-        "zoom": {
-          "level": "structure",
-          "cameraFill": 0.86,
-          "thumbnailFill": 0.86
-        },
-        "display": "layered",
-        "context": []
-      },
-      "url": {
-        "vi": "/vi/human-atlas?view=temporal-gyri-other",
-        "en": "/en/human-atlas?view=temporal-gyri-other"
-      },
-      "thumbnail": {
-        "source": "auto-capture",
-        "from": "model",
-        "direction": [
-          0.6,
-          -0.5,
-          0.6
-        ]
-      },
-      "data": {
-        "status": "buildable",
-        "partial": false,
-        "existingViewId": null,
-        "borrowedFromSystem": null,
-        "note": null
-      },
-      "phase": 2,
-      "priority": "P1"
-    },
-    {
       "id": "occipital-lobe",
       "viewId": "occipital-lobe",
       "section": "C",
@@ -3066,7 +2924,7 @@
       "name": {
         "vi": "Thuỳ chẩm",
         "en": "Occipital lobe",
-        "reviewed": false
+        "reviewed": true
       },
       "parent": "cerebral-cortex",
       "children": [
@@ -3103,14 +2961,14 @@
         "direction": "back"
       },
       "data": {
-        "status": "buildable",
+        "status": "live",
         "partial": false,
-        "existingViewId": null,
+        "existingViewId": "occipital-lobe",
         "borrowedFromSystem": null,
         "note": "Mảnh hồi BP3D đều nằm trong rule CORTEX → cấu trúc `cerebral-cortex`. Tách thuỳ = thay `cerebral-cortex` bằng 5 structure thuỳ (test \"phủ đủ, không chồng\")."
       },
       "phase": 2,
-      "priority": "P1"
+      "priority": "done"
     },
     {
       "id": "occipital-gyri",
@@ -3243,7 +3101,7 @@
       "name": {
         "vi": "Thuỳ đảo",
         "en": "Insula",
-        "reviewed": false
+        "reviewed": true
       },
       "parent": "cerebral-cortex",
       "children": [],
@@ -3279,14 +3137,14 @@
         "direction": "side"
       },
       "data": {
-        "status": "buildable",
+        "status": "live",
         "partial": false,
-        "existingViewId": null,
+        "existingViewId": "insula",
         "borrowedFromSystem": null,
         "note": null
       },
       "phase": 2,
-      "priority": "P1"
+      "priority": "done"
     },
     {
       "id": "medial-surface-hemisphere",
@@ -3431,7 +3289,7 @@
       "name": {
         "vi": "Hải mã",
         "en": "Hippocampus",
-        "reviewed": false
+        "reviewed": true
       },
       "parent": "hippocampus-amygdala",
       "children": [],
@@ -3467,14 +3325,14 @@
         "direction": "three-quarter"
       },
       "data": {
-        "status": "buildable",
+        "status": "live",
         "partial": false,
-        "existingViewId": null,
+        "existingViewId": "hippocampus",
         "borrowedFromSystem": null,
         "note": "Đang gộp trong structure `hippocampus-amygdala` → tách thành hippocampus, amygdala, septum; đổi id cũ thành group."
       },
       "phase": 2,
-      "priority": "P1"
+      "priority": "done"
     },
     {
       "id": "amygdala",
@@ -3485,7 +3343,7 @@
       "name": {
         "vi": "Thể hạnh nhân",
         "en": "Amygdala",
-        "reviewed": false
+        "reviewed": true
       },
       "parent": "hippocampus-amygdala",
       "children": [],
@@ -3521,14 +3379,14 @@
         "direction": "three-quarter"
       },
       "data": {
-        "status": "buildable",
+        "status": "live",
         "partial": false,
-        "existingViewId": null,
+        "existingViewId": "amygdala",
         "borrowedFromSystem": null,
         "note": null
       },
       "phase": 2,
-      "priority": "P1"
+      "priority": "done"
     },
     {
       "id": "fornix",
@@ -3689,58 +3547,6 @@
       "priority": "done"
     },
     {
-      "id": "septal-area",
-      "viewId": "septal-area",
-      "section": "D",
-      "kind": "structure",
-      "level": 5,
-      "name": {
-        "vi": "Vách trong suốt và nhân vách",
-        "en": "Septum pellucidum and septal nuclei",
-        "reviewed": false
-      },
-      "parent": "hippocampus-amygdala",
-      "children": [],
-      "learningObjectives": {
-        "vi": [
-          "Định vị vách trong suốt giữa hai não thất bên"
-        ],
-        "reviewed": false
-      },
-      "structures3d": [
-        "Septum of telencephalon (BP3D)",
-        "Septal nuclei + Septum pellucidum (ZA, tuỳ chọn)"
-      ],
-      "view": {
-        "direction": "side",
-        "zoom": {
-          "level": "detail",
-          "cameraFill": 0.9,
-          "thumbnailFill": 0.86
-        },
-        "display": "layered",
-        "context": []
-      },
-      "url": {
-        "vi": "/vi/human-atlas?view=septal-area",
-        "en": "/en/human-atlas?view=septal-area"
-      },
-      "thumbnail": {
-        "source": "auto-capture",
-        "from": "model",
-        "direction": "side"
-      },
-      "data": {
-        "status": "buildable",
-        "partial": true,
-        "existingViewId": null,
-        "borrowedFromSystem": null,
-        "note": null
-      },
-      "phase": 2,
-      "priority": "P1"
-    },
-    {
       "id": "nervous-deep-brain",
       "viewId": "nervous-deep-brain",
       "section": "E",
@@ -3805,12 +3611,11 @@
       "name": {
         "vi": "Đồi thị",
         "en": "Thalamus",
-        "reviewed": false
+        "reviewed": true
       },
       "parent": "diencephalon",
       "children": [
-        "thalamic-nuclei",
-        "geniculate-bodies"
+        "thalamic-nuclei"
       ],
       "learningObjectives": {
         "vi": [
@@ -3845,14 +3650,14 @@
         "direction": "three-quarter"
       },
       "data": {
-        "status": "buildable",
+        "status": "live",
         "partial": false,
-        "existingViewId": null,
+        "existingViewId": "thalamus",
         "borrowedFromSystem": null,
         "note": "Đang gộp trong `diencephalon`. Tách → `diencephalon` thành group."
       },
       "phase": 2,
-      "priority": "P1"
+      "priority": "done"
     },
     {
       "id": "thalamic-nuclei",
@@ -3895,13 +3700,13 @@
       "viewId": "geniculate-bodies",
       "section": "E",
       "kind": "structure",
-      "level": 6,
+      "level": 5,
       "name": {
         "vi": "Thể gối ngoài và thể gối trong",
         "en": "Lateral and medial geniculate bodies",
-        "reviewed": false
+        "reviewed": true
       },
-      "parent": "thalamus",
+      "parent": "diencephalon",
       "children": [],
       "learningObjectives": {
         "vi": [
@@ -3944,14 +3749,14 @@
         ]
       },
       "data": {
-        "status": "buildable",
+        "status": "live",
         "partial": false,
-        "existingViewId": null,
+        "existingViewId": "geniculate-bodies",
         "borrowedFromSystem": null,
         "note": null
       },
       "phase": 2,
-      "priority": "P1"
+      "priority": "done"
     },
     {
       "id": "hypothalamus",
@@ -3960,9 +3765,9 @@
       "kind": "structure",
       "level": 5,
       "name": {
-        "vi": "Vùng dưới đồi",
-        "en": "Hypothalamus",
-        "reviewed": false
+        "vi": "Vùng dưới đồi (chưa gồm thể vú)",
+        "en": "Hypothalamus (excluding mammillary bodies)",
+        "reviewed": true
       },
       "parent": "diencephalon",
       "children": [
@@ -4001,14 +3806,14 @@
         "direction": "side"
       },
       "data": {
-        "status": "buildable",
+        "status": "live",
         "partial": false,
-        "existingViewId": null,
+        "existingViewId": "hypothalamus",
         "borrowedFromSystem": null,
         "note": null
       },
       "phase": 2,
-      "priority": "P1"
+      "priority": "done"
     },
     {
       "id": "hypothalamic-nuclei",
@@ -4053,9 +3858,9 @@
       "kind": "structure",
       "level": 5,
       "name": {
-        "vi": "Vùng trên đồi",
-        "en": "Epithalamus",
-        "reviewed": false
+        "vi": "Vùng trên đồi (chưa gồm tuyến tùng và mép sau)",
+        "en": "Epithalamus (excluding pineal gland and posterior commissure)",
+        "reviewed": true
       },
       "parent": "diencephalon",
       "children": [],
@@ -4101,14 +3906,14 @@
         ]
       },
       "data": {
-        "status": "buildable",
+        "status": "live",
         "partial": false,
-        "existingViewId": null,
+        "existingViewId": "epithalamus",
         "borrowedFromSystem": null,
         "note": null
       },
       "phase": 2,
-      "priority": "P1"
+      "priority": "done"
     },
     {
       "id": "nervous-cranial-nerves",
@@ -8608,6 +8413,481 @@
       "priority": "P4"
     },
     {
+      "id": "superior-frontal-gyrus",
+      "viewId": "superior-frontal-gyrus",
+      "section": "C",
+      "kind": "structure",
+      "level": 6,
+      "name": {
+        "vi": "Hồi trán trên",
+        "en": "Superior frontal gyrus",
+        "reviewed": true
+      },
+      "parent": "frontal-lobe",
+      "children": [],
+      "learningObjectives": {
+        "vi": [
+          "Xác định hồi trán trên trên bề mặt bán cầu"
+        ],
+        "reviewed": false
+      },
+      "structures3d": [
+        "rule hiện có của `superior-frontal-gyrus`"
+      ],
+      "view": {
+        "direction": "superior",
+        "zoom": {
+          "level": "structure",
+          "cameraFill": 0.86,
+          "thumbnailFill": 0.86
+        },
+        "display": "layered",
+        "context": []
+      },
+      "url": {
+        "vi": "/vi/human-atlas?view=superior-frontal-gyrus",
+        "en": "/en/human-atlas?view=superior-frontal-gyrus"
+      },
+      "thumbnail": {
+        "source": "auto-capture",
+        "from": "model",
+        "direction": "superior"
+      },
+      "data": {
+        "status": "live",
+        "partial": false,
+        "existingViewId": "superior-frontal-gyrus",
+        "borrowedFromSystem": null,
+        "note": null
+      },
+      "phase": 2,
+      "priority": "done"
+    },
+    {
+      "id": "middle-frontal-gyrus",
+      "viewId": "middle-frontal-gyrus",
+      "section": "C",
+      "kind": "structure",
+      "level": 6,
+      "name": {
+        "vi": "Hồi trán giữa",
+        "en": "Middle frontal gyrus",
+        "reviewed": true
+      },
+      "parent": "frontal-lobe",
+      "children": [],
+      "learningObjectives": {
+        "vi": [
+          "Xác định hồi trán giữa trên bề mặt bán cầu"
+        ],
+        "reviewed": false
+      },
+      "structures3d": [
+        "rule hiện có của `middle-frontal-gyrus`"
+      ],
+      "view": {
+        "direction": "side",
+        "zoom": {
+          "level": "structure",
+          "cameraFill": 0.86,
+          "thumbnailFill": 0.86
+        },
+        "display": "layered",
+        "context": []
+      },
+      "url": {
+        "vi": "/vi/human-atlas?view=middle-frontal-gyrus",
+        "en": "/en/human-atlas?view=middle-frontal-gyrus"
+      },
+      "thumbnail": {
+        "source": "auto-capture",
+        "from": "model",
+        "direction": "side"
+      },
+      "data": {
+        "status": "live",
+        "partial": false,
+        "existingViewId": "middle-frontal-gyrus",
+        "borrowedFromSystem": null,
+        "note": null
+      },
+      "phase": 2,
+      "priority": "done"
+    },
+    {
+      "id": "orbital-gyri",
+      "viewId": "orbital-gyri",
+      "section": "C",
+      "kind": "structure",
+      "level": 6,
+      "name": {
+        "vi": "Các hồi ổ mắt",
+        "en": "Orbital gyri",
+        "reviewed": true
+      },
+      "parent": "frontal-lobe",
+      "children": [],
+      "learningObjectives": {
+        "vi": [
+          "Xác định các hồi ổ mắt trên bề mặt bán cầu"
+        ],
+        "reviewed": false
+      },
+      "structures3d": [
+        "rule hiện có của `orbital-gyri`"
+      ],
+      "view": {
+        "direction": [
+          0,
+          -1,
+          0.3
+        ],
+        "zoom": {
+          "level": "structure",
+          "cameraFill": 0.86,
+          "thumbnailFill": 0.86
+        },
+        "display": "layered",
+        "context": []
+      },
+      "url": {
+        "vi": "/vi/human-atlas?view=orbital-gyri",
+        "en": "/en/human-atlas?view=orbital-gyri"
+      },
+      "thumbnail": {
+        "source": "auto-capture",
+        "from": "model",
+        "direction": [
+          0,
+          -1,
+          0.3
+        ]
+      },
+      "data": {
+        "status": "live",
+        "partial": false,
+        "existingViewId": "orbital-gyri",
+        "borrowedFromSystem": null,
+        "note": null
+      },
+      "phase": 2,
+      "priority": "done"
+    },
+    {
+      "id": "supramarginal-gyrus",
+      "viewId": "supramarginal-gyrus",
+      "section": "C",
+      "kind": "structure",
+      "level": 7,
+      "name": {
+        "vi": "Hồi trên viền",
+        "en": "Supramarginal gyrus",
+        "reviewed": true
+      },
+      "parent": "inferior-parietal-lobule",
+      "children": [],
+      "learningObjectives": {
+        "vi": [
+          "Xác định hồi trên viền trên bề mặt bán cầu"
+        ],
+        "reviewed": false
+      },
+      "structures3d": [
+        "rule hiện có của `supramarginal-gyrus`"
+      ],
+      "view": {
+        "direction": "side",
+        "zoom": {
+          "level": "structure",
+          "cameraFill": 0.86,
+          "thumbnailFill": 0.86
+        },
+        "display": "layered",
+        "context": []
+      },
+      "url": {
+        "vi": "/vi/human-atlas?view=supramarginal-gyrus",
+        "en": "/en/human-atlas?view=supramarginal-gyrus"
+      },
+      "thumbnail": {
+        "source": "auto-capture",
+        "from": "model",
+        "direction": "side"
+      },
+      "data": {
+        "status": "live",
+        "partial": false,
+        "existingViewId": "supramarginal-gyrus",
+        "borrowedFromSystem": null,
+        "note": null
+      },
+      "phase": 2,
+      "priority": "done"
+    },
+    {
+      "id": "angular-gyrus",
+      "viewId": "angular-gyrus",
+      "section": "C",
+      "kind": "structure",
+      "level": 7,
+      "name": {
+        "vi": "Hồi góc",
+        "en": "Angular gyrus",
+        "reviewed": true
+      },
+      "parent": "inferior-parietal-lobule",
+      "children": [],
+      "learningObjectives": {
+        "vi": [
+          "Xác định hồi góc trên bề mặt bán cầu"
+        ],
+        "reviewed": false
+      },
+      "structures3d": [
+        "rule hiện có của `angular-gyrus`"
+      ],
+      "view": {
+        "direction": "side",
+        "zoom": {
+          "level": "structure",
+          "cameraFill": 0.86,
+          "thumbnailFill": 0.86
+        },
+        "display": "layered",
+        "context": []
+      },
+      "url": {
+        "vi": "/vi/human-atlas?view=angular-gyrus",
+        "en": "/en/human-atlas?view=angular-gyrus"
+      },
+      "thumbnail": {
+        "source": "auto-capture",
+        "from": "model",
+        "direction": "side"
+      },
+      "data": {
+        "status": "live",
+        "partial": false,
+        "existingViewId": "angular-gyrus",
+        "borrowedFromSystem": null,
+        "note": null
+      },
+      "phase": 2,
+      "priority": "done"
+    },
+    {
+      "id": "middle-temporal-gyrus",
+      "viewId": "middle-temporal-gyrus",
+      "section": "C",
+      "kind": "structure",
+      "level": 6,
+      "name": {
+        "vi": "Hồi thái dương giữa",
+        "en": "Middle temporal gyrus",
+        "reviewed": true
+      },
+      "parent": "temporal-lobe",
+      "children": [],
+      "learningObjectives": {
+        "vi": [
+          "Xác định hồi thái dương giữa trên bề mặt bán cầu"
+        ],
+        "reviewed": false
+      },
+      "structures3d": [
+        "rule hiện có của `middle-temporal-gyrus`"
+      ],
+      "view": {
+        "direction": "side",
+        "zoom": {
+          "level": "structure",
+          "cameraFill": 0.86,
+          "thumbnailFill": 0.86
+        },
+        "display": "layered",
+        "context": []
+      },
+      "url": {
+        "vi": "/vi/human-atlas?view=middle-temporal-gyrus",
+        "en": "/en/human-atlas?view=middle-temporal-gyrus"
+      },
+      "thumbnail": {
+        "source": "auto-capture",
+        "from": "model",
+        "direction": "side"
+      },
+      "data": {
+        "status": "live",
+        "partial": false,
+        "existingViewId": "middle-temporal-gyrus",
+        "borrowedFromSystem": null,
+        "note": null
+      },
+      "phase": 2,
+      "priority": "done"
+    },
+    {
+      "id": "inferior-temporal-gyrus",
+      "viewId": "inferior-temporal-gyrus",
+      "section": "C",
+      "kind": "structure",
+      "level": 6,
+      "name": {
+        "vi": "Hồi thái dương dưới",
+        "en": "Inferior temporal gyrus",
+        "reviewed": true
+      },
+      "parent": "temporal-lobe",
+      "children": [],
+      "learningObjectives": {
+        "vi": [
+          "Xác định hồi thái dương dưới trên bề mặt bán cầu"
+        ],
+        "reviewed": false
+      },
+      "structures3d": [
+        "rule hiện có của `inferior-temporal-gyrus`"
+      ],
+      "view": {
+        "direction": "side",
+        "zoom": {
+          "level": "structure",
+          "cameraFill": 0.86,
+          "thumbnailFill": 0.86
+        },
+        "display": "layered",
+        "context": []
+      },
+      "url": {
+        "vi": "/vi/human-atlas?view=inferior-temporal-gyrus",
+        "en": "/en/human-atlas?view=inferior-temporal-gyrus"
+      },
+      "thumbnail": {
+        "source": "auto-capture",
+        "from": "model",
+        "direction": "side"
+      },
+      "data": {
+        "status": "live",
+        "partial": false,
+        "existingViewId": "inferior-temporal-gyrus",
+        "borrowedFromSystem": null,
+        "note": null
+      },
+      "phase": 2,
+      "priority": "done"
+    },
+    {
+      "id": "fusiform-gyrus",
+      "viewId": "fusiform-gyrus",
+      "section": "C",
+      "kind": "structure",
+      "level": 6,
+      "name": {
+        "vi": "Hồi hình thoi",
+        "en": "Fusiform gyrus",
+        "reviewed": true
+      },
+      "parent": "temporal-lobe",
+      "children": [],
+      "learningObjectives": {
+        "vi": [
+          "Xác định hồi hình thoi trên bề mặt bán cầu"
+        ],
+        "reviewed": false
+      },
+      "structures3d": [
+        "rule hiện có của `fusiform-gyrus`"
+      ],
+      "view": {
+        "direction": [
+          0,
+          -1,
+          0.3
+        ],
+        "zoom": {
+          "level": "structure",
+          "cameraFill": 0.86,
+          "thumbnailFill": 0.86
+        },
+        "display": "layered",
+        "context": []
+      },
+      "url": {
+        "vi": "/vi/human-atlas?view=fusiform-gyrus",
+        "en": "/en/human-atlas?view=fusiform-gyrus"
+      },
+      "thumbnail": {
+        "source": "auto-capture",
+        "from": "model",
+        "direction": [
+          0,
+          -1,
+          0.3
+        ]
+      },
+      "data": {
+        "status": "live",
+        "partial": false,
+        "existingViewId": "fusiform-gyrus",
+        "borrowedFromSystem": null,
+        "note": null
+      },
+      "phase": 2,
+      "priority": "done"
+    },
+    {
+      "id": "septum-telencephalon",
+      "viewId": "septum-telencephalon",
+      "section": "D",
+      "kind": "structure",
+      "level": 5,
+      "name": {
+        "vi": "Vách trong suốt và vùng vách",
+        "en": "Septum pellucidum and septal area",
+        "reviewed": true
+      },
+      "parent": "hippocampus-amygdala",
+      "children": [],
+      "learningObjectives": {
+        "vi": [
+          "Định vị vách trong suốt giữa hai não thất bên"
+        ],
+        "reviewed": false
+      },
+      "structures3d": [
+        "rule hiện có của `septum-telencephalon`"
+      ],
+      "view": {
+        "direction": "side",
+        "zoom": {
+          "level": "detail",
+          "cameraFill": 0.9,
+          "thumbnailFill": 0.86
+        },
+        "display": "layered",
+        "context": []
+      },
+      "url": {
+        "vi": "/vi/human-atlas?view=septum-telencephalon",
+        "en": "/en/human-atlas?view=septum-telencephalon"
+      },
+      "thumbnail": {
+        "source": "auto-capture",
+        "from": "model",
+        "direction": "side"
+      },
+      "data": {
+        "status": "live",
+        "partial": false,
+        "existingViewId": "septum-telencephalon",
+        "borrowedFromSystem": null,
+        "note": null
+      },
+      "phase": 2,
+      "priority": "done"
+    },
+    {
       "id": "cerebral-cortex",
       "viewId": "cerebral-cortex",
       "section": "C",
@@ -8679,7 +8959,7 @@
       "children": [
         "hippocampus",
         "amygdala",
-        "septal-area"
+        "septum-telencephalon"
       ],
       "learningObjectives": {
         "vi": [
@@ -8733,6 +9013,7 @@
       "parent": "nervous-deep-brain",
       "children": [
         "thalamus",
+        "geniculate-bodies",
         "hypothalamus",
         "epithalamus"
       ],

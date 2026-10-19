@@ -195,20 +195,16 @@ N("premotor-sma", "frontal-lobe", "C", "region", "Vỏ tiền vận động và 
   note: "Không mesh; ranh giới chức năng — chỉ nhãn xấp xỉ, cần science-editor duyệt.",
   obj: ["Định vị vùng tiền vận động trước vỏ vận động nguyên phát"],
 });
-N("inferior-frontal-gyrus", "frontal-lobe", "C", "structure", "Hồi trán dưới (phần nắp, tam giác, ổ mắt)", "Inferior frontal gyrus (opercular, triangular, orbital parts)", {
-  status: "import-za", dir: "side", zoom: "structure", mode: "layered", context: ["FRONTAL_LOBE ghost"],
+N("inferior-frontal-gyrus", "frontal-lobe", "C", "structure", "Hồi trán dưới", "Inferior frontal gyrus", {
+  status: "live", dir: "side", zoom: "structure", mode: "layered", context: ["FRONTAL_LOBE ghost"],
   focus: ["Opercular part of inferior frontal gyrus", "Triangular part of inferior frontal gyrus", "Orbital part of inferior frontal gyrus"],
-  note: "BP3D có hồi trán dưới nguyên khối; ZA chia 3 phần → khử trùng theo không gian, giữ bản ZA khi xem cấp 4.",
+  note: "Đã dựng nguyên hồi (BP3D, M1). Phần nắp/tam giác/ổ mắt có trong ZA — tách sau, phải THAY mảnh BP3D.",
   obj: ["Phân biệt ba phần của hồi trán dưới"],
 });
 N("broca-area", "inferior-frontal-gyrus", "C", "region", "Vùng Broca", "Broca's area", {
   status: "needs-schema", zoom: "detail", mode: "layered", focus: ["nhãn trên phần nắp + phần tam giác (ZA)"],
   note: "Thường mô tả ở phần nắp và tam giác của hồi trán dưới, ưu thế bán cầu trái ở đa số người; ranh giới chức năng thay đổi giữa cá thể → nhãn xấp xỉ, science-editor duyệt.",
   obj: ["Liên hệ phần nắp và tam giác hồi trán dưới với sản xuất ngôn ngữ"],
-});
-N("frontal-gyri-other", "frontal-lobe", "C", "structure", "Hồi trán trên, giữa và các hồi ổ mắt", "Superior and middle frontal gyri, orbital gyri", {
-  status: "buildable", dir: "three-quarter", zoom: "structure", mode: "layered", focus: ["Superior frontal gyrus", "Middle frontal gyrus", "Orbital gyrus"],
-  obj: ["Kể tên các hồi trán xếp từ trên xuống"],
 });
 N("prefrontal-cortex", "frontal-lobe", "C", "region", "Vỏ trước trán", "Prefrontal cortex", {
   status: "needs-schema", zoom: "structure", mode: "layered", focus: ["nhãn vùng phía trước vùng vận động"],
@@ -256,10 +252,6 @@ N("wernicke-area", "superior-temporal-gyrus", "C", "region", "Vùng Wernicke", "
   status: "needs-schema", zoom: "detail", mode: "layered", focus: ["nhãn trên phần sau hồi thái dương trên"],
   note: "Ranh giới vùng Wernicke không thống nhất giữa các tài liệu → nhãn xấp xỉ, câu chữ bắt buộc qua science-editor (open question).",
   obj: ["Định vị vùng Wernicke ở phần sau hồi thái dương trên"],
-});
-N("temporal-gyri-other", "temporal-lobe", "C", "structure", "Hồi thái dương giữa, dưới và hồi chẩm – thái dương ngoài", "Middle and inferior temporal gyri, fusiform gyrus", {
-  status: "buildable", dir: [0.6, -0.5, 0.6], zoom: "structure", mode: "layered", focus: ["Middle temporal gyrus", "Inferior temporal gyrus", "Fusiform gyrus"],
-  obj: ["Xác định hồi thái dương giữa, dưới và hồi hình thoi ở mặt dưới"],
 });
 N("occipital-lobe", "cerebral-cortex", "C", "structure", "Thuỳ chẩm", "Occipital lobe", {
   status: "buildable", dir: "back", zoom: "structure", mode: "layered", context: ["CORTEX còn lại ghost"], focus: ["Occipital lobe (BP3D, 1 mảnh mỗi bên)"], note: lobeNote,
@@ -312,10 +304,6 @@ N("limbic-gyri", "nervous-limbic", "D", "structure", "Hồi đai và hồi cạn
   status: "live", existing: "limbic-gyri", dir: "three-quarter", zoom: "structure", mode: "layered",
   obj: ["Xác định hồi đai bao quanh thể chai"],
 });
-N("septal-area", "hippocampus-amygdala", "D", "structure", "Vách trong suốt và nhân vách", "Septum pellucidum and septal nuclei", {
-  status: "buildable", partial: true, dir: "side", zoom: "detail", mode: "layered", focus: ["Septum of telencephalon (BP3D)", "Septal nuclei + Septum pellucidum (ZA, tuỳ chọn)"],
-  obj: ["Định vị vách trong suốt giữa hai não thất bên"],
-});
 
 // ================================================================ E. Gian não
 N("nervous-deep-brain", "nervous-brain", "E", "group", "Gian não và nhân nền", "Diencephalon and basal nuclei", {
@@ -331,7 +319,7 @@ N("thalamic-nuclei", "thalamus", "E", "region", "Các nhân đồi thị", "Thal
   status: "missing", obj: ["Phân biệt nhóm nhân trước, trong, ngoài của đồi thị"],
   note: "Không nguồn đã vet có nhân đồi thị. Ứng viên tương lai: atlas não mã nguồn mở (cần kiểm giấy phép trước).",
 });
-N("geniculate-bodies", "thalamus", "E", "structure", "Thể gối ngoài và thể gối trong", "Lateral and medial geniculate bodies", {
+N("geniculate-bodies", "diencephalon", "E", "structure", "Thể gối ngoài và thể gối trong", "Lateral and medial geniculate bodies", {
   status: "buildable", dir: [-0.5, -0.3, -0.8], zoom: "detail", mode: "layered", context: ["THALAMUS ghost", "OPTIC tract"], focus: ["Lateral geniculate body", "Medial geniculate body"],
   obj: ["Liên hệ thể gối ngoài với thị giác, thể gối trong với thính giác"],
 });
@@ -611,6 +599,21 @@ N("touch-receptors", "sec-sensory-organs", "K", "structure", "Thụ thể xúc g
   note: "Da là 1 mesh toàn thân. HAA tile 22–24 là khối da cắt — cần model tự dựng (vi thể), qua science-editor.",
 });
 
+// ================================================================ M1 (2026-10-19): hồi đơn lẻ đã dựng
+for (const [id, parent, vi, en, dir] of [
+  ["superior-frontal-gyrus", "frontal-lobe", "Hồi trán trên", "Superior frontal gyrus", "superior"],
+  ["middle-frontal-gyrus", "frontal-lobe", "Hồi trán giữa", "Middle frontal gyrus", "side"],
+  ["orbital-gyri", "frontal-lobe", "Các hồi ổ mắt", "Orbital gyri", [0, -1, 0.3]],
+  ["supramarginal-gyrus", "inferior-parietal-lobule", "Hồi trên viền", "Supramarginal gyrus", "side"],
+  ["angular-gyrus", "inferior-parietal-lobule", "Hồi góc", "Angular gyrus", "side"],
+  ["middle-temporal-gyrus", "temporal-lobe", "Hồi thái dương giữa", "Middle temporal gyrus", "side"],
+  ["inferior-temporal-gyrus", "temporal-lobe", "Hồi thái dương dưới", "Inferior temporal gyrus", "side"],
+  ["fusiform-gyrus", "temporal-lobe", "Hồi hình thoi", "Fusiform gyrus", [0, -1, 0.3]],
+]) N(id, parent, "C", "structure", vi, en, { dir, zoom: "structure", mode: "layered", obj: [`Xác định ${vi.toLowerCase()} trên bề mặt bán cầu`] });
+N("septum-telencephalon", "hippocampus-amygdala", "D", "structure", "Vách trong suốt và vùng vách", "Septum pellucidum and septal area", {
+  dir: "side", zoom: "detail", mode: "layered", obj: ["Định vị vách trong suốt giữa hai não thất bên"],
+});
+
 // ================================================================ góc nhìn main còn thiếu (giữ deep link)
 N("cerebral-cortex", "nervous-cerebrum", "C", "group", "Các hồi và thuỳ đại não", "Cerebral gyri and lobes", {
   status: "live", existing: "cerebral-cortex", dir: "side", zoom: "organ", mode: "layered",
@@ -661,7 +664,7 @@ const ZA_PATH = {
 const IMPORT = {
   "cerebellar-vermis": "replace-bp3d", "cerebellar-hemisphere-lobules": "replace-bp3d", "flocculonodular-lobe": "replace-bp3d",
   "cerebellar-peduncles": "pick", "red-nucleus": "pick", "medulla-pyramid-olive": "replace-bp3d", "cranial-nerve-nuclei": "pick",
-  "nervous-meninges": "pick", "falx-cerebri": "pick", "inferior-frontal-gyrus": "replace-bp3d", "transverse-temporal-gyri": "pick",
+  "nervous-meninges": "pick", "falx-cerebri": "pick", "transverse-temporal-gyri": "pick",
   "occipital-gyri": "replace-bp3d", "medial-surface-hemisphere": "replace-bp3d", "cn-i-olfactory": "dedupe-exception",
   "cn-vi-abducens": "dedupe-exception", "trigeminal-roots": "dedupe-exception", "sympathetic-ganglia": "pick",
   "intermediolateral-column": "pick", "spinal-tracts": "pick", "middle-ear": ["pick", "skeletal-branch"], "inner-ear": "pick",
@@ -677,6 +680,7 @@ for (const m of mainSrc.matchAll(/id: "([a-z0-9-]+)",[\s\S]{0,200}?name: \{ vi: 
 const nervousSrc = fs.readFileSync(path.join(MAIN_DIR, "views-nervous.ts"), "utf8");
 const MAIN_NERVOUS = [...nervousSrc.matchAll(/(?:group|structure)\(\s*"([a-z0-9-]+)"|id: "([a-z0-9-]+)"/g)].map((m) => m[1] || m[2]);
 
+for (const x of nodes) if (!x.existing && MAIN_NAMES[x.id]) Object.assign(x, { existing: x.id, status: "live" });
 const byId = new Map();
 for (const x of nodes) {
   if (byId.has(x.id)) throw new Error("trùng id " + x.id);
@@ -818,7 +822,7 @@ const doc = {
     },
   },
   milestones: [
-    { id: "M1", phase: "1–2", title: "Tách não theo thuỳ, hệ viền, gian não, thân não, não thất", status: "buildable", items: list.filter((x) => x.data.status === "buildable" && x.phase <= 2).map((x) => x.id) },
+    { id: "M1", phase: "1–2", title: "Tách não theo thuỳ, hệ viền, gian não, thân não, não thất — XONG 2026-10-19 (31 cấu trúc, science-editor PASS)", status: "done", items: list.filter((x) => x.data.status === "buildable" && x.phase <= 2).map((x) => x.id) },
     { id: "M2", phase: "2–8", title: "Nhập mở rộng Z-Anatomy (một lượt): hồi/tiểu thuỳ, nhân dây sọ, bó tuỷ, dây I/VI, rễ V, hạch giao cảm, tai giữa/trong, liềm đại não", status: "import-za", items: list.filter((x) => x.data.status === "import-za").map((x) => x.id) },
     { id: "M3", phase: "4–7", title: "Tự chủ, đám rối, nhánh thần kinh từ mảnh sẵn có", status: "buildable", items: list.filter((x) => x.data.status === "buildable" && x.phase > 2).map((x) => x.id) },
     { id: "M4", phase: "2, 5", title: "Kiểu nút mới: nhãn vùng chức năng + mặt cắt theo cao độ", status: "needs-schema/needs-clipping", items: list.filter((x) => ["needs-schema", "needs-clipping"].includes(x.data.status)).map((x) => x.id) },

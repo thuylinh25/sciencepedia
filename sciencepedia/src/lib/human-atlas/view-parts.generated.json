@@ -16584,6 +16584,165 @@
     ],
     "hide": []
   },
+  "frontal-lobe": {
+    "focus": [
+      "FJ1744",
+      "FJ1745",
+      "FJ1787",
+      "FJ1788",
+      "FJ1793",
+      "FJ1794",
+      "FJ1800",
+      "FJ1801",
+      "FJ1833",
+      "FJ1834"
+    ],
+    "hide": []
+  },
+  "precentral-gyrus": {
+    "focus": [
+      "FJ1800",
+      "FJ1801"
+    ],
+    "hide": []
+  },
+  "superior-frontal-gyrus": {
+    "focus": [
+      "FJ1833",
+      "FJ1834"
+    ],
+    "hide": []
+  },
+  "middle-frontal-gyrus": {
+    "focus": [
+      "FJ1787",
+      "FJ1788"
+    ],
+    "hide": []
+  },
+  "inferior-frontal-gyrus": {
+    "focus": [
+      "FJ1744",
+      "FJ1745"
+    ],
+    "hide": []
+  },
+  "orbital-gyri": {
+    "focus": [
+      "FJ1793",
+      "FJ1794"
+    ],
+    "hide": []
+  },
+  "parietal-lobe": {
+    "focus": [
+      "FJ1732",
+      "FJ1733",
+      "FJ1797",
+      "FJ1798",
+      "FJ1835",
+      "FJ1836",
+      "FJ1841",
+      "FJ1842"
+    ],
+    "hide": []
+  },
+  "postcentral-gyrus": {
+    "focus": [
+      "FJ1797",
+      "FJ1798"
+    ],
+    "hide": []
+  },
+  "superior-parietal-lobule": {
+    "focus": [
+      "FJ1835",
+      "FJ1836"
+    ],
+    "hide": []
+  },
+  "inferior-parietal-lobule": {
+    "focus": [
+      "FJ1732",
+      "FJ1733",
+      "FJ1841",
+      "FJ1842"
+    ],
+    "hide": []
+  },
+  "supramarginal-gyrus": {
+    "focus": [
+      "FJ1841",
+      "FJ1842"
+    ],
+    "hide": []
+  },
+  "angular-gyrus": {
+    "focus": [
+      "FJ1732",
+      "FJ1733"
+    ],
+    "hide": []
+  },
+  "temporal-lobe": {
+    "focus": [
+      "FJ1746",
+      "FJ1747",
+      "FJ1783",
+      "FJ1784",
+      "FJ1789",
+      "FJ1790",
+      "FJ1837",
+      "FJ1838",
+      "FJ1839",
+      "FJ1840"
+    ],
+    "hide": []
+  },
+  "superior-temporal-gyrus": {
+    "focus": [
+      "FJ1837",
+      "FJ1838",
+      "FJ1839",
+      "FJ1840"
+    ],
+    "hide": []
+  },
+  "middle-temporal-gyrus": {
+    "focus": [
+      "FJ1789",
+      "FJ1790"
+    ],
+    "hide": []
+  },
+  "inferior-temporal-gyrus": {
+    "focus": [
+      "FJ1746",
+      "FJ1747"
+    ],
+    "hide": []
+  },
+  "fusiform-gyrus": {
+    "focus": [
+      "FJ1783",
+      "FJ1784"
+    ],
+    "hide": []
+  },
+  "occipital-lobe": {
+    "focus": [
+      "FJ1791",
+      "FJ1792"
+    ],
+    "hide": []
+  },
+  "insula": {
+    "focus": [
+      "FJ1748",
+      "FJ1749"
+    ],
+    "hide": []
+  },
   "cerebral-white-matter": {
     "focus": [
       "FJ1734",
@@ -16624,6 +16783,26 @@
     ],
     "hide": []
   },
+  "hippocampus": {
+    "focus": [
+      "FJ1759",
+      "FJ1807"
+    ],
+    "hide": []
+  },
+  "amygdala": {
+    "focus": [
+      "FJ1753",
+      "FJ1829"
+    ],
+    "hide": []
+  },
+  "septum-telencephalon": {
+    "focus": [
+      "FJ1832"
+    ],
+    "hide": []
+  },
   "limbic-gyri": {
     "focus": [
       "FJ1739",
@@ -16638,13 +16817,6 @@
       "FJ1741",
       "FJ1756",
       "FJ1804"
-    ],
-    "hide": []
-  },
-  "mammillary-body": {
-    "focus": [
-      "FJ1768",
-      "FJ1815"
     ],
     "hide": []
   },
@@ -16668,6 +16840,46 @@
     ],
     "hide": []
   },
+  "thalamus": {
+    "focus": [
+      "FJ1782",
+      "FJ1827"
+    ],
+    "hide": []
+  },
+  "geniculate-bodies": {
+    "focus": [
+      "FJ1766",
+      "FJ1813",
+      "FJ1816",
+      "FJ1816M"
+    ],
+    "hide": []
+  },
+  "hypothalamus": {
+    "focus": [
+      "FJ1760",
+      "FJ1780",
+      "FJ1808",
+      "FJ1828"
+    ],
+    "hide": []
+  },
+  "mammillary-body": {
+    "focus": [
+      "FJ1768",
+      "FJ1815"
+    ],
+    "hide": []
+  },
+  "epithalamus": {
+    "focus": [
+      "FJ1743",
+      "FJ1777",
+      "FJ1824"
+    ],
+    "hide": []
+  },
   "brainstem": {
     "focus": [
       "FJ1735",
@@ -16687,6 +16899,39 @@
       "FJ1821",
       "FJ1822",
       "FJ1826",
+      "FJ1831"
+    ],
+    "hide": []
+  },
+  "midbrain": {
+    "focus": [
+      "FJ1735",
+      "FJ1736",
+      "FJ1761",
+      "FJ1762",
+      "FJ1763",
+      "FJ1770",
+      "FJ1774",
+      "FJ1779",
+      "FJ1809",
+      "FJ1810",
+      "FJ1811",
+      "FJ1817",
+      "FJ1821",
+      "FJ1826"
+    ],
+    "hide": []
+  },
+  "pons": {
+    "focus": [
+      "FJ1775",
+      "FJ1822"
+    ],
+    "hide": []
+  },
+  "medulla-oblongata": {
+    "focus": [
+      "FJ1769",
       "FJ1831"
     ],
     "hide": []
@@ -16714,6 +16959,39 @@
       "FJ1767",
       "FJ1803",
       "FJ1814"
+    ],
+    "hide": []
+  },
+  "lateral-ventricles": {
+    "focus": [
+      "FJ1752",
+      "FJ1767",
+      "FJ1814"
+    ],
+    "hide": []
+  },
+  "third-ventricle": {
+    "focus": [
+      "FJ1730"
+    ],
+    "hide": []
+  },
+  "cerebral-aqueduct": {
+    "focus": [
+      "FJ1738"
+    ],
+    "hide": []
+  },
+  "fourth-ventricle": {
+    "focus": [
+      "FJ1731"
+    ],
+    "hide": []
+  },
+  "choroid-plexus": {
+    "focus": [
+      "FJ1755",
+      "FJ1803"
     ],
     "hide": []
   },

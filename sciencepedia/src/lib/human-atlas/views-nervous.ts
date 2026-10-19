@@ -53,6 +53,49 @@ const FORNIX = n(/fornix of forebrain$/i);
 const MAMMILLARY = n(/^mammillary body$/i);
 const LIMBIC = [LIMBIC_GYRI, HIPPOCAMPUS_AMYGDALA, FORNIX, MAMMILLARY];
 
+// Cấp sâu hơn (lộ trình docs/roadmaps/human-atlas-nervous-system.json, mốc M1): mỗi
+// cấp con chia HẾT cấp cha — thiếu một mảnh là bảng của cha hiện hàng "Phần còn
+// lại". Hồi cạnh hải mã và hồi đai nằm trong CORTEX nhưng thuộc `limbic-gyri`,
+// không xếp vào thuỳ nào ở đây.
+const PRECENTRAL = n(/precentral gyrus$/i);
+const SUPERIOR_FRONTAL = n(/superior frontal gyrus$/i);
+const MIDDLE_FRONTAL = n(/middle frontal gyrus$/i);
+const INFERIOR_FRONTAL = n(/inferior frontal gyrus$/i);
+const ORBITAL_GYRI = n(/^orbital gyrus$/i);
+const FRONTAL_LOBE = n(/precentral gyrus$|frontal gyrus$|^orbital gyrus$/i);
+const POSTCENTRAL = n(/postcentral gyrus$/i);
+const SUPERIOR_PARIETAL = n(/superior parietal lobule$/i);
+const SUPRAMARGINAL = n(/supramarginal gyrus$/i);
+const ANGULAR = n(/angular gyrus$/i);
+const INFERIOR_PARIETAL = n(/supramarginal gyrus$|angular gyrus$/i);
+const PARIETAL_LOBE = n(/postcentral gyrus$|superior parietal lobule$|supramarginal gyrus$|angular gyrus$/i);
+const SUPERIOR_TEMPORAL = n(/superior temporal gyrus$/i);
+const MIDDLE_TEMPORAL = n(/middle temporal gyrus$/i);
+const INFERIOR_TEMPORAL = n(/inferior temporal gyrus$/i);
+const FUSIFORM = n(/fusiform gyrus$/i);
+const TEMPORAL_LOBE = n(/temporal gyrus$|fusiform gyrus$/i);
+const OCCIPITAL_LOBE = n(/occipital lobe$/i);
+const INSULA = n(/^(left|right) insula$/i);
+const MIDBRAIN = n(/^midbrain$|peduncle of midbrain$|colliculus$|brachium of (superior|inferior) colliculus$|^interpeduncular fossa$/i);
+const PONS = n(/^pons$/i);
+const MEDULLA = n(/^medulla oblongata$/i);
+const LATERAL_VENTRICLES = n(/lateral ventricle$|^interventricular foramen$/i);
+const THIRD_VENTRICLE = n(/^third ventricle$/i);
+const AQUEDUCT = n(/^cerebral aqueduct$/i);
+const FOURTH_VENTRICLE = n(/^fourth ventricle$/i);
+// Mảnh BodyParts3D xếp ở giác quan; correctSystems đưa về thần kinh.
+const CHOROID_PLEXUS = n(/^choroid plexus of ((left|right) )?cerebral hemisphere$/i);
+const HIPPOCAMPUS = n(/hippocampus$/i);
+const AMYGDALA = n(/amygdala$/i);
+const SEPTUM = n(/^septum of telencephalon$/i);
+// Thể gối và thể vú đứng cạnh đồi thị / vùng dưới đồi trong bảng, không lồng vào:
+// cấu trúc con chỉ phủ một phần cha thì mở cha ra hàng "Phần còn lại".
+// Neo `^`: "thalamus$" trơn khớp cả hypothalamus và vân tuỷ đồi thị.
+const THALAMUS = n(/^(left|right) thalamus$/i);
+const GENICULATE = n(/geniculate body$/i);
+const HYPOTHALAMUS = n(/^hypothalamus$|^tuber cinereum$/i);
+const EPITHALAMUS = n(/^habenula$|stria medullaris of thalamus$/i);
+
 // ------------------------------------------------------------------ dây sọ
 const OPTIC = n(/optic (nerve|chiasm|tract)$/i);
 const OCULOMOTOR = n(/branch of (left|right) oculomotor nerve$/i);
@@ -197,17 +240,51 @@ export const NERVOUS_VIEWS: readonly AtlasViewDef[] = [
     }),
 
   structure("cerebral-cortex", "Các hồi và thuỳ đại não", "Cerebral gyri and lobes", "side", CORTEX, ["vỏ não", "cortex"]),
+  structure("frontal-lobe", "Thuỳ trán", "Frontal lobe", "side", FRONTAL_LOBE, ["thuỳ trán", "frontal lobe"]),
+  structure("precentral-gyrus", "Hồi trước trung tâm", "Precentral gyrus", "side", PRECENTRAL, ["vỏ vận động", "motor cortex"]),
+  structure("superior-frontal-gyrus", "Hồi trán trên", "Superior frontal gyrus", "superior", SUPERIOR_FRONTAL),
+  structure("middle-frontal-gyrus", "Hồi trán giữa", "Middle frontal gyrus", "side", MIDDLE_FRONTAL),
+  structure("inferior-frontal-gyrus", "Hồi trán dưới", "Inferior frontal gyrus", "side", INFERIOR_FRONTAL, ["vùng Broca", "Broca"]),
+  structure("orbital-gyri", "Các hồi ổ mắt", "Orbital gyri", [0, -1, 0.3], ORBITAL_GYRI),
+  structure("parietal-lobe", "Thuỳ đỉnh", "Parietal lobe", "side", PARIETAL_LOBE, ["thuỳ đỉnh", "parietal lobe"]),
+  structure("postcentral-gyrus", "Hồi sau trung tâm", "Postcentral gyrus", "side", POSTCENTRAL, ["vỏ cảm giác", "somatosensory cortex"]),
+  structure("superior-parietal-lobule", "Tiểu thuỳ đỉnh trên", "Superior parietal lobule", "superior", SUPERIOR_PARIETAL),
+  structure("inferior-parietal-lobule", "Tiểu thuỳ đỉnh dưới", "Inferior parietal lobule", "side", INFERIOR_PARIETAL),
+  structure("supramarginal-gyrus", "Hồi trên viền", "Supramarginal gyrus", "side", SUPRAMARGINAL),
+  structure("angular-gyrus", "Hồi góc", "Angular gyrus", "side", ANGULAR),
+  structure("temporal-lobe", "Thuỳ thái dương", "Temporal lobe", "side", TEMPORAL_LOBE, ["thuỳ thái dương", "temporal lobe"]),
+  structure("superior-temporal-gyrus", "Hồi thái dương trên", "Superior temporal gyrus", "side", SUPERIOR_TEMPORAL, ["vùng Wernicke", "Wernicke"]),
+  structure("middle-temporal-gyrus", "Hồi thái dương giữa", "Middle temporal gyrus", "side", MIDDLE_TEMPORAL),
+  structure("inferior-temporal-gyrus", "Hồi thái dương dưới", "Inferior temporal gyrus", "side", INFERIOR_TEMPORAL),
+  structure("fusiform-gyrus", "Hồi hình thoi", "Fusiform gyrus", [0, -1, 0.3], FUSIFORM),
+  structure("occipital-lobe", "Thuỳ chẩm", "Occipital lobe", "back", OCCIPITAL_LOBE, ["thuỳ chẩm", "occipital lobe", "vỏ thị giác"]),
+  structure("insula", "Thuỳ đảo", "Insula", "side", INSULA, ["thuỳ đảo", "insula"]),
   structure("cerebral-white-matter", "Chất trắng, thể chai và các mép", "White matter, corpus callosum and commissures", "side", CEREBRAL_WHITE),
   structure("basal-nuclei", "Nhân đuôi, bèo sẫm và cầu nhạt", "Caudate nucleus, putamen and globus pallidus", "three-quarter", BASAL_NUCLEI, ["nhân nền", "basal nuclei", "nhân bèo", "lentiform nucleus"]),
   structure("hippocampus-amygdala", "Hải mã, thể hạnh nhân và vách", "Hippocampus, amygdala and septum", "three-quarter", HIPPOCAMPUS_AMYGDALA),
+  structure("hippocampus", "Hải mã", "Hippocampus", "three-quarter", HIPPOCAMPUS, ["hippocampus"]),
+  structure("amygdala", "Thể hạnh nhân", "Amygdala", "three-quarter", AMYGDALA, ["amygdala", "hạnh nhân"]),
+  structure("septum-telencephalon", "Vách trong suốt và vùng vách", "Septum pellucidum and septal area", "side", SEPTUM, ["vách", "septum", "vách đoan não"]),
   structure("limbic-gyri", "Hồi đai và hồi cạnh hải mã", "Cingulate and parahippocampal gyri", "three-quarter", LIMBIC_GYRI, ["hồi đai", "cingulate gyrus", "thuỳ viền", "limbic lobe"]),
   structure("fornix", "Vòm não", "Fornix", "three-quarter", FORNIX, ["fornix", "thể vòm", "thể tam giác"]),
-  structure("mammillary-body", "Thể vú", "Mammillary body", "three-quarter", MAMMILLARY, ["mammillary body"]),
   structure("diencephalon", "Gian não", "Diencephalon", "three-quarter", DIENCEPHALON, ["đồi thị", "thalamus", "vùng dưới đồi", "hypothalamus"]),
+  structure("thalamus", "Đồi thị", "Thalamus", "three-quarter", THALAMUS, ["đồi thị", "thalamus"]),
+  structure("geniculate-bodies", "Thể gối ngoài và thể gối trong", "Lateral and medial geniculate bodies", [-0.5, -0.3, -0.8], GENICULATE, ["thể gối", "geniculate"]),
+  structure("hypothalamus", "Vùng dưới đồi (chưa gồm thể vú)", "Hypothalamus (excluding mammillary bodies)", "side", HYPOTHALAMUS, ["vùng dưới đồi", "hypothalamus"]),
+  structure("mammillary-body", "Thể vú", "Mammillary body", "three-quarter", MAMMILLARY, ["mammillary body"]),
+  structure("epithalamus", "Vùng trên đồi (chưa gồm tuyến tùng và mép sau)", "Epithalamus (excluding pineal gland and posterior commissure)", [0, 0.3, -1], EPITHALAMUS, ["củ cương", "habenula"]),
   structure("brainstem", "Thân não", "Brainstem", "side", BRAINSTEM),
+  structure("midbrain", "Trung não", "Midbrain", "side", MIDBRAIN, ["trung não", "midbrain", "gò trên", "gò dưới"]),
+  structure("pons", "Cầu não", "Pons", "side", PONS, ["cầu não", "pons"]),
+  structure("medulla-oblongata", "Hành não", "Medulla oblongata", "front", MEDULLA, ["hành não", "medulla"]),
   structure("cerebellum", "Tiểu não", "Cerebellum", "side", CEREBELLUM),
   structure("tentorium-cerebelli", "Lều tiểu não", "Tentorium cerebelli", "side", TENTORIUM),
   structure("brain-ventricles", "Não thất, cống não và đám rối mạch mạc", "Ventricles, cerebral aqueduct and choroid plexus", "three-quarter", VENTRICLES),
+  structure("lateral-ventricles", "Não thất bên và lỗ gian não thất", "Lateral ventricles and interventricular foramen", "three-quarter", LATERAL_VENTRICLES, ["não thất bên", "lateral ventricle"]),
+  structure("third-ventricle", "Não thất ba", "Third ventricle", "side", THIRD_VENTRICLE),
+  structure("cerebral-aqueduct", "Cống não", "Cerebral aqueduct", "side", AQUEDUCT, ["cống Sylvius"]),
+  structure("fourth-ventricle", "Não thất bốn", "Fourth ventricle", "side", FOURTH_VENTRICLE),
+  structure("choroid-plexus", "Đám rối mạch mạc não thất bên", "Choroid plexus of lateral ventricles", "three-quarter", CHOROID_PLEXUS, ["choroid plexus", "dịch não tuỷ"]),
   structure("optic-pathway", "Dây, giao thoa và dải thị giác (II)", "Optic nerve, chiasm and tract (II)", "superior", OPTIC),
   structure("oculomotor-nerve", "Dây vận nhãn (III)", "Oculomotor nerve (III)", [-0.8, 0.35, 0.5], OCULOMOTOR),
   structure("trochlear-nerve", "Dây ròng rọc (IV)", "Trochlear nerve (IV)", "superior", TROCHLEAR),
