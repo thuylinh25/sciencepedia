@@ -1,6 +1,7 @@
 import type { NextRequest } from "next/server";
 
 import { categoryNotice } from "@/lib/category-notices";
+import { nextFeedOffset, parseFeedPage } from "@/lib/feed-page";
 import { absoluteUrl } from "@/lib/utils";
 import { listVerifiedArticles } from "@/server/queries";
 
@@ -16,10 +17,13 @@ export const runtime = "nodejs";
  * danh mục.
  *
  * Công khai, đọc thuần, sau cache CDN 5 phút — job chạy thưa hơn thế nhiều.
+ *
+ * Phân trang: `?limit=` (tối đa 50) và `?offset=`; `nextOffset` là offset của
+ * trang sau, `null` ở trang cuối. Không tham số thì vẫn là 20 bài đầu.
  */
 export async function GET(request: NextRequest) {
-  const limit = Number(request.nextUrl.searchParams.get("limit")) || 20;
-  const articles = await listVerifiedArticles(limit);
+  const page = parseFeedPage(request.nextUrl.searchParams);
+  const articles = await listVerifiedArticles(page.limit, page.offset);
 
   const items = articles.map((a) => ({
     slug: a.slug,
@@ -55,7 +59,7 @@ export async function GET(request: NextRequest) {
   }));
 
   return Response.json(
-    { items },
+    { items, nextOffset: nextFeedOffset(page, articles.length) },
     {
       headers: {
         "Cache-Control": "public, s-maxage=300, stale-while-revalidate=600",
