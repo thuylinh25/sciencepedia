@@ -832,6 +832,36 @@
       "FJ3394"
     ],
     "hide": [
+      "AHRA-left-anterior-nuclear-complex-of-thalamus",
+      "AHRA-left-centromedian-nucleus-of-thalamus",
+      "AHRA-left-cerebellar-deep-nuclei",
+      "AHRA-left-lateral-dorsal-nucleus-of-thalamus",
+      "AHRA-left-lateral-posterior-nucleus-of-thalamus",
+      "AHRA-left-mediodorsal-nucleus-of-thalamus",
+      "AHRA-left-parafascicular-nucleus-of-thalamus",
+      "AHRA-left-pulvinar-of-thalamus",
+      "AHRA-left-substantia-nigra",
+      "AHRA-left-subthalamic-nucleus",
+      "AHRA-left-ventral-anterior-nucleus-of-thalamus",
+      "AHRA-left-ventral-lateral-nucleus-of-thalamus",
+      "AHRA-left-ventral-posterior-lateral-nucleus-of-thalamus",
+      "AHRA-left-ventral-posterior-medial-nucleus-of-thalamus",
+      "AHRA-left-zona-incerta",
+      "AHRA-right-anterior-nuclear-complex-of-thalamus",
+      "AHRA-right-centromedian-nucleus-of-thalamus",
+      "AHRA-right-cerebellar-deep-nuclei",
+      "AHRA-right-lateral-dorsal-nucleus-of-thalamus",
+      "AHRA-right-lateral-posterior-nucleus-of-thalamus",
+      "AHRA-right-mediodorsal-nucleus-of-thalamus",
+      "AHRA-right-parafascicular-nucleus-of-thalamus",
+      "AHRA-right-pulvinar-of-thalamus",
+      "AHRA-right-substantia-nigra",
+      "AHRA-right-subthalamic-nucleus",
+      "AHRA-right-ventral-anterior-nucleus-of-thalamus",
+      "AHRA-right-ventral-lateral-nucleus-of-thalamus",
+      "AHRA-right-ventral-posterior-lateral-nucleus-of-thalamus",
+      "AHRA-right-ventral-posterior-medial-nucleus-of-thalamus",
+      "AHRA-right-zona-incerta",
       "FJ1283",
       "FJ1288",
       "FJ1290",
@@ -15006,6 +15036,36 @@
   },
   "nervous-overview": {
     "focus": [
+      "AHRA-left-anterior-nuclear-complex-of-thalamus",
+      "AHRA-left-centromedian-nucleus-of-thalamus",
+      "AHRA-left-cerebellar-deep-nuclei",
+      "AHRA-left-lateral-dorsal-nucleus-of-thalamus",
+      "AHRA-left-lateral-posterior-nucleus-of-thalamus",
+      "AHRA-left-mediodorsal-nucleus-of-thalamus",
+      "AHRA-left-parafascicular-nucleus-of-thalamus",
+      "AHRA-left-pulvinar-of-thalamus",
+      "AHRA-left-substantia-nigra",
+      "AHRA-left-subthalamic-nucleus",
+      "AHRA-left-ventral-anterior-nucleus-of-thalamus",
+      "AHRA-left-ventral-lateral-nucleus-of-thalamus",
+      "AHRA-left-ventral-posterior-lateral-nucleus-of-thalamus",
+      "AHRA-left-ventral-posterior-medial-nucleus-of-thalamus",
+      "AHRA-left-zona-incerta",
+      "AHRA-right-anterior-nuclear-complex-of-thalamus",
+      "AHRA-right-centromedian-nucleus-of-thalamus",
+      "AHRA-right-cerebellar-deep-nuclei",
+      "AHRA-right-lateral-dorsal-nucleus-of-thalamus",
+      "AHRA-right-lateral-posterior-nucleus-of-thalamus",
+      "AHRA-right-mediodorsal-nucleus-of-thalamus",
+      "AHRA-right-parafascicular-nucleus-of-thalamus",
+      "AHRA-right-pulvinar-of-thalamus",
+      "AHRA-right-substantia-nigra",
+      "AHRA-right-subthalamic-nucleus",
+      "AHRA-right-ventral-anterior-nucleus-of-thalamus",
+      "AHRA-right-ventral-lateral-nucleus-of-thalamus",
+      "AHRA-right-ventral-posterior-lateral-nucleus-of-thalamus",
+      "AHRA-right-ventral-posterior-medial-nucleus-of-thalamus",
+      "AHRA-right-zona-incerta",
       "FJ1283",
       "FJ1288",
       "FJ1290",
@@ -16406,6 +16466,127 @@
       "FJ1831"
     ]
   },
+  "nervous-thalamic-nuclei": {
+    "focus": [
+      "AHRA-left-anterior-nuclear-complex-of-thalamus",
+      "AHRA-left-centromedian-nucleus-of-thalamus",
+      "AHRA-left-lateral-dorsal-nucleus-of-thalamus",
+      "AHRA-left-lateral-posterior-nucleus-of-thalamus",
+      "AHRA-left-mediodorsal-nucleus-of-thalamus",
+      "AHRA-left-parafascicular-nucleus-of-thalamus",
+      "AHRA-left-pulvinar-of-thalamus",
+      "AHRA-left-ventral-anterior-nucleus-of-thalamus",
+      "AHRA-left-ventral-lateral-nucleus-of-thalamus",
+      "AHRA-left-ventral-posterior-lateral-nucleus-of-thalamus",
+      "AHRA-left-ventral-posterior-medial-nucleus-of-thalamus",
+      "AHRA-right-anterior-nuclear-complex-of-thalamus",
+      "AHRA-right-centromedian-nucleus-of-thalamus",
+      "AHRA-right-lateral-dorsal-nucleus-of-thalamus",
+      "AHRA-right-lateral-posterior-nucleus-of-thalamus",
+      "AHRA-right-mediodorsal-nucleus-of-thalamus",
+      "AHRA-right-parafascicular-nucleus-of-thalamus",
+      "AHRA-right-pulvinar-of-thalamus",
+      "AHRA-right-ventral-anterior-nucleus-of-thalamus",
+      "AHRA-right-ventral-lateral-nucleus-of-thalamus",
+      "AHRA-right-ventral-posterior-lateral-nucleus-of-thalamus",
+      "AHRA-right-ventral-posterior-medial-nucleus-of-thalamus"
+    ],
+    "hide": [],
+    "context": [
+      "FJ1735",
+      "FJ1736",
+      "FJ1761",
+      "FJ1762",
+      "FJ1763",
+      "FJ1766",
+      "FJ1769",
+      "FJ1770",
+      "FJ1774",
+      "FJ1775",
+      "FJ1779",
+      "FJ1782",
+      "FJ1809",
+      "FJ1810",
+      "FJ1811",
+      "FJ1813",
+      "FJ1816",
+      "FJ1816M",
+      "FJ1817",
+      "FJ1821",
+      "FJ1822",
+      "FJ1826",
+      "FJ1827",
+      "FJ1831"
+    ]
+  },
+  "nervous-subthalamic-nigral": {
+    "focus": [
+      "AHRA-left-substantia-nigra",
+      "AHRA-left-subthalamic-nucleus",
+      "AHRA-left-zona-incerta",
+      "AHRA-right-substantia-nigra",
+      "AHRA-right-subthalamic-nucleus",
+      "AHRA-right-zona-incerta"
+    ],
+    "hide": [],
+    "context": [
+      "FJ1735",
+      "FJ1736",
+      "FJ1754",
+      "FJ1757",
+      "FJ1761",
+      "FJ1762",
+      "FJ1763",
+      "FJ1769",
+      "FJ1770",
+      "FJ1774",
+      "FJ1775",
+      "FJ1776",
+      "FJ1779",
+      "FJ1782",
+      "FJ1802",
+      "FJ1805",
+      "FJ1809",
+      "FJ1810",
+      "FJ1811",
+      "FJ1817",
+      "FJ1821",
+      "FJ1822",
+      "FJ1823",
+      "FJ1826",
+      "FJ1827",
+      "FJ1831"
+    ]
+  },
+  "nervous-cerebellar-nuclei": {
+    "focus": [
+      "AHRA-left-cerebellar-deep-nuclei",
+      "AHRA-right-cerebellar-deep-nuclei"
+    ],
+    "hide": [],
+    "context": [
+      "FJ1735",
+      "FJ1736",
+      "FJ1761",
+      "FJ1762",
+      "FJ1763",
+      "FJ1769",
+      "FJ1770",
+      "FJ1774",
+      "FJ1775",
+      "FJ1779",
+      "FJ1781",
+      "FJ1809",
+      "FJ1810",
+      "FJ1811",
+      "FJ1817",
+      "FJ1821",
+      "FJ1822",
+      "FJ1826",
+      "FJ1830",
+      "FJ1831"
+    ]
+  },
   "nervous-brainstem-cerebellum": {
     "focus": [
       "FJ1735",
@@ -17634,6 +17815,223 @@
       "FJ1830"
     ],
     "hide": []
+  },
+  "anterior-thalamic-nuclei": {
+    "focus": [
+      "AHRA-left-anterior-nuclear-complex-of-thalamus",
+      "AHRA-right-anterior-nuclear-complex-of-thalamus"
+    ],
+    "hide": [],
+    "context": [
+      "FJ1782",
+      "FJ1827"
+    ]
+  },
+  "lateral-dorsal-nucleus": {
+    "focus": [
+      "AHRA-left-lateral-dorsal-nucleus-of-thalamus",
+      "AHRA-right-lateral-dorsal-nucleus-of-thalamus"
+    ],
+    "hide": [],
+    "context": [
+      "FJ1782",
+      "FJ1827"
+    ]
+  },
+  "mediodorsal-nucleus": {
+    "focus": [
+      "AHRA-left-mediodorsal-nucleus-of-thalamus",
+      "AHRA-right-mediodorsal-nucleus-of-thalamus"
+    ],
+    "hide": [],
+    "context": [
+      "FJ1782",
+      "FJ1827"
+    ]
+  },
+  "lateral-posterior-nucleus": {
+    "focus": [
+      "AHRA-left-lateral-posterior-nucleus-of-thalamus",
+      "AHRA-right-lateral-posterior-nucleus-of-thalamus"
+    ],
+    "hide": [],
+    "context": [
+      "FJ1782",
+      "FJ1827"
+    ]
+  },
+  "pulvinar": {
+    "focus": [
+      "AHRA-left-pulvinar-of-thalamus",
+      "AHRA-right-pulvinar-of-thalamus"
+    ],
+    "hide": [],
+    "context": [
+      "FJ1782",
+      "FJ1827"
+    ]
+  },
+  "ventral-anterior-nucleus": {
+    "focus": [
+      "AHRA-left-ventral-anterior-nucleus-of-thalamus",
+      "AHRA-right-ventral-anterior-nucleus-of-thalamus"
+    ],
+    "hide": [],
+    "context": [
+      "FJ1782",
+      "FJ1827"
+    ]
+  },
+  "ventral-lateral-nucleus": {
+    "focus": [
+      "AHRA-left-ventral-lateral-nucleus-of-thalamus",
+      "AHRA-right-ventral-lateral-nucleus-of-thalamus"
+    ],
+    "hide": [],
+    "context": [
+      "FJ1782",
+      "FJ1827"
+    ]
+  },
+  "ventral-posterior-lateral-nucleus": {
+    "focus": [
+      "AHRA-left-ventral-posterior-lateral-nucleus-of-thalamus",
+      "AHRA-right-ventral-posterior-lateral-nucleus-of-thalamus"
+    ],
+    "hide": [],
+    "context": [
+      "FJ1782",
+      "FJ1827"
+    ]
+  },
+  "ventral-posterior-medial-nucleus": {
+    "focus": [
+      "AHRA-left-ventral-posterior-medial-nucleus-of-thalamus",
+      "AHRA-right-ventral-posterior-medial-nucleus-of-thalamus"
+    ],
+    "hide": [],
+    "context": [
+      "FJ1782",
+      "FJ1827"
+    ]
+  },
+  "centromedian-nucleus": {
+    "focus": [
+      "AHRA-left-centromedian-nucleus-of-thalamus",
+      "AHRA-right-centromedian-nucleus-of-thalamus"
+    ],
+    "hide": [],
+    "context": [
+      "FJ1782",
+      "FJ1827"
+    ]
+  },
+  "parafascicular-nucleus": {
+    "focus": [
+      "AHRA-left-parafascicular-nucleus-of-thalamus",
+      "AHRA-right-parafascicular-nucleus-of-thalamus"
+    ],
+    "hide": [],
+    "context": [
+      "FJ1782",
+      "FJ1827"
+    ]
+  },
+  "substantia-nigra": {
+    "focus": [
+      "AHRA-left-substantia-nigra",
+      "AHRA-right-substantia-nigra"
+    ],
+    "hide": [],
+    "context": [
+      "FJ1735",
+      "FJ1736",
+      "FJ1761",
+      "FJ1762",
+      "FJ1763",
+      "FJ1769",
+      "FJ1770",
+      "FJ1774",
+      "FJ1775",
+      "FJ1779",
+      "FJ1809",
+      "FJ1810",
+      "FJ1811",
+      "FJ1817",
+      "FJ1821",
+      "FJ1822",
+      "FJ1826",
+      "FJ1831"
+    ]
+  },
+  "subthalamic-nucleus": {
+    "focus": [
+      "AHRA-left-subthalamic-nucleus",
+      "AHRA-right-subthalamic-nucleus"
+    ],
+    "hide": [],
+    "context": [
+      "FJ1735",
+      "FJ1736",
+      "FJ1761",
+      "FJ1762",
+      "FJ1763",
+      "FJ1769",
+      "FJ1770",
+      "FJ1774",
+      "FJ1775",
+      "FJ1779",
+      "FJ1782",
+      "FJ1809",
+      "FJ1810",
+      "FJ1811",
+      "FJ1817",
+      "FJ1821",
+      "FJ1822",
+      "FJ1826",
+      "FJ1827",
+      "FJ1831"
+    ]
+  },
+  "zona-incerta": {
+    "focus": [
+      "AHRA-left-zona-incerta",
+      "AHRA-right-zona-incerta"
+    ],
+    "hide": [],
+    "context": [
+      "FJ1735",
+      "FJ1736",
+      "FJ1761",
+      "FJ1762",
+      "FJ1763",
+      "FJ1769",
+      "FJ1770",
+      "FJ1774",
+      "FJ1775",
+      "FJ1779",
+      "FJ1782",
+      "FJ1809",
+      "FJ1810",
+      "FJ1811",
+      "FJ1817",
+      "FJ1821",
+      "FJ1822",
+      "FJ1826",
+      "FJ1827",
+      "FJ1831"
+    ]
+  },
+  "cerebellar-deep-nuclei": {
+    "focus": [
+      "AHRA-left-cerebellar-deep-nuclei",
+      "AHRA-right-cerebellar-deep-nuclei"
+    ],
+    "hide": [],
+    "context": [
+      "FJ1781",
+      "FJ1830"
+    ]
   },
   "cranial-nerve-nuclei": {
     "focus": [

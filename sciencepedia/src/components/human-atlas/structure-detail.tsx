@@ -41,6 +41,7 @@ import { PANEL } from "@/components/human-atlas/panel";
 const MODEL_SOURCE_URL = ATLAS_PROVENANCE.model.sourceUrl;
 const LYMPH_SOURCE_URL = ATLAS_PROVENANCE.lymphatic.sourceUrl;
 const ZA_SOURCE_URL = ATLAS_PROVENANCE.zAnatomy.sourceUrl;
+const ALLEN_SOURCE_URL = ATLAS_PROVENANCE.allenHra.sourceUrl;
 
 /**
  * Bảng chi tiết của cấu trúc đang chọn.
@@ -83,6 +84,7 @@ export function StructureDetail({
   const spineArticles = articles.flatMap((a) => (a.spine ? [{ ...a, spine: a.spine }] : []));
   const fromUmcg = parts.some((p) => SUPPLEMENT_SOURCE[p.id] === "umcg-lymphatic");
   const fromZa = parts.some((p) => SUPPLEMENT_SOURCE[p.id] === "z-anatomy");
+  const fromAllen = parts.some((p) => SUPPLEMENT_SOURCE[p.id] === "allen-hra");
   const fromBp3d = parts.length === 0 || parts.some((p) => !SUPPLEMENT_SOURCE[p.id]);
   const title = useRef<HTMLHeadingElement>(null);
   const titleId = useId();
@@ -414,6 +416,7 @@ export function StructureDetail({
               BodyParts3D (giấy phép khác, phải ghi công UMCG). */}
           {(fromUmcg ? [[LYMPH_SOURCE_URL, t("detail.modelSourceLymph")]] : [])
             .concat(fromZa ? [[ZA_SOURCE_URL, t("detail.modelSourceZa")]] : [])
+            .concat(fromAllen ? [[ALLEN_SOURCE_URL, t("detail.modelSourceAllen")]] : [])
             .concat(
             fromBp3d ? [[MODEL_SOURCE_URL, t("detail.modelSource")]] : [],
           ).map(([href, label]) => (

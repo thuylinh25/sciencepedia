@@ -695,6 +695,22 @@ gốc CÙNG loại (dây thần kinh so dây thần kinh, không so thân não �
 Hạch không tên của UMCG bị bỏ khi có hạch Z-Anatomy; mạch bạch huyết UMCG giữ. Khái niệm mang mã
 `ZA-…` (không phải FMA) → bảng chi tiết ẩn link FMA.
 
+**Allen Human Reference Atlas – 3D 2020 (nhập 2026-10-19, CC BY 4.0, khối RIÊNG vì giấy phép riêng).**
+Nhân sâu BodyParts3D không có: 11 nhân đồi thị, chất đen, nhân dưới đồi thị, vùng bất định, nhân sâu tiểu
+não. Quy trình: `scripts/import-allen-hra.ts --export-bp3d` (lưới mốc) → `scripts/allen-hra.py` (thể tích →
+lưới, fit, kiểm) → `import-allen-hra.ts --write --upload`. Khái niệm mã `AHRA-…`, đặt tên như Z-Anatomy.
+Đây là căn **giữa hai hệ khác nhau** (não mẫu trung bình MNI ↔ một người), không phải "chuẩn hoá" nên
+không thuộc quy tắc "một phép biến đổi mỗi nguồn chỉ thêm sai": không căn thì không dùng được. Ba điều đã
+đo, đừng làm lại theo cách khác: (1) Allen CHỈ vẽ bán cầu trái — mẫu ICBM 2009b đối xứng nên lật gương
+là hợp lệ; không lật thì affine dẹt trục x (hệ số 0,37). (2) Affine toàn não từ tâm bề mặt các cặp cấu trúc
+(nhân sâu + hồi + cầu não + tiểu não, sai số mốc giữ ngoài ~5,8 mm) KHÔNG đủ cho nhân nhỏ: 37% đỉnh nhân
+đồi thị lòi ra ngoài đồi thị → thêm ICP đồng dạng theo vùng chứa (đồi thị+thể gối / trung não / tiểu não)
+đưa xuống ~1%, lòi tối đa 2,3 mm. Script thoát lỗi khi ma trận có dấu lật gương, tỉ lệ ngoài 0,75–1,15 hoặc
+lệch trục > 25° (lệch ~18° là tư thế đầu MNI theo AC–PC). (3) Không xuất nhân đường giữa (nằm ở khe giữa
+hai đồi thị, lọt vào não thất ba) và hành khứu (vùng ngoại suy, lệch 8,5 mm so với nét khứu giác Z-Anatomy).
+Nhân đồi thị nằm TRONG mảnh đồi thị đục → chỉ hiện ở góc nhìn riêng với đồi thị mờ; mỗi nhóm nhân một màu.
+Ma trận + mốc + số đo: `data/anatomy/registration-allen-hra.json` — CIT168/Neudorfer (cùng MNI) dùng lại.
+
 **Da chia nhỏ.** `scripts/smooth-skin.py` (Catmull-Clark một bậc, 44.744 → 268.464 tam giác) +
 `scripts/import-smooth-skin.ts`. Mảnh mang cùng mã FJ2810: `withSupplements()` thấy trùng mã thì THAY
 mảnh gốc. Da dùng MeshPhysicalMaterial có sheen (lớp ánh mềm ở mép) — không có ảnh bề mặt da hợp

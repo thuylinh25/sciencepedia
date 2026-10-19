@@ -94,9 +94,6 @@ N("cerebellar-peduncles", "cerebellum", "B", "structure", "Cuống tiểu não",
   focus: ["Superior cerebellar peduncle"], note: "ZA chỉ có cuống trên; cuống giữa/dưới chưa có — partial.",
   obj: ["Nhận ra cuống tiểu não là đường nối tiểu não với thân não"],
 });
-N("cerebellar-nuclei", "cerebellum", "B", "structure", "Nhân tiểu não (nhân răng…)", "Cerebellar nuclei (dentate…)", {
-  status: "missing", obj: ["Xác định nhân răng sâu trong bán cầu tiểu não"],
-});
 N("brainstem", "nervous-brain", "B", "group", "Thân não", "Brainstem", {
   status: "live", existing: "brainstem", dir: "side", zoom: "organ", mode: "layered", context: ["DIENCEPHALON", "CEREBELLUM", "SPINAL_CORD"],
   obj: ["Kể ba phần thân não từ trên xuống: trung não, cầu não, hành não", "Nhận ra thân não là nơi xuất phát của phần lớn dây sọ"],
@@ -314,10 +311,6 @@ N("thalamus", "diencephalon", "E", "structure", "Đồi thị", "Thalamus", {
   status: "buildable", dir: "three-quarter", zoom: "structure", mode: "layered", context: ["THIRD_VENTRICLE", "INTERNAL_CAPSULE"], focus: ["Thalamus"],
   note: "Đang gộp trong `diencephalon`. Tách → `diencephalon` thành group.",
   obj: ["Định vị đồi thị hai bên não thất ba", "Hiểu đồi thị là trạm chuyển tiếp lên vỏ não"],
-});
-N("thalamic-nuclei", "thalamus", "E", "region", "Các nhân đồi thị", "Thalamic nuclei", {
-  status: "missing", obj: ["Phân biệt nhóm nhân trước, trong, ngoài của đồi thị"],
-  note: "Không nguồn đã vet có nhân đồi thị. Ứng viên tương lai: atlas não mã nguồn mở (cần kiểm giấy phép trước).",
 });
 N("geniculate-bodies", "diencephalon", "E", "structure", "Thể gối ngoài và thể gối trong", "Lateral and medial geniculate bodies", {
   status: "buildable", dir: [-0.5, -0.3, -0.8], zoom: "detail", mode: "layered", context: ["THALAMUS ghost", "OPTIC tract"], focus: ["Lateral geniculate body", "Medial geniculate body"],
@@ -609,6 +602,42 @@ for (const [id, parent, vi, en, dir] of [
 N("septum-telencephalon", "hippocampus-amygdala", "D", "structure", "Vách trong suốt và vùng vách", "Septum pellucidum and septal area", {
   dir: "side", zoom: "detail", mode: "layered", obj: ["Định vị vách trong suốt giữa hai não thất bên"],
 });
+
+// ================================================================ 2026-10-19: mặt dưới não + nhân sâu Allen (CC BY 4.0)
+N("nervous-base-of-brain", "nervous-brain", "B", "group", "Mặt dưới não", "Base of the brain", {
+  dir: "inferior", zoom: "organ", mode: "layered", context: ["vòng động mạch não", "tuyến yên"],
+  obj: ["Nhận ra các cấu trúc ở mặt dưới não: giao thoa thị giác, thể vú, cuống đại não, cầu não", "Xác định nơi dây sọ I–VI rời não"],
+});
+const allenNote = "Allen Human Reference Atlas 3D 2020 (CC BY 4.0): bán cầu trái + lật gương; affine theo mốc + ICP từng vùng (data/anatomy/registration-allen-hra.json).";
+N("nervous-thalamic-nuclei", "thalamus", "E", "group", "Các nhân đồi thị", "Thalamic nuclei", {
+  partial: true, dir: "three-quarter", zoom: "structure", mode: "layered", context: ["đồi thị mờ"], note: allenNote + " Thiếu nhân đường giữa, reuniens, lưới, phần lớn nhân trong mảnh tuỷ.",
+  obj: ["Phân biệt các nhóm nhân đồi thị: trước, giữa, tầng lưng bên, tầng bụng, gối sau", "Liên hệ nhân bụng sau với cảm giác thân thể, thể gối với thị/thính giác"],
+});
+for (const [id, vi, en] of [
+  ["anterior-thalamic-nuclei", "Phức hợp nhân trước đồi thị", "Anterior nuclear complex of thalamus"],
+  ["lateral-dorsal-nucleus", "Nhân lưng bên đồi thị", "Lateral dorsal nucleus of thalamus"],
+  ["mediodorsal-nucleus", "Nhân lưng giữa đồi thị", "Mediodorsal nucleus of thalamus"],
+  ["lateral-posterior-nucleus", "Nhân sau bên đồi thị", "Lateral posterior nucleus of thalamus"],
+  ["pulvinar", "Gối sau đồi thị (pulvinar)", "Pulvinar of thalamus"],
+  ["ventral-anterior-nucleus", "Nhân bụng trước đồi thị", "Ventral anterior nucleus of thalamus"],
+  ["ventral-lateral-nucleus", "Nhân bụng bên đồi thị", "Ventral lateral nucleus of thalamus"],
+  ["ventral-posterior-lateral-nucleus", "Nhân bụng sau bên đồi thị", "Ventral posterior lateral nucleus of thalamus"],
+  ["ventral-posterior-medial-nucleus", "Nhân bụng sau giữa đồi thị", "Ventral posterior medial nucleus of thalamus"],
+  ["centromedian-nucleus", "Nhân trung tâm giữa đồi thị", "Centromedian nucleus of thalamus"],
+  ["parafascicular-nucleus", "Nhân cạnh bó đồi thị", "Parafascicular nucleus of thalamus"],
+]) N(id, "nervous-thalamic-nuclei", "E", "structure", vi, en, { dir: "three-quarter", zoom: "detail", mode: "layered", obj: [`Định vị ${vi.toLowerCase()} trong đồi thị`] });
+N("nervous-subthalamic-nigral", "brainstem", "B", "group", "Chất đen, nhân dưới đồi thị và vùng bất định", "Substantia nigra, subthalamic nucleus and zona incerta", {
+  partial: true, dir: "front", zoom: "structure", mode: "layered", note: allenNote,
+  obj: ["Định vị chất đen trong trung não và nhân dưới đồi thị ngay trên nó", "Liên hệ các nhân này với vòng hạch nền"],
+});
+N("substantia-nigra", "nervous-subthalamic-nigral", "B", "structure", "Chất đen", "Substantia nigra", { dir: "front", zoom: "detail", mode: "layered", obj: ["Định vị chất đen giữa cuống đại não và chỏm trung não"] });
+N("subthalamic-nucleus", "nervous-subthalamic-nigral", "B", "structure", "Nhân dưới đồi thị", "Subthalamic nucleus", { dir: "front", zoom: "detail", mode: "layered", obj: ["Định vị nhân dưới đồi thị dưới đồi thị, trên chất đen"] });
+N("zona-incerta", "nervous-subthalamic-nigral", "B", "structure", "Vùng bất định", "Zona incerta", { dir: "front", zoom: "detail", mode: "layered", obj: ["Định vị vùng bất định giữa đồi thị và nhân dưới đồi thị"] });
+N("nervous-cerebellar-nuclei", "cerebellum", "B", "group", "Các nhân sâu tiểu não", "Deep cerebellar nuclei", {
+  partial: true, dir: "back", zoom: "structure", mode: "layered", note: allenNote + " Bốn nhân vẽ gộp một khối.",
+  obj: ["Định vị nhóm nhân sâu trong chất trắng tiểu não"],
+});
+N("cerebellar-deep-nuclei", "nervous-cerebellar-nuclei", "B", "structure", "Các nhân sâu tiểu não", "Deep cerebellar nuclei", { dir: "back", zoom: "detail", mode: "layered", obj: ["Nhận ra nhân răng là nhân lớn nhất trong nhóm"] });
 
 // ================================================================ góc nhìn main còn thiếu (giữ deep link)
 N("cerebral-cortex", "nervous-cerebrum", "C", "group", "Các hồi và thuỳ đại não", "Cerebral gyri and lobes", {
