@@ -278,7 +278,13 @@
       "FJ3392",
       "FJ3393",
       "FJ3394",
-      "FJ3395"
+      "FJ3395",
+      "ZA-left-incus",
+      "ZA-left-malleus",
+      "ZA-left-stapes",
+      "ZA-right-incus",
+      "ZA-right-malleus",
+      "ZA-right-stapes"
     ],
     "hide": []
   },
@@ -1395,9 +1401,13 @@
       "ZA-central-canal",
       "ZA-cochlear-nerve",
       "ZA-common-plantar-digital-branches-of-medial-plantar-nerve",
+      "ZA-falx-cerebri",
+      "ZA-left-abducens-nerve-vi",
       "ZA-left-accessory-nerve-xi",
+      "ZA-left-accessory-nucleus-of-oculomotor-nerve",
       "ZA-left-anterior-branch-of-medial-antebrachial-cutaneous-nerve",
       "ZA-left-anterior-branch-of-obturator-nerve",
+      "ZA-left-anterior-cochlear-nucleus",
       "ZA-left-anterior-cutaneous-branches-of-femoral-nerve",
       "ZA-left-anterior-division-of-inferior-trunk-of-brachial-plexus",
       "ZA-left-anterior-division-of-mandibular-nerve",
@@ -1428,6 +1438,7 @@
       "ZA-left-facial-nerve-vii",
       "ZA-left-femoral-branch-of-genitofemoral-nerve",
       "ZA-left-femoral-nerve",
+      "ZA-left-ganglia-of-sympathetic-trunk",
       "ZA-left-genital-branch-of-genitofemoral-nerve",
       "ZA-left-genitofemoral-nerve",
       "ZA-left-glossopharyngeal-nerve-ix",
@@ -1436,6 +1447,7 @@
       "ZA-left-iliohypogastric-nerve",
       "ZA-left-inferior-alveolar-nerve",
       "ZA-left-inferior-lateral-brachial-cutaneous-nerve",
+      "ZA-left-inferior-salivatory-nucleus",
       "ZA-left-inferior-subscapular-nerve",
       "ZA-left-inferior-trunk-of-brachial-plexus",
       "ZA-left-infrapatellar-branch-of-saphenous-nerve",
@@ -1459,6 +1471,8 @@
       "ZA-left-meningeal-branch-of-maxillary-nerve",
       "ZA-left-mental-nerve",
       "ZA-left-middle-trunk-of-brachial-plexus",
+      "ZA-left-motor-nucleus-of-facial-nerve",
+      "ZA-left-motor-root-of-trigeminal-nerve",
       "ZA-left-muscular-branches-of-axillary-nerve",
       "ZA-left-muscular-branches-of-deep-fibular-nerve",
       "ZA-left-muscular-branches-of-median-nerve",
@@ -1468,12 +1482,21 @@
       "ZA-left-nerve-to-mylohyoid-muscle",
       "ZA-left-nerve-to-piriformis-muscle",
       "ZA-left-nerve-to-quadratus-femoris-muscle",
+      "ZA-left-nucleus-ambiguus",
+      "ZA-left-nucleus-of-abducens-nerve",
+      "ZA-left-nucleus-of-accessory-nerve",
+      "ZA-left-nucleus-of-hypoglossal-nerve",
+      "ZA-left-nucleus-of-oculomotor-nerve",
+      "ZA-left-nucleus-of-solitary-tract",
+      "ZA-left-nucleus-of-trochlear-nerve",
       "ZA-left-obturator-nerve",
+      "ZA-left-olfactory-nerve-i",
       "ZA-left-palmar-branch-of-median-nerve",
       "ZA-left-palmar-branch-of-ulnar-nerve",
       "ZA-left-posterior-antebrachial-cutaneous-nerve",
       "ZA-left-posterior-branch-of-medial-antebrachial-cutaneous-nerve",
       "ZA-left-posterior-branch-of-obturator-nerve",
+      "ZA-left-posterior-cochlear-nucleus",
       "ZA-left-posterior-cord-of-brachial-plexus",
       "ZA-left-posterior-division-of-inferior-trunk-of-brachial-plexus",
       "ZA-left-posterior-division-of-mandibular-nerve",
@@ -1481,6 +1504,7 @@
       "ZA-left-posterior-division-of-superior-trunk-of-brachial-plexus",
       "ZA-left-posterior-femoral-cutaneous-nerve",
       "ZA-left-posterior-interosseous-nerve-of-forearm",
+      "ZA-left-posterior-nucleus-of-vagus-nerve",
       "ZA-left-posterior-root-of-posterior-femoral-cutaneous-nerve",
       "ZA-left-posterior-root-of-spinal-nerve",
       "ZA-left-proper-palmar-digital-branches-of-median-nerve",
@@ -1489,9 +1513,11 @@
       "ZA-left-proper-plantar-digital-branches-of-medial-plantar-nerve",
       "ZA-left-pudendal-nerve",
       "ZA-left-radial-nerve",
+      "ZA-left-red-nucleus",
       "ZA-left-roots-of-brachial-plexus",
       "ZA-left-saphenous-nerve",
       "ZA-left-sciatic-nerve",
+      "ZA-left-sensory-root-of-trigeminal-nerve",
       "ZA-left-spinal-ganglion",
       "ZA-left-subclavian-nerve",
       "ZA-left-superficial-branch-of-radial-nerve",
@@ -1499,6 +1525,7 @@
       "ZA-left-superficial-fibular-nerve",
       "ZA-left-superior-gluteal-nerve",
       "ZA-left-superior-lateral-brachial-cutaneous-nerve",
+      "ZA-left-superior-salivatory-nucleus",
       "ZA-left-superior-subscapular-nerve",
       "ZA-left-superior-trunk-of-brachial-plexus",
       "ZA-left-suprascapular-nerve",
@@ -1508,14 +1535,19 @@
       "ZA-left-sympathetic-trunk",
       "ZA-left-thoracodorsal-nerve",
       "ZA-left-tibial-nerve",
+      "ZA-left-trigeminal-nerve-v",
       "ZA-left-ulnar-nerve",
       "ZA-left-vagus-nerve-x",
       "ZA-left-vestibular-nerve",
+      "ZA-left-vestibular-nuclei",
       "ZA-left-vestibulocochlear-nerve-viii",
       "ZA-posterior-horn-of-spinal-cord",
+      "ZA-right-abducens-nerve-vi",
       "ZA-right-accessory-nerve-xi",
+      "ZA-right-accessory-nucleus-of-oculomotor-nerve",
       "ZA-right-anterior-branch-of-medial-antebrachial-cutaneous-nerve",
       "ZA-right-anterior-branch-of-obturator-nerve",
+      "ZA-right-anterior-cochlear-nucleus",
       "ZA-right-anterior-cutaneous-branches-of-femoral-nerve",
       "ZA-right-anterior-division-of-inferior-trunk-of-brachial-plexus",
       "ZA-right-anterior-division-of-mandibular-nerve",
@@ -1544,6 +1576,7 @@
       "ZA-right-facial-nerve-vii",
       "ZA-right-femoral-branch-of-genitofemoral-nerve",
       "ZA-right-femoral-nerve",
+      "ZA-right-ganglia-of-sympathetic-trunk",
       "ZA-right-genital-branch-of-genitofemoral-nerve",
       "ZA-right-genitofemoral-nerve",
       "ZA-right-glossopharyngeal-nerve-ix",
@@ -1552,6 +1585,7 @@
       "ZA-right-iliohypogastric-nerve",
       "ZA-right-inferior-alveolar-nerve",
       "ZA-right-inferior-lateral-brachial-cutaneous-nerve",
+      "ZA-right-inferior-salivatory-nucleus",
       "ZA-right-inferior-subscapular-nerve",
       "ZA-right-inferior-trunk-of-brachial-plexus",
       "ZA-right-infrapatellar-branch-of-saphenous-nerve",
@@ -1575,6 +1609,8 @@
       "ZA-right-meningeal-branch-of-maxillary-nerve",
       "ZA-right-mental-nerve",
       "ZA-right-middle-trunk-of-brachial-plexus",
+      "ZA-right-motor-nucleus-of-facial-nerve",
+      "ZA-right-motor-root-of-trigeminal-nerve",
       "ZA-right-muscular-branches-of-axillary-nerve",
       "ZA-right-muscular-branches-of-deep-fibular-nerve",
       "ZA-right-muscular-branches-of-median-nerve",
@@ -1584,12 +1620,21 @@
       "ZA-right-nerve-to-mylohyoid-muscle",
       "ZA-right-nerve-to-piriformis-muscle",
       "ZA-right-nerve-to-quadratus-femoris-muscle",
+      "ZA-right-nucleus-ambiguus",
+      "ZA-right-nucleus-of-abducens-nerve",
+      "ZA-right-nucleus-of-accessory-nerve",
+      "ZA-right-nucleus-of-hypoglossal-nerve",
+      "ZA-right-nucleus-of-oculomotor-nerve",
+      "ZA-right-nucleus-of-solitary-tract",
+      "ZA-right-nucleus-of-trochlear-nerve",
       "ZA-right-obturator-nerve",
+      "ZA-right-olfactory-nerve-i",
       "ZA-right-palmar-branch-of-median-nerve",
       "ZA-right-palmar-branch-of-ulnar-nerve",
       "ZA-right-posterior-antebrachial-cutaneous-nerve",
       "ZA-right-posterior-branch-of-medial-antebrachial-cutaneous-nerve",
       "ZA-right-posterior-branch-of-obturator-nerve",
+      "ZA-right-posterior-cochlear-nucleus",
       "ZA-right-posterior-cord-of-brachial-plexus",
       "ZA-right-posterior-division-of-inferior-trunk-of-brachial-plexus",
       "ZA-right-posterior-division-of-mandibular-nerve",
@@ -1597,6 +1642,7 @@
       "ZA-right-posterior-division-of-superior-trunk-of-brachial-plexus",
       "ZA-right-posterior-femoral-cutaneous-nerve",
       "ZA-right-posterior-interosseous-nerve-of-forearm",
+      "ZA-right-posterior-nucleus-of-vagus-nerve",
       "ZA-right-posterior-root-of-posterior-femoral-cutaneous-nerve",
       "ZA-right-posterior-root-of-spinal-nerve",
       "ZA-right-proper-palmar-digital-branches-of-median-nerve",
@@ -1605,9 +1651,11 @@
       "ZA-right-proper-plantar-digital-branches-of-medial-plantar-nerve",
       "ZA-right-pudendal-nerve",
       "ZA-right-radial-nerve",
+      "ZA-right-red-nucleus",
       "ZA-right-roots-of-brachial-plexus",
       "ZA-right-saphenous-nerve",
       "ZA-right-sciatic-nerve",
+      "ZA-right-sensory-root-of-trigeminal-nerve",
       "ZA-right-spinal-ganglion",
       "ZA-right-subclavian-nerve",
       "ZA-right-superficial-branch-of-radial-nerve",
@@ -1615,6 +1663,7 @@
       "ZA-right-superficial-fibular-nerve",
       "ZA-right-superior-gluteal-nerve",
       "ZA-right-superior-lateral-brachial-cutaneous-nerve",
+      "ZA-right-superior-salivatory-nucleus",
       "ZA-right-superior-subscapular-nerve",
       "ZA-right-superior-trunk-of-brachial-plexus",
       "ZA-right-suprascapular-nerve",
@@ -1624,9 +1673,11 @@
       "ZA-right-sympathetic-trunk",
       "ZA-right-thoracodorsal-nerve",
       "ZA-right-tibial-nerve",
+      "ZA-right-trigeminal-nerve-v",
       "ZA-right-ulnar-nerve",
       "ZA-right-vagus-nerve-x",
       "ZA-right-vestibular-nerve",
+      "ZA-right-vestibular-nuclei",
       "ZA-right-vestibulocochlear-nerve-viii",
       "ZA-spinal-dura",
       "ZA-white-matter-of-spinal-cord"
@@ -9796,7 +9847,13 @@
       "FJ3392",
       "FJ3393",
       "FJ3394",
-      "FJ3395"
+      "FJ3395",
+      "ZA-left-incus",
+      "ZA-left-malleus",
+      "ZA-left-stapes",
+      "ZA-right-incus",
+      "ZA-right-malleus",
+      "ZA-right-stapes"
     ]
   },
   "cardiac-location": {
@@ -13417,7 +13474,21 @@
       "FJ1375",
       "FJ1379",
       "FJ1382",
-      "FJ2811"
+      "FJ2811",
+      "ZA-left-auditory-tube",
+      "ZA-left-cochlea",
+      "ZA-left-incus",
+      "ZA-left-malleus",
+      "ZA-left-stapes",
+      "ZA-left-tympanic-membrane",
+      "ZA-left-vestibule",
+      "ZA-right-auditory-tube",
+      "ZA-right-cochlea",
+      "ZA-right-incus",
+      "ZA-right-malleus",
+      "ZA-right-stapes",
+      "ZA-right-tympanic-membrane",
+      "ZA-right-vestibule"
     ],
     "hide": []
   },
@@ -13537,9 +13608,53 @@
   },
   "sensory-ear": {
     "focus": [
-      "FJ2811"
+      "FJ2811",
+      "ZA-left-auditory-tube",
+      "ZA-left-cochlea",
+      "ZA-left-incus",
+      "ZA-left-malleus",
+      "ZA-left-stapes",
+      "ZA-left-tympanic-membrane",
+      "ZA-left-vestibule",
+      "ZA-right-auditory-tube",
+      "ZA-right-cochlea",
+      "ZA-right-incus",
+      "ZA-right-malleus",
+      "ZA-right-stapes",
+      "ZA-right-tympanic-membrane",
+      "ZA-right-vestibule"
     ],
     "hide": []
+  },
+  "sensory-middle-ear": {
+    "focus": [
+      "ZA-right-auditory-tube",
+      "ZA-right-incus",
+      "ZA-right-malleus",
+      "ZA-right-stapes",
+      "ZA-right-tympanic-membrane"
+    ],
+    "hide": [],
+    "context": [
+      "FJ3386",
+      "ZA-right-cochlea",
+      "ZA-right-vestibule"
+    ]
+  },
+  "sensory-inner-ear": {
+    "focus": [
+      "ZA-right-cochlea",
+      "ZA-right-vestibule"
+    ],
+    "hide": [],
+    "context": [
+      "FJ3386",
+      "ZA-right-incus",
+      "ZA-right-malleus",
+      "ZA-right-stapes",
+      "ZA-right-vestibular-nerve",
+      "ZA-right-vestibulocochlear-nerve-viii"
+    ]
   },
   "right-eyeball": {
     "focus": [
@@ -13937,6 +14052,108 @@
       "FJ2811"
     ],
     "hide": []
+  },
+  "middle-ear": {
+    "focus": [
+      "ZA-left-auditory-tube",
+      "ZA-left-incus",
+      "ZA-left-malleus",
+      "ZA-left-stapes",
+      "ZA-left-tympanic-membrane",
+      "ZA-right-auditory-tube",
+      "ZA-right-incus",
+      "ZA-right-malleus",
+      "ZA-right-stapes",
+      "ZA-right-tympanic-membrane"
+    ],
+    "hide": []
+  },
+  "inner-ear": {
+    "focus": [
+      "ZA-left-cochlea",
+      "ZA-left-vestibule",
+      "ZA-right-cochlea",
+      "ZA-right-vestibule"
+    ],
+    "hide": []
+  },
+  "tympanic-membrane": {
+    "focus": [
+      "ZA-right-tympanic-membrane"
+    ],
+    "hide": [],
+    "context": [
+      "ZA-right-malleus"
+    ]
+  },
+  "auditory-ossicles": {
+    "focus": [
+      "ZA-right-incus",
+      "ZA-right-malleus",
+      "ZA-right-stapes"
+    ],
+    "hide": [],
+    "context": [
+      "ZA-right-tympanic-membrane"
+    ]
+  },
+  "malleus": {
+    "focus": [
+      "ZA-right-malleus"
+    ],
+    "hide": [],
+    "context": [
+      "ZA-right-incus",
+      "ZA-right-tympanic-membrane"
+    ]
+  },
+  "incus": {
+    "focus": [
+      "ZA-right-incus"
+    ],
+    "hide": [],
+    "context": [
+      "ZA-right-malleus",
+      "ZA-right-stapes"
+    ]
+  },
+  "stapes": {
+    "focus": [
+      "ZA-right-stapes"
+    ],
+    "hide": [],
+    "context": [
+      "ZA-right-incus",
+      "ZA-right-vestibule"
+    ]
+  },
+  "auditory-tube": {
+    "focus": [
+      "ZA-right-auditory-tube"
+    ],
+    "hide": []
+  },
+  "cochlea": {
+    "focus": [
+      "ZA-right-cochlea"
+    ],
+    "hide": [],
+    "context": [
+      "ZA-right-vestibular-nerve",
+      "ZA-right-vestibule",
+      "ZA-right-vestibulocochlear-nerve-viii"
+    ]
+  },
+  "vestibule-semicircular-canals": {
+    "focus": [
+      "ZA-right-vestibule"
+    ],
+    "hide": [],
+    "context": [
+      "ZA-right-cochlea",
+      "ZA-right-vestibular-nerve",
+      "ZA-right-vestibulocochlear-nerve-viii"
+    ]
   },
   "lymphatic-overview": {
     "focus": [
@@ -14940,9 +15157,13 @@
       "ZA-central-canal",
       "ZA-cochlear-nerve",
       "ZA-common-plantar-digital-branches-of-medial-plantar-nerve",
+      "ZA-falx-cerebri",
+      "ZA-left-abducens-nerve-vi",
       "ZA-left-accessory-nerve-xi",
+      "ZA-left-accessory-nucleus-of-oculomotor-nerve",
       "ZA-left-anterior-branch-of-medial-antebrachial-cutaneous-nerve",
       "ZA-left-anterior-branch-of-obturator-nerve",
+      "ZA-left-anterior-cochlear-nucleus",
       "ZA-left-anterior-cutaneous-branches-of-femoral-nerve",
       "ZA-left-anterior-division-of-inferior-trunk-of-brachial-plexus",
       "ZA-left-anterior-division-of-mandibular-nerve",
@@ -14973,6 +15194,7 @@
       "ZA-left-facial-nerve-vii",
       "ZA-left-femoral-branch-of-genitofemoral-nerve",
       "ZA-left-femoral-nerve",
+      "ZA-left-ganglia-of-sympathetic-trunk",
       "ZA-left-genital-branch-of-genitofemoral-nerve",
       "ZA-left-genitofemoral-nerve",
       "ZA-left-glossopharyngeal-nerve-ix",
@@ -14981,6 +15203,7 @@
       "ZA-left-iliohypogastric-nerve",
       "ZA-left-inferior-alveolar-nerve",
       "ZA-left-inferior-lateral-brachial-cutaneous-nerve",
+      "ZA-left-inferior-salivatory-nucleus",
       "ZA-left-inferior-subscapular-nerve",
       "ZA-left-inferior-trunk-of-brachial-plexus",
       "ZA-left-infrapatellar-branch-of-saphenous-nerve",
@@ -15004,6 +15227,8 @@
       "ZA-left-meningeal-branch-of-maxillary-nerve",
       "ZA-left-mental-nerve",
       "ZA-left-middle-trunk-of-brachial-plexus",
+      "ZA-left-motor-nucleus-of-facial-nerve",
+      "ZA-left-motor-root-of-trigeminal-nerve",
       "ZA-left-muscular-branches-of-axillary-nerve",
       "ZA-left-muscular-branches-of-deep-fibular-nerve",
       "ZA-left-muscular-branches-of-median-nerve",
@@ -15013,12 +15238,21 @@
       "ZA-left-nerve-to-mylohyoid-muscle",
       "ZA-left-nerve-to-piriformis-muscle",
       "ZA-left-nerve-to-quadratus-femoris-muscle",
+      "ZA-left-nucleus-ambiguus",
+      "ZA-left-nucleus-of-abducens-nerve",
+      "ZA-left-nucleus-of-accessory-nerve",
+      "ZA-left-nucleus-of-hypoglossal-nerve",
+      "ZA-left-nucleus-of-oculomotor-nerve",
+      "ZA-left-nucleus-of-solitary-tract",
+      "ZA-left-nucleus-of-trochlear-nerve",
       "ZA-left-obturator-nerve",
+      "ZA-left-olfactory-nerve-i",
       "ZA-left-palmar-branch-of-median-nerve",
       "ZA-left-palmar-branch-of-ulnar-nerve",
       "ZA-left-posterior-antebrachial-cutaneous-nerve",
       "ZA-left-posterior-branch-of-medial-antebrachial-cutaneous-nerve",
       "ZA-left-posterior-branch-of-obturator-nerve",
+      "ZA-left-posterior-cochlear-nucleus",
       "ZA-left-posterior-cord-of-brachial-plexus",
       "ZA-left-posterior-division-of-inferior-trunk-of-brachial-plexus",
       "ZA-left-posterior-division-of-mandibular-nerve",
@@ -15026,6 +15260,7 @@
       "ZA-left-posterior-division-of-superior-trunk-of-brachial-plexus",
       "ZA-left-posterior-femoral-cutaneous-nerve",
       "ZA-left-posterior-interosseous-nerve-of-forearm",
+      "ZA-left-posterior-nucleus-of-vagus-nerve",
       "ZA-left-posterior-root-of-posterior-femoral-cutaneous-nerve",
       "ZA-left-posterior-root-of-spinal-nerve",
       "ZA-left-proper-palmar-digital-branches-of-median-nerve",
@@ -15034,9 +15269,11 @@
       "ZA-left-proper-plantar-digital-branches-of-medial-plantar-nerve",
       "ZA-left-pudendal-nerve",
       "ZA-left-radial-nerve",
+      "ZA-left-red-nucleus",
       "ZA-left-roots-of-brachial-plexus",
       "ZA-left-saphenous-nerve",
       "ZA-left-sciatic-nerve",
+      "ZA-left-sensory-root-of-trigeminal-nerve",
       "ZA-left-spinal-ganglion",
       "ZA-left-subclavian-nerve",
       "ZA-left-superficial-branch-of-radial-nerve",
@@ -15044,6 +15281,7 @@
       "ZA-left-superficial-fibular-nerve",
       "ZA-left-superior-gluteal-nerve",
       "ZA-left-superior-lateral-brachial-cutaneous-nerve",
+      "ZA-left-superior-salivatory-nucleus",
       "ZA-left-superior-subscapular-nerve",
       "ZA-left-superior-trunk-of-brachial-plexus",
       "ZA-left-suprascapular-nerve",
@@ -15053,14 +15291,19 @@
       "ZA-left-sympathetic-trunk",
       "ZA-left-thoracodorsal-nerve",
       "ZA-left-tibial-nerve",
+      "ZA-left-trigeminal-nerve-v",
       "ZA-left-ulnar-nerve",
       "ZA-left-vagus-nerve-x",
       "ZA-left-vestibular-nerve",
+      "ZA-left-vestibular-nuclei",
       "ZA-left-vestibulocochlear-nerve-viii",
       "ZA-posterior-horn-of-spinal-cord",
+      "ZA-right-abducens-nerve-vi",
       "ZA-right-accessory-nerve-xi",
+      "ZA-right-accessory-nucleus-of-oculomotor-nerve",
       "ZA-right-anterior-branch-of-medial-antebrachial-cutaneous-nerve",
       "ZA-right-anterior-branch-of-obturator-nerve",
+      "ZA-right-anterior-cochlear-nucleus",
       "ZA-right-anterior-cutaneous-branches-of-femoral-nerve",
       "ZA-right-anterior-division-of-inferior-trunk-of-brachial-plexus",
       "ZA-right-anterior-division-of-mandibular-nerve",
@@ -15089,6 +15332,7 @@
       "ZA-right-facial-nerve-vii",
       "ZA-right-femoral-branch-of-genitofemoral-nerve",
       "ZA-right-femoral-nerve",
+      "ZA-right-ganglia-of-sympathetic-trunk",
       "ZA-right-genital-branch-of-genitofemoral-nerve",
       "ZA-right-genitofemoral-nerve",
       "ZA-right-glossopharyngeal-nerve-ix",
@@ -15097,6 +15341,7 @@
       "ZA-right-iliohypogastric-nerve",
       "ZA-right-inferior-alveolar-nerve",
       "ZA-right-inferior-lateral-brachial-cutaneous-nerve",
+      "ZA-right-inferior-salivatory-nucleus",
       "ZA-right-inferior-subscapular-nerve",
       "ZA-right-inferior-trunk-of-brachial-plexus",
       "ZA-right-infrapatellar-branch-of-saphenous-nerve",
@@ -15120,6 +15365,8 @@
       "ZA-right-meningeal-branch-of-maxillary-nerve",
       "ZA-right-mental-nerve",
       "ZA-right-middle-trunk-of-brachial-plexus",
+      "ZA-right-motor-nucleus-of-facial-nerve",
+      "ZA-right-motor-root-of-trigeminal-nerve",
       "ZA-right-muscular-branches-of-axillary-nerve",
       "ZA-right-muscular-branches-of-deep-fibular-nerve",
       "ZA-right-muscular-branches-of-median-nerve",
@@ -15129,12 +15376,21 @@
       "ZA-right-nerve-to-mylohyoid-muscle",
       "ZA-right-nerve-to-piriformis-muscle",
       "ZA-right-nerve-to-quadratus-femoris-muscle",
+      "ZA-right-nucleus-ambiguus",
+      "ZA-right-nucleus-of-abducens-nerve",
+      "ZA-right-nucleus-of-accessory-nerve",
+      "ZA-right-nucleus-of-hypoglossal-nerve",
+      "ZA-right-nucleus-of-oculomotor-nerve",
+      "ZA-right-nucleus-of-solitary-tract",
+      "ZA-right-nucleus-of-trochlear-nerve",
       "ZA-right-obturator-nerve",
+      "ZA-right-olfactory-nerve-i",
       "ZA-right-palmar-branch-of-median-nerve",
       "ZA-right-palmar-branch-of-ulnar-nerve",
       "ZA-right-posterior-antebrachial-cutaneous-nerve",
       "ZA-right-posterior-branch-of-medial-antebrachial-cutaneous-nerve",
       "ZA-right-posterior-branch-of-obturator-nerve",
+      "ZA-right-posterior-cochlear-nucleus",
       "ZA-right-posterior-cord-of-brachial-plexus",
       "ZA-right-posterior-division-of-inferior-trunk-of-brachial-plexus",
       "ZA-right-posterior-division-of-mandibular-nerve",
@@ -15142,6 +15398,7 @@
       "ZA-right-posterior-division-of-superior-trunk-of-brachial-plexus",
       "ZA-right-posterior-femoral-cutaneous-nerve",
       "ZA-right-posterior-interosseous-nerve-of-forearm",
+      "ZA-right-posterior-nucleus-of-vagus-nerve",
       "ZA-right-posterior-root-of-posterior-femoral-cutaneous-nerve",
       "ZA-right-posterior-root-of-spinal-nerve",
       "ZA-right-proper-palmar-digital-branches-of-median-nerve",
@@ -15150,9 +15407,11 @@
       "ZA-right-proper-plantar-digital-branches-of-medial-plantar-nerve",
       "ZA-right-pudendal-nerve",
       "ZA-right-radial-nerve",
+      "ZA-right-red-nucleus",
       "ZA-right-roots-of-brachial-plexus",
       "ZA-right-saphenous-nerve",
       "ZA-right-sciatic-nerve",
+      "ZA-right-sensory-root-of-trigeminal-nerve",
       "ZA-right-spinal-ganglion",
       "ZA-right-subclavian-nerve",
       "ZA-right-superficial-branch-of-radial-nerve",
@@ -15160,6 +15419,7 @@
       "ZA-right-superficial-fibular-nerve",
       "ZA-right-superior-gluteal-nerve",
       "ZA-right-superior-lateral-brachial-cutaneous-nerve",
+      "ZA-right-superior-salivatory-nucleus",
       "ZA-right-superior-subscapular-nerve",
       "ZA-right-superior-trunk-of-brachial-plexus",
       "ZA-right-suprascapular-nerve",
@@ -15169,9 +15429,11 @@
       "ZA-right-sympathetic-trunk",
       "ZA-right-thoracodorsal-nerve",
       "ZA-right-tibial-nerve",
+      "ZA-right-trigeminal-nerve-v",
       "ZA-right-ulnar-nerve",
       "ZA-right-vagus-nerve-x",
       "ZA-right-vestibular-nerve",
+      "ZA-right-vestibular-nuclei",
       "ZA-right-vestibulocochlear-nerve-viii",
       "ZA-spinal-dura",
       "ZA-white-matter-of-spinal-cord"
@@ -15283,7 +15545,39 @@
       "FJ1839",
       "FJ1840",
       "FJ1841",
-      "FJ1842"
+      "FJ1842",
+      "ZA-left-accessory-nucleus-of-oculomotor-nerve",
+      "ZA-left-anterior-cochlear-nucleus",
+      "ZA-left-inferior-salivatory-nucleus",
+      "ZA-left-motor-nucleus-of-facial-nerve",
+      "ZA-left-nucleus-ambiguus",
+      "ZA-left-nucleus-of-abducens-nerve",
+      "ZA-left-nucleus-of-accessory-nerve",
+      "ZA-left-nucleus-of-hypoglossal-nerve",
+      "ZA-left-nucleus-of-oculomotor-nerve",
+      "ZA-left-nucleus-of-solitary-tract",
+      "ZA-left-nucleus-of-trochlear-nerve",
+      "ZA-left-posterior-cochlear-nucleus",
+      "ZA-left-posterior-nucleus-of-vagus-nerve",
+      "ZA-left-red-nucleus",
+      "ZA-left-superior-salivatory-nucleus",
+      "ZA-left-vestibular-nuclei",
+      "ZA-right-accessory-nucleus-of-oculomotor-nerve",
+      "ZA-right-anterior-cochlear-nucleus",
+      "ZA-right-inferior-salivatory-nucleus",
+      "ZA-right-motor-nucleus-of-facial-nerve",
+      "ZA-right-nucleus-ambiguus",
+      "ZA-right-nucleus-of-abducens-nerve",
+      "ZA-right-nucleus-of-accessory-nerve",
+      "ZA-right-nucleus-of-hypoglossal-nerve",
+      "ZA-right-nucleus-of-oculomotor-nerve",
+      "ZA-right-nucleus-of-solitary-tract",
+      "ZA-right-nucleus-of-trochlear-nerve",
+      "ZA-right-posterior-cochlear-nucleus",
+      "ZA-right-posterior-nucleus-of-vagus-nerve",
+      "ZA-right-red-nucleus",
+      "ZA-right-superior-salivatory-nucleus",
+      "ZA-right-vestibular-nuclei"
     ],
     "hide": [],
     "context": [
@@ -15295,7 +15589,8 @@
       "FJ3309",
       "FJ3380",
       "FJ3386",
-      "FJ3394"
+      "FJ3394",
+      "ZA-falx-cerebri"
     ]
   },
   "nervous-brain-blood-supply": {
@@ -15557,7 +15852,39 @@
       "FJ1839",
       "FJ1840",
       "FJ1841",
-      "FJ1842"
+      "FJ1842",
+      "ZA-left-accessory-nucleus-of-oculomotor-nerve",
+      "ZA-left-anterior-cochlear-nucleus",
+      "ZA-left-inferior-salivatory-nucleus",
+      "ZA-left-motor-nucleus-of-facial-nerve",
+      "ZA-left-nucleus-ambiguus",
+      "ZA-left-nucleus-of-abducens-nerve",
+      "ZA-left-nucleus-of-accessory-nerve",
+      "ZA-left-nucleus-of-hypoglossal-nerve",
+      "ZA-left-nucleus-of-oculomotor-nerve",
+      "ZA-left-nucleus-of-solitary-tract",
+      "ZA-left-nucleus-of-trochlear-nerve",
+      "ZA-left-posterior-cochlear-nucleus",
+      "ZA-left-posterior-nucleus-of-vagus-nerve",
+      "ZA-left-red-nucleus",
+      "ZA-left-superior-salivatory-nucleus",
+      "ZA-left-vestibular-nuclei",
+      "ZA-right-accessory-nucleus-of-oculomotor-nerve",
+      "ZA-right-anterior-cochlear-nucleus",
+      "ZA-right-inferior-salivatory-nucleus",
+      "ZA-right-motor-nucleus-of-facial-nerve",
+      "ZA-right-nucleus-ambiguus",
+      "ZA-right-nucleus-of-abducens-nerve",
+      "ZA-right-nucleus-of-accessory-nerve",
+      "ZA-right-nucleus-of-hypoglossal-nerve",
+      "ZA-right-nucleus-of-oculomotor-nerve",
+      "ZA-right-nucleus-of-solitary-tract",
+      "ZA-right-nucleus-of-trochlear-nerve",
+      "ZA-right-posterior-cochlear-nucleus",
+      "ZA-right-posterior-nucleus-of-vagus-nerve",
+      "ZA-right-red-nucleus",
+      "ZA-right-superior-salivatory-nucleus",
+      "ZA-right-vestibular-nuclei"
     ]
   },
   "nervous-limbic": {
@@ -15781,7 +16108,39 @@
       "FJ1822",
       "FJ1826",
       "FJ1830",
-      "FJ1831"
+      "FJ1831",
+      "ZA-left-accessory-nucleus-of-oculomotor-nerve",
+      "ZA-left-anterior-cochlear-nucleus",
+      "ZA-left-inferior-salivatory-nucleus",
+      "ZA-left-motor-nucleus-of-facial-nerve",
+      "ZA-left-nucleus-ambiguus",
+      "ZA-left-nucleus-of-abducens-nerve",
+      "ZA-left-nucleus-of-accessory-nerve",
+      "ZA-left-nucleus-of-hypoglossal-nerve",
+      "ZA-left-nucleus-of-oculomotor-nerve",
+      "ZA-left-nucleus-of-solitary-tract",
+      "ZA-left-nucleus-of-trochlear-nerve",
+      "ZA-left-posterior-cochlear-nucleus",
+      "ZA-left-posterior-nucleus-of-vagus-nerve",
+      "ZA-left-red-nucleus",
+      "ZA-left-superior-salivatory-nucleus",
+      "ZA-left-vestibular-nuclei",
+      "ZA-right-accessory-nucleus-of-oculomotor-nerve",
+      "ZA-right-anterior-cochlear-nucleus",
+      "ZA-right-inferior-salivatory-nucleus",
+      "ZA-right-motor-nucleus-of-facial-nerve",
+      "ZA-right-nucleus-ambiguus",
+      "ZA-right-nucleus-of-abducens-nerve",
+      "ZA-right-nucleus-of-accessory-nerve",
+      "ZA-right-nucleus-of-hypoglossal-nerve",
+      "ZA-right-nucleus-of-oculomotor-nerve",
+      "ZA-right-nucleus-of-solitary-tract",
+      "ZA-right-nucleus-of-trochlear-nerve",
+      "ZA-right-posterior-cochlear-nucleus",
+      "ZA-right-posterior-nucleus-of-vagus-nerve",
+      "ZA-right-red-nucleus",
+      "ZA-right-superior-salivatory-nucleus",
+      "ZA-right-vestibular-nuclei"
     ],
     "hide": [],
     "context": [
@@ -15900,6 +16259,7 @@
       "FJ1819",
       "FJ1820",
       "ZA-cochlear-nerve",
+      "ZA-left-abducens-nerve-vi",
       "ZA-left-accessory-nerve-xi",
       "ZA-left-anterior-division-of-mandibular-nerve",
       "ZA-left-buccal-nerve",
@@ -15913,11 +16273,16 @@
       "ZA-left-maxillary-nerve",
       "ZA-left-meningeal-branch-of-maxillary-nerve",
       "ZA-left-mental-nerve",
+      "ZA-left-motor-root-of-trigeminal-nerve",
       "ZA-left-nerve-to-mylohyoid-muscle",
+      "ZA-left-olfactory-nerve-i",
       "ZA-left-posterior-division-of-mandibular-nerve",
+      "ZA-left-sensory-root-of-trigeminal-nerve",
+      "ZA-left-trigeminal-nerve-v",
       "ZA-left-vagus-nerve-x",
       "ZA-left-vestibular-nerve",
       "ZA-left-vestibulocochlear-nerve-viii",
+      "ZA-right-abducens-nerve-vi",
       "ZA-right-accessory-nerve-xi",
       "ZA-right-anterior-division-of-mandibular-nerve",
       "ZA-right-buccal-nerve",
@@ -15930,8 +16295,12 @@
       "ZA-right-maxillary-nerve",
       "ZA-right-meningeal-branch-of-maxillary-nerve",
       "ZA-right-mental-nerve",
+      "ZA-right-motor-root-of-trigeminal-nerve",
       "ZA-right-nerve-to-mylohyoid-muscle",
+      "ZA-right-olfactory-nerve-i",
       "ZA-right-posterior-division-of-mandibular-nerve",
+      "ZA-right-sensory-root-of-trigeminal-nerve",
+      "ZA-right-trigeminal-nerve-v",
       "ZA-right-vagus-nerve-x",
       "ZA-right-vestibular-nerve",
       "ZA-right-vestibulocochlear-nerve-viii"
@@ -16007,7 +16376,9 @@
       "FJ1773",
       "FJ1818",
       "FJ1819",
-      "FJ1820"
+      "FJ1820",
+      "ZA-left-abducens-nerve-vi",
+      "ZA-right-abducens-nerve-vi"
     ],
     "hide": [],
     "context": [
@@ -16460,9 +16831,11 @@
   },
   "nervous-autonomic": {
     "focus": [
+      "ZA-left-ganglia-of-sympathetic-trunk",
       "ZA-left-sympathetic-nerves",
       "ZA-left-sympathetic-trunk",
       "ZA-left-vagus-nerve-x",
+      "ZA-right-ganglia-of-sympathetic-trunk",
       "ZA-right-sympathetic-nerves",
       "ZA-right-sympathetic-trunk",
       "ZA-right-vagus-nerve-x"
@@ -16943,9 +17316,97 @@
     ],
     "hide": []
   },
+  "cranial-nerve-nuclei": {
+    "focus": [
+      "ZA-left-accessory-nucleus-of-oculomotor-nerve",
+      "ZA-left-anterior-cochlear-nucleus",
+      "ZA-left-inferior-salivatory-nucleus",
+      "ZA-left-motor-nucleus-of-facial-nerve",
+      "ZA-left-nucleus-ambiguus",
+      "ZA-left-nucleus-of-abducens-nerve",
+      "ZA-left-nucleus-of-accessory-nerve",
+      "ZA-left-nucleus-of-hypoglossal-nerve",
+      "ZA-left-nucleus-of-oculomotor-nerve",
+      "ZA-left-nucleus-of-solitary-tract",
+      "ZA-left-nucleus-of-trochlear-nerve",
+      "ZA-left-posterior-cochlear-nucleus",
+      "ZA-left-posterior-nucleus-of-vagus-nerve",
+      "ZA-left-superior-salivatory-nucleus",
+      "ZA-left-vestibular-nuclei",
+      "ZA-right-accessory-nucleus-of-oculomotor-nerve",
+      "ZA-right-anterior-cochlear-nucleus",
+      "ZA-right-inferior-salivatory-nucleus",
+      "ZA-right-motor-nucleus-of-facial-nerve",
+      "ZA-right-nucleus-ambiguus",
+      "ZA-right-nucleus-of-abducens-nerve",
+      "ZA-right-nucleus-of-accessory-nerve",
+      "ZA-right-nucleus-of-hypoglossal-nerve",
+      "ZA-right-nucleus-of-oculomotor-nerve",
+      "ZA-right-nucleus-of-solitary-tract",
+      "ZA-right-nucleus-of-trochlear-nerve",
+      "ZA-right-posterior-cochlear-nucleus",
+      "ZA-right-posterior-nucleus-of-vagus-nerve",
+      "ZA-right-superior-salivatory-nucleus",
+      "ZA-right-vestibular-nuclei"
+    ],
+    "hide": [],
+    "context": [
+      "FJ1735",
+      "FJ1736",
+      "FJ1761",
+      "FJ1762",
+      "FJ1763",
+      "FJ1769",
+      "FJ1770",
+      "FJ1774",
+      "FJ1775",
+      "FJ1779",
+      "FJ1809",
+      "FJ1810",
+      "FJ1811",
+      "FJ1817",
+      "FJ1821",
+      "FJ1822",
+      "FJ1826",
+      "FJ1831"
+    ]
+  },
+  "red-nucleus": {
+    "focus": [
+      "ZA-left-red-nucleus",
+      "ZA-right-red-nucleus"
+    ],
+    "hide": [],
+    "context": [
+      "FJ1735",
+      "FJ1736",
+      "FJ1761",
+      "FJ1762",
+      "FJ1763",
+      "FJ1769",
+      "FJ1770",
+      "FJ1774",
+      "FJ1775",
+      "FJ1779",
+      "FJ1809",
+      "FJ1810",
+      "FJ1811",
+      "FJ1817",
+      "FJ1821",
+      "FJ1822",
+      "FJ1826",
+      "FJ1831"
+    ]
+  },
   "tentorium-cerebelli": {
     "focus": [
       "FJ1843"
+    ],
+    "hide": []
+  },
+  "falx-cerebri": {
+    "focus": [
+      "ZA-falx-cerebri"
     ],
     "hide": []
   },
@@ -17017,10 +17478,35 @@
     ],
     "hide": []
   },
+  "olfactory-nerve": {
+    "focus": [
+      "ZA-left-olfactory-nerve-i",
+      "ZA-right-olfactory-nerve-i"
+    ],
+    "hide": []
+  },
   "trochlear-nerve": {
     "focus": [
       "FJ1330",
       "FJ1381"
+    ],
+    "hide": []
+  },
+  "trigeminal-roots": {
+    "focus": [
+      "ZA-left-motor-root-of-trigeminal-nerve",
+      "ZA-left-sensory-root-of-trigeminal-nerve",
+      "ZA-left-trigeminal-nerve-v",
+      "ZA-right-motor-root-of-trigeminal-nerve",
+      "ZA-right-sensory-root-of-trigeminal-nerve",
+      "ZA-right-trigeminal-nerve-v"
+    ],
+    "hide": []
+  },
+  "abducens-nerve": {
+    "focus": [
+      "ZA-left-abducens-nerve-vi",
+      "ZA-right-abducens-nerve-vi"
     ],
     "hide": []
   },
@@ -17425,8 +17911,10 @@
   },
   "sympathetic-trunk": {
     "focus": [
+      "ZA-left-ganglia-of-sympathetic-trunk",
       "ZA-left-sympathetic-nerves",
       "ZA-left-sympathetic-trunk",
+      "ZA-right-ganglia-of-sympathetic-trunk",
       "ZA-right-sympathetic-nerves",
       "ZA-right-sympathetic-trunk"
     ],
@@ -17715,7 +18203,13 @@
       "FJ3392",
       "FJ3393",
       "FJ3394",
-      "FJ3395"
+      "FJ3395",
+      "ZA-left-incus",
+      "ZA-left-malleus",
+      "ZA-left-stapes",
+      "ZA-right-incus",
+      "ZA-right-malleus",
+      "ZA-right-stapes"
     ],
     "hide": []
   },
@@ -18182,6 +18676,17 @@
   "bone-hyoid": {
     "focus": [
       "FJ2772"
+    ],
+    "hide": []
+  },
+  "bone-ossicles": {
+    "focus": [
+      "ZA-left-incus",
+      "ZA-left-malleus",
+      "ZA-left-stapes",
+      "ZA-right-incus",
+      "ZA-right-malleus",
+      "ZA-right-stapes"
     ],
     "hide": []
   },

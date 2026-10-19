@@ -683,7 +683,13 @@ cận giáp — không lấy màng phổi, khối 56k đỉnh bọc kín phổi)
 trên PyPI — blender.org bị chặn 403 từ mạng này) chạy `scripts/blender/z-anatomy-dump.py` → curve thành mesh
 (tiết diện 8 cạnh; mặc định của tệp gấp 5 lần đỉnh) → `scripts/import-z-anatomy.ts`. Căn: trục
 (x, z, −y), dời (−0,5; 7,2; −1,6) mm; lệch còn lại trung vị ~4,7 mm vì Z-Anatomy dựng lại lưới xương
-(căn theo vùng không đỡ hơn) — chấp nhận. Mạch/dây thần kinh Z-Anatomy là đường cong VẼ LẠI, không
+(căn theo vùng không đỡ hơn) — chấp nhận. **Ngoại lệ vùng đầu (2026-10-19):** đo trên mảnh CỨNG cùng hình
+dạng ở hai bộ (thể thuỷ tinh, giác mạc, mống mắt, đồi thị) thì đầu Z-Anatomy lệch nhất quán (0,5; 2,4; 10,5)
+mm — trung vị toàn thân che mất vì thân/chi lệch không cùng hướng. Với xương con (~5 mm) và nhân thân não,
+1 cm là nằm ngoài xương/ngoài thân não. Trừ (0; 2,4; 10,5) mm nhân trọng số tuyến tính theo độ cao (0 ở
+y = 1,40 m → đủ ở 1,55 m, khớp lệch đo được ở xương móng/sụn phễu/sườn 2) — trơn nên dây qua cổ không đứt;
+còn lệch trung vị 1,6 mm ở 157 mảnh vùng đầu. Đừng gỡ khi "thống nhất phép căn": phép dời một khối đã bỏ
+sót đúng chỗ này. Mạch/dây thần kinh Z-Anatomy là đường cong VẼ LẠI, không
 trùng BodyParts3D: không lấy động mạch, não; ứng viên bị loại nếu > 50% điểm nằm trong 7 mm hình học
 gốc CÙNG loại (dây thần kinh so dây thần kinh, không so thân não — so thân não là loại nhầm dây VI).
 Hạch không tên của UMCG bị bỏ khi có hạch Z-Anatomy; mạch bạch huyết UMCG giữ. Khái niệm mang mã
@@ -930,6 +936,8 @@ bản trùng) trên đúng các khối viewer tải. Kết quả chốt những 
 
 - **Không chuẩn hoá scale/hướng:** BodyParts3D, Z-Anatomy, UMCG chung một hệ toạ độ (cây phế quản nằm
   trọn trong phổi Z-Anatomy, khí quản nối đúng). Một lớp biến đổi mỗi nguồn chỉ thêm chỗ sai.
+  Ngoại lệ duy nhất: dời vùng đầu của Z-Anatomy (mục "Z-Anatomy" ở trên) — đo được 1 cm trên mảnh cứng,
+  không phải chuẩn hoá scale/hướng.
 - **Không texture/GLB mới:** dữ liệu không có UV; "bớt nhựa" là việc của vật liệu (metalness 0, độ
   nhám theo mô) và đèn theo camera — đã có, xem "Ánh sáng & vật liệu" trong `anatomy-scene.tsx`.
 - **Pháp tuyến:** 0 hỏng trên mọi mảnh đo — không tính lại.

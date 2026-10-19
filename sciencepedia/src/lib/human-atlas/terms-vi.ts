@@ -1778,6 +1778,38 @@ const WHOLE: Record<string, string> = {
   // "Ngành" là quy ước cho thần kinh; tĩnh mạch dùng "nhánh".
   "anterior division of retromandibular vein": "nhánh trước tĩnh mạch sau hàm dưới",
   "posterior division of retromandibular vein": "nhánh sau tĩnh mạch sau hàm dưới",
+  // Thần kinh – giác quan bổ sung từ Z-Anatomy (2026-10-19). Tên trọn vì dây sọ ở
+  // bảng cụm mang số La Mã ("vagus nerve (x)"), nên "nucleus of vagus nerve" không ghép được.
+  // Đường cong ~51 mm theo hành + dải khứu, không phải sợi khứu (science-editor 2026-10-19).
+  "olfactory nerve (i)": "đường khứu giác (I), nét sơ đồ",
+  "abducens nerve (vi)": "thần kinh vận nhãn ngoài (VI)",
+  "trigeminal nerve (v)": "thần kinh sinh ba (V)",
+  "motor root of trigeminal nerve": "rễ vận động thần kinh sinh ba",
+  "sensory root of trigeminal nerve": "rễ cảm giác thần kinh sinh ba",
+  "ganglia of sympathetic trunk": "các hạch thân giao cảm",
+  "red nucleus": "nhân đỏ",
+  "accessory nucleus of oculomotor nerve": "nhân phụ thần kinh vận nhãn",
+  "nucleus of abducens nerve": "nhân thần kinh vận nhãn ngoài",
+  "nucleus of accessory nerve": "nhân thần kinh phụ",
+  "nucleus of hypoglossal nerve": "nhân thần kinh hạ thiệt",
+  "motor nucleus of facial nerve": "nhân vận động thần kinh mặt",
+  "nucleus ambiguus": "nhân hoài nghi",
+  "nucleus of solitary tract": "nhân bó đơn độc",
+  "posterior nucleus of vagus nerve": "nhân lưng thần kinh lang thang",
+  "superior salivatory nucleus": "nhân nước bọt trên",
+  "inferior salivatory nucleus": "nhân nước bọt dưới",
+  "vestibular nuclei": "các nhân tiền đình",
+  "anterior cochlear nucleus": "nhân ốc tai trước",
+  "posterior cochlear nucleus": "nhân ốc tai sau",
+  "falx cerebri": "liềm đại não",
+  cochlea: "ốc tai",
+  // Mảnh "Vestibule" của Z-Anatomy gồm cả ba ống bán khuyên (mê đạo xương).
+  vestibule: "tiền đình và các ống bán khuyên",
+  "tympanic membrane": "màng nhĩ",
+  "auditory tube": "vòi tai",
+  malleus: "xương búa",
+  incus: "xương đe",
+  stapes: "xương bàn đạp",
 };
 
 const ORDINALS: Record<string, number> = {

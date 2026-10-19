@@ -49,7 +49,22 @@ const DUMP = path.join(ROOT, ".cache/z-anatomy/dump");
 const OUT_DIR = path.join(ROOT, ".cache/z-anatomy/out");
 const MANIFEST = path.join(ROOT, "src/lib/human-atlas/supplements/z-anatomy.json");
 const OFFSET = [-0.0005, 0.0072, -0.0016];
-const toAtlas = (x: number, y: number, z: number) => [x + OFFSET[0], z + OFFSET[1], -y + OFFSET[2]];
+/*
+ * Hiệu chỉnh vùng đầu (2026-10-19): phép dời toàn thân để đầu Z-Anatomy lệch
+ * nhất quán ~1 cm — đo trên mảnh cứng cùng hình dạng (thể thuỷ tinh, giác mạc,
+ * mống mắt, đồi thị: ZA − BP3D = (0,5; 2,4; 10,5) mm, chênh giữa các cặp ≤ 2 mm).
+ * Lệch giảm dần dọc cổ (xương móng 7,7 mm, sụn phễu 6,6, sườn 2 ~0) → trừ phần
+ * hiệu chỉnh nhân trọng số tuyến tính theo độ cao, 0 ở y = 1,40 m, đủ ở 1,55 m:
+ * trơn nên dây chạy qua cổ không đứt. Sau hiệu chỉnh 157 mảnh vùng đầu còn lệch
+ * trung vị 1,6 mm (theo hộp bao).
+ */
+const HEAD_FIX = [0, -0.0024, -0.0105];
+const HEAD_RAMP = [1.4, 1.55];
+const toAtlas = (x: number, y: number, z: number) => {
+  const p = [x + OFFSET[0], z + OFFSET[1], -y + OFFSET[2]];
+  const w = Math.min(1, Math.max(0, (p[1] - HEAD_RAMP[0]) / (HEAD_RAMP[1] - HEAD_RAMP[0])));
+  return p.map((v, i) => v + w * HEAD_FIX[i]);
+};
 /** Điểm cách hình học gốc cùng hệ dưới ngưỡng này thì coi là "đã có". */
 const DUP_DIST = 0.007;
 const DUP_FRACTION = 0.5;
@@ -60,8 +75,11 @@ which is based on BodyParts3D, The Database Center for Life Science
 (https://dbarchive.biosciencedbc.jp/en/bodyparts3d/).
 
 Changes by Sciencepedia: selected peripheral nerves, spinal cord, veins, lymph nodes,
-lung lobes, thyroid and parathyroid glands absent from BodyParts3D 4.0; curves evaluated to meshes in Blender; registered to the
-BodyParts3D 4.0 frame (axes x,z,-y; offset -0.5/7.2/-1.6 mm, median residual ~4.7 mm).
+lung lobes, thyroid and parathyroid glands, cranial nerves I/V/VI, brainstem nuclei,
+falx cerebri, sympathetic trunk ganglia, middle and inner ear structures and auditory
+ossicles absent from BodyParts3D 4.0; curves evaluated to meshes in Blender; registered to the
+BodyParts3D 4.0 frame (axes x,z,-y; offset -0.5/7.2/-1.6 mm, median residual ~4.7 mm;
+head region additionally shifted 0/-2.4/-10.5 mm, ramped linearly over y 1.40-1.55 m).
 Distributed under the same licence, CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/).
 `;
 
@@ -75,13 +93,40 @@ type Row = {
   idx: number;
 };
 
-type Pick = { system: SystemId; group?: string };
+type Pick = { system: SystemId; group?: string; noDedupe?: boolean };
 
-/** Ứng viên theo collection gốc + tên. Không lấy động mạch, não, nhân, bó. */
+/*
+ * Thần kinh – giác quan bổ sung (2026-10-19, lộ trình docs/roadmaps/human-atlas-
+ * nervous-system.json, mốc M2): những thứ BodyParts3D 4.0 KHÔNG có — dây I, VI,
+ * thân và rễ dây V, nhân dây sọ và nhân đỏ, liềm đại não, hạch thân giao cảm, tai
+ * giữa/trong, xương con. Bỏ qua lọc trùng có chủ đích: lọc theo không gian loại
+ * nhầm dây VI và rễ V (sát nhánh dây III/V1 trong ổ mắt) và nhân (nằm trong thân
+ * não BodyParts3D). Không lấy hồi/tiểu thuỳ/bó: chúng chồng lên mảnh BodyParts3D
+ * nguyên khối — phải THAY, không thêm.
+ */
+const NEURO_EXTRA: readonly [RegExp, Pick][] = [
+  [/^(olfactory nerve \(i\)|abducens nerve \(vi\)|trigeminal nerve \(v\)|(motor|sensory) root of trigeminal nerve)$/, { system: "nervous", group: "nervous.nerve" }],
+  [/^ganglia of sympathetic trunk$/, { system: "nervous", group: "nervous.nerve" }],
+  [
+    /^(red nucleus|nucleus of (oculomotor|trochlear|abducens|hypoglossal|accessory) nerve|accessory nucleus of oculomotor nerve|motor nucleus of facial nerve|nucleus ambiguus|nucleus of solitary tract|posterior nucleus of vagus nerve|(superior|inferior) salivatory nucleus|vestibular nuclei|(anterior|posterior) cochlear nucleus)$/,
+    { system: "nervous", group: "nervous.brainstem" },
+  ],
+  [/^falx cerebri$/, { system: "nervous", group: "nervous.meninges" }],
+  [/^(cochlea|vestibule|tympanic membrane|auditory tube)$/, { system: "sensory", group: "sensory.ear" }],
+];
+const OSSICLE = /^(malleus|incus|stapes)$/;
+const baseName = (raw: string) =>
+  raw.trim().replace(/^\((.*)\)(\.[lrj])?$/, "$1").replace(/\.\d+$/, "").replace(/\.[lrj]$/, "").trim().toLowerCase();
+
+/** Ứng viên theo collection gốc + tên. Không lấy động mạch, não (trừ NEURO_EXTRA), nhân, bó. */
 function pick(r: Row): Pick | null {
   const top = r.trail[0] ?? "";
   const n = r.name.toLowerCase();
+  const b = baseName(r.name);
+  if (top.startsWith("1:")) return OSSICLE.test(b) ? { system: "skeletal", noDedupe: true } : null;
   if (top.startsWith("7:")) {
+    const extra = NEURO_EXTRA.find(([re]) => re.test(b));
+    if (extra) return { ...extra[1], noDedupe: true };
     if (/nucleus|tract|fasciculus|lemniscus|commissure|gyrus|lobe|ventricle|choroid/.test(n)) return null;
     if (/spinal cord|horn of spinal|spinal dura|spinal ganglion|conus|filum/.test(n)) return { system: "nervous", group: "nervous.spinal_cord" };
     if (r.type === "CURVE" || /\bnerve|plexus|cauda equina|ganglion|ramus|root of/.test(n)) return { system: "nervous", group: "nervous.nerve" };
@@ -192,7 +237,7 @@ async function main() {
       pos.set(p, i * 3);
       if (i % 3 === 0 && near(gridKey, p[0], p[1], p[2])) close += 1;
     }
-    if (close / Math.ceil(r.verts / 3) > DUP_FRACTION) {
+    if (!chosen.noDedupe && close / Math.ceil(r.verts / 3) > DUP_FRACTION) {
       skipped.dup.push(full);
       continue;
     }
