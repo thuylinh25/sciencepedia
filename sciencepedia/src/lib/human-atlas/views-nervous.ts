@@ -191,6 +191,41 @@ const RADIAL = n(/radial nerve$|posterior interosseous nerve of forearm$|posteri
 const MEDIAL_CUTANEOUS = n(/medial (brachial|antebrachial) cutaneous nerve$/i);
 const UPPER_LIMB = [BRACHIAL_PLEXUS, PLEXUS_COLLATERAL, MUSCULOCUTANEOUS, AXILLARY_NERVE, MEDIAN, ULNAR, RADIAL, MEDIAL_CUTANEOUS];
 
+/*
+ * Tách đám rối và từng dây thành cấu trúc con phủ KÍN cha (test lồng nhau): mở dây giữa ra đúng
+ * các nhánh, không có hàng "Phần còn lại". Z-Anatomy chỉ có bó SAU riêng — bó ngoài/trong nằm
+ * trong lưới dây giữa/trụ (ngành trước dừng ở z 1,40 m, đúng chỗ hai dây ấy bắt đầu) — nên cấu
+ * trúc mang tên bó sau, không gọi chung "các bó". Nhánh cơ và gian cốt trước của dây giữa nằm ở
+ * cẳng tay (đo hộp bao), nên không gom chung với nhánh ở bàn tay.
+ * Thân (`trunk`) phải neo đầu: "anterior division of superior trunk of brachial plexus" cũng kết
+ * thúc bằng "trunk of brachial plexus".
+ */
+const BP_ROOTS = n(/roots of brachial plexus$/i);
+const BP_TRUNKS = n(/^(left |right )?(superior|middle|inferior) trunk of brachial plexus$/i);
+const BP_DIVISIONS = n(/(anterior|posterior) division of (superior|middle|inferior) trunk of brachial plexus$/i);
+const BP_POSTERIOR_CORD = n(/posterior cord of brachial plexus$/i);
+const MEDIAN_TRUNK = n(/^(left |right )?median nerve$/i);
+const MEDIAN_AIN = n(/anterior interosseous nerve of forearm$/i);
+const MEDIAN_MUSCULAR = n(/muscular branches of median nerve$/i);
+const MEDIAN_PALMAR = n(/palmar branch of median nerve$/i);
+const MEDIAN_DIGITAL = n(/(common|proper) palmar digital branches of median nerve$/i);
+const MEDIAN_COMMUNICATING = n(/communicating branch of median nerve with ulnar nerve$/i);
+const ULNAR_TRUNK = n(/^(left |right )?ulnar nerve$/i);
+const ULNAR_MUSCULAR = n(/muscular branches of ulnar nerve$/i);
+const ULNAR_PALMAR = n(/palmar branch of ulnar nerve$/i);
+const ULNAR_DORSAL = n(/dorsal branch of ulnar nerve$/i);
+const ULNAR_SUPERFICIAL = n(/superficial branch of ulnar nerve$/i);
+const ULNAR_DEEP = n(/deep branch of ulnar nerve$/i);
+const ULNAR_PALMAR_DIGITAL = n(/(common|proper) palmar digital branches of ulnar nerve$/i);
+const ULNAR_DORSAL_DIGITAL = n(/dorsal digital branches of ulnar nerve$/i);
+const RADIAL_TRUNK = n(/^(left |right )?radial nerve$/i);
+const RADIAL_MUSCULAR = n(/muscular branches of radial nerve$/i);
+const RADIAL_CUTANEOUS = n(/posterior antebrachial cutaneous nerve$|inferior lateral brachial cutaneous nerve$/i);
+const RADIAL_SUPERFICIAL = n(/superficial branch of radial nerve$/i);
+const RADIAL_DEEP = n(/deep branch of radial nerve$/i);
+const RADIAL_PIN = n(/posterior interosseous nerve of forearm$/i);
+const RADIAL_DORSAL_DIGITAL = n(/dorsal digital branches of radial nerve$/i);
+
 // ------------------------------------------------------------------ chi dưới, chậu
 const LUMBAR_PLEXUS_OTHER = n(/iliohypogastric nerve$|ilio-inguinal nerve$|genitofemoral nerve$|lateral femoral cutaneous nerve$/i);
 const FEMORAL = n(/femoral nerve$|saphenous nerve$/i, /genitofemoral|lateral femoral cutaneous|posterior femoral cutaneous/i);
@@ -201,6 +236,11 @@ const TIBIAL = n(/tibial nerve$|plantar nerve$/i);
 const FIBULAR = n(/fibular nerve$|dorsal cutaneous nerve of foot$/i, /sural communicating/i);
 const SURAL = n(/sural nerve$|sural cutaneous nerve$|sural communicating branch of common fibular nerve$/i);
 const LOWER_LIMB = [LUMBAR_PLEXUS_OTHER, FEMORAL, OBTURATOR, SACRAL_PLEXUS_OTHER, SCIATIC, TIBIAL, FIBULAR, SURAL];
+const TIBIAL_TRUNK = n(/^(left |right )?tibial nerve$/i);
+/** Gồm nhánh gan ngón chung/riêng (tên kết thúc bằng "… plantar nerve"); một mảnh không ghi bên. */
+const PLANTAR = n(/plantar nerve$/i);
+const MEDIAL_PLANTAR = n(/medial plantar nerve$/i);
+const LATERAL_PLANTAR = n(/lateral plantar nerve$/i);
 
 // ------------------------------------------------------------------ thân mình
 const SYMPATHETIC = n(/sympathetic (trunk|nerves)$/i);
@@ -211,6 +251,11 @@ const SPINE: PartRule = { systems: ["skeletal"], name: /vertebra$|^atlas$|^axis$
 const UPPER_LIMB_BONES: PartRule = { systems: ["skeletal"], name: /(humerus|scapula|clavicle|radius|ulna)$/i };
 const LOWER_LIMB_BONES: PartRule = { systems: ["skeletal"], name: /(femur|tibia|fibula|patella|hip bone)$|^sacrum$/i };
 const RIBS: PartRule = { systems: ["skeletal"], name: /\brib\b|thoracic vertebra$/i };
+const LUMBAR_SACRAL_SPINE: PartRule = { systems: ["skeletal"], name: /lumbar vertebra$|^sacrum$/i };
+const HIP_BONE: PartRule = { systems: ["skeletal"], name: /hip bone$/i };
+/** Đám rối thắt lưng nằm trong cơ thắt lưng lớn, đám rối cùng trên mặt trước cơ hình lê. */
+const PSOAS: PartRule = { systems: ["muscular"], name: /psoas major$/i };
+const PIRIFORMIS: PartRule = { systems: ["muscular"], name: /piriformis$/i };
 const HEART: PartRule = { systems: ["cardiac"] };
 const NECK_THORAX_VISCERA: PartRule = { systems: ["respiratory", "digestive"], name: /^(trachea|esophagus|stomach)$/i };
 const ABDOMINAL_VISCERA: PartRule = { systems: ["digestive", "urinary"], name: /^(esophagus|stomach|duodenum|(ascending|transverse|descending) colon|(left|right) kidney)$/i };
@@ -328,6 +373,20 @@ export const NERVOUS_VIEWS: readonly AtlasViewDef[] = [
   group("nervous-upper-limb", "Đám rối cánh tay và thần kinh chi trên", "Brachial plexus and nerves of the upper limb", "front", UPPER_LIMB, [UPPER_LIMB_BONES], ["đám rối cánh tay", "brachial plexus", "thần kinh giữa", "median nerve"]),
   // Có thần kinh thẹn (đáy chậu), chậu hạ vị/chậu bẹn (thành bụng) — không chỉ chi dưới.
   group("nervous-lower-limb", "Đám rối thắt lưng – cùng và thần kinh chi dưới", "Lumbosacral plexus branches and nerves of the lower limb", "front", LOWER_LIMB, [LOWER_LIMB_BONES], ["đám rối thắt lưng", "lumbosacral plexus", "thần kinh đùi", "femoral nerve"]),
+  group("lumbar-plexus", "Các nhánh của đám rối thắt lưng", "Branches of the lumbar plexus", "front", [LUMBAR_PLEXUS_OTHER, FEMORAL, OBTURATOR], [LUMBAR_SACRAL_SPINE, HIP_BONE, PSOAS],
+    ["đám rối thắt lưng", "lumbar plexus"], {
+      partial: {
+        vi: "Thiếu phần đám rối nằm trong cơ thắt lưng lớn, nơi các nhánh trước của thần kinh sống L1–L4 hợp lại; chỉ có các nhánh",
+        en: "The part of the plexus within the psoas major, where the anterior rami of L1–L4 join, is missing; only the branches are shown",
+      },
+    }),
+  group("sacral-plexus", "Các nhánh của đám rối cùng", "Branches of the sacral plexus", "back", [SACRAL_PLEXUS_OTHER, SCIATIC], [LUMBAR_SACRAL_SPINE, HIP_BONE, PIRIFORMIS],
+    ["đám rối cùng", "sacral plexus"], {
+      partial: {
+        vi: "Thiếu phần đám rối nằm trên mặt trước cơ hình lê, nơi thân thắt lưng – cùng và các nhánh trước của các thần kinh sống cùng hợp lại; chỉ có các nhánh",
+        en: "The part of the plexus on the anterior surface of the piriformis, where the lumbosacral trunk and the sacral anterior rami join, is missing; only the branches are shown",
+      },
+    }),
   group("nervous-sciatic", "Thần kinh ngồi và các nhánh", "Sciatic nerve and its branches", "back", [SCIATIC, TIBIAL, FIBULAR, SURAL], [LOWER_LIMB_BONES],
     ["thần kinh ngồi", "thần kinh toạ", "sciatic nerve", "thần kinh chày", "tibial nerve", "thần kinh mác", "fibular nerve"]),
   // Id cũ (trước gồm cả thân giao cảm) — thân giao cảm nay ở "Thần kinh tự chủ".
@@ -449,7 +508,10 @@ export const NERVOUS_VIEWS: readonly AtlasViewDef[] = [
   structure("spinal-dura", "Màng cứng tuỷ", "Spinal dura mater", "back", SPINAL_DURA),
   structure("spinal-roots", "Rễ và hạch gai", "Spinal roots and ganglia", "back", SPINAL_ROOTS),
   structure("cauda-equina", "Chùm đuôi ngựa", "Cauda equina", "back", CAUDA_EQUINA),
-  structure("brachial-plexus", "Đám rối cánh tay (rễ, thân, ngành, bó)", "Brachial plexus (roots, trunks, divisions, cords)", "front", BRACHIAL_PLEXUS),
+  {
+    ...structure("brachial-plexus", "Đám rối cánh tay (rễ, thân, ngành, bó sau)", "Brachial plexus (roots, trunks, divisions, posterior cord)", "front", BRACHIAL_PLEXUS),
+    partial: { vi: "Bó ngoài và bó trong không có lưới riêng", en: "The lateral and medial cords have no separate mesh" },
+  },
   structure("brachial-plexus-collaterals", "Nhánh bên của đám rối cánh tay", "Collateral branches of the brachial plexus", "front", PLEXUS_COLLATERAL),
   structure("musculocutaneous-nerve", "Thần kinh cơ bì", "Musculocutaneous nerve", "front", MUSCULOCUTANEOUS),
   structure("axillary-nerve", "Thần kinh nách", "Axillary nerve", "back", AXILLARY_NERVE),
@@ -457,12 +519,41 @@ export const NERVOUS_VIEWS: readonly AtlasViewDef[] = [
   structure("ulnar-nerve", "Thần kinh trụ", "Ulnar nerve", "front", ULNAR),
   structure("radial-nerve", "Thần kinh quay", "Radial nerve", "back", RADIAL),
   structure("medial-cutaneous-nerves-arm", "Thần kinh bì cánh tay trong và bì cẳng tay trong", "Medial brachial and antebrachial cutaneous nerves", "front", MEDIAL_CUTANEOUS),
+  structure("brachial-plexus-roots", "Rễ đám rối cánh tay", "Roots of the brachial plexus", "front", BP_ROOTS),
+  structure("brachial-plexus-trunks", "Thân trên, giữa và dưới của đám rối cánh tay", "Superior, middle and inferior trunks of the brachial plexus", "front", BP_TRUNKS),
+  structure("brachial-plexus-divisions", "Ngành trước và ngành sau của đám rối cánh tay", "Anterior and posterior divisions of the brachial plexus", "front", BP_DIVISIONS),
+  structure("brachial-plexus-posterior-cord", "Bó sau đám rối cánh tay", "Posterior cord of the brachial plexus", "front", BP_POSTERIOR_CORD),
+  structure("median-nerve-trunk", "Thân thần kinh giữa", "Median nerve trunk", "front", MEDIAN_TRUNK),
+  structure("anterior-interosseous-nerve", "Thần kinh gian cốt trước", "Anterior interosseous nerve", "front", MEDIAN_AIN),
+  structure("median-nerve-muscular-branches", "Các nhánh cơ của thần kinh giữa", "Muscular branches of the median nerve", "front", MEDIAN_MUSCULAR),
+  structure("median-nerve-palmar-branch", "Nhánh gan tay của thần kinh giữa", "Palmar branch of the median nerve", "front", MEDIAN_PALMAR),
+  structure("median-nerve-digital-branches", "Các nhánh gan ngón tay chung và riêng của thần kinh giữa", "Common and proper palmar digital branches of the median nerve", "front", MEDIAN_DIGITAL),
+  structure("median-ulnar-communicating-branch", "Nhánh nối thần kinh giữa với thần kinh trụ", "Communicating branch of the median nerve with the ulnar nerve", "front", MEDIAN_COMMUNICATING),
+  structure("ulnar-nerve-trunk", "Thân thần kinh trụ", "Ulnar nerve trunk", "front", ULNAR_TRUNK),
+  structure("ulnar-nerve-muscular-branches", "Các nhánh cơ của thần kinh trụ", "Muscular branches of the ulnar nerve", "front", ULNAR_MUSCULAR),
+  structure("ulnar-nerve-palmar-branch", "Nhánh gan tay của thần kinh trụ", "Palmar branch of the ulnar nerve", "front", ULNAR_PALMAR),
+  structure("ulnar-nerve-dorsal-branch", "Nhánh mu tay của thần kinh trụ", "Dorsal branch of the ulnar nerve", "back", ULNAR_DORSAL),
+  structure("ulnar-nerve-superficial-branch", "Nhánh nông của thần kinh trụ", "Superficial branch of the ulnar nerve", "front", ULNAR_SUPERFICIAL),
+  structure("ulnar-nerve-deep-branch", "Nhánh sâu của thần kinh trụ", "Deep branch of the ulnar nerve", "front", ULNAR_DEEP),
+  structure("ulnar-nerve-palmar-digital-branches", "Các nhánh gan ngón tay chung và riêng của thần kinh trụ", "Common and proper palmar digital branches of the ulnar nerve", "front", ULNAR_PALMAR_DIGITAL),
+  structure("ulnar-nerve-dorsal-digital-branches", "Các nhánh mu ngón tay của thần kinh trụ", "Dorsal digital branches of the ulnar nerve", "back", ULNAR_DORSAL_DIGITAL),
+  structure("radial-nerve-trunk", "Thân thần kinh quay", "Radial nerve trunk", "back", RADIAL_TRUNK),
+  structure("radial-nerve-muscular-branches", "Các nhánh cơ của thần kinh quay", "Muscular branches of the radial nerve", "back", RADIAL_MUSCULAR),
+  structure("radial-nerve-cutaneous-branches", "Thần kinh bì cánh tay ngoài dưới và bì cẳng tay sau", "Inferior lateral brachial and posterior antebrachial cutaneous nerves", "back", RADIAL_CUTANEOUS),
+  structure("radial-nerve-superficial-branch", "Nhánh nông của thần kinh quay", "Superficial branch of the radial nerve", "back", RADIAL_SUPERFICIAL),
+  structure("radial-nerve-deep-branch", "Nhánh sâu của thần kinh quay", "Deep branch of the radial nerve", "back", RADIAL_DEEP),
+  structure("posterior-interosseous-nerve", "Thần kinh gian cốt sau", "Posterior interosseous nerve", "back", RADIAL_PIN),
+  structure("radial-nerve-dorsal-digital-branches", "Các nhánh mu ngón tay của thần kinh quay", "Dorsal digital branches of the radial nerve", "back", RADIAL_DORSAL_DIGITAL),
   structure("lumbar-plexus-branches", "Thần kinh chậu hạ vị, chậu bẹn, sinh dục đùi và bì đùi ngoài", "Iliohypogastric, ilio-inguinal, genitofemoral and lateral femoral cutaneous nerves", "front", LUMBAR_PLEXUS_OTHER),
   structure("femoral-nerve", "Thần kinh đùi và thần kinh hiển", "Femoral and saphenous nerves", "front", FEMORAL),
   structure("obturator-nerve", "Thần kinh bịt", "Obturator nerve", "front", OBTURATOR),
   structure("sacral-plexus-branches", "Thần kinh mông, thẹn, bì đùi sau và các nhánh cơ", "Gluteal, pudendal, posterior femoral cutaneous and muscular branches", "back", SACRAL_PLEXUS_OTHER),
   structure("sciatic-nerve", "Thần kinh ngồi", "Sciatic nerve", "back", SCIATIC),
   structure("tibial-nerve", "Thần kinh chày và thần kinh gan chân", "Tibial and plantar nerves", "back", TIBIAL),
+  structure("tibial-nerve-trunk", "Thân thần kinh chày", "Tibial nerve trunk", "back", TIBIAL_TRUNK),
+  structure("plantar-nerves", "Thần kinh gan chân trong và ngoài", "Medial and lateral plantar nerves", [0, -1, 0.3], PLANTAR, ["thần kinh gan chân", "plantar nerve"]),
+  structure("medial-plantar-nerve", "Thần kinh gan chân trong và các nhánh gan ngón chân", "Medial plantar nerve and its plantar digital branches", [0, -1, 0.3], MEDIAL_PLANTAR),
+  structure("lateral-plantar-nerve", "Thần kinh gan chân ngoài và các nhánh gan ngón chân", "Lateral plantar nerve and its plantar digital branches", [0, -1, 0.3], LATERAL_PLANTAR),
   structure("fibular-nerves", "Thần kinh mác chung, nông và sâu", "Common, superficial and deep fibular nerves", "front", FIBULAR),
   structure("sural-nerve", "Thần kinh bắp chân", "Sural nerve", "back", SURAL),
   structure("sympathetic-trunk", "Thân và các dây giao cảm", "Sympathetic trunk and nerves", "anterolateral", SYMPATHETIC),

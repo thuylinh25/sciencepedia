@@ -475,17 +475,17 @@ N("nervous-upper-limb", "sec-plexuses", "I", "group", "Đám rối cánh tay và
 });
 N("brachial-plexus", "nervous-upper-limb", "I", "structure", "Đám rối cánh tay (rễ, thân, ngành, bó)", "Brachial plexus (roots, trunks, divisions, cords)", {
   status: "live", existing: "brachial-plexus", dir: "front", zoom: "structure", mode: "layered",
-  obj: ["Phân biệt thân trên, giữa, dưới và bó ngoài, trong, sau"],
+  obj: ["Phân biệt rễ, thân trên/giữa/dưới, ngành trước/sau và bó sau"], partial: true, note: "Bó ngoài/trong không có lưới riêng (science-editor 2026-10-19).",
 });
 for (const [id, vi, en, f] of [
   ["brachial-plexus-roots", "Rễ đám rối cánh tay", "Roots of the brachial plexus", "roots of brachial plexus"],
   ["brachial-plexus-trunks", "Thân đám rối cánh tay", "Trunks of the brachial plexus", "superior/middle/inferior trunk"],
   ["brachial-plexus-divisions", "Ngành trước và sau", "Anterior and posterior divisions", "anterior/posterior division of … trunk"],
-  ["brachial-plexus-cords", "Bó đám rối cánh tay", "Cords of the brachial plexus", "posterior cord (ZA chỉ có bó sau riêng)"],
+  ["brachial-plexus-posterior-cord", "Bó sau đám rối cánh tay", "Posterior cord of the brachial plexus", "posterior cord"],
 ]) {
-  N(id, "brachial-plexus", "I", "region", vi, en, {
-    status: "buildable", partial: id === "brachial-plexus-cords", dir: "front", zoom: "detail", mode: "layered", context: ["phần đám rối còn lại ghost"], focus: [f],
-    note: id === "brachial-plexus-cords" ? "ZA chỉ tách riêng bó sau; bó ngoài/trong không có mảnh riêng → partial." : undefined,
+  N(id, "brachial-plexus", "I", "structure", vi, en, {
+    dir: "front", zoom: "detail", mode: "layered", focus: [f],
+    note: id === "brachial-plexus-posterior-cord" ? "ZA chỉ tách riêng bó sau; bó ngoài/trong nằm trong lưới dây giữa/trụ (ngành trước dừng đúng chỗ hai dây bắt đầu) → cấu trúc mang tên bó sau." : undefined,
     obj: [`Xác định ${vi.toLowerCase()} trong sơ đồ đám rối`],
   });
 }
@@ -536,14 +536,21 @@ for (const [id, vi, en] of [
   ["axillary-nerve", "Thần kinh nách", "Axillary nerve"],
   ["medial-cutaneous-nerves-arm", "Thần kinh bì cánh tay trong và bì cẳng tay trong", "Medial brachial and antebrachial cutaneous nerves"],
 ]) N(id, "brachial-plexus", "J", "structure", vi, en, { status: "live", existing: id, dir: id === "axillary-nerve" ? "back" : "front", zoom: "structure", mode: "layered", obj: [`Theo đường đi của ${vi.toLowerCase()}`] });
-// Cấp 4: nhánh — mảnh ZA đã có, chỉ cần tách
-for (const [id, parent, vi, en, f] of [
-  ["median-nerve-branches", "median-nerve", "Nhánh thần kinh giữa ở bàn tay", "Branches of the median nerve in the hand", "palmar branch, common/proper palmar digital branches, muscular branches of median nerve"],
-  ["ulnar-nerve-branches", "ulnar-nerve", "Nhánh nông, sâu và mu tay của thần kinh trụ", "Superficial, deep and dorsal branches of the ulnar nerve", "superficial/deep/dorsal/palmar branch, digital branches of ulnar nerve"],
-  ["radial-nerve-branches", "radial-nerve", "Nhánh nông, nhánh sâu và gian cốt sau", "Superficial, deep and posterior interosseous branches", "superficial/deep branch of radial nerve, posterior interosseous nerve, dorsal digital branches"],
-  ["plantar-nerves", "tibial-nerve", "Thần kinh gan chân trong và ngoài", "Medial and lateral plantar nerves", "medial/lateral plantar nerve + digital branches"],
+// Cấp 4–5: thân + từng nhánh — con phủ kín cha (2026-10-19). Tên/hướng lấy từ views-nervous.ts.
+for (const [parent, ids] of [
+  ["median-nerve", ["median-nerve-trunk", "anterior-interosseous-nerve", "median-nerve-muscular-branches", "median-nerve-palmar-branch", "median-nerve-digital-branches", "median-ulnar-communicating-branch"]],
+  ["ulnar-nerve", ["ulnar-nerve-trunk", "ulnar-nerve-muscular-branches", "ulnar-nerve-palmar-branch", "ulnar-nerve-dorsal-branch", "ulnar-nerve-superficial-branch", "ulnar-nerve-deep-branch", "ulnar-nerve-palmar-digital-branches", "ulnar-nerve-dorsal-digital-branches"]],
+  ["radial-nerve", ["radial-nerve-trunk", "radial-nerve-muscular-branches", "radial-nerve-cutaneous-branches", "radial-nerve-superficial-branch", "radial-nerve-deep-branch", "posterior-interosseous-nerve", "radial-nerve-dorsal-digital-branches"]],
+  ["tibial-nerve", ["tibial-nerve-trunk", "plantar-nerves"]],
+  ["plantar-nerves", ["medial-plantar-nerve", "lateral-plantar-nerve"]],
 ]) {
-  N(id, parent, "J", "region", vi, en, { status: "buildable", dir: id === "plantar-nerves" ? [0, -1, 0.2] : "front", zoom: "detail", mode: "layered", context: ["xương bàn tay/chân ghost"], focus: [f], obj: [`Phân biệt các nhánh: ${vi.toLowerCase()}`] });
+  for (const id of ids) {
+    const sole = id === "plantar-nerves" || parent === "plantar-nerves";
+    N(id, parent, "J", "structure", id, id, {
+      dir: sole ? [0, -1, 0.3] : parent === "radial-nerve" || id.includes("dorsal") ? "back" : "front", zoom: "detail", mode: "layered", context: ["xương chi ghost"],
+      obj: [id.endsWith("-trunk") ? "Theo thân dây từ đám rối tới nơi chia nhánh tận" : "Xác định nơi tách và vùng chi phối của nhánh"],
+    });
+  }
 }
 
 // ================================================================ K. Cơ quan cảm giác (mượn hệ sensory/digestive — không nhân bản)

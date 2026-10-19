@@ -39,3 +39,7 @@ scripts/tmp-*
 
 # Phản hồi thô của nguồn ngoài (scripts/anatomy-enrich.ts) — dựng lại được, không phải nguồn
 /.cache
+
+# Python
+__pycache__/
+*.pyc

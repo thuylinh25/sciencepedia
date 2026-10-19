@@ -101,6 +101,30 @@ test("não chia sâu: mở cấu trúc cha ra đúng các con, không còn mản
     "brain-ventricles": ["lateral-ventricles", "third-ventricle", "cerebral-aqueduct", "fourth-ventricle", "choroid-plexus"],
     // CIT168: chất đen tách phần đặc / phần lưới; id cũ là cha.
     "substantia-nigra": ["substantia-nigra-compacta", "substantia-nigra-reticulata"],
+    // Đám rối và dây chi: con phủ kín cha — mở dây ra là đúng các nhánh.
+    "brachial-plexus": ["brachial-plexus-roots", "brachial-plexus-trunks", "brachial-plexus-divisions", "brachial-plexus-posterior-cord"],
+    "median-nerve": ["median-nerve-trunk", "anterior-interosseous-nerve", "median-nerve-muscular-branches", "median-nerve-palmar-branch", "median-nerve-digital-branches", "median-ulnar-communicating-branch"],
+    "ulnar-nerve": [
+      "ulnar-nerve-trunk",
+      "ulnar-nerve-muscular-branches",
+      "ulnar-nerve-palmar-branch",
+      "ulnar-nerve-dorsal-branch",
+      "ulnar-nerve-superficial-branch",
+      "ulnar-nerve-deep-branch",
+      "ulnar-nerve-palmar-digital-branches",
+      "ulnar-nerve-dorsal-digital-branches",
+    ],
+    "radial-nerve": [
+      "radial-nerve-trunk",
+      "radial-nerve-muscular-branches",
+      "radial-nerve-cutaneous-branches",
+      "radial-nerve-superficial-branch",
+      "radial-nerve-deep-branch",
+      "posterior-interosseous-nerve",
+      "radial-nerve-dorsal-digital-branches",
+    ],
+    "tibial-nerve": ["tibial-nerve-trunk", "plantar-nerves"],
+    "plantar-nerves": ["medial-plantar-nerve", "lateral-plantar-nerve"],
   };
   for (const [view, children] of Object.entries(expect)) {
     const list = viewStructures(view);
