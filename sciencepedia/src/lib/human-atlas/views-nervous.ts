@@ -266,8 +266,8 @@ export const NERVOUS_VIEWS: readonly AtlasViewDef[] = [
   // 2026-10-19, registration-allen-hra.json) — trống hơn sai.
   group("nervous-subthalamic-nigral", "Chất đen và nhân dưới đồi thị", "Substantia nigra and subthalamic nucleus", "front", [A_SUBSTANTIA_NIGRA, A_SUBTHALAMIC_NUCLEUS], [THALAMUS, BRAINSTEM, BASAL_NUCLEI], ["chất đen", "substantia nigra", "nhân dưới đồi thị", "hạch nền", "basal ganglia"], {
     partial: {
-      vi: "Vị trí gần đúng: vẽ trên não mẫu trung bình rồi căn về não của mô hình; thiếu vùng bất định",
-      en: "Approximate positions: drawn on an average template brain and registered to the model's brain; the zona incerta is missing",
+      vi: "Vị trí gần đúng: vẽ trên não mẫu trung bình rồi căn về não của mô hình; nhân dưới đồi thị lấn một phần vào trung não do sai số căn chỉnh, thật ra nó nằm ở gian não, ngay trên chất đen; thiếu vùng bất định",
+      en: "Approximate positions: drawn on an average template brain and registered to the model's brain; the subthalamic nucleus partly overlaps the midbrain because of registration error (it actually lies in the diencephalon, just above the substantia nigra); the zona incerta is missing",
     },
   }),
   group("nervous-cerebellar-nuclei", "Các nhân sâu tiểu não", "Deep cerebellar nuclei", "back", [A_CEREBELLAR_DEEP_NUCLEI], [CEREBELLUM, BRAINSTEM], ["nhân răng", "dentate nucleus", "nhân nút", "nhân cầu", "nhân mái", "nhân sâu tiểu não"], {
