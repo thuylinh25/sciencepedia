@@ -33,7 +33,7 @@
  * chắc thì KHÔNG vào tệp — giữ nhãn. Gộp bằng `scripts/atlas-names-review.ts`.
  * Bảng tay bên dưới thắng tệp.
  */
-import { translateAnatomy } from "./terms-vi";
+import { isReviewedWhole, translateAnatomy } from "./terms-vi";
 import { SUPPLEMENT_NAMES_VI } from "./supplements";
 import REVIEWED from "./names-vi.reviewed.json";
 
@@ -201,9 +201,11 @@ function translateZAnatomy(englishName: string): string | null {
   return paren < 0 ? `${vi} ${side}` : `${vi.slice(0, paren)} ${side}${vi.slice(paren)}`;
 }
 
+/** Allen (AHRA-), CIT168, Neudorfer (NHTH-) đặt tên như Z-Anatomy: "Left <cấu trúc>" là bản bên trái của cả cấu trúc. */
+const SIDE_LAST_SOURCES = /^(ZA|AHRA|CIT168|NHTH)-/;
+
 function composed(conceptId: string, englishName: string): string | null {
-  // Allen (AHRA-), CIT168, Neudorfer (NHTH-) đặt tên như Z-Anatomy: "Left <cấu trúc>" là bản bên trái của cả cấu trúc.
-  return /^(ZA|AHRA|CIT168|NHTH)-/.test(conceptId) ? translateZAnatomy(englishName) : translateAnatomy(englishName);
+  return SIDE_LAST_SOURCES.test(conceptId) ? translateZAnatomy(englishName) : translateAnatomy(englishName);
 }
 
 /** Tên tiếng Việt: bảng duyệt tay trước, rồi bảng ghép thuật ngữ; không có thì `null`. */
@@ -247,5 +249,8 @@ export type ViNameStatus = "reviewed" | "machine-translated";
 
 export function viNameStatus(conceptId: string, englishName: string): ViNameStatus | null {
   if (VI_NAMES[conceptId]) return "reviewed";
+  // Tên trọn science-editor duyệt cho mảnh nguồn ngoài (Z-Anatomy, Allen…); trái/phải ghép cuối theo quy tắc đã duyệt.
+  const base = SIDE_LAST_SOURCES.test(conceptId) ? englishName.replace(/^(left|right) /i, "") : englishName;
+  if (isReviewedWhole(base)) return "reviewed";
   return composed(conceptId, englishName) ? "machine-translated" : null;
 }

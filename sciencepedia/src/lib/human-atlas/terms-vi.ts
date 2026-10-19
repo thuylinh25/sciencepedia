@@ -1778,6 +1778,14 @@ const WHOLE: Record<string, string> = {
   // "Ngành" là quy ước cho thần kinh; tĩnh mạch dùng "nhánh".
   "anterior division of retromandibular vein": "nhánh trước tĩnh mạch sau hàm dưới",
   "posterior division of retromandibular vein": "nhánh sau tĩnh mạch sau hàm dưới",
+};
+
+/**
+ * Tên trọn science-editor duyệt NGUYÊN TÊN (PASS ghi ở commit từng đợt nhập, 2026-10-19).
+ * Duyệt cụm ở bảng `T` chưa phải duyệt tên ghép từ chúng, nên chỉ mục ở đây được bỏ
+ * nhãn "dịch ghép, chưa duyệt" (`isReviewedWhole`). Thêm vào đây chỉ khi có PASS.
+ */
+const REVIEWED_WHOLE: Record<string, string> = {
   // Thần kinh – giác quan bổ sung từ Z-Anatomy (2026-10-19). Tên trọn vì dây sọ ở
   // bảng cụm mang số La Mã ("vagus nerve (x)"), nên "nucleus of vagus nerve" không ghép được.
   // Đường cong ~51 mm theo hành + dải khứu, không phải sợi khứu (science-editor 2026-10-19).
@@ -1789,6 +1797,8 @@ const WHOLE: Record<string, string> = {
   "ganglia of sympathetic trunk": "các hạch thân giao cảm",
   "red nucleus": "nhân đỏ",
   "accessory nucleus of oculomotor nerve": "nhân phụ thần kinh vận nhãn",
+  "nucleus of oculomotor nerve": "nhân thần kinh vận nhãn",
+  "nucleus of trochlear nerve": "nhân thần kinh ròng rọc",
   "nucleus of abducens nerve": "nhân thần kinh vận nhãn ngoài",
   "nucleus of accessory nerve": "nhân thần kinh phụ",
   "nucleus of hypoglossal nerve": "nhân thần kinh hạ thiệt",
@@ -1920,6 +1930,11 @@ function atom(text: string): string | null {
   return null;
 }
 
+/** Tên trọn đã qua science-editor nguyên tên, không phải ghép từ cụm. */
+export function isReviewedWhole(english: string): boolean {
+  return Object.hasOwn(REVIEWED_WHOLE, english.toLowerCase().replace(/\s+/g, " ").trim());
+}
+
 /**
  * "Left external oblique" → "cơ chéo bụng ngoài trái";
  * "distal phalanx of right thumb" → "đốt xa ngón cái phải".
@@ -1927,7 +1942,7 @@ function atom(text: string): string | null {
  */
 export function translateAnatomy(english: string): string | null {
   const name = english.toLowerCase().replace(/\s+/g, " ").trim();
-  const whole = WHOLE[name];
+  const whole = WHOLE[name] ?? REVIEWED_WHOLE[name];
   if (whole) return whole;
 
   const pieces = name.split(/ (of|to|with) /);
