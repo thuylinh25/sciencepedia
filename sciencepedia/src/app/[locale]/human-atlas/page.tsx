@@ -176,7 +176,9 @@ export default async function HumanAtlasPage({
               Số, màu, thứ tự, icon đều từ `systems.ts` — chung với viewer.
             */}
             <ul className="mt-4 grid gap-3 md:grid-cols-2">
-              {SYSTEM_ORDER.map((id) => {
+              {/* Bề mặt cơ thể không có thẻ (chủ sản phẩm bỏ, 2026-10-15) — da vẫn là
+                  lớp ngoài của mô hình, bật/tắt ở bảng hệ trong viewer. */}
+              {SYSTEM_ORDER.filter((id) => id !== "integumentary").map((id) => {
                 const Icon = SYSTEM_ICON[id] ?? FALLBACK_ICON;
                 const description = SYSTEM_DESCRIPTIONS[id];
                 const pickText = (v: { vi: string; en: string }) => (locale === "vi" ? v.vi : v.en);
