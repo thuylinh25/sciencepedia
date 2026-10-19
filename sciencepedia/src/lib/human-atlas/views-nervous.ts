@@ -2,6 +2,9 @@ import type { AtlasViewDef, PartRule } from "./views";
 import { CAROTID_VERTEBRAL, CEREBRAL } from "./views-arterial";
 import { INTERCOSTAL_NERVES, VAGUS } from "./views-respiratory";
 
+/** Tuyến yên (hệ nội tiết) — chỉ làm bối cảnh cho mặt dưới não. */
+const PITUITARY: PartRule = { fma: ["FMA13889"] };
+
 /*
  * ## Góc nhìn theo hệ — Hệ thần kinh (2026-09-30)
  *
@@ -205,6 +208,24 @@ export const NERVOUS_VIEWS: readonly AtlasViewDef[] = [
     quality: "acceptable",
   },
   group("nervous-brain", "Não", "Brain", "side", BRAIN, [SKULL, TENTORIUM, FALX], ["brain", "đại não", "cerebrum"]),
+  // Nhìn từ dưới lên: não + dây sọ I–VI ở nền sọ. Dây VII–XII chạy xuống mặt, cổ, thân —
+  // đưa vào tập nổi bật thì khung bị kéo ra cả người. Vòng động mạch não + tuyến yên làm bối cảnh.
+  group(
+    "nervous-base-of-brain",
+    "Mặt dưới não",
+    "Base of the brain",
+    "inferior",
+    [...BRAIN, OLFACTORY, OPTIC, OCULOMOTOR, TROCHLEAR, TRIGEMINAL_ROOTS, ABDUCENS],
+    [CAROTID_VERTEBRAL, CEREBRAL, PITUITARY],
+    ["nền não", "mặt dưới não", "base of brain", "giao thoa thị giác", "thể vú"],
+    {
+      // Câu của science-editor (2026-10-19), nguyên văn.
+      partial: {
+        vi: "Góc nhìn này chỉ làm nổi bật dây thần kinh sọ I–VI. Các dây VII–XII cũng ló ra ở mặt dưới thân não — chỗ cầu não giáp hành não và ở hành não (dây XI còn có rễ từ tuỷ sống cổ) — nhưng không được làm nổi bật ở đây. Dây III chỉ có phần nhánh trong ổ mắt; đoạn ló ra từ não giữa không có trong dữ liệu.",
+        en: "This view highlights only cranial nerves I–VI. Nerves VII–XII also emerge from the underside of the brainstem — where the pons meets the medulla, and from the medulla (nerve XI also has roots from the cervical spinal cord) — but are not highlighted here. Nerve III is shown only as its branches in the orbit; the segment where it leaves the midbrain is not in the data.",
+      },
+    },
+  ),
   // Động mạch nổi bật, não mờ phía sau — tập nổi bật đúng bằng "Động mạch não" của hệ động mạch.
   group("nervous-brain-blood-supply", "Cấp máu cho não", "Blood supply of the brain", "side", [CAROTID_VERTEBRAL, CEREBRAL], BRAIN,
     ["động mạch não", "cerebral arteries", "vòng Willis", "circle of Willis", "cấp máu", "blood supply"]),
