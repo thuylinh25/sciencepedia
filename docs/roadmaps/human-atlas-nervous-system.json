@@ -65,18 +65,18 @@
     ]
   },
   "coverage": {
-    "nodes": 198,
-    "nodes3d": 193,
+    "nodes": 219,
+    "nodes3d": 214,
     "byStatus": {
-      "live": 148,
-      "buildable": 13,
+      "live": 179,
+      "buildable": 3,
       "import-za": 12,
       "needs-schema": 8,
       "needs-clipping": 4,
       "missing": 8
     },
-    "readyNow": "161/193 (83%) nút 3D dựng được bằng dữ liệu đang có",
-    "afterZaImport": "173/193 (90%)",
+    "readyNow": "182/214 (85%) nút 3D dựng được bằng dữ liệu đang có",
+    "afterZaImport": "194/214 (91%)",
     "haaTiles": {
       "note": "So với 24 ô \"Nervous System Views\" của HAA (ảnh tham chiếu, không dùng asset HAA).",
       "withCardNow": "19/24 (79%)",
@@ -243,17 +243,7 @@
       "items": [
         "sympathetic",
         "parasympathetic",
-        "parasympathetic-cranial",
-        "brachial-plexus-roots",
-        "brachial-plexus-trunks",
-        "brachial-plexus-divisions",
-        "brachial-plexus-cords",
-        "lumbar-plexus",
-        "sacral-plexus",
-        "median-nerve-branches",
-        "ulnar-nerve-branches",
-        "radial-nerve-branches",
-        "plantar-nerves"
+        "parasympathetic-cranial"
       ]
     },
     {
@@ -6694,8 +6684,8 @@
       "kind": "structure",
       "level": 4,
       "name": {
-        "vi": "Đám rối cánh tay (rễ, thân, ngành, bó)",
-        "en": "Brachial plexus (roots, trunks, divisions, cords)",
+        "vi": "Đám rối cánh tay (rễ, thân, ngành, bó sau)",
+        "en": "Brachial plexus (roots, trunks, divisions, posterior cord)",
         "reviewed": true
       },
       "parent": "nervous-upper-limb",
@@ -6703,7 +6693,7 @@
         "brachial-plexus-roots",
         "brachial-plexus-trunks",
         "brachial-plexus-divisions",
-        "brachial-plexus-cords",
+        "brachial-plexus-posterior-cord",
         "radial-nerve",
         "ulnar-nerve",
         "median-nerve",
@@ -6713,7 +6703,7 @@
       ],
       "learningObjectives": {
         "vi": [
-          "Phân biệt thân trên, giữa, dưới và bó ngoài, trong, sau"
+          "Phân biệt rễ, thân trên/giữa/dưới, ngành trước/sau và bó sau"
         ],
         "reviewed": false
       },
@@ -6741,10 +6731,10 @@
       },
       "data": {
         "status": "live",
-        "partial": false,
+        "partial": true,
         "existingViewId": "brachial-plexus",
         "borrowedFromSystem": null,
-        "note": null
+        "note": "Bó ngoài/trong không có lưới riêng (science-editor 2026-10-19)."
       },
       "phase": 6,
       "priority": "done"
@@ -6753,12 +6743,12 @@
       "id": "brachial-plexus-roots",
       "viewId": "brachial-plexus-roots",
       "section": "I",
-      "kind": "region",
+      "kind": "structure",
       "level": 5,
       "name": {
         "vi": "Rễ đám rối cánh tay",
         "en": "Roots of the brachial plexus",
-        "reviewed": false
+        "reviewed": true
       },
       "parent": "brachial-plexus",
       "children": [],
@@ -6779,9 +6769,7 @@
           "thumbnailFill": 0.86
         },
         "display": "layered",
-        "context": [
-          "phần đám rối còn lại ghost"
-        ]
+        "context": []
       },
       "url": {
         "vi": "/vi/human-atlas?view=brachial-plexus-roots",
@@ -6793,25 +6781,25 @@
         "direction": "front"
       },
       "data": {
-        "status": "buildable",
+        "status": "live",
         "partial": false,
-        "existingViewId": null,
+        "existingViewId": "brachial-plexus-roots",
         "borrowedFromSystem": null,
         "note": null
       },
       "phase": 6,
-      "priority": "P2"
+      "priority": "done"
     },
     {
       "id": "brachial-plexus-trunks",
       "viewId": "brachial-plexus-trunks",
       "section": "I",
-      "kind": "region",
+      "kind": "structure",
       "level": 5,
       "name": {
-        "vi": "Thân đám rối cánh tay",
-        "en": "Trunks of the brachial plexus",
-        "reviewed": false
+        "vi": "Thân trên, giữa và dưới của đám rối cánh tay",
+        "en": "Superior, middle and inferior trunks of the brachial plexus",
+        "reviewed": true
       },
       "parent": "brachial-plexus",
       "children": [],
@@ -6832,9 +6820,7 @@
           "thumbnailFill": 0.86
         },
         "display": "layered",
-        "context": [
-          "phần đám rối còn lại ghost"
-        ]
+        "context": []
       },
       "url": {
         "vi": "/vi/human-atlas?view=brachial-plexus-trunks",
@@ -6846,25 +6832,25 @@
         "direction": "front"
       },
       "data": {
-        "status": "buildable",
+        "status": "live",
         "partial": false,
-        "existingViewId": null,
+        "existingViewId": "brachial-plexus-trunks",
         "borrowedFromSystem": null,
         "note": null
       },
       "phase": 6,
-      "priority": "P2"
+      "priority": "done"
     },
     {
       "id": "brachial-plexus-divisions",
       "viewId": "brachial-plexus-divisions",
       "section": "I",
-      "kind": "region",
+      "kind": "structure",
       "level": 5,
       "name": {
-        "vi": "Ngành trước và sau",
-        "en": "Anterior and posterior divisions",
-        "reviewed": false
+        "vi": "Ngành trước và ngành sau của đám rối cánh tay",
+        "en": "Anterior and posterior divisions of the brachial plexus",
+        "reviewed": true
       },
       "parent": "brachial-plexus",
       "children": [],
@@ -6885,9 +6871,7 @@
           "thumbnailFill": 0.86
         },
         "display": "layered",
-        "context": [
-          "phần đám rối còn lại ghost"
-        ]
+        "context": []
       },
       "url": {
         "vi": "/vi/human-atlas?view=brachial-plexus-divisions",
@@ -6899,36 +6883,36 @@
         "direction": "front"
       },
       "data": {
-        "status": "buildable",
+        "status": "live",
         "partial": false,
-        "existingViewId": null,
+        "existingViewId": "brachial-plexus-divisions",
         "borrowedFromSystem": null,
         "note": null
       },
       "phase": 6,
-      "priority": "P2"
+      "priority": "done"
     },
     {
-      "id": "brachial-plexus-cords",
-      "viewId": "brachial-plexus-cords",
+      "id": "brachial-plexus-posterior-cord",
+      "viewId": "brachial-plexus-posterior-cord",
       "section": "I",
-      "kind": "region",
+      "kind": "structure",
       "level": 5,
       "name": {
-        "vi": "Bó đám rối cánh tay",
-        "en": "Cords of the brachial plexus",
-        "reviewed": false
+        "vi": "Bó sau đám rối cánh tay",
+        "en": "Posterior cord of the brachial plexus",
+        "reviewed": true
       },
       "parent": "brachial-plexus",
       "children": [],
       "learningObjectives": {
         "vi": [
-          "Xác định bó đám rối cánh tay trong sơ đồ đám rối"
+          "Xác định bó sau đám rối cánh tay trong sơ đồ đám rối"
         ],
         "reviewed": false
       },
       "structures3d": [
-        "posterior cord (ZA chỉ có bó sau riêng)"
+        "posterior cord"
       ],
       "view": {
         "direction": "front",
@@ -6938,13 +6922,11 @@
           "thumbnailFill": 0.86
         },
         "display": "layered",
-        "context": [
-          "phần đám rối còn lại ghost"
-        ]
+        "context": []
       },
       "url": {
-        "vi": "/vi/human-atlas?view=brachial-plexus-cords",
-        "en": "/en/human-atlas?view=brachial-plexus-cords"
+        "vi": "/vi/human-atlas?view=brachial-plexus-posterior-cord",
+        "en": "/en/human-atlas?view=brachial-plexus-posterior-cord"
       },
       "thumbnail": {
         "source": "auto-capture",
@@ -6952,14 +6934,14 @@
         "direction": "front"
       },
       "data": {
-        "status": "buildable",
-        "partial": true,
-        "existingViewId": null,
+        "status": "live",
+        "partial": false,
+        "existingViewId": "brachial-plexus-posterior-cord",
         "borrowedFromSystem": null,
-        "note": "ZA chỉ tách riêng bó sau; bó ngoài/trong không có mảnh riêng → partial."
+        "note": "ZA chỉ tách riêng bó sau; bó ngoài/trong nằm trong lưới dây giữa/trụ (ngành trước dừng đúng chỗ hai dây bắt đầu) → cấu trúc mang tên bó sau."
       },
       "phase": 6,
-      "priority": "P2"
+      "priority": "done"
     },
     {
       "id": "brachial-plexus-collaterals",
@@ -7019,9 +7001,9 @@
       "kind": "group",
       "level": 4,
       "name": {
-        "vi": "Đám rối thắt lưng",
-        "en": "Lumbar plexus",
-        "reviewed": false
+        "vi": "Các nhánh của đám rối thắt lưng",
+        "en": "Branches of the lumbar plexus",
+        "reviewed": true
       },
       "parent": "nervous-lower-limb",
       "children": [
@@ -7065,14 +7047,14 @@
         "direction": "front"
       },
       "data": {
-        "status": "buildable",
+        "status": "live",
         "partial": true,
-        "existingViewId": null,
+        "existingViewId": "lumbar-plexus",
         "borrowedFromSystem": null,
         "note": "Chỉ có nhánh, không có thân đám rối trong cơ thắt lưng lớn → partial. Hiện gộp trong `nervous-lower-limb`."
       },
       "phase": 6,
-      "priority": "P2"
+      "priority": "done"
     },
     {
       "id": "lumbar-plexus-branches",
@@ -7183,9 +7165,9 @@
       "kind": "group",
       "level": 4,
       "name": {
-        "vi": "Đám rối cùng",
-        "en": "Sacral plexus",
-        "reviewed": false
+        "vi": "Các nhánh của đám rối cùng",
+        "en": "Branches of the sacral plexus",
+        "reviewed": true
       },
       "parent": "nervous-lower-limb",
       "children": [
@@ -7227,14 +7209,14 @@
         "direction": "back"
       },
       "data": {
-        "status": "buildable",
+        "status": "live",
         "partial": true,
-        "existingViewId": null,
+        "existingViewId": "sacral-plexus",
         "borrowedFromSystem": null,
         "note": "Chỉ có nhánh, không có thân đám rối trên cơ hình lê → partial."
       },
       "phase": 6,
-      "priority": "P2"
+      "priority": "done"
     },
     {
       "id": "sacral-plexus-branches",
@@ -7453,7 +7435,13 @@
       },
       "parent": "brachial-plexus",
       "children": [
-        "radial-nerve-branches"
+        "radial-nerve-trunk",
+        "radial-nerve-muscular-branches",
+        "radial-nerve-cutaneous-branches",
+        "radial-nerve-superficial-branch",
+        "radial-nerve-deep-branch",
+        "posterior-interosseous-nerve",
+        "radial-nerve-dorsal-digital-branches"
       ],
       "learningObjectives": {
         "vi": [
@@ -7511,7 +7499,14 @@
       },
       "parent": "brachial-plexus",
       "children": [
-        "ulnar-nerve-branches"
+        "ulnar-nerve-trunk",
+        "ulnar-nerve-muscular-branches",
+        "ulnar-nerve-palmar-branch",
+        "ulnar-nerve-dorsal-branch",
+        "ulnar-nerve-superficial-branch",
+        "ulnar-nerve-deep-branch",
+        "ulnar-nerve-palmar-digital-branches",
+        "ulnar-nerve-dorsal-digital-branches"
       ],
       "learningObjectives": {
         "vi": [
@@ -7569,7 +7564,12 @@
       },
       "parent": "brachial-plexus",
       "children": [
-        "median-nerve-branches"
+        "median-nerve-trunk",
+        "anterior-interosseous-nerve",
+        "median-nerve-muscular-branches",
+        "median-nerve-palmar-branch",
+        "median-nerve-digital-branches",
+        "median-ulnar-communicating-branch"
       ],
       "learningObjectives": {
         "vi": [
@@ -7627,6 +7627,7 @@
       },
       "parent": "nervous-sciatic",
       "children": [
+        "tibial-nerve-trunk",
         "plantar-nerves"
       ],
       "learningObjectives": {
@@ -7979,26 +7980,26 @@
       "priority": "done"
     },
     {
-      "id": "median-nerve-branches",
-      "viewId": "median-nerve-branches",
+      "id": "median-nerve-trunk",
+      "viewId": "median-nerve-trunk",
       "section": "J",
-      "kind": "region",
+      "kind": "structure",
       "level": 6,
       "name": {
-        "vi": "Nhánh thần kinh giữa ở bàn tay",
-        "en": "Branches of the median nerve in the hand",
-        "reviewed": false
+        "vi": "Thân thần kinh giữa",
+        "en": "Median nerve trunk",
+        "reviewed": true
       },
       "parent": "median-nerve",
       "children": [],
       "learningObjectives": {
         "vi": [
-          "Phân biệt các nhánh: nhánh thần kinh giữa ở bàn tay"
+          "Theo thân dây từ đám rối tới nơi chia nhánh tận"
         ],
         "reviewed": false
       },
       "structures3d": [
-        "palmar branch, common/proper palmar digital branches, muscular branches of median nerve"
+        "rule hiện có của `median-nerve-trunk`"
       ],
       "view": {
         "direction": "front",
@@ -8009,12 +8010,12 @@
         },
         "display": "layered",
         "context": [
-          "xương bàn tay/chân ghost"
+          "xương chi ghost"
         ]
       },
       "url": {
-        "vi": "/vi/human-atlas?view=median-nerve-branches",
-        "en": "/en/human-atlas?view=median-nerve-branches"
+        "vi": "/vi/human-atlas?view=median-nerve-trunk",
+        "en": "/en/human-atlas?view=median-nerve-trunk"
       },
       "thumbnail": {
         "source": "auto-capture",
@@ -8022,36 +8023,301 @@
         "direction": "front"
       },
       "data": {
-        "status": "buildable",
+        "status": "live",
         "partial": false,
-        "existingViewId": null,
+        "existingViewId": "median-nerve-trunk",
         "borrowedFromSystem": null,
         "note": null
       },
       "phase": 7,
-      "priority": "P2"
+      "priority": "done"
     },
     {
-      "id": "ulnar-nerve-branches",
-      "viewId": "ulnar-nerve-branches",
+      "id": "anterior-interosseous-nerve",
+      "viewId": "anterior-interosseous-nerve",
       "section": "J",
-      "kind": "region",
+      "kind": "structure",
       "level": 6,
       "name": {
-        "vi": "Nhánh nông, sâu và mu tay của thần kinh trụ",
-        "en": "Superficial, deep and dorsal branches of the ulnar nerve",
+        "vi": "Thần kinh gian cốt trước",
+        "en": "Anterior interosseous nerve",
+        "reviewed": true
+      },
+      "parent": "median-nerve",
+      "children": [],
+      "learningObjectives": {
+        "vi": [
+          "Xác định nơi tách và vùng chi phối của nhánh"
+        ],
         "reviewed": false
+      },
+      "structures3d": [
+        "rule hiện có của `anterior-interosseous-nerve`"
+      ],
+      "view": {
+        "direction": "front",
+        "zoom": {
+          "level": "detail",
+          "cameraFill": 0.9,
+          "thumbnailFill": 0.86
+        },
+        "display": "layered",
+        "context": [
+          "xương chi ghost"
+        ]
+      },
+      "url": {
+        "vi": "/vi/human-atlas?view=anterior-interosseous-nerve",
+        "en": "/en/human-atlas?view=anterior-interosseous-nerve"
+      },
+      "thumbnail": {
+        "source": "auto-capture",
+        "from": "model",
+        "direction": "front"
+      },
+      "data": {
+        "status": "live",
+        "partial": false,
+        "existingViewId": "anterior-interosseous-nerve",
+        "borrowedFromSystem": null,
+        "note": null
+      },
+      "phase": 7,
+      "priority": "done"
+    },
+    {
+      "id": "median-nerve-muscular-branches",
+      "viewId": "median-nerve-muscular-branches",
+      "section": "J",
+      "kind": "structure",
+      "level": 6,
+      "name": {
+        "vi": "Các nhánh cơ của thần kinh giữa",
+        "en": "Muscular branches of the median nerve",
+        "reviewed": true
+      },
+      "parent": "median-nerve",
+      "children": [],
+      "learningObjectives": {
+        "vi": [
+          "Xác định nơi tách và vùng chi phối của nhánh"
+        ],
+        "reviewed": false
+      },
+      "structures3d": [
+        "rule hiện có của `median-nerve-muscular-branches`"
+      ],
+      "view": {
+        "direction": "front",
+        "zoom": {
+          "level": "detail",
+          "cameraFill": 0.9,
+          "thumbnailFill": 0.86
+        },
+        "display": "layered",
+        "context": [
+          "xương chi ghost"
+        ]
+      },
+      "url": {
+        "vi": "/vi/human-atlas?view=median-nerve-muscular-branches",
+        "en": "/en/human-atlas?view=median-nerve-muscular-branches"
+      },
+      "thumbnail": {
+        "source": "auto-capture",
+        "from": "model",
+        "direction": "front"
+      },
+      "data": {
+        "status": "live",
+        "partial": false,
+        "existingViewId": "median-nerve-muscular-branches",
+        "borrowedFromSystem": null,
+        "note": null
+      },
+      "phase": 7,
+      "priority": "done"
+    },
+    {
+      "id": "median-nerve-palmar-branch",
+      "viewId": "median-nerve-palmar-branch",
+      "section": "J",
+      "kind": "structure",
+      "level": 6,
+      "name": {
+        "vi": "Nhánh gan tay của thần kinh giữa",
+        "en": "Palmar branch of the median nerve",
+        "reviewed": true
+      },
+      "parent": "median-nerve",
+      "children": [],
+      "learningObjectives": {
+        "vi": [
+          "Xác định nơi tách và vùng chi phối của nhánh"
+        ],
+        "reviewed": false
+      },
+      "structures3d": [
+        "rule hiện có của `median-nerve-palmar-branch`"
+      ],
+      "view": {
+        "direction": "front",
+        "zoom": {
+          "level": "detail",
+          "cameraFill": 0.9,
+          "thumbnailFill": 0.86
+        },
+        "display": "layered",
+        "context": [
+          "xương chi ghost"
+        ]
+      },
+      "url": {
+        "vi": "/vi/human-atlas?view=median-nerve-palmar-branch",
+        "en": "/en/human-atlas?view=median-nerve-palmar-branch"
+      },
+      "thumbnail": {
+        "source": "auto-capture",
+        "from": "model",
+        "direction": "front"
+      },
+      "data": {
+        "status": "live",
+        "partial": false,
+        "existingViewId": "median-nerve-palmar-branch",
+        "borrowedFromSystem": null,
+        "note": null
+      },
+      "phase": 7,
+      "priority": "done"
+    },
+    {
+      "id": "median-nerve-digital-branches",
+      "viewId": "median-nerve-digital-branches",
+      "section": "J",
+      "kind": "structure",
+      "level": 6,
+      "name": {
+        "vi": "Các nhánh gan ngón tay chung và riêng của thần kinh giữa",
+        "en": "Common and proper palmar digital branches of the median nerve",
+        "reviewed": true
+      },
+      "parent": "median-nerve",
+      "children": [],
+      "learningObjectives": {
+        "vi": [
+          "Xác định nơi tách và vùng chi phối của nhánh"
+        ],
+        "reviewed": false
+      },
+      "structures3d": [
+        "rule hiện có của `median-nerve-digital-branches`"
+      ],
+      "view": {
+        "direction": "front",
+        "zoom": {
+          "level": "detail",
+          "cameraFill": 0.9,
+          "thumbnailFill": 0.86
+        },
+        "display": "layered",
+        "context": [
+          "xương chi ghost"
+        ]
+      },
+      "url": {
+        "vi": "/vi/human-atlas?view=median-nerve-digital-branches",
+        "en": "/en/human-atlas?view=median-nerve-digital-branches"
+      },
+      "thumbnail": {
+        "source": "auto-capture",
+        "from": "model",
+        "direction": "front"
+      },
+      "data": {
+        "status": "live",
+        "partial": false,
+        "existingViewId": "median-nerve-digital-branches",
+        "borrowedFromSystem": null,
+        "note": null
+      },
+      "phase": 7,
+      "priority": "done"
+    },
+    {
+      "id": "median-ulnar-communicating-branch",
+      "viewId": "median-ulnar-communicating-branch",
+      "section": "J",
+      "kind": "structure",
+      "level": 6,
+      "name": {
+        "vi": "Nhánh nối thần kinh giữa với thần kinh trụ",
+        "en": "Communicating branch of the median nerve with the ulnar nerve",
+        "reviewed": true
+      },
+      "parent": "median-nerve",
+      "children": [],
+      "learningObjectives": {
+        "vi": [
+          "Xác định nơi tách và vùng chi phối của nhánh"
+        ],
+        "reviewed": false
+      },
+      "structures3d": [
+        "rule hiện có của `median-ulnar-communicating-branch`"
+      ],
+      "view": {
+        "direction": "front",
+        "zoom": {
+          "level": "detail",
+          "cameraFill": 0.9,
+          "thumbnailFill": 0.86
+        },
+        "display": "layered",
+        "context": [
+          "xương chi ghost"
+        ]
+      },
+      "url": {
+        "vi": "/vi/human-atlas?view=median-ulnar-communicating-branch",
+        "en": "/en/human-atlas?view=median-ulnar-communicating-branch"
+      },
+      "thumbnail": {
+        "source": "auto-capture",
+        "from": "model",
+        "direction": "front"
+      },
+      "data": {
+        "status": "live",
+        "partial": false,
+        "existingViewId": "median-ulnar-communicating-branch",
+        "borrowedFromSystem": null,
+        "note": null
+      },
+      "phase": 7,
+      "priority": "done"
+    },
+    {
+      "id": "ulnar-nerve-trunk",
+      "viewId": "ulnar-nerve-trunk",
+      "section": "J",
+      "kind": "structure",
+      "level": 6,
+      "name": {
+        "vi": "Thân thần kinh trụ",
+        "en": "Ulnar nerve trunk",
+        "reviewed": true
       },
       "parent": "ulnar-nerve",
       "children": [],
       "learningObjectives": {
         "vi": [
-          "Phân biệt các nhánh: nhánh nông, sâu và mu tay của thần kinh trụ"
+          "Theo thân dây từ đám rối tới nơi chia nhánh tận"
         ],
         "reviewed": false
       },
       "structures3d": [
-        "superficial/deep/dorsal/palmar branch, digital branches of ulnar nerve"
+        "rule hiện có của `ulnar-nerve-trunk`"
       ],
       "view": {
         "direction": "front",
@@ -8062,12 +8328,12 @@
         },
         "display": "layered",
         "context": [
-          "xương bàn tay/chân ghost"
+          "xương chi ghost"
         ]
       },
       "url": {
-        "vi": "/vi/human-atlas?view=ulnar-nerve-branches",
-        "en": "/en/human-atlas?view=ulnar-nerve-branches"
+        "vi": "/vi/human-atlas?view=ulnar-nerve-trunk",
+        "en": "/en/human-atlas?view=ulnar-nerve-trunk"
       },
       "thumbnail": {
         "source": "auto-capture",
@@ -8075,36 +8341,778 @@
         "direction": "front"
       },
       "data": {
-        "status": "buildable",
+        "status": "live",
         "partial": false,
-        "existingViewId": null,
+        "existingViewId": "ulnar-nerve-trunk",
         "borrowedFromSystem": null,
         "note": null
       },
       "phase": 7,
-      "priority": "P2"
+      "priority": "done"
     },
     {
-      "id": "radial-nerve-branches",
-      "viewId": "radial-nerve-branches",
+      "id": "ulnar-nerve-muscular-branches",
+      "viewId": "ulnar-nerve-muscular-branches",
       "section": "J",
-      "kind": "region",
+      "kind": "structure",
       "level": 6,
       "name": {
-        "vi": "Nhánh nông, nhánh sâu và gian cốt sau",
-        "en": "Superficial, deep and posterior interosseous branches",
+        "vi": "Các nhánh cơ của thần kinh trụ",
+        "en": "Muscular branches of the ulnar nerve",
+        "reviewed": true
+      },
+      "parent": "ulnar-nerve",
+      "children": [],
+      "learningObjectives": {
+        "vi": [
+          "Xác định nơi tách và vùng chi phối của nhánh"
+        ],
         "reviewed": false
+      },
+      "structures3d": [
+        "rule hiện có của `ulnar-nerve-muscular-branches`"
+      ],
+      "view": {
+        "direction": "front",
+        "zoom": {
+          "level": "detail",
+          "cameraFill": 0.9,
+          "thumbnailFill": 0.86
+        },
+        "display": "layered",
+        "context": [
+          "xương chi ghost"
+        ]
+      },
+      "url": {
+        "vi": "/vi/human-atlas?view=ulnar-nerve-muscular-branches",
+        "en": "/en/human-atlas?view=ulnar-nerve-muscular-branches"
+      },
+      "thumbnail": {
+        "source": "auto-capture",
+        "from": "model",
+        "direction": "front"
+      },
+      "data": {
+        "status": "live",
+        "partial": false,
+        "existingViewId": "ulnar-nerve-muscular-branches",
+        "borrowedFromSystem": null,
+        "note": null
+      },
+      "phase": 7,
+      "priority": "done"
+    },
+    {
+      "id": "ulnar-nerve-palmar-branch",
+      "viewId": "ulnar-nerve-palmar-branch",
+      "section": "J",
+      "kind": "structure",
+      "level": 6,
+      "name": {
+        "vi": "Nhánh gan tay của thần kinh trụ",
+        "en": "Palmar branch of the ulnar nerve",
+        "reviewed": true
+      },
+      "parent": "ulnar-nerve",
+      "children": [],
+      "learningObjectives": {
+        "vi": [
+          "Xác định nơi tách và vùng chi phối của nhánh"
+        ],
+        "reviewed": false
+      },
+      "structures3d": [
+        "rule hiện có của `ulnar-nerve-palmar-branch`"
+      ],
+      "view": {
+        "direction": "front",
+        "zoom": {
+          "level": "detail",
+          "cameraFill": 0.9,
+          "thumbnailFill": 0.86
+        },
+        "display": "layered",
+        "context": [
+          "xương chi ghost"
+        ]
+      },
+      "url": {
+        "vi": "/vi/human-atlas?view=ulnar-nerve-palmar-branch",
+        "en": "/en/human-atlas?view=ulnar-nerve-palmar-branch"
+      },
+      "thumbnail": {
+        "source": "auto-capture",
+        "from": "model",
+        "direction": "front"
+      },
+      "data": {
+        "status": "live",
+        "partial": false,
+        "existingViewId": "ulnar-nerve-palmar-branch",
+        "borrowedFromSystem": null,
+        "note": null
+      },
+      "phase": 7,
+      "priority": "done"
+    },
+    {
+      "id": "ulnar-nerve-dorsal-branch",
+      "viewId": "ulnar-nerve-dorsal-branch",
+      "section": "J",
+      "kind": "structure",
+      "level": 6,
+      "name": {
+        "vi": "Nhánh mu tay của thần kinh trụ",
+        "en": "Dorsal branch of the ulnar nerve",
+        "reviewed": true
+      },
+      "parent": "ulnar-nerve",
+      "children": [],
+      "learningObjectives": {
+        "vi": [
+          "Xác định nơi tách và vùng chi phối của nhánh"
+        ],
+        "reviewed": false
+      },
+      "structures3d": [
+        "rule hiện có của `ulnar-nerve-dorsal-branch`"
+      ],
+      "view": {
+        "direction": "back",
+        "zoom": {
+          "level": "detail",
+          "cameraFill": 0.9,
+          "thumbnailFill": 0.86
+        },
+        "display": "layered",
+        "context": [
+          "xương chi ghost"
+        ]
+      },
+      "url": {
+        "vi": "/vi/human-atlas?view=ulnar-nerve-dorsal-branch",
+        "en": "/en/human-atlas?view=ulnar-nerve-dorsal-branch"
+      },
+      "thumbnail": {
+        "source": "auto-capture",
+        "from": "model",
+        "direction": "back"
+      },
+      "data": {
+        "status": "live",
+        "partial": false,
+        "existingViewId": "ulnar-nerve-dorsal-branch",
+        "borrowedFromSystem": null,
+        "note": null
+      },
+      "phase": 7,
+      "priority": "done"
+    },
+    {
+      "id": "ulnar-nerve-superficial-branch",
+      "viewId": "ulnar-nerve-superficial-branch",
+      "section": "J",
+      "kind": "structure",
+      "level": 6,
+      "name": {
+        "vi": "Nhánh nông của thần kinh trụ",
+        "en": "Superficial branch of the ulnar nerve",
+        "reviewed": true
+      },
+      "parent": "ulnar-nerve",
+      "children": [],
+      "learningObjectives": {
+        "vi": [
+          "Xác định nơi tách và vùng chi phối của nhánh"
+        ],
+        "reviewed": false
+      },
+      "structures3d": [
+        "rule hiện có của `ulnar-nerve-superficial-branch`"
+      ],
+      "view": {
+        "direction": "front",
+        "zoom": {
+          "level": "detail",
+          "cameraFill": 0.9,
+          "thumbnailFill": 0.86
+        },
+        "display": "layered",
+        "context": [
+          "xương chi ghost"
+        ]
+      },
+      "url": {
+        "vi": "/vi/human-atlas?view=ulnar-nerve-superficial-branch",
+        "en": "/en/human-atlas?view=ulnar-nerve-superficial-branch"
+      },
+      "thumbnail": {
+        "source": "auto-capture",
+        "from": "model",
+        "direction": "front"
+      },
+      "data": {
+        "status": "live",
+        "partial": false,
+        "existingViewId": "ulnar-nerve-superficial-branch",
+        "borrowedFromSystem": null,
+        "note": null
+      },
+      "phase": 7,
+      "priority": "done"
+    },
+    {
+      "id": "ulnar-nerve-deep-branch",
+      "viewId": "ulnar-nerve-deep-branch",
+      "section": "J",
+      "kind": "structure",
+      "level": 6,
+      "name": {
+        "vi": "Nhánh sâu của thần kinh trụ",
+        "en": "Deep branch of the ulnar nerve",
+        "reviewed": true
+      },
+      "parent": "ulnar-nerve",
+      "children": [],
+      "learningObjectives": {
+        "vi": [
+          "Xác định nơi tách và vùng chi phối của nhánh"
+        ],
+        "reviewed": false
+      },
+      "structures3d": [
+        "rule hiện có của `ulnar-nerve-deep-branch`"
+      ],
+      "view": {
+        "direction": "front",
+        "zoom": {
+          "level": "detail",
+          "cameraFill": 0.9,
+          "thumbnailFill": 0.86
+        },
+        "display": "layered",
+        "context": [
+          "xương chi ghost"
+        ]
+      },
+      "url": {
+        "vi": "/vi/human-atlas?view=ulnar-nerve-deep-branch",
+        "en": "/en/human-atlas?view=ulnar-nerve-deep-branch"
+      },
+      "thumbnail": {
+        "source": "auto-capture",
+        "from": "model",
+        "direction": "front"
+      },
+      "data": {
+        "status": "live",
+        "partial": false,
+        "existingViewId": "ulnar-nerve-deep-branch",
+        "borrowedFromSystem": null,
+        "note": null
+      },
+      "phase": 7,
+      "priority": "done"
+    },
+    {
+      "id": "ulnar-nerve-palmar-digital-branches",
+      "viewId": "ulnar-nerve-palmar-digital-branches",
+      "section": "J",
+      "kind": "structure",
+      "level": 6,
+      "name": {
+        "vi": "Các nhánh gan ngón tay chung và riêng của thần kinh trụ",
+        "en": "Common and proper palmar digital branches of the ulnar nerve",
+        "reviewed": true
+      },
+      "parent": "ulnar-nerve",
+      "children": [],
+      "learningObjectives": {
+        "vi": [
+          "Xác định nơi tách và vùng chi phối của nhánh"
+        ],
+        "reviewed": false
+      },
+      "structures3d": [
+        "rule hiện có của `ulnar-nerve-palmar-digital-branches`"
+      ],
+      "view": {
+        "direction": "front",
+        "zoom": {
+          "level": "detail",
+          "cameraFill": 0.9,
+          "thumbnailFill": 0.86
+        },
+        "display": "layered",
+        "context": [
+          "xương chi ghost"
+        ]
+      },
+      "url": {
+        "vi": "/vi/human-atlas?view=ulnar-nerve-palmar-digital-branches",
+        "en": "/en/human-atlas?view=ulnar-nerve-palmar-digital-branches"
+      },
+      "thumbnail": {
+        "source": "auto-capture",
+        "from": "model",
+        "direction": "front"
+      },
+      "data": {
+        "status": "live",
+        "partial": false,
+        "existingViewId": "ulnar-nerve-palmar-digital-branches",
+        "borrowedFromSystem": null,
+        "note": null
+      },
+      "phase": 7,
+      "priority": "done"
+    },
+    {
+      "id": "ulnar-nerve-dorsal-digital-branches",
+      "viewId": "ulnar-nerve-dorsal-digital-branches",
+      "section": "J",
+      "kind": "structure",
+      "level": 6,
+      "name": {
+        "vi": "Các nhánh mu ngón tay của thần kinh trụ",
+        "en": "Dorsal digital branches of the ulnar nerve",
+        "reviewed": true
+      },
+      "parent": "ulnar-nerve",
+      "children": [],
+      "learningObjectives": {
+        "vi": [
+          "Xác định nơi tách và vùng chi phối của nhánh"
+        ],
+        "reviewed": false
+      },
+      "structures3d": [
+        "rule hiện có của `ulnar-nerve-dorsal-digital-branches`"
+      ],
+      "view": {
+        "direction": "back",
+        "zoom": {
+          "level": "detail",
+          "cameraFill": 0.9,
+          "thumbnailFill": 0.86
+        },
+        "display": "layered",
+        "context": [
+          "xương chi ghost"
+        ]
+      },
+      "url": {
+        "vi": "/vi/human-atlas?view=ulnar-nerve-dorsal-digital-branches",
+        "en": "/en/human-atlas?view=ulnar-nerve-dorsal-digital-branches"
+      },
+      "thumbnail": {
+        "source": "auto-capture",
+        "from": "model",
+        "direction": "back"
+      },
+      "data": {
+        "status": "live",
+        "partial": false,
+        "existingViewId": "ulnar-nerve-dorsal-digital-branches",
+        "borrowedFromSystem": null,
+        "note": null
+      },
+      "phase": 7,
+      "priority": "done"
+    },
+    {
+      "id": "radial-nerve-trunk",
+      "viewId": "radial-nerve-trunk",
+      "section": "J",
+      "kind": "structure",
+      "level": 6,
+      "name": {
+        "vi": "Thân thần kinh quay",
+        "en": "Radial nerve trunk",
+        "reviewed": true
       },
       "parent": "radial-nerve",
       "children": [],
       "learningObjectives": {
         "vi": [
-          "Phân biệt các nhánh: nhánh nông, nhánh sâu và gian cốt sau"
+          "Theo thân dây từ đám rối tới nơi chia nhánh tận"
         ],
         "reviewed": false
       },
       "structures3d": [
-        "superficial/deep branch of radial nerve, posterior interosseous nerve, dorsal digital branches"
+        "rule hiện có của `radial-nerve-trunk`"
+      ],
+      "view": {
+        "direction": "back",
+        "zoom": {
+          "level": "detail",
+          "cameraFill": 0.9,
+          "thumbnailFill": 0.86
+        },
+        "display": "layered",
+        "context": [
+          "xương chi ghost"
+        ]
+      },
+      "url": {
+        "vi": "/vi/human-atlas?view=radial-nerve-trunk",
+        "en": "/en/human-atlas?view=radial-nerve-trunk"
+      },
+      "thumbnail": {
+        "source": "auto-capture",
+        "from": "model",
+        "direction": "back"
+      },
+      "data": {
+        "status": "live",
+        "partial": false,
+        "existingViewId": "radial-nerve-trunk",
+        "borrowedFromSystem": null,
+        "note": null
+      },
+      "phase": 7,
+      "priority": "done"
+    },
+    {
+      "id": "radial-nerve-muscular-branches",
+      "viewId": "radial-nerve-muscular-branches",
+      "section": "J",
+      "kind": "structure",
+      "level": 6,
+      "name": {
+        "vi": "Các nhánh cơ của thần kinh quay",
+        "en": "Muscular branches of the radial nerve",
+        "reviewed": true
+      },
+      "parent": "radial-nerve",
+      "children": [],
+      "learningObjectives": {
+        "vi": [
+          "Xác định nơi tách và vùng chi phối của nhánh"
+        ],
+        "reviewed": false
+      },
+      "structures3d": [
+        "rule hiện có của `radial-nerve-muscular-branches`"
+      ],
+      "view": {
+        "direction": "back",
+        "zoom": {
+          "level": "detail",
+          "cameraFill": 0.9,
+          "thumbnailFill": 0.86
+        },
+        "display": "layered",
+        "context": [
+          "xương chi ghost"
+        ]
+      },
+      "url": {
+        "vi": "/vi/human-atlas?view=radial-nerve-muscular-branches",
+        "en": "/en/human-atlas?view=radial-nerve-muscular-branches"
+      },
+      "thumbnail": {
+        "source": "auto-capture",
+        "from": "model",
+        "direction": "back"
+      },
+      "data": {
+        "status": "live",
+        "partial": false,
+        "existingViewId": "radial-nerve-muscular-branches",
+        "borrowedFromSystem": null,
+        "note": null
+      },
+      "phase": 7,
+      "priority": "done"
+    },
+    {
+      "id": "radial-nerve-cutaneous-branches",
+      "viewId": "radial-nerve-cutaneous-branches",
+      "section": "J",
+      "kind": "structure",
+      "level": 6,
+      "name": {
+        "vi": "Thần kinh bì cánh tay ngoài dưới và bì cẳng tay sau",
+        "en": "Inferior lateral brachial and posterior antebrachial cutaneous nerves",
+        "reviewed": true
+      },
+      "parent": "radial-nerve",
+      "children": [],
+      "learningObjectives": {
+        "vi": [
+          "Xác định nơi tách và vùng chi phối của nhánh"
+        ],
+        "reviewed": false
+      },
+      "structures3d": [
+        "rule hiện có của `radial-nerve-cutaneous-branches`"
+      ],
+      "view": {
+        "direction": "back",
+        "zoom": {
+          "level": "detail",
+          "cameraFill": 0.9,
+          "thumbnailFill": 0.86
+        },
+        "display": "layered",
+        "context": [
+          "xương chi ghost"
+        ]
+      },
+      "url": {
+        "vi": "/vi/human-atlas?view=radial-nerve-cutaneous-branches",
+        "en": "/en/human-atlas?view=radial-nerve-cutaneous-branches"
+      },
+      "thumbnail": {
+        "source": "auto-capture",
+        "from": "model",
+        "direction": "back"
+      },
+      "data": {
+        "status": "live",
+        "partial": false,
+        "existingViewId": "radial-nerve-cutaneous-branches",
+        "borrowedFromSystem": null,
+        "note": null
+      },
+      "phase": 7,
+      "priority": "done"
+    },
+    {
+      "id": "radial-nerve-superficial-branch",
+      "viewId": "radial-nerve-superficial-branch",
+      "section": "J",
+      "kind": "structure",
+      "level": 6,
+      "name": {
+        "vi": "Nhánh nông của thần kinh quay",
+        "en": "Superficial branch of the radial nerve",
+        "reviewed": true
+      },
+      "parent": "radial-nerve",
+      "children": [],
+      "learningObjectives": {
+        "vi": [
+          "Xác định nơi tách và vùng chi phối của nhánh"
+        ],
+        "reviewed": false
+      },
+      "structures3d": [
+        "rule hiện có của `radial-nerve-superficial-branch`"
+      ],
+      "view": {
+        "direction": "back",
+        "zoom": {
+          "level": "detail",
+          "cameraFill": 0.9,
+          "thumbnailFill": 0.86
+        },
+        "display": "layered",
+        "context": [
+          "xương chi ghost"
+        ]
+      },
+      "url": {
+        "vi": "/vi/human-atlas?view=radial-nerve-superficial-branch",
+        "en": "/en/human-atlas?view=radial-nerve-superficial-branch"
+      },
+      "thumbnail": {
+        "source": "auto-capture",
+        "from": "model",
+        "direction": "back"
+      },
+      "data": {
+        "status": "live",
+        "partial": false,
+        "existingViewId": "radial-nerve-superficial-branch",
+        "borrowedFromSystem": null,
+        "note": null
+      },
+      "phase": 7,
+      "priority": "done"
+    },
+    {
+      "id": "radial-nerve-deep-branch",
+      "viewId": "radial-nerve-deep-branch",
+      "section": "J",
+      "kind": "structure",
+      "level": 6,
+      "name": {
+        "vi": "Nhánh sâu của thần kinh quay",
+        "en": "Deep branch of the radial nerve",
+        "reviewed": true
+      },
+      "parent": "radial-nerve",
+      "children": [],
+      "learningObjectives": {
+        "vi": [
+          "Xác định nơi tách và vùng chi phối của nhánh"
+        ],
+        "reviewed": false
+      },
+      "structures3d": [
+        "rule hiện có của `radial-nerve-deep-branch`"
+      ],
+      "view": {
+        "direction": "back",
+        "zoom": {
+          "level": "detail",
+          "cameraFill": 0.9,
+          "thumbnailFill": 0.86
+        },
+        "display": "layered",
+        "context": [
+          "xương chi ghost"
+        ]
+      },
+      "url": {
+        "vi": "/vi/human-atlas?view=radial-nerve-deep-branch",
+        "en": "/en/human-atlas?view=radial-nerve-deep-branch"
+      },
+      "thumbnail": {
+        "source": "auto-capture",
+        "from": "model",
+        "direction": "back"
+      },
+      "data": {
+        "status": "live",
+        "partial": false,
+        "existingViewId": "radial-nerve-deep-branch",
+        "borrowedFromSystem": null,
+        "note": null
+      },
+      "phase": 7,
+      "priority": "done"
+    },
+    {
+      "id": "posterior-interosseous-nerve",
+      "viewId": "posterior-interosseous-nerve",
+      "section": "J",
+      "kind": "structure",
+      "level": 6,
+      "name": {
+        "vi": "Thần kinh gian cốt sau",
+        "en": "Posterior interosseous nerve",
+        "reviewed": true
+      },
+      "parent": "radial-nerve",
+      "children": [],
+      "learningObjectives": {
+        "vi": [
+          "Xác định nơi tách và vùng chi phối của nhánh"
+        ],
+        "reviewed": false
+      },
+      "structures3d": [
+        "rule hiện có của `posterior-interosseous-nerve`"
+      ],
+      "view": {
+        "direction": "back",
+        "zoom": {
+          "level": "detail",
+          "cameraFill": 0.9,
+          "thumbnailFill": 0.86
+        },
+        "display": "layered",
+        "context": [
+          "xương chi ghost"
+        ]
+      },
+      "url": {
+        "vi": "/vi/human-atlas?view=posterior-interosseous-nerve",
+        "en": "/en/human-atlas?view=posterior-interosseous-nerve"
+      },
+      "thumbnail": {
+        "source": "auto-capture",
+        "from": "model",
+        "direction": "back"
+      },
+      "data": {
+        "status": "live",
+        "partial": false,
+        "existingViewId": "posterior-interosseous-nerve",
+        "borrowedFromSystem": null,
+        "note": null
+      },
+      "phase": 7,
+      "priority": "done"
+    },
+    {
+      "id": "radial-nerve-dorsal-digital-branches",
+      "viewId": "radial-nerve-dorsal-digital-branches",
+      "section": "J",
+      "kind": "structure",
+      "level": 6,
+      "name": {
+        "vi": "Các nhánh mu ngón tay của thần kinh quay",
+        "en": "Dorsal digital branches of the radial nerve",
+        "reviewed": true
+      },
+      "parent": "radial-nerve",
+      "children": [],
+      "learningObjectives": {
+        "vi": [
+          "Xác định nơi tách và vùng chi phối của nhánh"
+        ],
+        "reviewed": false
+      },
+      "structures3d": [
+        "rule hiện có của `radial-nerve-dorsal-digital-branches`"
+      ],
+      "view": {
+        "direction": "back",
+        "zoom": {
+          "level": "detail",
+          "cameraFill": 0.9,
+          "thumbnailFill": 0.86
+        },
+        "display": "layered",
+        "context": [
+          "xương chi ghost"
+        ]
+      },
+      "url": {
+        "vi": "/vi/human-atlas?view=radial-nerve-dorsal-digital-branches",
+        "en": "/en/human-atlas?view=radial-nerve-dorsal-digital-branches"
+      },
+      "thumbnail": {
+        "source": "auto-capture",
+        "from": "model",
+        "direction": "back"
+      },
+      "data": {
+        "status": "live",
+        "partial": false,
+        "existingViewId": "radial-nerve-dorsal-digital-branches",
+        "borrowedFromSystem": null,
+        "note": null
+      },
+      "phase": 7,
+      "priority": "done"
+    },
+    {
+      "id": "tibial-nerve-trunk",
+      "viewId": "tibial-nerve-trunk",
+      "section": "J",
+      "kind": "structure",
+      "level": 7,
+      "name": {
+        "vi": "Thân thần kinh chày",
+        "en": "Tibial nerve trunk",
+        "reviewed": true
+      },
+      "parent": "tibial-nerve",
+      "children": [],
+      "learningObjectives": {
+        "vi": [
+          "Theo thân dây từ đám rối tới nơi chia nhánh tận"
+        ],
+        "reviewed": false
+      },
+      "structures3d": [
+        "rule hiện có của `tibial-nerve-trunk`"
       ],
       "view": {
         "direction": "front",
@@ -8115,12 +9123,12 @@
         },
         "display": "layered",
         "context": [
-          "xương bàn tay/chân ghost"
+          "xương chi ghost"
         ]
       },
       "url": {
-        "vi": "/vi/human-atlas?view=radial-nerve-branches",
-        "en": "/en/human-atlas?view=radial-nerve-branches"
+        "vi": "/vi/human-atlas?view=tibial-nerve-trunk",
+        "en": "/en/human-atlas?view=tibial-nerve-trunk"
       },
       "thumbnail": {
         "source": "auto-capture",
@@ -8128,42 +9136,45 @@
         "direction": "front"
       },
       "data": {
-        "status": "buildable",
+        "status": "live",
         "partial": false,
-        "existingViewId": null,
+        "existingViewId": "tibial-nerve-trunk",
         "borrowedFromSystem": null,
         "note": null
       },
       "phase": 7,
-      "priority": "P2"
+      "priority": "done"
     },
     {
       "id": "plantar-nerves",
       "viewId": "plantar-nerves",
       "section": "J",
-      "kind": "region",
+      "kind": "structure",
       "level": 7,
       "name": {
         "vi": "Thần kinh gan chân trong và ngoài",
         "en": "Medial and lateral plantar nerves",
-        "reviewed": false
+        "reviewed": true
       },
       "parent": "tibial-nerve",
-      "children": [],
+      "children": [
+        "medial-plantar-nerve",
+        "lateral-plantar-nerve"
+      ],
       "learningObjectives": {
         "vi": [
-          "Phân biệt các nhánh: thần kinh gan chân trong và ngoài"
+          "Xác định nơi tách và vùng chi phối của nhánh"
         ],
         "reviewed": false
       },
       "structures3d": [
-        "medial/lateral plantar nerve + digital branches"
+        "rule hiện có của `plantar-nerves`"
       ],
       "view": {
         "direction": [
           0,
           -1,
-          0.2
+          0.3
         ],
         "zoom": {
           "level": "detail",
@@ -8172,7 +9183,7 @@
         },
         "display": "layered",
         "context": [
-          "xương bàn tay/chân ghost"
+          "xương chi ghost"
         ]
       },
       "url": {
@@ -8185,18 +9196,140 @@
         "direction": [
           0,
           -1,
-          0.2
+          0.3
         ]
       },
       "data": {
-        "status": "buildable",
+        "status": "live",
         "partial": false,
-        "existingViewId": null,
+        "existingViewId": "plantar-nerves",
         "borrowedFromSystem": null,
         "note": null
       },
       "phase": 7,
-      "priority": "P2"
+      "priority": "done"
+    },
+    {
+      "id": "medial-plantar-nerve",
+      "viewId": "medial-plantar-nerve",
+      "section": "J",
+      "kind": "structure",
+      "level": 8,
+      "name": {
+        "vi": "Thần kinh gan chân trong và các nhánh gan ngón chân",
+        "en": "Medial plantar nerve and its plantar digital branches",
+        "reviewed": true
+      },
+      "parent": "plantar-nerves",
+      "children": [],
+      "learningObjectives": {
+        "vi": [
+          "Xác định nơi tách và vùng chi phối của nhánh"
+        ],
+        "reviewed": false
+      },
+      "structures3d": [
+        "rule hiện có của `medial-plantar-nerve`"
+      ],
+      "view": {
+        "direction": [
+          0,
+          -1,
+          0.3
+        ],
+        "zoom": {
+          "level": "detail",
+          "cameraFill": 0.9,
+          "thumbnailFill": 0.86
+        },
+        "display": "layered",
+        "context": [
+          "xương chi ghost"
+        ]
+      },
+      "url": {
+        "vi": "/vi/human-atlas?view=medial-plantar-nerve",
+        "en": "/en/human-atlas?view=medial-plantar-nerve"
+      },
+      "thumbnail": {
+        "source": "auto-capture",
+        "from": "model",
+        "direction": [
+          0,
+          -1,
+          0.3
+        ]
+      },
+      "data": {
+        "status": "live",
+        "partial": false,
+        "existingViewId": "medial-plantar-nerve",
+        "borrowedFromSystem": null,
+        "note": null
+      },
+      "phase": 7,
+      "priority": "done"
+    },
+    {
+      "id": "lateral-plantar-nerve",
+      "viewId": "lateral-plantar-nerve",
+      "section": "J",
+      "kind": "structure",
+      "level": 8,
+      "name": {
+        "vi": "Thần kinh gan chân ngoài và các nhánh gan ngón chân",
+        "en": "Lateral plantar nerve and its plantar digital branches",
+        "reviewed": true
+      },
+      "parent": "plantar-nerves",
+      "children": [],
+      "learningObjectives": {
+        "vi": [
+          "Xác định nơi tách và vùng chi phối của nhánh"
+        ],
+        "reviewed": false
+      },
+      "structures3d": [
+        "rule hiện có của `lateral-plantar-nerve`"
+      ],
+      "view": {
+        "direction": [
+          0,
+          -1,
+          0.3
+        ],
+        "zoom": {
+          "level": "detail",
+          "cameraFill": 0.9,
+          "thumbnailFill": 0.86
+        },
+        "display": "layered",
+        "context": [
+          "xương chi ghost"
+        ]
+      },
+      "url": {
+        "vi": "/vi/human-atlas?view=lateral-plantar-nerve",
+        "en": "/en/human-atlas?view=lateral-plantar-nerve"
+      },
+      "thumbnail": {
+        "source": "auto-capture",
+        "from": "model",
+        "direction": [
+          0,
+          -1,
+          0.3
+        ]
+      },
+      "data": {
+        "status": "live",
+        "partial": false,
+        "existingViewId": "lateral-plantar-nerve",
+        "borrowedFromSystem": null,
+        "note": null
+      },
+      "phase": 7,
+      "priority": "done"
     },
     {
       "id": "sec-sensory-organs",
