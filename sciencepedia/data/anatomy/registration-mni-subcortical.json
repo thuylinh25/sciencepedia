@@ -1,0 +1,144 @@
+{
+ "reuses": "registration-allen-hra.json — matrix_4x3 + regional 'midbrain both' (CIT168), 'hypothalamus both' (Neudorfer)",
+ "templates": {
+  "allen": "ICBM 2009b NLin Sym",
+  "cit168": "MNI152 NLin 2009c Asym (v1.1.0)",
+  "neudorfer": "MNI152 2009b"
+ },
+ "cross_atlas_centroid_offset_mni_mm": {
+  "substantia nigra": {
+   "cit168_vs_allen_mm": 0.6,
+   "neudorfer_vs_allen_mm": 1.03
+  },
+  "red nucleus": {
+   "cit168_vs_allen_mm": 0.4,
+   "neudorfer_vs_allen_mm": 1.79
+  },
+  "subthalamic nucleus": {
+   "cit168_vs_allen_mm": 2.14,
+   "neudorfer_vs_allen_mm": 2.42
+  }
+ },
+ "containment_after_refinement": {
+  "cit168 left compacta": {
+   "outside_fraction": 0.0,
+   "max_protrusion_mm": 0.0
+  },
+  "cit168 right compacta": {
+   "outside_fraction": 0.0,
+   "max_protrusion_mm": 0.0
+  },
+  "cit168 left reticulata": {
+   "outside_fraction": 0.005,
+   "max_protrusion_mm": 2.01
+  },
+  "cit168 right reticulata": {
+   "outside_fraction": 0.003,
+   "max_protrusion_mm": 1.45
+  },
+  "neudorfer right medial-preoptic-nucleus": {
+   "outside_fraction": 0.0,
+   "max_protrusion_mm": 0.0
+  },
+  "neudorfer left medial-preoptic-nucleus": {
+   "outside_fraction": 0.0,
+   "max_protrusion_mm": 0.0
+  },
+  "neudorfer right anterior-hypothalamic-area": {
+   "outside_fraction": 0.024,
+   "max_protrusion_mm": 0.75
+  },
+  "neudorfer left anterior-hypothalamic-area": {
+   "outside_fraction": 0.087,
+   "max_protrusion_mm": 1.07
+  },
+  "neudorfer right suprachiasmatic-nucleus": {
+   "outside_fraction": 0.083,
+   "max_protrusion_mm": 0.71
+  },
+  "neudorfer left suprachiasmatic-nucleus": {
+   "outside_fraction": 0.246,
+   "max_protrusion_mm": 0.62
+  },
+  "neudorfer right supraoptic-nucleus": {
+   "outside_fraction": 0.099,
+   "max_protrusion_mm": 0.93
+  },
+  "neudorfer left supraoptic-nucleus": {
+   "outside_fraction": 0.408,
+   "max_protrusion_mm": 1.24
+  },
+  "neudorfer right paraventricular-nucleus": {
+   "outside_fraction": 0.253,
+   "max_protrusion_mm": 0.9
+  },
+  "neudorfer left paraventricular-nucleus": {
+   "outside_fraction": 0.0,
+   "max_protrusion_mm": 0.0
+  },
+  "neudorfer right periventricular-nucleus": {
+   "outside_fraction": 0.045,
+   "max_protrusion_mm": 0.86
+  },
+  "neudorfer left periventricular-nucleus": {
+   "outside_fraction": 0.003,
+   "max_protrusion_mm": 0.43
+  },
+  "neudorfer right dorsal-periventricular-nucleus": {
+   "outside_fraction": 0.0,
+   "max_protrusion_mm": 0.0
+  },
+  "neudorfer left dorsal-periventricular-nucleus": {
+   "outside_fraction": 0.0,
+   "max_protrusion_mm": 0.0
+  },
+  "neudorfer right ventromedial-nucleus": {
+   "outside_fraction": 0.047,
+   "max_protrusion_mm": 0.64
+  },
+  "neudorfer left ventromedial-nucleus": {
+   "outside_fraction": 0.269,
+   "max_protrusion_mm": 1.39
+  },
+  "neudorfer right dorsomedial-nucleus": {
+   "outside_fraction": 0.01,
+   "max_protrusion_mm": 0.12
+  },
+  "neudorfer left dorsomedial-nucleus": {
+   "outside_fraction": 0.016,
+   "max_protrusion_mm": 0.24
+  },
+  "neudorfer right arcuate-nucleus": {
+   "outside_fraction": 0.453,
+   "max_protrusion_mm": 1.37
+  },
+  "neudorfer left arcuate-nucleus": {
+   "outside_fraction": 0.591,
+   "max_protrusion_mm": 1.19
+  },
+  "neudorfer right lateral-hypothalamic-area": {
+   "outside_fraction": 0.173,
+   "max_protrusion_mm": 2.69
+  },
+  "neudorfer left lateral-hypothalamic-area": {
+   "outside_fraction": 0.205,
+   "max_protrusion_mm": 2.15
+  },
+  "neudorfer right posterior-hypothalamic-nucleus": {
+   "outside_fraction": 0.0,
+   "max_protrusion_mm": 0.0
+  },
+  "neudorfer left posterior-hypothalamic-nucleus": {
+   "outside_fraction": 0.04,
+   "max_protrusion_mm": 0.57
+  },
+  "neudorfer right tuberomammillary-nucleus": {
+   "outside_fraction": 0.533,
+   "max_protrusion_mm": 1.37
+  },
+  "neudorfer left tuberomammillary-nucleus": {
+   "outside_fraction": 0.707,
+   "max_protrusion_mm": 1.36
+  }
+ }
+}

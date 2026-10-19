@@ -389,6 +389,14 @@ export const GROUP_COLORS: Record<string, string> = {
   "nervous.thalamus_pulvinar": "#c9b77c",
   "nervous.thalamus_intralaminar": "#a39fd4",
   "nervous.substantia_nigra": "#5d4b54",
+  // CIT168: phần lưới nhạt hơn phần đặc (phần đặc chứa neuron dopamine sắc tố — sẫm như tên gọi).
+  "nervous.substantia_nigra_reticulata": "#9a8790",
+  // Neudorfer: một màu mỗi miền vùng dưới đồi.
+  "nervous.hypothalamus_anterior": "#c99a8f",
+  "nervous.hypothalamus_periventricular": "#8fb0c9",
+  "nervous.hypothalamus_tuberal": "#c9be8f",
+  "nervous.hypothalamus_lateral": "#a3c99a",
+  "nervous.hypothalamus_posterior": "#b49ac9",
   "nervous.subthalamic": "#c08a66",
   "nervous.cerebellar_nuclei": "#b06a78",
   "nervous.meninges": "#b5acae",

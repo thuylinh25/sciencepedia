@@ -479,6 +479,35 @@
     ]
    ],
    "scale": 1.0094
+  },
+  "hypothalamus both": {
+   "matrix": [
+    [
+     0.797082617,
+     0.019886574,
+     0.039791467,
+     -0.032136343
+    ],
+    [
+     -0.006527378,
+     0.758664682,
+     -0.248404565,
+     0.387708717
+    ],
+    [
+     -0.044002614,
+     0.247693276,
+     0.757648564,
+     -0.399766295
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "scale": 0.7983
   }
  },
  "part_regions": {
@@ -504,8 +533,6 @@
   "right centromedian-nucleus": "thalamus right",
   "left parafascicular-nucleus": "thalamus left",
   "right parafascicular-nucleus": "thalamus right",
-  "left substantia-nigra": "midbrain both",
-  "right substantia-nigra": "midbrain both",
   "left subthalamic-nucleus": "midbrain both",
   "right subthalamic-nucleus": "midbrain both",
   "left cerebellar-deep-nuclei": "cerebellum both",
@@ -599,14 +626,6 @@
   "right parafascicular-nucleus": {
    "outside_fraction": 0.0,
    "max_protrusion_mm": 0.0
-  },
-  "left substantia-nigra": {
-   "outside_fraction": 0.006,
-   "max_protrusion_mm": 1.17
-  },
-  "right substantia-nigra": {
-   "outside_fraction": 0.004,
-   "max_protrusion_mm": 2.08
   },
   "left cerebellar-deep-nuclei": {
    "outside_fraction": 0.0,

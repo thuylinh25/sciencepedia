@@ -42,6 +42,8 @@ const MODEL_SOURCE_URL = ATLAS_PROVENANCE.model.sourceUrl;
 const LYMPH_SOURCE_URL = ATLAS_PROVENANCE.lymphatic.sourceUrl;
 const ZA_SOURCE_URL = ATLAS_PROVENANCE.zAnatomy.sourceUrl;
 const ALLEN_SOURCE_URL = ATLAS_PROVENANCE.allenHra.sourceUrl;
+const CIT168_SOURCE_URL = ATLAS_PROVENANCE.cit168.sourceUrl;
+const NEUDORFER_SOURCE_URL = ATLAS_PROVENANCE.neudorfer.sourceUrl;
 
 /**
  * Bảng chi tiết của cấu trúc đang chọn.
@@ -85,6 +87,8 @@ export function StructureDetail({
   const fromUmcg = parts.some((p) => SUPPLEMENT_SOURCE[p.id] === "umcg-lymphatic");
   const fromZa = parts.some((p) => SUPPLEMENT_SOURCE[p.id] === "z-anatomy");
   const fromAllen = parts.some((p) => SUPPLEMENT_SOURCE[p.id] === "allen-hra");
+  const fromCit168 = parts.some((p) => SUPPLEMENT_SOURCE[p.id] === "cit168");
+  const fromNeudorfer = parts.some((p) => SUPPLEMENT_SOURCE[p.id] === "neudorfer");
   const fromBp3d = parts.length === 0 || parts.some((p) => !SUPPLEMENT_SOURCE[p.id]);
   const title = useRef<HTMLHeadingElement>(null);
   const titleId = useId();
@@ -417,6 +421,8 @@ export function StructureDetail({
           {(fromUmcg ? [[LYMPH_SOURCE_URL, t("detail.modelSourceLymph")]] : [])
             .concat(fromZa ? [[ZA_SOURCE_URL, t("detail.modelSourceZa")]] : [])
             .concat(fromAllen ? [[ALLEN_SOURCE_URL, t("detail.modelSourceAllen")]] : [])
+            .concat(fromCit168 ? [[CIT168_SOURCE_URL, t("detail.modelSourceCit168")]] : [])
+            .concat(fromNeudorfer ? [[NEUDORFER_SOURCE_URL, t("detail.modelSourceNeudorfer")]] : [])
             .concat(
             fromBp3d ? [[MODEL_SOURCE_URL, t("detail.modelSource")]] : [],
           ).map(([href, label]) => (

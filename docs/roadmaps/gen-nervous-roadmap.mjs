@@ -320,9 +320,17 @@ N("hypothalamus", "diencephalon", "E", "structure", "Vùng dưới đồi", "Hyp
   status: "buildable", dir: "side", zoom: "structure", mode: "layered", context: ["THALAMUS", "pituitary (mượn endocrine)"], focus: ["Hypothalamus", "Tuber cinereum"],
   obj: ["Định vị vùng dưới đồi dưới đồi thị, trên tuyến yên"],
 });
-N("hypothalamic-nuclei", "hypothalamus", "E", "region", "Các nhân vùng dưới đồi", "Hypothalamic nuclei", {
-  status: "missing", obj: ["Nhận ra vùng dưới đồi gồm nhiều nhóm nhân"],
+N("nervous-hypothalamic-nuclei", "hypothalamus", "E", "group", "Các nhân vùng dưới đồi", "Hypothalamic nuclei", {
+  partial: true, dir: "side", zoom: "structure", mode: "layered", context: ["vùng dưới đồi mờ", "thể vú", "giao thoa thị giác"],
+  note: "Neudorfer 2020 (CC BY 4.0), 13 nhân, dùng lại phép căn Allen + tinh chỉnh vùng dưới đồi. Thiếu vùng trước thị bên, nhân trước thị đường giữa, nhân kẽ, nhân củ bên, nhân trên vú.",
+  obj: ["Phân biệt các miền vùng dưới đồi: trước–thị, củ, sau; dải quanh não thất và vùng bên", "Định vị nhân trên giao thoa thị ngay trên giao thoa thị giác"],
 });
+for (const [id, vi] of [
+  ["medial-preoptic-nucleus", "Nhân trước thị giữa"], ["anterior-hypothalamic-area", "Vùng dưới đồi trước"], ["suprachiasmatic-nucleus", "Nhân trên giao thoa thị"],
+  ["supraoptic-nucleus", "Nhân trên thị"], ["paraventricular-nucleus", "Nhân cạnh não thất vùng dưới đồi"], ["periventricular-nucleus", "Nhân quanh não thất vùng dưới đồi"],
+  ["dorsal-periventricular-nucleus", "Nhân quanh não thất lưng vùng dưới đồi"], ["ventromedial-nucleus", "Nhân bụng giữa vùng dưới đồi"], ["dorsomedial-nucleus", "Nhân lưng giữa vùng dưới đồi"],
+  ["arcuate-nucleus", "Nhân cung vùng dưới đồi"], ["lateral-hypothalamic-area", "Vùng dưới đồi bên"], ["posterior-hypothalamic-nucleus", "Nhân sau vùng dưới đồi"], ["tuberomammillary-nucleus", "Nhân củ – vú"],
+]) N(id, "nervous-hypothalamic-nuclei", "E", "structure", vi, vi, { dir: "side", zoom: "detail", mode: "layered", obj: [`Định vị ${vi.toLowerCase()} trong vùng dưới đồi`] });
 N("epithalamus", "diencephalon", "E", "structure", "Vùng trên đồi", "Epithalamus", {
   status: "buildable", dir: [0, 0.3, -1], zoom: "detail", mode: "layered", context: ["THALAMUS"],
   focus: ["Habenula", "Stria medullaris of thalamus", "Posterior commissure", "pineal-gland (mượn endocrine qua export)"],
@@ -630,7 +638,9 @@ N("nervous-subthalamic-nigral", "brainstem", "B", "group", "Chất đen và nhâ
   partial: true, dir: "front", zoom: "structure", mode: "layered", note: allenNote,
   obj: ["Định vị chất đen trong trung não và nhân dưới đồi thị ngay trên nó", "Liên hệ các nhân này với vòng hạch nền"],
 });
-N("substantia-nigra", "nervous-subthalamic-nigral", "B", "structure", "Chất đen", "Substantia nigra", { dir: "front", zoom: "detail", mode: "layered", obj: ["Định vị chất đen giữa cuống đại não và chỏm trung não"] });
+N("substantia-nigra", "nervous-subthalamic-nigral", "B", "structure", "Chất đen", "Substantia nigra", { dir: "front", zoom: "detail", mode: "layered", note: "CIT168 (thay Allen), hai phần.", obj: ["Định vị chất đen giữa cuống đại não và chỏm trung não"] });
+N("substantia-nigra-compacta", "substantia-nigra", "B", "structure", "Phần đặc chất đen", "Substantia nigra, pars compacta", { dir: "superior", zoom: "detail", mode: "layered", obj: ["Liên hệ phần đặc chất đen với neuron dopamine"] });
+N("substantia-nigra-reticulata", "substantia-nigra", "B", "structure", "Phần lưới chất đen", "Substantia nigra, pars reticulata", { dir: "front", zoom: "detail", mode: "layered", obj: ["Phân biệt phần lưới (phía bụng) với phần đặc"] });
 N("subthalamic-nucleus", "nervous-subthalamic-nigral", "B", "structure", "Nhân dưới đồi thị", "Subthalamic nucleus", { dir: "front", zoom: "detail", mode: "layered", obj: ["Định vị nhân dưới đồi thị dưới đồi thị, trên chất đen"] });
 N("zona-incerta", "nervous-subthalamic-nigral", "B", "structure", "Vùng bất định", "Zona incerta", { status: "missing", note: "Allen có nhãn nhưng mọi phép căn để 67–78% đỉnh lọt vào đồi thị đục — không nhập.", obj: ["Định vị vùng bất định giữa đồi thị và nhân dưới đồi thị"] });
 N("nervous-cerebellar-nuclei", "cerebellum", "B", "group", "Các nhân sâu tiểu não", "Deep cerebellar nuclei", {

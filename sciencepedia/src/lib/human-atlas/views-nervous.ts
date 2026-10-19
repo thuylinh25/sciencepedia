@@ -121,7 +121,29 @@ const A_VENTRAL_POSTERIOR_LATERAL_NUCLEUS = n(/^(left|right) ventral posterior l
 const A_VENTRAL_POSTERIOR_MEDIAL_NUCLEUS = n(/^(left|right) ventral posterior medial nucleus of thalamus$/i);
 const A_CENTROMEDIAN_NUCLEUS = n(/^(left|right) centromedian nucleus of thalamus$/i);
 const A_PARAFASCICULAR_NUCLEUS = n(/^(left|right) parafascicular nucleus of thalamus$/i);
-const A_SUBSTANTIA_NIGRA = n(/^(left|right) substantia nigra$/i);
+
+// CIT168 (CC BY 4.0, scripts/mni-subcortical.py): chất đen tách phần đặc / phần lưới — thay khối
+// chất đen một mảnh của Allen.
+const SN_COMPACTA = n(/^(left|right) pars compacta of substantia nigra$/i);
+const SN_RETICULATA = n(/^(left|right) pars reticulata of substantia nigra$/i);
+// Neudorfer 2020 (CC BY 4.0): nhân vùng dưới đồi — nằm TRONG mảnh vùng dưới đồi đục, chỉ hiện ở góc
+// nhìn riêng với vùng dưới đồi mờ (như nhân đồi thị).
+const H_MEDIAL_PREOPTIC_NUCLEUS = n(/^(left|right) medial preoptic nucleus$/i);
+const H_ANTERIOR_HYPOTHALAMIC_AREA = n(/^(left|right) anterior hypothalamic area$/i);
+const H_SUPRACHIASMATIC_NUCLEUS = n(/^(left|right) suprachiasmatic nucleus$/i);
+const H_SUPRAOPTIC_NUCLEUS = n(/^(left|right) supraoptic nucleus$/i);
+const H_PARAVENTRICULAR_NUCLEUS = n(/^(left|right) paraventricular nucleus of hypothalamus$/i);
+const H_PERIVENTRICULAR_NUCLEUS = n(/^(left|right) periventricular nucleus of hypothalamus$/i);
+const H_DORSAL_PERIVENTRICULAR_NUCLEUS = n(/^(left|right) dorsal periventricular nucleus of hypothalamus$/i);
+const H_VENTROMEDIAL_NUCLEUS = n(/^(left|right) ventromedial nucleus of hypothalamus$/i);
+const H_DORSOMEDIAL_NUCLEUS = n(/^(left|right) dorsomedial nucleus of hypothalamus$/i);
+const H_ARCUATE_NUCLEUS = n(/^(left|right) arcuate nucleus of hypothalamus$/i);
+const H_LATERAL_HYPOTHALAMIC_AREA = n(/^(left|right) lateral hypothalamic area$/i);
+const H_POSTERIOR_HYPOTHALAMIC_NUCLEUS = n(/^(left|right) posterior nucleus of hypothalamus$/i);
+const H_TUBEROMAMMILLARY_NUCLEUS = n(/^(left|right) tuberomammillary nucleus$/i);
+// Mốc cho nhân trên giao thoa thị / trên thị — cả dây thị giác thì chiếm hết khung.
+const OPTIC_CHIASM = n(/^optic chiasm$/i);
+const HYPOTHALAMIC_NUCLEI = [H_MEDIAL_PREOPTIC_NUCLEUS, H_ANTERIOR_HYPOTHALAMIC_AREA, H_SUPRACHIASMATIC_NUCLEUS, H_SUPRAOPTIC_NUCLEUS, H_PARAVENTRICULAR_NUCLEUS, H_PERIVENTRICULAR_NUCLEUS, H_DORSAL_PERIVENTRICULAR_NUCLEUS, H_VENTROMEDIAL_NUCLEUS, H_DORSOMEDIAL_NUCLEUS, H_ARCUATE_NUCLEUS, H_LATERAL_HYPOTHALAMIC_AREA, H_POSTERIOR_HYPOTHALAMIC_NUCLEUS, H_TUBEROMAMMILLARY_NUCLEUS];
 const A_SUBTHALAMIC_NUCLEUS = n(/^(left|right) subthalamic nucleus$/i);
 const A_CEREBELLAR_DEEP_NUCLEI = n(/^(left|right) cerebellar deep nuclei$/i);
 const THALAMIC_NUCLEI = [A_ANTERIOR_THALAMIC_NUCLEI, A_LATERAL_DORSAL_NUCLEUS, A_MEDIODORSAL_NUCLEUS, A_LATERAL_POSTERIOR_NUCLEUS, A_PULVINAR, A_VENTRAL_ANTERIOR_NUCLEUS, A_VENTRAL_LATERAL_NUCLEUS, A_VENTRAL_POSTERIOR_LATERAL_NUCLEUS, A_VENTRAL_POSTERIOR_MEDIAL_NUCLEUS, A_CENTROMEDIAN_NUCLEUS, A_PARAFASCICULAR_NUCLEUS];
@@ -264,10 +286,16 @@ export const NERVOUS_VIEWS: readonly AtlasViewDef[] = [
   }),
   // Vùng bất định của Allen KHÔNG nhập: mọi phép căn đều để 67–78% đỉnh lọt vào đồi thị đục (đo
   // 2026-10-19, registration-allen-hra.json) — trống hơn sai.
-  group("nervous-subthalamic-nigral", "Chất đen và nhân dưới đồi thị", "Substantia nigra and subthalamic nucleus", "front", [A_SUBSTANTIA_NIGRA, A_SUBTHALAMIC_NUCLEUS], [THALAMUS, BRAINSTEM, BASAL_NUCLEI], ["chất đen", "substantia nigra", "nhân dưới đồi thị", "hạch nền", "basal ganglia"], {
+  group("nervous-subthalamic-nigral", "Chất đen và nhân dưới đồi thị", "Substantia nigra and subthalamic nucleus", "front", [SN_COMPACTA, SN_RETICULATA, A_SUBTHALAMIC_NUCLEUS], [THALAMUS, BRAINSTEM, BASAL_NUCLEI], ["chất đen", "substantia nigra", "nhân dưới đồi thị", "hạch nền", "basal ganglia"], {
     partial: {
       vi: "Vị trí gần đúng: vẽ trên não mẫu trung bình rồi căn về não của mô hình; nhân dưới đồi thị lấn một phần vào trung não do sai số căn chỉnh, thật ra nó nằm ở gian não, ngay trên chất đen; thiếu vùng bất định",
       en: "Approximate positions: drawn on an average template brain and registered to the model's brain; the subthalamic nucleus partly overlaps the midbrain because of registration error (it actually lies in the diencephalon, just above the substantia nigra); the zona incerta is missing",
+    },
+  }),
+  group("nervous-hypothalamic-nuclei", "Các nhân vùng dưới đồi", "Hypothalamic nuclei", "side", HYPOTHALAMIC_NUCLEI, [HYPOTHALAMUS, MAMMILLARY, THALAMUS, OPTIC_CHIASM], ["nhân vùng dưới đồi", "hypothalamic nuclei", "nhân trên giao thoa thị", "nhân cạnh não thất"], {
+    partial: {
+      vi: "Vị trí gần đúng: nhân vẽ trên não mẫu trung bình rồi căn về não của mô hình. Chưa có một số nhân nhỏ: vùng trước thị bên, nhân trước thị đường giữa, các nhân kẽ vùng dưới đồi trước, nhân củ bên và nhân trên vú; thể vú hiện thành một khối, không tách nhân.",
+      en: "Approximate positions: drawn on an average template brain and registered to the model's brain. Some smaller nuclei are not included: the lateral preoptic area, median preoptic nucleus, interstitial nuclei of the anterior hypothalamus, lateral tuberal nucleus and supramammillary nucleus; the mammillary body is shown as a single block, not divided into nuclei.",
     },
   }),
   group("nervous-cerebellar-nuclei", "Các nhân sâu tiểu não", "Deep cerebellar nuclei", "back", [A_CEREBELLAR_DEEP_NUCLEI], [CEREBELLUM, BRAINSTEM], ["nhân răng", "dentate nucleus", "nhân nút", "nhân cầu", "nhân mái", "nhân sâu tiểu não"], {
@@ -364,7 +392,24 @@ export const NERVOUS_VIEWS: readonly AtlasViewDef[] = [
   { ...structure("ventral-posterior-medial-nucleus", "Nhân bụng sau giữa đồi thị", "Ventral posterior medial nucleus of thalamus", "three-quarter", A_VENTRAL_POSTERIOR_MEDIAL_NUCLEUS), context: [THALAMUS] },
   { ...structure("centromedian-nucleus", "Nhân trung tâm giữa đồi thị", "Centromedian nucleus of thalamus", "three-quarter", A_CENTROMEDIAN_NUCLEUS), context: [THALAMUS] },
   { ...structure("parafascicular-nucleus", "Nhân cạnh bó đồi thị", "Parafascicular nucleus of thalamus", "three-quarter", A_PARAFASCICULAR_NUCLEUS), context: [THALAMUS] },
-  { ...structure("substantia-nigra", "Chất đen", "Substantia nigra", "front", A_SUBSTANTIA_NIGRA, ["substantia nigra", "Parkinson"]), context: [BRAINSTEM] },
+  // Chất đen (CIT168): id `substantia-nigra` giữ nguyên cho deep link, nay gồm hai phần.
+  { ...structure("substantia-nigra", "Chất đen", "Substantia nigra", "front", n(/^(left|right) pars (compacta|reticulata) of substantia nigra$/i), ["substantia nigra", "Parkinson"]), context: [BRAINSTEM] },
+  { ...structure("substantia-nigra-compacta", "Phần đặc chất đen", "Substantia nigra, pars compacta", "superior", SN_COMPACTA, ["SNc", "pars compacta", "dopamine"]), context: [BRAINSTEM] },
+  { ...structure("substantia-nigra-reticulata", "Phần lưới chất đen", "Substantia nigra, pars reticulata", "front", SN_RETICULATA, ["SNr", "pars reticulata"]), context: [BRAINSTEM, SN_COMPACTA] },
+  // Nhân vùng dưới đồi (Neudorfer), từng nhân hai bên.
+  { ...structure("medial-preoptic-nucleus", "Nhân trước thị giữa", "Medial preoptic nucleus", "side", H_MEDIAL_PREOPTIC_NUCLEUS), context: [HYPOTHALAMUS, MAMMILLARY] },
+  { ...structure("anterior-hypothalamic-area", "Vùng dưới đồi trước", "Anterior hypothalamic area", "side", H_ANTERIOR_HYPOTHALAMIC_AREA), context: [HYPOTHALAMUS, MAMMILLARY] },
+  { ...structure("suprachiasmatic-nucleus", "Nhân trên giao thoa thị", "Suprachiasmatic nucleus", "side", H_SUPRACHIASMATIC_NUCLEUS), context: [HYPOTHALAMUS, MAMMILLARY] },
+  { ...structure("supraoptic-nucleus", "Nhân trên thị", "Supraoptic nucleus", "side", H_SUPRAOPTIC_NUCLEUS), context: [HYPOTHALAMUS, MAMMILLARY] },
+  { ...structure("paraventricular-nucleus", "Nhân cạnh não thất vùng dưới đồi", "Paraventricular nucleus of hypothalamus", "side", H_PARAVENTRICULAR_NUCLEUS), context: [HYPOTHALAMUS, MAMMILLARY] },
+  { ...structure("periventricular-nucleus", "Nhân quanh não thất vùng dưới đồi", "Periventricular nucleus of hypothalamus", "side", H_PERIVENTRICULAR_NUCLEUS), context: [HYPOTHALAMUS, MAMMILLARY] },
+  { ...structure("dorsal-periventricular-nucleus", "Nhân quanh não thất lưng vùng dưới đồi", "Dorsal periventricular nucleus of hypothalamus", "side", H_DORSAL_PERIVENTRICULAR_NUCLEUS), context: [HYPOTHALAMUS, MAMMILLARY] },
+  { ...structure("ventromedial-nucleus", "Nhân bụng giữa vùng dưới đồi", "Ventromedial nucleus of hypothalamus", "side", H_VENTROMEDIAL_NUCLEUS), context: [HYPOTHALAMUS, MAMMILLARY] },
+  { ...structure("dorsomedial-nucleus", "Nhân lưng giữa vùng dưới đồi", "Dorsomedial nucleus of hypothalamus", "side", H_DORSOMEDIAL_NUCLEUS), context: [HYPOTHALAMUS, MAMMILLARY] },
+  { ...structure("arcuate-nucleus", "Nhân cung vùng dưới đồi", "Arcuate nucleus of hypothalamus", "side", H_ARCUATE_NUCLEUS), context: [HYPOTHALAMUS, MAMMILLARY] },
+  { ...structure("lateral-hypothalamic-area", "Vùng dưới đồi bên", "Lateral hypothalamic area", "side", H_LATERAL_HYPOTHALAMIC_AREA), context: [HYPOTHALAMUS, MAMMILLARY] },
+  { ...structure("posterior-hypothalamic-nucleus", "Nhân sau vùng dưới đồi", "Posterior nucleus of hypothalamus", "side", H_POSTERIOR_HYPOTHALAMIC_NUCLEUS), context: [HYPOTHALAMUS, MAMMILLARY] },
+  { ...structure("tuberomammillary-nucleus", "Nhân củ – vú", "Tuberomammillary nucleus", "side", H_TUBEROMAMMILLARY_NUCLEUS), context: [HYPOTHALAMUS, MAMMILLARY] },
   { ...structure("subthalamic-nucleus", "Nhân dưới đồi thị", "Subthalamic nucleus", "front", A_SUBTHALAMIC_NUCLEUS, ["subthalamic nucleus", "STN", "nhân Luys", "subthalamus"]), context: [THALAMUS, BRAINSTEM] },
   { ...structure("cerebellar-deep-nuclei", "Các nhân sâu tiểu não", "Deep cerebellar nuclei", "back", A_CEREBELLAR_DEEP_NUCLEI, ["nhân răng", "dentate nucleus", "nhân nút", "nhân cầu", "nhân mái", "nhân sâu tiểu não"]), context: [CEREBELLUM] },
   // Nhân nằm trong thân não: thân não mờ làm bối cảnh, không thì chỉ thấy các khối lơ lửng.

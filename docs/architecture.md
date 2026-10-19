@@ -697,8 +697,8 @@ Hạch không tên của UMCG bị bỏ khi có hạch Z-Anatomy; mạch bạch 
 
 **Allen Human Reference Atlas – 3D 2020 (nhập 2026-10-19, CC BY 4.0, khối RIÊNG vì giấy phép riêng).**
 Nhân sâu BodyParts3D không có: 11 nhân đồi thị, chất đen, nhân dưới đồi thị, nhân sâu tiểu
-não. Quy trình: `scripts/import-allen-hra.ts --export-bp3d` (lưới mốc) → `scripts/allen-hra.py` (thể tích →
-lưới, fit, kiểm) → `import-allen-hra.ts --write --upload`. Khái niệm mã `AHRA-…`, đặt tên như Z-Anatomy.
+não. Quy trình: `scripts/import-mni-atlases.ts --export-bp3d` (lưới mốc) → `scripts/allen-hra.py` (thể tích →
+lưới, fit, kiểm) → `import-mni-atlases.ts --source allen-hra --write --upload`. Khái niệm mã `AHRA-…`, đặt tên như Z-Anatomy.
 Đây là căn **giữa hai hệ khác nhau** (não mẫu trung bình MNI ↔ một người), không phải "chuẩn hoá" nên
 không thuộc quy tắc "một phép biến đổi mỗi nguồn chỉ thêm sai": không căn thì không dùng được. Ba điều đã
 đo, đừng làm lại theo cách khác: (1) Allen CHỈ vẽ bán cầu trái — mẫu ICBM 2009b đối xứng nên lật gương
@@ -711,7 +711,22 @@ hai đồi thị, lọt vào não thất ba), hành khứu (vùng ngoại suy, l
 vùng bất định (kẹp giữa đồi thị và trung não, không có vỏ chứa: phép trung não/đồi thị/trung bình đều để
 67–78% đỉnh lọt vào đồi thị). Nhân dưới đồi thị chọn phép theo cùng tiêu chí (≤ 5% trong đồi thị) → phép trung não.
 Nhân đồi thị nằm TRONG mảnh đồi thị đục → chỉ hiện ở góc nhìn riêng với đồi thị mờ; mỗi nhóm nhân một màu.
-Ma trận + mốc + số đo: `data/anatomy/registration-allen-hra.json` — CIT168/Neudorfer (cùng MNI) dùng lại.
+Ma trận + mốc + số đo: `data/anatomy/registration-allen-hra.json`.
+
+**CIT168 + Neudorfer (nhập 2026-10-19, cùng CC BY 4.0, khối riêng mỗi nguồn vì ghi công riêng).** Chất đen tách
+phần đặc/phần lưới (CIT168 thay khối chất đen một mảnh của Allen) và 13 nhân vùng dưới đồi (Neudorfer).
+`scripts/mni-subcortical.py` KHÔNG fit lại — dùng lại phép căn Allen (phần dùng chung ở `scripts/mni_atlas.py`):
+hai atlas này chỉ có vài cấu trúc sâu, fit riêng là ngoại suy. Điều kiện để dùng lại được ĐO, script dừng nếu
+hỏng: tâm chất đen/nhân đỏ/nhân dưới đồi thị ở ba atlas (ba bản mẫu MNI 2009 khác nhau) lệch nhau 0,4–2,4 mm
+trong không gian MNI, nhỏ hơn sai số căn ~6 mm. Nhân vùng dưới đồi dùng phép tinh chỉnh vùng dưới đồi mới
+(fit bằng CẢ vùng dưới đồi của Allen, không bằng tập nhân thưa → phóng to giả). Phép này CO 0,8 vì mảnh vùng
+dưới đồi BodyParts3D hẹp hơn atlas (rộng 17 so với ~27 mm) — nhìn lạ nhưng đã so: chỉ affine 37% đỉnh ngoài vỏ,
+lòi 7,5 mm; phép trung não 56%/7,9 mm; phép đồi thị 65%/6,0 mm; phép vùng dưới đồi 17%/2,7 mm (nhân cung,
+nhân củ – vú nằm sát bề mặt nên lộ nhiều nhất, lòi ≤ 1,4 mm). Hai phần chất đen xen nhau ngoài đời; mỗi voxel
+gán về phần xác suất cao hơn để hai lưới không đâm xuyên — đoạn nguồn nói rõ đây là đơn giản hoá. Phần đặc
+xem từ trên xuống: từ trước bị phần lưới mờ che. Số đo: `data/anatomy/registration-mni-subcortical.json`.
+Khối 0,25 mm của Neudorfer lưu float64 (4,4 GB): đổi uint8 + cắt hộp từng nhãn một lần, nếu không script chạy
+hơn 25 phút; làm trơn Taubin bằng ma trận thưa (vòng lặp Python từng đỉnh mất hàng phút).
 
 **Da chia nhỏ.** `scripts/smooth-skin.py` (Catmull-Clark một bậc, 44.744 → 268.464 tam giác) +
 `scripts/import-smooth-skin.ts`. Mảnh mang cùng mã FJ2810: `withSupplements()` thấy trùng mã thì THAY

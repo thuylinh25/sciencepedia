@@ -3,10 +3,10 @@
     <python có nibabel, scikit-image, scipy> scripts/allen-hra.py
 
 Đọc  .cache/allen-hra/annotation.nii.gz, voxel_count.csv (cây nhãn), bp3d-landmarks.json
-     (xuất bằng `npx tsx scripts/import-allen-hra.ts --export-bp3d`).
+     (xuất bằng `npx tsx scripts/import-mni-atlases.ts --export-bp3d`).
 Ghi  .cache/allen-hra/out.json             — lưới đã căn (mét, hệ BodyParts3D), cho bước đóng gói
-     data/anatomy/registration-allen-hra.json — ma trận MNI→BodyParts3D, mốc, sai số, kiểm tra.
-     CIT168 / Neudorfer (cùng không gian MNI) dùng lại đúng ma trận này.
+     data/anatomy/registration-allen-hra.json — ma trận MNI→BodyParts3D, phép tinh chỉnh từng
+     vùng, mốc, sai số, kiểm tra. `mni-subcortical.py` (CIT168, Neudorfer) DÙNG LẠI phép căn này.
 
 Vì sao affine theo mốc: atlas là không gian MẪU (trung bình 152 não), BodyParts3D là MỘT
 người — phép dời cứng không khớp. Mốc là TÂM BỀ MẶT theo diện tích của cùng một cấu trúc ở
@@ -22,13 +22,13 @@ from pathlib import Path
 
 import nibabel as nib
 import numpy as np
-from scipy import ndimage
 from scipy.spatial import cKDTree
-from skimage import measure
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from mni_atlas import REGISTRATION, apply, bp_mesh, containment, icp, inside, surface, surface_centroid, tf, union_mesh  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 CACHE = ROOT / ".cache/allen-hra"
-REG_OUT = ROOT / "data/anatomy/registration-allen-hra.json"
 
 img = nib.load(CACHE / "annotation.nii.gz")
 LAB = np.asarray(img.dataobj)
@@ -60,75 +60,12 @@ def leaves(*ids: int) -> list[int]:
     return sorted(out)
 
 
-# ------------------------------------------------------------------ lưới
-def taubin(v: np.ndarray, f: np.ndarray, it: int = 12, lam: float = 0.5, mu: float = -0.53) -> np.ndarray:
-    n = len(v)
-    nb = [[] for _ in range(n)]
-    for a, b, c in f:
-        nb[a] += [b, c]
-        nb[b] += [a, c]
-        nb[c] += [a, b]
-    nb = [np.unique(x) for x in nb]
-    for _ in range(it):
-        for k in (lam, mu):
-            avg = np.array([v[x].mean(0) if len(x) else v[i] for i, x in enumerate(nb)])
-            v = v + k * (avg - v)
-    return v
-
-
 def mesh(ids: list[int], side: str | None, step: int = 1):
-    """Mặt của tập nhãn (một bên nếu `side`), toạ độ MNI mm. Bên = dấu x thế giới (RAS: + là phải)."""
-    m = np.isin(LAB, ids)
-    if side:
-        x_world = AFF[0, 0] * np.arange(LAB.shape[0]) + AFF[0, 3]
-        keep = x_world < 0 if side == "left" else x_world > 0
-        m &= keep[:, None, None]
-    if not m.any():
-        return None
-    sl = ndimage.find_objects(m.astype(np.uint8))[0]
-    sl = tuple(slice(max(s.start - 3, 0), s.stop + 3) for s in sl)
-    sub = ndimage.gaussian_filter(m[sl].astype(np.float32), 0.6)
-    # Khối vài voxel làm mờ xong không chạm 0,5 — lấy nửa cực đại.
-    level = 0.5 if sub.max() > 0.6 else sub.max() / 2
-    try:
-        v, f, _, _ = measure.marching_cubes(sub, level, step_size=step)
-    except RuntimeError:
-        # step 2 trên khối mỏng có thể trượt mất mặt — thử lại ở độ phân giải đủ.
-        v, f, _, _ = measure.marching_cubes(sub, level, step_size=1)
-    v = v + np.array([s.start for s in sl])
-    v = taubin(v, f)
-    w = (AFF @ np.c_[v, np.ones(len(v))].T).T[:, :3]
-    return w, f.astype(np.int64)
+    """Mặt của tập nhãn (một bên nếu `side`), toạ độ MNI mm."""
+    return surface(np.isin(LAB, ids), AFF, side, step)
 
 
-def surface_centroid(v: np.ndarray, f: np.ndarray) -> np.ndarray:
-    a, b, c = v[f[:, 0]], v[f[:, 1]], v[f[:, 2]]
-    area = np.linalg.norm(np.cross(b - a, c - a), axis=1) / 2
-    return ((a + b + c) / 3 * area[:, None]).sum(0) / area.sum()
-
-
-# ------------------------------------------------------------------ mốc
-BP3D = json.load(open(CACHE / "bp3d-landmarks.json", encoding="utf-8"))
-BP = {}
-for p in BP3D:
-    v = np.array(p["positions"]).reshape(-1, 3)
-    f = np.array(p["indices"]).reshape(-1, 3)
-    BP.setdefault(p["name"].lower(), []).append((v, f))
-
-
-def bp_mesh(name: str):
-    parts = BP.get(name.lower())
-    if not parts:
-        return None
-    vs, fs, off = [], [], 0
-    for v, f in parts:
-        vs.append(v)
-        fs.append(f + off)
-        off += len(v)
-    return np.vstack(vs), np.vstack(fs)
-
-
-THM = [x for x in leaves(10390) if x not in (10430, 10434, 10452)]  # trừ thể gối ngoài/trong, củ cương
+THM = [x for x in leaves(10390) if x not in (10430, 10434, 10452)]  # trừ thể gối ngoài/trong, cuống tùng
 # (khoá, nhãn Allen, tên mảnh BodyParts3D không kèm bên, hai bên?, dùng để fit?)
 PAIRS = [
     ("thalamus", THM, "thalamus", True, True),
@@ -189,10 +126,6 @@ def fit(s: np.ndarray, d: np.ndarray) -> np.ndarray:
     return M  # 4x3: d ≈ [s,1] @ M
 
 
-def apply(M: np.ndarray, p: np.ndarray) -> np.ndarray:
-    return np.c_[p, np.ones(len(p))] @ M
-
-
 use = fit_mask.copy()
 dropped = []
 for _ in range(6):
@@ -236,52 +169,14 @@ print("ma trận:", checks)
 # 25°; lật gương thì định thức đổi dấu, tỉ lệ vô lý thì giá trị kỳ dị lệch xa 1.
 ok = checks["det_sign_matches_expected"] and angle < 25 and 0.75 < S.min() and S.max() < 1.15 and checks["anisotropy"] < 1.2
 
-
 # ------------------------------------------------------------------ tinh chỉnh cục bộ
-def umeyama(a: np.ndarray, b: np.ndarray) -> np.ndarray:
-    """Phép đồng dạng (xoay + tỉ lệ đều + dời) a → b, ma trận 4x4 tác dụng lên cột."""
-    ma, mb = a.mean(0), b.mean(0)
-    A, B = a - ma, b - mb
-    U, D, Vt = np.linalg.svd(B.T @ A / len(a))
-    Sg = np.eye(3)
-    if np.linalg.det(U) * np.linalg.det(Vt) < 0:
-        Sg[2, 2] = -1
-    Rr = U @ Sg @ Vt
-    s = np.trace(np.diag(D) @ Sg) / (A**2).sum(1).mean()
-    T = np.eye(4)
-    T[:3, :3] = s * Rr
-    T[:3, 3] = mb - s * Rr @ ma
-    return T
-
-
-def icp(src_v: np.ndarray, dst_v: np.ndarray, iters: int = 40) -> np.ndarray:
-    """ICP đồng dạng hai chiều (điểm nguồn → đích và đích → nguồn) để vỏ không co về một phía."""
-    T = np.eye(4)
-    td = cKDTree(dst_v)
-    for _ in range(iters):
-        cur = (T[:3, :3] @ src_v.T).T + T[:3, 3]
-        _, i1 = td.query(cur)
-        _, i2 = cKDTree(cur).query(dst_v)
-        a = np.vstack([cur, cur[i2]])
-        b = np.vstack([dst_v[i1], dst_v])
-        T = umeyama(a, b) @ T
-    return T
-
-
-def tf(T: np.ndarray, p: np.ndarray) -> np.ndarray:
-    return (T[:3, :3] @ p.T).T + T[:3, 3]
-
-
-def union_mesh(meshes):
-    meshes = [m for m in meshes if m is not None]
-    v = np.vstack([m[0] for m in meshes])
-    off = np.cumsum([0] + [len(m[0]) for m in meshes[:-1]])
-    f = np.vstack([m[1] + o for m, o in zip(meshes, off)])
-    return v, f
-
-
 MIDBRAIN_ALLEN = leaves(12195, 12330, 12292, 12305, 12181, 12369)  # chỏm, cuống đại não, gò, vùng trước mái, cống
 MIDBRAIN_BP = ["midbrain", "peduncle of midbrain", "interpeduncular fossa", "left superior colliculus", "right superior colliculus", "left inferior colliculus", "right inferior colliculus"]
+# Vùng dưới đồi: Allen vẽ trọn vùng (4 miền + nhãn chung) → khớp với vùng dưới đồi + củ xám + thể vú
+# của BodyParts3D. Dùng cho nhân vùng dưới đồi của Neudorfer — fit bằng cả vùng chứ không bằng tập
+# nhân (nhân không lấp kín vùng, ICP đồng dạng trên tập thưa sẽ phóng to).
+HYPOTHALAMUS_ALLEN = [10467, 10468, 10473, 10483, 10495]
+HYPOTHALAMUS_BP = ["hypothalamus", "tuber cinereum", "mammillary body"]
 REGIONS = {}
 for side in ("left", "right", None):
     sides = [side] if side else ["left", "right"]
@@ -294,6 +189,9 @@ REGIONS[("midbrain", None)] = (icp(apply(M, a[0]), b[0]), b)
 a = mesh([10658, 10660, 12384, 12390], None, step=2)
 b = bp_mesh("cerebellum")
 REGIONS[("cerebellum", None)] = (icp(apply(M, a[0]), b[0]), b)
+a = mesh(HYPOTHALAMUS_ALLEN, None, step=1)
+b = union_mesh([bp_mesh(n) for n in HYPOTHALAMUS_BP])
+REGIONS[("hypothalamus", None)] = (icp(apply(M, a[0]), b[0]), b)
 local = {f"{k} {s or 'both'}": {"scale": round(float(np.cbrt(np.linalg.det(T[:3, :3]))), 4), "shift_mm": round(float(np.linalg.norm(T[:3, 3] + (T[:3, :3] - np.eye(3)) @ b[0].mean(0)) * 1000), 2)} for (k, s), (T, b) in REGIONS.items()}
 print("tinh chỉnh cục bộ:", local)
 
@@ -312,37 +210,14 @@ OUT_PARTS = [
     ("parafascicular-nucleus", [10450], "parafascicular nucleus of thalamus", True),
     # Nhân hợp nhất và phức hợp nhân đường giữa KHÔNG xuất: nằm ở khe giữa hai đồi thị, nơi
     # BodyParts3D để trống (đo: 62–83% đỉnh ngoài vỏ, lòi 5 mm) — dễ nằm lọt vào não thất ba.
-    ("substantia-nigra", [12251], "substantia nigra", True),
+    # Chất đen KHÔNG xuất từ Allen (2026-10-19): CIT168 tách phần đặc / phần lưới (mni-subcortical.py).
     ("subthalamic-nucleus", [10466], "subthalamic nucleus", True),
     ("zona-incerta", [10463], "zona incerta", True),
     ("cerebellar-deep-nuclei", [10660], "cerebellar deep nuclei", True),
 ]
 THALAMIC = {k for k, *_ in OUT_PARTS[:11]}
 
-
-def inside(points: np.ndarray, v: np.ndarray, f: np.ndarray) -> np.ndarray:
-    """Chẵn lẻ số lần tia +x cắt mặt (Möller–Trumbore), tia hơi lệch để tránh trúng cạnh."""
-    d = np.array([1.0, 1e-3, 2e-3])
-    d /= np.linalg.norm(d)
-    a, b, c = v[f[:, 0]], v[f[:, 1]], v[f[:, 2]]
-    e1, e2 = b - a, c - a
-    h = np.cross(d, e2)
-    det = (e1 * h).sum(1)
-    inv = 1 / np.where(np.abs(det) < 1e-15, 1e-15, det)
-    out = np.zeros(len(points), dtype=bool)
-    for i in range(0, len(points), 256):
-        p = points[i : i + 256, None, :]
-        s = p - a[None]
-        u = (s * h[None]).sum(2) * inv
-        q = np.cross(s, e1[None])
-        w = (q * d).sum(2) * inv
-        t = (q * e2[None]).sum(2) * inv
-        hit = (u >= 0) & (w >= 0) & (u + w <= 1) & (t > 0) & (np.abs(det) > 1e-15)
-        out[i : i + 256] = hit.sum(1) % 2 == 1
-    return out
-
-
-parts_out, containment, part_regions, edge = [], {}, {}, {}
+parts_out, contained, part_regions, edge = [], {}, {}, {}
 for key, ids, name, paired in OUT_PARTS:
     for side in (["left", "right"] if paired else [None]):
         r = mesh(ids, side, step=1)
@@ -353,16 +228,16 @@ for key, ids, name, paired in OUT_PARTS:
             region = ("thalamus", side)
         elif key == "cerebellar-deep-nuclei":
             region = ("cerebellum", None)
-        else:  # chất đen, nhân dưới đồi thị, vùng bất định: trung não + gian não dưới
+        else:  # nhân dưới đồi thị, vùng bất định: trung não + gian não dưới
             region = ("midbrain", None)
-        T, (cv, cf) = REGIONS[region]
+        T, shell = REGIONS[region]
         part_regions[f"{side or 'mid'} {key}"] = f"{region[0]} {region[1] or 'both'}"
         vb = tf(T, apply(M, v))
         if key in ("subthalamic-nucleus", "zona-incerta"):
             # Gian não dưới: kẹp giữa đồi thị và trung não, không có vỏ chứa riêng. Thử phép của trung
             # não, của đồi thị và trung bình hai phép; chọn phép KHÔNG lọt vào đồi thị đục (≤ 5% đỉnh)
             # và chìm trong trung não ít nhất. Không phép nào đạt → bỏ (trống hơn sai). Đo 2026-10-19:
-            # chỉ dùng phép trung não thì vùng bất định lọt 71–78% vào đồi thị.
+            # vùng bất định lọt 67–78% vào đồi thị ở mọi phép → không nhập.
             th = union_mesh([bp_mesh(f"{s} thalamus") for s in ("left", "right")])
             mb = REGIONS[("midbrain", None)][1]
             Tm, Tt = REGIONS[("midbrain", None)][0], REGIONS[("thalamus", None)][0]
@@ -381,20 +256,15 @@ for key, ids, name, paired in OUT_PARTS:
             part_regions[f"{side or 'mid'} {key}"] = {"midbrain": "midbrain both", "thalamus": "thalamus both", "midpoint": "mean(midbrain both, thalamus both)"}[choice]
             vb = ok_tries[choice][2]
         parts_out.append({"key": key, "name": name, "side": side, "positions": vb.round(6).ravel().tolist(), "indices": f.ravel().tolist()})
-        # Kiểm "nằm trong" ở nơi có vỏ chứa thật: nhân đồi thị trong đồi thị + thể gối, chất đen
-        # trong trung não + cuống, nhân sâu trong tiểu não. Nhân dưới đồi thị, vùng bất định nằm
-        # dưới đồi thị — BodyParts3D không có lưới vùng dưới đồi thị để làm vỏ.
-        if key in THALAMIC or key in ("substantia-nigra", "cerebellar-deep-nuclei"):
-            ins = inside(vb, cv, cf)
-            dist = cKDTree(cv).query(vb[~ins])[0] * 1000 if (~ins).any() else np.array([0.0])
-            containment[f"{side or 'mid'} {key}"] = {"outside_fraction": round(float((~ins).mean()), 3), "max_protrusion_mm": round(float(dist.max()), 2)}
+        # Kiểm "nằm trong" ở nơi có vỏ chứa thật: nhân đồi thị trong đồi thị + thể gối, nhân sâu trong
+        # tiểu não. Nhân dưới đồi thị không có lưới vỏ riêng ở BodyParts3D.
+        if key in THALAMIC or key == "cerebellar-deep-nuclei":
+            contained[f"{side or 'mid'} {key}"] = containment(vb, shell)
 
 tot = sum(len(p["positions"]) // 3 for p in parts_out)
 print(f"{len(parts_out)} lưới, {tot} đỉnh")
-outside = np.mean([c["outside_fraction"] for c in containment.values()])
-max_prot = max(c["max_protrusion_mm"] for c in containment.values())
-for k, c in containment.items():
-    print(f"  {k}: {c['outside_fraction']:.0%} đỉnh ngoài vỏ, lòi tối đa {c['max_protrusion_mm']} mm")
+outside = np.mean([c["outside_fraction"] for c in contained.values()])
+max_prot = max(c["max_protrusion_mm"] for c in contained.values())
 print(f"trung bình {outside:.1%} đỉnh ngoài vỏ chứa, lòi ra tối đa {max_prot:.1f} mm")
 
 # Kiểm độc lập ở góc ngoại suy: hành + dải khứu Allen so với nét khứu giác Z-Anatomy.
@@ -430,16 +300,13 @@ report = {
     "part_regions": part_regions,
     # Tỉ lệ đỉnh ngoài vỏ chứa SAU tinh chỉnh — gần như do cách dựng (ICP khớp đúng vỏ ấy), không
     # phải số đo độ chính xác. Số độc lập: held_out_median_mm và olfactory_za_vs_allen_median_mm.
-    "containment_after_refinement": containment,
+    "containment_after_refinement": contained,
     "subthalamic_zona_incerta_check": edge,
     "olfactory_za_vs_allen_median_mm": olf,
 }
-REG_OUT.write_text(json.dumps(report, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+REGISTRATION.write_text(json.dumps(report, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
 (CACHE / "out.json").write_text(json.dumps({"parts": parts_out}), encoding="utf-8")
 print("fit trung vị", report["fit_residual_median_mm"], "mm · bỏ-một-ra", report["leave_one_out_median_mm"], "mm · giữ ngoài", report["held_out_median_mm"], "mm · loại", dropped)
-for lm in report["landmarks"]:
-    if not lm["fit"]:
-        print(f"  giữ ngoài/loại {lm['name']}: {lm['residual_mm']} mm")
 if not ok:
     print("✗ ma trận không đạt kiểm tra (lật/tỉ lệ/xoắn) — không dùng")
     sys.exit(1)

@@ -3,6 +3,8 @@ import umcgLymphatic from "./supplements/umcg-lymphatic.json";
 import smoothSkin from "./supplements/smooth-skin.json";
 import zAnatomy from "./supplements/z-anatomy.json";
 import allenHra from "./supplements/allen-hra.json";
+import cit168 from "./supplements/cit168.json";
+import neudorfer from "./supplements/neudorfer.json";
 
 /*
  * ## Phần bổ sung ngoài BodyParts3D (2026-09-29)
@@ -42,8 +44,8 @@ const umcgVessels: Supplement = {
 };
 
 // Da chia nhỏ (`scripts/smooth-skin.py`) mang CÙNG mã FJ2810 — thay da gốc.
-// Allen (CC BY 4.0, `scripts/import-allen-hra.ts`): nhân sâu của não, khối riêng vì giấy phép riêng.
-export const SUPPLEMENTS = [umcgVessels, zAnatomy as unknown as Supplement, smoothSkin as unknown as Supplement, allenHra as unknown as Supplement];
+// Atlas MNI (CC BY 4.0, `scripts/import-mni-atlases.ts`): nhân sâu của não. Mỗi nguồn một khối vì ghi công riêng.
+export const SUPPLEMENTS = [umcgVessels, zAnatomy as unknown as Supplement, smoothSkin as unknown as Supplement, allenHra as unknown as Supplement, cit168 as unknown as Supplement, neudorfer as unknown as Supplement];
 
 /** Tên tiếng Việt của mảnh bổ sung, tra theo tên tiếng Anh (tên nhóm, không phải tên khái niệm). */
 export const SUPPLEMENT_NAMES_VI: Record<string, string> = Object.fromEntries(

@@ -202,8 +202,8 @@ function translateZAnatomy(englishName: string): string | null {
 }
 
 function composed(conceptId: string, englishName: string): string | null {
-  // Allen (AHRA-) đặt tên như Z-Anatomy: "Left <cấu trúc>" là bản bên trái của cả cấu trúc.
-  return /^(ZA|AHRA)-/.test(conceptId) ? translateZAnatomy(englishName) : translateAnatomy(englishName);
+  // Allen (AHRA-), CIT168, Neudorfer (NHTH-) đặt tên như Z-Anatomy: "Left <cấu trúc>" là bản bên trái của cả cấu trúc.
+  return /^(ZA|AHRA|CIT168|NHTH)-/.test(conceptId) ? translateZAnatomy(englishName) : translateAnatomy(englishName);
 }
 
 /** Tên tiếng Việt: bảng duyệt tay trước, rồi bảng ghép thuật ngữ; không có thì `null`. */
