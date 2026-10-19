@@ -77,6 +77,20 @@ export const ATLAS_PROVENANCE = {
     licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/",
     sourceUrl: "https://github.com/Z-Anatomy/Models-of-human-anatomy",
   },
+  /**
+   * Nhân sâu của não (BodyParts3D không có). Kiểm 2026-10-19: README của bộ dữ liệu ghi CC BY 4.0
+   * từ 2022-09-01 và câu trích dẫn theo Citation Policy — chép nguyên văn vào LICENSE.txt cạnh khối
+   * trên R2. Chuyển đổi + căn toạ độ: `scripts/allen-hra.py`, `scripts/import-allen-hra.ts`.
+   */
+  allenHra: {
+    name: "Allen Human Reference Atlas – 3D, 2020 (v1.0.0)",
+    holder: "2019 Allen Institute for Brain Science",
+    license: "CC BY 4.0",
+    licenseUrl: "https://creativecommons.org/licenses/by/4.0/",
+    sourceUrl: "https://download.alleninstitute.org/informatics-archive/allen_human_reference_atlas_3d_2020/version_1/",
+    citation:
+      "Ding S-L, Royall JJ, Sunkin SM, Facer BAC, Lesnar P, Bernard A, Ng L, Lein ES (2020). Allen Human Reference Atlas – 3D, 2020, RRID:SCR_017764, version 1.0.0.",
+  },
   viewer: {
     name: "Human Atlas",
     author: "ashemag",

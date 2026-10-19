@@ -380,6 +380,17 @@ export const GROUP_COLORS: Record<string, string> = {
   "nervous.brainstem": "#d6b3ad",
   "nervous.cerebellum": "#bf98a3",
   "nervous.ventricles": "#8fa9bd",
+  // Nhân sâu (Allen): mỗi nhóm nhân một màu trầm để đọc được ranh giới; chất đen sẫm như tên gọi.
+  "nervous.thalamus_anterior": "#c98fa0",
+  "nervous.thalamus_medial": "#d1a07f",
+  "nervous.thalamus_dorsal": "#b7a0c9",
+  "nervous.thalamus_ventral": "#8fb3c9",
+  "nervous.thalamus_ventral_posterior": "#8fbfa6",
+  "nervous.thalamus_pulvinar": "#c9b77c",
+  "nervous.thalamus_intralaminar": "#a39fd4",
+  "nervous.substantia_nigra": "#5d4b54",
+  "nervous.subthalamic": "#c08a66",
+  "nervous.cerebellar_nuclei": "#b06a78",
   "nervous.meninges": "#b5acae",
   "nervous.nerve": "#d9b25c",
   // Tuỷ sống (Z-Anatomy): hồng nhạt cùng họ với não — trung ương khác ngoại biên.

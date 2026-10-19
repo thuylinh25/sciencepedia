@@ -42,6 +42,8 @@ const BASAL_NUCLEI = n(/caudate nucleus$|putamen$|globus pallidus$/i);
 const HIPPOCAMPUS_AMYGDALA = n(/hippocampus$|amygdala$|^septum of telencephalon$/i);
 const DIENCEPHALON = n(
   /thalamus$|hypothalamus$|habenula$|mammillary body$|tuber cinereum$|geniculate body$|stria medullaris of thalamus$/i,
+  // Nhân đồi thị của Allen ("… nucleus of thalamus", "pulvinar of thalamus") — góc nhìn riêng.
+  /nucle|pulvinar/i,
 );
 const BRAINSTEM = n(/^midbrain$|peduncle of midbrain$|colliculus$|brachium of (superior|inferior) colliculus$|^pons$|^medulla oblongata$|^interpeduncular fossa$/i);
 const CEREBELLUM = n(/^cerebellum$/i);
@@ -104,6 +106,25 @@ const SEPTUM = n(/^septum of telencephalon$/i);
 const THALAMUS = n(/^(left|right) thalamus$/i);
 const GENICULATE = n(/geniculate body$/i);
 const HYPOTHALAMUS = n(/^hypothalamus$|^tuber cinereum$/i);
+
+// Allen Human Reference Atlas (CC BY 4.0, `scripts/allen-hra.py`, 2026-10-19): nhân sâu
+// BodyParts3D không có. Nhân đồi thị nằm TRONG mảnh đồi thị đục — chỉ hiện ở góc nhìn riêng với
+// đồi thị mờ làm nền, không thêm vào các góc nhìn não khác (vẽ chồng hai lần, không thấy gì).
+const A_ANTERIOR_THALAMIC_NUCLEI = n(/^(left|right) anterior nuclear complex of thalamus$/i);
+const A_LATERAL_DORSAL_NUCLEUS = n(/^(left|right) lateral dorsal nucleus of thalamus$/i);
+const A_MEDIODORSAL_NUCLEUS = n(/^(left|right) mediodorsal nucleus of thalamus$/i);
+const A_LATERAL_POSTERIOR_NUCLEUS = n(/^(left|right) lateral posterior nucleus of thalamus$/i);
+const A_PULVINAR = n(/^(left|right) pulvinar of thalamus$/i);
+const A_VENTRAL_ANTERIOR_NUCLEUS = n(/^(left|right) ventral anterior nucleus of thalamus$/i);
+const A_VENTRAL_LATERAL_NUCLEUS = n(/^(left|right) ventral lateral nucleus of thalamus$/i);
+const A_VENTRAL_POSTERIOR_LATERAL_NUCLEUS = n(/^(left|right) ventral posterior lateral nucleus of thalamus$/i);
+const A_VENTRAL_POSTERIOR_MEDIAL_NUCLEUS = n(/^(left|right) ventral posterior medial nucleus of thalamus$/i);
+const A_CENTROMEDIAN_NUCLEUS = n(/^(left|right) centromedian nucleus of thalamus$/i);
+const A_PARAFASCICULAR_NUCLEUS = n(/^(left|right) parafascicular nucleus of thalamus$/i);
+const A_SUBSTANTIA_NIGRA = n(/^(left|right) substantia nigra$/i);
+const A_SUBTHALAMIC_NUCLEUS = n(/^(left|right) subthalamic nucleus$/i);
+const A_CEREBELLAR_DEEP_NUCLEI = n(/^(left|right) cerebellar deep nuclei$/i);
+const THALAMIC_NUCLEI = [A_ANTERIOR_THALAMIC_NUCLEI, A_LATERAL_DORSAL_NUCLEUS, A_MEDIODORSAL_NUCLEUS, A_LATERAL_POSTERIOR_NUCLEUS, A_PULVINAR, A_VENTRAL_ANTERIOR_NUCLEUS, A_VENTRAL_LATERAL_NUCLEUS, A_VENTRAL_POSTERIOR_LATERAL_NUCLEUS, A_VENTRAL_POSTERIOR_MEDIAL_NUCLEUS, A_CENTROMEDIAN_NUCLEUS, A_PARAFASCICULAR_NUCLEUS];
 const EPITHALAMUS = n(/^habenula$|stria medullaris of thalamus$/i);
 
 // ------------------------------------------------------------------ dây sọ
@@ -235,6 +256,26 @@ export const NERVOUS_VIEWS: readonly AtlasViewDef[] = [
   group("nervous-deep-brain", "Gian não và nhân nền", "Diencephalon and basal nuclei", "three-quarter", [DIENCEPHALON, BASAL_NUCLEI], [CEREBRAL_WHITE, BRAINSTEM],
     ["đồi thị", "thalamus", "vùng dưới đồi", "hypothalamus", "hạch nền", "basal ganglia"]),
   group("nervous-cerebrum", "Đại não: vỏ và chất trắng", "Cerebrum: cortex and white matter", "side", [CORTEX, CEREBRAL_WHITE], [CEREBELLUM, BRAINSTEM], ["hồi não", "gyrus", "thuỳ não", "lobe", "thể chai", "corpus callosum"]),
+  group("nervous-thalamic-nuclei", "Các nhân đồi thị", "Thalamic nuclei", "three-quarter", THALAMIC_NUCLEI, [THALAMUS, GENICULATE, BRAINSTEM], ["nhân đồi thị", "thalamic nuclei", "pulvinar", "VPL", "nhân lưng giữa"], {
+    partial: {
+      vi: "Vị trí gần đúng: nhân vẽ trên não mẫu trung bình rồi căn về não của mô hình. Chưa đủ mọi nhân, trong đó thiếu các nhân đường giữa (kể cả nhân reuniens), nhân lưới và phần lớn các nhân trong mảnh tuỷ",
+      en: "Approximate positions: drawn on an average template brain and registered to the model's brain. Not every nucleus is included; missing are, among others, the midline nuclei (including the reuniens), the reticular nucleus and most intralaminar nuclei",
+    },
+  }),
+  // Vùng bất định của Allen KHÔNG nhập: mọi phép căn đều để 67–78% đỉnh lọt vào đồi thị đục (đo
+  // 2026-10-19, registration-allen-hra.json) — trống hơn sai.
+  group("nervous-subthalamic-nigral", "Chất đen và nhân dưới đồi thị", "Substantia nigra and subthalamic nucleus", "front", [A_SUBSTANTIA_NIGRA, A_SUBTHALAMIC_NUCLEUS], [THALAMUS, BRAINSTEM, BASAL_NUCLEI], ["chất đen", "substantia nigra", "nhân dưới đồi thị", "hạch nền", "basal ganglia"], {
+    partial: {
+      vi: "Vị trí gần đúng: vẽ trên não mẫu trung bình rồi căn về não của mô hình; nhân dưới đồi thị lấn một phần vào trung não do sai số căn chỉnh, thật ra nó nằm ở gian não, ngay trên chất đen; thiếu vùng bất định",
+      en: "Approximate positions: drawn on an average template brain and registered to the model's brain; the subthalamic nucleus partly overlaps the midbrain because of registration error (it actually lies in the diencephalon, just above the substantia nigra); the zona incerta is missing",
+    },
+  }),
+  group("nervous-cerebellar-nuclei", "Các nhân sâu tiểu não", "Deep cerebellar nuclei", "back", [A_CEREBELLAR_DEEP_NUCLEI], [CEREBELLUM, BRAINSTEM], ["nhân răng", "dentate nucleus", "nhân nút", "nhân cầu", "nhân mái", "nhân sâu tiểu não"], {
+    partial: {
+      vi: "Bốn nhân (răng, nút, cầu, mái) được vẽ gộp làm một khối; vị trí gần đúng: vẽ trên não mẫu trung bình rồi căn về não của mô hình",
+      en: "The four nuclei (dentate, emboliform, globose, fastigial) are shown merged into a single mass; approximate positions: drawn on an average template brain and registered to the model's brain",
+    },
+  }),
   group("nervous-brainstem-cerebellum", "Thân não và tiểu não", "Brainstem and cerebellum", "side", [BRAINSTEM, CN_NUCLEI, RED_NUCLEUS, CEREBELLUM], [DIENCEPHALON, SPINAL_CORD, TENTORIUM], ["hành não", "cầu não", "trung não", "cerebellum"]),
   group("nervous-ventricles", "Hệ não thất", "Ventricular system", "three-quarter", [VENTRICLES], [CEREBRAL_WHITE, BRAINSTEM, CEREBELLUM], ["não thất", "ventricle", "dịch não tuỷ", "cerebrospinal fluid"]),
   group("nervous-cranial-nerves", "Dây thần kinh sọ", "Cranial nerves", "three-quarter", CRANIAL, [BRAINSTEM, SKULL], ["dây sọ", "cranial nerve"], {
@@ -310,6 +351,22 @@ export const NERVOUS_VIEWS: readonly AtlasViewDef[] = [
   structure("pons", "Cầu não", "Pons", "side", PONS, ["cầu não", "pons"]),
   structure("medulla-oblongata", "Hành não", "Medulla oblongata", "front", MEDULLA, ["hành não", "medulla"]),
   structure("cerebellum", "Tiểu não", "Cerebellum", "side", CEREBELLUM),
+  // Nhân sâu (Allen), từng nhân hai bên. KHÔNG có cấu trúc gộp "các nhân đồi thị": nó nuốt 11 nhân
+  // (bảng chỉ còn một hàng) — bảng của góc nhìn liệt kê thẳng từng nhân.
+  { ...structure("anterior-thalamic-nuclei", "Phức hợp nhân trước đồi thị", "Anterior nuclear complex of thalamus", "three-quarter", A_ANTERIOR_THALAMIC_NUCLEI), context: [THALAMUS] },
+  { ...structure("lateral-dorsal-nucleus", "Nhân lưng bên đồi thị", "Lateral dorsal nucleus of thalamus", "three-quarter", A_LATERAL_DORSAL_NUCLEUS), context: [THALAMUS] },
+  { ...structure("mediodorsal-nucleus", "Nhân lưng giữa đồi thị", "Mediodorsal nucleus of thalamus", "three-quarter", A_MEDIODORSAL_NUCLEUS), context: [THALAMUS] },
+  { ...structure("lateral-posterior-nucleus", "Nhân sau bên đồi thị", "Lateral posterior nucleus of thalamus", "three-quarter", A_LATERAL_POSTERIOR_NUCLEUS), context: [THALAMUS] },
+  { ...structure("pulvinar", "Gối sau đồi thị (pulvinar)", "Pulvinar of thalamus", "three-quarter", A_PULVINAR), context: [THALAMUS] },
+  { ...structure("ventral-anterior-nucleus", "Nhân bụng trước đồi thị", "Ventral anterior nucleus of thalamus", "three-quarter", A_VENTRAL_ANTERIOR_NUCLEUS), context: [THALAMUS] },
+  { ...structure("ventral-lateral-nucleus", "Nhân bụng bên đồi thị", "Ventral lateral nucleus of thalamus", "three-quarter", A_VENTRAL_LATERAL_NUCLEUS), context: [THALAMUS] },
+  { ...structure("ventral-posterior-lateral-nucleus", "Nhân bụng sau bên đồi thị", "Ventral posterior lateral nucleus of thalamus", "three-quarter", A_VENTRAL_POSTERIOR_LATERAL_NUCLEUS), context: [THALAMUS] },
+  { ...structure("ventral-posterior-medial-nucleus", "Nhân bụng sau giữa đồi thị", "Ventral posterior medial nucleus of thalamus", "three-quarter", A_VENTRAL_POSTERIOR_MEDIAL_NUCLEUS), context: [THALAMUS] },
+  { ...structure("centromedian-nucleus", "Nhân trung tâm giữa đồi thị", "Centromedian nucleus of thalamus", "three-quarter", A_CENTROMEDIAN_NUCLEUS), context: [THALAMUS] },
+  { ...structure("parafascicular-nucleus", "Nhân cạnh bó đồi thị", "Parafascicular nucleus of thalamus", "three-quarter", A_PARAFASCICULAR_NUCLEUS), context: [THALAMUS] },
+  { ...structure("substantia-nigra", "Chất đen", "Substantia nigra", "front", A_SUBSTANTIA_NIGRA, ["substantia nigra", "Parkinson"]), context: [BRAINSTEM] },
+  { ...structure("subthalamic-nucleus", "Nhân dưới đồi thị", "Subthalamic nucleus", "front", A_SUBTHALAMIC_NUCLEUS, ["subthalamic nucleus", "STN", "nhân Luys", "subthalamus"]), context: [THALAMUS, BRAINSTEM] },
+  { ...structure("cerebellar-deep-nuclei", "Các nhân sâu tiểu não", "Deep cerebellar nuclei", "back", A_CEREBELLAR_DEEP_NUCLEI, ["nhân răng", "dentate nucleus", "nhân nút", "nhân cầu", "nhân mái", "nhân sâu tiểu não"]), context: [CEREBELLUM] },
   // Nhân nằm trong thân não: thân não mờ làm bối cảnh, không thì chỉ thấy các khối lơ lửng.
   { ...structure("cranial-nerve-nuclei", "Nhân các dây thần kinh sọ (chưa gồm nhân dây sinh ba)", "Cranial nerve nuclei (excluding trigeminal nuclei)", "back", CN_NUCLEI, ["nhân dây sọ", "cranial nerve nuclei", "Edinger–Westphal", "nhân mơ hồ"]), context: [BRAINSTEM] },
   { ...structure("red-nucleus", "Nhân đỏ", "Red nucleus", "three-quarter", RED_NUCLEUS, ["red nucleus"]), context: [BRAINSTEM] },

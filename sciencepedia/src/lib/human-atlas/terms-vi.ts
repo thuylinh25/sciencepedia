@@ -1810,6 +1810,21 @@ const WHOLE: Record<string, string> = {
   malleus: "xương búa",
   incus: "xương đe",
   stapes: "xương bàn đạp",
+  // Nhân sâu từ Allen Human Reference Atlas (2026-10-19).
+  "anterior nuclear complex of thalamus": "phức hợp nhân trước đồi thị",
+  "lateral dorsal nucleus of thalamus": "nhân lưng bên đồi thị",
+  "mediodorsal nucleus of thalamus": "nhân lưng giữa đồi thị",
+  "lateral posterior nucleus of thalamus": "nhân sau bên đồi thị",
+  "pulvinar of thalamus": "gối sau đồi thị (pulvinar)",
+  "ventral anterior nucleus of thalamus": "nhân bụng trước đồi thị",
+  "ventral lateral nucleus of thalamus": "nhân bụng bên đồi thị",
+  "ventral posterior lateral nucleus of thalamus": "nhân bụng sau bên đồi thị",
+  "ventral posterior medial nucleus of thalamus": "nhân bụng sau giữa đồi thị",
+  "centromedian nucleus of thalamus": "nhân trung tâm giữa đồi thị",
+  "parafascicular nucleus of thalamus": "nhân cạnh bó đồi thị",
+  "substantia nigra": "chất đen",
+  "subthalamic nucleus": "nhân dưới đồi thị",
+  "cerebellar deep nuclei": "các nhân sâu tiểu não",
 };
 
 const ORDINALS: Record<string, number> = {

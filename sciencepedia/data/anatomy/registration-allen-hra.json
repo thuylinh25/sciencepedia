@@ -1,0 +1,686 @@
+{
+ "source": "Allen Human Reference Atlas - 3D, 2020 (annotation.nii.gz, ICBM 2009b NLin Sym, RAS, mm)",
+ "target": "BodyParts3D 4.0 frame (m; +x subject left, +y superior)",
+ "matrix_4x3_rowvector": [
+  [
+   -0.000900581,
+   -4.1e-08,
+   1.35e-07
+  ],
+  [
+   1.6e-07,
+   0.000285098,
+   0.000984127
+  ],
+  [
+   -3.2e-08,
+   0.0008609,
+   -0.000308558
+  ],
+  [
+   -0.000650085,
+   1.634855922,
+   -0.00341544
+  ]
+ ],
+ "landmarks": [
+  {
+   "name": "left thalamus",
+   "fit": true,
+   "residual_mm": 3.7
+  },
+  {
+   "name": "right thalamus",
+   "fit": true,
+   "residual_mm": 3.69
+  },
+  {
+   "name": "left caudate nucleus",
+   "fit": true,
+   "residual_mm": 2.78
+  },
+  {
+   "name": "right caudate nucleus",
+   "fit": true,
+   "residual_mm": 2.77
+  },
+  {
+   "name": "left putamen",
+   "fit": true,
+   "residual_mm": 4.54
+  },
+  {
+   "name": "right putamen",
+   "fit": true,
+   "residual_mm": 4.54
+  },
+  {
+   "name": "left globus pallidus",
+   "fit": true,
+   "residual_mm": 5.87
+  },
+  {
+   "name": "right globus pallidus",
+   "fit": true,
+   "residual_mm": 5.87
+  },
+  {
+   "name": "left hippocampus",
+   "fit": true,
+   "residual_mm": 7.57
+  },
+  {
+   "name": "right hippocampus",
+   "fit": true,
+   "residual_mm": 7.58
+  },
+  {
+   "name": "left amygdala",
+   "fit": true,
+   "residual_mm": 5.21
+  },
+  {
+   "name": "right amygdala",
+   "fit": true,
+   "residual_mm": 5.22
+  },
+  {
+   "name": "left lateral ventricle",
+   "fit": true,
+   "residual_mm": 2.32
+  },
+  {
+   "name": "right lateral ventricle",
+   "fit": true,
+   "residual_mm": 2.35
+  },
+  {
+   "name": "left insula",
+   "fit": true,
+   "residual_mm": 6.44
+  },
+  {
+   "name": "right insula",
+   "fit": true,
+   "residual_mm": 6.43
+  },
+  {
+   "name": "left precentral gyrus",
+   "fit": true,
+   "residual_mm": 6.3
+  },
+  {
+   "name": "right precentral gyrus",
+   "fit": true,
+   "residual_mm": 6.31
+  },
+  {
+   "name": "left superior frontal gyrus",
+   "fit": true,
+   "residual_mm": 4.74
+  },
+  {
+   "name": "right superior frontal gyrus",
+   "fit": true,
+   "residual_mm": 4.71
+  },
+  {
+   "name": "left middle frontal gyrus",
+   "fit": true,
+   "residual_mm": 4.07
+  },
+  {
+   "name": "right middle frontal gyrus",
+   "fit": true,
+   "residual_mm": 4.05
+  },
+  {
+   "name": "left postcentral gyrus",
+   "fit": true,
+   "residual_mm": 3.07
+  },
+  {
+   "name": "right postcentral gyrus",
+   "fit": true,
+   "residual_mm": 3.09
+  },
+  {
+   "name": "left supramarginal gyrus",
+   "fit": true,
+   "residual_mm": 4.11
+  },
+  {
+   "name": "right supramarginal gyrus",
+   "fit": true,
+   "residual_mm": 4.11
+  },
+  {
+   "name": "left angular gyrus",
+   "fit": true,
+   "residual_mm": 2.47
+  },
+  {
+   "name": "right angular gyrus",
+   "fit": true,
+   "residual_mm": 2.48
+  },
+  {
+   "name": "left middle temporal gyrus",
+   "fit": true,
+   "residual_mm": 7.24
+  },
+  {
+   "name": "right middle temporal gyrus",
+   "fit": true,
+   "residual_mm": 7.27
+  },
+  {
+   "name": "left inferior temporal gyrus",
+   "fit": true,
+   "residual_mm": 7.19
+  },
+  {
+   "name": "right inferior temporal gyrus",
+   "fit": true,
+   "residual_mm": 7.35
+  },
+  {
+   "name": "left superior parietal lobule",
+   "fit": true,
+   "residual_mm": 8.46
+  },
+  {
+   "name": "right superior parietal lobule",
+   "fit": true,
+   "residual_mm": 8.48
+  },
+  {
+   "name": "left cingulate gyrus",
+   "fit": true,
+   "residual_mm": 5.53
+  },
+  {
+   "name": "right cingulate gyrus",
+   "fit": true,
+   "residual_mm": 5.54
+  },
+  {
+   "name": "left parahippocampal gyrus",
+   "fit": true,
+   "residual_mm": 11.25
+  },
+  {
+   "name": "right parahippocampal gyrus",
+   "fit": true,
+   "residual_mm": 11.24
+  },
+  {
+   "name": "left fusiform gyrus",
+   "fit": true,
+   "residual_mm": 11.29
+  },
+  {
+   "name": "right fusiform gyrus",
+   "fit": true,
+   "residual_mm": 11.32
+  },
+  {
+   "name": "left occipital lobe",
+   "fit": true,
+   "residual_mm": 2.96
+  },
+  {
+   "name": "right occipital lobe",
+   "fit": true,
+   "residual_mm": 2.87
+  },
+  {
+   "name": "pons",
+   "fit": true,
+   "residual_mm": 3.03
+  },
+  {
+   "name": "medulla oblongata",
+   "fit": true,
+   "residual_mm": 12.09
+  },
+  {
+   "name": "cerebellum",
+   "fit": true,
+   "residual_mm": 5.9
+  },
+  {
+   "name": "corpus callosum",
+   "fit": true,
+   "residual_mm": 5.32
+  },
+  {
+   "name": "left lateral geniculate body",
+   "fit": false,
+   "residual_mm": 4.11
+  },
+  {
+   "name": "right lateral geniculate body",
+   "fit": false,
+   "residual_mm": 3.98
+  },
+  {
+   "name": "left medial geniculate body",
+   "fit": false,
+   "residual_mm": 5.18
+  },
+  {
+   "name": "right medial geniculate body",
+   "fit": false,
+   "residual_mm": 5.03
+  },
+  {
+   "name": "left superior colliculus",
+   "fit": false,
+   "residual_mm": 5.77
+  },
+  {
+   "name": "right superior colliculus",
+   "fit": false,
+   "residual_mm": 5.79
+  },
+  {
+   "name": "left inferior colliculus",
+   "fit": false,
+   "residual_mm": 7.7
+  },
+  {
+   "name": "right inferior colliculus",
+   "fit": false,
+   "residual_mm": 7.76
+  },
+  {
+   "name": "left red nucleus",
+   "fit": false,
+   "residual_mm": 10.43
+  },
+  {
+   "name": "right red nucleus",
+   "fit": false,
+   "residual_mm": 10.43
+  },
+  {
+   "name": "third ventricle",
+   "fit": false,
+   "residual_mm": 3.14
+  },
+  {
+   "name": "fourth ventricle",
+   "fit": false,
+   "residual_mm": 2.61
+  },
+  {
+   "name": "cerebral aqueduct",
+   "fit": false,
+   "residual_mm": 7.46
+  }
+ ],
+ "dropped_as_outliers": [],
+ "fit_residual_median_mm": 5.27,
+ "leave_one_out_median_mm": 5.58,
+ "held_out_median_mm": 5.77,
+ "checks": {
+  "det_sign_matches_expected": true,
+  "rotation_deg_from_expected_axes": 17.84,
+  "singular_values": [
+   1.0318,
+   0.9064,
+   0.9006
+  ],
+  "anisotropy": 1.1457
+ },
+ "regional_refinement_4x4_column": {
+  "thalamus left": {
+   "matrix": [
+    [
+     0.986839856,
+     0.053678321,
+     -0.006671905,
+     -0.08637418
+    ],
+    [
+     -0.054051084,
+     0.973870782,
+     -0.159477138,
+     0.036511933
+    ],
+    [
+     -0.002087269,
+     0.159602992,
+     0.975346762,
+     -0.258912359
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "scale": 0.9883
+  },
+  "thalamus right": {
+   "matrix": [
+    [
+     0.979462519,
+     -0.084589917,
+     0.015628929,
+     0.137053005
+    ],
+    [
+     0.086007589,
+     0.966229182,
+     -0.16046933,
+     0.049441317
+    ],
+    [
+     -0.001553081,
+     0.161221143,
+     0.969923643,
+     -0.261716494
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "scale": 0.9832
+  },
+  "thalamus both": {
+   "matrix": [
+    [
+     1.011079552,
+     -0.000172942,
+     0.000354336,
+     0.000363303
+    ],
+    [
+     0.00023362,
+     0.994724146,
+     -0.181123809,
+     0.001434938
+    ],
+    [
+     -0.000317624,
+     0.181123878,
+     0.994724111,
+     -0.29327876
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "scale": 1.0111
+  },
+  "midbrain both": {
+   "matrix": [
+    [
+     1.085979989,
+     0.006120331,
+     -0.028241852,
+     -0.010372544
+    ],
+    [
+     -0.002699507,
+     1.078562794,
+     0.12993309,
+     -0.126640262
+    ],
+    [
+     0.02877105,
+     -0.129816936,
+     1.078196358,
+     0.217164648
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "scale": 1.0864
+  },
+  "cerebellum both": {
+   "matrix": [
+    [
+     1.00941333,
+     -0.000172005,
+     0.001166504,
+     0.000420019
+    ],
+    [
+     0.000261406,
+     1.006411017,
+     -0.077803966,
+     -0.011216714
+    ],
+    [
+     -0.001149776,
+     0.077804215,
+     1.006410375,
+     -0.129365949
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "scale": 1.0094
+  }
+ },
+ "part_regions": {
+  "left anterior-thalamic-nuclei": "thalamus left",
+  "right anterior-thalamic-nuclei": "thalamus right",
+  "left lateral-dorsal-nucleus": "thalamus left",
+  "right lateral-dorsal-nucleus": "thalamus right",
+  "left mediodorsal-nucleus": "thalamus left",
+  "right mediodorsal-nucleus": "thalamus right",
+  "left lateral-posterior-nucleus": "thalamus left",
+  "right lateral-posterior-nucleus": "thalamus right",
+  "left pulvinar": "thalamus left",
+  "right pulvinar": "thalamus right",
+  "left ventral-anterior-nucleus": "thalamus left",
+  "right ventral-anterior-nucleus": "thalamus right",
+  "left ventral-lateral-nucleus": "thalamus left",
+  "right ventral-lateral-nucleus": "thalamus right",
+  "left ventral-posterior-lateral-nucleus": "thalamus left",
+  "right ventral-posterior-lateral-nucleus": "thalamus right",
+  "left ventral-posterior-medial-nucleus": "thalamus left",
+  "right ventral-posterior-medial-nucleus": "thalamus right",
+  "left centromedian-nucleus": "thalamus left",
+  "right centromedian-nucleus": "thalamus right",
+  "left parafascicular-nucleus": "thalamus left",
+  "right parafascicular-nucleus": "thalamus right",
+  "left substantia-nigra": "midbrain both",
+  "right substantia-nigra": "midbrain both",
+  "left subthalamic-nucleus": "midbrain both",
+  "right subthalamic-nucleus": "midbrain both",
+  "left cerebellar-deep-nuclei": "cerebellum both",
+  "right cerebellar-deep-nuclei": "cerebellum both"
+ },
+ "containment_after_refinement": {
+  "left anterior-thalamic-nuclei": {
+   "outside_fraction": 0.061,
+   "max_protrusion_mm": 1.6
+  },
+  "right anterior-thalamic-nuclei": {
+   "outside_fraction": 0.068,
+   "max_protrusion_mm": 2.12
+  },
+  "left lateral-dorsal-nucleus": {
+   "outside_fraction": 0.0,
+   "max_protrusion_mm": 0.0
+  },
+  "right lateral-dorsal-nucleus": {
+   "outside_fraction": 0.0,
+   "max_protrusion_mm": 0.0
+  },
+  "left mediodorsal-nucleus": {
+   "outside_fraction": 0.0,
+   "max_protrusion_mm": 0.0
+  },
+  "right mediodorsal-nucleus": {
+   "outside_fraction": 0.0,
+   "max_protrusion_mm": 0.0
+  },
+  "left lateral-posterior-nucleus": {
+   "outside_fraction": 0.025,
+   "max_protrusion_mm": 1.5
+  },
+  "right lateral-posterior-nucleus": {
+   "outside_fraction": 0.013,
+   "max_protrusion_mm": 1.68
+  },
+  "left pulvinar": {
+   "outside_fraction": 0.043,
+   "max_protrusion_mm": 1.91
+  },
+  "right pulvinar": {
+   "outside_fraction": 0.034,
+   "max_protrusion_mm": 1.59
+  },
+  "left ventral-anterior-nucleus": {
+   "outside_fraction": 0.001,
+   "max_protrusion_mm": 1.33
+  },
+  "right ventral-anterior-nucleus": {
+   "outside_fraction": 0.004,
+   "max_protrusion_mm": 2.26
+  },
+  "left ventral-lateral-nucleus": {
+   "outside_fraction": 0.001,
+   "max_protrusion_mm": 1.32
+  },
+  "right ventral-lateral-nucleus": {
+   "outside_fraction": 0.001,
+   "max_protrusion_mm": 1.1
+  },
+  "left ventral-posterior-lateral-nucleus": {
+   "outside_fraction": 0.0,
+   "max_protrusion_mm": 0.0
+  },
+  "right ventral-posterior-lateral-nucleus": {
+   "outside_fraction": 0.0,
+   "max_protrusion_mm": 0.0
+  },
+  "left ventral-posterior-medial-nucleus": {
+   "outside_fraction": 0.0,
+   "max_protrusion_mm": 0.0
+  },
+  "right ventral-posterior-medial-nucleus": {
+   "outside_fraction": 0.0,
+   "max_protrusion_mm": 0.0
+  },
+  "left centromedian-nucleus": {
+   "outside_fraction": 0.0,
+   "max_protrusion_mm": 0.0
+  },
+  "right centromedian-nucleus": {
+   "outside_fraction": 0.0,
+   "max_protrusion_mm": 0.0
+  },
+  "left parafascicular-nucleus": {
+   "outside_fraction": 0.0,
+   "max_protrusion_mm": 0.0
+  },
+  "right parafascicular-nucleus": {
+   "outside_fraction": 0.0,
+   "max_protrusion_mm": 0.0
+  },
+  "left substantia-nigra": {
+   "outside_fraction": 0.006,
+   "max_protrusion_mm": 1.17
+  },
+  "right substantia-nigra": {
+   "outside_fraction": 0.004,
+   "max_protrusion_mm": 2.08
+  },
+  "left cerebellar-deep-nuclei": {
+   "outside_fraction": 0.0,
+   "max_protrusion_mm": 0.0
+  },
+  "right cerebellar-deep-nuclei": {
+   "outside_fraction": 0.0,
+   "max_protrusion_mm": 0.0
+  }
+ },
+ "subthalamic_zona_incerta_check": {
+  "left subthalamic-nucleus": {
+   "midbrain": {
+    "inside_thalamus": 0.0,
+    "inside_midbrain": 0.454
+   },
+   "thalamus": {
+    "inside_thalamus": 0.0,
+    "inside_midbrain": 1.0
+   },
+   "midpoint": {
+    "inside_thalamus": 0.0,
+    "inside_midbrain": 0.809
+   },
+   "chosen": "midbrain"
+  },
+  "right subthalamic-nucleus": {
+   "midbrain": {
+    "inside_thalamus": 0.008,
+    "inside_midbrain": 0.435
+   },
+   "thalamus": {
+    "inside_thalamus": 0.0,
+    "inside_midbrain": 1.0
+   },
+   "midpoint": {
+    "inside_thalamus": 0.0,
+    "inside_midbrain": 0.8
+   },
+   "chosen": "midbrain"
+  },
+  "left zona-incerta": {
+   "midbrain": {
+    "inside_thalamus": 0.708,
+    "inside_midbrain": 0.08
+   },
+   "thalamus": {
+    "inside_thalamus": 0.672,
+    "inside_midbrain": 0.156
+   },
+   "midpoint": {
+    "inside_thalamus": 0.731,
+    "inside_midbrain": 0.108
+   },
+   "chosen": null
+  },
+  "right zona-incerta": {
+   "midbrain": {
+    "inside_thalamus": 0.779,
+    "inside_midbrain": 0.075
+   },
+   "thalamus": {
+    "inside_thalamus": 0.675,
+    "inside_midbrain": 0.155
+   },
+   "midpoint": {
+    "inside_thalamus": 0.764,
+    "inside_midbrain": 0.105
+   },
+   "chosen": null
+  }
+ },
+ "olfactory_za_vs_allen_median_mm": {
+  "left": 8.53,
+  "right": 8.48
+ }
+}

@@ -65,18 +65,18 @@
     ]
   },
   "coverage": {
-    "nodes": 166,
-    "nodes3d": 161,
+    "nodes": 183,
+    "nodes3d": 178,
     "byStatus": {
-      "live": 114,
+      "live": 132,
       "buildable": 13,
       "import-za": 12,
       "needs-schema": 8,
       "needs-clipping": 4,
-      "missing": 10
+      "missing": 9
     },
-    "readyNow": "127/161 (79%) nút 3D dựng được bằng dữ liệu đang có",
-    "afterZaImport": "139/161 (86%)",
+    "readyNow": "145/178 (81%) nút 3D dựng được bằng dữ liệu đang có",
+    "afterZaImport": "157/178 (88%)",
     "haaTiles": {
       "note": "So với 24 ô \"Nervous System Views\" của HAA (ảnh tham chiếu, không dùng asset HAA).",
       "withCardNow": "19/24 (79%)",
@@ -282,8 +282,6 @@
       "title": "Thiếu nguồn: tìm asset (giấy phép trước) hoặc sơ đồ tự dựng",
       "status": "missing",
       "items": [
-        "cerebellar-nuclei",
-        "thalamic-nuclei",
         "hypothalamic-nuclei",
         "trigeminal-ganglion",
         "prevertebral-ganglia",
@@ -291,7 +289,8 @@
         "enteric",
         "cervical-plexus",
         "nervous-phrenic",
-        "touch-receptors"
+        "touch-receptors",
+        "zona-incerta"
       ]
     }
   ],
@@ -447,6 +446,7 @@
         "nervous-brain-blood-supply",
         "nervous-limbic",
         "nervous-deep-brain",
+        "nervous-base-of-brain",
         "nervous-brainstem-cerebellum"
       ],
       "learningObjectives": {
@@ -677,7 +677,7 @@
         "cerebellar-hemisphere-lobules",
         "flocculonodular-lobe",
         "cerebellar-peduncles",
-        "cerebellar-nuclei"
+        "nervous-cerebellar-nuclei"
       ],
       "learningObjectives": {
         "vi": [
@@ -983,42 +983,6 @@
       "priority": "P2"
     },
     {
-      "id": "cerebellar-nuclei",
-      "viewId": "cerebellar-nuclei",
-      "section": "B",
-      "kind": "structure",
-      "level": 4,
-      "name": {
-        "vi": "Nhân tiểu não (nhân răng…)",
-        "en": "Cerebellar nuclei (dentate…)",
-        "reviewed": false
-      },
-      "parent": "cerebellum",
-      "children": [],
-      "learningObjectives": {
-        "vi": [
-          "Xác định nhân răng sâu trong bán cầu tiểu não"
-        ],
-        "reviewed": false
-      },
-      "structures3d": [],
-      "view": null,
-      "url": {
-        "vi": "/vi/human-atlas?view=cerebellar-nuclei",
-        "en": "/en/human-atlas?view=cerebellar-nuclei"
-      },
-      "thumbnail": null,
-      "data": {
-        "status": "missing",
-        "partial": false,
-        "existingViewId": null,
-        "borrowedFromSystem": null,
-        "note": null
-      },
-      "phase": 2,
-      "priority": "P4"
-    },
-    {
       "id": "brainstem",
       "viewId": "brainstem",
       "section": "B",
@@ -1034,7 +998,8 @@
         "midbrain",
         "pons",
         "medulla-oblongata",
-        "cranial-nerve-nuclei"
+        "cranial-nerve-nuclei",
+        "nervous-subthalamic-nigral"
       ],
       "learningObjectives": {
         "vi": [
@@ -3586,7 +3551,7 @@
       },
       "parent": "diencephalon",
       "children": [
-        "thalamic-nuclei"
+        "nervous-thalamic-nuclei"
       ],
       "learningObjectives": {
         "vi": [
@@ -3629,42 +3594,6 @@
       },
       "phase": 2,
       "priority": "done"
-    },
-    {
-      "id": "thalamic-nuclei",
-      "viewId": "thalamic-nuclei",
-      "section": "E",
-      "kind": "region",
-      "level": 6,
-      "name": {
-        "vi": "Các nhân đồi thị",
-        "en": "Thalamic nuclei",
-        "reviewed": false
-      },
-      "parent": "thalamus",
-      "children": [],
-      "learningObjectives": {
-        "vi": [
-          "Phân biệt nhóm nhân trước, trong, ngoài của đồi thị"
-        ],
-        "reviewed": false
-      },
-      "structures3d": [],
-      "view": null,
-      "url": {
-        "vi": "/vi/human-atlas?view=thalamic-nuclei",
-        "en": "/en/human-atlas?view=thalamic-nuclei"
-      },
-      "thumbnail": null,
-      "data": {
-        "status": "missing",
-        "partial": false,
-        "existingViewId": null,
-        "borrowedFromSystem": null,
-        "note": "Không nguồn đã vet có nhân đồi thị. Ứng viên tương lai: atlas não mã nguồn mở (cần kiểm giấy phép trước)."
-      },
-      "phase": 2,
-      "priority": "P4"
     },
     {
       "id": "geniculate-bodies",
@@ -8746,6 +8675,986 @@
         "status": "live",
         "partial": false,
         "existingViewId": "septum-telencephalon",
+        "borrowedFromSystem": null,
+        "note": null
+      },
+      "phase": 2,
+      "priority": "done"
+    },
+    {
+      "id": "nervous-base-of-brain",
+      "viewId": "nervous-base-of-brain",
+      "section": "B",
+      "kind": "group",
+      "level": 3,
+      "name": {
+        "vi": "Mặt dưới não",
+        "en": "Base of the brain",
+        "reviewed": true
+      },
+      "parent": "nervous-brain",
+      "children": [],
+      "learningObjectives": {
+        "vi": [
+          "Nhận ra các cấu trúc ở mặt dưới não: giao thoa thị giác, thể vú, cuống đại não, cầu não",
+          "Xác định nơi dây sọ I–VI rời não"
+        ],
+        "reviewed": false
+      },
+      "structures3d": [
+        "rule hiện có của `nervous-base-of-brain`"
+      ],
+      "view": {
+        "direction": "inferior",
+        "zoom": {
+          "level": "organ",
+          "cameraFill": 0.82,
+          "thumbnailFill": 0.86
+        },
+        "display": "layered",
+        "context": [
+          "vòng động mạch não",
+          "tuyến yên"
+        ]
+      },
+      "url": {
+        "vi": "/vi/human-atlas?view=nervous-base-of-brain",
+        "en": "/en/human-atlas?view=nervous-base-of-brain"
+      },
+      "thumbnail": {
+        "source": "auto-capture",
+        "from": "model",
+        "direction": "inferior"
+      },
+      "data": {
+        "status": "live",
+        "partial": false,
+        "existingViewId": "nervous-base-of-brain",
+        "borrowedFromSystem": null,
+        "note": null
+      },
+      "phase": 2,
+      "priority": "done"
+    },
+    {
+      "id": "nervous-thalamic-nuclei",
+      "viewId": "nervous-thalamic-nuclei",
+      "section": "E",
+      "kind": "group",
+      "level": 6,
+      "name": {
+        "vi": "Các nhân đồi thị",
+        "en": "Thalamic nuclei",
+        "reviewed": true
+      },
+      "parent": "thalamus",
+      "children": [
+        "anterior-thalamic-nuclei",
+        "lateral-dorsal-nucleus",
+        "mediodorsal-nucleus",
+        "lateral-posterior-nucleus",
+        "pulvinar",
+        "ventral-anterior-nucleus",
+        "ventral-lateral-nucleus",
+        "ventral-posterior-lateral-nucleus",
+        "ventral-posterior-medial-nucleus",
+        "centromedian-nucleus",
+        "parafascicular-nucleus"
+      ],
+      "learningObjectives": {
+        "vi": [
+          "Phân biệt các nhóm nhân đồi thị: trước, giữa, tầng lưng bên, tầng bụng, gối sau",
+          "Liên hệ nhân bụng sau với cảm giác thân thể, thể gối với thị/thính giác"
+        ],
+        "reviewed": false
+      },
+      "structures3d": [
+        "rule hiện có của `nervous-thalamic-nuclei`"
+      ],
+      "view": {
+        "direction": "three-quarter",
+        "zoom": {
+          "level": "structure",
+          "cameraFill": 0.86,
+          "thumbnailFill": 0.86
+        },
+        "display": "layered",
+        "context": [
+          "đồi thị mờ"
+        ]
+      },
+      "url": {
+        "vi": "/vi/human-atlas?view=nervous-thalamic-nuclei",
+        "en": "/en/human-atlas?view=nervous-thalamic-nuclei"
+      },
+      "thumbnail": {
+        "source": "auto-capture",
+        "from": "model",
+        "direction": "three-quarter"
+      },
+      "data": {
+        "status": "live",
+        "partial": true,
+        "existingViewId": "nervous-thalamic-nuclei",
+        "borrowedFromSystem": null,
+        "note": "Allen Human Reference Atlas 3D 2020 (CC BY 4.0): bán cầu trái + lật gương; affine theo mốc + ICP từng vùng (data/anatomy/registration-allen-hra.json). Thiếu nhân đường giữa, reuniens, lưới, phần lớn nhân trong mảnh tuỷ."
+      },
+      "phase": 2,
+      "priority": "done"
+    },
+    {
+      "id": "anterior-thalamic-nuclei",
+      "viewId": "anterior-thalamic-nuclei",
+      "section": "E",
+      "kind": "structure",
+      "level": 7,
+      "name": {
+        "vi": "Phức hợp nhân trước đồi thị",
+        "en": "Anterior nuclear complex of thalamus",
+        "reviewed": true
+      },
+      "parent": "nervous-thalamic-nuclei",
+      "children": [],
+      "learningObjectives": {
+        "vi": [
+          "Định vị phức hợp nhân trước đồi thị trong đồi thị"
+        ],
+        "reviewed": false
+      },
+      "structures3d": [
+        "rule hiện có của `anterior-thalamic-nuclei`"
+      ],
+      "view": {
+        "direction": "three-quarter",
+        "zoom": {
+          "level": "detail",
+          "cameraFill": 0.9,
+          "thumbnailFill": 0.86
+        },
+        "display": "layered",
+        "context": []
+      },
+      "url": {
+        "vi": "/vi/human-atlas?view=anterior-thalamic-nuclei",
+        "en": "/en/human-atlas?view=anterior-thalamic-nuclei"
+      },
+      "thumbnail": {
+        "source": "auto-capture",
+        "from": "model",
+        "direction": "three-quarter"
+      },
+      "data": {
+        "status": "live",
+        "partial": false,
+        "existingViewId": "anterior-thalamic-nuclei",
+        "borrowedFromSystem": null,
+        "note": null
+      },
+      "phase": 2,
+      "priority": "done"
+    },
+    {
+      "id": "lateral-dorsal-nucleus",
+      "viewId": "lateral-dorsal-nucleus",
+      "section": "E",
+      "kind": "structure",
+      "level": 7,
+      "name": {
+        "vi": "Nhân lưng bên đồi thị",
+        "en": "Lateral dorsal nucleus of thalamus",
+        "reviewed": true
+      },
+      "parent": "nervous-thalamic-nuclei",
+      "children": [],
+      "learningObjectives": {
+        "vi": [
+          "Định vị nhân lưng bên đồi thị trong đồi thị"
+        ],
+        "reviewed": false
+      },
+      "structures3d": [
+        "rule hiện có của `lateral-dorsal-nucleus`"
+      ],
+      "view": {
+        "direction": "three-quarter",
+        "zoom": {
+          "level": "detail",
+          "cameraFill": 0.9,
+          "thumbnailFill": 0.86
+        },
+        "display": "layered",
+        "context": []
+      },
+      "url": {
+        "vi": "/vi/human-atlas?view=lateral-dorsal-nucleus",
+        "en": "/en/human-atlas?view=lateral-dorsal-nucleus"
+      },
+      "thumbnail": {
+        "source": "auto-capture",
+        "from": "model",
+        "direction": "three-quarter"
+      },
+      "data": {
+        "status": "live",
+        "partial": false,
+        "existingViewId": "lateral-dorsal-nucleus",
+        "borrowedFromSystem": null,
+        "note": null
+      },
+      "phase": 2,
+      "priority": "done"
+    },
+    {
+      "id": "mediodorsal-nucleus",
+      "viewId": "mediodorsal-nucleus",
+      "section": "E",
+      "kind": "structure",
+      "level": 7,
+      "name": {
+        "vi": "Nhân lưng giữa đồi thị",
+        "en": "Mediodorsal nucleus of thalamus",
+        "reviewed": true
+      },
+      "parent": "nervous-thalamic-nuclei",
+      "children": [],
+      "learningObjectives": {
+        "vi": [
+          "Định vị nhân lưng giữa đồi thị trong đồi thị"
+        ],
+        "reviewed": false
+      },
+      "structures3d": [
+        "rule hiện có của `mediodorsal-nucleus`"
+      ],
+      "view": {
+        "direction": "three-quarter",
+        "zoom": {
+          "level": "detail",
+          "cameraFill": 0.9,
+          "thumbnailFill": 0.86
+        },
+        "display": "layered",
+        "context": []
+      },
+      "url": {
+        "vi": "/vi/human-atlas?view=mediodorsal-nucleus",
+        "en": "/en/human-atlas?view=mediodorsal-nucleus"
+      },
+      "thumbnail": {
+        "source": "auto-capture",
+        "from": "model",
+        "direction": "three-quarter"
+      },
+      "data": {
+        "status": "live",
+        "partial": false,
+        "existingViewId": "mediodorsal-nucleus",
+        "borrowedFromSystem": null,
+        "note": null
+      },
+      "phase": 2,
+      "priority": "done"
+    },
+    {
+      "id": "lateral-posterior-nucleus",
+      "viewId": "lateral-posterior-nucleus",
+      "section": "E",
+      "kind": "structure",
+      "level": 7,
+      "name": {
+        "vi": "Nhân sau bên đồi thị",
+        "en": "Lateral posterior nucleus of thalamus",
+        "reviewed": true
+      },
+      "parent": "nervous-thalamic-nuclei",
+      "children": [],
+      "learningObjectives": {
+        "vi": [
+          "Định vị nhân sau bên đồi thị trong đồi thị"
+        ],
+        "reviewed": false
+      },
+      "structures3d": [
+        "rule hiện có của `lateral-posterior-nucleus`"
+      ],
+      "view": {
+        "direction": "three-quarter",
+        "zoom": {
+          "level": "detail",
+          "cameraFill": 0.9,
+          "thumbnailFill": 0.86
+        },
+        "display": "layered",
+        "context": []
+      },
+      "url": {
+        "vi": "/vi/human-atlas?view=lateral-posterior-nucleus",
+        "en": "/en/human-atlas?view=lateral-posterior-nucleus"
+      },
+      "thumbnail": {
+        "source": "auto-capture",
+        "from": "model",
+        "direction": "three-quarter"
+      },
+      "data": {
+        "status": "live",
+        "partial": false,
+        "existingViewId": "lateral-posterior-nucleus",
+        "borrowedFromSystem": null,
+        "note": null
+      },
+      "phase": 2,
+      "priority": "done"
+    },
+    {
+      "id": "pulvinar",
+      "viewId": "pulvinar",
+      "section": "E",
+      "kind": "structure",
+      "level": 7,
+      "name": {
+        "vi": "Gối sau đồi thị (pulvinar)",
+        "en": "Pulvinar of thalamus",
+        "reviewed": true
+      },
+      "parent": "nervous-thalamic-nuclei",
+      "children": [],
+      "learningObjectives": {
+        "vi": [
+          "Định vị gối sau đồi thị (pulvinar) trong đồi thị"
+        ],
+        "reviewed": false
+      },
+      "structures3d": [
+        "rule hiện có của `pulvinar`"
+      ],
+      "view": {
+        "direction": "three-quarter",
+        "zoom": {
+          "level": "detail",
+          "cameraFill": 0.9,
+          "thumbnailFill": 0.86
+        },
+        "display": "layered",
+        "context": []
+      },
+      "url": {
+        "vi": "/vi/human-atlas?view=pulvinar",
+        "en": "/en/human-atlas?view=pulvinar"
+      },
+      "thumbnail": {
+        "source": "auto-capture",
+        "from": "model",
+        "direction": "three-quarter"
+      },
+      "data": {
+        "status": "live",
+        "partial": false,
+        "existingViewId": "pulvinar",
+        "borrowedFromSystem": null,
+        "note": null
+      },
+      "phase": 2,
+      "priority": "done"
+    },
+    {
+      "id": "ventral-anterior-nucleus",
+      "viewId": "ventral-anterior-nucleus",
+      "section": "E",
+      "kind": "structure",
+      "level": 7,
+      "name": {
+        "vi": "Nhân bụng trước đồi thị",
+        "en": "Ventral anterior nucleus of thalamus",
+        "reviewed": true
+      },
+      "parent": "nervous-thalamic-nuclei",
+      "children": [],
+      "learningObjectives": {
+        "vi": [
+          "Định vị nhân bụng trước đồi thị trong đồi thị"
+        ],
+        "reviewed": false
+      },
+      "structures3d": [
+        "rule hiện có của `ventral-anterior-nucleus`"
+      ],
+      "view": {
+        "direction": "three-quarter",
+        "zoom": {
+          "level": "detail",
+          "cameraFill": 0.9,
+          "thumbnailFill": 0.86
+        },
+        "display": "layered",
+        "context": []
+      },
+      "url": {
+        "vi": "/vi/human-atlas?view=ventral-anterior-nucleus",
+        "en": "/en/human-atlas?view=ventral-anterior-nucleus"
+      },
+      "thumbnail": {
+        "source": "auto-capture",
+        "from": "model",
+        "direction": "three-quarter"
+      },
+      "data": {
+        "status": "live",
+        "partial": false,
+        "existingViewId": "ventral-anterior-nucleus",
+        "borrowedFromSystem": null,
+        "note": null
+      },
+      "phase": 2,
+      "priority": "done"
+    },
+    {
+      "id": "ventral-lateral-nucleus",
+      "viewId": "ventral-lateral-nucleus",
+      "section": "E",
+      "kind": "structure",
+      "level": 7,
+      "name": {
+        "vi": "Nhân bụng bên đồi thị",
+        "en": "Ventral lateral nucleus of thalamus",
+        "reviewed": true
+      },
+      "parent": "nervous-thalamic-nuclei",
+      "children": [],
+      "learningObjectives": {
+        "vi": [
+          "Định vị nhân bụng bên đồi thị trong đồi thị"
+        ],
+        "reviewed": false
+      },
+      "structures3d": [
+        "rule hiện có của `ventral-lateral-nucleus`"
+      ],
+      "view": {
+        "direction": "three-quarter",
+        "zoom": {
+          "level": "detail",
+          "cameraFill": 0.9,
+          "thumbnailFill": 0.86
+        },
+        "display": "layered",
+        "context": []
+      },
+      "url": {
+        "vi": "/vi/human-atlas?view=ventral-lateral-nucleus",
+        "en": "/en/human-atlas?view=ventral-lateral-nucleus"
+      },
+      "thumbnail": {
+        "source": "auto-capture",
+        "from": "model",
+        "direction": "three-quarter"
+      },
+      "data": {
+        "status": "live",
+        "partial": false,
+        "existingViewId": "ventral-lateral-nucleus",
+        "borrowedFromSystem": null,
+        "note": null
+      },
+      "phase": 2,
+      "priority": "done"
+    },
+    {
+      "id": "ventral-posterior-lateral-nucleus",
+      "viewId": "ventral-posterior-lateral-nucleus",
+      "section": "E",
+      "kind": "structure",
+      "level": 7,
+      "name": {
+        "vi": "Nhân bụng sau bên đồi thị",
+        "en": "Ventral posterior lateral nucleus of thalamus",
+        "reviewed": true
+      },
+      "parent": "nervous-thalamic-nuclei",
+      "children": [],
+      "learningObjectives": {
+        "vi": [
+          "Định vị nhân bụng sau bên đồi thị trong đồi thị"
+        ],
+        "reviewed": false
+      },
+      "structures3d": [
+        "rule hiện có của `ventral-posterior-lateral-nucleus`"
+      ],
+      "view": {
+        "direction": "three-quarter",
+        "zoom": {
+          "level": "detail",
+          "cameraFill": 0.9,
+          "thumbnailFill": 0.86
+        },
+        "display": "layered",
+        "context": []
+      },
+      "url": {
+        "vi": "/vi/human-atlas?view=ventral-posterior-lateral-nucleus",
+        "en": "/en/human-atlas?view=ventral-posterior-lateral-nucleus"
+      },
+      "thumbnail": {
+        "source": "auto-capture",
+        "from": "model",
+        "direction": "three-quarter"
+      },
+      "data": {
+        "status": "live",
+        "partial": false,
+        "existingViewId": "ventral-posterior-lateral-nucleus",
+        "borrowedFromSystem": null,
+        "note": null
+      },
+      "phase": 2,
+      "priority": "done"
+    },
+    {
+      "id": "ventral-posterior-medial-nucleus",
+      "viewId": "ventral-posterior-medial-nucleus",
+      "section": "E",
+      "kind": "structure",
+      "level": 7,
+      "name": {
+        "vi": "Nhân bụng sau giữa đồi thị",
+        "en": "Ventral posterior medial nucleus of thalamus",
+        "reviewed": true
+      },
+      "parent": "nervous-thalamic-nuclei",
+      "children": [],
+      "learningObjectives": {
+        "vi": [
+          "Định vị nhân bụng sau giữa đồi thị trong đồi thị"
+        ],
+        "reviewed": false
+      },
+      "structures3d": [
+        "rule hiện có của `ventral-posterior-medial-nucleus`"
+      ],
+      "view": {
+        "direction": "three-quarter",
+        "zoom": {
+          "level": "detail",
+          "cameraFill": 0.9,
+          "thumbnailFill": 0.86
+        },
+        "display": "layered",
+        "context": []
+      },
+      "url": {
+        "vi": "/vi/human-atlas?view=ventral-posterior-medial-nucleus",
+        "en": "/en/human-atlas?view=ventral-posterior-medial-nucleus"
+      },
+      "thumbnail": {
+        "source": "auto-capture",
+        "from": "model",
+        "direction": "three-quarter"
+      },
+      "data": {
+        "status": "live",
+        "partial": false,
+        "existingViewId": "ventral-posterior-medial-nucleus",
+        "borrowedFromSystem": null,
+        "note": null
+      },
+      "phase": 2,
+      "priority": "done"
+    },
+    {
+      "id": "centromedian-nucleus",
+      "viewId": "centromedian-nucleus",
+      "section": "E",
+      "kind": "structure",
+      "level": 7,
+      "name": {
+        "vi": "Nhân trung tâm giữa đồi thị",
+        "en": "Centromedian nucleus of thalamus",
+        "reviewed": true
+      },
+      "parent": "nervous-thalamic-nuclei",
+      "children": [],
+      "learningObjectives": {
+        "vi": [
+          "Định vị nhân trung tâm giữa đồi thị trong đồi thị"
+        ],
+        "reviewed": false
+      },
+      "structures3d": [
+        "rule hiện có của `centromedian-nucleus`"
+      ],
+      "view": {
+        "direction": "three-quarter",
+        "zoom": {
+          "level": "detail",
+          "cameraFill": 0.9,
+          "thumbnailFill": 0.86
+        },
+        "display": "layered",
+        "context": []
+      },
+      "url": {
+        "vi": "/vi/human-atlas?view=centromedian-nucleus",
+        "en": "/en/human-atlas?view=centromedian-nucleus"
+      },
+      "thumbnail": {
+        "source": "auto-capture",
+        "from": "model",
+        "direction": "three-quarter"
+      },
+      "data": {
+        "status": "live",
+        "partial": false,
+        "existingViewId": "centromedian-nucleus",
+        "borrowedFromSystem": null,
+        "note": null
+      },
+      "phase": 2,
+      "priority": "done"
+    },
+    {
+      "id": "parafascicular-nucleus",
+      "viewId": "parafascicular-nucleus",
+      "section": "E",
+      "kind": "structure",
+      "level": 7,
+      "name": {
+        "vi": "Nhân cạnh bó đồi thị",
+        "en": "Parafascicular nucleus of thalamus",
+        "reviewed": true
+      },
+      "parent": "nervous-thalamic-nuclei",
+      "children": [],
+      "learningObjectives": {
+        "vi": [
+          "Định vị nhân cạnh bó đồi thị trong đồi thị"
+        ],
+        "reviewed": false
+      },
+      "structures3d": [
+        "rule hiện có của `parafascicular-nucleus`"
+      ],
+      "view": {
+        "direction": "three-quarter",
+        "zoom": {
+          "level": "detail",
+          "cameraFill": 0.9,
+          "thumbnailFill": 0.86
+        },
+        "display": "layered",
+        "context": []
+      },
+      "url": {
+        "vi": "/vi/human-atlas?view=parafascicular-nucleus",
+        "en": "/en/human-atlas?view=parafascicular-nucleus"
+      },
+      "thumbnail": {
+        "source": "auto-capture",
+        "from": "model",
+        "direction": "three-quarter"
+      },
+      "data": {
+        "status": "live",
+        "partial": false,
+        "existingViewId": "parafascicular-nucleus",
+        "borrowedFromSystem": null,
+        "note": null
+      },
+      "phase": 2,
+      "priority": "done"
+    },
+    {
+      "id": "nervous-subthalamic-nigral",
+      "viewId": "nervous-subthalamic-nigral",
+      "section": "B",
+      "kind": "group",
+      "level": 4,
+      "name": {
+        "vi": "Chất đen và nhân dưới đồi thị",
+        "en": "Substantia nigra and subthalamic nucleus",
+        "reviewed": true
+      },
+      "parent": "brainstem",
+      "children": [
+        "substantia-nigra",
+        "subthalamic-nucleus",
+        "zona-incerta"
+      ],
+      "learningObjectives": {
+        "vi": [
+          "Định vị chất đen trong trung não và nhân dưới đồi thị ngay trên nó",
+          "Liên hệ các nhân này với vòng hạch nền"
+        ],
+        "reviewed": false
+      },
+      "structures3d": [
+        "rule hiện có của `nervous-subthalamic-nigral`"
+      ],
+      "view": {
+        "direction": "front",
+        "zoom": {
+          "level": "structure",
+          "cameraFill": 0.86,
+          "thumbnailFill": 0.86
+        },
+        "display": "layered",
+        "context": []
+      },
+      "url": {
+        "vi": "/vi/human-atlas?view=nervous-subthalamic-nigral",
+        "en": "/en/human-atlas?view=nervous-subthalamic-nigral"
+      },
+      "thumbnail": {
+        "source": "auto-capture",
+        "from": "model",
+        "direction": "front"
+      },
+      "data": {
+        "status": "live",
+        "partial": true,
+        "existingViewId": "nervous-subthalamic-nigral",
+        "borrowedFromSystem": null,
+        "note": "Allen Human Reference Atlas 3D 2020 (CC BY 4.0): bán cầu trái + lật gương; affine theo mốc + ICP từng vùng (data/anatomy/registration-allen-hra.json)."
+      },
+      "phase": 2,
+      "priority": "done"
+    },
+    {
+      "id": "substantia-nigra",
+      "viewId": "substantia-nigra",
+      "section": "B",
+      "kind": "structure",
+      "level": 5,
+      "name": {
+        "vi": "Chất đen",
+        "en": "Substantia nigra",
+        "reviewed": true
+      },
+      "parent": "nervous-subthalamic-nigral",
+      "children": [],
+      "learningObjectives": {
+        "vi": [
+          "Định vị chất đen giữa cuống đại não và chỏm trung não"
+        ],
+        "reviewed": false
+      },
+      "structures3d": [
+        "rule hiện có của `substantia-nigra`"
+      ],
+      "view": {
+        "direction": "front",
+        "zoom": {
+          "level": "detail",
+          "cameraFill": 0.9,
+          "thumbnailFill": 0.86
+        },
+        "display": "layered",
+        "context": []
+      },
+      "url": {
+        "vi": "/vi/human-atlas?view=substantia-nigra",
+        "en": "/en/human-atlas?view=substantia-nigra"
+      },
+      "thumbnail": {
+        "source": "auto-capture",
+        "from": "model",
+        "direction": "front"
+      },
+      "data": {
+        "status": "live",
+        "partial": false,
+        "existingViewId": "substantia-nigra",
+        "borrowedFromSystem": null,
+        "note": null
+      },
+      "phase": 2,
+      "priority": "done"
+    },
+    {
+      "id": "subthalamic-nucleus",
+      "viewId": "subthalamic-nucleus",
+      "section": "B",
+      "kind": "structure",
+      "level": 5,
+      "name": {
+        "vi": "Nhân dưới đồi thị",
+        "en": "Subthalamic nucleus",
+        "reviewed": true
+      },
+      "parent": "nervous-subthalamic-nigral",
+      "children": [],
+      "learningObjectives": {
+        "vi": [
+          "Định vị nhân dưới đồi thị dưới đồi thị, trên chất đen"
+        ],
+        "reviewed": false
+      },
+      "structures3d": [
+        "rule hiện có của `subthalamic-nucleus`"
+      ],
+      "view": {
+        "direction": "front",
+        "zoom": {
+          "level": "detail",
+          "cameraFill": 0.9,
+          "thumbnailFill": 0.86
+        },
+        "display": "layered",
+        "context": []
+      },
+      "url": {
+        "vi": "/vi/human-atlas?view=subthalamic-nucleus",
+        "en": "/en/human-atlas?view=subthalamic-nucleus"
+      },
+      "thumbnail": {
+        "source": "auto-capture",
+        "from": "model",
+        "direction": "front"
+      },
+      "data": {
+        "status": "live",
+        "partial": false,
+        "existingViewId": "subthalamic-nucleus",
+        "borrowedFromSystem": null,
+        "note": null
+      },
+      "phase": 2,
+      "priority": "done"
+    },
+    {
+      "id": "zona-incerta",
+      "viewId": "zona-incerta",
+      "section": "B",
+      "kind": "structure",
+      "level": 5,
+      "name": {
+        "vi": "Vùng bất định",
+        "en": "Zona incerta",
+        "reviewed": false
+      },
+      "parent": "nervous-subthalamic-nigral",
+      "children": [],
+      "learningObjectives": {
+        "vi": [
+          "Định vị vùng bất định giữa đồi thị và nhân dưới đồi thị"
+        ],
+        "reviewed": false
+      },
+      "structures3d": [],
+      "view": null,
+      "url": {
+        "vi": "/vi/human-atlas?view=zona-incerta",
+        "en": "/en/human-atlas?view=zona-incerta"
+      },
+      "thumbnail": null,
+      "data": {
+        "status": "missing",
+        "partial": false,
+        "existingViewId": null,
+        "borrowedFromSystem": null,
+        "note": "Allen có nhãn nhưng mọi phép căn để 67–78% đỉnh lọt vào đồi thị đục — không nhập."
+      },
+      "phase": 2,
+      "priority": "P4"
+    },
+    {
+      "id": "nervous-cerebellar-nuclei",
+      "viewId": "nervous-cerebellar-nuclei",
+      "section": "B",
+      "kind": "group",
+      "level": 4,
+      "name": {
+        "vi": "Các nhân sâu tiểu não",
+        "en": "Deep cerebellar nuclei",
+        "reviewed": true
+      },
+      "parent": "cerebellum",
+      "children": [
+        "cerebellar-deep-nuclei"
+      ],
+      "learningObjectives": {
+        "vi": [
+          "Định vị nhóm nhân sâu trong chất trắng tiểu não"
+        ],
+        "reviewed": false
+      },
+      "structures3d": [
+        "rule hiện có của `nervous-cerebellar-nuclei`"
+      ],
+      "view": {
+        "direction": "back",
+        "zoom": {
+          "level": "structure",
+          "cameraFill": 0.86,
+          "thumbnailFill": 0.86
+        },
+        "display": "layered",
+        "context": []
+      },
+      "url": {
+        "vi": "/vi/human-atlas?view=nervous-cerebellar-nuclei",
+        "en": "/en/human-atlas?view=nervous-cerebellar-nuclei"
+      },
+      "thumbnail": {
+        "source": "auto-capture",
+        "from": "model",
+        "direction": "back"
+      },
+      "data": {
+        "status": "live",
+        "partial": true,
+        "existingViewId": "nervous-cerebellar-nuclei",
+        "borrowedFromSystem": null,
+        "note": "Allen Human Reference Atlas 3D 2020 (CC BY 4.0): bán cầu trái + lật gương; affine theo mốc + ICP từng vùng (data/anatomy/registration-allen-hra.json). Bốn nhân vẽ gộp một khối."
+      },
+      "phase": 2,
+      "priority": "done"
+    },
+    {
+      "id": "cerebellar-deep-nuclei",
+      "viewId": "cerebellar-deep-nuclei",
+      "section": "B",
+      "kind": "structure",
+      "level": 5,
+      "name": {
+        "vi": "Các nhân sâu tiểu não",
+        "en": "Deep cerebellar nuclei",
+        "reviewed": true
+      },
+      "parent": "nervous-cerebellar-nuclei",
+      "children": [],
+      "learningObjectives": {
+        "vi": [
+          "Nhận ra nhân răng là nhân lớn nhất trong nhóm"
+        ],
+        "reviewed": false
+      },
+      "structures3d": [
+        "rule hiện có của `cerebellar-deep-nuclei`"
+      ],
+      "view": {
+        "direction": "back",
+        "zoom": {
+          "level": "detail",
+          "cameraFill": 0.9,
+          "thumbnailFill": 0.86
+        },
+        "display": "layered",
+        "context": []
+      },
+      "url": {
+        "vi": "/vi/human-atlas?view=cerebellar-deep-nuclei",
+        "en": "/en/human-atlas?view=cerebellar-deep-nuclei"
+      },
+      "thumbnail": {
+        "source": "auto-capture",
+        "from": "model",
+        "direction": "back"
+      },
+      "data": {
+        "status": "live",
+        "partial": false,
+        "existingViewId": "cerebellar-deep-nuclei",
         "borrowedFromSystem": null,
         "note": null
       },
