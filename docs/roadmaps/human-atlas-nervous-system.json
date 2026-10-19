@@ -65,18 +65,18 @@
     ]
   },
   "coverage": {
-    "nodes": 151,
-    "nodes3d": 146,
+    "nodes": 161,
+    "nodes3d": 156,
     "byStatus": {
-      "live": 61,
-      "buildable": 39,
+      "live": 70,
+      "buildable": 40,
       "import-za": 24,
       "needs-schema": 8,
       "needs-clipping": 4,
       "missing": 10
     },
-    "readyNow": "100/146 (68%) nút 3D dựng được bằng dữ liệu đang có",
-    "afterZaImport": "124/146 (85%)",
+    "readyNow": "110/156 (71%) nút 3D dựng được bằng dữ liệu đang có",
+    "afterZaImport": "134/156 (86%)",
     "haaTiles": {
       "note": "So với 24 ô \"Nervous System Views\" của HAA (ảnh tham chiếu, không dùng asset HAA).",
       "withCardNow": "16/24 (67%)",
@@ -126,7 +126,7 @@
         },
         {
           "haa": "9. Brachial Plexus",
-          "ourId": "brachial-plexus-group",
+          "ourId": "nervous-upper-limb",
           "status": "live"
         },
         {
@@ -281,6 +281,7 @@
       "title": "Tự chủ, đám rối, nhánh thần kinh từ mảnh sẵn có",
       "status": "buildable",
       "items": [
+        "sympathetic",
         "parasympathetic",
         "parasympathetic-cranial",
         "brachial-plexus-roots",
@@ -400,7 +401,7 @@
       "name": {
         "vi": "Hệ thần kinh trung ương",
         "en": "Central nervous system",
-        "reviewed": true
+        "reviewed": false
       },
       "parent": "nervous-overview",
       "children": [
@@ -436,7 +437,7 @@
       "name": {
         "vi": "Hệ thần kinh ngoại biên",
         "en": "Peripheral nervous system",
-        "reviewed": true
+        "reviewed": false
       },
       "parent": "nervous-overview",
       "children": [
@@ -479,13 +480,14 @@
       "parent": "sec-cns",
       "children": [
         "nervous-cerebrum",
-        "nervous-cerebellum",
-        "nervous-brainstem",
+        "cerebellum",
+        "brainstem",
         "nervous-ventricles",
         "nervous-meninges",
         "nervous-brain-blood-supply",
         "nervous-limbic",
-        "nervous-deep-brain"
+        "nervous-deep-brain",
+        "nervous-brainstem-cerebellum"
       ],
       "learningObjectives": {
         "vi": [
@@ -544,12 +546,8 @@
       "children": [
         "cerebral-white-matter",
         "basal-nuclei",
-        "frontal-lobe",
-        "parietal-lobe",
-        "temporal-lobe",
-        "occipital-lobe",
-        "insula",
-        "medial-surface-hemisphere"
+        "medial-surface-hemisphere",
+        "cerebral-cortex"
       ],
       "learningObjectives": {
         "vi": [
@@ -703,7 +701,7 @@
       "priority": "done"
     },
     {
-      "id": "nervous-cerebellum",
+      "id": "cerebellum",
       "viewId": "cerebellum",
       "section": "B",
       "kind": "group",
@@ -774,7 +772,7 @@
         "en": "Cerebellar vermis",
         "reviewed": false
       },
-      "parent": "nervous-cerebellum",
+      "parent": "cerebellum",
       "children": [],
       "learningObjectives": {
         "vi": [
@@ -819,7 +817,13 @@
         "partial": false,
         "existingViewId": null,
         "borrowedFromSystem": null,
-        "note": null
+        "note": null,
+        "importPath": [
+          {
+            "path": "replace-bp3d",
+            "how": "Chồng lên mảnh BP3D nguyên khối → khử trùng sẽ loại; phải THAY mảnh BP3D bằng các mảnh ZA (đổi test phủ đủ)"
+          }
+        ]
       },
       "phase": 2,
       "priority": "P2"
@@ -835,7 +839,7 @@
         "en": "Lobules of the cerebellar hemisphere",
         "reviewed": false
       },
-      "parent": "nervous-cerebellum",
+      "parent": "cerebellum",
       "children": [],
       "learningObjectives": {
         "vi": [
@@ -878,7 +882,13 @@
         "partial": false,
         "existingViewId": null,
         "borrowedFromSystem": null,
-        "note": null
+        "note": null,
+        "importPath": [
+          {
+            "path": "replace-bp3d",
+            "how": "Chồng lên mảnh BP3D nguyên khối → khử trùng sẽ loại; phải THAY mảnh BP3D bằng các mảnh ZA (đổi test phủ đủ)"
+          }
+        ]
       },
       "phase": 2,
       "priority": "P2"
@@ -894,7 +904,7 @@
         "en": "Flocculonodular lobe",
         "reviewed": false
       },
-      "parent": "nervous-cerebellum",
+      "parent": "cerebellum",
       "children": [],
       "learningObjectives": {
         "vi": [
@@ -942,7 +952,13 @@
         "partial": false,
         "existingViewId": null,
         "borrowedFromSystem": null,
-        "note": null
+        "note": null,
+        "importPath": [
+          {
+            "path": "replace-bp3d",
+            "how": "Chồng lên mảnh BP3D nguyên khối → khử trùng sẽ loại; phải THAY mảnh BP3D bằng các mảnh ZA (đổi test phủ đủ)"
+          }
+        ]
       },
       "phase": 2,
       "priority": "P2"
@@ -958,7 +974,7 @@
         "en": "Cerebellar peduncles",
         "reviewed": false
       },
-      "parent": "nervous-cerebellum",
+      "parent": "cerebellum",
       "children": [],
       "learningObjectives": {
         "vi": [
@@ -995,7 +1011,13 @@
         "partial": true,
         "existingViewId": null,
         "borrowedFromSystem": null,
-        "note": "ZA chỉ có cuống trên; cuống giữa/dưới chưa có — partial."
+        "note": "ZA chỉ có cuống trên; cuống giữa/dưới chưa có — partial.",
+        "importPath": [
+          {
+            "path": "pick",
+            "how": "Mở regex pick() (hiện chỉ nhận nerve|plexus|ganglion|root of…; loại nucleus|tract|gyrus|lobe…)"
+          }
+        ]
       },
       "phase": 2,
       "priority": "P2"
@@ -1011,7 +1033,7 @@
         "en": "Cerebellar nuclei (dentate…)",
         "reviewed": false
       },
-      "parent": "nervous-cerebellum",
+      "parent": "cerebellum",
       "children": [],
       "learningObjectives": {
         "vi": [
@@ -1037,7 +1059,7 @@
       "priority": "P4"
     },
     {
-      "id": "nervous-brainstem",
+      "id": "brainstem",
       "viewId": "brainstem",
       "section": "B",
       "kind": "group",
@@ -1108,7 +1130,7 @@
         "en": "Midbrain",
         "reviewed": false
       },
-      "parent": "nervous-brainstem",
+      "parent": "brainstem",
       "children": [
         "red-nucleus"
       ],
@@ -1206,7 +1228,13 @@
         "partial": false,
         "existingViewId": null,
         "borrowedFromSystem": null,
-        "note": null
+        "note": null,
+        "importPath": [
+          {
+            "path": "pick",
+            "how": "Mở regex pick() (hiện chỉ nhận nerve|plexus|ganglion|root of…; loại nucleus|tract|gyrus|lobe…)"
+          }
+        ]
       },
       "phase": 2,
       "priority": "P2"
@@ -1222,7 +1250,7 @@
         "en": "Pons",
         "reviewed": false
       },
-      "parent": "nervous-brainstem",
+      "parent": "brainstem",
       "children": [],
       "learningObjectives": {
         "vi": [
@@ -1277,7 +1305,7 @@
         "en": "Medulla oblongata",
         "reviewed": false
       },
-      "parent": "nervous-brainstem",
+      "parent": "brainstem",
       "children": [
         "medulla-pyramid-olive"
       ],
@@ -1371,7 +1399,13 @@
         "partial": false,
         "existingViewId": null,
         "borrowedFromSystem": null,
-        "note": null
+        "note": null,
+        "importPath": [
+          {
+            "path": "replace-bp3d",
+            "how": "Chồng lên mảnh BP3D nguyên khối → khử trùng sẽ loại; phải THAY mảnh BP3D bằng các mảnh ZA (đổi test phủ đủ)"
+          }
+        ]
       },
       "phase": 2,
       "priority": "P2"
@@ -1387,7 +1421,7 @@
         "en": "Cranial nerve nuclei",
         "reviewed": false
       },
-      "parent": "nervous-brainstem",
+      "parent": "brainstem",
       "children": [],
       "learningObjectives": {
         "vi": [
@@ -1433,7 +1467,13 @@
         "partial": true,
         "existingViewId": null,
         "borrowedFromSystem": null,
-        "note": "Thiếu nhân dây V (cảm giác, vận động). Nối chéo sang từng dây sọ ở mục F."
+        "note": "Thiếu nhân dây V (cảm giác, vận động). Nối chéo sang từng dây sọ ở mục F.",
+        "importPath": [
+          {
+            "path": "pick",
+            "how": "Mở regex pick() (hiện chỉ nhận nerve|plexus|ganglion|root of…; loại nucleus|tract|gyrus|lobe…)"
+          }
+        ]
       },
       "phase": 2,
       "priority": "P2"
@@ -1451,11 +1491,7 @@
       },
       "parent": "nervous-brain",
       "children": [
-        "lateral-ventricles",
-        "third-ventricle",
-        "cerebral-aqueduct",
-        "fourth-ventricle",
-        "choroid-plexus"
+        "brain-ventricles"
       ],
       "learningObjectives": {
         "vi": [
@@ -1505,13 +1541,13 @@
       "viewId": "lateral-ventricles",
       "section": "B",
       "kind": "structure",
-      "level": 4,
+      "level": 5,
       "name": {
         "vi": "Não thất bên",
         "en": "Lateral ventricles",
         "reviewed": false
       },
-      "parent": "nervous-ventricles",
+      "parent": "brain-ventricles",
       "children": [],
       "learningObjectives": {
         "vi": [
@@ -1559,13 +1595,13 @@
       "viewId": "third-ventricle",
       "section": "B",
       "kind": "structure",
-      "level": 4,
+      "level": 5,
       "name": {
         "vi": "Não thất ba",
         "en": "Third ventricle",
         "reviewed": false
       },
-      "parent": "nervous-ventricles",
+      "parent": "brain-ventricles",
       "children": [],
       "learningObjectives": {
         "vi": [
@@ -1612,13 +1648,13 @@
       "viewId": "cerebral-aqueduct",
       "section": "B",
       "kind": "structure",
-      "level": 4,
+      "level": 5,
       "name": {
         "vi": "Cống não",
         "en": "Cerebral aqueduct",
         "reviewed": false
       },
-      "parent": "nervous-ventricles",
+      "parent": "brain-ventricles",
       "children": [],
       "learningObjectives": {
         "vi": [
@@ -1665,13 +1701,13 @@
       "viewId": "fourth-ventricle",
       "section": "B",
       "kind": "structure",
-      "level": 4,
+      "level": 5,
       "name": {
         "vi": "Não thất bốn",
         "en": "Fourth ventricle",
         "reviewed": false
       },
-      "parent": "nervous-ventricles",
+      "parent": "brain-ventricles",
       "children": [],
       "learningObjectives": {
         "vi": [
@@ -1720,13 +1756,13 @@
       "viewId": "choroid-plexus",
       "section": "B",
       "kind": "structure",
-      "level": 4,
+      "level": 5,
       "name": {
         "vi": "Đám rối mạch mạc",
         "en": "Choroid plexus",
         "reviewed": false
       },
-      "parent": "nervous-ventricles",
+      "parent": "brain-ventricles",
       "children": [],
       "learningObjectives": {
         "vi": [
@@ -1824,7 +1860,13 @@
         "partial": true,
         "existingViewId": null,
         "borrowedFromSystem": null,
-        "note": "Không nguồn nào có màng nhện, màng mềm, liềm tiểu não."
+        "note": "Không nguồn nào có màng nhện, màng mềm, liềm tiểu não.",
+        "importPath": [
+          {
+            "path": "pick",
+            "how": "Mở regex pick() (hiện chỉ nhận nerve|plexus|ganglion|root of…; loại nucleus|tract|gyrus|lobe…)"
+          }
+        ]
       },
       "phase": 2,
       "priority": "P2"
@@ -1930,7 +1972,13 @@
         "partial": false,
         "existingViewId": null,
         "borrowedFromSystem": null,
-        "note": null
+        "note": null,
+        "importPath": [
+          {
+            "path": "pick",
+            "how": "Mở regex pick() (hiện chỉ nhận nerve|plexus|ganglion|root of…; loại nucleus|tract|gyrus|lobe…)"
+          }
+        ]
       },
       "phase": 2,
       "priority": "P2"
@@ -1994,13 +2042,13 @@
       "viewId": "frontal-lobe",
       "section": "C",
       "kind": "structure",
-      "level": 4,
+      "level": 5,
       "name": {
         "vi": "Thuỳ trán",
         "en": "Frontal lobe",
         "reviewed": false
       },
-      "parent": "nervous-cerebrum",
+      "parent": "cerebral-cortex",
       "children": [
         "precentral-gyrus",
         "premotor-sma",
@@ -2056,7 +2104,7 @@
       "viewId": "precentral-gyrus",
       "section": "C",
       "kind": "structure",
-      "level": 5,
+      "level": 6,
       "name": {
         "vi": "Hồi trước trung tâm",
         "en": "Precentral gyrus",
@@ -2112,7 +2160,7 @@
       "viewId": "primary-motor-cortex",
       "section": "C",
       "kind": "region",
-      "level": 6,
+      "level": 7,
       "name": {
         "vi": "Vỏ vận động nguyên phát",
         "en": "Primary motor cortex",
@@ -2160,7 +2208,7 @@
       "viewId": "premotor-sma",
       "section": "C",
       "kind": "region",
-      "level": 5,
+      "level": 6,
       "name": {
         "vi": "Vỏ tiền vận động và vùng vận động bổ sung",
         "en": "Premotor cortex and supplementary motor area",
@@ -2207,7 +2255,7 @@
       "viewId": "inferior-frontal-gyrus",
       "section": "C",
       "kind": "structure",
-      "level": 5,
+      "level": 6,
       "name": {
         "vi": "Hồi trán dưới (phần nắp, tam giác, ổ mắt)",
         "en": "Inferior frontal gyrus (opercular, triangular, orbital parts)",
@@ -2254,7 +2302,13 @@
         "partial": false,
         "existingViewId": null,
         "borrowedFromSystem": null,
-        "note": "BP3D có hồi trán dưới nguyên khối; ZA chia 3 phần → khử trùng theo không gian, giữ bản ZA khi xem cấp 4."
+        "note": "BP3D có hồi trán dưới nguyên khối; ZA chia 3 phần → khử trùng theo không gian, giữ bản ZA khi xem cấp 4.",
+        "importPath": [
+          {
+            "path": "replace-bp3d",
+            "how": "Chồng lên mảnh BP3D nguyên khối → khử trùng sẽ loại; phải THAY mảnh BP3D bằng các mảnh ZA (đổi test phủ đủ)"
+          }
+        ]
       },
       "phase": 2,
       "priority": "P2"
@@ -2264,7 +2318,7 @@
       "viewId": "broca-area",
       "section": "C",
       "kind": "region",
-      "level": 6,
+      "level": 7,
       "name": {
         "vi": "Vùng Broca",
         "en": "Broca's area",
@@ -2311,7 +2365,7 @@
       "viewId": "frontal-gyri-other",
       "section": "C",
       "kind": "structure",
-      "level": 5,
+      "level": 6,
       "name": {
         "vi": "Hồi trán trên, giữa và các hồi ổ mắt",
         "en": "Superior and middle frontal gyri, orbital gyri",
@@ -2364,7 +2418,7 @@
       "viewId": "prefrontal-cortex",
       "section": "C",
       "kind": "region",
-      "level": 5,
+      "level": 6,
       "name": {
         "vi": "Vỏ trước trán",
         "en": "Prefrontal cortex",
@@ -2411,13 +2465,13 @@
       "viewId": "parietal-lobe",
       "section": "C",
       "kind": "structure",
-      "level": 4,
+      "level": 5,
       "name": {
         "vi": "Thuỳ đỉnh",
         "en": "Parietal lobe",
         "reviewed": false
       },
-      "parent": "nervous-cerebrum",
+      "parent": "cerebral-cortex",
       "children": [
         "postcentral-gyrus",
         "inferior-parietal-lobule",
@@ -2472,7 +2526,7 @@
       "viewId": "postcentral-gyrus",
       "section": "C",
       "kind": "structure",
-      "level": 5,
+      "level": 6,
       "name": {
         "vi": "Hồi sau trung tâm",
         "en": "Postcentral gyrus",
@@ -2527,7 +2581,7 @@
       "viewId": "primary-somatosensory-cortex",
       "section": "C",
       "kind": "region",
-      "level": 6,
+      "level": 7,
       "name": {
         "vi": "Vỏ cảm giác thân thể nguyên phát",
         "en": "Primary somatosensory cortex",
@@ -2574,7 +2628,7 @@
       "viewId": "inferior-parietal-lobule",
       "section": "C",
       "kind": "structure",
-      "level": 5,
+      "level": 6,
       "name": {
         "vi": "Tiểu thuỳ đỉnh dưới (hồi trên viền, hồi góc)",
         "en": "Inferior parietal lobule (supramarginal, angular gyri)",
@@ -2626,7 +2680,7 @@
       "viewId": "superior-parietal-lobule",
       "section": "C",
       "kind": "structure",
-      "level": 5,
+      "level": 6,
       "name": {
         "vi": "Tiểu thuỳ đỉnh trên",
         "en": "Superior parietal lobule",
@@ -2677,13 +2731,13 @@
       "viewId": "temporal-lobe",
       "section": "C",
       "kind": "structure",
-      "level": 4,
+      "level": 5,
       "name": {
         "vi": "Thuỳ thái dương",
         "en": "Temporal lobe",
         "reviewed": false
       },
-      "parent": "nervous-cerebrum",
+      "parent": "cerebral-cortex",
       "children": [
         "superior-temporal-gyrus",
         "temporal-gyri-other"
@@ -2736,7 +2790,7 @@
       "viewId": "superior-temporal-gyrus",
       "section": "C",
       "kind": "structure",
-      "level": 5,
+      "level": 6,
       "name": {
         "vi": "Hồi thái dương trên",
         "en": "Superior temporal gyrus",
@@ -2790,7 +2844,7 @@
       "viewId": "transverse-temporal-gyri",
       "section": "C",
       "kind": "structure",
-      "level": 6,
+      "level": 7,
       "name": {
         "vi": "Hồi ngang thái dương (Heschl)",
         "en": "Transverse temporal gyri (Heschl)",
@@ -2837,7 +2891,13 @@
         "partial": false,
         "existingViewId": null,
         "borrowedFromSystem": null,
-        "note": null
+        "note": null,
+        "importPath": [
+          {
+            "path": "pick",
+            "how": "Mở regex pick() (hiện chỉ nhận nerve|plexus|ganglion|root of…; loại nucleus|tract|gyrus|lobe…)"
+          }
+        ]
       },
       "phase": 2,
       "priority": "P2"
@@ -2847,7 +2907,7 @@
       "viewId": "primary-auditory-cortex",
       "section": "C",
       "kind": "region",
-      "level": 7,
+      "level": 8,
       "name": {
         "vi": "Vỏ thính giác nguyên phát",
         "en": "Primary auditory cortex",
@@ -2894,7 +2954,7 @@
       "viewId": "wernicke-area",
       "section": "C",
       "kind": "region",
-      "level": 6,
+      "level": 7,
       "name": {
         "vi": "Vùng Wernicke",
         "en": "Wernicke's area",
@@ -2941,7 +3001,7 @@
       "viewId": "temporal-gyri-other",
       "section": "C",
       "kind": "structure",
-      "level": 5,
+      "level": 6,
       "name": {
         "vi": "Hồi thái dương giữa, dưới và hồi chẩm – thái dương ngoài",
         "en": "Middle and inferior temporal gyri, fusiform gyrus",
@@ -3002,13 +3062,13 @@
       "viewId": "occipital-lobe",
       "section": "C",
       "kind": "structure",
-      "level": 4,
+      "level": 5,
       "name": {
         "vi": "Thuỳ chẩm",
         "en": "Occipital lobe",
         "reviewed": false
       },
-      "parent": "nervous-cerebrum",
+      "parent": "cerebral-cortex",
       "children": [
         "occipital-gyri"
       ],
@@ -3057,7 +3117,7 @@
       "viewId": "occipital-gyri",
       "section": "C",
       "kind": "structure",
-      "level": 5,
+      "level": 6,
       "name": {
         "vi": "Chêm, hồi lưỡi và rãnh cựa",
         "en": "Cuneus, lingual gyrus and calcarine sulcus",
@@ -3115,7 +3175,13 @@
         "partial": false,
         "existingViewId": null,
         "borrowedFromSystem": null,
-        "note": "BP3D chỉ có thuỳ chẩm nguyên khối; ZA chia hồi → khử trùng."
+        "note": "BP3D chỉ có thuỳ chẩm nguyên khối; ZA chia hồi → khử trùng.",
+        "importPath": [
+          {
+            "path": "replace-bp3d",
+            "how": "Chồng lên mảnh BP3D nguyên khối → khử trùng sẽ loại; phải THAY mảnh BP3D bằng các mảnh ZA (đổi test phủ đủ)"
+          }
+        ]
       },
       "phase": 2,
       "priority": "P2"
@@ -3125,7 +3191,7 @@
       "viewId": "primary-visual-cortex",
       "section": "C",
       "kind": "region",
-      "level": 6,
+      "level": 7,
       "name": {
         "vi": "Vỏ thị giác nguyên phát",
         "en": "Primary visual cortex",
@@ -3173,13 +3239,13 @@
       "viewId": "insula",
       "section": "C",
       "kind": "structure",
-      "level": 4,
+      "level": 5,
       "name": {
         "vi": "Thuỳ đảo",
         "en": "Insula",
         "reviewed": false
       },
-      "parent": "nervous-cerebrum",
+      "parent": "cerebral-cortex",
       "children": [],
       "learningObjectives": {
         "vi": [
@@ -3284,7 +3350,13 @@
         "partial": false,
         "existingViewId": null,
         "borrowedFromSystem": null,
-        "note": "Dựng được bằng rule chỉ khớp mảnh `left …` + camera từ phía phải; không cần clipping."
+        "note": "Dựng được bằng rule chỉ khớp mảnh `left …` + camera từ phía phải; không cần clipping.",
+        "importPath": [
+          {
+            "path": "replace-bp3d",
+            "how": "Chồng lên mảnh BP3D nguyên khối → khử trùng sẽ loại; phải THAY mảnh BP3D bằng các mảnh ZA (đổi test phủ đủ)"
+          }
+        ]
       },
       "phase": 2,
       "priority": "P2"
@@ -3302,12 +3374,10 @@
       },
       "parent": "nervous-brain",
       "children": [
-        "hippocampus",
-        "amygdala",
         "fornix",
         "mammillary-body",
         "limbic-gyri",
-        "septal-area"
+        "hippocampus-amygdala"
       ],
       "learningObjectives": {
         "vi": [
@@ -3357,13 +3427,13 @@
       "viewId": "hippocampus",
       "section": "D",
       "kind": "structure",
-      "level": 4,
+      "level": 5,
       "name": {
         "vi": "Hải mã",
         "en": "Hippocampus",
         "reviewed": false
       },
-      "parent": "nervous-limbic",
+      "parent": "hippocampus-amygdala",
       "children": [],
       "learningObjectives": {
         "vi": [
@@ -3411,13 +3481,13 @@
       "viewId": "amygdala",
       "section": "D",
       "kind": "structure",
-      "level": 4,
+      "level": 5,
       "name": {
         "vi": "Thể hạnh nhân",
         "en": "Amygdala",
         "reviewed": false
       },
-      "parent": "nervous-limbic",
+      "parent": "hippocampus-amygdala",
       "children": [],
       "learningObjectives": {
         "vi": [
@@ -3522,7 +3592,7 @@
       "level": 4,
       "name": {
         "vi": "Thể vú",
-        "en": "Mammillary bodies",
+        "en": "Mammillary body",
         "reviewed": true
       },
       "parent": "nervous-limbic",
@@ -3623,13 +3693,13 @@
       "viewId": "septal-area",
       "section": "D",
       "kind": "structure",
-      "level": 4,
+      "level": 5,
       "name": {
         "vi": "Vách trong suốt và nhân vách",
         "en": "Septum pellucidum and septal nuclei",
         "reviewed": false
       },
-      "parent": "nervous-limbic",
+      "parent": "hippocampus-amygdala",
       "children": [],
       "learningObjectives": {
         "vi": [
@@ -3683,9 +3753,7 @@
       },
       "parent": "nervous-brain",
       "children": [
-        "thalamus",
-        "hypothalamus",
-        "epithalamus"
+        "diencephalon"
       ],
       "learningObjectives": {
         "vi": [
@@ -3733,13 +3801,13 @@
       "viewId": "thalamus",
       "section": "E",
       "kind": "structure",
-      "level": 4,
+      "level": 5,
       "name": {
         "vi": "Đồi thị",
         "en": "Thalamus",
         "reviewed": false
       },
-      "parent": "nervous-deep-brain",
+      "parent": "diencephalon",
       "children": [
         "thalamic-nuclei",
         "geniculate-bodies"
@@ -3791,7 +3859,7 @@
       "viewId": "thalamic-nuclei",
       "section": "E",
       "kind": "region",
-      "level": 5,
+      "level": 6,
       "name": {
         "vi": "Các nhân đồi thị",
         "en": "Thalamic nuclei",
@@ -3827,7 +3895,7 @@
       "viewId": "geniculate-bodies",
       "section": "E",
       "kind": "structure",
-      "level": 5,
+      "level": 6,
       "name": {
         "vi": "Thể gối ngoài và thể gối trong",
         "en": "Lateral and medial geniculate bodies",
@@ -3890,13 +3958,13 @@
       "viewId": "hypothalamus",
       "section": "E",
       "kind": "structure",
-      "level": 4,
+      "level": 5,
       "name": {
         "vi": "Vùng dưới đồi",
         "en": "Hypothalamus",
         "reviewed": false
       },
-      "parent": "nervous-deep-brain",
+      "parent": "diencephalon",
       "children": [
         "hypothalamic-nuclei"
       ],
@@ -3947,7 +4015,7 @@
       "viewId": "hypothalamic-nuclei",
       "section": "E",
       "kind": "region",
-      "level": 5,
+      "level": 6,
       "name": {
         "vi": "Các nhân vùng dưới đồi",
         "en": "Hypothalamic nuclei",
@@ -3983,13 +4051,13 @@
       "viewId": "epithalamus",
       "section": "E",
       "kind": "structure",
-      "level": 4,
+      "level": 5,
       "name": {
         "vi": "Vùng trên đồi",
         "en": "Epithalamus",
         "reviewed": false
       },
-      "parent": "nervous-deep-brain",
+      "parent": "diencephalon",
       "children": [],
       "learningObjectives": {
         "vi": [
@@ -4066,7 +4134,8 @@
         "glossopharyngeal-nerve",
         "nervous-vagus",
         "accessory-nerve",
-        "hypoglossal-nerve"
+        "hypoglossal-nerve",
+        "nervous-orbit"
       ],
       "learningObjectives": {
         "vi": [
@@ -4125,8 +4194,8 @@
       "children": [],
       "learningObjectives": {
         "vi": [
-          "Theo đường đi của dây khứu giác từ não tới vùng chi phối",
-          "Phân loại dây: cảm giác, vận động hay hỗn hợp"
+          "Theo sợi khứu giác từ trần hốc mũi qua mảnh sàng lên hành khứu",
+          "Xếp dây I vào nhóm dây cảm giác"
         ],
         "reviewed": false
       },
@@ -4161,7 +4230,13 @@
         "partial": true,
         "existingViewId": null,
         "borrowedFromSystem": null,
-        "note": "Hành khứu, dải khứu không có trong nguồn nào."
+        "note": "Hành khứu, dải khứu không có trong nguồn nào.",
+        "importPath": [
+          {
+            "path": "dedupe-exception",
+            "how": "pick() ĐÃ nhận nhưng bộ khử trùng hình học loại nhầm (sát mảnh thần kinh BP3D vùng ổ mắt/nền sọ) — cần ngoại lệ theo tên"
+          }
+        ]
       },
       "phase": 3,
       "priority": "P2"
@@ -4181,8 +4256,8 @@
       "children": [],
       "learningObjectives": {
         "vi": [
-          "Theo đường đi của dây, giao thoa và dải thị giác từ não tới vùng chi phối",
-          "Phân loại dây: cảm giác, vận động hay hỗn hợp"
+          "Theo đường thị giác: dây thị → giao thoa thị → dải thị",
+          "Giải thích vì sao sợi từ nửa trong võng mạc bắt chéo ở giao thoa thị"
         ],
         "reviewed": false
       },
@@ -4237,8 +4312,8 @@
       "children": [],
       "learningObjectives": {
         "vi": [
-          "Theo đường đi của dây vận nhãn từ não tới vùng chi phối",
-          "Phân loại dây: cảm giác, vận động hay hỗn hợp"
+          "Kể các cơ vận nhãn do dây III chi phối",
+          "Nhận ra dây III mang sợi đối giao cảm tới hạch mi"
         ],
         "reviewed": false
       },
@@ -4301,8 +4376,8 @@
       "children": [],
       "learningObjectives": {
         "vi": [
-          "Theo đường đi của dây ròng rọc từ não tới vùng chi phối",
-          "Phân loại dây: cảm giác, vận động hay hỗn hợp"
+          "Nhận ra dây IV chi phối cơ chéo trên",
+          "Định vị dây IV ra ở mặt sau thân não"
         ],
         "reviewed": false
       },
@@ -4351,7 +4426,7 @@
       "name": {
         "vi": "Dây sinh ba (V)",
         "en": "Trigeminal nerve (V)",
-        "reviewed": true
+        "reviewed": false
       },
       "parent": "nervous-cranial-nerves",
       "children": [
@@ -4363,8 +4438,8 @@
       ],
       "learningObjectives": {
         "vi": [
-          "Theo đường đi của dây sinh ba từ não tới vùng chi phối",
-          "Phân loại dây: cảm giác, vận động hay hỗn hợp"
+          "Kể ba nhánh V1, V2, V3",
+          "Phân biệt V1, V2 (cảm giác) với V3 (hỗn hợp, vận động cơ nhai)"
         ],
         "reviewed": false
       },
@@ -4422,8 +4497,7 @@
       "children": [],
       "learningObjectives": {
         "vi": [
-          "Theo đường đi của dây vận nhãn ngoài từ não tới vùng chi phối",
-          "Phân loại dây: cảm giác, vận động hay hỗn hợp"
+          "Nhận ra dây VI chi phối cơ thẳng ngoài"
         ],
         "reviewed": false
       },
@@ -4466,7 +4540,13 @@
         "partial": false,
         "existingViewId": null,
         "borrowedFromSystem": null,
-        "note": null
+        "note": null,
+        "importPath": [
+          {
+            "path": "dedupe-exception",
+            "how": "pick() ĐÃ nhận nhưng bộ khử trùng hình học loại nhầm (sát mảnh thần kinh BP3D vùng ổ mắt/nền sọ) — cần ngoại lệ theo tên"
+          }
+        ]
       },
       "phase": 3,
       "priority": "P2"
@@ -4486,8 +4566,8 @@
       "children": [],
       "learningObjectives": {
         "vi": [
-          "Theo đường đi của dây mặt từ não tới vùng chi phối",
-          "Phân loại dây: cảm giác, vận động hay hỗn hợp"
+          "Nhận ra dây VII vận động cơ biểu cảm mặt",
+          "Nhận ra thừng nhĩ mang vị giác 2/3 trước lưỡi"
         ],
         "reviewed": false
       },
@@ -4542,8 +4622,8 @@
       "children": [],
       "learningObjectives": {
         "vi": [
-          "Theo đường đi của dây tiền đình – ốc tai từ não tới vùng chi phối",
-          "Phân loại dây: cảm giác, vận động hay hỗn hợp"
+          "Phân biệt phần ốc tai (thính giác) với phần tiền đình (thăng bằng)",
+          "Theo dây VIII từ tai trong qua ống tai trong tới thân não"
         ],
         "reviewed": false
       },
@@ -4598,8 +4678,7 @@
       "children": [],
       "learningObjectives": {
         "vi": [
-          "Theo đường đi của dây thiệt hầu từ não tới vùng chi phối",
-          "Phân loại dây: cảm giác, vận động hay hỗn hợp"
+          "Nhận ra dây IX mang vị giác 1/3 sau lưỡi và cảm giác hầu"
         ],
         "reviewed": false
       },
@@ -4656,8 +4735,8 @@
       ],
       "learningObjectives": {
         "vi": [
-          "Theo đường đi của dây phế vị từ não tới vùng chi phối",
-          "Phân loại dây: cảm giác, vận động hay hỗn hợp"
+          "Theo dây phế vị từ hành não qua cổ xuống ngực và bụng",
+          "Nhận ra dây X là nguồn chính của sợi đối giao cảm tới tạng"
         ],
         "reviewed": false
       },
@@ -4712,8 +4791,7 @@
       "children": [],
       "learningObjectives": {
         "vi": [
-          "Theo đường đi của dây phụ từ não tới vùng chi phối",
-          "Phân loại dây: cảm giác, vận động hay hỗn hợp"
+          "Nhận ra dây XI chi phối cơ ức đòn chũm và cơ thang"
         ],
         "reviewed": false
       },
@@ -4768,8 +4846,7 @@
       "children": [],
       "learningObjectives": {
         "vi": [
-          "Theo đường đi của dây hạ thiệt từ não tới vùng chi phối",
-          "Phân loại dây: cảm giác, vận động hay hỗn hợp"
+          "Nhận ra dây XII vận động cơ lưỡi"
         ],
         "reviewed": false
       },
@@ -4824,7 +4901,7 @@
       "children": [],
       "learningObjectives": {
         "vi": [
-          "Xác định vùng da và cơ do dây thần kinh mắt chi phối"
+          "Xác định vùng cảm giác của V1 (trán, mi trên, sống mũi) và hạch mi treo trên nhánh mũi mi"
         ],
         "reviewed": false
       },
@@ -4885,7 +4962,7 @@
       "children": [],
       "learningObjectives": {
         "vi": [
-          "Xác định vùng da và cơ do dây thần kinh hàm trên chi phối"
+          "Xác định vùng cảm giác của V2 (má, môi trên, răng hàm trên)"
         ],
         "reviewed": false
       },
@@ -4938,7 +5015,7 @@
       "children": [],
       "learningObjectives": {
         "vi": [
-          "Xác định vùng da và cơ do dây thần kinh hàm dưới chi phối"
+          "Nhận ra V3 là nhánh duy nhất của dây V có sợi vận động (cơ nhai)"
         ],
         "reviewed": false
       },
@@ -5025,7 +5102,13 @@
         "partial": false,
         "existingViewId": null,
         "borrowedFromSystem": null,
-        "note": null
+        "note": null,
+        "importPath": [
+          {
+            "path": "dedupe-exception",
+            "how": "pick() ĐÃ nhận nhưng bộ khử trùng hình học loại nhầm (sát mảnh thần kinh BP3D vùng ổ mắt/nền sọ) — cần ngoại lệ theo tên"
+          }
+        ]
       },
       "phase": 3,
       "priority": "P2"
@@ -5073,8 +5156,8 @@
       "kind": "structure",
       "level": 4,
       "name": {
-        "vi": "Dây phế vị hai bên",
-        "en": "Vagus nerves",
+        "vi": "Dây thần kinh phế vị (X)",
+        "en": "Vagus nerves (X)",
         "reviewed": true
       },
       "parent": "nervous-vagus",
@@ -5124,8 +5207,8 @@
       "kind": "group",
       "level": 2,
       "name": {
-        "vi": "Hệ thần kinh tự chủ",
-        "en": "Autonomic nervous system",
+        "vi": "Thần kinh tự chủ: thân giao cảm và dây phế vị",
+        "en": "Autonomic nerves: sympathetic trunk and vagus nerve",
         "reviewed": true
       },
       "parent": "sec-pns",
@@ -5179,20 +5262,21 @@
     },
     {
       "id": "sympathetic",
-      "viewId": "sympathetic-trunk",
+      "viewId": "sympathetic",
       "section": "G",
       "kind": "group",
       "level": 3,
       "name": {
         "vi": "Phân hệ giao cảm",
         "en": "Sympathetic division",
-        "reviewed": true
+        "reviewed": false
       },
       "parent": "nervous-autonomic",
       "children": [
         "sympathetic-ganglia",
         "intermediolateral-column",
-        "prevertebral-ganglia"
+        "prevertebral-ganglia",
+        "sympathetic-trunk"
       ],
       "learningObjectives": {
         "vi": [
@@ -5201,9 +5285,7 @@
         ],
         "reviewed": false
       },
-      "structures3d": [
-        "rule hiện có của `sympathetic-trunk`"
-      ],
+      "structures3d": [],
       "view": {
         "direction": "anterolateral",
         "zoom": {
@@ -5218,8 +5300,8 @@
         ]
       },
       "url": {
-        "vi": "/vi/human-atlas?view=sympathetic-trunk",
-        "en": "/en/human-atlas?view=sympathetic-trunk"
+        "vi": "/vi/human-atlas?view=sympathetic",
+        "en": "/en/human-atlas?view=sympathetic"
       },
       "thumbnail": {
         "source": "auto-capture",
@@ -5227,14 +5309,14 @@
         "direction": "anterolateral"
       },
       "data": {
-        "status": "live",
+        "status": "buildable",
         "partial": true,
-        "existingViewId": "sympathetic-trunk",
+        "existingViewId": null,
         "borrowedFromSystem": null,
         "note": "Thiếu hạch trước sống (tạng, mạc treo), dây tạng — không nguồn nào có."
       },
       "phase": 4,
-      "priority": "done"
+      "priority": "P2"
     },
     {
       "id": "sympathetic-ganglia",
@@ -5284,7 +5366,13 @@
         "partial": false,
         "existingViewId": null,
         "borrowedFromSystem": null,
-        "note": null
+        "note": null,
+        "importPath": [
+          {
+            "path": "pick",
+            "how": "Mở regex pick() (hiện chỉ nhận nerve|plexus|ganglion|root of…; loại nucleus|tract|gyrus|lobe…)"
+          }
+        ]
       },
       "phase": 4,
       "priority": "P3"
@@ -5338,7 +5426,13 @@
         "partial": false,
         "existingViewId": null,
         "borrowedFromSystem": null,
-        "note": null
+        "note": null,
+        "importPath": [
+          {
+            "path": "pick",
+            "how": "Mở regex pick() (hiện chỉ nhận nerve|plexus|ganglion|root of…; loại nucleus|tract|gyrus|lobe…)"
+          }
+        ]
       },
       "phase": 4,
       "priority": "P3"
@@ -5933,7 +6027,13 @@
         "partial": false,
         "existingViewId": null,
         "borrowedFromSystem": null,
-        "note": "Thấy rõ nhất trên lát cắt ngang → kết hợp needs-clipping."
+        "note": "Thấy rõ nhất trên lát cắt ngang → kết hợp needs-clipping.",
+        "importPath": [
+          {
+            "path": "pick",
+            "how": "Mở regex pick() (hiện chỉ nhận nerve|plexus|ganglion|root of…; loại nucleus|tract|gyrus|lobe…)"
+          }
+        ]
       },
       "phase": 5,
       "priority": "P3"
@@ -6100,14 +6200,13 @@
       "name": {
         "vi": "Đám rối thần kinh",
         "en": "Nerve plexuses",
-        "reviewed": true
+        "reviewed": false
       },
       "parent": "sec-pns",
       "children": [
         "cervical-plexus",
-        "brachial-plexus-group",
-        "lumbar-plexus",
-        "sacral-plexus"
+        "nervous-upper-limb",
+        "nervous-lower-limb"
       ],
       "learningObjectives": {
         "vi": [
@@ -6178,7 +6277,7 @@
       "name": {
         "vi": "Dây thần kinh hoành",
         "en": "Phrenic nerves",
-        "reviewed": false
+        "reviewed": true
       },
       "parent": "cervical-plexus",
       "children": [],
@@ -6208,14 +6307,14 @@
       "priority": "P4"
     },
     {
-      "id": "brachial-plexus-group",
+      "id": "nervous-upper-limb",
       "viewId": "nervous-upper-limb",
       "section": "I",
       "kind": "group",
       "level": 3,
       "name": {
-        "vi": "Đám rối cánh tay",
-        "en": "Brachial plexus",
+        "vi": "Đám rối cánh tay và thần kinh chi trên",
+        "en": "Brachial plexus and nerves of the upper limb",
         "reviewed": true
       },
       "parent": "sec-plexuses",
@@ -6276,7 +6375,7 @@
         "en": "Brachial plexus (roots, trunks, divisions, cords)",
         "reviewed": true
       },
-      "parent": "brachial-plexus-group",
+      "parent": "nervous-upper-limb",
       "children": [
         "brachial-plexus-roots",
         "brachial-plexus-trunks",
@@ -6550,7 +6649,7 @@
         "en": "Collateral branches of the brachial plexus",
         "reviewed": true
       },
-      "parent": "brachial-plexus-group",
+      "parent": "nervous-upper-limb",
       "children": [],
       "learningObjectives": {
         "vi": [
@@ -6595,13 +6694,13 @@
       "viewId": "lumbar-plexus",
       "section": "I",
       "kind": "group",
-      "level": 3,
+      "level": 4,
       "name": {
         "vi": "Đám rối thắt lưng",
         "en": "Lumbar plexus",
         "reviewed": false
       },
-      "parent": "sec-plexuses",
+      "parent": "nervous-lower-limb",
       "children": [
         "lumbar-plexus-branches",
         "obturator-nerve",
@@ -6657,7 +6756,7 @@
       "viewId": "lumbar-plexus-branches",
       "section": "I",
       "kind": "structure",
-      "level": 4,
+      "level": 5,
       "name": {
         "vi": "Thần kinh chậu hạ vị, chậu bẹn, sinh dục đùi và bì đùi ngoài",
         "en": "Iliohypogastric, ilio-inguinal, genitofemoral and lateral femoral cutaneous nerves",
@@ -6708,7 +6807,7 @@
       "viewId": "obturator-nerve",
       "section": "I",
       "kind": "structure",
-      "level": 4,
+      "level": 5,
       "name": {
         "vi": "Thần kinh bịt",
         "en": "Obturator nerve",
@@ -6759,13 +6858,13 @@
       "viewId": "sacral-plexus",
       "section": "I",
       "kind": "group",
-      "level": 3,
+      "level": 4,
       "name": {
         "vi": "Đám rối cùng",
         "en": "Sacral plexus",
         "reviewed": false
       },
-      "parent": "sec-plexuses",
+      "parent": "nervous-lower-limb",
       "children": [
         "sacral-plexus-branches",
         "nervous-sciatic"
@@ -6819,7 +6918,7 @@
       "viewId": "sacral-plexus-branches",
       "section": "I",
       "kind": "structure",
-      "level": 4,
+      "level": 5,
       "name": {
         "vi": "Thần kinh mông, thẹn, bì đùi sau và các nhánh cơ",
         "en": "Gluteal, pudendal, posterior femoral cutaneous and muscular branches",
@@ -6874,10 +6973,12 @@
       "name": {
         "vi": "Thần kinh ngoại biên chính",
         "en": "Major peripheral nerves",
-        "reviewed": true
+        "reviewed": false
       },
       "parent": "sec-pns",
-      "children": [],
+      "children": [
+        "nervous-trunk"
+      ],
       "learningObjectives": {
         "vi": [
           "Theo đường đi của từng thần kinh chính từ đám rối tới cơ và da",
@@ -6904,7 +7005,7 @@
       "viewId": "nervous-sciatic",
       "section": "J",
       "kind": "group",
-      "level": 4,
+      "level": 5,
       "name": {
         "vi": "Thần kinh ngồi và các nhánh",
         "en": "Sciatic nerve and its branches",
@@ -6965,7 +7066,7 @@
       "viewId": "femoral-nerve",
       "section": "J",
       "kind": "structure",
-      "level": 4,
+      "level": 5,
       "name": {
         "vi": "Thần kinh đùi và thần kinh hiển",
         "en": "Femoral and saphenous nerves",
@@ -6976,7 +7077,7 @@
       "learningObjectives": {
         "vi": [
           "Theo thần kinh đùi dưới dây chằng bẹn",
-          "Nhận ra thần kinh hiển là nhánh cảm giác dài nhất"
+          "Nhận ra thần kinh hiển là nhánh bì dài nhất của thần kinh đùi"
         ],
         "reviewed": false
       },
@@ -7195,7 +7296,7 @@
       "viewId": "tibial-nerve",
       "section": "J",
       "kind": "structure",
-      "level": 5,
+      "level": 6,
       "name": {
         "vi": "Thần kinh chày và thần kinh gan chân",
         "en": "Tibial and plantar nerves",
@@ -7253,10 +7354,10 @@
       "viewId": "sciatic-nerve",
       "section": "J",
       "kind": "structure",
-      "level": 5,
+      "level": 6,
       "name": {
-        "vi": "Thân thần kinh ngồi",
-        "en": "Sciatic nerve trunk",
+        "vi": "Thần kinh ngồi",
+        "en": "Sciatic nerve",
         "reviewed": true
       },
       "parent": "nervous-sciatic",
@@ -7304,7 +7405,7 @@
       "viewId": "fibular-nerves",
       "section": "J",
       "kind": "structure",
-      "level": 5,
+      "level": 6,
       "name": {
         "vi": "Thần kinh mác chung, nông và sâu",
         "en": "Common, superficial and deep fibular nerves",
@@ -7355,7 +7456,7 @@
       "viewId": "sural-nerve",
       "section": "J",
       "kind": "structure",
-      "level": 5,
+      "level": 6,
       "name": {
         "vi": "Thần kinh bắp chân",
         "en": "Sural nerve",
@@ -7718,7 +7819,7 @@
       "viewId": "plantar-nerves",
       "section": "J",
       "kind": "region",
-      "level": 6,
+      "level": 7,
       "name": {
         "vi": "Thần kinh gan chân trong và ngoài",
         "en": "Medial and lateral plantar nerves",
@@ -7783,7 +7884,7 @@
       "name": {
         "vi": "Cơ quan cảm giác liên quan thần kinh",
         "en": "Sense organs and their nerves",
-        "reviewed": true
+        "reviewed": false
       },
       "parent": "nervous-overview",
       "children": [
@@ -7820,8 +7921,8 @@
       "kind": "group",
       "level": 2,
       "name": {
-        "vi": "Mắt",
-        "en": "Eye",
+        "vi": "Nhãn cầu",
+        "en": "Eyeball",
         "reviewed": true
       },
       "parent": "sec-sensory-organs",
@@ -7945,7 +8046,7 @@
       "level": 3,
       "name": {
         "vi": "Thể thuỷ tinh và dây chằng treo",
-        "en": "Lens and zonular fibres",
+        "en": "Lens and suspensory ligament",
         "reviewed": true
       },
       "parent": "sensory-eyeball",
@@ -8046,8 +8147,8 @@
       "kind": "group",
       "level": 2,
       "name": {
-        "vi": "Tai",
-        "en": "Ear",
+        "vi": "Tai ngoài",
+        "en": "External ear",
         "reviewed": true
       },
       "parent": "sec-sensory-organs",
@@ -8154,7 +8255,17 @@
         "partial": false,
         "existingViewId": null,
         "borrowedFromSystem": null,
-        "note": null
+        "note": null,
+        "importPath": [
+          {
+            "path": "pick",
+            "how": "Mở regex pick() (hiện chỉ nhận nerve|plexus|ganglion|root of…; loại nucleus|tract|gyrus|lobe…)"
+          },
+          {
+            "path": "skeletal-branch",
+            "how": "Nằm collection '1: Skeletal system' — pick() không đọc, thêm nhánh"
+          }
+        ]
       },
       "phase": 8,
       "priority": "P3"
@@ -8221,7 +8332,13 @@
         "partial": true,
         "existingViewId": null,
         "borrowedFromSystem": null,
-        "note": "ZA có ốc tai + tiền đình nhưng KHÔNG thấy ống bán khuyên (cần kiểm lại khối Vestibule có kèm không trước khi viết câu thiếu)."
+        "note": "ZA có ốc tai + tiền đình nhưng KHÔNG thấy ống bán khuyên (cần kiểm lại khối Vestibule có kèm không trước khi viết câu thiếu).",
+        "importPath": [
+          {
+            "path": "pick",
+            "how": "Mở regex pick() (hiện chỉ nhận nerve|plexus|ganglion|root of…; loại nucleus|tract|gyrus|lobe…)"
+          }
+        ]
       },
       "phase": 8,
       "priority": "P3"
@@ -8274,7 +8391,13 @@
         "partial": true,
         "existingViewId": null,
         "borrowedFromSystem": null,
-        "note": "Chỉ khối ngoài; ống ốc tai, cơ quan Corti, màng nền không có → cần sơ đồ lát cắt."
+        "note": "Chỉ khối ngoài; ống ốc tai, cơ quan Corti, màng nền không có → cần sơ đồ lát cắt.",
+        "importPath": [
+          {
+            "path": "pick",
+            "how": "Mở regex pick() (hiện chỉ nhận nerve|plexus|ganglion|root of…; loại nucleus|tract|gyrus|lobe…)"
+          }
+        ]
       },
       "phase": 8,
       "priority": "P3"
@@ -8328,7 +8451,13 @@
         "partial": true,
         "existingViewId": null,
         "borrowedFromSystem": null,
-        "note": "Soan nang, cầu nang, bóng ống bán khuyên không có."
+        "note": "Soan nang, cầu nang, bóng ống bán khuyên không có.",
+        "importPath": [
+          {
+            "path": "pick",
+            "how": "Mở regex pick() (hiện chỉ nhận nerve|plexus|ganglion|root of…; loại nucleus|tract|gyrus|lobe…)"
+          }
+        ]
       },
       "phase": 8,
       "priority": "P3"
@@ -8340,8 +8469,8 @@
       "kind": "structure",
       "level": 2,
       "name": {
-        "vi": "Lưỡi (vị giác)",
-        "en": "Tongue (taste)",
+        "vi": "Lưỡi",
+        "en": "Tongue",
         "reviewed": true
       },
       "parent": "sec-sensory-organs",
@@ -8431,7 +8560,13 @@
         "partial": true,
         "existingViewId": null,
         "borrowedFromSystem": null,
-        "note": "Biểu mô khứu, hành khứu không có."
+        "note": "Biểu mô khứu, hành khứu không có.",
+        "importPath": [
+          {
+            "path": "dedupe-exception",
+            "how": "pick() ĐÃ nhận nhưng bộ khử trùng hình học loại nhầm (sát mảnh thần kinh BP3D vùng ổ mắt/nền sọ) — cần ngoại lệ theo tên"
+          }
+        ]
       },
       "phase": 8,
       "priority": "P3"
@@ -8471,6 +8606,549 @@
       },
       "phase": 8,
       "priority": "P4"
+    },
+    {
+      "id": "cerebral-cortex",
+      "viewId": "cerebral-cortex",
+      "section": "C",
+      "kind": "group",
+      "level": 4,
+      "name": {
+        "vi": "Các hồi và thuỳ đại não",
+        "en": "Cerebral gyri and lobes",
+        "reviewed": true
+      },
+      "parent": "nervous-cerebrum",
+      "children": [
+        "frontal-lobe",
+        "parietal-lobe",
+        "temporal-lobe",
+        "occipital-lobe",
+        "insula"
+      ],
+      "learningObjectives": {
+        "vi": [
+          "Kể tên năm thuỳ đại não và rãnh phân ranh"
+        ],
+        "reviewed": false
+      },
+      "structures3d": [
+        "rule hiện có của `cerebral-cortex`"
+      ],
+      "view": {
+        "direction": "side",
+        "zoom": {
+          "level": "organ",
+          "cameraFill": 0.82,
+          "thumbnailFill": 0.86
+        },
+        "display": "layered",
+        "context": []
+      },
+      "url": {
+        "vi": "/vi/human-atlas?view=cerebral-cortex",
+        "en": "/en/human-atlas?view=cerebral-cortex"
+      },
+      "thumbnail": {
+        "source": "auto-capture",
+        "from": "model",
+        "direction": "side"
+      },
+      "data": {
+        "status": "live",
+        "partial": false,
+        "existingViewId": "cerebral-cortex",
+        "borrowedFromSystem": null,
+        "note": "Đang là structure. Tách 5 thuỳ → đổi thành group, giữ id."
+      },
+      "phase": 2,
+      "priority": "done"
+    },
+    {
+      "id": "hippocampus-amygdala",
+      "viewId": "hippocampus-amygdala",
+      "section": "D",
+      "kind": "group",
+      "level": 4,
+      "name": {
+        "vi": "Hải mã, thể hạnh nhân và vách",
+        "en": "Hippocampus, amygdala and septum",
+        "reviewed": true
+      },
+      "parent": "nervous-limbic",
+      "children": [
+        "hippocampus",
+        "amygdala",
+        "septal-area"
+      ],
+      "learningObjectives": {
+        "vi": [
+          "Phân biệt hải mã với thể hạnh nhân trong thuỳ thái dương"
+        ],
+        "reviewed": false
+      },
+      "structures3d": [
+        "rule hiện có của `hippocampus-amygdala`"
+      ],
+      "view": {
+        "direction": "three-quarter",
+        "zoom": {
+          "level": "structure",
+          "cameraFill": 0.86,
+          "thumbnailFill": 0.86
+        },
+        "display": "layered",
+        "context": []
+      },
+      "url": {
+        "vi": "/vi/human-atlas?view=hippocampus-amygdala",
+        "en": "/en/human-atlas?view=hippocampus-amygdala"
+      },
+      "thumbnail": {
+        "source": "auto-capture",
+        "from": "model",
+        "direction": "three-quarter"
+      },
+      "data": {
+        "status": "live",
+        "partial": false,
+        "existingViewId": "hippocampus-amygdala",
+        "borrowedFromSystem": null,
+        "note": "Đang là structure. Tách 3 con → đổi thành group, giữ id."
+      },
+      "phase": 2,
+      "priority": "done"
+    },
+    {
+      "id": "diencephalon",
+      "viewId": "diencephalon",
+      "section": "E",
+      "kind": "group",
+      "level": 4,
+      "name": {
+        "vi": "Gian não",
+        "en": "Diencephalon",
+        "reviewed": true
+      },
+      "parent": "nervous-deep-brain",
+      "children": [
+        "thalamus",
+        "hypothalamus",
+        "epithalamus"
+      ],
+      "learningObjectives": {
+        "vi": [
+          "Kể ba phần gian não: đồi thị, vùng dưới đồi, vùng trên đồi"
+        ],
+        "reviewed": false
+      },
+      "structures3d": [
+        "rule hiện có của `diencephalon`"
+      ],
+      "view": {
+        "direction": "three-quarter",
+        "zoom": {
+          "level": "structure",
+          "cameraFill": 0.86,
+          "thumbnailFill": 0.86
+        },
+        "display": "layered",
+        "context": []
+      },
+      "url": {
+        "vi": "/vi/human-atlas?view=diencephalon",
+        "en": "/en/human-atlas?view=diencephalon"
+      },
+      "thumbnail": {
+        "source": "auto-capture",
+        "from": "model",
+        "direction": "three-quarter"
+      },
+      "data": {
+        "status": "live",
+        "partial": false,
+        "existingViewId": "diencephalon",
+        "borrowedFromSystem": null,
+        "note": "Đang là structure. Tách đồi thị/dưới đồi/trên đồi → đổi thành group, giữ id."
+      },
+      "phase": 2,
+      "priority": "done"
+    },
+    {
+      "id": "brain-ventricles",
+      "viewId": "brain-ventricles",
+      "section": "B",
+      "kind": "group",
+      "level": 4,
+      "name": {
+        "vi": "Não thất, cống não và đám rối mạch mạc",
+        "en": "Ventricles, cerebral aqueduct and choroid plexus",
+        "reviewed": true
+      },
+      "parent": "nervous-ventricles",
+      "children": [
+        "lateral-ventricles",
+        "third-ventricle",
+        "cerebral-aqueduct",
+        "fourth-ventricle",
+        "choroid-plexus"
+      ],
+      "learningObjectives": {
+        "vi": [
+          "Theo đường dịch não tuỷ từ não thất bên tới não thất bốn"
+        ],
+        "reviewed": false
+      },
+      "structures3d": [
+        "rule hiện có của `brain-ventricles`"
+      ],
+      "view": {
+        "direction": "three-quarter",
+        "zoom": {
+          "level": "structure",
+          "cameraFill": 0.86,
+          "thumbnailFill": 0.86
+        },
+        "display": "layered",
+        "context": []
+      },
+      "url": {
+        "vi": "/vi/human-atlas?view=brain-ventricles",
+        "en": "/en/human-atlas?view=brain-ventricles"
+      },
+      "thumbnail": {
+        "source": "auto-capture",
+        "from": "model",
+        "direction": "three-quarter"
+      },
+      "data": {
+        "status": "live",
+        "partial": false,
+        "existingViewId": "brain-ventricles",
+        "borrowedFromSystem": null,
+        "note": "Đang là structure. Tách từng não thất → đổi thành group, giữ id."
+      },
+      "phase": 2,
+      "priority": "done"
+    },
+    {
+      "id": "nervous-brainstem-cerebellum",
+      "viewId": "nervous-brainstem-cerebellum",
+      "section": "B",
+      "kind": "group",
+      "level": 3,
+      "name": {
+        "vi": "Thân não và tiểu não",
+        "en": "Brainstem and cerebellum",
+        "reviewed": true
+      },
+      "parent": "nervous-brain",
+      "children": [],
+      "learningObjectives": {
+        "vi": [
+          "Định vị thân não và tiểu não ở hố sọ sau"
+        ],
+        "reviewed": false
+      },
+      "structures3d": [
+        "rule hiện có của `nervous-brainstem-cerebellum`"
+      ],
+      "view": {
+        "direction": "side",
+        "zoom": {
+          "level": "organ",
+          "cameraFill": 0.82,
+          "thumbnailFill": 0.86
+        },
+        "display": "layered",
+        "context": []
+      },
+      "url": {
+        "vi": "/vi/human-atlas?view=nervous-brainstem-cerebellum",
+        "en": "/en/human-atlas?view=nervous-brainstem-cerebellum"
+      },
+      "thumbnail": {
+        "source": "auto-capture",
+        "from": "model",
+        "direction": "side"
+      },
+      "data": {
+        "status": "live",
+        "partial": false,
+        "existingViewId": "nervous-brainstem-cerebellum",
+        "borrowedFromSystem": null,
+        "note": "Góc nhìn gộp trên lưới — con nằm ở brainstem và cerebellum; giữ cho deep link."
+      },
+      "phase": 2,
+      "priority": "done"
+    },
+    {
+      "id": "nervous-orbit",
+      "viewId": "nervous-orbit",
+      "section": "F",
+      "kind": "group",
+      "level": 3,
+      "name": {
+        "vi": "Thần kinh ổ mắt",
+        "en": "Nerves of the orbit",
+        "reviewed": true
+      },
+      "parent": "nervous-cranial-nerves",
+      "children": [],
+      "learningObjectives": {
+        "vi": [
+          "Phân biệt các dây sọ đi vào ổ mắt"
+        ],
+        "reviewed": false
+      },
+      "structures3d": [
+        "rule hiện có của `nervous-orbit`"
+      ],
+      "view": {
+        "direction": [
+          -0.8,
+          0.35,
+          0.5
+        ],
+        "zoom": {
+          "level": "region",
+          "cameraFill": 0.78,
+          "thumbnailFill": 0.86
+        },
+        "display": "layered",
+        "context": []
+      },
+      "url": {
+        "vi": "/vi/human-atlas?view=nervous-orbit",
+        "en": "/en/human-atlas?view=nervous-orbit"
+      },
+      "thumbnail": {
+        "source": "auto-capture",
+        "from": "model",
+        "direction": [
+          -0.8,
+          0.35,
+          0.5
+        ]
+      },
+      "data": {
+        "status": "live",
+        "partial": false,
+        "existingViewId": "nervous-orbit",
+        "borrowedFromSystem": null,
+        "note": "Góc nhìn gộp dây II, III, IV, V1 — con nằm ở từng dây sọ. Thêm dây VI khi nhập ZA."
+      },
+      "phase": 3,
+      "priority": "done"
+    },
+    {
+      "id": "nervous-trunk",
+      "viewId": "nervous-trunk",
+      "section": "J",
+      "kind": "group",
+      "level": 3,
+      "name": {
+        "vi": "Thần kinh gian sườn",
+        "en": "Intercostal nerves",
+        "reviewed": true
+      },
+      "parent": "sec-peripheral-nerves",
+      "children": [
+        "intercostal-nerves"
+      ],
+      "learningObjectives": {
+        "vi": [
+          "Theo thần kinh gian sườn dọc bờ dưới xương sườn"
+        ],
+        "reviewed": false
+      },
+      "structures3d": [
+        "rule hiện có của `nervous-trunk`"
+      ],
+      "view": {
+        "direction": "anterolateral",
+        "zoom": {
+          "level": "region",
+          "cameraFill": 0.78,
+          "thumbnailFill": 0.86
+        },
+        "display": "layered",
+        "context": []
+      },
+      "url": {
+        "vi": "/vi/human-atlas?view=nervous-trunk",
+        "en": "/en/human-atlas?view=nervous-trunk"
+      },
+      "thumbnail": {
+        "source": "auto-capture",
+        "from": "model",
+        "direction": "anterolateral"
+      },
+      "data": {
+        "status": "live",
+        "partial": false,
+        "existingViewId": "nervous-trunk",
+        "borrowedFromSystem": null,
+        "note": null
+      },
+      "phase": 7,
+      "priority": "done"
+    },
+    {
+      "id": "intercostal-nerves",
+      "viewId": "intercostal-nerves",
+      "section": "J",
+      "kind": "structure",
+      "level": 4,
+      "name": {
+        "vi": "Các dây thần kinh gian sườn",
+        "en": "Intercostal nerves",
+        "reviewed": true
+      },
+      "parent": "nervous-trunk",
+      "children": [],
+      "learningObjectives": {
+        "vi": [
+          "Nhận ra thần kinh gian sườn là nhánh trước dây gai ngực, không tạo đám rối"
+        ],
+        "reviewed": false
+      },
+      "structures3d": [
+        "rule hiện có của `intercostal-nerves`"
+      ],
+      "view": {
+        "direction": "anterolateral",
+        "zoom": {
+          "level": "structure",
+          "cameraFill": 0.86,
+          "thumbnailFill": 0.86
+        },
+        "display": "layered",
+        "context": []
+      },
+      "url": {
+        "vi": "/vi/human-atlas?view=intercostal-nerves",
+        "en": "/en/human-atlas?view=intercostal-nerves"
+      },
+      "thumbnail": {
+        "source": "auto-capture",
+        "from": "model",
+        "direction": "anterolateral"
+      },
+      "data": {
+        "status": "live",
+        "partial": false,
+        "existingViewId": "intercostal-nerves",
+        "borrowedFromSystem": "respiratory",
+        "note": "Khai ở views-respiratory.ts — dùng lại."
+      },
+      "phase": 7,
+      "priority": "done"
+    },
+    {
+      "id": "nervous-lower-limb",
+      "viewId": "nervous-lower-limb",
+      "section": "I",
+      "kind": "group",
+      "level": 3,
+      "name": {
+        "vi": "Đám rối thắt lưng – cùng và thần kinh chi dưới",
+        "en": "Lumbosacral plexus branches and nerves of the lower limb",
+        "reviewed": true
+      },
+      "parent": "sec-plexuses",
+      "children": [
+        "lumbar-plexus",
+        "sacral-plexus"
+      ],
+      "learningObjectives": {
+        "vi": [
+          "Phân biệt nhánh đám rối thắt lưng với nhánh đám rối cùng"
+        ],
+        "reviewed": false
+      },
+      "structures3d": [
+        "rule hiện có của `nervous-lower-limb`"
+      ],
+      "view": {
+        "direction": "front",
+        "zoom": {
+          "level": "region",
+          "cameraFill": 0.78,
+          "thumbnailFill": 0.86
+        },
+        "display": "layered",
+        "context": []
+      },
+      "url": {
+        "vi": "/vi/human-atlas?view=nervous-lower-limb",
+        "en": "/en/human-atlas?view=nervous-lower-limb"
+      },
+      "thumbnail": {
+        "source": "auto-capture",
+        "from": "model",
+        "direction": "front"
+      },
+      "data": {
+        "status": "live",
+        "partial": true,
+        "existingViewId": "nervous-lower-limb",
+        "borrowedFromSystem": null,
+        "note": "Ô HAA 10. Chỉ có nhánh, không có thân đám rối."
+      },
+      "phase": 6,
+      "priority": "done"
+    },
+    {
+      "id": "sympathetic-trunk",
+      "viewId": "sympathetic-trunk",
+      "section": "G",
+      "kind": "structure",
+      "level": 4,
+      "name": {
+        "vi": "Thân và các dây giao cảm",
+        "en": "Sympathetic trunk and nerves",
+        "reviewed": true
+      },
+      "parent": "sympathetic",
+      "children": [],
+      "learningObjectives": {
+        "vi": [
+          "Xác định thân giao cảm hai bên thân đốt sống"
+        ],
+        "reviewed": false
+      },
+      "structures3d": [
+        "rule hiện có của `sympathetic-trunk`"
+      ],
+      "view": {
+        "direction": "anterolateral",
+        "zoom": {
+          "level": "structure",
+          "cameraFill": 0.86,
+          "thumbnailFill": 0.86
+        },
+        "display": "layered",
+        "context": []
+      },
+      "url": {
+        "vi": "/vi/human-atlas?view=sympathetic-trunk",
+        "en": "/en/human-atlas?view=sympathetic-trunk"
+      },
+      "thumbnail": {
+        "source": "auto-capture",
+        "from": "model",
+        "direction": "anterolateral"
+      },
+      "data": {
+        "status": "live",
+        "partial": false,
+        "existingViewId": "sympathetic-trunk",
+        "borrowedFromSystem": null,
+        "note": null
+      },
+      "phase": 4,
+      "priority": "done"
     }
   ]
 }

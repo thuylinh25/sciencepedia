@@ -69,40 +69,40 @@ N("basal-nuclei", "nervous-cerebrum", "B", "structure", "Nhân đuôi, bèo sẫ
   status: "live", existing: "basal-nuclei", dir: "three-quarter", zoom: "structure", mode: "layered", context: ["CEREBRAL_WHITE", "VENTRICLES"],
   obj: ["Xác định vị trí nhân nền sâu trong bán cầu", "Nhận ra nhân đuôi ôm theo não thất bên"],
 });
-N("nervous-cerebellum", "nervous-brain", "B", "group", "Tiểu não", "Cerebellum", {
+N("cerebellum", "nervous-brain", "B", "group", "Tiểu não", "Cerebellum", {
   status: "live", existing: "cerebellum", dir: "back", zoom: "organ", mode: "layered", context: ["BRAINSTEM", "TENTORIUM"],
   obj: ["Xác định tiểu não sau thân não, dưới lều tiểu não", "Phân biệt thuỳ nhộng với hai bán cầu tiểu não"],
   note: "Hiện là 1 mảnh BP3D (structure `cerebellum`). Tách tiểu thuỳ cần nhập ZA; khi đó id `cerebellum` chuyển thành group, giữ deep link.",
 });
-N("cerebellar-vermis", "nervous-cerebellum", "B", "structure", "Thuỳ nhộng tiểu não", "Cerebellar vermis", {
+N("cerebellar-vermis", "cerebellum", "B", "structure", "Thuỳ nhộng tiểu não", "Cerebellar vermis", {
   status: "import-za", dir: "back", zoom: "structure", mode: "layered", context: ["CEREBELLUM hemispheres"],
   focus: ["Lingula of cerebellum", "Central lobule", "Culmen", "Declive", "Folium of vermis", "Tuber of vermis", "Pyramis of vermis", "Uvula of vermis", "Nodule of vermis"],
   obj: ["Xác định thuỳ nhộng ở đường giữa tiểu não"],
 });
-N("cerebellar-hemisphere-lobules", "nervous-cerebellum", "B", "structure", "Các tiểu thuỳ bán cầu tiểu não", "Lobules of the cerebellar hemisphere", {
+N("cerebellar-hemisphere-lobules", "cerebellum", "B", "structure", "Các tiểu thuỳ bán cầu tiểu não", "Lobules of the cerebellar hemisphere", {
   status: "import-za", dir: "back", zoom: "structure", mode: "layered", context: ["vermis"],
   focus: ["Anterior/Posterior quadrangular lobule", "Superior/Inferior semilunar lobule", "Gracile lobule", "Biventral lobule", "Tonsil of cerebellum", "Wing of central lobule"],
   obj: ["Nhận ra các tiểu thuỳ chính của bán cầu tiểu não", "Xác định hạnh nhân tiểu não gần lỗ lớn xương chẩm"],
 });
-N("flocculonodular-lobe", "nervous-cerebellum", "B", "structure", "Thuỳ nhung – nhộng (thể nhung, nhân nhộng)", "Flocculonodular lobe", {
+N("flocculonodular-lobe", "cerebellum", "B", "structure", "Thuỳ nhung – nhộng (thể nhung, nhân nhộng)", "Flocculonodular lobe", {
   status: "import-za", dir: [0, -0.4, -1], zoom: "detail", mode: "layered", context: ["CEREBELLUM", "BRAINSTEM"],
   focus: ["Flocculus", "Peduncle of flocculus", "Nodule of vermis"],
   obj: ["Xác định thuỳ nhung – nhộng ở mặt trước dưới tiểu não"],
 });
-N("cerebellar-peduncles", "nervous-cerebellum", "B", "structure", "Cuống tiểu não", "Cerebellar peduncles", {
+N("cerebellar-peduncles", "cerebellum", "B", "structure", "Cuống tiểu não", "Cerebellar peduncles", {
   status: "import-za", partial: true, dir: "three-quarter", zoom: "detail", mode: "layered", context: ["BRAINSTEM"],
   focus: ["Superior cerebellar peduncle"], note: "ZA chỉ có cuống trên; cuống giữa/dưới chưa có — partial.",
   obj: ["Nhận ra cuống tiểu não là đường nối tiểu não với thân não"],
 });
-N("cerebellar-nuclei", "nervous-cerebellum", "B", "structure", "Nhân tiểu não (nhân răng…)", "Cerebellar nuclei (dentate…)", {
+N("cerebellar-nuclei", "cerebellum", "B", "structure", "Nhân tiểu não (nhân răng…)", "Cerebellar nuclei (dentate…)", {
   status: "missing", obj: ["Xác định nhân răng sâu trong bán cầu tiểu não"],
 });
-N("nervous-brainstem", "nervous-brain", "B", "group", "Thân não", "Brainstem", {
+N("brainstem", "nervous-brain", "B", "group", "Thân não", "Brainstem", {
   status: "live", existing: "brainstem", dir: "side", zoom: "organ", mode: "layered", context: ["DIENCEPHALON", "CEREBELLUM", "SPINAL_CORD"],
   obj: ["Kể ba phần thân não từ trên xuống: trung não, cầu não, hành não", "Nhận ra thân não là nơi xuất phát của phần lớn dây sọ"],
   note: "Đang là structure `brainstem` + group `nervous-brainstem-cerebellum`. Tách 3 phần = đổi `brainstem` thành group.",
 });
-N("midbrain", "nervous-brainstem", "B", "structure", "Trung não", "Midbrain", {
+N("midbrain", "brainstem", "B", "structure", "Trung não", "Midbrain", {
   status: "buildable", dir: "side", zoom: "structure", mode: "layered", context: ["PONS", "DIENCEPHALON"],
   focus: ["Midbrain", "Peduncle of midbrain", "Superior/Inferior colliculus", "Brachium of colliculi", "Interpeduncular fossa", "Cerebral aqueduct (context)"],
   obj: ["Xác định cuống đại não và mái trung não (gò trên, gò dưới)"],
@@ -111,11 +111,11 @@ N("red-nucleus", "midbrain", "B", "region", "Nhân đỏ", "Red nucleus", {
   status: "import-za", dir: "three-quarter", zoom: "detail", mode: "layered", context: ["MIDBRAIN ghost"], focus: ["Red nucleus"],
   obj: ["Định vị nhân đỏ trong trần cuống đại não"],
 });
-N("pons", "nervous-brainstem", "B", "structure", "Cầu não", "Pons", {
+N("pons", "brainstem", "B", "structure", "Cầu não", "Pons", {
   status: "buildable", dir: "side", zoom: "structure", mode: "layered", context: ["MIDBRAIN", "MEDULLA", "CEREBELLUM"], focus: ["Pons"],
   obj: ["Xác định cầu não giữa trung não và hành não, trước tiểu não"],
 });
-N("medulla-oblongata", "nervous-brainstem", "B", "structure", "Hành não", "Medulla oblongata", {
+N("medulla-oblongata", "brainstem", "B", "structure", "Hành não", "Medulla oblongata", {
   status: "buildable", dir: "front", zoom: "structure", mode: "layered", context: ["PONS", "SPINAL_CORD"], focus: ["Medulla oblongata"],
   obj: ["Xác định hành não nối tiếp tuỷ sống qua lỗ lớn xương chẩm"],
 });
@@ -123,7 +123,7 @@ N("medulla-pyramid-olive", "medulla-oblongata", "B", "region", "Tháp hành và 
   status: "import-za", dir: "front", zoom: "detail", mode: "layered", context: ["MEDULLA ghost"], focus: ["Pyramid of medulla oblongata", "Olive"],
   obj: ["Nhận ra tháp hành và trám hành ở mặt trước hành não"],
 });
-N("cranial-nerve-nuclei", "nervous-brainstem", "B", "structure", "Nhân dây thần kinh sọ", "Cranial nerve nuclei", {
+N("cranial-nerve-nuclei", "brainstem", "B", "structure", "Nhân dây thần kinh sọ", "Cranial nerve nuclei", {
   status: "import-za", partial: true, dir: "back", zoom: "detail", mode: "layered", context: ["BRAINSTEM ghost 20%"],
   focus: ["Nucleus of oculomotor/trochlear/abducens/hypoglossal/accessory nerve", "Accessory nucleus of oculomotor nerve", "Motor nucleus of facial nerve", "Nucleus ambiguus", "Nucleus of solitary tract", "Posterior nucleus of vagus nerve", "Superior/Inferior salivatory nucleus", "Vestibular nuclei", "Anterior/Posterior cochlear nucleus"],
   note: "Thiếu nhân dây V (cảm giác, vận động). Nối chéo sang từng dây sọ ở mục F.",
@@ -133,24 +133,24 @@ N("nervous-ventricles", "nervous-brain", "B", "group", "Hệ não thất", "Vent
   status: "live", existing: "nervous-ventricles", dir: "three-quarter", zoom: "organ", mode: "layered", context: ["CEREBRAL_WHITE", "BRAINSTEM", "CEREBELLUM"],
   obj: ["Kể tên bốn não thất và đường thông giữa chúng", "Xác định đám rối mạch mạc"],
 });
-N("lateral-ventricles", "nervous-ventricles", "B", "structure", "Não thất bên", "Lateral ventricles", {
+N("lateral-ventricles", "brain-ventricles", "B", "structure", "Não thất bên", "Lateral ventricles", {
   status: "buildable", dir: "three-quarter", zoom: "structure", mode: "layered", context: [BRAINCTX], focus: ["Lateral ventricle", "Interventricular foramen"],
   obj: ["Nhận ra sừng trán, thân, sừng chẩm, sừng thái dương của não thất bên"],
   note: "Tách `brain-ventricles` thành 4 structure — đổi id cũ thành group, giữ deep link.",
 });
-N("third-ventricle", "nervous-ventricles", "B", "structure", "Não thất ba", "Third ventricle", {
+N("third-ventricle", "brain-ventricles", "B", "structure", "Não thất ba", "Third ventricle", {
   status: "buildable", dir: "side", zoom: "structure", mode: "layered", context: ["DIENCEPHALON"], focus: ["Third ventricle"],
   obj: ["Xác định não thất ba giữa hai đồi thị"],
 });
-N("cerebral-aqueduct", "nervous-ventricles", "B", "structure", "Cống não", "Cerebral aqueduct", {
+N("cerebral-aqueduct", "brain-ventricles", "B", "structure", "Cống não", "Cerebral aqueduct", {
   status: "buildable", dir: "side", zoom: "detail", mode: "layered", context: ["MIDBRAIN"], focus: ["Cerebral aqueduct"],
   obj: ["Nhận ra cống não nối não thất ba với não thất bốn qua trung não"],
 });
-N("fourth-ventricle", "nervous-ventricles", "B", "structure", "Não thất bốn", "Fourth ventricle", {
+N("fourth-ventricle", "brain-ventricles", "B", "structure", "Não thất bốn", "Fourth ventricle", {
   status: "buildable", dir: "side", zoom: "structure", mode: "layered", context: ["PONS", "MEDULLA", "CEREBELLUM"], focus: ["Fourth ventricle"],
   obj: ["Xác định não thất bốn giữa thân não và tiểu não"],
 });
-N("choroid-plexus", "nervous-ventricles", "B", "structure", "Đám rối mạch mạc", "Choroid plexus", {
+N("choroid-plexus", "brain-ventricles", "B", "structure", "Đám rối mạch mạc", "Choroid plexus", {
   status: "buildable", dir: "three-quarter", zoom: "detail", mode: "layered", context: ["LATERAL_VENTRICLES"], focus: ["Choroid plexus of cerebral hemisphere (hệ sensory trong dữ liệu — mượn)"],
   obj: ["Nhận ra đám rối mạch mạc nằm trong não thất"],
   note: "Mảnh BP3D đang bị xếp hệ sensory — kiểm SYSTEM_CORRECTIONS trước khi dựng.",
@@ -176,7 +176,7 @@ N("nervous-brain-blood-supply", "nervous-brain", "B", "group", "Cấp máu cho n
 
 // ================================================================ C. Vùng não (thuỳ → hồi → vùng chức năng)
 const lobeNote = "Mảnh hồi BP3D đều nằm trong rule CORTEX → cấu trúc `cerebral-cortex`. Tách thuỳ = thay `cerebral-cortex` bằng 5 structure thuỳ (test \"phủ đủ, không chồng\").";
-N("frontal-lobe", "nervous-cerebrum", "C", "structure", "Thuỳ trán", "Frontal lobe", {
+N("frontal-lobe", "cerebral-cortex", "C", "structure", "Thuỳ trán", "Frontal lobe", {
   status: "buildable", dir: "side", zoom: "structure", mode: "layered", context: ["CORTEX còn lại ghost"],
   focus: ["Superior/Middle/Inferior frontal gyrus", "Precentral gyrus", "Orbital gyrus"], note: lobeNote,
   obj: ["Xác định ranh giới thuỳ trán: rãnh trung tâm phía sau, rãnh bên phía dưới", "Kể tên các hồi chính của thuỳ trán"],
@@ -214,7 +214,7 @@ N("prefrontal-cortex", "frontal-lobe", "C", "region", "Vỏ trước trán", "Pr
   status: "needs-schema", zoom: "structure", mode: "layered", focus: ["nhãn vùng phía trước vùng vận động"],
   obj: ["Định vị vỏ trước trán ở phần trước thuỳ trán"],
 });
-N("parietal-lobe", "nervous-cerebrum", "C", "structure", "Thuỳ đỉnh", "Parietal lobe", {
+N("parietal-lobe", "cerebral-cortex", "C", "structure", "Thuỳ đỉnh", "Parietal lobe", {
   status: "buildable", dir: "side", zoom: "structure", mode: "layered", context: ["CORTEX còn lại ghost"],
   focus: ["Postcentral gyrus", "Superior parietal lobule", "Supramarginal gyrus", "Angular gyrus"], note: lobeNote,
   obj: ["Xác định thuỳ đỉnh giữa rãnh trung tâm và rãnh đỉnh – chẩm", "Kể tên hồi sau trung tâm và hai tiểu thuỳ đỉnh"],
@@ -235,7 +235,7 @@ N("superior-parietal-lobule", "parietal-lobe", "C", "structure", "Tiểu thuỳ 
   status: "buildable", dir: "superior", zoom: "structure", mode: "layered", focus: ["Superior parietal lobule"],
   obj: ["Xác định tiểu thuỳ đỉnh trên phía trên rãnh nội đỉnh"],
 });
-N("temporal-lobe", "nervous-cerebrum", "C", "structure", "Thuỳ thái dương", "Temporal lobe", {
+N("temporal-lobe", "cerebral-cortex", "C", "structure", "Thuỳ thái dương", "Temporal lobe", {
   status: "buildable", dir: "side", zoom: "structure", mode: "layered", context: ["CORTEX còn lại ghost"],
   focus: ["Superior temporal gyrus (anterior + posterior part)", "Middle/Inferior temporal gyrus", "Fusiform gyrus"], note: lobeNote + " Hồi cạnh hải mã thuộc hệ viền (LIMBIC_GYRI), không tính vào đây.",
   obj: ["Xác định thuỳ thái dương dưới rãnh bên", "Kể tên ba hồi thái dương mặt ngoài"],
@@ -261,7 +261,7 @@ N("temporal-gyri-other", "temporal-lobe", "C", "structure", "Hồi thái dương
   status: "buildable", dir: [0.6, -0.5, 0.6], zoom: "structure", mode: "layered", focus: ["Middle temporal gyrus", "Inferior temporal gyrus", "Fusiform gyrus"],
   obj: ["Xác định hồi thái dương giữa, dưới và hồi hình thoi ở mặt dưới"],
 });
-N("occipital-lobe", "nervous-cerebrum", "C", "structure", "Thuỳ chẩm", "Occipital lobe", {
+N("occipital-lobe", "cerebral-cortex", "C", "structure", "Thuỳ chẩm", "Occipital lobe", {
   status: "buildable", dir: "back", zoom: "structure", mode: "layered", context: ["CORTEX còn lại ghost"], focus: ["Occipital lobe (BP3D, 1 mảnh mỗi bên)"], note: lobeNote,
   obj: ["Xác định thuỳ chẩm ở cực sau bán cầu"],
 });
@@ -275,7 +275,7 @@ N("primary-visual-cortex", "occipital-gyri", "C", "region", "Vỏ thị giác ng
   status: "needs-schema", zoom: "detail", mode: "layered", focus: ["nhãn hai bờ rãnh cựa"],
   obj: ["Liên hệ vùng quanh rãnh cựa với thị giác", "Nối với đường thị giác (dây II → dải thị → thể gối ngoài)"],
 });
-N("insula", "nervous-cerebrum", "C", "structure", "Thuỳ đảo", "Insula", {
+N("insula", "cerebral-cortex", "C", "structure", "Thuỳ đảo", "Insula", {
   status: "buildable", dir: "side", zoom: "structure", mode: "layered", context: ["ẩn nắp trán/đỉnh/thái dương để lộ đảo"], focus: ["Insula (BP3D)", "Circular sulcus of insula (ZA, tuỳ chọn)"],
   obj: ["Xác định thuỳ đảo nằm sâu trong rãnh bên, bị các nắp che"],
 });
@@ -291,12 +291,12 @@ N("nervous-limbic", "nervous-brain", "D", "group", "Hệ viền", "Limbic system
   status: "live", existing: "nervous-limbic", dir: "side", zoom: "organ", mode: "layered", context: ["CEREBRAL_WHITE", "DIENCEPHALON", "BRAINSTEM"],
   obj: ["Kể tên các cấu trúc chính của hệ viền", "Theo vòng hải mã → vòm não → thể vú"],
 });
-N("hippocampus", "nervous-limbic", "D", "structure", "Hải mã", "Hippocampus", {
+N("hippocampus", "hippocampus-amygdala", "D", "structure", "Hải mã", "Hippocampus", {
   status: "buildable", dir: "three-quarter", zoom: "structure", mode: "layered", context: ["LATERAL_VENTRICLES", "FORNIX"], focus: ["Hippocampus"],
   note: "Đang gộp trong structure `hippocampus-amygdala` → tách thành hippocampus, amygdala, septum; đổi id cũ thành group.",
   obj: ["Định vị hải mã ở sàn sừng thái dương não thất bên"],
 });
-N("amygdala", "nervous-limbic", "D", "structure", "Thể hạnh nhân", "Amygdala", {
+N("amygdala", "hippocampus-amygdala", "D", "structure", "Thể hạnh nhân", "Amygdala", {
   status: "buildable", dir: "three-quarter", zoom: "structure", mode: "layered", context: ["HIPPOCAMPUS", "TEMPORAL_LOBE ghost"], focus: ["Amygdala"],
   obj: ["Định vị thể hạnh nhân trước hải mã, trong thuỳ thái dương"],
 });
@@ -312,7 +312,7 @@ N("limbic-gyri", "nervous-limbic", "D", "structure", "Hồi đai và hồi cạn
   status: "live", existing: "limbic-gyri", dir: "three-quarter", zoom: "structure", mode: "layered",
   obj: ["Xác định hồi đai bao quanh thể chai"],
 });
-N("septal-area", "nervous-limbic", "D", "structure", "Vách trong suốt và nhân vách", "Septum pellucidum and septal nuclei", {
+N("septal-area", "hippocampus-amygdala", "D", "structure", "Vách trong suốt và nhân vách", "Septum pellucidum and septal nuclei", {
   status: "buildable", partial: true, dir: "side", zoom: "detail", mode: "layered", focus: ["Septum of telencephalon (BP3D)", "Septal nuclei + Septum pellucidum (ZA, tuỳ chọn)"],
   obj: ["Định vị vách trong suốt giữa hai não thất bên"],
 });
@@ -322,7 +322,7 @@ N("nervous-deep-brain", "nervous-brain", "E", "group", "Gian não và nhân nề
   status: "live", existing: "nervous-deep-brain", dir: "three-quarter", zoom: "organ", mode: "layered", context: ["CEREBRAL_WHITE", "BRAINSTEM"],
   obj: ["Kể tên ba phần gian não: đồi thị, vùng dưới đồi, vùng trên đồi"],
 });
-N("thalamus", "nervous-deep-brain", "E", "structure", "Đồi thị", "Thalamus", {
+N("thalamus", "diencephalon", "E", "structure", "Đồi thị", "Thalamus", {
   status: "buildable", dir: "three-quarter", zoom: "structure", mode: "layered", context: ["THIRD_VENTRICLE", "INTERNAL_CAPSULE"], focus: ["Thalamus"],
   note: "Đang gộp trong `diencephalon`. Tách → `diencephalon` thành group.",
   obj: ["Định vị đồi thị hai bên não thất ba", "Hiểu đồi thị là trạm chuyển tiếp lên vỏ não"],
@@ -335,14 +335,14 @@ N("geniculate-bodies", "thalamus", "E", "structure", "Thể gối ngoài và th�
   status: "buildable", dir: [-0.5, -0.3, -0.8], zoom: "detail", mode: "layered", context: ["THALAMUS ghost", "OPTIC tract"], focus: ["Lateral geniculate body", "Medial geniculate body"],
   obj: ["Liên hệ thể gối ngoài với thị giác, thể gối trong với thính giác"],
 });
-N("hypothalamus", "nervous-deep-brain", "E", "structure", "Vùng dưới đồi", "Hypothalamus", {
+N("hypothalamus", "diencephalon", "E", "structure", "Vùng dưới đồi", "Hypothalamus", {
   status: "buildable", dir: "side", zoom: "structure", mode: "layered", context: ["THALAMUS", "pituitary (mượn endocrine)"], focus: ["Hypothalamus", "Tuber cinereum"],
   obj: ["Định vị vùng dưới đồi dưới đồi thị, trên tuyến yên"],
 });
 N("hypothalamic-nuclei", "hypothalamus", "E", "region", "Các nhân vùng dưới đồi", "Hypothalamic nuclei", {
   status: "missing", obj: ["Nhận ra vùng dưới đồi gồm nhiều nhóm nhân"],
 });
-N("epithalamus", "nervous-deep-brain", "E", "structure", "Vùng trên đồi", "Epithalamus", {
+N("epithalamus", "diencephalon", "E", "structure", "Vùng trên đồi", "Epithalamus", {
   status: "buildable", dir: [0, 0.3, -1], zoom: "detail", mode: "layered", context: ["THALAMUS"],
   focus: ["Habenula", "Stria medullaris of thalamus", "Posterior commissure", "pineal-gland (mượn endocrine qua export)"],
   obj: ["Kể tên thành phần vùng trên đồi: củ cương, vân tuỷ, tuyến tùng"],
@@ -367,19 +367,38 @@ const CN = [
   ["accessory-nerve", "Dây phụ (XI)", "Accessory nerve (XI)", "live", "accessory-nerve", "side"],
   ["hypoglossal-nerve", "Dây hạ thiệt (XII)", "Hypoglossal nerve (XII)", "live", "hypoglossal-nerve", "side"],
 ];
+const CN_OBJ = {
+  "cn-i-olfactory": ["Theo sợi khứu giác từ trần hốc mũi qua mảnh sàng lên hành khứu", "Xếp dây I vào nhóm dây cảm giác"],
+  "optic-pathway": ["Theo đường thị giác: dây thị → giao thoa thị → dải thị", "Giải thích vì sao sợi từ nửa trong võng mạc bắt chéo ở giao thoa thị"],
+  "oculomotor-nerve": ["Kể các cơ vận nhãn do dây III chi phối", "Nhận ra dây III mang sợi đối giao cảm tới hạch mi"],
+  "trochlear-nerve": ["Nhận ra dây IV chi phối cơ chéo trên", "Định vị dây IV ra ở mặt sau thân não"],
+  "cn-v-trigeminal": ["Kể ba nhánh V1, V2, V3", "Phân biệt V1, V2 (cảm giác) với V3 (hỗn hợp, vận động cơ nhai)"],
+  "cn-vi-abducens": ["Nhận ra dây VI chi phối cơ thẳng ngoài"],
+  "facial-nerve": ["Nhận ra dây VII vận động cơ biểu cảm mặt", "Nhận ra thừng nhĩ mang vị giác 2/3 trước lưỡi"],
+  "vestibulocochlear-nerve": ["Phân biệt phần ốc tai (thính giác) với phần tiền đình (thăng bằng)", "Theo dây VIII từ tai trong qua ống tai trong tới thân não"],
+  "glossopharyngeal-nerve": ["Nhận ra dây IX mang vị giác 1/3 sau lưỡi và cảm giác hầu"],
+  "nervous-vagus": ["Theo dây phế vị từ hành não qua cổ xuống ngực và bụng", "Nhận ra dây X là nguồn chính của sợi đối giao cảm tới tạng"],
+  "accessory-nerve": ["Nhận ra dây XI chi phối cơ ức đòn chũm và cơ thang"],
+  "hypoglossal-nerve": ["Nhận ra dây XII vận động cơ lưỡi"],
+};
 for (const [id, vi, en, status, existing, dir, focus, note] of CN) {
   N(id, "nervous-cranial-nerves", "F", id === "cn-v-trigeminal" || id === "nervous-vagus" ? "group" : "structure", vi, en, {
     status, existing: existing ?? undefined, dir, zoom: "structure", mode: "layered", context: ["BRAINSTEM", SKULL, "cranial-nerve-nuclei (khi có)"],
     focus, note, partial: id === "cn-v-trigeminal" || id === "cn-i-olfactory",
-    obj: [`Theo đường đi của ${vi.split(" (")[0].toLowerCase()} từ não tới vùng chi phối`, "Phân loại dây: cảm giác, vận động hay hỗn hợp"],
+    obj: CN_OBJ[id],
   });
 }
+const V_OBJ = {
+  "ophthalmic-nerve": "Xác định vùng cảm giác của V1 (trán, mi trên, sống mũi) và hạch mi treo trên nhánh mũi mi",
+  "maxillary-nerve": "Xác định vùng cảm giác của V2 (má, môi trên, răng hàm trên)",
+  "mandibular-nerve": "Nhận ra V3 là nhánh duy nhất của dây V có sợi vận động (cơ nhai)",
+};
 for (const [id, vi, en, ex, dir] of [
   ["ophthalmic-nerve", "Dây thần kinh mắt (V1) và hạch mi", "Ophthalmic nerve (V1) and ciliary ganglion", "ophthalmic-nerve", [-0.8, 0.35, 0.5]],
   ["maxillary-nerve", "Dây thần kinh hàm trên (V2)", "Maxillary nerve (V2)", "maxillary-nerve", "anterolateral"],
   ["mandibular-nerve", "Dây thần kinh hàm dưới (V3) và nhánh", "Mandibular nerve (V3) and branches", "mandibular-nerve", "anterolateral"],
 ]) {
-  N(id, "cn-v-trigeminal", "F", "structure", vi, en, { status: "live", existing: ex, dir, zoom: "structure", mode: "layered", context: [SKULL], obj: [`Xác định vùng da và cơ do ${vi.split(" (")[0].toLowerCase()} chi phối`] });
+  N(id, "cn-v-trigeminal", "F", "structure", vi, en, { status: "live", existing: ex, dir, zoom: "structure", mode: "layered", context: [SKULL], obj: [V_OBJ[id]] });
 }
 N("trigeminal-roots", "cn-v-trigeminal", "F", "structure", "Rễ cảm giác và rễ vận động dây V", "Sensory and motor roots of the trigeminal nerve", {
   status: "import-za", dir: "side", zoom: "detail", mode: "layered", context: ["PONS"], focus: ["Sensory root of trigeminal nerve", "Motor root of trigeminal nerve"],
@@ -397,7 +416,7 @@ N("nervous-autonomic", "sec-pns", "G", "group", "Hệ thần kinh tự chủ", "
   obj: ["Phân biệt ba phân hệ: giao cảm, đối giao cảm, ruột", "Nhận ra chuỗi hai neuron (trước hạch – sau hạch)"],
 });
 N("sympathetic", "nervous-autonomic", "G", "group", "Phân hệ giao cảm", "Sympathetic division", {
-  status: "live", existing: "sympathetic-trunk", partial: true, dir: "anterolateral", zoom: "region", mode: "layered", context: ["SPINE", "RIBS"],
+  status: "buildable", partial: true, dir: "anterolateral", zoom: "region", mode: "layered", context: ["SPINE", "RIBS"],
   obj: ["Xác định thân giao cảm hai bên cột sống", "Hiểu nguồn gốc ngực – thắt lưng của sợi giao cảm"],
   note: "Thiếu hạch trước sống (tạng, mạc treo), dây tạng — không nguồn nào có.",
 });
@@ -465,11 +484,11 @@ N("cervical-plexus", "sec-plexuses", "I", "group", "Đám rối cổ", "Cervical
   note: "Không nguồn đã vet có đám rối cổ. HAA tile 8 (Phrenic) cũng thiếu → `nervous-phrenic` đang mang `missing` trên main.",
 });
 N("nervous-phrenic", "cervical-plexus", "I", "structure", "Dây thần kinh hoành", "Phrenic nerves", { status: "missing", existing: "nervous-phrenic", obj: ["Theo dây hoành từ cổ xuống cơ hoành"] });
-N("brachial-plexus-group", "sec-plexuses", "I", "group", "Đám rối cánh tay", "Brachial plexus", {
+N("nervous-upper-limb", "sec-plexuses", "I", "group", "Đám rối cánh tay và thần kinh chi trên", "Brachial plexus and nerves of the upper limb", {
   status: "live", existing: "nervous-upper-limb", dir: "front", zoom: "region", mode: "layered", context: ["UPPER_LIMB_BONES", "CLAVICLE"],
   obj: ["Đọc sơ đồ rễ → thân → ngành → bó → nhánh tận", "Kể năm nhánh tận của đám rối cánh tay"],
 });
-N("brachial-plexus", "brachial-plexus-group", "I", "structure", "Đám rối cánh tay (rễ, thân, ngành, bó)", "Brachial plexus (roots, trunks, divisions, cords)", {
+N("brachial-plexus", "nervous-upper-limb", "I", "structure", "Đám rối cánh tay (rễ, thân, ngành, bó)", "Brachial plexus (roots, trunks, divisions, cords)", {
   status: "live", existing: "brachial-plexus", dir: "front", zoom: "structure", mode: "layered",
   obj: ["Phân biệt thân trên, giữa, dưới và bó ngoài, trong, sau"],
 });
@@ -485,10 +504,10 @@ for (const [id, vi, en, f] of [
     obj: [`Xác định ${vi.toLowerCase()} trong sơ đồ đám rối`],
   });
 }
-N("brachial-plexus-collaterals", "brachial-plexus-group", "I", "structure", "Nhánh bên của đám rối cánh tay", "Collateral branches of the brachial plexus", {
+N("brachial-plexus-collaterals", "nervous-upper-limb", "I", "structure", "Nhánh bên của đám rối cánh tay", "Collateral branches of the brachial plexus", {
   status: "live", existing: "brachial-plexus-collaterals", dir: "front", zoom: "structure", mode: "layered", obj: ["Kể nhánh bên: vai sau, ngực dài, trên vai, ngực ngoài/trong, dưới vai, ngực lưng"],
 });
-N("lumbar-plexus", "sec-plexuses", "I", "group", "Đám rối thắt lưng", "Lumbar plexus", {
+N("lumbar-plexus", "nervous-lower-limb", "I", "group", "Đám rối thắt lưng", "Lumbar plexus", {
   status: "buildable", partial: true, dir: "front", zoom: "region", mode: "layered", context: ["LUMBAR_SPINE", "HIP_BONE", "psoas major (mượn muscular)"],
   focus: ["lumbar-plexus-branches", "femoral-nerve", "obturator-nerve"],
   note: "Chỉ có nhánh, không có thân đám rối trong cơ thắt lưng lớn → partial. Hiện gộp trong `nervous-lower-limb`.",
@@ -498,7 +517,7 @@ N("lumbar-plexus-branches", "lumbar-plexus", "I", "structure", "Thần kinh ch�
   status: "live", existing: "lumbar-plexus-branches", dir: "front", zoom: "structure", mode: "layered", obj: ["Xác định nhánh đám rối thắt lưng ở thành bụng và đùi"],
 });
 N("obturator-nerve", "lumbar-plexus", "I", "structure", "Thần kinh bịt", "Obturator nerve", { status: "live", existing: "obturator-nerve", dir: "front", zoom: "structure", mode: "layered", obj: ["Theo thần kinh bịt qua lỗ bịt tới vùng đùi trong"] });
-N("sacral-plexus", "sec-plexuses", "I", "group", "Đám rối cùng", "Sacral plexus", {
+N("sacral-plexus", "nervous-lower-limb", "I", "group", "Đám rối cùng", "Sacral plexus", {
   status: "buildable", partial: true, dir: "back", zoom: "region", mode: "layered", context: ["SACRUM", "HIP_BONE", "piriformis (mượn muscular)"],
   focus: ["sacral-plexus-branches", "nervous-sciatic"], note: "Chỉ có nhánh, không có thân đám rối trên cơ hình lê → partial.",
   obj: ["Định vị đám rối cùng (L4–S4) trước cơ hình lê", "Kể nhánh: ngồi, mông trên/dưới, thẹn, bì đùi sau"],
@@ -513,7 +532,7 @@ N("sec-peripheral-nerves", "sec-pns", "J", "section", "Thần kinh ngoại biên
 });
 const PN = [
   ["nervous-sciatic", "sacral-plexus", "Thần kinh ngồi và các nhánh", "Sciatic nerve and its branches", "back", "nervous-sciatic", ["Theo thần kinh ngồi từ dưới cơ hình lê xuống hố khoeo", "Xác định nơi chia thành thần kinh chày và mác chung"]],
-  ["femoral-nerve", "lumbar-plexus", "Thần kinh đùi và thần kinh hiển", "Femoral and saphenous nerves", "front", null, ["Theo thần kinh đùi dưới dây chằng bẹn", "Nhận ra thần kinh hiển là nhánh cảm giác dài nhất"]],
+  ["femoral-nerve", "lumbar-plexus", "Thần kinh đùi và thần kinh hiển", "Femoral and saphenous nerves", "front", null, ["Theo thần kinh đùi dưới dây chằng bẹn", "Nhận ra thần kinh hiển là nhánh bì dài nhất của thần kinh đùi"]],
   ["radial-nerve", "brachial-plexus", "Thần kinh quay", "Radial nerve", "back", null, ["Theo thần kinh quay quanh mặt sau xương cánh tay", "Phân biệt nhánh nông và nhánh sâu (gian cốt sau)"]],
   ["ulnar-nerve", "brachial-plexus", "Thần kinh trụ", "Ulnar nerve", "front", null, ["Theo thần kinh trụ sau mỏm trên lồi cầu trong", "Phân biệt nhánh nông, sâu và nhánh mu tay"]],
   ["median-nerve", "brachial-plexus", "Thần kinh giữa", "Median nerve", "front", null, ["Theo thần kinh giữa qua ống cổ tay", "Nhận ra nhánh gian cốt trước"]],
@@ -592,7 +611,72 @@ N("touch-receptors", "sec-sensory-organs", "K", "structure", "Thụ thể xúc g
   note: "Da là 1 mesh toàn thân. HAA tile 22–24 là khối da cắt — cần model tự dựng (vi thể), qua science-editor.",
 });
 
-// ================================================================ dẫn xuất
+// ================================================================ góc nhìn main còn thiếu (giữ deep link)
+N("cerebral-cortex", "nervous-cerebrum", "C", "group", "Các hồi và thuỳ đại não", "Cerebral gyri and lobes", {
+  status: "live", existing: "cerebral-cortex", dir: "side", zoom: "organ", mode: "layered",
+  note: "Đang là structure. Tách 5 thuỳ → đổi thành group, giữ id.", obj: ["Kể tên năm thuỳ đại não và rãnh phân ranh"],
+});
+N("hippocampus-amygdala", "nervous-limbic", "D", "group", "Hải mã, thể hạnh nhân và vách", "Hippocampus, amygdala and septum", {
+  status: "live", existing: "hippocampus-amygdala", dir: "three-quarter", zoom: "structure", mode: "layered",
+  note: "Đang là structure. Tách 3 con → đổi thành group, giữ id.", obj: ["Phân biệt hải mã với thể hạnh nhân trong thuỳ thái dương"],
+});
+N("diencephalon", "nervous-deep-brain", "E", "group", "Gian não", "Diencephalon", {
+  status: "live", existing: "diencephalon", dir: "three-quarter", zoom: "structure", mode: "layered",
+  note: "Đang là structure. Tách đồi thị/dưới đồi/trên đồi → đổi thành group, giữ id.", obj: ["Kể ba phần gian não: đồi thị, vùng dưới đồi, vùng trên đồi"],
+});
+N("brain-ventricles", "nervous-ventricles", "B", "group", "Não thất, cống não và đám rối mạch mạc", "Ventricles, cerebral aqueduct and choroid plexus", {
+  status: "live", existing: "brain-ventricles", dir: "three-quarter", zoom: "structure", mode: "layered",
+  note: "Đang là structure. Tách từng não thất → đổi thành group, giữ id.", obj: ["Theo đường dịch não tuỷ từ não thất bên tới não thất bốn"],
+});
+N("nervous-brainstem-cerebellum", "nervous-brain", "B", "group", "Thân não và tiểu não", "Brainstem and cerebellum", {
+  status: "live", existing: "nervous-brainstem-cerebellum", dir: "side", zoom: "organ", mode: "layered",
+  note: "Góc nhìn gộp trên lưới — con nằm ở brainstem và cerebellum; giữ cho deep link.", obj: ["Định vị thân não và tiểu não ở hố sọ sau"],
+});
+N("nervous-orbit", "nervous-cranial-nerves", "F", "group", "Thần kinh ổ mắt", "Nerves of the orbit", {
+  status: "live", existing: "nervous-orbit", dir: [-0.8, 0.35, 0.5], zoom: "region", mode: "layered",
+  note: "Góc nhìn gộp dây II, III, IV, V1 — con nằm ở từng dây sọ. Thêm dây VI khi nhập ZA.", obj: ["Phân biệt các dây sọ đi vào ổ mắt"],
+});
+N("nervous-trunk", "sec-peripheral-nerves", "J", "group", "Thần kinh gian sườn", "Intercostal nerves", {
+  status: "live", existing: "nervous-trunk", dir: "anterolateral", zoom: "region", mode: "layered", obj: ["Theo thần kinh gian sườn dọc bờ dưới xương sườn"],
+});
+N("intercostal-nerves", "nervous-trunk", "J", "structure", "Thần kinh gian sườn", "Intercostal nerves", {
+  status: "live", existing: "intercostal-nerves", borrowed: "respiratory", dir: "anterolateral", zoom: "structure", mode: "layered",
+  note: "Khai ở views-respiratory.ts — dùng lại.", obj: ["Nhận ra thần kinh gian sườn là nhánh trước dây gai ngực, không tạo đám rối"],
+});
+N("nervous-lower-limb", "sec-plexuses", "I", "group", "Đám rối thắt lưng – cùng và thần kinh chi dưới", "Lumbosacral plexus branches and nerves of the lower limb", {
+  status: "live", existing: "nervous-lower-limb", partial: true, dir: "front", zoom: "region", mode: "layered",
+  note: "Ô HAA 10. Chỉ có nhánh, không có thân đám rối.", obj: ["Phân biệt nhánh đám rối thắt lưng với nhánh đám rối cùng"],
+});
+N("sympathetic-trunk", "sympathetic", "G", "structure", "Thân và các dây giao cảm", "Sympathetic trunk and nerves", {
+  status: "live", existing: "sympathetic-trunk", dir: "anterolateral", zoom: "structure", mode: "layered", obj: ["Xác định thân giao cảm hai bên thân đốt sống"],
+});
+
+// ================================================================ đường nhập Z-Anatomy (chạy khô import-z-anatomy.ts, 2026-10-19)
+const ZA_PATH = {
+  pick: "Mở regex pick() (hiện chỉ nhận nerve|plexus|ganglion|root of…; loại nucleus|tract|gyrus|lobe…)",
+  "dedupe-exception": "pick() ĐÃ nhận nhưng bộ khử trùng hình học loại nhầm (sát mảnh thần kinh BP3D vùng ổ mắt/nền sọ) — cần ngoại lệ theo tên",
+  "replace-bp3d": "Chồng lên mảnh BP3D nguyên khối → khử trùng sẽ loại; phải THAY mảnh BP3D bằng các mảnh ZA (đổi test phủ đủ)",
+  "skeletal-branch": "Nằm collection '1: Skeletal system' — pick() không đọc, thêm nhánh",
+};
+const IMPORT = {
+  "cerebellar-vermis": "replace-bp3d", "cerebellar-hemisphere-lobules": "replace-bp3d", "flocculonodular-lobe": "replace-bp3d",
+  "cerebellar-peduncles": "pick", "red-nucleus": "pick", "medulla-pyramid-olive": "replace-bp3d", "cranial-nerve-nuclei": "pick",
+  "nervous-meninges": "pick", "falx-cerebri": "pick", "inferior-frontal-gyrus": "replace-bp3d", "transverse-temporal-gyri": "pick",
+  "occipital-gyri": "replace-bp3d", "medial-surface-hemisphere": "replace-bp3d", "cn-i-olfactory": "dedupe-exception",
+  "cn-vi-abducens": "dedupe-exception", "trigeminal-roots": "dedupe-exception", "sympathetic-ganglia": "pick",
+  "intermediolateral-column": "pick", "spinal-tracts": "pick", "middle-ear": ["pick", "skeletal-branch"], "inner-ear": "pick",
+  cochlea: "pick", "vestibular-system": "pick", olfaction: "dedupe-exception",
+};
+for (const x of nodes) if (x.status === "import-za" && !IMPORT[x.id]) throw new Error("thiếu đường nhập: " + x.id);
+
+const MAIN_DIR = path.join(root, "sciencepedia/src/lib/human-atlas");
+const mainSrc = fs.readdirSync(MAIN_DIR).filter((f) => /^views.*\.ts$/.test(f)).map((f) => fs.readFileSync(path.join(MAIN_DIR, f), "utf8")).join("\n");
+const MAIN_NAMES = {};
+for (const m of mainSrc.matchAll(/(?:group|structure)\(\s*"([a-z0-9-]+)",\s*"([^"]+)",\s*"([^"]+)"/g)) MAIN_NAMES[m[1]] = { vi: m[2], en: m[3] };
+for (const m of mainSrc.matchAll(/id: "([a-z0-9-]+)",[\s\S]{0,200}?name: \{ vi: "([^"]+)", en: "([^"]+)" \}/g)) MAIN_NAMES[m[1]] ??= { vi: m[2], en: m[3] };
+const nervousSrc = fs.readFileSync(path.join(MAIN_DIR, "views-nervous.ts"), "utf8");
+const MAIN_NERVOUS = [...nervousSrc.matchAll(/(?:group|structure)\(\s*"([a-z0-9-]+)"|id: "([a-z0-9-]+)"/g)].map((m) => m[1] || m[2]);
+
 const byId = new Map();
 for (const x of nodes) {
   if (byId.has(x.id)) throw new Error("trùng id " + x.id);
@@ -613,7 +697,8 @@ const list = nodes.map((x) => {
     section: x.sec,
     kind: x.kind,
     level: depth(x),
-    name: { vi: x.vi, en: x.en, reviewed: x.status === "live" },
+    // Nút live mang đúng tên trên main (đã qua science-editor); nút mới chưa duyệt.
+    name: x.existing && MAIN_NAMES[x.existing] ? { ...MAIN_NAMES[x.existing], reviewed: true } : { vi: x.vi, en: x.en, reviewed: false },
     parent: x.parent,
     children: nodes.filter((c) => c.parent === x.id).map((c) => c.id),
     learningObjectives: { vi: x.obj ?? [], reviewed: false },
@@ -634,12 +719,25 @@ const list = nodes.map((x) => {
       existingViewId: x.existing ?? null,
       borrowedFromSystem: x.borrowed ?? null,
       note: x.note ?? null,
+      ...(x.status === "import-za" ? { importPath: [IMPORT[x.id]].flat().map((k) => ({ path: k, how: ZA_PATH[k] })) } : {}),
     },
     phase,
     priority: priority(x.status, phase),
     ...(x.featured ? { featured: true } : {}),
   };
 });
+
+// kiểm hai chiều: mọi góc nhìn thần kinh trên main có nút; existing có thật; viewId không trùng
+const viewIds = list.filter((x) => x.viewId).map((x) => x.viewId);
+const dupView = viewIds.filter((v, i) => viewIds.indexOf(v) !== i);
+if (dupView.length) throw new Error("viewId trùng: " + dupView.join(", "));
+const missingMain = MAIN_NERVOUS.filter((v) => !viewIds.includes(v));
+if (missingMain.length) throw new Error("góc nhìn main chưa có nút: " + missingMain.join(", "));
+for (const x of list) {
+  if (x.data.existingViewId && !MAIN_NAMES[x.data.existingViewId]) throw new Error("existing không có trên main: " + x.id);
+  if (!x.data.existingViewId && x.kind !== "section" && MAIN_NAMES[x.id]) throw new Error("id mới đụng main: " + x.id);
+  if (x.data.existingViewId && x.viewId !== x.id) throw new Error("nút live phải mang đúng id main: " + x.id + " ≠ " + x.viewId);
+}
 
 // HAA "Nervous System Views" (ảnh chủ sản phẩm 2026-10-15) → trạng thái
 const HAA = [
@@ -651,7 +749,7 @@ const HAA = [
   [6, "Cranial Nerves", "nervous-cranial-nerves", "live-partial"],
   [7, "Vagus Nerve (X)", "nervous-vagus", "live"],
   [8, "Phrenic Nerves", "nervous-phrenic", "missing"],
-  [9, "Brachial Plexus", "brachial-plexus-group", "live"],
+  [9, "Brachial Plexus", "nervous-upper-limb", "live"],
   [10, "Lumbosacral Plexus", "nervous-lower-limb", "live-partial"],
   [11, "Sciatic Nerve", "nervous-sciatic", "live"],
   [12, "Autonomic Nerves", "nervous-autonomic", "live-partial"],
