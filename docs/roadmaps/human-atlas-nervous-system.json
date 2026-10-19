@@ -65,18 +65,18 @@
     ]
   },
   "coverage": {
-    "nodes": 228,
-    "nodes3d": 223,
+    "nodes": 231,
+    "nodes3d": 226,
     "byStatus": {
-      "live": 193,
+      "live": 199,
       "buildable": 0,
-      "import-za": 10,
+      "import-za": 6,
       "needs-schema": 8,
       "needs-clipping": 4,
-      "missing": 8
+      "missing": 9
     },
-    "readyNow": "193/223 (87%) nút 3D dựng được bằng dữ liệu đang có",
-    "afterZaImport": "203/223 (91%)",
+    "readyNow": "199/226 (88%) nút 3D dựng được bằng dữ liệu đang có",
+    "afterZaImport": "205/226 (91%)",
     "haaTiles": {
       "note": "So với 24 ô \"Nervous System Views\" của HAA (ảnh tham chiếu, không dùng asset HAA).",
       "withCardNow": "19/24 (79%)",
@@ -224,13 +224,9 @@
         "cerebellar-vermis",
         "cerebellar-hemisphere-lobules",
         "flocculonodular-lobe",
-        "cerebellar-peduncles",
         "medulla-pyramid-olive",
-        "transverse-temporal-gyri",
         "occipital-gyri",
-        "medial-surface-hemisphere",
-        "intermediolateral-column",
-        "spinal-tracts"
+        "medial-surface-hemisphere"
       ]
     },
     {
@@ -267,6 +263,7 @@
       "status": "missing",
       "items": [
         "trigeminal-ganglion",
+        "intermediolateral-column",
         "prevertebral-ganglia",
         "parasympathetic-sacral",
         "enteric",
@@ -659,7 +656,7 @@
         "cerebellar-vermis",
         "cerebellar-hemisphere-lobules",
         "flocculonodular-lobe",
-        "cerebellar-peduncles",
+        "superior-cerebellar-peduncle",
         "nervous-cerebellar-nuclei"
       ],
       "learningObjectives": {
@@ -907,15 +904,15 @@
       "priority": "P2"
     },
     {
-      "id": "cerebellar-peduncles",
-      "viewId": "cerebellar-peduncles",
+      "id": "superior-cerebellar-peduncle",
+      "viewId": "superior-cerebellar-peduncle",
       "section": "B",
       "kind": "structure",
       "level": 4,
       "name": {
-        "vi": "Cuống tiểu não",
-        "en": "Cerebellar peduncles",
-        "reviewed": false
+        "vi": "Cuống tiểu não trên",
+        "en": "Superior cerebellar peduncle",
+        "reviewed": true
       },
       "parent": "cerebellum",
       "children": [],
@@ -926,10 +923,10 @@
         "reviewed": false
       },
       "structures3d": [
-        "Superior cerebellar peduncle"
+        "rule hiện có của `superior-cerebellar-peduncle`"
       ],
       "view": {
-        "direction": "three-quarter",
+        "direction": "back",
         "zoom": {
           "level": "detail",
           "cameraFill": 0.9,
@@ -937,33 +934,28 @@
         },
         "display": "layered",
         "context": [
+          "CEREBELLUM",
           "BRAINSTEM"
         ]
       },
       "url": {
-        "vi": "/vi/human-atlas?view=cerebellar-peduncles",
-        "en": "/en/human-atlas?view=cerebellar-peduncles"
+        "vi": "/vi/human-atlas?view=superior-cerebellar-peduncle",
+        "en": "/en/human-atlas?view=superior-cerebellar-peduncle"
       },
       "thumbnail": {
         "source": "auto-capture",
         "from": "model",
-        "direction": "three-quarter"
+        "direction": "back"
       },
       "data": {
-        "status": "import-za",
-        "partial": true,
-        "existingViewId": null,
+        "status": "live",
+        "partial": false,
+        "existingViewId": "superior-cerebellar-peduncle",
         "borrowedFromSystem": null,
-        "note": "ZA chỉ có cuống trên; cuống giữa/dưới chưa có — partial.",
-        "importPath": [
-          {
-            "path": "pick",
-            "how": "Mở regex pick() (hiện chỉ nhận nerve|plexus|ganglion|root of…; loại nucleus|tract|gyrus|lobe…)"
-          }
-        ]
+        "note": "ZA chỉ có cuống trên (nhập đợt 2, 2026-10-19); cuống giữa/dưới không nguồn nào có → nút mang tên cuống trên."
       },
       "phase": 2,
-      "priority": "P2"
+      "priority": "done"
     },
     {
       "id": "brainstem",
@@ -2680,9 +2672,9 @@
       "kind": "structure",
       "level": 7,
       "name": {
-        "vi": "Hồi ngang thái dương (Heschl)",
-        "en": "Transverse temporal gyri (Heschl)",
-        "reviewed": false
+        "vi": "Hồi thái dương ngang và mặt phẳng thái dương",
+        "en": "Transverse temporal gyri and temporal plane",
+        "reviewed": true
       },
       "parent": "superior-temporal-gyrus",
       "children": [
@@ -2695,8 +2687,7 @@
         "reviewed": false
       },
       "structures3d": [
-        "Transverse temporal gyri",
-        "Temporal plane"
+        "rule hiện có của `transverse-temporal-gyri`"
       ],
       "view": {
         "direction": "superior",
@@ -2707,8 +2698,7 @@
         },
         "display": "layered",
         "context": [
-          "TEMPORAL_LOBE ghost",
-          "ẩn thuỳ đỉnh/trán (mở rãnh bên)"
+          "SUPERIOR_TEMPORAL ghost"
         ]
       },
       "url": {
@@ -2721,20 +2711,14 @@
         "direction": "superior"
       },
       "data": {
-        "status": "import-za",
+        "status": "live",
         "partial": false,
-        "existingViewId": null,
+        "existingViewId": "transverse-temporal-gyri",
         "borrowedFromSystem": null,
-        "note": null,
-        "importPath": [
-          {
-            "path": "pick",
-            "how": "Mở regex pick() (hiện chỉ nhận nerve|plexus|ganglion|root of…; loại nucleus|tract|gyrus|lobe…)"
-          }
-        ]
+        "note": "Nhập đợt 2 (2026-10-19). Nằm riêng, không gộp vào hồi thái dương trên BP3D (khác nguồn)."
       },
       "phase": 2,
-      "priority": "P2"
+      "priority": "done"
     },
     {
       "id": "primary-auditory-cortex",
@@ -5687,6 +5671,165 @@
       "priority": "done"
     },
     {
+      "id": "spinal-tracts-ascending",
+      "viewId": "spinal-tracts-ascending",
+      "section": "H",
+      "kind": "structure",
+      "level": 5,
+      "name": {
+        "vi": "Các bó lên",
+        "en": "Ascending tracts",
+        "reviewed": true
+      },
+      "parent": "spinal-tracts",
+      "children": [],
+      "learningObjectives": {
+        "vi": [
+          "Xác định cột sau (bó thon, bó chêm), bó tuỷ – đồi thị và bó tuỷ – tiểu não"
+        ],
+        "reviewed": false
+      },
+      "structures3d": [
+        "rule hiện có của `spinal-tracts-ascending`"
+      ],
+      "view": {
+        "direction": "superior",
+        "zoom": {
+          "level": "detail",
+          "cameraFill": 0.9,
+          "thumbnailFill": 0.86
+        },
+        "display": "layered",
+        "context": [
+          "SPINAL_GREY"
+        ]
+      },
+      "url": {
+        "vi": "/vi/human-atlas?view=spinal-tracts-ascending",
+        "en": "/en/human-atlas?view=spinal-tracts-ascending"
+      },
+      "thumbnail": {
+        "source": "auto-capture",
+        "from": "model",
+        "direction": "superior"
+      },
+      "data": {
+        "status": "live",
+        "partial": false,
+        "existingViewId": "spinal-tracts-ascending",
+        "borrowedFromSystem": null,
+        "note": null
+      },
+      "phase": 5,
+      "priority": "done"
+    },
+    {
+      "id": "spinal-tracts-descending",
+      "viewId": "spinal-tracts-descending",
+      "section": "H",
+      "kind": "structure",
+      "level": 5,
+      "name": {
+        "vi": "Các bó xuống",
+        "en": "Descending tracts",
+        "reviewed": true
+      },
+      "parent": "spinal-tracts",
+      "children": [],
+      "learningObjectives": {
+        "vi": [
+          "Xác định bó vỏ – tuỷ bên, trước và các bó xuống từ thân não"
+        ],
+        "reviewed": false
+      },
+      "structures3d": [
+        "rule hiện có của `spinal-tracts-descending`"
+      ],
+      "view": {
+        "direction": "superior",
+        "zoom": {
+          "level": "detail",
+          "cameraFill": 0.9,
+          "thumbnailFill": 0.86
+        },
+        "display": "layered",
+        "context": [
+          "SPINAL_GREY"
+        ]
+      },
+      "url": {
+        "vi": "/vi/human-atlas?view=spinal-tracts-descending",
+        "en": "/en/human-atlas?view=spinal-tracts-descending"
+      },
+      "thumbnail": {
+        "source": "auto-capture",
+        "from": "model",
+        "direction": "superior"
+      },
+      "data": {
+        "status": "live",
+        "partial": false,
+        "existingViewId": "spinal-tracts-descending",
+        "borrowedFromSystem": null,
+        "note": null
+      },
+      "phase": 5,
+      "priority": "done"
+    },
+    {
+      "id": "spinal-fasciculi-proprii",
+      "viewId": "spinal-fasciculi-proprii",
+      "section": "H",
+      "kind": "structure",
+      "level": 5,
+      "name": {
+        "vi": "Các bó riêng và bó sau bên",
+        "en": "Fasciculi proprii and posterolateral tract",
+        "reviewed": true
+      },
+      "parent": "spinal-tracts",
+      "children": [],
+      "learningObjectives": {
+        "vi": [
+          "Nhận ra bó riêng ôm sát chất xám nối các đoạn tuỷ, và bó sau bên (Lissauer) ở đỉnh sừng sau"
+        ],
+        "reviewed": false
+      },
+      "structures3d": [
+        "rule hiện có của `spinal-fasciculi-proprii`"
+      ],
+      "view": {
+        "direction": "superior",
+        "zoom": {
+          "level": "detail",
+          "cameraFill": 0.9,
+          "thumbnailFill": 0.86
+        },
+        "display": "layered",
+        "context": [
+          "SPINAL_GREY"
+        ]
+      },
+      "url": {
+        "vi": "/vi/human-atlas?view=spinal-fasciculi-proprii",
+        "en": "/en/human-atlas?view=spinal-fasciculi-proprii"
+      },
+      "thumbnail": {
+        "source": "auto-capture",
+        "from": "model",
+        "direction": "superior"
+      },
+      "data": {
+        "status": "live",
+        "partial": false,
+        "existingViewId": "spinal-fasciculi-proprii",
+        "borrowedFromSystem": null,
+        "note": null
+      },
+      "phase": 5,
+      "priority": "done"
+    },
+    {
       "id": "intermediolateral-column",
       "viewId": "intermediolateral-column",
       "section": "G",
@@ -5705,46 +5848,22 @@
         ],
         "reviewed": false
       },
-      "structures3d": [
-        "Intermediolateral nucleus",
-        "Lateral intermediate substance"
-      ],
-      "view": {
-        "direction": "three-quarter",
-        "zoom": {
-          "level": "detail",
-          "cameraFill": 0.9,
-          "thumbnailFill": 0.86
-        },
-        "display": "layered",
-        "context": [
-          "SPINAL_CORD ghost"
-        ]
-      },
+      "structures3d": [],
+      "view": null,
       "url": {
         "vi": "/vi/human-atlas?view=intermediolateral-column",
         "en": "/en/human-atlas?view=intermediolateral-column"
       },
-      "thumbnail": {
-        "source": "auto-capture",
-        "from": "model",
-        "direction": "three-quarter"
-      },
+      "thumbnail": null,
       "data": {
-        "status": "import-za",
+        "status": "missing",
         "partial": false,
         "existingViewId": null,
         "borrowedFromSystem": null,
-        "note": null,
-        "importPath": [
-          {
-            "path": "pick",
-            "how": "Mở regex pick() (hiện chỉ nhận nerve|plexus|ganglion|root of…; loại nucleus|tract|gyrus|lobe…)"
-          }
-        ]
+        "note": "Lưới 'Intermediolateral nucleus' của ZA chạy suốt tuỷ (đo 2026-10-19), thật chỉ có ở T1–L2 → không nhập. Chất trung gian bên đã nhập, gộp vào spinal-cord."
       },
       "phase": 4,
-      "priority": "P3"
+      "priority": "P4"
     },
     {
       "id": "prevertebral-ganglia",
@@ -6837,15 +6956,19 @@
       "id": "spinal-tracts",
       "viewId": "spinal-tracts",
       "section": "H",
-      "kind": "region",
+      "kind": "structure",
       "level": 4,
       "name": {
         "vi": "Các bó chất trắng tuỷ sống",
-        "en": "Spinal cord tracts",
-        "reviewed": false
+        "en": "White matter tracts of the spinal cord",
+        "reviewed": true
       },
       "parent": "spinal-cord",
-      "children": [],
+      "children": [
+        "spinal-tracts-ascending",
+        "spinal-tracts-descending",
+        "spinal-fasciculi-proprii"
+      ],
       "learningObjectives": {
         "vi": [
           "Phân biệt bó đi lên (cảm giác) với bó đi xuống (vận động)",
@@ -6883,20 +7006,14 @@
         "direction": "superior"
       },
       "data": {
-        "status": "import-za",
+        "status": "live",
         "partial": false,
-        "existingViewId": null,
+        "existingViewId": "spinal-tracts",
         "borrowedFromSystem": null,
-        "note": "Thấy rõ nhất trên lát cắt ngang → kết hợp needs-clipping.",
-        "importPath": [
-          {
-            "path": "pick",
-            "how": "Mở regex pick() (hiện chỉ nhận nerve|plexus|ganglion|root of…; loại nucleus|tract|gyrus|lobe…)"
-          }
-        ]
+        "note": "Nhập đợt 2 (2026-10-19): 19 lưới, mỗi lưới cả hai bên. Bối cảnh chỉ chất xám — lưới chất trắng là khối đặc, mặt ngoài trùng bó. Thấy rõ nhất trên lát cắt ngang → chờ mốc needs-clipping."
       },
       "phase": 5,
-      "priority": "P3"
+      "priority": "done"
     },
     {
       "id": "spinal-roots",

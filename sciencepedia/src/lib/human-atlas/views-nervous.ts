@@ -48,6 +48,7 @@ const DIENCEPHALON = n(
 );
 const BRAINSTEM = n(/^midbrain$|peduncle of midbrain$|colliculus$|brachium of (superior|inferior) colliculus$|^pons$|^medulla oblongata$|^interpeduncular fossa$/i);
 const CEREBELLUM = n(/^cerebellum$/i);
+const SUPERIOR_CEREBELLAR_PEDUNCLE = n(/superior cerebellar peduncle$/i);
 const TENTORIUM = n(/^tentorium cerebelli$/i);
 // Z-Anatomy (mốc M2, 2026-10-19): liềm đại não; nhân dây sọ và nhân đỏ nằm TRONG
 // mảnh thân não BodyParts3D — cấu trúc riêng, không lồng vào `brainstem`.
@@ -90,6 +91,8 @@ const ANGULAR = n(/angular gyrus$/i);
 const INFERIOR_PARIETAL = n(/supramarginal gyrus$|angular gyrus$/i);
 const PARIETAL_LOBE = n(/postcentral gyrus$|superior parietal lobule$|supramarginal gyrus$|angular gyrus$/i);
 const SUPERIOR_TEMPORAL = n(/superior temporal gyrus$/i);
+/** Z-Anatomy: hồi Heschl + mặt phẳng thái dương, nằm trong rãnh bên, dưới mảnh hồi thái dương trên BodyParts3D. */
+const TRANSVERSE_TEMPORAL = n(/transverse temporal gyri$|temporal plane$/i);
 const MIDDLE_TEMPORAL = n(/middle temporal gyrus$/i);
 const INFERIOR_TEMPORAL = n(/inferior temporal gyrus$/i);
 const FUSIFORM = n(/fusiform gyrus$/i);
@@ -185,7 +188,12 @@ const TRIGEMINAL_ROOTS = n(/trigeminal nerve \(v\)$|root of trigeminal nerve$/i)
 const CRANIAL = [OLFACTORY, OPTIC, OCULOMOTOR, TROCHLEAR, TRIGEMINAL_ROOTS, OPHTHALMIC, MAXILLARY, MANDIBULAR, ABDUCENS, FACIAL, VESTIBULOCOCHLEAR, GLOSSOPHARYNGEAL, VAGUS, ACCESSORY, HYPOGLOSSAL];
 
 // ------------------------------------------------------------------ tuỷ sống
-const SPINAL_CORD = n(/horn of spinal cord$|white matter of spinal cord$|^central canal( of spinal cord)?$/i);
+const SPINAL_CORD = n(/horn of spinal cord$|white matter of spinal cord$|^central canal( of spinal cord)?$|^lateral intermediate substance$/i);
+/** Chất xám (sừng + chất trung gian) + ống trung tâm — bối cảnh cho bó tuỷ; KHÔNG gồm chất trắng (lưới đặc, mặt ngoài trùng bó). */
+const SPINAL_GREY = n(/horn of spinal cord$|^central canal( of spinal cord)?$|^lateral intermediate substance$/i);
+const TRACTS_ASCENDING = n(/^((anterior|lateral) spinothalamic tract|(anterior|posterior) spinocerebellar tract|(gracile|cuneate) fasciculus|spinotectal tract)$/i);
+const TRACTS_DESCENDING = n(/^((anterior|lateral) corticospinal|rubrospinal|tectospinal|(lateral|medial) vestibulospinal|(lateral|medial) reticulospinal) tract$/i);
+const FASCICULI_PROPRII = n(/^((anterior|lateral|posterior) fasciculus proprius|posterolateral tract)$/i);
 const SPINAL_DURA = n(/^spinal dura$/i);
 const SPINAL_ROOTS = n(/root of spinal nerve$|^(left|right) spinal ganglion$|spinal ganglion$/i);
 const CAUDA_EQUINA = n(/cauda equina$/i);
@@ -558,6 +566,18 @@ export const NERVOUS_VIEWS: readonly AtlasViewDef[] = [
   structure("accessory-nerve", "Dây phụ (XI)", "Accessory nerve (XI)", "side", ACCESSORY),
   structure("hypoglossal-nerve", "Dây hạ thiệt (XII)", "Hypoglossal nerve (XII)", "side", HYPOGLOSSAL),
   structure("spinal-cord", "Tuỷ sống (chất xám, chất trắng)", "Spinal cord (grey and white matter)", "back", SPINAL_CORD),
+  { ...structure("spinal-tracts", "Các bó chất trắng tuỷ sống", "White matter tracts of the spinal cord", "superior", n(/tract$|fasciculus( proprius)?$/i, /solitary|optic|iliotibial|olfactory/i), ["bó tuỷ", "spinal tracts", "bó vỏ – tuỷ", "corticospinal", "bó tháp", "bó gai – đồi thị", "bó gai – tiểu não"]),
+    context: [SPINAL_GREY],
+    partial: {
+      vi: "Mô hình vẽ các bó theo sơ đồ: hầu hết được kéo suốt chiều dài tuỷ sống, trong khi trên thực tế một số bó chỉ có ở một đoạn tuỷ (ví dụ bó chêm chỉ có ở phần trên). Vị trí tương đối của các bó trên mặt cắt là gần đúng.",
+      en: "The tracts are drawn schematically: most are shown running the full length of the spinal cord, although in reality some are present only in certain segments (for example, the cuneate fasciculus exists only in the upper cord). Their relative positions in cross-section are approximate.",
+    },
+  },
+  { ...structure("spinal-tracts-ascending", "Các bó lên", "Ascending tracts", "superior", TRACTS_ASCENDING), context: [SPINAL_GREY] },
+  { ...structure("spinal-tracts-descending", "Các bó xuống", "Descending tracts", "superior", TRACTS_DESCENDING), context: [SPINAL_GREY] },
+  { ...structure("spinal-fasciculi-proprii", "Các bó riêng và bó sau bên", "Fasciculi proprii and posterolateral tract", "superior", FASCICULI_PROPRII), context: [SPINAL_GREY] },
+  { ...structure("superior-cerebellar-peduncle", "Cuống tiểu não trên", "Superior cerebellar peduncle", "back", SUPERIOR_CEREBELLAR_PEDUNCLE), context: [CEREBELLUM, BRAINSTEM] },
+  { ...structure("transverse-temporal-gyri", "Hồi thái dương ngang và mặt phẳng thái dương", "Transverse temporal gyri and temporal plane", "superior", TRANSVERSE_TEMPORAL, ["hồi Heschl", "Heschl's gyri", "vỏ thính giác", "auditory cortex"]), context: [SUPERIOR_TEMPORAL] },
   structure("spinal-dura", "Màng cứng tuỷ", "Spinal dura mater", "back", SPINAL_DURA),
   structure("spinal-roots", "Rễ và hạch gai", "Spinal roots and ganglia", "back", SPINAL_ROOTS),
   structure("cauda-equina", "Chùm đuôi ngựa", "Cauda equina", "back", CAUDA_EQUINA),
