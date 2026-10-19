@@ -15705,6 +15705,52 @@
       "ZA-falx-cerebri"
     ]
   },
+  "nervous-meninges": {
+    "focus": [
+      "FJ1843",
+      "ZA-anterior-intercavernous-sinus",
+      "ZA-basilar-venous-plexus",
+      "ZA-falx-cerebri",
+      "ZA-inferior-sagittal-sinus",
+      "ZA-left-cavernous-sinus",
+      "ZA-left-inferior-petrosal-sinus",
+      "ZA-left-sigmoid-sinus",
+      "ZA-left-superior-petrosal-sinus",
+      "ZA-left-transverse-sinus",
+      "ZA-occipital-sinus",
+      "ZA-posterior-intercavernous-sinus",
+      "ZA-right-cavernous-sinus",
+      "ZA-right-inferior-petrosal-sinus",
+      "ZA-right-sigmoid-sinus",
+      "ZA-right-superior-petrosal-sinus",
+      "ZA-right-transverse-sinus",
+      "ZA-straight-sinus",
+      "ZA-superior-sagittal-sinus"
+    ],
+    "hide": [],
+    "context": [
+      "FJ1735",
+      "FJ1736",
+      "FJ1761",
+      "FJ1762",
+      "FJ1763",
+      "FJ1769",
+      "FJ1770",
+      "FJ1774",
+      "FJ1775",
+      "FJ1779",
+      "FJ1781",
+      "FJ1809",
+      "FJ1810",
+      "FJ1811",
+      "FJ1817",
+      "FJ1821",
+      "FJ1822",
+      "FJ1826",
+      "FJ1830",
+      "FJ1831"
+    ]
+  },
   "nervous-base-of-brain": {
     "focus": [
       "FJ1293",

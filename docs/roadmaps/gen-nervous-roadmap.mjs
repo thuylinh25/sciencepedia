@@ -153,9 +153,9 @@ N("choroid-plexus", "brain-ventricles", "B", "structure", "Đám rối mạch m�
   note: "Mảnh BP3D đang bị xếp hệ sensory — kiểm SYSTEM_CORRECTIONS trước khi dựng.",
 });
 N("nervous-meninges", "nervous-brain", "B", "group", "Màng não và xoang tĩnh mạch màng cứng", "Meninges and dural venous sinuses", {
-  status: "import-za", partial: true, dir: "side", zoom: "organ", mode: "layered", context: [BRAINCTX, SKULL],
-  focus: ["Tentorium cerebelli (BP3D)", "Falx cerebri (ZA)", "dural-sinuses (mượn hệ venous)", "Spinal dura (ZA)"],
-  note: "Không nguồn nào có màng nhện, màng mềm, liềm tiểu não.",
+  partial: true, dir: "three-quarter", zoom: "organ", mode: "layered", context: ["BRAINSTEM", "CEREBELLUM"],
+  focus: ["tentorium-cerebelli", "falx-cerebri", "dural-sinuses (mượn hệ venous)"],
+  note: "Màng cứng tuỷ ở nhóm tuỷ sống. Không nguồn nào có màng nhện, màng mềm, liềm tiểu não, hoành yên, màng cứng lót sọ.",
   obj: ["Xác định liềm đại não và lều tiểu não chia khoang sọ", "Liên hệ xoang tĩnh mạch màng cứng với các nếp màng cứng"],
 });
 N("tentorium-cerebelli", "nervous-meninges", "B", "structure", "Lều tiểu não", "Tentorium cerebelli", {
@@ -607,10 +607,7 @@ N("tongue", "sec-sensory-organs", "K", "structure", "Lưỡi (vị giác)", "Ton
   note: "Lưỡi 1 mảnh; vùng lưỡi = needs-schema; nhú lưỡi/nụ vị giác = missing (HAA tile 20–21).",
   obj: ["Liên hệ vùng lưỡi với dây VII, IX (vị giác) và dây XII (vận động)"],
 });
-N("olfaction", "sec-sensory-organs", "K", "structure", "Khứu giác", "Olfaction", {
-  status: "import-za", partial: true, zoom: "detail", mode: "layered", focus: ["olfactory-nerve", "Olfactory sulcus"], note: "Biểu mô khứu, hành khứu không có.",
-  obj: ["Theo đường khứu giác từ trần hốc mũi lên não"],
-});
+// "olfaction" (cũ) gộp vào "olfactory-nerve": không nguồn mở nào có hành khứu, biểu mô khứu — thêm nút chỉ nhân bản góc nhìn.
 N("touch-receptors", "sec-sensory-organs", "K", "structure", "Thụ thể xúc giác ở da", "Touch receptors of the skin", {
   status: "missing", obj: ["Phân biệt các loại thụ thể cơ học ở da theo độ sâu"],
   note: "Da là 1 mesh toàn thân. HAA tile 22–24 là khối da cắt — cần model tự dựng (vi thể), qua science-editor.",
@@ -722,7 +719,7 @@ const IMPORT = {
   "nervous-meninges": "pick", "falx-cerebri": "pick", "transverse-temporal-gyri": "pick",
   "occipital-gyri": "replace-bp3d", "medial-surface-hemisphere": "replace-bp3d", "olfactory-nerve": "dedupe-exception",
   "abducens-nerve": "dedupe-exception", "trigeminal-roots": "dedupe-exception", "intermediolateral-column": "pick", "spinal-tracts": "pick", "middle-ear": ["pick", "skeletal-branch"], "inner-ear": "pick",
-  cochlea: "pick", "vestibule-semicircular-canals": "pick", olfaction: "dedupe-exception",
+  cochlea: "pick", "vestibule-semicircular-canals": "pick",
 };
 for (const x of nodes) if (x.status === "import-za" && !IMPORT[x.id]) throw new Error("thiếu đường nhập: " + x.id);
 

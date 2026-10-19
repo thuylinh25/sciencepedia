@@ -1,6 +1,7 @@
 import type { AtlasViewDef, PartRule } from "./views";
 import { CAROTID_VERTEBRAL, CEREBRAL } from "./views-arterial";
 import { INTERCOSTAL_NERVES, VAGUS } from "./views-respiratory";
+import { DURAL_SINUSES } from "./views-venous";
 
 /** Tuyến yên (hệ nội tiết) — chỉ làm bối cảnh cho mặt dưới não. */
 const PITUITARY: PartRule = { fma: ["FMA13889"] };
@@ -317,6 +318,14 @@ export const NERVOUS_VIEWS: readonly AtlasViewDef[] = [
     quality: "acceptable",
   },
   group("nervous-brain", "Não", "Brain", "side", BRAIN, [SKULL, TENTORIUM, FALX], ["brain", "đại não", "cerebrum"]),
+  // Xoang màng cứng MƯỢN hệ tĩnh mạch (cấu trúc "dural-sinuses"): xoang nằm giữa hai lá màng cứng, đi theo bờ các nếp.
+  group("nervous-meninges", "Nếp màng cứng và xoang tĩnh mạch màng cứng", "Dural folds and dural venous sinuses", "three-quarter", [FALX, TENTORIUM, DURAL_SINUSES], [BRAINSTEM, CEREBELLUM],
+    ["màng não", "meninges", "màng cứng", "dura mater", "liềm đại não", "lều tiểu não", "xoang tĩnh mạch"], {
+      partial: {
+        vi: "Về màng cứng, chỉ có liềm đại não và lều tiểu não; thiếu phần màng cứng lót vòm và nền sọ, liềm tiểu não, hoành yên, cùng màng nhện và màng mềm; thiếu xoang bướm – đỉnh và xoang bờ",
+        en: "Of the dura, only the falx cerebri and tentorium cerebelli are shown; the dura lining the vault and base of the skull, the falx cerebelli, the diaphragma sellae, and the arachnoid and pia mater are missing; the sphenoparietal and marginal sinuses are missing",
+      },
+    }),
   // Nhìn từ dưới lên: não + dây sọ I–VI ở nền sọ. Dây VII–XII chạy xuống mặt, cổ, thân —
   // đưa vào tập nổi bật thì khung bị kéo ra cả người. Vòng động mạch não + tuyến yên làm bối cảnh.
   group(
