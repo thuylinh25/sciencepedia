@@ -112,6 +112,20 @@ const NEURO_EXTRA: readonly [RegExp, Pick][] = [
     { system: "nervous", group: "nervous.brainstem" },
   ],
   [/^falx cerebri$/, { system: "nervous", group: "nervous.meninges" }],
+  // Đợt 2 (2026-10-19). Bó tuỷ: mỗi bó MỘT lưới gồm cả hai bên, nằm TRONG lưới chất trắng (khối đặc,
+  // đo bằng inside()) — mặt ngoài trùng nhau, nên góc nhìn bó không làm mờ chất trắng. Bỏ
+  // "intermediolateral nucleus": lưới chạy suốt tuỷ, thật chỉ có ở T1–L2.
+  [
+    /^((anterior|lateral) spinothalamic tract|(anterior|posterior) spinocerebellar tract|(gracile|cuneate) fasciculus|spinotectal tract)$/,
+    { system: "nervous", group: "nervous.spinal_tracts_ascending" },
+  ],
+  [/^((anterior|lateral) corticospinal|rubrospinal|tectospinal|(lateral|medial) vestibulospinal|(lateral|medial) reticulospinal) tract$/, { system: "nervous", group: "nervous.spinal_tracts_descending" }],
+  // Bó Lissauer: sợi rễ sau đi lên/xuống 1–2 đốt rồi vào sừng sau, không lên não → cùng nhóm bó riêng (science-editor).
+  [/^((anterior|lateral|posterior) fasciculus proprius|posterolateral tract)$/, { system: "nervous", group: "nervous.spinal_tracts_proprius" }],
+  // Chất xám trung gian: lấp khoảng giữa sừng trước và sừng sau (đo: không chồng sừng).
+  [/^lateral intermediate substance$/, { system: "nervous", group: "nervous.spinal_cord" }],
+  [/^superior cerebellar peduncle$/, { system: "nervous", group: "nervous.cerebellum" }],
+  [/^(transverse temporal gyri|temporal plane)$/, { system: "nervous", group: "nervous.brain" }],
   [/^(cochlea|vestibule|tympanic membrane|auditory tube)$/, { system: "sensory", group: "sensory.ear" }],
 ];
 const OSSICLE = /^(malleus|incus|stapes)$/;

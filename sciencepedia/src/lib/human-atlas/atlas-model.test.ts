@@ -129,6 +129,7 @@ test("não chia sâu: mở cấu trúc cha ra đúng các con, không còn mản
     "cranial-nerve-nuclei": ["cranial-nerve-motor-nuclei", "cranial-parasympathetic-nuclei", "cranial-nerve-sensory-nuclei"],
     "ophthalmic-nerve": ["ophthalmic-nerve-trunk", "frontal-nerve", "lacrimal-nerve", "nasociliary-nerve", "ciliary-ganglion"],
     "sympathetic-trunk": ["sympathetic-chain", "sympathetic-ganglia", "sympathetic-nerves"],
+    "spinal-tracts": ["spinal-tracts-ascending", "spinal-tracts-descending", "spinal-fasciculi-proprii"],
   };
   for (const [view, children] of Object.entries(expect)) {
     const list = viewStructures(view);

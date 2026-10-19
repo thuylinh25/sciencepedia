@@ -89,9 +89,9 @@ N("flocculonodular-lobe", "cerebellum", "B", "structure", "Thuỳ nhung – nh�
   focus: ["Flocculus", "Peduncle of flocculus", "Nodule of vermis"],
   obj: ["Xác định thuỳ nhung – nhộng ở mặt trước dưới tiểu não"],
 });
-N("cerebellar-peduncles", "cerebellum", "B", "structure", "Cuống tiểu não", "Cerebellar peduncles", {
-  status: "import-za", partial: true, dir: "three-quarter", zoom: "detail", mode: "layered", context: ["BRAINSTEM"],
-  focus: ["Superior cerebellar peduncle"], note: "ZA chỉ có cuống trên; cuống giữa/dưới chưa có — partial.",
+N("superior-cerebellar-peduncle", "cerebellum", "B", "structure", "", "", {
+  dir: "back", zoom: "detail", mode: "layered", context: ["CEREBELLUM", "BRAINSTEM"],
+  note: "ZA chỉ có cuống trên (nhập đợt 2, 2026-10-19); cuống giữa/dưới không nguồn nào có → nút mang tên cuống trên.",
   obj: ["Nhận ra cuống tiểu não là đường nối tiểu não với thân não"],
 });
 N("brainstem", "nervous-brain", "B", "group", "Thân não", "Brainstem", {
@@ -238,7 +238,7 @@ N("superior-temporal-gyrus", "temporal-lobe", "C", "structure", "Hồi thái dư
   obj: ["Xác định hồi thái dương trên ngay dưới rãnh bên"],
 });
 N("transverse-temporal-gyri", "superior-temporal-gyrus", "C", "structure", "Hồi ngang thái dương (Heschl)", "Transverse temporal gyri (Heschl)", {
-  status: "import-za", dir: "superior", zoom: "detail", mode: "layered", context: ["TEMPORAL_LOBE ghost", "ẩn thuỳ đỉnh/trán (mở rãnh bên)"], focus: ["Transverse temporal gyri", "Temporal plane"],
+  dir: "superior", zoom: "detail", mode: "layered", context: ["SUPERIOR_TEMPORAL ghost"], note: "Nhập đợt 2 (2026-10-19). Nằm riêng, không gộp vào hồi thái dương trên BP3D (khác nguồn).",
   obj: ["Định vị hồi ngang thái dương ở sàn rãnh bên"],
 });
 N("primary-auditory-cortex", "transverse-temporal-gyri", "C", "region", "Vỏ thính giác nguyên phát", "Primary auditory cortex", {
@@ -409,8 +409,14 @@ N("sympathetic", "nervous-autonomic", "G", "group", "Phân hệ giao cảm", "Sy
   obj: ["Xác định thân giao cảm hai bên cột sống", "Hiểu nguồn gốc ngực – thắt lưng của sợi giao cảm"],
   note: "Z-Anatomy chỉ có thân giao cảm cổ – ngực (dừng ngang T12, đo hộp bao); thiếu đoạn thắt lưng, cùng, hạch trước sống, dây tạng.",
 });
+for (const [id, obj] of [
+  ["spinal-tracts-ascending", "Xác định cột sau (bó thon, bó chêm), bó tuỷ – đồi thị và bó tuỷ – tiểu não"],
+  ["spinal-tracts-descending", "Xác định bó vỏ – tuỷ bên, trước và các bó xuống từ thân não"],
+  ["spinal-fasciculi-proprii", "Nhận ra bó riêng ôm sát chất xám nối các đoạn tuỷ, và bó sau bên (Lissauer) ở đỉnh sừng sau"],
+]) N(id, "spinal-tracts", "H", "structure", "", "", { dir: "superior", zoom: "detail", mode: "layered", context: ["SPINAL_GREY"], obj: [obj] });
 N("intermediolateral-column", "sympathetic", "G", "region", "Cột trung gian ngoài tuỷ sống", "Intermediolateral cell column", {
-  status: "import-za", zoom: "detail", mode: "layered", context: ["SPINAL_CORD ghost"], focus: ["Intermediolateral nucleus", "Lateral intermediate substance"],
+  status: "missing", zoom: "detail", mode: "layered", context: ["SPINAL_CORD ghost"],
+  note: "Lưới 'Intermediolateral nucleus' của ZA chạy suốt tuỷ (đo 2026-10-19), thật chỉ có ở T1–L2 → không nhập. Chất trung gian bên đã nhập, gộp vào spinal-cord.",
   obj: ["Định vị neuron trước hạch giao cảm ở sừng bên tuỷ sống"],
 });
 N("prevertebral-ganglia", "sympathetic", "G", "structure", "Hạch trước sống và dây tạng", "Prevertebral ganglia and splanchnic nerves", { status: "missing", obj: ["Định vị hạch tạng quanh động mạch chủ bụng"] });
@@ -463,10 +469,10 @@ for (const [id, vi, en] of [
 N("spinal-cord", "nervous-spinal-cord", "H", "structure", "Tuỷ sống (chất xám, chất trắng)", "Spinal cord (grey and white matter)", {
   status: "live", existing: "spinal-cord", dir: "back", zoom: "structure", mode: "layered", obj: ["Phân biệt sừng trước, sừng sau và chất trắng"],
 });
-N("spinal-tracts", "spinal-cord", "H", "region", "Các bó chất trắng tuỷ sống", "Spinal cord tracts", {
-  status: "import-za", dir: "superior", zoom: "detail", mode: "layered", context: ["SPINAL_CORD ghost"],
+N("spinal-tracts", "spinal-cord", "H", "structure", "", "", {
+  dir: "superior", zoom: "detail", mode: "layered", context: ["SPINAL_CORD ghost"],
   focus: ["Lateral/Anterior corticospinal tract", "Lateral/Anterior spinothalamic tract", "Gracile/Cuneate fasciculus", "Anterior/Posterior spinocerebellar tract", "Rubrospinal, Tectospinal, Vestibulospinal, Reticulospinal tracts", "Fasciculi proprii"],
-  note: "Thấy rõ nhất trên lát cắt ngang → kết hợp needs-clipping.",
+  note: "Nhập đợt 2 (2026-10-19): 19 lưới, mỗi lưới cả hai bên. Bối cảnh chỉ chất xám — lưới chất trắng là khối đặc, mặt ngoài trùng bó. Thấy rõ nhất trên lát cắt ngang → chờ mốc needs-clipping.",
   obj: ["Phân biệt bó đi lên (cảm giác) với bó đi xuống (vận động)", "Định vị bó vỏ – tuỷ bên và cột sau"],
 });
 N("spinal-roots", "nervous-spinal-cord", "H", "structure", "Rễ và hạch gai", "Spinal roots and ganglia", { status: "live", existing: "spinal-roots", dir: "back", zoom: "structure", mode: "layered", obj: ["Định vị hạch gai trên rễ sau"] });
@@ -715,10 +721,10 @@ const ZA_PATH = {
 };
 const IMPORT = {
   "cerebellar-vermis": "replace-bp3d", "cerebellar-hemisphere-lobules": "replace-bp3d", "flocculonodular-lobe": "replace-bp3d",
-  "cerebellar-peduncles": "pick", "red-nucleus": "pick", "medulla-pyramid-olive": "replace-bp3d", "cranial-nerve-nuclei": "pick",
-  "nervous-meninges": "pick", "falx-cerebri": "pick", "transverse-temporal-gyri": "pick",
+  "red-nucleus": "pick", "medulla-pyramid-olive": "replace-bp3d", "cranial-nerve-nuclei": "pick",
+  "nervous-meninges": "pick", "falx-cerebri": "pick",
   "occipital-gyri": "replace-bp3d", "medial-surface-hemisphere": "replace-bp3d", "olfactory-nerve": "dedupe-exception",
-  "abducens-nerve": "dedupe-exception", "trigeminal-roots": "dedupe-exception", "intermediolateral-column": "pick", "spinal-tracts": "pick", "middle-ear": ["pick", "skeletal-branch"], "inner-ear": "pick",
+  "abducens-nerve": "dedupe-exception", "trigeminal-roots": "dedupe-exception", "middle-ear": ["pick", "skeletal-branch"], "inner-ear": "pick",
   cochlea: "pick", "vestibule-semicircular-canals": "pick",
 };
 for (const x of nodes) if (x.status === "import-za" && !IMPORT[x.id]) throw new Error("thiếu đường nhập: " + x.id);

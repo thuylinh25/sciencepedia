@@ -694,6 +694,10 @@ trùng BodyParts3D: không lấy động mạch, não; ứng viên bị loại n
 gốc CÙNG loại (dây thần kinh so dây thần kinh, không so thân não — so thân não là loại nhầm dây VI).
 Hạch không tên của UMCG bị bỏ khi có hạch Z-Anatomy; mạch bạch huyết UMCG giữ. Khái niệm mang mã
 `ZA-…` (không phải FMA) → bảng chi tiết ẩn link FMA.
+**Bó tuỷ (đợt 2, 2026-10-19):** lưới "White matter of spinal cord" là khối ĐẶC (đo `inside()`: chứa trọn sừng
+và chất trung gian), không phải phần còn lại sau khi trừ bó — mặt ngoài các bó trùng mặt chất trắng, nên góc
+nhìn bó chỉ làm mờ chất xám. Đừng "cho đủ bối cảnh" bằng cách thêm chất trắng: hai mặt trùng nhau nhấp nháy.
+Không nhập "Intermediolateral nucleus": lưới chạy suốt tuỷ, thật chỉ có ở T1–L2.
 
 **Allen Human Reference Atlas – 3D 2020 (nhập 2026-10-19, CC BY 4.0, khối RIÊNG vì giấy phép riêng).**
 Nhân sâu BodyParts3D không có: 11 nhân đồi thị, chất đen, nhân dưới đồi thị, nhân sâu tiểu

@@ -403,6 +403,10 @@ export const GROUP_COLORS: Record<string, string> = {
   "nervous.nerve": "#d9b25c",
   // Tuỷ sống (Z-Anatomy): hồng nhạt cùng họ với não — trung ương khác ngoại biên.
   "nervous.spinal_cord": "#d8aeb0",
+  // Bó tuỷ theo chiều dẫn truyền: lên (cảm giác) lam, xuống (vận động) đỏ, bó riêng xám.
+  "nervous.spinal_tracts_ascending": "#7fa6c9",
+  "nervous.spinal_tracts_descending": "#c97f7f",
+  "nervous.spinal_tracts_proprius": "#b9b2a8",
   // Bạch huyết: cơ quan dạng lympho mỗi thứ một màu, không cùng một màu hệ.
   // Bề mặt: da ấm, tóc/lông nâu sẫm, môi hồng trầm — trước đây cả năm mảnh
   // cùng một màu, tóc trông như da đầu trọc.
