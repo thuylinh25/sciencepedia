@@ -342,12 +342,12 @@ N("nervous-cranial-nerves", "sec-pns", "F", "group", "Dây thần kinh sọ", "C
   obj: ["Kể tên và số thứ tự 12 đôi dây sọ", "Xác định nơi mỗi dây rời não"],
 });
 const CN = [
-  ["cn-i-olfactory", "Dây khứu giác (I)", "Olfactory nerve (I)", "import-za", null, "superior", ["Olfactory nerve (I) — curve ZA"], "Hành khứu, dải khứu không có trong nguồn nào."],
+  ["olfactory-nerve", "Dây khứu giác (I)", "Olfactory nerve (I)", "import-za", null, "superior", ["Olfactory nerve (I) — curve ZA"], "Hành khứu, dải khứu không có trong nguồn nào."],
   ["optic-pathway", "Dây, giao thoa và dải thị giác (II)", "Optic nerve, chiasm and tract (II)", "live", "optic-pathway", "superior"],
   ["oculomotor-nerve", "Dây vận nhãn (III)", "Oculomotor nerve (III)", "live", "oculomotor-nerve", [-0.8, 0.35, 0.5]],
   ["trochlear-nerve", "Dây ròng rọc (IV)", "Trochlear nerve (IV)", "live", "trochlear-nerve", "superior"],
   ["cn-v-trigeminal", "Dây sinh ba (V)", "Trigeminal nerve (V)", "live", null, "anterolateral", ["ophthalmic-nerve", "maxillary-nerve", "mandibular-nerve", "Motor/Sensory root of trigeminal nerve (ZA)"], "Group mới gom V1–V3 sẵn có; rễ nhập ZA; hạch sinh ba thiếu → partial."],
-  ["cn-vi-abducens", "Dây vận nhãn ngoài (VI)", "Abducens nerve (VI)", "import-za", null, [-0.8, 0.35, 0.5], ["Abducens nerve (VI) — curve ZA"]],
+  ["abducens-nerve", "Dây vận nhãn ngoài (VI)", "Abducens nerve (VI)", "import-za", null, [-0.8, 0.35, 0.5], ["Abducens nerve (VI) — curve ZA"]],
   ["facial-nerve", "Dây mặt (VII) và thừng nhĩ", "Facial nerve (VII) and chorda tympani", "live", "facial-nerve", "side"],
   ["vestibulocochlear-nerve", "Dây tiền đình – ốc tai (VIII)", "Vestibulocochlear nerve (VIII)", "live", "vestibulocochlear-nerve", "side"],
   ["glossopharyngeal-nerve", "Dây thiệt hầu (IX)", "Glossopharyngeal nerve (IX)", "live", "glossopharyngeal-nerve", "side"],
@@ -356,12 +356,12 @@ const CN = [
   ["hypoglossal-nerve", "Dây hạ thiệt (XII)", "Hypoglossal nerve (XII)", "live", "hypoglossal-nerve", "side"],
 ];
 const CN_OBJ = {
-  "cn-i-olfactory": ["Theo sợi khứu giác từ trần hốc mũi qua mảnh sàng lên hành khứu", "Xếp dây I vào nhóm dây cảm giác"],
+  "olfactory-nerve": ["Theo sợi khứu giác từ trần hốc mũi qua mảnh sàng lên hành khứu", "Xếp dây I vào nhóm dây cảm giác"],
   "optic-pathway": ["Theo đường thị giác: dây thị → giao thoa thị → dải thị", "Giải thích vì sao sợi từ nửa trong võng mạc bắt chéo ở giao thoa thị"],
   "oculomotor-nerve": ["Kể các cơ vận nhãn do dây III chi phối", "Nhận ra dây III mang sợi đối giao cảm tới hạch mi"],
   "trochlear-nerve": ["Nhận ra dây IV chi phối cơ chéo trên", "Định vị dây IV ra ở mặt sau thân não"],
   "cn-v-trigeminal": ["Kể ba nhánh V1, V2, V3", "Phân biệt V1, V2 (cảm giác) với V3 (hỗn hợp, vận động cơ nhai)"],
-  "cn-vi-abducens": ["Nhận ra dây VI chi phối cơ thẳng ngoài"],
+  "abducens-nerve": ["Nhận ra dây VI chi phối cơ thẳng ngoài"],
   "facial-nerve": ["Nhận ra dây VII vận động cơ biểu cảm mặt", "Nhận ra thừng nhĩ mang vị giác 2/3 trước lưỡi"],
   "vestibulocochlear-nerve": ["Phân biệt phần ốc tai (thính giác) với phần tiền đình (thăng bằng)", "Theo dây VIII từ tai trong qua ống tai trong tới thân não"],
   "glossopharyngeal-nerve": ["Nhận ra dây IX mang vị giác 1/3 sau lưỡi và cảm giác hầu"],
@@ -372,7 +372,7 @@ const CN_OBJ = {
 for (const [id, vi, en, status, existing, dir, focus, note] of CN) {
   N(id, "nervous-cranial-nerves", "F", id === "cn-v-trigeminal" || id === "nervous-vagus" ? "group" : "structure", vi, en, {
     status, existing: existing ?? undefined, dir, zoom: "structure", mode: "layered", context: ["BRAINSTEM", SKULL, "cranial-nerve-nuclei (khi có)"],
-    focus, note, partial: id === "cn-v-trigeminal" || id === "cn-i-olfactory",
+    focus, note, partial: id === "cn-v-trigeminal" || id === "olfactory-nerve",
     obj: CN_OBJ[id],
   });
 }
@@ -407,10 +407,6 @@ N("sympathetic", "nervous-autonomic", "G", "group", "Phân hệ giao cảm", "Sy
   status: "buildable", partial: true, dir: "anterolateral", zoom: "region", mode: "layered", context: ["SPINE", "RIBS"],
   obj: ["Xác định thân giao cảm hai bên cột sống", "Hiểu nguồn gốc ngực – thắt lưng của sợi giao cảm"],
   note: "Thiếu hạch trước sống (tạng, mạc treo), dây tạng — không nguồn nào có.",
-});
-N("sympathetic-ganglia", "sympathetic", "G", "structure", "Hạch thân giao cảm", "Sympathetic trunk ganglia", {
-  status: "import-za", dir: "anterolateral", zoom: "structure", mode: "layered", context: ["sympathetic-trunk"], focus: ["Ganglia of sympathetic trunk"],
-  obj: ["Nhận ra chuỗi hạch cạnh sống dọc thân giao cảm"],
 });
 N("intermediolateral-column", "sympathetic", "G", "region", "Cột trung gian ngoài tuỷ sống", "Intermediolateral cell column", {
   status: "import-za", zoom: "detail", mode: "layered", context: ["SPINAL_CORD ghost"], focus: ["Intermediolateral nucleus", "Lateral intermediate substance"],
@@ -572,7 +568,7 @@ N("middle-ear", "sensory-ear", "K", "structure", "Tai giữa: màng nhĩ, chuỗ
 });
 N("inner-ear", "sensory-ear", "K", "group", "Tai trong", "Inner ear", {
   status: "import-za", partial: true, dir: [0.3, 0.2, 1], zoom: "detail", mode: "layered", context: ["TEMPORAL_BONE ghost", "middle-ear"], focus: ["Cochlea", "Vestibule", "cochlear/vestibular nerve"],
-  note: "ZA có ốc tai + tiền đình nhưng KHÔNG thấy ống bán khuyên (cần kiểm lại khối Vestibule có kèm không trước khi viết câu thiếu).",
+  note: "M2: khối Vestibule của ZA gồm tiền đình + ba ống bán khuyên (mê đạo xương). Thiếu mê đạo màng.",
   obj: ["Phân biệt phần thính giác (ốc tai) với phần thăng bằng (tiền đình, ống bán khuyên)"],
 });
 N("cochlea", "inner-ear", "K", "structure", "Ốc tai", "Cochlea", {
@@ -580,9 +576,9 @@ N("cochlea", "inner-ear", "K", "structure", "Ốc tai", "Cochlea", {
   note: "Chỉ khối ngoài; ống ốc tai, cơ quan Corti, màng nền không có → cần sơ đồ lát cắt.",
   obj: ["Nhận ra hình xoắn của ốc tai", "Nối ốc tai với dây ốc tai"],
 });
-N("vestibular-system", "inner-ear", "K", "structure", "Hệ tiền đình", "Vestibular system", {
+N("vestibule-semicircular-canals", "inner-ear", "K", "structure", "Hệ tiền đình", "Vestibular system", {
   status: "import-za", partial: true, zoom: "detail", mode: "isolated", focus: ["Vestibule", "Vestibular nerve", "Vestibular nuclei (thân não)"],
-  note: "Soan nang, cầu nang, bóng ống bán khuyên không có.",
+  note: "Mê đạo xương (tiền đình + ống bán khuyên) đã có; soan nang, cầu nang, ống màng không có.",
   obj: ["Định vị tiền đình giữa ốc tai và ống bán khuyên", "Nối tiền đình với nhân tiền đình ở thân não"],
 });
 N("tongue", "sec-sensory-organs", "K", "structure", "Lưỡi (vị giác)", "Tongue (taste)", {
@@ -591,7 +587,7 @@ N("tongue", "sec-sensory-organs", "K", "structure", "Lưỡi (vị giác)", "Ton
   obj: ["Liên hệ vùng lưỡi với dây VII, IX (vị giác) và dây XII (vận động)"],
 });
 N("olfaction", "sec-sensory-organs", "K", "structure", "Khứu giác", "Olfaction", {
-  status: "import-za", partial: true, zoom: "detail", mode: "layered", focus: ["cn-i-olfactory", "Olfactory sulcus"], note: "Biểu mô khứu, hành khứu không có.",
+  status: "import-za", partial: true, zoom: "detail", mode: "layered", focus: ["olfactory-nerve", "Olfactory sulcus"], note: "Biểu mô khứu, hành khứu không có.",
   obj: ["Theo đường khứu giác từ trần hốc mũi lên não"],
 });
 N("touch-receptors", "sec-sensory-organs", "K", "structure", "Thụ thể xúc giác ở da", "Touch receptors of the skin", {
@@ -665,10 +661,9 @@ const IMPORT = {
   "cerebellar-vermis": "replace-bp3d", "cerebellar-hemisphere-lobules": "replace-bp3d", "flocculonodular-lobe": "replace-bp3d",
   "cerebellar-peduncles": "pick", "red-nucleus": "pick", "medulla-pyramid-olive": "replace-bp3d", "cranial-nerve-nuclei": "pick",
   "nervous-meninges": "pick", "falx-cerebri": "pick", "transverse-temporal-gyri": "pick",
-  "occipital-gyri": "replace-bp3d", "medial-surface-hemisphere": "replace-bp3d", "cn-i-olfactory": "dedupe-exception",
-  "cn-vi-abducens": "dedupe-exception", "trigeminal-roots": "dedupe-exception", "sympathetic-ganglia": "pick",
-  "intermediolateral-column": "pick", "spinal-tracts": "pick", "middle-ear": ["pick", "skeletal-branch"], "inner-ear": "pick",
-  cochlea: "pick", "vestibular-system": "pick", olfaction: "dedupe-exception",
+  "occipital-gyri": "replace-bp3d", "medial-surface-hemisphere": "replace-bp3d", "olfactory-nerve": "dedupe-exception",
+  "abducens-nerve": "dedupe-exception", "trigeminal-roots": "dedupe-exception", "intermediolateral-column": "pick", "spinal-tracts": "pick", "middle-ear": ["pick", "skeletal-branch"], "inner-ear": "pick",
+  cochlea: "pick", "vestibule-semicircular-canals": "pick", olfaction: "dedupe-exception",
 };
 for (const x of nodes) if (x.status === "import-za" && !IMPORT[x.id]) throw new Error("thiếu đường nhập: " + x.id);
 
@@ -758,9 +753,9 @@ const HAA = [
   [11, "Sciatic Nerve", "nervous-sciatic", "live"],
   [12, "Autonomic Nerves", "nervous-autonomic", "live-partial"],
   [13, "Ear", "sensory-ear", "live-partial"],
-  [14, "Middle Ear", "middle-ear", "import-za"],
-  [15, "Inner Ear", "inner-ear", "import-za"],
-  [16, "Cochlea", "cochlea", "import-za"],
+  [14, "Middle Ear", "sensory-middle-ear", "live"],
+  [15, "Inner Ear", "sensory-inner-ear", "live-partial"],
+  [16, "Cochlea", "cochlea", "live-partial"],
   [17, "Eye", "sensory-eyeball", "live"],
   [18, "Lacrimal Apparatus", "sensory-lacrimal", "live"],
   [19, "Lens and Zonular Fibers", "lens", "live"],
@@ -823,7 +818,7 @@ const doc = {
   },
   milestones: [
     { id: "M1", phase: "1–2", title: "Tách não theo thuỳ, hệ viền, gian não, thân não, não thất — XONG 2026-10-19 (31 cấu trúc, science-editor PASS)", status: "done", items: list.filter((x) => x.data.status === "buildable" && x.phase <= 2).map((x) => x.id) },
-    { id: "M2", phase: "2–8", title: "Nhập mở rộng Z-Anatomy (một lượt): hồi/tiểu thuỳ, nhân dây sọ, bó tuỷ, dây I/VI, rễ V, hạch giao cảm, tai giữa/trong, liềm đại não", status: "import-za", items: list.filter((x) => x.data.status === "import-za").map((x) => x.id) },
+    { id: "M2", phase: "2–8", title: "Nhập mở rộng Z-Anatomy — ĐỢT 1 XONG 2026-10-19: dây I/VI, thân + rễ V, nhân dây sọ, nhân đỏ, liềm đại não, hạch giao cảm, tai giữa/trong, xương con; kèm hiệu chỉnh vùng đầu 1 cm. Còn lại (phải THAY mảnh BP3D hoặc chồng chất trắng): hồi/tiểu thuỳ, bó tuỷ, cột trung gian ngoài", status: "import-za", items: list.filter((x) => x.data.status === "import-za").map((x) => x.id) },
     { id: "M3", phase: "4–7", title: "Tự chủ, đám rối, nhánh thần kinh từ mảnh sẵn có", status: "buildable", items: list.filter((x) => x.data.status === "buildable" && x.phase > 2).map((x) => x.id) },
     { id: "M4", phase: "2, 5", title: "Kiểu nút mới: nhãn vùng chức năng + mặt cắt theo cao độ", status: "needs-schema/needs-clipping", items: list.filter((x) => ["needs-schema", "needs-clipping"].includes(x.data.status)).map((x) => x.id) },
     { id: "M5", phase: "—", title: "Thiếu nguồn: tìm asset (giấy phép trước) hoặc sơ đồ tự dựng", status: "missing", items: list.filter((x) => x.data.status === "missing").map((x) => x.id) },

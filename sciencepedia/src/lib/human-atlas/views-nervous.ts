@@ -43,9 +43,16 @@ const DIENCEPHALON = n(
 const BRAINSTEM = n(/^midbrain$|peduncle of midbrain$|colliculus$|brachium of (superior|inferior) colliculus$|^pons$|^medulla oblongata$|^interpeduncular fossa$/i);
 const CEREBELLUM = n(/^cerebellum$/i);
 const TENTORIUM = n(/^tentorium cerebelli$/i);
+// Z-Anatomy (mốc M2, 2026-10-19): liềm đại não; nhân dây sọ và nhân đỏ nằm TRONG
+// mảnh thân não BodyParts3D — cấu trúc riêng, không lồng vào `brainstem`.
+const FALX = n(/^falx cerebri$/i);
+const CN_NUCLEI = n(
+  /nucleus of (oculomotor|trochlear|abducens|hypoglossal|accessory) nerve$|accessory nucleus of oculomotor nerve$|motor nucleus of facial nerve$|nucleus ambiguus$|nucleus of solitary tract$|posterior nucleus of vagus nerve$|salivatory nucleus$|vestibular nuclei$|cochlear nucleus$/i,
+);
+const RED_NUCLEUS = n(/red nucleus$/i);
 const VENTRICLES = n(/ventricle$|^cerebral aqueduct$|interventricular foramen$|choroid plexus of ((left|right) )?cerebral hemisphere$/i);
 // Lều tiểu não là màng cứng, không phải mô não — bối cảnh, không nổi bật.
-const BRAIN = [CORTEX, CEREBRAL_WHITE, BASAL_NUCLEI, HIPPOCAMPUS_AMYGDALA, DIENCEPHALON, BRAINSTEM, CEREBELLUM, VENTRICLES];
+const BRAIN = [CORTEX, CEREBRAL_WHITE, BASAL_NUCLEI, HIPPOCAMPUS_AMYGDALA, DIENCEPHALON, BRAINSTEM, CN_NUCLEI, RED_NUCLEUS, CEREBELLUM, VENTRICLES];
 // Hệ viền: cấu trúc con lồng trong vỏ não / chất trắng / gian não — không khai một
 // cấu trúc "hệ viền" chung, vì nó chồng một phần lên ba cấu trúc kia ở góc nhìn Não.
 const LIMBIC_GYRI = n(/cingulate gyrus$|parahippocampal gyrus$/i);
@@ -99,7 +106,7 @@ const EPITHALAMUS = n(/^habenula$|stria medullaris of thalamus$/i);
 // ------------------------------------------------------------------ dây sọ
 const OPTIC = n(/optic (nerve|chiasm|tract)$/i);
 const OCULOMOTOR = n(/branch of (left|right) oculomotor nerve$/i);
-const TROCHLEAR = n(/trochlear nerve$/i, /(supra|infra)trochlear/i);
+const TROCHLEAR = n(/trochlear nerve$/i, /(supra|infra)trochlear|nucleus/i);
 /** V1 và nhánh trong ổ mắt, cả hạch mi (hạch đối giao cảm treo trên nhánh mũi mi). */
 const OPHTHALMIC = n(
   /ophthalmic nerve$|frontal nerve$|supra-orbital nerve$|supratrochlear nerve$|lacrimal nerve$|nasociliary nerve$|ethmoidal nerve$|infratrochlear nerve$|ciliary nerve$|ciliary ganglion$|nasociliary nerve with (left|right) ciliary ganglion$/i,
@@ -111,7 +118,11 @@ const VESTIBULOCOCHLEAR = n(/vestibulocochlear nerve \(viii\)$|cochlear nerve$|v
 const GLOSSOPHARYNGEAL = n(/glossopharyngeal nerve \(ix\)$/i);
 const ACCESSORY = n(/accessory nerve \(xi\)$/i);
 const HYPOGLOSSAL = n(/hypoglossal nerve \(xii\)$/i);
-const CRANIAL = [OPTIC, OCULOMOTOR, TROCHLEAR, OPHTHALMIC, MAXILLARY, MANDIBULAR, FACIAL, VESTIBULOCOCHLEAR, GLOSSOPHARYNGEAL, VAGUS, ACCESSORY, HYPOGLOSSAL];
+const OLFACTORY = n(/olfactory nerve \(i\)$/i);
+const ABDUCENS = n(/abducens nerve \(vi\)$/i);
+/** Thân dây V và hai rễ (Z-Anatomy); hạch sinh ba không có ở nguồn nào. */
+const TRIGEMINAL_ROOTS = n(/trigeminal nerve \(v\)$|root of trigeminal nerve$/i);
+const CRANIAL = [OLFACTORY, OPTIC, OCULOMOTOR, TROCHLEAR, TRIGEMINAL_ROOTS, OPHTHALMIC, MAXILLARY, MANDIBULAR, ABDUCENS, FACIAL, VESTIBULOCOCHLEAR, GLOSSOPHARYNGEAL, VAGUS, ACCESSORY, HYPOGLOSSAL];
 
 // ------------------------------------------------------------------ tuỷ sống
 const SPINAL_CORD = n(/horn of spinal cord$|white matter of spinal cord$|^central canal( of spinal cord)?$/i);
@@ -187,13 +198,13 @@ export const NERVOUS_VIEWS: readonly AtlasViewDef[] = [
     direction: "front",
     focus: [{ systems: ["nervous"] }],
     partial: {
-      vi: "Thiếu dây thần kinh khứu giác (I), vận nhãn ngoài (VI), rễ và hạch dây sinh ba, dây hoành và đám rối cổ",
-      en: "The olfactory (I) and abducens (VI) nerves, trigeminal roots and ganglion, phrenic nerves and cervical plexus are missing",
+      vi: "Thiếu các hạch của dây thần kinh sọ (trừ hạch mi), dây hoành và đám rối cổ",
+      en: "The cranial nerve ganglia (except the ciliary ganglion), phrenic nerves and cervical plexus are missing",
     },
     terms: ["thần kinh", "nervous system", "não", "brain", "tuỷ sống", "spinal cord"],
     quality: "acceptable",
   },
-  group("nervous-brain", "Não", "Brain", "side", BRAIN, [SKULL, TENTORIUM], ["brain", "đại não", "cerebrum"]),
+  group("nervous-brain", "Não", "Brain", "side", BRAIN, [SKULL, TENTORIUM, FALX], ["brain", "đại não", "cerebrum"]),
   // Động mạch nổi bật, não mờ phía sau — tập nổi bật đúng bằng "Động mạch não" của hệ động mạch.
   group("nervous-brain-blood-supply", "Cấp máu cho não", "Blood supply of the brain", "side", [CAROTID_VERTEBRAL, CEREBRAL], BRAIN,
     ["động mạch não", "cerebral arteries", "vòng Willis", "circle of Willis", "cấp máu", "blood supply"]),
@@ -203,15 +214,15 @@ export const NERVOUS_VIEWS: readonly AtlasViewDef[] = [
   group("nervous-deep-brain", "Gian não và nhân nền", "Diencephalon and basal nuclei", "three-quarter", [DIENCEPHALON, BASAL_NUCLEI], [CEREBRAL_WHITE, BRAINSTEM],
     ["đồi thị", "thalamus", "vùng dưới đồi", "hypothalamus", "hạch nền", "basal ganglia"]),
   group("nervous-cerebrum", "Đại não: vỏ và chất trắng", "Cerebrum: cortex and white matter", "side", [CORTEX, CEREBRAL_WHITE], [CEREBELLUM, BRAINSTEM], ["hồi não", "gyrus", "thuỳ não", "lobe", "thể chai", "corpus callosum"]),
-  group("nervous-brainstem-cerebellum", "Thân não và tiểu não", "Brainstem and cerebellum", "side", [BRAINSTEM, CEREBELLUM], [DIENCEPHALON, SPINAL_CORD, TENTORIUM], ["hành não", "cầu não", "trung não", "cerebellum"]),
+  group("nervous-brainstem-cerebellum", "Thân não và tiểu não", "Brainstem and cerebellum", "side", [BRAINSTEM, CN_NUCLEI, RED_NUCLEUS, CEREBELLUM], [DIENCEPHALON, SPINAL_CORD, TENTORIUM], ["hành não", "cầu não", "trung não", "cerebellum"]),
   group("nervous-ventricles", "Hệ não thất", "Ventricular system", "three-quarter", [VENTRICLES], [CEREBRAL_WHITE, BRAINSTEM, CEREBELLUM], ["não thất", "ventricle", "dịch não tuỷ", "cerebrospinal fluid"]),
   group("nervous-cranial-nerves", "Dây thần kinh sọ", "Cranial nerves", "three-quarter", CRANIAL, [BRAINSTEM, SKULL], ["dây sọ", "cranial nerve"], {
     partial: {
-      vi: "Thiếu dây khứu giác (I), dây vận nhãn ngoài (VI), rễ và hạch dây sinh ba",
-      en: "The olfactory (I) and abducens (VI) nerves and the trigeminal roots and ganglion are missing",
+      vi: "Trong các hạch của dây thần kinh sọ chỉ có hạch mi; thiếu các sợi khứu qua mảnh sàng",
+      en: "Of the cranial nerve ganglia only the ciliary ganglion is shown; the olfactory nerve fibres through the cribriform plate are missing",
     },
   }),
-  group("nervous-orbit", "Thần kinh ổ mắt", "Nerves of the orbit", [-0.8, 0.35, 0.5], [OPTIC, OCULOMOTOR, TROCHLEAR, OPHTHALMIC], [SKULL], ["ổ mắt", "orbit", "dây III", "dây IV", "V1"]),
+  group("nervous-orbit", "Thần kinh ổ mắt", "Nerves of the orbit", [-0.8, 0.35, 0.5], [OPTIC, OCULOMOTOR, TROCHLEAR, OPHTHALMIC, ABDUCENS], [SKULL], ["ổ mắt", "orbit", "dây III", "dây IV", "V1", "dây VI"]),
   group("nervous-vagus", "Dây phế vị (X)", "Vagus nerve (X)", "anterolateral", [VAGUS], [HEART, NECK_THORAX_VISCERA, SKULL],
     ["phế vị", "vagus", "dây X", "cranial nerve X"]),
   {
@@ -278,7 +289,11 @@ export const NERVOUS_VIEWS: readonly AtlasViewDef[] = [
   structure("pons", "Cầu não", "Pons", "side", PONS, ["cầu não", "pons"]),
   structure("medulla-oblongata", "Hành não", "Medulla oblongata", "front", MEDULLA, ["hành não", "medulla"]),
   structure("cerebellum", "Tiểu não", "Cerebellum", "side", CEREBELLUM),
+  // Nhân nằm trong thân não: thân não mờ làm bối cảnh, không thì chỉ thấy các khối lơ lửng.
+  { ...structure("cranial-nerve-nuclei", "Nhân các dây thần kinh sọ (chưa gồm nhân dây sinh ba)", "Cranial nerve nuclei (excluding trigeminal nuclei)", "back", CN_NUCLEI, ["nhân dây sọ", "cranial nerve nuclei", "Edinger–Westphal", "nhân mơ hồ"]), context: [BRAINSTEM] },
+  { ...structure("red-nucleus", "Nhân đỏ", "Red nucleus", "three-quarter", RED_NUCLEUS, ["red nucleus"]), context: [BRAINSTEM] },
   structure("tentorium-cerebelli", "Lều tiểu não", "Tentorium cerebelli", "side", TENTORIUM),
+  structure("falx-cerebri", "Liềm đại não", "Falx cerebri", "side", FALX, ["liềm não", "falx"]),
   structure("brain-ventricles", "Não thất, cống não và đám rối mạch mạc", "Ventricles, cerebral aqueduct and choroid plexus", "three-quarter", VENTRICLES),
   structure("lateral-ventricles", "Não thất bên và lỗ gian não thất", "Lateral ventricles and interventricular foramen", "three-quarter", LATERAL_VENTRICLES, ["não thất bên", "lateral ventricle"]),
   structure("third-ventricle", "Não thất ba", "Third ventricle", "side", THIRD_VENTRICLE),
@@ -287,7 +302,18 @@ export const NERVOUS_VIEWS: readonly AtlasViewDef[] = [
   structure("choroid-plexus", "Đám rối mạch mạc não thất bên", "Choroid plexus of lateral ventricles", "three-quarter", CHOROID_PLEXUS, ["choroid plexus", "dịch não tuỷ"]),
   structure("optic-pathway", "Dây, giao thoa và dải thị giác (II)", "Optic nerve, chiasm and tract (II)", "superior", OPTIC),
   structure("oculomotor-nerve", "Dây vận nhãn (III)", "Oculomotor nerve (III)", [-0.8, 0.35, 0.5], OCULOMOTOR),
+  // Đường cong Z-Anatomy dài ~51 mm dưới thuỳ trán — đi theo hành + dải khứu, không phải các sợi khứu
+  // ngắn qua mảnh sàng; gọi đúng thứ đang vẽ (science-editor 2026-10-19).
+  {
+    ...structure("olfactory-nerve", "Đường khứu giác (I), nét sơ đồ", "Olfactory pathway (I), schematic line", [0, -0.6, 1], OLFACTORY, ["dây I", "dây khứu giác", "khứu giác", "hành khứu", "olfactory"]),
+    partial: {
+      vi: "Hành khứu và dải khứu chỉ vẽ bằng một nét; thiếu các sợi khứu qua mảnh sàng",
+      en: "The olfactory bulb and tract are drawn only as a line; the olfactory nerve fibres through the cribriform plate are missing",
+    },
+  },
   structure("trochlear-nerve", "Dây ròng rọc (IV)", "Trochlear nerve (IV)", "superior", TROCHLEAR),
+  structure("trigeminal-roots", "Thân và rễ dây sinh ba (V)", "Trigeminal nerve trunk and roots (V)", "side", TRIGEMINAL_ROOTS, ["dây V", "sinh ba", "trigeminal"]),
+  structure("abducens-nerve", "Dây vận nhãn ngoài (VI)", "Abducens nerve (VI)", [-0.8, 0.35, 0.5], ABDUCENS, ["dây VI", "abducens"]),
   structure("ophthalmic-nerve", "Dây thần kinh mắt (V1) và hạch mi", "Ophthalmic nerve (V1) and ciliary ganglion", [-0.8, 0.35, 0.5], OPHTHALMIC),
   structure("maxillary-nerve", "Dây thần kinh hàm trên (V2)", "Maxillary nerve (V2)", "anterolateral", MAXILLARY),
   structure("mandibular-nerve", "Dây thần kinh hàm dưới (V3) và nhánh", "Mandibular nerve (V3) and branches", "anterolateral", MANDIBULAR),

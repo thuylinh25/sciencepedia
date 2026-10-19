@@ -36,6 +36,8 @@ const PALATINE = b(/palatine bone$/i);
 const VOMER = b(/^vomer$/i);
 const MANDIBLE = b(/^mandible$/i);
 const HYOID = b(/^hyoid bone$/i);
+// Z-Anatomy (2026-10-19) — BodyParts3D không có xương con; chi tiết ở góc nhìn tai giữa.
+const OSSICLES = b(/^(left|right) (malleus|incus|stapes)$/i);
 // Xương mặt mà dữ liệu xếp hệ khác: xương lệ (giác quan), xoăn mũi dưới (hô hấp) — lấy theo mã FMA.
 const LACRIMAL: PartRule = { fma: ["FMA53645", "FMA53646"] };
 const CONCHAE: PartRule = { fma: ["FMA54737", "FMA54738"] };
@@ -149,6 +151,7 @@ export const SKELETAL_VIEWS: readonly AtlasViewDef[] = [
   structure("bone-vomer", "Xương lá mía", "Vomer", "side", VOMER),
   structure("bone-mandible", "Xương hàm dưới", "Mandible", "three-quarter", MANDIBLE),
   structure("bone-hyoid", "Xương móng", "Hyoid bone", "front", HYOID),
+  structure("bone-ossicles", "Xương con của tai", "Auditory ossicles", "side", OSSICLES, ["xương búa", "xương đe", "xương bàn đạp"]),
   structure("teeth-incisors", "Răng cửa", "Incisors", "front", INCISORS),
   structure("teeth-canines", "Răng nanh", "Canines", "front", CANINES),
   structure("teeth-premolars", "Răng hàm nhỏ", "Premolars", "three-quarter", PREMOLARS, ["răng tiền hàm"]),

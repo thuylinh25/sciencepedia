@@ -72,6 +72,28 @@ const LACRIMAL_BONES = rule("FMA53645", "FMA53646");
 
 const EXTERNAL_EAR = rule("FMA52781");
 
+/*
+ * Tai giữa và tai trong (Z-Anatomy, mốc M2, 2026-10-19). Khối "Vestibule" của
+ * Z-Anatomy là tiền đình KÈM ba ống bán khuyên (hình chiếu thấy ba vòng có lỗ) —
+ * mê đạo XƯƠNG; mê đạo màng (ống ốc tai, soan nang, cầu nang) không có. Xương con
+ * ở hệ xương. Như nhãn cầu: góc nhìn chi tiết lấy tai PHẢI (khung một tai); cấu
+ * trúc hai bên chỉ cho tổng quan.
+ */
+const za = (systems: PartRule["systems"], name: RegExp): PartRule => ({ systems, name });
+const MIDDLE_EAR_SOFT = za(["sensory"], /^(left|right) (tympanic membrane|auditory tube)$/i);
+const OSSICLES = za(["skeletal"], /^(left|right) (malleus|incus|stapes)$/i);
+const INNER_EAR = za(["sensory"], /^(left|right) (cochlea|vestibule)$/i);
+const R_TYMPANIC = za(["sensory"], /^right tympanic membrane$/i);
+const R_AUDITORY_TUBE = za(["sensory"], /^right auditory tube$/i);
+const R_MALLEUS = za(["skeletal"], /^right malleus$/i);
+const R_INCUS = za(["skeletal"], /^right incus$/i);
+const R_STAPES = za(["skeletal"], /^right stapes$/i);
+const R_OSSICLES = za(["skeletal"], /^right (malleus|incus|stapes)$/i);
+const R_COCHLEA = za(["sensory"], /^right cochlea$/i);
+const R_VESTIBULE = za(["sensory"], /^right vestibule$/i);
+const R_TEMPORAL_BONE = za(["skeletal"], /^right temporal bone$/i);
+const R_VIII = za(["nervous"], /^right (vestibulocochlear nerve \(viii\)|cochlear nerve|vestibular nerve)$/i);
+
 export const SENSORY_VIEWS: readonly AtlasViewDef[] = [
   {
     id: "sensory-overview",
@@ -79,10 +101,10 @@ export const SENSORY_VIEWS: readonly AtlasViewDef[] = [
     kind: "overview",
     name: { vi: "Cơ quan giác quan", en: "Sense organs" },
     direction: "anterolateral",
-    focus: [...EYEBALLS, ...LACRIMAL, TARSAL_PLATES, EXTERNAL_EAR],
+    focus: [...EYEBALLS, ...LACRIMAL, TARSAL_PLATES, EXTERNAL_EAR, MIDDLE_EAR_SOFT, OSSICLES, INNER_EAR],
     partial: {
-      vi: "Chỉ có mắt và tai ngoài; thiếu tai giữa, tai trong, biểu mô khứu giác và nụ vị giác",
-      en: "Eyes and external ear only; the middle and inner ear, olfactory epithelium and taste buds are missing",
+      vi: "Thiếu mê đạo màng của tai trong, cơ tai giữa, biểu mô khứu giác và nụ vị giác",
+      en: "The membranous labyrinth of the inner ear, middle-ear muscles, olfactory epithelium and taste buds are missing",
     },
     terms: ["giác quan", "sense", "mắt", "eye", "tai", "ear"],
     quality: "needs-improvement",
@@ -135,12 +157,39 @@ export const SENSORY_VIEWS: readonly AtlasViewDef[] = [
     id: "sensory-ear",
     systemId: "sensory",
     kind: "group",
-    name: { vi: "Tai ngoài", en: "External ear" },
+    name: { vi: "Tai: tai ngoài, tai giữa và tai trong", en: "Ear: external, middle and inner ear" },
     direction: "side",
-    focus: [EXTERNAL_EAR],
-    partial: { vi: "Thiếu tai giữa và tai trong", en: "The middle and inner ear are missing" },
+    focus: [EXTERNAL_EAR, MIDDLE_EAR_SOFT, OSSICLES, INNER_EAR],
+    partial: {
+      vi: "Thiếu mê đạo màng của tai trong và hai cơ tai giữa (cơ căng màng nhĩ, cơ bàn đạp)",
+      en: "The membranous labyrinth of the inner ear and the middle-ear muscles (tensor tympani, stapedius) are missing",
+    },
     terms: ["tai", "ear", "vành tai", "auricle"],
-    quality: "needs-improvement",
+    quality: "acceptable",
+  },
+  {
+    id: "sensory-middle-ear",
+    systemId: "sensory",
+    kind: "group",
+    name: { vi: "Tai giữa", en: "Middle ear" },
+    direction: "right",
+    focus: [R_TYMPANIC, R_OSSICLES, R_AUDITORY_TUBE],
+    context: [R_TEMPORAL_BONE, R_COCHLEA, R_VESTIBULE],
+    partial: { vi: "Thiếu cơ căng màng nhĩ và cơ bàn đạp", en: "The tensor tympani and stapedius muscles are missing" },
+    terms: ["tai giữa", "middle ear", "xương con", "ossicles", "màng nhĩ", "eardrum"],
+    quality: "acceptable",
+  },
+  {
+    id: "sensory-inner-ear",
+    systemId: "sensory",
+    kind: "group",
+    name: { vi: "Tai trong", en: "Inner ear" },
+    direction: "right",
+    focus: [R_COCHLEA, R_VESTIBULE],
+    context: [R_TEMPORAL_BONE, R_OSSICLES, R_VIII],
+    partial: { vi: "Thiếu mê đạo màng (ống ốc tai, soan nang, cầu nang, các ống bán khuyên màng)", en: "The membranous labyrinth (cochlear duct, utricle, saccule, semicircular ducts) is missing" },
+    terms: ["tai trong", "inner ear", "ốc tai", "cochlea", "ống bán khuyên", "semicircular canals", "mê đạo", "labyrinth"],
+    quality: "acceptable",
   },
 
   { id: "right-eyeball", systemId: "sensory", kind: "structure", name: { vi: "Nhãn cầu phải", en: "Right eyeball" }, direction: [-0.35, 0.1, 1], focus: [RIGHT_EYEBALL], context: [OPTIC_NERVES], terms: ["mắt", "eye"] },
@@ -170,4 +219,14 @@ export const SENSORY_VIEWS: readonly AtlasViewDef[] = [
   { id: "nasolacrimal-ducts", systemId: "sensory", kind: "structure", name: { vi: "Ống lệ mũi", en: "Nasolacrimal ducts" }, direction: "front", focus: [NASOLACRIMAL], context: [LACRIMAL_SAC] },
   { id: "tarsal-plates", systemId: "sensory", kind: "structure", name: { vi: "Sụn mi", en: "Tarsal plates" }, direction: "front", focus: [TARSAL_PLATES], context: [SCLERA, CORNEA], terms: ["mi mắt", "eyelid"] },
   { id: "external-ear", systemId: "sensory", kind: "structure", name: { vi: "Tai ngoài", en: "External ear" }, direction: "side", focus: [EXTERNAL_EAR] },
+  { id: "middle-ear", systemId: "sensory", kind: "structure", name: { vi: "Tai giữa", en: "Middle ear" }, direction: "side", focus: [MIDDLE_EAR_SOFT, OSSICLES] },
+  { id: "inner-ear", systemId: "sensory", kind: "structure", name: { vi: "Tai trong (mê đạo xương)", en: "Inner ear (bony labyrinth)" }, direction: "side", focus: [INNER_EAR] },
+  { id: "tympanic-membrane", systemId: "sensory", kind: "structure", name: { vi: "Màng nhĩ", en: "Tympanic membrane" }, direction: "right", focus: [R_TYMPANIC], context: [R_MALLEUS], terms: ["eardrum"] },
+  { id: "auditory-ossicles", systemId: "sensory", kind: "structure", name: { vi: "Chuỗi xương con", en: "Auditory ossicles" }, direction: "right", focus: [R_OSSICLES], context: [R_TYMPANIC], terms: ["xương con", "ossicles"] },
+  { id: "malleus", systemId: "sensory", kind: "structure", name: { vi: "Xương búa", en: "Malleus" }, direction: "right", focus: [R_MALLEUS], context: [R_TYMPANIC, R_INCUS] },
+  { id: "incus", systemId: "sensory", kind: "structure", name: { vi: "Xương đe", en: "Incus" }, direction: "right", focus: [R_INCUS], context: [R_MALLEUS, R_STAPES] },
+  { id: "stapes", systemId: "sensory", kind: "structure", name: { vi: "Xương bàn đạp", en: "Stapes" }, direction: "right", focus: [R_STAPES], context: [R_INCUS, R_VESTIBULE] },
+  { id: "auditory-tube", systemId: "sensory", kind: "structure", name: { vi: "Vòi tai", en: "Auditory tube" }, direction: "right", focus: [R_AUDITORY_TUBE], terms: ["vòi Eustachi", "vòi nhĩ", "Eustachian tube"] },
+  { id: "cochlea", systemId: "sensory", kind: "structure", name: { vi: "Ốc tai", en: "Cochlea" }, direction: "right", focus: [R_COCHLEA], context: [R_VESTIBULE, R_VIII] },
+  { id: "vestibule-semicircular-canals", systemId: "sensory", kind: "structure", name: { vi: "Tiền đình và ống bán khuyên", en: "Vestibule and semicircular canals" }, direction: "right", focus: [R_VESTIBULE], context: [R_COCHLEA, R_VIII], terms: ["tiền đình", "vestibule", "ống bán khuyên", "semicircular canals", "thăng bằng"] },
 ];

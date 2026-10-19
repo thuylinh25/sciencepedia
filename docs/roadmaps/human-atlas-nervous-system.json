@@ -65,22 +65,22 @@
     ]
   },
   "coverage": {
-    "nodes": 167,
-    "nodes3d": 162,
+    "nodes": 166,
+    "nodes3d": 161,
     "byStatus": {
-      "live": 104,
+      "live": 114,
       "buildable": 13,
-      "import-za": 23,
+      "import-za": 12,
       "needs-schema": 8,
       "needs-clipping": 4,
       "missing": 10
     },
-    "readyNow": "117/162 (72%) nút 3D dựng được bằng dữ liệu đang có",
-    "afterZaImport": "140/162 (86%)",
+    "readyNow": "127/161 (79%) nút 3D dựng được bằng dữ liệu đang có",
+    "afterZaImport": "139/161 (86%)",
     "haaTiles": {
       "note": "So với 24 ô \"Nervous System Views\" của HAA (ảnh tham chiếu, không dùng asset HAA).",
-      "withCardNow": "16/24 (67%)",
-      "fullNow": "9/24 (38%)",
+      "withCardNow": "19/24 (79%)",
+      "fullNow": "10/24 (42%)",
       "afterZaImport": "19/24 (79%)",
       "remainingGap": "Dây hoành (8), lát cắt lưỡi (21), khối da (22), thụ thể xúc giác (23), nang lông (24): không nguồn 3D đã vet — 21–24 là vi thể, hợp sơ đồ/mô hình tự dựng hơn mesh toàn thân.",
       "tiles": [
@@ -151,18 +151,18 @@
         },
         {
           "haa": "14. Middle Ear",
-          "ourId": "middle-ear",
-          "status": "import-za"
+          "ourId": "sensory-middle-ear",
+          "status": "live"
         },
         {
           "haa": "15. Inner Ear",
-          "ourId": "inner-ear",
-          "status": "import-za"
+          "ourId": "sensory-inner-ear",
+          "status": "live-partial"
         },
         {
           "haa": "16. Cochlea",
           "ourId": "cochlea",
-          "status": "import-za"
+          "status": "live-partial"
         },
         {
           "haa": "17. Eye",
@@ -218,31 +218,20 @@
     {
       "id": "M2",
       "phase": "2–8",
-      "title": "Nhập mở rộng Z-Anatomy (một lượt): hồi/tiểu thuỳ, nhân dây sọ, bó tuỷ, dây I/VI, rễ V, hạch giao cảm, tai giữa/trong, liềm đại não",
+      "title": "Nhập mở rộng Z-Anatomy — ĐỢT 1 XONG 2026-10-19: dây I/VI, thân + rễ V, nhân dây sọ, nhân đỏ, liềm đại não, hạch giao cảm, tai giữa/trong, xương con; kèm hiệu chỉnh vùng đầu 1 cm. Còn lại (phải THAY mảnh BP3D hoặc chồng chất trắng): hồi/tiểu thuỳ, bó tuỷ, cột trung gian ngoài",
       "status": "import-za",
       "items": [
         "cerebellar-vermis",
         "cerebellar-hemisphere-lobules",
         "flocculonodular-lobe",
         "cerebellar-peduncles",
-        "red-nucleus",
         "medulla-pyramid-olive",
-        "cranial-nerve-nuclei",
         "nervous-meninges",
-        "falx-cerebri",
         "transverse-temporal-gyri",
         "occipital-gyri",
         "medial-surface-hemisphere",
-        "cn-i-olfactory",
-        "cn-vi-abducens",
-        "trigeminal-roots",
-        "sympathetic-ganglia",
         "intermediolateral-column",
         "spinal-tracts",
-        "middle-ear",
-        "inner-ear",
-        "cochlea",
-        "vestibular-system",
         "olfaction"
       ]
     },
@@ -1160,7 +1149,7 @@
       "name": {
         "vi": "Nhân đỏ",
         "en": "Red nucleus",
-        "reviewed": false
+        "reviewed": true
       },
       "parent": "midbrain",
       "children": [],
@@ -1195,20 +1184,14 @@
         "direction": "three-quarter"
       },
       "data": {
-        "status": "import-za",
+        "status": "live",
         "partial": false,
-        "existingViewId": null,
+        "existingViewId": "red-nucleus",
         "borrowedFromSystem": null,
-        "note": null,
-        "importPath": [
-          {
-            "path": "pick",
-            "how": "Mở regex pick() (hiện chỉ nhận nerve|plexus|ganglion|root of…; loại nucleus|tract|gyrus|lobe…)"
-          }
-        ]
+        "note": null
       },
       "phase": 2,
-      "priority": "P2"
+      "priority": "done"
     },
     {
       "id": "pons",
@@ -1388,9 +1371,9 @@
       "kind": "structure",
       "level": 4,
       "name": {
-        "vi": "Nhân dây thần kinh sọ",
-        "en": "Cranial nerve nuclei",
-        "reviewed": false
+        "vi": "Nhân các dây thần kinh sọ (chưa gồm nhân dây sinh ba)",
+        "en": "Cranial nerve nuclei (excluding trigeminal nuclei)",
+        "reviewed": true
       },
       "parent": "brainstem",
       "children": [],
@@ -1434,20 +1417,14 @@
         "direction": "back"
       },
       "data": {
-        "status": "import-za",
+        "status": "live",
         "partial": true,
-        "existingViewId": null,
+        "existingViewId": "cranial-nerve-nuclei",
         "borrowedFromSystem": null,
-        "note": "Thiếu nhân dây V (cảm giác, vận động). Nối chéo sang từng dây sọ ở mục F.",
-        "importPath": [
-          {
-            "path": "pick",
-            "how": "Mở regex pick() (hiện chỉ nhận nerve|plexus|ganglion|root of…; loại nucleus|tract|gyrus|lobe…)"
-          }
-        ]
+        "note": "Thiếu nhân dây V (cảm giác, vận động). Nối chéo sang từng dây sọ ở mục F."
       },
       "phase": 2,
-      "priority": "P2"
+      "priority": "done"
     },
     {
       "id": "nervous-ventricles",
@@ -1904,7 +1881,7 @@
       "name": {
         "vi": "Liềm đại não",
         "en": "Falx cerebri",
-        "reviewed": false
+        "reviewed": true
       },
       "parent": "nervous-meninges",
       "children": [],
@@ -1939,20 +1916,14 @@
         "direction": "side"
       },
       "data": {
-        "status": "import-za",
+        "status": "live",
         "partial": false,
-        "existingViewId": null,
+        "existingViewId": "falx-cerebri",
         "borrowedFromSystem": null,
-        "note": null,
-        "importPath": [
-          {
-            "path": "pick",
-            "how": "Mở regex pick() (hiện chỉ nhận nerve|plexus|ganglion|root of…; loại nucleus|tract|gyrus|lobe…)"
-          }
-        ]
+        "note": null
       },
       "phase": 2,
-      "priority": "P2"
+      "priority": "done"
     },
     {
       "id": "nervous-brain-blood-supply",
@@ -3928,12 +3899,12 @@
       },
       "parent": "sec-pns",
       "children": [
-        "cn-i-olfactory",
+        "olfactory-nerve",
         "optic-pathway",
         "oculomotor-nerve",
         "trochlear-nerve",
         "cn-v-trigeminal",
-        "cn-vi-abducens",
+        "abducens-nerve",
         "facial-nerve",
         "vestibulocochlear-nerve",
         "glossopharyngeal-nerve",
@@ -3985,15 +3956,15 @@
       "priority": "done"
     },
     {
-      "id": "cn-i-olfactory",
-      "viewId": "cn-i-olfactory",
+      "id": "olfactory-nerve",
+      "viewId": "olfactory-nerve",
       "section": "F",
       "kind": "structure",
       "level": 3,
       "name": {
-        "vi": "Dây khứu giác (I)",
-        "en": "Olfactory nerve (I)",
-        "reviewed": false
+        "vi": "Đường khứu giác (I), nét sơ đồ",
+        "en": "Olfactory pathway (I), schematic line",
+        "reviewed": true
       },
       "parent": "nervous-cranial-nerves",
       "children": [],
@@ -4022,8 +3993,8 @@
         ]
       },
       "url": {
-        "vi": "/vi/human-atlas?view=cn-i-olfactory",
-        "en": "/en/human-atlas?view=cn-i-olfactory"
+        "vi": "/vi/human-atlas?view=olfactory-nerve",
+        "en": "/en/human-atlas?view=olfactory-nerve"
       },
       "thumbnail": {
         "source": "auto-capture",
@@ -4031,20 +4002,14 @@
         "direction": "superior"
       },
       "data": {
-        "status": "import-za",
+        "status": "live",
         "partial": true,
-        "existingViewId": null,
+        "existingViewId": "olfactory-nerve",
         "borrowedFromSystem": null,
-        "note": "Hành khứu, dải khứu không có trong nguồn nào.",
-        "importPath": [
-          {
-            "path": "dedupe-exception",
-            "how": "pick() ĐÃ nhận nhưng bộ khử trùng hình học loại nhầm (sát mảnh thần kinh BP3D vùng ổ mắt/nền sọ) — cần ngoại lệ theo tên"
-          }
-        ]
+        "note": "Hành khứu, dải khứu không có trong nguồn nào."
       },
       "phase": 3,
-      "priority": "P2"
+      "priority": "done"
     },
     {
       "id": "optic-pathway",
@@ -4288,15 +4253,15 @@
       "priority": "done"
     },
     {
-      "id": "cn-vi-abducens",
-      "viewId": "cn-vi-abducens",
+      "id": "abducens-nerve",
+      "viewId": "abducens-nerve",
       "section": "F",
       "kind": "structure",
       "level": 3,
       "name": {
         "vi": "Dây vận nhãn ngoài (VI)",
         "en": "Abducens nerve (VI)",
-        "reviewed": false
+        "reviewed": true
       },
       "parent": "nervous-cranial-nerves",
       "children": [],
@@ -4328,8 +4293,8 @@
         ]
       },
       "url": {
-        "vi": "/vi/human-atlas?view=cn-vi-abducens",
-        "en": "/en/human-atlas?view=cn-vi-abducens"
+        "vi": "/vi/human-atlas?view=abducens-nerve",
+        "en": "/en/human-atlas?view=abducens-nerve"
       },
       "thumbnail": {
         "source": "auto-capture",
@@ -4341,20 +4306,14 @@
         ]
       },
       "data": {
-        "status": "import-za",
+        "status": "live",
         "partial": false,
-        "existingViewId": null,
+        "existingViewId": "abducens-nerve",
         "borrowedFromSystem": null,
-        "note": null,
-        "importPath": [
-          {
-            "path": "dedupe-exception",
-            "how": "pick() ĐÃ nhận nhưng bộ khử trùng hình học loại nhầm (sát mảnh thần kinh BP3D vùng ổ mắt/nền sọ) — cần ngoại lệ theo tên"
-          }
-        ]
+        "note": null
       },
       "phase": 3,
-      "priority": "P2"
+      "priority": "done"
     },
     {
       "id": "facial-nerve",
@@ -4865,9 +4824,9 @@
       "kind": "structure",
       "level": 4,
       "name": {
-        "vi": "Rễ cảm giác và rễ vận động dây V",
-        "en": "Sensory and motor roots of the trigeminal nerve",
-        "reviewed": false
+        "vi": "Thân và rễ dây sinh ba (V)",
+        "en": "Trigeminal nerve trunk and roots (V)",
+        "reviewed": true
       },
       "parent": "cn-v-trigeminal",
       "children": [],
@@ -4903,20 +4862,14 @@
         "direction": "side"
       },
       "data": {
-        "status": "import-za",
+        "status": "live",
         "partial": false,
-        "existingViewId": null,
+        "existingViewId": "trigeminal-roots",
         "borrowedFromSystem": null,
-        "note": null,
-        "importPath": [
-          {
-            "path": "dedupe-exception",
-            "how": "pick() ĐÃ nhận nhưng bộ khử trùng hình học loại nhầm (sát mảnh thần kinh BP3D vùng ổ mắt/nền sọ) — cần ngoại lệ theo tên"
-          }
-        ]
+        "note": null
       },
       "phase": 3,
-      "priority": "P2"
+      "priority": "done"
     },
     {
       "id": "trigeminal-ganglion",
@@ -5078,7 +5031,6 @@
       },
       "parent": "nervous-autonomic",
       "children": [
-        "sympathetic-ganglia",
         "intermediolateral-column",
         "prevertebral-ganglia",
         "sympathetic-trunk"
@@ -5122,65 +5074,6 @@
       },
       "phase": 4,
       "priority": "P2"
-    },
-    {
-      "id": "sympathetic-ganglia",
-      "viewId": "sympathetic-ganglia",
-      "section": "G",
-      "kind": "structure",
-      "level": 4,
-      "name": {
-        "vi": "Hạch thân giao cảm",
-        "en": "Sympathetic trunk ganglia",
-        "reviewed": false
-      },
-      "parent": "sympathetic",
-      "children": [],
-      "learningObjectives": {
-        "vi": [
-          "Nhận ra chuỗi hạch cạnh sống dọc thân giao cảm"
-        ],
-        "reviewed": false
-      },
-      "structures3d": [
-        "Ganglia of sympathetic trunk"
-      ],
-      "view": {
-        "direction": "anterolateral",
-        "zoom": {
-          "level": "structure",
-          "cameraFill": 0.86,
-          "thumbnailFill": 0.86
-        },
-        "display": "layered",
-        "context": [
-          "sympathetic-trunk"
-        ]
-      },
-      "url": {
-        "vi": "/vi/human-atlas?view=sympathetic-ganglia",
-        "en": "/en/human-atlas?view=sympathetic-ganglia"
-      },
-      "thumbnail": {
-        "source": "auto-capture",
-        "from": "model",
-        "direction": "anterolateral"
-      },
-      "data": {
-        "status": "import-za",
-        "partial": false,
-        "existingViewId": null,
-        "borrowedFromSystem": null,
-        "note": null,
-        "importPath": [
-          {
-            "path": "pick",
-            "how": "Mở regex pick() (hiện chỉ nhận nerve|plexus|ganglion|root of…; loại nucleus|tract|gyrus|lobe…)"
-          }
-        ]
-      },
-      "phase": 4,
-      "priority": "P3"
     },
     {
       "id": "intermediolateral-column",
@@ -7952,8 +7845,8 @@
       "kind": "group",
       "level": 2,
       "name": {
-        "vi": "Tai ngoài",
-        "en": "External ear",
+        "vi": "Tai: tai ngoài, tai giữa và tai trong",
+        "en": "Ear: external, middle and inner ear",
         "reviewed": true
       },
       "parent": "sec-sensory-organs",
@@ -8006,9 +7899,9 @@
       "kind": "structure",
       "level": 3,
       "name": {
-        "vi": "Tai giữa: màng nhĩ, chuỗi xương con, vòi tai",
-        "en": "Middle ear: tympanic membrane, ossicles, auditory tube",
-        "reviewed": false
+        "vi": "Tai giữa",
+        "en": "Middle ear",
+        "reviewed": true
       },
       "parent": "sensory-ear",
       "children": [],
@@ -8056,24 +7949,14 @@
         ]
       },
       "data": {
-        "status": "import-za",
+        "status": "live",
         "partial": false,
-        "existingViewId": null,
+        "existingViewId": "middle-ear",
         "borrowedFromSystem": null,
-        "note": null,
-        "importPath": [
-          {
-            "path": "pick",
-            "how": "Mở regex pick() (hiện chỉ nhận nerve|plexus|ganglion|root of…; loại nucleus|tract|gyrus|lobe…)"
-          },
-          {
-            "path": "skeletal-branch",
-            "how": "Nằm collection '1: Skeletal system' — pick() không đọc, thêm nhánh"
-          }
-        ]
+        "note": null
       },
       "phase": 8,
-      "priority": "P3"
+      "priority": "done"
     },
     {
       "id": "inner-ear",
@@ -8082,14 +7965,14 @@
       "kind": "group",
       "level": 3,
       "name": {
-        "vi": "Tai trong",
-        "en": "Inner ear",
-        "reviewed": false
+        "vi": "Tai trong (mê đạo xương)",
+        "en": "Inner ear (bony labyrinth)",
+        "reviewed": true
       },
       "parent": "sensory-ear",
       "children": [
         "cochlea",
-        "vestibular-system"
+        "vestibule-semicircular-canals"
       ],
       "learningObjectives": {
         "vi": [
@@ -8133,20 +8016,14 @@
         ]
       },
       "data": {
-        "status": "import-za",
+        "status": "live",
         "partial": true,
-        "existingViewId": null,
+        "existingViewId": "inner-ear",
         "borrowedFromSystem": null,
-        "note": "ZA có ốc tai + tiền đình nhưng KHÔNG thấy ống bán khuyên (cần kiểm lại khối Vestibule có kèm không trước khi viết câu thiếu).",
-        "importPath": [
-          {
-            "path": "pick",
-            "how": "Mở regex pick() (hiện chỉ nhận nerve|plexus|ganglion|root of…; loại nucleus|tract|gyrus|lobe…)"
-          }
-        ]
+        "note": "M2: khối Vestibule của ZA gồm tiền đình + ba ống bán khuyên (mê đạo xương). Thiếu mê đạo màng."
       },
       "phase": 8,
-      "priority": "P3"
+      "priority": "done"
     },
     {
       "id": "cochlea",
@@ -8157,7 +8034,7 @@
       "name": {
         "vi": "Ốc tai",
         "en": "Cochlea",
-        "reviewed": false
+        "reviewed": true
       },
       "parent": "inner-ear",
       "children": [],
@@ -8192,31 +8069,25 @@
         "direction": "three-quarter"
       },
       "data": {
-        "status": "import-za",
+        "status": "live",
         "partial": true,
-        "existingViewId": null,
+        "existingViewId": "cochlea",
         "borrowedFromSystem": null,
-        "note": "Chỉ khối ngoài; ống ốc tai, cơ quan Corti, màng nền không có → cần sơ đồ lát cắt.",
-        "importPath": [
-          {
-            "path": "pick",
-            "how": "Mở regex pick() (hiện chỉ nhận nerve|plexus|ganglion|root of…; loại nucleus|tract|gyrus|lobe…)"
-          }
-        ]
+        "note": "Chỉ khối ngoài; ống ốc tai, cơ quan Corti, màng nền không có → cần sơ đồ lát cắt."
       },
       "phase": 8,
-      "priority": "P3"
+      "priority": "done"
     },
     {
-      "id": "vestibular-system",
-      "viewId": "vestibular-system",
+      "id": "vestibule-semicircular-canals",
+      "viewId": "vestibule-semicircular-canals",
       "section": "K",
       "kind": "structure",
       "level": 4,
       "name": {
-        "vi": "Hệ tiền đình",
-        "en": "Vestibular system",
-        "reviewed": false
+        "vi": "Tiền đình và ống bán khuyên",
+        "en": "Vestibule and semicircular canals",
+        "reviewed": true
       },
       "parent": "inner-ear",
       "children": [],
@@ -8243,8 +8114,8 @@
         "context": []
       },
       "url": {
-        "vi": "/vi/human-atlas?view=vestibular-system",
-        "en": "/en/human-atlas?view=vestibular-system"
+        "vi": "/vi/human-atlas?view=vestibule-semicircular-canals",
+        "en": "/en/human-atlas?view=vestibule-semicircular-canals"
       },
       "thumbnail": {
         "source": "auto-capture",
@@ -8252,20 +8123,14 @@
         "direction": "three-quarter"
       },
       "data": {
-        "status": "import-za",
+        "status": "live",
         "partial": true,
-        "existingViewId": null,
+        "existingViewId": "vestibule-semicircular-canals",
         "borrowedFromSystem": null,
-        "note": "Soan nang, cầu nang, bóng ống bán khuyên không có.",
-        "importPath": [
-          {
-            "path": "pick",
-            "how": "Mở regex pick() (hiện chỉ nhận nerve|plexus|ganglion|root of…; loại nucleus|tract|gyrus|lobe…)"
-          }
-        ]
+        "note": "Mê đạo xương (tiền đình + ống bán khuyên) đã có; soan nang, cầu nang, ống màng không có."
       },
       "phase": 8,
-      "priority": "P3"
+      "priority": "done"
     },
     {
       "id": "tongue",
@@ -8338,7 +8203,7 @@
         "reviewed": false
       },
       "structures3d": [
-        "cn-i-olfactory",
+        "olfactory-nerve",
         "Olfactory sulcus"
       ],
       "view": {
