@@ -68,15 +68,15 @@
     "nodes": 183,
     "nodes3d": 178,
     "byStatus": {
-      "live": 133,
+      "live": 132,
       "buildable": 13,
       "import-za": 12,
       "needs-schema": 8,
       "needs-clipping": 4,
-      "missing": 8
+      "missing": 9
     },
-    "readyNow": "146/178 (82%) nút 3D dựng được bằng dữ liệu đang có",
-    "afterZaImport": "158/178 (89%)",
+    "readyNow": "145/178 (81%) nút 3D dựng được bằng dữ liệu đang có",
+    "afterZaImport": "157/178 (88%)",
     "haaTiles": {
       "note": "So với 24 ô \"Nervous System Views\" của HAA (ảnh tham chiếu, không dùng asset HAA).",
       "withCardNow": "19/24 (79%)",
@@ -289,7 +289,8 @@
         "enteric",
         "cervical-plexus",
         "nervous-phrenic",
-        "touch-receptors"
+        "touch-receptors",
+        "zona-incerta"
       ]
     }
   ],
@@ -9369,8 +9370,8 @@
       "kind": "group",
       "level": 4,
       "name": {
-        "vi": "Chất đen, nhân dưới đồi thị và vùng bất định",
-        "en": "Substantia nigra, subthalamic nucleus and zona incerta",
+        "vi": "Chất đen và nhân dưới đồi thị",
+        "en": "Substantia nigra and subthalamic nucleus",
         "reviewed": true
       },
       "parent": "brainstem",
@@ -9529,7 +9530,7 @@
       "name": {
         "vi": "Vùng bất định",
         "en": "Zona incerta",
-        "reviewed": true
+        "reviewed": false
       },
       "parent": "nervous-subthalamic-nigral",
       "children": [],
@@ -9539,37 +9540,22 @@
         ],
         "reviewed": false
       },
-      "structures3d": [
-        "rule hiện có của `zona-incerta`"
-      ],
-      "view": {
-        "direction": "front",
-        "zoom": {
-          "level": "detail",
-          "cameraFill": 0.9,
-          "thumbnailFill": 0.86
-        },
-        "display": "layered",
-        "context": []
-      },
+      "structures3d": [],
+      "view": null,
       "url": {
         "vi": "/vi/human-atlas?view=zona-incerta",
         "en": "/en/human-atlas?view=zona-incerta"
       },
-      "thumbnail": {
-        "source": "auto-capture",
-        "from": "model",
-        "direction": "front"
-      },
+      "thumbnail": null,
       "data": {
-        "status": "live",
+        "status": "missing",
         "partial": false,
-        "existingViewId": "zona-incerta",
+        "existingViewId": null,
         "borrowedFromSystem": null,
-        "note": null
+        "note": "Allen có nhãn nhưng mọi phép căn để 67–78% đỉnh lọt vào đồi thị đục — không nhập."
       },
       "phase": 2,
-      "priority": "done"
+      "priority": "P4"
     },
     {
       "id": "nervous-cerebellar-nuclei",

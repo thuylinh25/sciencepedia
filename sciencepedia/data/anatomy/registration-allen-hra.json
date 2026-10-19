@@ -334,7 +334,184 @@
   ],
   "anisotropy": 1.1457
  },
- "thalamic_containment": {
+ "regional_refinement_4x4_column": {
+  "thalamus left": {
+   "matrix": [
+    [
+     0.986839856,
+     0.053678321,
+     -0.006671905,
+     -0.08637418
+    ],
+    [
+     -0.054051084,
+     0.973870782,
+     -0.159477138,
+     0.036511933
+    ],
+    [
+     -0.002087269,
+     0.159602992,
+     0.975346762,
+     -0.258912359
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "scale": 0.9883
+  },
+  "thalamus right": {
+   "matrix": [
+    [
+     0.979462519,
+     -0.084589917,
+     0.015628929,
+     0.137053005
+    ],
+    [
+     0.086007589,
+     0.966229182,
+     -0.16046933,
+     0.049441317
+    ],
+    [
+     -0.001553081,
+     0.161221143,
+     0.969923643,
+     -0.261716494
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "scale": 0.9832
+  },
+  "thalamus both": {
+   "matrix": [
+    [
+     1.011079552,
+     -0.000172942,
+     0.000354336,
+     0.000363303
+    ],
+    [
+     0.00023362,
+     0.994724146,
+     -0.181123809,
+     0.001434938
+    ],
+    [
+     -0.000317624,
+     0.181123878,
+     0.994724111,
+     -0.29327876
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "scale": 1.0111
+  },
+  "midbrain both": {
+   "matrix": [
+    [
+     1.085979989,
+     0.006120331,
+     -0.028241852,
+     -0.010372544
+    ],
+    [
+     -0.002699507,
+     1.078562794,
+     0.12993309,
+     -0.126640262
+    ],
+    [
+     0.02877105,
+     -0.129816936,
+     1.078196358,
+     0.217164648
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "scale": 1.0864
+  },
+  "cerebellum both": {
+   "matrix": [
+    [
+     1.00941333,
+     -0.000172005,
+     0.001166504,
+     0.000420019
+    ],
+    [
+     0.000261406,
+     1.006411017,
+     -0.077803966,
+     -0.011216714
+    ],
+    [
+     -0.001149776,
+     0.077804215,
+     1.006410375,
+     -0.129365949
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "scale": 1.0094
+  }
+ },
+ "part_regions": {
+  "left anterior-thalamic-nuclei": "thalamus left",
+  "right anterior-thalamic-nuclei": "thalamus right",
+  "left lateral-dorsal-nucleus": "thalamus left",
+  "right lateral-dorsal-nucleus": "thalamus right",
+  "left mediodorsal-nucleus": "thalamus left",
+  "right mediodorsal-nucleus": "thalamus right",
+  "left lateral-posterior-nucleus": "thalamus left",
+  "right lateral-posterior-nucleus": "thalamus right",
+  "left pulvinar": "thalamus left",
+  "right pulvinar": "thalamus right",
+  "left ventral-anterior-nucleus": "thalamus left",
+  "right ventral-anterior-nucleus": "thalamus right",
+  "left ventral-lateral-nucleus": "thalamus left",
+  "right ventral-lateral-nucleus": "thalamus right",
+  "left ventral-posterior-lateral-nucleus": "thalamus left",
+  "right ventral-posterior-lateral-nucleus": "thalamus right",
+  "left ventral-posterior-medial-nucleus": "thalamus left",
+  "right ventral-posterior-medial-nucleus": "thalamus right",
+  "left centromedian-nucleus": "thalamus left",
+  "right centromedian-nucleus": "thalamus right",
+  "left parafascicular-nucleus": "thalamus left",
+  "right parafascicular-nucleus": "thalamus right",
+  "left substantia-nigra": "midbrain both",
+  "right substantia-nigra": "midbrain both",
+  "left subthalamic-nucleus": "midbrain both",
+  "right subthalamic-nucleus": "midbrain both",
+  "left cerebellar-deep-nuclei": "cerebellum both",
+  "right cerebellar-deep-nuclei": "cerebellum both"
+ },
+ "containment_after_refinement": {
   "left anterior-thalamic-nuclei": {
    "outside_fraction": 0.061,
    "max_protrusion_mm": 1.6
@@ -438,6 +615,68 @@
   "right cerebellar-deep-nuclei": {
    "outside_fraction": 0.0,
    "max_protrusion_mm": 0.0
+  }
+ },
+ "subthalamic_zona_incerta_check": {
+  "left subthalamic-nucleus": {
+   "midbrain": {
+    "inside_thalamus": 0.0,
+    "inside_midbrain": 0.454
+   },
+   "thalamus": {
+    "inside_thalamus": 0.0,
+    "inside_midbrain": 1.0
+   },
+   "midpoint": {
+    "inside_thalamus": 0.0,
+    "inside_midbrain": 0.809
+   },
+   "chosen": "midbrain"
+  },
+  "right subthalamic-nucleus": {
+   "midbrain": {
+    "inside_thalamus": 0.008,
+    "inside_midbrain": 0.435
+   },
+   "thalamus": {
+    "inside_thalamus": 0.0,
+    "inside_midbrain": 1.0
+   },
+   "midpoint": {
+    "inside_thalamus": 0.0,
+    "inside_midbrain": 0.8
+   },
+   "chosen": "midbrain"
+  },
+  "left zona-incerta": {
+   "midbrain": {
+    "inside_thalamus": 0.708,
+    "inside_midbrain": 0.08
+   },
+   "thalamus": {
+    "inside_thalamus": 0.672,
+    "inside_midbrain": 0.156
+   },
+   "midpoint": {
+    "inside_thalamus": 0.731,
+    "inside_midbrain": 0.108
+   },
+   "chosen": null
+  },
+  "right zona-incerta": {
+   "midbrain": {
+    "inside_thalamus": 0.779,
+    "inside_midbrain": 0.075
+   },
+   "thalamus": {
+    "inside_thalamus": 0.675,
+    "inside_midbrain": 0.155
+   },
+   "midpoint": {
+    "inside_thalamus": 0.764,
+    "inside_midbrain": 0.105
+   },
+   "chosen": null
   }
  },
  "olfactory_za_vs_allen_median_mm": {

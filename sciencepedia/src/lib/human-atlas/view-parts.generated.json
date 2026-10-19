@@ -846,7 +846,6 @@
       "AHRA-left-ventral-lateral-nucleus-of-thalamus",
       "AHRA-left-ventral-posterior-lateral-nucleus-of-thalamus",
       "AHRA-left-ventral-posterior-medial-nucleus-of-thalamus",
-      "AHRA-left-zona-incerta",
       "AHRA-right-anterior-nuclear-complex-of-thalamus",
       "AHRA-right-centromedian-nucleus-of-thalamus",
       "AHRA-right-cerebellar-deep-nuclei",
@@ -861,7 +860,6 @@
       "AHRA-right-ventral-lateral-nucleus-of-thalamus",
       "AHRA-right-ventral-posterior-lateral-nucleus-of-thalamus",
       "AHRA-right-ventral-posterior-medial-nucleus-of-thalamus",
-      "AHRA-right-zona-incerta",
       "FJ1283",
       "FJ1288",
       "FJ1290",
@@ -15050,7 +15048,6 @@
       "AHRA-left-ventral-lateral-nucleus-of-thalamus",
       "AHRA-left-ventral-posterior-lateral-nucleus-of-thalamus",
       "AHRA-left-ventral-posterior-medial-nucleus-of-thalamus",
-      "AHRA-left-zona-incerta",
       "AHRA-right-anterior-nuclear-complex-of-thalamus",
       "AHRA-right-centromedian-nucleus-of-thalamus",
       "AHRA-right-cerebellar-deep-nuclei",
@@ -15065,7 +15062,6 @@
       "AHRA-right-ventral-lateral-nucleus-of-thalamus",
       "AHRA-right-ventral-posterior-lateral-nucleus-of-thalamus",
       "AHRA-right-ventral-posterior-medial-nucleus-of-thalamus",
-      "AHRA-right-zona-incerta",
       "FJ1283",
       "FJ1288",
       "FJ1290",
@@ -16523,10 +16519,8 @@
     "focus": [
       "AHRA-left-substantia-nigra",
       "AHRA-left-subthalamic-nucleus",
-      "AHRA-left-zona-incerta",
       "AHRA-right-substantia-nigra",
-      "AHRA-right-subthalamic-nucleus",
-      "AHRA-right-zona-incerta"
+      "AHRA-right-subthalamic-nucleus"
     ],
     "hide": [],
     "context": [
@@ -17968,35 +17962,6 @@
     "focus": [
       "AHRA-left-subthalamic-nucleus",
       "AHRA-right-subthalamic-nucleus"
-    ],
-    "hide": [],
-    "context": [
-      "FJ1735",
-      "FJ1736",
-      "FJ1761",
-      "FJ1762",
-      "FJ1763",
-      "FJ1769",
-      "FJ1770",
-      "FJ1774",
-      "FJ1775",
-      "FJ1779",
-      "FJ1782",
-      "FJ1809",
-      "FJ1810",
-      "FJ1811",
-      "FJ1817",
-      "FJ1821",
-      "FJ1822",
-      "FJ1826",
-      "FJ1827",
-      "FJ1831"
-    ]
-  },
-  "zona-incerta": {
-    "focus": [
-      "AHRA-left-zona-incerta",
-      "AHRA-right-zona-incerta"
     ],
     "hide": [],
     "context": [

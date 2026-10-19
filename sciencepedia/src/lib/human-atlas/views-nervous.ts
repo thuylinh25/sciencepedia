@@ -123,7 +123,6 @@ const A_CENTROMEDIAN_NUCLEUS = n(/^(left|right) centromedian nucleus of thalamus
 const A_PARAFASCICULAR_NUCLEUS = n(/^(left|right) parafascicular nucleus of thalamus$/i);
 const A_SUBSTANTIA_NIGRA = n(/^(left|right) substantia nigra$/i);
 const A_SUBTHALAMIC_NUCLEUS = n(/^(left|right) subthalamic nucleus$/i);
-const A_ZONA_INCERTA = n(/^(left|right) zona incerta$/i);
 const A_CEREBELLAR_DEEP_NUCLEI = n(/^(left|right) cerebellar deep nuclei$/i);
 const THALAMIC_NUCLEI = [A_ANTERIOR_THALAMIC_NUCLEI, A_LATERAL_DORSAL_NUCLEUS, A_MEDIODORSAL_NUCLEUS, A_LATERAL_POSTERIOR_NUCLEUS, A_PULVINAR, A_VENTRAL_ANTERIOR_NUCLEUS, A_VENTRAL_LATERAL_NUCLEUS, A_VENTRAL_POSTERIOR_LATERAL_NUCLEUS, A_VENTRAL_POSTERIOR_MEDIAL_NUCLEUS, A_CENTROMEDIAN_NUCLEUS, A_PARAFASCICULAR_NUCLEUS];
 const EPITHALAMUS = n(/^habenula$|stria medullaris of thalamus$/i);
@@ -263,8 +262,13 @@ export const NERVOUS_VIEWS: readonly AtlasViewDef[] = [
       en: "Approximate positions: drawn on an average template brain and registered to the model's brain. Not every nucleus is included; missing are, among others, the midline nuclei (including the reuniens), the reticular nucleus and most intralaminar nuclei",
     },
   }),
-  group("nervous-subthalamic-nigral", "Chất đen, nhân dưới đồi thị và vùng bất định", "Substantia nigra, subthalamic nucleus and zona incerta", "front", [A_SUBSTANTIA_NIGRA, A_SUBTHALAMIC_NUCLEUS, A_ZONA_INCERTA], [THALAMUS, BRAINSTEM, BASAL_NUCLEI], ["chất đen", "substantia nigra", "nhân dưới đồi thị", "hạch nền", "basal ganglia"], {
-    partial: { vi: "Vị trí gần đúng: vẽ trên não mẫu trung bình rồi căn về não của mô hình", en: "Approximate positions: drawn on an average template brain and registered to the model's brain" },
+  // Vùng bất định của Allen KHÔNG nhập: mọi phép căn đều để 67–78% đỉnh lọt vào đồi thị đục (đo
+  // 2026-10-19, registration-allen-hra.json) — trống hơn sai.
+  group("nervous-subthalamic-nigral", "Chất đen và nhân dưới đồi thị", "Substantia nigra and subthalamic nucleus", "front", [A_SUBSTANTIA_NIGRA, A_SUBTHALAMIC_NUCLEUS], [THALAMUS, BRAINSTEM, BASAL_NUCLEI], ["chất đen", "substantia nigra", "nhân dưới đồi thị", "hạch nền", "basal ganglia"], {
+    partial: {
+      vi: "Vị trí gần đúng: vẽ trên não mẫu trung bình rồi căn về não của mô hình; thiếu vùng bất định",
+      en: "Approximate positions: drawn on an average template brain and registered to the model's brain; the zona incerta is missing",
+    },
   }),
   group("nervous-cerebellar-nuclei", "Các nhân sâu tiểu não", "Deep cerebellar nuclei", "back", [A_CEREBELLAR_DEEP_NUCLEI], [CEREBELLUM, BRAINSTEM], ["nhân răng", "dentate nucleus", "nhân nút", "nhân cầu", "nhân mái", "nhân sâu tiểu não"], {
     partial: {
@@ -362,7 +366,6 @@ export const NERVOUS_VIEWS: readonly AtlasViewDef[] = [
   { ...structure("parafascicular-nucleus", "Nhân cạnh bó đồi thị", "Parafascicular nucleus of thalamus", "three-quarter", A_PARAFASCICULAR_NUCLEUS), context: [THALAMUS] },
   { ...structure("substantia-nigra", "Chất đen", "Substantia nigra", "front", A_SUBSTANTIA_NIGRA, ["substantia nigra", "Parkinson"]), context: [BRAINSTEM] },
   { ...structure("subthalamic-nucleus", "Nhân dưới đồi thị", "Subthalamic nucleus", "front", A_SUBTHALAMIC_NUCLEUS, ["subthalamic nucleus", "STN", "nhân Luys", "subthalamus"]), context: [THALAMUS, BRAINSTEM] },
-  { ...structure("zona-incerta", "Vùng bất định", "Zona incerta", "front", A_ZONA_INCERTA, ["zona incerta"]), context: [THALAMUS, BRAINSTEM] },
   { ...structure("cerebellar-deep-nuclei", "Các nhân sâu tiểu não", "Deep cerebellar nuclei", "back", A_CEREBELLAR_DEEP_NUCLEI, ["nhân răng", "dentate nucleus", "nhân nút", "nhân cầu", "nhân mái", "nhân sâu tiểu não"]), context: [CEREBELLUM] },
   // Nhân nằm trong thân não: thân não mờ làm bối cảnh, không thì chỉ thấy các khối lơ lửng.
   { ...structure("cranial-nerve-nuclei", "Nhân các dây thần kinh sọ (chưa gồm nhân dây sinh ba)", "Cranial nerve nuclei (excluding trigeminal nuclei)", "back", CN_NUCLEI, ["nhân dây sọ", "cranial nerve nuclei", "Edinger–Westphal", "nhân mơ hồ"]), context: [BRAINSTEM] },

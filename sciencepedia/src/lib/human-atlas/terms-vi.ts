@@ -1824,7 +1824,6 @@ const WHOLE: Record<string, string> = {
   "parafascicular nucleus of thalamus": "nhân cạnh bó đồi thị",
   "substantia nigra": "chất đen",
   "subthalamic nucleus": "nhân dưới đồi thị",
-  "zona incerta": "vùng bất định",
   "cerebellar deep nuclei": "các nhân sâu tiểu não",
 };
 

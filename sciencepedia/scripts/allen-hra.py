@@ -342,7 +342,7 @@ def inside(points: np.ndarray, v: np.ndarray, f: np.ndarray) -> np.ndarray:
     return out
 
 
-parts_out, containment = [], {}
+parts_out, containment, part_regions, edge = [], {}, {}, {}
 for key, ids, name, paired in OUT_PARTS:
     for side in (["left", "right"] if paired else [None]):
         r = mesh(ids, side, step=1)
@@ -356,7 +356,30 @@ for key, ids, name, paired in OUT_PARTS:
         else:  # chất đen, nhân dưới đồi thị, vùng bất định: trung não + gian não dưới
             region = ("midbrain", None)
         T, (cv, cf) = REGIONS[region]
+        part_regions[f"{side or 'mid'} {key}"] = f"{region[0]} {region[1] or 'both'}"
         vb = tf(T, apply(M, v))
+        if key in ("subthalamic-nucleus", "zona-incerta"):
+            # Gian não dưới: kẹp giữa đồi thị và trung não, không có vỏ chứa riêng. Thử phép của trung
+            # não, của đồi thị và trung bình hai phép; chọn phép KHÔNG lọt vào đồi thị đục (≤ 5% đỉnh)
+            # và chìm trong trung não ít nhất. Không phép nào đạt → bỏ (trống hơn sai). Đo 2026-10-19:
+            # chỉ dùng phép trung não thì vùng bất định lọt 71–78% vào đồi thị.
+            th = union_mesh([bp_mesh(f"{s} thalamus") for s in ("left", "right")])
+            mb = REGIONS[("midbrain", None)][1]
+            Tm, Tt = REGIONS[("midbrain", None)][0], REGIONS[("thalamus", None)][0]
+            tries = {}
+            for label, Tc in (("midbrain", Tm), ("thalamus", Tt), ("midpoint", (Tm + Tt) / 2)):
+                pts = tf(Tc, apply(M, v))
+                tries[label] = (float(inside(pts, *th).mean()), float(inside(pts, *mb).mean()), pts)
+            ok_tries = {k: x for k, x in tries.items() if x[0] <= 0.05}
+            edge[f"{side} {key}"] = {k: {"inside_thalamus": round(x[0], 3), "inside_midbrain": round(x[1], 3)} for k, x in tries.items()}
+            if not ok_tries:
+                edge[f"{side} {key}"]["chosen"] = None
+                part_regions.pop(f"{side or 'mid'} {key}")
+                continue
+            choice = min(ok_tries, key=lambda k: ok_tries[k][1])
+            edge[f"{side} {key}"]["chosen"] = choice
+            part_regions[f"{side or 'mid'} {key}"] = {"midbrain": "midbrain both", "thalamus": "thalamus both", "midpoint": "mean(midbrain both, thalamus both)"}[choice]
+            vb = ok_tries[choice][2]
         parts_out.append({"key": key, "name": name, "side": side, "positions": vb.round(6).ravel().tolist(), "indices": f.ravel().tolist()})
         # Kiểm "nằm trong" ở nơi có vỏ chứa thật: nhân đồi thị trong đồi thị + thể gối, chất đen
         # trong trung não + cuống, nhân sâu trong tiểu não. Nhân dưới đồi thị, vùng bất định nằm
@@ -382,6 +405,7 @@ for side in ("left", "right"):
     if a and z is not None:
         olf[side] = round(float(np.median(cKDTree(apply(M, a[0])).query(z[0])[0]) * 1000), 2)
 print("nét khứu giác ZA cách hành+dải khứu Allen (trung vị, mm):", olf)
+print("nhân dưới đồi thị / vùng bất định:", edge)
 
 report = {
     "source": "Allen Human Reference Atlas - 3D, 2020 (annotation.nii.gz, ICBM 2009b NLin Sym, RAS, mm)",
@@ -395,7 +419,19 @@ report = {
     "leave_one_out_median_mm": round(float(np.median(loo)), 2),
     "held_out_median_mm": round(float(np.median(res[~fit_mask])), 2),
     "checks": checks,
-    "thalamic_containment": containment,
+    # Phép áp cho từng phần = regional[vùng] ∘ affine toàn não (nhân với toạ độ đã qua matrix_4x3).
+    "regional_refinement_4x4_column": {
+        f"{k} {s or 'both'}": {
+            "matrix": T.round(9).tolist(),
+            "scale": round(float(np.cbrt(np.linalg.det(T[:3, :3]))), 4),
+        }
+        for (k, s), (T, _) in REGIONS.items()
+    },
+    "part_regions": part_regions,
+    # Tỉ lệ đỉnh ngoài vỏ chứa SAU tinh chỉnh — gần như do cách dựng (ICP khớp đúng vỏ ấy), không
+    # phải số đo độ chính xác. Số độc lập: held_out_median_mm và olfactory_za_vs_allen_median_mm.
+    "containment_after_refinement": containment,
+    "subthalamic_zona_incerta_check": edge,
     "olfactory_za_vs_allen_median_mm": olf,
 }
 REG_OUT.write_text(json.dumps(report, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")

@@ -390,7 +390,6 @@ export const GROUP_COLORS: Record<string, string> = {
   "nervous.thalamus_intralaminar": "#a39fd4",
   "nervous.substantia_nigra": "#5d4b54",
   "nervous.subthalamic": "#c08a66",
-  "nervous.zona_incerta": "#a8a49b",
   "nervous.cerebellar_nuclei": "#b06a78",
   "nervous.meninges": "#b5acae",
   "nervous.nerve": "#d9b25c",

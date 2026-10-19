@@ -13,7 +13,7 @@ import { BUCKET, missingEnv, put } from "./r2-client";
 /**
  * Allen Human Reference Atlas – 3D, 2020 → phần bổ sung của Bản đồ cơ thể người:
  * các nhân sâu BodyParts3D 4.0 không có (nhân đồi thị, chất đen, nhân dưới đồi
- * thị, vùng bất định, nhân sâu tiểu não).
+ * thị, nhân sâu tiểu não). Vùng bất định bị bỏ vì căn không đạt — xem allen-hra.py.
  *
  *   # 1. Xuất lưới BodyParts3D làm mốc căn toạ độ
  *   npx tsx scripts/import-allen-hra.ts --export-bp3d
@@ -33,9 +33,10 @@ import { BUCKET, missingEnv, put } from "./r2-client";
  *
  * Atlas ở không gian MẪU (trung bình 152 người), BodyParts3D là MỘT người: không có phép
  * dời cứng nào khớp. Affine 12 tham số fit từ tâm bề mặt (theo diện tích) của các cặp cấu
- * trúc có ở cả hai bộ — nhân sâu và hồi/thân não/tiểu não để mốc trải rộng — rồi kiểm bằng
- * cấu trúc giữ ngoài và tỉ lệ đỉnh nhân đồi thị nằm trong đồi thị BodyParts3D. Chi tiết và
- * số đo: `data/anatomy/registration-allen-hra.json` (sinh bởi allen-hra.py).
+ * trúc có ở cả hai bộ — nhân sâu và hồi/thân não/tiểu não để mốc trải rộng; Allen chỉ vẽ
+ * bán cầu trái nên bán cầu phải là bản lật gương (mẫu đối xứng). Affine chưa đủ cho nhân nhỏ
+ * → ICP đồng dạng theo vùng chứa (đồi thị / trung não / tiểu não). Ma trận từng vùng, phần
+ * nào dùng vùng nào và số đo: `data/anatomy/registration-allen-hra.json` (sinh bởi allen-hra.py).
  */
 
 const ROOT = path.resolve(__dirname, "..");
@@ -87,7 +88,6 @@ const GROUP: Record<string, string> = {
   "parafascicular-nucleus": "nervous.thalamus_intralaminar",
   "substantia-nigra": "nervous.substantia_nigra",
   "subthalamic-nucleus": "nervous.subthalamic",
-  "zona-incerta": "nervous.zona_incerta",
   "cerebellar-deep-nuclei": "nervous.cerebellar_nuclei",
 };
 
@@ -104,9 +104,12 @@ Structure ontology: Ding, S.L., Royall, J.J., [...], Lein, E.S. Comprehensive ce
 atlas of the adult human brain. Journal of Comparative Neurology 524:16, 3127-3481 (2016),
 DOI 10.1002/cne.24080.
 
-Changes by Sciencepedia: selected labels converted to surface meshes (marching cubes, Taubin
-smoothing), split into left/right at the midline, and registered from ICBM 2009b (MNI) space to
-the BodyParts3D 4.0 frame by a landmark-fitted affine transform (see registration-allen-hra.json).
+Changes by Sciencepedia: the atlas labels only the left hemisphere; the right hemisphere was
+created by mirroring the left across the midline of the symmetric ICBM 2009b template. Selected
+labels were converted to surface meshes (marching cubes, Taubin smoothing) and registered from
+ICBM 2009b (MNI) space to the BodyParts3D 4.0 frame by a landmark-fitted affine transform followed
+by a per-region similarity (ICP) refinement to the thalamus, midbrain and cerebellum of the model
+(transforms and measurements in registration-allen-hra.json). Positions are approximate.
 `;
 
 async function pack(write: boolean, upload: boolean) {

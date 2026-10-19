@@ -626,13 +626,13 @@ for (const [id, vi, en] of [
   ["centromedian-nucleus", "Nhân trung tâm giữa đồi thị", "Centromedian nucleus of thalamus"],
   ["parafascicular-nucleus", "Nhân cạnh bó đồi thị", "Parafascicular nucleus of thalamus"],
 ]) N(id, "nervous-thalamic-nuclei", "E", "structure", vi, en, { dir: "three-quarter", zoom: "detail", mode: "layered", obj: [`Định vị ${vi.toLowerCase()} trong đồi thị`] });
-N("nervous-subthalamic-nigral", "brainstem", "B", "group", "Chất đen, nhân dưới đồi thị và vùng bất định", "Substantia nigra, subthalamic nucleus and zona incerta", {
+N("nervous-subthalamic-nigral", "brainstem", "B", "group", "Chất đen và nhân dưới đồi thị", "Substantia nigra and subthalamic nucleus", {
   partial: true, dir: "front", zoom: "structure", mode: "layered", note: allenNote,
   obj: ["Định vị chất đen trong trung não và nhân dưới đồi thị ngay trên nó", "Liên hệ các nhân này với vòng hạch nền"],
 });
 N("substantia-nigra", "nervous-subthalamic-nigral", "B", "structure", "Chất đen", "Substantia nigra", { dir: "front", zoom: "detail", mode: "layered", obj: ["Định vị chất đen giữa cuống đại não và chỏm trung não"] });
 N("subthalamic-nucleus", "nervous-subthalamic-nigral", "B", "structure", "Nhân dưới đồi thị", "Subthalamic nucleus", { dir: "front", zoom: "detail", mode: "layered", obj: ["Định vị nhân dưới đồi thị dưới đồi thị, trên chất đen"] });
-N("zona-incerta", "nervous-subthalamic-nigral", "B", "structure", "Vùng bất định", "Zona incerta", { dir: "front", zoom: "detail", mode: "layered", obj: ["Định vị vùng bất định giữa đồi thị và nhân dưới đồi thị"] });
+N("zona-incerta", "nervous-subthalamic-nigral", "B", "structure", "Vùng bất định", "Zona incerta", { status: "missing", note: "Allen có nhãn nhưng mọi phép căn để 67–78% đỉnh lọt vào đồi thị đục — không nhập.", obj: ["Định vị vùng bất định giữa đồi thị và nhân dưới đồi thị"] });
 N("nervous-cerebellar-nuclei", "cerebellum", "B", "group", "Các nhân sâu tiểu não", "Deep cerebellar nuclei", {
   partial: true, dir: "back", zoom: "structure", mode: "layered", note: allenNote + " Bốn nhân vẽ gộp một khối.",
   obj: ["Định vị nhóm nhân sâu trong chất trắng tiểu não"],
