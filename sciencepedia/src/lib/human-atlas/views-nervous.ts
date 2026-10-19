@@ -34,7 +34,8 @@ const PITUITARY: PartRule = { fma: ["FMA13889"] };
 const n = (name: RegExp, exclude?: RegExp): PartRule => ({ systems: ["nervous"], name, ...(exclude ? { exclude } : {}) });
 
 // ------------------------------------------------------------------ não
-const CORTEX = n(/gyrus$|lobule$|occipital lobe$|^(left|right) insula$/i);
+// Loại tiểu thuỳ TIỂU NÃO (Z-Anatomy, tên cũng tận cùng "lobule").
+const CORTEX = n(/gyrus$|lobule$|occipital lobe$|^(left|right) insula$/i, /quadrangular|semilunar|gracile lobule|biventral|central lobule/i);
 const CEREBRAL_WHITE = n(
   /white matter of (left|right) cerebral hemisphere$|corpus callosum$|internal capsule$|(anterior|posterior) commissure$|fornix of forebrain$|stria terminalis$|lamina terminalis$/i,
 );
@@ -47,7 +48,35 @@ const DIENCEPHALON = n(
   /nucle|pulvinar/i,
 );
 const BRAINSTEM = n(/^midbrain$|peduncle of midbrain$|colliculus$|brachium of (superior|inferior) colliculus$|^pons$|^medulla oblongata$|^interpeduncular fossa$/i);
-const CEREBELLUM = n(/^cerebellum$/i);
+/*
+ * Tiểu não = tiểu thuỳ Z-Anatomy (2026-10-19), THAY hai nửa tiểu não BodyParts3D (manifest `replaces`).
+ * Mỗi tiểu thuỳ là KHỐI ĐẶC (đo: lấp 81% lòng tiểu não BP3D, phần hụt là khe sát mặt; 15% thể tích hai
+ * tiểu thuỳ chồng nhau) — không tách vỏ / chất trắng, nên nhân sâu Allen nằm "trong" tiểu thuỳ như từng
+ * nằm trong khối BP3D. Chia ba thuỳ → tiểu thuỳ; thuỳ nhộng / bán cầu là nhóm = hợp tiểu thuỳ.
+ */
+const CB_CEREBELLAR_LINGULA = n(/^lingula of cerebellum$/i);
+const CB_CEREBELLAR_CENTRAL_LOBULE = n(/^central lobule$/i);
+const CB_CEREBELLAR_CENTRAL_LOBULE_WING = n(/^(left |right )?wing of central lobule$/i);
+const CB_CEREBELLAR_CULMEN = n(/^culmen$/i);
+const CB_ANTERIOR_QUADRANGULAR_LOBULE = n(/^(left |right )?anterior quadrangular lobule$/i);
+const CB_CEREBELLAR_DECLIVE = n(/^declive$/i);
+const CB_POSTERIOR_QUADRANGULAR_LOBULE = n(/^(left |right )?posterior quadrangular lobule$/i);
+const CB_CEREBELLAR_FOLIUM = n(/^folium of vermis$/i);
+const CB_SUPERIOR_SEMILUNAR_LOBULE = n(/^(left |right )?superior semilunar lobule$/i);
+const CB_CEREBELLAR_TUBER = n(/^tuber of vermis$/i);
+const CB_INFERIOR_SEMILUNAR_LOBULE = n(/^(left |right )?inferior semilunar lobule$/i);
+const CB_GRACILE_LOBULE = n(/^(left |right )?gracile lobule$/i);
+const CB_CEREBELLAR_PYRAMIS = n(/^pyramis of vermis$/i);
+const CB_BIVENTRAL_LOBULE = n(/^(left |right )?biventral lobule$/i);
+const CB_CEREBELLAR_UVULA = n(/^uvula of vermis$/i);
+const CB_CEREBELLAR_TONSIL = n(/^(left |right )?tonsil of cerebellum$/i);
+const CB_CEREBELLAR_NODULE = n(/^nodule of vermis$/i);
+const CB_FLOCCULUS = n(/^(left |right )?(flocculus|peduncle of flocculus)$/i);
+const CB_ANTERIOR_LOBE = [CB_CEREBELLAR_LINGULA, CB_CEREBELLAR_CENTRAL_LOBULE, CB_CEREBELLAR_CENTRAL_LOBULE_WING, CB_CEREBELLAR_CULMEN, CB_ANTERIOR_QUADRANGULAR_LOBULE];
+const CB_POSTERIOR_LOBE = [CB_CEREBELLAR_DECLIVE, CB_POSTERIOR_QUADRANGULAR_LOBULE, CB_CEREBELLAR_FOLIUM, CB_SUPERIOR_SEMILUNAR_LOBULE, CB_CEREBELLAR_TUBER, CB_INFERIOR_SEMILUNAR_LOBULE, CB_GRACILE_LOBULE, CB_CEREBELLAR_PYRAMIS, CB_BIVENTRAL_LOBULE, CB_CEREBELLAR_UVULA, CB_CEREBELLAR_TONSIL];
+const CB_FLOCCULONODULAR = [CB_CEREBELLAR_NODULE, CB_FLOCCULUS];
+const CEREBELLUM = n(/^(lingula of cerebellum|central lobule|(left |right )?wing of central lobule|culmen|(left |right )?anterior quadrangular lobule|declive|(left |right )?posterior quadrangular lobule|folium of vermis|(left |right )?superior semilunar lobule|tuber of vermis|(left |right )?inferior semilunar lobule|(left |right )?gracile lobule|pyramis of vermis|(left |right )?biventral lobule|uvula of vermis|(left |right )?tonsil of cerebellum|nodule of vermis|(left |right )?(flocculus|peduncle of flocculus))$/i);
+const PYRAMID_OLIVE = n(/pyramid of medulla oblongata$|^(left |right )?olive$/i);
 const SUPERIOR_CEREBELLAR_PEDUNCLE = n(/superior cerebellar peduncle$/i);
 const TENTORIUM = n(/^tentorium cerebelli$/i);
 // Z-Anatomy (mốc M2, 2026-10-19): liềm đại não; nhân dây sọ và nhân đỏ nằm TRONG
@@ -388,6 +417,18 @@ export const NERVOUS_VIEWS: readonly AtlasViewDef[] = [
     },
   }),
   group("nervous-brainstem-cerebellum", "Thân não và tiểu não", "Brainstem and cerebellum", "side", [BRAINSTEM, CN_NUCLEI, RED_NUCLEUS, CEREBELLUM], [DIENCEPHALON, SPINAL_CORD, TENTORIUM], ["hành não", "cầu não", "trung não", "cerebellum"]),
+  group("cerebellar-vermis", "Nhộng tiểu não", "Cerebellar vermis", "back", [CB_CEREBELLAR_LINGULA, CB_CEREBELLAR_CENTRAL_LOBULE, CB_CEREBELLAR_CULMEN, CB_CEREBELLAR_DECLIVE, CB_CEREBELLAR_FOLIUM, CB_CEREBELLAR_TUBER, CB_CEREBELLAR_PYRAMIS, CB_CEREBELLAR_UVULA, CB_CEREBELLAR_NODULE], [CEREBELLUM, BRAINSTEM], ["nhộng", "thuỳ nhộng", "vermis"], {
+    partial: {
+      vi: "Các phần nhộng là khối đặc, bề mặt trơn: không thể hiện các lá tiểu não, không tách vỏ tiểu não với chất trắng. Ranh giới giữa các phần chỉ gần đúng.",
+      en: "The parts of the vermis are modelled as solid blocks with a smooth surface: the folia are not shown and the cortex is not separated from the white matter. Boundaries between the parts are approximate.",
+    },
+  }),
+  group("cerebellar-hemisphere-lobules", "Các tiểu thuỳ bán cầu tiểu não", "Lobules of the cerebellar hemispheres", "back", [CB_CEREBELLAR_CENTRAL_LOBULE_WING, CB_ANTERIOR_QUADRANGULAR_LOBULE, CB_POSTERIOR_QUADRANGULAR_LOBULE, CB_SUPERIOR_SEMILUNAR_LOBULE, CB_INFERIOR_SEMILUNAR_LOBULE, CB_GRACILE_LOBULE, CB_BIVENTRAL_LOBULE, CB_CEREBELLAR_TONSIL], [CEREBELLUM, BRAINSTEM], ["bán cầu tiểu não", "cerebellar hemisphere", "hạnh nhân tiểu não", "tonsil"], {
+    partial: {
+      vi: "Các tiểu thuỳ là khối đặc, bề mặt trơn: không thể hiện các lá tiểu não, không tách vỏ tiểu não với chất trắng. Ranh giới giữa các tiểu thuỳ chỉ gần đúng. Nhung được xếp vào thuỳ nhung – cục.",
+      en: "The lobules are modelled as solid blocks with a smooth surface: the folia are not shown and the cortex is not separated from the white matter. Boundaries between lobules are approximate. The flocculus is listed under the flocculonodular lobe.",
+    },
+  }),
   group("nervous-ventricles", "Hệ não thất", "Ventricular system", "three-quarter", [VENTRICLES], [CEREBRAL_WHITE, BRAINSTEM, CEREBELLUM], ["não thất", "ventricle", "dịch não tuỷ", "cerebrospinal fluid"]),
   group("nervous-cranial-nerves", "Dây thần kinh sọ", "Cranial nerves", "three-quarter", CRANIAL, [BRAINSTEM, SKULL], ["dây sọ", "cranial nerve"], {
     partial: {
@@ -490,7 +531,35 @@ export const NERVOUS_VIEWS: readonly AtlasViewDef[] = [
   structure("midbrain", "Trung não", "Midbrain", "side", MIDBRAIN, ["trung não", "midbrain", "gò trên", "gò dưới"]),
   structure("pons", "Cầu não", "Pons", "side", PONS, ["cầu não", "pons"]),
   structure("medulla-oblongata", "Hành não", "Medulla oblongata", "front", MEDULLA, ["hành não", "medulla"]),
-  structure("cerebellum", "Tiểu não", "Cerebellum", "side", CEREBELLUM),
+  {
+    ...structure("cerebellum", "Tiểu não", "Cerebellum", "side", CEREBELLUM),
+    partial: {
+      vi: "Tiểu não ở đây ghép từ các tiểu thuỳ dạng khối đặc, bề mặt trơn: không thể hiện các lá tiểu não, không tách vỏ tiểu não với chất trắng (cây đời), và chưa có cuống tiểu não giữa và cuống tiểu não dưới. Ranh giới giữa các tiểu thuỳ chỉ gần đúng.",
+      en: "This cerebellum is assembled from lobules modelled as solid blocks with a smooth surface: the folia are not shown, the cerebellar cortex is not separated from the white matter (arbor vitae), and the middle and inferior cerebellar peduncles are missing. Boundaries between lobules are approximate.",
+    },
+  },
+  { ...structure("cerebellum-anterior-lobe", "Thuỳ trước tiểu não", "Anterior lobe of cerebellum", "superior", CEREBELLUM), focus: CB_ANTERIOR_LOBE },
+  { ...structure("cerebellum-posterior-lobe", "Thuỳ sau tiểu não", "Posterior lobe of cerebellum", "back", CEREBELLUM), focus: CB_POSTERIOR_LOBE },
+  { ...structure("flocculonodular-lobe", "Thuỳ nhung – cục", "Flocculonodular lobe", "front", CEREBELLUM), focus: CB_FLOCCULONODULAR },
+  { ...structure("cerebellar-lingula", "Lưỡi tiểu não", "Lingula of cerebellum", "back", CB_CEREBELLAR_LINGULA), context: [CEREBELLUM] },
+  { ...structure("cerebellar-central-lobule", "Tiểu thuỳ trung tâm", "Central lobule", "back", CB_CEREBELLAR_CENTRAL_LOBULE), context: [CEREBELLUM] },
+  { ...structure("cerebellar-central-lobule-wing", "Cánh tiểu thuỳ trung tâm", "Wing of central lobule", "superior", CB_CEREBELLAR_CENTRAL_LOBULE_WING), context: [CEREBELLUM] },
+  { ...structure("cerebellar-culmen", "Đỉnh nhộng", "Culmen", "superior", CB_CEREBELLAR_CULMEN), context: [CEREBELLUM] },
+  { ...structure("anterior-quadrangular-lobule", "Tiểu thuỳ bốn cạnh trước", "Anterior quadrangular lobule", "superior", CB_ANTERIOR_QUADRANGULAR_LOBULE), context: [CEREBELLUM] },
+  { ...structure("cerebellar-declive", "Dốc nhộng", "Declive", "back", CB_CEREBELLAR_DECLIVE), context: [CEREBELLUM] },
+  { ...structure("posterior-quadrangular-lobule", "Tiểu thuỳ bốn cạnh sau", "Posterior quadrangular lobule", "superior", CB_POSTERIOR_QUADRANGULAR_LOBULE), context: [CEREBELLUM] },
+  { ...structure("cerebellar-folium", "Lá nhộng", "Folium of vermis", "back", CB_CEREBELLAR_FOLIUM), context: [CEREBELLUM] },
+  { ...structure("superior-semilunar-lobule", "Tiểu thuỳ bán nguyệt trên", "Superior semilunar lobule", "back", CB_SUPERIOR_SEMILUNAR_LOBULE), context: [CEREBELLUM] },
+  { ...structure("cerebellar-tuber", "Củ nhộng", "Tuber of vermis", "back", CB_CEREBELLAR_TUBER), context: [CEREBELLUM] },
+  { ...structure("inferior-semilunar-lobule", "Tiểu thuỳ bán nguyệt dưới", "Inferior semilunar lobule", "back", CB_INFERIOR_SEMILUNAR_LOBULE), context: [CEREBELLUM] },
+  { ...structure("gracile-lobule", "Tiểu thuỳ thon", "Gracile lobule", "back", CB_GRACILE_LOBULE), context: [CEREBELLUM] },
+  { ...structure("cerebellar-pyramis", "Tháp nhộng", "Pyramis of vermis", "back", CB_CEREBELLAR_PYRAMIS), context: [CEREBELLUM] },
+  { ...structure("biventral-lobule", "Tiểu thuỳ hai bụng", "Biventral lobule", "back", CB_BIVENTRAL_LOBULE), context: [CEREBELLUM] },
+  { ...structure("cerebellar-uvula", "Lưỡi gà nhộng", "Uvula of vermis", "back", CB_CEREBELLAR_UVULA), context: [CEREBELLUM] },
+  { ...structure("cerebellar-tonsil", "Hạnh nhân tiểu não", "Tonsil of cerebellum", "back", CB_CEREBELLAR_TONSIL), context: [CEREBELLUM] },
+  { ...structure("cerebellar-nodule", "Cục nhộng", "Nodule of vermis", "front", CB_CEREBELLAR_NODULE), context: [CEREBELLUM] },
+  { ...structure("flocculus", "Nhung và cuống nhung", "Flocculus and its peduncle", "front", CB_FLOCCULUS), context: [CEREBELLUM] },
+  { ...structure("medulla-pyramid-olive", "Tháp hành và trám hành", "Pyramids and olives of the medulla oblongata", "front", PYRAMID_OLIVE, ["tháp hành", "trám hành", "pyramid", "olive"]), context: [MEDULLA] },
   // Nhân sâu (Allen), từng nhân hai bên. KHÔNG có cấu trúc gộp "các nhân đồi thị": nó nuốt 11 nhân
   // (bảng chỉ còn một hàng) — bảng của góc nhìn liệt kê thẳng từng nhân.
   { ...structure("anterior-thalamic-nuclei", "Phức hợp nhân trước đồi thị", "Anterior nuclear complex of thalamus", "three-quarter", A_ANTERIOR_THALAMIC_NUCLEI), context: [THALAMUS] },

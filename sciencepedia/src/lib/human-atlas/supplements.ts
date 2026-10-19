@@ -22,9 +22,12 @@ import neudorfer from "./supplements/neudorfer.json";
 type Supplement = {
   source: string;
   license: string;
+  /** Mảnh BodyParts3D mà khối này THAY bằng mảnh mang mã khác (tiểu não → các tiểu thuỳ Z-Anatomy). */
+  replaces?: string[];
   chunk: Atlas["chunks"][number];
   parts: (Omit<Atlas["parts"][number], "chunk"> & { nameVi?: string })[];
-  concepts: Atlas["concepts"];
+  /** `partOf`: mã FMA của cha, cho khái niệm ngoài FMA (`ZA-…`) kế thừa nội dung Level 2. */
+  concepts: (Atlas["concepts"][number] & { partOf?: string })[];
 };
 
 /*
@@ -58,18 +61,29 @@ export const SUPPLEMENT_SOURCE: Record<string, string> = Object.fromEntries(
   SUPPLEMENTS.filter((s) => s.source !== "smooth-skin").flatMap((s) => s.parts.map((p) => [p.id, s.source])),
 );
 
-/** Nối phần bổ sung vào danh mục đã sửa phân loại. Không đổi mảnh gốc. */
-export function withSupplements(atlas: Atlas): Atlas {
+/** Khái niệm bổ sung (`ZA-…`) → mã FMA của cha, để bảng chi tiết kế thừa nội dung của cha. */
+export const SUPPLEMENT_PART_OF: Record<string, string> = Object.fromEntries(
+  SUPPLEMENTS.flatMap((s) => s.concepts.flatMap((c) => (c.partOf ? [[c.id, c.partOf]] : []))),
+);
+
+/**
+ * Nối phần bổ sung vào danh mục đã sửa phân loại. Mảnh gốc chỉ bị bỏ khi có bản thay: cùng mã (da
+ * chia nhỏ) hoặc nêu trong `replaces`. `keepReplaced`: giữ mảnh gốc bị `replaces` — cho việc dựng mốc
+ * căn atlas MNI (`import-mni-atlases.ts --export-bp3d` cần vỏ tiểu não BodyParts3D mà phép căn đã fit).
+ */
+export function withSupplements(atlas: Atlas, { keepReplaced = false }: { keepReplaced?: boolean } = {}): Atlas {
   const chunks = [...atlas.chunks];
-  // Mảnh bổ sung trùng mã với mảnh gốc là bản THAY THẾ (da đã chia nhỏ).
   const replaced = new Set(SUPPLEMENTS.flatMap((s) => s.parts.map((p) => p.id)));
-  const parts = atlas.parts.filter((p) => !replaced.has(p.id));
-  const concepts = atlas.concepts.map((c) => ({ ...c, elements: [...c.elements] }));
+  const removed = new Set(keepReplaced ? [] : SUPPLEMENTS.flatMap((s) => s.replaces ?? []));
+  const parts = atlas.parts.filter((p) => !replaced.has(p.id) && !removed.has(p.id));
+  const concepts = atlas.concepts
+    .map((c) => ({ ...c, elements: c.elements.filter((id) => !removed.has(id)) }))
+    .filter((c) => c.elements.length > 0);
   for (const s of SUPPLEMENTS) {
     const chunk = chunks.length;
     chunks.push(s.chunk);
     for (const { nameVi: _vi, ...p } of s.parts) parts.push({ ...p, chunk });
-    for (const c of s.concepts) {
+    for (const { partOf: _p, ...c } of s.concepts) {
       const existing = concepts.find((x) => x.id === c.id);
       if (existing) existing.elements.push(...c.elements);
       else concepts.push({ ...c, elements: [...c.elements] });

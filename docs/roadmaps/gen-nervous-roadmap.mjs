@@ -72,23 +72,46 @@ N("basal-nuclei", "nervous-cerebrum", "B", "structure", "Nhân đuôi, bèo sẫ
 N("cerebellum", "nervous-brain", "B", "group", "Tiểu não", "Cerebellum", {
   status: "live", existing: "cerebellum", dir: "back", zoom: "organ", mode: "layered", context: ["BRAINSTEM", "TENTORIUM"],
   obj: ["Xác định tiểu não sau thân não, dưới lều tiểu não", "Phân biệt thuỳ nhộng với hai bán cầu tiểu não"],
-  note: "Hiện là 1 mảnh BP3D (structure `cerebellum`). Tách tiểu thuỳ cần nhập ZA; khi đó id `cerebellum` chuyển thành group, giữ deep link.",
+  note: "Từ 2026-10-19: tiểu thuỳ Z-Anatomy THAY hai nửa tiểu não BP3D (manifest `replaces`); structure `cerebellum` → 3 thuỳ → 18 tiểu thuỳ. Khối đặc, không lá tiểu não, không chất trắng riêng.",
 });
-N("cerebellar-vermis", "cerebellum", "B", "structure", "Thuỳ nhộng tiểu não", "Cerebellar vermis", {
-  status: "import-za", dir: "back", zoom: "structure", mode: "layered", context: ["CEREBELLUM hemispheres"],
+N("cerebellar-vermis", "cerebellum", "B", "group", "", "", {
+  dir: "back", zoom: "structure", mode: "layered", context: ["CEREBELLUM hemispheres"],
   focus: ["Lingula of cerebellum", "Central lobule", "Culmen", "Declive", "Folium of vermis", "Tuber of vermis", "Pyramis of vermis", "Uvula of vermis", "Nodule of vermis"],
   obj: ["Xác định thuỳ nhộng ở đường giữa tiểu não"],
 });
-N("cerebellar-hemisphere-lobules", "cerebellum", "B", "structure", "Các tiểu thuỳ bán cầu tiểu não", "Lobules of the cerebellar hemisphere", {
-  status: "import-za", dir: "back", zoom: "structure", mode: "layered", context: ["vermis"],
+N("cerebellar-hemisphere-lobules", "cerebellum", "B", "group", "", "", {
+  dir: "back", zoom: "structure", mode: "layered", context: ["vermis"],
   focus: ["Anterior/Posterior quadrangular lobule", "Superior/Inferior semilunar lobule", "Gracile lobule", "Biventral lobule", "Tonsil of cerebellum", "Wing of central lobule"],
   obj: ["Nhận ra các tiểu thuỳ chính của bán cầu tiểu não", "Xác định hạnh nhân tiểu não gần lỗ lớn xương chẩm"],
 });
-N("flocculonodular-lobe", "cerebellum", "B", "structure", "Thuỳ nhung – nhộng (thể nhung, nhân nhộng)", "Flocculonodular lobe", {
-  status: "import-za", dir: [0, -0.4, -1], zoom: "detail", mode: "layered", context: ["CEREBELLUM", "BRAINSTEM"],
+N("flocculonodular-lobe", "cerebellum", "B", "structure", "", "", {
+  dir: "front", zoom: "detail", mode: "layered", context: ["CEREBELLUM", "BRAINSTEM"],
   focus: ["Flocculus", "Peduncle of flocculus", "Nodule of vermis"],
   obj: ["Xác định thuỳ nhung – nhộng ở mặt trước dưới tiểu não"],
 });
+for (const [id, parent, obj] of [
+  ["cerebellum-anterior-lobe", "cerebellum", "Xác định thuỳ trước tiểu não trước khe nguyên phát"],
+  ["cerebellum-posterior-lobe", "cerebellum", "Xác định thuỳ sau tiểu não giữa khe nguyên phát và khe sau bên"],
+  // Tiểu thuỳ: cha là thuỳ (cấu trúc lồng nhau), nhóm nhộng / bán cầu là hợp.
+  ["cerebellar-lingula", "cerebellum-anterior-lobe", "Định vị tiểu thuỳ trên tiểu não"],
+  ["cerebellar-central-lobule", "cerebellum-anterior-lobe", "Định vị tiểu thuỳ trên tiểu não"],
+  ["cerebellar-central-lobule-wing", "cerebellum-anterior-lobe", "Định vị tiểu thuỳ trên tiểu não"],
+  ["cerebellar-culmen", "cerebellum-anterior-lobe", "Định vị tiểu thuỳ trên tiểu não"],
+  ["anterior-quadrangular-lobule", "cerebellum-anterior-lobe", "Định vị tiểu thuỳ trên tiểu não"],
+  ["cerebellar-declive", "cerebellum-posterior-lobe", "Định vị tiểu thuỳ trên tiểu não"],
+  ["posterior-quadrangular-lobule", "cerebellum-posterior-lobe", "Định vị tiểu thuỳ trên tiểu não"],
+  ["cerebellar-folium", "cerebellum-posterior-lobe", "Định vị tiểu thuỳ trên tiểu não"],
+  ["superior-semilunar-lobule", "cerebellum-posterior-lobe", "Định vị tiểu thuỳ trên tiểu não"],
+  ["cerebellar-tuber", "cerebellum-posterior-lobe", "Định vị tiểu thuỳ trên tiểu não"],
+  ["inferior-semilunar-lobule", "cerebellum-posterior-lobe", "Định vị tiểu thuỳ trên tiểu não"],
+  ["gracile-lobule", "cerebellum-posterior-lobe", "Định vị tiểu thuỳ trên tiểu não"],
+  ["cerebellar-pyramis", "cerebellum-posterior-lobe", "Định vị tiểu thuỳ trên tiểu não"],
+  ["biventral-lobule", "cerebellum-posterior-lobe", "Định vị tiểu thuỳ trên tiểu não"],
+  ["cerebellar-uvula", "cerebellum-posterior-lobe", "Định vị tiểu thuỳ trên tiểu não"],
+  ["cerebellar-tonsil", "cerebellum-posterior-lobe", "Định vị tiểu thuỳ trên tiểu não"],
+  ["cerebellar-nodule", "flocculonodular-lobe", "Định vị tiểu thuỳ trên tiểu não"],
+  ["flocculus", "flocculonodular-lobe", "Định vị tiểu thuỳ trên tiểu não"],
+]) N(id, parent, "B", "structure", "", "", { dir: "back", zoom: "detail", mode: "layered", context: ["CEREBELLUM"], obj: [obj] });
 N("superior-cerebellar-peduncle", "cerebellum", "B", "structure", "", "", {
   dir: "back", zoom: "detail", mode: "layered", context: ["CEREBELLUM", "BRAINSTEM"],
   note: "ZA chỉ có cuống trên (nhập đợt 2, 2026-10-19); cuống giữa/dưới không nguồn nào có → nút mang tên cuống trên.",
@@ -116,8 +139,8 @@ N("medulla-oblongata", "brainstem", "B", "structure", "Hành não", "Medulla obl
   status: "buildable", dir: "front", zoom: "structure", mode: "layered", context: ["PONS", "SPINAL_CORD"], focus: ["Medulla oblongata"],
   obj: ["Xác định hành não nối tiếp tuỷ sống qua lỗ lớn xương chẩm"],
 });
-N("medulla-pyramid-olive", "medulla-oblongata", "B", "region", "Tháp hành và trám hành", "Pyramid and olive of medulla", {
-  status: "import-za", dir: "front", zoom: "detail", mode: "layered", context: ["MEDULLA ghost"], focus: ["Pyramid of medulla oblongata", "Olive"],
+N("medulla-pyramid-olive", "medulla-oblongata", "B", "structure", "", "", {
+  dir: "front", zoom: "detail", mode: "layered", context: ["MEDULLA ghost"], focus: ["Pyramid of medulla oblongata", "Olive"],
   obj: ["Nhận ra tháp hành và trám hành ở mặt trước hành não"],
 });
 N("cranial-nerve-nuclei", "brainstem", "B", "structure", "Nhân dây thần kinh sọ", "Cranial nerve nuclei", {
@@ -720,8 +743,7 @@ const ZA_PATH = {
   "skeletal-branch": "Nằm collection '1: Skeletal system' — pick() không đọc, thêm nhánh",
 };
 const IMPORT = {
-  "cerebellar-vermis": "replace-bp3d", "cerebellar-hemisphere-lobules": "replace-bp3d", "flocculonodular-lobe": "replace-bp3d",
-  "red-nucleus": "pick", "medulla-pyramid-olive": "replace-bp3d", "cranial-nerve-nuclei": "pick",
+  "red-nucleus": "pick", "cranial-nerve-nuclei": "pick",
   "nervous-meninges": "pick", "falx-cerebri": "pick",
   "occipital-gyri": "replace-bp3d", "medial-surface-hemisphere": "replace-bp3d", "olfactory-nerve": "dedupe-exception",
   "abducens-nerve": "dedupe-exception", "trigeminal-roots": "dedupe-exception", "middle-ear": ["pick", "skeletal-branch"], "inner-ear": "pick",

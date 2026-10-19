@@ -698,6 +698,16 @@ Hạch không tên của UMCG bị bỏ khi có hạch Z-Anatomy; mạch bạch 
 và chất trung gian), không phải phần còn lại sau khi trừ bó — mặt ngoài các bó trùng mặt chất trắng, nên góc
 nhìn bó chỉ làm mờ chất xám. Đừng "cho đủ bối cảnh" bằng cách thêm chất trắng: hai mặt trùng nhau nhấp nháy.
 Không nhập "Intermediolateral nucleus": lưới chạy suốt tuỷ, thật chỉ có ở T1–L2.
+**Tiểu não THAY bằng tiểu thuỳ Z-Anatomy (đợt 3, 2026-10-19).** Lần đầu bỏ mảnh BodyParts3D bằng mảnh mã KHÁC:
+manifest có `replaces` (FJ1781, FJ1830 — hai nửa FMA67944), `withSupplements` loại chúng khỏi danh mục. Chỉ
+thay khi đo thấy phủ kín: mặt tiểu não BP3D cách tiểu thuỳ ZA trung vị 1,3 mm. Thuỳ chẩm và hồi đai CHƯA
+thay vì lệch tới 14–27 mm (lộ đường nối với vỏ BP3D còn lại). Hai hệ quả phải giữ:
+(1) `import-mni-atlases.ts --export-bp3d` gọi `withSupplements(…, { keepReplaced: true })` và dừng nếu thiếu
+"Cerebellum" — phép căn Allen fit theo vỏ tiểu não BP3D; mất vỏ thì lần chạy lại `allen-hra.py` hỏng lặng lẽ.
+(2) Khái niệm `ZA-…` không có trong FMA nên mất nội dung Level 2 kế thừa → khái niệm mang `partOf` (mã FMA cha),
+`resolveContent` lùi về đó: bấm một tiểu thuỳ hiện mô tả "Tiểu não" kèm dòng "về Tiểu não".
+Tiểu thuỳ ZA là KHỐI ĐẶC (lấp 81% lòng tiểu não, 15% chồng nhau), không chất trắng riêng — nhân sâu Allen
+nằm "trong" tiểu thuỳ là đúng cách dựng, không phải lòi.
 
 **Allen Human Reference Atlas – 3D 2020 (nhập 2026-10-19, CC BY 4.0, khối RIÊNG vì giấy phép riêng).**
 Nhân sâu BodyParts3D không có: 11 nhân đồi thị, chất đen, nhân dưới đồi thị, nhân sâu tiểu

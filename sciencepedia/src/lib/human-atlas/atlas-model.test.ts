@@ -130,6 +130,10 @@ test("não chia sâu: mở cấu trúc cha ra đúng các con, không còn mản
     "ophthalmic-nerve": ["ophthalmic-nerve-trunk", "frontal-nerve", "lacrimal-nerve", "nasociliary-nerve", "ciliary-ganglion"],
     "sympathetic-trunk": ["sympathetic-chain", "sympathetic-ganglia", "sympathetic-nerves"],
     "spinal-tracts": ["spinal-tracts-ascending", "spinal-tracts-descending", "spinal-fasciculi-proprii"],
+    // Tiểu não Z-Anatomy: ba thuỳ → tiểu thuỳ (thay hai nửa tiểu não BodyParts3D).
+    cerebellum: ["cerebellum-anterior-lobe", "cerebellum-posterior-lobe", "flocculonodular-lobe"],
+    "cerebellum-anterior-lobe": ["cerebellar-lingula", "cerebellar-central-lobule", "cerebellar-central-lobule-wing", "cerebellar-culmen", "anterior-quadrangular-lobule"],
+    "flocculonodular-lobe": ["cerebellar-nodule", "flocculus"],
   };
   for (const [view, children] of Object.entries(expect)) {
     const list = viewStructures(view);

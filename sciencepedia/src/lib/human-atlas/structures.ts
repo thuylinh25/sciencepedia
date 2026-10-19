@@ -1,5 +1,7 @@
 import { z } from "zod";
 
+import { SUPPLEMENT_PART_OF } from "./supplements";
+
 /**
  * Dữ liệu cấu trúc giải phẫu của Sciencepedia — lớp làm giàu trên BodyParts3D.
  *
@@ -293,7 +295,8 @@ export function resolveContent(
   const own = viaIsA(id);
   if (own) return own;
   const structure = data.structures[id];
-  const parent = structure ? primaryPartOf(data, structure) : null;
+  // Khái niệm ngoài FMA (tiểu thuỳ Z-Anatomy) không có trong `structures` — cha khai ở manifest bổ sung.
+  const parent = structure ? primaryPartOf(data, structure) : (SUPPLEMENT_PART_OF[id] ?? null);
   return parent ? viaIsA(parent) : null;
 }
 
