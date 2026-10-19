@@ -80,7 +80,7 @@ export const ATLAS_PROVENANCE = {
   /**
    * Nhân sâu của não (BodyParts3D không có). Kiểm 2026-10-19: README của bộ dữ liệu ghi CC BY 4.0
    * từ 2022-09-01 và câu trích dẫn theo Citation Policy — chép nguyên văn vào LICENSE.txt cạnh khối
-   * trên R2. Chuyển đổi + căn toạ độ: `scripts/allen-hra.py`, `scripts/import-allen-hra.ts`.
+   * trên R2. Chuyển đổi + căn toạ độ: `scripts/allen-hra.py`, `scripts/import-mni-atlases.ts`.
    */
   allenHra: {
     name: "Allen Human Reference Atlas – 3D, 2020 (v1.0.0)",
@@ -90,6 +90,27 @@ export const ATLAS_PROVENANCE = {
     sourceUrl: "https://download.alleninstitute.org/informatics-archive/allen_human_reference_atlas_3d_2020/version_1/",
     citation:
       "Ding S-L, Royall JJ, Sunkin SM, Facer BAC, Lesnar P, Bernard A, Ng L, Lein ES (2020). Allen Human Reference Atlas – 3D, 2020, RRID:SCR_017764, version 1.0.0.",
+  },
+  /**
+   * Chất đen phần đặc/phần lưới. Kiểm 2026-10-19: OSF jkzwp ghi CC BY 4.0; DOI bài báo tra Crossref.
+   * Dùng lại phép căn của Allen (`scripts/mni-subcortical.py`).
+   */
+  cit168: {
+    name: "CIT168 Reinforcement Learning Atlas v1.1.0",
+    holder: "Pauli, Nili, Tyszka — California Institute of Technology",
+    license: "CC BY 4.0",
+    licenseUrl: "https://creativecommons.org/licenses/by/4.0/",
+    sourceUrl: "https://osf.io/jkzwp/",
+    citation: "Pauli WM, Nili AN, Tyszka JM (2018). A high-resolution probabilistic in vivo atlas of human subcortical brain nuclei. Scientific Data 5, 180063.",
+  },
+  /** Nhân vùng dưới đồi. Kiểm 2026-10-19: Zenodo 3942115 ghi CC BY 4.0; DOI bài báo tra Crossref. */
+  neudorfer: {
+    name: "NSD atlas of hypothalamic region",
+    holder: "Neudorfer, Germann, Elias, Gramer, Boutet, Lozano — University of Toronto",
+    license: "CC BY 4.0",
+    licenseUrl: "https://creativecommons.org/licenses/by/4.0/",
+    sourceUrl: "https://doi.org/10.5281/zenodo.3942115",
+    citation: "Neudorfer C, Germann J, Elias GJB, Gramer R, Boutet A, Lozano AM (2020). A high-resolution in vivo magnetic resonance imaging atlas of the human hypothalamic region. Scientific Data 7, 305.",
   },
   viewer: {
     name: "Human Atlas",

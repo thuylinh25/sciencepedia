@@ -1386,7 +1386,7 @@ function ToolButton({
  */
 export function AboutCopy() {
   const t = useTranslations("humanAtlas.aboutSheet");
-  const { model, terminology, viewer, lymphatic, zAnatomy, allenHra } = ATLAS_PROVENANCE;
+  const { model, terminology, viewer, lymphatic, zAnatomy, allenHra, cit168, neudorfer } = ATLAS_PROVENANCE;
   return (
     <div className="space-y-5 text-sm leading-relaxed text-muted-foreground">
       <SourceBlock
@@ -1450,6 +1450,27 @@ export function AboutCopy() {
       >
         {t("allenText")} {allenHra.citation}
       </SourceBlock>
+
+      {[
+        [cit168, t("cit168Text"), t("cit168SourceLink")],
+        [neudorfer, t("neudorferText"), t("neudorferSourceLink")],
+      ].map(([src, text, link]) => {
+        const s = src as typeof cit168;
+        return (
+          <SourceBlock
+            key={s.name}
+            heading={t("allenHeading")}
+            name={s.name}
+            credit={`© ${s.holder} · ${s.license}`}
+            links={[
+              [t("licenseLink"), s.licenseUrl],
+              [link as string, s.sourceUrl],
+            ]}
+          >
+            {text as string} {s.citation}
+          </SourceBlock>
+        );
+      })}
 
       <SourceBlock
         heading={t("viewerHeading")}

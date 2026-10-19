@@ -65,18 +65,18 @@
     ]
   },
   "coverage": {
-    "nodes": 183,
-    "nodes3d": 178,
+    "nodes": 198,
+    "nodes3d": 193,
     "byStatus": {
-      "live": 132,
+      "live": 148,
       "buildable": 13,
       "import-za": 12,
       "needs-schema": 8,
       "needs-clipping": 4,
-      "missing": 9
+      "missing": 8
     },
-    "readyNow": "145/178 (81%) nút 3D dựng được bằng dữ liệu đang có",
-    "afterZaImport": "157/178 (88%)",
+    "readyNow": "161/193 (83%) nút 3D dựng được bằng dữ liệu đang có",
+    "afterZaImport": "173/193 (90%)",
     "haaTiles": {
       "note": "So với 24 ô \"Nervous System Views\" của HAA (ảnh tham chiếu, không dùng asset HAA).",
       "withCardNow": "19/24 (79%)",
@@ -282,7 +282,6 @@
       "title": "Thiếu nguồn: tìm asset (giấy phép trước) hoặc sơ đồ tự dựng",
       "status": "missing",
       "items": [
-        "hypothalamic-nuclei",
         "trigeminal-ganglion",
         "prevertebral-ganglia",
         "parasympathetic-sacral",
@@ -3671,7 +3670,7 @@
       },
       "parent": "diencephalon",
       "children": [
-        "hypothalamic-nuclei"
+        "nervous-hypothalamic-nuclei"
       ],
       "learningObjectives": {
         "vi": [
@@ -3716,40 +3715,737 @@
       "priority": "done"
     },
     {
-      "id": "hypothalamic-nuclei",
-      "viewId": "hypothalamic-nuclei",
+      "id": "nervous-hypothalamic-nuclei",
+      "viewId": "nervous-hypothalamic-nuclei",
       "section": "E",
-      "kind": "region",
+      "kind": "group",
       "level": 6,
       "name": {
         "vi": "Các nhân vùng dưới đồi",
         "en": "Hypothalamic nuclei",
-        "reviewed": false
+        "reviewed": true
       },
       "parent": "hypothalamus",
-      "children": [],
+      "children": [
+        "medial-preoptic-nucleus",
+        "anterior-hypothalamic-area",
+        "suprachiasmatic-nucleus",
+        "supraoptic-nucleus",
+        "paraventricular-nucleus",
+        "periventricular-nucleus",
+        "dorsal-periventricular-nucleus",
+        "ventromedial-nucleus",
+        "dorsomedial-nucleus",
+        "arcuate-nucleus",
+        "lateral-hypothalamic-area",
+        "posterior-hypothalamic-nucleus",
+        "tuberomammillary-nucleus"
+      ],
       "learningObjectives": {
         "vi": [
-          "Nhận ra vùng dưới đồi gồm nhiều nhóm nhân"
+          "Phân biệt các miền vùng dưới đồi: trước–thị, củ, sau; dải quanh não thất và vùng bên",
+          "Định vị nhân trên giao thoa thị ngay trên giao thoa thị giác"
         ],
         "reviewed": false
       },
-      "structures3d": [],
-      "view": null,
-      "url": {
-        "vi": "/vi/human-atlas?view=hypothalamic-nuclei",
-        "en": "/en/human-atlas?view=hypothalamic-nuclei"
+      "structures3d": [
+        "rule hiện có của `nervous-hypothalamic-nuclei`"
+      ],
+      "view": {
+        "direction": "side",
+        "zoom": {
+          "level": "structure",
+          "cameraFill": 0.86,
+          "thumbnailFill": 0.86
+        },
+        "display": "layered",
+        "context": [
+          "vùng dưới đồi mờ",
+          "thể vú",
+          "giao thoa thị giác"
+        ]
       },
-      "thumbnail": null,
+      "url": {
+        "vi": "/vi/human-atlas?view=nervous-hypothalamic-nuclei",
+        "en": "/en/human-atlas?view=nervous-hypothalamic-nuclei"
+      },
+      "thumbnail": {
+        "source": "auto-capture",
+        "from": "model",
+        "direction": "side"
+      },
       "data": {
-        "status": "missing",
+        "status": "live",
+        "partial": true,
+        "existingViewId": "nervous-hypothalamic-nuclei",
+        "borrowedFromSystem": null,
+        "note": "Neudorfer 2020 (CC BY 4.0), 13 nhân, dùng lại phép căn Allen + tinh chỉnh vùng dưới đồi. Thiếu vùng trước thị bên, nhân trước thị đường giữa, nhân kẽ, nhân củ bên, nhân trên vú."
+      },
+      "phase": 2,
+      "priority": "done"
+    },
+    {
+      "id": "medial-preoptic-nucleus",
+      "viewId": "medial-preoptic-nucleus",
+      "section": "E",
+      "kind": "structure",
+      "level": 7,
+      "name": {
+        "vi": "Nhân trước thị giữa",
+        "en": "Medial preoptic nucleus",
+        "reviewed": true
+      },
+      "parent": "nervous-hypothalamic-nuclei",
+      "children": [],
+      "learningObjectives": {
+        "vi": [
+          "Định vị nhân trước thị giữa trong vùng dưới đồi"
+        ],
+        "reviewed": false
+      },
+      "structures3d": [
+        "rule hiện có của `medial-preoptic-nucleus`"
+      ],
+      "view": {
+        "direction": "side",
+        "zoom": {
+          "level": "detail",
+          "cameraFill": 0.9,
+          "thumbnailFill": 0.86
+        },
+        "display": "layered",
+        "context": []
+      },
+      "url": {
+        "vi": "/vi/human-atlas?view=medial-preoptic-nucleus",
+        "en": "/en/human-atlas?view=medial-preoptic-nucleus"
+      },
+      "thumbnail": {
+        "source": "auto-capture",
+        "from": "model",
+        "direction": "side"
+      },
+      "data": {
+        "status": "live",
         "partial": false,
-        "existingViewId": null,
+        "existingViewId": "medial-preoptic-nucleus",
         "borrowedFromSystem": null,
         "note": null
       },
       "phase": 2,
-      "priority": "P4"
+      "priority": "done"
+    },
+    {
+      "id": "anterior-hypothalamic-area",
+      "viewId": "anterior-hypothalamic-area",
+      "section": "E",
+      "kind": "structure",
+      "level": 7,
+      "name": {
+        "vi": "Vùng dưới đồi trước",
+        "en": "Anterior hypothalamic area",
+        "reviewed": true
+      },
+      "parent": "nervous-hypothalamic-nuclei",
+      "children": [],
+      "learningObjectives": {
+        "vi": [
+          "Định vị vùng dưới đồi trước trong vùng dưới đồi"
+        ],
+        "reviewed": false
+      },
+      "structures3d": [
+        "rule hiện có của `anterior-hypothalamic-area`"
+      ],
+      "view": {
+        "direction": "side",
+        "zoom": {
+          "level": "detail",
+          "cameraFill": 0.9,
+          "thumbnailFill": 0.86
+        },
+        "display": "layered",
+        "context": []
+      },
+      "url": {
+        "vi": "/vi/human-atlas?view=anterior-hypothalamic-area",
+        "en": "/en/human-atlas?view=anterior-hypothalamic-area"
+      },
+      "thumbnail": {
+        "source": "auto-capture",
+        "from": "model",
+        "direction": "side"
+      },
+      "data": {
+        "status": "live",
+        "partial": false,
+        "existingViewId": "anterior-hypothalamic-area",
+        "borrowedFromSystem": null,
+        "note": null
+      },
+      "phase": 2,
+      "priority": "done"
+    },
+    {
+      "id": "suprachiasmatic-nucleus",
+      "viewId": "suprachiasmatic-nucleus",
+      "section": "E",
+      "kind": "structure",
+      "level": 7,
+      "name": {
+        "vi": "Nhân trên giao thoa thị",
+        "en": "Suprachiasmatic nucleus",
+        "reviewed": true
+      },
+      "parent": "nervous-hypothalamic-nuclei",
+      "children": [],
+      "learningObjectives": {
+        "vi": [
+          "Định vị nhân trên giao thoa thị trong vùng dưới đồi"
+        ],
+        "reviewed": false
+      },
+      "structures3d": [
+        "rule hiện có của `suprachiasmatic-nucleus`"
+      ],
+      "view": {
+        "direction": "side",
+        "zoom": {
+          "level": "detail",
+          "cameraFill": 0.9,
+          "thumbnailFill": 0.86
+        },
+        "display": "layered",
+        "context": []
+      },
+      "url": {
+        "vi": "/vi/human-atlas?view=suprachiasmatic-nucleus",
+        "en": "/en/human-atlas?view=suprachiasmatic-nucleus"
+      },
+      "thumbnail": {
+        "source": "auto-capture",
+        "from": "model",
+        "direction": "side"
+      },
+      "data": {
+        "status": "live",
+        "partial": false,
+        "existingViewId": "suprachiasmatic-nucleus",
+        "borrowedFromSystem": null,
+        "note": null
+      },
+      "phase": 2,
+      "priority": "done"
+    },
+    {
+      "id": "supraoptic-nucleus",
+      "viewId": "supraoptic-nucleus",
+      "section": "E",
+      "kind": "structure",
+      "level": 7,
+      "name": {
+        "vi": "Nhân trên thị",
+        "en": "Supraoptic nucleus",
+        "reviewed": true
+      },
+      "parent": "nervous-hypothalamic-nuclei",
+      "children": [],
+      "learningObjectives": {
+        "vi": [
+          "Định vị nhân trên thị trong vùng dưới đồi"
+        ],
+        "reviewed": false
+      },
+      "structures3d": [
+        "rule hiện có của `supraoptic-nucleus`"
+      ],
+      "view": {
+        "direction": "side",
+        "zoom": {
+          "level": "detail",
+          "cameraFill": 0.9,
+          "thumbnailFill": 0.86
+        },
+        "display": "layered",
+        "context": []
+      },
+      "url": {
+        "vi": "/vi/human-atlas?view=supraoptic-nucleus",
+        "en": "/en/human-atlas?view=supraoptic-nucleus"
+      },
+      "thumbnail": {
+        "source": "auto-capture",
+        "from": "model",
+        "direction": "side"
+      },
+      "data": {
+        "status": "live",
+        "partial": false,
+        "existingViewId": "supraoptic-nucleus",
+        "borrowedFromSystem": null,
+        "note": null
+      },
+      "phase": 2,
+      "priority": "done"
+    },
+    {
+      "id": "paraventricular-nucleus",
+      "viewId": "paraventricular-nucleus",
+      "section": "E",
+      "kind": "structure",
+      "level": 7,
+      "name": {
+        "vi": "Nhân cạnh não thất vùng dưới đồi",
+        "en": "Paraventricular nucleus of hypothalamus",
+        "reviewed": true
+      },
+      "parent": "nervous-hypothalamic-nuclei",
+      "children": [],
+      "learningObjectives": {
+        "vi": [
+          "Định vị nhân cạnh não thất vùng dưới đồi trong vùng dưới đồi"
+        ],
+        "reviewed": false
+      },
+      "structures3d": [
+        "rule hiện có của `paraventricular-nucleus`"
+      ],
+      "view": {
+        "direction": "side",
+        "zoom": {
+          "level": "detail",
+          "cameraFill": 0.9,
+          "thumbnailFill": 0.86
+        },
+        "display": "layered",
+        "context": []
+      },
+      "url": {
+        "vi": "/vi/human-atlas?view=paraventricular-nucleus",
+        "en": "/en/human-atlas?view=paraventricular-nucleus"
+      },
+      "thumbnail": {
+        "source": "auto-capture",
+        "from": "model",
+        "direction": "side"
+      },
+      "data": {
+        "status": "live",
+        "partial": false,
+        "existingViewId": "paraventricular-nucleus",
+        "borrowedFromSystem": null,
+        "note": null
+      },
+      "phase": 2,
+      "priority": "done"
+    },
+    {
+      "id": "periventricular-nucleus",
+      "viewId": "periventricular-nucleus",
+      "section": "E",
+      "kind": "structure",
+      "level": 7,
+      "name": {
+        "vi": "Nhân quanh não thất vùng dưới đồi",
+        "en": "Periventricular nucleus of hypothalamus",
+        "reviewed": true
+      },
+      "parent": "nervous-hypothalamic-nuclei",
+      "children": [],
+      "learningObjectives": {
+        "vi": [
+          "Định vị nhân quanh não thất vùng dưới đồi trong vùng dưới đồi"
+        ],
+        "reviewed": false
+      },
+      "structures3d": [
+        "rule hiện có của `periventricular-nucleus`"
+      ],
+      "view": {
+        "direction": "side",
+        "zoom": {
+          "level": "detail",
+          "cameraFill": 0.9,
+          "thumbnailFill": 0.86
+        },
+        "display": "layered",
+        "context": []
+      },
+      "url": {
+        "vi": "/vi/human-atlas?view=periventricular-nucleus",
+        "en": "/en/human-atlas?view=periventricular-nucleus"
+      },
+      "thumbnail": {
+        "source": "auto-capture",
+        "from": "model",
+        "direction": "side"
+      },
+      "data": {
+        "status": "live",
+        "partial": false,
+        "existingViewId": "periventricular-nucleus",
+        "borrowedFromSystem": null,
+        "note": null
+      },
+      "phase": 2,
+      "priority": "done"
+    },
+    {
+      "id": "dorsal-periventricular-nucleus",
+      "viewId": "dorsal-periventricular-nucleus",
+      "section": "E",
+      "kind": "structure",
+      "level": 7,
+      "name": {
+        "vi": "Nhân quanh não thất lưng vùng dưới đồi",
+        "en": "Dorsal periventricular nucleus of hypothalamus",
+        "reviewed": true
+      },
+      "parent": "nervous-hypothalamic-nuclei",
+      "children": [],
+      "learningObjectives": {
+        "vi": [
+          "Định vị nhân quanh não thất lưng vùng dưới đồi trong vùng dưới đồi"
+        ],
+        "reviewed": false
+      },
+      "structures3d": [
+        "rule hiện có của `dorsal-periventricular-nucleus`"
+      ],
+      "view": {
+        "direction": "side",
+        "zoom": {
+          "level": "detail",
+          "cameraFill": 0.9,
+          "thumbnailFill": 0.86
+        },
+        "display": "layered",
+        "context": []
+      },
+      "url": {
+        "vi": "/vi/human-atlas?view=dorsal-periventricular-nucleus",
+        "en": "/en/human-atlas?view=dorsal-periventricular-nucleus"
+      },
+      "thumbnail": {
+        "source": "auto-capture",
+        "from": "model",
+        "direction": "side"
+      },
+      "data": {
+        "status": "live",
+        "partial": false,
+        "existingViewId": "dorsal-periventricular-nucleus",
+        "borrowedFromSystem": null,
+        "note": null
+      },
+      "phase": 2,
+      "priority": "done"
+    },
+    {
+      "id": "ventromedial-nucleus",
+      "viewId": "ventromedial-nucleus",
+      "section": "E",
+      "kind": "structure",
+      "level": 7,
+      "name": {
+        "vi": "Nhân bụng giữa vùng dưới đồi",
+        "en": "Ventromedial nucleus of hypothalamus",
+        "reviewed": true
+      },
+      "parent": "nervous-hypothalamic-nuclei",
+      "children": [],
+      "learningObjectives": {
+        "vi": [
+          "Định vị nhân bụng giữa vùng dưới đồi trong vùng dưới đồi"
+        ],
+        "reviewed": false
+      },
+      "structures3d": [
+        "rule hiện có của `ventromedial-nucleus`"
+      ],
+      "view": {
+        "direction": "side",
+        "zoom": {
+          "level": "detail",
+          "cameraFill": 0.9,
+          "thumbnailFill": 0.86
+        },
+        "display": "layered",
+        "context": []
+      },
+      "url": {
+        "vi": "/vi/human-atlas?view=ventromedial-nucleus",
+        "en": "/en/human-atlas?view=ventromedial-nucleus"
+      },
+      "thumbnail": {
+        "source": "auto-capture",
+        "from": "model",
+        "direction": "side"
+      },
+      "data": {
+        "status": "live",
+        "partial": false,
+        "existingViewId": "ventromedial-nucleus",
+        "borrowedFromSystem": null,
+        "note": null
+      },
+      "phase": 2,
+      "priority": "done"
+    },
+    {
+      "id": "dorsomedial-nucleus",
+      "viewId": "dorsomedial-nucleus",
+      "section": "E",
+      "kind": "structure",
+      "level": 7,
+      "name": {
+        "vi": "Nhân lưng giữa vùng dưới đồi",
+        "en": "Dorsomedial nucleus of hypothalamus",
+        "reviewed": true
+      },
+      "parent": "nervous-hypothalamic-nuclei",
+      "children": [],
+      "learningObjectives": {
+        "vi": [
+          "Định vị nhân lưng giữa vùng dưới đồi trong vùng dưới đồi"
+        ],
+        "reviewed": false
+      },
+      "structures3d": [
+        "rule hiện có của `dorsomedial-nucleus`"
+      ],
+      "view": {
+        "direction": "side",
+        "zoom": {
+          "level": "detail",
+          "cameraFill": 0.9,
+          "thumbnailFill": 0.86
+        },
+        "display": "layered",
+        "context": []
+      },
+      "url": {
+        "vi": "/vi/human-atlas?view=dorsomedial-nucleus",
+        "en": "/en/human-atlas?view=dorsomedial-nucleus"
+      },
+      "thumbnail": {
+        "source": "auto-capture",
+        "from": "model",
+        "direction": "side"
+      },
+      "data": {
+        "status": "live",
+        "partial": false,
+        "existingViewId": "dorsomedial-nucleus",
+        "borrowedFromSystem": null,
+        "note": null
+      },
+      "phase": 2,
+      "priority": "done"
+    },
+    {
+      "id": "arcuate-nucleus",
+      "viewId": "arcuate-nucleus",
+      "section": "E",
+      "kind": "structure",
+      "level": 7,
+      "name": {
+        "vi": "Nhân cung vùng dưới đồi",
+        "en": "Arcuate nucleus of hypothalamus",
+        "reviewed": true
+      },
+      "parent": "nervous-hypothalamic-nuclei",
+      "children": [],
+      "learningObjectives": {
+        "vi": [
+          "Định vị nhân cung vùng dưới đồi trong vùng dưới đồi"
+        ],
+        "reviewed": false
+      },
+      "structures3d": [
+        "rule hiện có của `arcuate-nucleus`"
+      ],
+      "view": {
+        "direction": "side",
+        "zoom": {
+          "level": "detail",
+          "cameraFill": 0.9,
+          "thumbnailFill": 0.86
+        },
+        "display": "layered",
+        "context": []
+      },
+      "url": {
+        "vi": "/vi/human-atlas?view=arcuate-nucleus",
+        "en": "/en/human-atlas?view=arcuate-nucleus"
+      },
+      "thumbnail": {
+        "source": "auto-capture",
+        "from": "model",
+        "direction": "side"
+      },
+      "data": {
+        "status": "live",
+        "partial": false,
+        "existingViewId": "arcuate-nucleus",
+        "borrowedFromSystem": null,
+        "note": null
+      },
+      "phase": 2,
+      "priority": "done"
+    },
+    {
+      "id": "lateral-hypothalamic-area",
+      "viewId": "lateral-hypothalamic-area",
+      "section": "E",
+      "kind": "structure",
+      "level": 7,
+      "name": {
+        "vi": "Vùng dưới đồi bên",
+        "en": "Lateral hypothalamic area",
+        "reviewed": true
+      },
+      "parent": "nervous-hypothalamic-nuclei",
+      "children": [],
+      "learningObjectives": {
+        "vi": [
+          "Định vị vùng dưới đồi bên trong vùng dưới đồi"
+        ],
+        "reviewed": false
+      },
+      "structures3d": [
+        "rule hiện có của `lateral-hypothalamic-area`"
+      ],
+      "view": {
+        "direction": "side",
+        "zoom": {
+          "level": "detail",
+          "cameraFill": 0.9,
+          "thumbnailFill": 0.86
+        },
+        "display": "layered",
+        "context": []
+      },
+      "url": {
+        "vi": "/vi/human-atlas?view=lateral-hypothalamic-area",
+        "en": "/en/human-atlas?view=lateral-hypothalamic-area"
+      },
+      "thumbnail": {
+        "source": "auto-capture",
+        "from": "model",
+        "direction": "side"
+      },
+      "data": {
+        "status": "live",
+        "partial": false,
+        "existingViewId": "lateral-hypothalamic-area",
+        "borrowedFromSystem": null,
+        "note": null
+      },
+      "phase": 2,
+      "priority": "done"
+    },
+    {
+      "id": "posterior-hypothalamic-nucleus",
+      "viewId": "posterior-hypothalamic-nucleus",
+      "section": "E",
+      "kind": "structure",
+      "level": 7,
+      "name": {
+        "vi": "Nhân sau vùng dưới đồi",
+        "en": "Posterior nucleus of hypothalamus",
+        "reviewed": true
+      },
+      "parent": "nervous-hypothalamic-nuclei",
+      "children": [],
+      "learningObjectives": {
+        "vi": [
+          "Định vị nhân sau vùng dưới đồi trong vùng dưới đồi"
+        ],
+        "reviewed": false
+      },
+      "structures3d": [
+        "rule hiện có của `posterior-hypothalamic-nucleus`"
+      ],
+      "view": {
+        "direction": "side",
+        "zoom": {
+          "level": "detail",
+          "cameraFill": 0.9,
+          "thumbnailFill": 0.86
+        },
+        "display": "layered",
+        "context": []
+      },
+      "url": {
+        "vi": "/vi/human-atlas?view=posterior-hypothalamic-nucleus",
+        "en": "/en/human-atlas?view=posterior-hypothalamic-nucleus"
+      },
+      "thumbnail": {
+        "source": "auto-capture",
+        "from": "model",
+        "direction": "side"
+      },
+      "data": {
+        "status": "live",
+        "partial": false,
+        "existingViewId": "posterior-hypothalamic-nucleus",
+        "borrowedFromSystem": null,
+        "note": null
+      },
+      "phase": 2,
+      "priority": "done"
+    },
+    {
+      "id": "tuberomammillary-nucleus",
+      "viewId": "tuberomammillary-nucleus",
+      "section": "E",
+      "kind": "structure",
+      "level": 7,
+      "name": {
+        "vi": "Nhân củ – vú",
+        "en": "Tuberomammillary nucleus",
+        "reviewed": true
+      },
+      "parent": "nervous-hypothalamic-nuclei",
+      "children": [],
+      "learningObjectives": {
+        "vi": [
+          "Định vị nhân củ – vú trong vùng dưới đồi"
+        ],
+        "reviewed": false
+      },
+      "structures3d": [
+        "rule hiện có của `tuberomammillary-nucleus`"
+      ],
+      "view": {
+        "direction": "side",
+        "zoom": {
+          "level": "detail",
+          "cameraFill": 0.9,
+          "thumbnailFill": 0.86
+        },
+        "display": "layered",
+        "context": []
+      },
+      "url": {
+        "vi": "/vi/human-atlas?view=tuberomammillary-nucleus",
+        "en": "/en/human-atlas?view=tuberomammillary-nucleus"
+      },
+      "thumbnail": {
+        "source": "auto-capture",
+        "from": "model",
+        "direction": "side"
+      },
+      "data": {
+        "status": "live",
+        "partial": false,
+        "existingViewId": "tuberomammillary-nucleus",
+        "borrowedFromSystem": null,
+        "note": null
+      },
+      "phase": 2,
+      "priority": "done"
     },
     {
       "id": "epithalamus",
@@ -9431,7 +10127,10 @@
         "reviewed": true
       },
       "parent": "nervous-subthalamic-nigral",
-      "children": [],
+      "children": [
+        "substantia-nigra-compacta",
+        "substantia-nigra-reticulata"
+      ],
       "learningObjectives": {
         "vi": [
           "Định vị chất đen giữa cuống đại não và chỏm trung não"
@@ -9464,6 +10163,108 @@
         "status": "live",
         "partial": false,
         "existingViewId": "substantia-nigra",
+        "borrowedFromSystem": null,
+        "note": "CIT168 (thay Allen), hai phần."
+      },
+      "phase": 2,
+      "priority": "done"
+    },
+    {
+      "id": "substantia-nigra-compacta",
+      "viewId": "substantia-nigra-compacta",
+      "section": "B",
+      "kind": "structure",
+      "level": 6,
+      "name": {
+        "vi": "Phần đặc chất đen",
+        "en": "Substantia nigra, pars compacta",
+        "reviewed": true
+      },
+      "parent": "substantia-nigra",
+      "children": [],
+      "learningObjectives": {
+        "vi": [
+          "Liên hệ phần đặc chất đen với neuron dopamine"
+        ],
+        "reviewed": false
+      },
+      "structures3d": [
+        "rule hiện có của `substantia-nigra-compacta`"
+      ],
+      "view": {
+        "direction": "superior",
+        "zoom": {
+          "level": "detail",
+          "cameraFill": 0.9,
+          "thumbnailFill": 0.86
+        },
+        "display": "layered",
+        "context": []
+      },
+      "url": {
+        "vi": "/vi/human-atlas?view=substantia-nigra-compacta",
+        "en": "/en/human-atlas?view=substantia-nigra-compacta"
+      },
+      "thumbnail": {
+        "source": "auto-capture",
+        "from": "model",
+        "direction": "superior"
+      },
+      "data": {
+        "status": "live",
+        "partial": false,
+        "existingViewId": "substantia-nigra-compacta",
+        "borrowedFromSystem": null,
+        "note": null
+      },
+      "phase": 2,
+      "priority": "done"
+    },
+    {
+      "id": "substantia-nigra-reticulata",
+      "viewId": "substantia-nigra-reticulata",
+      "section": "B",
+      "kind": "structure",
+      "level": 6,
+      "name": {
+        "vi": "Phần lưới chất đen",
+        "en": "Substantia nigra, pars reticulata",
+        "reviewed": true
+      },
+      "parent": "substantia-nigra",
+      "children": [],
+      "learningObjectives": {
+        "vi": [
+          "Phân biệt phần lưới (phía bụng) với phần đặc"
+        ],
+        "reviewed": false
+      },
+      "structures3d": [
+        "rule hiện có của `substantia-nigra-reticulata`"
+      ],
+      "view": {
+        "direction": "front",
+        "zoom": {
+          "level": "detail",
+          "cameraFill": 0.9,
+          "thumbnailFill": 0.86
+        },
+        "display": "layered",
+        "context": []
+      },
+      "url": {
+        "vi": "/vi/human-atlas?view=substantia-nigra-reticulata",
+        "en": "/en/human-atlas?view=substantia-nigra-reticulata"
+      },
+      "thumbnail": {
+        "source": "auto-capture",
+        "from": "model",
+        "direction": "front"
+      },
+      "data": {
+        "status": "live",
+        "partial": false,
+        "existingViewId": "substantia-nigra-reticulata",
         "borrowedFromSystem": null,
         "note": null
       },

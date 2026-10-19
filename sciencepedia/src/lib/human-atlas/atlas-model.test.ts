@@ -99,6 +99,8 @@ test("não chia sâu: mở cấu trúc cha ra đúng các con, không còn mản
     diencephalon: ["thalamus", "geniculate-bodies", "hypothalamus", "mammillary-body", "epithalamus"],
     brainstem: ["midbrain", "pons", "medulla-oblongata"],
     "brain-ventricles": ["lateral-ventricles", "third-ventricle", "cerebral-aqueduct", "fourth-ventricle", "choroid-plexus"],
+    // CIT168: chất đen tách phần đặc / phần lưới; id cũ là cha.
+    "substantia-nigra": ["substantia-nigra-compacta", "substantia-nigra-reticulata"],
   };
   for (const [view, children] of Object.entries(expect)) {
     const list = viewStructures(view);

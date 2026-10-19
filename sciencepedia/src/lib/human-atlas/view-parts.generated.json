@@ -840,7 +840,6 @@
       "AHRA-left-mediodorsal-nucleus-of-thalamus",
       "AHRA-left-parafascicular-nucleus-of-thalamus",
       "AHRA-left-pulvinar-of-thalamus",
-      "AHRA-left-substantia-nigra",
       "AHRA-left-subthalamic-nucleus",
       "AHRA-left-ventral-anterior-nucleus-of-thalamus",
       "AHRA-left-ventral-lateral-nucleus-of-thalamus",
@@ -854,12 +853,15 @@
       "AHRA-right-mediodorsal-nucleus-of-thalamus",
       "AHRA-right-parafascicular-nucleus-of-thalamus",
       "AHRA-right-pulvinar-of-thalamus",
-      "AHRA-right-substantia-nigra",
       "AHRA-right-subthalamic-nucleus",
       "AHRA-right-ventral-anterior-nucleus-of-thalamus",
       "AHRA-right-ventral-lateral-nucleus-of-thalamus",
       "AHRA-right-ventral-posterior-lateral-nucleus-of-thalamus",
       "AHRA-right-ventral-posterior-medial-nucleus-of-thalamus",
+      "CIT168-left-pars-compacta-of-substantia-nigra",
+      "CIT168-left-pars-reticulata-of-substantia-nigra",
+      "CIT168-right-pars-compacta-of-substantia-nigra",
+      "CIT168-right-pars-reticulata-of-substantia-nigra",
       "FJ1283",
       "FJ1288",
       "FJ1290",
@@ -1424,6 +1426,32 @@
       "FJ3200",
       "FJ3274",
       "FJ3380",
+      "NHTH-left-anterior-hypothalamic-area",
+      "NHTH-left-arcuate-nucleus-of-hypothalamus",
+      "NHTH-left-dorsal-periventricular-nucleus-of-hypothalamus",
+      "NHTH-left-dorsomedial-nucleus-of-hypothalamus",
+      "NHTH-left-lateral-hypothalamic-area",
+      "NHTH-left-medial-preoptic-nucleus",
+      "NHTH-left-paraventricular-nucleus-of-hypothalamus",
+      "NHTH-left-periventricular-nucleus-of-hypothalamus",
+      "NHTH-left-posterior-nucleus-of-hypothalamus",
+      "NHTH-left-suprachiasmatic-nucleus",
+      "NHTH-left-supraoptic-nucleus",
+      "NHTH-left-tuberomammillary-nucleus",
+      "NHTH-left-ventromedial-nucleus-of-hypothalamus",
+      "NHTH-right-anterior-hypothalamic-area",
+      "NHTH-right-arcuate-nucleus-of-hypothalamus",
+      "NHTH-right-dorsal-periventricular-nucleus-of-hypothalamus",
+      "NHTH-right-dorsomedial-nucleus-of-hypothalamus",
+      "NHTH-right-lateral-hypothalamic-area",
+      "NHTH-right-medial-preoptic-nucleus",
+      "NHTH-right-paraventricular-nucleus-of-hypothalamus",
+      "NHTH-right-periventricular-nucleus-of-hypothalamus",
+      "NHTH-right-posterior-nucleus-of-hypothalamus",
+      "NHTH-right-suprachiasmatic-nucleus",
+      "NHTH-right-supraoptic-nucleus",
+      "NHTH-right-tuberomammillary-nucleus",
+      "NHTH-right-ventromedial-nucleus-of-hypothalamus",
       "ZA-anterior-horn-of-spinal-cord",
       "ZA-cauda-equina",
       "ZA-central-canal",
@@ -15042,7 +15070,6 @@
       "AHRA-left-mediodorsal-nucleus-of-thalamus",
       "AHRA-left-parafascicular-nucleus-of-thalamus",
       "AHRA-left-pulvinar-of-thalamus",
-      "AHRA-left-substantia-nigra",
       "AHRA-left-subthalamic-nucleus",
       "AHRA-left-ventral-anterior-nucleus-of-thalamus",
       "AHRA-left-ventral-lateral-nucleus-of-thalamus",
@@ -15056,12 +15083,15 @@
       "AHRA-right-mediodorsal-nucleus-of-thalamus",
       "AHRA-right-parafascicular-nucleus-of-thalamus",
       "AHRA-right-pulvinar-of-thalamus",
-      "AHRA-right-substantia-nigra",
       "AHRA-right-subthalamic-nucleus",
       "AHRA-right-ventral-anterior-nucleus-of-thalamus",
       "AHRA-right-ventral-lateral-nucleus-of-thalamus",
       "AHRA-right-ventral-posterior-lateral-nucleus-of-thalamus",
       "AHRA-right-ventral-posterior-medial-nucleus-of-thalamus",
+      "CIT168-left-pars-compacta-of-substantia-nigra",
+      "CIT168-left-pars-reticulata-of-substantia-nigra",
+      "CIT168-right-pars-compacta-of-substantia-nigra",
+      "CIT168-right-pars-reticulata-of-substantia-nigra",
       "FJ1283",
       "FJ1288",
       "FJ1290",
@@ -15208,6 +15238,32 @@
       "FJ1841",
       "FJ1842",
       "FJ1843",
+      "NHTH-left-anterior-hypothalamic-area",
+      "NHTH-left-arcuate-nucleus-of-hypothalamus",
+      "NHTH-left-dorsal-periventricular-nucleus-of-hypothalamus",
+      "NHTH-left-dorsomedial-nucleus-of-hypothalamus",
+      "NHTH-left-lateral-hypothalamic-area",
+      "NHTH-left-medial-preoptic-nucleus",
+      "NHTH-left-paraventricular-nucleus-of-hypothalamus",
+      "NHTH-left-periventricular-nucleus-of-hypothalamus",
+      "NHTH-left-posterior-nucleus-of-hypothalamus",
+      "NHTH-left-suprachiasmatic-nucleus",
+      "NHTH-left-supraoptic-nucleus",
+      "NHTH-left-tuberomammillary-nucleus",
+      "NHTH-left-ventromedial-nucleus-of-hypothalamus",
+      "NHTH-right-anterior-hypothalamic-area",
+      "NHTH-right-arcuate-nucleus-of-hypothalamus",
+      "NHTH-right-dorsal-periventricular-nucleus-of-hypothalamus",
+      "NHTH-right-dorsomedial-nucleus-of-hypothalamus",
+      "NHTH-right-lateral-hypothalamic-area",
+      "NHTH-right-medial-preoptic-nucleus",
+      "NHTH-right-paraventricular-nucleus-of-hypothalamus",
+      "NHTH-right-periventricular-nucleus-of-hypothalamus",
+      "NHTH-right-posterior-nucleus-of-hypothalamus",
+      "NHTH-right-suprachiasmatic-nucleus",
+      "NHTH-right-supraoptic-nucleus",
+      "NHTH-right-tuberomammillary-nucleus",
+      "NHTH-right-ventromedial-nucleus-of-hypothalamus",
       "ZA-anterior-horn-of-spinal-cord",
       "ZA-cauda-equina",
       "ZA-central-canal",
@@ -16517,10 +16573,12 @@
   },
   "nervous-subthalamic-nigral": {
     "focus": [
-      "AHRA-left-substantia-nigra",
       "AHRA-left-subthalamic-nucleus",
-      "AHRA-right-substantia-nigra",
-      "AHRA-right-subthalamic-nucleus"
+      "AHRA-right-subthalamic-nucleus",
+      "CIT168-left-pars-compacta-of-substantia-nigra",
+      "CIT168-left-pars-reticulata-of-substantia-nigra",
+      "CIT168-right-pars-compacta-of-substantia-nigra",
+      "CIT168-right-pars-reticulata-of-substantia-nigra"
     ],
     "hide": [],
     "context": [
@@ -16550,6 +16608,49 @@
       "FJ1826",
       "FJ1827",
       "FJ1831"
+    ]
+  },
+  "nervous-hypothalamic-nuclei": {
+    "focus": [
+      "NHTH-left-anterior-hypothalamic-area",
+      "NHTH-left-arcuate-nucleus-of-hypothalamus",
+      "NHTH-left-dorsal-periventricular-nucleus-of-hypothalamus",
+      "NHTH-left-dorsomedial-nucleus-of-hypothalamus",
+      "NHTH-left-lateral-hypothalamic-area",
+      "NHTH-left-medial-preoptic-nucleus",
+      "NHTH-left-paraventricular-nucleus-of-hypothalamus",
+      "NHTH-left-periventricular-nucleus-of-hypothalamus",
+      "NHTH-left-posterior-nucleus-of-hypothalamus",
+      "NHTH-left-suprachiasmatic-nucleus",
+      "NHTH-left-supraoptic-nucleus",
+      "NHTH-left-tuberomammillary-nucleus",
+      "NHTH-left-ventromedial-nucleus-of-hypothalamus",
+      "NHTH-right-anterior-hypothalamic-area",
+      "NHTH-right-arcuate-nucleus-of-hypothalamus",
+      "NHTH-right-dorsal-periventricular-nucleus-of-hypothalamus",
+      "NHTH-right-dorsomedial-nucleus-of-hypothalamus",
+      "NHTH-right-lateral-hypothalamic-area",
+      "NHTH-right-medial-preoptic-nucleus",
+      "NHTH-right-paraventricular-nucleus-of-hypothalamus",
+      "NHTH-right-periventricular-nucleus-of-hypothalamus",
+      "NHTH-right-posterior-nucleus-of-hypothalamus",
+      "NHTH-right-suprachiasmatic-nucleus",
+      "NHTH-right-supraoptic-nucleus",
+      "NHTH-right-tuberomammillary-nucleus",
+      "NHTH-right-ventromedial-nucleus-of-hypothalamus"
+    ],
+    "hide": [],
+    "context": [
+      "FJ1760",
+      "FJ1768",
+      "FJ1771",
+      "FJ1780",
+      "FJ1782",
+      "FJ1808",
+      "FJ1815",
+      "FJ1818",
+      "FJ1827",
+      "FJ1828"
     ]
   },
   "nervous-cerebellar-nuclei": {
@@ -17933,8 +18034,10 @@
   },
   "substantia-nigra": {
     "focus": [
-      "AHRA-left-substantia-nigra",
-      "AHRA-right-substantia-nigra"
+      "CIT168-left-pars-compacta-of-substantia-nigra",
+      "CIT168-left-pars-reticulata-of-substantia-nigra",
+      "CIT168-right-pars-compacta-of-substantia-nigra",
+      "CIT168-right-pars-reticulata-of-substantia-nigra"
     ],
     "hide": [],
     "context": [
@@ -17956,6 +18059,257 @@
       "FJ1822",
       "FJ1826",
       "FJ1831"
+    ]
+  },
+  "substantia-nigra-compacta": {
+    "focus": [
+      "CIT168-left-pars-compacta-of-substantia-nigra",
+      "CIT168-right-pars-compacta-of-substantia-nigra"
+    ],
+    "hide": [],
+    "context": [
+      "FJ1735",
+      "FJ1736",
+      "FJ1761",
+      "FJ1762",
+      "FJ1763",
+      "FJ1769",
+      "FJ1770",
+      "FJ1774",
+      "FJ1775",
+      "FJ1779",
+      "FJ1809",
+      "FJ1810",
+      "FJ1811",
+      "FJ1817",
+      "FJ1821",
+      "FJ1822",
+      "FJ1826",
+      "FJ1831"
+    ]
+  },
+  "substantia-nigra-reticulata": {
+    "focus": [
+      "CIT168-left-pars-reticulata-of-substantia-nigra",
+      "CIT168-right-pars-reticulata-of-substantia-nigra"
+    ],
+    "hide": [],
+    "context": [
+      "CIT168-left-pars-compacta-of-substantia-nigra",
+      "CIT168-right-pars-compacta-of-substantia-nigra",
+      "FJ1735",
+      "FJ1736",
+      "FJ1761",
+      "FJ1762",
+      "FJ1763",
+      "FJ1769",
+      "FJ1770",
+      "FJ1774",
+      "FJ1775",
+      "FJ1779",
+      "FJ1809",
+      "FJ1810",
+      "FJ1811",
+      "FJ1817",
+      "FJ1821",
+      "FJ1822",
+      "FJ1826",
+      "FJ1831"
+    ]
+  },
+  "medial-preoptic-nucleus": {
+    "focus": [
+      "NHTH-left-medial-preoptic-nucleus",
+      "NHTH-right-medial-preoptic-nucleus"
+    ],
+    "hide": [],
+    "context": [
+      "FJ1760",
+      "FJ1768",
+      "FJ1780",
+      "FJ1808",
+      "FJ1815",
+      "FJ1828"
+    ]
+  },
+  "anterior-hypothalamic-area": {
+    "focus": [
+      "NHTH-left-anterior-hypothalamic-area",
+      "NHTH-right-anterior-hypothalamic-area"
+    ],
+    "hide": [],
+    "context": [
+      "FJ1760",
+      "FJ1768",
+      "FJ1780",
+      "FJ1808",
+      "FJ1815",
+      "FJ1828"
+    ]
+  },
+  "suprachiasmatic-nucleus": {
+    "focus": [
+      "NHTH-left-suprachiasmatic-nucleus",
+      "NHTH-right-suprachiasmatic-nucleus"
+    ],
+    "hide": [],
+    "context": [
+      "FJ1760",
+      "FJ1768",
+      "FJ1780",
+      "FJ1808",
+      "FJ1815",
+      "FJ1828"
+    ]
+  },
+  "supraoptic-nucleus": {
+    "focus": [
+      "NHTH-left-supraoptic-nucleus",
+      "NHTH-right-supraoptic-nucleus"
+    ],
+    "hide": [],
+    "context": [
+      "FJ1760",
+      "FJ1768",
+      "FJ1780",
+      "FJ1808",
+      "FJ1815",
+      "FJ1828"
+    ]
+  },
+  "paraventricular-nucleus": {
+    "focus": [
+      "NHTH-left-paraventricular-nucleus-of-hypothalamus",
+      "NHTH-right-paraventricular-nucleus-of-hypothalamus"
+    ],
+    "hide": [],
+    "context": [
+      "FJ1760",
+      "FJ1768",
+      "FJ1780",
+      "FJ1808",
+      "FJ1815",
+      "FJ1828"
+    ]
+  },
+  "periventricular-nucleus": {
+    "focus": [
+      "NHTH-left-periventricular-nucleus-of-hypothalamus",
+      "NHTH-right-periventricular-nucleus-of-hypothalamus"
+    ],
+    "hide": [],
+    "context": [
+      "FJ1760",
+      "FJ1768",
+      "FJ1780",
+      "FJ1808",
+      "FJ1815",
+      "FJ1828"
+    ]
+  },
+  "dorsal-periventricular-nucleus": {
+    "focus": [
+      "NHTH-left-dorsal-periventricular-nucleus-of-hypothalamus",
+      "NHTH-right-dorsal-periventricular-nucleus-of-hypothalamus"
+    ],
+    "hide": [],
+    "context": [
+      "FJ1760",
+      "FJ1768",
+      "FJ1780",
+      "FJ1808",
+      "FJ1815",
+      "FJ1828"
+    ]
+  },
+  "ventromedial-nucleus": {
+    "focus": [
+      "NHTH-left-ventromedial-nucleus-of-hypothalamus",
+      "NHTH-right-ventromedial-nucleus-of-hypothalamus"
+    ],
+    "hide": [],
+    "context": [
+      "FJ1760",
+      "FJ1768",
+      "FJ1780",
+      "FJ1808",
+      "FJ1815",
+      "FJ1828"
+    ]
+  },
+  "dorsomedial-nucleus": {
+    "focus": [
+      "NHTH-left-dorsomedial-nucleus-of-hypothalamus",
+      "NHTH-right-dorsomedial-nucleus-of-hypothalamus"
+    ],
+    "hide": [],
+    "context": [
+      "FJ1760",
+      "FJ1768",
+      "FJ1780",
+      "FJ1808",
+      "FJ1815",
+      "FJ1828"
+    ]
+  },
+  "arcuate-nucleus": {
+    "focus": [
+      "NHTH-left-arcuate-nucleus-of-hypothalamus",
+      "NHTH-right-arcuate-nucleus-of-hypothalamus"
+    ],
+    "hide": [],
+    "context": [
+      "FJ1760",
+      "FJ1768",
+      "FJ1780",
+      "FJ1808",
+      "FJ1815",
+      "FJ1828"
+    ]
+  },
+  "lateral-hypothalamic-area": {
+    "focus": [
+      "NHTH-left-lateral-hypothalamic-area",
+      "NHTH-right-lateral-hypothalamic-area"
+    ],
+    "hide": [],
+    "context": [
+      "FJ1760",
+      "FJ1768",
+      "FJ1780",
+      "FJ1808",
+      "FJ1815",
+      "FJ1828"
+    ]
+  },
+  "posterior-hypothalamic-nucleus": {
+    "focus": [
+      "NHTH-left-posterior-nucleus-of-hypothalamus",
+      "NHTH-right-posterior-nucleus-of-hypothalamus"
+    ],
+    "hide": [],
+    "context": [
+      "FJ1760",
+      "FJ1768",
+      "FJ1780",
+      "FJ1808",
+      "FJ1815",
+      "FJ1828"
+    ]
+  },
+  "tuberomammillary-nucleus": {
+    "focus": [
+      "NHTH-left-tuberomammillary-nucleus",
+      "NHTH-right-tuberomammillary-nucleus"
+    ],
+    "hide": [],
+    "context": [
+      "FJ1760",
+      "FJ1768",
+      "FJ1780",
+      "FJ1808",
+      "FJ1815",
+      "FJ1828"
     ]
   },
   "subthalamic-nucleus": {
