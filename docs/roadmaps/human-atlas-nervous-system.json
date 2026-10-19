@@ -65,18 +65,18 @@
     ]
   },
   "coverage": {
-    "nodes": 229,
-    "nodes3d": 224,
+    "nodes": 228,
+    "nodes3d": 223,
     "byStatus": {
-      "live": 192,
+      "live": 193,
       "buildable": 0,
-      "import-za": 12,
+      "import-za": 10,
       "needs-schema": 8,
       "needs-clipping": 4,
       "missing": 8
     },
-    "readyNow": "192/224 (86%) nút 3D dựng được bằng dữ liệu đang có",
-    "afterZaImport": "204/224 (91%)",
+    "readyNow": "193/223 (87%) nút 3D dựng được bằng dữ liệu đang có",
+    "afterZaImport": "203/223 (91%)",
     "haaTiles": {
       "note": "So với 24 ô \"Nervous System Views\" của HAA (ảnh tham chiếu, không dùng asset HAA).",
       "withCardNow": "19/24 (79%)",
@@ -226,13 +226,11 @@
         "flocculonodular-lobe",
         "cerebellar-peduncles",
         "medulla-pyramid-olive",
-        "nervous-meninges",
         "transverse-temporal-gyri",
         "occipital-gyri",
         "medial-surface-hemisphere",
         "intermediolateral-column",
-        "spinal-tracts",
-        "olfaction"
+        "spinal-tracts"
       ]
     },
     {
@@ -1712,9 +1710,9 @@
       "kind": "group",
       "level": 3,
       "name": {
-        "vi": "Màng não và xoang tĩnh mạch màng cứng",
-        "en": "Meninges and dural venous sinuses",
-        "reviewed": false
+        "vi": "Nếp màng cứng và xoang tĩnh mạch màng cứng",
+        "en": "Dural folds and dural venous sinuses",
+        "reviewed": true
       },
       "parent": "nervous-brain",
       "children": [
@@ -1729,13 +1727,12 @@
         "reviewed": false
       },
       "structures3d": [
-        "Tentorium cerebelli (BP3D)",
-        "Falx cerebri (ZA)",
-        "dural-sinuses (mượn hệ venous)",
-        "Spinal dura (ZA)"
+        "tentorium-cerebelli",
+        "falx-cerebri",
+        "dural-sinuses (mượn hệ venous)"
       ],
       "view": {
-        "direction": "side",
+        "direction": "three-quarter",
         "zoom": {
           "level": "organ",
           "cameraFill": 0.82,
@@ -1743,8 +1740,8 @@
         },
         "display": "layered",
         "context": [
-          "BRAIN (não, ghost)",
-          "SKULL (xương sọ, ghost)"
+          "BRAINSTEM",
+          "CEREBELLUM"
         ]
       },
       "url": {
@@ -1754,23 +1751,17 @@
       "thumbnail": {
         "source": "auto-capture",
         "from": "model",
-        "direction": "side"
+        "direction": "three-quarter"
       },
       "data": {
-        "status": "import-za",
+        "status": "live",
         "partial": true,
-        "existingViewId": null,
+        "existingViewId": "nervous-meninges",
         "borrowedFromSystem": null,
-        "note": "Không nguồn nào có màng nhện, màng mềm, liềm tiểu não.",
-        "importPath": [
-          {
-            "path": "pick",
-            "how": "Mở regex pick() (hiện chỉ nhận nerve|plexus|ganglion|root of…; loại nucleus|tract|gyrus|lobe…)"
-          }
-        ]
+        "note": "Màng cứng tuỷ ở nhóm tuỷ sống. Không nguồn nào có màng nhện, màng mềm, liềm tiểu não, hoành yên, màng cứng lót sọ."
       },
       "phase": 2,
-      "priority": "P2"
+      "priority": "done"
     },
     {
       "id": "tentorium-cerebelli",
@@ -9903,7 +9894,6 @@
         "sensory-eyeball",
         "sensory-ear",
         "tongue",
-        "olfaction",
         "touch-receptors"
       ],
       "learningObjectives": {
@@ -10496,64 +10486,6 @@
       },
       "phase": 8,
       "priority": "done"
-    },
-    {
-      "id": "olfaction",
-      "viewId": "olfaction",
-      "section": "K",
-      "kind": "structure",
-      "level": 2,
-      "name": {
-        "vi": "Khứu giác",
-        "en": "Olfaction",
-        "reviewed": false
-      },
-      "parent": "sec-sensory-organs",
-      "children": [],
-      "learningObjectives": {
-        "vi": [
-          "Theo đường khứu giác từ trần hốc mũi lên não"
-        ],
-        "reviewed": false
-      },
-      "structures3d": [
-        "olfactory-nerve",
-        "Olfactory sulcus"
-      ],
-      "view": {
-        "direction": "three-quarter",
-        "zoom": {
-          "level": "detail",
-          "cameraFill": 0.9,
-          "thumbnailFill": 0.86
-        },
-        "display": "layered",
-        "context": []
-      },
-      "url": {
-        "vi": "/vi/human-atlas?view=olfaction",
-        "en": "/en/human-atlas?view=olfaction"
-      },
-      "thumbnail": {
-        "source": "auto-capture",
-        "from": "model",
-        "direction": "three-quarter"
-      },
-      "data": {
-        "status": "import-za",
-        "partial": true,
-        "existingViewId": null,
-        "borrowedFromSystem": null,
-        "note": "Biểu mô khứu, hành khứu không có.",
-        "importPath": [
-          {
-            "path": "dedupe-exception",
-            "how": "pick() ĐÃ nhận nhưng bộ khử trùng hình học loại nhầm (sát mảnh thần kinh BP3D vùng ổ mắt/nền sọ) — cần ngoại lệ theo tên"
-          }
-        ]
-      },
-      "phase": 8,
-      "priority": "P3"
     },
     {
       "id": "touch-receptors",
