@@ -405,9 +405,9 @@ N("nervous-autonomic", "sec-pns", "G", "group", "Hệ thần kinh tự chủ", "
   obj: ["Phân biệt ba phân hệ: giao cảm, đối giao cảm, ruột", "Nhận ra chuỗi hai neuron (trước hạch – sau hạch)"],
 });
 N("sympathetic", "nervous-autonomic", "G", "group", "Phân hệ giao cảm", "Sympathetic division", {
-  status: "buildable", partial: true, dir: "anterolateral", zoom: "region", mode: "layered", context: ["SPINE", "RIBS"],
+  partial: true, dir: "front", zoom: "region", mode: "layered", context: ["SPINE"],
   obj: ["Xác định thân giao cảm hai bên cột sống", "Hiểu nguồn gốc ngực – thắt lưng của sợi giao cảm"],
-  note: "Thiếu hạch trước sống (tạng, mạc treo), dây tạng — không nguồn nào có.",
+  note: "Z-Anatomy chỉ có thân giao cảm cổ – ngực (dừng ngang T12, đo hộp bao); thiếu đoạn thắt lưng, cùng, hạch trước sống, dây tạng.",
 });
 N("intermediolateral-column", "sympathetic", "G", "region", "Cột trung gian ngoài tuỷ sống", "Intermediolateral cell column", {
   status: "import-za", zoom: "detail", mode: "layered", context: ["SPINAL_CORD ghost"], focus: ["Intermediolateral nucleus", "Lateral intermediate substance"],
@@ -415,15 +415,28 @@ N("intermediolateral-column", "sympathetic", "G", "region", "Cột trung gian ng
 });
 N("prevertebral-ganglia", "sympathetic", "G", "structure", "Hạch trước sống và dây tạng", "Prevertebral ganglia and splanchnic nerves", { status: "missing", obj: ["Định vị hạch tạng quanh động mạch chủ bụng"] });
 N("parasympathetic", "nervous-autonomic", "G", "group", "Phân hệ đối giao cảm", "Parasympathetic division", {
-  status: "buildable", partial: true, dir: "front", zoom: "region", mode: "layered", context: [SKULL, "HEART", "ABDOMINAL_VISCERA"],
-  focus: ["VAGUS (mượn views-respiratory)", "ciliary ganglion (trong OPHTHALMIC)", "chorda tympani (trong FACIAL)", "nhân Edinger-Westphal, nhân nước bọt (ZA)"],
-  note: "Thiếu hạch chân bướm – khẩu cái, hạch tai, hạch dưới hàm, dây tạng chậu (đối giao cảm cùng). Group mới chỉ được nổi bật đúng HỢP các structure sẵn có (test phủ đủ).",
+  partial: true, dir: "anterolateral", zoom: "region", mode: "layered", context: ["BRAINSTEM", "HEART"],
+  focus: ["cranial-parasympathetic-nuclei", "ciliary-ganglion", "oculomotor-nerve", "facial-nerve", "glossopharyngeal-nerve", "vagus-nerves"],
+  note: "Chỉ có phần sọ — nút 'parasympathetic-cranial' gộp vào đây. Dây III, VII, IX, X hiện nguyên dây. Thiếu hạch chân bướm – khẩu cái, hạch tai, hạch dưới hàm, dây đá, đối giao cảm cùng.",
   obj: ["Nhận ra nguồn gốc sọ – cùng của sợi đối giao cảm", "Kể bốn dây sọ mang sợi đối giao cảm"],
 });
-N("parasympathetic-cranial", "parasympathetic", "G", "structure", "Đối giao cảm phần sọ", "Cranial parasympathetic outflow", {
-  status: "buildable", partial: true, zoom: "structure", mode: "layered", focus: ["vagus-nerves", "ciliary ganglion", "chorda tympani", "Accessory nucleus of oculomotor nerve, Superior/Inferior salivatory nucleus, Posterior nucleus of vagus (ZA)"],
-  obj: ["Liên hệ dây III, VII, IX, X với hạch đối giao cảm tương ứng"],
+N("cranial-parasympathetic-nuclei", "parasympathetic", "G", "structure", "", "", {
+  dir: "back", zoom: "detail", mode: "layered", context: ["BRAINSTEM"], obj: ["Liên hệ nhân Edinger–Westphal, nhân nước bọt trên/dưới, nhân lưng dây X với dây III, VII, IX, X"],
 });
+N("ciliary-ganglion", "parasympathetic", "G", "structure", "", "", {
+  dir: [-0.8, 0.35, 0.5], zoom: "detail", mode: "layered", obj: ["Định vị hạch mi sau nhãn cầu, nơi sợi đối giao cảm của dây III tiếp hợp"],
+});
+for (const [id, parent, dir, obj] of [
+  ["cranial-nerve-motor-nuclei", "cranial-nerve-nuclei", "back", "Định vị nhân vận động dây III, IV, VI, VII, IX–X (nhân mơ hồ), XI, XII"],
+  ["cranial-nerve-sensory-nuclei", "cranial-nerve-nuclei", "back", "Định vị nhân bó đơn độc, nhân tiền đình, nhân ốc tai"],
+  ["ophthalmic-nerve-trunk", "ophthalmic-nerve", [-0.8, 0.35, 0.5], "Theo thân V1 từ hạch sinh ba tới khe ổ mắt trên"],
+  ["frontal-nerve", "ophthalmic-nerve", [-0.8, 0.35, 0.5], "Theo thần kinh trán chia nhánh trên ổ mắt và trên ròng rọc"],
+  ["lacrimal-nerve", "ophthalmic-nerve", [-0.8, 0.35, 0.5], "Theo thần kinh lệ tới tuyến lệ"],
+  ["nasociliary-nerve", "ophthalmic-nerve", [-0.8, 0.35, 0.5], "Kể nhánh của thần kinh mũi mi: sàng trước/sau, dưới ròng rọc, mi dài"],
+  ["sympathetic-chain", "sympathetic-trunk", "anterolateral", "Theo thân giao cảm dọc hai bên thân đốt sống"],
+  ["sympathetic-ganglia", "sympathetic-trunk", "anterolateral", "Nhận ra hạch giao cảm nằm thành chuỗi trên thân"],
+  ["sympathetic-nerves", "sympathetic-trunk", "anterolateral", "Phân biệt nhánh giao cảm với thân giao cảm"],
+]) N(id, parent, "G", "structure", "", "", { dir, zoom: "detail", mode: "layered", obj: [obj] });
 N("parasympathetic-sacral", "parasympathetic", "G", "structure", "Đối giao cảm phần cùng (dây tạng chậu)", "Sacral parasympathetic outflow (pelvic splanchnic nerves)", { status: "missing", obj: ["Định vị dây tạng chậu từ đoạn tuỷ cùng"] });
 N("enteric", "nervous-autonomic", "G", "group", "Hệ thần kinh ruột", "Enteric nervous system", {
   status: "missing", obj: ["Phân biệt đám rối cơ ruột với đám rối dưới niêm mạc"],
@@ -692,7 +705,7 @@ N("nervous-lower-limb", "sec-plexuses", "I", "group", "Đám rối thắt lưng 
   status: "live", existing: "nervous-lower-limb", partial: true, dir: "front", zoom: "region", mode: "layered",
   note: "Ô HAA 10. Chỉ có nhánh, không có thân đám rối.", obj: ["Phân biệt nhánh đám rối thắt lưng với nhánh đám rối cùng"],
 });
-N("sympathetic-trunk", "sympathetic", "G", "structure", "Thân và các dây giao cảm", "Sympathetic trunk and nerves", {
+N("sympathetic-trunk", "sympathetic", "G", "structure", "Thân giao cảm đoạn cổ – ngực: dải thân, các hạch và các nhánh", "Cervical and thoracic sympathetic trunk: cord, ganglia and branches", {
   status: "live", existing: "sympathetic-trunk", dir: "anterolateral", zoom: "structure", mode: "layered", obj: ["Xác định thân giao cảm hai bên thân đốt sống"],
 });
 
