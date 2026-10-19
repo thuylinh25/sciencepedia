@@ -65,18 +65,18 @@
     ]
   },
   "coverage": {
-    "nodes": 231,
-    "nodes3d": 226,
+    "nodes": 251,
+    "nodes3d": 246,
     "byStatus": {
-      "live": 199,
+      "live": 223,
       "buildable": 0,
-      "import-za": 6,
+      "import-za": 2,
       "needs-schema": 8,
       "needs-clipping": 4,
       "missing": 9
     },
-    "readyNow": "199/226 (88%) nút 3D dựng được bằng dữ liệu đang có",
-    "afterZaImport": "205/226 (91%)",
+    "readyNow": "223/246 (91%) nút 3D dựng được bằng dữ liệu đang có",
+    "afterZaImport": "225/246 (91%)",
     "haaTiles": {
       "note": "So với 24 ô \"Nervous System Views\" của HAA (ảnh tham chiếu, không dùng asset HAA).",
       "withCardNow": "19/24 (79%)",
@@ -221,10 +221,6 @@
       "title": "Nhập mở rộng Z-Anatomy — ĐỢT 1 XONG 2026-10-19: dây I/VI, thân + rễ V, nhân dây sọ, nhân đỏ, liềm đại não, hạch giao cảm, tai giữa/trong, xương con; kèm hiệu chỉnh vùng đầu 1 cm. Còn lại (phải THAY mảnh BP3D hoặc chồng chất trắng): hồi/tiểu thuỳ, bó tuỷ, cột trung gian ngoài",
       "status": "import-za",
       "items": [
-        "cerebellar-vermis",
-        "cerebellar-hemisphere-lobules",
-        "flocculonodular-lobe",
-        "medulla-pyramid-olive",
         "occipital-gyri",
         "medial-surface-hemisphere"
       ]
@@ -656,6 +652,8 @@
         "cerebellar-vermis",
         "cerebellar-hemisphere-lobules",
         "flocculonodular-lobe",
+        "cerebellum-anterior-lobe",
+        "cerebellum-posterior-lobe",
         "superior-cerebellar-peduncle",
         "nervous-cerebellar-nuclei"
       ],
@@ -696,7 +694,7 @@
         "partial": false,
         "existingViewId": "cerebellum",
         "borrowedFromSystem": null,
-        "note": "Hiện là 1 mảnh BP3D (structure `cerebellum`). Tách tiểu thuỳ cần nhập ZA; khi đó id `cerebellum` chuyển thành group, giữ deep link."
+        "note": "Từ 2026-10-19: tiểu thuỳ Z-Anatomy THAY hai nửa tiểu não BP3D (manifest `replaces`); structure `cerebellum` → 3 thuỳ → 18 tiểu thuỳ. Khối đặc, không lá tiểu não, không chất trắng riêng."
       },
       "phase": 2,
       "priority": "done"
@@ -705,12 +703,12 @@
       "id": "cerebellar-vermis",
       "viewId": "cerebellar-vermis",
       "section": "B",
-      "kind": "structure",
+      "kind": "group",
       "level": 4,
       "name": {
-        "vi": "Thuỳ nhộng tiểu não",
+        "vi": "Nhộng tiểu não",
         "en": "Cerebellar vermis",
-        "reviewed": false
+        "reviewed": true
       },
       "parent": "cerebellum",
       "children": [],
@@ -753,31 +751,25 @@
         "direction": "back"
       },
       "data": {
-        "status": "import-za",
+        "status": "live",
         "partial": false,
-        "existingViewId": null,
+        "existingViewId": "cerebellar-vermis",
         "borrowedFromSystem": null,
-        "note": null,
-        "importPath": [
-          {
-            "path": "replace-bp3d",
-            "how": "Chồng lên mảnh BP3D nguyên khối → khử trùng sẽ loại; phải THAY mảnh BP3D bằng các mảnh ZA (đổi test phủ đủ)"
-          }
-        ]
+        "note": null
       },
       "phase": 2,
-      "priority": "P2"
+      "priority": "done"
     },
     {
       "id": "cerebellar-hemisphere-lobules",
       "viewId": "cerebellar-hemisphere-lobules",
       "section": "B",
-      "kind": "structure",
+      "kind": "group",
       "level": 4,
       "name": {
         "vi": "Các tiểu thuỳ bán cầu tiểu não",
-        "en": "Lobules of the cerebellar hemisphere",
-        "reviewed": false
+        "en": "Lobules of the cerebellar hemispheres",
+        "reviewed": true
       },
       "parent": "cerebellum",
       "children": [],
@@ -818,20 +810,14 @@
         "direction": "back"
       },
       "data": {
-        "status": "import-za",
+        "status": "live",
         "partial": false,
-        "existingViewId": null,
+        "existingViewId": "cerebellar-hemisphere-lobules",
         "borrowedFromSystem": null,
-        "note": null,
-        "importPath": [
-          {
-            "path": "replace-bp3d",
-            "how": "Chồng lên mảnh BP3D nguyên khối → khử trùng sẽ loại; phải THAY mảnh BP3D bằng các mảnh ZA (đổi test phủ đủ)"
-          }
-        ]
+        "note": null
       },
       "phase": 2,
-      "priority": "P2"
+      "priority": "done"
     },
     {
       "id": "flocculonodular-lobe",
@@ -840,12 +826,15 @@
       "kind": "structure",
       "level": 4,
       "name": {
-        "vi": "Thuỳ nhung – nhộng (thể nhung, nhân nhộng)",
+        "vi": "Thuỳ nhung – cục",
         "en": "Flocculonodular lobe",
-        "reviewed": false
+        "reviewed": true
       },
       "parent": "cerebellum",
-      "children": [],
+      "children": [
+        "cerebellar-nodule",
+        "flocculus"
+      ],
       "learningObjectives": {
         "vi": [
           "Xác định thuỳ nhung – nhộng ở mặt trước dưới tiểu não"
@@ -858,11 +847,7 @@
         "Nodule of vermis"
       ],
       "view": {
-        "direction": [
-          0,
-          -0.4,
-          -1
-        ],
+        "direction": "front",
         "zoom": {
           "level": "detail",
           "cameraFill": 0.9,
@@ -881,27 +866,1095 @@
       "thumbnail": {
         "source": "auto-capture",
         "from": "model",
-        "direction": [
-          0,
-          -0.4,
-          -1
-        ]
+        "direction": "front"
       },
       "data": {
-        "status": "import-za",
+        "status": "live",
         "partial": false,
-        "existingViewId": null,
+        "existingViewId": "flocculonodular-lobe",
         "borrowedFromSystem": null,
-        "note": null,
-        "importPath": [
-          {
-            "path": "replace-bp3d",
-            "how": "Chồng lên mảnh BP3D nguyên khối → khử trùng sẽ loại; phải THAY mảnh BP3D bằng các mảnh ZA (đổi test phủ đủ)"
-          }
-        ]
+        "note": null
       },
       "phase": 2,
-      "priority": "P2"
+      "priority": "done"
+    },
+    {
+      "id": "cerebellum-anterior-lobe",
+      "viewId": "cerebellum-anterior-lobe",
+      "section": "B",
+      "kind": "structure",
+      "level": 4,
+      "name": {
+        "vi": "Thuỳ trước tiểu não",
+        "en": "Anterior lobe of cerebellum",
+        "reviewed": true
+      },
+      "parent": "cerebellum",
+      "children": [
+        "cerebellar-lingula",
+        "cerebellar-central-lobule",
+        "cerebellar-central-lobule-wing",
+        "cerebellar-culmen",
+        "anterior-quadrangular-lobule"
+      ],
+      "learningObjectives": {
+        "vi": [
+          "Xác định thuỳ trước tiểu não trước khe nguyên phát"
+        ],
+        "reviewed": false
+      },
+      "structures3d": [
+        "rule hiện có của `cerebellum-anterior-lobe`"
+      ],
+      "view": {
+        "direction": "back",
+        "zoom": {
+          "level": "detail",
+          "cameraFill": 0.9,
+          "thumbnailFill": 0.86
+        },
+        "display": "layered",
+        "context": [
+          "CEREBELLUM"
+        ]
+      },
+      "url": {
+        "vi": "/vi/human-atlas?view=cerebellum-anterior-lobe",
+        "en": "/en/human-atlas?view=cerebellum-anterior-lobe"
+      },
+      "thumbnail": {
+        "source": "auto-capture",
+        "from": "model",
+        "direction": "back"
+      },
+      "data": {
+        "status": "live",
+        "partial": false,
+        "existingViewId": "cerebellum-anterior-lobe",
+        "borrowedFromSystem": null,
+        "note": null
+      },
+      "phase": 2,
+      "priority": "done"
+    },
+    {
+      "id": "cerebellum-posterior-lobe",
+      "viewId": "cerebellum-posterior-lobe",
+      "section": "B",
+      "kind": "structure",
+      "level": 4,
+      "name": {
+        "vi": "Thuỳ sau tiểu não",
+        "en": "Posterior lobe of cerebellum",
+        "reviewed": true
+      },
+      "parent": "cerebellum",
+      "children": [
+        "cerebellar-declive",
+        "posterior-quadrangular-lobule",
+        "cerebellar-folium",
+        "superior-semilunar-lobule",
+        "cerebellar-tuber",
+        "inferior-semilunar-lobule",
+        "gracile-lobule",
+        "cerebellar-pyramis",
+        "biventral-lobule",
+        "cerebellar-uvula",
+        "cerebellar-tonsil"
+      ],
+      "learningObjectives": {
+        "vi": [
+          "Xác định thuỳ sau tiểu não giữa khe nguyên phát và khe sau bên"
+        ],
+        "reviewed": false
+      },
+      "structures3d": [
+        "rule hiện có của `cerebellum-posterior-lobe`"
+      ],
+      "view": {
+        "direction": "back",
+        "zoom": {
+          "level": "detail",
+          "cameraFill": 0.9,
+          "thumbnailFill": 0.86
+        },
+        "display": "layered",
+        "context": [
+          "CEREBELLUM"
+        ]
+      },
+      "url": {
+        "vi": "/vi/human-atlas?view=cerebellum-posterior-lobe",
+        "en": "/en/human-atlas?view=cerebellum-posterior-lobe"
+      },
+      "thumbnail": {
+        "source": "auto-capture",
+        "from": "model",
+        "direction": "back"
+      },
+      "data": {
+        "status": "live",
+        "partial": false,
+        "existingViewId": "cerebellum-posterior-lobe",
+        "borrowedFromSystem": null,
+        "note": null
+      },
+      "phase": 2,
+      "priority": "done"
+    },
+    {
+      "id": "cerebellar-lingula",
+      "viewId": "cerebellar-lingula",
+      "section": "B",
+      "kind": "structure",
+      "level": 5,
+      "name": {
+        "vi": "Lưỡi tiểu não",
+        "en": "Lingula of cerebellum",
+        "reviewed": true
+      },
+      "parent": "cerebellum-anterior-lobe",
+      "children": [],
+      "learningObjectives": {
+        "vi": [
+          "Định vị tiểu thuỳ trên tiểu não"
+        ],
+        "reviewed": false
+      },
+      "structures3d": [
+        "rule hiện có của `cerebellar-lingula`"
+      ],
+      "view": {
+        "direction": "back",
+        "zoom": {
+          "level": "detail",
+          "cameraFill": 0.9,
+          "thumbnailFill": 0.86
+        },
+        "display": "layered",
+        "context": [
+          "CEREBELLUM"
+        ]
+      },
+      "url": {
+        "vi": "/vi/human-atlas?view=cerebellar-lingula",
+        "en": "/en/human-atlas?view=cerebellar-lingula"
+      },
+      "thumbnail": {
+        "source": "auto-capture",
+        "from": "model",
+        "direction": "back"
+      },
+      "data": {
+        "status": "live",
+        "partial": false,
+        "existingViewId": "cerebellar-lingula",
+        "borrowedFromSystem": null,
+        "note": null
+      },
+      "phase": 2,
+      "priority": "done"
+    },
+    {
+      "id": "cerebellar-central-lobule",
+      "viewId": "cerebellar-central-lobule",
+      "section": "B",
+      "kind": "structure",
+      "level": 5,
+      "name": {
+        "vi": "Tiểu thuỳ trung tâm",
+        "en": "Central lobule",
+        "reviewed": true
+      },
+      "parent": "cerebellum-anterior-lobe",
+      "children": [],
+      "learningObjectives": {
+        "vi": [
+          "Định vị tiểu thuỳ trên tiểu não"
+        ],
+        "reviewed": false
+      },
+      "structures3d": [
+        "rule hiện có của `cerebellar-central-lobule`"
+      ],
+      "view": {
+        "direction": "back",
+        "zoom": {
+          "level": "detail",
+          "cameraFill": 0.9,
+          "thumbnailFill": 0.86
+        },
+        "display": "layered",
+        "context": [
+          "CEREBELLUM"
+        ]
+      },
+      "url": {
+        "vi": "/vi/human-atlas?view=cerebellar-central-lobule",
+        "en": "/en/human-atlas?view=cerebellar-central-lobule"
+      },
+      "thumbnail": {
+        "source": "auto-capture",
+        "from": "model",
+        "direction": "back"
+      },
+      "data": {
+        "status": "live",
+        "partial": false,
+        "existingViewId": "cerebellar-central-lobule",
+        "borrowedFromSystem": null,
+        "note": null
+      },
+      "phase": 2,
+      "priority": "done"
+    },
+    {
+      "id": "cerebellar-central-lobule-wing",
+      "viewId": "cerebellar-central-lobule-wing",
+      "section": "B",
+      "kind": "structure",
+      "level": 5,
+      "name": {
+        "vi": "Cánh tiểu thuỳ trung tâm",
+        "en": "Wing of central lobule",
+        "reviewed": true
+      },
+      "parent": "cerebellum-anterior-lobe",
+      "children": [],
+      "learningObjectives": {
+        "vi": [
+          "Định vị tiểu thuỳ trên tiểu não"
+        ],
+        "reviewed": false
+      },
+      "structures3d": [
+        "rule hiện có của `cerebellar-central-lobule-wing`"
+      ],
+      "view": {
+        "direction": "back",
+        "zoom": {
+          "level": "detail",
+          "cameraFill": 0.9,
+          "thumbnailFill": 0.86
+        },
+        "display": "layered",
+        "context": [
+          "CEREBELLUM"
+        ]
+      },
+      "url": {
+        "vi": "/vi/human-atlas?view=cerebellar-central-lobule-wing",
+        "en": "/en/human-atlas?view=cerebellar-central-lobule-wing"
+      },
+      "thumbnail": {
+        "source": "auto-capture",
+        "from": "model",
+        "direction": "back"
+      },
+      "data": {
+        "status": "live",
+        "partial": false,
+        "existingViewId": "cerebellar-central-lobule-wing",
+        "borrowedFromSystem": null,
+        "note": null
+      },
+      "phase": 2,
+      "priority": "done"
+    },
+    {
+      "id": "cerebellar-culmen",
+      "viewId": "cerebellar-culmen",
+      "section": "B",
+      "kind": "structure",
+      "level": 5,
+      "name": {
+        "vi": "Đỉnh nhộng",
+        "en": "Culmen",
+        "reviewed": true
+      },
+      "parent": "cerebellum-anterior-lobe",
+      "children": [],
+      "learningObjectives": {
+        "vi": [
+          "Định vị tiểu thuỳ trên tiểu não"
+        ],
+        "reviewed": false
+      },
+      "structures3d": [
+        "rule hiện có của `cerebellar-culmen`"
+      ],
+      "view": {
+        "direction": "back",
+        "zoom": {
+          "level": "detail",
+          "cameraFill": 0.9,
+          "thumbnailFill": 0.86
+        },
+        "display": "layered",
+        "context": [
+          "CEREBELLUM"
+        ]
+      },
+      "url": {
+        "vi": "/vi/human-atlas?view=cerebellar-culmen",
+        "en": "/en/human-atlas?view=cerebellar-culmen"
+      },
+      "thumbnail": {
+        "source": "auto-capture",
+        "from": "model",
+        "direction": "back"
+      },
+      "data": {
+        "status": "live",
+        "partial": false,
+        "existingViewId": "cerebellar-culmen",
+        "borrowedFromSystem": null,
+        "note": null
+      },
+      "phase": 2,
+      "priority": "done"
+    },
+    {
+      "id": "anterior-quadrangular-lobule",
+      "viewId": "anterior-quadrangular-lobule",
+      "section": "B",
+      "kind": "structure",
+      "level": 5,
+      "name": {
+        "vi": "Tiểu thuỳ bốn cạnh trước",
+        "en": "Anterior quadrangular lobule",
+        "reviewed": true
+      },
+      "parent": "cerebellum-anterior-lobe",
+      "children": [],
+      "learningObjectives": {
+        "vi": [
+          "Định vị tiểu thuỳ trên tiểu não"
+        ],
+        "reviewed": false
+      },
+      "structures3d": [
+        "rule hiện có của `anterior-quadrangular-lobule`"
+      ],
+      "view": {
+        "direction": "back",
+        "zoom": {
+          "level": "detail",
+          "cameraFill": 0.9,
+          "thumbnailFill": 0.86
+        },
+        "display": "layered",
+        "context": [
+          "CEREBELLUM"
+        ]
+      },
+      "url": {
+        "vi": "/vi/human-atlas?view=anterior-quadrangular-lobule",
+        "en": "/en/human-atlas?view=anterior-quadrangular-lobule"
+      },
+      "thumbnail": {
+        "source": "auto-capture",
+        "from": "model",
+        "direction": "back"
+      },
+      "data": {
+        "status": "live",
+        "partial": false,
+        "existingViewId": "anterior-quadrangular-lobule",
+        "borrowedFromSystem": null,
+        "note": null
+      },
+      "phase": 2,
+      "priority": "done"
+    },
+    {
+      "id": "cerebellar-declive",
+      "viewId": "cerebellar-declive",
+      "section": "B",
+      "kind": "structure",
+      "level": 5,
+      "name": {
+        "vi": "Dốc nhộng",
+        "en": "Declive",
+        "reviewed": true
+      },
+      "parent": "cerebellum-posterior-lobe",
+      "children": [],
+      "learningObjectives": {
+        "vi": [
+          "Định vị tiểu thuỳ trên tiểu não"
+        ],
+        "reviewed": false
+      },
+      "structures3d": [
+        "rule hiện có của `cerebellar-declive`"
+      ],
+      "view": {
+        "direction": "back",
+        "zoom": {
+          "level": "detail",
+          "cameraFill": 0.9,
+          "thumbnailFill": 0.86
+        },
+        "display": "layered",
+        "context": [
+          "CEREBELLUM"
+        ]
+      },
+      "url": {
+        "vi": "/vi/human-atlas?view=cerebellar-declive",
+        "en": "/en/human-atlas?view=cerebellar-declive"
+      },
+      "thumbnail": {
+        "source": "auto-capture",
+        "from": "model",
+        "direction": "back"
+      },
+      "data": {
+        "status": "live",
+        "partial": false,
+        "existingViewId": "cerebellar-declive",
+        "borrowedFromSystem": null,
+        "note": null
+      },
+      "phase": 2,
+      "priority": "done"
+    },
+    {
+      "id": "posterior-quadrangular-lobule",
+      "viewId": "posterior-quadrangular-lobule",
+      "section": "B",
+      "kind": "structure",
+      "level": 5,
+      "name": {
+        "vi": "Tiểu thuỳ bốn cạnh sau",
+        "en": "Posterior quadrangular lobule",
+        "reviewed": true
+      },
+      "parent": "cerebellum-posterior-lobe",
+      "children": [],
+      "learningObjectives": {
+        "vi": [
+          "Định vị tiểu thuỳ trên tiểu não"
+        ],
+        "reviewed": false
+      },
+      "structures3d": [
+        "rule hiện có của `posterior-quadrangular-lobule`"
+      ],
+      "view": {
+        "direction": "back",
+        "zoom": {
+          "level": "detail",
+          "cameraFill": 0.9,
+          "thumbnailFill": 0.86
+        },
+        "display": "layered",
+        "context": [
+          "CEREBELLUM"
+        ]
+      },
+      "url": {
+        "vi": "/vi/human-atlas?view=posterior-quadrangular-lobule",
+        "en": "/en/human-atlas?view=posterior-quadrangular-lobule"
+      },
+      "thumbnail": {
+        "source": "auto-capture",
+        "from": "model",
+        "direction": "back"
+      },
+      "data": {
+        "status": "live",
+        "partial": false,
+        "existingViewId": "posterior-quadrangular-lobule",
+        "borrowedFromSystem": null,
+        "note": null
+      },
+      "phase": 2,
+      "priority": "done"
+    },
+    {
+      "id": "cerebellar-folium",
+      "viewId": "cerebellar-folium",
+      "section": "B",
+      "kind": "structure",
+      "level": 5,
+      "name": {
+        "vi": "Lá nhộng",
+        "en": "Folium of vermis",
+        "reviewed": true
+      },
+      "parent": "cerebellum-posterior-lobe",
+      "children": [],
+      "learningObjectives": {
+        "vi": [
+          "Định vị tiểu thuỳ trên tiểu não"
+        ],
+        "reviewed": false
+      },
+      "structures3d": [
+        "rule hiện có của `cerebellar-folium`"
+      ],
+      "view": {
+        "direction": "back",
+        "zoom": {
+          "level": "detail",
+          "cameraFill": 0.9,
+          "thumbnailFill": 0.86
+        },
+        "display": "layered",
+        "context": [
+          "CEREBELLUM"
+        ]
+      },
+      "url": {
+        "vi": "/vi/human-atlas?view=cerebellar-folium",
+        "en": "/en/human-atlas?view=cerebellar-folium"
+      },
+      "thumbnail": {
+        "source": "auto-capture",
+        "from": "model",
+        "direction": "back"
+      },
+      "data": {
+        "status": "live",
+        "partial": false,
+        "existingViewId": "cerebellar-folium",
+        "borrowedFromSystem": null,
+        "note": null
+      },
+      "phase": 2,
+      "priority": "done"
+    },
+    {
+      "id": "superior-semilunar-lobule",
+      "viewId": "superior-semilunar-lobule",
+      "section": "B",
+      "kind": "structure",
+      "level": 5,
+      "name": {
+        "vi": "Tiểu thuỳ bán nguyệt trên",
+        "en": "Superior semilunar lobule",
+        "reviewed": true
+      },
+      "parent": "cerebellum-posterior-lobe",
+      "children": [],
+      "learningObjectives": {
+        "vi": [
+          "Định vị tiểu thuỳ trên tiểu não"
+        ],
+        "reviewed": false
+      },
+      "structures3d": [
+        "rule hiện có của `superior-semilunar-lobule`"
+      ],
+      "view": {
+        "direction": "back",
+        "zoom": {
+          "level": "detail",
+          "cameraFill": 0.9,
+          "thumbnailFill": 0.86
+        },
+        "display": "layered",
+        "context": [
+          "CEREBELLUM"
+        ]
+      },
+      "url": {
+        "vi": "/vi/human-atlas?view=superior-semilunar-lobule",
+        "en": "/en/human-atlas?view=superior-semilunar-lobule"
+      },
+      "thumbnail": {
+        "source": "auto-capture",
+        "from": "model",
+        "direction": "back"
+      },
+      "data": {
+        "status": "live",
+        "partial": false,
+        "existingViewId": "superior-semilunar-lobule",
+        "borrowedFromSystem": null,
+        "note": null
+      },
+      "phase": 2,
+      "priority": "done"
+    },
+    {
+      "id": "cerebellar-tuber",
+      "viewId": "cerebellar-tuber",
+      "section": "B",
+      "kind": "structure",
+      "level": 5,
+      "name": {
+        "vi": "Củ nhộng",
+        "en": "Tuber of vermis",
+        "reviewed": true
+      },
+      "parent": "cerebellum-posterior-lobe",
+      "children": [],
+      "learningObjectives": {
+        "vi": [
+          "Định vị tiểu thuỳ trên tiểu não"
+        ],
+        "reviewed": false
+      },
+      "structures3d": [
+        "rule hiện có của `cerebellar-tuber`"
+      ],
+      "view": {
+        "direction": "back",
+        "zoom": {
+          "level": "detail",
+          "cameraFill": 0.9,
+          "thumbnailFill": 0.86
+        },
+        "display": "layered",
+        "context": [
+          "CEREBELLUM"
+        ]
+      },
+      "url": {
+        "vi": "/vi/human-atlas?view=cerebellar-tuber",
+        "en": "/en/human-atlas?view=cerebellar-tuber"
+      },
+      "thumbnail": {
+        "source": "auto-capture",
+        "from": "model",
+        "direction": "back"
+      },
+      "data": {
+        "status": "live",
+        "partial": false,
+        "existingViewId": "cerebellar-tuber",
+        "borrowedFromSystem": null,
+        "note": null
+      },
+      "phase": 2,
+      "priority": "done"
+    },
+    {
+      "id": "inferior-semilunar-lobule",
+      "viewId": "inferior-semilunar-lobule",
+      "section": "B",
+      "kind": "structure",
+      "level": 5,
+      "name": {
+        "vi": "Tiểu thuỳ bán nguyệt dưới",
+        "en": "Inferior semilunar lobule",
+        "reviewed": true
+      },
+      "parent": "cerebellum-posterior-lobe",
+      "children": [],
+      "learningObjectives": {
+        "vi": [
+          "Định vị tiểu thuỳ trên tiểu não"
+        ],
+        "reviewed": false
+      },
+      "structures3d": [
+        "rule hiện có của `inferior-semilunar-lobule`"
+      ],
+      "view": {
+        "direction": "back",
+        "zoom": {
+          "level": "detail",
+          "cameraFill": 0.9,
+          "thumbnailFill": 0.86
+        },
+        "display": "layered",
+        "context": [
+          "CEREBELLUM"
+        ]
+      },
+      "url": {
+        "vi": "/vi/human-atlas?view=inferior-semilunar-lobule",
+        "en": "/en/human-atlas?view=inferior-semilunar-lobule"
+      },
+      "thumbnail": {
+        "source": "auto-capture",
+        "from": "model",
+        "direction": "back"
+      },
+      "data": {
+        "status": "live",
+        "partial": false,
+        "existingViewId": "inferior-semilunar-lobule",
+        "borrowedFromSystem": null,
+        "note": null
+      },
+      "phase": 2,
+      "priority": "done"
+    },
+    {
+      "id": "gracile-lobule",
+      "viewId": "gracile-lobule",
+      "section": "B",
+      "kind": "structure",
+      "level": 5,
+      "name": {
+        "vi": "Tiểu thuỳ thon",
+        "en": "Gracile lobule",
+        "reviewed": true
+      },
+      "parent": "cerebellum-posterior-lobe",
+      "children": [],
+      "learningObjectives": {
+        "vi": [
+          "Định vị tiểu thuỳ trên tiểu não"
+        ],
+        "reviewed": false
+      },
+      "structures3d": [
+        "rule hiện có của `gracile-lobule`"
+      ],
+      "view": {
+        "direction": "back",
+        "zoom": {
+          "level": "detail",
+          "cameraFill": 0.9,
+          "thumbnailFill": 0.86
+        },
+        "display": "layered",
+        "context": [
+          "CEREBELLUM"
+        ]
+      },
+      "url": {
+        "vi": "/vi/human-atlas?view=gracile-lobule",
+        "en": "/en/human-atlas?view=gracile-lobule"
+      },
+      "thumbnail": {
+        "source": "auto-capture",
+        "from": "model",
+        "direction": "back"
+      },
+      "data": {
+        "status": "live",
+        "partial": false,
+        "existingViewId": "gracile-lobule",
+        "borrowedFromSystem": null,
+        "note": null
+      },
+      "phase": 2,
+      "priority": "done"
+    },
+    {
+      "id": "cerebellar-pyramis",
+      "viewId": "cerebellar-pyramis",
+      "section": "B",
+      "kind": "structure",
+      "level": 5,
+      "name": {
+        "vi": "Tháp nhộng",
+        "en": "Pyramis of vermis",
+        "reviewed": true
+      },
+      "parent": "cerebellum-posterior-lobe",
+      "children": [],
+      "learningObjectives": {
+        "vi": [
+          "Định vị tiểu thuỳ trên tiểu não"
+        ],
+        "reviewed": false
+      },
+      "structures3d": [
+        "rule hiện có của `cerebellar-pyramis`"
+      ],
+      "view": {
+        "direction": "back",
+        "zoom": {
+          "level": "detail",
+          "cameraFill": 0.9,
+          "thumbnailFill": 0.86
+        },
+        "display": "layered",
+        "context": [
+          "CEREBELLUM"
+        ]
+      },
+      "url": {
+        "vi": "/vi/human-atlas?view=cerebellar-pyramis",
+        "en": "/en/human-atlas?view=cerebellar-pyramis"
+      },
+      "thumbnail": {
+        "source": "auto-capture",
+        "from": "model",
+        "direction": "back"
+      },
+      "data": {
+        "status": "live",
+        "partial": false,
+        "existingViewId": "cerebellar-pyramis",
+        "borrowedFromSystem": null,
+        "note": null
+      },
+      "phase": 2,
+      "priority": "done"
+    },
+    {
+      "id": "biventral-lobule",
+      "viewId": "biventral-lobule",
+      "section": "B",
+      "kind": "structure",
+      "level": 5,
+      "name": {
+        "vi": "Tiểu thuỳ hai bụng",
+        "en": "Biventral lobule",
+        "reviewed": true
+      },
+      "parent": "cerebellum-posterior-lobe",
+      "children": [],
+      "learningObjectives": {
+        "vi": [
+          "Định vị tiểu thuỳ trên tiểu não"
+        ],
+        "reviewed": false
+      },
+      "structures3d": [
+        "rule hiện có của `biventral-lobule`"
+      ],
+      "view": {
+        "direction": "back",
+        "zoom": {
+          "level": "detail",
+          "cameraFill": 0.9,
+          "thumbnailFill": 0.86
+        },
+        "display": "layered",
+        "context": [
+          "CEREBELLUM"
+        ]
+      },
+      "url": {
+        "vi": "/vi/human-atlas?view=biventral-lobule",
+        "en": "/en/human-atlas?view=biventral-lobule"
+      },
+      "thumbnail": {
+        "source": "auto-capture",
+        "from": "model",
+        "direction": "back"
+      },
+      "data": {
+        "status": "live",
+        "partial": false,
+        "existingViewId": "biventral-lobule",
+        "borrowedFromSystem": null,
+        "note": null
+      },
+      "phase": 2,
+      "priority": "done"
+    },
+    {
+      "id": "cerebellar-uvula",
+      "viewId": "cerebellar-uvula",
+      "section": "B",
+      "kind": "structure",
+      "level": 5,
+      "name": {
+        "vi": "Lưỡi gà nhộng",
+        "en": "Uvula of vermis",
+        "reviewed": true
+      },
+      "parent": "cerebellum-posterior-lobe",
+      "children": [],
+      "learningObjectives": {
+        "vi": [
+          "Định vị tiểu thuỳ trên tiểu não"
+        ],
+        "reviewed": false
+      },
+      "structures3d": [
+        "rule hiện có của `cerebellar-uvula`"
+      ],
+      "view": {
+        "direction": "back",
+        "zoom": {
+          "level": "detail",
+          "cameraFill": 0.9,
+          "thumbnailFill": 0.86
+        },
+        "display": "layered",
+        "context": [
+          "CEREBELLUM"
+        ]
+      },
+      "url": {
+        "vi": "/vi/human-atlas?view=cerebellar-uvula",
+        "en": "/en/human-atlas?view=cerebellar-uvula"
+      },
+      "thumbnail": {
+        "source": "auto-capture",
+        "from": "model",
+        "direction": "back"
+      },
+      "data": {
+        "status": "live",
+        "partial": false,
+        "existingViewId": "cerebellar-uvula",
+        "borrowedFromSystem": null,
+        "note": null
+      },
+      "phase": 2,
+      "priority": "done"
+    },
+    {
+      "id": "cerebellar-tonsil",
+      "viewId": "cerebellar-tonsil",
+      "section": "B",
+      "kind": "structure",
+      "level": 5,
+      "name": {
+        "vi": "Hạnh nhân tiểu não",
+        "en": "Tonsil of cerebellum",
+        "reviewed": true
+      },
+      "parent": "cerebellum-posterior-lobe",
+      "children": [],
+      "learningObjectives": {
+        "vi": [
+          "Định vị tiểu thuỳ trên tiểu não"
+        ],
+        "reviewed": false
+      },
+      "structures3d": [
+        "rule hiện có của `cerebellar-tonsil`"
+      ],
+      "view": {
+        "direction": "back",
+        "zoom": {
+          "level": "detail",
+          "cameraFill": 0.9,
+          "thumbnailFill": 0.86
+        },
+        "display": "layered",
+        "context": [
+          "CEREBELLUM"
+        ]
+      },
+      "url": {
+        "vi": "/vi/human-atlas?view=cerebellar-tonsil",
+        "en": "/en/human-atlas?view=cerebellar-tonsil"
+      },
+      "thumbnail": {
+        "source": "auto-capture",
+        "from": "model",
+        "direction": "back"
+      },
+      "data": {
+        "status": "live",
+        "partial": false,
+        "existingViewId": "cerebellar-tonsil",
+        "borrowedFromSystem": null,
+        "note": null
+      },
+      "phase": 2,
+      "priority": "done"
+    },
+    {
+      "id": "cerebellar-nodule",
+      "viewId": "cerebellar-nodule",
+      "section": "B",
+      "kind": "structure",
+      "level": 5,
+      "name": {
+        "vi": "Cục nhộng",
+        "en": "Nodule of vermis",
+        "reviewed": true
+      },
+      "parent": "flocculonodular-lobe",
+      "children": [],
+      "learningObjectives": {
+        "vi": [
+          "Định vị tiểu thuỳ trên tiểu não"
+        ],
+        "reviewed": false
+      },
+      "structures3d": [
+        "rule hiện có của `cerebellar-nodule`"
+      ],
+      "view": {
+        "direction": "back",
+        "zoom": {
+          "level": "detail",
+          "cameraFill": 0.9,
+          "thumbnailFill": 0.86
+        },
+        "display": "layered",
+        "context": [
+          "CEREBELLUM"
+        ]
+      },
+      "url": {
+        "vi": "/vi/human-atlas?view=cerebellar-nodule",
+        "en": "/en/human-atlas?view=cerebellar-nodule"
+      },
+      "thumbnail": {
+        "source": "auto-capture",
+        "from": "model",
+        "direction": "back"
+      },
+      "data": {
+        "status": "live",
+        "partial": false,
+        "existingViewId": "cerebellar-nodule",
+        "borrowedFromSystem": null,
+        "note": null
+      },
+      "phase": 2,
+      "priority": "done"
+    },
+    {
+      "id": "flocculus",
+      "viewId": "flocculus",
+      "section": "B",
+      "kind": "structure",
+      "level": 5,
+      "name": {
+        "vi": "Nhung và cuống nhung",
+        "en": "Flocculus and its peduncle",
+        "reviewed": true
+      },
+      "parent": "flocculonodular-lobe",
+      "children": [],
+      "learningObjectives": {
+        "vi": [
+          "Định vị tiểu thuỳ trên tiểu não"
+        ],
+        "reviewed": false
+      },
+      "structures3d": [
+        "rule hiện có của `flocculus`"
+      ],
+      "view": {
+        "direction": "back",
+        "zoom": {
+          "level": "detail",
+          "cameraFill": 0.9,
+          "thumbnailFill": 0.86
+        },
+        "display": "layered",
+        "context": [
+          "CEREBELLUM"
+        ]
+      },
+      "url": {
+        "vi": "/vi/human-atlas?view=flocculus",
+        "en": "/en/human-atlas?view=flocculus"
+      },
+      "thumbnail": {
+        "source": "auto-capture",
+        "from": "model",
+        "direction": "back"
+      },
+      "data": {
+        "status": "live",
+        "partial": false,
+        "existingViewId": "flocculus",
+        "borrowedFromSystem": null,
+        "note": null
+      },
+      "phase": 2,
+      "priority": "done"
     },
     {
       "id": "superior-cerebellar-peduncle",
@@ -1248,12 +2301,12 @@
       "id": "medulla-pyramid-olive",
       "viewId": "medulla-pyramid-olive",
       "section": "B",
-      "kind": "region",
+      "kind": "structure",
       "level": 5,
       "name": {
         "vi": "Tháp hành và trám hành",
-        "en": "Pyramid and olive of medulla",
-        "reviewed": false
+        "en": "Pyramids and olives of the medulla oblongata",
+        "reviewed": true
       },
       "parent": "medulla-oblongata",
       "children": [],
@@ -1289,20 +2342,14 @@
         "direction": "front"
       },
       "data": {
-        "status": "import-za",
+        "status": "live",
         "partial": false,
-        "existingViewId": null,
+        "existingViewId": "medulla-pyramid-olive",
         "borrowedFromSystem": null,
-        "note": null,
-        "importPath": [
-          {
-            "path": "replace-bp3d",
-            "how": "Chồng lên mảnh BP3D nguyên khối → khử trùng sẽ loại; phải THAY mảnh BP3D bằng các mảnh ZA (đổi test phủ đủ)"
-          }
-        ]
+        "note": null
       },
       "phase": 2,
-      "priority": "P2"
+      "priority": "done"
     },
     {
       "id": "cranial-nerve-nuclei",

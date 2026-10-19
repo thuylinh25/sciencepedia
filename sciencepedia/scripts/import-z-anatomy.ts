@@ -93,7 +93,8 @@ type Row = {
   idx: number;
 };
 
-type Pick = { system: SystemId; group?: string; noDedupe?: boolean };
+/** `partOf`: mã FMA của cha — bảng chi tiết kế thừa nội dung Level 2 của cha (khái niệm ZA- không có trong FMA). */
+type Pick = { system: SystemId; group?: string; noDedupe?: boolean; partOf?: string };
 
 /*
  * Thần kinh – giác quan bổ sung (2026-10-19, lộ trình docs/roadmaps/human-atlas-
@@ -126,8 +127,18 @@ const NEURO_EXTRA: readonly [RegExp, Pick][] = [
   [/^lateral intermediate substance$/, { system: "nervous", group: "nervous.spinal_cord" }],
   [/^superior cerebellar peduncle$/, { system: "nervous", group: "nervous.cerebellum" }],
   [/^(transverse temporal gyri|temporal plane)$/, { system: "nervous", group: "nervous.brain" }],
+  // Đợt 3 (2026-10-19): tiểu thuỳ tiểu não THAY tiểu não BodyParts3D (REPLACES). Đo: mặt tiểu não BP3D cách
+  // tiểu thuỳ ZA trung vị 1,3 mm, p90 3,7 mm — phủ kín vỏ ngoài. ZA không có chất trắng (cây đời), cuống giữa/dưới.
+  [
+    /^(lingula of cerebellum|central lobule|wing of central lobule|culmen|anterior quadrangular lobule|declive|posterior quadrangular lobule|folium of vermis|superior semilunar lobule|tuber of vermis|inferior semilunar lobule|gracile lobule|pyramis of vermis|biventral lobule|uvula of vermis|tonsil of cerebellum|nodule of vermis|flocculus|peduncle of flocculus)$/,
+    { system: "nervous", group: "nervous.cerebellum", partOf: "FMA67944" },
+  ],
+  // Tháp, trám hành: nổi trên mặt hành não BP3D (trung vị 2,1 mm) — THÊM, không thay hành não.
+  [/^(pyramid of medulla oblongata|olive)$/, { system: "nervous", group: "nervous.brainstem", partOf: "FMA62004" }],
   [/^(cochlea|vestibule|tympanic membrane|auditory tube)$/, { system: "sensory", group: "sensory.ear" }],
 ];
+/** Mảnh BodyParts3D bị mảnh ZA thay (withSupplements loại khỏi danh mục): hai nửa tiểu não FMA67944. */
+const REPLACES = ["FJ1781", "FJ1830"];
 const OSSICLE = /^(malleus|incus|stapes)$/;
 const baseName = (raw: string) =>
   raw.trim().replace(/^\((.*)\)(\.[lrj])?$/, "$1").replace(/\.\d+$/, "").replace(/\.[lrj]$/, "").trim().toLowerCase();
@@ -231,7 +242,7 @@ async function main() {
   };
 
   const parts = [];
-  const concepts = new Map<string, { id: string; name: string; elements: string[] }>();
+  const concepts = new Map<string, { id: string; name: string; elements: string[]; partOf?: string }>();
   const skipped = { dup: [] as string[], seen: new Set<string>() };
   const stats: Record<string, number> = {};
   for (const r of index) {
@@ -278,7 +289,7 @@ async function main() {
       indexCount: idx.length,
       bounds: [box.min.toArray().map((v) => +v.toFixed(5)), box.max.toArray().map((v) => +v.toFixed(5))],
     });
-    const c = concepts.get(conceptId) ?? { id: conceptId, name: base, elements: [] };
+    const c = concepts.get(conceptId) ?? { id: conceptId, name: base, elements: [], ...(chosen.partOf ? { partOf: chosen.partOf } : {}) };
     c.elements.push(id);
     concepts.set(conceptId, c);
     const key = chosen.group ?? chosen.system;
@@ -305,6 +316,7 @@ async function main() {
   const manifest = {
     source: "z-anatomy",
     license: "CC BY-SA 4.0",
+    replaces: REPLACES,
     chunk: {
       url: `${PUBLIC}/supplements/z-anatomy-${hash}/z-anatomy.bin`,
       bytes: blob.byteLength,

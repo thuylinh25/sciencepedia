@@ -158,9 +158,11 @@ async function fetchBuf(url: string) {
 
 async function exportBp3d() {
   const raw = JSON.parse(gunzipSync(await fetchBuf(atlasDataUrl("atlas.json.gz"))).toString());
-  const atlas: Atlas = withSupplements(correctSystems(atlasSchema.parse(raw)));
+  // Giữ mảnh gốc bị thay: phép căn (allen-hra.py) đã fit theo vỏ tiểu não BodyParts3D, không theo tiểu thuỳ Z-Anatomy.
+  const atlas: Atlas = withSupplements(correctSystems(atlasSchema.parse(raw)), { keepReplaced: true });
   const chunkUrl = (c: Atlas["chunks"][number]) => (c.gzip!.startsWith("http") ? c.gzip! : atlasDataUrl(c.gzip!));
   const wanted = atlas.parts.filter((p) => LANDMARK_PARTS.test(p.name));
+  if (!wanted.some((p) => /^cerebellum$/i.test(p.name))) throw new Error("thiếu vỏ tiểu não BodyParts3D — phép căn vùng tiểu não sẽ hỏng");
   const chunks = new Map<number, Buffer>();
   for (const i of new Set(wanted.map((p) => p.chunk))) chunks.set(i, gunzipSync(await fetchBuf(chunkUrl(atlas.chunks[i]))));
   const out = wanted.map((p) => {
