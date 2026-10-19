@@ -3,6 +3,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 
 import type { Locale } from "@/i18n/routing";
 import { buildMetadata } from "@/lib/seo";
+import { toolImage } from "@/lib/models";
 import { ZoomJourney } from "@/components/zoom/zoom-journey";
 
 export async function generateMetadata({
@@ -17,6 +18,7 @@ export async function generateMetadata({
     title: t("title"),
     description: t("subtitle"),
     path: "/zoom",
+    image: toolImage("/zoom"),
     locale: locale as Locale,
   });
 }

@@ -4,6 +4,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 
 import type { Locale } from "@/i18n/routing";
 import { buildMetadata } from "@/lib/seo";
+import { toolImage } from "@/lib/models";
 import { absoluteUrl } from "@/lib/utils";
 import { ASSET_BASE_URL } from "@/lib/asset";
 import { pick } from "@/lib/i18n-content";
@@ -67,6 +68,7 @@ export async function generateMetadata({
     title: t("title"),
     description: t("description"),
     path: "/human-atlas",
+    image: toolImage("/human-atlas"),
     locale: locale as Locale,
   });
 }

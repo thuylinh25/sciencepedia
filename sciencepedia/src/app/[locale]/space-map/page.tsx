@@ -3,6 +3,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 
 import type { Locale } from "@/i18n/routing";
 import { buildMetadata } from "@/lib/seo";
+import { toolImage } from "@/lib/models";
 import { absoluteUrl } from "@/lib/utils";
 import {
   ALADIN_ORIGIN,
@@ -43,6 +44,7 @@ export async function generateMetadata({
     title: t("title"),
     description: t("subtitle"),
     path: "/space-map",
+    image: toolImage("/space-map"),
     locale: locale as Locale,
   });
 }

@@ -3,6 +3,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 
 import type { Locale } from "@/i18n/routing";
 import { buildMetadata } from "@/lib/seo";
+import { toolImage } from "@/lib/models";
 import { ScaleLadder } from "@/components/models/scale-ladder";
 import { MilkyWay } from "@/components/galaxy/milky-way";
 
@@ -18,6 +19,7 @@ export async function generateMetadata({
     title: t("title"),
     description: t("subtitle"),
     path: "/milky-way",
+    image: toolImage("/milky-way"),
     locale: locale as Locale,
   });
 }
