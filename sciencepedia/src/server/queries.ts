@@ -189,7 +189,7 @@ export async function listArticles({
  * Không trả danh tính người duyệt — kênh ngoài không cần, và byline ở web là
  * "Ban biên tập".
  */
-export async function listVerifiedArticles(limit = 20) {
+export async function listVerifiedArticles(limit = 20, offset = 0) {
   return prisma.article.findMany({
     where: {
       ...PUBLISHED,
@@ -217,8 +217,11 @@ export async function listVerifiedArticles(limit = 20) {
       },
       tags: { select: { tag: { select: { name: true } } } },
     },
-    orderBy: { reviewedAt: "desc" },
+    // Bài ký hàng loạt có cùng reviewedAt: slug làm khoá phụ để thứ tự ổn
+    // định giữa các trang, không thì offset có thể lặp hoặc bỏ sót bài.
+    orderBy: [{ reviewedAt: "desc" }, { slug: "asc" }],
     take: Math.min(50, Math.max(1, limit)),
+    skip: Math.max(0, offset),
   });
 }
 
