@@ -90,7 +90,17 @@ export type ViewKind = "regional" | "overview" | "group" | "structure";
  * gian đốt (tâm hộp bao đĩa sát thân đốt hơn hộp bao đốt sống — mỏm gai chúc
  * xuống làm hộp đốt kề nhau chồng ~3 cm).
  */
-export type BandLandmark = { from: RegExp; to: RegExp; at: number } | { edge: "top" | "bottom"; of: RegExp };
+/**
+ * Mốc cao độ: phân số giữa tâm hai mảnh (đĩa gian đốt), mép một mảnh, hoặc phân số giữa
+ * hai mốc khác — `between` đặt lát `section` TRONG dải một đoạn tuỷ (C8/T1…), không theo đĩa:
+ * đoạn tuỷ lệch khỏi đốt sống cùng số.
+ */
+export type BandLandmark =
+  | { from: RegExp; to: RegExp; at: number }
+  | { edge: "top" | "bottom"; of: RegExp }
+  | { between: readonly [BandLandmark, BandLandmark]; at: number };
+/** Bề dày (m) của lát `section` khi không nêu `bottom`: đủ thấy bó thành khối, không che mặt cắt. */
+export const SECTION_THICKNESS = 0.003;
 
 export type AtlasViewDef = {
   id: string;
@@ -121,8 +131,12 @@ export type AtlasViewDef = {
    * phân giải từ hộp bao của hai mảnh mốc lúc sinh, nên nhập lại asset thì lát
    * đổi theo. Khác `clip`: bối cảnh KHÔNG bị cắt — đốt sống mờ trọn vẹn mới thấy
    * được đoạn tuỷ nằm cao hơn đốt cùng số. Bỏ một đầu = không cắt phía đó.
+   *
+   * `section`: lát MỎNG để xem mặt cắt ngang (bó tuỷ) — cắt cả bối cảnh, và mặt
+   * trên được lấp bằng màu của từng mảnh (`section.ts`). Không lấp thì mảnh chỉ
+   * còn viền 1 px: bó trông như vòng rỗng, lát không đọc được (chụp thử ngang C5).
    */
-  band?: { top?: BandLandmark; bottom?: BandLandmark };
+  band?: { top?: BandLandmark; bottom?: BandLandmark; section?: boolean };
   /** Có mặt = không dựng được với dữ liệu hiện có; nói thiếu gì. */
   missing?: { vi: string; en: string };
   /**

@@ -390,6 +390,34 @@ const SPINAL_SEGMENT_VIEWS: readonly AtlasViewDef[] = [
   segment("spinal-cord-sacral", "Tuỷ cùng (đoạn S1–S5) và nón tuỷ", "Sacral spinal cord (segments S1–S5) and conus medullaris", { top: L5_S1 }, ["tuỷ cùng", "nón tuỷ", "conus medullaris", "đoạn tuỷ"], SACRAL_PARTIAL, SHORT_BAND),
 ];
 
+/*
+ * ## Mặt cắt ngang tuỷ cổ: lát mỏng `section` (2026-10-20)
+ *
+ * Bó tuỷ chạy dọc nên chỉ đọc được trên mặt cắt ngang. Lát 3 mm, nắp lấp màu từng bó
+ * (`section.ts`), nhìn từ trên. Đặt ở 70% dải đoạn cổ tính từ đỉnh tuỷ ≈ thân đốt C5 ≈
+ * đoạn C6–C7 (Frostell 2016). CHỈ một lát: mặt cắt Z-Anatomy là một khuôn phóng to/nhỏ dọc
+ * tuỷ (đo 7 cao độ, tỉ lệ sừng/bó không đổi), lát ngực/thắt lưng/cùng sẽ cho hình chất xám
+ * sai — science-editor: "dựng lên một hình sai còn nặng hơn thiếu lát". Mọi bó ZA có mặt ở
+ * C6–C7 (bó gai – tiểu não sau đi lên qua tầng cổ; bó đỏ – tuỷ, mái – tuỷ, tiền đình – tuỷ
+ * trong có ở tuỷ cổ). Tên, câu báo, từ khoá: science-editor PASS (REWORK câu báo + từ khoá).
+ */
+const CERVICAL_SECTION: AtlasViewDef = group(
+  "spinal-cord-cross-section",
+  "Mặt cắt ngang tuỷ cổ: các bó chất trắng",
+  "Cross-section of the cervical spinal cord: white matter tracts",
+  "superior",
+  [TRACTS_ASCENDING, TRACTS_DESCENDING, FASCICULI_PROPRII, SPINAL_GREY],
+  [],
+  ["mặt cắt tuỷ sống", "cross-section", "bó tuỷ", "spinal tracts", "chất xám", "grey matter", "tuỷ cổ", "cervical spinal cord", "bó chất trắng", "white matter tracts", "chất trắng", "white matter", "cột sau", "dorsal column", "bó vỏ – tuỷ", "corticospinal tract", "bó gai – đồi thị", "spinothalamic tract"],
+  {
+    band: { top: { between: [CORD_TOP, C8_T1], at: 0.7 }, section: true },
+    partial: {
+      vi: "Mặt cắt vẽ theo sơ đồ: vị trí và kích thước các bó chỉ gần đúng, phần chất trắng ngoài các bó để trống. Lát cắt đặt khoảng ngang đoạn tuỷ C6–C7, theo vị trí trung bình ở người lớn (Frostell và cộng sự, 2016). Mô hình dùng cùng một hình mặt cắt suốt chiều dài tuỷ, nên không thể hiện khác biệt giữa các tầng, như sừng trước to hơn ở phình cổ. Nhìn từ trên xuống, mặt sau ở phía trên.",
+      en: "Schematic cross-section: tract positions and sizes are approximate, and white matter outside the tracts is left blank. The slice sits at roughly spinal cord segments C6–C7, based on average adult positions (Frostell et al., 2016). The model uses the same cross-sectional shape along the whole cord, so it does not show differences between levels, such as the larger anterior horns of the cervical enlargement. Viewed from above, with the posterior side at the top.",
+    },
+  },
+);
+
 export const NERVOUS_VIEWS: readonly AtlasViewDef[] = [
   {
     id: "nervous-overview",
@@ -501,6 +529,7 @@ export const NERVOUS_VIEWS: readonly AtlasViewDef[] = [
   },
   group("nervous-spinal-cord", "Tuỷ sống và rễ thần kinh", "Spinal cord and nerve roots", "back", [SPINAL_CORD, SPINAL_DURA, SPINAL_ROOTS, CAUDA_EQUINA], [SPINE], ["tuỷ sống", "spinal cord", "đuôi ngựa", "cauda equina", "rễ thần kinh"]),
   ...SPINAL_SEGMENT_VIEWS,
+  CERVICAL_SECTION,
   group("nervous-upper-limb", "Đám rối cánh tay và thần kinh chi trên", "Brachial plexus and nerves of the upper limb", "front", UPPER_LIMB, [UPPER_LIMB_BONES], ["đám rối cánh tay", "brachial plexus", "thần kinh giữa", "median nerve"]),
   // Có thần kinh thẹn (đáy chậu), chậu hạ vị/chậu bẹn (thành bụng) — không chỉ chi dưới.
   group("nervous-lower-limb", "Đám rối thắt lưng – cùng và thần kinh chi dưới", "Lumbosacral plexus branches and nerves of the lower limb", "front", LOWER_LIMB, [LOWER_LIMB_BONES], ["đám rối thắt lưng", "lumbosacral plexus", "thần kinh đùi", "femoral nerve"]),
@@ -694,6 +723,10 @@ export const NERVOUS_VIEWS: readonly AtlasViewDef[] = [
       en: "The tracts are drawn schematically: most are shown running the full length of the spinal cord, although in reality some are present only in certain segments (for example, the cuneate fasciculus exists only in the upper cord). Their relative positions in cross-section are approximate.",
     },
   },
+  // Dòng chất xám cho bảng Cấu trúc (mặt cắt tuỷ cổ). Ống trung tâm nêu riêng bằng "và": nó không phải chất
+  // xám. Không ghi "(chưa gồm chất xám mép)": ba lưới đã phủ liền qua đường giữa (science-editor PASS).
+  { ...structure("spinal-grey-matter", "Chất xám tuỷ sống và ống trung tâm", "Spinal grey matter and central canal", "superior", SPINAL_GREY,
+    ["chất xám", "grey matter", "gray matter", "chất xám tuỷ sống", "spinal grey matter", "sừng trước", "anterior horn", "sừng sau", "posterior horn", "chất trung gian bên", "lateral intermediate grey matter", "ống trung tâm", "central canal", "tuỷ sống"]) },
   { ...structure("spinal-tracts-ascending", "Các bó lên", "Ascending tracts", "superior", TRACTS_ASCENDING), context: [SPINAL_GREY] },
   { ...structure("spinal-tracts-descending", "Các bó xuống", "Descending tracts", "superior", TRACTS_DESCENDING), context: [SPINAL_GREY] },
   { ...structure("spinal-fasciculi-proprii", "Các bó riêng và bó sau bên", "Fasciculi proprii and posterolateral tract", "superior", FASCICULI_PROPRII), context: [SPINAL_GREY] },

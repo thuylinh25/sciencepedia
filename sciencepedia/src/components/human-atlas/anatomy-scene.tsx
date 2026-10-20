@@ -32,7 +32,8 @@ import { atlasDataUrl } from "@/lib/human-atlas/assets";
 import { createExplosionLayout } from "@/lib/human-atlas/explosion-layout";
 import { decodeModelResponse } from "@/lib/human-atlas/model-download";
 import { PointerTap } from "@/lib/human-atlas/pointer-tap";
-import { ATLAS_VIEWS, hasCard, isSystemView, viewById, viewParts, type ViewDirection } from "@/lib/human-atlas/views";
+import { sectionCap } from "@/lib/human-atlas/section";
+import { ATLAS_VIEWS, hasCard, isSystemView, viewById, viewParts, type AtlasViewDef, type ViewDirection } from "@/lib/human-atlas/views";
 
 /**
  * Cảnh giải phẫu 3D — port từ `app/scene.tsx` của Human Atlas
@@ -89,6 +90,11 @@ const SURROUND_FADE = 0.3;
  * 0,4 m ≈ bề ngang thân.
  */
 const SURROUND_MIN_SIZE = 0.4;
+/** Sàn zoom (m): trần phóng to của OrbitControls, cũng là sàn khung góc nhìn theo hệ. */
+const MIN_DISTANCE = 0.07;
+/** Lát `section` (~1,5 cm bề ngang): sàn chung chỉ cho nó ~⅓ khung. */
+const SECTION_MIN_DISTANCE = 0.03;
+const minDistanceFor = (def: AtlasViewDef | null | undefined) => (def?.band?.section ? SECTION_MIN_DISTANCE : MIN_DISTANCE);
 
 export const SCENE_BACKGROUND = { light: "#eef0f1", dark: "#05070a" } as const;
 
@@ -254,7 +260,7 @@ export default function AnatomyScene({
     controls.target.set(0, 0.85, 0);
     controls.enableDamping = true;
     controls.dampingFactor = 0.085;
-    controls.minDistance = 0.07;
+    controls.minDistance = MIN_DISTANCE;
     controls.maxDistance = 40;
     controls.maxPolarAngle = Math.PI * 0.96;
     // Zoom quanh TÂM, không theo con trỏ (đổi 2026-09-29): zoomToCursor dời tâm
@@ -688,15 +694,77 @@ export default function AnatomyScene({
     let clipKey = "";
     /** Lát `band`: bối cảnh vẽ trọn — raycast cũng không lọc nó theo lát. */
     let contextUncut = false;
-    const applyClip = (id: string | null | undefined) => {
+    /*
+     * Nắp mặt cắt của lát `section`: một mesh mỗi nhóm vật liệu, dùng CHÍNH vật liệu
+     * nhóm và thuộc tính `partIndex` — nên ẩn/chọn/rê chuột/bối cảnh mờ theo mảnh như
+     * thân mảnh, không cần đường riêng. Đặt hơi dưới mặt cắt đỉnh để mặt cắt không
+     * xén mất nắp. `capPickers`: raycast trúng nắp (thân mảnh bị cắt, nhìn từ trên
+     * không còn gì để trúng). Dựng lại khi đổi góc nhìn và khi một khối về sau.
+     */
+    const capGroup = new T.Group();
+    scene.add(capGroup);
+    const capPickers = new Map<number, T.Mesh>();
+    /** Hộp các nắp của tập nổi bật — khung camera của lát `section`. */
+    const capBox = new T.Box3();
+    let capKey = "";
+    /** Nắp vừa có lần đầu (khối về sau khi đã khung) — vòng trạng thái khung lại. */
+    let capsRefit = false;
+    const buildCaps = (id: string | null | undefined) => {
       const def = viewSet(id) ? viewById(id) : null;
+      const top = def?.band?.section ? viewParts(id)?.band?.top : undefined;
+      const view = viewSet(id);
+      const key = top !== undefined && view ? `${id}|${pickers.filter(Boolean).length}` : "";
+      if (key === capKey) return;
+      capKey = key;
+      for (const m of [...capGroup.children, ...capPickers.values()] as T.Mesh[]) m.geometry.dispose();
+      capGroup.clear();
+      capPickers.clear();
+      capBox.makeEmpty();
+      if (top === undefined || !view) return;
+      const y = top - 1e-5;
+      const byKey = new Map<string, { system: SystemId; list: T.BufferGeometry[] }>();
+      for (const i of [...view.focus, ...view.context]) {
+        const g = pickers[i]?.geometry;
+        if (!g?.index) continue;
+        const cap = sectionCap(g.attributes.position.array, g.index.array, y);
+        if (!cap) continue;
+        const cg = new T.BufferGeometry();
+        cg.setAttribute("position", new T.BufferAttribute(cap.positions, 3));
+        cg.setAttribute("normal", new T.BufferAttribute(new Float32Array(cap.positions.length).map((_, k) => (k % 3 === 1 ? 1 : 0)), 3));
+        cg.setAttribute("partIndex", new T.BufferAttribute(new Float32Array(cap.positions.length / 3).fill(i), 1));
+        cg.setIndex(new T.BufferAttribute(cap.indices, 1));
+        cg.computeBoundingBox();
+        cg.computeBoundingSphere();
+        const pick = new T.Mesh(cg, pickMaterial);
+        pick.matrixAutoUpdate = false;
+        capPickers.set(i, pick);
+        if (view.focus.has(i)) capBox.union(cg.boundingBox!);
+        const k = keyOf(parts[i]);
+        const entry = byKey.get(k) ?? { system: parts[i].system, list: [] };
+        entry.list.push(cg);
+        byKey.set(k, entry);
+      }
+      byKey.forEach(({ system, list }, k) => {
+        const merged = mergeGeometries(list, false);
+        if (!merged) return;
+        const mesh = new T.Mesh(merged, materialForKey(k, system));
+        mesh.frustumCulled = false;
+        mesh.renderOrder = LAYERS.length - LAYERS.indexOf(SYSTEM_LAYER[system]);
+        capGroup.add(mesh);
+      });
+    };
+    const applyClip = (id: string | null | undefined) => {
+      buildCaps(id);
+      const def = viewSet(id) ? viewById(id) : null;
+      // Sàn zoom chỉ theo góc nhìn ĐANG MỞ — ảnh thu nhỏ cũng gọi applyClip cho góc nhìn khác.
+      if (id === latest.current.viewId) controls.minDistance = minDistanceFor(def);
       const band = def ? viewParts(id)?.band : undefined;
       const next: T.Plane[] = [];
       if (def?.clip) next.push(planePool[0].set(new T.Vector3(...def.clip.normal).normalize(), def.clip.constant));
       // Giữ y ≥ đáy và y ≤ đỉnh.
       if (band?.bottom !== undefined) next.push(planePool[next.length].set(new T.Vector3(0, 1, 0), -band.bottom));
       if (band?.top !== undefined) next.push(planePool[next.length].set(new T.Vector3(0, -1, 0), band.top));
-      const cutContext = !!def?.clip;
+      const cutContext = !!def?.clip || !!def?.band?.section;
       contextUncut = next.length > 0 && !cutContext;
       const key = `${next.length}|${cutContext}`;
       if (key === clipKey) {
@@ -718,6 +786,17 @@ export default function AnatomyScene({
     const clampToBand = (box: T.Box3, id: string | null | undefined) => {
       const band = viewSet(id) ? viewParts(id)?.band : undefined;
       if (!band || box.isEmpty()) return box;
+      // Lát `section`: khung theo NẮP. Kẹp y không đủ — x/z của hộp vẫn trải theo cả
+      // tuỷ cong (z lệch ~5 cm), lát hiện nhỏ và lệch khỏi tâm (chụp thử C5).
+      if (viewById(id)?.band?.section) {
+        buildCaps(id);
+        if (!capBox.isEmpty()) {
+          box.min.x = capBox.min.x;
+          box.max.x = capBox.max.x;
+          box.min.z = capBox.min.z;
+          box.max.z = capBox.max.z;
+        }
+      }
       if (band.top !== undefined) box.max.y = Math.min(box.max.y, band.top);
       if (band.bottom !== undefined) box.min.y = Math.max(box.min.y, band.bottom);
       return box;
@@ -856,6 +935,12 @@ export default function AnatomyScene({
         mesh.renderOrder = LAYERS.length - LAYERS.indexOf(SYSTEM_LAYER[system]);
         scene.add(mesh);
       });
+      // Nắp có khi khối của lát về — trước đó góc nhìn đã khung theo hộp tạm. Khung lại
+      // qua đúng đường "đổi góc nhìn" của vòng trạng thái: gọi `fit` thẳng từ đây thì
+      // camera dừng giữa chừng (đo: đích lệch 1,6 cm khỏi nắp, lát rơi ra ngoài khung).
+      const hadCaps = !capBox.isEmpty();
+      buildCaps(latest.current.viewId);
+      if (!hadCaps && !capBox.isEmpty()) capsRefit = true;
       lastState = null;
       dirty = true;
     };
@@ -1069,8 +1154,10 @@ export default function AnatomyScene({
       systemView = false,
       /** Tỉ lệ lấp vùng trống của góc nhìn theo hệ (ảnh thu nhỏ lấp nhiều hơn khung xem). */
       systemFill = SYSTEM_VIEW_FILL,
+      /** Sàn khoảng cách của góc nhìn theo hệ — `minDistanceFor(def)`. */
+      systemFloor = MIN_DISTANCE,
     ) => {
-      const floor = systemView ? controls.minDistance : 0.12;
+      const floor = systemView ? systemFloor : 0.12;
       const worldUp =
         Math.abs(direction.y) > 0.99 ? new T.Vector3(0, 0, 1) : new T.Vector3(0, 1, 0);
       const right = new T.Vector3().crossVectors(worldUp, direction).normalize();
@@ -1258,6 +1345,7 @@ export default function AnatomyScene({
         camera.aspect,
         isSystemView(preset),
         preset?.camera?.fill,
+        minDistanceFor(preset),
       );
       const fittedDistance = frame.distance;
       // Hệ cục bộ (não, tim, tiêu hoá) không phóng tới đủ 74%: tối đa gấp
@@ -1316,7 +1404,9 @@ export default function AnatomyScene({
     let boxKey = "";
     let cachedBox = new T.Box3();
     const currentBox = () => {
-      const key = `${latest.current.viewId ?? ""}|${latest.current.visible.join(",")}`;
+      // `capKey`: hộp của lát `section` đổi khi nắp dựng xong (khối về sau). Không có nó,
+      // bản cache cũ (x/z theo cả tuỷ) làm `updateScroll` kéo tâm lệch khỏi nắp ~1,7 cm.
+      const key = `${latest.current.viewId ?? ""}|${latest.current.visible.join(",")}|${capKey}`;
       if (key !== boxKey) {
         cachedBox = visibleBox();
         boxKey = key;
@@ -1538,7 +1628,7 @@ export default function AnatomyScene({
       // cấu trúc giữa thẻ, chừa lề đều trên dưới như ảnh atlas. Bản trước chừa 20%
       // đáy cho dải nhãn gradient.
       const rect = { w: THUMB_W, h: THUMB_H, left: 0, right: THUMB_W, top: THUMB_H * 0.06, bottom: THUMB_H * 0.94 };
-      const frame = frameBox(thumbBox, direction, rect, THUMB_W / THUMB_H, isSystemView(def), def.camera?.thumbnailFill ?? 0.86);
+      const frame = frameBox(thumbBox, direction, rect, THUMB_W / THUMB_H, isSystemView(def), def.camera?.thumbnailFill ?? 0.86, minDistanceFor(def));
 
       const savedPosition = camera.position.clone();
       const savedQuaternion = camera.quaternion.clone();
@@ -1649,7 +1739,15 @@ export default function AnatomyScene({
         const hits = raycaster.intersectObject(mesh, false);
         // Đang cắt: bỏ các điểm trúng nằm ở nửa đã bị cắt đi (raycast không biết clipping).
         const cut = clipList.length > 0 && !(contextUncut && isContext(viewSet(latest.current.viewId), i));
-        const hit = cut ? hits.find((h) => clipList.every((p) => p.distanceToPoint(h.point) >= 0)) : hits[0];
+        const cap = capPickers.get(i);
+        if (cap && !cap.position.equals(mesh.position)) {
+          // Nắp dời theo mảnh khi tách lớp (shader cộng cùng độ dời theo partIndex).
+          cap.position.copy(mesh.position);
+          cap.updateMatrixWorld(true);
+        }
+        const capHit = cap ? raycaster.intersectObject(cap, false)[0] : undefined;
+        const bodyHit = cut ? hits.find((h) => clipList.every((p) => p.distanceToPoint(h.point) >= 0)) : hits[0];
+        const hit = capHit && (!bodyHit || capHit.distance < bodyHit.distance) ? capHit : bodyHit;
         if (hit && hit.distance < nearest) {
           nearest = hit.distance;
           found = i;
@@ -1883,7 +1981,8 @@ export default function AnatomyScene({
       }
       // Đổi góc nhìn → bay tới nó. Tập hệ đổi cùng lượt, nên đồng bộ khoá để khối
       // dưới không khung lại lần hai theo hướng cũ.
-      if ((s.viewId ?? null) !== lastViewId) {
+      if ((s.viewId ?? null) !== lastViewId || capsRefit) {
+        capsRefit = false;
         applyClip(s.viewId);
         lastViewId = s.viewId ?? null;
         viewHeading = !!s.viewId;

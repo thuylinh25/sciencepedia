@@ -4,7 +4,7 @@ import path from "node:path";
 import { atlasSchema, correctSystems, type Atlas } from "../src/lib/human-atlas/anatomy";
 import { atlasDataUrl } from "../src/lib/human-atlas/assets";
 import { withSupplements } from "../src/lib/human-atlas/supplements";
-import { ATLAS_VIEWS, viewKind, type BandLandmark, type PartRule, type ViewParts } from "../src/lib/human-atlas/views";
+import { ATLAS_VIEWS, SECTION_THICKNESS, viewKind, type BandLandmark, type PartRule, type ViewParts } from "../src/lib/human-atlas/views";
 
 /**
  * Góc nhìn → mã mảnh thật → `src/lib/human-atlas/view-parts.generated.json`.
@@ -87,14 +87,19 @@ async function main() {
         return [hits[0].bounds[0][1], hits[0].bounds[1][1]] as const;
       };
       const centerY = (rx: RegExp) => (boundsY(rx)[0] + boundsY(rx)[1]) / 2;
-      const y = (m: BandLandmark) => {
+      const y = (m: BandLandmark): number => {
         if ("edge" in m) return +boundsY(m.of)[m.edge === "top" ? 1 : 0].toFixed(4);
+        if ("between" in m) {
+          const a = y(m.between[0]);
+          return +(a + (y(m.between[1]) - a) * m.at).toFixed(4);
+        }
         const a = centerY(m.from);
         return +(a + (centerY(m.to) - a) * m.at).toFixed(4);
       };
       const band: NonNullable<ViewParts["band"]> = {};
       if (view.band.top) band.top = y(view.band.top);
       if (view.band.bottom) band.bottom = y(view.band.bottom);
+      else if (view.band.section && band.top !== undefined) band.bottom = +(band.top - SECTION_THICKNESS).toFixed(4);
       if (band.top !== undefined && band.bottom !== undefined && !(band.top > band.bottom)) {
         console.error(`  ✗ ${view.id}: lát ngược (đỉnh ${band.top} ≤ đáy ${band.bottom})`);
         failed = true;

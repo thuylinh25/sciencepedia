@@ -65,18 +65,18 @@
     ]
   },
   "coverage": {
-    "nodes": 251,
-    "nodes3d": 246,
+    "nodes": 253,
+    "nodes3d": 248,
     "byStatus": {
-      "live": 227,
+      "live": 229,
       "buildable": 0,
       "import-za": 2,
       "needs-schema": 8,
       "needs-clipping": 0,
       "missing": 9
     },
-    "readyNow": "227/246 (92%) nút 3D dựng được bằng dữ liệu đang có",
-    "afterZaImport": "229/246 (93%)",
+    "readyNow": "229/248 (92%) nút 3D dựng được bằng dữ liệu đang có",
+    "afterZaImport": "231/248 (93%)",
     "haaTiles": {
       "note": "So với 24 ô \"Nervous System Views\" của HAA (ảnh tham chiếu, không dùng asset HAA).",
       "withCardNow": "19/24 (79%)",
@@ -7701,6 +7701,7 @@
         "spinal-cord-lumbar",
         "spinal-cord-sacral",
         "spinal-cord",
+        "spinal-cord-cross-section",
         "spinal-roots",
         "cauda-equina",
         "spinal-dura"
@@ -7975,7 +7976,8 @@
       },
       "parent": "nervous-spinal-cord",
       "children": [
-        "spinal-tracts"
+        "spinal-tracts",
+        "spinal-grey-matter"
       ],
       "learningObjectives": {
         "vi": [
@@ -8073,7 +8075,110 @@
         "partial": false,
         "existingViewId": "spinal-tracts",
         "borrowedFromSystem": null,
-        "note": "Nhập đợt 2 (2026-10-19): 19 lưới, mỗi lưới cả hai bên. Bối cảnh chỉ chất xám — lưới chất trắng là khối đặc, mặt ngoài trùng bó. Thấy rõ nhất trên lát cắt ngang → chờ mốc needs-clipping."
+        "note": "Nhập đợt 2 (2026-10-19): 19 lưới, mỗi lưới cả hai bên. Bối cảnh chỉ chất xám — lưới chất trắng là khối đặc, mặt ngoài trùng bó. Mặt cắt ngang: xem spinal-cord-cross-section."
+      },
+      "phase": 5,
+      "priority": "done"
+    },
+    {
+      "id": "spinal-cord-cross-section",
+      "viewId": "spinal-cord-cross-section",
+      "section": "H",
+      "kind": "group",
+      "level": 3,
+      "name": {
+        "vi": "Mặt cắt ngang tuỷ cổ: các bó chất trắng",
+        "en": "Cross-section of the cervical spinal cord: white matter tracts",
+        "reviewed": true
+      },
+      "parent": "nervous-spinal-cord",
+      "children": [],
+      "learningObjectives": {
+        "vi": [
+          "Định vị cột sau, thừng bên, thừng trước trên mặt cắt",
+          "Phân biệt bó lên với bó xuống theo vị trí"
+        ],
+        "reviewed": false
+      },
+      "structures3d": [
+        "rule hiện có của `spinal-cord-cross-section`"
+      ],
+      "view": {
+        "direction": "superior",
+        "zoom": {
+          "level": "detail",
+          "cameraFill": 0.9,
+          "thumbnailFill": 0.86
+        },
+        "display": "layered",
+        "context": []
+      },
+      "url": {
+        "vi": "/vi/human-atlas?view=spinal-cord-cross-section",
+        "en": "/en/human-atlas?view=spinal-cord-cross-section"
+      },
+      "thumbnail": {
+        "source": "auto-capture",
+        "from": "model",
+        "direction": "superior"
+      },
+      "data": {
+        "status": "live",
+        "partial": true,
+        "existingViewId": "spinal-cord-cross-section",
+        "borrowedFromSystem": null,
+        "note": "Live 2026-10-20: lát `section` 3 mm ≈ đoạn C6–C7, nắp lấp màu từng bó (section.ts). Chỉ một lát: mặt cắt ZA là một khuôn phóng to/nhỏ dọc tuỷ, lát tầng khác cho hình chất xám sai. Chất trắng ngoài bó không lấp (lưới không đa tạp). Lý do: docs/architecture.md, mục \"Lát mỏng section\"."
+      },
+      "phase": 5,
+      "priority": "done"
+    },
+    {
+      "id": "spinal-grey-matter",
+      "viewId": "spinal-grey-matter",
+      "section": "H",
+      "kind": "structure",
+      "level": 4,
+      "name": {
+        "vi": "Chất xám tuỷ sống và ống trung tâm",
+        "en": "Spinal grey matter and central canal",
+        "reviewed": true
+      },
+      "parent": "spinal-cord",
+      "children": [],
+      "learningObjectives": {
+        "vi": [
+          "Phân biệt sừng trước, sừng sau và chất trung gian bên quanh ống trung tâm"
+        ],
+        "reviewed": false
+      },
+      "structures3d": [
+        "rule hiện có của `spinal-grey-matter`"
+      ],
+      "view": {
+        "direction": "superior",
+        "zoom": {
+          "level": "detail",
+          "cameraFill": 0.9,
+          "thumbnailFill": 0.86
+        },
+        "display": "layered",
+        "context": []
+      },
+      "url": {
+        "vi": "/vi/human-atlas?view=spinal-grey-matter",
+        "en": "/en/human-atlas?view=spinal-grey-matter"
+      },
+      "thumbnail": {
+        "source": "auto-capture",
+        "from": "model",
+        "direction": "superior"
+      },
+      "data": {
+        "status": "live",
+        "partial": false,
+        "existingViewId": "spinal-grey-matter",
+        "borrowedFromSystem": null,
+        "note": null
       },
       "phase": 5,
       "priority": "done"

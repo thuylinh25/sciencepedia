@@ -496,8 +496,17 @@ N("spinal-cord", "nervous-spinal-cord", "H", "structure", "Tuỷ sống (chất 
 N("spinal-tracts", "spinal-cord", "H", "structure", "", "", {
   dir: "superior", zoom: "detail", mode: "layered", context: ["SPINAL_CORD ghost"],
   focus: ["Lateral/Anterior corticospinal tract", "Lateral/Anterior spinothalamic tract", "Gracile/Cuneate fasciculus", "Anterior/Posterior spinocerebellar tract", "Rubrospinal, Tectospinal, Vestibulospinal, Reticulospinal tracts", "Fasciculi proprii"],
-  note: "Nhập đợt 2 (2026-10-19): 19 lưới, mỗi lưới cả hai bên. Bối cảnh chỉ chất xám — lưới chất trắng là khối đặc, mặt ngoài trùng bó. Thấy rõ nhất trên lát cắt ngang → chờ mốc needs-clipping.",
+  note: "Nhập đợt 2 (2026-10-19): 19 lưới, mỗi lưới cả hai bên. Bối cảnh chỉ chất xám — lưới chất trắng là khối đặc, mặt ngoài trùng bó. Mặt cắt ngang: xem spinal-cord-cross-section.",
   obj: ["Phân biệt bó đi lên (cảm giác) với bó đi xuống (vận động)", "Định vị bó vỏ – tuỷ bên và cột sau"],
+});
+N("spinal-cord-cross-section", "nervous-spinal-cord", "H", "group", "Mặt cắt ngang tuỷ cổ: các bó chất trắng", "Cross-section of the cervical spinal cord: white matter tracts", {
+  status: "live", existing: "spinal-cord-cross-section", partial: true, dir: "superior", zoom: "detail", mode: "layered",
+  note: "Live 2026-10-20: lát `section` 3 mm ≈ đoạn C6–C7, nắp lấp màu từng bó (section.ts). Chỉ một lát: mặt cắt ZA là một khuôn phóng to/nhỏ dọc tuỷ, lát tầng khác cho hình chất xám sai. Chất trắng ngoài bó không lấp (lưới không đa tạp). Lý do: docs/architecture.md, mục \"Lát mỏng section\".",
+  obj: ["Định vị cột sau, thừng bên, thừng trước trên mặt cắt", "Phân biệt bó lên với bó xuống theo vị trí"],
+});
+N("spinal-grey-matter", "spinal-cord", "H", "structure", "Chất xám tuỷ sống và ống trung tâm", "Spinal grey matter and central canal", {
+  status: "live", existing: "spinal-grey-matter", dir: "superior", zoom: "detail", mode: "layered",
+  obj: ["Phân biệt sừng trước, sừng sau và chất trung gian bên quanh ống trung tâm"],
 });
 N("spinal-roots", "nervous-spinal-cord", "H", "structure", "Rễ và hạch gai", "Spinal roots and ganglia", { status: "live", existing: "spinal-roots", dir: "back", zoom: "structure", mode: "layered", obj: ["Định vị hạch gai trên rễ sau"] });
 N("cauda-equina", "nervous-spinal-cord", "H", "structure", "Chùm đuôi ngựa", "Cauda equina", { status: "live", existing: "cauda-equina", dir: "back", zoom: "structure", mode: "layered", obj: ["Hiểu vì sao rễ thắt lưng – cùng chạy dài xuống dưới nón tuỷ"] });

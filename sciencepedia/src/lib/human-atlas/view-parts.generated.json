@@ -17824,6 +17824,39 @@
       "top": 1.1459
     }
   },
+  "spinal-cord-cross-section": {
+    "focus": [
+      "ZA-anterior-corticospinal-tract",
+      "ZA-anterior-fasciculus-proprius",
+      "ZA-anterior-horn-of-spinal-cord",
+      "ZA-anterior-spinocerebellar-tract",
+      "ZA-anterior-spinothalamic-tract",
+      "ZA-central-canal",
+      "ZA-central-canal-medulla",
+      "ZA-cuneate-fasciculus",
+      "ZA-gracile-fasciculus",
+      "ZA-lateral-corticospinal-tract",
+      "ZA-lateral-fasciculus-proprius",
+      "ZA-lateral-intermediate-substance",
+      "ZA-lateral-reticulospinal-tract",
+      "ZA-lateral-spinothalamic-tract",
+      "ZA-lateral-vestibulospinal-tract",
+      "ZA-medial-reticulospinal-tract",
+      "ZA-medial-vestibulospinal-tract",
+      "ZA-posterior-fasciculus-proprius",
+      "ZA-posterior-horn-of-spinal-cord",
+      "ZA-posterior-spinocerebellar-tract",
+      "ZA-posterolateral-tract",
+      "ZA-rubrospinal-tract",
+      "ZA-spinotectal-tract",
+      "ZA-tectospinal-tract"
+    ],
+    "hide": [],
+    "band": {
+      "top": 1.4816,
+      "bottom": 1.4786
+    }
+  },
   "nervous-upper-limb": {
     "focus": [
       "ZA-left-anterior-branch-of-medial-antebrachial-cutaneous-nerve",
@@ -20549,6 +20582,16 @@
       "ZA-lateral-intermediate-substance",
       "ZA-posterior-horn-of-spinal-cord"
     ]
+  },
+  "spinal-grey-matter": {
+    "focus": [
+      "ZA-anterior-horn-of-spinal-cord",
+      "ZA-central-canal",
+      "ZA-central-canal-medulla",
+      "ZA-lateral-intermediate-substance",
+      "ZA-posterior-horn-of-spinal-cord"
+    ],
+    "hide": []
   },
   "spinal-tracts-ascending": {
     "focus": [
