@@ -1164,8 +1164,34 @@ một góc nhìn `band` — lát ngang giữa hai cao độ của cùng khối �
   cắt) rồi mới `needsUpdate`; giá trị mặt là uniform. Đã kiểm chuyển thẳng 1 mặt (chậu) → 2 mặt (cổ).
 - **Khung camera kẹp theo lát** (`clampToBand`, cả ảnh thu nhỏ): không thì 10 cm tuỷ cổ khung theo cả
   49 cm tuỷ. Lát ngắn (thắt lưng, cùng ~5 cm) hạ `fill` để thấy vài đốt quanh nó.
-- **Mặt cắt để hở, không lấp nắp.** Vật liệu DoubleSide nên nhìn vào lát thấy mặt trong. Lát mỏng nhìn
-  từ trên (bó tuỷ) chưa làm: cần kiểm có đọc được không trước khi tính lấp nắp bằng stencil.
+- **Lát dày (đoạn tuỷ) để hở mặt cắt.** Vật liệu DoubleSide nên nhìn vào lát thấy mặt trong; nhìn từ
+  bên thì không cần nắp.
+
+### Lát mỏng `section`: mặt cắt lấp kín (2026-10-20)
+
+Chụp thử lát 3 mm ngang C5 nhìn từ trên khi để hở: mỗi bó chỉ còn viền 1 px, như vòng rỗng — KHÔNG đọc
+được. Nên lát `band.section` (bó tuỷ) lấp mặt trên. Những điều đã chốt:
+
+- **Nắp tính trên CPU từ chính lưới** (`section.ts`): giao lưới với mặt y = đỉnh lát → vòng kín → tam giác
+  hoá, vòng trong vòng là lỗ. Không dùng stencil: stencil cho một màu cho cả mesh gộp, còn nắp phải mang màu
+  TỪNG bó. Nắp là mesh gộp theo nhóm, dùng chính vật liệu nhóm + `partIndex` — ẩn/chọn/rê chuột/bối cảnh
+  mờ đi theo mảnh không cần đường riêng; raycast có `capPickers` (thân bó bị cắt, nhìn từ trên không còn gì
+  để trúng).
+- **Tam giác nắp phải quay +y.** Lượt bối cảnh (`ghostMaterial`) là FrontSide: nắp quay xuống thì chất xám
+  bối cảnh chỉ còn viền. ShapeUtils trả CCW trên (x, z) = pháp tuyến −y → đảo thứ tự; test khoá.
+- **Chất trắng KHÔNG lấp.** Lưới chất trắng ZA không đa tạp (cạnh chữ T): bỏ vòng không khép. Đã thử đi
+  tiếp nhánh chưa dùng và khép khe nhỏ → vòng 16/154 điểm, nắp sai hình — tệ hơn không có nắp. Vùng chất
+  trắng ngoài các bó vì thế để tối; câu `partial` nói rõ. Đừng "cho đủ" bằng thân chất trắng: mặt ngoài
+  trùng bó, nhấp nháy (xem mục Z-Anatomy đợt 2).
+- **Khung theo hộp NẮP, không theo hộp mảnh kẹp y.** Kẹp y chưa đủ: x/z của hộp vẫn trải theo cả tuỷ cong
+  (z lệch ~5 cm), lát hiện nhỏ và lệch. `capKey` nằm trong khoá cache `currentBox` — thiếu nó, `updateScroll`
+  kéo tâm về hộp cũ, đích lệch 1,7 cm, lát rơi khỏi khung. Nắp có sau khi khối về → khung lại qua đúng
+  đường "đổi góc nhìn" của vòng trạng thái (`capsRefit`); gọi `fit` thẳng từ `loadChunk` thì không ăn.
+  Sàn zoom 3 cm cho lát này (`minDistanceFor`), tính theo định nghĩa góc nhìn chứ không đọc
+  `controls.minDistance` — ảnh thu nhỏ khung góc nhìn khác với góc nhìn đang mở.
+- **Mốc `between`**: lát đặt theo phân số TRONG dải đoạn tuỷ (Frostell), không theo đĩa gian đốt.
+- **Mặt cắt ZA là MỘT khuôn phóng to/nhỏ dọc tuỷ** (đo 7 cao độ: tỉ lệ sừng/bó không đổi, cỡ ±20%) — hình
+  chất xám không đổi theo tầng như thật. Vì thế chỉ có lát cổ; lát ngực/thắt lưng/cùng sẽ cho hình sai.
 
 ## Triển khai
 
