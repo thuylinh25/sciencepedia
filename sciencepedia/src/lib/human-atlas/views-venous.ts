@@ -45,7 +45,7 @@ export const DURAL_SINUSES = v(/sinus$|basilar venous plexus$/i, /coronary sinus
 // Chậu.
 const PELVIC = v(/iliac vein$|iliolumbar vein$|sacral veins?$|gluteal veins?$|obturator vein$|pudendal veins?$|dorsal vein of penis$/i);
 // Chi trên.
-const AXILLARY = v(/axillary vein$|subscapular vein$|circumflex scapular vein$|thoracodorsal vein$|lateral thoracic vein$|circumflex humeral vein$/i);
+export const AXILLARY = v(/axillary vein$|subscapular vein$|circumflex scapular vein$|thoracodorsal vein$|lateral thoracic vein$|circumflex humeral vein$/i);
 // `\b`: "brachiocephalic vein" cũng tận cùng bằng "cephalic vein".
 const ARM_SUPERFICIAL = v(/\bcephalic vein$|basilic vein$|median cubital vein$|median antebrachial vein$/i);
 const ARM_DEEP = v(/medial brachial vein$|^(left |right )?(radial|ulnar) vein$/i);

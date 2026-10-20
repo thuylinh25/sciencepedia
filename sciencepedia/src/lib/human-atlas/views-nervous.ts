@@ -228,7 +228,7 @@ const SPINAL_ROOTS = n(/root of spinal nerve$|^(left|right) spinal ganglion$|spi
 const CAUDA_EQUINA = n(/cauda equina$/i);
 
 // ------------------------------------------------------------------ chi trên
-const BRACHIAL_PLEXUS = n(/brachial plexus$/i);
+export const BRACHIAL_PLEXUS = n(/brachial plexus$/i);
 /** Nhánh bên của đám rối (tách từ rễ/thân/bó, không thuộc các nhánh tận). */
 const PLEXUS_COLLATERAL = n(/dorsal scapular nerve$|long thoracic nerve$|suprascapular nerve$|subclavian nerve$|subscapular nerve$|thoracodorsal nerve$|pectoral nerve$/i);
 const MUSCULOCUTANEOUS = n(/musculocutaneous nerve$|lateral antebrachial cutaneous nerve$/i);

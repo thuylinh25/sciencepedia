@@ -853,6 +853,13 @@ nghiêng/xoay/duỗi/gập đầu cổ, hạ hàm, rồi vai/khuỷu/cổ tay/l�
 gồm cơ làm động tác đó — quạ cánh tay không ở Khuỷu, cánh tay quay không ở Cổ tay, khoeo không ở Cổ
 chân, cơ dưới móng là bối cảnh của Hạ hàm. Đừng "gom lại cho gọn" bằng khu cơ cả khối.
 
+**Hệ xương theo "Skeletal System Views" của atlas** (2026-10-20): 12 ô — toàn bộ, sọ, hố sọ (cắt ngang
+y = 1,645 m), răng, lồng ngực, khoang ngực, đai chậu, mặt cắt chậu, cột sống nhìn bên, cột sống và cơ,
+đai vai, nách. Một nhóm mang tên vùng phải có ĐỦ thứ ở vùng đó mà dữ liệu có: "Khoang ngực" gồm cả
+trung thất (khí quản, thực quản, mạch lớn), không chỉ tim và phổi (science-editor). Ô "Teeth Blood
+Supply" không có mạch trong dữ liệu → "Răng và lợi", không hứa mạch. Mặt cắt chậu: tạng phải NỔI BẬT —
+làm bối cảnh mờ thì lát cắt gần như không thấy. Cơ răng sau là lớp giữa, không vào "cơ lưng sâu".
+
 **Bề mặt cơ thể KHÔNG có góc nhìn** (chủ sản phẩm bỏ, 2026-10-15): tab "Theo hệ" không còn chip này;
 da vẫn là lớp ngoài của mô hình và vẫn bật/tắt ở bảng hệ. Bản duyệt mô tả nhóm (môi, tóc) giữ trong tệp
 dữ liệu, `--emit-client` bỏ mục không còn góc nhìn.
