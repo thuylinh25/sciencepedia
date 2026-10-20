@@ -25,6 +25,15 @@ test("tên cấu trúc chính đã duyệt thắng bản ghép và không mang n
   assert.equal(viNameStatus("FMA19728", "superficial perineal muscle"), "machine-translated");
 });
 
+test("tên trọn science-editor duyệt cho mảnh nguồn ngoài không mang nhãn dịch ghép", () => {
+  assert.equal(viNameStatus("ZA-culmen", "Culmen"), "reviewed");
+  assert.equal(viNameStatus("ZA-olive", "Left olive"), "reviewed");
+  assert.equal(viNameStatus("AHRA-mediodorsal-nucleus", "Mediodorsal nucleus of thalamus"), "reviewed");
+  // Ghép từ cụm đã duyệt chưa phải duyệt nguyên tên → vẫn mang nhãn.
+  assert.equal(viNameStatus("ZA-nerve-to-mylohyoid-muscle", "Left nerve to mylohyoid muscle"), "machine-translated");
+  assert.equal(viNameStatus("ZA-ulnar-nerve", "Ulnar nerve"), "machine-translated");
+});
+
 test("số thứ tự viết bằng chữ số: <cụm danh từ> <số> <bên>", () => {
   // Một cách cho cả mô hình (139 tên dùng chữ số khi chốt): "xương sườn 7 phải", "cơ giun bàn chân 1 phải".
   const words = Object.entries(REVIEWED.names).filter(([, vi]) => /(^|\s)thứ (nhất|hai|ba|tư|năm|sáu|bảy|tám|chín|mười)(\s|$)/.test(vi));
