@@ -40,11 +40,11 @@ const TONGUE_PALATE = m(/genioglossus$|hyoglossus$|veli palatini$|uvular muscle$
 const EXTRAOCULAR = m(/(superior|inferior|medial|lateral) rectus$|(superior|inferior) oblique$|levator palpebrae superioris$/i);
 // Lưng.
 const BACK_SUPERFICIAL = m(/trapezius$|rhomboid (major|minor)$|levator scapulae$/i);
-const ERECTOR_SPINAE = m(/iliocostalis (cervicis|thoracis|lumborum)$|longissimus (capitis|cervicis|thoracis)$|\bspinalis( thoracis)?$/i);
+export const ERECTOR_SPINAE = m(/iliocostalis (cervicis|thoracis|lumborum)$|longissimus (capitis|cervicis|thoracis)$|\bspinalis( thoracis)?$/i);
 const DEEP_BACK = m(
   /semispinalis (capitis|cervicis|thoracis)$|rotator$|interspinal(is|es)|intertransversari|splenius (capitis|cervicis)$|levatores costarum|serratus posterior (superior|inferior)$/i,
 );
-const SUBOCCIPITAL = m(/rectus capitis posterior (major|minor)$|obliquus capitis (superior|inferior)$/i);
+export const SUBOCCIPITAL = m(/rectus capitis posterior (major|minor)$|obliquus capitis (superior|inferior)$/i);
 // Ngực – bụng – chậu.
 const PECTORAL = m(/pectoralis (major|minor)$|subclavius$|serratus anterior$/i);
 const THORACIC_WALL = m(/intercostal muscle$|transversus thoracis$/i);
@@ -102,6 +102,8 @@ const CORACOBRACHIALIS = m(/^(left|right) coracobrachialis$/i);
 // Khu sau cẳng tay trừ cơ cánh tay quay (chỉ gập khuỷu); khu sau cẳng chân trừ cơ khoeo (chỉ tác động gối).
 const FOREARM_POSTERIOR_DISTAL: PartRule = { ...FOREARM_POSTERIOR, exclude: /brachioradialis$/i };
 const LEG_POSTERIOR_DISTAL: PartRule = { ...LEG_POSTERIOR, exclude: /popliteus$/i };
+// Cơ lưng sâu nội tại: cơ răng sau là lớp giữa (thần kinh gian sườn) — góc nhìn "Cột sống và cơ lưng sâu" của hệ xương.
+export const DEEP_BACK_INTRINSIC: PartRule = { ...DEEP_BACK, exclude: /serratus posterior/i };
 // Khối dựng sống chia vùng: phần cổ thuộc gáy, phần ngực – thắt lưng thuộc lưng dưới.
 const ERECTOR_CERVICAL = m(/^(left|right) (iliocostalis|longissimus) cervicis$/i);
 const ERECTOR_THORACOLUMBAR = m(/iliocostalis (thoracis|lumborum)$|longissimus thoracis$|\bspinalis( thoracis)?$/i);
@@ -310,6 +312,7 @@ export const MUSCULAR_VIEWS: readonly AtlasViewDef[] = [
   structure("biceps-brachialis", "Cơ nhị đầu cánh tay và cơ cánh tay", "Biceps brachii and brachialis", "front", BICEPS_BRACHIALIS),
   structure("coracobrachialis", "Cơ quạ cánh tay", "Coracobrachialis", "front", CORACOBRACHIALIS),
   structure("forearm-posterior-distal", "Khu sau cẳng tay (trừ cơ cánh tay quay)", "Posterior forearm (excluding brachioradialis)", "back", FOREARM_POSTERIOR_DISTAL),
+  structure("deep-back-intrinsic", "Cơ lưng sâu (cơ nội tại của lưng)", "Deep (intrinsic) back muscles", "back", DEEP_BACK_INTRINSIC),
   structure("leg-posterior-distal", "Khu sau cẳng chân (trừ cơ khoeo)", "Posterior leg (excluding popliteus)", "back", LEG_POSTERIOR_DISTAL),
   structure("popliteus", "Cơ khoeo", "Popliteus", "back", POPLITEUS),
   structure("gastrocnemius", "Cơ bụng chân", "Gastrocnemius", "back", GASTROCNEMIUS),

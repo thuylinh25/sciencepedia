@@ -1,4 +1,9 @@
 import type { AtlasViewDef, PartRule } from "./views";
+import { AXILLARY_BRANCHES } from "./views-arterial";
+import { AXILLARY_NODES } from "./views-lymphatic";
+import { DEEP_BACK_INTRINSIC, ERECTOR_SPINAE, SUBOCCIPITAL } from "./views-muscular";
+import { BRACHIAL_PLEXUS } from "./views-nervous";
+import { AXILLARY } from "./views-venous";
 
 /*
  * ## Góc nhìn theo hệ — Hệ xương (2026-09-30)
@@ -8,7 +13,7 @@ import type { AtlasViewDef, PartRule } from "./views";
  * cùng + 23 đĩa gian đốt, 24 xương sườn, sụn sườn I–VII, xương ức 3 phần, xương chi,
  * 4 xương vừng bàn chân, sụn thanh quản và sụn cánh mũi lớn (FMA xếp là sụn —
  * `skeletal.cartilage`).
- * KHÔNG có xương cụt (chỉ có cơ cụt/chậu cụt/mu cụt), xương con tai giữa, xương vừng bàn tay. Sụn sườn VIII–X không có mảnh
+ * KHÔNG có xương cụt (chỉ có cơ cụt/chậu cụt/mu cụt), xương vừng bàn tay. Xương con tai giữa có từ Z-Anatomy (2026-10-19). Sụn sườn VIII–X không có mảnh
  * riêng: chúng nằm trong mảnh sụn sườn VII (y tới 1,18 m, x ±0,11 m). Đã xem bằng mắt
  * (2026-10-01, trước/chéo/bên): bờ sườn là một cung liền từ mũi ức xuống đầu trước sườn
  * VIII–X, không hở — nên không ghi "thiếu", và đừng tách "sụn sườn VIII–X". Xương lệ (hệ giác quan) và xoăn mũi dưới (hệ hô hấp của dữ liệu) là
@@ -16,6 +21,14 @@ import type { AtlasViewDef, PartRule } from "./views";
  *
  * Id có tiền tố `bone-`: `skull`, `cervical-spine`, `thoracic-cage`… đã là góc nhìn
  * THEO VÙNG (views.ts) — id phải duy nhất.
+ *
+ * Lưới xếp theo "Skeletal System Views" của atlas tham chiếu (chủ sản phẩm, 2026-10-20):
+ * toàn bộ, sọ, hố sọ, răng, lồng ngực, khoang ngực, đai chậu, mặt cắt chậu, cột sống
+ * nhìn bên, cột sống và cơ, đai vai, vùng nách — rồi ba nhóm cũ (chi trên, chi dưới, sụn)
+ * giữ cho deep link. Ô "Teeth Blood Supply" của atlas: dữ liệu không có động mạch hàm
+ * trên, huyệt răng (chỉ có thần kinh huyệt răng dưới) → ô 4 là "Răng và lợi", không hứa
+ * mạch. Đai vai, nách hai bên: cấu trúc (động mạch nách, đám rối…) gộp trái/phải, khung
+ * một bên thì bảng "Cấu trúc" còn mảnh lẻ.
  */
 
 const b = (name: RegExp, exclude?: RegExp): PartRule => ({ systems: ["skeletal"], name, ...(exclude ? { exclude } : {}) });
@@ -84,6 +97,13 @@ const LOWER_LIMB = [HIP_BONE, FEMUR, PATELLA, TIBIA, FIBULA, TARSALS, METATARSAL
 // Sụn (FMA: sụn thanh quản, sụn cánh mũi lớn — BodyParts3D xếp hệ xương).
 const LARYNGEAL_CARTILAGES = b(/^(thyroid|cricoid) cartilage$|(arytenoid|corniculate|cuneiform) cartilage$/i);
 const ALAR_CARTILAGES = b(/major alar cartilage$/i);
+// Tạng cho khoang ngực, mặt cắt chậu. Phổi: nhu mô thuỳ Z-Anatomy (như views-cardiac.ts).
+const LUNGS: PartRule = { systems: ["respiratory"], name: /^(superior|middle|inferior) lobe of (left|right) lung$/i };
+const HEART: PartRule = { systems: ["cardiac"] };
+// Trung thất: khí quản, phế quản gốc, thực quản, mạch lớn — "khoang ngực" không chỉ tim và phổi.
+const MEDIASTINUM: PartRule = { name: /^trachea$|main bronchus( proper)?$|^esophagus$|^(ascending aorta|arch of aorta|descending thoracic aorta|superior vena cava|pulmonary trunk)$/i };
+const DIAPHRAGM: PartRule = { fma: ["FMA13295"] };
+const PELVIC_ORGANS: PartRule = { name: /^urinary bladder$|^rectum$|^prostate$|seminal vesicle$/i };
 
 const group = (
   id: string,
@@ -113,21 +133,56 @@ export const SKELETAL_VIEWS: readonly AtlasViewDef[] = [
     direction: "front",
     focus: [{ systems: ["skeletal"] }, LACRIMAL, CONCHAE],
     partial: {
-      vi: "Thiếu xương cụt, các xương con tai giữa (búa, đe, bàn đạp) và xương vừng bàn tay",
-      en: "The coccyx, middle-ear ossicles (malleus, incus, stapes) and sesamoid bones of the hand are missing",
+      vi: "Thiếu xương cụt và xương vừng bàn tay",
+      en: "The coccyx and the sesamoid bones of the hand are missing",
     },
     terms: ["bộ xương", "skeleton", "xương", "bone"],
     quality: "good",
   },
-  group("bone-skull", "Xương sọ và xương mặt", "Bones of the skull and face", "three-quarter", SKULL, ["hộp sọ", "skull", "sọ não", "sọ mặt"]),
+  group("bone-skull", "Xương sọ, xương mặt và răng", "Bones of the skull and face, with teeth", "three-quarter", [...SKULL, INCISORS, CANINES, PREMOLARS, MOLARS], ["hộp sọ", "skull", "sọ não", "sọ mặt"]),
+  // Bỏ vòm sọ bằng mặt phẳng ngang y = 1,645 m (đo atlas.json: trần ổ mắt ~1,63, đỉnh
+  // sọ 1,71) để nhìn từ trên xuống sàn sọ — hố sọ trước, giữa, sau.
+  group("bone-cranial-fossae", "Các hố sọ", "Cranial fossae", [0, 1, 0.35], [FRONTAL, PARIETAL, OCCIPITAL, TEMPORAL, SPHENOID, ETHMOID], ["hố sọ", "cranial fossa", "nền sọ", "cranial base"], {
+    clip: { normal: [0, -1, 0], constant: 1.645 },
+  }),
   group("bone-teeth", "Răng và lợi", "Teeth and gums", [0.45, 0.05, 1], TEETH, ["răng", "teeth", "lợi", "nướu", "gum"], {
     context: [MAXILLA, MANDIBLE],
     partial: { vi: "Không có răng khôn (răng hàm lớn thứ ba)", en: "Third molars (wisdom teeth) are not included" },
   }),
-  group("bone-spine", "Cột sống", "Vertebral column", "side", SPINE, ["cột sống", "spine", "đốt sống", "vertebra"], {
+  group("bone-thorax", "Lồng ngực", "Thoracic cage", "front", [RIBS, COSTAL_CARTILAGES, STERNUM], ["xương sườn", "rib", "xương ức", "sternum"], { context: [THORACIC] }),
+  // Xương ức + sụn sườn làm bối cảnh mờ: mặt trước "mở" thấy phổi, tim bên trong.
+  group("bone-thoracic-cavity", "Khoang ngực", "Thoracic cavity", "front", [RIBS, THORACIC, LUNGS, HEART, MEDIASTINUM], ["khoang ngực", "thoracic cavity", "phổi", "tim", "trung thất", "mediastinum"], {
+    context: [STERNUM, COSTAL_CARTILAGES, DIAPHRAGM],
+  }),
+  group("bone-pelvic-girdle", "Đai chậu", "Pelvic girdle", "front", [HIP_BONE, SACRUM], ["đai chậu", "pelvic girdle", "khung chậu", "pelvis"], {
+    context: [LUMBAR, FEMUR],
+    partial: { vi: "Thiếu xương cụt và các dây chằng vùng chậu", en: "The coccyx and the pelvic ligaments are missing" },
+  }),
+  // Mặt cắt dọc giữa như góc nhìn theo vùng `pelvis-section`: bỏ nửa trái (x > 0), nhìn
+  // từ bên trái vào mặt cắt. Tạng chậu nổi bật: làm bối cảnh mờ thì lát cắt gần như không thấy (chụp thử).
+  group("bone-pelvic-section", "Mặt cắt vùng chậu", "Pelvic section", [1, 0.05, 0.12], [HIP_BONE, SACRUM, PELVIC_ORGANS], ["mặt cắt dọc giữa", "midsagittal section", "chậu", "pelvis"], {
+    clip: { normal: [-1, 0, 0], constant: 0 },
+    context: [LUMBAR],
+    partial: { vi: "Thiếu xương cụt và các dây chằng vùng chậu", en: "The coccyx and the pelvic ligaments are missing" },
+  }),
+  group("bone-spine", "Cột sống nhìn bên", "Vertebral column, lateral view", "side", SPINE, ["cột sống", "spine", "đốt sống", "vertebra"], {
     partial: { vi: "Thiếu xương cụt", en: "The coccyx is missing" },
   }),
-  group("bone-thorax", "Xương lồng ngực", "Bones of the thorax", "front", [RIBS, COSTAL_CARTILAGES, STERNUM], ["xương sườn", "rib", "xương ức", "sternum"], { context: [THORACIC] }),
+  group("bone-spine-muscles", "Cột sống và cơ lưng sâu", "Vertebral column and deep back muscles", "back", [...SPINE, ERECTOR_SPINAE, DEEP_BACK_INTRINSIC, SUBOCCIPITAL], ["cơ dựng sống", "erector spinae", "cơ lưng", "back muscles"], {
+    context: [OCCIPITAL, RIBS, HIP_BONE],
+    partial: { vi: "Thiếu xương cụt và cơ nhiều chân", en: "The coccyx and multifidus are missing" },
+  }),
+  group("bone-shoulder-girdle", "Đai vai", "Shoulder girdle", "three-quarter", [CLAVICLE, SCAPULA], ["đai vai", "shoulder girdle", "xương đòn", "xương vai"], {
+    context: [HUMERUS, RIBS, STERNUM],
+    camera: { fill: 0.55, thumbnailFill: 0.7 },
+  }),
+  group("bone-axillary-region", "Vùng nách", "Axillary region", "front", [AXILLARY_BRANCHES, AXILLARY, BRACHIAL_PLEXUS, AXILLARY_NODES], ["nách", "axilla", "động mạch nách", "đám rối cánh tay"], {
+    context: [CLAVICLE, SCAPULA, HUMERUS, RIBS],
+    partial: {
+      vi: "Thiếu động mạch ngực trên; đám rối cánh tay thiếu bó ngoài và bó trong",
+      en: "The superior thoracic artery is missing, as are the lateral and medial cords of the brachial plexus",
+    },
+  }),
   group("bone-upper-limb", "Xương chi trên", "Bones of the upper limb", "front", UPPER_LIMB, ["xương tay", "arm bones", "bàn tay", "hand"], {
     partial: { vi: "Thiếu xương vừng bàn tay", en: "The sesamoid bones of the hand are missing" },
   }),

@@ -56,7 +56,7 @@ const VISCERAL: PartRule = {
 };
 const PELVIC = a(/common iliac artery$|internal iliac artery$|external iliac artery$|inferior epigastric artery$|superficial epigastric artery$|dorsal artery of penis$/i);
 // Chi trên.
-const AXILLARY_BRANCHES = a(/axillary artery$|thoraco-acromial artery$|lateral thoracic artery$|^(left |right )?subscapular artery$|circumflex scapular artery$|thoracodorsal artery$|circumflex humeral artery$/i);
+export const AXILLARY_BRANCHES = a(/axillary artery$|thoraco-acromial artery$|lateral thoracic artery$|^(left |right )?subscapular artery$|circumflex scapular artery$|thoracodorsal artery$|circumflex humeral artery$/i);
 const BRACHIAL = a(/brachial artery$|collateral (branch of|artery)/i);
 const FOREARM = a(/^(left |right )?(radial|ulnar) artery$|(radial|ulnar) recurrent artery$|interosseous artery$/i);
 const HAND = a(/palmar|metacarpal arter|princeps pollicis|radialis indicis|carpal branch/i);
@@ -139,6 +139,8 @@ export const ARTERIAL_VIEWS: readonly AtlasViewDef[] = [
     }),
 
   structure("aorta-descending", "Động mạch chủ xuống (ngực, bụng)", "Descending aorta (thoracic, abdominal)", "front", AORTA),
+  // Lồng trong aorta-descending: góc nhìn Khoang ngực (views-skeletal.ts) chỉ có đoạn ngực.
+  structure("descending-thoracic-aorta", "Động mạch chủ ngực", "Descending thoracic aorta", "front", a(/^descending thoracic aorta$/i)),
   structure("aortic-arch-branches", "Thân cánh tay đầu, cảnh chung, dưới đòn", "Brachiocephalic, common carotid and subclavian arteries", "front", ARCH_BRANCHES, ["thân tay đầu"]),
   structure("carotid-vertebral", "Cảnh trong, đốt sống, nền và mắt", "Internal carotid, vertebral, basilar and ophthalmic arteries", "anterolateral", CAROTID_VERTEBRAL),
   structure("cerebral-arteries", "Các động mạch não và tiểu não", "Cerebral and cerebellar arteries", "superior", CEREBRAL),

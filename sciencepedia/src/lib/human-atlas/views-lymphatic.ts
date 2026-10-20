@@ -33,7 +33,7 @@ const NECK_NODES = lymph(
 );
 const HEAD_NECK_VESSELS = lymph(/^lymphatic vessels of head and neck$/i);
 // Chi trên – nách.
-const AXILLARY_NODES = lymph(/\b(axillary|infraclavicular|interpectoral) nodes?$/i);
+export const AXILLARY_NODES = lymph(/\b(axillary|infraclavicular|interpectoral) nodes?$/i);
 const ARM_NODES = lymph(/\b(brachial|cubital|supratrochlear) nodes?$/i);
 const UPPER_LIMB_VESSELS = lymph(/^lymphatic vessels of (left|right) (axilla|upper limb)$/i);
 // Ngực.
