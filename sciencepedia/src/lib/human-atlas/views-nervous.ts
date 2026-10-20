@@ -339,6 +339,57 @@ const structure = (id: string, vi: string, en: string, direction: AtlasViewDef["
   ...(terms ? { terms } : {}),
 });
 
+/*
+ * ## Đoạn tuỷ: lát ngang theo mốc đốt sống (2026-10-20)
+ *
+ * Lưới tuỷ Z-Anatomy là MỘT khối liền, không chia đoạn → mỗi đoạn là một lát
+ * (`band`) của cùng khối ấy. Ranh giới = vị trí TRUNG BÌNH ở người lớn, tính từ
+ * Frostell et al. 2016 (Front Neurol 7:238, Bảng 3 + 4, hệ số căn 100/77,3): cuối
+ * đoạn C8 ở 0,48 đoạn đốt C7, cuối T12 ở 0,22 đoạn đốt T11, cuối L5 ở 0,08 đoạn
+ * đốt L1 — "đoạn đốt" = đốt + nửa hai đĩa kề, nên mốc là TÂM hai đĩa. Canbay et al.
+ * 2014 (Clin Anat 27:227, 16 tử thi) khớp: đoạn thắt lưng bắt đầu ⅓ trên thân
+ * T11, đoạn cùng ⅓ trên thân L1.
+ *
+ * KHÔNG suy ranh giới từ rễ Z-Anatomy: 21 rễ là sơ đồ, nằm gần ngang ngay ở lỗ
+ * gian đốt (đầu trong cao gần bằng đầu ngoài), tức là theo ĐỐT SỐNG — chính thứ
+ * mà đoạn tuỷ lệch khỏi. Vì thế lát cũng không hiện rễ.
+ *
+ * "Disk of <đốt>" của BodyParts3D là đĩa DƯỚI đốt đó; đĩa T12–L1 không mang tên
+ * (khớp đúng một mảnh — bộ sinh dừng nếu khớp nhiều hơn).
+ *
+ * Ranh giới tính theo chiều dài tuỷ THẬT (hết ở cuối đoạn đốt L1); lưới dài tới
+ * đầu L3, nên phần lưới dưới S5 là phần dư của mô hình — lát cùng nói rõ. Chỗ
+ * phình rộng nhất của lưới (ngang T9–T11) rơi phần lớn vào lát ngực: sai hình
+ * dạng của lưới, không phải lỗi ranh giới. Các hệ số 0,48/0,22/0,08 là trung
+ * bình suy từ một bài tổng quan — chỉ dùng trong code, không hiện ra giao diện.
+ * Tên, câu báo thiếu, cách suy: science-editor (REWORK tên → "đoạn …", rồi PASS).
+ */
+const disc = (vertebra: string) => new RegExp(`^intervertebral disk of ${vertebra} vertebra$`, "i");
+// Đỉnh lưới tuỷ, không để trống: ống trung tâm của BodyParts3D chạy tiếp lên trong hành não.
+const CORD_TOP = { edge: "top", of: /^white matter of spinal cord$/i } as const;
+const C8_T1 = { from: disc("sixth cervical"), to: disc("seventh cervical"), at: 0.48 };
+const T12_L1 = { from: disc("tenth thoracic"), to: disc("eleventh thoracic"), at: 0.22 };
+const L5_S1 = { from: /^intervertebral disk$/i, to: disc("first lumbar"), at: 0.08 };
+const SEGMENT_PARTIAL = {
+  vi: "Ranh giới giữa các đoạn là vị trí trung bình ở người lớn (theo tổng hợp của Frostell và cộng sự, 2016); ở từng người có thể lệch một đốt sống hoặc hơn. Lưới tuỷ là mô hình sơ đồ: không có phình cổ, tuỷ dày hơn thực tế (rõ nhất ở đoạn ngực), và chóp nón tuỷ nằm ngang bờ trên đốt L3, trong khi ở người lớn thường ngang L1–L2. Không hiện rễ thần kinh.",
+  en: "Segment boundaries are adult averages (as compiled by Frostell et al. 2016); in an individual they can sit one vertebra or more higher or lower. The cord mesh is schematic: it has no cervical enlargement, it is thicker than a real cord (most of all in the thoracic region), and its conus tip lies at the top of L3, whereas in adults the cord usually ends at L1–L2. Nerve roots are not shown.",
+};
+// Không ghép câu chung: vế chóp nón ở đó lặp câu đầu (science-editor PASS bản khử lặp).
+const SACRAL_PARTIAL = {
+  vi: "Ở mô hình này, đoạn cùng và nón tuỷ trải từ ngang đốt L1 xuống tới ngang bờ trên đốt L3, dài hơn thực tế; ở người lớn, tuỷ thường kết thúc ngang L1–L2. Ranh giới giữa các đoạn là vị trí trung bình ở người lớn (theo tổng hợp của Frostell và cộng sự, 2016); ở từng người có thể lệch một đốt sống hoặc hơn. Lưới tuỷ là mô hình sơ đồ: không có phình cổ và tuỷ dày hơn thực tế (rõ nhất ở đoạn ngực). Không hiện rễ thần kinh.",
+  en: "In this model the sacral segments and conus stretch from L1 down to the top of L3, longer than in reality; in adults the cord usually ends at L1–L2. Segment boundaries are adult averages (as compiled by Frostell et al. 2016); in an individual they can sit one vertebra or more higher or lower. The cord mesh is schematic: it has no cervical enlargement and it is thicker than a real cord (most of all in the thoracic region). Nerve roots are not shown.",
+};
+/** Lát ngắn (thắt lưng, cùng ~5 cm) khung nhỏ lại: phải thấy vài đốt quanh nó mới định vị được. */
+const SHORT_BAND = { fill: 0.45, thumbnailFill: 0.5 };
+const segment = (id: string, vi: string, en: string, band: AtlasViewDef["band"], terms: string[], partial = SEGMENT_PARTIAL, camera?: AtlasViewDef["camera"]): AtlasViewDef =>
+  group(id, vi, en, "side", [SPINAL_CORD], [SPINE], terms, { band, partial, ...(camera ? { camera } : {}) });
+const SPINAL_SEGMENT_VIEWS: readonly AtlasViewDef[] = [
+  segment("spinal-cord-cervical", "Tuỷ cổ (đoạn C1–C8)", "Cervical spinal cord (segments C1–C8)", { top: CORD_TOP, bottom: C8_T1 }, ["tuỷ cổ", "cervical spinal cord", "đoạn tuỷ"]),
+  segment("spinal-cord-thoracic", "Tuỷ ngực (đoạn T1–T12)", "Thoracic spinal cord (segments T1–T12)", { top: C8_T1, bottom: T12_L1 }, ["tuỷ ngực", "thoracic spinal cord", "đoạn tuỷ"]),
+  segment("spinal-cord-lumbar", "Tuỷ thắt lưng (đoạn L1–L5)", "Lumbar spinal cord (segments L1–L5)", { top: T12_L1, bottom: L5_S1 }, ["tuỷ thắt lưng", "lumbar spinal cord", "đoạn tuỷ"], SEGMENT_PARTIAL, SHORT_BAND),
+  segment("spinal-cord-sacral", "Tuỷ cùng (đoạn S1–S5) và nón tuỷ", "Sacral spinal cord (segments S1–S5) and conus medullaris", { top: L5_S1 }, ["tuỷ cùng", "nón tuỷ", "conus medullaris", "đoạn tuỷ"], SACRAL_PARTIAL, SHORT_BAND),
+];
+
 export const NERVOUS_VIEWS: readonly AtlasViewDef[] = [
   {
     id: "nervous-overview",
@@ -449,6 +500,7 @@ export const NERVOUS_VIEWS: readonly AtlasViewDef[] = [
     terms: ["thần kinh hoành", "phrenic"],
   },
   group("nervous-spinal-cord", "Tuỷ sống và rễ thần kinh", "Spinal cord and nerve roots", "back", [SPINAL_CORD, SPINAL_DURA, SPINAL_ROOTS, CAUDA_EQUINA], [SPINE], ["tuỷ sống", "spinal cord", "đuôi ngựa", "cauda equina", "rễ thần kinh"]),
+  ...SPINAL_SEGMENT_VIEWS,
   group("nervous-upper-limb", "Đám rối cánh tay và thần kinh chi trên", "Brachial plexus and nerves of the upper limb", "front", UPPER_LIMB, [UPPER_LIMB_BONES], ["đám rối cánh tay", "brachial plexus", "thần kinh giữa", "median nerve"]),
   // Có thần kinh thẹn (đáy chậu), chậu hạ vị/chậu bẹn (thành bụng) — không chỉ chi dưới.
   group("nervous-lower-limb", "Đám rối thắt lưng – cùng và thần kinh chi dưới", "Lumbosacral plexus branches and nerves of the lower limb", "front", LOWER_LIMB, [LOWER_LIMB_BONES], ["đám rối thắt lưng", "lumbosacral plexus", "thần kinh đùi", "femoral nerve"]),

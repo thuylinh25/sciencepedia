@@ -4,7 +4,7 @@ import path from "node:path";
 import { atlasSchema, correctSystems, type Atlas } from "../src/lib/human-atlas/anatomy";
 import { atlasDataUrl } from "../src/lib/human-atlas/assets";
 import { withSupplements } from "../src/lib/human-atlas/supplements";
-import { ATLAS_VIEWS, viewKind, type PartRule } from "../src/lib/human-atlas/views";
+import { ATLAS_VIEWS, viewKind, type BandLandmark, type PartRule, type ViewParts } from "../src/lib/human-atlas/views";
 
 /**
  * Góc nhìn → mã mảnh thật → `src/lib/human-atlas/view-parts.generated.json`.
@@ -40,7 +40,7 @@ async function main() {
   // Cùng danh mục viewer dùng: có cả mảnh bổ sung (nhu mô phổi, tuyến giáp của Z-Anatomy).
   const atlas = withSupplements(correctSystems(atlasSchema.parse(raw)));
 
-  const out: Record<string, { focus: string[]; hide: string[]; context?: string[] }> = {};
+  const out: Record<string, ViewParts> = {};
   let failed = false;
   for (const view of ATLAS_VIEWS) {
     if (view.missing) {
@@ -75,12 +75,39 @@ async function main() {
     });
     out[view.id] = { focus: [...focus].sort(), hide: [...hide].sort() };
     if (context.size) out[view.id].context = [...context].sort();
+    if (view.band) {
+      // Mốc phải khớp ĐÚNG một mảnh: hai đĩa cùng khớp thì tâm trung bình là một cao độ không đĩa nào ở.
+      const boundsY = (rx: RegExp) => {
+        const hits = atlas.parts.filter((p) => rx.test(p.name));
+        if (hits.length !== 1) {
+          console.error(`  ✗ ${view.id}: mốc ${rx} khớp ${hits.length} mảnh (cần đúng 1)`);
+          failed = true;
+          return [NaN, NaN] as const;
+        }
+        return [hits[0].bounds[0][1], hits[0].bounds[1][1]] as const;
+      };
+      const centerY = (rx: RegExp) => (boundsY(rx)[0] + boundsY(rx)[1]) / 2;
+      const y = (m: BandLandmark) => {
+        if ("edge" in m) return +boundsY(m.of)[m.edge === "top" ? 1 : 0].toFixed(4);
+        const a = centerY(m.from);
+        return +(a + (centerY(m.to) - a) * m.at).toFixed(4);
+      };
+      const band: NonNullable<ViewParts["band"]> = {};
+      if (view.band.top) band.top = y(view.band.top);
+      if (view.band.bottom) band.bottom = y(view.band.bottom);
+      if (band.top !== undefined && band.bottom !== undefined && !(band.top > band.bottom)) {
+        console.error(`  ✗ ${view.id}: lát ngược (đỉnh ${band.top} ≤ đáy ${band.bottom})`);
+        failed = true;
+      }
+      out[view.id].band = band;
+    }
     const names = (ids: Set<string>) =>
       [...new Set(atlas.parts.filter((p) => ids.has(p.id)).map((p) => p.name))].sort();
     console.log(
       `- ${view.id} [${viewKind(view)}]: khung theo ${focus.size} mảnh` +
         (hide.size ? `, ẩn thêm ${hide.size}` : "") +
-        (context.size ? `, làm mờ ${context.size}` : ""),
+        (context.size ? `, làm mờ ${context.size}` : "") +
+        (out[view.id].band ? `, lát y ${out[view.id].band!.bottom ?? "…"}–${out[view.id].band!.top ?? "…"}` : ""),
     );
     if (args.includes("--verbose")) {
       console.log(`    khung: ${names(focus).join("; ")}`);

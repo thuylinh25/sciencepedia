@@ -1139,6 +1139,29 @@ của chính cấu trúc → **mô tả nhóm** → mô tả hệ. Hai tầng sa
 
 ---
 
+### Mặt cắt theo cao độ: lát `band` neo vào đĩa gian đốt (2026-10-20)
+
+Đoạn tuỷ (cổ / ngực / thắt lưng / cùng) không có lưới riêng: tuỷ Z-Anatomy là MỘT khối. Mỗi đoạn là
+một góc nhìn `band` — lát ngang giữa hai cao độ của cùng khối ấy. Những điều đã chốt:
+
+- **Cao độ sinh từ dữ liệu, không gõ tay.** `band` khai mốc giải phẫu ("0,48 quãng từ tâm đĩa C6–C7
+  tới tâm đĩa C7–T1"); `atlas-views.ts` phân giải thành số vào `view-parts.generated.json`, dừng nếu
+  một mốc khớp ≠ 1 mảnh. Nhập lại asset thì lát đổi theo. Mốc là TÂM ĐĨA, không phải hộp đốt sống: mỏm
+  gai chúc xuống làm hộp T9 và T10 chồng nhau ~3 cm.
+- **Ranh giới là trung bình người lớn từ tài liệu** (Frostell 2016, khớp Canbay 2014; cách tính ở
+  `views-nervous.ts`). KHÔNG suy từ rễ Z-Anatomy: 21 rễ là sơ đồ, nằm ngang ngay ở lỗ gian đốt, tức là
+  theo đốt sống — đúng thứ mà đoạn tuỷ lệch khỏi. Vì thế lát cũng không hiện rễ. Hệ số chỉ nằm trong
+  code; câu `partial` nói đây là trung bình, lệch một đốt hoặc hơn ở từng người, và lưới là sơ đồ (không
+  phình cổ, dày hơn thật, nón tới L3).
+- **Bối cảnh không bị cắt** (khác `clip`): đốt sống mờ trọn vẹn cạnh lát mới thấy đoạn tuỷ nằm cao hơn
+  đốt cùng số. Raycast cũng không lọc bối cảnh theo lát. `clip` (mặt cắt chậu, tim) vẫn cắt cả bối cảnh.
+- **Đổi SỐ mặt cắt là đổi shader** (`NUM_CLIPPING_PLANES`): `applyClip` so chữ ký (số mặt, bối cảnh có
+  cắt) rồi mới `needsUpdate`; giá trị mặt là uniform. Đã kiểm chuyển thẳng 1 mặt (chậu) → 2 mặt (cổ).
+- **Khung camera kẹp theo lát** (`clampToBand`, cả ảnh thu nhỏ): không thì 10 cm tuỷ cổ khung theo cả
+  49 cm tuỷ. Lát ngắn (thắt lưng, cùng ~5 cm) hạ `fill` để thấy vài đốt quanh nó.
+- **Mặt cắt để hở, không lấp nắp.** Vật liệu DoubleSide nên nhìn vào lát thấy mặt trong. Lát mỏng nhìn
+  từ trên (bó tuỷ) chưa làm: cần kiểm có đọc được không trước khi tính lấp nắp bằng stencil.
+
 ## Triển khai
 
 Vercel, project `sciencepedia`, region `icn1` (Seoul — gần Supabase `ap-northeast-2`;

@@ -84,6 +84,14 @@ export type PartRule = {
  */
 export type ViewKind = "regional" | "overview" | "group" | "structure";
 
+/**
+ * Cao độ nằm giữa tâm hai mảnh mốc (`at` 0 = tâm `from`, 1 = tâm `to`), hoặc ở
+ * mép trên/dưới hộp bao một mảnh (`edge`, vd. đỉnh lưới tuỷ). Mốc giữa hai mảnh là đĩa
+ * gian đốt (tâm hộp bao đĩa sát thân đốt hơn hộp bao đốt sống — mỏm gai chúc
+ * xuống làm hộp đốt kề nhau chồng ~3 cm).
+ */
+export type BandLandmark = { from: RegExp; to: RegExp; at: number } | { edge: "top" | "bottom"; of: RegExp };
+
 export type AtlasViewDef = {
   id: string;
   systemId: SystemId;
@@ -107,6 +115,14 @@ export type AtlasViewDef = {
    * bỏ phần còn lại. Mặt cắt để hở — mảnh là bề mặt, không có ruột để lấp.
    */
   clip?: { normal: readonly [number, number, number]; constant: number };
+  /**
+   * Lát ngang (trục y) giữa hai mốc giải phẫu — cho cấu trúc liền một khối mà
+   * giải phẫu chia theo cao độ (đoạn tuỷ). Cao độ không viết tay: `atlas-views.ts`
+   * phân giải từ hộp bao của hai mảnh mốc lúc sinh, nên nhập lại asset thì lát
+   * đổi theo. Khác `clip`: bối cảnh KHÔNG bị cắt — đốt sống mờ trọn vẹn mới thấy
+   * được đoạn tuỷ nằm cao hơn đốt cùng số. Bỏ một đầu = không cắt phía đó.
+   */
+  band?: { top?: BandLandmark; bottom?: BandLandmark };
   /** Có mặt = không dựng được với dữ liệu hiện có; nói thiếu gì. */
   missing?: { vi: string; en: string };
   /**
@@ -415,7 +431,8 @@ export function overviewFor(systemId: string | null | undefined): string | null 
   return view && isUsableView(view.id) ? view.id : null;
 }
 
-export type ViewParts = { focus: string[]; hide: string[]; context?: string[] };
+/** `band`: cao độ (m, trục y) đã phân giải của lát ngang — `bottom` ≤ y ≤ `top`. */
+export type ViewParts = { focus: string[]; hide: string[]; context?: string[]; band?: { top?: number; bottom?: number } };
 const PARTS = resolved as Record<string, ViewParts>;
 
 /** Mã mảnh của một góc nhìn dựng được, hoặc null. */

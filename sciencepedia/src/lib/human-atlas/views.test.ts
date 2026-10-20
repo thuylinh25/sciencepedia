@@ -93,3 +93,15 @@ test("thẻ hệ mở tổng quan khi hệ có; hệ chưa có preset thì khôn
 test("tổng quan tim có mạch vành và mạch phổi, không chỉ 18 mảnh tim", () => {
   assert.ok((viewParts("cardiac-overview")?.focus.length ?? 0) > 18);
 });
+
+test("đoạn tuỷ: bốn lát nối liền nhau từ trên xuống, không hở không chồng", () => {
+  const ids = ["spinal-cord-cervical", "spinal-cord-thoracic", "spinal-cord-lumbar", "spinal-cord-sacral"];
+  const bands = ids.map((id) => viewParts(id)?.band);
+  bands.forEach((b, i) => assert.ok(b, `${ids[i]}: chưa sinh lát`));
+  assert.ok(bands[0]!.top! > bands[0]!.bottom!);
+  assert.equal(bands[3]!.bottom, undefined);
+  for (let i = 0; i < 3; i++) {
+    assert.equal(bands[i]!.bottom, bands[i + 1]!.top, `${ids[i]} → ${ids[i + 1]}`);
+    if (bands[i]!.top !== undefined) assert.ok(bands[i]!.top! > bands[i]!.bottom!, ids[i]);
+  }
+});
