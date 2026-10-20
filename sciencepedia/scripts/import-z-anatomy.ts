@@ -136,9 +136,19 @@ const NEURO_EXTRA: readonly [RegExp, Pick][] = [
   // Tháp, trám hành: nổi trên mặt hành não BP3D (trung vị 2,1 mm) — THÊM, không thay hành não.
   [/^(pyramid of medulla oblongata|olive)$/, { system: "nervous", group: "nervous.brainstem", partOf: "FMA62004" }],
   [/^(cochlea|vestibule|tympanic membrane|auditory tube)$/, { system: "sensory", group: "sensory.ear" }],
+  // Ống trung tâm (2026-10-20) THAY FJ1737. Đo theo lát 5 mm: đáy ống BP3D (y 1535) ở sau tâm tuỷ ZA
+  // ~9 mm, lòi ra NGOÀI mặt sau lưới chất trắng; ống ZA nằm đúng tâm tuỷ, lên trong hành não BP3D, hai
+  // ống trùng nhau ở đỉnh (y 1570). ZA có hai mảnh cùng tên — xem SPLIT_ID.
+  [/^central canal'?$/, { system: "nervous", group: "nervous.ventricles", partOf: "FMA78497" }],
 ];
-/** Mảnh BodyParts3D bị mảnh ZA thay (withSupplements loại khỏi danh mục): hai nửa tiểu não FMA67944. */
-const REPLACES = ["FJ1781", "FJ1830"];
+/**
+ * Mảnh trùng tên mà là hai đoạn khác nhau của cùng cấu trúc → mã mảnh riêng (cùng khái niệm). Ống trung
+ * tâm: lưới suốt tuỷ (y 1,06–1,55) + đường cong "Central canal'" lên trong hành não (1,54–1,57). Không
+ * có ngoại lệ này, đường cong bị loại như bản sao ẩn.
+ */
+const SPLIT_ID: Record<string, string> = { "Central canal'": "ZA-central-canal-medulla" };
+/** Mảnh BodyParts3D bị mảnh ZA thay (withSupplements loại khỏi danh mục): hai nửa tiểu não FMA67944, ống trung tâm. */
+const REPLACES = ["FJ1781", "FJ1830", "FJ1737"];
 const OSSICLE = /^(malleus|incus|stapes)$/;
 const baseName = (raw: string) =>
   raw.trim().replace(/^\((.*)\)(\.[lrj])?$/, "$1").replace(/\.\d+$/, "").replace(/\.[lrj]$/, "").trim().toLowerCase();
@@ -249,7 +259,7 @@ async function main() {
     const chosen = pick(r);
     if (!chosen) continue;
     const { full, base } = naming(r.name);
-    const id = `ZA-${slug(full)}`;
+    const id = SPLIT_ID[r.name] ?? `ZA-${slug(full)}`;
     if (skipped.seen.has(id)) continue; // tên lặp trong tệp gốc (bản sao ẩn)
     skipped.seen.add(id);
     const gridKey =

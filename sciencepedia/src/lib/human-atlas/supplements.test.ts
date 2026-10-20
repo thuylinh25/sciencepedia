@@ -23,6 +23,15 @@ test("keepReplaced giữ vỏ tiểu não BodyParts3D cho phép căn atlas MNI",
   assert.ok(out.parts.some((p) => p.id === "FJ1781"));
 });
 
+test("ống trung tâm Z-Anatomy (suốt tuỷ + đoạn hành não) THAY ống BodyParts3D lệch sau", () => {
+  const canal = { id: "FJ1737", name: "Central canal of spinal cord", conceptId: "FMA78497", system: "nervous", chunk: 0 } as unknown as Atlas["parts"][number];
+  const out = withSupplements({ chunks: [], parts: [canal], concepts: [{ id: "FMA78497", name: "central canal", elements: ["FJ1737"] }] } as unknown as Atlas);
+  assert.ok(!out.parts.some((p) => p.id === "FJ1737"));
+  const za = out.parts.filter((p) => p.conceptId === "ZA-central-canal");
+  assert.deepEqual(za.map((p) => p.id).sort(), ["ZA-central-canal", "ZA-central-canal-medulla"]);
+  assert.equal(SUPPLEMENT_PART_OF["ZA-central-canal"], "FMA78497");
+});
+
 test("khái niệm ZA kế thừa nội dung Level 2 của cha FMA qua partOf", () => {
   assert.equal(SUPPLEMENT_PART_OF["ZA-culmen"], "FMA67944");
   assert.equal(SUPPLEMENT_PART_OF["ZA-olive"], "FMA62004");
