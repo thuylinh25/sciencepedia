@@ -676,29 +676,51 @@ export default function AnatomyScene({
     let userHidden = new Set<number>();
 
     /*
-     * Mặt phẳng cắt của góc nhìn (`clip` trong views.ts). Gắn/gỡ `clippingPlanes`
-     * đổi shader (NUM_CLIPPING_PLANES) nên chỉ đụng vật liệu khi trạng thái bật/tắt
-     * THỰC SỰ đổi. Vật liệu thay thế của AO cũng phải cắt, không thì nửa đã bỏ
-     * vẫn đổ bóng lên mặt cắt.
+     * Mặt phẳng cắt của góc nhìn: `clip` (một mặt, cắt cả bối cảnh) hoặc `band`
+     * (lát ngang giữa hai cao độ đã sinh, bối cảnh KHÔNG cắt — đốt sống mờ trọn
+     * vẹn cạnh đoạn tuỷ). Gắn/gỡ `clippingPlanes` hay đổi SỐ mặt đổi shader
+     * (NUM_CLIPPING_PLANES) nên chỉ đụng vật liệu khi chữ ký (số mặt, bối cảnh có
+     * cắt) THỰC SỰ đổi; giá trị mặt là uniform, đổi tự do. Vật liệu thay thế của
+     * AO cũng phải cắt, không thì phần đã bỏ vẫn đổ bóng lên mặt cắt.
      */
-    const clipPlane = new T.Plane();
-    const clipList = [clipPlane];
-    let clipOn = false;
+    const planePool = [new T.Plane(), new T.Plane()];
+    let clipList: T.Plane[] = [];
+    let clipKey = "";
+    /** Lát `band`: bối cảnh vẽ trọn — raycast cũng không lọc nó theo lát. */
+    let contextUncut = false;
     const applyClip = (id: string | null | undefined) => {
-      const clip = viewSet(id) ? viewById(id)?.clip : undefined;
-      if (clip) {
-        clipPlane.normal.set(...clip.normal).normalize();
-        clipPlane.constant = clip.constant;
+      const def = viewSet(id) ? viewById(id) : null;
+      const band = def ? viewParts(id)?.band : undefined;
+      const next: T.Plane[] = [];
+      if (def?.clip) next.push(planePool[0].set(new T.Vector3(...def.clip.normal).normalize(), def.clip.constant));
+      // Giữ y ≥ đáy và y ≤ đỉnh.
+      if (band?.bottom !== undefined) next.push(planePool[next.length].set(new T.Vector3(0, 1, 0), -band.bottom));
+      if (band?.top !== undefined) next.push(planePool[next.length].set(new T.Vector3(0, -1, 0), band.top));
+      const cutContext = !!def?.clip;
+      contextUncut = next.length > 0 && !cutContext;
+      const key = `${next.length}|${cutContext}`;
+      if (key === clipKey) {
+        dirty = true;
+        return;
       }
-      if (!!clip === clipOn) return;
-      clipOn = !!clip;
+      clipKey = key;
+      clipList = next;
       const targets: T.Material[] = [...materials];
       if (aoPass) targets.push(aoPass.normalMaterial);
       for (const m of targets) {
-        m.clippingPlanes = clipOn ? clipList : null;
+        const on = next.length > 0 && (m !== ghostMaterial || cutContext);
+        m.clippingPlanes = on ? clipList : null;
         m.needsUpdate = true;
       }
       dirty = true;
+    };
+    /** Lát ngang của góc nhìn kẹp hộp khung: 10 cm tuỷ cổ không khung theo cả 49 cm tuỷ. */
+    const clampToBand = (box: T.Box3, id: string | null | undefined) => {
+      const band = viewSet(id) ? viewParts(id)?.band : undefined;
+      if (!band || box.isEmpty()) return box;
+      if (band.top !== undefined) box.max.y = Math.min(box.max.y, band.top);
+      if (band.bottom !== undefined) box.min.y = Math.max(box.min.y, band.bottom);
+      return box;
     };
 
     /*
@@ -974,7 +996,7 @@ export default function AnatomyScene({
           if (userHidden.has(i)) return;
           box.union(shifted.copy(bounds[i]).translate(new T.Vector3(data[i * 4], data[i * 4 + 1], data[i * 4 + 2])));
         });
-        if (!box.isEmpty()) return box;
+        if (!box.isEmpty()) return clampToBand(box, latest.current.viewId);
       }
       parts.forEach((p, i) => {
         if (!displaced) {
@@ -1510,6 +1532,7 @@ export default function AnatomyScene({
       selectionTexture.needsUpdate = true;
       thumbBox.makeEmpty();
       view.focus.forEach((i) => thumbBox.union(bounds[i]));
+      clampToBand(thumbBox, id);
       const direction = viewDirection(def.direction);
       // Nhãn nằm DƯỚI vùng vẽ của thẻ (2026-09-30), không phủ lên ảnh nữa: khung
       // cấu trúc giữa thẻ, chừa lề đều trên dưới như ảnh atlas. Bản trước chừa 20%
@@ -1625,7 +1648,8 @@ export default function AnatomyScene({
         if (raycaster.ray.origin.distanceTo(hitPoint) > nearest) return;
         const hits = raycaster.intersectObject(mesh, false);
         // Đang cắt: bỏ các điểm trúng nằm ở nửa đã bị cắt đi (raycast không biết clipping).
-        const hit = clipOn ? hits.find((h) => clipPlane.distanceToPoint(h.point) >= 0) : hits[0];
+        const cut = clipList.length > 0 && !(contextUncut && isContext(viewSet(latest.current.viewId), i));
+        const hit = cut ? hits.find((h) => clipList.every((p) => p.distanceToPoint(h.point) >= 0)) : hits[0];
         if (hit && hit.distance < nearest) {
           nearest = hit.distance;
           found = i;

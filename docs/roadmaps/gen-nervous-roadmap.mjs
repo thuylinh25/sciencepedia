@@ -13,7 +13,7 @@ const STATUS = {
   buildable: "Mảnh đã có trên R2 — chỉ cần khai báo góc nhìn",
   "import-za": "Có trong Z-Anatomy (CC BY-SA, đã vet) nhưng bộ lọc import-z-anatomy.ts loại — nới lọc + khử trùng",
   "needs-schema": "Không có mảnh riêng — cần kiểu nút mới (vùng/nhãn phủ lên mảnh cha)",
-  "needs-clipping": "Cần mặt cắt theo cao độ — trình xem chưa hỗ trợ",
+  "needs-clipping": "Cần mặt cắt theo cao độ — khai báo `band` trong views.ts (lát ngang theo mốc, 2026-10-20)",
   missing: "Không nguồn đã vet nào có — tìm asset (giấy phép trước) hoặc dựng sơ đồ 2D",
 };
 function priority(status, phase) {
@@ -477,15 +477,16 @@ N("nervous-spinal-cord", "sec-cns", "H", "group", "Tuỷ sống và rễ thần 
   status: "live", existing: "nervous-spinal-cord", dir: "back", zoom: "region", mode: "layered", context: ["SPINE"],
   obj: ["Xác định tuỷ sống trong ống sống và nơi tuỷ kết thúc", "Phân biệt rễ trước (vận động) với rễ sau (cảm giác)"],
 });
-const segNote = "Tuỷ là một khối liền, không có mảnh theo đoạn → cần mặt cắt theo cao độ. Lưu ý giải phẫu: đoạn tuỷ nằm CAO hơn đốt sống cùng số, không cắt theo đốt sống.";
+const segNote =
+  "Live 2026-10-20: lát ngang (`band`) của khối tuỷ Z-Anatomy, ranh giới trung bình theo Frostell 2016 neo vào tâm đĩa gian đốt BP3D; cột sống mờ không bị cắt. Không hiện rễ (rễ ZA là sơ đồ theo đốt sống). Lý do: docs/architecture.md, mục \"Mặt cắt theo cao độ\".";
 for (const [id, vi, en] of [
-  ["spinal-cord-cervical", "Tuỷ cổ (C1–C8)", "Cervical spinal cord (C1–C8)"],
-  ["spinal-cord-thoracic", "Tuỷ ngực (T1–T12)", "Thoracic spinal cord (T1–T12)"],
-  ["spinal-cord-lumbar", "Tuỷ thắt lưng (L1–L5)", "Lumbar spinal cord (L1–L5)"],
-  ["spinal-cord-sacral", "Tuỷ cùng và nón tuỷ", "Sacral spinal cord and conus medullaris"],
+  ["spinal-cord-cervical", "Tuỷ cổ (đoạn C1–C8)", "Cervical spinal cord (segments C1–C8)"],
+  ["spinal-cord-thoracic", "Tuỷ ngực (đoạn T1–T12)", "Thoracic spinal cord (segments T1–T12)"],
+  ["spinal-cord-lumbar", "Tuỷ thắt lưng (đoạn L1–L5)", "Lumbar spinal cord (segments L1–L5)"],
+  ["spinal-cord-sacral", "Tuỷ cùng (đoạn S1–S5) và nón tuỷ", "Sacral spinal cord (segments S1–S5) and conus medullaris"],
 ]) {
-  N(id, "nervous-spinal-cord", "H", "region", vi, en, {
-    status: "needs-clipping", dir: "back", zoom: "structure", mode: "layered", context: ["SPINE", "đoạn tuỷ khác ghost"], note: segNote,
+  N(id, "nervous-spinal-cord", "H", "group", vi, en, {
+    status: "live", existing: id, partial: true, dir: "side", zoom: "structure", mode: "layered", context: ["SPINE"], note: segNote,
     obj: [`Định vị ${vi.split(" (")[0].toLowerCase()} so với đốt sống`, "Liên hệ đoạn tuỷ với đám rối và vùng chi phối"],
   });
 }
@@ -754,10 +755,10 @@ for (const x of nodes) if (x.status === "import-za" && !IMPORT[x.id]) throw new 
 const MAIN_DIR = path.join(root, "sciencepedia/src/lib/human-atlas");
 const mainSrc = fs.readdirSync(MAIN_DIR).filter((f) => /^views.*\.ts$/.test(f)).map((f) => fs.readFileSync(path.join(MAIN_DIR, f), "utf8")).join("\n");
 const MAIN_NAMES = {};
-for (const m of mainSrc.matchAll(/(?:group|structure)\(\s*"([a-z0-9-]+)",\s*"([^"]+)",\s*"([^"]+)"/g)) MAIN_NAMES[m[1]] = { vi: m[2], en: m[3] };
+for (const m of mainSrc.matchAll(/(?:group|structure|segment)\(\s*"([a-z0-9-]+)",\s*"([^"]+)",\s*"([^"]+)"/g)) MAIN_NAMES[m[1]] = { vi: m[2], en: m[3] };
 for (const m of mainSrc.matchAll(/id: "([a-z0-9-]+)",[\s\S]{0,200}?name: \{ vi: "([^"]+)", en: "([^"]+)" \}/g)) MAIN_NAMES[m[1]] ??= { vi: m[2], en: m[3] };
 const nervousSrc = fs.readFileSync(path.join(MAIN_DIR, "views-nervous.ts"), "utf8");
-const MAIN_NERVOUS = [...nervousSrc.matchAll(/(?:group|structure)\(\s*"([a-z0-9-]+)"|id: "([a-z0-9-]+)"/g)].map((m) => m[1] || m[2]);
+const MAIN_NERVOUS = [...nervousSrc.matchAll(/(?:group|structure|segment)\(\s*"([a-z0-9-]+)"|id: "([a-z0-9-]+)"/g)].map((m) => m[1] || m[2]);
 
 for (const x of nodes) if (!x.existing && MAIN_NAMES[x.id]) Object.assign(x, { existing: x.id, status: "live" });
 const byId = new Map();
