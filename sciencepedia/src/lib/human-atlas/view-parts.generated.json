@@ -1274,7 +1274,6 @@
       "FJ1734",
       "FJ1735",
       "FJ1736",
-      "FJ1737",
       "FJ1738",
       "FJ1739",
       "FJ1740",
@@ -1457,6 +1456,7 @@
       "ZA-anterior-spinothalamic-tract",
       "ZA-cauda-equina",
       "ZA-central-canal",
+      "ZA-central-canal-medulla",
       "ZA-central-lobule",
       "ZA-cochlear-nerve",
       "ZA-common-plantar-digital-branches-of-medial-plantar-nerve",
@@ -15186,7 +15186,6 @@
       "FJ1734",
       "FJ1735",
       "FJ1736",
-      "FJ1737",
       "FJ1738",
       "FJ1739",
       "FJ1740",
@@ -15322,6 +15321,7 @@
       "ZA-anterior-spinothalamic-tract",
       "ZA-cauda-equina",
       "ZA-central-canal",
+      "ZA-central-canal-medulla",
       "ZA-central-lobule",
       "ZA-cochlear-nerve",
       "ZA-common-plantar-digital-branches-of-medial-plantar-nerve",
@@ -17084,7 +17084,6 @@
     ],
     "hide": [],
     "context": [
-      "FJ1737",
       "FJ1743",
       "FJ1760",
       "FJ1766",
@@ -17103,6 +17102,7 @@
       "FJ1843",
       "ZA-anterior-horn-of-spinal-cord",
       "ZA-central-canal",
+      "ZA-central-canal-medulla",
       "ZA-lateral-intermediate-substance",
       "ZA-posterior-horn-of-spinal-cord",
       "ZA-white-matter-of-spinal-cord"
@@ -17508,10 +17508,10 @@
   },
   "nervous-spinal-cord": {
     "focus": [
-      "FJ1737",
       "ZA-anterior-horn-of-spinal-cord",
       "ZA-cauda-equina",
       "ZA-central-canal",
+      "ZA-central-canal-medulla",
       "ZA-lateral-intermediate-substance",
       "ZA-left-anterior-root-of-spinal-nerve",
       "ZA-left-posterior-root-of-spinal-nerve",
@@ -17575,9 +17575,9 @@
   },
   "spinal-cord-cervical": {
     "focus": [
-      "FJ1737",
       "ZA-anterior-horn-of-spinal-cord",
       "ZA-central-canal",
+      "ZA-central-canal-medulla",
       "ZA-lateral-intermediate-substance",
       "ZA-posterior-horn-of-spinal-cord",
       "ZA-white-matter-of-spinal-cord"
@@ -17638,9 +17638,9 @@
   },
   "spinal-cord-thoracic": {
     "focus": [
-      "FJ1737",
       "ZA-anterior-horn-of-spinal-cord",
       "ZA-central-canal",
+      "ZA-central-canal-medulla",
       "ZA-lateral-intermediate-substance",
       "ZA-posterior-horn-of-spinal-cord",
       "ZA-white-matter-of-spinal-cord"
@@ -17701,9 +17701,9 @@
   },
   "spinal-cord-lumbar": {
     "focus": [
-      "FJ1737",
       "ZA-anterior-horn-of-spinal-cord",
       "ZA-central-canal",
+      "ZA-central-canal-medulla",
       "ZA-lateral-intermediate-substance",
       "ZA-posterior-horn-of-spinal-cord",
       "ZA-white-matter-of-spinal-cord"
@@ -17764,9 +17764,9 @@
   },
   "spinal-cord-sacral": {
     "focus": [
-      "FJ1737",
       "ZA-anterior-horn-of-spinal-cord",
       "ZA-central-canal",
+      "ZA-central-canal-medulla",
       "ZA-lateral-intermediate-substance",
       "ZA-posterior-horn-of-spinal-cord",
       "ZA-white-matter-of-spinal-cord"
@@ -20510,9 +20510,9 @@
   },
   "spinal-cord": {
     "focus": [
-      "FJ1737",
       "ZA-anterior-horn-of-spinal-cord",
       "ZA-central-canal",
+      "ZA-central-canal-medulla",
       "ZA-lateral-intermediate-substance",
       "ZA-posterior-horn-of-spinal-cord",
       "ZA-white-matter-of-spinal-cord"
@@ -20543,9 +20543,9 @@
     ],
     "hide": [],
     "context": [
-      "FJ1737",
       "ZA-anterior-horn-of-spinal-cord",
       "ZA-central-canal",
+      "ZA-central-canal-medulla",
       "ZA-lateral-intermediate-substance",
       "ZA-posterior-horn-of-spinal-cord"
     ]
@@ -20562,9 +20562,9 @@
     ],
     "hide": [],
     "context": [
-      "FJ1737",
       "ZA-anterior-horn-of-spinal-cord",
       "ZA-central-canal",
+      "ZA-central-canal-medulla",
       "ZA-lateral-intermediate-substance",
       "ZA-posterior-horn-of-spinal-cord"
     ]
@@ -20582,9 +20582,9 @@
     ],
     "hide": [],
     "context": [
-      "FJ1737",
       "ZA-anterior-horn-of-spinal-cord",
       "ZA-central-canal",
+      "ZA-central-canal-medulla",
       "ZA-lateral-intermediate-substance",
       "ZA-posterior-horn-of-spinal-cord"
     ]
@@ -20598,9 +20598,9 @@
     ],
     "hide": [],
     "context": [
-      "FJ1737",
       "ZA-anterior-horn-of-spinal-cord",
       "ZA-central-canal",
+      "ZA-central-canal-medulla",
       "ZA-lateral-intermediate-substance",
       "ZA-posterior-horn-of-spinal-cord"
     ]

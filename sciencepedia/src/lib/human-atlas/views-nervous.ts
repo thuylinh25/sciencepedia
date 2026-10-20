@@ -365,7 +365,7 @@ const structure = (id: string, vi: string, en: string, direction: AtlasViewDef["
  * Tên, câu báo thiếu, cách suy: science-editor (REWORK tên → "đoạn …", rồi PASS).
  */
 const disc = (vertebra: string) => new RegExp(`^intervertebral disk of ${vertebra} vertebra$`, "i");
-// Đỉnh lưới tuỷ, không để trống: ống trung tâm của BodyParts3D chạy tiếp lên trong hành não.
+// Đỉnh lưới tuỷ, không để trống: đoạn ống trung tâm trong hành não (ZA-central-canal-medulla) chạy tiếp lên trên.
 const CORD_TOP = { edge: "top", of: /^white matter of spinal cord$/i } as const;
 const C8_T1 = { from: disc("sixth cervical"), to: disc("seventh cervical"), at: 0.48 };
 const T12_L1 = { from: disc("tenth thoracic"), to: disc("eleventh thoracic"), at: 0.22 };

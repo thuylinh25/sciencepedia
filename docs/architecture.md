@@ -708,6 +708,11 @@ thay vì lệch tới 14–27 mm (lộ đường nối với vỏ BP3D còn lạ
 `resolveContent` lùi về đó: bấm một tiểu thuỳ hiện mô tả "Tiểu não" kèm dòng "về Tiểu não".
 Tiểu thuỳ ZA là KHỐI ĐẶC (lấp 81% lòng tiểu não, 15% chồng nhau), không chất trắng riêng — nhân sâu Allen
 nằm "trong" tiểu thuỳ là đúng cách dựng, không phải lòi.
+**Ống trung tâm THAY (2026-10-20, `replaces` thêm FJ1737).** Ngoại lệ có lý do của luật "chỉ thay khi trung vị
+≲2 mm": ở đây chính mảnh BodyParts3D sai — đáy ống BP3D nằm sau tâm tuỷ ZA ~9 mm, lòi ra ngoài mặt sau chất
+trắng (đo theo lát 5 mm); ống nằm trong nên thay không lộ đường nối. ZA có HAI mảnh cùng tên "Central canal":
+lưới suốt tuỷ và đường cong `Central canal'` lên trong hành não — `SPLIT_ID` (import-z-anatomy.ts) cho đường
+cong mã riêng `ZA-central-canal-medulla`, nếu không nó bị loại như bản sao ẩn.
 
 **Allen Human Reference Atlas – 3D 2020 (nhập 2026-10-19, CC BY 4.0, khối RIÊNG vì giấy phép riêng).**
 Nhân sâu BodyParts3D không có: 11 nhân đồi thị, chất đen, nhân dưới đồi thị, nhân sâu tiểu
