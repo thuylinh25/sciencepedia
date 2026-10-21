@@ -950,7 +950,7 @@ liệu/đèn — cảnh 3D chính vẫn #05070a (lý do ở `SCENE_BACKGROUND`).
   trọn trong đó nên bảng sẽ có "Phần còn lại".
 - Giác quan, bạch huyết, thần kinh (cùng ngày): lớp nhãn cầu lấy MẮT PHẢI (góc nhìn một mắt), hai mắt ở tổng quan
   là "Nhãn cầu phải/trái". Bạch huyết không một hàng mỗi nhóm hạch (~110): gom theo vùng (nông/sâu, thành/tạng).
-  Tên hạch là đuôi của từ khác ("submandibular" ⊃ "mandibular", "epigastric" ⊃ "gastric") → regex phải ``
+  Tên hạch là đuôi của từ khác ("submandibular" ⊃ "mandibular", "epigastric" ⊃ "gastric") → regex phải `\b`
   + liệt kê tiền tố (supra/sub/retro-pyloric…). Phế vị và gian sườn dùng lại cấu trúc của hô hấp — khai báo
   trùng tập mảnh là hai hàng chồng nhau. Không ghi "thiếu ống ngực": lưới mạch ngực có thể đã chứa nó.
 - Xương, cơ (2026-10-01): xương lệ, xoăn mũi dưới, cơ căng mạc đùi nằm hệ khác của dữ liệu → lấy theo mã/tên
