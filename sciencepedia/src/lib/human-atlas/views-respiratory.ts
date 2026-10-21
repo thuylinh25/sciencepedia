@@ -65,10 +65,17 @@ const PHARYNX = rule(
   "FMA46667", "FMA46668", "FMA46669", "FMA46670", "FMA46671", "FMA46672",
   "FMA55077",
 );
+/**
+ * Hai nửa của PHARYNX theo cao độ (cho góc nhìn tiêu hoá "Hầu thanh quản", lát từ bờ trên nắp
+ * thanh môn): dưới = cơ khít giữa, dưới, cơ trâm hầu, khẩu cái hầu, đường đan (bị lát cắt
+ * ngang); trên = cơ khít trên + cơ vòi hầu, nằm trọn trên lát (hầu mũi, hầu miệng).
+ */
+export const PHARYNX_LOWER = rule("FMA46633", "FMA46634", "FMA46635", "FMA46636", "FMA46667", "FMA46668", "FMA46671", "FMA46672", "FMA55077");
+export const PHARYNX_UPPER = rule("FMA46631", "FMA46632", "FMA46669", "FMA46670");
 
-const EPIGLOTTIS = rule("FMA55130");
+export const EPIGLOTTIS = rule("FMA55130");
 /** FMA "Laryngeal cartilage": giáp, nhẫn, phễu, sừng, chêm. */
-const LARYNX_CARTILAGES = rule(
+export const LARYNX_CARTILAGES = rule(
   "FMA55099", "FMA9615", "FMA55113", "FMA55114", "FMA55115", "FMA55116", "FMA55117", "FMA55118",
 );
 /** Cơ nội thanh quản (FMA "Intrinsic muscle of larynx") và cơ nhẫn giáp, phễu nắp. */
@@ -378,6 +385,25 @@ export const RESPIRATORY_VIEWS: readonly AtlasViewDef[] = [
     focus: [PHARYNX],
     context: [LARYNX_CARTILAGES, EPIGLOTTIS, HYOID],
     terms: ["họng", "throat", "cơ khít hầu", "constrictor"],
+  },
+  // Hai con phủ kín `pharynx`: mở hầu ra đúng hai hàng.
+  {
+    id: "pharynx-upper-muscles",
+    systemId: "respiratory",
+    kind: "structure",
+    name: { vi: "Cơ khít hầu trên và cơ vòi hầu", en: "Superior pharyngeal constrictor and salpingopharyngeus" },
+    direction: "posterolateral",
+    focus: [PHARYNX_UPPER],
+    context: [PHARYNX_LOWER],
+  },
+  {
+    id: "pharynx-lower-muscles",
+    systemId: "respiratory",
+    kind: "structure",
+    name: { vi: "Cơ khít hầu giữa, dưới, cơ trâm hầu, cơ khẩu cái hầu và đường đan hầu", en: "Middle and inferior pharyngeal constrictors, stylopharyngeus, palatopharyngeus and pharyngeal raphe" },
+    direction: "posterolateral",
+    focus: [PHARYNX_LOWER],
+    context: [PHARYNX_UPPER, LARYNX_CARTILAGES, EPIGLOTTIS],
   },
   {
     id: "larynx",

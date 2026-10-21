@@ -43,34 +43,34 @@ const TEMPORAL = b(/temporal bone$/i);
 const SPHENOID = b(/^sphenoid bone$/i);
 const ETHMOID = b(/^ethmoid$/i);
 const NASAL = b(/nasal bone$/i);
-const MAXILLA = b(/maxilla$/i);
+export const MAXILLA = b(/maxilla$/i);
 const ZYGOMATIC = b(/zygomatic bone$/i);
 const PALATINE = b(/palatine bone$/i);
 const VOMER = b(/^vomer$/i);
-const MANDIBLE = b(/^mandible$/i);
+export const MANDIBLE = b(/^mandible$/i);
 const HYOID = b(/^hyoid bone$/i);
 // Z-Anatomy (2026-10-19) — BodyParts3D không có xương con; chi tiết ở góc nhìn tai giữa.
 const OSSICLES = b(/^(left|right) (malleus|incus|stapes)$/i);
 // Xương mặt mà dữ liệu xếp hệ khác: xương lệ (giác quan), xoăn mũi dưới (hô hấp) — lấy theo mã FMA.
 const LACRIMAL: PartRule = { fma: ["FMA53645", "FMA53646"] };
 const CONCHAE: PartRule = { fma: ["FMA54737", "FMA54738"] };
-const SKULL = [FRONTAL, PARIETAL, OCCIPITAL, TEMPORAL, SPHENOID, ETHMOID, NASAL, LACRIMAL, CONCHAE, MAXILLA, ZYGOMATIC, PALATINE, VOMER, MANDIBLE];
+export const SKULL = [FRONTAL, PARIETAL, OCCIPITAL, TEMPORAL, SPHENOID, ETHMOID, NASAL, LACRIMAL, CONCHAE, MAXILLA, ZYGOMATIC, PALATINE, VOMER, MANDIBLE];
 // Răng và lợi.
 const INCISORS = b(/incisor tooth$/i);
 const CANINES = b(/canine tooth$/i);
 const PREMOLARS = b(/premolar tooth$/i);
 const MOLARS = b(/secondary molar tooth$/i);
 const GINGIVA = b(/^gingiva of (upper|lower) jaw$/i);
-const TEETH = [INCISORS, CANINES, PREMOLARS, MOLARS, GINGIVA];
+export const TEETH = [INCISORS, CANINES, PREMOLARS, MOLARS, GINGIVA];
 // Cột sống.
-const CERVICAL = b(/cervical vertebra$|^atlas$|^axis$/i, NOT_DISK);
-const THORACIC = b(/thoracic vertebra$/i, NOT_DISK);
-const LUMBAR = b(/lumbar vertebra$/i, NOT_DISK);
-const SACRUM = b(/^sacrum$/i);
+export const CERVICAL = b(/cervical vertebra$|^atlas$|^axis$/i, NOT_DISK);
+export const THORACIC = b(/thoracic vertebra$/i, NOT_DISK);
+export const LUMBAR = b(/lumbar vertebra$/i, NOT_DISK);
+export const SACRUM = b(/^sacrum$/i);
 const DISKS = b(/^intervertebral disk/i);
 const SPINE = [CERVICAL, THORACIC, LUMBAR, SACRUM, DISKS];
 // Lồng ngực.
-const RIBS = b(/\brib$/i);
+export const RIBS = b(/\brib$/i);
 const COSTAL_CARTILAGES = b(/costal cartilage$/i);
 const STERNUM = b(/^(manubrium|body of sternum|xiphoid process)$/i);
 // Chi trên.
@@ -84,7 +84,7 @@ const METACARPALS = b(/metacarpal bone$/i);
 const FINGER_PHALANGES = b(/phalanx of (left |right )?(thumb|index finger|middle finger|ring finger|little finger)$/i);
 const UPPER_LIMB = [CLAVICLE, SCAPULA, HUMERUS, RADIUS, ULNA, CARPALS, METACARPALS, FINGER_PHALANGES];
 // Chậu và chi dưới.
-const HIP_BONE = b(/hip bone$/i);
+export const HIP_BONE = b(/hip bone$/i);
 const FEMUR = b(/femur$/i);
 const PATELLA = b(/patella$/i);
 const TIBIA = b(/tibia$/i);
