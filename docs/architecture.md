@@ -806,6 +806,16 @@ góc nhìn vào góc canvas (scissor), chép sang canvas 2D ngay trong cùng tá
 nguyên tới lúc ghép khung), rồi vẽ đè cảnh thật. Mượn camera chính vì đèn gắn vào nó. Trên
 SwiftShader (test headless) mỗi khung như vậy mất ~7 s — chờ ~100 s trước khi mở lưới trong test.
 
+**Ảnh thu nhỏ chụp SẴN trên R2, chụp ở client chỉ là lưới hứng** (2026-10-21): chụp ở client cần tải gần
+đủ hình học rồi vẽ ~180 ảnh, ~1 ảnh/s trên GPU tích hợp — lần đầu mở lưới là hàng phút "Đang dựng ảnh…";
+đệm IndexedDB chỉ giúp lần sau. `npm run atlas:thumbs` mở trang bằng Chrome headless GPU thật với
+`?thumbs=capture`, đọc `{id, key, url}` cảnh ghi vào IndexedDB, đẩy `human-atlas/thumbs/<sha>.webp`
+lên R2 rồi ghi `thumbnails.generated.json`. Khoá do CHÍNH trang tính (dữ liệu + danh mục khối + định
+nghĩa góc nhìn + mã mảnh + `THUMB_STYLE`), nên ảnh chụp sẵn không bao giờ sai: góc nhìn đổi mà chưa
+chụp lại thì thẻ ấy tự về chụp ở client. Vì vậy sửa góc nhìn/dữ liệu/cách vẽ → deploy → chạy lại
+`atlas:thumbs --base <bản live> --write` → commit bản kê. Không cần cờ theo giao diện sáng/tối: ảnh nền
+trong suốt và vật liệu không đổi theo theme.
+
 `?view=<id>`: chọn góc nhìn (lưới, ô tìm) ghi bằng **pushState** để Back/Forward đi qua từng góc
 nhìn (Next đồng bộ `useSearchParams` với pushState gốc); Back ra khỏi mọi góc nhìn trả về tập hệ
 của URL ấy. Rời góc nhìn vì đụng tới hệ (bật/tắt, preset, thẻ hệ,

@@ -33,7 +33,7 @@ import { createExplosionLayout } from "@/lib/human-atlas/explosion-layout";
 import { decodeModelResponse } from "@/lib/human-atlas/model-download";
 import { PointerTap } from "@/lib/human-atlas/pointer-tap";
 import { sectionCap } from "@/lib/human-atlas/section";
-import { THUMB_STYLE, fingerprint, readThumbnails, writeThumbnail } from "@/lib/human-atlas/thumbnail-cache";
+import { THUMB_STYLE, fingerprint, prebakedThumbnail, readThumbnails, writeThumbnail } from "@/lib/human-atlas/thumbnail-cache";
 import { ATLAS_VIEWS, hasCard, isSystemView, viewById, viewParts, type AtlasViewDef, type ViewDirection } from "@/lib/human-atlas/views";
 
 /**
@@ -1623,9 +1623,23 @@ export default function AnatomyScene({
       const def = viewById(id);
       return def ? `${THUMB_STYLE}:${atlasPrint}:${fingerprint(JSON.stringify([def, viewParts(id)]))}` : null;
     };
-    /** Lần đầu mở lưới: lấy ảnh đã đệm, chỉ chụp phần còn thiếu. */
+    /*
+     * `?thumbs=capture`: bỏ qua ảnh chụp sẵn để chụp lại tất cả — chỉ dành cho
+     * `scripts/bake-atlas-thumbnails.ts`, không thì lượt chụp lại đọc về chính
+     * ảnh R2 cũ.
+     */
+    const recapture = new URLSearchParams(location.search).get("thumbs") === "capture";
+    /** Lần đầu mở lưới: ảnh chụp sẵn trên R2, rồi ảnh đã đệm, chỉ chụp phần còn thiếu. */
     const loadThumbCache = () => {
-      void readThumbnails(thumbKey).then((found) => {
+      if (!recapture) {
+        for (const id of [...thumbQueue]) {
+          const url = prebakedThumbnail(id, thumbKey(id));
+          if (!url) continue;
+          thumbQueue.splice(thumbQueue.indexOf(id), 1);
+          callbacks.current.onThumbnail?.(id, url);
+        }
+      }
+      void (recapture ? Promise.resolve(new Map<string, string>()) : readThumbnails(thumbKey)).then((found) => {
         if (disposed) return;
         found.forEach((url, id) => {
           const at = thumbQueue.indexOf(id);

@@ -279,9 +279,10 @@ function Stage({ src, usable, className }: { src: string | undefined; usable: bo
       )}
     >
       {src ? (
-        // Data URL do cảnh 3D chụp ở client — next/image không tối ưu được nó.
+        // Data URL do cảnh 3D chụp, hoặc ảnh chụp sẵn 240×300 trên R2 (một cỡ duy nhất,
+        // không cần srcset của <AssetImage>) — không đi qua /_next/image.
         // eslint-disable-next-line @next/next/no-img-element
-        <img src={src} alt="" width={240} height={300} className="absolute inset-0 size-full object-contain" />
+        <img src={src} alt="" width={240} height={300} loading="lazy" className="absolute inset-0 size-full object-contain" />
       ) : (
         <span
           aria-hidden

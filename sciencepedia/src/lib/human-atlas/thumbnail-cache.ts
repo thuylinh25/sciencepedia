@@ -14,8 +14,31 @@
  * Mọi lỗi (chế độ riêng tư, chặn dữ liệu trang) đều nuốt: thiếu đệm chỉ là chụp lại.
  */
 
-/** Tăng khi đổi cách `renderThumbnail` vẽ — ảnh đệm cũ sẽ bị bỏ. */
+import { assetUrl } from "@/lib/asset";
+
+import prebaked from "./thumbnails.generated.json";
+
+/**
+ * Tăng khi đổi cách `renderThumbnail` vẽ — ảnh đệm cũ sẽ bị bỏ. Tăng rồi thì
+ * chụp sẵn lại (`npm run atlas:thumbs`), không thì mọi thẻ về chụp ở client.
+ */
 export const THUMB_STYLE = 1;
+
+/*
+ * Ảnh chụp sẵn trên R2 (2026-10-21). Đệm IndexedDB chỉ giúp lần SAU: lần đầu
+ * một trình duyệt mở lưới vẫn phải tải gần đủ hình học rồi vẽ ~180 ảnh, ~1 ảnh/s
+ * trên GPU tích hợp. `scripts/bake-atlas-thumbnails.ts` chụp tất cả bằng chính
+ * cảnh này (trình duyệt headless, GPU thật), đẩy lên R2 theo dấu vân nội dung
+ * và ghi bản kê dưới đây. Cảnh chỉ dùng ảnh có khoá khớp `thumbKey` — góc nhìn
+ * hay dữ liệu đổi mà chưa chụp lại thì thẻ ấy tự về chụp ở client, không sai ảnh.
+ */
+const PREBAKED = prebaked as Record<string, { key: string; file: string }>;
+
+/** URL ảnh chụp sẵn của một góc nhìn, nếu khoá còn khớp. */
+export function prebakedThumbnail(id: string, key: string | null): string | null {
+  const entry = PREBAKED[id];
+  return entry && key && entry.key === key ? assetUrl(`human-atlas/thumbs/${entry.file}`) : null;
+}
 
 const DB = "sciencepedia-atlas";
 const STORE = "thumbnails";
