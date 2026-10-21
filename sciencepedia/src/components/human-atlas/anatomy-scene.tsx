@@ -28,11 +28,12 @@ import {
   type SceneState,
   type SystemId,
 } from "@/lib/human-atlas/anatomy";
-import { atlasDataUrl } from "@/lib/human-atlas/assets";
+import { HUMAN_ATLAS_DATA_VERSION, atlasDataUrl } from "@/lib/human-atlas/assets";
 import { createExplosionLayout } from "@/lib/human-atlas/explosion-layout";
 import { decodeModelResponse } from "@/lib/human-atlas/model-download";
 import { PointerTap } from "@/lib/human-atlas/pointer-tap";
 import { sectionCap } from "@/lib/human-atlas/section";
+import { THUMB_STYLE, fingerprint, readThumbnails, writeThumbnail } from "@/lib/human-atlas/thumbnail-cache";
 import { ATLAS_VIEWS, hasCard, isSystemView, viewById, viewParts, type AtlasViewDef, type ViewDirection } from "@/lib/human-atlas/views";
 
 /**
@@ -75,6 +76,8 @@ type Props = {
   onError: (code: SceneError) => void;
   /** Ảnh thu nhỏ của một góc nhìn, chụp từ chính mô hình sau khi tải xong. */
   onThumbnail?: (viewId: string, dataUrl: string) => void;
+  /** Góc nhìn đang có thẻ trên màn (tab/hệ đang mở của lưới) — chụp và tải khối cho chúng trước. */
+  thumbnailPriority?: readonly string[];
 };
 
 /**
@@ -190,13 +193,14 @@ export default function AnatomyScene({
   onProgress,
   onError,
   onThumbnail,
+  thumbnailPriority,
 }: Props) {
   const host = useRef<HTMLDivElement>(null);
   const latest = useRef(state);
-  const callbacks = useRef({ onSelect, onProgress, onError, labelFor, onThumbnail });
+  const callbacks = useRef({ onSelect, onProgress, onError, labelFor, onThumbnail, thumbnailPriority });
   const themeRef = useRef<(dark: boolean) => void>(() => {});
   latest.current = state;
-  callbacks.current = { onSelect, onProgress, onError, labelFor, onThumbnail };
+  callbacks.current = { onSelect, onProgress, onError, labelFor, onThumbnail, thumbnailPriority };
 
   useEffect(() => {
     themeRef.current(dark);
@@ -882,6 +886,8 @@ export default function AnatomyScene({
     let wanted: number[] = [];
     /** Lưới góc nhìn đã mở: khối cho ảnh thu nhỏ, tải sau `wanted`. */
     let galleryWanted = false;
+    /** Đã đọc xong đệm ảnh thu nhỏ: chỉ từ đó mới tải khối / chụp cho lưới. */
+    let thumbCacheRead = false;
     let activeLoads = 0;
     let loadFailed = false;
     let lastPercent = -1;
@@ -945,15 +951,14 @@ export default function AnatomyScene({
       dirty = true;
     };
 
-    /** Khối cho ảnh thu nhỏ, theo thứ tự thẻ trong lưới — thẻ đầu có ảnh trước. */
-    let thumbChunkOrder: number[] | null = null;
+    /**
+     * Khối cho ảnh còn phải chụp: thẻ đang hiện trên lưới trước, rồi theo thứ tự
+     * thẻ. Ảnh đã có trong đệm đã rời `thumbQueue` nên không kéo khối nào về.
+     */
     const galleryChunks = () => {
-      if (!thumbChunkOrder) {
-        const order = new Set<number>();
-        for (const id of thumbQueue) thumbChunks(id).forEach((c) => order.add(c));
-        thumbChunkOrder = [...order];
-      }
-      return thumbChunkOrder;
+      const order = new Set<number>();
+      for (const id of thumbOrder()) thumbChunks(id).forEach((c) => order.add(c));
+      return [...order];
     };
     const reportProgress = () => {
       const done = wanted.filter((c) => chunkState[c] === 2).length;
@@ -969,7 +974,7 @@ export default function AnatomyScene({
       while (!disposed && !loadFailed && activeLoads < PARALLEL_CHUNKS) {
         const next =
           wanted.find((c) => chunkState[c] === 0) ??
-          (galleryWanted ? galleryChunks().find((c) => chunkState[c] === 0) : undefined);
+          (galleryWanted && thumbCacheRead ? galleryChunks().find((c) => chunkState[c] === 0) : undefined);
         if (next === undefined) return;
         chunkState[next] = 1;
         activeLoads += 1;
@@ -1573,6 +1578,9 @@ export default function AnatomyScene({
      * nguyên tới lúc trình duyệt ghép khung), rồi vẽ đè cảnh thật lên — người
      * đọc không thấy khung nào lạ. Mỗi khung chỉ chụp một góc nhìn để không
      * giật; camera chính mượn tạm rồi trả lại (đèn gắn vào nó).
+     *
+     * Ảnh được đệm trong IndexedDB (`thumbnail-cache.ts`). Đổi cách vẽ dưới đây
+     * thì tăng `THUMB_STYLE`, không thì người đọc cũ thấy ảnh kiểu cũ mãi.
      */
     const THUMB_W = 240;
     const THUMB_H = 300;
@@ -1588,10 +1596,46 @@ export default function AnatomyScene({
       }
       return set;
     };
+    /*
+     * Thứ tự chụp: thẻ đang hiện trên lưới trước (2026-10-21). Bản trước chụp
+     * theo thứ tự registry — "Theo vùng" rồi lần lượt từng hệ — nên mở tab "Hệ
+     * xương" phải chờ vài chục ảnh của thẻ khuất, mỗi ảnh ~150 ms, cộng thời gian
+     * tải gần đủ khối vì góc nhìn theo vùng vẽ gần cả cơ thể.
+     */
+    const thumbOrder = () => {
+      const first = (callbacks.current.thumbnailPriority ?? []).filter((id) => thumbQueue.includes(id));
+      return first.length ? [...first, ...thumbQueue.filter((id) => !first.includes(id))] : thumbQueue;
+    };
     /** Thẻ kế tiếp đã đủ hình học để chụp (lấy khỏi hàng đợi), hoặc undefined. */
     const nextThumbnail = () => {
-      const at = thumbQueue.findIndex((id) => [...thumbChunks(id)].every((c) => chunkState[c] === 2));
-      return at < 0 ? undefined : thumbQueue.splice(at, 1)[0];
+      // Khung quá nhỏ thì chưa lấy khỏi hàng đợi: `renderThumbnail` sẽ bỏ qua và
+      // thẻ ấy đứng "Đang dựng ảnh…" mãi (điện thoại, lúc đang đổi cỡ).
+      if (!thumbCacheRead || el.clientWidth < THUMB_W || el.clientHeight < THUMB_H) return undefined;
+      const id = thumbOrder().find((v) => [...thumbChunks(v)].every((c) => chunkState[c] === 2));
+      if (id) thumbQueue.splice(thumbQueue.indexOf(id), 1);
+      return id;
+    };
+    /** Khoá đệm của một góc nhìn — đổi dữ liệu, định nghĩa hay mã mảnh là khoá đổi. */
+    const atlasPrint = fingerprint(
+      JSON.stringify([HUMAN_ATLAS_DATA_VERSION, parts.length, atlas.chunks.map((c) => [c.url, c.gzip, c.bytes])]),
+    );
+    const thumbKey = (id: string) => {
+      const def = viewById(id);
+      return def ? `${THUMB_STYLE}:${atlasPrint}:${fingerprint(JSON.stringify([def, viewParts(id)]))}` : null;
+    };
+    /** Lần đầu mở lưới: lấy ảnh đã đệm, chỉ chụp phần còn thiếu. */
+    const loadThumbCache = () => {
+      void readThumbnails(thumbKey).then((found) => {
+        if (disposed) return;
+        found.forEach((url, id) => {
+          const at = thumbQueue.indexOf(id);
+          if (at < 0) return;
+          thumbQueue.splice(at, 1);
+          callbacks.current.onThumbnail?.(id, url);
+        });
+        thumbCacheRead = true;
+        pump();
+      });
     };
     const thumbBox = new T.Box3();
     const renderThumbnail = (id: string) => {
@@ -1706,7 +1750,10 @@ export default function AnatomyScene({
       partTexture.needsUpdate = true;
       selectionTexture.needsUpdate = true;
       dirty = true;
-      callbacks.current.onThumbnail?.(id, out.toDataURL("image/webp", 0.85));
+      const url = out.toDataURL("image/webp", 0.85);
+      callbacks.current.onThumbnail?.(id, url);
+      const key = thumbKey(id);
+      if (key) void writeThumbnail(id, key, url);
     };
 
     // ------------------------------------------------------------ chọn mảnh
@@ -2126,7 +2173,7 @@ export default function AnatomyScene({
       // Lưới góc nhìn mở lần đầu → tải nốt khối cho ảnh thu nhỏ, sau khối đang cần.
       if (!galleryWanted && callbacks.current.onThumbnail) {
         galleryWanted = true;
-        pump();
+        loadThumbCache();
       }
       // Một ảnh thu nhỏ mỗi khung, khi khối của thẻ ấy đã về và camera đứng yên.
       const nextThumb = sized && !tween && callbacks.current.onThumbnail ? nextThumbnail() : undefined;
