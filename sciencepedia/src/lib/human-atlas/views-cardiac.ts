@@ -358,7 +358,10 @@ export const CARDIAC_VIEWS: readonly AtlasViewDef[] = [
   { id: "internal-jugular-veins", systemId: "cardiac", kind: "structure", name: { vi: "Tĩnh mạch cảnh trong", en: "Internal jugular veins" }, direction: "anterolateral", focus: [JUGULARS], context: [SKULL_NECK] },
   { id: "hepatic-arterial-supply", systemId: "cardiac", kind: "structure", name: { vi: "Thân tạng và động mạch gan", en: "Celiac trunk and hepatic arteries" }, direction: "front", focus: [HEPATIC_ARTERIES], context: [LIVER] },
   { id: "intestinal-veins", systemId: "cardiac", kind: "structure", name: { vi: "Tĩnh mạch của ruột", en: "Intestinal veins" }, direction: "front", focus: [GUT_VEINS], context: [INTESTINES] },
-  { id: "pancreaticoduodenal-arteries", systemId: "cardiac", kind: "structure", name: { vi: "Động mạch tá tụy", en: "Pancreaticoduodenal arteries" }, direction: "front", focus: [art(/pancreaticoduodenal artery$/i)], context: [INTESTINES] },
+  // Tách trên/dưới theo nguồn: tá tuỵ trên từ ĐM vị tá tràng (thân tạng), tá tuỵ dưới từ ĐM mạc treo
+  // tràng trên — gộp làm một thì vắt ngang "thân tạng" và "mạc treo tràng" ở góc nhìn lớn.
+  { id: "superior-pancreaticoduodenal-arteries", systemId: "cardiac", kind: "structure", name: { vi: "Động mạch tá tuỵ trên", en: "Superior pancreaticoduodenal arteries" }, direction: "front", focus: [art(/superior pancreaticoduodenal artery$/i)], context: [INTESTINES] },
+  { id: "inferior-pancreaticoduodenal-arteries", systemId: "cardiac", kind: "structure", name: { vi: "Động mạch tá tuỵ dưới", en: "Inferior pancreaticoduodenal arteries" }, direction: "front", focus: [art(/inferior pancreaticoduodenal artery$/i)], context: [INTESTINES] },
   // Vòng Willis tách đôi cùng lý do với động mạch cảnh: động mạch nền nằm trong "cảnh – đốt sống",
   // các đoạn còn lại trong "động mạch não".
   { id: "circle-of-willis-segments", systemId: "cardiac", kind: "structure", name: { vi: "Các đoạn vòng Willis", en: "Circle of Willis segments" }, direction: "inferior", focus: [art(/^(left|right) anterior cerebral artery$|^anterior communicating artery$|^(left|right) posterior communicating artery$|^precommunicating part of (left|right) posterior cerebral artery$/i)], context: [INTERNAL_CAROTIDS] },

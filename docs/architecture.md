@@ -870,6 +870,15 @@ trung thất (khí quản, thực quản, mạch lớn), không chỉ tim và ph
 Supply" không có mạch trong dữ liệu → "Răng và lợi", không hứa mạch. Mặt cắt chậu: tạng phải NỔI BẬT —
 làm bối cảnh mờ thì lát cắt gần như không thấy. Cơ răng sau là lớp giữa, không vào "cơ lưng sâu".
 
+**Hệ tiêu hoá theo "Digestive System Views" của atlas** (2026-10-21): tổng quan + 12 ô — miệng và hầu
+(mặt cắt dọc giữa), tạng ổ bụng và chậu hông, tuyến nước bọt, răng, hầu thanh quản (lát `band` từ bờ
+trên nắp thanh môn tới dưới sụn nhẫn), ống tiêu hoá, mạch dạ dày, cơ thắt (`missing` — không có cơ thắt
+thực quản dưới/môn vị/hậu môn trong), gan–đường mật–tuỵ, mạch tạng tiêu hoá, ruột, ruột già. ĐM tá tuỵ
+DƯỚI thuộc mạc treo tràng trên, không thuộc thân tạng (science-editor) — vì vậy "Động mạch tá tuỵ" của
+hệ tim mạch tách trên/dưới, gộp lại thì vắt ngang hai cấu trúc cha. Lát `band` không lọc danh sách
+nổi bật: mảnh nằm trọn ngoài lát (cơ khít hầu trên, cơ vòi hầu) phải ra bối cảnh, nên `pharynx` có hai
+con phủ kín. Dữ liệu không có ống mật chủ — mọi góc nhìn đường mật ghi thiếu, đừng thêm từ khoá "ống mật chủ".
+
 **Bề mặt cơ thể KHÔNG có góc nhìn** (chủ sản phẩm bỏ, 2026-10-15): tab "Theo hệ" không còn chip này;
 da vẫn là lớp ngoài của mô hình và vẫn bật/tắt ở bảng hệ. Bản duyệt mô tả nhóm (môi, tóc) giữ trong tệp
 dữ liệu, `--emit-client` bỏ mục không còn góc nhìn.
