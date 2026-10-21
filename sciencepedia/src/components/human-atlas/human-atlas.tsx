@@ -251,6 +251,8 @@ export function HumanAtlas({
   // hình, chụp ngay khi tải là giật khung trên máy yếu cho người không mở lưới.
   const [galleryOpened, setGalleryOpened] = useState(false);
   const [thumbnails, setThumbnails] = useState<Record<string, string>>({});
+  /** Thẻ lưới đang hiện — cảnh chụp chúng trước (xem `thumbOrder` trong anatomy-scene). */
+  const [thumbnailPriority, setThumbnailPriority] = useState<string[]>([]);
   const onThumbnail = useCallback(
     (id: string, url: string) => setThumbnails((m) => ({ ...m, [id]: url })),
     [],
@@ -855,6 +857,7 @@ export function HumanAtlas({
             onProgress={onProgress}
             onError={onError}
             onThumbnail={galleryOpened ? onThumbnail : undefined}
+            thumbnailPriority={thumbnailPriority}
           />
         )}
       </AtlasErrorBoundary>
@@ -984,6 +987,7 @@ export function HumanAtlas({
             setPanel(null);
           }}
           onClose={closeGallery}
+          onVisibleViews={setThumbnailPriority}
         />
       )}
 

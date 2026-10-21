@@ -29,6 +29,8 @@ type Props = {
   thumbnails: Record<string, string>;
   onChoose: (id: string) => void;
   onClose: () => void;
+  /** Thẻ đang hiện (tab + hệ đang chọn) — cảnh chụp ảnh cho chúng trước. */
+  onVisibleViews?: (ids: string[]) => void;
 };
 
 type Tab = "regional" | "system";
@@ -59,7 +61,7 @@ type Tab = "regional" | "system";
  * nằm trong luồng cuộn của trang — bắt đầu từ mép trên khung xem, cao theo nội
  * dung, không tự cuộn — nên chỉ còn MỘT thanh cuộn là của trang.
  */
-export function ViewsGallery({ locale, activeViewId, thumbnails, onChoose, onClose }: Props) {
+export function ViewsGallery({ locale, activeViewId, thumbnails, onChoose, onClose, onVisibleViews }: Props) {
   const t = useTranslations("humanAtlas.atlasViews");
   const close = useRef<HTMLButtonElement>(null);
   const pick = (v: { vi: string; en: string }) => (locale === "vi" ? v.vi : v.en);
@@ -108,6 +110,19 @@ export function ViewsGallery({ locale, activeViewId, thumbnails, onChoose, onClo
       section.style.marginBottom = "";
     };
   }, [frame]);
+
+  useEffect(() => {
+    const shown =
+      tab === "regional"
+        ? REGIONAL_VIEWS
+        : system
+          ? (() => {
+              const m = anatomicalSystem(system);
+              return [...(m?.overview ? [m.overview.def] : []), ...(m?.views.map((v) => v.def) ?? [])];
+            })()
+          : [];
+    onVisibleViews?.(shown.map((v) => v.id));
+  }, [tab, system, onVisibleViews]);
 
   useEffect(() => {
     close.current?.focus();
