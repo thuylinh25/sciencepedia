@@ -109,7 +109,22 @@ const FADE_BY_LAYER: Record<AnatomyLayer, number> = {
  * những tấm mỏng phủ cả bụng, màu trắng bạc bóng; ở 25% của lớp cơ chúng thành một màn
  * trắng che thận ở "Hiện giải phẫu xung quanh" (chụp thử 2026-10-23) → 12%.
  */
-const fadeOf = (system: SystemId) => (system === "connective" ? 0.12 : FADE_BY_LAYER[SYSTEM_LAYER[system]]);
+/**
+ * "Bán trong suốt" (`SceneState.look`, 2026-10-23): cùng luật — chỉ lớp CHE cấu trúc đang xem
+ * mới mờ — nhưng mờ 40–60% thay vì 10–45%, để thấy lớp ngoài nằm thế nào so với lớp trong (cơ
+ * thành bụng trước thận) mà vẫn nhìn xuyên qua. Mô liên kết 30% (tấm trắng bạc, xem dưới). Đi
+ * kèm MỘT lớp cửa sổ thay vì hai: hai lớp 50% chồng nhau đã 75%, gần như đặc.
+ */
+const FADE_SEMI: Record<AnatomyLayer, number> = {
+  surface: 0.4,
+  muscle: 0.5,
+  skeleton: 0.6,
+  organs: 0.45,
+  vascular: 0.5,
+  nervous: 0.5,
+};
+const fadeOf = (system: SystemId, semi = false) =>
+  system === "connective" ? (semi ? 0.3 : 0.12) : (semi ? FADE_SEMI : FADE_BY_LAYER)[SYSTEM_LAYER[system]];
 /**
  * Cạnh nhỏ nhất (mét) của khung camera quanh vùng chọn: một đốt sống chỉ 3–4 cm, khung
  * sát nó thì bóng mờ xung quanh chỉ là một mảng cơ, không nói được đốt nằm ở đâu.
@@ -432,6 +447,14 @@ export default function AnatomyScene({
     });
     const tintTexture = new T.DataTexture(tintData, width, 1, T.RGBAFormat, T.FloatType);
     tintTexture.needsUpdate = true;
+    /** Kênh A đang theo thang nào — đổi khi khung xem đổi "Cách vẽ", và quanh ảnh thu nhỏ (luôn atlas). */
+    let tintSemi = false;
+    const setTintFade = (semiStyle: boolean) => {
+      if (semiStyle === tintSemi) return;
+      tintSemi = semiStyle;
+      parts.forEach((p, i) => (tintData[i * 4 + 3] = fadeOf(p.system, semiStyle)));
+      tintTexture.needsUpdate = true;
+    };
 
     const materials: T.Material[] = [];
     /*
@@ -707,8 +730,10 @@ export default function AnatomyScene({
     let ghostActive = false;
     /** "Hiện giải phẫu xung quanh" đang bật (xem `SceneState.surround`). */
     let surroundOn = false;
-    /** Chế độ "Xuyên thấu" (`SceneState.xray`): bối cảnh vẽ kiểu X-quang như trước 2026-10-23. */
+    /** "Xuyên thấu" (`SceneState.look`): bối cảnh vẽ kiểu X-quang như trước 2026-10-23. */
     let xray = false;
+    /** "Bán trong suốt" (`SceneState.look`): kiểu atlas, lớp che mờ 40–60% (`FADE_SEMI`). */
+    let semi = false;
     const setStencil = (list: Iterable<T.Material>, func: T.StencilFunc | null, ref = 0, zPass: T.StencilOp = T.KeepStencilOp) => {
       for (const m of list) {
         m.stencilWrite = func !== null;
@@ -801,8 +826,10 @@ export default function AnatomyScene({
       return hidden;
     };
     const restore = (hidden: T.Object3D[]) => hidden.forEach((o) => (o.visible = true));
-    const drawScene = (atlasStyle = !xray) => {
+    const drawScene = (atlasStyle = !xray, semiStyle = semi) => {
       const solidContext = ghostActive && atlasStyle;
+      const windowLayers = semiStyle ? 1 : WINDOW_LAYERS;
+      setTintFade(semiStyle);
       translucentSeq = 0;
       sortParts();
       // Lượt chính có cấu trúc chính ghi TARGET_STENCIL: lớp mờ của lượt này không giới hạn,
@@ -824,7 +851,7 @@ export default function AnatomyScene({
       hidden = showOnly(contextMats);
       if (solidContext) {
         // Bối cảnh đặc: chỉ ở chỗ KHÔNG phải cấu trúc chính (stencil < TARGET − WINDOW_LAYERS).
-        setStencil(opaqueMats(), T.GreaterStencilFunc, TARGET_STENCIL - WINDOW_LAYERS);
+        setStencil(opaqueMats(), T.GreaterStencilFunc, TARGET_STENCIL - windowLayers);
         limitTranslucent = true;
         const cuts = contextUncut ? clipList.map((p) => p.constant) : [];
         if (contextUncut) clipList.forEach((p) => (p.constant = 1e6));
@@ -835,7 +862,7 @@ export default function AnatomyScene({
         limitTranslucent = false;
         setStencil(mats.values(), null);
         // Qua khi stencil > TARGET − WINDOW_LAYERS, mỗi lớp vẽ trừ 1 — tối đa WINDOW_LAYERS lớp.
-        setStencil([ghostMaterial], T.LessStencilFunc, TARGET_STENCIL - WINDOW_LAYERS, T.DecrementStencilOp);
+        setStencil([ghostMaterial], T.LessStencilFunc, TARGET_STENCIL - windowLayers, T.DecrementStencilOp);
         ghostXray.value = 0;
       }
       scene.overrideMaterial = ghostMaterial;
@@ -919,7 +946,7 @@ export default function AnatomyScene({
       for (const system of SYSTEM_IDS) {
         let alpha = layerOpacity(SYSTEM_LAYER[system], effectivePeel(peel, latest.current.visible));
         const faded = layerIndex(system) < deepest;
-        if (faded) alpha = Math.min(alpha, xray ? DIMMED : fadeOf(system));
+        if (faded) alpha = Math.min(alpha, xray ? DIMMED : fadeOf(system, semi));
         alphaBySystem.set(system, alpha);
         const organPicked = !xray && deepest === ORGANS;
         const siblings = organPicked && layerIndex(system) === ORGANS;
@@ -930,7 +957,8 @@ export default function AnatomyScene({
         for (const m of matsBySystem.get(system) ?? []) {
           const key = keyOfMaterial.get(m) ?? system;
           const sibling = (siblings || vessels) && !keep.has(key);
-          const a = sibling ? Math.min(alpha, vessels ? VESSELS_AROUND_ORGAN : FADE_BY_LAYER.organs) : alpha;
+          const around = vessels ? (semi ? FADE_SEMI.vascular : VESSELS_AROUND_ORGAN) : (semi ? FADE_SEMI : FADE_BY_LAYER).organs;
+          const a = sibling ? Math.min(alpha, around) : alpha;
           alphaByKey.set(key, a);
           const solid = a > 0.999;
           const side = (faded || sibling) && !xray ? T.FrontSide : T.DoubleSide;
@@ -2067,7 +2095,7 @@ export default function AnatomyScene({
       // trên R2 dùng chung cho mọi người đọc (đổi kiểu này thì tăng `THUMB_STYLE`).
       const ghostWas = ghostActive;
       ghostActive = hasContext;
-      drawScene(true);
+      drawScene(true, false);
       ghostActive = ghostWas;
       const out = document.createElement("canvas");
       out.width = THUMB_W;
@@ -2259,7 +2287,7 @@ export default function AnatomyScene({
         lastState?.selected !== s.selected ||
         lastState?.isolate !== s.isolate ||
         lastState?.surround !== s.surround ||
-        lastState?.xray !== s.xray ||
+        lastState?.look !== s.look ||
         lastState?.viewId !== s.viewId ||
         lastState?.hiddenIn !== s.hiddenIn;
       // Bật/tắt lớp da hay cơ đổi thang slider (`effectivePeel`) — tính lại độ tách.
@@ -2275,7 +2303,8 @@ export default function AnatomyScene({
         // Lưới xếp lại (bật/tắt hệ lúc đang tách) thì khung lại — SAU khi mảnh đã
         // dời tới ô mới, vì `fit()` đo hộp bao theo vị trí hiện tại của mảnh.
         let refit = false;
-        xray = !!s.xray;
+        xray = s.look === "xray";
+        semi = s.look === "semi";
         applyLayers(s.selected);
         const visible = new Set(s.visible);
         const selection = new Set(s.selected);

@@ -953,6 +953,11 @@ mảnh cần vẽ ở lượt ấy (`showOnly`). Bản cũ `discard` ở fragmen
 dưới da rồi mới bỏ, và `discard` trong shader tắt early-z. Đo Intel UHD 730 khi tự xoay (p50): toàn thân
 5,3 → 2,4 ms, góc nhìn thận 6,1 → 4,0 ms.
 Xuyên thấu giữ nguyên đường cũ, kể cả 0,18 đều. Ảnh thu nhỏ luôn kiểu atlas (dùng chung cho mọi người đọc).
+**"Cách vẽ" có ba kiểu** (`SceneState.look`, 2026-10-23): Đặc (mặc định), **Bán trong suốt**, Xuyên thấu.
+Bán trong suốt = cùng luật "chỉ lớp che mới mờ", mờ 40–60% (`FADE_SEMI`: xương 60%, cơ 50%, mô mềm
+40–50%, mô liên kết 30%) và chỉ MỘT lớp cửa sổ — hai lớp 50% chồng nhau đã 75%, đọc như đặc. Bộ chọn nằm
+trong bảng bên trái (hệ / cấu trúc), không chỉ ở cột nút phải: cột ấy ẩn nút ở màn cao < 600 px vì chạm nút
+trợ lý AI, còn bảng mở được ở mọi khổ. Nút Xuyên thấu ở cột phải giữ làm lối tắt.
 Không có shadow map, không `transmission` (thêm một lượt cả cảnh ~2,3 triệu tam giác), không `aoMap` (mesh
 không UV) — chiều sâu đến từ GTAO + ba đèn theo camera.
 

@@ -881,6 +881,17 @@
     "fitLabel": "Fit to view",
     "resetLabel": "Reset view and layer separation",
     "xray": "See-through: surrounding structures transparent, X-ray style",
+    "look": "Rendering",
+    "looks": {
+      "atlas": "Solid",
+      "semi": "Semi-transparent",
+      "xray": "See-through"
+    },
+    "lookHints": {
+      "atlas": "Solid surroundings; only layers covering the structure fade (bone 45%, muscle 25%, soft tissue 10%)",
+      "semi": "Covering layers at 40–60%: see more of what lies in front of the structure",
+      "xray": "Surrounding structures transparent, X-ray style"
+    },
     "explode": "Separate body layers",
     "explodeShort": "Separate",
     "caption": {

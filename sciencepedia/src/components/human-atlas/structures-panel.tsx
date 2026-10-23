@@ -2,6 +2,7 @@
 
 // Client: ẩn/hiện/chọn cấu trúc đổi state của trình xem, vốn chỉ sống ở client.
 
+import type { ReactNode } from "react";
 import { useTranslations } from "next-intl";
 import { ArrowLeft, Eye, EyeOff, Focus, X } from "lucide-react";
 
@@ -29,6 +30,8 @@ type Props = {
   onShowAll: () => void;
   onBack: () => void;
   onClose: () => void;
+  /** Bộ chọn "Cách vẽ" (`LookPicker`), đặt trên dòng đếm. */
+  lookPicker?: ReactNode;
 };
 
 /**
@@ -59,6 +62,7 @@ export function StructuresPanel({
   onShowAll,
   onBack,
   onClose,
+  lookPicker,
 }: Props) {
   const t = useTranslations("humanAtlas.atlasViews.structures");
   const name = (s: AnatomicalStructure) =>
@@ -139,6 +143,7 @@ export function StructuresPanel({
         })}
       </ul>
 
+      {lookPicker}
       <div className="flex min-h-11 flex-wrap items-center justify-between gap-2 border-t py-1 text-xs text-muted-foreground">
         <span className="tabular-nums" aria-live="polite">
           {t("count", { shown, total: structures.length })}
