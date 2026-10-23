@@ -8,10 +8,8 @@ import { useEffect, useRef } from "react";
 import * as T from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import { RoomEnvironment } from "three/examples/jsm/environments/RoomEnvironment.js";
-import { EffectComposer } from "three/examples/jsm/postprocessing/EffectComposer.js";
 import { GTAOPass } from "three/examples/jsm/postprocessing/GTAOPass.js";
-import { OutputPass } from "three/examples/jsm/postprocessing/OutputPass.js";
-import { Pass } from "three/examples/jsm/postprocessing/Pass.js";
+import { FullScreenQuad } from "three/examples/jsm/postprocessing/Pass.js";
 import { mergeGeometries } from "three/examples/jsm/utils/BufferGeometryUtils.js";
 
 import partGroups from "@/lib/human-atlas/part-groups.generated.json";
@@ -261,19 +259,6 @@ diffuseColor.rgb *= mix(0.82, 1.08, tissueFiber);
   },
 };
 
-/** Pass của composer vẽ cảnh bằng một hàm tuỳ ý (nhiều lượt) vào bộ đệm đọc, như RenderPass. */
-class ScenePass extends Pass {
-  constructor(private readonly draw: () => void) {
-    super();
-    this.needsSwap = false;
-  }
-
-  render(renderer: T.WebGLRenderer, _writeBuffer: T.WebGLRenderTarget, readBuffer: T.WebGLRenderTarget) {
-    renderer.setRenderTarget(this.renderToScreen ? null : readBuffer);
-    this.draw();
-  }
-}
-
 /** Số khối tải song song — giữ như bản gốc: đủ lấp băng thông, không nghẽn kết nối. */
 const PARALLEL_CHUNKS = 3;
 
@@ -330,10 +315,10 @@ export default function AnatomyScene({
     try {
       renderer = new T.WebGLRenderer({
         antialias: true,
-        // Canvas trong suốt, nền do khung DOM (`human-atlas.tsx`) tô. Lý do: đường
-        // vẽ có AO (EffectComposer) xoá render target bằng giá trị sRGB rồi
-        // OutputPass áp ACES + sRGB LẦN NỮA lên nó — #05070a thành navy
-        // (20,29,39) chỉ ở những khung có AO. Không vẽ nền thì không lệch được.
+        // Canvas trong suốt, nền do khung DOM (`human-atlas.tsx`) tô: đổi theme không
+        // phải vẽ lại nền, và ảnh thu nhỏ đọc ra nền trong suốt. (Lý do đầu tiên —
+        // composer của AO tone-map nền hai lần, #05070a thành navy — đã hết từ khi
+        // khung AO vẽ thẳng ra canvas, xem "AO".)
         alpha: true,
         // Stencil cho kiểu atlas: đánh dấu điểm ảnh của cấu trúc chính để bối cảnh
         // che nó vẽ mờ, còn lại vẽ đặc (xem "Bối cảnh kiểu atlas"). r163+ mặc định tắt.
@@ -574,7 +559,7 @@ export default function AnatomyScene({
         shader.uniforms.stateWidth = { value: width };
         shader.uniforms.contextPass = contextPass;
         shader.vertexShader =
-          "attribute float partIndex; uniform sampler2D partState; uniform sampler2D selectionState; uniform float stateWidth; varying float partVisible; varying float partSelected; varying float partHovered; varying float partContext;\n" +
+          "attribute float partIndex; uniform sampler2D partState; uniform sampler2D selectionState; uniform float stateWidth; uniform float contextPass; varying float partVisible; varying float partSelected; varying float partHovered; varying float partContext;\n" +
           (surface ? "varying vec3 vTissue;\n" : "") +
           (surface?.axis ? "uniform sampler2D partAxis; varying vec4 vTissueAxis;\n" : "") +
           shader.vertexShader;
@@ -586,16 +571,21 @@ export default function AnatomyScene({
             (surface ? " vTissue = position;" : "") +
             (surface?.axis ? " vTissueAxis = texture2D(partAxis, stateUv);" : ""),
         );
-        shader.fragmentShader =
-          "uniform float contextPass; varying float partVisible; varying float partSelected; varying float partHovered; varying float partContext;\n" + shader.fragmentShader;
-        shader.fragmentShader = shader.fragmentShader.replace(
-          "#include <clipping_planes_fragment>",
-          "#include <clipping_planes_fragment>\nif (partVisible < 0.5) discard;\nif ((partContext > 0.5 && partSelected < 0.5) != (contextPass > 0.5)) discard;",
-        );
         /*
-         * Mảnh BỐI CẢNH của góc nhìn theo hệ (kênh A của texture chọn) không vẽ ở
-         * lượt chính — lượt bối cảnh vẽ nó sau (xem "Bối cảnh kiểu atlas").
-         *
+         * Mảnh ẩn, và mảnh BỐI CẢNH của góc nhìn theo hệ (kênh A của texture chọn) ở lượt
+         * chính — lượt bối cảnh vẽ nó sau (xem "Bối cảnh kiểu atlas") — bị loại ở ĐỈNH:
+         * đẩy ra ngoài clip space, cả tam giác rơi trước khi rasterize (`partIndex` như
+         * nhau trên mọi đỉnh của một mảnh). Bản trước `discard` ở fragment: GPU vẫn tô
+         * mọi điểm ảnh của 2 triệu tam giác dưới da đục rồi mới bỏ, và một `discard` có
+         * mặt trong shader là tắt early-z cho cả vật liệu.
+         */
+        shader.vertexShader = shader.vertexShader.replace(
+          "#include <project_vertex>",
+          "#include <project_vertex>\nif (partVisible < 0.5 || (partContext > 0.5 && partSelected < 0.5) != (contextPass > 0.5)) gl_Position = vec4(0.0, 0.0, 2.0, 1.0);",
+        );
+        shader.fragmentShader =
+          "varying float partVisible; varying float partSelected; varying float partHovered; varying float partContext;\n" + shader.fragmentShader;
+        /*
          * Mảnh đang chọn GIỮ NGUYÊN màu và bề mặt: chỉ có viền sáng cyan ở rìa
          * (fresnel). Bản gốc trộn 75% sang xanh ngọc — một khối neon, mất hình khối.
          * Bản 2026-09-30 còn ám cyan 12% + phát sáng nền 0,06: trên mô sẫm (thận
@@ -781,15 +771,48 @@ export default function AnatomyScene({
      * rồi một lượt bóng mờ tự sáng.
      */
     const opaqueMats = () => [...mats.values()].filter((m) => !m.transparent);
+    /*
+     * Mỗi lượt chỉ đưa vào những mesh có mảnh cần vẽ ở lượt ấy. Shader đã loại mảnh ẩn ở
+     * đỉnh, nhưng vẫn chạy vertex shader cho MỌI đỉnh của mọi mesh: góc nhìn thận có
+     * ~40 mảnh hiện mà ba lượt vẽ vẫn đi qua 2,3 triệu đỉnh mỗi lượt. Tính theo vật liệu
+     * (một nhóm mô = một vật liệu, có thể nhiều mesh: mỗi khối tải một mesh, cộng nắp mặt
+     * cắt) từ chính mảng trạng thái CPU (`data`, `selectedData`) — ảnh thu nhỏ sửa hai
+     * mảng ấy trước khi vẽ nên cũng đúng.
+     */
+    const drawn: T.Mesh[] = [];
+    const mainMats = new Set<T.Material>();
+    const contextMats = new Set<T.Material>();
+    const sortParts = () => {
+      mainMats.clear();
+      contextMats.clear();
+      for (let i = 0; i < parts.length; i++) {
+        if (data[i * 4 + 3] < 0.5) continue;
+        const context = selectedData[i * 4 + 3] > 127 && selectedData[i * 4] < 128;
+        (context ? contextMats : mainMats).add(partMaterial[i]);
+      }
+    };
+    const showOnly = (keep: Set<T.Material>) => {
+      const hidden: T.Object3D[] = [];
+      for (const o of [...drawn, ...capGroup.children]) {
+        if (!o.visible || keep.has((o as T.Mesh).material as T.Material)) continue;
+        o.visible = false;
+        hidden.push(o);
+      }
+      return hidden;
+    };
+    const restore = (hidden: T.Object3D[]) => hidden.forEach((o) => (o.visible = true));
     const drawScene = (atlasStyle = !xray) => {
       const solidContext = ghostActive && atlasStyle;
       translucentSeq = 0;
+      sortParts();
       // Lượt chính có cấu trúc chính ghi TARGET_STENCIL: lớp mờ của lượt này không giới hạn,
       // vì phép thử "k > stencil" sẽ chặn nó ngay trên cấu trúc chính (hiếm: chọn mảnh sâu
       // trong góc nhìn có bối cảnh). Không có bối cảnh đặc thì giới hạn như thường.
       limitTranslucent = atlasStyle && !solidContext;
       if (solidContext) setStencil(opaqueMats(), T.AlwaysStencilFunc, TARGET_STENCIL, T.ReplaceStencilOp);
+      let hidden = showOnly(mainMats);
       renderer.render(scene, camera);
+      restore(hidden);
       if (!ghostActive) {
         limitTranslucent = false;
         return;
@@ -798,6 +821,7 @@ export default function AnatomyScene({
       const markersShown = markers.visible;
       renderer.autoClear = false;
       markers.visible = false;
+      hidden = showOnly(contextMats);
       if (solidContext) {
         // Bối cảnh đặc: chỉ ở chỗ KHÔNG phải cấu trúc chính (stencil < TARGET − WINDOW_LAYERS).
         setStencil(opaqueMats(), T.GreaterStencilFunc, TARGET_STENCIL - WINDOW_LAYERS);
@@ -821,6 +845,7 @@ export default function AnatomyScene({
         setStencil([ghostMaterial], null);
         ghostXray.value = 1;
       }
+      restore(hidden);
       markers.visible = markersShown;
       renderer.autoClear = autoClear;
     };
@@ -845,6 +870,7 @@ export default function AnatomyScene({
       return m;
     };
     parts.forEach((p) => materialForKey(keyOf(p), p.system));
+    const partMaterial = parts.map((p) => mats.get(keyOf(p))!);
     /*
      * ## Các lớp (2026-09-29)
      *
@@ -1090,58 +1116,88 @@ export default function AnatomyScene({
      * trả giá ấy lúc xoay, AO chỉ vẽ khi cảnh đứng yên ~140 ms: xoay/zoom vẽ
      * thường, dừng tay thì một khung có AO thay vào. Máy yếu / màn cảm ứng /
      * khung hẹp không bật (`wantsAO`).
+     *
+     * Khung AO = khung thường × AO (2026-10-23). Bản trước vẽ cảnh qua EffectComposer
+     * vào bộ đệm HalfFloat tuyến tính rồi OutputPass mới tone-map: lớp mờ trộn trong
+     * không gian tuyến tính, nên dừng tay là lớp xương 45% trông như 70% và cả khung
+     * "nhảy". Nay khung đứng yên vẽ y như khung đang xoay (`drawScene` thẳng ra canvas),
+     * GTAO chỉ tính bộ đệm AO, rồi một quad nhân AO lên canvas. Canvas đã tone-map sRGB
+     * nên AO lấy luỹ thừa `AO_GAMMA` — nhân thẳng AO tuyến tính là hốc tối hơn trước.
      */
     const wantsAO =
       matchMedia("(pointer: fine)").matches &&
       el.clientWidth >= 900 &&
       (navigator.hardwareConcurrency ?? 4) >= 4;
-    let composer: EffectComposer | null = null;
+    const AO_GAMMA = 1 / 2.2;
     let aoPass: GTAOPass | null = null;
+    let aoQuad: FullScreenQuad | null = null;
+    const aoMultiply = new T.ShaderMaterial({
+      uniforms: { tAO: { value: null }, gamma: { value: AO_GAMMA } },
+      vertexShader: "varying vec2 vUv; void main() { vUv = uv; gl_Position = vec4(position.xy, 0.0, 1.0); }",
+      fragmentShader:
+        "uniform sampler2D tAO; uniform float gamma; varying vec2 vUv; void main() { gl_FragColor = vec4(vec3(pow(texture2D(tAO, vUv).r, gamma)), 1.0); }",
+      transparent: true,
+      depthTest: false,
+      depthWrite: false,
+      // canvas.rgb *= AO; alpha giữ nguyên (nền trong suốt vẫn trong suốt).
+      blending: T.CustomBlending,
+      blendEquation: T.AddEquation,
+      blendSrc: T.DstColorFactor,
+      blendDst: T.ZeroFactor,
+      blendSrcAlpha: T.ZeroFactor,
+      blendDstAlpha: T.OneFactor,
+    });
+    materials.push(aoMultiply);
+    const sizeAO = () => {
+      const pixelRatio = renderer.getPixelRatio();
+      aoPass?.setSize(el.clientWidth * pixelRatio, el.clientHeight * pixelRatio);
+    };
     if (wantsAO) {
       try {
-        // Lượt vẽ cảnh của composer là CHÍNH `drawScene` (ba lượt + stencil của kiểu
-        // atlas), không phải RenderPass một lượt — bối cảnh đặc nhờ thế cũng có AO.
-        // Render target phải có stencil buffer; mặc định của composer không có.
-        const pixelRatio = renderer.getPixelRatio();
-        composer = new EffectComposer(
-          renderer,
-          new T.WebGLRenderTarget(el.clientWidth * pixelRatio, el.clientHeight * pixelRatio, {
-            type: T.HalfFloatType,
-            stencilBuffer: true,
-          }),
-        );
-        composer.addPass(new ScenePass(() => drawScene()));
         aoPass = new GTAOPass(scene, camera, el.clientWidth, el.clientHeight);
         // Bán kính 10 cm (trước 6 cm): kẽ đốt sống, hố chậu, khe giữa tạng mới đủ tối (review 2026-10-23).
         aoPass.updateGtaoMaterial({ radius: 0.1, distanceExponent: 1.4, thickness: 1.2, scale: 1.1, samples: 12 });
         aoPass.updatePdMaterial({ lumaPhi: 10, depthPhi: 2, normalPhi: 3, radius: 6, rings: 2, samples: 12 });
-        aoPass.blendIntensity = 1;
+        // Chỉ tính bộ đệm AO (`pdRenderTarget`); nhân lên canvas là việc của `aoQuad`.
+        aoPass.output = GTAOPass.OUTPUT.Off;
         aoPass.normalMaterial.onBeforeCompile = (shader) => {
           shader.uniforms.partState = { value: partTexture };
           shader.uniforms.selectionState = { value: selectionTexture };
           shader.uniforms.stateWidth = { value: width };
           shader.vertexShader =
-            "attribute float partIndex; uniform sampler2D partState; uniform sampler2D selectionState; uniform float stateWidth; varying float partVisible;\n" +
-            shader.vertexShader.replace(
-              "#include <begin_vertex>",
-              "#include <begin_vertex>\nvec2 stateUv = vec2((partIndex + 0.5) / stateWidth, 0.5); vec4 state = texture2D(partState, stateUv); transformed += state.xyz; partVisible = state.w * (1.0 - texture2D(selectionState, stateUv).g);",
-            );
-          shader.fragmentShader =
-            "varying float partVisible;\n" +
-            shader.fragmentShader.replace(
-              "#include <clipping_planes_fragment>",
-              "#include <clipping_planes_fragment>\nif (partVisible < 0.5) discard;",
-            );
+            "attribute float partIndex; uniform sampler2D partState; uniform sampler2D selectionState; uniform float stateWidth;\n" +
+            shader.vertexShader
+              .replace(
+                "#include <begin_vertex>",
+                "#include <begin_vertex>\nvec2 stateUv = vec2((partIndex + 0.5) / stateWidth, 0.5); vec4 state = texture2D(partState, stateUv); transformed += state.xyz; float partVisible = state.w * (1.0 - texture2D(selectionState, stateUv).g);",
+              )
+              .replace("#include <project_vertex>", "#include <project_vertex>\nif (partVisible < 0.5) gl_Position = vec4(0.0, 0.0, 2.0, 1.0);");
         };
-        composer.addPass(aoPass);
-        composer.addPass(new OutputPass());
+        aoQuad = new FullScreenQuad(aoMultiply);
+        aoMultiply.uniforms.tAO.value = aoPass.pdRenderTarget.texture;
+        sizeAO();
       } catch (error) {
         console.warn("[human-atlas] AO tắt:", error);
-        composer?.dispose();
-        composer = null;
+        aoPass?.dispose();
         aoPass = null;
+        aoQuad = null;
       }
     }
+    /** Khung đứng yên: vẽ như mọi khung, rồi nhân AO lên canvas. */
+    const drawWithAO = () => {
+      if (!aoPass || !aoQuad) return;
+      renderer.setRenderTarget(null);
+      drawScene();
+      // writeBuffer/readBuffer không dùng khi `output` là Off. Bối cảnh vẽ đặc cũng đổ AO.
+      const hidden = showOnly(new Set([...mainMats, ...contextMats]));
+      aoPass.render(renderer, null as unknown as T.WebGLRenderTarget, null as unknown as T.WebGLRenderTarget, 0, false);
+      restore(hidden);
+      renderer.setRenderTarget(null);
+      const autoClear = renderer.autoClear;
+      renderer.autoClear = false;
+      aoQuad.render(renderer);
+      renderer.autoClear = autoClear;
+    };
     let lastChange = performance.now();
     let aoFresh = false;
 
@@ -1224,6 +1280,7 @@ export default function AnatomyScene({
         // Ngoài cùng vẽ cuối: lớp mờ phải vẽ sau những gì nó phủ lên.
         mesh.renderOrder = LAYERS.length - LAYERS.indexOf(SYSTEM_LAYER[system]);
         scene.add(mesh);
+        drawn.push(mesh);
       });
       // Nắp có khi khối của lát về — trước đó góc nhìn đã khung theo hộp tạm. Khung lại
       // qua đúng đường "đổi góc nhìn" của vòng trạng thái: gọi `fit` thẳng từ đây thì
@@ -1832,8 +1889,7 @@ export default function AnatomyScene({
       camera.aspect = el.clientWidth / Math.max(1, el.clientHeight);
       camera.updateProjectionMatrix();
       renderer.setSize(el.clientWidth, el.clientHeight, false);
-      composer?.setPixelRatio(renderer.getPixelRatio());
-      composer?.setSize(el.clientWidth, el.clientHeight);
+      sizeAO();
       fit(latest.current.view);
       sized = true;
     };
@@ -2492,9 +2548,9 @@ export default function AnatomyScene({
       if (dirty) {
         lastChange = now;
         aoFresh = false;
-      } else if (composer && !(ghostActive && xray) && !aoFresh && !tween && now - lastChange > 140) {
+      } else if (aoPass && !(ghostActive && xray) && !aoFresh && !tween && now - lastChange > 140) {
         // Đứng yên đủ lâu: một khung có AO thay cho khung thường.
-        composer.render();
+        drawWithAO();
         // GTAOPass khôi phục clear color qua get/set — giữ chắc alpha 0.
         renderer.setClearColor(0x000000, 0);
         aoFresh = true;
@@ -2578,7 +2634,7 @@ export default function AnatomyScene({
       });
       env.dispose();
       aoPass?.dispose();
-      composer?.dispose();
+      aoQuad?.dispose();
       partTexture.dispose();
       selectionTexture.dispose();
       tintTexture.dispose();
