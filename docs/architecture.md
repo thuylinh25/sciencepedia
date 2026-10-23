@@ -879,6 +879,12 @@ hệ tim mạch tách trên/dưới, gộp lại thì vắt ngang hai cấu trú
 nổi bật: mảnh nằm trọn ngoài lát (cơ khít hầu trên, cơ vòi hầu) phải ra bối cảnh, nên `pharynx` có hai
 con phủ kín. Dữ liệu không có ống mật chủ — mọi góc nhìn đường mật ghi thiếu, đừng thêm từ khoá "ống mật chủ".
 
+**Hệ tiết niệu theo "Urinary System Views (Male)" của atlas** (2026-10-23): tổng quan + 12 ô. "Mặt cắt
+thận" `missing` — thận là khối đặc, cắt ra chỉ là vỏ rỗng, dạy sai hơn để trống; "Cơ thắt niệu đạo" `missing`.
+Mặt cắt bàng quang và niệu đạo dùng `clip` dọc giữa như mặt cắt chậu, tạng NỔI BẬT. Ô "Bàng quang" đặt tên
+"Bàng quang và tạng lân cận" để không trùng nhãn cấu trúc `urinary-bladder`; nhìn chếch thì xương chậu mờ sát
+camera — khung phải rộng (`fill` 0,25). Ô vùng chậu không lấy đại tràng ngang làm bối cảnh (không thuộc chậu).
+
 **Bề mặt cơ thể KHÔNG có góc nhìn** (chủ sản phẩm bỏ, 2026-10-15): tab "Theo hệ" không còn chip này;
 da vẫn là lớp ngoài của mô hình và vẫn bật/tắt ở bảng hệ. Bản duyệt mô tả nhóm (môi, tóc) giữ trong tệp
 dữ liệu, `--emit-client` bỏ mục không còn góc nhìn.

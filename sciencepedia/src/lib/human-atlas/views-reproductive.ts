@@ -11,12 +11,12 @@ import type { AtlasViewDef, PartRule } from "./views";
 
 const rule = (...fma: string[]): PartRule => ({ fma });
 
-const TESTES = rule("FMA7211", "FMA7212");
+export const TESTES = rule("FMA7211", "FMA7212");
 const EPIDIDYMIS = rule("FMA18256", "FMA18257");
-const DEFERENT_DUCTS = rule("FMA19235", "FMA19236");
-const SEMINAL_VESICLES = rule("FMA19387", "FMA19388");
-const PROSTATE = rule("FMA9600");
-const PENIS = rule("FMA18247", "FMA19617", "FMA19618");
+export const DEFERENT_DUCTS = rule("FMA19235", "FMA19236");
+export const SEMINAL_VESICLES = rule("FMA19387", "FMA19388");
+export const PROSTATE = rule("FMA9600");
+export const PENIS = rule("FMA18247", "FMA19617", "FMA19618");
 const BLADDER_URETHRA = rule("FMA15900", "FMA19667");
 const HIP_BONES: PartRule = { systems: ["skeletal"], name: /hip bone$|^sacrum$/i };
 

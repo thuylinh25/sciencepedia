@@ -32,12 +32,12 @@ const ESOPHAGUS = rule("FMA7131");
 const STOMACH = rule("FMA7148");
 const DUODENUM = rule("FMA7206");
 const JEJUNUM = rule("FMA16981", "FMA16982", "FMA16983");
-const ILEUM = rule("FMA14964", "FMA14965", "FMA14966");
+export const ILEUM = rule("FMA14964", "FMA14965", "FMA14966");
 const ILEOCECAL = rule("FMA11338");
 const APPENDIX = rule("FMA14542");
 const COLON = rule("FMA14545", "FMA14546", "FMA14547");
 const TAENIAE = rule("FMA15042", "FMA15043", "FMA15044");
-const RECTUM = rule("FMA14544");
+export const RECTUM = rule("FMA14544");
 const SMALL_INTESTINE = [DUODENUM, JEJUNUM, ILEUM];
 const LARGE_INTESTINE = [ILEOCECAL, APPENDIX, COLON, TAENIAE, RECTUM];
 
