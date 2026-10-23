@@ -23,8 +23,8 @@ import type { AtlasViewDef, PartRule } from "./views";
 const v = (name: RegExp, exclude?: RegExp): PartRule => ({ systems: ["venous"], name, ...(exclude ? { exclude } : {}) });
 
 // Thân mình.
-const VENAE_CAVAE = v(/^(superior|inferior) vena cava$|brachiocephalic vein$/i);
-const AZYGOS = v(/azygos vein$|hemiazygos vein$|ascending lumbar vein$|intercostal veins?$|subcostal vein$|^(left |right )?lumbar vein$/i);
+export const VENAE_CAVAE = v(/^(superior|inferior) vena cava$|brachiocephalic vein$/i);
+export const AZYGOS = v(/azygos vein$|hemiazygos vein$|ascending lumbar vein$|intercostal veins?$|subcostal vein$|^(left |right )?lumbar vein$/i);
 const TRUNK_WALL = v(/internal thoracic vein$|musculophrenic vein$|epigastric veins?$|phrenic vein$/i);
 const HEPATIC = v(/hepatic vein$|tributary of (middle )?hepatic vein$/i);
 const PAIRED_VISCERAL = v(/suprarenal vein$|testicular vein$/i);
@@ -51,9 +51,9 @@ const ARM_SUPERFICIAL = v(/\bcephalic vein$|basilic vein$|median cubital vein$|m
 const ARM_DEEP = v(/medial brachial vein$|^(left |right )?(radial|ulnar) vein$/i);
 const HAND = v(/palmar|metacarpal vein$|dorsal venous network of (left |right )?hand$/i);
 // Chi dưới.
-const FEMORAL = v(/femoral vein$/i);
-const SAPHENOUS = v(/saphenous vein$/i);
-const POPLITEAL = v(/popliteal vein$|genicular vein$/i);
+export const FEMORAL = v(/femoral vein$/i);
+export const SAPHENOUS = v(/saphenous vein$/i);
+export const POPLITEAL = v(/popliteal vein$|genicular vein$/i);
 const LEG = v(/tibial veins?$|fibular veins?$|perforating veins$/i);
 const FOOT = v(/venous arch of (left |right )?foot$|tributary of plantar venous arch$|plantar metatarsal vein$|plantar digital veins$|dorsal digital veins$/i);
 

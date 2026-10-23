@@ -26,9 +26,9 @@ const a = (name: RegExp, exclude?: RegExp): PartRule => ({ systems: ["arterial"]
 const MISPLACED = /^right anterior segmental artery$/i;
 
 // Động mạch chủ và nhánh lớn.
-const AORTA = a(/^(descending aorta|descending thoracic aorta|abdominal aorta)$/i);
-const ARCH_BRANCHES = a(/brachiocephalic artery$|common carotid artery$|^(left |right )?subclavian artery$/i);
-const ASC_ARCH: PartRule = { systems: ["arterial"], name: /^(ascending aorta|arch of aorta)$/i };
+export const AORTA = a(/^(descending aorta|descending thoracic aorta|abdominal aorta)$/i);
+export const ARCH_BRANCHES = a(/brachiocephalic artery$|common carotid artery$|^(left |right )?subclavian artery$/i);
+export const ASC_ARCH: PartRule = { systems: ["arterial"], name: /^(ascending aorta|arch of aorta)$/i };
 // Đầu – cổ – não.
 export const CAROTID_VERTEBRAL = a(/internal carotid artery$|vertebral artery$|ophthalmic artery$|^basilar artery$/i);
 export const CEREBRAL = a(
@@ -63,8 +63,8 @@ const HAND = a(/palmar|metacarpal arter|princeps pollicis|radialis indicis|carpa
 const UPPER_LIMB = [AXILLARY_BRANCHES, BRACHIAL, FOREARM, HAND];
 // Chi dưới.
 // `\b`: "thalamoperforating artery" (não) cũng chứa "perforating arter".
-const FEMORAL = a(/femoral artery$|\bperforating arter/i);
-const POPLITEAL = a(/popliteal artery$|genicular artery$/i);
+export const FEMORAL = a(/femoral artery$|\bperforating arter/i);
+export const POPLITEAL = a(/popliteal artery$|genicular artery$/i);
 const LEG = a(/tibial artery$|tibial recurrent artery$|calcaneal branches/i);
 const FOOT = a(/dorsalis pedis artery$|arcuate artery$|tarsal artery$|deep plantar artery$|plantar|metatarsal artery$|digital artery of (left |right )?foot$/i);
 const LOWER_LIMB = [FEMORAL, POPLITEAL, LEG, FOOT];
