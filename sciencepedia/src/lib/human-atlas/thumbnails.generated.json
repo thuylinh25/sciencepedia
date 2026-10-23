@@ -319,9 +319,17 @@
     "key": "5:pxgu59:9pgwci",
     "file": "68c7ad60d4537d71.webp"
   },
+  "lymphatic-axillary-nodes": {
+    "key": "5:pxgu59:qrl3w",
+    "file": "9a5a37ea04fb9b7e.webp"
+  },
   "lymphatic-head-neck": {
     "key": "5:pxgu59:1r4cee",
     "file": "4c1ff44bc97aa3f4.webp"
+  },
+  "lymphatic-inguinal-nodes": {
+    "key": "5:pxgu59:1ykil7t",
+    "file": "4c092ed6bbb79421.webp"
   },
   "lymphatic-lower-limb": {
     "key": "5:pxgu59:1u6j3lm",
@@ -339,9 +347,21 @@
     "key": "5:pxgu59:1o6b3f7",
     "file": "0dc3cbd192548747.webp"
   },
+  "lymphatic-popliteal-nodes": {
+    "key": "5:pxgu59:1dlnndp",
+    "file": "e85e1b9d1b95ccc7.webp"
+  },
+  "lymphatic-thoracic-duct": {
+    "key": "5:pxgu59:1g080dw",
+    "file": "f60c0ebe31242ab3.webp"
+  },
   "lymphatic-thorax": {
     "key": "5:pxgu59:1r44gvs",
     "file": "bf2375ef02d7d13d.webp"
+  },
+  "lymphatic-thymus": {
+    "key": "5:pxgu59:hbcwhm",
+    "file": "e845753a2a45fb1b.webp"
   },
   "lymphatic-upper-limb": {
     "key": "5:pxgu59:1vssvqc",
