@@ -34,6 +34,10 @@ import { AXILLARY as AXILLARY_VEINS, FEMORAL as FEMORAL_VEIN, POPLITEAL as POPLI
  *
  * Hạch khoeo/bẹn rải theo bề NGANG (hai chân) nên `camera.fill` (chỉ tính chiều cao) không
  * lùi được khung — dùng `frame` theo mạch hoặc xương quanh đó.
+ *
+ * Cuối lưới: một lát cắt ngang (chủ sản phẩm chốt 2026-10-23 — chỉ thêm mặt cắt khi lát cho
+ * thấy quan hệ mà nhìn ngoài không thấy, không ép đủ bộ dọc/đứng ngang/ngang). Chỉ lát qua chỗ
+ * chia đôi khí quản: hạch và mạch bạch huyết mảnh, các tầng khác cắt ra chỉ còn chấm rời.
  */
 
 const lymph = (name: RegExp): PartRule => ({ systems: ["lymphatic"], name });
@@ -90,6 +94,14 @@ const HEART: PartRule = { systems: ["cardiac"] };
 const RIBS: PartRule = { systems: ["skeletal"], name: /rib|thoracic vertebra$/i };
 // Chỉ thân tĩnh mạch đơn: tĩnh mạch liên sườn chằng ngang, lẫn với mạch bạch huyết.
 const AZYGOS_TRUNKS: PartRule = { systems: ["venous"], name: /^(azygos|hemiazygos|accessory hemiazygos) vein$/i };
+// Lát ngang qua chỗ chia đôi khí quản: chỉ nhóm hạch RA mặt cắt. Hạch cạnh thực quản, trước
+// cột sống, trong phổi, cạnh ức có hộp bao trùm cao độ này nhưng là chuỗi hạch rời — không hạch
+// nào nằm đúng lát (sectionCap trả null, đo .tmpx/capchk.ts) — liệt kê thì bảng Cấu trúc có hàng không thấy.
+const SUBCARINAL_NODES = lymph(/^inferior tracheobronchial nodes$/i);
+const AIRWAY: PartRule = { systems: ["respiratory"], name: /^(trachea|left main bronchus|right main bronchus proper)$/i };
+const LUNGS: PartRule = { systems: ["respiratory"], name: /lobe of (left|right) lung$/i };
+const ESOPHAGUS: PartRule = { systems: ["digestive"], name: /^esophagus$/i };
+const PULMONARY_TRUNKS: PartRule = { systems: ["arterial"], name: /^(pulmonary trunk|(left|right) pulmonary artery)$/i };
 
 const group = (
   id: string,
@@ -185,6 +197,25 @@ export const LYMPHATIC_VIEWS: readonly AtlasViewDef[] = [
   group("lymphatic-axillary-nodes", "Hạch nách", "Axillary lymph nodes", [AXILLARY_NODES], [UPPER_LIMB_VESSELS, AXILLARY_BRANCHES, AXILLARY_VEINS, UPPER_LIMB_BONES, THORAX_BONES], ["hạch nách", "axillary nodes", "hạch dưới đòn"]),
   { ...group("lymphatic-inguinal-nodes", "Hạch bẹn", "Inguinal lymph nodes", [INGUINAL_NODES], [LOWER_LIMB_VESSELS, PELVIS_VESSELS, FEMORAL_ARTERY, FEMORAL_VEIN, SAPHENOUS, LOWER_LIMB_BONES], ["hạch bẹn", "inguinal nodes", "hạch bẹn nông", "hạch bẹn sâu"]), camera: { frame: [HIP_BONES] } },
   { ...group("lymphatic-popliteal-nodes", "Hạch khoeo", "Popliteal lymph nodes", [POPLITEAL_NODES], [LOWER_LIMB_VESSELS, POPLITEAL_ARTERY, POPLITEAL_VEIN, SAPHENOUS, KNEE_BONES], ["hạch khoeo", "popliteal nodes", "hố khoeo"], "back"), camera: { frame: [POPLITEAL_ARTERY] } },
+  {
+    ...group(
+      "lymphatic-axial-carina",
+      "Mặt cắt ngang ngực qua chỗ chia đôi khí quản",
+      "Axial section of the thorax at the tracheal bifurcation",
+      [SUBCARINAL_NODES, THYMUS, THORAX_VESSELS],
+      [AIRWAY, LUNGS, ESOPHAGUS, AORTA, PULMONARY_TRUNKS, VENAE_CAVAE, AZYGOS_TRUNKS, THORAX_BONES],
+      ["mặt cắt ngang", "axial section", "lát cắt ngang", "chạc ba khí quản", "carina", "hạch dưới chạc ba", "subcarinal nodes", "hạch trung thất", "mediastinal nodes", "cựa khí quản", "tracheal bifurcation", "hạch dưới carina"],
+      "superior",
+    ),
+    band: { top: { between: [{ edge: "bottom", of: /^trachea$/i }, { edge: "top", of: /^left main bronchus$/i }], at: 0.5 }, section: true },
+    // Khung theo nắp của tập nổi bật (giữa trung thất) — lùi ra để thấy cả cột sống, phổi, xương ức.
+    camera: { fill: 0.5, thumbnailFill: 0.55 },
+    // Câu báo: science-editor (REWORK — thêm hướng nhìn + "chỉ một bộ hạch cố định"), áp nguyên văn.
+    partial: {
+      vi: "Nhìn từ trên xuống, mặt sau ở phía trên, bên phải cơ thể ở bên trái hình — lật trên–dưới so với ảnh CT thường gặp. Mô hình chỉ có một bộ hạch cố định, nên trong các nhóm hạch, lát này chỉ cắt qua hạch dưới chạc ba; ở người thật, số lượng và vị trí hạch khác nhau, lát ở cùng tầng có thể cắt qua cả hạch cạnh khí quản, cạnh thực quản hoặc hạch cửa sổ chủ – phổi.",
+      en: "Viewed from above, with the posterior side at the top and the body's right on the left of the image — upside down compared with a typical CT image. The model has a single fixed set of lymph nodes, so of the node groups this slice cuts only the subcarinal nodes; in real people node number and position vary, and a slice at the same level may also cut paratracheal, paraoesophageal or aortopulmonary window nodes.",
+    },
+  },
 
   // ------------------------------------------------------------ nhóm cũ (deep link)
   group("lymphatic-upper-limb", "Bạch huyết chi trên và nách", "Lymphatics of the upper limb and axilla", [AXILLARY_NODES, ARM_NODES, UPPER_LIMB_VESSELS], [UPPER_LIMB_BONES], ["hạch nách", "axillary nodes"]),
@@ -200,6 +231,7 @@ export const LYMPHATIC_VIEWS: readonly AtlasViewDef[] = [
   structure("thoracic-wall-lymph-nodes", "Hạch thành ngực", "Lymph nodes of the thoracic wall", THORACIC_WALL_NODES),
   structure("mediastinal-lymph-nodes", "Hạch trung thất và phổi", "Mediastinal and pulmonary lymph nodes", MEDIASTINAL_NODES),
   structure("thorax-lymph-vessels", "Mạch bạch huyết ngực", "Lymphatic vessels of the thorax", THORAX_VESSELS),
+  structure("inferior-tracheobronchial-lymph-nodes", "Hạch khí phế quản dưới (hạch dưới chạc ba)", "Inferior tracheobronchial (subcarinal) lymph nodes", SUBCARINAL_NODES),
   structure("abdominal-visceral-lymph-nodes", "Hạch tạng bụng", "Visceral lymph nodes of the abdomen", ABDOMINAL_VISCERAL_NODES),
   structure("lumbar-lymph-nodes", "Hạch thắt lưng và hạch hoành dưới", "Lumbar and inferior diaphragmatic lymph nodes", LUMBAR_NODES),
   structure("abdomen-lymph-vessels", "Mạch bạch huyết bụng", "Lymphatic vessels of the abdomen", ABDOMEN_VESSELS),
