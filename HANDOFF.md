@@ -38,6 +38,18 @@ Cả 14 bài Tác động cột sống đã PUBLISHED; nguồn MedlinePlus `/enc
 5. **Góp ý không chặn còn treo:** Sốt (dấu hiệu 999 riêng cho trẻ dưới 5 tuổi từ trang viêm màng não/nhiễm trùng huyết NHS; ngưỡng 38°C/39°C NHS xếp 999), Hen (xịt lại sau 10 phút; không tự lái xe).
 6. **Tuỳ chọn, chưa quyết:** khung lưu ý trên **trang bài** thuộc nhóm truyền thống (hiện chỉ ở trang danh mục, có chủ ý — mục 5).
 
+### Human Atlas — cách vẽ kiểu atlas (cập nhật 2026-10-23)
+
+Đã xong (PR #101–#108): kiểu atlas là mặc định; "Cách vẽ" có ba kiểu Đặc / Bán trong suốt / Xuyên thấu (bảng bên trái, mọi khổ màn); xương kiểu minh hoạ; khung AO = khung thường × AO; loại mảnh ở đỉnh; bề mặt cơ quan, thớ cơ, phía sau tối dần; bối cảnh thận có cơ thắt lưng lớn + cơ hoành (science-editor PASS). Lý do từng việc: `docs/architecture.md`, mục Human Atlas.
+
+Còn lại:
+1. **Đo trên điện thoại thật.** Mọi số đo là Intel UHD 730 (Chrome D3D11) hoặc SwiftShader. Shader xương có nhiễu tế bào 27 lần thử mỗi điểm ảnh. Cần FPS trên một máy Android tầm trung.
+2. **Chọn thận ở toàn thân ~31 ms/khung** (UHD 730), trước và sau mọi tối ưu. Chưa tìm nguyên nhân. Nghi lớp mờ nhiều lượt: hàng chục vật liệu trong suốt, mỗi vật liệu một lượt.
+3. **Thớ cơ hình quạt và gân: cố ý không vẽ.** Cần dữ liệu hướng thớ hoặc mảnh gân riêng. Đoán theo hộp bao là sai giải phẫu.
+4. **Dữ liệu thiếu cơ vuông thắt lưng, cơ ngang bụng.** Bối cảnh thận chỉ có cơ thắt lưng lớn và cơ hoành.
+5. **Chưa có ảnh mẫu cơ quan/cơ để đo bằng số** như đã làm với xương. Có ảnh HAA thì đo median/bão hoà/tương phản rồi chỉnh `organ({...})`.
+6. **Trang so sánh trước/sau** (artifact riêng tư) còn ảnh trước PR #103.
+
 ## 3. Command hay dùng
 
 Tác động cột sống:
