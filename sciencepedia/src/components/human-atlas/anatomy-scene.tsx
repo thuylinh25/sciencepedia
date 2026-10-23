@@ -139,6 +139,24 @@ float tissueNoise(vec3 x) {
     mix(mix(tissueHash(i + vec3(0, 0, 1)), tissueHash(i + vec3(1, 0, 1)), f.x), mix(tissueHash(i + vec3(0, 1, 1)), tissueHash(i + vec3(1, 1, 1)), f.x), f.y),
     f.z);
 }
+vec3 tissueHash3(vec3 p) {
+  return fract(sin(vec3(dot(p, vec3(127.1, 311.7, 74.7)), dot(p, vec3(269.5, 183.3, 246.1)), dot(p, vec3(113.5, 271.9, 124.6)))) * 43758.5453);
+}
+// Khoảng cách tới lỗ gần nhất (nhiễu tế bào): lỗ TRÒN, thưa — ngưỡng trên nhiễu giá trị cho vệt gạch chữ nhật.
+float tissueCell(vec3 x) {
+  vec3 i = floor(x);
+  vec3 f = fract(x);
+  float d = 1.0;
+  for (int a = -1; a <= 1; a++)
+    for (int b = -1; b <= 1; b++)
+      for (int c = -1; c <= 1; c++) {
+        vec3 g = vec3(float(a), float(b), float(c));
+        vec3 h = tissueHash3(i + g);
+        if (h.x > 0.3) continue;
+        d = min(d, length(g + 0.15 + 0.7 * h - f) * (0.65 + 0.7 * h.y));
+      }
+  return d;
+}
 `;
 type Surface = {
   /** Lớp phủ bóng (clearcoat) — mô ướt/sụn; không có thì giữ MeshStandardMaterial. */
@@ -147,16 +165,55 @@ type Surface = {
   glsl: string;
   /** Hệ số nhân `roughnessFactor`, theo `tissueFine`. */
   rough: string;
+  /** Cần trục dài của mảnh (`vTissueAxis`: xyz trục, w độ thon dài) — vân dọc. */
+  axis?: boolean;
+  /** GLSL chèn SAU khi có pháp tuyến (`normal`), trước khi chiếu sáng: đổi `diffuseColor` theo độ cong. */
+  lit?: string;
+  /** Hệ số nhân ánh sáng gián tiếp khuếch tán (môi trường + đèn bán cầu) — mặt khuất tối hơn. */
+  indirect?: string;
 };
-/** Xương: mảng ~3 cm, hạt ~4 mm, lỗ xốp sẫm ~1,5 mm. */
+/*
+ * ## Xương kiểu minh hoạ atlas (2026-10-23)
+ *
+ * Chủ sản phẩm đưa ảnh mẫu "Các loại xương": vàng nâu ấm (bão hoà ~0,37), hốc và
+ * kẽ nâu đậm, lỗ xốp thấy rõ, vân dọc thân xương dài, mép lồi sáng. Bản trước đo
+ * ra bão hoà 0,10, tương phản p90/p10 1,4 (mẫu 2,0–3,2): trắng sữa, phẳng.
+ *
+ * - Lỗ xốp ~2,5 mm, sẫm NÂU (không xám); tắt dần khi một lỗ nhỏ hơn ~2 điểm ảnh
+ *   (`fwidth`) — lỗ dưới điểm ảnh thành nhiễu lấp lánh khi xoay.
+ * - Vân dọc: nhiễu kéo dài theo trục dài của hộp bao mảnh, chỉ ở xương thon dài.
+ * - Hốc tối / mép sáng: độ cong tính trên màn hình từ đạo hàm pháp tuyến theo vị
+ *   trí (đơn vị 1/m; lồi dương). Không cần nướng dữ liệu, chạy cả điện thoại. Lồi
+ *   r ≈ 3 mm ≈ 330, hố r ≈ 5 mm ≈ −200. Pháp tuyến nội suy nên độ cong theo tam
+ *   giác — ngưỡng để rộng cho khỏi lộ lưới.
+ */
 const BONE: Surface = {
+  axis: true,
   glsl: `
-float tissueCoarse = tissueNoise(vTissue * 35.0);
-float tissueFine = tissueNoise(vTissue * 260.0 + 5.1);
-float tissuePore = smoothstep(0.8, 0.95, tissueNoise(vTissue * 700.0 + 1.7));
-diffuseColor.rgb *= mix(0.8, 1.06, smoothstep(0.15, 0.9, tissueCoarse * 0.55 + tissueFine * 0.45));
-diffuseColor.rgb *= mix(1.0, 0.72, tissuePore * 0.45);
+float tissueCoarse = tissueNoise(vTissue * 30.0);
+float tissueFine = tissueNoise(vTissue * 220.0 + 5.1);
+vec3 tissueAlong = vTissueAxis.xyz * dot(vTissue, vTissueAxis.xyz);
+float tissueStreakAA = 1.0 - smoothstep(0.35, 0.9, length(fwidth(vTissue * 260.0)));
+float tissueStreak = tissueNoise((vTissue - tissueAlong) * 260.0 + tissueAlong * 9.0 + 2.7);
+float tissuePoreAA = 1.0 - smoothstep(0.25, 0.6, length(fwidth(vTissue * 140.0)));
+float tissuePore = (1.0 - smoothstep(0.08, 0.17, tissueCell(vTissue * 140.0))) * tissuePoreAA;
+diffuseColor.rgb *= mix(0.7, 1.06, smoothstep(0.15, 0.9, tissueCoarse * 0.6 + tissueFine * 0.4));
+diffuseColor.rgb *= mix(1.0, mix(0.8, 1.07, tissueStreak), vTissueAxis.w * tissueStreakAA);
+diffuseColor.rgb = mix(diffuseColor.rgb, diffuseColor.rgb * vec3(0.4, 0.31, 0.24), tissuePore * 0.75);
 `,
+  lit: `
+vec3 cavDx = dFdx(vViewPosition);
+vec3 cavDy = dFdy(vViewPosition);
+float tissueCurv = -0.5 * (dot(dFdx(normal), cavDx) / max(dot(cavDx, cavDx), 1e-12) + dot(dFdy(normal), cavDy) / max(dot(cavDy, cavDy), 1e-12));
+float tissueCavity = smoothstep(30.0, 170.0, -tissueCurv);
+float tissueRidge = smoothstep(60.0, 420.0, tissueCurv);
+diffuseColor.rgb = mix(diffuseColor.rgb, diffuseColor.rgb * vec3(0.5, 0.37, 0.26), tissueCavity * 0.7);
+diffuseColor.rgb = min(diffuseColor.rgb * (1.0 + 0.16 * tissueRidge) + 0.025 * tissueRidge, vec3(1.0));
+`,
+  // Đo 2026-10-23: màu đã khớp mẫu nhưng tương phản p90/p10 chỉ 1,2–1,5 (mẫu 2,0–3,2) —
+  // fill gián tiếp (môi trường 0,36 + bán cầu) tô sáng đều mặt khuất. Chỉ hạ cho xương:
+  // hạ chung thì cơ, sụn sẫm lại thành mảng đen trên thẻ (xem "Fill gián tiếp").
+  indirect: "0.38 * (1.0 - 0.5 * tissueCavity)",
   rough: "0.88 + 0.24 * tissueFine",
 };
 /** Sụn: gần trơn, bóng nhẹ, loang rất khẽ. */
@@ -406,6 +463,21 @@ export default function AnatomyScene({
       (p) => new T.Box3(new T.Vector3().fromArray(p.bounds[0]), new T.Vector3().fromArray(p.bounds[1])),
     );
     const systemIndex = parts.map((p) => SYSTEM_IDS.indexOf(p.system));
+    /*
+     * Trục dài của từng mảnh cho vân dọc thân xương dài (`BONE`): cạnh dài nhất của
+     * hộp bao — mesh không có UV hay hướng thớ, hộp bao có sẵn trong metadata. Thô
+     * với xương chéo/cong (sườn), nên kênh A = độ thon dài: chỉ mảnh dài gấp ~2,5
+     * lần bề ngang mới có vân; đốt sống, xương cổ tay không có.
+     */
+    const axisData = new Float32Array(width * 4);
+    bounds.forEach((b, i) => {
+      const size = b.getSize(new T.Vector3()).toArray();
+      const order = [0, 1, 2].sort((a, c) => size[c] - size[a]);
+      axisData[i * 4 + order[0]] = 1;
+      axisData[i * 4 + 3] = T.MathUtils.smoothstep(size[order[0]] / Math.max(size[order[1]], 1e-4), 1.8, 3.2);
+    });
+    const axisTexture = new T.DataTexture(axisData, width, 1, T.RGBAFormat, T.FloatType);
+    axisTexture.needsUpdate = true;
 
     const markerPositions = new Float32Array(parts.length * 3);
     const markerGeometry = new T.BufferGeometry();
@@ -498,12 +570,15 @@ export default function AnatomyScene({
         shader.vertexShader =
           "attribute float partIndex; uniform sampler2D partState; uniform sampler2D selectionState; uniform float stateWidth; varying float partVisible; varying float partSelected; varying float partHovered; varying float partContext;\n" +
           (surface ? "varying vec3 vTissue;\n" : "") +
+          (surface?.axis ? "uniform sampler2D partAxis; varying vec4 vTissueAxis;\n" : "") +
           shader.vertexShader;
+        if (surface?.axis) shader.uniforms.partAxis = { value: axisTexture };
         shader.vertexShader = shader.vertexShader.replace(
           "#include <begin_vertex>",
           "#include <begin_vertex>\nvec2 stateUv = vec2((partIndex + 0.5) / stateWidth, 0.5); vec4 state = texture2D(partState, stateUv); transformed += state.xyz; partVisible = state.w; vec4 pick = texture2D(selectionState, stateUv); partSelected = pick.r; partHovered = pick.b; partContext = pick.a;" +
             // Toạ độ TRƯỚC khi tách (`position`, không `transformed`): vân dính vào mô khi kéo slider.
-            (surface ? " vTissue = position;" : ""),
+            (surface ? " vTissue = position;" : "") +
+            (surface?.axis ? " vTissueAxis = texture2D(partAxis, stateUv);" : ""),
         );
         shader.fragmentShader =
           "uniform float contextPass; varying float partVisible; varying float partSelected; varying float partHovered; varying float partContext;\n" + shader.fragmentShader;
@@ -515,17 +590,15 @@ export default function AnatomyScene({
          * Mảnh BỐI CẢNH của góc nhìn theo hệ (kênh A của texture chọn) không vẽ ở
          * lượt chính — lượt bối cảnh vẽ nó sau (xem "Bối cảnh kiểu atlas").
          *
-         * Mảnh đang chọn GIỮ màu và bề mặt của nó: chỉ ám cyan 12%, cộng viền
-         * sáng cyan ở rìa (fresnel) và phát sáng rất khẽ. Bản gốc trộn 75% sang
-         * xanh ngọc — mảnh chọn thành một khối neon, mất luôn hình khối.
+         * Mảnh đang chọn GIỮ NGUYÊN màu và bề mặt: chỉ có viền sáng cyan ở rìa
+         * (fresnel). Bản gốc trộn 75% sang xanh ngọc — một khối neon, mất hình khối.
+         * Bản 2026-09-30 còn ám cyan 12% + phát sáng nền 0,06: trên mô sẫm (thận
+         * #8f3f36) cộng lại thành tím nhạt, như một cơ quan khác (review 2026-10-23).
          */
-        if (surface) shader.fragmentShader = "varying vec3 vTissue;\n" + TISSUE_NOISE + shader.fragmentShader;
-        shader.fragmentShader = shader.fragmentShader.replace(
-          "#include <color_fragment>",
-          "#include <color_fragment>\n" +
-            (surface?.glsl ?? "") +
-            "diffuseColor.rgb = mix(diffuseColor.rgb, vec3(0.45, 0.82, 0.95), partSelected * 0.12);",
-        );
+        if (surface)
+          shader.fragmentShader =
+            "varying vec3 vTissue;\n" + (surface.axis ? "varying vec4 vTissueAxis;\n" : "") + TISSUE_NOISE + shader.fragmentShader;
+        shader.fragmentShader = shader.fragmentShader.replace("#include <color_fragment>", "#include <color_fragment>\n" + (surface?.glsl ?? ""));
         if (surface) {
           // Bóng không đều theo vân: bề mặt thật không nhám đều như nhựa.
           shader.fragmentShader = shader.fragmentShader.replace(
@@ -533,9 +606,17 @@ export default function AnatomyScene({
             `#include <roughnessmap_fragment>\nroughnessFactor = clamp(roughnessFactor * (${surface.rough}), 0.0, 1.0);`,
           );
         }
+        if (surface?.indirect) {
+          shader.fragmentShader = shader.fragmentShader.replace(
+            "#include <aomap_fragment>",
+            `#include <aomap_fragment>\nreflectedLight.indirectDiffuse *= ${surface.indirect};`,
+          );
+        }
         shader.fragmentShader = shader.fragmentShader.replace(
           "#include <emissivemap_fragment>",
-          "#include <emissivemap_fragment>\nfloat selectRim = pow(1.0 - abs(dot(normal, normalize(vViewPosition))), 2.5);\ntotalEmissiveRadiance += vec3(0.30, 0.72, 1.0) * partSelected * (0.06 + 0.55 * selectRim);\n// Rê chuột: viền sáng trắng ngà, yếu hơn viền chọn — gợi ý bấm được, không giành vai chọn.\ntotalEmissiveRadiance += vec3(0.95, 0.92, 0.85) * partHovered * (1.0 - partSelected) * (0.03 + 0.3 * selectRim);",
+          "#include <emissivemap_fragment>\n" +
+            (surface?.lit ?? "") +
+            "float selectRim = pow(1.0 - abs(dot(normal, normalize(vViewPosition))), 2.5);\ntotalEmissiveRadiance += vec3(0.30, 0.72, 1.0) * partSelected * 0.65 * selectRim;\n// Rê chuột: viền sáng trắng ngà, yếu hơn viền chọn — gợi ý bấm được, không giành vai chọn.\ntotalEmissiveRadiance += vec3(0.95, 0.92, 0.85) * partHovered * (1.0 - partSelected) * (0.03 + 0.3 * selectRim);",
         );
       };
       materials.push(m);
@@ -632,15 +713,21 @@ export default function AnatomyScene({
     let surroundOn = false;
     /** Chế độ "Xuyên thấu" (`SceneState.xray`): bối cảnh vẽ kiểu X-quang như trước 2026-10-23. */
     let xray = false;
-    const setStencil = (list: Iterable<T.Material>, func: T.StencilFunc | null, zPass: T.StencilOp = T.KeepStencilOp) => {
+    const setStencil = (list: Iterable<T.Material>, func: T.StencilFunc | null, ref = 0, zPass: T.StencilOp = T.KeepStencilOp) => {
       for (const m of list) {
         m.stencilWrite = func !== null;
         if (func === null) continue;
         m.stencilFunc = func;
-        m.stencilRef = 1;
+        m.stencilRef = ref;
         m.stencilZPass = zPass;
       }
     };
+    /**
+     * Số lớp bối cảnh tối đa vẽ mờ đè lên cấu trúc chính. Thận ở toàn thân nằm sau 2–3 lớp cơ
+     * thành bụng, mạc, ruột, phúc mạc: mỗi lớp 10–25% mà chồng hết thì gần đục, thành mảng
+     * trắng che kín thận (chụp thử 2026-10-23). Stencil cấu trúc chính = số này, mỗi lớp trừ 1.
+     */
+    const WINDOW_LAYERS = 2;
     /*
      * ## Bối cảnh kiểu atlas (2026-10-23)
      *
@@ -649,11 +736,12 @@ export default function AnatomyScene({
      * đâu. Nhưng bối cảnh hay BAO cấu trúc chính (phổi quanh phế quản, đốt sống
      * quanh tuỷ): vẽ đặc cả thì cấu trúc chính biến mất. Nên ba lượt:
      *
-     *   1. Lượt chính: cấu trúc chính, ghi stencil = 1 ở mọi điểm ảnh của nó.
-     *   2. Bối cảnh đặc, vật liệu thật, chỉ ở chỗ stencil ≠ 1 (không che cấu trúc chính).
+     *   1. Lượt chính: cấu trúc chính, ghi stencil = WINDOW_LAYERS ở mọi điểm ảnh của nó.
+     *   2. Bối cảnh đặc, vật liệu thật, chỉ ở chỗ stencil = 0 (không che cấu trúc chính).
      *      Bối cảnh nằm SAU cấu trúc chính đã bị depth loại sẵn.
-     *   3. "Cửa sổ": bối cảnh nằm TRƯỚC cấu trúc chính (stencil = 1), vẽ mờ theo lớp
-     *      (`FADE_BY_LAYER`) bằng vật liệu ghi đè, chiếu sáng thật, không ghi depth.
+     *   3. "Cửa sổ": bối cảnh nằm TRƯỚC cấu trúc chính (stencil > 0), vẽ mờ theo lớp
+     *      (`FADE_BY_LAYER`) bằng vật liệu ghi đè, chiếu sáng thật, không ghi depth; mỗi
+     *      lớp trừ stencil 1, nên không quá WINDOW_LAYERS lớp chồng lên nhau.
      *
      * Đổi `stencil*` trên vật liệu là trạng thái GL, không biên dịch lại shader. Lát
      * `band` không cắt bối cảnh: lượt 2 dùng vật liệu thật (có mặt cắt), nên đẩy mặt
@@ -662,7 +750,7 @@ export default function AnatomyScene({
      */
     const drawScene = (atlasStyle = !xray) => {
       const solidContext = ghostActive && atlasStyle;
-      if (solidContext) setStencil(mats.values(), T.AlwaysStencilFunc, T.ReplaceStencilOp);
+      if (solidContext) setStencil(mats.values(), T.AlwaysStencilFunc, WINDOW_LAYERS, T.ReplaceStencilOp);
       renderer.render(scene, camera);
       if (!ghostActive) return;
       const autoClear = renderer.autoClear;
@@ -670,7 +758,7 @@ export default function AnatomyScene({
       renderer.autoClear = false;
       markers.visible = false;
       if (solidContext) {
-        setStencil(mats.values(), T.NotEqualStencilFunc);
+        setStencil(mats.values(), T.EqualStencilFunc, 0);
         const cuts = contextUncut ? clipList.map((p) => p.constant) : [];
         if (contextUncut) clipList.forEach((p) => (p.constant = 1e6));
         contextPass.value = 1;
@@ -678,7 +766,8 @@ export default function AnatomyScene({
         contextPass.value = 0;
         cuts.forEach((c, k) => (clipList[k].constant = c));
         setStencil(mats.values(), null);
-        setStencil([ghostMaterial], T.EqualStencilFunc);
+        // Qua khi stencil > 0 (ref 0 < stencil), mỗi lớp vẽ trừ 1 — tối đa WINDOW_LAYERS lớp.
+        setStencil([ghostMaterial], T.LessStencilFunc, 0, T.DecrementStencilOp);
         ghostXray.value = 0;
       }
       scene.overrideMaterial = ghostMaterial;
@@ -735,6 +824,7 @@ export default function AnatomyScene({
      * (lớp trong suốt mà đổ bóng AO là tối sầm cả cơ thể).
      */
     const DIMMED = 0.18;
+    const VESSELS_AROUND_ORGAN = 0.4; // cả thần kinh
     const ORGANS = LAYERS.indexOf("organs");
     const alphaBySystem = new Map<SystemId, number>(SYSTEM_IDS.map((id) => [id, 1]));
     /** Độ đục theo nhóm vật liệu (`keyOf`) — cơ quan cùng hệ có thể khác nhau, xem trên. */
@@ -750,16 +840,27 @@ export default function AnatomyScene({
         deepest = Math.max(deepest, layerIndex(parts[i].system));
         selectedKeys.add(keyOf(parts[i]));
       }
+      // Cấu trúc CHÍNH của góc nhìn đang mở không mờ theo luật "cơ quan khác": bấm thận
+      // trong "Toàn bộ hệ tiết niệu" mà bàng quang về 10% thì thành khối nâu đen như
+      // mô hoại tử (review 2026-10-23). Luật ấy dành cho thứ ngoài góc nhìn (ruột).
+      const view = viewSet(latest.current.viewId);
+      const keep = new Set(selectedKeys);
+      if (view?.only) view.focus.forEach((i) => keep.add(keyOf(parts[i])));
       for (const system of SYSTEM_IDS) {
         let alpha = layerOpacity(SYSTEM_LAYER[system], effectivePeel(peel, latest.current.visible));
         const faded = layerIndex(system) < deepest;
         if (faded) alpha = Math.min(alpha, xray ? DIMMED : FADE_BY_LAYER[SYSTEM_LAYER[system]]);
         alphaBySystem.set(system, alpha);
-        const siblings = !xray && deepest === ORGANS && layerIndex(system) === ORGANS;
+        const organPicked = !xray && deepest === ORGANS;
+        const siblings = organPicked && layerIndex(system) === ORGANS;
+        // Mạch, thần kinh nằm lớp sâu hơn nên luật lớp ngoài không chạm tới; đục 100% thì
+        // động/tĩnh mạch bão hoà, rồi dây thần kinh vàng phủ kín bụng, thận không tách khỏi
+        // nền (review + chụp thử 2026-10-23) → 40%.
+        const vessels = organPicked && (SYSTEM_LAYER[system] === "vascular" || SYSTEM_LAYER[system] === "nervous");
         for (const m of matsBySystem.get(system) ?? []) {
           const key = keyOfMaterial.get(m) ?? system;
-          const sibling = siblings && !selectedKeys.has(key);
-          const a = sibling ? Math.min(alpha, FADE_BY_LAYER.organs) : alpha;
+          const sibling = (siblings || vessels) && !keep.has(key);
+          const a = sibling ? Math.min(alpha, vessels ? VESSELS_AROUND_ORGAN : FADE_BY_LAYER.organs) : alpha;
           alphaByKey.set(key, a);
           const solid = a > 0.999;
           const side = (faded || sibling) && !xray ? T.FrontSide : T.DoubleSide;
@@ -966,9 +1067,10 @@ export default function AnatomyScene({
         );
         composer.addPass(new ScenePass(() => drawScene()));
         aoPass = new GTAOPass(scene, camera, el.clientWidth, el.clientHeight);
-        aoPass.updateGtaoMaterial({ radius: 0.06, distanceExponent: 1.4, thickness: 1.2, scale: 1.1, samples: 12 });
+        // Bán kính 10 cm (trước 6 cm): kẽ đốt sống, hố chậu, khe giữa tạng mới đủ tối (review 2026-10-23).
+        aoPass.updateGtaoMaterial({ radius: 0.1, distanceExponent: 1.4, thickness: 1.2, scale: 1.1, samples: 12 });
         aoPass.updatePdMaterial({ lumaPhi: 10, depthPhi: 2, normalPhi: 3, radius: 6, rings: 2, samples: 12 });
-        aoPass.blendIntensity = 0.85;
+        aoPass.blendIntensity = 1;
         aoPass.normalMaterial.onBeforeCompile = (shader) => {
           shader.uniforms.partState = { value: partTexture };
           shader.uniforms.selectionState = { value: selectionTexture };
@@ -2434,6 +2536,7 @@ export default function AnatomyScene({
       partTexture.dispose();
       selectionTexture.dispose();
       tintTexture.dispose();
+      axisTexture.dispose();
       markerGeometry.dispose();
       markerMaterial.dispose();
       hover.remove();

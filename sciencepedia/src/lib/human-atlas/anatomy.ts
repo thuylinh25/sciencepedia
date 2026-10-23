@@ -56,8 +56,9 @@ export const CONCEPT_COUNT = 3432;
  * của cảnh, và đổi theo theme thì cùng một cơ quan mang hai màu.
  */
 export const SYSTEM_COLORS: Record<SystemId, string> = {
-  // Xám be như xương atlas (vân hạt/lỗ xốp ở `SURFACES`, anatomy-scene.tsx); bản cũ #e2d9ba ngả vàng kem.
-  skeletal: "#d3c9b3",
+  // Vàng nâu ấm như xương minh hoạ atlas (ảnh mẫu chủ sản phẩm 2026-10-23: bão hoà ~0,37).
+  // #d3c9b3 trước đó đo ra bão hoà 0,10 — trắng sữa. Vân, lỗ xốp, hốc tối ở `BONE` (anatomy-scene.tsx).
+  skeletal: "#d8b07e",
   muscular: "#a85b50",
   cardiac: "#b96760",
   sensory: "#b0c8ce",
@@ -436,7 +437,7 @@ export const GROUP_COLORS: Record<string, string> = {
   "respiratory.cartilage": "#bcc9cc",
   "skeletal.cartilage": "#bcc9cc",
   // Xoăn mũi dưới là xương: màu xương.
-  "respiratory.concha": "#d3c9b3",
+  "respiratory.concha": "#d8b07e",
   // Tiết niệu: thận đỏ nâu, niệu quản vàng nhạt, bàng quang hồng.
   "urinary.kidney": "#8f3f36",
   "urinary.ureter": "#d8c79c",

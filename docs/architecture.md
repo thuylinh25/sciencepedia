@@ -932,8 +932,9 @@ nhỏ vẽ 2× rồi thu nhỏ: dây thần kinh 1–2 mm hẹp hơn một đi�
 **Kiểu atlas là mặc định; bóng X-quang thành nút "Xuyên thấu"** (chủ sản phẩm, 2026-10-23). Bối cảnh mờ
 kiểu X-quang (ba đoạn trên) làm mất định hướng: xem thận mà cột sống, xương chậu trong suốt thì không còn
 biết thận nằm ở đâu. Nay bối cảnh vẽ ĐẶC bằng chính vật liệu thật (vân xương, có AO), và chỉ chỗ nó CHE cấu
-trúc chính mới mờ — ba lượt có stencil (`drawScene`): cấu trúc chính ghi stencil; bối cảnh đặc ở chỗ
-stencil ≠ 1; bối cảnh trước cấu trúc chính ở chỗ stencil = 1 vẽ mờ theo lớp. Đừng vẽ bối cảnh đặc trọn
+trúc chính mới mờ — ba lượt có stencil (`drawScene`): cấu trúc chính ghi stencil = 2; bối cảnh đặc ở chỗ
+stencil = 0; bối cảnh trước cấu trúc chính vẽ mờ theo lớp, mỗi lớp trừ stencil 1 — tối đa HAI lớp chồng
+(thận ở toàn thân nằm sau 5–6 lớp; 10–25% mỗi lớp mà chồng hết thì thành mảng trắng đục). Đừng vẽ bối cảnh đặc trọn
 vẹn cho gọn: bối cảnh hay BAO cấu trúc chính (phổi quanh phế quản, đốt sống quanh tuỷ) và nuốt mất nó.
 **Mờ theo loại mô, không mờ đều** (`FADE_BY_LAYER`): xương 45%, cơ 25%, mô mềm 10% — số của chủ sản phẩm.
 Xương không xuống 10%: mất xương là mất mốc. Cùng thang dùng khi chọn một cấu trúc sâu (lớp ngoài mờ, thay
@@ -943,6 +944,19 @@ thận. Composer dùng `ScenePass` gọi chính `drawScene` (render target có s
 Xuyên thấu giữ nguyên đường cũ, kể cả 0,18 đều. Ảnh thu nhỏ luôn kiểu atlas (dùng chung cho mọi người đọc).
 Không có shadow map, không `transmission` (thêm một lượt cả cảnh ~2,3 triệu tam giác), không `aoMap` (mesh
 không UV) — chiều sâu đến từ GTAO + ba đèn theo camera.
+
+**Xương kiểu minh hoạ atlas, đo bằng số** (ảnh mẫu chủ sản phẩm, 2026-10-23). Xương cũ đo ra bão hoà
+0,10 và tương phản p90/p10 1,4 — trắng sữa, phẳng; mẫu là vàng nâu bão hoà ~0,37, tương phản 2,0–3,2.
+Nay (`BONE`): màu `#d8b07e`; lỗ xốp bằng nhiễu TẾ BÀO (lỗ tròn, thưa — ngưỡng trên nhiễu giá trị cho vệt
+gạch chữ nhật màu gỉ), tắt dần khi nhỏ hơn ~2 điểm ảnh; vân dọc theo trục dài của hộp bao mảnh, chỉ ở xương
+thon dài; hốc tối/mép sáng từ độ cong tính trên màn hình (đạo hàm pháp tuyến theo vị trí, không cần nướng dữ
+liệu). Ngưỡng hốc để cao (30–170 /m): thấp hơn thì nếp gãy giữa tam giác của mesh thành vệt như VẾT NỨT trên
+thân đốt sống. Tương phản đến từ hạ ánh sáng gián tiếp RIÊNG cho xương (×0,38) — hạ chung thì cơ, sụn thành
+mảng đen trên thẻ. Đo lại: bão hoà 0,37–0,46, tương phản 1,3–2,15. Khoảng cách còn lại là hình học (mesh
+BodyParts3D mượt, ít mốc) và texture vẽ tay — shader không bù được.
+**Chọn = chỉ viền.** Ám cyan 12% + phát sáng nền trên mô sẫm (thận) cộng thành tím nhạt, như cơ quan khác.
+**"Cơ quan khác mờ 10%" không chạm cấu trúc chính của góc nhìn** (bàng quang 10% thành khối nâu đen), và khi
+chọn một cơ quan thì mạch và thần kinh ngoài vùng chọn còn 40% — đục 100% thì chúng phủ kín bụng.
 
 **Ảnh thu nhỏ chụp mọi lớp ĐỤC**, không theo độ đậm đang có ở khung xem: độ đậm theo lớp bóc tính từ tập hệ đang bật, nên chụp khi đang ở "Phổi" (không hệ cơ) thì cơ opacity 0 — ảnh bìa "Cơ hít vào" chỉ còn bóng xương sườn. Mở góc nhìn luôn về nguyên khối, ảnh bìa phải khớp thế.
 
