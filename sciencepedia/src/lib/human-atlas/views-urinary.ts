@@ -44,6 +44,15 @@ const AORTA_IVC: PartRule = { name: /^(abdominal aorta|inferior vena cava)$/i };
 const LUMBAR_SPINE: PartRule = { systems: ["skeletal"], name: /lumbar vertebra$|^sacrum$/i };
 const LOWER_RIBS: PartRule = { systems: ["skeletal"], name: /\b(eleventh|twelfth) rib$/i };
 const HIP_BONES: PartRule = { systems: ["skeletal"], name: /hip bone$/i };
+/*
+ * Cơ thành sau bụng quanh thận (2026-10-23, science-editor PASS): bờ trong thận tựa cơ thắt lưng
+ * lớn, phần lớn mặt sau tựa cơ vuông thắt lưng, cực trên áp vào cơ hoành. Thiếu chúng thì thận
+ * trông lơ lửng cạnh cột sống. Dữ liệu không có cơ vuông thắt lưng và cơ ngang bụng (audit
+ * 2026-10-23) — chỉ hai cơ dưới đây. Không nhãn `partial`: thiếu ở bối cảnh, thận vẫn đủ. Không
+ * cơ chậu: nằm ở hố chậu, dưới cực dưới thận (~L3), không liên quan trực tiếp.
+ */
+const PSOAS_MAJOR = rule("FMA22342", "FMA22343");
+const DIAPHRAGM = rule("FMA13295");
 const ILIAC_VESSELS: PartRule = { systems: ["arterial", "venous"], name: /(common|internal|external) iliac (artery|vein)$/i };
 const MISSING_SPHINCTER = {
   vi: "Thiếu cơ thắt niệu đạo, cơ ngang đáy chậu, cơ hành xốp và cơ ngồi hang",
@@ -85,7 +94,9 @@ export const URINARY_VIEWS: readonly AtlasViewDef[] = [
     name: { vi: "Thận", en: "Kidneys" },
     direction: "front",
     focus: KIDNEYS,
-    context: [ADRENALS, RENAL_ARTERIES, RENAL_VEINS, AORTA_IVC, LUMBAR],
+    // Cơ hoành KHÔNG ở đây: nhìn từ trước vòm hoành là một tấm lớn chiếm nửa trên khung, che
+    // thượng thận (chụp thử 2026-10-23). Quan hệ cực trên ↔ cơ hoành dạy ở "Vị trí của thận" (nhìn sau).
+    context: [ADRENALS, RENAL_ARTERIES, RENAL_VEINS, AORTA_IVC, LUMBAR, PSOAS_MAJOR],
     camera: { fill: 0.55, thumbnailFill: 0.7 },
     terms: ["kidney", "renal"],
     quality: "good",
@@ -216,7 +227,7 @@ export const URINARY_VIEWS: readonly AtlasViewDef[] = [
     name: { vi: "Vị trí của thận", en: "Location of the kidneys" },
     direction: "back",
     focus: KIDNEYS,
-    context: [LUMBAR_SPINE, LOWER_RIBS, HIP_BONES],
+    context: [LUMBAR_SPINE, LOWER_RIBS, HIP_BONES, PSOAS_MAJOR, DIAPHRAGM],
     // Bối cảnh (sườn XI–XII, mào chậu) là điều góc nhìn muốn dạy — khung theo thận ở
     // mức mặc định thì cắt mất chúng.
     camera: { fill: 0.45, thumbnailFill: 0.55 },
