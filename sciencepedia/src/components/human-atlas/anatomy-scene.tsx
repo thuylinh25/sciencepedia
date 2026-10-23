@@ -1407,9 +1407,12 @@ export default function AnatomyScene({
       // Nắp có khi khối của lát về — trước đó góc nhìn đã khung theo hộp tạm. Khung lại
       // qua đúng đường "đổi góc nhìn" của vòng trạng thái: gọi `fit` thẳng từ đây thì
       // camera dừng giữa chừng (đo: đích lệch 1,6 cm khỏi nắp, lát rơi ra ngoài khung).
-      const hadCaps = !capBox.isEmpty();
+      // Khung lại mỗi lần hộp nắp ĐỔI, không chỉ lần đầu: lát ngực có nắp ở nhiều khối
+      // (tuyến ức về trước, hạch và mạch bạch huyết về sau) — chỉ khung theo khối đầu thì
+      // camera phóng sát vào tuyến ức (đo 2026-10-23).
+      const capsBefore = capBox.clone();
       buildCaps(latest.current.viewId);
-      if (!hadCaps && !capBox.isEmpty()) capsRefit = true;
+      if (!capBox.isEmpty() && !capBox.equals(capsBefore)) capsRefit = true;
       lastState = null;
       dirty = true;
     };
