@@ -1,4 +1,6 @@
 import type { AtlasViewDef, PartRule } from "./views";
+import { AORTA, ARCH_BRANCHES, ASC_ARCH, FEMORAL as FEMORAL_ARTERY, POPLITEAL as POPLITEAL_ARTERY, AXILLARY_BRANCHES } from "./views-arterial";
+import { AXILLARY as AXILLARY_VEINS, FEMORAL as FEMORAL_VEIN, POPLITEAL as POPLITEAL_VEIN, SAPHENOUS, VENAE_CAVAE } from "./views-venous";
 
 /*
  * ## Góc nhìn theo hệ — Hệ bạch huyết (2026-09-30)
@@ -20,6 +22,18 @@ import type { AtlasViewDef, PartRule } from "./views";
  * Bảng "Cấu trúc" không một hàng mỗi nhóm hạch (~110 hàng, phần lớn 1–2 hạch):
  * mỗi vùng chia thành vài nhóm lớn theo cách sách giải phẫu gom (nông/sâu, thành/
  * tạng). Khớp bằng tên (mã `ZA-…`), trong hệ bạch huyết.
+ */
+
+/*
+ * Lưới xếp theo "Lymphatic System Views" của atlas tham chiếu (chủ sản phẩm, 2026-10-23):
+ * tổng quan, tuyến ức, hạnh nhân, ống ngực, bể dưỡng chấp, đầu – cổ, ngực, chậu, chi dưới,
+ * hạch nách, hạch bẹn, hạch khoeo — rồi nhóm cũ giữ cho deep link. Hạnh nhân: `missing`
+ * (Z-Anatomy CÓ hạnh nhân khẩu cái — nhập được qua import-z-anatomy.ts, chưa làm). Bể
+ * dưỡng chấp: `missing` — đã xem bằng mắt, không chỗ phình nào tách được khỏi lưới mạch.
+ * Ống ngực: dựng được nhưng tên phải gồm "mạch bạch huyết ngực" vì cùng một lưới.
+ *
+ * Hạch khoeo/bẹn rải theo bề NGANG (hai chân) nên `camera.fill` (chỉ tính chiều cao) không
+ * lùi được khung — dùng `frame` theo mạch hoặc xương quanh đó.
  */
 
 const lymph = (name: RegExp): PartRule => ({ systems: ["lymphatic"], name });
@@ -55,6 +69,8 @@ const PELVIS_VESSELS = lymph(/^lymphatic vessels of pelvis$/i);
 // Chi dưới.
 const INGUINAL_NODES = lymph(/inguinal nodes?$/i);
 const LEG_NODES = lymph(/\b(popliteal|tibial|fibular) nodes?$/i);
+const POPLITEAL_NODES = lymph(/\bpopliteal nodes?$/i);
+const TIBIAL_FIBULAR_NODES = lymph(/\b(tibial|fibular) nodes?$/i);
 const LOWER_LIMB_VESSELS = lymph(/^lymphatic vessels of (left|right) lower limb$/i);
 // Cơ quan bạch huyết.
 const SPLEEN = lymph(/^spleen$/i);
@@ -66,6 +82,14 @@ const UPPER_LIMB_BONES: PartRule = { systems: ["skeletal"], name: /(humerus|scap
 const THORAX_BONES: PartRule = { systems: ["skeletal"], name: /\brib\b|costal cartilage|^manubrium$|^body of sternum$|thoracic vertebra$/i };
 const PELVIS_BONES: PartRule = { systems: ["skeletal"], name: /hip bone$|^sacrum$|lumbar vertebra$/i };
 const LOWER_LIMB_BONES: PartRule = { systems: ["skeletal"], name: /(femur|tibia|fibula|patella|hip bone)$/i };
+const HIP_BONES: PartRule = { systems: ["skeletal"], name: /hip bone$/i };
+const KNEE_BONES: PartRule = { systems: ["skeletal"], name: /(femur|tibia|fibula|patella)$/i };
+const SPINE: PartRule = { systems: ["skeletal"], name: /(thoracic|lumbar) vertebra$/i };
+const HEART: PartRule = { systems: ["cardiac"] };
+// Không xương ức, sụn sườn: tuyến ức nằm ngay sau xương ức — vẽ mờ vẫn che kín nó.
+const RIBS: PartRule = { systems: ["skeletal"], name: /rib|thoracic vertebra$/i };
+// Chỉ thân tĩnh mạch đơn: tĩnh mạch liên sườn chằng ngang, lẫn với mạch bạch huyết.
+const AZYGOS_TRUNKS: PartRule = { systems: ["venous"], name: /^(azygos|hemiazygos|accessory hemiazygos) vein$/i };
 
 const group = (
   id: string,
@@ -97,12 +121,74 @@ export const LYMPHATIC_VIEWS: readonly AtlasViewDef[] = [
     terms: ["bạch huyết", "lymphatic", "hạch", "lymph node", "bạch mạch"],
     quality: "acceptable",
   },
+
+  // ------------------------------------------------------------ nhóm theo atlas tham chiếu
+  {
+    id: "lymphatic-thymus",
+    systemId: "lymphatic",
+    kind: "group",
+    name: { vi: "Tuyến ức", en: "Thymus" },
+    direction: "front",
+    focus: [THYMUS],
+    context: [HEART, ASC_ARCH, ARCH_BRANCHES, VENAE_CAVAE, RIBS],
+    // Riêng tuyến ức thì phóng sát, mất chỗ của nó trên tim; khung cả tim.
+    camera: { frame: [HEART] },
+    terms: ["tuyến ức", "thymus", "cơ quan lympho trung ương"],
+    quality: "acceptable",
+  },
+  {
+    id: "lymphatic-tonsils",
+    systemId: "lymphatic",
+    kind: "group",
+    name: { vi: "Hạnh nhân (amiđan)", en: "Tonsils" },
+    direction: "anterolateral",
+    missing: {
+      vi: "Bộ dữ liệu hiện chưa có hạnh nhân khẩu cái, hạnh nhân hầu hay hạnh nhân lưỡi",
+      en: "The palatine, pharyngeal and lingual tonsils are not in the current dataset",
+    },
+    terms: ["amiđan", "amidan", "tonsil", "palatine tonsil", "vòng bạch huyết quanh họng"],
+  },
+  {
+    id: "lymphatic-thoracic-duct",
+    systemId: "lymphatic",
+    kind: "group",
+    name: { vi: "Ống ngực và mạch bạch huyết ngực", en: "Thoracic duct and thoracic lymphatic vessels" },
+    direction: "left",
+    focus: [THORAX_VESSELS],
+    context: [SPINE, AORTA, ASC_ARCH, AZYGOS_TRUNKS, HEART],
+    partial: {
+      vi: "Ống ngực dựng chung một lưới với các mạch bạch huyết khác của ngực, không tách riêng",
+      en: "The thoracic duct shares a single mesh with the other lymphatic vessels of the thorax and is not separated",
+    },
+    terms: ["ống ngực", "thoracic duct", "ống bạch huyết ngực"],
+    quality: "acceptable",
+  },
+  {
+    id: "lymphatic-cisterna-chyli",
+    systemId: "lymphatic",
+    kind: "group",
+    name: { vi: "Bể dưỡng chấp", en: "Cisterna chyli" },
+    direction: "front",
+    // Đã xem bằng mắt (2026-10-23): vùng L1–L2 chỉ có lưới mạch mảnh và hạch thắt lưng,
+    // không chỗ phình nào nhận ra được — đừng đặt tên bể cho tập hạch thắt lưng.
+    missing: {
+      vi: "Bộ dữ liệu không dựng bể dưỡng chấp thành một phần riêng — vùng ngang đốt sống L1–L2 chỉ có lưới mạch bạch huyết và các hạch thắt lưng",
+      en: "The dataset does not model the cisterna chyli as a separate part — at the L1–L2 level it holds only lymphatic vessels and the lumbar lymph nodes",
+    },
+    terms: ["bể dưỡng chấp", "cisterna chyli", "bể pecquet"],
+  },
+
   group("lymphatic-head-neck", "Bạch huyết đầu – cổ", "Lymphatics of the head and neck", [HEAD_NODES, NECK_NODES, HEAD_NECK_VESSELS], [SKULL_NECK], ["hạch cổ", "cervical nodes", "hạch dưới hàm"], "anterolateral"),
-  group("lymphatic-upper-limb", "Bạch huyết chi trên và nách", "Lymphatics of the upper limb and axilla", [AXILLARY_NODES, ARM_NODES, UPPER_LIMB_VESSELS], [UPPER_LIMB_BONES], ["hạch nách", "axillary nodes"]),
   group("lymphatic-thorax", "Bạch huyết ngực", "Lymphatics of the thorax", [THORACIC_WALL_NODES, MEDIASTINAL_NODES, THORAX_VESSELS], [THORAX_BONES], ["hạch trung thất", "mediastinal nodes", "hạch phế quản"]),
-  group("lymphatic-abdomen", "Bạch huyết bụng", "Lymphatics of the abdomen", [ABDOMINAL_VISCERAL_NODES, LUMBAR_NODES, ABDOMEN_VESSELS], [PELVIS_BONES], ["hạch mạc treo", "mesenteric nodes", "hạch thắt lưng"]),
   group("lymphatic-pelvis", "Bạch huyết chậu", "Lymphatics of the pelvis", [ILIAC_NODES, PELVIC_NODES, PELVIS_VESSELS], [PELVIS_BONES], ["hạch chậu", "iliac nodes"]),
   group("lymphatic-lower-limb", "Bạch huyết chi dưới", "Lymphatics of the lower limb", [INGUINAL_NODES, LEG_NODES, LOWER_LIMB_VESSELS], [LOWER_LIMB_BONES], ["hạch bẹn", "inguinal nodes", "hạch khoeo"]),
+  group("lymphatic-axillary-nodes", "Hạch nách", "Axillary lymph nodes", [AXILLARY_NODES], [UPPER_LIMB_VESSELS, AXILLARY_BRANCHES, AXILLARY_VEINS, UPPER_LIMB_BONES, THORAX_BONES], ["hạch nách", "axillary nodes", "hạch dưới đòn"]),
+  { ...group("lymphatic-inguinal-nodes", "Hạch bẹn", "Inguinal lymph nodes", [INGUINAL_NODES], [LOWER_LIMB_VESSELS, PELVIS_VESSELS, FEMORAL_ARTERY, FEMORAL_VEIN, SAPHENOUS, LOWER_LIMB_BONES], ["hạch bẹn", "inguinal nodes", "hạch bẹn nông", "hạch bẹn sâu"]), camera: { frame: [HIP_BONES] } },
+  { ...group("lymphatic-popliteal-nodes", "Hạch khoeo", "Popliteal lymph nodes", [POPLITEAL_NODES], [LOWER_LIMB_VESSELS, POPLITEAL_ARTERY, POPLITEAL_VEIN, SAPHENOUS, KNEE_BONES], ["hạch khoeo", "popliteal nodes", "hố khoeo"], "back"), camera: { frame: [POPLITEAL_ARTERY] } },
+
+  // ------------------------------------------------------------ nhóm cũ (deep link)
+  group("lymphatic-upper-limb", "Bạch huyết chi trên và nách", "Lymphatics of the upper limb and axilla", [AXILLARY_NODES, ARM_NODES, UPPER_LIMB_VESSELS], [UPPER_LIMB_BONES], ["hạch nách", "axillary nodes"]),
+  group("lymphatic-abdomen", "Bạch huyết bụng", "Lymphatics of the abdomen", [ABDOMINAL_VISCERAL_NODES, LUMBAR_NODES, ABDOMEN_VESSELS], [PELVIS_BONES], ["hạch mạc treo", "mesenteric nodes", "hạch thắt lưng"]),
   group("lymphatic-organs", "Lách và tuyến ức", "Spleen and thymus", [SPLEEN, THYMUS], [THORAX_BONES], ["cơ quan lympho", "lymphoid organs", "spleen", "thymus"]),
 
   structure("head-lymph-nodes", "Các nhóm hạch đầu", "Lymph nodes of the head", HEAD_NODES, "anterolateral"),
@@ -122,6 +208,8 @@ export const LYMPHATIC_VIEWS: readonly AtlasViewDef[] = [
   structure("pelvis-lymph-vessels", "Mạch bạch huyết chậu", "Lymphatic vessels of the pelvis", PELVIS_VESSELS),
   structure("inguinal-lymph-nodes", "Hạch bẹn", "Inguinal lymph nodes", INGUINAL_NODES),
   structure("leg-lymph-nodes", "Hạch khoeo và cẳng chân", "Popliteal and leg lymph nodes", LEG_NODES),
+  structure("popliteal-lymph-nodes", "Hạch khoeo", "Popliteal lymph nodes", POPLITEAL_NODES, "back"),
+  structure("tibial-fibular-lymph-nodes", "Hạch chày và hạch mác", "Tibial and fibular lymph nodes", TIBIAL_FIBULAR_NODES),
   structure("lower-limb-lymph-vessels", "Mạch bạch huyết chi dưới", "Lymphatic vessels of the lower limb", LOWER_LIMB_VESSELS),
   structure("spleen", "Lách", "Spleen", SPLEEN),
   structure("thymus", "Tuyến ức", "Thymus", THYMUS),
