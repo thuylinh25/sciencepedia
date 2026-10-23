@@ -950,8 +950,11 @@ hốc tối hơn trước). Đo: khung thường trước/sau trùng pixel; khun
 **Loại mảnh ở đỉnh, không ở điểm ảnh**: mảnh ẩn và mảnh không thuộc lượt đang vẽ bị đẩy ra ngoài clip
 space trong vertex shader (một mảnh = một `partIndex`, cả tam giác rơi), và mỗi lượt chỉ đưa vào mesh có
 mảnh cần vẽ ở lượt ấy (`showOnly`). Bản cũ `discard` ở fragment: vẫn tô mọi điểm ảnh của 2 triệu tam giác
-dưới da rồi mới bỏ, và `discard` trong shader tắt early-z. Đo Intel UHD 730 khi tự xoay (p50): toàn thân
-5,3 → 2,4 ms, góc nhìn thận 6,1 → 4,0 ms.
+dưới da rồi mới bỏ, và `discard` trong shader tắt early-z. Đã kiểm: khung thường trước/sau trùng pixel.
+Tốc độ trên Intel UHD 730 (Chrome D3D11) KHÔNG tách được khỏi nhiễu: cùng một bản code chạy hai lần lệch
+~2 ms/khung. Lợi ích chờ đợi nằm ở GPU giới hạn fill-rate (điện thoại) — chưa đo. Đo tốc độ: kiểm canvas có
+đổi giữa hai lần chụp. "Tự xoay" không chạy khi đang chọn cấu trúc, nên đo ở đó là đo trang đứng yên
+(từng ra 31 ms giả).
 Xuyên thấu giữ nguyên đường cũ, kể cả 0,18 đều. Ảnh thu nhỏ luôn kiểu atlas (dùng chung cho mọi người đọc).
 **"Cách vẽ" có ba kiểu** (`SceneState.look`, 2026-10-23): Đặc (mặc định), **Bán trong suốt**, Xuyên thấu.
 Bán trong suốt = cùng luật "chỉ lớp che mới mờ", mờ 40–60% (`FADE_SEMI`: xương 60%, cơ 50%, mô mềm

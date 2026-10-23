@@ -44,7 +44,7 @@ Cả 14 bài Tác động cột sống đã PUBLISHED; nguồn MedlinePlus `/enc
 
 Còn lại:
 1. **Đo trên điện thoại thật.** Mọi số đo là Intel UHD 730 (Chrome D3D11) hoặc SwiftShader. Shader xương có nhiễu tế bào 27 lần thử mỗi điểm ảnh. Cần FPS trên một máy Android tầm trung.
-2. **Chọn thận ở toàn thân ~31 ms/khung** (UHD 730), trước và sau mọi tối ưu. Chưa tìm nguyên nhân. Nghi lớp mờ nhiều lượt: hàng chục vật liệu trong suốt, mỗi vật liệu một lượt.
+2. **Chưa có số đo tốc độ tin được trên desktop.** Lần chạy lặp lại lệch ~2 ms/khung. Đo khi đang chọn cấu trúc thì "Tự xoay" không chạy (con số 31 ms từng ghi là đo trang đứng yên). Kéo chuột qua Playwright cho 3–17 ms, nhiễu theo nhịp sự kiện. Đo đúng cách: bộ đếm khung trong trang + chạy xen kẽ cũ/mới ≥3 lần.
 3. **Thớ cơ hình quạt và gân: cố ý không vẽ.** Cần dữ liệu hướng thớ hoặc mảnh gân riêng. Đoán theo hộp bao là sai giải phẫu.
 4. **Dữ liệu thiếu cơ vuông thắt lưng, cơ ngang bụng.** Bối cảnh thận chỉ có cơ thắt lưng lớn và cơ hoành.
 5. **Chưa có ảnh mẫu cơ quan/cơ để đo bằng số** như đã làm với xương. Có ảnh HAA thì đo median/bão hoà/tương phản rồi chỉnh `organ({...})`.
