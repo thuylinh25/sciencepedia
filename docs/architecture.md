@@ -970,6 +970,16 @@ liệu). Ngưỡng hốc để cao (30–170 /m): thấp hơn thì nếp gãy gi
 thân đốt sống. Tương phản đến từ hạ ánh sáng gián tiếp RIÊNG cho xương (×0,38) — hạ chung thì cơ, sụn thành
 mảng đen trên thẻ. Đo lại: bão hoà 0,37–0,46, tương phản 1,3–2,15. Khoảng cách còn lại là hình học (mesh
 BodyParts3D mượt, ít mốc) và texture vẽ tay — shader không bù được.
+**Cơ quan, cơ, chiều sâu** (review 2026-10-23: tạng phẳng như nhựa, cơ 3/10). Cơ quan (thận, gan, tim,
+dạ dày, ruột, bàng quang, tuỵ, lách): bao ướt bóng (clearcoat), loang khẽ, hốc tối theo cùng độ cong như
+xương (rốn thận, kẽ quai ruột). Cơ: thớ theo trục dài hộp bao, CHỈ ở cơ thon dài (~2,6× bề ngang) — cơ hình
+quạt có trục hộp bao không phải hướng thớ, không vẽ còn hơn vẽ sai. **Không vẽ gân ở hai đầu cơ**: dữ liệu có
+4 mảnh gân; đoán gân theo đầu hộp bao là tô gân lên chỗ bám thịt — khẳng định giải phẫu sai. Chỉ nhiễu giá
+trị (không nhiễu tế bào 27 lần thử như lỗ xương): cơ và tạng phủ phần lớn màn hình. **Chiều sâu = phía sau
+tối dần** tới −30% ở 0,12 × khoảng cách camera sau tâm nhìn, không shadow map: thêm một lượt depth cả cảnh mỗi
+khung xoay, còn chỉ vẽ khi đứng yên thì "nhảy" như AO cũ. Bóng tiếp xúc = GTAO. Đo UHD 730 (p50, tự xoay):
+không đổi trong biên nhiễu (cơ 5,0 → 3,7 ms, tiêu hoá 5,9 → 5,8 ms). Điện thoại CHƯA đo. Đo màu: xương giữ
+nguyên (tương phản 1,81 → 1,87), gan 2,11 → 2,44; không có ảnh mẫu cơ quan để đặt đích bằng số.
 **Chọn = chỉ viền.** Ám cyan 12% + phát sáng nền trên mô sẫm (thận) cộng thành tím nhạt, như cơ quan khác.
 **"Cơ quan khác mờ 10%" không chạm cấu trúc chính của góc nhìn** (bàng quang 10% thành khối nâu đen), và khi
 chọn một cơ quan thì mạch và thần kinh ngoài vùng chọn còn 40% — đục 100% thì chúng phủ kín bụng.

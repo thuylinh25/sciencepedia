@@ -191,6 +191,16 @@ type Surface = {
   /** Hệ số nhân ánh sáng gián tiếp khuếch tán (môi trường + đèn bán cầu) — mặt khuất tối hơn. */
   indirect?: string;
 };
+/**
+ * Độ cong trên màn hình (1/m; lồi dương) từ đạo hàm pháp tuyến theo vị trí — khai báo
+ * `tissueCurv`, `tissueCavity` (0–1, hốc). Dùng chung cho xương và cơ quan (xem `BONE`).
+ */
+const CURVATURE = `
+vec3 cavDx = dFdx(vViewPosition);
+vec3 cavDy = dFdy(vViewPosition);
+float tissueCurv = -0.5 * (dot(dFdx(normal), cavDx) / max(dot(cavDx, cavDx), 1e-12) + dot(dFdy(normal), cavDy) / max(dot(cavDy, cavDy), 1e-12));
+float tissueCavity = smoothstep(30.0, 170.0, -tissueCurv);
+`;
 /*
  * ## Xương kiểu minh hoạ atlas (2026-10-23)
  *
@@ -220,11 +230,9 @@ diffuseColor.rgb *= mix(0.7, 1.06, smoothstep(0.15, 0.9, tissueCoarse * 0.6 + ti
 diffuseColor.rgb *= mix(1.0, mix(0.8, 1.07, tissueStreak), vTissueAxis.w * tissueStreakAA);
 diffuseColor.rgb = mix(diffuseColor.rgb, diffuseColor.rgb * vec3(0.4, 0.31, 0.24), tissuePore * 0.75);
 `,
-  lit: `
-vec3 cavDx = dFdx(vViewPosition);
-vec3 cavDy = dFdy(vViewPosition);
-float tissueCurv = -0.5 * (dot(dFdx(normal), cavDx) / max(dot(cavDx, cavDx), 1e-12) + dot(dFdy(normal), cavDy) / max(dot(cavDy, cavDy), 1e-12));
-float tissueCavity = smoothstep(30.0, 170.0, -tissueCurv);
+  lit:
+    CURVATURE +
+    `
 float tissueRidge = smoothstep(60.0, 420.0, tissueCurv);
 diffuseColor.rgb = mix(diffuseColor.rgb, diffuseColor.rgb * vec3(0.5, 0.37, 0.26), tissueCavity * 0.7);
 diffuseColor.rgb = min(diffuseColor.rgb * (1.0 + 0.16 * tissueRidge) + 0.025 * tissueRidge, vec3(1.0));
@@ -244,7 +252,66 @@ diffuseColor.rgb *= mix(0.9, 1.05, tissueNoise(vTissue * 40.0) * 0.6 + tissueFin
 `,
   rough: "0.85 + 0.3 * tissueFine",
 };
+/*
+ * ## Cơ quan và cơ (2026-10-23)
+ *
+ * Review: thận, gan, tim, ruột là một màu phẳng như nhựa; cơ không có thớ (3/10). Chỉ
+ * nhiễu GIÁ TRỊ ở đây, không nhiễu tế bào 27 lần thử như lỗ xương: cơ và tạng phủ phần
+ * lớn màn hình, tốc độ điện thoại chưa đo.
+ *
+ * - Cơ quan: bao tạng ướt bóng (clearcoat), loang lớn rất khẽ + hạt nhỏ, hốc tối theo độ
+ *   cong (rốn thận, kẽ giữa các quai ruột, rãnh vành) và ánh sáng gián tiếp hạ nhẹ ở hốc.
+ * - Cơ: thớ theo trục dài của hộp bao mảnh, CHỈ ở cơ thon dài gấp ~2,6 lần bề ngang
+ *   (cơ may, nhị đầu, thẳng bụng). Cơ hình quạt (ngực lớn, chéo bụng, hoành) có trục hộp
+ *   bao không phải hướng thớ — không vẽ thớ cho chúng còn hơn vẽ sai hướng.
+ * - KHÔNG vẽ chuyển tiếp sang gân ở hai đầu cơ: dữ liệu chỉ có 4 mảnh gân, đoán gân theo
+ *   đầu hộp bao là tô gân lên chỗ bám thịt — một khẳng định giải phẫu sai ("trống hơn sai").
+ */
+const organ = (opts: { fine: number; coarse: number; mottle: number; cavity: number; coat?: number }): Surface => ({
+  coat: { clearcoat: opts.coat ?? 0.45, clearcoatRoughness: 0.32 },
+  glsl: `
+float tissueCoarse = tissueNoise(vTissue * ${opts.coarse.toFixed(1)});
+float tissueFine = tissueNoise(vTissue * ${opts.fine.toFixed(1)} + 4.7);
+diffuseColor.rgb *= mix(${(1 - opts.mottle).toFixed(3)}, 1.05, smoothstep(0.1, 0.9, tissueCoarse * 0.65 + tissueFine * 0.35));
+`,
+  lit:
+    CURVATURE +
+    `
+diffuseColor.rgb = mix(diffuseColor.rgb, diffuseColor.rgb * vec3(0.55, 0.42, 0.42), tissueCavity * ${opts.cavity.toFixed(2)});
+`,
+  indirect: "0.8 * (1.0 - 0.4 * tissueCavity)",
+  rough: "0.85 + 0.3 * tissueFine",
+});
+const MUSCLE: Surface = {
+  axis: true,
+  glsl: `
+float tissueFine = tissueNoise(vTissue * 160.0 + 3.3);
+vec3 tissueAlong = vTissueAxis.xyz * dot(vTissue, vTissueAxis.xyz);
+vec3 tissueAcross = vTissue - tissueAlong;
+float tissueFiberAA = 1.0 - smoothstep(0.35, 0.9, length(fwidth(vTissue * 420.0)));
+float tissueFiber = tissueNoise(tissueAcross * 420.0 + tissueAlong * 10.0 + 6.1);
+float tissueBundle = tissueNoise(tissueAcross * 95.0 + tissueAlong * 3.0 + 1.3);
+float tissueStrap = smoothstep(0.6, 1.0, vTissueAxis.w);
+diffuseColor.rgb *= mix(0.9, 1.04, tissueFine);
+// Thớ nhỏ hơn ~2 điểm ảnh thì thay bằng giá trị trung bình của nó: khỏi lấp lánh khi xoay.
+diffuseColor.rgb *= mix(1.0, mix(0.8, 1.07, mix(0.275, tissueFiber * 0.55, tissueFiberAA) + tissueBundle * 0.45), tissueStrap);
+`,
+  rough: "0.9 + 0.2 * tissueFine",
+};
 const SURFACES: Record<string, Surface> = {
+  muscular: MUSCLE,
+  "respiratory.pharynx": MUSCLE,
+  cardiac: organ({ fine: 150, coarse: 35, mottle: 0.12, cavity: 0.6, coat: 0.5 }),
+  "urinary.kidney": organ({ fine: 170, coarse: 40, mottle: 0.12, cavity: 0.65, coat: 0.55 }),
+  "urinary.bladder": organ({ fine: 150, coarse: 40, mottle: 0.1, cavity: 0.5 }),
+  "digestive.liver": organ({ fine: 380, coarse: 45, mottle: 0.16, cavity: 0.55, coat: 0.55 }),
+  "digestive.stomach": organ({ fine: 160, coarse: 30, mottle: 0.14, cavity: 0.6 }),
+  "digestive.esophagus": organ({ fine: 160, coarse: 40, mottle: 0.12, cavity: 0.5 }),
+  "digestive.small_intestine": organ({ fine: 170, coarse: 35, mottle: 0.12, cavity: 0.7 }),
+  "digestive.large_intestine": organ({ fine: 170, coarse: 35, mottle: 0.14, cavity: 0.7 }),
+  // Tuỵ, lách: tiểu thuỳ — loang mạnh hơn, ít bóng.
+  "digestive.pancreas": organ({ fine: 260, coarse: 90, mottle: 0.22, cavity: 0.55, coat: 0.25 }),
+  "lymphatic.spleen": organ({ fine: 200, coarse: 45, mottle: 0.14, cavity: 0.5, coat: 0.45 }),
   // Phổi: mảng ~1,5 cm, hạt ~5 mm, chấm sẫm thưa ~2 mm; màng phổi ướt bóng.
   "respiratory.lung": {
     coat: { clearcoat: 0.35, clearcoatRoughness: 0.38 },
@@ -554,6 +621,22 @@ export default function AnatomyScene({
 
     /** 1 trong lượt bối cảnh đặc của kiểu atlas: vật liệu thường vẽ CHỈ mảnh bối cảnh. */
     const contextPass = { value: 0 };
+    /*
+     * ## Chiều sâu: phía sau tối dần (2026-10-23)
+     *
+     * Review: cấu trúc sau và trước điểm nhìn sáng như nhau, nên khối đọc thành mặt phẳng.
+     * Không shadow map: thêm một lượt depth cả cảnh (~2,3 triệu tam giác) MỖI khung xoay;
+     * chỉ vẽ khi đứng yên thì lại "nhảy" như AO cũ. Thay bằng tối dần theo độ sâu: từ mặt
+     * phẳng qua tâm nhìn ra sau, tới −30% ở `DEPTH_SPAN` × khoảng cách camera. Bóng tiếp xúc
+     * là việc của GTAO sẵn có (chỉ desktop).
+     */
+    const depthFocus = { value: 1 };
+    const depthRange = { value: 1 };
+    /** Tâm nhìn của lượt đang vẽ: ảnh thu nhỏ đặt khung riêng, khung xem dùng `controls.target`. */
+    let depthTarget: T.Vector3 | null = null;
+    const DEPTH_SPAN = 0.12;
+    const DEPTH_GLSL = "uniform float depthFocus; uniform float depthRange;\n";
+    const DEPTH_DIM = "outgoingLight *= 1.0 - 0.3 * smoothstep(0.0, 1.0, (-vViewPosition.z - depthFocus) / depthRange);\n#include <opaque_fragment>";
     const materialFor = (system: SystemId, color: string, key = "") => {
       const skin = key === "integumentary.skin";
       const surface = SURFACES[key];
@@ -581,6 +664,9 @@ export default function AnatomyScene({
         shader.uniforms.selectionState = { value: selectionTexture };
         shader.uniforms.stateWidth = { value: width };
         shader.uniforms.contextPass = contextPass;
+        shader.uniforms.depthFocus = depthFocus;
+        shader.uniforms.depthRange = depthRange;
+        shader.fragmentShader = DEPTH_GLSL + shader.fragmentShader.replace("#include <opaque_fragment>", DEPTH_DIM);
         shader.vertexShader =
           "attribute float partIndex; uniform sampler2D partState; uniform sampler2D selectionState; uniform float stateWidth; uniform float contextPass; varying float partVisible; varying float partSelected; varying float partHovered; varying float partContext;\n" +
           (surface ? "varying vec3 vTissue;\n" : "") +
@@ -686,6 +772,8 @@ export default function AnatomyScene({
     ghostMaterial.onBeforeCompile = (shader) => {
       shader.uniforms.ghostFade = ghostFade;
       shader.uniforms.ghostXray = ghostXray;
+      shader.uniforms.depthFocus = depthFocus;
+      shader.uniforms.depthRange = depthRange;
       shader.uniforms.partState = { value: partTexture };
       shader.uniforms.selectionState = { value: selectionTexture };
       shader.uniforms.partTint = { value: tintTexture };
@@ -703,7 +791,9 @@ export default function AnatomyScene({
           );
       shader.fragmentShader =
         "uniform float ghostFade; uniform float ghostXray; varying float ghostOn; varying vec3 ghostTint; varying float ghostWindow;\n" +
+        DEPTH_GLSL +
         shader.fragmentShader
+          .replace("#include <opaque_fragment>", DEPTH_DIM)
           .replace("#include <clipping_planes_fragment>", "#include <clipping_planes_fragment>\nif (ghostOn < 0.5) discard;")
           .replace("#include <color_fragment>", "#include <color_fragment>\ndiffuseColor.rgb *= ghostTint;")
           /*
@@ -832,6 +922,8 @@ export default function AnatomyScene({
       setTintFade(semiStyle);
       translucentSeq = 0;
       sortParts();
+      depthFocus.value = Math.max(camera.position.distanceTo(depthTarget ?? controls.target), 0.01);
+      depthRange.value = DEPTH_SPAN * depthFocus.value;
       // Lượt chính có cấu trúc chính ghi TARGET_STENCIL: lớp mờ của lượt này không giới hạn,
       // vì phép thử "k > stencil" sẽ chặn nó ngay trên cấu trúc chính (hiếm: chọn mảnh sâu
       // trong góc nhìn có bối cảnh). Không có bối cảnh đặc thì giới hạn như thường.
@@ -2095,7 +2187,9 @@ export default function AnatomyScene({
       // trên R2 dùng chung cho mọi người đọc (đổi kiểu này thì tăng `THUMB_STYLE`).
       const ghostWas = ghostActive;
       ghostActive = hasContext;
+      depthTarget = frame.target;
       drawScene(true, false);
+      depthTarget = null;
       ghostActive = ghostWas;
       const out = document.createElement("canvas");
       out.width = THUMB_W;
