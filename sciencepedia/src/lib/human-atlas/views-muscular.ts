@@ -50,7 +50,7 @@ const PECTORAL = m(/pectoralis (major|minor)$|subclavius$|serratus anterior$/i);
 const THORACIC_WALL = m(/intercostal muscle$|transversus thoracis$/i);
 const EXTERNAL_OBLIQUE = m(/^(left|right) external oblique$/i);
 const ILIOPSOAS = m(/psoas major$|iliacus$/i);
-const PELVIC_FLOOR = m(/coccygeus$|puborectalis$|external anal sphincter$/i);
+export const PELVIC_FLOOR = m(/coccygeus$|puborectalis$|external anal sphincter$/i);
 // Chi trên.
 const SHOULDER = m(/deltoid$|supraspinatus$|infraspinatus muscle$|teres (major|minor)$|subscapularis$/i);
 const ARM_ANTERIOR = m(/biceps brachii$|\bbrachialis$|coracobrachialis$/i);
