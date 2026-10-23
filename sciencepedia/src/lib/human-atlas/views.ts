@@ -155,8 +155,13 @@ export type AtlasViewDef = {
    * (mặc định 0,74 ở trình xem, 0,86 ở ảnh thu nhỏ). Hướng vẫn là `direction`,
    * tâm và khoảng cách vẫn tính từ hộp bao — không toạ độ camera viết tay, để
    * dữ liệu đổi (nhập lại asset) thì khung đổi theo.
+   *
+   * `frame`: mảnh bối cảnh tính THÊM vào hộp khung (cộng, không thay tập nổi bật),
+   * phải nằm trong `context`. `fill` chỉ lùi/tiến quanh TÂM tập nổi bật: bàng quang +
+   * niệu đạo nam thõng xuống nằm thấp hơn xương chậu, lùi xa mấy thì xương chậu vẫn
+   * bị cắt ở trên và đáy khung bỏ trống (2026-10-23). `frame` dời tâm.
    */
-  camera?: { fill?: number; thumbnailFill?: number };
+  camera?: { fill?: number; thumbnailFill?: number; frame?: readonly PartRule[] };
 };
 
 export type ViewStatus = "available" | "partial" | "unavailable";
@@ -446,7 +451,7 @@ export function overviewFor(systemId: string | null | undefined): string | null 
 }
 
 /** `band`: cao độ (m, trục y) đã phân giải của lát ngang — `bottom` ≤ y ≤ `top`. */
-export type ViewParts = { focus: string[]; hide: string[]; context?: string[]; band?: { top?: number; bottom?: number } };
+export type ViewParts = { focus: string[]; hide: string[]; context?: string[]; frame?: string[]; band?: { top?: number; bottom?: number } };
 const PARTS = resolved as Record<string, ViewParts>;
 
 /** Mã mảnh của một góc nhìn dựng được, hoặc null. */

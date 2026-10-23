@@ -75,6 +75,14 @@ async function main() {
     });
     out[view.id] = { focus: [...focus].sort(), hide: [...hide].sort() };
     if (context.size) out[view.id].context = [...context].sort();
+    // Khung theo mảnh không hiện là khung quanh khoảng trống.
+    const frame = [...collect(view.camera?.frame)].filter((id) => !focus.has(id));
+    const unseen = frame.filter((id) => !context.has(id));
+    if (unseen.length) {
+      console.error(`  ✗ ${view.id}: camera.frame có ${unseen.length} mảnh không nằm trong context (${unseen.slice(0, 3).join(", ")}…)`);
+      failed = true;
+    }
+    if (frame.length) out[view.id].frame = frame.sort();
     if (view.band) {
       // Mốc phải khớp ĐÚNG một mảnh: hai đĩa cùng khớp thì tâm trung bình là một cao độ không đĩa nào ở.
       const boundsY = (rx: RegExp) => {
