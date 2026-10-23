@@ -906,7 +906,7 @@ của texture chọn); lượt hai vẽ lại cảnh với `scene.overrideMateri
 ghi depth, không xoá bộ đệm — cấu trúc chính vẫn che bối cảnh nằm sau. Bản đầu dùng ô cờ để khỏi
 đụng thứ tự vẽ: trên màn DPR 1 thành lưới sọc, thu nhỏ thì moiré — chủ sản phẩm chê. KHÔNG bật
 `transparent` trên vật liệu thường (mảnh bối cảnh chung vật liệu/lượt vẽ với mảnh nổi bật). Có bối
-cảnh thì không AO: composer vẽ vào render target, depth màn hình trống, bóng mờ sẽ đè lên tất cả.
+cảnh ở Xuyên thấu thì không AO (AO tô tối cả mảng mờ).
 **Bối cảnh mang màu mô thật của từng mảnh** (2026-10-02): một vật liệu ghi đè thì mất màu riêng, nên
 màu nhóm/hệ (cùng bảng với vật liệu thường) nằm trong texture `partTint` tra theo `partIndex`. Bản xám
 xanh 20% đọc thành mảng đen trong thẻ góc nhìn — chủ sản phẩm muốn giống atlas tham chiếu (xương ngà,
@@ -940,7 +940,18 @@ vẹn cho gọn: bối cảnh hay BAO cấu trúc chính (phổi quanh phế qu�
 Xương không xuống 10%: mất xương là mất mốc. Cùng thang dùng khi chọn một cấu trúc sâu (lớp ngoài mờ, thay
 0,18 đều cũ), lớp đang mờ chỉ vẽ mặt trước (hai mặt ở 45% cộng mặt trong thành lại bóng X-quang). Chọn một
 cơ quan thì cơ quan KHÁC cũng mờ 10%: cùng lớp nội tạng nên luật lớp ngoài không chạm tới, mà ruột non che kín
-thận. Composer dùng `ScenePass` gọi chính `drawScene` (render target có stencil) để kiểu atlas vẫn có AO.
+thận.
+**Khung AO = khung thường × AO** (2026-10-23). Bản đầu vẽ khung đứng yên qua EffectComposer vào bộ đệm
+HalfFloat tuyến tính rồi mới tone-map: lớp mờ trộn trong không gian tuyến tính, nên dừng tay là xương 45%
+trông như 70% và cả khung "nhảy". Nay khung đứng yên gọi đúng `drawScene` ra canvas như khung đang xoay,
+GTAO chỉ tính bộ đệm AO, một quad nhân AO^(1/2,2) lên canvas (canvas đã sRGB; nhân AO tuyến tính thẳng thì
+hốc tối hơn trước). Đo: khung thường trước/sau trùng pixel; khung AO lệch độ sáng trung bình < 1%. Đừng
+đưa composer trở lại cho "gọn": pass hậu kỳ trên bộ đệm tuyến tính lại tách khung đứng yên khỏi khung xoay.
+**Loại mảnh ở đỉnh, không ở điểm ảnh**: mảnh ẩn và mảnh không thuộc lượt đang vẽ bị đẩy ra ngoài clip
+space trong vertex shader (một mảnh = một `partIndex`, cả tam giác rơi), và mỗi lượt chỉ đưa vào mesh có
+mảnh cần vẽ ở lượt ấy (`showOnly`). Bản cũ `discard` ở fragment: vẫn tô mọi điểm ảnh của 2 triệu tam giác
+dưới da rồi mới bỏ, và `discard` trong shader tắt early-z. Đo Intel UHD 730 khi tự xoay (p50): toàn thân
+5,3 → 2,4 ms, góc nhìn thận 6,1 → 4,0 ms.
 Xuyên thấu giữ nguyên đường cũ, kể cả 0,18 đều. Ảnh thu nhỏ luôn kiểu atlas (dùng chung cho mọi người đọc).
 Không có shadow map, không `transmission` (thêm một lượt cả cảnh ~2,3 triệu tam giác), không `aoMap` (mesh
 không UV) — chiều sâu đến từ GTAO + ba đèn theo camera.
