@@ -90,7 +90,13 @@ export function ViewsGallery({ locale, activeViewId, thumbnails, onChoose, onClo
     // Mở lưới thì đưa mép trên khung xem lên đầu màn (scroll-mt chừa header dính).
     section.scrollIntoView({ block: "start", behavior: "instant" });
     window.addEventListener("resize", measure);
-    return () => window.removeEventListener("resize", measure);
+    return () => {
+      window.removeEventListener("resize", measure);
+      // Lưới cao hơn khung xem: chọn thẻ ở hàng dưới thì trang đã cuộn quá mép trên khung xem.
+      // Đóng lưới (chọn thẻ, nút đóng, Esc) mà giữ chỗ cuộn ấy thì mô hình vừa mở bị cắt
+      // nửa trên dưới header (chủ sản phẩm báo 2026-10-23) — đưa khung xem về đầu màn.
+      section.scrollIntoView({ block: "start", behavior: "instant" });
+    };
   }, []);
 
   // Lưới cao hơn khung xem thì phần thừa phủ lên nội dung bên dưới (thẻ hệ,
