@@ -107,6 +107,12 @@ const FADE_BY_LAYER: Record<AnatomyLayer, number> = {
   nervous: 0.1,
 };
 /**
+ * Mờ theo HỆ: như lớp, trừ mô liên kết. Cân cơ thành bụng (bao cơ thẳng, cân cơ chéo) là
+ * những tấm mỏng phủ cả bụng, màu trắng bạc bóng; ở 25% của lớp cơ chúng thành một màn
+ * trắng che thận ở "Hiện giải phẫu xung quanh" (chụp thử 2026-10-23) → 12%.
+ */
+const fadeOf = (system: SystemId) => (system === "connective" ? 0.12 : FADE_BY_LAYER[SYSTEM_LAYER[system]]);
+/**
  * Cạnh nhỏ nhất (mét) của khung camera quanh vùng chọn: một đốt sống chỉ 3–4 cm, khung
  * sát nó thì bóng mờ xung quanh chỉ là một mảng cơ, không nói được đốt nằm ở đâu.
  * 0,4 m ≈ bề ngang thân.
@@ -437,7 +443,7 @@ export default function AnatomyScene({
     parts.forEach((p, i) => {
       const key = p.group ?? (partGroups as Record<string, string>)[p.id] ?? p.system;
       const c = new T.Color(GROUP_COLORS[key] ?? SYSTEM_COLORS[p.system] ?? "#aebbb8");
-      tintData.set([c.r, c.g, c.b, FADE_BY_LAYER[SYSTEM_LAYER[p.system]]], i * 4);
+      tintData.set([c.r, c.g, c.b, fadeOf(p.system)], i * 4);
     });
     const tintTexture = new T.DataTexture(tintData, width, 1, T.RGBAFormat, T.FloatType);
     tintTexture.needsUpdate = true;
@@ -728,6 +734,31 @@ export default function AnatomyScene({
      * trắng che kín thận (chụp thử 2026-10-23). Stencil cấu trúc chính = số này, mỗi lớp trừ 1.
      */
     const WINDOW_LAYERS = 2;
+    /** Stencil của cấu trúc chính ở kiểu atlas; lượt cửa sổ trừ dần xuống `TARGET - WINDOW_LAYERS`. */
+    const TARGET_STENCIL = 255;
+    /*
+     * ## Lớp mờ không tự chồng lên chính nó (2026-10-23)
+     *
+     * Mỗi nhóm vật liệu gộp nhiều mảnh vào một lượt vẽ: ruột non là hàng chục quai trong
+     * cùng một lượt. Mờ 10% mà 20 quai chồng nhau thì còn 1 − 0,9²⁰ ≈ 88% đục — mảng
+     * trắng hồng che kín thận ở "Hiện giải phẫu xung quanh". Nên mỗi LƯỢT VẼ mờ chỉ được tô
+     * một lớp trên mỗi điểm ảnh: lượt thứ k thử "k > stencil" rồi ghi k. Số thứ tự cấp theo
+     * đúng thứ tự three.js vẽ (`onBeforeRender` của mesh), nên lượt sau luôn vẽ được lên
+     * lượt trước — mô KHÁC nhau vẫn chồng (cơ trước ruột), chỉ một mô không chồng chính nó.
+     * k < TARGET_STENCIL − WINDOW_LAYERS nên không bao giờ vẽ đè cấu trúc chính.
+     */
+    const TRANSLUCENT_MAX = TARGET_STENCIL - WINDOW_LAYERS - 1;
+    let translucentSeq = 0;
+    let limitTranslucent = false;
+    const limitHook: T.Object3D["onBeforeRender"] = (_r, _s, _c, _g, material) => {
+      if (!material.transparent || material === ghostMaterial) return;
+      const on = limitTranslucent && translucentSeq < TRANSLUCENT_MAX;
+      material.stencilWrite = on;
+      if (!on) return;
+      material.stencilFunc = T.GreaterStencilFunc;
+      material.stencilRef = ++translucentSeq;
+      material.stencilZPass = T.ReplaceStencilOp;
+    };
     /*
      * ## Bối cảnh kiểu atlas (2026-10-23)
      *
@@ -736,10 +767,11 @@ export default function AnatomyScene({
      * đâu. Nhưng bối cảnh hay BAO cấu trúc chính (phổi quanh phế quản, đốt sống
      * quanh tuỷ): vẽ đặc cả thì cấu trúc chính biến mất. Nên ba lượt:
      *
-     *   1. Lượt chính: cấu trúc chính, ghi stencil = WINDOW_LAYERS ở mọi điểm ảnh của nó.
-     *   2. Bối cảnh đặc, vật liệu thật, chỉ ở chỗ stencil = 0 (không che cấu trúc chính).
-     *      Bối cảnh nằm SAU cấu trúc chính đã bị depth loại sẵn.
-     *   3. "Cửa sổ": bối cảnh nằm TRƯỚC cấu trúc chính (stencil > 0), vẽ mờ theo lớp
+     *   1. Lượt chính: cấu trúc chính, ghi stencil = TARGET_STENCIL ở mọi điểm ảnh của nó.
+     *   2. Bối cảnh, vật liệu thật, chỉ ở chỗ không phải cấu trúc chính; lớp mờ của nó
+     *      không tự chồng (xem "Lớp mờ không tự chồng"). Bối cảnh nằm SAU cấu trúc chính
+     *      đã bị depth loại sẵn.
+     *   3. "Cửa sổ": bối cảnh nằm TRƯỚC cấu trúc chính (stencil gần TARGET), vẽ mờ theo lớp
      *      (`FADE_BY_LAYER`) bằng vật liệu ghi đè, chiếu sáng thật, không ghi depth; mỗi
      *      lớp trừ stencil 1, nên không quá WINDOW_LAYERS lớp chồng lên nhau.
      *
@@ -748,26 +780,38 @@ export default function AnatomyScene({
      * cắt ra xa trong lượt ấy. Xuyên thấu (`xray`) giữ nguyên đường cũ: lượt chính
      * rồi một lượt bóng mờ tự sáng.
      */
+    const opaqueMats = () => [...mats.values()].filter((m) => !m.transparent);
     const drawScene = (atlasStyle = !xray) => {
       const solidContext = ghostActive && atlasStyle;
-      if (solidContext) setStencil(mats.values(), T.AlwaysStencilFunc, WINDOW_LAYERS, T.ReplaceStencilOp);
+      translucentSeq = 0;
+      // Lượt chính có cấu trúc chính ghi TARGET_STENCIL: lớp mờ của lượt này không giới hạn,
+      // vì phép thử "k > stencil" sẽ chặn nó ngay trên cấu trúc chính (hiếm: chọn mảnh sâu
+      // trong góc nhìn có bối cảnh). Không có bối cảnh đặc thì giới hạn như thường.
+      limitTranslucent = atlasStyle && !solidContext;
+      if (solidContext) setStencil(opaqueMats(), T.AlwaysStencilFunc, TARGET_STENCIL, T.ReplaceStencilOp);
       renderer.render(scene, camera);
-      if (!ghostActive) return;
+      if (!ghostActive) {
+        limitTranslucent = false;
+        return;
+      }
       const autoClear = renderer.autoClear;
       const markersShown = markers.visible;
       renderer.autoClear = false;
       markers.visible = false;
       if (solidContext) {
-        setStencil(mats.values(), T.EqualStencilFunc, 0);
+        // Bối cảnh đặc: chỉ ở chỗ KHÔNG phải cấu trúc chính (stencil < TARGET − WINDOW_LAYERS).
+        setStencil(opaqueMats(), T.GreaterStencilFunc, TARGET_STENCIL - WINDOW_LAYERS);
+        limitTranslucent = true;
         const cuts = contextUncut ? clipList.map((p) => p.constant) : [];
         if (contextUncut) clipList.forEach((p) => (p.constant = 1e6));
         contextPass.value = 1;
         renderer.render(scene, camera);
         contextPass.value = 0;
         cuts.forEach((c, k) => (clipList[k].constant = c));
+        limitTranslucent = false;
         setStencil(mats.values(), null);
-        // Qua khi stencil > 0 (ref 0 < stencil), mỗi lớp vẽ trừ 1 — tối đa WINDOW_LAYERS lớp.
-        setStencil([ghostMaterial], T.LessStencilFunc, 0, T.DecrementStencilOp);
+        // Qua khi stencil > TARGET − WINDOW_LAYERS, mỗi lớp vẽ trừ 1 — tối đa WINDOW_LAYERS lớp.
+        setStencil([ghostMaterial], T.LessStencilFunc, TARGET_STENCIL - WINDOW_LAYERS, T.DecrementStencilOp);
         ghostXray.value = 0;
       }
       scene.overrideMaterial = ghostMaterial;
@@ -849,7 +893,7 @@ export default function AnatomyScene({
       for (const system of SYSTEM_IDS) {
         let alpha = layerOpacity(SYSTEM_LAYER[system], effectivePeel(peel, latest.current.visible));
         const faded = layerIndex(system) < deepest;
-        if (faded) alpha = Math.min(alpha, xray ? DIMMED : FADE_BY_LAYER[SYSTEM_LAYER[system]]);
+        if (faded) alpha = Math.min(alpha, xray ? DIMMED : fadeOf(system));
         alphaBySystem.set(system, alpha);
         const organPicked = !xray && deepest === ORGANS;
         const siblings = organPicked && layerIndex(system) === ORGANS;
@@ -980,6 +1024,7 @@ export default function AnatomyScene({
         if (!merged) return;
         const mesh = new T.Mesh(merged, materialForKey(k, system));
         mesh.frustumCulled = false;
+        mesh.onBeforeRender = limitHook;
         mesh.renderOrder = LAYERS.length - LAYERS.indexOf(SYSTEM_LAYER[system]);
         capGroup.add(mesh);
       });
@@ -1175,6 +1220,7 @@ export default function AnatomyScene({
         geometries.push(geometry);
         const mesh = new T.Mesh(geometry, materialForKey(key, system));
         mesh.frustumCulled = false;
+        mesh.onBeforeRender = limitHook;
         // Ngoài cùng vẽ cuối: lớp mờ phải vẽ sau những gì nó phủ lên.
         mesh.renderOrder = LAYERS.length - LAYERS.indexOf(SYSTEM_LAYER[system]);
         scene.add(mesh);
