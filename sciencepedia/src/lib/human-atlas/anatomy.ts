@@ -260,6 +260,10 @@ export type Concept = Atlas["concepts"][number];
 
 export type View = "three-quarter" | "front" | "side" | "back";
 
+/** Cách vẽ: đặc kiểu atlas (mặc định), bán trong suốt, xuyên thấu kiểu X-quang — `SceneState.look`. */
+export const ATLAS_LOOKS = ["atlas", "semi", "xray"] as const;
+export type AtlasLook = (typeof ATLAS_LOOKS)[number];
+
 export interface SceneState {
   inspectorOpen?: boolean;
   explode: number;
@@ -273,10 +277,12 @@ export interface SceneState {
    */
   surround?: boolean;
   /**
-   * "Xuyên thấu": bối cảnh vẽ kiểu X-quang (tự sáng theo viền, trong suốt) như trước
-   * 2026-10-23. Mặc định tắt — kiểu atlas, bối cảnh đặc (anatomy-scene, `drawScene`).
+   * Cách vẽ lớp bối cảnh và lớp che (anatomy-scene, `drawScene`). Mặc định "atlas": bối
+   * cảnh đặc, chỉ chỗ che cấu trúc đang xem mới mờ (xương 45%, cơ 25%, mô mềm 10%).
+   * "semi": như atlas nhưng mờ 40–60%. "xray" (Xuyên thấu): bối cảnh trong suốt tự sáng theo
+   * viền, như trước 2026-10-23.
    */
-  xray?: boolean;
+  look?: AtlasLook;
   view: View;
   rotate: boolean;
   reset: number;

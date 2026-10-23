@@ -2,7 +2,7 @@
 
 // Client: bật tắt hệ đổi state của trình xem, vốn chỉ sống ở client.
 
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 import { useTranslations } from "next-intl";
 import { ChevronDown, HeartPulse, X } from "lucide-react";
 
@@ -26,6 +26,8 @@ type Props = {
   onClose: () => void;
   onToggle: (id: SystemId) => void;
   onShowOnly: (ids: SystemId[]) => void;
+  /** Bộ chọn "Cách vẽ" (`LookPicker`), đặt trên dòng đếm. */
+  lookPicker?: ReactNode;
 };
 
 function same(a: SystemId[], b: SystemId[]) {
@@ -57,6 +59,7 @@ export function SystemsPanel({
   onClose,
   onToggle,
   onShowOnly,
+  lookPicker,
 }: Props) {
   const t = useTranslations("humanAtlas");
   const [expanded, setExpanded] = useState(false);
@@ -197,6 +200,7 @@ export function SystemsPanel({
         })}
       </ul>
 
+      {lookPicker}
       <div className="flex min-h-11 items-center justify-between gap-2 border-t text-xs text-muted-foreground">
         {/* aria-live: bật tắt một hệ thì trình đọc màn hình đọc lại con số. */}
         <span className="tabular-nums" aria-live="polite">

@@ -881,6 +881,17 @@
     "fitLabel": "Vừa khung",
     "resetLabel": "Đặt lại góc nhìn và độ tách lớp",
     "xray": "Xuyên thấu: cấu trúc xung quanh trong suốt kiểu X-quang",
+    "look": "Cách vẽ",
+    "looks": {
+      "atlas": "Đặc",
+      "semi": "Bán trong suốt",
+      "xray": "Xuyên thấu"
+    },
+    "lookHints": {
+      "atlas": "Bối cảnh đặc; chỉ lớp che cấu trúc đang xem mới mờ (xương 45%, cơ 25%, mô mềm 10%)",
+      "semi": "Lớp che mờ 40–60%: thấy rõ hơn lớp nằm trước cấu trúc đang xem",
+      "xray": "Cấu trúc xung quanh trong suốt kiểu X-quang"
+    },
     "explode": "Tách các lớp cơ thể",
     "explodeShort": "Tách lớp",
     "caption": {

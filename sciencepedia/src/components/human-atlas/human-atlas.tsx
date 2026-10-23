@@ -81,6 +81,7 @@ import { PANEL } from "@/components/human-atlas/panel";
 import { StructureSearch } from "@/components/human-atlas/structure-search";
 import { StructuresPanel } from "@/components/human-atlas/structures-panel";
 import { SystemsPanel } from "@/components/human-atlas/systems-panel";
+import { LookPicker } from "@/components/human-atlas/look-picker";
 import { ViewsGallery } from "@/components/human-atlas/views-gallery";
 import { isSystemView, isUsableView, overviewFor, viewById, viewParts } from "@/lib/human-atlas/views";
 import { viewStructures, type AnatomicalStructure } from "@/lib/human-atlas/atlas-model";
@@ -515,6 +516,9 @@ export function HumanAtlas({
   // nghĩa gì với hệ mới, và người đọc cần thấy hệ ấy ở đúng chỗ trong cơ thể trước.
   // Đụng tới tập hệ là rời góc nhìn: góc nhìn là một tập mảnh cố định, bật thêm
   // một hệ vào nó thì không còn là góc nhìn ấy nữa.
+  const lookPicker = (
+    <LookPicker look={state.look ?? "atlas"} onChange={(look) => setState((s) => ({ ...s, look }))} />
+  );
   const showOnly = (ids: SystemId[]) => {
     setDetails(false);
     leaveViewParam();
@@ -960,6 +964,7 @@ export function HumanAtlas({
             setGalleryOpened(true);
           }}
           onClose={() => setPanel(null)}
+          lookPicker={lookPicker}
         />
       ) : (
       <SystemsPanel
@@ -974,6 +979,7 @@ export function HumanAtlas({
         onClose={() => setPanel(null)}
         onToggle={toggle}
         onShowOnly={showOnly}
+        lookPicker={lookPicker}
       />
       )}
 
@@ -1098,12 +1104,13 @@ export function HumanAtlas({
           <RotateCcw aria-hidden />
         </ToolButton>
         {/* Kiểu atlas (bối cảnh đặc) là mặc định; X-quang cũ thành lựa chọn — chủ sản phẩm 2026-10-23.
-            Màn thấp (320×568) không có chỗ: cột nút đã chạm nút trợ lý AI, thêm nút là đè lên. */}
+            Lối tắt của "Cách vẽ" (đủ ba kiểu ở bảng bên trái, `LookPicker`). Màn thấp (320×568)
+            không có chỗ: cột nút đã chạm nút trợ lý AI — ở đó chỉ còn bộ chọn trong bảng. */}
         <ToolButton
           label={t("xray")}
-          active={!!state.xray}
+          active={state.look === "xray"}
           className="atlas-short:hidden [@media(max-height:600px)]:hidden"
-          onClick={() => setState((s) => ({ ...s, xray: !s.xray }))}
+          onClick={() => setState((s) => ({ ...s, look: s.look === "xray" ? "atlas" : "xray" }))}
         >
           <ScanEye aria-hidden />
         </ToolButton>
