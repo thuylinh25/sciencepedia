@@ -957,6 +957,11 @@ BodyParts3D mượt, ít mốc) và texture vẽ tay — shader không bù đư�
 **Chọn = chỉ viền.** Ám cyan 12% + phát sáng nền trên mô sẫm (thận) cộng thành tím nhạt, như cơ quan khác.
 **"Cơ quan khác mờ 10%" không chạm cấu trúc chính của góc nhìn** (bàng quang 10% thành khối nâu đen), và khi
 chọn một cơ quan thì mạch và thần kinh ngoài vùng chọn còn 40% — đục 100% thì chúng phủ kín bụng.
+**Một lượt vẽ mờ không tự chồng lên chính nó** (`limitHook`): mỗi nhóm vật liệu gộp nhiều mảnh vào một
+lượt vẽ, nên 20 quai ruột non ở 10% cộng thành ~88% đục. Lượt mờ thứ k (đếm trong `onBeforeRender`, tức
+đúng thứ tự three.js vẽ) thử "k > stencil" rồi ghi k: mô khác nhau vẫn chồng, một mô chỉ một lớp. Cấu trúc
+chính ghi 255 nên lớp mờ không đè lên nó. **Mô liên kết mờ 12%**, không theo 25% của lớp cơ: cân cơ thành
+bụng là tấm mỏng trắng bạc phủ cả bụng, ở 25% thành màn trắng che thận.
 
 **Ảnh thu nhỏ chụp mọi lớp ĐỤC**, không theo độ đậm đang có ở khung xem: độ đậm theo lớp bóc tính từ tập hệ đang bật, nên chụp khi đang ở "Phổi" (không hệ cơ) thì cơ opacity 0 — ảnh bìa "Cơ hít vào" chỉ còn bóng xương sườn. Mở góc nhìn luôn về nguyên khối, ảnh bìa phải khớp thế.
 

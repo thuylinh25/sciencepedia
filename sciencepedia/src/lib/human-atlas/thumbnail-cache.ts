@@ -22,7 +22,7 @@ import prebaked from "./thumbnails.generated.json";
  * Tăng khi đổi cách `renderThumbnail` vẽ — ảnh đệm cũ sẽ bị bỏ. Tăng rồi thì
  * chụp sẵn lại (`npm run atlas:thumbs`), không thì mọi thẻ về chụp ở client.
  */
-export const THUMB_STYLE = 3;
+export const THUMB_STYLE = 4;
 
 /*
  * Ảnh chụp sẵn trên R2 (2026-10-21). Đệm IndexedDB chỉ giúp lần SAU: lần đầu
