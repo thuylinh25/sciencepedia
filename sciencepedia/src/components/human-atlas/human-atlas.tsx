@@ -29,6 +29,7 @@ import {
   RotateCcw,
   RotateCw,
   Scan,
+  ScanEye,
   Search,
   X,
   ZoomIn,
@@ -1095,6 +1096,16 @@ export function HumanAtlas({
         </ToolButton>
         <ToolButton label={t("resetLabel")} onClick={reset}>
           <RotateCcw aria-hidden />
+        </ToolButton>
+        {/* Kiểu atlas (bối cảnh đặc) là mặc định; X-quang cũ thành lựa chọn — chủ sản phẩm 2026-10-23.
+            Màn thấp (320×568) không có chỗ: cột nút đã chạm nút trợ lý AI, thêm nút là đè lên. */}
+        <ToolButton
+          label={t("xray")}
+          active={!!state.xray}
+          className="atlas-short:hidden [@media(max-height:600px)]:hidden"
+          onClick={() => setState((s) => ({ ...s, xray: !s.xray }))}
+        >
+          <ScanEye aria-hidden />
         </ToolButton>
         <span aria-hidden className="mx-2 my-1 h-px bg-border atlas-short:hidden" />
         {/* Zoom bằng nút: không phải ai cũng có con lăn hay biết chụm hai ngón. */}

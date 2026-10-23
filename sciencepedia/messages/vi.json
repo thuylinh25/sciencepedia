@@ -880,6 +880,7 @@
     "zoomOutLabel": "Thu nhỏ",
     "fitLabel": "Vừa khung",
     "resetLabel": "Đặt lại góc nhìn và độ tách lớp",
+    "xray": "Xuyên thấu: cấu trúc xung quanh trong suốt kiểu X-quang",
     "explode": "Tách các lớp cơ thể",
     "explodeShort": "Tách lớp",
     "caption": {

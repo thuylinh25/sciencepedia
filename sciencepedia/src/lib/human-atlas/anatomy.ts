@@ -271,6 +271,11 @@ export interface SceneState {
    * `isolate` false và có vùng chọn.
    */
   surround?: boolean;
+  /**
+   * "Xuyên thấu": bối cảnh vẽ kiểu X-quang (tự sáng theo viền, trong suốt) như trước
+   * 2026-10-23. Mặc định tắt — kiểu atlas, bối cảnh đặc (anatomy-scene, `drawScene`).
+   */
+  xray?: boolean;
   view: View;
   rotate: boolean;
   reset: number;
