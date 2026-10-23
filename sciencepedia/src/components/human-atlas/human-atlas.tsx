@@ -1097,11 +1097,12 @@ export function HumanAtlas({
         <ToolButton label={t("resetLabel")} onClick={reset}>
           <RotateCcw aria-hidden />
         </ToolButton>
-        {/* Kiểu atlas (bối cảnh đặc) là mặc định; X-quang cũ thành lựa chọn — chủ sản phẩm 2026-10-23. */}
+        {/* Kiểu atlas (bối cảnh đặc) là mặc định; X-quang cũ thành lựa chọn — chủ sản phẩm 2026-10-23.
+            Màn thấp (320×568) không có chỗ: cột nút đã chạm nút trợ lý AI, thêm nút là đè lên. */}
         <ToolButton
           label={t("xray")}
           active={!!state.xray}
-          className="atlas-short:hidden"
+          className="atlas-short:hidden [@media(max-height:600px)]:hidden"
           onClick={() => setState((s) => ({ ...s, xray: !s.xray }))}
         >
           <ScanEye aria-hidden />
