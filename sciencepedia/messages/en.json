@@ -880,6 +880,7 @@
     "zoomOutLabel": "Zoom out",
     "fitLabel": "Fit to view",
     "resetLabel": "Reset view and layer separation",
+    "xray": "See-through: surrounding structures transparent, X-ray style",
     "explode": "Separate body layers",
     "explodeShort": "Separate",
     "caption": {

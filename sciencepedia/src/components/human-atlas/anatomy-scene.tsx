@@ -11,7 +11,7 @@ import { RoomEnvironment } from "three/examples/jsm/environments/RoomEnvironment
 import { EffectComposer } from "three/examples/jsm/postprocessing/EffectComposer.js";
 import { GTAOPass } from "three/examples/jsm/postprocessing/GTAOPass.js";
 import { OutputPass } from "three/examples/jsm/postprocessing/OutputPass.js";
-import { RenderPass } from "three/examples/jsm/postprocessing/RenderPass.js";
+import { Pass } from "three/examples/jsm/postprocessing/Pass.js";
 import { mergeGeometries } from "three/examples/jsm/utils/BufferGeometryUtils.js";
 
 import partGroups from "@/lib/human-atlas/part-groups.generated.json";
@@ -24,6 +24,7 @@ import {
   effectivePeel,
   layerOpacity,
   peelToExplode,
+  type AnatomyLayer,
   type Atlas,
   type SceneState,
   type SystemId,
@@ -85,8 +86,26 @@ type Props = {
  * là thứ duy nhất trong khung, nền không được có màu riêng. Khớp với nền của
  * khung trong `human-atlas.tsx` để không loé khi canvas chưa vẽ.
  */
-/** Độ đục lượt bóng mờ khi "Hiện giải phẫu xung quanh" (xem `ghostFade`). */
+/** Độ đục lượt bóng mờ khi "Hiện giải phẫu xung quanh" ở chế độ Xuyên thấu (xem `ghostFade`). */
 const SURROUND_FADE = 0.3;
+/**
+ * ## Kiểu atlas: mờ theo lớp, không mờ đều (2026-10-23)
+ *
+ * Chủ sản phẩm: xem thận mà cột sống, xương chậu trong suốt như phim X-quang thì
+ * mất cảm giác thận nằm ở đâu. Atlas tham chiếu giữ xương ĐẶC; chỉ chỗ một lớp
+ * che cấu trúc đang học mới mờ, và mờ theo loại mô — xương còn 45% (vẫn đọc ra
+ * xương sườn nằm trước thận), cơ 25%, mô mềm 10%. Không xuống 10% cho xương:
+ * mất xương là mất mốc định hướng. Dùng cho cả hai đường: lớp ngoài khi chọn một
+ * cấu trúc sâu (`applyLayers`) và bối cảnh che cấu trúc chính (lượt "cửa sổ").
+ */
+const FADE_BY_LAYER: Record<AnatomyLayer, number> = {
+  surface: 0.1,
+  muscle: 0.25,
+  skeleton: 0.45,
+  organs: 0.1,
+  vascular: 0.1,
+  nervous: 0.1,
+};
 /**
  * Cạnh nhỏ nhất (mét) của khung camera quanh vùng chọn: một đốt sống chỉ 3–4 cm, khung
  * sát nó thì bóng mờ xung quanh chỉ là một mảng cơ, không nói được đốt nằm ở đâu.
@@ -179,6 +198,19 @@ diffuseColor.rgb *= mix(0.82, 1.08, tissueFiber);
   },
 };
 
+/** Pass của composer vẽ cảnh bằng một hàm tuỳ ý (nhiều lượt) vào bộ đệm đọc, như RenderPass. */
+class ScenePass extends Pass {
+  constructor(private readonly draw: () => void) {
+    super();
+    this.needsSwap = false;
+  }
+
+  render(renderer: T.WebGLRenderer, _writeBuffer: T.WebGLRenderTarget, readBuffer: T.WebGLRenderTarget) {
+    renderer.setRenderTarget(this.renderToScreen ? null : readBuffer);
+    this.draw();
+  }
+}
+
 /** Số khối tải song song — giữ như bản gốc: đủ lấp băng thông, không nghẽn kết nối. */
 const PARALLEL_CHUNKS = 3;
 
@@ -240,6 +272,9 @@ export default function AnatomyScene({
         // OutputPass áp ACES + sRGB LẦN NỮA lên nó — #05070a thành navy
         // (20,29,39) chỉ ở những khung có AO. Không vẽ nền thì không lệch được.
         alpha: true,
+        // Stencil cho kiểu atlas: đánh dấu điểm ảnh của cấu trúc chính để bối cảnh
+        // che nó vẽ mờ, còn lại vẽ đặc (xem "Bối cảnh kiểu atlas"). r163+ mặc định tắt.
+        stencil: true,
         powerPreference: "high-performance",
       });
     } catch {
@@ -340,11 +375,12 @@ export default function AnatomyScene({
      * liệu thường (nhóm → hệ). Lượt đó dùng MỘT vật liệu ghi đè cho mọi mảnh nên
      * màu phải tra theo `partIndex`, không lấy được từ vật liệu.
      */
+    // Kênh A: độ đục khi mảnh bối cảnh CHE cấu trúc chính ở kiểu atlas (`FADE_BY_LAYER`).
     const tintData = new Float32Array(width * 4);
     parts.forEach((p, i) => {
       const key = p.group ?? (partGroups as Record<string, string>)[p.id] ?? p.system;
       const c = new T.Color(GROUP_COLORS[key] ?? SYSTEM_COLORS[p.system] ?? "#aebbb8");
-      tintData.set([c.r, c.g, c.b, 1], i * 4);
+      tintData.set([c.r, c.g, c.b, FADE_BY_LAYER[SYSTEM_LAYER[p.system]]], i * 4);
     });
     const tintTexture = new T.DataTexture(tintData, width, 1, T.RGBAFormat, T.FloatType);
     tintTexture.needsUpdate = true;
@@ -430,6 +466,8 @@ export default function AnatomyScene({
       return best;
     };
 
+    /** 1 trong lượt bối cảnh đặc của kiểu atlas: vật liệu thường vẽ CHỈ mảnh bối cảnh. */
+    const contextPass = { value: 0 };
     const materialFor = (system: SystemId, color: string, key = "") => {
       const skin = key === "integumentary.skin";
       const surface = SURFACES[key];
@@ -456,6 +494,7 @@ export default function AnatomyScene({
         shader.uniforms.partState = { value: partTexture };
         shader.uniforms.selectionState = { value: selectionTexture };
         shader.uniforms.stateWidth = { value: width };
+        shader.uniforms.contextPass = contextPass;
         shader.vertexShader =
           "attribute float partIndex; uniform sampler2D partState; uniform sampler2D selectionState; uniform float stateWidth; varying float partVisible; varying float partSelected; varying float partHovered; varying float partContext;\n" +
           (surface ? "varying vec3 vTissue;\n" : "") +
@@ -467,14 +506,14 @@ export default function AnatomyScene({
             (surface ? " vTissue = position;" : ""),
         );
         shader.fragmentShader =
-          "varying float partVisible; varying float partSelected; varying float partHovered; varying float partContext;\n" + shader.fragmentShader;
+          "uniform float contextPass; varying float partVisible; varying float partSelected; varying float partHovered; varying float partContext;\n" + shader.fragmentShader;
         shader.fragmentShader = shader.fragmentShader.replace(
           "#include <clipping_planes_fragment>",
-          "#include <clipping_planes_fragment>\nif (partVisible < 0.5) discard;\nif (partContext > 0.5 && partSelected < 0.5) discard;",
+          "#include <clipping_planes_fragment>\nif (partVisible < 0.5) discard;\nif ((partContext > 0.5 && partSelected < 0.5) != (contextPass > 0.5)) discard;",
         );
         /*
          * Mảnh BỐI CẢNH của góc nhìn theo hệ (kênh A của texture chọn) không vẽ ở
-         * lượt này — `ghostMaterial` vẽ nó ở lượt thứ hai (xem dưới).
+         * lượt chính — lượt bối cảnh vẽ nó sau (xem "Bối cảnh kiểu atlas").
          *
          * Mảnh đang chọn GIỮ màu và bề mặt của nó: chỉ ám cyan 12%, cộng viền
          * sáng cyan ở rìa (fresnel) và phát sáng rất khẽ. Bản gốc trộn 75% sang
@@ -522,6 +561,9 @@ export default function AnatomyScene({
      * vẽ LẠI cảnh với `scene.overrideMaterial = ghostMaterial`, không xoá bộ đệm,
      * không ghi depth — nên cấu trúc chính vẫn che phần bối cảnh nằm sau nó. Đỉnh
      * không phải bối cảnh bị đẩy ra ngoài clip space, khỏi tô điểm ảnh.
+     *
+     * Từ 2026-10-23 cách vẽ ấy là chế độ "Xuyên thấu" (`SceneState.xray`), không
+     * còn mặc định — xem "Bối cảnh kiểu atlas" ở `drawScene`.
      */
     const ghostMaterial = new T.MeshStandardMaterial({
       color: "#ffffff",
@@ -539,25 +581,28 @@ export default function AnatomyScene({
      * tạng chồng nhau ở 0,55 cộng lại gần đục và che mất vùng chọn — hạ xuống.
      */
     const ghostFade = { value: 1 };
+    /** 1 = Xuyên thấu (tự sáng theo viền); 0 = lượt "cửa sổ" của kiểu atlas (chiếu sáng thật). */
+    const ghostXray = { value: 1 };
     ghostMaterial.onBeforeCompile = (shader) => {
       shader.uniforms.ghostFade = ghostFade;
+      shader.uniforms.ghostXray = ghostXray;
       shader.uniforms.partState = { value: partTexture };
       shader.uniforms.selectionState = { value: selectionTexture };
       shader.uniforms.partTint = { value: tintTexture };
       shader.uniforms.stateWidth = { value: width };
       shader.vertexShader =
-        "attribute float partIndex; uniform sampler2D partState; uniform sampler2D selectionState; uniform sampler2D partTint; uniform float stateWidth; varying float ghostOn; varying vec3 ghostTint;\n" +
+        "attribute float partIndex; uniform sampler2D partState; uniform sampler2D selectionState; uniform sampler2D partTint; uniform float stateWidth; varying float ghostOn; varying vec3 ghostTint; varying float ghostWindow;\n" +
         shader.vertexShader
           .replace(
             "#include <begin_vertex>",
-            "#include <begin_vertex>\nvec2 stateUv = vec2((partIndex + 0.5) / stateWidth, 0.5); vec4 state = texture2D(partState, stateUv); transformed += state.xyz; vec4 pick = texture2D(selectionState, stateUv); ghostOn = step(0.5, state.w) * step(0.5, pick.a) * (1.0 - step(0.5, pick.r)); ghostTint = texture2D(partTint, stateUv).rgb;",
+            "#include <begin_vertex>\nvec2 stateUv = vec2((partIndex + 0.5) / stateWidth, 0.5); vec4 state = texture2D(partState, stateUv); transformed += state.xyz; vec4 pick = texture2D(selectionState, stateUv); ghostOn = step(0.5, state.w) * step(0.5, pick.a) * (1.0 - step(0.5, pick.r)); vec4 tint = texture2D(partTint, stateUv); ghostTint = tint.rgb; ghostWindow = tint.a;",
           )
           .replace(
             "#include <project_vertex>",
             "#include <project_vertex>\nif (ghostOn < 0.5) gl_Position = vec4(0.0, 0.0, 2.0, 1.0);",
           );
       shader.fragmentShader =
-        "uniform float ghostFade; varying float ghostOn; varying vec3 ghostTint;\n" +
+        "uniform float ghostFade; uniform float ghostXray; varying float ghostOn; varying vec3 ghostTint; varying float ghostWindow;\n" +
         shader.fragmentShader
           .replace("#include <clipping_planes_fragment>", "#include <clipping_planes_fragment>\nif (ghostOn < 0.5) discard;")
           .replace("#include <color_fragment>", "#include <color_fragment>\ndiffuseColor.rgb *= ghostTint;")
@@ -571,7 +616,12 @@ export default function AnatomyScene({
            */
           .replace(
             "#include <emissivemap_fragment>",
-            "#include <emissivemap_fragment>\nfloat ghostRim = pow(1.0 - abs(dot(normal, normalize(vViewPosition))), 2.0);\ntotalEmissiveRadiance += diffuseColor.rgb * (0.16 + 0.3 * ghostRim);\ndiffuseColor.a *= (0.72 + 0.5 * ghostRim) * ghostFade;",
+            "#include <emissivemap_fragment>\nfloat ghostRim = pow(1.0 - abs(dot(normal, normalize(vViewPosition))), 2.0);\n" +
+              "if (ghostXray > 0.5) {\ntotalEmissiveRadiance += diffuseColor.rgb * (0.16 + 0.3 * ghostRim);\ndiffuseColor.a *= (0.72 + 0.5 * ghostRim) * ghostFade;\n" +
+              // Cửa sổ atlas: mô chiếu sáng như lượt đặc, chỉ đục theo lớp; viền đậm hơn chút
+              // để vẫn đọc ra mép xương sườn trước thận. Phát sáng rất nhẹ: mặt khuất ở 10–25%
+              // đục không thành vệt đen trên cấu trúc chính.
+              "} else {\ntotalEmissiveRadiance += diffuseColor.rgb * 0.06;\ndiffuseColor.a = min(1.0, ghostWindow * (0.85 + 0.6 * ghostRim));\n}",
           );
     };
     ghostMaterial.customProgramCacheKey = () => "ghost";
@@ -580,15 +630,64 @@ export default function AnatomyScene({
     let ghostActive = false;
     /** "Hiện giải phẫu xung quanh" đang bật (xem `SceneState.surround`). */
     let surroundOn = false;
-    const drawGhost = () => {
+    /** Chế độ "Xuyên thấu" (`SceneState.xray`): bối cảnh vẽ kiểu X-quang như trước 2026-10-23. */
+    let xray = false;
+    const setStencil = (list: Iterable<T.Material>, func: T.StencilFunc | null, zPass: T.StencilOp = T.KeepStencilOp) => {
+      for (const m of list) {
+        m.stencilWrite = func !== null;
+        if (func === null) continue;
+        m.stencilFunc = func;
+        m.stencilRef = 1;
+        m.stencilZPass = zPass;
+      }
+    };
+    /*
+     * ## Bối cảnh kiểu atlas (2026-10-23)
+     *
+     * Mặc định nay là kiểu atlas: bối cảnh (cột sống, xương chậu quanh thận…) vẽ ĐẶC
+     * bằng chính vật liệu của nó — vân xương, AO — để người đọc thấy thận nằm ở
+     * đâu. Nhưng bối cảnh hay BAO cấu trúc chính (phổi quanh phế quản, đốt sống
+     * quanh tuỷ): vẽ đặc cả thì cấu trúc chính biến mất. Nên ba lượt:
+     *
+     *   1. Lượt chính: cấu trúc chính, ghi stencil = 1 ở mọi điểm ảnh của nó.
+     *   2. Bối cảnh đặc, vật liệu thật, chỉ ở chỗ stencil ≠ 1 (không che cấu trúc chính).
+     *      Bối cảnh nằm SAU cấu trúc chính đã bị depth loại sẵn.
+     *   3. "Cửa sổ": bối cảnh nằm TRƯỚC cấu trúc chính (stencil = 1), vẽ mờ theo lớp
+     *      (`FADE_BY_LAYER`) bằng vật liệu ghi đè, chiếu sáng thật, không ghi depth.
+     *
+     * Đổi `stencil*` trên vật liệu là trạng thái GL, không biên dịch lại shader. Lát
+     * `band` không cắt bối cảnh: lượt 2 dùng vật liệu thật (có mặt cắt), nên đẩy mặt
+     * cắt ra xa trong lượt ấy. Xuyên thấu (`xray`) giữ nguyên đường cũ: lượt chính
+     * rồi một lượt bóng mờ tự sáng.
+     */
+    const drawScene = (atlasStyle = !xray) => {
+      const solidContext = ghostActive && atlasStyle;
+      if (solidContext) setStencil(mats.values(), T.AlwaysStencilFunc, T.ReplaceStencilOp);
+      renderer.render(scene, camera);
       if (!ghostActive) return;
       const autoClear = renderer.autoClear;
       const markersShown = markers.visible;
       renderer.autoClear = false;
       markers.visible = false;
+      if (solidContext) {
+        setStencil(mats.values(), T.NotEqualStencilFunc);
+        const cuts = contextUncut ? clipList.map((p) => p.constant) : [];
+        if (contextUncut) clipList.forEach((p) => (p.constant = 1e6));
+        contextPass.value = 1;
+        renderer.render(scene, camera);
+        contextPass.value = 0;
+        cuts.forEach((c, k) => (clipList[k].constant = c));
+        setStencil(mats.values(), null);
+        setStencil([ghostMaterial], T.EqualStencilFunc);
+        ghostXray.value = 0;
+      }
       scene.overrideMaterial = ghostMaterial;
       renderer.render(scene, camera);
       scene.overrideMaterial = null;
+      if (solidContext) {
+        setStencil([ghostMaterial], null);
+        ghostXray.value = 1;
+      }
       markers.visible = markersShown;
       renderer.autoClear = autoClear;
     };
@@ -601,11 +700,13 @@ export default function AnatomyScene({
     const keyOf = (p: (typeof parts)[number]) => p.group ?? groupOf[p.id] ?? p.system;
     const mats = new Map<string, T.MeshStandardMaterial>();
     const matsBySystem = new Map<SystemId, T.MeshStandardMaterial[]>();
+    const keyOfMaterial = new Map<T.Material, string>();
     const materialForKey = (key: string, system: SystemId) => {
       let m = mats.get(key);
       if (!m) {
         m = materialFor(system, GROUP_COLORS[key] ?? SYSTEM_COLORS[system] ?? "#aebbb8", key);
         mats.set(key, m);
+        keyOfMaterial.set(m, key);
         matsBySystem.set(system, [...(matsBySystem.get(system) ?? []), m]);
       }
       return m;
@@ -621,34 +722,59 @@ export default function AnatomyScene({
      * hiện qua), vẽ sau lớp đục (`renderOrder` theo độ sâu, ngoài cùng vẽ cuối).
      *
      * Chọn một cấu trúc ở SÂU (tim) khi các lớp ngoài còn đục: mọi lớp nằm
-     * ngoài nó mờ xuống 18%, để lớp ngoài không che mất thứ người đọc vừa chọn.
+     * ngoài nó mờ xuống, để lớp ngoài không che mất thứ người đọc vừa chọn —
+     * theo lớp (`FADE_BY_LAYER`: xương 45%, cơ 25%, da 10%), chỉ mặt trước: hai mặt
+     * ở 45% cộng dồn mặt trong của xương thành bóng X-quang. Xuyên thấu giữ mức
+     * cũ, mọi lớp 18%, hai mặt.
+     *
+     * Chọn một CƠ QUAN (kiểu atlas): các nhóm cơ quan khác cũng mờ còn 10% — cùng
+     * lớp nội tạng nên luật "lớp ngoài" không chạm tới, mà ruột non nằm ngay trước
+     * thận, che kín nó (chụp thử 2026-10-23). Mạch, thần kinh là lớp sâu hơn: giữ đục.
      *
      * Kênh G của texture chọn = mảnh thuộc lớp đang mờ: pass AO bỏ qua nó
      * (lớp trong suốt mà đổ bóng AO là tối sầm cả cơ thể).
      */
     const DIMMED = 0.18;
+    const ORGANS = LAYERS.indexOf("organs");
     const alphaBySystem = new Map<SystemId, number>(SYSTEM_IDS.map((id) => [id, 1]));
+    /** Độ đục theo nhóm vật liệu (`keyOf`) — cơ quan cùng hệ có thể khác nhau, xem trên. */
+    const alphaByKey = new Map<string, number>();
     const layerIndex = (system: SystemId) => LAYERS.indexOf(SYSTEM_LAYER[system]);
     const partIndexById = new Map(parts.map((p, i) => [p.id, i]));
     const applyLayers = (selected: string[]) => {
       let deepest = -1;
+      const selectedKeys = new Set<string>();
       for (const id of selected) {
         const i = partIndexById.get(id);
-        if (i !== undefined) deepest = Math.max(deepest, layerIndex(parts[i].system));
+        if (i === undefined) continue;
+        deepest = Math.max(deepest, layerIndex(parts[i].system));
+        selectedKeys.add(keyOf(parts[i]));
       }
       for (const system of SYSTEM_IDS) {
         let alpha = layerOpacity(SYSTEM_LAYER[system], effectivePeel(peel, latest.current.visible));
-        if (layerIndex(system) < deepest) alpha = Math.min(alpha, DIMMED);
+        const faded = layerIndex(system) < deepest;
+        if (faded) alpha = Math.min(alpha, xray ? DIMMED : FADE_BY_LAYER[SYSTEM_LAYER[system]]);
         alphaBySystem.set(system, alpha);
-        const solid = alpha > 0.999;
+        const siblings = !xray && deepest === ORGANS && layerIndex(system) === ORGANS;
         for (const m of matsBySystem.get(system) ?? []) {
-          m.opacity = solid ? 1 : alpha;
+          const key = keyOfMaterial.get(m) ?? system;
+          const sibling = siblings && !selectedKeys.has(key);
+          const a = sibling ? Math.min(alpha, FADE_BY_LAYER.organs) : alpha;
+          alphaByKey.set(key, a);
+          const solid = a > 0.999;
+          const side = (faded || sibling) && !xray ? T.FrontSide : T.DoubleSide;
+          m.opacity = solid ? 1 : a;
           m.transparent = !solid;
           m.depthWrite = solid;
+          // `side` là tham số chương trình (DOUBLE_SIDED) — phải báo three biên dịch lại.
+          if (m.side !== side) {
+            m.side = side;
+            m.needsUpdate = true;
+          }
         }
       }
     };
-    const alphaOf = (i: number) => alphaBySystem.get(parts[i].system) ?? 1;
+    const alphaOf = (i: number) => alphaByKey.get(keyOf(parts[i])) ?? alphaBySystem.get(parts[i].system) ?? 1;
     /** Nhóm vẫn vẽ khi da còn đục (xem `underSkin`). */
     const SKIN_VISIBLE = new Set(["sensory.ear", "sensory.sclera", "sensory.iris"]);
 
@@ -827,8 +953,18 @@ export default function AnatomyScene({
     let aoPass: GTAOPass | null = null;
     if (wantsAO) {
       try {
-        composer = new EffectComposer(renderer);
-        composer.addPass(new RenderPass(scene, camera));
+        // Lượt vẽ cảnh của composer là CHÍNH `drawScene` (ba lượt + stencil của kiểu
+        // atlas), không phải RenderPass một lượt — bối cảnh đặc nhờ thế cũng có AO.
+        // Render target phải có stencil buffer; mặc định của composer không có.
+        const pixelRatio = renderer.getPixelRatio();
+        composer = new EffectComposer(
+          renderer,
+          new T.WebGLRenderTarget(el.clientWidth * pixelRatio, el.clientHeight * pixelRatio, {
+            type: T.HalfFloatType,
+            stencilBuffer: true,
+          }),
+        );
+        composer.addPass(new ScenePass(() => drawScene()));
         aoPass = new GTAOPass(scene, camera, el.clientWidth, el.clientHeight);
         aoPass.updateGtaoMaterial({ radius: 0.06, distanceExponent: 1.4, thickness: 1.2, scale: 1.1, samples: 12 });
         aoPass.updatePdMaterial({ lumaPhi: 10, depthPhi: 2, normalPhi: 3, radius: 6, rings: 2, samples: 12 });
@@ -1663,9 +1799,9 @@ export default function AnatomyScene({
       const ss = el.clientWidth >= THUMB_W * 2 && el.clientHeight >= THUMB_H * 2 ? 2 : 1;
       const savedData = data.slice();
       const savedSelected = selectedData.slice();
-      // Ảnh thu nhỏ có bối cảnh như khung xem: cây phế quản trong phổi mờ, mạch phổi
-      // quanh tim mờ — thẻ nói cấu trúc nằm ở ĐÂU. Bản 2026-09-30 bỏ bối cảnh vì ô cờ
-      // thu nhỏ 240 px thành moiré; bối cảnh nay là lượt trong suốt (`drawGhost`),
+      // Ảnh thu nhỏ có bối cảnh như khung xem: xương chậu quanh bàng quang, phổi quanh
+      // cây phế quản — thẻ nói cấu trúc nằm ở ĐÂU. Bản 2026-09-30 bỏ bối cảnh vì ô cờ
+      // thu nhỏ 240 px thành moiré; bối cảnh nay vẽ bằng `drawScene` (kiểu atlas),
       // không còn ô cờ.
       let hasContext = false;
       parts.forEach((p, i) => {
@@ -1707,26 +1843,28 @@ export default function AnatomyScene({
       // tính theo tập hệ đang bật: đang ở "Phổi" (không hệ cơ) thì cơ coi như đã
       // bóc, opacity 0 — ảnh bìa "Cơ hít vào" chỉ còn bóng xương sườn (2026-09-30).
       // Mở một góc nhìn luôn về nguyên khối, nên ảnh bìa chụp mọi lớp đục.
-      const savedLayers = materials.map((m) => [m.opacity, m.transparent, m.depthWrite] as const);
+      const savedLayers = materials.map((m) => [m.opacity, m.transparent, m.depthWrite, m.side] as const);
       matsBySystem.forEach((list) =>
         list.forEach((m) => {
           m.opacity = 1;
           m.transparent = false;
           m.depthWrite = true;
+          if (m.side !== T.DoubleSide) {
+            m.side = T.DoubleSide;
+            m.needsUpdate = true;
+          }
         }),
       );
       renderer.setScissorTest(true);
       renderer.setViewport(0, 0, THUMB_W * ss, THUMB_H * ss);
       renderer.setScissor(0, 0, THUMB_W * ss, THUMB_H * ss);
       renderer.clear();
-      renderer.render(scene, camera);
+      // Ảnh thu nhỏ luôn kiểu atlas, bất kể khung xem đang Xuyên thấu: ảnh chụp sẵn
+      // trên R2 dùng chung cho mọi người đọc (đổi kiểu này thì tăng `THUMB_STYLE`).
       const ghostWas = ghostActive;
-      const fadeWas = ghostFade.value;
       ghostActive = hasContext;
-      ghostFade.value = 1;
-      drawGhost();
+      drawScene(true);
       ghostActive = ghostWas;
-      ghostFade.value = fadeWas;
       const out = document.createElement("canvas");
       out.width = THUMB_W;
       out.height = THUMB_H;
@@ -1747,6 +1885,11 @@ export default function AnatomyScene({
         );
       renderer.setScissorTest(false);
       materials.forEach((m, i) => {
+        const side = savedLayers[i][3];
+        if (m.side !== side) {
+          m.side = side;
+          m.needsUpdate = true;
+        }
         [m.opacity, m.transparent, m.depthWrite] = savedLayers[i];
       });
       applyClip(latest.current.viewId);
@@ -1912,6 +2055,7 @@ export default function AnatomyScene({
         lastState?.selected !== s.selected ||
         lastState?.isolate !== s.isolate ||
         lastState?.surround !== s.surround ||
+        lastState?.xray !== s.xray ||
         lastState?.viewId !== s.viewId ||
         lastState?.hiddenIn !== s.hiddenIn;
       // Bật/tắt lớp da hay cơ đổi thang slider (`effectivePeel`) — tính lại độ tách.
@@ -1927,6 +2071,7 @@ export default function AnatomyScene({
         // Lưới xếp lại (bật/tắt hệ lúc đang tách) thì khung lại — SAU khi mảnh đã
         // dời tới ô mới, vì `fit()` đo hộp bao theo vị trí hiện tại của mảnh.
         let refit = false;
+        xray = !!s.xray;
         applyLayers(s.selected);
         const visible = new Set(s.visible);
         const selection = new Set(s.selected);
@@ -2001,8 +2146,9 @@ export default function AnatomyScene({
           const context = surroundOn ? !selected : isContext(view, i);
           if (context && shown) ghostNext = true;
           selectedData[i * 4] = selected ? 255 : 0;
-          // Bối cảnh ô cờ không đổ bóng AO: nửa điểm ảnh đã bỏ mà AO vẫn tô tối cả mảng.
-          selectedData[i * 4 + 1] = alphaOf(i) < 0.999 || context ? 255 : 0;
+          // Bối cảnh trong suốt (Xuyên thấu) không đổ bóng AO — AO tô tối cả mảng mờ.
+          // Kiểu atlas vẽ nó đặc, nên có AO như mọi mô khác.
+          selectedData[i * 4 + 1] = alphaOf(i) < 0.999 || (context && xray) ? 255 : 0;
           selectedData[i * 4 + 3] = context ? 255 : 0;
           if (shown) {
             markerPositions[i * 3] = c.x + dx;
@@ -2198,7 +2344,7 @@ export default function AnatomyScene({
       if (dirty) {
         lastChange = now;
         aoFresh = false;
-      } else if (composer && !ghostActive && !aoFresh && !tween && now - lastChange > 140) {
+      } else if (composer && !(ghostActive && xray) && !aoFresh && !tween && now - lastChange > 140) {
         // Đứng yên đủ lâu: một khung có AO thay cho khung thường.
         composer.render();
         // GTAOPass khôi phục clear color qua get/set — giữ chắc alpha 0.
@@ -2207,8 +2353,7 @@ export default function AnatomyScene({
       }
       if (dirty) {
         // Đang thay đổi (xoay, zoom, tách lớp) → vẽ thường, không AO.
-        renderer.render(scene, camera);
-        drawGhost();
+        drawScene();
         targets = [];
         if (amount > 0.45) {
           const cw = el.clientWidth;

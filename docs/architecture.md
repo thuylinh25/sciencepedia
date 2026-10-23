@@ -929,6 +929,21 @@ kinh hệ hô hấp "chìm"). Nay fresnel: tự phát sáng thêm ở viền, đ
 (mesh nhị phân: vị trí, pháp tuyến, chỉ số — không UV), nên không có lỗi colorSpace texture để sửa. Ảnh thu
 nhỏ vẽ 2× rồi thu nhỏ: dây thần kinh 1–2 mm hẹp hơn một điểm ảnh ở 240 px, khử răng cưa trộn nó thành xám.
 
+**Kiểu atlas là mặc định; bóng X-quang thành nút "Xuyên thấu"** (chủ sản phẩm, 2026-10-23). Bối cảnh mờ
+kiểu X-quang (ba đoạn trên) làm mất định hướng: xem thận mà cột sống, xương chậu trong suốt thì không còn
+biết thận nằm ở đâu. Nay bối cảnh vẽ ĐẶC bằng chính vật liệu thật (vân xương, có AO), và chỉ chỗ nó CHE cấu
+trúc chính mới mờ — ba lượt có stencil (`drawScene`): cấu trúc chính ghi stencil; bối cảnh đặc ở chỗ
+stencil ≠ 1; bối cảnh trước cấu trúc chính ở chỗ stencil = 1 vẽ mờ theo lớp. Đừng vẽ bối cảnh đặc trọn
+vẹn cho gọn: bối cảnh hay BAO cấu trúc chính (phổi quanh phế quản, đốt sống quanh tuỷ) và nuốt mất nó.
+**Mờ theo loại mô, không mờ đều** (`FADE_BY_LAYER`): xương 45%, cơ 25%, mô mềm 10% — số của chủ sản phẩm.
+Xương không xuống 10%: mất xương là mất mốc. Cùng thang dùng khi chọn một cấu trúc sâu (lớp ngoài mờ, thay
+0,18 đều cũ), lớp đang mờ chỉ vẽ mặt trước (hai mặt ở 45% cộng mặt trong thành lại bóng X-quang). Chọn một
+cơ quan thì cơ quan KHÁC cũng mờ 10%: cùng lớp nội tạng nên luật lớp ngoài không chạm tới, mà ruột non che kín
+thận. Composer dùng `ScenePass` gọi chính `drawScene` (render target có stencil) để kiểu atlas vẫn có AO.
+Xuyên thấu giữ nguyên đường cũ, kể cả 0,18 đều. Ảnh thu nhỏ luôn kiểu atlas (dùng chung cho mọi người đọc).
+Không có shadow map, không `transmission` (thêm một lượt cả cảnh ~2,3 triệu tam giác), không `aoMap` (mesh
+không UV) — chiều sâu đến từ GTAO + ba đèn theo camera.
+
 **Ảnh thu nhỏ chụp mọi lớp ĐỤC**, không theo độ đậm đang có ở khung xem: độ đậm theo lớp bóc tính từ tập hệ đang bật, nên chụp khi đang ở "Phổi" (không hệ cơ) thì cơ opacity 0 — ảnh bìa "Cơ hít vào" chỉ còn bóng xương sườn. Mở góc nhìn luôn về nguyên khối, ảnh bìa phải khớp thế.
 
 **Ảnh thu nhỏ theo lối atlas:** chỉ cấu trúc của thẻ (không bối cảnh), khung trong 6–94% chiều cao
