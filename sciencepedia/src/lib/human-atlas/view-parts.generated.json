@@ -14290,6 +14290,11 @@
       "FJ3607",
       "FJ3608",
       "FJ3609"
+    ],
+    "frame": [
+      "FJ3152",
+      "FJ3288",
+      "FJ3393"
     ]
   },
   "urinary-kidneys": {
@@ -14434,6 +14439,11 @@
       "FJ3148",
       "FJ3152",
       "FJ3288"
+    ],
+    "frame": [
+      "FJ3148",
+      "FJ3152",
+      "FJ3288"
     ]
   },
   "urinary-pelvic-floor": {
@@ -14460,6 +14470,11 @@
     "context": [
       "FJ2571",
       "FJ3139",
+      "FJ3152",
+      "FJ3288",
+      "FJ3393"
+    ],
+    "frame": [
       "FJ3152",
       "FJ3288",
       "FJ3393"
@@ -14497,6 +14512,11 @@
       "FJ3152",
       "FJ3288",
       "FJ3393"
+    ],
+    "frame": [
+      "FJ3152",
+      "FJ3288",
+      "FJ3393"
     ]
   },
   "urinary-bladder-penis": {
@@ -14516,6 +14536,10 @@
       "FJ3146",
       "FJ3152",
       "FJ3288"
+    ],
+    "frame": [
+      "FJ3152",
+      "FJ3288"
     ]
   },
   "urinary-urethra": {
@@ -14528,6 +14552,9 @@
       "FJ3133",
       "FJ3134",
       "FJ3139",
+      "FJ3149"
+    ],
+    "frame": [
       "FJ3149"
     ]
   },
@@ -14570,6 +14597,10 @@
       "FJ3139",
       "FJ3144",
       "FJ3146",
+      "FJ3152",
+      "FJ3288"
+    ],
+    "frame": [
       "FJ3152",
       "FJ3288"
     ]
@@ -14713,6 +14744,260 @@
       "FJ3152",
       "FJ3288",
       "FJ3393"
+    ],
+    "frame": [
+      "FJ3152",
+      "FJ3288",
+      "FJ3393"
+    ]
+  },
+  "reproductive-pelvic-region": {
+    "focus": [
+      "FJ3132",
+      "FJ3133",
+      "FJ3134",
+      "FJ3135",
+      "FJ3136",
+      "FJ3137",
+      "FJ3138",
+      "FJ3139",
+      "FJ3140",
+      "FJ3141",
+      "FJ3142",
+      "FJ3143"
+    ],
+    "hide": [],
+    "context": [
+      "FJ2056",
+      "FJ2208",
+      "FJ2571",
+      "FJ2574",
+      "FJ2575",
+      "FJ2576",
+      "FJ2577",
+      "FJ2578",
+      "FJ2579",
+      "FJ2580",
+      "FJ2581",
+      "FJ2582",
+      "FJ2583",
+      "FJ2584",
+      "FJ2585",
+      "FJ2586",
+      "FJ2587",
+      "FJ2588",
+      "FJ2589",
+      "FJ2590",
+      "FJ2591",
+      "FJ2592",
+      "FJ2593",
+      "FJ2594",
+      "FJ2595",
+      "FJ2596",
+      "FJ2597",
+      "FJ2598",
+      "FJ2600",
+      "FJ2601",
+      "FJ2602",
+      "FJ2603",
+      "FJ2604",
+      "FJ2605",
+      "FJ3144",
+      "FJ3146",
+      "FJ3148",
+      "FJ3149",
+      "FJ3152",
+      "FJ3288",
+      "FJ3393",
+      "FJ3426",
+      "FJ3464",
+      "FJ3465",
+      "FJ3466",
+      "FJ3468",
+      "FJ3469",
+      "FJ3470",
+      "FJ3471",
+      "FJ3484",
+      "FJ3496",
+      "FJ3497",
+      "FJ3522",
+      "FJ3523",
+      "FJ3524",
+      "FJ3532",
+      "FJ3533",
+      "FJ3565",
+      "FJ3566",
+      "FJ3567",
+      "FJ3568",
+      "FJ3569",
+      "FJ3570",
+      "FJ3571",
+      "FJ3572",
+      "FJ3592",
+      "FJ3593",
+      "FJ3607",
+      "FJ3608",
+      "FJ3609",
+      "FJ3617",
+      "FJ3618",
+      "FJ3637",
+      "ZA-deep-dorsal-vein-of-penis",
+      "ZA-left-femoral-branch-of-genitofemoral-nerve",
+      "ZA-left-genital-branch-of-genitofemoral-nerve",
+      "ZA-left-genitofemoral-nerve",
+      "ZA-left-ilio-inguinal-nerve",
+      "ZA-left-inferior-superficial-inguinal-nodes",
+      "ZA-left-intermediate-deep-inguinal-node",
+      "ZA-left-proximal-deep-inguinal-node",
+      "ZA-left-pudendal-nerve",
+      "ZA-left-superolateral-superficial-inguinal-nodes",
+      "ZA-left-superomedial-superficial-inguinal-nodes",
+      "ZA-right-femoral-branch-of-genitofemoral-nerve",
+      "ZA-right-genital-branch-of-genitofemoral-nerve",
+      "ZA-right-genitofemoral-nerve",
+      "ZA-right-ilio-inguinal-nerve",
+      "ZA-right-inferior-superficial-inguinal-nodes",
+      "ZA-right-intermediate-deep-inguinal-node",
+      "ZA-right-proximal-deep-inguinal-node",
+      "ZA-right-pudendal-nerve",
+      "ZA-right-superolateral-superficial-inguinal-nodes",
+      "ZA-right-superomedial-superficial-inguinal-nodes"
+    ],
+    "frame": [
+      "FJ3152",
+      "FJ3288",
+      "FJ3393"
+    ]
+  },
+  "reproductive-internal": {
+    "focus": [
+      "FJ3135",
+      "FJ3136",
+      "FJ3137",
+      "FJ3138",
+      "FJ3139",
+      "FJ3140",
+      "FJ3141",
+      "FJ3142",
+      "FJ3143"
+    ],
+    "hide": [],
+    "context": [
+      "FJ1449M",
+      "FJ1450M",
+      "FJ1453M",
+      "FJ1457M",
+      "FJ1458M",
+      "FJ2542",
+      "FJ2543",
+      "FJ2544",
+      "FJ2545",
+      "FJ2546",
+      "FJ2547",
+      "FJ2548",
+      "FJ2549",
+      "FJ2550",
+      "FJ2551",
+      "FJ3132",
+      "FJ3133",
+      "FJ3134",
+      "FJ3144",
+      "FJ3146",
+      "FJ3148",
+      "FJ3149",
+      "FJ3152",
+      "FJ3288",
+      "FJ3393"
+    ],
+    "frame": [
+      "FJ3152",
+      "FJ3288",
+      "FJ3393"
+    ]
+  },
+  "reproductive-prostate": {
+    "focus": [
+      "FJ3139"
+    ],
+    "hide": [],
+    "context": [
+      "FJ1449M",
+      "FJ1450M",
+      "FJ1453M",
+      "FJ1457M",
+      "FJ1458M",
+      "FJ2542",
+      "FJ2543",
+      "FJ2544",
+      "FJ2545",
+      "FJ2546",
+      "FJ2547",
+      "FJ2548",
+      "FJ2549",
+      "FJ2550",
+      "FJ2551",
+      "FJ3132",
+      "FJ3133",
+      "FJ3134",
+      "FJ3135",
+      "FJ3137",
+      "FJ3140",
+      "FJ3143",
+      "FJ3148",
+      "FJ3149",
+      "FJ3152",
+      "FJ3288",
+      "FJ3393"
+    ],
+    "frame": [
+      "FJ3137",
+      "FJ3143",
+      "FJ3149",
+      "FJ3152",
+      "FJ3288",
+      "FJ3393"
+    ]
+  },
+  "reproductive-prostate-section": {
+    "focus": [
+      "FJ3139",
+      "FJ3148"
+    ],
+    "hide": [],
+    "context": [
+      "FJ1449M",
+      "FJ1450M",
+      "FJ1453M",
+      "FJ1457M",
+      "FJ1458M",
+      "FJ2542",
+      "FJ2543",
+      "FJ2544",
+      "FJ2545",
+      "FJ2546",
+      "FJ2547",
+      "FJ2548",
+      "FJ2549",
+      "FJ2550",
+      "FJ2551",
+      "FJ2571",
+      "FJ3132",
+      "FJ3133",
+      "FJ3134",
+      "FJ3137",
+      "FJ3143",
+      "FJ3149",
+      "FJ3152",
+      "FJ3288",
+      "FJ3393"
+    ],
+    "frame": [
+      "FJ3137",
+      "FJ3143",
+      "FJ3149",
+      "FJ3152",
+      "FJ3288",
+      "FJ3393"
     ]
   },
   "reproductive-testis": {
@@ -14728,7 +15013,130 @@
       "FJ3133",
       "FJ3134",
       "FJ3135",
-      "FJ3140"
+      "FJ3140",
+      "FJ3532",
+      "FJ3533",
+      "FJ3617",
+      "FJ3618"
+    ],
+    "frame": [
+      "FJ3132",
+      "FJ3133",
+      "FJ3134"
+    ]
+  },
+  "reproductive-seminal-vesicles": {
+    "focus": [
+      "FJ3137",
+      "FJ3143"
+    ],
+    "hide": [],
+    "context": [
+      "FJ3135",
+      "FJ3139",
+      "FJ3140",
+      "FJ3144",
+      "FJ3146",
+      "FJ3149"
+    ],
+    "frame": [
+      "FJ3139",
+      "FJ3149"
+    ]
+  },
+  "reproductive-external": {
+    "focus": [
+      "FJ3132",
+      "FJ3133",
+      "FJ3134"
+    ],
+    "hide": [],
+    "context": [
+      "FJ2056",
+      "FJ2208",
+      "FJ3135",
+      "FJ3136",
+      "FJ3138",
+      "FJ3140",
+      "FJ3141",
+      "FJ3142",
+      "FJ3152",
+      "FJ3288",
+      "FJ3393",
+      "FJ3426",
+      "FJ3496",
+      "FJ3497",
+      "FJ3592",
+      "FJ3593",
+      "FJ3637",
+      "ZA-deep-dorsal-vein-of-penis"
+    ],
+    "frame": [
+      "FJ3138",
+      "FJ3142",
+      "FJ3152",
+      "FJ3288",
+      "FJ3393"
+    ]
+  },
+  "reproductive-ducts": {
+    "focus": [
+      "FJ3135",
+      "FJ3136",
+      "FJ3140",
+      "FJ3141"
+    ],
+    "hide": [],
+    "context": [
+      "FJ3132",
+      "FJ3133",
+      "FJ3134",
+      "FJ3137",
+      "FJ3138",
+      "FJ3139",
+      "FJ3142",
+      "FJ3143",
+      "FJ3144",
+      "FJ3146",
+      "FJ3148",
+      "FJ3149",
+      "FJ3152",
+      "FJ3288",
+      "FJ3393"
+    ],
+    "frame": [
+      "FJ3152",
+      "FJ3288",
+      "FJ3393"
+    ]
+  },
+  "reproductive-penis": {
+    "focus": [
+      "FJ3132",
+      "FJ3133",
+      "FJ3134"
+    ],
+    "hide": [],
+    "context": [
+      "FJ2056",
+      "FJ2208",
+      "FJ3148",
+      "FJ3149",
+      "FJ3152",
+      "FJ3288",
+      "FJ3393",
+      "FJ3426",
+      "FJ3496",
+      "FJ3497",
+      "FJ3592",
+      "FJ3593",
+      "FJ3637",
+      "ZA-deep-dorsal-vein-of-penis"
+    ],
+    "frame": [
+      "FJ3152",
+      "FJ3288",
+      "FJ3393"
     ]
   },
   "reproductive-ducts-glands": {
@@ -14745,21 +15153,6 @@
       "FJ3138",
       "FJ3141",
       "FJ3142",
-      "FJ3148",
-      "FJ3149",
-      "FJ3152",
-      "FJ3288",
-      "FJ3393"
-    ]
-  },
-  "reproductive-penis": {
-    "focus": [
-      "FJ3132",
-      "FJ3133",
-      "FJ3134"
-    ],
-    "hide": [],
-    "context": [
       "FJ3148",
       "FJ3149",
       "FJ3152",

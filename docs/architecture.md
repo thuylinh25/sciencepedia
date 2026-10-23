@@ -882,8 +882,21 @@ con phủ kín. Dữ liệu không có ống mật chủ — mọi góc nhìn đ
 **Hệ tiết niệu theo "Urinary System Views (Male)" của atlas** (2026-10-23): tổng quan + 12 ô. "Mặt cắt
 thận" `missing` — thận là khối đặc, cắt ra chỉ là vỏ rỗng, dạy sai hơn để trống; "Cơ thắt niệu đạo" `missing`.
 Mặt cắt bàng quang và niệu đạo dùng `clip` dọc giữa như mặt cắt chậu, tạng NỔI BẬT. Ô "Bàng quang" đặt tên
-"Bàng quang và tạng lân cận" để không trùng nhãn cấu trúc `urinary-bladder`; nhìn chếch thì xương chậu mờ sát
-camera — khung phải rộng (`fill` 0,25). Ô vùng chậu không lấy đại tràng ngang làm bối cảnh (không thuộc chậu).
+"Bàng quang và tạng lân cận" để không trùng nhãn cấu trúc `urinary-bladder`. Ô vùng chậu không lấy đại tràng
+ngang làm bối cảnh (không thuộc chậu).
+
+**`camera.frame` dời tâm, `fill` chỉ lùi xa** (2026-10-23): ảnh vùng chậu "lệch lên" — bàng quang + niệu đạo
+nam thõng xuống nằm thấp hơn xương chậu, khung theo tập nổi bật thì xương chậu (bối cảnh) bị cắt 7–12 cm ở
+trên còn đáy thẻ trống. Hạ `fill` (bản cũ 0,25–0,5) chỉ lùi quanh cùng một tâm, không chữa được. `frame` cộng
+thêm mảnh bối cảnh vào hộp khung (phải nằm trong `context` — `atlas-views.ts` chặn), góc nhìn dùng nó thì bỏ
+`fill` riêng. Đo trước khi chọn: chiếu hộp từng nhóm bối cảnh lên trục "lên" của hướng nhìn, xem bị cắt bao nhiêu.
+
+**Hệ sinh dục theo "Reproductive System Views (Male)" của atlas** (2026-10-23): tổng quan + 12 ô. "Mặt cắt
+tinh hoàn" `missing` — tinh hoàn chỉ là một bề mặt kín đơn giản (science-editor: KHÔNG gọi "khối đặc", cắt ra
+là rỗng); "Mạc dương vật" `missing`. Trong/ngoài theo Terminologia Anatomica (tinh hoàn là cơ quan sinh dục
+TRONG). Góc nhìn theo hệ không hiện da nên bìu ghi "không hiện", không ghi "không có" — da toàn thân có thể gồm
+vùng đó. Không đặt từ khoá "thừng tinh": dữ liệu không có lớp bọc, tìm ra ống dẫn tinh là dạy sai. Nhìn sau-bên
+(túi tinh) không lấy xương chậu làm bối cảnh: nó nằm sát camera, che mặt sau bàng quang.
 
 **Bề mặt cơ thể KHÔNG có góc nhìn** (chủ sản phẩm bỏ, 2026-10-15): tab "Theo hệ" không còn chip này;
 da vẫn là lớp ngoài của mô hình và vẫn bật/tắt ở bảng hệ. Bản duyệt mô tả nhóm (môi, tóc) giữ trong tệp

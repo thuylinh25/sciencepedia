@@ -1070,7 +1070,8 @@ export default function AnatomyScene({
     const SKIN_VISIBLE = new Set(["sensory.ear", "sensory.sclera", "sensory.iris"]);
 
     /** Góc nhìn → chỉ số mảnh (tính một lần mỗi góc nhìn, không mỗi khung). */
-    type ViewSet = { focus: Set<number>; hide: Set<number>; context: Set<number>; only: boolean };
+    /** `framed`: mảnh camera khung vào = tập nổi bật + `camera.frame` (views.ts). */
+    type ViewSet = { focus: Set<number>; hide: Set<number>; context: Set<number>; framed: Set<number>; only: boolean };
     const viewSets = new Map<string, ViewSet | null>();
     const viewSet = (id: string | null | undefined) => {
       if (!id) return null;
@@ -1085,6 +1086,7 @@ export default function AnatomyScene({
                 focus: toIndex(ids.focus),
                 hide: toIndex(ids.hide),
                 context: toIndex(ids.context),
+                framed: toIndex([...ids.focus, ...(ids.frame ?? [])]),
                 only: isSystemView(viewById(id)),
               }
             : null,
@@ -1543,7 +1545,7 @@ export default function AnatomyScene({
       const view = viewSet(latest.current.viewId);
       if (view) {
         // Cấu trúc đã ẩn không giữ chỗ trong khung ("Vừa khung" sau khi ẩn lồng ngực).
-        view.focus.forEach((i) => {
+        view.framed.forEach((i) => {
           if (userHidden.has(i)) return;
           box.union(shifted.copy(bounds[i]).translate(new T.Vector3(data[i * 4], data[i * 4 + 1], data[i * 4 + 2])));
         });
@@ -2139,7 +2141,7 @@ export default function AnatomyScene({
       partTexture.needsUpdate = true;
       selectionTexture.needsUpdate = true;
       thumbBox.makeEmpty();
-      view.focus.forEach((i) => thumbBox.union(bounds[i]));
+      view.framed.forEach((i) => thumbBox.union(bounds[i]));
       clampToBand(thumbBox, id);
       const direction = viewDirection(def.direction);
       // Nhãn nằm DƯỚI vùng vẽ của thẻ (2026-09-30), không phủ lên ảnh nữa: khung

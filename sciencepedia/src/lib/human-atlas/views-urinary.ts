@@ -53,6 +53,11 @@ const HIP_BONES: PartRule = { systems: ["skeletal"], name: /hip bone$/i };
  */
 const PSOAS_MAJOR = rule("FMA22342", "FMA22343");
 const DIAPHRAGM = rule("FMA13295");
+/*
+ * Khung theo cả chậu (`camera.frame`, 2026-10-23): bàng quang + niệu đạo nam thõng xuống nằm
+ * THẤP hơn xương chậu, khung theo riêng chúng thì xương chậu bị cắt ở trên, đáy thẻ bỏ trống.
+ */
+const PELVIS = [HIP_BONE, SACRUM];
 const ILIAC_VESSELS: PartRule = { systems: ["arterial", "venous"], name: /(common|internal|external) iliac (artery|vein)$/i };
 const MISSING_SPHINCTER = {
   vi: "Thiếu cơ thắt niệu đạo, cơ ngang đáy chậu, cơ hành xốp và cơ ngồi hang",
@@ -82,8 +87,8 @@ export const URINARY_VIEWS: readonly AtlasViewDef[] = [
     direction: "front",
     focus: [BLADDER, URETHRA],
     context: [...URETERS, ILIAC_VESSELS, HIP_BONE, SACRUM, RECTUM, ILEUM, PROSTATE],
-    // Bối cảnh (xương chậu, mạch chậu, ruột) là điều góc nhìn muốn dạy.
-    camera: { fill: 0.4, thumbnailFill: 0.5 },
+    // Bối cảnh (xương chậu, mạch chậu, ruột) là điều góc nhìn muốn dạy — khung theo cả chậu.
+    camera: { frame: PELVIS },
     terms: ["chậu hông", "pelvis", "vùng chậu", "pelvic region"],
     quality: "acceptable",
   },
@@ -147,8 +152,8 @@ export const URINARY_VIEWS: readonly AtlasViewDef[] = [
     direction: "anterolateral",
     focus: [BLADDER],
     context: [...URETERS, URETHRA, PROSTATE, SEMINAL_VESICLES, DEFERENT_DUCTS, HIP_BONE],
-    // Nhìn chếch, xương chậu mờ nằm sát camera — khung rộng mới thấy bàng quang trong chậu.
-    camera: { fill: 0.25, thumbnailFill: 0.32 },
+    // Nhìn chếch: khung theo cả chậu mới thấy bàng quang nằm trong chậu.
+    camera: { frame: [HIP_BONE, URETHRA] },
     terms: ["bladder", "bàng quang"],
     quality: "acceptable",
   },
@@ -160,6 +165,7 @@ export const URINARY_VIEWS: readonly AtlasViewDef[] = [
     direction: [0.35, 0.75, 0.55],
     focus: [BLADDER, URETHRA, PELVIC_FLOOR],
     context: [HIP_BONE, SACRUM, PROSTATE, RECTUM],
+    camera: { frame: PELVIS },
     partial: MISSING_SPHINCTER,
     terms: ["đáy chậu", "pelvic floor", "cơ nâng hậu môn", "levator ani", "hoành chậu", "pelvic diaphragm"],
     quality: "acceptable",
@@ -174,6 +180,7 @@ export const URINARY_VIEWS: readonly AtlasViewDef[] = [
     focus: [BLADDER, URETHRA, PROSTATE, PENIS],
     context: [HIP_BONE, SACRUM, RECTUM, SEMINAL_VESICLES, PELVIC_FLOOR],
     clip: { normal: [-1, 0, 0], constant: 0 },
+    camera: { frame: PELVIS },
     partial: {
       vi: "Bàng quang dựng như một bề mặt — mặt cắt để hở, không có lớp cơ, niêm mạc hay tam giác bàng quang; không có cơ thắt niệu đạo",
       en: "The bladder is modelled as a surface — the cut is left open, with no muscular wall, mucosa or trigone; the urethral sphincters are not in the dataset",
@@ -189,6 +196,7 @@ export const URINARY_VIEWS: readonly AtlasViewDef[] = [
     direction: "front",
     focus: [BLADDER, URETHRA, PENIS],
     context: [...URETERS, PROSTATE, TESTES, HIP_BONE],
+    camera: { frame: [HIP_BONE] },
     terms: ["dương vật", "penis", "bàng quang", "bladder"],
     quality: "acceptable",
   },
@@ -201,6 +209,7 @@ export const URINARY_VIEWS: readonly AtlasViewDef[] = [
     direction: [1, 0.05, 0.12],
     focus: [URETHRA],
     context: [BLADDER, PROSTATE, PENIS],
+    camera: { frame: [BLADDER] },
     clip: { normal: [-1, 0, 0], constant: 0 },
     terms: ["niệu đạo", "urethra", "lỗ niệu đạo ngoài", "external urethral orifice"],
     quality: "acceptable",
@@ -242,6 +251,7 @@ export const URINARY_VIEWS: readonly AtlasViewDef[] = [
     direction: "anterolateral",
     focus: [BLADDER, URETHRA],
     context: [HIP_BONES, PROSTATE, ...URETERS],
+    camera: { frame: [HIP_BONES] },
     terms: ["bladder", "urethra", "đường tiết niệu dưới", "lower urinary tract"],
     quality: "acceptable",
   },
