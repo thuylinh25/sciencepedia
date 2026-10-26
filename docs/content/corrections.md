@@ -1377,3 +1377,9 @@ Bối cảnh: bài tiểu luận truyền cảm hứng lên trang qua form /admi
 - Cũ: "các nguyên tố nặng cấu tạo nên cơ thể con người, như carbon, oxy, canxi và sắt, được hình thành bên trong các thế hệ sao cổ đại." Mới: carbon và oxy (nguyên tố nhẹ) hình thành nhờ tổng hợp hạt nhân trong lòng sao, còn phần lớn canxi và sắt đến từ vụ nổ sao (siêu tân tinh). Căn cứ: NASA, *Are We Really Made of Star Stuff?*
 - Cũ: danh sách năm công nghệ "từ các chương trình không gian" (định vị vệ tinh, cảm biến hình ảnh, vật liệu tiên tiến, công nghệ truyền thông, dự báo thời tiết) — chỉ một có nguồn. Mới: giữ cảm biến ảnh CMOS (JPL/NASA) có nguồn và dự báo thời tiết dựa vào vệ tinh (NOAA); bỏ hai bullet khái quát không nguồn và GPS (chương trình Bộ Quốc phòng, không phải spin-off khám phá vũ trụ). Căn cứ: NASA Spinoff 2017; NOAA, *History of NOAA Satellites*.
 - Sửa nhỏ (không đổi claim): câu Gagarin/Armstrong nay có nguồn bậc 1 (ESA; NASA Apollo 11) nhưng giữ nguyên chữ; thêm 5 link giữa câu (*James Webb*, *tàu thăm dò*, *đo tuổi của vũ trụ*, và trong mục nguyên tố *ngôi sao* + *vật chất của các ngôi sao*) và mục "Đọc thêm" (3 bài); viết hoa kiểu câu cho tiêu đề bài và 6 tiêu đề mục. Byline duyệt/factCheck PASSED, entity, link vào, bản EN và ghi công ảnh bìa để người làm tiếp (phiếu mục E).
+
+## 2026-10-26 — `long-dung-cam-va-su-to-mo-dieu-gi-dua-loai-nguoi-den-cac-vi-sao`: thêm bản EN
+
+Bối cảnh: phiếu 23/10 để bản EN ở mục E; chủ sản phẩm chốt 2026-10-26 thẩm định luôn gọi skill `translation`. Phiếu `docs/content/checks/2026-10-26/<slug>.md` điền `titleEn`, `summaryEn`, `contentEn` dịch toàn bài từ bản VI sau đính chính 23/10. Áp bằng `npm run corrections:1026 -- --write`; bài giữ PUBLISHED, bản VI, nguồn, byline và `lastVerifiedAt` không đổi.
+
+- Sửa nhỏ (không đổi claim): bản VI không đổi chữ nào; bản EN giữ đủ 8 link `/articles/…` như bản VI, mục "Further reading" dùng `titleEn` của bài đích.
