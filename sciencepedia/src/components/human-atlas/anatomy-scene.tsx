@@ -921,6 +921,10 @@ export default function AnatomyScene({
       const windowLayers = semiStyle ? 1 : WINDOW_LAYERS;
       setTintFade(semiStyle);
       translucentSeq = 0;
+      // `limitHook` chỉ chạm vật liệu đang mờ, nên stencil nó gán ở lượt trước còn nằm
+      // lại khi vật liệu đục trở lại (bỏ chọn tim → xương hết mờ): xương đục vẫn thử
+      // "k > stencil", tự loại mặt trước của chính nó → loang lổ (2026-10-26). Xoá mỗi khung.
+      setStencil(mats.values(), null);
       sortParts();
       depthFocus.value = Math.max(camera.position.distanceTo(depthTarget ?? controls.target), 0.01);
       depthRange.value = DEPTH_SPAN * depthFocus.value;
