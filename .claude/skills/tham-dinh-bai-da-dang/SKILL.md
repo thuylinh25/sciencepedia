@@ -10,8 +10,8 @@ Bài đã lên trang mà chưa qua 11 bước pipeline. Skill này gom hai việ
 2026-10-08/09 (13 bài), mọi lỗi lặp được ghi ở mục "Danh sách kiểm".
 
 Agent chủ trì: `science-editor`. Gọi lần lượt `content-research` → `fact-check` (chế độ **Audit**) →
-`seo-optimizer` (phần SEO) → `translation` (nếu bài có bản EN) — skill này không thay các skill đó, nó quy định
-đầu vào, thứ tự và định dạng đầu ra. Ghi ở mục F những skill đã gọi.
+`seo-optimizer` (phần SEO) → `translation` (**luôn gọi**, kể cả bài chưa có bản EN — xem "Bản EN") — skill này
+không thay các skill đó, nó quy định đầu vào, thứ tự và định dạng đầu ra. Ghi ở mục F những skill đã gọi.
 
 ## Bước 1 — Đọc bài (chỉ đọc)
 
@@ -90,9 +90,18 @@ Chạy trong `sciencepedia/`:
 **Nên sửa khác:** viết hoa kiểu câu cho tiêu đề và tiêu đề mục (giữ slug); emoji trong tiêu đề mục; ghi công ảnh;
 ảnh bìa và alt (**agent không viết alt cho ảnh chưa xem** — tải về, xem bằng Read, rồi mới kết luận).
 
-**Bản EN:** bài có `contentEn` thì mọi lỗi A cũng nằm ở bản EN. D kèm bản dịch EN cho từng khối (skill
-`translation`, giữ thuật ngữ theo glossary) — engine sửa được `titleEn`, `summaryEn`, `contentEn`. Không để hai
-bản lệch nhau sau đính chính.
+**Bản EN — bắt buộc, skill `translation`** (chủ sản phẩm chốt 2026-10-26: thẩm định xong mà trang /en vẫn báo
+"No English version yet" là chưa xong). Dịch từ bản VI ĐÃ sửa (sau khi áp D), giữ thuật ngữ theo glossary, giữ
+nguyên mức dè dặt và link `/articles/…`:
+- Bài **đã có** `contentEn`: mọi lỗi A cũng nằm ở bản EN. D kèm bản dịch EN cho từng khối (`find`/`section`).
+  Không để hai bản lệch nhau sau đính chính.
+- Bài **chưa có** bản EN: D có khối `điền trường titleEn` / `summaryEn` / `contentEn` — dịch TOÀN bài (cả mục
+  "Đọc thêm"), cả `coverImageCreditEn` nếu `coverImageCredit` có chữ. Plan dùng fix `fill` (engine chỉ điền
+  trường trống, không đè). Không dịch một phần (luật 4 của `translation`).
+- Bản dịch qua science-editor cùng lượt với bản VI — dịch là xuất bản, cùng ngưỡng accuracy. Chỗ tiếng Anh không có
+  từ tương đương chính xác: ghi F, không đoán.
+- Không dịch được (thuật ngữ trung tâm chưa có trong glossary, nguồn tiếng Anh mâu thuẫn bản VI…): ghi rõ lý do
+  ở E và báo chủ sản phẩm — không lặng lẽ bỏ qua.
 
 ## Bước 4 — Phiếu
 
@@ -103,7 +112,8 @@ bản lệch nhau sau đính chính.
 - **C. Nguồn đề xuất** — bậc, trích dẫn, DOI/URL, **đã đọc gì**, dùng cho mục nào.
 - **D. Đoạn thay thế NGUYÊN VĂN**, mỗi khối mở bằng một trong các dạng script áp được:
   `thay toàn mục "## <tiêu đề HIỆN TẠI nguyên văn>"` · `thay trường summary` / `seoDescription` / … ·
-  `thêm mục mới trước "## <tiêu đề hiện tại>"` · `xoá toàn mục "## …"` · `thay câu "<nguyên văn>"`.
+  `thêm mục mới trước "## <tiêu đề hiện tại>"` · `xoá toàn mục "## …"` · `thay câu "<nguyên văn>"` ·
+  `điền trường titleEn` / `summaryEn` / `contentEn` (trường đang trống).
   Khối văn bản đặt trong ```` ```markdown ````. Không có backtick hay `${` trong khối.
 - **E. Việc chưa làm / cần người** — quyết định của chủ sản phẩm, thuật ngữ chưa chốt, ảnh, bài khác cần thẩm định,
   kết quả kiểm máy (bước 1b), danh sách link vào. Bài đang mang byline duyệt cho bản cũ: hỏi giữ hay gỡ.
@@ -127,7 +137,8 @@ Engine: `sciencepedia/scripts/lib/corrections.ts` (`runCorrections`, kiểu `Pla
    (đối chiếu với bản dump, không với phiếu).
 6. typecheck + eslint, commit → PR → merge (CLAUDE.md, mục Git).
 7. **Agent tự chạy** `npm run corrections:<MMDD>` (khô) rồi `-- --write`; chạy lại phải ra 0 fix. Kiểm trang thật
-   bằng curl tìm một cụm của bản mới.
+   bằng curl tìm một cụm của bản mới — cả `/vi/articles/<slug>` lẫn `/en/articles/<slug>` (trang EN không còn
+   "No English version yet").
 
 ## Ranh giới — không bao giờ
 
@@ -140,5 +151,5 @@ Engine: `sciencepedia/scripts/lib/corrections.ts` (`runCorrections`, kiểu `Pla
 
 ## Báo lại cho chủ sản phẩm
 
-Phán quyết · số mục chặn/nên sửa · 1–2 lỗi nặng nhất bằng lời thường · những gì cần người quyết. Lỗi lặp lần
+Phán quyết · số mục chặn/nên sửa · bản EN (đã dịch/sửa, hay vì sao chưa) · 1–2 lỗi nặng nhất bằng lời thường · những gì cần người quyết. Lỗi lặp lần
 thứ ba trong đợt → đề xuất thêm quy tắc vào `article-generator` (CLAUDE.md: "lặp 3 lần thì sửa prompt").

@@ -27,6 +27,11 @@ export type Fix =
   /** Thay đúng một chỗ khớp nguyên văn. */
   | { field: Field; find: string; replace: string; why: string }
   /**
+   * Điền một trường đang TRỐNG (vd. bản EN của bài chưa có bản dịch). Trường đã có chữ khác thì
+   * báo lỗi, không đè — sửa trường có sẵn đi qua `find`/`section`.
+   */
+  | { field: Field; fill: string; why: string }
+  /**
    * Thay CẢ mục: từ dòng tiêu đề `section` (khớp nguyên dòng, đúng một lần) tới trước tiêu đề
    * cùng cấp hoặc cấp cao hơn kế tiếp (hoặc hết bài). Tiểu mục cấp sâu hơn nằm trong mục bị thay.
    * `replace: ""` là xoá mục.
@@ -116,6 +121,11 @@ export function applyFix(text: string, fix: Fix, ctx: string): string | null {
 }
 
 function applyOnce(text: string, fix: Fix, ctx: string): string | null {
+  if ("fill" in fix) {
+    if (text.trim() === fix.fill.trim()) return null;
+    if (text.trim()) throw new Error(`[${ctx}] trường đã có nội dung, không đè bằng fill — dùng find/section`);
+    return fix.fill.trim();
+  }
   if ("find" in fix) {
     if (text.includes(fix.replace)) return null;
     const count = text.split(fix.find).length - 1;
@@ -139,6 +149,7 @@ function applyOnce(text: string, fix: Fix, ctx: string): string | null {
 }
 
 function describe(fix: Fix): string {
+  if ("fill" in fix) return `điền trường trống (${fix.fill.length} ký tự)`;
   if ("find" in fix) return `thay: ${fix.find.slice(0, 100).replace(/\n/g, " ⏎ ")}`;
   if ("section" in fix) return fix.replace ? `thay mục: ${fix.section}` : `xoá mục: ${fix.section}`;
   return `chèn trước: ${fix.before}`;
