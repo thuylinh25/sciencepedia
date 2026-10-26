@@ -74,8 +74,9 @@ export const SYSTEM_COLORS: Record<SystemId, string> = {
   endocrine: "#c5a09a",
   reproductive: "#bda098",
   integumentary: "#ba9b7d",
-  // Dây chằng/gân trắng bạc ám xanh như atlas; bản cũ #aec3bb ngả xanh rêu.
-  connective: "#c4ced3",
+  // Dây chằng/gân xám lam như ảnh HAA (2026-10-26); #c4ced3 lên hình trắng như giấy
+  // (trung vị 198, mẫu 135–180). Bản cũ hơn #aec3bb ngả xanh rêu.
+  connective: "#acb0b6",
 };
 
 /**
