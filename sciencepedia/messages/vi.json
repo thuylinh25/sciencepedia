@@ -610,7 +610,10 @@
     "zoomIn": "Thu vào",
     "zoomOut": "Lùi ra",
     "openFull": "Mở mô hình đầy đủ",
-    "nextIsSmaller": "Cấp sau nhỏ hơn khoảng {factor} lần"
+    "nextIsSmaller": "Cấp sau nhỏ hơn khoảng {factor} lần",
+    "frameLabel": "Khung thu phóng",
+    "levels": "Các cấp quy mô",
+    "hint": "Cuộn chuột hoặc phím ← → để đổi cấp"
   },
   "sky": {
     "title": "Bản đồ bầu trời",

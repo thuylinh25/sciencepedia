@@ -3,11 +3,16 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import dynamic from "next/dynamic";
 import { useLocale, useTranslations } from "next-intl";
-import { ChevronDown, ChevronUp, ExternalLink, Loader2 } from "lucide-react";
+import { ExternalLink, Loader2, ZoomIn, ZoomOut } from "lucide-react";
 
 import { Link } from "@/i18n/navigation";
 import { EARTH_CLOUDS_TEXTURE, PLANETS } from "@/lib/solar-data";
-import { ZOOM_LEVELS, stepRatio, type ZoomLevel } from "@/lib/zoom-levels";
+import {
+  ZOOM_LEVELS,
+  magnitude,
+  stepRatio,
+  type ZoomLevel,
+} from "@/lib/zoom-levels";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { WarpTransition } from "@/components/zoom/warp-transition";
@@ -35,6 +40,20 @@ const GlobeScene = dynamic(
     900 → 1300 khi thêm lớp bay xuyên không gian: dưới chừng 1,2 giây thì tên
     lửa chưa kịp đọc ra là tên lửa đã mất hút, chỉ còn một vệt loé. */
 const FADE_MS = 1300;
+
+/** Tổng `deltaY` cần gom trước khi một lượt cuộn tính là một nấc. Bàn di chuột
+    bắn hàng chục sự kiện nhỏ cho một cú vuốt; chuột có nấc bắn ~100 mỗi nấc. */
+const WHEEL_THRESHOLD = 60;
+
+/** 27 → 10²⁷. Dùng `<sup>` chứ không ký tự mũ Unicode: font mono của trang
+    thiếu glyph ⁴–⁹, trình duyệt vá bằng font khác và số mũ lệch cỡ. */
+function PowerOfTen({ exp }: { exp: number }) {
+  return (
+    <>
+      10<sup className="ml-px text-[0.75em]">{exp}</sup>
+    </>
+  );
+}
 
 function prefersReducedMotion(): boolean {
   return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -214,8 +233,85 @@ export function ZoomJourney() {
     [index],
   );
 
+  /* Con lăn đổi cấp, theo quy ước bản đồ: cuộn tới (deltaY < 0) là thu vào.
+
+     Bắt ở pha capture trên khung và chặn lan xuống canvas: các cảnh dùng
+     OrbitControls, vốn cũng lấy con lăn để đẩy camera. Để cả hai cùng chạy
+     thì một cú cuộn vừa đổi cấp vừa dí camera vào cảnh mới. Trong hành trình
+     này thu phóng là đổi cấp; kéo vẫn xoay, chụm hai ngón vẫn đẩy camera.
+
+     Ở cấp đầu/cuối, cuộn theo chiều không còn cấp thì KHÔNG chặn mặc định —
+     trang cuộn tiếp, người đọc không bị kẹt trong khung cao gần một màn hình. */
+  const frameRef = useRef<HTMLDivElement>(null);
+  const goRef = useRef(go);
+  const indexRef = useRef(index);
+  useEffect(() => {
+    goRef.current = go;
+    indexRef.current = index;
+  }, [go, index]);
+
+  useEffect(() => {
+    const frame = frameRef.current;
+    if (!frame) return;
+    let acc = 0;
+    let lastEvent = 0;
+    let lockedUntil = 0;
+
+    const onWheel = (event: WheelEvent) => {
+      event.stopPropagation();
+      const step = event.deltaY < 0 ? 1 : -1;
+      const target = indexRef.current + step;
+      if (target < 0 || target >= ZOOM_LEVELS.length) return;
+      event.preventDefault();
+
+      const now = performance.now();
+      if (now < lockedUntil) return;
+      if (now - lastEvent > 200) acc = 0;
+      lastEvent = now;
+      acc += event.deltaY;
+      if (Math.abs(acc) < WHEEL_THRESHOLD) return;
+
+      acc = 0;
+      /* Khoá đến hết lượt chuyển: đà quán tính của bàn di chuột còn bắn sự
+         kiện cả giây sau khi nhấc tay, không khoá thì một cú vuốt nhảy hai cấp. */
+      lockedUntil = now + FADE_MS;
+      goRef.current(target);
+    };
+
+    frame.addEventListener("wheel", onWheel, { capture: true, passive: false });
+    return () =>
+      frame.removeEventListener("wheel", onWheel, { capture: true });
+  }, [webgl]);
+
+  const onKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
+    const keys: Record<string, number> = {
+      ArrowRight: index + 1,
+      "+": index + 1,
+      "=": index + 1,
+      ArrowLeft: index - 1,
+      "-": index - 1,
+      Home: 0,
+      End: ZOOM_LEVELS.length - 1,
+    };
+    const next = keys[event.key];
+    if (next === undefined) return;
+    event.preventDefault();
+    go(next);
+  };
+
   const level = ZOOM_LEVELS[index];
   const ratio = stepRatio(index);
+  const name = (item: ZoomLevel) => (locale === "en" ? item.nameEn : item.name);
+  const note = locale === "en" ? level.noteEn : level.note;
+  /* Một chữ số có nghĩa: "khoảng 700 nghìn", không phải "705.550" — kích
+     thước mỗi cấp vốn là ước lượng tròn, sáu chữ số là độ chính xác giả. */
+  const factor =
+    ratio &&
+    new Intl.NumberFormat(locale, {
+      notation: "compact",
+      compactDisplay: "long",
+      maximumSignificantDigits: 1,
+    }).format(ratio);
   const outgoingLevel = outgoing
     ? (ZOOM_LEVELS.find((item) => item.id === outgoing.id) ?? level)
     : level;
@@ -228,9 +324,20 @@ export function ZoomJourney() {
     );
   }
 
+  /* Trên điện thoại khung thấp hơn 4rem: nút "Hỏi AI" nổi ở góc phải-dưới màn
+     hình, khung cao `100dvh − 14rem` thì đáy khung — chỗ nút "Thu vào" — nằm
+     đúng dưới nút nổi đó. */
   return (
     <>
-      <div className="relative h-[calc(100dvh-14rem)] min-h-[28rem] w-full overflow-hidden rounded-2xl border bg-[#02030a]">
+      <div
+        ref={frameRef}
+        tabIndex={0}
+        role="region"
+        aria-label={t("frameLabel")}
+        aria-describedby="zoom-hint"
+        onKeyDown={onKeyDown}
+        className="relative h-[calc(100dvh-18rem)] min-h-[24rem] w-full sm:h-[calc(100dvh-14rem)] sm:min-h-[28rem] overflow-hidden rounded-2xl border bg-[#02030a] focus-visible:ring-2 focus-visible:ring-white/60 focus-visible:outline-none"
+      >
         {webgl === null ? (
           <div className="grid h-full place-items-center text-sm text-white/60">
             <Loader2 className="size-5 animate-spin" />
@@ -276,76 +383,122 @@ export function ZoomJourney() {
           </>
         )}
 
-        {/* --------------------------------------------- Điều khiển thu phóng */}
-        <div className="absolute inset-x-4 bottom-4 flex items-center justify-between gap-3 sm:inset-x-auto sm:left-1/2 sm:-translate-x-1/2">
+        {/* ------------------------------------------------ Cấp hiện tại (HUD)
+            Trong khung, góc trên-trái. Trước đây cả khối nằm dưới khung để
+            khỏi che cảnh, nhưng khung cao gần một màn hình nên ở màn laptop
+            thường khối đó rơi khỏi màn: người xem bấm qua bốn cấp mà không
+            biết mình đang ở đâu. Trong khung chỉ giữ tên + kích thước + bội
+            số (ba dòng ngắn, không bắt chuột); đoạn mô tả vẫn ở dưới. */}
+        <div className="pointer-events-none absolute top-4 left-4 max-w-[17rem] rounded-xl bg-black/35 px-3 py-2 backdrop-blur-sm">
+          <p className="text-[11px] tracking-widest text-white/60 uppercase">
+            {t("levelOf", { step: index + 1, total: ZOOM_LEVELS.length })}
+          </p>
+          <h2
+            className="font-display text-lg leading-tight font-bold sm:text-xl"
+            style={{ color: level.color }}
+          >
+            {name(level)}
+          </h2>
+          <p className="font-mono text-sm text-white/80">
+            {locale === "en" ? level.sizeEn : level.size}
+            <span className="text-white/50">
+              {" · "}
+              <PowerOfTen exp={magnitude(level)} /> m
+            </span>
+          </p>
+          {factor && (
+            <p className="mt-1 text-xs text-white/60">
+              {t("nextIsSmaller", { factor })}
+            </p>
+          )}
+          {note && <p className="mt-1 text-xs text-amber-200/90">{note}</p>}
+        </div>
+
+        <p
+          id="zoom-hint"
+          className="pointer-events-none absolute top-4 right-4 hidden text-right text-xs text-white/45 sm:block"
+        >
+          {t("hint")}
+        </p>
+
+        {/* Đọc tên cấp mới cho trình đọc màn hình — HUD ở trên đổi chữ nhưng
+            không phải vùng live, nên tự nó không được đọc. */}
+        <p className="sr-only" aria-live="polite">
+          {t("levelOf", { step: index + 1, total: ZOOM_LEVELS.length })}:{" "}
+          {name(level)}, {locale === "en" ? level.sizeEn : level.size}
+        </p>
+
+        {/* --------------------------------------------- Điều khiển thu phóng
+            Bốn chấm không chữ → thanh cấp có tên và bậc độ lớn: chấm chỉ nói
+            "có bốn thứ", không nói đang ở đâu trên trục tỉ lệ. Trên điện thoại
+            chỉ ô đang chọn hiện tên, các ô khác còn mỗi 10ⁿ. */}
+        <div className="absolute inset-x-3 bottom-3 flex items-center justify-between gap-2 sm:inset-x-auto sm:left-1/2 sm:-translate-x-1/2">
           <Button
             size="sm"
             variant="glass"
             onClick={() => go(index - 1)}
             disabled={index === 0}
-            className="gap-2 border-white/20 bg-white/10 text-white hover:bg-white/20 disabled:opacity-30"
+            aria-label={t("zoomOut")}
+            className="h-9 gap-2 border-white/20 bg-white/10 text-white hover:bg-white/20 disabled:opacity-30"
           >
-            <ChevronUp className="size-4" />
-            {t("zoomOut")}
+            <ZoomOut className="size-4" />
+            <span className="hidden sm:inline">{t("zoomOut")}</span>
           </Button>
 
-          <div className="flex items-center gap-1.5">
+          <ol
+            aria-label={t("levels")}
+            className="flex items-stretch gap-1 rounded-full border border-white/15 bg-black/40 p-1 backdrop-blur-sm"
+          >
             {ZOOM_LEVELS.map((step, i) => (
-              <button
-                key={step.id}
-                type="button"
-                onClick={() => go(i)}
-                aria-label={locale === "en" ? step.nameEn : step.name}
-                className={cn(
-                  "h-2 rounded-full transition-all",
-                  i === index ? "w-7 bg-white" : "w-2 bg-white/35 hover:bg-white/60",
-                )}
-              />
+              <li key={step.id}>
+                <button
+                  type="button"
+                  onClick={() => go(i)}
+                  aria-label={name(step)}
+                  aria-current={i === index ? "step" : undefined}
+                  className={cn(
+                    "flex min-h-9 flex-col items-center justify-center rounded-full px-2 leading-none transition-colors sm:px-3",
+                    i === index
+                      ? "bg-white text-[#02030a]"
+                      : "text-white/70 hover:bg-white/15 hover:text-white",
+                  )}
+                >
+                  <span
+                    className={cn(
+                      "text-xs font-medium whitespace-nowrap",
+                      i !== index && "hidden sm:inline",
+                    )}
+                  >
+                    {locale === "en" ? step.shortNameEn : step.shortName}
+                  </span>
+                  <span className="mt-0.5 font-mono text-[10px] whitespace-nowrap opacity-70">
+                    <PowerOfTen exp={magnitude(step)} />
+                    <span className={cn(i !== index && "hidden sm:inline")}>
+                      {" "}m
+                    </span>
+                  </span>
+                </button>
+              </li>
             ))}
-          </div>
+          </ol>
 
           <Button
             size="sm"
             variant="glass"
             onClick={() => go(index + 1)}
             disabled={index === ZOOM_LEVELS.length - 1}
-            className="gap-2 border-white/20 bg-white/10 text-white hover:bg-white/20 disabled:opacity-30"
+            aria-label={t("zoomIn")}
+            className="h-9 gap-2 border-white/20 bg-white/10 text-white hover:bg-white/20 disabled:opacity-30"
           >
-            {t("zoomIn")}
-            <ChevronDown className="size-4" />
+            <span className="hidden sm:inline">{t("zoomIn")}</span>
+            <ZoomIn className="size-4" />
           </Button>
         </div>
-
-        {/* Bội số giữa cấp này và cấp kế tiếp */}
-        {ratio && (
-          <p className="pointer-events-none absolute right-4 bottom-20 hidden text-right text-xs text-white/50 sm:block">
-            {t("nextIsSmaller", {
-              factor: Math.round(ratio).toLocaleString(locale),
-            })}
-          </p>
-        )}
       </div>
 
-      {/* ------------------------------------------------ Thông tin cấp hiện tại
-          Để ngoài khung chứ không phủ lên cảnh: overlay ở góc trái trên che
-          đúng phần thiên hà và cấu trúc sợi mà người xem đang muốn nhìn. */}
-      <div className="mt-3 flex flex-col gap-x-6 gap-y-2 sm:flex-row sm:items-baseline">
-        <div className="shrink-0 sm:w-64">
-          <p className="text-[11px] tracking-widest text-muted-foreground uppercase">
-            {t("levelOf", { step: index + 1, total: ZOOM_LEVELS.length })}
-          </p>
-          <h2
-            className="font-display text-xl font-bold"
-            style={{ color: level.color }}
-          >
-            {locale === "en" ? level.nameEn : level.name}
-          </h2>
-          <p className="font-mono text-sm text-muted-foreground">
-            {locale === "en" ? level.sizeEn : level.size}
-          </p>
-        </div>
-
-        <div className="min-w-0 flex-1">
+      {/* ------------------------------------------------ Mô tả cấp hiện tại */}
+      <div className="mt-3">
+        <div className="min-w-0">
           <p className="text-sm leading-relaxed text-muted-foreground">
             {locale === "en" ? level.blurbEn : level.blurb}
           </p>

@@ -18,6 +18,9 @@ export type ZoomLevel = {
   id: string;
   name: string;
   nameEn: string;
+  /** Tên ngắn cho thanh cấp — tên đầy đủ không lọt bốn ô trên điện thoại */
+  shortName: string;
+  shortNameEn: string;
   /** Kích thước đặc trưng, hiển thị cho người xem */
   size: string;
   sizeEn: string;
@@ -27,6 +30,10 @@ export type ZoomLevel = {
   blurbEn: string;
   /** Trang chi tiết tương ứng, nếu có */
   href?: string;
+  /** Lưu ý hiện ngay trong khung khi cảnh KHÔNG vẽ theo tỉ lệ thật. Chỉ ghi
+      cho cảnh đã kiểm là bị nén — không đoán cho các cảnh còn lại. */
+  note?: string;
+  noteEn?: string;
   color: string;
 };
 
@@ -35,6 +42,8 @@ export const ZOOM_LEVELS: ZoomLevel[] = [
     id: "universe",
     name: "Vũ trụ quan sát được",
     nameEn: "The observable universe",
+    shortName: "Vũ trụ",
+    shortNameEn: "Universe",
     size: "93 tỉ năm ánh sáng",
     sizeEn: "93 billion light-years",
     metres: 8.8e26,
@@ -49,6 +58,8 @@ export const ZOOM_LEVELS: ZoomLevel[] = [
     id: "milky-way",
     name: "Ngân Hà",
     nameEn: "The Milky Way",
+    shortName: "Ngân Hà",
+    shortNameEn: "Milky Way",
     size: "105.000 năm ánh sáng",
     sizeEn: "105,000 light-years",
     metres: 9.9e20,
@@ -63,6 +74,8 @@ export const ZOOM_LEVELS: ZoomLevel[] = [
     id: "solar-system",
     name: "Hệ Mặt Trời",
     nameEn: "The Solar System",
+    shortName: "Hệ Mặt Trời",
+    shortNameEn: "Solar System",
     size: "9 tỉ km",
     sizeEn: "9 billion km",
     metres: 9e12,
@@ -71,12 +84,18 @@ export const ZOOM_LEVELS: ZoomLevel[] = [
     blurbEn:
       "Eight planets around an average star. At the scale of the galaxy, the whole system is smaller than a pixel.",
     href: "/solar-system",
+    /* `realScale: false` trong zoom-journey: bán kính là `displayRadius` và
+       quỹ đạo nén theo căn bậc hai khoảng cách (xem `solar-data.ts`). */
+    note: "Kích thước và khoảng cách trong cảnh không theo tỉ lệ.",
+    noteEn: "Sizes and distances in this scene are not to scale.",
     color: "#f59e0b",
   },
   {
     id: "earth",
     name: "Trái Đất",
     nameEn: "Earth",
+    shortName: "Trái Đất",
+    shortNameEn: "Earth",
     size: "12.756 km",
     sizeEn: "12,756 km",
     metres: 1.2756e7,
@@ -94,4 +113,9 @@ export function stepRatio(index: number): number | null {
   const next = ZOOM_LEVELS[index + 1];
   if (!current || !next) return null;
   return current.metres / next.metres;
+}
+
+/** Bậc độ lớn của một cấp, làm tròn: 8,8 × 10²⁶ m → 27. */
+export function magnitude(level: ZoomLevel): number {
+  return Math.round(Math.log10(level.metres));
 }
