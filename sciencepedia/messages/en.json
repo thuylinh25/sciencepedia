@@ -610,7 +610,10 @@
     "zoomIn": "Zoom in",
     "zoomOut": "Zoom out",
     "openFull": "Open the full model",
-    "nextIsSmaller": "The next level is about {factor}× smaller"
+    "nextIsSmaller": "The next level is about {factor} times smaller",
+    "frameLabel": "Zoom viewer",
+    "levels": "Scale levels",
+    "hint": "Scroll or use ← → to change level"
   },
   "sky": {
     "title": "Sky map",
