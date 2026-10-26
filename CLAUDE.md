@@ -89,7 +89,7 @@ Topic Request
 
 **Vì sao thứ tự này:** research trước khi viết (viết theo trí nhớ sinh ra văn tự tin nhưng sai) · fact-check trước generate (sửa nguồn rẻ hơn viết lại bài) · editor trước graph/SEO/ảnh (đừng đầu tư vào bài sắp bị loại) · graph trước SEO/category (link và vị trí suy ra từ graph) · lưu trữ cuối cùng.
 
-**Bài lên trang không qua pipeline** (đăng thẳng qua form /admin): skill `tham-dinh-bai-da-dang` — phiếu A–F trong `docs/content/checks/<ngày>/`, rồi script đính chính dùng engine `scripts/lib/corrections.ts`. Mặc định bài giữ PUBLISHED trong lúc sửa (chủ sản phẩm chốt 2026-10-09: về DRAFT kéo theo cả chuỗi đăng lại); byline duyệt vẫn do người ký.
+**Bài lên trang không qua pipeline** (đăng thẳng qua form /admin): skill `tham-dinh-bai-da-dang` — phiếu A–F trong `docs/content/checks/<ngày>/` (luôn gọi `translation`: bài chưa có bản EN thì dịch cả bài trong cùng lượt), rồi script đính chính dùng engine `scripts/lib/corrections.ts`. Mặc định bài giữ PUBLISHED trong lúc sửa (chủ sản phẩm chốt 2026-10-09: về DRAFT kéo theo cả chuỗi đăng lại); byline duyệt vẫn do người ký.
 
 **Vòng sửa:** editor trả bài → về bước 3 (viết lại) hoặc bước 1 (nguồn kém). **Tối đa 2 vòng**, sau đó editor quyết publish-hoặc-bỏ. Một lỗi lặp 3 lần trong batch → dừng batch, sửa prompt.
 
