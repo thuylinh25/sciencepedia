@@ -998,7 +998,16 @@ dạ dày, ruột, bàng quang, tuỵ, lách): bao ướt bóng (clearcoat), loa
 xương (rốn thận, kẽ quai ruột). Cơ: thớ theo trục dài hộp bao, CHỈ ở cơ thon dài (~2,6× bề ngang) — cơ hình
 quạt có trục hộp bao không phải hướng thớ, không vẽ còn hơn vẽ sai. **Không vẽ gân ở hai đầu cơ**: dữ liệu có
 4 mảnh gân; đoán gân theo đầu hộp bao là tô gân lên chỗ bám thịt — khẳng định giải phẫu sai. Chỉ nhiễu giá
-trị (không nhiễu tế bào 27 lần thử như lỗ xương): cơ và tạng phủ phần lớn màn hình. **Chiều sâu = phía sau
+trị (không nhiễu tế bào 27 lần thử như lỗ xương): cơ và tạng phủ phần lớn màn hình.
+**Cơ theo ảnh HAA đùi trước (2026-10-26):** trục thớ = trục chính PCA của đỉnh, tính khi khối về —
+hộp bao song song trục toạ độ nên cơ may, cơ khép dài có thớ đứng như cơ thẳng đùi. Thớ là nhiễu 2D
+(dọc × MỘT hướng ngang), không 3D: cơ thon dần làm mặt cơ cắt qua ô nhiễu theo chiều thứ ba, thớ đứt
+thành vệt ngắn. Hướng ngang trộn bề rộng/bề dày theo hướng nào trải rộng trên màn (như triplanar) — chỉ
+bề rộng thì mặt bên ra vân vòng thớ gỗ. Kẽ thớ và bóng tối phải ĐỎ THẪM, không xám: trung vị đã khớp mẫu
+từ đầu, lệch nằm ở hai đuôi (p10 bão hoà 0,58 so 0,79) → kẽ thớ nhân màu bớt lục/lam, ánh sáng gián tiếp
+của cơ nhân `vec3` ngả đỏ. Đo giữa đùi, cùng cỡ: tương phản p90/p10 1,68 → 2,0 (mẫu 2,1), vân mảnh 6,1 →
+13,5 (mẫu 11,7). Không bù được: mảng gân/cân trắng kem ở đầu cơ và bao cơ thẳng bụng (không có dữ liệu).
+**Chiều sâu = phía sau
 tối dần** tới −30% ở 0,12 × khoảng cách camera sau tâm nhìn, không shadow map: thêm một lượt depth cả cảnh mỗi
 khung xoay, còn chỉ vẽ khi đứng yên thì "nhảy" như AO cũ. Bóng tiếp xúc = GTAO. Đo UHD 730 (p50, tự xoay):
 không đổi trong biên nhiễu (cơ 5,0 → 3,7 ms, tiêu hoá 5,9 → 5,8 ms). Điện thoại CHƯA đo. Đo màu: xương giữ
