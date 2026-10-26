@@ -303,3 +303,8 @@ So the question is not whether we have free time, but how we use that time. A br
 - **NHS**: dùng trang Generalised anxiety disorder (trang landing /mental-health/ quá mỏng). Mốc "≥ 6 tháng" là tiêu chí chẩn đoán GAD của NHS, diễn đạt trong D8 là "khi nào đi khám", không phải ngưỡng cứng để lo lắng.
 - **Bỏ qua, có lý do:** giữ nguyên `summary`, `seoTitle` (đã ở mức dè dặt, kiểu câu, khớp nội dung mới) — không sửa cho đỡ nhiễu.
 - **Skill đã gọi/thực hiện trong lượt:** content-research (thu nguồn) · fact-check Audit (tách claim, Crossref + Europe PMC abstract) · seo-optimizer (seoDescription) · translation (bản EN đầy đủ, dịch từ bản VI sau sửa).
+
+### Cập nhật sau khi áp 1026c (đợt 1026d)
+
+- **D3, Killingsworth & Gilbert 2010:** abstract (Europe PMC) chỉ khẳng định "mind-wandering typically makes them unhappy"; KHÔNG đủ căn cứ cho mệnh đề "kém vui hơn **kể cả khi đang nghĩ về điều dễ chịu**" (kết quả thật của bài là tâm trí lang thang sang điều dễ chịu *không vui hơn* lúc tập trung — nằm ở phần kết quả, không có trong abstract). Vì chỉ đọc abstract, **bỏ hẳn mệnh đề** thay vì đổi sang "không vui hơn" — không khẳng định tiểu kết quả chưa đọc. Áp bằng `corrections:1026d` (VI + EN).
+- **Nhất quán hạ mức:** `summary` (VI) và `summaryEn` còn "có thể **làm gia tăng** / can **increase**" — cùng framing nhân quả đã hạ ở seoDescription/thân bài. Đổi về "có thể **đi kèm** / can **be accompanied by**". (Sửa lại ghi chú "bỏ qua summary" ở trên.)
