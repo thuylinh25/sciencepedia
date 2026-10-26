@@ -88,7 +88,8 @@
     "corrections:1023": "tsx --env-file-if-exists=.env scripts/apply-corrections-2026-10-23.ts",
     "corrections:1026": "tsx --env-file-if-exists=.env scripts/apply-corrections-2026-10-26.ts",
     "corrections:1026b": "tsx --env-file-if-exists=.env scripts/apply-corrections-2026-10-26-b.ts",
-    "corrections:1026c": "tsx --env-file-if-exists=.env scripts/apply-corrections-2026-10-26-c.ts"
+    "corrections:1026c": "tsx --env-file-if-exists=.env scripts/apply-corrections-2026-10-26-c.ts",
+    "corrections:1026d": "tsx --env-file-if-exists=.env scripts/apply-corrections-2026-10-26-d.ts"
   },
   "prisma": {
     "seed": "tsx --env-file-if-exists=.env prisma/seed.ts"
