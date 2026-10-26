@@ -176,6 +176,16 @@ float tissueCell(vec3 x) {
       }
   return d;
 }
+// Thớ cơ theo một toạ độ ngang + toạ độ dọc: -1 kẽ thớ … 1 sống thớ (xem \`MUSCLE\`).
+// Thớ nhỏ hơn ~2 điểm ảnh thì về giá trị trung bình (0): khỏi lấp lánh khi xoay.
+float tissueMuscleGrain(float across, float len) {
+  float fiberAA = 1.0 - smoothstep(0.35, 0.9, fwidth(across * 600.0));
+  float bundleAA = 1.0 - smoothstep(0.35, 0.9, fwidth(across * 95.0));
+  float fiber = tissueNoise(vec3(across * 600.0, len * 1.5, 6.1)) * 0.75 + tissueNoise(vec3(across * 1300.0, len * 3.0, 1.7)) * 0.25;
+  float striate = mix(0.5, smoothstep(0.28, 0.66, fiber), fiberAA);
+  float band = mix(0.5, smoothstep(0.15, 0.85, tissueNoise(vec3(across * 95.0, len * 1.5, 1.3))), bundleAA);
+  return (striate * 0.85 + band * 0.15) * 2.0 - 1.0;
+}
 `;
 type Surface = {
   /** Lớp phủ bóng (clearcoat) — mô ướt/sụn; không có thì giữ MeshStandardMaterial. */
@@ -261,9 +271,13 @@ diffuseColor.rgb *= mix(0.9, 1.05, tissueNoise(vTissue * 40.0) * 0.6 + tissueFin
  *
  * - Cơ quan: bao tạng ướt bóng (clearcoat), loang lớn rất khẽ + hạt nhỏ, hốc tối theo độ
  *   cong (rốn thận, kẽ giữa các quai ruột, rãnh vành) và ánh sáng gián tiếp hạ nhẹ ở hốc.
- * - Cơ: thớ theo trục dài của hộp bao mảnh, CHỈ ở cơ thon dài gấp ~2,6 lần bề ngang
- *   (cơ may, nhị đầu, thẳng bụng). Cơ hình quạt (ngực lớn, chéo bụng, hoành) có trục hộp
- *   bao không phải hướng thớ — không vẽ thớ cho chúng còn hơn vẽ sai hướng.
+ * - Cơ: thớ theo trục chính của mảnh (`principalAxis`), CHỈ ở cơ thon dài gấp ~2,6 lần bề
+ *   ngang (cơ may, nhị đầu, thẳng bụng). Cơ hình quạt (ngực lớn, chéo bụng, hoành) có trục
+ *   chính không phải hướng thớ — không vẽ thớ cho chúng còn hơn vẽ sai hướng.
+ * - Theo ảnh HAA đùi trước (2026-10-26): trung vị màu đã khớp, lệch ở hai đuôi — kẽ thớ và
+ *   mặt khuất xám nhạt (p10 bão hoà 0,58, mẫu 0,79), sống thớ không nhạt màu. Nên kẽ thớ đỏ
+ *   thẫm, ánh sáng gián tiếp ngả đỏ, hốc tối theo độ cong. Đo giữa đùi: tương phản 1,68 → 2,0
+ *   (mẫu 2,1), vân mảnh 6,1 → 13,5 (mẫu 11,7).
  * - KHÔNG vẽ chuyển tiếp sang gân ở hai đầu cơ: dữ liệu chỉ có 4 mảnh gân, đoán gân theo
  *   đầu hộp bao là tô gân lên chỗ bám thịt — một khẳng định giải phẫu sai ("trống hơn sai").
  */
@@ -284,18 +298,36 @@ diffuseColor.rgb = mix(diffuseColor.rgb, diffuseColor.rgb * vec3(0.55, 0.42, 0.4
 });
 const MUSCLE: Surface = {
   axis: true,
+  coat: { clearcoat: 0.2, clearcoatRoughness: 0.45 },
   glsl: `
 float tissueFine = tissueNoise(vTissue * 160.0 + 3.3);
-vec3 tissueAlong = vTissueAxis.xyz * dot(vTissue, vTissueAxis.xyz);
-vec3 tissueAcross = vTissue - tissueAlong;
-float tissueFiberAA = 1.0 - smoothstep(0.35, 0.9, length(fwidth(vTissue * 420.0)));
-float tissueFiber = tissueNoise(tissueAcross * 420.0 + tissueAlong * 10.0 + 6.1);
-float tissueBundle = tissueNoise(tissueAcross * 95.0 + tissueAlong * 3.0 + 1.3);
+// Thớ theo toạ độ dọc trục chính × MỘT toạ độ ngang, không nhiễu 3D: cơ thon dần về gân
+// thì mặt cơ đi xuyên các ô nhiễu theo chiều thứ ba, thớ đứt thành vệt ngắn. Ngang theo bề
+// rộng ở mặt trước của cơ, theo bề dày ở mặt bên — trộn theo hướng nào đang trải rộng trên
+// màn hình (như triplanar). Chỉ một hướng thì mặt bên ra vân vòng như thớ gỗ.
+float tissueLen = dot(vTissue, vTissueAxis.xyz);
+float tissueSide = dot(vTissue, vTissueWidth);
+float tissueDepth = dot(vTissue, cross(vTissueAxis.xyz, vTissueWidth));
+float tissueSideW = fwidth(tissueSide);
+float tissueDepthW = fwidth(tissueDepth);
+tissueSideW *= tissueSideW;
+tissueDepthW *= tissueDepthW;
+float tissueSideMix = smoothstep(0.25, 0.75, tissueSideW / (tissueSideW + tissueDepthW + 1e-14));
 float tissueStrap = smoothstep(0.6, 1.0, vTissueAxis.w);
-diffuseColor.rgb *= mix(0.9, 1.04, tissueFine);
-// Thớ nhỏ hơn ~2 điểm ảnh thì thay bằng giá trị trung bình của nó: khỏi lấp lánh khi xoay.
-diffuseColor.rgb *= mix(1.0, mix(0.8, 1.07, mix(0.275, tissueFiber * 0.55, tissueFiberAA) + tissueBundle * 0.45), tissueStrap);
+diffuseColor.rgb *= mix(0.92, 1.04, tissueFine);
+float tissueGrain = clamp(mix(tissueMuscleGrain(tissueDepth, tissueLen), tissueMuscleGrain(tissueSide, tissueLen), tissueSideMix) * 1.3, -1.0, 1.0) * tissueStrap;
+// Kẽ thớ đỏ thẫm (bớt lục/lam nhiều hơn đỏ: tối mà đậm màu hơn), sống thớ sáng và nhạt về hồng.
+vec3 tissueBase = diffuseColor.rgb;
+float tissueLum = dot(tissueBase, vec3(0.2126, 0.7152, 0.0722));
+diffuseColor.rgb = mix(tissueBase, tissueBase * vec3(0.62, 0.2, 0.12), max(-tissueGrain, 0.0));
+diffuseColor.rgb = mix(diffuseColor.rgb, mix(tissueBase, tissueLum * vec3(1.55, 1.12, 1.05), 0.28) * 1.1, max(tissueGrain, 0.0));
 `,
+  lit:
+    CURVATURE +
+    `
+diffuseColor.rgb = mix(diffuseColor.rgb, diffuseColor.rgb * vec3(0.55, 0.3, 0.26), tissueCavity * 0.75);
+`,
+  indirect: "vec3(0.85, 0.55, 0.5) * (1.0 - 0.4 * tissueCavity)",
   rough: "0.9 + 0.2 * tissueFine",
 };
 const SURFACES: Record<string, Surface> = {
@@ -366,6 +398,39 @@ diffuseColor.rgb = mix(diffuseColor.rgb, diffuseColor.rgb * vec3(0.55, 0.55, 0.6
     rough: "0.75 + 0.4 * tissueFine",
   },
 };
+
+/**
+ * Trục chính của đám đỉnh (vector riêng lớn nhất của ma trận hiệp phương sai, lặp luỹ
+ * thừa) + độ thon dài √(λ1/λ2) qua cùng ngưỡng 1,8–3,2 như tỉ lệ cạnh hộp bao, và trục
+ * bề ngang (vector riêng thứ hai). Đỉnh dày ở chỗ cong nhiều thì lệch nhẹ — đủ cho
+ * hướng vân, không phải hướng thớ thật.
+ */
+function principalAxis(pos: Float32Array): { axis: number[]; width: number[] } {
+  const n = pos.length / 3;
+  let mx = 0, my = 0, mz = 0;
+  for (let k = 0; k < pos.length; k += 3) { mx += pos[k]; my += pos[k + 1]; mz += pos[k + 2]; }
+  mx /= n; my /= n; mz /= n;
+  let xx = 0, xy = 0, xz = 0, yy = 0, yz = 0, zz = 0;
+  for (let k = 0; k < pos.length; k += 3) {
+    const x = pos[k] - mx, y = pos[k + 1] - my, z = pos[k + 2] - mz;
+    xx += x * x; xy += x * y; xz += x * z; yy += y * y; yz += y * z; zz += z * z;
+  }
+  const mul = (v: number[]) => [xx * v[0] + xy * v[1] + xz * v[2], xy * v[0] + yy * v[1] + yz * v[2], xz * v[0] + yz * v[1] + zz * v[2]];
+  const unit = (v: number[]) => { const l = Math.hypot(v[0], v[1], v[2]) || 1; return v.map((c) => c / l); };
+  // Bắt đầu từ cạnh dài nhất của hộp: không bao giờ vuông góc hẳn với trục cần tìm.
+  const diag = [xx, yy, zz];
+  let v = [0, 0, 0];
+  v[diag.indexOf(Math.max(...diag))] = 1;
+  for (let it = 0; it < 24; it++) v = unit(mul(v));
+  const l1 = Math.hypot(...mul(v));
+  // λ2 = λ lớn nhất trong mặt phẳng vuông góc v (khử v ra khỏi ma trận).
+  const deflate = (u: number[]) => { const w = mul(u); const d = l1 * (u[0] * v[0] + u[1] * v[1] + u[2] * v[2]); return [w[0] - d * v[0], w[1] - d * v[1], w[2] - d * v[2]]; };
+  let u = unit([v[1] - v[2], v[2] - v[0], v[0] - v[1]]);
+  if (!Number.isFinite(u[0]) || Math.hypot(...u) < 0.5) u = unit([v[1], -v[0], 0]);
+  for (let it = 0; it < 24; it++) u = unit(deflate(u));
+  const l2 = Math.hypot(...deflate(u));
+  return { axis: [...v, T.MathUtils.smoothstep(Math.sqrt(l1 / Math.max(l2, 1e-12)), 1.8, 3.2)], width: [...u, 0] };
+}
 
 /** Số khối tải song song — giữ như bản gốc: đủ lấp băng thông, không nghẽn kết nối. */
 const PARALLEL_CHUNKS = 3;
@@ -571,20 +636,29 @@ export default function AnatomyScene({
     );
     const systemIndex = parts.map((p) => SYSTEM_IDS.indexOf(p.system));
     /*
-     * Trục dài của từng mảnh cho vân dọc thân xương dài (`BONE`): cạnh dài nhất của
-     * hộp bao — mesh không có UV hay hướng thớ, hộp bao có sẵn trong metadata. Thô
-     * với xương chéo/cong (sườn), nên kênh A = độ thon dài: chỉ mảnh dài gấp ~2,5
-     * lần bề ngang mới có vân; đốt sống, xương cổ tay không có.
+     * Trục dài của từng mảnh cho vân dọc thân xương dài (`BONE`) và thớ cơ: mesh không
+     * có UV hay hướng thớ. Kênh A = độ thon dài: chỉ mảnh dài gấp ~2,5 lần bề ngang mới
+     * có vân; đốt sống, xương cổ tay, cơ hình quạt không có.
+     *
+     * Lúc đầu là cạnh dài nhất của hộp bao (có sẵn trong metadata); khi khối hình học về
+     * thì thay bằng trục chính của đám đỉnh (`principalAxis`). Hộp bao song song trục toạ
+     * độ nên cơ chạy chéo (cơ may, cơ khép dài) có thớ thẳng đứng như cơ thẳng đùi —
+     * thấy rõ khi so ảnh HAA chủ sản phẩm gửi (2026-10-26).
      */
     const axisData = new Float32Array(width * 4);
+    // Trục bề ngang (cạnh dài thứ hai): thớ cơ chỉ theo trục dài × bề ngang — xem `MUSCLE`.
+    const widthData = new Float32Array(width * 4);
     bounds.forEach((b, i) => {
       const size = b.getSize(new T.Vector3()).toArray();
       const order = [0, 1, 2].sort((a, c) => size[c] - size[a]);
       axisData[i * 4 + order[0]] = 1;
       axisData[i * 4 + 3] = T.MathUtils.smoothstep(size[order[0]] / Math.max(size[order[1]], 1e-4), 1.8, 3.2);
+      widthData[i * 4 + order[1]] = 1;
     });
     const axisTexture = new T.DataTexture(axisData, width, 1, T.RGBAFormat, T.FloatType);
     axisTexture.needsUpdate = true;
+    const widthTexture = new T.DataTexture(widthData, width, 1, T.RGBAFormat, T.FloatType);
+    widthTexture.needsUpdate = true;
 
     const markerPositions = new Float32Array(parts.length * 3);
     const markerGeometry = new T.BufferGeometry();
@@ -709,15 +783,18 @@ export default function AnatomyScene({
         shader.vertexShader =
           "attribute float partIndex; uniform sampler2D partState; uniform sampler2D selectionState; uniform float stateWidth; uniform float contextPass; varying float partVisible; varying float partSelected; varying float partHovered; varying float partContext;\n" +
           (surface ? "varying vec3 vTissue;\n" : "") +
-          (surface?.axis ? "uniform sampler2D partAxis; varying vec4 vTissueAxis;\n" : "") +
+          (surface?.axis ? "uniform sampler2D partAxis; uniform sampler2D partWidth; varying vec4 vTissueAxis; varying vec3 vTissueWidth;\n" : "") +
           shader.vertexShader;
-        if (surface?.axis) shader.uniforms.partAxis = { value: axisTexture };
+        if (surface?.axis) {
+          shader.uniforms.partAxis = { value: axisTexture };
+          shader.uniforms.partWidth = { value: widthTexture };
+        }
         shader.vertexShader = shader.vertexShader.replace(
           "#include <begin_vertex>",
           "#include <begin_vertex>\nvec2 stateUv = vec2((partIndex + 0.5) / stateWidth, 0.5); vec4 state = texture2D(partState, stateUv); transformed += state.xyz; partVisible = state.w; vec4 pick = texture2D(selectionState, stateUv); partSelected = pick.r; partHovered = pick.b; partContext = pick.a;" +
             // Toạ độ TRƯỚC khi tách (`position`, không `transformed`): vân dính vào mô khi kéo slider.
             (surface ? " vTissue = position;" : "") +
-            (surface?.axis ? " vTissueAxis = texture2D(partAxis, stateUv);" : ""),
+            (surface?.axis ? " vTissueAxis = texture2D(partAxis, stateUv); vTissueWidth = texture2D(partWidth, stateUv).xyz;" : ""),
         );
         /*
          * Mảnh ẩn, và mảnh BỐI CẢNH của góc nhìn theo hệ (kênh A của texture chọn) ở lượt
@@ -744,7 +821,7 @@ export default function AnatomyScene({
          */
         if (surface)
           shader.fragmentShader =
-            "varying vec3 vTissue;\n" + (surface.axis ? "varying vec4 vTissueAxis;\n" : "") + TISSUE_NOISE + shader.fragmentShader;
+            "varying vec3 vTissue;\n" + (surface.axis ? "varying vec4 vTissueAxis; varying vec3 vTissueWidth;\n" : "") + TISSUE_NOISE + shader.fragmentShader;
         shader.fragmentShader = shader.fragmentShader.replace("#include <color_fragment>", "#include <color_fragment>\n" + (surface?.glsl ?? ""));
         if (surface) {
           // Bóng không đều theo vân: bề mặt thật không nhám đều như nhựa.
@@ -1425,6 +1502,9 @@ export default function AnatomyScene({
         g.setIndex(new T.BufferAttribute(new Uint32Array(buffer, p.indices, p.indexCount), 1));
         g.boundingBox = bounds[i].clone();
         g.computeBoundingSphere();
+        const principal = principalAxis(g.attributes.position.array as Float32Array);
+        axisData.set(principal.axis, i * 4);
+        widthData.set(principal.width, i * 4);
         const pick = new T.Mesh(g, pickMaterial);
         pick.matrixAutoUpdate = false;
         pickers[i] = pick;
@@ -1438,6 +1518,8 @@ export default function AnatomyScene({
         entry.list.push(g);
         groups.set(key, entry);
       });
+      axisTexture.needsUpdate = true;
+      widthTexture.needsUpdate = true;
       groups.forEach(({ system, list: gs }, key) => {
         const geometry = mergeGeometries(gs, false);
         if (!geometry) throw new Error("merge");
@@ -2818,6 +2900,7 @@ export default function AnatomyScene({
       selectionTexture.dispose();
       tintTexture.dispose();
       axisTexture.dispose();
+      widthTexture.dispose();
       markerGeometry.dispose();
       markerMaterial.dispose();
       hover.remove();

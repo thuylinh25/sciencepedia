@@ -59,7 +59,9 @@ export const SYSTEM_COLORS: Record<SystemId, string> = {
   // Vàng nâu ấm như xương minh hoạ atlas (ảnh mẫu chủ sản phẩm 2026-10-23: bão hoà ~0,37).
   // #d3c9b3 trước đó đo ra bão hoà 0,10 — trắng sữa. Vân, lỗ xốp, hốc tối ở `BONE` (anatomy-scene.tsx).
   skeletal: "#d8b07e",
-  muscular: "#a85b50",
+  // Bớt cam hơn #a85b50: kẽ thớ đỏ thẫm + ánh sáng gián tiếp ngả đỏ ở `MUSCLE` đẩy màu lên lại;
+  // giữ #a85b50 thì giữa đùi đo bão hoà 0,55 (mẫu HAA 0,43).
+  muscular: "#96665f",
   cardiac: "#b96760",
   sensory: "#b0c8ce",
   arterial: "#c05245",
