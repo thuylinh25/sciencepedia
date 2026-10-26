@@ -637,6 +637,17 @@ export default function AnatomyScene({
     const DEPTH_SPAN = 0.12;
     const DEPTH_GLSL = "uniform float depthFocus; uniform float depthRange;\n";
     const DEPTH_DIM = "outgoingLight *= 1.0 - 0.3 * smoothstep(0.0, 1.0, (-vViewPosition.z - depthFocus) / depthRange);\n#include <opaque_fragment>";
+    /**
+     * Có mảnh đang chọn thì mảnh không chọn tối đi `SELECT_DIM`. Làm mảnh chọn sáng thêm
+     * không đủ: tone mapping nén vùng sáng, đại tràng lên tự sáng 60% chỉ hơn đoạn kề
+     * +13/255 và trông bạc màu (2026-10-26). Cho xung quanh lùi lại thì mảnh chọn nổi
+     * lên mà vẫn giữ đúng màu của nó. x: mảnh thường; y: mảnh bối cảnh — chỉ ở "Hiện
+     * giải phẫu xung quanh", nơi cả ruột già là bối cảnh vẽ đặc đủ màu và ruột thừa
+     * đang chọn chìm vào đó. Bối cảnh của góc nhìn theo hệ đã có màu riêng, không đụng.
+     */
+    const selectDim = { value: new T.Vector2() };
+    const SELECT_DIM = 0.4;
+    const SELECT_DIM_GLSL = "outgoingLight *= 1.0 - (partContext > 0.5 ? selectDim.y : selectDim.x) * (1.0 - partSelected);\n";
     const materialFor = (system: SystemId, color: string, key = "") => {
       const skin = key === "integumentary.skin";
       const surface = SURFACES[key];
@@ -666,7 +677,9 @@ export default function AnatomyScene({
         shader.uniforms.contextPass = contextPass;
         shader.uniforms.depthFocus = depthFocus;
         shader.uniforms.depthRange = depthRange;
-        shader.fragmentShader = DEPTH_GLSL + shader.fragmentShader.replace("#include <opaque_fragment>", DEPTH_DIM);
+        shader.uniforms.selectDim = selectDim;
+        shader.fragmentShader =
+          DEPTH_GLSL + "uniform vec2 selectDim;\n" + shader.fragmentShader.replace("#include <opaque_fragment>", SELECT_DIM_GLSL + DEPTH_DIM);
         shader.vertexShader =
           "attribute float partIndex; uniform sampler2D partState; uniform sampler2D selectionState; uniform float stateWidth; uniform float contextPass; varying float partVisible; varying float partSelected; varying float partHovered; varying float partContext;\n" +
           (surface ? "varying vec3 vTissue;\n" : "") +
@@ -699,6 +712,9 @@ export default function AnatomyScene({
          * (fresnel). Bản gốc trộn 75% sang xanh ngọc — một khối neon, mất hình khối.
          * Bản 2026-09-30 còn ám cyan 12% + phát sáng nền 0,06: trên mô sẫm (thận
          * #8f3f36) cộng lại thành tím nhạt, như một cơ quan khác (review 2026-10-23).
+         * Nhưng viền 0,65 × rim^2,5 quá mảnh: chọn ruột thừa, đại tràng lên trông y như
+         * đoạn kề bên (2026-10-26). Nên viền dày hơn, mảnh chọn sáng thêm 20% theo CHÍNH
+         * màu nó (không đổi sắc), và phần còn lại lùi tối — `SELECT_DIM`.
          */
         if (surface)
           shader.fragmentShader =
@@ -721,7 +737,7 @@ export default function AnatomyScene({
           "#include <emissivemap_fragment>",
           "#include <emissivemap_fragment>\n" +
             (surface?.lit ?? "") +
-            "float selectRim = pow(1.0 - abs(dot(normal, normalize(vViewPosition))), 2.5);\ntotalEmissiveRadiance += vec3(0.30, 0.72, 1.0) * partSelected * 0.65 * selectRim;\n// Rê chuột: viền sáng trắng ngà, yếu hơn viền chọn — gợi ý bấm được, không giành vai chọn.\ntotalEmissiveRadiance += vec3(0.95, 0.92, 0.85) * partHovered * (1.0 - partSelected) * (0.03 + 0.3 * selectRim);",
+            "float selectRim = pow(1.0 - abs(dot(normal, normalize(vViewPosition))), 2.0);\ntotalEmissiveRadiance += partSelected * (diffuseColor.rgb * 0.2 + vec3(0.30, 0.72, 1.0) * 0.9 * selectRim);\n// Rê chuột: viền sáng trắng ngà, yếu hơn viền chọn — gợi ý bấm được, không giành vai chọn.\ntotalEmissiveRadiance += vec3(0.95, 0.92, 0.85) * partHovered * (1.0 - partSelected) * (0.03 + 0.3 * selectRim);",
         );
       };
       materials.push(m);
@@ -2132,6 +2148,8 @@ export default function AnatomyScene({
       const ss = el.clientWidth >= THUMB_W * 2 && el.clientHeight >= THUMB_H * 2 ? 2 : 1;
       const savedData = data.slice();
       const savedSelected = selectedData.slice();
+      const savedDim = selectDim.value.clone();
+      selectDim.value.set(0, 0);
       // Ảnh thu nhỏ có bối cảnh như khung xem: xương chậu quanh bàng quang, phổi quanh
       // cây phế quản — thẻ nói cấu trúc nằm ở ĐÂU. Bản 2026-09-30 bỏ bối cảnh vì ô cờ
       // thu nhỏ 240 px thành moiré; bối cảnh nay vẽ bằng `drawScene` (kiểu atlas),
@@ -2239,6 +2257,7 @@ export default function AnatomyScene({
       markers.visible = markersShown;
       data.set(savedData);
       selectedData.set(savedSelected);
+      selectDim.value.copy(savedDim);
       partTexture.needsUpdate = true;
       selectionTexture.needsUpdate = true;
       dirty = true;
@@ -2412,6 +2431,8 @@ export default function AnatomyScene({
         const visible = new Set(s.visible);
         const selection = new Set(s.selected);
         surroundOn = !!s.surround && !s.isolate && selection.size > 0;
+        // Xem riêng: chỉ còn mảnh chọn, không có gì để lùi.
+        selectDim.value.set(selection.size > 0 && !s.isolate ? SELECT_DIM : 0, surroundOn ? SELECT_DIM : 0);
         const view = viewSet(s.viewId);
         userHidden =
           view && s.viewId && s.hiddenIn?.viewId === s.viewId

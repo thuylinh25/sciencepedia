@@ -935,6 +935,13 @@ góc nhìn cộng lại gần đục, che mất vùng chọn. Camera vẫn khung
 (một đốt sống 3–4 cm, khung sát thì bóng mờ chỉ là một mảng cơ). Bóng mờ không bấm được: chạm phải
 trúng đốt sống sau lớp cơ mờ. Chế độ gắn với ĐÚNG mảng `selected` lúc bấm (so tham chiếu) — mọi lối đổi
 vùng chọn tự rời chế độ, không phải nhớ tắt ở từng lối.
+
+**Mảnh chọn nổi lên nhờ xung quanh lùi tối, không nhờ đổi màu** (2026-10-26): chọn ruột thừa ở "Hiện giải
+phẫu xung quanh" (kiểu atlas: bối cảnh vẽ ĐẶC, đủ màu) thì ruột già hồng y như ruột thừa — viền cyan 0,65 ×
+rim^2,5 quá mảnh cho ống nhỏ. Ám màu chọn đã bị loại (thận sẫm thành tím, review 2026-10-23); tự sáng mạnh
+cũng không được: tone mapping nén vùng sáng, +60% chỉ hơn đoạn kề +13/255 và trông bạc màu. Nên: viền dày hơn,
+tự sáng 20% theo chính màu nó, và mảnh KHÔNG chọn tối đi 40% (`SELECT_DIM`) — bối cảnh chỉ tối ở chế độ xung
+quanh (bối cảnh của góc nhìn theo hệ đã có màu riêng). Xem riêng không tối gì: không còn gì để lùi.
 **Bối cảnh tự sáng theo viền, không theo đèn** (2026-09-30): bản chiếu sáng như mô thật ở độ đục 0,2 cho
 mặt quay khỏi key light gần đen — 20% của gần-đen trên nền tối là mảng xám đen (thẻ Mũi, Cây phế quản, Thần
 kinh hệ hô hấp "chìm"). Nay fresnel: tự phát sáng thêm ở viền, đục hơn ở viền. Kèm fill gián tiếp nâng vừa (môi trường 0,36, mặt đất đèn bán cầu
