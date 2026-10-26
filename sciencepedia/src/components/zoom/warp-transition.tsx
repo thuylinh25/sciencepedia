@@ -13,9 +13,9 @@ const STREAKS = 160;
 /**
  * Lớp "bay xuyên không gian" phủ lên lúc chuyển cấp.
  *
- * Thu vào: vệt sao toả ra từ tâm (ta lao tới trước) và một tên lửa bay từ đáy
- * khung vào giữa, nhỏ dần rồi mất hút vào cảnh kế tiếp. Thu ra: vệt sao rút về
- * tâm và tên lửa từ giữa quay đầu bay ngược ra phía người xem.
+ * Thu vào: vệt sao toả ra từ tâm (ta lao tới trước) và một tàu vũ trụ bay chéo
+ * từ góc dưới-trái vào giữa, nhỏ dần rồi mất hút vào cảnh kế tiếp. Thu ra: vệt
+ * sao rút về tâm và tàu từ giữa quay đầu bay ngược ra phía người xem.
  *
  * Vẽ bằng canvas 2D chứ không thêm một cảnh WebGL: lúc này đã có hai cảnh 3D
  * cùng sống để hoà mờ, thêm ngữ cảnh WebGL thứ ba là chỗ điện thoại dễ mất
@@ -127,53 +127,74 @@ export function WarpTransition({
       {/* Quầng tối ở tâm và viền: kéo mắt vào điểm tụ của phối cảnh. */}
       <div className="warp-vignette absolute inset-0" />
       <canvas ref={canvasRef} className="absolute inset-0 size-full" />
-      <div
-        className={direction === "in" ? "warp-rocket-in" : "warp-rocket-out"}
-      >
-        <Rocket />
+      <div className={direction === "in" ? "warp-ship-in" : "warp-ship-out"}>
+        <Starship />
       </div>
     </div>
   );
 }
 
-/** Tên lửa vẽ tay, mũi hướng lên. Lửa đuôi chập chờn bằng CSS. */
-function Rocket() {
+/** Tàu vũ trụ vẽ tay: thân bạc nhìn nghiêng, mũi hướng phải, hai động cơ ion
+    phụt luồng xanh ra sau. Hướng bay (chéo lên / chéo xuống) do CSS xoay. */
+function Starship() {
   return (
-    <svg viewBox="0 0 64 128" width="64" height="128">
+    <svg viewBox="0 0 200 84" width="168" height="70">
       <defs>
-        <linearGradient id="warp-flame" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stopColor="#fff7c2" />
-          <stop offset="0.45" stopColor="#ffb02e" />
-          <stop offset="1" stopColor="#ff4d2e" stopOpacity="0" />
+        <linearGradient id="warp-plume" x1="1" y1="0" x2="0" y2="0">
+          <stop offset="0" stopColor="#ffffff" />
+          <stop offset="0.25" stopColor="#7dd3fc" />
+          <stop offset="0.6" stopColor="#3b82f6" stopOpacity="0.55" />
+          <stop offset="1" stopColor="#1d4ed8" stopOpacity="0" />
         </linearGradient>
-        <linearGradient id="warp-body" x1="0" y1="0" x2="1" y2="0">
-          <stop offset="0" stopColor="#c9d2e3" />
-          <stop offset="0.45" stopColor="#ffffff" />
-          <stop offset="1" stopColor="#9aa6bd" />
+        <linearGradient id="warp-hull" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stopColor="#f1f5f9" />
+          <stop offset="0.45" stopColor="#b8c2d0" />
+          <stop offset="1" stopColor="#4b5563" />
+        </linearGradient>
+        <linearGradient id="warp-wing" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stopColor="#9ca3af" />
+          <stop offset="1" stopColor="#374151" />
+        </linearGradient>
+        <linearGradient id="warp-glass" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stopColor="#64748b" />
+          <stop offset="1" stopColor="#0f172a" />
         </linearGradient>
       </defs>
       <g className="warp-flame">
-        <path d="M24 92 Q32 128 40 92 Z" fill="url(#warp-flame)" />
+        <path d="M44 33 L2 37 L44 41 Z" fill="url(#warp-plume)" />
+        <path d="M44 46 L0 51 L44 56 Z" fill="url(#warp-plume)" />
       </g>
-      <path d="M20 70 L8 92 L22 88 Z" fill="#ef4444" />
-      <path d="M44 70 L56 92 L42 88 Z" fill="#ef4444" />
+      {/* Cánh và đuôi phía xa, tối hơn để ra chiều sâu. */}
+      <path d="M84 31 L70 20 L80 20 L104 30 Z" fill="#6b7280" />
+      <path d="M52 34 L38 12 L50 12 L76 32 Z" fill="url(#warp-wing)" />
       <path
-        d="M32 4 C46 18 46 52 44 90 L20 90 C18 52 18 18 32 4 Z"
-        fill="url(#warp-body)"
+        d="M46 34 L122 29 C152 29 176 38 196 47 C176 53 152 57 122 58 L50 57 Z"
+        fill="url(#warp-hull)"
       />
       <path
-        d="M32 4 C38 10 41 18 42 26 L22 26 C23 18 26 10 32 4 Z"
-        fill="#ef4444"
+        d="M120 31 C136 21 160 27 178 41 C160 38 140 36 120 35 Z"
+        fill="url(#warp-glass)"
       />
-      <circle
-        cx="32"
-        cy="46"
-        r="7"
-        fill="#1e3a8a"
-        stroke="#93c5fd"
-        strokeWidth="2.5"
+      <path
+        d="M128 29 C140 25 154 28 164 34"
+        stroke="#e2e8f0"
+        strokeWidth="1.2"
+        strokeOpacity="0.7"
+        fill="none"
       />
-      <path d="M29 72 L35 72 L34 90 L30 90 Z" fill="#ef4444" />
+      {/* Hai ống động cơ, miệng phụt sáng xanh. */}
+      <rect x="40" y="31" width="34" height="12" rx="5" fill="#6b7280" />
+      <rect x="40" y="44" width="34" height="14" rx="6" fill="#4b5563" />
+      <ellipse cx="42" cy="37" rx="2.5" ry="5" fill="#bae6fd" />
+      <ellipse cx="42" cy="51" rx="3" ry="6" fill="#bae6fd" />
+      {/* Cánh phía gần, vuốt ngược. */}
+      <path d="M78 53 L60 80 L78 80 L120 55 Z" fill="url(#warp-wing)" />
+      <path
+        d="M84 44 L150 44 M100 51 L160 50"
+        stroke="#475569"
+        strokeWidth="0.8"
+        strokeOpacity="0.6"
+      />
     </svg>
   );
 }
