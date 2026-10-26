@@ -144,7 +144,7 @@ export const SCENE_BACKGROUND = { light: "#eef0f1", dark: "#05070a" } as const;
  *
  * Chủ sản phẩm so với Human Anatomy Atlas (chỉ tham chiếu, không lấy hình):
  * phổi ở đó hồng cá hồi, lốm đốm, bóng ướt; xương xám be có hạt và lỗ xốp; sụn
- * xanh xám hơi bóng; dây chằng trắng bạc có thớ. Mesh BodyParts3D/Z-Anatomy vẽ
+ * xanh xám hơi bóng; dây chằng xám lam có thớ. Mesh BodyParts3D/Z-Anatomy vẽ
  * một màu trơn nên trông như nhựa. Mesh không có UV → vân dựng bằng nhiễu 3D theo
  * toạ độ mô (mét). Chỉ đổi màu và độ nhám — không bump, không texture tải thêm.
  * Mỗi đoạn GLSL phải khai báo `tissueFine` (dùng để nhám không đều).
@@ -328,15 +328,41 @@ diffuseColor.rgb = mix(diffuseColor.rgb, vec3(0.36, 0.2, 0.24), tissueSpeck * 0.
   "respiratory.concha": BONE,
   "skeletal.cartilage": CARTILAGE,
   "respiratory.cartilage": CARTILAGE,
-  // Dây chằng/gân (mô liên kết): thớ mảnh ~2 mm, bóng bạc. Hướng thớ không có
-  // trong dữ liệu — nhiễu kéo dài theo hai trục chéo nhau, đủ gợi "sợi".
+  /*
+   * Dây chằng/gân (mô liên kết), theo ảnh HAA chủ sản phẩm gửi (2026-10-26): xám
+   * lam, thớ mảnh song song dày đặc chạy dọc dây chằng, vệt lam tím loang theo bó,
+   * nếp gấp sẫm. Màu trung vị bản cũ đã khớp mẫu (đo p50 157–185 so với 135–184);
+   * lệch ở VÂN: bản cũ hai lưới chéo trục toạ độ — trông như giấy trắng, tương phản
+   * 1,4 (mẫu 1,9). Hướng thớ lấy trục dài hộp bao như cơ — đúng với dải chậu chày,
+   * gân gót, mạc giữ gân (thớ ngang, hộp cũng ngang); màng gian cốt thớ thật chạy chéo.
+   */
   connective: {
-    coat: { clearcoat: 0.45, clearcoatRoughness: 0.3 },
+    axis: true,
+    // Bóng satin, không bóng nước: clearcoat 0,45 phủ trắng cả mảng, nuốt vân.
+    coat: { clearcoat: 0.25, clearcoatRoughness: 0.4 },
     glsl: `
-float tissueFine = tissueNoise(vTissue * vec3(520.0, 45.0, 520.0));
-float tissueFiber = max(tissueFine, tissueNoise(vTissue * vec3(45.0, 520.0, 45.0).zxy + 4.2));
-diffuseColor.rgb *= mix(0.82, 1.08, tissueFiber);
+float tissueFine = tissueNoise(vTissue * 150.0 + 4.2);
+vec3 tissueAlong = vTissueAxis.xyz * dot(vTissue, vTissueAxis.xyz);
+vec3 tissueAcross = vTissue - tissueAlong;
+float tissueFiberAA = 1.0 - smoothstep(0.35, 0.9, length(fwidth(vTissue * 420.0)));
+float tissueFiber = tissueNoise(tissueAcross * 420.0 + tissueAlong * 10.0 + 6.1);
+float tissueBundle = tissueNoise(tissueAcross * 80.0 + tissueAlong * 3.0 + 2.9);
+float tissueTint = smoothstep(0.45, 0.85, tissueNoise(tissueAcross * 40.0 + tissueAlong * 2.0 + 8.3));
+diffuseColor.rgb *= mix(0.9, 1.04, tissueFine);
+// Hai quãng thớ, nâng tương phản bằng smoothstep. KHÔNG lấy đỉnh |2n−1| cho nét mảnh:
+// đỉnh của nhiễu giá trị bám cạnh ô lưới, lên hình thành chữ V (chụp thử 2026-10-26).
+// Thớ dưới ~2 điểm ảnh thì thay bằng giá trị trung bình của nó: khỏi lấp lánh khi xoay.
+float tissueThread = smoothstep(0.25, 0.75, tissueFiber * 0.65 + tissueNoise(tissueAcross * 1100.0 + tissueAlong * 20.0 + 1.7) * 0.35);
+diffuseColor.rgb *= mix(0.68, 1.08, smoothstep(0.2, 0.8, tissueBundle));
+diffuseColor.rgb *= mix(0.76, 1.04, mix(0.5, tissueThread, tissueFiberAA));
+diffuseColor.rgb *= mix(vec3(1.0), vec3(0.86, 0.85, 0.96), tissueTint * 0.8);
 `,
+    lit:
+      CURVATURE +
+      `
+diffuseColor.rgb = mix(diffuseColor.rgb, diffuseColor.rgb * vec3(0.55, 0.55, 0.62), tissueCavity * 0.6);
+`,
+    indirect: "0.8 * (1.0 - 0.4 * tissueCavity)",
     rough: "0.75 + 0.4 * tissueFine",
   },
 };
