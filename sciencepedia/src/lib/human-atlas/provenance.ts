@@ -103,7 +103,10 @@ export const ATLAS_PROVENANCE = {
     sourceUrl: "https://osf.io/jkzwp/",
     citation: "Pauli WM, Nili AN, Tyszka JM (2018). A high-resolution probabilistic in vivo atlas of human subcortical brain nuclei. Scientific Data 5, 180063.",
   },
-  /** Nhân vùng dưới đồi. Kiểm 2026-10-19: Zenodo 3942115 ghi CC BY 4.0; DOI bài báo tra Crossref. */
+  /** Nhân vùng dưới đồi. Kiểm 2026-10-19: Zenodo 3942115 ghi CC BY 4.0; DOI bài báo tra Crossref.
+   * Đối chiếu lại 2026-10-27: 3942115 là DOI của BẢN MỚI NHẤT (version index 3, is_last) của record
+   * này — concept DOI 10.5281/zenodo.3724191; số 3736630 là version cũ của CÙNG record, không phải
+   * lệch hồ sơ. Tệp đã nhập (MNI152b_atlas_labels_0.25mm.nii.gz) chỉ có trong bản 3942115. */
   neudorfer: {
     name: "NSD atlas of hypothalamic region",
     holder: "Neudorfer, Germann, Elias, Gramer, Boutet, Lozano — University of Toronto",
