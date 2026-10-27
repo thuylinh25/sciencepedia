@@ -6,6 +6,7 @@ import { buildMetadata } from "@/lib/seo";
 import { toolImage } from "@/lib/models";
 import { ScaleLadder } from "@/components/models/scale-ladder";
 import { MilkyWay } from "@/components/galaxy/milky-way";
+import { ToolViewTracker } from "@/components/tools/tool-view-tracker";
 
 export async function generateMetadata({
   params,
@@ -36,6 +37,7 @@ export default async function MilkyWayPage({
 
   return (
     <div className="container-page py-8">
+      <ToolViewTracker toolId="milky-way" />
       <header className="mb-5">
         <h1 className="font-display text-4xl font-bold tracking-tight sm:text-5xl">
           {t("title")}

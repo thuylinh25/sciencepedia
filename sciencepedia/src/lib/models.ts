@@ -315,3 +315,25 @@ export function modelNeighbours(id: string) {
 export function toolImage(href: string): string | undefined {
   return [...MODEL_STEPS, ...EXPLORE_TOOLS].find((t) => t.href === href)?.image;
 }
+
+/**
+ * Id của mọi mô hình/công cụ được ĐẾM LƯỢT XEM công khai — nguồn sự thật duy
+ * nhất cho cả route ghi (`/api/tools/[id]/view`) lẫn bảng tổng quan admin.
+ *
+ * Danh sách đóng, suy từ hai registry ở trên: endpoint ghi lượt xem là công
+ * khai, không có danh sách này thì ai cũng tạo được hàng rác trong bảng
+ * `ToolViewStat` bằng một id bịa. Thêm công cụ vào `MODEL_STEPS` /
+ * `EXPLORE_TOOLS` là nó tự được đếm — và ngược lại, một trang công cụ quên
+ * gắn `ToolViewTracker` thì có hàng 0 chứ không có hàng lạ.
+ *
+ * Thứ tự giữ nguyên thứ tự registry (mô hình theo bậc thang trước, công cụ
+ * ngoài thang sau) — đúng thứ tự trang /models và bảng admin hiển thị.
+ */
+export const TOOL_VIEW_IDS: readonly string[] = [
+  ...MODEL_STEPS.map((step) => step.id),
+  ...EXPLORE_TOOLS.map((tool) => tool.id),
+];
+
+export function isToolViewId(id: string): boolean {
+  return TOOL_VIEW_IDS.includes(id);
+}

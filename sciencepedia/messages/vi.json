@@ -374,6 +374,7 @@
     "totalViews": "Lượt xem",
     "recentArticles": "Bài viết gần đây",
     "viewsByCategory": "Lượt xem theo lĩnh vực",
+    "viewsByModel": "Lượt xem theo mô hình",
     "reindex": "Đồng bộ Meilisearch",
     "reindexing": "Đang đồng bộ…",
     "reindexed": "Đã đồng bộ {count} bài viết",

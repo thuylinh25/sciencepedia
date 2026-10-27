@@ -5,6 +5,7 @@ import { unstable_cache } from "next/cache";
 import { Prisma } from "@prisma/client";
 import { z } from "zod";
 
+import { TOOL_VIEW_IDS } from "@/lib/models";
 import { prisma } from "@/lib/prisma";
 
 /** Trường tối thiểu để dựng thẻ bài viết — tránh kéo cả `content`. */
@@ -350,6 +351,38 @@ export async function incrementViews(id: string): Promise<number | null> {
     return rows[0]?.views ?? null;
   } catch (error) {
     console.error("[views] không tăng được lượt xem:", error);
+    return null;
+  }
+}
+
+/**
+ * Cộng một lượt xem cho một mô hình/công cụ và trả về số lượt SAU khi cộng —
+ * bản song song của `incrementViews` cho các trang công cụ.
+ *
+ * Mô hình không có hàng trong CSDL để UPDATE như bài viết, nên đây là
+ * INSERT … ON CONFLICT trên khoá chính `toolId` của `ToolViewStat`: lượt xem
+ * đầu tiên tạo hàng, các lượt sau cộng dồn, và hai request đồng thời không
+ * tạo được hai hàng (cùng lý do `recordView` không dùng `prisma.upsert`).
+ * `@updatedAt` không chạy trong SQL thô nên `updatedAt` ghi tay bằng NOW().
+ *
+ * Hàm này KHÔNG tự kiểm id — route gọi nó phải đã đối chiếu `isToolViewId`,
+ * vì endpoint là công khai và id lạ không được phép tạo hàng.
+ */
+export async function incrementToolViews(toolId: string): Promise<number | null> {
+  // Như incrementViews: đừng để một lần prerender nào cộng khống lượt xem.
+  if (process.env.NEXT_PHASE === "phase-production-build") return null;
+
+  try {
+    const rows = await prisma.$queryRaw<{ views: number }[]>`
+      INSERT INTO "ToolViewStat" ("toolId", "views", "updatedAt")
+      VALUES (${toolId}, 1, NOW())
+      ON CONFLICT ("toolId") DO UPDATE SET
+        "views" = "ToolViewStat"."views" + 1,
+        "updatedAt" = NOW()
+      RETURNING "views"`;
+    return rows[0]?.views ?? null;
+  } catch (error) {
+    console.error("[tool-views] không tăng được lượt xem:", error);
     return null;
   }
 }
@@ -924,7 +957,7 @@ export const getSiteStats = unstable_cache(
 );
 
 export async function getAdminStats() {
-  const [total, published, drafts, users, views, recent, byCategory] =
+  const [total, published, drafts, users, views, recent, byCategory, toolStats] =
     await Promise.all([
       prisma.article.count(),
       prisma.article.count({ where: PUBLISHED }),
@@ -953,7 +986,20 @@ export async function getAdminStats() {
         },
         orderBy: [{ order: "asc" }, { slug: "asc" }],
       }),
+      prisma.toolViewStat.findMany({
+        select: { toolId: true, views: true },
+      }),
     ]);
+
+  // Lượt xem theo mô hình: danh sách hiển thị là REGISTRY (mọi công cụ, theo
+  // thứ tự registry), số liệu tra vào bảng đếm — công cụ chưa có hàng thì 0.
+  // Hàng nào trong bảng không còn thuộc registry (công cụ đã gỡ) thì bỏ qua:
+  // bảng tổng quan trình bày các công cụ đang có, không trình bày lịch sử.
+  const toolViews = new Map(toolStats.map((row) => [row.toolId, row.views]));
+  const byTool = TOOL_VIEW_IDS.map((id) => ({
+    id,
+    views: toolViews.get(id) ?? 0,
+  }));
 
   return {
     total,
@@ -963,6 +1009,7 @@ export async function getAdminStats() {
     views: views._sum.views ?? 0,
     recent,
     byCategory,
+    byTool,
   };
 }
 

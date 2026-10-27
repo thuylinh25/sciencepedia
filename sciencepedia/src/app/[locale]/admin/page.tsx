@@ -3,6 +3,7 @@ import { Eye, FileText, PenLine, Users } from "lucide-react";
 
 import { Link } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
+import { EXPLORE_TOOLS, MODEL_STEPS } from "@/lib/models";
 import { getAdminStats } from "@/server/queries";
 import { formatDate, formatNumber } from "@/lib/utils";
 import { ReindexButton } from "@/components/admin/reindex-button";
@@ -40,6 +41,35 @@ export default async function AdminDashboard({
     1,
     ...stats.byCategory.map((c) => c._count.articles),
   );
+
+  // Tên và màu của từng mô hình/công cụ cho mục "Lượt xem theo mô hình".
+  // Mô hình trên bậc thang có sẵn tên hai thứ tiếng trong registry; công cụ
+  // ngoài thang thì lấy ĐÚNG tiêu đề của chính trang chúng (như thẻ ở
+  // /models, không viết nhãn riêng cho admin) — tra cả hai locale vì mục này
+  // chọn tên theo locale đang xem, như mục lĩnh vực ở trên.
+  const toolTitles = new Map<string, { name: string; nameEn: string }>();
+  for (const tool of EXPLORE_TOOLS) {
+    const tVi = await getTranslations({ locale: "vi", namespace: tool.copyKey });
+    const tEn = await getTranslations({ locale: "en", namespace: tool.copyKey });
+    toolTitles.set(tool.id, { name: tVi("title"), nameEn: tEn("title") });
+  }
+  const toolMeta = new Map(
+    [
+      ...MODEL_STEPS.map((step) => ({
+        id: step.id,
+        name: step.name,
+        nameEn: step.nameEn,
+        color: step.color,
+      })),
+      ...EXPLORE_TOOLS.map((tool) => ({
+        id: tool.id,
+        name: toolTitles.get(tool.id)?.name ?? tool.id,
+        nameEn: toolTitles.get(tool.id)?.nameEn ?? tool.id,
+        color: tool.color,
+      })),
+    ].map((meta) => [meta.id, meta]),
+  );
+  const maxToolViews = Math.max(1, ...stats.byTool.map((tool) => tool.views));
 
   return (
     <div className="space-y-10">
@@ -111,6 +141,38 @@ export default async function AdminDashboard({
               </span>
             </li>
           ))}
+        </ul>
+      </section>
+
+      {/* Lượt xem theo mô hình/công cụ — bộ đếm công khai `ToolViewStat`,
+          đếm từ trình duyệt như lượt đọc bài viết */}
+      <section>
+        <h2 className="mb-4 font-display text-xl font-bold">
+          {t("viewsByModel")}
+        </h2>
+        <ul className="space-y-3">
+          {stats.byTool.map((tool) => {
+            const meta = toolMeta.get(tool.id);
+            return (
+              <li key={tool.id} className="flex items-center gap-4">
+                <span className="w-40 shrink-0 truncate text-sm">
+                  {loc === "en" ? meta?.nameEn : meta?.name}
+                </span>
+                <span className="h-2.5 flex-1 overflow-hidden rounded-full bg-muted">
+                  <span
+                    className="block h-full rounded-full transition-all"
+                    style={{
+                      width: `${(tool.views / maxToolViews) * 100}%`,
+                      backgroundColor: meta?.color,
+                    }}
+                  />
+                </span>
+                <span className="w-10 shrink-0 text-right text-sm tabular-nums text-muted-foreground">
+                  {formatNumber(tool.views, locale)}
+                </span>
+              </li>
+            );
+          })}
         </ul>
       </section>
 

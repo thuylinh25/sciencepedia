@@ -23,6 +23,7 @@ import { ArrowRight } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { JsonLd } from "@/components/json-ld";
+import { ToolViewTracker } from "@/components/tools/tool-view-tracker";
 import { AboutCopy, HumanAtlas } from "@/components/human-atlas/human-atlas";
 import { SystemCardLink } from "@/components/human-atlas/system-card-link";
 
@@ -113,6 +114,7 @@ export default async function HumanAtlasPage({
 
   return (
     <>
+      <ToolViewTracker toolId="human-atlas" />
       {/* Danh mục + ~10 MB hình học khung mặc định tải từ R2 ngay khi trang chạy
           (phần còn lại theo nhu cầu — anatomy-scene) — bắt tay TLS sớm, chỉ ở route này. */}
       <link rel="preconnect" href={r2Origin} crossOrigin="anonymous" />

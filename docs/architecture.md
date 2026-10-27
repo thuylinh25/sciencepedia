@@ -267,6 +267,29 @@ giữ alt sai. Đầu ra quá 250 ký tự bị loại cả cặp chứ không c
 
 ---
 
+## Đếm lượt xem theo mô hình — bộ đếm công khai cho các trang công cụ (2026-10-27)
+
+Bảng `ToolViewStat`, một hàng mỗi công cụ, là phía công khai của các trang mô
+hình — đối trọng của `Article.views` cho bài viết, và tách khỏi
+`ContentActivity` (lịch sử từng người đã đăng nhập, riêng Human Atlas còn
+theo từng cấu trúc/góc nhìn nên không cộng thành "mô hình được xem bao nhiêu"
+cho toàn bộ khách được).
+
+- **Khoá là id trong registry** (`src/lib/models.ts`), không phải hàng CSDL:
+  các mô hình không có bảng riêng, registry trong code là nguồn sự thật. Tên
+  và màu cũng lấy từ registry/tiêu đề trang lúc hiển thị — bảng chỉ giữ con số,
+  đổi tên công cụ không phải sửa CSDL.
+- **Đếm từ trình duyệt** như lượt đọc bài (`ToolViewTracker` →
+  `POST /api/tools/[id]/view` → `incrementToolViews`), vì trang công cụ cũng
+  prerender/ISR. Cộng bằng một câu `INSERT … ON CONFLICT` (lượt đầu tạo hàng),
+  không `prisma.upsert` — cùng lý do đua ghi ở mục "Lịch sử xem".
+- **Route chỉ nhận id có trong registry** (`isToolViewId`). Endpoint công
+  khai mà nhận id tuỳ ý thì mỗi id bịa là một hàng rác vĩnh viễn; danh sách
+  đóng cũng làm công cụ mới thêm vào registry là tự được đếm.
+- **Hiển thị duy nhất ở bảng tổng quan admin** ("Lượt xem theo mô hình").
+  Trang công cụ không in số lượt xem, nên tracker không cần giữ con số như
+  `ViewCounter` — chỉ cần chốt `sessionStorage` chống F5 cộng lại.
+
 ## Lịch sử xem — một hàng mỗi (người, nội dung), server quyết lượt xem (2026-10-03)
 
 Bảng `ContentActivity`, tách khỏi `Article.views`: `views` là bộ đếm công khai cho
