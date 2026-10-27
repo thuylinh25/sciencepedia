@@ -957,7 +957,7 @@ export const getSiteStats = unstable_cache(
 );
 
 export async function getAdminStats() {
-  const [total, published, drafts, users, views, recent, byCategory, toolStats] =
+  const [total, published, drafts, users, views, recent, categories, toolStats, categoryViews] =
     await Promise.all([
       prisma.article.count(),
       prisma.article.count({ where: PUBLISHED }),
@@ -979,17 +979,39 @@ export async function getAdminStats() {
       }),
       prisma.category.findMany({
         select: {
+          id: true,
           name: true,
           nameEn: true,
           color: true,
-          _count: { select: { articles: true } },
         },
         orderBy: [{ order: "asc" }, { slug: "asc" }],
       }),
       prisma.toolViewStat.findMany({
         select: { toolId: true, views: true },
       }),
+      prisma.article.groupBy({
+        by: ["categoryId"],
+        where: PUBLISHED,
+        _sum: { views: true },
+      }),
     ]);
+
+  // Lượt xem theo lĩnh vực: tổng `views` của bài ĐÃ XUẤT BẢN trong từng lĩnh
+  // vực. Trước đây mục này ở admin nạp `_count.articles` — tức SỐ BÀI — dưới
+  // tiêu đề "Lượt xem theo lĩnh vực", hai con số trả lời hai câu hỏi khác
+  // nhau. Chỉ tính PUBLISHED vì lượt xem là số liệu công khai: bản nháp chưa
+  // ai đọc được, cộng vào là lẫn số nội bộ vào số công bố. Danh sách hiển thị
+  // vẫn là mọi lĩnh vực theo thứ tự danh mục (lĩnh vực chưa có lượt xem thì
+  // 0), như mục theo mô hình ở dưới tra vào registry.
+  const viewsByCategoryId = new Map(
+    categoryViews.map((row) => [row.categoryId, row._sum.views ?? 0]),
+  );
+  const byCategory = categories.map((category) => ({
+    name: category.name,
+    nameEn: category.nameEn,
+    color: category.color,
+    views: viewsByCategoryId.get(category.id) ?? 0,
+  }));
 
   // Lượt xem theo mô hình: danh sách hiển thị là REGISTRY (mọi công cụ, theo
   // thứ tự registry), số liệu tra vào bảng đếm — công cụ chưa có hàng thì 0.

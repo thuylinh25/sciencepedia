@@ -37,9 +37,9 @@ export default async function AdminDashboard({
     { label: t("totalUsers"), value: stats.users, icon: Users },
   ];
 
-  const maxCategoryCount = Math.max(
+  const maxCategoryViews = Math.max(
     1,
-    ...stats.byCategory.map((c) => c._count.articles),
+    ...stats.byCategory.map((c) => c.views),
   );
 
   // Tên và màu của từng mô hình/công cụ cho mục "Lượt xem theo mô hình".
@@ -116,7 +116,7 @@ export default async function AdminDashboard({
         </p>
       </div>
 
-      {/* Phân bố bài viết theo lĩnh vực */}
+      {/* Tổng lượt xem của bài đã xuất bản theo lĩnh vực */}
       <section>
         <h2 className="mb-4 font-display text-xl font-bold">
           {t("viewsByCategory")}
@@ -131,13 +131,13 @@ export default async function AdminDashboard({
                 <span
                   className="block h-full rounded-full transition-all"
                   style={{
-                    width: `${(category._count.articles / maxCategoryCount) * 100}%`,
+                    width: `${(category.views / maxCategoryViews) * 100}%`,
                     backgroundColor: category.color,
                   }}
                 />
               </span>
               <span className="w-10 shrink-0 text-right text-sm tabular-nums text-muted-foreground">
-                {category._count.articles}
+                {formatNumber(category.views, locale)}
               </span>
             </li>
           ))}
