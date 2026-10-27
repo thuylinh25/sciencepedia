@@ -77,6 +77,7 @@ import {
   SheetTitle,
 } from "@/components/ui/sheet";
 import { AtlasErrorBoundary } from "@/components/human-atlas/atlas-error-boundary";
+import { FpsMeter } from "@/components/human-atlas/fps-meter";
 import { PANEL } from "@/components/human-atlas/panel";
 import { StructureSearch } from "@/components/human-atlas/structure-search";
 import { StructuresPanel } from "@/components/human-atlas/structures-panel";
@@ -872,6 +873,9 @@ export function HumanAtlas({
         aria-hidden
         className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_51%_43%,transparent_35%,rgb(131_145_158/0.08)_100%)]"
       />
+
+      {/* Bộ đếm FPS đo hiệu năng trên thiết bị thật — chỉ hiện với ?fps=1. */}
+      <FpsMeter />
 
       {/* ---------------------------------------------------- tiêu đề */}
       <header data-atlas-avoid="top" className="pointer-events-none absolute top-3 left-4 z-10 max-w-[calc(100%-8rem)] sm:top-5 lg:left-6">
