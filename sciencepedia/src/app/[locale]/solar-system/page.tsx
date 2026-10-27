@@ -7,6 +7,7 @@ import { toolImage } from "@/lib/models";
 import { ScaleLadder } from "@/components/models/scale-ladder";
 import { tryGetPlanetPositions } from "@/lib/horizons";
 import { SolarSystem } from "@/components/solar/solar-system";
+import { ToolViewTracker } from "@/components/tools/tool-view-tracker";
 
 /**
  * Vị trí hành tinh lấy từ JPL Horizons được cache 6 giờ, nên trang cũng phải
@@ -46,6 +47,7 @@ export default async function SolarSystemPage({
 
   return (
     <div className="container-page py-8">
+      <ToolViewTracker toolId="solar-system" />
       <header className="mb-5">
         <h1 className="font-display text-4xl font-bold tracking-tight sm:text-5xl">
           {t("title")}

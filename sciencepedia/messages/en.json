@@ -374,6 +374,7 @@
     "totalViews": "Views",
     "recentArticles": "Recent articles",
     "viewsByCategory": "Views by field",
+    "viewsByModel": "Views by model",
     "reindex": "Sync Meilisearch",
     "reindexing": "Syncing…",
     "reindexed": "Synced {count} articles",

@@ -8,6 +8,7 @@ import { buildMetadata } from "@/lib/seo";
 import { toolImage } from "@/lib/models";
 import { absoluteUrl } from "@/lib/utils";
 import { EpicEarth } from "@/components/earth/epic-earth";
+import { ToolViewTracker } from "@/components/tools/tool-view-tracker";
 import { JsonLd } from "@/components/json-ld";
 import {
   MobileTableOfContents,
@@ -129,6 +130,7 @@ export default async function EarthLivePage({
        khoảng cách giữa hai cột; ở 80rem thì cột chữ bị bóp xuống dưới 48rem
        và bản hai cột đọc còn khó hơn bản một cột. */
     <div className="mx-auto w-full max-w-[88rem] px-5 py-8 sm:px-8 lg:px-12">
+      <ToolViewTracker toolId="earth-live" />
       {/* Kiểu WebApplication chứ không phải Article: trang này là một công cụ
           chạy được, không phải một bài đọc. Google dùng phân biệt đó để quyết
           định hiển thị nó ra sao trong kết quả tìm kiếm. */}

@@ -67,6 +67,26 @@ model ContentActivity {
   @@index([userId, lastViewedAt(sort: Desc)])
 }
 
+/// Bộ đếm lượt xem CÔNG KHAI của từng mô hình/công cụ tương tác — phía "cả
+/// khách" của các trang công cụ, đối trọng với `Article.views` của bài viết.
+///
+/// Các mô hình không có bảng riêng trong CSDL (registry nằm trong code ở
+/// `src/lib/models.ts`), nên khoá là `toolId` — id ổn định trong registry
+/// (`solar-system`, `human-atlas`, …). Tên và màu KHÔNG lưu ở đây: chúng lấy
+/// từ registry lúc hiển thị, đổi tên công cụ không phải sửa CSDL. Chỉ route
+/// `/api/tools/[id]/view` ghi, và nó chỉ nhận id có trong registry.
+///
+/// Tách khỏi `ContentActivity` (loại MODEL): bảng đó là lịch sử của TỪNG
+/// người đã đăng nhập, theo từng cấu trúc/góc nhìn của riêng Human Atlas —
+/// không trả lời được "mô hình nào được xem nhiều nhất" cho toàn bộ khách.
+/// Xem docs/architecture.md, mục "Đếm lượt đọc".
+model ToolViewStat {
+  /// Id trong registry `MODEL_STEPS` / `EXPLORE_TOOLS` (`src/lib/models.ts`)
+  toolId    String   @id
+  views     Int      @default(0)
+  updatedAt DateTime @updatedAt
+}
+
 model Account {
   id                String  @id @default(cuid())
   userId            String

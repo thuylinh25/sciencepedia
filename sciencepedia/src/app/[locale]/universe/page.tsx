@@ -5,6 +5,7 @@ import type { Locale } from "@/i18n/routing";
 import { buildMetadata } from "@/lib/seo";
 import { toolImage } from "@/lib/models";
 import { Universe } from "@/components/universe/universe";
+import { ToolViewTracker } from "@/components/tools/tool-view-tracker";
 
 export async function generateMetadata({
   params,
@@ -35,6 +36,7 @@ export default async function UniversePage({
 
   return (
     <div className="container-page py-8">
+      <ToolViewTracker toolId="universe" />
       <header className="mb-5">
         <h1 className="font-display text-4xl font-bold tracking-tight sm:text-5xl">
           {t("title")}

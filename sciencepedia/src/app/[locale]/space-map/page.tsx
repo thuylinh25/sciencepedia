@@ -14,6 +14,7 @@ import { SURFACE_HIPS_ORIGIN } from "@/lib/solar-data";
 import { JsonLd } from "@/components/json-ld";
 import { OortCloudFigure } from "@/components/sky/oort-cloud-figure";
 import { SkyMap } from "@/components/sky/sky-map";
+import { ToolViewTracker } from "@/components/tools/tool-view-tracker";
 import { PlanetGallery } from "@/components/solar/planet-gallery";
 
 /**
@@ -62,6 +63,7 @@ export default async function SpaceMapPage({
 
   return (
     <div className="container-page py-8">
+      <ToolViewTracker toolId="space-map" />
       {/*
         Bắt tay TLS với CDS tốn khoảng một vòng đi-về; làm sớm ở đây thì lúc
         người đọc bấm mở bản đồ, kết nối đã sẵn sàng. Chỉ đặt ở route này —
