@@ -195,7 +195,9 @@ export const RESPIRATORY_VIEWS: readonly AtlasViewDef[] = [
     systemId: "respiratory",
     kind: "group",
     name: { vi: "Vòi tai", en: "Eustachian tubes" },
-    direction: "left",
+    // Hai vòi hội tụ về đường giữa trên cơ hầu: nhìn từ trước mới thấy cả hai;
+    // "left" chỉ thấy một bên (QA bản xem trước PR #149).
+    direction: "front",
     focus: [AUDITORY_TUBES],
     context: [PHARYNX_UPPER, TYMPANIC_MEMBRANES, TEMPORAL_BONES],
     // Vòi chỉ dài ~2 cm nằm trong nền sọ: đóng khung theo cặp xương thái
@@ -373,7 +375,7 @@ export const RESPIRATORY_VIEWS: readonly AtlasViewDef[] = [
     systemId: "respiratory",
     kind: "structure",
     name: { vi: "Vòi tai", en: "Eustachian tubes" },
-    direction: "left",
+    direction: "front",
     focus: [AUDITORY_TUBES],
     context: [PHARYNX_UPPER, TYMPANIC_MEMBRANES, TEMPORAL_BONES],
     terms: ["vòi tai", "vòi Eustache", "eustachian tube", "pharyngotympanic tube"],
