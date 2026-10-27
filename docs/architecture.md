@@ -725,6 +725,12 @@ từng byte cũ: `scripts/blender/za-extract.py` trích 6 đối tượng KÈM C
 đặt sai vị trí — toạ độ cục bộ quanh gốc, vị trí thật ở empties ".g"; đo lệch tới ~3,3 m trên
 temporal plane/falx) → `scripts/extend-z-anatomy.ts` nối vào cuối chunk, tự kiểm giải mã lại từ
 blob cuối. `pick()` của import script đã mở cho ba cấu trúc này để lần tạo lại tương lai khớp tập mảnh.
+**Vá pháp tuyến 2026-10-27:** kiểm toán tài sản (`scripts/atlas-asset-audit.ts`) phát hiện chunk Z-Anatomy
+đang chạy có 2.551/18.104 pháp tuyến đỉnh bằng 0 ở `ZA-spinal-dura` (+4 đỉnh mồ côi không mặt nào dùng ở
+`ZA-falx-cerebri`) — di sản của đường dump Blender đợt nhập đầu; pipeline hiện hành không tái hiện lỗi
+(`import-z-anatomy.ts` đã `computeVertexNormals()`). `scripts/patch-z-anatomy-normals.ts` vá tại chỗ:
+chỉ thay pháp tuyến hỏng bằng pháp tuyến mượt tính trên topo đã hàn (kiểm chéo với pháp tuyến tốt còn
+lại: lệch trung vị 0,20° ở màng cứng tuỷ), mọi byte khác giữ nguyên, tiền tố chunk mới theo băm nội dung.
 **Bó tuỷ (đợt 2, 2026-10-19):** lưới "White matter of spinal cord" là khối ĐẶC (đo `inside()`: chứa trọn sừng
 và chất trung gian), không phải phần còn lại sau khi trừ bó — mặt ngoài các bó trùng mặt chất trắng, nên góc
 nhìn bó chỉ làm mờ chất xám. Đừng "cho đủ bối cảnh" bằng cách thêm chất trắng: hai mặt trùng nhau nhấp nháy.
