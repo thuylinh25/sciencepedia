@@ -1,4 +1,5 @@
 import type { AtlasViewDef } from "./views";
+import { TESTES } from "./views-reproductive";
 
 /*
  * ## Tổng quan hệ theo lối atlas (2026-09-29)
@@ -49,7 +50,17 @@ export const OVERVIEW_VIEWS: readonly AtlasViewDef[] = [
     kind: "overview",
     name: { vi: "Toàn bộ hệ nội tiết", en: "Whole endocrine system" },
     direction: "front",
-    focus: [{ systems: ["endocrine"] }],
-    terms: ["nội tiết", "endocrine", "tuyến giáp", "thyroid", "thượng thận", "adrenal", "tuyến yên", "pituitary"],
+    // "Cơ quan nội tiết" của atlas tham chiếu gồm cả tuỵ, tuyến ức và tuyến
+    // sinh dục — ba cơ quan nội tiết KHÔNG mang hệ "endocrine" trong dữ liệu
+    // (tuỵ là tiêu hoá, tuyến ức là bạch huyết, tinh hoàn là sinh dục).
+    // Đồng bộ `PANCREAS` của views-digestive.ts / views-endocrine.ts và
+    // `THYMUS` của views-lymphatic.ts; `TESTES` nhập từ views-reproductive.ts.
+    focus: [
+      { systems: ["endocrine"] },
+      { fma: ["FMA7198", "FMA63120", "FMA10419", "FMA63103"] },
+      { systems: ["lymphatic"], name: /lobe of thymus$/i },
+      TESTES,
+    ],
+    terms: ["nội tiết", "endocrine", "tuyến giáp", "thyroid", "thượng thận", "adrenal", "tuyến yên", "pituitary", "tuyến ức", "thymus", "tuyến sinh dục"],
   },
 ];

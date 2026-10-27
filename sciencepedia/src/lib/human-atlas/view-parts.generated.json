@@ -8590,8 +8590,16 @@
     "focus": [
       "FJ1795",
       "FJ1796",
+      "FJ1895",
+      "FJ1896",
+      "FJ2629",
+      "FJ2630",
       "FJ3129",
       "FJ3130",
+      "FJ3138",
+      "FJ3142",
+      "FJ3150",
+      "FJ3151",
       "ZA-left-inferior-parathyroid-gland",
       "ZA-left-superior-parathyroid-gland",
       "ZA-right-inferior-parathyroid-gland",
@@ -11960,6 +11968,276 @@
       "FJ2439"
     ]
   },
+  "endocrine-thyroid-vasculature": {
+    "focus": [
+      "FJ2209",
+      "FJ2210",
+      "ZA-left-superior-thyroid-vein",
+      "ZA-right-superior-thyroid-vein",
+      "ZA-thyroid-gland"
+    ],
+    "hide": [],
+    "context": [
+      "FJ1682",
+      "FJ1682M",
+      "FJ2440",
+      "FJ2541",
+      "FJ2808",
+      "FJ3483",
+      "FJ3485",
+      "FJ3564",
+      "FJ3585",
+      "ZA-left-internal-jugular-vein",
+      "ZA-right-internal-jugular-vein"
+    ]
+  },
+  "endocrine-thymus": {
+    "focus": [
+      "FJ3150",
+      "FJ3151"
+    ],
+    "hide": [],
+    "context": [
+      "FJ2417",
+      "FJ2420",
+      "FJ2421",
+      "FJ2422",
+      "FJ2423",
+      "FJ2424",
+      "FJ2425",
+      "FJ2426",
+      "FJ2427",
+      "FJ2428",
+      "FJ2431",
+      "FJ2432",
+      "FJ2433",
+      "FJ2434",
+      "FJ2435",
+      "FJ2436",
+      "FJ2438",
+      "FJ2439",
+      "FJ3154",
+      "FJ3155",
+      "FJ3156",
+      "FJ3158",
+      "FJ3160",
+      "FJ3163",
+      "FJ3166",
+      "FJ3169",
+      "FJ3171",
+      "FJ3173",
+      "FJ3174",
+      "FJ3175",
+      "FJ3203",
+      "FJ3204",
+      "FJ3205",
+      "FJ3206",
+      "FJ3207",
+      "FJ3208",
+      "FJ3209",
+      "FJ3210",
+      "FJ3222",
+      "FJ3223",
+      "FJ3224",
+      "FJ3225",
+      "FJ3226",
+      "FJ3227",
+      "FJ3228",
+      "FJ3229",
+      "FJ3230",
+      "FJ3231",
+      "FJ3232",
+      "FJ3233",
+      "FJ3234",
+      "FJ3235",
+      "FJ3236",
+      "FJ3330",
+      "FJ3331",
+      "FJ3332",
+      "FJ3334",
+      "FJ3336",
+      "FJ3338",
+      "FJ3340",
+      "FJ3342",
+      "FJ3344",
+      "FJ3346",
+      "FJ3347",
+      "FJ3348",
+      "FJ3411",
+      "FJ3413",
+      "FJ3417",
+      "FJ3441",
+      "FJ3479",
+      "FJ3482",
+      "FJ3483",
+      "FJ3564",
+      "FJ3579",
+      "FJ3583",
+      "FJ3645",
+      "FJ3659"
+    ],
+    "frame": [
+      "FJ2417",
+      "FJ2420",
+      "FJ2421",
+      "FJ2422",
+      "FJ2423",
+      "FJ2424",
+      "FJ2425",
+      "FJ2426",
+      "FJ2427",
+      "FJ2428",
+      "FJ2431",
+      "FJ2432",
+      "FJ2433",
+      "FJ2434",
+      "FJ2435",
+      "FJ2436",
+      "FJ2438",
+      "FJ2439"
+    ]
+  },
+  "endocrine-pancreas-liver": {
+    "focus": [
+      "FJ1858",
+      "FJ1895",
+      "FJ1896",
+      "FJ2409",
+      "FJ2629",
+      "FJ2630",
+      "FJ2816",
+      "FJ2818",
+      "FJ2819",
+      "FJ2820",
+      "FJ2821",
+      "FJ2822",
+      "FJ2823",
+      "FJ2824"
+    ],
+    "hide": [],
+    "context": [
+      "FJ2564",
+      "FJ2573",
+      "FJ2817"
+    ]
+  },
+  "endocrine-gonads": {
+    "focus": [
+      "FJ3136",
+      "FJ3138",
+      "FJ3141",
+      "FJ3142"
+    ],
+    "hide": [],
+    "context": [
+      "FJ3132",
+      "FJ3133",
+      "FJ3134",
+      "FJ3135",
+      "FJ3140"
+    ],
+    "frame": [
+      "FJ3132",
+      "FJ3133",
+      "FJ3134"
+    ]
+  },
+  "endocrine-secondary-organs": {
+    "focus": [
+      "FJ1858",
+      "FJ2409",
+      "FJ2417",
+      "FJ2420",
+      "FJ2421",
+      "FJ2422",
+      "FJ2423",
+      "FJ2424",
+      "FJ2425",
+      "FJ2426",
+      "FJ2427",
+      "FJ2428",
+      "FJ2431",
+      "FJ2432",
+      "FJ2433",
+      "FJ2434",
+      "FJ2435",
+      "FJ2436",
+      "FJ2438",
+      "FJ2439",
+      "FJ2563",
+      "FJ2564",
+      "FJ2566",
+      "FJ2567",
+      "FJ2571",
+      "FJ2572",
+      "FJ2573",
+      "FJ2574",
+      "FJ2575",
+      "FJ2576",
+      "FJ2577",
+      "FJ2578",
+      "FJ2579",
+      "FJ2580",
+      "FJ2581",
+      "FJ2582",
+      "FJ2583",
+      "FJ2584",
+      "FJ2585",
+      "FJ2586",
+      "FJ2587",
+      "FJ2588",
+      "FJ2589",
+      "FJ2590",
+      "FJ2591",
+      "FJ2592",
+      "FJ2593",
+      "FJ2594",
+      "FJ2595",
+      "FJ2596",
+      "FJ2597",
+      "FJ2598",
+      "FJ2600",
+      "FJ2601",
+      "FJ2602",
+      "FJ2603",
+      "FJ2604",
+      "FJ2605",
+      "FJ2606",
+      "FJ2607",
+      "FJ2608",
+      "FJ2609",
+      "FJ2610",
+      "FJ2611",
+      "FJ2612",
+      "FJ2613",
+      "FJ2614",
+      "FJ2615",
+      "FJ2616",
+      "FJ2617",
+      "FJ2618",
+      "FJ2619",
+      "FJ2620",
+      "FJ2621",
+      "FJ2622",
+      "FJ2623",
+      "FJ2624",
+      "FJ2625",
+      "FJ2626",
+      "FJ2627",
+      "FJ2628",
+      "FJ2816",
+      "FJ2818",
+      "FJ2819",
+      "FJ2820",
+      "FJ2821",
+      "FJ2822",
+      "FJ2823",
+      "FJ2824",
+      "FJ3145",
+      "FJ3147"
+    ],
+    "hide": []
+  },
   "endocrine-thyroid-parathyroid": {
     "focus": [
       "ZA-left-inferior-parathyroid-gland",
@@ -11990,6 +12268,26 @@
     "focus": [
       "FJ1795",
       "FJ1796"
+    ],
+    "hide": [],
+    "context": [
+      "FJ3309",
+      "FJ3394"
+    ]
+  },
+  "pituitary-gland": {
+    "focus": [
+      "FJ1796"
+    ],
+    "hide": [],
+    "context": [
+      "FJ3309",
+      "FJ3394"
+    ]
+  },
+  "pineal-gland": {
+    "focus": [
+      "FJ1795"
     ],
     "hide": [],
     "context": [
@@ -12031,24 +12329,24 @@
       "FJ3147"
     ]
   },
-  "pituitary-gland": {
+  "inferior-thyroid-arteries": {
     "focus": [
-      "FJ1796"
+      "FJ2209",
+      "FJ2210"
     ],
     "hide": [],
     "context": [
-      "FJ3309",
-      "FJ3394"
+      "ZA-thyroid-gland"
     ]
   },
-  "pineal-gland": {
+  "superior-thyroid-veins": {
     "focus": [
-      "FJ1795"
+      "ZA-left-superior-thyroid-vein",
+      "ZA-right-superior-thyroid-vein"
     ],
     "hide": [],
     "context": [
-      "FJ3309",
-      "FJ3394"
+      "ZA-thyroid-gland"
     ]
   },
   "digestive-overview": {
