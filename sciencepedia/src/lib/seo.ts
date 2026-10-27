@@ -19,12 +19,15 @@ export const CONTACT_EMAIL = "sciencepedia.contact@gmail.com";
  * mời cuối mỗi bài cùng trỏ vào đây, lệch nhau là người đọc theo dõi nhầm
  * một trang khác.
  *
- * Dùng địa chỉ theo ID số, không phải username: trang chưa đặt username
- * tĩnh, còn ID là bất biến — nó là phần đầu của mọi mã bài Graph API đã
- * đăng (`<pageId>_<postId>` trong `state/posted.json` của repo social).
- * Trang đặt được username thì sửa đúng dòng này.
+ * Địa chỉ theo username tĩnh `sciencepedia.vn` — lựa chọn đầu trong thứ tự
+ * ưu tiên repo social đã chốt, do chủ trang đặt ngày 2026-10-27 (Graph API
+ * không có quyền đổi username nên không tự động hoá được bước đó). Trước
+ * đó hằng này trỏ theo ID số bất biến của trang (`1333464169858500`, phần
+ * đầu của mọi mã bài Graph API đã đăng trong `state/posted.json`): địa chỉ
+ * ID vẫn mở đúng trang nếu username bị thu hồi, nhưng địa chỉ username là
+ * địa chỉ để người đọc nhớ và gõ lại.
  */
-export const FACEBOOK_PAGE_URL = "https://www.facebook.com/1333464169858500";
+export const FACEBOOK_PAGE_URL = "https://www.facebook.com/sciencepedia.vn";
 
 /**
  * Tài khoản đứng tên tác giả và người duyệt của mọi bài hiện có. Đây là một
