@@ -140,7 +140,12 @@ export const REPRODUCTIVE_VIEWS: readonly AtlasViewDef[] = [
     name: { vi: "Tinh hoàn và mào tinh", en: "Testes and epididymides" },
     direction: "anterolateral",
     focus: [TESTES, EPIDIDYMIS],
-    context: [DEFERENT_DUCTS, PENIS, TESTICULAR_VESSELS],
+    // Bối cảnh chỉ còn dương vật: mạch tinh hoàn và ống dẫn tinh là những ống dài
+    // chạy ngược lên bụng — để trong bối cảnh thì chúng tràn quá khung, bị cắt ở
+    // mép trên của thẻ và lấn át hai tinh hoàn ở đáy khung (quét khung hình
+    // 2026-10-27, cùng lớp lỗi với PR #146). Cả hai đã có view riêng
+    // reproductive-ducts lo phần đường đi lên.
+    context: [PENIS],
     // Riêng hai tinh hoàn thì phóng to lấp khung; khung cả dương vật để thấy vị trí.
     camera: { frame: [PENIS], fill: 0.55, thumbnailFill: 0.7 },
     terms: ["tinh hoàn", "mào tinh", "testis", "testicle", "epididymis"],
