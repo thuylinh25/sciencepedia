@@ -19,6 +19,44 @@ import {
   TableRow,
 } from "@/components/ui/table";
 
+/**
+ * Đích mở của một hàng "mô hình" trong lịch sử xem. `contentId` do chính
+ * viewer của Human Atlas ghi (`structure:<id cấu trúc>` khi người đọc mở một
+ * cấu trúc, `view:<id góc nhìn>` khi đang ở một góc nhìn — xem `trackedModel`
+ * trong `human-atlas.tsx`), và viewer cũng đọc đúng hai tham số ấy từ URL,
+ * nên link chỉ là phát lại id đã ghi. `#atlas-viewer` cho trình duyệt nhảy
+ * thẳng tới khung mô hình, như các link hệ ở trang Atlas.
+ *
+ * Định dạng lạ thì không có link (hiện chữ như cũ). Cấu trúc/góc nhìn đã bị
+ * gỡ khỏi Atlas cũng không thành link chết: viewer bỏ qua tham số không tra
+ * được và mở Atlas ở trạng thái mặc định.
+ */
+function modelHref(contentId: string): string | null {
+  const sep = contentId.indexOf(":");
+  if (sep <= 0) return null;
+  const kind = contentId.slice(0, sep);
+  const id = contentId.slice(sep + 1);
+  if (!id) return null;
+  if (kind === "structure")
+    return `/human-atlas?structure=${encodeURIComponent(id)}#atlas-viewer`;
+  if (kind === "view")
+    return `/human-atlas?view=${encodeURIComponent(id)}#atlas-viewer`;
+  return null;
+}
+
+/** Tên một mục mô hình trong lịch sử: có link mở Atlas khi id ánh xạ được. */
+function ModelName({ item }: { item: { contentId: string; label: string | null } }) {
+  const href = modelHref(item.contentId);
+  const text = item.label ?? item.contentId;
+  return href ? (
+    <Link href={href} className="hover:underline">
+      {text}
+    </Link>
+  ) : (
+    <>{text}</>
+  );
+}
+
 const PER_PAGE = 20;
 
 const FILTERS = {
@@ -177,7 +215,7 @@ export default async function AdminUserActivityPage({
                       <span className="text-muted-foreground">{t("deleted")}</span>
                     )
                   ) : (
-                    item.label ?? item.contentId
+                    <ModelName item={item} />
                   )}
                 </TableCell>
                 <TableCell className="text-muted-foreground">
