@@ -12,7 +12,8 @@ import { AXILLARY as AXILLARY_VEINS, FEMORAL as FEMORAL_VEIN, POPLITEAL as POPLI
  * và CÓ ống ngực: đã xem bằng mắt (2026-10-01) — thân liền dọc trước cột sống ngực, uốn
  * theo đường cong cột sống, cuối trên vòng sang trái lên cổ; xương bối cảnh vẽ mờ nên
  * không che. KHÔNG ghi "thiếu ống ngực"; nhưng ống nằm chung một mesh với các mạch
- * nhỏ, nên đừng dựng góc nhìn "ống ngực" riêng. Không có hạnh nhân (amiđan).
+ * nhỏ, nên đừng dựng góc nhìn "ống ngực" riêng. Có hạnh nhân khẩu cái (Z-Anatomy,
+ * nhập 2026-10-27); chưa có hạnh nhân hầu và hạnh nhân lưỡi ở bất kỳ nguồn nào đã rà.
  *
  * "Subaortic nodes" (TA: nodi subaortici, nhóm hạch chậu chung dưới chỗ chia động
  * mạch chủ) nằm ở y ≈ 1,01 m, ngang L5 — thuộc chậu, không phải "trạm 5" trung thất
@@ -27,8 +28,8 @@ import { AXILLARY as AXILLARY_VEINS, FEMORAL as FEMORAL_VEIN, POPLITEAL as POPLI
 /*
  * Lưới xếp theo "Lymphatic System Views" của atlas tham chiếu (chủ sản phẩm, 2026-10-23):
  * tổng quan, tuyến ức, hạnh nhân, ống ngực, bể dưỡng chấp, đầu – cổ, ngực, chậu, chi dưới,
- * hạch nách, hạch bẹn, hạch khoeo — rồi nhóm cũ giữ cho deep link. Hạnh nhân: `missing`
- * (Z-Anatomy CÓ hạnh nhân khẩu cái — nhập được qua import-z-anatomy.ts, chưa làm). Bể
+ * hạch nách, hạch bẹn, hạch khoeo — rồi nhóm cũ giữ cho deep link. Hạnh nhân: dựng
+ * được từ hạnh nhân khẩu cái của Z-Anatomy (nhập 2026-10-27), `partial` vì thiếu hầu/lưỡi. Bể
  * dưỡng chấp: `missing` — đã xem bằng mắt, không chỗ phình nào tách được khỏi lưới mạch.
  * Ống ngực: dựng được nhưng tên phải gồm "mạch bạch huyết ngực" vì cùng một lưới.
  *
@@ -79,6 +80,7 @@ const LOWER_LIMB_VESSELS = lymph(/^lymphatic vessels of (left|right) lower limb$
 // Cơ quan bạch huyết.
 const SPLEEN = lymph(/^spleen$/i);
 const THYMUS = lymph(/lobe of thymus$/i);
+const PALATINE_TONSIL = lymph(/palatine tonsil$/i);
 
 // Bối cảnh xương theo vùng.
 const SKULL_NECK: PartRule = { systems: ["skeletal"], name: /mandible|^hyoid bone$|cervical vertebra$|^atlas$|^axis$|clavicle$/i };
@@ -129,7 +131,7 @@ export const LYMPHATIC_VIEWS: readonly AtlasViewDef[] = [
     name: { vi: "Toàn bộ hệ bạch huyết", en: "Whole lymphatic system" },
     direction: "front",
     focus: [{ systems: ["lymphatic"] }],
-    partial: { vi: "Thiếu hạnh nhân (amiđan)", en: "The tonsils are missing" },
+    partial: { vi: "Thiếu hạnh nhân hầu và hạnh nhân lưỡi", en: "The pharyngeal and lingual tonsils are missing" },
     terms: ["bạch huyết", "lymphatic", "hạch", "lymph node", "bạch mạch"],
     quality: "acceptable",
   },
@@ -154,11 +156,14 @@ export const LYMPHATIC_VIEWS: readonly AtlasViewDef[] = [
     kind: "group",
     name: { vi: "Hạnh nhân (amiđan)", en: "Tonsils" },
     direction: "anterolateral",
-    missing: {
-      vi: "Bộ dữ liệu hiện chưa có hạnh nhân khẩu cái, hạnh nhân hầu hay hạnh nhân lưỡi",
-      en: "The palatine, pharyngeal and lingual tonsils are not in the current dataset",
+    focus: [PALATINE_TONSIL],
+    context: [SKULL_NECK],
+    partial: {
+      vi: "Chỉ có hạnh nhân khẩu cái — thiếu hạnh nhân hầu và hạnh nhân lưỡi",
+      en: "Only the palatine tonsils are present — the pharyngeal and lingual tonsils are missing",
     },
     terms: ["amiđan", "amidan", "tonsil", "palatine tonsil", "vòng bạch huyết quanh họng"],
+    quality: "acceptable",
   },
   {
     id: "lymphatic-thoracic-duct",
@@ -245,4 +250,5 @@ export const LYMPHATIC_VIEWS: readonly AtlasViewDef[] = [
   structure("lower-limb-lymph-vessels", "Mạch bạch huyết chi dưới", "Lymphatic vessels of the lower limb", LOWER_LIMB_VESSELS),
   structure("spleen", "Lách", "Spleen", SPLEEN),
   structure("thymus", "Tuyến ức", "Thymus", THYMUS),
+  structure("palatine-tonsil", "Hạnh nhân khẩu cái", "Palatine tonsil", PALATINE_TONSIL, "anterolateral"),
 ];

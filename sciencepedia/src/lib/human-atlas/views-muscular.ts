@@ -49,6 +49,9 @@ export const SUBOCCIPITAL = m(/rectus capitis posterior (major|minor)$|obliquus 
 const PECTORAL = m(/pectoralis (major|minor)$|subclavius$|serratus anterior$/i);
 const THORACIC_WALL = m(/intercostal muscle$|transversus thoracis$/i);
 const EXTERNAL_OBLIQUE = m(/^(left|right) external oblique$/i);
+// Hai cơ Z-Anatomy bổ sung (2026-10-27) — BodyParts3D không có khái niệm cho chúng.
+const TRANSVERSUS_ABDOMINIS = m(/transversus abdominis muscle$/i);
+const QUADRATUS_LUMBORUM = m(/quadratus lumborum muscle$/i);
 const ILIOPSOAS = m(/psoas major$|iliacus$/i);
 export const PELVIC_FLOOR = m(/coccygeus$|puborectalis$|external anal sphincter$/i);
 // Chi trên.
@@ -228,15 +231,15 @@ export const MUSCULAR_VIEWS: readonly AtlasViewDef[] = [
     ["lưng trên", "upper back", "gáy", "nape", "cơ thang", "trapezius", "cơ trám", "rhomboid"], {
       partial: { vi: "Thiếu cơ lưng rộng", en: "Latissimus dorsi is missing" },
     }),
-  group("muscle-lower-back", "Lưng dưới", "Lower back", "back", [ERECTOR_THORACOLUMBAR, LUMBAR_DEEP], [SPINE_THORAX, PELVIS_BONES],
-    ["lưng dưới", "lower back", "thắt lưng", "cơ dựng sống", "erector spinae", "cơ dài nhất", "longissimus"], {
-      partial: { vi: "Thiếu cơ vuông thắt lưng, cơ nhiều chân và cơ lưng rộng", en: "Quadratus lumborum, multifidus and latissimus dorsi are missing" },
+  group("muscle-lower-back", "Lưng dưới", "Lower back", "back", [ERECTOR_THORACOLUMBAR, LUMBAR_DEEP, QUADRATUS_LUMBORUM], [SPINE_THORAX, PELVIS_BONES],
+    ["lưng dưới", "lower back", "thắt lưng", "cơ dựng sống", "erector spinae", "cơ dài nhất", "longissimus", "cơ vuông thắt lưng", "quadratus lumborum"], {
+      partial: { vi: "Thiếu cơ nhiều chân và cơ lưng rộng", en: "Multifidus and latissimus dorsi are missing" },
     }),
   group("muscle-abdomen-pelvis", "Cơ bụng, thắt lưng chậu và đáy chậu", "Muscles of the abdomen, iliopsoas and pelvic floor", "front",
-    [EXTERNAL_OBLIQUE, ILIOPSOAS, PELVIC_FLOOR], [PELVIS_BONES], ["cơ bụng", "abdominal muscles", "đáy chậu", "pelvic floor", "cơ thắt lưng chậu"], {
+    [EXTERNAL_OBLIQUE, TRANSVERSUS_ABDOMINIS, QUADRATUS_LUMBORUM, ILIOPSOAS, PELVIC_FLOOR], [PELVIS_BONES], ["cơ bụng", "abdominal muscles", "đáy chậu", "pelvic floor", "cơ thắt lưng chậu", "cơ ngang bụng", "transversus abdominis"], {
       partial: {
-        vi: "Thiếu cơ thẳng bụng, cơ chéo bụng trong, cơ ngang bụng, cơ vuông thắt lưng, cơ hành xốp, cơ ngồi hang, cơ ngang đáy chậu và cơ thắt niệu đạo",
-        en: "Rectus abdominis, internal oblique, transversus abdominis, quadratus lumborum, bulbospongiosus, ischiocavernosus, the transverse perineal muscles and the urethral sphincter are missing",
+        vi: "Thiếu cơ thẳng bụng, cơ chéo bụng trong, cơ hành xốp, cơ ngồi hang, cơ ngang đáy chậu và cơ thắt niệu đạo",
+        en: "Rectus abdominis, internal oblique, bulbospongiosus, ischiocavernosus, the transverse perineal muscles and the urethral sphincter are missing",
       },
     }),
   // Id cũ (trước: cơ hông và đùi).
@@ -266,6 +269,8 @@ export const MUSCULAR_VIEWS: readonly AtlasViewDef[] = [
   structure("suboccipital-muscles", "Các cơ dưới chẩm", "Suboccipital muscles", "back", SUBOCCIPITAL),
   structure("pectoral-muscles", "Cơ ngực lớn, ngực bé, dưới đòn và răng trước", "Pectoralis major and minor, subclavius and serratus anterior", "front", PECTORAL),
   structure("thoracic-wall-muscles", "Cơ gian sườn và cơ ngang ngực", "Intercostal muscles and transversus thoracis", "front", THORACIC_WALL),
+  structure("transversus-abdominis", "Cơ ngang bụng", "Transversus abdominis", "front", TRANSVERSUS_ABDOMINIS, ["cơ ngang bụng", "transversus abdominis"]),
+  structure("quadratus-lumborum", "Cơ vuông thắt lưng", "Quadratus lumborum", "back", QUADRATUS_LUMBORUM, ["cơ vuông thắt lưng", "quadratus lumborum"]),
   structure("iliopsoas", "Cơ thắt lưng lớn và cơ chậu", "Psoas major and iliacus", "front", ILIOPSOAS, ["cơ thắt lưng chậu", "iliopsoas"]),
   {
     ...structure("pelvic-floor-muscles", "Cơ hoành chậu và đáy chậu", "Pelvic diaphragm and perineal muscles", "inferior", PELVIC_FLOOR, ["cơ nâng hậu môn", "levator ani", "pelvic floor"]),

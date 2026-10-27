@@ -717,6 +717,14 @@ trùng BodyParts3D: không lấy động mạch, não; ứng viên bị loại n
 gốc CÙNG loại (dây thần kinh so dây thần kinh, không so thân não — so thân não là loại nhầm dây VI).
 Hạch không tên của UMCG bị bỏ khi có hạch Z-Anatomy; mạch bạch huyết UMCG giữ. Khái niệm mang mã
 `ZA-…` (không phải FMA) → bảng chi tiết ẩn link FMA.
+**Thêm 2026-10-27: cơ vuông thắt lưng, cơ ngang bụng (hệ cơ) và hạnh nhân khẩu cái (hệ bạch huyết,
+nhóm mới `lymphatic.tonsil`) — 605 → 611 mảnh, 354 → 357 khái niệm.** Đợt này KHÔNG tạo lại toàn bộ:
+manifest hiện hành không tái lập được bằng import script hiện tại (dump đầy đủ + pick hiện hành cho
+600 mảnh — thiếu lacunar/sacral nodes, thừa prepericardial/splenic nodes), nên nối thêm giữ nguyên
+từng byte cũ: `scripts/blender/za-extract.py` trích 6 đối tượng KÈM CHUỖI CHA (đánh giá thiếu cha
+đặt sai vị trí — toạ độ cục bộ quanh gốc, vị trí thật ở empties ".g"; đo lệch tới ~3,3 m trên
+temporal plane/falx) → `scripts/extend-z-anatomy.ts` nối vào cuối chunk, tự kiểm giải mã lại từ
+blob cuối. `pick()` của import script đã mở cho ba cấu trúc này để lần tạo lại tương lai khớp tập mảnh.
 **Bó tuỷ (đợt 2, 2026-10-19):** lưới "White matter of spinal cord" là khối ĐẶC (đo `inside()`: chứa trọn sừng
 và chất trung gian), không phải phần còn lại sau khi trừ bó — mặt ngoài các bó trùng mặt chất trắng, nên góc
 nhìn bó chỉ làm mờ chất xám. Đừng "cho đủ bối cảnh" bằng cách thêm chất trắng: hai mặt trùng nhau nhấp nháy.

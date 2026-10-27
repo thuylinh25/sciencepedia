@@ -4,7 +4,9 @@ import numpy as np
 bpy.ops.wm.open_mainfile(filepath=r".cache/z-anatomy/Z-Anatomy/Startup.blend", load_ui=False)
 OUT = r".cache/z-anatomy/dump"
 os.makedirs(OUT, exist_ok=True)
-WANT = ("1:", "5:", "6:", "7:", "8:")
+# "4:" (hệ cơ) thêm 2026-10-27 cho đợt nhập cơ vuông thắt lưng + cơ ngang bụng;
+# z-anatomy-dump-append.py (bản ít ngốn RAM) dùng cùng danh sách này.
+WANT = ("1:", "4:", "5:", "6:", "7:", "8:")
 cols = {}
 def walk(c, trail):
     for o in c.objects: cols.setdefault(o.name, trail + [c.name])
