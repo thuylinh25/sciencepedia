@@ -46,6 +46,7 @@ const AladinArticleEmbed = dynamic(() =>
   ),
 );
 import { ReadingProgress } from "@/components/article/reading-progress";
+import { FacebookFollow } from "@/components/article/facebook-follow";
 import { ShareBar } from "@/components/article/share-bar";
 import { BookmarkButton } from "@/components/article/bookmark-button";
 import { ArticleGrid } from "@/components/article/article-grid";
@@ -639,6 +640,10 @@ export default async function ArticlePage({
           <Separator className="my-12" />
 
           <ShareBar title={title} url={url} />
+
+          {/* Mời theo dõi fanpage — sau thanh chia sẻ, xem `FacebookFollow`
+              về vì sao lời mời đứng ở cuối bài. */}
+          <FacebookFollow />
         </article>
 
         {/* Mục lục dính */}

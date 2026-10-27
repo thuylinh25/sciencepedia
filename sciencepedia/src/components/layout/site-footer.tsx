@@ -1,6 +1,7 @@
 import { getLocale, getTranslations } from "next-intl/server";
 import {
   BookOpen,
+  Facebook,
   FileText,
   FlaskConical,
   Mail,
@@ -11,7 +12,7 @@ import {
 import { Link } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
 import { getNavigationCategories } from "@/server/queries";
-import { CONTACT_EMAIL } from "@/lib/seo";
+import { CONTACT_EMAIL, FACEBOOK_PAGE_URL } from "@/lib/seo";
 import { SITE_TOOLS } from "@/lib/site-tools";
 import { Logo } from "@/components/layout/logo";
 import { Separator } from "@/components/ui/separator";
@@ -194,13 +195,31 @@ export async function SiteFooter() {
                 <p className={headingClass}>{t("contactTitle")}</p>
               </div>
 
-              <a
-                href={`mailto:${CONTACT_EMAIL}`}
-                className="mt-3 inline-flex items-center gap-2.5 rounded-full border px-4 py-2 text-sm font-medium transition-all hover:border-accent hover:text-accent hover:shadow-[0_0_18px_-4px_var(--color-accent)]"
-              >
-                <Mail className="size-4" aria-hidden />
-                {CONTACT_EMAIL}
-              </a>
+              <div className="mt-3 flex flex-wrap gap-2">
+                <a
+                  href={`mailto:${CONTACT_EMAIL}`}
+                  className="inline-flex items-center gap-2.5 rounded-full border px-4 py-2 text-sm font-medium transition-all hover:border-accent hover:text-accent hover:shadow-[0_0_18px_-4px_var(--color-accent)]"
+                >
+                  <Mail className="size-4" aria-hidden />
+                  {CONTACT_EMAIL}
+                </a>
+
+                {/* Nút theo dõi fanpage đứng CÙNG khối liên hệ, cùng dạng viên
+                    với nút email: khối này là chỗ duy nhất ở footer mời người
+                    đọc làm một việc, và theo dõi trang là việc thứ hai thuộc
+                    cùng loại đó — kênh để quay lại hằng ngày, cạnh kênh để
+                    viết thư khi cần. Không dựng mục "Mạng xã hội" riêng cho
+                    một liên kết duy nhất; có kênh thứ hai thật thì mới tách. */}
+                <a
+                  href={FACEBOOK_PAGE_URL}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className="inline-flex items-center gap-2.5 rounded-full border px-4 py-2 text-sm font-medium transition-all hover:border-accent hover:text-accent hover:shadow-[0_0_18px_-4px_var(--color-accent)]"
+                >
+                  <Facebook className="size-4" aria-hidden />
+                  {t("followFacebook")}
+                </a>
+              </div>
             </div>
           </div>
 
