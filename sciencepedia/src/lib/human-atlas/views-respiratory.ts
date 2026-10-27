@@ -369,6 +369,16 @@ export const RESPIRATORY_VIEWS: readonly AtlasViewDef[] = [
 
   // ------------------------------------------------------------ cấu trúc
   {
+    id: "eustachian-tubes",
+    systemId: "respiratory",
+    kind: "structure",
+    name: { vi: "Vòi tai", en: "Eustachian tubes" },
+    direction: "left",
+    focus: [AUDITORY_TUBES],
+    context: [PHARYNX_UPPER, TYMPANIC_MEMBRANES, TEMPORAL_BONES],
+    terms: ["vòi tai", "vòi Eustache", "eustachian tube", "pharyngotympanic tube"],
+  },
+  {
     id: "nasal-cartilages",
     systemId: "respiratory",
     kind: "structure",
