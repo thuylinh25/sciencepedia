@@ -166,9 +166,10 @@ export const REPRODUCTIVE_VIEWS: readonly AtlasViewDef[] = [
     direction: "posterolateral",
     focus: [SEMINAL_VESICLES],
     // Không xương chậu: nhìn sau-bên thì xương chậu nằm sát camera, che mặt sau bàng quang.
-    // Không niệu quản (bỏ 2026-10-27): hai ống chạy dài từ thận xuống, tràn cả hai mép
-    // khung khi mở view trên bản live — khung chỉ theo bàng quang + tiền liệt.
-    context: [BLADDER, PROSTATE, DEFERENT_DUCTS],
+    // Không niệu quản, không ống dẫn tinh (bỏ 2026-10-27): cả hai đều là ống dài chạy
+    // khỏi vùng khung (niệu quản lên thận, ống dẫn tinh xuống tinh hoàn) — QA trên bản
+    // xem trước cho thấy chúng tràn mép khung; view chỉ cần bàng quang + tiền liệt.
+    context: [BLADDER, PROSTATE],
     camera: { frame: [BLADDER, PROSTATE], fill: 0.5, thumbnailFill: 0.65 },
     terms: ["túi tinh", "seminal vesicle", "bóng ống dẫn tinh", "ampulla of ductus deferens"],
     quality: "acceptable",
@@ -196,7 +197,9 @@ export const REPRODUCTIVE_VIEWS: readonly AtlasViewDef[] = [
     name: { vi: "Đường dẫn tinh", en: "Sperm pathway" },
     direction: "side",
     focus: [EPIDIDYMIS, DEFERENT_DUCTS],
-    context: [TESTES, SEMINAL_VESICLES, PROSTATE, BLADDER_URETHRA, PENIS, URETERS, HIP_BONES],
+    // Không niệu quản (bỏ 2026-10-27): chúng chạy từ thận xuống, chui vào từ mép trên
+    // khung — thứ bị cắt trong QA là niệu quản, không phải ống dẫn tinh.
+    context: [TESTES, SEMINAL_VESICLES, PROSTATE, BLADDER_URETHRA, PENIS, HIP_BONES],
     // Khung gồm cả ống dẫn tinh (2026-10-27): chỉ theo xương chậu thì đoạn ống đi lên
     // bị cắt ở mép trên khi mở view trên bản live.
     camera: { frame: [HIP_BONES, DEFERENT_DUCTS] },
