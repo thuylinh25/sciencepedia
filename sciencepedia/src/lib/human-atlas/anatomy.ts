@@ -495,7 +495,39 @@ const DROPPED_CONCEPTS = new Set(["FMA54319", "FMA19728"]);
 const geometryKey = (p: Atlas["parts"][number]) =>
   `${p.conceptId}|${p.vertexCount}|${p.indexCount}|${p.bounds.flat().map((x) => x.toFixed(5)).join(",")}`;
 
+/**
+ * Ba cặp mạch BodyParts3D mang HAI mảnh cho cùng một mạch thật, ở hai khái niệm
+ * FMA khác tên (đo trên `atlas.json`, kiểm toán 2026-10-27): số tam giác bằng
+ * nhau và hộp bao trùng khít — riêng cặp động mạch bờ đại tràng chênh 2 tam
+ * giác (788/786), hộp bao vẫn bằng nhau. Phép khử bản sao ở dưới chỉ bắt
+ * CÙNG khái niệm và ghi rõ "khác khái niệm phải xét từng ca" — đây là ba ca
+ * đã xét (chủ sản phẩm duyệt cơ chế alias ngày 2026-10-27):
+ *
+ * giữ mảnh mang tên FMA chuẩn, bỏ mảnh song sinh, và trỏ MỌI phần tử khái
+ * niệm đang trỏ tới mảnh bỏ sang mảnh giữ (khái niệm cha nào liệt kê cả hai
+ * bản thì khử trùng phần tử). Cả hai khái niệm đều sống: tên, tìm kiếm và
+ * liên kết `?structure=` của khái niệm bị bỏ vẫn mở ra đúng mạch thật — chỉ
+ * còn MỘT lưới, hết vẽ trùng và z-fighting ở các góc nhìn vẽ cả hai bản.
+ */
+const PART_ALIASES: Record<string, string> = {
+  FJ1846: "FJ3421", // Celiac artery (FMA50737) → Celiac trunk (FMA14812), 238 = 238 tam giác
+  // Cùng khái niệm, cùng tên, cùng hình với FJ1846 — bản chép thứ ba của đoạn thân
+  // tạng, trước nay bị phép khử bản sao cùng-khái-niệm giấu đi; chỉ alias FJ1846
+  // thì nó sống lại và trùng lại y như cũ.
+  FJ2013: "FJ3421", // Celiac artery (FMA50737) → Celiac trunk (FMA14812), bản chép của FJ1846
+  FJ3082: "FJ1853", // Pre-hepatic portal vein (FMA71904) → Hepatic portal vein (FMA50735), 788 = 788
+  FJ2025: "FJ3534", // Marginal colic artery (FMA14824) → Marginal artery of colon (FMA14831), 788 → 786
+};
+
 export function correctSystems(atlas: Atlas): Atlas {
+  const aliased = new Set(Object.keys(PART_ALIASES));
+  if (atlas.parts.some((p) => aliased.has(p.id))) {
+    atlas.parts = atlas.parts.filter((p) => !aliased.has(p.id));
+    atlas.concepts = atlas.concepts.map((c) => ({
+      ...c,
+      elements: [...new Set(c.elements.map((id) => PART_ALIASES[id] ?? id))],
+    }));
+  }
   const seen = new Set<string>();
   const dropped = new Set(
     atlas.parts

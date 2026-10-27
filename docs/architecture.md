@@ -628,6 +628,14 @@ resize — không khung lại khi chọn mảnh (lúc đó người đọc vừa
 (`anatomy.ts`) trả chúng về hệ thần kinh theo mã FMA. Không dựng lại dữ liệu trên R2:
 tệp có dấu phiên bản, dựng lại là 33 MB tải lại cho mọi người.
 
+Cùng hàm đó, `PART_ALIASES` (2026-10-27) khử ba cặp mạch bị BodyParts3D chép thành
+hai mảnh cho cùng một mạch thật ở hai khái niệm FMA khác tên (thân tạng, tĩnh mạch cửa,
+động mạch bờ đại tràng — riêng thân tạng có ba bản). Giữ mảnh mang tên FMA chuẩn, bỏ
+mảnh song sinh, trỏ mọi phần tử khái niệm sang mảnh giữ: cả hai khái niệm đều còn sống
+(tên, tìm kiếm, `?structure=`), chỉ còn một lưới — hết vẽ trùng và z-fighting. Phép khử
+bản sao hình học có sẵn chỉ bắt CÙNG khái niệm; khác khái niệm phải xét từng ca và ghi
+vào bảng này, không khử tự động theo hình học.
+
 ### CTA "Đọc thêm" chỉ hiện khi bài còn PUBLISHED
 
 `structure-links.ts` ghi FMA → slug; trang lọc qua CSDL lúc render (ISR). Slug nháp hay
