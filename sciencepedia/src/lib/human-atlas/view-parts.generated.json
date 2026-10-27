@@ -6078,6 +6078,27 @@
       "FJ3395"
     ]
   },
+  "respiratory-eustachian-tubes": {
+    "focus": [
+      "ZA-left-auditory-tube",
+      "ZA-right-auditory-tube"
+    ],
+    "hide": [],
+    "context": [
+      "FJ2745",
+      "FJ2747",
+      "FJ2757",
+      "FJ2759",
+      "FJ3281",
+      "FJ3386",
+      "ZA-left-tympanic-membrane",
+      "ZA-right-tympanic-membrane"
+    ],
+    "frame": [
+      "FJ3281",
+      "FJ3386"
+    ]
+  },
   "respiratory-pharynx-larynx": {
     "focus": [
       "FJ2440",
@@ -7033,6 +7054,23 @@
       "ZA-middle-lobe-of-right-lung",
       "ZA-superior-lobe-of-left-lung",
       "ZA-superior-lobe-of-right-lung"
+    ]
+  },
+  "eustachian-tubes": {
+    "focus": [
+      "ZA-left-auditory-tube",
+      "ZA-right-auditory-tube"
+    ],
+    "hide": [],
+    "context": [
+      "FJ2745",
+      "FJ2747",
+      "FJ2757",
+      "FJ2759",
+      "FJ3281",
+      "FJ3386",
+      "ZA-left-tympanic-membrane",
+      "ZA-right-tympanic-membrane"
     ]
   },
   "nasal-cartilages": {

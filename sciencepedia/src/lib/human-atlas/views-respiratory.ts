@@ -92,6 +92,13 @@ const LARYNX_LIGAMENTS = rule(
 const LARYNX = [LARYNX_CARTILAGES, EPIGLOTTIS, LARYNX_LIGAMENTS, LARYNX_MUSCLES];
 const HYOID = rule("FMA52749");
 
+// Vòi tai (Z-Anatomy, hệ giác quan — đã nhập cùng đợt tai giữa 2026-10-19, có cả
+// structure view `auditory-tube`): thẻ hô hấp từng ghi "missing" vì lúc dựng
+// thẻ dữ liệu chưa có; nay nối lại cho đúng sự thật dữ liệu.
+const AUDITORY_TUBES: PartRule = { systems: ["sensory"], name: /^(left|right) auditory tube$/i };
+const TYMPANIC_MEMBRANES: PartRule = { systems: ["sensory"], name: /^(left|right) tympanic membrane$/i };
+const TEMPORAL_BONES: PartRule = { systems: ["skeletal"], name: /^(left|right) temporal bone$/i };
+
 // Từng cơ nội thanh quản (cặp phải/trái cùng một cấu trúc) — hàng của bảng "Cấu trúc".
 const POST_CRICOARYTENOID = rule("FMA46577", "FMA46578");
 const LAT_CRICOARYTENOID = rule("FMA46580", "FMA46581");
@@ -188,9 +195,16 @@ export const RESPIRATORY_VIEWS: readonly AtlasViewDef[] = [
     systemId: "respiratory",
     kind: "group",
     name: { vi: "Vòi tai", en: "Eustachian tubes" },
-    direction: "left",
-    missing: { vi: "Bộ dữ liệu chưa có vòi tai", en: "The Eustachian (pharyngotympanic) tubes are not in the dataset" },
+    // Hai vòi hội tụ về đường giữa trên cơ hầu: nhìn từ trước mới thấy cả hai;
+    // "left" chỉ thấy một bên (QA bản xem trước PR #149).
+    direction: "front",
+    focus: [AUDITORY_TUBES],
+    context: [PHARYNX_UPPER, TYMPANIC_MEMBRANES, TEMPORAL_BONES],
+    // Vòi chỉ dài ~2 cm nằm trong nền sọ: đóng khung theo cặp xương thái
+    // dương để hai vòi không chìm trong khung đầu–cổ.
+    camera: { frame: [TEMPORAL_BONES] },
     terms: ["vòi tai", "vòi Eustache", "eustachian tube", "pharyngotympanic tube"],
+    quality: "acceptable",
   },
   {
     id: "respiratory-pharynx-larynx",
@@ -356,6 +370,16 @@ export const RESPIRATORY_VIEWS: readonly AtlasViewDef[] = [
   },
 
   // ------------------------------------------------------------ cấu trúc
+  {
+    id: "eustachian-tubes",
+    systemId: "respiratory",
+    kind: "structure",
+    name: { vi: "Vòi tai", en: "Eustachian tubes" },
+    direction: "front",
+    focus: [AUDITORY_TUBES],
+    context: [PHARYNX_UPPER, TYMPANIC_MEMBRANES, TEMPORAL_BONES],
+    terms: ["vòi tai", "vòi Eustache", "eustachian tube", "pharyngotympanic tube"],
+  },
   {
     id: "nasal-cartilages",
     systemId: "respiratory",
