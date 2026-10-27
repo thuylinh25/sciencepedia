@@ -13,6 +13,20 @@ export const SITE_NAME = process.env.NEXT_PUBLIC_SITE_NAME ?? "Sciencepedia";
 export const CONTACT_EMAIL = "sciencepedia.contact@gmail.com";
 
 /**
+ * Fanpage Facebook chính thức — kênh xã hội của site (repo
+ * `sciencepedia-social` vận hành nó: bài đã thẩm định trên web được hẹn giờ
+ * đăng lên đây). Viết MỘT chỗ cùng lý do với `CONTACT_EMAIL`: footer và dòng
+ * mời cuối mỗi bài cùng trỏ vào đây, lệch nhau là người đọc theo dõi nhầm
+ * một trang khác.
+ *
+ * Dùng địa chỉ theo ID số, không phải username: trang chưa đặt username
+ * tĩnh, còn ID là bất biến — nó là phần đầu của mọi mã bài Graph API đã
+ * đăng (`<pageId>_<postId>` trong `state/posted.json` của repo social).
+ * Trang đặt được username thì sửa đúng dòng này.
+ */
+export const FACEBOOK_PAGE_URL = "https://www.facebook.com/1333464169858500";
+
+/**
  * Tài khoản đứng tên tác giả và người duyệt của mọi bài hiện có. Đây là một
  * BAN, không phải một người — `docs/content-rules.md`, mục "Byline người
  * duyệt". Khai nó là `Person` trong JSON-LD là nói với Google rằng có một cá
@@ -39,6 +53,9 @@ function organizationNode() {
     logo: { "@type": "ImageObject", url: absoluteUrl("/icon.svg") },
     // Hộp thư này hiện ở footer mọi trang — khai được vì nó hiển thị
     email: CONTACT_EMAIL,
+    // Fanpage cũng hiện ở footer và cuối mỗi bài — cùng luật "chỉ khai thứ
+    // đang hiển thị" như email ở trên
+    sameAs: [FACEBOOK_PAGE_URL],
   };
 }
 
