@@ -2250,9 +2250,13 @@ export default function AnatomyScene({
       const def = viewById(id);
       const pixelRatio = renderer.getPixelRatio();
       if (!view || !def || el.clientWidth < THUMB_W || el.clientHeight < THUMB_H) return;
-      // Vẽ gấp đôi rồi thu nhỏ (khi khung đủ chỗ): dây thần kinh 1–2 mm hẹp hơn một điểm
+      // Vẽ gấp đôi (khi khung đủ chỗ): dây thần kinh 1–2 mm hẹp hơn một điểm
       // ảnh ở 240 px, khử răng cưa trộn nó với bối cảnh thành xám — thẻ "Thần kinh hệ hô
       // hấp" trông như lưới đen (2026-09-30). Gấp đôi giữ được màu của nét mảnh.
+      // Từ 2026-10-27 ảnh LƯU ở cỡ vẽ 480×600 (trước thu nhỏ về 240×300): thẻ trên
+      // màn retina hết mềm; màn thường thì trình duyệt tự thu nhỏ khi hiển thị,
+      // vẫn giữ lợi ích khử răng cưa của phép thu nhỏ cũ. Khung nhỏ (ss = 1) vẫn
+      // lưu 240×300 như trước.
       const ss = el.clientWidth >= THUMB_W * 2 && el.clientHeight >= THUMB_H * 2 ? 2 : 1;
       const savedData = data.slice();
       const savedSelected = selectedData.slice();
@@ -2327,8 +2331,8 @@ export default function AnatomyScene({
       depthTarget = null;
       ghostActive = ghostWas;
       const out = document.createElement("canvas");
-      out.width = THUMB_W;
-      out.height = THUMB_H;
+      out.width = THUMB_W * ss;
+      out.height = THUMB_H * ss;
       const drawn = renderer.domElement;
       const ctx2d = out.getContext("2d");
       if (ctx2d) ctx2d.imageSmoothingQuality = "high";
@@ -2341,8 +2345,8 @@ export default function AnatomyScene({
           THUMB_H * ss * pixelRatio,
           0,
           0,
-          THUMB_W,
-          THUMB_H,
+          THUMB_W * ss,
+          THUMB_H * ss,
         );
       renderer.setScissorTest(false);
       materials.forEach((m, i) => {
