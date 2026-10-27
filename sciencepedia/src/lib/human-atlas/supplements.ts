@@ -1,6 +1,7 @@
 import type { Atlas } from "./anatomy";
 import umcgLymphatic from "./supplements/umcg-lymphatic.json";
 import smoothSkin from "./supplements/smooth-skin.json";
+import smoothSphenoid from "./supplements/smooth-sphenoid.json";
 import zAnatomy from "./supplements/z-anatomy.json";
 import allenHra from "./supplements/allen-hra.json";
 import cit168 from "./supplements/cit168.json";
@@ -47,8 +48,9 @@ const umcgVessels: Supplement = {
 };
 
 // Da chia nhỏ (`scripts/smooth-skin.py`) mang CÙNG mã FJ2810 — thay da gốc.
+// Xương bướm khử nhiễu + chia nhỏ (`scripts/smooth-sphenoid.py`) mang CÙNG mã FJ3394 — thay xương gốc (bản thử 2026-10-27).
 // Atlas MNI (CC BY 4.0, `scripts/import-mni-atlases.ts`): nhân sâu của não. Mỗi nguồn một khối vì ghi công riêng.
-export const SUPPLEMENTS = [umcgVessels, zAnatomy as unknown as Supplement, smoothSkin as unknown as Supplement, allenHra as unknown as Supplement, cit168 as unknown as Supplement, neudorfer as unknown as Supplement];
+export const SUPPLEMENTS = [umcgVessels, zAnatomy as unknown as Supplement, smoothSkin as unknown as Supplement, smoothSphenoid as unknown as Supplement, allenHra as unknown as Supplement, cit168 as unknown as Supplement, neudorfer as unknown as Supplement];
 
 /** Tên tiếng Việt của mảnh bổ sung, tra theo tên tiếng Anh (tên nhóm, không phải tên khái niệm). */
 export const SUPPLEMENT_NAMES_VI: Record<string, string> = Object.fromEntries(
@@ -57,8 +59,8 @@ export const SUPPLEMENT_NAMES_VI: Record<string, string> = Object.fromEntries(
 
 /** Mảnh không phải BodyParts3D → nguồn của nó (để bảng chi tiết dẫn đúng nơi). */
 export const SUPPLEMENT_SOURCE: Record<string, string> = Object.fromEntries(
-  // Da chia nhỏ vẫn là hình của BodyParts3D — nguồn giữ là mô hình gốc.
-  SUPPLEMENTS.filter((s) => s.source !== "smooth-skin").flatMap((s) => s.parts.map((p) => [p.id, s.source])),
+  // Da chia nhỏ và xương bướm đã xử lý vẫn là hình của BodyParts3D — nguồn giữ là mô hình gốc.
+  SUPPLEMENTS.filter((s) => s.source !== "smooth-skin" && s.source !== "smooth-sphenoid").flatMap((s) => s.parts.map((p) => [p.id, s.source])),
 );
 
 /** Khái niệm bổ sung (`ZA-…`) → mã FMA của cha, để bảng chi tiết kế thừa nội dung của cha. */

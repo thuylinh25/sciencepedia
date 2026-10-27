@@ -1,0 +1,36 @@
+{
+ "source": "smooth-sphenoid",
+ "license": "CC BY 4.0",
+ "chunk": {
+  "url": "https://pub-2f39abf8661142edaf3c3c48f755ffa8.r2.dev/human-atlas/supplements/smooth-sphenoid-102848a4f8/sphenoid.bin",
+  "bytes": 1423752,
+  "gzip": "https://pub-2f39abf8661142edaf3c3c48f755ffa8.r2.dev/human-atlas/supplements/smooth-sphenoid-102848a4f8/sphenoid.bin.gz",
+  "gzipBytes": 844908
+ },
+ "parts": [
+  {
+   "id": "FJ3394",
+   "name": "Sphenoid bone",
+   "conceptId": "FMA52736",
+   "system": "skeletal",
+   "positions": 0,
+   "normals": 406704,
+   "indices": 610056,
+   "vertexCount": 33892,
+   "indexCount": 203424,
+   "bounds": [
+    [
+     -0.05616,
+     1.55659,
+     -0.00951
+    ],
+    [
+     0.05497,
+     1.62743,
+     0.04499
+    ]
+   ]
+  }
+ ],
+ "concepts": []
+}
