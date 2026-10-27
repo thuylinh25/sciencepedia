@@ -46,6 +46,21 @@ test("cùng hình KHÁC khái niệm, hay cùng khái niệm khác vị trí: gi
   assert.equal(correctSystems(atlas([part("A", "FMA1"), part("B", "FMA1", 0.2)])).parts.length, 2);
 });
 
+test("alias khái niệm: mảnh song sinh bị bỏ, phần tử trỏ sang mảnh giữ, không trùng phần tử", () => {
+  const base = atlas([part("FJ1846", "FMA50737"), part("FJ2013", "FMA50737", 0.2), part("FJ3421", "FMA14812")]);
+  // Khái niệm cha liệt kê CẢ hai bản (như FMA7161 trên dữ liệu thật).
+  base.concepts.push({ id: "FMA7161", name: "FMA7161", elements: ["FJ1846", "FJ3421"] });
+  const out = correctSystems(base);
+  assert.deepEqual(
+    out.parts.map((p) => p.id),
+    ["FJ3421"],
+  );
+  // Khái niệm của mảnh bị bỏ vẫn sống, phần tử trỏ sang mảnh giữ.
+  assert.deepEqual(out.concepts.find((c) => c.id === "FMA50737")?.elements, ["FJ3421"]);
+  assert.deepEqual(out.concepts.find((c) => c.id === "FMA14812")?.elements, ["FJ3421"]);
+  assert.deepEqual(out.concepts.find((c) => c.id === "FMA7161")?.elements, ["FJ3421"]);
+});
+
 test("mọi nhóm vật liệu sinh ra đều có màu", () => {
   for (const key of new Set(Object.values(groups as Record<string, string>))) {
     assert.ok(GROUP_COLORS[key], key);
