@@ -195,7 +195,12 @@ export const SKELETAL_VIEWS: readonly AtlasViewDef[] = [
   structure("bone-parietal", "Xương đỉnh", "Parietal bones", "side", PARIETAL),
   structure("bone-occipital", "Xương chẩm", "Occipital bone", "back", OCCIPITAL),
   structure("bone-temporal", "Xương thái dương", "Temporal bones", "side", TEMPORAL),
-  structure("bone-sphenoid", "Xương bướm", "Sphenoid bone", "three-quarter", SPHENOID),
+  // Xương bướm: atlas tham chiếu (Human Anatomy Atlas) trình bày thẳng từ trước
+  // và hơi từ trên xuống — thấy yên bướm và mặt trên của cánh lớn. "three-quarter"
+  // (vector dự phòng [0.35, 0.06, 1], gần như ngang tầm mắt) làm hai cánh đọc thành
+  // hai vách dựng đứng và giấu yên bướm; hình chiếu từ dữ liệu thật xác nhận lưới
+  // đúng hình bướm khi nhìn từ trước. Vector riêng như các cấu trúc ở views-sensory.ts.
+  structure("bone-sphenoid", "Xương bướm", "Sphenoid bone", [0, 0.3, 1], SPHENOID),
   structure("bone-ethmoid", "Xương sàng", "Ethmoid bone", "three-quarter", ETHMOID),
   structure("bone-nasal", "Xương mũi", "Nasal bones", "front", NASAL),
   // Xoăn mũi dưới: dùng lại cấu trúc `inferior-nasal-conchae` (views-respiratory.ts) — khai báo trùng là hai hàng chồng nhau.
