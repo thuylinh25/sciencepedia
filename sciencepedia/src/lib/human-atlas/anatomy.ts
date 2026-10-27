@@ -460,6 +460,8 @@ export const GROUP_COLORS: Record<string, string> = {
   "endocrine.pineal": "#bb9a8a",
   "lymphatic.spleen": "#8a4d5c",
   "lymphatic.thymus": "#c8a88f",
+  // Hạnh nhân: hồng đất — mô bạch huyết niêm mạc, tách khỏi hạch xanh và lách đỏ.
+  "lymphatic.tonsil": "#c08081",
   // Mạng UMCG: mạch xanh lục vừa, hạch sáng hơn một bậc — đọc được trên nền gần
   // đen mà không neon, và tách hạch khỏi mạch bằng độ sáng lẫn hình dạng.
   "lymphatic.vessel": "#5f9440",

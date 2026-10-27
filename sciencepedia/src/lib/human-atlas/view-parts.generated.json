@@ -820,7 +820,11 @@
       "FJ2803",
       "FJ2806",
       "FJ2809",
-      "FJ3131"
+      "FJ3131",
+      "ZA-left-quadratus-lumborum-muscle",
+      "ZA-left-transversus-abdominis-muscle",
+      "ZA-right-quadratus-lumborum-muscle",
+      "ZA-right-transversus-abdominis-muscle"
     ]
   },
   "cranial-base": {
@@ -1591,6 +1595,7 @@
       "ZA-left-proper-plantar-digital-branches-of-medial-plantar-nerve",
       "ZA-left-pudendal-nerve",
       "ZA-left-pyramid-of-medulla-oblongata",
+      "ZA-left-quadratus-lumborum-muscle",
       "ZA-left-radial-nerve",
       "ZA-left-red-nucleus",
       "ZA-left-roots-of-brachial-plexus",
@@ -1619,6 +1624,7 @@
       "ZA-left-tibial-nerve",
       "ZA-left-tonsil-of-cerebellum",
       "ZA-left-transverse-temporal-gyri",
+      "ZA-left-transversus-abdominis-muscle",
       "ZA-left-trigeminal-nerve-v",
       "ZA-left-ulnar-nerve",
       "ZA-left-vagus-nerve-x",
@@ -1752,6 +1758,7 @@
       "ZA-right-proper-plantar-digital-branches-of-medial-plantar-nerve",
       "ZA-right-pudendal-nerve",
       "ZA-right-pyramid-of-medulla-oblongata",
+      "ZA-right-quadratus-lumborum-muscle",
       "ZA-right-radial-nerve",
       "ZA-right-red-nucleus",
       "ZA-right-roots-of-brachial-plexus",
@@ -1780,6 +1787,7 @@
       "ZA-right-tibial-nerve",
       "ZA-right-tonsil-of-cerebellum",
       "ZA-right-transverse-temporal-gyri",
+      "ZA-right-transversus-abdominis-muscle",
       "ZA-right-trigeminal-nerve-v",
       "ZA-right-ulnar-nerve",
       "ZA-right-vagus-nerve-x",
@@ -2247,7 +2255,11 @@
       "FJ2803",
       "FJ2806",
       "FJ2809",
-      "FJ3131"
+      "FJ3131",
+      "ZA-left-quadratus-lumborum-muscle",
+      "ZA-left-transversus-abdominis-muscle",
+      "ZA-right-quadratus-lumborum-muscle",
+      "ZA-right-transversus-abdominis-muscle"
     ]
   },
   "cervical-spine": {
@@ -2680,7 +2692,11 @@
       "FJ2803",
       "FJ2806",
       "FJ2809",
-      "FJ3131"
+      "FJ3131",
+      "ZA-left-quadratus-lumborum-muscle",
+      "ZA-left-transversus-abdominis-muscle",
+      "ZA-right-quadratus-lumborum-muscle",
+      "ZA-right-transversus-abdominis-muscle"
     ]
   },
   "shoulder-girdle": {
@@ -3105,7 +3121,11 @@
       "FJ2803",
       "FJ2806",
       "FJ2809",
-      "FJ3131"
+      "FJ3131",
+      "ZA-left-quadratus-lumborum-muscle",
+      "ZA-left-transversus-abdominis-muscle",
+      "ZA-right-quadratus-lumborum-muscle",
+      "ZA-right-transversus-abdominis-muscle"
     ]
   },
   "axilla": {
@@ -3623,7 +3643,11 @@
       "FJ2803",
       "FJ2806",
       "FJ2809",
-      "FJ3131"
+      "FJ3131",
+      "ZA-left-quadratus-lumborum-muscle",
+      "ZA-left-transversus-abdominis-muscle",
+      "ZA-right-quadratus-lumborum-muscle",
+      "ZA-right-transversus-abdominis-muscle"
     ]
   },
   "thoracic-cavity": {
@@ -4198,7 +4222,11 @@
       "FJ3339",
       "FJ3341",
       "FJ3343",
-      "FJ3345"
+      "FJ3345",
+      "ZA-left-quadratus-lumborum-muscle",
+      "ZA-left-transversus-abdominis-muscle",
+      "ZA-right-quadratus-lumborum-muscle",
+      "ZA-right-transversus-abdominis-muscle"
     ]
   },
   "cubital-fossa": {
@@ -4757,7 +4785,11 @@
       "FJ2803",
       "FJ2806",
       "FJ2809",
-      "FJ3131"
+      "FJ3131",
+      "ZA-left-quadratus-lumborum-muscle",
+      "ZA-left-transversus-abdominis-muscle",
+      "ZA-right-quadratus-lumborum-muscle",
+      "ZA-right-transversus-abdominis-muscle"
     ]
   },
   "spine-muscles": {
@@ -5282,7 +5314,11 @@
       "FJ2803",
       "FJ2806",
       "FJ2809",
-      "FJ3131"
+      "FJ3131",
+      "ZA-left-quadratus-lumborum-muscle",
+      "ZA-left-transversus-abdominis-muscle",
+      "ZA-right-quadratus-lumborum-muscle",
+      "ZA-right-transversus-abdominis-muscle"
     ]
   },
   "pelvic-girdle": {
@@ -5706,7 +5742,11 @@
       "FJ2803",
       "FJ2806",
       "FJ2809",
-      "FJ3131"
+      "FJ3131",
+      "ZA-left-quadratus-lumborum-muscle",
+      "ZA-left-transversus-abdominis-muscle",
+      "ZA-right-quadratus-lumborum-muscle",
+      "ZA-right-transversus-abdominis-muscle"
     ]
   },
   "pelvis-section": {
@@ -16314,6 +16354,7 @@
       "ZA-left-nasolabial-node",
       "ZA-left-obturator-nodes",
       "ZA-left-occipital-nodes",
+      "ZA-left-palatine-tonsil",
       "ZA-left-parasternal-nodes",
       "ZA-left-posterior-axillary-nodes",
       "ZA-left-posterior-tibial-node",
@@ -16389,6 +16430,7 @@
       "ZA-right-nasolabial-node",
       "ZA-right-obturator-nodes",
       "ZA-right-occipital-nodes",
+      "ZA-right-palatine-tonsil",
       "ZA-right-parasternal-nodes",
       "ZA-right-posterior-axillary-nodes",
       "ZA-right-posterior-tibial-node",
@@ -16499,6 +16541,49 @@
       "FJ2436",
       "FJ2438",
       "FJ2439"
+    ]
+  },
+  "lymphatic-tonsils": {
+    "focus": [
+      "ZA-left-palatine-tonsil",
+      "ZA-right-palatine-tonsil"
+    ],
+    "hide": [],
+    "context": [
+      "FJ2772",
+      "FJ3161",
+      "FJ3164",
+      "FJ3167",
+      "FJ3170",
+      "FJ3172",
+      "FJ3176",
+      "FJ3177",
+      "FJ3213",
+      "FJ3218",
+      "FJ3219",
+      "FJ3220",
+      "FJ3221",
+      "FJ3237",
+      "FJ3289",
+      "FJ3362"
+    ],
+    "frame": [
+      "FJ2772",
+      "FJ3161",
+      "FJ3164",
+      "FJ3167",
+      "FJ3170",
+      "FJ3172",
+      "FJ3176",
+      "FJ3177",
+      "FJ3213",
+      "FJ3218",
+      "FJ3219",
+      "FJ3220",
+      "FJ3221",
+      "FJ3237",
+      "FJ3289",
+      "FJ3362"
     ]
   },
   "lymphatic-thoracic-duct": {
@@ -17632,6 +17717,13 @@
     "focus": [
       "FJ3150",
       "FJ3151"
+    ],
+    "hide": []
+  },
+  "palatine-tonsil": {
+    "focus": [
+      "ZA-left-palatine-tonsil",
+      "ZA-right-palatine-tonsil"
     ],
     "hide": []
   },
@@ -25874,7 +25966,11 @@
       "FJ2803",
       "FJ2806",
       "FJ2809",
-      "FJ3131"
+      "FJ3131",
+      "ZA-left-quadratus-lumborum-muscle",
+      "ZA-left-transversus-abdominis-muscle",
+      "ZA-right-quadratus-lumborum-muscle",
+      "ZA-right-transversus-abdominis-muscle"
     ],
     "hide": []
   },
@@ -26847,7 +26943,9 @@
       "FJ1548",
       "FJ1548M",
       "FJ1550",
-      "FJ1550M"
+      "FJ1550M",
+      "ZA-left-quadratus-lumborum-muscle",
+      "ZA-right-quadratus-lumborum-muscle"
     ],
     "hide": [],
     "context": [
@@ -26947,7 +27045,11 @@
       "FJ2548",
       "FJ2549",
       "FJ2550",
-      "FJ2551"
+      "FJ2551",
+      "ZA-left-quadratus-lumborum-muscle",
+      "ZA-left-transversus-abdominis-muscle",
+      "ZA-right-quadratus-lumborum-muscle",
+      "ZA-right-transversus-abdominis-muscle"
     ],
     "hide": [],
     "context": [
@@ -27362,6 +27464,20 @@
       "FJ1455M",
       "FJ1461",
       "FJ1461M"
+    ],
+    "hide": []
+  },
+  "transversus-abdominis": {
+    "focus": [
+      "ZA-left-transversus-abdominis-muscle",
+      "ZA-right-transversus-abdominis-muscle"
+    ],
+    "hide": []
+  },
+  "quadratus-lumborum": {
+    "focus": [
+      "ZA-left-quadratus-lumborum-muscle",
+      "ZA-right-quadratus-lumborum-muscle"
     ],
     "hide": []
   },

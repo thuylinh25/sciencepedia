@@ -971,6 +971,7 @@ const T: Record<string, string> = {
   // ------------------------------------------------------------- P
   palate: "khẩu cái",
   "palatine bone": "xương khẩu cái",
+  "palatine tonsil": "hạnh nhân khẩu cái",
   palatopharyngeus: "cơ khẩu cái hầu",
   "palmar interossei": "các cơ gian cốt gan tay",
   "palmar metacarpal artery": "động mạch gan đốt bàn tay",
@@ -1428,6 +1429,7 @@ const T: Record<string, string> = {
   "transverse head": "đầu ngang",
   "transverse mesocolon": "mạc treo đại tràng ngang",
   "transverse part": "phần ngang",
+  "transversus abdominis muscle": "cơ ngang bụng",
   "transversus thoracis": "cơ ngang ngực",
   trapezium: "xương thang",
   trapezius: "cơ thang",
@@ -1615,6 +1617,7 @@ const T: Record<string, string> = {
   "mylohyoid muscle": "cơ hàm móng",
   "piriformis muscle": "cơ hình lê",
   "quadratus femoris muscle": "cơ vuông đùi",
+  "quadratus lumborum muscle": "cơ vuông thắt lưng",
   // Tĩnh mạch và xoang tĩnh mạch màng cứng
   "angular vein": "tĩnh mạch góc",
   "anterior intercavernous sinus": "xoang gian hang trước",

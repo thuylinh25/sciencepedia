@@ -75,7 +75,8 @@ which is based on BodyParts3D, The Database Center for Life Science
 (https://dbarchive.biosciencedbc.jp/en/bodyparts3d/).
 
 Changes by Sciencepedia: selected peripheral nerves, spinal cord, veins, lymph nodes,
-lung lobes, thyroid and parathyroid glands, cranial nerves I/V/VI, brainstem nuclei,
+lung lobes, thyroid and parathyroid glands, quadratus lumborum and transversus
+abdominis muscles, palatine tonsils, cranial nerves I/V/VI, brainstem nuclei,
 falx cerebri, sympathetic trunk ganglia, middle and inner ear structures and auditory
 ossicles absent from BodyParts3D 4.0; curves evaluated to meshes in Blender; registered to the
 BodyParts3D 4.0 frame (axes x,z,-y; offset -0.5/7.2/-1.6 mm, median residual ~4.7 mm;
@@ -173,7 +174,19 @@ function pick(r: Row): Pick | null {
     return null;
   }
   if (top.startsWith("6:")) {
+    // Hạnh nhân khẩu cái (2026-10-27): vòng Waldeyer trong Z-Anatomy chỉ có cặp
+    // này dạng lưới rời; BodyParts3D không có hạnh nhân nào.
+    if (b === "palatine tonsil") return { system: "lymphatic", group: "lymphatic.tonsil", noDedupe: true };
     if (/\bnodes?\b/.test(n)) return { system: "lymphatic", group: "lymphatic.node" };
+    return null;
+  }
+  // Cơ thành bụng sau/trước (2026-10-27): vuông thắt lưng và ngang bụng là hai
+  // cơ BodyParts3D không có khái niệm — chỉ lấy đúng hai cơ này khỏi hệ cơ,
+  // phần còn lại của "4:" chồng lên lưới cơ BodyParts3D. Bỏ qua lọc trùng:
+  // ngang bụng là lá mỏng áp sát cơ chéo, lọc theo không gian sẽ loại nhầm.
+  if (top.startsWith("4:")) {
+    if (b === "quadratus lumborum muscle") return { system: "muscular", noDedupe: true, partOf: "FMA14628" };
+    if (b === "transversus abdominis muscle") return { system: "muscular", noDedupe: true, partOf: "FMA20278" };
     return null;
   }
   // Tạng (2026-09-29): nhu mô phổi theo thuỳ, tuyến giáp, tuyến cận giáp — ba thứ
