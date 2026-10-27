@@ -158,6 +158,9 @@ export const LYMPHATIC_VIEWS: readonly AtlasViewDef[] = [
     direction: "anterolateral",
     focus: [PALATINE_TONSIL],
     context: [SKULL_NECK],
+    // Hạnh nhân chỉ ~1 cm: khung theo chính nó thì xương hàm lấp kín và cắt hình.
+    // Khung theo xương đầu – cổ như view tuyến ức khung theo tim.
+    camera: { frame: [SKULL_NECK] },
     partial: {
       vi: "Chỉ có hạnh nhân khẩu cái — thiếu hạnh nhân hầu và hạnh nhân lưỡi",
       en: "Only the palatine tonsils are present — the pharyngeal and lingual tonsils are missing",
