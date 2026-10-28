@@ -3,19 +3,20 @@ import { PrismaClient } from "@prisma/client";
 import { revalidateSite } from "./revalidate-site";
 
 /**
- * Bốn nhóm con của Sức khoẻ: Cơ thể người · Tác động cột sống · Bấm huyệt ·
- * Y học cổ truyền.
+ * Nhóm con của Sức khoẻ mà script này sở hữu: Cơ thể người — cộng việc xếp
+ * thứ tự cho mọi danh mục con còn lại của Sức khoẻ.
  *
  *   npm run taxonomy:health              # in kế hoạch, KHÔNG ghi gì
  *   npm run taxonomy:health -- --write   # thực thi
  *
- * ## Vì sao là danh mục CON, không phải lĩnh vực gốc
+ * ## Ba nhóm truyền thống đã bị xóa — ĐỪNG thêm lại ở đây
  *
- * Menu "Khám phá" liệt kê lĩnh vực gốc (`getNavigationCategories`, `parentId:
- * null`). Đưa ba nhóm phương pháp truyền thống lên gốc là (1) menu dài thêm
- * ba dòng, và (2) đặt chúng ngang hàng Vật lý, Hoá học — tức ngầm nói chúng là
- * một ngành khoa học. Dưới `suc-khoe`, chúng hiện thành thẻ trên trang Sức
- * khoẻ, cạnh khung "mô tả không phải bằng chứng" (`@/lib/category-notices`).
+ * Tác động cột sống · Bấm huyệt · Y học cổ truyền từng là nhóm con của Sức
+ * khoẻ (chốt 2026-10-05: để chúng ở gốc là menu dài thêm và ngầm đặt phương
+ * pháp truyền thống ngang hàng một ngành khoa học). Ngày 2026-10-28 Linh
+ * quyết định xóa hẳn: cả ba danh mục cùng 14 bài Tác động cột sống đã bị
+ * xóa khỏi CSDL bởi `scripts/remove-traditional-categories.ts`. Đưa chúng
+ * trở lại là một quyết định sản phẩm mới, không phải chạy lại seed này.
  *
  * Không có hệ danh mục thứ hai: đây vẫn là bảng `Category` với `parentId`, nên
  * thêm "Sơ cứu", "Bệnh học" sau này là thêm hàng (form quản trị hoặc script
@@ -23,12 +24,11 @@ import { revalidateSite } from "./revalidate-site";
  *
  * ## Không ghi đè cái đã có
  *
- * `tac-dong-cot-song` do `spine:import` tạo và sở hữu tên/mô tả; script này chỉ
- * đặt `order`. Danh mục đã tồn tại dưới một cha KHÁC thì dừng: chuyển nhánh là
- * phán quyết của category-manager, không phải tác dụng phụ của một script.
+ * Danh mục đã tồn tại dưới một cha KHÁC thì dừng: chuyển nhánh là phán quyết
+ * của category-manager, không phải tác dụng phụ của một script.
  *
  * Danh mục con khác của Sức khoẻ (Giấc ngủ, Dinh dưỡng…) giữ thứ tự tương đối,
- * xếp sau bốn nhóm này.
+ * xếp sau nhóm ở đây.
  */
 const prisma = new PrismaClient();
 
@@ -57,40 +57,6 @@ const GROUPS: Group[] = [
       "How the human body is built and how it works — organs, organ systems and how they work together.",
     icon: "PersonStanding",
     color: "#e11d48",
-  },
-  {
-    // Chỉ dùng khi chưa có — tên/mô tả thật nằm ở `scripts/spine-import.ts`.
-    slug: "tac-dong-cot-song",
-    name: "Tác động cột sống",
-    nameEn: "Spinal Impact method",
-    description:
-      "Tư liệu lưu trữ tài liệu Phương pháp Tác động Cột sống Việt Nam, trích nguyên văn có trang, đặt cạnh kiến thức y khoa có nguồn. Không thay thế chẩn đoán hay điều trị.",
-    descriptionEn:
-      "Archive of the Vietnamese Spinal Impact method document, quoted with page numbers alongside sourced medical information. Not a substitute for diagnosis or treatment.",
-    icon: "Activity",
-    color: "#0891b2",
-  },
-  {
-    slug: "bam-huyet",
-    name: "Bấm huyệt",
-    nameEn: "Acupressure",
-    description:
-      "Bấm huyệt theo mô tả của y học cổ truyền, đặt cạnh những gì nghiên cứu hiện đại đã và chưa xác nhận. Không thay thế chẩn đoán hay điều trị.",
-    descriptionEn:
-      "Acupressure as traditional medicine describes it, alongside what modern research has and has not confirmed. Not a substitute for diagnosis or treatment.",
-    icon: "Hand",
-    color: "#d97706",
-  },
-  {
-    slug: "y-hoc-co-truyen",
-    name: "Y học cổ truyền",
-    nameEn: "Traditional medicine",
-    description:
-      "Các hệ thống y học truyền thống như Đông y: lịch sử, khái niệm, và cách khoa học hiện đại đánh giá chúng. Mô tả theo truyền thống không phải bằng chứng điều trị.",
-    descriptionEn:
-      "Traditional medical systems such as Vietnamese and Chinese medicine: history, concepts, and how modern science evaluates them. A traditional description is not evidence of treatment.",
-    icon: "Leaf",
-    color: "#0d9488",
   },
 ];
 

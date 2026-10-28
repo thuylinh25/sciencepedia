@@ -2,9 +2,9 @@ import { test } from "node:test";
 import assert from "node:assert/strict";
 import { categoryNotice } from "./category-notices";
 
-test("nhóm phương pháp truyền thống mang khung riêng, không kế thừa khung Sức khoẻ", () => {
+test("ba nhóm truyền thống đã xóa (2026-10-28) không còn khung riêng — kế thừa khung Sức khoẻ", () => {
   for (const slug of ["tac-dong-cot-song", "bam-huyet", "y-hoc-co-truyen"]) {
-    assert.equal(categoryNotice(slug, "suc-khoe"), "traditional");
+    assert.equal(categoryNotice(slug, "suc-khoe"), "health");
   }
 });
 
