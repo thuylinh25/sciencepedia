@@ -702,6 +702,7 @@
     "subtitle": "Ảnh bầu trời thật từ các khảo sát thiên văn. Kéo để đi, cuộn để phóng to, gõ tên thiên thể để bay tới.",
     "loading": "Đang tải bản đồ bầu trời…",
     "error": "Không tải được bản đồ bầu trời. Có thể máy chủ của CDS đang bận, hoặc trình duyệt của bạn không hỗ trợ WebGL2.",
+    "stalled": "Ảnh bầu trời đang tải rất chậm. Máy chủ ảnh của CDS (Pháp) có thể đang bận, hoặc kết nối tới đó đang gián đoạn — nếu máy chủ đáp ứng trở lại, ảnh sẽ tự hiện; bạn cũng có thể thử lại ngay.",
     "retry": "Thử lại",
     "open": "Mở bản đồ",
     "searchPlaceholder": "M31, Orion Nebula, Sgr A*, hoặc toạ độ…",

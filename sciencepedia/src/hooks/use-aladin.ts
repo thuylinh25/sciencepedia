@@ -34,6 +34,44 @@ export type AladinStatus = "idle" | "loading" | "ready" | "error";
 const ALADIN_BACKGROUND = "rgb(4, 6, 14)";
 
 /**
+ * Quá hạn này mà chưa có MỘT ô ảnh HiPS nào về sau lần đổi khung nhìn gần
+ * nhất thì coi như máy chủ ảnh đang nghẽn.
+ *
+ * `status` của hook chỉ nói script Aladin đã nạp và instance đã dựng — nó
+ * chuyển "ready" ngay cả khi CDS không trả nổi một tile nào, nên người xem
+ * từng đứng trước khung đen + chữ "loading..." của chính Aladin suốt hơn
+ * 90 giây mà giao diện của ta không hề biết (đo trên production
+ * 2026-10-28: cả Mellinger lẫn DSS2 đều không về). 20 giây đủ dài để một
+ * đường truyền chậm bình thường cũng lòi được vài tile đầu, và đủ ngắn để
+ * người xem chưa bỏ đi.
+ */
+export const STALL_AFTER_MS = 20_000;
+
+/**
+ * URL của một ô ảnh HiPS luôn chứa đoạn `/Norder<số>/` — bất kể máy chủ nào
+ * phục vụ (CDS hay máy chủ HiPS hành tinh). Hai loại request còn lại của
+ * Aladin (file `properties`, truy vấn MocServer) KHÔNG tính: chúng về được
+ * chỉ chứng minh máy chủ còn sống, không chứng minh ảnh đang chảy.
+ */
+export function isTileResource(url: string): boolean {
+  return /\/Norder\d+\//.test(url);
+}
+
+/**
+ * Nghẽn = đã quá hạn chờ VÀ tile gần nhất (nếu có) không thuộc về khung
+ * nhìn hiện tại. Tile của khung nhìn TRƯỚC vẫn đang chảy dở qua lần đổi
+ * khung thì không che được nghẽn của khung mới lâu — chúng tắt nhanh, còn
+ * tile của khung mới mà về được dù chỉ một ô thì máy chủ đang đáp ứng.
+ */
+export function shouldShowStall(
+  viewChangedAt: number,
+  lastTileAt: number,
+  now: number,
+): boolean {
+  return now - viewChangedAt >= STALL_AFTER_MS && lastTileAt <= viewChangedAt;
+}
+
+/**
  * Nạp script Aladin từ CDN — đúng MỘT lần cho cả vòng đời trang.
  *
  * Promise giữ ở mức module chứ không trong state: trang bản đồ bầu trời và
@@ -264,6 +302,12 @@ export function useAladin({
   const classObserverRef = useRef<MutationObserver | null>(null);
 
   const [status, setStatus] = useState<AladinStatus>("idle");
+  /** Máy chủ ảnh đang nghẽn theo nghĩa của `shouldShowStall` — xem ở trên. */
+  const [stalled, setStalled] = useState(false);
+  /** Mốc lần đổi khung nhìn gần nhất (nạp lần đầu, `goTo`, đổi khảo sát). */
+  const viewChangedAtRef = useRef(0);
+  /** Mốc tile HiPS gần nhất hoàn tất tải, theo đồng hồ của PerformanceObserver. */
+  const lastTileAtRef = useRef(0);
   const [isFullscreen, setIsFullscreen] = useState(fullscreen);
   const fullscreenRef = useRef(fullscreen);
   const [attempt, setAttempt] = useState(0);
@@ -338,6 +382,10 @@ export function useAladin({
 
         instanceRef.current = instance;
         appliedSurveyRef.current = view.survey ?? DEFAULT_SURVEY;
+        // Khung nhìn đầu tiên cũng là một lần đổi khung nhìn cho đồng hồ
+        // nghẽn: từ khoảnh khắc này tile bắt đầu được xin.
+        viewChangedAtRef.current = performance.now();
+        setStalled(false);
         setStatus("ready");
 
         // Toàn màn hình đổi tỉ lệ khung mà không dựng lại instance, nên bề
@@ -440,10 +488,54 @@ export function useAladin({
     };
   }, [enabled, attempt]);
 
+  /*
+   * Đồng hồ nghẽn tile.
+   *
+   * PerformanceObserver nhìn MỌI resource của trang, nên một tile do bất kỳ
+   * khung Aladin nào trên trang tải về cũng tính là "máy chủ đang đáp ứng" —
+   * đúng bản chất của sự cố: nghẽn là nghẽn ở máy chủ, không phải ở một
+   * khung. Không có PerformanceObserver (trình duyệt quá cũ) thì tính năng
+   * tắt lặng lẽ: thà không có thông báo còn hơn thông báo bừa.
+   *
+   * Chỉ chạy khi `ready`: trước đó đã có lớp phủ loading/error riêng.
+   */
+  useEffect(() => {
+    if (status !== "ready") return;
+    if (typeof PerformanceObserver === "undefined") return;
+
+    const observer = new PerformanceObserver((list) => {
+      for (const entry of list.getEntries()) {
+        if (!isTileResource(entry.name)) continue;
+        lastTileAtRef.current = performance.now();
+        setStalled(false);
+      }
+    });
+    observer.observe({ type: "resource" });
+
+    const timer = window.setInterval(() => {
+      if (
+        shouldShowStall(
+          viewChangedAtRef.current,
+          lastTileAtRef.current,
+          performance.now(),
+        )
+      ) {
+        setStalled(true);
+      }
+    }, 2_000);
+
+    return () => {
+      observer.disconnect();
+      window.clearInterval(timer);
+    };
+  }, [status]);
+
   const goTo = useCallback((view: SkyView) => {
     const instance = instanceRef.current;
     if (!instance) return;
 
+    viewChangedAtRef.current = performance.now();
+    setStalled(false);
     instance.gotoRaDec(view.ra, view.dec);
     if (containerRef.current) {
       instance.setFoV(fovForFrame(containerRef.current, view));
@@ -511,6 +603,8 @@ export function useAladin({
     const instance = instanceRef.current;
     if (!instance || surveyId === appliedSurveyRef.current) return;
 
+    viewChangedAtRef.current = performance.now();
+    setStalled(false);
     setSurveyOn(instance, surveyId);
     appliedSurveyRef.current = surveyId;
   }, []);
@@ -542,6 +636,7 @@ export function useAladin({
   return {
     containerRef,
     status,
+    stalled,
     isFullscreen,
     toggleFullscreen,
     goTo,
