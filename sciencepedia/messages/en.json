@@ -90,7 +90,6 @@
     "quoteAuthor": "Carl Sagan"
   },
   "home": {
-    "heroEyebrow": "An open science encyclopedia",
     "heroTitle": "The universe, within reach",
     "heroSubtitle": "Science explained accurately, visually, and in plain language",
     "heroSearchPlaceholder": "Search \"black hole\", \"CRISPR\", \"dark matter\"…",
@@ -123,8 +122,7 @@
     "heroCategoriesLabel": "Start with a field",
     "seeAllArticles": "See all articles",
     "aiTryAsking": "Try asking",
-    "heroFieldEmpty": "coming soon",
-    "heroTitleRich": "The universe <hl>within reach</hl>"
+    "heroFieldEmpty": "coming soon"
   },
   "glossary": {
     "title": "Glossary",
@@ -741,8 +739,7 @@
         "metaB": "One full rotation a day"
       }
     },
-    "startHere": "Start here",
-    "eyebrow": "Explore • Models • Simulations"
+    "startHere": "Start here"
   },
   "earthLive": {
     "title": "Earth from the L1 point",

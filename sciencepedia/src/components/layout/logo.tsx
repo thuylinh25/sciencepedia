@@ -79,9 +79,14 @@ export function Logo({
         >
           Sciencepedia
         </span>
+        {/* Tagline dưới wordmark viết thường, không giãn chữ (Hallmark gate
+            67, polish 2026-10-28): ngoại lệ chữ hoa giãn chữ của gate chỉ
+            dành cho chính wordmark, không cho dòng mô tả dưới nó. Cỡ 10px
+            giữ nguyên vì đây là dòng phụ thuộc wordmark, không phải nhãn
+            chức năng. */}
         <span
           className={cn(
-            "hidden text-[10px] font-medium tracking-[0.18em] uppercase sm:block",
+            "hidden text-[10px] font-medium sm:block",
             tone === "onDark" ? "text-white/70" : "text-muted-foreground",
           )}
         >

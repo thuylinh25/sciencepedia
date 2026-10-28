@@ -92,7 +92,11 @@ export async function DiscoverToday({
               hasAside ? "lg:col-span-7" : "lg:col-span-12",
             )}
           >
-            <h3 className="mb-4 text-xs font-medium tracking-widest text-muted-foreground uppercase">
+            {/* Nhãn mục viết thường, cỡ 14px (Hallmark gate 67, polish
+                2026-10-28) — áp dụng đồng loạt cho mọi nhãn h3/p của trang
+                chủ (ở đây, DidYouKnowCard, TopicChips, AiQuestions): nhãn là
+                chữ thân nhỏ hơn một bậc, không chữ hoa giãn ký tự. */}
+            <h3 className="mb-4 text-sm font-medium text-muted-foreground">
               {t("todayPick")}
             </h3>
             <ArticleCard
@@ -109,7 +113,7 @@ export async function DiscoverToday({
 
               {popular.length > 0 && (
                 <div>
-                  <h3 className="mb-4 text-xs font-medium tracking-widest text-muted-foreground uppercase">
+                  <h3 className="mb-4 text-sm font-medium text-muted-foreground">
                     {t("popularTitle")}
                   </h3>
                   {/* Số thứ hạng, không phải icon lửa hay biểu tượng xu hướng.

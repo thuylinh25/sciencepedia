@@ -169,13 +169,14 @@ export function Hero({ fields }: { fields?: ReactNode }) {
             đây thì thiên hà nằm đè lên tiêu đề và ô tìm kiếm. Đúng cái bẫy đã
             ghi trong docs/design-system.md, mục "Ba cái bẫy CSS đã cắn thật". */}
         <div className="relative z-10 flex flex-col justify-center">
-          <motion.p
-            {...rise(0)}
-            className="mb-5 inline-flex w-fit items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-medium tracking-widest text-white/90 uppercase backdrop-blur"
-          >
-            <span className="size-1.5 animate-pulse rounded-full bg-accent" />
-            {t("heroEyebrow")}
-          </motion.p>
+          {/* KHÔNG còn pill nhãn trên tiêu đề (gỡ ở lượt Hallmark polish
+              2026-10-28). Pill cũ — chữ hoa giãn ký tự “Bách khoa toàn thư
+              khoa học mở” kèm chấm pulse trang trí — dính ba gate Floor cùng
+              lúc: 54 (eyebrow), 67 (nhãn chữ hoa giãn chữ) và 10 (chấm trạng
+              thái trang trí; hero không có trạng thái thật nào để báo). Câu
+              đó vẫn là tagline của site ở metadata/footer, hero mở thẳng
+              bằng tiêu đề — đúng công thức hero của Hallmark: tiêu đề, một
+              câu, lối vào. */}
 
           {/* Bề ngang 44rem (704px) chứ không 48rem: ở 48rem tiêu đề chiếm gần
             hết cột trái và đẩy mắt chạy ngang quá xa trước khi xuống dòng.
@@ -192,21 +193,15 @@ export function Hero({ fields }: { fields?: ReactNode }) {
             {...rise(0.08)}
             className="max-w-[44rem] font-display text-4xl leading-[1.08] font-bold tracking-tight text-balance text-white sm:text-5xl lg:text-6xl"
           >
-            {/* Nửa sau tiêu đề mang màu accent (xanh), KHÔNG phải primary
-                (vàng).
-
-                Vàng đã có chủ trên màn hình này: nút tìm kiếm ở header. Tô
-                vàng thêm nửa tiêu đề là dựng hai điểm vàng cạnh nhau, và lúc
-                đó không điểm nào còn nhấn mạnh được gì — cùng lập luận đã chốt
-                khi bỏ nút CTA vàng thứ hai khỏi hero.
-
-                Dựng bằng `t.rich` nên câu vẫn nằm trọn trong tệp ngôn ngữ.
-                Cắt thành hai khoá để nối bằng JSX là cách chắc chắn dịch sai ở
-                ngôn ngữ có trật tự từ khác — tiếng Anh là "The universe within
-                reach", chỗ ngắt rơi vào vị trí khác hẳn tiếng Việt. */}
-            {t.rich("heroTitleRich", {
-              hl: (chunks) => <span className="text-accent">{chunks}</span>,
-            })}
+            {/* Tiêu đề MỘT màu trắng, cả câu như nhau (Hallmark gate 38iii,
+                sửa ở lượt polish 2026-10-28). Bản cũ tô accent cho nửa sau
+                (“tầm tay bạn”) qua khoá `heroTitleRich` — một cụm từ trong
+                tiêu đề được tách ra bằng màu là mẫu “generated” kinh điển, và
+                lập luận cũ bênh nó (vàng đã có chủ nên dùng xanh) chỉ đổi màu
+                của vấn đề chứ không gỡ vấn đề. Nay đọc khoá phẳng `heroTitle`
+                có sẵn trong cả hai tệp ngôn ngữ; khoá rich đã xoá khỏi
+                messages để không ai lắp lại. */}
+            {t("heroTitle")}
           </motion.h1>
 
           <motion.p

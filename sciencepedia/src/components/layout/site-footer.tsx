@@ -106,12 +106,16 @@ export async function SiteFooter() {
 
   /* Icon đứng trước tiêu đề cột.
 
-     Bốn tiêu đề đều là chữ hoa cỡ nhỏ giãn ký tự — đọc ra rất giống nhau, nên
-     mắt phải đọc HẾT chữ mới phân biệt được cột. Một hình ở đầu mỗi tiêu đề
-     cho người quay lại nhận ra cột mình cần trước khi đọc. Cùng lý do đã cho
-     cột "Công cụ" icon riêng từng mục. */
+     Bốn tiêu đề trông rất giống nhau, nên mắt phải đọc HẾT chữ mới phân biệt
+     được cột. Một hình ở đầu mỗi tiêu đề cho người quay lại nhận ra cột mình
+     cần trước khi đọc. Cùng lý do đã cho cột "Công cụ" icon riêng từng mục.
+
+     Tiêu đề viết thường như câu, cỡ 14px (Hallmark gate 67, polish
+     2026-10-28): bản cũ là chữ hoa 12px giãn ký tự — mẫu nhãn “generated”.
+     Chuỗi trong messages vốn đã viết thường đúng dạng này, CSS cũ tự biến
+     chúng thành chữ hoa. */
   const headingClass =
-    "flex items-center gap-2 text-xs font-semibold tracking-widest text-foreground/80 uppercase";
+    "flex items-center gap-2 text-sm font-semibold text-foreground/80";
 
   const headingIconClass = "size-4 shrink-0 text-primary-strong/70";
 
@@ -195,10 +199,14 @@ export async function SiteFooter() {
                 <p className={headingClass}>{t("contactTitle")}</p>
               </div>
 
+              {/* Hai viên liên hệ: chuyển động liệt kê tường minh, không
+                  `transition-all` (gate 10a), và hover dùng bóng có lệch
+                  `shadow-md` thay cho quầng phát sáng `0_0_18px` không lệch
+                  (gate 29) — cả hai sửa ở lượt Hallmark polish 2026-10-28. */}
               <div className="mt-3 flex flex-wrap gap-2">
                 <a
                   href={`mailto:${CONTACT_EMAIL}`}
-                  className="inline-flex items-center gap-2.5 rounded-full border px-4 py-2 text-sm font-medium transition-all hover:border-accent hover:text-accent hover:shadow-[0_0_18px_-4px_var(--color-accent)]"
+                  className="inline-flex items-center gap-2.5 rounded-full border px-4 py-2 text-sm font-medium transition-[border-color,color,box-shadow] hover:border-accent hover:text-accent hover:shadow-md"
                 >
                   <Mail className="size-4" aria-hidden />
                   {CONTACT_EMAIL}
@@ -214,7 +222,7 @@ export async function SiteFooter() {
                   href={FACEBOOK_PAGE_URL}
                   target="_blank"
                   rel="noreferrer noopener"
-                  className="inline-flex items-center gap-2.5 rounded-full border px-4 py-2 text-sm font-medium transition-all hover:border-accent hover:text-accent hover:shadow-[0_0_18px_-4px_var(--color-accent)]"
+                  className="inline-flex items-center gap-2.5 rounded-full border px-4 py-2 text-sm font-medium transition-[border-color,color,box-shadow] hover:border-accent hover:text-accent hover:shadow-md"
                 >
                   <Facebook className="size-4" aria-hidden />
                   {t("followFacebook")}

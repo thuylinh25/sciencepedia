@@ -73,7 +73,8 @@ export async function CategoryFeatureCard({
         // Hover phải nói rõ "bấm được": đây là lối điều hướng chính vào từng
         // lĩnh vực. Nâng 6px, viền sáng lên, bóng dày hơn — ba tín hiệu cùng
         // lúc vì trên nền tối thì riêng bóng gần như vô hình.
-        "group relative flex min-h-[15rem] flex-col justify-end overflow-hidden rounded-2xl border transition-all duration-300 hover:-translate-y-1.5 hover:border-accent/70 hover:shadow-2xl focus-visible:ring-[3px] focus-visible:ring-ring/50 focus-visible:outline-none",
+        // Tường minh như ArticleCard, không `transition-all` (gate 10a).
+        "group relative flex min-h-[15rem] flex-col justify-end overflow-hidden rounded-2xl border transition-[transform,border-color,box-shadow] duration-300 hover:-translate-y-1.5 hover:border-accent/70 hover:shadow-2xl focus-visible:ring-[3px] focus-visible:ring-ring/50 focus-visible:outline-none",
         className,
       )}
     >

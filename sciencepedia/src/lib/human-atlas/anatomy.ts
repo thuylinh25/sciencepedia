@@ -82,13 +82,16 @@ export const SYSTEM_COLORS: Record<SystemId, string> = {
 };
 
 /**
- * Mọi hệ bật khi mở trang — KỂ CẢ bề mặt cơ thể (đổi 2026-09-29).
+ * Tập hệ hiện khi mở trang và khi đặt lại — chỉ hệ xương (đổi 2026-10-28
+ * theo quyết định của Linh: mở Atlas là thấy bộ xương trước, người đọc tự
+ * bật thêm các hệ khác trong bảng hệ).
  *
- * Bản gốc tắt da và vẽ nó như kính mờ 10%, nên slider ở 0% ("Nguyên khối")
- * lại cho thấy thẳng cơ và xương. Nay da là lớp ngoài cùng, đục: mở trang là
- * một cơ thể nguyên vẹn; kéo slider mới bóc dần vào trong (`layerOpacity`).
+ * Trước đó (2026-09-29 → 2026-10-28) mặc định là mọi hệ kể cả bề mặt cơ
+ * thể: da là lớp ngoài cùng, đục, nên mở trang là một cơ thể nguyên vẹn;
+ * kéo slider mới bóc dần vào trong (`layerOpacity`). Hành vi đó vẫn tới
+ * được bằng preset "Tất cả" trong bảng hệ — chỉ không còn là mặc định.
  */
-export const DEFAULT_VISIBLE: SystemId[] = [...SYSTEM_IDS];
+export const DEFAULT_VISIBLE: SystemId[] = ["skeletal"];
 
 // ---------------------------------------------------------------- các lớp
 

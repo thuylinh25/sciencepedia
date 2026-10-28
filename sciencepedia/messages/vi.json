@@ -90,7 +90,6 @@
     "quoteAuthor": "Carl Sagan"
   },
   "home": {
-    "heroEyebrow": "Bách khoa toàn thư khoa học mở",
     "heroTitle": "Vũ trụ trong tầm tay bạn",
     "heroSubtitle": "Kiến thức khoa học trình bày chính xác, trực quan và dễ hiểu",
     "heroSearchPlaceholder": "Tìm \"hố đen\", \"CRISPR\", \"vật chất tối\"…",
@@ -123,8 +122,7 @@
     "heroCategoriesLabel": "Bắt đầu từ một lĩnh vực",
     "seeAllArticles": "Xem tất cả bài viết",
     "aiTryAsking": "Thử hỏi",
-    "heroFieldEmpty": "sắp có",
-    "heroTitleRich": "Vũ trụ trong <hl>tầm tay bạn</hl>"
+    "heroFieldEmpty": "sắp có"
   },
   "glossary": {
     "title": "Thuật ngữ",
@@ -741,8 +739,7 @@
         "metaB": "Mỗi ngày một vòng quay"
       }
     },
-    "startHere": "Bắt đầu từ đây",
-    "eyebrow": "Khám phá • Mô hình • Mô phỏng"
+    "startHere": "Bắt đầu từ đây"
   },
   "earthLive": {
     "title": "Trái Đất nhìn từ điểm L1",

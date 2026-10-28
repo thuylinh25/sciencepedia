@@ -78,7 +78,7 @@ export async function TopicChips({
 
   return (
     <div>
-      <h3 className="text-xs font-medium tracking-widest text-muted-foreground uppercase">
+      <h3 className="text-sm font-medium text-muted-foreground">
         {t("chipsTitle")}
       </h3>
       <ul className="mt-4 flex flex-wrap gap-2.5">

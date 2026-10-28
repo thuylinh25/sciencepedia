@@ -123,7 +123,11 @@ export async function HeroFields({
          `hero.tsx`), và chip có `backdrop-blur` nên chữ vẫn tách nền. */
       className="w-full max-w-3xl"
     >
-      <p className="mb-2.5 text-xs font-medium tracking-widest text-white/55 uppercase">
+      {/* Nhãn thường, không giãn chữ (Hallmark gate 67, polish 2026-10-28):
+          nhãn là chữ thân, nhỏ hơn một bậc, viết thường như câu — không phải
+          chữ hoa giãn ký tự. Mực /55 → /70 vì chữ 12px trên nền vũ trụ ở mức
+          cũ chỉ vừa đủ tách nền khi chip chưa phủ lên ảnh. */}
+      <p className="mb-2.5 text-xs font-medium text-white/70">
         {t("heroCategoriesLabel")}
       </p>
       <ul className="flex flex-wrap gap-2">
@@ -158,7 +162,7 @@ export async function HeroFields({
                   {field._count.articles}
                 </span>
               ) : (
-                <span className="text-[11px] tracking-wide text-white/40 uppercase">
+                <span className="text-[11px] text-white/50">
                   {t("heroFieldEmpty")}
                 </span>
               )}

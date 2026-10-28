@@ -314,12 +314,11 @@ export async function InteractiveExplore() {
        ngoại lệ. */
     <section className="container-page mt-4">
       <div className="max-w-3xl">
-        {/* Nhãn phân loại trên tiêu đề: ba từ nói ngay đây là loại nội dung
-            KHÁC với danh sách bài viết bên dưới. Cỡ chữ nhỏ và giãn ký tự rộng
-            để nó đọc ra như một nhãn chứ không như một dòng chữ bị lạc. */}
-        <p className="mb-2 text-xs font-medium tracking-[0.18em] text-primary-strong uppercase">
-          {t("eyebrow")}
-        </p>
+        {/* KHÔNG còn nhãn eyebrow trên tiêu đề (gỡ ở lượt Hallmark polish
+            2026-10-28). Dòng cũ — “Khám phá • Mô hình • Mô phỏng” chữ hoa
+            giãn 0.18em — dính gate 54 (eyebrow), 67 (nhãn chữ hoa giãn chữ)
+            và 63 (chuỗi nối bằng dấu •) cùng lúc, mà tiêu đề ngay dưới nó đã
+            tự nói khối này là gì. Mở mục bằng chính tiêu đề. */}
         <h2 className="font-display text-3xl font-bold tracking-tight sm:text-4xl">
           {t("title")}
         </h2>

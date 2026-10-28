@@ -49,7 +49,7 @@ export async function DidYouKnowCard({
         className,
       )}
     >
-      <h3 className="flex items-center gap-2 text-xs font-medium tracking-widest text-muted-foreground uppercase">
+      <h3 className="flex items-center gap-2 text-sm font-medium text-muted-foreground">
         <Quote aria-hidden className="size-3.5" />
         {t("excerptTitle")}
       </h3>
