@@ -75,7 +75,7 @@ export async function StaticPage({
           open
           className="group mt-10 rounded-2xl border bg-muted/30 px-6 py-5"
         >
-          <summary className="flex cursor-pointer list-none items-center justify-between gap-3 text-xs font-semibold tracking-widest text-foreground/80 uppercase [&::-webkit-details-marker]:hidden">
+          <summary className="flex cursor-pointer list-none items-center justify-between gap-3 text-sm font-semibold text-foreground/80 [&::-webkit-details-marker]:hidden">
             {tArticle("tableOfContents")}
             <ChevronDown
               aria-hidden

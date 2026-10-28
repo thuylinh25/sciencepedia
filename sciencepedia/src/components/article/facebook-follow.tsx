@@ -33,7 +33,7 @@ export async function FacebookFollow() {
         href={FACEBOOK_PAGE_URL}
         target="_blank"
         rel="noreferrer noopener"
-        className="inline-flex shrink-0 items-center gap-2.5 self-start rounded-full border px-4 py-2 text-sm font-medium transition-all hover:border-accent hover:text-accent hover:shadow-[0_0_18px_-4px_var(--color-accent)] sm:self-center"
+        className="inline-flex shrink-0 items-center gap-2.5 self-start rounded-full border px-4 py-2 text-sm font-medium transition-[border-color,color,box-shadow] hover:border-accent hover:text-accent hover:shadow-md sm:self-center"
       >
         <Facebook className="size-4" aria-hidden />
         {t("followCta")}

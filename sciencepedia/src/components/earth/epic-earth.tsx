@@ -332,8 +332,11 @@ export function EpicEarth({ locale = "vi" }: { locale?: string }) {
   return (
     <section className="overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-b from-[#0a1730] via-[#050a18] to-[#02030a] p-6 sm:p-8">
       <header className="max-w-2xl">
+        {/* Không emoji trong tiêu đề (Hallmark gate 30a, polish 2026-10-28):
+            emoji thay icon bị cấm, và ở đây nó đứng trong chính H2. Ảnh EPIC
+            thật ngay dưới là hình ảnh của mục này. */}
         <h2 className="font-display text-2xl font-bold text-white sm:text-3xl">
-          🌍 {vi ? "Trái Đất nhìn từ điểm L1" : "Earth from the L1 point"}
+          {vi ? "Trái Đất nhìn từ điểm L1" : "Earth from the L1 point"}
         </h2>
         <p className="mt-2 text-sm leading-relaxed text-white/65">
           {vi

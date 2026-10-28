@@ -35,10 +35,8 @@ export default async function RegisterPage({
 
   return (
     <AuthShell
-      title={t.rich("registerTitleRich", {
-        // `primary` là màu NỀN (vàng) — làm chữ trên nền sáng chỉ đạt 1,5:1.
-        hl: (chunks) => <span className="text-primary-strong">{chunks}</span>,
-      })} subtitle={t("registerSubtitle")}>
+      // Như trang đăng nhập: tiêu đề một màu (gate 38iii), khoá phẳng có sẵn.
+      title={t("registerTitle")} subtitle={t("registerSubtitle")}>
       <RegisterForm />
     </AuthShell>
   );

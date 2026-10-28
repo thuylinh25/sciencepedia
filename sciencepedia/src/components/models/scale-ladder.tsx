@@ -46,9 +46,13 @@ export async function ScaleLadder({ current }: { current: string }) {
 
   return (
     <section aria-labelledby="scale-ladder" className="mt-10 border-t pt-8">
+      {/* Đây là TIÊU ĐỀ MỤC (h2) chứ không phải nhãn: bản cũ styled nó như
+          nhãn 12px chữ hoa giãn chữ (Hallmark gate 67 + 78, polish
+          2026-10-28) nên mục quan trọng nhất của trang đọc như chú thích.
+          Nay theo đúng bậc tiêu đề mục của site. */}
       <h2
         id="scale-ladder"
-        className="text-xs font-semibold tracking-widest text-muted-foreground uppercase"
+        className="font-display text-2xl font-bold tracking-tight text-foreground"
       >
         {t("ladderTitle")}
       </h2>

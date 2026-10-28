@@ -198,7 +198,7 @@ export default async function EarthLivePage({
                 nên nó xuống thành nhãn nhỏ — giữ đúng câu chữ cũ, đổi mỗi vai
                 trò thị giác. Ba thẻ không có nhãn thì trôi lơ lửng giữa mục lục
                 và bảng tra cứu, không rõ chúng trả lời câu hỏi gì. */}
-            <p className="px-1 text-xs font-semibold tracking-widest text-muted-foreground uppercase">
+            <p className="px-1 text-sm font-semibold text-muted-foreground">
               {t("howTitle")}
             </p>
 
@@ -226,7 +226,7 @@ export default async function EarthLivePage({
             </dl>
 
             <div className="rounded-2xl border bg-card p-5">
-              <p className="text-xs font-semibold tracking-widest text-muted-foreground uppercase">
+              <p className="text-sm font-semibold text-muted-foreground">
                 {t("quickTitle")}
               </p>
               <dl className="mt-3 space-y-2.5 text-sm">
