@@ -817,6 +817,13 @@
         "cta": "Xem trực tiếp",
         "metaA": "Ảnh NASA EPIC",
         "metaB": "Mỗi ngày một vòng quay"
+      },
+      "nightSky": {
+        "title": "Mô phỏng bầu trời",
+        "body": "Xem sao, hành tinh và chòm sao từ bất kỳ nơi nào trên Trái Đất, tại bất kỳ thời điểm nào — quá khứ, hiện tại hay tương lai.",
+        "cta": "Mở mô phỏng",
+        "metaA": "Trời nhìn từ mặt đất",
+        "metaB": "{count} địa điểm quan sát"
       }
     },
     "startHere": "Bắt đầu từ đây"

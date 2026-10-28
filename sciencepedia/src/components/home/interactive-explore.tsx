@@ -7,6 +7,7 @@ import { assetUrl } from "@/lib/asset";
 import { StaggerGroup, StaggerItem } from "@/components/motion/reveal";
 import { PIECE_COUNT, SYSTEM_IDS } from "@/lib/human-atlas/anatomy";
 import { SKY_TARGETS } from "@/lib/sky-data";
+import { SKY_LOCATIONS } from "@/lib/night-sky/locations";
 import { PLANETS } from "@/lib/solar-data";
 import { cn } from "@/lib/utils";
 import { AssetImage } from "@/components/ui/asset-image";
@@ -93,6 +94,16 @@ type ExploreCard = {
   lightScrim?: boolean;
   /** Dòng ghi nguồn bắt buộc theo giấy phép ảnh (CC BY). Không có = phạm vi công cộng. */
   credit?: string;
+  /**
+   * Số đếm RIÊNG của thẻ, truyền vào chỗ `{count}` của metaA/metaB.
+   *
+   * Khung render vốn truyền `SKY_MAP_DESTINATIONS` cho MỌI thẻ — vô hại khi
+   * chỉ thẻ bản đồ bầu trời dùng `{count}`, nhưng thẻ thứ hai cần số đếm mà
+   * cũng lấy con số ấy thì trang chủ nói sai số của một công cụ khác. Số phải
+   * TÍNH từ dữ liệu của chính công cụ (như `SKY_MAP_DESTINATIONS`), không
+   * viết tay.
+   */
+  metaCount?: number;
 };
 
 /*
@@ -156,6 +167,7 @@ const CARDS: ExploreCard[] = [
     emoji: "⭐",
     accent: "#2dd4bf",
     feature: true,
+    metaCount: SKY_MAP_DESTINATIONS,
   },
   {
     id: "humanAtlas",
@@ -236,6 +248,31 @@ const CARDS: ExploreCard[] = [
     image: assetUrl("explore/earth-live.jpg"),
     emoji: "🌍",
     accent: "#34d399",
+  },
+  {
+    /*
+     * Mô phỏng bầu trời (thêm 2026-10-28, yêu cầu của chủ sản phẩm): công cụ
+     * planetarium ra mắt cùng ngày nhưng ban đầu chỉ có lối vào từ menu Công
+     * cụ và trang /models — khối này là chỗ người vào lần đầu thật sự nhìn
+     * thấy danh mục công cụ, nên thiếu nó ở đây là thiếu ở nơi quan trọng
+     * nhất.
+     *
+     * Đứng CUỐI, sau Trái Đất L1: thang quy mô Vũ trụ → Ngân Hà → Hệ Mặt
+     * Trời → Trái Đất ở hàng dưới giữ nguyên mạch, và cặp thẻ đứng cạnh thẻ
+     * chủ lực không đổi. Hệ quả bố cục theo đúng quy tắc đã chốt ở ghi chú
+     * lưới bên dưới: ở `xl` hàng cuối chỉ có thẻ này (3/12) — không chèn span
+     * riêng để "lấp" hàng cuối.
+     *
+     * Ảnh dùng lại đúng ảnh bìa của trang công cụ (`explore/night-sky.jpg`
+     * trên R2, ảnh Dải Ngân Hà phong cách ảnh chụp) — một công cụ, một ảnh
+     * nhận diện ở mọi lối vào.
+     */
+    id: "nightSky",
+    href: "/night-sky",
+    image: assetUrl("explore/night-sky.jpg"),
+    emoji: "🔭",
+    accent: "#f0abfc",
+    metaCount: SKY_LOCATIONS.length,
   },
 ];
 
@@ -465,7 +502,7 @@ export async function InteractiveExplore() {
                         </span>
                       )}
                       {t(`cards.${card.id}.${key}`, {
-                        count: SKY_MAP_DESTINATIONS,
+                        count: card.metaCount ?? SKY_MAP_DESTINATIONS,
                         pieces: PIECE_COUNT,
                         systems: SYSTEM_IDS.length,
                       })}
