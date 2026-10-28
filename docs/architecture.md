@@ -559,7 +559,7 @@ trang vừa được deploy.
 
 ---
 
-## Bầu trời đêm nay — engine ngoài tự host, bọc sau interface của mình
+## Mô phỏng bầu trời — engine ngoài tự host, bọc sau interface của mình
 
 `/night-sky` là planetarium theo người quan sát (nơi + lúc → bầu trời trên
 đầu), bổ sung cho `/space-map` (ảnh khảo sát theo RA/Dec cố định). Ba quyết
@@ -599,6 +599,43 @@ Route tĩnh hoàn toàn như `/space-map`: trạng thái nơi/giờ nằm ở cl
 server chỉ dựng hero, khối giải thích và JSON-LD. Phase 1 chưa đồng bộ
 trạng thái lên URL — chia sẻ liên kết theo khung cảnh là việc của Phase 2,
 cùng danh sách "Đang nhìn thấy" tính bằng `astronomy-engine`.
+
+### Phase 2: engine tính thứ hai, và giờ theo nơi đang xem
+
+Trang có HAI engine độc lập: VirtualSky **vẽ**, `astronomy-engine`
+**tính** (vị trí, giờ mọc/lặn, pha trăng cho panel). Đừng gộp vai của
+chúng: engine vẽ giữ dữ liệu sao của riêng nó, còn mọi con số người đọc
+thấy trong panel đều phải truy về được một lời gọi astronomy-engine —
+không lấy toạ độ từ engine vẽ ra hiển thị như số đo.
+
+`astronomy-engine` **2.1.19** (MIT) được vendor nguyên bản dựng trình
+duyệt vào `public/night-sky/astronomy.browser.js` kèm
+`astronomy-engine.LICENSE.txt`, **không qua npm**: thêm nó vào
+`package.json` sẽ kéo cả cây phụ thuộc của gói vào `node_modules` cho
+một tệp duy nhất mà trang nạp bằng thẻ script — và bản vendor đóng băng
+đúng phiên bản đã kiểm chứng chữ ký (mọi lời gọi đi qua lớp bọc có kiểu
+`src/lib/night-sky/astro.ts`, kiểm chứng hình dạng biến toàn cục trước
+khi tin). Nâng cấp engine = thay tệp, đọc lại `NOTICE.md`, chạy kiểm thử
+`astro.test.ts` (kiểm thử nạp chính tệp vendor này, không mock).
+
+Ba quyết định ngữ nghĩa, ghi lại kẻo lần sau bị "sửa cho tiện":
+
+- **Giờ tường của nơi đang xem là giờ duy nhất người đọc thấy.** Mỗi địa
+  điểm danh mục mang `tz` IANA (`locations.ts`); ô nhập giờ, dòng trạng
+  thái và mọi giờ mọc/lặn đều theo múi đó, đổi qua `Intl` trong
+  `timezone.ts`. Nơi tự định vị dùng múi giờ của trình duyệt. Engine chỉ
+  nhận `Date` tuyệt đối — để lẫn hai hệ giờ là bầu trời sai theo cả giờ
+  lẫn ngày.
+- **URL chỉ mang `?loc=` (id danh mục) và `?t=` (thời điểm ISO)**, đọc
+  một lần lúc mount, ghi bằng `history.replaceState` — trang vẫn tĩnh,
+  không thành route động. Toạ độ định vị không bao giờ lên URL: liên kết
+  chia sẻ mang nơi danh mục, không mang vị trí cá nhân.
+- **Hộp thông tin tích sẵn của VirtualSky bị vô hiệu hoá** bằng một dòng
+  `return` chốt ở đầu `toggleInfoBox` (sửa đổi engine duy nhất, ghi trong
+  `NOTICE.md`): thông tin thiên thể là việc của panel Sciencepedia, và
+  hộp mặc định của engine là bề mặt ngoài hệ thiết kế có thể kéo theo
+  tra cứu ra ngoài. Bấm vào canvas từ Phase 2 không làm gì cả — có chủ ý,
+  đường vào panel là danh sách và ô tìm kiếm.
 
 ---
 

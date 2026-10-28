@@ -11,7 +11,7 @@ import { NightSky } from "@/components/night-sky/night-sky";
 import { ToolViewTracker } from "@/components/tools/tool-view-tracker";
 
 /**
- * Bầu trời đêm nay — `/vi/night-sky` và `/en/night-sky`.
+ * Mô phỏng bầu trời — `/vi/night-sky` và `/en/night-sky`.
  *
  * ## Khác gì trang Bản đồ bầu trời (`/space-map`)
  *
@@ -80,7 +80,10 @@ export default async function NightSkyPage({
         <h1 className="font-display text-4xl font-bold tracking-tight sm:text-5xl">
           {t("title")}
         </h1>
-        <p className="mt-2 text-muted-foreground">{t("subtitle")}</p>
+        {/* Tagline giữ phần cảm xúc của tên cũ "Bầu trời đêm nay" mà không
+            hứa sai phạm vi: công cụ xem được mọi nơi, mọi lúc. Câu mô tả
+            dài (subtitle) chỉ còn sống ở metadata và thẻ /models. */}
+        <p className="mt-2 text-lg text-muted-foreground">{t("tagline")}</p>
       </header>
 
       <NightSky />

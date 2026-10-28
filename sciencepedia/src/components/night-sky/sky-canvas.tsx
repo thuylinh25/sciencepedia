@@ -36,6 +36,7 @@ type VirtualSkyInstance = {
   setLongitude: (lon: number) => void;
   setClock: (date: Date) => void;
   resize: () => void;
+  changeAzimuth: (inc: number) => void;
 };
 
 declare global {
@@ -50,6 +51,7 @@ declare global {
 export type SkyEngine = {
   setObserver: (lat: number, lon: number) => void;
   setTime: (date: Date) => void;
+  setAzimuth: (azimuthDeg: number) => void;
   resize: () => void;
   destroy: () => void;
 };
@@ -111,6 +113,12 @@ async function createSkyEngine(
   /* Giờ đang chọn, giữ ở đây để setObserver vẽ lại bằng đúng giờ đó chứ
      không phải giờ lúc tạo instance. */
   let currentClock = options.time;
+  /* Phương vị tâm khung hiện tại. Engine chỉ có `changeAzimuth(inc)` cộng
+     dồn vào `az_off`, mà lúc khởi tạo nó đặt `az_off = az − 180` (az là
+     phương vị tâm khung, 0 = Bắc) — nên phương vị tâm khung luôn bằng
+     `az_off + 180`, và muốn tới một phương vị tuyệt đối thì cộng phần chênh
+     ngắn nhất. Giá trị đầu 180 khớp tuỳ chọn `az` truyền lúc tạo instance. */
+  let currentAzimuth = 180;
 
   return {
     setObserver(lat, lon) {
@@ -122,6 +130,12 @@ async function createSkyEngine(
     setTime(date) {
       currentClock = date;
       instance.setClock(date);
+    },
+    setAzimuth(azimuthDeg) {
+      const target = ((azimuthDeg % 360) + 360) % 360;
+      const delta = ((target - currentAzimuth + 540) % 360) - 180;
+      if (delta !== 0) instance.changeAzimuth(delta);
+      currentAzimuth = target;
     },
     resize() {
       instance.resize();
@@ -142,12 +156,17 @@ export function SkyCanvas({
   time,
   lang,
   onReady,
+  focusRequest,
 }: {
   latitude: number;
   longitude: number;
   time: Date;
   lang: string;
   onReady?: () => void;
+  /** Yêu cầu xoay tâm khung tới một phương vị (chọn thiên thể đang ở trên
+      chân trời). `nonce` đổi mỗi lần yêu cầu để chọn lại cùng một thiên thể
+      vẫn xoay lại được sau khi người đọc đã kéo khung đi chỗ khác. */
+  focusRequest?: { azimuthDeg: number; nonce: number } | null;
 }) {
   const mountRef = useRef<HTMLDivElement>(null);
   const engineRef = useRef<SkyEngine | null>(null);
@@ -206,6 +225,12 @@ export function SkyCanvas({
   useEffect(() => {
     engineRef.current?.setTime(time);
   }, [time]);
+
+  useEffect(() => {
+    if (focusRequest) {
+      engineRef.current?.setAzimuth(focusRequest.azimuthDeg);
+    }
+  }, [focusRequest]);
 
   /* Hai lớp div, cố ý: VirtualSky tự đặt `position: relative` dạng inline
      lên phần tử mang id của nó. Nếu phần tử đó chính là lớp `absolute

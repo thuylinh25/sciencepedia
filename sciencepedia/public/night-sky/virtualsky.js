@@ -1760,6 +1760,10 @@ VirtualSky.prototype.whichPointer = function(x,y){
 	return -1;
 };
 VirtualSky.prototype.toggleInfoBox = function(i){
+	// Sciencepedia (Phase 2, 2026-10-28): hộp thông tin tích sẵn bị vô hiệu
+	// hoá — thông tin thiên thể do panel của Sciencepedia hiển thị, không
+	// dùng hộp mặc định của engine. Xem NOTICE.md, mục "Sửa đổi".
+	return this;
 	if(this.pointers.length == 0 || i >= this.pointers.length || (i>=0 && !this.pointers[i].html))
 		return this;
 
