@@ -95,7 +95,7 @@ export type ExploreTool = {
   id: string;
   href: string;
   /** Namespace gốc của chính trang công cụ: thẻ dùng lại `title` của nó */
-  copyKey: "sky" | "zoom" | "humanAtlas" | "earthLive";
+  copyKey: "sky" | "nightSky" | "zoom" | "humanAtlas" | "earthLive";
   /**
    * Khoá mô tả trong namespace đó. Mỗi trang đặt tên khác nhau (`subtitle`,
    * `description`, `metaDescription`) — lấy đúng câu trang ấy tự dùng làm mô
@@ -114,6 +114,18 @@ export const EXPLORE_TOOLS: ExploreTool[] = [
     descKey: "subtitle",
     image: assetUrl("explore/sky-map.jpg"),
     color: "#38bdf8",
+  },
+  // Đứng ngay sau Bản đồ bầu trời vì hai trang là một cặp: một trang soi
+  // sâu vào vùng trời bằng ảnh khảo sát, trang này cho biết vùng trời nào
+  // đang ở trên đầu người quan sát. Không có `scale` như các công cụ khác
+  // trong mảng này — nó là hướng nhìn theo nơi và lúc, không phải kích thước.
+  {
+    id: "night-sky",
+    href: "/night-sky",
+    copyKey: "nightSky",
+    descKey: "subtitle",
+    image: assetUrl("explore/night-sky.jpg"),
+    color: "#818cf8",
   },
   {
     id: "zoom",

@@ -11,6 +11,7 @@ import {
   Disc3,
   Globe,
   Menu,
+  MoonStar,
   Orbit,
   PersonStanding,
   Scaling,
@@ -66,6 +67,9 @@ const MODELS = [
   // Bản đồ bầu trời không phải một bậc của thang kích thước như ba mô hình
   // trên, nhưng nó đứng cùng nhóm "nhìn vũ trụ bằng mắt" nên vào cùng menu.
   { href: "/space-map", key: "spaceMap" as const, icon: Telescope },
+  // Cặp với Bản đồ bầu trời ngay trên: trang kia soi sâu bằng ảnh khảo sát,
+  // trang này là bầu trời theo người quan sát — ở đâu, lúc nào, thấy gì.
+  { href: "/night-sky", key: "nightSky" as const, icon: MoonStar },
   // Không phải mô hình dựng bằng hình học như bốn mục trên: đây là ảnh thật
   // chụp vài giờ trước. Vẫn cùng menu vì nó trả lời cùng một câu hỏi — nhìn
   // thấy cái gì và nó trông thế nào.

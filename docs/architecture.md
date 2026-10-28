@@ -559,6 +559,49 @@ trang vừa được deploy.
 
 ---
 
+## Bầu trời đêm nay — engine ngoài tự host, bọc sau interface của mình
+
+`/night-sky` là planetarium theo người quan sát (nơi + lúc → bầu trời trên
+đầu), bổ sung cho `/space-map` (ảnh khảo sát theo RA/Dec cố định). Ba quyết
+định, cùng một câu hỏi như mọi trang công cụ: thư viện ngoài sống thế nào mà
+không đè lên phần còn lại.
+
+### Tự host thay vì CDN hay iframe
+
+Engine là VirtualSky (Stuart Lowe / Las Cumbres Observatory), bản sao trong
+`public/night-sky/` kèm `NOTICE.md` ghi nguồn và giấy phép (miễn phí cho
+giáo dục và phi lợi nhuận). Khác Aladin ở trên — nạp từ CDN vì gói npm kéo
+WASM — VirtualSky là JS thuần ~280 KB cả dữ liệu sao, và nó *tự suy thư mục
+dữ liệu từ `src` của thẻ script `virtualsky.js`*: phục vụ từ `/night-sky/`
+là `stars.json`, `lines_latin.json`, `virtualsky-planets.js`, `lang/*.json`
+đi theo cùng origin — không một request nào ra ngoài, và trang không gãy
+nếu máy chủ của bên thứ ba sập. Không vendor thư mục `geo/` (~8,4 MB tra cứu địa danh
+tích sẵn): danh mục nơi quan sát là của mình, trong
+`src/lib/night-sky/locations.ts`.
+
+### Chỉ `sky-canvas.tsx` được chạm vào engine
+
+Phần còn lại của trang nói chuyện qua một handle hẹp (`setObserver`,
+`setTime`, `resize`, `destroy`). Lý do là lộ trình đã chốt: Phase 3 thay
+VirtualSky bằng renderer tự viết trên `astronomy-engine` — thay ruột engine
+thì chỉ một tệp đổi. Tên chòm sao và hành tinh tiếng Việt nằm trong
+`public/night-sky/lang/vi.json` do Sciencepedia dịch (engine nạp
+`lang/<mã>.json` theo locale của trang, thiếu thì tự rơi về tiếng Anh).
+
+### Hai cái bẫy khi nhúng
+
+- Phím tắt của engine bắt ở cấp `document`: gõ "c" trong ô chọn giờ cũng
+  bật/tắt đường chòm sao. Instance luôn tạo với `keyboard: false`.
+- `createSky` gán thẳng `window.onresize`; `destroy()` phải nhả nó ra và
+  làm rỗng container (mọi lớp phủ của engine đều nằm trong container).
+
+Route tĩnh hoàn toàn như `/space-map`: trạng thái nơi/giờ nằm ở client,
+server chỉ dựng hero, khối giải thích và JSON-LD. Phase 1 chưa đồng bộ
+trạng thái lên URL — chia sẻ liên kết theo khung cảnh là việc của Phase 2,
+cùng danh sách "Đang nhìn thấy" tính bằng `astronomy-engine`.
+
+---
+
 ## Bản đồ cơ thể người — Human Atlas thành module, không thành app
 
 `/[locale]/human-atlas` port từ Human Atlas (github.com/ashemag/human-atlas, MIT) —
