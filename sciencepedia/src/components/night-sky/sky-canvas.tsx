@@ -207,5 +207,18 @@ export function SkyCanvas({
     engineRef.current?.setTime(time);
   }, [time]);
 
-  return <div ref={mountRef} id={ENGINE_ID} className="absolute inset-0" />;
+  /* Hai lớp div, cố ý: VirtualSky tự đặt `position: relative` dạng inline
+     lên phần tử mang id của nó. Nếu phần tử đó chính là lớp `absolute
+     inset-0`, inline style thắng class → nó thành relative, chiều cao suy
+     từ nội dung (canvas), và `resize()` của engine đọc `offsetHeight` của
+     container = chiều cao canvas cũ → canvas kẹt vĩnh viễn ở kích thước
+     lúc khởi tạo (toàn màn hình chỉ phủ ~70% chiều cao, đổi kích thước
+     cửa sổ cũng không theo — QA PR #167 bắt được). Lớp ngoài giữ nhiệm vụ
+     căng đầy khung; lớp trong `h-full` là container của engine, chiều cao
+     luôn bám khung dù engine có ghi đè position. */
+  return (
+    <div className="absolute inset-0">
+      <div ref={mountRef} id={ENGINE_ID} className="h-full w-full" />
+    </div>
+  );
 }
