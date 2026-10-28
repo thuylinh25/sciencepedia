@@ -580,7 +580,7 @@ export function HumanAtlas({
    * `?system=nervous` mở viewer với đúng một hệ (thẻ hệ ở trang giới thiệu,
    * link từ bài viết — `systemHref()` trong systems.ts). Đọc bằng
    * useSearchParams nên Back/Forward của trình duyệt áp lại đúng hệ: rời một
-   * `?system=` về trang trơn thì trả lại mọi hệ như mặc định.
+   * `?system=` về trang trơn thì trả lại tập hệ mặc định (`DEFAULT_VISIBLE`).
    */
   const systemParam = useSearchParams().get("system");
   const lastSystemParam = useRef<string | null>(null);
