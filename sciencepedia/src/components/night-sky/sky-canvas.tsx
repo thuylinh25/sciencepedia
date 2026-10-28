@@ -51,6 +51,10 @@ declare global {
   }
 }
 
+/** Toạ độ xích đạo tại con trỏ, do engine vẽ tự tính từ phép chiếu của
+    nó (`callback.cursor`): RA/Dec đều là ĐỘ thập phân. */
+export type SkyCursorPos = { raDeg: number; decDeg: number };
+
 /** Engine handle — thứ duy nhất phần còn lại của trang được phép giữ. */
 export type SkyEngine = {
   setObserver: (lat: number, lon: number) => void;
@@ -91,7 +95,16 @@ function ensureEngineScripts(): Promise<void> {
 
 async function createSkyEngine(
   element: HTMLElement,
-  options: { latitude: number; longitude: number; time: Date; lang: string },
+  options: {
+    latitude: number;
+    longitude: number;
+    time: Date;
+    lang: string;
+    /** Nhận toạ độ tại con trỏ mỗi lần chuột di chuyển trên canvas;
+        `null` = con trỏ đã rời canvas, hoặc điểm đó nằm ngoài vùng
+        phép chiếu tính ngược được (engine không cho số thì không bịa). */
+    onCursor: (pos: SkyCursorPos | null) => void;
+  },
 ): Promise<SkyEngine> {
   await ensureEngineScripts();
   const S = window.S;
@@ -114,6 +127,25 @@ async function createSkyEngine(
     keyboard: false,
     lang: options.lang,
     credit: true,
+    callback: {
+      // Engine gọi hàm này ở MỖI mousemove với sự kiện đã gắn sẵn
+      // `ra`/`dec` (độ) — xem `getXYProperties` trong virtualsky.js.
+      // Nó chỉ chạy trên đường chuột; cảm ứng không qua đây, nên ô đọc
+      // toạ độ tự nhiên không bao giờ hiện trên thiết bị cảm ứng.
+      cursor: (event: { ra?: unknown; dec?: unknown }) => {
+        const ra = event?.ra;
+        const dec = event?.dec;
+        options.onCursor(
+          typeof ra === "number" &&
+            Number.isFinite(ra) &&
+            typeof dec === "number" &&
+            Number.isFinite(dec)
+            ? { raDeg: ra, decDeg: dec }
+            : null,
+        );
+      },
+      mouseout: () => options.onCursor(null),
+    },
   });
 
   /* Giờ đang chọn, giữ ở đây để setObserver vẽ lại bằng đúng giờ đó chứ
@@ -168,6 +200,7 @@ export function SkyCanvas({
   lang,
   onReady,
   onAzimuth,
+  onCursor,
   focusRequest,
 }: {
   latitude: number;
@@ -179,6 +212,10 @@ export function SkyCanvas({
       lần báo trước, thăm dò 4 lần/giây — đủ mượt cho một con số đọc tham
       khảo mà không bắt React dựng lại theo từng khung hình kéo. */
   onAzimuth?: (azimuthDeg: number) => void;
+  /** Toạ độ tại con trỏ theo từng mousemove của engine — nhịp nhanh
+      hơn nhịp render nhiều, nên phía nhận phải cập nhật kiểu ra lệnh
+      (ghi thẳng DOM), không setState theo từng lần gọi. */
+  onCursor?: (pos: SkyCursorPos | null) => void;
   /** Yêu cầu xoay tâm khung tới một phương vị (chọn thiên thể đang ở trên
       chân trời). `nonce` đổi mỗi lần yêu cầu để chọn lại cùng một thiên thể
       vẫn xoay lại được sau khi người đọc đã kéo khung đi chỗ khác. */
@@ -190,6 +227,8 @@ export function SkyCanvas({
   readyRef.current = onReady;
   const azimuthRef = useRef(onAzimuth);
   azimuthRef.current = onAzimuth;
+  const cursorRef = useRef(onCursor);
+  cursorRef.current = onCursor;
   /* Giá trị mới nhất, để instance tạo bất đồng bộ xong không áp trạng thái cũ. */
   const latestRef = useRef({ latitude, longitude, time });
   latestRef.current = { latitude, longitude, time };
@@ -201,7 +240,13 @@ export function SkyCanvas({
     let engine: SkyEngine | null = null;
     let azimuthPoll: number | null = null;
 
-    void createSkyEngine(element, { ...latestRef.current, lang })
+    void createSkyEngine(element, {
+      ...latestRef.current,
+      lang,
+      // Callback của engine được chốt một lần lúc tạo instance; chuyển
+      // tiếp qua ref để nó luôn gọi bản handler mới nhất của trang cha.
+      onCursor: (pos) => cursorRef.current?.(pos),
+    })
       .then((created) => {
         if (cancelled) {
           created.destroy();

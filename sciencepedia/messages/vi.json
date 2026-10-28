@@ -737,7 +737,9 @@
     "aiExplain": "AI giải thích bầu trời này",
     "aiThinking": "AI đang ngắm trời…",
     "aiError": "Chưa gọi được AI lúc này — thử lại sau ít phút nhé.",
-    "aiFactsAt": "Giải thích dựa trên dữ kiện của khung cảnh: {when}"
+    "aiFactsAt": "Giải thích dựa trên dữ kiện của khung cảnh: {when}",
+    "cursorRa": "Xích kinh",
+    "cursorDec": "Xích vĩ"
   },
   "sky": {
     "title": "Bản đồ bầu trời sâu",
