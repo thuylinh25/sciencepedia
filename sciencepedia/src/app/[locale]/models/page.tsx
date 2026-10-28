@@ -73,7 +73,7 @@ export default async function ModelsPage({
           <li key={step.id}>
             <Link
               href={step.href}
-              className="group flex h-full flex-col overflow-hidden rounded-2xl border bg-card shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+              className="group flex h-full flex-col overflow-hidden rounded-2xl border bg-card shadow-sm transition-[transform,box-shadow] duration-300 hover:-translate-y-1 hover:shadow-xl"
             >
               <div className="relative aspect-[16/10] overflow-hidden bg-space-900">
                 <AssetImage
@@ -124,7 +124,7 @@ export default async function ModelsPage({
             <li key={tool.id}>
               <Link
                 href={tool.href}
-                className="group flex h-full flex-col overflow-hidden rounded-2xl border bg-card shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+                className="group flex h-full flex-col overflow-hidden rounded-2xl border bg-card shadow-sm transition-[transform,box-shadow] duration-300 hover:-translate-y-1 hover:shadow-xl"
               >
                 <div className="relative aspect-[16/10] overflow-hidden bg-space-900">
                   <AssetImage

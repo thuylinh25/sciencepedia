@@ -138,7 +138,9 @@ export function WarpTransition({
     phụt luồng xanh ra sau. Hướng bay (chéo lên / chéo xuống) do CSS xoay. */
 function Starship() {
   return (
-    <svg viewBox="0 0 200 84" width="168" height="70">
+    // Tàu là trang trí thuần (lớp bay đã có ngữ cảnh riêng): ẩn khỏi cây
+    // trợ năng (Hallmark gate 33, polish 2026-10-28).
+    <svg viewBox="0 0 200 84" width="168" height="70" aria-hidden="true">
       <defs>
         <linearGradient id="warp-plume" x1="1" y1="0" x2="0" y2="0">
           <stop offset="0" stopColor="#ffffff" />

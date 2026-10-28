@@ -45,7 +45,7 @@ export async function CategoryCard({
     <Link
       href={`/categories/${category.slug}`}
       className={cn(
-        "group relative flex flex-col overflow-hidden rounded-2xl border bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl",
+        "group relative flex flex-col overflow-hidden rounded-2xl border bg-card p-6 transition-[transform,box-shadow] duration-300 hover:-translate-y-1 hover:shadow-xl",
         className,
       )}
     >

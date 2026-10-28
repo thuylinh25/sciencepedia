@@ -86,9 +86,14 @@ export default async function GlossaryTermPage({
       <Breadcrumb items={[{ label: tCommon("home"), href: "/" }, { label: detail.term }]} />
 
       <article className="mt-6">
-        <p className="text-sm font-medium tracking-wide text-muted-foreground uppercase">
+        {/* Nhãn loại trang viết thường, danh mục để trong ngoặc (Hallmark
+            polish 2026-10-28, gate 54/67/63): bản cũ là eyebrow chữ hoa
+            giãn chữ nối danh mục bằng dấu “·”. H1 là chính thuật ngữ nên
+            nhãn không bị xoá hẳn — nó xuống thành một dòng thông tin thường,
+            đúng vai trò phân loại của nó. */}
+        <p className="text-sm font-medium text-muted-foreground">
           {t("title")}
-          {detail.category && ` · ${detail.category}`}
+          {detail.category && ` (${detail.category})`}
         </p>
         <h1 className="mt-2 font-display text-4xl leading-tight font-bold tracking-tight text-balance">
           <dfn className="not-italic">{detail.term}</dfn>

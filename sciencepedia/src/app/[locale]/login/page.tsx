@@ -63,10 +63,10 @@ export default async function LoginPage({
 
   return (
     <AuthShell
-      title={t.rich("loginTitleRich", {
-        // `primary` là màu NỀN (vàng) — làm chữ trên nền sáng chỉ đạt 1,5:1.
-        hl: (chunks) => <span className="text-primary-strong">{chunks}</span>,
-      })} subtitle={t("loginSubtitle")}>
+      // Tiêu đề một màu như H1 trang chủ (Hallmark gate 38iii, polish
+      // 2026-10-28): bản cũ tô `primary-strong` cho riêng từ “trở lại” qua
+      // khoá rich. Khoá phẳng `loginTitle` đã có sẵn; khoá rich đã xoá.
+      title={t("loginTitle")} subtitle={t("loginSubtitle")}>
       {/* Cờ suy từ `oauthProviders()`, tức đúng điều kiện `auth.ts` dùng để
           đăng ký nhà cung cấp (id VÀ secret). Chỉ kiểm id là cách cũ, và nó vẽ
           nút cho nhà cung cấp không tồn tại. */}

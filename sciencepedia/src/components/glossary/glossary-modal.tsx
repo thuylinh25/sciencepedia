@@ -70,7 +70,7 @@ export function GlossaryModal({
             hai khối không liên quan. */}
         <DialogHeader className="text-left">
           {detail?.category && (
-            <p className="text-xs font-medium tracking-wide text-muted-foreground uppercase">
+            <p className="text-sm font-medium text-muted-foreground">
               {detail.category}
             </p>
           )}

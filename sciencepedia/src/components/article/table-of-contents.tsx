@@ -80,7 +80,7 @@ export function TableOfContents({ headings }: { headings: Heading[] }) {
 
   return (
     <nav aria-label={t("tableOfContents")} className="text-sm">
-      <p className="mb-3 flex items-center gap-2 text-xs font-semibold tracking-widest text-muted-foreground uppercase">
+      <p className="mb-3 flex items-center gap-2 text-sm font-semibold text-muted-foreground">
         <List className="size-3.5" />
         {t("tableOfContents")}
       </p>
