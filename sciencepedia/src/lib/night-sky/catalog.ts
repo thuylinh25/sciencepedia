@@ -43,6 +43,10 @@ export type CatalogEntry = {
   brightestStar?: { vi: string; en: string };
   descriptionVi?: string;
   descriptionEn?: string;
+  /** Thiên thể hệ Mặt Trời: một dòng sự kiện ngắn cho thẻ tour dẫn — nén từ
+      chính `description*` ở trên, không thêm số liệu mới. */
+  factVi?: string;
+  factEn?: string;
 };
 
 const BODIES: CatalogEntry[] = [
@@ -56,6 +60,8 @@ const BODIES: CatalogEntry[] = [
       "Ngôi sao ở trung tâm Hệ Mặt Trời, một sao dãy chính loại G chứa khoảng 99,86% khối lượng của cả hệ. Ánh sáng từ Mặt Trời mất khoảng 8 phút 20 giây mới tới Trái Đất.",
     descriptionEn:
       "The star at the centre of the Solar System, a G-type main-sequence star holding about 99.86% of the system's mass. Its light takes about 8 minutes 20 seconds to reach Earth.",
+    factVi: "Chứa khoảng 99,86% khối lượng của cả Hệ Mặt Trời.",
+    factEn: "It holds about 99.86% of the Solar System's mass.",
   },
   {
     id: "moon",
@@ -67,6 +73,8 @@ const BODIES: CatalogEntry[] = [
       "Vệ tinh tự nhiên duy nhất của Trái Đất, cách chúng ta trung bình khoảng 384.400 km. Mặt Trăng bị khoá thuỷ triều nên luôn hướng cùng một mặt về phía Trái Đất, và chu kỳ pha của nó dài khoảng 29,5 ngày.",
     descriptionEn:
       "Earth's only natural satellite, on average about 384,400 km away. It is tidally locked, always showing the same face to Earth, and its phase cycle lasts about 29.5 days.",
+    factVi: "Luôn hướng cùng một mặt về phía Trái Đất vì bị khoá thuỷ triều.",
+    factEn: "Tidally locked, it always shows Earth the same face.",
   },
   {
     id: "mercury",
@@ -78,6 +86,8 @@ const BODIES: CatalogEntry[] = [
       "Hành tinh gần Mặt Trời nhất và nhỏ nhất trong Hệ Mặt Trời, đi hết một vòng quỹ đạo chỉ trong khoảng 88 ngày. Bề mặt đầy hố va chạm và chênh lệch nhiệt độ ngày–đêm cực lớn vì hầu như không có khí quyển giữ nhiệt.",
     descriptionEn:
       "The closest planet to the Sun and the smallest in the Solar System, completing an orbit in just about 88 days. Its cratered surface swings between extreme day and night temperatures because it has almost no atmosphere to hold heat.",
+    factVi: "Một năm trên Sao Thủy chỉ dài khoảng 88 ngày Trái Đất.",
+    factEn: "A year on Mercury lasts only about 88 Earth days.",
   },
   {
     id: "venus",
@@ -89,6 +99,8 @@ const BODIES: CatalogEntry[] = [
       "Hành tinh thứ hai từ Mặt Trời và là hành tinh nóng nhất — khí quyển CO₂ dày cùng hiệu ứng nhà kính giữ bề mặt ở khoảng 465 °C. Sao Kim quay quanh trục ngược chiều so với hầu hết hành tinh khác và là thiên thể tự nhiên sáng nhất trên bầu trời sau Mặt Trời và Mặt Trăng.",
     descriptionEn:
       "The second planet from the Sun and the hottest — a thick CO₂ atmosphere and a runaway greenhouse effect keep its surface near 465 °C. Venus rotates backwards compared with most planets and is the brightest natural object in the sky after the Sun and the Moon.",
+    factVi: "Hành tinh nóng nhất Hệ Mặt Trời — bề mặt khoảng 465 °C.",
+    factEn: "The hottest planet in the Solar System — its surface is near 465 °C.",
   },
   {
     id: "mars",
@@ -100,6 +112,8 @@ const BODIES: CatalogEntry[] = [
       "Hành tinh thứ tư, mang màu đỏ cam vì bụi giàu ôxít sắt phủ khắp bề mặt. Sao Hỏa có ngọn núi lửa lớn nhất Hệ Mặt Trời (Olympus Mons) và hai vệ tinh nhỏ, Phobos và Deimos; một năm ở đây dài khoảng 687 ngày Trái Đất.",
     descriptionEn:
       "The fourth planet, coloured rust-red by iron-oxide dust across its surface. Mars hosts the Solar System's largest volcano, Olympus Mons, and two small moons, Phobos and Deimos; its year lasts about 687 Earth days.",
+    factVi: "Màu đỏ cam của Sao Hỏa đến từ bụi giàu ôxít sắt.",
+    factEn: "Mars gets its rust-red colour from iron-oxide dust.",
   },
   {
     id: "jupiter",
@@ -111,6 +125,8 @@ const BODIES: CatalogEntry[] = [
       "Hành tinh lớn nhất Hệ Mặt Trời — khối lượng gấp khoảng 2,5 lần tổng khối lượng của mọi hành tinh còn lại cộng lại. Vết Đỏ Lớn của nó là một cơn bão đã hoành hành hàng trăm năm, và Sao Mộc mất khoảng 12 năm Trái Đất cho một vòng quỹ đạo.",
     descriptionEn:
       "The largest planet in the Solar System — about 2.5 times the mass of all the other planets combined. Its Great Red Spot is a storm that has raged for centuries, and Jupiter takes about 12 Earth years to complete one orbit.",
+    factVi: "Hành tinh lớn nhất — nặng gấp ~2,5 lần mọi hành tinh còn lại cộng lại.",
+    factEn: "The largest planet — about 2.5 times the other planets combined.",
   },
   {
     id: "saturn",
@@ -122,6 +138,8 @@ const BODIES: CatalogEntry[] = [
       "Hành tinh thứ sáu, nổi tiếng với vành đai rộng làm từ vô số hạt băng và đá quay quanh xích đạo. Mật độ trung bình của Sao Thổ thấp hơn nước, và nó mất khoảng 29,5 năm Trái Đất cho một vòng quanh Mặt Trời.",
     descriptionEn:
       "The sixth planet, famous for its broad rings made of countless ice and rock particles orbiting its equator. Saturn's average density is lower than water's, and it takes about 29.5 Earth years to circle the Sun once.",
+    factVi: "Vành đai Sao Thổ làm từ vô số hạt băng và đá.",
+    factEn: "Saturn's rings are made of countless ice and rock particles.",
   },
   {
     id: "uranus",
@@ -133,6 +151,8 @@ const BODIES: CatalogEntry[] = [
       "Hành tinh thứ bảy, một người khổng lồ băng quay gần như nằm ngang — trục quay nghiêng khoảng 98° nên mỗi cực lần lượt hướng gần thẳng về phía Mặt Trời. Mê-tan trong khí quyển khiến nó có màu xanh lục nhạt; một năm ở đây dài khoảng 84 năm Trái Đất.",
     descriptionEn:
       "The seventh planet, an ice giant tipped almost completely on its side — its axis tilts about 98°, so each pole takes turns facing the Sun. Methane in its atmosphere gives it a pale blue-green colour, and its year lasts about 84 Earth years.",
+    factVi: "Sao Thiên Vương quay gần như nằm ngang — trục nghiêng khoảng 98°.",
+    factEn: "Uranus rolls along almost on its side — its axis tilts about 98°.",
   },
   {
     id: "neptune",
@@ -144,6 +164,8 @@ const BODIES: CatalogEntry[] = [
       "Hành tinh xa Mặt Trời nhất, một người khổng lồ băng xanh thẫm với những cơn gió nhanh nhất Hệ Mặt Trời — có lúc vượt 2.000 km/h. Sao Hải Vương mất khoảng 165 năm Trái Đất cho một vòng quỹ đạo và mới hoàn thành đúng một vòng kể từ khi được phát hiện năm 1846.",
     descriptionEn:
       "The most distant planet from the Sun, a deep-blue ice giant with the fastest winds in the Solar System — at times over 2,000 km/h. Neptune takes about 165 Earth years per orbit and has completed just one full circuit since its discovery in 1846.",
+    factVi: "Nơi có gió nhanh nhất Hệ Mặt Trời — có lúc vượt 2.000 km/h.",
+    factEn: "Home to the Solar System's fastest winds — at times over 2,000 km/h.",
   },
 ];
 

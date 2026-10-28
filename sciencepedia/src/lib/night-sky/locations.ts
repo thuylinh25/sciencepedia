@@ -5,7 +5,7 @@
  *
  * Cùng lý do `/space-map` giữ danh mục thiên thể trong `sky-data.ts`: trang
  * công cụ phải tĩnh hoàn toàn và không rò vị trí người đọc cho bên thứ ba.
- * Mười thành phố Việt Nam phủ ba miền cộng vài thành phố thế giới làm mốc đối
+ * Các thành phố Việt Nam phủ ba miền cộng vài thành phố thế giới làm mốc đối
  * chiếu (đổi bán cầu, đổi múi giờ) là đủ cho Phase 1; tra cứu địa danh tự do
  * thuộc Phase sau và cũng sẽ đi qua một danh mục tĩnh lớn hơn, không qua API
  * ngoài.
@@ -39,6 +39,7 @@ export const SKY_LOCATIONS: SkyLocation[] = [
   { id: "nha-trang", name: "Nha Trang", nameEn: "Nha Trang", lat: 12.2388, lon: 109.1967, tz: "Asia/Ho_Chi_Minh" },
   { id: "tp-ho-chi-minh", name: "TP. Hồ Chí Minh", nameEn: "Ho Chi Minh City", lat: 10.8231, lon: 106.6297, tz: "Asia/Ho_Chi_Minh" },
   { id: "can-tho", name: "Cần Thơ", nameEn: "Can Tho", lat: 10.0452, lon: 105.7469, tz: "Asia/Ho_Chi_Minh" },
+  { id: "phan-thiet", name: "Phan Thiết", nameEn: "Phan Thiet", lat: 10.9333, lon: 108.1, tz: "Asia/Ho_Chi_Minh" },
   { id: "phu-quoc", name: "Phú Quốc", nameEn: "Phu Quoc", lat: 10.2899, lon: 103.984, tz: "Asia/Ho_Chi_Minh" },
   { id: "singapore", name: "Singapore", nameEn: "Singapore", lat: 1.3521, lon: 103.8198, tz: "Asia/Singapore" },
   { id: "tokyo", name: "Tokyo", nameEn: "Tokyo", lat: 35.6762, lon: 139.6503, tz: "Asia/Tokyo" },
@@ -47,6 +48,7 @@ export const SKY_LOCATIONS: SkyLocation[] = [
   { id: "london", name: "Luân Đôn", nameEn: "London", lat: 51.5074, lon: -0.1278, tz: "Europe/London" },
   { id: "new-york", name: "New York", nameEn: "New York", lat: 40.7128, lon: -74.006, tz: "America/New_York" },
   { id: "los-angeles", name: "Los Angeles", nameEn: "Los Angeles", lat: 34.0522, lon: -118.2437, tz: "America/Los_Angeles" },
+  { id: "houston", name: "Houston", nameEn: "Houston", lat: 29.7604, lon: -95.3698, tz: "America/Chicago" },
 ];
 
 /** Nơi quan sát mặc định khi trang vừa mở: thủ đô, trước khi người đọc chọn. */
