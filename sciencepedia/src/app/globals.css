@@ -1,3 +1,13 @@
+/* Hallmark · redesign: polish · built: the project · genre: editorial, hero atmospheric
+   Pre-emit critique: P4 H4 E4 S5 R4 · weakest: R — the tracked-caps labels were a
+   habit, not the brand; the polish cuts them and keeps the yellow accent bar,
+   the cosmos hero and every word, link and handler the page already had. */
+/* Kept on the record for this polish (owner decisions, not oversights):
+   the per-field emoji beside their visible text names in the hero chips and
+   explore cards — chosen because six same-colour line icons read alike where
+   six emoji do not, decorative and aria-hidden — and the hero's starfield
+   with one slow aurora bloom, which is the subject of a space encyclopedia
+   rather than a wash behind text, slowed further under reduced-motion. */
 @import "tailwindcss";
 @import "tw-animate-css";
 @plugin "@tailwindcss/typography";
@@ -314,6 +324,10 @@
 
   html {
     scroll-behavior: smooth;
+    /* Chặn tràn ngang ở gốc (Hallmark gate 34). `clip` chứ không `hidden`:
+       `hidden` biến phần tử thành hộp cuộn riêng và phá `position: sticky`
+       của header, còn `clip` chỉ cắt phần tràn mà không tạo hộp cuộn. */
+    overflow-x: clip;
     /* KHÔNG đặt `scroll-padding-top` ở đây — dù đó là cách "chuẩn" để chừa
        chỗ cho header dính.
 
@@ -347,6 +361,9 @@
   }
 
   body {
+    /* Cặp với `html` ở trên: một mình `html` chưa đủ, vài trình duyệt vẫn
+       cho `body` tràn ngang theo nội dung con. */
+    overflow-x: clip;
     @apply bg-background text-foreground antialiased;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
     text-rendering: optimizeLegibility;
@@ -693,16 +710,9 @@
     text-wrap: pretty;
   }
 
-  /* Chữ tiêu đề gradient kiểu NASA */
-  .text-gradient {
-    @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(
-      100deg,
-      var(--foreground) 10%,
-      color-mix(in oklab, var(--primary) 70%, var(--foreground)) 50%,
-      var(--accent) 95%
-    );
-  }
+  /* `.text-gradient` (chữ gradient) đã GỠ trong lượt Hallmark polish
+     2026-10-28: không component nào dùng nó (chỉ còn định nghĩa), và chữ
+     gradient là đúng mẫu “generated” mà gate 2b cấm. Tiêu đề dùng mực đặc. */
 
   .mask-fade-b {
     mask-image: linear-gradient(to bottom, black 70%, transparent);

@@ -83,7 +83,9 @@ export async function ArticleCard({
       className={cn(
         // Viền sáng lên khi rê chuột. Chỉ nâng lên và đổ bóng thì trên nền tối
         // gần như không thấy gì — bóng đen trên nền đen là bóng vô hình.
-        "group relative flex flex-col overflow-hidden rounded-2xl border bg-card shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-accent/60 hover:shadow-xl",
+        // Liệt kê thuộc tính chuyển động tường minh, không `transition-all`
+        // (Hallmark gate 10a): hover chỉ đổi transform, màu viền và bóng.
+        "group relative flex flex-col overflow-hidden rounded-2xl border bg-card shadow-sm transition-[transform,border-color,box-shadow] duration-300 hover:-translate-y-1 hover:border-accent/60 hover:shadow-xl",
         isHero && "md:flex-row",
         className,
       )}

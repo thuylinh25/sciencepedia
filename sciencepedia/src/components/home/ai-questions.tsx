@@ -40,7 +40,7 @@ export async function AiQuestions() {
 
   return (
     <div className="relative">
-      <p className="mb-3 text-xs font-medium tracking-widest text-muted-foreground uppercase">
+      <p className="mb-3 text-sm font-medium text-muted-foreground">
         {tHome("aiTryAsking")}
       </p>
       <ul className="flex flex-col gap-2">

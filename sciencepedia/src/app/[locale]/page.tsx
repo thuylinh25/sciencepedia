@@ -186,16 +186,20 @@ export default async function HomePage({
       <section className="container-page section-gap mb-8">
         <Reveal>
           <div className="relative overflow-hidden rounded-3xl border bg-card p-10 sm:p-14">
-            <span
-              aria-hidden
-              className="pointer-events-none absolute -top-24 -right-24 size-72 rounded-full bg-primary/20 blur-3xl"
-            />
+            {/* KHÔNG còn quầng mờ trang trí ở góc (gỡ ở lượt Hallmark polish
+                2026-10-28, gate 29): cục `bg-primary/20 blur-3xl` là wash
+                trang trí sau chữ — đúng mẫu “generated”. Khối này là thẻ đặc
+                trên nền trang, tự nó đã đủ tách; quầng sáng thật của trang
+                nằm ở hero, nơi nó LÀ chủ thể vũ trụ. */}
             {/* Hai cột: chữ trái, câu hỏi bấm được phải. Bản cũ để cả cột
                 phải trống 60% và câu hỏi ví dụ nằm trong khung nét đứt — trông
                 như nút nhưng không bấm được. */}
             <div className="relative grid gap-10 lg:grid-cols-[minmax(0,1fr)_22rem] lg:items-center lg:gap-14">
               <div>
-                <span className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-3.5 py-1 text-xs font-medium tracking-widest text-primary-strong uppercase">
+                {/* “AI” là tên viết tắt nên giữ chữ hoa, nhưng bỏ giãn ký tự
+                    (Hallmark gate 67): giãn chữ trên nhãn 12px là mẫu nhãn
+                    “generated”, còn hai chữ cái viết tắt thì không cần nó. */}
+                <span className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-3.5 py-1 text-xs font-medium text-primary-strong">
                   <Sparkles className="size-3.5" /> AI
                 </span>
                 <h2 className="mt-4 font-display text-3xl font-bold tracking-tight text-balance sm:text-4xl lg:text-5xl">
