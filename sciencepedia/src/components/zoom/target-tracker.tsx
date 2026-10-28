@@ -22,6 +22,15 @@ export type ZoomTargetPoint = { x: number; y: number };
 export type ZoomTargetRef = { current: ZoomTargetPoint | null };
 
 /**
+ * Hộp chứa vị trí 3D (tọa độ thế giới) của cùng thiên thể đích, cho
+ * `CenterTargetRig` dùng khi trượt camera: muốn đưa đích về giữa khung thì
+ * phải biết đích đang ở đâu trong không gian, không chỉ trên màn hình — nhất
+ * là khi đích đã ra khỏi khung hoặc ở sau camera, lúc toạ độ màn hình không
+ * còn nữa nhưng vị trí 3D thì luôn có.
+ */
+export type ZoomTargetWorldRef = { current: THREE.Vector3 | null };
+
+/**
  * Neo vô hình đặt tại vị trí của thiên thể đích trong một cảnh 3D; mỗi khung
  * hình chiếu vị trí thế giới của neo xuống toạ độ màn hình và ghi vào
  * `targetRef`.
@@ -32,7 +41,13 @@ export type ZoomTargetRef = { current: ZoomTargetPoint | null };
  * trận quay. Đích ra sau camera thì ghi `null`: hành trình hiểu là "không
  * nhắm được" và lùi về bay vào tâm như trước.
  */
-export function TargetTracker({ targetRef }: { targetRef: ZoomTargetRef }) {
+export function TargetTracker({
+  targetRef,
+  worldRef,
+}: {
+  targetRef: ZoomTargetRef;
+  worldRef?: ZoomTargetWorldRef;
+}) {
   const anchor = useRef<THREE.Group>(null);
   const world = useRef(new THREE.Vector3());
   const inCameraSpace = useRef(new THREE.Vector3());
@@ -49,6 +64,13 @@ export function TargetTracker({ targetRef }: { targetRef: ZoomTargetRef }) {
   useFrame(({ camera }) => {
     if (!anchor.current) return;
     anchor.current.getWorldPosition(world.current);
+
+    /* Vị trí 3D ghi TRƯỚC mọi kiểm tra màn hình: đích ở sau camera vẫn phải
+       có toạ độ thế giới, vì đó là ca mà rig trượt camera cần nhất. */
+    if (worldRef) {
+      if (!worldRef.current) worldRef.current = new THREE.Vector3();
+      worldRef.current.copy(world.current);
+    }
 
     /* Kiểm tra "sau lưng camera" trong không gian camera trước khi chiếu:
        phép chiếu phối cảnh của three lật dấu qua mặt phẳng camera, nên một

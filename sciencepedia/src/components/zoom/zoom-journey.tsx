@@ -20,6 +20,10 @@ import type {
   ZoomTargetPoint,
   ZoomTargetRef,
 } from "@/components/zoom/target-tracker";
+import {
+  CENTER_MS,
+  type CenterTargetRef,
+} from "@/components/zoom/center-target-rig";
 
 const UniverseScene = dynamic(
   () =>
@@ -217,6 +221,7 @@ function LevelScene({
   level,
   locale,
   targetRef,
+  centerRef,
 }: {
   level: ZoomLevel;
   locale: string;
@@ -224,6 +229,8 @@ function LevelScene({
       mạng vũ trụ, Mặt Trời trong đĩa, Trái Đất trên quỹ đạo). Cấp Trái Đất
       không có cấp kế tiếp nên không dùng. */
   targetRef?: ZoomTargetRef;
+  /** Hộp lệnh trượt camera đưa đích về giữa khung trước khi lao (mục 3). */
+  centerRef?: CenterTargetRef;
 }) {
   const earth = PLANETS.find((planet) => planet.id === "earth");
 
@@ -243,6 +250,7 @@ function LevelScene({
           }}
           locale={locale}
           targetRef={targetRef}
+          centerRef={centerRef}
         />
       );
     case "milky-way":
@@ -263,6 +271,7 @@ function LevelScene({
           onTourStep={() => {}}
           onTourEnd={() => {}}
           targetRef={targetRef}
+          centerRef={centerRef}
         />
       );
     case "solar-system":
@@ -282,6 +291,7 @@ function LevelScene({
           onSelect={() => {}}
           locale={locale}
           targetRef={targetRef}
+          centerRef={centerRef}
         />
       );
     case "earth":
@@ -341,6 +351,10 @@ function LevelScene({
  * còn hiện một vòng "Phóng vào đây" tại đích. Trước P2 mọi lớp đều nhắm tâm
  * khung: Ngân Hà → Hệ Mặt Trời lao vào lõi thiên hà, Hệ Mặt Trời → Trái Đất
  * lao vào Mặt Trời — hình ảnh dạy sai vị trí trên một trang dạy tỉ lệ.
+ * Mục 3 của P2 bổ sung sau: trước cú lao, camera của cảnh hiện tại trượt
+ * ~300 ms đưa đích về giữa khung (xem `center-target-rig.tsx`), nên cú lao
+ * gần như luôn xuất phát từ giữa và đích bị kéo ra khỏi khung vẫn được cứu
+ * về thay vì phải bay mù vào tâm.
  */
 export function ZoomJourney() {
   const t = useTranslations("zoom");
@@ -370,6 +384,18 @@ export function ZoomJourney() {
     targetRefs.current = ZOOM_LEVELS.map(() => ({ current: null }));
   }
 
+  /* Hộp lệnh trượt camera, song song với `targetRefs`: mỗi cảnh đăng ký vào
+     hộp của cấp mình một hàm "đưa đích về giữa khung" (mục 3 của P2). */
+  const centerRefs = useRef<CenterTargetRef[]>([]);
+  if (centerRefs.current.length === 0) {
+    centerRefs.current = ZOOM_LEVELS.map(() => ({ current: null }));
+  }
+  const centerTimer = useRef<number | null>(null);
+  /* Đang chờ trượt xong để chuyển cấp — trong khoảng này bỏ qua mọi yêu cầu
+     đổi cấp mới, kể cả lùi ra: hai lệnh cùng lúc thì cảnh vừa trượt vừa bị
+     gỡ, đích của lệnh sau đọc phải một camera đang bay dở. */
+  const centerPending = useRef(false);
+
   /* Điểm đích "sống" cho lớp bay đọc mỗi khung hình. Thu vào thì chốt ở lúc
      bấm (ảnh chụp vị trí Trái Đất đúng khoảnh khắc đó); lùi ra thì effect bên
      dưới chép liên tục từ hộp của cảnh cha vừa gắn. */
@@ -395,6 +421,7 @@ export function ZoomJourney() {
   useEffect(() => () => {
     if (timer.current) window.clearTimeout(timer.current);
     if (shipTimer.current) window.clearTimeout(shipTimer.current);
+    if (centerTimer.current) window.clearTimeout(centerTimer.current);
   }, []);
 
   const frameAspect = useCallback(() => {
@@ -453,6 +480,42 @@ export function ZoomJourney() {
     [frameAspect, index, writeFocusVars],
   );
 
+  /**
+   * Cửa ngõ duy nhất để đổi cấp: mọi thao tác (cuộn, phím, nút, vòng đích)
+   * đều qua đây.
+   *
+   * Thu vào thì TRƯỢT TRƯỚC, LAO SAU (mục 3 của P2): ra lệnh cho cảnh hiện
+   * tại đưa đích về giữa khung trong ~300 ms, chờ trượt xong mới gọi `go` —
+   * lúc đó `go` chốt đích ở gần như đúng tâm và cú lao đọc ra là một cú lao
+   * thẳng vào giữa. Cú trượt đồng thời cứu ca đích đã bị kéo ra khỏi khung:
+   * rig trượt theo vị trí 3D nên đích ở đâu cũng về giữa được, thay vì phải
+   * chịu phương án lùi "bay vào tâm mù".
+   *
+   * Không trượt khi: đang chờ một cú trượt khác (bỏ qua yêu cầu mới), người
+   * xem bật giảm chuyển động (lao thẳng như trước), chiều lùi ra (cảnh cha
+   * chưa gắn, không có gì để trượt — và mạch của chiều ra là "mọc ra từ vị
+   * trí cũ", không phải "lao vào giữa"), hoặc cảnh không có rig (lao thẳng,
+   * giữ hành vi cũ).
+   */
+  const requestGo = useCallback(
+    (next: number) => {
+      if (next < 0 || next >= ZOOM_LEVELS.length || next === index) return;
+      if (centerPending.current) return;
+      const center = centerRefs.current[index]?.current;
+      if (next > index && !reducedMotion && center) {
+        centerPending.current = true;
+        center();
+        centerTimer.current = window.setTimeout(() => {
+          centerPending.current = false;
+          go(next);
+        }, CENTER_MS + 60);
+        return;
+      }
+      go(next);
+    },
+    [go, index, reducedMotion],
+  );
+
   /* Trong lúc lùi ra, chép đích từ hộp của cảnh cha vào điểm sống + biến CSS
      + thông số tàu (lần đầu có đích). Cảnh cha vừa gắn nên vài khung đầu hộp
      còn trống; đĩa Ngân Hà lại quay và Trái Đất chạy nên phải chép liên tục
@@ -501,12 +564,12 @@ export function ZoomJourney() {
 
      Ở cấp đầu/cuối, cuộn theo chiều không còn cấp thì KHÔNG chặn mặc định —
      trang cuộn tiếp, người đọc không bị kẹt trong khung cao gần một màn hình. */
-  const goRef = useRef(go);
+  const goRef = useRef(requestGo);
   const indexRef = useRef(index);
   useEffect(() => {
-    goRef.current = go;
+    goRef.current = requestGo;
     indexRef.current = index;
-  }, [go, index]);
+  }, [requestGo, index]);
 
   useEffect(() => {
     const frame = frameRef.current;
@@ -531,8 +594,9 @@ export function ZoomJourney() {
 
       acc = 0;
       /* Khoá đến hết lượt chuyển: đà quán tính của bàn di chuột còn bắn sự
-         kiện cả giây sau khi nhấc tay, không khoá thì một cú vuốt nhảy hai cấp. */
-      lockedUntil = now + FADE_MS;
+         kiện cả giây sau khi nhấc tay, không khoá thì một cú vuốt nhảy hai cấp.
+         Thu vào cộng thêm thời gian trượt camera trước khi lao. */
+      lockedUntil = now + FADE_MS + (step > 0 ? CENTER_MS + 60 : 0);
       goRef.current(target);
     };
 
@@ -554,7 +618,7 @@ export function ZoomJourney() {
     const next = keys[event.key];
     if (next === undefined) return;
     event.preventDefault();
-    go(next);
+    requestGo(next);
   };
 
   const level = ZOOM_LEVELS[index];
@@ -625,6 +689,13 @@ export function ZoomJourney() {
                       )
                     ]
                   }
+                  centerRef={
+                    centerRefs.current[
+                      ZOOM_LEVELS.findIndex(
+                        (item) => item.id === outgoingLevel.id,
+                      )
+                    ]
+                  }
                 />
               </div>
             )}
@@ -642,6 +713,7 @@ export function ZoomJourney() {
                 level={level}
                 locale={locale}
                 targetRef={targetRefs.current[index]}
+                centerRef={centerRefs.current[index]}
               />
             </div>
 
@@ -674,7 +746,7 @@ export function ZoomJourney() {
                   name: name(ZOOM_LEVELS[index + 1]),
                 })}
                 reducedMotion={reducedMotion}
-                onActivate={() => go(index + 1)}
+                onActivate={() => requestGo(index + 1)}
               />
             )}
           </>
@@ -733,7 +805,7 @@ export function ZoomJourney() {
           <Button
             size="sm"
             variant="glass"
-            onClick={() => go(index - 1)}
+            onClick={() => requestGo(index - 1)}
             disabled={index === 0}
             aria-label={t("zoomOut")}
             className="h-9 gap-2 border-white/20 bg-white/10 text-white hover:bg-white/20 disabled:opacity-30"
@@ -750,7 +822,7 @@ export function ZoomJourney() {
               <li key={step.id}>
                 <button
                   type="button"
-                  onClick={() => go(i)}
+                  onClick={() => requestGo(i)}
                   aria-label={name(step)}
                   aria-current={i === index ? "step" : undefined}
                   className={cn(
@@ -782,7 +854,7 @@ export function ZoomJourney() {
           <Button
             size="sm"
             variant="glass"
-            onClick={() => go(index + 1)}
+            onClick={() => requestGo(index + 1)}
             disabled={index === ZOOM_LEVELS.length - 1}
             aria-label={t("zoomIn")}
             className="h-9 gap-2 border-white/20 bg-white/10 text-white hover:bg-white/20 disabled:opacity-30"

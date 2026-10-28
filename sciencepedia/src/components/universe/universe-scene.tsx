@@ -29,7 +29,12 @@ import {
 import {
   TargetTracker,
   type ZoomTargetRef,
+  type ZoomTargetWorldRef,
 } from "@/components/zoom/target-tracker";
+import {
+  CenterTargetRig,
+  type CenterTargetRef,
+} from "@/components/zoom/center-target-rig";
 
 export type UniverseSettings = {
   playing: boolean;
@@ -171,6 +176,7 @@ function Landmarks({
   locale,
   onSelect,
   targetRef,
+  worldRef,
 }: {
   sprite: THREE.Texture;
   showLabels: boolean;
@@ -180,6 +186,7 @@ function Landmarks({
   onSelect: (id: string) => void;
   /** Hành trình thu phóng: neo bám mốc "nhà" (vị trí của Ngân Hà). */
   targetRef?: ZoomTargetRef;
+  worldRef?: ZoomTargetWorldRef;
 }) {
   const pulse = useRef<THREE.Mesh>(null);
   const reticle = useCanvasTexture(RETICLE_SPRITE_SIZE, drawReticle);
@@ -208,7 +215,9 @@ function Landmarks({
             {/* Neo cho hành trình thu phóng: mốc "nhà" chính là Ngân Hà,
                 đích của cấp này. Neo là con của nhóm mốc nên thừa hưởng
                 cả vòng quay của mạng vũ trụ. */}
-            {home && targetRef && <TargetTracker targetRef={targetRef} />}
+            {home && targetRef && (
+              <TargetTracker targetRef={targetRef} worldRef={worldRef} />
+            )}
             {home && (
               <HomeMarkerScale>
                 <mesh ref={pulse}>
@@ -346,11 +355,13 @@ function Web({
   locale,
   onSelect,
   targetRef,
+  worldRef,
 }: {
   settings: UniverseSettings;
   locale: string;
   onSelect: (id: string) => void;
   targetRef?: ZoomTargetRef;
+  worldRef?: ZoomTargetWorldRef;
 }) {
   const group = useRef<THREE.Group>(null);
   const sprite = useRadialSprite(STAR_SPRITE_SIZE, STAR_STOPS);
@@ -440,6 +451,7 @@ function Web({
         locale={locale}
         onSelect={onSelect}
         targetRef={targetRef}
+        worldRef={worldRef}
       />
     </group>
   );
@@ -535,13 +547,17 @@ export function UniverseScene({
   locale,
   onSelect,
   targetRef,
+  centerRef,
 }: {
   settings: UniverseSettings;
   locale: string;
   onSelect?: (id: string) => void;
   /** Hành trình thu phóng: hộp nhận toạ độ màn hình của Ngân Hà mỗi khung. */
   targetRef?: ZoomTargetRef;
+  /** Hành trình thu phóng: hộp lệnh trượt camera đưa Ngân Hà về giữa khung. */
+  centerRef?: CenterTargetRef;
 }) {
+  const targetWorldRef = useRef<THREE.Vector3 | null>(null);
   return (
     <Canvas
       /**
@@ -573,7 +589,12 @@ export function UniverseScene({
         locale={locale}
         onSelect={onSelect ?? (() => {})}
         targetRef={targetRef}
+        worldRef={targetWorldRef}
       />
+
+      {centerRef && (
+        <CenterTargetRig centerRef={centerRef} worldRef={targetWorldRef} />
+      )}
 
       <ScaleRig distance={settings.distance} />
 
