@@ -95,7 +95,7 @@ export default async function AdminDashboard({
         {cards.map((card) => (
           <div key={card.label} className="rounded-2xl border bg-card p-5">
             <div className="flex items-center justify-between">
-              <p className="text-xs font-medium tracking-widest text-muted-foreground uppercase">
+              <p className="text-sm font-medium text-muted-foreground">
                 {card.label}
               </p>
               <card.icon className="size-4 text-muted-foreground" />
@@ -108,7 +108,7 @@ export default async function AdminDashboard({
       </div>
 
       <div className="rounded-2xl border bg-card p-5">
-        <p className="text-xs font-medium tracking-widest text-muted-foreground uppercase">
+        <p className="text-sm font-medium text-muted-foreground">
           {t("totalViews")}
         </p>
         <p className="mt-2 font-display text-4xl font-bold">
@@ -129,9 +129,9 @@ export default async function AdminDashboard({
               </span>
               <span className="h-2.5 flex-1 overflow-hidden rounded-full bg-muted">
                 <span
-                  className="block h-full rounded-full transition-all"
+                  className="block h-full w-full origin-left rounded-full"
                   style={{
-                    width: `${(category.views / maxCategoryViews) * 100}%`,
+                    transform: `scaleX(${category.views / maxCategoryViews})`,
                     backgroundColor: category.color,
                   }}
                 />
@@ -160,9 +160,9 @@ export default async function AdminDashboard({
                 </span>
                 <span className="h-2.5 flex-1 overflow-hidden rounded-full bg-muted">
                   <span
-                    className="block h-full rounded-full transition-all"
+                    className="block h-full w-full origin-left rounded-full"
                     style={{
-                      width: `${(tool.views / maxToolViews) * 100}%`,
+                      transform: `scaleX(${tool.views / maxToolViews})`,
                       backgroundColor: meta?.color,
                     }}
                   />

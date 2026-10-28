@@ -228,7 +228,7 @@ export function GlossaryManager({ terms }: { terms: GlossaryRow[] }) {
 
       <ScrollStrip className="rounded-2xl border" trackClassName="-mt-1" tabIndex={0}>
         <table className="w-full text-sm">
-          <thead className="bg-muted/50 text-left text-xs tracking-wide text-muted-foreground uppercase">
+          <thead className="bg-muted/50 text-left text-xs font-medium text-muted-foreground">
             <tr>
               <th className="px-4 py-3 font-medium">{tg("term")}</th>
               <th className="px-4 py-3 font-medium">{tg("shortDef")}</th>

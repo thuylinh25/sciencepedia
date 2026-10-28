@@ -161,7 +161,7 @@ export default async function AdminUserActivityPage({
         {cards.map((card) => (
           <div key={card.label} className="rounded-2xl border bg-card p-5">
             <div className="flex items-center justify-between">
-              <p className="text-xs font-medium tracking-widest text-muted-foreground uppercase">
+              <p className="text-sm font-medium text-muted-foreground">
                 {card.label}
               </p>
               <card.icon className="size-4 text-muted-foreground" />
