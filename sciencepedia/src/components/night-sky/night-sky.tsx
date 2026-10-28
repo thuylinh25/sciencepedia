@@ -48,6 +48,7 @@ import {
 } from "@/lib/night-sky/astro";
 import {
   browserTimeZone,
+  dayWindowStartUtc,
   formatDateTimeInTz,
   formatTimeInTz,
   fromInputValueInTz,
@@ -496,11 +497,11 @@ export function NightSky() {
   /* Phase 3 — dòng thời gian, khoảnh khắc, tour, AI               */
   /* ------------------------------------------------------------ */
 
-  /* Cửa sổ của thanh trượt: 12:00 địa phương của ngày đang xem →
-     12:00 hôm sau. Neo vào NGÀY địa phương của `time` nên cửa sổ tự
-     lăn theo khi người đọc nhảy sang ngày khác bằng ô nhập/chips. */
-  const windowStart = localDayTimeUtc(tz, time, 0, 12, 0);
-  const windowEnd = localDayTimeUtc(tz, time, 1, 12, 0);
+  /* Cửa sổ của thanh trượt: 12:00 địa phương gần nhất không vượt quá
+     `time` → 12:00 hôm sau (xem `dayWindowStartUtc` — buổi sáng thuộc
+     về cửa sổ mở từ trưa hôm trước, đúng đêm quan sát của nó). */
+  const windowStart = dayWindowStartUtc(tz, time);
+  const windowEnd = localDayTimeUtc(tz, windowStart, 1, 12, 0);
   const sliderMinutes = Math.min(
     1440,
     Math.max(0, Math.round(wallElapsedMinutes(tz, windowStart, time))),
@@ -530,7 +531,7 @@ export function NightSky() {
   const seekMinutes = useCallback(
     (minutes: number) => {
       setViewedTime(
-        instantAtWindowMinutes(tz, localDayTimeUtc(tz, time, 0, 12, 0), minutes),
+        instantAtWindowMinutes(tz, dayWindowStartUtc(tz, time), minutes),
       );
     },
     [setViewedTime, time, tz],

@@ -112,6 +112,24 @@ export function fromInputValueInTz(tz: string, value: string): Date | null {
 }
 
 /**
+ * Mốc mở cửa sổ trượt thời gian chứa `base`: 12:00 địa phương GẦN NHẤT
+ * không vượt quá `base` — trưa cùng ngày nếu `base` đã qua trưa, trưa hôm
+ * trước nếu `base` còn ở buổi sáng.
+ *
+ * Cửa sổ phải neo thế này chứ không phải "trưa của ngày chứa base": một
+ * đêm quan sát thuộc về buổi tối bắt đầu nó, nên 09:40 sáng là phần CUỐI
+ * của cửa sổ mở từ trưa hôm trước (vị trí ~1300/1440), không phải "trước
+ * cửa sổ" (vị trí bị kẹp về 0). Neo sai làm vị trí trượt sụp về 0 mỗi khi
+ * giờ đang xem băng qua nửa đêm, và một cú kéo qua mốc đó sẽ giật cửa sổ
+ * tiến một ngày sau mỗi nhịp render — kéo một lần mà giờ nhảy nhiều ngày
+ * (đã tái hiện trên bản xem trước Phase 3, 2026-10-28).
+ */
+export function dayWindowStartUtc(tz: string, base: Date): Date {
+  const wall = utcToWallParts(tz, base);
+  return localDayTimeUtc(tz, base, wall.hour < 12 ? -1 : 0, 12, 0);
+}
+
+/**
  * Thời điểm UTC mang giờ tường `hour:minute` của ngày cách ngày địa phương
  * chứa `base` đúng `dayDelta` ngày (0 = cùng ngày, 1 = ngày mai theo giờ
  * của nơi đang xem). Mọi preset "hoàng hôn nay / nửa đêm nay / bình minh
